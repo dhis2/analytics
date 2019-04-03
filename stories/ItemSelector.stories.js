@@ -1,11 +1,8 @@
 import React from 'react'
-
 import { storiesOf } from '@storybook/react'
-import ItemSelector from '../src/ItemSelector'
+import { State, Store } from '@sambego/storybook-state'
 
-const style = {
-    fontFamily: 'Roboto',
-}
+import ItemSelector from '../src/ItemSelector'
 
 const items = {
     rarity: {
@@ -34,46 +31,70 @@ const items = {
     },
 }
 
-const state = {
-    unselectedItems: Object.keys(items),
-    selectedItems: [],
+let store
+
+const onSelect = newIds => {
+    const selectedIds = [
+        ...new Set(newIds.concat(store.get('selected').items.map(i => i.id))),
+    ]
+
+    const unselectedIds = Object.keys(items).filter(
+        id => !selectedIds.includes(id)
+    )
+
+    const selected = Object.assign({}, store.get('selected'), {
+        items: selectedIds.map(id => items[id]),
+    })
+
+    const unselected = Object.assign({}, store.get('unselected'), {
+        items: unselectedIds.map(id => items[id]),
+    })
+
+    store.set({ selected, unselected })
 }
 
-const onSelect = newItems => {
-    console.log('onSelect')
+const onDeselect = newIds => {
+    const unselectedIds = [
+        ...new Set(newIds.concat(store.get('unselected').items.map(i => i.id))),
+    ]
 
-    // const selectedItems = [...(new Set(newItems.concat(state.selectedItems)))];
-    // const unselectedItems = Object.keys(items)
-    //     .filter(id => !selectedItems.includes(id));
+    const selectedIds = Object.keys(items).filter(
+        id => !unselectedIds.includes(id)
+    )
 
-    // this.setState({ selectedItems, unselectedItems })
+    const selected = Object.assign({}, store.get('selected'), {
+        items: selectedIds.map(id => items[id]),
+    })
+
+    const unselected = Object.assign({}, store.get('unselected'), {
+        items: unselectedIds.map(id => items[id]),
+    })
+
+    store.set({ selected, unselected })
 }
 
-const onDeselect = newItems => {
-    console.log('onDeselect')
-    // const unselectedItems = [...(new Set(newItems.concat(this.state.unselectedItems)))];
-    // const selectedItems = Object.keys(items)
-    //     .filter(id => !unselectedItems.includes(id));
+const onReorder = ids => {
+    const selected = Object.assign({}, store.get('selected'), {
+        items: ids.map(id => items[id]),
+    })
 
-    // this.setState({ selectedItems, unselectedItems })
+    store.set({ selected })
 }
 
-const onReorder = selectedItems => {
-    console.log('onReorder')
-    // this.setState({ selectedItems });
-}
+store = new Store({
+    unselected: {
+        items: Object.keys(items).map(id => items[id]),
+        onSelect: onSelect,
+    },
+    selected: {
+        items: [],
+        onDeselect: onDeselect,
+        onReorder: onReorder,
+    },
+})
 
-const unselected = {
-    items: state.unselectedItems.map(id => items[id]),
-    onSelect: onSelect,
-}
-
-const selected = {
-    items: state.selectedItems.map(id => items[id]),
-    onDeselect: onDeselect,
-    onReorder: onReorder,
-}
-
-storiesOf('ItemSelector', module).add('Default', () => (
-    <ItemSelector unselected={unselected} selected={selected} />
+storiesOf('ItemSelector', module).add('with state', () => (
+    <State store={store}>
+        <ItemSelector />
+    </State>
 ))
