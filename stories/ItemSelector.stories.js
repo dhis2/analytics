@@ -33,15 +33,7 @@ const items = {
 
 let store
 
-const onSelect = newIds => {
-    const selectedIds = [
-        ...new Set(newIds.concat(store.get('selected').items.map(i => i.id))),
-    ]
-
-    const unselectedIds = Object.keys(items).filter(
-        id => !selectedIds.includes(id)
-    )
-
+const updateStore = (unselectedIds, selectedIds) => {
     const selected = Object.assign({}, store.get('selected'), {
         items: selectedIds.map(id => items[id]),
     })
@@ -53,6 +45,18 @@ const onSelect = newIds => {
     store.set({ selected, unselected })
 }
 
+const onSelect = newIds => {
+    const selectedIds = [
+        ...new Set(newIds.concat(store.get('selected').items.map(i => i.id))),
+    ]
+
+    const unselectedIds = Object.keys(items).filter(
+        id => !selectedIds.includes(id)
+    )
+
+    updateStore(unselectedIds, selectedIds)
+}
+
 const onDeselect = newIds => {
     const unselectedIds = [
         ...new Set(newIds.concat(store.get('unselected').items.map(i => i.id))),
@@ -62,15 +66,7 @@ const onDeselect = newIds => {
         id => !unselectedIds.includes(id)
     )
 
-    const selected = Object.assign({}, store.get('selected'), {
-        items: selectedIds.map(id => items[id]),
-    })
-
-    const unselected = Object.assign({}, store.get('unselected'), {
-        items: unselectedIds.map(id => items[id]),
-    })
-
-    store.set({ selected, unselected })
+    updateStore(unselectedIds, selectedIds)
 }
 
 const onReorder = ids => {
@@ -83,7 +79,7 @@ const onReorder = ids => {
 
 store = new Store({
     unselected: {
-        items: Object.keys(items).map(id => items[id]),
+        items: Object.values(items),
         onSelect: onSelect,
     },
     selected: {
@@ -93,7 +89,7 @@ store = new Store({
     },
 })
 
-storiesOf('ItemSelector', module).add('with state', () => (
+storiesOf('ItemSelector', module).add('default', () => (
     <State store={store}>
         <ItemSelector />
     </State>
