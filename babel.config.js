@@ -1,6 +1,4 @@
-const config = function(api) {
-    api.cache.forever()
-
+module.exports = function(api) {
     let defaultPresets
 
     if (process.env.BABEL_ENV === 'modules') {
@@ -16,24 +14,19 @@ const config = function(api) {
         ]
     }
 
+    let styledJsxPlugin
+    if (api.env(['test'])) {
+        styledJsxPlugin = 'styled-jsx/babel-test'
+    } else {
+        styledJsxPlugin = 'styled-jsx/babel'
+    }
+
     return {
         presets: defaultPresets.concat('@babel/preset-react'),
         plugins: [
             '@babel/plugin-proposal-class-properties',
             '@babel/plugin-proposal-object-rest-spread',
             '@babel/plugin-transform-react-constant-elements',
-            'styled-jsx/babel',
-        ],
+        ].concat(styledJsxPlugin),
     }
 }
-
-console.log(
-    'babel config',
-    config({
-        cache: {
-            forever: () => {},
-        },
-    })
-)
-
-module.exports = config

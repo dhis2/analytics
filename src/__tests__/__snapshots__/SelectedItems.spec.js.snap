@@ -33,104 +33,120 @@ exports[`The SelectedItems component list with items matches the snapshot with l
     onDragEnd={[Function]}
     onDragStart={[Function]}
   >
-    <Connect(Droppable)
-      direction="vertical"
-      droppableId="selected-items-droppable"
-      ignoreContainerClipping={false}
-      isCombineEnabled={false}
-      isDropDisabled={false}
-      type="DEFAULT"
-    >
-      <Droppable
-        direction="vertical"
-        dispatch={[Function]}
-        draggingOverWith={null}
-        droppableId="selected-items-droppable"
-        ignoreContainerClipping={false}
-        isCombineEnabled={false}
-        isDraggingOver={false}
-        isDropDisabled={false}
-        placeholder={null}
-        type="DEFAULT"
+    <ErrorBoundary>
+      <App
+        onDragEnd={[Function]}
+        onDragStart={[Function]}
+        setOnError={[Function]}
+        uniqueId={1}
       >
-        <DroppableDimensionPublisher
-          direction="vertical"
-          droppableId="selected-items-droppable"
-          getDroppableRef={[Function]}
-          getPlaceholderRef={[Function]}
-          ignoreContainerClipping={false}
-          isCombineEnabled={false}
-          isDropDisabled={false}
-          type="DEFAULT"
+        <Provider
+          context={
+            Object {
+              "$$typeof": Symbol(react.context),
+              "Consumer": Object {
+                "$$typeof": Symbol(react.context),
+                "_calculateChangedBits": null,
+                "_context": [Circular],
+              },
+              "Provider": Object {
+                "$$typeof": Symbol(react.provider),
+                "_context": [Circular],
+              },
+              "_calculateChangedBits": null,
+              "_currentRenderer": Object {},
+              "_currentRenderer2": null,
+              "_currentValue": null,
+              "_currentValue2": null,
+              "_threadCount": 0,
+            }
+          }
+          store={
+            Object {
+              "dispatch": [Function],
+              "getState": [Function],
+              "replaceReducer": [Function],
+              "subscribe": [Function],
+              Symbol(observable): [Function],
+            }
+          }
         >
-          <ItemsList
-            data-react-beautiful-dnd-droppable="1"
-            innerRef={[Function]}
+          <ConnectFunction
+            direction="vertical"
+            droppableId="selected-items-droppable"
+            ignoreContainerClipping={false}
+            isCombineEnabled={false}
+            isDropDisabled={false}
+            type="DEFAULT"
           >
-            <ul
-              className="selected-list"
+            <Droppable
+              direction="vertical"
+              droppableId="selected-items-droppable"
+              ignoreContainerClipping={false}
+              isCombineEnabled={false}
+              isDropDisabled={false}
+              placeholder={null}
+              shouldAnimatePlaceholder={true}
+              snapshot={
+                Object {
+                  "draggingFromThisWith": null,
+                  "draggingOverWith": null,
+                  "isDraggingOver": false,
+                }
+              }
+              type="DEFAULT"
+              updateViewportMaxScroll={[Function]}
             >
-              <Connect(Draggable)
-                disableInteractiveElementBlocking={false}
-                draggableId="rb"
-                index={0}
-                isDragDisabled={false}
-                key="rb"
+              <ItemsList
+                data-react-beautiful-dnd-droppable="1"
+                innerRef={[Function]}
               >
-                <Draggable
-                  disableInteractiveElementBlocking={false}
-                  draggableId="rb"
-                  dragging={null}
-                  drop={[Function]}
-                  dropAnimationFinished={[Function]}
-                  index={0}
-                  isDragDisabled={false}
-                  lift={[Function]}
-                  move={[Function]}
-                  moveByWindowScroll={[Function]}
-                  moveDown={[Function]}
-                  moveLeft={[Function]}
-                  moveRight={[Function]}
-                  moveUp={[Function]}
-                  secondary={
-                    Object {
-                      "combineTargetFor": null,
-                      "offset": Object {
-                        "x": 0,
-                        "y": 0,
-                      },
-                      "shouldAnimateDisplacement": true,
-                    }
-                  }
+                <ul
+                  className="selected-list"
                 >
-                  <DraggableDimensionPublisher
+                  <ConnectFunction
+                    disableInteractiveElementBlocking={false}
                     draggableId="rb"
-                    droppableId="selected-items-droppable"
-                    getDraggableRef={[Function]}
                     index={0}
+                    isDragDisabled={false}
                     key="rb"
-                    type="DEFAULT"
+                    shouldRespectForceTouch={true}
                   >
-                    <DragHandle
-                      callbacks={
+                    <Draggable
+                      disableInteractiveElementBlocking={false}
+                      draggableId="rb"
+                      drop={[Function]}
+                      dropAnimationFinished={[Function]}
+                      index={0}
+                      isDragDisabled={false}
+                      lift={[Function]}
+                      mapped={
                         Object {
-                          "onCancel": [Function],
-                          "onDrop": [Function],
-                          "onLift": [Function],
-                          "onMove": [Function],
-                          "onMoveDown": [Function],
-                          "onMoveLeft": [Function],
-                          "onMoveRight": [Function],
-                          "onMoveUp": [Function],
-                          "onWindowScroll": [Function],
+                          "combineTargetFor": null,
+                          "offset": Object {
+                            "x": 0,
+                            "y": 0,
+                          },
+                          "shouldAnimateDisplacement": true,
+                          "snapshot": Object {
+                            "combineTargetFor": null,
+                            "combineWith": null,
+                            "draggingOver": null,
+                            "dropAnimation": null,
+                            "isDragging": false,
+                            "isDropAnimating": false,
+                            "mode": null,
+                          },
+                          "type": "SECONDARY",
                         }
                       }
-                      canDragInteractiveElements={false}
-                      draggableId="rb"
-                      getDraggableRef={[Function]}
-                      isDragging={false}
-                      isDropAnimating={false}
-                      isEnabled={true}
+                      move={[Function]}
+                      moveByWindowScroll={[Function]}
+                      moveDown={[Function]}
+                      moveLeft={[Function]}
+                      moveRight={[Function]}
+                      moveUp={[Function]}
+                      shouldRespectForceTouch={true}
                     >
                       <li
                         aria-roledescription="Draggable item. Press space bar to lift"
@@ -287,71 +303,51 @@ exports[`The SelectedItems component list with items matches the snapshot with l
                         </Item>
                         <style />
                       </li>
-                    </DragHandle>
-                  </DraggableDimensionPublisher>
-                </Draggable>
-              </Connect(Draggable)>
-              <Connect(Draggable)
-                disableInteractiveElementBlocking={false}
-                draggableId="rr"
-                index={1}
-                isDragDisabled={false}
-                key="rr"
-              >
-                <Draggable
-                  disableInteractiveElementBlocking={false}
-                  draggableId="rr"
-                  dragging={null}
-                  drop={[Function]}
-                  dropAnimationFinished={[Function]}
-                  index={1}
-                  isDragDisabled={false}
-                  lift={[Function]}
-                  move={[Function]}
-                  moveByWindowScroll={[Function]}
-                  moveDown={[Function]}
-                  moveLeft={[Function]}
-                  moveRight={[Function]}
-                  moveUp={[Function]}
-                  secondary={
-                    Object {
-                      "combineTargetFor": null,
-                      "offset": Object {
-                        "x": 0,
-                        "y": 0,
-                      },
-                      "shouldAnimateDisplacement": true,
-                    }
-                  }
-                >
-                  <DraggableDimensionPublisher
+                    </Draggable>
+                  </ConnectFunction>
+                  <ConnectFunction
+                    disableInteractiveElementBlocking={false}
                     draggableId="rr"
-                    droppableId="selected-items-droppable"
-                    getDraggableRef={[Function]}
                     index={1}
+                    isDragDisabled={false}
                     key="rr"
-                    type="DEFAULT"
+                    shouldRespectForceTouch={true}
                   >
-                    <DragHandle
-                      callbacks={
+                    <Draggable
+                      disableInteractiveElementBlocking={false}
+                      draggableId="rr"
+                      drop={[Function]}
+                      dropAnimationFinished={[Function]}
+                      index={1}
+                      isDragDisabled={false}
+                      lift={[Function]}
+                      mapped={
                         Object {
-                          "onCancel": [Function],
-                          "onDrop": [Function],
-                          "onLift": [Function],
-                          "onMove": [Function],
-                          "onMoveDown": [Function],
-                          "onMoveLeft": [Function],
-                          "onMoveRight": [Function],
-                          "onMoveUp": [Function],
-                          "onWindowScroll": [Function],
+                          "combineTargetFor": null,
+                          "offset": Object {
+                            "x": 0,
+                            "y": 0,
+                          },
+                          "shouldAnimateDisplacement": true,
+                          "snapshot": Object {
+                            "combineTargetFor": null,
+                            "combineWith": null,
+                            "draggingOver": null,
+                            "dropAnimation": null,
+                            "isDragging": false,
+                            "isDropAnimating": false,
+                            "mode": null,
+                          },
+                          "type": "SECONDARY",
                         }
                       }
-                      canDragInteractiveElements={false}
-                      draggableId="rr"
-                      getDraggableRef={[Function]}
-                      isDragging={false}
-                      isDropAnimating={false}
-                      isEnabled={true}
+                      move={[Function]}
+                      moveByWindowScroll={[Function]}
+                      moveDown={[Function]}
+                      moveLeft={[Function]}
+                      moveRight={[Function]}
+                      moveUp={[Function]}
+                      shouldRespectForceTouch={true}
                     >
                       <li
                         aria-roledescription="Draggable item. Press space bar to lift"
@@ -508,16 +504,20 @@ exports[`The SelectedItems component list with items matches the snapshot with l
                         </Item>
                         <style />
                       </li>
-                    </DragHandle>
-                  </DraggableDimensionPublisher>
-                </Draggable>
-              </Connect(Draggable)>
-              <style />
-            </ul>
-          </ItemsList>
-        </DroppableDimensionPublisher>
-      </Droppable>
-    </Connect(Droppable)>
+                    </Draggable>
+                  </ConnectFunction>
+                  <AnimateInOut
+                    on={null}
+                    shouldAnimate={true}
+                  />
+                  <style />
+                </ul>
+              </ItemsList>
+            </Droppable>
+          </ConnectFunction>
+        </Provider>
+      </App>
+    </ErrorBoundary>
   </DragDropContext>
   <div
     className="deselect-all-button"
@@ -531,13 +531,14 @@ exports[`The SelectedItems component list with items matches the snapshot with l
       type="button"
     >
       <button
-        className="jsx-3933576805 base kind-secondary size-small"
+        className="jsx-2161946701 base kind-secondary size-small"
         disabled={false}
         onClick={[Function]}
+        type="button"
       >
         Deselect All
         <JSXStyle
-          id="3933576805"
+          id="2161946701"
         />
       </button>
     </Button>
@@ -628,49 +629,89 @@ exports[`The SelectedItems component matches the snapshot when list is empty 1`]
     onDragEnd={[Function]}
     onDragStart={[Function]}
   >
-    <Connect(Droppable)
-      direction="vertical"
-      droppableId="selected-items-droppable"
-      ignoreContainerClipping={false}
-      isCombineEnabled={false}
-      isDropDisabled={false}
-      type="DEFAULT"
-    >
-      <Droppable
-        direction="vertical"
-        dispatch={[Function]}
-        draggingOverWith={null}
-        droppableId="selected-items-droppable"
-        ignoreContainerClipping={false}
-        isCombineEnabled={false}
-        isDraggingOver={false}
-        isDropDisabled={false}
-        placeholder={null}
-        type="DEFAULT"
+    <ErrorBoundary>
+      <App
+        onDragEnd={[Function]}
+        onDragStart={[Function]}
+        setOnError={[Function]}
+        uniqueId={0}
       >
-        <DroppableDimensionPublisher
-          direction="vertical"
-          droppableId="selected-items-droppable"
-          getDroppableRef={[Function]}
-          getPlaceholderRef={[Function]}
-          ignoreContainerClipping={false}
-          isCombineEnabled={false}
-          isDropDisabled={false}
-          type="DEFAULT"
+        <Provider
+          context={
+            Object {
+              "$$typeof": Symbol(react.context),
+              "Consumer": Object {
+                "$$typeof": Symbol(react.context),
+                "_calculateChangedBits": null,
+                "_context": [Circular],
+              },
+              "Provider": Object {
+                "$$typeof": Symbol(react.provider),
+                "_context": [Circular],
+              },
+              "_calculateChangedBits": null,
+              "_currentRenderer": Object {},
+              "_currentRenderer2": null,
+              "_currentValue": null,
+              "_currentValue2": null,
+              "_threadCount": 0,
+            }
+          }
+          store={
+            Object {
+              "dispatch": [Function],
+              "getState": [Function],
+              "replaceReducer": [Function],
+              "subscribe": [Function],
+              Symbol(observable): [Function],
+            }
+          }
         >
-          <ItemsList
-            data-react-beautiful-dnd-droppable="0"
-            innerRef={[Function]}
+          <ConnectFunction
+            direction="vertical"
+            droppableId="selected-items-droppable"
+            ignoreContainerClipping={false}
+            isCombineEnabled={false}
+            isDropDisabled={false}
+            type="DEFAULT"
           >
-            <ul
-              className="selected-list"
+            <Droppable
+              direction="vertical"
+              droppableId="selected-items-droppable"
+              ignoreContainerClipping={false}
+              isCombineEnabled={false}
+              isDropDisabled={false}
+              placeholder={null}
+              shouldAnimatePlaceholder={true}
+              snapshot={
+                Object {
+                  "draggingFromThisWith": null,
+                  "draggingOverWith": null,
+                  "isDraggingOver": false,
+                }
+              }
+              type="DEFAULT"
+              updateViewportMaxScroll={[Function]}
             >
-              <style />
-            </ul>
-          </ItemsList>
-        </DroppableDimensionPublisher>
-      </Droppable>
-    </Connect(Droppable)>
+              <ItemsList
+                data-react-beautiful-dnd-droppable="0"
+                innerRef={[Function]}
+              >
+                <ul
+                  className="selected-list"
+                >
+                  <AnimateInOut
+                    on={null}
+                    shouldAnimate={true}
+                  />
+                  <style />
+                </ul>
+              </ItemsList>
+            </Droppable>
+          </ConnectFunction>
+        </Provider>
+      </App>
+    </ErrorBoundary>
   </DragDropContext>
   <div
     className="deselect-all-button"
@@ -684,13 +725,14 @@ exports[`The SelectedItems component matches the snapshot when list is empty 1`]
       type="button"
     >
       <button
-        className="jsx-3933576805 base kind-secondary size-small"
+        className="jsx-2161946701 base kind-secondary size-small"
         disabled={false}
         onClick={[Function]}
+        type="button"
       >
         Deselect All
         <JSXStyle
-          id="3933576805"
+          id="2161946701"
         />
       </button>
     </Button>
