@@ -67,7 +67,7 @@ exports[`The SelectedItems component list with items matches the snapshot with l
               "getState": [Function],
               "replaceReducer": [Function],
               "subscribe": [Function],
-              Symbol(observable): [Function],
+              Symbol(Symbol.observable): [Function],
             }
           }
         >
@@ -663,7 +663,7 @@ exports[`The SelectedItems component matches the snapshot when list is empty 1`]
               "getState": [Function],
               "replaceReducer": [Function],
               "subscribe": [Function],
-              Symbol(observable): [Function],
+              Symbol(Symbol.observable): [Function],
             }
           }
         >
