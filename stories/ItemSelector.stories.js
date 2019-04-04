@@ -2,7 +2,7 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { State, Store } from '@sambego/storybook-state'
 
-import ItemSelector from '../src/ItemSelector'
+import ItemSelector from '../src/components/ItemSelector/ItemSelector'
 
 const items = {
     rarity: {

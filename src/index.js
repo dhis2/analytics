@@ -1,3 +1,3 @@
-import ItemSelector from './ItemSelector'
+import ItemSelector from './Components/ItemSelector/ItemSelector'
 
 export { ItemSelector }
