@@ -68,7 +68,7 @@
         "@material-ui/icons": "^3.0.2",
         "classnames": "^2.2.6",
         "lodash": "^4.17.11",
-        "react-beautiful-dnd": "^11.0.0-beta",
+        "react-beautiful-dnd": "^v10.0.4",
         "styled-jsx": "^3.2.1"
     },
     "files": [
