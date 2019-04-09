@@ -1,7 +1,6 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 import Item from '../SelectedItem'
-// import DeselectIconButton from '../DeselectIconButton';
 
 describe('Selected item component', () => {
     let props
