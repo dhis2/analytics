@@ -1,6 +1,6 @@
 {
     "name": "@dhis2/d2-ui-analytics",
-    "version": "0.0.5",
+    "version": "0.0.6",
     "main": "./build/es/index.js",
     "module": "./build/es/index.js",
     "sideEffects": false,
