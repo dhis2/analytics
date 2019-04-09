@@ -4,36 +4,73 @@ import DialogTitle from '@material-ui/core/DialogTitle'
 import DialogContent from '@material-ui/core/DialogContent'
 import CircularProgress from '@material-ui/core/CircularProgress'
 
-// import OrgUnitDimension, { defaultState } from '../OrgUnitDimension'
+import OrgUnitDimension, { defaultState } from '../OrgUnitDimension'
 
-// jest.mock('@dhis2/d2-ui-org-unit-dialog', () => () => (
-//     <div id="mockOrgUnitSelector">mockOrgUnitSelector</div>
-// ))
+jest.mock('@dhis2/d2-ui-org-unit-dialog', () => {
+    return {
+        OrgUnitSelector: () => (
+            <div id="mockOrgUnitSelector"> mockOrgUnitSelector</div>
+        ),
+        userOrgUnits: [
+            {
+                displayName: 'User organisation unit',
+                id: 'USER_ORGUNIT',
+            },
+            {
+                displayName: 'User sub-units',
+                id: 'USER_ORGUNIT_CHILDREN',
+            },
+            {
+                displayName: 'User sub-x2-units',
+                id: 'USER_ORGUNIT_GRANDCHILDREN',
+            },
+        ],
+        removeOrgUnitLastPathSegment: () => null,
+    }
+})
 
-// jest.mock('@dhis2/d2-ui-org-unit-dialog', () => {
-//     return {
-//         OrgUnitSelector,
-//         userOrgUnits,
-//         removeOrgUnitLastPathSegment,
-//     }
-// })
+jest.mock('../../../api/organisationUnits', () => {
+    return {
+        apiFetchOrganisationUnitGroups: () =>
+            Promise.resolve([
+                { displayName: 'CHC', id: 'CXw2yu5fodb', name: 'CHC' },
+                {
+                    displayName: 'Chiefdom',
+                    id: 'gzcv65VyaGq',
+                    name: 'Chiefdom',
+                },
+            ]),
+        apiFetchOrganisationUnitLevels: () =>
+            Promise.resolve([
+                {
+                    displayName: 'National',
+                    id: 'H1KlN4QIauv',
+                    level: 1,
+                    name: 'National',
+                },
+                {
+                    displayName: 'District',
+                    id: 'wjP19dkFeIk',
+                    level: 2,
+                    name: 'District',
+                },
+            ]),
+        apiFetchOrganisationUnits: () =>
+            Promise.resolve({
+                toArray: () => {
+                    return [
+                        {
+                            id: 'jen',
+                        },
+                    ]
+                },
+            }),
+    }
+})
 
-describe.skip('The OrgUnitDimension component ', () => {
+describe('The OrgUnitDimension component ', () => {
     let props
     let shallowDataDim
-
-    const rootModel = new Model(
-        new ModelDefinition(
-            {
-                singular: 'organisationUnit',
-                plural: 'organisationUnits',
-            },
-            {},
-            {},
-            {},
-            {}
-        )
-    )
 
     const orgUnitDimension = () => {
         if (!shallowDataDim) {
@@ -72,27 +109,4 @@ describe.skip('The OrgUnitDimension component ', () => {
         expect(component.find(DialogTitle).first().length).toEqual(1)
         expect(component.find(DialogContent).first().length).toEqual(1)
     })
-
-    it('renders circular progress conditionally', () => {
-        const component = orgUnitDimension()
-        const progress = component.find(CircularProgress)
-
-        expect(component.state().root).toBe(undefined)
-        expect(progress.type()).toEqual(CircularProgress)
-
-        component.setState({ root: rootModel })
-
-        expect(component.state().root).not.toBe(undefined)
-        expect(component.find(CircularProgress).exists()).toBe(false)
-    })
-
-    // it('renders <OrgUnitSelector /> conditionally', () => {
-    //     const component = orgUnitDimension()
-
-    //     expect(component.find(OrgUnitSelector).exists()).toBe(false)
-
-    //     component.setState({ root: rootModel })
-
-    //     expect(component.find(OrgUnitSelector).type()).toEqual(OrgUnitSelector)
-    // })
 })
