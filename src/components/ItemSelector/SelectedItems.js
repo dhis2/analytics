@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react'
 import PropTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'
-import { Button } from '@dhis2/ui-core'
+import Button from '@material-ui/core/Button/Button'
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd'
 import { sortBy } from 'lodash'
 
@@ -262,12 +262,9 @@ export class SelectedItems extends Component {
                     </Droppable>
                 </DragDropContext>
                 <div className="deselect-all-button">
-                    <Button
-                        kind="secondary"
-                        size="small"
-                        onClick={this.onDeselectAll}
-                        label={i18n.t('Deselect All')}
-                    />
+                    <Button onClick={this.onDeselectAll}>
+                        {i18n.t('Deselect All')}
+                    </Button>
                 </div>
                 <div className="deselect-highlighted-button">
                     <UnAssignButton

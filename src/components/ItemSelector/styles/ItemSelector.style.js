@@ -19,10 +19,10 @@ export default css`
 
     .unselected {
         margin-right: 55px;
-        width: 420px;
+        width: 419px;
     }
 
     .selected {
-        width: 278px;
+        width: 277px;
     }
 `
