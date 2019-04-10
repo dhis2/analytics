@@ -55,7 +55,12 @@ export class DynamicDimension extends Component {
 
         this.props.onSelect({
             dimensionType: this.props.dialogId,
-            value: itemsToAdd,
+            value: [
+                ...this.props.selectedItems.filter(
+                    item => !selectedIds.include(item.id)
+                ),
+                ...itemsToAdd,
+            ],
         })
     }
 
@@ -73,7 +78,7 @@ export class DynamicDimension extends Component {
 
     getUnselectedItems = () =>
         this.state.items.filter(
-            item => !this.props.selectedItems.includes(item.id)
+            item => !this.props.selectedItems.find(i => i.id === item.id)
         )
 
     setUiItems = items =>
