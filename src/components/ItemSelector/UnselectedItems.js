@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react'
 import PropTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'
-import { Button } from '@dhis2/ui-core'
+import Button from '@material-ui/core/Button/Button'
 import throttle from 'lodash/throttle'
 
 import Item from './widgets/UnselectedItem'
@@ -107,12 +107,9 @@ export class UnselectedItems extends Component {
                     <ul className="unselected-list">{listItems}</ul>
                 </div>
                 <div className="select-all-button">
-                    <Button
-                        kind="secondary"
-                        size="small"
-                        onClick={this.onSelectAllClick}
-                        label={i18n.t('Select All')}
-                    />
+                    <Button onClick={this.onSelectAllClick}>
+                        {i18n.t('Select all')}
+                    </Button>
                 </div>
                 <div className="select-highlighted-button">
                     <AssignButton
