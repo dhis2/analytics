@@ -18,7 +18,10 @@ export class PeriodDimension extends Component {
             return array
         }, [])
 
-        this.props.onSelect({ dimensionType: peId, value: itemsToAdd })
+        this.props.onSelect({
+            dimensionType: peId,
+            value: [...this.props.selectedPeriods, ...itemsToAdd],
+        })
     }
 
     deselectPeriods = periods => {
