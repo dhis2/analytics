@@ -2,7 +2,7 @@ module.exports = function(api) {
     let defaultPresets
 
     if (process.env.BABEL_ENV === 'modules') {
-        defaultPresets = []
+        defaultPresets = ['@babel/preset-env']
     } else {
         defaultPresets = [
             [
