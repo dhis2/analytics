@@ -1,6 +1,6 @@
 {
     "name": "@dhis2/d2-ui-analytics",
-    "version": "0.0.7",
+    "version": "0.0.8",
     "main": "./build/index.js",
     "sideEffects": false,
     "repository": "git@github.com:dhis2/d2-ui-analytics.git",
