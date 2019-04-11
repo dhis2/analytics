@@ -3,11 +3,11 @@ import PropTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'
 import Button from '@material-ui/core/Button/Button'
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd'
-import { sortBy } from 'lodash'
 
 import Item from './widgets/SelectedItem'
 import { ArrowButton as UnAssignButton } from './widgets/ArrowButton'
 import { toggler } from './modules/toggler'
+import { reorderList } from './modules/reorderList'
 import styles from './styles/SelectedItems.style'
 
 const Subtitle = () => (
@@ -84,51 +84,6 @@ export class SelectedItems extends Component {
         this.setState({ draggingId: start.draggableId })
     }
 
-    reorderList = (destination, source, draggableId) => {
-        const list = Array.from(this.props.items.map(item => item.id))
-
-        if (this.isMultiDrag(draggableId)) {
-            const indexedItemsToMove = sortBy(
-                this.state.highlighted.map(item => {
-                    return {
-                        item,
-                        idx: this.props.items
-                            .map(item => item.id)
-                            .indexOf(item),
-                    }
-                }),
-                'idx'
-            )
-
-            let destinationIndex = destination.index
-
-            if (
-                destinationIndex < this.props.items.length - 1 &&
-                destinationIndex > 1
-            ) {
-                indexedItemsToMove.forEach(indexed => {
-                    if (indexed.idx < destinationIndex) {
-                        --destinationIndex
-                    }
-                })
-            }
-
-            indexedItemsToMove.forEach(indexed => {
-                const idx = list.indexOf(indexed.item)
-                list.splice(idx, 1)
-            })
-
-            indexedItemsToMove.forEach((indexed, i) => {
-                list.splice(destinationIndex + i, 0, indexed.item)
-            })
-        } else {
-            list.splice(source.index, 1)
-            list.splice(destination.index, 0, draggableId)
-        }
-
-        return list
-    }
-
     onDragEnd = ({ destination, source, draggableId }) => {
         this.setState({ draggingId: null })
 
@@ -143,7 +98,14 @@ export class SelectedItems extends Component {
             return
         }
 
-        const newList = this.reorderList(destination, source, draggableId)
+        const newList = reorderList({
+            destinationIndex: destination.index,
+            sourceIndex: source.index,
+            draggableId,
+            isMultiDrag: this.isMultiDrag(draggableId),
+            items: this.props.items,
+            highlightedItemIds: this.state.highlighted,
+        })
 
         this.props.onReorder(newList)
     }
