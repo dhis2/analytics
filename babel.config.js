@@ -28,6 +28,7 @@ module.exports = function(api) {
             '@babel/plugin-proposal-object-rest-spread',
             '@babel/plugin-transform-react-constant-elements',
             '@babel/plugin-transform-shorthand-properties',
+            '@babel/plugin-transform-runtime',
         ].concat(styledJsxPlugin),
     }
 }
