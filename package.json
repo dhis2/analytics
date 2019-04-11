@@ -1,8 +1,7 @@
 {
     "name": "@dhis2/d2-ui-analytics",
     "version": "0.0.7",
-    "main": "./build/es/index.js",
-    "module": "./build/es/index.js",
+    "main": "./build/index.js",
     "sideEffects": false,
     "repository": "git@github.com:dhis2/d2-ui-analytics.git",
     "author": "Jennifer Jones Arnesen <jennifer@dhis2.org>",
@@ -13,8 +12,7 @@
     },
     "scripts": {
         "prebuild": "rm -rf ./build/*",
-        "build:modules": "BABEL_ENV=modules babel src --out-dir ./build/es --copy-files --verbose",
-        "build": "yarn build:modules",
+        "build": "BABEL_ENV=commonjs babel src --out-dir ./build --copy-files --verbose",
         "postbuild": "yarn build-storybook",
         "build-storybook": "build-storybook",
         "start-storybook": "start-storybook --port 5000",
