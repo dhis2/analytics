@@ -43,7 +43,8 @@ describe('UnselectedItems component', () => {
 
         it('triggers onSelect all when "select all" button clicked', () => {
             unselectedItems()
-                .find('Button')
+                .find('.select-all-button')
+                .childAt(0)
                 .simulate('click')
 
             expect(props.onSelect).toHaveBeenCalled()

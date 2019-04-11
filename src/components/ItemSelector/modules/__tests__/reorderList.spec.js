@@ -2,22 +2,22 @@ import { reorderList } from '../reorderList'
 
 const items = [
     {
-        id: '1 rarity',
+        id: '1',
     },
     {
-        id: '2 rainbow',
+        id: '2',
     },
     {
-        id: '3 fluttershy',
+        id: '3',
     },
     {
-        id: '4 pinkie',
+        id: '4',
     },
     {
-        id: '5 applejack',
+        id: '5',
     },
     {
-        id: '6 spike',
+        id: '6',
     },
 ]
 
@@ -46,14 +46,7 @@ describe('reorderList', () => {
             props.destinationIndex = 4
 
             const result = reorderList(props)
-            const expected = [
-                '2 rainbow',
-                '3 fluttershy',
-                '4 pinkie',
-                '5 applejack',
-                '1 rarity',
-                '6 spike',
-            ]
+            const expected = ['2', '3', '4', '5', '1', '6']
             expect(result).toEqual(expected)
         })
 
@@ -64,14 +57,7 @@ describe('reorderList', () => {
             props.destinationIndex = 2
 
             const result = reorderList(props)
-            const expected = [
-                '1 rarity',
-                '2 rainbow',
-                '6 spike',
-                '3 fluttershy',
-                '4 pinkie',
-                '5 applejack',
-            ]
+            const expected = ['1', '2', '6', '3', '4', '5']
             expect(result).toEqual(expected)
         })
     })
@@ -88,14 +74,7 @@ describe('reorderList', () => {
             props.destinationIndex = 4
 
             const result = reorderList(props)
-            const expected = [
-                '3 fluttershy',
-                '4 pinkie',
-                '1 rarity',
-                '2 rainbow',
-                '5 applejack',
-                '6 spike',
-            ]
+            const expected = ['3', '4', '1', '2', '5', '6']
             expect(result).toEqual(expected)
         })
 
@@ -106,14 +85,7 @@ describe('reorderList', () => {
             props.destinationIndex = 5
 
             const result = reorderList(props)
-            const expected = [
-                '3 fluttershy',
-                '4 pinkie',
-                '5 applejack',
-                '1 rarity',
-                '2 rainbow',
-                '6 spike',
-            ]
+            const expected = ['3', '4', '5', '1', '2', '6']
             expect(result).toEqual(expected)
         })
 
@@ -124,14 +96,7 @@ describe('reorderList', () => {
             props.destinationIndex = 6
 
             const result = reorderList(props)
-            const expected = [
-                '3 fluttershy',
-                '4 pinkie',
-                '5 applejack',
-                '6 spike',
-                '1 rarity',
-                '2 rainbow',
-            ]
+            const expected = ['3', '4', '5', '6', '1', '2']
             expect(result).toEqual(expected)
         })
 
@@ -142,14 +107,7 @@ describe('reorderList', () => {
             props.destinationIndex = 2
 
             const result = reorderList(props)
-            const expected = [
-                '1 rarity',
-                '2 rainbow',
-                '5 applejack',
-                '6 spike',
-                '3 fluttershy',
-                '4 pinkie',
-            ]
+            const expected = ['1', '2', '5', '6', '3', '4']
             expect(result).toEqual(expected)
         })
 
@@ -160,14 +118,7 @@ describe('reorderList', () => {
             props.destinationIndex = 4
 
             const result = reorderList(props)
-            const expected = [
-                '1 rarity',
-                '3 fluttershy',
-                '4 pinkie',
-                '2 rainbow',
-                '6 spike',
-                '5 applejack',
-            ]
+            const expected = ['1', '3', '4', '2', '6', '5']
             expect(result).toEqual(expected)
         })
     })
