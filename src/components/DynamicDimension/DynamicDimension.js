@@ -57,7 +57,7 @@ export class DynamicDimension extends Component {
             dimensionType: this.props.dialogId,
             value: [
                 ...this.props.selectedItems.filter(
-                    item => !selectedIds.include(item.id)
+                    item => !selectedIds.includes(item.id)
                 ),
                 ...itemsToAdd,
             ],
