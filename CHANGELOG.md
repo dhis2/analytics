@@ -1,3 +1,10 @@
+## [0.0.12](https://github.com/dhis2/d2-ui-analytics/compare/v0.0.11...v0.0.12) (2019-04-12)
+
+
+### Bug Fixes
+
+* fix dragging error in ItemSelector and add tests ([#8](https://github.com/dhis2/d2-ui-analytics/issues/8)) ([62a8c82](https://github.com/dhis2/d2-ui-analytics/commit/62a8c82))
+
 ## [0.0.11](https://github.com/dhis2/d2-ui-analytics/compare/v0.0.10...v0.0.11) (2019-04-11)
 
 
