@@ -19,15 +19,12 @@ export const reorderList = ({
             'idx'
         )
 
-        let newDestinationIndex = destinationIndex
+        const highlightedAboveDestination = indexedItemsToMove.filter(
+            item => item.idx < destinationIndex
+        )
 
-        if (newDestinationIndex < items.length && newDestinationIndex > 1) {
-            indexedItemsToMove.forEach(indexed => {
-                if (indexed.idx < newDestinationIndex) {
-                    --newDestinationIndex
-                }
-            })
-        }
+        const newDestinationIndex =
+            destinationIndex - highlightedAboveDestination.length
 
         indexedItemsToMove.forEach(indexed => {
             const idx = list.indexOf(indexed.item)
