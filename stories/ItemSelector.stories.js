@@ -47,7 +47,12 @@ const updateStore = (unselectedIds, selectedIds) => {
 
 const onSelect = newIds => {
     const selectedIds = [
-        ...new Set(newIds.concat(store.get('selected').items.map(i => i.id))),
+        ...new Set(
+            store
+                .get('selected')
+                .items.map(i => i.id)
+                .concat(newIds)
+        ),
     ]
 
     const unselectedIds = Object.keys(items).filter(
@@ -58,9 +63,13 @@ const onSelect = newIds => {
 }
 
 const onDeselect = newIds => {
-    const unselectedIds = [
+    const unorderedUnselectedIds = [
         ...new Set(newIds.concat(store.get('unselected').items.map(i => i.id))),
     ]
+
+    const unselectedIds = Object.keys(items).filter(id =>
+        unorderedUnselectedIds.includes(id)
+    )
 
     const selectedIds = Object.keys(items).filter(
         id => !unselectedIds.includes(id)
