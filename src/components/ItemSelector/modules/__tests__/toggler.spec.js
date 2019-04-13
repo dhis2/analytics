@@ -102,6 +102,12 @@ describe('using the toggler ', () => {
             ]
         })
 
+        it('should return the highlighted ids in the same order as original item list', () => {
+            const actual = toggler('id', false, true, 2, 0, ['ones'], items)
+
+            expect(actual.ids).toEqual(['ones', 'some', 'id'])
+        })
+
         it('should not update the lastClickedIndex', () => {
             const expectedResult = {
                 ids: items,
@@ -125,7 +131,7 @@ describe('using the toggler ', () => {
 
         it('should keep the highlighted ids and not add duplicate items', () => {
             const expectedResult = {
-                ids: ['some', 'ones', 'stuff', 'here'],
+                ids: ['ones', 'some', 'stuff', 'here'],
                 lastClickedIndex: lastClickedIndex,
             }
 
@@ -144,7 +150,7 @@ describe('using the toggler ', () => {
 
         it('should add items from lastClickedIndex to current index into the array', () => {
             const expectedResult = {
-                ids: ['some', 'ones', 'stuff', 'here'],
+                ids: ['ones', 'some', 'stuff', 'here'],
                 lastClickedIndex: lastClickedIndex,
             }
 
@@ -196,7 +202,7 @@ describe('using the toggler ', () => {
 
         it('should be able to add one item and update the lastClickedIndex', () => {
             const expectedResult = {
-                ids: highlightedIds.concat(id),
+                ids: ['ones', 'stuff', 'here'],
                 lastClickedIndex: index,
             }
 
