@@ -24,8 +24,10 @@ export const toggler = (
         newIndex = newArr.newIndex
     }
 
+    const orderedIds = items.filter(item => ids.includes(item))
+
     return {
-        ids,
+        ids: orderedIds,
         lastClickedIndex: newIndex,
     }
 }
