@@ -1,3 +1,10 @@
+## [0.0.13](https://github.com/dhis2/d2-ui-analytics/compare/v0.0.12...v0.0.13) (2019-04-15)
+
+
+### Bug Fixes
+
+* sort correctly when selecting multiple items ([#10](https://github.com/dhis2/d2-ui-analytics/issues/10)) ([cc7e25c](https://github.com/dhis2/d2-ui-analytics/commit/cc7e25c))
+
 ## [0.0.12](https://github.com/dhis2/d2-ui-analytics/compare/v0.0.11...v0.0.12) (2019-04-12)
 
 
