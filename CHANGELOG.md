@@ -1,3 +1,10 @@
+## [0.0.14](https://github.com/dhis2/d2-ui-analytics/compare/v0.0.13...v0.0.14) (2019-04-15)
+
+
+### Bug Fixes
+
+* **recommended-icon:** pointer cursor ([#11](https://github.com/dhis2/d2-ui-analytics/issues/11)) ([ad7a622](https://github.com/dhis2/d2-ui-analytics/commit/ad7a622))
+
 ## [0.0.13](https://github.com/dhis2/d2-ui-analytics/compare/v0.0.12...v0.0.13) (2019-04-15)
 
 
