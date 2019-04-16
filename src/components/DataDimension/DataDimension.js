@@ -4,7 +4,6 @@ import DialogTitle from '@material-ui/core/DialogTitle'
 import DialogContent from '@material-ui/core/DialogContent'
 import i18n from '@dhis2/d2-i18n'
 import debounce from 'lodash/debounce'
-import keyBy from 'lodash/keyBy'
 import isEqual from 'lodash/isEqual'
 
 import ItemSelector from '../ItemSelector/ItemSelector'
@@ -177,12 +176,19 @@ export class DataDimension extends Component {
     }
 
     selectDataDimensions = selectedIds => {
-        const itemsToAdd = keyBy(
-            this.state.items.filter(di => selectedIds.includes(di.id)),
-            'id'
+        const itemsToAdd = this.state.items.filter(di =>
+            selectedIds.includes(di.id)
         )
 
-        this.props.onSelect({ dimensionType: dxId, value: itemsToAdd })
+        this.props.onSelect({
+            dimensionType: dxId,
+            value: [
+                ...this.props.selectedDimensions.filter(
+                    item => !selectedIds.includes(item.id)
+                ),
+                ...itemsToAdd,
+            ],
+        })
     }
 
     deselectDataDimensions = ids => {
