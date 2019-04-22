@@ -7,13 +7,6 @@ deploy:
 - provider: script
   skip_cleanup: true
   script:
-  - npx --package @dhis2/deploy-build deploy-build
-  on:
-    tags: false
-    all_branches: true
-- provider: script
-  skip_cleanup: true
-  script:
   - npx @dhis2/cli-utils release --publish npm
   on:
     tags: false
