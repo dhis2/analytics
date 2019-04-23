@@ -1,3 +1,10 @@
+## [0.0.16](https://github.com/dhis2/d2-ui-analytics/compare/v0.0.15...v0.0.16) (2019-04-23)
+
+
+### Bug Fixes
+
+* determine the unselected items based on selected list ([#13](https://github.com/dhis2/d2-ui-analytics/issues/13)) ([9e14e12](https://github.com/dhis2/d2-ui-analytics/commit/9e14e12))
+
 ## [0.0.15](https://github.com/dhis2/d2-ui-analytics/compare/v0.0.14...v0.0.15) (2019-04-23)
 
 
