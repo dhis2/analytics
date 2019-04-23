@@ -1,3 +1,10 @@
+## [0.0.15](https://github.com/dhis2/d2-ui-analytics/compare/v0.0.14...v0.0.15) (2019-04-23)
+
+
+### Bug Fixes
+
+* set overflow to auto to only show scrollbar when needed([#15](https://github.com/dhis2/d2-ui-analytics/issues/15)) ([2d2f1c2](https://github.com/dhis2/d2-ui-analytics/commit/2d2f1c2))
+
 ## [0.0.14](https://github.com/dhis2/d2-ui-analytics/compare/v0.0.13...v0.0.14) (2019-04-15)
 
 
