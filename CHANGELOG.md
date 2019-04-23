@@ -1,3 +1,10 @@
+## [0.0.18](https://github.com/dhis2/d2-ui-analytics/compare/v0.0.17...v0.0.18) (2019-04-23)
+
+
+### Bug Fixes
+
+* adjustments to heights and positions in ItemSelector ([#17](https://github.com/dhis2/d2-ui-analytics/issues/17)) ([1edfdac](https://github.com/dhis2/d2-ui-analytics/commit/1edfdac))
+
 ## [0.0.17](https://github.com/dhis2/d2-ui-analytics/compare/v0.0.16...v0.0.17) (2019-04-23)
 
 
