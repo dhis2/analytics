@@ -26,7 +26,7 @@ export default css`
     }
 
     .select-highlighted-button {
-        left: 429px;
+        left: 426px;
         position: absolute;
         top: 230px;
     }

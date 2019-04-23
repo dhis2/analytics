@@ -13,16 +13,16 @@ export default css`
         border: 1px solid ${colors.greyLight};
         display: flex;
         flex-direction: column;
-        height: 534px;
+        height: 510px;
         position: relative;
     }
 
     .unselected {
         margin-right: 55px;
-        width: 419px;
+        width: 418px;
     }
 
     .selected {
-        width: 277px;
+        width: 276px;
     }
 `

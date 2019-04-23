@@ -4,7 +4,6 @@ import css from 'styled-jsx/css'
 export default css`
     .selected-list {
         flex: 1;
-        height: 455px;
         list-style: none;
         margin: 0px;
         overflow-y: auto;
