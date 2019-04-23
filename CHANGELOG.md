@@ -1,3 +1,10 @@
+## [0.0.17](https://github.com/dhis2/d2-ui-analytics/compare/v0.0.16...v0.0.17) (2019-04-23)
+
+
+### Bug Fixes
+
+* **api:** fetch also dataDimensionType for dimensions ([#16](https://github.com/dhis2/d2-ui-analytics/issues/16)) ([b3ca5bc](https://github.com/dhis2/d2-ui-analytics/commit/b3ca5bc))
+
 ## [0.0.16](https://github.com/dhis2/d2-ui-analytics/compare/v0.0.15...v0.0.16) (2019-04-23)
 
 
