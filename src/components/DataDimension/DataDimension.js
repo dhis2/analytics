@@ -105,7 +105,13 @@ export class DataDimension extends Component {
                 currentFilter.groupDetail || defaultGroupDetail(dataType)
 
             this.setState(
-                { filter, dataType, groupId, groupDetail, filterText: '' },
+                {
+                    filter,
+                    dataType,
+                    groupId,
+                    groupDetail,
+                    filterText: '',
+                },
                 this.updateGroups
             )
         }
@@ -204,6 +210,11 @@ export class DataDimension extends Component {
             items,
         })
 
+    getUnselectedItems = () =>
+        this.state.items.filter(
+            item => !this.props.selectedDimensions.find(i => i.id === item.id)
+        )
+
     render = () => {
         const groups = this.state.groups[this.state.dataType] || []
 
@@ -232,7 +243,7 @@ export class DataDimension extends Component {
         }
 
         const unselected = {
-            items: this.state.items,
+            items: this.getUnselectedItems(),
             onSelect: this.selectDataDimensions,
             filterText: this.state.filterText,
             requestMoreItems: this.requestMoreItems,
