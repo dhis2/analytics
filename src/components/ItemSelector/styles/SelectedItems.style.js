@@ -7,7 +7,7 @@ export default css`
         height: 455px;
         list-style: none;
         margin: 0px;
-        overflow-y: scroll;
+        overflow-y: auto;
         padding-left: 0px;
         user-select: none;
     }
