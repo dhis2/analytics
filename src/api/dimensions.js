@@ -39,7 +39,7 @@ const requestWithPaging = (
 
 // Fetch functions
 export const apiFetchDimensions = (d2, nameProp) => {
-    const fields = `fields=id,${nameProp}~rename(name),dimensionType`
+    const fields = `fields=id,${nameProp}~rename(name),dimensionType,dataDimensionType`
     const order = `order=${nameProp}:asc`
 
     const params = `${fields}&${order}`
