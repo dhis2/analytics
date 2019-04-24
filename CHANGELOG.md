@@ -1,3 +1,10 @@
+## [0.0.19](https://github.com/dhis2/d2-ui-analytics/compare/v0.0.18...v0.0.19) (2019-04-24)
+
+
+### Bug Fixes
+
+* period-selector multidrag and scrollbar fixes ([#18](https://github.com/dhis2/d2-ui-analytics/issues/18)) ([be18ede](https://github.com/dhis2/d2-ui-analytics/commit/be18ede))
+
 ## [0.0.18](https://github.com/dhis2/d2-ui-analytics/compare/v0.0.17...v0.0.18) (2019-04-23)
 
 
