@@ -158,13 +158,13 @@ class OrgUnitDimension extends Component {
 
         if (selected.some(ou => ou.path === orgUnit.path)) {
             this.props.onDeselect({
-                dimensionType: ouId,
-                value: [orgUnit.id],
+                dimensionId: ouId,
+                itemIdsToRemove: [orgUnit.id],
             })
         } else {
             this.props.onSelect({
-                dimensionType: ouId,
-                value: [
+                dimensionId: ouId,
+                items: [
                     ...selected,
                     {
                         ...orgUnit,
@@ -184,8 +184,8 @@ class OrgUnitDimension extends Component {
             }
 
             this.props.onSelect({
-                dimensionType: ouId,
-                value: [
+                dimensionId: ouId,
+                items: [
                     ...this.props.ouItems.filter(ou =>
                         this.userOrgUnitIds.includes(ou.id)
                     ),
@@ -205,8 +205,8 @@ class OrgUnitDimension extends Component {
             }
 
             this.props.onDeselect({
-                dimensionType: ouId,
-                value: [event.target.name],
+                dimensionId: ouId,
+                items: [event.target.name],
             })
         }
     }
@@ -215,8 +215,8 @@ class OrgUnitDimension extends Component {
         const selected = this.props.ouItems
 
         this.props.onSelect({
-            dimensionType: ouId,
-            value: [
+            dimensionId: ouId,
+            items: [
                 ...selected,
                 ...orgUnits.reduce((obj, ou) => {
                     // avoid duplicates when clicking "Select children" multiple times

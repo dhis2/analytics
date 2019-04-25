@@ -181,14 +181,14 @@ export class DataDimension extends Component {
         )
     }
 
-    selectDataDimensions = selectedIds => {
+    selectItems = selectedIds => {
         const itemsToAdd = this.state.items.filter(di =>
             selectedIds.includes(di.id)
         )
 
         this.props.onSelect({
-            dimensionType: dxId,
-            value: [
+            dimensionId: dxId,
+            items: [
                 ...this.props.selectedDimensions.filter(
                     item => !selectedIds.includes(item.id)
                 ),
@@ -197,17 +197,17 @@ export class DataDimension extends Component {
         })
     }
 
-    deselectDataDimensions = ids => {
+    deselectItems = itemIdsToRemove => {
         this.props.onDeselect({
-            dimensionType: dxId,
-            value: ids,
+            dimensionId: dxId,
+            itemIdsToRemove,
         })
     }
 
-    setUiItems = items =>
+    reorderItems = itemIds =>
         this.props.onReorder({
-            dimensionType: dxId,
-            items,
+            dimensionId: dxId,
+            itemIds,
         })
 
     getUnselectedItems = () =>
@@ -244,7 +244,7 @@ export class DataDimension extends Component {
 
         const unselected = {
             items: this.getUnselectedItems(),
-            onSelect: this.selectDataDimensions,
+            onSelect: this.selectItems,
             filterText: this.state.filterText,
             requestMoreItems: this.requestMoreItems,
         }
@@ -252,8 +252,8 @@ export class DataDimension extends Component {
         const selected = {
             items: this.props.selectedDimensions,
             dialogId: dxId,
-            onDeselect: this.deselectDataDimensions,
-            onReorder: this.setUiItems,
+            onDeselect: this.deselectItems,
+            onReorder: this.reorderItems,
         }
 
         return (
