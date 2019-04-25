@@ -1,3 +1,20 @@
+# [1.0.0](https://github.com/dhis2/d2-ui-analytics/compare/v0.0.20...v1.0.0) (2019-04-25)
+
+
+### Bug Fixes
+
+* ItemSelector - name functions and properties consistently ([#21](https://github.com/dhis2/d2-ui-analytics/issues/21)) ([bb946cf](https://github.com/dhis2/d2-ui-analytics/commit/bb946cf))
+
+
+### BREAKING CHANGES
+
+* property names of returned objects have changed to better reflect their content.
+
+Changes include:
+
+name functions consitently
+name returned properties according to their content
+
 ## [0.0.20](https://github.com/dhis2/d2-ui-analytics/compare/v0.0.19...v0.0.20) (2019-04-25)
 
 
