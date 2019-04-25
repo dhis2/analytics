@@ -1,3 +1,10 @@
+## [0.0.20](https://github.com/dhis2/d2-ui-analytics/compare/v0.0.19...v0.0.20) (2019-04-25)
+
+
+### Bug Fixes
+
+* adjust item selector arrow button styles when being acted on ([#19](https://github.com/dhis2/d2-ui-analytics/issues/19)) ([c6ba238](https://github.com/dhis2/d2-ui-analytics/commit/c6ba238))
+
 ## [0.0.19](https://github.com/dhis2/d2-ui-analytics/compare/v0.0.18...v0.0.19) (2019-04-24)
 
 
