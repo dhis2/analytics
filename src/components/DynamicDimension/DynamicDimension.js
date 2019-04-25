@@ -43,7 +43,7 @@ export class DynamicDimension extends Component {
         })
     }
 
-    selectItemsByDimensions = selectedIds => {
+    selectItems = selectedIds => {
         const unselectedIds = this.state.unselectedIds.filter(
             id => !selectedIds.includes(id)
         )
@@ -54,8 +54,8 @@ export class DynamicDimension extends Component {
         )
 
         this.props.onSelect({
-            dimensionType: this.props.dialogId,
-            value: [
+            dimensionId: this.props.dialogId,
+            items: [
                 ...this.props.selectedItems.filter(
                     item => !selectedIds.includes(item.id)
                 ),
@@ -64,28 +64,28 @@ export class DynamicDimension extends Component {
         })
     }
 
-    deselectItemsByDimensions = ids => {
+    deselectItems = ids => {
         const unselectedIds = [
             ...new Set([...this.state.unselectedIds, ...ids]),
         ]
         this.setState({ unselectedIds })
 
         this.props.onDeselect({
-            dimensionType: this.props.dialogId,
-            value: ids,
+            dimensionId: this.props.dialogId,
+            itemIdsToRemove: ids,
         })
     }
+
+    reorderItems = itemIds =>
+        this.props.onReorder({
+            dimensionId: this.props.dialogId,
+            itemIds,
+        })
 
     getUnselectedItems = () =>
         this.state.items.filter(
             item => !this.props.selectedItems.find(i => i.id === item.id)
         )
-
-    setUiItems = items =>
-        this.props.onReorder({
-            dimensionType: this.props.dialogId,
-            value: items,
-        })
 
     render = () => {
         const filterZone = () => {
@@ -100,15 +100,15 @@ export class DynamicDimension extends Component {
 
         const unselected = {
             items: this.getUnselectedItems(),
-            onSelect: this.selectItemsByDimensions,
+            onSelect: this.selectItems,
             filterText: this.state.filterText,
         }
 
         const selected = {
             items: this.props.selectedItems,
             dialogId: this.props.dialogId,
-            onDeselect: this.deselectItemsByDimensions,
-            onReorder: this.setUiItems,
+            onDeselect: this.deselectItems,
+            onReorder: this.reorderItems,
         }
 
         return (

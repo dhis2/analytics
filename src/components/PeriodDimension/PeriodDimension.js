@@ -12,47 +12,48 @@ const peId = FIXED_DIMENSIONS.pe.id
 const PERIOD = 'PERIOD'
 
 export class PeriodDimension extends Component {
-    selectPeriods = periods => {
+    selectItems = periods => {
         const itemsToAdd = periods.reduce((array, item) => {
             array.push({ ...item, dimensionItemType: PERIOD })
             return array
         }, [])
 
         this.props.onSelect({
-            dimensionType: peId,
-            value: [...this.props.selectedPeriods, ...itemsToAdd],
+            dimensionId: peId,
+            items: [...this.props.selectedPeriods, ...itemsToAdd],
         })
     }
 
-    deselectPeriods = periods => {
-        const idsToRemove = periods.map(period => period.id)
+    deselectItems = periods => {
+        const itemIdsToRemove = periods.map(period => period.id)
 
         this.props.onDeselect({
-            dimensionType: peId,
-            value: idsToRemove,
+            dimensionId: peId,
+            itemIdsToRemove,
         })
     }
 
-    reorderPeriods = periods => {
-        const ids = periods.map(period => period.id)
+    reorderItems = periods => {
+        const itemIds = periods.map(period => period.id)
 
         this.props.onReorder({
-            dimensionType: peId,
-            value: ids,
+            dimensionId: peId,
+            itemIds,
         })
     }
 
     render = () => {
         const { selectedPeriods } = this.props
+        console.log('PeriodDimension render with', selectedPeriods)
 
         return (
             <Fragment>
                 <DialogTitle>{i18n.t('Period')}</DialogTitle>
                 <DialogContent>
                     <PeriodSelector
-                        onSelect={this.selectPeriods}
-                        onDeselect={this.deselectPeriods}
-                        onReorder={this.reorderPeriods}
+                        onSelect={this.selectItems}
+                        onDeselect={this.deselectItems}
+                        onReorder={this.reorderItems}
                         selectedItems={selectedPeriods}
                     />
                 </DialogContent>
