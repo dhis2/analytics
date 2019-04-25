@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/dhis2/d2-ui-analytics/compare/v1.0.0...v1.0.1) (2019-04-25)
+
+
+### Bug Fixes
+
+* upgrade PeriodDimension to period-selector 5.3.10 ([#22](https://github.com/dhis2/d2-ui-analytics/issues/22)) ([20e1a56](https://github.com/dhis2/d2-ui-analytics/commit/20e1a56))
+
 # [1.0.0](https://github.com/dhis2/d2-ui-analytics/compare/v0.0.20...v1.0.0) (2019-04-25)
 
 
