@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/dhis2/d2-ui-analytics/compare/v1.0.1...v1.0.2) (2019-04-26)
+
+
+### Bug Fixes
+
+* org unit dimension property names and event handling ([#23](https://github.com/dhis2/d2-ui-analytics/issues/23)) ([c1a7341](https://github.com/dhis2/d2-ui-analytics/commit/c1a7341))
+
 ## [1.0.1](https://github.com/dhis2/d2-ui-analytics/compare/v1.0.0...v1.0.1) (2019-04-25)
 
 
