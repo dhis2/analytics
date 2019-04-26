@@ -83,14 +83,8 @@ describe('The OrgUnitDimension component ', () => {
         props = {
             d2: {},
             ouItems: [],
-            parentGraphMap: {},
-            metadata: {},
-            acAddUiItems: jest.fn(),
-            acRemoveUiItems: jest.fn(),
-            acAddParentGraphMap: jest.fn(),
-            acAddMetadata: jest.fn(),
-            acSetUiItems: jest.fn(),
-            acSetCurrentFromUi: jest.fn(),
+            onSelect: jest.fn(),
+            onDeselect: jest.fn(),
             current: { id: null },
             displayNameProperty: 'displayName',
         }
