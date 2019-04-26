@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react'
 import PropTypes from 'prop-types'
+import uniqBy from 'lodash/uniqBy'
 import DialogTitle from '@material-ui/core/DialogTitle'
 import DialogContent from '@material-ui/core/DialogContent'
 import { PeriodSelector } from '@dhis2/d2-ui-period-selector-dialog'
@@ -13,14 +14,20 @@ const PERIOD = 'PERIOD'
 
 export class PeriodDimension extends Component {
     selectItems = periods => {
-        const itemsToAdd = periods.reduce((array, item) => {
-            array.push({ ...item, dimensionItemType: PERIOD })
-            return array
-        }, [])
+        const newItems = periods.map(p => ({
+            id: p.id,
+            name: p.name,
+            dimensionItemType: PERIOD,
+        }))
+        const alreadySelected = this.props.selectedPeriods.map(p => ({
+            id: p.id,
+            name: p.name,
+            dimensionItemType: PERIOD,
+        }))
 
         this.props.onSelect({
             dimensionId: peId,
-            items: [...this.props.selectedPeriods, ...itemsToAdd],
+            items: uniqBy(alreadySelected.concat(newItems), 'id'),
         })
     }
 
@@ -44,7 +51,6 @@ export class PeriodDimension extends Component {
 
     render = () => {
         const { selectedPeriods } = this.props
-        console.log('PeriodDimension render with', selectedPeriods)
 
         return (
             <Fragment>

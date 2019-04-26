@@ -5,11 +5,7 @@ import DialogContent from '@material-ui/core/DialogContent'
 import DialogTitle from '@material-ui/core/DialogTitle'
 
 import i18n from '@dhis2/d2-i18n'
-import {
-    OrgUnitSelector,
-    userOrgUnits,
-    removeOrgUnitLastPathSegment,
-} from '@dhis2/d2-ui-org-unit-dialog'
+import { OrgUnitSelector, userOrgUnits } from '@dhis2/d2-ui-org-unit-dialog'
 
 import {
     apiFetchOrganisationUnitGroups,
@@ -22,7 +18,6 @@ import {
     GROUP_ID_PREFIX,
     isLevelId,
     isGroupId,
-    getOrgUnitsFromIds,
     getLevelsFromIds,
     getGroupsFromIds,
     sortOrgUnitLevels,
@@ -76,10 +71,6 @@ class OrgUnitDimension extends Component {
         this.setState({ showOrgUnitsTree: false })
     }
 
-    setOuUiItems = ids => {
-        this.props.onReorder({ dimensionType: ouId, value: ids })
-    }
-
     getUserOrgUnitsFromIds = ids => {
         return userOrgUnits.filter(ou => ids.includes(ou.id))
     }
@@ -88,8 +79,8 @@ class OrgUnitDimension extends Component {
         const levelIds = event.target.value.filter(id => !!id)
 
         this.props.onSelect({
-            dimensionType: ouId,
-            value: [
+            dimensionId: ouId,
+            items: [
                 ...this.props.ouItems.filter(ou => !isLevelId(ou.id)),
                 ...levelIds.map(id => {
                     const levelOu = this.state.ouLevels.find(ou => ou.id === id)
@@ -107,8 +98,8 @@ class OrgUnitDimension extends Component {
         const groupIds = event.target.value.filter(id => !!id)
 
         this.props.onSelect({
-            dimensionType: ouId,
-            value: [
+            dimensionId: ouId,
+            items: [
                 ...this.props.ouItems.filter(ou => !isGroupId(ou.id)),
                 ...groupIds.map(id => {
                     const groupOu = this.state.ouGroups.find(ou => ou.id === id)
@@ -124,8 +115,8 @@ class OrgUnitDimension extends Component {
 
     onDeselectAllClick = () =>
         this.props.onDeselect({
-            dimensionType: ouId,
-            value: this.props.ouItems.map(ou => ou.id),
+            dimensionId: ouId,
+            itemIdsToRemove: this.props.ouItems.map(ou => ou.id),
         })
 
     loadOrgUnitTree = (d2, displayNameProperty) => {
@@ -197,17 +188,16 @@ class OrgUnitDimension extends Component {
                 this.props.ouItems.length === 1 &&
                 this.state.selected.length > 0
             ) {
-                this.setOuUiItems(this.state.selected)
-
-                this.setState({
-                    selected: [],
+                this.props.onSelect({
+                    dimensionId: ouId,
+                    items: this.state.selected,
+                })
+            } else {
+                this.props.onDeselect({
+                    dimensionId: ouId,
+                    itemIdsToRemove: [event.target.name],
                 })
             }
-
-            this.props.onDeselect({
-                dimensionId: ouId,
-                items: [event.target.name],
-            })
         }
     }
 
