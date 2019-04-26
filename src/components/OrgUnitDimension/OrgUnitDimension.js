@@ -278,7 +278,6 @@ OrgUnitDimension.propTypes = {
     displayNameProperty: PropTypes.string,
     onSelect: PropTypes.func,
     onDeselect: PropTypes.func,
-    onReorder: PropTypes.func,
     ouItems: PropTypes.array,
     current: PropTypes.object,
 }
