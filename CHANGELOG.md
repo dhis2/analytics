@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/dhis2/d2-ui-analytics/compare/v1.0.2...v1.0.3) (2019-05-07)
+
+
+### Bug Fixes
+
+* **style:** remove outline on dimension panel list ([#24](https://github.com/dhis2/d2-ui-analytics/issues/24)) ([383a447](https://github.com/dhis2/d2-ui-analytics/commit/383a447))
+
 ## [1.0.2](https://github.com/dhis2/d2-ui-analytics/compare/v1.0.1...v1.0.2) (2019-04-26)
 
 
