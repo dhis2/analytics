@@ -6,7 +6,7 @@ export const styles = {
     listWrapper: {
         position: 'relative',
         flex: '1 1 0%',
-        minHeight: '20vh',
+        minHeight: '30vh',
     },
     list: {
         position: 'absolute',
