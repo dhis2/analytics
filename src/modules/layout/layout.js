@@ -9,22 +9,16 @@ export const LAYOUT = {
 
 export const LAYOUT_PROP_COLUMNS = {
     name: 'columns',
-    defaultValue: [],
-    required: true,
     validate: AXIS.validate,
 }
 
 export const LAYOUT_PROP_ROWS = {
     name: 'rows',
-    defaultValue: [],
-    required: false,
     validate: AXIS.validate,
 }
 
 export const LAYOUT_PROP_FILTERS = {
     name: 'filters',
-    defaultValue: [],
-    required: false,
     validate: AXIS.validate,
 }
 

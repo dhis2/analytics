@@ -1,9 +1,7 @@
-import isObject from 'lodash-es/isObject'
-
 // Axis
 
 export const AXIS = {
-    validate: axis => isObject(axis),
+    validate: axis => Array.isArray(axis),
 }
 
 // Axis names
