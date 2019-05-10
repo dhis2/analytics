@@ -1,6 +1,6 @@
-import { ITEM_PROPNAME_ID, ITEM_DEFAULT_PROP_ID } from './item'
+import { ITEM_PROP_ID } from './item'
 
 export const itemGetId = item =>
-    itemDefaultPropValidationId(item[ITEM_PROPNAME_ID])
-        ? item[ITEM_PROPNAME_ID]
-        : ITEM_DEFAULT_PROP_ID
+    ITEM_PROP_ID.validate(item[ITEM_PROP_ID.name])
+        ? ITEM_PROP_ID
+        : ITEM_PROP_ID.defaultValue

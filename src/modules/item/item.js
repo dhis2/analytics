@@ -1,10 +1,10 @@
 import isString from 'lodash-es/isString'
 
-// Dimension prop names
-export const ITEM_PROPNAME_ID = 'id'
+// Props
 
-// Default props
-export const ITEM_DEFAULT_PROP_ID = ''
-
-// Props validation
-export const itemDefaultPropValidationId = prop => isString(prop)
+export const ITEM_PROP_ID = {
+    name: 'id',
+    defaultValue: '',
+    required: true,
+    validate: prop => isString(prop),
+}

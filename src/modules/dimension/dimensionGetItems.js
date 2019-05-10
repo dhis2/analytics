@@ -1,4 +1,6 @@
+import { DIMENSION_PROP_ID } from './dimension'
+
 export const dimensionGetItems = dimension =>
-    dimensionDefaultPropValidationItems(dimension[DIMENSION_PROPNAME_ITEMS])
-        ? dimension[DIMENSION_PROPNAME_ITEMS]
-        : DEFAULT_PROPS_ITEMS
+    DIMENSION_PROP_ID.validate(dimension[DIMENSION_PROP_ID.name])
+        ? dimension[DIMENSION_PROP_ID.name]
+        : DIMENSION_PROP_ID.defaultValue
