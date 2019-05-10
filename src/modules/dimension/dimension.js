@@ -1,4 +1,10 @@
-import isString from 'lodash-es/isString'
+import isObject from 'lodash-es/isObject'
+
+// Dimension
+
+export const DIMENSION = {
+    validate: dimension => isObject(dimension),
+}
 
 // Props
 
@@ -15,6 +21,8 @@ export const DIMENSION_PROP_ITEMS = {
     required: false,
     validate: prop => Array.isArray(prop),
 }
+
+export const DIMENSION_PROPS = [DIMENSION_PROP_ID, DIMENSION_PROP_ITEMS]
 
 // Dimension ids
 

@@ -1,3 +1,13 @@
+import isObject from 'lodash-es/isObject'
+
+// Axis
+
+export const AXIS = {
+    validate: axis => isObject(axis),
+}
+
+// Axis names
+
 export const AXIS_NAME_COLUMNS = 'columns'
 export const AXIS_NAME_ROWS = 'rows'
 export const AXIS_NAME_FILTERS = 'filters'
