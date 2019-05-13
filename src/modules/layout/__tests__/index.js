@@ -9,31 +9,45 @@ import {
     DIMENSION_ID_ORGUNIT,
 } from '../../fixedDimensions'
 
-const DIMENSION_ID_DYNAMIC = 'dynamicUid'
-
 // Items
 
+export const TEST_ITEM_ID_1 = 'dxItem1Id'
+export const TEST_ITEM_ID_2 = 'dxItem2Id'
+export const TEST_ITEM_ID_3 = 'peItem1Id'
+export const TEST_ITEM_ID_4 = 'ouItem1Id'
+export const TEST_ITEM_ID_5 = 'dynamicItem1Id'
+
 export const TEST_ITEM_1 = {
-    [ITEM_PROP_ID.name]: 'dxItem1Id',
+    [ITEM_PROP_ID.name]: TEST_ITEM_ID_1,
 }
 
 export const TEST_ITEM_2 = {
-    [ITEM_PROP_ID.name]: 'dxItem2Id',
+    [ITEM_PROP_ID.name]: TEST_ITEM_ID_2,
 }
 
 export const TEST_ITEM_3 = {
-    [ITEM_PROP_ID.name]: 'peItem1Id',
+    [ITEM_PROP_ID.name]: TEST_ITEM_ID_3,
 }
 
 export const TEST_ITEM_4 = {
-    [ITEM_PROP_ID.name]: 'ouItem1Id',
+    [ITEM_PROP_ID.name]: TEST_ITEM_ID_4,
 }
 
 export const TEST_ITEM_5 = {
-    [ITEM_PROP_ID.name]: 'dynamicItem1Id',
+    [ITEM_PROP_ID.name]: TEST_ITEM_ID_5,
+}
+
+export const TEST_ITEM_INVALID_1 = {
+    [ITEM_PROP_ID.name]: 10,
+}
+
+export const TEST_ITEM_INVALID_2 = {
+    chickenpox: TEST_ITEM_ID_1,
 }
 
 // Dimensions
+
+export const DIMENSION_ID_DYNAMIC = 'dynamicUid'
 
 export const TEST_DIMENSION_1 = {
     [DIMENSION_PROP_ID.name]: DIMENSION_ID_DATA,
