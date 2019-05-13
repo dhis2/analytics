@@ -1,5 +1,5 @@
-import isObject from 'lodash-es/isObject'
-import isString from 'lodash-es/isString'
+import { isObject } from 'lodash'
+import { isString } from 'lodash'
 
 // Item
 
@@ -17,17 +17,3 @@ export const ITEM_PROP_ID = {
 }
 
 export const ITEM_PROPS = [ITEM_PROP_ID]
-
-// Test resources
-
-export const TEST_ITEM_1 = {
-    [ITEM_PROP_ID.name]: 'item1Id',
-}
-
-export const TEST_ITEM_2 = {
-    [ITEM_PROP_ID.name]: 'item2Id',
-}
-
-export const TEST_ITEM_3 = {
-    [ITEM_PROP_ID.name]: 'item3Id',
-}

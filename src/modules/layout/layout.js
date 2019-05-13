@@ -1,4 +1,5 @@
-import isObject from 'lodash-es/isObject'
+import { isObject } from 'lodash'
+
 import { AXIS } from '../axis/axis'
 
 export const LAYOUT = {

@@ -1,4 +1,4 @@
-import { DIMENSION } from './dimension'
+import { DIMENSION, DIMENSION_PROPS } from './dimension'
 
 export const dimensionIsValid = dimension => {
     if (!DIMENSION.validate(dimension)) {
@@ -7,5 +7,5 @@ export const dimensionIsValid = dimension => {
 
     const requiredProps = DIMENSION_PROPS.filter(prop => prop.required)
 
-    return requiredProps.every(prop => prop.validate(item[prop.name]))
+    return requiredProps.every(prop => prop.validate(dimension[prop.name]))
 }
