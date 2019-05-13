@@ -23,15 +23,3 @@ export const DIMENSION_PROP_ITEMS = {
 }
 
 export const DIMENSION_PROPS = [DIMENSION_PROP_ID, DIMENSION_PROP_ITEMS]
-
-// Dimension ids
-
-export const DIMENSION_ID_DATA = 'dx'
-export const DIMENSION_ID_PERIOD = 'pe'
-export const DIMENSION_ID_ORGUNIT = 'ou'
-
-export const FIXED_DIMENSION_IDS = [
-    DIMENSION_ID_DATA,
-    DIMENSION_ID_PERIOD,
-    DIMENSION_ID_ORGUNIT,
-]

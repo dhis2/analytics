@@ -1,4 +1,4 @@
-import { DIMENSION_ID_DATA } from '../dimension/dimension'
+import { DIMENSION_ID_DATA } from '../fixedDimensions'
 import { axisHasDimension } from './axisHasDimension'
 
 export const axisHasDataDimension = axis =>

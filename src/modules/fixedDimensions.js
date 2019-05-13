@@ -3,21 +3,25 @@ import DataIcon from '../assets/DataIcon'
 import PeriodIcon from '../assets/PeriodIcon'
 import OrgUnitIcon from '../assets/OrgUnitIcon'
 
+export const DIMENSION_ID_DATA = 'dx'
+export const DIMENSION_ID_PERIOD = 'pe'
+export const DIMENSION_ID_ORGUNIT = 'ou'
+
 export const FIXED_DIMENSIONS = {
-    dx: {
-        id: 'dx',
+    [DIMENSION_ID_DATA]: {
+        id: DIMENSION_ID_DATA,
         name: i18n.t('Data'),
         iconName: 'DataIcon',
         icon: DataIcon,
     },
-    pe: {
-        id: 'pe',
+    [DIMENSION_ID_PERIOD]: {
+        id: DIMENSION_ID_PERIOD,
         name: i18n.t('Period'),
         iconName: 'PeriodIcon',
         icon: PeriodIcon,
     },
-    ou: {
-        id: 'ou',
+    [DIMENSION_ID_ORGUNIT]: {
+        id: DIMENSION_ID_ORGUNIT,
         name: i18n.t('Organisation Unit'),
         iconName: 'OrgUnitIcon',
         icon: OrgUnitIcon,
