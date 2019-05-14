@@ -88,6 +88,8 @@ export const TEST_AXIS_3 = [TEST_DIMENSION_3, TEST_DIMENSION_4]
 
 export const TEST_AXIS_EMPTY_1 = []
 
+export const TEST_AXES_IN_LAYOUT = [TEST_AXIS_1, TEST_AXIS_2, TEST_AXIS_3]
+
 // Layout
 
 export const TEST_LAYOUT = {

@@ -1,8 +1,4 @@
-import {
-    AXIS_NAME_COLUMNS,
-    AXIS_NAME_ROWS,
-    AXIS_NAME_FILTERS,
-} from '../axis/axis'
+import { AXIS_NAME_COLUMNS, AXIS_NAME_ROWS, AXIS_NAME_FILTERS } from './axis'
 
 export const layoutGetAllAxes = layout => [
     layout[AXIS_NAME_COLUMNS],
