@@ -1,6 +1,7 @@
 // Axis
 
 export const AXIS = {
+    defaultValue: [],
     validate: axis => Array.isArray(axis),
 }
 
