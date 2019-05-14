@@ -1,13 +1,7 @@
 import { layoutGetDimensionIdItemIdsObject } from '../layoutGetDimensionIdItemIdsObject'
-import {
-    TEST_LAYOUT,
-    TEST_DIMENSION_1,
-    TEST_DIMENSION_2,
-    TEST_DIMENSION_3,
-    TEST_DIMENSION_4,
-} from '../testResources'
 import { DIMENSION_PROP_ID, DIMENSION_PROP_ITEMS } from '../dimension'
 import { ITEM_PROP_ID } from '../item'
+import { TEST_LAYOUT, TEST_DIMENSIONS_IN_LAYOUT } from '../testResources'
 
 const getDimensionId = dim => dim[DIMENSION_PROP_ID.name]
 const getItemIds = dim =>
@@ -15,12 +9,12 @@ const getItemIds = dim =>
 
 describe('layoutGetDimensionIdItemIdsObject', () => {
     it('should return a dimensionId:itemdIds object based on the layout', () => {
-        const expectedState = {
-            [getDimensionId(TEST_DIMENSION_1)]: getItemIds(TEST_DIMENSION_1),
-            [getDimensionId(TEST_DIMENSION_2)]: getItemIds(TEST_DIMENSION_2),
-            [getDimensionId(TEST_DIMENSION_3)]: getItemIds(TEST_DIMENSION_3),
-            [getDimensionId(TEST_DIMENSION_4)]: getItemIds(TEST_DIMENSION_4),
-        }
+        const expectedState = {}
+
+        TEST_DIMENSIONS_IN_LAYOUT.forEach(dimension => {
+            expectedState[getDimensionId(dimension)] = getItemIds(dimension)
+        })
+
         expect(layoutGetDimensionIdItemIdsObject(TEST_LAYOUT)).toEqual(
             expectedState
         )
