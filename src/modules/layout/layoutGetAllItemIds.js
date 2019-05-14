@@ -1,5 +1,5 @@
 import { layoutGetAllItems } from './layoutGetAllItems'
-import { itemGetId } from '../item/itemGetId'
+import { itemGetId } from './itemGetId'
 
 export const layoutGetAllItemIds = layout =>
     layoutGetAllItems(layout).map(item => itemGetId(item))

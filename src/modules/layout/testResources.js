@@ -43,6 +43,14 @@ export const TEST_ITEM_INVALID_2 = {
     chicken: TEST_ITEM_ID_1,
 }
 
+export const TEST_ITEMS_IN_LAYOUT = [
+    TEST_ITEM_1,
+    TEST_ITEM_2,
+    TEST_ITEM_3,
+    TEST_ITEM_4,
+    TEST_ITEM_5,
+]
+
 // Dimensions
 
 export const DIMENSION_ID_DYNAMIC = 'dynamicUid'
