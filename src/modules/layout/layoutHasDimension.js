@@ -1,6 +1,9 @@
-import { dimensionIs } from '../dimension/dimensionIs'
+import { layoutGetAllDimensions } from './layoutGetAllDimensions'
+import { dimensionIs } from './dimensionIs'
 
 export const layoutHasDimension = (layout, dimensionId) =>
-    layoutGetAllDimensions(layout).find(dimension =>
-        dimensionIs(dimension, dimensionId)
+    Boolean(
+        layoutGetAllDimensions(layout).find(dimension =>
+            dimensionIs(dimension, dimensionId)
+        )
     )
