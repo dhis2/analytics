@@ -43,6 +43,10 @@ export const TEST_ITEM_INVALID_2 = {
     chicken: TEST_ITEM_ID_1,
 }
 
+export const TEST_ITEMS_IN_AXIS_1 = [TEST_ITEM_1, TEST_ITEM_2]
+
+export const TEST_ITEMS_IN_AXIS_2 = [TEST_ITEM_3]
+
 export const TEST_ITEMS_IN_LAYOUT = [
     TEST_ITEM_1,
     TEST_ITEM_2,

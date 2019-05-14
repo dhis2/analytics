@@ -1,8 +1,8 @@
-import { layoutGetAllDimensions } from './layoutGetAllDimensions'
-import { dimensionGetItems } from './dimensionGetItems'
+import { layoutGetAllAxes } from './layoutGetAllAxes'
+import { axisGetAllItems } from './axisGetAllItems'
 
 export const layoutGetAllItems = layout =>
-    layoutGetAllDimensions(layout).reduce((allItems, dimension) => {
-        allItems.push(...dimensionGetItems(dimension))
+    layoutGetAllAxes(layout).reduce((allItems, axis) => {
+        allItems.push(...axisGetAllItems(axis))
         return allItems
     }, [])
