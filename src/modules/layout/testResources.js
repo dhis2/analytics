@@ -1,6 +1,11 @@
 import { ITEM_PROP_ID } from './item'
 import { DIMENSION_PROP_ID, DIMENSION_PROP_ITEMS } from './dimension'
-import { AXIS_NAME_ROWS, AXIS_NAME_COLUMNS, AXIS_NAME_FILTERS } from './axis'
+import {
+    AXIS_NAME_ROWS,
+    AXIS_NAME_COLUMNS,
+    AXIS_NAME_FILTERS,
+    AXIS_NAMES,
+} from './axis'
 import {
     DIMENSION_ID_DATA,
     DIMENSION_ID_PERIOD,
@@ -90,8 +95,6 @@ export const TEST_DIMENSION_INVALID_2 = {
     [DIMENSION_PROP_ID.name]: ['This prop is not a string'],
 }
 
-export const TEST_DIMENSIONS_IN_AXIS_1 = [TEST_DIMENSION_1]
-
 export const TEST_DIMENSIONS_IN_LAYOUT = [
     TEST_DIMENSION_1,
     TEST_DIMENSION_2,
@@ -101,20 +104,26 @@ export const TEST_DIMENSIONS_IN_LAYOUT = [
 
 // Axes
 
-export const TEST_AXIS_1 = TEST_DIMENSIONS_IN_AXIS_1
+export const TEST_AXIS_COLUMNS = [TEST_DIMENSION_1]
 
-export const TEST_AXIS_2 = [TEST_DIMENSION_2]
+export const TEST_AXIS_ROWS = [TEST_DIMENSION_2]
 
-export const TEST_AXIS_3 = [TEST_DIMENSION_3, TEST_DIMENSION_4]
+export const TEST_AXIS_FILTERS = [TEST_DIMENSION_3, TEST_DIMENSION_4]
 
-export const TEST_AXIS_EMPTY_1 = []
+export const TEST_AXIS_EMPTY = []
 
-export const TEST_AXES_IN_LAYOUT = [TEST_AXIS_1, TEST_AXIS_2, TEST_AXIS_3]
+export const TEST_AXES_IN_LAYOUT = [
+    TEST_AXIS_COLUMNS,
+    TEST_AXIS_ROWS,
+    TEST_AXIS_FILTERS,
+]
+
+export const TEST_AXIS_NAMES_IN_LAYOUT = AXIS_NAMES
 
 // Layout
 
 export const TEST_LAYOUT = {
-    [AXIS_NAME_COLUMNS]: TEST_AXIS_1,
-    [AXIS_NAME_ROWS]: TEST_AXIS_2,
-    [AXIS_NAME_FILTERS]: TEST_AXIS_3,
+    [AXIS_NAME_COLUMNS]: TEST_AXIS_COLUMNS,
+    [AXIS_NAME_ROWS]: TEST_AXIS_ROWS,
+    [AXIS_NAME_FILTERS]: TEST_AXIS_FILTERS,
 }

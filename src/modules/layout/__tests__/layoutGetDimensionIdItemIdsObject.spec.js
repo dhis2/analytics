@@ -4,7 +4,7 @@ import { ITEM_PROP_ID } from '../item'
 import { TEST_LAYOUT, TEST_DIMENSIONS_IN_LAYOUT } from '../testResources'
 
 describe('layoutGetDimensionIdItemIdsObject', () => {
-    it('should return a dimensionId:itemdIds object based on the layout', () => {
+    it('should return a dimensionId:[itemdIds] object based on the layout', () => {
         const expectedState = {}
 
         TEST_DIMENSIONS_IN_LAYOUT.forEach(dimension => {

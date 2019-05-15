@@ -1,11 +1,18 @@
+import { AXIS } from '../axis'
 import { axisGetDimensionIds } from '../axisGetDimensionIds'
-import { TEST_AXIS_1, TEST_DIMENSIONS_IN_AXIS_1 } from '../testResources'
 import { DIMENSION_PROP_ID } from '../dimension'
+import { TEST_AXIS_COLUMNS, TEST_AXIS_ROWS } from '../testResources'
 
 describe('axisGetDimensionIds', () => {
     it('should return the id of the dimensions in the axis', () => {
-        expect(axisGetDimensionIds(TEST_AXIS_1)).toEqual(
-            TEST_DIMENSIONS_IN_AXIS_1.map(item => item[DIMENSION_PROP_ID.name])
+        const columnDimIds = TEST_AXIS_COLUMNS.map(
+            item => item[DIMENSION_PROP_ID.name]
         )
+
+        expect(axisGetDimensionIds(TEST_AXIS_COLUMNS)).toEqual(columnDimIds)
+
+        expect(axisGetDimensionIds(TEST_AXIS_ROWS)).not.toEqual(columnDimIds)
+
+        expect(axisGetDimensionIds('Not an axis')).toEqual(AXIS.defaultValue)
     })
 })
