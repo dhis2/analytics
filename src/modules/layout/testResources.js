@@ -90,6 +90,8 @@ export const TEST_DIMENSION_INVALID_2 = {
     [DIMENSION_PROP_ID.name]: ['This prop is not a string'],
 }
 
+export const TEST_DIMENSIONS_IN_AXIS_1 = [TEST_DIMENSION_1]
+
 export const TEST_DIMENSIONS_IN_LAYOUT = [
     TEST_DIMENSION_1,
     TEST_DIMENSION_2,
@@ -99,7 +101,7 @@ export const TEST_DIMENSIONS_IN_LAYOUT = [
 
 // Axes
 
-export const TEST_AXIS_1 = [TEST_DIMENSION_1]
+export const TEST_AXIS_1 = TEST_DIMENSIONS_IN_AXIS_1
 
 export const TEST_AXIS_2 = [TEST_DIMENSION_2]
 
