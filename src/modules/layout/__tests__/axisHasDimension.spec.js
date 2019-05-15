@@ -3,7 +3,7 @@ import { TEST_AXIS_COLUMNS, TEST_AXIS_ROWS } from '../testResources'
 import { DIMENSION_PROP_ID } from '../dimension'
 
 describe('axisHasDimension', () => {
-    it('should return true if the dimension is found in the axis', () => {
+    it('should return true if the dimension is found in the axis, otherwise false', () => {
         expect(
             axisHasDimension(
                 TEST_AXIS_COLUMNS,

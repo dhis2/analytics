@@ -12,7 +12,9 @@ describe('axisGetDimensionIds', () => {
         expect(axisGetDimensionIds(TEST_AXIS_COLUMNS)).toEqual(columnDimIds)
 
         expect(axisGetDimensionIds(TEST_AXIS_ROWS)).not.toEqual(columnDimIds)
+    })
 
+    it('should return the default value', () => {
         expect(axisGetDimensionIds('Not an axis')).toEqual(AXIS.defaultValue)
     })
 })

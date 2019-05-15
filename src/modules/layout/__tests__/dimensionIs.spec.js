@@ -3,7 +3,7 @@ import { DIMENSION_PROP_ID } from '../dimension'
 import { dimensionIs } from '../dimensionIs'
 
 describe('dimensionIs', () => {
-    it('should return true if it is the specified dimension', () => {
+    it('should return true if it is the specified dimension, otherwise false', () => {
         expect(
             dimensionIs(
                 TEST_DIMENSION_1,
