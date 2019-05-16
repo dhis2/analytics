@@ -45,7 +45,7 @@ export { axisHasDimension } from './modules/layout/axisHasDimension'
 export { axisHasPeriodDimension } from './modules/layout/axisHasPeriodDimension'
 export { axisIsEmpty } from './modules/layout/axisIsEmpty'
 
-export { dimesionCreate } from './modules/layout/dimesionCreate'
+export { dimensionCreate } from './modules/layout/dimensionCreate'
 export { dimensionGetId } from './modules/layout/dimensionGetId'
 export { dimensionGetItemIds } from './modules/layout/dimensionGetItemIds'
 export { dimensionGetItems } from './modules/layout/dimensionGetItems'
