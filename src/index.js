@@ -50,6 +50,7 @@ export { layoutGetAllItems } from './modules/layout/layoutGetAllItems'
 export {
     layoutGetAxisNameDimensionIdsObject,
 } from './modules/layout/layoutGetAxisNameDimensionIdsObject'
+export { layoutGetDimension } from './modules/layout/layoutGetDimension'
 export {
     layoutGetDimensionIdItemIdsObject,
 } from './modules/layout/layoutGetDimensionIdItemIdsObject'
@@ -70,6 +71,7 @@ export {
     AXIS_NAMES,
 } from './modules/layout/axis'
 export { axisGetAllItems } from './modules/layout/axisGetAllItems'
+export { axisGetDimension } from './modules/layout/axisGetDimension'
 export { axisGetDimensionIds } from './modules/layout/axisGetDimensionIds'
 export { axisHasDataDimension } from './modules/layout/axisHasDataDimension'
 export { axisHasDimension } from './modules/layout/axisHasDimension'
