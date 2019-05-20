@@ -89,10 +89,15 @@ export const TEST_DIMENSION_EMPTY_1 = {
     [DIMENSION_PROP_ITEMS.name]: [],
 }
 
-export const TEST_DIMENSION_INVALID_1 = 'This prop is not an object'
+export const TEST_DIMENSION_INVALID_ID_1 = 'This prop is not an object'
 
-export const TEST_DIMENSION_INVALID_2 = {
+export const TEST_DIMENSION_INVALID_ID_2 = {
     [DIMENSION_PROP_ID.name]: ['This prop is not a string'],
+}
+
+export const TEST_DIMENSION_INVALID_ITEMS_1 = {
+    [DIMENSION_PROP_ID.name]: DIMENSION_ID_DATA,
+    [DIMENSION_PROP_ITEMS.name]: 'This is not an array',
 }
 
 export const TEST_DIMENSIONS_IN_LAYOUT = [

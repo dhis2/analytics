@@ -1,4 +1,4 @@
-import { dimensionIs } from './dimensionIs'
+import { axisGetDimension } from './axisGetDimension'
 
 export const axisHasDimension = (axis, dimensionId) =>
-    Boolean(axis.find(dimension => dimensionIs(dimension, dimensionId)))
+    Boolean(axisGetDimension(axis, dimensionId))
