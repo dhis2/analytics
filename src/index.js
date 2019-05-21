@@ -35,13 +35,7 @@ export {
     FIXED_DIMENSIONS,
 } from './modules/fixedDimensions'
 
-export {
-    LAYOUT,
-    LAYOUT_PROP_COLUMNS,
-    LAYOUT_PROP_ROWS,
-    LAYOUT_PROP_FILTERS,
-    LAYOUT_PROPS,
-} from './modules/layout/layout'
+export { LAYOUT } from './modules/layout/layout'
 export { layoutFilterDimensions } from './modules/layout/layoutFilterDimensions'
 export { layoutGetAllAxes } from './modules/layout/layoutGetAllAxes'
 export { layoutGetAllDimensions } from './modules/layout/layoutGetAllDimensions'
