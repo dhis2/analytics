@@ -1,4 +1,4 @@
-import { axisGetDimension } from '../axisGetDimensionIds'
+import { axisGetDimension } from '../axisGetDimension'
 import { TEST_AXIS_COLUMNS, TEST_AXIS_ROWS } from '../testResources'
 import { dimensionGetId } from '../dimensionGetId'
 
