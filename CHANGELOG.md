@@ -1,3 +1,10 @@
+## [1.0.4](https://github.com/dhis2/d2-ui-analytics/compare/v1.0.3...v1.0.4) (2019-05-22)
+
+
+### Bug Fixes
+
+* **layout module:** move/add functions, constants and tests from DV app ([#25](https://github.com/dhis2/d2-ui-analytics/issues/25)) ([7c8658f](https://github.com/dhis2/d2-ui-analytics/commit/7c8658f))
+
 ## [1.0.3](https://github.com/dhis2/d2-ui-analytics/compare/v1.0.2...v1.0.3) (2019-05-07)
 
 
