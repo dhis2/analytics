@@ -1,5 +1,5 @@
-import { isObject } from 'lodash'
-import { isString } from 'lodash'
+import isObject from 'lodash/isObject'
+import isString from 'lodash/isString'
 
 // Item
 
