@@ -1,4 +1,4 @@
-# Layout description
+## Layout description
 
 ### Layout
 
@@ -48,7 +48,7 @@ An item is an object with an id.
 
 -   `id`: The id of the item
 
-# Example layout
+## Example layout
 
 ```
 {
