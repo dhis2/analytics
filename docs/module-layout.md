@@ -1,4 +1,6 @@
-## Layout description
+# Layout description
+
+### Layout
 
 Layout refers to the dimensional part of a visualization in DHIS2. It has three axes:
 
@@ -46,7 +48,7 @@ An item is an object with an id.
 
 -   `id`: The id of the item
 
-## Example layout
+# Example layout
 
 ```
 {
@@ -57,7 +59,7 @@ An item is an object with an id.
     rows: [{
         dimension: "pe",                                    // period dimension
         items: [{id: "THIS_YEAR"}]                          // a period
-    }],,
+    }],
     filters: [{
         dimension: "ou",                                    // organisation unit dimension
         items: [{id: "LEVEL-2"}]                            // all orgunits at level 2
