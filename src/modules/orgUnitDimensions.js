@@ -86,12 +86,8 @@ export const getLevelsFromIds = (ids, levelOptions) => {
     return ids
         .filter(isLevelId)
         .map(id => id.substr(LEVEL_ID_PREFIX.length + 1))
-        .map(
-            level =>
-                levelOptions.find(
-                    option => Number(option.level) === Number(level)
-                ).id
-        )
+        .map(id => levelOptions.find(option => option.id === id))
+        .map(level => level.id)
 }
 
 /**

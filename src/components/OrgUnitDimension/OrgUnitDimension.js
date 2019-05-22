@@ -87,7 +87,7 @@ class OrgUnitDimension extends Component {
 
                     return {
                         ...levelOu,
-                        id: `${LEVEL_ID_PREFIX}-${levelOu.level}`,
+                        id: `${LEVEL_ID_PREFIX}-${levelOu.id}`,
                     }
                 }),
             ],
