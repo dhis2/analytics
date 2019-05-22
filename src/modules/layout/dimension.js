@@ -4,7 +4,7 @@ import isString from 'lodash/isString'
 // Dimension
 
 export const DIMENSION = {
-    validate: dimension => isObject(dimension),
+    isValid: dimension => isObject(dimension),
 }
 
 // Props
@@ -13,14 +13,14 @@ export const DIMENSION_PROP_ID = {
     name: 'dimension',
     defaultValue: '',
     required: true,
-    validate: prop => isString(prop),
+    isValid: prop => isString(prop),
 }
 
 export const DIMENSION_PROP_ITEMS = {
     name: 'items',
     defaultValue: [],
     required: false,
-    validate: prop => Array.isArray(prop),
+    isValid: prop => Array.isArray(prop),
 }
 
 export const DIMENSION_PROPS = [DIMENSION_PROP_ID, DIMENSION_PROP_ITEMS]

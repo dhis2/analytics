@@ -6,7 +6,7 @@ export const layoutFilterDimensions = (layout, dimensionIds) => {
     const filteredLayout = Object.assign({}, layout)
 
     AXIS_NAMES.forEach(axisName => {
-        if (AXIS.validate(filteredLayout[axisName])) {
+        if (AXIS.isValid(filteredLayout[axisName])) {
             filteredLayout[axisName] = filteredLayout[axisName].filter(
                 dimension => !idArray.includes(dimensionGetId(dimension))
             )

@@ -2,7 +2,7 @@
 
 export const AXIS = {
     defaultValue: [],
-    validate: axis => Array.isArray(axis),
+    isValid: axis => Array.isArray(axis),
 }
 
 // Axis names

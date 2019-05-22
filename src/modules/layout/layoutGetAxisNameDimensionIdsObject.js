@@ -3,7 +3,7 @@ import { axisGetDimensionIds } from './axisGetDimensionIds'
 
 export const layoutGetAxisNameDimensionIdsObject = layout =>
     AXIS_NAMES.reduce((obj, axisName) => {
-        if (AXIS.validate(layout[axisName])) {
+        if (AXIS.isValid(layout[axisName])) {
             obj[axisName] = axisGetDimensionIds(layout[axisName])
         }
 
