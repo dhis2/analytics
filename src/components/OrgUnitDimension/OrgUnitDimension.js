@@ -21,7 +21,7 @@ import {
     getLevelsFromIds,
     getGroupsFromIds,
     sortOrgUnitLevels,
-} from '../../modules/orgUnitDimensions'
+} from '../../modules/orgUnit'
 
 import { FIXED_DIMENSIONS } from '../../modules/fixedDimensions'
 import styles from './styles/OrgUnitDimension.style'
