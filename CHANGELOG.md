@@ -1,3 +1,10 @@
+## [1.0.5](https://github.com/dhis2/d2-ui-analytics/compare/v1.0.4...v1.0.5) (2019-05-29)
+
+
+### Bug Fixes
+
+* upgrade d2-ui dependency for biweekly support ([#28](https://github.com/dhis2/d2-ui-analytics/issues/28)) ([3f920b1](https://github.com/dhis2/d2-ui-analytics/commit/3f920b1))
+
 ## [1.0.4](https://github.com/dhis2/d2-ui-analytics/compare/v1.0.3...v1.0.4) (2019-05-22)
 
 
