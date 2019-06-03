@@ -48,6 +48,18 @@ export const getOrgUnitPath = (id, metadata, parentGraphMap) => {
     return parentGraphMap[id] ? `/${parentGraphMap[id]}/${id}` : undefined
 }
 
+const stripLevelPrefix = id => {
+    return isLevelId(id) ? id.substr(LEVEL_ID_PREFIX.length + 1) : id
+}
+
+const stripGroupPrefix = id => {
+    return isGroupId(id) ? id.substr(GROUP_ID_PREFIX.length + 1) : id
+}
+
+const stripPrefixes = id => {
+    return stripGroupPrefix(stripLevelPrefix(id))
+}
+
 /**
  * Get org unit from ou dimension ids
  * @param ids
@@ -62,14 +74,24 @@ export const getOrgUnitsFromIds = (
     parentGraphMap,
     idsToExclude = []
 ) => {
-    return ids
+    const res = ids
         .filter(id => !idsToExclude.includes(id))
-        .filter(id => metadata[id] !== undefined)
-        .map(id => ({
-            id: id,
-            name: metadata[id].displayName || metadata[id].name,
-            path: getOrgUnitPath(id, metadata, parentGraphMap),
-        }))
+        .filter(id => {
+            const strippedId = stripPrefixes(id)
+            return metadata[strippedId] !== undefined
+        })
+        .map(id => {
+            const strippedId = stripPrefixes(id)
+            return {
+                id: id,
+                name:
+                    metadata[strippedId].displayName ||
+                    metadata[strippedId].name,
+                path: getOrgUnitPath(strippedId, metadata, parentGraphMap),
+            }
+        })
+
+    return res
 }
 
 /**
