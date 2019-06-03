@@ -38,6 +38,8 @@ export {
 export {
     LEVEL_ID_PREFIX,
     isLevelId,
+    isGroupId,
+    extractOuId,
     getLevelsFromIds,
     getOrgUnitsFromIds,
 } from './modules/orgUnit'

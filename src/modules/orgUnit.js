@@ -48,15 +48,13 @@ export const getOrgUnitPath = (id, metadata, parentGraphMap) => {
     return parentGraphMap[id] ? `/${parentGraphMap[id]}/${id}` : undefined
 }
 
-const stripLevelPrefix = id => {
-    return isLevelId(id) ? id.substr(LEVEL_ID_PREFIX.length + 1) : id
-}
+const stripLevelPrefix = id =>
+    isLevelId(id) ? id.substr(LEVEL_ID_PREFIX.length + 1) : id
 
-const stripGroupPrefix = id => {
-    return isGroupId(id) ? id.substr(GROUP_ID_PREFIX.length + 1) : id
-}
+const stripGroupPrefix = id =>
+    isGroupId(id) ? id.substr(GROUP_ID_PREFIX.length + 1) : id
 
-const stripPrefixes = id => {
+export const extractOuId = id => {
     return stripGroupPrefix(stripLevelPrefix(id))
 }
 
@@ -74,14 +72,14 @@ export const getOrgUnitsFromIds = (
     parentGraphMap,
     idsToExclude = []
 ) => {
-    const res = ids
+    return ids
         .filter(id => !idsToExclude.includes(id))
         .filter(id => {
-            const strippedId = stripPrefixes(id)
+            const strippedId = extractOuId(id)
             return metadata[strippedId] !== undefined
         })
         .map(id => {
-            const strippedId = stripPrefixes(id)
+            const strippedId = extractOuId(id)
             return {
                 id: id,
                 name:
@@ -90,8 +88,6 @@ export const getOrgUnitsFromIds = (
                 path: getOrgUnitPath(strippedId, metadata, parentGraphMap),
             }
         })
-
-    return res
 }
 
 /**
@@ -107,7 +103,7 @@ export const getLevelsFromIds = (ids, levelOptions) => {
 
     return ids
         .filter(isLevelId)
-        .map(id => id.substr(LEVEL_ID_PREFIX.length + 1))
+        .map(stripLevelPrefix)
         .map(id => levelOptions.find(option => option.id === id))
         .map(level => level.id)
 }
@@ -123,9 +119,7 @@ export const getGroupsFromIds = (ids, groupOptions) => {
         return []
     }
 
-    return ids
-        .filter(isGroupId)
-        .map(id => id.substr(GROUP_ID_PREFIX.length + 1))
+    return ids.filter(isGroupId).map(stripGroupPrefix)
 }
 
 /**
