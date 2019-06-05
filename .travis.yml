@@ -4,7 +4,7 @@ node_js:
 script:
     - pwd
     - ls -la
-    - yarn test
+    - npm run test
     - yarn build
 deploy:
     - provider: script
