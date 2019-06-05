@@ -2,9 +2,7 @@ language: node_js
 node_js:
     - lts/*
 script:
-    - pwd
-    - ls -la
-    - npm run test
+    - yarn test
     - yarn build
 deploy:
     - provider: script
