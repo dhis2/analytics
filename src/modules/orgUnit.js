@@ -9,8 +9,12 @@ export const LEVEL_ID_PREFIX = 'LEVEL'
  * @param id
  * @returns {boolean}
  */
-export const isLevelId = id => {
+export const isOuLevelId = id => {
     return id.substr(0, LEVEL_ID_PREFIX.length) === LEVEL_ID_PREFIX
+}
+
+export const getOuLevelId = id => {
+    return `${LEVEL_ID_PREFIX}-${id}`
 }
 
 /**
@@ -24,8 +28,12 @@ export const GROUP_ID_PREFIX = 'OU_GROUP'
  * @param id
  * @returns {boolean}
  */
-export const isGroupId = id => {
+export const isOuGroupId = id => {
     return id.substr(0, GROUP_ID_PREFIX.length) === GROUP_ID_PREFIX
+}
+
+export const getOuGroupId = id => {
+    return `${GROUP_ID_PREFIX}-${id}`
 }
 
 /**
@@ -49,22 +57,27 @@ export const getOrgUnitPath = (id, metadata, parentGraphMap) => {
 }
 
 const stripLevelPrefix = id =>
-    isLevelId(id) ? id.substr(LEVEL_ID_PREFIX.length + 1) : id
+    isOuLevelId(id) ? id.substr(LEVEL_ID_PREFIX.length + 1) : id
 
 const stripGroupPrefix = id =>
-    isGroupId(id) ? id.substr(GROUP_ID_PREFIX.length + 1) : id
+    isOuGroupId(id) ? id.substr(GROUP_ID_PREFIX.length + 1) : id
 
-export const extractOuId = id => {
+/**
+ * Returns the uid of the org unit after stripping off LEVEL- and OU_GROUP-
+ * @param id
+ * @returns String
+ */
+export const getOuUid = id => {
     return stripGroupPrefix(stripLevelPrefix(id))
 }
 
 /**
- * Get org unit from ou dimension ids
- * @param ids
- * @param idsToExclude
- * @param metadata
- * @param parentGraphMap
- * @returns {*}
+ * Get org units from ou dimension ids
+ * @param ids {Array}
+ * @param idsToExclude {Array}
+ * @param metadata {Object}
+ * @param parentGraphMap {Object}
+ * @returns { [{id: String, name: String, path: String}] }
  */
 export const getOrgUnitsFromIds = (
     ids,
@@ -74,18 +87,13 @@ export const getOrgUnitsFromIds = (
 ) => {
     return ids
         .filter(id => !idsToExclude.includes(id))
-        .filter(id => {
-            const strippedId = extractOuId(id)
-            return metadata[strippedId] !== undefined
-        })
+        .filter(id => metadata[getOuUid(id)] !== undefined)
         .map(id => {
-            const strippedId = extractOuId(id)
+            const ouId = getOuUid(id)
             return {
-                id: id,
-                name:
-                    metadata[strippedId].displayName ||
-                    metadata[strippedId].name,
-                path: getOrgUnitPath(strippedId, metadata, parentGraphMap),
+                id,
+                name: metadata[ouId].displayName || metadata[ouId].name,
+                path: getOrgUnitPath(ouId, metadata, parentGraphMap),
             }
         })
 }
@@ -96,13 +104,13 @@ export const getOrgUnitsFromIds = (
  * @param levelOptions
  * @returns {*}
  */
-export const getLevelsFromIds = (ids, levelOptions) => {
+export const getOuLevelsFromIds = (ids, levelOptions) => {
     if (levelOptions.length === 0) {
         return []
     }
 
     return ids
-        .filter(isLevelId)
+        .filter(isOuLevelId)
         .map(stripLevelPrefix)
         .map(id => levelOptions.find(option => option.id === id))
         .map(level => level.id)
@@ -114,12 +122,12 @@ export const getLevelsFromIds = (ids, levelOptions) => {
  * @param groupOptions
  * @returns {*}
  */
-export const getGroupsFromIds = (ids, groupOptions) => {
+export const getOuGroupsFromIds = (ids, groupOptions) => {
     if (groupOptions.length === 0) {
         return []
     }
 
-    return ids.filter(isGroupId).map(stripGroupPrefix)
+    return ids.filter(isOuGroupId).map(stripGroupPrefix)
 }
 
 /**

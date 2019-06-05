@@ -14,12 +14,12 @@ import {
 } from '../../api/organisationUnits'
 
 import {
-    LEVEL_ID_PREFIX,
-    GROUP_ID_PREFIX,
-    isLevelId,
-    isGroupId,
-    getLevelsFromIds,
-    getGroupsFromIds,
+    getOuGroupId,
+    getOuLevelId,
+    isOuLevelId,
+    isOuGroupId,
+    getOuLevelsFromIds,
+    getOuGroupsFromIds,
     sortOrgUnitLevels,
 } from '../../modules/orgUnit'
 
@@ -81,13 +81,13 @@ class OrgUnitDimension extends Component {
         this.props.onSelect({
             dimensionId: ouId,
             items: [
-                ...this.props.ouItems.filter(ou => !isLevelId(ou.id)),
+                ...this.props.ouItems.filter(ou => !isOuLevelId(ou.id)),
                 ...levelIds.map(id => {
                     const levelOu = this.state.ouLevels.find(ou => ou.id === id)
 
                     return {
                         ...levelOu,
-                        id: `${LEVEL_ID_PREFIX}-${levelOu.id}`,
+                        id: getOuLevelId(levelOu.id),
                     }
                 }),
             ],
@@ -100,13 +100,13 @@ class OrgUnitDimension extends Component {
         this.props.onSelect({
             dimensionId: ouId,
             items: [
-                ...this.props.ouItems.filter(ou => !isGroupId(ou.id)),
+                ...this.props.ouItems.filter(ou => !isOuGroupId(ou.id)),
                 ...groupIds.map(id => {
                     const groupOu = this.state.ouGroups.find(ou => ou.id === id)
 
                     return {
                         ...groupOu,
-                        id: `${GROUP_ID_PREFIX}-${id}`,
+                        id: getOuGroupId(id),
                     }
                 }),
             ],
@@ -227,14 +227,14 @@ class OrgUnitDimension extends Component {
                 // filter out user org units
                 !this.userOrgUnitIds.includes(ou.id) &&
                 // filter out levels
-                !isLevelId(ou.id) &&
+                !isOuLevelId(ou.id) &&
                 // filter out groups
-                !isGroupId(ou.id)
+                !isOuGroupId(ou.id)
             )
         })
         const userOrgUnits = this.getUserOrgUnitsFromIds(ids)
-        const level = getLevelsFromIds(ids, this.state.ouLevels)
-        const group = getGroupsFromIds(ids, this.state.ouGroups)
+        const level = getOuLevelsFromIds(ids, this.state.ouLevels)
+        const group = getOuGroupsFromIds(ids, this.state.ouGroups)
 
         return (
             <Fragment>

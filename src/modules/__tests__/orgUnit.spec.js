@@ -1,53 +1,53 @@
-// import { getLevelsFromIds } from '../orgUnit'
+// import { getOuLevelsFromIds } from '../orgUnit'
 
 const levelOptions = [{ id: 'fluttershy' }, { id: 'rarity' }]
 
 import {
     LEVEL_ID_PREFIX,
     GROUP_ID_PREFIX,
-    isLevelId,
-    isGroupId,
+    isOuLevelId,
+    isOuGroupId,
     getOrgUnitPath,
     getOrgUnitsFromIds,
-    getLevelsFromIds,
-    getGroupsFromIds,
+    getOuLevelsFromIds,
+    getOuGroupsFromIds,
     sortOrgUnitLevels,
     transformOptionsIntoMetadata,
 } from '../orgUnit'
 
-describe('isLevelId', () => {
+describe('isOuLevelId', () => {
     it('should return false for empty string', () => {
-        expect(isLevelId('')).toBe(false)
+        expect(isOuLevelId('')).toBe(false)
     })
 
     it('should return true for level id', () => {
         const id = `${LEVEL_ID_PREFIX}-ID`
 
-        expect(isLevelId(id)).toBe(true)
+        expect(isOuLevelId(id)).toBe(true)
     })
 
     it('should return false for non-level id', () => {
         const id = 'NON_LEVEL_ID'
 
-        expect(isLevelId(id)).toBe(false)
+        expect(isOuLevelId(id)).toBe(false)
     })
 })
 
-describe('isGroupId', () => {
+describe('isOuGroupId', () => {
     it('should return false for empty string', () => {
-        expect(isGroupId('')).toBe(false)
+        expect(isOuGroupId('')).toBe(false)
     })
 
     it('should return true for group id', () => {
         const id = `${GROUP_ID_PREFIX}-ID`
 
-        expect(isGroupId(id)).toBe(true)
+        expect(isOuGroupId(id)).toBe(true)
     })
 
     it('should return false for non-group id', () => {
         const id = 'NON_GROUP_ID'
 
-        expect(isGroupId(id)).toBe(false)
+        expect(isOuGroupId(id)).toBe(false)
     })
 })
 
@@ -142,36 +142,36 @@ describe('getOrgUnitsFromIds', () => {
     })
 })
 
-describe('getLevelsFromIds', () => {
+describe('getOuLevelsFromIds', () => {
     it('returns empty array if there are no level options', () => {
         const ids = []
 
-        expect(getLevelsFromIds(ids, levelOptions)).toEqual([])
+        expect(getOuLevelsFromIds(ids, levelOptions)).toEqual([])
     })
 
     it('returns array with id when level-id received', () => {
-        expect(getLevelsFromIds(['abc', 'LEVEL-rarity'], levelOptions)).toEqual(
-            ['rarity']
-        )
+        expect(
+            getOuLevelsFromIds(['abc', 'LEVEL-rarity'], levelOptions)
+        ).toEqual(['rarity'])
     })
 
     it('returns empty array when level-id not received', () => {
-        expect(getLevelsFromIds(['abc', 'rarity'], levelOptions)).toEqual([])
+        expect(getOuLevelsFromIds(['abc', 'rarity'], levelOptions)).toEqual([])
     })
 
     it('returns empty array if ids array is empty', () => {
-        const result = getLevelsFromIds([], [{}])
+        const result = getOuLevelsFromIds([], [{}])
 
         expect(result).toEqual([])
     })
 })
 
-describe('getGroupsFromIds', () => {
+describe('getOuGroupsFromIds', () => {
     it('returns empty array if there are no group options', () => {
         const ids = []
         const groupOptions = []
 
-        expect(getGroupsFromIds(ids, groupOptions)).toEqual([])
+        expect(getOuGroupsFromIds(ids, groupOptions)).toEqual([])
     })
 
     it('returns groups from ids', () => {
@@ -185,7 +185,7 @@ describe('getGroupsFromIds', () => {
         ]
         const groupOptions = [{ id: groupId1 }, { id: groupId2 }]
 
-        const result = getGroupsFromIds(ids, groupOptions)
+        const result = getOuGroupsFromIds(ids, groupOptions)
 
         expect(result.length).toEqual(2)
         expect(result.includes(groupId1)).toBe(true)
@@ -193,7 +193,7 @@ describe('getGroupsFromIds', () => {
     })
 
     it('returns empty array if ids array is empty', () => {
-        const result = getGroupsFromIds([], [{}])
+        const result = getOuGroupsFromIds([], [{}])
 
         expect(result).toEqual([])
     })
