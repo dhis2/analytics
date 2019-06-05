@@ -1,6 +1,6 @@
 // import { getOuLevelsFromIds } from '../orgUnit'
 
-const levelOptions = [{ id: 'fluttershy' }, { id: 'rarity' }]
+const levelOptions = [{ id: '2nd-floor' }, { id: '3rd-floor' }]
 
 import {
     LEVEL_ID_PREFIX,
@@ -13,38 +13,53 @@ import {
     getOuGroupsFromIds,
     sortOrgUnitLevels,
     transformOptionsIntoMetadata,
+    getOuUid,
 } from '../orgUnit'
 
 describe('isOuLevelId', () => {
-    it('should return false for empty string', () => {
+    it('returns false for empty string', () => {
         expect(isOuLevelId('')).toBe(false)
     })
 
-    it('should return true for level id', () => {
+    it('returns true for level id', () => {
         const id = `${LEVEL_ID_PREFIX}-ID`
 
         expect(isOuLevelId(id)).toBe(true)
     })
 
-    it('should return false for non-level id', () => {
+    it('returns false for non-level id', () => {
         const id = 'NON_LEVEL_ID'
 
         expect(isOuLevelId(id)).toBe(false)
     })
 })
 
+describe('getOuUid', () => {
+    it('returns the uid of a level-id', () => {
+        expect(getOuUid('LEVEL-2nd-floor')).toEqual('2nd-floor')
+    })
+
+    it('returns the uid of a group-id', () => {
+        expect(getOuUid('OU_GROUP-fruit-group')).toEqual('fruit-group')
+    })
+
+    it('returns the uid of plain orgunit id', () => {
+        expect(getOuUid('lmao')).toEqual('lmao')
+    })
+})
+
 describe('isOuGroupId', () => {
-    it('should return false for empty string', () => {
+    it('returns false for empty string', () => {
         expect(isOuGroupId('')).toBe(false)
     })
 
-    it('should return true for group id', () => {
+    it('returns true for group id', () => {
         const id = `${GROUP_ID_PREFIX}-ID`
 
         expect(isOuGroupId(id)).toBe(true)
     })
 
-    it('should return false for non-group id', () => {
+    it('returns false for non-group id', () => {
         const id = 'NON_GROUP_ID'
 
         expect(isOuGroupId(id)).toBe(false)
@@ -83,59 +98,51 @@ describe('getOrgUnitPath', () => {
 })
 
 describe('getOrgUnitsFromIds', () => {
-    it('returns org units with ids in given array', () => {
+    it('returns org unit objects with id, name and path', () => {
+        const levelUid = '2nd-floor'
+        const groupUid = 'fruit-group'
         const ids = [
+            'ID0',
             'ID1',
-            'ID2',
-            `${LEVEL_ID_PREFIX}-LEVEL`,
-            `${GROUP_ID_PREFIX}-GROUP_ID`,
+            `${LEVEL_ID_PREFIX}-${levelUid}`,
+            `${GROUP_ID_PREFIX}-${groupUid}`,
         ]
         const metadata = {
-            ID1: {
-                id: 'ID1',
-                name: 'Org unit 1',
-                path: '/ID1',
+            [ids[0]]: {
+                id: ids[0],
+                name: 'Org unit 0',
+                path: `/${ids[0]}`,
             },
-            ID2: {
-                id: 'ID2',
-                name: 'Org unit 2',
-                path: '/ID2',
+            [ids[1]]: {
+                id: ids[1],
+                name: 'Org unit 1',
+                path: `/${ids[1]}`,
+            },
+            [levelUid]: {
+                id: levelUid,
+                name: '2nd Floor',
+            },
+            [groupUid]: {
+                id: groupUid,
+                name: 'Fruit Group',
             },
         }
-        const parentGraphMap = {}
+        const metadataVals = Object.values(metadata)
 
-        const orgUnits = getOrgUnitsFromIds(ids, metadata, parentGraphMap)
+        const orgUnits = getOrgUnitsFromIds(ids, metadata, {})
 
-        // test that it only extracts org units, not levels/groups
-        expect(orgUnits.length).toEqual(2)
+        expect(orgUnits.length).toEqual(4)
 
-        orgUnits.forEach(orgUnit => {
-            expect(orgUnit.id).toEqual(metadata[orgUnit.id].id)
-            expect(orgUnit.name).toEqual(metadata[orgUnit.id].name)
-            expect(orgUnit.path).toEqual(metadata[orgUnit.id].path)
+        orgUnits.forEach((orgUnit, i) => {
+            expect(orgUnit.id).toEqual(ids[i])
+            expect(orgUnit.name).toEqual(metadataVals[i].name)
+            expect(orgUnit.path).toEqual(metadataVals[i].path)
         })
     })
 
     it('returns empty array if there no org units in ou dimension', () => {
         const ids = []
         const metadata = {}
-        const parentGraphMap = {}
-
-        expect(getOrgUnitsFromIds(ids, metadata, parentGraphMap)).toEqual([])
-    })
-
-    it('only extracts org unit ids, not groups/levels', () => {
-        const levelId = 'LEVEL_ID'
-        const groupId = 'GROUP_ID'
-
-        const ids = [
-            `${LEVEL_ID_PREFIX}-${levelId}`,
-            `${GROUP_ID_PREFIX}-${groupId}`,
-        ]
-        const metadata = {
-            [levelId]: { name: 'Level', level: 1 },
-            [groupId]: { name: 'Group' },
-        }
         const parentGraphMap = {}
 
         expect(getOrgUnitsFromIds(ids, metadata, parentGraphMap)).toEqual([])
@@ -149,10 +156,10 @@ describe('getOuLevelsFromIds', () => {
         expect(getOuLevelsFromIds(ids, levelOptions)).toEqual([])
     })
 
-    it('returns array with id when level-id received', () => {
+    it('returns array with uids when level-ids received', () => {
         expect(
-            getOuLevelsFromIds(['abc', 'LEVEL-rarity'], levelOptions)
-        ).toEqual(['rarity'])
+            getOuLevelsFromIds(['abc', 'LEVEL-2nd-floor'], levelOptions)
+        ).toEqual(['2nd-floor'])
     })
 
     it('returns empty array when level-id not received', () => {
@@ -175,8 +182,8 @@ describe('getOuGroupsFromIds', () => {
     })
 
     it('returns groups from ids', () => {
-        const groupId1 = 'GROUP_ID_1'
-        const groupId2 = 'GROUP_ID_2'
+        const groupId1 = 'fruit-group'
+        const groupId2 = 'veggie-group'
         const ids = [
             `${GROUP_ID_PREFIX}-${groupId1}`,
             `${GROUP_ID_PREFIX}-${groupId2}`,

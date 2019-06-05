@@ -67,9 +67,7 @@ const stripGroupPrefix = id =>
  * @param id
  * @returns String
  */
-export const getOuUid = id => {
-    return stripGroupPrefix(stripLevelPrefix(id))
-}
+export const getOuUid = id => stripGroupPrefix(stripLevelPrefix(id))
 
 /**
  * Get org units from ou dimension ids
@@ -111,7 +109,7 @@ export const getOuLevelsFromIds = (ids, levelOptions) => {
 
     return ids
         .filter(isOuLevelId)
-        .map(stripLevelPrefix)
+        .map(getOuUid)
         .map(id => levelOptions.find(option => option.id === id))
         .map(level => level.id)
 }
@@ -127,7 +125,7 @@ export const getOuGroupsFromIds = (ids, groupOptions) => {
         return []
     }
 
-    return ids.filter(isOuGroupId).map(stripGroupPrefix)
+    return ids.filter(isOuGroupId).map(getOuUid)
 }
 
 /**

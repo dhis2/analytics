@@ -221,17 +221,14 @@ class OrgUnitDimension extends Component {
     }
 
     render = () => {
-        const ids = this.props.ouItems.map(ou => ou.id) || []
-        const selected = this.props.ouItems.filter(ou => {
-            return (
-                // filter out user org units
+        const ids = this.props.ouItems.map(ou => ou.id)
+        const selected = this.props.ouItems.filter(
+            ou =>
                 !this.userOrgUnitIds.includes(ou.id) &&
-                // filter out levels
                 !isOuLevelId(ou.id) &&
-                // filter out groups
                 !isOuGroupId(ou.id)
-            )
-        })
+        )
+
         const userOrgUnits = this.getUserOrgUnitsFromIds(ids)
         const level = getOuLevelsFromIds(ids, this.state.ouLevels)
         const group = getOuGroupsFromIds(ids, this.state.ouGroups)

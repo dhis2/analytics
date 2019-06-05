@@ -1,21 +1,22 @@
 language: node_js
 node_js:
-- lts/*
+    - lts/*
 script:
-- yarn build
+    - yarn build
+    - yarn test
 deploy:
-- provider: script
-  skip_cleanup: true
-  script:
-  - npx @dhis2/cli-utils release --publish npm
-  on:
-    tags: false
-    branch: master
+    - provider: script
+      skip_cleanup: true
+      script:
+          - npx @dhis2/cli-utils release --publish npm
+      on:
+          tags: false
+          branch: master
 env:
-  global:
-  - GIT_AUTHOR_NAME=@dhis2-bot
-  - GIT_AUTHOR_EMAIL=ci@dhis2.org
-  - GIT_COMMITTER_NAME=@dhis2-bot
-  - GIT_COMMITTER_EMAIL=ci@dhis2.org
-  - secure: 6zVy8piGy+tv6c8sNeDL5C3LQci5tNOMr4F+GNCmHFekMkf7XovhE9RIpaa2u6W1lrIUMqiOkAvOiP85lWy67FITc6DXeKQaAxosu6UpmXTq2AY1/qLNoyZ5NEWHdzkkdV570Mg6DtSGBr2brXxyk5H/7Taw1g1476FLAOB45oRToLL+p+End6ApXumtcRLfjoQk3yvmVSdVjLNJBlcfvZTk+PIsIKAkym0FOj2cLIMlis6RTtaG7KEk0EJViyuLSbElGlg2J9oyoOWjleRtUKWa1oCf0zPQGKpD2F79gq66RMvo/I751Pk9DQIhtivc4Uz4dW6yUeTavwU0qULJr3rWU7BuWbZPsXCRQsl1vNTozvoQRmOH1Y3+7+dmXjO8f5RDYzEvfS8FzsYIgrnm3zdMBmpZBOtBkCa9uypjGK3py4FXoKw2hqfVVoYsj7qJlG/seRuFzC6BniCUUsIFGukU0fDQ/YO/6//l3jqqkq0WrXGSBUoclLSJ1mFk7cPiMgKPc8lO1PC4f4qJgShftMQS9wk9LfP7mWmCNGGPY8s4W8gAvxh5bG2Vr4xSn8ojKk1XXuyM3idjFGB+vZES/EA39OCXeO/kx6CgD9RyJWoN0epcCS5BDbLP1avpTScOswm4eb2SY6Ofjg6KGfTNlOgGSIov/p0mB82+wKv2jfo=
-  - secure: KZdmdcw2GC6ryoa8uj1L/NxvPd06yhZITY6Y2EONFYZB85SXeTIAOt6IwUYgxj33nlKQDsQX9mOeT3EM+tdDYiDhiizH5Vetwu0v+DEJ+0J6a0552qHZLBNN0xUgIeMVjw55yI3HCMjkR8wbx0k9tY1TA8MbGGrO8TtaAY5VYa8r4ExmqA6uSOQDQnsATY2OLh5ko6hNyErFFFoK+TKlm+gmtSDNS2Wk4kfmyVA76zQRoglqB5nDR+cyJG0eGmMVGicSAlBzQD+78AM4C7C5Q7S3cFvk8GciWqKSLMW22QLfA5Y7Ph7yU8uapb6AWzXVETn66m+LxiT6JjlnyOnb1QQ0ZSeUv3fM/JP+McPhbJlJVLxlF7hDDrPoUnbw5cIaErg/IXVP7W918hplAYauIhdBcR8fU9jLUlrquRI8aazPRXm844OX2rC0xypiP7iSQqJC0Cq3xk8vq77LFRR4QldLgolUeYBx78zTuT+kgoOoyPWc0CBwSbs+wN6Xf2//fgImrRaQp6iR6Q9wrwOD2dGfce75l50DzvtzMaUY1zwjHHvuI1vcwINBZdBPGxoetC/QD82MShNJiwvzz6sRHZN438K/NecBZAw+zEXnMiXpO+87V3yOoGOKiee5DtvfyFcq2tRZw+gcLiFF2Mh9Lek6XYq7d6IccuIkFIZyMBQ=
+    global:
+        - GIT_AUTHOR_NAME=@dhis2-bot
+        - GIT_AUTHOR_EMAIL=ci@dhis2.org
+        - GIT_COMMITTER_NAME=@dhis2-bot
+        - GIT_COMMITTER_EMAIL=ci@dhis2.org
+        - secure: 6zVy8piGy+tv6c8sNeDL5C3LQci5tNOMr4F+GNCmHFekMkf7XovhE9RIpaa2u6W1lrIUMqiOkAvOiP85lWy67FITc6DXeKQaAxosu6UpmXTq2AY1/qLNoyZ5NEWHdzkkdV570Mg6DtSGBr2brXxyk5H/7Taw1g1476FLAOB45oRToLL+p+End6ApXumtcRLfjoQk3yvmVSdVjLNJBlcfvZTk+PIsIKAkym0FOj2cLIMlis6RTtaG7KEk0EJViyuLSbElGlg2J9oyoOWjleRtUKWa1oCf0zPQGKpD2F79gq66RMvo/I751Pk9DQIhtivc4Uz4dW6yUeTavwU0qULJr3rWU7BuWbZPsXCRQsl1vNTozvoQRmOH1Y3+7+dmXjO8f5RDYzEvfS8FzsYIgrnm3zdMBmpZBOtBkCa9uypjGK3py4FXoKw2hqfVVoYsj7qJlG/seRuFzC6BniCUUsIFGukU0fDQ/YO/6//l3jqqkq0WrXGSBUoclLSJ1mFk7cPiMgKPc8lO1PC4f4qJgShftMQS9wk9LfP7mWmCNGGPY8s4W8gAvxh5bG2Vr4xSn8ojKk1XXuyM3idjFGB+vZES/EA39OCXeO/kx6CgD9RyJWoN0epcCS5BDbLP1avpTScOswm4eb2SY6Ofjg6KGfTNlOgGSIov/p0mB82+wKv2jfo=
+        - secure: KZdmdcw2GC6ryoa8uj1L/NxvPd06yhZITY6Y2EONFYZB85SXeTIAOt6IwUYgxj33nlKQDsQX9mOeT3EM+tdDYiDhiizH5Vetwu0v+DEJ+0J6a0552qHZLBNN0xUgIeMVjw55yI3HCMjkR8wbx0k9tY1TA8MbGGrO8TtaAY5VYa8r4ExmqA6uSOQDQnsATY2OLh5ko6hNyErFFFoK+TKlm+gmtSDNS2Wk4kfmyVA76zQRoglqB5nDR+cyJG0eGmMVGicSAlBzQD+78AM4C7C5Q7S3cFvk8GciWqKSLMW22QLfA5Y7Ph7yU8uapb6AWzXVETn66m+LxiT6JjlnyOnb1QQ0ZSeUv3fM/JP+McPhbJlJVLxlF7hDDrPoUnbw5cIaErg/IXVP7W918hplAYauIhdBcR8fU9jLUlrquRI8aazPRXm844OX2rC0xypiP7iSQqJC0Cq3xk8vq77LFRR4QldLgolUeYBx78zTuT+kgoOoyPWc0CBwSbs+wN6Xf2//fgImrRaQp6iR6Q9wrwOD2dGfce75l50DzvtzMaUY1zwjHHvuI1vcwINBZdBPGxoetC/QD82MShNJiwvzz6sRHZN438K/NecBZAw+zEXnMiXpO+87V3yOoGOKiee5DtvfyFcq2tRZw+gcLiFF2Mh9Lek6XYq7d6IccuIkFIZyMBQ=
