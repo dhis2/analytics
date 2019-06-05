@@ -1,6 +1,6 @@
 module.exports = {
     setupFilesAfterEnv: ['<rootDir>/config/setup.js'],
-    testPathIgnorePatterns: ['/node_modules/', '/build/'],
+    testPathIgnorePatterns: ['node_modules', 'build'],
     verbose: true,
     transform: {
         '^.+\\.jsx$': 'babel-jest',
