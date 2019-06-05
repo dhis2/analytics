@@ -17,7 +17,7 @@
         "build-storybook": "build-storybook",
         "start-storybook": "start-storybook --port 5000",
         "start": "yarn start-storybook",
-        "test": "jest src"
+        "test": "jest"
     },
     "husky": {
         "hooks": {
