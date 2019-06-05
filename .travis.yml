@@ -2,8 +2,8 @@ language: node_js
 node_js:
     - lts/*
 script:
-    - yarn build
     - yarn test
+    - yarn build
 deploy:
     - provider: script
       skip_cleanup: true
