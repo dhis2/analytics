@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import CircularProgress from '@material-ui/core/CircularProgress'
 import DialogContent from '@material-ui/core/DialogContent'
 import DialogTitle from '@material-ui/core/DialogTitle'
+import sortBy from 'lodash/sortBy'
 
 import i18n from '@dhis2/d2-i18n'
 import { OrgUnitSelector, userOrgUnits } from '@dhis2/d2-ui-org-unit-dialog'
@@ -13,15 +14,11 @@ import {
     apiFetchOrganisationUnits,
 } from '../../api/organisationUnits'
 
-import {
-    getOuGroupId,
-    getOuLevelId,
-    isOuLevelId,
-    isOuGroupId,
-    getOuLevelsFromIds,
-    getOuGroupsFromIds,
-    sortOrgUnitLevels,
-} from '../../modules/orgUnit'
+import { getOuLevelId } from '../../modules/orgUnit/getOuLevelId'
+import { getOuUid } from '../../modules/orgUnit/getOuUid'
+import { isOuGroupId } from '../../modules/orgUnit/isOuGroupId'
+import { isOuLevelId } from '../../modules/orgUnit/isOuLevelId'
+import { GROUP_ID_PREFIX } from '../../modules/orgUnit/internal/constants'
 
 import { FIXED_DIMENSIONS } from '../../modules/fixedDimensions'
 import styles from './styles/OrgUnitDimension.style'
@@ -106,7 +103,7 @@ class OrgUnitDimension extends Component {
 
                     return {
                         ...groupOu,
-                        id: getOuGroupId(id),
+                        id: `${GROUP_ID_PREFIX}-${id}`,
                     }
                 }),
             ],
@@ -139,7 +136,7 @@ class OrgUnitDimension extends Component {
     loadOrgUnitLevels = d2 => {
         apiFetchOrganisationUnitLevels(d2).then(organisationUnitLevels =>
             this.setState({
-                ouLevels: sortOrgUnitLevels(organisationUnitLevels),
+                ouLevels: sortBy(organisationUnitLevels, ['level']),
             })
         )
     }
@@ -230,8 +227,8 @@ class OrgUnitDimension extends Component {
         )
 
         const userOrgUnits = this.getUserOrgUnitsFromIds(ids)
-        const level = getOuLevelsFromIds(ids, this.state.ouLevels)
-        const group = getOuGroupsFromIds(ids, this.state.ouGroups)
+        const level = ids.filter(isOuLevelId).map(getOuUid)
+        const group = ids.filter(isOuGroupId).map(getOuUid)
 
         return (
             <Fragment>

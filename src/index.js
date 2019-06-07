@@ -35,6 +35,11 @@ export {
     FIXED_DIMENSIONS,
 } from './modules/fixedDimensions'
 
+export { isOuLevelId } from './modules/orgUnit/isOuLevelId'
+export { isOuGroupId } from './modules/orgUnit/isOuGroupId'
+export { getOuUid } from './modules/orgUnit/getOuUid'
+export { getOuLevelId } from './modules/orgUnit/getOuLevelId'
+
 export { LAYOUT } from './modules/layout/layout'
 export { layoutFilterDimensions } from './modules/layout/layoutFilterDimensions'
 export { layoutGetAllAxes } from './modules/layout/layoutGetAllAxes'
@@ -56,14 +61,6 @@ export {
 export {
     layoutHasPeriodDimension,
 } from './modules/layout/layoutHasPeriodDimension'
-
-export {
-    isOuLevelId,
-    isOuGroupId,
-    getOuUid,
-    getOuLevelId,
-    getOrgUnitsFromIds,
-} from './modules/orgUnit'
 
 export {
     AXIS,
