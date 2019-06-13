@@ -93,7 +93,7 @@ class OrgUnitDimension extends Component {
         this.props.onSelect({
             dimensionId: ouId,
             items: [
-                ...this.props.ouItems.filter(ou => orgUnit.getGroupId(ou.id)),
+                ...this.props.ouItems.filter(ou => !orgUnit.isGroupId(ou.id)),
                 ...groupIds.map(id => {
                     const groupOu = this.state.ouGroups.find(ou => ou.id === id)
 
