@@ -35,10 +35,7 @@ export {
     FIXED_DIMENSIONS,
 } from './modules/fixedDimensions'
 
-export { isOuLevelId } from './modules/orgUnit/isOuLevelId'
-export { isOuGroupId } from './modules/orgUnit/isOuGroupId'
-export { getOuUid } from './modules/orgUnit/getOuUid'
-export { getOuLevelId } from './modules/orgUnit/getOuLevelId'
+export { orgUnit } from './modules/orgUnit/index'
 
 export { LAYOUT } from './modules/layout/layout'
 export { layoutFilterDimensions } from './modules/layout/layoutFilterDimensions'

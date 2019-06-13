@@ -14,11 +14,7 @@ import {
     apiFetchOrganisationUnits,
 } from '../../api/organisationUnits'
 
-import { getOuLevelId } from '../../modules/orgUnit/getOuLevelId'
-import { getOuUid } from '../../modules/orgUnit/getOuUid'
-import { isOuGroupId } from '../../modules/orgUnit/isOuGroupId'
-import { isOuLevelId } from '../../modules/orgUnit/isOuLevelId'
-import { GROUP_ID_PREFIX } from '../../modules/orgUnit/internal/constants'
+import { orgUnit } from '../../modules/orgUnit'
 
 import { FIXED_DIMENSIONS } from '../../modules/fixedDimensions'
 import styles from './styles/OrgUnitDimension.style'
@@ -40,7 +36,7 @@ class OrgUnitDimension extends Component {
         super(props)
 
         this.state = defaultState
-        this.userOrgUnitIds = userOrgUnits.map(orgUnit => orgUnit.id)
+        this.userOrgUnitIds = userOrgUnits.map(ou => ou.id)
 
         this.loadOrgUnitTree(props.d2, props.displayNameProperty)
         this.loadOrgUnitGroups(props.d2, props.displayNameProperty)
@@ -78,13 +74,13 @@ class OrgUnitDimension extends Component {
         this.props.onSelect({
             dimensionId: ouId,
             items: [
-                ...this.props.ouItems.filter(ou => !isOuLevelId(ou.id)),
+                ...this.props.ouItems.filter(ou => !orgUnit.isLevelId(ou.id)),
                 ...levelIds.map(id => {
                     const levelOu = this.state.ouLevels.find(ou => ou.id === id)
 
                     return {
                         ...levelOu,
-                        id: getOuLevelId(levelOu.id),
+                        id: orgUnit.getLevelId(levelOu.id),
                     }
                 }),
             ],
@@ -97,13 +93,13 @@ class OrgUnitDimension extends Component {
         this.props.onSelect({
             dimensionId: ouId,
             items: [
-                ...this.props.ouItems.filter(ou => !isOuGroupId(ou.id)),
+                ...this.props.ouItems.filter(ou => orgUnit.getGroupId(ou.id)),
                 ...groupIds.map(id => {
                     const groupOu = this.state.ouGroups.find(ou => ou.id === id)
 
                     return {
                         ...groupOu,
-                        id: `${GROUP_ID_PREFIX}-${id}`,
+                        id: orgUnit.getGroupId(id),
                     }
                 }),
             ],
@@ -141,13 +137,13 @@ class OrgUnitDimension extends Component {
         )
     }
 
-    handleOrgUnitClick = (event, orgUnit) => {
+    handleOrgUnitClick = (event, organisationUnit) => {
         const selected = this.props.ouItems
 
-        if (selected.some(ou => ou.path === orgUnit.path)) {
+        if (selected.some(ou => ou.path === organisationUnit.path)) {
             this.props.onDeselect({
                 dimensionId: ouId,
-                itemIdsToRemove: [orgUnit.id],
+                itemIdsToRemove: [organisationUnit.id],
             })
         } else {
             this.props.onSelect({
@@ -155,8 +151,10 @@ class OrgUnitDimension extends Component {
                 items: [
                     ...selected,
                     {
-                        ...orgUnit,
-                        name: orgUnit.name || orgUnit.displayName,
+                        ...organisationUnit,
+                        name:
+                            organisationUnit.name ||
+                            organisationUnit.displayName,
                     },
                 ],
             })
@@ -222,13 +220,13 @@ class OrgUnitDimension extends Component {
         const selected = this.props.ouItems.filter(
             ou =>
                 !this.userOrgUnitIds.includes(ou.id) &&
-                !isOuLevelId(ou.id) &&
-                !isOuGroupId(ou.id)
+                !orgUnit.isLevelId(ou.id) &&
+                !orgUnit.isGroupId(ou.id)
         )
 
         const userOrgUnits = this.getUserOrgUnitsFromIds(ids)
-        const level = ids.filter(isOuLevelId).map(getOuUid)
-        const group = ids.filter(isOuGroupId).map(getOuUid)
+        const level = ids.filter(orgUnit.isLevelId).map(orgUnit.getUid)
+        const group = ids.filter(orgUnit.isGroupId).map(orgUnit.getUid)
 
         return (
             <Fragment>
