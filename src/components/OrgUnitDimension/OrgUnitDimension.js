@@ -65,7 +65,7 @@ class OrgUnitDimension extends Component {
     }
 
     getUserOrgUnitsFromIds = ids => {
-        return userOrgUnits.filter(orgUnit => ids.includes(orgUnit.id))
+        return userOrgUnits.filter(ou => ids.includes(ou.id))
     }
 
     onLevelChange = event => {
