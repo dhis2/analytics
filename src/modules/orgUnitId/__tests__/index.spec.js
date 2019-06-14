@@ -24,48 +24,48 @@ describe('orgUnitId', () => {
     })
 
     it('returns the uid of a level-id', () => {
-        expect(orgUnitId.extractUid('LEVEL-2nd-floor')).toEqual('2nd-floor')
+        expect(orgUnitId.removePrefix('LEVEL-2nd-floor')).toEqual('2nd-floor')
     })
 
     it('returns the uid of a group-id', () => {
-        expect(orgUnitId.extractUid('OU_GROUP-fruit-group')).toEqual(
+        expect(orgUnitId.removePrefix('OU_GROUP-fruit-group')).toEqual(
             'fruit-group'
         )
     })
 
     it('returns the uid of plain orgunit id', () => {
-        expect(orgUnitId.extractUid('lmao')).toEqual('lmao')
+        expect(orgUnitId.removePrefix('lmao')).toEqual('lmao')
     })
 
     it('returns false for empty string', () => {
-        expect(orgUnitId.isGroupId('')).toBe(false)
+        expect(orgUnitId.hasGroupPrefix('')).toBe(false)
     })
 
     it('returns true for group id', () => {
         const id = 'OU_GROUP-fruit-group'
 
-        expect(orgUnitId.isGroupId(id)).toBe(true)
+        expect(orgUnitId.hasGroupPrefix(id)).toBe(true)
     })
 
     it('returns false for non-group id', () => {
         const id = 'NON_GROUP_ID'
 
-        expect(orgUnitId.isGroupId(id)).toBe(false)
+        expect(orgUnitId.hasGroupPrefix(id)).toBe(false)
     })
 
     it('returns false for empty string', () => {
-        expect(orgUnitId.isLevelId('')).toBe(false)
+        expect(orgUnitId.hasLevelPrefix('')).toBe(false)
     })
 
     it('returns true for level id', () => {
         const id = 'LEVEL-2nd-floor'
 
-        expect(orgUnitId.isLevelId(id)).toBe(true)
+        expect(orgUnitId.hasLevelPrefix(id)).toBe(true)
     })
 
     it('returns false for non-level id', () => {
         const id = 'NON_LEVEL_ID'
 
-        expect(orgUnitId.isLevelId(id)).toBe(false)
+        expect(orgUnitId.hasLevelPrefix(id)).toBe(false)
     })
 })
