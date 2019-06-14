@@ -65,7 +65,7 @@ class OrgUnitDimension extends Component {
     }
 
     getUserOrgUnitsFromIds = ids => {
-        return userOrgUnits.filter(ou => ids.includes(ou.id))
+        return userOrgUnits.filter(orgUnit => ids.includes(orgUnit.id))
     }
 
     onLevelChange = event => {
@@ -137,13 +137,13 @@ class OrgUnitDimension extends Component {
         )
     }
 
-    handleOrgUnitClick = (event, organisationUnit) => {
+    handleOrgUnitClick = (event, orgUnit) => {
         const selected = this.props.ouItems
 
-        if (selected.some(ou => ou.path === organisationUnit.path)) {
+        if (selected.some(ou => ou.path === orgUnit.path)) {
             this.props.onDeselect({
                 dimensionId: ouId,
-                itemIdsToRemove: [organisationUnit.id],
+                itemIdsToRemove: [orgUnit.id],
             })
         } else {
             this.props.onSelect({
@@ -151,10 +151,8 @@ class OrgUnitDimension extends Component {
                 items: [
                     ...selected,
                     {
-                        ...organisationUnit,
-                        name:
-                            organisationUnit.name ||
-                            organisationUnit.displayName,
+                        ...orgUnit,
+                        name: orgUnit.name || orgUnit.displayName,
                     },
                 ],
             })
