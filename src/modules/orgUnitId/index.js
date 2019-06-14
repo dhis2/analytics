@@ -11,10 +11,12 @@ const stripLevelPrefix = id =>
 const stripGroupPrefix = id =>
     isGroupId(id) ? id.substr(GROUP_ID_PREFIX.length + 1) : id
 
-export const orgUnit = Object.freeze({
-    getLevelId: id => `${LEVEL_ID_PREFIX}-${id}`,
-    getGroupId: id => `${GROUP_ID_PREFIX}-${id}`,
-    getUid: id => stripGroupPrefix(stripLevelPrefix(id)),
+const extractUid = id => stripGroupPrefix(stripLevelPrefix(id))
+
+export const orgUnitId = Object.freeze({
+    addLevelPrefix: id => `${LEVEL_ID_PREFIX}-${extractUid(id)}`,
+    addGroupPrefix: id => `${GROUP_ID_PREFIX}-${extractUid(id)}`,
+    extractUid,
     isGroupId,
     isLevelId,
 })
