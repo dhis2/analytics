@@ -251,6 +251,7 @@ export class DataDimension extends Component {
 
         const selected = {
             items: this.props.selectedDimensions,
+            isItemActive: this.props.isItemActive,
             dialogId: dxId,
             onDeselect: this.deselectItems,
             onReorder: this.reorderItems,
@@ -277,6 +278,7 @@ DataDimension.propTypes = {
     d2: PropTypes.object.isRequired,
     displayNameProp: PropTypes.string.isRequired,
     selectedDimensions: PropTypes.array.isRequired,
+    isItemActive: PropTypes.func,
     onSelect: PropTypes.func.isRequired,
     onDeselect: PropTypes.func.isRequired,
     onReorder: PropTypes.func.isRequired,
@@ -284,6 +286,7 @@ DataDimension.propTypes = {
 
 DataDimension.defaultProps = {
     selectedDimensions: [],
+    isItemActive: () => true,
     onSelect: Function.prototype,
     onDeselect: Function.prototype,
     onReorder: Function.prototype,

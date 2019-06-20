@@ -141,6 +141,7 @@ export class SelectedItems extends Component {
                             index={index}
                             name={itemText}
                             highlighted={!!this.state.highlighted.includes(id)}
+                            active={this.props.isItemActive(id, index)}
                             onRemoveItem={this.onDeselectOne}
                             onClick={this.toggleHighlight}
                             ghost={ghost}
@@ -240,8 +241,13 @@ export class SelectedItems extends Component {
     }
 }
 
+SelectedItems.defaultProps = {
+    isItemActive: () => true,
+}
+
 SelectedItems.propTypes = {
     items: PropTypes.array.isRequired,
+    isItemActive: PropTypes.func.isRequired,
     onDeselect: PropTypes.func.isRequired,
     onReorder: PropTypes.func.isRequired,
 }
