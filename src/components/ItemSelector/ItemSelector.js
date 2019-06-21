@@ -45,6 +45,7 @@ ItemSelector.propTypes = {
             })
         ).isRequired,
         dialogId: PropTypes.string,
+        infoBoxMessage: PropTypes.string,
         onDeselect: PropTypes.func.isRequired,
         onReorder: PropTypes.func.isRequired,
     }),

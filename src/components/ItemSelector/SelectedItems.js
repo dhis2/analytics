@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react'
 import PropTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'
 import Button from '@material-ui/core/Button/Button'
+import InfoIcon from '@material-ui/icons/InfoOutlined'
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd'
 
 import Item from './widgets/SelectedItem'
@@ -13,6 +14,14 @@ import styles from './styles/SelectedItems.style'
 const Subtitle = () => (
     <div className="subtitle-container">
         <span className="subtitle-text">{i18n.t('Selected Data')}</span>
+        <style jsx>{styles}</style>
+    </div>
+)
+
+const InfoBox = ({ message }) => (
+    <div className="info-container">
+        <InfoIcon style={{ fontSize: 16, color: '#6E7A8A' }} />
+        <span className="info-text">{message}</span>
         <style jsx>{styles}</style>
     </div>
 )
@@ -213,6 +222,9 @@ export class SelectedItems extends Component {
         return (
             <Fragment>
                 <Subtitle />
+                {this.props.infoBoxMessage ? (
+                    <InfoBox message={this.props.infoBoxMessage} />
+                ) : null}
                 <DragDropContext
                     onDragStart={this.onDragStart}
                     onDragEnd={this.onDragEnd}
@@ -250,6 +262,7 @@ SelectedItems.propTypes = {
     items: PropTypes.array.isRequired,
     onDeselect: PropTypes.func.isRequired,
     onReorder: PropTypes.func.isRequired,
+    infoBoxMessage: PropTypes.string,
 }
 
 export default SelectedItems
