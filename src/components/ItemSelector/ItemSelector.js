@@ -41,10 +41,10 @@ ItemSelector.propTypes = {
             PropTypes.shape({
                 id: PropTypes.string.isRequired,
                 name: PropTypes.string.isRequired,
+                isActive: PropTypes.bool,
             })
         ).isRequired,
         dialogId: PropTypes.string,
-        isItemActive: PropTypes.func,
         onDeselect: PropTypes.func.isRequired,
         onReorder: PropTypes.func.isRequired,
     }),

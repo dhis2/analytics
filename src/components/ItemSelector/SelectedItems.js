@@ -110,7 +110,7 @@ export class SelectedItems extends Component {
         this.props.onReorder(newList)
     }
 
-    renderListItem = ({ id, name }, index) => (
+    renderListItem = ({ id, name, isActive }, index) => (
         <Draggable draggableId={id} index={index} key={id}>
             {(provided, snapshot) => {
                 const isDraggedItem =
@@ -141,7 +141,7 @@ export class SelectedItems extends Component {
                             index={index}
                             name={itemText}
                             highlighted={!!this.state.highlighted.includes(id)}
-                            active={this.props.isItemActive(id, index)}
+                            active={isActive}
                             onRemoveItem={this.onDeselectOne}
                             onClick={this.toggleHighlight}
                             ghost={ghost}
@@ -191,7 +191,12 @@ export class SelectedItems extends Component {
                 this.state.draggingId === item.id
 
             if (isDraggedItem) {
-                list.push({ id: item.id, name: item.name, clone: true })
+                list.push({
+                    id: item.id,
+                    name: item.name,
+                    isActive: item.isActive,
+                    clone: true,
+                })
             }
         })
 
@@ -241,13 +246,8 @@ export class SelectedItems extends Component {
     }
 }
 
-SelectedItems.defaultProps = {
-    isItemActive: () => true,
-}
-
 SelectedItems.propTypes = {
     items: PropTypes.array.isRequired,
-    isItemActive: PropTypes.func.isRequired,
     onDeselect: PropTypes.func.isRequired,
     onReorder: PropTypes.func.isRequired,
 }
