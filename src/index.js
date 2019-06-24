@@ -35,7 +35,7 @@ export {
     FIXED_DIMENSIONS,
 } from './modules/fixedDimensions'
 
-export { orgUnitId } from './modules/orgUnitId/index'
+export { ouIdHelper } from './modules/ouIdHelper'
 
 export { LAYOUT } from './modules/layout/layout'
 export { layoutFilterDimensions } from './modules/layout/layoutFilterDimensions'

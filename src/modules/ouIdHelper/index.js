@@ -15,7 +15,7 @@ const stripGroupPrefix = id =>
 
 const removePrefix = id => stripGroupPrefix(stripLevelPrefix(id))
 
-export const orgUnitId = Object.freeze({
+export const ouIdHelper = Object.freeze({
     addLevelPrefix: id => `${LEVEL_ID_PREFIX}-${removePrefix(id)}`,
     addGroupPrefix: id => `${GROUP_ID_PREFIX}-${removePrefix(id)}`,
     removePrefix,

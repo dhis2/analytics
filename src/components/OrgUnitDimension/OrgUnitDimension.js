@@ -14,7 +14,7 @@ import {
     apiFetchOrganisationUnits,
 } from '../../api/organisationUnits'
 
-import { orgUnitId } from '../../modules/orgUnitId'
+import { ouIdHelper } from '../../modules/ouIdHelper'
 
 import { FIXED_DIMENSIONS } from '../../modules/fixedDimensions'
 import styles from './styles/OrgUnitDimension.style'
@@ -75,14 +75,14 @@ class OrgUnitDimension extends Component {
             dimensionId: ouId,
             items: [
                 ...this.props.ouItems.filter(
-                    ou => !orgUnitId.hasLevelPrefix(ou.id)
+                    ou => !ouIdHelper.hasLevelPrefix(ou.id)
                 ),
                 ...levelIds.map(id => {
                     const levelOu = this.state.ouLevels.find(ou => ou.id === id)
 
                     return {
                         ...levelOu,
-                        id: orgUnitId.addLevelPrefix(levelOu.id),
+                        id: ouIdHelper.addLevelPrefix(levelOu.id),
                     }
                 }),
             ],
@@ -96,14 +96,14 @@ class OrgUnitDimension extends Component {
             dimensionId: ouId,
             items: [
                 ...this.props.ouItems.filter(
-                    ou => !orgUnitId.hasGroupPrefix(ou.id)
+                    ou => !ouIdHelper.hasGroupPrefix(ou.id)
                 ),
                 ...groupIds.map(id => {
                     const groupOu = this.state.ouGroups.find(ou => ou.id === id)
 
                     return {
                         ...groupOu,
-                        id: orgUnitId.addGroupPrefix(id),
+                        id: ouIdHelper.addGroupPrefix(id),
                     }
                 }),
             ],
@@ -222,17 +222,17 @@ class OrgUnitDimension extends Component {
         const selected = this.props.ouItems.filter(
             ou =>
                 !this.userOrgUnitIds.includes(ou.id) &&
-                !orgUnitId.hasLevelPrefix(ou.id) &&
-                !orgUnitId.hasGroupPrefix(ou.id)
+                !ouIdHelper.hasLevelPrefix(ou.id) &&
+                !ouIdHelper.hasGroupPrefix(ou.id)
         )
 
         const userOrgUnits = this.getUserOrgUnitsFromIds(ids)
         const level = ids
-            .filter(orgUnitId.hasLevelPrefix)
-            .map(orgUnitId.removePrefix)
+            .filter(ouIdHelper.hasLevelPrefix)
+            .map(ouIdHelper.removePrefix)
         const group = ids
-            .filter(orgUnitId.hasGroupPrefix)
-            .map(orgUnitId.removePrefix)
+            .filter(ouIdHelper.hasGroupPrefix)
+            .map(ouIdHelper.removePrefix)
 
         return (
             <Fragment>
