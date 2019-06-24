@@ -35,6 +35,8 @@ export {
     FIXED_DIMENSIONS,
 } from './modules/fixedDimensions'
 
+export { ouIdHelper } from './modules/ouIdHelper'
+
 export { LAYOUT } from './modules/layout/layout'
 export { layoutFilterDimensions } from './modules/layout/layoutFilterDimensions'
 export { layoutGetAllAxes } from './modules/layout/layoutGetAllAxes'

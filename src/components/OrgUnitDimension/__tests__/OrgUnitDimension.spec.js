@@ -2,7 +2,6 @@ import React from 'react'
 import { shallow } from 'enzyme'
 import DialogTitle from '@material-ui/core/DialogTitle'
 import DialogContent from '@material-ui/core/DialogContent'
-import CircularProgress from '@material-ui/core/CircularProgress'
 
 import OrgUnitDimension, { defaultState } from '../OrgUnitDimension'
 
