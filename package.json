@@ -1,9 +1,9 @@
 {
-    "name": "@dhis2/d2-ui-analytics",
+    "name": "@dhis2/analytics",
     "version": "1.0.5",
     "main": "./build/index.js",
     "sideEffects": false,
-    "repository": "git@github.com:dhis2/d2-ui-analytics.git",
+    "repository": "git@github.com:dhis2/analytics.git",
     "author": "Jennifer Jones Arnesen <jennifer@dhis2.org>",
     "license": "BSD-3-Clause",
     "private": false,
