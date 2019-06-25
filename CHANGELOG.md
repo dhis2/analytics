@@ -1,3 +1,15 @@
+# [2.0.0](https://github.com/dhis2/analytics/compare/v1.0.5...v2.0.0) (2019-06-25)
+
+
+### Features
+
+* export orgUnitId functions for detecting and creating org unit level and group ids ([#29](https://github.com/dhis2/analytics/issues/29)) ([bda28ba](https://github.com/dhis2/analytics/commit/bda28ba))
+
+
+### BREAKING CHANGES
+
+* several functions that were not necessary have been removed, and the name of the export has been changed.
+
 ## [1.0.5](https://github.com/dhis2/d2-ui-analytics/compare/v1.0.4...v1.0.5) (2019-05-29)
 
 
