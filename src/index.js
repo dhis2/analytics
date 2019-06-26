@@ -91,3 +91,6 @@ export { dimensionIsValid } from './modules/layout/dimensionIsValid'
 export { ITEM, ITEM_PROP_ID, ITEM_PROPS } from './modules/layout/item'
 export { itemGetId } from './modules/layout/itemGetId'
 export { itemIsValid } from './modules/layout/itemIsValid'
+
+// Visualization
+export { createVisualization } from './visualizations'
