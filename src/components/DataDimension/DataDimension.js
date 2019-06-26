@@ -20,11 +20,9 @@ import {
     defaultGroupId,
     defaultGroupDetail,
 } from '../../modules/dataTypes'
-import { FIXED_DIMENSIONS } from '../../modules/fixedDimensions'
+import { DIMENSION_ID_DATA } from '../../modules/fixedDimensions'
 
 import { styles } from './styles/DataDimension.style'
-
-const dxId = FIXED_DIMENSIONS.dx.id
 
 const FIRST_PAGE = 1
 
@@ -187,7 +185,7 @@ export class DataDimension extends Component {
         )
 
         this.props.onSelect({
-            dimensionId: dxId,
+            dimensionId: DIMENSION_ID_DATA,
             items: [
                 ...this.props.selectedDimensions.filter(
                     item => !selectedIds.includes(item.id)
@@ -199,14 +197,14 @@ export class DataDimension extends Component {
 
     deselectItems = itemIdsToRemove => {
         this.props.onDeselect({
-            dimensionId: dxId,
+            dimensionId: DIMENSION_ID_DATA,
             itemIdsToRemove,
         })
     }
 
     reorderItems = itemIds =>
         this.props.onReorder({
-            dimensionId: dxId,
+            dimensionId: DIMENSION_ID_DATA,
             itemIds,
         })
 
@@ -251,7 +249,7 @@ export class DataDimension extends Component {
 
         const selected = {
             items: this.props.selectedDimensions,
-            dialogId: dxId,
+            dialogId: DIMENSION_ID_DATA,
             onDeselect: this.deselectItems,
             onReorder: this.reorderItems,
         }
