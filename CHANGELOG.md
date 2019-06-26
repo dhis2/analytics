@@ -1,3 +1,10 @@
+# [2.1.0](https://github.com/dhis2/analytics/compare/v2.0.0...v2.1.0) (2019-06-26)
+
+
+### Features
+
+* **visualizations:** move d2-charts-api to visualizations ([#32](https://github.com/dhis2/analytics/issues/32)) ([fd05e33](https://github.com/dhis2/analytics/commit/fd05e33))
+
 # [2.0.0](https://github.com/dhis2/analytics/compare/v1.0.5...v2.0.0) (2019-06-25)
 
 
