@@ -28,6 +28,8 @@ export { apiFetchDimensions } from './api/dimensions'
 
 // Modules
 
+export { colors } from './modules/colors';
+
 export {
     DIMENSION_ID_DATA,
     DIMENSION_ID_PERIOD,
