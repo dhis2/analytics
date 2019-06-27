@@ -1,3 +1,10 @@
+## [2.1.1](https://github.com/dhis2/analytics/compare/v2.1.0...v2.1.1) (2019-06-27)
+
+
+### Bug Fixes
+
+* remove console log ([#34](https://github.com/dhis2/analytics/issues/34)) ([271feb5](https://github.com/dhis2/analytics/commit/271feb5))
+
 # [2.1.0](https://github.com/dhis2/analytics/compare/v2.0.0...v2.1.0) (2019-06-26)
 
 
