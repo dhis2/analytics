@@ -68,10 +68,6 @@
         "d2-utilizr": "^0.2.16",
         "d3-color": "^1.2.3",
         "highcharts": "^7.1.2",
-        "highcharts-exporting": "^0.1.7",
-        "highcharts-more": "^0.1.7",
-        "highcharts-no-data-to-display": "^0.1.7",
-        "highcharts-solid-gauge": "^0.1.7",
         "lodash": "^4.17.11",
         "react-beautiful-dnd": "^10.1.1",
         "styled-jsx": "^3.2.1"

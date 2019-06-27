@@ -5906,26 +5906,6 @@ he@1.2.x:
   resolved "https://registry.yarnpkg.com/he/-/he-1.2.0.tgz#84ae65fa7eafb165fddb61566ae14baf05664f0f"
   integrity sha512-F/1DnUGPopORZi0ni+CvrCgHQ5FyEAHRLSApuYWMmrbSwoN2Mn/7k+Gl38gJnR7yyDZk6WLXwiGod1JOWNDKGw==
 
-highcharts-exporting@^0.1.7:
-  version "0.1.7"
-  resolved "https://registry.yarnpkg.com/highcharts-exporting/-/highcharts-exporting-0.1.7.tgz#f38024b9ef78ce2ac3a39f853f83b55822ae1630"
-  integrity sha1-84Akue94zirDo5+FP4O1WCKuFjA=
-
-highcharts-more@^0.1.7:
-  version "0.1.7"
-  resolved "https://registry.yarnpkg.com/highcharts-more/-/highcharts-more-0.1.7.tgz#43cd6274cccba443166c94d4536d904bbabf9c77"
-  integrity sha1-Q81idMzLpEMWbJTUU22QS7q/nHc=
-
-highcharts-no-data-to-display@^0.1.7:
-  version "0.1.7"
-  resolved "https://registry.yarnpkg.com/highcharts-no-data-to-display/-/highcharts-no-data-to-display-0.1.7.tgz#a9eb8b28da3df299d0d8262b78437cfe7d81d877"
-  integrity sha1-qeuLKNo98pnQ2CYreEN8/n2B2Hc=
-
-highcharts-solid-gauge@^0.1.7:
-  version "0.1.7"
-  resolved "https://registry.yarnpkg.com/highcharts-solid-gauge/-/highcharts-solid-gauge-0.1.7.tgz#4bf2dca76b5f559034b59d0c6d4755d1c71a6a5b"
-  integrity sha1-S/Lcp2tfVZA0tZ0MbUdV0ccaals=
-
 highcharts@^7.1.2:
   version "7.1.2"
   resolved "https://registry.yarnpkg.com/highcharts/-/highcharts-7.1.2.tgz#f337e75cf0614f58f87fb28fbab48e1096265b5d"
