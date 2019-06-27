@@ -16,11 +16,9 @@ import {
 
 import { ouIdHelper } from '../../modules/ouIdHelper'
 
-import { FIXED_DIMENSIONS } from '../../modules/fixedDimensions'
+import { DIMENSION_ID_ORGUNIT } from '../../modules/fixedDimensions'
 import styles from './styles/OrgUnitDimension.style'
 import { colors } from '../../modules/colors'
-
-const ouId = FIXED_DIMENSIONS.ou.id
 
 export const defaultState = {
     root: undefined,
@@ -72,7 +70,7 @@ class OrgUnitDimension extends Component {
         const levelIds = event.target.value.filter(id => !!id)
 
         this.props.onSelect({
-            dimensionId: ouId,
+            dimensionId: DIMENSION_ID_ORGUNIT,
             items: [
                 ...this.props.ouItems.filter(
                     ou => !ouIdHelper.hasLevelPrefix(ou.id)
@@ -93,7 +91,7 @@ class OrgUnitDimension extends Component {
         const groupIds = event.target.value.filter(id => !!id)
 
         this.props.onSelect({
-            dimensionId: ouId,
+            dimensionId: DIMENSION_ID_ORGUNIT,
             items: [
                 ...this.props.ouItems.filter(
                     ou => !ouIdHelper.hasGroupPrefix(ou.id)
@@ -112,7 +110,7 @@ class OrgUnitDimension extends Component {
 
     onDeselectAllClick = () =>
         this.props.onDeselect({
-            dimensionId: ouId,
+            dimensionId: DIMENSION_ID_ORGUNIT,
             itemIdsToRemove: this.props.ouItems.map(ou => ou.id),
         })
 
@@ -146,12 +144,12 @@ class OrgUnitDimension extends Component {
 
         if (selected.some(ou => ou.path === orgUnit.path)) {
             this.props.onDeselect({
-                dimensionId: ouId,
+                dimensionId: DIMENSION_ID_ORGUNIT,
                 itemIdsToRemove: [orgUnit.id],
             })
         } else {
             this.props.onSelect({
-                dimensionId: ouId,
+                dimensionId: DIMENSION_ID_ORGUNIT,
                 items: [
                     ...selected,
                     {
@@ -172,7 +170,7 @@ class OrgUnitDimension extends Component {
             }
 
             this.props.onSelect({
-                dimensionId: ouId,
+                dimensionId: DIMENSION_ID_ORGUNIT,
                 items: [
                     ...this.props.ouItems.filter(ou =>
                         this.userOrgUnitIds.includes(ou.id)
@@ -186,12 +184,12 @@ class OrgUnitDimension extends Component {
                 this.state.selected.length > 0
             ) {
                 this.props.onSelect({
-                    dimensionId: ouId,
+                    dimensionId: DIMENSION_ID_ORGUNIT,
                     items: this.state.selected,
                 })
             } else {
                 this.props.onDeselect({
-                    dimensionId: ouId,
+                    dimensionId: DIMENSION_ID_ORGUNIT,
                     itemIdsToRemove: [event.target.name],
                 })
             }
@@ -202,7 +200,7 @@ class OrgUnitDimension extends Component {
         const selected = this.props.ouItems
 
         this.props.onSelect({
-            dimensionId: ouId,
+            dimensionId: DIMENSION_ID_ORGUNIT,
             items: [
                 ...selected,
                 ...orgUnits.reduce((obj, ou) => {
