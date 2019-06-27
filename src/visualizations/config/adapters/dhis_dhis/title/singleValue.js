@@ -1,15 +1,12 @@
 import getFilterTitle from '../getFilterTitle'
 
-export default function(layout, metaData, dashboard) {
-    const titleFragments = []
+export default function(layout, metaData) {
+    if (layout.columns) {
+        const items = [layout.columns[0].items[0]]
+        const single = Object.assign({}, layout.columns[0], { items })
 
-    if (layout.columns && !dashboard) {
-        titleFragments.push(getFilterTitle(layout.columns, metaData))
+        return getFilterTitle([single], metaData)
     }
 
-    if (layout.filters && !dashboard) {
-        titleFragments.push(getFilterTitle(layout.filters, metaData))
-    }
-
-    return titleFragments.length ? titleFragments.join(' - ') : null
+    return null
 }
