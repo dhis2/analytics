@@ -19,13 +19,7 @@ export default function(layout, metaData, dashboard) {
     } else {
         switch (layout.type) {
             case VISUALIZATION_TYPE_SINGLE_VALUE:
-                subtitle = getSingleValueTitle(
-                    layout,
-                    metaData,
-                    dashboard,
-                    false,
-                    true
-                )
+                subtitle = getSingleValueTitle(layout, metaData)
 
                 break
             default:
