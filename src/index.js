@@ -35,6 +35,8 @@ export {
     FIXED_DIMENSIONS,
 } from './modules/fixedDimensions'
 
+export { ouIdHelper } from './modules/ouIdHelper'
+
 export { LAYOUT } from './modules/layout/layout'
 export { layoutFilterDimensions } from './modules/layout/layoutFilterDimensions'
 export { layoutGetAllAxes } from './modules/layout/layoutGetAllAxes'
@@ -89,3 +91,6 @@ export { dimensionIsValid } from './modules/layout/dimensionIsValid'
 export { ITEM, ITEM_PROP_ID, ITEM_PROPS } from './modules/layout/item'
 export { itemGetId } from './modules/layout/itemGetId'
 export { itemIsValid } from './modules/layout/itemIsValid'
+
+// Visualization
+export { createVisualization } from './visualizations'

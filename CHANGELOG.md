@@ -1,3 +1,36 @@
+## [2.1.2](https://github.com/dhis2/analytics/compare/v2.1.1...v2.1.2) (2019-06-27)
+
+
+### Bug Fixes
+
+* apply d2-style ([#35](https://github.com/dhis2/analytics/issues/35)) ([c870cf1](https://github.com/dhis2/analytics/commit/c870cf1))
+
+## [2.1.1](https://github.com/dhis2/analytics/compare/v2.1.0...v2.1.1) (2019-06-27)
+
+
+### Bug Fixes
+
+* remove console log ([#34](https://github.com/dhis2/analytics/issues/34)) ([271feb5](https://github.com/dhis2/analytics/commit/271feb5))
+
+# [2.1.0](https://github.com/dhis2/analytics/compare/v2.0.0...v2.1.0) (2019-06-26)
+
+
+### Features
+
+* **visualizations:** move d2-charts-api to visualizations ([#32](https://github.com/dhis2/analytics/issues/32)) ([fd05e33](https://github.com/dhis2/analytics/commit/fd05e33))
+
+# [2.0.0](https://github.com/dhis2/analytics/compare/v1.0.5...v2.0.0) (2019-06-25)
+
+
+### Features
+
+* export orgUnitId functions for detecting and creating org unit level and group ids ([#29](https://github.com/dhis2/analytics/issues/29)) ([bda28ba](https://github.com/dhis2/analytics/commit/bda28ba))
+
+
+### BREAKING CHANGES
+
+* several functions that were not necessary have been removed, and the name of the export has been changed.
+
 ## [1.0.5](https://github.com/dhis2/d2-ui-analytics/compare/v1.0.4...v1.0.5) (2019-05-29)
 
 

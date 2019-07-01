@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import CircularProgress from '@material-ui/core/CircularProgress'
 import DialogContent from '@material-ui/core/DialogContent'
 import DialogTitle from '@material-ui/core/DialogTitle'
+import sortBy from 'lodash/sortBy'
 
 import i18n from '@dhis2/d2-i18n'
 import { OrgUnitSelector, userOrgUnits } from '@dhis2/d2-ui-org-unit-dialog'
@@ -13,21 +14,11 @@ import {
     apiFetchOrganisationUnits,
 } from '../../api/organisationUnits'
 
-import {
-    LEVEL_ID_PREFIX,
-    GROUP_ID_PREFIX,
-    isLevelId,
-    isGroupId,
-    getLevelsFromIds,
-    getGroupsFromIds,
-    sortOrgUnitLevels,
-} from '../../modules/orgUnitDimensions'
+import { ouIdHelper } from '../../modules/ouIdHelper'
 
-import { FIXED_DIMENSIONS } from '../../modules/fixedDimensions'
+import { DIMENSION_ID_ORGUNIT } from '../../modules/fixedDimensions'
 import styles from './styles/OrgUnitDimension.style'
 import { colors } from '../../modules/colors'
-
-const ouId = FIXED_DIMENSIONS.ou.id
 
 export const defaultState = {
     root: undefined,
@@ -43,7 +34,7 @@ class OrgUnitDimension extends Component {
         super(props)
 
         this.state = defaultState
-        this.userOrgUnitIds = userOrgUnits.map(orgUnit => orgUnit.id)
+        this.userOrgUnitIds = userOrgUnits.map(ou => ou.id)
 
         this.loadOrgUnitTree(props.d2, props.displayNameProperty)
         this.loadOrgUnitGroups(props.d2, props.displayNameProperty)
@@ -79,15 +70,17 @@ class OrgUnitDimension extends Component {
         const levelIds = event.target.value.filter(id => !!id)
 
         this.props.onSelect({
-            dimensionId: ouId,
+            dimensionId: DIMENSION_ID_ORGUNIT,
             items: [
-                ...this.props.ouItems.filter(ou => !isLevelId(ou.id)),
+                ...this.props.ouItems.filter(
+                    ou => !ouIdHelper.hasLevelPrefix(ou.id)
+                ),
                 ...levelIds.map(id => {
                     const levelOu = this.state.ouLevels.find(ou => ou.id === id)
 
                     return {
                         ...levelOu,
-                        id: `${LEVEL_ID_PREFIX}-${levelOu.id}`,
+                        id: ouIdHelper.addLevelPrefix(levelOu.id),
                     }
                 }),
             ],
@@ -98,15 +91,17 @@ class OrgUnitDimension extends Component {
         const groupIds = event.target.value.filter(id => !!id)
 
         this.props.onSelect({
-            dimensionId: ouId,
+            dimensionId: DIMENSION_ID_ORGUNIT,
             items: [
-                ...this.props.ouItems.filter(ou => !isGroupId(ou.id)),
+                ...this.props.ouItems.filter(
+                    ou => !ouIdHelper.hasGroupPrefix(ou.id)
+                ),
                 ...groupIds.map(id => {
                     const groupOu = this.state.ouGroups.find(ou => ou.id === id)
 
                     return {
                         ...groupOu,
-                        id: `${GROUP_ID_PREFIX}-${id}`,
+                        id: ouIdHelper.addGroupPrefix(id),
                     }
                 }),
             ],
@@ -115,7 +110,7 @@ class OrgUnitDimension extends Component {
 
     onDeselectAllClick = () =>
         this.props.onDeselect({
-            dimensionId: ouId,
+            dimensionId: DIMENSION_ID_ORGUNIT,
             itemIdsToRemove: this.props.ouItems.map(ou => ou.id),
         })
 
@@ -139,7 +134,7 @@ class OrgUnitDimension extends Component {
     loadOrgUnitLevels = d2 => {
         apiFetchOrganisationUnitLevels(d2).then(organisationUnitLevels =>
             this.setState({
-                ouLevels: sortOrgUnitLevels(organisationUnitLevels),
+                ouLevels: sortBy(organisationUnitLevels, ['level']),
             })
         )
     }
@@ -149,12 +144,12 @@ class OrgUnitDimension extends Component {
 
         if (selected.some(ou => ou.path === orgUnit.path)) {
             this.props.onDeselect({
-                dimensionId: ouId,
+                dimensionId: DIMENSION_ID_ORGUNIT,
                 itemIdsToRemove: [orgUnit.id],
             })
         } else {
             this.props.onSelect({
-                dimensionId: ouId,
+                dimensionId: DIMENSION_ID_ORGUNIT,
                 items: [
                     ...selected,
                     {
@@ -175,7 +170,7 @@ class OrgUnitDimension extends Component {
             }
 
             this.props.onSelect({
-                dimensionId: ouId,
+                dimensionId: DIMENSION_ID_ORGUNIT,
                 items: [
                     ...this.props.ouItems.filter(ou =>
                         this.userOrgUnitIds.includes(ou.id)
@@ -189,12 +184,12 @@ class OrgUnitDimension extends Component {
                 this.state.selected.length > 0
             ) {
                 this.props.onSelect({
-                    dimensionId: ouId,
+                    dimensionId: DIMENSION_ID_ORGUNIT,
                     items: this.state.selected,
                 })
             } else {
                 this.props.onDeselect({
-                    dimensionId: ouId,
+                    dimensionId: DIMENSION_ID_ORGUNIT,
                     itemIdsToRemove: [event.target.name],
                 })
             }
@@ -205,7 +200,7 @@ class OrgUnitDimension extends Component {
         const selected = this.props.ouItems
 
         this.props.onSelect({
-            dimensionId: ouId,
+            dimensionId: DIMENSION_ID_ORGUNIT,
             items: [
                 ...selected,
                 ...orgUnits.reduce((obj, ou) => {
@@ -221,20 +216,21 @@ class OrgUnitDimension extends Component {
     }
 
     render = () => {
-        const ids = this.props.ouItems.map(ou => ou.id) || []
-        const selected = this.props.ouItems.filter(ou => {
-            return (
-                // filter out user org units
+        const ids = this.props.ouItems.map(ou => ou.id)
+        const selected = this.props.ouItems.filter(
+            ou =>
                 !this.userOrgUnitIds.includes(ou.id) &&
-                // filter out levels
-                !isLevelId(ou.id) &&
-                // filter out groups
-                !isGroupId(ou.id)
-            )
-        })
+                !ouIdHelper.hasLevelPrefix(ou.id) &&
+                !ouIdHelper.hasGroupPrefix(ou.id)
+        )
+
         const userOrgUnits = this.getUserOrgUnitsFromIds(ids)
-        const level = getLevelsFromIds(ids, this.state.ouLevels)
-        const group = getGroupsFromIds(ids, this.state.ouGroups)
+        const level = ids
+            .filter(ouIdHelper.hasLevelPrefix)
+            .map(ouIdHelper.removePrefix)
+        const group = ids
+            .filter(ouIdHelper.hasGroupPrefix)
+            .map(ouIdHelper.removePrefix)
 
         return (
             <Fragment>
