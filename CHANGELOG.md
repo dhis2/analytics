@@ -1,3 +1,10 @@
+## [2.1.3](https://github.com/dhis2/analytics/compare/v2.1.2...v2.1.3) (2019-07-01)
+
+
+### Bug Fixes
+
+* bump @babel/preset-env from 7.4.3 to 7.4.5 ([#44](https://github.com/dhis2/analytics/issues/44)) ([908ebb9](https://github.com/dhis2/analytics/commit/908ebb9))
+
 ## [2.1.2](https://github.com/dhis2/analytics/compare/v2.1.1...v2.1.2) (2019-06-27)
 
 
