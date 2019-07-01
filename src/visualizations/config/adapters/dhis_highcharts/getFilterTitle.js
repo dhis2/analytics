@@ -8,6 +8,8 @@ import { dimensionGetItems } from '../../../../modules/layout/dimensionGetItems'
 export default function(filters, metaData) {
     if (isArray(filters)) {
         const titleParts = []
+        let i
+        let l
 
         filters.forEach(filter => {
             const items = dimensionGetItems(filter)
@@ -30,25 +32,31 @@ export default function(filters, metaData) {
                 const filterItems = metaData.dimensions[filter.dimension]
 
                 if (isArray(filterItems)) {
-                    const hasMetadata = filterItems.some(id =>
-                        Boolean(metaData.items[id])
-                    )
+                    l = filterItems.length
+                    let id
+                    let sectionParts = []
 
-                    if (hasMetadata) {
-                        const sectionParts = filterItems.map(
-                            id => metaData.items[id].name
-                        )
+                    for (i = 0; i < l; i++) {
+                        id = filterItems[i]
 
-                        titleParts.push(sectionParts.join(', '))
-                    } else {
-                        // use the values directly. This is a temporary fix to prevent
-                        // the EV app from crashing when using filters with data items
-                        titleParts.push(
-                            metaData.items[filter.dimension].name +
-                                ': ' +
-                                filterItems.join(', ')
-                        )
+                        // if the value is present in items take the name to show from there
+                        if (metaData.items[id]) {
+                            sectionParts.push(metaData.items[id].name)
+                        }
+                        // otherwise use the values directly
+                        // this is a temporary fix to avoid app crashing when using filters with data items in EV
+                        else {
+                            sectionParts.push(
+                                metaData.items[filter.dimension].name +
+                                    ': ' +
+                                    filterItems.join(', ')
+                            )
+
+                            break
+                        }
                     }
+
+                    titleParts.push(sectionParts.join(', '))
                 }
             }
         })
