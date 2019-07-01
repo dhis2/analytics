@@ -5,6 +5,7 @@ import Button from '@material-ui/core/Button/Button'
 import InfoIcon from '@material-ui/icons/InfoOutlined'
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd'
 
+import { colors } from '@dhis2/ui-core'
 import Item from './widgets/SelectedItem'
 import { ArrowButton as UnAssignButton } from './widgets/ArrowButton'
 import { toggler } from './modules/toggler'
@@ -20,7 +21,7 @@ const Subtitle = () => (
 
 const InfoBox = ({ message }) => (
     <div className="info-container">
-        <InfoIcon style={{ fontSize: 16, color: '#6E7A8A' }} />
+        <InfoIcon style={{ fontSize: 16, color: colors.grey600 }} />
         <span className="info-text">{message}</span>
         <style jsx>{styles}</style>
     </div>
