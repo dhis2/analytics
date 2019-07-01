@@ -1,36 +1,30 @@
 import isArray from 'd2-utilizr/lib/isArray'
-import { ouIdHelper } from '../../../../modules/ouIdHelper'
 import i18n from '@dhis2/d2-i18n'
+import { ouIdHelper } from '../../../../modules/ouIdHelper'
+import { dimensionIs } from '../../../../modules/layout/dimensionIs'
+import { DIMENSION_ID_ORGUNIT } from '../../../../modules/fixedDimensions'
+import { dimensionGetItems } from '../../../../modules/layout/dimensionGetItems'
 
 export default function(filters, metaData) {
     if (isArray(filters)) {
         const titleParts = []
 
         filters.forEach(filter => {
+            const items = dimensionGetItems(filter)
             const hasOuLevel =
-                filter.dimension === 'ou'
-                    ? filter.items.some(item =>
-                          ouIdHelper.hasLevelPrefix(item.id)
-                      )
-                    : false
+                dimensionIs(filter, DIMENSION_ID_ORGUNIT) &&
+                items.some(item => ouIdHelper.hasLevelPrefix(item.id))
             const hasOuGroup =
-                filter.dimension === 'ou'
-                    ? filter.items.some(item =>
-                          ouIdHelper.hasGroupPrefix(item.id)
-                      )
-                    : false
+                dimensionIs(filter, DIMENSION_ID_ORGUNIT) &&
+                items.some(item => ouIdHelper.hasGroupPrefix(item.id))
 
             if (hasOuLevel || hasOuGroup) {
                 if (hasOuGroup) {
-                    titleParts.push(
-                        getOuFilterTitle(filter.items, metaData, false)
-                    )
+                    titleParts.push(getOuTitle(items, metaData, false))
                 }
 
                 if (hasOuLevel) {
-                    titleParts.push(
-                        getOuFilterTitle(filter.items, metaData, true)
-                    )
+                    titleParts.push(getOuTitle(items, metaData, true))
                 }
             } else {
                 const filterItems = metaData.dimensions[filter.dimension]
@@ -65,7 +59,7 @@ export default function(filters, metaData) {
     return null
 }
 
-const getOuFilterTitle = (items, metaData, isLevel) => {
+const getOuTitle = (items, metaData, isLevel) => {
     const getNameFromMetadata = id =>
         metaData.items[id] ? metaData.items[id].name : id
 
@@ -100,5 +94,6 @@ const getOuFilterTitle = (items, metaData, isLevel) => {
         .join(', ')
 
     const joiner = isLevel ? i18n.t('levels in') : i18n.t('groups in')
+
     return `${allDynamicOuNames} ${joiner} ${staticOuNames}`
 }
