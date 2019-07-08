@@ -35,6 +35,10 @@ export default css`
         background-color: ${colors.accentSecondaryDark};
     }
 
+    .inactive-item {
+        opacity: 0.3;
+    }
+
     .item-label {
         font-size: 14px;
         padding: 2px;

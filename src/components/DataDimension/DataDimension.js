@@ -249,6 +249,7 @@ export class DataDimension extends Component {
 
         const selected = {
             items: this.props.selectedDimensions,
+            infoBoxMessage: this.props.infoBoxMessage,
             dialogId: DIMENSION_ID_DATA,
             onDeselect: this.deselectItems,
             onReorder: this.reorderItems,
@@ -275,6 +276,7 @@ DataDimension.propTypes = {
     d2: PropTypes.object.isRequired,
     displayNameProp: PropTypes.string.isRequired,
     selectedDimensions: PropTypes.array.isRequired,
+    infoBoxMessage: PropTypes.string,
     onSelect: PropTypes.func.isRequired,
     onDeselect: PropTypes.func.isRequired,
     onReorder: PropTypes.func.isRequired,

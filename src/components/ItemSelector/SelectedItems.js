@@ -2,8 +2,10 @@ import React, { Component, Fragment } from 'react'
 import PropTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'
 import Button from '@material-ui/core/Button/Button'
+import InfoIcon from '@material-ui/icons/InfoOutlined'
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd'
 
+import { colors } from '@dhis2/ui-core'
 import Item from './widgets/SelectedItem'
 import { ArrowButton as UnAssignButton } from './widgets/ArrowButton'
 import { toggler } from './modules/toggler'
@@ -13,6 +15,14 @@ import styles from './styles/SelectedItems.style'
 const Subtitle = () => (
     <div className="subtitle-container">
         <span className="subtitle-text">{i18n.t('Selected Data')}</span>
+        <style jsx>{styles}</style>
+    </div>
+)
+
+const InfoBox = ({ message }) => (
+    <div className="info-container">
+        <InfoIcon style={{ fontSize: 16, color: colors.grey600 }} />
+        <span className="info-text">{message}</span>
         <style jsx>{styles}</style>
     </div>
 )
@@ -110,7 +120,7 @@ export class SelectedItems extends Component {
         this.props.onReorder(newList)
     }
 
-    renderListItem = ({ id, name }, index) => (
+    renderListItem = ({ id, name, isActive }, index) => (
         <Draggable draggableId={id} index={index} key={id}>
             {(provided, snapshot) => {
                 const isDraggedItem =
@@ -141,6 +151,7 @@ export class SelectedItems extends Component {
                             index={index}
                             name={itemText}
                             highlighted={!!this.state.highlighted.includes(id)}
+                            active={isActive}
                             onRemoveItem={this.onDeselectOne}
                             onClick={this.toggleHighlight}
                             ghost={ghost}
@@ -190,7 +201,12 @@ export class SelectedItems extends Component {
                 this.state.draggingId === item.id
 
             if (isDraggedItem) {
-                list.push({ id: item.id, name: item.name, clone: true })
+                list.push({
+                    id: item.id,
+                    name: item.name,
+                    isActive: item.isActive,
+                    clone: true,
+                })
             }
         })
 
@@ -207,6 +223,9 @@ export class SelectedItems extends Component {
         return (
             <Fragment>
                 <Subtitle />
+                {this.props.infoBoxMessage ? (
+                    <InfoBox message={this.props.infoBoxMessage} />
+                ) : null}
                 <DragDropContext
                     onDragStart={this.onDragStart}
                     onDragEnd={this.onDragEnd}
@@ -244,6 +263,7 @@ SelectedItems.propTypes = {
     items: PropTypes.array.isRequired,
     onDeselect: PropTypes.func.isRequired,
     onReorder: PropTypes.func.isRequired,
+    infoBoxMessage: PropTypes.string,
 }
 
 export default SelectedItems

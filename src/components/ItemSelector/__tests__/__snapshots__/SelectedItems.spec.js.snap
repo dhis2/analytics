@@ -177,6 +177,7 @@ exports[`The SelectedItems component list with items matches the snapshot with l
                           tabIndex={0}
                         >
                           <Item
+                            active={true}
                             ghost={false}
                             highlighted={false}
                             id="rb"
@@ -410,6 +411,7 @@ exports[`The SelectedItems component list with items matches the snapshot with l
                           tabIndex={0}
                         >
                           <Item
+                            active={true}
                             ghost={false}
                             highlighted={false}
                             id="rr"
