@@ -1290,10 +1290,10 @@
     lodash "^4.17.11"
     prop-types "^15.6.0"
 
-"@dhis2/d2-ui-period-selector-dialog@^6.1.0":
-  version "6.1.0"
-  resolved "https://registry.yarnpkg.com/@dhis2/d2-ui-period-selector-dialog/-/d2-ui-period-selector-dialog-6.1.0.tgz#c7b5b20b44923d9b6e180bb90e3ccd1889dc419d"
-  integrity sha512-JOKX/UgOgaINSL09tqVOy0l98W7koZh045c6H3iDxf6WE8u3i2/Gj1FEGIrV3/GfZ0hHov9+sdboTL4f85OnUA==
+"@dhis2/d2-ui-period-selector-dialog@^6.1.1":
+  version "6.1.1"
+  resolved "https://registry.yarnpkg.com/@dhis2/d2-ui-period-selector-dialog/-/d2-ui-period-selector-dialog-6.1.1.tgz#791924bafbad8dfb792c4691136b19e16ca6e41e"
+  integrity sha512-51MsNJbsKFPAAgs/msRtJnKo3iO1zO+aBue0mZJzsUi4RA2n82ZG/2GSWHROz4hGLdTcd0m0wArfDH1aOY31gA==
   dependencies:
     "@dhis2/d2-i18n" "^1.0.4"
     "@dhis2/d2-ui-analytics" "^1.0.0"
