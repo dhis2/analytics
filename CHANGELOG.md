@@ -1,3 +1,10 @@
+# [2.2.0](https://github.com/dhis2/analytics/compare/v2.1.3...v2.2.0) (2019-07-08)
+
+
+### Features
+
+* active/inactive styling for dimension items ([#30](https://github.com/dhis2/analytics/issues/30)) ([56534ff](https://github.com/dhis2/analytics/commit/56534ff))
+
 ## [2.1.3](https://github.com/dhis2/analytics/compare/v2.1.2...v2.1.3) (2019-07-01)
 
 
