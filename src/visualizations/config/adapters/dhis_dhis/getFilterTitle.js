@@ -1,7 +1,5 @@
-import isArray from 'd2-utilizr/lib/isArray'
-
 export default function(filters, metaData) {
-    if (isArray(filters) && filters.length) {
+    if (Array.isArray(filters) && filters.length) {
         const titleFragments = []
 
         filters.forEach(filter => {
