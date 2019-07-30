@@ -1,36 +1,33 @@
-import isString from 'd2-utilizr/lib/isString'
-import getFilterTitle from '../getFilterTitle'
+import getFilterText from '../getFilterText'
 import { VISUALIZATION_TYPE_SINGLE_VALUE } from '../type'
-import getSingleValueTitle from '../title/singleValue'
+import getSingleValueTitle from './singleValue'
 
-function getDefault(layout, dashboard, filterTitle) {
-    return dashboard || isString(layout.title) ? filterTitle : ''
+function getDefault(layout, dashboard, metaData) {
+    if (dashboard || typeof layout.title === 'string') {
+        return getFilterText(layout.filters, metaData)
+    }
+
+    return ''
 }
 
 export default function(layout, metaData, dashboard) {
-    let subtitle = ''
-
     if (layout.hideSubtitle) {
-        return subtitle
+        return ''
     }
 
-    if (isString(layout.subtitle) && layout.subtitle.length) {
-        subtitle = layout.subtitle
+    if (typeof layout.subtitle === 'string' && layout.subtitle.length) {
+        return layout.subtitle
     } else {
-        const filterTitle = getFilterTitle(layout.filters, metaData)
-
+        let subtitle
         switch (layout.type) {
             case VISUALIZATION_TYPE_SINGLE_VALUE:
-                subtitle = getSingleValueTitle(
-                    layout,
-                    metaData,
-                    Boolean(!dashboard)
-                )
+                subtitle = getSingleValueTitle(layout, metaData)
+
                 break
             default:
-                subtitle = getDefault(layout, dashboard, filterTitle)
+                subtitle = getDefault(layout, dashboard, metaData)
         }
-    }
 
-    return subtitle
+        return subtitle
+    }
 }

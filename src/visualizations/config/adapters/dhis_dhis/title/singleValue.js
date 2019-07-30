@@ -1,15 +1,15 @@
-import getFilterTitle from '../getFilterTitle'
+import getFilterText from '../getFilterText'
 
-export default function(layout, metaData, dashboard) {
-    const titleFragments = []
+export default function(layout, metaData) {
+    if (layout.columns) {
+        const firstItem = layout.columns[0].items[0]
 
-    if (layout.columns && !dashboard) {
-        titleFragments.push(getFilterTitle(layout.columns, metaData))
+        const column = Object.assign({}, layout.columns[0], {
+            items: [firstItem],
+        })
+
+        return getFilterText([column], metaData)
     }
 
-    if (layout.filters && !dashboard) {
-        titleFragments.push(getFilterTitle(layout.filters, metaData))
-    }
-
-    return titleFragments.length ? titleFragments.join(' - ') : null
+    return ''
 }
