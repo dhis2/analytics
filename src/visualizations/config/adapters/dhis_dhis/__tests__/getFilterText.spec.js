@@ -1,15 +1,15 @@
-import getFilterTitle from '../getFilterTitle'
+import getFilterText from '../getFilterText'
 
-describe('getFilterTitle', () => {
+describe('getFilterText', () => {
     it('returns null when no filter array', () => {
-        expect(getFilterTitle('abc')).toBeNull()
+        expect(getFilterText('abc')).toEqual('')
     })
 
-    it('returns null when no filter array does not contain items', () => {
-        expect(getFilterTitle([])).toBeNull()
+    it('returns null when filter array does not contain items', () => {
+        expect(getFilterText([])).toEqual('')
     })
 
-    it('creates the filter title', () => {
+    it('returns the filter text', () => {
         const filters = [
             {
                 dimension: 'ou',
@@ -45,7 +45,7 @@ describe('getFilterTitle', () => {
                 },
             },
         }
-        expect(getFilterTitle(filters, metadata)).toEqual(
+        expect(getFilterText(filters, metadata)).toEqual(
             'Top-down - Eons ago, The Future'
         )
     })

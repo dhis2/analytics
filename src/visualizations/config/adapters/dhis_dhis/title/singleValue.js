@@ -1,12 +1,15 @@
-import getFilterTitle from '../getFilterTitle'
+import getFilterText from '../getFilterText'
 
 export default function(layout, metaData) {
     if (layout.columns) {
-        const items = [layout.columns[0].items[0]]
-        const single = Object.assign({}, layout.columns[0], { items })
+        const firstItem = layout.columns[0].items[0]
 
-        return getFilterTitle([single], metaData)
+        const column = Object.assign({}, layout.columns[0], {
+            items: [firstItem],
+        })
+
+        return getFilterText([column], metaData)
     }
 
-    return null
+    return ''
 }

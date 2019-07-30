@@ -1,5 +1,5 @@
-import getFilterTitle from '../getFilterTitle'
+import getFilterText from '../getFilterText'
 
 export default function(layout, metaData) {
-    return layout.filters ? getFilterTitle(layout.filters, metaData) : null
+    return layout.filters ? getFilterText(layout.filters, metaData) : ''
 }

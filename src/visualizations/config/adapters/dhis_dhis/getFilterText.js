@@ -15,5 +15,5 @@ export default function(filters, metaData) {
         return titleFragments.join(' - ')
     }
 
-    return null
+    return ''
 }
