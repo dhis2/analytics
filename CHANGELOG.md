@@ -1,3 +1,10 @@
+## [2.2.1](https://github.com/dhis2/analytics/compare/v2.2.0...v2.2.1) (2019-07-30)
+
+
+### Bug Fixes
+
+* Single value title should only include the first data item ([#51](https://github.com/dhis2/analytics/issues/51)) ([6d330a1](https://github.com/dhis2/analytics/commit/6d330a1))
+
 # [2.2.0](https://github.com/dhis2/analytics/compare/v2.1.3...v2.2.0) (2019-07-08)
 
 
