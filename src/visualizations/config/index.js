@@ -5,6 +5,9 @@ import { theme1 } from '../util/colors'
 
 const DEFAULT_EXTRA_OPTIONS = {
     colors: theme1,
+    noData: {
+        text: 'No data',
+    },
 }
 
 export default function({
