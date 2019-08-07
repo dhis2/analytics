@@ -2,6 +2,7 @@
 
 # Editor settings
 /.vscode
+/.idea
 
 # dependencies
 /node_modules
