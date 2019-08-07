@@ -1,3 +1,10 @@
+# [2.3.0](https://github.com/dhis2/analytics/compare/v2.2.1...v2.3.0) (2019-08-07)
+
+
+### Features
+
+* empty commit to trigger publishing ([0bd722c](https://github.com/dhis2/analytics/commit/0bd722c))
+
 ## [2.2.1](https://github.com/dhis2/analytics/compare/v2.2.0...v2.2.1) (2019-07-30)
 
 
