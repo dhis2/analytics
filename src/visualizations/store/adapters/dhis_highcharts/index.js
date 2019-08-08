@@ -1,3 +1,6 @@
+import arrayContains from 'd2-utilizr/lib/arrayContains'
+import arrayUnique from 'd2-utilizr/lib/arrayUnique'
+
 import getYearOnYear from './yearOnYear'
 import getPie from './pie'
 import getGauge from './gauge'
@@ -9,6 +12,10 @@ import {
 } from '../../../config/adapters/dhis_highcharts/type'
 
 const VALUE_ID = 'value'
+
+function arrayNullsOnly(array) {
+    return arrayContains(array, null) && arrayUnique(array).length === 1
+}
 
 function getHeaderIdIndexMap(headers) {
     const map = new Map()
@@ -55,7 +62,14 @@ function getDefault(acc, seriesIds, categoryIds, idValueMap, metaData) {
             // DHIS2-1261: 0 is a valid value
             // undefined value means the key was not found within the rows
             // in that case null is returned as value in the serie
+            // this is to keep the correct indexes for the values within the serie array
             serieData.push(value == undefined ? null : parseFloat(value))
+
+            // if the whole serie has no data, do not return a list of null values
+            // otherwise Highcharts thinks that data is available and does not show the "No data to display" message
+            if (arrayNullsOnly(serieData)) {
+                serieData.length = 0
+            }
         })
 
         acc.push({
