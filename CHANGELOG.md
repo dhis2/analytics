@@ -1,3 +1,10 @@
+## [2.3.2](https://github.com/dhis2/analytics/compare/v2.3.1...v2.3.2) (2019-08-12)
+
+
+### Bug Fixes
+
+* remove padding around DimensionPanel ([#73](https://github.com/dhis2/analytics/issues/73)) ([2a832af](https://github.com/dhis2/analytics/commit/2a832af))
+
 ## [2.3.1](https://github.com/dhis2/analytics/compare/v2.3.0...v2.3.1) (2019-08-08)
 
 
