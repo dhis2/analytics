@@ -13,7 +13,6 @@ export const styles = {
         width: '100%',
         height: '100%',
         overflow: 'auto',
-        padding: '0 8px 0 0',
         marginTop: '0px',
     },
 }
