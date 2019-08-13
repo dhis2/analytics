@@ -47,7 +47,6 @@ export {
     layoutGetAxisNameDimensionIdsObject,
 } from './modules/layout/layoutGetAxisNameDimensionIdsObject'
 export { layoutGetDimension } from './modules/layout/layoutGetDimension'
-export { layoutReplaceDimension } from './modules/layout/layoutReplaceDimension'
 export {
     layoutGetDimensionIdItemIdsObject,
 } from './modules/layout/layoutGetDimensionIdItemIdsObject'
