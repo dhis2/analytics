@@ -41,9 +41,11 @@ ItemSelector.propTypes = {
             PropTypes.shape({
                 id: PropTypes.string.isRequired,
                 name: PropTypes.string.isRequired,
+                isActive: PropTypes.bool,
             })
         ).isRequired,
         dialogId: PropTypes.string,
+        infoBoxMessage: PropTypes.string,
         onDeselect: PropTypes.func.isRequired,
         onReorder: PropTypes.func.isRequired,
     }),

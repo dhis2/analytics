@@ -6,27 +6,21 @@ import DialogContent from '@material-ui/core/DialogContent'
 import { PeriodSelector } from '@dhis2/d2-ui-period-selector-dialog'
 import i18n from '@dhis2/d2-i18n'
 
-import { FIXED_DIMENSIONS } from '../../modules/fixedDimensions'
-
-const peId = FIXED_DIMENSIONS.pe.id
-
-const PERIOD = 'PERIOD'
+import { DIMENSION_ID_PERIOD } from '../../modules/fixedDimensions'
 
 export class PeriodDimension extends Component {
     selectItems = periods => {
         const newItems = periods.map(p => ({
             id: p.id,
             name: p.name,
-            dimensionItemType: PERIOD,
         }))
         const alreadySelected = this.props.selectedPeriods.map(p => ({
             id: p.id,
             name: p.name,
-            dimensionItemType: PERIOD,
         }))
 
         this.props.onSelect({
-            dimensionId: peId,
+            dimensionId: DIMENSION_ID_PERIOD,
             items: uniqBy(alreadySelected.concat(newItems), 'id'),
         })
     }
@@ -35,7 +29,7 @@ export class PeriodDimension extends Component {
         const itemIdsToRemove = periods.map(period => period.id)
 
         this.props.onDeselect({
-            dimensionId: peId,
+            dimensionId: DIMENSION_ID_PERIOD,
             itemIdsToRemove,
         })
     }
@@ -44,7 +38,7 @@ export class PeriodDimension extends Component {
         const itemIds = periods.map(period => period.id)
 
         this.props.onReorder({
-            dimensionId: peId,
+            dimensionId: DIMENSION_ID_PERIOD,
             itemIds,
         })
     }

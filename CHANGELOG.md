@@ -1,3 +1,52 @@
+## [2.3.2](https://github.com/dhis2/analytics/compare/v2.3.1...v2.3.2) (2019-08-12)
+
+
+### Bug Fixes
+
+* remove padding around DimensionPanel ([#73](https://github.com/dhis2/analytics/issues/73)) ([2a832af](https://github.com/dhis2/analytics/commit/2a832af))
+
+## [2.3.1](https://github.com/dhis2/analytics/compare/v2.3.0...v2.3.1) (2019-08-08)
+
+
+### Bug Fixes
+
+* show "No data" instead of undefined when no data is returned ([#72](https://github.com/dhis2/analytics/issues/72)) ([f23a752](https://github.com/dhis2/analytics/commit/f23a752))
+
+# [2.3.0](https://github.com/dhis2/analytics/compare/v2.2.1...v2.3.0) (2019-08-07)
+
+
+### Features
+
+* empty commit to trigger publishing ([0bd722c](https://github.com/dhis2/analytics/commit/0bd722c))
+
+## [2.2.1](https://github.com/dhis2/analytics/compare/v2.2.0...v2.2.1) (2019-07-30)
+
+
+### Bug Fixes
+
+* Single value title should only include the first data item ([#51](https://github.com/dhis2/analytics/issues/51)) ([6d330a1](https://github.com/dhis2/analytics/commit/6d330a1))
+
+# [2.2.0](https://github.com/dhis2/analytics/compare/v2.1.3...v2.2.0) (2019-07-08)
+
+
+### Features
+
+* active/inactive styling for dimension items ([#30](https://github.com/dhis2/analytics/issues/30)) ([56534ff](https://github.com/dhis2/analytics/commit/56534ff))
+
+## [2.1.3](https://github.com/dhis2/analytics/compare/v2.1.2...v2.1.3) (2019-07-01)
+
+
+### Bug Fixes
+
+* bump @babel/preset-env from 7.4.3 to 7.4.5 ([#44](https://github.com/dhis2/analytics/issues/44)) ([908ebb9](https://github.com/dhis2/analytics/commit/908ebb9))
+
+## [2.1.2](https://github.com/dhis2/analytics/compare/v2.1.1...v2.1.2) (2019-06-27)
+
+
+### Bug Fixes
+
+* apply d2-style ([#35](https://github.com/dhis2/analytics/issues/35)) ([c870cf1](https://github.com/dhis2/analytics/commit/c870cf1))
+
 ## [2.1.1](https://github.com/dhis2/analytics/compare/v2.1.0...v2.1.1) (2019-06-27)
 
 

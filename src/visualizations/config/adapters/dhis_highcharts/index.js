@@ -36,7 +36,7 @@ export default function({ store, layout, el, extraConfig, extraOptions }) {
     const _layout = getTransformedLayout(layout)
     const _extraOptions = getTransformedExtraOptions(extraOptions)
 
-    let series = store.generateData({
+    const series = store.generateData({
         type: _layout.type,
         seriesId:
             _layout.columns && _layout.columns.length
@@ -91,6 +91,9 @@ export default function({ store, layout, el, extraConfig, extraOptions }) {
         pane: getPane(_layout.type),
 
         // no data
+        lang: {
+            noData: _extraOptions.noData.text,
+        },
         noData: getNoData(),
 
         // credits

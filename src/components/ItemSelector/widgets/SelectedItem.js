@@ -10,13 +10,21 @@ import styles from './styles/SelectedItem.style'
 const onClickWrapper = ({ id, index, onClick }) => event =>
     onClick(event.metaKey || event.ctrlKey, event.shiftKey, index, id)
 
-export const Item = ({ name, highlighted, ghost, onRemoveItem, ...rest }) => {
+export const Item = ({
+    name,
+    highlighted,
+    ghost,
+    active,
+    onRemoveItem,
+    ...rest
+}) => {
     return (
         <div
             className={cx('item', {
                 'highlighted-item': highlighted,
                 ghost,
                 'selected-item': !highlighted,
+                'inactive-item': !active,
             })}
             onClick={onClickWrapper(rest)}
             data-test={`dimension-item-${rest.id}`}
@@ -42,7 +50,8 @@ export const Item = ({ name, highlighted, ghost, onRemoveItem, ...rest }) => {
     )
 }
 
-Item.defualtProps = {
+Item.defaultProps = {
+    active: true,
     onRemoveItem: () => null,
     onClick: () => null,
 }
@@ -52,6 +61,7 @@ Item.propTypes = {
     name: PropTypes.string.isRequired,
     index: PropTypes.number.isRequired,
     highlighted: PropTypes.bool.isRequired,
+    active: PropTypes.bool,
     ghost: PropTypes.bool,
     onClick: PropTypes.func,
     onRemoveItem: PropTypes.func,

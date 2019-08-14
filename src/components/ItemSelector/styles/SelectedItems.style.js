@@ -5,7 +5,7 @@ export default css`
     .selected-list {
         flex: 1;
         list-style: none;
-        margin: 0px;
+        margin: 0 6px;
         overflow-y: auto;
         padding-left: 0px;
         user-select: none;
@@ -34,6 +34,26 @@ export default css`
         left: 8px;
         position: relative;
         top: 12px;
+    }
+
+    .info-container {
+        display: flex;
+        margin: 8px;
+        padding: 8px;
+        background-color: #e8edf2;
+        border-radius: 4px;
+    }
+
+    .info-text {
+        padding-left: 6px;
+        color: #4a5768;
+        font-size: 12px;
+        line-height: 17px;
+    }
+
+    .info-icon {
+        font-size: 16px;
+        color: #4a5768;
     }
 
     .deselect-all-button {

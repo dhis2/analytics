@@ -1,8 +1,8 @@
 import H from 'highcharts'
-import HM from 'highcharts-more'
-import HSG from 'highcharts-solid-gauge'
-import HNDTD from 'highcharts-no-data-to-display'
-import HE from 'highcharts-exporting'
+import HM from 'highcharts/highcharts-more'
+import HSG from 'highcharts/modules/solid-gauge'
+import HNDTD from 'highcharts/modules/no-data-to-display'
+import HE from 'highcharts/modules/exporting'
 
 // apply
 HM(H)

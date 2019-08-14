@@ -1,10 +1,11 @@
 import React from 'react'
+import cloneDeep from 'lodash/cloneDeep'
 import { storiesOf } from '@storybook/react'
 import { State, Store } from '@sambego/storybook-state'
 
 import ItemSelector from '../src/components/ItemSelector/ItemSelector'
 
-const items = {
+const defaultItems = {
     rarity: {
         id: 'rarity',
         name: 'Rarity',
@@ -31,9 +32,9 @@ const items = {
     },
 }
 
-let store
+let items
 
-const updateStore = (unselectedIds, selectedIds) => {
+const updateStore = (store, unselectedIds, selectedIds) => {
     const selected = Object.assign({}, store.get('selected'), {
         items: selectedIds.map(id => items[id]),
     })
@@ -45,7 +46,7 @@ const updateStore = (unselectedIds, selectedIds) => {
     store.set({ selected, unselected })
 }
 
-const onSelect = newIds => {
+const onSelect = store => newIds => {
     const selectedIds = [
         ...new Set(
             store
@@ -59,10 +60,10 @@ const onSelect = newIds => {
         id => !selectedIds.includes(id)
     )
 
-    updateStore(unselectedIds, selectedIds)
+    updateStore(store, unselectedIds, selectedIds)
 }
 
-const onDeselect = newIds => {
+const onDeselect = store => newIds => {
     const unorderedUnselectedIds = [
         ...new Set(newIds.concat(store.get('unselected').items.map(i => i.id))),
     ]
@@ -75,10 +76,10 @@ const onDeselect = newIds => {
         id => !unselectedIds.includes(id)
     )
 
-    updateStore(unselectedIds, selectedIds)
+    updateStore(store, unselectedIds, selectedIds)
 }
 
-const onReorder = ids => {
+const onReorder = store => ids => {
     const selected = Object.assign({}, store.get('selected'), {
         items: ids.map(id => items[id]),
     })
@@ -86,20 +87,74 @@ const onReorder = ids => {
     store.set({ selected })
 }
 
-store = new Store({
+const defaultState = items => ({
     unselected: {
         items: Object.values(items),
-        onSelect: onSelect,
+        onSelect: Function.prototype,
     },
     selected: {
         items: [],
-        onDeselect: onDeselect,
-        onReorder: onReorder,
+        onDeselect: Function.prototype,
+        onReorder: Function.prototype,
     },
 })
 
-storiesOf('ItemSelector', module).add('default', () => (
-    <State store={store}>
-        <ItemSelector />
-    </State>
-))
+storiesOf('ItemSelector', module).add('default', () => {
+    items = cloneDeep(defaultItems)
+
+    const state = defaultState(items)
+    const store = new Store(state)
+
+    state.unselected.onSelect = onSelect(store)
+    state.selected.onDeselect = onDeselect(store)
+    state.selected.onReorder = onReorder(store)
+
+    return (
+        <State store={store}>
+            <ItemSelector />
+        </State>
+    )
+})
+
+storiesOf('ItemSelector', module).add('active/inactive items', () => {
+    items = cloneDeep(defaultItems)
+    items.rainbow.isActive = false
+    items.pinkie.isActive = false
+
+    const state = defaultState(items)
+    const store = new Store(state)
+
+    state.unselected.onSelect = onSelect(store)
+    state.selected.onDeselect = onDeselect(store)
+    state.selected.onReorder = onReorder(store)
+
+    onSelect(store)([items.applejack.id, items.rainbow.id, items.pinkie.id])
+
+    return (
+        <State store={store}>
+            <ItemSelector />
+        </State>
+    )
+})
+
+storiesOf('ItemSelector', module).add('info box', () => {
+    items = cloneDeep(defaultItems)
+    items.rainbow.isActive = false
+
+    const state = defaultState(items)
+    const store = new Store(state)
+
+    state.unselected.onSelect = onSelect(store)
+    state.selected.onDeselect = onDeselect(store)
+    state.selected.onReorder = onReorder(store)
+    state.selected.infoBoxMessage =
+        'This is a custom message that can be passed'
+
+    onSelect(store)([items.applejack.id, items.rainbow.id])
+
+    return (
+        <State store={store}>
+            <ItemSelector />
+        </State>
+    )
+})
