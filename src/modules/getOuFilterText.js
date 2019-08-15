@@ -1,7 +1,32 @@
 import i18n from '@dhis2/d2-i18n'
 import { ouIdHelper } from './ouIdHelper'
+import { dimensionIs } from './layout/dimensionIs'
+import { dimensionGetItems } from './layout/dimensionGetItems'
+import { DIMENSION_ID_ORGUNIT } from './fixedDimensions'
 
-export const getOuFilterText = (items, metaData, isLevel) => {
+export const getOuFilterText = (filter, metaData) => {
+    if (!dimensionIs(DIMENSION_ID_ORGUNIT)) {
+        return ''
+    }
+
+    const items = dimensionGetItems(filter)
+    const hasOuLevel = items.some(item => ouIdHelper.hasLevelPrefix(item.id))
+    const hasOuGroup = items.some(item => ouIdHelper.hasGroupPrefix(item.id))
+
+    const filterFragments = []
+
+    if (hasOuGroup) {
+        filterFragments.push(getLevelAndGroupText(items, metaData, false))
+    }
+
+    if (hasOuLevel) {
+        filterFragments.push(getLevelAndGroupText(items, metaData, true))
+    }
+
+    return filterFragments
+}
+
+const getLevelAndGroupText = (items, metaData, isLevel) => {
     const getNameFromMetadata = id =>
         metaData.items[id] ? metaData.items[id].name : id
 

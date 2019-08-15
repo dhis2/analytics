@@ -21,6 +21,8 @@ function createVisualization(
     warning = defaultWarning,
     outputFormat
 ) {
+    console.log('createVisualization with data', data[0].metaData.items)
+
     const _data = isArray(data) ? data : [data]
     const store = new Store({ data: _data, error, warning, outputFormat })
     const config = new Config({
