@@ -1,6 +1,6 @@
-import { getOuFilterText } from '../getOuFilterText'
+import { getOuLevelAndGroupText } from '../getOuLevelAndGroupText'
 
-describe('getOuFilterText', () => {
+describe('getOuLevelAndGroupText', () => {
     it('summarizes ou levels and groups', () => {
         const filter = {
             dimension: 'ou',
@@ -41,7 +41,7 @@ describe('getOuFilterText', () => {
             },
         }
 
-        expect(getOuFilterText(filter, metaData)).toEqual(
+        expect(getOuLevelAndGroupText(filter, metaData)).toEqual(
             'Fruit and Veggies groups in Sierra Leone - Second floor levels in Sierra Leone'
         )
     })

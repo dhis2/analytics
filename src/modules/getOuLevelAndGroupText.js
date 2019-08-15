@@ -4,7 +4,7 @@ import { dimensionIs } from './layout/dimensionIs'
 import { dimensionGetItems } from './layout/dimensionGetItems'
 import { DIMENSION_ID_ORGUNIT } from './fixedDimensions'
 
-export const getOuFilterText = (filter, metaData) => {
+export const getOuLevelAndGroupText = (filter, metaData) => {
     if (!dimensionIs(DIMENSION_ID_ORGUNIT)) {
         return ''
     }

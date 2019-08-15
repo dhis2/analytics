@@ -1,7 +1,7 @@
 import { ouIdHelper } from '../../../../modules/ouIdHelper'
 import { dimensionIs } from '../../../../modules/layout/dimensionIs'
 import { DIMENSION_ID_ORGUNIT } from '../../../../modules/fixedDimensions'
-import { getOuFilterText } from '../../../../modules/getOuFilterText'
+import { getOuLevelAndGroupText } from '../../../../modules/getOuLevelAndGroupText'
 import { dimensionGetItems } from '../../../../modules/layout/dimensionGetItems'
 
 export default function(filters, metaData) {
@@ -22,7 +22,7 @@ export default function(filters, metaData) {
                     ouIdHelper.hasLevelPrefix(id)
             )
         ) {
-            titleFragments.push(getOuFilterText(filter, metaData))
+            titleFragments.push(getOuLevelAndGroupText(filter, metaData))
         } else {
             const sectionParts = items.map(item => {
                 const id = item.id
