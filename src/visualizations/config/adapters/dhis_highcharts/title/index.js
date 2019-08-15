@@ -1,5 +1,5 @@
 import isString from 'd2-utilizr/lib/isString'
-import getFilterTitle from '../getFilterTitle'
+import getFilterText from '../getFilterText'
 import {
     CHART_TYPE_YEAR_OVER_YEAR_LINE,
     CHART_TYPE_YEAR_OVER_YEAR_COLUMN,
@@ -27,7 +27,7 @@ const DASHBOARD_TITLE_STYLE = {
 function getDefault(layout, metaData, dashboard) {
     // filters
     if (layout.filters && !dashboard) {
-        return getFilterTitle(layout.filters, metaData)
+        return getFilterText(layout.filters, metaData)
     }
 
     return null

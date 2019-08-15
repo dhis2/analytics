@@ -1,6 +1,6 @@
 import isString from 'd2-utilizr/lib/isString'
 import getGauge from './gauge'
-import getFilterTitle from '../getFilterTitle'
+import getFilterText from '../getFilterText'
 import {
     CHART_TYPE_PIE,
     CHART_TYPE_GAUGE,
@@ -52,7 +52,7 @@ export default function(series, layout, metaData, dashboard) {
     if (isString(layout.subtitle)) {
         subtitle.text = layout.subtitle
     } else {
-        const filterTitle = getFilterTitle(layout.filters, metaData)
+        const filterTitle = getFilterText(layout.filters, metaData)
 
         switch (layout.type) {
             case CHART_TYPE_YEAR_OVER_YEAR_LINE:
