@@ -1,9 +1,9 @@
-import getFilterTitle from '../getFilterTitle'
+import getFilterText from '../getFilterText'
 
 let filters
 let metaData
 
-describe('getFilterTitle', () => {
+describe('getFilterText', () => {
     beforeEach(() => {
         filters = [
             {
@@ -39,10 +39,10 @@ describe('getFilterTitle', () => {
     })
 
     it('joins items with a comma', () => {
-        expect(getFilterTitle(filters, metaData)).toEqual('Clinics, Hospital')
+        expect(getFilterText(filters, metaData)).toEqual('Clinics, Hospital')
     })
 
-    it('joins filters with a "-"', () => {
+    it('joins filters with a " - "', () => {
         filters.push({
             dimension: '_period_',
             items: [
@@ -67,7 +67,7 @@ describe('getFilterTitle', () => {
             uid: '_201802_',
         }
 
-        expect(getFilterTitle(filters, metaData)).toEqual(
+        expect(getFilterText(filters, metaData)).toEqual(
             'Clinics, Hospital - 01 of 2018, 02 of 2018'
         )
     })
@@ -114,7 +114,7 @@ describe('getFilterTitle', () => {
             uid: '2nd-floor',
         }
 
-        expect(getFilterTitle(filters, metaData)).toEqual(
+        expect(getFilterText(filters, metaData)).toEqual(
             'Clinics, Hospital - Fruit and Veggies groups in Sierra Leone - Second floor levels in Sierra Leone'
         )
     })
@@ -140,7 +140,7 @@ describe('getFilterTitle', () => {
                 uid: '_facilityOwnership_',
             }
 
-            expect(getFilterTitle(filters, metaData)).toEqual(
+            expect(getFilterText(filters, metaData)).toEqual(
                 'Clinics, Hospital - Facility Ownership: _mission_, _NGO_'
             )
         })

@@ -23,7 +23,7 @@ export const getOuFilterText = (filter, metaData) => {
         filterFragments.push(getLevelAndGroupText(items, metaData, true))
     }
 
-    return filterFragments
+    return filterFragments.join(' - ')
 }
 
 const getLevelAndGroupText = (items, metaData, isLevel) => {
