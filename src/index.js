@@ -47,6 +47,7 @@ export {
     layoutGetAxisNameDimensionIdsObject,
 } from './modules/layout/layoutGetAxisNameDimensionIdsObject'
 export { layoutGetDimension } from './modules/layout/layoutGetDimension'
+export { layoutReplaceDimension } from './modules/layout/layoutReplaceDimension'
 export {
     layoutGetDimensionIdItemIdsObject,
 } from './modules/layout/layoutGetDimensionIdItemIdsObject'
@@ -72,6 +73,7 @@ export { axisGetDimensionIds } from './modules/layout/axisGetDimensionIds'
 export { axisHasDataDimension } from './modules/layout/axisHasDataDimension'
 export { axisHasDimension } from './modules/layout/axisHasDimension'
 export { axisHasPeriodDimension } from './modules/layout/axisHasPeriodDimension'
+export { axisHasOuDimension } from './modules/layout/axisHasOuDimension'
 export { axisIsEmpty } from './modules/layout/axisIsEmpty'
 
 export {
