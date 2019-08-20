@@ -1,3 +1,10 @@
+## [2.3.4](https://github.com/dhis2/analytics/compare/v2.3.3...v2.3.4) (2019-08-20)
+
+
+### Bug Fixes
+
+* add function to replace a dimension in the layout ([#79](https://github.com/dhis2/analytics/issues/79)) ([86beb09](https://github.com/dhis2/analytics/commit/86beb09))
+
 ## [2.3.3](https://github.com/dhis2/analytics/compare/v2.3.2...v2.3.3) (2019-08-20)
 
 
