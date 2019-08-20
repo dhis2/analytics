@@ -1,3 +1,10 @@
+## [2.3.3](https://github.com/dhis2/analytics/compare/v2.3.2...v2.3.3) (2019-08-20)
+
+
+### Bug Fixes
+
+* summarize ou level and groups in filter title ([#45](https://github.com/dhis2/analytics/issues/45)) ([7db57d9](https://github.com/dhis2/analytics/commit/7db57d9))
+
 ## [2.3.2](https://github.com/dhis2/analytics/compare/v2.3.1...v2.3.2) (2019-08-12)
 
 
