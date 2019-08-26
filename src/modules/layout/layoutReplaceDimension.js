@@ -6,6 +6,10 @@ export const layoutReplaceDimension = (layout, dimensionId, items) => {
         axisHasDimension(layout[a], dimensionId)
     )
 
+    if (!axisName) {
+        return Object.assign({}, layout)
+    }
+
     const newAxisDimensions = layout[axisName].map(dimension => {
         if (dimension.dimension === dimensionId) {
             return Object.assign({}, dimension, { items })
