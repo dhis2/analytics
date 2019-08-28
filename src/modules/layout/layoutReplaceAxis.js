@@ -1,7 +1,7 @@
-import { axisIsValid } from './axis'
+import { axisNameIsValid } from './axisNameIsValid'
 
 export const layoutReplaceAxis = (layout, axisName, axis) => {
-    if (!axisIsValid(axisName)) {
+    if (!axisNameIsValid(axisName)) {
         return Object.assign({}, layout)
     }
 
