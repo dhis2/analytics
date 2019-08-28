@@ -1,4 +1,4 @@
-import getFilterText from '../getFilterText'
+import getFilterText from '../../dhis_highcharts/getFilterText'
 
 export default function(layout, metaData) {
     if (layout.columns) {

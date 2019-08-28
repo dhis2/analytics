@@ -1,4 +1,4 @@
-import getFilterText from '../getFilterText'
+import getFilterText from '../../dhis_highcharts/getFilterText'
 import { VISUALIZATION_TYPE_SINGLE_VALUE } from '../type'
 import getSingleValueTitle from './singleValue'
 

@@ -2,7 +2,9 @@ import getSubtitle from '../index'
 import { VISUALIZATION_TYPE_SINGLE_VALUE } from '../../type'
 
 jest.mock('../singleValue', () => () => 'The sv filter title')
-jest.mock('../../getFilterText', () => () => 'The default filter text')
+jest.mock('../../../dhis_highcharts/getFilterText', () => () =>
+    'The default filter text'
+)
 
 describe('getSubtitle', () => {
     it('returns empty subtitle when flag hideSubtitle exists', () => {
