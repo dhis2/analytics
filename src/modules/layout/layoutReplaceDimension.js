@@ -1,5 +1,6 @@
 import { AXIS_NAMES } from './axis'
 import { axisHasDimension } from './axisHasDimension'
+import { dimensionIs } from './dimensionIs'
 
 export const layoutReplaceDimension = (layout, dimensionId, items) => {
     const axisName = AXIS_NAMES.find(a =>
@@ -11,7 +12,7 @@ export const layoutReplaceDimension = (layout, dimensionId, items) => {
     }
 
     const newAxisDimensions = layout[axisName].map(dimension => {
-        if (dimension.dimension === dimensionId) {
+        if (dimensionIs(dimension, dimensionId)) {
             return Object.assign({}, dimension, { items })
         }
         return dimension
