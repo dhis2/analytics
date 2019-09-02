@@ -6,6 +6,7 @@ export default function(config, parentEl) {
     const svgNS = 'http://www.w3.org/2000/svg'
 
     const svg = document.createElementNS(svgNS, 'svg')
+    svg.setAttribute('xmlns', svgNS)
     svg.setAttribute('viewBox', `0 0 ${width} ${height}`)
     svg.setAttribute('width', '100%')
     svg.setAttribute('height', '100%')
