@@ -1,3 +1,10 @@
+## [2.3.5](https://github.com/dhis2/analytics/compare/v2.3.4...v2.3.5) (2019-09-02)
+
+
+### Bug Fixes
+
+* download for Single Value visualization ([#85](https://github.com/dhis2/analytics/issues/85)) ([a5bac2c](https://github.com/dhis2/analytics/commit/a5bac2c))
+
 ## [2.3.4](https://github.com/dhis2/analytics/compare/v2.3.3...v2.3.4) (2019-08-20)
 
 
