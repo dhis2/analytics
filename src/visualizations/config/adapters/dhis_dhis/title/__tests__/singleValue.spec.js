@@ -1,8 +1,6 @@
 import getSingleValueTitle from '../singleValue'
 
-jest.mock('../../../dhis_highcharts/getFilterText', () => () =>
-    'The filter text'
-)
+jest.mock('../../../../../util/getFilterText', () => () => 'The filter text')
 
 describe('getSingleValueTitle', () => {
     it('returns null when layout does not have columns', () => {

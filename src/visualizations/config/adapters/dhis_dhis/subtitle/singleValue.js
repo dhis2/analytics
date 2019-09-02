@@ -1,4 +1,4 @@
-import getFilterText from '../../dhis_highcharts/getFilterText'
+import getFilterText from '../../../../util/getFilterText'
 
 export default function(layout, metaData) {
     return layout.filters ? getFilterText(layout.filters, metaData) : ''

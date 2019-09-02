@@ -2,7 +2,7 @@ import getSubtitle from '../index'
 import { VISUALIZATION_TYPE_SINGLE_VALUE } from '../../type'
 
 jest.mock('../singleValue', () => () => 'The sv filter title')
-jest.mock('../../../dhis_highcharts/getFilterText', () => () =>
+jest.mock('../../../../../util/getFilterText', () => () =>
     'The default filter text'
 )
 

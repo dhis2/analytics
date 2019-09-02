@@ -1,8 +1,6 @@
 import getSingleValueSubtitle from '../singleValue'
 
-jest.mock('../../../dhis_highcharts/getFilterText', () => () =>
-    'The filter text'
-)
+jest.mock('../../../../../util/getFilterText', () => () => 'The filter text')
 
 describe('getSingleValueSubtitle', () => {
     it('returns null when layout does not have filters', () => {

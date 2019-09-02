@@ -2,9 +2,7 @@ import getTitle from '../index'
 import { VISUALIZATION_TYPE_SINGLE_VALUE } from '../../type'
 
 jest.mock('../singleValue', () => () => 'The sv filter title')
-jest.mock('../../../dhis_highcharts/getFilterText', () => () =>
-    'The filter text'
-)
+jest.mock('../../../../../util/getFilterText', () => () => 'The filter text')
 
 describe('getTitle', () => {
     it('returns empty title when flag hideTitle exists', () => {

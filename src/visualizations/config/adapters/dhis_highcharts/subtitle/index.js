@@ -1,6 +1,6 @@
 import isString from 'd2-utilizr/lib/isString'
 import getGauge from './gauge'
-import getFilterText from '../getFilterText'
+import getFilterText from '../../../../../util/getFilterText'
 import {
     CHART_TYPE_PIE,
     CHART_TYPE_GAUGE,
