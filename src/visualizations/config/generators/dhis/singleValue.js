@@ -1,7 +1,7 @@
 export default function(config, parentEl) {
     const width = 1024
     const height = 768
-    const scale = height / parentEl.getBoundingClientRect().height
+    const scale = width / parentEl.getBoundingClientRect().width
 
     const svgNS = 'http://www.w3.org/2000/svg'
 
@@ -9,7 +9,7 @@ export default function(config, parentEl) {
     svg.setAttribute('xmlns', svgNS)
     svg.setAttribute('viewBox', `0 0 ${width} ${height}`)
     svg.setAttribute('width', '100%')
-    svg.setAttribute('height', '100%')
+    svg.setAttribute('height', height / scale)
 
     const title = document.createElementNS(svgNS, 'text')
     title.setAttribute('x', '50%')
@@ -17,7 +17,7 @@ export default function(config, parentEl) {
     title.setAttribute('text-anchor', 'middle')
     title.setAttribute('font-size', '18px')
     title.setAttribute('transform', `scale(${scale})`)
-    title.setAttribute('transform-origin', '50% 48')
+    title.setAttribute('transform-origin', 'center 48px')
     if (config.title) {
         title.appendChild(document.createTextNode(config.title))
     }
@@ -28,7 +28,7 @@ export default function(config, parentEl) {
     subtitle.setAttribute('text-anchor', 'middle')
     subtitle.setAttribute('font-size', '14px')
     subtitle.setAttribute('transform', `scale(${scale})`)
-    subtitle.setAttribute('transform-origin', '50% 96')
+    subtitle.setAttribute('transform-origin', 'center 96px')
     if (config.subtitle) {
         subtitle.appendChild(document.createTextNode(config.subtitle))
     }
@@ -43,5 +43,13 @@ export default function(config, parentEl) {
 
     svg.append(title, subtitle, value)
 
-    return svg
+    const div = document.createElement('div')
+    div.setAttribute(
+        'style',
+        'position: relative; overflow: hidden; width: 100%; height: 100%'
+    )
+
+    div.append(svg)
+
+    return div
 }
