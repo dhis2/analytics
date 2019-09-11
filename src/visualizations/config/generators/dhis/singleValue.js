@@ -1,15 +1,15 @@
 export default function(config, parentEl) {
     const width = 1024
     const height = 768
-    const scale = width / parentEl.getBoundingClientRect().width
+    const scale = height / parentEl.getBoundingClientRect().height
 
     const svgNS = 'http://www.w3.org/2000/svg'
 
     const svg = document.createElementNS(svgNS, 'svg')
     svg.setAttribute('xmlns', svgNS)
     svg.setAttribute('viewBox', `0 0 ${width} ${height}`)
-    svg.setAttribute('width', '100%')
-    svg.setAttribute('height', height / scale)
+    svg.setAttribute('width', width / scale)
+    svg.setAttribute('height', '100%')
 
     const title = document.createElementNS(svgNS, 'text')
     title.setAttribute('x', '50%')
@@ -44,13 +44,5 @@ export default function(config, parentEl) {
 
     svg.append(title, subtitle, value)
 
-    const div = document.createElement('div')
-    div.setAttribute(
-        'style',
-        'position: relative; overflow: hidden; width: 100%; height: 100%'
-    )
-
-    div.append(svg)
-
-    return div
+    return svg
 }
