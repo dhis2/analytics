@@ -24,11 +24,12 @@ export default function(config, parentEl) {
 
     const subtitle = document.createElementNS(svgNS, 'text')
     subtitle.setAttribute('x', '50%')
-    subtitle.setAttribute('y', 96)
+    subtitle.setAttribute('y', 48)
+    subtitle.setAttribute('dy', 24)
     subtitle.setAttribute('text-anchor', 'middle')
     subtitle.setAttribute('font-size', '14px')
     subtitle.setAttribute('transform', `scale(${scale})`)
-    subtitle.setAttribute('transform-origin', 'center 96px')
+    subtitle.setAttribute('transform-origin', 'center 48px')
     if (config.subtitle) {
         subtitle.appendChild(document.createTextNode(config.subtitle))
     }
