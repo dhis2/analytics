@@ -1,3 +1,10 @@
+## [2.3.6](https://github.com/dhis2/analytics/compare/v2.3.5...v2.3.6) (2019-09-11)
+
+
+### Bug Fixes
+
+* attempt to fix some resize/scaling issues in SV ([#89](https://github.com/dhis2/analytics/issues/89)) ([1557cb2](https://github.com/dhis2/analytics/commit/1557cb2))
+
 ## [2.3.5](https://github.com/dhis2/analytics/compare/v2.3.4...v2.3.5) (2019-09-02)
 
 
