@@ -15,9 +15,6 @@ export default function(config, parentEl) {
                 node.removeChild(node.lastChild)
             }
 
-            // avoid vertical scrollbars
-            node.style.overflow = 'hidden'
-
             let content
 
             switch (config.type) {
