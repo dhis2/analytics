@@ -1,3 +1,10 @@
+## [2.3.7](https://github.com/dhis2/analytics/compare/v2.3.6...v2.3.7) (2019-09-17)
+
+
+### Bug Fixes
+
+* reduce white space and fix resize issues ([#94](https://github.com/dhis2/analytics/issues/94)) ([923782b](https://github.com/dhis2/analytics/commit/923782b))
+
 ## [2.3.6](https://github.com/dhis2/analytics/compare/v2.3.5...v2.3.6) (2019-09-11)
 
 

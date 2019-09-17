@@ -1,6 +1,6 @@
 {
     "name": "@dhis2/analytics",
-    "version": "2.3.6",
+    "version": "2.3.7",
     "main": "./build/index.js",
     "sideEffects": false,
     "repository": "git@github.com:dhis2/analytics.git",
