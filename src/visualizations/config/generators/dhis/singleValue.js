@@ -41,7 +41,10 @@ export default function(config, parentEl) {
     value.setAttribute('x', '50%')
     value.setAttribute('y', '50%')
     value.setAttribute('text-anchor', 'middle')
-    value.setAttribute('dominant-baseline', 'middle')
+    value.setAttribute(
+        'dominant-baseline',
+        config.title || config.subtitle ? 'mathematical' : 'middle'
+    )
     value.setAttribute('font-size', '20em')
     value.setAttribute('transform', `scale(${scale})`)
     value.setAttribute('transform-origin', 'center')
