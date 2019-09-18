@@ -1,3 +1,10 @@
+## [2.3.8](https://github.com/dhis2/analytics/compare/v2.3.7...v2.3.8) (2019-09-18)
+
+
+### Bug Fixes
+
+* SV value centering in Firefox/Safari ([#99](https://github.com/dhis2/analytics/issues/99)) ([684aa79](https://github.com/dhis2/analytics/commit/684aa79))
+
 ## [2.3.7](https://github.com/dhis2/analytics/compare/v2.3.6...v2.3.7) (2019-09-17)
 
 
