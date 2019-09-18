@@ -37,20 +37,29 @@ export default function(config, parentEl) {
 
     const scale = width / config.value.length / 200
 
+    // The group here is used to keep the value centered within the SVG viewport.
+    // Because scale is used on the text node, it turned out to be difficult to center the text node itself.
+    // transform-origin does not work consistently across browsers.
+    // g is taking care of centering
+    // text node is only caring about scaling and always having origin at 0,0 of the parent node (g)
+    const gValue = document.createElementNS(svgNS, 'g')
+    gValue.setAttribute('transform', `translate(${width / 2} ${height / 2})`)
+
     const value = document.createElementNS(svgNS, 'text')
-    value.setAttribute('x', '50%')
-    value.setAttribute('y', '50%')
     value.setAttribute('text-anchor', 'middle')
+    // move value slightly downwards if title/subtitle are set
+    // center it if it's the only thing visible
     value.setAttribute(
         'dominant-baseline',
         config.title || config.subtitle ? 'mathematical' : 'middle'
     )
     value.setAttribute('font-size', '20em')
     value.setAttribute('transform', `scale(${scale})`)
-    value.setAttribute('transform-origin', 'center')
     value.appendChild(document.createTextNode(config.value))
 
-    svg.append(title, subtitle, value)
+    gValue.appendChild(value)
+
+    svg.append(title, subtitle, gValue)
 
     return svg
 }
