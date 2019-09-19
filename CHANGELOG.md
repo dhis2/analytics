@@ -1,3 +1,10 @@
+## [2.3.9](https://github.com/dhis2/analytics/compare/v2.3.8...v2.3.9) (2019-09-19)
+
+
+### Bug Fixes
+
+* fix for Edge and scale ratio calculation ([#100](https://github.com/dhis2/analytics/issues/100)) ([cd682de](https://github.com/dhis2/analytics/commit/cd682de))
+
 ## [2.3.8](https://github.com/dhis2/analytics/compare/v2.3.7...v2.3.8) (2019-09-18)
 
 
