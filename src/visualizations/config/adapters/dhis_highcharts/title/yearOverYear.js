@@ -1,4 +1,4 @@
-import getFilterText from '../../../../../util/getFilterText'
+import getFilterText from '../../../../util/getFilterText'
 
 export default function(layout, metaData, dashboard) {
     const titleFragments = []
