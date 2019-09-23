@@ -1,4 +1,8 @@
-import { dimensionGetItems } from './dimensionGetItems'
+import { DIMENSION, DIMENSION_PROP_ITEMS } from './dimension'
 
 export const dimensionIsEmpty = dimension =>
-    !dimensionGetItems(dimension).length
+    !(
+        DIMENSION.isValid(dimension) &&
+        DIMENSION_PROP_ITEMS.isValid(dimension[DIMENSION_PROP_ITEMS.name]) &&
+        dimension[DIMENSION_PROP_ITEMS.name].length
+    )

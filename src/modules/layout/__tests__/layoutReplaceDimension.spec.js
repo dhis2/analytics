@@ -22,4 +22,14 @@ describe('layoutReplaceDimension', () => {
             TEST_DIMENSION_4,
         ])
     })
+
+    it('returns layout unchanged if dimension not found', () => {
+        const updatedLayout = layoutReplaceDimension(
+            TEST_LAYOUT,
+            'non-existing-dimension',
+            newOuDimensions
+        )
+
+        expect(updatedLayout).toMatchObject(TEST_LAYOUT)
+    })
 })
