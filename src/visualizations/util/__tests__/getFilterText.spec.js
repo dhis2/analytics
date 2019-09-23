@@ -145,4 +145,36 @@ describe('getFilterText', () => {
             )
         })
     })
+
+    describe('relative period does not expand the items', () => {
+        it('uses the name for the relative period id if available', () => {
+            filters.push({
+                dimension: 'pe',
+                items: [
+                    {
+                        id: '_LAST_2_MONTHS_',
+                        name: 'Last 2 months',
+                    },
+                ],
+            })
+
+            metaData.dimensions.pe = ['_201801_', '_201802_']
+            metaData.items._LAST_2_MONTHS_ = {
+                name: 'Last 2 months',
+                uid: '_LAST_2_MONTHS_',
+            }
+            metaData.items._201801_ = {
+                name: '01 of 2018',
+                uid: '_201801_',
+            }
+            metaData.items._201802_ = {
+                name: '02 of 2018',
+                uid: '_201802_',
+            }
+
+            expect(getFilterText(filters, metaData)).toEqual(
+                'Clinics, Hospital - Last 2 months'
+            )
+        })
+    })
 })
