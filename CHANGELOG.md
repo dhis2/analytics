@@ -1,3 +1,10 @@
+# [2.4.0](https://github.com/dhis2/analytics/compare/v2.3.10...v2.4.0) (2019-09-23)
+
+
+### Features
+
+* add layoutGetDimensionItems function ([#80](https://github.com/dhis2/analytics/issues/80)) ([898ea8c](https://github.com/dhis2/analytics/commit/898ea8c))
+
 ## [2.3.10](https://github.com/dhis2/analytics/compare/v2.3.9...v2.3.10) (2019-09-23)
 
 
