@@ -1,3 +1,10 @@
+## [2.3.10](https://github.com/dhis2/analytics/compare/v2.3.9...v2.3.10) (2019-09-23)
+
+
+### Bug Fixes
+
+* expand user org unit names and keep relative period names in title/subtitle ([#84](https://github.com/dhis2/analytics/issues/84)) ([ca736b3](https://github.com/dhis2/analytics/commit/ca736b3))
+
 ## [2.3.9](https://github.com/dhis2/analytics/compare/v2.3.8...v2.3.9) (2019-09-19)
 
 
