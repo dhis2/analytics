@@ -22,6 +22,7 @@ export default function(config, parentEl, { dashboard }) {
     title.setAttribute('y', dashboard ? 15 : 48)
     title.setAttribute('text-anchor', 'middle')
     title.setAttribute('font-size', titleFontSize)
+    title.setAttribute('fill', '#666')
     if (config.title) {
         title.appendChild(document.createTextNode(config.title))
     }
@@ -33,6 +34,7 @@ export default function(config, parentEl, { dashboard }) {
     subtitle.setAttribute('dy', dashboard ? 16 : 22)
     subtitle.setAttribute('text-anchor', 'middle')
     subtitle.setAttribute('font-size', subtitleFontSize)
+    subtitle.setAttribute('fill', '#666')
     if (config.subtitle) {
         subtitle.appendChild(document.createTextNode(config.subtitle))
     }
