@@ -1,7 +1,7 @@
 import { VISUALIZATION_TYPE_SINGLE_VALUE } from '../../adapters/dhis_dhis/type'
 import getSingleValueGenerator from './singleValue'
 
-export default function(config, parentEl) {
+export default function(config, parentEl, extraOptions) {
     if (config) {
         const node =
             typeof parentEl === 'object'
@@ -19,10 +19,18 @@ export default function(config, parentEl) {
 
             switch (config.type) {
                 case VISUALIZATION_TYPE_SINGLE_VALUE:
-                    content = getSingleValueGenerator(config, node)
+                    content = getSingleValueGenerator(
+                        config,
+                        node,
+                        extraOptions
+                    )
                     break
                 default:
-                    content = getSingleValueGenerator(config, node)
+                    content = getSingleValueGenerator(
+                        config,
+                        node,
+                        extraOptions
+                    )
             }
 
             node.appendChild(content)

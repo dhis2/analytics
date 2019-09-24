@@ -55,5 +55,6 @@ export default function({
         })
     }
 
-    this.createVisualization = () => _generator(this.getConfig(), el)
+    this.createVisualization = () =>
+        _generator(this.getConfig(), el, extraOptions)
 }
