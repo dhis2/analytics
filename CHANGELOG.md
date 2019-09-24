@@ -1,3 +1,10 @@
+## [2.4.1](https://github.com/dhis2/analytics/compare/v2.4.0...v2.4.1) (2019-09-24)
+
+
+### Bug Fixes
+
+* improved SV styling for dashboard ([#104](https://github.com/dhis2/analytics/issues/104)) ([74bed67](https://github.com/dhis2/analytics/commit/74bed67))
+
 # [2.4.0](https://github.com/dhis2/analytics/compare/v2.3.10...v2.4.0) (2019-09-23)
 
 
