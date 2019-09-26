@@ -1,3 +1,10 @@
+## [2.4.2](https://github.com/dhis2/analytics/compare/v2.4.1...v2.4.2) (2019-09-26)
+
+
+### Bug Fixes
+
+* avoid value overlapping title/subtitle in dashboard ([#105](https://github.com/dhis2/analytics/issues/105)) ([04b6c21](https://github.com/dhis2/analytics/commit/04b6c21))
+
 ## [2.4.1](https://github.com/dhis2/analytics/compare/v2.4.0...v2.4.1) (2019-09-24)
 
 
