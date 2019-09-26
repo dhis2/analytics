@@ -29,13 +29,13 @@ const generateDashboardItem = config => {
     const container = document.createElement('div')
     container.setAttribute(
         'style',
-        'display: flex; flex-direction: column; align-items: center; width: 100%; height: 100%'
+        'display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; height: 100%'
     )
 
-    const titleSubtitleStyle = 'font-size: 12px; color: #666'
+    const titleStyle = 'font-size: 12px; color: #666;'
 
     const title = document.createElement('span')
-    title.setAttribute('style', titleSubtitleStyle)
+    title.setAttribute('style', titleStyle)
     if (config.title) {
         title.appendChild(document.createTextNode(config.title))
 
@@ -43,7 +43,7 @@ const generateDashboardItem = config => {
     }
 
     const subtitle = document.createElement('span')
-    subtitle.setAttribute('style', titleSubtitleStyle)
+    subtitle.setAttribute('style', titleStyle + ' margin-top: 4px')
     if (config.subtitle) {
         subtitle.appendChild(document.createTextNode(config.subtitle))
 
