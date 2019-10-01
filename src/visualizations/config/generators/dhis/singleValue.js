@@ -7,7 +7,8 @@ const generateValueSVG = (value, y) => {
     svgValue.setAttribute('xmlns', svgNS)
     svgValue.setAttribute(
         'viewBox',
-        `0 -${textSize} ${textSize * 0.56 * value.length} ${textSize + 50}`
+        `0 -${textSize + 50} ${textSize * 0.75 * value.length} ${textSize +
+            200}`
     )
 
     if (y) {
@@ -17,6 +18,8 @@ const generateValueSVG = (value, y) => {
     const text = document.createElementNS(svgNS, 'text')
     text.setAttribute('text-anchor', 'middle')
     text.setAttribute('font-size', textSize)
+    text.setAttribute('font-weight', '300')
+    text.setAttribute('letter-spacing', '-5')
     text.setAttribute('x', '50%')
     text.appendChild(document.createTextNode(value))
 
