@@ -1,3 +1,10 @@
+## [2.4.3](https://github.com/dhis2/analytics/compare/v2.4.2...v2.4.3) (2019-10-01)
+
+
+### Bug Fixes
+
+* small style adjustments for SV ([#109](https://github.com/dhis2/analytics/issues/109)) ([aa69320](https://github.com/dhis2/analytics/commit/aa69320))
+
 ## [2.4.2](https://github.com/dhis2/analytics/compare/v2.4.1...v2.4.2) (2019-09-26)
 
 
