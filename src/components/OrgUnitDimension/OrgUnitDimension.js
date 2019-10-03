@@ -261,6 +261,7 @@ class OrgUnitDimension extends Component {
                             deselectAllTooltipFontColor={colors.black}
                             deselectAllTooltipBackgroundColor={colors.greyLight}
                             displayNameProperty={this.props.displayNameProperty}
+                            isUserDataViewFallback={true}
                         />
                     )}
                     {!this.state.root && (
