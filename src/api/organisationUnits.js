@@ -29,6 +29,7 @@ export const apiFetchOrganisationUnits = (d2, displayNameProperty) => {
         paging: false,
         level: 1,
         fields: fields.join(','),
+        userDataViewFallback: true,
     })
 }
 
