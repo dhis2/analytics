@@ -1,3 +1,10 @@
+## [2.4.4](https://github.com/dhis2/analytics/compare/v2.4.3...v2.4.4) (2019-10-04)
+
+
+### Bug Fixes
+
+* pass all ou roots to d2-ui OrgUnitSelector ([#111](https://github.com/dhis2/analytics/issues/111)) ([b2c86fd](https://github.com/dhis2/analytics/commit/b2c86fd))
+
 ## [2.4.3](https://github.com/dhis2/analytics/compare/v2.4.2...v2.4.3) (2019-10-01)
 
 
