@@ -22,6 +22,7 @@ import { colors } from '../../modules/colors'
 
 export const defaultState = {
     root: undefined,
+    roots: undefined,
     // use "selected" property for cloning org units while user org unit(s) is (are) selected
     selected: [],
     ouLevels: [],
@@ -116,10 +117,11 @@ class OrgUnitDimension extends Component {
 
     loadOrgUnitTree = (d2, displayNameProperty) => {
         apiFetchOrganisationUnits(d2, displayNameProperty)
-            .then(rootLevel => rootLevel.toArray()[0])
-            .then(root => {
+            .then(rootLevel => rootLevel.toArray())
+            .then(roots => {
                 this.setState({
-                    root,
+                    roots,
+                    root: roots[0],
                 })
             })
     }
@@ -240,6 +242,7 @@ class OrgUnitDimension extends Component {
                         <OrgUnitSelector
                             d2={this.props.d2}
                             root={this.state.root}
+                            roots={this.state.roots}
                             selected={selected}
                             userOrgUnits={userOrgUnits}
                             level={level}
@@ -258,6 +261,7 @@ class OrgUnitDimension extends Component {
                             deselectAllTooltipFontColor={colors.black}
                             deselectAllTooltipBackgroundColor={colors.greyLight}
                             displayNameProperty={this.props.displayNameProperty}
+                            isUserDataViewFallback={true}
                         />
                     )}
                     {!this.state.root && (
