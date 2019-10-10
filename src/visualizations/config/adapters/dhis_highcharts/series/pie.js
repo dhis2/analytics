@@ -1,7 +1,6 @@
 export default function(series, store, layout, isStacked, colors) {
     return [
         {
-            name: series[0].name,
             colorByPoint: true,
             allowPointSelect: true,
             cursor: 'pointer',
@@ -20,6 +19,11 @@ export default function(series, store, layout, isStacked, colors) {
                         ' %)</span>'
                     )
                 },
+            },
+            tooltip: {
+                headerFormat: '',
+                pointFormat:
+                    '<span style="color:{point.color}">\u25CF</span> {point.name}: <b>{point.y}</b><br/>',
             },
         },
     ]
