@@ -1,3 +1,10 @@
+## [2.4.5](https://github.com/dhis2/analytics/compare/v2.4.4...v2.4.5) (2019-10-10)
+
+
+### Bug Fixes
+
+* tooltip on pie show correct serie info ([#118](https://github.com/dhis2/analytics/issues/118)) ([e7bcdb9](https://github.com/dhis2/analytics/commit/e7bcdb98167e276e746a4c0cdd7c44fe50beec6f))
+
 ## [2.4.4](https://github.com/dhis2/analytics/compare/v2.4.3...v2.4.4) (2019-10-04)
 
 
