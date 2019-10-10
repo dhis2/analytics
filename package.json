@@ -70,7 +70,7 @@
         "d3-color": "^1.2.3",
         "highcharts": "^7.1.2",
         "lodash": "^4.17.13",
-        "react-beautiful-dnd": "^10.1.1",
+        "react-beautiful-dnd": "^11.0.5",
         "styled-jsx": "^3.2.1"
     },
     "files": [
