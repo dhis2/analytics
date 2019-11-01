@@ -1,0 +1,36 @@
+import {
+    COLUMN,
+    STACKED_COLUMN,
+    BAR,
+    STACKED_BAR,
+    LINE,
+    AREA,
+    PIE,
+    RADAR,
+    GAUGE,
+    YEAR_OVER_YEAR_LINE,
+    SINGLE_VALUE,
+} from './chartTypes'
+import {
+    LAYOUT_TYPE_DEFAULT,
+    LAYOUT_TYPE_PIE,
+    LAYOUT_TYPE_YEAR_OVER_YEAR,
+} from './layoutTypes'
+
+const chartTypeToLayoutType = {
+    [COLUMN]: LAYOUT_TYPE_DEFAULT,
+    [STACKED_COLUMN]: LAYOUT_TYPE_DEFAULT,
+    [BAR]: LAYOUT_TYPE_DEFAULT,
+    [STACKED_BAR]: LAYOUT_TYPE_DEFAULT,
+    [LINE]: LAYOUT_TYPE_DEFAULT,
+    [AREA]: LAYOUT_TYPE_DEFAULT,
+    [PIE]: LAYOUT_TYPE_PIE,
+    [RADAR]: LAYOUT_TYPE_DEFAULT,
+    [GAUGE]: LAYOUT_TYPE_PIE,
+    [YEAR_OVER_YEAR_LINE]: LAYOUT_TYPE_YEAR_OVER_YEAR,
+    [YEAR_OVER_YEAR_COLUMN]: LAYOUT_TYPE_YEAR_OVER_YEAR,
+    [SINGLE_VALUE]: LAYOUT_TYPE_PIE,
+}
+
+export const getLayoutTypeByChartType = chartType =>
+    chartTypeToLayoutType[chartType]
