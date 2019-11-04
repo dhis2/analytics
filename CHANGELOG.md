@@ -1,3 +1,10 @@
+# [2.5.0](https://github.com/dhis2/analytics/compare/v2.4.5...v2.5.0) (2019-11-04)
+
+
+### Features
+
+* add layout rules and helpers ([#130](https://github.com/dhis2/analytics/issues/130)) ([99b0b6c](https://github.com/dhis2/analytics/commit/99b0b6c4f274526557dceca1f058c982595b5f29))
+
 ## [2.4.5](https://github.com/dhis2/analytics/compare/v2.4.4...v2.4.5) (2019-10-10)
 
 
