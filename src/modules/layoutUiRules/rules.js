@@ -5,6 +5,8 @@ import {
 } from '../layout/axis'
 import { DIMENSION_ID_PERIOD } from '../fixedDimensions'
 import {
+    LAYOUT_TYPE_DEFAULT,
+    LAYOUT_TYPE_PIE,
     LAYOUT_TYPE_SINGLE_VALUE,
     LAYOUT_TYPE_YEAR_OVER_YEAR,
 } from '../layoutTypes'

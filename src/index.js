@@ -1,5 +1,3 @@
-import { from } from 'rxjs'
-
 // Components
 
 export {
@@ -105,7 +103,7 @@ export { itemIsValid } from './modules/layout/itemIsValid'
 
 // Modules: chartTypeToLayoutType
 
-export { chartTypeToLayoutType } from './modules/chartTypeToLayoutType'
+export { getLayoutTypeByChartType } from './modules/chartTypeToLayoutType'
 
 // Modules: chartTypes
 

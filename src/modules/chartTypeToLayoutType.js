@@ -9,6 +9,7 @@ import {
     RADAR,
     GAUGE,
     YEAR_OVER_YEAR_LINE,
+    YEAR_OVER_YEAR_COLUMN,
     SINGLE_VALUE,
 } from './chartTypes'
 import {
