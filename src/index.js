@@ -1,3 +1,5 @@
+import { from } from 'rxjs'
+
 // Components
 
 export {
@@ -26,7 +28,7 @@ export { default as ItemSelector } from './components/ItemSelector/ItemSelector'
 
 export { apiFetchDimensions } from './api/dimensions'
 
-// Modules
+// Modules: fixedDimensions
 
 export {
     DIMENSION_ID_DATA,
@@ -35,7 +37,11 @@ export {
     FIXED_DIMENSIONS,
 } from './modules/fixedDimensions'
 
+// Modules: ouIdHelper
+
 export { ouIdHelper } from './modules/ouIdHelper'
+
+// Modules: layout
 
 export { LAYOUT } from './modules/layout/layout'
 export { layoutFilterDimensions } from './modules/layout/layoutFilterDimensions'
@@ -97,5 +103,42 @@ export { ITEM, ITEM_PROP_ID, ITEM_PROPS } from './modules/layout/item'
 export { itemGetId } from './modules/layout/itemGetId'
 export { itemIsValid } from './modules/layout/itemIsValid'
 
-// Visualization
+// Modules: chartTypeToLayoutType
+
+export { chartTypeToLayoutType } from './modules/chartTypeToLayoutType'
+
+// Modules: chartTypes
+
+export {
+    COLUMN,
+    STACKED_COLUMN,
+    BAR,
+    STACKED_BAR,
+    LINE,
+    AREA,
+    PIE,
+    RADAR,
+    GAUGE,
+    BUBBLE,
+    YEAR_OVER_YEAR_LINE,
+    YEAR_OVER_YEAR_COLUMN,
+    SINGLE_VALUE,
+    OPEN_AS_MAP,
+} from './modules/chartTypes'
+
+// Modules: chartTypes
+
+export {
+    LAYOUT_TYPE_DEFAULT,
+    LAYOUT_TYPE_PIE,
+    LAYOUT_TYPE_SINGLE_VALUE,
+    LAYOUT_TYPE_YEAR_OVER_YEAR,
+} from './modules/layoutTypes'
+
+// Modules: layoutUiRules
+
+export { getAvailableAxes } from './modules/layoutUiRules'
+
+// Visualizations
+
 export { createVisualization } from './visualizations'
