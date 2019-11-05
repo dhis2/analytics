@@ -15,7 +15,7 @@ export const YEAR_OVER_YEAR_COLUMN = 'YEAR_OVER_YEAR_COLUMN'
 export const SINGLE_VALUE = 'SINGLE_VALUE'
 export const OPEN_AS_MAP = 'OPEN_AS_MAP'
 
-export const chartTypeDisplayNames = {
+export const visTypeDisplayNames = {
     [COLUMN]: i18n.t('Column'),
     [STACKED_COLUMN]: i18n.t('Stacked column'),
     [BAR]: i18n.t('Bar'),
