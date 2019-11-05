@@ -101,11 +101,11 @@ export { ITEM, ITEM_PROP_ID, ITEM_PROPS } from './modules/layout/item'
 export { itemGetId } from './modules/layout/itemGetId'
 export { itemIsValid } from './modules/layout/itemIsValid'
 
-// Modules: chartTypeToLayoutType
+// Modules: visTypeToLayoutType
 
-export { getLayoutTypeByChartType } from './modules/chartTypeToLayoutType'
+export { getLayoutTypeByVisType } from './modules/visTypeToLayoutType'
 
-// Modules: chartTypes
+// Modules: visTypes
 
 export {
     COLUMN,
@@ -121,10 +121,10 @@ export {
     YEAR_OVER_YEAR_LINE,
     YEAR_OVER_YEAR_COLUMN,
     SINGLE_VALUE,
-    OPEN_AS_MAP,
-} from './modules/chartTypes'
+    MAP,
+} from './modules/visTypes'
 
-// Modules: chartTypes
+// Modules: visTypes
 
 export {
     LAYOUT_TYPE_DEFAULT,

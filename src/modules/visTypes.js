@@ -13,9 +13,9 @@ export const BUBBLE = 'BUBBLE'
 export const YEAR_OVER_YEAR_LINE = 'YEAR_OVER_YEAR_LINE'
 export const YEAR_OVER_YEAR_COLUMN = 'YEAR_OVER_YEAR_COLUMN'
 export const SINGLE_VALUE = 'SINGLE_VALUE'
-export const OPEN_AS_MAP = 'OPEN_AS_MAP'
+export const MAP = 'MAP'
 
-export const chartTypeDisplayNames = {
+export const visTypeDisplayNames = {
     [COLUMN]: i18n.t('Column'),
     [STACKED_COLUMN]: i18n.t('Stacked column'),
     [BAR]: i18n.t('Bar'),
@@ -28,12 +28,12 @@ export const chartTypeDisplayNames = {
     [YEAR_OVER_YEAR_LINE]: i18n.t('Year over year (line)'),
     [YEAR_OVER_YEAR_COLUMN]: i18n.t('Year over year (column)'),
     [SINGLE_VALUE]: i18n.t('Single value'),
-    [OPEN_AS_MAP]: i18n.t('Open as Map'), // TODO Open as: Map when i18next nsSeparator fixed
+    [MAP]: i18n.t('Open as Map'), // TODO Open as: Map when i18next nsSeparator fixed
 }
 
 const stackedTypes = [STACKED_COLUMN, STACKED_BAR, AREA]
 const yearOverYearTypes = [YEAR_OVER_YEAR_LINE, YEAR_OVER_YEAR_COLUMN]
-const openAsTypes = [OPEN_AS_MAP]
+const openAsTypes = [MAP]
 const dualAxisTypes = [COLUMN, BAR, LINE, AREA]
 
 export const defaultChartType = COLUMN

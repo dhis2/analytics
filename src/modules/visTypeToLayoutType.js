@@ -11,14 +11,14 @@ import {
     YEAR_OVER_YEAR_LINE,
     YEAR_OVER_YEAR_COLUMN,
     SINGLE_VALUE,
-} from './chartTypes'
+} from './visTypes'
 import {
     LAYOUT_TYPE_DEFAULT,
     LAYOUT_TYPE_PIE,
     LAYOUT_TYPE_YEAR_OVER_YEAR,
 } from './layoutTypes'
 
-const chartTypeToLayoutType = {
+const visTypeToLayoutType = {
     [COLUMN]: LAYOUT_TYPE_DEFAULT,
     [STACKED_COLUMN]: LAYOUT_TYPE_DEFAULT,
     [BAR]: LAYOUT_TYPE_DEFAULT,
@@ -33,5 +33,4 @@ const chartTypeToLayoutType = {
     [SINGLE_VALUE]: LAYOUT_TYPE_PIE,
 }
 
-export const getLayoutTypeByChartType = chartType =>
-    chartTypeToLayoutType[chartType]
+export const getLayoutTypeByChartType = visType => visTypeToLayoutType[visType]
