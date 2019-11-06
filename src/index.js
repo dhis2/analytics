@@ -22,6 +22,8 @@ export {
 
 export { default as ItemSelector } from './components/ItemSelector/ItemSelector'
 
+export { default as DimensionMenu } from './components/DimensionsMenu'
+
 // Api
 
 export { apiFetchDimensions } from './api/dimensions'

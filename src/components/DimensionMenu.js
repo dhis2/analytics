@@ -57,7 +57,7 @@ const getRemoveMenuItem = (dimensionId, onRemove) => (
 
 const getDividerItem = key => <Divider light key={key} />
 
-export const DimensionMenu = ({
+const DimensionMenu = ({
     dimensionId,
     currentAxisName,
     visType,
@@ -134,3 +134,5 @@ export const DimensionMenu = ({
         </Menu>
     )
 }
+
+export default DimensionMenu
