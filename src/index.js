@@ -28,6 +28,10 @@ export { default as DimensionMenu } from './components/DimensionMenu'
 
 export { apiFetchDimensions } from './api/dimensions'
 
+// Modules: axis
+
+export { axisLabels } from './modules/axis'
+
 // Modules: fixedDimensions
 
 export {

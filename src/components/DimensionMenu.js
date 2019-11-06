@@ -1,12 +1,16 @@
 import React from 'react'
 import Divider from '@material-ui/core/Divider'
 import Menu from '@material-ui/core/Menu'
+import MenuItem from '@material-ui/core/MenuItem'
 import Zoom from '@material-ui/core/Zoom'
+import i18n from '@dhis2/d2-i18n'
 
 import { getAvailableAxes } from '../modules/layoutUiRules'
 import { AXIS_NAME_COLUMNS } from '../modules/layout/axis'
 import { DIMENSION_ID_DATA } from '../modules/fixedDimensions'
 import { isDualAxisType } from '../modules/visTypes'
+import { getLayoutTypeByVisType } from '../modules/visTypeToLayoutType'
+import { axisLabels } from '../modules/axis'
 
 const shouldHaveDualAxis = ({
     dimensionId,
@@ -30,24 +34,23 @@ const getDualAxisItem = (dimensionId, onClick) => (
 const getAxisItemLabelPrefix = isDimensionInLayout =>
     isDimensionInLayout ? 'Move to' : 'Add to'
 
-const getAxisItems = ({
+const getAxisItem = ({
     dimensionId,
-    axisNames,
+    axisName,
     isDimensionInLayout,
-    onClick,
-}) =>
-    axisNames.map(axisName => (
-        <MenuItem
-            key={`${dimensionId}-to-${axisName}`}
-            onClick={onClick(dimensionId, axisName)}
-        >
-            {i18n.t(
-                `${getAxisItemLabelPrefix(isDimensionInLayout)} ${
-                    menuLabels[axisName]
-                }`
-            )}
-        </MenuItem>
-    ))
+    axisItemHandler,
+}) => (
+    <MenuItem
+        key={`${dimensionId}-to-${axisName}`}
+        onClick={axisItemHandler(dimensionId, axisName)}
+    >
+        {i18n.t(
+            `${getAxisItemLabelPrefix(isDimensionInLayout)} ${
+                axisLabels[axisName]
+            }`
+        )}
+    </MenuItem>
+)
 
 const getRemoveMenuItem = (dimensionId, onRemove) => (
     <MenuItem key={`remove-${dimensionId}`} onClick={onRemove(dimensionId)}>
@@ -57,7 +60,7 @@ const getRemoveMenuItem = (dimensionId, onRemove) => (
 
 const getDividerItem = key => <Divider light key={key} />
 
-const DimensionMenu = ({
+export const DimensionMenu = ({
     dimensionId,
     currentAxisName,
     visType,
@@ -81,9 +84,7 @@ const DimensionMenu = ({
     })
 
     // add/move to axis item
-    const availableAxisNames = getAvailableAxes(
-        getLayoutTypeByChartType(visType)
-    )
+    const availableAxisNames = getAvailableAxes(getLayoutTypeByVisType(visType))
 
     const applicableAxisNames = availableAxisNames.filter(
         axisName => axisName !== currentAxisName
@@ -100,8 +101,8 @@ const DimensionMenu = ({
     }
 
     menuItems.push(
-        ...axisNames.map(axisName =>
-            getAxisItems({
+        ...applicableAxisNames.map(axisName =>
+            getAxisItem({
                 dimensionId,
                 axisName,
                 isDimensionInLayout,
