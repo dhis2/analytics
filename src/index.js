@@ -22,7 +22,7 @@ export {
 
 export { default as ItemSelector } from './components/ItemSelector/ItemSelector'
 
-export { default as DimensionMenu } from './components/DimensionsMenu'
+export { default as DimensionMenu } from './components/DimensionMenu'
 
 // Api
 
