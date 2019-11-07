@@ -127,7 +127,6 @@ export const DimensionMenu = ({
             anchorEl={anchorEl}
             open={Boolean(anchorEl)}
             onClose={onClose}
-            onExited={onClose}
             transitionDuration={{ enter: 50, exit: 0 }}
             TransitionComponent={Zoom}
         >
