@@ -38,12 +38,9 @@ const getAxisItem = ({
     dimensionId,
     axisName,
     isDimensionInLayout,
-    axisItemHandler,
+    onClick,
 }) => (
-    <MenuItem
-        key={`${dimensionId}-to-${axisName}`}
-        onClick={axisItemHandler(dimensionId, axisName)}
-    >
+    <MenuItem key={`${dimensionId}-to-${axisName}`} onClick={onClick}>
         {i18n.t(
             `${getAxisItemLabelPrefix(isDimensionInLayout)} ${
                 axisLabels[axisName]
@@ -52,8 +49,8 @@ const getAxisItem = ({
     </MenuItem>
 )
 
-const getRemoveMenuItem = (dimensionId, onRemove) => (
-    <MenuItem key={`remove-${dimensionId}`} onClick={onRemove(dimensionId)}>
+const getRemoveMenuItem = onClick => (
+    <MenuItem key="remove-menu-item" onClick={onClick}>
         {i18n.t('Remove')}
     </MenuItem>
 )
@@ -92,7 +89,12 @@ export const DimensionMenu = ({
 
     // create menu items
     if (hasDualAxis) {
-        menuItems.push(getDualAxisItem(dimensionId, dualAxisItemHandler))
+        menuItems.push(
+            getDualAxisItem(dimensionId, () => {
+                dualAxisItemHandler()
+                onClose()
+            })
+        )
 
         // divider
         if (applicableAxisNames.length) {
@@ -106,7 +108,10 @@ export const DimensionMenu = ({
                 dimensionId,
                 axisName,
                 isDimensionInLayout,
-                axisItemHandler,
+                onClick: () => {
+                    axisItemHandler(dimensionId, axisName)
+                    onClose()
+                },
             })
         )
     )
@@ -118,7 +123,12 @@ export const DimensionMenu = ({
             menuItems.push(getDividerItem('remove-item-divider'))
         }
 
-        menuItems.push(getRemoveMenuItem(dimensionId, removeItemHandler))
+        menuItems.push(
+            getRemoveMenuItem(() => {
+                removeItemHandler(dimensionId)
+                onClose()
+            })
+        )
     }
 
     return (
@@ -127,6 +137,7 @@ export const DimensionMenu = ({
             anchorEl={anchorEl}
             open={Boolean(anchorEl)}
             onClose={onClose}
+            onExited={onClose}
             transitionDuration={{ enter: 50, exit: 0 }}
             TransitionComponent={Zoom}
         >
