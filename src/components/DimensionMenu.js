@@ -109,7 +109,11 @@ export const DimensionMenu = ({
                 axisName,
                 isDimensionInLayout,
                 onClick: () => {
-                    axisItemHandler(dimensionId, axisName)
+                    axisItemHandler(
+                        dimensionId,
+                        axisName,
+                        numberOfDimensionItems
+                    )
                     onClose()
                 },
             })
