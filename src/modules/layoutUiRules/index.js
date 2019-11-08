@@ -1,5 +1,5 @@
 import { getAvailableAxesByRules } from './rulesHelper'
-import { getRulesByLayoutType } from './rules'
+import { getRulesByVisType } from './rules'
 
-export const getAvailableAxes = layoutType =>
-    getAvailableAxesByRules(getRulesByLayoutType(layoutType))
+export const getAvailableAxes = visType =>
+    getAvailableAxesByRules(getRulesByVisType(visType))

@@ -22,9 +22,15 @@ export {
 
 export { default as ItemSelector } from './components/ItemSelector/ItemSelector'
 
+export { default as DimensionMenu } from './components/DimensionMenu'
+
 // Api
 
 export { apiFetchDimensions } from './api/dimensions'
+
+// Modules: axis
+
+export { axisLabels } from './modules/axis'
 
 // Modules: fixedDimensions
 

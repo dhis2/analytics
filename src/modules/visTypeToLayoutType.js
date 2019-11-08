@@ -33,4 +33,4 @@ const visTypeToLayoutType = {
     [SINGLE_VALUE]: LAYOUT_TYPE_PIE,
 }
 
-export const getLayoutTypeByChartType = visType => visTypeToLayoutType[visType]
+export const getLayoutTypeByVisType = visType => visTypeToLayoutType[visType]
