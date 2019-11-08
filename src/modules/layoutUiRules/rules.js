@@ -5,11 +5,19 @@ import {
 } from '../layout/axis'
 import { DIMENSION_ID_PERIOD } from '../fixedDimensions'
 import {
-    LAYOUT_TYPE_DEFAULT,
-    LAYOUT_TYPE_PIE,
-    LAYOUT_TYPE_SINGLE_VALUE,
-    LAYOUT_TYPE_YEAR_OVER_YEAR,
-} from '../layoutTypes'
+    COLUMN,
+    STACKED_COLUMN,
+    BAR,
+    STACKED_BAR,
+    LINE,
+    AREA,
+    PIE,
+    RADAR,
+    GAUGE,
+    YEAR_OVER_YEAR_LINE,
+    YEAR_OVER_YEAR_COLUMN,
+    SINGLE_VALUE,
+} from '../visTypes'
 
 const RULE_PROP_AVAILABLE_AXES = {
     name: 'availableAxes',
@@ -43,7 +51,7 @@ const pieRules = {
 }
 
 const singleValueRules = {
-    [RULE_PROP_AVAILABLE_AXES.name]: [AXIS_NAME_COLUMNS, AXIS_NAME_FILTERS],
+    [RULE_PROP_AVAILABLE_AXES.name]: [AXIS_NAME_FILTERS],
     maxNumberOfDimsPerAxis: {
         [AXIS_NAME_COLUMNS]: 1,
     },
@@ -60,17 +68,25 @@ const yearOverYearRules = {
     disallowedDims: [DIMENSION_ID_PERIOD],
 }
 
-const layoutTypeToRules = {
-    [LAYOUT_TYPE_DEFAULT]: defaultRules,
-    [LAYOUT_TYPE_PIE]: pieRules,
-    [LAYOUT_TYPE_SINGLE_VALUE]: singleValueRules,
-    [LAYOUT_TYPE_YEAR_OVER_YEAR]: yearOverYearRules,
+const visTypeToRules = {
+    [COLUMN]: defaultRules,
+    [STACKED_COLUMN]: defaultRules,
+    [BAR]: defaultRules,
+    [STACKED_BAR]: defaultRules,
+    [LINE]: defaultRules,
+    [AREA]: defaultRules,
+    [RADAR]: defaultRules,
+    [GAUGE]: defaultRules,
+    [PIE]: pieRules,
+    [SINGLE_VALUE]: singleValueRules,
+    [YEAR_OVER_YEAR_LINE]: yearOverYearRules,
+    [YEAR_OVER_YEAR_COLUMN]: yearOverYearRules,
 }
 
-export const getRulesByLayoutType = layoutType => layoutTypeToRules[layoutType]
+export const getRulesByVisType = visType => visTypeToRules[visType]
 
 // Test exports
 
-export const testResourceRules = Object.values(layoutTypeToRules)
+export const testResourceRules = Object.values(visTypeToRules)
 
 export const testResourceRequiredProps = [RULE_PROP_AVAILABLE_AXES]

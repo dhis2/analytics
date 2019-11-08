@@ -9,7 +9,6 @@ import { getAvailableAxes } from '../modules/layoutUiRules'
 import { AXIS_NAME_COLUMNS } from '../modules/layout/axis'
 import { DIMENSION_ID_DATA } from '../modules/fixedDimensions'
 import { isDualAxisType } from '../modules/visTypes'
-import { getLayoutTypeByVisType } from '../modules/visTypeToLayoutType'
 import { axisLabels } from '../modules/axis'
 
 const shouldHaveDualAxis = ({
@@ -81,7 +80,7 @@ export const DimensionMenu = ({
     })
 
     // add/move to axis item
-    const availableAxisNames = getAvailableAxes(getLayoutTypeByVisType(visType))
+    const availableAxisNames = getAvailableAxes(visType)
 
     const applicableAxisNames = availableAxisNames.filter(
         axisName => axisName !== currentAxisName
