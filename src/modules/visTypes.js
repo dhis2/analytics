@@ -36,11 +36,14 @@ const stackedTypes = [
     VIS_TYPE_STACKED_BAR,
     VIS_TYPE_AREA,
 ]
+
 const yearOverYearTypes = [
     VIS_TYPE_YEAR_OVER_YEAR_LINE,
     VIS_TYPE_YEAR_OVER_YEAR_COLUMN,
 ]
+
 const openAsTypes = [VIS_TYPE_MAP]
+
 const dualAxisTypes = [
     VIS_TYPE_COLUMN,
     VIS_TYPE_BAR,
@@ -48,7 +51,7 @@ const dualAxisTypes = [
     VIS_TYPE_AREA,
 ]
 
-export const defaultChartType = VIS_TYPE_COLUMN
+export const defaultVisType = VIS_TYPE_COLUMN
 export const isStacked = type => stackedTypes.includes(type)
 export const isYearOverYear = type => yearOverYearTypes.includes(type)
 export const isOpenAsType = type => openAsTypes.includes(type)
