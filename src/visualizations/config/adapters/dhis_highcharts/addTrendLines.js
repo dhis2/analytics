@@ -2,7 +2,7 @@ import arrayContains from 'd2-utilizr/lib/arrayContains'
 import { rgb } from 'd3-color'
 
 import getStackedData from './getStackedData'
-import { CHART_TYPE_GAUGE, CHART_TYPE_PIE } from './type'
+import { VIS_TYPE_GAUGE, VIS_TYPE_PIE } from '../../../../modules/visTypes'
 
 const DEFAULT_TRENDLINE = {
     type: 'spline',
@@ -18,7 +18,7 @@ const DEFAULT_TRENDLINE = {
 }
 
 export const isRegressionIneligible = type =>
-    arrayContains([CHART_TYPE_GAUGE, CHART_TYPE_PIE], type)
+    arrayContains([VIS_TYPE_GAUGE, VIS_TYPE_PIE], type)
 
 export default function(regressionType, series, isStacked) {
     const newSeries = []

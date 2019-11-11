@@ -5,10 +5,10 @@ import getYearOnYear from './yearOnYear'
 import getPie from './pie'
 import getGauge from './gauge'
 import {
-    CHART_TYPE_YEAR_OVER_YEAR_COLUMN,
-    CHART_TYPE_YEAR_OVER_YEAR_LINE,
-    CHART_TYPE_PIE,
-    CHART_TYPE_GAUGE,
+    VIS_TYPE_YEAR_OVER_YEAR_COLUMN,
+    VIS_TYPE_YEAR_OVER_YEAR_LINE,
+    VIS_TYPE_PIE,
+    VIS_TYPE_GAUGE,
 } from '../../../config/adapters/dhis_highcharts/type'
 
 const VALUE_ID = 'value'
@@ -84,12 +84,12 @@ function getDefault(acc, seriesIds, categoryIds, idValueMap, metaData) {
 
 function getSeriesFunction(type) {
     switch (type) {
-        case CHART_TYPE_PIE:
+        case VIS_TYPE_PIE:
             return getPie
-        case CHART_TYPE_GAUGE:
+        case VIS_TYPE_GAUGE:
             return getGauge
-        case CHART_TYPE_YEAR_OVER_YEAR_COLUMN:
-        case CHART_TYPE_YEAR_OVER_YEAR_LINE:
+        case VIS_TYPE_YEAR_OVER_YEAR_COLUMN:
+        case VIS_TYPE_YEAR_OVER_YEAR_LINE:
             return getYearOnYear
         default:
             return getDefault

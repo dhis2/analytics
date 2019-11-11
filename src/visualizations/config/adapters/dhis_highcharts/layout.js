@@ -1,5 +1,5 @@
 import { hasExtraAxisItems } from './seriesItems'
-import { isDualAxis } from './type'
+import { isDualAxisType } from '../../../../modules/visTypes'
 
 const DATA_DIMENSION_ID = 'dx'
 
@@ -22,7 +22,7 @@ function hasMultipleSeriesItems(columns) {
 
 export function shouldHaveDualAxis(layout) {
     return (
-        isDualAxis(layout.type) &&
+        isDualAxisType(layout.type) &&
         isDataSeries(layout.columns) &&
         hasMultipleSeriesItems(layout.columns) &&
         hasExtraAxisItems(layout.seriesItems, layout.columns)

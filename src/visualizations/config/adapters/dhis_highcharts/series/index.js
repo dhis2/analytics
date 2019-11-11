@@ -1,11 +1,16 @@
 import getCumulativeData from './../getCumulativeData'
 import getPie from './pie'
 import getGauge from './gauge'
-import getType, { isDualAxis, isYearOverYear } from '../type'
-import { CHART_TYPE_PIE, CHART_TYPE_GAUGE } from '../type'
+import getType from '../type'
 import { getFullIdAxisMap, getAxisIdsMap } from '../seriesItems'
 import { generateColors } from '../../../../util/colors/gradientColorGenerator'
 import { shouldHaveDualAxis } from '../layout'
+import {
+    VIS_TYPE_PIE,
+    VIS_TYPE_GAUGE,
+    isDualAxisType,
+    isYearOverYear,
+} from '../../../../../modules/visTypes'
 
 const DEFAULT_ANIMATION_DURATION = 200
 
@@ -98,7 +103,7 @@ function getDefault(series, layout, isStacked, extraOptions) {
             : idColorMap[seriesObj.id]
 
         // axis number
-        seriesObj.yAxis = isDualAxis(layout.type)
+        seriesObj.yAxis = isDualAxisType(layout.type)
             ? fullIdAxisMap[seriesObj.id]
             : 0
 
@@ -118,7 +123,7 @@ function getDefault(series, layout, isStacked, extraOptions) {
 
 export default function(series, store, layout, isStacked, extraOptions) {
     switch (layout.type) {
-        case CHART_TYPE_PIE:
+        case VIS_TYPE_PIE:
             series = getPie(
                 series,
                 store,
@@ -127,7 +132,7 @@ export default function(series, store, layout, isStacked, extraOptions) {
                 extraOptions.colors
             )
             break
-        case CHART_TYPE_GAUGE:
+        case VIS_TYPE_GAUGE:
             series = getGauge(series, extraOptions.dashboard)
             break
         default:

@@ -3,9 +3,9 @@ import objectClean from 'd2-utilizr/lib/objectClean'
 import isNumeric from 'd2-utilizr/lib/isNumeric'
 import isString from 'd2-utilizr/lib/isString'
 import getAxisTitle from '../getAxisTitle'
-import { CHART_TYPE_GAUGE } from '../type'
+import { VIS_TYPE_GAUGE } from '../../../modules/visTypes'
 import getGauge from './gauge'
-import { getIsStacked } from '../type'
+import { isStacked } from '../../../modules/visTypes'
 import { shouldHaveDualAxis } from '../layout'
 
 const DEFAULT_MIN_VALUE = 0
@@ -136,7 +136,7 @@ function getDefault(layout, extraOptions) {
 
                 // DHIS2-649: put first serie at the bottom of the stack
                 // in this way the legend sequence matches the serie sequence
-                reversedStacks: getIsStacked(layout.type) ? false : true,
+                reversedStacks: isStacked(layout.type) ? false : true,
             })
         )
     }
@@ -148,7 +148,7 @@ export default function(layout, series, extraOptions) {
     let yAxis
 
     switch (layout.type) {
-        case CHART_TYPE_GAUGE:
+        case VIS_TYPE_GAUGE:
             yAxis = getGauge(series, extraOptions.legendSet)
             break
         default:

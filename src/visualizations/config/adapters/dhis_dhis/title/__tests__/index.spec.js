@@ -1,5 +1,5 @@
 import getTitle from '../index'
-import { VISUALIZATION_TYPE_SINGLE_VALUE } from '../../type'
+import { VIS_TYPE_SINGLE_VALUE } from '../../type'
 
 jest.mock('../singleValue', () => () => 'The sv filter title')
 jest.mock('../../../../../util/getFilterText', () => () => 'The filter text')
@@ -15,7 +15,7 @@ describe('getTitle', () => {
     })
 
     it('returns title for single value vis', () => {
-        expect(getTitle({ type: VISUALIZATION_TYPE_SINGLE_VALUE })).toEqual(
+        expect(getTitle({ type: VIS_TYPE_SINGLE_VALUE })).toEqual(
             'The sv filter title'
         )
     })

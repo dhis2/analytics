@@ -9,7 +9,7 @@ import getSubtitle from './subtitle'
 import getLegend from './legend'
 import getPane from './pane'
 import getNoData from './noData'
-import { getIsStacked } from './type'
+import { isStacked } from '../../../../modules/visTypes'
 import getSortedConfig from './getSortedConfig'
 import getTrimmedConfig from './getTrimmedConfig'
 import addTrendLines, { isRegressionIneligible } from './addTrendLines'
@@ -48,7 +48,7 @@ export default function({ store, layout, el, extraConfig, extraOptions }) {
                 : null,
     })
 
-    const isStacked = getIsStacked(_layout.type)
+    const isStacked = isStacked(_layout.type)
 
     let config = {
         // type etc
