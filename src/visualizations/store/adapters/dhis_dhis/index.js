@@ -1,5 +1,5 @@
 import getSingleValue from './singleValue'
-import { VIS_TYPE_SINGLE_VALUE } from '../../../config/adapters/dhis_dhis/type'
+import { VIS_TYPE_SINGLE_VALUE } from '../../../../modules/visTypes'
 
 const VALUE_ID = 'value'
 

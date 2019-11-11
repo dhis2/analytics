@@ -4,12 +4,14 @@ import arrayUnique from 'd2-utilizr/lib/arrayUnique'
 import getYearOnYear from './yearOnYear'
 import getPie from './pie'
 import getGauge from './gauge'
-import {
+import { 
     VIS_TYPE_YEAR_OVER_YEAR_COLUMN,
     VIS_TYPE_YEAR_OVER_YEAR_LINE,
     VIS_TYPE_PIE,
     VIS_TYPE_GAUGE,
-} from '../../../config/adapters/dhis_highcharts/type'
+ } from '../../../../modules/visTypes'
+
+VIS_TYPE_GAUGE
 
 const VALUE_ID = 'value'
 

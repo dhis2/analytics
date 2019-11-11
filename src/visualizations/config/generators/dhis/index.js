@@ -1,5 +1,5 @@
-import { VIS_TYPE_SINGLE_VALUE } from '../../adapters/dhis_dhis/type'
 import getSingleValueGenerator from './singleValue'
+import { VIS_TYPE_SINGLE_VALUE } from '../../../../modules/visTypes'
 
 export default function(config, parentEl, extraOptions) {
     if (config) {

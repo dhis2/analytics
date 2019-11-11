@@ -1,5 +1,5 @@
 import getTitle from '../index'
-import { VIS_TYPE_SINGLE_VALUE } from '../../type'
+import { VIS_TYPE_SINGLE_VALUE } from '../../../../../../modules/visTypes'
 
 jest.mock('../singleValue', () => () => 'The sv filter title')
 jest.mock('../../../../../util/getFilterText', () => () => 'The filter text')
