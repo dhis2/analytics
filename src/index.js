@@ -114,23 +114,29 @@ export { getLayoutTypeByVisType } from './modules/visTypeToLayoutType'
 // Modules: visTypes
 
 export {
-    COLUMN,
-    STACKED_COLUMN,
-    BAR,
-    STACKED_BAR,
-    LINE,
-    AREA,
-    PIE,
-    RADAR,
-    GAUGE,
-    BUBBLE,
-    YEAR_OVER_YEAR_LINE,
-    YEAR_OVER_YEAR_COLUMN,
-    SINGLE_VALUE,
-    MAP,
+    VIS_TYPE_COLUMN,
+    VIS_TYPE_STACKED_COLUMN,
+    VIS_TYPE_BAR,
+    VIS_TYPE_STACKED_BAR,
+    VIS_TYPE_LINE,
+    VIS_TYPE_AREA,
+    VIS_TYPE_PIE,
+    VIS_TYPE_RADAR,
+    VIS_TYPE_GAUGE,
+    VIS_TYPE_BUBBLE,
+    VIS_TYPE_YEAR_OVER_YEAR_LINE,
+    VIS_TYPE_YEAR_OVER_YEAR_COLUMN,
+    VIS_TYPE_SINGLE_VALUE,
+    VIS_TYPE_MAP,
+    defaultChartType,
+    isStacked,
+    isYearOverYear,
+    isOpenAsType,
+    isDualAxisType,
+    isSingleValue,
 } from './modules/visTypes'
 
-// Modules: visTypes
+// Modules: layoutTypes
 
 export {
     LAYOUT_TYPE_DEFAULT,

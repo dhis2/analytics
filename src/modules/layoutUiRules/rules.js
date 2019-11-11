@@ -5,18 +5,18 @@ import {
 } from '../layout/axis'
 import { DIMENSION_ID_PERIOD } from '../fixedDimensions'
 import {
-    COLUMN,
-    STACKED_COLUMN,
-    BAR,
-    STACKED_BAR,
-    LINE,
-    AREA,
-    PIE,
-    RADAR,
-    GAUGE,
-    YEAR_OVER_YEAR_LINE,
-    YEAR_OVER_YEAR_COLUMN,
-    SINGLE_VALUE,
+    VIS_TYPE_COLUMN,
+    VIS_TYPE_STACKED_COLUMN,
+    VIS_TYPE_BAR,
+    VIS_TYPE_STACKED_BAR,
+    VIS_TYPE_LINE,
+    VIS_TYPE_AREA,
+    VIS_TYPE_PIE,
+    VIS_TYPE_RADAR,
+    VIS_TYPE_GAUGE,
+    VIS_TYPE_YEAR_OVER_YEAR_LINE,
+    VIS_TYPE_YEAR_OVER_YEAR_COLUMN,
+    VIS_TYPE_SINGLE_VALUE,
 } from '../visTypes'
 
 const RULE_PROP_AVAILABLE_AXES = {
@@ -69,18 +69,18 @@ const yearOverYearRules = {
 }
 
 const visTypeToRules = {
-    [COLUMN]: defaultRules,
-    [STACKED_COLUMN]: defaultRules,
-    [BAR]: defaultRules,
-    [STACKED_BAR]: defaultRules,
-    [LINE]: defaultRules,
-    [AREA]: defaultRules,
-    [RADAR]: defaultRules,
-    [GAUGE]: defaultRules,
-    [PIE]: pieRules,
-    [SINGLE_VALUE]: singleValueRules,
-    [YEAR_OVER_YEAR_LINE]: yearOverYearRules,
-    [YEAR_OVER_YEAR_COLUMN]: yearOverYearRules,
+    [VIS_TYPE_COLUMN]: defaultRules,
+    [VIS_TYPE_STACKED_COLUMN]: defaultRules,
+    [VIS_TYPE_BAR]: defaultRules,
+    [VIS_TYPE_STACKED_BAR]: defaultRules,
+    [VIS_TYPE_LINE]: defaultRules,
+    [VIS_TYPE_AREA]: defaultRules,
+    [VIS_TYPE_RADAR]: defaultRules,
+    [VIS_TYPE_GAUGE]: defaultRules,
+    [VIS_TYPE_PIE]: pieRules,
+    [VIS_TYPE_SINGLE_VALUE]: singleValueRules,
+    [VIS_TYPE_YEAR_OVER_YEAR_LINE]: yearOverYearRules,
+    [VIS_TYPE_YEAR_OVER_YEAR_COLUMN]: yearOverYearRules,
 }
 
 export const getRulesByVisType = visType => visTypeToRules[visType]
