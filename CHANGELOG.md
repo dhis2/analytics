@@ -1,3 +1,10 @@
+## [2.5.1](https://github.com/dhis2/analytics/compare/v2.5.0...v2.5.1) (2019-11-11)
+
+
+### Bug Fixes
+
+* added comment to axis label ([#141](https://github.com/dhis2/analytics/issues/141)) ([f786fc9](https://github.com/dhis2/analytics/commit/f786fc985b30980755a4647d5fea0e0b06f48d66))
+
 # [2.5.0](https://github.com/dhis2/analytics/compare/v2.4.5...v2.5.0) (2019-11-04)
 
 
