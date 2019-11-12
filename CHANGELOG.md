@@ -1,3 +1,10 @@
+## [2.5.2](https://github.com/dhis2/analytics/compare/v2.5.1...v2.5.2) (2019-11-12)
+
+
+### Bug Fixes
+
+* use shared vis types ([#142](https://github.com/dhis2/analytics/issues/142)) ([dbadcbf](https://github.com/dhis2/analytics/commit/dbadcbf02750dbb22f75770cb20c5878a3950e3c))
+
 ## [2.5.1](https://github.com/dhis2/analytics/compare/v2.5.0...v2.5.1) (2019-11-11)
 
 
