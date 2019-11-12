@@ -48,7 +48,7 @@ export default function({ store, layout, el, extraConfig, extraOptions }) {
                 : null,
     })
 
-    const isStacked = isStacked(_layout.type)
+    const stacked = isStacked(_layout.type)
 
     let config = {
         // type etc
@@ -80,7 +80,7 @@ export default function({ store, layout, el, extraConfig, extraOptions }) {
             series.slice(),
             store,
             _layout,
-            isStacked,
+            stacked,
             _extraOptions
         ),
 
@@ -115,7 +115,7 @@ export default function({ store, layout, el, extraConfig, extraOptions }) {
 
     // sorting
     if (_layout.sortOrder) {
-        config = getSortedConfig(config, _layout, isStacked)
+        config = getSortedConfig(config, _layout, stacked)
     }
 
     // DHIS2-1243 add trend lines after sorting
@@ -128,7 +128,7 @@ export default function({ store, layout, el, extraConfig, extraOptions }) {
         config.series = addTrendLines(
             _layout.regressionType,
             config.series,
-            isStacked
+            stacked
         )
     }
 
