@@ -3,10 +3,9 @@ import objectClean from 'd2-utilizr/lib/objectClean'
 import isNumeric from 'd2-utilizr/lib/isNumeric'
 import isString from 'd2-utilizr/lib/isString'
 import getAxisTitle from '../getAxisTitle'
-import { VIS_TYPE_GAUGE } from '../../../modules/visTypes'
 import getGauge from './gauge'
-import { isStacked } from '../../../modules/visTypes'
 import { shouldHaveDualAxis } from '../layout'
+import { isStacked, VIS_TYPE_GAUGE } from '../../../../../modules/visTypes'
 
 const DEFAULT_MIN_VALUE = 0
 

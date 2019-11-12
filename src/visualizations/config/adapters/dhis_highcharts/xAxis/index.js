@@ -7,7 +7,7 @@ import {
     VIS_TYPE_YEAR_OVER_YEAR_LINE,
     VIS_TYPE_YEAR_OVER_YEAR_COLUMN,
     VIS_TYPE_PIE,
-} from '../../../modules/visTypes'
+} from '../../../../../modules/visTypes'
 
 function noAxis() {
     return null

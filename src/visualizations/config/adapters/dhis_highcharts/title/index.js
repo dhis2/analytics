@@ -4,7 +4,7 @@ import {
     VIS_TYPE_YEAR_OVER_YEAR_LINE,
     VIS_TYPE_YEAR_OVER_YEAR_COLUMN,
     VIS_TYPE_GAUGE,
-} from '../../../modules/visTypes'
+} from '../../../../../modules/visTypes'
 import getYearOverYearTitle from './yearOverYear'
 
 const DEFAULT_TITLE_STYLE = {

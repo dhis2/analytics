@@ -6,7 +6,7 @@ import {
     VIS_TYPE_GAUGE,
     VIS_TYPE_YEAR_OVER_YEAR_LINE,
     VIS_TYPE_YEAR_OVER_YEAR_COLUMN,
-} from '../../../modules/visTypes'
+} from '../../../../../modules/visTypes'
 import getYearOverYearTitle from '../title/yearOverYear'
 
 const DEFAULT_SUBTITLE = {
