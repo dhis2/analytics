@@ -3,11 +3,11 @@ import getAxisTitle from '../getAxisTitle'
 import getCategories from '../getCategories'
 import getYearOnYear from './yearOnYear'
 import {
-    CHART_TYPE_GAUGE,
-    CHART_TYPE_YEAR_OVER_YEAR_LINE,
-    CHART_TYPE_YEAR_OVER_YEAR_COLUMN,
-    CHART_TYPE_PIE,
-} from '../type'
+    VIS_TYPE_GAUGE,
+    VIS_TYPE_YEAR_OVER_YEAR_LINE,
+    VIS_TYPE_YEAR_OVER_YEAR_COLUMN,
+    VIS_TYPE_PIE,
+} from '../../../../../modules/visTypes'
 
 function noAxis() {
     return null
@@ -30,12 +30,12 @@ export default function(store, layout, extraOptions) {
     let xAxis
 
     switch (layout.type) {
-        case CHART_TYPE_PIE:
-        case CHART_TYPE_GAUGE:
+        case VIS_TYPE_PIE:
+        case VIS_TYPE_GAUGE:
             xAxis = noAxis()
             break
-        case CHART_TYPE_YEAR_OVER_YEAR_LINE:
-        case CHART_TYPE_YEAR_OVER_YEAR_COLUMN:
+        case VIS_TYPE_YEAR_OVER_YEAR_LINE:
+        case VIS_TYPE_YEAR_OVER_YEAR_COLUMN:
             xAxis = getYearOnYear(store, layout, extraOptions)
             break
         default:

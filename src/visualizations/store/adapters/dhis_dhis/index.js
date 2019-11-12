@@ -1,5 +1,5 @@
 import getSingleValue from './singleValue'
-import { VISUALIZATION_TYPE_SINGLE_VALUE } from '../../../config/adapters/dhis_dhis/type'
+import { VIS_TYPE_SINGLE_VALUE } from '../../../../modules/visTypes'
 
 const VALUE_ID = 'value'
 
@@ -63,7 +63,7 @@ function getDefault(acc, seriesIds, categoryIds, idValueMap, metaData) {
 
 function getValueFunction(type) {
     switch (type) {
-        case VISUALIZATION_TYPE_SINGLE_VALUE:
+        case VIS_TYPE_SINGLE_VALUE:
             return getSingleValue
         default:
             return getDefault

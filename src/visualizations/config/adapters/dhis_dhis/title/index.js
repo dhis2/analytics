@@ -1,5 +1,5 @@
 import getFilterText from '../../../../util/getFilterText'
-import { VISUALIZATION_TYPE_SINGLE_VALUE } from '../type'
+import { VIS_TYPE_SINGLE_VALUE } from '../../../../../modules/visTypes'
 import getSingleValueTitle from './singleValue'
 
 function getDefault(layout, metaData, dashboard) {
@@ -18,7 +18,7 @@ export default function(layout, metaData, dashboard) {
     } else {
         let title
         switch (layout.type) {
-            case VISUALIZATION_TYPE_SINGLE_VALUE:
+            case VIS_TYPE_SINGLE_VALUE:
                 title = getSingleValueTitle(layout, metaData)
 
                 break

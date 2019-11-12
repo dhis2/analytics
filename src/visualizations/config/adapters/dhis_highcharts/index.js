@@ -9,7 +9,7 @@ import getSubtitle from './subtitle'
 import getLegend from './legend'
 import getPane from './pane'
 import getNoData from './noData'
-import { getIsStacked } from './type'
+import { isStacked } from '../../../../modules/visTypes'
 import getSortedConfig from './getSortedConfig'
 import getTrimmedConfig from './getTrimmedConfig'
 import addTrendLines, { isRegressionIneligible } from './addTrendLines'
@@ -48,7 +48,7 @@ export default function({ store, layout, el, extraConfig, extraOptions }) {
                 : null,
     })
 
-    const isStacked = getIsStacked(_layout.type)
+    const stacked = isStacked(_layout.type)
 
     let config = {
         // type etc
@@ -80,7 +80,7 @@ export default function({ store, layout, el, extraConfig, extraOptions }) {
             series.slice(),
             store,
             _layout,
-            isStacked,
+            stacked,
             _extraOptions
         ),
 
@@ -115,7 +115,7 @@ export default function({ store, layout, el, extraConfig, extraOptions }) {
 
     // sorting
     if (_layout.sortOrder) {
-        config = getSortedConfig(config, _layout, isStacked)
+        config = getSortedConfig(config, _layout, stacked)
     }
 
     // DHIS2-1243 add trend lines after sorting
@@ -128,7 +128,7 @@ export default function({ store, layout, el, extraConfig, extraOptions }) {
         config.series = addTrendLines(
             _layout.regressionType,
             config.series,
-            isStacked
+            stacked
         )
     }
 

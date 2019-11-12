@@ -2,11 +2,11 @@ import isString from 'd2-utilizr/lib/isString'
 import getGauge from './gauge'
 import getFilterText from '../../../../util/getFilterText'
 import {
-    CHART_TYPE_PIE,
-    CHART_TYPE_GAUGE,
-    CHART_TYPE_YEAR_OVER_YEAR_LINE,
-    CHART_TYPE_YEAR_OVER_YEAR_COLUMN,
-} from '../type'
+    VIS_TYPE_PIE,
+    VIS_TYPE_GAUGE,
+    VIS_TYPE_YEAR_OVER_YEAR_LINE,
+    VIS_TYPE_YEAR_OVER_YEAR_COLUMN,
+} from '../../../../../modules/visTypes'
 import getYearOverYearTitle from '../title/yearOverYear'
 
 const DEFAULT_SUBTITLE = {
@@ -55,8 +55,8 @@ export default function(series, layout, metaData, dashboard) {
         const filterTitle = getFilterText(layout.filters, metaData)
 
         switch (layout.type) {
-            case CHART_TYPE_YEAR_OVER_YEAR_LINE:
-            case CHART_TYPE_YEAR_OVER_YEAR_COLUMN:
+            case VIS_TYPE_YEAR_OVER_YEAR_LINE:
+            case VIS_TYPE_YEAR_OVER_YEAR_COLUMN:
                 subtitle.text = getYearOverYearTitle(
                     layout,
                     metaData,

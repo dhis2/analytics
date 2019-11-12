@@ -1,5 +1,5 @@
-import { VISUALIZATION_TYPE_SINGLE_VALUE } from '../../adapters/dhis_dhis/type'
 import getSingleValueGenerator from './singleValue'
+import { VIS_TYPE_SINGLE_VALUE } from '../../../../modules/visTypes'
 
 export default function(config, parentEl, extraOptions) {
     if (config) {
@@ -18,7 +18,7 @@ export default function(config, parentEl, extraOptions) {
             let content
 
             switch (config.type) {
-                case VISUALIZATION_TYPE_SINGLE_VALUE:
+                case VIS_TYPE_SINGLE_VALUE:
                     content = getSingleValueGenerator(
                         config,
                         node,
