@@ -53,7 +53,7 @@ const dualAxisTypes = [
     VIS_TYPE_AREA,
 ]
 
-export const defaultVisType = VIS_TYPE_PIVOT_TABLE
+export const defaultVisType = VIS_TYPE_COLUMN
 export const isStacked = type => stackedTypes.includes(type)
 export const isYearOverYear = type => yearOverYearTypes.includes(type)
 export const isOpenAsType = type => openAsTypes.includes(type)
