@@ -1,3 +1,10 @@
+# [2.6.0](https://github.com/dhis2/analytics/compare/v2.5.2...v2.6.0) (2019-11-14)
+
+
+### Features
+
+* disallowed dims rule ([#144](https://github.com/dhis2/analytics/issues/144)) ([0789d7a](https://github.com/dhis2/analytics/commit/0789d7a06046a6694c4498b9726d22d792dc90c8))
+
 ## [2.5.2](https://github.com/dhis2/analytics/compare/v2.5.1...v2.5.2) (2019-11-12)
 
 
