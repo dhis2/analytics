@@ -148,7 +148,7 @@ export {
 
 // Modules: layoutUiRules
 
-export { getAvailableAxes } from './modules/layoutUiRules'
+export { getAvailableAxes, getDisallowedDims } from './modules/layoutUiRules'
 
 // Visualizations
 
