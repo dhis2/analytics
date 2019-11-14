@@ -149,4 +149,16 @@ export const DimensionMenu = ({
     )
 }
 
+DimensionMenu.propTypes = {
+    dimensionId: PropTypes.string.isRequired,
+    currentAxisName: PropTypes.string.isRequired,
+    visType: PropTypes.string.isRequired,
+    numberOfDimensionItems: PropTypes.number.isRequired,
+    dualAxisItemHandler: PropTypes.func.isRequired,
+    axisItemHandler: PropTypes.func.isRequired,
+    removeItemHandler: PropTypes.func.isRequired,
+    anchorEl: PropTypes.object.isRequired,
+    onClose: PropTypes.func.isRequired,
+}
+
 export default DimensionMenu
