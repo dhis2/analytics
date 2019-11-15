@@ -1,3 +1,10 @@
+## [2.6.1](https://github.com/dhis2/analytics/compare/v2.6.0...v2.6.1) (2019-11-15)
+
+
+### Bug Fixes
+
+* map is not a vis type ([#146](https://github.com/dhis2/analytics/issues/146)) ([23f6a72](https://github.com/dhis2/analytics/commit/23f6a72387930532975d102360abffc62973a1c3))
+
 # [2.6.0](https://github.com/dhis2/analytics/compare/v2.5.2...v2.6.0) (2019-11-14)
 
 
