@@ -1,3 +1,10 @@
+## [2.6.2](https://github.com/dhis2/analytics/compare/v2.6.1...v2.6.2) (2019-11-15)
+
+
+### Bug Fixes
+
+* changed incorrect prop types and import ([#147](https://github.com/dhis2/analytics/issues/147)) ([c1ec7dc](https://github.com/dhis2/analytics/commit/c1ec7dcb2fa98c148df9fedbb0c4334f5b6b3c33))
+
 ## [2.6.1](https://github.com/dhis2/analytics/compare/v2.6.0...v2.6.1) (2019-11-15)
 
 
