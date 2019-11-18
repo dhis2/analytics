@@ -1,5 +1,12 @@
+// availableAxes
+
 export const getAvailableAxesByRules = rules => rules.availableAxes || []
+
+// disallowedDims
 
 export const getDisallowedDimsByRules = rules => rules.disallowedDims || []
 
-// TODO: implement all rules
+// maxNumberOfItemsPerAxis
+
+export const getMaxNumberOfItemsPerAxisByRules = (rules, axisName) =>
+    (rules.maxNumberOfItemsPerAxis || {})[axisName] || null

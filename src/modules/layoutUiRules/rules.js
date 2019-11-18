@@ -76,14 +76,14 @@ const visTypeToRules = {
     [VIS_TYPE_LINE]: defaultRules,
     [VIS_TYPE_AREA]: defaultRules,
     [VIS_TYPE_RADAR]: defaultRules,
-    [VIS_TYPE_GAUGE]: defaultRules,
+    [VIS_TYPE_GAUGE]: singleValueRules,
     [VIS_TYPE_PIE]: pieRules,
     [VIS_TYPE_SINGLE_VALUE]: singleValueRules,
     [VIS_TYPE_YEAR_OVER_YEAR_LINE]: yearOverYearRules,
     [VIS_TYPE_YEAR_OVER_YEAR_COLUMN]: yearOverYearRules,
 }
 
-export const getRulesByVisType = visType => visTypeToRules[visType]
+export const getRulesByVisType = visType => visTypeToRules[visType] || {}
 
 // Test exports
 

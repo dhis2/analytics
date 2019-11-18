@@ -29,6 +29,16 @@ export const visTypeDisplayNames = {
     [VIS_TYPE_SINGLE_VALUE]: i18n.t('Single value'),
 }
 
+export const getDisplayNameByVisType = visType => {
+    const displayName = visTypeDisplayNames[visType]
+
+    if (!displayName) {
+        throw new Error(`${visType} is not a valid visualization type`)
+    }
+
+    return displayName
+}
+
 const stackedTypes = [
     VIS_TYPE_STACKED_COLUMN,
     VIS_TYPE_STACKED_BAR,
