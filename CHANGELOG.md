@@ -1,3 +1,10 @@
+## [2.6.3](https://github.com/dhis2/analytics/compare/v2.6.2...v2.6.3) (2019-11-18)
+
+
+### Bug Fixes
+
+* use max items rule ([#149](https://github.com/dhis2/analytics/issues/149)) ([fac8585](https://github.com/dhis2/analytics/commit/fac85855218053962c71264cddc343c84a3690dc))
+
 ## [2.6.2](https://github.com/dhis2/analytics/compare/v2.6.1...v2.6.2) (2019-11-15)
 
 
