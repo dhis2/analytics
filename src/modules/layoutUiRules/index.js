@@ -25,7 +25,7 @@ export const getMaxNumberOfItemsPerAxis = (visType, axisName) => {
 }
 
 // returns: boolean
-export const hasTooManyItemPerAxis = (visType, axisName, numberOfItems) => {
+export const hasTooManyItemsPerAxis = (visType, axisName, numberOfItems) => {
     const maxNumberOfItemsPerAxis = getMaxNumberOfItemsPerAxis(
         visType,
         axisName
