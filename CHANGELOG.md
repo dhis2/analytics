@@ -1,3 +1,10 @@
+## [2.6.4](https://github.com/dhis2/analytics/compare/v2.6.3...v2.6.4) (2019-11-19)
+
+
+### Bug Fixes
+
+* fix function name typo ([#150](https://github.com/dhis2/analytics/issues/150)) ([53c7967](https://github.com/dhis2/analytics/commit/53c796736c0840e544c722f516b981371dac80bb))
+
 ## [2.6.3](https://github.com/dhis2/analytics/compare/v2.6.2...v2.6.3) (2019-11-18)
 
 
