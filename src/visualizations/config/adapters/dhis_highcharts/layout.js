@@ -19,17 +19,3 @@ function hasMultipleSeriesItems(columns) {
         columns[0].items.length > 1
     )
 }
-
-// export function shouldHaveDualAxis(layout) {
-//     return (
-//         isDualAxisType(layout.type) &&
-//         isDataSeries(layout.columns) &&
-//         hasMultipleSeriesItems(layout.columns) &&
-//         hasExtraAxisItems(layout.seriesItems, layout.columns)
-//     )
-// }
-
-// dimensionId,
-// currentAxisName,
-// visType,                         layout.type
-// numberOfDimensionItems,
