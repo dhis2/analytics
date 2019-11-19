@@ -151,7 +151,7 @@ export {
     getAvailableAxes,
     getDisallowedDims,
     getMaxNumberOfItemsPerAxis,
-    hasTooManyItemPerAxis,
+    hasTooManyItemsPerAxis,
 } from './modules/layoutUiRules'
 
 // Visualizations
