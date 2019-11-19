@@ -1,4 +1,6 @@
 import i18n from '@dhis2/d2-i18n'
+import { DIMENSION_ID_DATA } from './fixedDimensions'
+import { AXIS_NAME_COLUMNS } from './layout/axis'
 
 export const VIS_TYPE_COLUMN = 'COLUMN'
 export const VIS_TYPE_STACKED_COLUMN = 'STACKED_COLUMN'
@@ -62,3 +64,16 @@ export const isStacked = type => stackedTypes.includes(type)
 export const isYearOverYear = type => yearOverYearTypes.includes(type)
 export const isDualAxisType = type => dualAxisTypes.includes(type)
 export const isSingleValue = type => type === VIS_TYPE_SINGLE_VALUE
+
+export const shouldHaveDualAxis = ({
+    dimensionId,
+    currentAxisName,
+    visType,
+    numberOfDimensionItems,
+}) =>
+    Boolean(
+        dimensionId === DIMENSION_ID_DATA &&
+            currentAxisName === AXIS_NAME_COLUMNS &&
+            isDualAxisType(visType) &&
+            numberOfDimensionItems > 1
+    )
