@@ -4,6 +4,7 @@ import Menu from '@material-ui/core/Menu'
 import MenuItem from '@material-ui/core/MenuItem'
 import Zoom from '@material-ui/core/Zoom'
 import i18n from '@dhis2/d2-i18n'
+import PropTypes from 'prop-types'
 
 import { getAvailableAxes } from '../modules/layoutUiRules'
 import { AXIS_NAME_COLUMNS } from '../modules/layout/axis'
@@ -147,6 +148,18 @@ export const DimensionMenu = ({
             {menuItems}
         </Menu>
     )
+}
+
+DimensionMenu.propTypes = {
+    dimensionId: PropTypes.string,
+    currentAxisName: PropTypes.string,
+    visType: PropTypes.string,
+    numberOfDimensionItems: PropTypes.number.isRequired,
+    dualAxisItemHandler: PropTypes.func.isRequired,
+    axisItemHandler: PropTypes.func.isRequired,
+    removeItemHandler: PropTypes.func.isRequired,
+    anchorEl: PropTypes.object,
+    onClose: PropTypes.func.isRequired,
 }
 
 export default DimensionMenu

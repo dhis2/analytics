@@ -13,7 +13,6 @@ export const VIS_TYPE_BUBBLE = 'BUBBLE'
 export const VIS_TYPE_YEAR_OVER_YEAR_LINE = 'YEAR_OVER_YEAR_LINE'
 export const VIS_TYPE_YEAR_OVER_YEAR_COLUMN = 'YEAR_OVER_YEAR_COLUMN'
 export const VIS_TYPE_SINGLE_VALUE = 'SINGLE_VALUE'
-export const VIS_TYPE_MAP = 'MAP'
 export const VIS_TYPE_PIVOT_TABLE = 'PIVOT_TABLE'
 
 export const visTypeDisplayNames = {
@@ -30,7 +29,16 @@ export const visTypeDisplayNames = {
     [VIS_TYPE_YEAR_OVER_YEAR_COLUMN]: i18n.t('Year over year (column)'),
     [VIS_TYPE_SINGLE_VALUE]: i18n.t('Single value'),
     [VIS_TYPE_PIVOT_TABLE]: i18n.t('Pivot table'),
-    [VIS_TYPE_MAP]: i18n.t('Open as Map'), // TODO Open as: Map when i18next nsSeparator fixed
+}
+
+export const getDisplayNameByVisType = visType => {
+    const displayName = visTypeDisplayNames[visType]
+
+    if (!displayName) {
+        throw new Error(`${visType} is not a valid visualization type`)
+    }
+
+    return displayName
 }
 
 const stackedTypes = [
@@ -44,8 +52,6 @@ const yearOverYearTypes = [
     VIS_TYPE_YEAR_OVER_YEAR_COLUMN,
 ]
 
-const openAsTypes = [VIS_TYPE_MAP]
-
 const dualAxisTypes = [
     VIS_TYPE_COLUMN,
     VIS_TYPE_BAR,
@@ -56,6 +62,5 @@ const dualAxisTypes = [
 export const defaultVisType = VIS_TYPE_COLUMN
 export const isStacked = type => stackedTypes.includes(type)
 export const isYearOverYear = type => yearOverYearTypes.includes(type)
-export const isOpenAsType = type => openAsTypes.includes(type)
 export const isDualAxisType = type => dualAxisTypes.includes(type)
 export const isSingleValue = type => type === VIS_TYPE_SINGLE_VALUE

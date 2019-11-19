@@ -127,12 +127,11 @@ export {
     VIS_TYPE_YEAR_OVER_YEAR_LINE,
     VIS_TYPE_YEAR_OVER_YEAR_COLUMN,
     VIS_TYPE_SINGLE_VALUE,
-    VIS_TYPE_MAP,
     visTypeDisplayNames,
+    getDisplayNameByVisType,
     defaultChartType,
     isStacked,
     isYearOverYear,
-    isOpenAsType,
     isDualAxisType,
     isSingleValue,
 } from './modules/visTypes'
@@ -148,7 +147,12 @@ export {
 
 // Modules: layoutUiRules
 
-export { getAvailableAxes } from './modules/layoutUiRules'
+export {
+    getAvailableAxes,
+    getDisallowedDims,
+    getMaxNumberOfItemsPerAxis,
+    hasTooManyItemsPerAxis,
+} from './modules/layoutUiRules'
 
 // Visualizations
 

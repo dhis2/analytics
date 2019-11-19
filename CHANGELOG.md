@@ -1,3 +1,38 @@
+## [2.6.4](https://github.com/dhis2/analytics/compare/v2.6.3...v2.6.4) (2019-11-19)
+
+
+### Bug Fixes
+
+* fix function name typo ([#150](https://github.com/dhis2/analytics/issues/150)) ([53c7967](https://github.com/dhis2/analytics/commit/53c796736c0840e544c722f516b981371dac80bb))
+
+## [2.6.3](https://github.com/dhis2/analytics/compare/v2.6.2...v2.6.3) (2019-11-18)
+
+
+### Bug Fixes
+
+* use max items rule ([#149](https://github.com/dhis2/analytics/issues/149)) ([fac8585](https://github.com/dhis2/analytics/commit/fac85855218053962c71264cddc343c84a3690dc))
+
+## [2.6.2](https://github.com/dhis2/analytics/compare/v2.6.1...v2.6.2) (2019-11-15)
+
+
+### Bug Fixes
+
+* changed incorrect prop types and import ([#147](https://github.com/dhis2/analytics/issues/147)) ([c1ec7dc](https://github.com/dhis2/analytics/commit/c1ec7dcb2fa98c148df9fedbb0c4334f5b6b3c33))
+
+## [2.6.1](https://github.com/dhis2/analytics/compare/v2.6.0...v2.6.1) (2019-11-15)
+
+
+### Bug Fixes
+
+* map is not a vis type ([#146](https://github.com/dhis2/analytics/issues/146)) ([23f6a72](https://github.com/dhis2/analytics/commit/23f6a72387930532975d102360abffc62973a1c3))
+
+# [2.6.0](https://github.com/dhis2/analytics/compare/v2.5.2...v2.6.0) (2019-11-14)
+
+
+### Features
+
+* disallowed dims rule ([#144](https://github.com/dhis2/analytics/issues/144)) ([0789d7a](https://github.com/dhis2/analytics/commit/0789d7a06046a6694c4498b9726d22d792dc90c8))
+
 ## [2.5.2](https://github.com/dhis2/analytics/compare/v2.5.1...v2.5.2) (2019-11-12)
 
 
