@@ -7,20 +7,20 @@ import i18n from '@dhis2/d2-i18n'
 import PropTypes from 'prop-types'
 
 import { getAvailableAxes } from '../modules/layoutUiRules'
-import { AXIS_NAME_COLUMNS } from '../modules/layout/axis'
+import { AXIS_ID_COLUMNS } from '../modules/layout/axis'
 import { DIMENSION_ID_DATA } from '../modules/fixedDimensions'
 import { isDualAxisType } from '../modules/visTypes'
 import { axisDisplayNames } from '../modules/axis'
 
 export const shouldHaveDualAxisOption = ({
     dimensionId,
-    currentAxisName,
+    currentAxisId,
     visType,
     numberOfDimensionItems,
 }) =>
     Boolean(
         dimensionId === DIMENSION_ID_DATA &&
-            currentAxisName === AXIS_NAME_COLUMNS &&
+            currentAxisId === AXIS_ID_COLUMNS &&
             isDualAxisType(visType) &&
             numberOfDimensionItems > 1
     )
@@ -34,16 +34,11 @@ const getDualAxisItem = (dimensionId, onClick) => (
 const getAxisItemLabelPrefix = isDimensionInLayout =>
     isDimensionInLayout ? 'Move to' : 'Add to'
 
-const getAxisItem = ({
-    dimensionId,
-    axisName,
-    isDimensionInLayout,
-    onClick,
-}) => (
-    <MenuItem key={`${dimensionId}-to-${axisName}`} onClick={onClick}>
+const getAxisItem = ({ dimensionId, axisId, isDimensionInLayout, onClick }) => (
+    <MenuItem key={`${dimensionId}-to-${axisId}`} onClick={onClick}>
         {i18n.t(
             `${getAxisItemLabelPrefix(isDimensionInLayout)} ${
-                axisDisplayNames[axisName]
+                axisDisplayNames[axisId]
             }`
         )}
     </MenuItem>
@@ -59,7 +54,7 @@ const getDividerItem = key => <Divider light key={key} />
 
 export const DimensionMenu = ({
     dimensionId,
-    currentAxisName,
+    currentAxisId,
     visType,
     numberOfDimensionItems,
     dualAxisItemHandler,
@@ -70,21 +65,21 @@ export const DimensionMenu = ({
 }) => {
     const menuItems = []
 
-    const isDimensionInLayout = !!currentAxisName
+    const isDimensionInLayout = !!currentAxisId
 
     // dual axis item
     const hasDualAxis = shouldHaveDualAxisOption({
         dimensionId,
-        currentAxisName,
+        currentAxisId,
         visType,
         numberOfDimensionItems,
     })
 
     // add/move to axis item
-    const availableAxisNames = getAvailableAxes(visType)
+    const availableAxisIds = getAvailableAxes(visType)
 
-    const applicableAxisNames = availableAxisNames.filter(
-        axisName => axisName !== currentAxisName
+    const applicableAxisIds = availableAxisIds.filter(
+        axisId => axisId !== currentAxisId
     )
 
     // create menu items
@@ -97,23 +92,19 @@ export const DimensionMenu = ({
         )
 
         // divider
-        if (applicableAxisNames.length) {
+        if (applicableAxisIds.length) {
             menuItems.push(getDividerItem('dual-axis-item-divider'))
         }
     }
 
     menuItems.push(
-        ...applicableAxisNames.map(axisName =>
+        ...applicableAxisIds.map(axisId =>
             getAxisItem({
                 dimensionId,
-                axisName,
+                axisId,
                 isDimensionInLayout,
                 onClick: () => {
-                    axisItemHandler(
-                        dimensionId,
-                        axisName,
-                        numberOfDimensionItems
-                    )
+                    axisItemHandler(dimensionId, axisId, numberOfDimensionItems)
                     onClose()
                 },
             })
@@ -123,7 +114,7 @@ export const DimensionMenu = ({
     // remove item
     if (isDimensionInLayout) {
         // divider
-        if (applicableAxisNames.length) {
+        if (applicableAxisIds.length) {
             menuItems.push(getDividerItem('remove-item-divider'))
         }
 
@@ -152,7 +143,7 @@ export const DimensionMenu = ({
 
 DimensionMenu.propTypes = {
     dimensionId: PropTypes.string,
-    currentAxisName: PropTypes.string,
+    currentAxisId: PropTypes.string,
     visType: PropTypes.string,
     numberOfDimensionItems: PropTypes.number.isRequired,
     dualAxisItemHandler: PropTypes.func.isRequired,

@@ -1,8 +1,4 @@
-import {
-    AXIS_NAME_COLUMNS,
-    AXIS_NAME_ROWS,
-    AXIS_NAME_FILTERS,
-} from '../layout/axis'
+import { AXIS_ID_COLUMNS, AXIS_ID_ROWS, AXIS_ID_FILTERS } from '../layout/axis'
 import { DIMENSION_ID_PERIOD, DIMENSION_ID_DATA } from '../fixedDimensions'
 import {
     VIS_TYPE_COLUMN,
@@ -26,48 +22,48 @@ const RULE_PROP_AVAILABLE_AXES = {
 
 const defaultRules = {
     [RULE_PROP_AVAILABLE_AXES.name]: [
-        AXIS_NAME_COLUMNS,
-        AXIS_NAME_ROWS,
-        AXIS_NAME_FILTERS,
+        AXIS_ID_COLUMNS,
+        AXIS_ID_ROWS,
+        AXIS_ID_FILTERS,
     ],
     maxNumberOfDimsPerAxis: {
-        [AXIS_NAME_COLUMNS]: 1,
-        [AXIS_NAME_ROWS]: 1,
+        [AXIS_ID_COLUMNS]: 1,
+        [AXIS_ID_ROWS]: 1,
     },
     minNumberOfDimsPerAxis: {
-        [AXIS_NAME_COLUMNS]: 1,
-        [AXIS_NAME_ROWS]: 1,
+        [AXIS_ID_COLUMNS]: 1,
+        [AXIS_ID_ROWS]: 1,
     },
 }
 
 const pieRules = {
-    [RULE_PROP_AVAILABLE_AXES.name]: [AXIS_NAME_COLUMNS, AXIS_NAME_FILTERS],
+    [RULE_PROP_AVAILABLE_AXES.name]: [AXIS_ID_COLUMNS, AXIS_ID_FILTERS],
     maxNumberOfDimsPerAxis: {
-        [AXIS_NAME_COLUMNS]: 1,
+        [AXIS_ID_COLUMNS]: 1,
     },
     minNumberOfDimsPerAxis: {
-        [AXIS_NAME_COLUMNS]: 1,
+        [AXIS_ID_COLUMNS]: 1,
     },
 }
 
 const singleValueRules = {
-    [RULE_PROP_AVAILABLE_AXES.name]: [AXIS_NAME_FILTERS],
+    [RULE_PROP_AVAILABLE_AXES.name]: [AXIS_ID_FILTERS],
     maxNumberOfDimsPerAxis: {
-        [AXIS_NAME_COLUMNS]: 1,
+        [AXIS_ID_COLUMNS]: 1,
     },
     minNumberOfDimsPerAxis: {
-        [AXIS_NAME_COLUMNS]: 1,
+        [AXIS_ID_COLUMNS]: 1,
     },
     maxNumberOfItemsPerAxis: {
-        [AXIS_NAME_COLUMNS]: 1,
+        [AXIS_ID_COLUMNS]: 1,
     },
     lockedDims: {
-        [DIMENSION_ID_DATA]: [AXIS_NAME_COLUMNS],
+        [DIMENSION_ID_DATA]: [AXIS_ID_COLUMNS],
     },
 }
 
 const yearOverYearRules = {
-    [RULE_PROP_AVAILABLE_AXES.name]: [AXIS_NAME_FILTERS],
+    [RULE_PROP_AVAILABLE_AXES.name]: [AXIS_ID_FILTERS],
     disallowedDims: [DIMENSION_ID_PERIOD],
 }
 

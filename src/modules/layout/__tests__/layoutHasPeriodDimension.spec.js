@@ -1,5 +1,5 @@
 import { TEST_LAYOUT } from '../testResources'
-import { AXIS, AXIS_NAME_ROWS } from '../axis'
+import { AXIS, AXIS_ID_ROWS } from '../axis'
 import { layoutHasPeriodDimension } from '../layoutHasPeriodDimension'
 
 describe('layoutHasPeriodDimension', () => {
@@ -8,7 +8,7 @@ describe('layoutHasPeriodDimension', () => {
 
         const layoutWithoutPeriod = {
             ...TEST_LAYOUT,
-            [AXIS_NAME_ROWS]: AXIS.defaultValue,
+            [AXIS_ID_ROWS]: AXIS.defaultValue,
         }
 
         expect(layoutHasPeriodDimension(layoutWithoutPeriod)).toBe(false)
