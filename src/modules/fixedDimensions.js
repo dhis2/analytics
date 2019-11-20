@@ -28,7 +28,7 @@ export const FIXED_DIMENSIONS = {
     },
 }
 
-export const filterFixedDimensions = dimensionIds =>
+export const filterOutFixedDimensions = dimensionIds =>
     dimensionIds.filter(
         dimensionId => !Object.keys(FIXED_DIMENSIONS).includes(dimensionId)
     )
