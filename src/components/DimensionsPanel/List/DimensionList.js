@@ -29,7 +29,7 @@ export class DimensionList extends Component {
             id={dimension.id}
             key={dimension.id}
             name={dimension.name}
-            isLocked={this.isLocked(dimension.id)}
+            isLocked={this.isLocked(dimension)}
             isSelected={this.props.selectedIds.includes(dimension.id)}
             isRecommended={this.isRecommended(dimension)}
             isDeactivated={this.isDisabled(dimension)}
