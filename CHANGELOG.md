@@ -1,3 +1,10 @@
+## [2.6.7](https://github.com/dhis2/analytics/compare/v2.6.6...v2.6.7) (2019-11-20)
+
+
+### Bug Fixes
+
+* rename axis name to axis id ([#153](https://github.com/dhis2/analytics/issues/153)) ([11d4786](https://github.com/dhis2/analytics/commit/11d47862dc9fc20f6ea33ed0ffba18d3c0261e1d))
+
 ## [2.6.6](https://github.com/dhis2/analytics/compare/v2.6.5...v2.6.6) (2019-11-20)
 
 
