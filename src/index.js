@@ -154,6 +154,7 @@ export {
     getMaxNumberOfItemsPerAxis,
     hasTooManyItemsPerAxis,
     getLockedDimensionAxis,
+    getLockedDims,
 } from './modules/layoutUiRules'
 
 // Visualizations

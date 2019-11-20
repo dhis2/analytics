@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'
+import LockIcon from '@material-ui/icons/Lock'
 
 import DimensionLabel from './DimensionLabel'
 import RecommendedIcon from './RecommendedIcon'
@@ -34,7 +35,7 @@ export class DimensionItem extends Component {
     }
 
     getDimensionType = () => {
-        const { id, name, isDeactivated, onDragStart } = this.props
+        const { id, name, isDeactivated, onDragStart, isLocked } = this.props
 
         return (
             <span
@@ -43,7 +44,7 @@ export class DimensionItem extends Component {
                     ...styles.text,
                     ...(isDeactivated ? styles.textDeactivated : {}),
                 }}
-                draggable={!isDeactivated}
+                draggable={!isDeactivated && !isLocked}
                 onDragStart={onDragStart}
             >
                 {/* is it needed here or displayName should be used instead?! */}
@@ -59,6 +60,7 @@ export class DimensionItem extends Component {
             isSelected,
             isRecommended,
             onOptionsClick,
+            isLocked,
         } = this.props
         const Icon = this.getDimensionIcon()
         const Label = this.getDimensionType()
@@ -81,10 +83,15 @@ export class DimensionItem extends Component {
                         isSelected={isSelected}
                         isRecommended={isRecommended}
                     />
+                    {isLocked && (
+                        <div style={styles.iconWrapper}>
+                            <LockIcon style={styles.lockIcon} />
+                        </div>
+                    )}
                 </DimensionLabel>
                 {onOptionsClick ? (
                     <div style={styles.optionsWrapper}>
-                        {this.state.mouseOver && !isDeactivated ? (
+                        {this.state.mouseOver && !isDeactivated && !isLocked ? (
                             <OptionsButton
                                 style={styles.optionsButton}
                                 onClick={this.onOptionsClick(id)}
@@ -106,12 +113,14 @@ DimensionItem.propTypes = {
     onOptionsClick: PropTypes.func,
     onClick: PropTypes.func,
     onDragStart: PropTypes.func,
+    isLocked: PropTypes.bool,
 }
 
 DimensionItem.defaultProps = {
     isDeactivated: false,
     isRecommended: false,
     isSelected: false,
+    isLocked: false,
 }
 
 export default DimensionItem

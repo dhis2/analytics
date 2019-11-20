@@ -22,6 +22,7 @@ export class DimensionsPanel extends Component {
             dimensions,
             selectedIds,
             disabledDimension,
+            lockedDimension,
             recommendedDimension,
             onDimensionClick,
             onDimensionOptionsClick,
@@ -42,6 +43,7 @@ export class DimensionsPanel extends Component {
                     selectedIds={selectedIds}
                     filterText={this.state.filterText}
                     disabledDimension={disabledDimension}
+                    lockedDimension={lockedDimension}
                     recommendedDimension={recommendedDimension}
                     onDimensionOptionsClick={onDimensionOptionsClick}
                     onDimensionClick={onDimensionClick}
@@ -56,6 +58,7 @@ DimensionsPanel.propTypes = {
     dimensions: PropTypes.object.isRequired,
     selectedIds: PropTypes.array,
     disabledDimension: PropTypes.func,
+    lockedDimension: PropTypes.func,
     recommendedDimension: PropTypes.func,
     onDimensionClick: PropTypes.func,
     onDimensionOptionsClick: PropTypes.func,
