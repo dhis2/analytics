@@ -4,7 +4,7 @@ import {
     AXIS_NAME_ROWS,
     AXIS_NAME_COLUMNS,
     AXIS_NAME_FILTERS,
-    AXIS_NAMES,
+    DEFAULT_AXIS_NAMES,
 } from './axis'
 import {
     DIMENSION_ID_DATA,
@@ -123,7 +123,7 @@ export const TEST_AXES_IN_LAYOUT = [
     TEST_AXIS_FILTERS,
 ]
 
-export const TEST_AXIS_NAMES_IN_LAYOUT = AXIS_NAMES
+export const TEST_AXIS_NAMES_IN_LAYOUT = DEFAULT_AXIS_NAMES
 
 // Layout
 

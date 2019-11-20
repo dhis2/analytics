@@ -79,7 +79,7 @@ export {
     AXIS_NAME_COLUMNS,
     AXIS_NAME_ROWS,
     AXIS_NAME_FILTERS,
-    AXIS_NAMES,
+    DEFAULT_AXIS_NAMES,
 } from './modules/layout/axis'
 export { axisGetAllItems } from './modules/layout/axisGetAllItems'
 export { axisGetDimension } from './modules/layout/axisGetDimension'

@@ -1,9 +1,9 @@
-import { AXIS_NAMES } from './axis'
+import { DEFAULT_AXIS_NAMES } from './axis'
 import { axisHasDimension } from './axisHasDimension'
 import { dimensionIs } from './dimensionIs'
 
 export const layoutReplaceDimension = (layout, dimensionId, items) => {
-    const axisName = AXIS_NAMES.find(a =>
+    const axisName = DEFAULT_AXIS_NAMES.find(a =>
         axisHasDimension(layout[a], dimensionId)
     )
 
