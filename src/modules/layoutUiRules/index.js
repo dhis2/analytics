@@ -2,7 +2,7 @@ import {
     getAvailableAxesByRules,
     getDisallowedDimsByRules,
     getMaxNumberOfItemsPerAxisByRules,
-    getLockedDimsByRules,
+    getLockedDimAxisByRules,
 } from './rulesHelper'
 import { getRulesByVisType } from './rules'
 
