@@ -39,6 +39,7 @@ export {
     DIMENSION_ID_PERIOD,
     DIMENSION_ID_ORGUNIT,
     FIXED_DIMENSIONS,
+    filterOutFixedDimensions,
 } from './modules/fixedDimensions'
 
 // Modules: ouIdHelper

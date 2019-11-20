@@ -1,3 +1,10 @@
+## [2.6.5](https://github.com/dhis2/analytics/compare/v2.6.4...v2.6.5) (2019-11-20)
+
+
+### Bug Fixes
+
+* clean up layout fns ([#151](https://github.com/dhis2/analytics/issues/151)) ([72a24f7](https://github.com/dhis2/analytics/commit/72a24f78a8c464d5c2970bf18ecc4af309b8567d))
+
 ## [2.6.4](https://github.com/dhis2/analytics/compare/v2.6.3...v2.6.4) (2019-11-19)
 
 
