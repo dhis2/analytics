@@ -1,3 +1,10 @@
+## [2.6.6](https://github.com/dhis2/analytics/compare/v2.6.5...v2.6.6) (2019-11-20)
+
+
+### Bug Fixes
+
+* added a rule for locked dimensions ([#152](https://github.com/dhis2/analytics/issues/152)) ([5c2c405](https://github.com/dhis2/analytics/commit/5c2c4053c16c42518309ef552ff89e8be10c0a3b))
+
 ## [2.6.5](https://github.com/dhis2/analytics/compare/v2.6.4...v2.6.5) (2019-11-20)
 
 
