@@ -153,6 +153,7 @@ export {
     getDisallowedDims,
     getMaxNumberOfItemsPerAxis,
     hasTooManyItemsPerAxis,
+    getLockedDims,
 } from './modules/layoutUiRules'
 
 // Visualizations
