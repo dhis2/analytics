@@ -1,3 +1,10 @@
+## [2.6.8](https://github.com/dhis2/analytics/compare/v2.6.7...v2.6.8) (2019-11-20)
+
+
+### Bug Fixes
+
+* use get axis name fn ([#154](https://github.com/dhis2/analytics/issues/154)) ([e56d1c7](https://github.com/dhis2/analytics/commit/e56d1c73c76f4c983df75d63fa89ca172b3bf563))
+
 ## [2.6.7](https://github.com/dhis2/analytics/compare/v2.6.6...v2.6.7) (2019-11-20)
 
 
