@@ -39,5 +39,5 @@ export const hasTooManyItemsPerAxis = (visType, axisName, numberOfItems) => {
 
 // lockedDims
 // returns: array
-export const getLockedDims = visType =>
-    getLockedDimsByRules(getRulesByVisType(visType))
+export const getLockedDimensionAxis = (visType, dimensionId) =>
+    getLockedDimAxisByRules(getRulesByVisType(visType), dimensionId)

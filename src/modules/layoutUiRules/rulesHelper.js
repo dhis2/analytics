@@ -13,4 +13,5 @@ export const getMaxNumberOfItemsPerAxisByRules = (rules, axisName) =>
 
 // lockedDims
 
-export const getLockedDimsByRules = rules => rules.lockedDims || []
+export const getLockedDimAxisByRules = (rules, dimensionId) =>
+    (rules.lockedDims || {})[dimensionId] || null
