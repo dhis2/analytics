@@ -10,7 +10,7 @@ import { getAvailableAxes } from '../modules/layoutUiRules'
 import { AXIS_ID_COLUMNS } from '../modules/layout/axis'
 import { DIMENSION_ID_DATA } from '../modules/fixedDimensions'
 import { isDualAxisType } from '../modules/visTypes'
-import { axisNames } from '../modules/axis'
+import { getAxisName } from '../modules/axis'
 
 export const shouldHaveDualAxisOption = ({
     dimensionId,
@@ -37,9 +37,9 @@ const getAxisItemLabelPrefix = isDimensionInLayout =>
 const getAxisItem = ({ dimensionId, axisId, isDimensionInLayout, onClick }) => (
     <MenuItem key={`${dimensionId}-to-${axisId}`} onClick={onClick}>
         {i18n.t(
-            `${getAxisItemLabelPrefix(isDimensionInLayout)} ${
-                axisNames[axisId]
-            }`
+            `${getAxisItemLabelPrefix(isDimensionInLayout)} ${getAxisName(
+                axisId
+            )}`
         )}
     </MenuItem>
 )
