@@ -1,6 +1,6 @@
 import i18n from '@dhis2/d2-i18n'
 import { DIMENSION_ID_DATA } from './fixedDimensions'
-import { AXIS_NAME_COLUMNS } from './layout/axis'
+import { AXIS_ID_COLUMNS } from './layout/axis'
 
 export const VIS_TYPE_COLUMN = 'COLUMN'
 export const VIS_TYPE_STACKED_COLUMN = 'STACKED_COLUMN'
