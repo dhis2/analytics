@@ -16,11 +16,11 @@ export const axisNames = {
 }
 
 export const getAxisName = axisId => {
-    const displayName = axisNames[axisId]
+    const name = axisNames[axisId]
 
-    if (!displayName) {
+    if (!name) {
         throw new Error(`${axisId} is not a valid axis id`)
     }
 
-    return displayName
+    return name
 }
