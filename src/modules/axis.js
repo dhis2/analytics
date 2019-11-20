@@ -7,7 +7,7 @@ import {
     AXIS_ID_YEAR_OVER_YEAR_CATEGORY,
 } from './layout/axis'
 
-export const axisNames = {
+const axisNames = {
     [AXIS_ID_COLUMNS]: i18n.t('Series'),
     [AXIS_ID_ROWS]: i18n.t('Category'),
     [AXIS_ID_FILTERS]: i18n.t('Filter'),
