@@ -7,7 +7,7 @@ import {
     AXIS_ID_YEAR_OVER_YEAR_CATEGORY,
 } from './layout/axis'
 
-export const axisDisplayNames = {
+export const axisNames = {
     [AXIS_ID_COLUMNS]: i18n.t('Series'),
     [AXIS_ID_ROWS]: i18n.t('Category'),
     [AXIS_ID_FILTERS]: i18n.t('Filter'),
@@ -15,8 +15,8 @@ export const axisDisplayNames = {
     [AXIS_ID_YEAR_OVER_YEAR_CATEGORY]: i18n.t('Category'),
 }
 
-export const getAxisDisplayName = axisId => {
-    const displayName = axisDisplayNames[axisId]
+export const getAxisName = axisId => {
+    const displayName = axisNames[axisId]
 
     if (!displayName) {
         throw new Error(`${axisId} is not a valid axis id`)

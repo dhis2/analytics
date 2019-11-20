@@ -30,7 +30,7 @@ export { apiFetchDimensions } from './api/dimensions'
 
 // Modules: axis
 
-export { axisDisplayNames, getAxisDisplayName } from './modules/axis'
+export { axisNames, getAxisName } from './modules/axis'
 
 // Modules: fixedDimensions
 
