@@ -22,11 +22,14 @@ export class DimensionList extends Component {
     isRecommended = dimension =>
         this.props.recommendedDimension(dimension) || false
 
+    isLocked = dimension => this.props.lockedDimension(dimension) || false
+
     renderItem = dimension => (
         <DimensionItem
             id={dimension.id}
             key={dimension.id}
             name={dimension.name}
+            isLocked={this.isLocked(dimension)}
             isSelected={this.props.selectedIds.includes(dimension.id)}
             isRecommended={this.isRecommended(dimension)}
             isDeactivated={this.isDisabled(dimension)}
@@ -55,6 +58,7 @@ export class DimensionList extends Component {
 DimensionList.propTypes = {
     dimensions: PropTypes.object.isRequired,
     disabledDimension: PropTypes.func,
+    lockedDimension: PropTypes.func,
     recommendedDimension: PropTypes.func,
     selectedIds: PropTypes.array,
     filterText: PropTypes.string.isRequired,
@@ -66,6 +70,7 @@ DimensionList.propTypes = {
 DimensionList.defaultProps = {
     selectedIds: [],
     disabledDimension: Function.prototype,
+    lockedDimension: Function.prototype,
     recommendedDimension: Function.prototype,
 }
 

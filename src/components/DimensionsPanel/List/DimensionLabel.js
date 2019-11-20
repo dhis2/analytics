@@ -10,7 +10,6 @@ export class DimensionLabel extends Component {
         isDeactivated: PropTypes.bool.isRequired,
         isSelected: PropTypes.bool.isRequired,
         onClick: PropTypes.func.isRequired,
-        children: PropTypes.arrayOf(PropTypes.element).isRequired,
     }
 
     onLabelClick = () => {

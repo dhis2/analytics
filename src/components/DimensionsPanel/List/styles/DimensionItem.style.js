@@ -39,6 +39,9 @@ export const styles = {
         paddingRight: '8px',
         paddingLeft: '8px',
     },
+    lockIcon: {
+        fontSize: '14px',
+    },
     optionsWrapper: {
         position: 'relative',
         height: '24px',

@@ -3,7 +3,7 @@ import {
     AXIS_NAME_ROWS,
     AXIS_NAME_FILTERS,
 } from '../layout/axis'
-import { DIMENSION_ID_PERIOD } from '../fixedDimensions'
+import { DIMENSION_ID_PERIOD, DIMENSION_ID_DATA } from '../fixedDimensions'
 import {
     VIS_TYPE_COLUMN,
     VIS_TYPE_STACKED_COLUMN,
@@ -60,6 +60,9 @@ const singleValueRules = {
     },
     maxNumberOfItemsPerAxis: {
         [AXIS_NAME_COLUMNS]: 1,
+    },
+    lockedDims: {
+        [DIMENSION_ID_DATA]: [AXIS_NAME_COLUMNS],
     },
 }
 

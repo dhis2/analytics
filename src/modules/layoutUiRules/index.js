@@ -2,6 +2,8 @@ import {
     getAvailableAxesByRules,
     getDisallowedDimsByRules,
     getMaxNumberOfItemsPerAxisByRules,
+    getLockedDimAxisByRules,
+    getLockedDimsByRules,
 } from './rulesHelper'
 import { getRulesByVisType } from './rules'
 
@@ -35,3 +37,11 @@ export const hasTooManyItemsPerAxis = (visType, axisName, numberOfItems) => {
         ? numberOfItems > maxNumberOfItemsPerAxis
         : false
 }
+
+// lockedDims
+// returns: array
+export const getLockedDimensionAxis = (visType, dimensionId) =>
+    getLockedDimAxisByRules(getRulesByVisType(visType), dimensionId)
+
+export const getLockedDims = visType =>
+    Object.keys(getLockedDimsByRules(getRulesByVisType(visType)))
