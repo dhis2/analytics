@@ -28,7 +28,7 @@ export function getFullIdAxisMap(seriesItems, series) {
 
 // returns: true or false
 export function hasExtraAxis(seriesItems) {
-    return Boolean(Object.keys(getIdAxisMap(seriesItems)).length)
+    return Boolean(seriesItems.length)
 }
 
 // returns: true or false

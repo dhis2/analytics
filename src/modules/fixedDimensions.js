@@ -27,3 +27,8 @@ export const FIXED_DIMENSIONS = {
         icon: OrgUnitIcon,
     },
 }
+
+export const filterOutFixedDimensions = dimensionIds =>
+    dimensionIds.filter(
+        dimensionId => !Object.keys(FIXED_DIMENSIONS).includes(dimensionId)
+    )

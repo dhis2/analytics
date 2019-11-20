@@ -12,7 +12,7 @@ import { DIMENSION_ID_DATA } from '../modules/fixedDimensions'
 import { isDualAxisType } from '../modules/visTypes'
 import { axisLabels } from '../modules/axis'
 
-const shouldHaveDualAxis = ({
+export const shouldHaveDualAxisOption = ({
     dimensionId,
     currentAxisName,
     visType,
@@ -73,7 +73,7 @@ export const DimensionMenu = ({
     const isDimensionInLayout = !!currentAxisName
 
     // dual axis item
-    const hasDualAxis = shouldHaveDualAxis({
+    const hasDualAxis = shouldHaveDualAxisOption({
         dimensionId,
         currentAxisName,
         visType,
