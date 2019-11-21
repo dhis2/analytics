@@ -150,11 +150,11 @@ export {
 
 export {
     getAvailableAxes,
-    getDisallowedDims,
+    getDisallowedDimensions,
     getMaxNumberOfItemsPerAxis,
     hasTooManyItemsPerAxis,
     getLockedDimensionAxis,
-    getLockedDims,
+    getLockedDimensions,
 } from './modules/layoutUiRules'
 
 // Visualizations
