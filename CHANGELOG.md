@@ -1,3 +1,10 @@
+## [2.6.11](https://github.com/dhis2/analytics/compare/v2.6.10...v2.6.11) (2019-11-21)
+
+
+### Bug Fixes
+
+* ui glitch for data dim groups DHIS2-7907 ([#156](https://github.com/dhis2/analytics/issues/156)) ([c5a1b30](https://github.com/dhis2/analytics/commit/c5a1b30355bbc08961b2cbe05a2912d0245988f2))
+
 ## [2.6.10](https://github.com/dhis2/analytics/compare/v2.6.9...v2.6.10) (2019-11-21)
 
 
