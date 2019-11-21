@@ -1,5 +1,5 @@
 import { TEST_LAYOUT } from '../testResources'
-import { AXIS, AXIS_NAME_FILTERS } from '../axis'
+import { AXIS, AXIS_ID_FILTERS } from '../axis'
 import { layoutHasDimension } from '../layoutHasDimension'
 import { DIMENSION_ID_ORGUNIT } from '../../fixedDimensions'
 
@@ -9,7 +9,7 @@ describe('layoutHasDimension', () => {
 
         const layoutWithoutPeriod = {
             ...TEST_LAYOUT,
-            [AXIS_NAME_FILTERS]: AXIS.defaultValue,
+            [AXIS_ID_FILTERS]: AXIS.defaultValue,
         }
 
         expect(

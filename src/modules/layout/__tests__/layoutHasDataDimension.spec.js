@@ -1,5 +1,5 @@
 import { TEST_LAYOUT } from '../testResources'
-import { AXIS, AXIS_NAME_COLUMNS } from '../axis'
+import { AXIS, AXIS_ID_COLUMNS } from '../axis'
 import { layoutHasDataDimension } from '../layoutHasDataDimension'
 
 describe('layoutHasDataDimension', () => {
@@ -8,7 +8,7 @@ describe('layoutHasDataDimension', () => {
 
         const layoutWithoutData = {
             ...TEST_LAYOUT,
-            [AXIS_NAME_COLUMNS]: AXIS.defaultValue,
+            [AXIS_ID_COLUMNS]: AXIS.defaultValue,
         }
 
         expect(layoutHasDataDimension(layoutWithoutData)).toBe(false)

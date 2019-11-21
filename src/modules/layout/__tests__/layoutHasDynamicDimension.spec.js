@@ -1,4 +1,4 @@
-import { AXIS, AXIS_NAME_FILTERS } from '../axis'
+import { AXIS, AXIS_ID_FILTERS } from '../axis'
 import { layoutHasDynamicDimension } from '../layoutHasDynamicDimension'
 import { TEST_LAYOUT } from '../testResources'
 
@@ -8,7 +8,7 @@ describe('layoutHasDynamicDimension', () => {
 
         const layoutWithoutDynamicDimension = {
             ...TEST_LAYOUT,
-            [AXIS_NAME_FILTERS]: AXIS.defaultValue,
+            [AXIS_ID_FILTERS]: AXIS.defaultValue,
         }
 
         expect(layoutHasDynamicDimension(layoutWithoutDynamicDimension)).toBe(

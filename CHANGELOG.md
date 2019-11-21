@@ -1,3 +1,31 @@
+## [2.6.9](https://github.com/dhis2/analytics/compare/v2.6.8...v2.6.9) (2019-11-21)
+
+
+### Bug Fixes
+
+* rules dim handling ([#155](https://github.com/dhis2/analytics/issues/155)) ([b095805](https://github.com/dhis2/analytics/commit/b0958053c75f4bf1f909655946b97a5508d84141))
+
+## [2.6.8](https://github.com/dhis2/analytics/compare/v2.6.7...v2.6.8) (2019-11-20)
+
+
+### Bug Fixes
+
+* use get axis name fn ([#154](https://github.com/dhis2/analytics/issues/154)) ([e56d1c7](https://github.com/dhis2/analytics/commit/e56d1c73c76f4c983df75d63fa89ca172b3bf563))
+
+## [2.6.7](https://github.com/dhis2/analytics/compare/v2.6.6...v2.6.7) (2019-11-20)
+
+
+### Bug Fixes
+
+* rename axis name to axis id ([#153](https://github.com/dhis2/analytics/issues/153)) ([11d4786](https://github.com/dhis2/analytics/commit/11d47862dc9fc20f6ea33ed0ffba18d3c0261e1d))
+
+## [2.6.6](https://github.com/dhis2/analytics/compare/v2.6.5...v2.6.6) (2019-11-20)
+
+
+### Bug Fixes
+
+* added a rule for locked dimensions ([#152](https://github.com/dhis2/analytics/issues/152)) ([5c2c405](https://github.com/dhis2/analytics/commit/5c2c4053c16c42518309ef552ff89e8be10c0a3b))
+
 ## [2.6.5](https://github.com/dhis2/analytics/compare/v2.6.4...v2.6.5) (2019-11-20)
 
 

@@ -30,7 +30,7 @@ export { apiFetchDimensions } from './api/dimensions'
 
 // Modules: axis
 
-export { axisLabels } from './modules/axis'
+export { getAxisName } from './modules/axis'
 
 // Modules: fixedDimensions
 
@@ -55,8 +55,8 @@ export { layoutGetAllDimensions } from './modules/layout/layoutGetAllDimensions'
 export { layoutGetAllItemIds } from './modules/layout/layoutGetAllItemIds'
 export { layoutGetAllItems } from './modules/layout/layoutGetAllItems'
 export {
-    layoutGetAxisNameDimensionIdsObject,
-} from './modules/layout/layoutGetAxisNameDimensionIdsObject'
+    layoutGetAxisIdDimensionIdsObject,
+} from './modules/layout/layoutGetAxisIdDimensionIdsObject'
 export { layoutGetDimension } from './modules/layout/layoutGetDimension'
 export {
     layoutGetDimensionItems,
@@ -76,10 +76,10 @@ export {
 
 export {
     AXIS,
-    AXIS_NAME_COLUMNS,
-    AXIS_NAME_ROWS,
-    AXIS_NAME_FILTERS,
-    AXIS_NAMES,
+    AXIS_ID_COLUMNS,
+    AXIS_ID_ROWS,
+    AXIS_ID_FILTERS,
+    DEFAULT_AXIS_IDS,
 } from './modules/layout/axis'
 export { axisGetAllItems } from './modules/layout/axisGetAllItems'
 export { axisGetDimension } from './modules/layout/axisGetDimension'
@@ -151,9 +151,11 @@ export {
 
 export {
     getAvailableAxes,
-    getDisallowedDims,
+    getDisallowedDimensions,
     getMaxNumberOfItemsPerAxis,
     hasTooManyItemsPerAxis,
+    getLockedDimensionAxis,
+    getLockedDimensions,
 } from './modules/layoutUiRules'
 
 // Visualizations
