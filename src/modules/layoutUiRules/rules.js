@@ -13,6 +13,7 @@ import {
     VIS_TYPE_YEAR_OVER_YEAR_LINE,
     VIS_TYPE_YEAR_OVER_YEAR_COLUMN,
     VIS_TYPE_SINGLE_VALUE,
+    VIS_TYPE_PIVOT_TABLE,
 } from '../visTypes'
 
 const RULE_PROP_AVAILABLE_AXES = {
@@ -80,6 +81,7 @@ const visTypeToRules = {
     [VIS_TYPE_SINGLE_VALUE]: singleValueRules,
     [VIS_TYPE_YEAR_OVER_YEAR_LINE]: yearOverYearRules,
     [VIS_TYPE_YEAR_OVER_YEAR_COLUMN]: yearOverYearRules,
+    [VIS_TYPE_PIVOT_TABLE]: defaultRules,
 }
 
 export const getRulesByVisType = visType => visTypeToRules[visType] || {}

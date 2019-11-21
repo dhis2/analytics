@@ -11,6 +11,7 @@ import {
     VIS_TYPE_YEAR_OVER_YEAR_LINE,
     VIS_TYPE_YEAR_OVER_YEAR_COLUMN,
     VIS_TYPE_SINGLE_VALUE,
+    VIS_TYPE_PIVOT_TABLE,
 } from './visTypes'
 import {
     LAYOUT_TYPE_DEFAULT,
@@ -31,6 +32,7 @@ const visTypeToLayoutType = {
     [VIS_TYPE_YEAR_OVER_YEAR_LINE]: LAYOUT_TYPE_YEAR_OVER_YEAR,
     [VIS_TYPE_YEAR_OVER_YEAR_COLUMN]: LAYOUT_TYPE_YEAR_OVER_YEAR,
     [VIS_TYPE_SINGLE_VALUE]: LAYOUT_TYPE_PIE,
+    [VIS_TYPE_PIVOT_TABLE]: LAYOUT_TYPE_DEFAULT,
 }
 
 export const getLayoutTypeByVisType = visType => visTypeToLayoutType[visType]

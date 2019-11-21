@@ -15,6 +15,7 @@ export const VIS_TYPE_BUBBLE = 'BUBBLE'
 export const VIS_TYPE_YEAR_OVER_YEAR_LINE = 'YEAR_OVER_YEAR_LINE'
 export const VIS_TYPE_YEAR_OVER_YEAR_COLUMN = 'YEAR_OVER_YEAR_COLUMN'
 export const VIS_TYPE_SINGLE_VALUE = 'SINGLE_VALUE'
+export const VIS_TYPE_PIVOT_TABLE = 'PIVOT_TABLE'
 
 export const visTypeDisplayNames = {
     [VIS_TYPE_COLUMN]: i18n.t('Column'),
@@ -29,6 +30,7 @@ export const visTypeDisplayNames = {
     [VIS_TYPE_YEAR_OVER_YEAR_LINE]: i18n.t('Year over year (line)'),
     [VIS_TYPE_YEAR_OVER_YEAR_COLUMN]: i18n.t('Year over year (column)'),
     [VIS_TYPE_SINGLE_VALUE]: i18n.t('Single value'),
+    [VIS_TYPE_PIVOT_TABLE]: i18n.t('Pivot table'),
 }
 
 export const getDisplayNameByVisType = visType => {

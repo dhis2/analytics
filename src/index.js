@@ -128,6 +128,7 @@ export {
     VIS_TYPE_YEAR_OVER_YEAR_LINE,
     VIS_TYPE_YEAR_OVER_YEAR_COLUMN,
     VIS_TYPE_SINGLE_VALUE,
+    VIS_TYPE_PIVOT_TABLE,
     visTypeDisplayNames,
     getDisplayNameByVisType,
     defaultChartType,
