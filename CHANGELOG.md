@@ -1,3 +1,10 @@
+## [2.6.9](https://github.com/dhis2/analytics/compare/v2.6.8...v2.6.9) (2019-11-21)
+
+
+### Bug Fixes
+
+* rules dim handling ([#155](https://github.com/dhis2/analytics/issues/155)) ([b095805](https://github.com/dhis2/analytics/commit/b0958053c75f4bf1f909655946b97a5508d84141))
+
 ## [2.6.8](https://github.com/dhis2/analytics/compare/v2.6.7...v2.6.8) (2019-11-20)
 
 
