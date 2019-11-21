@@ -17,22 +17,23 @@ export class DimensionList extends Component {
             : null
     }
 
-    isDisabled = dimension => this.props.disabledDimension(dimension) || false
+    isDisabled = dimensionId =>
+        this.props.disabledDimension(dimensionId) || false
 
-    isRecommended = dimension =>
-        this.props.recommendedDimension(dimension) || false
+    isRecommended = dimensionId =>
+        this.props.recommendedDimension(dimensionId) || false
 
-    isLocked = dimension => this.props.lockedDimension(dimension) || false
+    isLocked = dimensionId => this.props.lockedDimension(dimensionId) || false
 
     renderItem = dimension => (
         <DimensionItem
             id={dimension.id}
             key={dimension.id}
             name={dimension.name}
-            isLocked={this.isLocked(dimension)}
+            isLocked={this.isLocked(dimension.id)}
             isSelected={this.props.selectedIds.includes(dimension.id)}
-            isRecommended={this.isRecommended(dimension)}
-            isDeactivated={this.isDisabled(dimension)}
+            isRecommended={this.isRecommended(dimension.id)}
+            isDeactivated={this.isDisabled(dimension.id)}
             onClick={this.props.onDimensionClick}
             onOptionsClick={this.props.onDimensionOptionsClick}
             onDragStart={this.props.onDimensionDragStart}
