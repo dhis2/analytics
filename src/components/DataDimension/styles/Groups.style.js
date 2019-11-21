@@ -4,7 +4,7 @@ export const styles = {
     container: {
         border: `1px solid ${colors.greyLight}`,
         display: 'flex',
-        flexFlow: 'column',
+        flexDirection: 'column',
         height: '53px',
         borderRight: '0px',
         borderLeft: '0px',
@@ -14,7 +14,7 @@ export const styles = {
     },
     groupContainer: {
         display: 'flex',
-        flexFlow: 'column',
+        flexDirection: 'column',
         width: 'inherit',
         minWidth: '316px',
     },
