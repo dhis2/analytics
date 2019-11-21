@@ -1,3 +1,10 @@
+## [2.6.10](https://github.com/dhis2/analytics/compare/v2.6.9...v2.6.10) (2019-11-21)
+
+
+### Bug Fixes
+
+* add support for PT vis type ([#143](https://github.com/dhis2/analytics/issues/143)) ([abc3ca2](https://github.com/dhis2/analytics/commit/abc3ca2bd1bd3003b1a0ca10b18abb05a9ed47b2))
+
 ## [2.6.9](https://github.com/dhis2/analytics/compare/v2.6.8...v2.6.9) (2019-11-21)
 
 
