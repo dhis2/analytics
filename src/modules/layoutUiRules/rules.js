@@ -59,7 +59,7 @@ const singleValueRules = {
         [AXIS_ID_COLUMNS]: 1,
     },
     lockedDims: {
-        [DIMENSION_ID_DATA]: [AXIS_ID_COLUMNS],
+        [DIMENSION_ID_DATA]: AXIS_ID_COLUMNS,
     },
 }
 
