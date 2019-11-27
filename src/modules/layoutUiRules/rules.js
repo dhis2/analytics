@@ -1,12 +1,27 @@
 import { AXIS_ID_COLUMNS, AXIS_ID_ROWS, AXIS_ID_FILTERS } from '../layout/axis'
 import { DIMENSION_ID_PERIOD, DIMENSION_ID_DATA } from '../fixedDimensions'
+import {
+    VIS_TYPE_COLUMN,
+    VIS_TYPE_STACKED_COLUMN,
+    VIS_TYPE_BAR,
+    VIS_TYPE_STACKED_BAR,
+    VIS_TYPE_LINE,
+    VIS_TYPE_AREA,
+    VIS_TYPE_RADAR,
+    VIS_TYPE_GAUGE,
+    VIS_TYPE_PIE,
+    VIS_TYPE_SINGLE_VALUE,
+    VIS_TYPE_YEAR_OVER_YEAR_LINE,
+    VIS_TYPE_YEAR_OVER_YEAR_COLUMN,
+    VIS_TYPE_PIVOT_TABLE,
+} from '../visTypes'
 
 const RULE_PROP_AVAILABLE_AXES = {
     name: 'availableAxes',
     isValid: prop => Array.isArray(prop),
 }
 
-export const defaultRules = {
+const defaultRules = {
     [RULE_PROP_AVAILABLE_AXES.name]: [
         AXIS_ID_COLUMNS,
         AXIS_ID_ROWS,
@@ -22,7 +37,7 @@ export const defaultRules = {
     },
 }
 
-export const pieRules = {
+const pieRules = {
     [RULE_PROP_AVAILABLE_AXES.name]: [AXIS_ID_COLUMNS, AXIS_ID_FILTERS],
     maxNumberOfDimsPerAxis: {
         [AXIS_ID_COLUMNS]: 1,
@@ -32,7 +47,7 @@ export const pieRules = {
     },
 }
 
-export const singleValueRules = {
+const singleValueRules = {
     [RULE_PROP_AVAILABLE_AXES.name]: [AXIS_ID_FILTERS],
     maxNumberOfDimsPerAxis: {
         [AXIS_ID_COLUMNS]: 1,
@@ -48,29 +63,59 @@ export const singleValueRules = {
     },
 }
 
-export const yearOverYearRules = {
+const yearOverYearRules = {
     [RULE_PROP_AVAILABLE_AXES.name]: [AXIS_ID_FILTERS],
     disallowedDims: [DIMENSION_ID_PERIOD],
 }
 
+const visTypeToRules = {
+    [VIS_TYPE_COLUMN]: defaultRules,
+    [VIS_TYPE_STACKED_COLUMN]: defaultRules,
+    [VIS_TYPE_BAR]: defaultRules,
+    [VIS_TYPE_STACKED_BAR]: defaultRules,
+    [VIS_TYPE_LINE]: defaultRules,
+    [VIS_TYPE_AREA]: defaultRules,
+    [VIS_TYPE_RADAR]: defaultRules,
+    [VIS_TYPE_GAUGE]: singleValueRules,
+    [VIS_TYPE_PIE]: pieRules,
+    [VIS_TYPE_SINGLE_VALUE]: singleValueRules,
+    [VIS_TYPE_YEAR_OVER_YEAR_LINE]: yearOverYearRules,
+    [VIS_TYPE_YEAR_OVER_YEAR_COLUMN]: yearOverYearRules,
+    [VIS_TYPE_PIVOT_TABLE]: defaultRules,
+}
+
+const getRulesByVisType = visType => {
+    const rules = visTypeToRules[visType]
+
+    if (!rules) {
+        throw new Error(`${visType} is not a known visualization type`)
+    }
+
+    return rules
+}
+
 // Selectors
 
-export const getAvailableAxesByRules = rules =>
-    rules[RULE_PROP_AVAILABLE_AXES.name] || []
+export const getAvailableAxesByVisType = visType =>
+    getRulesByVisType(visType)[RULE_PROP_AVAILABLE_AXES.name] || []
 
-export const getMaxNumberOfDimsPerAxisByRules = rules =>
-    rules.maxNumberOfDimsPerAxis || {}
+export const getMaxNumberOfDimsPerAxisByVisType = visType =>
+    getRulesByVisType(visType).maxNumberOfDimsPerAxis || {}
 
-export const getMinNumberOfDimsPerAxisByRules = rules =>
-    rules.minNumberOfDimsPerAxis || {}
+export const getMinNumberOfDimsPerAxisByVisType = visType =>
+    getRulesByVisType(visType).minNumberOfDimsPerAxis || {}
 
-export const getMaxNumberOfItemsPerAxisByRules = rules =>
-    rules.maxNumberOfItemsPerAxis || {}
+export const getMaxNumberOfItemsPerAxisByVisType = visType =>
+    getRulesByVisType(visType).maxNumberOfItemsPerAxis || {}
 
-export const getDisallowedDimsByRules = rules => rules.disallowedDims || []
+export const getDisallowedDimsByVisType = visType =>
+    getRulesByVisType(visType).disallowedDims || []
 
-export const getLockedDimsByRules = rules => rules.lockedDims || {}
+export const getLockedDimsByVisType = visType =>
+    getRulesByVisType(visType).lockedDims || {}
 
 // Test exports
 
 export const testResourceRequiredProps = [RULE_PROP_AVAILABLE_AXES]
+
+export const testResourceRules = Object.values(visTypeToRules)

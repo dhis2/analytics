@@ -3,14 +3,14 @@ export {
     getDisallowedDimensionsByVisType as getDisallowedDimensions,
 } from './rulesHelper'
 export {
-    getMaxNumberOfItemsPerAxisByVisType as getMaxNumberOfItemsPerAxis,
+    getAxisMaxNumberOfItemsByVisType as getAxisMaxNumberOfItems,
 } from './rulesHelper'
 export {
-    hasTooManyItemsPerAxisByVisType as hasTooManyItemsPerAxis,
+    hasAxisTooManyItemsByVisType as hasAxisTooManyItems,
 } from './rulesHelper'
 export {
-    getLockedDimensionAxisByVisType as getLockedDimensionAxis,
+    getAxisPerLockedDimensionByVisType as getAxisPerLockedDimension,
 } from './rulesHelper'
 export {
-    getLockedDimensionsByVisType as getLockedDimensions,
+    getAllLockedDimensionIdsByVisType as getAllLockedDimensionIds,
 } from './rulesHelper'
