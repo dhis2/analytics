@@ -25,8 +25,8 @@ export const hasAxisTooManyItemsByVisType = (
         : false
 }
 
-export const getAxisPerLockedDimensionByVisType = (visType, dimensionId) =>
+export const getAxisPerLockedDimByVisType = (visType, dimensionId) =>
     getLockedDimsByVisType(visType)[dimensionId]
 
-export const getAllLockedDimensionIdsByVisType = visType =>
+export const getAllLockedDimIdsByVisType = visType =>
     Object.keys(getLockedDimsByVisType(visType))
