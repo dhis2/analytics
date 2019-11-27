@@ -73,6 +73,4 @@ export const getLockedDimsByRules = rules => rules.lockedDims || {}
 
 // Test exports
 
-export const testResourceRules = Object.values(visTypeToRules)
-
 export const testResourceRequiredProps = [RULE_PROP_AVAILABLE_AXES]

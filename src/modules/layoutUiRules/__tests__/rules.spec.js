@@ -1,4 +1,5 @@
-import { testResourceRules, testResourceRequiredProps } from '../rules'
+import { testResourceRequiredProps } from '../rules'
+import { testResourceRules } from '../rulesHelper'
 
 describe('verify required rule props', () => {
     it('should return true', () => {

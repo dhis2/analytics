@@ -8,6 +8,21 @@ import {
     yearOverYearRules,
     singleValueRules,
 } from './rules'
+import {
+    VIS_TYPE_COLUMN,
+    VIS_TYPE_STACKED_COLUMN,
+    VIS_TYPE_BAR,
+    VIS_TYPE_STACKED_BAR,
+    VIS_TYPE_LINE,
+    VIS_TYPE_AREA,
+    VIS_TYPE_RADAR,
+    VIS_TYPE_GAUGE,
+    VIS_TYPE_PIE,
+    VIS_TYPE_SINGLE_VALUE,
+    VIS_TYPE_YEAR_OVER_YEAR_LINE,
+    VIS_TYPE_YEAR_OVER_YEAR_COLUMN,
+    VIS_TYPE_PIVOT_TABLE,
+} from '../visTypes'
 
 const visTypeToRules = {
     [VIS_TYPE_COLUMN]: defaultRules,
@@ -66,3 +81,7 @@ export const getLockedDimensionAxisByVisType = (visType, dimensionId) =>
 
 export const getLockedDimensionsByVisType = visType =>
     Object.keys(getLockedDimsByRules(getRulesByVisType(visType)))
+
+// Test resources
+
+export const testResourceRules = Object.values(visTypeToRules)
