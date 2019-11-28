@@ -1,3 +1,10 @@
+## [2.6.12](https://github.com/dhis2/analytics/compare/v2.6.11...v2.6.12) (2019-11-28)
+
+
+### Bug Fixes
+
+* rules structure ([#161](https://github.com/dhis2/analytics/issues/161)) ([907d8ee](https://github.com/dhis2/analytics/commit/907d8ee363d42db3a6c3b72dff5df03309314d6c))
+
 ## [2.6.11](https://github.com/dhis2/analytics/compare/v2.6.10...v2.6.11) (2019-11-21)
 
 
