@@ -1,16 +1,10 @@
-export { getAvailableAxesByVisType as getAvailableAxes } from './rulesHelper'
 export {
+    getAvailableAxesByVisType as getAvailableAxes,
     getDisallowedDimsByVisType as getDisallowedDimensions,
-} from './rulesHelper'
-export {
     getAxisMaxNumberOfItemsByVisType as getAxisMaxNumberOfItems,
-} from './rulesHelper'
-export {
+    getAxisMaxNumberOfDimsByVisType as getAxisMaxNumberOfDimensions,
+    getAxisMinNumberOfDimsByVisType as getAxisMinNumberOfDimensions,
     hasAxisTooManyItemsByVisType as hasAxisTooManyItems,
-} from './rulesHelper'
-export {
     getAxisPerLockedDimByVisType as getAxisPerLockedDimension,
-} from './rulesHelper'
-export {
     getAllLockedDimIdsByVisType as getAllLockedDimensionIds,
 } from './rulesHelper'

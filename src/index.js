@@ -153,6 +153,8 @@ export {
     getAvailableAxes,
     getDisallowedDimensions,
     getAxisMaxNumberOfItems,
+    getAxisMaxNumberOfDimensions,
+    getAxisMinNumberOfDimensions,
     hasAxisTooManyItems,
     getAxisPerLockedDimension,
     getAllLockedDimensionIds,
