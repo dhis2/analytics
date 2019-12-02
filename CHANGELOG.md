@@ -1,3 +1,10 @@
+## [2.6.13](https://github.com/dhis2/analytics/compare/v2.6.12...v2.6.13) (2019-12-02)
+
+
+### Bug Fixes
+
+* missing imports ([#170](https://github.com/dhis2/analytics/issues/170)) ([6d41da7](https://github.com/dhis2/analytics/commit/6d41da76c30616d8231a1d14102e57cc994c06f7))
+
 ## [2.6.12](https://github.com/dhis2/analytics/compare/v2.6.11...v2.6.12) (2019-11-28)
 
 
