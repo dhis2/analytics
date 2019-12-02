@@ -37,6 +37,14 @@ const defaultRules = {
     },
 }
 
+const pivotRules = {
+    [RULE_PROP_AVAILABLE_AXES.name]: [
+        AXIS_ID_COLUMNS,
+        AXIS_ID_ROWS,
+        AXIS_ID_FILTERS,
+    ],
+}
+
 const pieRules = {
     [RULE_PROP_AVAILABLE_AXES.name]: [AXIS_ID_COLUMNS, AXIS_ID_FILTERS],
     maxNumberOfDimsPerAxis: {

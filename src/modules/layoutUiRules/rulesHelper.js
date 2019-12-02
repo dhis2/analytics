@@ -1,5 +1,7 @@
 import {
     getMaxNumberOfItemsPerAxisByVisType,
+    getMaxNumberOfDimsPerAxisByVisType,
+    getMinNumberOfDimsPerAxisByVisType,
     getLockedDimsByVisType,
 } from './rules'
 
