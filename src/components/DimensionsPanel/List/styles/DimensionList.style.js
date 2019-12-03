@@ -14,5 +14,6 @@ export const styles = {
         height: '100%',
         overflow: 'auto',
         marginTop: '0px',
+        padding: 0,
     },
 }
