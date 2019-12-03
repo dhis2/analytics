@@ -16,7 +16,7 @@ import {
     VIS_TYPE_PIVOT_TABLE,
 } from '../visTypes'
 
-export const RULE_PROP_AVAILABLE_AXES = 'availableAxes',
+const RULE_PROP_AVAILABLE_AXES = 'availableAxes',
     RULE_PROP_MAX_DIMS_PER_AXIS = 'maxNumberOfDimsPerAxis',
     RULE_PROP_MIN_DIMS_PER_AXIS = 'minNumberOfDimsPerAxis',
     RULE_PROP_MAX_ITEMS_PER_AXIS = 'maxNumberOfItemsPerAxis',
@@ -121,3 +121,12 @@ export const getLockedDimsByVisType = visType =>
 export const testResourceRequiredProps = [RULE_PROP_AVAILABLE_AXES]
 
 export const testResourceRules = [...new Set(Object.values(visTypeToRules))]
+
+export const testResourceAllRuleProps = {
+    AVAILABLE_AXES: RULE_PROP_AVAILABLE_AXES,
+    MAX_DIMS_PER_AXIS: RULE_PROP_MAX_DIMS_PER_AXIS,
+    MIN_DIMS_PER_AXIS: RULE_PROP_MIN_DIMS_PER_AXIS,
+    MAX_ITEMS_PER_AXIS: RULE_PROP_MAX_ITEMS_PER_AXIS,
+    DISALLOWED_DIMS: RULE_PROP_DISALLOWED_DIMS,
+    LOCKED_DIMS: RULE_PROP_LOCKED_DIMS,
+}
