@@ -16,7 +16,7 @@ import {
     VIS_TYPE_PIVOT_TABLE,
 } from '../visTypes'
 
-const RULE_PROP_AVAILABLE_AXES = {
+export const RULE_PROP_AVAILABLE_AXES = {
     name: 'availableAxes',
     isValid: prop => Array.isArray(prop),
 }
