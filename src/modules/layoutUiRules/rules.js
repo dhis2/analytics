@@ -118,4 +118,4 @@ export const getLockedDimsByVisType = visType =>
 
 export const testResourceRequiredProps = [RULE_PROP_AVAILABLE_AXES]
 
-export const testResourceRules = Object.values(visTypeToRules)
+export const testResourceRules = [...new Set(Object.values(visTypeToRules))]
