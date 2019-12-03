@@ -2,6 +2,10 @@ import {
     testResourceRules,
     testResourceRequiredProps,
     RULE_PROP_AVAILABLE_AXES,
+    RULE_PROP_DISALLOWED_DIMS,
+    RULE_PROP_MAX_DIMS_PER_AXIS,
+    RULE_PROP_MAX_ITEMS_PER_AXIS,
+    RULE_PROP_LOCKED_DIMS,
 } from '../rules'
 import { ALL_AXIS_IDS } from '../../layout/axis'
 import { DIMENSION_ID_DATA, DIMENSION_ID_PERIOD } from '../../fixedDimensions'
@@ -36,14 +40,14 @@ describe('verify all rules', () => {
 })
 
 describe('verify maxNumberOfDimsPerAxis', () => {
+    const rule_prop = RULE_PROP_MAX_DIMS_PER_AXIS
+
     it('key should be valid axis id', () => {
         expect(
             testResourceRules.every(
                 rule =>
-                    !rule.maxNumberOfDimsPerAxis ||
-                    allArrayItemsAreValidAxisIds(
-                        Object.keys(rule.maxNumberOfDimsPerAxis)
-                    )
+                    !rule[rule_prop] ||
+                    allArrayItemsAreValidAxisIds(Object.keys(rule[rule_prop]))
             )
         ).toBe(true)
     })
@@ -52,8 +56,7 @@ describe('verify maxNumberOfDimsPerAxis', () => {
         expect(
             testResourceRules.every(
                 rule =>
-                    !rule.maxNumberOfDimsPerAxis ||
-                    noObjectValuesAreZero(rule.maxNumberOfDimsPerAxis)
+                    !rule[rule_prop] || noObjectValuesAreZero(rule[rule_prop])
             )
         ).toBe(true)
     })
@@ -62,22 +65,22 @@ describe('verify maxNumberOfDimsPerAxis', () => {
         expect(
             testResourceRules.every(
                 rule =>
-                    !rule.maxNumberOfDimsPerAxis ||
-                    noObjectValuesAreNegative(rule.maxNumberOfDimsPerAxis)
+                    !rule[rule_prop] ||
+                    noObjectValuesAreNegative(rule[rule_prop])
             )
         ).toBe(true)
     })
 })
 
 describe('verify maxNumberOfItemsPerAxis', () => {
+    const rule_prop = RULE_PROP_MAX_ITEMS_PER_AXIS
+
     it('key should be valid axis id', () => {
         expect(
             testResourceRules.every(
                 rule =>
-                    !rule.maxNumberOfItemsPerAxis ||
-                    allArrayItemsAreValidAxisIds(
-                        Object.keys(rule.maxNumberOfItemsPerAxis)
-                    )
+                    !rule[rule_prop] ||
+                    allArrayItemsAreValidAxisIds(Object.keys(rule[rule_prop]))
             )
         ).toBe(true)
     })
@@ -86,8 +89,7 @@ describe('verify maxNumberOfItemsPerAxis', () => {
         expect(
             testResourceRules.every(
                 rule =>
-                    !rule.maxNumberOfItemsPerAxis ||
-                    noObjectValuesAreZero(rule.maxNumberOfItemsPerAxis)
+                    !rule[rule_prop] || noObjectValuesAreZero(rule[rule_prop])
             )
         ).toBe(true)
     })
@@ -96,8 +98,8 @@ describe('verify maxNumberOfItemsPerAxis', () => {
         expect(
             testResourceRules.every(
                 rule =>
-                    !rule.maxNumberOfItemsPerAxis ||
-                    noObjectValuesAreNegative(rule.maxNumberOfItemsPerAxis)
+                    !rule[rule_prop] ||
+                    noObjectValuesAreNegative(rule[rule_prop])
             )
         ).toBe(true)
     })
@@ -105,13 +107,13 @@ describe('verify maxNumberOfItemsPerAxis', () => {
 
 //TODO: Implement tests for minNumberOfDimsPerAxis if this prop will not be removed in the future
 
-describe('verify RULE_PROP_AVAILABLE_AXES', () => {
+describe('verify availableAxes', () => {
+    const rule_prop = RULE_PROP_AVAILABLE_AXES
+
     it('is array', () => {
         expect(
             testResourceRules.every(
-                rule =>
-                    !rule[RULE_PROP_AVAILABLE_AXES] ||
-                    Array.isArray(rule[RULE_PROP_AVAILABLE_AXES])
+                rule => !rule[rule_prop] || Array.isArray(rule[rule_prop])
             )
         ).toBe(true)
     })
@@ -120,8 +122,8 @@ describe('verify RULE_PROP_AVAILABLE_AXES', () => {
         expect(
             testResourceRules.every(
                 rule =>
-                    !rule[RULE_PROP_AVAILABLE_AXES] ||
-                    allArrayItemsAreValidAxisIds(rule[RULE_PROP_AVAILABLE_AXES])
+                    !rule[rule_prop] ||
+                    allArrayItemsAreValidAxisIds(rule[rule_prop])
             )
         ).toBe(true)
     })
@@ -129,22 +131,22 @@ describe('verify RULE_PROP_AVAILABLE_AXES', () => {
     it('should not be empty', () => {
         expect(
             testResourceRules.every(
-                rule =>
-                    !rule[RULE_PROP_AVAILABLE_AXES] ||
-                    rule[RULE_PROP_AVAILABLE_AXES].length > 0
+                rule => !rule[rule_prop] || rule[rule_prop].length > 0
             )
         ).toBe(true)
     })
 })
 
 describe('verify lockedDims', () => {
+    const rule_prop = RULE_PROP_LOCKED_DIMS
+
     it('key should be valid lockable dimension', () => {
         expect(
             testResourceRules.every(
                 rule =>
-                    !rule.lockedDims ||
+                    !rule[rule_prop] ||
                     allArrayItemsAreValid(
-                        Object.keys(rule.lockedDims),
+                        Object.keys(rule[rule_prop]),
                         lockableDims
                     )
             )
@@ -155,19 +157,19 @@ describe('verify lockedDims', () => {
         expect(
             testResourceRules.every(
                 rule =>
-                    !rule.lockedDims ||
-                    allArrayItemsAreValidAxisIds(Object.values(rule.lockedDims))
+                    !rule[rule_prop] ||
+                    allArrayItemsAreValidAxisIds(Object.values(rule[rule_prop]))
             )
         ).toBe(true)
     })
 })
 
 describe('verify disallowedDims', () => {
+    const rule_prop = RULE_PROP_DISALLOWED_DIMS
     it('is array', () => {
         expect(
             testResourceRules.every(
-                rule =>
-                    !rule.disallowedDims || Array.isArray(rule.disallowedDims)
+                rule => !rule[rule_prop] || Array.isArray(rule[rule_prop])
             )
         ).toBe(true)
     })
@@ -176,8 +178,8 @@ describe('verify disallowedDims', () => {
         expect(
             testResourceRules.every(
                 rule =>
-                    !rule.disallowedDims ||
-                    allArrayItemsAreValid(rule.disallowedDims, disallowableDims)
+                    !rule[rule_prop] ||
+                    allArrayItemsAreValid(rule[rule_prop], disallowableDims)
             )
         ).toBe(true)
     })
