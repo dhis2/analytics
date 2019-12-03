@@ -9,18 +9,13 @@ import { DIMENSION_ID_DATA, DIMENSION_ID_PERIOD } from '../../fixedDimensions'
 import isObject from 'lodash/isObject'
 
 const lockableDims = [DIMENSION_ID_DATA, DIMENSION_ID_PERIOD]
+const disallowableDims = [DIMENSION_ID_DATA, DIMENSION_ID_PERIOD]
+
+const allArrayItemsAreValid = (allItems, validItems) =>
+    allItems.every(value => validItems.includes(value))
 
 const allArrayItemsAreValidAxisIds = array =>
-    array.every(value => ALL_AXIS_IDS.includes(value))
-
-const allObjectKeysAreValidAxisIds = object =>
-    allArrayItemsAreValidAxisIds(Object.keys(object))
-
-const allObjectValuesAreValidAxisIds = object =>
-    allArrayItemsAreValidAxisIds(Object.values(object))
-
-const allObjectKeysAreValidLockableDim = object =>
-    Object.keys(object).every(value => lockableDims.includes(value))
+    allArrayItemsAreValid(array, ALL_AXIS_IDS)
 
 const noObjectValuesAreZero = object =>
     Object.values(object).every(value => value !== 0)
@@ -46,7 +41,9 @@ describe('verify maxNumberOfDimsPerAxis', () => {
             testResourceRules.every(
                 rule =>
                     !rule.maxNumberOfDimsPerAxis ||
-                    allObjectKeysAreValidAxisIds(rule.maxNumberOfDimsPerAxis)
+                    allArrayItemsAreValidAxisIds(
+                        Object.keys(rule.maxNumberOfDimsPerAxis)
+                    )
             )
         ).toBe(true)
     })
@@ -78,7 +75,9 @@ describe('verify maxNumberOfItemsPerAxis', () => {
             testResourceRules.every(
                 rule =>
                     !rule.maxNumberOfItemsPerAxis ||
-                    allObjectKeysAreValidAxisIds(rule.maxNumberOfItemsPerAxis)
+                    allArrayItemsAreValidAxisIds(
+                        Object.keys(rule.maxNumberOfItemsPerAxis)
+                    )
             )
         ).toBe(true)
     })
@@ -107,13 +106,12 @@ describe('verify maxNumberOfItemsPerAxis', () => {
 //TODO: Implement tests for minNumberOfDimsPerAxis if this prop will not be removed in the future
 
 describe('verify RULE_PROP_AVAILABLE_AXES', () => {
-    const availableAxesProp = RULE_PROP_AVAILABLE_AXES.name
     it('is array', () => {
         expect(
             testResourceRules.every(
                 rule =>
-                    !rule[availableAxesProp] ||
-                    Array.isArray(rule[availableAxesProp])
+                    !rule[RULE_PROP_AVAILABLE_AXES] ||
+                    Array.isArray(rule[RULE_PROP_AVAILABLE_AXES])
             )
         ).toBe(true)
     })
@@ -122,8 +120,8 @@ describe('verify RULE_PROP_AVAILABLE_AXES', () => {
         expect(
             testResourceRules.every(
                 rule =>
-                    !rule[availableAxesProp] ||
-                    allArrayItemsAreValidAxisIds(rule[availableAxesProp])
+                    !rule[RULE_PROP_AVAILABLE_AXES] ||
+                    allArrayItemsAreValidAxisIds(rule[RULE_PROP_AVAILABLE_AXES])
             )
         ).toBe(true)
     })
@@ -132,8 +130,8 @@ describe('verify RULE_PROP_AVAILABLE_AXES', () => {
         expect(
             testResourceRules.every(
                 rule =>
-                    !rule[availableAxesProp] ||
-                    rule[availableAxesProp].length > 0
+                    !rule[RULE_PROP_AVAILABLE_AXES] ||
+                    rule[RULE_PROP_AVAILABLE_AXES].length > 0
             )
         ).toBe(true)
     })
@@ -145,7 +143,10 @@ describe('verify lockedDims', () => {
             testResourceRules.every(
                 rule =>
                     !rule.lockedDims ||
-                    allObjectKeysAreValidLockableDim(rule.lockedDims)
+                    allArrayItemsAreValid(
+                        Object.keys(rule.lockedDims),
+                        lockableDims
+                    )
             )
         ).toBe(true)
     })
@@ -155,7 +156,28 @@ describe('verify lockedDims', () => {
             testResourceRules.every(
                 rule =>
                     !rule.lockedDims ||
-                    allObjectValuesAreValidAxisIds(rule.lockedDims)
+                    allArrayItemsAreValidAxisIds(Object.values(rule.lockedDims))
+            )
+        ).toBe(true)
+    })
+})
+
+describe('verify disallowedDims', () => {
+    it('is array', () => {
+        expect(
+            testResourceRules.every(
+                rule =>
+                    !rule.disallowedDims || Array.isArray(rule.disallowedDims)
+            )
+        ).toBe(true)
+    })
+
+    it('items should be valid axis ids', () => {
+        expect(
+            testResourceRules.every(
+                rule =>
+                    !rule.disallowedDims ||
+                    allArrayItemsAreValid(rule.disallowedDims, disallowableDims)
             )
         ).toBe(true)
     })
