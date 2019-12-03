@@ -28,42 +28,15 @@ const noObjectValuesAreZero = object =>
 const noObjectValuesAreNegative = object =>
     Object.values(object).every(value => value >= 0)
 
-describe('verify required rule props', () => {
-    it('is valid', () => {
+describe('verify all rules', () => {
+    it('implement all required props', () => {
         expect(
             testResourceRules.every(rule =>
-                testResourceRequiredProps.every(prop =>
-                    prop.isValid(rule[prop.name])
+                testResourceRequiredProps.every(
+                    val => Object.keys(rule).indexOf(val) !== -1
                 )
             )
         ).toBe(true)
-    })
-
-    it('is not valid (using empty mock)', () => {
-        const mockRules = [{}]
-
-        expect(
-            mockRules.every(rule =>
-                testResourceRequiredProps.every(prop =>
-                    prop.isValid(rule[prop.name])
-                )
-            )
-        ).toBe(false)
-    })
-
-    it('is not valid (using invalid mock)', () => {
-        const mockRequiredProps = [
-            {
-                name: 'invalidRequiredProp',
-                isValid: prop => prop !== undefined,
-            },
-        ]
-
-        expect(
-            testResourceRules.every(rule =>
-                mockRequiredProps.every(prop => prop.isValid(rule[prop.name]))
-            )
-        ).toBe(false)
     })
 })
 

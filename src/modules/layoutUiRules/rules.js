@@ -16,13 +16,10 @@ import {
     VIS_TYPE_PIVOT_TABLE,
 } from '../visTypes'
 
-export const RULE_PROP_AVAILABLE_AXES = {
-    name: 'availableAxes',
-    isValid: prop => Array.isArray(prop),
-}
+export const RULE_PROP_AVAILABLE_AXES = 'availableAxes'
 
 const defaultRules = {
-    [RULE_PROP_AVAILABLE_AXES.name]: [
+    [RULE_PROP_AVAILABLE_AXES]: [
         AXIS_ID_COLUMNS,
         AXIS_ID_ROWS,
         AXIS_ID_FILTERS,
@@ -38,7 +35,7 @@ const defaultRules = {
 }
 
 const pieRules = {
-    [RULE_PROP_AVAILABLE_AXES.name]: [AXIS_ID_COLUMNS, AXIS_ID_FILTERS],
+    [RULE_PROP_AVAILABLE_AXES]: [AXIS_ID_COLUMNS, AXIS_ID_FILTERS],
     maxNumberOfDimsPerAxis: {
         [AXIS_ID_COLUMNS]: 1,
     },
@@ -48,7 +45,7 @@ const pieRules = {
 }
 
 const singleValueRules = {
-    [RULE_PROP_AVAILABLE_AXES.name]: [AXIS_ID_FILTERS],
+    [RULE_PROP_AVAILABLE_AXES]: [AXIS_ID_FILTERS],
     maxNumberOfDimsPerAxis: {
         [AXIS_ID_COLUMNS]: 1,
     },
@@ -64,7 +61,7 @@ const singleValueRules = {
 }
 
 const yearOverYearRules = {
-    [RULE_PROP_AVAILABLE_AXES.name]: [AXIS_ID_FILTERS],
+    [RULE_PROP_AVAILABLE_AXES]: [AXIS_ID_FILTERS],
     disallowedDims: [DIMENSION_ID_PERIOD],
 }
 
