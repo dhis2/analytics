@@ -1,3 +1,10 @@
+## [2.6.14](https://github.com/dhis2/analytics/compare/v2.6.13...v2.6.14) (2019-12-03)
+
+
+### Bug Fixes
+
+* fix Dimension Panel styles after ui-core update ([#171](https://github.com/dhis2/analytics/issues/171)) ([100d0d0](https://github.com/dhis2/analytics/commit/100d0d0cff456202a563c912075baac3633597dd))
+
 ## [2.6.13](https://github.com/dhis2/analytics/compare/v2.6.12...v2.6.13) (2019-12-02)
 
 

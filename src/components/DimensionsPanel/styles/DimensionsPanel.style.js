@@ -7,6 +7,7 @@ export const styles = {
         flexDirection: 'column',
         backgroundColor: colors.snow,
         padding: '8px',
+        overflow: 'hidden',
     },
     textField: {
         paddingBottom: '6px',
