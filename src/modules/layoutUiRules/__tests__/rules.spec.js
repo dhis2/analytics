@@ -102,6 +102,7 @@ describe('verify all rules', () => {
     })
 })
 
+// TODO: Merge MAX_DIMS_PER_AXIS and MAX_ITEMS_PER_AXIS plus add MIN_DIMS_PER_AXIS as well
 describe("verify each rule's maxNumberOfDimsPerAxis", () => {
     const ruleProp = testResourceAllRuleProps['MAX_DIMS_PER_AXIS']
 
