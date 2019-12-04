@@ -102,79 +102,81 @@ describe('verify all rules', () => {
     })
 })
 
-// TODO: Merge MAX_DIMS_PER_AXIS and MAX_ITEMS_PER_AXIS plus add MIN_DIMS_PER_AXIS as well
-describe("verify each rule's maxNumberOfDimsPerAxis", () => {
-    const ruleProp = testResourceAllRuleProps['MAX_DIMS_PER_AXIS']
+describe("verify each rule's ", () => {
+    const axisIdNumericProps = [
+        'MAX_DIMS_PER_AXIS',
+        'MIN_DIMS_PER_AXIS',
+        'MAX_ITEMS_PER_AXIS',
+    ]
+    axisIdNumericProps.forEach(prop => {
+        describe(prop, () => {
+            const ruleProp = testResourceAllRuleProps[prop]
 
-    testPropHasKeysAndValues(ruleProp)
-    testKeysAreValidAxisIds(ruleProp)
-    testNoValuesZero(ruleProp)
-    testNoValuesNegative(ruleProp)
-})
-
-describe("verify each rule's maxNumberOfItemsPerAxis", () => {
-    const ruleProp = testResourceAllRuleProps['MAX_ITEMS_PER_AXIS']
-
-    testPropHasKeysAndValues(ruleProp)
-    testKeysAreValidAxisIds(ruleProp)
-    testNoValuesZero(ruleProp)
-    testNoValuesNegative(ruleProp)
-})
-
-//TODO: Implement tests for minNumberOfDimsPerAxis if this prop will not be removed in the future
-
-describe("verify each rule's availableAxes", () => {
-    const ruleProp = testResourceAllRuleProps['AVAILABLE_AXES']
-
-    testPropIsArray(ruleProp)
-
-    it('array items should be valid axis ids', () => {
-        expect(
-            onlyRulesWithProp(ruleProp).every(rule =>
-                allArrayItemsAreValidAxisIds(rule[ruleProp])
-            )
-        ).toBe(true)
+            testPropHasKeysAndValues(ruleProp)
+            testKeysAreValidAxisIds(ruleProp)
+            testNoValuesZero(ruleProp)
+            testNoValuesNegative(ruleProp)
+        })
     })
 
-    it('array should not be empty', () => {
-        expect(
-            onlyRulesWithProp(ruleProp).every(rule => rule[ruleProp].length > 0)
-        ).toBe(true)
+    describe('AVAILABLE_AXES', () => {
+        const ruleProp = testResourceAllRuleProps['AVAILABLE_AXES']
+
+        testPropIsArray(ruleProp)
+
+        it('array items should be valid axis ids', () => {
+            expect(
+                onlyRulesWithProp(ruleProp).every(rule =>
+                    allArrayItemsAreValidAxisIds(rule[ruleProp])
+                )
+            ).toBe(true)
+        })
+
+        it('array should not be empty', () => {
+            expect(
+                onlyRulesWithProp(ruleProp).every(
+                    rule => rule[ruleProp].length > 0
+                )
+            ).toBe(true)
+        })
     })
-})
 
-describe("verify each rule's lockedDims", () => {
-    const ruleProp = testResourceAllRuleProps['LOCKED_DIMS']
+    describe('LOCKED_DIMS', () => {
+        const ruleProp = testResourceAllRuleProps['LOCKED_DIMS']
 
-    testPropHasKeysAndValues(ruleProp)
+        testPropHasKeysAndValues(ruleProp)
 
-    it('keys should be valid lockable dimensions', () => {
-        expect(
-            onlyRulesWithProp(ruleProp).every(rule =>
-                allArrayItemsAreValid(Object.keys(rule[ruleProp]), lockableDims)
-            )
-        ).toBe(true)
+        it('keys should be valid lockable dimensions', () => {
+            expect(
+                onlyRulesWithProp(ruleProp).every(rule =>
+                    allArrayItemsAreValid(
+                        Object.keys(rule[ruleProp]),
+                        lockableDims
+                    )
+                )
+            ).toBe(true)
+        })
+
+        it('values should be valid axis id', () => {
+            expect(
+                onlyRulesWithProp(ruleProp).every(rule =>
+                    allArrayItemsAreValidAxisIds(Object.values(rule[ruleProp]))
+                )
+            ).toBe(true)
+        })
     })
 
-    it('values should be valid axis id', () => {
-        expect(
-            onlyRulesWithProp(ruleProp).every(rule =>
-                allArrayItemsAreValidAxisIds(Object.values(rule[ruleProp]))
-            )
-        ).toBe(true)
-    })
-})
+    describe('DISALLOWED_DIMS', () => {
+        const ruleProp = testResourceAllRuleProps['DISALLOWED_DIMS']
 
-describe("verify each rule's disallowedDims", () => {
-    const ruleProp = testResourceAllRuleProps['DISALLOWED_DIMS']
+        testPropIsArray(ruleProp)
 
-    testPropIsArray(ruleProp)
-
-    it('array items should be valid disallowable dims', () => {
-        expect(
-            onlyRulesWithProp(ruleProp).every(rule =>
-                allArrayItemsAreValid(rule[ruleProp], disallowableDims)
-            )
-        ).toBe(true)
+        it('array items should be valid disallowable dims', () => {
+            expect(
+                onlyRulesWithProp(ruleProp).every(rule =>
+                    allArrayItemsAreValid(rule[ruleProp], disallowableDims)
+                )
+            ).toBe(true)
+        })
     })
 })
