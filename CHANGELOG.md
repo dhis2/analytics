@@ -1,3 +1,10 @@
+## [2.6.16](https://github.com/dhis2/analytics/compare/v2.6.15...v2.6.16) (2019-12-05)
+
+
+### Bug Fixes
+
+* rules allowed dimensions bug ([#173](https://github.com/dhis2/analytics/issues/173)) ([6240e9a](https://github.com/dhis2/analytics/commit/6240e9a6f8ff14b748e8c728845759b72edb3861))
+
 ## [2.6.15](https://github.com/dhis2/analytics/compare/v2.6.14...v2.6.15) (2019-12-05)
 
 
