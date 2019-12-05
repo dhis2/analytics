@@ -99,7 +99,7 @@ const getRulesByVisType = visType => {
 // Selectors
 
 export const getAvailableAxesByVisType = visType =>
-    getRulesByVisType(visType)[RULE_PROP_AVAILABLE_AXES.name] || []
+    getRulesByVisType(visType)[RULE_PROP_AVAILABLE_AXES] || []
 
 export const getMaxNumberOfDimsPerAxisByVisType = visType =>
     getRulesByVisType(visType)[RULE_PROP_MAX_DIMS_PER_AXIS] || {}
