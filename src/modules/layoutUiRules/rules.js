@@ -16,56 +16,58 @@ import {
     VIS_TYPE_PIVOT_TABLE,
 } from '../visTypes'
 
-const RULE_PROP_AVAILABLE_AXES = {
-    name: 'availableAxes',
-    isValid: prop => Array.isArray(prop),
-}
+const RULE_PROP_AVAILABLE_AXES = 'availableAxes',
+    RULE_PROP_MAX_DIMS_PER_AXIS = 'maxNumberOfDimsPerAxis',
+    RULE_PROP_MIN_DIMS_PER_AXIS = 'minNumberOfDimsPerAxis',
+    RULE_PROP_MAX_ITEMS_PER_AXIS = 'maxNumberOfItemsPerAxis',
+    RULE_PROP_DISALLOWED_DIMS = 'disallowedDims',
+    RULE_PROP_LOCKED_DIMS = 'lockedDims'
 
 const defaultRules = {
-    [RULE_PROP_AVAILABLE_AXES.name]: [
+    [RULE_PROP_AVAILABLE_AXES]: [
         AXIS_ID_COLUMNS,
         AXIS_ID_ROWS,
         AXIS_ID_FILTERS,
     ],
-    maxNumberOfDimsPerAxis: {
+    [RULE_PROP_MAX_DIMS_PER_AXIS]: {
         [AXIS_ID_COLUMNS]: 1,
         [AXIS_ID_ROWS]: 1,
     },
-    minNumberOfDimsPerAxis: {
+    [RULE_PROP_MIN_DIMS_PER_AXIS]: {
         [AXIS_ID_COLUMNS]: 1,
         [AXIS_ID_ROWS]: 1,
     },
 }
 
 const pieRules = {
-    [RULE_PROP_AVAILABLE_AXES.name]: [AXIS_ID_COLUMNS, AXIS_ID_FILTERS],
-    maxNumberOfDimsPerAxis: {
+    [RULE_PROP_AVAILABLE_AXES]: [AXIS_ID_COLUMNS, AXIS_ID_FILTERS],
+    [RULE_PROP_MAX_DIMS_PER_AXIS]: {
         [AXIS_ID_COLUMNS]: 1,
     },
-    minNumberOfDimsPerAxis: {
+    [RULE_PROP_MIN_DIMS_PER_AXIS]: {
         [AXIS_ID_COLUMNS]: 1,
     },
 }
 
 const singleValueRules = {
-    [RULE_PROP_AVAILABLE_AXES.name]: [AXIS_ID_FILTERS],
-    maxNumberOfDimsPerAxis: {
+    [RULE_PROP_AVAILABLE_AXES]: [AXIS_ID_FILTERS],
+    [RULE_PROP_MAX_DIMS_PER_AXIS]: {
         [AXIS_ID_COLUMNS]: 1,
     },
-    minNumberOfDimsPerAxis: {
+    [RULE_PROP_MIN_DIMS_PER_AXIS]: {
         [AXIS_ID_COLUMNS]: 1,
     },
-    maxNumberOfItemsPerAxis: {
+    [RULE_PROP_MAX_ITEMS_PER_AXIS]: {
         [AXIS_ID_COLUMNS]: 1,
     },
-    lockedDims: {
+    [RULE_PROP_LOCKED_DIMS]: {
         [DIMENSION_ID_DATA]: AXIS_ID_COLUMNS,
     },
 }
 
 const yearOverYearRules = {
-    [RULE_PROP_AVAILABLE_AXES.name]: [AXIS_ID_FILTERS],
-    disallowedDims: [DIMENSION_ID_PERIOD],
+    [RULE_PROP_AVAILABLE_AXES]: [AXIS_ID_FILTERS],
+    [RULE_PROP_DISALLOWED_DIMS]: [DIMENSION_ID_PERIOD],
 }
 
 const visTypeToRules = {
@@ -100,22 +102,31 @@ export const getAvailableAxesByVisType = visType =>
     getRulesByVisType(visType)[RULE_PROP_AVAILABLE_AXES.name] || []
 
 export const getMaxNumberOfDimsPerAxisByVisType = visType =>
-    getRulesByVisType(visType).maxNumberOfDimsPerAxis || {}
+    getRulesByVisType(visType)[RULE_PROP_MAX_DIMS_PER_AXIS] || {}
 
 export const getMinNumberOfDimsPerAxisByVisType = visType =>
-    getRulesByVisType(visType).minNumberOfDimsPerAxis || {}
+    getRulesByVisType(visType)[RULE_PROP_MIN_DIMS_PER_AXIS] || {}
 
 export const getMaxNumberOfItemsPerAxisByVisType = visType =>
-    getRulesByVisType(visType).maxNumberOfItemsPerAxis || {}
+    getRulesByVisType(visType)[RULE_PROP_MAX_ITEMS_PER_AXIS] || {}
 
 export const getDisallowedDimsByVisType = visType =>
-    getRulesByVisType(visType).disallowedDims || []
+    getRulesByVisType(visType)[RULE_PROP_DISALLOWED_DIMS] || []
 
 export const getLockedDimsByVisType = visType =>
-    getRulesByVisType(visType).lockedDims || {}
+    getRulesByVisType(visType)[RULE_PROP_LOCKED_DIMS] || {}
 
 // Test exports
 
 export const testResourceRequiredProps = [RULE_PROP_AVAILABLE_AXES]
 
-export const testResourceRules = Object.values(visTypeToRules)
+export const testResourceRules = [...new Set(Object.values(visTypeToRules))]
+
+export const testResourceAllRuleProps = {
+    AVAILABLE_AXES: RULE_PROP_AVAILABLE_AXES,
+    MAX_DIMS_PER_AXIS: RULE_PROP_MAX_DIMS_PER_AXIS,
+    MIN_DIMS_PER_AXIS: RULE_PROP_MIN_DIMS_PER_AXIS,
+    MAX_ITEMS_PER_AXIS: RULE_PROP_MAX_ITEMS_PER_AXIS,
+    DISALLOWED_DIMS: RULE_PROP_DISALLOWED_DIMS,
+    LOCKED_DIMS: RULE_PROP_LOCKED_DIMS,
+}
