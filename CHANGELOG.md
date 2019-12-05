@@ -1,3 +1,10 @@
+## [2.6.15](https://github.com/dhis2/analytics/compare/v2.6.14...v2.6.15) (2019-12-05)
+
+
+### Bug Fixes
+
+* rules tests ([#172](https://github.com/dhis2/analytics/issues/172)) ([9290cd6](https://github.com/dhis2/analytics/commit/9290cd6b2e4cf76c8489cb341238c9cdbd0ba91e))
+
 ## [2.6.14](https://github.com/dhis2/analytics/compare/v2.6.13...v2.6.14) (2019-12-03)
 
 
