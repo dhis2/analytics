@@ -1,12 +1,12 @@
-export const toggler = (
+export const toggler = ({
     id,
     isCtrlPressed,
     isShiftPressed,
     index,
     lastClickedIndex,
     highlightedIds,
-    items
-) => {
+    items,
+}) => {
     let ids
     let newIndex = lastClickedIndex
 
@@ -17,9 +17,14 @@ export const toggler = (
         const minIndex = getMinIndex(lastClickedIndex, index)
         const maxIndex = getMaxIndex(lastClickedIndex, index)
 
-        ids = mergeIds(highlightedIds, items, minIndex, maxIndex)
+        ids = mergeIds({ highlightedIds, items, minIndex, maxIndex })
     } else {
-        const newArr = updateArray(highlightedIds, id, lastClickedIndex, index)
+        const newArr = updateArray({
+            highlightedIds,
+            id,
+            lastClickedIndex,
+            index,
+        })
         ids = newArr.ids
         newIndex = newArr.newIndex
     }
@@ -38,7 +43,7 @@ const getMinIndex = (lastClickedIndex, index) =>
 const getMaxIndex = (lastClickedIndex, index) =>
     lastClickedIndex < index ? index : lastClickedIndex
 
-const mergeIds = (highlightedIds, items, minIndex, maxIndex) =>
+const mergeIds = ({ highlightedIds, items, minIndex, maxIndex }) =>
     highlightedIds.length
         ? items
               .slice(minIndex, maxIndex + 1)
@@ -46,7 +51,7 @@ const mergeIds = (highlightedIds, items, minIndex, maxIndex) =>
               .concat(highlightedIds)
         : items.slice(minIndex, maxIndex + 1)
 
-const updateArray = (highlightedIds, id, lastClickedIndex, index) => {
+const updateArray = ({ highlightedIds, id, lastClickedIndex, index }) => {
     let ids
     let newIndex = lastClickedIndex
 

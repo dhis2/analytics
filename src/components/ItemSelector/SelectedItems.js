@@ -58,16 +58,16 @@ export class SelectedItems extends Component {
         this.setState({ highlighted: [] })
     }
 
-    toggleHighlight = (isCtrlPressed, isShiftPressed, index, id) => {
-        const newState = toggler(
+    toggleHighlight = ({ isCtrlPressed, isShiftPressed, index, id }) => {
+        const newState = toggler({
             id,
             isCtrlPressed,
             isShiftPressed,
             index,
-            this.state.lastClickedIndex,
-            this.state.highlighted,
-            this.props.items.map(item => item.id)
-        )
+            lastClickedIndex: this.state.lastClickedIndex,
+            highlightedIds: this.state.highlighted,
+            items: this.props.items.map(item => item.id),
+        })
 
         this.setState({
             highlighted: newState.ids,
@@ -191,7 +191,7 @@ export class SelectedItems extends Component {
     }
 
     getItemListWithClone = () => {
-        let list = []
+        const list = []
 
         this.props.items.forEach(item => {
             list.push(item)

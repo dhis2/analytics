@@ -8,7 +8,12 @@ import { colors } from '../styles/colors'
 import styles from './styles/SelectedItem.style'
 
 const onClickWrapper = ({ id, index, onClick }) => event =>
-    onClick(event.metaKey || event.ctrlKey, event.shiftKey, index, id)
+    onClick({
+        isCtrlPressed: event.metaKey || event.ctrlKey,
+        isShiftPressed: event.shiftKey,
+        index,
+        id,
+    })
 
 export const Item = ({
     name,
