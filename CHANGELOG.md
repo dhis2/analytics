@@ -1,3 +1,10 @@
+## [2.6.17](https://github.com/dhis2/analytics/compare/v2.6.16...v2.6.17) (2019-12-10)
+
+
+### Bug Fixes
+
+* unimported code ([#179](https://github.com/dhis2/analytics/issues/179)) ([0c2d72d](https://github.com/dhis2/analytics/commit/0c2d72d3ed840b0ab8d45ceb24d91b5667a2a9e7))
+
 ## [2.6.16](https://github.com/dhis2/analytics/compare/v2.6.15...v2.6.16) (2019-12-05)
 
 
