@@ -25,6 +25,20 @@ class ItemSelector extends Component {
 }
 
 ItemSelector.propTypes = {
+    children: PropTypes.object,
+    selected: PropTypes.shape({
+        items: PropTypes.arrayOf(
+            PropTypes.shape({
+                id: PropTypes.string.isRequired,
+                name: PropTypes.string.isRequired,
+                isActive: PropTypes.bool,
+            })
+        ).isRequired,
+        onDeselect: PropTypes.func.isRequired,
+        onReorder: PropTypes.func.isRequired,
+        dialogId: PropTypes.string,
+        infoBoxMessage: PropTypes.string,
+    }),
     unselected: PropTypes.shape({
         items: PropTypes.arrayOf(
             PropTypes.shape({
@@ -35,19 +49,6 @@ ItemSelector.propTypes = {
         onSelect: PropTypes.func.isRequired,
         filterText: PropTypes.string,
         requestMoreItems: PropTypes.func,
-    }),
-    selected: PropTypes.shape({
-        items: PropTypes.arrayOf(
-            PropTypes.shape({
-                id: PropTypes.string.isRequired,
-                name: PropTypes.string.isRequired,
-                isActive: PropTypes.bool,
-            })
-        ).isRequired,
-        dialogId: PropTypes.string,
-        infoBoxMessage: PropTypes.string,
-        onDeselect: PropTypes.func.isRequired,
-        onReorder: PropTypes.func.isRequired,
     }),
 }
 

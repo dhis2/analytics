@@ -72,11 +72,11 @@ const Groups = props => {
 
 Groups.propTypes = {
     dataType: PropTypes.string.isRequired,
-    groups: PropTypes.array.isRequired,
-    groupId: PropTypes.string.isRequired,
-    onGroupChange: PropTypes.func.isRequired,
-    onDetailChange: PropTypes.func.isRequired,
     detailValue: PropTypes.string.isRequired,
+    groupId: PropTypes.string.isRequired,
+    groups: PropTypes.array.isRequired,
+    onDetailChange: PropTypes.func.isRequired,
+    onGroupChange: PropTypes.func.isRequired,
 }
 
 export default Groups

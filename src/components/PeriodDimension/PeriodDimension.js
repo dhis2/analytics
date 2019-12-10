@@ -63,11 +63,10 @@ export class PeriodDimension extends Component {
 }
 
 PeriodDimension.propTypes = {
-    d2: PropTypes.object,
-    selectedPeriods: PropTypes.array,
-    onSelect: PropTypes.func.isRequired,
     onDeselect: PropTypes.func.isRequired,
     onReorder: PropTypes.func.isRequired,
+    onSelect: PropTypes.func.isRequired,
+    selectedPeriods: PropTypes.array,
 }
 
 PeriodDimension.defaultProps = {

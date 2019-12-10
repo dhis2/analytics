@@ -1,5 +1,6 @@
 import React from 'react'
 import IconButton from '@material-ui/core/IconButton'
+import PropTypes from 'prop-types'
 
 import MoreHorizontalIcon from '../../../assets/MoreHorizontalIcon'
 
@@ -8,5 +9,10 @@ export const OptionsButton = ({ style, onClick }) => (
         <MoreHorizontalIcon />
     </IconButton>
 )
+
+OptionsButton.propTypes = {
+    style: PropTypes.string,
+    onClick: PropTypes.func,
+}
 
 export default OptionsButton

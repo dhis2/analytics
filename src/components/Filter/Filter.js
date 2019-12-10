@@ -62,13 +62,13 @@ Filter.defaultProps = {
 }
 
 Filter.propTypes = {
-    style: PropTypes.object,
     placeholder: PropTypes.string.isRequired,
     text: PropTypes.string.isRequired,
     onChange: PropTypes.func.isRequired,
     onClear: PropTypes.func.isRequired,
     autoFocus: PropTypes.bool,
     disableUnderline: PropTypes.bool,
+    style: PropTypes.object,
 }
 
 export default Filter

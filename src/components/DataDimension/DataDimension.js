@@ -278,10 +278,10 @@ DataDimension.propTypes = {
     d2: PropTypes.object.isRequired,
     displayNameProp: PropTypes.string.isRequired,
     selectedDimensions: PropTypes.array.isRequired,
-    infoBoxMessage: PropTypes.string,
-    onSelect: PropTypes.func.isRequired,
     onDeselect: PropTypes.func.isRequired,
     onReorder: PropTypes.func.isRequired,
+    onSelect: PropTypes.func.isRequired,
+    infoBoxMessage: PropTypes.string,
 }
 
 DataDimension.defaultProps = {

@@ -259,6 +259,15 @@ export class SelectedItems extends Component {
     }
 }
 
+InfoBox.propTypes = {
+    message: PropTypes.string,
+}
+
+ItemsList.propTypes = {
+    children: PropTypes.object,
+    innerRef: PropTypes.string,
+}
+
 SelectedItems.propTypes = {
     items: PropTypes.array.isRequired,
     onDeselect: PropTypes.func.isRequired,

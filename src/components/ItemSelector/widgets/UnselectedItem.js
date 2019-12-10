@@ -42,10 +42,10 @@ Item.defualtProps = {
 }
 
 Item.propTypes = {
-    id: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired,
-    index: PropTypes.number.isRequired,
     highlighted: PropTypes.bool.isRequired,
+    id: PropTypes.string.isRequired,
+    index: PropTypes.number.isRequired,
+    name: PropTypes.string.isRequired,
     onClick: PropTypes.func,
 }
 

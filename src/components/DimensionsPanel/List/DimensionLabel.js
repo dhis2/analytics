@@ -6,10 +6,11 @@ import { styles } from './styles/DimensionLabel.style'
 export class DimensionLabel extends Component {
     static propTypes = {
         id: PropTypes.string.isRequired,
-        name: PropTypes.string.isRequired,
         isDeactivated: PropTypes.bool.isRequired,
         isSelected: PropTypes.bool.isRequired,
+        name: PropTypes.string.isRequired,
         onClick: PropTypes.func.isRequired,
+        children: PropTypes.object,
     }
 
     onLabelClick = () => {

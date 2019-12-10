@@ -133,9 +133,9 @@ DynamicDimension.propTypes = {
     dialogId: PropTypes.string.isRequired,
     dialogTitle: PropTypes.string.isRequired,
     selectedItems: PropTypes.array.isRequired,
-    onSelect: PropTypes.func.isRequired,
     onDeselect: PropTypes.func.isRequired,
     onReorder: PropTypes.func.isRequired,
+    onSelect: PropTypes.func.isRequired,
 }
 
 DynamicDimension.defaultProps = {

@@ -63,7 +63,7 @@ export const dataTypes = {
         id: EVENT_DATA_ITEMS,
         name: i18n.t('Event data items'),
         groupLabel: programText,
-        placeholder: () => <span>{selectProgramText}</span>,
+        placeholder: () => <span>{selectProgramText}</span>, // eslint-disable-line react/display-name
         defaultGroup: null,
         groupDetail: false,
     },
@@ -71,7 +71,7 @@ export const dataTypes = {
         id: PROGRAM_INDICATORS,
         name: i18n.t('Program indicators'),
         groupLabel: programText,
-        placeholder: () => <span>{selectProgramText}</span>,
+        placeholder: () => <span>{selectProgramText}</span>, // eslint-disable-line react/display-name
         defaultGroup: null,
         groupDetail: false,
     },

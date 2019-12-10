@@ -41,11 +41,12 @@ export class DimensionList extends Component {
     )
 
     render() {
-        const dimensionsList = Object.values(this.props.dimensions).map(
-            dimension =>
-                this.props.filterText.length
-                    ? this.filterMatchingDimensions(dimension)
-                    : this.renderItem(dimension)
+        const dimensionsList = Object.values(
+            this.props.dimensions
+        ).map(dimension =>
+            this.props.filterText.length
+                ? this.filterMatchingDimensions(dimension)
+                : this.renderItem(dimension)
         )
 
         return (
@@ -58,14 +59,14 @@ export class DimensionList extends Component {
 
 DimensionList.propTypes = {
     dimensions: PropTypes.object.isRequired,
+    filterText: PropTypes.string.isRequired,
     disabledDimension: PropTypes.func,
     lockedDimension: PropTypes.func,
     recommendedDimension: PropTypes.func,
     selectedIds: PropTypes.array,
-    filterText: PropTypes.string.isRequired,
-    onDimensionOptionsClick: PropTypes.func,
     onDimensionClick: PropTypes.func,
     onDimensionDragStart: PropTypes.func,
+    onDimensionOptionsClick: PropTypes.func,
 }
 
 DimensionList.defaultProps = {

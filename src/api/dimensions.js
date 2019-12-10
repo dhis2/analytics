@@ -227,7 +227,6 @@ const fetchProgramDataElements = ({
 const fetchTrackedEntityAttributes = ({
     d2,
     groupId,
-    page,
     filterText,
     nameProp,
 }) => {

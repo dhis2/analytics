@@ -127,9 +127,11 @@ class OrgUnitDimension extends Component {
     }
 
     loadOrgUnitGroups = (d2, displayNameProperty) => {
-        apiFetchOrganisationUnitGroups(d2, displayNameProperty).then(
-            organisationUnitGroups =>
-                this.setState({ ouGroups: organisationUnitGroups })
+        apiFetchOrganisationUnitGroups(
+            d2,
+            displayNameProperty
+        ).then(organisationUnitGroups =>
+            this.setState({ ouGroups: organisationUnitGroups })
         )
     }
 
@@ -274,12 +276,12 @@ class OrgUnitDimension extends Component {
 }
 
 OrgUnitDimension.propTypes = {
+    current: PropTypes.object,
     d2: PropTypes.object,
     displayNameProperty: PropTypes.string,
-    onSelect: PropTypes.func,
-    onDeselect: PropTypes.func,
     ouItems: PropTypes.array,
-    current: PropTypes.object,
+    onDeselect: PropTypes.func,
+    onSelect: PropTypes.func,
 }
 
 export default OrgUnitDimension

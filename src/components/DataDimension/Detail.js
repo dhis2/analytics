@@ -28,9 +28,9 @@ export const Detail = ({ value, onDetailChange, detailAlternatives }) => (
 )
 
 Detail.propTypes = {
+    detailAlternatives: PropTypes.object.isRequired,
     value: PropTypes.string.isRequired,
     onDetailChange: PropTypes.func.isRequired,
-    detailAlternatives: PropTypes.object.isRequired,
 }
 
 export default Detail

@@ -56,13 +56,13 @@ export class DimensionsPanel extends Component {
 
 DimensionsPanel.propTypes = {
     dimensions: PropTypes.object.isRequired,
-    selectedIds: PropTypes.array,
     disabledDimension: PropTypes.func,
     lockedDimension: PropTypes.func,
     recommendedDimension: PropTypes.func,
+    selectedIds: PropTypes.array,
     onDimensionClick: PropTypes.func,
-    onDimensionOptionsClick: PropTypes.func,
     onDimensionDragStart: PropTypes.func,
+    onDimensionOptionsClick: PropTypes.func,
 }
 
 DimensionsPanel.defaultProps = {

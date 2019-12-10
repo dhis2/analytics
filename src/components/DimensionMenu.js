@@ -142,15 +142,15 @@ export const DimensionMenu = ({
 }
 
 DimensionMenu.propTypes = {
-    dimensionId: PropTypes.string,
-    currentAxisId: PropTypes.string,
-    visType: PropTypes.string,
-    numberOfDimensionItems: PropTypes.number.isRequired,
-    dualAxisItemHandler: PropTypes.func.isRequired,
     axisItemHandler: PropTypes.func.isRequired,
+    dualAxisItemHandler: PropTypes.func.isRequired,
+    numberOfDimensionItems: PropTypes.number.isRequired,
     removeItemHandler: PropTypes.func.isRequired,
-    anchorEl: PropTypes.object,
     onClose: PropTypes.func.isRequired,
+    anchorEl: PropTypes.object,
+    currentAxisId: PropTypes.string,
+    dimensionId: PropTypes.string,
+    visType: PropTypes.string,
 }
 
 export default DimensionMenu

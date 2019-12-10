@@ -30,9 +30,7 @@ export class RecommendedIcon extends Component {
     )
 
     render() {
-        const TooltipOnHover = Boolean(this.state.anchorEl)
-            ? this.showTooltip()
-            : null
+        const TooltipOnHover = this.state.anchorEl ? this.showTooltip() : null
 
         return this.props.isRecommended ? (
             <div style={styles.recommendedWrapper}>
@@ -50,8 +48,8 @@ export class RecommendedIcon extends Component {
 
 RecommendedIcon.propTypes = {
     id: PropTypes.string.isRequired,
-    isSelected: PropTypes.bool.isRequired,
     isRecommended: PropTypes.bool.isRequired,
+    isSelected: PropTypes.bool.isRequired,
 }
 
 export default RecommendedIcon
