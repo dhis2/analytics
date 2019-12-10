@@ -90,7 +90,7 @@ function getDefault(series, layout, isStacked, extraOptions) {
         if (layout.noSpaceBetweenColumns) {
             const seriesType = getType(layout.type).type
 
-            if (arrayContains(epiCurveTypes, seriesType)) {
+            if (epiCurveTypes.includes(seriesType)) {
                 seriesObj.pointPadding = 0
                 seriesObj.groupPadding = 0
             }
