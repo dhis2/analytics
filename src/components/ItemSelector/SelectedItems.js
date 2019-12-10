@@ -264,8 +264,8 @@ InfoBox.propTypes = {
 }
 
 ItemsList.propTypes = {
-    children: PropTypes.object,
-    innerRef: PropTypes.string,
+    children: PropTypes.array,
+    innerRef: PropTypes.func,
 }
 
 SelectedItems.propTypes = {
