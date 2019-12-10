@@ -191,12 +191,10 @@ const fetchDataElementOperands = ({
         filter = filter.length ? filter.concat(textFilter) : textFilter
     }
 
-    return requestWithPaging(
-        d2,
-        'dataElementOperands',
-        `${fields}&${order}${filter}`,
-        { page }
-    )
+    return requestWithPaging(d2, 'dataElementOperands', {
+        paramString: `${fields}&${order}${filter}`,
+        page,
+    })
 }
 
 const fetchDataSets = ({ d2, page, filterText, nameProp }) => {
@@ -206,7 +204,7 @@ const fetchDataSets = ({ d2, page, filterText, nameProp }) => {
 
     const paramString = `${fields}&${order}${filter}`
 
-    return requestWithPaging(d2, 'dataSets', paramString, { page })
+    return requestWithPaging(d2, 'dataSets', { paramString, page })
 }
 
 const fetchProgramDataElements = ({

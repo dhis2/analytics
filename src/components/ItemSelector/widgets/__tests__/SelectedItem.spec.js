@@ -66,7 +66,12 @@ describe('Selected item component', () => {
                 })
 
             expect(props.onClick).toBeCalledTimes(1)
-            expect(props.onClick).toBeCalledWith(true, false, 0, props.id)
+            expect(props.onClick).toBeCalledWith({
+                isCtrlPressed: true,
+                isShiftPressed: false,
+                index: 0,
+                id: props.id,
+            })
         })
 
         it('fires onClick with correct arguments when ctrlKey pressed', () => {
@@ -80,7 +85,12 @@ describe('Selected item component', () => {
                 })
 
             expect(props.onClick).toBeCalledTimes(1)
-            expect(props.onClick).toBeCalledWith(true, false, 0, props.id)
+            expect(props.onClick).toBeCalledWith({
+                isCtrlPressed: true,
+                isShiftPressed: false,
+                index: 0,
+                id: props.id,
+            })
         })
 
         it('fires onClick with correct arguments when shiftKey pressed', () => {
@@ -94,7 +104,12 @@ describe('Selected item component', () => {
                 })
 
             expect(props.onClick).toBeCalledTimes(1)
-            expect(props.onClick).toBeCalledWith(false, true, 0, props.id)
+            expect(props.onClick).toBeCalledWith({
+                isCtrlPressed: false,
+                isShiftPressed: true,
+                index: 0,
+                id: props.id,
+            })
         })
     })
 })
