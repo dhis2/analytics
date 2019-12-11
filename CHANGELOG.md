@@ -1,3 +1,24 @@
+## [2.6.19](https://github.com/dhis2/analytics/compare/v2.6.18...v2.6.19) (2019-12-11)
+
+
+### Bug Fixes
+
+* use latest version for d2-ui deps ([#181](https://github.com/dhis2/analytics/issues/181)) ([8b96776](https://github.com/dhis2/analytics/commit/8b96776757703ca67fe12e60991e8761d5d07a1c))
+
+## [2.6.18](https://github.com/dhis2/analytics/compare/v2.6.17...v2.6.18) (2019-12-11)
+
+
+### Bug Fixes
+
+* use latest version for d2-ui deps and ui-core ([#180](https://github.com/dhis2/analytics/issues/180)) ([01ff3b9](https://github.com/dhis2/analytics/commit/01ff3b9fdb272d0a4cd9270aa83936a957155a23))
+
+## [2.6.17](https://github.com/dhis2/analytics/compare/v2.6.16...v2.6.17) (2019-12-10)
+
+
+### Bug Fixes
+
+* unimported code ([#179](https://github.com/dhis2/analytics/issues/179)) ([0c2d72d](https://github.com/dhis2/analytics/commit/0c2d72d3ed840b0ab8d45ceb24d91b5667a2a9e7))
+
 ## [2.6.16](https://github.com/dhis2/analytics/compare/v2.6.15...v2.6.16) (2019-12-05)
 
 
