@@ -78,11 +78,7 @@ export class DimensionItem extends Component {
                 <DimensionLabel {...this.props}>
                     <div style={styles.iconWrapper}>{Icon}</div>
                     {Label}
-                    <RecommendedIcon
-                        id={id}
-                        isSelected={isSelected}
-                        isRecommended={isRecommended}
-                    />
+                    <RecommendedIcon isRecommended={isRecommended} />
                     {isLocked && (
                         <div style={styles.iconWrapper}>
                             <LockIcon style={styles.lockIcon} />
@@ -106,14 +102,14 @@ export class DimensionItem extends Component {
 
 DimensionItem.propTypes = {
     id: PropTypes.string.isRequired,
+    isSelected: PropTypes.bool.isRequired, // XXX
     name: PropTypes.string.isRequired,
     isDeactivated: PropTypes.bool,
-    isSelected: PropTypes.bool.isRequired, // XXX
+    isLocked: PropTypes.bool,
     isRecommended: PropTypes.bool,
-    onOptionsClick: PropTypes.func,
     onClick: PropTypes.func,
     onDragStart: PropTypes.func,
-    isLocked: PropTypes.bool,
+    onOptionsClick: PropTypes.func,
 }
 
 DimensionItem.defaultProps = {

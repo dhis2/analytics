@@ -20,8 +20,8 @@ export const FilterField = ({ text, onFilterTextChange, onClearFilter }) => (
 
 FilterField.propTypes = {
     text: PropTypes.string.isRequired,
-    onFilterTextChange: PropTypes.func.isRequired,
     onClearFilter: PropTypes.func.isRequired,
+    onFilterTextChange: PropTypes.func.isRequired,
 }
 
 export default FilterField

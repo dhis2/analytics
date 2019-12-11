@@ -28,15 +28,15 @@ describe('using the toggler ', () => {
                 lastClickedIndex: index,
             }
 
-            const actualResult = toggler(
+            const actualResult = toggler({
                 id,
                 isCtrlPressed,
                 isShiftPressed,
                 index,
                 lastClickedIndex,
                 highlightedIds,
-                items
-            )
+                items,
+            })
 
             expect(actualResult).toStrictEqual(expectedResult)
         })
@@ -47,15 +47,15 @@ describe('using the toggler ', () => {
                 lastClickedIndex: index,
             }
 
-            const actualResult = toggler(
+            const actualResult = toggler({
                 id,
                 isCtrlPressed,
                 isShiftPressed,
                 index,
                 lastClickedIndex,
                 highlightedIds,
-                items
-            )
+                items,
+            })
 
             expect(actualResult.lastClickedIndex).toEqual(
                 expectedResult.lastClickedIndex
@@ -68,15 +68,15 @@ describe('using the toggler ', () => {
                 lastClickedIndex: index,
             }
 
-            const actualResult = toggler(
+            const actualResult = toggler({
                 id,
                 isCtrlPressed,
                 isShiftPressed,
                 index,
                 lastClickedIndex,
                 highlightedIds,
-                items
-            )
+                items,
+            })
 
             expect(actualResult).toEqual(expectedResult)
         })
@@ -103,7 +103,15 @@ describe('using the toggler ', () => {
         })
 
         it('should return the highlighted ids in the same order as original item list', () => {
-            const actual = toggler('id', false, true, 2, 0, ['ones'], items)
+            const actual = toggler({
+                id: 'id',
+                isCtrlPressed: false,
+                isShiftPressed: true,
+                index: 2,
+                lastClickedIndex: 0,
+                highlightedIds: ['ones'],
+                items,
+            })
 
             expect(actual.ids).toEqual(['ones', 'some', 'id'])
         })
@@ -114,15 +122,15 @@ describe('using the toggler ', () => {
                 lastClickedIndex: lastClickedIndex,
             }
 
-            const actualResult = toggler(
+            const actualResult = toggler({
                 id,
                 isCtrlPressed,
                 isShiftPressed,
                 index,
                 lastClickedIndex,
                 highlightedIds,
-                items
-            )
+                items,
+            })
 
             expect(actualResult.lastClickedIndex).toStrictEqual(
                 expectedResult.lastClickedIndex
@@ -135,15 +143,15 @@ describe('using the toggler ', () => {
                 lastClickedIndex: lastClickedIndex,
             }
 
-            const actualResult = toggler(
+            const actualResult = toggler({
                 id,
                 isCtrlPressed,
                 isShiftPressed,
                 index,
                 lastClickedIndex,
                 highlightedIds,
-                items
-            )
+                items,
+            })
 
             expect(actualResult).toEqual(expectedResult)
         })
@@ -154,15 +162,15 @@ describe('using the toggler ', () => {
                 lastClickedIndex: lastClickedIndex,
             }
 
-            const actualResult = toggler(
+            const actualResult = toggler({
                 id,
                 isCtrlPressed,
                 isShiftPressed,
                 index,
                 lastClickedIndex,
                 highlightedIds,
-                items
-            )
+                items,
+            })
 
             expect(actualResult).toEqual(expectedResult)
         })
@@ -187,15 +195,15 @@ describe('using the toggler ', () => {
                 lastClickedIndex: lastClickedIndex,
             }
 
-            const actualResult = toggler(
+            const actualResult = toggler({
                 id,
                 isCtrlPressed,
                 isShiftPressed,
                 index,
                 lastClickedIndex,
                 highlightedIds,
-                items
-            )
+                items,
+            })
 
             expect(actualResult).toStrictEqual(expectedResult)
         })
@@ -206,15 +214,15 @@ describe('using the toggler ', () => {
                 lastClickedIndex: index,
             }
 
-            const actualResult = toggler(
+            const actualResult = toggler({
                 id,
                 isCtrlPressed,
                 isShiftPressed,
                 index,
                 lastClickedIndex,
                 highlightedIds,
-                items
-            )
+                items,
+            })
 
             expect(actualResult).toStrictEqual(expectedResult)
         })
@@ -227,15 +235,15 @@ describe('using the toggler ', () => {
                 lastClickedIndex: lastClickedIndex,
             }
 
-            const actualResult = toggler(
+            const actualResult = toggler({
                 id,
                 isCtrlPressed,
                 isShiftPressed,
                 index,
                 lastClickedIndex,
                 highlightedIds,
-                items
-            )
+                items,
+            })
 
             expect(actualResult).toStrictEqual(expectedResult)
         })

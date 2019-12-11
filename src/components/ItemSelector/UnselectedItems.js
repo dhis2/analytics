@@ -44,16 +44,16 @@ export class UnselectedItems extends Component {
             ? this.renderListItem(item, index)
             : null
 
-    toggleHighlight = (isCtrlPressed, isShiftPressed, index, id) => {
-        const newState = toggler(
+    toggleHighlight = ({ isCtrlPressed, isShiftPressed, index, id }) => {
+        const newState = toggler({
             id,
             isCtrlPressed,
             isShiftPressed,
             index,
-            this.state.lastClickedIndex,
-            this.state.highlighted,
-            this.props.items.map(item => item.id)
-        )
+            lastClickedIndex: this.state.lastClickedIndex,
+            highlightedIds: this.state.highlighted,
+            items: this.props.items.map(item => item.id),
+        })
 
         this.setState({
             highlighted: newState.ids,

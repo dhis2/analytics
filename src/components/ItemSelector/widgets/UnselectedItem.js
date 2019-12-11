@@ -7,7 +7,12 @@ import { colors } from '../styles/colors'
 import styles from './styles/UnselectedItem.style'
 
 const onClickWrapper = ({ id, index, onClick }) => event =>
-    onClick(event.metaKey || event.ctrlKey, event.shiftKey, index, id)
+    onClick({
+        isCtrlPressed: event.metaKey || event.ctrlKey,
+        isShiftPressed: event.shiftKey,
+        index,
+        id,
+    })
 
 export const Item = ({ name, highlighted, ...rest }) => {
     return (
@@ -37,10 +42,10 @@ Item.defualtProps = {
 }
 
 Item.propTypes = {
-    id: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired,
-    index: PropTypes.number.isRequired,
     highlighted: PropTypes.bool.isRequired,
+    id: PropTypes.string.isRequired,
+    index: PropTypes.number.isRequired,
+    name: PropTypes.string.isRequired,
     onClick: PropTypes.func,
 }
 

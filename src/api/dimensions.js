@@ -9,7 +9,7 @@ const selectFromResponse = (response, entity, selectorFn) =>
     typeof selectorFn === 'function' ? selectorFn(response) : response[entity]
 
 // Request functions
-const request = (d2, entity, paramString, { selectorFn } = {}) => {
+const request = (d2, entity, { paramString, selectorFn } = {}) => {
     const url = `/${entity}?${paramString}&paging=false`
 
     return d2.Api.getApi()
@@ -21,9 +21,7 @@ const request = (d2, entity, paramString, { selectorFn } = {}) => {
 const requestWithPaging = (
     d2,
     entity,
-    paramString,
-    page,
-    { selectorFn } = {}
+    { page, paramString, selectorFn } = {}
 ) => {
     const paging = `&paging=true&page=${page}`
     const url = `/${entity}?${paramString}${paging}`
@@ -44,7 +42,7 @@ export const apiFetchDimensions = (d2, nameProp) => {
 
     const params = `${fields}&${order}`
 
-    return request(d2, 'dimensions', params)
+    return request(d2, 'dimensions', { paramString: params })
 }
 
 export const apiFetchRecommendedIds = (d2, dxIds, ouIds) => {
@@ -89,17 +87,17 @@ export const apiFetchGroups = (d2, dataType, nameProp) => {
 
     switch (dataType) {
         case 'indicators': {
-            return request(d2, 'indicatorGroups', params)
+            return request(d2, 'indicatorGroups', { paramString: params })
         }
         case 'dataElements': {
-            return request(d2, 'dataElementGroups', params)
+            return request(d2, 'dataElementGroups', { paramString: params })
         }
         case 'dataSets': {
             return Promise.resolve(DATA_SETS_CONSTANTS)
         }
         case 'eventDataItems':
         case 'programIndicators': {
-            return request(d2, 'programs', params)
+            return request(d2, 'programs', { paramString: params })
         }
         default:
             return null
@@ -150,7 +148,7 @@ const fetchIndicators = ({ d2, nameProp, groupId, filterText, page }) => {
 
     const paramString = `${fields}&${order}${filter}`
 
-    return requestWithPaging(d2, 'indicators', paramString, page)
+    return requestWithPaging(d2, 'indicators', { paramString, page })
 }
 
 const fetchDataElements = ({ d2, groupId, page, filterText, nameProp }) => {
@@ -169,7 +167,7 @@ const fetchDataElements = ({ d2, groupId, page, filterText, nameProp }) => {
 
     const paramString = `${fields}&${order}${filter}`
 
-    return requestWithPaging(d2, 'dataElements', paramString, page)
+    return requestWithPaging(d2, 'dataElements', { paramString, page })
 }
 
 const fetchDataElementOperands = ({
@@ -193,12 +191,10 @@ const fetchDataElementOperands = ({
         filter = filter.length ? filter.concat(textFilter) : textFilter
     }
 
-    return requestWithPaging(
-        d2,
-        'dataElementOperands',
-        `${fields}&${order}${filter}`,
-        page
-    )
+    return requestWithPaging(d2, 'dataElementOperands', {
+        paramString: `${fields}&${order}${filter}`,
+        page,
+    })
 }
 
 const fetchDataSets = ({ d2, page, filterText, nameProp }) => {
@@ -208,7 +204,7 @@ const fetchDataSets = ({ d2, page, filterText, nameProp }) => {
 
     const paramString = `${fields}&${order}${filter}`
 
-    return requestWithPaging(d2, 'dataSets', paramString, page)
+    return requestWithPaging(d2, 'dataSets', { paramString, page })
 }
 
 const fetchProgramDataElements = ({
@@ -225,13 +221,12 @@ const fetchProgramDataElements = ({
 
     const paramString = `${fields}&${order}&${program}${filter}`
 
-    return requestWithPaging(d2, 'programDataElements', paramString, page)
+    return requestWithPaging(d2, 'programDataElements', { paramString, page })
 }
 
 const fetchTrackedEntityAttributes = ({
     d2,
     groupId,
-    page,
     filterText,
     nameProp,
 }) => {
@@ -240,7 +235,8 @@ const fetchTrackedEntityAttributes = ({
 
     const paramString = `${fields}${filter}`
 
-    return request(d2, `programs/${groupId}`, paramString, {
+    return request(d2, `programs/${groupId}`, {
+        paramString,
         selectorFn: r =>
             Array.isArray(r.programTrackedEntityAttributes)
                 ? r.programTrackedEntityAttributes
@@ -288,5 +284,5 @@ const fetchProgramIndicators = ({
 
     const paramString = `${fields}&${order}&${programFilter}${filter}`
 
-    return requestWithPaging(d2, 'programIndicators', paramString, page)
+    return requestWithPaging(d2, 'programIndicators', { paramString, page })
 }

@@ -8,7 +8,12 @@ import { colors } from '../styles/colors'
 import styles from './styles/SelectedItem.style'
 
 const onClickWrapper = ({ id, index, onClick }) => event =>
-    onClick(event.metaKey || event.ctrlKey, event.shiftKey, index, id)
+    onClick({
+        isCtrlPressed: event.metaKey || event.ctrlKey,
+        isShiftPressed: event.shiftKey,
+        index,
+        id,
+    })
 
 export const Item = ({
     name,
@@ -57,10 +62,10 @@ Item.defaultProps = {
 }
 
 Item.propTypes = {
-    id: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired,
-    index: PropTypes.number.isRequired,
     highlighted: PropTypes.bool.isRequired,
+    id: PropTypes.string.isRequired,
+    index: PropTypes.number.isRequired,
+    name: PropTypes.string.isRequired,
     active: PropTypes.bool,
     ghost: PropTypes.bool,
     onClick: PropTypes.func,

@@ -1,16 +1,16 @@
+const { config } = require('@dhis2/cli-style')
 const SEVERITY = 2
 
 module.exports = {
     root: true,
-
     parser: 'babel-eslint',
-
+    extends: [config.eslintReact],
+    plugins: ['react-hooks'],
     env: {
         browser: true,
         node: true,
         jest: true,
     },
-
     parserOptions: {
         // latest standard is ok, eq. to 9
         ecmaVersion: 2018,
@@ -19,7 +19,6 @@ module.exports = {
             modules: true,
         },
     },
-
     rules: {
         'max-params': [
             SEVERITY,
@@ -35,5 +34,7 @@ module.exports = {
             },
         ],
         'no-mixed-spaces-and-tabs': [SEVERITY],
+        'react-hooks/rules-of-hooks': 'error',
+        'react-hooks/exhaustive-deps': 'warn',
     },
 }

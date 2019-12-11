@@ -65,7 +65,12 @@ describe('UnselectedItems component', () => {
             const list = unselectedItems()
             list.find('Item')
                 .first()
-                .simulate('click', false, false, 0, 'rb')
+                .simulate('click', {
+                    isCtrlPressed: false,
+                    isShiftPressed: false,
+                    index: 0,
+                    id: 'rb',
+                })
 
             list.find('ArrowButton')
                 .first()

@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 const ItemIcon = ({ backgroundColor }) => {
     return (
@@ -13,6 +14,10 @@ const ItemIcon = ({ backgroundColor }) => {
             `}</style>
         </div>
     )
+}
+
+ItemIcon.propTypes = {
+    backgroundColor: PropTypes.string,
 }
 
 export default ItemIcon

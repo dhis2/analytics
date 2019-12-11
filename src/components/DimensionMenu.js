@@ -34,16 +34,6 @@ const getDualAxisItem = (dimensionId, onClick) => (
 const getAxisItemLabelPrefix = isDimensionInLayout =>
     isDimensionInLayout ? 'Move to' : 'Add to'
 
-const getAxisItem = ({ dimensionId, axisId, isDimensionInLayout, onClick }) => (
-    <MenuItem key={`${dimensionId}-to-${axisId}`} onClick={onClick}>
-        {i18n.t(
-            `${getAxisItemLabelPrefix(isDimensionInLayout)} ${getAxisName(
-                axisId
-            )}`
-        )}
-    </MenuItem>
-)
-
 const getRemoveMenuItem = onClick => (
     <MenuItem key="remove-menu-item" onClick={onClick}>
         {i18n.t('Remove')}
@@ -98,17 +88,21 @@ export const DimensionMenu = ({
     }
 
     menuItems.push(
-        ...applicableAxisIds.map(axisId =>
-            getAxisItem({
-                dimensionId,
-                axisId,
-                isDimensionInLayout,
-                onClick: () => {
+        ...applicableAxisIds.map(axisId => (
+            <MenuItem
+                key={`${dimensionId}-to-${axisId}`}
+                onClick={() => {
                     axisItemHandler(dimensionId, axisId, numberOfDimensionItems)
                     onClose()
-                },
-            })
-        )
+                }}
+            >
+                {i18n.t(
+                    `${getAxisItemLabelPrefix(
+                        isDimensionInLayout
+                    )} ${getAxisName(axisId)}`
+                )}
+            </MenuItem>
+        ))
     )
 
     // remove item
@@ -142,15 +136,15 @@ export const DimensionMenu = ({
 }
 
 DimensionMenu.propTypes = {
-    dimensionId: PropTypes.string,
-    currentAxisId: PropTypes.string,
-    visType: PropTypes.string,
-    numberOfDimensionItems: PropTypes.number.isRequired,
-    dualAxisItemHandler: PropTypes.func.isRequired,
     axisItemHandler: PropTypes.func.isRequired,
+    dualAxisItemHandler: PropTypes.func.isRequired,
+    numberOfDimensionItems: PropTypes.number.isRequired,
     removeItemHandler: PropTypes.func.isRequired,
-    anchorEl: PropTypes.object,
     onClose: PropTypes.func.isRequired,
+    anchorEl: PropTypes.object,
+    currentAxisId: PropTypes.string,
+    dimensionId: PropTypes.string,
+    visType: PropTypes.string,
 }
 
 export default DimensionMenu

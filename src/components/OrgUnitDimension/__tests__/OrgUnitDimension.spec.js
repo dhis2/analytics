@@ -5,6 +5,7 @@ import DialogContent from '@material-ui/core/DialogContent'
 
 import OrgUnitDimension, { defaultState } from '../OrgUnitDimension'
 
+/* eslint-disable react/display-name */
 jest.mock('@dhis2/d2-ui-org-unit-dialog', () => {
     return {
         OrgUnitSelector: () => (
@@ -27,6 +28,7 @@ jest.mock('@dhis2/d2-ui-org-unit-dialog', () => {
         removeOrgUnitLastPathSegment: () => null,
     }
 })
+/* eslint-enable react/display-name */
 
 jest.mock('../../../api/organisationUnits', () => {
     return {
