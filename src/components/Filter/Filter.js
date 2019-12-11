@@ -10,10 +10,8 @@ import { styles } from './styles/Filter.style'
 
 let ref = null
 
-const onChangeWrapper = (props, event) => {
-    event.target.value.length
-        ? props.onChange(event.target.value)
-        : props.onClear()
+const onChangeWrapper = (onChange, onClear, event) => {
+    event.target.value.length ? onChange(event.target.value) : onClear()
 }
 
 const onKeyDownWrapper = (onClear, event, text) => {
@@ -29,7 +27,7 @@ export const Filter = props => (
         style={props.style}
         placeholder={props.placeholder}
         value={props.text}
-        onChange={e => onChangeWrapper(props, e)}
+        onChange={e => onChangeWrapper(props.onChange, props.onClear, e)}
         onKeyDown={e => onKeyDownWrapper(props.onClear, e, props.text)}
         inputRef={node => (ref = node)}
         InputProps={{

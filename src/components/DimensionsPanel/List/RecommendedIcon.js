@@ -47,9 +47,7 @@ export class RecommendedIcon extends Component {
 }
 
 RecommendedIcon.propTypes = {
-    id: PropTypes.string.isRequired,
     isRecommended: PropTypes.bool.isRequired,
-    isSelected: PropTypes.bool.isRequired,
 }
 
 export default RecommendedIcon
