@@ -56,12 +56,10 @@ describe.only('DataDimension component ', () => {
 
     describe('has groups', () => {
         beforeEach(() => {
-            api.apiFetchGroups = jest
-                .fn()
-                .mockResolvedValue([
-                    { id: 'rarity', name: 'Rarity' },
-                    { id: 'rainbow', name: 'Rainbow Dash' },
-                ])
+            api.apiFetchGroups = jest.fn().mockResolvedValue([
+                { id: 'rarity', name: 'Rarity' },
+                { id: 'rainbow', name: 'Rainbow Dash' },
+            ])
         })
 
         it('renders a Fragment ', done => {

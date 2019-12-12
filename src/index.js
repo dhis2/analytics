@@ -1,24 +1,14 @@
 // Components
 
-export {
-    default as DataDimension,
-} from './components/DataDimension/DataDimension'
+export { default as DataDimension } from './components/DataDimension/DataDimension'
 
-export {
-    default as PeriodDimension,
-} from './components/PeriodDimension/PeriodDimension'
+export { default as PeriodDimension } from './components/PeriodDimension/PeriodDimension'
 
-export {
-    default as OrgUnitDimension,
-} from './components/OrgUnitDimension/OrgUnitDimension'
+export { default as OrgUnitDimension } from './components/OrgUnitDimension/OrgUnitDimension'
 
-export {
-    default as DynamicDimension,
-} from './components/DynamicDimension/DynamicDimension'
+export { default as DynamicDimension } from './components/DynamicDimension/DynamicDimension'
 
-export {
-    default as DimensionsPanel,
-} from './components/DimensionsPanel/DimensionsPanel'
+export { default as DimensionsPanel } from './components/DimensionsPanel/DimensionsPanel'
 
 export { default as ItemSelector } from './components/ItemSelector/ItemSelector'
 
@@ -54,25 +44,15 @@ export { layoutGetAllAxes } from './modules/layout/layoutGetAllAxes'
 export { layoutGetAllDimensions } from './modules/layout/layoutGetAllDimensions'
 export { layoutGetAllItemIds } from './modules/layout/layoutGetAllItemIds'
 export { layoutGetAllItems } from './modules/layout/layoutGetAllItems'
-export {
-    layoutGetAxisIdDimensionIdsObject,
-} from './modules/layout/layoutGetAxisIdDimensionIdsObject'
+export { layoutGetAxisIdDimensionIdsObject } from './modules/layout/layoutGetAxisIdDimensionIdsObject'
 export { layoutGetDimension } from './modules/layout/layoutGetDimension'
-export {
-    layoutGetDimensionItems,
-} from './modules/layout/layoutGetDimensionItems'
+export { layoutGetDimensionItems } from './modules/layout/layoutGetDimensionItems'
 export { layoutReplaceDimension } from './modules/layout/layoutReplaceDimension'
-export {
-    layoutGetDimensionIdItemIdsObject,
-} from './modules/layout/layoutGetDimensionIdItemIdsObject'
+export { layoutGetDimensionIdItemIdsObject } from './modules/layout/layoutGetDimensionIdItemIdsObject'
 export { layoutHasDataDimension } from './modules/layout/layoutHasDataDimension'
 export { layoutHasDimension } from './modules/layout/layoutHasDimension'
-export {
-    layoutHasDynamicDimension,
-} from './modules/layout/layoutHasDynamicDimension'
-export {
-    layoutHasPeriodDimension,
-} from './modules/layout/layoutHasPeriodDimension'
+export { layoutHasDynamicDimension } from './modules/layout/layoutHasDynamicDimension'
+export { layoutHasPeriodDimension } from './modules/layout/layoutHasPeriodDimension'
 
 export {
     AXIS,
