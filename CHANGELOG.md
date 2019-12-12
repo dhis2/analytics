@@ -1,3 +1,10 @@
+## [2.6.20](https://github.com/dhis2/analytics/compare/v2.6.19...v2.6.20) (2019-12-12)
+
+
+### Bug Fixes
+
+* cli-style commit hooks ([#183](https://github.com/dhis2/analytics/issues/183)) ([a784e42](https://github.com/dhis2/analytics/commit/a784e426762734dcae61f9ca9bc6e4ea61eafd24))
+
 ## [2.6.19](https://github.com/dhis2/analytics/compare/v2.6.18...v2.6.19) (2019-12-11)
 
 
