@@ -12,21 +12,19 @@ import { DIMENSION_ID_DATA } from '../modules/fixedDimensions'
 import { isDualAxisType } from '../modules/visTypes'
 import { getAxisName } from '../modules/axis'
 
-export const shouldHaveDualAxisOption = ({
-    dimensionId,
-    currentAxisId,
-    visType,
-    numberOfDimensionItems,
-}) =>
+const canHaveDualAxisOption = (dimensionId, currentAxisId, visType) =>
     Boolean(
         dimensionId === DIMENSION_ID_DATA &&
             currentAxisId === AXIS_ID_COLUMNS &&
-            isDualAxisType(visType) &&
-            numberOfDimensionItems > 1
+            isDualAxisType(visType)
     )
 
-const getDualAxisItem = (dimensionId, onClick) => (
-    <MenuItem key={`dual-axis-${dimensionId}`} onClick={onClick}>
+const getDualAxisItem = (dimensionId, numberOfDimensionItems, onClick) => (
+    <MenuItem
+        key={`dual-axis-${dimensionId}`}
+        onClick={onClick}
+        disabled={numberOfDimensionItems <= 1}
+    >
         {i18n.t('Manage axes')}
     </MenuItem>
 )
@@ -57,14 +55,6 @@ export const DimensionMenu = ({
 
     const isDimensionInLayout = !!currentAxisId
 
-    // dual axis item
-    const hasDualAxis = shouldHaveDualAxisOption({
-        dimensionId,
-        currentAxisId,
-        visType,
-        numberOfDimensionItems,
-    })
-
     // add/move to axis item
     const availableAxisIds = getAvailableAxes(visType)
 
@@ -73,9 +63,9 @@ export const DimensionMenu = ({
     )
 
     // create menu items
-    if (hasDualAxis) {
+    if (canHaveDualAxisOption(dimensionId, currentAxisId, visType)) {
         menuItems.push(
-            getDualAxisItem(dimensionId, () => {
+            getDualAxisItem(dimensionId, numberOfDimensionItems, () => {
                 dualAxisItemHandler()
                 onClose()
             })
