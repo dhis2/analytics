@@ -66,8 +66,8 @@ export const DimensionMenu = ({
                     dualAxisItemHandler()
                     onClose()
                 }}
-                onMouseOver={setTooltipAnchorEl(event.currentTarget)}
-                onMouseLeave={setTooltipAnchorEl(null)}
+                onMouseOver={() => setTooltipAnchorEl(event.currentTarget)}
+                onMouseLeave={() => setTooltipAnchorEl(null)}
                 disabled={numberOfDimensionItems <= 1}
             >
                 {i18n.t('Manage axes')}
