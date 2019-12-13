@@ -1,16 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Divider from '@material-ui/core/Divider'
 import Menu from '@material-ui/core/Menu'
 import MenuItem from '@material-ui/core/MenuItem'
 import Zoom from '@material-ui/core/Zoom'
 import i18n from '@dhis2/d2-i18n'
 import PropTypes from 'prop-types'
+import Paper from '@material-ui/core/Paper'
+import Popper from '@material-ui/core/Popper'
 
 import { getAvailableAxes } from '../modules/layoutUiRules'
 import { AXIS_ID_COLUMNS } from '../modules/layout/axis'
 import { DIMENSION_ID_DATA } from '../modules/fixedDimensions'
 import { isDualAxisType } from '../modules/visTypes'
 import { getAxisName } from '../modules/axis'
+import { styles } from './DimensionsPanel/List/styles/RecommendedIcon.style' //TODO: Create own styles file
 
 const canHaveDualAxisOption = (dimensionId, currentAxisId, visType) =>
     Boolean(
@@ -18,16 +21,6 @@ const canHaveDualAxisOption = (dimensionId, currentAxisId, visType) =>
             currentAxisId === AXIS_ID_COLUMNS &&
             isDualAxisType(visType)
     )
-
-const getDualAxisItem = (dimensionId, numberOfDimensionItems, onClick) => (
-    <MenuItem
-        key={`dual-axis-${dimensionId}`}
-        onClick={onClick}
-        disabled={numberOfDimensionItems <= 1}
-    >
-        {i18n.t('Manage axes')}
-    </MenuItem>
-)
 
 const getAxisItemLabelPrefix = isDimensionInLayout =>
     isDimensionInLayout ? 'Move to' : 'Add to'
@@ -51,6 +44,8 @@ export const DimensionMenu = ({
     anchorEl,
     onClose,
 }) => {
+    const [tooltipAnchorEl, setTooltipAnchorEl] = useState(null)
+
     const menuItems = []
 
     const isDimensionInLayout = !!currentAxisId
@@ -65,10 +60,29 @@ export const DimensionMenu = ({
     // create menu items
     if (canHaveDualAxisOption(dimensionId, currentAxisId, visType)) {
         menuItems.push(
-            getDualAxisItem(dimensionId, numberOfDimensionItems, () => {
-                dualAxisItemHandler()
-                onClose()
-            })
+            <MenuItem
+                key={`dual-axis-${dimensionId}`}
+                onClick={() => {
+                    dualAxisItemHandler()
+                    onClose()
+                }}
+                onMouseOver={setTooltipAnchorEl(event.currentTarget)}
+                onMouseLeave={setTooltipAnchorEl(null)}
+                disabled={numberOfDimensionItems <= 1}
+            >
+                {i18n.t('Manage axes')}
+                {tooltipAnchorEl && (
+                    <Popper
+                        anchorEl={tooltipAnchorEl}
+                        open={Boolean(tooltipAnchorEl)}
+                        placement="bottom"
+                    >
+                        <Paper style={styles.toolTip}>
+                            {i18n.t('Requires 2 or more data items')}
+                        </Paper>
+                    </Popper>
+                )}
+            </MenuItem>
         )
 
         // divider
