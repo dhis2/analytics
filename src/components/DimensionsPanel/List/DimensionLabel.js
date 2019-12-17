@@ -8,7 +8,7 @@ export class DimensionLabel extends Component {
         id: PropTypes.string.isRequired,
         isDeactivated: PropTypes.bool.isRequired,
         onClick: PropTypes.func.isRequired,
-        children: PropTypes.object,
+        children: PropTypes.array,
     }
 
     onLabelClick = () => {
