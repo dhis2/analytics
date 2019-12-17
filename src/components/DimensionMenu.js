@@ -45,16 +45,6 @@ const getDualAxisMenuItemLabel = (
 }
 
 export class DimensionMenu extends Component {
-    state = { tooltipAnchorEl: null }
-
-    onMouseOver = event => {
-        this.setState({ tooltipAnchorEl: event.currentTarget })
-    }
-
-    onMouseExit = () => {
-        this.setState({ tooltipAnchorEl: null })
-    }
-
     render() {
         const {
             dimensionId,
@@ -86,8 +76,6 @@ export class DimensionMenu extends Component {
                     dualAxisItemHandler()
                     onClose()
                 }}
-                onMouseOver={this.onMouseOver}
-                onMouseLeave={this.onMouseExit}
                 disabled={isDisabled}
             >
                 <div>{i18n.t('Manage chart axes')}</div>
