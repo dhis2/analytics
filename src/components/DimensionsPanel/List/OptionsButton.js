@@ -11,7 +11,7 @@ export const OptionsButton = ({ style, onClick }) => (
 )
 
 OptionsButton.propTypes = {
-    style: PropTypes.string,
+    style: PropTypes.object,
     onClick: PropTypes.func,
 }
 
