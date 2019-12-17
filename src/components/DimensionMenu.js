@@ -49,6 +49,7 @@ export const DimensionMenu = ({
     currentAxisId,
     visType,
     numberOfDimensionItems,
+    assignedCategoriesItemHandler,
     dualAxisItemHandler,
     axisItemHandler,
     removeItemHandler,
@@ -79,8 +80,22 @@ export const DimensionMenu = ({
         </MenuItem>
     )
 
-    // Create dual axis menu item
+    const getAssignedCategoriesItem = isDisabled => (
+        <MenuItem
+            key={`assigned-categories-item-${dimensionId}`}
+            onClick={() => {
+                assignedCategoriesItemHandler()
+                onClose()
+            }}
+            disabled={isDisabled}
+        >
+            <div>{i18n.t('Include categories in layout')}</div>
+        </MenuItem>
+    )
+
+    // Create dual axis menu item & assigned categories
     if (dimensionId === DIMENSION_ID_DATA) {
+        // Dual axis
         if (
             currentAxisId === AXIS_ID_COLUMNS &&
             isDualAxisType(visType) &&
@@ -104,6 +119,25 @@ export const DimensionMenu = ({
                 </Tooltip>
             )
         }
+
+        // Assigned categories
+        if (numberOfDimensionItems > 0) {
+            menuItems.push(getAssignedCategoriesItem(false))
+        } else {
+            menuItems.push(
+                <Tooltip
+                    key={`assigned-categories-tooltip-${dimensionId}`}
+                    title={i18n.t(
+                        'Only available when data elements are selected'
+                    )}
+                    aria-label="disabled"
+                    placement="top-start"
+                >
+                    <div>{getAssignedCategoriesItem(true)}</div>
+                </Tooltip>
+            )
+        }
+
         // divider
         if (applicableAxisIds.length) {
             menuItems.push(getDividerItem('dual-axis-item-divider'))
@@ -159,6 +193,7 @@ export const DimensionMenu = ({
 }
 
 DimensionMenu.propTypes = {
+    assignedCategoriesItemHandler: PropTypes.func.isRequired,
     axisItemHandler: PropTypes.func.isRequired,
     dualAxisItemHandler: PropTypes.func.isRequired,
     numberOfDimensionItems: PropTypes.number.isRequired,
