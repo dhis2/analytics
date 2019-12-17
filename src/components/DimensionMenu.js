@@ -10,15 +10,8 @@ import Tooltip from '@material-ui/core/Tooltip'
 import { getAvailableAxes } from '../modules/layoutUiRules'
 import { AXIS_ID_COLUMNS } from '../modules/layout/axis'
 import { DIMENSION_ID_DATA } from '../modules/fixedDimensions'
-import { isDualAxisType } from '../modules/visTypes'
+import { isDualAxisType, getDisplayNameByVisType } from '../modules/visTypes'
 import { getAxisName } from '../modules/axis'
-
-const canHaveDualAxisOption = (dimensionId, currentAxisId, visType) =>
-    Boolean(
-        dimensionId === DIMENSION_ID_DATA &&
-            currentAxisId === AXIS_ID_COLUMNS &&
-            isDualAxisType(visType)
-    )
 
 const getAxisItemLabelPrefix = isDimensionInLayout =>
     isDimensionInLayout ? 'Move to' : 'Add to'
@@ -30,6 +23,26 @@ const getRemoveMenuItem = onClick => (
 )
 
 const getDividerItem = key => <Divider light key={key} />
+
+const getDualAxisMenuItemLabel = (
+    currentAxisId,
+    visType,
+    numberOfDimensionItems
+) => {
+    let label
+
+    if (!isDualAxisType(visType)) {
+        label = i18n.t('Not available for {{visType}}', {
+            visType: getDisplayNameByVisType(visType),
+        })
+    } else if (numberOfDimensionItems < 2) {
+        label = i18n.t('Requires 2 or more data items')
+    } else if (currentAxisId !== AXIS_ID_COLUMNS) {
+        label = i18n.t('Only available when data is in Series')
+    }
+
+    return label
+}
 
 export class DimensionMenu extends Component {
     state = { tooltipAnchorEl: null }
@@ -66,7 +79,7 @@ export class DimensionMenu extends Component {
             axisId => axisId !== currentAxisId
         )
 
-        const dualAxisMenuItem = () => (
+        const getDualAxisMenuItem = isDisabled => (
             <MenuItem
                 key={`dual-axis-item-${dimensionId}`}
                 onClick={() => {
@@ -75,29 +88,37 @@ export class DimensionMenu extends Component {
                 }}
                 onMouseOver={this.onMouseOver}
                 onMouseLeave={this.onMouseExit}
-                disabled={numberOfDimensionItems <= 1}
+                disabled={isDisabled}
             >
-                <div>{i18n.t('Manage axes')}</div>
+                <div>{i18n.t('Manage chart axes')}</div>
             </MenuItem>
         )
 
-        // create menu items
-        if (canHaveDualAxisOption(dimensionId, currentAxisId, visType)) {
-            menuItems.push(
-                numberOfDimensionItems <= 1 ? (
+        // Create dual axis menu item
+        if (dimensionId === DIMENSION_ID_DATA) {
+            if (
+                currentAxisId === AXIS_ID_COLUMNS &&
+                isDualAxisType(visType) &&
+                numberOfDimensionItems >= 2
+            ) {
+                menuItems.push(getDualAxisMenuItem(false))
+            } else {
+                const label = getDualAxisMenuItemLabel(
+                    currentAxisId,
+                    visType,
+                    numberOfDimensionItems
+                )
+                menuItems.push(
                     <Tooltip
                         key={`dual-axis-tooltip-${dimensionId}`}
-                        title={i18n.t('Requires 2 or more data items')}
+                        title={label}
                         aria-label="disabled"
-                        placement="top-end"
+                        placement="top-start"
                     >
-                        <div>{dualAxisMenuItem()}</div>
+                        <div>{getDualAxisMenuItem(true)}</div>
                     </Tooltip>
-                ) : (
-                    dualAxisMenuItem()
                 )
-            )
-
+            }
             // divider
             if (applicableAxisIds.length) {
                 menuItems.push(getDividerItem('dual-axis-item-divider'))
