@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import Divider from '@material-ui/core/Divider'
 import Menu from '@material-ui/core/Menu'
 import MenuItem from '@material-ui/core/MenuItem'
@@ -44,126 +44,118 @@ const getDualAxisMenuItemLabel = (
     return label
 }
 
-export class DimensionMenu extends Component {
-    render() {
-        const {
-            dimensionId,
-            currentAxisId,
-            visType,
-            numberOfDimensionItems,
-            dualAxisItemHandler,
-            axisItemHandler,
-            removeItemHandler,
-            anchorEl,
-            onClose,
-        } = this.props
+export const DimensionMenu = ({
+    dimensionId,
+    currentAxisId,
+    visType,
+    numberOfDimensionItems,
+    dualAxisItemHandler,
+    axisItemHandler,
+    removeItemHandler,
+    anchorEl,
+    onClose,
+}) => {
+    const menuItems = []
 
-        const menuItems = []
+    const isDimensionInLayout = !!currentAxisId
 
-        const isDimensionInLayout = !!currentAxisId
+    // add/move to axis item
+    const availableAxisIds = getAvailableAxes(visType)
 
-        // add/move to axis item
-        const availableAxisIds = getAvailableAxes(visType)
+    const applicableAxisIds = availableAxisIds.filter(
+        axisId => axisId !== currentAxisId
+    )
 
-        const applicableAxisIds = availableAxisIds.filter(
-            axisId => axisId !== currentAxisId
-        )
+    const getDualAxisMenuItem = isDisabled => (
+        <MenuItem
+            key={`dual-axis-item-${dimensionId}`}
+            onClick={() => {
+                dualAxisItemHandler()
+                onClose()
+            }}
+            disabled={isDisabled}
+        >
+            <div>{i18n.t('Manage chart axes')}</div>
+        </MenuItem>
+    )
 
-        const getDualAxisMenuItem = isDisabled => (
+    // Create dual axis menu item
+    if (dimensionId === DIMENSION_ID_DATA) {
+        if (
+            currentAxisId === AXIS_ID_COLUMNS &&
+            isDualAxisType(visType) &&
+            numberOfDimensionItems >= 2
+        ) {
+            menuItems.push(getDualAxisMenuItem(false))
+        } else {
+            const label = getDualAxisMenuItemLabel(
+                currentAxisId,
+                visType,
+                numberOfDimensionItems
+            )
+            menuItems.push(
+                <Tooltip
+                    key={`dual-axis-tooltip-${dimensionId}`}
+                    title={label}
+                    aria-label="disabled"
+                    placement="top-start"
+                >
+                    <div>{getDualAxisMenuItem(true)}</div>
+                </Tooltip>
+            )
+        }
+        // divider
+        if (applicableAxisIds.length) {
+            menuItems.push(getDividerItem('dual-axis-item-divider'))
+        }
+    }
+
+    menuItems.push(
+        ...applicableAxisIds.map(axisId => (
             <MenuItem
-                key={`dual-axis-item-${dimensionId}`}
+                key={`${dimensionId}-to-${axisId}`}
                 onClick={() => {
-                    dualAxisItemHandler()
+                    axisItemHandler(dimensionId, axisId, numberOfDimensionItems)
                     onClose()
                 }}
-                disabled={isDisabled}
             >
-                <div>{i18n.t('Manage chart axes')}</div>
+                {i18n.t(
+                    `${getAxisItemLabelPrefix(
+                        isDimensionInLayout
+                    )} ${getAxisName(axisId)}`
+                )}
             </MenuItem>
-        )
+        ))
+    )
 
-        // Create dual axis menu item
-        if (dimensionId === DIMENSION_ID_DATA) {
-            if (
-                currentAxisId === AXIS_ID_COLUMNS &&
-                isDualAxisType(visType) &&
-                numberOfDimensionItems >= 2
-            ) {
-                menuItems.push(getDualAxisMenuItem(false))
-            } else {
-                const label = getDualAxisMenuItemLabel(
-                    currentAxisId,
-                    visType,
-                    numberOfDimensionItems
-                )
-                menuItems.push(
-                    <Tooltip
-                        key={`dual-axis-tooltip-${dimensionId}`}
-                        title={label}
-                        aria-label="disabled"
-                        placement="top-start"
-                    >
-                        <div>{getDualAxisMenuItem(true)}</div>
-                    </Tooltip>
-                )
-            }
-            // divider
-            if (applicableAxisIds.length) {
-                menuItems.push(getDividerItem('dual-axis-item-divider'))
-            }
+    // remove item
+    if (isDimensionInLayout) {
+        // divider
+        if (applicableAxisIds.length) {
+            menuItems.push(getDividerItem('remove-item-divider'))
         }
 
         menuItems.push(
-            ...applicableAxisIds.map(axisId => (
-                <MenuItem
-                    key={`${dimensionId}-to-${axisId}`}
-                    onClick={() => {
-                        axisItemHandler(
-                            dimensionId,
-                            axisId,
-                            numberOfDimensionItems
-                        )
-                        onClose()
-                    }}
-                >
-                    {i18n.t(
-                        `${getAxisItemLabelPrefix(
-                            isDimensionInLayout
-                        )} ${getAxisName(axisId)}`
-                    )}
-                </MenuItem>
-            ))
-        )
-
-        // remove item
-        if (isDimensionInLayout) {
-            // divider
-            if (applicableAxisIds.length) {
-                menuItems.push(getDividerItem('remove-item-divider'))
-            }
-
-            menuItems.push(
-                getRemoveMenuItem(() => {
-                    removeItemHandler(dimensionId)
-                    onClose()
-                })
-            )
-        }
-
-        return (
-            <Menu
-                id={dimensionId}
-                anchorEl={anchorEl}
-                open={Boolean(anchorEl)}
-                onClose={onClose}
-                onExited={onClose}
-                transitionDuration={{ enter: 50, exit: 0 }}
-                TransitionComponent={Zoom}
-            >
-                {menuItems}
-            </Menu>
+            getRemoveMenuItem(() => {
+                removeItemHandler(dimensionId)
+                onClose()
+            })
         )
     }
+
+    return (
+        <Menu
+            id={dimensionId}
+            anchorEl={anchorEl}
+            open={Boolean(anchorEl)}
+            onClose={onClose}
+            onExited={onClose}
+            transitionDuration={{ enter: 50, exit: 0 }}
+            TransitionComponent={Zoom}
+        >
+            {menuItems}
+        </Menu>
+    )
 }
 
 DimensionMenu.propTypes = {
