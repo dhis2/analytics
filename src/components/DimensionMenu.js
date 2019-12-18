@@ -52,7 +52,8 @@ export const DimensionMenu = ({
     visType,
     numberOfDimensionItems,
     assignedCategoriesItemHandler,
-    // hasAssignedCategoriesItemInLayout,
+    // isAssignedCategoriesInLayout,
+    assignedCategoriesItemLabel,
     dualAxisItemHandler,
     axisItemHandler,
     removeItemHandler,
@@ -85,8 +86,8 @@ export const DimensionMenu = ({
     )
 
     // Create dual axis menu item & assigned categories
-    if (dimensionId === DIMENSION_ID_DATA) {
-        // Dual axis
+    // Dual axis
+    if (dimensionId === DIMENSION_ID_DATA && dualAxisItemHandler) {
         if (
             currentAxisId === AXIS_ID_COLUMNS &&
             isDualAxisType(visType) &&
@@ -111,8 +112,14 @@ export const DimensionMenu = ({
                 </Tooltip>
             )
         }
+    }
 
-        // Assigned categories
+    // Assigned categories
+    if (
+        dimensionId === DIMENSION_ID_DATA &&
+        assignedCategoriesItemHandler &&
+        assignedCategoriesItemLabel
+    ) {
         menuItems.push(
             <MenuItem
                 key={`assigned-categories-item-${dimensionId}`}
@@ -121,13 +128,13 @@ export const DimensionMenu = ({
                     onClose()
                 }}
             >
-                <div>{i18n.t('Include categories in layout')}</div>
+                <div>{assignedCategoriesItemLabel}</div>
             </MenuItem>
         )
-
-        // divider
-        menuItems.push(getDividerItem('dual-axis-item-divider'))
     }
+
+    // divider
+    menuItems.length && menuItems.push(getDividerItem('dual-axis-item-divider'))
 
     menuItems.push(
         ...applicableAxisIds.map(axisId => (
@@ -178,16 +185,17 @@ export const DimensionMenu = ({
 }
 
 DimensionMenu.propTypes = {
-    assignedCategoriesItemHandler: PropTypes.func.isRequired,
     axisItemHandler: PropTypes.func.isRequired,
     classes: PropTypes.object.isRequired,
-    dualAxisItemHandler: PropTypes.func.isRequired,
     numberOfDimensionItems: PropTypes.number.isRequired,
     removeItemHandler: PropTypes.func.isRequired,
     onClose: PropTypes.func.isRequired,
     anchorEl: PropTypes.object,
+    assignedCategoriesItemHandler: PropTypes.func,
+    assignedCategoriesItemLabel: PropTypes.string,
     currentAxisId: PropTypes.string,
     dimensionId: PropTypes.string,
+    dualAxisItemHandler: PropTypes.func,
     visType: PropTypes.string,
 }
 
