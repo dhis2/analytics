@@ -84,31 +84,6 @@ export const DimensionMenu = ({
         </MenuItem>
     )
 
-    const getAssignedCategoriesItem = isDisabled => (
-        <MenuItem
-            key={`assigned-categories-item-${dimensionId}`}
-            onClick={() => {
-                assignedCategoriesItemHandler()
-                onClose()
-            }}
-            disabled={isDisabled}
-        >
-            <div>{i18n.t('Include categories in layout')}</div>
-        </MenuItem>
-    )
-
-    const getTooltip = (key, label, content) => (
-        <Tooltip
-            key={key}
-            title={label}
-            aria-label="disabled"
-            placement="right-start"
-            classes={props.classes}
-        >
-            <div>{content}</div>
-        </Tooltip>
-    )
-
     // Create dual axis menu item & assigned categories
     if (dimensionId === DIMENSION_ID_DATA) {
         // Dual axis
@@ -125,31 +100,33 @@ export const DimensionMenu = ({
                 numberOfDimensionItems
             )
             menuItems.push(
-                getTooltip(
-                    `dual-axis-tooltip-${dimensionId}`,
-                    label,
-                    getDualAxisMenuItem(true)
-                )
+                <Tooltip
+                    key={`dual-axis-tooltip-${dimensionId}`}
+                    title={label}
+                    aria-label="disabled"
+                    placement="right-start"
+                    classes={props.classes}
+                >
+                    <div>{getDualAxisMenuItem(true)}</div>
+                </Tooltip>
             )
         }
 
         // Assigned categories
-        if (numberOfDimensionItems > 0) {
-            menuItems.push(getAssignedCategoriesItem(false))
-        } else {
-            menuItems.push(
-                getTooltip(
-                    `assigned-categories-${dimensionId}`,
-                    i18n.t('Only available when data elements are selected'),
-                    getAssignedCategoriesItem(true)
-                )
-            )
-        }
+        menuItems.push(
+            <MenuItem
+                key={`assigned-categories-item-${dimensionId}`}
+                onClick={() => {
+                    assignedCategoriesItemHandler()
+                    onClose()
+                }}
+            >
+                <div>{i18n.t('Include categories in layout')}</div>
+            </MenuItem>
+        )
 
         // divider
-        if (applicableAxisIds.length) {
-            menuItems.push(getDividerItem('dual-axis-item-divider'))
-        }
+        menuItems.push(getDividerItem('dual-axis-item-divider'))
     }
 
     menuItems.push(
