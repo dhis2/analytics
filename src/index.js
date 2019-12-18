@@ -28,6 +28,7 @@ export {
     DIMENSION_ID_DATA,
     DIMENSION_ID_PERIOD,
     DIMENSION_ID_ORGUNIT,
+    DIMENSION_ID_ASSIGNED_CATEGORIES,
     FIXED_DIMENSIONS,
     filterOutFixedDimensions,
 } from './modules/fixedDimensions'

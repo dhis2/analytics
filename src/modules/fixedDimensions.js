@@ -6,6 +6,7 @@ import OrgUnitIcon from '../assets/OrgUnitIcon'
 export const DIMENSION_ID_DATA = 'dx'
 export const DIMENSION_ID_PERIOD = 'pe'
 export const DIMENSION_ID_ORGUNIT = 'ou'
+export const DIMENSION_ID_ASSIGNED_CATEGORIES = 'co'
 
 export const FIXED_DIMENSIONS = {
     [DIMENSION_ID_DATA]: {
@@ -26,8 +27,15 @@ export const FIXED_DIMENSIONS = {
         iconName: 'OrgUnitIcon',
         icon: OrgUnitIcon,
     },
+    [DIMENSION_ID_ASSIGNED_CATEGORIES]: {
+        id: DIMENSION_ID_ASSIGNED_CATEGORIES,
+        name: i18n.t('Assigned Categories'),
+        iconName: 'OrgUnitIcon', // TODO: Add icon for AC
+        icon: OrgUnitIcon,
+    },
 }
 
+// TODO: Consider removing DIMENSION_ID_ASSIGNED_CATEGORIES from this result
 export const filterOutFixedDimensions = dimensionIds =>
     dimensionIds.filter(
         dimensionId => !Object.keys(FIXED_DIMENSIONS).includes(dimensionId)
