@@ -6,6 +6,8 @@ import Zoom from '@material-ui/core/Zoom'
 import i18n from '@dhis2/d2-i18n'
 import PropTypes from 'prop-types'
 import Tooltip from '@material-ui/core/Tooltip'
+import { styles } from './styles/DimensionMenu.style'
+import { withStyles } from '@material-ui/core/styles'
 
 import { getAvailableAxes } from '../modules/layoutUiRules'
 import { AXIS_ID_COLUMNS } from '../modules/layout/axis'
@@ -50,11 +52,13 @@ export const DimensionMenu = ({
     visType,
     numberOfDimensionItems,
     assignedCategoriesItemHandler,
+    // hasAssignedCategoriesItemInLayout,
     dualAxisItemHandler,
     axisItemHandler,
     removeItemHandler,
     anchorEl,
     onClose,
+    ...props
 }) => {
     const menuItems = []
 
@@ -93,6 +97,18 @@ export const DimensionMenu = ({
         </MenuItem>
     )
 
+    const getTooltip = (key, label, content) => (
+        <Tooltip
+            key={key}
+            title={label}
+            aria-label="disabled"
+            placement="right-start"
+            classes={props.classes}
+        >
+            <div>{content}</div>
+        </Tooltip>
+    )
+
     // Create dual axis menu item & assigned categories
     if (dimensionId === DIMENSION_ID_DATA) {
         // Dual axis
@@ -109,14 +125,11 @@ export const DimensionMenu = ({
                 numberOfDimensionItems
             )
             menuItems.push(
-                <Tooltip
-                    key={`dual-axis-tooltip-${dimensionId}`}
-                    title={label}
-                    aria-label="disabled"
-                    placement="top-start"
-                >
-                    <div>{getDualAxisMenuItem(true)}</div>
-                </Tooltip>
+                getTooltip(
+                    `dual-axis-tooltip-${dimensionId}`,
+                    label,
+                    getDualAxisMenuItem(true)
+                )
             )
         }
 
@@ -125,16 +138,11 @@ export const DimensionMenu = ({
             menuItems.push(getAssignedCategoriesItem(false))
         } else {
             menuItems.push(
-                <Tooltip
-                    key={`assigned-categories-tooltip-${dimensionId}`}
-                    title={i18n.t(
-                        'Only available when data elements are selected'
-                    )}
-                    aria-label="disabled"
-                    placement="top-start"
-                >
-                    <div>{getAssignedCategoriesItem(true)}</div>
-                </Tooltip>
+                getTooltip(
+                    `assigned-categories-${dimensionId}`,
+                    i18n.t('Only available when data elements are selected'),
+                    getAssignedCategoriesItem(true)
+                )
             )
         }
 
@@ -195,6 +203,7 @@ export const DimensionMenu = ({
 DimensionMenu.propTypes = {
     assignedCategoriesItemHandler: PropTypes.func.isRequired,
     axisItemHandler: PropTypes.func.isRequired,
+    classes: PropTypes.object.isRequired,
     dualAxisItemHandler: PropTypes.func.isRequired,
     numberOfDimensionItems: PropTypes.number.isRequired,
     removeItemHandler: PropTypes.func.isRequired,
@@ -205,4 +214,4 @@ DimensionMenu.propTypes = {
     visType: PropTypes.string,
 }
 
-export default DimensionMenu
+export default withStyles(styles)(DimensionMenu)
