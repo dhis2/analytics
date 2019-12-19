@@ -9,7 +9,7 @@ export const DIMENSION_ID_PERIOD = 'pe'
 export const DIMENSION_ID_ORGUNIT = 'ou'
 export const DIMENSION_ID_ASSIGNED_CATEGORIES = 'co'
 
-export const FIXED_DIMENSIONS = {
+const FIXED_DIMENSIONS = {
     [DIMENSION_ID_DATA]: {
         id: DIMENSION_ID_DATA,
         name: i18n.t('Data'),
@@ -42,7 +42,9 @@ export const filterOutFixedDimensions = dimensionIds =>
         dimensionId => !Object.keys(FIXED_DIMENSIONS).includes(dimensionId)
     )
 
-// TODO: Implement getter method and stop exporting the FIXED_DIMENSIONS object
-
 export const getFixedDimensionProp = (dimensionId, propName) =>
     (FIXED_DIMENSIONS[dimensionId] || {})[propName]
+
+export const getDimensionById = dimensionId => FIXED_DIMENSIONS[dimensionId]
+
+export const getFixedDimensions = () => FIXED_DIMENSIONS

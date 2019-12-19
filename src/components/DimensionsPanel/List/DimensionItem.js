@@ -7,7 +7,7 @@ import DimensionLabel from './DimensionLabel'
 import RecommendedIcon from './RecommendedIcon'
 import OptionsButton from './OptionsButton'
 import DynamicDimensionIcon from '../../../assets/DynamicDimensionIcon'
-import { FIXED_DIMENSIONS } from '../../../modules/fixedDimensions'
+import { getFixedDimensionProp } from '../../../modules/fixedDimensions'
 import { styles } from './styles/DimensionItem.style'
 
 export class DimensionItem extends Component {
@@ -24,14 +24,12 @@ export class DimensionItem extends Component {
     }
 
     getDimensionIcon = () => {
-        const fixedDimension = FIXED_DIMENSIONS[this.props.id]
-
-        if (fixedDimension) {
-            const Icon = fixedDimension.icon
-            return <Icon style={styles.fixedDimensionIcon} />
-        }
-
-        return <DynamicDimensionIcon style={styles.dynamicDimensionIcon} />
+        const Icon = getFixedDimensionProp(this.props.id, 'icon')
+        return Icon ? (
+            <Icon style={styles.fixedDimensionIcon} />
+        ) : (
+            <DynamicDimensionIcon style={styles.dynamicDimensionIcon} />
+        )
     }
 
     getDimensionType = () => {
