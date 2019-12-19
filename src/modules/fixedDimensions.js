@@ -33,11 +33,16 @@ export const FIXED_DIMENSIONS = {
         name: i18n.t('Assigned Categories'),
         iconName: 'AssignedCategoriesIcon',
         icon: AssignedCategoriesIcon,
+        noItems: true,
     },
 }
 
-// TODO: Consider removing DIMENSION_ID_ASSIGNED_CATEGORIES from this result
 export const filterOutFixedDimensions = dimensionIds =>
     dimensionIds.filter(
         dimensionId => !Object.keys(FIXED_DIMENSIONS).includes(dimensionId)
     )
+
+// TODO: Implement getter method and stop exporting the FIXED_DIMENSIONS object
+
+export const getFixedDimensionProp = (dimensionId, propName) =>
+    (FIXED_DIMENSIONS[dimensionId] || {})[propName]
