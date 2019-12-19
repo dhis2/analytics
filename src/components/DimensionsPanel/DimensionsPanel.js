@@ -55,7 +55,7 @@ export class DimensionsPanel extends Component {
 }
 
 DimensionsPanel.propTypes = {
-    dimensions: PropTypes.object.isRequired,
+    dimensions: PropTypes.array.isRequired,
     disabledDimension: PropTypes.func,
     lockedDimension: PropTypes.func,
     recommendedDimension: PropTypes.func,
