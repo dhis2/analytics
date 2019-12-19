@@ -1,3 +1,10 @@
+# [2.7.0](https://github.com/dhis2/analytics/compare/v2.6.20...v2.7.0) (2019-12-17)
+
+
+### Features
+
+* always show dual axis DHIS2-8009 ([#184](https://github.com/dhis2/analytics/issues/184)) ([ff2ab52](https://github.com/dhis2/analytics/commit/ff2ab52dd654a3bd685a7b8340e370ba1eaba313))
+
 ## [2.6.20](https://github.com/dhis2/analytics/compare/v2.6.19...v2.6.20) (2019-12-12)
 
 
