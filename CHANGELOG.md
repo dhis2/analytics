@@ -1,3 +1,10 @@
+## [2.7.1](https://github.com/dhis2/analytics/compare/v2.7.0...v2.7.1) (2019-12-19)
+
+
+### Bug Fixes
+
+* export apiFetchRecommendedIds ([#185](https://github.com/dhis2/analytics/issues/185)) ([b1c373e](https://github.com/dhis2/analytics/commit/b1c373e7d9722f16943417f84b1d7de918a694bc))
+
 # [2.7.0](https://github.com/dhis2/analytics/compare/v2.6.20...v2.7.0) (2019-12-17)
 
 
