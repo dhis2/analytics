@@ -2,6 +2,7 @@ import i18n from '@dhis2/d2-i18n'
 import DataIcon from '../assets/DataIcon'
 import PeriodIcon from '../assets/PeriodIcon'
 import OrgUnitIcon from '../assets/OrgUnitIcon'
+import AssignedCategoriesIcon from '../assets/AssignedCategoriesIcon'
 
 export const DIMENSION_ID_DATA = 'dx'
 export const DIMENSION_ID_PERIOD = 'pe'
@@ -30,8 +31,8 @@ export const FIXED_DIMENSIONS = {
     [DIMENSION_ID_ASSIGNED_CATEGORIES]: {
         id: DIMENSION_ID_ASSIGNED_CATEGORIES,
         name: i18n.t('Assigned Categories'),
-        iconName: 'OrgUnitIcon', // TODO: Add icon for AC
-        icon: OrgUnitIcon,
+        iconName: 'AssignedCategoriesIcon',
+        icon: AssignedCategoriesIcon,
     },
 }
 
