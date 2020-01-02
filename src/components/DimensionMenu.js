@@ -137,7 +137,8 @@ export const DimensionMenu = ({
     }
 
     // divider
-    menuItems.length && menuItems.push(getDividerItem('dual-axis-item-divider'))
+    menuItems.length &&
+        menuItems.push(getDividerItem('assigned-categories-divider'))
 
     menuItems.push(
         ...applicableAxisIds.map(axisId => (
