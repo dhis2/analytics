@@ -16,7 +16,7 @@ export { default as DimensionMenu } from './components/DimensionMenu'
 
 // Api
 
-export { apiFetchDimensions } from './api/dimensions'
+export { apiFetchDimensions, apiFetchRecommendedIds } from './api/dimensions'
 
 // Modules: axis
 

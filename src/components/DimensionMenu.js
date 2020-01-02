@@ -85,9 +85,8 @@ export const DimensionMenu = ({
         </MenuItem>
     )
 
-    // Create dual axis menu item & assigned categories
-    // Dual axis
-    if (dimensionId === DIMENSION_ID_DATA && dualAxisItemHandler) {
+    // Create dual axis menu item
+    if (dimensionId === DIMENSION_ID_DATA) {
         if (
             currentAxisId === AXIS_ID_COLUMNS &&
             isDualAxisType(visType) &&
@@ -111,6 +110,10 @@ export const DimensionMenu = ({
                     <div>{getDualAxisMenuItem(true)}</div>
                 </Tooltip>
             )
+        }
+        // divider
+        if (applicableAxisIds.length) {
+            menuItems.push(getDividerItem('dual-axis-item-divider'))
         }
     }
 
