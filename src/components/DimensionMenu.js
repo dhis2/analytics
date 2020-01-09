@@ -152,6 +152,9 @@ export class DimensionMenu extends Component {
                                 submenuAnchorEl: event.currentTarget,
                             })
                         }
+                        disabled={
+                            !assignedCategoriesAvailableDestinations.length
+                        }
                     >
                         <div>{assignedCategoriesItemLabel}</div>
                         <ArrowRightIcon />
