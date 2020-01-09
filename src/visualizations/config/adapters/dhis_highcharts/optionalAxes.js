@@ -1,20 +1,20 @@
-export const SERIES_ITEM_SERIES = 'series'
-export const SERIES_ITEM_AXIS = 'axis'
+export const OPTIONAL_AXES_DIMENSIONAL_ITEM = 'dimensionalItem'
+export const OPTIONAL_AXES_AXIS = 'axis'
 
 // returns:
 // {
 //     a: 1,
 //     b: 1,
 // }
-export function getIdAxisMap(seriesItems) {
-    return seriesItems.reduce((map, item) => {
-        map[item[SERIES_ITEM_SERIES]] = item[SERIES_ITEM_AXIS]
+export function getIdAxisMap(optionalAxes) {
+    return optionalAxes.reduce((map, item) => {
+        map[item[OPTIONAL_AXES_DIMENSIONAL_ITEM]] = item[OPTIONAL_AXES_AXIS]
         return map
     }, {})
 }
 
-export function getFullIdAxisMap(seriesItems, series) {
-    const idAxisMap = getIdAxisMap(seriesItems)
+export function getFullIdAxisMap(optionalAxes, series) {
+    const idAxisMap = getIdAxisMap(optionalAxes)
 
     // adds first axis ids to seriesAxisMap
     series.forEach(s => {
@@ -27,13 +27,13 @@ export function getFullIdAxisMap(seriesItems, series) {
 }
 
 // returns: true or false
-export function hasExtraAxis(seriesItems) {
-    return Boolean(seriesItems.length)
+export function hasOptionalAxis(optionalAxes) {
+    return Boolean(optionalAxes.length)
 }
 
 // returns: true or false
-export function hasExtraAxisItems(seriesItems, columns) {
-    const axisIds = Object.keys(getIdAxisMap(seriesItems))
+export function hasOptionalAxisItems(optionalAxes, columns) {
+    const axisIds = Object.keys(getIdAxisMap(optionalAxes))
     const seriesIds = columns.reduce((all, dim) => {
         all.push(...dim.items.map(item => item.id))
         return all
@@ -47,8 +47,8 @@ export function hasExtraAxisItems(seriesItems, columns) {
 //     0: ['a', 'b'],
 //     1: ['c'],
 // }
-export function getAxisIdsMap(seriesItems, series) {
-    const fullIdAxisMap = getFullIdAxisMap(seriesItems, series)
+export function getAxisIdsMap(optionalAxes, series) {
+    const fullIdAxisMap = getFullIdAxisMap(optionalAxes, series)
 
     return Object.entries(fullIdAxisMap).reduce((map, [id, axis]) => {
         if (!(axis in map)) {
