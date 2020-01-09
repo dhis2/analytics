@@ -7,8 +7,6 @@ import Zoom from '@material-ui/core/Zoom'
 import i18n from '@dhis2/d2-i18n'
 import PropTypes from 'prop-types'
 import Tooltip from '@material-ui/core/Tooltip'
-import { styles } from './styles/DimensionMenu.style'
-import { withStyles } from '@material-ui/core/styles'
 
 import { getAvailableAxes } from '../modules/layoutUiRules'
 import { AXIS_ID_COLUMNS, AXIS_ID_FILTERS } from '../modules/layout/axis'
@@ -156,15 +154,19 @@ export class DimensionMenu extends Component {
                         }
                     >
                         <div>{assignedCategoriesItemLabel}</div>
-                        <ArrowRightIcon style={styles.arrowIcon} />
+                        <ArrowRightIcon />
                     </MenuItem>
                 )
 
                 menuItems.push(
                     <Menu
+                        key={`assigned-categories-sub-menu-${dimensionId}`}
                         open={Boolean(this.state.submenuAnchorEl)}
                         anchorEl={this.state.submenuAnchorEl}
-                        anchorOrigin={styles.submenuAnchorOrigin}
+                        anchorOrigin={{
+                            vertical: 'top',
+                            horizontal: 'right',
+                        }}
                         onClose={closeSubMenu}
                         onExited={closeSubMenu}
                     >
@@ -263,12 +265,12 @@ export class DimensionMenu extends Component {
 
 DimensionMenu.propTypes = {
     axisItemHandler: PropTypes.func.isRequired,
-    classes: PropTypes.object.isRequired,
     numberOfDimensionItems: PropTypes.number.isRequired,
     removeItemHandler: PropTypes.func.isRequired,
     onClose: PropTypes.func.isRequired,
     anchorEl: PropTypes.object,
     assignedCategoriesItemHandler: PropTypes.func,
+    classes: PropTypes.object,
     currentAxisId: PropTypes.string,
     dimensionId: PropTypes.string,
     dualAxisItemHandler: PropTypes.func,
@@ -276,4 +278,4 @@ DimensionMenu.propTypes = {
     visType: PropTypes.string,
 }
 
-export default withStyles(styles)(DimensionMenu)
+export default DimensionMenu
