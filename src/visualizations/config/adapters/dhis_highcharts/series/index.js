@@ -2,7 +2,7 @@ import getCumulativeData from './../getCumulativeData'
 import getPie from './pie'
 import getGauge from './gauge'
 import getType from '../type'
-import { getFullIdAxisMap, getAxisIdsMap, hasExtraAxis } from '../optionalAxes'
+import { getFullIdAxisMap, getAxisIdsMap, hasOptionalAxis } from '../optionalAxes'
 import { generateColors } from '../../../../util/colors/gradientColorGenerator'
 import {
     VIS_TYPE_PIE,
@@ -29,7 +29,7 @@ function getColor(colors, index) {
 }
 
 function getIdColorMap(series, layout, extraOptions) {
-    if (hasExtraAxis(layout.optionalAxes)) {
+    if (hasOptionalAxis(layout.optionalAxes)) {
         const axisIdsMap = getAxisIdsMap(layout.optionalAxes, series)
         const theme = extraOptions.multiAxisTheme
 

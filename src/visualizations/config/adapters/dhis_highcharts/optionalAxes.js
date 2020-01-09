@@ -27,12 +27,12 @@ export function getFullIdAxisMap(optionalAxes, series) {
 }
 
 // returns: true or false
-export function hasExtraAxis(optionalAxes) {
+export function hasOptionalAxis(optionalAxes) {
     return Boolean(optionalAxes.length)
 }
 
 // returns: true or false
-export function hasExtraAxisItems(optionalAxes, columns) {
+export function hasOptionalAxisItems(optionalAxes, columns) {
     const axisIds = Object.keys(getIdAxisMap(optionalAxes))
     const seriesIds = columns.reduce((all, dim) => {
         all.push(...dim.items.map(item => item.id))
