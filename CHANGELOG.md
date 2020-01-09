@@ -1,3 +1,10 @@
+## [2.7.2](https://github.com/dhis2/analytics/compare/v2.7.1...v2.7.2) (2020-01-09)
+
+
+### Bug Fixes
+
+* update seriesItems to match backend ([#194](https://github.com/dhis2/analytics/issues/194)) ([b72e96f](https://github.com/dhis2/analytics/commit/b72e96ff877849f5b181bb8dd0c73fdaf5e032dc))
+
 ## [2.7.1](https://github.com/dhis2/analytics/compare/v2.7.0...v2.7.1) (2019-12-19)
 
 
