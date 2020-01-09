@@ -56,8 +56,7 @@ export class DimensionMenu extends Component {
             visType,
             numberOfDimensionItems,
             assignedCategoriesItemHandler,
-            // isAssignedCategoriesInLayout,
-            assignedCategoriesItemLabel,
+            isAssignedCategoriesInLayout,
             dualAxisItemHandler,
             axisItemHandler,
             removeItemHandler,
@@ -76,6 +75,10 @@ export class DimensionMenu extends Component {
         const applicableAxisIds = availableAxisIds.filter(
             axisId => axisId !== currentAxisId
         )
+
+        const assignedCategoriesItemLabel = isAssignedCategoriesInLayout
+            ? i18n.t('Exclude categories in layout')
+            : i18n.t('Include categories in layout')
 
         const closeSubMenu = () => {
             this.setState({
@@ -136,40 +139,54 @@ export class DimensionMenu extends Component {
         // Assigned categories
         if (
             dimensionId === DIMENSION_ID_DATA &&
-            assignedCategoriesItemHandler &&
-            assignedCategoriesItemLabel
+            assignedCategoriesItemHandler
         ) {
-            menuItems.push(
-                <MenuItem
-                    key={`assigned-categories-item-${dimensionId}`}
-                    onClick={event =>
-                        this.setState({
-                            submenuAnchorEl: event.currentTarget,
-                        })
-                    }
-                >
-                    <div>{assignedCategoriesItemLabel}</div>
-                    <ArrowRightIcon style={styles.arrowIcon} />
-                </MenuItem>
-            )
-            menuItems.push(
-                <Menu
-                    open={Boolean(this.state.submenuAnchorEl)}
-                    anchorEl={this.state.submenuAnchorEl}
-                    anchorOrigin={styles.submenuAnchorOrigin}
-                    onClose={closeSubMenu}
-                    onExited={closeSubMenu}
-                >
+            if (!isAssignedCategoriesInLayout) {
+                menuItems.push(
                     <MenuItem
+                        key={`assigned-categories-item-${dimensionId}`}
+                        onClick={event =>
+                            this.setState({
+                                submenuAnchorEl: event.currentTarget,
+                            })
+                        }
+                    >
+                        <div>{assignedCategoriesItemLabel}</div>
+                        <ArrowRightIcon style={styles.arrowIcon} />
+                    </MenuItem>
+                )
+
+                menuItems.push(
+                    <Menu
+                        open={Boolean(this.state.submenuAnchorEl)}
+                        anchorEl={this.state.submenuAnchorEl}
+                        anchorOrigin={styles.submenuAnchorOrigin}
+                        onClose={closeSubMenu}
+                        onExited={closeSubMenu}
+                    >
+                        <MenuItem
+                            onClick={() => {
+                                assignedCategoriesItemHandler()
+                                closeWholeMenu()
+                            }}
+                        >
+                            Add to ...
+                        </MenuItem>
+                    </Menu>
+                )
+            } else {
+                menuItems.push(
+                    <MenuItem
+                        key={`assigned-categories-item-${dimensionId}`}
                         onClick={() => {
                             assignedCategoriesItemHandler()
                             closeWholeMenu()
                         }}
                     >
-                        Add to ...
+                        <div>{assignedCategoriesItemLabel}</div>
                     </MenuItem>
-                </Menu>
-            )
+                )
+            }
         }
 
         // divider
@@ -237,10 +254,10 @@ DimensionMenu.propTypes = {
     onClose: PropTypes.func.isRequired,
     anchorEl: PropTypes.object,
     assignedCategoriesItemHandler: PropTypes.func,
-    assignedCategoriesItemLabel: PropTypes.string,
     currentAxisId: PropTypes.string,
     dimensionId: PropTypes.string,
     dualAxisItemHandler: PropTypes.func,
+    isAssignedCategoriesInLayout: PropTypes.Boolean,
     visType: PropTypes.string,
 }
 
