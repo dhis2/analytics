@@ -156,10 +156,9 @@ export class DimensionMenu extends Component {
                 <Menu
                     open={Boolean(this.state.submenuAnchorEl)}
                     anchorEl={this.state.submenuAnchorEl}
+                    anchorOrigin={styles.submenuAnchorOrigin}
                     onClose={closeSubMenu}
                     onExited={closeSubMenu}
-                    //anchorOrigin={styles.submenuAnchorOrigin}
-                    //onClose={() => toggleSubmenu('scheme')}
                 >
                     <MenuItem
                         onClick={() => {

@@ -5,4 +5,8 @@ export const styles = {
         fontSize: 12,
         padding: 8,
     },
+    submenuAnchorOrigin: {
+        vertical: 'top',
+        horizontal: 'right',
+    },
 }
