@@ -11,7 +11,7 @@ import { styles } from './styles/DimensionMenu.style'
 import { withStyles } from '@material-ui/core/styles'
 
 import { getAvailableAxes } from '../modules/layoutUiRules'
-import { AXIS_ID_COLUMNS } from '../modules/layout/axis'
+import { AXIS_ID_COLUMNS, AXIS_ID_FILTERS } from '../modules/layout/axis'
 import { DIMENSION_ID_DATA } from '../modules/fixedDimensions'
 import { isDualAxisType, getDisplayNameByVisType } from '../modules/visTypes'
 import { getAxisName } from '../modules/axis'
@@ -75,6 +75,10 @@ export class DimensionMenu extends Component {
         const applicableAxisIds = availableAxisIds.filter(
             axisId => axisId !== currentAxisId
         )
+
+        const assignedCategoriesAvailableDestinations = getAvailableAxes(
+            visType
+        ).filter(axis => axis !== AXIS_ID_FILTERS)
 
         const assignedCategoriesItemLabel = isAssignedCategoriesInLayout
             ? i18n.t('Exclude categories in layout')
@@ -164,14 +168,25 @@ export class DimensionMenu extends Component {
                         onClose={closeSubMenu}
                         onExited={closeSubMenu}
                     >
-                        <MenuItem
-                            onClick={() => {
-                                assignedCategoriesItemHandler()
-                                closeWholeMenu()
-                            }}
-                        >
-                            Add to ...
-                        </MenuItem>
+                        {assignedCategoriesAvailableDestinations.map(
+                            destination => (
+                                <MenuItem
+                                    key={destination}
+                                    onClick={() => {
+                                        assignedCategoriesItemHandler(
+                                            destination
+                                        )
+                                        closeWholeMenu()
+                                    }}
+                                >
+                                    {i18n.t(
+                                        `${getAxisItemLabelPrefix()} ${getAxisName(
+                                            destination
+                                        )}`
+                                    )}
+                                </MenuItem>
+                            )
+                        )}
                     </Menu>
                 )
             } else {
@@ -257,7 +272,7 @@ DimensionMenu.propTypes = {
     currentAxisId: PropTypes.string,
     dimensionId: PropTypes.string,
     dualAxisItemHandler: PropTypes.func,
-    isAssignedCategoriesInLayout: PropTypes.Boolean,
+    isAssignedCategoriesInLayout: PropTypes.bool,
     visType: PropTypes.string,
 }
 
