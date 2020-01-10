@@ -25,6 +25,11 @@ const getRemoveMenuItem = onClick => (
 
 const getDividerItem = key => <Divider light key={key} />
 
+const getUnavailableLabel = visType =>
+    i18n.t('Not available for {{visType}}', {
+        visType: getDisplayNameByVisType(visType),
+    })
+
 const getDualAxisMenuItemLabel = (
     currentAxisId,
     visType,
@@ -33,9 +38,7 @@ const getDualAxisMenuItemLabel = (
     let label
 
     if (!isDualAxisType(visType)) {
-        label = i18n.t('Not available for {{visType}}', {
-            visType: getDisplayNameByVisType(visType),
-        })
+        label = getUnavailableLabel(visType)
     } else if (numberOfDimensionItems < 2) {
         label = i18n.t('Requires 2 or more data items')
     } else if (currentAxisId !== AXIS_ID_COLUMNS) {
@@ -143,68 +146,84 @@ export class DimensionMenu extends Component {
             dimensionId === DIMENSION_ID_DATA &&
             assignedCategoriesItemHandler
         ) {
-            if (!isAssignedCategoriesInLayout) {
-                menuItems.push(
-                    <MenuItem
-                        key={`assigned-categories-item-${dimensionId}`}
-                        onClick={event =>
-                            this.setState({
-                                submenuAnchorEl: event.currentTarget,
-                            })
-                        }
-                        disabled={
-                            !assignedCategoriesAvailableDestinations.length
-                        }
-                    >
-                        <div>{assignedCategoriesItemLabel}</div>
-                        <ArrowRightIcon />
-                    </MenuItem>
-                )
+            if (assignedCategoriesAvailableDestinations.length) {
+                if (!isAssignedCategoriesInLayout) {
+                    menuItems.push(
+                        <MenuItem
+                            key={`assigned-categories-item-${dimensionId}`}
+                            onClick={event =>
+                                this.setState({
+                                    submenuAnchorEl: event.currentTarget,
+                                })
+                            }
+                        >
+                            <div>{assignedCategoriesItemLabel}</div>
+                            <ArrowRightIcon />
+                        </MenuItem>
+                    )
 
-                menuItems.push(
-                    <Menu
-                        key={`assigned-categories-sub-menu-${dimensionId}`}
-                        open={Boolean(this.state.submenuAnchorEl)}
-                        anchorEl={this.state.submenuAnchorEl}
-                        anchorOrigin={{
-                            vertical: 'top',
-                            horizontal: 'right',
-                        }}
-                        onClose={closeSubMenu}
-                        onExited={closeSubMenu}
-                    >
-                        {assignedCategoriesAvailableDestinations.map(
-                            destination => (
-                                <MenuItem
-                                    key={destination}
-                                    onClick={() => {
-                                        assignedCategoriesItemHandler(
-                                            destination
-                                        )
-                                        closeWholeMenu()
-                                    }}
-                                >
-                                    {i18n.t(
-                                        `${getAxisItemLabelPrefix()} ${getAxisName(
-                                            destination
-                                        )}`
-                                    )}
-                                </MenuItem>
-                            )
-                        )}
-                    </Menu>
-                )
+                    menuItems.push(
+                        <Menu
+                            key={`assigned-categories-sub-menu-${dimensionId}`}
+                            open={Boolean(this.state.submenuAnchorEl)}
+                            anchorEl={this.state.submenuAnchorEl}
+                            anchorOrigin={{
+                                vertical: 'top',
+                                horizontal: 'right',
+                            }}
+                            onClose={closeSubMenu}
+                            onExited={closeSubMenu}
+                        >
+                            {assignedCategoriesAvailableDestinations.map(
+                                destination => (
+                                    <MenuItem
+                                        key={destination}
+                                        onClick={() => {
+                                            assignedCategoriesItemHandler(
+                                                destination
+                                            )
+                                            closeWholeMenu()
+                                        }}
+                                    >
+                                        {i18n.t(
+                                            `${getAxisItemLabelPrefix()} ${getAxisName(
+                                                destination
+                                            )}`
+                                        )}
+                                    </MenuItem>
+                                )
+                            )}
+                        </Menu>
+                    )
+                } else {
+                    menuItems.push(
+                        <MenuItem
+                            key={`assigned-categories-item-${dimensionId}`}
+                            onClick={() => {
+                                assignedCategoriesItemHandler()
+                                closeWholeMenu()
+                            }}
+                        >
+                            <div>{assignedCategoriesItemLabel}</div>
+                        </MenuItem>
+                    )
+                }
             } else {
                 menuItems.push(
-                    <MenuItem
+                    <Tooltip
                         key={`assigned-categories-item-${dimensionId}`}
-                        onClick={() => {
-                            assignedCategoriesItemHandler()
-                            closeWholeMenu()
-                        }}
+                        title={getUnavailableLabel(visType)}
+                        aria-label="disabled"
+                        placement="right-start"
+                        classes={classes}
                     >
-                        <div>{assignedCategoriesItemLabel}</div>
-                    </MenuItem>
+                        <div>
+                            <MenuItem disabled>
+                                <div>{assignedCategoriesItemLabel}</div>
+                                <ArrowRightIcon />
+                            </MenuItem>
+                        </div>
+                    </Tooltip>
                 )
             }
         }
