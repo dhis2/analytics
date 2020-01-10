@@ -82,8 +82,8 @@ export class DimensionMenu extends Component {
         ).filter(axis => axis !== AXIS_ID_FILTERS)
 
         const assignedCategoriesItemLabel = isAssignedCategoriesInLayout
-            ? i18n.t('Exclude categories in layout')
-            : i18n.t('Include categories in layout')
+            ? i18n.t('Remove Assigned Categories')
+            : i18n.t('Add Assigned Categories')
 
         const closeSubMenu = () => {
             this.setState({
