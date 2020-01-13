@@ -3,8 +3,9 @@ export const styles = {
         display: 'flex',
         flexFlow: 'column',
         width: '40%',
-        paddingLeft: 5,
+        paddingTop: 10,
         paddingRight: 5,
+        paddingBottom: 5,
     },
     titleText: {
         color: '#616161', // color
