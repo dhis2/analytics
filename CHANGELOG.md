@@ -1,3 +1,10 @@
+## [2.8.1](https://github.com/dhis2/analytics/compare/v2.8.0...v2.8.1) (2020-01-14)
+
+
+### Bug Fixes
+
+* ui glitch ([#222](https://github.com/dhis2/analytics/issues/222)) ([4acbc8c](https://github.com/dhis2/analytics/commit/4acbc8c6a61c000c434943f3b4750468ed16d681))
+
 # [2.8.0](https://github.com/dhis2/analytics/compare/v2.7.3...v2.8.0) (2020-01-14)
 
 
