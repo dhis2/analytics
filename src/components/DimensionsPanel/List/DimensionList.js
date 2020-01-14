@@ -41,9 +41,7 @@ export class DimensionList extends Component {
     )
 
     render() {
-        const dimensionsList = Object.values(
-            this.props.dimensions
-        ).map(dimension =>
+        const dimensionsList = this.props.dimensions.map(dimension =>
             this.props.filterText.length
                 ? this.filterMatchingDimensions(dimension)
                 : this.renderItem(dimension)
@@ -58,7 +56,7 @@ export class DimensionList extends Component {
 }
 
 DimensionList.propTypes = {
-    dimensions: PropTypes.object.isRequired,
+    dimensions: PropTypes.array.isRequired,
     filterText: PropTypes.string.isRequired,
     disabledDimension: PropTypes.func,
     lockedDimension: PropTypes.func,

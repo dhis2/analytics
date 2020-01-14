@@ -28,8 +28,11 @@ export {
     DIMENSION_ID_DATA,
     DIMENSION_ID_PERIOD,
     DIMENSION_ID_ORGUNIT,
-    FIXED_DIMENSIONS,
+    DIMENSION_ID_ASSIGNED_CATEGORIES,
     filterOutFixedDimensions,
+    getFixedDimensionProp,
+    getDimensionById,
+    getFixedDimensions,
 } from './modules/fixedDimensions'
 
 // Modules: ouIdHelper
