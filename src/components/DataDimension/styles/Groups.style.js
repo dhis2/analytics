@@ -5,7 +5,7 @@ export const styles = {
         border: `1px solid ${colors.greyLight}`,
         display: 'flex',
         flexDirection: 'column',
-        height: '53px',
+        minHeight: '53px',
         borderRight: '0px',
         borderLeft: '0px',
         paddingTop: '5px',
