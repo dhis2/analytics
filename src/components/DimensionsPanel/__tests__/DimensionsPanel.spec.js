@@ -17,7 +17,7 @@ describe('The Dimensions component ', () => {
     beforeEach(() => {
         shallowDimensions = undefined
         props = {
-            dimensions: {},
+            dimensions: [],
         }
     })
 
