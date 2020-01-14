@@ -4,19 +4,19 @@ export const styles = {
     container: {
         border: `1px solid ${colors.greyLight}`,
         display: 'flex',
-        flexDirection: 'column',
         minHeight: '53px',
         borderRight: '0px',
         borderLeft: '0px',
         paddingTop: '5px',
         paddingLeft: '5px',
-        paddingRight: '5px',
     },
     groupContainer: {
         display: 'flex',
         flexDirection: 'column',
         width: 'inherit',
         minWidth: '316px',
+        flexGrow: 1,
+        paddingRight: '5px',
     },
     titleText: {
         color: colors.greyDark,
