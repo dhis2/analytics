@@ -1,3 +1,10 @@
+## [2.7.3](https://github.com/dhis2/analytics/compare/v2.7.2...v2.7.3) (2020-01-13)
+
+
+### Bug Fixes
+
+* ui glitch for data elements ([#211](https://github.com/dhis2/analytics/issues/211)) ([ef3ac59](https://github.com/dhis2/analytics/commit/ef3ac59a018d36d36eb1455f4e0021cee205f49b))
+
 ## [2.7.2](https://github.com/dhis2/analytics/compare/v2.7.1...v2.7.2) (2020-01-09)
 
 
