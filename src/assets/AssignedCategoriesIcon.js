@@ -3,14 +3,7 @@ import React from 'react'
 const AssignedCategoriesIcon = () => {
     return (
         <svg width="12px" height="12px" viewBox="0 0 12 12">
-            <title>assigned-categories</title>
-            <g
-                id="assigned-categories"
-                stroke="none"
-                strokeWidth="1"
-                fill="none"
-                fillRule="evenodd"
-            >
+            <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
                 <rect
                     id="Rectangle"
                     fill="#212934"
