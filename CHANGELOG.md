@@ -1,3 +1,10 @@
+# [2.8.0](https://github.com/dhis2/analytics/compare/v2.7.3...v2.8.0) (2020-01-14)
+
+
+### Features
+
+* assigned categories DHIS2-7701 ([#189](https://github.com/dhis2/analytics/issues/189)) ([5aeac4f](https://github.com/dhis2/analytics/commit/5aeac4f209de91ecf47e8e36d419152deed5d83e))
+
 ## [2.7.3](https://github.com/dhis2/analytics/compare/v2.7.2...v2.7.3) (2020-01-13)
 
 
