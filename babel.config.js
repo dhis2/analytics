@@ -18,7 +18,7 @@ module.exports = function(api) {
     if (api.env(['test'])) {
         styledJsxPlugin = 'styled-jsx/babel-test'
     } else {
-        styledJsxPlugin = 'styled-jsx/babel'
+        styledJsxPlugin = ['styled-jsx/babel', { optimizeForSpeed: true }]
     }
 
     return {
@@ -29,6 +29,7 @@ module.exports = function(api) {
             '@babel/plugin-transform-react-constant-elements',
             '@babel/plugin-transform-shorthand-properties',
             '@babel/plugin-transform-runtime',
-        ].concat(styledJsxPlugin),
+            styledJsxPlugin,
+        ],
     }
 }
