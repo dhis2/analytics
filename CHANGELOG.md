@@ -1,3 +1,10 @@
+## [2.8.2](https://github.com/dhis2/analytics/compare/v2.8.1...v2.8.2) (2020-01-16)
+
+
+### Bug Fixes
+
+* use optimizeForSpeed mode for styled-jsx ([#229](https://github.com/dhis2/analytics/issues/229)) ([1743598](https://github.com/dhis2/analytics/commit/17435982d05821d4a93e8ef9d7e2023f36ef31af))
+
 ## [2.8.1](https://github.com/dhis2/analytics/compare/v2.8.0...v2.8.1) (2020-01-14)
 
 
