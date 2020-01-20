@@ -38,9 +38,7 @@ export const styles = {
     iconWrapper: {
         display: 'flex',
         flexDirection: 'column',
-        justifyContent: 'center',
-        paddingRight: '8px',
-        paddingLeft: '8px',
+        padding: '3px 8px 0 8px',
     },
     lockIcon: {
         fontSize: '14px',
