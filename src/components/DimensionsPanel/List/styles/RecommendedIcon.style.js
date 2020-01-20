@@ -17,13 +17,8 @@ export const styles = {
         height: '8px',
         width: '8px',
         borderRadius: '4px',
-        alignSelf: 'center',
-    },
-    recommendedWrapper: {
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        paddingLeft: '8px',
+        marginLeft: '5px',
+        display: 'inline-block',
         cursor: 'pointer',
     },
 }
