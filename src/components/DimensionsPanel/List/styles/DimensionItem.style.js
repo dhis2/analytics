@@ -1,14 +1,16 @@
 import { colors } from '../../../../modules/colors'
 
 export const styles = {
+    labelWrapper: {
+        maxWidth: '174px',
+        padding: '2px 0',
+    },
     text: {
         color: colors.black,
         userSelect: 'none',
         cursor: 'pointer',
         wordBreak: 'break-word',
         fontSize: '14px',
-        maxWidth: '195px',
-        alignSelf: 'center',
     },
     textDeactivated: {
         cursor: 'auto',
@@ -16,9 +18,10 @@ export const styles = {
     },
     listItem: {
         display: 'flex',
-        height: 24,
+        minHeight: '24px',
         marginTop: 3,
         marginBottom: 3,
+        alignItems: 'center',
     },
     selectedListItem: {
         backgroundColor: colors.accentSecondaryTransparent,
@@ -35,9 +38,7 @@ export const styles = {
     iconWrapper: {
         display: 'flex',
         flexDirection: 'column',
-        justifyContent: 'center',
-        paddingRight: '8px',
-        paddingLeft: '8px',
+        padding: '3px 8px 0 8px',
     },
     lockIcon: {
         fontSize: '14px',
@@ -46,7 +47,7 @@ export const styles = {
         position: 'relative',
         height: '24px',
         left: '5px',
-        alignSelf: 'center',
+        alignSelf: 'start',
     },
     optionsButton: {
         border: 'none',
