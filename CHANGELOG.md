@@ -1,3 +1,10 @@
+## [2.8.3](https://github.com/dhis2/analytics/compare/v2.8.2...v2.8.3) (2020-01-21)
+
+
+### Bug Fixes
+
+* long dim names (DHIS2-7932, DHIS2-7787) ([#246](https://github.com/dhis2/analytics/issues/246)) ([a343f5f](https://github.com/dhis2/analytics/commit/a343f5f90d4476fe708a7099f00cdebd4784ea0a))
+
 ## [2.8.2](https://github.com/dhis2/analytics/compare/v2.8.1...v2.8.2) (2020-01-16)
 
 
