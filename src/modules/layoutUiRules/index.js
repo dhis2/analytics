@@ -7,4 +7,7 @@ export {
     hasAxisTooManyItemsByVisType as hasAxisTooManyItems,
     getAxisPerLockedDimByVisType as getAxisPerLockedDimension,
     getAllLockedDimIdsByVisType as getAllLockedDimensionIds,
+    isDimensionLocked,
+    isAxisFull,
+    canDimensionBeAddedToAxis,
 } from './rulesHelper'

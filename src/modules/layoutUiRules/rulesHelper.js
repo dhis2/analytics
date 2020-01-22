@@ -38,3 +38,25 @@ export const getAxisPerLockedDimByVisType = (visType, dimensionId) =>
 
 export const getAllLockedDimIdsByVisType = visType =>
     Object.keys(getLockedDimsByVisType(visType))
+
+export const isDimensionLocked = (visType, dimensionId) =>
+    getAllLockedDimIdsByVisType(visType).find(id => id === dimensionId)
+
+export const isAxisFull = (visType, axisId, axisDimensionsCount) =>
+    axisDimensionsCount === getAxisMaxNumberOfDimsByVisType(visType, axisId)
+
+export const canDimensionBeAddedToAxis = (visType, layout, axisId) => {
+    const axisIsFull = isAxisFull(visType, axisId, layout[axisId].length)
+    const dimensionIsLocked = isDimensionLocked(visType, layout[axisId][0])
+
+    // 1 dimension allowed in axis
+    // 1 dimension is already present and not locked
+    // the dragged one can be added and will cause the old one to be moved to filters
+    if (axisIsFull && !dimensionIsLocked) {
+        return true
+    } else if (!axisIsFull) {
+        return true
+    }
+
+    return false
+}

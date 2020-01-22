@@ -142,6 +142,9 @@ export {
     hasAxisTooManyItems,
     getAxisPerLockedDimension,
     getAllLockedDimensionIds,
+    canDimensionBeAddedToAxis,
+    isDimensionLocked,
+    isAxisFull,
 } from './modules/layoutUiRules'
 
 // Visualizations
