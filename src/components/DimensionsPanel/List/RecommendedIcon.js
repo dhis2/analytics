@@ -35,14 +35,12 @@ export class RecommendedIcon extends Component {
             : null
 
         return this.props.isRecommended ? (
-            <div style={styles.recommendedWrapper}>
-                <div
-                    style={styles.recommendedIcon}
-                    onMouseOver={this.onMouseOver}
-                    onMouseLeave={this.onMouseExit}
-                >
-                    {TooltipOnHover}
-                </div>
+            <div
+                style={styles.recommendedIcon}
+                onMouseOver={this.onMouseOver}
+                onMouseLeave={this.onMouseExit}
+            >
+                {TooltipOnHover}
             </div>
         ) : null
     }

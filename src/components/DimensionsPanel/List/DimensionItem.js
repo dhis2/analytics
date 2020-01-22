@@ -75,12 +75,14 @@ export class DimensionItem extends Component {
             >
                 <DimensionLabel {...this.props}>
                     <div style={styles.iconWrapper}>{Icon}</div>
-                    {Label}
-                    <RecommendedIcon
-                        id={id}
-                        isSelected={isSelected}
-                        isRecommended={isRecommended}
-                    />
+                    <div style={styles.labelWrapper}>
+                        {Label}
+                        <RecommendedIcon
+                            id={id}
+                            isSelected={isSelected}
+                            isRecommended={isRecommended}
+                        />
+                    </div>
                 </DimensionLabel>
                 {onOptionsClick ? (
                     <div style={styles.optionsWrapper}>
