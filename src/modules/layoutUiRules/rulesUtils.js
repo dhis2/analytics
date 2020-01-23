@@ -27,12 +27,12 @@ export const isDimensionLocked = (visType, dimensionId) =>
 export const isAxisFull = (visType, axisId, axisDimensionsCount) =>
     axisDimensionsCount >= getAxisMaxNumberOfDimsByVisType(visType, axisId)
 
-export const canDimensionBeAddedToAxis = (visType, layout, axisId) => {
-    const axisIsFull = isAxisFull(visType, axisId, layout[axisId].length)
+export const canDimensionBeAddedToAxis = (visType, axis, axisId) => {
+    const axisIsFull = isAxisFull(visType, axisId, axis.length)
     const transferableDimension = getTransferableDimensionPerAxisByVisType(
         visType,
         axisId,
-        layout
+        axis
     )
 
     // 1 dimension allowed in axis
@@ -45,7 +45,7 @@ export const canDimensionBeAddedToAxis = (visType, layout, axisId) => {
 export const getTransferableDimensionPerAxisByVisType = (
     visType,
     axisId,
-    layout
+    axis
 ) => {
     const lockedDimsByVisType = getLockedDimsByVisType(visType)
     const lockedDimIdsByAxis = Object.keys(lockedDimsByVisType).filter(
@@ -55,7 +55,5 @@ export const getTransferableDimensionPerAxisByVisType = (
     // return the last "transferable" dimension, this needs to be adjusted
     // if we allow a defined max limit > 1 and the DND wants to drop the new
     // dimension in a specific position
-    return layout[axisId]
-        .filter(dimId => !lockedDimIdsByAxis.includes(dimId))
-        .pop()
+    return axis.filter(dimId => !lockedDimIdsByAxis.includes(dimId)).pop()
 }
