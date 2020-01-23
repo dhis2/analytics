@@ -1,4 +1,17 @@
 import i18n from '@dhis2/d2-i18n'
+import BarIcon from '../assets/BarIcon'
+import StackedBarIcon from '../assets/StackedBarIcon'
+import ColumnIcon from '../assets/ColumnIcon'
+import StackedColumnIcon from '../assets/StackedColumnIcon'
+import LineIcon from '../assets/LineIcon'
+import AreaIcon from '../assets/AreaIcon'
+import PieIcon from '../assets/PieIcon'
+import RadarIcon from '../assets/RadarIcon'
+import GaugeIcon from '../assets/GaugeIcon'
+import YearOverYearLineIcon from '../assets/YearOverYearLineIcon'
+import YearOverYearColumnIcon from '../assets/YearOverYearColumnIcon'
+import SingleValueIcon from '../assets/SingleValueIcon'
+import PivotTableIcon from '../assets/PivotTableIcon'
 
 export const VIS_TYPE_COLUMN = 'COLUMN'
 export const VIS_TYPE_STACKED_COLUMN = 'STACKED_COLUMN'
@@ -29,6 +42,22 @@ export const visTypeDisplayNames = {
     [VIS_TYPE_YEAR_OVER_YEAR_COLUMN]: i18n.t('Year over year (column)'),
     [VIS_TYPE_SINGLE_VALUE]: i18n.t('Single value'),
     [VIS_TYPE_PIVOT_TABLE]: i18n.t('Pivot table'),
+}
+
+export const visTypeIcons = {
+    [VIS_TYPE_BAR]: BarIcon,
+    [VIS_TYPE_STACKED_BAR]: StackedBarIcon,
+    [VIS_TYPE_COLUMN]: ColumnIcon,
+    [VIS_TYPE_STACKED_COLUMN]: StackedColumnIcon,
+    [VIS_TYPE_LINE]: LineIcon,
+    [VIS_TYPE_AREA]: AreaIcon,
+    [VIS_TYPE_PIE]: PieIcon,
+    [VIS_TYPE_RADAR]: RadarIcon,
+    [VIS_TYPE_GAUGE]: GaugeIcon,
+    [VIS_TYPE_YEAR_OVER_YEAR_LINE]: YearOverYearLineIcon,
+    [VIS_TYPE_YEAR_OVER_YEAR_COLUMN]: YearOverYearColumnIcon,
+    [VIS_TYPE_SINGLE_VALUE]: SingleValueIcon,
+    [VIS_TYPE_PIVOT_TABLE]: PivotTableIcon,
 }
 
 export const getDisplayNameByVisType = visType => {
