@@ -145,6 +145,7 @@ export {
     canDimensionBeAddedToAxis,
     isDimensionLocked,
     isAxisFull,
+    getTransferableDimension,
 } from './modules/layoutUiRules'
 
 // Visualizations

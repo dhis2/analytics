@@ -4,10 +4,14 @@ export {
     getAxisMaxNumberOfItemsByVisType as getAxisMaxNumberOfItems,
     getAxisMaxNumberOfDimsByVisType as getAxisMaxNumberOfDimensions,
     getAxisMinNumberOfDimsByVisType as getAxisMinNumberOfDimensions,
-    hasAxisTooManyItemsByVisType as hasAxisTooManyItems,
     getAxisPerLockedDimByVisType as getAxisPerLockedDimension,
     getAllLockedDimIdsByVisType as getAllLockedDimensionIds,
+} from './rulesHelper'
+
+export {
+    hasAxisTooManyItemsByVisType as hasAxisTooManyItems,
     isDimensionLocked,
     isAxisFull,
     canDimensionBeAddedToAxis,
-} from './rulesHelper'
+    getTransferableDimensionPerAxisByVisType as getTransferableDimension,
+} from './rulesUtils'
