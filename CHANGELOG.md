@@ -1,3 +1,10 @@
+## [2.8.4](https://github.com/dhis2/analytics/compare/v2.8.3...v2.8.4) (2020-01-23)
+
+
+### Bug Fixes
+
+* added icons for vis types ([#254](https://github.com/dhis2/analytics/issues/254)) ([8635ed4](https://github.com/dhis2/analytics/commit/8635ed426f0f33c2450aa19ff08cf5d1d89d7cbf))
+
 ## [2.8.3](https://github.com/dhis2/analytics/compare/v2.8.2...v2.8.3) (2020-01-21)
 
 
