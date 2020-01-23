@@ -22,7 +22,7 @@ export const hasAxisTooManyItemsByVisType = (
 }
 
 export const isDimensionLocked = (visType, dimensionId) =>
-    getAllLockedDimIdsByVisType(visType).find(id => id === dimensionId)
+    getAllLockedDimIdsByVisType(visType).includes(dimensionId)
 
 export const isAxisFull = (visType, axisId, axisDimensionsCount) =>
     axisDimensionsCount >= getAxisMaxNumberOfDimsByVisType(visType, axisId)
