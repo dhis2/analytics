@@ -114,7 +114,7 @@ export default function({ store, layout, el, extraConfig, extraOptions }) {
     }
 
     // sorting
-    if (_layout.sortOrder) {
+    if (_layout.sortOrder != 0) {
         config = getSortedConfig(config, _layout, stacked)
     }
 
