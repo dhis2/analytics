@@ -33,7 +33,7 @@ export class DimensionItem extends Component {
     }
 
     getDimensionType = () => {
-        const { id, name, isDeactivated, onDragStart, isLocked } = this.props
+        const { id, name, isDeactivated } = this.props
 
         return (
             <span
@@ -42,8 +42,6 @@ export class DimensionItem extends Component {
                     ...styles.text,
                     ...(isDeactivated ? styles.textDeactivated : {}),
                 }}
-                draggable={!isDeactivated && !isLocked}
-                onDragStart={onDragStart}
             >
                 {/* is it needed here or displayName should be used instead?! */}
                 {i18n.t(name)}
@@ -57,8 +55,12 @@ export class DimensionItem extends Component {
             isDeactivated,
             isSelected,
             isRecommended,
-            onOptionsClick,
             isLocked,
+            onClick /* eslint-disable-line no-unused-vars */,
+            onOptionsClick,
+            innerRef,
+            style,
+            ...rest
         } = this.props
         const Icon = this.getDimensionIcon()
         const Label = this.getDimensionType()
@@ -69,9 +71,11 @@ export class DimensionItem extends Component {
 
         return (
             <li
-                style={listItemStyle}
                 onMouseOver={this.onMouseOver}
                 onMouseLeave={this.onMouseExit}
+                ref={innerRef}
+                style={Object.assign({}, listItemStyle, style)}
+                {...rest}
             >
                 <DimensionLabel {...this.props}>
                     <div style={styles.iconWrapper}>{Icon}</div>
@@ -102,11 +106,12 @@ DimensionItem.propTypes = {
     id: PropTypes.string.isRequired,
     isSelected: PropTypes.bool.isRequired, // XXX
     name: PropTypes.string.isRequired,
+    innerRef: PropTypes.func,
     isDeactivated: PropTypes.bool,
     isLocked: PropTypes.bool,
     isRecommended: PropTypes.bool,
+    style: PropTypes.object,
     onClick: PropTypes.func,
-    onDragStart: PropTypes.func,
     onOptionsClick: PropTypes.func,
 }
 
@@ -115,6 +120,9 @@ DimensionItem.defaultProps = {
     isRecommended: false,
     isSelected: false,
     isLocked: false,
+    onClick: Function.prototype,
+    onOptionsClick: Function.prototype,
+    innerRef: Function.prototype,
 }
 
 export default DimensionItem
