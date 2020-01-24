@@ -10,8 +10,8 @@ export {
 
 export {
     hasAxisTooManyItemsByVisType as hasAxisTooManyItems,
-    isDimensionLocked,
-    isAxisFull,
-    canDimensionBeAddedToAxis,
+    isDimensionLockedByVisType as isDimensionLocked,
+    isAxisFullByVisType as isAxisFull,
+    canDimensionBeAddedToAxisByVisType as canDimensionBeAddedToAxis,
     getTransferableDimensionPerAxisByVisType as getTransferableDimension,
 } from './rulesUtils'

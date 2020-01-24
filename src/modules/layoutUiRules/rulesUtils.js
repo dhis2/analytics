@@ -21,14 +21,14 @@ export const hasAxisTooManyItemsByVisType = (
         : false
 }
 
-export const isDimensionLocked = (visType, dimensionId) =>
+export const isDimensionLockedByVisType = (visType, dimensionId) =>
     getAllLockedDimIdsByVisType(visType).includes(dimensionId)
 
-export const isAxisFull = (visType, axisId, axisDimensionsCount) =>
+export const isAxisFullByVisType = (visType, axisId, axisDimensionsCount) =>
     axisDimensionsCount >= getAxisMaxNumberOfDimsByVisType(visType, axisId)
 
-export const canDimensionBeAddedToAxis = (visType, axis, axisId) => {
-    const axisIsFull = isAxisFull(visType, axisId, axis.length)
+export const canDimensionBeAddedToAxisByVisType = (visType, axis, axisId) => {
+    const axisIsFull = isAxisFullByVisType(visType, axisId, axis.length)
     const transferableDimension = getTransferableDimensionPerAxisByVisType(
         visType,
         axisId,
