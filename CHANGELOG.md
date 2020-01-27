@@ -1,3 +1,24 @@
+## [2.8.5](https://github.com/dhis2/analytics/compare/v2.8.4...v2.8.5) (2020-01-24)
+
+
+### Bug Fixes
+
+* helpers for full axis, locked dimension, dimension can be added to axis ([#253](https://github.com/dhis2/analytics/issues/253)) ([2d6b68f](https://github.com/dhis2/analytics/commit/2d6b68f799db597e717a5206541cb10eba2ae865))
+
+## [2.8.4](https://github.com/dhis2/analytics/compare/v2.8.3...v2.8.4) (2020-01-23)
+
+
+### Bug Fixes
+
+* added icons for vis types ([#254](https://github.com/dhis2/analytics/issues/254)) ([8635ed4](https://github.com/dhis2/analytics/commit/8635ed426f0f33c2450aa19ff08cf5d1d89d7cbf))
+
+## [2.8.3](https://github.com/dhis2/analytics/compare/v2.8.2...v2.8.3) (2020-01-21)
+
+
+### Bug Fixes
+
+* long dim names (DHIS2-7932, DHIS2-7787) ([#246](https://github.com/dhis2/analytics/issues/246)) ([a343f5f](https://github.com/dhis2/analytics/commit/a343f5f90d4476fe708a7099f00cdebd4784ea0a))
+
 ## [2.8.2](https://github.com/dhis2/analytics/compare/v2.8.1...v2.8.2) (2020-01-16)
 
 

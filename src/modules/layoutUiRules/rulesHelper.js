@@ -18,21 +18,6 @@ export const getAxisMaxNumberOfDimsByVisType = (visType, axisId) =>
 export const getAxisMinNumberOfDimsByVisType = (visType, axisId) =>
     getMinNumberOfDimsPerAxisByVisType(visType)[axisId]
 
-export const hasAxisTooManyItemsByVisType = (
-    visType,
-    axisId,
-    numberOfItems
-) => {
-    const maxNumberOfItemsPerAxis = getAxisMaxNumberOfItemsByVisType(
-        visType,
-        axisId
-    )
-
-    return maxNumberOfItemsPerAxis
-        ? numberOfItems > maxNumberOfItemsPerAxis
-        : false
-}
-
 export const getAxisPerLockedDimByVisType = (visType, dimensionId) =>
     getLockedDimsByVisType(visType)[dimensionId]
 

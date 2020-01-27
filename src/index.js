@@ -115,6 +115,7 @@ export {
     VIS_TYPE_SINGLE_VALUE,
     VIS_TYPE_PIVOT_TABLE,
     visTypeDisplayNames,
+    visTypeIcons,
     getDisplayNameByVisType,
     defaultChartType,
     isStacked,
@@ -143,6 +144,10 @@ export {
     hasAxisTooManyItems,
     getAxisPerLockedDimension,
     getAllLockedDimensionIds,
+    canDimensionBeAddedToAxis,
+    isDimensionLocked,
+    isAxisFull,
+    getTransferableDimension,
 } from './modules/layoutUiRules'
 
 // Visualizations
