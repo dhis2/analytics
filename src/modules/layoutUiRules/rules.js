@@ -70,6 +70,14 @@ const yearOverYearRules = {
     [RULE_PROP_DISALLOWED_DIMS]: [DIMENSION_ID_PERIOD],
 }
 
+const pivotTableRules = {
+    [RULE_PROP_AVAILABLE_AXES]: [
+        AXIS_ID_COLUMNS,
+        AXIS_ID_ROWS,
+        AXIS_ID_FILTERS,
+    ],
+}
+
 const visTypeToRules = {
     [VIS_TYPE_COLUMN]: defaultRules,
     [VIS_TYPE_STACKED_COLUMN]: defaultRules,
@@ -83,7 +91,7 @@ const visTypeToRules = {
     [VIS_TYPE_SINGLE_VALUE]: singleValueRules,
     [VIS_TYPE_YEAR_OVER_YEAR_LINE]: yearOverYearRules,
     [VIS_TYPE_YEAR_OVER_YEAR_COLUMN]: yearOverYearRules,
-    [VIS_TYPE_PIVOT_TABLE]: defaultRules,
+    [VIS_TYPE_PIVOT_TABLE]: pivotTableRules,
 }
 
 const getRulesByVisType = visType => {

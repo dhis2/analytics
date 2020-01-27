@@ -1,3 +1,10 @@
+## [2.8.5](https://github.com/dhis2/analytics/compare/v2.8.4...v2.8.5) (2020-01-24)
+
+
+### Bug Fixes
+
+* helpers for full axis, locked dimension, dimension can be added to axis ([#253](https://github.com/dhis2/analytics/issues/253)) ([2d6b68f](https://github.com/dhis2/analytics/commit/2d6b68f799db597e717a5206541cb10eba2ae865))
+
 ## [2.8.4](https://github.com/dhis2/analytics/compare/v2.8.3...v2.8.4) (2020-01-23)
 
 
