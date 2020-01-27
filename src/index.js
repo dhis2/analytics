@@ -14,7 +14,7 @@ export { default as ItemSelector } from './components/ItemSelector/ItemSelector'
 
 export { default as DimensionMenu } from './components/DimensionMenu'
 
-export { default as PivotTable } from './components/PivotTable'
+export { default as PivotTable } from './components/PivotTable/PivotTable'
 
 // Api
 
