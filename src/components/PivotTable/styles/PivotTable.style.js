@@ -36,6 +36,9 @@ export default css`
         box-sizing: border-box;
         text-align: center;
     }
+    table * {
+        padding: 0 !important;
+    }
     tr:first-child > th {
         border-top: 0;
     }
