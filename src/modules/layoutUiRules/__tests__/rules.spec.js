@@ -7,20 +7,11 @@ import { ALL_AXIS_IDS } from '../../layout/axis'
 import {
     DIMENSION_ID_DATA,
     DIMENSION_ID_PERIOD,
-    DIMENSION_ID_ASSIGNED_CATEGORIES,
 } from '../../predefinedDimensions'
 
 // Consts
-const lockableDims = [
-    DIMENSION_ID_DATA,
-    DIMENSION_ID_PERIOD,
-    DIMENSION_ID_ASSIGNED_CATEGORIES,
-]
-const disallowableDims = [
-    DIMENSION_ID_DATA,
-    DIMENSION_ID_PERIOD,
-    DIMENSION_ID_ASSIGNED_CATEGORIES,
-]
+const lockableDims = [DIMENSION_ID_DATA, DIMENSION_ID_PERIOD]
+const disallowableDims = [DIMENSION_ID_DATA, DIMENSION_ID_PERIOD]
 
 // Helper fns
 const allArrayItemsAreValid = (allItems, validItems) =>
