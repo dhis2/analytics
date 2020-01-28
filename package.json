@@ -1,6 +1,6 @@
 {
     "name": "@dhis2/analytics",
-    "version": "2.8.5",
+    "version": "3.0.0-alpha.1",
     "main": "./build/index.js",
     "sideEffects": false,
     "repository": "git@github.com:dhis2/analytics.git",
@@ -70,6 +70,7 @@
         "highcharts": "^7.1.2",
         "lodash": "^4.17.13",
         "react-beautiful-dnd": "^10.1.1",
+        "resize-observer-polyfill": "^1.5.1",
         "styled-jsx": "^3.2.1"
     },
     "files": [

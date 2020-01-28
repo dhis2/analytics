@@ -1,4 +1,4 @@
-import React, { useRef, useMemo, useState, useEffect } from 'react'
+import React, { useRef, useMemo } from 'react'
 import PropTypes from 'prop-types'
 
 import styles from './styles/PivotTable.style'
@@ -6,11 +6,12 @@ import { PivotTableEngine } from '../../modules/pivotTable/PivotTableEngine'
 import { clipAxis } from '../../modules/pivotTable/clipAxis'
 import { getHeaderForDisplay } from '../../modules/pivotTable/getHeaderForDisplay'
 import { useScrollPosition } from '../../modules/pivotTable/useScrollPosition'
+import { useParentSize } from '../../modules/pivotTable/useParentSize'
 
 const PivotTable = ({ visualization, data, options }) => {
     const container = useRef(undefined)
     const scrollPosition = useScrollPosition(container)
-    const [{ width, height }, setSize] = useState({ width: 0, height: 0 })
+    const { width, height } = useParentSize(container)
 
     const lookup = useMemo(
         () => new PivotTableEngine(visualization, data, options),
@@ -39,24 +40,6 @@ const PivotTable = ({ visualization, data, options }) => {
             }),
         [width, lookup.width, scrollPosition.x, visualization.rows.length]
     )
-
-    useEffect(() => {
-        const el = container.current && container.current.parentElement
-        if (!el) return
-
-        const onResize = () => {
-            setSize({
-                width: el.clientWidth,
-                height: el.clientHeight,
-            })
-        }
-        onResize(el)
-
-        const observer = new ResizeObserver(onResize)
-        observer.observe(el)
-
-        return () => observer.disconnect()
-    }, [container])
 
     return (
         <div className="pivot-table-container" ref={container}>
