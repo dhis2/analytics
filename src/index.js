@@ -33,6 +33,8 @@ export {
     getPredefinedDimensionProp,
     getDimensionById,
     getPredefinedDimensions,
+    getFixedDimensions,
+    getDynamicDimensions,
 } from './modules/predefinedDimensions'
 
 // Modules: ouIdHelper

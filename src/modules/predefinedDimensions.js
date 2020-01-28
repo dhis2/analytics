@@ -51,8 +51,13 @@ export const filterOutPredefinedDimensions = dimensionIds =>
     )
 
 export const getPredefinedDimensionProp = (dimensionId, propName) =>
-    (FIXED_DIMENSIONS[dimensionId] || {})[propName]
+    (PREDEFINED_DIMENSIONS[dimensionId] || {})[propName]
 
-export const getDimensionById = dimensionId => FIXED_DIMENSIONS[dimensionId]
+export const getDimensionById = dimensionId =>
+    PREDEFINED_DIMENSIONS[dimensionId]
 
-export const getPredefinedDimensions = () => FIXED_DIMENSIONS
+export const getPredefinedDimensions = () => PREDEFINED_DIMENSIONS
+
+export const getFixedDimensions = () => FIXED_DIMENSIONS
+
+export const getDynamicDimensions = () => DYNAMIC_DIMENSIONS
