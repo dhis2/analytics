@@ -2,12 +2,7 @@ import css from 'styled-jsx/css'
 
 export default css`
     div.pivot-table-container {
-        position: relative;
-        min-width: 100%;
-        width: 100%;
         max-width: 100%;
-        min-height: 100%;
-        height: 100%;
         max-height: 100%;
         overflow: auto;
         border: 1px solid #b2b2b2;

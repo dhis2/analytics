@@ -41,21 +41,21 @@ const PivotTable = ({ visualization, data, options }) => {
     )
 
     useEffect(() => {
-        const el = container.current
+        const el = container.current && container.current.parentElement
         if (!el) return
 
-        const onResize = element => {
+        const onResize = () => {
             setSize({
-                width: element.clientWidth,
-                height: element.clientHeight,
+                width: el.clientWidth,
+                height: el.clientHeight,
             })
-            console.log(element.offsetWidth, element.offsetHeight)
         }
-        onResize(container.current)
-        el.addEventListener('resize', onResize)
-        return () => {
-            el.removeEventListener('resize', onResize)
-        }
+        onResize(el)
+
+        const observer = new ResizeObserver(onResize)
+        observer.observe(el)
+
+        return () => observer.disconnect()
     }, [container])
 
     return (

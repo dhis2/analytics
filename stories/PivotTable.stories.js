@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { storiesOf } from '@storybook/react'
 
 import PivotTable from '../src/components/PivotTable/PivotTable'
@@ -15,6 +15,35 @@ storiesOf('PivotTable', module).add('default', () => {
             <PivotTable data={deepData} visualization={deepVisualization} options={{}} />
         </div>
     )
+})
+
+const ResizingPivotTable = () => {
+    const [size, setSize] = useState(() => ({ width: 400, height: 300 }))
+
+    useEffect(() => {
+        const bound = 150
+        let step = 1
+        let delta = 0
+        const interval = setInterval(() => {
+            if (delta < 0 || delta >= bound) {
+                step *= -1
+            }
+            delta += step;
+            setSize({
+                width: 400 + delta * 4,
+                height: 300 + delta * 3
+            })
+        }, 10)
+        return () => clearInterval(interval)
+    }, [])
+    return (
+        <div style={size}>
+            <PivotTable data={deepData} visualization={deepVisualization} options={{ showRowTotals: true, showColumnTotals: true }} />
+        </div>
+    )
+}
+storiesOf('PivotTable', module).add('resize', () => {
+    return <ResizingPivotTable />
 })
 
 storiesOf('PivotTable', module).add('totals', () => {
