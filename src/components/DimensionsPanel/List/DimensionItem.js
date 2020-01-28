@@ -128,7 +128,6 @@ DimensionItem.defaultProps = {
     isSelected: false,
     isLocked: false,
     onClick: Function.prototype,
-    onOptionsClick: Function.prototype,
     innerRef: Function.prototype,
     style: {},
 }
