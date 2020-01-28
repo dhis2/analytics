@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
 import { styles } from './styles/DimensionLabel.style'
+import { getPredefinedDimensionProp } from '../../../modules/predefinedDimensions'
 
 export class DimensionLabel extends Component {
     static propTypes = {
@@ -12,7 +13,10 @@ export class DimensionLabel extends Component {
     }
 
     onLabelClick = () => {
-        if (!this.props.isDeactivated) {
+        if (
+            !this.props.isDeactivated &&
+            !getPredefinedDimensionProp(this.props.id, 'noItems')
+        ) {
             this.props.onClick(this.props.id)
         }
     }
