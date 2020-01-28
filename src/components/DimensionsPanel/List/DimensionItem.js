@@ -130,6 +130,7 @@ DimensionItem.defaultProps = {
     onClick: Function.prototype,
     onOptionsClick: Function.prototype,
     innerRef: Function.prototype,
+    style: {},
 }
 
 export default DimensionItem
