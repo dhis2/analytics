@@ -16,7 +16,7 @@ import {
 
 import { ouIdHelper } from '../../modules/ouIdHelper'
 
-import { DIMENSION_ID_ORGUNIT } from '../../modules/fixedDimensions'
+import { DIMENSION_ID_ORGUNIT } from '../../modules/predefinedDimensions'
 import styles from './styles/OrgUnitDimension.style'
 import { colors } from '../../modules/colors'
 

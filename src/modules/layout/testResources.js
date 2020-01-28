@@ -10,7 +10,7 @@ import {
     DIMENSION_ID_DATA,
     DIMENSION_ID_PERIOD,
     DIMENSION_ID_ORGUNIT,
-} from '../fixedDimensions'
+} from '../predefinedDimensions'
 
 // Items
 

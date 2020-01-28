@@ -3,7 +3,7 @@ import { dimensionIs } from '../../modules/layout/dimensionIs'
 import {
     DIMENSION_ID_ORGUNIT,
     DIMENSION_ID_PERIOD,
-} from '../../modules/fixedDimensions'
+} from '../../modules/predefinedDimensions'
 import { dimensionGetItems } from '../../modules/layout/dimensionGetItems'
 import { getOuLevelAndGroupText } from '../../modules/getOuLevelAndGroupText'
 

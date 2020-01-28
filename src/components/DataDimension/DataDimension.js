@@ -20,7 +20,7 @@ import {
     defaultGroupId,
     defaultGroupDetail,
 } from '../../modules/dataTypes'
-import { DIMENSION_ID_DATA } from '../../modules/fixedDimensions'
+import { DIMENSION_ID_DATA } from '../../modules/predefinedDimensions'
 
 import { styles } from './styles/DataDimension.style'
 

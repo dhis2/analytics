@@ -28,6 +28,9 @@ const FIXED_DIMENSIONS = {
         iconName: 'OrgUnitIcon',
         icon: OrgUnitIcon,
     },
+}
+
+const DYNAMIC_DIMENSIONS = {
     [DIMENSION_ID_ASSIGNED_CATEGORIES]: {
         id: DIMENSION_ID_ASSIGNED_CATEGORIES,
         name: i18n.t('Assigned Categories'),
@@ -37,9 +40,14 @@ const FIXED_DIMENSIONS = {
     },
 }
 
+const PREDEFINED_DIMENSIONS = {
+    ...FIXED_DIMENSIONS,
+    ...DYNAMIC_DIMENSIONS,
+}
+
 export const filterOutPredefinedDimensions = dimensionIds =>
     dimensionIds.filter(
-        dimensionId => !Object.keys(FIXED_DIMENSIONS).includes(dimensionId)
+        dimensionId => !Object.keys(PREDEFINED_DIMENSIONS).includes(dimensionId)
     )
 
 export const getPredefinedDimensionProp = (dimensionId, propName) =>

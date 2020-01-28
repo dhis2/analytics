@@ -7,7 +7,7 @@ import DimensionLabel from './DimensionLabel'
 import RecommendedIcon from './RecommendedIcon'
 import OptionsButton from './OptionsButton'
 import DynamicDimensionIcon from '../../../assets/DynamicDimensionIcon'
-import { getPredefinedDimensionProp } from '../../../modules/fixedDimensions'
+import { getPredefinedDimensionProp } from '../../../modules/predefinedDimensions'
 import { styles } from './styles/DimensionItem.style'
 
 export class DimensionItem extends Component {
