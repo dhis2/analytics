@@ -29,10 +29,10 @@ export {
     DIMENSION_ID_PERIOD,
     DIMENSION_ID_ORGUNIT,
     DIMENSION_ID_ASSIGNED_CATEGORIES,
-    filterOutFixedDimensions,
-    getFixedDimensionProp,
+    filterOutPredefinedDimensions,
+    getPredefinedDimensionProp,
     getDimensionById,
-    getFixedDimensions,
+    getPredefinedDimensions,
 } from './modules/fixedDimensions'
 
 // Modules: ouIdHelper

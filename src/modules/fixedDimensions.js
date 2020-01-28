@@ -37,14 +37,14 @@ const FIXED_DIMENSIONS = {
     },
 }
 
-export const filterOutFixedDimensions = dimensionIds =>
+export const filterOutPredefinedDimensions = dimensionIds =>
     dimensionIds.filter(
         dimensionId => !Object.keys(FIXED_DIMENSIONS).includes(dimensionId)
     )
 
-export const getFixedDimensionProp = (dimensionId, propName) =>
+export const getPredefinedDimensionProp = (dimensionId, propName) =>
     (FIXED_DIMENSIONS[dimensionId] || {})[propName]
 
 export const getDimensionById = dimensionId => FIXED_DIMENSIONS[dimensionId]
 
-export const getFixedDimensions = () => FIXED_DIMENSIONS
+export const getPredefinedDimensions = () => FIXED_DIMENSIONS
