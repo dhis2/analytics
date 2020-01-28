@@ -1,5 +1,9 @@
 import { AXIS_ID_COLUMNS, AXIS_ID_ROWS, AXIS_ID_FILTERS } from '../layout/axis'
-import { DIMENSION_ID_PERIOD, DIMENSION_ID_DATA } from '../predefinedDimensions'
+import {
+    DIMENSION_ID_PERIOD,
+    DIMENSION_ID_DATA,
+    DIMENSION_ID_ASSIGNED_CATEGORIES,
+} from '../predefinedDimensions'
 import {
     VIS_TYPE_COLUMN,
     VIS_TYPE_STACKED_COLUMN,
@@ -63,11 +67,15 @@ const singleValueRules = {
     [RULE_PROP_LOCKED_DIMS]: {
         [DIMENSION_ID_DATA]: AXIS_ID_COLUMNS,
     },
+    [RULE_PROP_DISALLOWED_DIMS]: [DIMENSION_ID_ASSIGNED_CATEGORIES],
 }
 
 const yearOverYearRules = {
     [RULE_PROP_AVAILABLE_AXES]: [AXIS_ID_FILTERS],
-    [RULE_PROP_DISALLOWED_DIMS]: [DIMENSION_ID_PERIOD],
+    [RULE_PROP_DISALLOWED_DIMS]: [
+        DIMENSION_ID_PERIOD,
+        DIMENSION_ID_ASSIGNED_CATEGORIES,
+    ],
 }
 
 const pivotTableRules = {
