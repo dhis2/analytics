@@ -56,28 +56,33 @@ export class DimensionItem extends Component {
             isSelected,
             isRecommended,
             isLocked,
-            onClick /* eslint-disable-line no-unused-vars */,
+            onClick,
             onOptionsClick,
             innerRef,
             style,
             ...rest
         } = this.props
+
         const Icon = this.getDimensionIcon()
         const Label = this.getDimensionType()
-        const listItemStyle =
+        const itemStyle =
             isSelected && !isDeactivated
-                ? { ...styles.listItem, ...styles.selectedListItem }
-                : styles.listItem
+                ? { ...styles.item, ...styles.selected }
+                : styles.item
 
         return (
             <li
                 onMouseOver={this.onMouseOver}
                 onMouseLeave={this.onMouseExit}
                 ref={innerRef}
-                style={Object.assign({}, listItemStyle, style)}
+                style={Object.assign({}, itemStyle, style)}
                 {...rest}
             >
-                <DimensionLabel {...this.props}>
+                <DimensionLabel
+                    id={id}
+                    isDeactivated={isDeactivated}
+                    onClick={onClick}
+                >
                     <div style={styles.iconWrapper}>{Icon}</div>
                     <div style={styles.labelWrapper}>
                         {Label}
