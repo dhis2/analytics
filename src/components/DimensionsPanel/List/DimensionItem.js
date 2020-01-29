@@ -7,7 +7,7 @@ import DimensionLabel from './DimensionLabel'
 import RecommendedIcon from './RecommendedIcon'
 import OptionsButton from './OptionsButton'
 import DynamicDimensionIcon from '../../../assets/DynamicDimensionIcon'
-import { getFixedDimensionProp } from '../../../modules/fixedDimensions'
+import { getPredefinedDimensionProp } from '../../../modules/predefinedDimensions'
 import { styles } from './styles/DimensionItem.style'
 
 export class DimensionItem extends Component {
@@ -24,7 +24,7 @@ export class DimensionItem extends Component {
     }
 
     getDimensionIcon = () => {
-        const Icon = getFixedDimensionProp(this.props.id, 'icon')
+        const Icon = getPredefinedDimensionProp(this.props.id, 'icon')
         return Icon ? (
             <Icon style={styles.fixedDimensionIcon} />
         ) : (
@@ -33,7 +33,7 @@ export class DimensionItem extends Component {
     }
 
     getDimensionType = () => {
-        const { id, name, isDeactivated, onDragStart, isLocked } = this.props
+        const { id, name, isDeactivated } = this.props
 
         return (
             <span
@@ -42,8 +42,6 @@ export class DimensionItem extends Component {
                     ...styles.text,
                     ...(isDeactivated ? styles.textDeactivated : {}),
                 }}
-                draggable={!isDeactivated && !isLocked}
-                onDragStart={onDragStart}
             >
                 {/* is it needed here or displayName should be used instead?! */}
                 {i18n.t(name)}
@@ -57,23 +55,34 @@ export class DimensionItem extends Component {
             isDeactivated,
             isSelected,
             isRecommended,
-            onOptionsClick,
             isLocked,
+            onClick,
+            onOptionsClick,
+            innerRef,
+            style,
+            ...rest
         } = this.props
+
         const Icon = this.getDimensionIcon()
         const Label = this.getDimensionType()
-        const listItemStyle =
+        const itemStyle =
             isSelected && !isDeactivated
-                ? { ...styles.listItem, ...styles.selectedListItem }
-                : styles.listItem
+                ? { ...styles.item, ...styles.selected }
+                : styles.item
 
         return (
             <li
-                style={listItemStyle}
                 onMouseOver={this.onMouseOver}
                 onMouseLeave={this.onMouseExit}
+                ref={innerRef}
+                style={Object.assign({}, itemStyle, style)}
+                {...rest}
             >
-                <DimensionLabel {...this.props}>
+                <DimensionLabel
+                    id={id}
+                    isDeactivated={isDeactivated}
+                    onClick={onClick}
+                >
                     <div style={styles.iconWrapper}>{Icon}</div>
                     <div style={styles.labelWrapper}>
                         {Label}
@@ -104,11 +113,12 @@ DimensionItem.propTypes = {
     id: PropTypes.string.isRequired,
     isSelected: PropTypes.bool.isRequired, // XXX
     name: PropTypes.string.isRequired,
+    innerRef: PropTypes.func,
     isDeactivated: PropTypes.bool,
     isLocked: PropTypes.bool,
     isRecommended: PropTypes.bool,
+    style: PropTypes.object,
     onClick: PropTypes.func,
-    onDragStart: PropTypes.func,
     onOptionsClick: PropTypes.func,
 }
 
@@ -117,6 +127,9 @@ DimensionItem.defaultProps = {
     isRecommended: false,
     isSelected: false,
     isLocked: false,
+    onClick: Function.prototype,
+    innerRef: Function.prototype,
+    style: {},
 }
 
 export default DimensionItem

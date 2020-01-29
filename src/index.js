@@ -9,6 +9,8 @@ export { default as OrgUnitDimension } from './components/OrgUnitDimension/OrgUn
 export { default as DynamicDimension } from './components/DynamicDimension/DynamicDimension'
 
 export { default as DimensionsPanel } from './components/DimensionsPanel/DimensionsPanel'
+export { default as DimensionItem } from './components/DimensionsPanel/List/DimensionItem'
+export { default as DimensionFilter } from './components/Filter/Filter'
 
 export { default as ItemSelector } from './components/ItemSelector/ItemSelector'
 
@@ -24,18 +26,21 @@ export { apiFetchDimensions, apiFetchRecommendedIds } from './api/dimensions'
 
 export { getAxisName } from './modules/axis'
 
-// Modules: fixedDimensions
+// Modules: predefined dimensions
 
 export {
     DIMENSION_ID_DATA,
     DIMENSION_ID_PERIOD,
     DIMENSION_ID_ORGUNIT,
     DIMENSION_ID_ASSIGNED_CATEGORIES,
-    filterOutFixedDimensions,
-    getFixedDimensionProp,
+    DIMENSION_PROP_NO_ITEMS,
+    filterOutPredefinedDimensions,
+    getPredefinedDimensionProp,
     getDimensionById,
+    getPredefinedDimensions,
     getFixedDimensions,
-} from './modules/fixedDimensions'
+    getDynamicDimensions,
+} from './modules/predefinedDimensions'
 
 // Modules: ouIdHelper
 
@@ -131,6 +136,7 @@ export {
     LAYOUT_TYPE_PIE,
     LAYOUT_TYPE_SINGLE_VALUE,
     LAYOUT_TYPE_YEAR_OVER_YEAR,
+    LAYOUT_TYPE_PIVOT_TABLE,
 } from './modules/layoutTypes'
 
 // Modules: layoutUiRules

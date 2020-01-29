@@ -10,7 +10,7 @@ import Tooltip from '@material-ui/core/Tooltip'
 
 import { getAvailableAxes } from '../modules/layoutUiRules'
 import { AXIS_ID_COLUMNS, AXIS_ID_FILTERS } from '../modules/layout/axis'
-import { DIMENSION_ID_DATA } from '../modules/fixedDimensions'
+import { DIMENSION_ID_DATA } from '../modules/predefinedDimensions'
 import { isDualAxisType, getDisplayNameByVisType } from '../modules/visTypes'
 import { getAxisName } from '../modules/axis'
 

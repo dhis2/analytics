@@ -4,7 +4,10 @@ import {
     testResourceAllRuleProps,
 } from '../rules'
 import { ALL_AXIS_IDS } from '../../layout/axis'
-import { DIMENSION_ID_DATA, DIMENSION_ID_PERIOD } from '../../fixedDimensions'
+import {
+    DIMENSION_ID_DATA,
+    DIMENSION_ID_PERIOD,
+} from '../../predefinedDimensions'
 
 // Consts
 const lockableDims = [DIMENSION_ID_DATA, DIMENSION_ID_PERIOD]

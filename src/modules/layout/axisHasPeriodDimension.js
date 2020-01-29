@@ -1,4 +1,4 @@
-import { DIMENSION_ID_PERIOD } from '../fixedDimensions'
+import { DIMENSION_ID_PERIOD } from '../predefinedDimensions'
 import { axisHasDimension } from './axisHasDimension'
 
 export const axisHasPeriodDimension = axis =>

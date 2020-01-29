@@ -2,7 +2,7 @@ import i18n from '@dhis2/d2-i18n'
 import { ouIdHelper } from './ouIdHelper'
 import { dimensionIs } from './layout/dimensionIs'
 import { dimensionGetItems } from './layout/dimensionGetItems'
-import { DIMENSION_ID_ORGUNIT } from './fixedDimensions'
+import { DIMENSION_ID_ORGUNIT } from './predefinedDimensions'
 
 export const getOuLevelAndGroupText = (filter, metaData) => {
     if (!dimensionIs(DIMENSION_ID_ORGUNIT)) {

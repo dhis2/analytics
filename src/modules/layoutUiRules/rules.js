@@ -1,5 +1,5 @@
 import { AXIS_ID_COLUMNS, AXIS_ID_ROWS, AXIS_ID_FILTERS } from '../layout/axis'
-import { DIMENSION_ID_PERIOD, DIMENSION_ID_DATA } from '../fixedDimensions'
+import { DIMENSION_ID_PERIOD, DIMENSION_ID_DATA } from '../predefinedDimensions'
 import {
     VIS_TYPE_COLUMN,
     VIS_TYPE_STACKED_COLUMN,
