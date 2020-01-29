@@ -1,9 +1,9 @@
 import { layoutGetAllDimensions } from './layoutGetAllDimensions'
 import { dimensionGetId } from './dimensionGetId'
-import { getFixedDimensions } from '../fixedDimensions'
+import { getPredefinedDimensions } from '../predefinedDimensions'
 
 export const layoutHasDynamicDimension = layout => {
-    const fixedIds = Object.keys(getFixedDimensions())
+    const fixedIds = Object.keys(getPredefinedDimensions())
 
     return Boolean(
         layoutGetAllDimensions(layout).find(

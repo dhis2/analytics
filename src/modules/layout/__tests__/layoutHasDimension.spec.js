@@ -1,7 +1,7 @@
 import { TEST_LAYOUT } from '../testResources'
 import { AXIS, AXIS_ID_FILTERS } from '../axis'
 import { layoutHasDimension } from '../layoutHasDimension'
-import { DIMENSION_ID_ORGUNIT } from '../../fixedDimensions'
+import { DIMENSION_ID_ORGUNIT } from '../../predefinedDimensions'
 
 describe('layoutHasDimension', () => {
     it('should return true if the dimension id is found in the layout, otherwise false', () => {

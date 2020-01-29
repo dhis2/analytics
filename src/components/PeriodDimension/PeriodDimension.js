@@ -6,7 +6,7 @@ import DialogContent from '@material-ui/core/DialogContent'
 import { PeriodSelector } from '@dhis2/d2-ui-period-selector-dialog'
 import i18n from '@dhis2/d2-i18n'
 
-import { DIMENSION_ID_PERIOD } from '../../modules/fixedDimensions'
+import { DIMENSION_ID_PERIOD } from '../../modules/predefinedDimensions'
 
 export class PeriodDimension extends Component {
     selectItems = periods => {

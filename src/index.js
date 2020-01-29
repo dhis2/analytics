@@ -24,18 +24,21 @@ export { apiFetchDimensions, apiFetchRecommendedIds } from './api/dimensions'
 
 export { getAxisName } from './modules/axis'
 
-// Modules: fixedDimensions
+// Modules: predefined dimensions
 
 export {
     DIMENSION_ID_DATA,
     DIMENSION_ID_PERIOD,
     DIMENSION_ID_ORGUNIT,
     DIMENSION_ID_ASSIGNED_CATEGORIES,
-    filterOutFixedDimensions,
-    getFixedDimensionProp,
+    DIMENSION_PROP_NO_ITEMS,
+    filterOutPredefinedDimensions,
+    getPredefinedDimensionProp,
     getDimensionById,
+    getPredefinedDimensions,
     getFixedDimensions,
-} from './modules/fixedDimensions'
+    getDynamicDimensions,
+} from './modules/predefinedDimensions'
 
 // Modules: ouIdHelper
 
