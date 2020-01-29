@@ -1,3 +1,15 @@
+# [3.0.0](https://github.com/dhis2/analytics/compare/v2.9.0...v3.0.0) (2020-01-29)
+
+
+### Bug Fixes
+
+* fixed and dynamic dimensions ([#262](https://github.com/dhis2/analytics/issues/262)) ([abc32c0](https://github.com/dhis2/analytics/commit/abc32c08fca3cf1573b36b7a82155175cc423f3b))
+
+
+### BREAKING CHANGES
+
+* everything related to fixed dimensions has been renamed to predefined dimensions
+
 # [2.9.0](https://github.com/dhis2/analytics/compare/v2.8.6...v2.9.0) (2020-01-29)
 
 
