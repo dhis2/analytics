@@ -1,13 +1,9 @@
 import css from 'styled-jsx/css'
 
-export default css`
+export const table = css`
     div.pivot-table-container {
-        max-width: 100%;
-        max-height: 100%;
         overflow: auto;
-        border: 1px solid #b2b2b2;
         font-size: 10px;
-        border-collapse: collapse;
     }
     div.pivot-table-container::-webkit-scrollbar {
         -webkit-appearance: none;
@@ -35,15 +31,12 @@ export default css`
         box-sizing: border-box;
         text-align: center;
     }
-    table * {
-        padding: 0 !important;
-    }
-    tr:first-child > th {
-        border-top: 0;
-    }
+`
+
+export const cell = css`
     td,
     th {
-        padding: 5px;
+        padding: 0px;
         border: 1px solid #b2b2b2;
         min-width: 150px;
         width: 150px;
@@ -66,18 +59,10 @@ export default css`
         position: sticky;
         left: 0;
         z-index: 1;
-        border-left: 0;
         background-color: #dae6f8;
     }
     td.row-header {
         padding: 0;
-    }
-    td.row-header tr:first-child td {
-        border-left: 0;
-        border-top: 0;
-    }
-    td.row-header tr:first-child td:first-child {
-        border-bottom: 0;
     }
     td.empty-header,
     th.empty-header {
@@ -86,10 +71,13 @@ export default css`
     td.total-header {
         background-color: #bac6d8;
     }
-    .subtotal {
+    td.value {
+        background-color: #ffffff;
+    }
+    td.subtotal {
         background-color: #f4f4f4;
     }
-    .total {
+    td.total {
         background-color: #d8d8d8;
     }
 `

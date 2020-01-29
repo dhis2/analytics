@@ -111,7 +111,11 @@ const buildDimensionLookup = (visualization, metadata, headers) => {
     }
 }
 
-const lookup = (dataRow, dimensionLookup, options) => {
+const lookup = (
+    dataRow,
+    dimensionLookup,
+    { doColumnSubtotals, doRowSubtotals }
+) => {
     let row = 0
     dimensionLookup.rowHeaders.forEach(headerIndex => {
         const idx = dimensionLookup.headerDimensions[
@@ -121,7 +125,7 @@ const lookup = (dataRow, dimensionLookup, options) => {
         row += idx * size
     })
 
-    if (options.showColumnSubtotals) {
+    if (doColumnSubtotals) {
         row += Math.floor(row / dimensionLookup.rows[0].size)
     }
 
@@ -134,7 +138,7 @@ const lookup = (dataRow, dimensionLookup, options) => {
         column += idx * size
     })
 
-    if (options.showRowSubtotals) {
+    if (doRowSubtotals) {
         column += Math.floor(column / dimensionLookup.columns[0].size)
     }
 
@@ -220,7 +224,7 @@ export class PivotTableEngine {
                 () => undefined
             ).concat([{ name: 'TOTAL' }])
         }
-        if (this.options.showRowSubtotals) {
+        if (this.doRowSubtotals) {
             if (
                 (column + 1) % (this.dimensionLookup.columns[0].size + 1) ===
                 0
@@ -246,7 +250,7 @@ export class PivotTableEngine {
                 () => undefined
             ).concat([{ name: 'TOTAL' }])
         }
-        if (this.options.showColumnSubtotals) {
+        if (this.doColumnSubtotals) {
             if ((row + 1) % (this.dimensionLookup.rows[0].size + 1) === 0) {
                 return []
             }
@@ -260,7 +264,7 @@ export class PivotTableEngine {
 
     getDependantTotalCells({ row, column }) {
         const rowSubtotalSize = this.dimensionLookup.columns[0].size + 1
-        const rowSubtotal = this.options.showRowSubtotals && {
+        const rowSubtotal = this.doRowSubtotals && {
             row,
             column:
                 Math.ceil((column + 1) / rowSubtotalSize) * rowSubtotalSize - 1,
@@ -339,10 +343,10 @@ export class PivotTableEngine {
         }
 
         const isRowSubtotal =
-            this.options.showRowSubtotals &&
+            this.doRowSubtotals &&
             (column + 1) % (this.dimensionLookup.columns[0].size + 1) === 0
         const isColumnSubtotal =
-            this.options.showColumnSubtotals &&
+            this.doColumnSubtotals &&
             (row + 1) % (this.dimensionLookup.rows[0].size + 1) === 0
 
         if (isRowSubtotal || isColumnSubtotal) {
@@ -363,21 +367,30 @@ export class PivotTableEngine {
             this.dimensionLookup.columns
         )
 
-        if (this.options.showRowSubtotals) {
+        // TODO: Check last row/col dimension for size===1, skip redundant sub-totals
+        this.doRowSubtotals =
+            this.options.showRowSubtotals &&
+            this.dimensionLookup.columns.length > 1
+        this.doColumnSubtotals =
+            this.options.showColumnSubtotals &&
+            this.dimensionLookup.rows.length > 1
+
+        if (this.doRowSubtotals) {
             this.dataWidth += this.dimensionLookup.columns[0].count
         }
-        if (this.options.showColumnSubtotals) {
+        if (this.doColumnSubtotals) {
             this.dataHeight += this.dimensionLookup.rows[0].count
         }
         if (this.options.showRowTotals) {
             this.dataWidth += 1
         }
         if (this.options.showColumnTotals) {
+            ;``
             this.dataHeight += 1
         }
 
         this.rawData.rows.forEach(dataRow => {
-            const pos = lookup(dataRow, this.dimensionLookup, this.options)
+            const pos = lookup(dataRow, this.dimensionLookup, this)
             this.data[pos.row] = this.data[pos.row] || []
             this.data[pos.row][pos.column] = dataRow
             this.occupiedColumns[pos.column] = true
