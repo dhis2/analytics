@@ -16,14 +16,14 @@ export const styles = {
         cursor: 'auto',
         color: colors.grey,
     },
-    listItem: {
+    item: {
         display: 'flex',
         minHeight: '24px',
         marginTop: 3,
         marginBottom: 3,
         alignItems: 'center',
     },
-    selectedListItem: {
+    selected: {
         backgroundColor: colors.accentSecondaryTransparent,
         fontWeight: 500,
     },

@@ -1,3 +1,17 @@
+# [2.9.0](https://github.com/dhis2/analytics/compare/v2.8.6...v2.9.0) (2020-01-29)
+
+
+### Features
+
+* leave it to parent component to apply dnd features to dimension item ([#261](https://github.com/dhis2/analytics/issues/261)) ([ff94158](https://github.com/dhis2/analytics/commit/ff9415879303c09b424f8976eaeb2210fbe17461))
+
+## [2.8.6](https://github.com/dhis2/analytics/compare/v2.8.5...v2.8.6) (2020-01-28)
+
+
+### Bug Fixes
+
+* add pivot table layout type ([#263](https://github.com/dhis2/analytics/issues/263)) ([585ef88](https://github.com/dhis2/analytics/commit/585ef8858f58e877bf0e12dbb9211609657e5e44))
+
 ## [2.8.5](https://github.com/dhis2/analytics/compare/v2.8.4...v2.8.5) (2020-01-24)
 
 
