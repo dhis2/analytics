@@ -22,7 +22,7 @@ export { apiFetchDimensions, apiFetchRecommendedIds } from './api/dimensions'
 
 export { getAxisName } from './modules/axis'
 
-// Modules: predefinedDimensions
+// Modules: predefined dimensions
 
 export {
     DIMENSION_ID_DATA,
