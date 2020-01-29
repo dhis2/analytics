@@ -1,0 +1,370 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DimensionItem matches the snapshot 1`] = `
+<li
+  name="Period"
+  onMouseLeave={[Function]}
+  onMouseOver={[Function]}
+  style={
+    Object {
+      "alignItems": "center",
+      "display": "flex",
+      "marginBottom": 3,
+      "marginTop": 3,
+      "minHeight": "24px",
+    }
+  }
+>
+  <DimensionLabel
+    id="pe"
+    isDeactivated={false}
+    onClick={[Function]}
+  >
+    <div
+      style={
+        Object {
+          "display": "flex",
+          "flexDirection": "column",
+          "padding": "3px 8px 0 8px",
+        }
+      }
+    >
+      <PeriodIcon
+        style={
+          Object {
+            "paddingBottom": "2px",
+            "paddingLeft": "6px",
+          }
+        }
+      />
+    </div>
+    <div
+      style={
+        Object {
+          "maxWidth": "174px",
+          "padding": "2px 0",
+        }
+      }
+    >
+      <span
+        data-dimensionid="pe"
+        style={
+          Object {
+            "color": "#000000",
+            "cursor": "pointer",
+            "fontSize": "14px",
+            "userSelect": "none",
+            "wordBreak": "break-word",
+          }
+        }
+      >
+        Period
+      </span>
+      <RecommendedIcon
+        isRecommended={false}
+      />
+    </div>
+  </DimensionLabel>
+</li>
+`;
+
+exports[`DimensionItem matches the snapshot with locked 1`] = `
+<li
+  name="Period"
+  onMouseLeave={[Function]}
+  onMouseOver={[Function]}
+  style={
+    Object {
+      "alignItems": "center",
+      "display": "flex",
+      "marginBottom": 3,
+      "marginTop": 3,
+      "minHeight": "24px",
+    }
+  }
+>
+  <DimensionLabel
+    id="pe"
+    isDeactivated={false}
+    onClick={[Function]}
+  >
+    <div
+      style={
+        Object {
+          "display": "flex",
+          "flexDirection": "column",
+          "padding": "3px 8px 0 8px",
+        }
+      }
+    >
+      <PeriodIcon
+        style={
+          Object {
+            "paddingBottom": "2px",
+            "paddingLeft": "6px",
+          }
+        }
+      />
+    </div>
+    <div
+      style={
+        Object {
+          "maxWidth": "174px",
+          "padding": "2px 0",
+        }
+      }
+    >
+      <span
+        data-dimensionid="pe"
+        style={
+          Object {
+            "color": "#000000",
+            "cursor": "pointer",
+            "fontSize": "14px",
+            "userSelect": "none",
+            "wordBreak": "break-word",
+          }
+        }
+      >
+        Period
+      </span>
+      <RecommendedIcon
+        isRecommended={false}
+      />
+    </div>
+    <div
+      style={
+        Object {
+          "display": "flex",
+          "flexDirection": "column",
+          "padding": "3px 8px 0 8px",
+        }
+      }
+    >
+      <pure(LockIcon)
+        style={
+          Object {
+            "fontSize": "14px",
+          }
+        }
+      />
+    </div>
+  </DimensionLabel>
+</li>
+`;
+
+exports[`DimensionItem matches the snapshot with onOptionsClick 1`] = `
+<li
+  name="Period"
+  onMouseLeave={[Function]}
+  onMouseOver={[Function]}
+  style={
+    Object {
+      "alignItems": "center",
+      "display": "flex",
+      "marginBottom": 3,
+      "marginTop": 3,
+      "minHeight": "24px",
+    }
+  }
+>
+  <DimensionLabel
+    id="pe"
+    isDeactivated={false}
+    onClick={[Function]}
+  >
+    <div
+      style={
+        Object {
+          "display": "flex",
+          "flexDirection": "column",
+          "padding": "3px 8px 0 8px",
+        }
+      }
+    >
+      <PeriodIcon
+        style={
+          Object {
+            "paddingBottom": "2px",
+            "paddingLeft": "6px",
+          }
+        }
+      />
+    </div>
+    <div
+      style={
+        Object {
+          "maxWidth": "174px",
+          "padding": "2px 0",
+        }
+      }
+    >
+      <span
+        data-dimensionid="pe"
+        style={
+          Object {
+            "color": "#000000",
+            "cursor": "pointer",
+            "fontSize": "14px",
+            "userSelect": "none",
+            "wordBreak": "break-word",
+          }
+        }
+      >
+        Period
+      </span>
+      <RecommendedIcon
+        isRecommended={false}
+      />
+    </div>
+  </DimensionLabel>
+  <div
+    style={
+      Object {
+        "alignSelf": "start",
+        "height": "24px",
+        "left": "5px",
+        "position": "relative",
+      }
+    }
+  />
+</li>
+`;
+
+exports[`DimensionItem matches the snapshot with recommended 1`] = `
+<li
+  name="Period"
+  onMouseLeave={[Function]}
+  onMouseOver={[Function]}
+  style={
+    Object {
+      "alignItems": "center",
+      "display": "flex",
+      "marginBottom": 3,
+      "marginTop": 3,
+      "minHeight": "24px",
+    }
+  }
+>
+  <DimensionLabel
+    id="pe"
+    isDeactivated={false}
+    onClick={[Function]}
+  >
+    <div
+      style={
+        Object {
+          "display": "flex",
+          "flexDirection": "column",
+          "padding": "3px 8px 0 8px",
+        }
+      }
+    >
+      <PeriodIcon
+        style={
+          Object {
+            "paddingBottom": "2px",
+            "paddingLeft": "6px",
+          }
+        }
+      />
+    </div>
+    <div
+      style={
+        Object {
+          "maxWidth": "174px",
+          "padding": "2px 0",
+        }
+      }
+    >
+      <span
+        data-dimensionid="pe"
+        style={
+          Object {
+            "color": "#000000",
+            "cursor": "pointer",
+            "fontSize": "14px",
+            "userSelect": "none",
+            "wordBreak": "break-word",
+          }
+        }
+      >
+        Period
+      </span>
+      <RecommendedIcon
+        isRecommended={true}
+      />
+    </div>
+  </DimensionLabel>
+</li>
+`;
+
+exports[`DimensionItem matches the snapshot with selected 1`] = `
+<li
+  name="Period"
+  onMouseLeave={[Function]}
+  onMouseOver={[Function]}
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#D9ECEB",
+      "display": "flex",
+      "fontWeight": 500,
+      "marginBottom": 3,
+      "marginTop": 3,
+      "minHeight": "24px",
+    }
+  }
+>
+  <DimensionLabel
+    id="pe"
+    isDeactivated={false}
+    onClick={[Function]}
+  >
+    <div
+      style={
+        Object {
+          "display": "flex",
+          "flexDirection": "column",
+          "padding": "3px 8px 0 8px",
+        }
+      }
+    >
+      <PeriodIcon
+        style={
+          Object {
+            "paddingBottom": "2px",
+            "paddingLeft": "6px",
+          }
+        }
+      />
+    </div>
+    <div
+      style={
+        Object {
+          "maxWidth": "174px",
+          "padding": "2px 0",
+        }
+      }
+    >
+      <span
+        data-dimensionid="pe"
+        style={
+          Object {
+            "color": "#000000",
+            "cursor": "pointer",
+            "fontSize": "14px",
+            "userSelect": "none",
+            "wordBreak": "break-word",
+          }
+        }
+      >
+        Period
+      </span>
+      <RecommendedIcon
+        isRecommended={false}
+      />
+    </div>
+  </DimensionLabel>
+</li>
+`;
