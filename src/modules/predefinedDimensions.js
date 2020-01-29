@@ -8,6 +8,7 @@ export const DIMENSION_ID_DATA = 'dx'
 export const DIMENSION_ID_PERIOD = 'pe'
 export const DIMENSION_ID_ORGUNIT = 'ou'
 export const DIMENSION_ID_ASSIGNED_CATEGORIES = 'co'
+export const DIMENSION_PROP_NO_ITEMS = 'noItems'
 
 const FIXED_DIMENSIONS = {
     [DIMENSION_ID_DATA]: {
@@ -36,7 +37,7 @@ const DYNAMIC_DIMENSIONS = {
         name: i18n.t('Assigned Categories'),
         iconName: 'AssignedCategoriesIcon',
         icon: AssignedCategoriesIcon,
-        noItems: true,
+        [DIMENSION_PROP_NO_ITEMS]: true,
     },
 }
 

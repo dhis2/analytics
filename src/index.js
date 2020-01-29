@@ -31,6 +31,7 @@ export {
     DIMENSION_ID_PERIOD,
     DIMENSION_ID_ORGUNIT,
     DIMENSION_ID_ASSIGNED_CATEGORIES,
+    DIMENSION_PROP_NO_ITEMS,
     filterOutPredefinedDimensions,
     getPredefinedDimensionProp,
     getDimensionById,
