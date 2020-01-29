@@ -71,10 +71,13 @@ export const cell = css`
     td.total-header {
         background-color: #bac6d8;
     }
-    .subtotal {
+    td.value {
+        background-color: #ffffff;
+    }
+    td.subtotal {
         background-color: #f4f4f4;
     }
-    .total {
+    td.total {
         background-color: #d8d8d8;
     }
 `
