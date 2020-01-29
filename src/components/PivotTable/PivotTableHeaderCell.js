@@ -19,7 +19,7 @@ export const PivotTableHeaderCell = ({
 }
 
 PivotTableHeaderCell.propTypes = {
-    clippingResult: PropTypes.object.isRequired,
+    axisClippingResult: PropTypes.object.isRequired,
     getHeader: PropTypes.func.isRequired,
     index: PropTypes.number.isRequired,
     level: PropTypes.number.isRequired,

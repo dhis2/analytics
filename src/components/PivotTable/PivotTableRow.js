@@ -19,7 +19,7 @@ export const PivotTableRow = ({ engine, clippingResult, rowIndex }) => (
         <PivotTableClippedAxis
             axisClippingResult={clippingResult.columns}
             EmptyComponent={() => <PivotTableEmptyCell type="value" />}
-            renderItem={columnIndex => (
+            ItemComponent={({ index: columnIndex }) => (
                 <PivotTableValueCell
                     engine={engine}
                     row={rowIndex}

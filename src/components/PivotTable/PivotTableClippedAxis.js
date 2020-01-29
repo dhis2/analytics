@@ -3,13 +3,15 @@ import React from 'react'
 export const PivotTableClippedAxis = ({
     axisClippingResult,
     EmptyComponent,
-    renderItem,
+    ItemComponent,
 }) => [
     axisClippingResult.pre ? (
-        <EmptyComponent size={axisClippingResult.pre} />
+        <EmptyComponent key="pre" size={axisClippingResult.pre} />
     ) : null,
-    axisClippingResult.indices.map(renderItem),
+    axisClippingResult.indices.map(index => (
+        <ItemComponent key={index} index={index} />
+    )),
     axisClippingResult.post ? (
-        <EmptyComponent size={axisClippingResult.post} />
+        <EmptyComponent key="post" size={axisClippingResult.post} />
     ) : null,
 ]

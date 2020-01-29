@@ -11,7 +11,7 @@ export const PivotTableColumnHeaders = ({ engine, clippingResult }) => {
             <PivotTableClippedAxis
                 axisClippingResult={clippingResult.columns}
                 EmptyComponent={({ size }) => <th style={{ minWidth: size }} />}
-                renderItem={index => (
+                ItemComponent={({ index }) => (
                     <PivotTableColumnHeaderCell
                         engine={engine}
                         clippingResult={clippingResult}

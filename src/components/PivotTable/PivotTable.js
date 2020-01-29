@@ -49,7 +49,7 @@ const PivotTable = ({ visualization, data, options }) => {
                                     <td style={{ height: size }} />
                                 </tr>
                             )}
-                            renderItem={index => (
+                            ItemComponent={({ index }) => (
                                 <PivotTableRow
                                     key={index}
                                     engine={engine}
