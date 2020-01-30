@@ -40,7 +40,12 @@ export class DimensionList extends Component {
 
     render() {
         const { classes, dimensions } = this.props
-        const fixedDimensions = Object.values(getFixedDimensions())
+        const fixedDimensions = dimensions
+            .filter(dimension =>
+                Object.values(getFixedDimensions()).some(
+                    fixedDim => fixedDim.id === dimension.id
+                )
+            )
             .filter(this.nameContainsFilterText)
             .map(this.renderItem)
         const nonPredefinedDimensions = dimensions
