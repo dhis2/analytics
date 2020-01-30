@@ -38,25 +38,25 @@ export class DimensionList extends Component {
         />
     )
 
+    getDimensionItemsByFilter = filter =>
+        this.props.dimensions
+            .filter(filter)
+            .filter(this.nameContainsFilterText)
+            .map(this.renderItem)
+
     render() {
-        const { classes, dimensions } = this.props
-        const fixedDimensions = dimensions
-            .filter(dimension =>
-                Object.values(getFixedDimensions()).some(
-                    fixedDim => fixedDim.id === dimension.id
+        const { classes } = this.props
+        const fixedDimensions = this.getDimensionItemsByFilter(dimension =>
+            Object.values(getFixedDimensions()).some(
+                fixedDim => fixedDim.id === dimension.id
+            )
+        )
+        const nonPredefinedDimensions = this.getDimensionItemsByFilter(
+            dimension =>
+                !Object.values(getPredefinedDimensions()).some(
+                    predefDim => predefDim.id === dimension.id
                 )
-            )
-            .filter(this.nameContainsFilterText)
-            .map(this.renderItem)
-        const nonPredefinedDimensions = dimensions
-            .filter(
-                dimension =>
-                    !Object.values(getPredefinedDimensions()).some(
-                        predefDim => predefDim.id === dimension.id
-                    )
-            )
-            .filter(this.nameContainsFilterText)
-            .map(this.renderItem)
+        )
 
         return (
             <div className={classes.container}>
