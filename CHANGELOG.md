@@ -1,3 +1,10 @@
+## [3.0.1](https://github.com/dhis2/analytics/compare/v3.0.0...v3.0.1) (2020-01-30)
+
+
+### Bug Fixes
+
+* dimensions panel redesign ([#269](https://github.com/dhis2/analytics/issues/269)) ([0217776](https://github.com/dhis2/analytics/commit/0217776bf0bd9dc89bb5278f81ab3148ad93e8a9))
+
 # [3.0.0](https://github.com/dhis2/analytics/compare/v2.9.0...v3.0.0) (2020-01-29)
 
 
