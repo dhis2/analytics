@@ -10,6 +10,9 @@ export const styles = {
         overflow: 'hidden',
     },
     textField: {
-        paddingBottom: '6px',
+        marginBottom: '6px',
+        background: '#fff',
+        border: `1px solid ${colors.grey400}`,
+        borderRadius: '5px',
     },
 }
