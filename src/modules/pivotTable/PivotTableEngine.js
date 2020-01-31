@@ -162,12 +162,17 @@ export class PivotTableEngine {
     rowMap = []
     columnMap = []
 
-    constructor(visualization, data, options = {}) {
+    constructor(visualization, data) {
         this.visualization = visualization
         this.rawData = data
         this.options = {
             ...defaultOptions,
-            ...options,
+            showColumnTotals: visualization.colTotals,
+            showRowTotals: visualization.rowTotals,
+            showColumnSubtotals: visualization.colSubTotals,
+            showRowSubtotals: visualization.rowSubTotals,
+            hideEmptyColumns: visualization.hideEmptyColumns,
+            hideEmptyRows: visualization.hideEmptyRows,
         }
 
         this.dimensionLookup = buildDimensionLookup(

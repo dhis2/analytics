@@ -9,15 +9,28 @@ import deepVisualization from './data/deep.visualization.json'
 import emptyRowsData from './data/emptyRows.data.json'
 import emptyRowsVisualization from './data/emptyRows.visualization.json'
 
+const visualizationReset = {
+    colTotals: false,
+    rowTotals: false,
+    colSubTotals: false,
+    rowSubTotals: false,
+    hideEmptyColumns: false,
+    hideEmptyRows: false
+}
+
 storiesOf('PivotTable', module).add('default', () => {
+    const visualization = {
+        ...deepVisualization,
+        ...visualizationReset
+    }
     return (
         <div style={{ width: 800, height: 600 }}>
-            <PivotTable data={deepData} visualization={deepVisualization} options={{}} />
+            <PivotTable data={deepData} visualization={visualization} />
         </div>
     )
 })
 
-const ResizingPivotTable = () => {
+const ResizingPivotTable = ({ visualization }) => {
     const [size, setSize] = useState(() => ({ width: 400, height: 300 }))
 
     useEffect(() => {
@@ -38,42 +51,67 @@ const ResizingPivotTable = () => {
     }, [])
     return (
         <div style={size}>
-            <PivotTable data={deepData} visualization={deepVisualization} options={{ showRowTotals: true, showColumnTotals: true }} />
+            <PivotTable data={deepData} visualization={visualization} />
         </div>
     )
 }
 storiesOf('PivotTable', module).add('resize', () => {
-    return <ResizingPivotTable />
+    const visualization = {
+        ...deepVisualization,
+        ...visualizationReset
+    }
+    return <ResizingPivotTable visualization={visualization} />
 })
 
 storiesOf('PivotTable', module).add('totals', () => {
+    const visualization = {
+        ...deepVisualization,
+        ...visualizationReset,
+        rowTotals: true,
+        colTotals: true
+    }
     return (
         <div style={{ width: 800, height: 600 }}>
-            <PivotTable data={deepData} visualization={deepVisualization} options={{ showRowTotals: true, showColumnTotals: true }} />
+            <PivotTable data={deepData} visualization={visualization} />
         </div>
     )
 })
 
 storiesOf('PivotTable', module).add('subtotals', () => {
+    const visualization = {
+        ...deepVisualization,
+        ...visualizationReset,
+        rowSubTotals: true,
+        colSubTotals: true
+    }
     return (
         <div style={{ width: 800, height: 600 }}>
-            <PivotTable data={deepData} visualization={deepVisualization} options={{ showRowSubtotals: true, showColumnSubtotals: true }} />
+            <PivotTable data={deepData} visualization={visualization} />
         </div>
     )
 })
 
 storiesOf('PivotTable', module).add('empty rows (shown)', () => {
+    const visualization = {
+        ...emptyRowsVisualization,
+        ...visualizationReset
+    }
     return (
         <div style={{ width: 800, height: 600 }}>
-            <PivotTable data={emptyRowsData} visualization={emptyRowsVisualization} options={{ hideEmptyRows: false }} />
+            <PivotTable data={emptyRowsData} visualization={visualization} />
         </div>
     )
 })
 
 storiesOf('PivotTable', module).add('empty rows (hidden)', () => {
+    const visualization = {
+        ...emptyRowsVisualization,
+        ...visualizationReset,
+        hideEmptyRows: true
+    }
     return (
         <div style={{ width: 800, height: 600 }}>
-            <PivotTable data={emptyRowsData} visualization={emptyRowsVisualization} options={{ hideEmptyRows: true }} />
+            <PivotTable data={emptyRowsData} visualization={visualization} />
         </div>
     )
 })
