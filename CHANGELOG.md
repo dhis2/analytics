@@ -1,3 +1,10 @@
+# [3.1.0](https://github.com/dhis2/analytics/compare/v3.0.1...v3.1.0) (2020-01-31)
+
+
+### Features
+
+* add PivotTable component and PivotTableEngine utility ([#255](https://github.com/dhis2/analytics/issues/255)) ([0f4315c](https://github.com/dhis2/analytics/commit/0f4315cd7e5481e40f0cb7c2a57524644f7f27de)), closes [#264](https://github.com/dhis2/analytics/issues/264)
+
 ## [3.0.1](https://github.com/dhis2/analytics/compare/v3.0.0...v3.0.1) (2020-01-30)
 
 
