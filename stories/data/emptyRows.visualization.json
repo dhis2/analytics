@@ -1,0 +1,325 @@
+{
+  "lastUpdated": "2020-01-09T15:04:43.097",
+  "id": "s9c4lyOr6jO",
+  "created": "2020-01-09T15:04:43.097",
+  "name": "_EMPTY_ROWS_",
+  "publicAccess": "rw------",
+  "legendDisplayStyle": "FILL",
+  "hideEmptyColumns": false,
+  "subscribed": false,
+  "rowSubTotals": true,
+  "displayDescription": "ANC visits by facility type and last 12 months",
+  "showDimensionLabels": true,
+  "sortOrder": 0,
+  "fontSize": "NORMAL",
+  "favorite": false,
+  "topLimit": 0,
+  "displayName": "_EMPTY_ROWS_",
+  "showHierarchy": false,
+  "cumulative": false,
+  "hideTitle": false,
+  "skipRounding": false,
+  "numberType": "VALUE",
+  "hideEmptyRows": true,
+  "parentGraphMap": {
+    "jUb8gELQApl": "ImspTQPwCqd",
+    "TEQlaapDQoK": "ImspTQPwCqd",
+    "eIQbndfxQMb": "ImspTQPwCqd",
+    "Vth0fbpFcsO": "ImspTQPwCqd",
+    "PMa2VCrupOd": "ImspTQPwCqd",
+    "O6uvpzGd5pu": "ImspTQPwCqd",
+    "bL4ooGhyHRQ": "ImspTQPwCqd",
+    "kJq2mPyFEHo": "ImspTQPwCqd",
+    "fdc6uOvgoji": "ImspTQPwCqd",
+    "at6UHUQatSo": "ImspTQPwCqd",
+    "lc3eMKXaEfw": "ImspTQPwCqd",
+    "qhqAxPSTUXp": "ImspTQPwCqd",
+    "jmIPBj66vD6": "ImspTQPwCqd"
+  },
+  "displayDensity": "NORMAL",
+  "completedOnly": false,
+  "colTotals": true,
+  "aggregationType": "DEFAULT",
+  "hideSubtitle": false,
+  "description": "ANC visits by facility type and last 12 months",
+  "title": "ANC visits and IPT by facility type2",
+  "legendDisplayStrategy": "FIXED",
+  "colSubTotals": true,
+  "rowTotals": true,
+  "digitGroupSeparator": "SPACE",
+  "regression": false,
+  "reportParams": {
+    "paramGrandParentOrganisationUnit": false,
+    "paramReportingPeriod": false,
+    "paramOrganisationUnit": false,
+    "paramParentOrganisationUnit": false
+  },
+  "access": {
+    "read": true,
+    "update": true,
+    "externalize": true,
+    "delete": true,
+    "write": true,
+    "manage": true
+  },
+  "lastUpdatedBy": {
+    "id": "xE7jOejl9FI"
+  },
+  "user": {
+    "displayName": "John Traore",
+    "userCredentials": {
+      "username": "admin"
+    }
+  },
+  "dataElementGroupSetDimensions": [],
+  "attributeDimensions": [],
+  "translations": [],
+  "interpretations": [],
+  "userGroupAccesses": [],
+  "subscribers": [],
+  "columns": [
+    {
+      "dimension": "dx",
+      "items": [
+        {
+          "id": "fbfJHSPpUQD",
+          "name": "ANC 1st visit",
+          "dimensionItemType": "DATA_ELEMENT"
+        },
+        {
+          "id": "cYeuwXTCPkU",
+          "name": "ANC 2nd visit",
+          "dimensionItemType": "DATA_ELEMENT"
+        },
+        {
+          "id": "Jtf34kNZhzP",
+          "name": "ANC 3rd visit",
+          "dimensionItemType": "DATA_ELEMENT"
+        },
+        {
+          "id": "hfdmMSPBgLG",
+          "name": "ANC 4th or more visits",
+          "dimensionItemType": "DATA_ELEMENT"
+        },
+        {
+          "id": "bqK6eSIwo3h",
+          "name": "IPT 1st dose given at PHU",
+          "dimensionItemType": "DATA_ELEMENT"
+        },
+        {
+          "id": "yTHydhurQQU",
+          "name": "IPT 1st dose given by TBA",
+          "dimensionItemType": "DATA_ELEMENT"
+        },
+        {
+          "id": "V37YqbqpEhV",
+          "name": "IPT 2nd dose given at PHU",
+          "dimensionItemType": "DATA_ELEMENT"
+        },
+        {
+          "id": "SA7WeFZnUci",
+          "name": "IPT 2nd dose given by TBA",
+          "dimensionItemType": "DATA_ELEMENT"
+        }
+      ]
+    },
+    {
+      "dimension": "pe",
+      "items": [
+        {
+          "id": "LAST_12_MONTHS",
+          "name": "LAST_12_MONTHS",
+          "dimensionItemType": "PERIOD"
+        }
+      ]
+    }
+  ],
+  "dataElementDimensions": [],
+  "categoryDimensions": [],
+  "programIndicatorDimensions": [],
+  "attributeValues": [],
+  "userAccesses": [],
+  "favorites": [],
+  "dataDimensionItems": [
+    {
+      "dataDimensionItemType": "DATA_ELEMENT",
+      "dataElement": {
+        "id": "fbfJHSPpUQD"
+      }
+    },
+    {
+      "dataDimensionItemType": "DATA_ELEMENT",
+      "dataElement": {
+        "id": "cYeuwXTCPkU"
+      }
+    },
+    {
+      "dataDimensionItemType": "DATA_ELEMENT",
+      "dataElement": {
+        "id": "Jtf34kNZhzP"
+      }
+    },
+    {
+      "dataDimensionItemType": "DATA_ELEMENT",
+      "dataElement": {
+        "id": "hfdmMSPBgLG"
+      }
+    },
+    {
+      "dataDimensionItemType": "DATA_ELEMENT",
+      "dataElement": {
+        "id": "bqK6eSIwo3h"
+      }
+    },
+    {
+      "dataDimensionItemType": "DATA_ELEMENT",
+      "dataElement": {
+        "id": "yTHydhurQQU"
+      }
+    },
+    {
+      "dataDimensionItemType": "DATA_ELEMENT",
+      "dataElement": {
+        "id": "V37YqbqpEhV"
+      }
+    },
+    {
+      "dataDimensionItemType": "DATA_ELEMENT",
+      "dataElement": {
+        "id": "SA7WeFZnUci"
+      }
+    }
+  ],
+  "categoryOptionGroupSetDimensions": [],
+  "organisationUnitGroupSetDimensions": [
+    {
+      "organisationUnitGroupSet": {
+        "id": "J5jldMd8OHv"
+      },
+      "organisationUnitGroups": [
+        {
+          "id": "uYxK4wmcPqA"
+        },
+        {
+          "id": "tDZVQ1WtwpA"
+        },
+        {
+          "id": "EYbopBOJWsW"
+        },
+        {
+          "id": "RXL3lPSK8oG"
+        },
+        {
+          "id": "CXw2yu5fodb"
+        }
+      ]
+    }
+  ],
+  "filters": [],
+  "rows": [
+    {
+      "dimension": "ou",
+      "items": [
+        {
+          "id": "jUb8gELQApl",
+          "name": "Kailahun",
+          "dimensionItemType": "ORGANISATION_UNIT"
+        },
+        {
+          "id": "TEQlaapDQoK",
+          "name": "Port Loko",
+          "dimensionItemType": "ORGANISATION_UNIT"
+        },
+        {
+          "id": "eIQbndfxQMb",
+          "name": "Tonkolili",
+          "dimensionItemType": "ORGANISATION_UNIT"
+        },
+        {
+          "id": "Vth0fbpFcsO",
+          "name": "Kono",
+          "dimensionItemType": "ORGANISATION_UNIT"
+        },
+        {
+          "id": "PMa2VCrupOd",
+          "name": "Kambia",
+          "dimensionItemType": "ORGANISATION_UNIT"
+        },
+        {
+          "id": "O6uvpzGd5pu",
+          "name": "Bo",
+          "dimensionItemType": "ORGANISATION_UNIT"
+        },
+        {
+          "id": "bL4ooGhyHRQ",
+          "name": "Pujehun",
+          "dimensionItemType": "ORGANISATION_UNIT"
+        },
+        {
+          "id": "kJq2mPyFEHo",
+          "name": "Kenema",
+          "dimensionItemType": "ORGANISATION_UNIT"
+        },
+        {
+          "id": "fdc6uOvgoji",
+          "name": "Bombali",
+          "dimensionItemType": "ORGANISATION_UNIT"
+        },
+        {
+          "id": "at6UHUQatSo",
+          "name": "Western Area",
+          "dimensionItemType": "ORGANISATION_UNIT"
+        },
+        {
+          "id": "lc3eMKXaEfw",
+          "name": "Bonthe",
+          "dimensionItemType": "ORGANISATION_UNIT"
+        },
+        {
+          "id": "qhqAxPSTUXp",
+          "name": "Koinadugu",
+          "dimensionItemType": "ORGANISATION_UNIT"
+        },
+        {
+          "id": "jmIPBj66vD6",
+          "name": "Moyamba",
+          "dimensionItemType": "ORGANISATION_UNIT"
+        },
+        {
+          "id": "LEVEL-4",
+          "name": "LEVEL-4"
+        }
+      ]
+    },
+    {
+      "dimension": "J5jldMd8OHv",
+      "items": [
+        {
+          "id": "uYxK4wmcPqA",
+          "name": "CHP",
+          "dimensionItemType": "ORGANISATION_UNIT_GROUP"
+        },
+        {
+          "id": "tDZVQ1WtwpA",
+          "name": "Hospital",
+          "dimensionItemType": "ORGANISATION_UNIT_GROUP"
+        },
+        {
+          "id": "EYbopBOJWsW",
+          "name": "MCHP",
+          "dimensionItemType": "ORGANISATION_UNIT_GROUP"
+        },
+        {
+          "id": "RXL3lPSK8oG",
+          "name": "Clinic",
+          "dimensionItemType": "ORGANISATION_UNIT_GROUP"
+        },
+        {
+          "id": "CXw2yu5fodb",
+          "name": "CHC",
+          "dimensionItemType": "ORGANISATION_UNIT_GROUP"
+        }
+      ]
+    }
+  ]
+}

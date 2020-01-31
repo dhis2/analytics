@@ -1,0 +1,343 @@
+{
+  "lastUpdated": "2017-10-09T15:58:39.672",
+  "id": "zLlhKD36wC5",
+  "created": "2016-08-02T19:58:19.493",
+  "name": "Immunization data by facility type last 4 quarters (lars)",
+  "publicAccess": "rw------",
+  "legendDisplayStyle": "FILL",
+  "hideEmptyColumns": false,
+  "subscribed": false,
+  "rowSubTotals": true,
+  "showDimensionLabels": true,
+  "sortOrder": 0,
+  "fontSize": "NORMAL",
+  "favorite": false,
+  "topLimit": 0,
+  "displayName": "Immunization data by facility type last 4 quarters (lars)",
+  "showHierarchy": false,
+  "cumulative": false,
+  "hideTitle": false,
+  "skipRounding": false,
+  "hideEmptyRows": false,
+  "parentGraphMap": {
+    "jUb8gELQApl": "ImspTQPwCqd",
+    "TEQlaapDQoK": "ImspTQPwCqd",
+    "eIQbndfxQMb": "ImspTQPwCqd",
+    "Vth0fbpFcsO": "ImspTQPwCqd",
+    "PMa2VCrupOd": "ImspTQPwCqd",
+    "O6uvpzGd5pu": "ImspTQPwCqd",
+    "bL4ooGhyHRQ": "ImspTQPwCqd",
+    "kJq2mPyFEHo": "ImspTQPwCqd",
+    "fdc6uOvgoji": "ImspTQPwCqd",
+    "at6UHUQatSo": "ImspTQPwCqd",
+    "lc3eMKXaEfw": "ImspTQPwCqd",
+    "qhqAxPSTUXp": "ImspTQPwCqd",
+    "jmIPBj66vD6": "ImspTQPwCqd"
+  },
+  "displayDensity": "NORMAL",
+  "completedOnly": false,
+  "colTotals": true,
+  "aggregationType": "DEFAULT",
+  "hideSubtitle": false,
+  "legendDisplayStrategy": "FIXED",
+  "colSubTotals": true,
+  "rowTotals": true,
+  "digitGroupSeparator": "SPACE",
+  "regression": false,
+  "reportParams": {
+    "paramGrandParentOrganisationUnit": false,
+    "paramReportingPeriod": false,
+    "paramOrganisationUnit": false,
+    "paramParentOrganisationUnit": false
+  },
+  "access": {
+    "read": true,
+    "update": true,
+    "externalize": true,
+    "delete": true,
+    "write": true,
+    "manage": true
+  },
+  "lastUpdatedBy": { "id": "GOLswS44mh8" },
+  "user": {
+    "displayName": "Tom Wakiki",
+    "userCredentials": { "username": "system" }
+  },
+  "dataElementGroupSetDimensions": [],
+  "attributeDimensions": [],
+  "translations": [],
+  "interpretations": [],
+  "userGroupAccesses": [
+    {
+      "access": "r-r-----",
+      "userGroupUid": "Rg8wusV7QYi",
+      "displayName": "HIV Program Coordinators",
+      "id": "Rg8wusV7QYi"
+    },
+    {
+      "access": "rwr-----",
+      "userGroupUid": "qMjBflJMOfB",
+      "displayName": "Family Planning Program",
+      "id": "qMjBflJMOfB"
+    }
+  ],
+  "columns": [
+    {
+      "dimension": "pe",
+      "items": [
+        {
+          "id": "LAST_4_QUARTERS",
+          "name": "LAST_4_QUARTERS",
+          "dimensionItemType": "PERIOD"
+        }
+      ]
+    },
+    {
+      "dimension": "J5jldMd8OHv",
+      "items": [
+        {
+          "id": "uYxK4wmcPqA",
+          "name": "CHP",
+          "dimensionItemType": "ORGANISATION_UNIT_GROUP"
+        },
+        {
+          "id": "tDZVQ1WtwpA",
+          "name": "Hospital",
+          "dimensionItemType": "ORGANISATION_UNIT_GROUP"
+        },
+        {
+          "id": "EYbopBOJWsW",
+          "name": "MCHP",
+          "dimensionItemType": "ORGANISATION_UNIT_GROUP"
+        },
+        {
+          "id": "RXL3lPSK8oG",
+          "name": "Clinic",
+          "dimensionItemType": "ORGANISATION_UNIT_GROUP"
+        },
+        {
+          "id": "CXw2yu5fodb",
+          "name": "CHC",
+          "dimensionItemType": "ORGANISATION_UNIT_GROUP"
+        }
+      ]
+    },
+    {
+      "dimension": "fMZEcRHuamy",
+      "items": [
+        {
+          "id": "qkPbeWaFsnU",
+          "name": "Fixed",
+          "dimensionItemType": "CATEGORY_OPTION"
+        },
+        {
+          "id": "wbrDrL2aYEc",
+          "name": "Outreach",
+          "dimensionItemType": "CATEGORY_OPTION"
+        }
+      ]
+    }
+  ],
+  "dataElementDimensions": [],
+  "categoryDimensions": [
+    {
+      "category": { "id": "fMZEcRHuamy" },
+      "categoryOptions": [{ "id": "qkPbeWaFsnU" }, { "id": "wbrDrL2aYEc" }]
+    }
+  ],
+  "programIndicatorDimensions": [],
+  "attributeValues": [],
+  "userAccesses": [],
+  "dataDimensionItems": [
+    {
+      "dataDimensionItemType": "DATA_ELEMENT",
+      "dataElement": { "id": "s46m5MS0hxu" }
+    },
+    {
+      "dataDimensionItemType": "DATA_ELEMENT",
+      "dataElement": { "id": "UOlfIjgN8X6" }
+    },
+    {
+      "dataDimensionItemType": "DATA_ELEMENT",
+      "dataElement": { "id": "YtbsuPPo010" }
+    },
+    {
+      "dataDimensionItemType": "DATA_ELEMENT",
+      "dataElement": { "id": "x3Do5e7g4Qo" }
+    },
+    {
+      "dataDimensionItemType": "DATA_ELEMENT",
+      "dataElement": { "id": "pikOziyCXbM" }
+    },
+    {
+      "dataDimensionItemType": "DATA_ELEMENT",
+      "dataElement": { "id": "O05mAByOgAv" }
+    },
+    {
+      "dataDimensionItemType": "DATA_ELEMENT",
+      "dataElement": { "id": "vI2csg55S9C" }
+    },
+    {
+      "dataDimensionItemType": "DATA_ELEMENT",
+      "dataElement": { "id": "fClA2Erf6IO" }
+    },
+    {
+      "dataDimensionItemType": "DATA_ELEMENT",
+      "dataElement": { "id": "I78gJm4KBo7" }
+    },
+    {
+      "dataDimensionItemType": "DATA_ELEMENT",
+      "dataElement": { "id": "n6aMJNLdvep" }
+    },
+    {
+      "dataDimensionItemType": "DATA_ELEMENT",
+      "dataElement": { "id": "l6byfWFUGaP" }
+    }
+  ],
+  "categoryOptionGroupSetDimensions": [],
+  "organisationUnitGroupSetDimensions": [
+    {
+      "organisationUnitGroupSet": { "id": "J5jldMd8OHv" },
+      "organisationUnitGroups": [
+        { "id": "uYxK4wmcPqA" },
+        { "id": "tDZVQ1WtwpA" },
+        { "id": "EYbopBOJWsW" },
+        { "id": "RXL3lPSK8oG" },
+        { "id": "CXw2yu5fodb" }
+      ]
+    }
+  ],
+  "filters": [],
+  "rows": [
+    {
+      "dimension": "dx",
+      "items": [
+        {
+          "id": "s46m5MS0hxu",
+          "name": "BCG doses given",
+          "dimensionItemType": "DATA_ELEMENT"
+        },
+        {
+          "id": "UOlfIjgN8X6",
+          "name": "Fully Immunized child",
+          "dimensionItemType": "DATA_ELEMENT"
+        },
+        {
+          "id": "YtbsuPPo010",
+          "name": "Measles doses given",
+          "dimensionItemType": "DATA_ELEMENT"
+        },
+        {
+          "id": "x3Do5e7g4Qo",
+          "name": "OPV0 doses given",
+          "dimensionItemType": "DATA_ELEMENT"
+        },
+        {
+          "id": "pikOziyCXbM",
+          "name": "OPV1 doses given",
+          "dimensionItemType": "DATA_ELEMENT"
+        },
+        {
+          "id": "O05mAByOgAv",
+          "name": "OPV2 doses given",
+          "dimensionItemType": "DATA_ELEMENT"
+        },
+        {
+          "id": "vI2csg55S9C",
+          "name": "OPV3 doses given",
+          "dimensionItemType": "DATA_ELEMENT"
+        },
+        {
+          "id": "fClA2Erf6IO",
+          "name": "Penta1 doses given",
+          "dimensionItemType": "DATA_ELEMENT"
+        },
+        {
+          "id": "I78gJm4KBo7",
+          "name": "Penta2 doses given",
+          "dimensionItemType": "DATA_ELEMENT"
+        },
+        {
+          "id": "n6aMJNLdvep",
+          "name": "Penta3 doses given",
+          "dimensionItemType": "DATA_ELEMENT"
+        },
+        {
+          "id": "l6byfWFUGaP",
+          "name": "Yellow Fever doses given",
+          "dimensionItemType": "DATA_ELEMENT"
+        }
+      ]
+    },
+    {
+      "dimension": "ou",
+      "items": [
+        {
+          "id": "O6uvpzGd5pu",
+          "name": "Bo",
+          "dimensionItemType": "ORGANISATION_UNIT"
+        },
+        {
+          "id": "fdc6uOvgoji",
+          "name": "Bombali",
+          "dimensionItemType": "ORGANISATION_UNIT"
+        },
+        {
+          "id": "lc3eMKXaEfw",
+          "name": "Bonthe",
+          "dimensionItemType": "ORGANISATION_UNIT"
+        },
+        {
+          "id": "jUb8gELQApl",
+          "name": "Kailahun",
+          "dimensionItemType": "ORGANISATION_UNIT"
+        },
+        {
+          "id": "PMa2VCrupOd",
+          "name": "Kambia",
+          "dimensionItemType": "ORGANISATION_UNIT"
+        },
+        {
+          "id": "kJq2mPyFEHo",
+          "name": "Kenema",
+          "dimensionItemType": "ORGANISATION_UNIT"
+        },
+        {
+          "id": "qhqAxPSTUXp",
+          "name": "Koinadugu",
+          "dimensionItemType": "ORGANISATION_UNIT"
+        },
+        {
+          "id": "Vth0fbpFcsO",
+          "name": "Kono",
+          "dimensionItemType": "ORGANISATION_UNIT"
+        },
+        {
+          "id": "jmIPBj66vD6",
+          "name": "Moyamba",
+          "dimensionItemType": "ORGANISATION_UNIT"
+        },
+        {
+          "id": "TEQlaapDQoK",
+          "name": "Port Loko",
+          "dimensionItemType": "ORGANISATION_UNIT"
+        },
+        {
+          "id": "bL4ooGhyHRQ",
+          "name": "Pujehun",
+          "dimensionItemType": "ORGANISATION_UNIT"
+        },
+        {
+          "id": "eIQbndfxQMb",
+          "name": "Tonkolili",
+          "dimensionItemType": "ORGANISATION_UNIT"
+        },
+        {
+          "id": "at6UHUQatSo",
+          "name": "Western Area",
+          "dimensionItemType": "ORGANISATION_UNIT"
+        }
+      ]
+    }
+  ]
+}
