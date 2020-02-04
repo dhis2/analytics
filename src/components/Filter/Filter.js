@@ -5,6 +5,7 @@ import InputAdornment from '@material-ui/core/InputAdornment'
 import IconButton from '@material-ui/core/IconButton'
 import Search from '@material-ui/icons/Search'
 import Close from '@material-ui/icons/Close'
+import { withStyles } from '@material-ui/core/styles'
 
 import { styles } from './styles/Filter.style'
 
@@ -25,6 +26,7 @@ export const Filter = props => (
     <TextField
         autoFocus={props.autoFocus}
         style={props.style}
+        className={props.classes.inputContainer}
         placeholder={props.placeholder}
         value={props.text}
         onChange={e => onChangeWrapper(props.onChange, props.onClear, e)}
@@ -65,8 +67,9 @@ Filter.propTypes = {
     onChange: PropTypes.func.isRequired,
     onClear: PropTypes.func.isRequired,
     autoFocus: PropTypes.bool,
+    classes: PropTypes.object,
     disableUnderline: PropTypes.bool,
     style: PropTypes.object,
 }
 
-export default Filter
+export default withStyles(styles)(Filter)

@@ -1,6 +1,11 @@
 import { colors } from '../../../modules/colors'
 
 export const styles = {
+    inputContainer: {
+        '& input': {
+            padding: '6px 0',
+        },
+    },
     searchIcon: {
         color: colors.grey,
         padding: '3px 4px',
