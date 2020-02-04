@@ -22,6 +22,7 @@ export const styles = {
         marginTop: 3,
         marginBottom: 3,
         alignItems: 'center',
+        borderRadius: '2px',
     },
     selected: {
         backgroundColor: colors.accentSecondaryTransparent,
