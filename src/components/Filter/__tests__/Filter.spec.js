@@ -1,6 +1,6 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import Filter from '../Filter'
+import { Filter } from '../Filter'
 import TextField from '@material-ui/core/TextField'
 import IconButton from '@material-ui/core/IconButton'
 import Search from '@material-ui/icons/Search'
@@ -21,11 +21,12 @@ describe('The Filter component ', () => {
             text: '',
             onChange: jest.fn(),
             onClear: jest.fn(),
+            classes: {},
         }
         shallowFilter = undefined
     })
 
-    it('renders a TextField component containing everything esle', () => {
+    it('renders a TextField component containing everything else', () => {
         expect(filterComp().find(TextField).length).toEqual(1)
     })
 
