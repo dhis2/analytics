@@ -2,56 +2,14 @@ import React from 'react'
 
 const AssignedCategoriesIcon = () => {
     return (
-        <svg width="12px" height="12px" viewBox="0 0 12 12">
-            <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
-                <rect
-                    id="Rectangle"
-                    fill="#212934"
-                    x="0"
-                    y="5"
-                    width="11"
-                    height="1"
-                ></rect>
-                <rect
-                    id="Rectangle"
-                    fill="#212934"
-                    x="0"
-                    y="11"
-                    width="11"
-                    height="1"
-                ></rect>
-                <rect
-                    id="Rectangle"
-                    fill="#212934"
-                    x="0"
-                    y="0"
-                    width="11"
-                    height="1"
-                ></rect>
-                <rect
-                    id="Rectangle"
-                    fill="#212934"
-                    x="5"
-                    y="6"
-                    width="1"
-                    height="5"
-                ></rect>
-                <rect
-                    id="Rectangle"
-                    fill="#212934"
-                    x="10"
-                    y="1"
-                    width="1"
-                    height="10"
-                ></rect>
-                <rect
-                    id="Rectangle"
-                    fill="#212934"
-                    x="0"
-                    y="1"
-                    width="1"
-                    height="10"
-                ></rect>
+        <svg height="16" viewBox="0 0 16 16" width="16">
+            <g fill="#212934" fillRule="evenodd">
+                <path d="m2 7h11v1h-11z" />
+                <path d="m2 13h11v1h-11z" />
+                <path d="m2 2h11v1h-11z" />
+                <path d="m7 8h1v5h-1z" />
+                <path d="m12 3h1v10h-1z" />
+                <path d="m2 3h1v10h-1z" />
             </g>
         </svg>
     )
