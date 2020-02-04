@@ -1,3 +1,10 @@
+## [3.1.1](https://github.com/dhis2/analytics/compare/v3.1.0...v3.1.1) (2020-02-04)
+
+
+### Bug Fixes
+
+* various ui glitches ([#274](https://github.com/dhis2/analytics/issues/274)) ([9a63e72](https://github.com/dhis2/analytics/commit/9a63e72f4137f4bc6219b07897d1c1e6c7ab99c3))
+
 # [3.1.0](https://github.com/dhis2/analytics/compare/v3.0.1...v3.1.0) (2020-01-31)
 
 
