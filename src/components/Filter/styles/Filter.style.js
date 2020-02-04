@@ -10,8 +10,9 @@ export const styles = {
     },
     iconButton: {
         padding: '0px',
-        height: '24px',
+        height: '20px',
         width: '20px',
+        marginRight: '3px',
     },
     closeIcon: {
         height: '16px',
