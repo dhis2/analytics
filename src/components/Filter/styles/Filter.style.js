@@ -3,7 +3,7 @@ import { colors } from '../../../modules/colors'
 export const styles = {
     inputContainer: {
         '& input': {
-            padding: '6px 0',
+            padding: '7px 0 6px',
         },
     },
     searchIcon: {
