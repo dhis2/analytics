@@ -18,10 +18,11 @@ export const PivotTableColumnHeaderCell = ({
             <th
                 className={
                     header.name && header.name !== 'TOTAL'
-                        ? 'col-header'
+                        ? 'column-header'
                         : 'empty-header'
                 }
                 colSpan={header.span}
+                title={header.name}
             >
                 <style jsx>{cellStyle}</style>
                 {header.name}

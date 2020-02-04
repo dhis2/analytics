@@ -8,6 +8,8 @@ import { PivotTableColumnHeaders } from './PivotTableColumnHeaders'
 import { useTableClipping } from '../../modules/pivotTable/useTableClipping'
 import { PivotTableRow } from './PivotTableRow'
 import { PivotTableClippedAxis } from './PivotTableClippedAxis'
+import { PivotTableTitleRow } from './PivotTableTitleRow'
+import { PivotTableEmptyRow } from './PivotTableEmptyRow'
 
 const PivotTable = ({ visualization, data }) => {
     const containerRef = useRef(undefined)
@@ -36,6 +38,23 @@ const PivotTable = ({ visualization, data }) => {
             {width === 0 || height === 0 ? null : (
                 <table>
                     <thead>
+                        {visualization.title && !visualization.hideTitle ? (
+                            <PivotTableTitleRow
+                                engine={engine}
+                                title={visualization.title}
+                                scrollPosition={clippingResult.scrollPosition}
+                                containerWidth={width}
+                            />
+                        ) : null}
+                        {visualization.subtitle &&
+                        !visualization.hideSubtitle ? (
+                            <PivotTableTitleRow
+                                engine={engine}
+                                title={visualization.subtitle}
+                                scrollPosition={clippingResult.scrollPosition}
+                                containerWidth={width}
+                            />
+                        ) : null}
                         <PivotTableColumnHeaders
                             engine={engine}
                             clippingResult={clippingResult}
@@ -45,9 +64,11 @@ const PivotTable = ({ visualization, data }) => {
                         <PivotTableClippedAxis
                             axisClippingResult={clippingResult.rows}
                             EmptyComponent={({ size }) => (
-                                <tr>
-                                    <td style={{ height: size }} />
-                                </tr>
+                                <PivotTableEmptyRow
+                                    height={size}
+                                    engine={engine}
+                                    columns={clippingResult.columns.indices}
+                                />
                             )}
                             ItemComponent={({ index }) => (
                                 <PivotTableRow

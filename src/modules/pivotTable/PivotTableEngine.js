@@ -1,4 +1,5 @@
 import times from 'lodash/times'
+import { parseValue } from './parseValue'
 
 const dataFields = [
     'value',
@@ -53,6 +54,7 @@ const listByDimension = list =>
 const buildDimensionLookup = (visualization, metadata, headers) => {
     const rows = visualization.rows.map(row => ({
         dimension: row.dimension,
+        meta: metadata.items[row.dimension],
         count: metadata.dimensions[row.dimension].length,
         itemIds: metadata.dimensions[row.dimension],
         items: metadata.dimensions[row.dimension].map(
@@ -62,6 +64,7 @@ const buildDimensionLookup = (visualization, metadata, headers) => {
     }))
     const columns = visualization.columns.map(column => ({
         dimension: column.dimension,
+        meta: metadata.items[column.dimension],
         count: metadata.dimensions[column.dimension].length,
         itemIds: metadata.dimensions[column.dimension],
         items: metadata.dimensions[column.dimension].map(
@@ -203,11 +206,14 @@ export class PivotTableEngine {
                 switch (type) {
                     case CELL_TYPE_VALUE:
                         return dataRow[this.dimensionLookup.dataHeaders.value]
-                            ? dataRow[this.dimensionLookup.dataHeaders.value]
+                            ? parseValue(
+                                  dataRow[
+                                      this.dimensionLookup.dataHeaders.value
+                                  ]
+                              )
                             : undefined
                     default:
-                        //TODO: Different aggregation types (count only works for now)
-                        return dataRow.count ? dataRow.count : undefined
+                        return dataRow.value ? dataRow.value : undefined
                 }
             }
         }
@@ -285,6 +291,13 @@ export class PivotTableEngine {
             size: columnSubtotalSize - 1,
         }
 
+        const combinedSubtotal = this.options.showColumnSubtotals &&
+            this.options.showRowSubtotals && {
+                row: columnSubtotal.row,
+                column: rowSubtotal.column,
+                size: columnSubtotalSize * rowSubtotalSize,
+            }
+
         const rowTotal = this.options.showRowTotals && {
             row,
             column: this.dataWidth - 1,
@@ -296,11 +309,21 @@ export class PivotTableEngine {
             column,
             size: this.rawDataHeight,
         }
+
+        const combinedTotal = this.options.showColumnTotals &&
+            this.options.showRowTotals && {
+                row: this.dataHeight - 1,
+                column: this.dataWidth - 1,
+                size: this.rawDataHeight * this.rawDataWidth,
+            }
+
         return {
             rowSubtotal,
             columnSubtotal,
             rowTotal,
             columnTotal,
+            combinedSubtotal,
+            combinedTotal,
         }
     }
 
@@ -324,9 +347,9 @@ export class PivotTableEngine {
             dataFields.forEach(field => {
                 const headerIndex = this.dimensionLookup.dataHeaders[field]
                 // TODO: Fix number parsing, check data type in header
-                const value = Number(dataRow[headerIndex])
+                const value = parseValue(dataRow[headerIndex])
                 if (value && !isNaN(value)) {
-                    totalCell[field] += value
+                    totalCell[field] = (totalCell[field] || 0) + value
                 }
             })
             totalCell.count += 1

@@ -2,12 +2,11 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { cell as cellStyle } from './styles/PivotTable.style'
 
-export const PivotTableEmptyCell = ({ type }) => {
-    const C = () => (type === 'col-header' ? <th /> : <td />)
+export const PivotTableEmptyCell = ({ type, ...props }) => {
     return (
-        <C className={type}>
+        <td className={type} {...props}>
             <style jsx>{cellStyle}</style>
-        </C>
+        </td>
     )
 }
 
