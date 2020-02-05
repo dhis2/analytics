@@ -7,18 +7,20 @@ export const PivotTableTitleRow = ({
     scrollPosition,
     containerWidth,
     engine,
-}) => (
-    <>
+}) => {
+    const columnCount = engine.width + engine.dimensionLookup.rows.length
+    return (
         <tr>
             <style jsx>{cellStyle}</style>
-            <td
-                className="column-header title"
-                colSpan={engine.width + engine.dimensionLookup.rows.length}
-            >
+            <td className="column-header title" colSpan={columnCount}>
                 <div
                     style={{
                         marginLeft: Math.floor(scrollPosition.x / 150) * 150,
-                        width: (Math.ceil(containerWidth / 150) + 1) * 150,
+                        width:
+                            Math.min(
+                                columnCount,
+                                Math.ceil(containerWidth / 150) + 1
+                            ) * 150,
                         textAlign: 'center',
                     }}
                 >
@@ -26,8 +28,8 @@ export const PivotTableTitleRow = ({
                 </div>
             </td>
         </tr>
-    </>
-)
+    )
+}
 
 PivotTableTitleRow.propTypes = {
     containerWidth: PropTypes.number.isRequired,
