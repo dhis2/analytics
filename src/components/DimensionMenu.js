@@ -12,7 +12,7 @@ import { getAvailableAxes } from '../modules/layoutUiRules'
 import { AXIS_ID_COLUMNS, AXIS_ID_FILTERS } from '../modules/layout/axis'
 import { DIMENSION_ID_DATA } from '../modules/predefinedDimensions'
 import { isDualAxisType, getDisplayNameByVisType } from '../modules/visTypes'
-import { getAxisName } from '../modules/axis'
+import { getAxisNameByVisType } from '../modules/axis'
 
 const getAxisItemLabelPrefix = isDimensionInLayout =>
     isDimensionInLayout ? 'Move to' : 'Add to'
@@ -186,8 +186,9 @@ export class DimensionMenu extends Component {
                                         }}
                                     >
                                         {i18n.t(
-                                            `${getAxisItemLabelPrefix()} ${getAxisName(
-                                                destination
+                                            `${getAxisItemLabelPrefix()} ${getAxisNameByVisType(
+                                                destination,
+                                                visType
                                             )}`
                                         )}
                                     </MenuItem>
@@ -248,7 +249,7 @@ export class DimensionMenu extends Component {
                     {i18n.t(
                         `${getAxisItemLabelPrefix(
                             isDimensionInLayout
-                        )} ${getAxisName(axisId)}`
+                        )} ${getAxisNameByVisType(axisId, visType)}`
                     )}
                 </MenuItem>
             ))
