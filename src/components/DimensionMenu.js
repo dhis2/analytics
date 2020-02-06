@@ -26,8 +26,8 @@ const getRemoveMenuItem = onClick => (
 const getDividerItem = key => <Divider light key={key} />
 
 const getUnavailableLabel = visType =>
-    i18n.t('Not available for {{visType}}', {
-        visType: getDisplayNameByVisType(visType),
+    i18n.t('Not available for {{visualizationType}}', {
+        visualizationType: getDisplayNameByVisType(visType),
     })
 
 const getDualAxisMenuItemLabel = (
@@ -185,12 +185,10 @@ export class DimensionMenu extends Component {
                                             closeWholeMenu()
                                         }}
                                     >
-                                        {i18n.t(
-                                            `${getAxisItemLabelPrefix()} ${getAxisNameByVisType(
-                                                destination,
-                                                visType
-                                            )}`
-                                        )}
+                                        {`${getAxisItemLabelPrefix()} ${getAxisNameByVisType(
+                                            destination,
+                                            visType
+                                        )}`}
                                     </MenuItem>
                                 )
                             )}
