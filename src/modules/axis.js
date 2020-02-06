@@ -6,7 +6,6 @@ import {
     LAYOUT_TYPE_YEAR_OVER_YEAR,
     LAYOUT_TYPE_PIVOT_TABLE,
 } from './layoutTypes'
-import { getLayoutTypeByVisType } from './visTypeToLayoutType'
 
 const getAxisNamesByLayoutType = layoutType => {
     switch (layoutType) {
@@ -37,5 +36,5 @@ export const getAxisNameByLayoutType = (axisId, layoutType) => {
     return name
 }
 
-export const getAxisNameByVisType = (axisId, visType) =>
-    getAxisNameByLayoutType(axisId, getLayoutTypeByVisType(visType))
+export const getAxisName = axisId =>
+    getAxisNameByLayoutType(axisId, LAYOUT_TYPE_DEFAULT)
