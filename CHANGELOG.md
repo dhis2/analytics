@@ -1,3 +1,10 @@
+## [3.1.2](https://github.com/dhis2/analytics/compare/v3.1.1...v3.1.2) (2020-02-07)
+
+
+### Bug Fixes
+
+* only run empty check after all values have been added ([#285](https://github.com/dhis2/analytics/issues/285)) ([6ee424d](https://github.com/dhis2/analytics/commit/6ee424d1d143eaa492e0bede989a0955e8eea11e))
+
 ## [3.1.1](https://github.com/dhis2/analytics/compare/v3.1.0...v3.1.1) (2020-02-04)
 
 
