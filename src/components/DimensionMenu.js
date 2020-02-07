@@ -12,10 +12,13 @@ import { getAvailableAxes } from '../modules/layoutUiRules'
 import { AXIS_ID_COLUMNS, AXIS_ID_FILTERS } from '../modules/layout/axis'
 import { DIMENSION_ID_DATA } from '../modules/predefinedDimensions'
 import { isDualAxisType, getDisplayNameByVisType } from '../modules/visTypes'
-import { getAxisName } from '../modules/axis'
+import { getAxisNameByLayoutType } from '../modules/axis'
+import { getLayoutTypeByVisType } from '../modules/visTypeToLayoutType'
 
-const getAxisItemLabelPrefix = isDimensionInLayout =>
-    isDimensionInLayout ? 'Move to' : 'Add to'
+const getAxisItemLabel = (axisName, isDimensionInLayout) =>
+    isDimensionInLayout
+        ? i18n.t('Move to {{axisName}}', { axisName })
+        : i18n.t('Add to {{axisName}}', { axisName })
 
 const getRemoveMenuItem = onClick => (
     <MenuItem key="remove-menu-item" onClick={onClick}>
@@ -26,8 +29,8 @@ const getRemoveMenuItem = onClick => (
 const getDividerItem = key => <Divider light key={key} />
 
 const getUnavailableLabel = visType =>
-    i18n.t('Not available for {{visType}}', {
-        visType: getDisplayNameByVisType(visType),
+    i18n.t('Not available for {{visualizationType}}', {
+        visualizationType: getDisplayNameByVisType(visType),
     })
 
 const getDualAxisMenuItemLabel = (
@@ -185,10 +188,11 @@ export class DimensionMenu extends Component {
                                             closeWholeMenu()
                                         }}
                                     >
-                                        {i18n.t(
-                                            `${getAxisItemLabelPrefix()} ${getAxisName(
-                                                destination
-                                            )}`
+                                        {getAxisItemLabel(
+                                            getAxisNameByLayoutType(
+                                                destination,
+                                                getLayoutTypeByVisType(visType)
+                                            )
                                         )}
                                     </MenuItem>
                                 )
@@ -245,10 +249,12 @@ export class DimensionMenu extends Component {
                         closeWholeMenu()
                     }}
                 >
-                    {i18n.t(
-                        `${getAxisItemLabelPrefix(
-                            isDimensionInLayout
-                        )} ${getAxisName(axisId)}`
+                    {getAxisItemLabel(
+                        getAxisNameByLayoutType(
+                            axisId,
+                            getLayoutTypeByVisType(visType)
+                        ),
+                        isDimensionInLayout
                     )}
                 </MenuItem>
             ))

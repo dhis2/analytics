@@ -24,7 +24,7 @@ export { apiFetchDimensions, apiFetchRecommendedIds } from './api/dimensions'
 
 // Modules: axis
 
-export { getAxisName } from './modules/axis'
+export { getAxisName, getAxisNameByLayoutType } from './modules/axis'
 
 // Modules: predefined dimensions
 
