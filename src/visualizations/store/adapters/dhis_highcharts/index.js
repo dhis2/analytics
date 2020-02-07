@@ -4,7 +4,7 @@ import arrayUnique from 'd2-utilizr/lib/arrayUnique'
 import getYearOnYear from './yearOnYear'
 import getPie from './pie'
 import getGauge from './gauge'
-import { 
+import {
     VIS_TYPE_YEAR_OVER_YEAR_COLUMN,
     VIS_TYPE_YEAR_OVER_YEAR_LINE,
     VIS_TYPE_PIE,
@@ -64,13 +64,13 @@ function getDefault(acc, seriesIds, categoryIds, idValueMap, metaData) {
             // in that case null is returned as value in the serie
             // this is to keep the correct indexes for the values within the serie array
             serieData.push(value == undefined ? null : parseFloat(value))
-
-            // if the whole serie has no data, do not return a list of null values
-            // otherwise Highcharts thinks that data is available and does not show the "No data to display" message
-            if (arrayNullsOnly(serieData)) {
-                serieData.length = 0
-            }
         })
+
+        // if the whole serie has no data, do not return a list of null values
+        // otherwise Highcharts thinks that data is available and does not show the "No data to display" message
+        if (arrayNullsOnly(serieData)) {
+            serieData.length = 0
+        }
 
         acc.push({
             id: seriesId,
