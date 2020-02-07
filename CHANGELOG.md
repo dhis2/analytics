@@ -1,3 +1,10 @@
+## [3.1.3](https://github.com/dhis2/analytics/compare/v3.1.2...v3.1.3) (2020-02-07)
+
+
+### Bug Fixes
+
+* dynamic axis names based on vis type ([#284](https://github.com/dhis2/analytics/issues/284)) ([070a661](https://github.com/dhis2/analytics/commit/070a661a25e2b7cd43c97f2b227ee1605d9bd481))
+
 ## [3.1.2](https://github.com/dhis2/analytics/compare/v3.1.1...v3.1.2) (2020-02-07)
 
 
