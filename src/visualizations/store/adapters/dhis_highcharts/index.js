@@ -11,8 +11,6 @@ import {
     VIS_TYPE_GAUGE,
  } from '../../../../modules/visTypes'
 
-VIS_TYPE_GAUGE
-
 const VALUE_ID = 'value'
 
 function arrayNullsOnly(array) {
