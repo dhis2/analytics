@@ -38,8 +38,7 @@ export default function(layout, series, legendSet) {
         isNumber(layout.baseLineValue) ? getPlotLine(layout.baseLineValue, layout.baseLineLabel) : null,
         isNumber(layout.targetLineValue) ? getPlotLine(layout.targetLineValue, layout.targetLineLabel) : null
     ])
-console.log("LAYOUT", layout)
-    const c = objectClean({
+    return objectClean({
         min: isNumber(layout.rangeAxisMinValue) ? layout.rangeAxisMinValue : 0,
         max: isNumber(layout.rangeAxisMaxValue) ? layout.rangeAxisMaxValue : DEFAULT_MAX_VALUE,
         lineWidth: 0,
@@ -60,7 +59,4 @@ console.log("LAYOUT", layout)
             plotLines
         })
     })
-
-    console.log("CONFIG", c)
-    return c
 }
