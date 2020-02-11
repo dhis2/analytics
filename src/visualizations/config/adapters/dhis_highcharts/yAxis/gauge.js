@@ -3,6 +3,7 @@ import arraySort from 'd2-utilizr/lib/arraySort'
 import isNumber from 'd2-utilizr/lib/isNumber'
 import isObject from 'd2-utilizr/lib/isObject'
 import objectClean from 'd2-utilizr/lib/objectClean'
+import i18n from '@dhis2/d2-i18n'
 
 const DEFAULT_MAX_VALUE = 100
 
@@ -11,6 +12,9 @@ const DEFAULT_PLOT_LINE_STYLE = {
     width: 1,
     color: '#000',
 }
+
+const DEFAULT_TARGET_LINE_LABEL = i18n.t('Target')
+const DEFAULT_BASE_LINE_LABEL = i18n.t('Base')
 
 function getStopsByLegendSet(legendSet) {
     return isObject(legendSet)
@@ -35,8 +39,8 @@ function getPlotLine(value, label) {
 
 export default function(layout, series, legendSet) {
     const plotLines = arrayClean([
-        isNumber(layout.baseLineValue) ? getPlotLine(layout.baseLineValue, layout.baseLineLabel) : null,
-        isNumber(layout.targetLineValue) ? getPlotLine(layout.targetLineValue, layout.targetLineLabel) : null
+        isNumber(layout.baseLineValue) ? getPlotLine(layout.baseLineValue, layout.baseLineLabel || DEFAULT_BASE_LINE_LABEL) : null,
+        isNumber(layout.targetLineValue) ? getPlotLine(layout.targetLineValue, layout.targetLineLabel || DEFAULT_TARGET_LINE_LABEL) : null
     ])
     return objectClean({
         min: isNumber(layout.rangeAxisMinValue) ? layout.rangeAxisMinValue : 0,
