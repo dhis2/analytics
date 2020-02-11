@@ -38,7 +38,7 @@ const PivotTable = ({ visualization, data }) => {
             {width === 0 || height === 0 ? null : (
                 <table>
                     <thead>
-                        {visualization.title && !visualization.hideTitle ? (
+                        {engine.options.title ? (
                             <PivotTableTitleRow
                                 engine={engine}
                                 title={visualization.title}
@@ -46,8 +46,7 @@ const PivotTable = ({ visualization, data }) => {
                                 containerWidth={width}
                             />
                         ) : null}
-                        {visualization.subtitle &&
-                        !visualization.hideSubtitle ? (
+                        {engine.options.subtitle ? (
                             <PivotTableTitleRow
                                 engine={engine}
                                 title={visualization.subtitle}

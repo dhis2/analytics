@@ -176,6 +176,10 @@ export class PivotTableEngine {
             showRowSubtotals: visualization.rowSubTotals,
             hideEmptyColumns: visualization.hideEmptyColumns,
             hideEmptyRows: visualization.hideEmptyRows,
+            title: visualization.hideTitle ? undefined : visualization.title,
+            subtitle: visualization.hideSubtitle
+                ? undefined
+                : visualization.subtitle,
         }
 
         this.dimensionLookup = buildDimensionLookup(
@@ -354,6 +358,10 @@ export class PivotTableEngine {
             })
             totalCell.count += 1
         })
+
+        if (pos.column === 0) {
+            console.log(totals)
+        }
     }
     finalizeTotals() {
         // TODO: Calculate averages (and other agg types), compute "intersection" totals/subtotals
@@ -427,6 +435,7 @@ export class PivotTableEngine {
         })
 
         this.finalizeTotals()
+        console.log(this.data)
 
         this.columnMap = this.options.hideEmptyColumns
             ? times(this.dataWidth, n => n).filter(

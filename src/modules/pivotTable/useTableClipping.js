@@ -10,7 +10,6 @@ export const useTableClipping = ({
     visualization,
 }) => {
     const scrollPosition = useScrollPosition(containerRef)
-    const showTitle = visualization.title && !visualization.hideTitle
     const rows = useMemo(
         () =>
             clipAxis({
@@ -18,14 +17,18 @@ export const useTableClipping = ({
                 size: height,
                 step: 25,
                 totalCount: engine.height,
-                headerCount: visualization.columns.length + (showTitle ? 1 : 0),
+                headerCount:
+                    visualization.columns.length +
+                    (engine.options.title ? 1 : 0) +
+                    (engine.options.subtitle ? 1 : 0),
             }),
         [
             height,
             engine.height,
+            engine.options.title,
+            engine.options.subtitle,
             scrollPosition.y,
             visualization.columns.length,
-            showTitle,
         ]
     )
     const columns = useMemo(
