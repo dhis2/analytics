@@ -40,8 +40,8 @@ export default function(layout, series, legendSet) {
     ])
 console.log("LAYOUT", layout)
     const c = objectClean({
-        min: 0,
-        max: DEFAULT_MAX_VALUE,
+        min: isNumber(layout.rangeAxisMinValue) ? layout.rangeAxisMinValue : 0,
+        max: isNumber(layout.rangeAxisMaxValue) ? layout.rangeAxisMaxValue : DEFAULT_MAX_VALUE,
         lineWidth: 0,
         minorTickInterval: null,
         tickLength: 0,
