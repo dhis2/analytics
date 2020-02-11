@@ -27,7 +27,7 @@ function getPlotLine(value, label) {
         ...DEFAULT_PLOT_LINE_STYLE,
         ...(label && {
             label: {
-                text: label,
+                text: `${label}: ${value}`,
             }
         })
     }
