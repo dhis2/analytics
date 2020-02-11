@@ -1,8 +1,16 @@
+import arrayClean from 'd2-utilizr/lib/arrayClean'
 import arraySort from 'd2-utilizr/lib/arraySort'
+import isNumber from 'd2-utilizr/lib/isNumber'
 import isObject from 'd2-utilizr/lib/isObject'
 import objectClean from 'd2-utilizr/lib/objectClean'
 
 const DEFAULT_MAX_VALUE = 100
+
+const DEFAULT_PLOT_LINE_STYLE = {
+    zIndex: 5,
+    width: 1,
+    color: '#000',
+}
 
 function getStopsByLegendSet(legendSet) {
     return isObject(legendSet)
@@ -13,8 +21,25 @@ function getStopsByLegendSet(legendSet) {
         : undefined
 }
 
-export default function(series, legendSet) {
-    return objectClean({
+function getPlotLine(value, label) {
+    return {
+        value,
+        ...DEFAULT_PLOT_LINE_STYLE,
+        ...(label && {
+            label: {
+                text: label,
+            }
+        })
+    }
+}
+
+export default function(layout, series, legendSet) {
+    const plotLines = arrayClean([
+        isNumber(layout.baseLineValue) ? getPlotLine(layout.baseLineValue, layout.baseLineLabel) : null,
+        isNumber(layout.targetLineValue) ? getPlotLine(layout.targetLineValue, layout.targetLineLabel) : null
+    ])
+console.log("LAYOUT", layout)
+    const c = objectClean({
         min: 0,
         max: DEFAULT_MAX_VALUE,
         lineWidth: 0,
@@ -31,5 +56,11 @@ export default function(series, legendSet) {
             text: series[0].name,
         },
         stops: getStopsByLegendSet(legendSet),
+        ...(plotLines.length && {
+            plotLines
+        })
     })
+
+    console.log("CONFIG", c)
+    return c
 }

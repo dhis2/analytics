@@ -134,6 +134,6 @@ export default function({ store, layout, el, extraConfig, extraOptions }) {
 
     // force apply extra config
     Object.assign(config, extraConfig)
-
+console.log("FULL CONFIG", config)
     return objectClean(config)
 }
