@@ -1,3 +1,10 @@
+# [3.3.0](https://github.com/dhis2/analytics/compare/v3.2.0...v3.3.0) (2020-02-12)
+
+
+### Features
+
+* increase pivot table engine feature coverage ([#279](https://github.com/dhis2/analytics/issues/279)) ([8be0417](https://github.com/dhis2/analytics/commit/8be04170f2ab19b235e3676c2816dc794a0fdd05))
+
 # [3.2.0](https://github.com/dhis2/analytics/compare/v3.1.3...v3.2.0) (2020-02-12)
 
 

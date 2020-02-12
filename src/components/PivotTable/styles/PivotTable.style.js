@@ -36,6 +36,8 @@ export const table = css`
 export const cell = css`
     td,
     th {
+        font-weight: normal;
+        overflow: hidden;
         padding: 0px;
         border: 1px solid #b2b2b2;
         min-width: 150px;
@@ -43,41 +45,42 @@ export const cell = css`
         max-width: 150px;
         min-height: 25px;
         height: 25px;
+        cursor: default;
     }
-    th {
-        font-weight: normal;
+    .column-header {
         position: sticky;
         top: 0;
-        z-index: 1;
+        z-index: 2;
         background-color: #dae6f8;
     }
-    th.row-header {
-        z-index: 2 !important;
+    .title {
+        font-weight: bold;
+        background-color: #cddaed;
     }
-    td.row-header,
-    th.row-header {
+    .row-header {
         position: sticky;
         left: 0;
         z-index: 1;
         background-color: #dae6f8;
     }
-    td.row-header {
-        padding: 0;
-    }
-    td.empty-header,
-    th.empty-header {
+    .empty-header {
         background-color: #cddaed;
     }
-    td.total-header {
+    .total-header {
         background-color: #bac6d8;
     }
-    td.value {
+    .value {
         background-color: #ffffff;
+        cursor: pointer;
     }
-    td.subtotal {
+    .value:hover {
+        background-color: #f3f3f3;
+    }
+
+    .subtotal {
         background-color: #f4f4f4;
     }
-    td.total {
+    .total {
         background-color: #d8d8d8;
     }
 `

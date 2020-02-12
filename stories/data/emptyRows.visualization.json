@@ -9,7 +9,7 @@
   "subscribed": false,
   "rowSubTotals": true,
   "displayDescription": "ANC visits by facility type and last 12 months",
-  "showDimensionLabels": true,
+  "showDimensionLabels": false,
   "sortOrder": 0,
   "fontSize": "NORMAL",
   "favorite": false,
