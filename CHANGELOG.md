@@ -1,3 +1,10 @@
+# [3.2.0](https://github.com/dhis2/analytics/compare/v3.1.3...v3.2.0) (2020-02-12)
+
+
+### Features
+
+* gauge plot lines and range values ([#288](https://github.com/dhis2/analytics/issues/288)) ([507d969](https://github.com/dhis2/analytics/commit/507d9698e39b3aea80e34f5c9ddcf08681b3fb9b))
+
 ## [3.1.3](https://github.com/dhis2/analytics/compare/v3.1.2...v3.1.3) (2020-02-07)
 
 
