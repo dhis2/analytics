@@ -10,7 +10,11 @@ import Tooltip from '@material-ui/core/Tooltip'
 
 import { getAvailableAxes } from '../modules/layoutUiRules'
 import { AXIS_ID_COLUMNS, AXIS_ID_FILTERS } from '../modules/layout/axis'
-import { DIMENSION_ID_DATA } from '../modules/predefinedDimensions'
+import {
+    DIMENSION_ID_DATA,
+    getPredefinedDimensionProp,
+    DIMENSION_PROP_NO_ITEMS,
+} from '../modules/predefinedDimensions'
 import { isDualAxisType, getDisplayNameByVisType } from '../modules/visTypes'
 import { getAxisNameByLayoutType } from '../modules/axis'
 import { getLayoutTypeByVisType } from '../modules/visTypeToLayoutType'
@@ -241,11 +245,15 @@ export class DimensionMenu extends Component {
                 <MenuItem
                     key={`${dimensionId}-to-${axisId}`}
                     onClick={() => {
-                        axisItemHandler(
+                        axisItemHandler({
                             dimensionId,
                             axisId,
-                            numberOfDimensionItems
-                        )
+                            numberOfDimensionItems,
+                            requireItems: !getPredefinedDimensionProp(
+                                dimensionId,
+                                DIMENSION_PROP_NO_ITEMS
+                            ),
+                        })
                         closeWholeMenu()
                     }}
                 >
