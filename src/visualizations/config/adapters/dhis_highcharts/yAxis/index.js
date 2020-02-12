@@ -148,7 +148,7 @@ export default function(layout, series, extraOptions) {
 
     switch (layout.type) {
         case VIS_TYPE_GAUGE:
-            yAxis = getGauge(series, extraOptions.legendSet)
+            yAxis = getGauge(layout, series, extraOptions.legendSet)
             break
         default:
             yAxis = getDefault(layout, extraOptions)
