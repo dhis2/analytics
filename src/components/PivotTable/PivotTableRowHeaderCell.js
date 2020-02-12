@@ -22,6 +22,7 @@ export const PivotTableRowHeaderCell = ({
                         : 'empty-header'
                 }
                 rowSpan={header.span}
+                title={header.name}
             >
                 <style jsx>{cellStyle}</style>
                 {header.name}

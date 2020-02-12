@@ -17,9 +17,19 @@ export const useTableClipping = ({
                 size: height,
                 step: 25,
                 totalCount: engine.height,
-                headerCount: visualization.columns.length,
+                headerCount:
+                    visualization.columns.length +
+                    (engine.options.title ? 1 : 0) +
+                    (engine.options.subtitle ? 1 : 0),
             }),
-        [height, engine.height, scrollPosition.y, visualization.columns.length]
+        [
+            height,
+            engine.height,
+            engine.options.title,
+            engine.options.subtitle,
+            scrollPosition.y,
+            visualization.columns.length,
+        ]
     )
     const columns = useMemo(
         () =>
@@ -36,5 +46,6 @@ export const useTableClipping = ({
     return {
         rows,
         columns,
+        scrollPosition,
     }
 }
