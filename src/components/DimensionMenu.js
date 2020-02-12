@@ -245,15 +245,16 @@ export class DimensionMenu extends Component {
                 <MenuItem
                     key={`${dimensionId}-to-${axisId}`}
                     onClick={() => {
-                        axisItemHandler({
+                        axisItemHandler(
                             dimensionId,
                             axisId,
                             numberOfDimensionItems,
-                            requireItems: !getPredefinedDimensionProp(
+                            !getPredefinedDimensionProp(
                                 dimensionId,
                                 DIMENSION_PROP_NO_ITEMS
                             ),
-                        })
+                            isDimensionInLayout
+                        )
                         closeWholeMenu()
                     }}
                 >
