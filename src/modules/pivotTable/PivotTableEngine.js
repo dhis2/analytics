@@ -358,10 +358,6 @@ export class PivotTableEngine {
             })
             totalCell.count += 1
         })
-
-        if (pos.column === 0) {
-            console.log(totals)
-        }
     }
     finalizeTotals() {
         // TODO: Calculate averages (and other agg types), compute "intersection" totals/subtotals

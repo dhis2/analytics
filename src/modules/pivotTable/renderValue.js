@@ -3,18 +3,14 @@ const DEFAULT_PRECISION = 1,
     SKIP_ROUNDING_PRECISION = 10
 
 const separateDigitGroups = (stringValue, decimalSeparator = '.') => {
-    const integerLength =
-        stringValue.indexOf('.') !== -1
-            ? stringValue.indexOf('.') + 1
-            : stringValue.length
-    const remainder = stringValue.substring(integerLength)
+    const [integer, remainder] = stringValue.split('.')
 
     const groups = []
-    for (let i = integerLength - 1; i > 0; i -= 3) {
-        groups.unshift(stringValue.substring(i - 3, i))
+    for (let i = integer.length; i > 0; i -= 3) {
+        groups.unshift(integer.substring(i - 3, i))
     }
 
-    if (remainder.length) {
+    if (remainder) {
         groups[groups.length - 1] += decimalSeparator + remainder
     }
 
