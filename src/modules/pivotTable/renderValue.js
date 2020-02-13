@@ -19,7 +19,8 @@ const separateDigitGroups = (stringValue, decimalSeparator = '.') => {
 }
 
 export const renderValue = (value, visualization) => {
-    if (isNaN(value)) {
+    // TODO: check dataType in header instead of parsing here
+    if (isNaN(parseFloat(value))) {
         return value
     }
 
