@@ -1,3 +1,10 @@
+## [3.3.1](https://github.com/dhis2/analytics/compare/v3.3.0...v3.3.1) (2020-02-13)
+
+
+### Bug Fixes
+
+* weird pie chart graphics for selections with no data (DHIS2-8302) ([#303](https://github.com/dhis2/analytics/issues/303)) ([278f3aa](https://github.com/dhis2/analytics/commit/278f3aa25b59bbc1fd541392576686b5bb2fe739))
+
 # [3.3.0](https://github.com/dhis2/analytics/compare/v3.2.0...v3.3.0) (2020-02-12)
 
 
