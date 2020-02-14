@@ -147,6 +147,7 @@ exports[`DimensionItem matches the snapshot with locked 1`] = `
         style={
           Object {
             "fontSize": "14px",
+            "marginTop": "1px",
           }
         }
       />
