@@ -43,6 +43,7 @@ export const styles = {
     },
     lockIcon: {
         fontSize: '14px',
+        marginTop: '1px',
     },
     optionsWrapper: {
         position: 'relative',
