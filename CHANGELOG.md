@@ -1,3 +1,10 @@
+## [3.3.2](https://github.com/dhis2/analytics/compare/v3.3.1...v3.3.2) (2020-02-14)
+
+
+### Bug Fixes
+
+* lock icon horizontal alignment ([#305](https://github.com/dhis2/analytics/issues/305)) ([e9cf3a6](https://github.com/dhis2/analytics/commit/e9cf3a68a9174e639eeaff2367d44689609856c7))
+
 ## [3.3.1](https://github.com/dhis2/analytics/compare/v3.3.0...v3.3.1) (2020-02-13)
 
 
