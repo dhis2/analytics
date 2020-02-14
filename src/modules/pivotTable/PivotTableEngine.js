@@ -209,15 +209,12 @@ export class PivotTableEngine {
             if (dataRow) {
                 switch (type) {
                     case CELL_TYPE_VALUE:
-                        return dataRow[this.dimensionLookup.dataHeaders.value]
-                            ? parseValue(
-                                  dataRow[
-                                      this.dimensionLookup.dataHeaders.value
-                                  ]
-                              )
-                            : undefined
+                        return (
+                            dataRow[this.dimensionLookup.dataHeaders.value] ??
+                            undefined
+                        )
                     default:
-                        return dataRow.value ? dataRow.value : undefined
+                        return dataRow.value ?? undefined
                 }
             }
         }
@@ -358,10 +355,6 @@ export class PivotTableEngine {
             })
             totalCell.count += 1
         })
-
-        if (pos.column === 0) {
-            console.log(totals)
-        }
     }
     finalizeTotals() {
         // TODO: Calculate averages (and other agg types), compute "intersection" totals/subtotals
@@ -435,7 +428,6 @@ export class PivotTableEngine {
         })
 
         this.finalizeTotals()
-        console.log(this.data)
 
         this.columnMap = this.options.hideEmptyColumns
             ? times(this.dataWidth, n => n).filter(
