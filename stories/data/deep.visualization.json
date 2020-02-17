@@ -17,7 +17,7 @@
   "showHierarchy": false,
   "cumulative": false,
   "hideTitle": false,
-  "skipRounding": false,
+  "skipRounding": true,
   "hideEmptyRows": false,
   "parentGraphMap": {
     "jUb8gELQApl": "ImspTQPwCqd",

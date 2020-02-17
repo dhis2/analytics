@@ -1,6 +1,6 @@
 {
     "name": "@dhis2/analytics",
-    "version": "3.2.0",
+    "version": "3.3.3",
     "main": "./build/index.js",
     "sideEffects": false,
     "repository": "git@github.com:dhis2/analytics.git",
@@ -27,7 +27,9 @@
         "@babel/cli": "^7.8.3",
         "@babel/core": "^7.7.7",
         "@babel/plugin-proposal-class-properties": "^7.7.4",
+        "@babel/plugin-proposal-nullish-coalescing-operator": "^7.8.3",
         "@babel/plugin-proposal-object-rest-spread": "^7.2.0",
+        "@babel/plugin-proposal-optional-chaining": "^7.8.3",
         "@babel/plugin-transform-react-constant-elements": "^7.2.0",
         "@babel/plugin-transform-runtime": "^7.7.6",
         "@babel/plugin-transform-shorthand-properties": "^7.8.3",

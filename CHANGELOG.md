@@ -1,3 +1,31 @@
+## [3.3.3](https://github.com/dhis2/analytics/compare/v3.3.2...v3.3.3) (2020-02-14)
+
+
+### Bug Fixes
+
+* correct string number parsing and rendering ([#304](https://github.com/dhis2/analytics/issues/304)) ([8b16c39](https://github.com/dhis2/analytics/commit/8b16c39091d212031b3422943b8eb05b6427ccbb))
+
+## [3.3.2](https://github.com/dhis2/analytics/compare/v3.3.1...v3.3.2) (2020-02-14)
+
+
+### Bug Fixes
+
+* lock icon horizontal alignment ([#305](https://github.com/dhis2/analytics/issues/305)) ([e9cf3a6](https://github.com/dhis2/analytics/commit/e9cf3a68a9174e639eeaff2367d44689609856c7))
+
+## [3.3.1](https://github.com/dhis2/analytics/compare/v3.3.0...v3.3.1) (2020-02-13)
+
+
+### Bug Fixes
+
+* weird pie chart graphics for selections with no data (DHIS2-8302) ([#303](https://github.com/dhis2/analytics/issues/303)) ([278f3aa](https://github.com/dhis2/analytics/commit/278f3aa25b59bbc1fd541392576686b5bb2fe739))
+
+# [3.3.0](https://github.com/dhis2/analytics/compare/v3.2.0...v3.3.0) (2020-02-12)
+
+
+### Features
+
+* increase pivot table engine feature coverage ([#279](https://github.com/dhis2/analytics/issues/279)) ([8be0417](https://github.com/dhis2/analytics/commit/8be04170f2ab19b235e3676c2816dc794a0fdd05))
+
 # [3.2.0](https://github.com/dhis2/analytics/compare/v3.1.3...v3.2.0) (2020-02-12)
 
 
