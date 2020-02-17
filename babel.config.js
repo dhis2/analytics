@@ -29,6 +29,8 @@ module.exports = function(api) {
             '@babel/plugin-transform-react-constant-elements',
             '@babel/plugin-transform-shorthand-properties',
             '@babel/plugin-transform-runtime',
+            '@babel/plugin-proposal-optional-chaining',
+            '@babel/plugin-proposal-nullish-coalescing-operator',
             styledJsxPlugin,
         ],
     }
