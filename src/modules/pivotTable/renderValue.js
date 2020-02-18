@@ -35,12 +35,31 @@ const getSeparator = visualization => {
     }
 }
 
+const toFixedPrecisionString = (value, skipRounding) => {
+    if (typeof value !== 'number') {
+        // Values returned from the server should keep their string representation
+        return value
+    }
+
+    const precision = skipRounding ? 10 : value > -1 && value < 1 ? 2 : 1
+
+    return value.toFixed(precision)
+}
+
 export const renderValue = (value, visualization) => {
+    const stringValue = toFixedPrecisionString(
+        value,
+        visualization.skipRounding
+    )
+
     // TODO: check dataType in header instead of parsing here
     if (isNaN(parseFloat(value))) {
         return value
     }
 
-    const digitGroups = separateDigitGroups(value, defaultDecimalSeparator)
+    const digitGroups = separateDigitGroups(
+        stringValue,
+        defaultDecimalSeparator
+    )
     return digitGroups.join(getSeparator(visualization))
 }

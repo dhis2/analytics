@@ -11,14 +11,14 @@ import { PivotTableClippedAxis } from './PivotTableClippedAxis'
 import { PivotTableTitleRow } from './PivotTableTitleRow'
 import { PivotTableEmptyRow } from './PivotTableEmptyRow'
 
-const PivotTable = ({ visualization, data }) => {
+const PivotTable = ({ visualization, data, legendSets }) => {
     const containerRef = useRef(undefined)
     const { width, height } = useParentSize(containerRef)
 
-    const engine = useMemo(() => new PivotTableEngine(visualization, data), [
-        visualization,
-        data,
-    ])
+    const engine = useMemo(
+        () => new PivotTableEngine(visualization, data, legendSets),
+        [visualization, data, legendSets]
+    )
 
     const clippingResult = useTableClipping({
         containerRef,
@@ -88,6 +88,7 @@ const PivotTable = ({ visualization, data }) => {
 PivotTable.propTypes = {
     data: PropTypes.object.isRequired,
     visualization: PropTypes.object.isRequired,
+    legendSets: PropTypes.arrayOf(PropTypes.object),
 }
 
 export default PivotTable
