@@ -1,3 +1,15 @@
+# [4.0.0](https://github.com/dhis2/analytics/compare/v3.3.3...v4.0.0) (2020-02-18)
+
+
+### Bug Fixes
+
+* axisItemHandler to pass new props ([#294](https://github.com/dhis2/analytics/issues/294)) ([c12b9b0](https://github.com/dhis2/analytics/commit/c12b9b0ae0e09495146d981984d55b9b9531121e))
+
+
+### BREAKING CHANGES
+
+* axisItemHandler requires an object with 5 props instead of 3 regular props
+
 ## [3.3.3](https://github.com/dhis2/analytics/compare/v3.3.2...v3.3.3) (2020-02-14)
 
 
