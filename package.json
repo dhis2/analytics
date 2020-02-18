@@ -62,7 +62,7 @@
     "dependencies": {
         "@dhis2/d2-i18n": "^1.0.4",
         "@dhis2/d2-ui-org-unit-dialog": "^6.3.2",
-        "@dhis2/d2-ui-period-selector-dialog": "^6.3.2",
+        "@dhis2/d2-ui-period-selector-dialog": "^6.5.6",
         "@dhis2/ui-core": "^4.9.1",
         "@material-ui/core": "^3.9.3",
         "@material-ui/icons": "^3.0.2",
