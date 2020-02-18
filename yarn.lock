@@ -1240,6 +1240,26 @@
     resize-observer-polyfill "^1.5.1"
     styled-jsx "^3.2.1"
 
+"@dhis2/analytics@^4.0.1":
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/@dhis2/analytics/-/analytics-4.0.1.tgz#7b3f88379265ca387a821c7e3e24b58db485638f"
+  integrity sha512-3XQEzvYuay0ObKRRtKbgR7PpotTvE80kY0UrFuQ4k4Kqj89p18oTSgT3NXTV8bXTk4RDVn19+ffoGt7ZsSAwkw==
+  dependencies:
+    "@dhis2/d2-i18n" "^1.0.4"
+    "@dhis2/d2-ui-org-unit-dialog" "^6.5.6"
+    "@dhis2/d2-ui-period-selector-dialog" "^6.5.6"
+    "@dhis2/ui-core" "^4.9.1"
+    "@material-ui/core" "^3.9.3"
+    "@material-ui/icons" "^3.0.2"
+    classnames "^2.2.6"
+    d2-utilizr "^0.2.16"
+    d3-color "^1.2.3"
+    highcharts "^7.2.1"
+    lodash "^4.17.13"
+    react-beautiful-dnd "^10.1.1"
+    resize-observer-polyfill "^1.5.1"
+    styled-jsx "^3.2.1"
+
 "@dhis2/cli-helpers-engine@1.5.0":
   version "1.5.0"
   resolved "https://registry.yarnpkg.com/@dhis2/cli-helpers-engine/-/cli-helpers-engine-1.5.0.tgz#5bce097bcb226842d67cffae716b44f9b037390e"
@@ -1317,6 +1337,18 @@
   integrity sha512-fhj+AmJBTbzqITH/oEtRVNIk75luC4dlfc0jl5Z0hbeHMj91PcoQCchBZhpyUOlMDT274R3rZ1Zep+pbB3eCsA==
   dependencies:
     "@dhis2/analytics" "^3.3.3"
+    "@dhis2/d2-i18n" "^1.0.4"
+    "@material-ui/core" "^3.3.1"
+    "@material-ui/icons" "^3.0.1"
+    babel-runtime "^6.26.0"
+    prop-types "^15.6.0"
+
+"@dhis2/d2-ui-period-selector-dialog@^6.5.7":
+  version "6.5.7"
+  resolved "https://registry.yarnpkg.com/@dhis2/d2-ui-period-selector-dialog/-/d2-ui-period-selector-dialog-6.5.7.tgz#081b5e5e2f0d9bcbc9d47ba706da16adebeafaf9"
+  integrity sha512-1pISB3brD1Tx+/k51/TK0kF+ZKeDOviSsM99EEUJ+RfviSx3kSxpYPv/VV0WYV69XUmDGkBJ8LPy0w6mUGVL/A==
+  dependencies:
+    "@dhis2/analytics" "^4.0.1"
     "@dhis2/d2-i18n" "^1.0.4"
     "@material-ui/core" "^3.3.1"
     "@material-ui/icons" "^3.0.1"
