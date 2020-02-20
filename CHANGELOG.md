@@ -1,3 +1,17 @@
+## [4.0.2](https://github.com/dhis2/analytics/compare/v4.0.1...v4.0.2) (2020-02-18)
+
+
+### Bug Fixes
+
+* upgrade period selector to remove lib mismatch ([#312](https://github.com/dhis2/analytics/issues/312)) ([ca8d418](https://github.com/dhis2/analytics/commit/ca8d418d7562c5d52c3723c91ffcc729ced7fcd0))
+
+## [4.0.1](https://github.com/dhis2/analytics/compare/v4.0.0...v4.0.1) (2020-02-18)
+
+
+### Bug Fixes
+
+* add some basic info to the README ([#309](https://github.com/dhis2/analytics/issues/309)) ([9d62114](https://github.com/dhis2/analytics/commit/9d62114b51b08d3051469dfeb7663272ba8b3c99))
+
 # [4.0.0](https://github.com/dhis2/analytics/compare/v3.3.3...v4.0.0) (2020-02-18)
 
 
