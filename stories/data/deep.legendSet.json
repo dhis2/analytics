@@ -1,0 +1,113 @@
+{
+    "code": "UA100",
+    "created": "2017-05-19T15:43:40.983",
+    "lastUpdated": "2017-05-19T15:43:40.983",
+    "name": "Under or above 100%",
+    "href": "http://localhost:8080/api/32/legendSets/gFJUXah1uRH",
+    "id": "gFJUXah1uRH",
+    "displayName": "Under or above 100%",
+    "publicAccess": "rw------",
+    "externalAccess": false,
+    "favorite": false,
+    "lastUpdatedBy": {
+      "id": "GOLswS44mh8"
+    },
+    "access": {
+      "read": true,
+      "update": true,
+      "externalize": false,
+      "delete": true,
+      "write": true,
+      "manage": true
+    },
+    "user": {
+      "id": "GOLswS44mh8"
+    },
+    "favorites": [
+      
+    ],
+    "userGroupAccesses": [
+      
+    ],
+    "attributeValues": [
+      
+    ],
+    "legends": [
+      {
+        "lastUpdated": "2017-05-19T15:43:40.983",
+        "id": "I0lBkYHTjPw",
+        "created": "2017-05-19T15:43:40.983",
+        "name": "Above 100%",
+        "endValue": 900.0,
+        "color": "#B4F3BD",
+        "displayName": "Above 100%",
+        "externalAccess": false,
+        "startValue": 100.0,
+        "favorite": false,
+        "access": {
+          "read": true,
+          "update": true,
+          "externalize": false,
+          "delete": true,
+          "write": true,
+          "manage": true
+        },
+        "favorites": [
+          
+        ],
+        "translations": [
+          
+        ],
+        "userGroupAccesses": [
+          
+        ],
+        "attributeValues": [
+          
+        ],
+        "userAccesses": [
+          
+        ]
+      },
+      {
+        "lastUpdated": "2017-05-19T15:43:40.984",
+        "id": "qCU0BSbmwjX",
+        "created": "2017-05-19T15:43:40.984",
+        "name": "Under 100%",
+        "endValue": 100.0,
+        "color": "#FF9C89",
+        "displayName": "Under 100%",
+        "externalAccess": false,
+        "startValue": 0.0,
+        "favorite": false,
+        "access": {
+          "read": true,
+          "update": true,
+          "externalize": false,
+          "delete": true,
+          "write": true,
+          "manage": true
+        },
+        "favorites": [
+          
+        ],
+        "translations": [
+          
+        ],
+        "userGroupAccesses": [
+          
+        ],
+        "attributeValues": [
+          
+        ],
+        "userAccesses": [
+          
+        ]
+      }
+    ],
+    "translations": [
+      
+    ],
+    "userAccesses": [
+      
+    ]
+  }
