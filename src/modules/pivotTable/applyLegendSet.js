@@ -1,12 +1,12 @@
 import { isColorBright } from './isColorBright'
 import { colors } from '@dhis2/ui-core'
-import { getColorByValueFromLegendSet } from '../legends'
-
-const LEGEND_DISPLAY_STRATEGY_BY_DATA_ITEM = 'BY_DATA_ITEM'
-const LEGEND_DISPLAY_STRATEGY_FIXED = 'FIXED'
-
-const LEGEND_DISPLAY_STYLE_FILL = 'FILL'
-const LEGEND_DISPLAY_STYLE_TEXT = 'TEXT'
+import {
+    getColorByValueFromLegendSet,
+    LEGEND_DISPLAY_STRATEGY_BY_DATA_ITEM,
+    LEGEND_DISPLAY_STRATEGY_FIXED,
+    LEGEND_DISPLAY_STYLE_TEXT,
+    LEGEND_DISPLAY_STYLE_FILL,
+} from '../legends'
 
 const getLegendSet = engine => {
     let legendSetId

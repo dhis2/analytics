@@ -1,4 +1,4 @@
-import { getColorByValueFromLegendSet } from "../../../../../modules/legends"
+import { getColorByValueFromLegendSet, LEGEND_DISPLAY_STYLE_TEXT } from "../../../../../modules/legends"
 
 const DEFAULT_FONT_SIZE = '34px'
 const DASHBOARD_FONT_SIZE = '24px'
@@ -15,7 +15,7 @@ export default function(series, layout, extraOptions) {
                 verticalAlign: 'bottom',
                 style: {
                     fontSize: extraOptions.dashboard ? DASHBOARD_FONT_SIZE : DEFAULT_FONT_SIZE,
-                    color: (layout.legendDisplayStyle === "TEXT" && extraOptions.legendSet) ? getColorByValueFromLegendSet(extraOptions.legendSet, series[0].data) : undefined,
+                    color: (layout.legendDisplayStyle === LEGEND_DISPLAY_STYLE_TEXT && extraOptions.legendSet) ? getColorByValueFromLegendSet(extraOptions.legendSet, series[0].data) : undefined,
                 },
             },
         },

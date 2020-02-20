@@ -2,7 +2,7 @@ import arrayClean from 'd2-utilizr/lib/arrayClean'
 import isNumber from 'd2-utilizr/lib/isNumber'
 import objectClean from 'd2-utilizr/lib/objectClean'
 import i18n from '@dhis2/d2-i18n'
-import { getColorByValueFromLegendSet } from '../../../../../modules/legends'
+import { getColorByValueFromLegendSet, LEGEND_DISPLAY_STYLE_FILL } from '../../../../../modules/legends'
 
 const DEFAULT_MAX_VALUE = 100
 
@@ -32,7 +32,7 @@ export default function(layout, series, legendSet) {
         isNumber(layout.baseLineValue) ? getPlotLine(layout.baseLineValue, layout.baseLineLabel || DEFAULT_BASE_LINE_LABEL) : null,
         isNumber(layout.targetLineValue) ? getPlotLine(layout.targetLineValue, layout.targetLineLabel || DEFAULT_TARGET_LINE_LABEL) : null
     ])
-    const fillColor = (layout.legendDisplayStyle === "FILL" && legendSet) ? getColorByValueFromLegendSet(legendSet, series[0].data) : undefined
+    const fillColor = (layout.legendDisplayStyle === LEGEND_DISPLAY_STYLE_FILL && legendSet) ? getColorByValueFromLegendSet(legendSet, series[0].data) : undefined
     return objectClean({
         min: isNumber(layout.rangeAxisMinValue) ? layout.rangeAxisMinValue : 0,
         max: isNumber(layout.rangeAxisMaxValue) ? layout.rangeAxisMaxValue : DEFAULT_MAX_VALUE,
