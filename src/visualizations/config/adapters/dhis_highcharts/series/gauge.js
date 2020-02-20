@@ -3,7 +3,7 @@ import { getColorByValueFromLegendSet, LEGEND_DISPLAY_STYLE_TEXT } from "../../.
 const DEFAULT_FONT_SIZE = '34px'
 const DASHBOARD_FONT_SIZE = '24px'
 
-export default function(series, layout, extraOptions) {
+export default function(series, layout, legendSet, dashboard) {
     return [
         {
             name: series[0].name,
@@ -14,8 +14,8 @@ export default function(series, layout, extraOptions) {
                 borderWidth: 0,
                 verticalAlign: 'bottom',
                 style: {
-                    fontSize: extraOptions.dashboard ? DASHBOARD_FONT_SIZE : DEFAULT_FONT_SIZE,
-                    color: (layout.legendDisplayStyle === LEGEND_DISPLAY_STYLE_TEXT && extraOptions.legendSet) ? getColorByValueFromLegendSet(extraOptions.legendSet, series[0].data) : undefined,
+                    fontSize: dashboard ? DASHBOARD_FONT_SIZE : DEFAULT_FONT_SIZE,
+                    color: (layout.legendDisplayStyle === LEGEND_DISPLAY_STYLE_TEXT && legendSet) ? getColorByValueFromLegendSet(legendSet, series[0].data) : undefined,
                 },
             },
         },
