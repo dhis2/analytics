@@ -132,7 +132,7 @@ export default function(series, store, layout, isStacked, extraOptions) {
             )
             break
         case VIS_TYPE_GAUGE:
-            series = getGauge(series, extraOptions.dashboard)
+            series = getGauge(series, layout, extraOptions)
             break
         default:
             series = getDefault(series, layout, isStacked, extraOptions)
