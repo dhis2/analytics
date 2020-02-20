@@ -1,9 +1,11 @@
 import css from 'styled-jsx/css'
+import { colors } from '@dhis2/ui-core'
 
 export const table = css`
     div.pivot-table-container {
         overflow: auto;
         font-size: 10px;
+        color: ${colors.grey900};
     }
     div.pivot-table-container::-webkit-scrollbar {
         -webkit-appearance: none;

@@ -1,4 +1,5 @@
 import { isColorBright } from './isColorBright'
+import { colors } from '@dhis2/ui-core'
 
 const LEGEND_DISPLAY_STRATEGY_BY_DATA_ITEM = 'BY_DATA_ITEM'
 const LEGEND_DISPLAY_STRATEGY_FIXED = 'FIXED'
@@ -38,9 +39,9 @@ const buildStyleObject = (legend, engine) => {
         default:
             style.backgroundColor = legend.color
             if (isColorBright(legend.color)) {
-                style.color = '#000000' // TODO: Don't hard-code color here!
+                style.color = colors.grey900
             } else {
-                style.color = '#FFFFFF' // TODO: Don't hard-code color here!
+                style.color = colors.white
             }
             break
     }
