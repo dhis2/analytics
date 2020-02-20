@@ -2,6 +2,7 @@ import arrayClean from 'd2-utilizr/lib/arrayClean'
 import isNumber from 'd2-utilizr/lib/isNumber'
 import objectClean from 'd2-utilizr/lib/objectClean'
 import i18n from '@dhis2/d2-i18n'
+import { getColorByValueFromLegendSet } from '../../../../../modules/legends'
 
 const DEFAULT_MAX_VALUE = 100
 
@@ -24,13 +25,6 @@ function getPlotLine(value, label) {
             }
         })
     }
-}
-
-const getColorByValueFromLegendSet = (legendSet, value) => {
-        const legend = legendSet.legends.find(legend =>
-            value >= legend.startValue && value < legend.endValue 
-        )    
-        return legend ? legend.color : undefined
 }
 
 export default function(layout, series, legendSet) {

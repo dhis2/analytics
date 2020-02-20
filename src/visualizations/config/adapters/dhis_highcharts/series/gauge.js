@@ -1,12 +1,7 @@
+import { getColorByValueFromLegendSet } from "../../../../../modules/legends"
+
 const DEFAULT_FONT_SIZE = '34px'
 const DASHBOARD_FONT_SIZE = '24px'
-
-const getColorByValueFromLegendSet = (legendSet, value) => {
-    const legend = legendSet.legends.find(legend =>
-        value >= legend.startValue && value < legend.endValue 
-    )    
-    return legend ? legend.color : undefined
-}
 
 export default function(series, layout, extraOptions) {
     return [
