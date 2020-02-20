@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import { storiesOf } from '@storybook/react'
+import cloneDeep from 'lodash/cloneDeep'
 
 import PivotTable from '../src/components/PivotTable/PivotTable'
 
 import deepData from './data/deep.data.json'
 import deepVisualization from './data/deep.visualization.json'
+import deepLegendSet from './data/deep.legendSet.json'
 
 import emptyRowsData from './data/emptyRows.data.json'
 import emptyRowsVisualization from './data/emptyRows.visualization.json'
@@ -112,6 +114,87 @@ storiesOf('PivotTable', module).add('empty rows (hidden)', () => {
     return (
         <div style={{ width: 800, height: 600 }}>
             <PivotTable data={emptyRowsData} visualization={visualization} />
+        </div>
+    )
+})
+
+storiesOf('PivotTable', module).add('Fixed legendSet (light fill)', () => {
+    const visualization = {
+        ...deepVisualization,
+        ...visualizationReset,
+        rowSubTotals: true,
+        colSubTotals: true,
+        legendDisplayStyle: 'FILL',
+        legendSet: {
+            id: deepLegendSet.id
+        },
+    }
+    return (
+        <div style={{ width: 800, height: 600 }}>
+            <PivotTable data={deepData} visualization={visualization} legendSets={[deepLegendSet]} />
+        </div>
+    )
+})
+
+storiesOf('PivotTable', module).add('Fixed legendSet (dark fill)', () => {
+    const visualization = {
+        ...deepVisualization,
+        ...visualizationReset,
+        rowSubTotals: true,
+        colSubTotals: true,
+        legendDisplayStyle: 'FILL',
+        legendSet: {
+            id: deepLegendSet.id
+        },
+    }
+
+    const legendSet = cloneDeep(deepLegendSet)
+    legendSet.legends[0].color = '#000000'
+    legendSet.legends[1].color = '#666666'
+
+    return (
+        <div style={{ width: 800, height: 600 }}>
+            <PivotTable data={deepData} visualization={visualization} legendSets={[legendSet]} />
+        </div>
+    )
+})
+
+storiesOf('PivotTable', module).add('Fixed legendSet (text)', () => {
+    const visualization = {
+        ...deepVisualization,
+        ...visualizationReset,
+        rowSubTotals: true,
+        colSubTotals: true,
+        legendDisplayStyle: 'TEXT',
+        legendSet: {
+            id: deepLegendSet.id
+        },
+    }
+    return (
+        <div style={{ width: 800, height: 600 }}>
+            <PivotTable data={deepData} visualization={visualization} legendSets={[deepLegendSet]} />
+        </div>
+    )
+})
+
+storiesOf('PivotTable', module).add('By DX legendSet !!UNIMPLEMENTED!!', () => {
+    const visualization = {
+        ...deepVisualization,
+        ...visualizationReset,
+        rowSubTotals: true,
+        colSubTotals: true,
+    }
+    const data = {
+        ...deepData
+    }
+
+    data.metaData.items[visualization.rows[0].items[1].id].legendSet = {
+        id: deepLegendSet.id
+    }
+
+    return (
+        <div style={{ width: 800, height: 600 }}>
+            <PivotTable data={deepData} visualization={visualization} legendSets={[deepLegendSet]} />
         </div>
     )
 })

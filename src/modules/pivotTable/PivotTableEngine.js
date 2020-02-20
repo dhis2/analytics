@@ -152,6 +152,7 @@ export class PivotTableEngine {
     visualization
     rawData
     options
+    legendSets
 
     dimensionLookup
 
@@ -165,8 +166,12 @@ export class PivotTableEngine {
     rowMap = []
     columnMap = []
 
-    constructor(visualization, data) {
+    constructor(visualization, data, legendSets) {
         this.visualization = visualization
+        this.legendSets = (legendSets || []).reduce((sets, set) => {
+            sets[set.id] = set
+            return sets
+        }, {})
         this.rawData = data
         this.options = {
             ...defaultOptions,

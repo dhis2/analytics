@@ -1,3 +1,10 @@
+# [4.1.0](https://github.com/dhis2/analytics/compare/v4.0.2...v4.1.0) (2020-02-20)
+
+
+### Features
+
+* support fixed legends and fix floating-point totals bug ([#310](https://github.com/dhis2/analytics/issues/310)) ([4f8fe54](https://github.com/dhis2/analytics/commit/4f8fe5497650c8e883d77f026ba0219608f52d95))
+
 ## [4.0.2](https://github.com/dhis2/analytics/compare/v4.0.1...v4.0.2) (2020-02-18)
 
 
