@@ -57,6 +57,9 @@ export const applyLegendSet = (value, engine) => {
     }
 
     const legendColor = getColorByValueFromLegendSet(legendSet, value)
+    if (!legendColor) {
+        return {}
+    }
 
     return buildStyleObject(legendColor, engine)
 }
