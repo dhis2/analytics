@@ -3,7 +3,7 @@ import { getColorByValueFromLegendSet, LEGEND_DISPLAY_STYLE_TEXT } from "../../.
 const DEFAULT_FONT_SIZE = '34px'
 const DASHBOARD_FONT_SIZE = '24px'
 
-export default function(series, layout, legendSet, dashboard) {
+export default function(series, dashboard, layout, legendSet) {
     return [
         {
             name: series[0].name,

@@ -134,7 +134,7 @@ export default function(series, store, layout, isStacked, extraOptions) {
             break
         case VIS_TYPE_GAUGE:
             const legendSet = layout.legendSet ? getLegendSetById(extraOptions.legendSets, layout.legendSet.id) : undefined
-            series = getGauge(series, layout, legendSet, extraOptions.dashboard)
+            series = getGauge(series, extraOptions.dashboard, layout, legendSet)
             break
         default:
             series = getDefault(series, layout, isStacked, extraOptions)
