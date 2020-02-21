@@ -69,6 +69,7 @@ DimensionsPanel.propTypes = {
 
 DimensionsPanel.defaultProps = {
     selectedIds: [],
+    style: {},
     onDimensionClick: Function.prototype,
 }
 
