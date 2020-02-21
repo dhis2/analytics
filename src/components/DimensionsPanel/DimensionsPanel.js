@@ -27,10 +27,11 @@ export class DimensionsPanel extends Component {
             onDimensionClick,
             onDimensionOptionsClick,
             onDimensionDragStart,
+            style,
         } = this.props
 
         return (
-            <div style={styles.divContainer}>
+            <div style={{ ...styles.divContainer, ...style }}>
                 <Filter
                     style={styles.textField}
                     placeholder={i18n.t('Filter dimensions')}
@@ -60,6 +61,7 @@ DimensionsPanel.propTypes = {
     lockedDimension: PropTypes.func,
     recommendedDimension: PropTypes.func,
     selectedIds: PropTypes.array,
+    style: PropTypes.object,
     onDimensionClick: PropTypes.func,
     onDimensionDragStart: PropTypes.func,
     onDimensionOptionsClick: PropTypes.func,
