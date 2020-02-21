@@ -6,7 +6,6 @@ import getAxisTitle from '../getAxisTitle'
 import getGauge from './gauge'
 import { isStacked, VIS_TYPE_GAUGE } from '../../../../../modules/visTypes'
 import { hasOptionalAxis } from '../optionalAxes'
-import { getLegendSetById } from '../../../../../modules/legends'
 
 const DEFAULT_MIN_VALUE = 0
 
@@ -148,8 +147,7 @@ export default function(layout, series, extraOptions) {
     let yAxis
     switch (layout.type) {
         case VIS_TYPE_GAUGE:
-            const legendSet = layout.legendSet ? getLegendSetById(extraOptions.legendSets, layout.legendSet.id) : undefined
-            yAxis = getGauge(layout, series, legendSet)
+            yAxis = getGauge(layout, series, extraOptions.legendSets[0])
             break
         default:
             yAxis = getDefault(layout, extraOptions)

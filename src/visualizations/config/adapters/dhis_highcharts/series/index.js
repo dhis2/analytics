@@ -10,7 +10,6 @@ import {
     isDualAxisType,
     isYearOverYear,
 } from '../../../../../modules/visTypes'
-import { getLegendSetById } from '../../../../../modules/legends'
 
 const DEFAULT_ANIMATION_DURATION = 200
 
@@ -133,8 +132,7 @@ export default function(series, store, layout, isStacked, extraOptions) {
             )
             break
         case VIS_TYPE_GAUGE:
-            const legendSet = layout.legendSet ? getLegendSetById(extraOptions.legendSets, layout.legendSet.id) : undefined
-            series = getGauge(series, extraOptions.dashboard, layout, legendSet)
+            series = getGauge(series, extraOptions.dashboard, layout, extraOptions.legendSets[0])
             break
         default:
             series = getDefault(series, layout, isStacked, extraOptions)
