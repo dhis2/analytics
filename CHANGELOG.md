@@ -1,3 +1,10 @@
+## [4.1.2](https://github.com/dhis2/analytics/compare/v4.1.1...v4.1.2) (2020-02-24)
+
+
+### Bug Fixes
+
+* loading spinner in ou dialog DHIS2-8360 ([#319](https://github.com/dhis2/analytics/issues/319)) ([fdcdb52](https://github.com/dhis2/analytics/commit/fdcdb52b07dc2d8cc063f9298982a084db58bfc4))
+
 ## [4.1.1](https://github.com/dhis2/analytics/compare/v4.1.0...v4.1.1) (2020-02-24)
 
 
