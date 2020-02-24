@@ -10,12 +10,13 @@ const LEGEND_DISPLAY_STYLE_TEXT = 'TEXT'
 const valueFitsLegend = (value, legend) =>
     legend.startValue <= value && legend.endValue > value // TODO: Confirm inclusive/exclusive bounds
 
-const getLegendSet = engine => {
+const getLegendSet = (engine, dxDimension) => {
     let legendSetId
     switch (engine.visualization.legendDisplayStrategy) {
         case LEGEND_DISPLAY_STRATEGY_BY_DATA_ITEM:
-            legendSetId = undefined // TODO: ByDXID LegendSet
-            //engine.rawData.metaData.items[dxId].legendSet
+            if (dxDimension && dxDimension.legendSet) {
+                legendSetId = dxDimension.legendSet.id
+            }
             break
         case LEGEND_DISPLAY_STRATEGY_FIXED:
         default:
@@ -48,12 +49,12 @@ const buildStyleObject = (legend, engine) => {
     return style
 }
 
-export const applyLegendSet = (value, engine) => {
+export const applyLegendSet = (value, dxDimension, engine) => {
     if (isNaN(value) || !engine.legendSets) {
         return {}
     }
 
-    const legendSet = getLegendSet(engine)
+    const legendSet = getLegendSet(engine, dxDimension)
     if (!legendSet) {
         return {}
     }

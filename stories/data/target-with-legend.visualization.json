@@ -1,0 +1,210 @@
+{
+    "lastUpdated": "2017-05-19T16:03:32.474",
+    "id": "yyG85tyRhs4",
+    "created": "2017-05-19T16:03:12.490",
+    "name": "ER: Emergency report Result vs Target Rural and Urban with legend",
+    "publicAccess": "rw------",
+    "legendDisplayStyle": "FILL",
+    "type": "PIVOT_TABLE",
+    "hideEmptyColumns": false,
+    "subscribed": false,
+    "rowSubTotals": true,
+    "showDimensionLabels": true,
+    "sortOrder": 0,
+    "fontSize": "NORMAL",
+    "favorite": false,
+    "topLimit": 0,
+    "displayName": "ER: Emergency report Result vs Target Rural and Urban with legend",
+    "percentStackedValues": false,
+    "noSpaceBetweenColumns": false,
+    "showHierarchy": false,
+    "cumulative": false,
+    "hideTitle": false,
+    "skipRounding": false,
+    "showData": false,
+    "hideEmptyRows": false,
+    "parentGraphMap": {
+        "at6UHUQatSo": "ImspTQPwCqd",
+        "TEQlaapDQoK": "ImspTQPwCqd",
+        "eIQbndfxQMb": "ImspTQPwCqd",
+        "Vth0fbpFcsO": "ImspTQPwCqd",
+        "bL4ooGhyHRQ": "ImspTQPwCqd",
+        "qhqAxPSTUXp": "ImspTQPwCqd",
+        "jmIPBj66vD6": "ImspTQPwCqd"
+    },
+    "displayDensity": "NORMAL",
+    "completedOnly": false,
+    "colTotals": true,
+    "aggregationType": "DEFAULT",
+    "hideSubtitle": false,
+    "hideLegend": false,
+    "colSubTotals": true,
+    "legendDisplayStrategy": "FIXED",
+    "rowTotals": true,
+    "digitGroupSeparator": "SPACE",
+    "regression": false,
+    "access": {
+        "read": true,
+        "update": true,
+        "externalize": true,
+        "delete": true,
+        "write": true,
+        "manage": true,
+        "data": {
+            "read": false,
+            "write": false
+        }
+    },
+    "reportingParams": {
+        "parentOrganisationUnit": false,
+        "reportingPeriod": false,
+        "organisationUnit": false,
+        "grandParentOrganisationUnit": false
+    },
+    "lastUpdatedBy": {
+        "id": "GOLswS44mh8"
+    },
+    "legendSet": {
+        "name": "Under or above 100%",
+        "id": "gFJUXah1uRH",
+        "displayName": "Under or above 100%"
+    },
+    "user": {
+        "name": "Tom Wakiki",
+        "displayName": "Tom Wakiki",
+        "userCredentials": {
+            "username": "system"
+        }
+    },
+    "translations": [],
+    "yearlySeries": [],
+    "interpretations": [],
+    "userGroupAccesses": [],
+    "optionalAxes": [],
+    "columns": [
+        {
+            "dimension": "dx",
+            "items": [
+                {
+                    "name": "ER Children trained on key survival skills Result vs Target",
+                    "id": "MkXHDfrFRKV",
+                    "displayName": "ER Children trained on key survival skills Result vs Target",
+                    "displayShortName": "Children trained survival skills Result vs Target",
+                    "dimensionItemType": "INDICATOR"
+                },
+                {
+                    "name": "ER Teacher accommodation constructed Urban Result vs Target",
+                    "id": "qmCKRmVj4WX",
+                    "displayName": "ER Teacher accommodation constructed Urban Result vs Target",
+                    "displayShortName": "Teacher accom constr Urban Result vs Target",
+                    "dimensionItemType": "INDICATOR"
+                },
+                {
+                    "name": "ER Teacher training programs designed Result vs Target",
+                    "id": "ULW9dQOiiTS",
+                    "displayName": "ER Teacher training programs designed Result vs Target",
+                    "displayShortName": "Teacher training prog designed Result vs Target",
+                    "dimensionItemType": "INDICATOR"
+                },
+                {
+                    "name": "ER Teachers trained Result vs Target",
+                    "id": "oTOpKabJA1v",
+                    "displayName": "ER Teachers trained Result vs Target",
+                    "displayShortName": "Teachers trained Result vs Target",
+                    "dimensionItemType": "INDICATOR"
+                },
+                {
+                    "name": "ER Technical support visits Result vs Target",
+                    "id": "iug406zdfTE",
+                    "displayName": "ER Technical support visits Result vs Target",
+                    "displayShortName": "Technical support visits Result vs Target",
+                    "dimensionItemType": "INDICATOR"
+                },
+                {
+                    "name": "ER Technical support visits Rural Result vs Target",
+                    "id": "EY8gsfEomc0",
+                    "displayName": "ER Technical support visits Rural Result vs Target",
+                    "displayShortName": "Technical support visits Rural Result vs Target",
+                    "dimensionItemType": "INDICATOR"
+                },
+                {
+                    "name": "ER Visits in schools Rural Result vs Target",
+                    "id": "X2XfzgH4NOR",
+                    "displayName": "ER Visits in schools Rural Result vs Target",
+                    "displayShortName": "Visits in schools Rural Result vs Target",
+                    "dimensionItemType": "INDICATOR"
+                }
+            ]
+        }
+    ],
+    "userAccesses": [],
+    "filters": [],
+    "rows": [
+        {
+            "dimension": "pe",
+            "items": [
+                {
+                    "name": "LAST_4_QUARTERS",
+                    "id": "LAST_4_QUARTERS",
+                    "displayName": "LAST_4_QUARTERS",
+                    "displayShortName": "LAST_4_QUARTERS",
+                    "dimensionItemType": "PERIOD"
+                }
+            ]
+        },
+        {
+            "dimension": "ou",
+            "items": [
+                {
+                    "name": "Western Area",
+                    "id": "at6UHUQatSo",
+                    "displayName": "Western Area",
+                    "displayShortName": "Western Area",
+                    "dimensionItemType": "ORGANISATION_UNIT"
+                },
+                {
+                    "name": "Port Loko",
+                    "id": "TEQlaapDQoK",
+                    "displayName": "Port Loko",
+                    "displayShortName": "Port Loko",
+                    "dimensionItemType": "ORGANISATION_UNIT"
+                },
+                {
+                    "name": "Tonkolili",
+                    "id": "eIQbndfxQMb",
+                    "displayName": "Tonkolili",
+                    "displayShortName": "Tonkolili",
+                    "dimensionItemType": "ORGANISATION_UNIT"
+                },
+                {
+                    "name": "Kono",
+                    "id": "Vth0fbpFcsO",
+                    "displayName": "Kono",
+                    "displayShortName": "Kono",
+                    "dimensionItemType": "ORGANISATION_UNIT"
+                },
+                {
+                    "name": "Pujehun",
+                    "id": "bL4ooGhyHRQ",
+                    "displayName": "Pujehun",
+                    "displayShortName": "Pujehun",
+                    "dimensionItemType": "ORGANISATION_UNIT"
+                },
+                {
+                    "name": "Koinadugu",
+                    "id": "qhqAxPSTUXp",
+                    "displayName": "Koinadugu",
+                    "displayShortName": "Koinadugu",
+                    "dimensionItemType": "ORGANISATION_UNIT"
+                },
+                {
+                    "name": "Moyamba",
+                    "id": "jmIPBj66vD6",
+                    "displayName": "Moyamba",
+                    "displayShortName": "Moyamba",
+                    "dimensionItemType": "ORGANISATION_UNIT"
+                }
+            ]
+        }
+    ]
+}

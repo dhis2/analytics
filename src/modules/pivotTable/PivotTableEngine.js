@@ -24,6 +24,10 @@ const defaultOptions = {
     aggregateType: 'count',
 }
 
+const AGGREGATE_TYPE_SUM = 'SUM'
+const AGGREGATE_TYPE_AVERAGE = 'AVERAGE'
+const AGGREGATE_TYPE_NA = 'N/A'
+
 const countFromDisaggregates = list => {
     if (list.length === 0) {
         return 0
@@ -50,6 +54,15 @@ const listByDimension = list =>
         all[item.dimension] = item
         return all
     }, {})
+
+const getPrimaryDimension = (metadata, name) => {
+    return metadata.dimensions[name]
+        ? metadata.dimensions[name].reduce((out, id) => {
+              out[id] = metadata.items[id]
+              return out
+          }, {})
+        : {}
+}
 
 const buildDimensionLookup = (visualization, metadata, headers) => {
     const rows = visualization.rows.map(row => ({
@@ -103,6 +116,12 @@ const buildDimensionLookup = (visualization, metadata, headers) => {
         return out
     }, {})
 
+    const primaryDimensions = {
+        data: getPrimaryDimension(metadata, 'dx'),
+        period: getPrimaryDimension(metadata, 'pe'),
+        orgUnit: getPrimaryDimension(metadata, 'ou'),
+    }
+
     return {
         rows,
         columns,
@@ -111,6 +130,7 @@ const buildDimensionLookup = (visualization, metadata, headers) => {
         rowHeaders,
         columnHeaders,
         dataHeaders,
+        primaryDimensions,
     }
 }
 
@@ -146,6 +166,28 @@ const lookup = (
     }
 
     return { column, row }
+}
+
+const applyTotalAggregationType = ({
+    totalAggregationType,
+    value,
+    numerator,
+    denominator,
+    multiplier,
+    divisor,
+}) => {
+    switch (totalAggregationType) {
+        case AGGREGATE_TYPE_NA:
+            return 'N/A'
+        case AGGREGATE_TYPE_AVERAGE:
+            return (
+                ((numerator || value) * multiplier) /
+                (denominator * divisor || 1)
+            )
+        case AGGREGATE_TYPE_SUM:
+        default:
+            return value
+    }
 }
 
 export class PivotTableEngine {
@@ -226,6 +268,60 @@ export class PivotTableEngine {
         return undefined
     }
 
+    getCellType({ row, column }) {
+        row = this.rowMap[row]
+        column = this.columnMap[column]
+        const isRowTotal =
+            this.options.showRowTotals && column === this.dataWidth - 1
+        const isColumnTotal =
+            this.options.showColumnTotals && row === this.dataHeight - 1
+        if (isRowTotal || isColumnTotal) {
+            return CELL_TYPE_TOTAL
+        }
+
+        const isRowSubtotal =
+            this.doRowSubtotals &&
+            (column + 1) % (this.dimensionLookup.columns[0].size + 1) === 0
+        const isColumnSubtotal =
+            this.doColumnSubtotals &&
+            (row + 1) % (this.dimensionLookup.rows[0].size + 1) === 0
+
+        if (isRowSubtotal || isColumnSubtotal) {
+            return CELL_TYPE_SUBTOTAL
+        }
+
+        return CELL_TYPE_VALUE
+    }
+
+    getCellDxDimension({ row, column }) {
+        return this.getRawCellDxDimension({
+            row: this.rowMap[row],
+            column: this.columnMap[column],
+        })
+    }
+    getRawCellDxDimension({ row, column }) {
+        const rowHeaders = this.getRawRowHeader(row)
+        const columnHeaders = this.getRawColumnHeader(column)
+
+        if (!rowHeaders.length || !columnHeaders.length) {
+            return undefined
+        }
+
+        const dxRowIndex = this.dimensionLookup.rows.findIndex(
+            dim => dim.dimension === 'dx'
+        )
+        if (dxRowIndex !== -1) {
+            return rowHeaders[dxRowIndex]
+        }
+
+        const dxColumnIndex = this.dimensionLookup.columns.findIndex(
+            dim => dim.dimension === 'dx'
+        )
+        if (dxColumnIndex !== -1) {
+            return columnHeaders[dxColumnIndex]
+        }
+    }
+
     rowIsEmpty(row) {
         return !this.data[row] || this.data[row].length === 0
     }
@@ -233,6 +329,13 @@ export class PivotTableEngine {
         return !this.occupiedColumns[column]
     }
 
+    getRawColumnHeader(column) {
+        return this.dimensionLookup.columns.map(dimension => {
+            const itemIndex =
+                Math.floor(column / dimension.size) % dimension.count
+            return dimension.items[itemIndex]
+        })
+    }
     getColumnHeader(column) {
         column = this.columnMap[column]
         if (this.options.showRowTotals && column === this.dataWidth - 1) {
@@ -252,13 +355,15 @@ export class PivotTableEngine {
                 column / (this.dimensionLookup.columns[0].size + 1)
             )
         }
-        return this.dimensionLookup.columns.map(dimension => {
-            const itemIndex =
-                Math.floor(column / dimension.size) % dimension.count
+        return this.getRawColumnHeader(column)
+    }
+
+    getRawRowHeader(row) {
+        return this.dimensionLookup.rows.map(dimension => {
+            const itemIndex = Math.floor(row / dimension.size) % dimension.count
             return dimension.items[itemIndex]
         })
     }
-
     getRowHeader(row) {
         row = this.rowMap[row]
         if (this.options.showColumnTotals && row === this.dataHeight - 1) {
@@ -273,10 +378,7 @@ export class PivotTableEngine {
             }
             row -= Math.floor(row / (this.dimensionLookup.rows[0].size + 1))
         }
-        return this.dimensionLookup.rows.map(dimension => {
-            const itemIndex = Math.floor(row / dimension.size) % dimension.count
-            return dimension.items[itemIndex]
-        })
+        return this.getRawRowHeader(row)
     }
 
     getDependantTotalCells({ row, column }) {
@@ -335,6 +437,7 @@ export class PivotTableEngine {
 
     addCellValueToTotals(pos, dataRow) {
         const totals = this.getDependantTotalCells(pos)
+        const dxDimension = this.getRawCellDxDimension(pos)
 
         Object.values(totals).forEach(totalItem => {
             if (!totalItem) return
@@ -350,44 +453,125 @@ export class PivotTableEngine {
             }
             const totalCell = this.data[totalItem.row][totalItem.column]
 
-            dataFields.forEach(field => {
-                const headerIndex = this.dimensionLookup.dataHeaders[field]
-                // TODO: Fix number parsing, check data type in header
-                const value = parseValue(dataRow[headerIndex])
-                if (value && !isNaN(value)) {
-                    totalCell[field] = (totalCell[field] || 0) + value
-                }
-            })
+            const previousAggType =
+                totalCell.totalAggregationType || currentAggType
+            const currentAggType = dxDimension?.totalAggregationType
+            if (previousAggType && currentAggType !== previousAggType) {
+                totalCell.totalAggregationType = AGGREGATE_TYPE_NA
+            } else {
+                totalCell.totalAggregationType = currentAggType
+            }
+
+            if (dxDimension?.valueType === 'NUMBER') {
+                dataFields.forEach(field => {
+                    const headerIndex = this.dimensionLookup.dataHeaders[field]
+                    const value = parseValue(dataRow[headerIndex])
+                    if (value && !isNaN(value)) {
+                        totalCell[field] = (totalCell[field] || 0) + value
+                    }
+                })
+            } else {
+                // console.log('Non-number', dxDimension, pos)
+            }
             totalCell.count += 1
         })
     }
     finalizeTotals() {
-        // TODO: Calculate averages (and other agg types), compute "intersection" totals/subtotals
-    }
+        const columnSubtotalSize = this.dimensionLookup.rows[0].size + 1
+        const rowSubtotalSize = this.dimensionLookup.columns[0].size + 1
 
-    getCellType({ row, column }) {
-        row = this.rowMap[row]
-        column = this.columnMap[column]
-        const isRowTotal =
-            this.options.showRowTotals && column === this.dataWidth - 1
-        const isColumnTotal =
-            this.options.showColumnTotals && row === this.dataHeight - 1
-        if (isRowTotal || isColumnTotal) {
-            return CELL_TYPE_TOTAL
+        // TODO: consolidate total lookup and aggregate calculation logics
+
+        if (this.doRowSubtotals) {
+            times(
+                this.dimensionLookup.columns[0].count,
+                n => (n + 1) * rowSubtotalSize - 1
+            ).forEach(column => {
+                times(this.dataHeight, n => n).forEach(row => {
+                    // skip combined subtotal cells for now
+                    if (
+                        !this.doColumnSubtotals ||
+                        row % this.dimensionLookup.rows[0].count !== 0
+                    ) {
+                        if (!this.data[row]) {
+                            return
+                        }
+                        const totalCell = this.data[row][column]
+                        if (totalCell && totalCell.count) {
+                            totalCell.value = applyTotalAggregationType(
+                                totalCell
+                            )
+                        }
+                    }
+                })
+            })
+        }
+        if (this.doColumnSubtotals) {
+            times(
+                this.dimensionLookup.rows[0].count,
+                n => (n + 1) * columnSubtotalSize - 1
+            ).forEach(row => {
+                times(this.dataWidth, n => n).forEach(column => {
+                    // skip combined subtotal cells for now
+                    if (
+                        !this.doRowSubtotals ||
+                        column % this.dimensionLookup.columns[0].count !== 0
+                    ) {
+                        if (!this.data[row]) {
+                            return
+                        }
+                        const totalCell = this.data[row][column]
+                        if (totalCell && totalCell.count) {
+                            totalCell.value = applyTotalAggregationType(
+                                totalCell
+                            )
+                        }
+                    }
+                })
+            })
         }
 
-        const isRowSubtotal =
-            this.doRowSubtotals &&
-            (column + 1) % (this.dimensionLookup.columns[0].size + 1) === 0
-        const isColumnSubtotal =
-            this.doColumnSubtotals &&
-            (row + 1) % (this.dimensionLookup.rows[0].size + 1) === 0
-
-        if (isRowSubtotal || isColumnSubtotal) {
-            return CELL_TYPE_SUBTOTAL
+        if (this.doRowSubtotals && this.doColumnSubtotals) {
+            times(
+                this.dimensionLookup.rows[0].count,
+                n => (n + 1) * columnSubtotalSize - 1
+            ).forEach(row => {
+                times(
+                    this.dimensionLookup.columns[0].count,
+                    n => (n + 1) * rowSubtotalSize - 1
+                ).forEach(column => {
+                    if (!this.data[row]) {
+                        return
+                    }
+                    const totalCell = this.data[row][column]
+                    if (totalCell && totalCell.count) {
+                        totalCell.value = applyTotalAggregationType(totalCell)
+                    }
+                })
+            })
+        }
+        if (this.options.showRowTotals) {
+            const column = this.dataWidth - 1
+            times(this.dataHeight, n => n).forEach(row => {
+                if (!this.data[row]) {
+                    return
+                }
+                const totalCell = this.data[row][column]
+                if (totalCell && totalCell.count) {
+                    totalCell.value = applyTotalAggregationType(totalCell)
+                }
+            })
         }
 
-        return CELL_TYPE_VALUE
+        if (this.options.showColumnTotals) {
+            const row = this.dataHeight - 1
+            times(this.dataWidth, n => n).forEach(column => {
+                const totalCell = this.data[row][column]
+                if (totalCell && totalCell.count) {
+                    totalCell.value = applyTotalAggregationType(totalCell)
+                }
+            })
+        }
     }
 
     buildMatrix() {
@@ -419,7 +603,6 @@ export class PivotTableEngine {
             this.dataWidth += 1
         }
         if (this.options.showColumnTotals) {
-            ;``
             this.dataHeight += 1
         }
 

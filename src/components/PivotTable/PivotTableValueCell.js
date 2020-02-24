@@ -16,9 +16,11 @@ export const PivotTableValueCell = ({ engine, row, column }) => {
         column,
     })
 
+    const dxDimension = engine.getCellDxDimension({ row, column })
+
     const style =
         type === 'value'
-            ? applyLegendSet(parseFloat(rawValue), engine)
+            ? applyLegendSet(parseFloat(rawValue), dxDimension, engine)
             : undefined
 
     return (
