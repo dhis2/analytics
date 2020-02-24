@@ -1,3 +1,10 @@
+## [4.1.1](https://github.com/dhis2/analytics/compare/v4.1.0...v4.1.1) (2020-02-24)
+
+
+### Bug Fixes
+
+* legends for gauge ([#315](https://github.com/dhis2/analytics/issues/315)) ([23e086f](https://github.com/dhis2/analytics/commit/23e086f8a5739bd7c285f8f0a362278ccc377f34))
+
 # [4.1.0](https://github.com/dhis2/analytics/compare/v4.0.2...v4.1.0) (2020-02-20)
 
 
