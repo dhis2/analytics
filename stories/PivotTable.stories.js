@@ -195,7 +195,7 @@ storiesOf('PivotTable', module).add('Fixed legendSet (text)', () => {
     )
 })
 
-storiesOf('PivotTable', module).add('By DX legendSet !!UNIMPLEMENTED!!', () => {
+storiesOf('PivotTable', module).add('By DX legendSet', () => {
     const visualization = {
         ...targetVisualization,
         ...visualizationReset,
