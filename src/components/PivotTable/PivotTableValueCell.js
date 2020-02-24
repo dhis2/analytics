@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import classnames from 'classnames'
 import { cell as cellStyle } from './styles/PivotTable.style'
 import { renderValue } from '../../modules/pivotTable/renderValue'
 import { applyLegendSet } from '../../modules/pivotTable/applyLegendSet'
@@ -10,21 +11,31 @@ export const PivotTableValueCell = ({ engine, row, column }) => {
         column,
     })
 
-    const value = renderValue(rawValue, engine.visualization)
+    const dxDimension = engine.getCellDxDimension({ row, column })
+
+    const value = renderValue(
+        rawValue,
+        dxDimension.valueType,
+        engine.visualization
+    )
     const type = engine.getCellType({
         row,
         column,
     })
 
-    const dxDimension = engine.getCellDxDimension({ row, column })
-
+    // TODO: Add support for 'INTEGER' type (requires server changes)
     const style =
-        type === 'value'
+        type === 'value' && dxDimension.valueType === 'NUMBER'
             ? applyLegendSet(parseFloat(rawValue), dxDimension, engine)
             : undefined
 
     return (
-        <td key={column} className={type} title={value} style={style}>
+        <td
+            key={column}
+            className={classnames(type, dxDimension.valueType)}
+            title={value}
+            style={style}
+        >
             <style jsx>{cellStyle}</style>
             {value || null}
         </td>

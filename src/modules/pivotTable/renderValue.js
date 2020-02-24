@@ -46,16 +46,15 @@ const toFixedPrecisionString = (value, skipRounding) => {
     return value.toFixed(precision)
 }
 
-export const renderValue = (value, visualization) => {
+export const renderValue = (value, valueType, visualization) => {
+    if (valueType !== 'NUMBER' || !value) {
+        return value
+    }
+
     const stringValue = toFixedPrecisionString(
         value,
         visualization.skipRounding
     )
-
-    // TODO: check dataType in header instead of parsing here
-    if (isNaN(parseFloat(value))) {
-        return value
-    }
 
     const digitGroups = separateDigitGroups(
         stringValue,

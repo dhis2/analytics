@@ -470,8 +470,6 @@ export class PivotTableEngine {
                         totalCell[field] = (totalCell[field] || 0) + value
                     }
                 })
-            } else {
-                // console.log('Non-number', dxDimension, pos)
             }
             totalCell.count += 1
         })

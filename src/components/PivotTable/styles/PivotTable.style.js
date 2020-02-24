@@ -73,8 +73,14 @@ export const cell = css`
     }
     .value {
         background-color: #ffffff;
+        cursor: normal;
+        text-align: left;
+    }
+    .value.NUMBER {
+        text-align: center;
         cursor: pointer;
     }
+
     .value:hover {
         background-color: #f3f3f3;
     }
