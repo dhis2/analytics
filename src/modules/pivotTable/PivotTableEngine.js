@@ -1,6 +1,9 @@
 import times from 'lodash/times'
 import { parseValue } from './parseValue'
 
+export const SORT_ORDER_ASCENDING = 1
+export const SORT_ORDER_DESCENDING = -1
+
 const dataFields = [
     'value',
     'numerator',
@@ -241,18 +244,10 @@ export class PivotTableEngine {
         this.buildMatrix()
     }
 
-    get({ row, column }) {
-        const type = this.getCellType({ row, column })
-        const mappedRow = this.rowMap[row],
-            mappedColumn = this.columnMap[column]
-        if (
-            (!mappedRow && mappedRow !== 0) ||
-            (!mappedColumn && mappedColumn !== 0)
-        ) {
-            return undefined
-        }
-        if (this.data[mappedRow]) {
-            const dataRow = this.data[mappedRow][mappedColumn]
+    getRaw({ row, column }) {
+        const type = this.getRawCellType({ row, column })
+        if (this.data[row]) {
+            const dataRow = this.data[row][column]
             if (dataRow) {
                 switch (type) {
                     case CELL_TYPE_VALUE:
@@ -267,10 +262,20 @@ export class PivotTableEngine {
         }
         return undefined
     }
+    get({ row, column }) {
+        const mappedRow = this.rowMap[row],
+            mappedColumn = this.columnMap[column]
+        if (
+            (!mappedRow && mappedRow !== 0) ||
+            (!mappedColumn && mappedColumn !== 0)
+        ) {
+            return undefined
+        }
 
-    getCellType({ row, column }) {
-        row = this.rowMap[row]
-        column = this.columnMap[column]
+        return this.getRaw({ row: mappedRow, column: mappedColumn })
+    }
+
+    getRawCellType({ row, column }) {
         const isRowTotal =
             this.options.showRowTotals && column === this.dataWidth - 1
         const isColumnTotal =
@@ -291,6 +296,11 @@ export class PivotTableEngine {
         }
 
         return CELL_TYPE_VALUE
+    }
+    getCellType({ row, column }) {
+        row = this.rowMap[row]
+        column = this.columnMap[column]
+        return this.getRawCellType({ row, column })
     }
 
     getCellDxDimension({ row, column }) {
@@ -626,5 +636,62 @@ export class PivotTableEngine {
 
         this.height = this.rowMap.length
         this.width = this.columnMap.length
+    }
+
+    getColumnType(column) {
+        column = this.columnMap[column]
+        if (!column && column !== 0) {
+            return undefined
+        }
+        if (
+            this.doRowSubtotals &&
+            column + (1 % (this.dimensionLookup.columns[0].size + 1)) - 1 === 0
+        ) {
+            return CELL_TYPE_SUBTOTAL
+        }
+        if (this.options.showRowTotals && column === this.dataWidth - 1) {
+            return CELL_TYPE_TOTAL
+        }
+        return CELL_TYPE_VALUE
+    }
+
+    isSortable(column) {
+        return (
+            !this.doColumnSubtotals &&
+            this.getColumnType(column) === CELL_TYPE_VALUE
+        )
+    }
+
+    sort(column, order) {
+        if (order !== SORT_ORDER_ASCENDING && order !== SORT_ORDER_DESCENDING) {
+            console.warn(`Invalid sort order ${order}`)
+            return
+        }
+
+        if (!this.isSortable(column)) {
+            console.warn(`Invalid sort column ${column}`)
+            return
+        }
+
+        const mappedColumn = this.columnMap[column]
+        this.rowMap.sort((rowA, rowB) => {
+            const valueA = this.getRaw({ row: rowA, column: mappedColumn })
+            const valueB = this.getRaw({ row: rowB, column: mappedColumn })
+
+            if (
+                typeof valueA === 'undefined' &&
+                typeof valueB === 'undefined'
+            ) {
+                return 0
+            }
+            if (typeof valueA === 'undefined') {
+                return -1 * order
+            }
+            if (typeof valueB === 'undefined') {
+                return 1 * order
+            }
+
+            return (valueA - valueB) * order
+        })
     }
 }

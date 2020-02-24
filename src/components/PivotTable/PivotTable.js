@@ -1,8 +1,11 @@
-import React, { useRef, useMemo } from 'react'
+import React, { useRef, useMemo, useState } from 'react'
 import PropTypes from 'prop-types'
 
 import { table as tableStyle } from './styles/PivotTable.style'
-import { PivotTableEngine } from '../../modules/pivotTable/PivotTableEngine'
+import {
+    PivotTableEngine,
+    SORT_ORDER_ASCENDING,
+} from '../../modules/pivotTable/PivotTableEngine'
 import { useParentSize } from '../../modules/pivotTable/useParentSize'
 import { PivotTableColumnHeaders } from './PivotTableColumnHeaders'
 import { useTableClipping } from '../../modules/pivotTable/useTableClipping'
@@ -14,6 +17,7 @@ import { PivotTableEmptyRow } from './PivotTableEmptyRow'
 const PivotTable = ({ visualization, data, legendSets }) => {
     const containerRef = useRef(undefined)
     const { width, height } = useParentSize(containerRef)
+    const [sortBy, setSortBy] = useState(null)
 
     const engine = useMemo(
         () => new PivotTableEngine(visualization, data, legendSets),
@@ -57,6 +61,14 @@ const PivotTable = ({ visualization, data, legendSets }) => {
                         <PivotTableColumnHeaders
                             engine={engine}
                             clippingResult={clippingResult}
+                            onSortByColumn={column => {
+                                let order = SORT_ORDER_ASCENDING
+                                if (sortBy && sortBy.column === column) {
+                                    order = sortBy.order * -1
+                                }
+                                engine.sort(column, order)
+                                setSortBy({ column, order }) // Force a re-render
+                            }}
                         />
                     </thead>
                     <tbody>

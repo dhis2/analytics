@@ -5,7 +5,11 @@ import { PivotTableColumnHeaderCell } from './PivotTableColumnHeaderCell'
 import { PivotTableDimensionLabelCell } from './PivotTableDimensionLabelCell'
 import { PivotTableEmptyCell } from './PivotTableEmptyCell'
 
-export const PivotTableColumnHeaders = ({ engine, clippingResult }) => {
+export const PivotTableColumnHeaders = ({
+    engine,
+    clippingResult,
+    onSortByColumn,
+}) => {
     return engine.dimensionLookup.columns.map((_, columnLevel) => (
         <tr key={columnLevel}>
             {engine.dimensionLookup.rows.map((_, rowLevel) => (
@@ -30,6 +34,7 @@ export const PivotTableColumnHeaders = ({ engine, clippingResult }) => {
                         clippingResult={clippingResult}
                         index={index}
                         level={columnLevel}
+                        onSortByColumn={onSortByColumn}
                     />
                 )}
             />
@@ -42,4 +47,5 @@ PivotTableColumnHeaders.propTypes = {
         columns: PropTypes.object.isRequired,
     }).isRequired,
     engine: PropTypes.object.isRequired,
+    onSortByColumn: PropTypes.func.isRequired,
 }
