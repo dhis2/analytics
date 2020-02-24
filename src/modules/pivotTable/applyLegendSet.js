@@ -31,7 +31,6 @@ const buildStyleObject = (legendColor, engine) => {
     switch (engine.visualization.legendDisplayStyle) {
         case LEGEND_DISPLAY_STYLE_TEXT:
             style.color = legendColor
-            // TODO: Adapt background color for light text colors
             break
         case LEGEND_DISPLAY_STYLE_FILL:
         default:
