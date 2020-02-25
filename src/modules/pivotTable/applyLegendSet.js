@@ -1,14 +1,12 @@
 import { isColorBright } from './isColorBright'
 import { colors } from '@dhis2/ui-core'
-
-const LEGEND_DISPLAY_STRATEGY_BY_DATA_ITEM = 'BY_DATA_ITEM'
-const LEGEND_DISPLAY_STRATEGY_FIXED = 'FIXED'
-
-const LEGEND_DISPLAY_STYLE_FILL = 'FILL'
-const LEGEND_DISPLAY_STYLE_TEXT = 'TEXT'
-
-const valueFitsLegend = (value, legend) =>
-    legend.startValue <= value && legend.endValue > value // TODO: Confirm inclusive/exclusive bounds
+import {
+    getColorByValueFromLegendSet,
+    LEGEND_DISPLAY_STRATEGY_BY_DATA_ITEM,
+    LEGEND_DISPLAY_STRATEGY_FIXED,
+    LEGEND_DISPLAY_STYLE_TEXT,
+    LEGEND_DISPLAY_STYLE_FILL,
+} from '../legends'
 
 const getLegendSet = (engine, dxDimension) => {
     let legendSetId
@@ -29,17 +27,16 @@ const getLegendSet = (engine, dxDimension) => {
     return engine.legendSets[legendSetId]
 }
 
-const buildStyleObject = (legend, engine) => {
+const buildStyleObject = (legendColor, engine) => {
     const style = {}
     switch (engine.visualization.legendDisplayStyle) {
         case LEGEND_DISPLAY_STYLE_TEXT:
-            style.color = legend.color
-            // TODO: Adapt background color for light text colors
+            style.color = legendColor
             break
         case LEGEND_DISPLAY_STYLE_FILL:
         default:
-            style.backgroundColor = legend.color
-            if (isColorBright(legend.color)) {
+            style.backgroundColor = legendColor
+            if (isColorBright(legendColor)) {
                 style.color = colors.grey900
             } else {
                 style.color = colors.white
@@ -59,12 +56,10 @@ export const applyLegendSet = (value, dxDimension, engine) => {
         return {}
     }
 
-    const legend = legendSet.legends.find(legend =>
-        valueFitsLegend(value, legend)
-    )
-    if (!legend) {
+    const legendColor = getColorByValueFromLegendSet(legendSet, value)
+    if (!legendColor) {
         return {}
     }
 
-    return buildStyleObject(legend, engine)
+    return buildStyleObject(legendColor, engine)
 }
