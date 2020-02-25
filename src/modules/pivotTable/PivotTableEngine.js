@@ -690,10 +690,16 @@ export class PivotTableEngine {
 
         const mappedColumn = this.columnMap[column]
         this.rowMap.sort((rowA, rowB) => {
-            if (this.showColumnTotals && rowA === this.rowMap.length - 1) {
+            if (
+                this.options.showColumnTotals &&
+                rowA === this.rowMap.length - 1
+            ) {
                 return 1
             }
-            if (this.showColumnTotals && rowB === this.rowMap.length - 1) {
+            if (
+                this.options.showColumnTotals &&
+                rowB === this.rowMap.length - 1
+            ) {
                 return -1
             }
             const valueA = this.getRaw({ row: rowA, column: mappedColumn })

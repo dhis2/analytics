@@ -4,6 +4,10 @@ import cloneDeep from 'lodash/cloneDeep'
 
 import PivotTable from '../src/components/PivotTable/PivotTable'
 
+import simpoleMetadataResponse from './data/simple.metadata.json'
+import simpleDataResponse from './data/simple.data.json'
+import simpleVisualization from './data/simple.visualization.json'
+
 import deepData from './data/deep.data.json'
 import deepVisualization from './data/deep.visualization.json'
 
@@ -30,9 +34,22 @@ const combineDataWithMetadata = (dataResponse, metadataResponse) => ({
     metaData: metadataResponse.metaData
 })
 
+const simpleData = combineDataWithMetadata(simpleDataResponse, simpoleMetadataResponse)
 const targetData = combineDataWithMetadata(targetDataResponse, targetMetadataResponse)
 
-storiesOf('PivotTable', module).add('default', () => {
+storiesOf('PivotTable', module).add('simple', () => {
+    const visualization = {
+        ...simpleVisualization,
+        ...visualizationReset
+    }
+    return (
+        <div style={{ width: 800, height: 600 }}>
+            <PivotTable data={simpleData} visualization={visualization} />
+        </div>
+    )
+})
+
+storiesOf('PivotTable', module).add('deep', () => {
     const visualization = {
         ...deepVisualization,
         ...visualizationReset
