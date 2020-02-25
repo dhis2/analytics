@@ -1,3 +1,10 @@
+## [4.1.3](https://github.com/dhis2/analytics/compare/v4.1.2...v4.1.3) (2020-02-25)
+
+
+### Bug Fixes
+
+* single value legend (DHIS2-8348) ([#320](https://github.com/dhis2/analytics/issues/320)) ([63c4eac](https://github.com/dhis2/analytics/commit/63c4eac9a4bf5157b85e6839dfebfd0ddae9c4b4))
+
 ## [4.1.2](https://github.com/dhis2/analytics/compare/v4.1.1...v4.1.2) (2020-02-24)
 
 
