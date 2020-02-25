@@ -600,6 +600,12 @@ export class PivotTableEngine {
         }
     }
 
+    resetRowmap() {
+        this.rowMap = this.options.hideEmptyRows
+            ? times(this.dataHeight, n => n).filter(idx => !!this.data[idx])
+            : times(this.dataHeight, n => n)
+    }
+
     buildMatrix() {
         this.data = []
         this.occupiedColumns = []
@@ -643,14 +649,12 @@ export class PivotTableEngine {
 
         this.finalizeTotals()
 
+        this.resetRowmap()
         this.columnMap = this.options.hideEmptyColumns
             ? times(this.dataWidth, n => n).filter(
                   idx => !!this.occupiedColumns[idx]
               )
             : times(this.dataWidth, n => n)
-        this.rowMap = this.options.hideEmptyRows
-            ? times(this.dataHeight, n => n).filter(idx => !!this.data[idx])
-            : times(this.dataHeight, n => n)
 
         this.height = this.rowMap.length
         this.width = this.columnMap.length
@@ -722,5 +726,9 @@ export class PivotTableEngine {
 
             return (valueA - valueB) * order
         })
+    }
+
+    clearSort() {
+        this.resetRowmap()
     }
 }
