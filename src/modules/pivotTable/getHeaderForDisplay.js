@@ -32,7 +32,6 @@ export const getHeaderForDisplay = ({
     }
 
     const currentHeader = header[dimensionLevel]
-    console.log(currentHeader)
 
     const label =
         showHierarchy && currentHeader?.hierarchy
