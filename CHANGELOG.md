@@ -1,3 +1,10 @@
+## [4.1.4](https://github.com/dhis2/analytics/compare/v4.1.3...v4.1.4) (2020-02-25)
+
+
+### Bug Fixes
+
+* issue with range not matching selected value ([#321](https://github.com/dhis2/analytics/issues/321)) ([70b59e7](https://github.com/dhis2/analytics/commit/70b59e72287f58395ea7ca3005a9fb548650f84d))
+
 ## [4.1.3](https://github.com/dhis2/analytics/compare/v4.1.2...v4.1.3) (2020-02-25)
 
 
