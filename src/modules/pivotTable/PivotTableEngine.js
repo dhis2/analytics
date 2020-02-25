@@ -352,14 +352,17 @@ export class PivotTableEngine {
             return times(
                 this.dimensionLookup.columns.length - 1,
                 () => undefined
-            ).concat([{ name: 'TOTAL' }])
+            ).concat([{ name: 'Total' }])
         }
         if (this.doRowSubtotals) {
             if (
                 (column + 1) % (this.dimensionLookup.columns[0].size + 1) ===
                 0
             ) {
-                return []
+                return times(
+                    this.dimensionLookup.columns.length - 1,
+                    () => undefined
+                ).concat([{ name: 'Subtotal' }])
             }
             column -= Math.floor(
                 column / (this.dimensionLookup.columns[0].size + 1)
@@ -660,7 +663,7 @@ export class PivotTableEngine {
         }
         if (
             this.doRowSubtotals &&
-            column + (1 % (this.dimensionLookup.columns[0].size + 1)) - 1 === 0
+            (column + 1) % (this.dimensionLookup.columns[0].size + 1) === 0
         ) {
             return CELL_TYPE_SUBTOTAL
         }
@@ -672,8 +675,7 @@ export class PivotTableEngine {
 
     isSortable(column) {
         return (
-            !this.doColumnSubtotals &&
-            this.getColumnType(column) === CELL_TYPE_VALUE
+            !this.doColumnSubtotals && this.getColumnType(column) !== undefined
         )
     }
 

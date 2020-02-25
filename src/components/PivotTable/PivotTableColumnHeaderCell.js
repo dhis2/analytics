@@ -16,11 +16,16 @@ export const PivotTableColumnHeaderCell = ({
         level={level}
         getHeader={idx => engine.getColumnHeader(idx)}
         render={header => {
-            const isSortable = header.span === 1 && engine.isSortable(index)
+            const isSortable =
+                level === engine.dimensionLookup.columns.length - 1 &&
+                header.span === 1 &&
+                engine.isSortable(index)
             return (
                 <th
                     className={
-                        header.name && header.name !== 'TOTAL'
+                        header.name &&
+                        header.name !== 'Total' &&
+                        header.name !== 'Subtotal' // TODO: Actually look up the column type!
                             ? 'column-header'
                             : 'empty-header'
                     }

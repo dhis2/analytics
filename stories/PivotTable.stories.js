@@ -4,7 +4,7 @@ import cloneDeep from 'lodash/cloneDeep'
 
 import PivotTable from '../src/components/PivotTable/PivotTable'
 
-import simpoleMetadataResponse from './data/simple.metadata.json'
+import simpleMetadataResponse from './data/simple.metadata.json'
 import simpleDataResponse from './data/simple.data.json'
 import simpleVisualization from './data/simple.visualization.json'
 
@@ -17,6 +17,10 @@ import emptyRowsVisualization from './data/emptyRows.visualization.json'
 import targetDataResponse from './data/target-with-legend.data.json'
 import targetMetadataResponse from './data/target-with-legend.metadata.json'
 import targetVisualization from './data/target-with-legend.visualization.json'
+
+import hierarchyDataResponse from './data/hierarchy.data.json'
+import hierarchyMetadataResponse from './data/hierarchy.metadata.json'
+import hierarchyVisualization from './data/hierarchy.visualization.json'
 
 import underAbove100LegendSet from './data/under-above-100.legendSet.json'
 
@@ -34,8 +38,9 @@ const combineDataWithMetadata = (dataResponse, metadataResponse) => ({
     metaData: metadataResponse.metaData
 })
 
-const simpleData = combineDataWithMetadata(simpleDataResponse, simpoleMetadataResponse)
+const simpleData = combineDataWithMetadata(simpleDataResponse, simpleMetadataResponse)
 const targetData = combineDataWithMetadata(targetDataResponse, targetMetadataResponse)
+const hierarchyData = combineDataWithMetadata(hierarchyDataResponse, hierarchyMetadataResponse)
 
 storiesOf('PivotTable', module).add('simple', () => {
     const visualization = {
@@ -113,7 +118,7 @@ storiesOf('PivotTable', module).add('subtotals', () => {
         ...deepVisualization,
         ...visualizationReset,
         rowSubTotals: true,
-        colSubTotals: true
+        // colSubTotals: true
     }
     return (
         <div style={{ width: 800, height: 600 }}>
@@ -241,6 +246,23 @@ storiesOf('PivotTable', module).add('By DX legendSet', () => {
     return (
         <div style={{ width: 800, height: 600 }}>
             <PivotTable data={targetData} visualization={visualization} legendSets={[underAbove100LegendSet, customLegendSet]} />
+        </div>
+    )
+})
+
+storiesOf('PivotTable', module).add('With OU Hierarchy', () => {
+    const visualization = {
+        ...hierarchyVisualization,
+        ...visualizationReset,
+        colTotals: true,
+        rowTotals: true,
+        colSubTotals: true,
+        rowSubTotals: true,
+    }
+
+    return (
+        <div style={{ width: 800, height: 600 }}>
+            <PivotTable data={hierarchyData} visualization={visualization} />
         </div>
     )
 })
