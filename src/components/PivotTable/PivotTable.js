@@ -67,10 +67,12 @@ const PivotTable = ({ visualization, data, legendSets }) => {
                                 if (sortBy && sortBy.column === column) {
                                     if (sortBy.order === SORT_ORDER_ASCENDING) {
                                         order = SORT_ORDER_DESCENDING
-                                    } else if (sortBy.order === SORT_ORDER_DESCENDING) {
+                                    } else if (
+                                        sortBy.order === SORT_ORDER_DESCENDING
+                                    ) {
                                         engine.clearSort()
                                         setSortBy(null)
-                                        return;
+                                        return
                                     }
                                 }
                                 engine.sort(column, order)

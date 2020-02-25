@@ -383,11 +383,14 @@ export class PivotTableEngine {
             return times(
                 this.dimensionLookup.rows.length - 1,
                 () => undefined
-            ).concat([{ name: 'TOTAL' }])
+            ).concat([{ name: 'Total' }])
         }
         if (this.doColumnSubtotals) {
             if ((row + 1) % (this.dimensionLookup.rows[0].size + 1) === 0) {
-                return []
+                return times(
+                    this.dimensionLookup.rows.length - 1,
+                    () => undefined
+                ).concat([{ name: 'Subtotal' }])
             }
             row -= Math.floor(row / (this.dimensionLookup.rows[0].size + 1))
         }
