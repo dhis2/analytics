@@ -399,6 +399,12 @@ export class PivotTableEngine {
                 Math.ceil((column + 1) / rowSubtotalSize) * rowSubtotalSize - 1,
             size: rowSubtotalSize - 1,
         }
+        const rowSubtotalColumnTotal = this.doColumnSubtotals &&
+            this.options.showRowTotals && {
+                row: this.dataHeight - 1,
+                column: rowSubtotal.column,
+                size: this.rawDataWidth,
+            }
 
         const columnSubtotalSize = this.dimensionLookup.rows[0].size + 1
         const columnSubtotal = this.options.showColumnSubtotals && {
@@ -409,8 +415,15 @@ export class PivotTableEngine {
             size: columnSubtotalSize - 1,
         }
 
-        const combinedSubtotal = this.options.showColumnSubtotals &&
-            this.options.showRowSubtotals && {
+        const columnSubtotalRowTotal = this.doColumnSubtotals &&
+            this.options.showRowTotals && {
+                row: columnSubtotal.row,
+                column: this.dataWidth - 1,
+                size: this.rawDataWidth,
+            }
+
+        const combinedSubtotal = this.doColumnSubtotals &&
+            this.doRowSubtotals && {
                 row: columnSubtotal.row,
                 column: rowSubtotal.column,
                 size: columnSubtotalSize * rowSubtotalSize,
@@ -437,7 +450,9 @@ export class PivotTableEngine {
 
         return {
             rowSubtotal,
+            rowSubtotalColumnTotal,
             columnSubtotal,
+            columnSubtotalRowTotal,
             rowTotal,
             columnTotal,
             combinedSubtotal,
@@ -675,6 +690,12 @@ export class PivotTableEngine {
 
         const mappedColumn = this.columnMap[column]
         this.rowMap.sort((rowA, rowB) => {
+            if (this.showColumnTotals && rowA === this.rowMap.length - 1) {
+                return 1
+            }
+            if (this.showColumnTotals && rowB === this.rowMap.length - 1) {
+                return -1
+            }
             const valueA = this.getRaw({ row: rowA, column: mappedColumn })
             const valueB = this.getRaw({ row: rowB, column: mappedColumn })
 
