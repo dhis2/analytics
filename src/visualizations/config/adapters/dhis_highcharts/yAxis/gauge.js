@@ -40,6 +40,9 @@ export default function(layout, series, legendSet) {
         minorTickInterval: null,
         tickLength: 0,
         tickAmount: 0,
+        tickPositioner: function() {
+            return [this.min, this.max];
+        }, 
         minColor: fillColor,
         maxColor: fillColor,
         labels: {
