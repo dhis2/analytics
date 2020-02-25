@@ -15,6 +15,7 @@ export const PivotTableColumnHeaderCell = ({
         index={index}
         level={level}
         getHeader={idx => engine.getColumnHeader(idx)}
+        showHierarchy={engine.visualization.showHierarchy}
         render={header => {
             const isSortable =
                 level === engine.dimensionLookup.columns.length - 1 &&
@@ -23,21 +24,21 @@ export const PivotTableColumnHeaderCell = ({
             return (
                 <th
                     className={
-                        header.name &&
-                        header.name !== 'Total' &&
-                        header.name !== 'Subtotal' // TODO: Actually look up the column type!
+                        header.label &&
+                        header.label !== 'Total' &&
+                        header.label !== 'Subtotal' // TODO: Actually look up the column type!
                             ? 'column-header'
                             : 'empty-header'
                     }
                     colSpan={header.span}
-                    title={header.name}
+                    title={header.label}
                     style={{ cursor: isSortable ? 'pointer' : 'default' }}
                     onClick={
                         isSortable ? () => onSortByColumn(index) : undefined
                     }
                 >
                     <style jsx>{cellStyle}</style>
-                    {header.name}
+                    {header.label}
                     {isSortable ? <span>&#8645;</span> : null}
                 </th>
             )

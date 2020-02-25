@@ -13,6 +13,7 @@ export const getHeaderForDisplay = ({
     index,
     dimensionLevel,
     getHeader,
+    showHierarchy,
 }) => {
     const header = getHeader(index)
     const showHeader =
@@ -31,9 +32,15 @@ export const getHeaderForDisplay = ({
     }
 
     const currentHeader = header[dimensionLevel]
+    console.log(currentHeader)
+
+    const label =
+        showHierarchy && currentHeader?.hierarchy
+            ? currentHeader.hierarchy.join(' / ')
+            : currentHeader?.name
 
     return {
         span,
-        name: currentHeader ? currentHeader.name : null,
+        label,
     }
 }

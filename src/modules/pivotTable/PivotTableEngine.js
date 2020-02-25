@@ -125,6 +125,17 @@ const buildDimensionLookup = (visualization, metadata, headers) => {
         orgUnit: getPrimaryDimension(metadata, 'ou'),
     }
 
+    if (metadata.ouNameHierarchy) {
+        Object.keys(primaryDimensions.orgUnit).forEach(ou => {
+            const hierarchy = metadata.ouNameHierarchy[ou]
+            if (hierarchy) {
+                primaryDimensions.orgUnit[ou].hierarchy = hierarchy
+                    .split('/')
+                    .filter(x => x.length)
+            }
+        })
+    }
+
     return {
         rows,
         columns,

@@ -14,18 +14,21 @@ export const PivotTableRowHeaderCell = ({
         index={rowIndex}
         level={rowLevel}
         getHeader={idx => engine.getRowHeader(idx)}
+        showHierarchy={engine.visualization.showHierarchy}
         render={header => (
             <td
                 className={
-                    header.name && header.name !== 'TOTAL'
+                    header.label &&
+                    header.label !== 'Total' &&
+                    header.label !== 'Subtotal'
                         ? 'row-header'
                         : 'empty-header'
                 }
                 rowSpan={header.span}
-                title={header.name}
+                title={header.label}
             >
                 <style jsx>{cellStyle}</style>
-                {header.name}
+                {header.label}
             </td>
         )}
     />
