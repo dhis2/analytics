@@ -62,6 +62,7 @@ const PivotTable = ({ visualization, data, legendSets }) => {
                         <PivotTableColumnHeaders
                             engine={engine}
                             clippingResult={clippingResult}
+                            sortBy={sortBy}
                             onSortByColumn={column => {
                                 let order = SORT_ORDER_ASCENDING
                                 if (sortBy && sortBy.column === column) {

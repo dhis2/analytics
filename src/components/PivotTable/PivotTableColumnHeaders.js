@@ -9,6 +9,7 @@ export const PivotTableColumnHeaders = ({
     engine,
     clippingResult,
     onSortByColumn,
+    sortBy,
 }) => {
     return engine.dimensionLookup.columns.map((_, columnLevel) => (
         <tr key={columnLevel}>
@@ -35,6 +36,7 @@ export const PivotTableColumnHeaders = ({
                         index={index}
                         level={columnLevel}
                         onSortByColumn={onSortByColumn}
+                        sortBy={sortBy}
                     />
                 )}
             />
@@ -48,4 +50,8 @@ PivotTableColumnHeaders.propTypes = {
     }).isRequired,
     engine: PropTypes.object.isRequired,
     onSortByColumn: PropTypes.func.isRequired,
+    sortBy: PropTypes.shape({
+        column: PropTypes.number.isRequired,
+        order: PropTypes.number.isRequired,
+    }),
 }

@@ -55,6 +55,12 @@ export const cell = css`
         z-index: 2;
         background-color: #dae6f8;
     }
+    div.column-header-inner {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
     .title {
         font-weight: bold;
         background-color: #cddaed;
@@ -90,5 +96,10 @@ export const cell = css`
     }
     .total {
         background-color: #d8d8d8;
+    }
+    .sort-icon {
+        height: 10px;
+        margin-bottom: 2px;
+        margin-left: 6px;
     }
 `
