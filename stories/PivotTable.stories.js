@@ -66,6 +66,34 @@ storiesOf('PivotTable', module).add('deep', () => {
     )
 })
 
+storiesOf('PivotTable', module).add('deep - small / compact', () => {
+    const visualization = {
+        ...deepVisualization,
+        ...visualizationReset,
+        displayDensity: 'COMPACT',
+        fontSize: 'SMALL'
+    }
+    return (
+        <div style={{ width: 800, height: 600 }}>
+            <PivotTable data={deepData} visualization={visualization} />
+        </div>
+    )
+})
+
+storiesOf('PivotTable', module).add('deep - large / comfortable', () => {
+    const visualization = {
+        ...deepVisualization,
+        ...visualizationReset,
+        displayDensity: 'COMFORTABLE',
+        fontSize: 'LARGE'
+    }
+    return (
+        <div style={{ width: 800, height: 600 }}>
+            <PivotTable data={deepData} visualization={visualization} />
+        </div>
+    )
+})
+
 const ResizingPivotTable = ({ visualization }) => {
     const [size, setSize] = useState(() => ({ width: 400, height: 300 }))
 
