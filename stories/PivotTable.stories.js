@@ -235,13 +235,8 @@ storiesOf('PivotTable', module).add('By DX legendSet', () => {
     customLegendSet.legends[0].color = '#000000'
     customLegendSet.legends[1].color = '#666666'
 
-    data.metaData.items[visualization.columns[0].items[1].id].legendSet = {
-        id: underAbove100LegendSet.id
-    }
-
-    data.metaData.items[visualization.columns[0].items[3].id].legendSet = {
-        id: customLegendSet.id
-    }
+    data.metaData.items[visualization.columns[0].items[1].id].legendSet = underAbove100LegendSet.id
+    data.metaData.items[visualization.columns[0].items[3].id].legendSet = customLegendSet.id
 
     return (
         <div style={{ width: 800, height: 600 }}>
