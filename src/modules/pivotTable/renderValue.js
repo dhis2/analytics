@@ -1,4 +1,4 @@
-const trimTrailingZeros = stringValue => stringValue.replace(/0+$/, '')
+const trimTrailingZeros = stringValue => stringValue.replace(/\.?0+$/, '')
 
 const defaultDecimalSeparator = '.'
 
@@ -49,6 +49,17 @@ const toFixedPrecisionString = (value, skipRounding) => {
 export const renderValue = (value, valueType, visualization) => {
     if (valueType !== 'NUMBER' || !value) {
         return value
+    }
+
+    if (
+        visualization.numberType === 'ROW_PERCENTAGE' ||
+        visualization.numberType === 'COLUMN_PERCENTAGE'
+    ) {
+        return (
+            trimTrailingZeros(
+                toFixedPrecisionString(value * 100, visualization.skipRounding)
+            ) + '%'
+        )
     }
 
     const stringValue = toFixedPrecisionString(
