@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import classnames from 'classnames'
 import { cell as cellStyle } from './styles/PivotTable.style'
 
 export const PivotTableTitleRow = ({
@@ -12,7 +13,15 @@ export const PivotTableTitleRow = ({
     return (
         <tr>
             <style jsx>{cellStyle}</style>
-            <td className="column-header title" colSpan={columnCount}>
+            <td
+                className={classnames(
+                    'column-header',
+                    'title',
+                    `fontsize-${engine.visualization.fontSize}`,
+                    `displaydensity-${engine.visualization.displayDensity}`
+                )}
+                colSpan={columnCount}
+            >
                 <div
                     style={{
                         marginLeft: Math.floor(scrollPosition.x / 150) * 150,

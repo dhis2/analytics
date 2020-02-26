@@ -56,7 +56,9 @@ export const PivotTableColumnHeaderCell = ({
                 >
                     <style jsx>{cellStyle}</style>
                     <div className="column-header-inner">
-                        {header.label}
+                        <span className="column-header-label">
+                            {header.label}
+                        </span>
                         {isSortable ? (
                             <span className="sort-icon">
                                 <SortIcon />

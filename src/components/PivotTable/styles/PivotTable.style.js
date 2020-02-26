@@ -119,6 +119,11 @@ export const cell = css`
         background-color: #d8d8d8;
     }
 
+    .column-header-label {
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
     .fontsize-SMALL .sort-icon {
         height: 10px;
         margin-bottom: 1px;

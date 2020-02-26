@@ -231,8 +231,6 @@ storiesOf('PivotTable', module).add('Fixed legendSet (text)', () => {
     const visualization = {
         ...targetVisualization,
         ...visualizationReset,
-        rowSubTotals: true,
-        colSubTotals: true,
         legendDisplayStyle: 'TEXT',
         legendSet: {
             id: underAbove100LegendSet.id
