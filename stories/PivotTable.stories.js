@@ -54,6 +54,20 @@ storiesOf('PivotTable', module).add('simple', () => {
     )
 })
 
+storiesOf('PivotTable', module).add('simple - column %', () => {
+    const visualization = {
+        ...simpleVisualization,
+        ...visualizationReset,
+        colTotals: true,
+        numberType: 'COLUMN_PERCENTAGE'
+    }
+    return (
+        <div style={{ width: 800, height: 600 }}>
+            <PivotTable data={simpleData} visualization={visualization} />
+        </div>
+    )
+})
+
 storiesOf('PivotTable', module).add('deep', () => {
     const visualization = {
         ...deepVisualization,
@@ -94,6 +108,40 @@ storiesOf('PivotTable', module).add('deep - large / comfortable', () => {
     )
 })
 
+storiesOf('PivotTable', module).add('deep - row %', () => {
+    const visualization = {
+        ...deepVisualization,
+        ...visualizationReset,
+        numberType: 'ROW_PERCENTAGE',
+        colSubTotals: true,
+        rowSubTotals: true,
+        rowTotals: true,
+        colTotals: true
+    }
+    return (
+        <div style={{ width: 800, height: 600 }}>
+            <PivotTable data={deepData} visualization={visualization} />
+        </div>
+    )
+})
+
+storiesOf('PivotTable', module).add('deep - column %', () => {
+    const visualization = {
+        ...deepVisualization,
+        ...visualizationReset,
+        numberType: 'COLUMN_PERCENTAGE',
+        colSubTotals: true,
+        rowSubTotals: true,
+        rowTotals: true,
+        colTotals: true
+    }
+    return (
+        <div style={{ width: 800, height: 600 }}>
+            <PivotTable data={deepData} visualization={visualization} />
+        </div>
+    )
+})
+
 const ResizingPivotTable = ({ visualization }) => {
     const [size, setSize] = useState(() => ({ width: 400, height: 300 }))
 
@@ -119,7 +167,7 @@ const ResizingPivotTable = ({ visualization }) => {
         </div>
     )
 }
-storiesOf('PivotTable', module).add('resize', () => {
+storiesOf('PivotTable', module).add('deep - resize', () => {
     const visualization = {
         ...deepVisualization,
         ...visualizationReset
@@ -127,7 +175,7 @@ storiesOf('PivotTable', module).add('resize', () => {
     return <ResizingPivotTable visualization={visualization} />
 })
 
-storiesOf('PivotTable', module).add('totals', () => {
+storiesOf('PivotTable', module).add('deep - totals', () => {
     const visualization = {
         ...deepVisualization,
         ...visualizationReset,
@@ -141,7 +189,7 @@ storiesOf('PivotTable', module).add('totals', () => {
     )
 })
 
-storiesOf('PivotTable', module).add('subtotals', () => {
+storiesOf('PivotTable', module).add('deep - subtotals', () => {
     const visualization = {
         ...deepVisualization,
         ...visualizationReset,
@@ -155,7 +203,7 @@ storiesOf('PivotTable', module).add('subtotals', () => {
     )
 })
 
-storiesOf('PivotTable', module).add('empty rows (shown)', () => {
+storiesOf('PivotTable', module).add('empty rows - shown', () => {
     const visualization = {
         ...emptyRowsVisualization,
         ...visualizationReset,
@@ -171,7 +219,7 @@ storiesOf('PivotTable', module).add('empty rows (shown)', () => {
     )
 })
 
-storiesOf('PivotTable', module).add('empty rows (hidden)', () => {
+storiesOf('PivotTable', module).add('empty rows - hidden', () => {
     const visualization = {
         ...emptyRowsVisualization,
         ...visualizationReset,
@@ -184,7 +232,7 @@ storiesOf('PivotTable', module).add('empty rows (hidden)', () => {
     )
 })
 
-storiesOf('PivotTable', module).add('Fixed legendSet (light fill)', () => {
+storiesOf('PivotTable', module).add('legend - fixed (light fill)', () => {
     const visualization = {
         ...targetVisualization,
         ...visualizationReset,
@@ -204,7 +252,7 @@ storiesOf('PivotTable', module).add('Fixed legendSet (light fill)', () => {
     )
 })
 
-storiesOf('PivotTable', module).add('Fixed legendSet (dark fill)', () => {
+storiesOf('PivotTable', module).add('legend - fixed (dark fill)', () => {
     const visualization = {
         ...targetVisualization,
         ...visualizationReset,
@@ -227,7 +275,7 @@ storiesOf('PivotTable', module).add('Fixed legendSet (dark fill)', () => {
     )
 })
 
-storiesOf('PivotTable', module).add('Fixed legendSet (text)', () => {
+storiesOf('PivotTable', module).add('legend - fixed (text)', () => {
     const visualization = {
         ...targetVisualization,
         ...visualizationReset,
@@ -243,7 +291,7 @@ storiesOf('PivotTable', module).add('Fixed legendSet (text)', () => {
     )
 })
 
-storiesOf('PivotTable', module).add('By DX legendSet', () => {
+storiesOf('PivotTable', module).add('legend - by data item', () => {
     const visualization = {
         ...targetVisualization,
         ...visualizationReset,
@@ -271,7 +319,7 @@ storiesOf('PivotTable', module).add('By DX legendSet', () => {
     )
 })
 
-storiesOf('PivotTable', module).add('With OU Hierarchy', () => {
+storiesOf('PivotTable', module).add('hierarchy - shown', () => {
     const visualization = {
         ...hierarchyVisualization,
         ...visualizationReset,
