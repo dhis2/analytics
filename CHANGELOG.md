@@ -1,3 +1,12 @@
+# [4.3.0](https://github.com/dhis2/analytics/compare/v4.2.0...v4.3.0) (2020-02-26)
+
+
+### Features
+
+* show filter text in an additional title row ([#327](https://github.com/dhis2/analytics/issues/327)) [skip ci] ([257e32f](https://github.com/dhis2/analytics/commit/257e32fe5e2f0839acf18ceb9ed30e7ceedf9392))
+* support row and column percentage number types ([#326](https://github.com/dhis2/analytics/issues/326)) [skip ci] ([542d784](https://github.com/dhis2/analytics/commit/542d784f11017dad3d29c86c08fefe9bcb396688))
+* support style options, use ellipses for text overflow ([#328](https://github.com/dhis2/analytics/issues/328)) ([c920044](https://github.com/dhis2/analytics/commit/c920044027ad7260899abcb8b2c321af62993b2b))
+
 # [4.2.0](https://github.com/dhis2/analytics/compare/v4.1.5...v4.2.0) (2020-02-26)
 
 
