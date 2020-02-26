@@ -260,15 +260,34 @@ export class PivotTableEngine {
         if (this.data[row]) {
             const dataRow = this.data[row][column]
             if (dataRow) {
+                let value
                 switch (type) {
                     case CELL_TYPE_VALUE:
-                        return (
-                            dataRow[this.dimensionLookup.dataHeaders.value] ??
-                            undefined
-                        )
+                        value = dataRow[this.dimensionLookup.dataHeaders.value]
+                        break
                     default:
-                        return dataRow.value ?? undefined
+                        value = dataRow.value
                 }
+                if (
+                    value &&
+                    this.visualization.numberType === 'ROW_PERCENTAGE' &&
+                    this.percentageTotals[row]
+                ) {
+                    // TODO: Check that we're a number!
+                    value = parseFloat(value) / this.percentageTotals[row].value
+                }
+
+                if (
+                    value &&
+                    this.visualization.numberType === 'COLUMN_PERCENTAGE' &&
+                    this.percentageTotals[column]
+                ) {
+                    // TODO: Check that we're a number!
+                    value =
+                        parseFloat(value) / this.percentageTotals[column].value
+                }
+
+                return value ?? undefined
             }
         }
         return undefined
@@ -515,6 +534,122 @@ export class PivotTableEngine {
             }
             totalCell.count += 1
         })
+
+        if (this.visualization.numberType === 'ROW_PERCENTAGE') {
+            if (!this.percentageTotals[pos.row]) {
+                this.percentageTotals[pos.row] = {
+                    count: 0,
+                    totalCount: this.rawDataWidth,
+                }
+            }
+            const percentageTotal = this.percentageTotals[pos.row]
+            dataFields.forEach(field => {
+                const headerIndex = this.dimensionLookup.dataHeaders[field]
+                const value = parseValue(dataRow[headerIndex])
+                if (value && !isNaN(value)) {
+                    percentageTotal[field] =
+                        (percentageTotal[field] || 0) + value
+                }
+            })
+
+            if (totals.columnSubtotal) {
+                if (!this.percentageTotals[totals.columnSubtotal.row]) {
+                    this.percentageTotals[totals.columnSubtotal.row] = {
+                        count: 0,
+                        totalCount: this.rawDataWidth,
+                    }
+                }
+                const percentageTotal = this.percentageTotals[
+                    totals.columnSubtotal.row
+                ]
+                dataFields.forEach(field => {
+                    const headerIndex = this.dimensionLookup.dataHeaders[field]
+                    const value = parseValue(dataRow[headerIndex])
+                    if (value && !isNaN(value)) {
+                        percentageTotal[field] =
+                            (percentageTotal[field] || 0) + value
+                    }
+                })
+            }
+
+            if (totals.columnTotal) {
+                if (!this.percentageTotals[totals.columnTotal.row]) {
+                    this.percentageTotals[totals.columnTotal.row] = {
+                        count: 0,
+                        totalCount: this.rawDataWidth,
+                    }
+                }
+                const percentageTotal = this.percentageTotals[
+                    totals.columnTotal.row
+                ]
+                dataFields.forEach(field => {
+                    const headerIndex = this.dimensionLookup.dataHeaders[field]
+                    const value = parseValue(dataRow[headerIndex])
+                    if (value && !isNaN(value)) {
+                        percentageTotal[field] =
+                            (percentageTotal[field] || 0) + value
+                    }
+                })
+            }
+        }
+
+        if (this.visualization.numberType === 'COLUMN_PERCENTAGE') {
+            if (!this.percentageTotals[pos.column]) {
+                this.percentageTotals[pos.column] = {
+                    count: 0,
+                    totalCount: this.rawDataHeight,
+                }
+            }
+            const percentageTotal = this.percentageTotals[pos.column]
+            dataFields.forEach(field => {
+                const headerIndex = this.dimensionLookup.dataHeaders[field]
+                const value = parseValue(dataRow[headerIndex])
+                if (value && !isNaN(value)) {
+                    percentageTotal[field] =
+                        (percentageTotal[field] || 0) + value
+                }
+            })
+
+            if (totals.rowSubtotal) {
+                if (!this.percentageTotals[totals.rowSubtotal.column]) {
+                    this.percentageTotals[totals.rowSubtotal.column] = {
+                        count: 0,
+                        totalCount: this.rawDataHeight,
+                    }
+                }
+                const percentageTotal = this.percentageTotals[
+                    totals.rowSubtotal.column
+                ]
+                dataFields.forEach(field => {
+                    const headerIndex = this.dimensionLookup.dataHeaders[field]
+                    const value = parseValue(dataRow[headerIndex])
+                    if (value && !isNaN(value)) {
+                        percentageTotal[field] =
+                            (percentageTotal[field] || 0) + value
+                    }
+                })
+            }
+
+            if (totals.rowTotal) {
+                if (!this.percentageTotals[totals.rowTotal.column]) {
+                    this.percentageTotals[totals.rowTotal.column] = {
+                        count: 0,
+                        totalCount: this.rawDataHeight,
+                    }
+                }
+                const percentageTotal = this.percentageTotals[
+                    totals.rowTotal.column
+                ]
+                dataFields.forEach(field => {
+                    const headerIndex = this.dimensionLookup.dataHeaders[field]
+                    const value = parseValue(dataRow[headerIndex])
+                    if (value && !isNaN(value)) {
+                        percentageTotal[field] =
+                            (percentageTotal[field] || 0) + value
+                    }
+                })
+            }
+        }
     }
     finalizeTotals() {
         const columnSubtotalSize = this.dimensionLookup.rows[0].size + 1
@@ -612,6 +747,12 @@ export class PivotTableEngine {
                 }
             })
         }
+
+        if (this.percentageTotals) {
+            this.percentageTotals.forEach(item => {
+                item.value = applyTotalAggregationType(item)
+            })
+        }
     }
 
     resetRowmap() {
@@ -650,6 +791,14 @@ export class PivotTableEngine {
         }
         if (this.options.showColumnTotals) {
             this.dataHeight += 1
+        }
+
+        // TODO: Use total cell calculation, don't duplicate here
+        if (
+            this.visualization.numberType === 'ROW_PERCENTAGE' ||
+            this.visualization.numberType === 'COLUMN_PERCENTAGE'
+        ) {
+            this.percentageTotals = []
         }
 
         this.rawData.rows.forEach(dataRow => {
