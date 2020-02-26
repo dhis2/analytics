@@ -1,3 +1,38 @@
+# [4.2.0](https://github.com/dhis2/analytics/compare/v4.1.5...v4.2.0) (2020-02-26)
+
+
+### Features
+
+* support by-dx legends, non-sum aggtypes, sortable columns, and ou hierarchies ([#318](https://github.com/dhis2/analytics/issues/318)) ([2bddbf3](https://github.com/dhis2/analytics/commit/2bddbf327cca96e66d586076cf90717e04cddab5))
+
+## [4.1.5](https://github.com/dhis2/analytics/compare/v4.1.4...v4.1.5) (2020-02-26)
+
+
+### Bug Fixes
+
+* dimensions panel style prop ([#316](https://github.com/dhis2/analytics/issues/316)) ([46a4b3a](https://github.com/dhis2/analytics/commit/46a4b3a6c8ab0798494d53f4a474889130a03253))
+
+## [4.1.4](https://github.com/dhis2/analytics/compare/v4.1.3...v4.1.4) (2020-02-25)
+
+
+### Bug Fixes
+
+* issue with range not matching selected value ([#321](https://github.com/dhis2/analytics/issues/321)) ([70b59e7](https://github.com/dhis2/analytics/commit/70b59e72287f58395ea7ca3005a9fb548650f84d))
+
+## [4.1.3](https://github.com/dhis2/analytics/compare/v4.1.2...v4.1.3) (2020-02-25)
+
+
+### Bug Fixes
+
+* single value legend (DHIS2-8348) ([#320](https://github.com/dhis2/analytics/issues/320)) ([63c4eac](https://github.com/dhis2/analytics/commit/63c4eac9a4bf5157b85e6839dfebfd0ddae9c4b4))
+
+## [4.1.2](https://github.com/dhis2/analytics/compare/v4.1.1...v4.1.2) (2020-02-24)
+
+
+### Bug Fixes
+
+* loading spinner in ou dialog DHIS2-8360 ([#319](https://github.com/dhis2/analytics/issues/319)) ([fdcdb52](https://github.com/dhis2/analytics/commit/fdcdb52b07dc2d8cc063f9298982a084db58bfc4))
+
 ## [4.1.1](https://github.com/dhis2/analytics/compare/v4.1.0...v4.1.1) (2020-02-24)
 
 
