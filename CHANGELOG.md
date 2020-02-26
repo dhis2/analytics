@@ -1,3 +1,10 @@
+## [4.1.5](https://github.com/dhis2/analytics/compare/v4.1.4...v4.1.5) (2020-02-26)
+
+
+### Bug Fixes
+
+* dimensions panel style prop ([#316](https://github.com/dhis2/analytics/issues/316)) ([46a4b3a](https://github.com/dhis2/analytics/commit/46a4b3a6c8ab0798494d53f4a474889130a03253))
+
 ## [4.1.4](https://github.com/dhis2/analytics/compare/v4.1.3...v4.1.4) (2020-02-25)
 
 
