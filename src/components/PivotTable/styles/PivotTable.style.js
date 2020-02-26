@@ -3,8 +3,8 @@ import { colors } from '@dhis2/ui-core'
 
 export const table = css`
     div.pivot-table-container {
+        font-family: 'Roboto', Arial, sans-serif;
         overflow: auto;
-        font-size: 10px;
         color: ${colors.grey900};
     }
     div.pivot-table-container::-webkit-scrollbar {
@@ -29,7 +29,6 @@ export const table = css`
         border-collapse: collapse;
         white-space: nowrap;
         overflow: hidden;
-        text-overflow: ellipsis;
         box-sizing: border-box;
         text-align: center;
     }
@@ -38,9 +37,10 @@ export const table = css`
 export const cell = css`
     td,
     th {
+        box-sizing: border-box;
         font-weight: normal;
         overflow: hidden;
-        padding: 0px;
+        text-overflow: ellipsis;
         border: 1px solid #b2b2b2;
         min-width: 150px;
         width: 150px;
@@ -49,6 +49,27 @@ export const cell = css`
         height: 25px;
         cursor: default;
     }
+
+    .fontsize-SMALL {
+        font-size: 10px;
+    }
+    .fontsize-NORMAL {
+        font-size: 11px;
+    }
+    .fontsize-LARGE {
+        font-size: 13px;
+    }
+
+    .displaydensity-COMPACT {
+        padding: 4px;
+    }
+    .displaydensity-NORMAL {
+        padding: 5px;
+    }
+    .displaydensity-COMFORTABLE {
+        padding: 7px;
+    }
+
     .column-header {
         position: sticky;
         top: 0;

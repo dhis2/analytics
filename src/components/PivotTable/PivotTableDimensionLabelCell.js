@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import classnames from 'classnames'
 import { cell as cellStyle } from './styles/PivotTable.style'
 
 const getDimensionLabel = (engine, rowLevel, columnLevel) => {
@@ -31,7 +32,12 @@ export const PivotTableDimensionLabelCell = ({
         if (rowLevel === 0 && columnLevel === 0) {
             return (
                 <td
-                    className="empty-header column-header"
+                    className={classnames(
+                        'empty-header',
+                        'column-header',
+                        `fontsize-${engine.visualization.fontSize}`,
+                        `displaydensity-${engine.visualization.displayDensity}`
+                    )}
                     colSpan={colCount}
                     rowSpan={rowCount}
                 >
@@ -47,7 +53,12 @@ export const PivotTableDimensionLabelCell = ({
         if (rowLevel === 0 && columnLevel === 0) {
             return (
                 <td
-                    className="empty-header column-header"
+                    className={classnames(
+                        'empty-header',
+                        'column-header',
+                        `fontsize-${engine.visualization.fontSize}`,
+                        `displaydensity-${engine.visualization.displayDensity}`
+                    )}
                     colSpan={colCount - 1}
                     rowSpan={rowCount - 1}
                 >
@@ -58,7 +69,15 @@ export const PivotTableDimensionLabelCell = ({
         return null
     }
     return (
-        <th className="empty-header column-header" title={dimensionLabel}>
+        <th
+            className={classnames(
+                'empty-header',
+                'column-header',
+                `fontsize-${engine.visualization.fontSize}`,
+                `displaydensity-${engine.visualization.displayDensity}`
+            )}
+            title={dimensionLabel}
+        >
             <style jsx>{cellStyle}</style>
             {dimensionLabel}
         </th>
