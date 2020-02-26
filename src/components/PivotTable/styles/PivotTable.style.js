@@ -118,9 +118,22 @@ export const cell = css`
     .total {
         background-color: #d8d8d8;
     }
-    .sort-icon {
+
+    .fontsize-SMALL .sort-icon {
         height: 10px;
+        margin-bottom: 1px;
+        margin-left: 5px;
+    }
+
+    .fontsize-NORMAL .sort-icon {
+        height: 11px;
         margin-bottom: 2px;
         margin-left: 6px;
+    }
+
+    .fontsize-LARGE .sort-icon {
+        height: 13px;
+        margin-bottom: 2px;
+        margin-left: 7px;
     }
 `
