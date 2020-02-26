@@ -7,6 +7,7 @@ export const PivotTableHeaderCell = ({
     level,
     getHeader,
     render,
+    showHierarchy,
 }) => {
     const header = getHeaderForDisplay({
         start: axisClippingResult.indices[0],
@@ -14,7 +15,9 @@ export const PivotTableHeaderCell = ({
         index,
         dimensionLevel: level,
         getHeader,
+        showHierarchy,
     })
+
     return !header ? null : render(header)
 }
 
@@ -24,4 +27,5 @@ PivotTableHeaderCell.propTypes = {
     index: PropTypes.number.isRequired,
     level: PropTypes.number.isRequired,
     render: PropTypes.func.isRequired,
+    showHierarchy: PropTypes.bool.isRequired,
 }

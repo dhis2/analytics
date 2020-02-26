@@ -55,6 +55,12 @@ export const cell = css`
         z-index: 2;
         background-color: #dae6f8;
     }
+    div.column-header-inner {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
     .title {
         font-weight: bold;
         background-color: #cddaed;
@@ -73,8 +79,14 @@ export const cell = css`
     }
     .value {
         background-color: #ffffff;
+        cursor: normal;
+        text-align: left;
+    }
+    .value.NUMBER {
+        text-align: center;
         cursor: pointer;
     }
+
     .value:hover {
         background-color: #f3f3f3;
     }
@@ -84,5 +96,10 @@ export const cell = css`
     }
     .total {
         background-color: #d8d8d8;
+    }
+    .sort-icon {
+        height: 10px;
+        margin-bottom: 2px;
+        margin-left: 6px;
     }
 `

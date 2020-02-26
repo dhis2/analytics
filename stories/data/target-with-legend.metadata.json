@@ -1,0 +1,200 @@
+{
+    "metaData": {
+        "items": {
+            "EY8gsfEomc0": {
+                "uid": "EY8gsfEomc0",
+                "name": "ER Technical support visits Rural Result vs Target",
+                "dimensionItemType": "INDICATOR",
+                "valueType": "NUMBER",
+                "totalAggregationType": "AVERAGE"
+            },
+            "2019Q4": {
+                "uid": "2019Q4",
+                "code": "2019Q4",
+                "name": "Oct to Dec 2019",
+                "dimensionItemType": "PERIOD",
+                "valueType": "NUMBER",
+                "totalAggregationType": "SUM",
+                "startDate": "2019-10-01T00:00:00.000",
+                "endDate": "2019-12-31T00:00:00.000"
+            },
+            "TEQlaapDQoK": {
+                "uid": "TEQlaapDQoK",
+                "code": "OU_254945",
+                "name": "Port Loko",
+                "dimensionItemType": "ORGANISATION_UNIT",
+                "valueType": "NUMBER",
+                "totalAggregationType": "SUM"
+            },
+            "eIQbndfxQMb": {
+                "uid": "eIQbndfxQMb",
+                "code": "OU_268149",
+                "name": "Tonkolili",
+                "dimensionItemType": "ORGANISATION_UNIT",
+                "valueType": "NUMBER",
+                "totalAggregationType": "SUM"
+            },
+            "2019Q3": {
+                "uid": "2019Q3",
+                "code": "2019Q3",
+                "name": "Jul to Sep 2019",
+                "dimensionItemType": "PERIOD",
+                "valueType": "NUMBER",
+                "totalAggregationType": "SUM",
+                "startDate": "2019-07-01T00:00:00.000",
+                "endDate": "2019-09-30T00:00:00.000"
+            },
+            "Vth0fbpFcsO": {
+                "uid": "Vth0fbpFcsO",
+                "code": "OU_233310",
+                "name": "Kono",
+                "dimensionItemType": "ORGANISATION_UNIT",
+                "valueType": "NUMBER",
+                "totalAggregationType": "SUM"
+            },
+            "ou": {
+                "uid": "ou",
+                "name": "Organisation unit",
+                "dimensionType": "ORGANISATION_UNIT"
+            },
+            "qmCKRmVj4WX": {
+                "uid": "qmCKRmVj4WX",
+                "name": "ER Teacher accommodation constructed Urban Result vs Target",
+                "dimensionItemType": "INDICATOR",
+                "valueType": "NUMBER",
+                "totalAggregationType": "AVERAGE"
+            },
+            "oTOpKabJA1v": {
+                "uid": "oTOpKabJA1v",
+                "name": "ER Teachers trained Result vs Target",
+                "dimensionItemType": "INDICATOR",
+                "valueType": "NUMBER",
+                "totalAggregationType": "AVERAGE"
+            },
+            "bL4ooGhyHRQ": {
+                "uid": "bL4ooGhyHRQ",
+                "code": "OU_260377",
+                "name": "Pujehun",
+                "dimensionItemType": "ORGANISATION_UNIT",
+                "valueType": "NUMBER",
+                "totalAggregationType": "SUM"
+            },
+            "2019Q2": {
+                "uid": "2019Q2",
+                "code": "2019Q2",
+                "name": "Apr to Jun 2019",
+                "dimensionItemType": "PERIOD",
+                "valueType": "NUMBER",
+                "totalAggregationType": "SUM",
+                "startDate": "2019-04-01T00:00:00.000",
+                "endDate": "2019-06-30T00:00:00.000"
+            },
+            "2019Q1": {
+                "uid": "2019Q1",
+                "code": "2019Q1",
+                "name": "Jan to Mar 2019",
+                "dimensionItemType": "PERIOD",
+                "valueType": "NUMBER",
+                "totalAggregationType": "SUM",
+                "startDate": "2019-01-01T00:00:00.000",
+                "endDate": "2019-03-31T00:00:00.000"
+            },
+            "MkXHDfrFRKV": {
+                "uid": "MkXHDfrFRKV",
+                "name": "ER Children trained on key survival skills Result vs Target",
+                "dimensionItemType": "INDICATOR",
+                "valueType": "NUMBER",
+                "totalAggregationType": "AVERAGE"
+            },
+            "X2XfzgH4NOR": {
+                "uid": "X2XfzgH4NOR",
+                "name": "ER Visits in schools Rural Result vs Target",
+                "dimensionItemType": "INDICATOR",
+                "valueType": "NUMBER",
+                "totalAggregationType": "AVERAGE"
+            },
+            "at6UHUQatSo": {
+                "uid": "at6UHUQatSo",
+                "code": "OU_278310",
+                "name": "Western Area",
+                "dimensionItemType": "ORGANISATION_UNIT",
+                "valueType": "NUMBER",
+                "totalAggregationType": "SUM"
+            },
+            "iug406zdfTE": {
+                "uid": "iug406zdfTE",
+                "name": "ER Technical support visits Result vs Target",
+                "dimensionItemType": "INDICATOR",
+                "valueType": "NUMBER",
+                "totalAggregationType": "AVERAGE"
+            },
+            "dx": {
+                "uid": "dx",
+                "name": "Data",
+                "dimensionType": "DATA_X"
+            },
+            "pe": {
+                "uid": "pe",
+                "name": "Period",
+                "dimensionType": "PERIOD"
+            },
+            "LAST_4_QUARTERS": {
+                "name": "Last 4 quarters"
+            },
+            "ULW9dQOiiTS": {
+                "uid": "ULW9dQOiiTS",
+                "name": "ER Teacher training programs designed Result vs Target",
+                "dimensionItemType": "INDICATOR",
+                "valueType": "NUMBER",
+                "totalAggregationType": "AVERAGE"
+            },
+            "qhqAxPSTUXp": {
+                "uid": "qhqAxPSTUXp",
+                "code": "OU_226213",
+                "name": "Koinadugu",
+                "dimensionItemType": "ORGANISATION_UNIT",
+                "valueType": "NUMBER",
+                "totalAggregationType": "SUM"
+            },
+            "jmIPBj66vD6": {
+                "uid": "jmIPBj66vD6",
+                "code": "OU_246990",
+                "name": "Moyamba",
+                "dimensionItemType": "ORGANISATION_UNIT",
+                "valueType": "NUMBER",
+                "totalAggregationType": "SUM"
+            }
+        },
+        "dimensions": {
+            "dx": [
+                "MkXHDfrFRKV",
+                "qmCKRmVj4WX",
+                "ULW9dQOiiTS",
+                "oTOpKabJA1v",
+                "iug406zdfTE",
+                "EY8gsfEomc0",
+                "X2XfzgH4NOR"
+            ],
+            "pe": [
+                "2019Q1",
+                "2019Q2",
+                "2019Q3",
+                "2019Q4"
+            ],
+            "ou": [
+                "at6UHUQatSo",
+                "TEQlaapDQoK",
+                "eIQbndfxQMb",
+                "Vth0fbpFcsO",
+                "bL4ooGhyHRQ",
+                "qhqAxPSTUXp",
+                "jmIPBj66vD6"
+            ],
+            "co": []
+        }
+    },
+    "width": 0,
+    "rows": [],
+    "height": 0,
+    "headerWidth": 0
+}
