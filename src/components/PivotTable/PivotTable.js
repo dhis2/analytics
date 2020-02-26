@@ -14,6 +14,7 @@ import { PivotTableRow } from './PivotTableRow'
 import { PivotTableClippedAxis } from './PivotTableClippedAxis'
 import { PivotTableTitleRow } from './PivotTableTitleRow'
 import { PivotTableEmptyRow } from './PivotTableEmptyRow'
+import getFilterText from '../../visualizations/util/getFilterText'
 
 const PivotTable = ({ visualization, data, legendSets }) => {
     const containerRef = useRef(undefined)
@@ -55,6 +56,17 @@ const PivotTable = ({ visualization, data, legendSets }) => {
                             <PivotTableTitleRow
                                 engine={engine}
                                 title={visualization.subtitle}
+                                scrollPosition={clippingResult.scrollPosition}
+                                containerWidth={width}
+                            />
+                        ) : null}
+                        {visualization.filters?.length ? (
+                            <PivotTableTitleRow
+                                engine={engine}
+                                title={getFilterText(
+                                    visualization.filters,
+                                    data.metaData
+                                )}
                                 scrollPosition={clippingResult.scrollPosition}
                                 containerWidth={width}
                             />
