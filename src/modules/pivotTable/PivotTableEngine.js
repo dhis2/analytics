@@ -1,5 +1,10 @@
 import times from 'lodash/times'
 import { parseValue } from './parseValue'
+import {
+    DIMENSION_ID_DATA,
+    DIMENSION_ID_PERIOD,
+    DIMENSION_ID_ORGUNIT,
+} from '../predefinedDimensions'
 
 export const SORT_ORDER_ASCENDING = 1
 export const SORT_ORDER_DESCENDING = -1
@@ -120,9 +125,9 @@ const buildDimensionLookup = (visualization, metadata, headers) => {
     }, {})
 
     const primaryDimensions = {
-        data: getPrimaryDimension(metadata, 'dx'),
-        period: getPrimaryDimension(metadata, 'pe'),
-        orgUnit: getPrimaryDimension(metadata, 'ou'),
+        data: getPrimaryDimension(metadata, DIMENSION_ID_DATA),
+        period: getPrimaryDimension(metadata, DIMENSION_ID_PERIOD),
+        orgUnit: getPrimaryDimension(metadata, DIMENSION_ID_ORGUNIT),
     }
 
     if (metadata.ouNameHierarchy) {
@@ -292,6 +297,7 @@ export class PivotTableEngine {
         }
         return undefined
     }
+
     get({ row, column }) {
         const mappedRow = this.rowMap[row],
             mappedColumn = this.columnMap[column]

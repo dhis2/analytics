@@ -2,8 +2,7 @@ import { colors } from '../../../../modules/colors'
 
 export const styles = {
     labelWrapper: {
-        maxWidth: '174px',
-        padding: '2px 0',
+        padding: '2px 5px 2px 0',
     },
     text: {
         color: colors.black,
@@ -48,6 +47,7 @@ export const styles = {
     optionsWrapper: {
         position: 'relative',
         height: '24px',
+        minWidth: '22px',
         left: '5px',
         alignSelf: 'start',
     },

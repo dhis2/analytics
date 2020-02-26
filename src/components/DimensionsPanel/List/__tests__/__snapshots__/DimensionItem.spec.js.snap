@@ -42,8 +42,7 @@ exports[`DimensionItem matches the snapshot 1`] = `
     <div
       style={
         Object {
-          "maxWidth": "174px",
-          "padding": "2px 0",
+          "padding": "2px 5px 2px 0",
         }
       }
     >
@@ -111,8 +110,7 @@ exports[`DimensionItem matches the snapshot with locked 1`] = `
     <div
       style={
         Object {
-          "maxWidth": "174px",
-          "padding": "2px 0",
+          "padding": "2px 5px 2px 0",
         }
       }
     >
@@ -198,8 +196,7 @@ exports[`DimensionItem matches the snapshot with onOptionsClick 1`] = `
     <div
       style={
         Object {
-          "maxWidth": "174px",
-          "padding": "2px 0",
+          "padding": "2px 5px 2px 0",
         }
       }
     >
@@ -228,6 +225,7 @@ exports[`DimensionItem matches the snapshot with onOptionsClick 1`] = `
         "alignSelf": "start",
         "height": "24px",
         "left": "5px",
+        "minWidth": "22px",
         "position": "relative",
       }
     }
@@ -277,8 +275,7 @@ exports[`DimensionItem matches the snapshot with recommended 1`] = `
     <div
       style={
         Object {
-          "maxWidth": "174px",
-          "padding": "2px 0",
+          "padding": "2px 5px 2px 0",
         }
       }
     >
@@ -348,8 +345,7 @@ exports[`DimensionItem matches the snapshot with selected 1`] = `
     <div
       style={
         Object {
-          "maxWidth": "174px",
-          "padding": "2px 0",
+          "padding": "2px 5px 2px 0",
         }
       }
     >
