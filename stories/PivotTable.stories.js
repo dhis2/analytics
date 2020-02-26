@@ -80,6 +80,34 @@ storiesOf('PivotTable', module).add('deep', () => {
     )
 })
 
+storiesOf('PivotTable', module).add('deep - small / compact', () => {
+    const visualization = {
+        ...deepVisualization,
+        ...visualizationReset,
+        displayDensity: 'COMPACT',
+        fontSize: 'SMALL'
+    }
+    return (
+        <div style={{ width: 800, height: 600 }}>
+            <PivotTable data={deepData} visualization={visualization} />
+        </div>
+    )
+})
+
+storiesOf('PivotTable', module).add('deep - large / comfortable', () => {
+    const visualization = {
+        ...deepVisualization,
+        ...visualizationReset,
+        displayDensity: 'COMFORTABLE',
+        fontSize: 'LARGE'
+    }
+    return (
+        <div style={{ width: 800, height: 600 }}>
+            <PivotTable data={deepData} visualization={visualization} />
+        </div>
+    )
+})
+
 storiesOf('PivotTable', module).add('deep - row %', () => {
     const visualization = {
         ...deepVisualization,
@@ -251,8 +279,6 @@ storiesOf('PivotTable', module).add('legend - fixed (text)', () => {
     const visualization = {
         ...targetVisualization,
         ...visualizationReset,
-        rowSubTotals: true,
-        colSubTotals: true,
         legendDisplayStyle: 'TEXT',
         legendSet: {
             id: underAbove100LegendSet.id

@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import classnames from 'classnames'
 import { PivotTableHeaderCell } from './PivotTableHeaderCell'
 import { cell as cellStyle } from './styles/PivotTable.style'
 
@@ -17,13 +18,15 @@ export const PivotTableRowHeaderCell = ({
         showHierarchy={engine.visualization.showHierarchy}
         render={header => (
             <td
-                className={
+                className={classnames(
                     header.label &&
-                    header.label !== 'Total' &&
-                    header.label !== 'Subtotal'
+                        header.label !== 'Total' &&
+                        header.label !== 'Subtotal'
                         ? 'row-header'
-                        : 'empty-header'
-                }
+                        : 'empty-header',
+                    `fontsize-${engine.visualization.fontSize}`,
+                    `displaydensity-${engine.visualization.displayDensity}`
+                )}
                 rowSpan={header.span}
                 title={header.label}
             >

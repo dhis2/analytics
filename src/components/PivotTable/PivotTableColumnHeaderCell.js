@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import classnames from 'classnames'
 import { PivotTableHeaderCell } from './PivotTableHeaderCell'
 import { cell as cellStyle } from './styles/PivotTable.style'
 import { SORT_ORDER_ASCENDING } from '../../modules/pivotTable/PivotTableEngine'
@@ -37,13 +38,15 @@ export const PivotTableColumnHeaderCell = ({
                     : SortIconIdle)
             return (
                 <th
-                    className={
+                    className={classnames(
                         header.label &&
-                        header.label !== 'Total' &&
-                        header.label !== 'Subtotal' // TODO: Actually look up the column type!
+                            header.label !== 'Total' &&
+                            header.label !== 'Subtotal' // TODO: Actually look up the column type!
                             ? 'column-header'
-                            : 'empty-header'
-                    }
+                            : 'empty-header',
+                        `fontsize-${engine.visualization.fontSize}`,
+                        `displaydensity-${engine.visualization.displayDensity}`
+                    )}
                     colSpan={header.span}
                     title={header.label}
                     style={{ cursor: isSortable ? 'pointer' : 'default' }}
@@ -53,7 +56,9 @@ export const PivotTableColumnHeaderCell = ({
                 >
                     <style jsx>{cellStyle}</style>
                     <div className="column-header-inner">
-                        {header.label}
+                        <span className="column-header-label">
+                            {header.label}
+                        </span>
                         {isSortable ? (
                             <span className="sort-icon">
                                 <SortIcon />

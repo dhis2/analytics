@@ -32,7 +32,12 @@ export const PivotTableValueCell = ({ engine, row, column }) => {
     return (
         <td
             key={column}
-            className={classnames(type, dxDimension.valueType)}
+            className={classnames(
+                type,
+                dxDimension.valueType,
+                `fontsize-${engine.visualization.fontSize}`,
+                `displaydensity-${engine.visualization.displayDensity}`
+            )}
             title={value}
             style={style}
         >
