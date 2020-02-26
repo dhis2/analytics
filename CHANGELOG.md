@@ -1,3 +1,10 @@
+# [4.2.0](https://github.com/dhis2/analytics/compare/v4.1.5...v4.2.0) (2020-02-26)
+
+
+### Features
+
+* support by-dx legends, non-sum aggtypes, sortable columns, and ou hierarchies ([#318](https://github.com/dhis2/analytics/issues/318)) ([2bddbf3](https://github.com/dhis2/analytics/commit/2bddbf327cca96e66d586076cf90717e04cddab5))
+
 ## [4.1.5](https://github.com/dhis2/analytics/compare/v4.1.4...v4.1.5) (2020-02-26)
 
 
