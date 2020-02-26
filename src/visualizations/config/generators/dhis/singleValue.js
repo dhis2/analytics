@@ -1,7 +1,10 @@
+import { getColorByValueFromLegendSet } from '../../../../modules/legends'
+
 const svgNS = 'http://www.w3.org/2000/svg'
 
-const generateValueSVG = (value, y) => {
+const generateValueSVG = (value, legendSet, y) => {
     const textSize = 300
+    const defaultFillColor = '#000000'
 
     const svgValue = document.createElementNS(svgNS, 'svg')
     svgValue.setAttribute('xmlns', svgNS)
@@ -15,12 +18,15 @@ const generateValueSVG = (value, y) => {
         svgValue.setAttribute('y', y)
     }
 
+    const fillColor = legendSet ? getColorByValueFromLegendSet(legendSet, value) : defaultFillColor
+
     const text = document.createElementNS(svgNS, 'text')
     text.setAttribute('text-anchor', 'middle')
     text.setAttribute('font-size', textSize)
     text.setAttribute('font-weight', '300')
     text.setAttribute('letter-spacing', '-5')
     text.setAttribute('x', '50%')
+    text.setAttribute('fill', fillColor)
     text.appendChild(document.createTextNode(value))
 
     svgValue.appendChild(text)
@@ -28,7 +34,7 @@ const generateValueSVG = (value, y) => {
     return svgValue
 }
 
-const generateDashboardItem = config => {
+const generateDashboardItem = (config, legendSet) => {
     const container = document.createElement('div')
     container.setAttribute(
         'style',
@@ -53,12 +59,12 @@ const generateDashboardItem = config => {
         container.appendChild(subtitle)
     }
 
-    container.appendChild(generateValueSVG(config.value))
+    container.appendChild(generateValueSVG(config.value, legendSet))
 
     return container
 }
 
-const generateDVItem = (config, parentEl) => {
+const generateDVItem = (config, legendSet, parentEl) => {
     const parentElBBox = parentEl.getBoundingClientRect()
 
     const width = parentElBBox.width
@@ -97,17 +103,18 @@ const generateDVItem = (config, parentEl) => {
         svg.appendChild(subtitle)
     }
 
-    svg.appendChild(generateValueSVG(config.value, 20))
+    svg.appendChild(generateValueSVG(config.value, legendSet, 20))
 
     return svg
 }
 
-export default function(config, parentEl, { dashboard }) {
+export default function(config, parentEl, { dashboard, legendSets }) {
+    const legendSet = legendSets[0]
     parentEl.style.overflow = 'hidden'
     parentEl.style.display = 'flex'
     parentEl.style.justifyContent = 'center'
 
     return dashboard
-        ? generateDashboardItem(config)
-        : generateDVItem(config, parentEl)
+        ? generateDashboardItem(config, legendSet)
+        : generateDVItem(config, legendSet, parentEl)
 }
