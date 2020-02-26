@@ -13,7 +13,7 @@ const getLegendSet = (engine, dxDimension) => {
     switch (engine.visualization.legendDisplayStrategy) {
         case LEGEND_DISPLAY_STRATEGY_BY_DATA_ITEM:
             if (dxDimension && dxDimension.legendSet) {
-                legendSetId = dxDimension.legendSet.id
+                legendSetId = dxDimension.legendSet
             }
             break
         case LEGEND_DISPLAY_STRATEGY_FIXED:
