@@ -1,6 +1,7 @@
 import { useMemo } from 'react'
 import { useScrollPosition } from './useScrollPosition'
 import { clipAxis } from './clipAxis'
+import times from 'lodash/times'
 
 export const useTableClipping = ({
     containerRef,
@@ -10,6 +11,7 @@ export const useTableClipping = ({
     visualization,
 }) => {
     const scrollPosition = useScrollPosition(containerRef)
+
     const rows = useMemo(
         () =>
             clipAxis({
@@ -43,9 +45,27 @@ export const useTableClipping = ({
         [width, engine.width, scrollPosition.x, visualization.rows.length]
     )
 
+    if (engine.width * engine.height < 10000) {
+        return {
+            rows: {
+                indices: times(engine.height, n => n),
+                pre: 0,
+                post: 0,
+            },
+            columns: {
+                indices: times(engine.width, n => n),
+                pre: 0,
+                post: 0,
+            },
+            scrollPosition,
+            clipped: false,
+        }
+    }
+
     return {
         rows,
         columns,
         scrollPosition,
+        clipped: true,
     }
 }
