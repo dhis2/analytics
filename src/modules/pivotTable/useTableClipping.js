@@ -3,6 +3,8 @@ import { useScrollPosition } from './useScrollPosition'
 import { clipAxis } from './clipAxis'
 import { CLIPPED_CELL_WIDTH, CLIPPED_CELL_HEIGHT } from './pivotTableConstants'
 
+// const CLIPPING_BUFFER = 100
+
 export const useTableClipping = ({
     containerRef,
     width,
@@ -11,6 +13,12 @@ export const useTableClipping = ({
     visualization,
 }) => {
     const scrollPosition = useScrollPosition(containerRef)
+    // TODO
+    // const rowStart = engine.columnMap.findIndex(idx => engine.columnWidths[idx].pre > scrollPosition.x - CLIPPING_BUFFER)
+    // if (rowStart === -1) {
+    //     // No valid start found...
+    //     throw new Error();
+    // }
     const rows = useMemo(
         () =>
             clipAxis({

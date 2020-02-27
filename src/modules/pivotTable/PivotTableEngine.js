@@ -1,10 +1,15 @@
 import times from 'lodash/times'
+
 import { parseValue } from './parseValue'
+import { renderValue } from './renderValue'
+import { measureText } from './measureText'
+
 import {
     DIMENSION_ID_DATA,
     DIMENSION_ID_PERIOD,
     DIMENSION_ID_ORGUNIT,
 } from '../predefinedDimensions'
+
 import {
     AGGREGATE_TYPE_NA,
     AGGREGATE_TYPE_AVERAGE,
@@ -220,7 +225,7 @@ export class PivotTableEngine {
     height = 0
     width = 0
     data = []
-    occupiedColumns = []
+    columnWidths = []
     rowMap = []
     columnMap = []
 
@@ -336,6 +341,24 @@ export class PivotTableEngine {
         return this.getRawCellType({ row, column })
     }
 
+    getDimensionLabel(rowLevel, columnLevel) {
+        const lastRowLevel = this.dimensionLookup.rows.length - 1
+        const lastColumnLevel = this.dimensionLookup.columns.length - 1
+        if (rowLevel !== lastRowLevel && columnLevel !== lastColumnLevel) {
+            return null
+        }
+        if (rowLevel === lastRowLevel && columnLevel === lastColumnLevel) {
+            return `${this.dimensionLookup.rows[lastRowLevel].meta.name} / ${this.dimensionLookup.columns[lastColumnLevel].meta.name}`
+        }
+
+        if (rowLevel === lastRowLevel) {
+            return this.dimensionLookup.columns[columnLevel].meta.name
+        }
+        if (columnLevel === lastColumnLevel) {
+            return this.dimensionLookup.rows[rowLevel].meta.name
+        }
+    }
+
     getCellDxDimension({ row, column }) {
         return this.getRawCellDxDimension({
             row: this.rowMap[row],
@@ -369,7 +392,7 @@ export class PivotTableEngine {
         return !this.data[row] || this.data[row].length === 0
     }
     columnIsEmpty(column) {
-        return !this.occupiedColumns[column]
+        return !this.columnWidths[column]
     }
 
     getRawColumnHeader(column) {
@@ -507,7 +530,6 @@ export class PivotTableEngine {
             if (!totalItem) return
 
             this.data[totalItem.row] = this.data[totalItem.row] || []
-            this.occupiedColumns[totalItem.column] = true
 
             this.data[totalItem.row][totalItem.column] = this.data[
                 totalItem.row
@@ -679,6 +701,13 @@ export class PivotTableEngine {
                             totalCell.value = applyTotalAggregationType(
                                 totalCell
                             )
+                            this.columnWidths[column] = measureText(
+                                renderValue(
+                                    totalCell.value,
+                                    totalCell.valueType,
+                                    this.visualization
+                                )
+                            )
                         }
                     }
                 })
@@ -766,7 +795,7 @@ export class PivotTableEngine {
 
     buildMatrix() {
         this.data = []
-        this.occupiedColumns = []
+        this.columnWidths = []
 
         this.dataHeight = this.rawDataHeight = countFromDisaggregates(
             this.dimensionLookup.rows
@@ -808,7 +837,18 @@ export class PivotTableEngine {
             const pos = lookup(dataRow, this.dimensionLookup, this)
             this.data[pos.row] = this.data[pos.row] || []
             this.data[pos.row][pos.column] = dataRow
-            this.occupiedColumns[pos.column] = true
+
+            const dxDimension = this.getRawCellDxDimension(pos)
+            this.columnWidths[pos.column] = Math.max(
+                this.columnWidths[pos.column] || 0,
+                measureText(
+                    renderValue(
+                        this.getRaw(pos),
+                        dxDimension.valueType,
+                        this.visualization
+                    )
+                )
+            )
 
             this.addCellValueToTotals(pos, dataRow)
         })
@@ -818,12 +858,64 @@ export class PivotTableEngine {
         this.resetRowmap()
         this.columnMap = this.options.hideEmptyColumns
             ? times(this.dataWidth, n => n).filter(
-                  idx => !!this.occupiedColumns[idx]
+                  idx => !!this.columnWidths[idx]
               )
             : times(this.dataWidth, n => n)
 
         this.height = this.rowMap.length
         this.width = this.columnMap.length
+
+        this.columnWidths.forEach((width, column) => {
+            const header = this.getRawColumnHeader(column)[
+                this.dimensionLookup.columns.length - 1
+            ]
+            const label =
+                this.visualization.showHierarchy && header?.hierarchy
+                    ? header.hierarchy.join(' / ')
+                    : header?.name
+
+            if (label) {
+                const headerSize = measureText(label)
+                this.columnWidths[column] = Math.max(
+                    width,
+                    headerSize +
+                        /* sortIcon */ (this.isSortable(column) ? 13 : 0) +
+                        /*padding*/ 10 +
+                        /*border*/ 2
+                )
+            }
+
+            const colWidth = Math.ceil(this.columnWidths[column])
+            this.columnWidths[column] = {
+                pre: this.dataPixelWidth,
+                width: colWidth,
+            }
+            this.dataPixelWidth += colWidth
+        })
+
+        this.rowHeaderWidths = this.dimensionLookup.rows.map((_, rowLevel) => {
+            let maxWidth = 0
+            this.rowMap.forEach(rawColumn => {
+                const header = this.getRawRowHeader(rawColumn)[rowLevel]
+                const label =
+                    this.visualization.showHierarchy && header?.hierarchy
+                        ? header.hierarchy.join(' / ')
+                        : header?.name
+                if (label) {
+                    const headerSize = measureText(label)
+                    maxWidth = Math.max(maxWidth, headerSize)
+                }
+            }, 0)
+
+            this.dimensionLookup.columns.forEach((_, columnLevel) => {
+                const label = this.getDimensionLabel(rowLevel, columnLevel)
+                if (label) {
+                    const headerSize = measureText(label)
+                    maxWidth = Math.max(maxWidth, headerSize)
+                }
+            })
+            return maxWidth + /*padding*/ 10 + /*border*/ 2
+        })
     }
 
     getColumnType(column) {
