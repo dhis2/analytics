@@ -7,23 +7,6 @@ export const table = css`
         overflow: auto;
         color: ${colors.grey900};
     }
-    div.pivot-table-container::-webkit-scrollbar {
-        -webkit-appearance: none;
-    }
-
-    div.pivot-table-container::-webkit-scrollbar-vertical {
-        width: 8px;
-    }
-
-    div.pivot-table-container::-webkit-scrollbar-horizontal {
-        height: 8px;
-    }
-
-    div.pivot-table-container::-webkit-scrollbar-thumb {
-        border-radius: 8px;
-        border: 1px solid white; /* should match background, can't be transparent */
-        background-color: rgba(0, 0, 0, 0.5);
-    }
     table {
         border-spacing: 0;
         border-collapse: collapse;
@@ -71,7 +54,6 @@ export const cell = css`
     }
 
     .column-header {
-        position: sticky;
         top: 0;
         z-index: 2;
         background-color: #dae6f8;
@@ -87,7 +69,6 @@ export const cell = css`
         background-color: #cddaed;
     }
     .row-header {
-        position: sticky;
         left: 0;
         z-index: 1;
         background-color: #dae6f8;
