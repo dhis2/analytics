@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { cell as cellStyle } from './styles/PivotTable.style'
 import { usePivotTableEngine } from './PivotTableEngineContext'
 import { PivotTableCell } from './PivotTableCell'
+import { CLIPPED_CELL_WIDTH } from '../../modules/pivotTable/pivotTableConstants'
 
 export const PivotTableTitleRow = ({
     title,
@@ -20,12 +21,15 @@ export const PivotTableTitleRow = ({
             >
                 <div
                     style={{
-                        marginLeft: Math.floor(scrollPosition.x / 150) * 150,
+                        marginLeft:
+                            Math.floor(scrollPosition.x / CLIPPED_CELL_WIDTH) *
+                            CLIPPED_CELL_WIDTH,
                         width:
                             Math.min(
                                 columnCount,
-                                Math.ceil(containerWidth / 150) + 1
-                            ) * 150,
+                                Math.ceil(containerWidth / CLIPPED_CELL_WIDTH) +
+                                    1
+                            ) * CLIPPED_CELL_WIDTH,
                         textAlign: 'center',
                     }}
                 >

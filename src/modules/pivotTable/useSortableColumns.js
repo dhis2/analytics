@@ -1,5 +1,8 @@
 import { useState } from 'react'
-import { SORT_ORDER_ASCENDING, SORT_ORDER_DESCENDING } from './PivotTableEngine'
+import {
+    SORT_ORDER_ASCENDING,
+    SORT_ORDER_DESCENDING,
+} from './pivotTableConstants'
 
 export const useSortableColumns = engine => {
     const [sortBy, setSortBy] = useState(null)

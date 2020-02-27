@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { usePivotTableEngine } from './PivotTableEngineContext'
-import { SORT_ORDER_ASCENDING } from '../../modules/pivotTable/PivotTableEngine'
+import { SORT_ORDER_ASCENDING } from '../../modules/pivotTable/pivotTableConstants'
 import { sortIcon as sortIconStyle } from './styles/PivotTable.style'
 import { SortIconAscending } from './icons/SortIconAscending'
 import { SortIconDescending } from './icons/SortIconDescending'

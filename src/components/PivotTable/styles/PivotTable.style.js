@@ -1,5 +1,15 @@
 import css from 'styled-jsx/css'
 import { colors } from '@dhis2/ui-core'
+import {
+    DISPLAY_DENSITY_PADDING_COMPACT,
+    DISPLAY_DENSITY_PADDING_NORMAL,
+    DISPLAY_DENSITY_PADDING_COMFORTABLE,
+    FONT_SIZE_SMALL,
+    FONT_SIZE_NORMAL,
+    FONT_SIZE_LARGE,
+    CLIPPED_CELL_WIDTH,
+    CLIPPED_CELL_HEIGHT,
+} from '../../../modules/pivotTable/pivotTableConstants'
 
 export const table = css`
     div.pivot-table-container {
@@ -25,32 +35,32 @@ export const cell = css`
         overflow: hidden;
         text-overflow: ellipsis;
         border: 1px solid #b2b2b2;
-        min-width: 150px;
-        width: 150px;
-        max-width: 150px;
-        min-height: 25px;
-        height: 25px;
+        min-width: ${CLIPPED_CELL_WIDTH}px;
+        width: ${CLIPPED_CELL_WIDTH}px;
+        max-width: ${CLIPPED_CELL_WIDTH}px;
+        min-height: ${CLIPPED_CELL_HEIGHT}px;
+        height: ${CLIPPED_CELL_HEIGHT}px;
         cursor: default;
     }
 
     .fontsize-SMALL {
-        font-size: 10px;
+        font-size: ${FONT_SIZE_SMALL}px;
     }
     .fontsize-NORMAL {
-        font-size: 11px;
+        font-size: ${FONT_SIZE_NORMAL}px;
     }
     .fontsize-LARGE {
-        font-size: 13px;
+        font-size: ${FONT_SIZE_LARGE}px;
     }
 
     .displaydensity-COMPACT {
-        padding: 4px;
+        padding: ${DISPLAY_DENSITY_PADDING_COMPACT}px;
     }
     .displaydensity-NORMAL {
-        padding: 5px;
+        padding: ${DISPLAY_DENSITY_PADDING_NORMAL}px;
     }
     .displaydensity-COMFORTABLE {
-        padding: 7px;
+        padding: ${DISPLAY_DENSITY_PADDING_COMFORTABLE}px;
     }
 
     .column-header {
@@ -104,20 +114,20 @@ export const cell = css`
 
 export const sortIcon = css`
     .fontsize-SMALL {
-        height: 10px;
+        height: ${FONT_SIZE_SMALL}px;
         margin-bottom: 1px;
         margin-left: 5px;
     }
 
     .fontsize-NORMAL {
-        height: 11px;
+        height: ${FONT_SIZE_NORMAL}px;
         max-height: 11px;
         margin-bottom: 2px;
         margin-left: 6px;
     }
 
     .fontsize-LARGE {
-        height: 13px;
+        height: ${FONT_SIZE_LARGE}px;
         margin-bottom: 2px;
         margin-left: 7px;
     }
