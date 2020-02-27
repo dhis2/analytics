@@ -1,11 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import classnames from 'classnames'
-import { cell as cellStyle } from './styles/PivotTable.style'
 import { renderValue } from '../../modules/pivotTable/renderValue'
 import { applyLegendSet } from '../../modules/pivotTable/applyLegendSet'
+import { PivotTableCell } from './PivotTableCell'
+import { usePivotTableEngine } from './PivotTableEngineContext'
 
-export const PivotTableValueCell = ({ engine, row, column }) => {
+export const PivotTableValueCell = ({ row, column }) => {
+    const engine = usePivotTableEngine()
+
     const rawValue = engine.get({
         row,
         column,
@@ -30,25 +32,18 @@ export const PivotTableValueCell = ({ engine, row, column }) => {
             : undefined
 
     return (
-        <td
+        <PivotTableCell
             key={column}
-            className={classnames(
-                type,
-                dxDimension.valueType,
-                `fontsize-${engine.visualization.fontSize}`,
-                `displaydensity-${engine.visualization.displayDensity}`
-            )}
+            classes={[type, dxDimension.valueType]}
             title={value}
             style={style}
         >
-            <style jsx>{cellStyle}</style>
-            {value || null}
-        </td>
+            {value ?? null}
+        </PivotTableCell>
     )
 }
 
 PivotTableValueCell.propTypes = {
     column: PropTypes.number.isRequired,
-    engine: PropTypes.object.isRequired,
     row: PropTypes.number.isRequired,
 }

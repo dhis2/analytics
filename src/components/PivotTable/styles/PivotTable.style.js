@@ -7,23 +7,6 @@ export const table = css`
         overflow: auto;
         color: ${colors.grey900};
     }
-    div.pivot-table-container::-webkit-scrollbar {
-        -webkit-appearance: none;
-    }
-
-    div.pivot-table-container::-webkit-scrollbar-vertical {
-        width: 8px;
-    }
-
-    div.pivot-table-container::-webkit-scrollbar-horizontal {
-        height: 8px;
-    }
-
-    div.pivot-table-container::-webkit-scrollbar-thumb {
-        border-radius: 8px;
-        border: 1px solid white; /* should match background, can't be transparent */
-        background-color: rgba(0, 0, 0, 0.5);
-    }
     table {
         border-spacing: 0;
         border-collapse: collapse;
@@ -71,9 +54,6 @@ export const cell = css`
     }
 
     .column-header {
-        position: sticky;
-        top: 0;
-        z-index: 2;
         background-color: #dae6f8;
     }
     div.column-header-inner {
@@ -87,9 +67,6 @@ export const cell = css`
         background-color: #cddaed;
     }
     .row-header {
-        position: sticky;
-        left: 0;
-        z-index: 1;
         background-color: #dae6f8;
     }
     .empty-header {
@@ -123,20 +100,23 @@ export const cell = css`
         overflow: hidden;
         text-overflow: ellipsis;
     }
+`
 
-    .fontsize-SMALL .sort-icon {
+export const sortIcon = css`
+    .fontsize-SMALL {
         height: 10px;
         margin-bottom: 1px;
         margin-left: 5px;
     }
 
-    .fontsize-NORMAL .sort-icon {
+    .fontsize-NORMAL {
         height: 11px;
+        max-height: 11px;
         margin-bottom: 2px;
         margin-left: 6px;
     }
 
-    .fontsize-LARGE .sort-icon {
+    .fontsize-LARGE {
         height: 13px;
         margin-bottom: 2px;
         margin-left: 7px;

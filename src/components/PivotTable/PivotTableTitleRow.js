@@ -1,25 +1,21 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import classnames from 'classnames'
 import { cell as cellStyle } from './styles/PivotTable.style'
+import { usePivotTableEngine } from './PivotTableEngineContext'
+import { PivotTableCell } from './PivotTableCell'
 
 export const PivotTableTitleRow = ({
     title,
     scrollPosition,
     containerWidth,
-    engine,
 }) => {
+    const engine = usePivotTableEngine()
     const columnCount = engine.width + engine.dimensionLookup.rows.length
     return (
         <tr>
             <style jsx>{cellStyle}</style>
-            <td
-                className={classnames(
-                    'column-header',
-                    'title',
-                    `fontsize-${engine.visualization.fontSize}`,
-                    `displaydensity-${engine.visualization.displayDensity}`
-                )}
+            <PivotTableCell
+                classes={['column-header', 'title']}
                 colSpan={columnCount}
             >
                 <div
@@ -35,14 +31,13 @@ export const PivotTableTitleRow = ({
                 >
                     {title}
                 </div>
-            </td>
+            </PivotTableCell>
         </tr>
     )
 }
 
 PivotTableTitleRow.propTypes = {
     containerWidth: PropTypes.number.isRequired,
-    engine: PropTypes.object.isRequired,
     scrollPosition: PropTypes.shape({ x: PropTypes.number.isRequired })
         .isRequired,
     title: PropTypes.string.isRequired,
