@@ -824,6 +824,8 @@ export class PivotTableEngine {
 
         this.height = this.rowMap.length
         this.width = this.columnMap.length
+
+        this.size = this.width * this.height
     }
 
     getColumnType(column) {

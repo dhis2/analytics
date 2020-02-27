@@ -35,12 +35,15 @@ export const cell = css`
         overflow: hidden;
         text-overflow: ellipsis;
         border: 1px solid #b2b2b2;
+        cursor: default;
+    }
+
+    .clipped {
         min-width: ${CLIPPED_CELL_WIDTH}px;
         width: ${CLIPPED_CELL_WIDTH}px;
         max-width: ${CLIPPED_CELL_WIDTH}px;
         min-height: ${CLIPPED_CELL_HEIGHT}px;
         height: ${CLIPPED_CELL_HEIGHT}px;
-        cursor: default;
     }
 
     .fontsize-SMALL {
