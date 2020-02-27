@@ -100,20 +100,23 @@ export const cell = css`
         overflow: hidden;
         text-overflow: ellipsis;
     }
+`
 
-    .fontsize-SMALL .sort-icon {
+export const sortIcon = css`
+    .fontsize-SMALL {
         height: 10px;
         margin-bottom: 1px;
         margin-left: 5px;
     }
 
-    .fontsize-NORMAL .sort-icon {
+    .fontsize-NORMAL {
         height: 11px;
+        max-height: 11px;
         margin-bottom: 2px;
         margin-left: 6px;
     }
 
-    .fontsize-LARGE .sort-icon {
+    .fontsize-LARGE {
         height: 13px;
         margin-bottom: 2px;
         margin-left: 7px;

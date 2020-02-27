@@ -1,16 +1,18 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import PropTypes from 'prop-types'
 import { PivotTableClippedAxis } from './PivotTableClippedAxis'
 import { PivotTableColumnHeaderCell } from './PivotTableColumnHeaderCell'
 import { PivotTableDimensionLabelCell } from './PivotTableDimensionLabelCell'
 import { PivotTableEmptyCell } from './PivotTableEmptyCell'
+import { PivotTableEngineContext } from './PivotTableEngineContext'
 
 export const PivotTableColumnHeaders = ({
-    engine,
     clippingResult,
     onSortByColumn,
     sortBy,
 }) => {
+    const engine = useContext(PivotTableEngineContext)
+
     return engine.dimensionLookup.columns.map((_, columnLevel) => (
         <tr key={columnLevel}>
             {engine.dimensionLookup.rows.map((_, rowLevel) => (
@@ -18,7 +20,6 @@ export const PivotTableColumnHeaders = ({
                     key={rowLevel}
                     rowLevel={rowLevel}
                     columnLevel={columnLevel}
-                    engine={engine}
                 />
             ))}
             <PivotTableClippedAxis
@@ -31,7 +32,6 @@ export const PivotTableColumnHeaders = ({
                 )}
                 ItemComponent={({ index }) => (
                     <PivotTableColumnHeaderCell
-                        engine={engine}
                         clippingResult={clippingResult}
                         index={index}
                         level={columnLevel}
@@ -48,7 +48,6 @@ PivotTableColumnHeaders.propTypes = {
     clippingResult: PropTypes.shape({
         columns: PropTypes.object.isRequired,
     }).isRequired,
-    engine: PropTypes.object.isRequired,
     onSortByColumn: PropTypes.func.isRequired,
     sortBy: PropTypes.shape({
         column: PropTypes.number.isRequired,

@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import classnames from 'classnames'
-import { cell as cellStyle } from './styles/PivotTable.style'
+import { usePivotTableEngine } from './PivotTableEngineContext'
+import { PivotTableCell } from './PivotTableCell'
 
 const getDimensionLabel = (engine, rowLevel, columnLevel) => {
     const lastRowLevel = engine.dimensionLookup.rows.length - 1
@@ -21,71 +21,52 @@ const getDimensionLabel = (engine, rowLevel, columnLevel) => {
     }
 }
 
-export const PivotTableDimensionLabelCell = ({
-    engine,
-    rowLevel,
-    columnLevel,
-}) => {
+export const PivotTableDimensionLabelCell = ({ rowLevel, columnLevel }) => {
+    const engine = usePivotTableEngine()
+
     const colCount = engine.dimensionLookup.rows.length
     const rowCount = engine.dimensionLookup.columns.length
+
+    let colSpan = 1,
+        rowSpan = 1,
+        label
+
     if (!engine.visualization.showDimensionLabels) {
-        if (rowLevel === 0 && columnLevel === 0) {
-            return (
-                <td
-                    className={classnames(
-                        'empty-header',
-                        'column-header',
-                        `fontsize-${engine.visualization.fontSize}`,
-                        `displaydensity-${engine.visualization.displayDensity}`
-                    )}
-                    colSpan={colCount}
-                    rowSpan={rowCount}
-                >
-                    <style jsx>{cellStyle}</style>
-                </td>
-            )
+        if (rowLevel > 0 || columnLevel > 0) {
+            colSpan = rowSpan = 0
+        } else {
+            colSpan = colCount
+            rowSpan = rowCount
         }
+    } else {
+        label = getDimensionLabel(engine, rowLevel, columnLevel)
+        if (!label) {
+            if (rowLevel > 0 || columnLevel > 0) {
+                colSpan = rowSpan = 0
+            } else {
+                colSpan = colCount - 1
+                rowSpan = rowCount - 1
+            }
+        }
+    }
+
+    if (!colSpan || !rowSpan) {
         return null
     }
 
-    const dimensionLabel = getDimensionLabel(engine, rowLevel, columnLevel)
-    if (!dimensionLabel) {
-        if (rowLevel === 0 && columnLevel === 0) {
-            return (
-                <td
-                    className={classnames(
-                        'empty-header',
-                        'column-header',
-                        `fontsize-${engine.visualization.fontSize}`,
-                        `displaydensity-${engine.visualization.displayDensity}`
-                    )}
-                    colSpan={colCount - 1}
-                    rowSpan={rowCount - 1}
-                >
-                    <style jsx>{cellStyle}</style>
-                </td>
-            )
-        }
-        return null
-    }
     return (
-        <th
-            className={classnames(
-                'empty-header',
-                'column-header',
-                `fontsize-${engine.visualization.fontSize}`,
-                `displaydensity-${engine.visualization.displayDensity}`
-            )}
-            title={dimensionLabel}
+        <PivotTableCell
+            classes={['empty-header', 'column-header']}
+            colSpan={colSpan}
+            rowSpan={rowSpan}
+            title={label}
         >
-            <style jsx>{cellStyle}</style>
-            {dimensionLabel}
-        </th>
+            {label}
+        </PivotTableCell>
     )
 }
 
 PivotTableDimensionLabelCell.propTypes = {
     columnLevel: PropTypes.number.isRequired,
-    engine: PropTypes.object.isRequired,
     rowLevel: PropTypes.number.isRequired,
 }
