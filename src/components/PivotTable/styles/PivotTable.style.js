@@ -54,8 +54,6 @@ export const cell = css`
     }
 
     .column-header {
-        top: 0;
-        z-index: 2;
         background-color: #dae6f8;
     }
     div.column-header-inner {
@@ -69,8 +67,6 @@ export const cell = css`
         background-color: #cddaed;
     }
     .row-header {
-        left: 0;
-        z-index: 1;
         background-color: #dae6f8;
     }
     .empty-header {
