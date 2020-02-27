@@ -1,17 +1,17 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import { PivotTableClippedAxis } from './PivotTableClippedAxis'
 import { PivotTableColumnHeaderCell } from './PivotTableColumnHeaderCell'
 import { PivotTableDimensionLabelCell } from './PivotTableDimensionLabelCell'
 import { PivotTableEmptyCell } from './PivotTableEmptyCell'
-import { PivotTableEngineContext } from './PivotTableEngineContext'
+import { usePivotTableEngine } from './PivotTableEngineContext'
 
 export const PivotTableColumnHeaders = ({
     clippingResult,
     onSortByColumn,
     sortBy,
 }) => {
-    const engine = useContext(PivotTableEngineContext)
+    const engine = usePivotTableEngine()
 
     return engine.dimensionLookup.columns.map((_, columnLevel) => (
         <tr key={columnLevel}>
