@@ -1,3 +1,10 @@
+## [4.3.1](https://github.com/dhis2/analytics/compare/v4.3.0...v4.3.1) (2020-02-27)
+
+
+### Bug Fixes
+
+* use default scrollbar, remove sticky headers, remove z-index ([#329](https://github.com/dhis2/analytics/issues/329)) ([7e8e815](https://github.com/dhis2/analytics/commit/7e8e8155873df7c8450ff1ccbac6423c2c7fe20d))
+
 # [4.3.0](https://github.com/dhis2/analytics/compare/v4.2.0...v4.3.0) (2020-02-26)
 
 
