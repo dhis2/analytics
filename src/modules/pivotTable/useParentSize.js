@@ -3,6 +3,7 @@ import ResizeObserver from 'resize-observer-polyfill'
 
 export const useParentSize = (
     elementRef,
+    renderId,
     initialSize = { width: 0, height: 0 }
 ) => {
     const [size, setSize] = useState({
@@ -20,13 +21,18 @@ export const useParentSize = (
                 height: el.clientHeight,
             })
         }
+
         onResize(el)
+
+        if (renderId) {
+            setSize({ width: 0 })
+        }
 
         const observer = new ResizeObserver(onResize)
         observer.observe(el)
 
         return () => observer.disconnect()
-    }, [elementRef])
+    }, [elementRef, renderId])
 
     return size
 }
