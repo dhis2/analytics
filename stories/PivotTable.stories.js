@@ -194,7 +194,7 @@ storiesOf('PivotTable', module).add('deep - subtotals', () => {
         ...deepVisualization,
         ...visualizationReset,
         rowSubTotals: true,
-        // colSubTotals: true
+        colSubTotals: true
     }
     return (
         <div style={{ width: 800, height: 600 }}>

@@ -17,7 +17,7 @@ export const PivotTableValueCell = ({ row, column }) => {
 
     const value = renderValue(
         rawValue,
-        dxDimension.valueType,
+        dxDimension?.valueType,
         engine.visualization
     )
     const type = engine.getCellType({
@@ -27,15 +27,15 @@ export const PivotTableValueCell = ({ row, column }) => {
 
     // TODO: Add support for 'INTEGER' type (requires server changes)
     const style =
-        type === 'value' && dxDimension.valueType === 'NUMBER'
+        type === 'value' && dxDimension?.valueType === 'NUMBER'
             ? applyLegendSet(parseFloat(rawValue), dxDimension, engine)
             : undefined
 
     return (
         <PivotTableCell
             key={column}
-            classes={[type, dxDimension.valueType]}
-            title={value}
+            classes={[type, dxDimension?.valueType]}
+            title={value + ' | ' + dxDimension}
             style={style}
         >
             {value ?? null}

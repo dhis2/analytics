@@ -47,7 +47,7 @@ const toFixedPrecisionString = (value, skipRounding) => {
 }
 
 export const renderValue = (value, valueType, visualization) => {
-    if (valueType !== 'NUMBER' || !value) {
+    if (valueType !== 'NUMBER' || value === undefined) {
         return value
     }
 
