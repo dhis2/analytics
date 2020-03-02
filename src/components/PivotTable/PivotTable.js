@@ -16,9 +16,9 @@ import { PivotTableTitleRow } from './PivotTableTitleRow'
 import { PivotTableEmptyRow } from './PivotTableEmptyRow'
 import getFilterText from '../../visualizations/util/getFilterText'
 
-const PivotTable = ({ visualization, data, legendSets, renderId }) => {
+const PivotTable = ({ visualization, data, legendSets, renderCounter }) => {
     const containerRef = useRef(undefined)
-    const { width, height } = useParentSize(containerRef, renderId)
+    const { width, height } = useParentSize(containerRef, renderCounter)
     const [sortBy, setSortBy] = useState(null)
 
     const engine = useMemo(
@@ -123,7 +123,7 @@ PivotTable.propTypes = {
     data: PropTypes.object.isRequired,
     visualization: PropTypes.object.isRequired,
     legendSets: PropTypes.arrayOf(PropTypes.object),
-    renderId: PropTypes.string,
+    renderCounter: PropTypes.number,
 }
 
 export default PivotTable
