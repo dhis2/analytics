@@ -1,3 +1,10 @@
+## [4.3.2](https://github.com/dhis2/analytics/compare/v4.3.1...v4.3.2) (2020-03-02)
+
+
+### Bug Fixes
+
+* reflow pivot table when interpretations panel is toggled ([#332](https://github.com/dhis2/analytics/issues/332)) ([f1c136d](https://github.com/dhis2/analytics/commit/f1c136daeb8d696bbd94723d3509f7be9e2c5e81))
+
 ## [4.3.1](https://github.com/dhis2/analytics/compare/v4.3.0...v4.3.1) (2020-02-27)
 
 
