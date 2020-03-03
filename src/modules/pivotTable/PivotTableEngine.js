@@ -383,9 +383,11 @@ export class PivotTableEngine {
         const rowHeaders = this.getRawRowHeader(row)
         const columnHeaders = this.getRawColumnHeader(column)
 
+        if (!this.data[row]) {
+            return undefined
+        }
         const cellValue = this.data[row][column]
         if (!Array.isArray(cellValue)) {
-            console.log(cellValue)
             return cellValue
         }
 
@@ -443,8 +445,7 @@ export class PivotTableEngine {
         })
     }
     getColumnHeader(column) {
-        column = this.columnMap[column]
-        return this.getRawColumnHeader(column)
+        return this.getRawColumnHeader(this.columnMap[column])
     }
 
     getRawRowHeader(row) {
@@ -470,8 +471,7 @@ export class PivotTableEngine {
         })
     }
     getRowHeader(row) {
-        row = this.rowMap[row]
-        return this.getRawRowHeader(row)
+        return this.getRawRowHeader(this.rowMap[row])
     }
 
     getDependantTotalCells({ row, column }) {
@@ -730,13 +730,16 @@ export class PivotTableEngine {
                             totalCell.value = applyTotalAggregationType(
                                 totalCell
                             )
-                            this.columnWidths[column] = measureText(
-                                renderValue(
-                                    totalCell.value,
-                                    totalCell.valueType,
-                                    this.visualization
-                                ),
-                                this.fontSize
+                            this.columnWidths[column] = Math.max(
+                                this.columnWidths[column] || 0,
+                                measureText(
+                                    renderValue(
+                                        totalCell.value,
+                                        totalCell.valueType,
+                                        this.visualization
+                                    ),
+                                    this.fontSize
+                                )
                             )
                         }
                     }
@@ -762,6 +765,17 @@ export class PivotTableEngine {
                             totalCell.value = applyTotalAggregationType(
                                 totalCell
                             )
+                            this.columnWidths[column] = Math.max(
+                                this.columnWidths[column] || 0,
+                                measureText(
+                                    renderValue(
+                                        totalCell.value,
+                                        totalCell.valueType,
+                                        this.visualization
+                                    ),
+                                    this.fontSize
+                                )
+                            )
                         }
                     }
                 })
@@ -783,6 +797,17 @@ export class PivotTableEngine {
                     const totalCell = this.data[row][column]
                     if (totalCell && totalCell.count) {
                         totalCell.value = applyTotalAggregationType(totalCell)
+                        this.columnWidths[column] = Math.max(
+                            this.columnWidths[column] || 0,
+                            measureText(
+                                renderValue(
+                                    totalCell.value,
+                                    totalCell.valueType,
+                                    this.visualization
+                                ),
+                                this.fontSize
+                            )
+                        )
                     }
                 })
             })
@@ -796,6 +821,17 @@ export class PivotTableEngine {
                 const totalCell = this.data[row][column]
                 if (totalCell && totalCell.count) {
                     totalCell.value = applyTotalAggregationType(totalCell)
+                    this.columnWidths[column] = Math.max(
+                        this.columnWidths[column] || 0,
+                        measureText(
+                            renderValue(
+                                totalCell.value,
+                                totalCell.valueType,
+                                this.visualization
+                            ),
+                            this.fontSize
+                        )
+                    )
                 }
             })
         }
@@ -806,6 +842,17 @@ export class PivotTableEngine {
                 const totalCell = this.data[row][column]
                 if (totalCell && totalCell.count) {
                     totalCell.value = applyTotalAggregationType(totalCell)
+                    this.columnWidths[column] = Math.max(
+                        this.columnWidths[column] || 0,
+                        measureText(
+                            renderValue(
+                                totalCell.value,
+                                totalCell.valueType,
+                                this.visualization
+                            ),
+                            this.fontSize
+                        )
+                    )
                 }
             })
         }
@@ -936,11 +983,11 @@ export class PivotTableEngine {
         this.height = this.rowMap.length
         this.width = this.columnMap.length
 
-        this.dataPixelWidth = 0;
-        let nextPartitionPx = 0;
+        this.dataPixelWidth = 0
+        let nextPartitionPx = 0
         this.columnPartitions = []
 
-        this.columnMap.forEach((width, column) => {
+        this.columnMap.forEach(column => {
             const header = this.getRawColumnHeader(column)[
                 this.dimensionLookup.columns.length - 1
             ]
@@ -952,15 +999,19 @@ export class PivotTableEngine {
             if (label) {
                 const headerSize = measureText(label, this.fontSize)
                 this.columnWidths[column] = Math.max(
-                    width,
+                    this.columnWidths[column] || 0,
                     headerSize +
-                        (this.isSortable(column) ? this.scrollIconBuffer : 0) +
-                        this.cellPadding * 2 +
-                        /*border*/ 2
+                        (this.isSortable(column) ? this.scrollIconBuffer : 0)
                 )
             }
 
-            const colWidth = Math.min(CLIPPED_CELL_MAX_WIDTH, Math.ceil(this.columnWidths[column]))
+            const colWidth =
+                Math.min(
+                    CLIPPED_CELL_MAX_WIDTH,
+                    Math.ceil(this.columnWidths[column])
+                ) +
+                this.cellPadding * 2 +
+                /*border*/ 2
             this.columnWidths[column] = {
                 pre: this.dataPixelWidth,
                 width: colWidth,
@@ -973,7 +1024,7 @@ export class PivotTableEngine {
             this.dataPixelWidth += colWidth
         })
 
-        this.rowHeaderPixelWidth = 0;
+        this.rowHeaderPixelWidth = 0
         this.rowHeaderWidths = this.dimensionLookup.rows.map((_, rowLevel) => {
             let maxWidth = 0
             this.rowMap.forEach(rawColumn => {
@@ -995,12 +1046,14 @@ export class PivotTableEngine {
                     maxWidth = Math.max(maxWidth, headerSize)
                 }
             })
-            const columnWidth = Math.min(CLIPPED_CELL_MAX_WIDTH, Math.ceil(maxWidth)) + this.cellPadding * 2 + /*border*/ 2
+            const columnWidth =
+                Math.min(CLIPPED_CELL_MAX_WIDTH, Math.ceil(maxWidth)) +
+                this.cellPadding * 2 +
+                /*border*/ 2
             this.rowHeaderPixelWidth += columnWidth
             return columnWidth
         })
-
-        console.log(this)
+        console.log(this.columnWidths)
     }
 
     getColumnType(column) {

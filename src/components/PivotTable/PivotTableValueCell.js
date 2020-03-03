@@ -35,7 +35,7 @@ export const PivotTableValueCell = ({ row, column }) => {
         <PivotTableCell
             key={column}
             classes={[type, dxDimension?.valueType]}
-            title={value + ' | ' + dxDimension}
+            title={value}
             style={style}
         >
             {value ?? null}

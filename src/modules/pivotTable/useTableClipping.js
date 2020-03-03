@@ -1,11 +1,18 @@
 import { useMemo } from 'react'
 import { useScrollPosition } from './useScrollPosition'
 import { clipAxis } from './clipAxis'
-import { CLIPPED_CELL_HEIGHT, COLUMN_PARTITION_SIZE_PX } from './pivotTableConstants'
+import { COLUMN_PARTITION_SIZE_PX } from './pivotTableConstants'
 
 // const CLIPPING_BUFFER = 100
 
-const clipPartitionedAxis = ({ partitionSize, partitions, widthMap, viewportWidth, viewportPosition, totalWidth} ) => {
+const clipPartitionedAxis = ({
+    partitionSize,
+    partitions,
+    widthMap,
+    viewportWidth,
+    viewportPosition,
+    totalWidth,
+}) => {
     const partition = Math.floor(viewportPosition / partitionSize)
 
     if (partitions[partition] === undefined) {
@@ -20,7 +27,10 @@ const clipPartitionedAxis = ({ partitionSize, partitions, widthMap, viewportWidt
     const pre = widthMap[start].pre
     const indices = []
     let end = start
-    while (end < widthMap.length && widthMap[end].pre < viewportPosition + viewportWidth) {
+    while (
+        end < widthMap.length &&
+        widthMap[end].pre < viewportPosition + viewportWidth
+    ) {
         indices.push(end)
         ++end
     }
@@ -30,7 +40,7 @@ const clipPartitionedAxis = ({ partitionSize, partitions, widthMap, viewportWidt
     return {
         indices,
         pre,
-        post
+        post,
     }
 }
 
@@ -48,7 +58,7 @@ export const useTableClipping = ({
             clipAxis({
                 position: scrollPosition.y,
                 size: height,
-                step: CLIPPED_CELL_HEIGHT,
+                step: engine.fontSize + engine.cellPadding * 2 + 2,
                 totalCount: engine.height,
                 headerCount:
                     visualization.columns.length +
@@ -56,28 +66,39 @@ export const useTableClipping = ({
                     (engine.options.subtitle ? 1 : 0),
             }),
         [
+            scrollPosition.y,
             height,
+            engine.fontSize,
+            engine.cellPadding,
             engine.height,
             engine.options.title,
             engine.options.subtitle,
-            scrollPosition.y,
             visualization.columns.length,
         ]
     )
-    const columns = useMemo(
-        () => {
-            const viewportPosition = Math.max(0, scrollPosition.x - engine.rowHeaderPixelWidth)
-            const viewportWidth = width - Math.max(engine.rowHeaderPixelWidth - scrollPosition.x, 0);
-            return clipPartitionedAxis({
-                partitionSize: COLUMN_PARTITION_SIZE_PX,
-                partitions: engine.columnPartitions,
-                widthMap: engine.columnWidths,
-                viewportWidth,
-                viewportPosition,
-                totalWidth: engine.dataPixelWidth
-            })
-        }, [width, engine.columnPartitions, engine.columnWidths, scrollPosition.x, engine.dataPixelWidth, engine.rowHeaderPixelWidth]
-    )
+    const columns = useMemo(() => {
+        const viewportPosition = Math.max(
+            0,
+            scrollPosition.x - engine.rowHeaderPixelWidth
+        )
+        const viewportWidth =
+            width - Math.max(engine.rowHeaderPixelWidth - scrollPosition.x, 0)
+        return clipPartitionedAxis({
+            partitionSize: COLUMN_PARTITION_SIZE_PX,
+            partitions: engine.columnPartitions,
+            widthMap: engine.columnWidths,
+            viewportWidth,
+            viewportPosition,
+            totalWidth: engine.dataPixelWidth,
+        })
+    }, [
+        width,
+        engine.columnPartitions,
+        engine.columnWidths,
+        scrollPosition.x,
+        engine.dataPixelWidth,
+        engine.rowHeaderPixelWidth,
+    ])
 
     return {
         rows,

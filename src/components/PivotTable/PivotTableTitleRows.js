@@ -10,29 +10,35 @@ export const PivotTableTitleRows = ({ clippingResult, width }) => {
         <>
             {engine.options.title ? (
                 <PivotTableTitleRow
-                    engine={engine}
                     title={engine.options.title}
                     scrollPosition={clippingResult.scrollPosition}
                     containerWidth={width}
+                    totalWidth={
+                        engine.dataPixelWidth + engine.rowHeaderPixelWidth
+                    }
                 />
             ) : null}
             {engine.options.subtitle ? (
                 <PivotTableTitleRow
-                    engine={engine}
                     title={engine.options.subtitle}
                     scrollPosition={clippingResult.scrollPosition}
                     containerWidth={width}
+                    totalWidth={
+                        engine.dataPixelWidth + engine.rowHeaderPixelWidth
+                    }
                 />
             ) : null}
             {engine.visualization.filters?.length ? (
                 <PivotTableTitleRow
-                    engine={engine}
                     title={getFilterText(
                         engine.visualization.filters,
                         engine.rawData.metaData
                     )}
                     scrollPosition={clippingResult.scrollPosition}
                     containerWidth={width}
+                    totalWidth={
+                        engine.dataPixelWidth + engine.rowHeaderPixelWidth
+                    }
                 />
             ) : null}
         </>

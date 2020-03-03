@@ -203,6 +203,22 @@ storiesOf('PivotTable', module).add('deep - subtotals', () => {
     )
 })
 
+storiesOf('PivotTable', module).add('deep - all totals', () => {
+    const visualization = {
+        ...deepVisualization,
+        ...visualizationReset,
+        rowSubTotals: true,
+        colSubTotals: true,
+        rowTotals: true,
+        colTotals: true
+    }
+    return (
+        <div style={{ width: 800, height: 600 }}>
+            <PivotTable data={deepData} visualization={visualization} />
+        </div>
+    )
+})
+
 storiesOf('PivotTable', module).add('empty rows - shown', () => {
     const visualization = {
         ...emptyRowsVisualization,

@@ -8,9 +8,12 @@ export const PivotTableCell = ({
     classes,
     isColumnHeader,
     children,
+    style = {},
     ...props
 }) => {
     const engine = usePivotTableEngine()
+    style.height = style.minHeight = style.maxHeight =
+        style.height || engine.fontSize + engine.cellPadding * 2 + 2
 
     const className = classnames(
         classes,
@@ -19,12 +22,12 @@ export const PivotTableCell = ({
     )
 
     return isColumnHeader ? (
-        <th className={className} {...props}>
+        <th className={className} style={style} {...props}>
             <style jsx>{cellStyle}</style>
             {children}
         </th>
     ) : (
-        <td className={className} {...props}>
+        <td className={className} style={style} {...props}>
             <style jsx>{cellStyle}</style>
             {children}
         </td>
@@ -42,4 +45,5 @@ PivotTableCell.propTypes = {
         PropTypes.string,
     ]),
     isColumnHeader: PropTypes.bool,
+    style: PropTypes.object,
 }

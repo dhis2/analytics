@@ -38,12 +38,15 @@ export const cell = css`
 
     .fontsize-SMALL {
         font-size: ${FONT_SIZE_SMALL}px;
+        line-height: ${FONT_SIZE_SMALL}px;
     }
     .fontsize-NORMAL {
         font-size: ${FONT_SIZE_NORMAL}px;
+        line-height: ${FONT_SIZE_NORMAL}px;
     }
     .fontsize-LARGE {
         font-size: ${FONT_SIZE_LARGE}px;
+        line-height: ${FONT_SIZE_LARGE}px;
     }
 
     .displaydensity-COMPACT {

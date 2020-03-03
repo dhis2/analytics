@@ -16,10 +16,8 @@ export const PivotTableColumnHeaderCell = ({
 }) => {
     const engine = usePivotTableEngine()
 
-    const width =
-        level === engine.dimensionLookup.columns.length - 1
-            ? engine.columnWidths[index]?.width
-            : undefined
+    const width = engine.columnWidths[index]?.width
+
     return (
         <PivotTableHeaderCell
             axisClippingResult={clippingResult.columns}
