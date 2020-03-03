@@ -122,7 +122,7 @@ export {
     visTypeDisplayNames,
     visTypeIcons,
     getDisplayNameByVisType,
-    defaultChartType,
+    defaultVisType,
     isStacked,
     isYearOverYear,
     isDualAxisType,
