@@ -1,24 +1,26 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { usePivotTableEngine } from './PivotTableEngineContext'
+import { PivotTableCell } from './PivotTableCell'
 
-import { cell as cellStyle } from './styles/PivotTable.style'
+export const PivotTableEmptyRow = ({ height, columns }) => {
+    const engine = usePivotTableEngine()
 
-export const PivotTableEmptyRow = ({ height, engine, columns }) => (
-    <tr>
-        <style jsx>{cellStyle}</style>
-        <td
-            colSpan={engine.dimensionLookup.rows.length}
-            style={{ height }}
-            className="row-header"
-        />
-        {columns.map(i => (
-            <td key={i} />
-        ))}
-    </tr>
-)
+    return (
+        <tr>
+            <PivotTableCell
+                colSpan={engine.dimensionLookup.rows.length}
+                style={{ height }}
+                classes="row-header"
+            />
+            {columns.map(i => (
+                <PivotTableCell key={i} />
+            ))}
+        </tr>
+    )
+}
 
 PivotTableEmptyRow.propTypes = {
     columns: PropTypes.array.isRequired,
-    engine: PropTypes.object.isRequired,
     height: PropTypes.number.isRequired,
 }

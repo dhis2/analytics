@@ -5,9 +5,16 @@ import {
     DIMENSION_ID_PERIOD,
     DIMENSION_ID_ORGUNIT,
 } from '../predefinedDimensions'
-
-export const SORT_ORDER_ASCENDING = 1
-export const SORT_ORDER_DESCENDING = -1
+import {
+    AGGREGATE_TYPE_NA,
+    AGGREGATE_TYPE_AVERAGE,
+    AGGREGATE_TYPE_SUM,
+    CELL_TYPE_VALUE,
+    CELL_TYPE_TOTAL,
+    CELL_TYPE_SUBTOTAL,
+    SORT_ORDER_ASCENDING,
+    SORT_ORDER_DESCENDING,
+} from './pivotTableConstants'
 
 const dataFields = [
     'value',
@@ -17,11 +24,6 @@ const dataFields = [
     'multiplier',
     'divisor',
 ]
-
-const CELL_TYPE_VALUE = 'value'
-const CELL_TYPE_SUBTOTAL = 'subtotal'
-const CELL_TYPE_TOTAL = 'total'
-
 const defaultOptions = {
     hideEmptyColumns: false,
     hideEmptyRows: false,
@@ -29,12 +31,7 @@ const defaultOptions = {
     showColumnTotals: false,
     showRowSubtotals: false,
     showColumnSubtotals: false,
-    aggregateType: 'count',
 }
-
-const AGGREGATE_TYPE_SUM = 'SUM'
-const AGGREGATE_TYPE_AVERAGE = 'AVERAGE'
-const AGGREGATE_TYPE_NA = 'N/A'
 
 const countFromDisaggregates = list => {
     if (list.length === 0) {

@@ -1,6 +1,7 @@
 import { useMemo } from 'react'
 import { useScrollPosition } from './useScrollPosition'
 import { clipAxis } from './clipAxis'
+import { CLIPPED_CELL_WIDTH, CLIPPED_CELL_HEIGHT } from './pivotTableConstants'
 
 export const useTableClipping = ({
     containerRef,
@@ -15,7 +16,7 @@ export const useTableClipping = ({
             clipAxis({
                 position: scrollPosition.y,
                 size: height,
-                step: 25,
+                step: CLIPPED_CELL_HEIGHT,
                 totalCount: engine.height,
                 headerCount:
                     visualization.columns.length +
@@ -36,7 +37,7 @@ export const useTableClipping = ({
             clipAxis({
                 position: scrollPosition.x,
                 size: width,
-                step: 150,
+                step: CLIPPED_CELL_WIDTH,
                 totalCount: engine.width,
                 headerCount: visualization.rows.length,
             }),
