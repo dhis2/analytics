@@ -1053,7 +1053,6 @@ export class PivotTableEngine {
             this.rowHeaderPixelWidth += columnWidth
             return columnWidth
         })
-        console.log(this.columnWidths)
     }
 
     getColumnType(column) {
