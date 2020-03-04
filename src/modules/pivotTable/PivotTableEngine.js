@@ -730,16 +730,10 @@ export class PivotTableEngine {
                             totalCell.value = applyTotalAggregationType(
                                 totalCell
                             )
-                            this.columnWidths[column] = Math.max(
-                                this.columnWidths[column] || 0,
-                                measureText(
-                                    renderValue(
-                                        totalCell.value,
-                                        totalCell.valueType,
-                                        this.visualization
-                                    ),
-                                    this.fontSize
-                                )
+                            this.addCellForAdaptiveClipping(
+                                { row, column },
+                                totalCell.value,
+                                totalCell.valueType
                             )
                         }
                     }
@@ -765,16 +759,10 @@ export class PivotTableEngine {
                             totalCell.value = applyTotalAggregationType(
                                 totalCell
                             )
-                            this.columnWidths[column] = Math.max(
-                                this.columnWidths[column] || 0,
-                                measureText(
-                                    renderValue(
-                                        totalCell.value,
-                                        totalCell.valueType,
-                                        this.visualization
-                                    ),
-                                    this.fontSize
-                                )
+                            this.addCellForAdaptiveClipping(
+                                { row, column },
+                                totalCell.value,
+                                totalCell.valueType
                             )
                         }
                     }
@@ -797,16 +785,10 @@ export class PivotTableEngine {
                     const totalCell = this.data[row][column]
                     if (totalCell && totalCell.count) {
                         totalCell.value = applyTotalAggregationType(totalCell)
-                        this.columnWidths[column] = Math.max(
-                            this.columnWidths[column] || 0,
-                            measureText(
-                                renderValue(
-                                    totalCell.value,
-                                    totalCell.valueType,
-                                    this.visualization
-                                ),
-                                this.fontSize
-                            )
+                        this.addCellForAdaptiveClipping(
+                            { row, column },
+                            totalCell.value,
+                            totalCell.valueType
                         )
                     }
                 })
@@ -821,16 +803,10 @@ export class PivotTableEngine {
                 const totalCell = this.data[row][column]
                 if (totalCell && totalCell.count) {
                     totalCell.value = applyTotalAggregationType(totalCell)
-                    this.columnWidths[column] = Math.max(
-                        this.columnWidths[column] || 0,
-                        measureText(
-                            renderValue(
-                                totalCell.value,
-                                totalCell.valueType,
-                                this.visualization
-                            ),
-                            this.fontSize
-                        )
+                    this.addCellForAdaptiveClipping(
+                        { row, column },
+                        totalCell.value,
+                        totalCell.valueType
                     )
                 }
             })
@@ -842,16 +818,10 @@ export class PivotTableEngine {
                 const totalCell = this.data[row][column]
                 if (totalCell && totalCell.count) {
                     totalCell.value = applyTotalAggregationType(totalCell)
-                    this.columnWidths[column] = Math.max(
-                        this.columnWidths[column] || 0,
-                        measureText(
-                            renderValue(
-                                totalCell.value,
-                                totalCell.valueType,
-                                this.visualization
-                            ),
-                            this.fontSize
-                        )
+                    this.addCellForAdaptiveClipping(
+                        { row, column },
+                        totalCell.value,
+                        totalCell.valueType
                     )
                 }
             })
@@ -862,6 +832,90 @@ export class PivotTableEngine {
                 item.value = applyTotalAggregationType(item)
             })
         }
+    }
+
+    addCellForAdaptiveClipping({ column }, value, valueType) {
+        this.columnWidths[column] = Math.max(
+            this.columnWidths[column] || 0,
+            measureText(
+                renderValue(value, valueType, this.visualization),
+                this.fontSize
+            )
+        )
+    }
+
+    finalizeAdaptiveClipping() {
+        this.dataPixelWidth = 0
+        this.rowHeaderPixelWidth = 0
+
+        let nextPartitionPx = 0
+        this.columnPartitions = []
+
+        this.columnMap.forEach(column => {
+            const header = this.getRawColumnHeader(column)[
+                this.dimensionLookup.columns.length - 1
+            ]
+            const label =
+                this.visualization.showHierarchy && header?.hierarchy
+                    ? header.hierarchy.join(' / ')
+                    : header?.name
+
+            if (label) {
+                const headerSize = measureText(label, this.fontSize)
+                this.columnWidths[column] = Math.max(
+                    this.columnWidths[column] || 0,
+                    headerSize +
+                        (this.isSortable(column) ? this.scrollIconBuffer : 0)
+                )
+            }
+
+            const colWidth =
+                Math.min(
+                    CLIPPED_CELL_MAX_WIDTH,
+                    Math.ceil(this.columnWidths[column])
+                ) +
+                this.cellPadding * 2 +
+                /*border*/ 2
+            this.columnWidths[column] = {
+                pre: this.dataPixelWidth,
+                width: colWidth,
+            }
+
+            if (this.dataPixelWidth >= nextPartitionPx) {
+                this.columnPartitions.push(column)
+                nextPartitionPx += COLUMN_PARTITION_SIZE_PX
+            }
+            this.dataPixelWidth += colWidth
+        })
+
+        this.rowHeaderWidths = this.dimensionLookup.rows.map((_, rowLevel) => {
+            let maxWidth = 0
+            this.rowMap.forEach(rawColumn => {
+                const header = this.getRawRowHeader(rawColumn)[rowLevel]
+                const label =
+                    this.visualization.showHierarchy && header?.hierarchy
+                        ? header.hierarchy.join(' / ')
+                        : header?.name
+                if (label) {
+                    const headerSize = measureText(label, this.fontSize)
+                    maxWidth = Math.max(maxWidth, headerSize)
+                }
+            }, 0)
+
+            this.dimensionLookup.columns.forEach((_, columnLevel) => {
+                const label = this.getDimensionLabel(rowLevel, columnLevel)
+                if (label) {
+                    const headerSize = measureText(label, this.fontSize)
+                    maxWidth = Math.max(maxWidth, headerSize)
+                }
+            })
+            const columnWidth =
+                Math.min(CLIPPED_CELL_MAX_WIDTH, Math.ceil(maxWidth)) +
+                this.cellPadding * 2 +
+                /*border*/ 2
+            this.rowHeaderPixelWidth += columnWidth
+            return columnWidth
+        })
     }
 
     resetRowMap() {
@@ -960,18 +1014,11 @@ export class PivotTableEngine {
             this.data[pos.row][pos.column] = dataRow
 
             const dxDimension = this.getRawCellDxDimension(pos)
-            this.columnWidths[pos.column] = Math.max(
-                this.columnWidths[pos.column] || 0,
-                measureText(
-                    renderValue(
-                        this.getRaw(pos),
-                        dxDimension.valueType,
-                        this.visualization
-                    ),
-                    this.fontSize
-                )
+            this.addCellForAdaptiveClipping(
+                pos,
+                this.getRaw(pos),
+                dxDimension.valueType
             )
-
             this.addCellValueToTotals(pos, dataRow)
         })
 
@@ -983,76 +1030,7 @@ export class PivotTableEngine {
         this.height = this.rowMap.length
         this.width = this.columnMap.length
 
-        this.dataPixelWidth = 0
-        let nextPartitionPx = 0
-        this.columnPartitions = []
-
-        this.columnMap.forEach(column => {
-            const header = this.getRawColumnHeader(column)[
-                this.dimensionLookup.columns.length - 1
-            ]
-            const label =
-                this.visualization.showHierarchy && header?.hierarchy
-                    ? header.hierarchy.join(' / ')
-                    : header?.name
-
-            if (label) {
-                const headerSize = measureText(label, this.fontSize)
-                this.columnWidths[column] = Math.max(
-                    this.columnWidths[column] || 0,
-                    headerSize +
-                        (this.isSortable(column) ? this.scrollIconBuffer : 0)
-                )
-            }
-
-            const colWidth =
-                Math.min(
-                    CLIPPED_CELL_MAX_WIDTH,
-                    Math.ceil(this.columnWidths[column])
-                ) +
-                this.cellPadding * 2 +
-                /*border*/ 2
-            this.columnWidths[column] = {
-                pre: this.dataPixelWidth,
-                width: colWidth,
-            }
-
-            if (this.dataPixelWidth >= nextPartitionPx) {
-                this.columnPartitions.push(column)
-                nextPartitionPx += COLUMN_PARTITION_SIZE_PX
-            }
-            this.dataPixelWidth += colWidth
-        })
-
-        this.rowHeaderPixelWidth = 0
-        this.rowHeaderWidths = this.dimensionLookup.rows.map((_, rowLevel) => {
-            let maxWidth = 0
-            this.rowMap.forEach(rawColumn => {
-                const header = this.getRawRowHeader(rawColumn)[rowLevel]
-                const label =
-                    this.visualization.showHierarchy && header?.hierarchy
-                        ? header.hierarchy.join(' / ')
-                        : header?.name
-                if (label) {
-                    const headerSize = measureText(label, this.fontSize)
-                    maxWidth = Math.max(maxWidth, headerSize)
-                }
-            }, 0)
-
-            this.dimensionLookup.columns.forEach((_, columnLevel) => {
-                const label = this.getDimensionLabel(rowLevel, columnLevel)
-                if (label) {
-                    const headerSize = measureText(label, this.fontSize)
-                    maxWidth = Math.max(maxWidth, headerSize)
-                }
-            })
-            const columnWidth =
-                Math.min(CLIPPED_CELL_MAX_WIDTH, Math.ceil(maxWidth)) +
-                this.cellPadding * 2 +
-                /*border*/ 2
-            this.rowHeaderPixelWidth += columnWidth
-            return columnWidth
-        })
+        this.finalizeAdaptiveClipping()
     }
 
     getColumnType(column) {
