@@ -1,0 +1,132 @@
+{
+    "lastUpdated": "2020-03-04T10:03:46.755",
+    "id": "CcjaXXU4VNb",
+    "created": "2020-03-04T10:03:46.755",
+    "name": "TEST_EMPTY_COLUMNS",
+    "publicAccess": "--------",
+    "legendDisplayStyle": "FILL",
+    "type": "PIVOT_TABLE",
+    "hideEmptyColumns": true,
+    "subscribed": false,
+    "rowSubTotals": false,
+    "cumulativeValues": false,
+    "showDimensionLabels": false,
+    "sortOrder": 0,
+    "fontSize": "NORMAL",
+    "favorite": false,
+    "topLimit": 0,
+    "displayName": "TEST_EMPTY_COLUMNS",
+    "percentStackedValues": false,
+    "noSpaceBetweenColumns": false,
+    "showHierarchy": false,
+    "hideTitle": false,
+    "skipRounding": false,
+    "showData": true,
+    "numberType": "VALUE",
+    "hideEmptyRows": false,
+    "parentGraphMap": {
+        "ImspTQPwCqd": ""
+    },
+    "displayDensity": "NORMAL",
+    "regressionType": "NONE",
+    "completedOnly": false,
+    "colTotals": false,
+    "hideEmptyRowItems": "NONE",
+    "aggregationType": "DEFAULT",
+    "hideSubtitle": false,
+    "hideLegend": false,
+    "colSubTotals": false,
+    "legendDisplayStrategy": "FIXED",
+    "rowTotals": false,
+    "digitGroupSeparator": "SPACE",
+    "regression": false,
+    "access": {
+        "read": true,
+        "update": true,
+        "externalize": true,
+        "delete": true,
+        "write": true,
+        "manage": true,
+        "data": {
+            "read": true,
+            "write": true
+        }
+    },
+    "reportingParams": {
+        "parentOrganisationUnit": false,
+        "reportingPeriod": false,
+        "organisationUnit": false,
+        "grandParentOrganisationUnit": false
+    },
+    "lastUpdatedBy": {
+        "id": "GOLswS44mh8"
+    },
+    "user": {
+        "name": "Tom Wakiki",
+        "displayName": "Tom Wakiki",
+        "userCredentials": {
+            "username": "system"
+        }
+    },
+    "translations": [],
+    "yearlySeries": [],
+    "interpretations": [],
+    "userGroupAccesses": [],
+    "subscribers": [],
+    "optionalAxes": [],
+    "columns": [
+        {
+            "dimension": "dx",
+            "items": [
+                {
+                    "name": "Community Health Assistant (CHA)",
+                    "id": "vBu1MTGwcZh",
+                    "displayName": "Community Health Assistant (CHA)",
+                    "displayShortName": "CHA",
+                    "dimensionItemType": "DATA_ELEMENT"
+                },
+                {
+                    "name": "ANC 1st visit",
+                    "id": "fbfJHSPpUQD",
+                    "displayName": "ANC 1st visit",
+                    "displayShortName": "ANC 1st visit",
+                    "dimensionItemType": "DATA_ELEMENT"
+                }
+            ]
+        },
+        {
+            "dimension": "co",
+            "items": []
+        }
+    ],
+    "userAccesses": [],
+    "favorites": [],
+    "filters": [
+        {
+            "dimension": "ou",
+            "items": [
+                {
+                    "name": "Sierra Leone",
+                    "id": "ImspTQPwCqd",
+                    "displayName": "Sierra Leone",
+                    "displayShortName": "Sierra Leone",
+                    "dimensionItemType": "ORGANISATION_UNIT"
+                }
+            ]
+        }
+    ],
+    "rows": [
+        {
+            "dimension": "pe",
+            "items": [
+                {
+                    "name": "LAST_12_MONTHS",
+                    "id": "LAST_12_MONTHS",
+                    "displayName": "LAST_12_MONTHS",
+                    "displayShortName": "LAST_12_MONTHS",
+                    "dimensionItemType": "PERIOD"
+                }
+            ]
+        }
+    ]
+}

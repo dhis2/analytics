@@ -1,0 +1,237 @@
+{
+    "metaData": {
+        "items": {
+            "201907": {
+                "uid": "201907",
+                "code": "201907",
+                "name": "July 2019",
+                "dimensionItemType": "PERIOD",
+                "valueType": "NUMBER",
+                "totalAggregationType": "SUM",
+                "startDate": "2019-07-01T00:00:00.000",
+                "endDate": "2019-07-31T00:00:00.000"
+            },
+            "201906": {
+                "uid": "201906",
+                "code": "201906",
+                "name": "June 2019",
+                "dimensionItemType": "PERIOD",
+                "valueType": "NUMBER",
+                "totalAggregationType": "SUM",
+                "startDate": "2019-06-01T00:00:00.000",
+                "endDate": "2019-06-30T00:00:00.000"
+            },
+            "vBu1MTGwcZh": {
+                "uid": "vBu1MTGwcZh",
+                "code": "DE_360535",
+                "name": "Community Health Assistant (CHA)",
+                "dimensionItemType": "DATA_ELEMENT",
+                "valueType": "NUMBER",
+                "aggregationType": "AVERAGE_SUM_ORG_UNIT",
+                "totalAggregationType": "SUM"
+            },
+            "201909": {
+                "uid": "201909",
+                "code": "201909",
+                "name": "September 2019",
+                "dimensionItemType": "PERIOD",
+                "valueType": "NUMBER",
+                "totalAggregationType": "SUM",
+                "startDate": "2019-09-01T00:00:00.000",
+                "endDate": "2019-09-30T00:00:00.000"
+            },
+            "201908": {
+                "uid": "201908",
+                "code": "201908",
+                "name": "August 2019",
+                "dimensionItemType": "PERIOD",
+                "valueType": "NUMBER",
+                "totalAggregationType": "SUM",
+                "startDate": "2019-08-01T00:00:00.000",
+                "endDate": "2019-08-31T00:00:00.000"
+            },
+            "201903": {
+                "uid": "201903",
+                "code": "201903",
+                "name": "March 2019",
+                "dimensionItemType": "PERIOD",
+                "valueType": "NUMBER",
+                "totalAggregationType": "SUM",
+                "startDate": "2019-03-01T00:00:00.000",
+                "endDate": "2019-03-31T00:00:00.000"
+            },
+            "201905": {
+                "uid": "201905",
+                "code": "201905",
+                "name": "May 2019",
+                "dimensionItemType": "PERIOD",
+                "valueType": "NUMBER",
+                "totalAggregationType": "SUM",
+                "startDate": "2019-05-01T00:00:00.000",
+                "endDate": "2019-05-31T00:00:00.000"
+            },
+            "ou": {
+                "uid": "ou",
+                "name": "Organisation unit",
+                "dimensionType": "ORGANISATION_UNIT"
+            },
+            "201904": {
+                "uid": "201904",
+                "code": "201904",
+                "name": "April 2019",
+                "dimensionItemType": "PERIOD",
+                "valueType": "NUMBER",
+                "totalAggregationType": "SUM",
+                "startDate": "2019-04-01T00:00:00.000",
+                "endDate": "2019-04-30T00:00:00.000"
+            },
+            "201910": {
+                "uid": "201910",
+                "code": "201910",
+                "name": "October 2019",
+                "dimensionItemType": "PERIOD",
+                "valueType": "NUMBER",
+                "totalAggregationType": "SUM",
+                "startDate": "2019-10-01T00:00:00.000",
+                "endDate": "2019-10-31T00:00:00.000"
+            },
+            "201912": {
+                "uid": "201912",
+                "code": "201912",
+                "name": "December 2019",
+                "dimensionItemType": "PERIOD",
+                "valueType": "NUMBER",
+                "totalAggregationType": "SUM",
+                "startDate": "2019-12-01T00:00:00.000",
+                "endDate": "2019-12-31T00:00:00.000"
+            },
+            "DOC7emLzyRi": {
+                "uid": "DOC7emLzyRi",
+                "code": "COC_360524",
+                "name": "On salary",
+                "valueType": "NUMBER",
+                "totalAggregationType": "SUM"
+            },
+            "fbfJHSPpUQD": {
+                "uid": "fbfJHSPpUQD",
+                "code": "DE_359596",
+                "name": "ANC 1st visit",
+                "legendSet": "fqs276KXCXi",
+                "dimensionItemType": "DATA_ELEMENT",
+                "valueType": "NUMBER",
+                "aggregationType": "SUM",
+                "totalAggregationType": "SUM"
+            },
+            "201911": {
+                "uid": "201911",
+                "code": "201911",
+                "name": "November 2019",
+                "dimensionItemType": "PERIOD",
+                "valueType": "NUMBER",
+                "totalAggregationType": "SUM",
+                "startDate": "2019-11-01T00:00:00.000",
+                "endDate": "2019-11-30T00:00:00.000"
+            },
+            "co": {
+                "uid": "co",
+                "name": "Category option combo",
+                "dimensionType": "CATEGORY_OPTION_COMBO"
+            },
+            "LAST_12_MONTHS": {
+                "name": "Last 12 months"
+            },
+            "202002": {
+                "uid": "202002",
+                "code": "202002",
+                "name": "February 2020",
+                "dimensionItemType": "PERIOD",
+                "valueType": "NUMBER",
+                "totalAggregationType": "SUM",
+                "startDate": "2020-02-01T00:00:00.000",
+                "endDate": "2020-02-29T00:00:00.000"
+            },
+            "ImspTQPwCqd": {
+                "uid": "ImspTQPwCqd",
+                "code": "OU_525",
+                "name": "Sierra Leone",
+                "dimensionItemType": "ORGANISATION_UNIT",
+                "valueType": "NUMBER",
+                "totalAggregationType": "SUM"
+            },
+            "R23h9QZRbRt": {
+                "uid": "R23h9QZRbRt",
+                "code": "COC_360525",
+                "name": "Not on salary",
+                "valueType": "NUMBER",
+                "totalAggregationType": "SUM"
+            },
+            "202001": {
+                "uid": "202001",
+                "code": "202001",
+                "name": "January 2020",
+                "dimensionItemType": "PERIOD",
+                "valueType": "NUMBER",
+                "totalAggregationType": "SUM",
+                "startDate": "2020-01-01T00:00:00.000",
+                "endDate": "2020-01-31T00:00:00.000"
+            },
+            "dx": {
+                "uid": "dx",
+                "name": "Data",
+                "dimensionType": "DATA_X"
+            },
+            "pq2XI5kz2BY": {
+                "uid": "pq2XI5kz2BY",
+                "code": "COC_167661",
+                "name": "Fixed",
+                "valueType": "NUMBER",
+                "totalAggregationType": "SUM"
+            },
+            "pe": {
+                "uid": "pe",
+                "name": "Period",
+                "dimensionType": "PERIOD"
+            },
+            "PT59n8BQbqM": {
+                "uid": "PT59n8BQbqM",
+                "code": "COC_167660",
+                "name": "Outreach",
+                "valueType": "NUMBER",
+                "totalAggregationType": "SUM"
+            }
+        },
+        "dimensions": {
+            "dx": [
+                "vBu1MTGwcZh",
+                "fbfJHSPpUQD"
+            ],
+            "pe": [
+                "201903",
+                "201904",
+                "201905",
+                "201906",
+                "201907",
+                "201908",
+                "201909",
+                "201910",
+                "201911",
+                "201912",
+                "202001",
+                "202002"
+            ],
+            "ou": [
+                "ImspTQPwCqd"
+            ],
+            "co": [
+                "R23h9QZRbRt",
+                "pq2XI5kz2BY",
+                "PT59n8BQbqM",
+                "DOC7emLzyRi"
+            ]
+        }
+    },
+    "width": 0,
+    "height": 0,
+    "rows": [],
+    "headerWidth": 0
+}

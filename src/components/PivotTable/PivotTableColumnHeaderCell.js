@@ -16,6 +16,8 @@ export const PivotTableColumnHeaderCell = ({
 }) => {
     const engine = usePivotTableEngine()
 
+    const width = engine.columnWidths[index]?.width
+
     return (
         <PivotTableHeaderCell
             axisClippingResult={clippingResult.columns}
@@ -41,7 +43,12 @@ export const PivotTableColumnHeaderCell = ({
                         }
                         colSpan={header.span}
                         title={header.label}
-                        style={{ cursor: isSortable ? 'pointer' : 'default' }}
+                        style={{
+                            cursor: isSortable ? 'pointer' : 'default',
+                            width,
+                            maxWidth: width,
+                            minWidth: width,
+                        }}
                         onClick={
                             isSortable ? () => onSortByColumn(index) : undefined
                         }

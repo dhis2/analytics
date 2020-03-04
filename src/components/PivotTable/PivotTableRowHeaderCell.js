@@ -10,6 +10,7 @@ export const PivotTableRowHeaderCell = ({
     rowLevel,
 }) => {
     const engine = usePivotTableEngine()
+    const width = engine.rowHeaderWidths[rowLevel]
 
     return (
         <PivotTableHeaderCell
@@ -29,6 +30,7 @@ export const PivotTableRowHeaderCell = ({
                     }
                     rowSpan={header.span}
                     title={header.label}
+                    style={{ width, maxWidth: width, minWidth: width }}
                 >
                     {header.label}
                 </PivotTableCell>

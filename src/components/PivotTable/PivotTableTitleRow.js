@@ -1,17 +1,24 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { cell as cellStyle } from './styles/PivotTable.style'
 import { usePivotTableEngine } from './PivotTableEngineContext'
 import { PivotTableCell } from './PivotTableCell'
-import { CLIPPED_CELL_WIDTH } from '../../modules/pivotTable/pivotTableConstants'
 
 export const PivotTableTitleRow = ({
     title,
     scrollPosition,
     containerWidth,
+    totalWidth,
 }) => {
     const engine = usePivotTableEngine()
     const columnCount = engine.width + engine.dimensionLookup.rows.length
+
+    const [position, setPosition] = useState(scrollPosition.x)
+    useEffect(() => {
+        setPosition(
+            Math.max(0, Math.min(scrollPosition.x, totalWidth - containerWidth))
+        )
+    }, [containerWidth, scrollPosition.x, totalWidth])
     return (
         <tr>
             <style jsx>{cellStyle}</style>
@@ -21,15 +28,8 @@ export const PivotTableTitleRow = ({
             >
                 <div
                     style={{
-                        marginLeft:
-                            Math.floor(scrollPosition.x / CLIPPED_CELL_WIDTH) *
-                            CLIPPED_CELL_WIDTH,
-                        width:
-                            Math.min(
-                                columnCount,
-                                Math.ceil(containerWidth / CLIPPED_CELL_WIDTH) +
-                                    1
-                            ) * CLIPPED_CELL_WIDTH,
+                        marginLeft: position,
+                        maxWidth: containerWidth,
                         textAlign: 'center',
                     }}
                 >
@@ -45,4 +45,5 @@ PivotTableTitleRow.propTypes = {
     scrollPosition: PropTypes.shape({ x: PropTypes.number.isRequired })
         .isRequired,
     title: PropTypes.string.isRequired,
+    totalWidth: PropTypes.number.isRequired,
 }

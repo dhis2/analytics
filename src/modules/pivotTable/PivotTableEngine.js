@@ -1,10 +1,15 @@
 import times from 'lodash/times'
+
 import { parseValue } from './parseValue'
+import { renderValue } from './renderValue'
+import { measureText } from './measureText'
+
 import {
     DIMENSION_ID_DATA,
     DIMENSION_ID_PERIOD,
     DIMENSION_ID_ORGUNIT,
 } from '../predefinedDimensions'
+
 import {
     AGGREGATE_TYPE_NA,
     AGGREGATE_TYPE_AVERAGE,
@@ -14,6 +19,20 @@ import {
     CELL_TYPE_SUBTOTAL,
     SORT_ORDER_ASCENDING,
     SORT_ORDER_DESCENDING,
+    DISPLAY_DENSITY_PADDING_COMPACT,
+    DISPLAY_DENSITY_PADDING_COMFORTABLE,
+    DISPLAY_DENSITY_OPTION_COMFORTABLE,
+    DISPLAY_DENSITY_OPTION_COMPACT,
+    DISPLAY_DENSITY_OPTION_NORMAL,
+    DISPLAY_DENSITY_PADDING_NORMAL,
+    FONT_SIZE_OPTION_SMALL,
+    FONT_SIZE_SMALL,
+    FONT_SIZE_OPTION_LARGE,
+    FONT_SIZE_LARGE,
+    FONT_SIZE_OPTION_NORMAL,
+    FONT_SIZE_NORMAL,
+    COLUMN_PARTITION_SIZE_PX,
+    CLIPPED_CELL_MAX_WIDTH,
 } from './pivotTableConstants'
 
 const dataFields = [
@@ -220,7 +239,7 @@ export class PivotTableEngine {
     height = 0
     width = 0
     data = []
-    occupiedColumns = []
+    columnWidths = []
     rowMap = []
     columnMap = []
 
@@ -336,6 +355,24 @@ export class PivotTableEngine {
         return this.getRawCellType({ row, column })
     }
 
+    getDimensionLabel(rowLevel, columnLevel) {
+        const lastRowLevel = this.dimensionLookup.rows.length - 1
+        const lastColumnLevel = this.dimensionLookup.columns.length - 1
+        if (rowLevel !== lastRowLevel && columnLevel !== lastColumnLevel) {
+            return null
+        }
+        if (rowLevel === lastRowLevel && columnLevel === lastColumnLevel) {
+            return `${this.dimensionLookup.rows[lastRowLevel].meta.name} / ${this.dimensionLookup.columns[lastColumnLevel].meta.name}`
+        }
+
+        if (rowLevel === lastRowLevel) {
+            return this.dimensionLookup.columns[columnLevel].meta.name
+        }
+        if (columnLevel === lastColumnLevel) {
+            return this.dimensionLookup.rows[rowLevel].meta.name
+        }
+    }
+
     getCellDxDimension({ row, column }) {
         return this.getRawCellDxDimension({
             row: this.rowMap[row],
@@ -345,6 +382,14 @@ export class PivotTableEngine {
     getRawCellDxDimension({ row, column }) {
         const rowHeaders = this.getRawRowHeader(row)
         const columnHeaders = this.getRawColumnHeader(column)
+
+        if (!this.data[row]) {
+            return undefined
+        }
+        const cellValue = this.data[row][column]
+        if (!Array.isArray(cellValue)) {
+            return cellValue
+        }
 
         if (!rowHeaders.length || !columnHeaders.length) {
             return undefined
@@ -369,18 +414,10 @@ export class PivotTableEngine {
         return !this.data[row] || this.data[row].length === 0
     }
     columnIsEmpty(column) {
-        return !this.occupiedColumns[column]
+        return !this.columnWidths[column]
     }
 
     getRawColumnHeader(column) {
-        return this.dimensionLookup.columns.map(dimension => {
-            const itemIndex =
-                Math.floor(column / dimension.size) % dimension.count
-            return dimension.items[itemIndex]
-        })
-    }
-    getColumnHeader(column) {
-        column = this.columnMap[column]
         if (this.options.showRowTotals && column === this.dataWidth - 1) {
             return times(
                 this.dimensionLookup.columns.length - 1,
@@ -401,17 +438,17 @@ export class PivotTableEngine {
                 column / (this.dimensionLookup.columns[0].size + 1)
             )
         }
-        return this.getRawColumnHeader(column)
-    }
-
-    getRawRowHeader(row) {
-        return this.dimensionLookup.rows.map(dimension => {
-            const itemIndex = Math.floor(row / dimension.size) % dimension.count
+        return this.dimensionLookup.columns.map(dimension => {
+            const itemIndex =
+                Math.floor(column / dimension.size) % dimension.count
             return dimension.items[itemIndex]
         })
     }
-    getRowHeader(row) {
-        row = this.rowMap[row]
+    getColumnHeader(column) {
+        return this.getRawColumnHeader(this.columnMap[column])
+    }
+
+    getRawRowHeader(row) {
         if (this.options.showColumnTotals && row === this.dataHeight - 1) {
             return times(
                 this.dimensionLookup.rows.length - 1,
@@ -427,7 +464,14 @@ export class PivotTableEngine {
             }
             row -= Math.floor(row / (this.dimensionLookup.rows[0].size + 1))
         }
-        return this.getRawRowHeader(row)
+
+        return this.dimensionLookup.rows.map(dimension => {
+            const itemIndex = Math.floor(row / dimension.size) % dimension.count
+            return dimension.items[itemIndex]
+        })
+    }
+    getRowHeader(row) {
+        return this.getRawRowHeader(this.rowMap[row])
     }
 
     getDependantTotalCells({ row, column }) {
@@ -507,7 +551,6 @@ export class PivotTableEngine {
             if (!totalItem) return
 
             this.data[totalItem.row] = this.data[totalItem.row] || []
-            this.occupiedColumns[totalItem.column] = true
 
             this.data[totalItem.row][totalItem.column] = this.data[
                 totalItem.row
@@ -517,13 +560,21 @@ export class PivotTableEngine {
             }
             const totalCell = this.data[totalItem.row][totalItem.column]
 
+            const currentAggType = dxDimension?.totalAggregationType
             const previousAggType =
                 totalCell.totalAggregationType || currentAggType
-            const currentAggType = dxDimension?.totalAggregationType
             if (previousAggType && currentAggType !== previousAggType) {
                 totalCell.totalAggregationType = AGGREGATE_TYPE_NA
             } else {
                 totalCell.totalAggregationType = currentAggType
+            }
+
+            const currentValueType = dxDimension?.valueType
+            const previousValueType = totalCell.valueType
+            if (previousValueType && currentValueType !== previousValueType) {
+                totalCell.valueType = AGGREGATE_TYPE_NA
+            } else {
+                totalCell.valueType = currentValueType
             }
 
             if (dxDimension?.valueType === 'NUMBER') {
@@ -679,6 +730,11 @@ export class PivotTableEngine {
                             totalCell.value = applyTotalAggregationType(
                                 totalCell
                             )
+                            this.addCellForAdaptiveClipping(
+                                { row, column },
+                                totalCell.value,
+                                totalCell.valueType
+                            )
                         }
                     }
                 })
@@ -703,6 +759,11 @@ export class PivotTableEngine {
                             totalCell.value = applyTotalAggregationType(
                                 totalCell
                             )
+                            this.addCellForAdaptiveClipping(
+                                { row, column },
+                                totalCell.value,
+                                totalCell.valueType
+                            )
                         }
                     }
                 })
@@ -724,6 +785,11 @@ export class PivotTableEngine {
                     const totalCell = this.data[row][column]
                     if (totalCell && totalCell.count) {
                         totalCell.value = applyTotalAggregationType(totalCell)
+                        this.addCellForAdaptiveClipping(
+                            { row, column },
+                            totalCell.value,
+                            totalCell.valueType
+                        )
                     }
                 })
             })
@@ -737,6 +803,11 @@ export class PivotTableEngine {
                 const totalCell = this.data[row][column]
                 if (totalCell && totalCell.count) {
                     totalCell.value = applyTotalAggregationType(totalCell)
+                    this.addCellForAdaptiveClipping(
+                        { row, column },
+                        totalCell.value,
+                        totalCell.valueType
+                    )
                 }
             })
         }
@@ -747,6 +818,11 @@ export class PivotTableEngine {
                 const totalCell = this.data[row][column]
                 if (totalCell && totalCell.count) {
                     totalCell.value = applyTotalAggregationType(totalCell)
+                    this.addCellForAdaptiveClipping(
+                        { row, column },
+                        totalCell.value,
+                        totalCell.valueType
+                    )
                 }
             })
         }
@@ -758,15 +834,145 @@ export class PivotTableEngine {
         }
     }
 
-    resetRowmap() {
+    addCellForAdaptiveClipping({ column }, value, valueType) {
+        this.columnWidths[column] = Math.max(
+            this.columnWidths[column] || 0,
+            measureText(
+                renderValue(value, valueType, this.visualization),
+                this.fontSize
+            )
+        )
+    }
+
+    finalizeAdaptiveClipping() {
+        this.dataPixelWidth = 0
+        this.rowHeaderPixelWidth = 0
+
+        let nextPartitionPx = 0
+        this.columnPartitions = []
+
+        this.columnMap.forEach(column => {
+            const header = this.getRawColumnHeader(column)[
+                this.dimensionLookup.columns.length - 1
+            ]
+            const label =
+                this.visualization.showHierarchy && header?.hierarchy
+                    ? header.hierarchy.join(' / ')
+                    : header?.name
+
+            if (label) {
+                const headerSize = measureText(label, this.fontSize)
+                this.columnWidths[column] = Math.max(
+                    this.columnWidths[column] || 0,
+                    headerSize +
+                        (this.isSortable(column) ? this.scrollIconBuffer : 0)
+                )
+            }
+
+            const colWidth =
+                Math.min(
+                    CLIPPED_CELL_MAX_WIDTH,
+                    Math.ceil(this.columnWidths[column])
+                ) +
+                this.cellPadding * 2 +
+                /*border*/ 2
+            this.columnWidths[column] = {
+                pre: this.dataPixelWidth,
+                width: colWidth,
+            }
+
+            if (this.dataPixelWidth >= nextPartitionPx) {
+                this.columnPartitions.push(column)
+                nextPartitionPx += COLUMN_PARTITION_SIZE_PX
+            }
+            this.dataPixelWidth += colWidth
+        })
+
+        this.rowHeaderWidths = this.dimensionLookup.rows.map((_, rowLevel) => {
+            let maxWidth = 0
+            this.rowMap.forEach(rawColumn => {
+                const header = this.getRawRowHeader(rawColumn)[rowLevel]
+                const label =
+                    this.visualization.showHierarchy && header?.hierarchy
+                        ? header.hierarchy.join(' / ')
+                        : header?.name
+                if (label) {
+                    const headerSize = measureText(label, this.fontSize)
+                    maxWidth = Math.max(maxWidth, headerSize)
+                }
+            }, 0)
+
+            if (this.visualization.showDimensionLabels) {
+                this.dimensionLookup.columns.forEach((_, columnLevel) => {
+                    const label = this.getDimensionLabel(rowLevel, columnLevel)
+                    if (label) {
+                        const headerSize = measureText(label, this.fontSize)
+                        maxWidth = Math.max(maxWidth, headerSize)
+                    }
+                })
+            }
+            const columnWidth =
+                Math.min(CLIPPED_CELL_MAX_WIDTH, Math.ceil(maxWidth)) +
+                this.cellPadding * 2 +
+                /*border*/ 2
+            this.rowHeaderPixelWidth += columnWidth
+            return columnWidth
+        })
+    }
+
+    resetRowMap() {
         this.rowMap = this.options.hideEmptyRows
             ? times(this.dataHeight, n => n).filter(idx => !!this.data[idx])
             : times(this.dataHeight, n => n)
     }
 
+    resetColumnMap() {
+        this.columnMap = this.options.hideEmptyColumns
+            ? times(this.dataWidth, n => n).filter(
+                  idx => !!this.columnWidths[idx]
+              )
+            : times(this.dataWidth, n => n)
+    }
+
+    get cellPadding() {
+        switch (this.visualization.displayDensity) {
+            case DISPLAY_DENSITY_OPTION_COMPACT:
+                return DISPLAY_DENSITY_PADDING_COMPACT
+            case DISPLAY_DENSITY_OPTION_COMFORTABLE:
+                return DISPLAY_DENSITY_PADDING_COMFORTABLE
+            case DISPLAY_DENSITY_OPTION_NORMAL:
+            default:
+                return DISPLAY_DENSITY_PADDING_NORMAL
+        }
+    }
+
+    get fontSize() {
+        switch (this.visualization.fontSize) {
+            case FONT_SIZE_OPTION_SMALL:
+                return FONT_SIZE_SMALL
+            case FONT_SIZE_OPTION_LARGE:
+                return FONT_SIZE_LARGE
+            case FONT_SIZE_OPTION_NORMAL:
+            default:
+                return FONT_SIZE_NORMAL
+        }
+    }
+
+    get scrollIconBuffer() {
+        switch (this.visualization.fontSize) {
+            case FONT_SIZE_OPTION_SMALL:
+                return 11
+            case FONT_SIZE_OPTION_LARGE:
+                return 15
+            case FONT_SIZE_OPTION_NORMAL:
+            default:
+                return 13
+        }
+    }
+
     buildMatrix() {
         this.data = []
-        this.occupiedColumns = []
+        this.columnWidths = []
 
         this.dataHeight = this.rawDataHeight = countFromDisaggregates(
             this.dimensionLookup.rows
@@ -808,22 +1014,25 @@ export class PivotTableEngine {
             const pos = lookup(dataRow, this.dimensionLookup, this)
             this.data[pos.row] = this.data[pos.row] || []
             this.data[pos.row][pos.column] = dataRow
-            this.occupiedColumns[pos.column] = true
 
+            const dxDimension = this.getRawCellDxDimension(pos)
+            this.addCellForAdaptiveClipping(
+                pos,
+                this.getRaw(pos),
+                dxDimension.valueType
+            )
             this.addCellValueToTotals(pos, dataRow)
         })
 
         this.finalizeTotals()
 
-        this.resetRowmap()
-        this.columnMap = this.options.hideEmptyColumns
-            ? times(this.dataWidth, n => n).filter(
-                  idx => !!this.occupiedColumns[idx]
-              )
-            : times(this.dataWidth, n => n)
+        this.resetRowMap()
+        this.resetColumnMap()
 
         this.height = this.rowMap.length
         this.width = this.columnMap.length
+
+        this.finalizeAdaptiveClipping()
     }
 
     getColumnType(column) {
@@ -895,6 +1104,6 @@ export class PivotTableEngine {
     }
 
     clearSort() {
-        this.resetRowmap()
+        this.resetRowMap()
     }
 }

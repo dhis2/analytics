@@ -7,8 +7,6 @@ import {
     FONT_SIZE_SMALL,
     FONT_SIZE_NORMAL,
     FONT_SIZE_LARGE,
-    CLIPPED_CELL_WIDTH,
-    CLIPPED_CELL_HEIGHT,
 } from '../../../modules/pivotTable/pivotTableConstants'
 
 export const table = css`
@@ -35,22 +33,20 @@ export const cell = css`
         overflow: hidden;
         text-overflow: ellipsis;
         border: 1px solid #b2b2b2;
-        min-width: ${CLIPPED_CELL_WIDTH}px;
-        width: ${CLIPPED_CELL_WIDTH}px;
-        max-width: ${CLIPPED_CELL_WIDTH}px;
-        min-height: ${CLIPPED_CELL_HEIGHT}px;
-        height: ${CLIPPED_CELL_HEIGHT}px;
         cursor: default;
     }
 
     .fontsize-SMALL {
         font-size: ${FONT_SIZE_SMALL}px;
+        line-height: ${FONT_SIZE_SMALL}px;
     }
     .fontsize-NORMAL {
         font-size: ${FONT_SIZE_NORMAL}px;
+        line-height: ${FONT_SIZE_NORMAL}px;
     }
     .fontsize-LARGE {
         font-size: ${FONT_SIZE_LARGE}px;
+        line-height: ${FONT_SIZE_LARGE}px;
     }
 
     .displaydensity-COMPACT {
