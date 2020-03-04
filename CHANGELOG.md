@@ -1,3 +1,10 @@
+## [4.3.4](https://github.com/dhis2/analytics/compare/v4.3.3...v4.3.4) (2020-03-04)
+
+
+### Bug Fixes
+
+* bump @dhis2/d2-ui-org-unit-dialog@6.5.9 to fix DHIS2-6562 ([#337](https://github.com/dhis2/analytics/issues/337)) ([593b29d](https://github.com/dhis2/analytics/commit/593b29d80429678e8b653d9ebc6a13f0fdb8dbf5))
+
 ## [4.3.3](https://github.com/dhis2/analytics/compare/v4.3.2...v4.3.3) (2020-03-03)
 
 

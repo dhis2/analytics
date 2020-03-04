@@ -59,6 +59,20 @@ storiesOf('PivotTable', module).add('simple', () => {
     )
 })
 
+storiesOf('PivotTable', module).add('simple - title / subtitle / filter', () => {
+    const visualization = {
+        ...simpleVisualization,
+        ...visualizationReset,
+        title: 'This is a Table',
+        subtitle: 'It\'s not a very big table'
+    }
+    return (
+        <div style={{ width: 800, height: 600 }}>
+            <PivotTable data={simpleData} visualization={visualization} />
+        </div>
+    )
+})
+
 storiesOf('PivotTable', module).add('simple - column %', () => {
     const visualization = {
         ...simpleVisualization,
