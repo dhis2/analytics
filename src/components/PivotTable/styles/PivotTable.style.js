@@ -87,12 +87,13 @@ export const cell = css`
     }
     .value {
         background-color: #ffffff;
-        cursor: normal;
+        cursor: pointer;
+    }
+    .TEXT {
         text-align: left;
     }
-    .value.NUMBER {
-        text-align: center;
-        cursor: pointer;
+    .NUMBER {
+        text-align: right;
     }
 
     .value:hover {
