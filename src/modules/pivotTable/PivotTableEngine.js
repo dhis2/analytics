@@ -902,13 +902,15 @@ export class PivotTableEngine {
                 }
             }, 0)
 
-            this.dimensionLookup.columns.forEach((_, columnLevel) => {
-                const label = this.getDimensionLabel(rowLevel, columnLevel)
-                if (label) {
-                    const headerSize = measureText(label, this.fontSize)
-                    maxWidth = Math.max(maxWidth, headerSize)
-                }
-            })
+            if (this.visualization.showDimensionLabels) {
+                this.dimensionLookup.columns.forEach((_, columnLevel) => {
+                    const label = this.getDimensionLabel(rowLevel, columnLevel)
+                    if (label) {
+                        const headerSize = measureText(label, this.fontSize)
+                        maxWidth = Math.max(maxWidth, headerSize)
+                    }
+                })
+            }
             const columnWidth =
                 Math.min(CLIPPED_CELL_MAX_WIDTH, Math.ceil(maxWidth)) +
                 this.cellPadding * 2 +

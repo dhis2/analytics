@@ -76,6 +76,19 @@ storiesOf('PivotTable', module).add('simple - column %', () => {
 storiesOf('PivotTable', module).add('deep', () => {
     const visualization = {
         ...deepVisualization,
+        ...visualizationReset,
+        showDimensionLabels: false
+    }
+    return (
+        <div style={{ width: 800, height: 600 }}>
+            <PivotTable data={deepData} visualization={visualization} />
+        </div>
+    )
+})
+
+storiesOf('PivotTable', module).add('deep - dimension labels', () => {
+    const visualization = {
+        ...deepVisualization,
         ...visualizationReset
     }
     return (
