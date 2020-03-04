@@ -1,3 +1,10 @@
+## [4.3.6](https://github.com/dhis2/analytics/compare/v4.3.5...v4.3.6) (2020-03-04)
+
+
+### Bug Fixes
+
+* adaptive clipping ([#336](https://github.com/dhis2/analytics/issues/336)) ([da85413](https://github.com/dhis2/analytics/commit/da854132742f5c5889c15a49da41dcfe64cfe0c8))
+
 ## [4.3.5](https://github.com/dhis2/analytics/compare/v4.3.4...v4.3.5) (2020-03-04)
 
 
