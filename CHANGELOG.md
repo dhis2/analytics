@@ -1,3 +1,10 @@
+## [4.3.5](https://github.com/dhis2/analytics/compare/v4.3.4...v4.3.5) (2020-03-04)
+
+
+### Bug Fixes
+
+* align numbers right and text items left ([#339](https://github.com/dhis2/analytics/issues/339)) ([e4088c8](https://github.com/dhis2/analytics/commit/e4088c8346be3b520009f03a87b8fa385602f2b4))
+
 ## [4.3.4](https://github.com/dhis2/analytics/compare/v4.3.3...v4.3.4) (2020-03-04)
 
 
