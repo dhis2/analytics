@@ -12,6 +12,9 @@ const DEFAULT_TITLE_STYLE = {
     y: 18,
     style: {
         color: '#111',
+        whiteSpace: 'nowrap',
+        overflow: 'hidden',
+        textOverflow: 'ellipsis',
     },
 }
 
@@ -21,6 +24,9 @@ const DASHBOARD_TITLE_STYLE = {
     style: {
         fontSize: '13px',
         fontWeight: 'bold',
+        whiteSpace: 'nowrap',
+        overflow: 'hidden',
+        textOverflow: 'ellipsis',
     },
 }
 
