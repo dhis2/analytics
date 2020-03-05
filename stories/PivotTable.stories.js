@@ -26,7 +26,16 @@ import hierarchyDataResponse from './data/hierarchy.data.json'
 import hierarchyMetadataResponse from './data/hierarchy.metadata.json'
 import hierarchyVisualization from './data/hierarchy.visualization.json'
 
+import narrativeDataResponse from './data/narrative.data.json'
+import narrativeMetadataResponse from './data/narrative.metadata.json'
+import narrativeVisualization from './data/narrative.visualization.json'
+
+import degsDataResponse from './data/degs.data.json'
+import degsMetadataResponse from './data/degs.metadata.json'
+import degsVisualization from './data/degs.visualization.json'
+
 import underAbove100LegendSet from './data/under-above-100.legendSet.json'
+import { NUMBER_TYPE_COLUMN_PERCENTAGE, NUMBER_TYPE_ROW_PERCENTAGE } from '../src/modules/pivotTable/pivotTableConstants'
 
 const visualizationReset = {
     colTotals: false,
@@ -43,9 +52,12 @@ const combineDataWithMetadata = (dataResponse, metadataResponse) => ({
 })
 
 const simpleData = combineDataWithMetadata(simpleDataResponse, simpleMetadataResponse)
+const emptyColumnsData = combineDataWithMetadata(emptyColumnsDataResponse, emptyColumnsMetadataResponse)
 const targetData = combineDataWithMetadata(targetDataResponse, targetMetadataResponse)
 const hierarchyData = combineDataWithMetadata(hierarchyDataResponse, hierarchyMetadataResponse)
-const emptyColumnsData = combineDataWithMetadata(emptyColumnsDataResponse, emptyColumnsMetadataResponse)
+const narrativeData = combineDataWithMetadata(narrativeDataResponse, narrativeMetadataResponse)
+const degsData = combineDataWithMetadata(degsDataResponse, degsMetadataResponse)
+
 
 storiesOf('PivotTable', module).add('simple', () => {
     const visualization = {
@@ -78,7 +90,50 @@ storiesOf('PivotTable', module).add('simple - column %', () => {
         ...simpleVisualization,
         ...visualizationReset,
         colTotals: true,
-        numberType: 'COLUMN_PERCENTAGE'
+        numberType: NUMBER_TYPE_COLUMN_PERCENTAGE
+    }
+    return (
+        <div style={{ width: 800, height: 600 }}>
+            <PivotTable data={simpleData} visualization={visualization} />
+        </div>
+    )
+})
+
+storiesOf('PivotTable', module).add('simple - data as filter', () => {
+    const visualization = {
+        ...simpleVisualization,
+        ...visualizationReset,
+        columns: simpleVisualization.filters,
+        filters: simpleVisualization.columns
+    }
+    return (
+        <div style={{ width: 800, height: 600 }}>
+            <PivotTable data={simpleData} visualization={visualization} />
+        </div>
+    )
+})
+
+storiesOf('PivotTable', module).add('simple - no columns', () => {
+    const visualization = {
+        ...simpleVisualization,
+        ...visualizationReset,
+        columns: [],
+        filters: simpleVisualization.columns
+    }
+    return (
+        <div style={{ width: 800, height: 600 }}>
+            <PivotTable data={simpleData} visualization={visualization} />
+        </div>
+    )
+})
+
+storiesOf('PivotTable', module).add('simple - no rows', () => {
+    const visualization = {
+        ...simpleVisualization,
+        ...visualizationReset,
+        rows: [],
+        columns: simpleVisualization.filters,
+        filters: simpleVisualization.columns
     }
     return (
         <div style={{ width: 800, height: 600 }}>
@@ -144,7 +199,7 @@ storiesOf('PivotTable', module).add('deep - row %', () => {
     const visualization = {
         ...deepVisualization,
         ...visualizationReset,
-        numberType: 'ROW_PERCENTAGE',
+        numberType: NUMBER_TYPE_ROW_PERCENTAGE,
         colSubTotals: true,
         rowSubTotals: true,
         rowTotals: true,
@@ -161,7 +216,7 @@ storiesOf('PivotTable', module).add('deep - column %', () => {
     const visualization = {
         ...deepVisualization,
         ...visualizationReset,
-        numberType: 'COLUMN_PERCENTAGE',
+        numberType: NUMBER_TYPE_COLUMN_PERCENTAGE,
         colSubTotals: true,
         rowSubTotals: true,
         rowTotals: true,
@@ -423,36 +478,54 @@ storiesOf('PivotTable', module).add('hierarchy - shown', () => {
     )
 })
 
-// TODO: Text valueType story
-// storiesOf('PivotTable', module).add('Text valueType', () => {
-//     const visualization = {
-//         ...targetVisualization,
-//         ...visualizationReset,
-//         rowSubTotals: true,
-//         colSubTotals: true,
-//         legendDisplayStrategy: 'BY_DATA_ITEM',
-//         legendSet: undefined
-//     }
-//     const data = {
-//         ...targetData
-//     }
+storiesOf('PivotTable', module).add('narrative', () => {
+    const visualization = {
+        ...narrativeVisualization,
+        ...visualizationReset,
+        rowTotals: true,
+        colTotals: true,
+    }
+    
+    return (
+        <div style={{ width: 800, height: 600 }}>
+            <PivotTable data={narrativeData} visualization={visualization} />
+        </div>
+    )
+})
 
-//     const customLegendSet = cloneDeep(underAbove100LegendSet)
-//     customLegendSet.id = 'TESTID'
-//     customLegendSet.legends[0].color = '#000000'
-//     customLegendSet.legends[1].color = '#666666'
+storiesOf('PivotTable', module).add('narrative - data as filter', () => {
+    const visualization = {
+        ...narrativeVisualization,
+        ...visualizationReset,
+        columns: narrativeVisualization.filters,
+        filters: narrativeVisualization.columns,
+        rowTotals: true,
+        colTotals: true,
+    }
 
-//     data.metaData.items[visualization.columns[0].items[1].id].legendSet = {
-//         id: underAbove100LegendSet.id
-//     }
+    const data = {
+        ...narrativeData,
+        rows: [
+            narrativeData.rows[0]
+        ]
+    }
+    
+    return (
+        <div style={{ width: 800, height: 600 }}>
+            <PivotTable data={data} visualization={visualization} />
+        </div>
+    )
+})
 
-//     data.metaData.items[visualization.columns[0].items[3].id].legendSet = {
-//         id: customLegendSet.id
-//     }
-
-//     return (
-//         <div style={{ width: 800, height: 600 }}>
-//             <PivotTable data={targetData} visualization={visualization} legendSets={[underAbove100LegendSet, customLegendSet]} />
-//         </div>
-//     )
-// })
+storiesOf('PivotTable', module).add('DEGS', () => {
+    const visualization = {
+        ...degsVisualization,
+        ...visualizationReset
+    }
+    
+    return (
+        <div style={{ width: 800, height: 600 }}>
+            <PivotTable data={degsData} visualization={visualization} />
+        </div>
+    )
+})
