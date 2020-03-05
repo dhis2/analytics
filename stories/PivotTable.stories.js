@@ -112,34 +112,34 @@ storiesOf('PivotTable', module).add('simple - data as filter', () => {
     )
 })
 
-// storiesOf('PivotTable', module).add('simple - no columns', () => {
-//     const visualization = {
-//         ...simpleVisualization,
-//         ...visualizationReset,
-//         columns: [],
-//         filters: simpleVisualization.columns
-//     }
-//     return (
-//         <div style={{ width: 800, height: 600 }}>
-//             <PivotTable data={simpleData} visualization={visualization} />
-//         </div>
-//     )
-// })
+storiesOf('PivotTable', module).add('simple - no columns', () => {
+    const visualization = {
+        ...simpleVisualization,
+        ...visualizationReset,
+        columns: [],
+        filters: simpleVisualization.columns
+    }
+    return (
+        <div style={{ width: 800, height: 600 }}>
+            <PivotTable data={simpleData} visualization={visualization} />
+        </div>
+    )
+})
 
-// storiesOf('PivotTable', module).add('simple - no rows', () => {
-//     const visualization = {
-//         ...simpleVisualization,
-//         ...visualizationReset,
-//         rows: [],
-//         columns: simpleVisualization.filters,
-//         filters: simpleVisualization.columns
-//     }
-//     return (
-//         <div style={{ width: 800, height: 600 }}>
-//             <PivotTable data={simpleData} visualization={visualization} />
-//         </div>
-//     )
-// })
+storiesOf('PivotTable', module).add('simple - no rows', () => {
+    const visualization = {
+        ...simpleVisualization,
+        ...visualizationReset,
+        rows: [],
+        columns: simpleVisualization.filters,
+        filters: simpleVisualization.columns
+    }
+    return (
+        <div style={{ width: 800, height: 600 }}>
+            <PivotTable data={simpleData} visualization={visualization} />
+        </div>
+    )
+})
 
 storiesOf('PivotTable', module).add('deep', () => {
     const visualization = {
@@ -516,15 +516,15 @@ storiesOf('PivotTable', module).add('narrative - data as filter', () => {
     )
 })
 
-// storiesOf('PivotTable', module).add('DEGS', () => {
-//     const visualization = {
-//         ...degsVisualization,
-//         ...visualizationReset
-//     }
+storiesOf('PivotTable', module).add('DEGS', () => {
+    const visualization = {
+        ...degsVisualization,
+        ...visualizationReset
+    }
     
-//     return (
-//         <div style={{ width: 800, height: 600 }}>
-//             <PivotTable data={degsData} visualization={visualization} />
-//         </div>
-//     )
-// })
+    return (
+        <div style={{ width: 800, height: 600 }}>
+            <PivotTable data={degsData} visualization={visualization} />
+        </div>
+    )
+})
