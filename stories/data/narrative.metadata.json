@@ -1,0 +1,125 @@
+{
+    "metaData": {
+        "items": {
+            "ou": {
+                "uid": "ou",
+                "name": "Organisation unit",
+                "dimensionType": "ORGANISATION_UNIT"
+            },
+            "eY5ehpbEsB7": {
+                "uid": "eY5ehpbEsB7",
+                "code": "DE_1148616",
+                "name": "Cholera (Deaths < 5 yrs)",
+                "dimensionItemType": "DATA_ELEMENT",
+                "valueType": "NUMBER",
+                "aggregationType": "SUM",
+                "totalAggregationType": "SUM"
+            },
+            "sqGRzCziswD": {
+                "uid": "sqGRzCziswD",
+                "name": "0-11m",
+                "valueType": "NUMBER",
+                "totalAggregationType": "SUM"
+            },
+            "KQ50BVoUrd6": {
+                "uid": "KQ50BVoUrd6",
+                "name": "Male",
+                "valueType": "NUMBER",
+                "totalAggregationType": "SUM"
+            },
+            "qk6n4eMAdtK": {
+                "uid": "qk6n4eMAdtK",
+                "name": "Female",
+                "valueType": "NUMBER",
+                "totalAggregationType": "SUM"
+            },
+            "2020": {
+                "uid": "2020",
+                "code": "2020",
+                "name": "2020",
+                "dimensionItemType": "PERIOD",
+                "valueType": "NUMBER",
+                "totalAggregationType": "SUM",
+                "startDate": "2020-01-01T00:00:00.000",
+                "endDate": "2020-12-31T00:00:00.000"
+            },
+            "mxc1T932aWM": {
+                "uid": "mxc1T932aWM",
+                "code": "DE_239771",
+                "name": "Cholera (Deaths < 5 yrs) Narrative",
+                "dimensionItemType": "DATA_ELEMENT",
+                "valueType": "TEXT",
+                "aggregationType": "SUM",
+                "totalAggregationType": "SUM"
+            },
+            "tMwM3ZBd7BN": {
+                "uid": "tMwM3ZBd7BN",
+                "name": "15y+",
+                "valueType": "NUMBER",
+                "totalAggregationType": "SUM"
+            },
+            "ImspTQPwCqd": {
+                "uid": "ImspTQPwCqd",
+                "code": "OU_525",
+                "name": "Sierra Leone",
+                "dimensionItemType": "ORGANISATION_UNIT",
+                "valueType": "NUMBER",
+                "totalAggregationType": "SUM"
+            },
+            "b7fjZVL3q9b": {
+                "uid": "b7fjZVL3q9b",
+                "name": "5-14y",
+                "valueType": "NUMBER",
+                "totalAggregationType": "SUM"
+            },
+            "dx": {
+                "uid": "dx",
+                "name": "Data",
+                "dimensionType": "DATA_X"
+            },
+            "pe": {
+                "uid": "pe",
+                "name": "Period",
+                "dimensionType": "PERIOD"
+            },
+            "LEDQQXEpWUl": {
+                "uid": "LEDQQXEpWUl",
+                "name": "12-59m",
+                "valueType": "NUMBER",
+                "totalAggregationType": "SUM"
+            },
+            "HllvX50cXC0": {
+                "uid": "HllvX50cXC0",
+                "code": "default",
+                "name": "default",
+                "valueType": "NUMBER",
+                "totalAggregationType": "SUM"
+            }
+        },
+        "dimensions": {
+            "dx": [
+                "mxc1T932aWM",
+                "eY5ehpbEsB7"
+            ],
+            "pe": [
+                "2020"
+            ],
+            "ou": [
+                "ImspTQPwCqd"
+            ],
+            "co": [
+                "b7fjZVL3q9b",
+                "LEDQQXEpWUl",
+                "sqGRzCziswD",
+                "KQ50BVoUrd6",
+                "HllvX50cXC0",
+                "qk6n4eMAdtK",
+                "tMwM3ZBd7BN"
+            ]
+        }
+    },
+    "rows": [],
+    "width": 0,
+    "height": 0,
+    "headerWidth": 0
+}

@@ -1,0 +1,131 @@
+{
+    "lastUpdated": "2020-03-05T15:28:19.270",
+    "id": "HUaPWsVnlr4",
+    "created": "2020-03-05T15:28:19.270",
+    "name": "AUSTIN TEST - Narrative",
+    "publicAccess": "rw------",
+    "legendDisplayStyle": "FILL",
+    "hideEmptyColumns": false,
+    "subscribed": false,
+    "rowSubTotals": false,
+    "showDimensionLabels": true,
+    "sortOrder": 0,
+    "fontSize": "NORMAL",
+    "favorite": false,
+    "topLimit": 0,
+    "displayName": "AUSTIN TEST - Narrative",
+    "showHierarchy": false,
+    "cumulative": false,
+    "hideTitle": false,
+    "skipRounding": false,
+    "numberType": "VALUE",
+    "hideEmptyRows": false,
+    "parentGraphMap": {
+        "ImspTQPwCqd": ""
+    },
+    "displayDensity": "NORMAL",
+    "completedOnly": false,
+    "colTotals": false,
+    "aggregationType": "DEFAULT",
+    "hideSubtitle": false,
+    "legendDisplayStrategy": "FIXED",
+    "colSubTotals": false,
+    "rowTotals": false,
+    "digitGroupSeparator": "SPACE",
+    "regression": false,
+    "reportParams": {
+        "paramGrandParentOrganisationUnit": false,
+        "paramReportingPeriod": false,
+        "paramOrganisationUnit": false,
+        "paramParentOrganisationUnit": false
+    },
+    "access": {
+        "read": true,
+        "update": true,
+        "externalize": true,
+        "delete": true,
+        "write": true,
+        "manage": true
+    },
+    "lastUpdatedBy": {
+        "id": "GOLswS44mh8"
+    },
+    "user": {
+        "displayName": "Tom Wakiki",
+        "userCredentials": {
+            "username": "system"
+        }
+    },
+    "dataElementGroupSetDimensions": [],
+    "attributeDimensions": [],
+    "translations": [],
+    "interpretations": [],
+    "userGroupAccesses": [],
+    "subscribers": [],
+    "columns": [
+        {
+            "dimension": "dx",
+            "items": [
+                {
+                    "id": "mxc1T932aWM",
+                    "name": "Cholera (Deaths < 5 yrs) Narrative",
+                    "dimensionItemType": "DATA_ELEMENT"
+                },
+                {
+                    "id": "eY5ehpbEsB7",
+                    "name": "Cholera (Deaths < 5 yrs)",
+                    "dimensionItemType": "DATA_ELEMENT"
+                }
+            ]
+        }
+    ],
+    "dataElementDimensions": [],
+    "categoryDimensions": [],
+    "programIndicatorDimensions": [],
+    "attributeValues": [],
+    "userAccesses": [],
+    "favorites": [],
+    "dataDimensionItems": [
+        {
+            "dataDimensionItemType": "DATA_ELEMENT",
+            "dataElement": {
+                "id": "eY5ehpbEsB7"
+            }
+        },
+        {
+            "dataDimensionItemType": "DATA_ELEMENT",
+            "dataElement": {
+                "id": "mxc1T932aWM"
+            }
+        }
+    ],
+    "categoryOptionGroupSetDimensions": [],
+    "organisationUnitGroupSetDimensions": [],
+    "filters": [
+        {
+            "dimension": "pe",
+            "items": [
+                {
+                    "id": "2020",
+                    "name": "2020",
+                    "dimensionItemType": "PERIOD"
+                }
+            ]
+        }
+    ],
+    "rows": [
+        {
+            "dimension": "ou",
+            "items": [
+                {
+                    "id": "ImspTQPwCqd",
+                    "name": "Sierra Leone",
+                    "dimensionItemType": "ORGANISATION_UNIT"
+                },
+                {
+                    "id": "LEVEL-1"
+                }
+            ]
+        }
+    ]
+}

@@ -26,10 +26,18 @@ export const PivotTableValueCell = ({ row, column }) => {
     })
 
     // TODO: Add support for 'INTEGER' type (requires server changes)
-    const style =
+    const legendStyle =
         type === 'value' && dxDimension?.valueType === 'NUMBER'
             ? applyLegendSet(parseFloat(rawValue), dxDimension, engine)
             : undefined
+
+    const width = engine.columnWidths[engine.columnMap[column]].width
+    const style = {
+        ...legendStyle,
+        width,
+        minWidth: width,
+        maxWidth: width,
+    }
 
     return (
         <PivotTableCell

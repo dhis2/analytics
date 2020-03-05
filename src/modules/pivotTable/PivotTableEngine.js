@@ -380,9 +380,6 @@ export class PivotTableEngine {
         })
     }
     getRawCellDxDimension({ row, column }) {
-        const rowHeaders = this.getRawRowHeader(row)
-        const columnHeaders = this.getRawColumnHeader(column)
-
         if (!this.data[row]) {
             return undefined
         }
@@ -391,7 +388,10 @@ export class PivotTableEngine {
             return cellValue
         }
 
-        if (!rowHeaders.length || !columnHeaders.length) {
+        const rowHeaders = this.getRawRowHeader(row)
+        const columnHeaders = this.getRawColumnHeader(column)
+
+        if (!rowHeaders.length && !columnHeaders.length) {
             return undefined
         }
 
@@ -407,6 +407,13 @@ export class PivotTableEngine {
         )
         if (dxColumnIndex !== -1) {
             return columnHeaders[dxColumnIndex]
+        }
+
+        // Data is in Filter
+        // TODO : This assumes consistent behavior be the server, but should be more robust
+        return {
+            valueType: 'NUMBER',
+            totalAggregationType: AGGREGATE_TYPE_SUM,
         }
     }
 

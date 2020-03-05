@@ -1,0 +1,193 @@
+{
+    "headers": [
+        {
+            "name": "jp826jAJHUc",
+            "column": "Diagnosis",
+            "valueType": "TEXT",
+            "type": "java.lang.String",
+            "hidden": false,
+            "meta": true
+        },
+        {
+            "name": "pe",
+            "column": "Period",
+            "valueType": "TEXT",
+            "type": "java.lang.String",
+            "hidden": false,
+            "meta": true
+        },
+        {
+            "name": "value",
+            "column": "Value",
+            "valueType": "NUMBER",
+            "type": "java.lang.Double",
+            "hidden": false,
+            "meta": false
+        },
+        {
+            "name": "numerator",
+            "column": "Numerator",
+            "valueType": "NUMBER",
+            "type": "java.lang.Double",
+            "hidden": false,
+            "meta": false
+        },
+        {
+            "name": "denominator",
+            "column": "Denominator",
+            "valueType": "NUMBER",
+            "type": "java.lang.Double",
+            "hidden": false,
+            "meta": false
+        },
+        {
+            "name": "factor",
+            "column": "Factor",
+            "valueType": "NUMBER",
+            "type": "java.lang.Double",
+            "hidden": false,
+            "meta": false
+        },
+        {
+            "name": "multiplier",
+            "column": "Multiplier",
+            "valueType": "NUMBER",
+            "type": "java.lang.Double",
+            "hidden": false,
+            "meta": false
+        },
+        {
+            "name": "divisor",
+            "column": "Divisor",
+            "valueType": "NUMBER",
+            "type": "java.lang.Double",
+            "hidden": false,
+            "meta": false
+        }
+    ],
+    "rows": [
+        [
+            "oDkJh5Ddh7d",
+            "201909",
+            "11802.0",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        [
+            "oDkJh5Ddh7d",
+            "201910",
+            "8759.0",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        [
+            "oDkJh5Ddh7d",
+            "201911",
+            "10133.0",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        [
+            "oDkJh5Ddh7d",
+            "201903",
+            "8223.0",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        [
+            "oDkJh5Ddh7d",
+            "201904",
+            "7784.0",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        [
+            "oDkJh5Ddh7d",
+            "201912",
+            "6801.0",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        [
+            "oDkJh5Ddh7d",
+            "201907",
+            "10991.0",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        [
+            "oDkJh5Ddh7d",
+            "202001",
+            "7795.0",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        [
+            "oDkJh5Ddh7d",
+            "201908",
+            "12274.0",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        [
+            "oDkJh5Ddh7d",
+            "202002",
+            "7459.0",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        [
+            "oDkJh5Ddh7d",
+            "201905",
+            "13928.0",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        [
+            "oDkJh5Ddh7d",
+            "201906",
+            "12272.0",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ]
+    ],
+    "width": 8,
+    "height": 12,
+    "headerWidth": 8
+}
