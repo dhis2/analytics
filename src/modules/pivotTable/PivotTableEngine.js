@@ -410,7 +410,7 @@ export class PivotTableEngine {
         }
 
         // Data is in Filter
-        // TODO : This assumes consistent behavior be the server, but should be more robust
+        // TODO : This assumes the server ignores text types, we should confirm this is the case
         return {
             valueType: 'NUMBER',
             totalAggregationType: AGGREGATE_TYPE_SUM,
