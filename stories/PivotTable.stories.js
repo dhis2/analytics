@@ -35,6 +35,7 @@ import degsMetadataResponse from './data/degs.metadata.json'
 import degsVisualization from './data/degs.visualization.json'
 
 import underAbove100LegendSet from './data/under-above-100.legendSet.json'
+import { NUMBER_TYPE_COLUMN_PERCENTAGE, NUMBER_TYPE_ROW_PERCENTAGE } from '../src/modules/pivotTable/pivotTableConstants'
 
 const visualizationReset = {
     colTotals: false,
@@ -89,7 +90,7 @@ storiesOf('PivotTable', module).add('simple - column %', () => {
         ...simpleVisualization,
         ...visualizationReset,
         colTotals: true,
-        numberType: 'COLUMN_PERCENTAGE'
+        numberType: NUMBER_TYPE_COLUMN_PERCENTAGE
     }
     return (
         <div style={{ width: 800, height: 600 }}>
@@ -198,7 +199,7 @@ storiesOf('PivotTable', module).add('deep - row %', () => {
     const visualization = {
         ...deepVisualization,
         ...visualizationReset,
-        numberType: 'ROW_PERCENTAGE',
+        numberType: NUMBER_TYPE_ROW_PERCENTAGE,
         colSubTotals: true,
         rowSubTotals: true,
         rowTotals: true,
@@ -215,7 +216,7 @@ storiesOf('PivotTable', module).add('deep - column %', () => {
     const visualization = {
         ...deepVisualization,
         ...visualizationReset,
-        numberType: 'COLUMN_PERCENTAGE',
+        numberType: NUMBER_TYPE_COLUMN_PERCENTAGE,
         colSubTotals: true,
         rowSubTotals: true,
         rowTotals: true,

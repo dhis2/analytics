@@ -33,6 +33,9 @@ import {
     FONT_SIZE_NORMAL,
     COLUMN_PARTITION_SIZE_PX,
     CLIPPED_CELL_MAX_WIDTH,
+    VALUE_TYPE_NUMBER,
+    NUMBER_TYPE_COLUMN_PERCENTAGE,
+    NUMBER_TYPE_ROW_PERCENTAGE,
 } from './pivotTableConstants'
 
 const dataFields = [
@@ -291,7 +294,8 @@ export class PivotTableEngine {
                 }
                 if (
                     value &&
-                    this.visualization.numberType === 'ROW_PERCENTAGE' &&
+                    this.visualization.numberType ===
+                        NUMBER_TYPE_ROW_PERCENTAGE &&
                     this.percentageTotals[row]
                 ) {
                     // TODO: Check that we're a number!
@@ -300,7 +304,8 @@ export class PivotTableEngine {
 
                 if (
                     value &&
-                    this.visualization.numberType === 'COLUMN_PERCENTAGE' &&
+                    this.visualization.numberType ===
+                        NUMBER_TYPE_COLUMN_PERCENTAGE &&
                     this.percentageTotals[column]
                 ) {
                     // TODO: Check that we're a number!
@@ -384,35 +389,46 @@ export class PivotTableEngine {
             return undefined
         }
         const cellValue = this.data[row][column]
+        if (!cellValue) {
+            return undefined
+        }
         if (!Array.isArray(cellValue)) {
-            return cellValue
+            // This is a total cell
+            return {
+                valueType: cellValue.valueType,
+                totalAggregationType: cellValue.totalAggregationType,
+            }
         }
 
         const rowHeaders = this.getRawRowHeader(row)
         const columnHeaders = this.getRawColumnHeader(column)
 
-        if (!rowHeaders.length && !columnHeaders.length) {
-            return undefined
-        }
-
         const dxRowIndex = this.dimensionLookup.rows.findIndex(
             dim => dim.dimension === 'dx'
         )
-        if (dxRowIndex !== -1) {
-            return rowHeaders[dxRowIndex]
+        if (rowHeaders.length && dxRowIndex !== -1) {
+            return {
+                valueType: rowHeaders[dxRowIndex].valueType,
+                totalAggregationType:
+                    rowHeaders[dxRowIndex].totalAggregationType,
+            }
         }
 
         const dxColumnIndex = this.dimensionLookup.columns.findIndex(
             dim => dim.dimension === 'dx'
         )
-        if (dxColumnIndex !== -1) {
-            return columnHeaders[dxColumnIndex]
+        if (columnHeaders.length && dxColumnIndex !== -1) {
+            return {
+                valueType: columnHeaders[dxColumnIndex].valueType,
+                totalAggregationType:
+                    columnHeaders[dxColumnIndex].totalAggregationType,
+            }
         }
 
         // Data is in Filter
         // TODO : This assumes the server ignores text types, we should confirm this is the case
         return {
-            valueType: 'NUMBER',
+            valueType: VALUE_TYPE_NUMBER,
             totalAggregationType: AGGREGATE_TYPE_SUM,
         }
     }
@@ -584,7 +600,7 @@ export class PivotTableEngine {
                 totalCell.valueType = currentValueType
             }
 
-            if (dxDimension?.valueType === 'NUMBER') {
+            if (dxDimension?.valueType === VALUE_TYPE_NUMBER) {
                 dataFields.forEach(field => {
                     const headerIndex = this.dimensionLookup.dataHeaders[field]
                     const value = parseValue(dataRow[headerIndex])
@@ -596,7 +612,7 @@ export class PivotTableEngine {
             totalCell.count += 1
         })
 
-        if (this.visualization.numberType === 'ROW_PERCENTAGE') {
+        if (this.visualization.numberType === NUMBER_TYPE_ROW_PERCENTAGE) {
             if (!this.percentageTotals[pos.row]) {
                 this.percentageTotals[pos.row] = {
                     count: 0,
@@ -654,7 +670,7 @@ export class PivotTableEngine {
             }
         }
 
-        if (this.visualization.numberType === 'COLUMN_PERCENTAGE') {
+        if (this.visualization.numberType === NUMBER_TYPE_COLUMN_PERCENTAGE) {
             if (!this.percentageTotals[pos.column]) {
                 this.percentageTotals[pos.column] = {
                     count: 0,
@@ -1011,8 +1027,8 @@ export class PivotTableEngine {
 
         // TODO: Use total cell calculation, don't duplicate here
         if (
-            this.visualization.numberType === 'ROW_PERCENTAGE' ||
-            this.visualization.numberType === 'COLUMN_PERCENTAGE'
+            this.visualization.numberType === NUMBER_TYPE_ROW_PERCENTAGE ||
+            this.visualization.numberType === NUMBER_TYPE_COLUMN_PERCENTAGE
         ) {
             this.percentageTotals = []
         }
