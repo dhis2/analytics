@@ -16,9 +16,8 @@ export const styles = {
     },
     listItem: {
         display: 'flex',
-        height: 24,
-        marginTop: 3,
-        marginBottom: 3,
+        marginTop: 10,
+        marginBottom: 10,
     },
     selectedListItem: {
         backgroundColor: colors.accentSecondaryTransparent,
