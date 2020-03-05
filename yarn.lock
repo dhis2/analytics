@@ -6620,6 +6620,11 @@ highcharts@^7.2.1:
   resolved "https://registry.yarnpkg.com/highcharts/-/highcharts-7.2.1.tgz#313c434bbfd4525a72b76c6bfbd9c39dfe2d1993"
   integrity sha512-/fSUZiONmM+x49IQJNf8XwZGiNGOPRmxEOcd0xdJP9Xc3OlG46ZiUWgSLfhYQ9Oyhmzc3V3SKYCLud8+rKLi+w==
 
+highcharts@^8.0.2:
+  version "8.0.2"
+  resolved "https://registry.yarnpkg.com/highcharts/-/highcharts-8.0.2.tgz#8ae17855b458c270ef2ffb3c649cc70b5cf41402"
+  integrity sha512-M1N8xrO01ZRr+rvgGrFWqbqlvIGbQNGebd4kMej7GYshUIj27DiOAtYmVeP8W+IrghmuvmqZ1G4eBoLsZ3OkAA==
+
 highlight.js@~9.12.0:
   version "9.12.0"
   resolved "https://registry.yarnpkg.com/highlight.js/-/highlight.js-9.12.0.tgz#e6d9dbe57cbefe60751f02af336195870c90c01e"
