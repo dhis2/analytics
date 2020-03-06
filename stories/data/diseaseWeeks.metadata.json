@@ -1,0 +1,229 @@
+{
+    "metaData": {
+        "items": {
+            "vq2qO3eTrNi": {
+                "uid": "vq2qO3eTrNi",
+                "name": "IDSR Malaria",
+                "dimensionItemType": "DATA_ELEMENT",
+                "valueType": "NUMBER",
+                "aggregationType": "SUM",
+                "totalAggregationType": "SUM"
+            },
+            "ou": {
+                "uid": "ou",
+                "name": "Organisation unit",
+                "dimensionType": "ORGANISATION_UNIT"
+            },
+            "noIzB569hTM": {
+                "uid": "noIzB569hTM",
+                "name": "IDSR Yellow fever",
+                "dimensionItemType": "DATA_ELEMENT",
+                "valueType": "NUMBER",
+                "aggregationType": "SUM",
+                "totalAggregationType": "SUM"
+            },
+            "2020W12": {
+                "uid": "2020W12",
+                "code": "2020W12",
+                "name": "W12 2020",
+                "dimensionItemType": "PERIOD",
+                "valueType": "NUMBER",
+                "totalAggregationType": "SUM",
+                "startDate": "2020-03-16T00:00:00.000",
+                "endDate": "2020-03-22T00:00:00.000"
+            },
+            "2020W11": {
+                "uid": "2020W11",
+                "code": "2020W11",
+                "name": "W11 2020",
+                "dimensionItemType": "PERIOD",
+                "valueType": "NUMBER",
+                "totalAggregationType": "SUM",
+                "startDate": "2020-03-09T00:00:00.000",
+                "endDate": "2020-03-15T00:00:00.000"
+            },
+            "2020W10": {
+                "uid": "2020W10",
+                "code": "2020W10",
+                "name": "W10 2020",
+                "dimensionItemType": "PERIOD",
+                "valueType": "NUMBER",
+                "totalAggregationType": "SUM",
+                "startDate": "2020-03-02T00:00:00.000",
+                "endDate": "2020-03-08T00:00:00.000"
+            },
+            "UsSUX0cpKsH": {
+                "uid": "UsSUX0cpKsH",
+                "name": "IDSR Cholera",
+                "dimensionItemType": "DATA_ELEMENT",
+                "valueType": "NUMBER",
+                "aggregationType": "SUM",
+                "totalAggregationType": "SUM"
+            },
+            "HS9zqaBdOQ4": {
+                "uid": "HS9zqaBdOQ4",
+                "name": "IDSR Plague",
+                "dimensionItemType": "DATA_ELEMENT",
+                "valueType": "NUMBER",
+                "aggregationType": "SUM",
+                "totalAggregationType": "SUM"
+            },
+            "2020W9": {
+                "uid": "2020W9",
+                "code": "2020W9",
+                "name": "W9 2020",
+                "dimensionItemType": "PERIOD",
+                "valueType": "NUMBER",
+                "totalAggregationType": "SUM",
+                "startDate": "2020-02-24T00:00:00.000",
+                "endDate": "2020-03-01T00:00:00.000"
+            },
+            "ImspTQPwCqd": {
+                "uid": "ImspTQPwCqd",
+                "code": "OU_525",
+                "name": "Sierra Leone",
+                "dimensionItemType": "ORGANISATION_UNIT",
+                "valueType": "NUMBER",
+                "totalAggregationType": "SUM"
+            },
+            "2020W7": {
+                "uid": "2020W7",
+                "code": "2020W7",
+                "name": "W7 2020",
+                "dimensionItemType": "PERIOD",
+                "valueType": "NUMBER",
+                "totalAggregationType": "SUM",
+                "startDate": "2020-02-10T00:00:00.000",
+                "endDate": "2020-02-16T00:00:00.000"
+            },
+            "2020W8": {
+                "uid": "2020W8",
+                "code": "2020W8",
+                "name": "W8 2020",
+                "dimensionItemType": "PERIOD",
+                "valueType": "NUMBER",
+                "totalAggregationType": "SUM",
+                "startDate": "2020-02-17T00:00:00.000",
+                "endDate": "2020-02-23T00:00:00.000"
+            },
+            "dx": {
+                "uid": "dx",
+                "name": "Data",
+                "dimensionType": "DATA_X"
+            },
+            "2020W5": {
+                "uid": "2020W5",
+                "code": "2020W5",
+                "name": "W5 2020",
+                "dimensionItemType": "PERIOD",
+                "valueType": "NUMBER",
+                "totalAggregationType": "SUM",
+                "startDate": "2020-01-27T00:00:00.000",
+                "endDate": "2020-02-02T00:00:00.000"
+            },
+            "2020W6": {
+                "uid": "2020W6",
+                "code": "2020W6",
+                "name": "W6 2020",
+                "dimensionItemType": "PERIOD",
+                "valueType": "NUMBER",
+                "totalAggregationType": "SUM",
+                "startDate": "2020-02-03T00:00:00.000",
+                "endDate": "2020-02-09T00:00:00.000"
+            },
+            "pe": {
+                "uid": "pe",
+                "name": "Period",
+                "dimensionType": "PERIOD"
+            },
+            "2020W3": {
+                "uid": "2020W3",
+                "code": "2020W3",
+                "name": "W3 2020",
+                "dimensionItemType": "PERIOD",
+                "valueType": "NUMBER",
+                "totalAggregationType": "SUM",
+                "startDate": "2020-01-13T00:00:00.000",
+                "endDate": "2020-01-19T00:00:00.000"
+            },
+            "2020W4": {
+                "uid": "2020W4",
+                "code": "2020W4",
+                "name": "W4 2020",
+                "dimensionItemType": "PERIOD",
+                "valueType": "NUMBER",
+                "totalAggregationType": "SUM",
+                "startDate": "2020-01-20T00:00:00.000",
+                "endDate": "2020-01-26T00:00:00.000"
+            },
+            "HllvX50cXC0": {
+                "uid": "HllvX50cXC0",
+                "code": "default",
+                "name": "default",
+                "valueType": "NUMBER",
+                "totalAggregationType": "SUM"
+            },
+            "2020W1": {
+                "uid": "2020W1",
+                "code": "2020W1",
+                "name": "W1 2020",
+                "dimensionItemType": "PERIOD",
+                "valueType": "NUMBER",
+                "totalAggregationType": "SUM",
+                "startDate": "2019-12-30T00:00:00.000",
+                "endDate": "2020-01-05T00:00:00.000"
+            },
+            "2020W2": {
+                "uid": "2020W2",
+                "code": "2020W2",
+                "name": "W2 2020",
+                "dimensionItemType": "PERIOD",
+                "valueType": "NUMBER",
+                "totalAggregationType": "SUM",
+                "startDate": "2020-01-06T00:00:00.000",
+                "endDate": "2020-01-12T00:00:00.000"
+            },
+            "YazgqXbizv1": {
+                "uid": "YazgqXbizv1",
+                "name": "IDSR Measles",
+                "dimensionItemType": "DATA_ELEMENT",
+                "valueType": "NUMBER",
+                "aggregationType": "SUM",
+                "totalAggregationType": "SUM"
+            }
+        },
+        "dimensions": {
+            "dx": [
+                "UsSUX0cpKsH",
+                "vq2qO3eTrNi",
+                "YazgqXbizv1",
+                "HS9zqaBdOQ4",
+                "noIzB569hTM"
+            ],
+            "pe": [
+                "2020W12",
+                "2020W11",
+                "2020W10",
+                "2020W9",
+                "2020W8",
+                "2020W7",
+                "2020W6",
+                "2020W5",
+                "2020W4",
+                "2020W3",
+                "2020W2",
+                "2020W1"
+            ],
+            "ou": [
+                "ImspTQPwCqd"
+            ],
+            "co": [
+                "HllvX50cXC0"
+            ]
+        }
+    },
+    "width": 0,
+    "height": 0,
+    "rows": [],
+    "headerWidth": 0
+}

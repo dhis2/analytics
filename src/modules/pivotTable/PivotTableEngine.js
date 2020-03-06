@@ -513,7 +513,7 @@ export class PivotTableEngine {
             }
 
         const columnSubtotalSize = this.dimensionLookup.rows[0].size + 1
-        const columnSubtotal = this.options.showColumnSubtotals && {
+        const columnSubtotal = this.doColumnSubtotals && {
             row:
                 Math.ceil((row + 1) / columnSubtotalSize) * columnSubtotalSize -
                 1,
@@ -1094,16 +1094,10 @@ export class PivotTableEngine {
 
         const mappedColumn = this.columnMap[column]
         this.rowMap.sort((rowA, rowB) => {
-            if (
-                this.options.showColumnTotals &&
-                rowA === this.rowMap.length - 1
-            ) {
+            if (this.options.showColumnTotals && rowA === this.dataHeight - 1) {
                 return 1
             }
-            if (
-                this.options.showColumnTotals &&
-                rowB === this.rowMap.length - 1
-            ) {
+            if (this.options.showColumnTotals && rowB === this.dataHeight - 1) {
                 return -1
             }
             const valueA = this.getRaw({ row: rowA, column: mappedColumn })

@@ -34,6 +34,10 @@ import degsDataResponse from './data/degs.data.json'
 import degsMetadataResponse from './data/degs.metadata.json'
 import degsVisualization from './data/degs.visualization.json'
 
+import diseaseWeeksDataResponse from './data/diseaseWeeks.data.json'
+import diseaseWeeksMetadataResponse from './data/diseaseWeeks.metadata.json'
+import diseaseWeeksVisualization from './data/diseaseWeeks.visualization.json'
+
 import underAbove100LegendSet from './data/under-above-100.legendSet.json'
 import { NUMBER_TYPE_COLUMN_PERCENTAGE, NUMBER_TYPE_ROW_PERCENTAGE } from '../src/modules/pivotTable/pivotTableConstants'
 
@@ -57,6 +61,7 @@ const targetData = combineDataWithMetadata(targetDataResponse, targetMetadataRes
 const hierarchyData = combineDataWithMetadata(hierarchyDataResponse, hierarchyMetadataResponse)
 const narrativeData = combineDataWithMetadata(narrativeDataResponse, narrativeMetadataResponse)
 const degsData = combineDataWithMetadata(degsDataResponse, degsMetadataResponse)
+const diseaseWeeksData = combineDataWithMetadata(diseaseWeeksDataResponse, diseaseWeeksMetadataResponse)
 
 
 storiesOf('PivotTable', module).add('simple', () => {
@@ -306,6 +311,41 @@ storiesOf('PivotTable', module).add('deep - all totals', () => {
     )
 })
 
+storiesOf('PivotTable', module).add('small empty rows - shown', () => {
+    const visualization = {
+        ...diseaseWeeksVisualization,
+        ...visualizationReset,
+        colTotals: true,
+        rowTotals: true,
+        colSubTotals: true,
+        rowSubTotals: true,
+    }
+
+    return (
+        <div style={{ width: 800, height: 600 }}>
+            <PivotTable data={diseaseWeeksData} visualization={visualization} />
+        </div>
+    )
+})
+
+storiesOf('PivotTable', module).add('small empty rows - hidden', () => {
+    const visualization = {
+        ...diseaseWeeksVisualization,
+        ...visualizationReset,
+        colTotals: true,
+        rowTotals: true,
+        colSubTotals: true,
+        rowSubTotals: true,
+        hideEmptyRows: true
+    }
+
+    return (
+        <div style={{ width: 800, height: 600 }}>
+            <PivotTable data={diseaseWeeksData} visualization={visualization} />
+        </div>
+    )
+})
+
 storiesOf('PivotTable', module).add('empty rows - shown', () => {
     const visualization = {
         ...emptyRowsVisualization,
@@ -357,19 +397,6 @@ storiesOf('PivotTable', module).add('empty columns + assigned cats (hidden)', ()
     return (
         <div style={{ width: 800, height: 600 }}>
             <PivotTable data={emptyColumnsData} visualization={visualization} />
-        </div>
-    )
-})
-
-storiesOf('PivotTable', module).add('empty rows - hidden', () => {
-    const visualization = {
-        ...emptyRowsVisualization,
-        ...visualizationReset,
-        hideEmptyRows: true,
-    }
-    return (
-        <div style={{ width: 800, height: 600 }}>
-            <PivotTable data={emptyRowsData} visualization={visualization} />
         </div>
     )
 })
