@@ -1,3 +1,10 @@
+## [4.3.8](https://github.com/dhis2/analytics/compare/v4.3.7...v4.3.8) (2020-03-06)
+
+
+### Bug Fixes
+
+* adds ellipsis to highcarts titles ([#340](https://github.com/dhis2/analytics/issues/340)) ([2aa508e](https://github.com/dhis2/analytics/commit/2aa508e00d0fa76a88392a1a94720f4a3082e395))
+
 ## [4.3.7](https://github.com/dhis2/analytics/compare/v4.3.6...v4.3.7) (2020-03-05)
 
 
