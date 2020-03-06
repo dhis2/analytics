@@ -1,0 +1,323 @@
+{
+    "headers": [
+        {
+            "name": "dx",
+            "column": "Data",
+            "valueType": "TEXT",
+            "type": "java.lang.String",
+            "hidden": false,
+            "meta": true
+        },
+        {
+            "name": "pe",
+            "column": "Period",
+            "valueType": "TEXT",
+            "type": "java.lang.String",
+            "hidden": false,
+            "meta": true
+        },
+        {
+            "name": "value",
+            "column": "Value",
+            "valueType": "NUMBER",
+            "type": "java.lang.Double",
+            "hidden": false,
+            "meta": false
+        },
+        {
+            "name": "numerator",
+            "column": "Numerator",
+            "valueType": "NUMBER",
+            "type": "java.lang.Double",
+            "hidden": false,
+            "meta": false
+        },
+        {
+            "name": "denominator",
+            "column": "Denominator",
+            "valueType": "NUMBER",
+            "type": "java.lang.Double",
+            "hidden": false,
+            "meta": false
+        },
+        {
+            "name": "factor",
+            "column": "Factor",
+            "valueType": "NUMBER",
+            "type": "java.lang.Double",
+            "hidden": false,
+            "meta": false
+        },
+        {
+            "name": "multiplier",
+            "column": "Multiplier",
+            "valueType": "NUMBER",
+            "type": "java.lang.Double",
+            "hidden": false,
+            "meta": false
+        },
+        {
+            "name": "divisor",
+            "column": "Divisor",
+            "valueType": "NUMBER",
+            "type": "java.lang.Double",
+            "hidden": false,
+            "meta": false
+        }
+    ],
+    "width": 8,
+    "height": 25,
+    "rows": [
+        [
+            "HS9zqaBdOQ4",
+            "2020W11",
+            "441.0",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        [
+            "HS9zqaBdOQ4",
+            "2020W12",
+            "427.0",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        [
+            "noIzB569hTM",
+            "2020W4",
+            "320.0",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        [
+            "noIzB569hTM",
+            "2020W6",
+            "460.0",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        [
+            "noIzB569hTM",
+            "2020W2",
+            "264.0",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        [
+            "HS9zqaBdOQ4",
+            "2020W2",
+            "275.0",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        [
+            "UsSUX0cpKsH",
+            "2020W2",
+            "289.0",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        [
+            "HS9zqaBdOQ4",
+            "2020W4",
+            "312.0",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        [
+            "UsSUX0cpKsH",
+            "2020W4",
+            "297.0",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        [
+            "HS9zqaBdOQ4",
+            "2020W6",
+            "466.0",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        [
+            "UsSUX0cpKsH",
+            "2020W6",
+            "419.0",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        [
+            "YazgqXbizv1",
+            "2020W11",
+            "409.0",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        [
+            "YazgqXbizv1",
+            "2020W12",
+            "452.0",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        [
+            "UsSUX0cpKsH",
+            "2020W11",
+            "430.0",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        [
+            "vq2qO3eTrNi",
+            "2020W6",
+            "430.0",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        [
+            "UsSUX0cpKsH",
+            "2020W12",
+            "457.0",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        [
+            "vq2qO3eTrNi",
+            "2020W2",
+            "267.0",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        [
+            "vq2qO3eTrNi",
+            "2020W4",
+            "320.0",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        [
+            "noIzB569hTM",
+            "2020W12",
+            "420.0",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        [
+            "YazgqXbizv1",
+            "2020W2",
+            "300.0",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        [
+            "vq2qO3eTrNi",
+            "2020W12",
+            "505.0",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        [
+            "noIzB569hTM",
+            "2020W11",
+            "433.0",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        [
+            "vq2qO3eTrNi",
+            "2020W11",
+            "446.0",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        [
+            "YazgqXbizv1",
+            "2020W6",
+            "437.0",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        [
+            "YazgqXbizv1",
+            "2020W4",
+            "290.0",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ]
+    ],
+    "headerWidth": 8
+}
