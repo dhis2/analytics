@@ -1,3 +1,10 @@
+## [4.3.9](https://github.com/dhis2/analytics/compare/v4.3.8...v4.3.9) (2020-03-06)
+
+
+### Bug Fixes
+
+* don't sort total when hideEmptyRows, fix column subtotals ([#344](https://github.com/dhis2/analytics/issues/344)) ([7cff6d8](https://github.com/dhis2/analytics/commit/7cff6d83e228eaf93b60e51ed410268059bfd10b))
+
 ## [4.3.8](https://github.com/dhis2/analytics/compare/v4.3.7...v4.3.8) (2020-03-06)
 
 
