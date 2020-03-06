@@ -1,3 +1,9 @@
+import {
+    NUMBER_TYPE_ROW_PERCENTAGE,
+    NUMBER_TYPE_COLUMN_PERCENTAGE,
+    VALUE_TYPE_NUMBER,
+} from './pivotTableConstants'
+
 const trimTrailingZeros = stringValue => stringValue.replace(/\.?0+$/, '')
 
 const defaultDecimalSeparator = '.'
@@ -47,13 +53,13 @@ const toFixedPrecisionString = (value, skipRounding) => {
 }
 
 export const renderValue = (value, valueType, visualization) => {
-    if (valueType !== 'NUMBER' || value === undefined) {
+    if (valueType !== VALUE_TYPE_NUMBER || value === undefined) {
         return value
     }
 
     if (
-        visualization.numberType === 'ROW_PERCENTAGE' ||
-        visualization.numberType === 'COLUMN_PERCENTAGE'
+        visualization.numberType === NUMBER_TYPE_ROW_PERCENTAGE ||
+        visualization.numberType === NUMBER_TYPE_COLUMN_PERCENTAGE
     ) {
         return (
             trimTrailingZeros(

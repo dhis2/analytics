@@ -1,3 +1,10 @@
+## [4.3.7](https://github.com/dhis2/analytics/compare/v4.3.6...v4.3.7) (2020-03-05)
+
+
+### Bug Fixes
+
+* don't assume data dimension is a column or row, could be filter ([#341](https://github.com/dhis2/analytics/issues/341)) ([1d0afc0](https://github.com/dhis2/analytics/commit/1d0afc019b48cacf03915c64de5a14ed100a4ecb))
+
 ## [4.3.6](https://github.com/dhis2/analytics/compare/v4.3.5...v4.3.6) (2020-03-04)
 
 

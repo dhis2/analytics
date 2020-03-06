@@ -4,6 +4,10 @@ import { renderValue } from '../../modules/pivotTable/renderValue'
 import { applyLegendSet } from '../../modules/pivotTable/applyLegendSet'
 import { PivotTableCell } from './PivotTableCell'
 import { usePivotTableEngine } from './PivotTableEngineContext'
+import {
+    VALUE_TYPE_NUMBER,
+    CELL_TYPE_VALUE,
+} from '../../modules/pivotTable/pivotTableConstants'
 
 export const PivotTableValueCell = ({ row, column }) => {
     const engine = usePivotTableEngine()
@@ -26,10 +30,18 @@ export const PivotTableValueCell = ({ row, column }) => {
     })
 
     // TODO: Add support for 'INTEGER' type (requires server changes)
-    const style =
-        type === 'value' && dxDimension?.valueType === 'NUMBER'
+    const legendStyle =
+        type === CELL_TYPE_VALUE && dxDimension?.valueType === VALUE_TYPE_NUMBER
             ? applyLegendSet(parseFloat(rawValue), dxDimension, engine)
             : undefined
+
+    const width = engine.columnWidths[engine.columnMap[column]].width
+    const style = {
+        ...legendStyle,
+        width,
+        minWidth: width,
+        maxWidth: width,
+    }
 
     return (
         <PivotTableCell
