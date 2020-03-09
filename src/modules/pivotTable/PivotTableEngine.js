@@ -8,6 +8,7 @@ import {
     DIMENSION_ID_DATA,
     DIMENSION_ID_PERIOD,
     DIMENSION_ID_ORGUNIT,
+    DIMENSION_TYPE_DATA_ELEMENT_GROUP_SET,
 } from '../predefinedDimensions'
 
 import {
@@ -55,6 +56,10 @@ const defaultOptions = {
     showColumnSubtotals: false,
 }
 
+const isDxDimension = dimensionItem =>
+    dimensionItem.dimensionType === DIMENSION_ID_DATA ||
+    dimensionItem.dimensionType === DIMENSION_TYPE_DATA_ELEMENT_GROUP_SET
+
 const countFromDisaggregates = list => {
     if (list.length === 0) {
         return 0
@@ -100,6 +105,7 @@ const buildDimensionLookup = (visualization, metadata, headers) => {
         items: metadata.dimensions[row.dimension].map(
             item => metadata.items[item]
         ),
+        isDxDimension: isDxDimension(metadata.items[row.dimension]),
         position: 'row',
     }))
     const columns = visualization.columns.map(column => ({
@@ -110,6 +116,7 @@ const buildDimensionLookup = (visualization, metadata, headers) => {
         items: metadata.dimensions[column.dimension].map(
             item => metadata.items[item]
         ),
+        isDxDimension: isDxDimension(metadata.items[column.dimension]),
         position: 'column',
     }))
 
@@ -404,7 +411,7 @@ export class PivotTableEngine {
         const columnHeaders = this.getRawColumnHeader(column)
 
         const dxRowIndex = this.dimensionLookup.rows.findIndex(
-            dim => dim.dimension === 'dx'
+            dim => dim.isDxDimension
         )
         if (rowHeaders.length && dxRowIndex !== -1) {
             return {
@@ -415,7 +422,7 @@ export class PivotTableEngine {
         }
 
         const dxColumnIndex = this.dimensionLookup.columns.findIndex(
-            dim => dim.dimension === 'dx'
+            dim => dim.isDxDimension
         )
         if (columnHeaders.length && dxColumnIndex !== -1) {
             return {
