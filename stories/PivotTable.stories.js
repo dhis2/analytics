@@ -488,10 +488,29 @@ storiesOf('PivotTable', module).add('legend - by data item', () => {
     )
 })
 
-storiesOf('PivotTable', module).add('hierarchy - shown', () => {
+storiesOf('PivotTable', module).add('hierarchy - rows', () => {
     const visualization = {
         ...hierarchyVisualization,
         ...visualizationReset,
+        colTotals: true,
+        rowTotals: true,
+        colSubTotals: true,
+        rowSubTotals: true,
+    }
+
+    return (
+        <div style={{ width: 800, height: 600 }}>
+            <PivotTable data={hierarchyData} visualization={visualization} />
+        </div>
+    )
+})
+
+storiesOf('PivotTable', module).add('hierarchy - columns', () => {
+    const visualization = {
+        ...hierarchyVisualization,
+        ...visualizationReset,
+        columns: hierarchyVisualization.rows,
+        rows: hierarchyVisualization.columns,
         colTotals: true,
         rowTotals: true,
         colSubTotals: true,
