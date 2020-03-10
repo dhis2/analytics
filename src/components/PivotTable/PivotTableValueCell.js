@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { renderValue } from '../../modules/pivotTable/renderValue'
 import { applyLegendSet } from '../../modules/pivotTable/applyLegendSet'
 import { PivotTableCell } from './PivotTableCell'
 import { usePivotTableEngine } from './PivotTableEngineContext'
@@ -8,31 +7,29 @@ import {
     VALUE_TYPE_NUMBER,
     CELL_TYPE_VALUE,
 } from '../../modules/pivotTable/pivotTableConstants'
+import { PivotTableEmptyCell } from './PivotTableEmptyCell'
 
 export const PivotTableValueCell = ({ row, column }) => {
     const engine = usePivotTableEngine()
 
-    const rawValue = engine.get({
+    const cellContent = engine.get({
         row,
         column,
     })
 
-    const dxDimension = engine.getCellDxDimension({ row, column })
-
-    const value = renderValue(
-        rawValue,
-        dxDimension?.valueType,
-        engine.visualization
-    )
-    const type = engine.getCellType({
-        row,
-        column,
-    })
+    if (!cellContent || cellContent.empty) {
+        return <PivotTableEmptyCell classes={cellContent?.cellType} />
+    }
 
     // TODO: Add support for 'INTEGER' type (requires server changes)
     const legendStyle =
-        type === CELL_TYPE_VALUE && dxDimension?.valueType === VALUE_TYPE_NUMBER
-            ? applyLegendSet(parseFloat(rawValue), dxDimension, engine)
+        cellContent.cellType === CELL_TYPE_VALUE &&
+        cellContent.valueType === VALUE_TYPE_NUMBER
+            ? applyLegendSet(
+                  cellContent.rawValue,
+                  cellContent.dxDimension,
+                  engine
+              )
             : undefined
 
     const width = engine.columnWidths[engine.columnMap[column]].width
@@ -46,11 +43,11 @@ export const PivotTableValueCell = ({ row, column }) => {
     return (
         <PivotTableCell
             key={column}
-            classes={[type, dxDimension?.valueType]}
-            title={value}
+            classes={[cellContent.cellType, cellContent.valueType]}
+            title={cellContent.renderedValue}
             style={style}
         >
-            {value ?? null}
+            {cellContent.renderedValue ?? null}
         </PivotTableCell>
     )
 }
