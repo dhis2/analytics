@@ -1,16 +1,13 @@
 {
     "lastUpdated": "2020-03-05T15:50:10.007",
-    "href": "https://debug.dhis2.org/2.34dev/api/32/visualizations/HkFOAFahojr",
     "id": "HkFOAFahojr",
     "created": "2020-03-05T15:50:10.007",
     "name": "AUSTIN TEST - DEGS",
     "publicAccess": "--------",
-    "userOrganisationUnitChildren": false,
     "legendDisplayStyle": "FILL",
     "type": "COLUMN",
     "hideEmptyColumns": false,
     "subscribed": false,
-    "userOrganisationUnit": false,
     "rowSubTotals": false,
     "cumulativeValues": false,
     "showDimensionLabels": false,
@@ -18,7 +15,6 @@
     "fontSize": "NORMAL",
     "favorite": false,
     "topLimit": 0,
-    "userOrganisationUnitGrandChildren": false,
     "displayName": "AUSTIN TEST - DEGS",
     "percentStackedValues": false,
     "noSpaceBetweenColumns": false,
@@ -39,9 +35,8 @@
     "aggregationType": "DEFAULT",
     "hideSubtitle": false,
     "hideLegend": false,
-    "externalAccess": false,
-    "legendDisplayStrategy": "FIXED",
     "colSubTotals": false,
+    "legendDisplayStrategy": "FIXED",
     "rowTotals": false,
     "digitGroupSeparator": "SPACE",
     "regression": false,
@@ -66,108 +61,61 @@
     "lastUpdatedBy": {
         "id": "GOLswS44mh8"
     },
-    "relativePeriods": {
-        "thisYear": false,
-        "quartersLastYear": false,
-        "last52Weeks": false,
-        "thisWeek": false,
-        "lastMonth": false,
-        "last14Days": false,
-        "biMonthsThisYear": false,
-        "monthsThisYear": false,
-        "last2SixMonths": false,
-        "yesterday": false,
-        "thisQuarter": false,
-        "last12Months": true,
-        "last5FinancialYears": false,
-        "thisSixMonth": false,
-        "lastQuarter": false,
-        "thisFinancialYear": false,
-        "last4Weeks": false,
-        "last3Months": false,
-        "thisDay": false,
-        "thisMonth": false,
-        "last5Years": false,
-        "last6BiMonths": false,
-        "last4BiWeeks": false,
-        "lastFinancialYear": false,
-        "lastBiWeek": false,
-        "weeksThisYear": false,
-        "last6Months": false,
-        "last3Days": false,
-        "quartersThisYear": false,
-        "monthsLastYear": false,
-        "lastWeek": false,
-        "last7Days": false,
-        "thisBimonth": false,
-        "lastBimonth": false,
-        "lastSixMonth": false,
-        "thisBiWeek": false,
-        "lastYear": false,
-        "last12Weeks": false,
-        "last4Quarters": false
-    },
     "user": {
-        "id": "GOLswS44mh8"
-    },
-    "dataElementGroupSetDimensions": [
-        {
-            "dataElementGroupSet": {
-                "id": "jp826jAJHUc"
-            },
-            "dataElementGroups": [
-                {
-                    "id": "oDkJh5Ddh7d"
-                }
-            ]
+        "name": "Tom Wakiki",
+        "displayName": "Tom Wakiki",
+        "userCredentials": {
+            "username": "system"
         }
-    ],
-    "attributeDimensions": [],
+    },
     "translations": [],
     "yearlySeries": [],
-    "filterDimensions": [
-        "ou"
-    ],
     "interpretations": [],
     "userGroupAccesses": [],
     "subscribers": [],
     "optionalAxes": [],
     "columns": [
         {
-            "id": "jp826jAJHUc"
+            "dimension": "jp826jAJHUc",
+            "items": [
+                {
+                    "name": "Acute Flaccid Paralysis (AFP) ",
+                    "id": "oDkJh5Ddh7d",
+                    "displayName": "Acute Flaccid Paralysis (AFP) ",
+                    "displayShortName": "Acute Flaccid Paralysis (AFP) ",
+                    "dimensionItemType": "DATA_ELEMENT_GROUP"
+                }
+            ]
         }
-    ],
-    "dataElementDimensions": [],
-    "periods": [],
-    "categoryDimensions": [],
-    "rowDimensions": [
-        "pe"
-    ],
-    "itemOrganisationUnitGroups": [],
-    "programIndicatorDimensions": [],
-    "attributeValues": [],
-    "columnDimensions": [
-        "jp826jAJHUc"
     ],
     "userAccesses": [],
     "favorites": [],
-    "dataDimensionItems": [],
-    "categoryOptionGroupSetDimensions": [],
-    "organisationUnitGroupSetDimensions": [],
-    "organisationUnitLevels": [],
-    "organisationUnits": [
-        {
-            "id": "ImspTQPwCqd"
-        }
-    ],
     "filters": [
         {
-            "id": "ou"
+            "dimension": "ou",
+            "items": [
+                {
+                    "name": "Sierra Leone",
+                    "id": "ImspTQPwCqd",
+                    "displayName": "Sierra Leone",
+                    "displayShortName": "Sierra Leone",
+                    "dimensionItemType": "ORGANISATION_UNIT"
+                }
+            ]
         }
     ],
     "rows": [
         {
-            "id": "pe"
+            "dimension": "pe",
+            "items": [
+                {
+                    "name": "LAST_12_MONTHS",
+                    "id": "LAST_12_MONTHS",
+                    "displayName": "LAST_12_MONTHS",
+                    "displayShortName": "LAST_12_MONTHS",
+                    "dimensionItemType": "PERIOD"
+                }
+            ]
         }
     ]
 }
