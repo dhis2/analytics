@@ -1,3 +1,10 @@
+## [4.3.14](https://github.com/dhis2/analytics/compare/v4.3.13...v4.3.14) (2020-03-10)
+
+
+### Bug Fixes
+
+* apply legend to raw value, not percent value ([#352](https://github.com/dhis2/analytics/issues/352)) ([2e9a94d](https://github.com/dhis2/analytics/commit/2e9a94dc5bdbeec2b6c75e3a1d1d41c5d6c37176))
+
 ## [4.3.13](https://github.com/dhis2/analytics/compare/v4.3.12...v4.3.13) (2020-03-10)
 
 
