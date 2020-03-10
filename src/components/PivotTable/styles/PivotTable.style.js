@@ -83,7 +83,6 @@ export const cell = css`
     }
     .value {
         background-color: #ffffff;
-        cursor: pointer;
     }
     .TEXT {
         text-align: left;
