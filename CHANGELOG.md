@@ -1,3 +1,10 @@
+## [4.3.10](https://github.com/dhis2/analytics/compare/v4.3.9...v4.3.10) (2020-03-10)
+
+
+### Bug Fixes
+
+* support single-axis tables ([#347](https://github.com/dhis2/analytics/issues/347)) ([4c60eca](https://github.com/dhis2/analytics/commit/4c60eca337d53b087708cf564992c8be5f61581a))
+
 ## [4.3.9](https://github.com/dhis2/analytics/compare/v4.3.8...v4.3.9) (2020-03-06)
 
 
