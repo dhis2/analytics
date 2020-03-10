@@ -1,3 +1,24 @@
+## [4.3.12](https://github.com/dhis2/analytics/compare/v4.3.11...v4.3.12) (2020-03-10)
+
+
+### Bug Fixes
+
+* make the gauge use more viewport space (DHIS2-8412) ([#345](https://github.com/dhis2/analytics/issues/345)) ([00fb7db](https://github.com/dhis2/analytics/commit/00fb7db886114f5dc66888b9e9553a4c3ea6b87e))
+
+## [4.3.11](https://github.com/dhis2/analytics/compare/v4.3.10...v4.3.11) (2020-03-10)
+
+
+### Bug Fixes
+
+* correct calculation of row subtotal column totals ([#349](https://github.com/dhis2/analytics/issues/349)) ([079b9ad](https://github.com/dhis2/analytics/commit/079b9ad21d108b8d837c63cbcd51cfdba4fe9306))
+
+## [4.3.10](https://github.com/dhis2/analytics/compare/v4.3.9...v4.3.10) (2020-03-10)
+
+
+### Bug Fixes
+
+* support single-axis tables ([#347](https://github.com/dhis2/analytics/issues/347)) ([4c60eca](https://github.com/dhis2/analytics/commit/4c60eca337d53b087708cf564992c8be5f61581a))
+
 ## [4.3.9](https://github.com/dhis2/analytics/compare/v4.3.8...v4.3.9) (2020-03-06)
 
 
