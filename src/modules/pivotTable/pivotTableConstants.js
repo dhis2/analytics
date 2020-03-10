@@ -9,6 +9,7 @@ export const AGGREGATE_TYPE_SUM = 'SUM'
 export const AGGREGATE_TYPE_AVERAGE = 'AVERAGE'
 export const AGGREGATE_TYPE_NA = 'N/A'
 
+export const VALUE_TYPE_TEXT = 'TEXT'
 export const VALUE_TYPE_NUMBER = 'NUMBER'
 
 export const NUMBER_TYPE_VALUE = 'VALUE'
