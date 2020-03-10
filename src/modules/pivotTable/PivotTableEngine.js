@@ -409,6 +409,7 @@ export class PivotTableEngine {
             return {
                 valueType: cellValue.valueType,
                 totalAggregationType: cellValue.totalAggregationType,
+                legendSet: undefined,
             }
         }
 
@@ -423,6 +424,7 @@ export class PivotTableEngine {
                 valueType: rowHeaders[dxRowIndex].valueType,
                 totalAggregationType:
                     rowHeaders[dxRowIndex].totalAggregationType,
+                legendSet: rowHeaders[dxRowIndex].legendSet,
             }
         }
 
@@ -434,6 +436,7 @@ export class PivotTableEngine {
                 valueType: columnHeaders[dxColumnIndex].valueType,
                 totalAggregationType:
                     columnHeaders[dxColumnIndex].totalAggregationType,
+                legendSet: columnHeaders[dxColumnIndex].legendSet,
             }
         }
 

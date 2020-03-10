@@ -1,3 +1,10 @@
+## [4.3.13](https://github.com/dhis2/analytics/compare/v4.3.12...v4.3.13) (2020-03-10)
+
+
+### Bug Fixes
+
+* include legendSet in dx dimension lookup result, fix by-dx legends ([#351](https://github.com/dhis2/analytics/issues/351)) ([9a878a2](https://github.com/dhis2/analytics/commit/9a878a20a123f82d3d896a6247a0376860f0401a))
+
 ## [4.3.12](https://github.com/dhis2/analytics/compare/v4.3.11...v4.3.12) (2020-03-10)
 
 
