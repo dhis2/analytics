@@ -1,3 +1,10 @@
+## [4.3.15](https://github.com/dhis2/analytics/compare/v4.3.14...v4.3.15) (2020-03-10)
+
+
+### Bug Fixes
+
+* correct support for data element group sets as dx dimension ([#346](https://github.com/dhis2/analytics/issues/346)) ([c85d943](https://github.com/dhis2/analytics/commit/c85d943103df6c2d0d1010055724ad7395708da7))
+
 ## [4.3.14](https://github.com/dhis2/analytics/compare/v4.3.13...v4.3.14) (2020-03-10)
 
 
