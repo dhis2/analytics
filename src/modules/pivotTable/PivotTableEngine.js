@@ -8,7 +8,6 @@ import {
     DIMENSION_ID_DATA,
     DIMENSION_ID_PERIOD,
     DIMENSION_ID_ORGUNIT,
-    DIMENSION_TYPE_DATA_ELEMENT_GROUP_SET,
 } from '../predefinedDimensions'
 
 import {
@@ -37,6 +36,7 @@ import {
     VALUE_TYPE_NUMBER,
     NUMBER_TYPE_COLUMN_PERCENTAGE,
     NUMBER_TYPE_ROW_PERCENTAGE,
+    DIMENSION_TYPE_DATA_ELEMENT_GROUP_SET,
 } from './pivotTableConstants'
 
 const dataFields = [
