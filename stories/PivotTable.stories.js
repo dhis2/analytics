@@ -122,6 +122,11 @@ storiesOf('PivotTable', module).add('simple - no columns', () => {
     const visualization = {
         ...simpleVisualization,
         ...visualizationReset,
+        showDimensionLabels: true,
+        colTotals: true,
+        colSubTotals: true,
+        rowTotals: true,
+        rowSubTotals: true,
         columns: [],
         filters: simpleVisualization.columns
     }
@@ -136,8 +141,13 @@ storiesOf('PivotTable', module).add('simple - no rows', () => {
     const visualization = {
         ...simpleVisualization,
         ...visualizationReset,
+        showDimensionLabels: true,
+        colTotals: true,
+        colSubTotals: true,
+        rowTotals: true,
+        rowSubTotals: true,
         rows: [],
-        columns: simpleVisualization.filters,
+        columns: simpleVisualization.rows,
         filters: simpleVisualization.columns
     }
     return (
