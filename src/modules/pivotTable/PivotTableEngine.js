@@ -501,12 +501,15 @@ export class PivotTableEngine {
 
     getDependantTotalCells({ row, column }) {
         const rowSubtotalSize = this.dimensionLookup.columns[0]?.size + 1
-        const rowSubtotal = this.doRowSubtotals && {
-            row,
-            column:
-                Math.ceil((column + 1) / rowSubtotalSize) * rowSubtotalSize - 1,
-            size: rowSubtotalSize - 1,
-        }
+        const rowSubtotal = rowSubtotalSize &&
+            this.doRowSubtotals && {
+                row,
+                column:
+                    Math.ceil((column + 1) / rowSubtotalSize) *
+                        rowSubtotalSize -
+                    1,
+                size: rowSubtotalSize - 1,
+            }
         const rowSubtotalColumnTotal = this.doColumnSubtotals &&
             this.doRowTotals && {
                 row: this.dataHeight - 1,
@@ -515,13 +518,15 @@ export class PivotTableEngine {
             }
 
         const columnSubtotalSize = this.dimensionLookup.rows[0]?.size + 1
-        const columnSubtotal = this.doColumnSubtotals && {
-            row:
-                Math.ceil((row + 1) / columnSubtotalSize) * columnSubtotalSize -
-                1,
-            column,
-            size: columnSubtotalSize - 1,
-        }
+        const columnSubtotal = columnSubtotalSize &&
+            this.doColumnSubtotals && {
+                row:
+                    Math.ceil((row + 1) / columnSubtotalSize) *
+                        columnSubtotalSize -
+                    1,
+                column,
+                size: columnSubtotalSize - 1,
+            }
 
         const columnSubtotalRowTotal = this.doColumnSubtotals &&
             this.doRowTotals && {
@@ -530,7 +535,9 @@ export class PivotTableEngine {
                 size: this.rawDataWidth,
             }
 
-        const combinedSubtotal = this.doColumnSubtotals &&
+        const combinedSubtotal = rowSubtotalSize &&
+            columnSubtotalSize &&
+            this.doColumnSubtotals &&
             this.doRowSubtotals && {
                 row: columnSubtotal.row,
                 column: rowSubtotal.column,
@@ -736,7 +743,7 @@ export class PivotTableEngine {
 
         // TODO: consolidate total lookup and aggregate calculation logics
 
-        if (this.doRowSubtotals) {
+        if (this.doRowSubtotals && rowSubtotalSize) {
             times(
                 this.dimensionLookup.columns[0].count,
                 n => (n + 1) * rowSubtotalSize - 1
@@ -765,7 +772,7 @@ export class PivotTableEngine {
                 })
             })
         }
-        if (this.doColumnSubtotals) {
+        if (this.doColumnSubtotals && columnSubtotalSize) {
             times(
                 this.dimensionLookup.rows[0].count,
                 n => (n + 1) * columnSubtotalSize - 1
@@ -795,7 +802,12 @@ export class PivotTableEngine {
             })
         }
 
-        if (this.doRowSubtotals && this.doColumnSubtotals) {
+        if (
+            this.doRowSubtotals &&
+            this.doColumnSubtotals &&
+            rowSubtotalSize &&
+            columnSubtotalSize
+        ) {
             times(
                 this.dimensionLookup.rows[0].count,
                 n => (n + 1) * columnSubtotalSize - 1
