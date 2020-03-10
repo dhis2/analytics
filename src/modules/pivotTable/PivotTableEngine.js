@@ -269,8 +269,12 @@ export class PivotTableEngine {
             this.rawData.headers
         )
 
-        this.columnDepth = this.dimensionLookup.columns.length
-        this.rowDepth = this.dimensionLookup.rows.length
+        this.columnDepth =
+            this.dimensionLookup.columns.length ||
+            (this.visualization.showDimensionLabels ? 1 : 0)
+        this.rowDepth =
+            this.dimensionLookup.rows.length ||
+            (this.visualization.showDimensionLabels ? 1 : 0)
 
         this.buildMatrix()
     }
@@ -447,20 +451,18 @@ export class PivotTableEngine {
 
     getRawColumnHeader(column) {
         if (this.doRowTotals && column === this.dataWidth - 1) {
-            return times(
-                this.dimensionLookup.columns.length - 1,
-                () => undefined
-            ).concat([{ name: 'Total' }])
+            return times(this.columnDepth - 1, () => undefined).concat([
+                { name: 'Total' },
+            ])
         }
         if (this.doRowSubtotals) {
             if (
                 (column + 1) % (this.dimensionLookup.columns[0].size + 1) ===
                 0
             ) {
-                return times(
-                    this.dimensionLookup.columns.length - 1,
-                    () => undefined
-                ).concat([{ name: 'Subtotal' }])
+                return times(this.columnDepth - 1, () => undefined).concat([
+                    { name: 'Subtotal' },
+                ])
             }
             column -= Math.floor(
                 column / (this.dimensionLookup.columns[0].size + 1)
@@ -478,17 +480,15 @@ export class PivotTableEngine {
 
     getRawRowHeader(row) {
         if (this.doColumnTotals && row === this.dataHeight - 1) {
-            return times(
-                this.dimensionLookup.rows.length - 1,
-                () => undefined
-            ).concat([{ name: 'Total' }])
+            return times(this.rowDepth - 1, () => undefined).concat([
+                { name: 'Total' },
+            ])
         }
         if (this.doColumnSubtotals) {
             if ((row + 1) % (this.dimensionLookup.rows[0].size + 1) === 0) {
-                return times(
-                    this.dimensionLookup.rows.length - 1,
-                    () => undefined
-                ).concat([{ name: 'Subtotal' }])
+                return times(this.rowDepth - 1, () => undefined).concat([
+                    { name: 'Subtotal' },
+                ])
             }
             row -= Math.floor(row / (this.dimensionLookup.rows[0].size + 1))
         }
@@ -891,10 +891,13 @@ export class PivotTableEngine {
         let nextPartitionPx = 0
         this.columnPartitions = []
 
+        const getColumnWidth = contentWidth =>
+            Math.min(CLIPPED_CELL_MAX_WIDTH, Math.ceil(contentWidth)) +
+            this.cellPadding * 2 +
+            /*border*/ 2
+
         this.columnMap.forEach(column => {
-            const header = this.getRawColumnHeader(column)[
-                this.dimensionLookup.columns.length - 1
-            ]
+            const header = this.getRawColumnHeader(column)[this.columnDepth - 1]
             const label =
                 this.visualization.showHierarchy && header?.hierarchy
                     ? header.hierarchy.join(' / ')
@@ -909,13 +912,7 @@ export class PivotTableEngine {
                 )
             }
 
-            const colWidth =
-                Math.min(
-                    CLIPPED_CELL_MAX_WIDTH,
-                    Math.ceil(this.columnWidths[column])
-                ) +
-                this.cellPadding * 2 +
-                /*border*/ 2
+            const colWidth = getColumnWidth(this.columnWidths[column])
             this.columnWidths[column] = {
                 pre: this.dataPixelWidth,
                 width: colWidth,
@@ -927,6 +924,24 @@ export class PivotTableEngine {
             }
             this.dataPixelWidth += colWidth
         })
+
+        if (
+            !this.dimensionLookup.rows.length &&
+            this.visualization.showDimensionLabels
+        ) {
+            let maxWidth = 0
+            this.dimensionLookup.columns.forEach((_, columnLevel) => {
+                const label = this.getDimensionLabel(0, columnLevel)
+                if (label) {
+                    const headerSize = measureText(label, this.fontSize)
+                    maxWidth = Math.max(maxWidth, headerSize)
+                }
+            })
+
+            const columnWidth = getColumnWidth(maxWidth)
+            this.rowHeaderPixelWidth = columnWidth
+            this.rowHeaderWidths = [columnWidth]
+        }
 
         this.rowHeaderWidths = this.dimensionLookup.rows.map((_, rowLevel) => {
             let maxWidth = 0
@@ -951,10 +966,7 @@ export class PivotTableEngine {
                     }
                 })
             }
-            const columnWidth =
-                Math.min(CLIPPED_CELL_MAX_WIDTH, Math.ceil(maxWidth)) +
-                this.cellPadding * 2 +
-                /*border*/ 2
+            const columnWidth = getColumnWidth(maxWidth)
             this.rowHeaderPixelWidth += columnWidth
             return columnWidth
         })
@@ -1024,11 +1036,9 @@ export class PivotTableEngine {
 
         // TODO: Check last row/col dimension for size===1, skip redundant sub-totals
         this.doRowSubtotals =
-            this.options.showRowSubtotals &&
-            this.dimensionLookup.columns.length > 1
+            this.options.showRowSubtotals && this.columnDepth > 1
         this.doColumnSubtotals =
-            this.options.showColumnSubtotals &&
-            this.dimensionLookup.rows.length > 1
+            this.options.showColumnSubtotals && this.rowDepth > 1
 
         this.doRowTotals = this.options.showRowTotals && this.dataWidth > 1
         this.doColumnTotals =
