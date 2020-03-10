@@ -280,46 +280,49 @@ export class PivotTableEngine {
         const cellType = this.getRawCellType({ row, column })
         const dxDimension = this.getRawCellDxDimension({ row, column })
 
-        if (this.data[row]) {
-            const dataRow = this.data[row][column]
-            if (dataRow) {
-                let rawValue =
-                    cellType === CELL_TYPE_VALUE
-                        ? dataRow[this.dimensionLookup.dataHeaders.value]
-                        : dataRow.value
-                let renderedValue = rawValue
-                const valueType = dxDimension?.valueType || VALUE_TYPE_TEXT
-
-                if (valueType === VALUE_TYPE_NUMBER) {
-                    rawValue = parseValue(rawValue)
-                    switch (this.visualization.numberType) {
-                        case NUMBER_TYPE_ROW_PERCENTAGE:
-                            renderedValue =
-                                rawValue / this.percentageTotals[row].value
-                            break
-                        case NUMBER_TYPE_COLUMN_PERCENTAGE:
-                            renderedValue =
-                                rawValue / this.percentageTotals[column].value
-                            break
-                    }
-                }
-
-                renderedValue = renderValue(
-                    renderedValue,
-                    valueType,
-                    this.visualization
-                )
-
-                return {
-                    cellType,
-                    valueType,
-                    rawValue,
-                    renderedValue,
-                    dxDimension,
-                }
+        if (!this.data[row] || !this.data[row][column]) {
+            return {
+                cellType,
+                empty: true,
             }
         }
-        return undefined
+
+        const dataRow = this.data[row][column]
+
+        let rawValue =
+            cellType === CELL_TYPE_VALUE
+                ? dataRow[this.dimensionLookup.dataHeaders.value]
+                : dataRow.value
+        let renderedValue = rawValue
+        const valueType = dxDimension?.valueType || VALUE_TYPE_TEXT
+
+        if (valueType === VALUE_TYPE_NUMBER) {
+            rawValue = parseValue(rawValue)
+            switch (this.visualization.numberType) {
+                case NUMBER_TYPE_ROW_PERCENTAGE:
+                    renderedValue = rawValue / this.percentageTotals[row].value
+                    break
+                case NUMBER_TYPE_COLUMN_PERCENTAGE:
+                    renderedValue =
+                        rawValue / this.percentageTotals[column].value
+                    break
+            }
+        }
+
+        renderedValue = renderValue(
+            renderedValue,
+            valueType,
+            this.visualization
+        )
+
+        return {
+            cellType,
+            empty: false,
+            valueType,
+            rawValue,
+            renderedValue,
+            dxDimension,
+        }
     }
 
     get({ row, column }) {
