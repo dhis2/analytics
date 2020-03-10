@@ -137,17 +137,36 @@ storiesOf('PivotTable', module).add('simple - no columns', () => {
     )
 })
 
-storiesOf('PivotTable', module).add('simple - no rows', () => {
+storiesOf('PivotTable', module).add('simple - no rows (small)', () => {
     const visualization = {
         ...simpleVisualization,
         ...visualizationReset,
-        // showDimensionLabels: true,
+        showDimensionLabels: true,
         colTotals: true,
         colSubTotals: true,
         rowTotals: true,
         rowSubTotals: true,
         rows: [],
-        columns: simpleVisualization.rows
+        filters: simpleVisualization.rows
+    }
+    return (
+        <div style={{ width: 800, height: 600 }}>
+            <PivotTable data={simpleData} visualization={visualization} />
+        </div>
+    )
+})
+
+storiesOf('PivotTable', module).add('simple - no rows', () => {
+    const visualization = {
+        ...simpleVisualization,
+        ...visualizationReset,
+        colTotals: true,
+        colSubTotals: true,
+        rowTotals: true,
+        rowSubTotals: true,
+        rows: [],
+        columns: simpleVisualization.rows,
+        filters: simpleVisualization.columns
     }
     return (
         <div style={{ width: 800, height: 600 }}>
