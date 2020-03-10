@@ -269,8 +269,7 @@ export class PivotTableEngine {
             this.rawData.headers
         )
 
-        this.columnDepth =
-            this.dimensionLookup.columns.length || 1
+        this.columnDepth = this.dimensionLookup.columns.length || 1
         this.rowDepth =
             this.dimensionLookup.rows.length ||
             (this.visualization.showDimensionLabels ? 1 : 0)
