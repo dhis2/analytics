@@ -10,6 +10,9 @@ export const PivotTableRow = ({ clippingResult, rowIndex }) => {
     const engine = usePivotTableEngine()
     return (
         <tr>
+            {engine.dimensionLookup.rows.length === 0 && (
+                <PivotTableEmptyCell type="row-header" />
+            )}
             {engine.dimensionLookup.rows.map((_, rowLevel) => (
                 <PivotTableRowHeaderCell
                     key={rowLevel}

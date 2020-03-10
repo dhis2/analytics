@@ -10,7 +10,11 @@ export const clipPartitionedAxis = ({
     const partition = Math.floor(viewportPosition / partitionSize)
 
     if (partitions[partition] === undefined) {
-        throw new Error('Failed to clip partitioned axis!')
+        return {
+            indices: [0],
+            pre: 0,
+            post: 0,
+        }
     }
 
     let start = partitions[partition]

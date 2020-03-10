@@ -13,9 +13,16 @@ export const PivotTableColumnHeaders = ({
 }) => {
     const engine = usePivotTableEngine()
 
-    return engine.dimensionLookup.columns.map((_, columnLevel) => (
+    const columns = engine.dimensionLookup.columns.length
+        ? engine.dimensionLookup.columns
+        : [0]
+    const rows = engine.dimensionLookup.rows.length
+        ? engine.dimensionLookup.rows
+        : [0]
+
+    return columns.map((_, columnLevel) => (
         <tr key={columnLevel}>
-            {engine.dimensionLookup.rows.map((_, rowLevel) => (
+            {rows.map((_, rowLevel) => (
                 <PivotTableDimensionLabelCell
                     key={rowLevel}
                     rowLevel={rowLevel}
