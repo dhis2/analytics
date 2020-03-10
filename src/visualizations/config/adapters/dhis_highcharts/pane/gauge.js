@@ -1,7 +1,10 @@
-export default function() {
+const DEFAULT_PANE_SIZE = '140%'
+const DASHBOARD_PANE_SIZE = '100%'
+
+export default function(dashboard) {
     return {
         center: ['50%', '85%'],
-        size: '90%',
+        size: dashboard ? DASHBOARD_PANE_SIZE : DEFAULT_PANE_SIZE,
         startAngle: -90,
         endAngle: 90,
         background: {
