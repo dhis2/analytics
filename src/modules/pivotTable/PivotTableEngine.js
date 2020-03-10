@@ -76,6 +76,9 @@ const listByDimension = list =>
 
 const sortByHierarchy = items => {
     items.sort((a, b) => {
+        if (!a.hierarchy || !b.hierarchy) {
+            return 0
+        }
         return a.hierarchy.join('/').localeCompare(b.hierarchy.join('/'))
     })
 }
@@ -136,9 +139,9 @@ const buildDimensionLookup = (visualization, metadata, headers) => {
 
     if (metadata.ouNameHierarchy && ouDimension) {
         ouDimension.items.forEach(ou => {
-            const hierarchy = ouDimension.items[ou]
+            const hierarchy = metadata.ouNameHierarchy[ou.uid]
             if (hierarchy) {
-                ouDimension.items[ou].hierarchy = hierarchy
+                ou.hierarchy = hierarchy
                     .split('/')
                     .filter(x => x.length)
             }
