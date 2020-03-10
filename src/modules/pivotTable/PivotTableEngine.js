@@ -744,6 +744,24 @@ export class PivotTableEngine {
             }
         }
     }
+    finalizeTotal({ row, column }) {
+        if (!this.data[row]) {
+            return
+        }
+        const totalCell = this.data[row][column]
+        if (totalCell && totalCell.count) {
+            totalCell.value = applyTotalAggregationType(totalCell)
+            this.addCellForAdaptiveClipping(
+                { row, column },
+                renderValue(
+                    totalCell.value,
+                    totalCell.valueType,
+                    this.visualization
+                )
+            )
+        }
+    }
+
     finalizeTotals() {
         const columnSubtotalSize = this.dimensionLookup.rows[0]?.size + 1
         const rowSubtotalSize = this.dimensionLookup.columns[0]?.size + 1
@@ -761,23 +779,7 @@ export class PivotTableEngine {
                         !this.doColumnSubtotals ||
                         row % this.dimensionLookup.rows[0].count !== 0
                     ) {
-                        if (!this.data[row]) {
-                            return
-                        }
-                        const totalCell = this.data[row][column]
-                        if (totalCell && totalCell.count) {
-                            totalCell.value = applyTotalAggregationType(
-                                totalCell
-                            )
-                            this.addCellForAdaptiveClipping(
-                                { row, column },
-                                renderValue(
-                                    totalCell.value,
-                                    totalCell.valueType,
-                                    this.visualization
-                                )
-                            )
-                        }
+                        this.finalizeTotal({ row, column })
                     }
                 })
             })
@@ -793,23 +795,7 @@ export class PivotTableEngine {
                         !this.doRowSubtotals ||
                         column % this.dimensionLookup.columns[0].count !== 0
                     ) {
-                        if (!this.data[row]) {
-                            return
-                        }
-                        const totalCell = this.data[row][column]
-                        if (totalCell && totalCell.count) {
-                            totalCell.value = applyTotalAggregationType(
-                                totalCell
-                            )
-                            this.addCellForAdaptiveClipping(
-                                { row, column },
-                                renderValue(
-                                    totalCell.value,
-                                    totalCell.valueType,
-                                    this.visualization
-                                )
-                            )
-                        }
+                        this.finalizeTotal({ row, column })
                     }
                 })
             })
@@ -829,60 +815,21 @@ export class PivotTableEngine {
                     this.dimensionLookup.columns[0].count,
                     n => (n + 1) * rowSubtotalSize - 1
                 ).forEach(column => {
-                    if (!this.data[row]) {
-                        return
-                    }
-                    const totalCell = this.data[row][column]
-                    if (totalCell && totalCell.count) {
-                        totalCell.value = applyTotalAggregationType(totalCell)
-                        this.addCellForAdaptiveClipping(
-                            { row, column },
-                            renderValue(
-                                totalCell.value,
-                                totalCell.valueType,
-                                this.visualization
-                            )
-                        )
-                    }
+                    this.finalizeTotal({ row, column })
                 })
             })
         }
         if (this.doRowTotals) {
             const column = this.dataWidth - 1
             times(this.dataHeight, n => n).forEach(row => {
-                if (!this.data[row]) {
-                    return
-                }
-                const totalCell = this.data[row][column]
-                if (totalCell && totalCell.count) {
-                    totalCell.value = applyTotalAggregationType(totalCell)
-                    this.addCellForAdaptiveClipping(
-                        { row, column },
-                        renderValue(
-                            totalCell.value,
-                            totalCell.valueType,
-                            this.visualization
-                        )
-                    )
-                }
+                this.finalizeTotal({ row, column })
             })
         }
 
         if (this.doColumnTotals) {
             const row = this.dataHeight - 1
             times(this.dataWidth, n => n).forEach(column => {
-                const totalCell = this.data[row][column]
-                if (totalCell && totalCell.count) {
-                    totalCell.value = applyTotalAggregationType(totalCell)
-                    this.addCellForAdaptiveClipping(
-                        { row, column },
-                        renderValue(
-                            totalCell.value,
-                            totalCell.valueType,
-                            this.visualization
-                        )
-                    )
-                }
+                this.finalizeTotal({ row, column })
             })
         }
 
