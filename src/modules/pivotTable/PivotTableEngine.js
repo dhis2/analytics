@@ -36,6 +36,7 @@ import {
     VALUE_TYPE_NUMBER,
     NUMBER_TYPE_COLUMN_PERCENTAGE,
     NUMBER_TYPE_ROW_PERCENTAGE,
+    VALUE_TYPE_TEXT,
 } from './pivotTableConstants'
 
 const dataFields = [
@@ -276,40 +277,46 @@ export class PivotTableEngine {
     }
 
     getRaw({ row, column }) {
-        const type = this.getRawCellType({ row, column })
+        const cellType = this.getRawCellType({ row, column })
+        const dxDimension = this.getRawCellDxDimension({ row, column })
+
         if (this.data[row]) {
             const dataRow = this.data[row][column]
             if (dataRow) {
-                let value
-                switch (type) {
-                    case CELL_TYPE_VALUE:
-                        value = dataRow[this.dimensionLookup.dataHeaders.value]
-                        break
-                    default:
-                        value = dataRow.value
-                }
-                if (
-                    value &&
-                    this.visualization.numberType ===
-                        NUMBER_TYPE_ROW_PERCENTAGE &&
-                    this.percentageTotals[row]
-                ) {
-                    // TODO: Check that we're a number!
-                    value = parseFloat(value) / this.percentageTotals[row].value
+                let rawValue =
+                    cellType === CELL_TYPE_VALUE
+                        ? dataRow[this.dimensionLookup.dataHeaders.value]
+                        : dataRow.value
+                let renderedValue = rawValue
+                const valueType = dxDimension?.valueType || VALUE_TYPE_TEXT
+
+                if (valueType === VALUE_TYPE_NUMBER) {
+                    rawValue = parseValue(rawValue)
+                    switch (this.visualization.numberType) {
+                        case NUMBER_TYPE_ROW_PERCENTAGE:
+                            renderedValue =
+                                rawValue / this.percentageTotals[row].value
+                            break
+                        case NUMBER_TYPE_COLUMN_PERCENTAGE:
+                            renderedValue =
+                                rawValue / this.percentageTotals[column].value
+                            break
+                    }
                 }
 
-                if (
-                    value &&
-                    this.visualization.numberType ===
-                        NUMBER_TYPE_COLUMN_PERCENTAGE &&
-                    this.percentageTotals[column]
-                ) {
-                    // TODO: Check that we're a number!
-                    value =
-                        parseFloat(value) / this.percentageTotals[column].value
-                }
+                renderedValue = renderValue(
+                    renderedValue,
+                    valueType,
+                    this.visualization
+                )
 
-                return value ?? undefined
+                return {
+                    cellType,
+                    valueType,
+                    rawValue,
+                    renderedValue,
+                    dxDimension,
+                }
             }
         }
         return undefined
@@ -764,8 +771,11 @@ export class PivotTableEngine {
                             )
                             this.addCellForAdaptiveClipping(
                                 { row, column },
-                                totalCell.value,
-                                totalCell.valueType
+                                renderValue(
+                                    totalCell.value,
+                                    totalCell.valueType,
+                                    this.visualization
+                                )
                             )
                         }
                     }
@@ -793,8 +803,11 @@ export class PivotTableEngine {
                             )
                             this.addCellForAdaptiveClipping(
                                 { row, column },
-                                totalCell.value,
-                                totalCell.valueType
+                                renderValue(
+                                    totalCell.value,
+                                    totalCell.valueType,
+                                    this.visualization
+                                )
                             )
                         }
                     }
@@ -824,8 +837,11 @@ export class PivotTableEngine {
                         totalCell.value = applyTotalAggregationType(totalCell)
                         this.addCellForAdaptiveClipping(
                             { row, column },
-                            totalCell.value,
-                            totalCell.valueType
+                            renderValue(
+                                totalCell.value,
+                                totalCell.valueType,
+                                this.visualization
+                            )
                         )
                     }
                 })
@@ -842,8 +858,11 @@ export class PivotTableEngine {
                     totalCell.value = applyTotalAggregationType(totalCell)
                     this.addCellForAdaptiveClipping(
                         { row, column },
-                        totalCell.value,
-                        totalCell.valueType
+                        renderValue(
+                            totalCell.value,
+                            totalCell.valueType,
+                            this.visualization
+                        )
                     )
                 }
             })
@@ -857,8 +876,11 @@ export class PivotTableEngine {
                     totalCell.value = applyTotalAggregationType(totalCell)
                     this.addCellForAdaptiveClipping(
                         { row, column },
-                        totalCell.value,
-                        totalCell.valueType
+                        renderValue(
+                            totalCell.value,
+                            totalCell.valueType,
+                            this.visualization
+                        )
                     )
                 }
             })
@@ -871,13 +893,10 @@ export class PivotTableEngine {
         }
     }
 
-    addCellForAdaptiveClipping({ column }, value, valueType) {
+    addCellForAdaptiveClipping({ column }, renderedValue) {
         this.columnWidths[column] = Math.max(
             this.columnWidths[column] || 0,
-            measureText(
-                renderValue(value, valueType, this.visualization),
-                this.fontSize
-            )
+            measureText(renderedValue, this.fontSize)
         )
     }
 
@@ -1057,16 +1076,15 @@ export class PivotTableEngine {
             this.data[pos.row] = this.data[pos.row] || []
             this.data[pos.row][pos.column] = dataRow
 
-            const dxDimension = this.getRawCellDxDimension(pos)
-            this.addCellForAdaptiveClipping(
-                pos,
-                this.getRaw(pos),
-                dxDimension.valueType
-            )
             this.addCellValueToTotals(pos, dataRow)
         })
 
         this.finalizeTotals()
+
+        this.rawData.rows.forEach(dataRow => {
+            const pos = lookup(dataRow, this.dimensionLookup, this)
+            this.addCellForAdaptiveClipping(pos, this.getRaw(pos).renderedValue)
+        })
 
         this.resetRowMap()
         this.resetColumnMap()
@@ -1137,7 +1155,15 @@ export class PivotTableEngine {
                 return 1 * order
             }
 
-            return (valueA - valueB) * order
+            if (
+                valueA.valueType === VALUE_TYPE_NUMBER &&
+                valueB.valueType === VALUE_TYPE_NUMBER
+            ) {
+                return (valueA.rawValue - valueB.rawValue) * order
+            }
+            return (
+                valueA.renderedValue.localeCompare(valueB.renderedValue) * order
+            )
         })
     }
 
