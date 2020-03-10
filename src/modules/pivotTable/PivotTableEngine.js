@@ -141,9 +141,7 @@ const buildDimensionLookup = (visualization, metadata, headers) => {
         ouDimension.items.forEach(ou => {
             const hierarchy = metadata.ouNameHierarchy[ou.uid]
             if (hierarchy) {
-                ou.hierarchy = hierarchy
-                    .split('/')
-                    .filter(x => x.length)
+                ou.hierarchy = hierarchy.split('/').filter(x => x.length)
             }
         })
         sortByHierarchy(ouDimension.items)
