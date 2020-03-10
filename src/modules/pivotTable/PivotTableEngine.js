@@ -510,11 +510,11 @@ export class PivotTableEngine {
                     1,
                 size: rowSubtotalSize - 1,
             }
-        const rowSubtotalColumnTotal = this.doColumnSubtotals &&
-            this.doRowTotals && {
+        const rowSubtotalColumnTotal = this.doRowSubtotals &&
+            this.doColumnTotals && {
                 row: this.dataHeight - 1,
                 column: rowSubtotal.column,
-                size: this.rawDataWidth,
+                size: this.rawDataHeight,
             }
 
         const columnSubtotalSize = this.dimensionLookup.rows[0]?.size + 1
