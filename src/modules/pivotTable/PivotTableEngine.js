@@ -36,6 +36,7 @@ import {
     VALUE_TYPE_NUMBER,
     NUMBER_TYPE_COLUMN_PERCENTAGE,
     NUMBER_TYPE_ROW_PERCENTAGE,
+    DIMENSION_TYPE_DATA,
     DIMENSION_TYPE_DATA_ELEMENT_GROUP_SET,
 } from './pivotTableConstants'
 
@@ -57,8 +58,9 @@ const defaultOptions = {
 }
 
 const isDxDimension = dimensionItem =>
-    dimensionItem.dimensionType === DIMENSION_ID_DATA ||
-    dimensionItem.dimensionType === DIMENSION_TYPE_DATA_ELEMENT_GROUP_SET
+    [DIMENSION_TYPE_DATA, DIMENSION_TYPE_DATA_ELEMENT_GROUP_SET].includes(
+        dimensionItem.dimensionType
+    )
 
 const countFromDisaggregates = list => {
     let count = 1
