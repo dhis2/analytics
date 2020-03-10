@@ -61,10 +61,6 @@ const isDxDimension = dimensionItem =>
     dimensionItem.dimensionType === DIMENSION_TYPE_DATA_ELEMENT_GROUP_SET
 
 const countFromDisaggregates = list => {
-    if (list.length === 0) {
-        return 0
-    }
-
     let count = 1
     list.forEach(x => {
         count *= x.items.length
@@ -340,10 +336,8 @@ export class PivotTableEngine {
     }
 
     getRawCellType({ row, column }) {
-        const isRowTotal =
-            this.options.showRowTotals && column === this.dataWidth - 1
-        const isColumnTotal =
-            this.options.showColumnTotals && row === this.dataHeight - 1
+        const isRowTotal = this.doRowTotals && column === this.dataWidth - 1
+        const isColumnTotal = this.doColumnTotals && row === this.dataHeight - 1
         if (isRowTotal || isColumnTotal) {
             return CELL_TYPE_TOTAL
         }
@@ -370,11 +364,19 @@ export class PivotTableEngine {
     getDimensionLabel(rowLevel, columnLevel) {
         const lastRowLevel = this.dimensionLookup.rows.length - 1
         const lastColumnLevel = this.dimensionLookup.columns.length - 1
+
         if (rowLevel !== lastRowLevel && columnLevel !== lastColumnLevel) {
             return null
         }
         if (rowLevel === lastRowLevel && columnLevel === lastColumnLevel) {
             return `${this.dimensionLookup.rows[lastRowLevel].meta.name} / ${this.dimensionLookup.columns[lastColumnLevel].meta.name}`
+        }
+
+        if (lastRowLevel === -1) {
+            return this.dimensionLookup.columns[columnLevel].meta.name
+        }
+        if (lastColumnLevel === -1) {
+            return this.dimensionLookup.rows[rowLevel].meta.name
         }
 
         if (rowLevel === lastRowLevel) {
@@ -448,7 +450,7 @@ export class PivotTableEngine {
     }
 
     getRawColumnHeader(column) {
-        if (this.options.showRowTotals && column === this.dataWidth - 1) {
+        if (this.doRowTotals && column === this.dataWidth - 1) {
             return times(
                 this.dimensionLookup.columns.length - 1,
                 () => undefined
@@ -479,7 +481,7 @@ export class PivotTableEngine {
     }
 
     getRawRowHeader(row) {
-        if (this.options.showColumnTotals && row === this.dataHeight - 1) {
+        if (this.doColumnTotals && row === this.dataHeight - 1) {
             return times(
                 this.dimensionLookup.rows.length - 1,
                 () => undefined
@@ -505,57 +507,64 @@ export class PivotTableEngine {
     }
 
     getDependantTotalCells({ row, column }) {
-        const rowSubtotalSize = this.dimensionLookup.columns[0].size + 1
-        const rowSubtotal = this.doRowSubtotals && {
-            row,
-            column:
-                Math.ceil((column + 1) / rowSubtotalSize) * rowSubtotalSize - 1,
-            size: rowSubtotalSize - 1,
-        }
+        const rowSubtotalSize = this.dimensionLookup.columns[0]?.size + 1
+        const rowSubtotal = rowSubtotalSize &&
+            this.doRowSubtotals && {
+                row,
+                column:
+                    Math.ceil((column + 1) / rowSubtotalSize) *
+                        rowSubtotalSize -
+                    1,
+                size: rowSubtotalSize - 1,
+            }
         const rowSubtotalColumnTotal = this.doColumnSubtotals &&
-            this.options.showRowTotals && {
+            this.doRowTotals && {
                 row: this.dataHeight - 1,
                 column: rowSubtotal.column,
                 size: this.rawDataWidth,
             }
 
-        const columnSubtotalSize = this.dimensionLookup.rows[0].size + 1
-        const columnSubtotal = this.doColumnSubtotals && {
-            row:
-                Math.ceil((row + 1) / columnSubtotalSize) * columnSubtotalSize -
-                1,
-            column,
-            size: columnSubtotalSize - 1,
-        }
+        const columnSubtotalSize = this.dimensionLookup.rows[0]?.size + 1
+        const columnSubtotal = columnSubtotalSize &&
+            this.doColumnSubtotals && {
+                row:
+                    Math.ceil((row + 1) / columnSubtotalSize) *
+                        columnSubtotalSize -
+                    1,
+                column,
+                size: columnSubtotalSize - 1,
+            }
 
         const columnSubtotalRowTotal = this.doColumnSubtotals &&
-            this.options.showRowTotals && {
+            this.doRowTotals && {
                 row: columnSubtotal.row,
                 column: this.dataWidth - 1,
                 size: this.rawDataWidth,
             }
 
-        const combinedSubtotal = this.doColumnSubtotals &&
+        const combinedSubtotal = rowSubtotalSize &&
+            columnSubtotalSize &&
+            this.doColumnSubtotals &&
             this.doRowSubtotals && {
                 row: columnSubtotal.row,
                 column: rowSubtotal.column,
                 size: columnSubtotalSize * rowSubtotalSize,
             }
 
-        const rowTotal = this.options.showRowTotals && {
+        const rowTotal = this.doRowTotals && {
             row,
             column: this.dataWidth - 1,
             size: this.rawDataWidth,
         }
 
-        const columnTotal = this.options.showColumnTotals && {
+        const columnTotal = this.doColumnTotals && {
             row: this.dataHeight - 1,
             column,
             size: this.rawDataHeight,
         }
 
-        const combinedTotal = this.options.showColumnTotals &&
-            this.options.showRowTotals && {
+        const combinedTotal = this.doColumnTotals &&
+            this.doRowTotals && {
                 row: this.dataHeight - 1,
                 column: this.dataWidth - 1,
                 size: this.rawDataHeight * this.rawDataWidth,
@@ -736,12 +745,12 @@ export class PivotTableEngine {
         }
     }
     finalizeTotals() {
-        const columnSubtotalSize = this.dimensionLookup.rows[0].size + 1
-        const rowSubtotalSize = this.dimensionLookup.columns[0].size + 1
+        const columnSubtotalSize = this.dimensionLookup.rows[0]?.size + 1
+        const rowSubtotalSize = this.dimensionLookup.columns[0]?.size + 1
 
         // TODO: consolidate total lookup and aggregate calculation logics
 
-        if (this.doRowSubtotals) {
+        if (this.doRowSubtotals && rowSubtotalSize) {
             times(
                 this.dimensionLookup.columns[0].count,
                 n => (n + 1) * rowSubtotalSize - 1
@@ -770,7 +779,7 @@ export class PivotTableEngine {
                 })
             })
         }
-        if (this.doColumnSubtotals) {
+        if (this.doColumnSubtotals && columnSubtotalSize) {
             times(
                 this.dimensionLookup.rows[0].count,
                 n => (n + 1) * columnSubtotalSize - 1
@@ -800,7 +809,12 @@ export class PivotTableEngine {
             })
         }
 
-        if (this.doRowSubtotals && this.doColumnSubtotals) {
+        if (
+            this.doRowSubtotals &&
+            this.doColumnSubtotals &&
+            rowSubtotalSize &&
+            columnSubtotalSize
+        ) {
             times(
                 this.dimensionLookup.rows[0].count,
                 n => (n + 1) * columnSubtotalSize - 1
@@ -824,7 +838,7 @@ export class PivotTableEngine {
                 })
             })
         }
-        if (this.options.showRowTotals) {
+        if (this.doRowTotals) {
             const column = this.dataWidth - 1
             times(this.dataHeight, n => n).forEach(row => {
                 if (!this.data[row]) {
@@ -842,7 +856,7 @@ export class PivotTableEngine {
             })
         }
 
-        if (this.options.showColumnTotals) {
+        if (this.doColumnTotals) {
             const row = this.dataHeight - 1
             times(this.dataWidth, n => n).forEach(column => {
                 const totalCell = this.data[row][column]
@@ -1007,6 +1021,7 @@ export class PivotTableEngine {
         this.dataHeight = this.rawDataHeight = countFromDisaggregates(
             this.dimensionLookup.rows
         )
+
         this.dataWidth = this.rawDataWidth = countFromDisaggregates(
             this.dimensionLookup.columns
         )
@@ -1019,16 +1034,20 @@ export class PivotTableEngine {
             this.options.showColumnSubtotals &&
             this.dimensionLookup.rows.length > 1
 
+        this.doRowTotals = this.options.showRowTotals && this.dataWidth > 1
+        this.doColumnTotals =
+            this.options.showColumnTotals && this.dataHeight > 1
+
         if (this.doRowSubtotals) {
             this.dataWidth += this.dimensionLookup.columns[0].count
         }
         if (this.doColumnSubtotals) {
             this.dataHeight += this.dimensionLookup.rows[0].count
         }
-        if (this.options.showRowTotals) {
+        if (this.doRowTotals) {
             this.dataWidth += 1
         }
-        if (this.options.showColumnTotals) {
+        if (this.doColumnTotals) {
             this.dataHeight += 1
         }
 
@@ -1076,7 +1095,7 @@ export class PivotTableEngine {
         ) {
             return CELL_TYPE_SUBTOTAL
         }
-        if (this.options.showRowTotals && column === this.dataWidth - 1) {
+        if (this.doRowTotals && column === this.dataWidth - 1) {
             return CELL_TYPE_TOTAL
         }
         return CELL_TYPE_VALUE
@@ -1084,7 +1103,9 @@ export class PivotTableEngine {
 
     isSortable(column) {
         return (
-            !this.doColumnSubtotals && this.getColumnType(column) !== undefined
+            this.dataHeight > 1 &&
+            !this.doColumnSubtotals &&
+            this.getColumnType(column) !== undefined
         )
     }
 
@@ -1101,10 +1122,10 @@ export class PivotTableEngine {
 
         const mappedColumn = this.columnMap[column]
         this.rowMap.sort((rowA, rowB) => {
-            if (this.options.showColumnTotals && rowA === this.dataHeight - 1) {
+            if (this.doColumnTotals && rowA === this.dataHeight - 1) {
                 return 1
             }
-            if (this.options.showColumnTotals && rowB === this.dataHeight - 1) {
+            if (this.doColumnTotals && rowB === this.dataHeight - 1) {
                 return -1
             }
             const valueA = this.getRaw({ row: rowA, column: mappedColumn })
