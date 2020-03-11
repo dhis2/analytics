@@ -152,6 +152,23 @@ storiesOf('PivotTable', module).add('simple - no columns (single cell)', () => {
     )
 })
 
+storiesOf('PivotTable', module).add('simple - no columns (deep)', () => {
+    const visualization = {
+        ...simpleVisualization,
+        ...visualizationReset,
+        showDimensionLabels: true,
+        title: 'Deep row headers',
+        columns: [],
+        rows: [simpleVisualization.columns[0], simpleVisualization.rows[0]],
+        filters: []
+    }
+    return (
+        <div style={{ width: 800, height: 600 }}>
+            <PivotTable data={simpleData} visualization={visualization} />
+        </div>
+    )
+})
+
 storiesOf('PivotTable', module).add('simple - no columns (label)', () => {
     const visualization = {
         ...simpleVisualization,
