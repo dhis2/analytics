@@ -522,6 +522,26 @@ storiesOf('PivotTable', module).add('legend - fixed (text)', () => {
     )
 })
 
+storiesOf('PivotTable', module).add('legend - fixed (% row)', () => {
+    const visualization = {
+        ...targetVisualization,
+        ...visualizationReset,
+        rowSubTotals: true,
+        colSubTotals: true,
+        numberType: NUMBER_TYPE_ROW_PERCENTAGE,
+        legendDisplayStyle: 'FILL',
+        legendSet: {
+            id: underAbove100LegendSet.id
+        },
+    }
+
+    return (
+        <div style={{ width: 800, height: 600 }}>
+            <PivotTable data={targetData} visualization={visualization} legendSets={[underAbove100LegendSet]} />
+        </div>
+    )
+})
+
 storiesOf('PivotTable', module).add('legend - by data item', () => {
     const visualization = {
         ...targetVisualization,
@@ -531,9 +551,7 @@ storiesOf('PivotTable', module).add('legend - by data item', () => {
         legendDisplayStrategy: 'BY_DATA_ITEM',
         legendSet: undefined
     }
-    const data = {
-        ...targetData
-    }
+    const data = cloneDeep(targetData)
 
     const customLegendSet = cloneDeep(underAbove100LegendSet)
     customLegendSet.id = 'TESTID'
@@ -545,15 +563,34 @@ storiesOf('PivotTable', module).add('legend - by data item', () => {
 
     return (
         <div style={{ width: 800, height: 600 }}>
-            <PivotTable data={targetData} visualization={visualization} legendSets={[underAbove100LegendSet, customLegendSet]} />
+            <PivotTable data={data} visualization={visualization} legendSets={[underAbove100LegendSet, customLegendSet]} />
         </div>
     )
 })
 
-storiesOf('PivotTable', module).add('hierarchy - shown', () => {
+storiesOf('PivotTable', module).add('hierarchy - rows', () => {
     const visualization = {
         ...hierarchyVisualization,
         ...visualizationReset,
+        colTotals: true,
+        rowTotals: true,
+        colSubTotals: true,
+        rowSubTotals: true,
+    }
+
+    return (
+        <div style={{ width: 800, height: 600 }}>
+            <PivotTable data={hierarchyData} visualization={visualization} />
+        </div>
+    )
+})
+
+storiesOf('PivotTable', module).add('hierarchy - columns', () => {
+    const visualization = {
+        ...hierarchyVisualization,
+        ...visualizationReset,
+        columns: hierarchyVisualization.rows,
+        rows: hierarchyVisualization.columns,
         colTotals: true,
         rowTotals: true,
         colSubTotals: true,

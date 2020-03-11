@@ -4,11 +4,7 @@ import { parseValue } from './parseValue'
 import { renderValue } from './renderValue'
 import { measureText } from './measureText'
 
-import {
-    DIMENSION_ID_DATA,
-    DIMENSION_ID_PERIOD,
-    DIMENSION_ID_ORGUNIT,
-} from '../predefinedDimensions'
+import { DIMENSION_ID_ORGUNIT } from '../predefinedDimensions'
 
 import {
     AGGREGATE_TYPE_NA,
@@ -36,6 +32,9 @@ import {
     VALUE_TYPE_NUMBER,
     NUMBER_TYPE_COLUMN_PERCENTAGE,
     NUMBER_TYPE_ROW_PERCENTAGE,
+    DIMENSION_TYPE_DATA,
+    DIMENSION_TYPE_DATA_ELEMENT_GROUP_SET,
+    VALUE_TYPE_TEXT,
 } from './pivotTableConstants'
 
 const dataFields = [
@@ -54,6 +53,11 @@ const defaultOptions = {
     showRowSubtotals: false,
     showColumnSubtotals: false,
 }
+
+const isDxDimension = dimensionItem =>
+    [DIMENSION_TYPE_DATA, DIMENSION_TYPE_DATA_ELEMENT_GROUP_SET].includes(
+        dimensionItem.dimensionType
+    )
 
 const countFromDisaggregates = list => {
     let count = 1
@@ -78,13 +82,13 @@ const listByDimension = list =>
         return all
     }, {})
 
-const getPrimaryDimension = (metadata, name) => {
-    return metadata.dimensions[name]
-        ? metadata.dimensions[name].reduce((out, id) => {
-              out[id] = metadata.items[id]
-              return out
-          }, {})
-        : {}
+const sortByHierarchy = items => {
+    items.sort((a, b) => {
+        if (!a.hierarchy || !b.hierarchy) {
+            return 0
+        }
+        return a.hierarchy.join('/').localeCompare(b.hierarchy.join('/'))
+    })
 }
 
 const buildDimensionLookup = (visualization, metadata, headers) => {
@@ -96,6 +100,7 @@ const buildDimensionLookup = (visualization, metadata, headers) => {
         items: metadata.dimensions[row.dimension].map(
             item => metadata.items[item]
         ),
+        isDxDimension: isDxDimension(metadata.items[row.dimension]),
         position: 'row',
     }))
     const columns = visualization.columns.map(column => ({
@@ -106,6 +111,7 @@ const buildDimensionLookup = (visualization, metadata, headers) => {
         items: metadata.dimensions[column.dimension].map(
             item => metadata.items[item]
         ),
+        isDxDimension: isDxDimension(metadata.items[column.dimension]),
         position: 'column',
     }))
 
@@ -139,21 +145,16 @@ const buildDimensionLookup = (visualization, metadata, headers) => {
         return out
     }, {})
 
-    const primaryDimensions = {
-        data: getPrimaryDimension(metadata, DIMENSION_ID_DATA),
-        period: getPrimaryDimension(metadata, DIMENSION_ID_PERIOD),
-        orgUnit: getPrimaryDimension(metadata, DIMENSION_ID_ORGUNIT),
-    }
+    const ouDimension = allByDimension[DIMENSION_ID_ORGUNIT]
 
-    if (metadata.ouNameHierarchy) {
-        Object.keys(primaryDimensions.orgUnit).forEach(ou => {
-            const hierarchy = metadata.ouNameHierarchy[ou]
+    if (metadata.ouNameHierarchy && ouDimension) {
+        ouDimension.items.forEach(ou => {
+            const hierarchy = metadata.ouNameHierarchy[ou.uid]
             if (hierarchy) {
-                primaryDimensions.orgUnit[ou].hierarchy = hierarchy
-                    .split('/')
-                    .filter(x => x.length)
+                ou.hierarchy = hierarchy.split('/').filter(x => x.length)
             }
         })
+        sortByHierarchy(ouDimension.items)
     }
 
     return {
@@ -164,7 +165,6 @@ const buildDimensionLookup = (visualization, metadata, headers) => {
         rowHeaders,
         columnHeaders,
         dataHeaders,
-        primaryDimensions,
     }
 }
 
@@ -290,43 +290,52 @@ export class PivotTableEngine {
     }
 
     getRaw({ row, column }) {
-        const type = this.getRawCellType({ row, column })
-        if (this.data[row]) {
-            const dataRow = this.data[row][column]
-            if (dataRow) {
-                let value
-                switch (type) {
-                    case CELL_TYPE_VALUE:
-                        value = dataRow[this.dimensionLookup.dataHeaders.value]
-                        break
-                    default:
-                        value = dataRow.value
-                }
-                if (
-                    value &&
-                    this.visualization.numberType ===
-                        NUMBER_TYPE_ROW_PERCENTAGE &&
-                    this.percentageTotals[row]
-                ) {
-                    // TODO: Check that we're a number!
-                    value = parseFloat(value) / this.percentageTotals[row].value
-                }
+        const cellType = this.getRawCellType({ row, column })
+        const dxDimension = this.getRawCellDxDimension({ row, column })
 
-                if (
-                    value &&
-                    this.visualization.numberType ===
-                        NUMBER_TYPE_COLUMN_PERCENTAGE &&
-                    this.percentageTotals[column]
-                ) {
-                    // TODO: Check that we're a number!
-                    value =
-                        parseFloat(value) / this.percentageTotals[column].value
-                }
-
-                return value ?? undefined
+        if (!this.data[row] || !this.data[row][column]) {
+            return {
+                cellType,
+                empty: true,
             }
         }
-        return undefined
+
+        const dataRow = this.data[row][column]
+
+        let rawValue =
+            cellType === CELL_TYPE_VALUE
+                ? dataRow[this.dimensionLookup.dataHeaders.value]
+                : dataRow.value
+        let renderedValue = rawValue
+        const valueType = dxDimension?.valueType || VALUE_TYPE_TEXT
+
+        if (valueType === VALUE_TYPE_NUMBER) {
+            rawValue = parseValue(rawValue)
+            switch (this.visualization.numberType) {
+                case NUMBER_TYPE_ROW_PERCENTAGE:
+                    renderedValue = rawValue / this.percentageTotals[row].value
+                    break
+                case NUMBER_TYPE_COLUMN_PERCENTAGE:
+                    renderedValue =
+                        rawValue / this.percentageTotals[column].value
+                    break
+            }
+        }
+
+        renderedValue = renderValue(
+            renderedValue,
+            valueType,
+            this.visualization
+        )
+
+        return {
+            cellType,
+            empty: false,
+            valueType,
+            rawValue,
+            renderedValue,
+            dxDimension,
+        }
     }
 
     get({ row, column }) {
@@ -421,7 +430,7 @@ export class PivotTableEngine {
         const columnHeaders = this.getRawColumnHeader(column)
 
         const dxRowIndex = this.dimensionLookup.rows.findIndex(
-            dim => dim.dimension === 'dx'
+            dim => dim.isDxDimension
         )
         if (rowHeaders.length && dxRowIndex !== -1) {
             return {
@@ -433,7 +442,7 @@ export class PivotTableEngine {
         }
 
         const dxColumnIndex = this.dimensionLookup.columns.findIndex(
-            dim => dim.dimension === 'dx'
+            dim => dim.isDxDimension
         )
         if (columnHeaders.length && dxColumnIndex !== -1) {
             return {
@@ -750,6 +759,24 @@ export class PivotTableEngine {
             }
         }
     }
+    finalizeTotal({ row, column }) {
+        if (!this.data[row]) {
+            return
+        }
+        const totalCell = this.data[row][column]
+        if (totalCell && totalCell.count) {
+            totalCell.value = applyTotalAggregationType(totalCell)
+            this.addCellForAdaptiveClipping(
+                { row, column },
+                renderValue(
+                    totalCell.value,
+                    totalCell.valueType,
+                    this.visualization
+                )
+            )
+        }
+    }
+
     finalizeTotals() {
         const columnSubtotalSize = this.dimensionLookup.rows[0]?.size + 1
         const rowSubtotalSize = this.dimensionLookup.columns[0]?.size + 1
@@ -767,20 +794,7 @@ export class PivotTableEngine {
                         !this.doColumnSubtotals ||
                         row % this.dimensionLookup.rows[0].count !== 0
                     ) {
-                        if (!this.data[row]) {
-                            return
-                        }
-                        const totalCell = this.data[row][column]
-                        if (totalCell && totalCell.count) {
-                            totalCell.value = applyTotalAggregationType(
-                                totalCell
-                            )
-                            this.addCellForAdaptiveClipping(
-                                { row, column },
-                                totalCell.value,
-                                totalCell.valueType
-                            )
-                        }
+                        this.finalizeTotal({ row, column })
                     }
                 })
             })
@@ -796,20 +810,7 @@ export class PivotTableEngine {
                         !this.doRowSubtotals ||
                         column % this.dimensionLookup.columns[0].count !== 0
                     ) {
-                        if (!this.data[row]) {
-                            return
-                        }
-                        const totalCell = this.data[row][column]
-                        if (totalCell && totalCell.count) {
-                            totalCell.value = applyTotalAggregationType(
-                                totalCell
-                            )
-                            this.addCellForAdaptiveClipping(
-                                { row, column },
-                                totalCell.value,
-                                totalCell.valueType
-                            )
-                        }
+                        this.finalizeTotal({ row, column })
                     }
                 })
             })
@@ -829,51 +830,21 @@ export class PivotTableEngine {
                     this.dimensionLookup.columns[0].count,
                     n => (n + 1) * rowSubtotalSize - 1
                 ).forEach(column => {
-                    if (!this.data[row]) {
-                        return
-                    }
-                    const totalCell = this.data[row][column]
-                    if (totalCell && totalCell.count) {
-                        totalCell.value = applyTotalAggregationType(totalCell)
-                        this.addCellForAdaptiveClipping(
-                            { row, column },
-                            totalCell.value,
-                            totalCell.valueType
-                        )
-                    }
+                    this.finalizeTotal({ row, column })
                 })
             })
         }
         if (this.doRowTotals) {
             const column = this.dataWidth - 1
             times(this.dataHeight, n => n).forEach(row => {
-                if (!this.data[row]) {
-                    return
-                }
-                const totalCell = this.data[row][column]
-                if (totalCell && totalCell.count) {
-                    totalCell.value = applyTotalAggregationType(totalCell)
-                    this.addCellForAdaptiveClipping(
-                        { row, column },
-                        totalCell.value,
-                        totalCell.valueType
-                    )
-                }
+                this.finalizeTotal({ row, column })
             })
         }
 
         if (this.doColumnTotals) {
             const row = this.dataHeight - 1
             times(this.dataWidth, n => n).forEach(column => {
-                const totalCell = this.data[row][column]
-                if (totalCell && totalCell.count) {
-                    totalCell.value = applyTotalAggregationType(totalCell)
-                    this.addCellForAdaptiveClipping(
-                        { row, column },
-                        totalCell.value,
-                        totalCell.valueType
-                    )
-                }
+                this.finalizeTotal({ row, column })
             })
         }
 
@@ -884,13 +855,10 @@ export class PivotTableEngine {
         }
     }
 
-    addCellForAdaptiveClipping({ column }, value, valueType) {
+    addCellForAdaptiveClipping({ column }, renderedValue) {
         this.columnWidths[column] = Math.max(
             this.columnWidths[column] || 0,
-            measureText(
-                renderValue(value, valueType, this.visualization),
-                this.fontSize
-            )
+            measureText(renderedValue, this.fontSize)
         )
     }
 
@@ -1080,16 +1048,15 @@ export class PivotTableEngine {
             this.data[pos.row] = this.data[pos.row] || []
             this.data[pos.row][pos.column] = dataRow
 
-            const dxDimension = this.getRawCellDxDimension(pos)
-            this.addCellForAdaptiveClipping(
-                pos,
-                this.getRaw(pos),
-                dxDimension.valueType
-            )
             this.addCellValueToTotals(pos, dataRow)
         })
 
         this.finalizeTotals()
+
+        this.rawData.rows.forEach(dataRow => {
+            const pos = lookup(dataRow, this.dimensionLookup, this)
+            this.addCellForAdaptiveClipping(pos, this.getRaw(pos).renderedValue)
+        })
 
         this.resetRowMap()
         this.resetColumnMap()
@@ -1160,7 +1127,15 @@ export class PivotTableEngine {
                 return 1 * order
             }
 
-            return (valueA - valueB) * order
+            if (
+                valueA.valueType === VALUE_TYPE_NUMBER &&
+                valueB.valueType === VALUE_TYPE_NUMBER
+            ) {
+                return (valueA.rawValue - valueB.rawValue) * order
+            }
+            return (
+                valueA.renderedValue.localeCompare(valueB.renderedValue) * order
+            )
         })
     }
 
