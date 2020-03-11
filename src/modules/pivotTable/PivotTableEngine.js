@@ -1094,16 +1094,13 @@ export class PivotTableEngine {
             const valueA = this.getRaw({ row: rowA, column: mappedColumn })
             const valueB = this.getRaw({ row: rowB, column: mappedColumn })
 
-            if (
-                typeof valueA === 'undefined' &&
-                typeof valueB === 'undefined'
-            ) {
+            if ((!valueA || valueA.empty) && (!valueB || valueB.empty)) {
                 return 0
             }
-            if (typeof valueA === 'undefined') {
+            if (!valueA || valueA.empty) {
                 return -1 * order
             }
-            if (typeof valueB === 'undefined') {
+            if (!valueB || valueB.empty) {
                 return 1 * order
             }
 
