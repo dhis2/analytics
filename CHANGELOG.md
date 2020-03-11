@@ -1,3 +1,11 @@
+## [4.3.17](https://github.com/dhis2/analytics/compare/v4.3.16...v4.3.17) (2020-03-11)
+
+
+### Bug Fixes
+
+* check for empty cells when sorting ([#354](https://github.com/dhis2/analytics/issues/354)) ([af787a4](https://github.com/dhis2/analytics/commit/af787a425d03cc99ec84305aa286f3e262000469))
+* full title row span in single-axis, refactor header counts ([#353](https://github.com/dhis2/analytics/issues/353)) ([c0eff2f](https://github.com/dhis2/analytics/commit/c0eff2f439bfbd9e566f4030b8e6e81c1871e466))
+
 ## [4.3.16](https://github.com/dhis2/analytics/compare/v4.3.15...v4.3.16) (2020-03-11)
 
 
