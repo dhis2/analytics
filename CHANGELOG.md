@@ -1,3 +1,11 @@
+## [4.3.18](https://github.com/dhis2/analytics/compare/v4.3.17...v4.3.18) (2020-03-11)
+
+
+### Bug Fixes
+
+* support deep-single-axis tables with dimension labels ([#356](https://github.com/dhis2/analytics/issues/356)) ([2d11580](https://github.com/dhis2/analytics/commit/2d1158077b9743e01dd58da9850c80713d7f93d8))
+* use sum aggregation for column or row percentages ([#355](https://github.com/dhis2/analytics/issues/355)) ([23ed056](https://github.com/dhis2/analytics/commit/23ed056b5d7356774a925e31f9afb755b348b070))
+
 ## [4.3.17](https://github.com/dhis2/analytics/compare/v4.3.16...v4.3.17) (2020-03-11)
 
 
