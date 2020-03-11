@@ -1,3 +1,10 @@
+## [4.3.16](https://github.com/dhis2/analytics/compare/v4.3.15...v4.3.16) (2020-03-11)
+
+
+### Bug Fixes
+
+* sort OU hierarchy items ([#348](https://github.com/dhis2/analytics/issues/348)) ([950f321](https://github.com/dhis2/analytics/commit/950f321a822d70d655fdefe197877a3da5337cac))
+
 ## [4.3.15](https://github.com/dhis2/analytics/compare/v4.3.14...v4.3.15) (2020-03-10)
 
 
