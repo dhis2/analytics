@@ -214,7 +214,7 @@ const applyTotalAggregationType = (
     },
     overrideTotalAggregationType
 ) => {
-    switch (overrideTotalAggregationType ?? totalAggregationType) {
+    switch (overrideTotalAggregationType || totalAggregationType) {
         case AGGREGATE_TYPE_NA:
             return 'N/A'
         case AGGREGATE_TYPE_AVERAGE:
