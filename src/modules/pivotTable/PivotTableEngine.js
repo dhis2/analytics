@@ -269,7 +269,19 @@ export class PivotTableEngine {
             this.rawData.headers
         )
 
-        this.columnDepth = this.dimensionLookup.columns.length || 1
+        const doColumnSubtotals =
+            this.options.showColumnSubtotals &&
+            this.dimensionLookup.rows.length > 1
+        const singularRow =
+            this.dimensionLookup.rows.length === 1 &&
+            this.dimensionLookup.rows[0].count === 1
+        const firstColumnIsSortable = !doColumnSubtotals && !singularRow
+
+        this.columnDepth =
+            this.dimensionLookup.columns.length ||
+            (this.visualization.showDimensionLabels || firstColumnIsSortable
+                ? 1
+                : 0)
         this.rowDepth =
             this.dimensionLookup.rows.length ||
             (this.visualization.showDimensionLabels ? 1 : 0)

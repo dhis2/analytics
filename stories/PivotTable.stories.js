@@ -136,6 +136,22 @@ storiesOf('PivotTable', module).add('simple - no columns', () => {
     )
 })
 
+storiesOf('PivotTable', module).add('simple - no columns (single cell)', () => {
+    const visualization = {
+        ...simpleVisualization,
+        ...visualizationReset,
+        title: 'Singular cell',
+        columns: [],
+        rows: simpleVisualization.columns,
+        filters: []
+    }
+    return (
+        <div style={{ width: 800, height: 600 }}>
+            <PivotTable data={simpleData} visualization={visualization} />
+        </div>
+    )
+})
+
 storiesOf('PivotTable', module).add('simple - no columns (label)', () => {
     const visualization = {
         ...simpleVisualization,
