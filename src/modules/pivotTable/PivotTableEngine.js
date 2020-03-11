@@ -35,6 +35,7 @@ import {
     DIMENSION_TYPE_DATA,
     DIMENSION_TYPE_DATA_ELEMENT_GROUP_SET,
     VALUE_TYPE_TEXT,
+    NUMBER_TYPE_VALUE,
 } from './pivotTableConstants'
 
 const dataFields = [
@@ -202,15 +203,18 @@ const lookup = (
     return { column, row }
 }
 
-const applyTotalAggregationType = ({
-    totalAggregationType,
-    value,
-    numerator,
-    denominator,
-    multiplier,
-    divisor,
-}) => {
-    switch (totalAggregationType) {
+const applyTotalAggregationType = (
+    {
+        totalAggregationType,
+        value,
+        numerator,
+        denominator,
+        multiplier,
+        divisor,
+    },
+    overrideTotalAggregationType
+) => {
+    switch (overrideTotalAggregationType || totalAggregationType) {
         case AGGREGATE_TYPE_NA:
             return 'N/A'
         case AGGREGATE_TYPE_AVERAGE:
@@ -776,7 +780,11 @@ export class PivotTableEngine {
         }
         const totalCell = this.data[row][column]
         if (totalCell && totalCell.count) {
-            totalCell.value = applyTotalAggregationType(totalCell)
+            totalCell.value = applyTotalAggregationType(
+                totalCell,
+                this.visualization.numberType !== NUMBER_TYPE_VALUE &&
+                    AGGREGATE_TYPE_SUM
+            )
             this.addCellForAdaptiveClipping(
                 { row, column },
                 renderValue(
