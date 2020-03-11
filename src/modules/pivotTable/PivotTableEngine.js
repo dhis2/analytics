@@ -378,13 +378,18 @@ export class PivotTableEngine {
     }
 
     getDimensionLabel(rowLevel, columnLevel) {
-        const lastRowLevel = this.dimensionLookup.rows.length - 1
-        const lastColumnLevel = this.dimensionLookup.columns.length - 1
+        const lastRowLevel = this.rowDepth - 1
+        const lastColumnLevel = this.columnDepth - 1
 
         if (rowLevel !== lastRowLevel && columnLevel !== lastColumnLevel) {
             return null
         }
-        if (rowLevel === lastRowLevel && columnLevel === lastColumnLevel) {
+        if (
+            rowLevel === lastRowLevel &&
+            this.dimensionLookup.rows[lastRowLevel] &&
+            columnLevel === lastColumnLevel &&
+            this.dimensionLookup.columns[lastColumnLevel]
+        ) {
             return `${this.dimensionLookup.rows[lastRowLevel].meta.name} / ${this.dimensionLookup.columns[lastColumnLevel].meta.name}`
         }
 
@@ -395,10 +400,16 @@ export class PivotTableEngine {
             return this.dimensionLookup.rows[rowLevel].meta.name
         }
 
-        if (rowLevel === lastRowLevel) {
+        if (
+            rowLevel === lastRowLevel &&
+            this.dimensionLookup.columns[columnLevel]
+        ) {
             return this.dimensionLookup.columns[columnLevel].meta.name
         }
-        if (columnLevel === lastColumnLevel) {
+        if (
+            columnLevel === lastColumnLevel &&
+            this.dimensionLookup.rows[rowLevel]
+        ) {
             return this.dimensionLookup.rows[rowLevel].meta.name
         }
     }
