@@ -11,7 +11,7 @@ export const PivotTableTitleRow = ({
     totalWidth,
 }) => {
     const engine = usePivotTableEngine()
-    const columnCount = engine.width + engine.dimensionLookup.rows.length
+    const columnCount = engine.width + engine.rowDepth
 
     const [position, setPosition] = useState(scrollPosition.x)
     useEffect(() => {

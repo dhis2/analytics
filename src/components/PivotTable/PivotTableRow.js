@@ -5,15 +5,13 @@ import { PivotTableRowHeaderCell } from './PivotTableRowHeaderCell'
 import { PivotTableValueCell } from './PivotTableValueCell'
 import { PivotTableEmptyCell } from './PivotTableEmptyCell'
 import { usePivotTableEngine } from './PivotTableEngineContext'
+import times from 'lodash/times'
 
 export const PivotTableRow = ({ clippingResult, rowIndex }) => {
     const engine = usePivotTableEngine()
     return (
         <tr>
-            {engine.dimensionLookup.rows.length === 0 && (
-                <PivotTableEmptyCell type="row-header" />
-            )}
-            {engine.dimensionLookup.rows.map((_, rowLevel) => (
+            {times(engine.rowDepth, x => x).map(rowLevel => (
                 <PivotTableRowHeaderCell
                     key={rowLevel}
                     clippingResult={clippingResult}
