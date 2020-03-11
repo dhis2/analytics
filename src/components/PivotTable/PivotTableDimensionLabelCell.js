@@ -6,8 +6,8 @@ import { PivotTableCell } from './PivotTableCell'
 export const PivotTableDimensionLabelCell = ({ rowLevel, columnLevel }) => {
     const engine = usePivotTableEngine()
 
-    const colCount = engine.dimensionLookup.rows.length || 1
-    const rowCount = engine.dimensionLookup.columns.length || 1
+    const colCount = engine.rowDepth
+    const rowCount = engine.columnDepth
 
     let colSpan = 1,
         rowSpan = 1,

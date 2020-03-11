@@ -5,6 +5,7 @@ import { PivotTableColumnHeaderCell } from './PivotTableColumnHeaderCell'
 import { PivotTableDimensionLabelCell } from './PivotTableDimensionLabelCell'
 import { PivotTableEmptyCell } from './PivotTableEmptyCell'
 import { usePivotTableEngine } from './PivotTableEngineContext'
+import times from 'lodash/times'
 
 export const PivotTableColumnHeaders = ({
     clippingResult,
@@ -13,16 +14,12 @@ export const PivotTableColumnHeaders = ({
 }) => {
     const engine = usePivotTableEngine()
 
-    const columns = engine.dimensionLookup.columns.length
-        ? engine.dimensionLookup.columns
-        : [0]
-    const rows = engine.dimensionLookup.rows.length
-        ? engine.dimensionLookup.rows
-        : [0]
+    const columns = times(engine.columnDepth, x => x)
+    const rows = times(engine.rowDepth, x => x)
 
-    return columns.map((_, columnLevel) => (
+    return columns.map(columnLevel => (
         <tr key={columnLevel}>
-            {rows.map((_, rowLevel) => (
+            {rows.map(rowLevel => (
                 <PivotTableDimensionLabelCell
                     key={rowLevel}
                     rowLevel={rowLevel}

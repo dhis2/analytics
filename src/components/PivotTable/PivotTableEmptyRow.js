@@ -9,7 +9,7 @@ export const PivotTableEmptyRow = ({ height, columns }) => {
     return (
         <tr>
             <PivotTableCell
-                colSpan={engine.dimensionLookup.rows.length}
+                colSpan={engine.rowDepth}
                 style={{ height }}
                 classes="row-header"
             />

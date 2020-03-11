@@ -27,7 +27,7 @@ export const PivotTableColumnHeaderCell = ({
             showHierarchy={engine.visualization.showHierarchy}
             render={header => {
                 const isSortable =
-                    level === engine.dimensionLookup.columns.length - 1 &&
+                    level === engine.columnDepth - 1 &&
                     header.span === 1 &&
                     engine.isSortable(index)
 
