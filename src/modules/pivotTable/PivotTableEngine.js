@@ -4,11 +4,7 @@ import { parseValue } from './parseValue'
 import { renderValue } from './renderValue'
 import { measureText } from './measureText'
 
-import {
-    DIMENSION_ID_DATA,
-    DIMENSION_ID_PERIOD,
-    DIMENSION_ID_ORGUNIT,
-} from '../predefinedDimensions'
+import { DIMENSION_ID_ORGUNIT } from '../predefinedDimensions'
 
 import {
     AGGREGATE_TYPE_NA,
@@ -86,13 +82,13 @@ const listByDimension = list =>
         return all
     }, {})
 
-const getPrimaryDimension = (metadata, name) => {
-    return metadata.dimensions[name]
-        ? metadata.dimensions[name].reduce((out, id) => {
-              out[id] = metadata.items[id]
-              return out
-          }, {})
-        : {}
+const sortByHierarchy = items => {
+    items.sort((a, b) => {
+        if (!a.hierarchy || !b.hierarchy) {
+            return 0
+        }
+        return a.hierarchy.join('/').localeCompare(b.hierarchy.join('/'))
+    })
 }
 
 const buildDimensionLookup = (visualization, metadata, headers) => {
@@ -149,21 +145,16 @@ const buildDimensionLookup = (visualization, metadata, headers) => {
         return out
     }, {})
 
-    const primaryDimensions = {
-        data: getPrimaryDimension(metadata, DIMENSION_ID_DATA),
-        period: getPrimaryDimension(metadata, DIMENSION_ID_PERIOD),
-        orgUnit: getPrimaryDimension(metadata, DIMENSION_ID_ORGUNIT),
-    }
+    const ouDimension = allByDimension[DIMENSION_ID_ORGUNIT]
 
-    if (metadata.ouNameHierarchy) {
-        Object.keys(primaryDimensions.orgUnit).forEach(ou => {
-            const hierarchy = metadata.ouNameHierarchy[ou]
+    if (metadata.ouNameHierarchy && ouDimension) {
+        ouDimension.items.forEach(ou => {
+            const hierarchy = metadata.ouNameHierarchy[ou.uid]
             if (hierarchy) {
-                primaryDimensions.orgUnit[ou].hierarchy = hierarchy
-                    .split('/')
-                    .filter(x => x.length)
+                ou.hierarchy = hierarchy.split('/').filter(x => x.length)
             }
         })
+        sortByHierarchy(ouDimension.items)
     }
 
     return {
@@ -174,7 +165,6 @@ const buildDimensionLookup = (visualization, metadata, headers) => {
         rowHeaders,
         columnHeaders,
         dataHeaders,
-        primaryDimensions,
     }
 }
 
