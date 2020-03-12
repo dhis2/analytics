@@ -800,18 +800,19 @@ export class PivotTableEngine {
         const columnSubtotalSize = this.dimensionLookup.rows[0]?.size + 1
         const rowSubtotalSize = this.dimensionLookup.columns[0]?.size + 1
 
-        // TODO: consolidate total lookup and aggregate calculation logics
-
         if (this.doRowSubtotals && rowSubtotalSize) {
             times(
                 this.dimensionLookup.columns[0].count,
                 n => (n + 1) * rowSubtotalSize - 1
             ).forEach(column => {
-                times(this.dataHeight, n => n).forEach(row => {
-                    // skip combined subtotal cells for now
+                times(
+                    this.dataHeight - (this.doColumnTotals ? 1 : 0),
+                    n => n
+                ).forEach(row => {
+                    // skip combined subtotal cells
                     if (
                         !this.doColumnSubtotals ||
-                        row % this.dimensionLookup.rows[0].count !== 0
+                        (row + 1) % columnSubtotalSize !== 0
                     ) {
                         this.finalizeTotal({ row, column })
                     }
@@ -823,11 +824,14 @@ export class PivotTableEngine {
                 this.dimensionLookup.rows[0].count,
                 n => (n + 1) * columnSubtotalSize - 1
             ).forEach(row => {
-                times(this.dataWidth, n => n).forEach(column => {
-                    // skip combined subtotal cells for now
+                times(
+                    this.dataWidth - (this.doRowTotals ? 1 : 0),
+                    n => n
+                ).forEach(column => {
+                    // skip combined subtotal cells
                     if (
                         !this.doRowSubtotals ||
-                        column % this.dimensionLookup.columns[0].count !== 0
+                        (column + 1) % rowSubtotalSize !== 0
                     ) {
                         this.finalizeTotal({ row, column })
                     }
@@ -835,6 +839,7 @@ export class PivotTableEngine {
             })
         }
 
+        // Combined subtotal cells
         if (
             this.doRowSubtotals &&
             this.doColumnSubtotals &&
@@ -855,15 +860,22 @@ export class PivotTableEngine {
         }
         if (this.doRowTotals) {
             const column = this.dataWidth - 1
-            times(this.dataHeight, n => n).forEach(row => {
+            times(this.dataHeight - 1, n => n).forEach(row => {
                 this.finalizeTotal({ row, column })
             })
         }
 
         if (this.doColumnTotals) {
             const row = this.dataHeight - 1
-            times(this.dataWidth, n => n).forEach(column => {
+            times(this.dataWidth - 1, n => n).forEach(column => {
                 this.finalizeTotal({ row, column })
+            })
+        }
+
+        if (this.doRowTotals && this.doColumnTotals) {
+            this.finalizeTotal({
+                row: this.dataHeight - 1,
+                column: this.dataWidth - 1,
             })
         }
 
