@@ -60,7 +60,13 @@ const getLevelAndGroupText = (items, metaData, isLevel) => {
         .map(item => getNameFromMetadata(item.id))
         .join(', ')
 
-    const joiner = isLevel ? i18n.t('levels in') : i18n.t('groups in')
+    if (!staticOuNames) {
+        return `${allDynamicOuNames} ${
+            isLevel ? i18n.t('levels') : i18n.t('groups')
+        }`
+    }
 
-    return `${allDynamicOuNames} ${joiner} ${staticOuNames}`
+    return `${allDynamicOuNames} ${
+        isLevel ? i18n.t('levels in') : i18n.t('groups in')
+    } ${staticOuNames}`
 }
