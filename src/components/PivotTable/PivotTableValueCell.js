@@ -18,7 +18,7 @@ export const PivotTableValueCell = ({ row, column }) => {
     })
 
     if (!cellContent || cellContent.empty) {
-        return <PivotTableEmptyCell classes={cellContent?.cellType} />
+        return <PivotTableEmptyCell type={cellContent?.cellType} />
     }
 
     // TODO: Add support for 'INTEGER' type (requires server changes)
