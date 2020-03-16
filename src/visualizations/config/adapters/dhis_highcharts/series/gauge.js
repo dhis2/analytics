@@ -3,10 +3,9 @@ import {
     LEGEND_DISPLAY_STYLE_TEXT,
 } from '../../../../../modules/legends'
 
-const DEFAULT_FONT_SIZE = '60px'
-const DASHBOARD_FONT_SIZE = '28px'
+const DEFAULT_FONT_SIZE = '28px'
 
-export default function(series, dashboard, layout, legendSet) {
+export default function(series, layout, legendSet) {
     return [
         {
             name: series[0].name,
@@ -17,9 +16,7 @@ export default function(series, dashboard, layout, legendSet) {
                 borderWidth: 0,
                 verticalAlign: 'bottom',
                 style: {
-                    fontSize: dashboard
-                        ? DASHBOARD_FONT_SIZE
-                        : DEFAULT_FONT_SIZE,
+                    fontSize: DEFAULT_FONT_SIZE,
                     color:
                         layout.legendDisplayStyle ===
                             LEGEND_DISPLAY_STYLE_TEXT && legendSet
