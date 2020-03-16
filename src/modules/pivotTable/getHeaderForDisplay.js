@@ -33,13 +33,15 @@ export const getHeaderForDisplay = ({
 
     const currentHeader = header[dimensionLevel]
 
-    const label =
-        showHierarchy && currentHeader?.hierarchy
-            ? currentHeader.hierarchy.join(' / ')
-            : currentHeader?.name
+    const includesHierarchy = showHierarchy && currentHeader?.hierarchy
+
+    const label = includesHierarchy
+        ? currentHeader.hierarchy.join(' / ')
+        : currentHeader?.name
 
     return {
         span,
         label,
+        includesHierarchy,
     }
 }
