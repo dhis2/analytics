@@ -1,3 +1,10 @@
+## [4.3.21](https://github.com/dhis2/analytics/compare/v4.3.20...v4.3.21) (2020-03-16)
+
+
+### Bug Fixes
+
+* left-align org-unit hierarchies in row headers ([#368](https://github.com/dhis2/analytics/issues/368)) ([5ac779d](https://github.com/dhis2/analytics/commit/5ac779dfd7fef9c3e62f4c510760c0eb288a340c))
+
 ## [4.3.20](https://github.com/dhis2/analytics/compare/v4.3.19...v4.3.20) (2020-03-16)
 
 
