@@ -75,6 +75,9 @@ export const cell = css`
     .row-header {
         background-color: #dae6f8;
     }
+    .row-header-hierarchy {
+        text-align: left;
+    }
     .empty-header {
         background-color: #cddaed;
     }

@@ -21,13 +21,14 @@ export const PivotTableRowHeaderCell = ({
             showHierarchy={engine.visualization.showHierarchy}
             render={header => (
                 <PivotTableCell
-                    classes={
+                    classes={[
                         header.label &&
                         header.label !== 'Total' &&
                         header.label !== 'Subtotal'
                             ? 'row-header'
-                            : 'empty-header'
-                    }
+                            : 'empty-header',
+                        header.includesHierarchy && 'row-header-hierarchy',
+                    ]}
                     rowSpan={header.span}
                     title={header.label}
                     style={{ width, maxWidth: width, minWidth: width }}
