@@ -2,7 +2,11 @@ import getCumulativeData from './../getCumulativeData'
 import getPie from './pie'
 import getGauge from './gauge'
 import getType from '../type'
-import { getFullIdAxisMap, getAxisIdsMap, hasOptionalAxis } from '../optionalAxes'
+import {
+    getFullIdAxisMap,
+    getAxisIdsMap,
+    hasOptionalAxis,
+} from '../optionalAxes'
 import { generateColors } from '../../../../util/colors/gradientColorGenerator'
 import {
     VIS_TYPE_PIE,
@@ -132,7 +136,7 @@ export default function(series, store, layout, isStacked, extraOptions) {
             )
             break
         case VIS_TYPE_GAUGE:
-            series = getGauge(series, extraOptions.dashboard, layout, extraOptions.legendSets[0])
+            series = getGauge(series, layout, extraOptions.legendSets[0])
             break
         default:
             series = getDefault(series, layout, isStacked, extraOptions)
