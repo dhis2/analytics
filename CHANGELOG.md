@@ -1,3 +1,10 @@
+## [4.3.19](https://github.com/dhis2/analytics/compare/v4.3.18...v4.3.19) (2020-03-16)
+
+
+### Bug Fixes
+
+* fix gauge size to avoid clipping (DHIS2-8412) ([#358](https://github.com/dhis2/analytics/issues/358)) ([4420f64](https://github.com/dhis2/analytics/commit/4420f642d55f42aac387ea4666e69ca7adeb0618))
+
 ## [4.3.18](https://github.com/dhis2/analytics/compare/v4.3.17...v4.3.18) (2020-03-11)
 
 
