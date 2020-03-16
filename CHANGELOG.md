@@ -1,3 +1,10 @@
+## [4.3.20](https://github.com/dhis2/analytics/compare/v4.3.19...v4.3.20) (2020-03-16)
+
+
+### Bug Fixes
+
+* correctly finalize combined subtotals and totals ([#357](https://github.com/dhis2/analytics/issues/357)) ([6b20bcb](https://github.com/dhis2/analytics/commit/6b20bcbe1d6585a1dfa386aa0083358401a12fef))
+
 ## [4.3.19](https://github.com/dhis2/analytics/compare/v4.3.18...v4.3.19) (2020-03-16)
 
 
