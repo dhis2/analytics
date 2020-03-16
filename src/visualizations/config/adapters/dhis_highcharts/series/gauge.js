@@ -5,7 +5,7 @@ import {
 
 const DEFAULT_FONT_SIZE = '28px'
 
-export default function(series, dashboard, layout, legendSet) {
+export default function(series, layout, legendSet) {
     return [
         {
             name: series[0].name,
