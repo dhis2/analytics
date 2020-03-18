@@ -1,3 +1,10 @@
+## [4.3.22](https://github.com/dhis2/analytics/compare/v4.3.21...v4.3.22) (2020-03-18)
+
+
+### Bug Fixes
+
+* sort data when sorting org unit hierarchy headers ([#370](https://github.com/dhis2/analytics/issues/370)) ([7c651fd](https://github.com/dhis2/analytics/commit/7c651fd298c82dd0193e5a40cab48da55f323b22))
+
 ## [4.3.21](https://github.com/dhis2/analytics/compare/v4.3.20...v4.3.21) (2020-03-16)
 
 
