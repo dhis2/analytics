@@ -1,3 +1,10 @@
+## [4.3.23](https://github.com/dhis2/analytics/compare/v4.3.22...v4.3.23) (2020-03-18)
+
+
+### Bug Fixes
+
+* title should not use 'in' when no ou selected ([#369](https://github.com/dhis2/analytics/issues/369)) ([268a6b7](https://github.com/dhis2/analytics/commit/268a6b76fa431ce34be94fc35f5f443642fdccb6))
+
 ## [4.3.22](https://github.com/dhis2/analytics/compare/v4.3.21...v4.3.22) (2020-03-18)
 
 
