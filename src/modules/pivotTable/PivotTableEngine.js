@@ -148,7 +148,11 @@ const buildDimensionLookup = (visualization, metadata, headers) => {
 
     const ouDimension = allByDimension[DIMENSION_ID_ORGUNIT]
 
-    if (metadata.ouNameHierarchy && ouDimension) {
+    if (
+        visualization.showHierarchy &&
+        metadata.ouNameHierarchy &&
+        ouDimension
+    ) {
         ouDimension.items.forEach(ou => {
             const hierarchy = metadata.ouNameHierarchy[ou.uid]
             if (hierarchy) {
@@ -156,6 +160,7 @@ const buildDimensionLookup = (visualization, metadata, headers) => {
             }
         })
         sortByHierarchy(ouDimension.items)
+        ouDimension.itemIds = ouDimension.items.map(item => item.uid)
     }
 
     return {
