@@ -46,7 +46,6 @@ const getLevelAndGroupText = (items, metaData, isLevel) => {
         const lastOuName = getNameFromMetadata(
             ouIdHelper.removePrefix(lastItem.id)
         )
-        // allDynamicOuNames = `${dynamicOuNames} ${i18n.t('and')} ${lastOuName}`
         allDynamicOuNames = i18n.t('{{dynamicOuNames}} and {{lastOuName}}', {
             dynamicOuNames,
             lastOuName,
@@ -64,27 +63,36 @@ const getLevelAndGroupText = (items, metaData, isLevel) => {
         .map(item => getNameFromMetadata(item.id))
         .join(', ')
 
+    let ouLevelAndGroupText = ''
     if (!staticOuNames) {
         if (isLevel) {
-            return i18n.t('{{allDynamicOuNames}} levels', {
+            ouLevelAndGroupText = i18n.t('{{allDynamicOuNames}} levels', {
+                allDynamicOuNames,
+            })
+        } else {
+            ouLevelAndGroupText = i18n.t('{{allDynamicOuNames}} groups', {
                 allDynamicOuNames,
             })
         }
-
-        return i18n.t('{{allDynamicOuNames}} groups', {
-            allDynamicOuNames,
-        })
+    } else {
+        if (isLevel) {
+            ouLevelAndGroupText = i18n.t(
+                '{{allDynamicOuNames}} levels in {{staticOuNames}}',
+                {
+                    allDynamicOuNames,
+                    staticOuNames,
+                }
+            )
+        } else {
+            ouLevelAndGroupText = i18n.t(
+                '{{allDynamicOuNames}} groups in {{staticOuNames}}',
+                {
+                    allDynamicOuNames,
+                    staticOuNames,
+                }
+            )
+        }
     }
 
-    if (isLevel) {
-        return i18n.t('{{allDynamicOuNames}} levels in {{staticOuNames}}', {
-            allDynamicOuNames,
-            staticOuNames,
-        })
-    }
-
-    return i18n.t('{{allDynamicOuNames}} groups in {{staticOuNames}}', {
-        allDynamicOuNames,
-        staticOuNames,
-    })
+    return ouLevelAndGroupText
 }
