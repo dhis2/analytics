@@ -1,3 +1,10 @@
+## [4.3.25](https://github.com/dhis2/analytics/compare/v4.3.24...v4.3.25) (2020-03-23)
+
+
+### Bug Fixes
+
+* skip superfluous data rows which don't match table headers (DHIS2-8497) ([#371](https://github.com/dhis2/analytics/issues/371)) ([b7568dd](https://github.com/dhis2/analytics/commit/b7568ddead9765880570fbd2506e912aa234623d))
+
 ## [4.3.24](https://github.com/dhis2/analytics/compare/v4.3.23...v4.3.24) (2020-03-19)
 
 
