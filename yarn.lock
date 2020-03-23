@@ -1220,26 +1220,6 @@
   dependencies:
     find-up "^4.0.0"
 
-"@dhis2/analytics@^3.3.3":
-  version "3.3.3"
-  resolved "https://registry.yarnpkg.com/@dhis2/analytics/-/analytics-3.3.3.tgz#17d77317ebe046710f3099abb90863423955d974"
-  integrity sha512-RDgu8bik1JTQdIwAv3jEkvx0ZhRcYRBW+4OHOtGwS/+8Mf3oTdwAA+myYLLKA2Al4PDyBoKxSXXGmRN+uRD+lw==
-  dependencies:
-    "@dhis2/d2-i18n" "^1.0.4"
-    "@dhis2/d2-ui-org-unit-dialog" "^6.3.2"
-    "@dhis2/d2-ui-period-selector-dialog" "^6.3.2"
-    "@dhis2/ui-core" "^4.7.1"
-    "@material-ui/core" "^3.9.3"
-    "@material-ui/icons" "^3.0.2"
-    classnames "^2.2.6"
-    d2-utilizr "^0.2.16"
-    d3-color "^1.2.3"
-    highcharts "^7.2.1"
-    lodash "^4.17.13"
-    react-beautiful-dnd "^10.1.1"
-    resize-observer-polyfill "^1.5.1"
-    styled-jsx "^3.2.1"
-
 "@dhis2/analytics@^4.0.1":
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/@dhis2/analytics/-/analytics-4.0.1.tgz#7b3f88379265ca387a821c7e3e24b58db485638f"
@@ -1321,7 +1301,7 @@
     material-ui "^0.20.0"
     rxjs "^5.5.7"
 
-"@dhis2/d2-ui-org-unit-dialog@^6.3.2", "@dhis2/d2-ui-org-unit-dialog@^6.5.6":
+"@dhis2/d2-ui-org-unit-dialog@^6.5.6":
   version "6.5.6"
   resolved "https://registry.yarnpkg.com/@dhis2/d2-ui-org-unit-dialog/-/d2-ui-org-unit-dialog-6.5.6.tgz#c3a8c6c377dce9cb03e0ca85bc3b32bb308e0b42"
   integrity sha512-vZtr+BVyhUIK233pJj6Iplh09cItYD2xiksMrb1tWG/gn0rPR6JWaI52iuGiiTIOdI8wZlaexjVZLt2i4ksrDQ==
@@ -1363,22 +1343,10 @@
     babel-runtime "^6.26.0"
     prop-types "^15.5.10"
 
-"@dhis2/d2-ui-period-selector-dialog@^6.3.2", "@dhis2/d2-ui-period-selector-dialog@^6.5.6":
-  version "6.5.6"
-  resolved "https://registry.yarnpkg.com/@dhis2/d2-ui-period-selector-dialog/-/d2-ui-period-selector-dialog-6.5.6.tgz#9d3459e2880ea473693600423d73d995938b84f1"
-  integrity sha512-fhj+AmJBTbzqITH/oEtRVNIk75luC4dlfc0jl5Z0hbeHMj91PcoQCchBZhpyUOlMDT274R3rZ1Zep+pbB3eCsA==
-  dependencies:
-    "@dhis2/analytics" "^3.3.3"
-    "@dhis2/d2-i18n" "^1.0.4"
-    "@material-ui/core" "^3.3.1"
-    "@material-ui/icons" "^3.0.1"
-    babel-runtime "^6.26.0"
-    prop-types "^15.6.0"
-
-"@dhis2/d2-ui-period-selector-dialog@^6.5.7":
-  version "6.5.7"
-  resolved "https://registry.yarnpkg.com/@dhis2/d2-ui-period-selector-dialog/-/d2-ui-period-selector-dialog-6.5.7.tgz#081b5e5e2f0d9bcbc9d47ba706da16adebeafaf9"
-  integrity sha512-1pISB3brD1Tx+/k51/TK0kF+ZKeDOviSsM99EEUJ+RfviSx3kSxpYPv/VV0WYV69XUmDGkBJ8LPy0w6mUGVL/A==
+"@dhis2/d2-ui-period-selector-dialog@^6.5.10", "@dhis2/d2-ui-period-selector-dialog@^6.5.6":
+  version "6.5.10"
+  resolved "https://registry.yarnpkg.com/@dhis2/d2-ui-period-selector-dialog/-/d2-ui-period-selector-dialog-6.5.10.tgz#af7af8839973e98298d65f7f2b4132ab1ef25a78"
+  integrity sha512-jlOcFgRPvJycT3TJxqPd4tncnVlWVzS107ZaUhKdKVPmRDbyThx1q48pWyGO2QlFyFBkyXso3aRDLiyZ52uhOA==
   dependencies:
     "@dhis2/analytics" "^4.0.1"
     "@dhis2/d2-i18n" "^1.0.4"
@@ -1394,7 +1362,7 @@
   dependencies:
     prop-types "^15"
 
-"@dhis2/ui-core@^4.7.1", "@dhis2/ui-core@^4.9.1":
+"@dhis2/ui-core@^4.9.1":
   version "4.9.1"
   resolved "https://registry.yarnpkg.com/@dhis2/ui-core/-/ui-core-4.9.1.tgz#13ebaa43deceb5c3fa2955668c183131241847fa"
   integrity sha512-ejKHYNiY49QIqgu6auLk6fL9It9+eZL1mmBk4Tqpst1u6YrSlnCyxfi/zV+UYqJLATAQX2aEAuB2ibRG5InZJA==
