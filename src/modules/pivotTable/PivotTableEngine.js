@@ -180,26 +180,35 @@ const lookup = (
     { doColumnSubtotals, doRowSubtotals }
 ) => {
     let row = 0
-    dimensionLookup.rowHeaders.forEach(headerIndex => {
+    for (const headerIndex of dimensionLookup.rowHeaders) {
         const idx = dimensionLookup.headerDimensions[
             headerIndex
         ].itemIds.indexOf(dataRow[headerIndex])
+
+        if (idx === -1) {
+            return undefined
+        }
+
         const size = dimensionLookup.headerDimensions[headerIndex].size
         row += idx * size
-    })
+    }
 
     if (doColumnSubtotals) {
         row += Math.floor(row / dimensionLookup.rows[0].size)
     }
 
     let column = 0
-    dimensionLookup.columnHeaders.forEach(headerIndex => {
+    for (const headerIndex of dimensionLookup.columnHeaders) {
         const idx = dimensionLookup.headerDimensions[
             headerIndex
         ].itemIds.indexOf(dataRow[headerIndex])
+
+        if (idx === -1) {
+            return undefined
+        }
         const size = dimensionLookup.headerDimensions[headerIndex].size
         column += idx * size
-    })
+    }
 
     if (doRowSubtotals) {
         column += Math.floor(column / dimensionLookup.columns[0].size)
@@ -1083,17 +1092,25 @@ export class PivotTableEngine {
 
         this.rawData.rows.forEach(dataRow => {
             const pos = lookup(dataRow, this.dimensionLookup, this)
-            this.data[pos.row] = this.data[pos.row] || []
-            this.data[pos.row][pos.column] = dataRow
 
-            this.addCellValueToTotals(pos, dataRow)
+            if (pos) {
+                this.data[pos.row] = this.data[pos.row] || []
+                this.data[pos.row][pos.column] = dataRow
+
+                this.addCellValueToTotals(pos, dataRow)
+            }
         })
 
         this.finalizeTotals()
 
         this.rawData.rows.forEach(dataRow => {
             const pos = lookup(dataRow, this.dimensionLookup, this)
-            this.addCellForAdaptiveClipping(pos, this.getRaw(pos).renderedValue)
+            if (pos) {
+                this.addCellForAdaptiveClipping(
+                    pos,
+                    this.getRaw(pos).renderedValue
+                )
+            }
         })
 
         this.resetRowMap()
