@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react'
 import { storiesOf } from '@storybook/react'
 import cloneDeep from 'lodash/cloneDeep'
 
-import PivotTable from '../src/components/PivotTable/PivotTable'
+import PivotTable from '../index'
+import { NUMBER_TYPE_COLUMN_PERCENTAGE, NUMBER_TYPE_ROW_PERCENTAGE } from '../modules/pivotTable/pivotTableConstants'
 
 import simpleMetadataResponse from './data/simple.metadata.json'
 import simpleDataResponse from './data/simple.data.json'
@@ -39,7 +40,6 @@ import diseaseWeeksMetadataResponse from './data/diseaseWeeks.metadata.json'
 import diseaseWeeksVisualization from './data/diseaseWeeks.visualization.json'
 
 import underAbove100LegendSet from './data/under-above-100.legendSet.json'
-import { NUMBER_TYPE_COLUMN_PERCENTAGE, NUMBER_TYPE_ROW_PERCENTAGE } from '../src/modules/pivotTable/pivotTableConstants'
 
 const visualizationReset = {
     colTotals: false,
