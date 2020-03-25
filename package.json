@@ -1,8 +1,8 @@
 {
     "name": "@dhis2/analytics",
     "version": "4.3.25",
-    "main": "./build/cjs/index.js",
-    "module": "./build/es/index.js",
+    "main": "./build/cjs/lib.js",
+    "module": "./build/es/lib.js",
     "sideEffects": [
         "./src/locales/index.js"
     ],
