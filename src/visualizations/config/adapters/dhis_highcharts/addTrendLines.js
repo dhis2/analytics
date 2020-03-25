@@ -50,10 +50,6 @@ export default function(regressionType, series, isStacked) {
     return newSeries
 }
 
-function getColor(colors, index) {
-    return colors[index] || getColor(colors, index - colors.length)
-}
-
 function getDarkerColor(color) {
     return rgb(color)
         .darker(0.5)
@@ -77,10 +73,11 @@ function getRegressionObj(data, regressionType) {
     // - decimalPlaces (default = 2)
 
     let regression
-    let regressionTypeOptions = {}
+    const regressionTypeOptions = {}
 
     switch (regressionType) {
         case 'LINEAR':
+        default:
             // linear(data, decimalPlaces)
             regression = linear(getRegressionData(data))
             regressionTypeOptions.type = 'line'
@@ -103,8 +100,8 @@ function getRegressionObj(data, regressionType) {
 // Code extracted from https://github.com/Tom-Alexander/regression-js/
 function gaussianElimination(a, o) {
     let maxrow = 0,
-        tmp = 0,
-        n = a.length - 1,
+        tmp = 0
+    const n = a.length - 1,
         x = new Array(o)
 
     for (let i = 0; i < n; i++) {
@@ -151,9 +148,9 @@ function gaussianElimination(a, o) {
 //
 // correlation = N * Σ(XY) - Σ(X) * Σ (Y) / √ (  N * Σ(X^2) - Σ(X) ) * ( N * Σ(Y^2) - Σ(Y)^2 ) ) )
 function linear(data, decimalPlaces = 2) {
-    let sum = [0, 0, 0, 0, 0],
-        results = [],
-        N = data.length
+    const sum = [0, 0, 0, 0, 0],
+        results = []
+    let N = data.length
 
     for (let n = 0, len = data.length; n < len; n++) {
         if (data[n]['x'] != null) {
@@ -171,9 +168,9 @@ function linear(data, decimalPlaces = 2) {
         }
     }
 
-    let gradient =
+    const gradient =
         (N * sum[3] - sum[0] * sum[1]) / (N * sum[2] - sum[0] * sum[0])
-    let intercept = sum[1] / N - (gradient * sum[0]) / N
+    const intercept = sum[1] / N - (gradient * sum[0]) / N
     // let correlation = (N * sum[3] - sum[0] * sum[1]) / Math.sqrt((N * sum[2] - sum[0] * sum[0]) * (N * sum[4] - sum[1] * sum[1]));
 
     for (let i = 0, len = data.length; i < len; i++) {
@@ -183,7 +180,7 @@ function linear(data, decimalPlaces = 2) {
             coorY = parseFloat(coorY.toFixed(decimalPlaces))
         }
 
-        let coordinate = [data[i][0], coorY]
+        const coordinate = [data[i][0], coorY]
         results.push(coordinate)
     }
 
@@ -198,7 +195,7 @@ function linear(data, decimalPlaces = 2) {
         return 0
     })
 
-    let string =
+    const string =
         'y = ' +
         Math.round(gradient * 100) / 100 +
         'x + ' +
@@ -314,12 +311,12 @@ function linear(data, decimalPlaces = 2) {
 
 // Code extracted from https://github.com/Tom-Alexander/regression-js/
 function polynomial(data, order = 2, extrapolate = 0, decimalPlaces = 2) {
-    let lhs = [],
+    const lhs = [],
         rhs = [],
         results = [],
-        a = 0,
-        b = 0,
         k = order + 1
+    let a = 0,
+        b = 0
 
     for (let i = 0; i < k; i++) {
         for (let l = 0, len = data.length; l < len; l++) {
@@ -336,7 +333,7 @@ function polynomial(data, order = 2, extrapolate = 0, decimalPlaces = 2) {
 
         a = 0
 
-        let c = []
+        const c = []
 
         for (let j = 0; j < k; j++) {
             for (let l = 0, len = data.length; l < len; l++) {
@@ -355,10 +352,10 @@ function polynomial(data, order = 2, extrapolate = 0, decimalPlaces = 2) {
 
     rhs.push(lhs)
 
-    let equation = gaussianElimination(rhs, k)
+    const equation = gaussianElimination(rhs, k)
 
-    let resultLength = data.length + extrapolate
-    let step = data[data.length - 1][0] - data[data.length - 2][0]
+    const resultLength = data.length + extrapolate
+    const step = data[data.length - 1][0] - data[data.length - 2][0]
 
     for (let i = 0, len = resultLength; i < len; i++) {
         let answer = 0,
@@ -397,8 +394,8 @@ function polynomial(data, order = 2, extrapolate = 0, decimalPlaces = 2) {
     for (let i = equation.length - 1; i >= 0; i--) {
         if (i > 1) {
             string += Math.round(equation[i] * 100) / 100 + 'x^' + i + ' + '
-        } else if (i == 1) {
-            string += Math.round(equation[i] * 100) / 100 + 'x' + ' + '
+        } else if (i === 1) {
+            string += Math.round(equation[i] * 100) / 100 + 'x + '
         } else {
             string += Math.round(equation[i] * 100) / 100
         }
@@ -416,31 +413,30 @@ function polynomial(data, order = 2, extrapolate = 0, decimalPlaces = 2) {
 // - http://commons.apache.org/proper/commons-math/download_math.cgi LoesInterpolator.java
 // - https://gist.github.com/avibryant/1151823
 function loess(data, bandwidth = 0.25) {
-    let xval = data.map(pair => {
+    const xval = data.map(pair => {
         return pair[0]
     })
 
-    let distinctX = array_unique(xval)
+    const distinctX = array_unique(xval)
 
     if (2 / distinctX.length > bandwidth) {
         bandwidth = Math.min(2 / distinctX.length, 1)
     }
 
-    let yval = data.map(pair => {
+    const yval = data.map(pair => {
         return pair[1]
     })
 
     function array_unique(values) {
-        let o = {},
-            i,
+        const o = {},
             l = values.length,
             r = []
 
-        for (i = 0; i < l; i += 1) {
+        for (let i = 0; i < l; i += 1) {
             o[values[i]] = values[i]
         }
 
-        for (i in o) {
+        for (const i in o) {
             r.push(o[i])
         }
 
@@ -448,18 +444,18 @@ function loess(data, bandwidth = 0.25) {
     }
 
     function tricube(x) {
-        let tmp = 1 - x * x * x
+        const tmp = 1 - x * x * x
 
         return tmp * tmp * tmp
     }
 
-    let res = []
+    const res = []
 
     let left = 0
     let right = Math.floor(bandwidth * xval.length) - 1
 
-    for (let i in xval) {
-        let x = xval[i]
+    for (const i in xval) {
+        const x = xval[i]
 
         if (i > 0) {
             if (
@@ -479,7 +475,7 @@ function loess(data, bandwidth = 0.25) {
             edge = right
         }
 
-        let denom = Math.abs(1.0 / (xval[edge] - x))
+        const denom = Math.abs(1.0 / (xval[edge] - x))
         let sumWeights = 0
         let sumX = 0,
             sumXSquared = 0,
@@ -489,8 +485,8 @@ function loess(data, bandwidth = 0.25) {
         let k = left
 
         while (k <= right) {
-            let xk = xval[k]
-            let yk = yval[k]
+            const xk = xval[k]
+            const yk = yval[k]
             let dist
 
             if (k < i) {
@@ -499,8 +495,8 @@ function loess(data, bandwidth = 0.25) {
                 dist = xk - x
             }
 
-            let w = tricube(dist * denom)
-            let xkw = xk * w
+            const w = tricube(dist * denom)
+            const xkw = xk * w
 
             sumWeights += w
             sumX += xkw
@@ -510,20 +506,20 @@ function loess(data, bandwidth = 0.25) {
             k++
         }
 
-        let meanX = sumX / sumWeights
+        const meanX = sumX / sumWeights
 
-        let meanY = sumY / sumWeights
-        let meanXY = sumXY / sumWeights
-        let meanXSquared = sumXSquared / sumWeights
+        const meanY = sumY / sumWeights
+        const meanXY = sumXY / sumWeights
+        const meanXSquared = sumXSquared / sumWeights
         let beta
 
-        if (meanXSquared == meanX * meanX) {
+        if (meanXSquared === meanX * meanX) {
             beta = 0
         } else {
             beta = (meanXY - meanX * meanY) / (meanXSquared - meanX * meanX)
         }
 
-        let alpha = meanY - beta * meanX
+        const alpha = meanY - beta * meanX
         res[i] = beta * x + alpha
     }
 

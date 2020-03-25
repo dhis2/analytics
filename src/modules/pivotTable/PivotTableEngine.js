@@ -328,6 +328,8 @@ export class PivotTableEngine {
                     renderedValue =
                         rawValue / this.percentageTotals[column].value
                     break
+                default:
+                    break
             }
         }
 
