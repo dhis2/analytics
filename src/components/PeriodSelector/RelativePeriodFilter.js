@@ -46,12 +46,8 @@ class RelativePeriods extends Component {
     render = () => {
         return (
             <>
-                <FormControl className="form-control period-type">
-                    <InputLabel
-                        style={styles.inputLabel}
-                        className="input-label"
-                        htmlFor="period-type"
-                    >
+                <FormControl>
+                    <InputLabel style={styles.inputLabel} htmlFor="period-type">
                         {i18n.t('Period type')}
                     </InputLabel>
                     <Select

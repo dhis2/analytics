@@ -2,9 +2,17 @@ import React from 'react'
 import renderer from 'react-test-renderer'
 import { PeriodDimension } from '../PeriodDimension'
 
-jest.mock('@dhis2/d2-ui-period-selector-dialog', () => ({
-    PeriodSelector: 'mockPeriodSelector',
-}))
+/* eslint-disable react/display-name */
+jest.mock('../../PeriodSelector/PeriodSelector', () => {
+    return {
+        __esModule: true,
+        PeriodSelector: true,
+        default: () => {
+            return <div></div>
+        },
+    }
+})
+/* eslint-enable react/display-name */
 
 describe('The Period Dimension component', () => {
     const props = {
@@ -12,19 +20,6 @@ describe('The Period Dimension component', () => {
         onSelect: jest.fn(),
         onDeselect: jest.fn(),
         onReorder: jest.fn(),
-        /*
-        ui: {
-            itemsByDimension: {
-                [peId]: [],
-            },
-        },
-        metadata: {},
-        addMetadata: jest.fn(),
-        addUiItems: jest.fn(),
-        removeUiItems: jest.fn(),
-        setUiItems: jest.fn(),
-        context: { d2: {} },
-        */
     }
 
     it('renders correctly', () => {

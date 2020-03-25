@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react'
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import uniqBy from 'lodash/uniqBy'
 import DialogTitle from '@material-ui/core/DialogTitle'
@@ -47,7 +47,7 @@ export class PeriodDimension extends Component {
         const { selectedPeriods } = this.props
 
         return (
-            <Fragment>
+            <>
                 <DialogTitle>{i18n.t('Period')}</DialogTitle>
                 <DialogContent>
                     <PeriodSelector
@@ -57,7 +57,7 @@ export class PeriodDimension extends Component {
                         selectedItems={selectedPeriods}
                     />
                 </DialogContent>
-            </Fragment>
+            </>
         )
     }
 }

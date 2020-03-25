@@ -14,12 +14,7 @@ Array [
   <div
     className="MuiDialogContent-root-38"
   >
-    <mockPeriodSelector
-      onDeselect={[Function]}
-      onReorder={[Function]}
-      onSelect={[Function]}
-      selectedItems={Array []}
-    />
+    <div />
   </div>,
 ]
 `;

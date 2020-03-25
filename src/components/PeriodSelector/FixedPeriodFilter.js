@@ -129,12 +129,8 @@ class FixedPeriodFilter extends Component {
 
         return (
             <>
-                <FormControl className="form-control period-type">
-                    <InputLabel
-                        style={styles.inputLabel}
-                        className="input-label"
-                        htmlFor="period-type"
-                    >
+                <FormControl>
+                    <InputLabel style={styles.inputLabel} htmlFor="period-type">
                         {i18n.t('Period type')}
                     </InputLabel>
                     <Select
@@ -150,17 +146,13 @@ class FixedPeriodFilter extends Component {
                         ))}
                     </Select>
                 </FormControl>
-                <FormControl className="form-control year">
-                    <InputLabel
-                        style={styles.inputLabel}
-                        className="input-label"
-                        htmlFor="year"
-                    >
+                <FormControl>
+                    <InputLabel style={styles.inputLabel} htmlFor="year">
                         {i18n.t('Year')}
                     </InputLabel>
                     <Select
                         SelectDisplayProps={{
-                            id: 'year-select',
+                            style: styles.yearSelect,
                             onClick: this.onYearSelectClick,
                         }}
                         value={this.state.year}
@@ -171,7 +163,7 @@ class FixedPeriodFilter extends Component {
                     />
                     <Menu
                         MenuListProps={{
-                            id: 'year-select-menu',
+                            style: styles.yearSelectMenu,
                         }}
                         anchorEl={this.state.yearSelectElement}
                         open={Boolean(this.state.yearSelectElement)}
