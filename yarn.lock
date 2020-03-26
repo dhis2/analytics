@@ -1394,6 +1394,15 @@
   dependencies:
     prop-types "^15"
 
+"@dhis2/ui-core@^4.16.0":
+  version "4.16.0"
+  resolved "https://registry.yarnpkg.com/@dhis2/ui-core/-/ui-core-4.16.0.tgz#868555c2d8758af3f26e168d2a469bde39c91b1d"
+  integrity sha512-pa47/ZZrQa9SUXlOW4r8HKyuzfO/i4vENR1u2+2zrPfBtbFK4FPwXANmdVAw+V6epbWJU8k2Fi31j1ZMwauq/w==
+  dependencies:
+    "@dhis2/prop-types" "^1.5.0"
+    "@popperjs/core" "^2.1.0"
+    classnames "^2.2.6"
+
 "@dhis2/ui-core@^4.7.1", "@dhis2/ui-core@^4.9.1":
   version "4.9.1"
   resolved "https://registry.yarnpkg.com/@dhis2/ui-core/-/ui-core-4.9.1.tgz#13ebaa43deceb5c3fa2955668c183131241847fa"
@@ -1813,6 +1822,11 @@
   version "2.0.6"
   resolved "https://registry.yarnpkg.com/@popperjs/core/-/core-2.0.6.tgz#5a39ac118811ca844155b0ad5190b8c24f35e533"
   integrity sha512-zj7Gw8QC4jmR92eKUvtrZUEpl2ypRbq+qlE4pwf9n2hnUO9BOAcWUs4/Ht+gNIbFt98xtqhLvccdCfD469MzpQ==
+
+"@popperjs/core@^2.1.0":
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/@popperjs/core/-/core-2.1.1.tgz#12c572ab88ef7345b43f21883fca26631c223085"
+  integrity sha512-sLqWxCzC5/QHLhziXSCAksBxHfOnQlhPRVgPK0egEw+ktWvG75T2k+aYWVjVh9+WKeT3tlG3ZNbZQvZLmfuOIw==
 
 "@reach/router@^1.2.1":
   version "1.2.1"
