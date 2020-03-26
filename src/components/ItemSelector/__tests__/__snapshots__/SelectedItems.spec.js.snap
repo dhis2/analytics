@@ -251,15 +251,15 @@ exports[`The SelectedItems component list with items matches the snapshot with l
                                           <SvgIcon
                                             classes={
                                               Object {
-                                                "colorAction": "MuiSvgIcon-colorAction-33",
-                                                "colorDisabled": "MuiSvgIcon-colorDisabled-35",
-                                                "colorError": "MuiSvgIcon-colorError-34",
-                                                "colorPrimary": "MuiSvgIcon-colorPrimary-31",
-                                                "colorSecondary": "MuiSvgIcon-colorSecondary-32",
-                                                "fontSizeInherit": "MuiSvgIcon-fontSizeInherit-36",
-                                                "fontSizeLarge": "MuiSvgIcon-fontSizeLarge-38",
-                                                "fontSizeSmall": "MuiSvgIcon-fontSizeSmall-37",
-                                                "root": "MuiSvgIcon-root-30",
+                                                "colorAction": "MuiSvgIcon-colorAction-4",
+                                                "colorDisabled": "MuiSvgIcon-colorDisabled-6",
+                                                "colorError": "MuiSvgIcon-colorError-5",
+                                                "colorPrimary": "MuiSvgIcon-colorPrimary-2",
+                                                "colorSecondary": "MuiSvgIcon-colorSecondary-3",
+                                                "fontSizeInherit": "MuiSvgIcon-fontSizeInherit-7",
+                                                "fontSizeLarge": "MuiSvgIcon-fontSizeLarge-9",
+                                                "fontSizeSmall": "MuiSvgIcon-fontSizeSmall-8",
+                                                "root": "MuiSvgIcon-root-1",
                                               }
                                             }
                                             color="inherit"
@@ -276,7 +276,7 @@ exports[`The SelectedItems component list with items matches the snapshot with l
                                           >
                                             <svg
                                               aria-hidden="true"
-                                              className="MuiSvgIcon-root-30"
+                                              className="MuiSvgIcon-root-1"
                                               focusable="false"
                                               role="presentation"
                                               style={
@@ -485,15 +485,15 @@ exports[`The SelectedItems component list with items matches the snapshot with l
                                           <SvgIcon
                                             classes={
                                               Object {
-                                                "colorAction": "MuiSvgIcon-colorAction-33",
-                                                "colorDisabled": "MuiSvgIcon-colorDisabled-35",
-                                                "colorError": "MuiSvgIcon-colorError-34",
-                                                "colorPrimary": "MuiSvgIcon-colorPrimary-31",
-                                                "colorSecondary": "MuiSvgIcon-colorSecondary-32",
-                                                "fontSizeInherit": "MuiSvgIcon-fontSizeInherit-36",
-                                                "fontSizeLarge": "MuiSvgIcon-fontSizeLarge-38",
-                                                "fontSizeSmall": "MuiSvgIcon-fontSizeSmall-37",
-                                                "root": "MuiSvgIcon-root-30",
+                                                "colorAction": "MuiSvgIcon-colorAction-4",
+                                                "colorDisabled": "MuiSvgIcon-colorDisabled-6",
+                                                "colorError": "MuiSvgIcon-colorError-5",
+                                                "colorPrimary": "MuiSvgIcon-colorPrimary-2",
+                                                "colorSecondary": "MuiSvgIcon-colorSecondary-3",
+                                                "fontSizeInherit": "MuiSvgIcon-fontSizeInherit-7",
+                                                "fontSizeLarge": "MuiSvgIcon-fontSizeLarge-9",
+                                                "fontSizeSmall": "MuiSvgIcon-fontSizeSmall-8",
+                                                "root": "MuiSvgIcon-root-1",
                                               }
                                             }
                                             color="inherit"
@@ -510,7 +510,7 @@ exports[`The SelectedItems component list with items matches the snapshot with l
                                           >
                                             <svg
                                               aria-hidden="true"
-                                              className="MuiSvgIcon-root-30"
+                                              className="MuiSvgIcon-root-1"
                                               focusable="false"
                                               role="presentation"
                                               style={
@@ -562,144 +562,25 @@ exports[`The SelectedItems component list with items matches the snapshot with l
   <div
     className="deselect-all-button"
   >
-    <WithStyles(Button)
+    <Button
+      dataTest="dhis2-uicore-button"
       onClick={[Function]}
+      type="button"
     >
-      <Button
-        classes={
-          Object {
-            "colorInherit": "MuiButton-colorInherit-22",
-            "contained": "MuiButton-contained-12",
-            "containedPrimary": "MuiButton-containedPrimary-13",
-            "containedSecondary": "MuiButton-containedSecondary-14",
-            "disabled": "MuiButton-disabled-21",
-            "extendedFab": "MuiButton-extendedFab-19",
-            "fab": "MuiButton-fab-18",
-            "flat": "MuiButton-flat-6",
-            "flatPrimary": "MuiButton-flatPrimary-7",
-            "flatSecondary": "MuiButton-flatSecondary-8",
-            "focusVisible": "MuiButton-focusVisible-20",
-            "fullWidth": "MuiButton-fullWidth-26",
-            "label": "MuiButton-label-2",
-            "mini": "MuiButton-mini-23",
-            "outlined": "MuiButton-outlined-9",
-            "outlinedPrimary": "MuiButton-outlinedPrimary-10",
-            "outlinedSecondary": "MuiButton-outlinedSecondary-11",
-            "raised": "MuiButton-raised-15",
-            "raisedPrimary": "MuiButton-raisedPrimary-16",
-            "raisedSecondary": "MuiButton-raisedSecondary-17",
-            "root": "MuiButton-root-1",
-            "sizeLarge": "MuiButton-sizeLarge-25",
-            "sizeSmall": "MuiButton-sizeSmall-24",
-            "text": "MuiButton-text-3",
-            "textPrimary": "MuiButton-textPrimary-4",
-            "textSecondary": "MuiButton-textSecondary-5",
-          }
-        }
-        color="default"
-        component="button"
-        disableFocusRipple={false}
-        disabled={false}
-        fullWidth={false}
-        mini={false}
+      <button
+        className="jsx-3488140868 "
+        data-test="dhis2-uicore-button"
+        onBlur={[Function]}
         onClick={[Function]}
-        size="medium"
+        onFocus={[Function]}
         type="button"
-        variant="text"
       >
-        <WithStyles(ButtonBase)
-          className="MuiButton-root-1 MuiButton-text-3 MuiButton-flat-6"
-          component="button"
-          disabled={false}
-          focusRipple={true}
-          focusVisibleClassName="MuiButton-focusVisible-20"
-          onClick={[Function]}
-          type="button"
-        >
-          <ButtonBase
-            centerRipple={false}
-            className="MuiButton-root-1 MuiButton-text-3 MuiButton-flat-6"
-            classes={
-              Object {
-                "disabled": "MuiButtonBase-disabled-28",
-                "focusVisible": "MuiButtonBase-focusVisible-29",
-                "root": "MuiButtonBase-root-27",
-              }
-            }
-            component="button"
-            disableRipple={false}
-            disableTouchRipple={false}
-            disabled={false}
-            focusRipple={true}
-            focusVisibleClassName="MuiButton-focusVisible-20"
-            onClick={[Function]}
-            tabIndex="0"
-            type="button"
-          >
-            <button
-              className="MuiButtonBase-root-27 MuiButton-root-1 MuiButton-text-3 MuiButton-flat-6"
-              disabled={false}
-              onBlur={[Function]}
-              onClick={[Function]}
-              onContextMenu={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              onKeyUp={[Function]}
-              onMouseDown={[Function]}
-              onMouseLeave={[Function]}
-              onMouseUp={[Function]}
-              onTouchEnd={[Function]}
-              onTouchMove={[Function]}
-              onTouchStart={[Function]}
-              tabIndex="0"
-              type="button"
-            >
-              <span
-                className="MuiButton-label-2"
-              >
-                Deselect All
-              </span>
-              <NoSsr
-                defer={false}
-                fallback={null}
-              >
-                <WithStyles(TouchRipple)
-                  center={false}
-                  innerRef={[Function]}
-                >
-                  <TouchRipple
-                    center={false}
-                    classes={
-                      Object {
-                        "child": "MuiTouchRipple-child-43",
-                        "childLeaving": "MuiTouchRipple-childLeaving-44",
-                        "childPulsate": "MuiTouchRipple-childPulsate-45",
-                        "ripple": "MuiTouchRipple-ripple-40",
-                        "ripplePulsate": "MuiTouchRipple-ripplePulsate-42",
-                        "rippleVisible": "MuiTouchRipple-rippleVisible-41",
-                        "root": "MuiTouchRipple-root-39",
-                      }
-                    }
-                  >
-                    <TransitionGroup
-                      childFactory={[Function]}
-                      className="MuiTouchRipple-root-39"
-                      component="span"
-                      enter={true}
-                      exit={true}
-                    >
-                      <span
-                        className="MuiTouchRipple-root-39"
-                      />
-                    </TransitionGroup>
-                  </TouchRipple>
-                </WithStyles(TouchRipple)>
-              </NoSsr>
-            </button>
-          </ButtonBase>
-        </WithStyles(ButtonBase)>
-      </Button>
-    </WithStyles(Button)>
+        Deselect All
+        <JSXStyle
+          id="3488140868"
+        />
+      </button>
+    </Button>
   </div>
   <div
     className="deselect-highlighted-button"
@@ -721,15 +602,15 @@ exports[`The SelectedItems component list with items matches the snapshot with l
                 <SvgIcon
                   classes={
                     Object {
-                      "colorAction": "MuiSvgIcon-colorAction-33",
-                      "colorDisabled": "MuiSvgIcon-colorDisabled-35",
-                      "colorError": "MuiSvgIcon-colorError-34",
-                      "colorPrimary": "MuiSvgIcon-colorPrimary-31",
-                      "colorSecondary": "MuiSvgIcon-colorSecondary-32",
-                      "fontSizeInherit": "MuiSvgIcon-fontSizeInherit-36",
-                      "fontSizeLarge": "MuiSvgIcon-fontSizeLarge-38",
-                      "fontSizeSmall": "MuiSvgIcon-fontSizeSmall-37",
-                      "root": "MuiSvgIcon-root-30",
+                      "colorAction": "MuiSvgIcon-colorAction-4",
+                      "colorDisabled": "MuiSvgIcon-colorDisabled-6",
+                      "colorError": "MuiSvgIcon-colorError-5",
+                      "colorPrimary": "MuiSvgIcon-colorPrimary-2",
+                      "colorSecondary": "MuiSvgIcon-colorSecondary-3",
+                      "fontSizeInherit": "MuiSvgIcon-fontSizeInherit-7",
+                      "fontSizeLarge": "MuiSvgIcon-fontSizeLarge-9",
+                      "fontSizeSmall": "MuiSvgIcon-fontSizeSmall-8",
+                      "root": "MuiSvgIcon-root-1",
                     }
                   }
                   color="inherit"
@@ -739,7 +620,7 @@ exports[`The SelectedItems component list with items matches the snapshot with l
                 >
                   <svg
                     aria-hidden="true"
-                    className="MuiSvgIcon-root-30"
+                    className="MuiSvgIcon-root-1"
                     focusable="false"
                     role="presentation"
                     viewBox="0 0 24 24"
@@ -848,144 +729,25 @@ exports[`The SelectedItems component matches the snapshot when list is empty 1`]
   <div
     className="deselect-all-button"
   >
-    <WithStyles(Button)
+    <Button
+      dataTest="dhis2-uicore-button"
       onClick={[Function]}
+      type="button"
     >
-      <Button
-        classes={
-          Object {
-            "colorInherit": "MuiButton-colorInherit-22",
-            "contained": "MuiButton-contained-12",
-            "containedPrimary": "MuiButton-containedPrimary-13",
-            "containedSecondary": "MuiButton-containedSecondary-14",
-            "disabled": "MuiButton-disabled-21",
-            "extendedFab": "MuiButton-extendedFab-19",
-            "fab": "MuiButton-fab-18",
-            "flat": "MuiButton-flat-6",
-            "flatPrimary": "MuiButton-flatPrimary-7",
-            "flatSecondary": "MuiButton-flatSecondary-8",
-            "focusVisible": "MuiButton-focusVisible-20",
-            "fullWidth": "MuiButton-fullWidth-26",
-            "label": "MuiButton-label-2",
-            "mini": "MuiButton-mini-23",
-            "outlined": "MuiButton-outlined-9",
-            "outlinedPrimary": "MuiButton-outlinedPrimary-10",
-            "outlinedSecondary": "MuiButton-outlinedSecondary-11",
-            "raised": "MuiButton-raised-15",
-            "raisedPrimary": "MuiButton-raisedPrimary-16",
-            "raisedSecondary": "MuiButton-raisedSecondary-17",
-            "root": "MuiButton-root-1",
-            "sizeLarge": "MuiButton-sizeLarge-25",
-            "sizeSmall": "MuiButton-sizeSmall-24",
-            "text": "MuiButton-text-3",
-            "textPrimary": "MuiButton-textPrimary-4",
-            "textSecondary": "MuiButton-textSecondary-5",
-          }
-        }
-        color="default"
-        component="button"
-        disableFocusRipple={false}
-        disabled={false}
-        fullWidth={false}
-        mini={false}
+      <button
+        className="jsx-3488140868 "
+        data-test="dhis2-uicore-button"
+        onBlur={[Function]}
         onClick={[Function]}
-        size="medium"
+        onFocus={[Function]}
         type="button"
-        variant="text"
       >
-        <WithStyles(ButtonBase)
-          className="MuiButton-root-1 MuiButton-text-3 MuiButton-flat-6"
-          component="button"
-          disabled={false}
-          focusRipple={true}
-          focusVisibleClassName="MuiButton-focusVisible-20"
-          onClick={[Function]}
-          type="button"
-        >
-          <ButtonBase
-            centerRipple={false}
-            className="MuiButton-root-1 MuiButton-text-3 MuiButton-flat-6"
-            classes={
-              Object {
-                "disabled": "MuiButtonBase-disabled-28",
-                "focusVisible": "MuiButtonBase-focusVisible-29",
-                "root": "MuiButtonBase-root-27",
-              }
-            }
-            component="button"
-            disableRipple={false}
-            disableTouchRipple={false}
-            disabled={false}
-            focusRipple={true}
-            focusVisibleClassName="MuiButton-focusVisible-20"
-            onClick={[Function]}
-            tabIndex="0"
-            type="button"
-          >
-            <button
-              className="MuiButtonBase-root-27 MuiButton-root-1 MuiButton-text-3 MuiButton-flat-6"
-              disabled={false}
-              onBlur={[Function]}
-              onClick={[Function]}
-              onContextMenu={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              onKeyUp={[Function]}
-              onMouseDown={[Function]}
-              onMouseLeave={[Function]}
-              onMouseUp={[Function]}
-              onTouchEnd={[Function]}
-              onTouchMove={[Function]}
-              onTouchStart={[Function]}
-              tabIndex="0"
-              type="button"
-            >
-              <span
-                className="MuiButton-label-2"
-              >
-                Deselect All
-              </span>
-              <NoSsr
-                defer={false}
-                fallback={null}
-              >
-                <WithStyles(TouchRipple)
-                  center={false}
-                  innerRef={[Function]}
-                >
-                  <TouchRipple
-                    center={false}
-                    classes={
-                      Object {
-                        "child": "MuiTouchRipple-child-43",
-                        "childLeaving": "MuiTouchRipple-childLeaving-44",
-                        "childPulsate": "MuiTouchRipple-childPulsate-45",
-                        "ripple": "MuiTouchRipple-ripple-40",
-                        "ripplePulsate": "MuiTouchRipple-ripplePulsate-42",
-                        "rippleVisible": "MuiTouchRipple-rippleVisible-41",
-                        "root": "MuiTouchRipple-root-39",
-                      }
-                    }
-                  >
-                    <TransitionGroup
-                      childFactory={[Function]}
-                      className="MuiTouchRipple-root-39"
-                      component="span"
-                      enter={true}
-                      exit={true}
-                    >
-                      <span
-                        className="MuiTouchRipple-root-39"
-                      />
-                    </TransitionGroup>
-                  </TouchRipple>
-                </WithStyles(TouchRipple)>
-              </NoSsr>
-            </button>
-          </ButtonBase>
-        </WithStyles(ButtonBase)>
-      </Button>
-    </WithStyles(Button)>
+        Deselect All
+        <JSXStyle
+          id="3488140868"
+        />
+      </button>
+    </Button>
   </div>
   <div
     className="deselect-highlighted-button"
@@ -1007,15 +769,15 @@ exports[`The SelectedItems component matches the snapshot when list is empty 1`]
                 <SvgIcon
                   classes={
                     Object {
-                      "colorAction": "MuiSvgIcon-colorAction-33",
-                      "colorDisabled": "MuiSvgIcon-colorDisabled-35",
-                      "colorError": "MuiSvgIcon-colorError-34",
-                      "colorPrimary": "MuiSvgIcon-colorPrimary-31",
-                      "colorSecondary": "MuiSvgIcon-colorSecondary-32",
-                      "fontSizeInherit": "MuiSvgIcon-fontSizeInherit-36",
-                      "fontSizeLarge": "MuiSvgIcon-fontSizeLarge-38",
-                      "fontSizeSmall": "MuiSvgIcon-fontSizeSmall-37",
-                      "root": "MuiSvgIcon-root-30",
+                      "colorAction": "MuiSvgIcon-colorAction-4",
+                      "colorDisabled": "MuiSvgIcon-colorDisabled-6",
+                      "colorError": "MuiSvgIcon-colorError-5",
+                      "colorPrimary": "MuiSvgIcon-colorPrimary-2",
+                      "colorSecondary": "MuiSvgIcon-colorSecondary-3",
+                      "fontSizeInherit": "MuiSvgIcon-fontSizeInherit-7",
+                      "fontSizeLarge": "MuiSvgIcon-fontSizeLarge-9",
+                      "fontSizeSmall": "MuiSvgIcon-fontSizeSmall-8",
+                      "root": "MuiSvgIcon-root-1",
                     }
                   }
                   color="inherit"
@@ -1025,7 +787,7 @@ exports[`The SelectedItems component matches the snapshot when list is empty 1`]
                 >
                   <svg
                     aria-hidden="true"
-                    className="MuiSvgIcon-root-30"
+                    className="MuiSvgIcon-root-1"
                     focusable="false"
                     role="presentation"
                     viewBox="0 0 24 24"
