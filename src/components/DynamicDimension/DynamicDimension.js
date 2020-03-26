@@ -1,12 +1,9 @@
-import React, { Component, Fragment } from 'react'
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import DialogTitle from '@material-ui/core/DialogTitle'
-import DialogContent from '@material-ui/core/DialogContent'
 
 import ItemSelector from '../ItemSelector/ItemSelector'
 import FilterField from '../FilterField'
 import { apiFetchItemsByDimension } from '../../api/dimensions'
-import { styles } from './styles/DynamicDimension.style'
 
 export class DynamicDimension extends Component {
     state = {
@@ -112,18 +109,13 @@ export class DynamicDimension extends Component {
         }
 
         return (
-            <Fragment>
-                <DialogTitle>{this.props.dialogTitle}</DialogTitle>
-                <DialogContent style={styles.dialogContent}>
-                    <ItemSelector
-                        itemClassName="dynamic-dimension"
-                        unselected={unselected}
-                        selected={selected}
-                    >
-                        {filterZone()}
-                    </ItemSelector>
-                </DialogContent>
-            </Fragment>
+            <ItemSelector
+                itemClassName="dynamic-dimension"
+                unselected={unselected}
+                selected={selected}
+            >
+                {filterZone()}
+            </ItemSelector>
         )
     }
 }
@@ -131,7 +123,6 @@ export class DynamicDimension extends Component {
 DynamicDimension.propTypes = {
     d2: PropTypes.object.isRequired,
     dialogId: PropTypes.string.isRequired,
-    dialogTitle: PropTypes.string.isRequired,
     selectedItems: PropTypes.array.isRequired,
     onDeselect: PropTypes.func.isRequired,
     onReorder: PropTypes.func.isRequired,

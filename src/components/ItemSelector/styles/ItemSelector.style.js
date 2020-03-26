@@ -13,7 +13,7 @@ export default css`
         border: 1px solid ${colors.greyLight};
         display: flex;
         flex-direction: column;
-        height: 510px;
+        height: 480px;
         position: relative;
     }
 
