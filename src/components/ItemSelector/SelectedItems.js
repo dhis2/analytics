@@ -1,11 +1,10 @@
 import React, { Component, Fragment } from 'react'
 import PropTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'
-import Button from '@material-ui/core/Button/Button'
 import InfoIcon from '@material-ui/icons/InfoOutlined'
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd'
 
-import { colors } from '@dhis2/ui-core'
+import { colors, Button } from '@dhis2/ui-core'
 import Item from './widgets/SelectedItem'
 import { ArrowButton as UnAssignButton } from './widgets/ArrowButton'
 import { toggler } from './modules/toggler'
