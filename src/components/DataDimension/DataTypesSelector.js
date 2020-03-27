@@ -9,11 +9,13 @@ import { styles } from './styles/DataTypesSelector.style'
 export const DataTypes = ({ currentDataType, onDataTypeChange }) => {
     debugger
 
+    const _testCurrentDataType = 'indicators'
+
     return (
         <div style={styles.container}>
             <SingleSelectField
                 label={i18n.t('Data Type')}
-                selected={dataTypes[currentDataType]}
+                selected={dataTypes[_testCurrentDataType]}
                 onChange={ref => onDataTypeChange(ref.value)}
                 dense
             >
