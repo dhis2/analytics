@@ -1,34 +1,33 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Select from '@material-ui/core/Select'
-import MenuItem from '@material-ui/core/MenuItem'
-import InputLabel from '@material-ui/core/InputLabel'
 import i18n from '@dhis2/d2-i18n'
+import { SingleSelectField, SingleSelectOption } from '@dhis2/ui-core'
 
 import { dataTypes } from '../../modules/dataTypes'
 import { styles } from './styles/DataTypesSelector.style'
 
-export const DataTypes = ({ currentDataType, onDataTypeChange }) => (
-    <div style={styles.container}>
-        <InputLabel style={styles.titleText}>{i18n.t('Data Type')}</InputLabel>
-        <Select
-            value={currentDataType}
-            onChange={event => onDataTypeChange(event.target.value)}
-            disableUnderline
-            SelectDisplayProps={{ style: styles.dropDown }}
-        >
-            {Object.values(dataTypes).map(type => (
-                <MenuItem
-                    style={styles.dropDownItem}
-                    key={type.id}
-                    value={type.id}
-                >
-                    {type.name}
-                </MenuItem>
-            ))}
-        </Select>
-    </div>
-)
+export const DataTypes = ({ currentDataType, onDataTypeChange }) => {
+    debugger
+
+    return (
+        <div style={styles.container}>
+            <SingleSelectField
+                label={i18n.t('Data Type')}
+                selected={dataTypes[currentDataType]}
+                onChange={ref => onDataTypeChange(ref.value)}
+                dense
+            >
+                {Object.values(dataTypes).map(type => (
+                    <SingleSelectOption
+                        value={type.id}
+                        key={type.id}
+                        label={type.name}
+                    />
+                ))}
+            </SingleSelectField>
+        </div>
+    )
+}
 
 DataTypes.propTypes = {
     currentDataType: PropTypes.string.isRequired,

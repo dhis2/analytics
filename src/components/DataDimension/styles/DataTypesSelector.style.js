@@ -1,26 +1,11 @@
-import { colors } from '../../../modules/colors'
-
 export const styles = {
     container: {
         display: 'flex',
         flexFlow: 'column',
-        height: 53,
+        height: 70,
         borderBottom: 0,
-        paddingLeft: 5,
+        paddingLeft: 10,
         paddingRight: 5,
         paddingTop: 5,
-    },
-    titleText: {
-        color: colors.greyDark,
-        fontSize: 13,
-        fontWeight: 300,
-        paddingBottom: 10,
-    },
-    dropDown: {
-        outline: 'none',
-        padding: 0,
-    },
-    dropDownItem: {
-        fontSize: 16,
     },
 }
