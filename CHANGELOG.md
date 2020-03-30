@@ -1,3 +1,10 @@
+## [4.3.26](https://github.com/dhis2/analytics/compare/v4.3.25...v4.3.26) (2020-03-30)
+
+
+### Bug Fixes
+
+* build library with DHIS2 App Platform, fix static analysis bugs ([#376](https://github.com/dhis2/analytics/issues/376)) ([95f4d52](https://github.com/dhis2/analytics/commit/95f4d52717c168f51d26c4e46e718d0949a2e99c))
+
 ## [4.3.25](https://github.com/dhis2/analytics/compare/v4.3.24...v4.3.25) (2020-03-23)
 
 
