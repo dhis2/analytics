@@ -1,8 +1,7 @@
 /node_modules/*
 /config/*
 /docs/*
-/stories/*
+/src/__demo__/data/*
 /storybook-static/*
 /build/*
 /coverage/*
-/src/visualizations/*

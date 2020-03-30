@@ -54,7 +54,6 @@ function getIdValueMap(rows, seriesHeader, categoryHeader, valueIndex) {
 function getDefault(acc, seriesIds, categoryIds, idValueMap, metaData) {
     seriesIds.forEach(seriesId => {
         const serieData = []
-        const serieLabel = metaData.items[seriesId].name
 
         categoryIds.forEach(categoryId => {
             const value = idValueMap.get(`${seriesId}-${categoryId}`)
@@ -63,7 +62,7 @@ function getDefault(acc, seriesIds, categoryIds, idValueMap, metaData) {
             // undefined value means the key was not found within the rows
             // in that case null is returned as value in the serie
             // this is to keep the correct indexes for the values within the serie array
-            serieData.push(value == undefined ? null : parseFloat(value))
+            serieData.push(value === undefined ? null : parseFloat(value))
         })
 
         // if the whole serie has no data, do not return a list of null values

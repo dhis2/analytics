@@ -38,7 +38,7 @@ export default function({
     }
 
     if (!_generator) {
-        onError(`No visualization implementation for format ${outputFormat}`)
+        onError(`No visualization implementation for format ${outputFormat}`)
     }
 
     this.getConfig = () => {
