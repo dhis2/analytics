@@ -76,12 +76,6 @@ function getRegressionObj(data, regressionType) {
     const regressionTypeOptions = {}
 
     switch (regressionType) {
-        case 'LINEAR':
-        default:
-            // linear(data, decimalPlaces)
-            regression = linear(getRegressionData(data))
-            regressionTypeOptions.type = 'line'
-            break
         case 'POLYNOMIAL':
             // polynomial(data, order, extrapolate)
             regression = polynomial(getRegressionData(data))
@@ -89,6 +83,12 @@ function getRegressionObj(data, regressionType) {
         case 'LOESS':
             // loess(data, smoothing)
             regression = loess(getRegressionData(data), 0.25)
+            break
+        case 'LINEAR':
+        default:
+            // linear(data, decimalPlaces)
+            regression = linear(getRegressionData(data))
+            regressionTypeOptions.type = 'line'
             break
     }
 
@@ -207,107 +207,6 @@ function linear(data, decimalPlaces = 2) {
         string: string,
     }
 }
-
-// Code extracted from https://github.com/Tom-Alexander/regression-js/
-// function logarithmic(data) {
-//     let sum = [0, 0, 0, 0],
-//         results = [],
-//         mean = 0
-
-//     for (let n = 0, len = data.length; n < len; n++) {
-//         if (data[n].x != null) {
-//             data[n][0] = data[n].x
-//             data[n][1] = data[n].y
-//         }
-//         if (data[n][1] != null) {
-//             sum[0] += Math.log(data[n][0])
-//             sum[1] += data[n][1] * Math.log(data[n][0])
-//             sum[2] += data[n][1]
-//             sum[3] += Math.pow(Math.log(data[n][0]), 2)
-//         }
-//     }
-
-//     let B = (n * sum[1] - sum[2] * sum[0]) / (n * sum[3] - sum[0] * sum[0])
-//     let A = (sum[2] - B * sum[0]) / n
-
-//     for (let i = 0, len = data.length; i < len; i++) {
-//         let coordinate = [data[i][0], A + B * Math.log(data[i][0])]
-
-//         results.push(coordinate)
-//     }
-
-//     results.sort((a, b) => {
-//         if (a[0] > b[0]) {
-//             return 1
-//         }
-//         if (a[0] < b[0]) {
-//             return -1
-//         }
-
-//         return 0
-//     })
-
-//     let string =
-//         'y = ' +
-//         Math.round(A * 100) / 100 +
-//         ' + ' +
-//         Math.round(B * 100) / 100 +
-//         ' ln(x)'
-
-//     return {
-//         equation: [A, B],
-//         points: results,
-//         string: string,
-//     }
-// }
-
-// Code extracted from https://github.com/Tom-Alexander/regression-js/
-// function power(data) {
-//     let sum = [0, 0, 0, 0],
-//         results = []
-
-//     for (let n = 0, len = data.length; n < len; n++) {
-//         if (data[n].x != null) {
-//             data[n][0] = data[n].x
-//             data[n][1] = data[n].y
-//         }
-//         if (data[n][1] != null) {
-//             sum[0] += Math.log(data[n][0])
-//             sum[1] += Math.log(data[n][1]) * Math.log(data[n][0])
-//             sum[2] += Math.log(data[n][1])
-//             sum[3] += Math.pow(Math.log(data[n][0]), 2)
-//         }
-//     }
-
-//     let B = (n * sum[1] - sum[2] * sum[0]) / (n * sum[3] - sum[0] * sum[0])
-//     let A = Math.pow(Math.E, (sum[2] - B * sum[0]) / n)
-
-//     for (let i = 0, len = data.length; i < len; i++) {
-//         let coordinate = [data[i][0], A * Math.pow(data[i][0], B)]
-
-//         results.push(coordinate)
-//     }
-
-//     results.sort((a, b) => {
-//         if (a[0] > b[0]) {
-//             return 1
-//         }
-//         if (a[0] < b[0]) {
-//             return -1
-//         }
-
-//         return 0
-//     })
-
-//     let string =
-//         'y = ' + Math.round(A * 100) / 100 + 'x^' + Math.round(B * 100) / 100
-
-//     return {
-//         equation: [A, B],
-//         points: results,
-//         string: string,
-//     }
-// }
 
 // Code extracted from https://github.com/Tom-Alexander/regression-js/
 function polynomial(data, order = 2, extrapolate = 0, decimalPlaces = 2) {
