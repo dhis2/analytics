@@ -220,6 +220,7 @@ export class DataDimension extends Component {
                         currentDataType={this.state.dataType}
                         onDataTypeChange={this.onDataTypeChange}
                     />
+
                     {/* 
                     // TODO: Uncomment these and migrate to ui-core
                     <Groups
