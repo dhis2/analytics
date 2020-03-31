@@ -159,3 +159,12 @@ export {
 // Visualizations
 
 export { createVisualization } from './visualizations'
+
+import React from 'react'
+import { SingleSelectField, SingleSelectOption } from '@dhis2/ui-core'
+export const _testSelectFromAnalytics = () => (
+    <SingleSelectField label={'From Analytics'}>
+        <SingleSelectOption value="one" key={1} label="one" />
+        <SingleSelectOption value="two" key={2} label="two" />
+    </SingleSelectField>
+)
