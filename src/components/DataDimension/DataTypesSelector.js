@@ -9,12 +9,6 @@ import { styles } from './styles/DataTypesSelector.style'
 export const DataTypes = ({ currentDataType, onDataTypeChange }) => {
     return (
         <div style={styles.container}>
-            {Object.values(dataTypes).map(type => (
-                <span key={type.id}>
-                    id={type.id}
-                    name={type.name}
-                </span>
-            ))}
             <SingleSelectField
                 label={i18n.t('Data Type')}
                 selected={dataTypes[currentDataType]}
