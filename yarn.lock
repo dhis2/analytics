@@ -1146,10 +1146,10 @@
     resize-observer-polyfill "^1.5.1"
     styled-jsx "^3.2.1"
 
-"@dhis2/app-adapter@3.2.8":
-  version "3.2.8"
-  resolved "https://registry.yarnpkg.com/@dhis2/app-adapter/-/app-adapter-3.2.8.tgz#d0a2643bbf6fb2649d0de257283c5406607a7cef"
-  integrity sha512-cflOk5qOaSDhRK1ep1sOswYPdlb2aIGCy1x7Vr5+/6U6NJJmHUA+EQA3q/TMrP2y28jTDA78X+KiwtQ5xvE2HQ==
+"@dhis2/app-adapter@3.2.9":
+  version "3.2.9"
+  resolved "https://registry.yarnpkg.com/@dhis2/app-adapter/-/app-adapter-3.2.9.tgz#5bc2c8b77b0edbef84f5b256845fcba52f5cd49f"
+  integrity sha512-lV/qHmwzs0yc+jaWrqlnACwF7kJq0EK6z6d0iRb4p15bLvHgWSUyPuJ2sRX8DXwfiBotlVs9Vc2wnDBggKga4Q==
   dependencies:
     "@dhis2/ui-widgets" "^2.0.4"
     moment "^2.24.0"
@@ -1159,12 +1159,12 @@
   resolved "https://registry.yarnpkg.com/@dhis2/app-runtime/-/app-runtime-2.1.1.tgz#442946bd52f1d4a968cf1ba05e68440f11f78996"
   integrity sha512-jYf3YNiPE9RrAPD9C980s/3dhSh8JEq1s3B82O9T7gf+Vx2/covDIPnyU+64HmEjER+6gR5wHWbp7jOzBYSgLA==
 
-"@dhis2/app-shell@3.2.8":
-  version "3.2.8"
-  resolved "https://registry.yarnpkg.com/@dhis2/app-shell/-/app-shell-3.2.8.tgz#586916d7a2495a70dfd8799b76a5fd7ad582fcb0"
-  integrity sha512-kSRo3Qc4DwalmOdKsOeMcH95sIIzI7omd9mY+5114EO2KOamfiYs2t4g5MxoMshkmcbGGn3VOg2Aa0aI863xyw==
+"@dhis2/app-shell@3.2.9":
+  version "3.2.9"
+  resolved "https://registry.yarnpkg.com/@dhis2/app-shell/-/app-shell-3.2.9.tgz#01c9ee8d7e3d7be01b9d5d6028b86c4462a4d020"
+  integrity sha512-wEugRAUrwXkfxp6KyTtg7RZUKowBkNWCGhh/orz0ag8t6JtxAabOMtIg6IcAqwvbZ8Xu6QMQQdrmZlFj7Lstpg==
   dependencies:
-    "@dhis2/app-adapter" "3.2.8"
+    "@dhis2/app-adapter" "3.2.9"
     "@dhis2/app-runtime" "^2.0.4"
     "@dhis2/d2-i18n" "^1.0.5"
     "@dhis2/ui-core" "^4.6.1"
@@ -1179,10 +1179,10 @@
     typeface-roboto "^0.0.75"
     typescript "^3.6.3"
 
-"@dhis2/cli-app-scripts@^3.2.8":
-  version "3.2.8"
-  resolved "https://registry.yarnpkg.com/@dhis2/cli-app-scripts/-/cli-app-scripts-3.2.8.tgz#207022f955b18b37205f1f32d2ae31e53fd8b69d"
-  integrity sha512-6aNpkTxz8IVidDT8Do2+nohYkRS4xxZS6Dg41TEupnb5P/6U19KvjvlLQPWGGyJw5K4/CXhBT1R//CzyRCWF7g==
+"@dhis2/cli-app-scripts@^3.2.9":
+  version "3.2.9"
+  resolved "https://registry.yarnpkg.com/@dhis2/cli-app-scripts/-/cli-app-scripts-3.2.9.tgz#39111e3aa63e8dd23464ddd8cb1a7a0c86dbd3c0"
+  integrity sha512-+VMUPBQ4t9j2Vk3FAFJqtTMcqC8U3e1hhaBgZqOkCe+eGKVagJwWwEWfvZcGF74+bC11VIiqUryaUqcMPVoRCA==
   dependencies:
     "@babel/core" "^7.6.2"
     "@babel/plugin-proposal-class-properties" "^7.8.3"
@@ -1195,7 +1195,7 @@
     "@babel/preset-env" "^7.6.2"
     "@babel/preset-react" "^7.0.0"
     "@babel/preset-typescript" "^7.6.0"
-    "@dhis2/app-shell" "3.2.8"
+    "@dhis2/app-shell" "3.2.9"
     "@dhis2/cli-helpers-engine" "^1.5.0"
     archiver "^3.1.1"
     babel-jest "^24.9.0"
