@@ -8,13 +8,13 @@ export const styles = {
         borderRight: '0px',
         borderLeft: '0px',
         paddingTop: '5px',
-        paddingLeft: '5px',
+        paddingLeft: '10px',
     },
     groupContainer: {
         display: 'flex',
         flexDirection: 'column',
         width: 'inherit',
-        minWidth: '316px',
+        minWidth: '294px',
         flexGrow: 1,
         paddingRight: '5px',
     },
@@ -33,3 +33,5 @@ export const styles = {
         fontWeight: '300',
     },
 }
+
+//TODO: Remove unused parts and refactor to css module

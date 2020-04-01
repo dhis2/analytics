@@ -9,3 +9,5 @@ export const styles = {
         paddingTop: 5,
     },
 }
+
+//TODO: Remove unused parts and refactor to css module

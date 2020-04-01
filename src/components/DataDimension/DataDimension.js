@@ -220,9 +220,6 @@ export class DataDimension extends Component {
                         currentDataType={this.state.dataType}
                         onDataTypeChange={this.onDataTypeChange}
                     />
-
-                    {/* 
-                    // TODO: Uncomment these and migrate to ui-core
                     <Groups
                         dataType={this.state.dataType}
                         groups={groups}
@@ -235,7 +232,7 @@ export class DataDimension extends Component {
                         text={this.state.filterText}
                         onFilterTextChange={this.onFilterTextChange}
                         onClearFilter={this.onClearFilter}
-                    /> */}
+                    />
                 </div>
             )
         }

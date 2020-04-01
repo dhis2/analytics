@@ -16,3 +16,5 @@ export const styles = {
         padding: 0,
     },
 }
+
+//TODO: Remove unused parts and refactor to css module
