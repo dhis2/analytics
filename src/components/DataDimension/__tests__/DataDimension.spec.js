@@ -62,21 +62,11 @@ describe.only('DataDimension component ', () => {
             ])
         })
 
-        it('renders a Fragment ', done => {
+        it('renders an ItemSelector ', done => {
             const wrapper = dataDim()
 
             setTimeout(() => {
-                expect(wrapper.find('Fragment').first().length).toEqual(1)
-                done()
-            })
-        })
-
-        it('renders a Fragment containing everything else', done => {
-            const wrapper = dataDim()
-
-            setTimeout(() => {
-                const wrappingDiv = wrapper.find('Fragment').first()
-                expect(wrappingDiv.children()).toEqual(wrapper.children())
+                expect(wrapper.find('ItemSelector').first().length).toEqual(1)
                 done()
             })
         })
