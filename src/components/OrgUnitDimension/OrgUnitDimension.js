@@ -1,12 +1,8 @@
 import React, { Component, Fragment } from 'react'
 import PropTypes from 'prop-types'
-import CircularProgress from '@material-ui/core/CircularProgress'
-import DialogContent from '@material-ui/core/DialogContent'
-import DialogTitle from '@material-ui/core/DialogTitle'
 import sortBy from 'lodash/sortBy'
-
-import i18n from '@dhis2/d2-i18n'
 import { OrgUnitSelector, userOrgUnits } from '@dhis2/d2-ui-org-unit-dialog'
+import { CircularLoader } from '@dhis2/ui-core'
 
 import {
     apiFetchOrganisationUnitGroups,
@@ -238,38 +234,33 @@ class OrgUnitDimension extends Component {
 
         return (
             <Fragment>
-                <DialogTitle>{i18n.t('Organisation units')}</DialogTitle>
-                <DialogContent style={styles.dialogContent}>
-                    {this.state.root && this.state.showOrgUnitsTree && (
-                        <OrgUnitSelector
-                            d2={this.props.d2}
-                            root={this.state.root}
-                            roots={this.state.roots}
-                            selected={selected}
-                            userOrgUnits={userOrgUnits}
-                            level={level}
-                            group={group}
-                            levelOptions={this.state.ouLevels}
-                            groupOptions={this.state.ouGroups}
-                            onLevelChange={this.onLevelChange}
-                            onGroupChange={this.onGroupChange}
-                            onDeselectAllClick={this.onDeselectAllClick}
-                            handleUserOrgUnitClick={this.handleUserOrgUnitClick}
-                            handleOrgUnitClick={this.handleOrgUnitClick}
-                            handleMultipleOrgUnitsSelect={
-                                this.handleMultipleOrgUnitsSelect
-                            }
-                            checkboxColor="secondary"
-                            deselectAllTooltipFontColor={colors.black}
-                            deselectAllTooltipBackgroundColor={colors.greyLight}
-                            displayNameProperty={this.props.displayNameProperty}
-                            isUserDataViewFallback={true}
-                        />
-                    )}
-                    {!this.state.root && (
-                        <CircularProgress style={styles.loader} />
-                    )}
-                </DialogContent>
+                {this.state.root && this.state.showOrgUnitsTree && (
+                    <OrgUnitSelector
+                        d2={this.props.d2}
+                        root={this.state.root}
+                        roots={this.state.roots}
+                        selected={selected}
+                        userOrgUnits={userOrgUnits}
+                        level={level}
+                        group={group}
+                        levelOptions={this.state.ouLevels}
+                        groupOptions={this.state.ouGroups}
+                        onLevelChange={this.onLevelChange}
+                        onGroupChange={this.onGroupChange}
+                        onDeselectAllClick={this.onDeselectAllClick}
+                        handleUserOrgUnitClick={this.handleUserOrgUnitClick}
+                        handleOrgUnitClick={this.handleOrgUnitClick}
+                        handleMultipleOrgUnitsSelect={
+                            this.handleMultipleOrgUnitsSelect
+                        }
+                        checkboxColor="secondary"
+                        deselectAllTooltipFontColor={colors.black}
+                        deselectAllTooltipBackgroundColor={colors.greyLight}
+                        displayNameProperty={this.props.displayNameProperty}
+                        isUserDataViewFallback={true}
+                    />
+                )}
+                {!this.state.root && <CircularLoader style={styles.loader} />}
             </Fragment>
         )
     }

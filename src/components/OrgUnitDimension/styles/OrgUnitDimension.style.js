@@ -9,3 +9,5 @@ export default {
         display: 'block',
     },
 }
+
+//TODO: Remove unused parts and refactor to css module
