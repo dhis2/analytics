@@ -4,15 +4,12 @@ export const styles = {
     container: {
         border: `1px solid ${colors.greyLight}`,
         backgroundColor: colors.white,
-        height: '39px',
+        height: '53px',
         borderRight: '0px',
         borderLeft: '0px',
         borderTop: '0px',
+        padding: '10px 5px 10px 10px',
     },
-    textField: {
-        paddingRight: '7px',
-        paddingTop: '5px',
-        width: '100%',
-        fontSize: '14px',
-    },
+
+    //TODO: Remove unused parts and refactor to css module
 }

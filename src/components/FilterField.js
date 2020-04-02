@@ -8,12 +8,10 @@ import { styles } from './styles/FilterField.style'
 export const FilterField = ({ text, onFilterTextChange, onClearFilter }) => (
     <div style={styles.container}>
         <Filter
-            style={styles.textField}
             placeholder={i18n.t('Search')}
             text={text}
             onChange={onFilterTextChange}
             onClear={onClearFilter}
-            disableUnderline
         />
     </div>
 )
