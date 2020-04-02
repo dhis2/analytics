@@ -26,3 +26,5 @@ export default css`
         width: 276px;
     }
 `
+
+//TODO: Remove unused parts and refactor to css module
