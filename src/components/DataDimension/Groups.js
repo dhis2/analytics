@@ -1,10 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { SingleSelectField, SingleSelectOption } from '@dhis2/ui-core'
 
 import { Detail } from './Detail'
 import { dataTypes } from '../../modules/dataTypes'
 import { styles } from './styles/Groups.style'
-import { SingleSelectField, SingleSelectOption } from '@dhis2/ui-core'
 
 export const Groups = ({
     dataType,

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
+
 import UnselectedItems from './UnselectedItems'
 import SelectedItems from './SelectedItems'
 import styles from './styles/ItemSelector.style'
