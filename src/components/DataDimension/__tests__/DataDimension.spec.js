@@ -1,6 +1,5 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import DialogContent from '@material-ui/core/DialogContent'
 import { DataDimension } from '../DataDimension'
 import * as api from '../../../api/dimensions'
 
@@ -34,26 +33,6 @@ describe.only('DataDimension component ', () => {
         })
     })
 
-    describe('no groups found', () => {
-        it('renders empty div', done => {
-            api.apiFetchGroups = jest.fn().mockResolvedValue([])
-
-            const wrapper = dataDim()
-
-            setTimeout(() => {
-                expect(wrapper.find('div').first().length).toEqual(1)
-                const dialogContent = wrapper
-                    .find('div')
-                    .first()
-                    .find(DialogContent)
-
-                expect(dialogContent.length).toBe(0)
-
-                done()
-            })
-        })
-    })
-
     describe('has groups', () => {
         beforeEach(() => {
             api.apiFetchGroups = jest.fn().mockResolvedValue([
@@ -62,7 +41,7 @@ describe.only('DataDimension component ', () => {
             ])
         })
 
-        it('renders an ItemSelector ', done => {
+        it('renders an ItemSelector', done => {
             const wrapper = dataDim()
 
             setTimeout(() => {

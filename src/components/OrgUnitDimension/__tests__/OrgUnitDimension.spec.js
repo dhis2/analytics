@@ -1,7 +1,5 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import DialogTitle from '@material-ui/core/DialogTitle'
-import DialogContent from '@material-ui/core/DialogContent'
 
 import OrgUnitDimension, { defaultState } from '../OrgUnitDimension'
 
@@ -96,12 +94,5 @@ describe('The OrgUnitDimension component ', () => {
         const actualState = orgUnitDimension().state()
 
         expect(actualState).toEqual(defaultState)
-    })
-
-    it('renders a DialogTitle and DialogContent component ', () => {
-        const component = orgUnitDimension()
-
-        expect(component.find(DialogTitle).first().length).toEqual(1)
-        expect(component.find(DialogContent).first().length).toEqual(1)
     })
 })
