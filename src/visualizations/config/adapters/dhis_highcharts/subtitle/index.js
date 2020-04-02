@@ -1,9 +1,6 @@
 import isString from 'd2-utilizr/lib/isString'
-import getGauge from './gauge'
 import getFilterText from '../../../../util/getFilterText'
 import {
-    VIS_TYPE_PIE,
-    VIS_TYPE_GAUGE,
     VIS_TYPE_YEAR_OVER_YEAR_LINE,
     VIS_TYPE_YEAR_OVER_YEAR_COLUMN,
 } from '../../../../../modules/visTypes'

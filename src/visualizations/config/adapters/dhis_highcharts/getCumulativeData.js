@@ -1,4 +1,3 @@
-import isInteger from 'd2-utilizr/lib/isInteger'
 import numberDecimals from 'd2-utilizr/lib/numberDecimals'
 
 export default function(series) {

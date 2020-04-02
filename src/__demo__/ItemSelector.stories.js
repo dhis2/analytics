@@ -3,7 +3,7 @@ import cloneDeep from 'lodash/cloneDeep'
 import { storiesOf } from '@storybook/react'
 import { State, Store } from '@sambego/storybook-state'
 
-import ItemSelector from '../src/components/ItemSelector/ItemSelector'
+import { ItemSelector } from '../index'
 
 const defaultItems = {
     rarity: {

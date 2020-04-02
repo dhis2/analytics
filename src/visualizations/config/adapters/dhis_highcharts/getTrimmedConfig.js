@@ -39,14 +39,14 @@ function getFirstLastValueIndexes(series) {
         // without affecting the original
         data = seriesObj.data.slice()
 
-        i = data.findIndex(value => value != undefined)
+        i = data.findIndex(value => value !== undefined)
 
         if (i > -1) {
             firstValueIndex =
                 firstValueIndex !== undefined ? Math.min(firstValueIndex, i) : i
         }
 
-        i = data.reverse().findIndex(value => value != undefined)
+        i = data.reverse().findIndex(value => value !== undefined)
 
         if (i > -1) {
             lastValueIndex = Math.max(lastValueIndex, data.length - 1 - i)

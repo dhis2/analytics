@@ -1,4 +1,4 @@
-export default function(acc, seriesIds, categoryIds, idValueMap, metaData) {
+export default function(acc, seriesIds, categoryIds, idValueMap) {
     const seriesId = seriesIds[0]
 
     acc.push({

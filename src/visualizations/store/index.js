@@ -5,13 +5,13 @@ export default function({
     data,
     inputFormat = 'dhis',
     outputFormat = 'highcharts',
-    seriesId,
-    categoryId,
+    seriesId: initialSeriesId,
+    categoryId: initialCategoryId,
     error,
     warning,
 }) {
-    let _validator = validators[inputFormat] || validators.noValidation
-    let _adapter = adapters[inputFormat + '_' + outputFormat]
+    const _validator = validators[inputFormat] || validators.noValidation
+    const _adapter = adapters[inputFormat + '_' + outputFormat]
 
     if (_validator === validators.noValidation) {
         warning(
@@ -29,8 +29,8 @@ export default function({
 
     this.generateData = ({
         type,
-        seriesId = seriesId,
-        categoryId = categoryId,
+        seriesId = initialSeriesId,
+        categoryId = initialCategoryId,
     }) => {
         return _adapter({
             type,
