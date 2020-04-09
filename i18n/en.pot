@@ -5,11 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2020-03-25T13:35:07.469Z\n"
-"PO-Revision-Date: 2020-03-25T13:35:07.469Z\n"
-
-msgid "Data"
-msgstr ""
+"POT-Creation-Date: 2020-04-09T19:57:21.474Z\n"
+"PO-Revision-Date: 2020-04-09T19:57:21.474Z\n"
 
 msgid "Data Type"
 msgstr ""
@@ -60,12 +57,6 @@ msgid "Deselect All"
 msgstr ""
 
 msgid "Select all"
-msgstr ""
-
-msgid "Organisation units"
-msgstr ""
-
-msgid "Period"
 msgstr ""
 
 msgid "Series"
@@ -143,19 +134,25 @@ msgstr ""
 msgid "Program indicators"
 msgstr ""
 
-msgid "and"
+msgid "{{dynamicOuNames}} and {{lastOuName}}"
 msgstr ""
 
-msgid "levels"
+msgid "{{allDynamicOuNames}} levels"
 msgstr ""
 
-msgid "groups"
+msgid "{{allDynamicOuNames}} groups"
 msgstr ""
 
-msgid "levels in"
+msgid "{{allDynamicOuNames}} levels in {{staticOuNames}}"
 msgstr ""
 
-msgid "groups in"
+msgid "{{allDynamicOuNames}} groups in {{staticOuNames}}"
+msgstr ""
+
+msgid "Data"
+msgstr ""
+
+msgid "Period"
 msgstr ""
 
 msgid "Organisation Unit"
