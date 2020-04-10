@@ -1,0 +1,9 @@
+.container {
+    border: 1px solid var(--colors-greyLight);
+    background-color: var(--colors-white);
+    height: 53px;
+    border-right: 0;
+    border-left: 0;
+    border-top: 0;
+    padding: 10px 5px 10px 10px;
+}

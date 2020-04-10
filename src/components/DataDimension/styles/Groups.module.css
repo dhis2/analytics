@@ -1,0 +1,17 @@
+.container {
+    border: 1px solid var(--colors-greyLight);
+    display: flex;
+    min-height: 53px;
+    border-right: 0px;
+    border-left: 0px;
+    padding-top: 5px;
+    padding-left: 10px;
+}
+.groupContainer {
+    display: flex;
+    flex-direction: column;
+    width: inherit;
+    min-width: 294px;
+    flex-grow: 1;
+    padding-right: 5px;
+}

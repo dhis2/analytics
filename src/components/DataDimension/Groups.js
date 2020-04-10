@@ -4,7 +4,7 @@ import { SingleSelectField, SingleSelectOption } from '@dhis2/ui-core'
 
 import { Detail } from './Detail'
 import { dataTypes } from '../../modules/dataTypes'
-import { styles } from './styles/Groups.style'
+import styles from './styles/Groups.module.css'
 
 export const Groups = ({
     dataType,

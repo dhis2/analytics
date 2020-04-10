@@ -4,7 +4,7 @@ import i18n from '@dhis2/d2-i18n'
 import { SingleSelectField, SingleSelectOption } from '@dhis2/ui-core'
 
 import { dataTypes } from '../../modules/dataTypes'
-import { styles } from './styles/DataTypesSelector.style'
+import styles from './styles/DataTypesSelector.module.css'
 
 export const DataTypes = ({ currentDataType, onDataTypeChange }) => (
     <div style={styles.container}>

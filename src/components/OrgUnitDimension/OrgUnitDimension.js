@@ -11,7 +11,7 @@ import {
 } from '../../api/organisationUnits'
 import { ouIdHelper } from '../../modules/ouIdHelper'
 import { DIMENSION_ID_ORGUNIT } from '../../modules/predefinedDimensions'
-import styles from './styles/OrgUnitDimension.style'
+import styles from './styles/OrgUnitDimension.module.css'
 import { colors } from '../../modules/colors'
 
 export const defaultState = {

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'
 import { SingleSelectField, SingleSelectOption } from '@dhis2/ui-core'
 
-import { styles } from './styles/Details.style'
+import styles from './styles/Details.module.css'
 
 export const Detail = ({ current, onDetailChange, detailAlternatives }) => {
     const currentValue = detailAlternatives[current]

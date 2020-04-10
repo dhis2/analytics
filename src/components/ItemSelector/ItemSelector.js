@@ -1,25 +1,25 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import cx from 'classnames'
 
 import UnselectedItems from './UnselectedItems'
 import SelectedItems from './SelectedItems'
-import styles from './styles/ItemSelector.style'
+import styles from './styles/ItemSelector.module.css'
 
 class ItemSelector extends Component {
     render() {
         const { unselected, selected, children: filterZone } = this.props
 
         return (
-            <div className="item-selector-container">
-                <div className={cx('section', 'unselected')}>
+            <div styles={styles.itemSelectorContainer}>
+                <div styles={styles.section}>
+                    {/* TODO: Add styles.unselected*/}
                     {filterZone}
                     <UnselectedItems {...unselected} />
                 </div>
-                <div className={cx('section', 'selected')}>
+                <div styles={styles.section}>
+                    {/* TODO: Add styles.selected*/}
                     <SelectedItems {...selected} />
                 </div>
-                <style jsx>{styles}</style>
             </div>
         )
     }
