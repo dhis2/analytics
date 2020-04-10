@@ -4,10 +4,10 @@ import i18n from '@dhis2/d2-i18n'
 import { SingleSelectField, SingleSelectOption } from '@dhis2/ui-core'
 
 import { dataTypes } from '../../modules/dataTypes'
-import styles from './styles/DataTypesSelector.module.css'
+import styles from './styles/DataTypesSelector.style'
 
 export const DataTypes = ({ currentDataType, onDataTypeChange }) => (
-    <div style={styles.container}>
+    <div className="container">
         <SingleSelectField
             label={i18n.t('Data Type')}
             selected={{
@@ -25,6 +25,7 @@ export const DataTypes = ({ currentDataType, onDataTypeChange }) => (
                 />
             ))}
         </SingleSelectField>
+        <style jsx>{styles}</style>
     </div>
 )
 

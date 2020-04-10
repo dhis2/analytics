@@ -4,7 +4,7 @@ import { SingleSelectField, SingleSelectOption } from '@dhis2/ui-core'
 
 import { Detail } from './Detail'
 import { dataTypes } from '../../modules/dataTypes'
-import styles from './styles/Groups.module.css'
+import styles from './styles/Groups.style'
 
 export const Groups = ({
     dataType,
@@ -28,8 +28,9 @@ export const Groups = ({
     const selected = optionItems.find(item => item.id === groupId)
 
     return (
-        <div style={styles.container}>
-            <div style={styles.groupContainer}>
+        <div className="container">
+            <style jsx>{styles}</style>
+            <div className="group-container">
                 <SingleSelectField
                     label={dataTypes[dataType].groupLabel}
                     selected={{ value: selected.id, label: selected.name }}

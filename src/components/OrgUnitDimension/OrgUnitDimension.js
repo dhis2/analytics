@@ -11,7 +11,7 @@ import {
 } from '../../api/organisationUnits'
 import { ouIdHelper } from '../../modules/ouIdHelper'
 import { DIMENSION_ID_ORGUNIT } from '../../modules/predefinedDimensions'
-import styles from './styles/OrgUnitDimension.module.css'
+import styles from './styles/OrgUnitDimension.style'
 import { colors } from '../../modules/colors'
 
 export const defaultState = {
@@ -258,7 +258,12 @@ class OrgUnitDimension extends Component {
                         isUserDataViewFallback={true}
                     />
                 )}
-                {!this.state.root && <CircularLoader style={styles.loader} />}
+                {!this.state.root && (
+                    <div className="loader">
+                        <CircularLoader />
+                    </div>
+                )}
+                <style jsx>{styles}</style>
             </Fragment>
         )
     }

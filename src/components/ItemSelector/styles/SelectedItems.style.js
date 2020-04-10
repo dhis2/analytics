@@ -1,4 +1,4 @@
-import { colors } from './colors'
+import { colors } from '../../../modules/colors'
 import css from 'styled-jsx/css'
 
 export default css`
@@ -68,4 +68,3 @@ export default css`
         top: 291px;
     }
 `
-//TODO: Remove unused parts and refactor to css module

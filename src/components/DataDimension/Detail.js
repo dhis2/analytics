@@ -3,12 +3,12 @@ import PropTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'
 import { SingleSelectField, SingleSelectOption } from '@dhis2/ui-core'
 
-import styles from './styles/Details.module.css'
+import styles from './styles/Detail.style'
 
 export const Detail = ({ current, onDetailChange, detailAlternatives }) => {
     const currentValue = detailAlternatives[current]
     return (
-        <div style={styles.detailContainer}>
+        <div className="detail-container">
             <SingleSelectField
                 label={i18n.t('Detail')}
                 selected={
@@ -30,6 +30,7 @@ export const Detail = ({ current, onDetailChange, detailAlternatives }) => {
                     />
                 ))}
             </SingleSelectField>
+            <style jsx>{styles}</style>
         </div>
     )
 }

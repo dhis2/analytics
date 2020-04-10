@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import cx from 'classnames'
 
 import ItemIcon from './ItemIcon'
-import { colors } from '../styles/colors'
+import { colors } from '../../../modules/colors'
 import styles from './styles/UnselectedItem.style'
 
 const onClickWrapper = ({ id, index, onClick }) => event =>

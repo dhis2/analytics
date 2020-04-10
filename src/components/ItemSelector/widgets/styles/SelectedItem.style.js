@@ -1,4 +1,4 @@
-import { colors } from '../../styles/colors'
+import { colors } from '../../../../modules/colors'
 import css from 'styled-jsx/css'
 
 export default css`
@@ -7,7 +7,7 @@ export default css`
     }
 
     .icon {
-        background-color ${colors.accentSecondary}
+        background-color: ${colors.accentSecondary};
     }
 
     .item {
