@@ -1,57 +1,58 @@
-import React, { Component } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import uniqBy from 'lodash/uniqBy'
 import { PeriodSelector } from '@dhis2/d2-ui-period-selector-dialog'
 
 import { DIMENSION_ID_PERIOD } from '../../modules/predefinedDimensions'
 
-export class PeriodDimension extends Component {
-    selectItems = periods => {
-        const newItems = periods.map(p => ({
-            id: p.id,
-            name: p.name,
+export const PeriodDimension = ({
+    onDeselect,
+    onReorder,
+    onSelect,
+    selectedPeriods,
+}) => {
+    const selectItems = periods => {
+        const newItems = periods.map(period => ({
+            id: period.id,
+            name: period.name,
         }))
-        const alreadySelected = this.props.selectedPeriods.map(p => ({
-            id: p.id,
-            name: p.name,
+        const alreadySelected = selectedPeriods.map(period => ({
+            id: period.id,
+            name: period.name,
         }))
 
-        this.props.onSelect({
+        onSelect({
             dimensionId: DIMENSION_ID_PERIOD,
             items: uniqBy(alreadySelected.concat(newItems), 'id'),
         })
     }
 
-    deselectItems = periods => {
+    const deselectItems = periods => {
         const itemIdsToRemove = periods.map(period => period.id)
 
-        this.props.onDeselect({
+        onDeselect({
             dimensionId: DIMENSION_ID_PERIOD,
             itemIdsToRemove,
         })
     }
 
-    reorderItems = periods => {
+    const reorderItems = periods => {
         const itemIds = periods.map(period => period.id)
 
-        this.props.onReorder({
+        onReorder({
             dimensionId: DIMENSION_ID_PERIOD,
             itemIds,
         })
     }
 
-    render = () => {
-        const { selectedPeriods } = this.props
-
-        return (
-            <PeriodSelector
-                onSelect={this.selectItems}
-                onDeselect={this.deselectItems}
-                onReorder={this.reorderItems}
-                selectedItems={selectedPeriods}
-            />
-        )
-    }
+    return (
+        <PeriodSelector
+            onSelect={selectItems}
+            onDeselect={deselectItems}
+            onReorder={reorderItems}
+            selectedItems={selectedPeriods}
+        />
+    )
 }
 
 PeriodDimension.propTypes = {
