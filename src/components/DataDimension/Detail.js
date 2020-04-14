@@ -5,28 +5,28 @@ import { SingleSelectField, SingleSelectOption } from '@dhis2/ui-core'
 
 import styles from './styles/Detail.style'
 
-export const Detail = ({ current, onDetailChange, detailAlternatives }) => {
-    const currentValue = detailAlternatives[current]
+export const Detail = ({ currentValue, onChange, options }) => {
+    const currentLabel = options[currentValue]
     return (
         <div className="detail-container">
             <SingleSelectField
                 label={i18n.t('Detail')}
                 selected={
-                    currentValue
+                    currentLabel
                         ? {
-                              value: current,
-                              label: currentValue,
+                              value: currentValue,
+                              label: currentLabel,
                           }
                         : null
                 }
-                onChange={ref => onDetailChange(ref.selected.value)}
+                onChange={ref => onChange(ref.selected.value)}
                 dense
             >
-                {Object.entries(detailAlternatives).map(item => (
+                {Object.entries(options).map(option => (
                     <SingleSelectOption
-                        value={item[0]}
-                        key={item[0]}
-                        label={item[1]}
+                        value={option[0]}
+                        key={option[0]}
+                        label={option[1]}
                     />
                 ))}
             </SingleSelectField>
@@ -36,9 +36,9 @@ export const Detail = ({ current, onDetailChange, detailAlternatives }) => {
 }
 
 Detail.propTypes = {
-    current: PropTypes.string.isRequired,
-    detailAlternatives: PropTypes.object.isRequired,
-    onDetailChange: PropTypes.func.isRequired,
+    currentValue: PropTypes.string.isRequired,
+    options: PropTypes.object.isRequired,
+    onChange: PropTypes.func.isRequired,
 }
 
 export default Detail

@@ -53,9 +53,9 @@ export const Groups = ({
             </div>
             {groupDetail && (
                 <Detail
-                    current={detailValue}
-                    onDetailChange={onDetailChange}
-                    detailAlternatives={groupDetail.alternatives}
+                    currentValue={detailValue}
+                    onChange={onDetailChange}
+                    options={groupDetail.alternatives}
                 />
             )}
         </div>
