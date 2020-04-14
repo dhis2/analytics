@@ -6,7 +6,7 @@ import { SingleSelectField, SingleSelectOption } from '@dhis2/ui-core'
 import { dataTypes } from '../../modules/dataTypes'
 import styles from './styles/DataTypesSelector.style'
 
-export const DataTypes = ({ currentDataType, onDataTypeChange }) => (
+export const DataTypes = ({ currentDataType, onChange }) => (
     <div className="container">
         <SingleSelectField
             label={i18n.t('Data Type')}
@@ -14,7 +14,7 @@ export const DataTypes = ({ currentDataType, onDataTypeChange }) => (
                 value: dataTypes[currentDataType]?.id,
                 label: dataTypes[currentDataType]?.name,
             }}
-            onChange={ref => onDataTypeChange(ref.selected.value)}
+            onChange={ref => onChange(ref.selected.value)}
             dense
         >
             {Object.values(dataTypes).map(type => (
@@ -31,7 +31,7 @@ export const DataTypes = ({ currentDataType, onDataTypeChange }) => (
 
 DataTypes.propTypes = {
     currentDataType: PropTypes.string.isRequired,
-    onDataTypeChange: PropTypes.func.isRequired,
+    onChange: PropTypes.func.isRequired,
 }
 
 export default DataTypes

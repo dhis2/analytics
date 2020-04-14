@@ -218,7 +218,7 @@ export class DataDimension extends Component {
                 <div>
                     <DataTypes
                         currentDataType={this.state.dataType}
-                        onDataTypeChange={this.onDataTypeChange}
+                        onChange={this.onDataTypeChange}
                     />
                     <Groups
                         dataType={this.state.dataType}
