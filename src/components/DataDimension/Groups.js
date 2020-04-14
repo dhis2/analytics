@@ -34,8 +34,6 @@ export const Groups = ({
                 <SingleSelectField
                     label={dataTypes[dataType].groupLabel}
                     selected={{ value: selected.id, label: selected.name }}
-                    //displayEmpty={havePlaceholder} What is this?
-
                     placeholder={
                         havePlaceholder ? dataTypes[dataType].placeholder : null
                     }
