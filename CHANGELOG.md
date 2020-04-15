@@ -1,3 +1,10 @@
+## [4.3.27](https://github.com/dhis2/analytics/compare/v4.3.26...v4.3.27) (2020-04-15)
+
+
+### Bug Fixes
+
+* replace MUI with ui-core for dimension modals (TECH-325, TECH-328, TECH-329, TECH-330, TECH-331, TECH-332)  ([#382](https://github.com/dhis2/analytics/issues/382)) ([eee6688](https://github.com/dhis2/analytics/commit/eee668897510422da67dff0bfab8cc61abe99238))
+
 ## [4.3.26](https://github.com/dhis2/analytics/compare/v4.3.25...v4.3.26) (2020-03-30)
 
 
