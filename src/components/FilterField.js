@@ -3,18 +3,17 @@ import PropTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'
 
 import Filter from './Filter/Filter'
-import { styles } from './styles/FilterField.style'
+import styles from './styles/FilterField.style'
 
 export const FilterField = ({ text, onFilterTextChange, onClearFilter }) => (
-    <div style={styles.container}>
+    <div className="container">
         <Filter
-            style={styles.textField}
             placeholder={i18n.t('Search')}
             text={text}
             onChange={onFilterTextChange}
             onClear={onClearFilter}
-            disableUnderline
         />
+        <style jsx>{styles}</style>
     </div>
 )
 

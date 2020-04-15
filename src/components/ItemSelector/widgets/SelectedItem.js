@@ -4,7 +4,7 @@ import cx from 'classnames'
 
 import ItemIcon from './ItemIcon'
 import DeselectIconButton from './DeselectIconButton'
-import { colors } from '../styles/colors'
+import { colors } from '../../../modules/colors'
 import styles from './styles/SelectedItem.style'
 
 const onClickWrapper = ({ id, index, onClick }) => event =>

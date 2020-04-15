@@ -1,4 +1,4 @@
-import { colors } from '../../styles/colors'
+import { colors } from '../../../../modules/colors'
 import css from 'styled-jsx/css'
 
 export default css`

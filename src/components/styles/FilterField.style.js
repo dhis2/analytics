@@ -1,18 +1,14 @@
+import css from 'styled-jsx/css'
 import { colors } from '../../modules/colors'
 
-export const styles = {
-    container: {
-        border: `1px solid ${colors.greyLight}`,
-        backgroundColor: colors.white,
-        height: '39px',
-        borderRight: '0px',
-        borderLeft: '0px',
-        borderTop: '0px',
-    },
-    textField: {
-        paddingRight: '7px',
-        paddingTop: '5px',
-        width: '100%',
-        fontSize: '14px',
-    },
-}
+export default css`
+    .container {
+        border: 1px solid ${colors.greyLight};
+        background-color: ${colors.white};
+        height: 53px;
+        border-right: 0;
+        border-left: 0;
+        border-top: 0;
+        padding: 10px 5px 10px 10px;
+    }
+`

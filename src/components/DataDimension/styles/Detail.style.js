@@ -1,13 +1,11 @@
 import css from 'styled-jsx/css'
 
 export default css`
-    .container {
+    .detail-container {
         display: flex;
         flex-flow: column;
-        height: 70px;
-        border-bottom: 0;
-        padding-left: 10px;
+        width: 40%;
         padding-right: 5px;
-        padding-top: 5px;
+        padding-left: 5px;
     }
 `

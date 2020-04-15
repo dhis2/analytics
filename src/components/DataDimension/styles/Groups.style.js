@@ -1,35 +1,22 @@
+import css from 'styled-jsx/css'
 import { colors } from '../../../modules/colors'
 
-export const styles = {
-    container: {
-        border: `1px solid ${colors.greyLight}`,
-        display: 'flex',
-        minHeight: '53px',
-        borderRight: '0px',
-        borderLeft: '0px',
-        paddingTop: '5px',
-        paddingLeft: '5px',
-    },
-    groupContainer: {
-        display: 'flex',
-        flexDirection: 'column',
-        width: 'inherit',
-        minWidth: '316px',
-        flexGrow: 1,
-        paddingRight: '5px',
-    },
-    titleText: {
-        color: colors.greyDark,
-        fontSize: '13px',
-        fontWeight: '300',
-        paddingBottom: '10px',
-    },
-    dropDown: {
-        padding: '0px',
-    },
-
-    placeholder: {
-        padding: '0px',
-        fontWeight: '300',
-    },
-}
+export default css`
+    .container {
+        border: 1px solid ${colors.greyLight};
+        display: flex;
+        min-height: 53px;
+        border-right: 0;
+        border-left: 0;
+        padding-top: 5px;
+        padding-left: 10px;
+    }
+    .group-container {
+        display: flex;
+        flex-direction: column;
+        width: inherit;
+        min-width: 294px;
+        flex-grow: 1;
+        padding-right: 5px;
+    }
+`

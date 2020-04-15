@@ -42,11 +42,13 @@ exports[`UnselectedItems component list with items matches the snapshot when lis
   <div
     className="select-all-button"
   >
-    <WithStyles(Button)
+    <Button
+      dataTest="dhis2-uicore-button"
       onClick={[Function]}
+      type="button"
     >
       Select all
-    </WithStyles(Button)>
+    </Button>
   </div>
   <div
     className="select-highlighted-button"
@@ -73,11 +75,13 @@ exports[`UnselectedItems component matches the snapshot when list is empty 1`] =
   <div
     className="select-all-button"
   >
-    <WithStyles(Button)
+    <Button
+      dataTest="dhis2-uicore-button"
       onClick={[Function]}
+      type="button"
     >
       Select all
-    </WithStyles(Button)>
+    </Button>
   </div>
   <div
     className="select-highlighted-button"

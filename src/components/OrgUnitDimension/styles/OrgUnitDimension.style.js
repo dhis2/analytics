@@ -1,11 +1,10 @@
-export default {
-    dialogContent: {
-        width: 760,
-        minHeight: 48,
-    },
-    loader: {
-        marginLeft: 'auto',
-        marginRight: 'auto',
-        display: 'block',
-    },
-}
+import css from 'styled-jsx/css'
+
+export default css`
+    .loader {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100px;
+    }
+`

@@ -1,8 +1,5 @@
-import React, { Component, Fragment } from 'react'
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import DialogTitle from '@material-ui/core/DialogTitle'
-import DialogContent from '@material-ui/core/DialogContent'
-import i18n from '@dhis2/d2-i18n'
 import debounce from 'lodash/debounce'
 import isEqual from 'lodash/isEqual'
 
@@ -21,8 +18,6 @@ import {
     defaultGroupDetail,
 } from '../../modules/dataTypes'
 import { DIMENSION_ID_DATA } from '../../modules/predefinedDimensions'
-
-import { styles } from './styles/DataDimension.style'
 
 const FIRST_PAGE = 1
 
@@ -223,7 +218,7 @@ export class DataDimension extends Component {
                 <div>
                     <DataTypes
                         currentDataType={this.state.dataType}
-                        onDataTypeChange={this.onDataTypeChange}
+                        onChange={this.onDataTypeChange}
                     />
                     <Groups
                         dataType={this.state.dataType}
@@ -258,18 +253,13 @@ export class DataDimension extends Component {
         }
 
         return (
-            <Fragment>
-                <DialogTitle>{i18n.t('Data')}</DialogTitle>
-                <DialogContent style={styles.dialogContent}>
-                    <ItemSelector
-                        itemClassName="data-dimension"
-                        unselected={unselected}
-                        selected={selected}
-                    >
-                        {filterZone()}
-                    </ItemSelector>
-                </DialogContent>
-            </Fragment>
+            <ItemSelector
+                itemClassName="data-dimension"
+                unselected={unselected}
+                selected={selected}
+            >
+                {filterZone()}
+            </ItemSelector>
         )
     }
 }

@@ -1,69 +1,59 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Select from '@material-ui/core/Select'
-import MenuItem from '@material-ui/core/MenuItem'
-import InputLabel from '@material-ui/core/InputLabel'
+import { SingleSelectField, SingleSelectOption } from '@dhis2/ui-core'
 
 import { Detail } from './Detail'
 import { dataTypes } from '../../modules/dataTypes'
-import { styles } from './styles/Groups.style'
+import styles from './styles/Groups.style'
 
-const Groups = props => {
-    const handleChange = event => {
-        props.onGroupChange(event.target.value)
+export const Groups = ({
+    dataType,
+    detailValue,
+    groupId,
+    groups,
+    onDetailChange,
+    onGroupChange,
+}) => {
+    const defaultGroup = dataTypes[dataType].defaultGroup
+    let optionItems = groups
+
+    if (defaultGroup) {
+        optionItems = [defaultGroup, ...optionItems]
     }
 
-    const renderDropDownItems = () => {
-        const defaultGroup = dataTypes[props.dataType].defaultGroup
-        let optionItems = props.groups
+    const groupDetail = dataTypes[dataType].groupDetail
 
-        if (defaultGroup) {
-            optionItems = [defaultGroup, ...optionItems]
-        }
+    const havePlaceholder = Boolean(!groupId && dataTypes[dataType].placeholder)
 
-        return optionItems.map(item => (
-            <MenuItem key={item.id} value={item.id}>
-                {item.name}
-            </MenuItem>
-        ))
-    }
-
-    const groupDetail = dataTypes[props.dataType].groupDetail
-
-    const havePlaceholder = Boolean(
-        !props.groupId && dataTypes[props.dataType].placeholder
-    )
+    const selected = optionItems.find(item => item.id === groupId)
 
     return (
-        <div style={styles.container}>
-            <div style={styles.groupContainer}>
-                <InputLabel style={styles.titleText}>
-                    {dataTypes[props.dataType].groupLabel}
-                </InputLabel>
-                <Select
-                    value={props.groupId}
-                    onChange={handleChange}
-                    renderValue={
-                        havePlaceholder
-                            ? dataTypes[props.dataType].placeholder
-                            : null
+        <div className="container">
+            <style jsx>{styles}</style>
+            <div className="group-container">
+                <SingleSelectField
+                    label={dataTypes[dataType].groupLabel}
+                    selected={{ value: selected.id, label: selected.name }}
+                    placeholder={
+                        havePlaceholder ? dataTypes[dataType].placeholder : null
                     }
-                    displayEmpty={havePlaceholder}
-                    disableUnderline
-                    SelectDisplayProps={
-                        havePlaceholder
-                            ? { style: styles.placeholder }
-                            : { style: styles.dropDown }
-                    }
+                    onChange={ref => onGroupChange(ref.selected.value)}
+                    dense
                 >
-                    {renderDropDownItems()}
-                </Select>
+                    {optionItems.map(item => (
+                        <SingleSelectOption
+                            value={item.id}
+                            key={item.id}
+                            label={item.name}
+                        />
+                    ))}
+                </SingleSelectField>
             </div>
             {groupDetail && (
                 <Detail
-                    value={props.detailValue}
-                    onDetailChange={props.onDetailChange}
-                    detailAlternatives={groupDetail.alternatives}
+                    currentValue={detailValue}
+                    onChange={onDetailChange}
+                    options={groupDetail.alternatives}
                 />
             )}
         </div>

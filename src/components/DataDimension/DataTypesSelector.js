@@ -1,38 +1,37 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Select from '@material-ui/core/Select'
-import MenuItem from '@material-ui/core/MenuItem'
-import InputLabel from '@material-ui/core/InputLabel'
 import i18n from '@dhis2/d2-i18n'
+import { SingleSelectField, SingleSelectOption } from '@dhis2/ui-core'
 
 import { dataTypes } from '../../modules/dataTypes'
-import { styles } from './styles/DataTypesSelector.style'
+import styles from './styles/DataTypesSelector.style'
 
-export const DataTypes = ({ currentDataType, onDataTypeChange }) => (
-    <div style={styles.container}>
-        <InputLabel style={styles.titleText}>{i18n.t('Data Type')}</InputLabel>
-        <Select
-            value={currentDataType}
-            onChange={event => onDataTypeChange(event.target.value)}
-            disableUnderline
-            SelectDisplayProps={{ style: styles.dropDown }}
+export const DataTypes = ({ currentDataType, onChange }) => (
+    <div className="container">
+        <SingleSelectField
+            label={i18n.t('Data Type')}
+            selected={{
+                value: dataTypes[currentDataType]?.id,
+                label: dataTypes[currentDataType]?.name,
+            }}
+            onChange={ref => onChange(ref.selected.value)}
+            dense
         >
             {Object.values(dataTypes).map(type => (
-                <MenuItem
-                    style={styles.dropDownItem}
-                    key={type.id}
+                <SingleSelectOption
                     value={type.id}
-                >
-                    {type.name}
-                </MenuItem>
+                    key={type.id}
+                    label={type.name}
+                />
             ))}
-        </Select>
+        </SingleSelectField>
+        <style jsx>{styles}</style>
     </div>
 )
 
 DataTypes.propTypes = {
     currentDataType: PropTypes.string.isRequired,
-    onDataTypeChange: PropTypes.func.isRequired,
+    onChange: PropTypes.func.isRequired,
 }
 
 export default DataTypes
