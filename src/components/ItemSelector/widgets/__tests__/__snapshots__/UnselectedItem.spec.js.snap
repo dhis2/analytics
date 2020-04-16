@@ -7,7 +7,7 @@ exports[`Unselected item component renders a highlighted item 1`] = `
   onClick={[Function]}
 >
   <ItemIcon
-    backgroundColor="#9E9E9E"
+    backgroundColor="#a0adba"
   />
   <span
     className="item-label highlighted-text"
@@ -25,7 +25,7 @@ exports[`Unselected item component renders an unhighlighted item 1`] = `
   onClick={[Function]}
 >
   <ItemIcon
-    backgroundColor="#9E9E9E"
+    backgroundColor="#a0adba"
   />
   <span
     className="item-label"

@@ -50,7 +50,7 @@ exports[`DimensionItem matches the snapshot 1`] = `
         data-dimensionid="pe"
         style={
           Object {
-            "color": "#000000",
+            "color": "#212934",
             "cursor": "pointer",
             "fontSize": "14px",
             "userSelect": "none",
@@ -118,7 +118,7 @@ exports[`DimensionItem matches the snapshot with locked 1`] = `
         data-dimensionid="pe"
         style={
           Object {
-            "color": "#000000",
+            "color": "#212934",
             "cursor": "pointer",
             "fontSize": "14px",
             "userSelect": "none",
@@ -204,7 +204,7 @@ exports[`DimensionItem matches the snapshot with onOptionsClick 1`] = `
         data-dimensionid="pe"
         style={
           Object {
-            "color": "#000000",
+            "color": "#212934",
             "cursor": "pointer",
             "fontSize": "14px",
             "userSelect": "none",
@@ -283,7 +283,7 @@ exports[`DimensionItem matches the snapshot with recommended 1`] = `
         data-dimensionid="pe"
         style={
           Object {
-            "color": "#000000",
+            "color": "#212934",
             "cursor": "pointer",
             "fontSize": "14px",
             "userSelect": "none",
@@ -309,7 +309,7 @@ exports[`DimensionItem matches the snapshot with selected 1`] = `
   style={
     Object {
       "alignItems": "center",
-      "backgroundColor": "#D9ECEB",
+      "backgroundColor": undefined,
       "borderRadius": "2px",
       "display": "flex",
       "fontWeight": 500,
@@ -353,7 +353,7 @@ exports[`DimensionItem matches the snapshot with selected 1`] = `
         data-dimensionid="pe"
         style={
           Object {
-            "color": "#000000",
+            "color": "#212934",
             "cursor": "pointer",
             "fontSize": "14px",
             "userSelect": "none",
