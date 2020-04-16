@@ -1,4 +1,3 @@
-import React from 'react'
 import i18n from '@dhis2/d2-i18n'
 
 import { DATA_SETS_CONSTANTS } from '../modules/dataSets'
@@ -63,7 +62,7 @@ export const dataTypes = {
         id: EVENT_DATA_ITEMS,
         name: i18n.t('Event data items'),
         groupLabel: programText,
-        placeholder: () => <span>{selectProgramText}</span>, // eslint-disable-line react/display-name
+        placeholder: selectProgramText,
         defaultGroup: null,
         groupDetail: false,
     },
@@ -71,7 +70,7 @@ export const dataTypes = {
         id: PROGRAM_INDICATORS,
         name: i18n.t('Program indicators'),
         groupLabel: programText,
-        placeholder: () => <span>{selectProgramText}</span>, // eslint-disable-line react/display-name
+        placeholder: selectProgramText,
         defaultGroup: null,
         groupDetail: false,
     },
