@@ -1,4 +1,4 @@
-import { colors } from '@dhis2/ui-core'
+import { colors, theme } from '@dhis2/ui-core'
 
 export const styles = {
     toolTip: {
@@ -13,7 +13,7 @@ export const styles = {
         padding: '7px 9px',
     },
     recommendedIcon: {
-        backgroundColor: colors.secondary300,
+        backgroundColor: theme.secondary300,
         height: '8px',
         width: '8px',
         borderRadius: '4px',

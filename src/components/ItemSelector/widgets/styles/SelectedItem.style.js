@@ -1,4 +1,4 @@
-import { colors } from '@dhis2/ui-core'
+import { colors, theme } from '@dhis2/ui-core'
 import css from 'styled-jsx/css'
 
 export default css`
@@ -7,7 +7,7 @@ export default css`
     }
 
     .icon {
-        background-color: ${colors.secondary600};
+        background-color: ${theme.secondary600};
     }
 
     .item {
@@ -24,7 +24,7 @@ export default css`
     }
 
     .selected-item {
-        background-color: ${colors.secondary200};
+        background-color: ${theme.secondary200};
     }
 
     .selected-item:hover {
@@ -32,7 +32,7 @@ export default css`
     }
 
     .highlighted-item {
-        background-color: ${colors.secondary800};
+        background-color: ${theme.secondary800};
     }
 
     .inactive-item {

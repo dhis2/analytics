@@ -4,7 +4,7 @@ import cx from 'classnames'
 
 import ItemIcon from './ItemIcon'
 import DeselectIconButton from './DeselectIconButton'
-import { colors } from '@dhis2/ui-core'
+import { colors, theme } from '@dhis2/ui-core'
 import styles from './styles/SelectedItem.style'
 
 const onClickWrapper = ({ id, index, onClick }) => event =>
@@ -36,7 +36,7 @@ export const Item = ({
         >
             <ItemIcon
                 backgroundColor={
-                    highlighted ? colors.white : colors.secondary600
+                    highlighted ? colors.white : theme.secondary600
                 }
             />
             <span
@@ -47,7 +47,7 @@ export const Item = ({
                 {name}
             </span>
             <DeselectIconButton
-                fill={highlighted ? colors.white : colors.secondary600}
+                fill={highlighted ? colors.white : theme.secondary600}
                 onClick={() => onRemoveItem(rest.id)}
             />
             <style jsx>{styles}</style>

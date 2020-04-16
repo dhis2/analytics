@@ -1,4 +1,4 @@
-import { colors } from '@dhis2/ui-core'
+import { colors, theme } from '@dhis2/ui-core'
 
 export const styles = {
     labelWrapper: {
@@ -24,7 +24,7 @@ export const styles = {
         borderRadius: '2px',
     },
     selected: {
-        backgroundColor: colors.secondary100,
+        backgroundColor: theme.secondary100,
         fontWeight: 500,
     },
     fixedDimensionIcon: {
