@@ -1,9 +1,9 @@
 import css from 'styled-jsx/css'
-import { colors } from '../../../modules/colors'
+import { colors } from '@dhis2/ui-core'
 
 export default css`
     .container {
-        border: 1px solid ${colors.greyLight};
+        border: 1px solid ${colors.grey300};
         display: flex;
         min-height: 53px;
         border-right: 0;

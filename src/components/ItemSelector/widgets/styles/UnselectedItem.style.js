@@ -1,4 +1,4 @@
-import { colors } from '../../../../modules/colors'
+import { colors } from '@dhis2/ui-core'
 import css from 'styled-jsx/css'
 
 export default css`
@@ -19,7 +19,7 @@ export default css`
     }
 
     .highlighted-item {
-        background-color: ${colors.accentSecondaryDark};
+        background-color: ${colors.secondary800};
     }
 
     .item-label {

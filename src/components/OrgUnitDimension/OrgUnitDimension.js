@@ -12,7 +12,7 @@ import {
 import { ouIdHelper } from '../../modules/ouIdHelper'
 import { DIMENSION_ID_ORGUNIT } from '../../modules/predefinedDimensions'
 import styles from './styles/OrgUnitDimension.style'
-import { colors } from '../../modules/colors'
+import { colors } from '@dhis2/ui-core'
 
 export const defaultState = {
     root: undefined,
@@ -252,8 +252,8 @@ class OrgUnitDimension extends Component {
                             this.handleMultipleOrgUnitsSelect
                         }
                         checkboxColor="secondary"
-                        deselectAllTooltipFontColor={colors.black}
-                        deselectAllTooltipBackgroundColor={colors.greyLight}
+                        deselectAllTooltipFontColor={colors.grey900}
+                        deselectAllTooltipBackgroundColor={colors.grey300}
                         displayNameProperty={this.props.displayNameProperty}
                         isUserDataViewFallback={true}
                     />
