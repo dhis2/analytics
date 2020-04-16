@@ -309,7 +309,7 @@ exports[`DimensionItem matches the snapshot with selected 1`] = `
   style={
     Object {
       "alignItems": "center",
-      "backgroundColor": undefined,
+      "backgroundColor": "#e0f2f1",
       "borderRadius": "2px",
       "display": "flex",
       "fontWeight": 500,

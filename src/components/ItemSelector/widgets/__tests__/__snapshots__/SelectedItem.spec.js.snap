@@ -6,13 +6,16 @@ exports[`Selected item component renders a ghost item 1`] = `
   data-test="dimension-item-selected-item-test-id"
   onClick={[Function]}
 >
-  <ItemIcon />
+  <ItemIcon
+    backgroundColor="#00796b"
+  />
   <span
     className="item-label"
   >
     I am a selected item
   </span>
   <DeselectIconButton
+    fill="#00796b"
     onClick={[Function]}
   />
   <style />
@@ -47,13 +50,16 @@ exports[`Selected item component renders an unhighlighted item 1`] = `
   data-test="dimension-item-selected-item-test-id"
   onClick={[Function]}
 >
-  <ItemIcon />
+  <ItemIcon
+    backgroundColor="#00796b"
+  />
   <span
     className="item-label"
   >
     I am a selected item
   </span>
   <DeselectIconButton
+    fill="#00796b"
     onClick={[Function]}
   />
   <style />
