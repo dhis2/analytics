@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import uniqBy from 'lodash/uniqBy'
-import PeriodSelector from './PeriodSelector/PeriodSelector'
+import PeriodSelector from '../PeriodSelector/PeriodSelector'
 
 import { DIMENSION_ID_PERIOD } from '../../modules/predefinedDimensions'
 

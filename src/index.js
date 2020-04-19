@@ -13,7 +13,7 @@ export { default as DimensionItem } from './components/DimensionsPanel/List/Dime
 export { default as DimensionFilter } from './components/Filter/Filter'
 
 export { default as ItemSelector } from './components/ItemSelector/ItemSelector'
-export { default as PeriodSelector } from './components/PeriodDimension/PeriodSelector/PeriodSelector'
+export { default as PeriodSelector } from './components/PeriodSelector/PeriodSelector'
 
 export { default as DimensionMenu } from './components/DimensionMenu'
 

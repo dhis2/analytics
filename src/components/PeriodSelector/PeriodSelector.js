@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react'
 import PropTypes from 'prop-types'
 
-import ItemSelector from '../../ItemSelector/ItemSelector'
+import ItemSelector from '../ItemSelector/ItemSelector'
 import PeriodTypeButton from './PeriodTypeButton'
 import FixedPeriodFilter from './FixedPeriodFilter'
 import RelativePeriodFilter from './RelativePeriodFilter'
