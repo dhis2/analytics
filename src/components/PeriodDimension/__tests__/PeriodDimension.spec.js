@@ -2,8 +2,10 @@ import React from 'react'
 import renderer from 'react-test-renderer'
 import { PeriodDimension } from '../PeriodDimension'
 
-jest.mock('@dhis2/d2-ui-period-selector-dialog', () => ({
-    PeriodSelector: 'mockPeriodSelector',
+jest.mock('../../PeriodSelector/PeriodSelector', () => ({
+    __esModule: true,
+    default: 'mockPeriodSelector',
+    namedExport: jest.fn(),
 }))
 
 describe('The Period Dimension component', () => {
