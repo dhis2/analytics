@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2020-04-09T19:57:21.474Z\n"
-"PO-Revision-Date: 2020-04-09T19:57:21.474Z\n"
+"POT-Creation-Date: 2020-05-14T20:44:04.346Z\n"
+"PO-Revision-Date: 2020-05-14T20:44:04.346Z\n"
 
 msgid "Data Type"
 msgstr ""
@@ -57,6 +57,12 @@ msgid "Deselect All"
 msgstr ""
 
 msgid "Select all"
+msgstr ""
+
+msgid "Year"
+msgstr ""
+
+msgid "Period type"
 msgstr ""
 
 msgid "Series"
