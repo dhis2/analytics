@@ -1,4 +1,4 @@
-import { colors } from '../../../modules/colors'
+import { colors } from '@dhis2/ui-core'
 import css from 'styled-jsx/css'
 
 export default css`
@@ -21,12 +21,12 @@ export default css`
     }
 
     .subtitle-container {
-        border-bottom: 1px solid ${colors.greyLight};
+        border-bottom: 1px solid ${colors.grey300};
         height: 42px;
     }
 
     .subtitle-text {
-        color: ${colors.black};
+        color: ${colors.grey900};
         height: 20px;
         font-family: Roboto;
         font-size: 15px;

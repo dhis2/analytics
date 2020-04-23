@@ -1,4 +1,4 @@
-import { colors } from '../../../../modules/colors'
+import { colors } from '@dhis2/ui-core'
 import css from 'styled-jsx/css'
 
 export default css`
@@ -27,7 +27,7 @@ export default css`
     }
 
     .arrow-icon {
-        fill: ${colors.greyDark};
+        fill: ${colors.grey700};
         height: 20px;
         width: 24px;
     }

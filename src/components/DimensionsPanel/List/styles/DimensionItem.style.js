@@ -1,11 +1,11 @@
-import { colors } from '../../../../modules/colors'
+import { colors, theme } from '@dhis2/ui-core'
 
 export const styles = {
     labelWrapper: {
         padding: '2px 5px 2px 0',
     },
     text: {
-        color: colors.black,
+        color: colors.grey900,
         userSelect: 'none',
         cursor: 'pointer',
         wordBreak: 'break-word',
@@ -13,7 +13,7 @@ export const styles = {
     },
     textDeactivated: {
         cursor: 'auto',
-        color: colors.grey,
+        color: colors.grey500,
     },
     item: {
         display: 'flex',
@@ -24,7 +24,7 @@ export const styles = {
         borderRadius: '2px',
     },
     selected: {
-        backgroundColor: colors.accentSecondaryTransparent,
+        backgroundColor: theme.secondary100,
         fontWeight: 500,
     },
     fixedDimensionIcon: {

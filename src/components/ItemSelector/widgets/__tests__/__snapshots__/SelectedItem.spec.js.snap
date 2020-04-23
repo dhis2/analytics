@@ -7,7 +7,7 @@ exports[`Selected item component renders a ghost item 1`] = `
   onClick={[Function]}
 >
   <ItemIcon
-    backgroundColor="#00796B"
+    backgroundColor="#00796b"
   />
   <span
     className="item-label"
@@ -15,7 +15,7 @@ exports[`Selected item component renders a ghost item 1`] = `
     I am a selected item
   </span>
   <DeselectIconButton
-    fill="#00796B"
+    fill="#00796b"
     onClick={[Function]}
   />
   <style />
@@ -29,7 +29,7 @@ exports[`Selected item component renders a highlighted item 1`] = `
   onClick={[Function]}
 >
   <ItemIcon
-    backgroundColor="#FFFFFF"
+    backgroundColor="#ffffff"
   />
   <span
     className="item-label highlighted-text"
@@ -37,7 +37,7 @@ exports[`Selected item component renders a highlighted item 1`] = `
     I am a selected item
   </span>
   <DeselectIconButton
-    fill="#FFFFFF"
+    fill="#ffffff"
     onClick={[Function]}
   />
   <style />
@@ -51,7 +51,7 @@ exports[`Selected item component renders an unhighlighted item 1`] = `
   onClick={[Function]}
 >
   <ItemIcon
-    backgroundColor="#00796B"
+    backgroundColor="#00796b"
   />
   <span
     className="item-label"
@@ -59,7 +59,7 @@ exports[`Selected item component renders an unhighlighted item 1`] = `
     I am a selected item
   </span>
   <DeselectIconButton
-    fill="#00796B"
+    fill="#00796b"
     onClick={[Function]}
   />
   <style />

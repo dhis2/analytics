@@ -23,9 +23,7 @@ export const Groups = ({
 
     const groupDetail = dataTypes[dataType].groupDetail
 
-    const havePlaceholder = Boolean(!groupId && dataTypes[dataType].placeholder)
-
-    const selected = optionItems.find(item => item.id === groupId)
+    const selected = optionItems.find(item => item.id === groupId) || {}
 
     return (
         <div className="container">
@@ -33,9 +31,15 @@ export const Groups = ({
             <div className="group-container">
                 <SingleSelectField
                     label={dataTypes[dataType].groupLabel}
-                    selected={{ value: selected.id, label: selected.name }}
+                    selected={
+                        selected.id && selected.name
+                            ? { value: selected.id, label: selected.name }
+                            : {}
+                    }
                     placeholder={
-                        havePlaceholder ? dataTypes[dataType].placeholder : null
+                        !groupId && dataTypes[dataType].placeholder
+                            ? dataTypes[dataType].placeholder
+                            : null
                     }
                     onChange={ref => onGroupChange(ref.selected.value)}
                     dense

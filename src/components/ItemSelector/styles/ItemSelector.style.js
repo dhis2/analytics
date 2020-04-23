@@ -1,4 +1,4 @@
-import { colors } from '../../../modules/colors'
+import { colors } from '@dhis2/ui-core'
 import css from 'styled-jsx/css'
 
 export default css`
@@ -9,7 +9,7 @@ export default css`
         font-family: Roboto, sans-serif;
     }
     .section {
-        border: 1px solid ${colors.greyLight};
+        border: 1px solid ${colors.grey300};
         display: flex;
         flex-direction: column;
         height: 480px;

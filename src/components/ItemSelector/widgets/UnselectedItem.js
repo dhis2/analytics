@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import cx from 'classnames'
 
 import ItemIcon from './ItemIcon'
-import { colors } from '../../../modules/colors'
+import { colors } from '@dhis2/ui-core'
 import styles from './styles/UnselectedItem.style'
 
 const onClickWrapper = ({ id, index, onClick }) => event =>
@@ -24,7 +24,7 @@ export const Item = ({ name, highlighted, ...rest }) => {
             onClick={onClickWrapper(rest)}
             data-test={`dimension-item-${rest.id}`}
         >
-            <ItemIcon backgroundColor={colors.grey} />
+            <ItemIcon backgroundColor={colors.grey500} />
             <span
                 className={cx('item-label', {
                     'highlighted-text': highlighted,

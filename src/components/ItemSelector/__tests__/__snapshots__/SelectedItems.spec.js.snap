@@ -192,13 +192,13 @@ exports[`The SelectedItems component list with items matches the snapshot with l
                               onClick={[Function]}
                             >
                               <ItemIcon
-                                backgroundColor="#00796B"
+                                backgroundColor="#00796b"
                               >
                                 <div>
                                   <style>
                                     
                 div {
-                    background-color: #00796B;
+                    background-color: #00796b;
                     min-height: 6px;
                     min-width: 6px;
                     margin: 0px 5px;
@@ -213,7 +213,7 @@ exports[`The SelectedItems component list with items matches the snapshot with l
                                 rainbow
                               </span>
                               <DeselectIconButton
-                                fill="#00796B"
+                                fill="#00796b"
                                 onClick={[Function]}
                               >
                                 <button
@@ -224,7 +224,7 @@ exports[`The SelectedItems component list with items matches the snapshot with l
                                     <pure(CloseIcon)
                                       style={
                                         Object {
-                                          "fill": "#00796B",
+                                          "fill": "#00796b",
                                           "height": "13px",
                                           "width": "10px",
                                         }
@@ -233,7 +233,7 @@ exports[`The SelectedItems component list with items matches the snapshot with l
                                       <CloseIcon
                                         style={
                                           Object {
-                                            "fill": "#00796B",
+                                            "fill": "#00796b",
                                             "height": "13px",
                                             "width": "10px",
                                           }
@@ -242,7 +242,7 @@ exports[`The SelectedItems component list with items matches the snapshot with l
                                         <WithStyles(SvgIcon)
                                           style={
                                             Object {
-                                              "fill": "#00796B",
+                                              "fill": "#00796b",
                                               "height": "13px",
                                               "width": "10px",
                                             }
@@ -267,7 +267,7 @@ exports[`The SelectedItems component list with items matches the snapshot with l
                                             fontSize="default"
                                             style={
                                               Object {
-                                                "fill": "#00796B",
+                                                "fill": "#00796b",
                                                 "height": "13px",
                                                 "width": "10px",
                                               }
@@ -281,7 +281,7 @@ exports[`The SelectedItems component list with items matches the snapshot with l
                                               role="presentation"
                                               style={
                                                 Object {
-                                                  "fill": "#00796B",
+                                                  "fill": "#00796b",
                                                   "height": "13px",
                                                   "width": "10px",
                                                 }
@@ -426,13 +426,13 @@ exports[`The SelectedItems component list with items matches the snapshot with l
                               onClick={[Function]}
                             >
                               <ItemIcon
-                                backgroundColor="#00796B"
+                                backgroundColor="#00796b"
                               >
                                 <div>
                                   <style>
                                     
                 div {
-                    background-color: #00796B;
+                    background-color: #00796b;
                     min-height: 6px;
                     min-width: 6px;
                     margin: 0px 5px;
@@ -447,7 +447,7 @@ exports[`The SelectedItems component list with items matches the snapshot with l
                                 rarity
                               </span>
                               <DeselectIconButton
-                                fill="#00796B"
+                                fill="#00796b"
                                 onClick={[Function]}
                               >
                                 <button
@@ -458,7 +458,7 @@ exports[`The SelectedItems component list with items matches the snapshot with l
                                     <pure(CloseIcon)
                                       style={
                                         Object {
-                                          "fill": "#00796B",
+                                          "fill": "#00796b",
                                           "height": "13px",
                                           "width": "10px",
                                         }
@@ -467,7 +467,7 @@ exports[`The SelectedItems component list with items matches the snapshot with l
                                       <CloseIcon
                                         style={
                                           Object {
-                                            "fill": "#00796B",
+                                            "fill": "#00796b",
                                             "height": "13px",
                                             "width": "10px",
                                           }
@@ -476,7 +476,7 @@ exports[`The SelectedItems component list with items matches the snapshot with l
                                         <WithStyles(SvgIcon)
                                           style={
                                             Object {
-                                              "fill": "#00796B",
+                                              "fill": "#00796b",
                                               "height": "13px",
                                               "width": "10px",
                                             }
@@ -501,7 +501,7 @@ exports[`The SelectedItems component list with items matches the snapshot with l
                                             fontSize="default"
                                             style={
                                               Object {
-                                                "fill": "#00796B",
+                                                "fill": "#00796b",
                                                 "height": "13px",
                                                 "width": "10px",
                                               }
@@ -515,7 +515,7 @@ exports[`The SelectedItems component list with items matches the snapshot with l
                                               role="presentation"
                                               style={
                                                 Object {
-                                                  "fill": "#00796B",
+                                                  "fill": "#00796b",
                                                   "height": "13px",
                                                   "width": "10px",
                                                 }
