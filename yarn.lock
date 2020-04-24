@@ -1198,33 +1198,33 @@
   dependencies:
     i18next "^10.3"
 
-"@dhis2/d2-ui-core@6.3.0":
-  version "6.3.0"
-  resolved "https://registry.yarnpkg.com/@dhis2/d2-ui-core/-/d2-ui-core-6.3.0.tgz#ec0ef63978a34d5b2330303c426bf7d59e0836fc"
-  integrity sha512-ZFthluJBkmbi1F0vNaIvx2Zbjioapo+Ewn1vNqb2MsUadTHOlPcrWQjDz3JCB0qce2ZW2avZ+spasEOytPNsFA==
+"@dhis2/d2-ui-core@7.0.0":
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/@dhis2/d2-ui-core/-/d2-ui-core-7.0.0.tgz#77ec2679b4500516ee2e228a19b1c69b50de3be7"
+  integrity sha512-0ZVNKbLfqkygzhmLDt35YjSL1s6JjzNa/fU0PV9dqNrtWvIWen47ZsXaEz3U3f2d1+KY0U+ZvnF1fSNsKir73Q==
   dependencies:
     babel-runtime "^6.26.0"
     d2 "~31.7"
     lodash "^4.17.10"
     material-ui "^0.20.0"
+    rxjs "^5.5.7"
 
-"@dhis2/d2-ui-org-unit-dialog@^6.3.0":
-  version "6.3.0"
-  resolved "https://registry.yarnpkg.com/@dhis2/d2-ui-org-unit-dialog/-/d2-ui-org-unit-dialog-6.3.0.tgz#6f12b73fab2ce0448b92267a19aa6a1e9c363c70"
-  integrity sha512-wgjs1Av9cQzpCThug8uVu5uc61dwcLpfiWcK7Vr046rsw4iH+iMaCk5FE5nIC06LZWsLkENzVEdxo6DYskuq6w==
+"@dhis2/d2-ui-org-unit-dialog@^7.0.0":
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/@dhis2/d2-ui-org-unit-dialog/-/d2-ui-org-unit-dialog-7.0.0.tgz#126480bca5d315ebb7de8714a9c8f454dd9179c1"
+  integrity sha512-MuwQjGReX6kRlok+Q+6Zemq1FTIvodYEYucbACFRA5/mToXGkLPsh+4PuZo+aeF4vN3/ajusct+Q1/OZT/9L6A==
   dependencies:
-    "@dhis2/d2-i18n" "^1.0.3"
-    "@dhis2/d2-ui-org-unit-tree" "6.3.0"
+    "@dhis2/d2-ui-org-unit-tree" "7.0.0"
     "@material-ui/core" "^3.3.1"
     "@material-ui/icons" "^3.0.1"
     prop-types "^15.5.10"
 
-"@dhis2/d2-ui-org-unit-tree@6.3.0":
-  version "6.3.0"
-  resolved "https://registry.yarnpkg.com/@dhis2/d2-ui-org-unit-tree/-/d2-ui-org-unit-tree-6.3.0.tgz#5c80074a38987f853383aa12f10ecd11127332ef"
-  integrity sha512-KzO+ZnyN6vQjogFnK4ZWW/fcha40D0g+Vjc6IVS5U1kBiHdpmqngo+6K6DqCaHRkl/7oUyOUkEvrzbWdnkodVA==
+"@dhis2/d2-ui-org-unit-tree@7.0.0":
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/@dhis2/d2-ui-org-unit-tree/-/d2-ui-org-unit-tree-7.0.0.tgz#d838810f9b8808ae4ea1333c27f11a1452ff0404"
+  integrity sha512-dpN0DP4P/hsUfOBmJ/sIHGGIJJHe+A7NvRtQNEChXFbW/vOBqK846smdj6rC49upxGi0fIRT78WbLvB4SPvdzQ==
   dependencies:
-    "@dhis2/d2-ui-core" "6.3.0"
+    "@dhis2/d2-ui-core" "7.0.0"
     "@material-ui/core" "^3.3.1"
     babel-runtime "^6.26.0"
     prop-types "^15.5.10"
