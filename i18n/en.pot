@@ -1,0 +1,120 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: i18next-conv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"POT-Creation-Date: 2020-04-24T18:04:35.285Z\n"
+"PO-Revision-Date: 2020-04-24T18:04:35.285Z\n"
+
+msgid "Data"
+msgstr ""
+
+msgid "Data Type"
+msgstr ""
+
+msgid "Detail"
+msgstr ""
+
+msgid "Search dimensions"
+msgstr ""
+
+msgid "Dimension recommended with selected data"
+msgstr ""
+
+msgid "Search"
+msgstr ""
+
+msgid "Selected Data"
+msgstr ""
+
+msgid "Deselect All"
+msgstr ""
+
+msgid "Select all"
+msgstr ""
+
+msgid "Organisation units"
+msgstr ""
+
+msgid "Period"
+msgstr ""
+
+msgid "Year"
+msgstr ""
+
+msgid "Period type"
+msgstr ""
+
+msgid "Reporting rate"
+msgstr ""
+
+msgid "Reporting rate on time"
+msgstr ""
+
+msgid "Actual reports"
+msgstr ""
+
+msgid "Actual reports on time"
+msgstr ""
+
+msgid "Expected reports"
+msgstr ""
+
+msgid "Program"
+msgstr ""
+
+msgid "Select a program"
+msgstr ""
+
+msgid "Indicators"
+msgstr ""
+
+msgid "Select indicator group"
+msgstr ""
+
+msgid "[ All groups ]"
+msgstr ""
+
+msgid "Data elements"
+msgstr ""
+
+msgid "Select data element group"
+msgstr ""
+
+msgid "[ All data elements ]"
+msgstr ""
+
+msgid "Totals"
+msgstr ""
+
+msgid "Details"
+msgstr ""
+
+msgid "Data sets"
+msgstr ""
+
+msgid "Select data sets"
+msgstr ""
+
+msgid "[ All metrics ]"
+msgstr ""
+
+msgid "Event data items"
+msgstr ""
+
+msgid "Program indicators"
+msgstr ""
+
+msgid "Organisation Unit"
+msgstr ""
+
+msgid "and"
+msgstr ""
+
+msgid "levels in"
+msgstr ""
+
+msgid "groups in"
+msgstr ""

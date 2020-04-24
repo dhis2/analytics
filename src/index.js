@@ -1,3 +1,4 @@
+import './locales'
 // Components
 
 export {
