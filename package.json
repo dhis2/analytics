@@ -2,7 +2,6 @@
     "name": "@dhis2/analytics",
     "version": "2.4.10-alpha.7",
     "main": "./build/index.js",
-    "sideEffects": false,
     "repository": "git@github.com:dhis2/analytics.git",
     "author": "Jennifer Jones Arnesen <jennifer@dhis2.org>",
     "license": "BSD-3-Clause",
@@ -77,6 +76,9 @@
         "react-beautiful-dnd": "^10.1.1",
         "styled-jsx": "^3.2.1"
     },
+    "sideEffects": [
+        "./src/locales/index.js"
+    ],
     "files": [
         "build"
     ]
