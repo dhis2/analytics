@@ -1,0 +1,216 @@
+# 
+# Translators:
+# Aprisa Chrysantina <aprisa.chrysantina@gmail.com>, 2020
+# phil_dhis2, 2020
+# Viktor Varland <viktor@dhis2.org>, 2020
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: i18next-conv\n"
+"POT-Creation-Date: 2020-04-09T19:57:21.474Z\n"
+"PO-Revision-Date: 2020-04-28 22:05+0000\n"
+"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2020\n"
+"Language-Team: Indonesian (https://www.transifex.com/hisp-uio/teams/100509/id/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: id\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "Data Type"
+msgstr "Tipe Data"
+
+msgid "Detail"
+msgstr "Rincian"
+
+msgid "Move to {{axisName}}"
+msgstr ""
+
+msgid "Add to {{axisName}}"
+msgstr ""
+
+msgid "Remove"
+msgstr "Hapus"
+
+msgid "Not available for {{visualizationType}}"
+msgstr ""
+
+msgid "Requires 2 or more data items"
+msgstr ""
+
+msgid "Only available when data is in Series"
+msgstr ""
+
+msgid "Remove Assigned Categories"
+msgstr ""
+
+msgid "Add Assigned Categories"
+msgstr ""
+
+msgid "Manage chart axes"
+msgstr ""
+
+msgid "Filter dimensions"
+msgstr ""
+
+msgid "Dimension recommended with selected data"
+msgstr "Dimensi yang direkomendasikan dengan data terpilih"
+
+msgid "Search"
+msgstr "Pencarian"
+
+msgid "Selected Data"
+msgstr "Data Terpilih"
+
+msgid "Deselect All"
+msgstr ""
+
+msgid "Select all"
+msgstr ""
+
+msgid "Series"
+msgstr "Seri"
+
+msgid "Category"
+msgstr "Kategori"
+
+msgid "Filter"
+msgstr "Saring"
+
+msgid "Columns"
+msgstr ""
+
+msgid "Rows"
+msgstr ""
+
+msgid "Reporting rate"
+msgstr "Tingkat pelaporan"
+
+msgid "Reporting rate on time"
+msgstr "Tingkat pelaporan tepat waktu"
+
+msgid "Actual reports"
+msgstr "Laporan sesungguhnya"
+
+msgid "Actual reports on time"
+msgstr "Laporan sesungguhnya yang tepat waktu"
+
+msgid "Expected reports"
+msgstr "Laporan yang diharapkan"
+
+msgid "Program"
+msgstr "Program"
+
+msgid "Select a program"
+msgstr "Pilih program"
+
+msgid "Indicators"
+msgstr "Indikator"
+
+msgid "Select indicator group"
+msgstr "Pilih grup indikator"
+
+msgid "[ All groups ]"
+msgstr "[ All groups ]"
+
+msgid "Data elements"
+msgstr "Data elemen"
+
+msgid "Select data element group"
+msgstr "Pilih grup data elemen"
+
+msgid "[ All data elements ]"
+msgstr "[ All data elements ]"
+
+msgid "Totals"
+msgstr "Total"
+
+msgid "Details"
+msgstr "Rincian"
+
+msgid "Data sets"
+msgstr "Data set"
+
+msgid "Select data sets"
+msgstr "Pilih data set"
+
+msgid "[ All metrics ]"
+msgstr "[ All metrics ]"
+
+msgid "Event data items"
+msgstr "Item data event"
+
+msgid "Program indicators"
+msgstr "Indikator program"
+
+msgid "{{dynamicOuNames}} and {{lastOuName}}"
+msgstr ""
+
+msgid "{{allDynamicOuNames}} levels"
+msgstr ""
+
+msgid "{{allDynamicOuNames}} groups"
+msgstr ""
+
+msgid "{{allDynamicOuNames}} levels in {{staticOuNames}}"
+msgstr ""
+
+msgid "{{allDynamicOuNames}} groups in {{staticOuNames}}"
+msgstr ""
+
+msgid "Data"
+msgstr "Data"
+
+msgid "Period"
+msgstr "Periode"
+
+msgid "Organisation Unit"
+msgstr "Unit Organisasi"
+
+msgid "Assigned Categories"
+msgstr ""
+
+msgid "Column"
+msgstr "Kolom"
+
+msgid "Stacked column"
+msgstr "Kolom tumpuk"
+
+msgid "Bar"
+msgstr "Bar"
+
+msgid "Stacked bar"
+msgstr "Bar tumpuk"
+
+msgid "Line"
+msgstr "Garis"
+
+msgid "Area"
+msgstr "Area"
+
+msgid "Pie"
+msgstr "Pie"
+
+msgid "Radar"
+msgstr "Radar"
+
+msgid "Gauge"
+msgstr "Meteran"
+
+msgid "Year over year (line)"
+msgstr "Tahun ke tahun (garis)"
+
+msgid "Year over year (column)"
+msgstr "Tahun ke tahun (kolom)"
+
+msgid "Single value"
+msgstr "Nilai tunggal"
+
+msgid "Pivot table"
+msgstr ""
+
+msgid "Target"
+msgstr ""
+
+msgid "Base"
+msgstr "Dasar"
