@@ -1,0 +1,128 @@
+# 
+# Translators:
+# phil_dhis2, 2020
+# Viktor Varland <viktor@dhis2.org>, 2020
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: i18next-conv\n"
+"POT-Creation-Date: 2020-04-24T18:04:35.285Z\n"
+"PO-Revision-Date: 2020-04-29 08:10+0000\n"
+"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2020\n"
+"Language-Team: Ukrainian (https://www.transifex.com/hisp-uio/teams/100509/uk/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: uk\n"
+"Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != 11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || (n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
+
+msgid "Data"
+msgstr "Дані"
+
+msgid "Data Type"
+msgstr ""
+
+msgid "Detail"
+msgstr ""
+
+msgid "Search dimensions"
+msgstr ""
+
+msgid "Dimension recommended with selected data"
+msgstr ""
+
+msgid "Search"
+msgstr "Пошук"
+
+msgid "Selected Data"
+msgstr ""
+
+msgid "Deselect All"
+msgstr ""
+
+msgid "Select all"
+msgstr "Вибрати усе"
+
+msgid "Organisation units"
+msgstr "Організаційні підрозділи"
+
+msgid "Period"
+msgstr "Період"
+
+msgid "Year"
+msgstr "Рік"
+
+msgid "Period type"
+msgstr ""
+
+msgid "Reporting rate"
+msgstr ""
+
+msgid "Reporting rate on time"
+msgstr ""
+
+msgid "Actual reports"
+msgstr ""
+
+msgid "Actual reports on time"
+msgstr ""
+
+msgid "Expected reports"
+msgstr ""
+
+msgid "Program"
+msgstr "Програма"
+
+msgid "Select a program"
+msgstr ""
+
+msgid "Indicators"
+msgstr "Показники"
+
+msgid "Select indicator group"
+msgstr "Обрати групу показників"
+
+msgid "[ All groups ]"
+msgstr ""
+
+msgid "Data elements"
+msgstr "Елементи даних"
+
+msgid "Select data element group"
+msgstr "Обрати групу елементів даних"
+
+msgid "[ All data elements ]"
+msgstr ""
+
+msgid "Totals"
+msgstr "Підсумки"
+
+msgid "Details"
+msgstr "Деталі"
+
+msgid "Data sets"
+msgstr "Набори даних"
+
+msgid "Select data sets"
+msgstr ""
+
+msgid "[ All metrics ]"
+msgstr ""
+
+msgid "Event data items"
+msgstr "Складові дані події"
+
+msgid "Program indicators"
+msgstr "Програмні показники"
+
+msgid "Organisation Unit"
+msgstr "Організаційний підрозділ"
+
+msgid "and"
+msgstr ""
+
+msgid "levels in"
+msgstr ""
+
+msgid "groups in"
+msgstr ""

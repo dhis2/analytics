@@ -1,0 +1,129 @@
+# 
+# Translators:
+# phil_dhis2, 2020
+# Viktor Varland <viktor@dhis2.org>, 2020
+# ericbp <ericbarredap@gmail.com>, 2020
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: i18next-conv\n"
+"POT-Creation-Date: 2020-04-24T18:04:35.285Z\n"
+"PO-Revision-Date: 2020-04-29 08:10+0000\n"
+"Last-Translator: ericbp <ericbarredap@gmail.com>, 2020\n"
+"Language-Team: Spanish (https://www.transifex.com/hisp-uio/teams/100509/es/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: es\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Data"
+msgstr "Datos"
+
+msgid "Data Type"
+msgstr ""
+
+msgid "Detail"
+msgstr ""
+
+msgid "Search dimensions"
+msgstr ""
+
+msgid "Dimension recommended with selected data"
+msgstr ""
+
+msgid "Search"
+msgstr "Buscar"
+
+msgid "Selected Data"
+msgstr ""
+
+msgid "Deselect All"
+msgstr ""
+
+msgid "Select all"
+msgstr "Seleccionar todos"
+
+msgid "Organisation units"
+msgstr "Unidades orgenizativas"
+
+msgid "Period"
+msgstr "Periodo"
+
+msgid "Year"
+msgstr "Año"
+
+msgid "Period type"
+msgstr "Tipo de periodo"
+
+msgid "Reporting rate"
+msgstr ""
+
+msgid "Reporting rate on time"
+msgstr ""
+
+msgid "Actual reports"
+msgstr ""
+
+msgid "Actual reports on time"
+msgstr ""
+
+msgid "Expected reports"
+msgstr ""
+
+msgid "Program"
+msgstr "Programa"
+
+msgid "Select a program"
+msgstr ""
+
+msgid "Indicators"
+msgstr "Indicadores"
+
+msgid "Select indicator group"
+msgstr "Elija un grupo de indicadores"
+
+msgid "[ All groups ]"
+msgstr ""
+
+msgid "Data elements"
+msgstr "Elementos de datos"
+
+msgid "Select data element group"
+msgstr "Seleccionar grupo de elementos de datos"
+
+msgid "[ All data elements ]"
+msgstr ""
+
+msgid "Totals"
+msgstr "Totales"
+
+msgid "Details"
+msgstr "Detalles"
+
+msgid "Data sets"
+msgstr "Sets de datos"
+
+msgid "Select data sets"
+msgstr ""
+
+msgid "[ All metrics ]"
+msgstr ""
+
+msgid "Event data items"
+msgstr "Datos de eventos"
+
+msgid "Program indicators"
+msgstr "Indicadores de programa"
+
+msgid "Organisation Unit"
+msgstr "Unidad Organizativa"
+
+msgid "and"
+msgstr ""
+
+msgid "levels in"
+msgstr ""
+
+msgid "groups in"
+msgstr ""

@@ -1,0 +1,128 @@
+# 
+# Translators:
+# phil_dhis2, 2020
+# Viktor Varland <viktor@dhis2.org>, 2020
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: i18next-conv\n"
+"POT-Creation-Date: 2020-04-24T18:04:35.285Z\n"
+"PO-Revision-Date: 2020-04-29 08:10+0000\n"
+"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2020\n"
+"Language-Team: Russian (https://www.transifex.com/hisp-uio/teams/100509/ru/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ru\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
+
+msgid "Data"
+msgstr "Данные"
+
+msgid "Data Type"
+msgstr ""
+
+msgid "Detail"
+msgstr ""
+
+msgid "Search dimensions"
+msgstr ""
+
+msgid "Dimension recommended with selected data"
+msgstr ""
+
+msgid "Search"
+msgstr "Поиск"
+
+msgid "Selected Data"
+msgstr ""
+
+msgid "Deselect All"
+msgstr ""
+
+msgid "Select all"
+msgstr "Выбрать все"
+
+msgid "Organisation units"
+msgstr "Организационные единицы"
+
+msgid "Period"
+msgstr "Период"
+
+msgid "Year"
+msgstr "Год"
+
+msgid "Period type"
+msgstr "Виды периода"
+
+msgid "Reporting rate"
+msgstr "Показатель отчетности"
+
+msgid "Reporting rate on time"
+msgstr "Показатель отчетности по времени"
+
+msgid "Actual reports"
+msgstr "Текущие отчеты"
+
+msgid "Actual reports on time"
+msgstr "Текущие отчеты по времени"
+
+msgid "Expected reports"
+msgstr "Ожидаемые отчеты"
+
+msgid "Program"
+msgstr "Program"
+
+msgid "Select a program"
+msgstr "Выбрать программу"
+
+msgid "Indicators"
+msgstr "Индикаторы"
+
+msgid "Select indicator group"
+msgstr "Выбрать группу индикаторов"
+
+msgid "[ All groups ]"
+msgstr "[Все группы]"
+
+msgid "Data elements"
+msgstr "Элементы данных"
+
+msgid "Select data element group"
+msgstr "Выберите группу элементов данных"
+
+msgid "[ All data elements ]"
+msgstr "[Все элементы данных]"
+
+msgid "Totals"
+msgstr "Итоги"
+
+msgid "Details"
+msgstr "Детали"
+
+msgid "Data sets"
+msgstr "Наборы данных"
+
+msgid "Select data sets"
+msgstr "Выбрать набор данных"
+
+msgid "[ All metrics ]"
+msgstr "[Все показатели]"
+
+msgid "Event data items"
+msgstr "Элементы данных событий"
+
+msgid "Program indicators"
+msgstr "Индикаторы программы"
+
+msgid "Organisation Unit"
+msgstr "Организация"
+
+msgid "and"
+msgstr ""
+
+msgid "levels in"
+msgstr ""
+
+msgid "groups in"
+msgstr ""
