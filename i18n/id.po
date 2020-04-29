@@ -1,0 +1,129 @@
+# 
+# Translators:
+# Aprisa Chrysantina <aprisa.chrysantina@gmail.com>, 2020
+# phil_dhis2, 2020
+# Viktor Varland <viktor@dhis2.org>, 2020
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: i18next-conv\n"
+"POT-Creation-Date: 2020-04-24T18:04:35.285Z\n"
+"PO-Revision-Date: 2020-04-29 08:10+0000\n"
+"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2020\n"
+"Language-Team: Indonesian (https://www.transifex.com/hisp-uio/teams/100509/id/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: id\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "Data"
+msgstr "Data"
+
+msgid "Data Type"
+msgstr "Tipe Data"
+
+msgid "Detail"
+msgstr "Rincian"
+
+msgid "Search dimensions"
+msgstr "Cari dimensi"
+
+msgid "Dimension recommended with selected data"
+msgstr "Dimensi yang direkomendasikan dengan data terpilih"
+
+msgid "Search"
+msgstr "Pencarian"
+
+msgid "Selected Data"
+msgstr "Data Terpilih"
+
+msgid "Deselect All"
+msgstr ""
+
+msgid "Select all"
+msgstr ""
+
+msgid "Organisation units"
+msgstr "Unit organisasi"
+
+msgid "Period"
+msgstr "Periode"
+
+msgid "Year"
+msgstr ""
+
+msgid "Period type"
+msgstr "tipe periode"
+
+msgid "Reporting rate"
+msgstr "Tingkat pelaporan"
+
+msgid "Reporting rate on time"
+msgstr "Tingkat pelaporan tepat waktu"
+
+msgid "Actual reports"
+msgstr "Laporan sesungguhnya"
+
+msgid "Actual reports on time"
+msgstr "Laporan sesungguhnya yang tepat waktu"
+
+msgid "Expected reports"
+msgstr "Laporan yang diharapkan"
+
+msgid "Program"
+msgstr "Program"
+
+msgid "Select a program"
+msgstr "Pilih program"
+
+msgid "Indicators"
+msgstr "Indikator"
+
+msgid "Select indicator group"
+msgstr "Pilih grup indikator"
+
+msgid "[ All groups ]"
+msgstr "[ All groups ]"
+
+msgid "Data elements"
+msgstr "Data elemen"
+
+msgid "Select data element group"
+msgstr "Pilih grup data elemen"
+
+msgid "[ All data elements ]"
+msgstr "[ All data elements ]"
+
+msgid "Totals"
+msgstr "Total"
+
+msgid "Details"
+msgstr "Rincian"
+
+msgid "Data sets"
+msgstr "Data set"
+
+msgid "Select data sets"
+msgstr "Pilih data set"
+
+msgid "[ All metrics ]"
+msgstr "[ All metrics ]"
+
+msgid "Event data items"
+msgstr "Item data event"
+
+msgid "Program indicators"
+msgstr "Indikator program"
+
+msgid "Organisation Unit"
+msgstr "Unit Organisasi"
+
+msgid "and"
+msgstr ""
+
+msgid "levels in"
+msgstr ""
+
+msgid "groups in"
+msgstr ""

@@ -1,0 +1,127 @@
+# 
+# Translators:
+# phil_dhis2, 2020
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: i18next-conv\n"
+"POT-Creation-Date: 2020-04-24T18:04:35.285Z\n"
+"PO-Revision-Date: 2020-04-29 08:10+0000\n"
+"Last-Translator: phil_dhis2, 2020\n"
+"Language-Team: Persian (Afghanistan) (https://www.transifex.com/hisp-uio/teams/100509/fa_AF/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fa_AF\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+msgid "Data"
+msgstr "دیتا"
+
+msgid "Data Type"
+msgstr ""
+
+msgid "Detail"
+msgstr ""
+
+msgid "Search dimensions"
+msgstr ""
+
+msgid "Dimension recommended with selected data"
+msgstr ""
+
+msgid "Search"
+msgstr "جستجو"
+
+msgid "Selected Data"
+msgstr ""
+
+msgid "Deselect All"
+msgstr ""
+
+msgid "Select all"
+msgstr "انتخاب همه"
+
+msgid "Organisation units"
+msgstr "واحد های سازمان"
+
+msgid "Period"
+msgstr "دوره"
+
+msgid "Year"
+msgstr "سال"
+
+msgid "Period type"
+msgstr "د مودې ډول"
+
+msgid "Reporting rate"
+msgstr ""
+
+msgid "Reporting rate on time"
+msgstr ""
+
+msgid "Actual reports"
+msgstr ""
+
+msgid "Actual reports on time"
+msgstr ""
+
+msgid "Expected reports"
+msgstr ""
+
+msgid "Program"
+msgstr "برنامه"
+
+msgid "Select a program"
+msgstr ""
+
+msgid "Indicators"
+msgstr "شاخص ها"
+
+msgid "Select indicator group"
+msgstr "انتخاب گروپ شاخص"
+
+msgid "[ All groups ]"
+msgstr ""
+
+msgid "Data elements"
+msgstr "دیتا ایلمنت ها"
+
+msgid "Select data element group"
+msgstr "انتخاب گروپ دیتا ایلمنت"
+
+msgid "[ All data elements ]"
+msgstr ""
+
+msgid "Totals"
+msgstr "مجموعه"
+
+msgid "Details"
+msgstr "جزئیات"
+
+msgid "Data sets"
+msgstr "دیتا سیت ها"
+
+msgid "Select data sets"
+msgstr ""
+
+msgid "[ All metrics ]"
+msgstr ""
+
+msgid "Event data items"
+msgstr "د پېښې د مالوماتو (ډاټا) موضوعات"
+
+msgid "Program indicators"
+msgstr "د پروګرام شاخصونه"
+
+msgid "Organisation Unit"
+msgstr "واحد سازمان"
+
+msgid "and"
+msgstr ""
+
+msgid "levels in"
+msgstr ""
+
+msgid "groups in"
+msgstr ""

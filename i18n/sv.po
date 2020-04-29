@@ -1,0 +1,128 @@
+# 
+# Translators:
+# phil_dhis2, 2020
+# Viktor Varland <viktor@dhis2.org>, 2020
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: i18next-conv\n"
+"POT-Creation-Date: 2020-04-24T18:04:35.285Z\n"
+"PO-Revision-Date: 2020-04-29 08:10+0000\n"
+"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2020\n"
+"Language-Team: Swedish (https://www.transifex.com/hisp-uio/teams/100509/sv/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: sv\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Data"
+msgstr "Data"
+
+msgid "Data Type"
+msgstr ""
+
+msgid "Detail"
+msgstr ""
+
+msgid "Search dimensions"
+msgstr ""
+
+msgid "Dimension recommended with selected data"
+msgstr ""
+
+msgid "Search"
+msgstr "Sök"
+
+msgid "Selected Data"
+msgstr ""
+
+msgid "Deselect All"
+msgstr ""
+
+msgid "Select all"
+msgstr "Välj alla"
+
+msgid "Organisation units"
+msgstr "Organisation enheter"
+
+msgid "Period"
+msgstr "Period"
+
+msgid "Year"
+msgstr "År"
+
+msgid "Period type"
+msgstr "Periodtyp"
+
+msgid "Reporting rate"
+msgstr ""
+
+msgid "Reporting rate on time"
+msgstr ""
+
+msgid "Actual reports"
+msgstr ""
+
+msgid "Actual reports on time"
+msgstr ""
+
+msgid "Expected reports"
+msgstr ""
+
+msgid "Program"
+msgstr "Program"
+
+msgid "Select a program"
+msgstr ""
+
+msgid "Indicators"
+msgstr "indikatorer"
+
+msgid "Select indicator group"
+msgstr ""
+
+msgid "[ All groups ]"
+msgstr ""
+
+msgid "Data elements"
+msgstr "dataelement"
+
+msgid "Select data element group"
+msgstr ""
+
+msgid "[ All data elements ]"
+msgstr ""
+
+msgid "Totals"
+msgstr "Totals"
+
+msgid "Details"
+msgstr "detaljer"
+
+msgid "Data sets"
+msgstr "dataset"
+
+msgid "Select data sets"
+msgstr ""
+
+msgid "[ All metrics ]"
+msgstr ""
+
+msgid "Event data items"
+msgstr "Händelsedataposter"
+
+msgid "Program indicators"
+msgstr "programindikatorer"
+
+msgid "Organisation Unit"
+msgstr "Organisationsenhet"
+
+msgid "and"
+msgstr ""
+
+msgid "levels in"
+msgstr ""
+
+msgid "groups in"
+msgstr ""

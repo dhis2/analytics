@@ -1,0 +1,128 @@
+# 
+# Translators:
+# Karoline Tufte Lien <karoline@dhis2.org>, 2020
+# Caroline Hesthagen Holen <carolinehholen@gmail.com>, 2020
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: i18next-conv\n"
+"POT-Creation-Date: 2020-04-24T18:04:35.285Z\n"
+"PO-Revision-Date: 2020-04-29 08:10+0000\n"
+"Last-Translator: Caroline Hesthagen Holen <carolinehholen@gmail.com>, 2020\n"
+"Language-Team: Norwegian Bokmål (https://www.transifex.com/hisp-uio/teams/100509/nb/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: nb\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Data"
+msgstr "Data"
+
+msgid "Data Type"
+msgstr "Datatype"
+
+msgid "Detail"
+msgstr "Detalj"
+
+msgid "Search dimensions"
+msgstr "Søkedimensjoner"
+
+msgid "Dimension recommended with selected data"
+msgstr "Dimensjon anbefalt med valgte data"
+
+msgid "Search"
+msgstr "Søk"
+
+msgid "Selected Data"
+msgstr "Valgt data"
+
+msgid "Deselect All"
+msgstr "Fjern valg"
+
+msgid "Select all"
+msgstr "Velg alt"
+
+msgid "Organisation units"
+msgstr "Organisasjonsenheter"
+
+msgid "Period"
+msgstr "Periode"
+
+msgid "Year"
+msgstr "År"
+
+msgid "Period type"
+msgstr "Periodetype"
+
+msgid "Reporting rate"
+msgstr "Rapporteringfrekvens"
+
+msgid "Reporting rate on time"
+msgstr "Rapporteringsfrekvens i tide"
+
+msgid "Actual reports"
+msgstr "Faktiske rapporter"
+
+msgid "Actual reports on time"
+msgstr "Faktiske rapporter i tide"
+
+msgid "Expected reports"
+msgstr "Forventede rapporter"
+
+msgid "Program"
+msgstr "Program"
+
+msgid "Select a program"
+msgstr "Velg et program"
+
+msgid "Indicators"
+msgstr "Indikatorer"
+
+msgid "Select indicator group"
+msgstr "Velg indikatorgruppe"
+
+msgid "[ All groups ]"
+msgstr "[ Alle grupper ]"
+
+msgid "Data elements"
+msgstr "Dataelementer"
+
+msgid "Select data element group"
+msgstr "Velg dataelementgrupper"
+
+msgid "[ All data elements ]"
+msgstr "[ Alle dataelementer ]"
+
+msgid "Totals"
+msgstr "Totalsummer"
+
+msgid "Details"
+msgstr "Detaljer"
+
+msgid "Data sets"
+msgstr "Datasett"
+
+msgid "Select data sets"
+msgstr "Velg datasett"
+
+msgid "[ All metrics ]"
+msgstr "[ Alle beregninger ]"
+
+msgid "Event data items"
+msgstr "Hendelsesdatapunkter"
+
+msgid "Program indicators"
+msgstr "Programindikatorer"
+
+msgid "Organisation Unit"
+msgstr "Organisasjonsenhet"
+
+msgid "and"
+msgstr ""
+
+msgid "levels in"
+msgstr ""
+
+msgid "groups in"
+msgstr ""

@@ -1,0 +1,128 @@
+# 
+# Translators:
+# phil_dhis2, 2020
+# Viktor Varland <viktor@dhis2.org>, 2020
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: i18next-conv\n"
+"POT-Creation-Date: 2020-04-24T18:04:35.285Z\n"
+"PO-Revision-Date: 2020-04-29 08:10+0000\n"
+"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2020\n"
+"Language-Team: Urdu (https://www.transifex.com/hisp-uio/teams/100509/ur/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ur\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Data"
+msgstr "ڈیٹا"
+
+msgid "Data Type"
+msgstr ""
+
+msgid "Detail"
+msgstr ""
+
+msgid "Search dimensions"
+msgstr ""
+
+msgid "Dimension recommended with selected data"
+msgstr ""
+
+msgid "Search"
+msgstr "تلاش کریں"
+
+msgid "Selected Data"
+msgstr ""
+
+msgid "Deselect All"
+msgstr ""
+
+msgid "Select all"
+msgstr "تمام کو چنو"
+
+msgid "Organisation units"
+msgstr "تنظیمی یونٹس"
+
+msgid "Period"
+msgstr "مدت"
+
+msgid "Year"
+msgstr "سال"
+
+msgid "Period type"
+msgstr "مدت کی قسم"
+
+msgid "Reporting rate"
+msgstr ""
+
+msgid "Reporting rate on time"
+msgstr ""
+
+msgid "Actual reports"
+msgstr "اصل رپورٹ"
+
+msgid "Actual reports on time"
+msgstr ""
+
+msgid "Expected reports"
+msgstr "متوقع رپورٹ"
+
+msgid "Program"
+msgstr "پروگرام"
+
+msgid "Select a program"
+msgstr ""
+
+msgid "Indicators"
+msgstr "اشارے"
+
+msgid "Select indicator group"
+msgstr "اشارے گروپ منتخب کریں"
+
+msgid "[ All groups ]"
+msgstr "[ تمام گروپ ]"
+
+msgid "Data elements"
+msgstr "ڈیٹا عنصر"
+
+msgid "Select data element group"
+msgstr "ڈیٹا عنصر گروپ منتخب کریں"
+
+msgid "[ All data elements ]"
+msgstr "[ تمام ڈیٹا عناصر ]"
+
+msgid "Totals"
+msgstr "مجموعی طور پر"
+
+msgid "Details"
+msgstr "تفصیلات"
+
+msgid "Data sets"
+msgstr "ڈیٹا سیٹس"
+
+msgid "Select data sets"
+msgstr "ڈیٹا سیٹ کا انتخاب کریں"
+
+msgid "[ All metrics ]"
+msgstr "[ تمام میٹرکس ]"
+
+msgid "Event data items"
+msgstr "واقعہ کے اعداد و شمار کی اشیاء"
+
+msgid "Program indicators"
+msgstr "پروگرام اشارے"
+
+msgid "Organisation Unit"
+msgstr ""
+
+msgid "and"
+msgstr ""
+
+msgid "levels in"
+msgstr ""
+
+msgid "groups in"
+msgstr ""
