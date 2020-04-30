@@ -1,14 +1,14 @@
 # 
 # Translators:
-# Karoline Tufte Lien <karoline@dhis2.org>, 2020
 # Caroline Hesthagen Holen <carolinehholen@gmail.com>, 2020
+# Karoline Tufte Lien <karoline@dhis2.org>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2020-04-09T19:57:21.474Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Caroline Hesthagen Holen <carolinehholen@gmail.com>, 2020\n"
+"Last-Translator: Karoline Tufte Lien <karoline@dhis2.org>, 2020\n"
 "Language-Team: Norwegian Bokmål (https://www.transifex.com/hisp-uio/teams/100509/nb/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -23,7 +23,7 @@ msgid "Detail"
 msgstr "Detalj"
 
 msgid "Move to {{axisName}}"
-msgstr ""
+msgstr "Flytt til {{axisName}}"
 
 msgid "Add to {{axisName}}"
 msgstr "Legg til {{axisName}}"
@@ -32,22 +32,22 @@ msgid "Remove"
 msgstr "Fjern"
 
 msgid "Not available for {{visualizationType}}"
-msgstr ""
+msgstr "Ikke tilgjengelig for {{visualizationType}}"
 
 msgid "Requires 2 or more data items"
-msgstr ""
+msgstr "Krever 2 eller flere datapunkter"
 
 msgid "Only available when data is in Series"
-msgstr ""
+msgstr "Bare tilgjengelig når data er i Serier"
 
 msgid "Remove Assigned Categories"
-msgstr ""
+msgstr "Fjern Tildelte Kategorier"
 
 msgid "Add Assigned Categories"
-msgstr ""
+msgstr "Legg tildelte kategorier"
 
 msgid "Manage chart axes"
-msgstr ""
+msgstr "Administrer diagramakser"
 
 msgid "Filter dimensions"
 msgstr "Filterdimensjoner"
@@ -77,10 +77,10 @@ msgid "Filter"
 msgstr "Filter"
 
 msgid "Columns"
-msgstr ""
+msgstr "Kolonner"
 
 msgid "Rows"
-msgstr ""
+msgstr "Rader"
 
 msgid "Reporting rate"
 msgstr "Rapporteringfrekvens"
@@ -143,19 +143,19 @@ msgid "Program indicators"
 msgstr "Programindikatorer"
 
 msgid "{{dynamicOuNames}} and {{lastOuName}}"
-msgstr ""
+msgstr "{{dynamicOuNames}} og {{lastOuName}}"
 
 msgid "{{allDynamicOuNames}} levels"
-msgstr ""
+msgstr "{{allDynamicOuNames}}-nivåer"
 
 msgid "{{allDynamicOuNames}} groups"
-msgstr ""
+msgstr "{{allDynamicOuNames}}-grupper"
 
 msgid "{{allDynamicOuNames}} levels in {{staticOuNames}}"
-msgstr ""
+msgstr "{{allDynamicOuNames}} nivåer i {{staticOuNames}}"
 
 msgid "{{allDynamicOuNames}} groups in {{staticOuNames}}"
-msgstr ""
+msgstr "{{allDynamicOuNames}}-grupper i {{staticOuNames}}"
 
 msgid "Data"
 msgstr "Data"
@@ -167,7 +167,7 @@ msgid "Organisation Unit"
 msgstr "Organisasjonsenhet"
 
 msgid "Assigned Categories"
-msgstr ""
+msgstr "Tildelte Kategorier"
 
 msgid "Column"
 msgstr "Stolpe"
