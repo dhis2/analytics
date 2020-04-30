@@ -57,19 +57,19 @@ msgid "Period type"
 msgstr "Loại thời điểm"
 
 msgid "Reporting rate"
-msgstr ""
+msgstr "Tỉ lệ báo cáo"
 
 msgid "Reporting rate on time"
-msgstr ""
+msgstr "Tỉ lệ báo cáo đúng hạn"
 
 msgid "Actual reports"
-msgstr ""
+msgstr "Báo cáo thực tế"
 
 msgid "Actual reports on time"
-msgstr ""
+msgstr "Báo cáo thực tế đúng hạn"
 
 msgid "Expected reports"
-msgstr ""
+msgstr "Báo cáo dự kiến"
 
 msgid "Program"
 msgstr "Chương trình"
