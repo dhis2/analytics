@@ -1,0 +1,128 @@
+# 
+# Translators:
+# easylin <lin_xd@126.com>, 2020
+# 晓东 林 <13981924470@126.com>, 2020
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: i18next-conv\n"
+"POT-Creation-Date: 2020-04-24T18:04:35.285Z\n"
+"PO-Revision-Date: 2020-04-29 08:10+0000\n"
+"Last-Translator: 晓东 林 <13981924470@126.com>, 2020\n"
+"Language-Team: Chinese (China) (https://www.transifex.com/hisp-uio/teams/100509/zh_CN/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "Data"
+msgstr "数据"
+
+msgid "Data Type"
+msgstr ""
+
+msgid "Detail"
+msgstr ""
+
+msgid "Search dimensions"
+msgstr ""
+
+msgid "Dimension recommended with selected data"
+msgstr ""
+
+msgid "Search"
+msgstr "搜索"
+
+msgid "Selected Data"
+msgstr ""
+
+msgid "Deselect All"
+msgstr ""
+
+msgid "Select all"
+msgstr "全选"
+
+msgid "Organisation units"
+msgstr "组织机构"
+
+msgid "Period"
+msgstr "周期"
+
+msgid "Year"
+msgstr "年"
+
+msgid "Period type"
+msgstr "周期类型"
+
+msgid "Reporting rate"
+msgstr "上报率"
+
+msgid "Reporting rate on time"
+msgstr "准时上报率"
+
+msgid "Actual reports"
+msgstr "实际上报"
+
+msgid "Actual reports on time"
+msgstr "实际准时上报"
+
+msgid "Expected reports"
+msgstr "预期上报"
+
+msgid "Program"
+msgstr "项目"
+
+msgid "Select a program"
+msgstr ""
+
+msgid "Indicators"
+msgstr "指标"
+
+msgid "Select indicator group"
+msgstr ""
+
+msgid "[ All groups ]"
+msgstr ""
+
+msgid "Data elements"
+msgstr "数据元"
+
+msgid "Select data element group"
+msgstr ""
+
+msgid "[ All data elements ]"
+msgstr ""
+
+msgid "Totals"
+msgstr "总共"
+
+msgid "Details"
+msgstr "详情"
+
+msgid "Data sets"
+msgstr "数据集"
+
+msgid "Select data sets"
+msgstr ""
+
+msgid "[ All metrics ]"
+msgstr ""
+
+msgid "Event data items"
+msgstr ""
+
+msgid "Program indicators"
+msgstr ""
+
+msgid "Organisation Unit"
+msgstr "组织机构"
+
+msgid "and"
+msgstr ""
+
+msgid "levels in"
+msgstr ""
+
+msgid "groups in"
+msgstr ""
