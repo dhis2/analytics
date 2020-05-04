@@ -34,10 +34,11 @@ export class DimensionsPanel extends Component {
             <div style={{ ...styles.divContainer, ...style }}>
                 <Filter
                     style={styles.textField}
-                    placeholder={i18n.t('Filter dimensions')}
+                    placeholder={i18n.t('Filter dimensions 123')}
                     text={this.state.filterText}
                     onChange={this.onFilterTextChange}
                     onClear={this.onClearFilter}
+                    type="search"
                 />
                 <DimensionList
                     dimensions={dimensions}
