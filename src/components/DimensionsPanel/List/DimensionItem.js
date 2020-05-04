@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import i18n from '@dhis2/d2-i18n'
 
 import DimensionLabel from './DimensionLabel'
 import RecommendedIcon from './RecommendedIcon'
@@ -46,8 +45,7 @@ export class DimensionItem extends Component {
                 draggable={!isDeactivated}
                 onDragStart={onDragStart}
             >
-                {/* is it needed here or displayName should be used instead?! */}
-                {i18n.t(name)}
+                {name}
             </span>
         )
     }
