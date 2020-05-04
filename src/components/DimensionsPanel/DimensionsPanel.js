@@ -34,7 +34,7 @@ export class DimensionsPanel extends Component {
             <div style={{ ...styles.divContainer, ...style }}>
                 <Filter
                     style={styles.textField}
-                    placeholder={i18n.t('Filter dimensions 123')}
+                    placeholder={i18n.t('Filter dimensions')}
                     text={this.state.filterText}
                     onChange={this.onFilterTextChange}
                     onClear={this.onClearFilter}
