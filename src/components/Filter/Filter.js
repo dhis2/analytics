@@ -14,10 +14,14 @@ export const Filter = ({ text, onChange, onClear, placeholder, type }) => (
 
 Filter.propTypes = {
     placeholder: PropTypes.string.isRequired,
-    text: PropTypes.string.isRequired,
+    text: PropTypes.string,
     type: PropTypes.string.isRequired,
     onChange: PropTypes.func.isRequired,
     onClear: PropTypes.func.isRequired,
+}
+
+Filter.defaultProps = {
+    type: 'text',
 }
 
 export default Filter
