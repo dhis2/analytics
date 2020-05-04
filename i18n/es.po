@@ -120,7 +120,7 @@ msgid "Organisation Unit"
 msgstr "Unidad Organizativa"
 
 msgid "and"
-msgstr ""
+msgstr "y"
 
 msgid "levels in"
 msgstr ""

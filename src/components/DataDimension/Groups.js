@@ -23,7 +23,7 @@ const Groups = props => {
 
         return optionItems.map(item => (
             <MenuItem key={item.id} value={item.id}>
-                {item.name}
+                {item.name()}
             </MenuItem>
         ))
     }
@@ -38,7 +38,7 @@ const Groups = props => {
         <div style={styles.container}>
             <div style={styles.groupContainer}>
                 <InputLabel style={styles.titleText}>
-                    {dataTypes[props.dataType].groupLabel}
+                    {dataTypes[props.dataType].groupLabel()}
                 </InputLabel>
                 <Select
                     value={props.groupId}
