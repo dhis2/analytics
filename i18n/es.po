@@ -19,16 +19,16 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "Data Type"
-msgstr ""
+msgstr "Tipo de datos"
 
 msgid "Detail"
-msgstr ""
+msgstr "Detalle"
 
 msgid "Move to {{axisName}}"
-msgstr ""
+msgstr "Mover a {{Nombredeleje}}"
 
 msgid "Add to {{axisName}}"
-msgstr ""
+msgstr "Añadir a {{Nombredeleje}}"
 
 msgid "Remove"
 msgstr "Eliminar"

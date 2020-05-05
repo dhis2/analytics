@@ -18,52 +18,52 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "Data Type"
-msgstr ""
+msgstr "Tipo de dados"
 
 msgid "Detail"
-msgstr ""
+msgstr "Detalhe"
 
 msgid "Move to {{axisName}}"
-msgstr ""
+msgstr "Mover para {{Nomedoeixo}}"
 
 msgid "Add to {{axisName}}"
-msgstr ""
+msgstr "Adicionar à {{Nomedoeixo}}"
 
 msgid "Remove"
 msgstr "Remover"
 
 msgid "Not available for {{visualizationType}}"
-msgstr ""
+msgstr "Não disponível para {{Tipodevisualização}}"
 
 msgid "Requires 2 or more data items"
-msgstr ""
+msgstr "Requer 2 ou mais itens de dados"
 
 msgid "Only available when data is in Series"
-msgstr ""
+msgstr "Disponível apenas quando os dados estão em série"
 
 msgid "Remove Assigned Categories"
-msgstr ""
+msgstr "Remover categorias atribuídas"
 
 msgid "Add Assigned Categories"
-msgstr ""
+msgstr "Adicionar categorias atribuídas"
 
 msgid "Manage chart axes"
-msgstr ""
+msgstr "Gerenciar eixos do gráfico"
 
 msgid "Filter dimensions"
-msgstr ""
+msgstr "Dimensões do filtro"
 
 msgid "Dimension recommended with selected data"
-msgstr ""
+msgstr "Dimensão recomendada com dados selecionados"
 
 msgid "Search"
 msgstr "Pesquisar"
 
 msgid "Selected Data"
-msgstr ""
+msgstr "Dados Selecionados"
 
 msgid "Deselect All"
-msgstr ""
+msgstr "Desmarcar todos"
 
 msgid "Select all"
 msgstr "Selec. todos"
@@ -78,31 +78,31 @@ msgid "Filter"
 msgstr "Filtro"
 
 msgid "Columns"
-msgstr ""
+msgstr "Colunas"
 
 msgid "Rows"
-msgstr ""
+msgstr "Linhas"
 
 msgid "Reporting rate"
-msgstr ""
+msgstr "Taxa de relatórios"
 
 msgid "Reporting rate on time"
-msgstr ""
+msgstr "Taxa de relatórios no prazo"
 
 msgid "Actual reports"
-msgstr ""
+msgstr "Relatórios reais"
 
 msgid "Actual reports on time"
-msgstr ""
+msgstr "Relatórios reais dentro do prazo"
 
 msgid "Expected reports"
-msgstr ""
+msgstr "Relatórios esperados"
 
 msgid "Program"
 msgstr "Programa"
 
 msgid "Select a program"
-msgstr ""
+msgstr "Selecione um programa"
 
 msgid "Indicators"
 msgstr "Indicadores"
@@ -111,7 +111,7 @@ msgid "Select indicator group"
 msgstr "Seleccionar grupo de indicador"
 
 msgid "[ All groups ]"
-msgstr ""
+msgstr "[ Todos os grupos ]"
 
 msgid "Data elements"
 msgstr "Elementos de Dados"
@@ -120,7 +120,7 @@ msgid "Select data element group"
 msgstr "Seleccionar grupo de elementos de dados"
 
 msgid "[ All data elements ]"
-msgstr ""
+msgstr "[ Todos os elementos de dados ]"
 
 msgid "Totals"
 msgstr "Totais"
@@ -132,10 +132,10 @@ msgid "Data sets"
 msgstr "Agregação de Dados"
 
 msgid "Select data sets"
-msgstr ""
+msgstr "Selecionar conjuntos de dados"
 
 msgid "[ All metrics ]"
-msgstr ""
+msgstr "[ Todas as métricas ]"
 
 msgid "Event data items"
 msgstr "Itens de dados do evento"
@@ -144,19 +144,19 @@ msgid "Program indicators"
 msgstr "Indicador do programa"
 
 msgid "{{dynamicOuNames}} and {{lastOuName}}"
-msgstr ""
+msgstr "{{nomesdinâmicosOu}} e {{últimoNomeOu}}"
 
 msgid "{{allDynamicOuNames}} levels"
-msgstr ""
+msgstr "{{tudoDynamicOuNomes}} níveis"
 
 msgid "{{allDynamicOuNames}} groups"
-msgstr ""
+msgstr "{{tudoDynamicOuNomes}} grupos"
 
 msgid "{{allDynamicOuNames}} levels in {{staticOuNames}}"
-msgstr ""
+msgstr "{{tudoDynamicOuNomes}} níveis em {{NomesestáticosOu}}"
 
 msgid "{{allDynamicOuNames}} groups in {{staticOuNames}}"
-msgstr ""
+msgstr "{{tudoDynamicOuNomes}} grupos em {{NomesestáticosOu}}"
 
 msgid "Data"
 msgstr "Dados"
@@ -168,7 +168,7 @@ msgid "Organisation Unit"
 msgstr "Unidade organizacional"
 
 msgid "Assigned Categories"
-msgstr ""
+msgstr "Categorias atribuídas"
 
 msgid "Column"
 msgstr "Coluna"
@@ -213,4 +213,4 @@ msgid "Target"
 msgstr "Meta"
 
 msgid "Base"
-msgstr ""
+msgstr "Base"
