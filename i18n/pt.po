@@ -2,13 +2,14 @@
 # Translators:
 # phil_dhis2, 2020
 # Viktor Varland <viktor@dhis2.org>, 2020
+# Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2020-04-24T18:04:35.285Z\n"
 "PO-Revision-Date: 2020-04-29 08:10+0000\n"
-"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2020\n"
+"Last-Translator: Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2020\n"
 "Language-Team: Portuguese (https://www.transifex.com/hisp-uio/teams/100509/pt/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,25 +21,25 @@ msgid "Data"
 msgstr "Dados"
 
 msgid "Data Type"
-msgstr ""
+msgstr "Tipo de dados"
 
 msgid "Detail"
-msgstr ""
+msgstr "Detalhe"
 
 msgid "Search dimensions"
 msgstr ""
 
 msgid "Dimension recommended with selected data"
-msgstr ""
+msgstr "Dimensão recomendada com dados selecionados"
 
 msgid "Search"
 msgstr "Pesquisar"
 
 msgid "Selected Data"
-msgstr ""
+msgstr "Dados Selecionados"
 
 msgid "Deselect All"
-msgstr ""
+msgstr "Desmarcar todos"
 
 msgid "Select all"
 msgstr "Selec. todos"
@@ -56,25 +57,25 @@ msgid "Period type"
 msgstr "Tipo de periodo"
 
 msgid "Reporting rate"
-msgstr ""
+msgstr "Taxa de relatórios"
 
 msgid "Reporting rate on time"
-msgstr ""
+msgstr "Taxa de relatórios no prazo"
 
 msgid "Actual reports"
-msgstr ""
+msgstr "Relatórios reais"
 
 msgid "Actual reports on time"
-msgstr ""
+msgstr "Relatórios reais dentro do prazo"
 
 msgid "Expected reports"
-msgstr ""
+msgstr "Relatórios esperados"
 
 msgid "Program"
 msgstr "Programa"
 
 msgid "Select a program"
-msgstr ""
+msgstr "Selecione um programa"
 
 msgid "Indicators"
 msgstr "Indicadores"
@@ -83,7 +84,7 @@ msgid "Select indicator group"
 msgstr "Seleccionar grupo de indicador"
 
 msgid "[ All groups ]"
-msgstr ""
+msgstr "[ Todos os grupos ]"
 
 msgid "Data elements"
 msgstr "Elementos de Dados"
@@ -92,7 +93,7 @@ msgid "Select data element group"
 msgstr "Seleccionar grupo de elementos de dados"
 
 msgid "[ All data elements ]"
-msgstr ""
+msgstr "[ Todos os elementos de dados ]"
 
 msgid "Totals"
 msgstr "Totais"
@@ -104,10 +105,10 @@ msgid "Data sets"
 msgstr "Agregação de Dados"
 
 msgid "Select data sets"
-msgstr ""
+msgstr "Selecionar conjuntos de dados"
 
 msgid "[ All metrics ]"
-msgstr ""
+msgstr "[ Todas as métricas ]"
 
 msgid "Event data items"
 msgstr "Itens de dados do evento"
