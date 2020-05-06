@@ -89,7 +89,6 @@ export class DataDimension extends Component {
     }
 
     onDataTypeChange = dataType => {
-        console.log('onDataTypeChange', dataType)
         if (dataType !== this.state.dataType) {
             const filter = Object.assign({}, this.state.filter, {
                 [this.state.dataType]: {
