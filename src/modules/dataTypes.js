@@ -23,11 +23,10 @@ const DATA_SETS = 'dataSets'
 const EVENT_DATA_ITEMS = 'eventDataItems'
 const PROGRAM_INDICATORS = 'programIndicators'
 
-const TOTALS = 'totals'
-const DETAIL = 'detail'
+export const TOTALS = 'totals'
+export const DETAIL = 'detail'
 
-const programText = () => i18n.t('Program')
-const selectProgramText = () => i18n.t('Select a program')
+const getProgramText = () => i18n.t('Program')
 
 export const dataTypes = {
     [INDICATORS]: {
@@ -45,13 +44,7 @@ export const dataTypes = {
             id: ALL_ID,
             name: () => i18n.t('[ All data elements ]'),
         },
-        groupDetail: {
-            alternatives: {
-                [TOTALS]: () => i18n.t('Totals'),
-                [DETAIL]: () => i18n.t('Details'),
-            },
-            default: TOTALS,
-        },
+        groupDetail: { default: TOTALS },
     },
     [DATA_SETS]: {
         id: DATA_SETS,
@@ -65,16 +58,16 @@ export const dataTypes = {
     [EVENT_DATA_ITEMS]: {
         id: EVENT_DATA_ITEMS,
         name: () => i18n.t('Event data items'),
-        groupLabel: programText,
-        placeholder: () => <span>{selectProgramText}</span>,
+        groupLabel: getProgramText,
+        placeholder: () => <span>{i18n.t('Select a program')}</span>,
         defaultGroup: null,
         groupDetail: false,
     },
     [PROGRAM_INDICATORS]: {
         id: PROGRAM_INDICATORS,
         name: () => i18n.t('Program indicators'),
-        groupLabel: programText,
-        placeholder: () => <span>{selectProgramText}</span>,
+        groupLabel: getProgramText,
+        placeholder: () => <span>{i18n.t('Select a program')}</span>,
         defaultGroup: null,
         groupDetail: false,
     },
@@ -97,23 +90,24 @@ export const DEFAULT_DATATYPE_ID = INDICATORS
 const getReportingRates = (contents, groupSetId) => {
     let dataSets = []
 
-    const reportingRateIndex = DATA_SETS_CONSTANTS.find(
-        item => item.id === groupSetId
-    )
+    if (groupSetId === ALL_ID) {
+        DATA_SETS_CONSTANTS.forEach(reportingRate => {
+            dataSets = [
+                ...dataSets,
+                ...contents.map(dataSet =>
+                    concatReportingRate(dataSet, reportingRate)
+                ),
+            ]
+        })
+    } else {
+        const reportingRateIndex = DATA_SETS_CONSTANTS.find(
+            item => item.id === groupSetId
+        )
 
-    groupSetId === ALL_ID
-        ? DATA_SETS_CONSTANTS.forEach(
-              reportingRate =>
-                  (dataSets = [
-                      ...dataSets,
-                      ...contents.map(dataSet =>
-                          concatReportingRate(dataSet, reportingRate)
-                      ),
-                  ])
-          )
-        : (dataSets = contents.map(dataSet =>
-              concatReportingRate(dataSet, reportingRateIndex)
-          ))
+        dataSets = contents.map(dataSet =>
+            concatReportingRate(dataSet, reportingRateIndex)
+        )
+    }
 
     return dataSets
 }
@@ -121,6 +115,6 @@ const getReportingRates = (contents, groupSetId) => {
 const concatReportingRate = (dataSet, reportingRate) => {
     return {
         id: `${dataSet.id}.${reportingRate.id}`,
-        name: `${dataSet.name} (${reportingRate.name})`,
+        name: `${dataSet.name} (${reportingRate.name()})`,
     }
 }

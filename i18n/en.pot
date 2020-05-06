@@ -5,13 +5,19 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2020-04-24T18:04:35.285Z\n"
-"PO-Revision-Date: 2020-04-24T18:04:35.285Z\n"
+"POT-Creation-Date: 2020-05-06T20:00:06.836Z\n"
+"PO-Revision-Date: 2020-05-06T20:00:06.836Z\n"
 
 msgid "Data"
 msgstr ""
 
 msgid "Data Type"
+msgstr ""
+
+msgid "Totals"
+msgstr ""
+
+msgid "Details"
 msgstr ""
 
 msgid "Detail"
@@ -65,9 +71,6 @@ msgstr ""
 msgid "Program"
 msgstr ""
 
-msgid "Select a program"
-msgstr ""
-
 msgid "Indicators"
 msgstr ""
 
@@ -86,12 +89,6 @@ msgstr ""
 msgid "[ All data elements ]"
 msgstr ""
 
-msgid "Totals"
-msgstr ""
-
-msgid "Details"
-msgstr ""
-
 msgid "Data sets"
 msgstr ""
 
@@ -102,6 +99,9 @@ msgid "[ All metrics ]"
 msgstr ""
 
 msgid "Event data items"
+msgstr ""
+
+msgid "Select a program"
 msgstr ""
 
 msgid "Program indicators"

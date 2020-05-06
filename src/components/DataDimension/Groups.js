@@ -14,16 +14,17 @@ const Groups = props => {
     }
 
     const renderDropDownItems = () => {
-        const defaultGroup = dataTypes[props.dataType].defaultGroup
         let optionItems = props.groups
 
-        if (defaultGroup) {
+        if (dataTypes[props.dataType].defaultGroup) {
+            const { id, name } = dataTypes[props.dataType].defaultGroup
+            const defaultGroup = { id, name: name() }
             optionItems = [defaultGroup, ...optionItems]
         }
 
         return optionItems.map(item => (
             <MenuItem key={item.id} value={item.id}>
-                {item.name()}
+                {item.name}
             </MenuItem>
         ))
     }
@@ -63,7 +64,6 @@ const Groups = props => {
                 <Detail
                     value={props.detailValue}
                     onDetailChange={props.onDetailChange}
-                    detailAlternatives={groupDetail.alternatives}
                 />
             )}
         </div>
