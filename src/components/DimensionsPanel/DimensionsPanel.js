@@ -38,6 +38,7 @@ export class DimensionsPanel extends Component {
                     text={this.state.filterText}
                     onChange={this.onFilterTextChange}
                     onClear={this.onClearFilter}
+                    type="search"
                 />
                 <DimensionList
                     dimensions={dimensions}
