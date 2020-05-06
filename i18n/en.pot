@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2020-05-06T20:00:06.836Z\n"
-"PO-Revision-Date: 2020-05-06T20:00:06.836Z\n"
+"POT-Creation-Date: 2020-05-06T21:06:53.223Z\n"
+"PO-Revision-Date: 2020-05-06T21:06:53.223Z\n"
 
 msgid "Data"
 msgstr ""
@@ -110,11 +110,17 @@ msgstr ""
 msgid "Organisation Unit"
 msgstr ""
 
-msgid "and"
+msgid "{{dynamicOuNames}} and {{lastOuName}}"
 msgstr ""
 
-msgid "levels in"
+msgid "{{allDynamicOuNames}} levels"
 msgstr ""
 
-msgid "groups in"
+msgid "{{allDynamicOuNames}} groups"
+msgstr ""
+
+msgid "{{allDynamicOuNames}} levels in {{staticOuNames}}"
+msgstr ""
+
+msgid "{{allDynamicOuNames}} groups in {{staticOuNames}}"
 msgstr ""
