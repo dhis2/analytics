@@ -1,3 +1,10 @@
+## [4.3.28](https://github.com/dhis2/analytics/compare/v4.3.27...v4.3.28) (2020-05-06)
+
+
+### Bug Fixes
+
+* dimension panel search field is missing the 'x' to clear (DHIS2-8790) ([#408](https://github.com/dhis2/analytics/issues/408)) ([3fb9a06](https://github.com/dhis2/analytics/commit/3fb9a0668455244c7cf24f319553d505643d043f))
+
 ## [4.3.27](https://github.com/dhis2/analytics/compare/v4.3.26...v4.3.27) (2020-04-15)
 
 
