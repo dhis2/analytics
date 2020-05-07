@@ -1276,6 +1276,17 @@
     material-ui "^0.20.0"
     rxjs "^5.5.7"
 
+"@dhis2/d2-ui-core@7.0.1":
+  version "7.0.1"
+  resolved "https://registry.yarnpkg.com/@dhis2/d2-ui-core/-/d2-ui-core-7.0.1.tgz#6325f3c41fc19a6586222e0cbb7a58cd46c1757a"
+  integrity sha512-TAcFGbNInlwfpQvucCB9UQCKSqvH7AdU9ByZg8kUbH9+/twnl5BqBK2KiGYJ6cpVkfgU4bb9DNeyt1K04NupLw==
+  dependencies:
+    babel-runtime "^6.26.0"
+    d2 "~31.7"
+    lodash "^4.17.10"
+    material-ui "^0.20.0"
+    rxjs "^5.5.7"
+
 "@dhis2/d2-ui-org-unit-dialog@^6.5.9":
   version "6.5.10"
   resolved "https://registry.yarnpkg.com/@dhis2/d2-ui-org-unit-dialog/-/d2-ui-org-unit-dialog-6.5.10.tgz#88c079870cc50d45a25886cdd791f445b3959f26"
@@ -1287,12 +1298,32 @@
     "@material-ui/icons" "^3.0.1"
     prop-types "^15.5.10"
 
+"@dhis2/d2-ui-org-unit-dialog@^7.0.1":
+  version "7.0.1"
+  resolved "https://registry.yarnpkg.com/@dhis2/d2-ui-org-unit-dialog/-/d2-ui-org-unit-dialog-7.0.1.tgz#feef30dfd810c074334c4f255f80550fd2bd816d"
+  integrity sha512-HH3qGMx0JukcaeJDZJM3T2MNIxvOB3XY+TWbCSD9reAqsxLz4+XxYlibhUBBN2j90CSttf726xdkBBc+3afOLQ==
+  dependencies:
+    "@dhis2/d2-ui-org-unit-tree" "7.0.1"
+    "@material-ui/core" "^3.3.1"
+    "@material-ui/icons" "^3.0.1"
+    prop-types "^15.5.10"
+
 "@dhis2/d2-ui-org-unit-tree@6.5.10":
   version "6.5.10"
   resolved "https://registry.yarnpkg.com/@dhis2/d2-ui-org-unit-tree/-/d2-ui-org-unit-tree-6.5.10.tgz#df25a6cd872b1aab915e470594dc5888a8e04647"
   integrity sha512-pqdfMVL2YCuxxzACLVBkdz/6M+CHV8CYzx/u5cEpDF/CIPgU9EGThJfTFH59h7am8QPa5fSd1lMVE1MhpN51Ig==
   dependencies:
     "@dhis2/d2-ui-core" "6.5.10"
+    "@material-ui/core" "^3.3.1"
+    babel-runtime "^6.26.0"
+    prop-types "^15.5.10"
+
+"@dhis2/d2-ui-org-unit-tree@7.0.1":
+  version "7.0.1"
+  resolved "https://registry.yarnpkg.com/@dhis2/d2-ui-org-unit-tree/-/d2-ui-org-unit-tree-7.0.1.tgz#97c0b1b60fe92bc4d3b6f775597dfae71a31963f"
+  integrity sha512-5anF/bjJZqfeAyHLnpdJUi34qPwXHms8BTSsL49HmNadT9GrUW8oKRvQXNw3J4pZPVjEMeCIWOVivbhvJHzE9w==
+  dependencies:
+    "@dhis2/d2-ui-core" "7.0.1"
     "@material-ui/core" "^3.3.1"
     babel-runtime "^6.26.0"
     prop-types "^15.5.10"
