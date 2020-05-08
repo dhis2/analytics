@@ -2,10 +2,12 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
 import PeriodTypeFilter from './PeriodTypeFilter'
-import RelativePeriodsGenerator from './modules/RelativePeriodsGenerator'
+import RelativePeriodsGenerator, {
+    MONTHS,
+} from './modules/RelativePeriodsGenerator'
 
 export const defaultState = {
-    periodType: 'Months',
+    periodType: MONTHS,
 }
 
 class RelativePeriods extends Component {

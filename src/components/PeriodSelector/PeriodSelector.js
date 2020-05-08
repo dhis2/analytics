@@ -109,8 +109,16 @@ class PeriodSelector extends Component {
             )
         }
 
+        const unselectedItems = this.state.offeredPeriods.map(
+            ({ id, idx, name }) => ({
+                id,
+                idx,
+                name: name(),
+            })
+        )
+
         const unselected = {
-            items: this.state.offeredPeriods,
+            items: unselectedItems,
             onSelect: this.onSelectPeriods,
             filterText: '',
         }

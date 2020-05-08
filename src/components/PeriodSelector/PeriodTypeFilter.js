@@ -17,9 +17,9 @@ const PeriodTypeFilter = ({ options, onChange, value }) => {
                 inputProps={{ name: 'periodType', id: 'period-type' }}
                 disableUnderline
             >
-                {options.map(option => (
-                    <MenuItem value={option} key={option}>
-                        {option}
+                {Object.entries(options).map(([key, val]) => (
+                    <MenuItem value={key} key={key}>
+                        {val.name()}
                     </MenuItem>
                 ))}
             </Select>
@@ -28,7 +28,7 @@ const PeriodTypeFilter = ({ options, onChange, value }) => {
 }
 
 PeriodTypeFilter.propTypes = {
-    options: PropTypes.array.isRequired,
+    options: PropTypes.object.isRequired,
     value: PropTypes.string,
     onChange: PropTypes.func,
 }

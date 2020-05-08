@@ -11,10 +11,10 @@ import ArrowUpIcon from '@material-ui/icons/KeyboardArrowUp'
 
 import i18n from '@dhis2/d2-i18n'
 import PeriodTypeFilter from './PeriodTypeFilter'
-import FixedPeriodsGenerator from './modules/FixedPeriodsGenerator'
+import FixedPeriodsGenerator, { MONTHLY } from './modules/FixedPeriodsGenerator'
 
 export const defaultState = {
-    periodType: 'Monthly',
+    periodType: MONTHLY,
     year: new Date().getFullYear(),
     yearsOffset: 0,
     yearSelectElement: null,
