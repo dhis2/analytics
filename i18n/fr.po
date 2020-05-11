@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-04-24T18:04:35.285Z\n"
+"POT-Creation-Date: 2020-05-06T21:15:21.276Z\n"
 "PO-Revision-Date: 2020-04-29 08:10+0000\n"
 "Last-Translator: Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2020\n"
 "Language-Team: French (https://www.transifex.com/hisp-uio/teams/100509/fr/)\n"
@@ -23,6 +23,12 @@ msgstr "Données"
 
 msgid "Data Type"
 msgstr "Type de données"
+
+msgid "Totals"
+msgstr "Totaux"
+
+msgid "Details"
+msgstr "Details"
 
 msgid "Detail"
 msgstr "Détail"
@@ -54,6 +60,12 @@ msgstr "Période"
 msgid "Year"
 msgstr "Année"
 
+msgid "Relative periods"
+msgstr ""
+
+msgid "Fixed periods"
+msgstr ""
+
 msgid "Period type"
 msgstr "Type de période"
 
@@ -75,9 +87,6 @@ msgstr "Rapports attendus"
 msgid "Program"
 msgstr "Programme"
 
-msgid "Select a program"
-msgstr "Sélectionnez un programme"
-
 msgid "Indicators"
 msgstr "Indicateurs"
 
@@ -96,12 +105,6 @@ msgstr "Sélectionner groupe d'éléments de données"
 msgid "[ All data elements ]"
 msgstr "[ Tous les éléments de données ]"
 
-msgid "Totals"
-msgstr "Totaux"
-
-msgid "Details"
-msgstr "Details"
-
 msgid "Data sets"
 msgstr "Ensembles de données"
 
@@ -114,17 +117,26 @@ msgstr "[ Toutes les métriques ]"
 msgid "Event data items"
 msgstr "Eléments de données évènement"
 
+msgid "Select a program"
+msgstr "Sélectionnez un programme"
+
 msgid "Program indicators"
 msgstr "Program indicators"
 
 msgid "Organisation Unit"
 msgstr "Unité d'organisation"
 
-msgid "and"
+msgid "{{dynamicOuNames}} and {{lastOuName}}"
 msgstr ""
 
-msgid "levels in"
+msgid "{{allDynamicOuNames}} levels"
 msgstr ""
 
-msgid "groups in"
+msgid "{{allDynamicOuNames}} groups"
+msgstr ""
+
+msgid "{{allDynamicOuNames}} levels in {{staticOuNames}}"
+msgstr ""
+
+msgid "{{allDynamicOuNames}} groups in {{staticOuNames}}"
 msgstr ""

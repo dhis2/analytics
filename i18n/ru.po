@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-04-24T18:04:35.285Z\n"
+"POT-Creation-Date: 2020-05-06T21:15:21.276Z\n"
 "PO-Revision-Date: 2020-04-29 08:10+0000\n"
 "Last-Translator: Viktor Varland <viktor@dhis2.org>, 2020\n"
 "Language-Team: Russian (https://www.transifex.com/hisp-uio/teams/100509/ru/)\n"
@@ -21,6 +21,12 @@ msgstr "Данные"
 
 msgid "Data Type"
 msgstr ""
+
+msgid "Totals"
+msgstr "Итоги"
+
+msgid "Details"
+msgstr "Детали"
 
 msgid "Detail"
 msgstr ""
@@ -52,6 +58,12 @@ msgstr "Период"
 msgid "Year"
 msgstr "Год"
 
+msgid "Relative periods"
+msgstr ""
+
+msgid "Fixed periods"
+msgstr ""
+
 msgid "Period type"
 msgstr "Виды периода"
 
@@ -73,9 +85,6 @@ msgstr "Ожидаемые отчеты"
 msgid "Program"
 msgstr "Program"
 
-msgid "Select a program"
-msgstr "Выбрать программу"
-
 msgid "Indicators"
 msgstr "Индикаторы"
 
@@ -94,12 +103,6 @@ msgstr "Выберите группу элементов данных"
 msgid "[ All data elements ]"
 msgstr "[Все элементы данных]"
 
-msgid "Totals"
-msgstr "Итоги"
-
-msgid "Details"
-msgstr "Детали"
-
 msgid "Data sets"
 msgstr "Наборы данных"
 
@@ -112,17 +115,26 @@ msgstr "[Все показатели]"
 msgid "Event data items"
 msgstr "Элементы данных событий"
 
+msgid "Select a program"
+msgstr "Выбрать программу"
+
 msgid "Program indicators"
 msgstr "Индикаторы программы"
 
 msgid "Organisation Unit"
 msgstr "Организация"
 
-msgid "and"
+msgid "{{dynamicOuNames}} and {{lastOuName}}"
 msgstr ""
 
-msgid "levels in"
+msgid "{{allDynamicOuNames}} levels"
 msgstr ""
 
-msgid "groups in"
+msgid "{{allDynamicOuNames}} groups"
+msgstr ""
+
+msgid "{{allDynamicOuNames}} levels in {{staticOuNames}}"
+msgstr ""
+
+msgid "{{allDynamicOuNames}} groups in {{staticOuNames}}"
 msgstr ""

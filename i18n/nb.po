@@ -1,14 +1,14 @@
 # 
 # Translators:
-# Caroline Hesthagen Holen <carolinehholen@gmail.com>, 2020
 # Karoline Tufte Lien <karoline@dhis2.org>, 2020
+# Caroline Hesthagen Holen <carolinehholen@gmail.com>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-04-24T18:04:35.285Z\n"
+"POT-Creation-Date: 2020-05-06T21:15:21.276Z\n"
 "PO-Revision-Date: 2020-04-29 08:10+0000\n"
-"Last-Translator: Karoline Tufte Lien <karoline@dhis2.org>, 2020\n"
+"Last-Translator: Caroline Hesthagen Holen <carolinehholen@gmail.com>, 2020\n"
 "Language-Team: Norwegian Bokmål (https://www.transifex.com/hisp-uio/teams/100509/nb/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -21,6 +21,12 @@ msgstr "Data"
 
 msgid "Data Type"
 msgstr "Datatype"
+
+msgid "Totals"
+msgstr "Totalsummer"
+
+msgid "Details"
+msgstr "Detaljer"
 
 msgid "Detail"
 msgstr "Detalj"
@@ -52,6 +58,12 @@ msgstr "Periode"
 msgid "Year"
 msgstr "År"
 
+msgid "Relative periods"
+msgstr ""
+
+msgid "Fixed periods"
+msgstr ""
+
 msgid "Period type"
 msgstr "Periodetype"
 
@@ -73,9 +85,6 @@ msgstr "Forventede rapporter"
 msgid "Program"
 msgstr "Program"
 
-msgid "Select a program"
-msgstr "Velg et program"
-
 msgid "Indicators"
 msgstr "Indikatorer"
 
@@ -94,12 +103,6 @@ msgstr "Velg dataelementgrupper"
 msgid "[ All data elements ]"
 msgstr "[ Alle dataelementer ]"
 
-msgid "Totals"
-msgstr "Totalsummer"
-
-msgid "Details"
-msgstr "Detaljer"
-
 msgid "Data sets"
 msgstr "Datasett"
 
@@ -112,17 +115,26 @@ msgstr "[ Alle beregninger ]"
 msgid "Event data items"
 msgstr "Hendelsesdatapunkter"
 
+msgid "Select a program"
+msgstr "Velg et program"
+
 msgid "Program indicators"
 msgstr "Programindikatorer"
 
 msgid "Organisation Unit"
 msgstr "Organisasjonsenhet"
 
-msgid "and"
-msgstr "og"
+msgid "{{dynamicOuNames}} and {{lastOuName}}"
+msgstr ""
 
-msgid "levels in"
-msgstr "nivåer i"
+msgid "{{allDynamicOuNames}} levels"
+msgstr ""
 
-msgid "groups in"
-msgstr "grupper i"
+msgid "{{allDynamicOuNames}} groups"
+msgstr ""
+
+msgid "{{allDynamicOuNames}} levels in {{staticOuNames}}"
+msgstr ""
+
+msgid "{{allDynamicOuNames}} groups in {{staticOuNames}}"
+msgstr ""

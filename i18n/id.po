@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-04-24T18:04:35.285Z\n"
+"POT-Creation-Date: 2020-05-06T21:15:21.276Z\n"
 "PO-Revision-Date: 2020-04-29 08:10+0000\n"
 "Last-Translator: Viktor Varland <viktor@dhis2.org>, 2020\n"
 "Language-Team: Indonesian (https://www.transifex.com/hisp-uio/teams/100509/id/)\n"
@@ -22,6 +22,12 @@ msgstr "Data"
 
 msgid "Data Type"
 msgstr "Tipe Data"
+
+msgid "Totals"
+msgstr "Total"
+
+msgid "Details"
+msgstr "Rincian"
 
 msgid "Detail"
 msgstr "Rincian"
@@ -53,6 +59,12 @@ msgstr "Periode"
 msgid "Year"
 msgstr ""
 
+msgid "Relative periods"
+msgstr ""
+
+msgid "Fixed periods"
+msgstr ""
+
 msgid "Period type"
 msgstr "tipe periode"
 
@@ -74,9 +86,6 @@ msgstr "Laporan yang diharapkan"
 msgid "Program"
 msgstr "Program"
 
-msgid "Select a program"
-msgstr "Pilih program"
-
 msgid "Indicators"
 msgstr "Indikator"
 
@@ -95,12 +104,6 @@ msgstr "Pilih grup data elemen"
 msgid "[ All data elements ]"
 msgstr "[ All data elements ]"
 
-msgid "Totals"
-msgstr "Total"
-
-msgid "Details"
-msgstr "Rincian"
-
 msgid "Data sets"
 msgstr "Data set"
 
@@ -113,17 +116,26 @@ msgstr "[ All metrics ]"
 msgid "Event data items"
 msgstr "Item data event"
 
+msgid "Select a program"
+msgstr "Pilih program"
+
 msgid "Program indicators"
 msgstr "Indikator program"
 
 msgid "Organisation Unit"
 msgstr "Unit Organisasi"
 
-msgid "and"
+msgid "{{dynamicOuNames}} and {{lastOuName}}"
 msgstr ""
 
-msgid "levels in"
+msgid "{{allDynamicOuNames}} levels"
 msgstr ""
 
-msgid "groups in"
+msgid "{{allDynamicOuNames}} groups"
+msgstr ""
+
+msgid "{{allDynamicOuNames}} levels in {{staticOuNames}}"
+msgstr ""
+
+msgid "{{allDynamicOuNames}} groups in {{staticOuNames}}"
 msgstr ""

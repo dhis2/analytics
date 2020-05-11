@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-04-24T18:04:35.285Z\n"
+"POT-Creation-Date: 2020-05-06T21:15:21.276Z\n"
 "PO-Revision-Date: 2020-04-29 08:10+0000\n"
 "Last-Translator: 晓东 林 <13981924470@126.com>, 2020\n"
 "Language-Team: Chinese (https://www.transifex.com/hisp-uio/teams/100509/zh/)\n"
@@ -22,6 +22,12 @@ msgstr "数据"
 
 msgid "Data Type"
 msgstr ""
+
+msgid "Totals"
+msgstr "总共"
+
+msgid "Details"
+msgstr "详情"
 
 msgid "Detail"
 msgstr ""
@@ -53,6 +59,12 @@ msgstr "期间"
 msgid "Year"
 msgstr "年"
 
+msgid "Relative periods"
+msgstr ""
+
+msgid "Fixed periods"
+msgstr ""
+
 msgid "Period type"
 msgstr "周期类型"
 
@@ -74,9 +86,6 @@ msgstr "预期上报"
 msgid "Program"
 msgstr "项目"
 
-msgid "Select a program"
-msgstr "选择一个项目"
-
 msgid "Indicators"
 msgstr "指标"
 
@@ -95,12 +104,6 @@ msgstr "选择数据元组"
 msgid "[ All data elements ]"
 msgstr "【所有数据元】"
 
-msgid "Totals"
-msgstr "总共"
-
-msgid "Details"
-msgstr "详情"
-
 msgid "Data sets"
 msgstr "数据集"
 
@@ -113,17 +116,26 @@ msgstr "[ 所有尺度 ]"
 msgid "Event data items"
 msgstr "事件数据条目"
 
+msgid "Select a program"
+msgstr "选择一个项目"
+
 msgid "Program indicators"
 msgstr "项目指标"
 
 msgid "Organisation Unit"
 msgstr "组织机构"
 
-msgid "and"
+msgid "{{dynamicOuNames}} and {{lastOuName}}"
 msgstr ""
 
-msgid "levels in"
+msgid "{{allDynamicOuNames}} levels"
 msgstr ""
 
-msgid "groups in"
+msgid "{{allDynamicOuNames}} groups"
+msgstr ""
+
+msgid "{{allDynamicOuNames}} levels in {{staticOuNames}}"
+msgstr ""
+
+msgid "{{allDynamicOuNames}} groups in {{staticOuNames}}"
 msgstr ""
