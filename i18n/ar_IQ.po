@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-04-24T18:04:35.285Z\n"
+"POT-Creation-Date: 2020-05-06T21:15:21.276Z\n"
 "PO-Revision-Date: 2020-04-29 08:10+0000\n"
 "Last-Translator: KRG HIS <antonia.bezenchek@informa.pro>, 2020\n"
 "Language-Team: Arabic (Iraq) (https://www.transifex.com/hisp-uio/teams/100509/ar_IQ/)\n"
@@ -20,6 +20,12 @@ msgstr "البيانات"
 
 msgid "Data Type"
 msgstr ""
+
+msgid "Totals"
+msgstr "الإجماليات"
+
+msgid "Details"
+msgstr "التفاصيل"
 
 msgid "Detail"
 msgstr ""
@@ -51,6 +57,12 @@ msgstr ""
 msgid "Year"
 msgstr ""
 
+msgid "Relative periods"
+msgstr ""
+
+msgid "Fixed periods"
+msgstr ""
+
 msgid "Period type"
 msgstr ""
 
@@ -72,9 +84,6 @@ msgstr ""
 msgid "Program"
 msgstr "البرنامج"
 
-msgid "Select a program"
-msgstr ""
-
 msgid "Indicators"
 msgstr "المؤشرات"
 
@@ -93,12 +102,6 @@ msgstr "تحديد مجموعة عناصر البيانات"
 msgid "[ All data elements ]"
 msgstr ""
 
-msgid "Totals"
-msgstr "الإجماليات"
-
-msgid "Details"
-msgstr "التفاصيل"
-
 msgid "Data sets"
 msgstr "حزم البيانات"
 
@@ -111,17 +114,26 @@ msgstr ""
 msgid "Event data items"
 msgstr ""
 
+msgid "Select a program"
+msgstr ""
+
 msgid "Program indicators"
 msgstr ""
 
 msgid "Organisation Unit"
 msgstr "الوحدة التنظيمية"
 
-msgid "and"
+msgid "{{dynamicOuNames}} and {{lastOuName}}"
 msgstr ""
 
-msgid "levels in"
+msgid "{{allDynamicOuNames}} levels"
 msgstr ""
 
-msgid "groups in"
+msgid "{{allDynamicOuNames}} groups"
+msgstr ""
+
+msgid "{{allDynamicOuNames}} levels in {{staticOuNames}}"
+msgstr ""
+
+msgid "{{allDynamicOuNames}} groups in {{staticOuNames}}"
 msgstr ""

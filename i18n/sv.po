@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-04-24T18:04:35.285Z\n"
+"POT-Creation-Date: 2020-05-06T21:15:21.276Z\n"
 "PO-Revision-Date: 2020-04-29 08:10+0000\n"
 "Last-Translator: Viktor Varland <viktor@dhis2.org>, 2020\n"
 "Language-Team: Swedish (https://www.transifex.com/hisp-uio/teams/100509/sv/)\n"
@@ -21,6 +21,12 @@ msgstr "Data"
 
 msgid "Data Type"
 msgstr ""
+
+msgid "Totals"
+msgstr "Totals"
+
+msgid "Details"
+msgstr "detaljer"
 
 msgid "Detail"
 msgstr ""
@@ -52,6 +58,12 @@ msgstr "Period"
 msgid "Year"
 msgstr "År"
 
+msgid "Relative periods"
+msgstr ""
+
+msgid "Fixed periods"
+msgstr ""
+
 msgid "Period type"
 msgstr "Periodtyp"
 
@@ -73,9 +85,6 @@ msgstr ""
 msgid "Program"
 msgstr "Program"
 
-msgid "Select a program"
-msgstr ""
-
 msgid "Indicators"
 msgstr "indikatorer"
 
@@ -94,12 +103,6 @@ msgstr ""
 msgid "[ All data elements ]"
 msgstr ""
 
-msgid "Totals"
-msgstr "Totals"
-
-msgid "Details"
-msgstr "detaljer"
-
 msgid "Data sets"
 msgstr "dataset"
 
@@ -112,17 +115,26 @@ msgstr ""
 msgid "Event data items"
 msgstr "Händelsedataposter"
 
+msgid "Select a program"
+msgstr ""
+
 msgid "Program indicators"
 msgstr "programindikatorer"
 
 msgid "Organisation Unit"
 msgstr "Organisationsenhet"
 
-msgid "and"
+msgid "{{dynamicOuNames}} and {{lastOuName}}"
 msgstr ""
 
-msgid "levels in"
+msgid "{{allDynamicOuNames}} levels"
 msgstr ""
 
-msgid "groups in"
+msgid "{{allDynamicOuNames}} groups"
+msgstr ""
+
+msgid "{{allDynamicOuNames}} levels in {{staticOuNames}}"
+msgstr ""
+
+msgid "{{allDynamicOuNames}} groups in {{staticOuNames}}"
 msgstr ""
