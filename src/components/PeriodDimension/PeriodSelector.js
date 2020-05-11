@@ -1,8 +1,8 @@
 import React, { Component, Fragment } from 'react'
 import PropTypes from 'prop-types'
+import { Transfer, TransferOption } from '@dhis2/ui-core'
 
-import { ItemSelector } from '@dhis2/analytics'
-
+import ItemSelector from './../ItemSelector/ItemSelector'
 import PeriodTypeButton from './PeriodTypeButton'
 import FixedPeriodFilter from './FixedPeriodFilter'
 import RelativePeriodFilter from './RelativePeriodFilter'
@@ -10,9 +10,9 @@ import { FIXED, RELATIVE } from './utils/periodTypes'
 
 class PeriodSelector extends Component {
     state = {
-        offeredPeriods: [],
-        offeredPeriodsInOrder: [],
+        allPeriods: [],
         selectedPeriods: [],
+        offeredPeriods: [], // TODO: Legacy, Transfer handles this internally
         periodType: RELATIVE,
     }
 
@@ -57,7 +57,7 @@ class PeriodSelector extends Component {
         const removedPeriods = this.state.selectedPeriods.filter(period =>
             periodIds.includes(period.id)
         )
-        const offeredPeriods = this.state.offeredPeriodsInOrder.filter(
+        const offeredPeriods = this.state.allPeriods.filter(
             period => !selectedPeriods.map(p => p.id).includes(period.id)
         )
 
@@ -73,7 +73,7 @@ class PeriodSelector extends Component {
             period => !selectedPeriods.map(p => p.id).includes(period.id)
         )
 
-        this.setState({ offeredPeriodsInOrder: periods, offeredPeriods })
+        this.setState({ allPeriods: periods, offeredPeriods })
     }
 
     renderPeriodTypeButtons = () => (
@@ -122,6 +122,10 @@ class PeriodSelector extends Component {
             onReorder: this.setSelectedPeriodOrder,
         }
 
+        const testoptions = this.state.allPeriods.map(item => (
+            <TransferOption label={item.name} value={item.name} key={item.id} />
+        ))
+
         return (
             <Fragment>
                 {this.renderPeriodTypeButtons()}
@@ -134,6 +138,16 @@ class PeriodSelector extends Component {
                         {filterZone()}
                     </ItemSelector>
                 </div>
+                <Transfer
+                    onChange={() => console.log('things changed')}
+                    selected={this.state.selectedPeriods.map(item => ({
+                        label: item.name,
+                        value: item.name,
+                        key: item.id,
+                    }))}
+                >
+                    {testoptions}
+                </Transfer>
             </Fragment>
         )
     }
