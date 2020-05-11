@@ -5,13 +5,19 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2020-04-24T18:04:35.285Z\n"
-"PO-Revision-Date: 2020-04-24T18:04:35.285Z\n"
+"POT-Creation-Date: 2020-05-06T21:15:21.276Z\n"
+"PO-Revision-Date: 2020-05-06T21:15:21.276Z\n"
 
 msgid "Data"
 msgstr ""
 
 msgid "Data Type"
+msgstr ""
+
+msgid "Totals"
+msgstr ""
+
+msgid "Details"
 msgstr ""
 
 msgid "Detail"
@@ -44,6 +50,12 @@ msgstr ""
 msgid "Year"
 msgstr ""
 
+msgid "Relative periods"
+msgstr ""
+
+msgid "Fixed periods"
+msgstr ""
+
 msgid "Period type"
 msgstr ""
 
@@ -65,9 +77,6 @@ msgstr ""
 msgid "Program"
 msgstr ""
 
-msgid "Select a program"
-msgstr ""
-
 msgid "Indicators"
 msgstr ""
 
@@ -86,12 +95,6 @@ msgstr ""
 msgid "[ All data elements ]"
 msgstr ""
 
-msgid "Totals"
-msgstr ""
-
-msgid "Details"
-msgstr ""
-
 msgid "Data sets"
 msgstr ""
 
@@ -104,17 +107,26 @@ msgstr ""
 msgid "Event data items"
 msgstr ""
 
+msgid "Select a program"
+msgstr ""
+
 msgid "Program indicators"
 msgstr ""
 
 msgid "Organisation Unit"
 msgstr ""
 
-msgid "and"
+msgid "{{dynamicOuNames}} and {{lastOuName}}"
 msgstr ""
 
-msgid "levels in"
+msgid "{{allDynamicOuNames}} levels"
 msgstr ""
 
-msgid "groups in"
+msgid "{{allDynamicOuNames}} groups"
+msgstr ""
+
+msgid "{{allDynamicOuNames}} levels in {{staticOuNames}}"
+msgstr ""
+
+msgid "{{allDynamicOuNames}} groups in {{staticOuNames}}"
 msgstr ""

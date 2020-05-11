@@ -124,7 +124,7 @@ export class DataDimension extends Component {
     updateAlternatives = async (page = FIRST_PAGE, concatItems = false) => {
         const { dataType, groupId, groupDetail, filterText } = this.state
 
-        let { dimensionItems, nextPage } =
+        const { dimensionItems, nextPage } =
             (await apiFetchAlternatives({
                 d2: this.props.d2,
                 dataType,
@@ -136,13 +136,13 @@ export class DataDimension extends Component {
             })) || DEFAULT_ALTERNATIVES
 
         const augmentFn = dataTypes[dataType].augmentAlternatives
-        if (augmentFn) {
-            dimensionItems = augmentFn(dimensionItems, groupId)
-        }
+        const augmentedDimensionItems = augmentFn
+            ? augmentFn(dimensionItems, groupId)
+            : dimensionItems
 
         const items = concatItems
-            ? this.state.items.concat(dimensionItems)
-            : dimensionItems
+            ? this.state.items.concat(augmentedDimensionItems)
+            : augmentedDimensionItems
 
         this.setState({
             items: items.filter(
