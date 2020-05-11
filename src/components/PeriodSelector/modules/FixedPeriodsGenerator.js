@@ -2,7 +2,6 @@ import i18n from '@dhis2/d2-i18n'
 // generatePeriods config object: { boolean offset, boolean filterFuturePeriods, boolean reversePeriods }
 
 export const MONTHLY = 'Monthly'
-const NUM_MONTHS = 12
 
 const getMonthName = key => {
     const monthNames = [
@@ -286,9 +285,7 @@ function SixMonthlyPeriodType(fnFilter) {
         let period = {}
         period.startDate = `${year}-01-01`
         period.endDate = `${year}-06-30`
-        const monthStart = getMonthName(0)
-        const monthEnd = getMonthName(5)
-        period.name = () => `${monthStart} - ${monthEnd} ${year}`
+        period.name = () => `${getMonthName(0)} - ${getMonthName(5)} ${year}`
         period.iso = `${year}S1`
         period.id = period.iso
         periods.push(period)
@@ -296,9 +293,7 @@ function SixMonthlyPeriodType(fnFilter) {
         period = {}
         period.startDate = `${year}-07-01`
         period.endDate = `${year}-12-31`
-        const monthStart2 = getMonthName(6)
-        const monthEnd2 = getMonthName(11)
-        period.name = () => `${monthStart2} - ${monthEnd2} ${year}`
+        period.name = () => `${getMonthName(6)} - ${getMonthName(11)} ${year}`
         period.iso = `${year}S2`
         period.id = period.iso
         periods.push(period)
@@ -321,9 +316,7 @@ function SixMonthlyAprilPeriodType(fnFilter) {
         let period = {}
         period.startDate = `${year}-04-01`
         period.endDate = `${year}-09-30`
-        const monthStart = getMonthName(3)
-        const monthEnd = getMonthName(8)
-        period.name = () => `${monthStart} - ${monthEnd} ${year}`
+        period.name = () => `${getMonthName(3)} - ${getMonthName(8)} ${year}`
         period.iso = `${year}AprilS1`
         period.id = period.iso
         periods.push(period)
@@ -331,9 +324,8 @@ function SixMonthlyAprilPeriodType(fnFilter) {
         period = {}
         period.startDate = `${year}-10-01`
         period.endDate = `${year + 1}-03-31`
-        const monthStart2 = getMonthName(9)
-        const monthEnd2 = getMonthName(2)
-        period.name = () => `${monthStart2} ${year} - ${monthEnd2} ${year + 1}`
+        period.name = () =>
+            `${getMonthName(9)} ${year} - ${getMonthName(2)} ${year + 1}`
         period.iso = `${year}AprilS2`
         period.id = period.iso
         periods.push(period)
@@ -392,10 +384,10 @@ function FinancialOctoberPeriodType(formatYyyyMmDd, fnFilter) {
             period.startDate = formatYyyyMmDd(date)
             const yearStart = date.getFullYear()
             const yearEnd = date.getFullYear() + 1
-            const monthStart = getMonthName(9)
-            const monthEnd = getMonthName(8)
             period.name = () =>
-                `${monthStart} ${yearStart} - ${monthEnd} ${yearEnd}`
+                `${getMonthName(9)} ${yearStart} - ${getMonthName(
+                    8
+                )} ${yearEnd}`
             period.id = `${date.getFullYear()}Oct`
             periods.push(period)
             date.setDate(date.getDate() - 1)
@@ -426,10 +418,10 @@ function FinancialNovemberPeriodType(formatYyyyMmDd, fnFilter) {
             period.startDate = formatYyyyMmDd(date)
             const yearStart = date.getFullYear()
             const yearEnd = date.getFullYear() + 1
-            const monthStart = getMonthName(10)
-            const monthEnd = getMonthName(9)
             period.name = () =>
-                `${monthStart} ${yearStart} - ${monthEnd} ${yearEnd}`
+                `${getMonthName(10)} ${yearStart} - ${getMonthName(
+                    9
+                )} ${yearEnd}`
             period.id = `${date.getFullYear()}Nov`
             periods.push(period)
             date.setDate(date.getDate() - 1)
@@ -460,10 +452,10 @@ function FinancialJulyPeriodType(formatYyyyMmDd, fnFilter) {
             period.startDate = formatYyyyMmDd(date)
             const yearStart = date.getFullYear()
             const yearEnd = date.getFullYear() + 1
-            const monthStart = getMonthName(6)
-            const monthEnd = getMonthName(5)
             period.name = () =>
-                `${monthStart} ${yearStart} - ${monthEnd} ${yearEnd}`
+                `${getMonthName(6)} ${yearStart} - ${getMonthName(
+                    5
+                )} ${yearEnd}`
             period.id = `${date.getFullYear()}July`
             periods.push(period)
             date.setDate(date.getDate() - 1)
@@ -494,10 +486,10 @@ function FinancialAprilPeriodType(formatYyyyMmDd, fnFilter) {
             period.startDate = formatYyyyMmDd(date)
             const yearStart = date.getFullYear()
             const yearEnd = date.getFullYear() + 1
-            const monthStart = getMonthName(3)
-            const monthEnd = getMonthName(2)
             period.name = () =>
-                `${monthStart} ${yearStart} - ${monthEnd} ${yearEnd}`
+                `${getMonthName(3)} ${yearStart} - ${getMonthName(
+                    2
+                )} ${yearEnd}`
             period.id = `${date.getFullYear()}April`
             periods.push(period)
             date.setDate(date.getDate() - 1)
