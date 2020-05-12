@@ -136,11 +136,10 @@ export class DataDimension extends Component {
             })) || DEFAULT_ALTERNATIVES
 
         const augmentFn = dataTypes[dataType].augmentAlternatives
-        let augmentedDimensionItems = dimensionItems
 
-        if (augmentFn) {
-            augmentedDimensionItems = augmentFn(dimensionItems, groupId)
-        }
+        const augmentedDimensionItems = augmentFn
+            ? augmentFn(dimensionItems, groupId)
+            : dimensionItems
 
         const items = concatItems
             ? this.state.items.concat(augmentedDimensionItems)

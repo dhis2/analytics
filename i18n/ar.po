@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-04-24T18:04:35.285Z\n"
+"POT-Creation-Date: 2020-05-06T21:15:21.276Z\n"
 "PO-Revision-Date: 2020-04-29 08:10+0000\n"
 "Last-Translator: Hamza Assada <7amza.it@gmail.com>, 2020\n"
 "Language-Team: Arabic (https://www.transifex.com/hisp-uio/teams/100509/ar/)\n"
@@ -22,6 +22,12 @@ msgstr "بيانات"
 
 msgid "Data Type"
 msgstr "نوع البيانات"
+
+msgid "Totals"
+msgstr "الإجمالي"
+
+msgid "Details"
+msgstr "التفاصيل"
 
 msgid "Detail"
 msgstr "تفصيل"
@@ -53,6 +59,12 @@ msgstr "الفترة الزمنية"
 msgid "Year"
 msgstr "سنة"
 
+msgid "Relative periods"
+msgstr ""
+
+msgid "Fixed periods"
+msgstr ""
+
 msgid "Period type"
 msgstr "نوع الفترة الزمنية"
 
@@ -74,9 +86,6 @@ msgstr "الإبلاغات المتوقعة"
 msgid "Program"
 msgstr "البرنامج"
 
-msgid "Select a program"
-msgstr "حدد برنامجاً"
-
 msgid "Indicators"
 msgstr "المؤشرات"
 
@@ -95,12 +104,6 @@ msgstr "تحديد مجموعة عناصر البيانات"
 msgid "[ All data elements ]"
 msgstr "[ كل عناصر البيانات ]"
 
-msgid "Totals"
-msgstr "الإجمالي"
-
-msgid "Details"
-msgstr "التفاصيل"
-
 msgid "Data sets"
 msgstr "حزم البيانات"
 
@@ -113,17 +116,26 @@ msgstr "[جميع المقاييس]"
 msgid "Event data items"
 msgstr "عناصر بيانات الحدث"
 
+msgid "Select a program"
+msgstr "حدد برنامجاً"
+
 msgid "Program indicators"
 msgstr "مؤشرات البرنامج"
 
 msgid "Organisation Unit"
 msgstr "الوحدة التنظيمية"
 
-msgid "and"
-msgstr "و"
+msgid "{{dynamicOuNames}} and {{lastOuName}}"
+msgstr ""
 
-msgid "levels in"
-msgstr "المستويات في"
+msgid "{{allDynamicOuNames}} levels"
+msgstr ""
 
-msgid "groups in"
-msgstr "المجموعات في"
+msgid "{{allDynamicOuNames}} groups"
+msgstr ""
+
+msgid "{{allDynamicOuNames}} levels in {{staticOuNames}}"
+msgstr ""
+
+msgid "{{allDynamicOuNames}} groups in {{staticOuNames}}"
+msgstr ""

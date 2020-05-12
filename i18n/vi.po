@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-04-24T18:04:35.285Z\n"
+"POT-Creation-Date: 2020-05-06T21:15:21.276Z\n"
 "PO-Revision-Date: 2020-04-29 08:10+0000\n"
 "Last-Translator: Mai Nguyen <thanhmai.jica@gmail.com>, 2020\n"
 "Language-Team: Vietnamese (https://www.transifex.com/hisp-uio/teams/100509/vi/)\n"
@@ -22,6 +22,12 @@ msgstr "Lấy dữ liệu"
 
 msgid "Data Type"
 msgstr ""
+
+msgid "Totals"
+msgstr "Tổng"
+
+msgid "Details"
+msgstr "Chi tiết"
 
 msgid "Detail"
 msgstr ""
@@ -53,29 +59,32 @@ msgstr "Thời điểm"
 msgid "Year"
 msgstr "Năm"
 
+msgid "Relative periods"
+msgstr ""
+
+msgid "Fixed periods"
+msgstr ""
+
 msgid "Period type"
 msgstr "Loại thời điểm"
 
 msgid "Reporting rate"
-msgstr ""
+msgstr "Tỉ lệ báo cáo"
 
 msgid "Reporting rate on time"
-msgstr ""
+msgstr "Tỉ lệ báo cáo đúng hạn"
 
 msgid "Actual reports"
-msgstr ""
+msgstr "Báo cáo thực tế"
 
 msgid "Actual reports on time"
-msgstr ""
+msgstr "Báo cáo thực tế đúng hạn"
 
 msgid "Expected reports"
-msgstr ""
+msgstr "Báo cáo dự kiến"
 
 msgid "Program"
 msgstr "Chương trình"
-
-msgid "Select a program"
-msgstr ""
 
 msgid "Indicators"
 msgstr "Các chỉ số"
@@ -95,12 +104,6 @@ msgstr "Chọn nhóm phần tử dữ liệu"
 msgid "[ All data elements ]"
 msgstr ""
 
-msgid "Totals"
-msgstr "Tổng"
-
-msgid "Details"
-msgstr "Chi tiết"
-
 msgid "Data sets"
 msgstr "Biểu nhập"
 
@@ -113,17 +116,26 @@ msgstr ""
 msgid "Event data items"
 msgstr "Mục dữ liệu sự kiện"
 
+msgid "Select a program"
+msgstr ""
+
 msgid "Program indicators"
 msgstr "Chỉ Số Chương Trình"
 
 msgid "Organisation Unit"
 msgstr "Đơn vị"
 
-msgid "and"
+msgid "{{dynamicOuNames}} and {{lastOuName}}"
 msgstr ""
 
-msgid "levels in"
+msgid "{{allDynamicOuNames}} levels"
 msgstr ""
 
-msgid "groups in"
+msgid "{{allDynamicOuNames}} groups"
+msgstr ""
+
+msgid "{{allDynamicOuNames}} levels in {{staticOuNames}}"
+msgstr ""
+
+msgid "{{allDynamicOuNames}} groups in {{staticOuNames}}"
 msgstr ""
