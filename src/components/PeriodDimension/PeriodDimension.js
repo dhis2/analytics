@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import uniqBy from 'lodash/uniqBy'
 
 import { DIMENSION_ID_PERIOD } from '../../modules/predefinedDimensions'
 import PeriodSelector from './PeriodSelector'
@@ -12,22 +11,18 @@ export const PeriodDimension = ({
     selectedPeriods,
 }) => {
     const selectItems = periods => {
-        const newItems = periods.map(period => ({
-            id: period.id,
-            name: period.name,
+        const formattedPeriods = periods.map(period => ({
+            id: period.value,
+            name: period.label,
         }))
-        const alreadySelected = selectedPeriods.map(period => ({
-            id: period.id,
-            name: period.name,
-        }))
-
         onSelect({
             dimensionId: DIMENSION_ID_PERIOD,
-            items: uniqBy(alreadySelected.concat(newItems), 'id'),
+            items: formattedPeriods,
         })
     }
 
     const deselectItems = periods => {
+        // TODO: Can this and reorderItems be removed, since its all handled by Transfer now?
         const itemIdsToRemove = periods.map(period => period.id)
 
         onDeselect({

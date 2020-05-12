@@ -25,7 +25,11 @@ class PeriodSelector extends Component {
     constructor(props) {
         super(props)
 
-        this.state.selectedPeriods = this.props.selectedItems
+        this.state.selectedPeriods = this.props.selectedItems.map(item => ({
+            label: item.name,
+            value: item.id,
+            key: item.id,
+        }))
     }
 
     onIsRelativeClick = isRelative => {
@@ -104,6 +108,7 @@ class PeriodSelector extends Component {
                 <SingleSelectField
                     label={i18n.t('Period type')}
                     onChange={() => {}}
+                    dense
                 >
                     <SingleSelectOption value="hello type" label="world type" />
                 </SingleSelectField>
@@ -111,6 +116,7 @@ class PeriodSelector extends Component {
                     <SingleSelectField
                         label={i18n.t('Year')}
                         onChange={() => {}}
+                        dense
                     >
                         <SingleSelectOption
                             value="hello year"
@@ -146,14 +152,10 @@ class PeriodSelector extends Component {
         }
 
         const selected = {
-            items: this.state.selectedPeriods,
+            items: [],
             onDeselect: this.onDeselectPeriods,
             onReorder: this.setSelectedPeriodOrder,
         }
-
-        const testoptions = this.state.allPeriods.map(item => (
-            <TransferOption label={item.name} value={item.name} key={item.id} />
-        ))
 
         return (
             <Fragment>
@@ -167,15 +169,21 @@ class PeriodSelector extends Component {
                     </ItemSelector>
                 </div>
                 <Transfer
-                    onChange={() => console.log('things changed')}
-                    selected={this.state.selectedPeriods.map(item => ({
-                        label: item.name,
-                        value: item.name,
-                        key: item.id,
-                    }))}
+                    onChange={({ selected }) => {
+                        this.setState({ selectedPeriods: selected })
+                        this.props.onSelect(selected)
+                    }}
+                    selected={this.state.selectedPeriods}
                     leftHeader={this.renderHeader()}
+                    enableOrderChange
                 >
-                    {testoptions}
+                    {this.state.allPeriods.map(item => (
+                        <TransferOption
+                            label={item.name}
+                            value={item.id}
+                            key={item.id}
+                        />
+                    ))}
                 </Transfer>
             </Fragment>
         )
