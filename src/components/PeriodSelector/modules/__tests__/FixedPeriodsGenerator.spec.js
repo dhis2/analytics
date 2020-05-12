@@ -10,7 +10,7 @@ describe('FixedPeriodsGenerator class', () => {
 
     describe('getOptions', () => {
         it('should return a list of available period ranges', () => {
-            const periods = periodsGenerator.getOptions()
+            const periods = Object.keys(periodsGenerator.getOptions())
 
             expect(periods).toEqual([
                 'Daily',
@@ -52,23 +52,24 @@ describe('FixedPeriodsGenerator class', () => {
         })
 
         it('should return the correct object for 1 jan 2019 day', () => {
-            expect(periods[0]).toEqual({
+            expect(periods[0]).toMatchObject({
                 startDate: '2019-01-01',
                 endDate: '2019-01-01',
-                name: '2019-01-01',
                 iso: '20190101',
                 id: '20190101',
             })
+            expect(periods[0].name()).toEqual('2019-01-01')
         })
 
         it('should return the correct object for 31 dec 2019 day', () => {
-            expect(periods[364]).toEqual({
+            expect(periods[364]).toMatchObject({
                 startDate: '2019-12-31',
                 endDate: '2019-12-31',
-                name: '2019-12-31',
                 iso: '20191231',
                 id: '20191231',
             })
+
+            expect(periods[364].name()).toEqual('2019-12-31')
         })
     })
 
@@ -90,23 +91,27 @@ describe('FixedPeriodsGenerator class', () => {
         })
 
         it('should return the correct object for week 1', () => {
-            expect(periods[0]).toEqual({
+            expect(periods[0]).toMatchObject({
                 startDate: '2008-12-29',
                 endDate: '2009-01-04',
-                name: 'Week 1 - 2008-12-29 - 2009-01-04',
                 iso: '2009W1',
                 id: '2009W1',
             })
+            expect(periods[0].name()).toEqual(
+                'Week 1 - 2008-12-29 - 2009-01-04'
+            )
         })
 
         it('should return the correct object for week 53', () => {
-            expect(periods[52]).toEqual({
+            expect(periods[52]).toMatchObject({
                 startDate: '2009-12-28',
                 endDate: '2010-01-03',
-                name: 'Week 53 - 2009-12-28 - 2010-01-03',
                 iso: '2009W53',
                 id: '2009W53',
             })
+            expect(periods[52].name()).toEqual(
+                'Week 53 - 2009-12-28 - 2010-01-03'
+            )
         })
 
         describe('-> Weekly Wednesday', () => {
@@ -127,13 +132,15 @@ describe('FixedPeriodsGenerator class', () => {
             })
 
             it('should return the correct object for weekly wednesday 27', () => {
-                expect(periods[26]).toEqual({
+                expect(periods[26]).toMatchObject({
                     startDate: '2019-07-03',
                     endDate: '2019-07-09',
-                    name: 'Week 27 - 2019-07-03 - 2019-07-09',
                     iso: '2019WedW27',
                     id: '2019WedW27',
                 })
+                expect(periods[26].name()).toEqual(
+                    'Week 27 - 2019-07-03 - 2019-07-09'
+                )
             })
         })
 
@@ -155,13 +162,15 @@ describe('FixedPeriodsGenerator class', () => {
             })
 
             it('should return the correct object for weekly thursday 27', () => {
-                expect(periods[26]).toEqual({
+                expect(periods[26]).toMatchObject({
                     startDate: '2019-07-04',
                     endDate: '2019-07-10',
-                    name: 'Week 27 - 2019-07-04 - 2019-07-10',
                     iso: '2019ThuW27',
                     id: '2019ThuW27',
                 })
+                expect(periods[26].name()).toEqual(
+                    'Week 27 - 2019-07-04 - 2019-07-10'
+                )
             })
         })
 
@@ -183,13 +192,16 @@ describe('FixedPeriodsGenerator class', () => {
             })
 
             it('should return the correct object for weekly saturday 10', () => {
-                expect(periods[9]).toEqual({
+                expect(periods[9]).toMatchObject({
                     startDate: '2019-03-02',
                     endDate: '2019-03-08',
-                    name: 'Week 10 - 2019-03-02 - 2019-03-08',
                     iso: '2019SatW10',
                     id: '2019SatW10',
                 })
+
+                expect(periods[9].name()).toEqual(
+                    'Week 10 - 2019-03-02 - 2019-03-08'
+                )
             })
         })
 
@@ -209,13 +221,15 @@ describe('FixedPeriodsGenerator class', () => {
             })
 
             it('should return the correct object for weekly sunday 10', () => {
-                expect(periods[10]).toEqual({
+                expect(periods[10]).toMatchObject({
                     startDate: '2019-03-10',
                     endDate: '2019-03-16',
-                    name: 'Week 11 - 2019-03-10 - 2019-03-16',
                     iso: '2019SunW11',
                     id: '2019SunW11',
                 })
+                expect(periods[10].name()).toEqual(
+                    'Week 11 - 2019-03-10 - 2019-03-16'
+                )
             })
         })
     })
@@ -238,23 +252,27 @@ describe('FixedPeriodsGenerator class', () => {
         })
 
         it('should return the correct object for bi-week 1', () => {
-            expect(periods[0]).toEqual({
+            expect(periods[0]).toMatchObject({
                 startDate: '2018-12-31',
                 endDate: '2019-01-13',
-                name: 'Bi-Week 1 - 2018-12-31 - 2019-01-13',
                 iso: '2019BiW1',
                 id: '2019BiW1',
             })
+            expect(periods[0].name()).toEqual(
+                'Bi-Week 1 - 2018-12-31 - 2019-01-13'
+            )
         })
 
         it('should return the correct object for bi-week 26', () => {
-            expect(periods[25]).toEqual({
+            expect(periods[25]).toMatchObject({
                 startDate: '2019-12-16',
                 endDate: '2019-12-29',
-                name: 'Bi-Week 26 - 2019-12-16 - 2019-12-29',
                 iso: '2019BiW26',
                 id: '2019BiW26',
             })
+            expect(periods[25].name()).toEqual(
+                'Bi-Week 26 - 2019-12-16 - 2019-12-29'
+            )
         })
     })
 
@@ -276,23 +294,23 @@ describe('FixedPeriodsGenerator class', () => {
         })
 
         it('should return the correct object for month 1', () => {
-            expect(periods[0]).toEqual({
+            expect(periods[0]).toMatchObject({
                 startDate: '2019-01-01',
                 endDate: '2019-01-31',
-                name: 'January 2019',
                 iso: '201901',
                 id: '201901',
             })
+            expect(periods[0].name()).toEqual('January 2019')
         })
 
         it('should return the correct object for month 12', () => {
-            expect(periods[11]).toEqual({
+            expect(periods[11]).toMatchObject({
                 startDate: '2019-12-01',
                 endDate: '2019-12-31',
-                name: 'December 2019',
                 iso: '201912',
                 id: '201912',
             })
+            expect(periods[11].name()).toEqual('December 2019')
         })
     })
 
@@ -314,33 +332,33 @@ describe('FixedPeriodsGenerator class', () => {
         })
 
         it('should return the correct object for bi-month 1', () => {
-            expect(periods[0]).toEqual({
+            expect(periods[0]).toMatchObject({
                 startDate: '2019-01-01',
                 endDate: '2019-02-28',
-                name: 'January - February 2019',
                 iso: '201901B',
                 id: '201901B',
             })
+            expect(periods[0].name()).toEqual('January - February 2019')
         })
 
         it('should return the correct object for bi-month 3', () => {
-            expect(periods[2]).toEqual({
+            expect(periods[2]).toMatchObject({
                 startDate: '2019-05-01',
                 endDate: '2019-06-30',
-                name: 'May - June 2019',
                 iso: '201903B',
                 id: '201903B',
             })
+            expect(periods[2].name()).toEqual('May - June 2019')
         })
 
         it('should return the correct object for bi-month 6', () => {
-            expect(periods[5]).toEqual({
+            expect(periods[5]).toMatchObject({
                 startDate: '2019-11-01',
                 endDate: '2019-12-31',
-                name: 'November - December 2019',
                 iso: '201906B',
                 id: '201906B',
             })
+            expect(periods[5].name()).toEqual('November - December 2019')
         })
     })
 
@@ -362,23 +380,23 @@ describe('FixedPeriodsGenerator class', () => {
         })
 
         it('should return the correct object for quarter 1', () => {
-            expect(periods[0]).toEqual({
+            expect(periods[0]).toMatchObject({
                 startDate: '2019-01-01',
                 endDate: '2019-03-31',
-                name: 'January - March 2019',
                 iso: '2019Q1',
                 id: '2019Q1',
             })
+            expect(periods[0].name()).toEqual('January - March 2019')
         })
 
         it('should return the correct object for quarter 4', () => {
-            expect(periods[3]).toEqual({
+            expect(periods[3]).toMatchObject({
                 startDate: '2019-10-01',
                 endDate: '2019-12-31',
-                name: 'October - December 2019',
                 iso: '2019Q4',
                 id: '2019Q4',
             })
+            expect(periods[3].name()).toEqual('October - December 2019')
         })
     })
 
@@ -400,23 +418,23 @@ describe('FixedPeriodsGenerator class', () => {
         })
 
         it('should return the correct object for six-monthly 1', () => {
-            expect(periods[0]).toEqual({
+            expect(periods[0]).toMatchObject({
                 startDate: '2019-01-01',
                 endDate: '2019-06-30',
-                name: 'January - June 2019',
                 iso: '2019S1',
                 id: '2019S1',
             })
+            expect(periods[0].name()).toEqual('January - June 2019')
         })
 
         it('should return the correct object for six-monthly 2', () => {
-            expect(periods[1]).toEqual({
+            expect(periods[1]).toMatchObject({
                 startDate: '2019-07-01',
                 endDate: '2019-12-31',
-                name: 'July - December 2019',
                 iso: '2019S2',
                 id: '2019S2',
             })
+            expect(periods[1].name()).toEqual('July - December 2019')
         })
     })
 
@@ -438,23 +456,23 @@ describe('FixedPeriodsGenerator class', () => {
         })
 
         it('should return the correct object for six-monthly April 1', () => {
-            expect(periods[0]).toEqual({
+            expect(periods[0]).toMatchObject({
                 startDate: '2019-04-01',
                 endDate: '2019-09-30',
-                name: 'April - September 2019',
                 iso: '2019AprilS1',
                 id: '2019AprilS1',
             })
+            expect(periods[0].name()).toEqual('April - September 2019')
         })
 
         it('should return the correct object for six-monthly April 2', () => {
-            expect(periods[1]).toEqual({
+            expect(periods[1]).toMatchObject({
                 startDate: '2019-10-01',
                 endDate: '2020-03-31',
-                name: 'October 2019 - March 2020',
                 iso: '2019AprilS2',
                 id: '2019AprilS2',
             })
+            expect(periods[1].name()).toEqual('October 2019 - March 2020')
         })
     })
 
@@ -476,23 +494,23 @@ describe('FixedPeriodsGenerator class', () => {
         })
 
         it('should return the correct object for yearly period 1', () => {
-            expect(periods[0]).toEqual({
+            expect(periods[0]).toMatchObject({
                 startDate: '2020-01-01',
                 endDate: '2020-12-31',
-                name: '2020',
                 iso: '2020',
                 id: '2020',
             })
+            expect(periods[0].name()).toEqual('2020')
         })
 
         it('should return the correct object for yearly period 10', () => {
-            expect(periods[9]).toEqual({
+            expect(periods[9]).toMatchObject({
                 startDate: '2029-01-01',
                 endDate: '2029-12-31',
-                name: '2029',
                 iso: '2029',
                 id: '2029',
             })
+            expect(periods[9].name()).toEqual('2029')
         })
     })
 
@@ -516,21 +534,21 @@ describe('FixedPeriodsGenerator class', () => {
         })
 
         it('should return the correct object for financial November period 1', () => {
-            expect(periods[0]).toEqual({
+            expect(periods[0]).toMatchObject({
                 startDate: '2019-11-01',
                 endDate: '2020-10-31',
-                name: 'November 2019 - October 2020',
                 id: '2019Nov',
             })
+            expect(periods[0].name()).toEqual('November 2019 - October 2020')
         })
 
         it('should return the correct object for financial November period 10', () => {
-            expect(periods[9]).toEqual({
+            expect(periods[9]).toMatchObject({
                 startDate: '2028-11-01',
                 endDate: '2029-10-31',
-                name: 'November 2028 - October 2029',
                 id: '2028Nov',
             })
+            expect(periods[9].name()).toEqual('November 2028 - October 2029')
         })
     })
 
@@ -554,21 +572,21 @@ describe('FixedPeriodsGenerator class', () => {
         })
 
         it('should return the correct object for financial October period 1', () => {
-            expect(periods[0]).toEqual({
+            expect(periods[0]).toMatchObject({
                 startDate: '2019-10-01',
                 endDate: '2020-09-30',
-                name: 'October 2019 - September 2020',
                 id: '2019Oct',
             })
+            expect(periods[0].name()).toEqual('October 2019 - September 2020')
         })
 
         it('should return the correct object for financial October period 10', () => {
-            expect(periods[9]).toEqual({
+            expect(periods[9]).toMatchObject({
                 startDate: '2028-10-01',
                 endDate: '2029-09-30',
-                name: 'October 2028 - September 2029',
                 id: '2028Oct',
             })
+            expect(periods[9].name()).toEqual('October 2028 - September 2029')
         })
     })
 
@@ -592,21 +610,21 @@ describe('FixedPeriodsGenerator class', () => {
         })
 
         it('should return the correct object for financial July 1', () => {
-            expect(periods[0]).toEqual({
+            expect(periods[0]).toMatchObject({
                 startDate: '2019-07-01',
                 endDate: '2020-06-30',
-                name: 'July 2019 - June 2020',
                 id: '2019July',
             })
+            expect(periods[0].name()).toEqual('July 2019 - June 2020')
         })
 
         it('should return the correct object for financial July period 10', () => {
-            expect(periods[9]).toEqual({
+            expect(periods[9]).toMatchObject({
                 startDate: '2028-07-01',
                 endDate: '2029-06-30',
-                name: 'July 2028 - June 2029',
                 id: '2028July',
             })
+            expect(periods[9].name()).toEqual('July 2028 - June 2029')
         })
     })
 
@@ -630,21 +648,21 @@ describe('FixedPeriodsGenerator class', () => {
         })
 
         it('should return the correct object for financial April 1', () => {
-            expect(periods[0]).toEqual({
+            expect(periods[0]).toMatchObject({
                 startDate: '2019-04-01',
                 endDate: '2020-03-31',
-                name: 'April 2019 - March 2020',
                 id: '2019April',
             })
+            expect(periods[0].name()).toEqual('April 2019 - March 2020')
         })
 
         it('should return the correct object for financial April period 10', () => {
-            expect(periods[9]).toEqual({
+            expect(periods[9]).toMatchObject({
                 startDate: '2028-04-01',
                 endDate: '2029-03-31',
-                name: 'April 2028 - March 2029',
                 id: '2028April',
             })
+            expect(periods[9].name()).toEqual('April 2028 - March 2029')
         })
     })
 })
