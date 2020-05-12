@@ -136,7 +136,6 @@ export class DataDimension extends Component {
             })) || DEFAULT_ALTERNATIVES
 
         const augmentFn = dataTypes[dataType].augmentAlternatives
-
         const augmentedDimensionItems = augmentFn
             ? augmentFn(dimensionItems, groupId)
             : dimensionItems
