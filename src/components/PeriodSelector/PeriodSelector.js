@@ -33,9 +33,10 @@ class PeriodSelector extends Component {
         const offeredPeriods = this.state.offeredPeriods.filter(
             period => !periodIds.includes(period.id)
         )
-        const newPeriods = this.state.offeredPeriods.filter(period =>
-            periodIds.includes(period.id)
-        )
+        const newPeriods = this.state.offeredPeriods
+            .filter(period => periodIds.includes(period.id))
+            .map(({ id, idx, name }) => ({ id, idx, name: name() }))
+
         const selectedPeriods = this.state.selectedPeriods.concat(newPeriods)
 
         this.setState({ selectedPeriods, offeredPeriods })
