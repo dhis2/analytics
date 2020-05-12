@@ -1,19 +1,25 @@
 import React, { Component, Fragment } from 'react'
 import PropTypes from 'prop-types'
-import { Transfer, TransferOption } from '@dhis2/ui-core'
+import {
+    Transfer,
+    TransferOption,
+    TabBar,
+    Tab,
+    SingleSelectField,
+    SingleSelectOption,
+} from '@dhis2/ui-core'
+import i18n from '@dhis2/d2-i18n'
 
 import ItemSelector from './../ItemSelector/ItemSelector'
-import PeriodTypeButton from './PeriodTypeButton'
 import FixedPeriodFilter from './FixedPeriodFilter'
 import RelativePeriodFilter from './RelativePeriodFilter'
-import { FIXED, RELATIVE } from './utils/periodTypes'
 
 class PeriodSelector extends Component {
     state = {
         allPeriods: [],
         selectedPeriods: [],
         offeredPeriods: [], // TODO: Legacy, Transfer handles this internally
-        periodType: RELATIVE,
+        isRelative: true,
     }
 
     constructor(props) {
@@ -22,9 +28,9 @@ class PeriodSelector extends Component {
         this.state.selectedPeriods = this.props.selectedItems
     }
 
-    onPeriodTypeClick = periodType => {
-        if (this.state.periodType !== periodType) {
-            this.setState({ periodType })
+    onIsRelativeClick = isRelative => {
+        if (this.state.isRelative !== isRelative) {
+            this.setState({ isRelative })
         }
     }
 
@@ -76,26 +82,49 @@ class PeriodSelector extends Component {
         this.setState({ allPeriods: periods, offeredPeriods })
     }
 
-    renderPeriodTypeButtons = () => (
-        <div>
-            <PeriodTypeButton
-                periodType={RELATIVE}
-                activePeriodType={this.state.periodType}
-                text={'Relative periods'}
-                onClick={this.onPeriodTypeClick}
-            />
-            <PeriodTypeButton
-                periodType={FIXED}
-                activePeriodType={this.state.periodType}
-                text={'Fixed periods'}
-                onClick={this.onPeriodTypeClick}
-            />
-        </div>
+    renderHeader = () => (
+        <>
+            <TabBar>
+                <Tab
+                    selected={this.state.isRelative}
+                    onClick={() => this.onIsRelativeClick(true)}
+                >
+                    {i18n.t('Relative periods')}
+                </Tab>
+                <Tab
+                    selected={!this.state.isRelative}
+                    onClick={() => this.onIsRelativeClick(false)}
+                >
+                    {i18n.t('Fixed periods')}
+                </Tab>
+            </TabBar>
+
+            <p style={{ margin: 0, height: 10 }} />
+            <div>
+                <SingleSelectField
+                    label={i18n.t('Period type')}
+                    onChange={() => {}}
+                >
+                    <SingleSelectOption value="hello type" label="world type" />
+                </SingleSelectField>
+                {!this.state.isRelative && (
+                    <SingleSelectField
+                        label={i18n.t('Year')}
+                        onChange={() => {}}
+                    >
+                        <SingleSelectOption
+                            value="hello year"
+                            label="world year"
+                        />
+                    </SingleSelectField>
+                )}
+            </div>
+        </>
     )
 
     render = () => {
         const filterZone = () => {
-            if (this.state.periodType === FIXED) {
+            if (!this.state.isRelative) {
                 return (
                     <FixedPeriodFilter
                         setOfferedPeriods={this.initializeOfferedPeriods}
@@ -128,7 +157,6 @@ class PeriodSelector extends Component {
 
         return (
             <Fragment>
-                {this.renderPeriodTypeButtons()}
                 <div style={{ display: 'flex', marginTop: '18px' }}>
                     <ItemSelector
                         itemClassName="period-selector"
@@ -145,6 +173,7 @@ class PeriodSelector extends Component {
                         value: item.name,
                         key: item.id,
                     }))}
+                    leftHeader={this.renderHeader()}
                 >
                     {testoptions}
                 </Transfer>
