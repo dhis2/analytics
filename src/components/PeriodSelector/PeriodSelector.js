@@ -78,18 +78,24 @@ class PeriodSelector extends Component {
         this.setState({ offeredPeriodsInOrder: periods, offeredPeriods })
     }
 
+    getPeriodTypeButtonText = periodType =>
+        ({
+            [RELATIVE]: i18n.t('Relative periods'),
+            [FIXED]: i18n.t('Fixed periods'),
+        }[periodType])
+
     renderPeriodTypeButtons = () => (
         <div>
             <PeriodTypeButton
                 periodType={RELATIVE}
                 activePeriodType={this.state.periodType}
-                text={i18n.t('Relative periods')}
+                text={this.getPeriodTypeButtonText(RELATIVE)}
                 onClick={this.onPeriodTypeClick}
             />
             <PeriodTypeButton
                 periodType={FIXED}
                 activePeriodType={this.state.periodType}
-                text={i18n.t('Fixed periods')}
+                text={this.getPeriodTypeButtonText(FIXED)}
                 onClick={this.onPeriodTypeClick}
             />
         </div>
