@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-05-06T21:15:21.276Z\n"
+"POT-Creation-Date: 2020-05-13T16:46:50.486Z\n"
 "PO-Revision-Date: 2020-04-29 08:10+0000\n"
 "Last-Translator: phil_dhis2, 2020\n"
 "Language-Team: Persian (Afghanistan) (https://www.transifex.com/hisp-uio/teams/100509/fa_AF/)\n"
@@ -58,13 +58,244 @@ msgid "Year"
 msgstr "سال"
 
 msgid "Relative periods"
-msgstr ""
+msgstr "دوره های ارتباطی"
 
 msgid "Fixed periods"
-msgstr ""
+msgstr "ثابتې مودې"
 
 msgid "Period type"
 msgstr "د مودې ډول"
+
+msgid "January"
+msgstr "جنوری"
+
+msgid "February"
+msgstr "فبروری"
+
+msgid "March"
+msgstr "مارچ"
+
+msgid "April"
+msgstr "آپریل"
+
+msgid "May"
+msgstr "می"
+
+msgid "June"
+msgstr "جون"
+
+msgid "July"
+msgstr "جولای"
+
+msgid "August"
+msgstr "آگست"
+
+msgid "September"
+msgstr "سپتامبر"
+
+msgid "October"
+msgstr "اکتبر"
+
+msgid "November"
+msgstr "نوامبر"
+
+msgid "December"
+msgstr "دسامبر"
+
+msgid "Week {{weekNumber}}"
+msgstr ""
+
+msgid "Bi-Week {{biWeekNumber}}"
+msgstr ""
+
+msgid "Daily"
+msgstr "روزنه"
+
+msgid "Weekly"
+msgstr "هفته وار"
+
+msgid "Bi-weekly"
+msgstr ""
+
+msgid "Weekly (Start Wednesday)"
+msgstr ""
+
+msgid "Weekly (Start Thursday)"
+msgstr ""
+
+msgid "Weekly (Start Saturday)"
+msgstr ""
+
+msgid "Weekly (Start Sunday)"
+msgstr ""
+
+msgid "Monthly"
+msgstr "ماهانه"
+
+msgid "Bi-monthly"
+msgstr "دوبار در- ماه"
+
+msgid "Quarterly"
+msgstr "سه ماهه"
+
+msgid "Six-monthly"
+msgstr "شش-ماهه"
+
+msgid "Six-monthly April"
+msgstr "شش-ماهه اپریل"
+
+msgid "Yearly"
+msgstr "سالانه"
+
+msgid "Financial year (Start November)"
+msgstr ""
+
+msgid "Financial year (Start October)"
+msgstr "اکتوبر مالی"
+
+msgid "Financial year (Start July)"
+msgstr "مالی جولای"
+
+msgid "Financial year (Start April)"
+msgstr "مالی اپریل"
+
+msgid "Today"
+msgstr "امروز"
+
+msgid "Yesterday"
+msgstr "دیروز"
+
+msgid "Last 3 days"
+msgstr "3 روز گذشته"
+
+msgid "Last 7 days"
+msgstr "7 روز گذشته"
+
+msgid "Last 14 days"
+msgstr "14 روز گذشته"
+
+msgid "This week"
+msgstr "هفته جاری"
+
+msgid "Last week"
+msgstr "هفته گذشته"
+
+msgid "Last 4 weeks"
+msgstr "4 هفته گذشته"
+
+msgid "Last 12 weeks"
+msgstr "12 هفته گذشته"
+
+msgid "Last 52 weeks"
+msgstr "52 هفته گذشته"
+
+msgid "Weeks this year"
+msgstr ""
+
+msgid "This bi-week"
+msgstr ""
+
+msgid "Last bi-week"
+msgstr ""
+
+msgid "Last 4 bi-weeks"
+msgstr ""
+
+msgid "This month"
+msgstr "ماه جاری"
+
+msgid "Last month"
+msgstr "ماه گذشته"
+
+msgid "Last 3 months"
+msgstr "3 ماهه گذشته"
+
+msgid "Last 6 months"
+msgstr "6 ماه گذشته"
+
+msgid "Last 12 months"
+msgstr "12 ماهه گذشته"
+
+msgid "Months this year"
+msgstr "ماه های سال هذا"
+
+msgid "This bi-month"
+msgstr "دوبار در ماه جاری"
+
+msgid "Last bi-month"
+msgstr "دوبار در ماه گذشته"
+
+msgid "Last 6 bi-months"
+msgstr "دروبار در شش-ماه گذشته"
+
+msgid "Bi-months this year"
+msgstr ""
+
+msgid "This quarter"
+msgstr "سه ماهه جاری"
+
+msgid "Last quarter"
+msgstr "سه ماهه آخیر"
+
+msgid "Last 4 quarters"
+msgstr "4 سه ماهه آخیر"
+
+msgid "Quarters this year"
+msgstr "ربع های سال هذا"
+
+msgid "This six-month"
+msgstr "شش-ماه جاری"
+
+msgid "Last six-month"
+msgstr "شش-ماهه گذشته"
+
+msgid "Last 2 six-month"
+msgstr ""
+
+msgid "This financial year"
+msgstr "سال مالی جاری"
+
+msgid "Last financial year"
+msgstr "سال گذشته مالی"
+
+msgid "Last 5 financial years"
+msgstr "5 سال گذشته مالی"
+
+msgid "This year"
+msgstr "سال جاری"
+
+msgid "Last year"
+msgstr "سال گذشته"
+
+msgid "Last 5 years"
+msgstr "5 سال گذشته"
+
+msgid "Days"
+msgstr "روزها"
+
+msgid "Weeks"
+msgstr "هفته ها"
+
+msgid "Bi-weeks"
+msgstr ""
+
+msgid "Months"
+msgstr "ماه ها"
+
+msgid "Bi-months"
+msgstr "دوبار در ماه"
+
+msgid "Quarters"
+msgstr "سه ماهه"
+
+msgid "Six-months"
+msgstr "شش-ماهه"
+
+msgid "Financial Years"
+msgstr ""
+
+msgid "Years"
+msgstr "سالانه"
 
 msgid "Reporting rate"
 msgstr ""
@@ -136,4 +367,7 @@ msgid "{{allDynamicOuNames}} levels in {{staticOuNames}}"
 msgstr ""
 
 msgid "{{allDynamicOuNames}} groups in {{staticOuNames}}"
+msgstr ""
+
+msgid "No data"
 msgstr ""

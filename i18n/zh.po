@@ -1,15 +1,16 @@
 # 
 # Translators:
-# 晓东 林 <13981924470@126.com>, 2020
+# easylin <lin_xd@126.com>, 2020
 # phil_dhis2, 2020
 # Viktor Varland <viktor@dhis2.org>, 2020
+# 晓东 林 <13981924470@126.com>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-05-08T15:03:30.510Z\n"
+"POT-Creation-Date: 2020-05-13T16:46:50.486Z\n"
 "PO-Revision-Date: 2020-04-29 08:10+0000\n"
-"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2020\n"
+"Last-Translator: 晓东 林 <13981924470@126.com>, 2020\n"
 "Language-Team: Chinese (https://www.transifex.com/hisp-uio/teams/100509/zh/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -69,40 +70,40 @@ msgid "Period type"
 msgstr "周期类型"
 
 msgid "January"
-msgstr ""
+msgstr "1月"
 
 msgid "February"
-msgstr ""
+msgstr "2月"
 
 msgid "March"
-msgstr ""
+msgstr "3月"
 
 msgid "April"
-msgstr ""
+msgstr "4月"
 
 msgid "May"
-msgstr ""
+msgstr "5月"
 
 msgid "June"
-msgstr ""
+msgstr "6月"
 
 msgid "July"
-msgstr ""
+msgstr "7月"
 
 msgid "August"
-msgstr ""
+msgstr "8月"
 
 msgid "September"
-msgstr ""
+msgstr "9月"
 
 msgid "October"
-msgstr ""
+msgstr "10月"
 
 msgid "November"
-msgstr ""
+msgstr "11月"
 
 msgid "December"
-msgstr ""
+msgstr "12月"
 
 msgid "Week {{weekNumber}}"
 msgstr ""
@@ -111,13 +112,13 @@ msgid "Bi-Week {{biWeekNumber}}"
 msgstr ""
 
 msgid "Daily"
-msgstr ""
+msgstr "每日"
 
 msgid "Weekly"
-msgstr ""
+msgstr "每周"
 
 msgid "Bi-weekly"
-msgstr ""
+msgstr "两周"
 
 msgid "Weekly (Start Wednesday)"
 msgstr ""
@@ -132,172 +133,172 @@ msgid "Weekly (Start Sunday)"
 msgstr ""
 
 msgid "Monthly"
-msgstr ""
+msgstr "每月"
 
 msgid "Bi-monthly"
-msgstr ""
+msgstr "每两月"
 
 msgid "Quarterly"
-msgstr ""
+msgstr "季度"
 
 msgid "Six-monthly"
-msgstr ""
+msgstr "六个月"
 
 msgid "Six-monthly April"
-msgstr ""
+msgstr "半年四月"
 
 msgid "Yearly"
-msgstr ""
+msgstr "每年"
 
 msgid "Financial year (Start November)"
 msgstr ""
 
 msgid "Financial year (Start October)"
-msgstr ""
+msgstr "财务十月"
 
 msgid "Financial year (Start July)"
-msgstr ""
+msgstr "财务七月"
 
 msgid "Financial year (Start April)"
-msgstr ""
+msgstr "财务四月"
 
 msgid "Today"
-msgstr ""
+msgstr "今天"
 
 msgid "Yesterday"
-msgstr ""
+msgstr "昨天"
 
 msgid "Last 3 days"
-msgstr ""
+msgstr "Last 3 days"
 
 msgid "Last 7 days"
-msgstr ""
+msgstr "最近7天"
 
 msgid "Last 14 days"
-msgstr ""
+msgstr "Last 14 days"
 
 msgid "This week"
-msgstr ""
+msgstr "本年"
 
 msgid "Last week"
-msgstr ""
+msgstr "上周"
 
 msgid "Last 4 weeks"
-msgstr ""
+msgstr "最近四周"
 
 msgid "Last 12 weeks"
-msgstr ""
+msgstr "最近12周"
 
 msgid "Last 52 weeks"
-msgstr ""
+msgstr "Last 52 weeks"
 
 msgid "Weeks this year"
-msgstr ""
+msgstr "Weeks this year"
 
 msgid "This bi-week"
-msgstr ""
+msgstr "本双周"
 
 msgid "Last bi-week"
-msgstr ""
+msgstr "最近两周"
 
 msgid "Last 4 bi-weeks"
-msgstr ""
+msgstr "最近4个两周"
 
 msgid "This month"
-msgstr ""
+msgstr "本月"
 
 msgid "Last month"
-msgstr ""
+msgstr "上月"
 
 msgid "Last 3 months"
-msgstr ""
+msgstr "最近3个月"
 
 msgid "Last 6 months"
-msgstr ""
+msgstr "Last 6 months"
 
 msgid "Last 12 months"
-msgstr ""
+msgstr "最近12月"
 
 msgid "Months this year"
-msgstr ""
+msgstr "今年的月份"
 
 msgid "This bi-month"
-msgstr ""
+msgstr "本双月"
 
 msgid "Last bi-month"
-msgstr ""
+msgstr "Last bi-month"
 
 msgid "Last 6 bi-months"
-msgstr ""
+msgstr "Last 6 bi-months"
 
 msgid "Bi-months this year"
-msgstr ""
+msgstr "Bi-months this year"
 
 msgid "This quarter"
-msgstr ""
+msgstr "本季度"
 
 msgid "Last quarter"
-msgstr ""
+msgstr "最近一季"
 
 msgid "Last 4 quarters"
-msgstr ""
+msgstr "最近四个季度"
 
 msgid "Quarters this year"
-msgstr ""
+msgstr "今年的季度"
 
 msgid "This six-month"
-msgstr ""
+msgstr "本六个月"
 
 msgid "Last six-month"
-msgstr ""
+msgstr "最近六个月"
 
 msgid "Last 2 six-month"
 msgstr ""
 
 msgid "This financial year"
-msgstr ""
+msgstr "本财年"
 
 msgid "Last financial year"
-msgstr ""
+msgstr "上一财政年"
 
 msgid "Last 5 financial years"
-msgstr ""
+msgstr "最近五个财政年"
 
 msgid "This year"
-msgstr ""
+msgstr "今年"
 
 msgid "Last year"
-msgstr ""
+msgstr "去年"
 
 msgid "Last 5 years"
-msgstr ""
+msgstr "最近5年"
 
 msgid "Days"
-msgstr ""
+msgstr "天数"
 
 msgid "Weeks"
-msgstr ""
+msgstr "星期"
 
 msgid "Bi-weeks"
-msgstr ""
+msgstr "双周"
 
 msgid "Months"
-msgstr ""
+msgstr "月"
 
 msgid "Bi-months"
-msgstr ""
+msgstr "Bi-months"
 
 msgid "Quarters"
-msgstr ""
+msgstr "四分之一"
 
 msgid "Six-months"
-msgstr ""
+msgstr "Six-months"
 
 msgid "Financial Years"
-msgstr ""
+msgstr "Financial Years"
 
 msgid "Years"
-msgstr ""
+msgstr "年"
 
 msgid "Reporting rate"
 msgstr "上报率"
@@ -369,4 +370,7 @@ msgid "{{allDynamicOuNames}} levels in {{staticOuNames}}"
 msgstr ""
 
 msgid "{{allDynamicOuNames}} groups in {{staticOuNames}}"
+msgstr ""
+
+msgid "No data"
 msgstr ""

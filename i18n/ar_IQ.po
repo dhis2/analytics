@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-05-06T21:15:21.276Z\n"
+"POT-Creation-Date: 2020-05-13T16:46:50.486Z\n"
 "PO-Revision-Date: 2020-04-29 08:10+0000\n"
 "Last-Translator: KRG HIS <antonia.bezenchek@informa.pro>, 2020\n"
 "Language-Team: Arabic (Iraq) (https://www.transifex.com/hisp-uio/teams/100509/ar_IQ/)\n"
@@ -58,13 +58,244 @@ msgid "Year"
 msgstr ""
 
 msgid "Relative periods"
-msgstr ""
+msgstr "الفترات الزمنية النسبية"
 
 msgid "Fixed periods"
 msgstr ""
 
 msgid "Period type"
 msgstr ""
+
+msgid "January"
+msgstr ""
+
+msgid "February"
+msgstr ""
+
+msgid "March"
+msgstr ""
+
+msgid "April"
+msgstr ""
+
+msgid "May"
+msgstr ""
+
+msgid "June"
+msgstr ""
+
+msgid "July"
+msgstr ""
+
+msgid "August"
+msgstr ""
+
+msgid "September"
+msgstr ""
+
+msgid "October"
+msgstr ""
+
+msgid "November"
+msgstr ""
+
+msgid "December"
+msgstr ""
+
+msgid "Week {{weekNumber}}"
+msgstr ""
+
+msgid "Bi-Week {{biWeekNumber}}"
+msgstr ""
+
+msgid "Daily"
+msgstr "يومي"
+
+msgid "Weekly"
+msgstr "أسبوعي"
+
+msgid "Bi-weekly"
+msgstr "كل اسبوعين"
+
+msgid "Weekly (Start Wednesday)"
+msgstr ""
+
+msgid "Weekly (Start Thursday)"
+msgstr ""
+
+msgid "Weekly (Start Saturday)"
+msgstr ""
+
+msgid "Weekly (Start Sunday)"
+msgstr ""
+
+msgid "Monthly"
+msgstr "شهري"
+
+msgid "Bi-monthly"
+msgstr "أشهر مزدوجة"
+
+msgid "Quarterly"
+msgstr "ربع سنوي"
+
+msgid "Six-monthly"
+msgstr "ستة أشهر"
+
+msgid "Six-monthly April"
+msgstr "ستة أشهر نيسان"
+
+msgid "Yearly"
+msgstr "سنوي"
+
+msgid "Financial year (Start November)"
+msgstr ""
+
+msgid "Financial year (Start October)"
+msgstr "السنة المالية (بداية تشرين الأول)"
+
+msgid "Financial year (Start July)"
+msgstr "السنة المالية (بداية تموز)"
+
+msgid "Financial year (Start April)"
+msgstr "السنة المالية (بداية نيسان)"
+
+msgid "Today"
+msgstr "اليوم"
+
+msgid "Yesterday"
+msgstr "الأمس"
+
+msgid "Last 3 days"
+msgstr "آخر 3 أيام"
+
+msgid "Last 7 days"
+msgstr "آخر 7 أيام"
+
+msgid "Last 14 days"
+msgstr "آخر 14 يوم"
+
+msgid "This week"
+msgstr "الأسبوع الحالي"
+
+msgid "Last week"
+msgstr "الأسبوع الماضي"
+
+msgid "Last 4 weeks"
+msgstr "آخر 4 أسابيع"
+
+msgid "Last 12 weeks"
+msgstr "آخر 12 أسبوع"
+
+msgid "Last 52 weeks"
+msgstr "آخر 52 أسبوع"
+
+msgid "Weeks this year"
+msgstr "أسابيع السنة الحالية"
+
+msgid "This bi-week"
+msgstr "الأسبوعين الحاليين"
+
+msgid "Last bi-week"
+msgstr "آخر اسبوعين"
+
+msgid "Last 4 bi-weeks"
+msgstr "آخر 4 زوج اسابيع"
+
+msgid "This month"
+msgstr "الشهر الحالي"
+
+msgid "Last month"
+msgstr "الشهر الماضي"
+
+msgid "Last 3 months"
+msgstr "آخر 3 أشهر"
+
+msgid "Last 6 months"
+msgstr "آخر 6 أشهر"
+
+msgid "Last 12 months"
+msgstr "آخر 12 شهر"
+
+msgid "Months this year"
+msgstr "أشهر السنة الحالية"
+
+msgid "This bi-month"
+msgstr "الشهران المزدوجان الحاليان"
+
+msgid "Last bi-month"
+msgstr "آخر شهرين مزدوجين"
+
+msgid "Last 6 bi-months"
+msgstr "آخر 6 أشهر مزدوجة"
+
+msgid "Bi-months this year"
+msgstr "الأشهر المزدوجة في السنة الحالية"
+
+msgid "This quarter"
+msgstr "ربع السنة الحالي"
+
+msgid "Last quarter"
+msgstr "ربع السنة الماضي"
+
+msgid "Last 4 quarters"
+msgstr "آخر 4 أرباع السنة"
+
+msgid "Quarters this year"
+msgstr "أرباع السنة الحالية"
+
+msgid "This six-month"
+msgstr "نصف السنة الحالي (فترة من ستة أشهر)"
+
+msgid "Last six-month"
+msgstr "آخر ستة أشهر"
+
+msgid "Last 2 six-month"
+msgstr ""
+
+msgid "This financial year"
+msgstr "السنة المالية الحالية"
+
+msgid "Last financial year"
+msgstr "السنة المالية الماضية"
+
+msgid "Last 5 financial years"
+msgstr "آخر 5 سنوات مالية"
+
+msgid "This year"
+msgstr "السنة الحالية"
+
+msgid "Last year"
+msgstr "السنة الماضية"
+
+msgid "Last 5 years"
+msgstr "آخر 5 سنوات"
+
+msgid "Days"
+msgstr "‏‏الأيام"
+
+msgid "Weeks"
+msgstr "الأسابيع"
+
+msgid "Bi-weeks"
+msgstr "كل اسبوعين"
+
+msgid "Months"
+msgstr "الأشهر"
+
+msgid "Bi-months"
+msgstr "الأشهر المزدوجة"
+
+msgid "Quarters"
+msgstr "أرباع السنة"
+
+msgid "Six-months"
+msgstr "ستة أشهر"
+
+msgid "Financial Years"
+msgstr ""
+
+msgid "Years"
+msgstr "السنوات"
 
 msgid "Reporting rate"
 msgstr ""
@@ -136,4 +367,7 @@ msgid "{{allDynamicOuNames}} levels in {{staticOuNames}}"
 msgstr ""
 
 msgid "{{allDynamicOuNames}} groups in {{staticOuNames}}"
+msgstr ""
+
+msgid "No data"
 msgstr ""

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-05-06T21:15:21.276Z\n"
+"POT-Creation-Date: 2020-05-13T16:46:50.486Z\n"
 "PO-Revision-Date: 2020-04-29 08:10+0000\n"
 "Last-Translator: Viktor Varland <viktor@dhis2.org>, 2020\n"
 "Language-Team: Pushto (https://www.transifex.com/hisp-uio/teams/100509/ps/)\n"
@@ -59,13 +59,244 @@ msgid "Year"
 msgstr "کال"
 
 msgid "Relative periods"
-msgstr ""
+msgstr "اړونده مودط"
 
 msgid "Fixed periods"
-msgstr ""
+msgstr "ثابتې مودې"
 
 msgid "Period type"
 msgstr "د مودې ډول"
+
+msgid "January"
+msgstr "جنوري"
+
+msgid "February"
+msgstr "فبروري"
+
+msgid "March"
+msgstr "مارچ"
+
+msgid "April"
+msgstr "اپرېل"
+
+msgid "May"
+msgstr "می [ میاشت. می]"
+
+msgid "June"
+msgstr "جون"
+
+msgid "July"
+msgstr "جولای"
+
+msgid "August"
+msgstr "اګست"
+
+msgid "September"
+msgstr "سپټمبر"
+
+msgid "October"
+msgstr "اکتوبر"
+
+msgid "November"
+msgstr "نومبر"
+
+msgid "December"
+msgstr "ډیسمبر"
+
+msgid "Week {{weekNumber}}"
+msgstr ""
+
+msgid "Bi-Week {{biWeekNumber}}"
+msgstr ""
+
+msgid "Daily"
+msgstr "ورځني [ د مودې ډول ]"
+
+msgid "Weekly"
+msgstr "اوونیز"
+
+msgid "Bi-weekly"
+msgstr ""
+
+msgid "Weekly (Start Wednesday)"
+msgstr ""
+
+msgid "Weekly (Start Thursday)"
+msgstr ""
+
+msgid "Weekly (Start Saturday)"
+msgstr ""
+
+msgid "Weekly (Start Sunday)"
+msgstr ""
+
+msgid "Monthly"
+msgstr "میاشتنۍ"
+
+msgid "Bi-monthly"
+msgstr "دوه میاشتنۍ"
+
+msgid "Quarterly"
+msgstr "درې میاشتنۍ"
+
+msgid "Six-monthly"
+msgstr "شپږ- میاشتنۍ"
+
+msgid "Six-monthly April"
+msgstr "شپږ - د اپرېل میاشتنۍ"
+
+msgid "Yearly"
+msgstr "کلنۍ"
+
+msgid "Financial year (Start November)"
+msgstr ""
+
+msgid "Financial year (Start October)"
+msgstr "مالی کال- اکتوبر"
+
+msgid "Financial year (Start July)"
+msgstr "مالی کال- جولای"
+
+msgid "Financial year (Start April)"
+msgstr "مالی کال- آپریل"
+
+msgid "Today"
+msgstr "نن ورځ"
+
+msgid "Yesterday"
+msgstr "پرونۍ ورځ"
+
+msgid "Last 3 days"
+msgstr "تېرې درې ورځې"
+
+msgid "Last 7 days"
+msgstr "تېرې اوه ورځې"
+
+msgid "Last 14 days"
+msgstr "تېرې څورلس ورځې"
+
+msgid "This week"
+msgstr "هفته هذا"
+
+msgid "Last week"
+msgstr "تېره اونۍ"
+
+msgid "Last 4 weeks"
+msgstr "تېرې 4 اونۍ"
+
+msgid "Last 12 weeks"
+msgstr "تېرو 12 اونۍ"
+
+msgid "Last 52 weeks"
+msgstr "تېرې دوه پنځوس اونۍ"
+
+msgid "Weeks this year"
+msgstr "په روان کال کې اونۍ"
+
+msgid "This bi-week"
+msgstr ""
+
+msgid "Last bi-week"
+msgstr ""
+
+msgid "Last 4 bi-weeks"
+msgstr ""
+
+msgid "This month"
+msgstr "ماه هذا"
+
+msgid "Last month"
+msgstr "تېره میاشت"
+
+msgid "Last 3 months"
+msgstr "تېرې 3 میاشتې"
+
+msgid "Last 6 months"
+msgstr "تېرې شپږ میاشتې"
+
+msgid "Last 12 months"
+msgstr "تېرې 12 میاشتې"
+
+msgid "Months this year"
+msgstr "د روان کال میاشتې"
+
+msgid "This bi-month"
+msgstr "این دوماهه"
+
+msgid "Last bi-month"
+msgstr "تېرې دوه میاشتې"
+
+msgid "Last 6 bi-months"
+msgstr "په تېرو شپږو میاشتو کې ډوه ځلې"
+
+msgid "Bi-months this year"
+msgstr "په روان کال کې دوه میاشتې"
+
+msgid "This quarter"
+msgstr "ربع هذا"
+
+msgid "Last quarter"
+msgstr "تېره ربعه"
+
+msgid "Last 4 quarters"
+msgstr "تېرې 4ربعې"
+
+msgid "Quarters this year"
+msgstr "د سږ کال ربعې"
+
+msgid "This six-month"
+msgstr "شش ماه هذا"
+
+msgid "Last six-month"
+msgstr "تېرې شپږ میاشتې [ تېرې ـ شپږ ـ میاشتې ]"
+
+msgid "Last 2 six-month"
+msgstr ""
+
+msgid "This financial year"
+msgstr "سږنۍ مالي کال"
+
+msgid "Last financial year"
+msgstr "تېر مالي کال"
+
+msgid "Last 5 financial years"
+msgstr "تېر 5 مالي کلونه"
+
+msgid "This year"
+msgstr "روان کال"
+
+msgid "Last year"
+msgstr "تېر کال"
+
+msgid "Last 5 years"
+msgstr "تېر 5 کلونه"
+
+msgid "Days"
+msgstr "ورځې"
+
+msgid "Weeks"
+msgstr "اونۍ"
+
+msgid "Bi-weeks"
+msgstr ""
+
+msgid "Months"
+msgstr "میاشت"
+
+msgid "Bi-months"
+msgstr "دوه میاشتنۍ"
+
+msgid "Quarters"
+msgstr "ربعې"
+
+msgid "Six-months"
+msgstr "شپږ میاشتې"
+
+msgid "Financial Years"
+msgstr ""
+
+msgid "Years"
+msgstr "کلونه"
 
 msgid "Reporting rate"
 msgstr ""
@@ -137,4 +368,7 @@ msgid "{{allDynamicOuNames}} levels in {{staticOuNames}}"
 msgstr ""
 
 msgid "{{allDynamicOuNames}} groups in {{staticOuNames}}"
+msgstr ""
+
+msgid "No data"
 msgstr ""
