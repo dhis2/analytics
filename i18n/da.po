@@ -1,109 +1,106 @@
 # 
 # Translators:
-# Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2020
 # phil_dhis2, 2020
-# Viktor Varland <viktor@dhis2.org>, 2020
-# Bram Piot <bram.piot@gmail.com>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2020-05-13T16:46:50.486Z\n"
 "PO-Revision-Date: 2020-04-29 08:10+0000\n"
-"Last-Translator: Bram Piot <bram.piot@gmail.com>, 2020\n"
-"Language-Team: French (https://www.transifex.com/hisp-uio/teams/100509/fr/)\n"
+"Last-Translator: phil_dhis2, 2020\n"
+"Language-Team: Danish (https://www.transifex.com/hisp-uio/teams/100509/da/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: fr\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Language: da\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "Data"
-msgstr "Données"
+msgstr ""
 
 msgid "Data Type"
-msgstr "Type de données"
+msgstr ""
 
 msgid "Totals"
-msgstr "Totaux"
+msgstr ""
 
 msgid "Details"
 msgstr "Details"
 
 msgid "Detail"
-msgstr "Détail"
+msgstr ""
 
 msgid "Search dimensions"
 msgstr ""
 
 msgid "Dimension recommended with selected data"
-msgstr "Dimension recommandée avec les données sélectionnées"
+msgstr ""
 
 msgid "Search"
-msgstr "Chercher"
+msgstr ""
 
 msgid "Selected Data"
-msgstr "Données sélectionnées"
+msgstr ""
 
 msgid "Deselect All"
-msgstr "Tout déselectionner"
+msgstr ""
 
 msgid "Select all"
-msgstr "Sélectionner tout"
+msgstr "Select all"
 
 msgid "Organisation units"
-msgstr "Unités d'organisation"
+msgstr "Organisation units"
 
 msgid "Period"
-msgstr "Période"
+msgstr ""
 
 msgid "Year"
-msgstr "Année"
+msgstr "Year"
 
 msgid "Relative periods"
-msgstr "Périodes relatives"
+msgstr ""
 
 msgid "Fixed periods"
-msgstr "Périodes fixes"
+msgstr ""
 
 msgid "Period type"
-msgstr "Type de période"
+msgstr ""
 
 msgid "January"
-msgstr "Janvier"
+msgstr "January"
 
 msgid "February"
-msgstr "Février"
+msgstr "February"
 
 msgid "March"
-msgstr "Mars"
+msgstr "March"
 
 msgid "April"
-msgstr "Avril"
+msgstr "April"
 
 msgid "May"
-msgstr "Mai"
+msgstr "May"
 
 msgid "June"
-msgstr "Juin"
+msgstr "June"
 
 msgid "July"
-msgstr "Juillet"
+msgstr "July"
 
 msgid "August"
-msgstr "Août"
+msgstr "August"
 
 msgid "September"
-msgstr "Septembre"
+msgstr "September"
 
 msgid "October"
-msgstr "Octobre"
+msgstr "October"
 
 msgid "November"
-msgstr "Novembre"
+msgstr "November"
 
 msgid "December"
-msgstr "Décembre"
+msgstr "December"
 
 msgid "Week {{weekNumber}}"
 msgstr ""
@@ -112,85 +109,85 @@ msgid "Bi-Week {{biWeekNumber}}"
 msgstr ""
 
 msgid "Daily"
-msgstr "Quotidien"
+msgstr "Daily"
 
 msgid "Weekly"
-msgstr "Hebdomadaire"
+msgstr "Weekly"
 
 msgid "Bi-weekly"
 msgstr ""
 
 msgid "Weekly (Start Wednesday)"
-msgstr "Hebdomadaire (début mercredi)"
+msgstr ""
 
 msgid "Weekly (Start Thursday)"
-msgstr "Hebdomadaire (début jeudi)"
+msgstr ""
 
 msgid "Weekly (Start Saturday)"
-msgstr "Hebdomadaire (début samedi)"
+msgstr ""
 
 msgid "Weekly (Start Sunday)"
-msgstr "Hebdomadaire (début dimanche)"
+msgstr ""
 
 msgid "Monthly"
-msgstr "Mensuel"
+msgstr "Monthly"
 
 msgid "Bi-monthly"
-msgstr "Bimensuel"
+msgstr "Bi-monthly"
 
 msgid "Quarterly"
-msgstr "Trimestriel"
+msgstr "Quarterly"
 
 msgid "Six-monthly"
-msgstr "Semestriel"
+msgstr "Six-monthly"
 
 msgid "Six-monthly April"
-msgstr "Six-mois avril"
+msgstr ""
 
 msgid "Yearly"
-msgstr "Annuel"
+msgstr "Yearly"
 
 msgid "Financial year (Start November)"
 msgstr ""
 
 msgid "Financial year (Start October)"
-msgstr "Financière Octobre"
+msgstr ""
 
 msgid "Financial year (Start July)"
-msgstr "Financière Juillet"
+msgstr ""
 
 msgid "Financial year (Start April)"
-msgstr "Financière Avril"
+msgstr ""
 
 msgid "Today"
-msgstr "Aujourd'hui"
+msgstr ""
 
 msgid "Yesterday"
-msgstr "Hier"
+msgstr ""
 
 msgid "Last 3 days"
-msgstr "3 derniers jours"
+msgstr ""
 
 msgid "Last 7 days"
-msgstr "7 derniers jours"
+msgstr ""
 
 msgid "Last 14 days"
-msgstr "14 dernier jours"
+msgstr ""
 
 msgid "This week"
-msgstr "Cette semaine"
+msgstr ""
 
 msgid "Last week"
-msgstr "Semaine passée"
+msgstr "Last week"
 
 msgid "Last 4 weeks"
-msgstr "4 dernières semaines"
+msgstr ""
 
 msgid "Last 12 weeks"
-msgstr "12 dernières semaines"
+msgstr ""
 
 msgid "Last 52 weeks"
-msgstr "52 dernières semaines"
+msgstr ""
 
 msgid "Weeks this year"
 msgstr ""
@@ -205,172 +202,172 @@ msgid "Last 4 bi-weeks"
 msgstr ""
 
 msgid "This month"
-msgstr "Ce mois-ci"
+msgstr ""
 
 msgid "Last month"
-msgstr "Le mois dernier"
+msgstr "Last month"
 
 msgid "Last 3 months"
-msgstr "3 derniers mois"
+msgstr "Last 3 months"
 
 msgid "Last 6 months"
-msgstr "6 derniers mois"
+msgstr "Last 6 months"
 
 msgid "Last 12 months"
-msgstr "12 derniers mois"
+msgstr "Last 12 months"
 
 msgid "Months this year"
-msgstr "Mois cette année"
+msgstr ""
 
 msgid "This bi-month"
-msgstr "Ces 2 dernières semaines"
+msgstr ""
 
 msgid "Last bi-month"
-msgstr "Dernier bi-mestre"
+msgstr ""
 
 msgid "Last 6 bi-months"
-msgstr "6 derniers bimestres"
+msgstr ""
 
 msgid "Bi-months this year"
 msgstr ""
 
 msgid "This quarter"
-msgstr "Ce trimestre"
+msgstr ""
 
 msgid "Last quarter"
-msgstr "Trimestre précédent"
+msgstr ""
 
 msgid "Last 4 quarters"
-msgstr "4 derniers trimestres"
+msgstr ""
 
 msgid "Quarters this year"
-msgstr "Trimestres cette année"
+msgstr ""
 
 msgid "This six-month"
-msgstr "Ce semestre"
+msgstr ""
 
 msgid "Last six-month"
-msgstr "Dernier semestre"
+msgstr ""
 
 msgid "Last 2 six-month"
 msgstr ""
 
 msgid "This financial year"
-msgstr "Année fiscale en cours"
+msgstr ""
 
 msgid "Last financial year"
-msgstr "Dernière année financière"
+msgstr ""
 
 msgid "Last 5 financial years"
-msgstr "5 dernières années financières"
+msgstr ""
 
 msgid "This year"
-msgstr "Année en cours"
+msgstr ""
 
 msgid "Last year"
-msgstr "L'année passée"
+msgstr ""
 
 msgid "Last 5 years"
-msgstr "5 dernières années"
+msgstr ""
 
 msgid "Days"
-msgstr "Jours"
+msgstr ""
 
 msgid "Weeks"
-msgstr "Semaines"
+msgstr ""
 
 msgid "Bi-weeks"
 msgstr ""
 
 msgid "Months"
-msgstr "Mois"
+msgstr ""
 
 msgid "Bi-months"
-msgstr "Bimensuel"
+msgstr ""
 
 msgid "Quarters"
-msgstr "Trimestres"
+msgstr ""
 
 msgid "Six-months"
-msgstr "Semestres"
+msgstr ""
 
 msgid "Financial Years"
 msgstr ""
 
 msgid "Years"
-msgstr "Années"
+msgstr ""
 
 msgid "Reporting rate"
-msgstr "Taux de déclaration"
+msgstr ""
 
 msgid "Reporting rate on time"
-msgstr "Taux de notification à temps"
+msgstr ""
 
 msgid "Actual reports"
-msgstr "Rapports réels"
+msgstr ""
 
 msgid "Actual reports on time"
-msgstr "Rapports réels à temps"
+msgstr ""
 
 msgid "Expected reports"
-msgstr "Rapports attendus"
+msgstr ""
 
 msgid "Program"
-msgstr "Programme"
+msgstr ""
 
 msgid "Indicators"
-msgstr "Indicateurs"
+msgstr "Indicators"
 
 msgid "Select indicator group"
-msgstr "Sélectionner groupe d'indicateurs"
+msgstr ""
 
 msgid "[ All groups ]"
-msgstr "[ Tous les groupes ]"
+msgstr ""
 
 msgid "Data elements"
-msgstr "Eléments de données"
+msgstr "Data elements"
 
 msgid "Select data element group"
-msgstr "Sélectionner groupe d'éléments de données"
+msgstr ""
 
 msgid "[ All data elements ]"
-msgstr "[ Tous les éléments de données ]"
+msgstr ""
 
 msgid "Data sets"
-msgstr "Ensembles de données"
+msgstr "Data sets"
 
 msgid "Select data sets"
-msgstr "Sélectionner des ensembles de données"
+msgstr ""
 
 msgid "[ All metrics ]"
-msgstr "[ Toutes les métriques ]"
+msgstr ""
 
 msgid "Event data items"
-msgstr "Eléments de données évènement"
+msgstr ""
 
 msgid "Select a program"
-msgstr "Sélectionnez un programme"
+msgstr ""
 
 msgid "Program indicators"
-msgstr "Program indicators"
+msgstr ""
 
 msgid "Organisation Unit"
-msgstr "Unité d'organisation"
+msgstr ""
 
 msgid "{{dynamicOuNames}} and {{lastOuName}}"
-msgstr "{{NomsOudynamiques}} et {{dernièreOuNom}}"
+msgstr ""
 
 msgid "{{allDynamicOuNames}} levels"
-msgstr "{{touslesnomsOudynamiques}} niveaux"
+msgstr ""
 
 msgid "{{allDynamicOuNames}} groups"
-msgstr "{{touslesnomsOudynamiques}} groupes"
+msgstr ""
 
 msgid "{{allDynamicOuNames}} levels in {{staticOuNames}}"
-msgstr "{{touslesnomsOudynamiques}} niveaux dans {{NomsOustatiques}} "
+msgstr ""
 
 msgid "{{allDynamicOuNames}} groups in {{staticOuNames}}"
-msgstr "{{touslesnomsOudynamiques}} groupes dans {{NomsOustatiques}}"
+msgstr ""
 
 msgid "No data"
 msgstr ""

@@ -2,13 +2,14 @@
 # Translators:
 # phil_dhis2, 2020
 # Viktor Varland <viktor@dhis2.org>, 2020
+# Wanda <wanda@frontlineaids.org>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-05-08T15:03:30.510Z\n"
+"POT-Creation-Date: 2020-05-13T16:46:50.486Z\n"
 "PO-Revision-Date: 2020-04-29 08:10+0000\n"
-"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2020\n"
+"Last-Translator: Wanda <wanda@frontlineaids.org>, 2020\n"
 "Language-Team: Russian (https://www.transifex.com/hisp-uio/teams/100509/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -68,40 +69,40 @@ msgid "Period type"
 msgstr "Виды периода"
 
 msgid "January"
-msgstr ""
+msgstr "Январь"
 
 msgid "February"
-msgstr ""
+msgstr "Февраль"
 
 msgid "March"
-msgstr ""
+msgstr "Март"
 
 msgid "April"
-msgstr ""
+msgstr "Апрель"
 
 msgid "May"
-msgstr ""
+msgstr "Май"
 
 msgid "June"
-msgstr ""
+msgstr "Июнь"
 
 msgid "July"
-msgstr ""
+msgstr "Июль"
 
 msgid "August"
-msgstr ""
+msgstr "Август"
 
 msgid "September"
-msgstr ""
+msgstr "Сентябрь"
 
 msgid "October"
-msgstr ""
+msgstr "Октябрь"
 
 msgid "November"
-msgstr ""
+msgstr "Ноябрь"
 
 msgid "December"
-msgstr ""
+msgstr "Декабрь"
 
 msgid "Week {{weekNumber}}"
 msgstr ""
@@ -110,13 +111,13 @@ msgid "Bi-Week {{biWeekNumber}}"
 msgstr ""
 
 msgid "Daily"
-msgstr ""
+msgstr "Ежедневно"
 
 msgid "Weekly"
-msgstr ""
+msgstr "Еженедельно"
 
 msgid "Bi-weekly"
-msgstr ""
+msgstr "Каждые две недели"
 
 msgid "Weekly (Start Wednesday)"
 msgstr ""
@@ -131,172 +132,172 @@ msgid "Weekly (Start Sunday)"
 msgstr ""
 
 msgid "Monthly"
-msgstr ""
+msgstr "Ежемесячно"
 
 msgid "Bi-monthly"
-msgstr ""
+msgstr "Раз в два месяца"
 
 msgid "Quarterly"
-msgstr ""
+msgstr "Ежеквартально"
 
 msgid "Six-monthly"
-msgstr ""
+msgstr "Раз в полугодие"
 
 msgid "Six-monthly April"
-msgstr ""
+msgstr "Полугодовой-Апрель"
 
 msgid "Yearly"
-msgstr ""
+msgstr "Ежегодно"
 
 msgid "Financial year (Start November)"
 msgstr ""
 
 msgid "Financial year (Start October)"
-msgstr ""
+msgstr "Финансовый год - Октябрь"
 
 msgid "Financial year (Start July)"
-msgstr ""
+msgstr "Финансовый год - Июль"
 
 msgid "Financial year (Start April)"
-msgstr ""
+msgstr "Финансовый год - Апрель"
 
 msgid "Today"
-msgstr ""
+msgstr "Сегодня"
 
 msgid "Yesterday"
-msgstr ""
+msgstr "Вчера"
 
 msgid "Last 3 days"
-msgstr ""
+msgstr "Последние 3 дня"
 
 msgid "Last 7 days"
-msgstr ""
+msgstr "Последние 7 дней"
 
 msgid "Last 14 days"
-msgstr ""
+msgstr "Последние 14 дней"
 
 msgid "This week"
-msgstr ""
+msgstr "Эта неделя"
 
 msgid "Last week"
-msgstr ""
+msgstr "Прошлая неделя"
 
 msgid "Last 4 weeks"
-msgstr ""
+msgstr "Прошлые 4 недели"
 
 msgid "Last 12 weeks"
-msgstr ""
+msgstr "Прошлые 12 недель"
 
 msgid "Last 52 weeks"
-msgstr ""
+msgstr "Последние 52 недели"
 
 msgid "Weeks this year"
-msgstr ""
+msgstr "Недели этого года"
 
 msgid "This bi-week"
-msgstr ""
+msgstr "Эта би-неделя"
 
 msgid "Last bi-week"
-msgstr ""
+msgstr "Последняя би-неделя"
 
 msgid "Last 4 bi-weeks"
-msgstr ""
+msgstr "Последние 4 би-недель"
 
 msgid "This month"
-msgstr ""
+msgstr "Этот месяц"
 
 msgid "Last month"
-msgstr ""
+msgstr "Последний месяц"
 
 msgid "Last 3 months"
-msgstr ""
+msgstr "Прошлые 3 месяца"
 
 msgid "Last 6 months"
-msgstr ""
+msgstr "Последние 6 месяцев"
 
 msgid "Last 12 months"
-msgstr ""
+msgstr "Прошлые 12 месяцев"
 
 msgid "Months this year"
-msgstr ""
+msgstr "Месяцы этого года"
 
 msgid "This bi-month"
-msgstr ""
+msgstr "Этот период по два месяца"
 
 msgid "Last bi-month"
-msgstr ""
+msgstr "Прошлый двухмесячный период"
 
 msgid "Last 6 bi-months"
-msgstr ""
+msgstr "Последние 6 двухмесячных периодов"
 
 msgid "Bi-months this year"
-msgstr ""
+msgstr "Би-месяцы этого года"
 
 msgid "This quarter"
-msgstr ""
+msgstr "Этот квартал"
 
 msgid "Last quarter"
-msgstr ""
+msgstr "Последний квартал"
 
 msgid "Last 4 quarters"
-msgstr ""
+msgstr "Прошлые 4 квартала"
 
 msgid "Quarters this year"
-msgstr ""
+msgstr "Кварталы этого года"
 
 msgid "This six-month"
-msgstr ""
+msgstr "Это полугодие"
 
 msgid "Last six-month"
-msgstr ""
+msgstr "Прошлое полугодие"
 
 msgid "Last 2 six-month"
 msgstr ""
 
 msgid "This financial year"
-msgstr ""
+msgstr "Этот финансовый год"
 
 msgid "Last financial year"
-msgstr ""
+msgstr "Прошлый финансовый год"
 
 msgid "Last 5 financial years"
-msgstr ""
+msgstr "Прошлые 5 финансовых лет"
 
 msgid "This year"
-msgstr ""
+msgstr "Этот год"
 
 msgid "Last year"
-msgstr ""
+msgstr "Прошлый год"
 
 msgid "Last 5 years"
-msgstr ""
+msgstr "Прошлые 5 лет"
 
 msgid "Days"
-msgstr ""
+msgstr "Дни"
 
 msgid "Weeks"
-msgstr ""
+msgstr "Недели"
 
 msgid "Bi-weeks"
-msgstr ""
+msgstr "Двухнедельные промежутки"
 
 msgid "Months"
-msgstr ""
+msgstr "Месяцы"
 
 msgid "Bi-months"
-msgstr ""
+msgstr "Двухмесячный период"
 
 msgid "Quarters"
-msgstr ""
+msgstr "Кварталы"
 
 msgid "Six-months"
-msgstr ""
+msgstr "Полугодие"
 
 msgid "Financial Years"
 msgstr ""
 
 msgid "Years"
-msgstr ""
+msgstr "Годы"
 
 msgid "Reporting rate"
 msgstr "Показатель отчетности"
@@ -368,4 +369,7 @@ msgid "{{allDynamicOuNames}} levels in {{staticOuNames}}"
 msgstr ""
 
 msgid "{{allDynamicOuNames}} groups in {{staticOuNames}}"
+msgstr ""
+
+msgid "No data"
 msgstr ""

@@ -2,13 +2,14 @@
 # Translators:
 # phil_dhis2, 2020
 # Viktor Varland <viktor@dhis2.org>, 2020
+# Wanda <wanda@frontlineaids.org>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-05-06T21:15:21.276Z\n"
+"POT-Creation-Date: 2020-05-13T16:46:50.486Z\n"
 "PO-Revision-Date: 2020-04-29 08:10+0000\n"
-"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2020\n"
+"Last-Translator: Wanda <wanda@frontlineaids.org>, 2020\n"
 "Language-Team: Ukrainian (https://www.transifex.com/hisp-uio/teams/100509/uk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -59,13 +60,244 @@ msgid "Year"
 msgstr "Рік"
 
 msgid "Relative periods"
-msgstr ""
+msgstr "Відносні періоди"
 
 msgid "Fixed periods"
 msgstr ""
 
 msgid "Period type"
 msgstr ""
+
+msgid "January"
+msgstr "Січень"
+
+msgid "February"
+msgstr "Лютий"
+
+msgid "March"
+msgstr "Березень"
+
+msgid "April"
+msgstr "Квітень"
+
+msgid "May"
+msgstr "Травень"
+
+msgid "June"
+msgstr "Червень"
+
+msgid "July"
+msgstr "Липень"
+
+msgid "August"
+msgstr "Серпень"
+
+msgid "September"
+msgstr "Вересень"
+
+msgid "October"
+msgstr "Жовтень"
+
+msgid "November"
+msgstr "Листопад"
+
+msgid "December"
+msgstr "Грудень"
+
+msgid "Week {{weekNumber}}"
+msgstr ""
+
+msgid "Bi-Week {{biWeekNumber}}"
+msgstr ""
+
+msgid "Daily"
+msgstr "Щодня"
+
+msgid "Weekly"
+msgstr "Щотижня"
+
+msgid "Bi-weekly"
+msgstr "Щодвотижневий"
+
+msgid "Weekly (Start Wednesday)"
+msgstr ""
+
+msgid "Weekly (Start Thursday)"
+msgstr ""
+
+msgid "Weekly (Start Saturday)"
+msgstr ""
+
+msgid "Weekly (Start Sunday)"
+msgstr ""
+
+msgid "Monthly"
+msgstr "Щомісячно"
+
+msgid "Bi-monthly"
+msgstr "Щодва місяці"
+
+msgid "Quarterly"
+msgstr "Щоквартально"
+
+msgid "Six-monthly"
+msgstr "Раз на півріччя"
+
+msgid "Six-monthly April"
+msgstr "Раз на півріччя квітень"
+
+msgid "Yearly"
+msgstr "Щорічно"
+
+msgid "Financial year (Start November)"
+msgstr ""
+
+msgid "Financial year (Start October)"
+msgstr "Фінансовий рік (Початок у жовтні)"
+
+msgid "Financial year (Start July)"
+msgstr "Фінансовий рік (Початок у липні)"
+
+msgid "Financial year (Start April)"
+msgstr "Фінансовий рік (Початок у квітні)"
+
+msgid "Today"
+msgstr "Сьогодні"
+
+msgid "Yesterday"
+msgstr "Вчора"
+
+msgid "Last 3 days"
+msgstr "Минулі 3 дні"
+
+msgid "Last 7 days"
+msgstr "Минулі 7 днів"
+
+msgid "Last 14 days"
+msgstr "Минулі 14 днів"
+
+msgid "This week"
+msgstr "Поточний тиждень"
+
+msgid "Last week"
+msgstr "Минулий тиждень"
+
+msgid "Last 4 weeks"
+msgstr "Останні 4 тижні"
+
+msgid "Last 12 weeks"
+msgstr "Останні 12 тижнів"
+
+msgid "Last 52 weeks"
+msgstr "Останні 52 тижні"
+
+msgid "Weeks this year"
+msgstr "Тижні поточного року"
+
+msgid "This bi-week"
+msgstr "Теперішній двотижневий проміжок"
+
+msgid "Last bi-week"
+msgstr "Попередній двотижневий проміжок"
+
+msgid "Last 4 bi-weeks"
+msgstr "Попередні 4 двотижневі проміжки"
+
+msgid "This month"
+msgstr "Поточний місяць"
+
+msgid "Last month"
+msgstr "Останній місяць"
+
+msgid "Last 3 months"
+msgstr "Останні 3 місяці"
+
+msgid "Last 6 months"
+msgstr "Останні 6 місяців"
+
+msgid "Last 12 months"
+msgstr "Останні 12 місяців"
+
+msgid "Months this year"
+msgstr "Місяців поточного року"
+
+msgid "This bi-month"
+msgstr "Поточний двомісячний період"
+
+msgid "Last bi-month"
+msgstr "Останні два місяці"
+
+msgid "Last 6 bi-months"
+msgstr "Останні 6 двомісячних періоди"
+
+msgid "Bi-months this year"
+msgstr "Щодва місяці поточного року"
+
+msgid "This quarter"
+msgstr "Поточний квартал"
+
+msgid "Last quarter"
+msgstr "Минулий квартал"
+
+msgid "Last 4 quarters"
+msgstr "Останні 4 квартали"
+
+msgid "Quarters this year"
+msgstr "Квартали поточного року"
+
+msgid "This six-month"
+msgstr "Поточне півріччя"
+
+msgid "Last six-month"
+msgstr "Останнє півріччя"
+
+msgid "Last 2 six-month"
+msgstr ""
+
+msgid "This financial year"
+msgstr "Поточний фінансовий рік"
+
+msgid "Last financial year"
+msgstr "Минулий фінансовий рік"
+
+msgid "Last 5 financial years"
+msgstr "Останні 5 фінансових років"
+
+msgid "This year"
+msgstr "Поточний рік"
+
+msgid "Last year"
+msgstr "Минулий рік"
+
+msgid "Last 5 years"
+msgstr "Останні 5 років"
+
+msgid "Days"
+msgstr "Дні"
+
+msgid "Weeks"
+msgstr "Тижні"
+
+msgid "Bi-weeks"
+msgstr "Двотижневі проміжки"
+
+msgid "Months"
+msgstr "Місяці"
+
+msgid "Bi-months"
+msgstr "Двомісячні періоди"
+
+msgid "Quarters"
+msgstr "Квартали"
+
+msgid "Six-months"
+msgstr "Півріччя"
+
+msgid "Financial Years"
+msgstr ""
+
+msgid "Years"
+msgstr "Роки"
 
 msgid "Reporting rate"
 msgstr ""
@@ -137,4 +369,7 @@ msgid "{{allDynamicOuNames}} levels in {{staticOuNames}}"
 msgstr ""
 
 msgid "{{allDynamicOuNames}} groups in {{staticOuNames}}"
+msgstr ""
+
+msgid "No data"
 msgstr ""
