@@ -211,3 +211,6 @@ msgstr ""
 
 msgid "Base"
 msgstr ""
+
+msgid "No data"
+msgstr ""
