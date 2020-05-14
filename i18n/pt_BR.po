@@ -371,4 +371,4 @@ msgid "{{allDynamicOuNames}} groups in {{staticOuNames}}"
 msgstr ""
 
 msgid "No data"
-msgstr ""
+msgstr "Não ha dados"
