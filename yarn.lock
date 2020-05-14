@@ -1127,7 +1127,11 @@
     material-ui "^0.20.0"
     rxjs "^5.5.7"
 
+<<<<<<< HEAD
 "@dhis2/d2-ui-org-unit-dialog@^7.0.0":
+=======
+"@dhis2/d2-ui-org-unit-dialog@^7.0.3":
+>>>>>>> 1ef5a27... fix: upgrade to org-unit-dialog with all translations
   version "7.0.3"
   resolved "https://registry.yarnpkg.com/@dhis2/d2-ui-org-unit-dialog/-/d2-ui-org-unit-dialog-7.0.3.tgz#2eec30a569d5fb07f256d4727fa8986c7d91c047"
   integrity sha512-+TkjfXXat2GIZRWDJqFqB+rF8CO6bA1If3tq7//1v3wuyznVA0kPvYqOC22JIxpDZ+tuEROGY1h1gt214buHzQ==
