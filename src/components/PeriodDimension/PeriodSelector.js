@@ -10,7 +10,6 @@ import {
 } from '@dhis2/ui-core'
 import i18n from '@dhis2/d2-i18n'
 
-import ItemSelector from './../ItemSelector/ItemSelector'
 import FixedPeriodFilter from './FixedPeriodFilter'
 import RelativePeriodFilter from './RelativePeriodFilter'
 
@@ -145,28 +144,10 @@ class PeriodSelector extends Component {
             )
         }
 
-        const unselected = {
-            items: this.state.offeredPeriods,
-            onSelect: this.onSelectPeriods,
-            filterText: '',
-        }
-
-        const selected = {
-            items: [],
-            onDeselect: this.onDeselectPeriods,
-            onReorder: this.setSelectedPeriodOrder,
-        }
-
         return (
             <Fragment>
                 <div style={{ display: 'flex', marginTop: '18px' }}>
-                    <ItemSelector
-                        itemClassName="period-selector"
-                        unselected={unselected}
-                        selected={selected}
-                    >
-                        {filterZone()}
-                    </ItemSelector>
+                    {filterZone()}
                 </div>
                 <Transfer
                     onChange={({ selected }) => {
