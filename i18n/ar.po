@@ -105,10 +105,10 @@ msgid "December"
 msgstr "ديسمبر"
 
 msgid "Week {{weekNumber}}"
-msgstr ""
+msgstr "الإسبوع {{weekNumber}}"
 
 msgid "Bi-Week {{biWeekNumber}}"
-msgstr ""
+msgstr "ثنائي الإسبوع {{biWeekNumber}}"
 
 msgid "Daily"
 msgstr "يومي"
@@ -150,7 +150,7 @@ msgid "Yearly"
 msgstr "سنوي"
 
 msgid "Financial year (Start November)"
-msgstr ""
+msgstr "السنة المالية (تبدأ في نوفمبر)"
 
 msgid "Financial year (Start October)"
 msgstr "السنة المالية (بداية تشرين الأول)"
@@ -252,7 +252,7 @@ msgid "Last six-month"
 msgstr "آخر نصف السنة (فترة من ستة أشهر)"
 
 msgid "Last 2 six-month"
-msgstr ""
+msgstr "آخر نصفي سنة (فترتي ستة-أشهر)"
 
 msgid "This financial year"
 msgstr "السنة المالية الحالية"
@@ -372,4 +372,4 @@ msgid "{{allDynamicOuNames}} groups in {{staticOuNames}}"
 msgstr "مجموعات {{allDynamicOuNames}} في {{staticOuNames}}"
 
 msgid "No data"
-msgstr ""
+msgstr "لا توجد بيانات"
