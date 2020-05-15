@@ -55,7 +55,7 @@
         "lodash": "^4.17.13",
         "react-beautiful-dnd": "^10.1.1",
         "resize-observer-polyfill": "^1.5.1",
-        "styled-jsx": "^3.2.1"
+        "styled-jsx": "^3.3.0"
     },
     "files": [
         "build"
