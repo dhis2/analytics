@@ -4,7 +4,10 @@ import { parseValue } from './parseValue'
 import { renderValue } from './renderValue'
 import { measureText } from './measureText'
 
-import { DIMENSION_ID_ORGUNIT } from '../predefinedDimensions'
+import {
+    DIMENSION_ID_ORGUNIT,
+    DIMENSION_ID_PERIOD,
+} from '../predefinedDimensions'
 
 import {
     AGGREGATE_TYPE_NA,
@@ -320,6 +323,19 @@ export class PivotTableEngine {
 
         const dataRow = this.data[row][column]
 
+        const ouId =
+            dataRow[
+                this.dimensionLookup.headerDimensions.findIndex(
+                    header => header.dimension === DIMENSION_ID_ORGUNIT
+                )
+            ]
+        const peId =
+            dataRow[
+                this.dimensionLookup.headerDimensions.findIndex(
+                    header => header.dimension === DIMENSION_ID_PERIOD
+                )
+            ]
+
         let rawValue =
             cellType === CELL_TYPE_VALUE
                 ? dataRow[this.dimensionLookup.dataHeaders.value]
@@ -355,6 +371,8 @@ export class PivotTableEngine {
             rawValue,
             renderedValue,
             dxDimension,
+            ouId,
+            peId,
         }
     }
 
