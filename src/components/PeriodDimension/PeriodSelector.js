@@ -12,13 +12,24 @@ import i18n from '@dhis2/d2-i18n'
 
 import FixedPeriodFilter from './FixedPeriodFilter'
 import RelativePeriodFilter from './RelativePeriodFilter'
+import {
+    MONTHS,
+    getRelativePeriodsOptionsById,
+} from './utils/RelativePeriodsGenerator'
+
+const defaultRelativePeriod = getRelativePeriodsOptionsById(MONTHS)
 
 class PeriodSelector extends Component {
     state = {
-        allPeriods: [],
+        allPeriods: defaultRelativePeriod.periods,
         selectedPeriods: [],
         offeredPeriods: [], // TODO: Legacy, Transfer handles this internally
         isRelative: true,
+        typeFilter: {
+            label: defaultRelativePeriod.getName(),
+            value: defaultRelativePeriod.id,
+        },
+        yearFilter: {},
     }
 
     constructor(props) {
@@ -37,42 +48,42 @@ class PeriodSelector extends Component {
         }
     }
 
-    onSelectPeriods = periodIds => {
-        const offeredPeriods = this.state.offeredPeriods.filter(
-            period => !periodIds.includes(period.id)
-        )
-        const newPeriods = this.state.offeredPeriods.filter(period =>
-            periodIds.includes(period.id)
-        )
-        const selectedPeriods = this.state.selectedPeriods.concat(newPeriods)
+    // onSelectPeriods = periodIds => {
+    //     const offeredPeriods = this.state.offeredPeriods.filter(
+    //         period => !periodIds.includes(period.id)
+    //     )
+    //     const newPeriods = this.state.offeredPeriods.filter(period =>
+    //         periodIds.includes(period.id)
+    //     )
+    //     const selectedPeriods = this.state.selectedPeriods.concat(newPeriods)
 
-        this.setState({ selectedPeriods, offeredPeriods })
-        this.props.onSelect(selectedPeriods)
-    }
+    //     this.setState({ selectedPeriods, offeredPeriods })
+    //     this.props.onSelect(selectedPeriods)
+    // }
 
-    setSelectedPeriodOrder = periodIds => {
-        const selectedPeriods = periodIds.map(id =>
-            this.state.selectedPeriods.find(period => period.id === id)
-        )
+    // setSelectedPeriodOrder = periodIds => {
+    //     const selectedPeriods = periodIds.map(id =>
+    //         this.state.selectedPeriods.find(period => period.id === id)
+    //     )
 
-        this.setState({ selectedPeriods })
-        this.props.onReorder(selectedPeriods)
-    }
+    //     this.setState({ selectedPeriods })
+    //     this.props.onReorder(selectedPeriods)
+    // }
 
-    onDeselectPeriods = periodIds => {
-        const selectedPeriods = this.state.selectedPeriods.filter(
-            period => !periodIds.includes(period.id)
-        )
-        const removedPeriods = this.state.selectedPeriods.filter(period =>
-            periodIds.includes(period.id)
-        )
-        const offeredPeriods = this.state.allPeriods.filter(
-            period => !selectedPeriods.map(p => p.id).includes(period.id)
-        )
+    // onDeselectPeriods = periodIds => {
+    //     const selectedPeriods = this.state.selectedPeriods.filter(
+    //         period => !periodIds.includes(period.id)
+    //     )
+    //     const removedPeriods = this.state.selectedPeriods.filter(period =>
+    //         periodIds.includes(period.id)
+    //     )
+    //     const offeredPeriods = this.state.allPeriods.filter(
+    //         period => !selectedPeriods.map(p => p.id).includes(period.id)
+    //     )
 
-        this.setState({ selectedPeriods, offeredPeriods })
-        this.props.onDeselect(removedPeriods)
-    }
+    //     this.setState({ selectedPeriods, offeredPeriods })
+    //     this.props.onDeselect(removedPeriods)
+    // }
 
     initializeOfferedPeriods = (periods, initial = false) => {
         const selectedPeriods = initial
@@ -104,14 +115,19 @@ class PeriodSelector extends Component {
 
             <p style={{ margin: 0, height: 10 }} />
             <div>
-                <SingleSelectField
-                    label={i18n.t('Period type')}
-                    onChange={() => {}}
-                    dense
-                >
-                    <SingleSelectOption value="hello type" label="world type" />
-                </SingleSelectField>
-                {!this.state.isRelative && (
+                {this.state.isRelative ? (
+                    <RelativePeriodFilter
+                        currentTypeFilter={this.state.typeFilter}
+                        selectTypeFilter={typeFilter => {
+                            this.setState({ typeFilter })
+                            this.setState({
+                                allPeriods: getRelativePeriodsOptionsById(
+                                    typeFilter.value
+                                ).periods,
+                            })
+                        }}
+                    />
+                ) : (
                     <SingleSelectField
                         label={i18n.t('Year')}
                         onChange={() => {}}
@@ -136,12 +152,6 @@ class PeriodSelector extends Component {
                     />
                 )
             }
-
-            return (
-                <RelativePeriodFilter
-                    setOfferedPeriods={this.initializeOfferedPeriods}
-                />
-            )
         }
 
         return (
@@ -160,7 +170,7 @@ class PeriodSelector extends Component {
                 >
                     {this.state.allPeriods.map(item => (
                         <TransferOption
-                            label={item.name}
+                            label={item.getName()}
                             value={item.id}
                             key={item.id}
                         />
@@ -172,8 +182,6 @@ class PeriodSelector extends Component {
 }
 
 PeriodSelector.propTypes = {
-    onDeselect: PropTypes.func.isRequired,
-    onReorder: PropTypes.func.isRequired,
     onSelect: PropTypes.func.isRequired,
     selectedItems: PropTypes.arrayOf(PropTypes.object),
 }
