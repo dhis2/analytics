@@ -16,6 +16,7 @@ export const PivotTableValueCell = ({
     onToggleContextualMenu,
 }) => {
     const engine = usePivotTableEngine()
+    const cellRef = useRef(undefined)
 
     const cellContent = engine.get({
         row,
@@ -44,8 +45,6 @@ export const PivotTableValueCell = ({
         minWidth: width,
         maxWidth: width,
     }
-
-    const cellRef = useRef(undefined)
 
     const onClick = () => {
         if (
