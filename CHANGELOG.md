@@ -1,3 +1,15 @@
+# [5.0.0](https://github.com/dhis2/analytics/compare/v4.3.28...v5.0.0) (2020-05-18)
+
+
+### Bug Fixes
+
+* move 4.3.26-28 to 5 ([ad28004](https://github.com/dhis2/analytics/commit/ad280049b81313f1e4b04de04fcfdfe442db45fe))
+
+
+### BREAKING CHANGES
+
+* see logs for 4.3.26-28
+
 ## [4.3.28](https://github.com/dhis2/analytics/compare/v4.3.27...v4.3.28) (2020-05-06)
 
 
