@@ -323,18 +323,17 @@ export class PivotTableEngine {
 
         const dataRow = this.data[row][column]
 
-        const ouId =
-            dataRow[
-                this.dimensionLookup.headerDimensions.findIndex(
-                    header => header.dimension === DIMENSION_ID_ORGUNIT
-                )
-            ]
-        const peId =
-            dataRow[
-                this.dimensionLookup.headerDimensions.findIndex(
-                    header => header.dimension === DIMENSION_ID_PERIOD
-                )
-            ]
+        const ouIndex = this.dimensionLookup.headerDimensions.findIndex(
+            header => header.dimension === DIMENSION_ID_ORGUNIT
+        )
+
+        const ouId = ouIndex !== -1 ? dataRow[ouIndex] : null
+
+        const peIndex = this.dimensionLookup.headerDimensions.findIndex(
+            header => header.dimension === DIMENSION_ID_PERIOD
+        )
+
+        const peId = peIndex !== -1 ? dataRow[peIndex] : null
 
         let rawValue =
             cellType === CELL_TYPE_VALUE
