@@ -1,0 +1,216 @@
+# 
+# Translators:
+# phil_dhis2, 2020
+# Viktor Varland <viktor@dhis2.org>, 2020
+# Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2020
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: i18next-conv\n"
+"POT-Creation-Date: 2020-04-09T19:57:21.474Z\n"
+"PO-Revision-Date: 2020-05-18 10:55+0000\n"
+"Last-Translator: Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2020\n"
+"Language-Team: Portuguese (https://www.transifex.com/hisp-uio/teams/100509/pt/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: pt\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Data Type"
+msgstr "Tipo de dados"
+
+msgid "Detail"
+msgstr "Detalhe"
+
+msgid "Move to {{axisName}}"
+msgstr "Mover para {{Nomedoeixo}}"
+
+msgid "Add to {{axisName}}"
+msgstr "Adicionar à {{Nomedoeixo}}"
+
+msgid "Remove"
+msgstr "Remover"
+
+msgid "Not available for {{visualizationType}}"
+msgstr "Não disponível para {{Tipodevisualização}}"
+
+msgid "Requires 2 or more data items"
+msgstr "Requer 2 ou mais itens de dados"
+
+msgid "Only available when data is in Series"
+msgstr "Disponível apenas quando os dados estão em série"
+
+msgid "Remove Assigned Categories"
+msgstr "Remover categorias atribuídas"
+
+msgid "Add Assigned Categories"
+msgstr "Adicionar categorias atribuídas"
+
+msgid "Manage chart axes"
+msgstr "Gerenciar eixos do gráfico"
+
+msgid "Filter dimensions"
+msgstr "Dimensões do filtro"
+
+msgid "Dimension recommended with selected data"
+msgstr "Dimensão recomendada com dados selecionados"
+
+msgid "Search"
+msgstr "Pesquisar"
+
+msgid "Selected Data"
+msgstr "Dados Selecionados"
+
+msgid "Deselect All"
+msgstr "Desmarcar todos"
+
+msgid "Select all"
+msgstr "Selec. todos"
+
+msgid "Series"
+msgstr "Série"
+
+msgid "Category"
+msgstr "Categoria"
+
+msgid "Filter"
+msgstr "Filtro"
+
+msgid "Columns"
+msgstr "Colunas"
+
+msgid "Rows"
+msgstr "Linhas"
+
+msgid "Reporting rate"
+msgstr "Taxa de relatórios"
+
+msgid "Reporting rate on time"
+msgstr "Taxa de relatórios no prazo"
+
+msgid "Actual reports"
+msgstr "Relatórios reais"
+
+msgid "Actual reports on time"
+msgstr "Relatórios reais dentro do prazo"
+
+msgid "Expected reports"
+msgstr "Relatórios esperados"
+
+msgid "Program"
+msgstr "Programa"
+
+msgid "Select a program"
+msgstr "Selecione um programa"
+
+msgid "Indicators"
+msgstr "Indicadores"
+
+msgid "Select indicator group"
+msgstr "Seleccionar grupo de indicador"
+
+msgid "[ All groups ]"
+msgstr "[ Todos os grupos ]"
+
+msgid "Data elements"
+msgstr "Elementos de Dados"
+
+msgid "Select data element group"
+msgstr "Seleccionar grupo de elementos de dados"
+
+msgid "[ All data elements ]"
+msgstr "[ Todos os elementos de dados ]"
+
+msgid "Totals"
+msgstr "Totais"
+
+msgid "Details"
+msgstr "Detalhes"
+
+msgid "Data sets"
+msgstr "Agregação de Dados"
+
+msgid "Select data sets"
+msgstr "Selecionar conjuntos de dados"
+
+msgid "[ All metrics ]"
+msgstr "[ Todas as métricas ]"
+
+msgid "Event data items"
+msgstr "Itens de dados do evento"
+
+msgid "Program indicators"
+msgstr "Indicador do programa"
+
+msgid "{{dynamicOuNames}} and {{lastOuName}}"
+msgstr "{{nomesdinâmicosOu}} e {{últimoNomeOu}}"
+
+msgid "{{allDynamicOuNames}} levels"
+msgstr "{{tudoDynamicOuNomes}} níveis"
+
+msgid "{{allDynamicOuNames}} groups"
+msgstr "{{tudoDynamicOuNomes}} grupos"
+
+msgid "{{allDynamicOuNames}} levels in {{staticOuNames}}"
+msgstr "{{tudoDynamicOuNomes}} níveis em {{NomesestáticosOu}}"
+
+msgid "{{allDynamicOuNames}} groups in {{staticOuNames}}"
+msgstr "{{tudoDynamicOuNomes}} grupos em {{NomesestáticosOu}}"
+
+msgid "Data"
+msgstr "Dados"
+
+msgid "Period"
+msgstr "Período"
+
+msgid "Organisation Unit"
+msgstr "Unidade organizacional"
+
+msgid "Assigned Categories"
+msgstr "Categorias atribuídas"
+
+msgid "Column"
+msgstr "Coluna"
+
+msgid "Stacked column"
+msgstr "Coluna empilhada"
+
+msgid "Bar"
+msgstr "Barra"
+
+msgid "Stacked bar"
+msgstr "Barra empilhada"
+
+msgid "Line"
+msgstr "Linha"
+
+msgid "Area"
+msgstr "Área"
+
+msgid "Pie"
+msgstr "Torta"
+
+msgid "Radar"
+msgstr "Radar"
+
+msgid "Gauge"
+msgstr "Calibre"
+
+msgid "Year over year (line)"
+msgstr "Ano após ano (linha)"
+
+msgid "Year over year (column)"
+msgstr "Ano após ano (coluna)"
+
+msgid "Single value"
+msgstr "Valor unico"
+
+msgid "Pivot table"
+msgstr "Tabela Dinâmica"
+
+msgid "Target"
+msgstr "Meta"
+
+msgid "Base"
+msgstr "Base"

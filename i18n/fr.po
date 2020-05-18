@@ -1,0 +1,218 @@
+# 
+# Translators:
+# phil_dhis2, 2020
+# Viktor Varland <viktor@dhis2.org>, 2020
+# Karoline Tufte Lien <karoline@dhis2.org>, 2020
+# Bram Piot <bram.piot@gmail.com>, 2020
+# Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2020
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: i18next-conv\n"
+"POT-Creation-Date: 2020-04-09T19:57:21.474Z\n"
+"PO-Revision-Date: 2020-05-18 10:55+0000\n"
+"Last-Translator: Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2020\n"
+"Language-Team: French (https://www.transifex.com/hisp-uio/teams/100509/fr/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fr\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+msgid "Data Type"
+msgstr "Type de données"
+
+msgid "Detail"
+msgstr "Détail"
+
+msgid "Move to {{axisName}}"
+msgstr "Déménager à {{nomdel'axe}}"
+
+msgid "Add to {{axisName}}"
+msgstr "Ajouter à {{nomdel'axe}} "
+
+msgid "Remove"
+msgstr "Supprimer"
+
+msgid "Not available for {{visualizationType}}"
+msgstr "Non disponible pour {{Typedevisualisation}}"
+
+msgid "Requires 2 or more data items"
+msgstr "Nécessite 2 éléments de données ou plus"
+
+msgid "Only available when data is in Series"
+msgstr "Disponible uniquement lorsque les données sont en série"
+
+msgid "Remove Assigned Categories"
+msgstr "Supprimer les Catégories Attribuées"
+
+msgid "Add Assigned Categories"
+msgstr "Ajouter des Catégories Affectées"
+
+msgid "Manage chart axes"
+msgstr "Gérer les axes du graphique"
+
+msgid "Filter dimensions"
+msgstr "Dimensions du filtre"
+
+msgid "Dimension recommended with selected data"
+msgstr "Dimension recommandée avec les données sélectionnées"
+
+msgid "Search"
+msgstr "Chercher"
+
+msgid "Selected Data"
+msgstr "Données sélectionnées"
+
+msgid "Deselect All"
+msgstr "Tout déselectionner"
+
+msgid "Select all"
+msgstr "Sélectionner tout"
+
+msgid "Series"
+msgstr "Séries"
+
+msgid "Category"
+msgstr "Catégorie"
+
+msgid "Filter"
+msgstr "Filtrer"
+
+msgid "Columns"
+msgstr "Colonnes"
+
+msgid "Rows"
+msgstr "Lignes"
+
+msgid "Reporting rate"
+msgstr "Taux de déclaration"
+
+msgid "Reporting rate on time"
+msgstr "Taux de notification à temps"
+
+msgid "Actual reports"
+msgstr "Rapports réels"
+
+msgid "Actual reports on time"
+msgstr "Rapports réels à temps"
+
+msgid "Expected reports"
+msgstr "Rapports attendus"
+
+msgid "Program"
+msgstr "Programme"
+
+msgid "Select a program"
+msgstr "Sélectionnez un programme"
+
+msgid "Indicators"
+msgstr "Indicateurs"
+
+msgid "Select indicator group"
+msgstr "Sélectionner groupe d'indicateurs"
+
+msgid "[ All groups ]"
+msgstr "[ Tous les groupes ]"
+
+msgid "Data elements"
+msgstr "Eléments de données"
+
+msgid "Select data element group"
+msgstr "Sélectionner groupe d'éléments de données"
+
+msgid "[ All data elements ]"
+msgstr "[ Tous les éléments de données ]"
+
+msgid "Totals"
+msgstr "Totaux"
+
+msgid "Details"
+msgstr "Details"
+
+msgid "Data sets"
+msgstr "Ensembles de données"
+
+msgid "Select data sets"
+msgstr "Sélectionner des ensembles de données"
+
+msgid "[ All metrics ]"
+msgstr "[ Toutes les métriques ]"
+
+msgid "Event data items"
+msgstr "Eléments de données évènement"
+
+msgid "Program indicators"
+msgstr "Program indicators"
+
+msgid "{{dynamicOuNames}} and {{lastOuName}}"
+msgstr "{{NomsOudynamiques}} et {{dernièreOuNom}}"
+
+msgid "{{allDynamicOuNames}} levels"
+msgstr "{{touslesnomsOudynamiques}} niveaux"
+
+msgid "{{allDynamicOuNames}} groups"
+msgstr "{{touslesnomsOudynamiques}} groupes"
+
+msgid "{{allDynamicOuNames}} levels in {{staticOuNames}}"
+msgstr "{{touslesnomsOudynamiques}} niveaux dans {{NomsOustatiques}} "
+
+msgid "{{allDynamicOuNames}} groups in {{staticOuNames}}"
+msgstr "{{touslesnomsOudynamiques}} groupes dans {{NomsOustatiques}}"
+
+msgid "Data"
+msgstr "Données"
+
+msgid "Period"
+msgstr "Période"
+
+msgid "Organisation Unit"
+msgstr "Unité d'organisation"
+
+msgid "Assigned Categories"
+msgstr "Catégories attribuées"
+
+msgid "Column"
+msgstr "Colonne"
+
+msgid "Stacked column"
+msgstr "Colonne empilée"
+
+msgid "Bar"
+msgstr "Bar"
+
+msgid "Stacked bar"
+msgstr "Bar empilé"
+
+msgid "Line"
+msgstr "Ligne"
+
+msgid "Area"
+msgstr "Aire"
+
+msgid "Pie"
+msgstr "Tarte"
+
+msgid "Radar"
+msgstr "Radar"
+
+msgid "Gauge"
+msgstr "Jauge"
+
+msgid "Year over year (line)"
+msgstr "Année après année (ligne)"
+
+msgid "Year over year (column)"
+msgstr "Année après année (colonne)"
+
+msgid "Single value"
+msgstr "Valeur unique"
+
+msgid "Pivot table"
+msgstr "Tableau croisé dynamique"
+
+msgid "Target"
+msgstr "Cible"
+
+msgid "Base"
+msgstr "Base"

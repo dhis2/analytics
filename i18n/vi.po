@@ -1,0 +1,216 @@
+# 
+# Translators:
+# phil_dhis2, 2020
+# Viktor Varland <viktor@dhis2.org>, 2020
+# Mai Nguyen <thanhmai.jica@gmail.com>, 2020
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: i18next-conv\n"
+"POT-Creation-Date: 2020-04-09T19:57:21.474Z\n"
+"PO-Revision-Date: 2020-05-18 10:55+0000\n"
+"Last-Translator: Mai Nguyen <thanhmai.jica@gmail.com>, 2020\n"
+"Language-Team: Vietnamese (https://www.transifex.com/hisp-uio/teams/100509/vi/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: vi\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "Data Type"
+msgstr ""
+
+msgid "Detail"
+msgstr ""
+
+msgid "Move to {{axisName}}"
+msgstr ""
+
+msgid "Add to {{axisName}}"
+msgstr "Thêm {{tên trục}"
+
+msgid "Remove"
+msgstr "Tháo ra"
+
+msgid "Not available for {{visualizationType}}"
+msgstr ""
+
+msgid "Requires 2 or more data items"
+msgstr ""
+
+msgid "Only available when data is in Series"
+msgstr ""
+
+msgid "Remove Assigned Categories"
+msgstr ""
+
+msgid "Add Assigned Categories"
+msgstr ""
+
+msgid "Manage chart axes"
+msgstr ""
+
+msgid "Filter dimensions"
+msgstr "Các chiều lọc"
+
+msgid "Dimension recommended with selected data"
+msgstr ""
+
+msgid "Search"
+msgstr "Tìm kiếm"
+
+msgid "Selected Data"
+msgstr ""
+
+msgid "Deselect All"
+msgstr ""
+
+msgid "Select all"
+msgstr "Chọn tất cả"
+
+msgid "Series"
+msgstr "Chuỗi Dữ Liệu"
+
+msgid "Category"
+msgstr "Phân loại"
+
+msgid "Filter"
+msgstr "Lọc"
+
+msgid "Columns"
+msgstr ""
+
+msgid "Rows"
+msgstr ""
+
+msgid "Reporting rate"
+msgstr "Tỉ lệ báo cáo"
+
+msgid "Reporting rate on time"
+msgstr "Tỉ lệ báo cáo đúng hạn"
+
+msgid "Actual reports"
+msgstr "Báo cáo thực tế"
+
+msgid "Actual reports on time"
+msgstr "Báo cáo thực tế đúng hạn"
+
+msgid "Expected reports"
+msgstr "Báo cáo dự kiến"
+
+msgid "Program"
+msgstr "Chương trình"
+
+msgid "Select a program"
+msgstr ""
+
+msgid "Indicators"
+msgstr "Các chỉ số"
+
+msgid "Select indicator group"
+msgstr "Chọn nhóm chỉ số"
+
+msgid "[ All groups ]"
+msgstr ""
+
+msgid "Data elements"
+msgstr "Các phần tử dữ liệu"
+
+msgid "Select data element group"
+msgstr "Chọn nhóm phần tử dữ liệu"
+
+msgid "[ All data elements ]"
+msgstr ""
+
+msgid "Totals"
+msgstr "Tổng"
+
+msgid "Details"
+msgstr "Chi tiết"
+
+msgid "Data sets"
+msgstr "Biểu nhập"
+
+msgid "Select data sets"
+msgstr ""
+
+msgid "[ All metrics ]"
+msgstr ""
+
+msgid "Event data items"
+msgstr "Mục dữ liệu sự kiện"
+
+msgid "Program indicators"
+msgstr "Chỉ Số Chương Trình"
+
+msgid "{{dynamicOuNames}} and {{lastOuName}}"
+msgstr ""
+
+msgid "{{allDynamicOuNames}} levels"
+msgstr ""
+
+msgid "{{allDynamicOuNames}} groups"
+msgstr ""
+
+msgid "{{allDynamicOuNames}} levels in {{staticOuNames}}"
+msgstr ""
+
+msgid "{{allDynamicOuNames}} groups in {{staticOuNames}}"
+msgstr ""
+
+msgid "Data"
+msgstr "Dữ liệu"
+
+msgid "Period"
+msgstr "Thời điểm"
+
+msgid "Organisation Unit"
+msgstr "Đơn vị"
+
+msgid "Assigned Categories"
+msgstr ""
+
+msgid "Column"
+msgstr "Biểu đồ cột"
+
+msgid "Stacked column"
+msgstr "Biểu đồ cột chồng"
+
+msgid "Bar"
+msgstr "Biểu đồ dạng thanh"
+
+msgid "Stacked bar"
+msgstr "Biểu đồ thanh chồng"
+
+msgid "Line"
+msgstr "Biểu đồ đường"
+
+msgid "Area"
+msgstr "Khu vực"
+
+msgid "Pie"
+msgstr "Biểu đồ bánh"
+
+msgid "Radar"
+msgstr "Biểu đồ Radar"
+
+msgid "Gauge"
+msgstr "Biểu đồ đo lường"
+
+msgid "Year over year (line)"
+msgstr ""
+
+msgid "Year over year (column)"
+msgstr ""
+
+msgid "Single value"
+msgstr "Giá trị đơn"
+
+msgid "Pivot table"
+msgstr "Bảng xoay"
+
+msgid "Target"
+msgstr "Mục tiêu"
+
+msgid "Base"
+msgstr "Đường đáy"
