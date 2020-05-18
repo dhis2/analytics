@@ -1,0 +1,216 @@
+# 
+# Translators:
+# phil_dhis2, 2020
+# Viktor Varland <viktor@dhis2.org>, 2020
+# Hamza Assada <7amza.it@gmail.com>, 2020
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: i18next-conv\n"
+"POT-Creation-Date: 2020-04-09T19:57:21.474Z\n"
+"PO-Revision-Date: 2020-05-18 10:55+0000\n"
+"Last-Translator: Hamza Assada <7amza.it@gmail.com>, 2020\n"
+"Language-Team: Arabic (https://www.transifex.com/hisp-uio/teams/100509/ar/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ar\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+msgid "Data Type"
+msgstr "نوع البيانات"
+
+msgid "Detail"
+msgstr "تفصيل"
+
+msgid "Move to {{axisName}}"
+msgstr "تحريك إلى {{axisName}}"
+
+msgid "Add to {{axisName}}"
+msgstr "إضافة إلى {{axisName}}"
+
+msgid "Remove"
+msgstr "إزالة"
+
+msgid "Not available for {{visualizationType}}"
+msgstr "غير متوفر لـ {{visualizationType}}"
+
+msgid "Requires 2 or more data items"
+msgstr "يتطلب 2 عنصر بيانات أو أكثر"
+
+msgid "Only available when data is in Series"
+msgstr "متاح فقط عندما تكون البيانات في السلسلة"
+
+msgid "Remove Assigned Categories"
+msgstr "إزالة الفئات المعينة"
+
+msgid "Add Assigned Categories"
+msgstr "إضافة فئات معينة"
+
+msgid "Manage chart axes"
+msgstr "إدارة محاور المخطط"
+
+msgid "Filter dimensions"
+msgstr "تصفية الأبعاد"
+
+msgid "Dimension recommended with selected data"
+msgstr "البعد موصى به مع البيانات المحددة"
+
+msgid "Search"
+msgstr "بحث"
+
+msgid "Selected Data"
+msgstr "البيانات المحددة"
+
+msgid "Deselect All"
+msgstr "إلغاء تحديد الكل"
+
+msgid "Select all"
+msgstr "تحديد الكل"
+
+msgid "Series"
+msgstr "سلسلة"
+
+msgid "Category"
+msgstr "الفئة"
+
+msgid "Filter"
+msgstr "عامل التصفية"
+
+msgid "Columns"
+msgstr "الأعمدة"
+
+msgid "Rows"
+msgstr "الصفوف"
+
+msgid "Reporting rate"
+msgstr "معدل الإبلاغ"
+
+msgid "Reporting rate on time"
+msgstr "معدل الإبلاغ في الوقت المحدد"
+
+msgid "Actual reports"
+msgstr "الإبلاغات الفعلية"
+
+msgid "Actual reports on time"
+msgstr "الإبلاغات الفعلية في الوقت المحدد"
+
+msgid "Expected reports"
+msgstr "الإبلاغات المتوقعة"
+
+msgid "Program"
+msgstr "البرنامج"
+
+msgid "Select a program"
+msgstr "حدد برنامجاً"
+
+msgid "Indicators"
+msgstr "المؤشرات"
+
+msgid "Select indicator group"
+msgstr "تحديد مجموعة المؤشرات"
+
+msgid "[ All groups ]"
+msgstr "[ كل المجموعات ]"
+
+msgid "Data elements"
+msgstr "عناصر البيانات"
+
+msgid "Select data element group"
+msgstr "تحديد مجموعة عناصر البيانات"
+
+msgid "[ All data elements ]"
+msgstr "[ كل عناصر البيانات ]"
+
+msgid "Totals"
+msgstr "الإجمالي"
+
+msgid "Details"
+msgstr "التفاصيل"
+
+msgid "Data sets"
+msgstr "حزم البيانات"
+
+msgid "Select data sets"
+msgstr "حدد حزم بيانات"
+
+msgid "[ All metrics ]"
+msgstr "[جميع المقاييس]"
+
+msgid "Event data items"
+msgstr "عناصر بيانات الحدث"
+
+msgid "Program indicators"
+msgstr "مؤشرات البرنامج"
+
+msgid "{{dynamicOuNames}} and {{lastOuName}}"
+msgstr "{{dynamicOuNames}} و {{lastOuName}}"
+
+msgid "{{allDynamicOuNames}} levels"
+msgstr "مستويات {{allDynamicOuNames}}"
+
+msgid "{{allDynamicOuNames}} groups"
+msgstr "مجموعات {{allDynamicOuNames}}"
+
+msgid "{{allDynamicOuNames}} levels in {{staticOuNames}}"
+msgstr "مستويات {{allDynamicOuNames}} في {{staticOuNames}}"
+
+msgid "{{allDynamicOuNames}} groups in {{staticOuNames}}"
+msgstr "مجموعات {{allDynamicOuNames}} في {{staticOuNames}}"
+
+msgid "Data"
+msgstr "بيانات"
+
+msgid "Period"
+msgstr "الفترة الزمنية"
+
+msgid "Organisation Unit"
+msgstr "الوحدة التنظيمية"
+
+msgid "Assigned Categories"
+msgstr "الفئات المعينة"
+
+msgid "Column"
+msgstr "العمود"
+
+msgid "Stacked column"
+msgstr "عمود تراكمي"
+
+msgid "Bar"
+msgstr "مخطط شريطي"
+
+msgid "Stacked bar"
+msgstr "شريط تراكمي"
+
+msgid "Line"
+msgstr "مخطط خطي"
+
+msgid "Area"
+msgstr "مساحة"
+
+msgid "Pie"
+msgstr "مخطط دائري"
+
+msgid "Radar"
+msgstr "مخطط رادار"
+
+msgid "Gauge"
+msgstr "مخطط قياس"
+
+msgid "Year over year (line)"
+msgstr "عام بعد عام (خط)"
+
+msgid "Year over year (column)"
+msgstr "عام بعد عام (عمود)"
+
+msgid "Single value"
+msgstr "قيمة مفردة"
+
+msgid "Pivot table"
+msgstr "الجدول المحوري"
+
+msgid "Target"
+msgstr "الهدف"
+
+msgid "Base"
+msgstr "الأساس"
