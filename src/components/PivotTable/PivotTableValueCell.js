@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import PropTypes from 'prop-types'
+
 import { applyLegendSet } from '../../modules/pivotTable/applyLegendSet'
 import { PivotTableCell } from './PivotTableCell'
 import { usePivotTableEngine } from './PivotTableEngineContext'
@@ -9,8 +10,13 @@ import {
 } from '../../modules/pivotTable/pivotTableConstants'
 import { PivotTableEmptyCell } from './PivotTableEmptyCell'
 
-export const PivotTableValueCell = ({ row, column }) => {
+export const PivotTableValueCell = ({
+    row,
+    column,
+    onToggleContextualMenu,
+}) => {
     const engine = usePivotTableEngine()
+    const cellRef = useRef(undefined)
 
     const cellContent = engine.get({
         row,
@@ -40,14 +46,24 @@ export const PivotTableValueCell = ({ row, column }) => {
         maxWidth: width,
     }
 
+    const onClick = () => {
+        if (
+            cellContent.cellType === CELL_TYPE_VALUE &&
+            cellContent.renderedValue
+        ) {
+            onToggleContextualMenu(cellRef, cellContent)
+        }
+    }
+
     return (
         <PivotTableCell
             key={column}
             classes={[cellContent.cellType, cellContent.valueType]}
             title={cellContent.renderedValue}
             style={style}
+            onClick={onClick}
         >
-            {cellContent.renderedValue ?? null}
+            <span ref={cellRef}>{cellContent.renderedValue ?? null}</span>
         </PivotTableCell>
     )
 }
@@ -55,4 +71,5 @@ export const PivotTableValueCell = ({ row, column }) => {
 PivotTableValueCell.propTypes = {
     column: PropTypes.number.isRequired,
     row: PropTypes.number.isRequired,
+    onToggleContextualMenu: PropTypes.func,
 }
