@@ -28,7 +28,7 @@
         "@dhis2/cli-style": "^7.0.0",
         "@sambego/storybook-state": "^2.0.1",
         "@storybook/addons": "^5.0.6",
-        "@storybook/preset-create-react-app": "^2.1.1",
+        "@storybook/preset-create-react-app": "^2.1.2",
         "@storybook/react": "^5.3.17",
         "enzyme": "^3.9.0",
         "enzyme-adapter-react-16": "^1.11.2",
