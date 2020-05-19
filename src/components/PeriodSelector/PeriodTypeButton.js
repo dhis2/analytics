@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import i18n from '@dhis2/d2-i18n'
 
 import styles from './styles/PeriodTypeButton.style'
 
@@ -19,7 +18,7 @@ class PeriodTypeButton extends Component {
                 }`}
                 onClick={this.handleClick}
             >
-                {i18n.t(this.props.text)}
+                {this.props.text}
             </button>
             <style jsx>{styles}</style>
         </>

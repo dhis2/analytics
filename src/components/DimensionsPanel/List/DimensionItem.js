@@ -43,8 +43,7 @@ export class DimensionItem extends Component {
                     ...(isDeactivated ? styles.textDeactivated : {}),
                 }}
             >
-                {/* is it needed here or displayName should be used instead?! */}
-                {i18n.t(name)}
+                {name}
             </span>
         )
     }

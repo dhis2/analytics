@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { withStyles } from '@material-ui/core/styles'
-
+import i18n from '@dhis2/d2-i18n'
 import DimensionItem from './DimensionItem'
 import { styles } from './styles/DimensionList.style'
 import {
@@ -10,10 +10,11 @@ import {
 } from '../../../modules/predefinedDimensions'
 
 export class DimensionList extends Component {
-    nameContainsFilterText = dimension =>
-        dimension.name
+    nameContainsFilterText = dimension => {
+        return dimension.name
             .toLowerCase()
             .includes(this.props.filterText.toLowerCase())
+    }
 
     isDisabled = dimensionId =>
         this.props.disabledDimension(dimensionId) || false
@@ -23,20 +24,22 @@ export class DimensionList extends Component {
 
     isLocked = dimensionId => this.props.lockedDimension(dimensionId) || false
 
-    renderItem = dimension => (
-        <DimensionItem
-            id={dimension.id}
-            key={dimension.id}
-            name={dimension.name}
-            isLocked={this.isLocked(dimension.id)}
-            isSelected={this.props.selectedIds.includes(dimension.id)}
-            isRecommended={this.isRecommended(dimension.id)}
-            isDeactivated={this.isDisabled(dimension.id)}
-            onClick={this.props.onDimensionClick}
-            onOptionsClick={this.props.onDimensionOptionsClick}
-            onDragStart={this.props.onDimensionDragStart}
-        />
-    )
+    renderItem = dimension => {
+        return (
+            <DimensionItem
+                id={dimension.id}
+                key={dimension.id}
+                name={dimension.name}
+                isLocked={this.isLocked(dimension.id)}
+                isSelected={this.props.selectedIds.includes(dimension.id)}
+                isRecommended={this.isRecommended(dimension.id)}
+                isDeactivated={this.isDisabled(dimension.id)}
+                onClick={this.props.onDimensionClick}
+                onOptionsClick={this.props.onDimensionOptionsClick}
+                onDragStart={this.props.onDimensionDragStart}
+            />
+        )
+    }
 
     getDimensionItemsByFilter = filter =>
         this.props.dimensions
@@ -62,11 +65,15 @@ export class DimensionList extends Component {
             <div className={classes.container}>
                 <div className={classes.wrapper}>
                     <div className={classes.section}>
-                        <h3 className={classes.header}>Main dimensions</h3>
+                        <h3 className={classes.header}>
+                            {i18n.t('Main dimensions')}
+                        </h3>
                         <ul className={classes.list}>{fixedDimensions}</ul>
                     </div>
                     <div className={classes.section}>
-                        <h3 className={classes.header}>Your dimensions</h3>
+                        <h3 className={classes.header}>
+                            {i18n.t('Your dimensions')}
+                        </h3>
                         <ul className={classes.list}>
                             {nonPredefinedDimensions}
                         </ul>

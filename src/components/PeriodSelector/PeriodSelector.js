@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react'
 import PropTypes from 'prop-types'
-
+import i18n from '@dhis2/d2-i18n'
 import ItemSelector from '../ItemSelector/ItemSelector'
 import PeriodTypeButton from './PeriodTypeButton'
 import FixedPeriodFilter from './FixedPeriodFilter'
@@ -83,13 +83,13 @@ class PeriodSelector extends Component {
             <PeriodTypeButton
                 periodType={RELATIVE}
                 activePeriodType={this.state.periodType}
-                text={'Relative periods'}
+                text={i18n.t('Relative periods')}
                 onClick={this.onPeriodTypeClick}
             />
             <PeriodTypeButton
                 periodType={FIXED}
                 activePeriodType={this.state.periodType}
-                text={'Fixed periods'}
+                text={i18n.t('Fixed periods')}
                 onClick={this.onPeriodTypeClick}
             />
         </div>
