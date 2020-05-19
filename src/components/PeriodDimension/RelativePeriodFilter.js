@@ -5,16 +5,12 @@ import { SingleSelectOption, SingleSelectField } from '@dhis2/ui-core'
 
 import { getRelativePeriodsOptions } from './utils/RelativePeriodsGenerator'
 
-export const defaultState = {
-    periodType: 'Months',
-}
-
-const RelativePeriodsFilter = ({ currentTypeFilter, selectTypeFilter }) => (
+const RelativePeriodFilter = ({ currentFilter, selectFilter }) => (
     <SingleSelectField
         label={i18n.t('Period type')}
-        onChange={({ selected }) => selectTypeFilter(selected)}
+        onChange={({ selected }) => selectFilter(selected)}
         dense
-        selected={currentTypeFilter}
+        selected={currentFilter}
     >
         {getRelativePeriodsOptions().map(option => (
             <SingleSelectOption
@@ -26,9 +22,9 @@ const RelativePeriodsFilter = ({ currentTypeFilter, selectTypeFilter }) => (
     </SingleSelectField>
 )
 
-RelativePeriodsFilter.propTypes = {
-    currentTypeFilter: PropTypes.object.isRequired,
-    selectTypeFilter: PropTypes.func.isRequired,
+RelativePeriodFilter.propTypes = {
+    currentFilter: PropTypes.object.isRequired,
+    selectFilter: PropTypes.func.isRequired,
 }
 
-export default RelativePeriodsFilter
+export default RelativePeriodFilter

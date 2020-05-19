@@ -1,13 +1,6 @@
-import React, { Component, Fragment } from 'react'
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import {
-    Transfer,
-    TransferOption,
-    TabBar,
-    Tab,
-    SingleSelectField,
-    SingleSelectOption,
-} from '@dhis2/ui-core'
+import { Transfer, TransferOption, TabBar, Tab } from '@dhis2/ui-core'
 import i18n from '@dhis2/d2-i18n'
 
 import FixedPeriodFilter from './FixedPeriodFilter'
@@ -16,20 +9,40 @@ import {
     MONTHS,
     getRelativePeriodsOptionsById,
 } from './utils/RelativePeriodsGenerator'
+import {
+    MONTHLY,
+    getFixedPeriodsOptionsById,
+} from './utils/FixedPeriodsGenerator'
 
 const defaultRelativePeriod = getRelativePeriodsOptionsById(MONTHS)
+const defaultFixedPeriodType = getFixedPeriodsOptionsById(MONTHLY)
+const defaultFixedPeriodYear = new Date().getFullYear().toString()
+const fixedPeriodConfig = year => ({
+    offset: year - new Date().getFullYear(),
+    filterFuturePeriods: false,
+    reversePeriods: false,
+})
 
 class PeriodSelector extends Component {
     state = {
         allPeriods: defaultRelativePeriod.periods,
         selectedPeriods: [],
-        offeredPeriods: [], // TODO: Legacy, Transfer handles this internally
         isRelative: true,
-        typeFilter: {
+        relativeFilter: {
+            //TODO: refactor to use the whole object instead of just label/value
             label: defaultRelativePeriod.getName(),
             value: defaultRelativePeriod.id,
         },
-        yearFilter: {},
+        fixedFilter: {
+            type: {
+                label: defaultFixedPeriodType.getName(),
+                value: defaultFixedPeriodType.id,
+            },
+            year: {
+                label: defaultFixedPeriodYear,
+                value: defaultFixedPeriodYear,
+            },
+        },
     }
 
     constructor(props) {
@@ -45,6 +58,19 @@ class PeriodSelector extends Component {
     onIsRelativeClick = isRelative => {
         if (this.state.isRelative !== isRelative) {
             this.setState({ isRelative })
+            this.setState({
+                allPeriods: isRelative
+                    ? getRelativePeriodsOptionsById(
+                          this.state.relativeFilter.value
+                      ).periods
+                    : getFixedPeriodsOptionsById(
+                          this.state.fixedFilter.type.label
+                      ).generator.generatePeriods(
+                          fixedPeriodConfig(
+                              Number(this.state.fixedFilter.year.value)
+                          )
+                      ),
+            })
         }
     }
 
@@ -85,16 +111,16 @@ class PeriodSelector extends Component {
     //     this.props.onDeselect(removedPeriods)
     // }
 
-    initializeOfferedPeriods = (periods, initial = false) => {
-        const selectedPeriods = initial
-            ? this.props.selectedItems
-            : this.state.selectedPeriods
-        const offeredPeriods = periods.filter(
-            period => !selectedPeriods.map(p => p.id).includes(period.id)
-        )
+    // initializeOfferedPeriods = (periods, initial = false) => {
+    //     const selectedPeriods = initial
+    //         ? this.props.selectedItems
+    //         : this.state.selectedPeriods
+    //     const offeredPeriods = periods.filter(
+    //         period => !selectedPeriods.map(p => p.id).includes(period.id)
+    //     )
 
-        this.setState({ allPeriods: periods, offeredPeriods })
-    }
+    //     this.setState({ allPeriods: periods, offeredPeriods })
+    // }
 
     renderHeader = () => (
         <>
@@ -117,68 +143,57 @@ class PeriodSelector extends Component {
             <div>
                 {this.state.isRelative ? (
                     <RelativePeriodFilter
-                        currentTypeFilter={this.state.typeFilter}
-                        selectTypeFilter={typeFilter => {
-                            this.setState({ typeFilter })
+                        currentFilter={this.state.relativeFilter}
+                        selectFilter={relativeFilter => {
+                            this.setState({ relativeFilter })
                             this.setState({
                                 allPeriods: getRelativePeriodsOptionsById(
-                                    typeFilter.value
+                                    relativeFilter.value
                                 ).periods,
                             })
                         }}
                     />
                 ) : (
-                    <SingleSelectField
-                        label={i18n.t('Year')}
-                        onChange={() => {}}
-                        dense
-                    >
-                        <SingleSelectOption
-                            value="hello year"
-                            label="world year"
-                        />
-                    </SingleSelectField>
+                    <FixedPeriodFilter
+                        currentFilter={this.state.fixedFilter}
+                        selectFilter={fixedFilter => {
+                            this.setState({ fixedFilter })
+                            this.setState({
+                                allPeriods: getFixedPeriodsOptionsById(
+                                    fixedFilter.type.value
+                                ).generator.generatePeriods(
+                                    fixedPeriodConfig(
+                                        Number(fixedFilter.year.value)
+                                    )
+                                ),
+                            })
+                        }}
+                    />
                 )}
             </div>
         </>
     )
 
-    render = () => {
-        const filterZone = () => {
-            if (!this.state.isRelative) {
-                return (
-                    <FixedPeriodFilter
-                        setOfferedPeriods={this.initializeOfferedPeriods}
-                    />
-                )
-            }
-        }
-
-        return (
-            <Fragment>
-                <div style={{ display: 'flex', marginTop: '18px' }}>
-                    {filterZone()}
-                </div>
-                <Transfer
-                    onChange={({ selected }) => {
-                        this.setState({ selectedPeriods: selected })
-                        this.props.onSelect(selected)
-                    }}
-                    selected={this.state.selectedPeriods}
-                    leftHeader={this.renderHeader()}
-                    enableOrderChange
-                >
-                    {this.state.allPeriods.map(item => (
-                        <TransferOption
-                            label={item.getName()}
-                            value={item.id}
-                            key={item.id}
-                        />
-                    ))}
-                </Transfer>
-            </Fragment>
-        )
-    }
+    render = () => (
+        <Transfer
+            onChange={({ selected }) => {
+                this.setState({ selectedPeriods: selected })
+                this.props.onSelect(selected)
+            }}
+            selected={this.state.selectedPeriods}
+            leftHeader={this.renderHeader()}
+            enableOrderChange
+            // TODO: Add rightFooter to be passed in as a prop
+        >
+            {this.state.allPeriods.map(item => (
+                <TransferOption
+                    label={item.getName()}
+                    value={item.id}
+                    key={item.id}
+                />
+            ))}
+        </Transfer>
+    )
 }
 
 PeriodSelector.propTypes = {
