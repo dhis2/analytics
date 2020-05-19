@@ -62,7 +62,7 @@ const Groups = props => {
             {groupDetail && (
                 <Detail
                     value={props.detailValue}
-                    onDetailChange={props.onDetailChange}
+                    onChange={props.onDetailChange}
                 />
             )}
         </div>

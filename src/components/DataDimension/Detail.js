@@ -1,7 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'
-import { SingleSelectField, SingleSelectOption } from '@dhis2/ui-core'
+import InputLabel from '@material-ui/core/InputLabel'
+import MenuItem from '@material-ui/core/MenuItem'
+import Select from '@material-ui/core/Select'
 import { TOTALS, DETAIL } from '../../modules/dataTypes'
 
 import { styles } from './styles/Details.style'
@@ -11,39 +13,29 @@ const getOptions = () => ({
     [DETAIL]: i18n.t('Details'),
 })
 
-export const Detail = ({ currentValue, onChange }) => {
-    const options = getOptions()
-    const currentLabel = options[currentValue]
+export const Detail = ({ value, onChange }) => {
     return (
-        <div className="detail-container">
-            <SingleSelectField
-                label={i18n.t('Detail')}
-                selected={
-                    currentLabel
-                        ? {
-                              value: currentValue,
-                              label: currentLabel,
-                          }
-                        : null
-                }
-                onChange={ref => onChange(ref.selected.value)}
-                dense
+        <div style={styles.detailContainer}>
+            <InputLabel style={styles.titleText}>{i18n.t('Detail')}</InputLabel>
+
+            <Select
+                onChange={event => onChange(event.target.value)}
+                value={value}
+                disableUnderline
+                SelectDisplayProps={{ style: styles.dropDown }}
             >
-                {Object.entries(options).map(option => (
-                    <SingleSelectOption
-                        value={option[0]}
-                        key={option[0]}
-                        label={option[1]}
-                    />
+                {Object.entries(getOptions()).map(([key, name]) => (
+                    <MenuItem key={key} value={key}>
+                        {name}
+                    </MenuItem>
                 ))}
-            </SingleSelectField>
-            <style jsx>{styles}</style>
+            </Select>
         </div>
     )
 }
 
 Detail.propTypes = {
-    currentValue: PropTypes.string.isRequired,
+    value: PropTypes.string.isRequired,
     onChange: PropTypes.func.isRequired,
 }
 

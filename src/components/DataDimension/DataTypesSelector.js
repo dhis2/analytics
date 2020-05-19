@@ -21,8 +21,10 @@ export const DataTypes = ({ currentDataType, onDataTypeChange }) => (
                 <MenuItem
                     style={styles.dropDownItem}
                     key={type.id}
-                    label={type.name()}
-                />
+                    value={type.id}
+                >
+                    {type.name()}
+                </MenuItem>
             ))}
         </Select>
     </div>

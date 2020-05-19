@@ -10,11 +10,10 @@ import {
 } from '../../../modules/predefinedDimensions'
 
 export class DimensionList extends Component {
-    nameContainsFilterText = dimension => {
-        return dimension.name
+    nameContainsFilterText = dimension =>
+        dimension.name
             .toLowerCase()
             .includes(this.props.filterText.toLowerCase())
-    }
 
     isDisabled = dimensionId =>
         this.props.disabledDimension(dimensionId) || false
@@ -24,22 +23,20 @@ export class DimensionList extends Component {
 
     isLocked = dimensionId => this.props.lockedDimension(dimensionId) || false
 
-    renderItem = dimension => {
-        return (
-            <DimensionItem
-                id={dimension.id}
-                key={dimension.id}
-                name={dimension.name}
-                isLocked={this.isLocked(dimension.id)}
-                isSelected={this.props.selectedIds.includes(dimension.id)}
-                isRecommended={this.isRecommended(dimension.id)}
-                isDeactivated={this.isDisabled(dimension.id)}
-                onClick={this.props.onDimensionClick}
-                onOptionsClick={this.props.onDimensionOptionsClick}
-                onDragStart={this.props.onDimensionDragStart}
-            />
-        )
-    }
+    renderItem = dimension => (
+        <DimensionItem
+            id={dimension.id}
+            key={dimension.id}
+            name={dimension.name}
+            isLocked={this.isLocked(dimension.id)}
+            isSelected={this.props.selectedIds.includes(dimension.id)}
+            isRecommended={this.isRecommended(dimension.id)}
+            isDeactivated={this.isDisabled(dimension.id)}
+            onClick={this.props.onDimensionClick}
+            onOptionsClick={this.props.onDimensionOptionsClick}
+            onDragStart={this.props.onDimensionDragStart}
+        />
+    )
 
     getDimensionItemsByFilter = filter =>
         this.props.dimensions
