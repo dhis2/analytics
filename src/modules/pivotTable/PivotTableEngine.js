@@ -333,8 +333,6 @@ export class PivotTableEngine {
             header => header?.dimensionItemType === DIMENSION_TYPE_ORGUNIT
         )?.uid
 
-        console.log(headers, peId, ouId)
-
         let rawValue =
             cellType === CELL_TYPE_VALUE
                 ? dataRow[this.dimensionLookup.dataHeaders.value]
