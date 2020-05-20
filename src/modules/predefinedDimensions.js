@@ -57,10 +57,7 @@ export const getPredefinedDimensionProp = (dimensionId, propName) =>
 export const getDimensionById = dimensionId =>
     PREDEFINED_DIMENSIONS[dimensionId]
 
-export const getPredefinedDimensions = () => {
-    // console.log('getPredefinedDimensions', PREDEFINED_DIMENSIONS)
-    return PREDEFINED_DIMENSIONS
-}
+export const getPredefinedDimensions = () => PREDEFINED_DIMENSIONS
 
 export const getFixedDimensions = () => FIXED_DIMENSIONS
 
