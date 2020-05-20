@@ -34,7 +34,7 @@ export const PivotTableValueCell = ({
             <PivotTableEmptyCell
                 type={cellContent?.cellType}
                 onClick={onClick}
-                forwardedRef={cellRef}
+                ref={cellRef}
             />
         )
     }
