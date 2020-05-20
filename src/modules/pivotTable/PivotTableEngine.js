@@ -313,15 +313,6 @@ export class PivotTableEngine {
         const cellType = this.getRawCellType({ row, column })
         const dxDimension = this.getRawCellDxDimension({ row, column })
 
-        if (!this.data[row] || !this.data[row][column]) {
-            return {
-                cellType,
-                empty: true,
-            }
-        }
-
-        const dataRow = this.data[row][column]
-
         const headers = [
             ...this.getRawRowHeader(row),
             ...this.getRawColumnHeader(column),
@@ -332,6 +323,17 @@ export class PivotTableEngine {
         const ouId = headers.find(
             header => header?.dimensionItemType === DIMENSION_TYPE_ORGUNIT
         )?.uid
+
+        if (!this.data[row] || !this.data[row][column]) {
+            return {
+                cellType,
+                empty: true,
+                ouId,
+                peId,
+            }
+        }
+
+        const dataRow = this.data[row][column]
 
         let rawValue =
             cellType === CELL_TYPE_VALUE
