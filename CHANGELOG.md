@@ -1,3 +1,10 @@
+## [5.1.1](https://github.com/dhis2/analytics/compare/v5.1.0...v5.1.1) (2020-05-20)
+
+
+### Bug Fixes
+
+* use pointer cursor style on clickable value cells ([#439](https://github.com/dhis2/analytics/issues/439)) ([0973a76](https://github.com/dhis2/analytics/commit/0973a76b47a43072897a8ebb27f059910f711acb))
+
 # [5.1.0](https://github.com/dhis2/analytics/compare/v5.0.0...v5.1.0) (2020-05-19)
 
 
