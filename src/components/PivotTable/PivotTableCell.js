@@ -4,35 +4,33 @@ import classnames from 'classnames'
 import { cell as cellStyle } from './styles/PivotTable.style'
 import { usePivotTableEngine } from './PivotTableEngineContext'
 
-export const PivotTableCell = ({
-    classes,
-    isColumnHeader,
-    children,
-    style = {},
-    ...props
-}) => {
-    const engine = usePivotTableEngine()
-    style.height = style.minHeight = style.maxHeight =
-        style.height || engine.fontSize + engine.cellPadding * 2 + 2
+export const PivotTableCell = React.forwardRef(
+    ({ classes, isColumnHeader, children, style = {}, ...props }, ref) => {
+        const engine = usePivotTableEngine()
+        style.height = style.minHeight = style.maxHeight =
+            style.height || engine.fontSize + engine.cellPadding * 2 + 2
 
-    const className = classnames(
-        classes,
-        `fontsize-${engine.visualization.fontSize}`,
-        `displaydensity-${engine.visualization.displayDensity}`
-    )
+        const className = classnames(
+            classes,
+            `fontsize-${engine.visualization.fontSize}`,
+            `displaydensity-${engine.visualization.displayDensity}`
+        )
 
-    return isColumnHeader ? (
-        <th className={className} style={style} {...props}>
-            <style jsx>{cellStyle}</style>
-            {children}
-        </th>
-    ) : (
-        <td className={className} style={style} {...props}>
-            <style jsx>{cellStyle}</style>
-            {children}
-        </td>
-    )
-}
+        return isColumnHeader ? (
+            <th className={className} style={style} {...props}>
+                <style jsx>{cellStyle}</style>
+                {children}
+            </th>
+        ) : (
+            <td ref={ref} className={className} style={style} {...props}>
+                <style jsx>{cellStyle}</style>
+                {children}
+            </td>
+        )
+    }
+)
+
+PivotTableCell.displayName = 'PivotTableCell'
 
 PivotTableCell.defaultProps = {
     isColumnHeader: false,

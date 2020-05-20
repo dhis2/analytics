@@ -18,13 +18,25 @@ export const PivotTableValueCell = ({
     const engine = usePivotTableEngine()
     const cellRef = useRef(undefined)
 
+    const onClick = () => {
+        if (cellContent.cellType === CELL_TYPE_VALUE) {
+            onToggleContextualMenu(cellRef, cellContent)
+        }
+    }
+
     const cellContent = engine.get({
         row,
         column,
     })
 
     if (!cellContent || cellContent.empty) {
-        return <PivotTableEmptyCell type={cellContent?.cellType} />
+        return (
+            <PivotTableEmptyCell
+                type={cellContent?.cellType}
+                onClick={onClick}
+                ref={cellRef}
+            />
+        )
     }
 
     // TODO: Add support for 'INTEGER' type (requires server changes)
@@ -46,12 +58,6 @@ export const PivotTableValueCell = ({
         maxWidth: width,
     }
 
-    const onClick = () => {
-        if (cellContent.cellType === CELL_TYPE_VALUE) {
-            onToggleContextualMenu(cellRef, cellContent)
-        }
-    }
-
     return (
         <PivotTableCell
             key={column}
@@ -59,8 +65,9 @@ export const PivotTableValueCell = ({
             title={cellContent.renderedValue}
             style={style}
             onClick={onClick}
+            ref={cellRef}
         >
-            <span ref={cellRef}>{cellContent.renderedValue ?? null}</span>
+            {cellContent.renderedValue ?? null}
         </PivotTableCell>
     )
 }
