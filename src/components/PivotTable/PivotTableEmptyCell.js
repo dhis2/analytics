@@ -3,9 +3,9 @@ import PropTypes from 'prop-types'
 import { cell as cellStyle } from './styles/PivotTable.style'
 import { PivotTableCell } from './PivotTableCell'
 
-export const PivotTableEmptyCell = ({ type, ...props }) => {
+export const PivotTableEmptyCell = ({ type, forwardedRef, ...props }) => {
     return (
-        <PivotTableCell className={type} {...props}>
+        <PivotTableCell ref={forwardedRef} className={type} {...props}>
             <style jsx>{cellStyle}</style>
         </PivotTableCell>
     )
@@ -13,4 +13,5 @@ export const PivotTableEmptyCell = ({ type, ...props }) => {
 
 PivotTableEmptyCell.propTypes = {
     type: PropTypes.string.isRequired,
+    forwardedRef: PropTypes.object,
 }
