@@ -47,10 +47,7 @@ export const PivotTableValueCell = ({
     }
 
     const onClick = () => {
-        if (
-            cellContent.cellType === CELL_TYPE_VALUE &&
-            cellContent.renderedValue
-        ) {
+        if (cellContent.cellType === CELL_TYPE_VALUE) {
             onToggleContextualMenu(cellRef, cellContent)
         }
     }
