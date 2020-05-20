@@ -1,3 +1,10 @@
+## [5.1.2](https://github.com/dhis2/analytics/compare/v5.1.1...v5.1.2) (2020-05-20)
+
+
+### Bug Fixes
+
+* support empty cell drill by looking up headers instead of data rows ([#443](https://github.com/dhis2/analytics/issues/443)) ([f7d4608](https://github.com/dhis2/analytics/commit/f7d4608062d6af2f5434224e9a4765dc742c0de8))
+
 ## [5.1.1](https://github.com/dhis2/analytics/compare/v5.1.0...v5.1.1) (2020-05-20)
 
 
