@@ -16,7 +16,6 @@ const getOptions = () => ({
 export const Detail = ({ value, onChange }) => (
     <div style={styles.detailContainer}>
         <InputLabel style={styles.titleText}>{i18n.t('Detail')}</InputLabel>
-
         <Select
             onChange={event => onChange(event.target.value)}
             value={value}
