@@ -9,7 +9,8 @@ export default css`
     }
     .emptySelection {
         text-align: center;
-        font-size: 14px; /* TODO: Fetch from a library? */
+        font-size: 14px;
+        line-height: 16px;
         margin: ${spacers.dp24} 0 0;
         color: ${colors.grey700};
     }
