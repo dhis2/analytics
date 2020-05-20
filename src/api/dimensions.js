@@ -93,7 +93,11 @@ export const apiFetchGroups = (d2, dataType, nameProp) => {
             return request(d2, 'dataElementGroups', { paramString: params })
         }
         case 'dataSets': {
-            return Promise.resolve(DATA_SETS_CONSTANTS)
+            const dataSetGroups = DATA_SETS_CONSTANTS.map(({ id, name }) => ({
+                id,
+                name: name(),
+            }))
+            return Promise.resolve(dataSetGroups)
         }
         case 'eventDataItems':
         case 'programIndicators': {

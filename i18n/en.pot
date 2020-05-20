@@ -5,8 +5,11 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2020-05-14T22:39:39.764Z\n"
-"PO-Revision-Date: 2020-05-14T22:39:39.764Z\n"
+"POT-Creation-Date: 2020-05-20T21:21:42.204Z\n"
+"PO-Revision-Date: 2020-05-20T21:21:42.204Z\n"
+
+msgid "Data"
+msgstr ""
 
 msgid "Data Type"
 msgstr ""
@@ -50,6 +53,12 @@ msgstr ""
 msgid "Filter dimensions"
 msgstr ""
 
+msgid "Main dimensions"
+msgstr ""
+
+msgid "Your dimensions"
+msgstr ""
+
 msgid "Dimension recommended with selected data"
 msgstr ""
 
@@ -63,6 +72,12 @@ msgid "Deselect All"
 msgstr ""
 
 msgid "Select all"
+msgstr ""
+
+msgid "Organisation units"
+msgstr ""
+
+msgid "Period"
 msgstr ""
 
 msgid "Year"
@@ -161,12 +176,6 @@ msgstr ""
 msgid "{{allDynamicOuNames}} groups in {{staticOuNames}}"
 msgstr ""
 
-msgid "Data"
-msgstr ""
-
-msgid "Period"
-msgstr ""
-
 msgid "Organisation Unit"
 msgstr ""
 
@@ -219,4 +228,46 @@ msgid "Base"
 msgstr ""
 
 msgid "No data"
+msgstr ""
+
+msgid "Data validator{{separator}} {{text}}"
+msgstr ""
+
+msgid "Header is not an object"
+msgstr ""
+
+msgid "Header name is not a string"
+msgstr ""
+
+msgid "Row value is not a string"
+msgstr ""
+
+msgid "Data row is not an array"
+msgstr ""
+
+msgid "Data row length is invalid"
+msgstr ""
+
+msgid "Data is not an object"
+msgstr ""
+
+msgid "Response headers is not an array"
+msgstr ""
+
+msgid "At least two response headers required"
+msgstr ""
+
+msgid "Metadata is not an object"
+msgstr ""
+
+msgid "Metadata items is not an object"
+msgstr ""
+
+msgid "Metadata dimensions is not an object"
+msgstr ""
+
+msgid "Data rows is not an array"
+msgstr ""
+
+msgid "No data rows provided"
 msgstr ""
