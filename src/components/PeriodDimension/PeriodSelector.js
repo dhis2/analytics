@@ -174,6 +174,16 @@ class PeriodSelector extends Component {
         </>
     )
 
+    renderEmptySelection = () => (
+        <>
+            <p className="emptySelection">{i18n.t('No periods selected')}</p>
+            <style jsx>{styles}</style>
+            {
+                // TODO: Refactor to remove the duplicate jsx statement
+            }
+        </>
+    )
+
     render = () => (
         <Transfer
             onChange={({ selected }) => {
@@ -186,6 +196,7 @@ class PeriodSelector extends Component {
             height="512px"
             optionsWidth="420px"
             selectedWidth="298px"
+            selectedEmptyComponent={this.renderEmptySelection()}
             // TODO: Add rightHeader "Selected Periods" once the Transfer component supports this (https://github.com/dhis2/ui-core/issues/885)
             // TODO: Add rightFooter to be passed in as a prop
         >
