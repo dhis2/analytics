@@ -4,10 +4,7 @@ import { parseValue } from './parseValue'
 import { renderValue } from './renderValue'
 import { measureText } from './measureText'
 
-import {
-    DIMENSION_ID_ORGUNIT,
-    DIMENSION_ID_PERIOD,
-} from '../predefinedDimensions'
+import { DIMENSION_ID_ORGUNIT } from '../predefinedDimensions'
 
 import {
     AGGREGATE_TYPE_NA,
@@ -37,6 +34,8 @@ import {
     NUMBER_TYPE_ROW_PERCENTAGE,
     DIMENSION_TYPE_DATA,
     DIMENSION_TYPE_DATA_ELEMENT_GROUP_SET,
+    DIMENSION_TYPE_ORGUNIT,
+    DIMENSION_TYPE_PERIOD,
     VALUE_TYPE_TEXT,
     NUMBER_TYPE_VALUE,
 } from './pivotTableConstants'
@@ -323,17 +322,16 @@ export class PivotTableEngine {
 
         const dataRow = this.data[row][column]
 
-        const ouIndex = this.dimensionLookup.headerDimensions.findIndex(
-            header => header.dimension === DIMENSION_ID_ORGUNIT
-        )
-
-        const ouId = ouIndex !== -1 ? dataRow[ouIndex] : null
-
-        const peIndex = this.dimensionLookup.headerDimensions.findIndex(
-            header => header.dimension === DIMENSION_ID_PERIOD
-        )
-
-        const peId = peIndex !== -1 ? dataRow[peIndex] : null
+        const headers = [
+            ...this.getRawRowHeader(row),
+            ...this.getRawColumnHeader(column),
+        ]
+        const peId = headers.find(
+            header => header?.dimensionItemType === DIMENSION_TYPE_PERIOD
+        )?.uid
+        const ouId = headers.find(
+            header => header?.dimensionItemType === DIMENSION_TYPE_ORGUNIT
+        )?.uid
 
         let rawValue =
             cellType === CELL_TYPE_VALUE
