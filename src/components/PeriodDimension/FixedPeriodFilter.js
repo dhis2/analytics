@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'
+import { SingleSelectField, SingleSelectOption } from '@dhis2/ui-core'
 
 import { getFixedPeriodsOptions } from './utils/FixedPeriodsGenerator'
-import { SingleSelectField, SingleSelectOption } from '@dhis2/ui-core'
+import styles from './styles/PeriodFilter.style'
 
 // export const defaultState = {
 //     periodType: MONTHLY,
@@ -54,37 +55,54 @@ const FixedPeriodFilter = ({ currentFilter, selectFilter }) => {
 
     return (
         <>
-            <SingleSelectField
-                label={i18n.t('Period type')}
-                onChange={({ selected }) =>
-                    selectFilter({ year: currentFilter.year, type: selected })
-                }
-                dense
-                selected={currentFilter.type}
-            >
-                {getFixedPeriodsOptions().map(option => (
-                    <SingleSelectOption
-                        key={option.id}
-                        value={option.id}
-                        label={option.getName()}
-                    />
-                ))}
-            </SingleSelectField>
-            <SingleSelectField
-                label={i18n.t('Year')}
-                onChange={({ selected }) =>
-                    selectFilter({ year: selected, type: currentFilter.type })
-                }
-                dense
-                selected={currentFilter.year}
-            >
-                {
-                    // TODO: Add a way to select older years (yearsOffset)
-                }
-                {getYears(yearsOffset).map(year => (
-                    <SingleSelectOption key={year} value={year} label={year} />
-                ))}
-            </SingleSelectField>
+            <div className="leftSection">
+                <SingleSelectField
+                    label={i18n.t('Period type')}
+                    onChange={({ selected }) =>
+                        selectFilter({
+                            year: currentFilter.year,
+                            type: selected,
+                        })
+                    }
+                    dense
+                    selected={currentFilter.type}
+                    className="filterElement"
+                >
+                    {getFixedPeriodsOptions().map(option => (
+                        <SingleSelectOption
+                            key={option.id}
+                            value={option.id}
+                            label={option.getName()}
+                        />
+                    ))}
+                </SingleSelectField>
+            </div>
+            <div className="rightSection">
+                <SingleSelectField
+                    label={i18n.t('Year')}
+                    onChange={({ selected }) =>
+                        selectFilter({
+                            year: selected,
+                            type: currentFilter.type,
+                        })
+                    }
+                    dense
+                    selected={currentFilter.year}
+                    className="filterElement"
+                >
+                    {
+                        // TODO: Add a way to select older years (yearsOffset)
+                    }
+                    {getYears(yearsOffset).map(year => (
+                        <SingleSelectOption
+                            key={year}
+                            value={year}
+                            label={year}
+                        />
+                    ))}
+                </SingleSelectField>
+            </div>
+            <style jsx>{styles}</style>
         </>
     )
 }

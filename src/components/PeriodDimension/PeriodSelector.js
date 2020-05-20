@@ -13,6 +13,7 @@ import {
     MONTHLY,
     getFixedPeriodsOptionsById,
 } from './utils/FixedPeriodsGenerator'
+import styles from './styles/PeriodSelector.style'
 
 const defaultRelativePeriod = getRelativePeriodsOptionsById(MONTHS)
 const defaultFixedPeriodType = getFixedPeriodsOptionsById(MONTHLY)
@@ -138,9 +139,7 @@ class PeriodSelector extends Component {
                     {i18n.t('Fixed periods')}
                 </Tab>
             </TabBar>
-
-            <p style={{ margin: 0, height: 10 }} />
-            <div>
+            <div className="filterContainer">
                 {this.state.isRelative ? (
                     <RelativePeriodFilter
                         currentFilter={this.state.relativeFilter}
@@ -171,6 +170,7 @@ class PeriodSelector extends Component {
                     />
                 )}
             </div>
+            <style jsx>{styles}</style>
         </>
     )
 
@@ -183,6 +183,10 @@ class PeriodSelector extends Component {
             selected={this.state.selectedPeriods}
             leftHeader={this.renderHeader()}
             enableOrderChange
+            height="512px"
+            optionsWidth="420px"
+            selectedWidth="298px"
+            // TODO: Add rightHeader "Selected Periods" once the Transfer component supports this (https://github.com/dhis2/ui-core/issues/885)
             // TODO: Add rightFooter to be passed in as a prop
         >
             {this.state.allPeriods.map(item => (
