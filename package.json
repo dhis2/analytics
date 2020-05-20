@@ -24,7 +24,7 @@
         "format": "d2-style js apply || d2-style text apply"
     },
     "devDependencies": {
-        "@dhis2/cli-app-scripts": "^4.0.4",
+        "@dhis2/cli-app-scripts": "^4.0.6",
         "@dhis2/cli-style": "^7.0.0",
         "@sambego/storybook-state": "^2.0.1",
         "@storybook/addons": "^5.0.6",
