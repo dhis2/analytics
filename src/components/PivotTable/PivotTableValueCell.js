@@ -38,17 +38,12 @@ export const PivotTableValueCell = ({
               )
             : undefined
 
-    const cursorStyle =
-        cellContent.cellType === CELL_TYPE_VALUE && cellContent.renderedValue
-            ? 'pointer'
-            : 'auto'
     const width = engine.columnWidths[engine.columnMap[column]].width
     const style = {
         ...legendStyle,
         width,
         minWidth: width,
         maxWidth: width,
-        cursor: cursorStyle,
     }
 
     const onClick = () => {
