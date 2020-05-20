@@ -13,26 +13,24 @@ const getOptions = () => ({
     [DETAIL]: i18n.t('Details'),
 })
 
-export const Detail = ({ value, onChange }) => {
-    return (
-        <div style={styles.detailContainer}>
-            <InputLabel style={styles.titleText}>{i18n.t('Detail')}</InputLabel>
+export const Detail = ({ value, onChange }) => (
+    <div style={styles.detailContainer}>
+        <InputLabel style={styles.titleText}>{i18n.t('Detail')}</InputLabel>
 
-            <Select
-                onChange={event => onChange(event.target.value)}
-                value={value}
-                disableUnderline
-                SelectDisplayProps={{ style: styles.dropDown }}
-            >
-                {Object.entries(getOptions()).map(([key, name]) => (
-                    <MenuItem key={key} value={key}>
-                        {name}
-                    </MenuItem>
-                ))}
-            </Select>
-        </div>
-    )
-}
+        <Select
+            onChange={event => onChange(event.target.value)}
+            value={value}
+            disableUnderline
+            SelectDisplayProps={{ style: styles.dropDown }}
+        >
+            {Object.entries(getOptions()).map(([key, name]) => (
+                <MenuItem key={key} value={key}>
+                    {name}
+                </MenuItem>
+            ))}
+        </Select>
+    </div>
+)
 
 Detail.propTypes = {
     value: PropTypes.string.isRequired,
