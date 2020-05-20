@@ -1,3 +1,10 @@
+## [5.1.3](https://github.com/dhis2/analytics/compare/v5.1.2...v5.1.3) (2020-05-20)
+
+
+### Bug Fixes
+
+* fix drilling on empty value cells ([#444](https://github.com/dhis2/analytics/issues/444)) ([1dbb143](https://github.com/dhis2/analytics/commit/1dbb14356b2e9401ed01670d3159bd1230fd26e0))
+
 ## [5.1.2](https://github.com/dhis2/analytics/compare/v5.1.1...v5.1.2) (2020-05-20)
 
 
