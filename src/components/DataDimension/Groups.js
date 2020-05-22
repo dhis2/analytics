@@ -14,10 +14,11 @@ export const Groups = ({
     onDetailChange,
     onGroupChange,
 }) => {
-    const defaultGroup = dataTypes[dataType].defaultGroup
     let optionItems = groups
 
-    if (defaultGroup) {
+    if (dataTypes[dataType].defaultGroup) {
+        const { id, name } = dataTypes[dataType].defaultGroup
+        const defaultGroup = { id, name: name() }
         optionItems = [defaultGroup, ...optionItems]
     }
 
@@ -30,7 +31,7 @@ export const Groups = ({
             <style jsx>{styles}</style>
             <div className="group-container">
                 <SingleSelectField
-                    label={dataTypes[dataType].groupLabel}
+                    label={dataTypes[dataType].getGroupLabel()}
                     selected={
                         selected.id && selected.name
                             ? { value: selected.id, label: selected.name }
@@ -54,11 +55,7 @@ export const Groups = ({
                 </SingleSelectField>
             </div>
             {groupDetail && (
-                <Detail
-                    currentValue={detailValue}
-                    onChange={onDetailChange}
-                    options={groupDetail.alternatives}
-                />
+                <Detail currentValue={detailValue} onChange={onDetailChange} />
             )}
         </div>
     )

@@ -13,19 +13,19 @@ export const DIMENSION_PROP_NO_ITEMS = 'noItems'
 const FIXED_DIMENSIONS = {
     [DIMENSION_ID_DATA]: {
         id: DIMENSION_ID_DATA,
-        name: i18n.t('Data'),
+        getName: () => i18n.t('Data'),
         iconName: 'DataIcon',
         icon: DataIcon,
     },
     [DIMENSION_ID_PERIOD]: {
         id: DIMENSION_ID_PERIOD,
-        name: i18n.t('Period'),
+        getName: () => i18n.t('Period'),
         iconName: 'PeriodIcon',
         icon: PeriodIcon,
     },
     [DIMENSION_ID_ORGUNIT]: {
         id: DIMENSION_ID_ORGUNIT,
-        name: i18n.t('Organisation Unit'),
+        getName: () => i18n.t('Organisation Unit'),
         iconName: 'OrgUnitIcon',
         icon: OrgUnitIcon,
     },
@@ -34,7 +34,7 @@ const FIXED_DIMENSIONS = {
 const DYNAMIC_DIMENSIONS = {
     [DIMENSION_ID_ASSIGNED_CATEGORIES]: {
         id: DIMENSION_ID_ASSIGNED_CATEGORIES,
-        name: i18n.t('Assigned Categories'),
+        getName: () => i18n.t('Assigned Categories'),
         iconName: 'AssignedCategoriesIcon',
         icon: AssignedCategoriesIcon,
         [DIMENSION_PROP_NO_ITEMS]: true,

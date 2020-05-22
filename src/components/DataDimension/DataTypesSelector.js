@@ -21,7 +21,7 @@ export const DataTypes = ({ currentDataType, onChange }) => (
                 <SingleSelectOption
                     value={type.id}
                     key={type.id}
-                    label={type.name}
+                    label={type.getName()}
                 />
             ))}
         </SingleSelectField>

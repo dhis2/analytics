@@ -1,14 +1,8 @@
+import i18n from '@dhis2/d2-i18n'
 import validators from './validators'
 import adapters from './adapters'
 import generators from './generators'
 import { theme1 } from '../util/colors'
-
-const DEFAULT_EXTRA_OPTIONS = {
-    colors: theme1,
-    noData: {
-        text: 'No data to display',
-    },
-}
 
 export default function({
     store,
@@ -42,6 +36,13 @@ export default function({
     }
 
     this.getConfig = () => {
+        const DEFAULT_EXTRA_OPTIONS = {
+            colors: theme1,
+            noData: {
+                text: i18n.t('No data'),
+            },
+        }
+
         return _adapter({
             layout: _validator({ layout, onError, onWarning }),
             extraOptions: Object.assign(
