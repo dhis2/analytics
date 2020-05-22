@@ -5,10 +5,16 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2020-04-09T19:57:21.474Z\n"
-"PO-Revision-Date: 2020-04-09T19:57:21.474Z\n"
+"POT-Creation-Date: 2020-05-22T02:46:09.000Z\n"
+"PO-Revision-Date: 2020-05-22T02:46:09.000Z\n"
 
 msgid "Data Type"
+msgstr ""
+
+msgid "Totals"
+msgstr ""
+
+msgid "Details"
 msgstr ""
 
 msgid "Detail"
@@ -42,6 +48,12 @@ msgid "Manage chart axes"
 msgstr ""
 
 msgid "Filter dimensions"
+msgstr ""
+
+msgid "Main dimensions"
+msgstr ""
+
+msgid "Your dimensions"
 msgstr ""
 
 msgid "Dimension recommended with selected data"
@@ -111,12 +123,6 @@ msgid "Select data element group"
 msgstr ""
 
 msgid "[ All data elements ]"
-msgstr ""
-
-msgid "Totals"
-msgstr ""
-
-msgid "Details"
 msgstr ""
 
 msgid "Data sets"
@@ -204,4 +210,7 @@ msgid "Target"
 msgstr ""
 
 msgid "Base"
+msgstr ""
+
+msgid "No data"
 msgstr ""
