@@ -2,7 +2,9 @@
     "name": "@dhis2/analytics",
     "version": "4.4.0-alpha.3",
     "main": "./build/index.js",
-    "sideEffects": false,
+    "sideEffects": [
+        "./src/locales/index.js"
+    ],
     "repository": "git@github.com:dhis2/analytics.git",
     "author": "Jennifer Jones Arnesen <jennifer@dhis2.org>",
     "license": "BSD-3-Clause",
