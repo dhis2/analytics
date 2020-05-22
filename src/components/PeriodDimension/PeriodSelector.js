@@ -15,34 +15,33 @@ import {
 } from './utils/FixedPeriodsGenerator'
 import styles from './styles/PeriodSelector.style'
 
-const defaultRelativePeriod = getRelativePeriodsOptionsById(MONTHS)
+const defaultRelativePeriodType = getRelativePeriodsOptionsById(MONTHS)
 const defaultFixedPeriodType = getFixedPeriodsOptionsById(MONTHLY)
-const defaultFixedPeriodYear = new Date().getFullYear().toString()
+const defaultFixedPeriodYear = new Date().getFullYear()
 const fixedPeriodConfig = year => ({
-    offset: year - new Date().getFullYear(),
+    offset: year - defaultFixedPeriodYear,
     filterFuturePeriods: false,
     reversePeriods: false,
 })
 
+// TODO: Refactor to functional component
 class PeriodSelector extends Component {
     state = {
-        allPeriods: defaultRelativePeriod.periods,
+        allPeriods: defaultRelativePeriodType.periods,
         selectedPeriods: [],
         isRelative: true,
         relativeFilter: {
-            //TODO: refactor to use the whole object instead of just label/value
-            label: defaultRelativePeriod.getName(),
-            value: defaultRelativePeriod.id,
+            periodType: {
+                label: defaultRelativePeriodType.getName(),
+                value: defaultRelativePeriodType.id,
+            },
         },
         fixedFilter: {
-            type: {
+            periodType: {
                 label: defaultFixedPeriodType.getName(),
                 value: defaultFixedPeriodType.id,
             },
-            year: {
-                label: defaultFixedPeriodYear,
-                value: defaultFixedPeriodYear,
-            },
+            year: defaultFixedPeriodYear.toString(),
         },
     }
 
@@ -62,14 +61,12 @@ class PeriodSelector extends Component {
             this.setState({
                 allPeriods: isRelative
                     ? getRelativePeriodsOptionsById(
-                          this.state.relativeFilter.value
+                          this.state.relativeFilter.periodType.value
                       ).periods
                     : getFixedPeriodsOptionsById(
-                          this.state.fixedFilter.type.label
+                          this.state.fixedFilter.periodType.label
                       ).generator.generatePeriods(
-                          fixedPeriodConfig(
-                              Number(this.state.fixedFilter.year.value)
-                          )
+                          fixedPeriodConfig(Number(this.state.fixedFilter.year))
                       ),
             })
         }
@@ -142,29 +139,32 @@ class PeriodSelector extends Component {
             <div className="filterContainer">
                 {this.state.isRelative ? (
                     <RelativePeriodFilter
-                        currentFilter={this.state.relativeFilter}
-                        selectFilter={relativeFilter => {
-                            this.setState({ relativeFilter })
+                        currentFilter={this.state.relativeFilter.periodType}
+                        onSelectFilter={filter => {
+                            this.setState({
+                                relativeFilter: { periodType: filter },
+                            })
                             this.setState({
                                 allPeriods: getRelativePeriodsOptionsById(
-                                    relativeFilter.value
+                                    filter.value
                                 ).periods,
                             })
                         }}
                     />
                 ) : (
                     <FixedPeriodFilter
-                        currentFilter={this.state.fixedFilter}
-                        selectFilter={fixedFilter => {
-                            this.setState({ fixedFilter })
-                            this.setState({
-                                allPeriods: getFixedPeriodsOptionsById(
-                                    fixedFilter.type.value
-                                ).generator.generatePeriods(
-                                    fixedPeriodConfig(
-                                        Number(fixedFilter.year.value)
-                                    )
-                                ),
+                        currentPeriodType={this.state.fixedFilter.periodType}
+                        currentYear={this.state.fixedFilter.year}
+                        onSelectPeriodType={periodType => {
+                            this.onSelectFixedPeriods({
+                                periodType,
+                                year: this.state.fixedFilter.year,
+                            })
+                        }}
+                        onSelectYear={year => {
+                            this.onSelectFixedPeriods({
+                                periodType: this.state.fixedFilter.periodType,
+                                year,
                             })
                         }}
                     />
@@ -173,6 +173,17 @@ class PeriodSelector extends Component {
             <style jsx>{styles}</style>
         </>
     )
+
+    onSelectFixedPeriods = fixedFilter => {
+        this.setState({
+            fixedFilter,
+            allPeriods: getFixedPeriodsOptionsById(
+                fixedFilter.periodType.value
+            ).generator.generatePeriods(
+                fixedPeriodConfig(Number(fixedFilter.year))
+            ),
+        })
+    }
 
     renderEmptySelection = () => (
         <>
@@ -197,8 +208,8 @@ class PeriodSelector extends Component {
             optionsWidth="420px"
             selectedWidth="298px"
             selectedEmptyComponent={this.renderEmptySelection()}
+            rightFooter={this.props.rightFooter}
             // TODO: Add rightHeader "Selected Periods" once the Transfer component supports this (https://github.com/dhis2/ui-core/issues/885)
-            // TODO: Add rightFooter to be passed in as a prop
         >
             {this.state.allPeriods.map(item => (
                 <TransferOption
@@ -213,6 +224,7 @@ class PeriodSelector extends Component {
 
 PeriodSelector.propTypes = {
     onSelect: PropTypes.func.isRequired,
+    rightFooter: PropTypes.node,
     selectedItems: PropTypes.arrayOf(PropTypes.object),
 }
 

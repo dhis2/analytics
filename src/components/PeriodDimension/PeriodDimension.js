@@ -4,12 +4,7 @@ import PropTypes from 'prop-types'
 import { DIMENSION_ID_PERIOD } from '../../modules/predefinedDimensions'
 import PeriodSelector from './PeriodSelector'
 
-export const PeriodDimension = ({
-    onDeselect,
-    onReorder,
-    onSelect,
-    selectedPeriods,
-}) => {
+export const PeriodDimension = ({ onSelect, selectedPeriods, rightFooter }) => {
     const selectItems = periods => {
         const formattedPeriods = periods.map(period => ({
             id: period.value,
@@ -21,39 +16,18 @@ export const PeriodDimension = ({
         })
     }
 
-    const deselectItems = periods => {
-        // TODO: Can this and reorderItems be removed, since its all handled by Transfer now?
-        const itemIdsToRemove = periods.map(period => period.id)
-
-        onDeselect({
-            dimensionId: DIMENSION_ID_PERIOD,
-            itemIdsToRemove,
-        })
-    }
-
-    const reorderItems = periods => {
-        const itemIds = periods.map(period => period.id)
-
-        onReorder({
-            dimensionId: DIMENSION_ID_PERIOD,
-            itemIds,
-        })
-    }
-
     return (
         <PeriodSelector
             onSelect={selectItems}
-            onDeselect={deselectItems}
-            onReorder={reorderItems}
             selectedItems={selectedPeriods}
+            rightFooter={rightFooter}
         />
     )
 }
 
 PeriodDimension.propTypes = {
-    onDeselect: PropTypes.func.isRequired,
-    onReorder: PropTypes.func.isRequired,
     onSelect: PropTypes.func.isRequired,
+    rightFooter: PropTypes.node,
     selectedPeriods: PropTypes.array,
 }
 

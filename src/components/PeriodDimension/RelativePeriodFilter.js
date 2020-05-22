@@ -6,11 +6,11 @@ import { SingleSelectOption, SingleSelectField } from '@dhis2/ui-core'
 import { getRelativePeriodsOptions } from './utils/RelativePeriodsGenerator'
 import styles from './styles/PeriodFilter.style'
 
-const RelativePeriodFilter = ({ currentFilter, selectFilter }) => (
+const RelativePeriodFilter = ({ currentFilter, onSelectFilter }) => (
     <div className="leftSection">
         <SingleSelectField
             label={i18n.t('Period type')}
-            onChange={({ selected }) => selectFilter(selected)}
+            onChange={({ selected }) => onSelectFilter(selected)}
             dense
             selected={currentFilter}
             className="filterElement"
@@ -29,7 +29,7 @@ const RelativePeriodFilter = ({ currentFilter, selectFilter }) => (
 
 RelativePeriodFilter.propTypes = {
     currentFilter: PropTypes.object.isRequired,
-    selectFilter: PropTypes.func.isRequired,
+    onSelectFilter: PropTypes.func.isRequired,
 }
 
 export default RelativePeriodFilter
