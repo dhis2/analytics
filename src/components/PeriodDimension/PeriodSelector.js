@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { Transfer, TransferOption, TabBar, Tab } from '@dhis2/ui-core'
+import { Transfer, TabBar, Tab } from '@dhis2/ui-core'
 import i18n from '@dhis2/d2-i18n'
 
 import FixedPeriodFilter from './FixedPeriodFilter'
@@ -14,6 +14,8 @@ import {
     getFixedPeriodsOptionsById,
 } from './utils/FixedPeriodsGenerator'
 import styles from './styles/PeriodSelector.style'
+import { TransferOption } from '../TransferOption'
+import PeriodIcon from '../../assets/DimensionItemIcons/PeriodIcon'
 
 const defaultRelativePeriodType = getRelativePeriodsOptionsById(MONTHS)
 const defaultFixedPeriodType = getFixedPeriodsOptionsById(MONTHLY)
@@ -71,54 +73,6 @@ class PeriodSelector extends Component {
             })
         }
     }
-
-    // onSelectPeriods = periodIds => {
-    //     const offeredPeriods = this.state.offeredPeriods.filter(
-    //         period => !periodIds.includes(period.id)
-    //     )
-    //     const newPeriods = this.state.offeredPeriods.filter(period =>
-    //         periodIds.includes(period.id)
-    //     )
-    //     const selectedPeriods = this.state.selectedPeriods.concat(newPeriods)
-
-    //     this.setState({ selectedPeriods, offeredPeriods })
-    //     this.props.onSelect(selectedPeriods)
-    // }
-
-    // setSelectedPeriodOrder = periodIds => {
-    //     const selectedPeriods = periodIds.map(id =>
-    //         this.state.selectedPeriods.find(period => period.id === id)
-    //     )
-
-    //     this.setState({ selectedPeriods })
-    //     this.props.onReorder(selectedPeriods)
-    // }
-
-    // onDeselectPeriods = periodIds => {
-    //     const selectedPeriods = this.state.selectedPeriods.filter(
-    //         period => !periodIds.includes(period.id)
-    //     )
-    //     const removedPeriods = this.state.selectedPeriods.filter(period =>
-    //         periodIds.includes(period.id)
-    //     )
-    //     const offeredPeriods = this.state.allPeriods.filter(
-    //         period => !selectedPeriods.map(p => p.id).includes(period.id)
-    //     )
-
-    //     this.setState({ selectedPeriods, offeredPeriods })
-    //     this.props.onDeselect(removedPeriods)
-    // }
-
-    // initializeOfferedPeriods = (periods, initial = false) => {
-    //     const selectedPeriods = initial
-    //         ? this.props.selectedItems
-    //         : this.state.selectedPeriods
-    //     const offeredPeriods = periods.filter(
-    //         period => !selectedPeriods.map(p => p.id).includes(period.id)
-    //     )
-
-    //     this.setState({ allPeriods: periods, offeredPeriods })
-    // }
 
     renderHeader = () => (
         <>
@@ -216,6 +170,7 @@ class PeriodSelector extends Component {
                     label={item.getName()}
                     value={item.id}
                     key={item.id}
+                    icon={PeriodIcon}
                 />
             ))}
         </Transfer>
