@@ -1,8 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import { DIMENSION_ID_PERIOD } from '../../modules/predefinedDimensions'
 import PeriodSelector from './PeriodSelector'
+import { DIMENSION_ID_PERIOD } from '../../modules/predefinedDimensions'
 
 export const PeriodDimension = ({ onSelect, selectedPeriods, rightFooter }) => {
     const selectItems = periods => {
