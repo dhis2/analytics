@@ -113,7 +113,7 @@ const options = [
     },
     {
         id: BIMONTHS,
-        geneperiodsrperiodsator: BiMonthsPeriodType,
+        periods: BiMonthsPeriodType,
         getName: () => i18n.t('Bi-months'),
     },
     {
