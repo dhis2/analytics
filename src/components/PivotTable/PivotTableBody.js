@@ -4,7 +4,7 @@ import { PivotTableClippedAxis } from './PivotTableClippedAxis'
 import { PivotTableEmptyRow } from './PivotTableEmptyRow'
 import { PivotTableRow } from './PivotTableRow'
 
-export const PivotTableBody = ({ clippingResult }) => (
+export const PivotTableBody = ({ clippingResult, onToggleContextualMenu }) => (
     <tbody>
         <PivotTableClippedAxis
             axisClippingResult={clippingResult.rows}
@@ -19,6 +19,7 @@ export const PivotTableBody = ({ clippingResult }) => (
                     key={index}
                     clippingResult={clippingResult}
                     rowIndex={index}
+                    onToggleContextualMenu={onToggleContextualMenu}
                 />
             )}
         />
@@ -27,4 +28,5 @@ export const PivotTableBody = ({ clippingResult }) => (
 
 PivotTableBody.propTypes = {
     clippingResult: PropTypes.object.isRequired,
+    onToggleContextualMenu: PropTypes.func,
 }

@@ -1,3 +1,50 @@
+## [5.1.4](https://github.com/dhis2/analytics/compare/v5.1.3...v5.1.4) (2020-05-20)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([3006f60](https://github.com/dhis2/analytics/commit/3006f60757bc80b58c3314d66d78369b894024db))
+
+## [5.1.3](https://github.com/dhis2/analytics/compare/v5.1.2...v5.1.3) (2020-05-20)
+
+
+### Bug Fixes
+
+* fix drilling on empty value cells ([#444](https://github.com/dhis2/analytics/issues/444)) ([1dbb143](https://github.com/dhis2/analytics/commit/1dbb14356b2e9401ed01670d3159bd1230fd26e0))
+
+## [5.1.2](https://github.com/dhis2/analytics/compare/v5.1.1...v5.1.2) (2020-05-20)
+
+
+### Bug Fixes
+
+* support empty cell drill by looking up headers instead of data rows ([#443](https://github.com/dhis2/analytics/issues/443)) ([f7d4608](https://github.com/dhis2/analytics/commit/f7d4608062d6af2f5434224e9a4765dc742c0de8))
+
+## [5.1.1](https://github.com/dhis2/analytics/compare/v5.1.0...v5.1.1) (2020-05-20)
+
+
+### Bug Fixes
+
+* use pointer cursor style on clickable value cells ([#439](https://github.com/dhis2/analytics/issues/439)) ([0973a76](https://github.com/dhis2/analytics/commit/0973a76b47a43072897a8ebb27f059910f711acb))
+
+# [5.1.0](https://github.com/dhis2/analytics/compare/v5.0.0...v5.1.0) (2020-05-19)
+
+
+### Features
+
+* drill down/up support on table cells ([#432](https://github.com/dhis2/analytics/issues/432)) ([091c6b0](https://github.com/dhis2/analytics/commit/091c6b0c23226fd673923d53597b1a2c2f5496eb))
+
+# [5.0.0](https://github.com/dhis2/analytics/compare/v4.3.28...v5.0.0) (2020-05-18)
+
+
+### Bug Fixes
+
+* move 4.3.26-28 to 5 ([ad28004](https://github.com/dhis2/analytics/commit/ad280049b81313f1e4b04de04fcfdfe442db45fe))
+
+
+### BREAKING CHANGES
+
+* see logs for 4.3.26-28
+
 ## [4.3.28](https://github.com/dhis2/analytics/compare/v4.3.27...v4.3.28) (2020-05-06)
 
 
