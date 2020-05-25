@@ -2,7 +2,7 @@ import React, { useRef } from 'react'
 import cx from 'classnames'
 import propTypes from '@dhis2/prop-types'
 
-import { colors, spacers, theme } from '@dhis2/ui-core'
+import styles from './styles/TransferOption.style'
 
 const DOUBLE_CLICK_MAX_DELAY = 500
 
@@ -17,7 +17,7 @@ export const TransferOption = ({
 }) => {
     const doubleClickTimeout = useRef(null)
 
-    // TODO: Add hover text
+    // TODO: Add hover text / tooltip
 
     return (
         <div data-value={value} className="wrapper">
@@ -47,55 +47,7 @@ export const TransferOption = ({
                 <span className="label">{label}</span>
             </div>
 
-            <style jsx>{`
-                .wrapper:last-child {
-                    margin-bottom: ${spacers.dp4};
-                }
-                .chip {
-                    display: inline-block;
-                    background: ${colors.grey200};
-                    font-size: 14px;
-                    line-height: 16px;
-                    padding: 2px ${spacers.dp8} 2px ${spacers.dp4};
-                    margin-top: ${spacers.dp4};
-                    margin-left: ${spacers.dp8};
-                    border-radius: 3px;
-                    user-select: none;
-                }
-
-                .chip:hover {
-                    background: ${colors.grey300};
-                }
-
-                .chip.highlighted {
-                    background: ${theme.secondary800};
-                    color: ${colors.white};
-                }
-
-                .chip.highlighted :global(.icon path) {
-                    fill: ${colors.white};
-                }
-
-                .chip.disabled {
-                    opacity: 0.3;
-                    cursor: not-allowed;
-                }
-
-                .icon,
-                .label {
-                    line-height: 18px;
-                }
-
-                .icon {
-                    margin-right: ${spacers.dp4};
-                    display: inline-flex;
-                    vertical-align: text-bottom;
-                }
-
-                .label {
-                    font-size: 14px;
-                }
-            `}</style>
+            <style jsx>{styles}</style>
         </div>
     )
 }
