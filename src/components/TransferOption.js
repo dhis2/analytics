@@ -17,8 +17,6 @@ export const TransferOption = ({
 }) => {
     const doubleClickTimeout = useRef(null)
 
-    // TODO: Add hover text / tooltip
-
     return (
         <div data-value={value} className="wrapper">
             <div

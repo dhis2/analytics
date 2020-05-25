@@ -143,9 +143,6 @@ class PeriodSelector extends Component {
         <>
             <p className="emptySelection">{i18n.t('No periods selected')}</p>
             <style jsx>{styles}</style>
-            {
-                // TODO: Refactor to remove the duplicate jsx statement
-            }
         </>
     )
 
