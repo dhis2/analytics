@@ -9,22 +9,22 @@ export const EXPECTED_REPORTS = 'EXPECTED_REPORTS'
 export const DATA_SETS_CONSTANTS = [
     {
         id: REPORTING_RATE,
-        name: i18n.t('Reporting rate'),
+        name: () => i18n.t('Reporting rate'),
     },
     {
         id: REPORTING_RATE_ON_TIME,
-        name: i18n.t('Reporting rate on time'),
+        name: () => i18n.t('Reporting rate on time'),
     },
     {
         id: ACTUAL_REPORTS,
-        name: i18n.t('Actual reports'),
+        name: () => i18n.t('Actual reports'),
     },
     {
         id: ACTUAL_REPORTS_ON_TIME,
-        name: i18n.t('Actual reports on time'),
+        name: () => i18n.t('Actual reports on time'),
     },
     {
         id: EXPECTED_REPORTS,
-        name: i18n.t('Expected reports'),
+        name: () => i18n.t('Expected reports'),
     },
 ]

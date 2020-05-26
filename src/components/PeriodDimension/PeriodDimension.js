@@ -3,8 +3,8 @@ import PropTypes from 'prop-types'
 import uniqBy from 'lodash/uniqBy'
 import DialogTitle from '@material-ui/core/DialogTitle'
 import DialogContent from '@material-ui/core/DialogContent'
-import { PeriodSelector } from '@dhis2/d2-ui-period-selector-dialog'
 import i18n from '@dhis2/d2-i18n'
+import PeriodSelector from '../PeriodSelector/PeriodSelector'
 
 import { DIMENSION_ID_PERIOD } from '../../modules/predefinedDimensions'
 

@@ -1,3 +1,5 @@
+import './locales'
+
 // Components
 
 export { default as DataDimension } from './components/DataDimension/DataDimension'

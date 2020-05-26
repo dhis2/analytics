@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-04-09T19:57:21.474Z\n"
+"POT-Creation-Date: 2020-05-20T21:46:25.914Z\n"
 "PO-Revision-Date: 2020-05-18 10:55+0000\n"
 "Last-Translator: Hamza Assada <7amza.it@gmail.com>, 2020\n"
 "Language-Team: Arabic (https://www.transifex.com/hisp-uio/teams/100509/ar/)\n"
@@ -17,8 +17,17 @@ msgstr ""
 "Language: ar\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 
+msgid "Data"
+msgstr "بيانات"
+
 msgid "Data Type"
 msgstr "نوع البيانات"
+
+msgid "Totals"
+msgstr "الإجمالي"
+
+msgid "Details"
+msgstr "التفاصيل"
 
 msgid "Detail"
 msgstr "تفصيل"
@@ -53,6 +62,12 @@ msgstr "إدارة محاور المخطط"
 msgid "Filter dimensions"
 msgstr "تصفية الأبعاد"
 
+msgid "Main dimensions"
+msgstr ""
+
+msgid "Your dimensions"
+msgstr ""
+
 msgid "Dimension recommended with selected data"
 msgstr "البعد موصى به مع البيانات المحددة"
 
@@ -67,6 +82,255 @@ msgstr "إلغاء تحديد الكل"
 
 msgid "Select all"
 msgstr "تحديد الكل"
+
+msgid "Organisation units"
+msgstr ""
+
+msgid "Period"
+msgstr "الفترة الزمنية"
+
+msgid "Year"
+msgstr ""
+
+msgid "Relative periods"
+msgstr ""
+
+msgid "Fixed periods"
+msgstr ""
+
+msgid "Period type"
+msgstr ""
+
+msgid "January"
+msgstr ""
+
+msgid "February"
+msgstr ""
+
+msgid "March"
+msgstr ""
+
+msgid "April"
+msgstr ""
+
+msgid "May"
+msgstr ""
+
+msgid "June"
+msgstr ""
+
+msgid "July"
+msgstr ""
+
+msgid "August"
+msgstr ""
+
+msgid "September"
+msgstr ""
+
+msgid "October"
+msgstr ""
+
+msgid "November"
+msgstr ""
+
+msgid "December"
+msgstr ""
+
+msgid "Week {{weekNumber}}"
+msgstr ""
+
+msgid "Bi-Week {{biWeekNumber}}"
+msgstr ""
+
+msgid "Daily"
+msgstr ""
+
+msgid "Weekly"
+msgstr ""
+
+msgid "Bi-weekly"
+msgstr ""
+
+msgid "Weekly (Start Wednesday)"
+msgstr ""
+
+msgid "Weekly (Start Thursday)"
+msgstr ""
+
+msgid "Weekly (Start Saturday)"
+msgstr ""
+
+msgid "Weekly (Start Sunday)"
+msgstr ""
+
+msgid "Monthly"
+msgstr ""
+
+msgid "Bi-monthly"
+msgstr ""
+
+msgid "Quarterly"
+msgstr ""
+
+msgid "Six-monthly"
+msgstr ""
+
+msgid "Six-monthly April"
+msgstr ""
+
+msgid "Yearly"
+msgstr ""
+
+msgid "Financial year (Start November)"
+msgstr ""
+
+msgid "Financial year (Start October)"
+msgstr ""
+
+msgid "Financial year (Start July)"
+msgstr ""
+
+msgid "Financial year (Start April)"
+msgstr ""
+
+msgid "Today"
+msgstr ""
+
+msgid "Yesterday"
+msgstr ""
+
+msgid "Last 3 days"
+msgstr ""
+
+msgid "Last 7 days"
+msgstr ""
+
+msgid "Last 14 days"
+msgstr ""
+
+msgid "This week"
+msgstr ""
+
+msgid "Last week"
+msgstr ""
+
+msgid "Last 4 weeks"
+msgstr ""
+
+msgid "Last 12 weeks"
+msgstr ""
+
+msgid "Last 52 weeks"
+msgstr ""
+
+msgid "Weeks this year"
+msgstr ""
+
+msgid "This bi-week"
+msgstr ""
+
+msgid "Last bi-week"
+msgstr ""
+
+msgid "Last 4 bi-weeks"
+msgstr ""
+
+msgid "This month"
+msgstr ""
+
+msgid "Last month"
+msgstr ""
+
+msgid "Last 3 months"
+msgstr ""
+
+msgid "Last 6 months"
+msgstr ""
+
+msgid "Last 12 months"
+msgstr ""
+
+msgid "Months this year"
+msgstr ""
+
+msgid "This bi-month"
+msgstr ""
+
+msgid "Last bi-month"
+msgstr ""
+
+msgid "Last 6 bi-months"
+msgstr ""
+
+msgid "Bi-months this year"
+msgstr ""
+
+msgid "This quarter"
+msgstr ""
+
+msgid "Last quarter"
+msgstr ""
+
+msgid "Last 4 quarters"
+msgstr ""
+
+msgid "Quarters this year"
+msgstr ""
+
+msgid "This six-month"
+msgstr ""
+
+msgid "Last six-month"
+msgstr ""
+
+msgid "Last 2 six-month"
+msgstr ""
+
+msgid "This financial year"
+msgstr ""
+
+msgid "Last financial year"
+msgstr ""
+
+msgid "Last 5 financial years"
+msgstr ""
+
+msgid "This year"
+msgstr ""
+
+msgid "Last year"
+msgstr ""
+
+msgid "Last 5 years"
+msgstr ""
+
+msgid "Days"
+msgstr ""
+
+msgid "Weeks"
+msgstr ""
+
+msgid "Bi-weeks"
+msgstr ""
+
+msgid "Months"
+msgstr ""
+
+msgid "Bi-months"
+msgstr ""
+
+msgid "Quarters"
+msgstr ""
+
+msgid "Six-months"
+msgstr ""
+
+msgid "Financial Years"
+msgstr ""
+
+msgid "Years"
+msgstr ""
 
 msgid "Series"
 msgstr "سلسلة"
@@ -101,9 +365,6 @@ msgstr "الإبلاغات المتوقعة"
 msgid "Program"
 msgstr "البرنامج"
 
-msgid "Select a program"
-msgstr "حدد برنامجاً"
-
 msgid "Indicators"
 msgstr "المؤشرات"
 
@@ -122,12 +383,6 @@ msgstr "تحديد مجموعة عناصر البيانات"
 msgid "[ All data elements ]"
 msgstr "[ كل عناصر البيانات ]"
 
-msgid "Totals"
-msgstr "الإجمالي"
-
-msgid "Details"
-msgstr "التفاصيل"
-
 msgid "Data sets"
 msgstr "حزم البيانات"
 
@@ -139,6 +394,9 @@ msgstr "[جميع المقاييس]"
 
 msgid "Event data items"
 msgstr "عناصر بيانات الحدث"
+
+msgid "Select a program"
+msgstr "حدد برنامجاً"
 
 msgid "Program indicators"
 msgstr "مؤشرات البرنامج"
@@ -157,12 +415,6 @@ msgstr "مستويات {{allDynamicOuNames}} في {{staticOuNames}}"
 
 msgid "{{allDynamicOuNames}} groups in {{staticOuNames}}"
 msgstr "مجموعات {{allDynamicOuNames}} في {{staticOuNames}}"
-
-msgid "Data"
-msgstr "بيانات"
-
-msgid "Period"
-msgstr "الفترة الزمنية"
 
 msgid "Organisation Unit"
 msgstr "الوحدة التنظيمية"
@@ -214,3 +466,6 @@ msgstr "الهدف"
 
 msgid "Base"
 msgstr "الأساس"
+
+msgid "No data"
+msgstr ""

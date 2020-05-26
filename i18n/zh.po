@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-04-09T19:57:21.474Z\n"
+"POT-Creation-Date: 2020-05-20T21:46:25.914Z\n"
 "PO-Revision-Date: 2020-05-18 10:55+0000\n"
 "Last-Translator: 晓东 林 <13981924470@126.com>, 2020\n"
 "Language-Team: Chinese (https://www.transifex.com/hisp-uio/teams/100509/zh/)\n"
@@ -18,8 +18,17 @@ msgstr ""
 "Language: zh\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
+msgid "Data"
+msgstr "数据"
+
 msgid "Data Type"
 msgstr ""
+
+msgid "Totals"
+msgstr "总共"
+
+msgid "Details"
+msgstr "详情"
 
 msgid "Detail"
 msgstr ""
@@ -54,6 +63,12 @@ msgstr ""
 msgid "Filter dimensions"
 msgstr "过滤器维度"
 
+msgid "Main dimensions"
+msgstr ""
+
+msgid "Your dimensions"
+msgstr ""
+
 msgid "Dimension recommended with selected data"
 msgstr ""
 
@@ -68,6 +83,255 @@ msgstr ""
 
 msgid "Select all"
 msgstr "全选"
+
+msgid "Organisation units"
+msgstr ""
+
+msgid "Period"
+msgstr "期间"
+
+msgid "Year"
+msgstr ""
+
+msgid "Relative periods"
+msgstr ""
+
+msgid "Fixed periods"
+msgstr ""
+
+msgid "Period type"
+msgstr ""
+
+msgid "January"
+msgstr ""
+
+msgid "February"
+msgstr ""
+
+msgid "March"
+msgstr ""
+
+msgid "April"
+msgstr ""
+
+msgid "May"
+msgstr ""
+
+msgid "June"
+msgstr ""
+
+msgid "July"
+msgstr ""
+
+msgid "August"
+msgstr ""
+
+msgid "September"
+msgstr ""
+
+msgid "October"
+msgstr ""
+
+msgid "November"
+msgstr ""
+
+msgid "December"
+msgstr ""
+
+msgid "Week {{weekNumber}}"
+msgstr ""
+
+msgid "Bi-Week {{biWeekNumber}}"
+msgstr ""
+
+msgid "Daily"
+msgstr ""
+
+msgid "Weekly"
+msgstr ""
+
+msgid "Bi-weekly"
+msgstr ""
+
+msgid "Weekly (Start Wednesday)"
+msgstr ""
+
+msgid "Weekly (Start Thursday)"
+msgstr ""
+
+msgid "Weekly (Start Saturday)"
+msgstr ""
+
+msgid "Weekly (Start Sunday)"
+msgstr ""
+
+msgid "Monthly"
+msgstr ""
+
+msgid "Bi-monthly"
+msgstr ""
+
+msgid "Quarterly"
+msgstr ""
+
+msgid "Six-monthly"
+msgstr ""
+
+msgid "Six-monthly April"
+msgstr ""
+
+msgid "Yearly"
+msgstr ""
+
+msgid "Financial year (Start November)"
+msgstr ""
+
+msgid "Financial year (Start October)"
+msgstr ""
+
+msgid "Financial year (Start July)"
+msgstr ""
+
+msgid "Financial year (Start April)"
+msgstr ""
+
+msgid "Today"
+msgstr ""
+
+msgid "Yesterday"
+msgstr ""
+
+msgid "Last 3 days"
+msgstr ""
+
+msgid "Last 7 days"
+msgstr ""
+
+msgid "Last 14 days"
+msgstr ""
+
+msgid "This week"
+msgstr ""
+
+msgid "Last week"
+msgstr ""
+
+msgid "Last 4 weeks"
+msgstr ""
+
+msgid "Last 12 weeks"
+msgstr ""
+
+msgid "Last 52 weeks"
+msgstr ""
+
+msgid "Weeks this year"
+msgstr ""
+
+msgid "This bi-week"
+msgstr ""
+
+msgid "Last bi-week"
+msgstr ""
+
+msgid "Last 4 bi-weeks"
+msgstr ""
+
+msgid "This month"
+msgstr ""
+
+msgid "Last month"
+msgstr ""
+
+msgid "Last 3 months"
+msgstr ""
+
+msgid "Last 6 months"
+msgstr ""
+
+msgid "Last 12 months"
+msgstr ""
+
+msgid "Months this year"
+msgstr ""
+
+msgid "This bi-month"
+msgstr ""
+
+msgid "Last bi-month"
+msgstr ""
+
+msgid "Last 6 bi-months"
+msgstr ""
+
+msgid "Bi-months this year"
+msgstr ""
+
+msgid "This quarter"
+msgstr ""
+
+msgid "Last quarter"
+msgstr ""
+
+msgid "Last 4 quarters"
+msgstr ""
+
+msgid "Quarters this year"
+msgstr ""
+
+msgid "This six-month"
+msgstr ""
+
+msgid "Last six-month"
+msgstr ""
+
+msgid "Last 2 six-month"
+msgstr ""
+
+msgid "This financial year"
+msgstr ""
+
+msgid "Last financial year"
+msgstr ""
+
+msgid "Last 5 financial years"
+msgstr ""
+
+msgid "This year"
+msgstr ""
+
+msgid "Last year"
+msgstr ""
+
+msgid "Last 5 years"
+msgstr ""
+
+msgid "Days"
+msgstr ""
+
+msgid "Weeks"
+msgstr ""
+
+msgid "Bi-weeks"
+msgstr ""
+
+msgid "Months"
+msgstr ""
+
+msgid "Bi-months"
+msgstr ""
+
+msgid "Quarters"
+msgstr ""
+
+msgid "Six-months"
+msgstr ""
+
+msgid "Financial Years"
+msgstr ""
+
+msgid "Years"
+msgstr ""
 
 msgid "Series"
 msgstr "系列"
@@ -102,9 +366,6 @@ msgstr "预期上报"
 msgid "Program"
 msgstr "项目"
 
-msgid "Select a program"
-msgstr "选择一个项目"
-
 msgid "Indicators"
 msgstr "指标"
 
@@ -123,12 +384,6 @@ msgstr "选择数据元组"
 msgid "[ All data elements ]"
 msgstr "【所有数据元】"
 
-msgid "Totals"
-msgstr "总共"
-
-msgid "Details"
-msgstr "详情"
-
 msgid "Data sets"
 msgstr "数据集"
 
@@ -140,6 +395,9 @@ msgstr "[ 所有尺度 ]"
 
 msgid "Event data items"
 msgstr "事件数据条目"
+
+msgid "Select a program"
+msgstr "选择一个项目"
 
 msgid "Program indicators"
 msgstr "项目指标"
@@ -158,12 +416,6 @@ msgstr ""
 
 msgid "{{allDynamicOuNames}} groups in {{staticOuNames}}"
 msgstr ""
-
-msgid "Data"
-msgstr "数据"
-
-msgid "Period"
-msgstr "期间"
 
 msgid "Organisation Unit"
 msgstr "组织机构"
@@ -215,3 +467,6 @@ msgstr "目标"
 
 msgid "Base"
 msgstr "基"
+
+msgid "No data"
+msgstr ""
