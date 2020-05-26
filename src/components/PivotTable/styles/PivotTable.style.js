@@ -86,13 +86,15 @@ export const cell = css`
     }
     .value {
         background-color: #ffffff;
-        cursor: pointer;
     }
     .TEXT {
         text-align: left;
     }
     .NUMBER {
         text-align: right;
+    }
+    .clickable {
+        cursor: pointer;
     }
 
     .value:hover {
