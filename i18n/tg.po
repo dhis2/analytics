@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-04-09T19:57:21.474Z\n"
+"POT-Creation-Date: 2020-05-20T21:46:25.914Z\n"
 "PO-Revision-Date: 2020-05-18 10:55+0000\n"
 "Last-Translator: Viktor Varland <viktor@dhis2.org>, 2020\n"
 "Language-Team: Tajik (https://www.transifex.com/hisp-uio/teams/100509/tg/)\n"
@@ -16,8 +16,17 @@ msgstr ""
 "Language: tg\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+msgid "Data"
+msgstr "Иттилоот"
+
 msgid "Data Type"
 msgstr ""
+
+msgid "Totals"
+msgstr "Ҳамагӣ"
+
+msgid "Details"
+msgstr "Маълумоти муфассал"
 
 msgid "Detail"
 msgstr ""
@@ -52,6 +61,12 @@ msgstr ""
 msgid "Filter dimensions"
 msgstr ""
 
+msgid "Main dimensions"
+msgstr ""
+
+msgid "Your dimensions"
+msgstr ""
+
 msgid "Dimension recommended with selected data"
 msgstr ""
 
@@ -66,6 +81,255 @@ msgstr ""
 
 msgid "Select all"
 msgstr "Интихоб кардани ҳама"
+
+msgid "Organisation units"
+msgstr "воҳидҳои сохторӣ"
+
+msgid "Period"
+msgstr "Давра"
+
+msgid "Year"
+msgstr "Сол"
+
+msgid "Relative periods"
+msgstr "Давраҳои нисбӣ"
+
+msgid "Fixed periods"
+msgstr "Давраҳои собит"
+
+msgid "Period type"
+msgstr "Навъи давара"
+
+msgid "January"
+msgstr "Январ"
+
+msgid "February"
+msgstr "Феврал"
+
+msgid "March"
+msgstr "Март"
+
+msgid "April"
+msgstr "Апрел"
+
+msgid "May"
+msgstr "Май"
+
+msgid "June"
+msgstr "Июн"
+
+msgid "July"
+msgstr "Июл"
+
+msgid "August"
+msgstr "Август"
+
+msgid "September"
+msgstr "Сентябр"
+
+msgid "October"
+msgstr "Октябр"
+
+msgid "November"
+msgstr "Ноябр"
+
+msgid "December"
+msgstr "Декабр"
+
+msgid "Week {{weekNumber}}"
+msgstr ""
+
+msgid "Bi-Week {{biWeekNumber}}"
+msgstr ""
+
+msgid "Daily"
+msgstr "Ҳаррӯза"
+
+msgid "Weekly"
+msgstr "Ҳафтаина"
+
+msgid "Bi-weekly"
+msgstr ""
+
+msgid "Weekly (Start Wednesday)"
+msgstr ""
+
+msgid "Weekly (Start Thursday)"
+msgstr ""
+
+msgid "Weekly (Start Saturday)"
+msgstr ""
+
+msgid "Weekly (Start Sunday)"
+msgstr ""
+
+msgid "Monthly"
+msgstr "Моҳона"
+
+msgid "Bi-monthly"
+msgstr "Ду маротиба дар як моҳ"
+
+msgid "Quarterly"
+msgstr "Семоҳа"
+
+msgid "Six-monthly"
+msgstr "Шашмоҳа"
+
+msgid "Six-monthly April"
+msgstr ""
+
+msgid "Yearly"
+msgstr "Солона"
+
+msgid "Financial year (Start November)"
+msgstr ""
+
+msgid "Financial year (Start October)"
+msgstr ""
+
+msgid "Financial year (Start July)"
+msgstr ""
+
+msgid "Financial year (Start April)"
+msgstr ""
+
+msgid "Today"
+msgstr "Имрӯз"
+
+msgid "Yesterday"
+msgstr "Дирӯз"
+
+msgid "Last 3 days"
+msgstr ""
+
+msgid "Last 7 days"
+msgstr "7 рӯзи охир"
+
+msgid "Last 14 days"
+msgstr ""
+
+msgid "This week"
+msgstr ""
+
+msgid "Last week"
+msgstr "Ҳафтаи гузашта"
+
+msgid "Last 4 weeks"
+msgstr "4 ҳафтаи охир"
+
+msgid "Last 12 weeks"
+msgstr "12 ҳафтаи охир"
+
+msgid "Last 52 weeks"
+msgstr ""
+
+msgid "Weeks this year"
+msgstr ""
+
+msgid "This bi-week"
+msgstr ""
+
+msgid "Last bi-week"
+msgstr ""
+
+msgid "Last 4 bi-weeks"
+msgstr ""
+
+msgid "This month"
+msgstr ""
+
+msgid "Last month"
+msgstr "Моҳи гузашта"
+
+msgid "Last 3 months"
+msgstr "3 моҳи охир"
+
+msgid "Last 6 months"
+msgstr "6 моҳи охир"
+
+msgid "Last 12 months"
+msgstr "12 моҳи охир"
+
+msgid "Months this year"
+msgstr "Моҳҳо дар ин сол"
+
+msgid "This bi-month"
+msgstr ""
+
+msgid "Last bi-month"
+msgstr "Думоҳаи охир"
+
+msgid "Last 6 bi-months"
+msgstr "6 думоҳаи охир"
+
+msgid "Bi-months this year"
+msgstr ""
+
+msgid "This quarter"
+msgstr ""
+
+msgid "Last quarter"
+msgstr "Семоҳаи охир"
+
+msgid "Last 4 quarters"
+msgstr "4 семоҳаи охир"
+
+msgid "Quarters this year"
+msgstr "Семоҳаҳои ин сол"
+
+msgid "This six-month"
+msgstr ""
+
+msgid "Last six-month"
+msgstr "Шашмоҳаи охир"
+
+msgid "Last 2 six-month"
+msgstr ""
+
+msgid "This financial year"
+msgstr ""
+
+msgid "Last financial year"
+msgstr "Соли молиявии гузашта"
+
+msgid "Last 5 financial years"
+msgstr "5 соли молиявии гузашта"
+
+msgid "This year"
+msgstr "Имсол"
+
+msgid "Last year"
+msgstr "Соли гузашта"
+
+msgid "Last 5 years"
+msgstr "5 соли охир"
+
+msgid "Days"
+msgstr ""
+
+msgid "Weeks"
+msgstr "Ҳафтаҳо"
+
+msgid "Bi-weeks"
+msgstr ""
+
+msgid "Months"
+msgstr "Моҳҳо"
+
+msgid "Bi-months"
+msgstr "Думоҳаҳо"
+
+msgid "Quarters"
+msgstr "Семоҳаҳо"
+
+msgid "Six-months"
+msgstr "Шашмоҳаҳо"
+
+msgid "Financial Years"
+msgstr ""
+
+msgid "Years"
+msgstr "Солҳо"
 
 msgid "Series"
 msgstr "Силсила"
@@ -100,9 +364,6 @@ msgstr ""
 msgid "Program"
 msgstr "Барнома"
 
-msgid "Select a program"
-msgstr ""
-
 msgid "Indicators"
 msgstr "Индикаторҳо"
 
@@ -121,12 +382,6 @@ msgstr "Интихоби гурӯҳи унсурҳои иттилоот"
 msgid "[ All data elements ]"
 msgstr ""
 
-msgid "Totals"
-msgstr "Ҳамагӣ"
-
-msgid "Details"
-msgstr "Маълумоти муфассал"
-
 msgid "Data sets"
 msgstr "Маҷмӯъҳои иттилоот"
 
@@ -137,6 +392,9 @@ msgid "[ All metrics ]"
 msgstr ""
 
 msgid "Event data items"
+msgstr ""
+
+msgid "Select a program"
 msgstr ""
 
 msgid "Program indicators"
@@ -156,12 +414,6 @@ msgstr ""
 
 msgid "{{allDynamicOuNames}} groups in {{staticOuNames}}"
 msgstr ""
-
-msgid "Data"
-msgstr "Иттилоот"
-
-msgid "Period"
-msgstr "Давра"
 
 msgid "Organisation Unit"
 msgstr "Воҳиди сохторӣ"
@@ -213,3 +465,6 @@ msgstr "Нақша"
 
 msgid "Base"
 msgstr "Замина"
+
+msgid "No data"
+msgstr "Ягон иттилоот нест"
