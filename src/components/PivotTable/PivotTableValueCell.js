@@ -18,12 +18,6 @@ export const PivotTableValueCell = ({
     const engine = usePivotTableEngine()
     const cellRef = useRef(undefined)
 
-    const onClick = () => {
-        if (cellContent.cellType === CELL_TYPE_VALUE && cellContent.ouId) {
-            onToggleContextualMenu(cellRef, cellContent)
-        }
-    }
-
     const cellContent = engine.get({
         row,
         column,
@@ -58,18 +52,26 @@ export const PivotTableValueCell = ({
         maxWidth: width,
     }
 
-    const classes = [cellContent.cellType, cellContent.valueType]
-
-    if (onToggleContextualMenu && cellContent.ouId) {
-        classes.push('clickable')
+    const isClickable =
+        onToggleContextualMenu &&
+        cellContent.cellType === CELL_TYPE_VALUE &&
+        cellContent.ouId
+    const classes = [
+        cellContent.cellType,
+        cellContent.valueType,
+        isClickable && 'clickable',
+    ]
+    const onClick = () => {
+        onToggleContextualMenu(cellRef, cellContent)
     }
+
     return (
         <PivotTableCell
             key={column}
             classes={classes}
             title={cellContent.renderedValue}
             style={style}
-            onClick={onToggleContextualMenu ? onClick : undefined}
+            onClick={isClickable ? onClick : undefined}
             ref={cellRef}
         >
             {cellContent.renderedValue ?? null}
