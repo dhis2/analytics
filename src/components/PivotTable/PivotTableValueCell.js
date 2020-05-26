@@ -33,7 +33,7 @@ export const PivotTableValueCell = ({
         return (
             <PivotTableEmptyCell
                 type={cellContent?.cellType}
-                onClick={onClick}
+                onClick={onToggleContextualMenu ? onClick : undefined}
                 ref={cellRef}
             />
         )
@@ -60,7 +60,7 @@ export const PivotTableValueCell = ({
 
     const classes = [cellContent.cellType, cellContent.valueType]
 
-    if (cellContent.ouId) {
+    if (onToggleContextualMenu && cellContent.ouId) {
         classes.push('clickable')
     }
     return (
@@ -69,7 +69,7 @@ export const PivotTableValueCell = ({
             classes={classes}
             title={cellContent.renderedValue}
             style={style}
-            onClick={onClick}
+            onClick={onToggleContextualMenu ? onClick : undefined}
             ref={cellRef}
         >
             {cellContent.renderedValue ?? null}
