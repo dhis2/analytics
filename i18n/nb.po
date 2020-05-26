@@ -62,10 +62,10 @@ msgid "Filter dimensions"
 msgstr "Filterdimensjoner"
 
 msgid "Main dimensions"
-msgstr ""
+msgstr "Hoveddimensjoner"
 
 msgid "Your dimensions"
-msgstr ""
+msgstr "Dine dimensjoner"
 
 msgid "Dimension recommended with selected data"
 msgstr "Dimensjon anbefalt med valgte data"
@@ -83,253 +83,253 @@ msgid "Select all"
 msgstr "Velg alt"
 
 msgid "Organisation units"
-msgstr ""
+msgstr "Organisasjonsenheter"
 
 msgid "Period"
 msgstr "Periode"
 
 msgid "Year"
-msgstr ""
+msgstr "År"
 
 msgid "Relative periods"
-msgstr ""
+msgstr "Relative perioder"
 
 msgid "Fixed periods"
-msgstr ""
+msgstr "Faste perioder"
 
 msgid "Period type"
-msgstr ""
+msgstr "Periodetype"
 
 msgid "January"
-msgstr ""
+msgstr "Januar"
 
 msgid "February"
-msgstr ""
+msgstr "Februar"
 
 msgid "March"
-msgstr ""
+msgstr "Mars"
 
 msgid "April"
-msgstr ""
+msgstr "April"
 
 msgid "May"
-msgstr ""
+msgstr "Mai"
 
 msgid "June"
-msgstr ""
+msgstr "Juni"
 
 msgid "July"
-msgstr ""
+msgstr "Juli"
 
 msgid "August"
-msgstr ""
+msgstr "August"
 
 msgid "September"
-msgstr ""
+msgstr "September"
 
 msgid "October"
-msgstr ""
+msgstr "Oktober"
 
 msgid "November"
-msgstr ""
+msgstr "November"
 
 msgid "December"
-msgstr ""
+msgstr "Desember"
 
 msgid "Week {{weekNumber}}"
-msgstr ""
+msgstr "Uke {{weekNumber}}"
 
 msgid "Bi-Week {{biWeekNumber}}"
-msgstr ""
+msgstr "Touke {{biWeekNumber}}"
 
 msgid "Daily"
-msgstr ""
+msgstr "Daglig"
 
 msgid "Weekly"
-msgstr ""
+msgstr "Ukentlig"
 
 msgid "Bi-weekly"
-msgstr ""
+msgstr "Toukentlig"
 
 msgid "Weekly (Start Wednesday)"
-msgstr ""
+msgstr "Ukentlig (start onsdag)"
 
 msgid "Weekly (Start Thursday)"
-msgstr ""
+msgstr "Ukentlig (start torsdag)"
 
 msgid "Weekly (Start Saturday)"
-msgstr ""
+msgstr "Ukentlig (start lørdag)"
 
 msgid "Weekly (Start Sunday)"
-msgstr ""
+msgstr "Ukentlig (start søndag)"
 
 msgid "Monthly"
-msgstr ""
+msgstr "Månedlig"
 
 msgid "Bi-monthly"
-msgstr ""
+msgstr "Tomånedlig"
 
 msgid "Quarterly"
-msgstr ""
+msgstr "Kvartalsvis"
 
 msgid "Six-monthly"
-msgstr ""
+msgstr "Halvårlig"
 
 msgid "Six-monthly April"
-msgstr ""
+msgstr "Halvårig April"
 
 msgid "Yearly"
-msgstr ""
+msgstr "Årlig"
 
 msgid "Financial year (Start November)"
-msgstr ""
+msgstr "Regnskapsår (start november)"
 
 msgid "Financial year (Start October)"
-msgstr ""
+msgstr "Regnskapsår (start oktober)"
 
 msgid "Financial year (Start July)"
-msgstr ""
+msgstr "Regnskapsår (start juli)"
 
 msgid "Financial year (Start April)"
-msgstr ""
+msgstr "Regnskapsår (start april)"
 
 msgid "Today"
-msgstr ""
+msgstr "I dag"
 
 msgid "Yesterday"
-msgstr ""
+msgstr "I går"
 
 msgid "Last 3 days"
-msgstr ""
+msgstr "Siste 3 dager"
 
 msgid "Last 7 days"
-msgstr ""
+msgstr "Siste 7 dager"
 
 msgid "Last 14 days"
-msgstr ""
+msgstr "Siste 14 dager"
 
 msgid "This week"
-msgstr ""
+msgstr "Denne uken"
 
 msgid "Last week"
-msgstr ""
+msgstr "Forrige uke"
 
 msgid "Last 4 weeks"
-msgstr ""
+msgstr "Siste 4 uker"
 
 msgid "Last 12 weeks"
-msgstr ""
+msgstr "Siste 12 uker"
 
 msgid "Last 52 weeks"
-msgstr ""
+msgstr "Siste 52 uker"
 
 msgid "Weeks this year"
-msgstr ""
+msgstr "Uker inneværende år"
 
 msgid "This bi-week"
-msgstr ""
+msgstr "Denne touken"
 
 msgid "Last bi-week"
-msgstr ""
+msgstr "Sist touke"
 
 msgid "Last 4 bi-weeks"
-msgstr ""
+msgstr "Siste 4 touker"
 
 msgid "This month"
-msgstr ""
+msgstr "Denne måneden"
 
 msgid "Last month"
-msgstr ""
+msgstr "Forrige måned"
 
 msgid "Last 3 months"
-msgstr ""
+msgstr "Siste 3 måneder"
 
 msgid "Last 6 months"
-msgstr ""
+msgstr "Siste 6 måneder"
 
 msgid "Last 12 months"
-msgstr ""
+msgstr "Siste 12 måneder"
 
 msgid "Months this year"
-msgstr ""
+msgstr "Måneder i år"
 
 msgid "This bi-month"
-msgstr ""
+msgstr "Denne tomåneden"
 
 msgid "Last bi-month"
-msgstr ""
+msgstr "Siste tomåned"
 
 msgid "Last 6 bi-months"
-msgstr ""
+msgstr "Siste 6 tomåneder"
 
 msgid "Bi-months this year"
-msgstr ""
+msgstr "Tomåneder i år"
 
 msgid "This quarter"
-msgstr ""
+msgstr "Dette kvartalet"
 
 msgid "Last quarter"
-msgstr ""
+msgstr "Siste kvartal"
 
 msgid "Last 4 quarters"
-msgstr ""
+msgstr "Siste 4 kvartaler"
 
 msgid "Quarters this year"
-msgstr ""
+msgstr "Kvartaler i år"
 
 msgid "This six-month"
-msgstr ""
+msgstr "Dette halvåret"
 
 msgid "Last six-month"
-msgstr ""
+msgstr "Siste halvår"
 
 msgid "Last 2 six-month"
-msgstr ""
+msgstr "Siste to halvår"
 
 msgid "This financial year"
-msgstr ""
+msgstr "Dette regnskapsåret"
 
 msgid "Last financial year"
-msgstr ""
+msgstr "Siste regnskapsår"
 
 msgid "Last 5 financial years"
-msgstr ""
+msgstr "Siste 5 regnskapsår"
 
 msgid "This year"
-msgstr ""
+msgstr "Dette året"
 
 msgid "Last year"
-msgstr ""
+msgstr "Forrige år"
 
 msgid "Last 5 years"
-msgstr ""
+msgstr "Siste 5 år"
 
 msgid "Days"
-msgstr ""
+msgstr "Dager"
 
 msgid "Weeks"
-msgstr ""
+msgstr "Uker"
 
 msgid "Bi-weeks"
-msgstr ""
+msgstr "Touker"
 
 msgid "Months"
-msgstr ""
+msgstr "Måneder"
 
 msgid "Bi-months"
-msgstr ""
+msgstr "Tomåneder"
 
 msgid "Quarters"
-msgstr ""
+msgstr "Kvartaler"
 
 msgid "Six-months"
-msgstr ""
+msgstr "Halvår"
 
 msgid "Financial Years"
-msgstr ""
+msgstr "Regnskapsår"
 
 msgid "Years"
-msgstr ""
+msgstr "År"
 
 msgid "Series"
 msgstr "Serie"
@@ -467,4 +467,4 @@ msgid "Base"
 msgstr "Grunn"
 
 msgid "No data"
-msgstr ""
+msgstr "Ingen data"
