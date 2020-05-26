@@ -30,7 +30,7 @@ export const PivotTableColumnHeaders = ({
                 axisClippingResult={clippingResult.columns}
                 EmptyComponent={({ size }) => (
                     <PivotTableEmptyCell
-                        type="column-header"
+                        classes="column-header"
                         style={{ minWidth: size }}
                     />
                 )}
