@@ -14,6 +14,16 @@ The analytics library contains components and modules that are used in DHIS 2 an
 
 The analytics package is published to npm as @dhis2/analytics.
 
-To publish, simply mark the commit as a patch or minor change using semantic versioning (see note below). Once committed, github actions will take care of publishing the new version to npm.
+To publish, simply mark the commit using [semantic release terminology](https://github.com/angular/angular.js/blob/master/DEVELOPERS.md#-git-commit-guidelines) (see notes below for branch-specific restrictions). Once committed, github actions will take care of publishing the new version to npm.
 
-**Note**: All changes to the 4.x branch must marked as minor or patch (using e.g. "fix:" or "feat:"), even if it is technically a breaking change. Attempting to publish a breaking change on this branch will fail since 5.0.0 has already been published.
+### master branch
+
+The master branch follows semantic versioning according to spec.
+
+### 4.x branch
+
+Commits to the 4.x branch cannot trigger a major version bump, even if it is technically a breaking change. This is because 5.0.0 has already been published. In the unlikely case that you need to commit a change that is considered breaking, you will have to mark it to only trigger a patch or minor bump, then make sure to update the apps that are locked to the 4.x version of analytics
+
+### 2.4.x branch
+
+Commits to the 2.4.x branch cannot trigger a major or minor version bump, even if it is technically a breaking or feature change. This is because 2.5.0 and 3.0.0 have already been published. In the unlikely case that you need to commit a change that is considered breaking or feature, you will have to mark it to only trigger a patch bump, then make sure to update the apps that are locked to the 2.4.x version of analytics
