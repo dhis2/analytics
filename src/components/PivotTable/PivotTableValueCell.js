@@ -66,7 +66,7 @@ export const PivotTableValueCell = ({
     return (
         <PivotTableCell
             key={column}
-            classes={classes} //[cellContent.cellType, cellContent.valueType, isClickable]}
+            classes={classes}
             title={cellContent.renderedValue}
             style={style}
             onClick={onClick}
