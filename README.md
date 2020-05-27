@@ -1,9 +1,9 @@
 # Analytics
 
-master: ![DHIS2](https://github.com/dhis2/analytics/workflows/DHIS2/badge.svg) ![DHIS2: Release](https://github.com/dhis2/analytics/workflows/DHIS2:%20Release/badge.svg)
+master: ![DHIS2: Test](https://github.com/dhis2/analytics/workflows/DHIS2:%20Test/badge.svg) ![DHIS2: Release](https://github.com/dhis2/analytics/workflows/DHIS2:%20Release/badge.svg)
 
 4.x:
-![DHIS2](https://github.com/dhis2/analytics/workflows/DHIS2/badge.svg?branch=4.x) ![DHIS2: Release](https://github.com/dhis2/analytics/workflows/DHIS2:%20Release/badge.svg?branch=4.x)
+![DHIS2: Test](https://github.com/dhis2/analytics/workflows/DHIS2:%20Test/badge.svg?branch=4.x) ![DHIS2: Release](https://github.com/dhis2/analytics/workflows/DHIS2:%20Release/badge.svg?branch=4.x)
 
 ## Overview
 
