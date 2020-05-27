@@ -5,14 +5,8 @@ import i18n from '@dhis2/d2-i18n'
 
 import FixedPeriodFilter from './FixedPeriodFilter'
 import RelativePeriodFilter from './RelativePeriodFilter'
-import {
-    MONTHS,
-    getRelativePeriodsOptionsById,
-} from './utils/RelativePeriodsGenerator'
-import {
-    MONTHLY,
-    getFixedPeriodsOptionsById,
-} from './utils/FixedPeriodsGenerator'
+import { MONTHS, getRelativePeriodsOptionsById } from './utils/relativePeriods'
+import { MONTHLY, getFixedPeriodsOptionsById } from './utils/fixedPeriods'
 import styles from './styles/PeriodSelector.style'
 import { TransferOption } from '../TransferOption'
 import PeriodIcon from '../../assets/DimensionItemIcons/PeriodIcon'

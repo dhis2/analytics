@@ -7,7 +7,7 @@ import {
     InputField,
 } from '@dhis2/ui-core'
 
-import { getFixedPeriodsOptions } from './utils/FixedPeriodsGenerator'
+import { getFixedPeriodsOptions } from './utils/fixedPeriods'
 import styles from './styles/PeriodFilter.style'
 
 const FixedPeriodFilter = ({

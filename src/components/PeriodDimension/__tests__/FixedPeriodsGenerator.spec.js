@@ -1,9 +1,9 @@
 import {
     getFixedPeriodsOptionsById,
     getFixedPeriodsOptions,
-} from '../utils/FixedPeriodsGenerator'
+} from '../utils/fixedPeriods'
 
-describe('FixedPeriodsGenerator', () => {
+describe('fixedPeriods utils', () => {
     beforeAll(() =>
         // 2019-06-17
         jest.spyOn(Date, 'now').mockImplementation(() => 1560765600000)

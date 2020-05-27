@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'
 import { SingleSelectOption, SingleSelectField } from '@dhis2/ui-core'
 
-import { getRelativePeriodsOptions } from './utils/RelativePeriodsGenerator'
+import { getRelativePeriodsOptions } from './utils/relativePeriods'
 import styles from './styles/PeriodFilter.style'
 
 const RelativePeriodFilter = ({ currentFilter, onSelectFilter }) => (
