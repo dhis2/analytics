@@ -1,3 +1,5 @@
+/* eslint-disable max-params */
+
 export const toggler = (
     id,
     isCtrlPressed,

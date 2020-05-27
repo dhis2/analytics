@@ -1,3 +1,5 @@
+/* eslint-disable max-params */
+
 export default function(series, store, layout, isStacked, colors) {
     return [
         {

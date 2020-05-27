@@ -22,7 +22,8 @@
     },
     "husky": {
         "hooks": {
-            "commit-msg": "d2-style commit check"
+            "commit-msg": "d2-style commit check",
+            "pre-commit": "d2-style js apply"
         }
     },
     "devDependencies": {
