@@ -1,4 +1,4 @@
-name: 'DHIS2'
+name: 'DHIS2: Test'
 
 on: [push]
 
