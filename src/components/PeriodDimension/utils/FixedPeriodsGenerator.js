@@ -1,5 +1,5 @@
 import i18n from '@dhis2/d2-i18n'
-// generatePeriods config object: { boolean offset, boolean filterFuturePeriods, boolean reversePeriods }
+// generate periods config object: { boolean offset, boolean filterFuturePeriods, boolean reversePeriods }
 
 export const DAILY = 'Daily'
 export const WEEKLY = 'Weekly'
@@ -38,8 +38,8 @@ const getMonthName = key => {
     return monthNames[key]
 }
 
-function DailyPeriodType(formatYyyyMmDd, fnFilter) {
-    this.generatePeriods = config => {
+const dailyPeriodType = (formatYyyyMmDd, fnFilter) => {
+    return config => {
         let periods = []
         const offset = parseInt(config.offset, 10)
         const isFilter = config.filterFuturePeriods
@@ -65,7 +65,7 @@ function DailyPeriodType(formatYyyyMmDd, fnFilter) {
     }
 }
 
-function WeeklyPeriodType(formatYyyyMmDd, weekObj, fnFilter) {
+const weeklyPeriodType = (formatYyyyMmDd, weekObj, fnFilter) => {
     // Calculate the first date of an EPI year base on ISO standard  ( first week always contains 4th Jan )
     const getEpiWeekStartDay = (year, startDayOfWeek) => {
         const jan4 = new Date(year, 0, 4)
@@ -83,7 +83,7 @@ function WeeklyPeriodType(formatYyyyMmDd, weekObj, fnFilter) {
         return startDate
     }
 
-    this.generatePeriods = config => {
+    return config => {
         let periods = []
         const offset = parseInt(config.offset, 10)
         const isFilter = config.filterFuturePeriods
@@ -124,8 +124,8 @@ function WeeklyPeriodType(formatYyyyMmDd, weekObj, fnFilter) {
     }
 }
 
-function BiWeeklyPeriodType(formatYyyyMmDd, fnFilter) {
-    this.generatePeriods = config => {
+const biWeeklyPeriodType = (formatYyyyMmDd, fnFilter) => {
+    return config => {
         let periods = []
         const offset = parseInt(config.offset, 10)
         const isFilter = config.filterFuturePeriods
@@ -175,7 +175,7 @@ function BiWeeklyPeriodType(formatYyyyMmDd, fnFilter) {
     }
 }
 
-function MonthlyPeriodType(formatYyyyMmDd, fnFilter) {
+const monthlyPeriodType = (formatYyyyMmDd, fnFilter) => {
     const formatIso = date => {
         const y = date.getFullYear()
         let m = String(date.getMonth() + 1)
@@ -185,7 +185,7 @@ function MonthlyPeriodType(formatYyyyMmDd, fnFilter) {
         return y + m
     }
 
-    this.generatePeriods = config => {
+    return config => {
         let periods = []
 
         const offset = parseInt(config.offset, 10)
@@ -217,8 +217,8 @@ function MonthlyPeriodType(formatYyyyMmDd, fnFilter) {
     }
 }
 
-function BiMonthlyPeriodType(formatYyyyMmDd, fnFilter) {
-    this.generatePeriods = config => {
+const biMonthlyPeriodType = (formatYyyyMmDd, fnFilter) => {
+    return config => {
         let periods = []
         const offset = parseInt(config.offset, 10)
         const isFilter = config.filterFuturePeriods
@@ -254,8 +254,8 @@ function BiMonthlyPeriodType(formatYyyyMmDd, fnFilter) {
     }
 }
 
-function QuarterlyPeriodType(formatYyyyMmDd, fnFilter) {
-    this.generatePeriods = config => {
+const quarterlyPeriodType = (formatYyyyMmDd, fnFilter) => {
+    return config => {
         let periods = []
         const offset = parseInt(config.offset, 10)
         const isFilter = config.filterFuturePeriods
@@ -290,8 +290,8 @@ function QuarterlyPeriodType(formatYyyyMmDd, fnFilter) {
     }
 }
 
-function SixMonthlyPeriodType(fnFilter) {
-    this.generatePeriods = config => {
+const sixMonthlyPeriodType = fnFilter => {
+    return config => {
         let periods = []
         const offset = parseInt(config.offset, 10)
         const isFilter = config.filterFuturePeriods
@@ -322,8 +322,8 @@ function SixMonthlyPeriodType(fnFilter) {
     }
 }
 
-function SixMonthlyAprilPeriodType(fnFilter) {
-    this.generatePeriods = config => {
+const sixMonthlyAprilPeriodType = fnFilter => {
+    return config => {
         let periods = []
         const offset = parseInt(config.offset, 10)
         const isFilter = config.filterFuturePeriods
@@ -354,8 +354,8 @@ function SixMonthlyAprilPeriodType(fnFilter) {
     }
 }
 
-function YearlyPeriodType(formatYyyyMmDd, fnFilter) {
-    this.generatePeriods = config => {
+const yearlyPeriodType = (formatYyyyMmDd, fnFilter) => {
+    return config => {
         let periods = []
         const offset = parseInt(config.offset, 10)
         const isFilter = config.filterFuturePeriods
@@ -384,8 +384,8 @@ function YearlyPeriodType(formatYyyyMmDd, fnFilter) {
     }
 }
 
-function FinancialOctoberPeriodType(formatYyyyMmDd, fnFilter) {
-    this.generatePeriods = config => {
+const financialOctoberPeriodType = (formatYyyyMmDd, fnFilter) => {
+    return config => {
         let periods = []
         const offset = parseInt(config.offset, 10)
         const isFilter = config.filterFuturePeriods
@@ -418,8 +418,8 @@ function FinancialOctoberPeriodType(formatYyyyMmDd, fnFilter) {
     }
 }
 
-function FinancialNovemberPeriodType(formatYyyyMmDd, fnFilter) {
-    this.generatePeriods = config => {
+const financialNovemberPeriodType = (formatYyyyMmDd, fnFilter) => {
+    return config => {
         let periods = []
         const offset = parseInt(config.offset, 10)
         const isFilter = config.filterFuturePeriods
@@ -452,8 +452,8 @@ function FinancialNovemberPeriodType(formatYyyyMmDd, fnFilter) {
     }
 }
 
-function FinancialJulyPeriodType(formatYyyyMmDd, fnFilter) {
-    this.generatePeriods = config => {
+const financialJulyPeriodType = (formatYyyyMmDd, fnFilter) => {
+    return config => {
         let periods = []
         const offset = parseInt(config.offset, 10)
         const isFilter = config.filterFuturePeriods
@@ -486,8 +486,8 @@ function FinancialJulyPeriodType(formatYyyyMmDd, fnFilter) {
     }
 }
 
-function FinancialAprilPeriodType(formatYyyyMmDd, fnFilter) {
-    this.generatePeriods = config => {
+const financialAprilPeriodType = (formatYyyyMmDd, fnFilter) => {
+    return config => {
         let periods = []
         const offset = parseInt(config.offset, 10)
         const isFilter = config.filterFuturePeriods
@@ -547,12 +547,12 @@ const filterFuturePeriods = periods => {
 const options = [
     {
         id: DAILY,
-        generator: new DailyPeriodType(formatYyyyMmDd, filterFuturePeriods),
+        getPeriods: dailyPeriodType(formatYyyyMmDd, filterFuturePeriods),
         getName: () => i18n.t('Daily'),
     },
     {
         id: WEEKLY,
-        generator: new WeeklyPeriodType(
+        getPeriods: weeklyPeriodType(
             formatYyyyMmDd,
             { shortName: '', startDay: 1 },
             filterFuturePeriods
@@ -561,12 +561,12 @@ const options = [
     },
     {
         id: BIWEEKLY,
-        generator: new BiWeeklyPeriodType(formatYyyyMmDd, filterFuturePeriods),
+        getPeriods: biWeeklyPeriodType(formatYyyyMmDd, filterFuturePeriods),
         getName: () => i18n.t('Bi-weekly'),
     },
     {
         id: WEEKLYWED,
-        generator: new WeeklyPeriodType(
+        getPeriods: weeklyPeriodType(
             formatYyyyMmDd,
             { shortName: 'Wed', startDay: 3 },
             filterFuturePeriods
@@ -575,7 +575,7 @@ const options = [
     },
     {
         id: WEEKLYTHU,
-        generator: new WeeklyPeriodType(
+        getPeriods: weeklyPeriodType(
             formatYyyyMmDd,
             { shortName: 'Thu', startDay: 4 },
             filterFuturePeriods
@@ -584,7 +584,7 @@ const options = [
     },
     {
         id: WEEKLYSAT,
-        generator: new WeeklyPeriodType(
+        getPeriods: weeklyPeriodType(
             formatYyyyMmDd,
             { shortName: 'Sat', startDay: 6 },
             filterFuturePeriods
@@ -593,7 +593,7 @@ const options = [
     },
     {
         id: WEEKLYSUN,
-        generator: new WeeklyPeriodType(
+        getPeriods: weeklyPeriodType(
             formatYyyyMmDd,
             { shortName: 'Sun', startDay: 7 },
             filterFuturePeriods
@@ -602,37 +602,37 @@ const options = [
     },
     {
         id: MONTHLY,
-        generator: new MonthlyPeriodType(formatYyyyMmDd, filterFuturePeriods),
+        getPeriods: monthlyPeriodType(formatYyyyMmDd, filterFuturePeriods),
         getName: () => i18n.t('Monthly'),
     },
     {
         id: BIMONTHLY,
-        generator: new BiMonthlyPeriodType(formatYyyyMmDd, filterFuturePeriods),
+        getPeriods: biMonthlyPeriodType(formatYyyyMmDd, filterFuturePeriods),
         getName: () => i18n.t('Bi-monthly'),
     },
     {
         id: QUARTERLY,
-        generator: new QuarterlyPeriodType(formatYyyyMmDd, filterFuturePeriods),
+        getPeriods: quarterlyPeriodType(formatYyyyMmDd, filterFuturePeriods),
         getName: () => i18n.t('Quarterly'),
     },
     {
         id: SIXMONTHLY,
-        generator: new SixMonthlyPeriodType(filterFuturePeriods),
+        getPeriods: sixMonthlyPeriodType(filterFuturePeriods),
         getName: () => i18n.t('Six-monthly'),
     },
     {
         id: SIXMONTHLYAPR,
-        generator: new SixMonthlyAprilPeriodType(filterFuturePeriods),
+        getPeriods: sixMonthlyAprilPeriodType(filterFuturePeriods),
         getName: () => i18n.t('Six-monthly April'),
     },
     {
         id: YEARLY,
-        generator: new YearlyPeriodType(formatYyyyMmDd, filterFuturePeriods),
+        getPeriods: yearlyPeriodType(formatYyyyMmDd, filterFuturePeriods),
         getName: () => i18n.t('Yearly'),
     },
     {
         id: FYNOV,
-        generator: new FinancialNovemberPeriodType(
+        getPeriods: financialNovemberPeriodType(
             formatYyyyMmDd,
             filterFuturePeriods
         ),
@@ -640,7 +640,7 @@ const options = [
     },
     {
         id: FYOCT,
-        generator: new FinancialOctoberPeriodType(
+        getPeriods: financialOctoberPeriodType(
             formatYyyyMmDd,
             filterFuturePeriods
         ),
@@ -648,7 +648,7 @@ const options = [
     },
     {
         id: FYJUL,
-        generator: new FinancialJulyPeriodType(
+        getPeriods: financialJulyPeriodType(
             formatYyyyMmDd,
             filterFuturePeriods
         ),
@@ -656,7 +656,7 @@ const options = [
     },
     {
         id: FYAPR,
-        generator: new FinancialAprilPeriodType(
+        getPeriods: financialAprilPeriodType(
             formatYyyyMmDd,
             filterFuturePeriods
         ),

@@ -29,7 +29,7 @@ const fixedPeriodConfig = year => ({
 // TODO: Refactor to functional component
 class PeriodSelector extends Component {
     state = {
-        allPeriods: defaultRelativePeriodType.periods,
+        allPeriods: defaultRelativePeriodType.getPeriods(),
         selectedPeriods: [],
         isRelative: true,
         relativeFilter: {
@@ -64,10 +64,10 @@ class PeriodSelector extends Component {
                 allPeriods: isRelative
                     ? getRelativePeriodsOptionsById(
                           this.state.relativeFilter.periodType.value
-                      ).periods
+                      ).getPeriods()
                     : getFixedPeriodsOptionsById(
                           this.state.fixedFilter.periodType.label
-                      ).generator.generatePeriods(
+                      ).getPeriods(
                           fixedPeriodConfig(Number(this.state.fixedFilter.year))
                       ),
             })
@@ -101,7 +101,7 @@ class PeriodSelector extends Component {
                             this.setState({
                                 allPeriods: getRelativePeriodsOptionsById(
                                     filter.value
-                                ).periods,
+                                ).getPeriods(),
                             })
                         }}
                     />
@@ -133,9 +133,7 @@ class PeriodSelector extends Component {
             fixedFilter,
             allPeriods: getFixedPeriodsOptionsById(
                 fixedFilter.periodType.value
-            ).generator.generatePeriods(
-                fixedPeriodConfig(Number(fixedFilter.year))
-            ),
+            ).getPeriods(fixedPeriodConfig(Number(fixedFilter.year))),
         })
     }
 
