@@ -20,7 +20,6 @@ const fixedPeriodConfig = year => ({
     reversePeriods: false,
 })
 
-// TODO: Refactor to functional component
 class PeriodSelector extends Component {
     state = {
         allPeriods: defaultRelativePeriodType.getPeriods(),
@@ -44,11 +43,13 @@ class PeriodSelector extends Component {
     constructor(props) {
         super(props)
 
-        this.state.selectedPeriods = this.props.selectedItems.map(item => ({
-            label: item.name,
-            value: item.id,
-            key: item.id,
-        }))
+        this.state.selectedPeriods = this.props.initialSelectedPeriods.map(
+            item => ({
+                label: item.name,
+                value: item.id,
+                key: item.id,
+            })
+        )
     }
 
     onIsRelativeClick = isRelative => {
@@ -168,12 +169,12 @@ class PeriodSelector extends Component {
 
 PeriodSelector.propTypes = {
     onSelect: PropTypes.func.isRequired,
+    initialSelectedPeriods: PropTypes.arrayOf(PropTypes.object),
     rightFooter: PropTypes.node,
-    selectedItems: PropTypes.arrayOf(PropTypes.object),
 }
 
 PeriodSelector.defaultProps = {
-    selectedItems: [],
+    initialSelectedPeriods: [],
 }
 
 export default PeriodSelector

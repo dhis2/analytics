@@ -19,7 +19,7 @@ export const PeriodDimension = ({ onSelect, selectedPeriods, rightFooter }) => {
     return (
         <PeriodSelector
             onSelect={selectItems}
-            selectedItems={selectedPeriods}
+            initialSelectedPeriods={selectedPeriods}
             rightFooter={rightFooter}
         />
     )

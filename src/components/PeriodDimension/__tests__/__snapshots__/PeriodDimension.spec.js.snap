@@ -2,8 +2,8 @@
 
 exports[`The Period Dimension component matches the snapshot 1`] = `
 <PeriodSelector
+  initialSelectedPeriods={Array []}
   onSelect={[Function]}
   rightFooter={<React.Fragment />}
-  selectedItems={Array []}
 />
 `;
