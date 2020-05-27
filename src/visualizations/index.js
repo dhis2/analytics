@@ -1,3 +1,5 @@
+/* eslint-disable max-params */
+
 import isArray from 'd2-utilizr/lib/isArray'
 import 'core-js/fn/array/find-index'
 

@@ -1,3 +1,5 @@
+/* eslint-disable prefer-const */
+
 import validators from './validators'
 import adapters from './adapters'
 

@@ -1,3 +1,5 @@
+/* eslint-disable max-params */
+
 import arrayContains from 'd2-utilizr/lib/arrayContains'
 import arrayUnique from 'd2-utilizr/lib/arrayUnique'
 

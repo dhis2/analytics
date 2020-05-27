@@ -1,3 +1,5 @@
+/* eslint-disable max-params */
+
 import isString from 'd2-utilizr/lib/isString'
 
 export default function(series, layout, dashboard, filterTitle) {
