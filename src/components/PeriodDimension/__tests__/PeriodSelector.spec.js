@@ -1,25 +1,25 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import PeriodDimension from '../PeriodDimension'
+import PeriodSelector from '../PeriodSelector'
 
-describe('The Period Dimension component', () => {
+describe('The Period Selector component', () => {
     let props
-    let shallowPeriodDimension
+    let shallowPeriodSelector
 
     const getWrapper = () => {
-        if (!shallowPeriodDimension) {
-            shallowPeriodDimension = shallow(<PeriodDimension {...props} />)
+        if (!shallowPeriodSelector) {
+            shallowPeriodSelector = shallow(<PeriodSelector {...props} />)
         }
-        return shallowPeriodDimension
+        return shallowPeriodSelector
     }
 
     beforeEach(() => {
         props = {
-            selectedPeriods: [],
+            selectedItems: [],
             onSelect: jest.fn(),
             rightFooter: <></>,
         }
-        shallowPeriodDimension = undefined
+        shallowPeriodSelector = undefined
     })
 
     it('matches the snapshot', () => {
