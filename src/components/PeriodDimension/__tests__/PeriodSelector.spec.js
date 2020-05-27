@@ -15,7 +15,7 @@ describe('The Period Selector component', () => {
 
     beforeEach(() => {
         props = {
-            selectedItems: [],
+            initialSelectedPeriods: [],
             onSelect: jest.fn(),
             rightFooter: <></>,
         }

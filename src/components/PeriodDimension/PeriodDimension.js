@@ -5,7 +5,7 @@ import PeriodSelector from './PeriodSelector'
 import { DIMENSION_ID_PERIOD } from '../../modules/predefinedDimensions'
 
 export const PeriodDimension = ({ onSelect, selectedPeriods, rightFooter }) => {
-    const selectItems = periods => {
+    const selectPeriods = periods => {
         const formattedPeriods = periods.map(period => ({
             id: period.value,
             name: period.label,
@@ -18,7 +18,7 @@ export const PeriodDimension = ({ onSelect, selectedPeriods, rightFooter }) => {
 
     return (
         <PeriodSelector
-            onSelect={selectItems}
+            onSelect={selectPeriods}
             initialSelectedPeriods={selectedPeriods}
             rightFooter={rightFooter}
         />
