@@ -12,7 +12,7 @@ export const DataTypes = ({ currentDataType, onChange }) => (
             label={i18n.t('Data Type')}
             selected={{
                 value: dataTypes[currentDataType]?.id,
-                label: dataTypes[currentDataType]?.name,
+                label: dataTypes[currentDataType]?.getName(),
             }}
             onChange={ref => onChange(ref.selected.value)}
             dense

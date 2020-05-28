@@ -17,8 +17,8 @@ export const Groups = ({
     let optionItems = groups
 
     if (dataTypes[dataType].defaultGroup) {
-        const { id, name } = dataTypes[dataType].defaultGroup
-        const defaultGroup = { id, name: name() }
+        const { id, getName } = dataTypes[dataType].defaultGroup
+        const defaultGroup = { id, name: getName() }
         optionItems = [defaultGroup, ...optionItems]
     }
 
