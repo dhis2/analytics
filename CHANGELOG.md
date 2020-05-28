@@ -1,3 +1,16 @@
+# [6.0.0](https://github.com/dhis2/analytics/compare/v5.1.6...v6.0.0) (2020-05-28)
+
+
+### Features
+
+* PeriodDimension using ui-core components (DHIS2-8807) ([#452](https://github.com/dhis2/analytics/issues/452)) ([0878eb6](https://github.com/dhis2/analytics/commit/0878eb6561cb80e67e4158369c8b231d0d0032fc))
+
+
+### BREAKING CHANGES
+
+* and known issues / missing features (see PR for details)
+* PeriodDimension props onDeselect and onReorder deprecated
+
 ## [5.1.6](https://github.com/dhis2/analytics/compare/v5.1.5...v5.1.6) (2020-05-26)
 
 
