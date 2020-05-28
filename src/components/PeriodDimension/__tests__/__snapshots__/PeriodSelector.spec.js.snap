@@ -1,0 +1,176 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`The Period Selector component matches the snapshot 1`] = `
+<Transfer
+  dataTest="dhis2-uicore-transfer"
+  enableOrderChange={true}
+  filterCallback={[Function]}
+  height="512px"
+  initialSearchTerm=""
+  leftHeader={
+    <React.Fragment>
+      <TabBar
+        dataTest="dhis2-uicore-tabbar"
+      >
+        <Tab
+          dataTest="dhis2-uicore-tab"
+          onClick={[Function]}
+          selected={true}
+        >
+          Relative periods
+        </Tab>
+        <Tab
+          dataTest="dhis2-uicore-tab"
+          onClick={[Function]}
+          selected={false}
+        >
+          Fixed periods
+        </Tab>
+      </TabBar>
+      <div
+        className="filterContainer"
+      >
+        <RelativePeriodFilter
+          currentFilter={
+            Object {
+              "label": "Months",
+              "value": "Months",
+            }
+          }
+          onSelectFilter={[Function]}
+        />
+      </div>
+      <style>
+        
+      </style>
+    </React.Fragment>
+  }
+  maxSelections={Infinity}
+  onChange={[Function]}
+  optionsWidth="420px"
+  rightFooter={<React.Fragment />}
+  selected={Array []}
+  selectedEmptyComponent={
+    <React.Fragment>
+      <p
+        className="emptySelection"
+      >
+        No periods selected
+      </p>
+      <style>
+        
+      </style>
+    </React.Fragment>
+  }
+  selectedWidth="298px"
+>
+  <TransferOption
+    icon={
+      <svg
+        height="16"
+        viewBox="0 0 16 16"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M8,4 C10.209139,4 12,5.790861 12,8 C12,10.209139 10.209139,12 8,12 C5.790861,12 4,10.209139 4,8 C4,5.790861 5.790861,4 8,4 Z M8,5 C6.34314575,5 5,6.34314575 5,8 C5,9.65685425 6.34314575,11 8,11 C9.65685425,11 11,9.65685425 11,8 C11,6.34314575 9.65685425,5 8,5 Z M8.5,6 L8.5,7.5 L9.5,7.5 L9.5,8.5 L7.5,8.5 L7.5,6 L8.5,6 Z"
+          fill="#6E7A8A"
+        />
+      </svg>
+    }
+    key="THIS_MONTH"
+    label="This month"
+    value="THIS_MONTH"
+  />
+  <TransferOption
+    icon={
+      <svg
+        height="16"
+        viewBox="0 0 16 16"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M8,4 C10.209139,4 12,5.790861 12,8 C12,10.209139 10.209139,12 8,12 C5.790861,12 4,10.209139 4,8 C4,5.790861 5.790861,4 8,4 Z M8,5 C6.34314575,5 5,6.34314575 5,8 C5,9.65685425 6.34314575,11 8,11 C9.65685425,11 11,9.65685425 11,8 C11,6.34314575 9.65685425,5 8,5 Z M8.5,6 L8.5,7.5 L9.5,7.5 L9.5,8.5 L7.5,8.5 L7.5,6 L8.5,6 Z"
+          fill="#6E7A8A"
+        />
+      </svg>
+    }
+    key="LAST_MONTH"
+    label="Last month"
+    value="LAST_MONTH"
+  />
+  <TransferOption
+    icon={
+      <svg
+        height="16"
+        viewBox="0 0 16 16"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M8,4 C10.209139,4 12,5.790861 12,8 C12,10.209139 10.209139,12 8,12 C5.790861,12 4,10.209139 4,8 C4,5.790861 5.790861,4 8,4 Z M8,5 C6.34314575,5 5,6.34314575 5,8 C5,9.65685425 6.34314575,11 8,11 C9.65685425,11 11,9.65685425 11,8 C11,6.34314575 9.65685425,5 8,5 Z M8.5,6 L8.5,7.5 L9.5,7.5 L9.5,8.5 L7.5,8.5 L7.5,6 L8.5,6 Z"
+          fill="#6E7A8A"
+        />
+      </svg>
+    }
+    key="LAST_3_MONTHS"
+    label="Last 3 months"
+    value="LAST_3_MONTHS"
+  />
+  <TransferOption
+    icon={
+      <svg
+        height="16"
+        viewBox="0 0 16 16"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M8,4 C10.209139,4 12,5.790861 12,8 C12,10.209139 10.209139,12 8,12 C5.790861,12 4,10.209139 4,8 C4,5.790861 5.790861,4 8,4 Z M8,5 C6.34314575,5 5,6.34314575 5,8 C5,9.65685425 6.34314575,11 8,11 C9.65685425,11 11,9.65685425 11,8 C11,6.34314575 9.65685425,5 8,5 Z M8.5,6 L8.5,7.5 L9.5,7.5 L9.5,8.5 L7.5,8.5 L7.5,6 L8.5,6 Z"
+          fill="#6E7A8A"
+        />
+      </svg>
+    }
+    key="LAST_6_MONTHS"
+    label="Last 6 months"
+    value="LAST_6_MONTHS"
+  />
+  <TransferOption
+    icon={
+      <svg
+        height="16"
+        viewBox="0 0 16 16"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M8,4 C10.209139,4 12,5.790861 12,8 C12,10.209139 10.209139,12 8,12 C5.790861,12 4,10.209139 4,8 C4,5.790861 5.790861,4 8,4 Z M8,5 C6.34314575,5 5,6.34314575 5,8 C5,9.65685425 6.34314575,11 8,11 C9.65685425,11 11,9.65685425 11,8 C11,6.34314575 9.65685425,5 8,5 Z M8.5,6 L8.5,7.5 L9.5,7.5 L9.5,8.5 L7.5,8.5 L7.5,6 L8.5,6 Z"
+          fill="#6E7A8A"
+        />
+      </svg>
+    }
+    key="LAST_12_MONTHS"
+    label="Last 12 months"
+    value="LAST_12_MONTHS"
+  />
+  <TransferOption
+    icon={
+      <svg
+        height="16"
+        viewBox="0 0 16 16"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M8,4 C10.209139,4 12,5.790861 12,8 C12,10.209139 10.209139,12 8,12 C5.790861,12 4,10.209139 4,8 C4,5.790861 5.790861,4 8,4 Z M8,5 C6.34314575,5 5,6.34314575 5,8 C5,9.65685425 6.34314575,11 8,11 C9.65685425,11 11,9.65685425 11,8 C11,6.34314575 9.65685425,5 8,5 Z M8.5,6 L8.5,7.5 L9.5,7.5 L9.5,8.5 L7.5,8.5 L7.5,6 L8.5,6 Z"
+          fill="#6E7A8A"
+        />
+      </svg>
+    }
+    key="MONTHS_THIS_YEAR"
+    label="Months this year"
+    value="MONTHS_THIS_YEAR"
+  />
+</Transfer>
+`;

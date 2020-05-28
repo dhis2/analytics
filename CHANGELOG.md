@@ -1,3 +1,30 @@
+# [6.0.0](https://github.com/dhis2/analytics/compare/v5.1.6...v6.0.0) (2020-05-28)
+
+
+### Features
+
+* PeriodDimension using ui-core components (DHIS2-8807) ([#452](https://github.com/dhis2/analytics/issues/452)) ([0878eb6](https://github.com/dhis2/analytics/commit/0878eb6561cb80e67e4158369c8b231d0d0032fc))
+
+
+### BREAKING CHANGES
+
+* and known issues / missing features (see PR for details)
+* PeriodDimension props onDeselect and onReorder deprecated
+
+## [5.1.6](https://github.com/dhis2/analytics/compare/v5.1.5...v5.1.6) (2020-05-26)
+
+
+### Bug Fixes
+
+* onClick and classes props on PivotTableEmptyCell ([#454](https://github.com/dhis2/analytics/issues/454)) ([3d52a53](https://github.com/dhis2/analytics/commit/3d52a53a923b774a13849698c53e9bfc2b184898))
+
+## [5.1.5](https://github.com/dhis2/analytics/compare/v5.1.4...v5.1.5) (2020-05-26)
+
+
+### Bug Fixes
+
+* disable onClick on value cells if no ouId ([#451](https://github.com/dhis2/analytics/issues/451)) ([e827792](https://github.com/dhis2/analytics/commit/e827792eb2e585de78dfbc9596a4ffe2aff2c4c9))
+
 ## [5.1.4](https://github.com/dhis2/analytics/compare/v5.1.3...v5.1.4) (2020-05-20)
 
 
