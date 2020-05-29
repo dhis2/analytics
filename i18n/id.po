@@ -1,15 +1,16 @@
 # 
 # Translators:
 # phil_dhis2, 2020
-# Viktor Varland <viktor@dhis2.org>, 2020
+# Guardian Sanjaya <gysanjaya@ugm.ac.id>, 2020
 # Aprisa Chrysantina <aprisa.chrysantina@gmail.com>, 2020
+# Viktor Varland <viktor@dhis2.org>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2020-05-22T11:34:10.538Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Aprisa Chrysantina <aprisa.chrysantina@gmail.com>, 2020\n"
+"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2020\n"
 "Language-Team: Indonesian (https://www.transifex.com/hisp-uio/teams/100509/id/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -69,7 +70,7 @@ msgid "Select all"
 msgstr ""
 
 msgid "Period type"
-msgstr ""
+msgstr "Tipe periode"
 
 msgid "Year"
 msgstr ""
@@ -78,49 +79,49 @@ msgid "Select year"
 msgstr ""
 
 msgid "Relative periods"
-msgstr ""
+msgstr "Periode relatif"
 
 msgid "Fixed periods"
-msgstr ""
+msgstr "Periode tetap"
 
 msgid "No periods selected"
-msgstr ""
+msgstr "Tidak ada periode yang dipilih"
 
 msgid "January"
-msgstr ""
+msgstr "Januari"
 
 msgid "February"
-msgstr ""
+msgstr "Februari"
 
 msgid "March"
-msgstr ""
+msgstr "Maret"
 
 msgid "April"
-msgstr ""
+msgstr "April"
 
 msgid "May"
-msgstr ""
+msgstr "Mei"
 
 msgid "June"
-msgstr ""
+msgstr "Juni"
 
 msgid "July"
-msgstr ""
+msgstr "Juli"
 
 msgid "August"
-msgstr ""
+msgstr "Agustus"
 
 msgid "September"
-msgstr ""
+msgstr "September"
 
 msgid "October"
-msgstr ""
+msgstr "Oktober"
 
 msgid "November"
-msgstr ""
+msgstr "November"
 
 msgid "December"
-msgstr ""
+msgstr "Desember"
 
 msgid "Week {{weekNumber}}"
 msgstr ""
@@ -129,13 +130,13 @@ msgid "Bi-Week {{biWeekNumber}}"
 msgstr ""
 
 msgid "Daily"
-msgstr ""
+msgstr "Harian"
 
 msgid "Weekly"
-msgstr ""
+msgstr "Mingguan"
 
 msgid "Bi-weekly"
-msgstr ""
+msgstr "Dwiwulanan"
 
 msgid "Weekly (Start Wednesday)"
 msgstr ""
@@ -150,172 +151,172 @@ msgid "Weekly (Start Sunday)"
 msgstr ""
 
 msgid "Monthly"
-msgstr ""
+msgstr "Bulanan"
 
 msgid "Bi-monthly"
-msgstr ""
+msgstr "Dwiwulanan"
 
 msgid "Quarterly"
-msgstr ""
+msgstr "Triwulanan"
 
 msgid "Six-monthly"
-msgstr ""
+msgstr "Semester"
 
 msgid "Six-monthly April"
-msgstr ""
+msgstr "Semester April"
 
 msgid "Yearly"
-msgstr ""
+msgstr "Tahunan"
 
 msgid "Financial year (Start November)"
 msgstr ""
 
 msgid "Financial year (Start October)"
-msgstr ""
+msgstr "Financial October"
 
 msgid "Financial year (Start July)"
-msgstr ""
+msgstr "Financial July"
 
 msgid "Financial year (Start April)"
-msgstr ""
+msgstr "Financial April"
 
 msgid "Today"
-msgstr ""
+msgstr "Hari ini"
 
 msgid "Yesterday"
-msgstr ""
+msgstr "Kemarin"
 
 msgid "Last 3 days"
-msgstr ""
+msgstr "3 hari terakhir"
 
 msgid "Last 7 days"
-msgstr ""
+msgstr "7 hari terakhir"
 
 msgid "Last 14 days"
-msgstr ""
+msgstr "14 hari terakhir"
 
 msgid "This week"
-msgstr ""
+msgstr "Minggu ini"
 
 msgid "Last week"
-msgstr ""
+msgstr "Minggu lalu"
 
 msgid "Last 4 weeks"
-msgstr ""
+msgstr "4 minggu terakhir"
 
 msgid "Last 12 weeks"
-msgstr ""
+msgstr "12 minggu terakhir"
 
 msgid "Last 52 weeks"
-msgstr ""
+msgstr "52 minggu terakhir"
 
 msgid "Weeks this year"
-msgstr ""
+msgstr "Mingguan tahun ini"
 
 msgid "This bi-week"
-msgstr ""
+msgstr "Dwiwulan ini"
 
 msgid "Last bi-week"
-msgstr ""
+msgstr "Dwiwulan terakhir"
 
 msgid "Last 4 bi-weeks"
-msgstr ""
+msgstr "4 dwiwulan terakhir"
 
 msgid "This month"
-msgstr ""
+msgstr "Bulan ini"
 
 msgid "Last month"
-msgstr ""
+msgstr "Bulan lalu"
 
 msgid "Last 3 months"
-msgstr ""
+msgstr "3 bulan terakhir"
 
 msgid "Last 6 months"
-msgstr ""
+msgstr "6 bulan terakhir"
 
 msgid "Last 12 months"
-msgstr ""
+msgstr "12 bulan terakhir"
 
 msgid "Months this year"
-msgstr ""
+msgstr "Bulanan tahun ini"
 
 msgid "This bi-month"
-msgstr ""
+msgstr "2 bulan ini"
 
 msgid "Last bi-month"
-msgstr ""
+msgstr "Dwiwulan terakhir"
 
 msgid "Last 6 bi-months"
-msgstr ""
+msgstr "6 dwiwulan terakhir"
 
 msgid "Bi-months this year"
-msgstr ""
+msgstr "Dwiwulanan tahun ini"
 
 msgid "This quarter"
-msgstr ""
+msgstr "Triwulan ini"
 
 msgid "Last quarter"
-msgstr ""
+msgstr "Triwulan yang lalu"
 
 msgid "Last 4 quarters"
-msgstr ""
+msgstr "4 triwulan terakhir"
 
 msgid "Quarters this year"
-msgstr ""
+msgstr "Triwulanan tahun ini"
 
 msgid "This six-month"
-msgstr ""
+msgstr "6 bulan ini"
 
 msgid "Last six-month"
-msgstr ""
+msgstr "Semester lalu"
 
 msgid "Last 2 six-month"
 msgstr ""
 
 msgid "This financial year"
-msgstr ""
+msgstr "Tahun finansial ini"
 
 msgid "Last financial year"
-msgstr ""
+msgstr "Tahun finansial kemarin"
 
 msgid "Last 5 financial years"
-msgstr ""
+msgstr "5 tahun finansial terakhir"
 
 msgid "This year"
-msgstr ""
+msgstr "Tahun ini"
 
 msgid "Last year"
-msgstr ""
+msgstr "Tahun kemarin"
 
 msgid "Last 5 years"
-msgstr ""
+msgstr "5 tahun terakhir"
 
 msgid "Days"
-msgstr ""
+msgstr "Hari"
 
 msgid "Weeks"
-msgstr ""
+msgstr "Minggu"
 
 msgid "Bi-weeks"
-msgstr ""
+msgstr "Dwiwulan"
 
 msgid "Months"
-msgstr ""
+msgstr "Bulan"
 
 msgid "Bi-months"
-msgstr ""
+msgstr "Dwiwulan"
 
 msgid "Quarters"
-msgstr ""
+msgstr "Triwulan"
 
 msgid "Six-months"
-msgstr ""
+msgstr "Semester"
 
 msgid "Financial Years"
 msgstr ""
 
 msgid "Years"
-msgstr ""
+msgstr "Tahun"
 
 msgid "Series"
 msgstr "Seri"
