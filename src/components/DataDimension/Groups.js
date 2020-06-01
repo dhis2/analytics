@@ -37,8 +37,8 @@ export const Groups = ({
                             : {}
                     }
                     placeholder={
-                        !groupId && dataTypes[dataType].placeholder
-                            ? dataTypes[dataType].placeholder
+                        !groupId && dataTypes[dataType].getPlaceholder
+                            ? dataTypes[dataType].getPlaceholder()
                             : null
                     }
                     onChange={ref => onGroupChange(ref.selected.value)}
