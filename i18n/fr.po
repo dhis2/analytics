@@ -1,17 +1,17 @@
 # 
 # Translators:
+# Karoline Tufte Lien <karoline@dhis2.org>, 2020
+# Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2020
 # phil_dhis2, 2020
 # Viktor Varland <viktor@dhis2.org>, 2020
-# Karoline Tufte Lien <karoline@dhis2.org>, 2020
 # Bram Piot <bram.piot@gmail.com>, 2020
-# Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-04-09T19:57:21.474Z\n"
+"POT-Creation-Date: 2020-05-22T11:34:10.538Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2020\n"
+"Last-Translator: Bram Piot <bram.piot@gmail.com>, 2020\n"
 "Language-Team: French (https://www.transifex.com/hisp-uio/teams/100509/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -69,6 +69,255 @@ msgstr "Tout déselectionner"
 
 msgid "Select all"
 msgstr "Sélectionner tout"
+
+msgid "Period type"
+msgstr "Type de période"
+
+msgid "Year"
+msgstr "Année"
+
+msgid "Select year"
+msgstr "Sélectionnez année"
+
+msgid "Relative periods"
+msgstr "Périodes relatives"
+
+msgid "Fixed periods"
+msgstr "Périodes fixes"
+
+msgid "No periods selected"
+msgstr "Aucune périodes n'est sélectionnée"
+
+msgid "January"
+msgstr "Janvier"
+
+msgid "February"
+msgstr "Février"
+
+msgid "March"
+msgstr "Mars"
+
+msgid "April"
+msgstr "Avril"
+
+msgid "May"
+msgstr "Mai"
+
+msgid "June"
+msgstr "Juin"
+
+msgid "July"
+msgstr "Juillet"
+
+msgid "August"
+msgstr "Août"
+
+msgid "September"
+msgstr "Septembre"
+
+msgid "October"
+msgstr "Octobre"
+
+msgid "November"
+msgstr "Novembre"
+
+msgid "December"
+msgstr "Décembre"
+
+msgid "Week {{weekNumber}}"
+msgstr ""
+
+msgid "Bi-Week {{biWeekNumber}}"
+msgstr ""
+
+msgid "Daily"
+msgstr "Quotidien"
+
+msgid "Weekly"
+msgstr "Hebdomadaire"
+
+msgid "Bi-weekly"
+msgstr ""
+
+msgid "Weekly (Start Wednesday)"
+msgstr "Hebdomadaire (début mercredi)"
+
+msgid "Weekly (Start Thursday)"
+msgstr "Hebdomadaire (début jeudi)"
+
+msgid "Weekly (Start Saturday)"
+msgstr "Hebdomadaire (début samedi)"
+
+msgid "Weekly (Start Sunday)"
+msgstr "Hebdomadaire (début dimanche)"
+
+msgid "Monthly"
+msgstr "Mensuel"
+
+msgid "Bi-monthly"
+msgstr "Bimensuel"
+
+msgid "Quarterly"
+msgstr "Trimestriel"
+
+msgid "Six-monthly"
+msgstr "Semestriel"
+
+msgid "Six-monthly April"
+msgstr "Six-mois avril"
+
+msgid "Yearly"
+msgstr "Annuel"
+
+msgid "Financial year (Start November)"
+msgstr ""
+
+msgid "Financial year (Start October)"
+msgstr "Financière Octobre"
+
+msgid "Financial year (Start July)"
+msgstr "Financière Juillet"
+
+msgid "Financial year (Start April)"
+msgstr "Financière Avril"
+
+msgid "Today"
+msgstr "Aujourd'hui"
+
+msgid "Yesterday"
+msgstr "Hier"
+
+msgid "Last 3 days"
+msgstr "3 derniers jours"
+
+msgid "Last 7 days"
+msgstr "7 derniers jours"
+
+msgid "Last 14 days"
+msgstr "14 dernier jours"
+
+msgid "This week"
+msgstr "Cette semaine"
+
+msgid "Last week"
+msgstr "Semaine passée"
+
+msgid "Last 4 weeks"
+msgstr "4 dernières semaines"
+
+msgid "Last 12 weeks"
+msgstr "12 dernières semaines"
+
+msgid "Last 52 weeks"
+msgstr "52 dernières semaines"
+
+msgid "Weeks this year"
+msgstr ""
+
+msgid "This bi-week"
+msgstr ""
+
+msgid "Last bi-week"
+msgstr ""
+
+msgid "Last 4 bi-weeks"
+msgstr ""
+
+msgid "This month"
+msgstr "Ce mois-ci"
+
+msgid "Last month"
+msgstr "Le mois dernier"
+
+msgid "Last 3 months"
+msgstr "3 derniers mois"
+
+msgid "Last 6 months"
+msgstr "6 derniers mois"
+
+msgid "Last 12 months"
+msgstr "12 derniers mois"
+
+msgid "Months this year"
+msgstr "Mois cette année"
+
+msgid "This bi-month"
+msgstr "Ces 2 dernières semaines"
+
+msgid "Last bi-month"
+msgstr "Dernier bi-mestre"
+
+msgid "Last 6 bi-months"
+msgstr "6 derniers bimestres"
+
+msgid "Bi-months this year"
+msgstr ""
+
+msgid "This quarter"
+msgstr "Ce trimestre"
+
+msgid "Last quarter"
+msgstr "Trimestre précédent"
+
+msgid "Last 4 quarters"
+msgstr "4 derniers trimestres"
+
+msgid "Quarters this year"
+msgstr "Trimestres cette année"
+
+msgid "This six-month"
+msgstr "Ce semestre"
+
+msgid "Last six-month"
+msgstr "Dernier semestre"
+
+msgid "Last 2 six-month"
+msgstr ""
+
+msgid "This financial year"
+msgstr "Année fiscale en cours"
+
+msgid "Last financial year"
+msgstr "Dernière année financière"
+
+msgid "Last 5 financial years"
+msgstr "5 dernières années financières"
+
+msgid "This year"
+msgstr "Année en cours"
+
+msgid "Last year"
+msgstr "L'année passée"
+
+msgid "Last 5 years"
+msgstr "5 dernières années"
+
+msgid "Days"
+msgstr "Jours"
+
+msgid "Weeks"
+msgstr "Semaines"
+
+msgid "Bi-weeks"
+msgstr ""
+
+msgid "Months"
+msgstr "Mois"
+
+msgid "Bi-months"
+msgstr "Bimensuel"
+
+msgid "Quarters"
+msgstr "Trimestres"
+
+msgid "Six-months"
+msgstr "Semestres"
+
+msgid "Financial Years"
+msgstr ""
+
+msgid "Years"
+msgstr "Années"
 
 msgid "Series"
 msgstr "Séries"

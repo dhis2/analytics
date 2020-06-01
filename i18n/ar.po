@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-04-09T19:57:21.474Z\n"
+"POT-Creation-Date: 2020-05-22T11:34:10.538Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: Hamza Assada <7amza.it@gmail.com>, 2020\n"
 "Language-Team: Arabic (https://www.transifex.com/hisp-uio/teams/100509/ar/)\n"
@@ -67,6 +67,255 @@ msgstr "إلغاء تحديد الكل"
 
 msgid "Select all"
 msgstr "تحديد الكل"
+
+msgid "Period type"
+msgstr "نوع الفترة الزمنية"
+
+msgid "Year"
+msgstr "سنة"
+
+msgid "Select year"
+msgstr "اختر السنة"
+
+msgid "Relative periods"
+msgstr "الفترات الزمنية النسبية"
+
+msgid "Fixed periods"
+msgstr "فترات زمنية ثابتة"
+
+msgid "No periods selected"
+msgstr "لم يتم تحديد أية فترات زمنية"
+
+msgid "January"
+msgstr "يناير"
+
+msgid "February"
+msgstr "فبراير"
+
+msgid "March"
+msgstr "مارس"
+
+msgid "April"
+msgstr "ابريل"
+
+msgid "May"
+msgstr "مايو"
+
+msgid "June"
+msgstr "يونيو"
+
+msgid "July"
+msgstr "يوليو"
+
+msgid "August"
+msgstr "اغسطس"
+
+msgid "September"
+msgstr "سبتمبر"
+
+msgid "October"
+msgstr "اكتوبر"
+
+msgid "November"
+msgstr "نوفمبر"
+
+msgid "December"
+msgstr "ديسمبر"
+
+msgid "Week {{weekNumber}}"
+msgstr "الإسبوع {{weekNumber}}"
+
+msgid "Bi-Week {{biWeekNumber}}"
+msgstr "ثنائي الإسبوع {{biWeekNumber}}"
+
+msgid "Daily"
+msgstr "يومي"
+
+msgid "Weekly"
+msgstr "أسبوعي"
+
+msgid "Bi-weekly"
+msgstr "كل اسبوعين"
+
+msgid "Weekly (Start Wednesday)"
+msgstr "اسبوعياً (يبدأ الأربعاء)"
+
+msgid "Weekly (Start Thursday)"
+msgstr "اسبوعياً (يبدأ الخميس)"
+
+msgid "Weekly (Start Saturday)"
+msgstr "اسبوعياً (يبدأ السبت)"
+
+msgid "Weekly (Start Sunday)"
+msgstr "اسبوعياً (يبدأ الأحد)"
+
+msgid "Monthly"
+msgstr "شهري"
+
+msgid "Bi-monthly"
+msgstr "كل شهرين"
+
+msgid "Quarterly"
+msgstr "ربعي"
+
+msgid "Six-monthly"
+msgstr "كل ستة-أشهر"
+
+msgid "Six-monthly April"
+msgstr "نصف سنوي، كل ستة أشهر، ابريل"
+
+msgid "Yearly"
+msgstr "سنوي"
+
+msgid "Financial year (Start November)"
+msgstr "السنة المالية (تبدأ في نوفمبر)"
+
+msgid "Financial year (Start October)"
+msgstr "السنة المالية (تبدأ في اكتوبر)"
+
+msgid "Financial year (Start July)"
+msgstr "السنة المالية (تبدأ في يوليو)"
+
+msgid "Financial year (Start April)"
+msgstr "السنة المالية (تبدأ في ابريل)"
+
+msgid "Today"
+msgstr "اليوم"
+
+msgid "Yesterday"
+msgstr "الأمس"
+
+msgid "Last 3 days"
+msgstr "آخر 3 أيام"
+
+msgid "Last 7 days"
+msgstr "آخر 7 أيام"
+
+msgid "Last 14 days"
+msgstr "آخر 14 يوم"
+
+msgid "This week"
+msgstr "هذا الأسبوع"
+
+msgid "Last week"
+msgstr "الأسبوع الماضي"
+
+msgid "Last 4 weeks"
+msgstr "آخر 4 أسابيع"
+
+msgid "Last 12 weeks"
+msgstr "آخر 12 أسبوع"
+
+msgid "Last 52 weeks"
+msgstr "آخر 52 أسبوع"
+
+msgid "Weeks this year"
+msgstr "أسابيع السنة الحالية"
+
+msgid "This bi-week"
+msgstr "الأسبوعين الحاليين"
+
+msgid "Last bi-week"
+msgstr "آخر اسبوعين"
+
+msgid "Last 4 bi-weeks"
+msgstr "آخر 4 ثنائي اسابيع"
+
+msgid "This month"
+msgstr "الشهر الحالي"
+
+msgid "Last month"
+msgstr "الشهر الماضي"
+
+msgid "Last 3 months"
+msgstr "آخر 3 أشهر"
+
+msgid "Last 6 months"
+msgstr "آخر 6 أشهر"
+
+msgid "Last 12 months"
+msgstr "آخر 12 شهر"
+
+msgid "Months this year"
+msgstr "أشهر السنة الحالية"
+
+msgid "This bi-month"
+msgstr "الشهران المزدوجان الحاليان"
+
+msgid "Last bi-month"
+msgstr "آخر شهرين مزدوجين"
+
+msgid "Last 6 bi-months"
+msgstr "آخر 6 أشهر مزدوجة"
+
+msgid "Bi-months this year"
+msgstr "الأشهر المزدوجة في السنة الحالية"
+
+msgid "This quarter"
+msgstr "ربع السنة الحالي"
+
+msgid "Last quarter"
+msgstr "ربع السنة الماضي"
+
+msgid "Last 4 quarters"
+msgstr "آخر 4 أرباع السنة"
+
+msgid "Quarters this year"
+msgstr "أرباع السنة الحالية"
+
+msgid "This six-month"
+msgstr "الستة أشهر الحالية"
+
+msgid "Last six-month"
+msgstr "آخر ستة-أشهر"
+
+msgid "Last 2 six-month"
+msgstr "آخر نصفي سنة (فترتي ستة-أشهر)"
+
+msgid "This financial year"
+msgstr "السنة المالية الحالية"
+
+msgid "Last financial year"
+msgstr "السنة المالية الماضية"
+
+msgid "Last 5 financial years"
+msgstr "آخر 5 سنوات مالية"
+
+msgid "This year"
+msgstr "السنة الحالية"
+
+msgid "Last year"
+msgstr "السنة الماضية"
+
+msgid "Last 5 years"
+msgstr "آخر 5 سنوات"
+
+msgid "Days"
+msgstr "‏‏الأيام"
+
+msgid "Weeks"
+msgstr "الأسابيع"
+
+msgid "Bi-weeks"
+msgstr "كل اسبوعين"
+
+msgid "Months"
+msgstr "الأشهر"
+
+msgid "Bi-months"
+msgstr "الأشهر المزدوجة"
+
+msgid "Quarters"
+msgstr "أرباع السنة"
+
+msgid "Six-months"
+msgstr "ستة-أشهر"
+
+msgid "Financial Years"
+msgstr "السنوات المالية"
+
+msgid "Years"
+msgstr "السنوات"
 
 msgid "Series"
 msgstr "سلسلة"

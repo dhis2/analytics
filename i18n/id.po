@@ -1,15 +1,16 @@
 # 
 # Translators:
 # phil_dhis2, 2020
-# Viktor Varland <viktor@dhis2.org>, 2020
+# Guardian Sanjaya <gysanjaya@ugm.ac.id>, 2020
 # Aprisa Chrysantina <aprisa.chrysantina@gmail.com>, 2020
+# Viktor Varland <viktor@dhis2.org>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-04-09T19:57:21.474Z\n"
+"POT-Creation-Date: 2020-05-22T11:34:10.538Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Aprisa Chrysantina <aprisa.chrysantina@gmail.com>, 2020\n"
+"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2020\n"
 "Language-Team: Indonesian (https://www.transifex.com/hisp-uio/teams/100509/id/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -67,6 +68,255 @@ msgstr ""
 
 msgid "Select all"
 msgstr ""
+
+msgid "Period type"
+msgstr "Tipe periode"
+
+msgid "Year"
+msgstr ""
+
+msgid "Select year"
+msgstr ""
+
+msgid "Relative periods"
+msgstr "Periode relatif"
+
+msgid "Fixed periods"
+msgstr "Periode tetap"
+
+msgid "No periods selected"
+msgstr "Tidak ada periode yang dipilih"
+
+msgid "January"
+msgstr "Januari"
+
+msgid "February"
+msgstr "Februari"
+
+msgid "March"
+msgstr "Maret"
+
+msgid "April"
+msgstr "April"
+
+msgid "May"
+msgstr "Mei"
+
+msgid "June"
+msgstr "Juni"
+
+msgid "July"
+msgstr "Juli"
+
+msgid "August"
+msgstr "Agustus"
+
+msgid "September"
+msgstr "September"
+
+msgid "October"
+msgstr "Oktober"
+
+msgid "November"
+msgstr "November"
+
+msgid "December"
+msgstr "Desember"
+
+msgid "Week {{weekNumber}}"
+msgstr ""
+
+msgid "Bi-Week {{biWeekNumber}}"
+msgstr ""
+
+msgid "Daily"
+msgstr "Harian"
+
+msgid "Weekly"
+msgstr "Mingguan"
+
+msgid "Bi-weekly"
+msgstr "Dwiwulanan"
+
+msgid "Weekly (Start Wednesday)"
+msgstr ""
+
+msgid "Weekly (Start Thursday)"
+msgstr ""
+
+msgid "Weekly (Start Saturday)"
+msgstr ""
+
+msgid "Weekly (Start Sunday)"
+msgstr ""
+
+msgid "Monthly"
+msgstr "Bulanan"
+
+msgid "Bi-monthly"
+msgstr "Dwiwulanan"
+
+msgid "Quarterly"
+msgstr "Triwulanan"
+
+msgid "Six-monthly"
+msgstr "Semester"
+
+msgid "Six-monthly April"
+msgstr "Semester April"
+
+msgid "Yearly"
+msgstr "Tahunan"
+
+msgid "Financial year (Start November)"
+msgstr ""
+
+msgid "Financial year (Start October)"
+msgstr "Financial October"
+
+msgid "Financial year (Start July)"
+msgstr "Financial July"
+
+msgid "Financial year (Start April)"
+msgstr "Financial April"
+
+msgid "Today"
+msgstr "Hari ini"
+
+msgid "Yesterday"
+msgstr "Kemarin"
+
+msgid "Last 3 days"
+msgstr "3 hari terakhir"
+
+msgid "Last 7 days"
+msgstr "7 hari terakhir"
+
+msgid "Last 14 days"
+msgstr "14 hari terakhir"
+
+msgid "This week"
+msgstr "Minggu ini"
+
+msgid "Last week"
+msgstr "Minggu lalu"
+
+msgid "Last 4 weeks"
+msgstr "4 minggu terakhir"
+
+msgid "Last 12 weeks"
+msgstr "12 minggu terakhir"
+
+msgid "Last 52 weeks"
+msgstr "52 minggu terakhir"
+
+msgid "Weeks this year"
+msgstr "Mingguan tahun ini"
+
+msgid "This bi-week"
+msgstr "Dwiwulan ini"
+
+msgid "Last bi-week"
+msgstr "Dwiwulan terakhir"
+
+msgid "Last 4 bi-weeks"
+msgstr "4 dwiwulan terakhir"
+
+msgid "This month"
+msgstr "Bulan ini"
+
+msgid "Last month"
+msgstr "Bulan lalu"
+
+msgid "Last 3 months"
+msgstr "3 bulan terakhir"
+
+msgid "Last 6 months"
+msgstr "6 bulan terakhir"
+
+msgid "Last 12 months"
+msgstr "12 bulan terakhir"
+
+msgid "Months this year"
+msgstr "Bulanan tahun ini"
+
+msgid "This bi-month"
+msgstr "2 bulan ini"
+
+msgid "Last bi-month"
+msgstr "Dwiwulan terakhir"
+
+msgid "Last 6 bi-months"
+msgstr "6 dwiwulan terakhir"
+
+msgid "Bi-months this year"
+msgstr "Dwiwulanan tahun ini"
+
+msgid "This quarter"
+msgstr "Triwulan ini"
+
+msgid "Last quarter"
+msgstr "Triwulan yang lalu"
+
+msgid "Last 4 quarters"
+msgstr "4 triwulan terakhir"
+
+msgid "Quarters this year"
+msgstr "Triwulanan tahun ini"
+
+msgid "This six-month"
+msgstr "6 bulan ini"
+
+msgid "Last six-month"
+msgstr "Semester lalu"
+
+msgid "Last 2 six-month"
+msgstr ""
+
+msgid "This financial year"
+msgstr "Tahun finansial ini"
+
+msgid "Last financial year"
+msgstr "Tahun finansial kemarin"
+
+msgid "Last 5 financial years"
+msgstr "5 tahun finansial terakhir"
+
+msgid "This year"
+msgstr "Tahun ini"
+
+msgid "Last year"
+msgstr "Tahun kemarin"
+
+msgid "Last 5 years"
+msgstr "5 tahun terakhir"
+
+msgid "Days"
+msgstr "Hari"
+
+msgid "Weeks"
+msgstr "Minggu"
+
+msgid "Bi-weeks"
+msgstr "Dwiwulan"
+
+msgid "Months"
+msgstr "Bulan"
+
+msgid "Bi-months"
+msgstr "Dwiwulan"
+
+msgid "Quarters"
+msgstr "Triwulan"
+
+msgid "Six-months"
+msgstr "Semester"
+
+msgid "Financial Years"
+msgstr ""
+
+msgid "Years"
+msgstr "Tahun"
 
 msgid "Series"
 msgstr "Seri"

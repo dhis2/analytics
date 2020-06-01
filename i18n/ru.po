@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-04-09T19:57:21.474Z\n"
+"POT-Creation-Date: 2020-05-22T11:34:10.538Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: Wanda <wanda@frontlineaids.org>, 2020\n"
 "Language-Team: Russian (https://www.transifex.com/hisp-uio/teams/100509/ru/)\n"
@@ -67,6 +67,255 @@ msgstr ""
 
 msgid "Select all"
 msgstr "Выбрать все"
+
+msgid "Period type"
+msgstr "Виды периода"
+
+msgid "Year"
+msgstr "Год"
+
+msgid "Select year"
+msgstr "Выбрать год"
+
+msgid "Relative periods"
+msgstr "Соответствующие периоды"
+
+msgid "Fixed periods"
+msgstr "Фиксированные периоды"
+
+msgid "No periods selected"
+msgstr "Периоды не выбраны"
+
+msgid "January"
+msgstr "Январь"
+
+msgid "February"
+msgstr "Февраль"
+
+msgid "March"
+msgstr "Март"
+
+msgid "April"
+msgstr "Апрель"
+
+msgid "May"
+msgstr "Май"
+
+msgid "June"
+msgstr "Июнь"
+
+msgid "July"
+msgstr "Июль"
+
+msgid "August"
+msgstr "Август"
+
+msgid "September"
+msgstr "Сентябрь"
+
+msgid "October"
+msgstr "Октябрь"
+
+msgid "November"
+msgstr "Ноябрь"
+
+msgid "December"
+msgstr "Декабрь"
+
+msgid "Week {{weekNumber}}"
+msgstr ""
+
+msgid "Bi-Week {{biWeekNumber}}"
+msgstr ""
+
+msgid "Daily"
+msgstr "Ежедневно"
+
+msgid "Weekly"
+msgstr "Еженедельно"
+
+msgid "Bi-weekly"
+msgstr "Каждые две недели"
+
+msgid "Weekly (Start Wednesday)"
+msgstr ""
+
+msgid "Weekly (Start Thursday)"
+msgstr ""
+
+msgid "Weekly (Start Saturday)"
+msgstr ""
+
+msgid "Weekly (Start Sunday)"
+msgstr ""
+
+msgid "Monthly"
+msgstr "Ежемесячно"
+
+msgid "Bi-monthly"
+msgstr "Раз в два месяца"
+
+msgid "Quarterly"
+msgstr "Ежеквартально"
+
+msgid "Six-monthly"
+msgstr "Раз в полугодие"
+
+msgid "Six-monthly April"
+msgstr "Полугодовой-Апрель"
+
+msgid "Yearly"
+msgstr "Ежегодно"
+
+msgid "Financial year (Start November)"
+msgstr ""
+
+msgid "Financial year (Start October)"
+msgstr "Финансовый год - Октябрь"
+
+msgid "Financial year (Start July)"
+msgstr "Финансовый год - Июль"
+
+msgid "Financial year (Start April)"
+msgstr "Финансовый год - Апрель"
+
+msgid "Today"
+msgstr "Сегодня"
+
+msgid "Yesterday"
+msgstr "Вчера"
+
+msgid "Last 3 days"
+msgstr "Последние 3 дня"
+
+msgid "Last 7 days"
+msgstr "Последние 7 дней"
+
+msgid "Last 14 days"
+msgstr "Последние 14 дней"
+
+msgid "This week"
+msgstr "Эта неделя"
+
+msgid "Last week"
+msgstr "Прошлая неделя"
+
+msgid "Last 4 weeks"
+msgstr "Прошлые 4 недели"
+
+msgid "Last 12 weeks"
+msgstr "Прошлые 12 недель"
+
+msgid "Last 52 weeks"
+msgstr "Последние 52 недели"
+
+msgid "Weeks this year"
+msgstr "Недели этого года"
+
+msgid "This bi-week"
+msgstr "Эта би-неделя"
+
+msgid "Last bi-week"
+msgstr "Последняя би-неделя"
+
+msgid "Last 4 bi-weeks"
+msgstr "Последние 4 би-недель"
+
+msgid "This month"
+msgstr "Этот месяц"
+
+msgid "Last month"
+msgstr "Последний месяц"
+
+msgid "Last 3 months"
+msgstr "Прошлые 3 месяца"
+
+msgid "Last 6 months"
+msgstr "Последние 6 месяцев"
+
+msgid "Last 12 months"
+msgstr "Прошлые 12 месяцев"
+
+msgid "Months this year"
+msgstr "Месяцы этого года"
+
+msgid "This bi-month"
+msgstr "Этот период по два месяца"
+
+msgid "Last bi-month"
+msgstr "Прошлый двухмесячный период"
+
+msgid "Last 6 bi-months"
+msgstr "Последние 6 двухмесячных периодов"
+
+msgid "Bi-months this year"
+msgstr "Би-месяцы этого года"
+
+msgid "This quarter"
+msgstr "Этот квартал"
+
+msgid "Last quarter"
+msgstr "Последний квартал"
+
+msgid "Last 4 quarters"
+msgstr "Прошлые 4 квартала"
+
+msgid "Quarters this year"
+msgstr "Кварталы этого года"
+
+msgid "This six-month"
+msgstr "Это полугодие"
+
+msgid "Last six-month"
+msgstr "Прошлое полугодие"
+
+msgid "Last 2 six-month"
+msgstr ""
+
+msgid "This financial year"
+msgstr "Этот финансовый год"
+
+msgid "Last financial year"
+msgstr "Прошлый финансовый год"
+
+msgid "Last 5 financial years"
+msgstr "Прошлые 5 финансовых лет"
+
+msgid "This year"
+msgstr "Этот год"
+
+msgid "Last year"
+msgstr "Прошлый год"
+
+msgid "Last 5 years"
+msgstr "Прошлые 5 лет"
+
+msgid "Days"
+msgstr "Дни"
+
+msgid "Weeks"
+msgstr "Недели"
+
+msgid "Bi-weeks"
+msgstr "Двухнедельные промежутки"
+
+msgid "Months"
+msgstr "Месяцы"
+
+msgid "Bi-months"
+msgstr "Двухмесячный период"
+
+msgid "Quarters"
+msgstr "Кварталы"
+
+msgid "Six-months"
+msgstr "Полугодие"
+
+msgid "Financial Years"
+msgstr ""
+
+msgid "Years"
+msgstr "Годы"
 
 msgid "Series"
 msgstr "Ряды"

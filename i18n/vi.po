@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-04-09T19:57:21.474Z\n"
+"POT-Creation-Date: 2020-05-22T11:34:10.538Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: Mai Nguyen <thanhmai.jica@gmail.com>, 2020\n"
 "Language-Team: Vietnamese (https://www.transifex.com/hisp-uio/teams/100509/vi/)\n"
@@ -67,6 +67,255 @@ msgstr ""
 
 msgid "Select all"
 msgstr "Chọn tất cả"
+
+msgid "Period type"
+msgstr "Loại thời điểm"
+
+msgid "Year"
+msgstr "Năm"
+
+msgid "Select year"
+msgstr "Chọn năm"
+
+msgid "Relative periods"
+msgstr "Thời điểm tương đối"
+
+msgid "Fixed periods"
+msgstr "Thời điểm tĩnh"
+
+msgid "No periods selected"
+msgstr "Chưa chọn thời điểm"
+
+msgid "January"
+msgstr "Tháng một"
+
+msgid "February"
+msgstr "Tháng hai"
+
+msgid "March"
+msgstr "Tháng ba"
+
+msgid "April"
+msgstr "Tháng tư"
+
+msgid "May"
+msgstr "Tháng năm"
+
+msgid "June"
+msgstr "Tháng sáu"
+
+msgid "July"
+msgstr "Tháng bảy"
+
+msgid "August"
+msgstr "Tháng tám"
+
+msgid "September"
+msgstr "Tháng chín"
+
+msgid "October"
+msgstr "Tháng mười"
+
+msgid "November"
+msgstr "Tháng mười một"
+
+msgid "December"
+msgstr "Tháng mười hai"
+
+msgid "Week {{weekNumber}}"
+msgstr ""
+
+msgid "Bi-Week {{biWeekNumber}}"
+msgstr ""
+
+msgid "Daily"
+msgstr "Hàng ngày"
+
+msgid "Weekly"
+msgstr "Hàng tuần"
+
+msgid "Bi-weekly"
+msgstr "Hai-tuần"
+
+msgid "Weekly (Start Wednesday)"
+msgstr ""
+
+msgid "Weekly (Start Thursday)"
+msgstr ""
+
+msgid "Weekly (Start Saturday)"
+msgstr ""
+
+msgid "Weekly (Start Sunday)"
+msgstr ""
+
+msgid "Monthly"
+msgstr "Hàng tháng"
+
+msgid "Bi-monthly"
+msgstr "Hàng 2 tháng"
+
+msgid "Quarterly"
+msgstr "Hàng quý"
+
+msgid "Six-monthly"
+msgstr "Hàng 6 tháng"
+
+msgid "Six-monthly April"
+msgstr "Hàng 6 tháng - tháng 4"
+
+msgid "Yearly"
+msgstr "Một năm"
+
+msgid "Financial year (Start November)"
+msgstr ""
+
+msgid "Financial year (Start October)"
+msgstr "Năm Tài Chính - Tháng 10"
+
+msgid "Financial year (Start July)"
+msgstr "Năm Tài Chính - Tháng 7"
+
+msgid "Financial year (Start April)"
+msgstr "Năm Tài Chính - Tháng 4"
+
+msgid "Today"
+msgstr "Hôm nay"
+
+msgid "Yesterday"
+msgstr "Hôm qua"
+
+msgid "Last 3 days"
+msgstr "3 ngày trước"
+
+msgid "Last 7 days"
+msgstr "7 ngày trước"
+
+msgid "Last 14 days"
+msgstr "14 ngày trước"
+
+msgid "This week"
+msgstr "Tuần này"
+
+msgid "Last week"
+msgstr "Tuần trước"
+
+msgid "Last 4 weeks"
+msgstr "4 tuần trước"
+
+msgid "Last 12 weeks"
+msgstr "12 tuần trước"
+
+msgid "Last 52 weeks"
+msgstr "52 tuần trước"
+
+msgid "Weeks this year"
+msgstr "Các tuần trong năm nay"
+
+msgid "This bi-week"
+msgstr "Kỳ hiện tại, 1 kỳ = 2 tuần"
+
+msgid "Last bi-week"
+msgstr "Kỳ trước, 1 kỳ = 2 tuần"
+
+msgid "Last 4 bi-weeks"
+msgstr "4 kỳ trước, 1 kỳ = 2 tuần"
+
+msgid "This month"
+msgstr "Tháng này"
+
+msgid "Last month"
+msgstr "Tháng trước"
+
+msgid "Last 3 months"
+msgstr "3 tháng trước"
+
+msgid "Last 6 months"
+msgstr "6 tháng trước"
+
+msgid "Last 12 months"
+msgstr "Trong 12 tháng trước"
+
+msgid "Months this year"
+msgstr "Tháng năm nay"
+
+msgid "This bi-month"
+msgstr "Lần Hai-Tháng này"
+
+msgid "Last bi-month"
+msgstr "Kỳ 2 tháng trước"
+
+msgid "Last 6 bi-months"
+msgstr "6 kỳ 2 tháng trước"
+
+msgid "Bi-months this year"
+msgstr "Các kỳ 2 tháng năm nay"
+
+msgid "This quarter"
+msgstr "Quý này"
+
+msgid "Last quarter"
+msgstr "Quý trước"
+
+msgid "Last 4 quarters"
+msgstr "4 quý trước"
+
+msgid "Quarters this year"
+msgstr "Quý năm nay"
+
+msgid "This six-month"
+msgstr "6 tháng này"
+
+msgid "Last six-month"
+msgstr "6 tháng trước"
+
+msgid "Last 2 six-month"
+msgstr ""
+
+msgid "This financial year"
+msgstr "Năm tài chính này"
+
+msgid "Last financial year"
+msgstr "Năm tài chính trước"
+
+msgid "Last 5 financial years"
+msgstr "5 năm tài chính trước"
+
+msgid "This year"
+msgstr "Năm nay"
+
+msgid "Last year"
+msgstr "Năm ngoái"
+
+msgid "Last 5 years"
+msgstr "5 năm trước"
+
+msgid "Days"
+msgstr "Ngày"
+
+msgid "Weeks"
+msgstr "Tuần"
+
+msgid "Bi-weeks"
+msgstr "Các kỳ, 1 kỳ = 2 tuần"
+
+msgid "Months"
+msgstr "Tháng"
+
+msgid "Bi-months"
+msgstr "Các kỳ 2 tháng"
+
+msgid "Quarters"
+msgstr "Quý"
+
+msgid "Six-months"
+msgstr "Sáu-tháng"
+
+msgid "Financial Years"
+msgstr "Năm tài chính"
+
+msgid "Years"
+msgstr "Năm"
 
 msgid "Series"
 msgstr "Chuỗi Dữ Liệu"
