@@ -10,55 +10,58 @@ export const DIMENSION_ID_ORGUNIT = 'ou'
 export const DIMENSION_ID_ASSIGNED_CATEGORIES = 'co'
 export const DIMENSION_PROP_NO_ITEMS = 'noItems'
 
-const FIXED_DIMENSIONS = {
+const getFixedDimensionsInternal = () => ({
     [DIMENSION_ID_DATA]: {
         id: DIMENSION_ID_DATA,
-        getName: () => i18n.t('Data'),
+        name: i18n.t('Data'),
         iconName: 'DataIcon',
         icon: DataIcon,
     },
     [DIMENSION_ID_PERIOD]: {
         id: DIMENSION_ID_PERIOD,
-        getName: () => i18n.t('Period'),
+        name: i18n.t('Period'),
         iconName: 'PeriodIcon',
         icon: PeriodIcon,
     },
     [DIMENSION_ID_ORGUNIT]: {
         id: DIMENSION_ID_ORGUNIT,
-        getName: () => i18n.t('Organisation Unit'),
+        name: i18n.t('Organisation Unit'),
         iconName: 'OrgUnitIcon',
         icon: OrgUnitIcon,
     },
-}
+})
 
-const DYNAMIC_DIMENSIONS = {
+const getDynamicDimensionsInternal = () => ({
     [DIMENSION_ID_ASSIGNED_CATEGORIES]: {
         id: DIMENSION_ID_ASSIGNED_CATEGORIES,
-        getName: () => i18n.t('Assigned Categories'),
+        name: i18n.t('Assigned Categories'),
         iconName: 'AssignedCategoriesIcon',
         icon: AssignedCategoriesIcon,
         [DIMENSION_PROP_NO_ITEMS]: true,
     },
-}
+})
 
-const PREDEFINED_DIMENSIONS = {
-    ...FIXED_DIMENSIONS,
-    ...DYNAMIC_DIMENSIONS,
-}
+const getPredefinedDimensionsInternal = () => ({
+    ...getFixedDimensionsInternal(),
+    ...getDynamicDimensionsInternal(),
+})
 
 export const filterOutPredefinedDimensions = dimensionIds =>
     dimensionIds.filter(
-        dimensionId => !Object.keys(PREDEFINED_DIMENSIONS).includes(dimensionId)
+        dimensionId =>
+            !Object.keys(getPredefinedDimensionsInternal()).includes(
+                dimensionId
+            )
     )
 
 export const getPredefinedDimensionProp = (dimensionId, propName) =>
-    (PREDEFINED_DIMENSIONS[dimensionId] || {})[propName]
+    (getPredefinedDimensionsInternal()[dimensionId] || {})[propName]
 
 export const getDimensionById = dimensionId =>
-    PREDEFINED_DIMENSIONS[dimensionId]
+    getPredefinedDimensionsInternal()[dimensionId]
 
-export const getPredefinedDimensions = () => PREDEFINED_DIMENSIONS
+export const getPredefinedDimensions = () => getPredefinedDimensionsInternal()
 
-export const getFixedDimensions = () => FIXED_DIMENSIONS
+export const getFixedDimensions = () => getFixedDimensionsInternal()
 
-export const getDynamicDimensions = () => DYNAMIC_DIMENSIONS
+export const getDynamicDimensions = () => getDynamicDimensionsInternal()
