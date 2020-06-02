@@ -20,6 +20,12 @@ msgstr ""
 msgid "Data Type"
 msgstr "نوع البيانات"
 
+msgid "Totals"
+msgstr "الإجمالي"
+
+msgid "Details"
+msgstr "التفاصيل"
+
 msgid "Detail"
 msgstr "تفصيل"
 
@@ -52,6 +58,12 @@ msgstr "إدارة محاور المخطط"
 
 msgid "Filter dimensions"
 msgstr "تصفية الأبعاد"
+
+msgid "Main dimensions"
+msgstr ""
+
+msgid "Your dimensions"
+msgstr ""
 
 msgid "Dimension recommended with selected data"
 msgstr "البعد موصى به مع البيانات المحددة"
@@ -371,12 +383,6 @@ msgstr "تحديد مجموعة عناصر البيانات"
 msgid "[ All data elements ]"
 msgstr "[ كل عناصر البيانات ]"
 
-msgid "Totals"
-msgstr "الإجمالي"
-
-msgid "Details"
-msgstr "التفاصيل"
-
 msgid "Data sets"
 msgstr "حزم البيانات"
 
@@ -463,3 +469,6 @@ msgstr "الهدف"
 
 msgid "Base"
 msgstr "الأساس"
+
+msgid "No data"
+msgstr ""

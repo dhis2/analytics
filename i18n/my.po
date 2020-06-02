@@ -20,6 +20,12 @@ msgstr ""
 msgid "Data Type"
 msgstr ""
 
+msgid "Totals"
+msgstr ""
+
+msgid "Details"
+msgstr "အသေးစိတ်များ"
+
 msgid "Detail"
 msgstr ""
 
@@ -51,6 +57,12 @@ msgid "Manage chart axes"
 msgstr ""
 
 msgid "Filter dimensions"
+msgstr ""
+
+msgid "Main dimensions"
+msgstr ""
+
+msgid "Your dimensions"
 msgstr ""
 
 msgid "Dimension recommended with selected data"
@@ -371,12 +383,6 @@ msgstr ""
 msgid "[ All data elements ]"
 msgstr ""
 
-msgid "Totals"
-msgstr ""
-
-msgid "Details"
-msgstr "အသေးစိတ်များ"
-
 msgid "Data sets"
 msgstr "စီမံချက်"
 
@@ -463,3 +469,6 @@ msgstr "ပစ်မှတ်/ ဦးတည်ချက်"
 
 msgid "Base"
 msgstr "အခြေ"
+
+msgid "No data"
+msgstr ""
