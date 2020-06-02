@@ -1,17 +1,58 @@
-import React, { Component } from 'react'
+import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 
-import ItemSelector from '../ItemSelector/ItemSelector'
-import FilterField from '../FilterField'
+import ItemSelector from './ItemSelector'
 import { apiFetchItemsByDimension } from '../../api/dimensions'
 
+export const DynamicDimension = ({
+    context,
+    dimensionId,
+    onSelect,
+    selectedItems,
+    rightFooter,
+}) => {
+    const [items, setItems] = useState([])
+
+    useEffect(() => {
+        if (!items || !items.length) {
+            getItems()
+        }
+    }, [])
+
+    const getItems = async () =>
+        setItems(await apiFetchItemsByDimension(context, dimensionId))
+    // TODO: This needs to be refactored to use a loading spinner once Transfer supports it: https://jira.dhis2.org/browse/TECH-379
+
+    const selectItems = items => {
+        const formattedItems = items.map(item => ({
+            id: item.value,
+            name: item.label,
+        }))
+        onSelect({
+            dimensionId: dimensionId,
+            items: formattedItems,
+        })
+    }
+
+    return (
+        <ItemSelector
+            onSelect={selectItems}
+            allItems={items}
+            initialSelectedItems={selectedItems}
+            rightFooter={rightFooter}
+            // TODO: Pass in a func prop to fetch items, instead of fetching them on this level, to enable the loading spinner?
+        />
+    )
+}
+
+/*
 export class DynamicDimension extends Component {
     state = {
         filterText: '',
-        nextPage: null,
+        //nextPage: null, //TODO: Unused?
         items: [],
-        unselectedIds: [],
-        selectedIds: [],
+        // unselectedIds: [],
+        // selectedIds: [],
     }
 
     componentDidMount = async () => {
@@ -61,23 +102,23 @@ export class DynamicDimension extends Component {
         })
     }
 
-    deselectItems = ids => {
-        const unselectedIds = [
-            ...new Set([...this.state.unselectedIds, ...ids]),
-        ]
-        this.setState({ unselectedIds })
+    // deselectItems = ids => {
+    //     const unselectedIds = [
+    //         ...new Set([...this.state.unselectedIds, ...ids]),
+    //     ]
+    //     this.setState({ unselectedIds })
 
-        this.props.onDeselect({
-            dimensionId: this.props.dialogId,
-            itemIdsToRemove: ids,
-        })
-    }
+    //     this.props.onDeselect({
+    //         dimensionId: this.props.dialogId,
+    //         itemIdsToRemove: ids,
+    //     })
+    // }
 
-    reorderItems = itemIds =>
-        this.props.onReorder({
-            dimensionId: this.props.dialogId,
-            itemIds,
-        })
+    // reorderItems = itemIds =>
+    //     this.props.onReorder({
+    //         dimensionId: this.props.dialogId,
+    //         itemIds,
+    //     })
 
     getUnselectedItems = () =>
         this.state.items.filter(
@@ -118,22 +159,21 @@ export class DynamicDimension extends Component {
             </ItemSelector>
         )
     }
-}
+}*/
 
 DynamicDimension.propTypes = {
-    d2: PropTypes.object.isRequired,
-    dialogId: PropTypes.string.isRequired,
+    context: PropTypes.object.isRequired,
+    dimensionId: PropTypes.string.isRequired, // FIXME: Can this be made redundant?
     selectedItems: PropTypes.array.isRequired,
-    onDeselect: PropTypes.func.isRequired,
-    onReorder: PropTypes.func.isRequired,
     onSelect: PropTypes.func.isRequired,
+    rightFooter: PropTypes.node,
+    // onDeselect: PropTypes.func.isRequired,
+    // onReorder: PropTypes.func.isRequired,
 }
 
 DynamicDimension.defaultProps = {
     selectedItems: [],
     onSelect: Function.prototype,
-    onDeselect: Function.prototype,
-    onReorder: Function.prototype,
 }
 
 export default DynamicDimension
