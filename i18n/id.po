@@ -4,13 +4,14 @@
 # Guardian Sanjaya <gysanjaya@ugm.ac.id>, 2020
 # Aprisa Chrysantina <aprisa.chrysantina@gmail.com>, 2020
 # Viktor Varland <viktor@dhis2.org>, 2020
+# Carwoto Sa'an <carwoto@gmail.com>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2020-05-22T11:34:10.538Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2020\n"
+"Last-Translator: Carwoto Sa'an <carwoto@gmail.com>, 2020\n"
 "Language-Team: Indonesian (https://www.transifex.com/hisp-uio/teams/100509/id/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,6 +21,12 @@ msgstr ""
 
 msgid "Data Type"
 msgstr "Tipe Data"
+
+msgid "Totals"
+msgstr "Total"
+
+msgid "Details"
+msgstr "Rincian"
 
 msgid "Detail"
 msgstr "Rincian"
@@ -53,6 +60,12 @@ msgstr ""
 
 msgid "Filter dimensions"
 msgstr "Filter dimensi"
+
+msgid "Main dimensions"
+msgstr ""
+
+msgid "Your dimensions"
+msgstr ""
 
 msgid "Dimension recommended with selected data"
 msgstr "Dimensi yang direkomendasikan dengan data terpilih"
@@ -372,12 +385,6 @@ msgstr "Pilih grup data elemen"
 msgid "[ All data elements ]"
 msgstr "[ All data elements ]"
 
-msgid "Totals"
-msgstr "Total"
-
-msgid "Details"
-msgstr "Rincian"
-
 msgid "Data sets"
 msgstr "Data set"
 
@@ -457,10 +464,13 @@ msgid "Single value"
 msgstr "Nilai tunggal"
 
 msgid "Pivot table"
-msgstr ""
+msgstr "Tabel Pivot"
 
 msgid "Target"
 msgstr ""
 
 msgid "Base"
 msgstr "Dasar"
+
+msgid "No data"
+msgstr ""

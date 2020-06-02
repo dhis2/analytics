@@ -20,6 +20,12 @@ msgstr ""
 msgid "Data Type"
 msgstr "Tipo de dados"
 
+msgid "Totals"
+msgstr "Totais"
+
+msgid "Details"
+msgstr "Detalhes"
+
 msgid "Detail"
 msgstr "Detalhe"
 
@@ -52,6 +58,12 @@ msgstr "Gerenciar eixos do gráfico"
 
 msgid "Filter dimensions"
 msgstr "Dimensões do filtro"
+
+msgid "Main dimensions"
+msgstr ""
+
+msgid "Your dimensions"
+msgstr ""
 
 msgid "Dimension recommended with selected data"
 msgstr "Dimensão recomendada com dados selecionados"
@@ -371,12 +383,6 @@ msgstr "Seleccionar grupo de elementos de dados"
 msgid "[ All data elements ]"
 msgstr "[ Todos os elementos de dados ]"
 
-msgid "Totals"
-msgstr "Totais"
-
-msgid "Details"
-msgstr "Detalhes"
-
 msgid "Data sets"
 msgstr "Agregação de Dados"
 
@@ -463,3 +469,6 @@ msgstr "Meta"
 
 msgid "Base"
 msgstr "Base"
+
+msgid "No data"
+msgstr ""

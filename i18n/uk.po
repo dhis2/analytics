@@ -20,6 +20,12 @@ msgstr ""
 msgid "Data Type"
 msgstr ""
 
+msgid "Totals"
+msgstr "Підсумки"
+
+msgid "Details"
+msgstr "Деталі"
+
 msgid "Detail"
 msgstr ""
 
@@ -51,6 +57,12 @@ msgid "Manage chart axes"
 msgstr ""
 
 msgid "Filter dimensions"
+msgstr ""
+
+msgid "Main dimensions"
+msgstr ""
+
+msgid "Your dimensions"
 msgstr ""
 
 msgid "Dimension recommended with selected data"
@@ -371,12 +383,6 @@ msgstr "Обрати групу елементів даних"
 msgid "[ All data elements ]"
 msgstr ""
 
-msgid "Totals"
-msgstr "Підсумки"
-
-msgid "Details"
-msgstr "Деталі"
-
 msgid "Data sets"
 msgstr "Набори даних"
 
@@ -462,4 +468,7 @@ msgid "Target"
 msgstr "Ціль"
 
 msgid "Base"
+msgstr ""
+
+msgid "No data"
 msgstr ""
