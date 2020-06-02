@@ -61,7 +61,7 @@ class PeriodSelector extends Component {
                           this.state.relativeFilter.periodType.value
                       ).getPeriods()
                     : getFixedPeriodsOptionsById(
-                          this.state.fixedFilter.periodType.label
+                          this.state.fixedFilter.periodType.value
                       ).getPeriods(
                           fixedPeriodConfig(Number(this.state.fixedFilter.year))
                       ),
