@@ -1,3 +1,10 @@
+## [6.0.3](https://github.com/dhis2/analytics/compare/v6.0.2...v6.0.3) (2020-06-02)
+
+
+### Bug Fixes
+
+* complete translations ([#462](https://github.com/dhis2/analytics/issues/462)) ([f1a1fbc](https://github.com/dhis2/analytics/commit/f1a1fbc92c09c5b7b446f3da044633b2451cfc64))
+
 ## [6.0.2](https://github.com/dhis2/analytics/compare/v6.0.1...v6.0.2) (2020-05-29)
 
 
