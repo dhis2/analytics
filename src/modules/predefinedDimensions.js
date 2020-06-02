@@ -10,7 +10,7 @@ export const DIMENSION_ID_ORGUNIT = 'ou'
 export const DIMENSION_ID_ASSIGNED_CATEGORIES = 'co'
 export const DIMENSION_PROP_NO_ITEMS = 'noItems'
 
-const getFixedDimensionsInternal = () => ({
+export const getFixedDimensions = () => ({
     [DIMENSION_ID_DATA]: {
         id: DIMENSION_ID_DATA,
         name: i18n.t('Data'),
@@ -31,7 +31,7 @@ const getFixedDimensionsInternal = () => ({
     },
 })
 
-const getDynamicDimensionsInternal = () => ({
+export const getDynamicDimensions = () => ({
     [DIMENSION_ID_ASSIGNED_CATEGORIES]: {
         id: DIMENSION_ID_ASSIGNED_CATEGORIES,
         name: i18n.t('Assigned Categories'),
@@ -41,27 +41,19 @@ const getDynamicDimensionsInternal = () => ({
     },
 })
 
-const getPredefinedDimensionsInternal = () => ({
-    ...getFixedDimensionsInternal(),
-    ...getDynamicDimensionsInternal(),
+export const getPredefinedDimensions = () => ({
+    ...getFixedDimensions(),
+    ...getDynamicDimensions(),
 })
 
 export const filterOutPredefinedDimensions = dimensionIds =>
     dimensionIds.filter(
         dimensionId =>
-            !Object.keys(getPredefinedDimensionsInternal()).includes(
-                dimensionId
-            )
+            !Object.keys(getPredefinedDimensions()).includes(dimensionId)
     )
 
 export const getPredefinedDimensionProp = (dimensionId, propName) =>
-    (getPredefinedDimensionsInternal()[dimensionId] || {})[propName]
+    (getPredefinedDimensions()[dimensionId] || {})[propName]
 
 export const getDimensionById = dimensionId =>
-    getPredefinedDimensionsInternal()[dimensionId]
-
-export const getPredefinedDimensions = () => getPredefinedDimensionsInternal()
-
-export const getFixedDimensions = () => getFixedDimensionsInternal()
-
-export const getDynamicDimensions = () => getDynamicDimensionsInternal()
+    getPredefinedDimensions()[dimensionId]
