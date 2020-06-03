@@ -46,6 +46,7 @@ class ItemSelector extends Component {
             selectedWidth="298px"
             selectedEmptyComponent={this.renderEmptySelection()}
             rightFooter={this.props.rightFooter}
+            // TODO: Add a filter placeholer once the Transfer component supports this (https://github.com/dhis2/ui/issues/131)
             // TODO: Add rightHeader "Selected Periods" once the Transfer component supports this (https://github.com/dhis2/ui-core/issues/885)
         >
             {this.props.allItems.map(item => (
