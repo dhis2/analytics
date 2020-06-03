@@ -19,6 +19,12 @@ msgstr ""
 msgid "Data Type"
 msgstr ""
 
+msgid "Totals"
+msgstr "ລວມທັງໝົດ"
+
+msgid "Details"
+msgstr "ລາຍລະອຽດ"
+
 msgid "Detail"
 msgstr ""
 
@@ -50,6 +56,12 @@ msgid "Manage chart axes"
 msgstr ""
 
 msgid "Filter dimensions"
+msgstr ""
+
+msgid "Main dimensions"
+msgstr ""
+
+msgid "Your dimensions"
 msgstr ""
 
 msgid "Dimension recommended with selected data"
@@ -370,12 +382,6 @@ msgstr "ເລືອກກຸ່ມອົງປະກອບຂອງຂໍ້ມ
 msgid "[ All data elements ]"
 msgstr ""
 
-msgid "Totals"
-msgstr "ລວມທັງໝົດ"
-
-msgid "Details"
-msgstr "ລາຍລະອຽດ"
-
 msgid "Data sets"
 msgstr "ແບບຟອມ"
 
@@ -462,3 +468,6 @@ msgstr "ເປົ້າໝາຍ"
 
 msgid "Base"
 msgstr "ຖານ"
+
+msgid "No data"
+msgstr ""

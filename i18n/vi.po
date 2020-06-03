@@ -20,6 +20,12 @@ msgstr ""
 msgid "Data Type"
 msgstr ""
 
+msgid "Totals"
+msgstr "Tổng"
+
+msgid "Details"
+msgstr "Chi tiết"
+
 msgid "Detail"
 msgstr ""
 
@@ -52,6 +58,12 @@ msgstr ""
 
 msgid "Filter dimensions"
 msgstr "Các chiều lọc"
+
+msgid "Main dimensions"
+msgstr ""
+
+msgid "Your dimensions"
+msgstr ""
 
 msgid "Dimension recommended with selected data"
 msgstr ""
@@ -371,12 +383,6 @@ msgstr "Chọn nhóm yếu tố dữ liệu"
 msgid "[ All data elements ]"
 msgstr ""
 
-msgid "Totals"
-msgstr "Tổng"
-
-msgid "Details"
-msgstr "Chi tiết"
-
 msgid "Data sets"
 msgstr "Biểu nhập"
 
@@ -463,3 +469,6 @@ msgstr "Mục tiêu"
 
 msgid "Base"
 msgstr "Đường đáy"
+
+msgid "No data"
+msgstr ""

@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import i18n from '@dhis2/d2-i18n'
 import LockIcon from '@material-ui/icons/Lock'
 
 import DimensionLabel from './DimensionLabel'
@@ -43,8 +42,7 @@ export class DimensionItem extends Component {
                     ...(isDeactivated ? styles.textDeactivated : {}),
                 }}
             >
-                {/* is it needed here or displayName should be used instead?! */}
-                {i18n.t(name)}
+                {name}
             </span>
         )
     }

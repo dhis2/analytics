@@ -18,6 +18,12 @@ msgstr ""
 msgid "Data Type"
 msgstr ""
 
+msgid "Totals"
+msgstr "مجموعه"
+
+msgid "Details"
+msgstr "جزئیات"
+
 msgid "Detail"
 msgstr ""
 
@@ -49,6 +55,12 @@ msgid "Manage chart axes"
 msgstr ""
 
 msgid "Filter dimensions"
+msgstr ""
+
+msgid "Main dimensions"
+msgstr ""
+
+msgid "Your dimensions"
 msgstr ""
 
 msgid "Dimension recommended with selected data"
@@ -369,12 +381,6 @@ msgstr "انتخاب گروپ دیتا ایلمنت"
 msgid "[ All data elements ]"
 msgstr ""
 
-msgid "Totals"
-msgstr "مجموعه"
-
-msgid "Details"
-msgstr "جزئیات"
-
 msgid "Data sets"
 msgstr "دیتا سیت ها"
 
@@ -461,3 +467,6 @@ msgstr "موخه"
 
 msgid "Base"
 msgstr "اساس"
+
+msgid "No data"
+msgstr ""
