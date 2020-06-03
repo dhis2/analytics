@@ -19,6 +19,12 @@ msgstr ""
 msgid "Data Type"
 msgstr ""
 
+msgid "Totals"
+msgstr "Totais"
+
+msgid "Details"
+msgstr "Detalles"
+
 msgid "Detail"
 msgstr ""
 
@@ -50,6 +56,12 @@ msgid "Manage chart axes"
 msgstr ""
 
 msgid "Filter dimensions"
+msgstr ""
+
+msgid "Main dimensions"
+msgstr ""
+
+msgid "Your dimensions"
 msgstr ""
 
 msgid "Dimension recommended with selected data"
@@ -370,12 +382,6 @@ msgstr "Hili grupu elementus dadus"
 msgid "[ All data elements ]"
 msgstr ""
 
-msgid "Totals"
-msgstr "Totais"
-
-msgid "Details"
-msgstr "Detalles"
-
 msgid "Data sets"
 msgstr "Pakote dadus"
 
@@ -462,3 +468,6 @@ msgstr "Alvu"
 
 msgid "Base"
 msgstr "Baze"
+
+msgid "No data"
+msgstr ""

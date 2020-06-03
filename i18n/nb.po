@@ -19,6 +19,12 @@ msgstr ""
 msgid "Data Type"
 msgstr "Datatype"
 
+msgid "Totals"
+msgstr "Totalsummer"
+
+msgid "Details"
+msgstr "Detaljer"
+
 msgid "Detail"
 msgstr "Detalj"
 
@@ -51,6 +57,12 @@ msgstr "Administrer diagramakser"
 
 msgid "Filter dimensions"
 msgstr "Filterdimensjoner"
+
+msgid "Main dimensions"
+msgstr ""
+
+msgid "Your dimensions"
+msgstr ""
 
 msgid "Dimension recommended with selected data"
 msgstr "Dimensjon anbefalt med valgte data"
@@ -370,12 +382,6 @@ msgstr "Velg dataelementgrupper"
 msgid "[ All data elements ]"
 msgstr "[ Alle dataelementer ]"
 
-msgid "Totals"
-msgstr "Totalsummer"
-
-msgid "Details"
-msgstr "Detaljer"
-
 msgid "Data sets"
 msgstr "Datasett"
 
@@ -462,3 +468,6 @@ msgstr "Mål"
 
 msgid "Base"
 msgstr "Grunn"
+
+msgid "No data"
+msgstr ""

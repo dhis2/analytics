@@ -19,6 +19,12 @@ msgstr ""
 msgid "Data Type"
 msgstr ""
 
+msgid "Totals"
+msgstr "总共"
+
+msgid "Details"
+msgstr "详情"
+
 msgid "Detail"
 msgstr ""
 
@@ -51,6 +57,12 @@ msgstr ""
 
 msgid "Filter dimensions"
 msgstr "过滤器维度"
+
+msgid "Main dimensions"
+msgstr ""
+
+msgid "Your dimensions"
+msgstr ""
 
 msgid "Dimension recommended with selected data"
 msgstr ""
@@ -370,12 +382,6 @@ msgstr ""
 msgid "[ All data elements ]"
 msgstr ""
 
-msgid "Totals"
-msgstr "总共"
-
-msgid "Details"
-msgstr "详情"
-
 msgid "Data sets"
 msgstr "数据集"
 
@@ -461,4 +467,7 @@ msgid "Target"
 msgstr ""
 
 msgid "Base"
+msgstr ""
+
+msgid "No data"
 msgstr ""

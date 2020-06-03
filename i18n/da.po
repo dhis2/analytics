@@ -18,6 +18,12 @@ msgstr ""
 msgid "Data Type"
 msgstr ""
 
+msgid "Totals"
+msgstr ""
+
+msgid "Details"
+msgstr "Details"
+
 msgid "Detail"
 msgstr ""
 
@@ -49,6 +55,12 @@ msgid "Manage chart axes"
 msgstr ""
 
 msgid "Filter dimensions"
+msgstr ""
+
+msgid "Main dimensions"
+msgstr ""
+
+msgid "Your dimensions"
 msgstr ""
 
 msgid "Dimension recommended with selected data"
@@ -369,12 +381,6 @@ msgstr ""
 msgid "[ All data elements ]"
 msgstr ""
 
-msgid "Totals"
-msgstr ""
-
-msgid "Details"
-msgstr "Details"
-
 msgid "Data sets"
 msgstr "Data sets"
 
@@ -460,4 +466,7 @@ msgid "Target"
 msgstr ""
 
 msgid "Base"
+msgstr ""
+
+msgid "No data"
 msgstr ""
