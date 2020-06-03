@@ -10,7 +10,13 @@ import { PivotTableHead } from './PivotTableHead'
 import { PivotTableBody } from './PivotTableBody'
 import { useSortableColumns } from '../../modules/pivotTable/useSortableColumns'
 
-const PivotTable = ({ visualization, data, legendSets, renderCounter }) => {
+const PivotTable = ({
+    visualization,
+    data,
+    legendSets,
+    renderCounter,
+    onToggleContextualMenu,
+}) => {
     const containerRef = useRef(undefined)
     const { width, height } = useParentSize(containerRef, renderCounter)
 
@@ -42,7 +48,10 @@ const PivotTable = ({ visualization, data, legendSets, renderCounter }) => {
                     sortBy={sortBy}
                     onSortByColumn={onSortByColumn}
                 />
-                <PivotTableBody clippingResult={clippingResult} />
+                <PivotTableBody
+                    clippingResult={clippingResult}
+                    onToggleContextualMenu={onToggleContextualMenu}
+                />
             </PivotTableContainer>
         </Provider>
     )
@@ -53,6 +62,7 @@ PivotTable.propTypes = {
     visualization: PropTypes.object.isRequired,
     legendSets: PropTypes.arrayOf(PropTypes.object),
     renderCounter: PropTypes.number,
+    onToggleContextualMenu: PropTypes.func,
 }
 
 export default PivotTable
