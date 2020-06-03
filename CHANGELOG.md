@@ -1,3 +1,15 @@
+# [7.0.0](https://github.com/dhis2/analytics/compare/v6.0.4...v7.0.0) (2020-06-03)
+
+
+### Features
+
+* Dynamic Dimension using ui-core components (DHIS2-8831) ([#469](https://github.com/dhis2/analytics/issues/469)) ([1d3ff34](https://github.com/dhis2/analytics/commit/1d3ff34aba992d3fed569e82f203dde91f3e3bec))
+
+
+### BREAKING CHANGES
+
+* onDeselect, onReorder deprecated. d2 renamed to context. dialogId renamed to dimensionId.
+
 ## [6.0.4](https://github.com/dhis2/analytics/compare/v6.0.3...v6.0.4) (2020-06-02)
 
 
