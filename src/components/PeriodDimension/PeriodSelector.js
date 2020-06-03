@@ -7,9 +7,14 @@ import FixedPeriodFilter from './FixedPeriodFilter'
 import RelativePeriodFilter from './RelativePeriodFilter'
 import { MONTHS, getRelativePeriodsOptionsById } from './utils/relativePeriods'
 import { MONTHLY, getFixedPeriodsOptionsById } from './utils/fixedPeriods'
-import styles from './styles/PeriodSelector.style'
+import styles from '../styles/DimensionSelector.style'
 import { TransferOption } from '../TransferOption'
 import PeriodIcon from '../../assets/DimensionItemIcons/PeriodIcon'
+import {
+    TRANSFER_HEIGHT,
+    TRANSFER_OPTIONS_WIDTH,
+    TRANSFER_SELECTED_WIDTH,
+} from '../../modules/dimensionSelectorHelper'
 
 const defaultRelativePeriodType = getRelativePeriodsOptionsById(MONTHS)
 const defaultFixedPeriodType = getFixedPeriodsOptionsById(MONTHLY)
@@ -148,9 +153,9 @@ class PeriodSelector extends Component {
             selected={this.state.selectedPeriods}
             leftHeader={this.renderHeader()}
             enableOrderChange
-            height="512px"
-            optionsWidth="420px"
-            selectedWidth="298px"
+            height={TRANSFER_HEIGHT}
+            optionsWidth={TRANSFER_OPTIONS_WIDTH}
+            selectedWidth={TRANSFER_SELECTED_WIDTH}
             selectedEmptyComponent={this.renderEmptySelection()}
             rightFooter={this.props.rightFooter}
             // TODO: Add rightHeader "Selected Periods" once the Transfer component supports this (https://github.com/dhis2/ui-core/issues/885)

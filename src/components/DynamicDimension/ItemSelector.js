@@ -3,9 +3,14 @@ import PropTypes from 'prop-types'
 import { Transfer } from '@dhis2/ui-core'
 import i18n from '@dhis2/d2-i18n'
 
-import styles from './styles/ItemSelector.style'
+import styles from '../styles/DimensionSelector.style'
 import { TransferOption } from '../TransferOption'
-import PeriodIcon from '../../assets/DimensionItemIcons/PeriodIcon'
+import GenericIcon from '../../assets/DimensionItemIcons/GenericIcon'
+import {
+    TRANSFER_HEIGHT,
+    TRANSFER_OPTIONS_WIDTH,
+    TRANSFER_SELECTED_WIDTH,
+} from '../../modules/dimensionSelectorHelper'
 
 class ItemSelector extends Component {
     state = {
@@ -41,9 +46,9 @@ class ItemSelector extends Component {
             leftHeader={this.props.leftHeader}
             filterable
             enableOrderChange
-            height="512px"
-            optionsWidth="420px"
-            selectedWidth="298px"
+            height={TRANSFER_HEIGHT}
+            optionsWidth={TRANSFER_OPTIONS_WIDTH}
+            selectedWidth={TRANSFER_SELECTED_WIDTH}
             selectedEmptyComponent={this.renderEmptySelection()}
             rightFooter={this.props.rightFooter}
             // TODO: Add a filter placeholer once the Transfer component supports this (https://github.com/dhis2/ui/issues/131)
@@ -54,7 +59,7 @@ class ItemSelector extends Component {
                     label={item.name}
                     value={item.id}
                     key={item.id}
-                    icon={PeriodIcon}
+                    icon={GenericIcon}
                 />
             ))}
         </Transfer>
