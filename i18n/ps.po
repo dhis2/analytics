@@ -470,4 +470,4 @@ msgid "Base"
 msgstr "اساس"
 
 msgid "No data"
-msgstr ""
+msgstr "د مالوماتو (ډاټا) نشتوالۍ"

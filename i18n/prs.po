@@ -469,4 +469,4 @@ msgid "Base"
 msgstr "اساس"
 
 msgid "No data"
-msgstr ""
+msgstr "معلوماتی وجود ندارد"

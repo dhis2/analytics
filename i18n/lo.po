@@ -470,4 +470,4 @@ msgid "Base"
 msgstr "ຖານ"
 
 msgid "No data"
-msgstr ""
+msgstr "ບໍ່ມີຂໍ້ມູນ"

@@ -59,10 +59,10 @@ msgid "Filter dimensions"
 msgstr "Filterdimensjoner"
 
 msgid "Main dimensions"
-msgstr ""
+msgstr "Hoveddimensjoner"
 
 msgid "Your dimensions"
-msgstr ""
+msgstr "Dine dimensjoner"
 
 msgid "Dimension recommended with selected data"
 msgstr "Dimensjon anbefalt med valgte data"
@@ -470,4 +470,4 @@ msgid "Base"
 msgstr "Grunn"
 
 msgid "No data"
-msgstr ""
+msgstr "Ingen data"
