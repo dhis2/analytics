@@ -1,5 +1,5 @@
 import { isColorBright } from './isColorBright'
-import { colors } from '@dhis2/ui-core'
+import { colors } from '@dhis2/ui-constants'
 import {
     getColorByValueFromLegendSet,
     LEGEND_DISPLAY_STRATEGY_BY_DATA_ITEM,

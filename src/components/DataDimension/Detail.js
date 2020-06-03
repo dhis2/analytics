@@ -1,7 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'
-import { SingleSelectField, SingleSelectOption } from '@dhis2/ui-core'
+import { SingleSelectField } from '@dhis2/ui-widgets'
+import { SingleSelectOption } from '@dhis2/ui-core'
 import { TOTALS, DETAIL } from '../../modules/dataTypes'
 
 import styles from './styles/Detail.style'

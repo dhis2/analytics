@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
-import { Transfer } from '@dhis2/ui-core'
+import { Transfer } from '@dhis2/ui-widgets'
 import i18n from '@dhis2/d2-i18n'
 
 import styles from '../styles/DimensionSelector.style'

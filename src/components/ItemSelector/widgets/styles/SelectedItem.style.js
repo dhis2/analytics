@@ -1,4 +1,4 @@
-import { colors, theme } from '@dhis2/ui-core'
+import { colors, theme } from '@dhis2/ui-constants'
 import css from 'styled-jsx/css'
 
 export default css`

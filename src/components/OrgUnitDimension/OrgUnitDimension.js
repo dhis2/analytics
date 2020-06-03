@@ -12,7 +12,7 @@ import {
 import { ouIdHelper } from '../../modules/ouIdHelper'
 import { DIMENSION_ID_ORGUNIT } from '../../modules/predefinedDimensions'
 import styles from './styles/OrgUnitDimension.style'
-import { colors } from '@dhis2/ui-core'
+import { colors } from '@dhis2/ui-constants'
 
 export const defaultState = {
     root: undefined,

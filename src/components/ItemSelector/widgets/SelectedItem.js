@@ -4,7 +4,7 @@ import cx from 'classnames'
 
 import ItemIcon from './ItemIcon'
 import DeselectIconButton from './DeselectIconButton'
-import { colors, theme } from '@dhis2/ui-core'
+import { colors, theme } from '@dhis2/ui-constants'
 import styles from './styles/SelectedItem.style'
 
 const onClickWrapper = ({ id, index, onClick }) => event =>

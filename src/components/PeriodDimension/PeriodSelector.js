@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { Transfer, TabBar, Tab } from '@dhis2/ui-core'
+import { TabBar, Tab } from '@dhis2/ui-core'
+import { Transfer } from '@dhis2/ui-widgets'
 import i18n from '@dhis2/d2-i18n'
 
 import FixedPeriodFilter from './FixedPeriodFilter'
