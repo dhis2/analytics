@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import debounce from 'lodash/debounce'
 import isEqual from 'lodash/isEqual'
 
-import ItemSelector from '../ItemSelector/ItemSelector'
+import ItemSelector from '../ItemSelector/ItemSelector' //TODO: Deprecate ItemSelector once this dependency is removed?
 import DataTypes from './DataTypesSelector'
 import Groups from './Groups'
 import FilterField from '../FilterField'
