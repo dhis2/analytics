@@ -1,3 +1,10 @@
+# [4.5.0](https://github.com/dhis2/analytics/compare/v4.4.3...v4.5.0) (2020-06-03)
+
+
+### Features
+
+* drill up/down support on table cells ([#445](https://github.com/dhis2/analytics/issues/445)) ([21f7ad3](https://github.com/dhis2/analytics/commit/21f7ad30455ace5bcd15f691f56c181e74cb3afc)), closes [#432](https://github.com/dhis2/analytics/issues/432) [#439](https://github.com/dhis2/analytics/issues/439) [#443](https://github.com/dhis2/analytics/issues/443) [#444](https://github.com/dhis2/analytics/issues/444) [#451](https://github.com/dhis2/analytics/issues/451) [#454](https://github.com/dhis2/analytics/issues/454)
+
 ## [4.4.3](https://github.com/dhis2/analytics/compare/v4.4.2...v4.4.3) (2020-06-02)
 
 
