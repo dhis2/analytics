@@ -60,10 +60,10 @@ msgid "Filter dimensions"
 msgstr "Các chiều lọc"
 
 msgid "Main dimensions"
-msgstr ""
+msgstr "Các chiều chính"
 
 msgid "Your dimensions"
-msgstr ""
+msgstr "Các chiều dữ liệu của bạn"
 
 msgid "Dimension recommended with selected data"
 msgstr ""
@@ -471,4 +471,4 @@ msgid "Base"
 msgstr "Đường đáy"
 
 msgid "No data"
-msgstr ""
+msgstr "Không có dữ liệu"
