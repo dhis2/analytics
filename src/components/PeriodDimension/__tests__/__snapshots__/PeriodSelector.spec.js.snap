@@ -48,6 +48,7 @@ exports[`The Period Selector component matches the snapshot 1`] = `
   maxSelections={Infinity}
   onChange={[Function]}
   optionsWidth="420px"
+  renderOption={[Function]}
   rightFooter={<React.Fragment />}
   selected={Array []}
   selectedEmptyComponent={

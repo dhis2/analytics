@@ -567,19 +567,31 @@ exports[`The SelectedItems component list with items matches the snapshot with l
       onClick={[Function]}
       type="button"
     >
-      <button
-        className="jsx-3488140868 "
+      <ButtonBase
+        className=""
         data-test="dhis2-uicore-button"
         onBlur={[Function]}
         onClick={[Function]}
         onFocus={[Function]}
         type="button"
       >
-        Deselect All
-        <JSXStyle
-          id="3488140868"
-        />
-      </button>
+        <button
+          className="jsx-905644840 "
+          data-test="dhis2-uicore-button"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          type="button"
+        >
+          Deselect All
+          <JSXStyle
+            id="4221149267"
+          />
+          <JSXStyle
+            id="905644840"
+          />
+        </button>
+      </ButtonBase>
     </Button>
   </div>
   <div
@@ -734,19 +746,31 @@ exports[`The SelectedItems component matches the snapshot when list is empty 1`]
       onClick={[Function]}
       type="button"
     >
-      <button
-        className="jsx-3488140868 "
+      <ButtonBase
+        className=""
         data-test="dhis2-uicore-button"
         onBlur={[Function]}
         onClick={[Function]}
         onFocus={[Function]}
         type="button"
       >
-        Deselect All
-        <JSXStyle
-          id="3488140868"
-        />
-      </button>
+        <button
+          className="jsx-905644840 "
+          data-test="dhis2-uicore-button"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          type="button"
+        >
+          Deselect All
+          <JSXStyle
+            id="4221149267"
+          />
+          <JSXStyle
+            id="905644840"
+          />
+        </button>
+      </ButtonBase>
     </Button>
   </div>
   <div
