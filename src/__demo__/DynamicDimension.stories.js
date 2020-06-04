@@ -25,7 +25,7 @@ storiesOf('DynamicDimension', module).add('ItemSelector one selected', () => {
         <ItemSelector
             onSelect={selected => console.log(selected)}
             allItems={items}
-            initialSelectedItems={[{ id: '2' }]}
+            initialSelectedItems={[{ id: '2', name: 'Two' }]}
         />
     )
 })
@@ -37,7 +37,7 @@ storiesOf('DynamicDimension', module).add(
             <ItemSelector
                 onSelect={selected => console.log(selected)}
                 allItems={items}
-                initialSelectedItems={[{ id: '6' }]}
+                initialSelectedItems={[{ id: '6', name: 'Six' }]}
             />
         )
     }
