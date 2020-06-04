@@ -1,6 +1,6 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import { InputField } from '@dhis2/ui-core'
+import { InputField } from '@dhis2/ui'
 
 import { Filter } from '../Filter'
 

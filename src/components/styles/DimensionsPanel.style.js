@@ -1,4 +1,4 @@
-import { colors } from '@dhis2/ui-constants'
+import { colors } from '@dhis2/ui'
 
 export const styles = {
     divContainer: {

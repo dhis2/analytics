@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { InputField } from '@dhis2/ui-widgets'
+import { InputField } from '@dhis2/ui'
 
 export const Filter = ({ text, onChange, onClear, placeholder, type }) => (
     <InputField

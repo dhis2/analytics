@@ -1,4 +1,4 @@
-import { colors, theme } from '@dhis2/ui-constants'
+import { colors, theme } from '@dhis2/ui'
 
 export const styles = {
     toolTip: {

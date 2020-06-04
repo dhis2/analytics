@@ -1,5 +1,5 @@
 import css from 'styled-jsx/css'
-import { spacers } from '@dhis2/ui-constants'
+import { spacers } from '@dhis2/ui'
 
 export default css`
     .leftSection {

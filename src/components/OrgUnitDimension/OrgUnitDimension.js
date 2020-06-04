@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react'
 import PropTypes from 'prop-types'
 import sortBy from 'lodash/sortBy'
 import { OrgUnitSelector, userOrgUnits } from '@dhis2/d2-ui-org-unit-dialog'
-import { CircularLoader } from '@dhis2/ui-core'
+import { CircularLoader, colors } from '@dhis2/ui'
 
 import {
     apiFetchOrganisationUnitGroups,
@@ -12,7 +12,6 @@ import {
 import { ouIdHelper } from '../../modules/ouIdHelper'
 import { DIMENSION_ID_ORGUNIT } from '../../modules/predefinedDimensions'
 import styles from './styles/OrgUnitDimension.style'
-import { colors } from '@dhis2/ui-constants'
 
 export const defaultState = {
     root: undefined,

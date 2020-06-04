@@ -1,8 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'
-import { SingleSelectField, InputField } from '@dhis2/ui-widgets'
-import { SingleSelectOption } from '@dhis2/ui-core'
+import { SingleSelectField, InputField, SingleSelectOption } from '@dhis2/ui'
 
 import { getFixedPeriodsOptions } from './utils/fixedPeriods'
 import styles from './styles/PeriodFilter.style'
