@@ -23,10 +23,10 @@ export const DynamicDimension = ({
         setItems(await apiFetchItemsByDimension(context, dimensionId)) // TODO: refactor to use the data engine instead
     // TODO: This needs to be refactored to use a loading spinner once Transfer supports it: https://jira.dhis2.org/browse/TECH-379
 
-    const selectItems = selectedItems => {
-        const formattedItems = selectedItems.map(selectedItem => ({
-            id: selectedItem,
-            name: items.find(item => item.id === selectedItem).name,
+    const onSelectItems = selectedItemIds => {
+        const formattedItems = selectedItemIds.map(id => ({
+            id,
+            name: items.find(item => item.id === id).name,
         })) // TODO: fetch the name from somewhere else, as not all content in selectedItems might be present in the items list
         onSelect({
             dimensionId: dimensionId,
@@ -36,9 +36,9 @@ export const DynamicDimension = ({
 
     return (
         <ItemSelector
-            onSelect={selectItems}
+            onSelect={onSelectItems}
             allItems={items}
-            initialSelectedItems={selectedItems}
+            initialSelectedItemIds={selectedItems.map(item => item.id)}
             rightFooter={rightFooter}
             // TODO: Pass in a func prop to fetch items, instead of fetching them on this level, to enable the loading spinner?
         />
@@ -48,7 +48,12 @@ export const DynamicDimension = ({
 DynamicDimension.propTypes = {
     context: PropTypes.object.isRequired,
     dimensionId: PropTypes.string.isRequired,
-    selectedItems: PropTypes.array.isRequired,
+    selectedItems: PropTypes.arrayOf(
+        PropTypes.shape({
+            id: PropTypes.string,
+            name: PropTypes.string,
+        })
+    ).isRequired,
     onSelect: PropTypes.func.isRequired,
     rightFooter: PropTypes.node,
 }

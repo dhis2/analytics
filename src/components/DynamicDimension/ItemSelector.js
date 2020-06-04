@@ -15,12 +15,12 @@ import {
 const ItemSelector = ({
     allItems,
     onSelect,
-    initialSelectedItems,
+    initialSelectedItemIds,
     leftHeader,
     rightFooter,
 }) => {
-    const [selectedItems, setSelectedItems] = useState(
-        initialSelectedItems.map(item => item.id)
+    const [selectedItemIds, setSelectedItemIds] = useState(
+        initialSelectedItemIds
     )
 
     const renderEmptySelection = () => (
@@ -33,10 +33,10 @@ const ItemSelector = ({
     return (
         <Transfer
             onChange={({ selected }) => {
-                setSelectedItems(selected)
+                setSelectedItemIds(selected)
                 onSelect(selected)
             }}
-            selected={selectedItems}
+            selected={selectedItemIds}
             leftHeader={leftHeader}
             filterable
             enableOrderChange
@@ -57,15 +57,20 @@ const ItemSelector = ({
 }
 
 ItemSelector.propTypes = {
-    allItems: PropTypes.arrayOf(PropTypes.object).isRequired,
+    allItems: PropTypes.arrayOf(
+        PropTypes.shape({
+            id: PropTypes.string,
+            name: PropTypes.string,
+        })
+    ).isRequired,
     onSelect: PropTypes.func.isRequired,
-    initialSelectedItems: PropTypes.arrayOf(PropTypes.object),
+    initialSelectedItemIds: PropTypes.arrayOf(PropTypes.string),
     leftHeader: PropTypes.node,
     rightFooter: PropTypes.node,
 }
 
 ItemSelector.defaultProps = {
-    initialSelectedItems: [],
+    initialSelectedItemIds: [],
 }
 
 export default ItemSelector

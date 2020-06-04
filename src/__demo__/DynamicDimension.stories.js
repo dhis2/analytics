@@ -6,9 +6,12 @@ import ItemSelector from '../components/DynamicDimension/ItemSelector'
 const items = [
     { id: '1', name: 'One' },
     { id: '2', name: 'Two' },
+    { id: '3', name: 'Three' },
+    { id: '4', name: 'Four' },
+    { id: '5', name: 'Five' },
 ]
 
-storiesOf('DynamicDimension', module).add('ItemSelector', () => {
+storiesOf('DynamicDimension', module).add('ItemSelector none selected', () => {
     return (
         <ItemSelector
             onSelect={selected => console.log(selected)}
@@ -16,3 +19,26 @@ storiesOf('DynamicDimension', module).add('ItemSelector', () => {
         />
     )
 })
+
+storiesOf('DynamicDimension', module).add('ItemSelector one selected', () => {
+    return (
+        <ItemSelector
+            onSelect={selected => console.log(selected)}
+            allItems={items}
+            initialSelectedItems={[{ id: '2' }]}
+        />
+    )
+})
+
+storiesOf('DynamicDimension', module).add(
+    'ItemSelector one selected not in options',
+    () => {
+        return (
+            <ItemSelector
+                onSelect={selected => console.log(selected)}
+                allItems={items}
+                initialSelectedItems={[{ id: '6' }]}
+            />
+        )
+    }
+)
