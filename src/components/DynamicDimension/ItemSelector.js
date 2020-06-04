@@ -5,7 +5,7 @@ import i18n from '@dhis2/d2-i18n'
 
 import styles from '../styles/DimensionSelector.style'
 import { TransferOption } from '../TransferOption'
-import GenericIcon from '../../assets/DimensionItemIcons/GenericIcon'
+// import GenericIcon from '../../assets/DimensionItemIcons/GenericIcon'
 import {
     TRANSFER_HEIGHT,
     TRANSFER_OPTIONS_WIDTH,
@@ -34,6 +34,10 @@ const ItemSelector = ({
         </>
     )
 
+    const transferItems = allItems.map(({ id, name }) => {
+        return { label: name, value: id }
+    })
+
     return (
         <Transfer
             onChange={({ selected }) => {
@@ -49,18 +53,11 @@ const ItemSelector = ({
             selectedWidth={TRANSFER_SELECTED_WIDTH}
             selectedEmptyComponent={renderEmptySelection()}
             rightFooter={rightFooter}
+            options={transferItems}
+            renderOption={TransferOption}
             // TODO: Add a filter placeholer once the Transfer component supports this (https://github.com/dhis2/ui/issues/131)
             // TODO: Add rightHeader "Selected Periods" once the Transfer component supports this (https://github.com/dhis2/ui-core/issues/885)
-        >
-            {allItems.map(item => (
-                <TransferOption
-                    label={item.name}
-                    value={item.id}
-                    key={item.id}
-                    icon={GenericIcon}
-                />
-            ))}
-        </Transfer>
+        />
     )
 }
 
