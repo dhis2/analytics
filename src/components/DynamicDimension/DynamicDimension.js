@@ -20,14 +20,14 @@ export const DynamicDimension = ({
     }, [])
 
     const getItems = async () =>
-        setItems(await apiFetchItemsByDimension(context, dimensionId))
+        setItems(await apiFetchItemsByDimension(context, dimensionId)) // TODO: refactor to use the data engine instead
     // TODO: This needs to be refactored to use a loading spinner once Transfer supports it: https://jira.dhis2.org/browse/TECH-379
 
-    const selectItems = items => {
-        const formattedItems = items.map(item => ({
-            id: item.value,
-            name: item.label,
-        }))
+    const selectItems = selectedItems => {
+        const formattedItems = selectedItems.map(selectedItem => ({
+            id: selectedItem,
+            name: items.find(item => item.id === selectedItem).name,
+        })) // TODO: fetch the name from somewhere else, as not all content in selectedItems might be present in the items list
         onSelect({
             dimensionId: dimensionId,
             items: formattedItems,

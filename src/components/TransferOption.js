@@ -1,12 +1,9 @@
-// import React, { useRef } from 'react'
 import React from 'react'
 import cx from 'classnames'
 import propTypes from '@dhis2/prop-types'
 import GenericIcon from '../assets/DimensionItemIcons/GenericIcon'
 
 import styles from './styles/TransferOption.style'
-
-// const DOUBLE_CLICK_MAX_DELAY = 500
 
 export const TransferOption = ({
     disabled,
@@ -15,41 +12,25 @@ export const TransferOption = ({
     onClick,
     onDoubleClick,
     value,
-    // icon,
+    //icon,
 }) => {
-    // const doubleClickTimeout = useRef(null)
-
     return (
         <div data-value={value} className="wrapper">
             <div
                 className={cx('chip', { highlighted, disabled })}
                 onClick={event => {
                     if (disabled) return
-
-                    const option = { label, value }
-
-                    // if (doubleClickTimeout.current) {
-                    //     clearTimeout(doubleClickTimeout.current)
-                    //     doubleClickTimeout.current = null
-
-                    //     onDoubleClick({ option }, event)
-                    // } else {
-                    //     doubleClickTimeout.current = setTimeout(() => {
-                    //         clearTimeout(doubleClickTimeout.current)
-                    //         doubleClickTimeout.current = null
-                    //     }, DOUBLE_CLICK_MAX_DELAY)
-
-                    onClick({ option }, event)
-                    // }
+                    onClick({ label, value }, event)
                 }}
                 onDoubleClick={event => {
                     if (disabled) return
-
-                    const option = { label, value }
-                    onDoubleClick({ option }, event)
+                    onDoubleClick({ label, value }, event)
                 }}
             >
                 <span className="icon">{GenericIcon}</span>
+                {
+                    // TODO: reimplement the custom icon, as different Dimensions need different icons
+                }
                 <span className="label">{label}</span>
             </div>
 
@@ -63,7 +44,7 @@ TransferOption.propTypes = {
     value: propTypes.string.isRequired,
     disabled: propTypes.bool,
     highlighted: propTypes.bool,
-    // icon: propTypes.node,
+    //icon: propTypes.node,
     onClick: propTypes.func,
     onDoubleClick: propTypes.func,
 }

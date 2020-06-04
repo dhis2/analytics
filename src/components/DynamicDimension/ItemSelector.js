@@ -20,11 +20,7 @@ const ItemSelector = ({
     rightFooter,
 }) => {
     const [selectedItems, setSelectedItems] = useState(
-        initialSelectedItems.map(item => ({
-            label: item.name,
-            value: item.id,
-            key: item.id,
-        }))
+        initialSelectedItems.map(item => item.id)
     )
 
     const renderEmptySelection = () => (
@@ -33,10 +29,6 @@ const ItemSelector = ({
             <style jsx>{styles}</style>
         </>
     )
-
-    const transferItems = allItems.map(({ id, name }) => {
-        return { label: name, value: id }
-    })
 
     return (
         <Transfer
@@ -53,7 +45,10 @@ const ItemSelector = ({
             selectedWidth={TRANSFER_SELECTED_WIDTH}
             selectedEmptyComponent={renderEmptySelection()}
             rightFooter={rightFooter}
-            options={transferItems}
+            options={allItems.map(({ id, name }) => ({
+                label: name,
+                value: id,
+            }))}
             renderOption={TransferOption}
             // TODO: Add a filter placeholer once the Transfer component supports this (https://github.com/dhis2/ui/issues/131)
             // TODO: Add rightHeader "Selected Periods" once the Transfer component supports this (https://github.com/dhis2/ui-core/issues/885)
