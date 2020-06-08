@@ -14,6 +14,7 @@
         "build": "npm run localize && BABEL_ENV=commonjs babel src --out-dir ./build --copy-files --verbose",
         "postbuild": "yarn build-storybook",
         "build-storybook": "build-storybook",
+        "lint": "d2-style js check || d2-style text check",
         "start-storybook": "start-storybook --port 5000",
         "start": "yarn start-storybook",
         "localize": "npm run extract-pot && d2-i18n-generate -l -n default -p ./i18n/ -o ./src/locales/",
