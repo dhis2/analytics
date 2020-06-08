@@ -1,3 +1,10 @@
+## [4.5.2](https://github.com/dhis2/analytics/compare/v4.5.1...v4.5.2) (2020-06-08)
+
+
+### Bug Fixes
+
+* upgrade d2-ui dependencies for translations ([#478](https://github.com/dhis2/analytics/issues/478)) ([937abcb](https://github.com/dhis2/analytics/commit/937abcb0e1278b165b020a38f6123a4edb871b0d))
+
 ## [4.5.1](https://github.com/dhis2/analytics/compare/v4.5.0...v4.5.1) (2020-06-05)
 
 
