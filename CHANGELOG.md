@@ -1,3 +1,12 @@
+## [2.4.16](https://github.com/dhis2/analytics/compare/v2.4.15...v2.4.16) (2020-06-08)
+
+
+### Bug Fixes
+
+* need lint script for the build and publish ([#479](https://github.com/dhis2/analytics/issues/479)) ([a7bd51b](https://github.com/dhis2/analytics/commit/a7bd51b9b1a9e96cae1d1235a19780591a9497a0))
+* upgrade d2-ui dependencies for translations ([#477](https://github.com/dhis2/analytics/issues/477)) ([152507c](https://github.com/dhis2/analytics/commit/152507cfc3e02d916becba9194acc7d2dc10e1dc))
+* **translations:** sync translations from transifex (2.4.x) ([f796aba](https://github.com/dhis2/analytics/commit/f796abab9dde80b6bcfd02d1f359f640e44607aa))
+
 ## [2.4.5](https://github.com/dhis2/analytics/compare/v2.4.4...v2.4.5) (2019-10-10)
 
 
