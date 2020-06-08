@@ -25,7 +25,7 @@ const FixedPeriodFilter = ({
                     <SingleSelectOption
                         key={option.id}
                         value={option.id}
-                        label={option.getName()}
+                        label={option.name}
                     />
                 ))}
             </SingleSelectField>
@@ -46,7 +46,7 @@ const FixedPeriodFilter = ({
 )
 
 FixedPeriodFilter.propTypes = {
-    currentPeriodType: PropTypes.object.isRequired,
+    currentPeriodType: PropTypes.string.isRequired,
     currentYear: PropTypes.string.isRequired,
     onSelectPeriodType: PropTypes.func.isRequired,
     onSelectYear: PropTypes.func.isRequired,

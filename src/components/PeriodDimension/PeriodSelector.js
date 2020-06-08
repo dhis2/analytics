@@ -9,7 +9,7 @@ import { MONTHS, getRelativePeriodsOptionsById } from './utils/relativePeriods'
 import { MONTHLY, getFixedPeriodsOptionsById } from './utils/fixedPeriods'
 import styles from '../styles/DimensionSelector.style'
 import { TransferOption } from '../TransferOption'
-import PeriodIcon from '../../assets/DimensionItemIcons/PeriodIcon'
+//import PeriodIcon from '../../assets/DimensionItemIcons/PeriodIcon' //TODO: Reimplement the icon
 import {
     TRANSFER_HEIGHT,
     TRANSFER_OPTIONS_WIDTH,
@@ -31,16 +31,10 @@ class PeriodSelector extends Component {
         selectedPeriods: [],
         isRelative: true,
         relativeFilter: {
-            periodType: {
-                label: defaultRelativePeriodType.getName(),
-                value: defaultRelativePeriodType.id,
-            },
+            periodType: defaultRelativePeriodType.id,
         },
         fixedFilter: {
-            periodType: {
-                label: defaultFixedPeriodType.getName(),
-                value: defaultFixedPeriodType.id,
-            },
+            periodType: defaultFixedPeriodType.id,
             year: defaultFixedPeriodYear.toString(),
         },
     }
@@ -48,13 +42,7 @@ class PeriodSelector extends Component {
     constructor(props) {
         super(props)
 
-        this.state.selectedPeriods = this.props.initialSelectedPeriods.map(
-            item => ({
-                label: item.name,
-                value: item.id,
-                key: item.id,
-            })
-        )
+        this.state.selectedPeriods = this.props.initialSelectedPeriods
     }
 
     onIsRelativeClick = isRelative => {
@@ -63,10 +51,10 @@ class PeriodSelector extends Component {
             this.setState({
                 allPeriods: isRelative
                     ? getRelativePeriodsOptionsById(
-                          this.state.relativeFilter.periodType.value
+                          this.state.relativeFilter.periodType
                       ).getPeriods()
                     : getFixedPeriodsOptionsById(
-                          this.state.fixedFilter.periodType.value
+                          this.state.fixedFilter.periodType
                       ).getPeriods(
                           fixedPeriodConfig(Number(this.state.fixedFilter.year))
                       ),
@@ -100,7 +88,7 @@ class PeriodSelector extends Component {
                             })
                             this.setState({
                                 allPeriods: getRelativePeriodsOptionsById(
-                                    filter.value
+                                    filter
                                 ).getPeriods(),
                             })
                         }}
@@ -132,7 +120,7 @@ class PeriodSelector extends Component {
         this.setState({
             fixedFilter,
             allPeriods: getFixedPeriodsOptionsById(
-                fixedFilter.periodType.value
+                fixedFilter.periodType
             ).getPeriods(fixedPeriodConfig(Number(fixedFilter.year))),
         })
     }
@@ -147,10 +135,17 @@ class PeriodSelector extends Component {
     render = () => (
         <Transfer
             onChange={({ selected }) => {
-                this.setState({ selectedPeriods: selected })
-                this.props.onSelect(selected)
+                const formattedItems = selected.map(id => ({
+                    id,
+                    name: [
+                        ...this.state.allPeriods,
+                        ...this.state.selectedPeriods,
+                    ].find(item => item.id === id).name,
+                }))
+                this.setState({ selectedPeriods: formattedItems })
+                this.props.onSelect(formattedItems)
             }}
-            selected={this.state.selectedPeriods}
+            selected={this.state.selectedPeriods.map(period => period.id)}
             leftHeader={this.renderHeader()}
             enableOrderChange
             height={TRANSFER_HEIGHT}
@@ -158,23 +153,24 @@ class PeriodSelector extends Component {
             selectedWidth={TRANSFER_SELECTED_WIDTH}
             selectedEmptyComponent={this.renderEmptySelection()}
             rightFooter={this.props.rightFooter}
+            options={this.state.allPeriods.map(({ id, name }) => ({
+                label: name,
+                value: id,
+            }))}
+            renderOption={TransferOption}
             // TODO: Add rightHeader "Selected Periods" once the Transfer component supports this (https://github.com/dhis2/ui-core/issues/885)
-        >
-            {this.state.allPeriods.map(item => (
-                <TransferOption
-                    label={item.getName()}
-                    value={item.id}
-                    key={item.id}
-                    icon={PeriodIcon}
-                />
-            ))}
-        </Transfer>
+        ></Transfer>
     )
 }
 
 PeriodSelector.propTypes = {
     onSelect: PropTypes.func.isRequired,
-    initialSelectedPeriods: PropTypes.arrayOf(PropTypes.object),
+    initialSelectedPeriods: PropTypes.arrayOf(
+        PropTypes.shape({
+            id: PropTypes.string,
+            name: PropTypes.string,
+        })
+    ),
     rightFooter: PropTypes.node,
 }
 

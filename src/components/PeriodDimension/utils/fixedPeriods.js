@@ -38,7 +38,7 @@ const getMonthName = key => {
     return monthNames[key]
 }
 
-const dailyPeriodType = (formatYyyyMmDd, fnFilter) => {
+const getDailyPeriodType = (formatYyyyMmDd, fnFilter) => {
     return config => {
         let periods = []
         const offset = parseInt(config.offset, 10)
@@ -51,7 +51,7 @@ const dailyPeriodType = (formatYyyyMmDd, fnFilter) => {
             const period = {}
             period.startDate = formatYyyyMmDd(date)
             period.endDate = period.startDate
-            period.getName = () => period.startDate
+            period.name = period.startDate
             period.iso = period.startDate.replace(/-/g, '')
             period.id = period.iso
             periods.push(period)
@@ -65,7 +65,7 @@ const dailyPeriodType = (formatYyyyMmDd, fnFilter) => {
     }
 }
 
-const weeklyPeriodType = (formatYyyyMmDd, weekObj, fnFilter) => {
+const getWeeklyPeriodType = (formatYyyyMmDd, weekObj, fnFilter) => {
     // Calculate the first date of an EPI year base on ISO standard  ( first week always contains 4th Jan )
     const getEpiWeekStartDay = (year, startDayOfWeek) => {
         const jan4 = new Date(year, 0, 4)
@@ -101,10 +101,9 @@ const weeklyPeriodType = (formatYyyyMmDd, weekObj, fnFilter) => {
             period.endDate = formatYyyyMmDd(date)
 
             const weekNumber = week
-            period.getName = () =>
-                `${i18n.t('Week {{weekNumber}}', { weekNumber })} - ${
-                    period.startDate
-                } - ${period.endDate}`
+            period.name = `${i18n.t('Week {{weekNumber}}', { weekNumber })} - ${
+                period.startDate
+            } - ${period.endDate}`
 
             // if end date is Jan 4th or later, week belongs to next year
             if (date.getFullYear() > year && date.getDate() >= 4) {
@@ -124,7 +123,7 @@ const weeklyPeriodType = (formatYyyyMmDd, weekObj, fnFilter) => {
     }
 }
 
-const biWeeklyPeriodType = (formatYyyyMmDd, fnFilter) => {
+const getBiWeeklyPeriodType = (formatYyyyMmDd, fnFilter) => {
     return config => {
         let periods = []
         const offset = parseInt(config.offset, 10)
@@ -151,10 +150,9 @@ const biWeeklyPeriodType = (formatYyyyMmDd, fnFilter) => {
 
             period.endDate = formatYyyyMmDd(date)
             const biWeekNumber = biWeek
-            period.getName = () =>
-                `${i18n.t('Bi-Week {{biWeekNumber}}', { biWeekNumber })} - ${
-                    period.startDate
-                } - ${period.endDate}`
+            period.name = `${i18n.t('Bi-Week {{biWeekNumber}}', {
+                biWeekNumber,
+            })} - ${period.startDate} - ${period.endDate}`
 
             // if end date is Jan 4th or later, biweek belongs to next year
             if (date.getFullYear() > year && date.getDate() >= 4) {
@@ -175,7 +173,7 @@ const biWeeklyPeriodType = (formatYyyyMmDd, fnFilter) => {
     }
 }
 
-const monthlyPeriodType = (formatYyyyMmDd, fnFilter) => {
+const getMonthlyPeriodType = (formatYyyyMmDd, fnFilter) => {
     const formatIso = date => {
         const y = date.getFullYear()
         let m = String(date.getMonth() + 1)
@@ -201,7 +199,7 @@ const monthlyPeriodType = (formatYyyyMmDd, fnFilter) => {
             date.setDate(1)
             period.startDate = formatYyyyMmDd(date)
             const monthName = getMonthName(date.getMonth())
-            period.getName = () => `${monthName} ${year}`
+            period.name = `${monthName} ${year}`
             period.iso = formatIso(date)
             period.id = period.iso
 
@@ -217,7 +215,7 @@ const monthlyPeriodType = (formatYyyyMmDd, fnFilter) => {
     }
 }
 
-const biMonthlyPeriodType = (formatYyyyMmDd, fnFilter) => {
+const getBiMonthlyPeriodType = (formatYyyyMmDd, fnFilter) => {
     return config => {
         let periods = []
         const offset = parseInt(config.offset, 10)
@@ -237,7 +235,7 @@ const biMonthlyPeriodType = (formatYyyyMmDd, fnFilter) => {
             const monthStart = getMonthName(date.getMonth())
             const monthEnd = getMonthName(date.getMonth() + 1)
             const fullYear = date.getFullYear()
-            period.getName = () => `${monthStart} - ${monthEnd} ${fullYear}`
+            period.name = `${monthStart} - ${monthEnd} ${fullYear}`
             period.iso = `${year}0${index}B`
             period.id = period.iso
             periods.push(period)
@@ -254,7 +252,7 @@ const biMonthlyPeriodType = (formatYyyyMmDd, fnFilter) => {
     }
 }
 
-const quarterlyPeriodType = (formatYyyyMmDd, fnFilter) => {
+const getQuarterlyPeriodType = (formatYyyyMmDd, fnFilter) => {
     return config => {
         let periods = []
         const offset = parseInt(config.offset, 10)
@@ -274,7 +272,7 @@ const quarterlyPeriodType = (formatYyyyMmDd, fnFilter) => {
             const monthStart = getMonthName(date.getMonth())
             const monthEnd = getMonthName(date.getMonth() + 2)
             const fullYear = date.getFullYear()
-            period.getName = () => `${monthStart} - ${monthEnd} ${fullYear}`
+            period.name = `${monthStart} - ${monthEnd} ${fullYear}`
             period.iso = `${year}Q${quarter}`
             period.id = period.iso
             periods.push(period)
@@ -290,7 +288,7 @@ const quarterlyPeriodType = (formatYyyyMmDd, fnFilter) => {
     }
 }
 
-const sixMonthlyPeriodType = fnFilter => {
+const getSixMonthlyPeriodType = fnFilter => {
     return config => {
         let periods = []
         const offset = parseInt(config.offset, 10)
@@ -301,7 +299,7 @@ const sixMonthlyPeriodType = fnFilter => {
         let period = {}
         period.startDate = `${year}-01-01`
         period.endDate = `${year}-06-30`
-        period.getName = () => `${getMonthName(0)} - ${getMonthName(5)} ${year}`
+        period.name = `${getMonthName(0)} - ${getMonthName(5)} ${year}`
         period.iso = `${year}S1`
         period.id = period.iso
         periods.push(period)
@@ -309,8 +307,7 @@ const sixMonthlyPeriodType = fnFilter => {
         period = {}
         period.startDate = `${year}-07-01`
         period.endDate = `${year}-12-31`
-        period.getName = () =>
-            `${getMonthName(6)} - ${getMonthName(11)} ${year}`
+        period.name = `${getMonthName(6)} - ${getMonthName(11)} ${year}`
         period.iso = `${year}S2`
         period.id = period.iso
         periods.push(period)
@@ -322,7 +319,7 @@ const sixMonthlyPeriodType = fnFilter => {
     }
 }
 
-const sixMonthlyAprilPeriodType = fnFilter => {
+const getSixMonthlyAprilPeriodType = fnFilter => {
     return config => {
         let periods = []
         const offset = parseInt(config.offset, 10)
@@ -333,7 +330,7 @@ const sixMonthlyAprilPeriodType = fnFilter => {
         let period = {}
         period.startDate = `${year}-04-01`
         period.endDate = `${year}-09-30`
-        period.getName = () => `${getMonthName(3)} - ${getMonthName(8)} ${year}`
+        period.name = `${getMonthName(3)} - ${getMonthName(8)} ${year}`
         period.iso = `${year}AprilS1`
         period.id = period.iso
         periods.push(period)
@@ -341,8 +338,8 @@ const sixMonthlyAprilPeriodType = fnFilter => {
         period = {}
         period.startDate = `${year}-10-01`
         period.endDate = `${year + 1}-03-31`
-        period.getName = () =>
-            `${getMonthName(9)} ${year} - ${getMonthName(2)} ${year + 1}`
+        period.name = `${getMonthName(9)} ${year} - ${getMonthName(2)} ${year +
+            1}`
         period.iso = `${year}AprilS2`
         period.id = period.iso
         periods.push(period)
@@ -354,7 +351,7 @@ const sixMonthlyAprilPeriodType = fnFilter => {
     }
 }
 
-const yearlyPeriodType = (formatYyyyMmDd, fnFilter) => {
+const getYearlyPeriodType = (formatYyyyMmDd, fnFilter) => {
     return config => {
         let periods = []
         const offset = parseInt(config.offset, 10)
@@ -369,7 +366,7 @@ const yearlyPeriodType = (formatYyyyMmDd, fnFilter) => {
             date.setMonth(0, 1)
             period.startDate = formatYyyyMmDd(date)
             const dateString = date.getFullYear().toString()
-            period.getName = () => dateString
+            period.name = dateString
             period.iso = date.getFullYear().toString()
             period.id = period.iso.toString()
             periods.push(period)
@@ -384,7 +381,7 @@ const yearlyPeriodType = (formatYyyyMmDd, fnFilter) => {
     }
 }
 
-const financialOctoberPeriodType = (formatYyyyMmDd, fnFilter) => {
+const getFinancialOctoberPeriodType = (formatYyyyMmDd, fnFilter) => {
     return config => {
         let periods = []
         const offset = parseInt(config.offset, 10)
@@ -401,10 +398,9 @@ const financialOctoberPeriodType = (formatYyyyMmDd, fnFilter) => {
             period.startDate = formatYyyyMmDd(date)
             const yearStart = date.getFullYear()
             const yearEnd = date.getFullYear() + 1
-            period.getName = () =>
-                `${getMonthName(9)} ${yearStart} - ${getMonthName(
-                    8
-                )} ${yearEnd}`
+            period.name = `${getMonthName(9)} ${yearStart} - ${getMonthName(
+                8
+            )} ${yearEnd}`
             period.id = `${date.getFullYear()}Oct`
             periods.push(period)
             date.setDate(date.getDate() - 1)
@@ -418,7 +414,7 @@ const financialOctoberPeriodType = (formatYyyyMmDd, fnFilter) => {
     }
 }
 
-const financialNovemberPeriodType = (formatYyyyMmDd, fnFilter) => {
+const getFinancialNovemberPeriodType = (formatYyyyMmDd, fnFilter) => {
     return config => {
         let periods = []
         const offset = parseInt(config.offset, 10)
@@ -435,10 +431,9 @@ const financialNovemberPeriodType = (formatYyyyMmDd, fnFilter) => {
             period.startDate = formatYyyyMmDd(date)
             const yearStart = date.getFullYear()
             const yearEnd = date.getFullYear() + 1
-            period.getName = () =>
-                `${getMonthName(10)} ${yearStart} - ${getMonthName(
-                    9
-                )} ${yearEnd}`
+            period.name = `${getMonthName(10)} ${yearStart} - ${getMonthName(
+                9
+            )} ${yearEnd}`
             period.id = `${date.getFullYear()}Nov`
             periods.push(period)
             date.setDate(date.getDate() - 1)
@@ -452,7 +447,7 @@ const financialNovemberPeriodType = (formatYyyyMmDd, fnFilter) => {
     }
 }
 
-const financialJulyPeriodType = (formatYyyyMmDd, fnFilter) => {
+const getFinancialJulyPeriodType = (formatYyyyMmDd, fnFilter) => {
     return config => {
         let periods = []
         const offset = parseInt(config.offset, 10)
@@ -469,10 +464,9 @@ const financialJulyPeriodType = (formatYyyyMmDd, fnFilter) => {
             period.startDate = formatYyyyMmDd(date)
             const yearStart = date.getFullYear()
             const yearEnd = date.getFullYear() + 1
-            period.getName = () =>
-                `${getMonthName(6)} ${yearStart} - ${getMonthName(
-                    5
-                )} ${yearEnd}`
+            period.name = `${getMonthName(6)} ${yearStart} - ${getMonthName(
+                5
+            )} ${yearEnd}`
             period.id = `${date.getFullYear()}July`
             periods.push(period)
             date.setDate(date.getDate() - 1)
@@ -486,7 +480,7 @@ const financialJulyPeriodType = (formatYyyyMmDd, fnFilter) => {
     }
 }
 
-const financialAprilPeriodType = (formatYyyyMmDd, fnFilter) => {
+const getFinancialAprilPeriodType = (formatYyyyMmDd, fnFilter) => {
     return config => {
         let periods = []
         const offset = parseInt(config.offset, 10)
@@ -503,10 +497,9 @@ const financialAprilPeriodType = (formatYyyyMmDd, fnFilter) => {
             period.startDate = formatYyyyMmDd(date)
             const yearStart = date.getFullYear()
             const yearEnd = date.getFullYear() + 1
-            period.getName = () =>
-                `${getMonthName(3)} ${yearStart} - ${getMonthName(
-                    2
-                )} ${yearEnd}`
+            period.name = `${getMonthName(3)} ${yearStart} - ${getMonthName(
+                2
+            )} ${yearEnd}`
             period.id = `${date.getFullYear()}April`
             periods.push(period)
             date.setDate(date.getDate() - 1)
@@ -544,127 +537,127 @@ const filterFuturePeriods = periods => {
     return array
 }
 
-const options = [
+const getOptions = () => [
     {
         id: DAILY,
-        getPeriods: dailyPeriodType(formatYyyyMmDd, filterFuturePeriods),
-        getName: () => i18n.t('Daily'),
+        getPeriods: getDailyPeriodType(formatYyyyMmDd, filterFuturePeriods),
+        name: i18n.t('Daily'),
     },
     {
         id: WEEKLY,
-        getPeriods: weeklyPeriodType(
+        getPeriods: getWeeklyPeriodType(
             formatYyyyMmDd,
             { shortName: '', startDay: 1 },
             filterFuturePeriods
         ),
-        getName: () => i18n.t('Weekly'),
+        name: i18n.t('Weekly'),
     },
     {
         id: BIWEEKLY,
-        getPeriods: biWeeklyPeriodType(formatYyyyMmDd, filterFuturePeriods),
-        getName: () => i18n.t('Bi-weekly'),
+        getPeriods: getBiWeeklyPeriodType(formatYyyyMmDd, filterFuturePeriods),
+        name: i18n.t('Bi-weekly'),
     },
     {
         id: WEEKLYWED,
-        getPeriods: weeklyPeriodType(
+        getPeriods: getWeeklyPeriodType(
             formatYyyyMmDd,
             { shortName: 'Wed', startDay: 3 },
             filterFuturePeriods
         ),
-        getName: () => i18n.t('Weekly (Start Wednesday)'),
+        name: i18n.t('Weekly (Start Wednesday)'),
     },
     {
         id: WEEKLYTHU,
-        getPeriods: weeklyPeriodType(
+        getPeriods: getWeeklyPeriodType(
             formatYyyyMmDd,
             { shortName: 'Thu', startDay: 4 },
             filterFuturePeriods
         ),
-        getName: () => i18n.t('Weekly (Start Thursday)'),
+        name: i18n.t('Weekly (Start Thursday)'),
     },
     {
         id: WEEKLYSAT,
-        getPeriods: weeklyPeriodType(
+        getPeriods: getWeeklyPeriodType(
             formatYyyyMmDd,
             { shortName: 'Sat', startDay: 6 },
             filterFuturePeriods
         ),
-        getName: () => i18n.t('Weekly (Start Saturday)'),
+        name: i18n.t('Weekly (Start Saturday)'),
     },
     {
         id: WEEKLYSUN,
-        getPeriods: weeklyPeriodType(
+        getPeriods: getWeeklyPeriodType(
             formatYyyyMmDd,
             { shortName: 'Sun', startDay: 7 },
             filterFuturePeriods
         ),
-        getName: () => i18n.t('Weekly (Start Sunday)'),
+        name: i18n.t('Weekly (Start Sunday)'),
     },
     {
         id: MONTHLY,
-        getPeriods: monthlyPeriodType(formatYyyyMmDd, filterFuturePeriods),
-        getName: () => i18n.t('Monthly'),
+        getPeriods: getMonthlyPeriodType(formatYyyyMmDd, filterFuturePeriods),
+        name: i18n.t('Monthly'),
     },
     {
         id: BIMONTHLY,
-        getPeriods: biMonthlyPeriodType(formatYyyyMmDd, filterFuturePeriods),
-        getName: () => i18n.t('Bi-monthly'),
+        getPeriods: getBiMonthlyPeriodType(formatYyyyMmDd, filterFuturePeriods),
+        name: i18n.t('Bi-monthly'),
     },
     {
         id: QUARTERLY,
-        getPeriods: quarterlyPeriodType(formatYyyyMmDd, filterFuturePeriods),
-        getName: () => i18n.t('Quarterly'),
+        getPeriods: getQuarterlyPeriodType(formatYyyyMmDd, filterFuturePeriods),
+        name: i18n.t('Quarterly'),
     },
     {
         id: SIXMONTHLY,
-        getPeriods: sixMonthlyPeriodType(filterFuturePeriods),
-        getName: () => i18n.t('Six-monthly'),
+        getPeriods: getSixMonthlyPeriodType(filterFuturePeriods),
+        name: i18n.t('Six-monthly'),
     },
     {
         id: SIXMONTHLYAPR,
-        getPeriods: sixMonthlyAprilPeriodType(filterFuturePeriods),
-        getName: () => i18n.t('Six-monthly April'),
+        getPeriods: getSixMonthlyAprilPeriodType(filterFuturePeriods),
+        name: i18n.t('Six-monthly April'),
     },
     {
         id: YEARLY,
-        getPeriods: yearlyPeriodType(formatYyyyMmDd, filterFuturePeriods),
-        getName: () => i18n.t('Yearly'),
+        getPeriods: getYearlyPeriodType(formatYyyyMmDd, filterFuturePeriods),
+        name: i18n.t('Yearly'),
     },
     {
         id: FYNOV,
-        getPeriods: financialNovemberPeriodType(
+        getPeriods: getFinancialNovemberPeriodType(
             formatYyyyMmDd,
             filterFuturePeriods
         ),
-        getName: () => i18n.t('Financial year (Start November)'),
+        name: i18n.t('Financial year (Start November)'),
     },
     {
         id: FYOCT,
-        getPeriods: financialOctoberPeriodType(
+        getPeriods: getFinancialOctoberPeriodType(
             formatYyyyMmDd,
             filterFuturePeriods
         ),
-        getName: () => i18n.t('Financial year (Start October)'),
+        name: i18n.t('Financial year (Start October)'),
     },
     {
         id: FYJUL,
-        getPeriods: financialJulyPeriodType(
+        getPeriods: getFinancialJulyPeriodType(
             formatYyyyMmDd,
             filterFuturePeriods
         ),
-        getName: () => i18n.t('Financial year (Start July)'),
+        name: i18n.t('Financial year (Start July)'),
     },
     {
         id: FYAPR,
-        getPeriods: financialAprilPeriodType(
+        getPeriods: getFinancialAprilPeriodType(
             formatYyyyMmDd,
             filterFuturePeriods
         ),
-        getName: () => i18n.t('Financial year (Start April)'),
+        name: i18n.t('Financial year (Start April)'),
     },
 ]
 
 export const getFixedPeriodsOptionsById = id =>
-    options.find(option => option.id === id)
+    getOptions().find(option => option.id === id)
 
-export const getFixedPeriodsOptions = () => options
+export const getFixedPeriodsOptions = () => getOptions()

@@ -59,7 +59,7 @@ describe('fixedPeriods utils', () => {
                 iso: '20190101',
                 id: '20190101',
             })
-            expect(periods[0].getName()).toEqual('2019-01-01')
+            expect(periods[0].name).toEqual('2019-01-01')
         })
 
         it('should return the correct object for 31 dec 2019 day', () => {
@@ -70,7 +70,7 @@ describe('fixedPeriods utils', () => {
                 id: '20191231',
             })
 
-            expect(periods[364].getName()).toEqual('2019-12-31')
+            expect(periods[364].name).toEqual('2019-12-31')
         })
     })
 
@@ -98,9 +98,7 @@ describe('fixedPeriods utils', () => {
                 iso: '2009W1',
                 id: '2009W1',
             })
-            expect(periods[0].getName()).toEqual(
-                'Week 1 - 2008-12-29 - 2009-01-04'
-            )
+            expect(periods[0].name).toEqual('Week 1 - 2008-12-29 - 2009-01-04')
         })
 
         it('should return the correct object for week 53', () => {
@@ -110,7 +108,7 @@ describe('fixedPeriods utils', () => {
                 iso: '2009W53',
                 id: '2009W53',
             })
-            expect(periods[52].getName()).toEqual(
+            expect(periods[52].name).toEqual(
                 'Week 53 - 2009-12-28 - 2010-01-03'
             )
         })
@@ -139,7 +137,7 @@ describe('fixedPeriods utils', () => {
                     iso: '2019WedW27',
                     id: '2019WedW27',
                 })
-                expect(periods[26].getName()).toEqual(
+                expect(periods[26].name).toEqual(
                     'Week 27 - 2019-07-03 - 2019-07-09'
                 )
             })
@@ -169,7 +167,7 @@ describe('fixedPeriods utils', () => {
                     iso: '2019ThuW27',
                     id: '2019ThuW27',
                 })
-                expect(periods[26].getName()).toEqual(
+                expect(periods[26].name).toEqual(
                     'Week 27 - 2019-07-04 - 2019-07-10'
                 )
             })
@@ -200,7 +198,7 @@ describe('fixedPeriods utils', () => {
                     id: '2019SatW10',
                 })
 
-                expect(periods[9].getName()).toEqual(
+                expect(periods[9].name).toEqual(
                     'Week 10 - 2019-03-02 - 2019-03-08'
                 )
             })
@@ -230,7 +228,7 @@ describe('fixedPeriods utils', () => {
                     iso: '2019SunW11',
                     id: '2019SunW11',
                 })
-                expect(periods[10].getName()).toEqual(
+                expect(periods[10].name).toEqual(
                     'Week 11 - 2019-03-10 - 2019-03-16'
                 )
             })
@@ -261,7 +259,7 @@ describe('fixedPeriods utils', () => {
                 iso: '2019BiW1',
                 id: '2019BiW1',
             })
-            expect(periods[0].getName()).toEqual(
+            expect(periods[0].name).toEqual(
                 'Bi-Week 1 - 2018-12-31 - 2019-01-13'
             )
         })
@@ -273,7 +271,7 @@ describe('fixedPeriods utils', () => {
                 iso: '2019BiW26',
                 id: '2019BiW26',
             })
-            expect(periods[25].getName()).toEqual(
+            expect(periods[25].name).toEqual(
                 'Bi-Week 26 - 2019-12-16 - 2019-12-29'
             )
         })
@@ -303,7 +301,7 @@ describe('fixedPeriods utils', () => {
                 iso: '201901',
                 id: '201901',
             })
-            expect(periods[0].getName()).toEqual('January 2019')
+            expect(periods[0].name).toEqual('January 2019')
         })
 
         it('should return the correct object for month 12', () => {
@@ -313,7 +311,7 @@ describe('fixedPeriods utils', () => {
                 iso: '201912',
                 id: '201912',
             })
-            expect(periods[11].getName()).toEqual('December 2019')
+            expect(periods[11].name).toEqual('December 2019')
         })
     })
 
@@ -341,7 +339,7 @@ describe('fixedPeriods utils', () => {
                 iso: '201901B',
                 id: '201901B',
             })
-            expect(periods[0].getName()).toEqual('January - February 2019')
+            expect(periods[0].name).toEqual('January - February 2019')
         })
 
         it('should return the correct object for bi-month 3', () => {
@@ -351,7 +349,7 @@ describe('fixedPeriods utils', () => {
                 iso: '201903B',
                 id: '201903B',
             })
-            expect(periods[2].getName()).toEqual('May - June 2019')
+            expect(periods[2].name).toEqual('May - June 2019')
         })
 
         it('should return the correct object for bi-month 6', () => {
@@ -361,7 +359,7 @@ describe('fixedPeriods utils', () => {
                 iso: '201906B',
                 id: '201906B',
             })
-            expect(periods[5].getName()).toEqual('November - December 2019')
+            expect(periods[5].name).toEqual('November - December 2019')
         })
     })
 
@@ -389,7 +387,7 @@ describe('fixedPeriods utils', () => {
                 iso: '2019Q1',
                 id: '2019Q1',
             })
-            expect(periods[0].getName()).toEqual('January - March 2019')
+            expect(periods[0].name).toEqual('January - March 2019')
         })
 
         it('should return the correct object for quarter 4', () => {
@@ -399,7 +397,7 @@ describe('fixedPeriods utils', () => {
                 iso: '2019Q4',
                 id: '2019Q4',
             })
-            expect(periods[3].getName()).toEqual('October - December 2019')
+            expect(periods[3].name).toEqual('October - December 2019')
         })
     })
 
@@ -427,7 +425,7 @@ describe('fixedPeriods utils', () => {
                 iso: '2019S1',
                 id: '2019S1',
             })
-            expect(periods[0].getName()).toEqual('January - June 2019')
+            expect(periods[0].name).toEqual('January - June 2019')
         })
 
         it('should return the correct object for six-monthly 2', () => {
@@ -437,7 +435,7 @@ describe('fixedPeriods utils', () => {
                 iso: '2019S2',
                 id: '2019S2',
             })
-            expect(periods[1].getName()).toEqual('July - December 2019')
+            expect(periods[1].name).toEqual('July - December 2019')
         })
     })
 
@@ -465,7 +463,7 @@ describe('fixedPeriods utils', () => {
                 iso: '2019AprilS1',
                 id: '2019AprilS1',
             })
-            expect(periods[0].getName()).toEqual('April - September 2019')
+            expect(periods[0].name).toEqual('April - September 2019')
         })
 
         it('should return the correct object for six-monthly April 2', () => {
@@ -475,7 +473,7 @@ describe('fixedPeriods utils', () => {
                 iso: '2019AprilS2',
                 id: '2019AprilS2',
             })
-            expect(periods[1].getName()).toEqual('October 2019 - March 2020')
+            expect(periods[1].name).toEqual('October 2019 - March 2020')
         })
     })
 
@@ -503,7 +501,7 @@ describe('fixedPeriods utils', () => {
                 iso: '2020',
                 id: '2020',
             })
-            expect(periods[0].getName()).toEqual('2020')
+            expect(periods[0].name).toEqual('2020')
         })
 
         it('should return the correct object for yearly period 10', () => {
@@ -513,7 +511,7 @@ describe('fixedPeriods utils', () => {
                 iso: '2029',
                 id: '2029',
             })
-            expect(periods[9].getName()).toEqual('2029')
+            expect(periods[9].name).toEqual('2029')
         })
     })
 
@@ -542,7 +540,7 @@ describe('fixedPeriods utils', () => {
                 endDate: '2020-10-31',
                 id: '2019Nov',
             })
-            expect(periods[0].getName()).toEqual('November 2019 - October 2020')
+            expect(periods[0].name).toEqual('November 2019 - October 2020')
         })
 
         it('should return the correct object for financial November period 10', () => {
@@ -551,7 +549,7 @@ describe('fixedPeriods utils', () => {
                 endDate: '2029-10-31',
                 id: '2028Nov',
             })
-            expect(periods[9].getName()).toEqual('November 2028 - October 2029')
+            expect(periods[9].name).toEqual('November 2028 - October 2029')
         })
     })
 
@@ -580,9 +578,7 @@ describe('fixedPeriods utils', () => {
                 endDate: '2020-09-30',
                 id: '2019Oct',
             })
-            expect(periods[0].getName()).toEqual(
-                'October 2019 - September 2020'
-            )
+            expect(periods[0].name).toEqual('October 2019 - September 2020')
         })
 
         it('should return the correct object for financial October period 10', () => {
@@ -591,9 +587,7 @@ describe('fixedPeriods utils', () => {
                 endDate: '2029-09-30',
                 id: '2028Oct',
             })
-            expect(periods[9].getName()).toEqual(
-                'October 2028 - September 2029'
-            )
+            expect(periods[9].name).toEqual('October 2028 - September 2029')
         })
     })
 
@@ -622,7 +616,7 @@ describe('fixedPeriods utils', () => {
                 endDate: '2020-06-30',
                 id: '2019July',
             })
-            expect(periods[0].getName()).toEqual('July 2019 - June 2020')
+            expect(periods[0].name).toEqual('July 2019 - June 2020')
         })
 
         it('should return the correct object for financial July period 10', () => {
@@ -631,7 +625,7 @@ describe('fixedPeriods utils', () => {
                 endDate: '2029-06-30',
                 id: '2028July',
             })
-            expect(periods[9].getName()).toEqual('July 2028 - June 2029')
+            expect(periods[9].name).toEqual('July 2028 - June 2029')
         })
     })
 
@@ -660,7 +654,7 @@ describe('fixedPeriods utils', () => {
                 endDate: '2020-03-31',
                 id: '2019April',
             })
-            expect(periods[0].getName()).toEqual('April 2019 - March 2020')
+            expect(periods[0].name).toEqual('April 2019 - March 2020')
         })
 
         it('should return the correct object for financial April period 10', () => {
@@ -669,7 +663,7 @@ describe('fixedPeriods utils', () => {
                 endDate: '2029-03-31',
                 id: '2028April',
             })
-            expect(periods[9].getName()).toEqual('April 2028 - March 2029')
+            expect(periods[9].name).toEqual('April 2028 - March 2029')
         })
     })
 })
