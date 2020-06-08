@@ -470,4 +470,4 @@ msgid "Base"
 msgstr "بنیاد"
 
 msgid "No data"
-msgstr ""
+msgstr "کوئی مواد نہیں"

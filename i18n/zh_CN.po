@@ -59,10 +59,10 @@ msgid "Filter dimensions"
 msgstr "过滤器维度"
 
 msgid "Main dimensions"
-msgstr ""
+msgstr "主要维度"
 
 msgid "Your dimensions"
-msgstr ""
+msgstr "你的维度"
 
 msgid "Dimension recommended with selected data"
 msgstr ""
@@ -470,4 +470,4 @@ msgid "Base"
 msgstr ""
 
 msgid "No data"
-msgstr ""
+msgstr "无数据"

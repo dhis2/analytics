@@ -60,10 +60,10 @@ msgid "Filter dimensions"
 msgstr "تصفية الأبعاد"
 
 msgid "Main dimensions"
-msgstr ""
+msgstr "الأبعاد الرئيسية"
 
 msgid "Your dimensions"
-msgstr ""
+msgstr "الأبعاد الخاصة بك"
 
 msgid "Dimension recommended with selected data"
 msgstr "البعد موصى به مع البيانات المحددة"
@@ -471,4 +471,4 @@ msgid "Base"
 msgstr "الأساس"
 
 msgid "No data"
-msgstr ""
+msgstr "لا توجد بيانات"

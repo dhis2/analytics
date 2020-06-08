@@ -470,4 +470,4 @@ msgid "Base"
 msgstr ""
 
 msgid "No data"
-msgstr ""
+msgstr "Não ha dados"

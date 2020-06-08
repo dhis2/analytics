@@ -470,4 +470,4 @@ msgid "Base"
 msgstr "Замина"
 
 msgid "No data"
-msgstr ""
+msgstr "Ягон иттилоот нест"
