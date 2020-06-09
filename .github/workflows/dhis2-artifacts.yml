@@ -18,14 +18,14 @@ jobs:
             - name: Install
               run: yarn install --frozen-lockfile
 
+            - name: Lint
+              run: yarn lint
+
             - name: Build
               run: yarn build
 
             - name: Test
               run: yarn test
-
-            - name: Lint
-              run: yarn lint
 
             - uses: dhis2/deploy-build@master
               with:
