@@ -3,6 +3,8 @@ name: 'dhis2: publish (node)'
 on:
     push:
         branches:
+            # match branches in:
+            # https://github.com/semantic-release/semantic-release/blob/master/docs/usage/configuration.md#branches
             - master
             - next
             - next-major
