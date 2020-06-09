@@ -1,10 +1,8 @@
-name: 'DHIS2: Release'
+name: 'dhis2: publish (node)'
 
 on:
     push:
         branches:
-            # match branches in:
-            # https://github.com/semantic-release/semantic-release/blob/master/docs/usage/configuration.md#branches
             - master
             - next
             - next-major
@@ -37,11 +35,11 @@ jobs:
             - name: Install
               run: yarn install --frozen-lockfile
 
-            - name: Lint
-              run: yarn lint
-
             - name: Build
               run: yarn build
+
+            - name: Test
+              run: yarn test
 
             - name: Publish to NPM
               run: npx @dhis2/cli-utils release --publish npm
