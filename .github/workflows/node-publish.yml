@@ -1,4 +1,4 @@
-name: 'DHIS2: Release'
+name: 'dhis2: publish (node)'
 
 on:
     push:
@@ -37,11 +37,11 @@ jobs:
             - name: Install
               run: yarn install --frozen-lockfile
 
-            - name: Lint
-              run: yarn lint
-
             - name: Build
               run: yarn build
+
+            - name: Test
+              run: yarn test
 
             - name: Publish to NPM
               run: npx @dhis2/cli-utils release --publish npm
