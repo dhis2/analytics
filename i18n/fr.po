@@ -193,7 +193,7 @@ msgid "Last 52 weeks"
 msgstr "52 dernières semaines"
 
 msgid "Weeks this year"
-msgstr ""
+msgstr "Semaines cette année"
 
 msgid "This bi-week"
 msgstr ""
