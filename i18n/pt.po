@@ -169,13 +169,13 @@ msgid "Yesterday"
 msgstr "Ontém"
 
 msgid "Last 3 days"
-msgstr ""
+msgstr "Últimos 3 dias"
 
 msgid "Last 7 days"
 msgstr "Últimos 7 dias"
 
 msgid "Last 14 days"
-msgstr ""
+msgstr "Últimos 14  dias"
 
 msgid "This week"
 msgstr "Esta semana"
@@ -193,7 +193,7 @@ msgid "Last 52 weeks"
 msgstr "Últimas 52 semanas"
 
 msgid "Weeks this year"
-msgstr ""
+msgstr "Semanas deste ano "
 
 msgid "This bi-week"
 msgstr ""
@@ -232,7 +232,7 @@ msgid "Last 6 bi-months"
 msgstr "Últimos seis bi-meses"
 
 msgid "Bi-months this year"
-msgstr ""
+msgstr "Bimensais este ano"
 
 msgid "This quarter"
 msgstr "Este Trimestre"
@@ -295,7 +295,7 @@ msgid "Six-months"
 msgstr "Seis meses"
 
 msgid "Financial Years"
-msgstr ""
+msgstr "Ano financeiro "
 
 msgid "Years"
 msgstr "Anos"
