@@ -18,14 +18,7 @@ export const Detail = ({ currentValue, onChange }) => {
         <div className="detail-container">
             <SingleSelectField
                 label={i18n.t('Detail')}
-                selected={
-                    currentLabel
-                        ? {
-                              value: currentValue,
-                              label: currentLabel,
-                          }
-                        : null
-                }
+                selected={currentLabel ? currentValue : null}
                 onChange={ref => onChange(ref.selected.value)}
                 dense
             >

@@ -10,10 +10,7 @@ export const DataTypes = ({ currentDataType, onChange }) => (
     <div className="container">
         <SingleSelectField
             label={i18n.t('Data Type')}
-            selected={{
-                value: dataTypes[currentDataType]?.id,
-                label: dataTypes[currentDataType]?.getName(),
-            }}
+            selected={dataTypes[currentDataType]?.id}
             onChange={ref => onChange(ref.selected.value)}
             dense
         >

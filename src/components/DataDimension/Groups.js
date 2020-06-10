@@ -32,11 +32,7 @@ export const Groups = ({
             <div className="group-container">
                 <SingleSelectField
                     label={dataTypes[dataType].getGroupLabel()}
-                    selected={
-                        selected.id && selected.name
-                            ? { value: selected.id, label: selected.name }
-                            : {}
-                    }
+                    selected={selected.id && selected.name ? selected.id : null}
                     placeholder={
                         !groupId && dataTypes[dataType].getPlaceholder
                             ? dataTypes[dataType].getPlaceholder()
