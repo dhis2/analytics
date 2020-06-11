@@ -9,7 +9,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-05-22T11:34:10.538Z\n"
+"POT-Creation-Date: 2020-06-03T21:43:03.758Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: Ge Joao <gsimango@saudigitus.org>, 2020\n"
 "Language-Team: Portuguese (https://www.transifex.com/hisp-uio/teams/100509/pt/)\n"
@@ -65,10 +65,13 @@ msgid "Main dimensions"
 msgstr "Dimensões principais"
 
 msgid "Your dimensions"
-msgstr ""
+msgstr "Suas dimensões"
 
 msgid "Dimension recommended with selected data"
 msgstr "Dimensão recomendada com dados selecionados"
+
+msgid "No items selected"
+msgstr ""
 
 msgid "Search"
 msgstr "Pesquisar"
@@ -227,13 +230,13 @@ msgid "Weeks this year"
 msgstr "Semanas deste ano "
 
 msgid "This bi-week"
-msgstr ""
+msgstr "Nesta bisemanal"
 
 msgid "Last bi-week"
-msgstr ""
+msgstr "Ultimo bimensal "
 
 msgid "Last 4 bi-weeks"
-msgstr ""
+msgstr "Nas últimas 4 semanas"
 
 msgid "This month"
 msgstr "Este mês"
@@ -311,7 +314,7 @@ msgid "Weeks"
 msgstr "Semanas"
 
 msgid "Bi-weeks"
-msgstr ""
+msgstr "Bisemanal"
 
 msgid "Months"
 msgstr "Meses"
