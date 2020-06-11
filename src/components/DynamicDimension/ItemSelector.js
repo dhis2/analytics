@@ -30,7 +30,6 @@ const ItemSelector = ({
         </>
     )
 
-    console.log('test')
     return (
         <Transfer
             onChange={({ selected }) => {
