@@ -23,15 +23,13 @@ export const Groups = ({
 
     const groupDetail = dataTypes[dataType].groupDetail
 
-    const selected = optionItems.find(item => item.id === groupId) || {}
-
     return (
         <div className="container">
             <style jsx>{styles}</style>
             <div className="group-container">
                 <SingleSelectField
                     label={dataTypes[dataType].getGroupLabel()}
-                    selected={selected.id && selected.name ? selected.id : null}
+                    selected={groupId}
                     placeholder={
                         !groupId && dataTypes[dataType].getPlaceholder
                             ? dataTypes[dataType].getPlaceholder()
