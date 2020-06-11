@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { SingleSelectField } from '@dhis2/ui'
-import { SingleSelectOption } from '@dhis2/ui'
+import { SingleSelectField, SingleSelectOption } from '@dhis2/ui'
 
 import { Detail } from './Detail'
 import { dataTypes } from '../../modules/dataTypes'
