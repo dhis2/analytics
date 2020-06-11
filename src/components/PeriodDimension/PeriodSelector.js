@@ -9,7 +9,7 @@ import { MONTHS, getRelativePeriodsOptionsById } from './utils/relativePeriods'
 import { MONTHLY, getFixedPeriodsOptionsById } from './utils/fixedPeriods'
 import styles from '../styles/DimensionSelector.style'
 import { TransferOption } from '../TransferOption'
-//import PeriodIcon from '../../assets/DimensionItemIcons/PeriodIcon' //TODO: Reimplement the icon
+import PeriodIcon from '../../assets/DimensionItemIcons/PeriodIcon' //TODO: Reimplement the icon
 import {
     TRANSFER_HEIGHT,
     TRANSFER_OPTIONS_WIDTH,
@@ -157,7 +157,24 @@ class PeriodSelector extends Component {
                 label: name,
                 value: id,
             }))}
-            renderOption={TransferOption}
+            renderOption={({
+                disabled,
+                label,
+                highlighted,
+                onClick,
+                onDoubleClick,
+                value,
+            }) => (
+                <TransferOption
+                    disabled={disabled}
+                    label={label}
+                    highlighted={highlighted}
+                    onClick={onClick}
+                    onDoubleClick={onDoubleClick}
+                    value={value}
+                    icon={PeriodIcon}
+                />
+            )}
             // TODO: Add rightHeader "Selected Periods" once the Transfer component supports this (https://github.com/dhis2/ui-core/issues/885)
         ></Transfer>
     )
