@@ -13,12 +13,11 @@ const getOptions = () => ({
 
 export const Detail = ({ currentValue, onChange }) => {
     const options = getOptions()
-    const currentLabel = options[currentValue]
     return (
         <div className="detail-container">
             <SingleSelectField
                 label={i18n.t('Detail')}
-                selected={currentLabel ? currentValue : null}
+                selected={currentValue}
                 onChange={ref => onChange(ref.selected.value)}
                 dense
             >
