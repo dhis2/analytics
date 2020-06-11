@@ -1,3 +1,10 @@
+# [7.1.0](https://github.com/dhis2/analytics/compare/v7.0.3...v7.1.0) (2020-06-11)
+
+
+### Features
+
+* upgrade to ui@5 (TECH-387) ([#476](https://github.com/dhis2/analytics/issues/476)) ([8045a6e](https://github.com/dhis2/analytics/commit/8045a6ee166e60de541af0a140e74b5c2bcad600)), closes [dhis2/data-visualizer-app#1068](https://github.com/dhis2/data-visualizer-app/issues/1068) [dhis2/dashboards-app#891](https://github.com/dhis2/dashboards-app/issues/891)
+
 ## [7.0.3](https://github.com/dhis2/analytics/compare/v7.0.2...v7.0.3) (2020-06-10)
 
 
