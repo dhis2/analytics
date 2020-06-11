@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'
-import { SingleSelectOption, SingleSelectField } from '@dhis2/ui-core'
+import { SingleSelectField, SingleSelectOption } from '@dhis2/ui'
 
 import { getRelativePeriodsOptions } from './utils/relativePeriods'
 import styles from './styles/PeriodFilter.style'
@@ -19,7 +19,7 @@ const RelativePeriodFilter = ({ currentFilter, onSelectFilter }) => (
                 <SingleSelectOption
                     key={option.id}
                     value={option.id}
-                    label={option.getName()}
+                    label={option.name}
                 />
             ))}
         </SingleSelectField>
@@ -28,7 +28,7 @@ const RelativePeriodFilter = ({ currentFilter, onSelectFilter }) => (
 )
 
 RelativePeriodFilter.propTypes = {
-    currentFilter: PropTypes.object.isRequired,
+    currentFilter: PropTypes.string.isRequired,
     onSelectFilter: PropTypes.func.isRequired,
 }
 

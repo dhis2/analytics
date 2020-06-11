@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
-import { Transfer } from '@dhis2/ui-core'
+import { Transfer } from '@dhis2/ui'
 import i18n from '@dhis2/d2-i18n'
 
 import styles from '../styles/DimensionSelector.style'
@@ -15,16 +15,12 @@ import {
 const ItemSelector = ({
     allItems,
     onSelect,
-    initialSelectedItems,
+    initialSelectedItemIds,
     leftHeader,
     rightFooter,
 }) => {
-    const [selectedItems, setSelectedItems] = useState(
-        initialSelectedItems.map(item => ({
-            label: item.name,
-            value: item.id,
-            key: item.id,
-        }))
+    const [selectedItemIds, setSelectedItemIds] = useState(
+        initialSelectedItemIds
     )
 
     const renderEmptySelection = () => (
@@ -37,10 +33,10 @@ const ItemSelector = ({
     return (
         <Transfer
             onChange={({ selected }) => {
-                setSelectedItems(selected)
+                setSelectedItemIds(selected)
                 onSelect(selected)
             }}
-            selected={selectedItems}
+            selected={selectedItemIds}
             leftHeader={leftHeader}
             filterable
             enableOrderChange
@@ -49,31 +45,34 @@ const ItemSelector = ({
             selectedWidth={TRANSFER_SELECTED_WIDTH}
             selectedEmptyComponent={renderEmptySelection()}
             rightFooter={rightFooter}
+            options={allItems.map(({ id, name }) => ({
+                label: name,
+                value: id,
+            }))}
+            renderOption={props => (
+                <TransferOption {...props} icon={GenericIcon} />
+            )}
             // TODO: Add a filter placeholer once the Transfer component supports this (https://github.com/dhis2/ui/issues/131)
             // TODO: Add rightHeader "Selected Periods" once the Transfer component supports this (https://github.com/dhis2/ui-core/issues/885)
-        >
-            {allItems.map(item => (
-                <TransferOption
-                    label={item.name}
-                    value={item.id}
-                    key={item.id}
-                    icon={GenericIcon}
-                />
-            ))}
-        </Transfer>
+        />
     )
 }
 
 ItemSelector.propTypes = {
-    allItems: PropTypes.arrayOf(PropTypes.object).isRequired,
+    allItems: PropTypes.arrayOf(
+        PropTypes.shape({
+            id: PropTypes.string,
+            name: PropTypes.string,
+        })
+    ).isRequired,
     onSelect: PropTypes.func.isRequired,
-    initialSelectedItems: PropTypes.arrayOf(PropTypes.object),
+    initialSelectedItemIds: PropTypes.arrayOf(PropTypes.string),
     leftHeader: PropTypes.node,
     rightFooter: PropTypes.node,
 }
 
 ItemSelector.defaultProps = {
-    initialSelectedItems: [],
+    initialSelectedItemIds: [],
 }
 
 export default ItemSelector

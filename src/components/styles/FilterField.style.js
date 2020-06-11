@@ -1,5 +1,5 @@
 import css from 'styled-jsx/css'
-import { colors } from '@dhis2/ui-core'
+import { colors } from '@dhis2/ui'
 
 export default css`
     .container {
