@@ -9,7 +9,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-05-22T11:34:10.538Z\n"
+"POT-Creation-Date: 2020-06-03T21:43:03.758Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: Aprisa Chrysantina <aprisa.chrysantina@gmail.com>, 2020\n"
 "Language-Team: Indonesian (https://www.transifex.com/hisp-uio/teams/100509/id/)\n"
@@ -69,6 +69,9 @@ msgstr "Dimensi Anda"
 
 msgid "Dimension recommended with selected data"
 msgstr "Dimensi yang direkomendasikan dengan data terpilih"
+
+msgid "No items selected"
+msgstr ""
 
 msgid "Search"
 msgstr "Pencarian"
