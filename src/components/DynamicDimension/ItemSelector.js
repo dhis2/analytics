@@ -30,6 +30,7 @@ const ItemSelector = ({
         </>
     )
 
+    console.log('test')
     return (
         <Transfer
             onChange={({ selected }) => {
@@ -49,23 +50,8 @@ const ItemSelector = ({
                 label: name,
                 value: id,
             }))}
-            renderOption={({
-                disabled,
-                label,
-                highlighted,
-                onClick,
-                onDoubleClick,
-                value,
-            }) => (
-                <TransferOption
-                    disabled={disabled}
-                    label={label}
-                    highlighted={highlighted}
-                    onClick={onClick}
-                    onDoubleClick={onDoubleClick}
-                    value={value}
-                    icon={GenericIcon}
-                />
+            renderOption={props => (
+                <TransferOption {...props} icon={GenericIcon} />
             )}
             // TODO: Add a filter placeholer once the Transfer component supports this (https://github.com/dhis2/ui/issues/131)
             // TODO: Add rightHeader "Selected Periods" once the Transfer component supports this (https://github.com/dhis2/ui-core/issues/885)

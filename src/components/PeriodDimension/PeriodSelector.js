@@ -157,23 +157,8 @@ class PeriodSelector extends Component {
                 label: name,
                 value: id,
             }))}
-            renderOption={({
-                disabled,
-                label,
-                highlighted,
-                onClick,
-                onDoubleClick,
-                value,
-            }) => (
-                <TransferOption
-                    disabled={disabled}
-                    label={label}
-                    highlighted={highlighted}
-                    onClick={onClick}
-                    onDoubleClick={onDoubleClick}
-                    value={value}
-                    icon={PeriodIcon}
-                />
+            renderOption={props => (
+                <TransferOption {...props} icon={PeriodIcon} />
             )}
             // TODO: Add rightHeader "Selected Periods" once the Transfer component supports this (https://github.com/dhis2/ui-core/issues/885)
         ></Transfer>
