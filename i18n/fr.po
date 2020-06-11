@@ -1,17 +1,17 @@
 # 
 # Translators:
 # Karoline Tufte Lien <karoline@dhis2.org>, 2020
-# Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2020
 # phil_dhis2, 2020
 # Bram Piot <bram.piot@gmail.com>, 2020
 # Viktor Varland <viktor@dhis2.org>, 2020
+# Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2020-05-22T11:34:10.538Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2020\n"
+"Last-Translator: Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2020\n"
 "Language-Team: French (https://www.transifex.com/hisp-uio/teams/100509/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -62,10 +62,10 @@ msgid "Filter dimensions"
 msgstr "Dimensions du filtre"
 
 msgid "Main dimensions"
-msgstr ""
+msgstr "Dimensions principales"
 
 msgid "Your dimensions"
-msgstr ""
+msgstr "Vos dimensions"
 
 msgid "Dimension recommended with selected data"
 msgstr "Dimension recommandée avec les données sélectionnées"
@@ -224,7 +224,7 @@ msgid "Last 52 weeks"
 msgstr "52 dernières semaines"
 
 msgid "Weeks this year"
-msgstr ""
+msgstr "Semaines cette année"
 
 msgid "This bi-week"
 msgstr ""
