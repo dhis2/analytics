@@ -14,8 +14,23 @@ function noAxis() {
 }
 
 function getDefault(store, layout) {
+    const metadata = store.data[0].metaData
+    const categoriesCount = layout.rows.length
+
+    const getCategoryNames = (index = 0) => {
+        const categoryId = layout.rows[index].dimension
+        const categoryItemIds = metadata.dimensions[categoryId]
+
+        return categoriesCount - 1 > index
+            ? categoryItemIds.map(categoryItemId => ({
+                  name: metadata.items[categoryItemId].name,
+                  categories: getCategoryNames(index + 1, metadata),
+              }))
+            : getCategories(metadata, categoryId)
+    }
+
     return objectClean({
-        categories: getCategories(store.data[0].metaData, layout),
+        categories: getCategoryNames(),
         title: getAxisTitle(layout.domainAxisLabel),
         labels: {
             style: {
