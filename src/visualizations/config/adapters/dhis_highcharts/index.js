@@ -42,9 +42,9 @@ export default function({ store, layout, el, extraConfig, extraOptions }) {
             _layout.columns && _layout.columns.length
                 ? _layout.columns[0].dimension
                 : null,
-        categoryId:
+        categoryIds:
             _layout.rows && _layout.rows.length
-                ? _layout.rows[0].dimension
+                ? _layout.rows.map(row => row.dimension)
                 : null,
     })
 
@@ -106,6 +106,11 @@ export default function({ store, layout, el, extraConfig, extraOptions }) {
             // disable exporting context menu
             enabled: false,
         },
+
+        // XXX
+        tooltip: {
+            shared: true,
+        },
     }
 
     // hide empty categories
@@ -134,5 +139,6 @@ export default function({ store, layout, el, extraConfig, extraOptions }) {
 
     // force apply extra config
     Object.assign(config, extraConfig)
+    console.log('config', config)
     return objectClean(config)
 }

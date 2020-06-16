@@ -78,12 +78,28 @@ const pivotTableRules = {
     ],
 }
 
+const columnRules = {
+    [RULE_PROP_AVAILABLE_AXES]: [
+        AXIS_ID_COLUMNS,
+        AXIS_ID_ROWS,
+        AXIS_ID_FILTERS,
+    ],
+    [RULE_PROP_MAX_DIMS_PER_AXIS]: {
+        [AXIS_ID_COLUMNS]: 1,
+        //     [AXIS_ID_ROWS]: 2,
+    },
+    [RULE_PROP_MIN_DIMS_PER_AXIS]: {
+        [AXIS_ID_COLUMNS]: 1,
+        [AXIS_ID_ROWS]: 1,
+    },
+}
+
 const visTypeToRules = {
-    [VIS_TYPE_COLUMN]: defaultRules,
+    [VIS_TYPE_COLUMN]: columnRules,
     [VIS_TYPE_STACKED_COLUMN]: defaultRules,
     [VIS_TYPE_BAR]: defaultRules,
     [VIS_TYPE_STACKED_BAR]: defaultRules,
-    [VIS_TYPE_LINE]: defaultRules,
+    [VIS_TYPE_LINE]: columnRules,
     [VIS_TYPE_AREA]: defaultRules,
     [VIS_TYPE_RADAR]: defaultRules,
     [VIS_TYPE_GAUGE]: singleValueRules,
