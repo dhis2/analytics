@@ -22,7 +22,13 @@ function createVisualization(
     outputFormat
 ) {
     const _data = isArray(data) ? data : [data]
-    const store = new Store({ data: _data, error, warning, outputFormat })
+    const store = new Store({
+        data: _data,
+        visualization: layout,
+        error,
+        warning,
+        outputFormat,
+    })
     const config = new Config({
         store,
         layout,
