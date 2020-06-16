@@ -7729,6 +7729,11 @@ hex-color-regex@^1.1.0:
   resolved "https://registry.yarnpkg.com/hex-color-regex/-/hex-color-regex-1.1.0.tgz#4c06fccb4602fe2602b3c93df82d7e7dbf1a8a8e"
   integrity sha512-l9sfDFsuqtOqKDsQdqrMRk0U85RZc0RtOR9yPI7mRVOa4FsR/BVnZ0shmQRM96Ji99kYZP/7hn1cedc1+ApsTQ==
 
+highcharts-grouped-categories@^1.1.5:
+  version "1.1.5"
+  resolved "https://registry.yarnpkg.com/highcharts-grouped-categories/-/highcharts-grouped-categories-1.1.5.tgz#261719919a077898607eb1133746c8d691e30f5c"
+  integrity sha512-ZJNsjvViQZqILaKIAHm7Sn8QBQFDBw5vSvDGYcQumYSUrYJmVJKX1l9WikOBvj7UdtZwkFzKmMe96ikY8qXYmw==
+
 highcharts@^8.1.0:
   version "8.1.0"
   resolved "https://registry.yarnpkg.com/highcharts/-/highcharts-8.1.0.tgz#f93adaf8d53b0f83c74c9854f0ad10baec010d97"
