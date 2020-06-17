@@ -99,7 +99,7 @@ const visTypeToRules = {
     [VIS_TYPE_STACKED_COLUMN]: defaultRules,
     [VIS_TYPE_BAR]: defaultRules,
     [VIS_TYPE_STACKED_BAR]: defaultRules,
-    [VIS_TYPE_LINE]: columnRules,
+    [VIS_TYPE_LINE]: defaultRules,
     [VIS_TYPE_AREA]: defaultRules,
     [VIS_TYPE_RADAR]: defaultRules,
     [VIS_TYPE_GAUGE]: singleValueRules,
