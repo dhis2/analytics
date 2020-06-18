@@ -35,7 +35,7 @@ export const Groups = ({
                             ? dataTypes[dataType].getPlaceholder()
                             : null
                     }
-                    onChange={ref => onGroupChange(ref.selected.value)}
+                    onChange={ref => onGroupChange(ref.selected)}
                     dense
                 >
                     {optionItems.map(item => (

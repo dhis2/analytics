@@ -18,7 +18,7 @@ export const Detail = ({ currentValue, onChange }) => {
             <SingleSelectField
                 label={i18n.t('Detail')}
                 selected={currentValue}
-                onChange={ref => onChange(ref.selected.value)}
+                onChange={ref => onChange(ref.selected)}
                 dense
             >
                 {Object.entries(options).map(option => (
