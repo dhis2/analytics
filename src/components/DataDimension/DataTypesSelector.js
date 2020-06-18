@@ -11,7 +11,7 @@ export const DataTypes = ({ currentDataType, onChange }) => (
         <SingleSelectField
             label={i18n.t('Data Type')}
             selected={dataTypes[currentDataType]?.id}
-            onChange={ref => onChange(ref.selected.value)}
+            onChange={ref => onChange(ref.selected)}
             dense
         >
             {Object.values(dataTypes).map(type => (
