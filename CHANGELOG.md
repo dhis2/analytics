@@ -1,3 +1,10 @@
+## [7.1.4](https://github.com/dhis2/analytics/compare/v7.1.3...v7.1.4) (2020-06-18)
+
+
+### Bug Fixes
+
+* data dimension spacing and crash (NO JIRA) ([#504](https://github.com/dhis2/analytics/issues/504)) ([99d6c73](https://github.com/dhis2/analytics/commit/99d6c73afc35052d19536e797f3160802684bfd3))
+
 ## [7.1.3](https://github.com/dhis2/analytics/compare/v7.1.2...v7.1.3) (2020-06-15)
 
 
