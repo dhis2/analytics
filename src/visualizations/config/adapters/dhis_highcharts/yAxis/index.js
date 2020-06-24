@@ -8,6 +8,7 @@ import getAxisTitle from '../getAxisTitle'
 import getGauge from './gauge'
 import { isStacked, VIS_TYPE_GAUGE } from '../../../../../modules/visTypes'
 import { hasOptionalAxis } from '../optionalAxes'
+import { getAxisStringFromId } from '../../../../util/axisId'
 
 const DEFAULT_MIN_VALUE = 0
 
@@ -92,17 +93,7 @@ function getLabels(layout) {
 }
 
 function getMultipleAxes(theme, axes) {
-    const axisObjects = [{
-        title: {
-            text: i18n.t('Axis {{axisId}}', {
-                axisId: 1,
-            }),
-            style: {
-                color: theme[0].mainColor,
-                'font-weight': 700,
-            },
-        },
-    }]
+    const axisObjects = []
     axes.map(axisId => {
         axisObjects.push({
             title: {
@@ -114,6 +105,7 @@ function getMultipleAxes(theme, axes) {
                     'font-weight': 700,
                 },
             },
+            id: getAxisStringFromId(axisId),
             opposite: !!(axisId % 2),
         })
     })
@@ -124,8 +116,7 @@ function getDefault(layout, extraOptions) {
     const axes = []
 
     if (hasOptionalAxis(layout.optionalAxes)) {
-        const multipleAxes = getMultipleAxes(extraOptions.multiAxisTheme, [...new Set(layout.optionalAxes.map(item => item.axis))])
-        axes.push(...multipleAxes)
+        axes.push(...getMultipleAxes(extraOptions.multiAxisTheme, [...new Set(layout.optionalAxes.map(item => item.axis))].sort((a, b) => a - b)))
     } else {
         axes.push(
             objectClean({
@@ -139,6 +130,7 @@ function getDefault(layout, extraOptions) {
                 ]),
                 gridLineColor: DEFAULT_GRIDLINE_COLOR,
                 labels: getLabels(layout),
+                id: getAxisStringFromId(0),
 
                 // DHIS2-649: put first serie at the bottom of the stack
                 // in this way the legend sequence matches the serie sequence

@@ -14,6 +14,7 @@ import {
     isDualAxisType,
     isYearOverYear,
 } from '../../../../../modules/visTypes'
+import { getAxisStringFromId } from '../../../../util/axisId'
 
 const DEFAULT_ANIMATION_DURATION = 200
 
@@ -107,8 +108,8 @@ function getDefault(series, layout, isStacked, extraOptions) {
 
         // axis number
         seriesObj.yAxis = isDualAxisType(layout.type)
-            ? fullIdAxisMap[seriesObj.id]
-            : 0
+            ? getAxisStringFromId(fullIdAxisMap[seriesObj.id])
+            : getAxisStringFromId(0)
 
         // custom names for "year over year" series
         if (extraOptions.yearlySeries) {
