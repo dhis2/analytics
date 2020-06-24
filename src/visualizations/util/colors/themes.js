@@ -2,6 +2,7 @@ export const theme1 = '#a9be3b|#558cc0|#d34957|#ff9f3a|#968f8f|#b7409f|#ffda64|#
     '|'
 )
 
+//TODO: Add correct colors once provided by @joe
 export const defaultMultiAxisTheme1 = {
     0: {
         startColor: '#6cb8ff',
@@ -12,5 +13,15 @@ export const defaultMultiAxisTheme1 = {
         startColor: '#9e3640',
         endColor: '#ff5666',
         mainColor: '#d34957',
+    },
+    2: {
+        startColor: '#db8534',
+        endColor: '#fcbc62',
+        mainColor: '#ff9f3a',
+    },
+    3: {
+        startColor: '#9b3785',
+        endColor: '#d179be',
+        mainColor: '#b7409f',
     },
 }

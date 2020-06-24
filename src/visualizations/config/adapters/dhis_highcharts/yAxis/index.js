@@ -1,3 +1,5 @@
+import i18n from '@dhis2/d2-i18n'
+
 import arrayClean from 'd2-utilizr/lib/arrayClean'
 import objectClean from 'd2-utilizr/lib/objectClean'
 import isNumeric from 'd2-utilizr/lib/isNumeric'
@@ -89,36 +91,41 @@ function getLabels(layout) {
         : undefined
 }
 
-function getDualAxes(theme) {
-    return [
-        {
+function getMultipleAxes(theme, axes) {
+    const axisObjects = [{
+        title: {
+            text: i18n.t('Axis {{axisId}}', {
+                axisId: 1,
+            }),
+            style: {
+                color: theme[0].mainColor,
+                'font-weight': 700,
+            },
+        },
+    }]
+    axes.map(axisId => {
+        axisObjects.push({
             title: {
-                text: 'Axis 1',
+                text: i18n.t('Axis {{axisId}}', {
+                    axisId: axisId + 1,
+                }),
                 style: {
-                    color: theme[0].mainColor,
+                    color: theme[axisId].mainColor,
                     'font-weight': 700,
                 },
             },
-        },
-        {
-            title: {
-                text: 'Axis 2',
-                style: {
-                    color: theme[1].mainColor,
-                    'font-weight': 700,
-                },
-            },
-            opposite: true,
-        },
-    ]
+            opposite: !!(axisId % 2),
+        })
+    })
+    return axisObjects
 }
 
 function getDefault(layout, extraOptions) {
     const axes = []
 
     if (hasOptionalAxis(layout.optionalAxes)) {
-        const dualAxes = getDualAxes(extraOptions.multiAxisTheme)
-        axes.push(dualAxes[0], dualAxes[1])
+        const multipleAxes = getMultipleAxes(extraOptions.multiAxisTheme, [...new Set(layout.optionalAxes.map(item => item.axis))])
+        axes.push(...multipleAxes)
     } else {
         axes.push(
             objectClean({

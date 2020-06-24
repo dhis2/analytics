@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2020-06-03T21:43:03.758Z\n"
-"PO-Revision-Date: 2020-06-03T21:43:03.758Z\n"
+"POT-Creation-Date: 2020-06-24T07:22:39.539Z\n"
+"PO-Revision-Date: 2020-06-24T07:22:39.540Z\n"
 
 msgid "Data Type"
 msgstr ""
@@ -462,6 +462,9 @@ msgid "Target"
 msgstr ""
 
 msgid "Base"
+msgstr ""
+
+msgid "Axis {{axisId}}"
 msgstr ""
 
 msgid "No data"
