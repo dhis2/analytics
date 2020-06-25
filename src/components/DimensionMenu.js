@@ -103,6 +103,7 @@ export class DimensionMenu extends Component {
             closeSubMenu()
         }
 
+        //TODO: Remove this once replaced by the Series options
         const getDualAxisMenuItem = isDisabled => (
             <MenuItem
                 key={`dual-axis-item-${dimensionId}`}
