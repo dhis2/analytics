@@ -28,7 +28,7 @@ export function getFullIdAxisMap(optionalAxes, series) {
 
 // returns: true or false
 export function hasOptionalAxis(optionalAxes) {
-    return Boolean(optionalAxes.length)
+    return Boolean(optionalAxes.length) && optionalAxes.some(item => item.axis > 0)
 }
 
 // returns: true or false
