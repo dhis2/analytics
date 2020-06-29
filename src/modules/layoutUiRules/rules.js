@@ -40,6 +40,22 @@ const defaultRules = {
     },
 }
 
+const dualCategoryRules = {
+    [RULE_PROP_AVAILABLE_AXES]: [
+        AXIS_ID_COLUMNS,
+        AXIS_ID_ROWS,
+        AXIS_ID_FILTERS,
+    ],
+    [RULE_PROP_MAX_DIMS_PER_AXIS]: {
+        [AXIS_ID_COLUMNS]: 1,
+        [AXIS_ID_ROWS]: 2,
+    },
+    [RULE_PROP_MIN_DIMS_PER_AXIS]: {
+        [AXIS_ID_COLUMNS]: 1,
+        [AXIS_ID_ROWS]: 1,
+    },
+}
+
 const pieRules = {
     [RULE_PROP_AVAILABLE_AXES]: [AXIS_ID_COLUMNS, AXIS_ID_FILTERS],
     [RULE_PROP_MAX_DIMS_PER_AXIS]: {
@@ -80,8 +96,8 @@ const pivotTableRules = {
 }
 
 const visTypeToRules = {
-    [VIS_TYPE_COLUMN]: defaultRules,
-    [VIS_TYPE_STACKED_COLUMN]: defaultRules,
+    [VIS_TYPE_COLUMN]: dualCategoryRules,
+    [VIS_TYPE_STACKED_COLUMN]: dualCategoryRules,
     [VIS_TYPE_BAR]: defaultRules,
     [VIS_TYPE_STACKED_BAR]: defaultRules,
     [VIS_TYPE_LINE]: defaultRules,
