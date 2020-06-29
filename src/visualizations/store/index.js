@@ -30,13 +30,13 @@ export default function({
     this.generateData = ({
         type,
         seriesId = initialSeriesId,
-        categoryId = initialCategoryId,
+        categoryIds = [initialCategoryId],
     }) => {
         return _adapter({
             type,
             data: data.map(d => _validator({ data: d, error, warning })),
             seriesId,
-            categoryId,
+            categoryIds,
         })
     }
 }

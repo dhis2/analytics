@@ -4,12 +4,15 @@ import arrayUnique from 'd2-utilizr/lib/arrayUnique'
 import getYearOnYear from './yearOnYear'
 import getPie from './pie'
 import getGauge from './gauge'
+import getDualCategory from './dualCategory'
+
 import {
     VIS_TYPE_YEAR_OVER_YEAR_COLUMN,
     VIS_TYPE_YEAR_OVER_YEAR_LINE,
     VIS_TYPE_PIE,
     VIS_TYPE_GAUGE,
- } from '../../../../modules/visTypes'
+    isDualCategoryChartType,
+} from '../../../../modules/visTypes'
 
 const VALUE_ID = 'value'
 
@@ -31,7 +34,7 @@ function getPrefixedId(row, header) {
     return (header.isPrefix ? header.name + '_' : '') + row[header.index]
 }
 
-function getIdValueMap(rows, seriesHeader, categoryHeader, valueIndex) {
+function getIdValueMap(rows, seriesHeader, categoryHeaders, valueIndex) {
     const map = new Map()
 
     let key
@@ -40,7 +43,11 @@ function getIdValueMap(rows, seriesHeader, categoryHeader, valueIndex) {
     rows.forEach(row => {
         key = [
             ...(seriesHeader ? [getPrefixedId(row, seriesHeader)] : []),
-            ...(categoryHeader ? [getPrefixedId(row, categoryHeader)] : []),
+            ...(categoryHeaders
+                ? categoryHeaders.map(categoryHeader =>
+                      getPrefixedId(row, categoryHeader)
+                  )
+                : []),
         ].join('-')
 
         value = row[valueIndex]
@@ -51,12 +58,13 @@ function getIdValueMap(rows, seriesHeader, categoryHeader, valueIndex) {
     return map
 }
 
-function getDefault(acc, seriesIds, categoryIds, idValueMap, metaData) {
-    seriesIds.forEach(seriesId => {
+// 1 series, 1 category
+function getDefault(acc, series, categories, idValueMap, metaData) {
+    series[0].forEach(seriesItemId => {
         const serieData = []
 
-        categoryIds.forEach(categoryId => {
-            const value = idValueMap.get(`${seriesId}-${categoryId}`)
+        categories[0].forEach(categoryItemId => {
+            const value = idValueMap.get(`${seriesItemId}-${categoryItemId}`)
 
             // DHIS2-1261: 0 is a valid value
             // undefined value means the key was not found within the rows
@@ -72,8 +80,8 @@ function getDefault(acc, seriesIds, categoryIds, idValueMap, metaData) {
         }
 
         acc.push({
-            id: seriesId,
-            name: metaData.items[seriesId].name,
+            id: seriesItemId,
+            name: metaData.items[seriesItemId].name,
             data: serieData,
         })
     })
@@ -81,7 +89,11 @@ function getDefault(acc, seriesIds, categoryIds, idValueMap, metaData) {
     return acc
 }
 
-function getSeriesFunction(type) {
+function getSeriesFunction(type, categoryIds) {
+    if (isDualCategoryChartType(type) && categoryIds.length === 2) {
+        return getDualCategory
+    }
+
     switch (type) {
         case VIS_TYPE_PIE:
             return getPie
@@ -95,8 +107,9 @@ function getSeriesFunction(type) {
     }
 }
 
-export default function({ type, data, seriesId, categoryId }) {
-    const seriesFunction = getSeriesFunction(type)
+export default function({ type, data, seriesId, categoryIds }) {
+    console.log('cat ids', categoryIds)
+    const seriesFunction = getSeriesFunction(type, categoryIds)
 
     return data.reduce((acc, res) => {
         const headers = res.headers
@@ -104,24 +117,22 @@ export default function({ type, data, seriesId, categoryId }) {
         const rows = res.rows
         const headerIdIndexMap = getHeaderIdIndexMap(headers)
 
-        const seriesIndex = headerIdIndexMap.get(seriesId)
-        const categoryIndex = headerIdIndexMap.get(categoryId)
-        const valueIndex = headerIdIndexMap.get(VALUE_ID)
-
-        const seriesHeader = headers[seriesIndex]
-        const categoryHeader = headers[categoryIndex]
+        const seriesHeader = headers[headerIdIndexMap.get(seriesId)]
+        const categoryHeaders = categoryIds.map(
+            categoryId => headers[headerIdIndexMap.get(categoryId)]
+        )
 
         const idValueMap = getIdValueMap(
             rows,
             seriesHeader,
-            categoryHeader,
-            valueIndex
+            categoryHeaders,
+            headerIdIndexMap.get(VALUE_ID)
         )
 
-        const seriesIds = metaData.dimensions[seriesId]
-        const categoryIds = metaData.dimensions[categoryId]
+        const series = [metaData.dimensions[seriesId]]
+        const categories = categoryIds.map(id => metaData.dimensions[id])
 
-        seriesFunction(acc, seriesIds, categoryIds, idValueMap, metaData)
+        seriesFunction(acc, series, categories, idValueMap, metaData)
 
         return acc
     }, [])
