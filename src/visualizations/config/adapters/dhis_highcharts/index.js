@@ -34,19 +34,25 @@ export default function({ store, layout, el, extraConfig, extraOptions }) {
     const _layout = getTransformedLayout(layout)
     const _extraOptions = getTransformedExtraOptions(extraOptions)
 
-    const series = store.generateData({
-        type: _layout.type,
-        seriesId:
-            _layout.columns && _layout.columns.length
-                ? _layout.columns[0].dimension
-                : null,
-        categoryId:
-            _layout.rows && _layout.rows.length
-                ? _layout.rows[0].dimension
-                : null,
-    })
-
     const stacked = isStacked(_layout.type)
+
+    const series = getSeries(
+        store.generateData({
+            type: _layout.type,
+            seriesId:
+                _layout.columns && _layout.columns.length
+                    ? _layout.columns[0].dimension
+                    : null,
+            categoryIds:
+                _layout.rows && _layout.rows.length
+                    ? _layout.rows.map(row => row.dimension)
+                    : null,
+        }),
+        store,
+        _layout,
+        stacked,
+        _extraOptions
+    )
 
     let config = {
         // type etc
@@ -74,13 +80,7 @@ export default function({ store, layout, el, extraConfig, extraOptions }) {
         yAxis: getYAxis(_layout, series, _extraOptions),
 
         // series
-        series: getSeries(
-            series.slice(),
-            store,
-            _layout,
-            stacked,
-            _extraOptions
-        ),
+        series,
 
         // legend
         legend: getLegend(_layout, _extraOptions.dashboard),
@@ -106,6 +106,7 @@ export default function({ store, layout, el, extraConfig, extraOptions }) {
         },
     }
 
+    // TODO for dual category
     // hide empty categories
     if (_layout.hideEmptyRowItems !== 'NONE') {
         config = getTrimmedConfig(config, _layout.hideEmptyRowItems)
@@ -134,7 +135,20 @@ export default function({ store, layout, el, extraConfig, extraOptions }) {
         )
     }
 
+    // flatten groups
+    config.series = config.series.map(serie => ({
+        ...serie,
+        data: serie.data.flat(),
+    }))
+
+    // flatten category groups
+    config.xAxis = config.xAxis.map(xAxis => ({
+        ...xAxis,
+        categories: xAxis.categories.flat(),
+    }))
+
     // force apply extra config
     Object.assign(config, extraConfig)
+    console.log('chart config', config)
     return objectClean(config)
 }

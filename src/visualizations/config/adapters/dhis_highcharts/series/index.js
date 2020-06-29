@@ -1,4 +1,4 @@
-import getCumulativeData from './../getCumulativeData'
+import getCumulativeData from '../getCumulativeData'
 import getPie from './pie'
 import getGauge from './gauge'
 import getType from '../type'
@@ -109,7 +109,7 @@ function getDefault(series, layout, isStacked, extraOptions) {
 
     series.forEach((seriesObj, index) => {
         // show values
-        if (layout.showValues || layout.showData) {
+        if (!seriesObj.dataLabels && (layout.showValues || layout.showData)) {
             seriesObj.dataLabels = {
                 enabled: true,
             }
