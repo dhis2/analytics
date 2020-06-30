@@ -171,7 +171,7 @@ function getDefault(series, layout, isStacked, extraOptions) {
 
     // DHIS2-701: use cumulative values
     if (layout.cumulativeValues === true) {
-        series = getCumulativeData(series)
+        series = getCumulativeData(series, layout)
     }
 
     return series
