@@ -25,7 +25,7 @@ const fixedPeriodConfig = year => ({
     reversePeriods: false,
 })
 
-class PeriodSelector extends Component {
+class PeriodTransfer extends Component {
     state = {
         allPeriods: defaultRelativePeriodType.getPeriods(),
         selectedPeriods: [],
@@ -175,7 +175,7 @@ class PeriodSelector extends Component {
     )
 }
 
-PeriodSelector.propTypes = {
+PeriodTransfer.propTypes = {
     onSelect: PropTypes.func.isRequired,
     initialSelectedPeriods: PropTypes.arrayOf(
         PropTypes.shape({
@@ -186,8 +186,8 @@ PeriodSelector.propTypes = {
     rightFooter: PropTypes.node,
 }
 
-PeriodSelector.defaultProps = {
+PeriodTransfer.defaultProps = {
     initialSelectedPeriods: [],
 }
 
-export default PeriodSelector
+export default PeriodTransfer

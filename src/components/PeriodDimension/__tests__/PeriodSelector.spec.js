@@ -1,16 +1,16 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import PeriodSelector from '../PeriodSelector'
+import PeriodTransfer from '../PeriodTransfer'
 
 describe('The Period Selector component', () => {
     let props
-    let shallowPeriodSelector
+    let shallowPeriodTransfer
 
     const getWrapper = () => {
-        if (!shallowPeriodSelector) {
-            shallowPeriodSelector = shallow(<PeriodSelector {...props} />)
+        if (!shallowPeriodTransfer) {
+            shallowPeriodTransfer = shallow(<PeriodTransfer {...props} />)
         }
-        return shallowPeriodSelector
+        return shallowPeriodTransfer
     }
 
     beforeEach(() => {
@@ -19,7 +19,7 @@ describe('The Period Selector component', () => {
             onSelect: jest.fn(),
             rightFooter: <></>,
         }
-        shallowPeriodSelector = undefined
+        shallowPeriodTransfer = undefined
     })
 
     it('matches the snapshot', () => {
