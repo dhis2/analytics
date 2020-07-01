@@ -128,18 +128,20 @@ export default function({ store, layout, el, extraConfig, extraOptions }) {
         !isRegressionIneligible(_layout.type) &&
         !(isDualAxisType(layout.type) && hasCustomAxes(filteredSeries))
     ) {
-        config.series = addTrendLines(
-            _layout.regressionType,
-            config.series,
-            stacked
-        )
+        config.series = addTrendLines(_layout, config.series, stacked)
     }
 
     // flatten groups
-    config.series = config.series.map(serie => ({
-        ...serie,
-        data: serie.data.flat(),
-    }))
+    config.series = config.series.map(serie => {
+        if (serie?.custom?.isTrendLine) {
+            return serie
+        } else {
+            return {
+                ...serie,
+                data: serie.data.flat(),
+            }
+        }
+    })
 
     // flatten category groups
     config.xAxis = config.xAxis.map(xAxis => ({
