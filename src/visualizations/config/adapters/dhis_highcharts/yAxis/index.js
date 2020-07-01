@@ -7,7 +7,7 @@ import isString from 'd2-utilizr/lib/isString'
 import getAxisTitle from '../getAxisTitle'
 import getGauge from './gauge'
 import { isStacked, VIS_TYPE_GAUGE, isDualAxisType } from '../../../../../modules/visTypes'
-import { hasOptionalAxis } from '../optionalAxes'
+import { hasCustomAxes, getAxisIdsMap } from '../customAxes'
 import { getAxisStringFromId } from '../../../../util/axisId'
 
 const DEFAULT_MIN_VALUE = 0
@@ -95,27 +95,29 @@ function getLabels(layout) {
 function getMultipleAxes(theme, axes) {
     const axisObjects = []
     axes.map(axisId => {
+        const id = Number(axisId)
         axisObjects.push({
             title: {
                 text: i18n.t('Axis {{axisId}}', {
-                    axisId: axisId + 1,
+                    axisId: id + 1,
                 }),
                 style: {
-                    color: theme[axisId].mainColor,
+                    color: theme[id].mainColor,
                     'font-weight': 700,
                 },
             },
-            id: getAxisStringFromId(axisId),
-            opposite: !!(axisId % 2),
+            id: getAxisStringFromId(id),
+            opposite: !!(id % 2),
         })
     })
     return axisObjects
 }
 
-function getDefault(layout, extraOptions) {
+function getDefault(layout, series, extraOptions) {
     const axes = []
-    if (isDualAxisType(layout.type) && hasOptionalAxis(layout.optionalAxes)) {
-        axes.push(...getMultipleAxes(extraOptions.multiAxisTheme, [...new Set(layout.optionalAxes.map(item => item.axis))].sort((a, b) => a - b)))
+    if (isDualAxisType(layout.type) && hasCustomAxes(layout.series)) {
+        const axisIdsMap = getAxisIdsMap(layout.series, series)
+        axes.push(...getMultipleAxes(extraOptions.multiAxisTheme, [...new Set(Object.keys(axisIdsMap))].sort((a, b) => a - b)))
     } else {
         axes.push(
             objectClean({
@@ -148,7 +150,7 @@ export default function(layout, series, extraOptions) {
             yAxis = getGauge(layout, series, extraOptions.legendSets[0])
             break
         default:
-            yAxis = getDefault(layout, extraOptions)
+            yAxis = getDefault(layout, series, extraOptions)
     }
 
     return yAxis

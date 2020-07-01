@@ -5,8 +5,8 @@ import getType from '../type'
 import {
     getFullIdAxisMap,
     getAxisIdsMap,
-    hasOptionalAxis,
-} from '../optionalAxes'
+    hasCustomAxes,
+} from '../customAxes'
 import { generateColors } from '../../../../util/colors/gradientColorGenerator'
 import {
     VIS_TYPE_PIE,
@@ -34,8 +34,8 @@ function getColor(colors, index) {
 }
 
 function getIdColorMap(series, layout, extraOptions) {
-    if (isDualAxisType(layout.type) && hasOptionalAxis(layout.optionalAxes)) {
-        const axisIdsMap = getAxisIdsMap(layout.optionalAxes, series)
+    if (isDualAxisType(layout.type) && hasCustomAxes(layout.series)) {
+        const axisIdsMap = getAxisIdsMap(layout.series, series)
         const theme = extraOptions.multiAxisTheme
 
         const colorsByAxis = Object.keys(axisIdsMap).reduce((map, axis) => {
@@ -69,8 +69,9 @@ function getIdColorMap(series, layout, extraOptions) {
     }
 }
 
+// TODO: use type from layout.series if it's set
 function getDefault(series, layout, isStacked, extraOptions) {
-    const fullIdAxisMap = getFullIdAxisMap(layout.optionalAxes, series)
+    const fullIdAxisMap = getFullIdAxisMap(layout.series, series)
     const idColorMap = getIdColorMap(series, layout, extraOptions)
 
     series.forEach((seriesObj, index) => {

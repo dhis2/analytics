@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2020-06-24T07:22:39.539Z\n"
-"PO-Revision-Date: 2020-06-24T07:22:39.540Z\n"
+"POT-Creation-Date: 2020-06-29T09:54:23.480Z\n"
+"PO-Revision-Date: 2020-06-29T09:54:23.480Z\n"
 
 msgid "Data Type"
 msgstr ""
@@ -32,19 +32,10 @@ msgstr ""
 msgid "Not available for {{visualizationType}}"
 msgstr ""
 
-msgid "Requires 2 or more data items"
-msgstr ""
-
-msgid "Only available when data is in Series"
-msgstr ""
-
 msgid "Remove Assigned Categories"
 msgstr ""
 
 msgid "Add Assigned Categories"
-msgstr ""
-
-msgid "Manage chart axes"
 msgstr ""
 
 msgid "Filter dimensions"
