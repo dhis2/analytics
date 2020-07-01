@@ -1,4 +1,14 @@
-export default function(series, isZeroAsNull) {
+import { isDualCategoryChartType } from '../../../../modules/visTypes'
+
+export default function(series, layout) {
+    if (isDualCategoryChartType(layout.type)) {
+        return getDualCategoryStackedData(series)
+    } else {
+        return getDefaultStackedData(series)
+    }
+}
+
+function getDefaultStackedData(series, isZeroAsNull) {
     return series[0].data
         .map((value, index) => {
             return series.reduce((total, obj) => {
@@ -8,7 +18,7 @@ export default function(series, isZeroAsNull) {
         .map(value => (isZeroAsNull && value === 0 ? null : value))
 }
 
-export function getDualCategoryStackedData(series) {
+function getDualCategoryStackedData(series) {
     return series[0].data.map((groupObj, groupIndex) => {
         return groupObj.map((value, index) => {
             return series.reduce((total, serieObj) => {

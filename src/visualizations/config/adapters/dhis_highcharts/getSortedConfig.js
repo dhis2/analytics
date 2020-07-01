@@ -1,6 +1,6 @@
 import arrayPluck from 'd2-utilizr/lib/arrayPluck'
 import arraySort from 'd2-utilizr/lib/arraySort'
-import getStackedData, { getDualCategoryStackedData } from './getStackedData'
+import getStackedData from './getStackedData'
 import { isDualCategoryChartType } from '../../../../modules/visTypes'
 
 const sortOrderMap = new Map([
@@ -25,8 +25,9 @@ function getDualCategorySortedConfig(config, layout, stacked) {
     const series = config.series
     const sortedConfig = Object.assign({}, config)
 
-    const stackedData = getDualCategoryStackedData(
-        series.filter(serieObj => serieObj.showInLegend !== false)
+    const stackedData = getStackedData(
+        series.filter(serieObj => serieObj.showInLegend !== false),
+        layout
     )
     const indexOrder = []
 
@@ -76,7 +77,7 @@ function getDefaultSortedConfig(config, layout, stacked) {
     const categories = config.xAxis[0].categories
     const series = config.series
     const indexOrder = getIndexOrder(
-        stacked ? getStackedData(series) : series[0].data,
+        stacked ? getStackedData(series, layout) : series[0].data,
         layout
     )
     const sortedConfig = Object.assign({}, config)
