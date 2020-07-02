@@ -13,7 +13,7 @@ export function getIdAxisMap(customAxes) {
     }, {})
 }
 
-export function getFullIdAxisMap(customAxes, series) {
+export function getFullIdAxisMap(customAxes = [], series = []) {
     const idAxisMap = getIdAxisMap(customAxes.filter(axisItem => series.find(seriesItem => seriesItem.id === axisItem.dimensionItem)))
 
     // adds first axis ids to seriesAxisMap
@@ -28,7 +28,7 @@ export function getFullIdAxisMap(customAxes, series) {
 
 // returns: true or false
 export function hasCustomAxes(series) {
-    return Boolean(series.length) && series.some(item => item.axis > 0)
+    return series && Boolean(series.length) && series.some(item => item.axis > 0)
 }
 
 // returns: true or false
