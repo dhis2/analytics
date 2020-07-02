@@ -19,9 +19,6 @@ const DEFAULT_TRENDLINE = {
         symbol: 'circle',
         radius: 2,
     },
-    custom: {
-        isTrendLine: true,
-    },
 }
 
 export const isRegressionIneligible = type =>
