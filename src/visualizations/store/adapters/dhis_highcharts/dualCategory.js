@@ -1,18 +1,6 @@
 // 1 series, 2 categories
 export default function(acc, series, categories, idValueMap, metaData) {
-    console.log(
-        'metaData',
-        metaData,
-        'categories',
-        categories,
-        'seriesIds',
-        series,
-        'idValueMap',
-        idValueMap
-    )
-
     series[0].forEach(seriesItemId => {
-        const serieData = []
         const groupedData = []
 
         categories[0].forEach(category1ItemId => {
@@ -27,8 +15,9 @@ export default function(acc, series, categories, idValueMap, metaData) {
             })
 
             groupedData.push(groupData)
-            serieData.push(groupData.flat())
         })
+
+        const serieData = groupedData.flat()
 
         // avoid a list of null values
         if (serieData.every(e => e === serieData[0])) {
