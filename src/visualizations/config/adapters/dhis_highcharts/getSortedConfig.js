@@ -26,19 +26,18 @@ function getDualCategorySortedConfig(config, layout, stacked) {
     const sortedConfig = Object.assign({}, config)
 
     const stackedData = getStackedData(
-        series.filter(serieObj => serieObj.showInLegend !== false),
+        series.filter(serieObj => !serieObj.custom.isDualCategoryFakeSerie),
         layout
     )
     const indexOrder = []
 
     // loop through serie groups
     sortedConfig.series = series.map((seriesObj, seriesIndex) => {
-        if (seriesObj.showInLegend === false) {
+        if (seriesObj.custom.isDualCategoryFakeSerie) {
             return seriesObj
         } else {
-            return {
-                ...seriesObj,
-                data: seriesObj.data.map((groupObj, groupIndex) => {
+            seriesObj.custom.data = seriesObj.custom.data.map(
+                (groupObj, groupIndex) => {
                     // sorting index computed on 1st serie data
                     if (seriesIndex === 0) {
                         indexOrder[groupIndex] = getIndexOrder(
@@ -65,8 +64,12 @@ function getDualCategorySortedConfig(config, layout, stacked) {
                         (value, index) =>
                             groupObj[indexOrder[groupIndex][index]]
                     )
-                }),
-            }
+                }
+            )
+
+            seriesObj.data = seriesObj.custom.data.flat()
+
+            return seriesObj
         }
     })
 

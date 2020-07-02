@@ -13,6 +13,7 @@ export default function(acc, series, categories, idValueMap, metaData) {
 
     series[0].forEach(seriesItemId => {
         const serieData = []
+        const groupedData = []
 
         categories[0].forEach(category1ItemId => {
             const groupData = []
@@ -25,18 +26,23 @@ export default function(acc, series, categories, idValueMap, metaData) {
                 groupData.push(value === undefined ? null : parseFloat(value))
             })
 
-            serieData.push(groupData)
+            groupedData.push(groupData)
+            serieData.push(groupData.flat())
         })
 
         // avoid a list of null values
-        if (serieData.flat().every(e => e === serieData[0])) {
+        if (serieData.every(e => e === serieData[0])) {
             serieData.length = 0
+            groupedData.length = 0
         }
 
         acc.push({
             id: seriesItemId,
             name: metaData.items[seriesItemId].name,
             data: serieData,
+            custom: {
+                data: groupedData,
+            },
             xAxis: 0,
         })
     })
@@ -52,6 +58,9 @@ export default function(acc, series, categories, idValueMap, metaData) {
         // always hide the series' values
         dataLabels: {
             enabled: false,
+        },
+        custom: {
+            isDualCategoryFakeSerie: true,
         },
     })
 

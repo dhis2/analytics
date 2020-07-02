@@ -88,13 +88,13 @@ function getDualCategoryTrendLines(layout, series, isStacked) {
 
             newSeries.push(seriesObj)
 
-            if (seriesObj.showInLegend !== false) {
+            if (!seriesObj.custom.isDualCategoryFakeSerie) {
                 const groupRegressionTemplate = Array.from(
                     { length: seriesObj.data.flat().length },
                     () => null
                 )
 
-                seriesObj.data.forEach((groupObj, groupIndex) => {
+                seriesObj.custom.data.forEach((groupObj, groupIndex) => {
                     const trendlineConfig = getRegressionObj(
                         groupObj,
                         layout.regressionType

@@ -36,23 +36,17 @@ export default function({ store, layout, el, extraConfig, extraOptions }) {
 
     const stacked = isStacked(_layout.type)
 
-    const series = getSeries(
-        store.generateData({
-            type: _layout.type,
-            seriesId:
-                _layout.columns && _layout.columns.length
-                    ? _layout.columns[0].dimension
-                    : null,
-            categoryIds:
-                _layout.rows && _layout.rows.length
-                    ? _layout.rows.map(row => row.dimension)
-                    : null,
-        }),
-        store,
-        _layout,
-        stacked,
-        _extraOptions
-    )
+    const series = store.generateData({
+        type: _layout.type,
+        seriesId:
+            _layout.columns && _layout.columns.length
+                ? _layout.columns[0].dimension
+                : null,
+        categoryIds:
+            _layout.rows && _layout.rows.length
+                ? _layout.rows.map(row => row.dimension)
+                : null,
+    })
 
     let config = {
         // type etc
@@ -80,7 +74,13 @@ export default function({ store, layout, el, extraConfig, extraOptions }) {
         yAxis: getYAxis(_layout, series, _extraOptions),
 
         // series
-        series,
+        series: getSeries(
+            series.slice(),
+            store,
+            _layout,
+            stacked,
+            _extraOptions
+        ),
 
         // legend
         legend: getLegend(_layout, _extraOptions.dashboard),
@@ -130,18 +130,6 @@ export default function({ store, layout, el, extraConfig, extraOptions }) {
     ) {
         config.series = addTrendLines(_layout, config.series, stacked)
     }
-
-    // flatten groups
-    config.series = config.series.map(serie => {
-        if (serie?.custom?.isTrendLine) {
-            return serie
-        } else {
-            return {
-                ...serie,
-                data: serie.data.flat(),
-            }
-        }
-    })
 
     // flatten category groups
     config.xAxis = config.xAxis.map(xAxis => ({

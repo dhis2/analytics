@@ -38,11 +38,11 @@ function getDualCategoryCumulativeData(series) {
     let decimals = 0
 
     series
-        .filter(seriesObj => seriesObj.showInLegend !== false)
+        .filter(seriesObj => !seriesObj.custom.isDualCategoryFakeSerie)
         .forEach(seriesObj => {
             const cumulativeValues = []
 
-            seriesObj.data.forEach(groupObj => {
+            seriesObj.custom.data.forEach(groupObj => {
                 const cumulativeGroupValues = []
 
                 groupObj.forEach((value, index) => {
@@ -61,11 +61,13 @@ function getDualCategoryCumulativeData(series) {
             // round values to the largest number of decimals found in the serie
             // this is to avoid the floating-point problems in JavaScript
             // the condition in the return statement is because sometimes value can be null
-            seriesObj.data = cumulativeValues.map(groupObj =>
+            seriesObj.custom.data = cumulativeValues.map(groupObj =>
                 groupObj.map(value =>
                     value ? parseFloat(value.toFixed(decimals)) : value
                 )
             )
+
+            seriesObj.data = seriesObj.custom.data.flat()
 
             decimals = 0
         })

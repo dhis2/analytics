@@ -12,6 +12,7 @@ export default function(store, layout) {
         layout.rows[0].dimension
     )
 
+    // bottom x axis
     const xAxis = [
         {
             title: getAxisTitle(layout.domainAxisLabel),
@@ -28,7 +29,7 @@ export default function(store, layout) {
         },
     ]
 
-    // 2nd axis
+    // top x axis
     xAxis.push({
         categories: axis2Categories,
         labels: xAxis[0].labels,

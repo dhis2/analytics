@@ -19,10 +19,10 @@ function getDefaultStackedData(series, isZeroAsNull) {
 }
 
 function getDualCategoryStackedData(series) {
-    return series[0].data.map((groupObj, groupIndex) => {
+    return series[0].custom.data.map((groupObj, groupIndex) => {
         return groupObj.map((value, index) => {
             return series.reduce((total, serieObj) => {
-                return total + serieObj.data[groupIndex][index]
+                return total + serieObj.custom.data[groupIndex][index]
             }, 0)
         })
     })
