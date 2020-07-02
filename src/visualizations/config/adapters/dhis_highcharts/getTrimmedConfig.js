@@ -1,5 +1,6 @@
 import arrayContains from 'd2-utilizr/lib/arrayContains'
 import arrayUnique from 'd2-utilizr/lib/arrayUnique'
+import { isDualCategoryChartType } from '../../../../modules/visTypes'
 
 function arrayCleanUndefined(array) {
     return array.filter(item => item !== undefined)
@@ -91,75 +92,154 @@ function cleanData(
     return cleanedData
 }
 
-function getTrimmedXAxisObject(
-    xAxis,
-    emptySeriesIndexes,
-    firstValueIndex,
-    lastValueIndex,
-    hideEmptyRowItems
-) {
-    return {
-        xAxis: [
-            {
-                ...xAxis,
-                categories: cleanData(
-                    xAxis.categories,
-                    emptySeriesIndexes,
-                    firstValueIndex,
-                    lastValueIndex,
-                    hideEmptyRowItems
-                ),
-            },
-        ],
+export default function(config, layout) {
+    if (isDualCategoryChartType(layout.type)) {
+        return getDualCategoryTrimmedConfig(config, layout)
+    } else {
+        return getDefaultTrimmedConfig(config, layout)
     }
 }
 
-function getTrimmedSeriesObject(
-    series,
-    emptySeriesIndexes,
-    firstValueIndex,
-    lastValueIndex,
-    hideEmptyRowItems
-) {
-    return {
-        series: series.map(seriesObj => ({
-            ...seriesObj,
-            data: cleanData(
+function getEmptySeriesGroupIndexes(series) {
+    const emptyGroupIndexes = []
+
+    series[0].custom.data.forEach((groupObj, groupIndex) => {
+        const seriesGroupValues = []
+
+        groupObj.forEach((_, index) =>
+            series.forEach(seriesObj =>
+                seriesGroupValues.push(seriesObj.custom.data[groupIndex][index])
+            )
+        )
+
+        if (arrayNullsOnly(seriesGroupValues)) {
+            emptyGroupIndexes.push(groupIndex)
+        }
+    })
+
+    return emptyGroupIndexes
+}
+
+function getFirstLastGroupWithValuesIndexes(series) {
+    let firstGroupWithValuesIndex = undefined
+    let lastGroupWithValuesIndex = 0
+
+    series.forEach(seriesObj => {
+        // make a copy of the groups array so we can reverse it
+        // without affecting the original
+        const groups = seriesObj.custom.data.slice()
+
+        groups.forEach((groupObj, groupIndex) => {
+            if (groupObj.some(value => value !== undefined && value !== null)) {
+                firstGroupWithValuesIndex =
+                    firstGroupWithValuesIndex !== undefined
+                        ? Math.min(firstGroupWithValuesIndex, groupIndex)
+                        : groupIndex
+            }
+        })
+
+        groups.reverse().forEach((groupObj, groupIndex) => {
+            if (groupObj.some(value => value !== undefined && value !== null)) {
+                lastGroupWithValuesIndex = Math.max(
+                    lastGroupWithValuesIndex,
+                    groups.length - 1 - groupIndex
+                )
+            }
+        })
+    })
+
+    return { firstGroupWithValuesIndex, lastGroupWithValuesIndex }
+}
+
+function getDualCategoryTrimmedConfig(config, layout) {
+    const filteredSeries = config.series.filter(
+        serieObj => !serieObj.custom.isDualCategoryFakeSerie
+    )
+    const emptyGroupIndexes = getEmptySeriesGroupIndexes(filteredSeries)
+
+    const {
+        firstGroupWithValuesIndex,
+        lastGroupWithValuesIndex,
+    } = getFirstLastGroupWithValuesIndexes(filteredSeries)
+
+    const trimmedSeries = config.series.map(seriesObj => {
+        if (seriesObj.custom.isDualCategoryFakeSerie) {
+            seriesObj.data = cleanData(
                 seriesObj.data,
-                emptySeriesIndexes,
-                firstValueIndex,
-                lastValueIndex,
-                hideEmptyRowItems
-            ),
-        })),
-    }
+                emptyGroupIndexes,
+                firstGroupWithValuesIndex,
+                lastGroupWithValuesIndex,
+                layout.hideEmptyRowItems
+            )
+        } else {
+            seriesObj.custom.data = cleanData(
+                seriesObj.custom.data,
+                emptyGroupIndexes,
+                firstGroupWithValuesIndex,
+                lastGroupWithValuesIndex,
+                layout.hideEmptyRowItems
+            )
+
+            seriesObj.data = seriesObj.custom.data.flat()
+        }
+
+        return seriesObj
+    })
+
+    const trimmedXAxis = config.xAxis.map(xAxis => {
+        xAxis.categories = cleanData(
+            xAxis.categories,
+            emptyGroupIndexes,
+            firstGroupWithValuesIndex,
+            lastGroupWithValuesIndex,
+            layout.hideEmptyRowItems
+        )
+
+        return xAxis
+    })
+
+    return emptyGroupIndexes.length && config.xAxis && config.series
+        ? Object.assign({}, config, {
+              series: trimmedSeries,
+              xAxis: trimmedXAxis,
+          })
+        : config
 }
 
-export default function(config, hideEmptyRowItems) {
+function getDefaultTrimmedConfig(config, layout) {
     const emptySeriesIndexes = getEmptySeriesIndexes(config.series)
 
     const { firstValueIndex, lastValueIndex } = getFirstLastValueIndexes(
         config.series
     )
+    const trimmedSeries = config.series.map(seriesObj => ({
+        ...seriesObj,
+        data: cleanData(
+            seriesObj.data,
+            emptySeriesIndexes,
+            firstValueIndex,
+            lastValueIndex,
+            layout.hideEmptyRowItems
+        ),
+    }))
+
+    const trimmedXAxis = [
+        {
+            ...config.xAxis,
+            categories: cleanData(
+                config.xAxis.categories,
+                emptySeriesIndexes,
+                firstValueIndex,
+                lastValueIndex,
+                layout.hideEmptyRowItems
+            ),
+        },
+    ]
 
     return emptySeriesIndexes.length && config.xAxis && config.series
-        ? Object.assign(
-              {},
-              config,
-              getTrimmedXAxisObject(
-                  config.xAxis[0],
-                  emptySeriesIndexes,
-                  firstValueIndex,
-                  lastValueIndex,
-                  hideEmptyRowItems
-              ),
-              getTrimmedSeriesObject(
-                  config.series,
-                  emptySeriesIndexes,
-                  firstValueIndex,
-                  lastValueIndex,
-                  hideEmptyRowItems
-              )
-          )
+        ? Object.assign({}, config, {
+              series: trimmedSeries,
+              xAxis: trimmedXAxis,
+          })
         : config
 }

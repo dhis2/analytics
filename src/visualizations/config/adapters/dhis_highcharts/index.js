@@ -106,10 +106,9 @@ export default function({ store, layout, el, extraConfig, extraOptions }) {
         },
     }
 
-    // TODO for dual category
     // hide empty categories
     if (_layout.hideEmptyRowItems !== 'NONE') {
-        config = getTrimmedConfig(config, _layout.hideEmptyRowItems)
+        config = getTrimmedConfig(config, _layout)
     }
 
     // sorting
