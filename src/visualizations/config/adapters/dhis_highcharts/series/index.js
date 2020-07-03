@@ -13,6 +13,7 @@ import {
     VIS_TYPE_GAUGE,
     isDualAxisType,
     isYearOverYear,
+    VIS_TYPE_LINE,
 } from '../../../../../modules/visTypes'
 import { getAxisStringFromId } from '../../../../util/axisId'
 
@@ -69,7 +70,6 @@ function getIdColorMap(series, layout, extraOptions) {
     }
 }
 
-// TODO: use type from layout.series if it's set
 function getDefault(series, layout, isStacked, extraOptions) {
     const fullIdAxisMap = getFullIdAxisMap(layout.series, series)
     const idColorMap = getIdColorMap(series, layout, extraOptions)
@@ -90,16 +90,27 @@ function getDefault(series, layout, isStacked, extraOptions) {
                     ? HIGHCHARTS_TYPE_PERCENT
                     : HIGHCHARTS_TYPE_NORMAL
         }
+        
+        const matchedObject = layout.series?.find(item => item.dimensionItem === seriesObj.id)
+        
+        if (matchedObject) {
+            if (matchedObject.zIndex) {
+                seriesObj.zIndex = matchedObject.zIndex
+            }
+            if (matchedObject.type) {
+                seriesObj.type = getType(matchedObject.type).type
+            } else if (layout.type === VIS_TYPE_LINE) {
+                seriesObj.zIndex = 1
+            }
+        } else if (layout.type === VIS_TYPE_LINE) {
+            seriesObj.zIndex = 1
+        }
 
         // DHIS2-2101
         // show bar/column chart as EPI curve (basically remove spacing between bars/columns)
-        if (layout.noSpaceBetweenColumns) {
-            const seriesType = getType(layout.type).type
-
-            if (epiCurveTypes.includes(seriesType)) {
-                seriesObj.pointPadding = 0
-                seriesObj.groupPadding = 0
-            }
+        if (layout.noSpaceBetweenColumns && epiCurveTypes.includes(getType(layout.type).type)) {
+            seriesObj.pointPadding = 0
+            seriesObj.groupPadding = 0
         }
 
         // color
