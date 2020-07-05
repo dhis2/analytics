@@ -22,7 +22,7 @@ msgid "Data"
 msgstr "数据"
 
 msgid "Data Type"
-msgstr ""
+msgstr "数据类型"
 
 msgid "Totals"
 msgstr "总共"
@@ -31,22 +31,22 @@ msgid "Details"
 msgstr "详情"
 
 msgid "Detail"
-msgstr ""
+msgstr "详情"
 
 msgid "Search dimensions"
-msgstr ""
+msgstr "搜索维度"
 
 msgid "Dimension recommended with selected data"
-msgstr ""
+msgstr "选择的数据的推荐维度"
 
 msgid "Search"
 msgstr "搜索"
 
 msgid "Selected Data"
-msgstr ""
+msgstr "选择的数据"
 
 msgid "Deselect All"
-msgstr ""
+msgstr "去全选"
 
 msgid "Select all"
 msgstr "全选"
@@ -106,10 +106,10 @@ msgid "December"
 msgstr "12月"
 
 msgid "Week {{weekNumber}}"
-msgstr ""
+msgstr "{{weekNumber}}周"
 
 msgid "Bi-Week {{biWeekNumber}}"
-msgstr ""
+msgstr "  {{biWeekNumber}} 两周"
 
 msgid "Daily"
 msgstr "每日"
@@ -151,7 +151,7 @@ msgid "Yearly"
 msgstr "每年"
 
 msgid "Financial year (Start November)"
-msgstr ""
+msgstr "财政年（11月始）"
 
 msgid "Financial year (Start October)"
 msgstr "财务十月"
@@ -253,7 +253,7 @@ msgid "Last six-month"
 msgstr "最近六个月"
 
 msgid "Last 2 six-month"
-msgstr ""
+msgstr "最近2个六个月"
 
 msgid "This financial year"
 msgstr "本财年"
@@ -358,19 +358,19 @@ msgid "Organisation Unit"
 msgstr "组织机构"
 
 msgid "{{dynamicOuNames}} and {{lastOuName}}"
-msgstr ""
+msgstr "{{dynamicOuNames}} 和{{lastOuName}}"
 
 msgid "{{allDynamicOuNames}} levels"
-msgstr ""
+msgstr "{{allDynamicOuNames}} 等级"
 
 msgid "{{allDynamicOuNames}} groups"
-msgstr ""
+msgstr "{{allDynamicOuNames}} 组"
 
 msgid "{{allDynamicOuNames}} levels in {{staticOuNames}}"
-msgstr ""
+msgstr "{{allDynamicOuNames}} 等级在 {{staticOuNames}}"
 
 msgid "{{allDynamicOuNames}} groups in {{staticOuNames}}"
-msgstr ""
+msgstr "{{allDynamicOuNames}} 组在 {{staticOuNames}}"
 
 msgid "No data"
 msgstr "无数据"
