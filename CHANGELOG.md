@@ -1,3 +1,11 @@
+## [4.5.6](https://github.com/dhis2/analytics/compare/v4.5.5...v4.5.6) (2020-07-05)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (4.x) ([6de7738](https://github.com/dhis2/analytics/commit/6de7738222f1a0cac916d5abddc7f0ad16f88de3))
+* **translations:** sync translations from transifex (4.x) ([bedc0c1](https://github.com/dhis2/analytics/commit/bedc0c1bb2352f32acc7a9d5a49936dc2bab3e5a))
+
 ## [4.5.5](https://github.com/dhis2/analytics/compare/v4.5.4...v4.5.5) (2020-06-11)
 
 
