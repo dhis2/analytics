@@ -24,6 +24,8 @@ const HIGHCHARTS_TYPE_BAR = 'bar'
 const HIGHCHARTS_TYPE_PERCENT = 'percent'
 const HIGHCHARTS_TYPE_NORMAL = 'normal'
 
+const INCREASED_Z_INDEX = 1
+
 const epiCurveTypes = [HIGHCHARTS_TYPE_COLUMN, HIGHCHARTS_TYPE_BAR]
 
 function getAnimation(option, fallback) {
@@ -93,17 +95,18 @@ function getDefault(series, layout, isStacked, extraOptions) {
         
         const matchedObject = layout.series?.find(item => item.dimensionItem === seriesObj.id)
         
-        if (matchedObject) {
-            if (matchedObject.zIndex) {
-                seriesObj.zIndex = matchedObject.zIndex
-            }
+        if (matchedObject) { // Checks if the item has custom options
             if (matchedObject.type) {
                 seriesObj.type = getType(matchedObject.type).type
+
+                if (matchedObject.type === VIS_TYPE_LINE) {
+                    seriesObj.zIndex = INCREASED_Z_INDEX // Custom options, item type Line
+                }
             } else if (layout.type === VIS_TYPE_LINE) {
-                seriesObj.zIndex = 1
+                seriesObj.zIndex = INCREASED_Z_INDEX // Custom options, no item type, visType Line
             }
         } else if (layout.type === VIS_TYPE_LINE) {
-            seriesObj.zIndex = 1
+            seriesObj.zIndex = INCREASED_Z_INDEX // No custom options, visType Line
         }
 
         // DHIS2-2101
