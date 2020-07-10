@@ -39,6 +39,7 @@ const ItemSelector = ({
             selected={selectedItemIds}
             leftHeader={leftHeader}
             filterable
+            filterPlaceholder={i18n.t('Search')}
             enableOrderChange
             height={TRANSFER_HEIGHT}
             optionsWidth={TRANSFER_OPTIONS_WIDTH}
