@@ -30,6 +30,13 @@ const ItemSelector = ({
         </>
     )
 
+    const renderRightHeader = () => (
+        <>
+            <p className="rightHeader">{i18n.t('Selected Data')}</p>
+            <style jsx>{styles}</style>
+        </>
+    )
+
     return (
         <Transfer
             onChange={({ selected }) => {
@@ -45,6 +52,7 @@ const ItemSelector = ({
             optionsWidth={TRANSFER_OPTIONS_WIDTH}
             selectedWidth={TRANSFER_SELECTED_WIDTH}
             selectedEmptyComponent={renderEmptySelection()}
+            rightHeader={renderRightHeader()}
             rightFooter={rightFooter}
             options={allItems.map(({ id, name }) => ({
                 label: name,

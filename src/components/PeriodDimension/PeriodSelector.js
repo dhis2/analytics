@@ -62,7 +62,7 @@ class PeriodSelector extends Component {
         }
     }
 
-    renderHeader = () => (
+    renderLeftHeader = () => (
         <>
             <TabBar>
                 <Tab
@@ -116,6 +116,13 @@ class PeriodSelector extends Component {
         </>
     )
 
+    renderRightHeader = () => (
+        <>
+            <p className="rightHeader">{i18n.t('Selected Periods')}</p>
+            <style jsx>{styles}</style>
+        </>
+    )
+
     onSelectFixedPeriods = fixedFilter => {
         this.setState({
             fixedFilter,
@@ -146,12 +153,13 @@ class PeriodSelector extends Component {
                 this.props.onSelect(formattedItems)
             }}
             selected={this.state.selectedPeriods.map(period => period.id)}
-            leftHeader={this.renderHeader()}
+            leftHeader={this.renderLeftHeader()}
             enableOrderChange
             height={TRANSFER_HEIGHT}
             optionsWidth={TRANSFER_OPTIONS_WIDTH}
             selectedWidth={TRANSFER_SELECTED_WIDTH}
             selectedEmptyComponent={this.renderEmptySelection()}
+            rightHeader={this.renderRightHeader()}
             rightFooter={this.props.rightFooter}
             options={this.state.allPeriods.map(({ id, name }) => ({
                 label: name,
