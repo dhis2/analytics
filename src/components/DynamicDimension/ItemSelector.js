@@ -54,15 +54,14 @@ const ItemSelector = ({
             selectedEmptyComponent={renderEmptySelection()}
             rightHeader={renderRightHeader()}
             rightFooter={rightFooter}
-            options={allItems.map(({ id, name }) => ({
+            options={allItems.map(({ id, name, disabled }) => ({
                 label: name,
                 value: id,
+                disabled,
             }))}
             renderOption={props => (
                 <TransferOption {...props} icon={GenericIcon} />
             )}
-            // TODO: Add a filter placeholer once the Transfer component supports this (https://github.com/dhis2/ui/issues/131)
-            // TODO: Add rightHeader "Selected Periods" once the Transfer component supports this (https://github.com/dhis2/ui-core/issues/885)
         />
     )
 }
