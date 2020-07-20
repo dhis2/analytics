@@ -8,6 +8,7 @@ export const TransferOption = ({
     disabled,
     label,
     highlighted,
+    selected,
     onClick,
     onDoubleClick,
     value,
@@ -16,7 +17,7 @@ export const TransferOption = ({
     return (
         <div data-value={value} className="wrapper">
             <div
-                className={cx('chip', { highlighted, disabled })}
+                className={cx('chip', { highlighted, disabled, selected })}
                 onClick={event => {
                     if (disabled) return
                     onClick({ label, value }, event)
@@ -41,6 +42,7 @@ TransferOption.propTypes = {
     disabled: propTypes.bool,
     highlighted: propTypes.bool,
     icon: propTypes.node,
+    selected: propTypes.bool,
     onClick: propTypes.func,
     onDoubleClick: propTypes.func,
 }

@@ -21,16 +21,30 @@ export default css`
         background: ${colors.grey300};
     }
 
-    .chip.highlighted {
+    .selected {
+        background: ${theme.secondary100};
+        color: ${theme.secondary900};
+    }
+
+    .selected :global(.icon path) {
+        fill: ${theme.secondary700};
+    }
+
+    .selected:hover {
+        background: #c9edeb;
+    }
+
+    .highlighted,
+    .highlighted:hover {
         background: ${theme.secondary800};
         color: ${colors.white};
     }
 
-    .chip.highlighted :global(.icon path) {
+    .highlighted :global(.icon path) {
         fill: ${colors.white};
     }
 
-    .chip.disabled {
+    .disabled {
         opacity: 0.3;
         cursor: not-allowed;
     }
