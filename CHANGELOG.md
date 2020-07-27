@@ -1,3 +1,10 @@
+## [7.1.6](https://github.com/dhis2/analytics/compare/v7.1.5...v7.1.6) (2020-07-27)
+
+
+### Bug Fixes
+
+* pass selected as part of options to Transfer ([#511](https://github.com/dhis2/analytics/issues/511)) ([1e779ae](https://github.com/dhis2/analytics/commit/1e779ae50175e1415d4f960312abe6e6e0f15ae4))
+
 ## [7.1.5](https://github.com/dhis2/analytics/compare/v7.1.4...v7.1.5) (2020-07-05)
 
 

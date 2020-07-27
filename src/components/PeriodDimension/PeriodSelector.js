@@ -161,7 +161,10 @@ class PeriodSelector extends Component {
             selectedEmptyComponent={this.renderEmptySelection()}
             rightHeader={this.renderRightHeader()}
             rightFooter={this.props.rightFooter}
-            options={this.state.allPeriods.map(({ id, name }) => ({
+            options={[
+                ...this.state.allPeriods,
+                ...this.state.selectedPeriods,
+            ].map(({ id, name }) => ({
                 label: name,
                 value: id,
             }))}
