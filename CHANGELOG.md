@@ -1,3 +1,10 @@
+# [7.2.0](https://github.com/dhis2/analytics/compare/v7.1.6...v7.2.0) (2020-07-27)
+
+
+### Features
+
+* new @dhis2/ui Transfer props (DHIS2-8807, DHIS2-8831) ([#520](https://github.com/dhis2/analytics/issues/520)) ([bbb693d](https://github.com/dhis2/analytics/commit/bbb693df2d94c6fa4df2e53fba2ee44966e5c62d))
+
 ## [7.1.6](https://github.com/dhis2/analytics/compare/v7.1.5...v7.1.6) (2020-07-27)
 
 
