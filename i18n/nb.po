@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-06-03T21:43:03.758Z\n"
+"POT-Creation-Date: 2020-07-27T07:46:11.678Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: Karoline Tufte Lien <karoline@dhis2.org>, 2020\n"
 "Language-Team: Norwegian Bokmål (https://www.transifex.com/hisp-uio/teams/100509/nb/)\n"
@@ -70,6 +70,9 @@ msgstr "Dimensjon anbefalt med valgte data"
 msgid "No items selected"
 msgstr "Ingen elementer er valgt"
 
+msgid "Selected Items"
+msgstr ""
+
 msgid "Search"
 msgstr "Søk"
 
@@ -96,6 +99,9 @@ msgstr "Relative perioder"
 
 msgid "Fixed periods"
 msgstr "Faste perioder"
+
+msgid "Selected Periods"
+msgstr ""
 
 msgid "No periods selected"
 msgstr "Ingen perioder er valgt"

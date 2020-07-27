@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-06-03T21:43:03.758Z\n"
+"POT-Creation-Date: 2020-07-27T07:46:11.678Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: Viktor Varland <viktor@dhis2.org>, 2020\n"
 "Language-Team: Lao (https://www.transifex.com/hisp-uio/teams/100509/lo/)\n"
@@ -70,6 +70,9 @@ msgstr ""
 msgid "No items selected"
 msgstr ""
 
+msgid "Selected Items"
+msgstr ""
+
 msgid "Search"
 msgstr "ຄົນຫາ"
 
@@ -96,6 +99,9 @@ msgstr "​ໄລ​ຍະ​ເວ​ລາ​ໄກ້​ຄຽງ"
 
 msgid "Fixed periods"
 msgstr "ໄລຍະເວລາທີ່ໄດ້ກຳນົດ"
+
+msgid "Selected Periods"
+msgstr ""
 
 msgid "No periods selected"
 msgstr "ບໍ່ທັນໄດ້ເລືອກໄລຍະເວລາ"
