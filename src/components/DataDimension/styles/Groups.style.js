@@ -1,5 +1,5 @@
 import css from 'styled-jsx/css'
-import { colors } from '@dhis2/ui-core'
+import { colors } from '@dhis2/ui'
 
 export default css`
     .container {
@@ -8,15 +8,13 @@ export default css`
         min-height: 53px;
         border-right: 0;
         border-left: 0;
-        padding-top: 5px;
-        padding-left: 10px;
+        padding: 5px 5px 10px 10px;
     }
     .group-container {
         display: flex;
         flex-direction: column;
         width: inherit;
-        min-width: 294px;
+        min-width: 290px;
         flex-grow: 1;
-        padding-right: 5px;
     }
 `

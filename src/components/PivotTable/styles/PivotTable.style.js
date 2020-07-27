@@ -1,5 +1,5 @@
 import css from 'styled-jsx/css'
-import { colors } from '@dhis2/ui-core'
+import { colors } from '@dhis2/ui'
 import {
     DISPLAY_DENSITY_PADDING_COMPACT,
     DISPLAY_DENSITY_PADDING_NORMAL,

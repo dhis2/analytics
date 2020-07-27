@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-05-22T11:34:10.538Z\n"
+"POT-Creation-Date: 2020-06-03T21:43:03.758Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: Hamza Assada <7amza.it@gmail.com>, 2020\n"
 "Language-Team: Arabic (https://www.transifex.com/hisp-uio/teams/100509/ar/)\n"
@@ -67,6 +67,9 @@ msgstr "الأبعاد الخاصة بك"
 
 msgid "Dimension recommended with selected data"
 msgstr "البعد موصى به مع البيانات المحددة"
+
+msgid "No items selected"
+msgstr ""
 
 msgid "Search"
 msgstr "البحث"

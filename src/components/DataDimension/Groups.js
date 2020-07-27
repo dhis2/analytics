@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { SingleSelectField, SingleSelectOption } from '@dhis2/ui-core'
+import { SingleSelectField, SingleSelectOption } from '@dhis2/ui'
 
 import { Detail } from './Detail'
 import { dataTypes } from '../../modules/dataTypes'
@@ -23,25 +23,19 @@ export const Groups = ({
 
     const groupDetail = dataTypes[dataType].groupDetail
 
-    const selected = optionItems.find(item => item.id === groupId) || {}
-
     return (
         <div className="container">
             <style jsx>{styles}</style>
             <div className="group-container">
                 <SingleSelectField
                     label={dataTypes[dataType].getGroupLabel()}
-                    selected={
-                        selected.id && selected.name
-                            ? { value: selected.id, label: selected.name }
-                            : {}
-                    }
+                    selected={groupId}
                     placeholder={
                         !groupId && dataTypes[dataType].getPlaceholder
                             ? dataTypes[dataType].getPlaceholder()
                             : null
                     }
-                    onChange={ref => onGroupChange(ref.selected.value)}
+                    onChange={ref => onGroupChange(ref.selected)}
                     dense
                 >
                     {optionItems.map(item => (

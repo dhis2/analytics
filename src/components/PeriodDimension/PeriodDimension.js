@@ -6,13 +6,9 @@ import { DIMENSION_ID_PERIOD } from '../../modules/predefinedDimensions'
 
 export const PeriodDimension = ({ onSelect, selectedPeriods, rightFooter }) => {
     const selectPeriods = periods => {
-        const formattedPeriods = periods.map(period => ({
-            id: period.value,
-            name: period.label,
-        }))
         onSelect({
             dimensionId: DIMENSION_ID_PERIOD,
-            items: formattedPeriods,
+            items: periods,
         })
     }
 

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'
 import InfoIcon from '@material-ui/icons/InfoOutlined'
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd'
-import { colors, Button } from '@dhis2/ui-core'
+import { Button, colors } from '@dhis2/ui'
 
 import Item from './widgets/SelectedItem'
 import { ArrowButton as UnAssignButton } from './widgets/ArrowButton'

@@ -1,5 +1,5 @@
 import css from 'styled-jsx/css'
-import { spacers, colors } from '@dhis2/ui-core'
+import { spacers, colors } from '@dhis2/ui'
 
 export default css`
     .filterContainer {
