@@ -153,7 +153,10 @@ class PeriodSelector extends Component {
             selectedWidth={TRANSFER_SELECTED_WIDTH}
             selectedEmptyComponent={this.renderEmptySelection()}
             rightFooter={this.props.rightFooter}
-            options={this.state.allPeriods.map(({ id, name }) => ({
+            options={[
+                ...this.state.allPeriods,
+                ...this.state.selectedPeriods,
+            ].map(({ id, name }) => ({
                 label: name,
                 value: id,
             }))}
