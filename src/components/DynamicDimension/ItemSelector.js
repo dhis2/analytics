@@ -32,7 +32,7 @@ const ItemSelector = ({
 
     const renderRightHeader = () => (
         <>
-            <p className="rightHeader">{i18n.t('Selected Data')}</p>
+            <p className="rightHeader">{i18n.t('Selected Items')}</p>
             <style jsx>{styles}</style>
         </>
     )
