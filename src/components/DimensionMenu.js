@@ -47,7 +47,6 @@ export class DimensionMenu extends Component {
             numberOfDimensionItems,
             assignedCategoriesItemHandler,
             isAssignedCategoriesInLayout,
-            dualAxisItemHandler,
             axisItemHandler,
             removeItemHandler,
             anchorEl,
