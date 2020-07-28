@@ -28,7 +28,7 @@ export function getFullIdAxisMap(customAxes = [], series = []) {
 
 // returns: true or false
 export function hasCustomAxes(series) {
-    return series && Boolean(series.length) && series.some(item => item.axis > 0)
+    return series?.length && series.some(item => item.axis > 0)
 }
 
 // returns: true or false
