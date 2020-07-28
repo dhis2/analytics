@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-06-03T21:43:03.758Z\n"
+"POT-Creation-Date: 2020-07-27T07:46:11.678Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: Mai Nguyen <thanhmai.jica@gmail.com>, 2020\n"
 "Language-Team: Vietnamese (https://www.transifex.com/hisp-uio/teams/100509/vi/)\n"
@@ -71,6 +71,9 @@ msgstr ""
 msgid "No items selected"
 msgstr ""
 
+msgid "Selected Items"
+msgstr ""
+
 msgid "Search"
 msgstr "Tìm kiếm"
 
@@ -97,6 +100,9 @@ msgstr "Thời điểm tương đối"
 
 msgid "Fixed periods"
 msgstr "Thời điểm tĩnh"
+
+msgid "Selected Periods"
+msgstr ""
 
 msgid "No periods selected"
 msgstr "Chưa chọn thời điểm"

@@ -1,3 +1,24 @@
+## [7.2.1](https://github.com/dhis2/analytics/compare/v7.2.0...v7.2.1) (2020-07-27)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([9034475](https://github.com/dhis2/analytics/commit/9034475fc91a02795a076c368f906ba3bffdd41d))
+
+# [7.2.0](https://github.com/dhis2/analytics/compare/v7.1.6...v7.2.0) (2020-07-27)
+
+
+### Features
+
+* new @dhis2/ui Transfer props (DHIS2-8807, DHIS2-8831) ([#520](https://github.com/dhis2/analytics/issues/520)) ([bbb693d](https://github.com/dhis2/analytics/commit/bbb693df2d94c6fa4df2e53fba2ee44966e5c62d))
+
+## [7.1.6](https://github.com/dhis2/analytics/compare/v7.1.5...v7.1.6) (2020-07-27)
+
+
+### Bug Fixes
+
+* pass selected as part of options to Transfer ([#511](https://github.com/dhis2/analytics/issues/511)) ([1e779ae](https://github.com/dhis2/analytics/commit/1e779ae50175e1415d4f960312abe6e6e0f15ae4))
+
 ## [7.1.5](https://github.com/dhis2/analytics/compare/v7.1.4...v7.1.5) (2020-07-05)
 
 

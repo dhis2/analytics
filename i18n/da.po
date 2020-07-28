@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-06-03T21:43:03.758Z\n"
+"POT-Creation-Date: 2020-07-27T07:46:11.678Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: phil_dhis2, 2020\n"
 "Language-Team: Danish (https://www.transifex.com/hisp-uio/teams/100509/da/)\n"
@@ -69,6 +69,9 @@ msgstr ""
 msgid "No items selected"
 msgstr ""
 
+msgid "Selected Items"
+msgstr ""
+
 msgid "Search"
 msgstr ""
 
@@ -94,6 +97,9 @@ msgid "Relative periods"
 msgstr ""
 
 msgid "Fixed periods"
+msgstr ""
+
+msgid "Selected Periods"
 msgstr ""
 
 msgid "No periods selected"

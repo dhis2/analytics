@@ -14,4 +14,8 @@ export default css`
         margin: ${spacers.dp24} 0 0;
         color: ${colors.grey700};
     }
+    .rightHeader {
+        font-size: 14px;
+        font-weight: 400;
+    }
 `

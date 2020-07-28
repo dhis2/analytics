@@ -30,6 +30,13 @@ const ItemSelector = ({
         </>
     )
 
+    const renderRightHeader = () => (
+        <>
+            <p className="rightHeader">{i18n.t('Selected Items')}</p>
+            <style jsx>{styles}</style>
+        </>
+    )
+
     return (
         <Transfer
             onChange={({ selected }) => {
@@ -39,21 +46,22 @@ const ItemSelector = ({
             selected={selectedItemIds}
             leftHeader={leftHeader}
             filterable
+            filterPlaceholder={i18n.t('Search')}
             enableOrderChange
             height={TRANSFER_HEIGHT}
             optionsWidth={TRANSFER_OPTIONS_WIDTH}
             selectedWidth={TRANSFER_SELECTED_WIDTH}
             selectedEmptyComponent={renderEmptySelection()}
+            rightHeader={renderRightHeader()}
             rightFooter={rightFooter}
-            options={allItems.map(({ id, name }) => ({
+            options={allItems.map(({ id, name, disabled }) => ({
                 label: name,
                 value: id,
+                disabled,
             }))}
             renderOption={props => (
                 <TransferOption {...props} icon={GenericIcon} />
             )}
-            // TODO: Add a filter placeholer once the Transfer component supports this (https://github.com/dhis2/ui/issues/131)
-            // TODO: Add rightHeader "Selected Periods" once the Transfer component supports this (https://github.com/dhis2/ui-core/issues/885)
         />
     )
 }

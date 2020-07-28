@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-06-03T21:43:03.758Z\n"
+"POT-Creation-Date: 2020-07-27T07:46:11.678Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: phil_dhis2, 2020\n"
 "Language-Team: Persian (Afghanistan) (https://www.transifex.com/hisp-uio/teams/100509/fa_AF/)\n"
@@ -69,6 +69,9 @@ msgstr ""
 msgid "No items selected"
 msgstr ""
 
+msgid "Selected Items"
+msgstr ""
+
 msgid "Search"
 msgstr "جستجو"
 
@@ -95,6 +98,9 @@ msgstr "دوره های ارتباطی"
 
 msgid "Fixed periods"
 msgstr "ثابتې مودې"
+
+msgid "Selected Periods"
+msgstr ""
 
 msgid "No periods selected"
 msgstr "هېڅ مودې نه دي غوره شوې"
