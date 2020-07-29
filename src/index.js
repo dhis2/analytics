@@ -135,6 +135,7 @@ export {
     isYearOverYear,
     isDualAxisType,
     isSingleValue,
+    isDualCategoryChartType,
 } from './modules/visTypes'
 
 // Modules: layoutTypes
