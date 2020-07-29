@@ -1,3 +1,15 @@
+# [8.0.0](https://github.com/dhis2/analytics/compare/v7.2.1...v8.0.0) (2020-07-29)
+
+
+### Features
+
+* implement new series options and 4 axes (DHIS2-9103, DHIS2-9011, DHIS2-9012) ([#515](https://github.com/dhis2/analytics/issues/515)) ([c727213](https://github.com/dhis2/analytics/commit/c7272137dff45072ad9a41e7ac18b6b8c0287bcd))
+
+
+### BREAKING CHANGES
+
+* dualAxisItemHandler prop removed from DimensionMenu
+
 ## [7.2.1](https://github.com/dhis2/analytics/compare/v7.2.0...v7.2.1) (2020-07-27)
 
 
