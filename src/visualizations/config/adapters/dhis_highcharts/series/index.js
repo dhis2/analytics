@@ -5,15 +5,17 @@ import getType from '../type'
 import {
     getFullIdAxisMap,
     getAxisIdsMap,
-    hasOptionalAxis,
-} from '../optionalAxes'
+    hasCustomAxes,
+} from '../customAxes'
 import { generateColors } from '../../../../util/colors/gradientColorGenerator'
 import {
     VIS_TYPE_PIE,
     VIS_TYPE_GAUGE,
     isDualAxisType,
     isYearOverYear,
+    VIS_TYPE_LINE,
 } from '../../../../../modules/visTypes'
+import { getAxisStringFromId } from '../../../../util/axisId'
 
 const DEFAULT_ANIMATION_DURATION = 200
 
@@ -21,6 +23,8 @@ const HIGHCHARTS_TYPE_COLUMN = 'column'
 const HIGHCHARTS_TYPE_BAR = 'bar'
 const HIGHCHARTS_TYPE_PERCENT = 'percent'
 const HIGHCHARTS_TYPE_NORMAL = 'normal'
+
+const INCREASED_Z_INDEX = 1
 
 const epiCurveTypes = [HIGHCHARTS_TYPE_COLUMN, HIGHCHARTS_TYPE_BAR]
 
@@ -33,8 +37,9 @@ function getColor(colors, index) {
 }
 
 function getIdColorMap(series, layout, extraOptions) {
-    if (hasOptionalAxis(layout.optionalAxes)) {
-        const axisIdsMap = getAxisIdsMap(layout.optionalAxes, series)
+    const filteredSeries = layout.series.filter(layoutSeriesItem => series.some(seriesItem => seriesItem.id === layoutSeriesItem.dimensionItem))
+    if (isDualAxisType(layout.type) && hasCustomAxes(filteredSeries)) {
+        const axisIdsMap = getAxisIdsMap(layout.series, series)
         const theme = extraOptions.multiAxisTheme
 
         const colorsByAxis = Object.keys(axisIdsMap).reduce((map, axis) => {
@@ -69,7 +74,7 @@ function getIdColorMap(series, layout, extraOptions) {
 }
 
 function getDefault(series, layout, isStacked, extraOptions) {
-    const fullIdAxisMap = getFullIdAxisMap(layout.optionalAxes, series)
+    const fullIdAxisMap = getFullIdAxisMap(layout.series, series)
     const idColorMap = getIdColorMap(series, layout, extraOptions)
 
     series.forEach((seriesObj, index) => {
@@ -88,16 +93,28 @@ function getDefault(series, layout, isStacked, extraOptions) {
                     ? HIGHCHARTS_TYPE_PERCENT
                     : HIGHCHARTS_TYPE_NORMAL
         }
+        
+        const matchedObject = layout.series?.find(item => item.dimensionItem === seriesObj.id)
+        
+        if (matchedObject) { // Checks if the item has custom options
+            if (matchedObject.type) {
+                seriesObj.type = getType(matchedObject.type).type
+
+                if (matchedObject.type === VIS_TYPE_LINE) {
+                    seriesObj.zIndex = INCREASED_Z_INDEX // Custom options, item type Line
+                }
+            } else if (layout.type === VIS_TYPE_LINE) {
+                seriesObj.zIndex = INCREASED_Z_INDEX // Custom options, no item type, visType Line
+            }
+        } else if (layout.type === VIS_TYPE_LINE) {
+            seriesObj.zIndex = INCREASED_Z_INDEX // No custom options, visType Line
+        }
 
         // DHIS2-2101
         // show bar/column chart as EPI curve (basically remove spacing between bars/columns)
-        if (layout.noSpaceBetweenColumns) {
-            const seriesType = getType(layout.type).type
-
-            if (epiCurveTypes.includes(seriesType)) {
-                seriesObj.pointPadding = 0
-                seriesObj.groupPadding = 0
-            }
+        if (layout.noSpaceBetweenColumns && epiCurveTypes.includes(getType(layout.type).type)) {
+            seriesObj.pointPadding = 0
+            seriesObj.groupPadding = 0
         }
 
         // color
@@ -107,8 +124,8 @@ function getDefault(series, layout, isStacked, extraOptions) {
 
         // axis number
         seriesObj.yAxis = isDualAxisType(layout.type)
-            ? fullIdAxisMap[seriesObj.id]
-            : 0
+            ? getAxisStringFromId(fullIdAxisMap[seriesObj.id])
+            : getAxisStringFromId(0)
 
         // custom names for "year over year" series
         if (extraOptions.yearlySeries) {

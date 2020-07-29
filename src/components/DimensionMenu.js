@@ -9,13 +9,13 @@ import PropTypes from 'prop-types'
 import Tooltip from '@material-ui/core/Tooltip'
 
 import { getAvailableAxes } from '../modules/layoutUiRules'
-import { AXIS_ID_COLUMNS, AXIS_ID_FILTERS } from '../modules/layout/axis'
+import { AXIS_ID_FILTERS } from '../modules/layout/axis'
 import {
     DIMENSION_ID_DATA,
     getPredefinedDimensionProp,
     DIMENSION_PROP_NO_ITEMS,
 } from '../modules/predefinedDimensions'
-import { isDualAxisType, getDisplayNameByVisType } from '../modules/visTypes'
+import { getDisplayNameByVisType } from '../modules/visTypes'
 import { getAxisNameByLayoutType } from '../modules/axis'
 import { getLayoutTypeByVisType } from '../modules/visTypeToLayoutType'
 
@@ -37,24 +37,6 @@ const getUnavailableLabel = visType =>
         visualizationType: getDisplayNameByVisType(visType),
     })
 
-const getDualAxisMenuItemLabel = (
-    currentAxisId,
-    visType,
-    numberOfDimensionItems
-) => {
-    let label
-
-    if (!isDualAxisType(visType)) {
-        label = getUnavailableLabel(visType)
-    } else if (numberOfDimensionItems < 2) {
-        label = i18n.t('Requires 2 or more data items')
-    } else if (currentAxisId !== AXIS_ID_COLUMNS) {
-        label = i18n.t('Only available when data is in Series')
-    }
-
-    return label
-}
-
 export class DimensionMenu extends Component {
     state = { submenuAnchorEl: null }
     render() {
@@ -65,7 +47,6 @@ export class DimensionMenu extends Component {
             numberOfDimensionItems,
             assignedCategoriesItemHandler,
             isAssignedCategoriesInLayout,
-            dualAxisItemHandler,
             axisItemHandler,
             removeItemHandler,
             anchorEl,
@@ -103,49 +84,9 @@ export class DimensionMenu extends Component {
             closeSubMenu()
         }
 
-        const getDualAxisMenuItem = isDisabled => (
-            <MenuItem
-                key={`dual-axis-item-${dimensionId}`}
-                onClick={() => {
-                    dualAxisItemHandler()
-                    closeWholeMenu()
-                }}
-                disabled={isDisabled}
-            >
-                <div>{i18n.t('Manage chart axes')}</div>
-            </MenuItem>
-        )
-
-        // Create dual axis menu item
-        if (dimensionId === DIMENSION_ID_DATA) {
-            if (
-                currentAxisId === AXIS_ID_COLUMNS &&
-                isDualAxisType(visType) &&
-                numberOfDimensionItems >= 2
-            ) {
-                menuItems.push(getDualAxisMenuItem(false))
-            } else {
-                const label = getDualAxisMenuItemLabel(
-                    currentAxisId,
-                    visType,
-                    numberOfDimensionItems
-                )
-                menuItems.push(
-                    <Tooltip
-                        key={`dual-axis-tooltip-${dimensionId}`}
-                        title={label}
-                        aria-label="disabled"
-                        placement="right-start"
-                        classes={classes}
-                    >
-                        <div>{getDualAxisMenuItem(true)}</div>
-                    </Tooltip>
-                )
-            }
-            // divider
-            if (applicableAxisIds.length) {
-                menuItems.push(getDividerItem('dual-axis-item-divider'))
-            }
+        // divider
+        if (applicableAxisIds.length) {
+            menuItems.push(getDividerItem('dual-axis-item-divider'))
         }
 
         // Assigned categories
@@ -310,7 +251,6 @@ DimensionMenu.propTypes = {
     classes: PropTypes.object,
     currentAxisId: PropTypes.string,
     dimensionId: PropTypes.string,
-    dualAxisItemHandler: PropTypes.func,
     isAssignedCategoriesInLayout: PropTypes.bool,
     visType: PropTypes.string,
 }

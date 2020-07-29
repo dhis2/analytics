@@ -22,9 +22,6 @@ const getTransformedLayout = layout => ({
     domainAxisLabel: layout.domainAxisLabel || layout.domainAxisTitle,
     targetLineLabel: layout.targetLineLabel || layout.targetLineTitle,
     baseLineLabel: layout.baseLineLabel || layout.baseLineTitle,
-    // DHIS2-6774: make sure optionalAxes is initialized as Array when switching
-    // visualization type in dashboards app
-    optionalAxes: layout.optionalAxes || [],
 })
 
 const getTransformedExtraOptions = extraOptions => ({

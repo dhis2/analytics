@@ -1,11 +1,14 @@
+import i18n from '@dhis2/d2-i18n'
+
 import arrayClean from 'd2-utilizr/lib/arrayClean'
 import objectClean from 'd2-utilizr/lib/objectClean'
 import isNumeric from 'd2-utilizr/lib/isNumeric'
 import isString from 'd2-utilizr/lib/isString'
 import getAxisTitle from '../getAxisTitle'
 import getGauge from './gauge'
-import { isStacked, VIS_TYPE_GAUGE } from '../../../../../modules/visTypes'
-import { hasOptionalAxis } from '../optionalAxes'
+import { isStacked, VIS_TYPE_GAUGE, isDualAxisType } from '../../../../../modules/visTypes'
+import { hasCustomAxes, getAxisIdsMap } from '../customAxes'
+import { getAxisStringFromId } from '../../../../util/axisId'
 
 const DEFAULT_MIN_VALUE = 0
 
@@ -89,36 +92,33 @@ function getLabels(layout) {
         : undefined
 }
 
-function getDualAxes(theme) {
-    return [
-        {
+function getMultipleAxes(theme, axes) {
+    const axisObjects = []
+    axes.map(axisId => {
+        const id = Number(axisId)
+        axisObjects.push({
             title: {
-                text: 'Axis 1',
+                text: i18n.t('Axis {{axisId}}', {
+                    axisId: id + 1,
+                }),
                 style: {
-                    color: theme[0].mainColor,
+                    color: theme[id].mainColor,
                     'font-weight': 700,
                 },
             },
-        },
-        {
-            title: {
-                text: 'Axis 2',
-                style: {
-                    color: theme[1].mainColor,
-                    'font-weight': 700,
-                },
-            },
-            opposite: true,
-        },
-    ]
+            id: getAxisStringFromId(id),
+            opposite: !!(id % 2),
+        })
+    })
+    return axisObjects
 }
 
-function getDefault(layout, extraOptions) {
+function getDefault(layout, series, extraOptions) {
     const axes = []
-
-    if (hasOptionalAxis(layout.optionalAxes)) {
-        const dualAxes = getDualAxes(extraOptions.multiAxisTheme)
-        axes.push(dualAxes[0], dualAxes[1])
+    const filteredSeries = layout.series.filter(layoutSeriesItem => series.some(seriesItem => seriesItem.id === layoutSeriesItem.dimensionItem))
+    if (isDualAxisType(layout.type) && hasCustomAxes(filteredSeries)) {
+        const axisIdsMap = getAxisIdsMap(layout.series, series)
+        axes.push(...getMultipleAxes(extraOptions.multiAxisTheme, [...new Set(Object.keys(axisIdsMap))].sort((a, b) => a - b)))
     } else {
         axes.push(
             objectClean({
@@ -132,6 +132,7 @@ function getDefault(layout, extraOptions) {
                 ]),
                 gridLineColor: DEFAULT_GRIDLINE_COLOR,
                 labels: getLabels(layout),
+                id: getAxisStringFromId(0),
 
                 // DHIS2-649: put first serie at the bottom of the stack
                 // in this way the legend sequence matches the serie sequence
@@ -150,7 +151,7 @@ export default function(layout, series, extraOptions) {
             yAxis = getGauge(layout, series, extraOptions.legendSets[0])
             break
         default:
-            yAxis = getDefault(layout, extraOptions)
+            yAxis = getDefault(layout, series, extraOptions)
     }
 
     return yAxis
