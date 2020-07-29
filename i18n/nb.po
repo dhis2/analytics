@@ -40,20 +40,11 @@ msgstr "Fjern"
 msgid "Not available for {{visualizationType}}"
 msgstr "Ikke tilgjengelig for {{visualizationType}}"
 
-msgid "Requires 2 or more data items"
-msgstr "Krever 2 eller flere datapunkter"
-
-msgid "Only available when data is in Series"
-msgstr "Bare tilgjengelig når data er i Serier"
-
 msgid "Remove Assigned Categories"
 msgstr "Fjern Tildelte Kategorier"
 
 msgid "Add Assigned Categories"
 msgstr "Legg tildelte kategorier"
-
-msgid "Manage chart axes"
-msgstr "Administrer diagramakser"
 
 msgid "Filter dimensions"
 msgstr "Filterdimensjoner"
@@ -71,7 +62,7 @@ msgid "No items selected"
 msgstr "Ingen elementer er valgt"
 
 msgid "Selected Items"
-msgstr ""
+msgstr "Valgte elementer"
 
 msgid "Search"
 msgstr "Søk"
@@ -101,7 +92,7 @@ msgid "Fixed periods"
 msgstr "Faste perioder"
 
 msgid "Selected Periods"
-msgstr ""
+msgstr "Valgte perioder"
 
 msgid "No periods selected"
 msgstr "Ingen perioder er valgt"
@@ -477,6 +468,9 @@ msgstr "Mål"
 
 msgid "Base"
 msgstr "Grunn"
+
+msgid "Axis {{axisId}}"
+msgstr ""
 
 msgid "No data"
 msgstr "Ingen data"
