@@ -41,20 +41,11 @@ msgstr "إزالة"
 msgid "Not available for {{visualizationType}}"
 msgstr "غير متوفر لـ {{visualizationType}}"
 
-msgid "Requires 2 or more data items"
-msgstr "يتطلب 2 عنصر بيانات أو أكثر"
-
-msgid "Only available when data is in Series"
-msgstr "متاح فقط عندما تكون البيانات في السلسلة"
-
 msgid "Remove Assigned Categories"
 msgstr "إزالة الفئات المعينة"
 
 msgid "Add Assigned Categories"
 msgstr "إضافة فئات معينة"
-
-msgid "Manage chart axes"
-msgstr "إدارة محاور المخطط"
 
 msgid "Filter dimensions"
 msgstr "تصفية الأبعاد"
@@ -478,6 +469,9 @@ msgstr "الهدف"
 
 msgid "Base"
 msgstr "الأساس"
+
+msgid "Axis {{axisId}}"
+msgstr ""
 
 msgid "No data"
 msgstr "لا توجد بيانات"

@@ -43,20 +43,11 @@ msgstr "Supprimer"
 msgid "Not available for {{visualizationType}}"
 msgstr "Non disponible pour {{Typedevisualisation}}"
 
-msgid "Requires 2 or more data items"
-msgstr "Nécessite 2 éléments de données ou plus"
-
-msgid "Only available when data is in Series"
-msgstr "Disponible uniquement lorsque les données sont en série"
-
 msgid "Remove Assigned Categories"
 msgstr "Supprimer les Catégories Attribuées"
 
 msgid "Add Assigned Categories"
 msgstr "Ajouter des Catégories Affectées"
-
-msgid "Manage chart axes"
-msgstr "Gérer les axes du graphique"
 
 msgid "Filter dimensions"
 msgstr "Dimensions du filtre"
@@ -480,6 +471,9 @@ msgstr "Cible"
 
 msgid "Base"
 msgstr "Base"
+
+msgid "Axis {{axisId}}"
+msgstr ""
 
 msgid "No data"
 msgstr "Aucune donnée"

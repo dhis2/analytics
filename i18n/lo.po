@@ -40,19 +40,10 @@ msgstr "ລົບອອກ"
 msgid "Not available for {{visualizationType}}"
 msgstr ""
 
-msgid "Requires 2 or more data items"
-msgstr ""
-
-msgid "Only available when data is in Series"
-msgstr ""
-
 msgid "Remove Assigned Categories"
 msgstr ""
 
 msgid "Add Assigned Categories"
-msgstr ""
-
-msgid "Manage chart axes"
 msgstr ""
 
 msgid "Filter dimensions"
@@ -477,6 +468,9 @@ msgstr "ເປົ້າໝາຍ"
 
 msgid "Base"
 msgstr "ຖານ"
+
+msgid "Axis {{axisId}}"
+msgstr ""
 
 msgid "No data"
 msgstr "ບໍ່ມີຂໍ້ມູນ"
