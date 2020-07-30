@@ -41,19 +41,10 @@ msgstr "Убрать"
 msgid "Not available for {{visualizationType}}"
 msgstr ""
 
-msgid "Requires 2 or more data items"
-msgstr ""
-
-msgid "Only available when data is in Series"
-msgstr ""
-
 msgid "Remove Assigned Categories"
 msgstr ""
 
 msgid "Add Assigned Categories"
-msgstr ""
-
-msgid "Manage chart axes"
 msgstr ""
 
 msgid "Filter dimensions"
@@ -478,6 +469,9 @@ msgstr "Цель"
 
 msgid "Base"
 msgstr "Базовый"
+
+msgid "Axis {{axisId}}"
+msgstr ""
 
 msgid "No data"
 msgstr "Нет данных"

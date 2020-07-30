@@ -1,16 +1,16 @@
 # 
 # Translators:
-# easylin <lin_xd@126.com>, 2020
 # phil_dhis2, 2020
 # Viktor Varland <viktor@dhis2.org>, 2020
 # 晓东 林 <13981924470@126.com>, 2020
+# easylin <lin_xd@126.com>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2020-07-27T07:46:11.678Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: 晓东 林 <13981924470@126.com>, 2020\n"
+"Last-Translator: easylin <lin_xd@126.com>, 2020\n"
 "Language-Team: Chinese (https://www.transifex.com/hisp-uio/teams/100509/zh/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -42,20 +42,11 @@ msgstr "移除"
 msgid "Not available for {{visualizationType}}"
 msgstr " {{visualizationType}}不可用"
 
-msgid "Requires 2 or more data items"
-msgstr "需要两个或更多数据项"
-
-msgid "Only available when data is in Series"
-msgstr "仅仅当数据在系列中可用"
-
 msgid "Remove Assigned Categories"
 msgstr "移除指定的分类"
 
 msgid "Add Assigned Categories"
 msgstr "添加指定的分类"
-
-msgid "Manage chart axes"
-msgstr "管理图表轴"
 
 msgid "Filter dimensions"
 msgstr "过滤器维度"
@@ -70,10 +61,10 @@ msgid "Dimension recommended with selected data"
 msgstr "选择的数据的推荐维度"
 
 msgid "No items selected"
-msgstr ""
+msgstr "没有选择条目"
 
 msgid "Selected Items"
-msgstr ""
+msgstr "选择的条目"
 
 msgid "Search"
 msgstr "搜索"
@@ -103,7 +94,7 @@ msgid "Fixed periods"
 msgstr "固定周期"
 
 msgid "Selected Periods"
-msgstr ""
+msgstr "选择的期间"
 
 msgid "No periods selected"
 msgstr "没有选择相对周期"
@@ -479,6 +470,9 @@ msgstr "目标"
 
 msgid "Base"
 msgstr "基"
+
+msgid "Axis {{axisId}}"
+msgstr ""
 
 msgid "No data"
 msgstr "无数据"
