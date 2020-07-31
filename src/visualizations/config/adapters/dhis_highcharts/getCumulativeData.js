@@ -1,5 +1,6 @@
 import numberDecimals from 'd2-utilizr/lib/numberDecimals'
 import { isDualCategoryChartType } from '../../../../modules/visTypes'
+import getDualCategorySplitSerieData from './getDualCategorySplitSerieData'
 
 function getDefaultCumulativeData(series) {
     let decimals = 0
@@ -67,7 +68,9 @@ function getDualCategoryCumulativeData(series) {
                 )
             )
 
-            seriesObj.data = seriesObj.custom.data.flat()
+            seriesObj.data = getDualCategorySplitSerieData(
+                seriesObj.custom.data
+            )
 
             decimals = 0
         })

@@ -116,7 +116,7 @@ function getDefault(series, layout, isStacked, extraOptions) {
         }
 
         // stacked
-        if (isStacked) {
+        if (isStacked && !seriesObj?.custom?.isDualCategoryFakeSerie) {
             // DHIS2-1060: stacked charts can optionally be shown as 100% stacked charts
             seriesObj.stacking =
                 layout.percentStackedValues === true

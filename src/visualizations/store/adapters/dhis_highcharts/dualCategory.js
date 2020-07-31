@@ -1,3 +1,5 @@
+import getDualCategorySplitSerieData from '../../../config/adapters/dhis_highcharts/getDualCategorySplitSerieData'
+
 // 1 series, 2 categories
 export default function(acc, series, categories, idValueMap, metaData) {
     series[0].forEach(seriesItemId => {
@@ -17,7 +19,7 @@ export default function(acc, series, categories, idValueMap, metaData) {
             groupedData.push(groupData)
         })
 
-        const serieData = groupedData.flat()
+        const serieData = getDualCategorySplitSerieData(groupedData)
 
         // avoid a list of null values
         if (serieData.every(e => e === serieData[0])) {

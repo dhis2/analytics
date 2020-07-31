@@ -1,6 +1,7 @@
 import arrayContains from 'd2-utilizr/lib/arrayContains'
 import arrayUnique from 'd2-utilizr/lib/arrayUnique'
 import { isDualCategoryChartType } from '../../../../modules/visTypes'
+import getDualCategorySplitSerieData from './getDualCategorySplitSerieData'
 
 function arrayCleanUndefined(array) {
     return array.filter(item => item !== undefined)
@@ -180,7 +181,9 @@ function getDualCategoryTrimmedConfig(config, layout) {
                 layout.hideEmptyRowItems
             )
 
-            seriesObj.data = seriesObj.custom.data.flat()
+            seriesObj.data = getDualCategorySplitSerieData(
+                seriesObj.custom.data
+            )
         }
 
         return seriesObj
