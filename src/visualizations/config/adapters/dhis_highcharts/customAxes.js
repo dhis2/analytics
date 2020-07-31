@@ -26,22 +26,6 @@ export function getFullIdAxisMap(customAxes = [], series = []) {
     return idAxisMap
 }
 
-// returns: true or false
-export function hasCustomAxes(series) {
-    return series?.length && series.some(item => item.axis > 0)
-}
-
-// returns: true or false
-export function hasCustomAxesItems(series, columns) {
-    const axisIds = Object.keys(getIdAxisMap(series))
-    const seriesIds = columns.reduce((all, dim) => {
-        all.push(...dim.items.map(item => item.id))
-        return all
-    }, [])
-
-    return axisIds.find(id => seriesIds.includes(id))
-}
-
 // returns:
 // {
 //     0: ['a', 'b'],

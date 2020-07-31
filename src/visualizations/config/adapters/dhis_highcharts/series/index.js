@@ -5,7 +5,6 @@ import getType from '../type'
 import {
     getFullIdAxisMap,
     getAxisIdsMap,
-    hasCustomAxes,
 } from '../customAxes'
 import { generateColors } from '../../../../util/colors/gradientColorGenerator'
 import {
@@ -15,6 +14,7 @@ import {
     isYearOverYear,
     VIS_TYPE_LINE,
 } from '../../../../../modules/visTypes'
+import { hasCustomAxes } from '../../../../../modules/axis'
 import { getAxisStringFromId } from '../../../../util/axisId'
 
 const DEFAULT_ANIMATION_DURATION = 200
