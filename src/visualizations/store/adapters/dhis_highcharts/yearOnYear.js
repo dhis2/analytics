@@ -1,12 +1,12 @@
-export default function(acc, seriesIds, categoryIds, idValueMap, metaData) {
+export default function(acc, series, categories, idValueMap, metaData) {
     const serieData = []
     let serieLabel
 
-    seriesIds.forEach(seriesId => {
-        serieLabel = metaData.items[seriesId].name
+    series[0].forEach(serieItemId => {
+        serieLabel = metaData.items[serieItemId].name
 
-        categoryIds.forEach(categoryId => {
-            const value = idValueMap.get(`${seriesId}-${categoryId}`)
+        categories[0].forEach(categoryItemId => {
+            const value = idValueMap.get(`${serieItemId}-${categoryItemId}`)
 
             // DHIS2-1261: 0 is a valid value
             // undefined value means the key was not found within the rows

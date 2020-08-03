@@ -1,13 +1,15 @@
-export default function(acc, seriesIds, categoryIds, idValueMap, metaData) {
-    seriesIds.forEach(seriesId => {
-        const value = idValueMap.get(seriesId)
+export default function(acc, series, categories, idValueMap, metaData) {
+    series[0].forEach(serieItemId => {
+        const value = idValueMap.get(serieItemId)
 
         if (value) {
             acc.push({
-                id: seriesId,
-                name: metaData.items[seriesId].name,
+                id: serieItemId,
+                name: metaData.items[serieItemId].name,
                 y: parseFloat(value),
             })
         }
     })
+
+    return acc
 }
