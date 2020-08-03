@@ -87,7 +87,7 @@ function getDualCategoryTrendLines(layout, series, isStacked) {
 
             if (!seriesObj.custom.isDualCategoryFakeSerie) {
                 const groupRegressionTemplate = Array.from(
-                    { length: seriesObj.data.flat().length },
+                    { length: seriesObj.custom.data.flat().length },
                     () => null
                 )
 
