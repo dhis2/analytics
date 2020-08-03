@@ -60,11 +60,11 @@ function getIdValueMap(rows, seriesHeader, categoryHeaders, valueIndex) {
 
 // 1 series, 1 category
 function getDefault(acc, series, categories, idValueMap, metaData) {
-    series[0].forEach(seriesItemId => {
+    series[0].forEach(serieItemId => {
         const serieData = []
 
         categories[0].forEach(categoryItemId => {
-            const value = idValueMap.get(`${seriesItemId}-${categoryItemId}`)
+            const value = idValueMap.get(`${serieItemId}-${categoryItemId}`)
 
             // DHIS2-1261: 0 is a valid value
             // undefined value means the key was not found within the rows
@@ -80,8 +80,8 @@ function getDefault(acc, series, categories, idValueMap, metaData) {
         }
 
         acc.push({
-            id: seriesItemId,
-            name: metaData.items[seriesItemId].name,
+            id: serieItemId,
+            name: metaData.items[serieItemId].name,
             data: serieData,
         })
     })
@@ -109,6 +109,7 @@ function getSeriesFunction(type, categoryIds) {
 
 export default function({ type, data, seriesId, categoryIds }) {
     console.log('cat ids', categoryIds)
+    categoryIds = categoryIds || []
     const seriesFunction = getSeriesFunction(type, categoryIds)
 
     return data.reduce((acc, res) => {
