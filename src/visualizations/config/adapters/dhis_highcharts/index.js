@@ -131,10 +131,12 @@ export default function({ store, layout, el, extraConfig, extraOptions }) {
     }
 
     // flatten category groups
-    config.xAxis = config.xAxis.map(xAxis => ({
-        ...xAxis,
-        categories: xAxis.categories.flat(),
-    }))
+    if (config.xAxis?.length) {
+        config.xAxis = config.xAxis.map(xAxis => ({
+            ...xAxis,
+            categories: xAxis.categories.flat(),
+        }))
+    }
 
     // force apply extra config
     Object.assign(config, extraConfig)
