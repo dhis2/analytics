@@ -118,10 +118,12 @@ function getDefault(series, layout, isStacked, extraOptions) {
         // stacked
         if (isStacked && !seriesObj?.custom?.isDualCategoryFakeSerie) {
             // DHIS2-1060: stacked charts can optionally be shown as 100% stacked charts
-            seriesObj.stacking =
-                layout.percentStackedValues === true
-                    ? HIGHCHARTS_TYPE_PERCENT
-                    : HIGHCHARTS_TYPE_NORMAL
+            if (layout.percentStackedValues === true) {
+                seriesObj.stacking = HIGHCHARTS_TYPE_PERCENT
+                seriesObj.connectNulls = false
+            } else {
+                seriesObj.stacking = HIGHCHARTS_TYPE_NORMAL
+            }
         }
 
         const matchedObject = layout.series?.find(
