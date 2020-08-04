@@ -26,10 +26,7 @@ function getDualCategorySortedConfig(config, layout, stacked) {
     const series = config.series
     const sortedConfig = Object.assign({}, config)
 
-    const stackedData = getStackedData(
-        series.filter(serieObj => !serieObj.custom.isDualCategoryFakeSerie),
-        layout
-    )
+    const stackedData = getStackedData(series, layout)
     const indexOrder = []
 
     // loop through serie groups
