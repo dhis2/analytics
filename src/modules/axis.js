@@ -39,6 +39,5 @@ export const getAxisNameByLayoutType = (axisId, layoutType) => {
 export const getAxisName = axisId =>
     getAxisNameByLayoutType(axisId, LAYOUT_TYPE_DEFAULT)
 
-export function hasCustomAxes(series) {
-    return series?.length && series.some(item => item.axis > 0)
-}
+export const hasCustomAxes = series =>
+    Boolean(series?.length && series.some(item => item.axis > 0))
