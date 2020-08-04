@@ -94,7 +94,7 @@ function cleanData(
 }
 
 export default function(config, layout) {
-    if (isDualCategoryChartType(layout.type)) {
+    if (isDualCategoryChartType(layout.type) && layout.rows.length > 1) {
         return getDualCategoryTrimmedConfig(config, layout)
     } else {
         return getDefaultTrimmedConfig(config, layout)
