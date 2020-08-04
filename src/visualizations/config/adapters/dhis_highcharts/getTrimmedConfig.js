@@ -230,7 +230,7 @@ function getDefaultTrimmedConfig(config, layout) {
         {
             ...config.xAxis,
             categories: cleanData(
-                config.xAxis.categories,
+                config.xAxis[0].categories,
                 emptySeriesIndexes,
                 firstValueIndex,
                 lastValueIndex,
