@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2020-07-27T07:46:11.678Z\n"
-"PO-Revision-Date: 2020-07-27T07:46:11.678Z\n"
+"POT-Creation-Date: 2020-08-05T12:08:56.586Z\n"
+"PO-Revision-Date: 2020-08-05T12:08:56.586Z\n"
 
 msgid "Data Type"
 msgstr ""
@@ -387,6 +387,30 @@ msgid "Event data items"
 msgstr ""
 
 msgid "Program indicators"
+msgstr ""
+
+msgid "Extra Small"
+msgstr ""
+
+msgid "Small"
+msgstr ""
+
+msgid "Regular"
+msgstr ""
+
+msgid "Large"
+msgstr ""
+
+msgid "Extra Large"
+msgstr ""
+
+msgid "Left"
+msgstr ""
+
+msgid "Center"
+msgstr ""
+
+msgid "Right"
 msgstr ""
 
 msgid "{{dynamicOuNames}} and {{lastOuName}}"
