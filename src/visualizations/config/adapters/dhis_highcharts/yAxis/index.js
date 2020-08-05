@@ -9,6 +9,7 @@ import getGauge from './gauge'
 import { isStacked, VIS_TYPE_GAUGE, isDualAxisType } from '../../../../../modules/visTypes'
 import { hasCustomAxes, getAxisIdsMap } from '../customAxes'
 import { getAxisStringFromId } from '../../../../util/axisId'
+import { FONT_STYLE_VERTICAL_AXIS_TITLE } from '../../../../../modules/fontStyle'
 
 const DEFAULT_MIN_VALUE = 0
 
@@ -114,6 +115,7 @@ function getMultipleAxes(theme, axes) {
 }
 
 function getDefault(layout, series, extraOptions) {
+    const fontStyle = layout.fontStyle && layout.fontStyle[FONT_STYLE_VERTICAL_AXIS_TITLE]
     const axes = []
     const filteredSeries = layout.series.filter(layoutSeriesItem => series.some(seriesItem => seriesItem.id === layoutSeriesItem.dimensionItem))
     if (isDualAxisType(layout.type) && hasCustomAxes(filteredSeries)) {
@@ -125,7 +127,7 @@ function getDefault(layout, series, extraOptions) {
                 min: getMinValue(layout),
                 max: getMaxValue(layout),
                 tickAmount: getSteps(layout),
-                title: getAxisTitle(layout.rangeAxisLabel),
+                title: getAxisTitle(layout.rangeAxisLabel, fontStyle),
                 plotLines: arrayClean([
                     getTargetLine(layout),
                     getBaseLine(layout),

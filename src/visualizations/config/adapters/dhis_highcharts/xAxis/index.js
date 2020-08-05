@@ -8,15 +8,18 @@ import {
     VIS_TYPE_YEAR_OVER_YEAR_COLUMN,
     VIS_TYPE_PIE,
 } from '../../../../../modules/visTypes'
+import { FONT_STYLE_HORIZONTAL_AXIS_TITLE } from '../../../../../modules/fontStyle'
 
 function noAxis() {
     return null
 }
 
 function getDefault(store, layout) {
+    const fontStyle = layout.fontStyle && layout.fontStyle[FONT_STYLE_HORIZONTAL_AXIS_TITLE]
+
     return objectClean({
         categories: getCategories(store.data[0].metaData, layout),
-        title: getAxisTitle(layout.domainAxisLabel),
+        title: getAxisTitle(layout.domainAxisLabel, fontStyle),
         labels: {
             style: {
                 color: '#666',
