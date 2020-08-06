@@ -106,13 +106,12 @@ export const defaultFontStyle = {
 }
 
 export const mergeFontStyleWithDefault = fontStyle => {
-    const result = {}
-    for (const style in defaultFontStyle) {
-        result[style] = defaultFontStyle[style]
-    }
+    const result = defaultFontStyle
     for (const style in fontStyle) {
         for (const option in fontStyle[style]) {
-            result[style][option] = fontStyle[style][option]
+            if (result[style]) {
+                result[style][option] = fontStyle[style][option]
+            }
         }
     }
     //TODO: Remove console log
