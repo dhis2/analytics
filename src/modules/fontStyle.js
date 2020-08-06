@@ -54,8 +54,8 @@ export const getTextAlignOptions = () => ({
     },
 })
 
-const defaultFont = 'ROBOTO'
-const defaultTextColor = '#000000'
+const defaultFont = 'Roboto'
+const defaultTextColor = '#ff00aa'
 
 export const defaultFontStyle = {
     [FONT_STYLE_VISUALIZATION_TITLE]: {
@@ -103,4 +103,20 @@ export const defaultFontStyle = {
         [FONT_STYLE_OPTION_TEXT_COLOR]: defaultTextColor,
         [FONT_STYLE_OPTION_TEXT_ALIGN]: TEXT_ALIGN_LEFT,
     },
+}
+
+export const mergeFontStyleWithDefault = fontStyle => {
+    const result = {}
+    for (const style in defaultFontStyle) {
+        result[style] = defaultFontStyle[style]
+    }
+    for (const style in fontStyle) {
+        for (const option in fontStyle[style]) {
+            result[style][option] = fontStyle[style][option]
+        }
+    }
+    //TODO: Remove console log
+    console.log('---- RESULT ----')
+    console.log(result)
+    return result
 }
