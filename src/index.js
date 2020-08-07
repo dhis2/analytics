@@ -182,4 +182,5 @@ export {
     defaultFontStyle,
     getFontSizeOptions,
     getTextAlignOptions,
+    deleteFontStyleOption,
 } from './modules/fontStyle'

@@ -1,3 +1,4 @@
+/*eslint no-unused-vars: ["error", { "ignoreRestSiblings": true }]*/
 import i18n from '@dhis2/d2-i18n'
 
 export const FONT_STYLE_VISUALIZATION_TITLE = 'visualizationTitle'
@@ -55,7 +56,7 @@ export const getTextAlignOptions = () => ({
 })
 
 const defaultFont = 'Roboto'
-const defaultTextColor = '#ff00aa'
+const defaultTextColor = '#000000'
 
 export const defaultFontStyle = {
     [FONT_STYLE_VISUALIZATION_TITLE]: {
@@ -118,4 +119,23 @@ export const mergeFontStyleWithDefault = fontStyle => {
     console.log('---- RESULT ----')
     console.log(result)
     return result
+}
+
+// TODO: Change to a better name?
+export const deleteFontStyleOption = (inputFontStyle, fontStyleKey, option) => {
+    let fontStyle = { ...inputFontStyle }
+    if (fontStyle[fontStyleKey]) {
+        const { [option]: remove, ...rest } = fontStyle[fontStyleKey]
+        fontStyle[fontStyleKey] = { ...rest }
+
+        if (!Object.keys(fontStyle[fontStyleKey]).length) {
+            const { [fontStyleKey]: remove, ...rest } = fontStyle
+            fontStyle = { ...rest }
+        }
+    }
+    if (!Object.keys(fontStyle).length) {
+        fontStyle = null
+    }
+
+    return fontStyle
 }
