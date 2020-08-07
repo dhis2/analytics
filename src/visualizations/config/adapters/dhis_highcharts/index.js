@@ -9,11 +9,12 @@ import getSubtitle from './subtitle'
 import getLegend from './legend'
 import getPane from './pane'
 import getNoData from './noData'
-import { isStacked } from '../../../../modules/visTypes'
+import { isStacked, isDualAxisType } from '../../../../modules/visTypes'
 import getSortedConfig from './getSortedConfig'
 import getTrimmedConfig from './getTrimmedConfig'
 import addTrendLines, { isRegressionIneligible } from './addTrendLines'
 import { defaultMultiAxisTheme1 } from '../../../util/colors/themes'
+import { hasCustomAxes } from '../../../../modules/axis'
 
 const getTransformedLayout = layout => ({
     ...layout,
@@ -118,12 +119,16 @@ export default function({ store, layout, el, extraConfig, extraOptions }) {
         config = getSortedConfig(config, _layout, stacked)
     }
 
+    // DHIS2-9010 prevent trend lines from render when using multiple axes
+    const filteredSeries = layout.series.filter(layoutSeriesItem => series.some(seriesItem => seriesItem.id === layoutSeriesItem.dimensionItem))
+
     // DHIS2-1243 add trend lines after sorting
     // trend line on pie and gauge does not make sense
     if (
         isString(_layout.regressionType) &&
         _layout.regressionType !== 'NONE' &&
-        !isRegressionIneligible(_layout.type)
+        !isRegressionIneligible(_layout.type) &&
+        !(isDualAxisType(layout.type) && hasCustomAxes(filteredSeries))
     ) {
         config.series = addTrendLines(
             _layout.regressionType,

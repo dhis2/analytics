@@ -5,7 +5,7 @@ import isString from 'd2-utilizr/lib/isString'
 import getAxisTitle from '../getAxisTitle'
 import getGauge from './gauge'
 import { isStacked, VIS_TYPE_GAUGE } from '../../../../../modules/visTypes'
-import { hasOptionalAxis } from '../optionalAxes'
+import { hasOptionalAxis } from '../../../../../modules/axis'
 
 const DEFAULT_MIN_VALUE = 0
 
