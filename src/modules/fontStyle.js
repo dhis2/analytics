@@ -13,9 +13,9 @@ export const FONT_STYLE_OPTION_ITALIC = 'italic'
 export const FONT_STYLE_OPTION_UNDERLINE = 'underline'
 export const FONT_STYLE_OPTION_TEXT_COLOR = 'textColor'
 export const FONT_STYLE_OPTION_TEXT_ALIGN = 'textAlign'
-export const TEXT_ALIGN_LEFT = 'LEFT'
-export const TEXT_ALIGN_CENTER = 'CENTER'
-export const TEXT_ALIGN_RIGHT = 'RIGHT'
+export const TEXT_ALIGN_LEFT = 'left'
+export const TEXT_ALIGN_CENTER = 'center'
+export const TEXT_ALIGN_RIGHT = 'right'
 
 export const getFontSizeOptions = () => ({
     xSmall: {
@@ -54,6 +54,18 @@ export const getTextAlignOptions = () => ({
         value: TEXT_ALIGN_RIGHT,
     },
 })
+
+export const getVerticalOptionFromTextAlignOption = textAlignOption => {
+    switch (textAlignOption) {
+        case TEXT_ALIGN_LEFT:
+        default:
+            return 'low'
+        case TEXT_ALIGN_CENTER:
+            return 'middle'
+        case TEXT_ALIGN_RIGHT:
+            return 'high'
+    }
+}
 
 const defaultFont = 'Roboto'
 const defaultTextColor = '#000000'

@@ -115,7 +115,6 @@ function getMultipleAxes(theme, axes) {
 }
 
 function getDefault(layout, series, extraOptions) {
-    const fontStyle = layout.fontStyle && layout.fontStyle[FONT_STYLE_VERTICAL_AXIS_TITLE]
     const axes = []
     const filteredSeries = layout.series.filter(layoutSeriesItem => series.some(seriesItem => seriesItem.id === layoutSeriesItem.dimensionItem))
     if (isDualAxisType(layout.type) && hasCustomAxes(filteredSeries)) {
@@ -127,7 +126,7 @@ function getDefault(layout, series, extraOptions) {
                 min: getMinValue(layout),
                 max: getMaxValue(layout),
                 tickAmount: getSteps(layout),
-                title: getAxisTitle(layout.rangeAxisLabel, fontStyle),
+                title: getAxisTitle(layout.rangeAxisLabel, (layout.fontStyle || {})[FONT_STYLE_VERTICAL_AXIS_TITLE]),
                 plotLines: arrayClean([
                     getTargetLine(layout),
                     getBaseLine(layout),
