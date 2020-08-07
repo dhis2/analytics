@@ -8,6 +8,10 @@ import {
 } from '../customAxes'
 import { generateColors } from '../../../../util/colors/gradientColorGenerator'
 import {
+    colorSets,
+    COLOR_SET_MONO_PATTERNS,
+} from '../../../../util/colors/colorSets'
+import {
     VIS_TYPE_PIE,
     VIS_TYPE_GAUGE,
     isDualAxisType,
@@ -34,6 +38,10 @@ function getAnimation(option, fallback) {
 
 function getColor(colors, index) {
     return colors[index] || getColor(colors, index - colors.length)
+}
+
+function getPatternIndex(index) {
+    return index < 10 ? index : getPatternIndex(index - 10)
 }
 
 function getIdColorMap(series, layout, extraOptions) {
@@ -64,7 +72,7 @@ function getIdColorMap(series, layout, extraOptions) {
             return map
         }, {})
     } else {
-        const colors = extraOptions.colors
+        const colors = colorSets[layout.colorSet]?.colors || extraOptions.colors
 
         return series.reduce((map, s, index) => {
             map[s.id] = getColor(colors, index)
@@ -120,6 +128,8 @@ function getDefault(series, layout, isStacked, extraOptions) {
         // color
         seriesObj.color = isYearOverYear(layout.type)
             ? extraOptions.colors[index]
+            : layout.colorSet === COLOR_SET_MONO_PATTERNS
+            ? { patternIndex: getPatternIndex(index) }
             : idColorMap[seriesObj.id]
 
         // axis number
