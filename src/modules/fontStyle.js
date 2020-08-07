@@ -114,7 +114,7 @@ export const defaultFontStyle = {
         [FONT_STYLE_OPTION_ITALIC]: false,
         [FONT_STYLE_OPTION_UNDERLINE]: false,
         [FONT_STYLE_OPTION_TEXT_COLOR]: defaultTextColor,
-        [FONT_STYLE_OPTION_TEXT_ALIGN]: TEXT_ALIGN_LEFT,
+        [FONT_STYLE_OPTION_TEXT_ALIGN]: TEXT_ALIGN_CENTER,
     },
 }
 
