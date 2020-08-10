@@ -5,19 +5,14 @@ import {
     VIS_TYPE_YEAR_OVER_YEAR_COLUMN,
 } from '../../../../../modules/visTypes'
 import getYearOverYearTitle from '../title/yearOverYear'
-
-const DEFAULT_SUBTITLE = {
-    style: {
-        // DHIS2-578: dynamically truncate subtitle when it's taking more than 1 line
-        whiteSpace: 'nowrap',
-        overflow: 'hidden',
-        textOverflow: 'ellipsis',
-
-        fontSize: '14px',
-        color: '#555',
-        textShadow: '0 0 #999',
-    },
-}
+import { 
+    FONT_STYLE_OPTION_ITALIC, 
+    FONT_STYLE_OPTION_BOLD, 
+    FONT_STYLE_OPTION_TEXT_COLOR,
+    FONT_STYLE_OPTION_FONT_SIZE,
+    FONT_STYLE_OPTION_TEXT_ALIGN,
+    FONT_STYLE_VISUALIZATION_SUBTITLE
+ } from '../../../../../modules/fontStyle'
 
 const DASHBOARD_SUBTITLE = {
     style: {
@@ -25,8 +20,9 @@ const DASHBOARD_SUBTITLE = {
         whiteSpace: 'nowrap',
         overflow: 'hidden',
         textOverflow: 'ellipsis',
-
         fontSize: '12px',
+        color: '#555',
+        textShadow: '0 0 #999',
     },
 }
 
@@ -37,6 +33,7 @@ function getDefault(layout, dashboard, filterTitle) {
 }
 
 export default function(series, layout, metaData, dashboard) {
+    const fontStyle = layout.fontStyle && layout.fontStyle[FONT_STYLE_VISUALIZATION_SUBTITLE]
     let subtitle = {
         text: undefined,
     }
@@ -68,8 +65,20 @@ export default function(series, layout, metaData, dashboard) {
     return subtitle
         ? Object.assign(
               {},
-              DEFAULT_SUBTITLE,
-              dashboard ? DASHBOARD_SUBTITLE : undefined,
+              dashboard ? DASHBOARD_SUBTITLE : {
+                align: fontStyle[FONT_STYLE_OPTION_TEXT_ALIGN],
+                style: {
+                    // DHIS2-578: dynamically truncate subtitle when it's taking more than 1 line
+                    color: fontStyle[FONT_STYLE_OPTION_TEXT_COLOR],
+                    fontSize: `${fontStyle[FONT_STYLE_OPTION_FONT_SIZE]}px`,
+                    fontWeight: fontStyle[FONT_STYLE_OPTION_BOLD] ? FONT_STYLE_OPTION_BOLD : 'normal',
+                    fontStyle: fontStyle[FONT_STYLE_OPTION_ITALIC] ? FONT_STYLE_OPTION_ITALIC : 'normal',
+                    whiteSpace: 'nowrap',
+                    overflow: 'hidden',
+                    textOverflow: 'ellipsis',
+                    textShadow: '0 0 #999',
+                },
+            },
               subtitle
           )
         : subtitle

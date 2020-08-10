@@ -78,7 +78,7 @@ export const defaultFontStyle = {
         [FONT_STYLE_OPTION_ITALIC]: false,
         [FONT_STYLE_OPTION_UNDERLINE]: false,
         [FONT_STYLE_OPTION_TEXT_COLOR]: defaultTextColor,
-        [FONT_STYLE_OPTION_TEXT_ALIGN]: TEXT_ALIGN_LEFT,
+        [FONT_STYLE_OPTION_TEXT_ALIGN]: TEXT_ALIGN_CENTER,
     },
     [FONT_STYLE_VISUALIZATION_SUBTITLE]: {
         [FONT_STYLE_OPTION_FONT]: defaultFont,
@@ -87,7 +87,7 @@ export const defaultFontStyle = {
         [FONT_STYLE_OPTION_ITALIC]: false,
         [FONT_STYLE_OPTION_UNDERLINE]: false,
         [FONT_STYLE_OPTION_TEXT_COLOR]: defaultTextColor,
-        [FONT_STYLE_OPTION_TEXT_ALIGN]: TEXT_ALIGN_LEFT,
+        [FONT_STYLE_OPTION_TEXT_ALIGN]: TEXT_ALIGN_CENTER,
     },
     [FONT_STYLE_HORIZONTAL_AXIS_TITLE]: {
         [FONT_STYLE_OPTION_FONT]: defaultFont,
