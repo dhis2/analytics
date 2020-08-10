@@ -66,7 +66,7 @@ export default function(series, layout, metaData, dashboard) {
         ? Object.assign(
               {},
               dashboard ? DASHBOARD_SUBTITLE : {
-                align: fontStyle[FONT_STYLE_OPTION_TEXT_ALIGN],
+                align: (fontStyle[FONT_STYLE_OPTION_TEXT_ALIGN] || '').toLowerCase(),
                 style: {
                     // DHIS2-578: dynamically truncate subtitle when it's taking more than 1 line
                     color: fontStyle[FONT_STYLE_OPTION_TEXT_COLOR],

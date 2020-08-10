@@ -45,7 +45,7 @@ function getLegend(fontStyle, dashboard) {
             itemMarginBottom: 2,
         },
         dashboard ? DASHBOARD_LEGEND : {
-            align: fontStyle[FONT_STYLE_OPTION_TEXT_ALIGN],
+            align: (fontStyle[FONT_STYLE_OPTION_TEXT_ALIGN] || '').toLowerCase(),
         }
     )
 }

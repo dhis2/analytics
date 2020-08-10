@@ -13,9 +13,9 @@ export const FONT_STYLE_OPTION_ITALIC = 'italic'
 export const FONT_STYLE_OPTION_UNDERLINE = 'underline'
 export const FONT_STYLE_OPTION_TEXT_COLOR = 'textColor'
 export const FONT_STYLE_OPTION_TEXT_ALIGN = 'textAlign'
-export const TEXT_ALIGN_LEFT = 'left'
-export const TEXT_ALIGN_CENTER = 'center'
-export const TEXT_ALIGN_RIGHT = 'right'
+export const TEXT_ALIGN_LEFT = 'LEFT'
+export const TEXT_ALIGN_CENTER = 'CENTER'
+export const TEXT_ALIGN_RIGHT = 'RIGHT'
 
 export const getFontSizeOptions = () => ({
     xSmall: {
