@@ -56,6 +56,9 @@ export default function({
         })
     }
 
-    this.createVisualization = () =>
-        _generator(this.getConfig(), el, extraOptions)
+    this.createVisualization = () => 
+        _generator(this.getConfig(), el, {
+            ...extraOptions,
+            fontStyle: layout.fontStyle
+        })
 }
