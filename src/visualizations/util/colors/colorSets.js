@@ -1,3 +1,8 @@
+import H from 'highcharts'
+import HPF from 'highcharts/modules/pattern-fill'
+
+HPF(H)
+
 export const COLOR_SET_DEFAULT = 'DEFAULT'
 export const COLOR_SET_BRIGHT = 'BRIGHT'
 export const COLOR_SET_DARK = 'DARK'
@@ -77,5 +82,8 @@ export const colorSets = {
             '#ff800e',
             '#006ba4',
         ],
+    },
+    [COLOR_SET_MONO_PATTERNS]: {
+        patterns: H.patterns,
     },
 }
