@@ -470,7 +470,7 @@ msgid "Base"
 msgstr "Grunn"
 
 msgid "Axis {{axisId}}"
-msgstr ""
+msgstr "Akse {{axisId}}"
 
 msgid "No data"
 msgstr "Ingen data"
