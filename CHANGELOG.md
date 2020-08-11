@@ -1,3 +1,10 @@
+# [8.2.0](https://github.com/dhis2/analytics/compare/v8.1.2...v8.2.0) (2020-08-11)
+
+
+### Features
+
+* add vis type descriptions (DHIS2-7855) ([#527](https://github.com/dhis2/analytics/issues/527)) ([8294cb7](https://github.com/dhis2/analytics/commit/8294cb792b7f242aaf710c1da42a49a5bfcb97b1))
+
 ## [8.1.2](https://github.com/dhis2/analytics/compare/v8.1.1...v8.1.2) (2020-08-11)
 
 
