@@ -1,3 +1,17 @@
+## [8.1.1](https://github.com/dhis2/analytics/compare/v8.1.0...v8.1.1) (2020-08-10)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([c980e5a](https://github.com/dhis2/analytics/commit/c980e5aca041a58d929655d28a160afbb0d3d83a))
+
+# [8.1.0](https://github.com/dhis2/analytics/compare/v8.0.1...v8.1.0) (2020-08-07)
+
+
+### Features
+
+* move and export hasCustomAxes (DHIS2-9010) ([#529](https://github.com/dhis2/analytics/issues/529)) ([9cdce22](https://github.com/dhis2/analytics/commit/9cdce22783c83f7e815ac1ef1442074986c34eac))
+
 ## [8.0.1](https://github.com/dhis2/analytics/compare/v8.0.0...v8.0.1) (2020-07-29)
 
 
