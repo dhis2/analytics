@@ -69,6 +69,9 @@ export const visTypeDescriptions = {
     [VIS_TYPE_AREA]: i18n.t(
         'Track or compare changes over time. Recommend period as the category.'
     ),
+    [VIS_TYPE_STACKED_AREA]: i18n.t(
+        'Track or compare over time parts of a whole. Recommend data in series and period in category.'
+    ),
     [VIS_TYPE_PIE]: i18n.t(
         'Compare parts of a whole at a single point in time. Recommend period in the filter.'
     ),
