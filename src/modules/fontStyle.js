@@ -20,23 +20,23 @@ export const TEXT_ALIGN_RIGHT = 'RIGHT'
 export const getFontSizeOptions = () => ({
     xSmall: {
         label: i18n.t('Extra Small'),
-        value: '9',
+        value: 9,
     },
     small: {
         label: i18n.t('Small'),
-        value: '11',
+        value: 11,
     },
     regular: {
         label: i18n.t('Regular'),
-        value: '13',
+        value: 13,
     },
     large: {
         label: i18n.t('Large'),
-        value: '18',
+        value: 18,
     },
     xLarge: {
         label: i18n.t('Extra Large'),
-        value: '24',
+        value: 24,
     },
 })
 
