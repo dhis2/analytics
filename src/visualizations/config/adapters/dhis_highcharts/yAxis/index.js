@@ -10,7 +10,14 @@ import { isStacked, VIS_TYPE_GAUGE, isDualAxisType } from '../../../../../module
 import { hasCustomAxes } from '../../../../../modules/axis'
 import { getAxisIdsMap } from '../customAxes'
 import { getAxisStringFromId } from '../../../../util/axisId'
-import { FONT_STYLE_VERTICAL_AXIS_TITLE } from '../../../../../modules/fontStyle'
+import { 
+    FONT_STYLE_VERTICAL_AXIS_TITLE, 
+    FONT_STYLE_SERIES_AXIS_LABELS, 
+    FONT_STYLE_OPTION_TEXT_COLOR, 
+    FONT_STYLE_OPTION_FONT_SIZE,
+    FONT_STYLE_OPTION_BOLD,
+    FONT_STYLE_OPTION_ITALIC 
+} from '../../../../../modules/fontStyle'
 
 const DEFAULT_MIN_VALUE = 0
 
@@ -81,17 +88,25 @@ function getBaseLine(layout) {
 }
 
 function getFormatter(layout) {
-    return {
+    return isNumeric(layout.rangeAxisDecimals) ? {
         formatter: function() {
             return this.value.toFixed(layout.rangeAxisDecimals)
         },
-    }
+    } : {}
 }
 
 function getLabels(layout) {
-    return isNumeric(layout.rangeAxisDecimals)
-        ? getFormatter(layout)
-        : undefined
+    const fontStyle = layout.fontStyle[FONT_STYLE_SERIES_AXIS_LABELS]
+    return {
+        style: {
+            color: fontStyle[FONT_STYLE_OPTION_TEXT_COLOR],
+            textShadow: '0 0 #ccc',
+            fontSize: `${fontStyle[FONT_STYLE_OPTION_FONT_SIZE]}px`,
+            fontWeight: fontStyle[FONT_STYLE_OPTION_BOLD] ? FONT_STYLE_OPTION_BOLD : 'normal',
+            fontStyle: fontStyle[FONT_STYLE_OPTION_ITALIC] ? FONT_STYLE_OPTION_ITALIC : 'normal'
+        },
+        ...getFormatter(layout)
+    }
 }
 
 function getMultipleAxes(theme, axes) {
