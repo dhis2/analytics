@@ -6,6 +6,8 @@ export const FONT_STYLE_VISUALIZATION_SUBTITLE = 'visualizationSubtitle'
 export const FONT_STYLE_HORIZONTAL_AXIS_TITLE = 'horizontalAxisTitle'
 export const FONT_STYLE_VERTICAL_AXIS_TITLE = 'verticalAxisTitle'
 export const FONT_STYLE_LEGEND = 'legend'
+export const FONT_STYLE_SERIES_AXIS_LABELS = 'seriesAxisLabels'
+export const FONT_STYLE_CATEGORY_AXIS_LABELS = 'categoryAxisLabels'
 export const FONT_STYLE_OPTION_FONT = 'font'
 export const FONT_STYLE_OPTION_FONT_SIZE = 'fontSize'
 export const FONT_STYLE_OPTION_BOLD = 'bold'
@@ -115,6 +117,22 @@ export const defaultFontStyle = {
         [FONT_STYLE_OPTION_UNDERLINE]: false,
         [FONT_STYLE_OPTION_TEXT_COLOR]: defaultTextColor,
         [FONT_STYLE_OPTION_TEXT_ALIGN]: TEXT_ALIGN_CENTER,
+    },
+    [FONT_STYLE_SERIES_AXIS_LABELS]: {
+        [FONT_STYLE_OPTION_FONT]: defaultFont,
+        [FONT_STYLE_OPTION_FONT_SIZE]: getFontSizeOptions().small.value,
+        [FONT_STYLE_OPTION_BOLD]: false,
+        [FONT_STYLE_OPTION_ITALIC]: false,
+        [FONT_STYLE_OPTION_UNDERLINE]: false,
+        [FONT_STYLE_OPTION_TEXT_COLOR]: defaultTextColor,
+    },
+    [FONT_STYLE_CATEGORY_AXIS_LABELS]: {
+        [FONT_STYLE_OPTION_FONT]: defaultFont,
+        [FONT_STYLE_OPTION_FONT_SIZE]: getFontSizeOptions().small.value,
+        [FONT_STYLE_OPTION_BOLD]: false,
+        [FONT_STYLE_OPTION_ITALIC]: false,
+        [FONT_STYLE_OPTION_UNDERLINE]: false,
+        [FONT_STYLE_OPTION_TEXT_COLOR]: defaultTextColor,
     },
 }
 
