@@ -125,6 +125,7 @@ export {
     VIS_TYPE_SINGLE_VALUE,
     VIS_TYPE_PIVOT_TABLE,
     visTypeDisplayNames,
+    visTypeDescriptions,
     visTypeIcons,
     getDisplayNameByVisType,
     defaultVisType,
