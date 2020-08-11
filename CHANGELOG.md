@@ -1,3 +1,10 @@
+## [8.1.2](https://github.com/dhis2/analytics/compare/v8.1.1...v8.1.2) (2020-08-11)
+
+
+### Bug Fixes
+
+* prevent saved AOs without series from crashing ([#535](https://github.com/dhis2/analytics/issues/535)) ([19f540c](https://github.com/dhis2/analytics/commit/19f540c5e689154b3c5ee9f1e3bab84363ec1bbf))
+
 ## [8.1.1](https://github.com/dhis2/analytics/compare/v8.1.0...v8.1.1) (2020-08-10)
 
 

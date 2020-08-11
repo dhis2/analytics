@@ -117,7 +117,7 @@ export default function({ store, layout, el, extraConfig, extraOptions }) {
     }
 
     // DHIS2-9010 prevent trend lines from render when using multiple axes
-    const filteredSeries = layout.series.filter(layoutSeriesItem => series.some(seriesItem => seriesItem.id === layoutSeriesItem.dimensionItem))
+    const filteredSeries = layout.series?.filter(layoutSeriesItem => series.some(seriesItem => seriesItem.id === layoutSeriesItem.dimensionItem))
 
     // DHIS2-1243 add trend lines after sorting
     // trend line on pie and gauge does not make sense
