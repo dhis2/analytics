@@ -116,7 +116,7 @@ function getMultipleAxes(theme, axes) {
 
 function getDefault(layout, series, extraOptions) {
     const axes = []
-    const filteredSeries = layout.series.filter(layoutSeriesItem => series.some(seriesItem => seriesItem.id === layoutSeriesItem.dimensionItem))
+    const filteredSeries = layout.series?.filter(layoutSeriesItem => series.some(seriesItem => seriesItem.id === layoutSeriesItem.dimensionItem))
     if (isDualAxisType(layout.type) && hasCustomAxes(filteredSeries)) {
         const axisIdsMap = getAxisIdsMap(layout.series, series)
         axes.push(...getMultipleAxes(extraOptions.multiAxisTheme, [...new Set(Object.keys(axisIdsMap))].sort((a, b) => a - b)))
