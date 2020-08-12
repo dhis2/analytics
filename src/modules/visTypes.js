@@ -139,6 +139,7 @@ const dualCategoryChartTypes = [
     VIS_TYPE_STACKED_BAR,
     VIS_TYPE_LINE,
     VIS_TYPE_AREA,
+    VIS_TYPE_STACKED_AREA,
 ]
 
 export const defaultVisType = VIS_TYPE_COLUMN
