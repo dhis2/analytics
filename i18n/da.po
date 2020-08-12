@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-07-27T07:46:11.678Z\n"
+"POT-Creation-Date: 2020-08-11T09:04:09.929Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: phil_dhis2, 2020\n"
 "Language-Team: Danish (https://www.transifex.com/hisp-uio/teams/100509/da/)\n"
@@ -423,6 +423,9 @@ msgstr ""
 msgid "Assigned Categories"
 msgstr ""
 
+msgid "Pivot table"
+msgstr ""
+
 msgid "Column"
 msgstr ""
 
@@ -439,6 +442,9 @@ msgid "Line"
 msgstr ""
 
 msgid "Area"
+msgstr ""
+
+msgid "Stacked area"
 msgstr ""
 
 msgid "Pie"
@@ -459,7 +465,49 @@ msgstr ""
 msgid "Single value"
 msgstr ""
 
-msgid "Pivot table"
+msgid "View data and indicators in a manipulatable table."
+msgstr ""
+
+msgid ""
+"Compare sizes of related element, displayed vertically. Recommend period in "
+"filter."
+msgstr ""
+
+msgid ""
+"Compare parts of a whole against related elements, vertically. Recommend "
+"data or org. unit as series."
+msgstr ""
+
+msgid ""
+"Compare sizes of related elements, displayed horizontally. Recommend period "
+"in filter."
+msgstr ""
+
+msgid ""
+"Compare parts of a whole against related elements, horizontally. Recommend "
+"data or org. unit as series."
+msgstr ""
+
+msgid "Track or compare changes over time. Recommend period as the category."
+msgstr ""
+
+msgid ""
+"Compare parts of a whole at a single point in time. Recommend period in the "
+"filter."
+msgstr ""
+
+msgid "Compare several items against multiple variables."
+msgstr ""
+
+msgid ""
+"Compare a percentage indicator against a 100% scale. Recommend period in "
+"filter."
+msgstr ""
+
+msgid "Compare changes over time between multiple time periods."
+msgstr ""
+
+msgid "Display a single value. Recommend relative period to show latest data."
 msgstr ""
 
 msgid "Target"
