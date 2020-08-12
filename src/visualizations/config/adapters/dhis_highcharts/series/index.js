@@ -2,10 +2,7 @@ import getCumulativeData from './../getCumulativeData'
 import getPie from './pie'
 import getGauge from './gauge'
 import getType from '../type'
-import {
-    getFullIdAxisMap,
-    getAxisIdsMap,
-} from '../customAxes'
+import { getFullIdAxisMap, getAxisIdsMap } from '../customAxes'
 import { generateColors } from '../../../../util/colors/gradientColorGenerator'
 import {
     colorSets,
@@ -45,7 +42,11 @@ function getPatternIndex(index) {
 }
 
 function getIdColorMap(series, layout, extraOptions) {
-    const filteredSeries = layout.series?.filter(layoutSeriesItem => series.some(seriesItem => seriesItem.id === layoutSeriesItem.dimensionItem))
+    const filteredSeries = layout.series?.filter(layoutSeriesItem =>
+        series.some(
+            seriesItem => seriesItem.id === layoutSeriesItem.dimensionItem
+        )
+    )
     if (isDualAxisType(layout.type) && hasCustomAxes(filteredSeries)) {
         const axisIdsMap = getAxisIdsMap(layout.series, series)
         const theme = extraOptions.multiAxisTheme
@@ -101,10 +102,13 @@ function getDefault(series, layout, isStacked, extraOptions) {
                     ? HIGHCHARTS_TYPE_PERCENT
                     : HIGHCHARTS_TYPE_NORMAL
         }
-        
-        const matchedObject = layout.series?.find(item => item.dimensionItem === seriesObj.id)
-        
-        if (matchedObject) { // Checks if the item has custom options
+
+        const matchedObject = layout.series?.find(
+            item => item.dimensionItem === seriesObj.id
+        )
+
+        if (matchedObject) {
+            // Checks if the item has custom options
             if (matchedObject.type) {
                 seriesObj.type = getType(matchedObject.type).type
 
@@ -120,7 +124,10 @@ function getDefault(series, layout, isStacked, extraOptions) {
 
         // DHIS2-2101
         // show bar/column chart as EPI curve (basically remove spacing between bars/columns)
-        if (layout.noSpaceBetweenColumns && epiCurveTypes.includes(getType(layout.type).type)) {
+        if (
+            layout.noSpaceBetweenColumns &&
+            epiCurveTypes.includes(getType(layout.type).type)
+        ) {
             seriesObj.pointPadding = 0
             seriesObj.groupPadding = 0
         }
