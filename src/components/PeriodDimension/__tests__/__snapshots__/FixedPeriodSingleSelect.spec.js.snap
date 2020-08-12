@@ -1,0 +1,104 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`The Fixed Period Single Select component matches the snapshot 1`] = `
+<div
+  data-test="dhis2-analytics-fixedperiodselect"
+>
+  <div
+    className="row"
+  >
+    <FixedPeriodFilter
+      currentPeriodType="MONTHLY"
+      currentYear="2014"
+      onSelectPeriodType={[Function]}
+      onSelectYear={[Function]}
+    />
+  </div>
+  <SingleSelectField
+    clearText={[Function]}
+    dataTest="dhis2-uiwidgets-singleselectfield"
+    dense={true}
+    empty={[Function]}
+    filterPlaceholder={[Function]}
+    label="Period"
+    loadingText={[Function]}
+    noMatchText={[Function]}
+    onChange={[Function]}
+    selected="201405"
+  >
+    <SingleSelectOption
+      dataTest="dhis2-uicore-singleselectoption"
+      key="201401"
+      label="January 2014"
+      value="201401"
+    />
+    <SingleSelectOption
+      dataTest="dhis2-uicore-singleselectoption"
+      key="201402"
+      label="February 2014"
+      value="201402"
+    />
+    <SingleSelectOption
+      dataTest="dhis2-uicore-singleselectoption"
+      key="201403"
+      label="March 2014"
+      value="201403"
+    />
+    <SingleSelectOption
+      dataTest="dhis2-uicore-singleselectoption"
+      key="201404"
+      label="April 2014"
+      value="201404"
+    />
+    <SingleSelectOption
+      dataTest="dhis2-uicore-singleselectoption"
+      key="201405"
+      label="May 2014"
+      value="201405"
+    />
+    <SingleSelectOption
+      dataTest="dhis2-uicore-singleselectoption"
+      key="201406"
+      label="June 2014"
+      value="201406"
+    />
+    <SingleSelectOption
+      dataTest="dhis2-uicore-singleselectoption"
+      key="201407"
+      label="July 2014"
+      value="201407"
+    />
+    <SingleSelectOption
+      dataTest="dhis2-uicore-singleselectoption"
+      key="201408"
+      label="August 2014"
+      value="201408"
+    />
+    <SingleSelectOption
+      dataTest="dhis2-uicore-singleselectoption"
+      key="201409"
+      label="September 2014"
+      value="201409"
+    />
+    <SingleSelectOption
+      dataTest="dhis2-uicore-singleselectoption"
+      key="201410"
+      label="October 2014"
+      value="201410"
+    />
+    <SingleSelectOption
+      dataTest="dhis2-uicore-singleselectoption"
+      key="201411"
+      label="November 2014"
+      value="201411"
+    />
+    <SingleSelectOption
+      dataTest="dhis2-uicore-singleselectoption"
+      key="201412"
+      label="December 2014"
+      value="201412"
+    />
+  </SingleSelectField>
+  <style />
+</div>
+`;
