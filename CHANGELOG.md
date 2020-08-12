@@ -1,3 +1,38 @@
+## [8.3.1](https://github.com/dhis2/analytics/compare/v8.3.0...v8.3.1) (2020-08-11)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([3eb09c5](https://github.com/dhis2/analytics/commit/3eb09c5ce928f428fe8adc3200debfa861c3041f))
+
+# [8.3.0](https://github.com/dhis2/analytics/compare/v8.2.0...v8.3.0) (2020-08-11)
+
+
+### Features
+
+* new vis type for stacked area (DHIS2-9217) ([#536](https://github.com/dhis2/analytics/issues/536)) ([de49779](https://github.com/dhis2/analytics/commit/de49779606a75ec74e2f4e70d0f7a0db3cf12499))
+
+# [8.2.0](https://github.com/dhis2/analytics/compare/v8.1.2...v8.2.0) (2020-08-11)
+
+
+### Features
+
+* add vis type descriptions (DHIS2-7855) ([#527](https://github.com/dhis2/analytics/issues/527)) ([8294cb7](https://github.com/dhis2/analytics/commit/8294cb792b7f242aaf710c1da42a49a5bfcb97b1))
+
+## [8.1.2](https://github.com/dhis2/analytics/compare/v8.1.1...v8.1.2) (2020-08-11)
+
+
+### Bug Fixes
+
+* prevent saved AOs without series from crashing ([#535](https://github.com/dhis2/analytics/issues/535)) ([19f540c](https://github.com/dhis2/analytics/commit/19f540c5e689154b3c5ee9f1e3bab84363ec1bbf))
+
+## [8.1.1](https://github.com/dhis2/analytics/compare/v8.1.0...v8.1.1) (2020-08-10)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([c980e5a](https://github.com/dhis2/analytics/commit/c980e5aca041a58d929655d28a160afbb0d3d83a))
+
 # [8.1.0](https://github.com/dhis2/analytics/compare/v8.0.1...v8.1.0) (2020-08-07)
 
 

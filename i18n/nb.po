@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-07-27T07:46:11.678Z\n"
+"POT-Creation-Date: 2020-08-11T09:04:09.929Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: Karoline Tufte Lien <karoline@dhis2.org>, 2020\n"
 "Language-Team: Norwegian Bokmål (https://www.transifex.com/hisp-uio/teams/100509/nb/)\n"
@@ -424,6 +424,9 @@ msgstr "Organisasjonsenhet"
 msgid "Assigned Categories"
 msgstr "Tildelte Kategorier"
 
+msgid "Pivot table"
+msgstr "Pivottabell"
+
 msgid "Column"
 msgstr "Stolpe"
 
@@ -441,6 +444,9 @@ msgstr "Linje"
 
 msgid "Area"
 msgstr "Areal"
+
+msgid "Stacked area"
+msgstr ""
 
 msgid "Pie"
 msgstr "Sektor"
@@ -460,8 +466,50 @@ msgstr "År over år (stolpe)"
 msgid "Single value"
 msgstr "Enkeltverdi"
 
-msgid "Pivot table"
-msgstr "Pivottabell"
+msgid "View data and indicators in a manipulatable table."
+msgstr ""
+
+msgid ""
+"Compare sizes of related element, displayed vertically. Recommend period in "
+"filter."
+msgstr ""
+
+msgid ""
+"Compare parts of a whole against related elements, vertically. Recommend "
+"data or org. unit as series."
+msgstr ""
+
+msgid ""
+"Compare sizes of related elements, displayed horizontally. Recommend period "
+"in filter."
+msgstr ""
+
+msgid ""
+"Compare parts of a whole against related elements, horizontally. Recommend "
+"data or org. unit as series."
+msgstr ""
+
+msgid "Track or compare changes over time. Recommend period as the category."
+msgstr ""
+
+msgid ""
+"Compare parts of a whole at a single point in time. Recommend period in the "
+"filter."
+msgstr ""
+
+msgid "Compare several items against multiple variables."
+msgstr ""
+
+msgid ""
+"Compare a percentage indicator against a 100% scale. Recommend period in "
+"filter."
+msgstr ""
+
+msgid "Compare changes over time between multiple time periods."
+msgstr ""
+
+msgid "Display a single value. Recommend relative period to show latest data."
+msgstr ""
 
 msgid "Target"
 msgstr "Mål"
@@ -470,7 +518,7 @@ msgid "Base"
 msgstr "Grunn"
 
 msgid "Axis {{axisId}}"
-msgstr ""
+msgstr "Akse {{axisId}}"
 
 msgid "No data"
 msgstr "Ingen data"
