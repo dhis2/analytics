@@ -4,6 +4,7 @@ import './locales'
 export { default as DataDimension } from './components/DataDimension/DataDimension'
 
 export { default as PeriodDimension } from './components/PeriodDimension/PeriodDimension'
+export { default as FixedPeriodSelect } from './components/PeriodDimension/FixedPeriodSelect'
 
 export { default as OrgUnitDimension } from './components/OrgUnitDimension/OrgUnitDimension'
 
@@ -116,6 +117,7 @@ export {
     VIS_TYPE_STACKED_BAR,
     VIS_TYPE_LINE,
     VIS_TYPE_AREA,
+    VIS_TYPE_STACKED_AREA,
     VIS_TYPE_PIE,
     VIS_TYPE_RADAR,
     VIS_TYPE_GAUGE,

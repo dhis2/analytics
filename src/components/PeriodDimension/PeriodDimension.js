@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import PeriodSelector from './PeriodSelector'
+import PeriodTransfer from './PeriodTransfer'
 import { DIMENSION_ID_PERIOD } from '../../modules/predefinedDimensions'
 
 export const PeriodDimension = ({ onSelect, selectedPeriods, rightFooter }) => {
@@ -13,7 +13,7 @@ export const PeriodDimension = ({ onSelect, selectedPeriods, rightFooter }) => {
     }
 
     return (
-        <PeriodSelector
+        <PeriodTransfer
             onSelect={selectPeriods}
             initialSelectedPeriods={selectedPeriods}
             rightFooter={rightFooter}
