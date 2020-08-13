@@ -1,4 +1,4 @@
-export default function(series, store, layout, isStacked, colors) {
+export default function(series, colors) {
     return [
         {
             colorByPoint: true,

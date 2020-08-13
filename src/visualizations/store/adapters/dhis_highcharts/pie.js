@@ -4,6 +4,7 @@ export default function(acc, seriesIds, categoryIds, idValueMap, metaData) {
 
         if (value) {
             acc.push({
+                id: seriesId,
                 name: metaData.items[seriesId].name,
                 y: parseFloat(value),
             })

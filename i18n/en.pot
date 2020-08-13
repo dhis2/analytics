@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2020-08-11T09:04:09.929Z\n"
-"PO-Revision-Date: 2020-08-11T09:04:09.929Z\n"
+"POT-Creation-Date: 2020-08-12T08:24:29.482Z\n"
+"PO-Revision-Date: 2020-08-12T08:24:29.482Z\n"
 
 msgid "Data Type"
 msgstr ""
@@ -75,6 +75,9 @@ msgid "Year"
 msgstr ""
 
 msgid "Select year"
+msgstr ""
+
+msgid "Period"
 msgstr ""
 
 msgid "Relative periods"
@@ -407,9 +410,6 @@ msgstr ""
 msgid "Data"
 msgstr ""
 
-msgid "Period"
-msgstr ""
-
 msgid "Organisation Unit"
 msgstr ""
 
@@ -482,6 +482,11 @@ msgid ""
 msgstr ""
 
 msgid "Track or compare changes over time. Recommend period as the category."
+msgstr ""
+
+msgid ""
+"Track or compare over time parts of a whole. Recommend data in series and "
+"period in category."
 msgstr ""
 
 msgid ""
