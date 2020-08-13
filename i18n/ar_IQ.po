@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-08-11T09:04:09.929Z\n"
+"POT-Creation-Date: 2020-08-12T08:24:29.482Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: KRG HIS <antonia.bezenchek@informa.pro>, 2020\n"
 "Language-Team: Arabic (Iraq) (https://www.transifex.com/hisp-uio/teams/100509/ar_IQ/)\n"
@@ -82,6 +82,9 @@ msgid "Year"
 msgstr ""
 
 msgid "Select year"
+msgstr ""
+
+msgid "Period"
 msgstr ""
 
 msgid "Relative periods"
@@ -414,9 +417,6 @@ msgstr ""
 msgid "Data"
 msgstr "البيانات"
 
-msgid "Period"
-msgstr ""
-
 msgid "Organisation Unit"
 msgstr "الوحدة التنظيمية"
 
@@ -489,6 +489,11 @@ msgid ""
 msgstr ""
 
 msgid "Track or compare changes over time. Recommend period as the category."
+msgstr ""
+
+msgid ""
+"Track or compare over time parts of a whole. Recommend data in series and "
+"period in category."
 msgstr ""
 
 msgid ""

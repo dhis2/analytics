@@ -9,7 +9,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-08-11T09:04:09.929Z\n"
+"POT-Creation-Date: 2020-08-12T08:24:29.482Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2020\n"
 "Language-Team: French (https://www.transifex.com/hisp-uio/teams/100509/fr/)\n"
@@ -87,6 +87,9 @@ msgstr "Année"
 
 msgid "Select year"
 msgstr "Sélectionnez année"
+
+msgid "Period"
+msgstr "Période"
 
 msgid "Relative periods"
 msgstr "Périodes relatives"
@@ -418,9 +421,6 @@ msgstr "{{touslesnomsOudynamiques}} groupes dans {{NomsOustatiques}}"
 msgid "Data"
 msgstr "Données"
 
-msgid "Period"
-msgstr "Période"
-
 msgid "Organisation Unit"
 msgstr "Unité d'organisation"
 
@@ -493,6 +493,11 @@ msgid ""
 msgstr ""
 
 msgid "Track or compare changes over time. Recommend period as the category."
+msgstr ""
+
+msgid ""
+"Track or compare over time parts of a whole. Recommend data in series and "
+"period in category."
 msgstr ""
 
 msgid ""
