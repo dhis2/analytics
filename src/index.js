@@ -193,3 +193,15 @@ export {
     getTextAlignOptions,
     deleteFontStyleOption,
 } from './modules/fontStyle'
+
+// Utils: colorSets
+export {
+    COLOR_SET_DEFAULT,
+    COLOR_SET_BRIGHT,
+    COLOR_SET_DARK,
+    COLOR_SET_GRAY,
+    COLOR_SET_COLOR_BLIND,
+    COLOR_SET_MONO_PATTERNS,
+    colorSets,
+} from './visualizations/util/colors/colorSets'
+
