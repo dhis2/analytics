@@ -41,6 +41,18 @@ function getPatternIndex(index) {
     return index < 10 ? index : getPatternIndex(index - 10)
 }
 
+function getIndexColorPatternMap(series, layout, extraOptions) {
+    const colors = colorSets[layout.colorSet]?.colors || extraOptions.colors
+
+    return series.reduce((map, s, index) => {
+        map[index] =
+            layout.colorSet === COLOR_SET_MONO_PATTERNS
+                ? { patternIndex: getPatternIndex(index) }
+                : getColor(colors, index)
+        return map
+    }, {})
+}
+
 function getIdColorMap(series, layout, extraOptions) {
     const filteredSeries = layout.series?.filter(layoutSeriesItem =>
         series.some(
@@ -73,10 +85,14 @@ function getIdColorMap(series, layout, extraOptions) {
             return map
         }, {})
     } else {
-        const colors = colorSets[layout.colorSet]?.colors || extraOptions.colors
+        const indexColorPatternMap = getIndexColorPatternMap(
+            series,
+            layout,
+            extraOptions
+        )
 
         return series.reduce((map, s, index) => {
-            map[s.id] = getColor(colors, index)
+            map[s.id] = indexColorPatternMap[index]
             return map
         }, {})
     }
@@ -85,6 +101,11 @@ function getIdColorMap(series, layout, extraOptions) {
 function getDefault(series, layout, isStacked, extraOptions) {
     const fullIdAxisMap = getFullIdAxisMap(layout.series, series)
     const idColorMap = getIdColorMap(series, layout, extraOptions)
+    const indexColorPatternMap = getIndexColorPatternMap(
+        series,
+        layout,
+        extraOptions
+    )
 
     series.forEach((seriesObj, index) => {
         // show values
@@ -134,9 +155,7 @@ function getDefault(series, layout, isStacked, extraOptions) {
 
         // color
         seriesObj.color = isYearOverYear(layout.type)
-            ? extraOptions.colors[index]
-            : layout.colorSet === COLOR_SET_MONO_PATTERNS
-            ? { patternIndex: getPatternIndex(index) }
+            ? indexColorPatternMap[index]
             : idColorMap[seriesObj.id]
 
         // axis number
@@ -163,10 +182,7 @@ export default function(series, store, layout, isStacked, extraOptions) {
         case VIS_TYPE_PIE:
             series = getPie(
                 series,
-                store,
-                layout,
-                isStacked,
-                extraOptions.colors
+                Object.values(getIdColorMap(series, layout, extraOptions))
             )
             break
         case VIS_TYPE_GAUGE:
