@@ -66,7 +66,6 @@ export default function(layout, metaData, dashboard) {
         {},
         dashboard ? DASHBOARD_TITLE_STYLE : {
             margin: 30,
-            y: 18,
             align: (fontStyle[FONT_STYLE_OPTION_TEXT_ALIGN] || '').toLowerCase(),
             style: {
                 color: fontStyle[FONT_STYLE_OPTION_TEXT_COLOR],
