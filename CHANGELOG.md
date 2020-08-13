@@ -1,3 +1,10 @@
+# [8.4.0](https://github.com/dhis2/analytics/compare/v8.3.1...v8.4.0) (2020-08-12)
+
+
+### Features
+
+* introduce fixed-period-select component ([#509](https://github.com/dhis2/analytics/issues/509)) ([3f7a07a](https://github.com/dhis2/analytics/commit/3f7a07a4de8915035727140a2776edf6d74c7666))
+
 ## [8.3.1](https://github.com/dhis2/analytics/compare/v8.3.0...v8.3.1) (2020-08-11)
 
 
