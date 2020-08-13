@@ -1,3 +1,10 @@
+# [8.5.0](https://github.com/dhis2/analytics/compare/v8.4.0...v8.5.0) (2020-08-13)
+
+
+### Features
+
+* add support for DV's colorSet option (DHIS2-670) ([#531](https://github.com/dhis2/analytics/issues/531)) ([e2eb37c](https://github.com/dhis2/analytics/commit/e2eb37c24f14fa0a64286420d1b057e2a93723aa))
+
 # [8.4.0](https://github.com/dhis2/analytics/compare/v8.3.1...v8.4.0) (2020-08-12)
 
 
