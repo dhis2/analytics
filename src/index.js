@@ -204,4 +204,3 @@ export {
     COLOR_SET_MONO_PATTERNS,
     colorSets,
 } from './visualizations/util/colors/colorSets'
-
