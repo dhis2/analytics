@@ -164,9 +164,6 @@ export const mergeFontStyleWithDefault = fontStyle => {
             }
         }
     }
-    //TODO: Remove console log
-    console.log('---- RESULT ----')
-    console.log(result)
     return result
 }
 
