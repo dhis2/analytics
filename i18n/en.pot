@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2020-08-12T08:24:29.482Z\n"
-"PO-Revision-Date: 2020-08-12T08:24:29.482Z\n"
+"POT-Creation-Date: 2020-08-13T14:14:10.838Z\n"
+"PO-Revision-Date: 2020-08-13T14:14:10.838Z\n"
 
 msgid "Data Type"
 msgstr ""
@@ -414,6 +414,15 @@ msgid "Center"
 msgstr ""
 
 msgid "Right"
+msgstr ""
+
+msgid "Start"
+msgstr ""
+
+msgid "Middle"
+msgstr ""
+
+msgid "End"
 msgstr ""
 
 msgid "{{dynamicOuNames}} and {{lastOuName}}"
