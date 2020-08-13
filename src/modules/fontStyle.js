@@ -167,7 +167,6 @@ export const mergeFontStyleWithDefault = fontStyle => {
     return result
 }
 
-// TODO: Change to a better name?
 export const deleteFontStyleOption = (inputFontStyle, fontStyleKey, option) => {
     let fontStyle = { ...inputFontStyle }
     if (fontStyle[fontStyleKey]) {
