@@ -18,6 +18,9 @@ export const FONT_STYLE_OPTION_TEXT_ALIGN = 'textAlign'
 export const TEXT_ALIGN_LEFT = 'LEFT'
 export const TEXT_ALIGN_CENTER = 'CENTER'
 export const TEXT_ALIGN_RIGHT = 'RIGHT'
+export const TEXT_ALIGN_START = 'LOW'
+export const TEXT_ALIGN_MIDDLE = 'MIDDLE'
+export const TEXT_ALIGN_END = 'HIGH'
 
 export const getFontSizeOptions = () => ({
     xSmall: {
@@ -42,7 +45,20 @@ export const getFontSizeOptions = () => ({
     },
 })
 
-export const getTextAlignOptions = () => ({
+export const getTextAlignOptions = fontStyleKey => {
+    switch (fontStyleKey) {
+        case FONT_STYLE_HORIZONTAL_AXIS_TITLE:
+        case FONT_STYLE_VERTICAL_AXIS_TITLE:
+            return axisTitleAlignOptions()
+        case FONT_STYLE_VISUALIZATION_TITLE:
+        case FONT_STYLE_VISUALIZATION_SUBTITLE:
+        case FONT_STYLE_LEGEND:
+        default:
+            return defaultAlignOptions()
+    }
+}
+
+const defaultAlignOptions = () => ({
     [TEXT_ALIGN_LEFT]: {
         label: i18n.t('Left'),
         value: TEXT_ALIGN_LEFT,
@@ -57,17 +73,20 @@ export const getTextAlignOptions = () => ({
     },
 })
 
-export const getVerticalOptionFromTextAlignOption = textAlignOption => {
-    switch (textAlignOption) {
-        case TEXT_ALIGN_LEFT:
-        default:
-            return 'low'
-        case TEXT_ALIGN_CENTER:
-            return 'middle'
-        case TEXT_ALIGN_RIGHT:
-            return 'high'
-    }
-}
+const axisTitleAlignOptions = () => ({
+    [TEXT_ALIGN_START]: {
+        label: i18n.t('Start'),
+        value: TEXT_ALIGN_START,
+    },
+    [TEXT_ALIGN_MIDDLE]: {
+        label: i18n.t('Middle'),
+        value: TEXT_ALIGN_MIDDLE,
+    },
+    [TEXT_ALIGN_END]: {
+        label: i18n.t('End'),
+        value: TEXT_ALIGN_END,
+    },
+})
 
 const defaultFont = 'Roboto'
 const defaultTextColor = '#000000'
@@ -98,7 +117,7 @@ export const defaultFontStyle = {
         [FONT_STYLE_OPTION_ITALIC]: false,
         [FONT_STYLE_OPTION_UNDERLINE]: false,
         [FONT_STYLE_OPTION_TEXT_COLOR]: defaultTextColor,
-        [FONT_STYLE_OPTION_TEXT_ALIGN]: TEXT_ALIGN_LEFT,
+        [FONT_STYLE_OPTION_TEXT_ALIGN]: TEXT_ALIGN_START,
     },
     [FONT_STYLE_VERTICAL_AXIS_TITLE]: {
         [FONT_STYLE_OPTION_FONT]: defaultFont,
@@ -107,7 +126,7 @@ export const defaultFontStyle = {
         [FONT_STYLE_OPTION_ITALIC]: false,
         [FONT_STYLE_OPTION_UNDERLINE]: false,
         [FONT_STYLE_OPTION_TEXT_COLOR]: defaultTextColor,
-        [FONT_STYLE_OPTION_TEXT_ALIGN]: TEXT_ALIGN_LEFT,
+        [FONT_STYLE_OPTION_TEXT_ALIGN]: TEXT_ALIGN_START,
     },
     [FONT_STYLE_LEGEND]: {
         [FONT_STYLE_OPTION_FONT]: defaultFont,

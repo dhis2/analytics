@@ -5,11 +5,10 @@ import {
     FONT_STYLE_OPTION_BOLD ,
     FONT_STYLE_OPTION_ITALIC,
     FONT_STYLE_OPTION_TEXT_ALIGN,
-    getVerticalOptionFromTextAlignOption
 } from '../../../../modules/fontStyle'
 
 const getTitleStyle = fontStyle => fontStyle ? {
-    align: getVerticalOptionFromTextAlignOption(fontStyle[FONT_STYLE_OPTION_TEXT_ALIGN]),
+    align: (fontStyle[FONT_STYLE_OPTION_TEXT_ALIGN] || '').toLowerCase(),
     margin: 15,
     style: {
         color: fontStyle[FONT_STYLE_OPTION_TEXT_COLOR],
