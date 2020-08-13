@@ -1,5 +1,6 @@
 /*eslint no-unused-vars: ["error", { "ignoreRestSiblings": true }]*/
 import i18n from '@dhis2/d2-i18n'
+import cloneDeep from 'lodash/cloneDeep'
 
 export const FONT_STYLE_VISUALIZATION_TITLE = 'visualizationTitle'
 export const FONT_STYLE_VISUALIZATION_SUBTITLE = 'visualizationSubtitle'
@@ -156,7 +157,7 @@ export const defaultFontStyle = {
 }
 
 export const mergeFontStyleWithDefault = fontStyle => {
-    const result = defaultFontStyle
+    const result = cloneDeep(defaultFontStyle)
     for (const style in fontStyle) {
         for (const option in fontStyle[style]) {
             if (result[style]) {
@@ -168,7 +169,7 @@ export const mergeFontStyleWithDefault = fontStyle => {
 }
 
 export const deleteFontStyleOption = (inputFontStyle, fontStyleKey, option) => {
-    let fontStyle = { ...inputFontStyle }
+    let fontStyle = cloneDeep(inputFontStyle)
     if (fontStyle[fontStyleKey]) {
         const { [option]: remove, ...rest } = fontStyle[fontStyleKey]
         fontStyle[fontStyleKey] = { ...rest }
