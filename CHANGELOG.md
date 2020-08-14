@@ -1,3 +1,10 @@
+# [8.6.0](https://github.com/dhis2/analytics/compare/v8.5.1...v8.6.0) (2020-08-14)
+
+
+### Features
+
+* 2 category charts (DHIS2-7876) ([#508](https://github.com/dhis2/analytics/issues/508)) ([9e7f5c2](https://github.com/dhis2/analytics/commit/9e7f5c222c00bcf9db76c754e43436d9caba2296))
+
 ## [8.5.1](https://github.com/dhis2/analytics/compare/v8.5.0...v8.5.1) (2020-08-13)
 
 
