@@ -1,6 +1,6 @@
 import numberDecimals from 'd2-utilizr/lib/numberDecimals'
-import { isDualCategoryChartType } from '../../../../modules/visTypes'
-import getDualCategorySplitSerieData from './getDualCategorySplitSerieData'
+import { isTwoCategoryChartType } from '../../../../modules/visTypes'
+import getTwoCategorySplitSerieData from './getTwoCategorySplitSerieData'
 
 function getDefaultCumulativeData(series) {
     let decimals = 0
@@ -35,11 +35,11 @@ function getDefaultCumulativeData(series) {
     return series
 }
 
-function getDualCategoryCumulativeData(series) {
+function getTwoCategoryCumulativeData(series) {
     let decimals = 0
 
     series
-        .filter(seriesObj => !seriesObj.custom.isDualCategoryFakeSerie)
+        .filter(seriesObj => !seriesObj.custom.isTwoCategoryFakeSerie)
         .forEach(seriesObj => {
             const cumulativeValues = []
 
@@ -68,9 +68,7 @@ function getDualCategoryCumulativeData(series) {
                 )
             )
 
-            seriesObj.data = getDualCategorySplitSerieData(
-                seriesObj.custom.data
-            )
+            seriesObj.data = getTwoCategorySplitSerieData(seriesObj.custom.data)
 
             decimals = 0
         })
@@ -79,8 +77,8 @@ function getDualCategoryCumulativeData(series) {
 }
 
 export default function(series, layout) {
-    if (isDualCategoryChartType(layout.type) && layout.rows.length > 1) {
-        return getDualCategoryCumulativeData(series)
+    if (isTwoCategoryChartType(layout.type) && layout.rows.length > 1) {
+        return getTwoCategoryCumulativeData(series)
     } else {
         return getDefaultCumulativeData(series)
     }

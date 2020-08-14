@@ -5,7 +5,7 @@ import getStackedData from './getStackedData'
 import {
     VIS_TYPE_GAUGE,
     VIS_TYPE_PIE,
-    isDualCategoryChartType,
+    isTwoCategoryChartType,
 } from '../../../../modules/visTypes'
 
 const DEFAULT_TRENDLINE = {
@@ -25,8 +25,8 @@ export const isRegressionIneligible = type =>
     arrayContains([VIS_TYPE_GAUGE, VIS_TYPE_PIE], type)
 
 export default function(layout, series, isStacked) {
-    if (isDualCategoryChartType(layout.type) && layout.rows.length > 1) {
-        return getDualCategoryTrendLines(layout, series, isStacked)
+    if (isTwoCategoryChartType(layout.type) && layout.rows.length > 1) {
+        return getTwoCategoryTrendLines(layout, series, isStacked)
     } else {
         return getDefaultTrendLines(layout, series, isStacked)
     }
@@ -65,7 +65,7 @@ function getDefaultTrendLines(layout, series, isStacked) {
     return newSeries
 }
 
-function getDualCategoryTrendLines(layout, series, isStacked) {
+function getTwoCategoryTrendLines(layout, series, isStacked) {
     const newSeries = []
 
     if (isStacked) {
@@ -85,7 +85,7 @@ function getDualCategoryTrendLines(layout, series, isStacked) {
 
             newSeries.push(seriesObj)
 
-            if (!seriesObj.custom.isDualCategoryFakeSerie) {
+            if (!seriesObj.custom.isTwoCategoryFakeSerie) {
                 const groupRegressionTemplate = Array.from(
                     { length: seriesObj.custom.data.flat().length },
                     () => null

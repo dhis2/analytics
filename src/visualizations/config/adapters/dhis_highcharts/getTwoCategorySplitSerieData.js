@@ -1,4 +1,4 @@
-export default function getDualCategorySplitSerieData(serieData) {
+export default function getTwoCategorySplitSerieData(serieData) {
     // Add a null value after the last point of the first group
     // this results in 2 separated charts for line and area
     const splitSerieData = []

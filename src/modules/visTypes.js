@@ -132,7 +132,7 @@ const yearOverYearTypes = [
 
 const dualAxisTypes = [VIS_TYPE_COLUMN, VIS_TYPE_BAR, VIS_TYPE_LINE]
 
-const dualCategoryChartTypes = [
+const twoCategoryChartTypes = [
     VIS_TYPE_COLUMN,
     VIS_TYPE_STACKED_COLUMN,
     VIS_TYPE_BAR,
@@ -147,5 +147,5 @@ export const isStacked = type => stackedTypes.includes(type)
 export const isYearOverYear = type => yearOverYearTypes.includes(type)
 export const isDualAxisType = type => dualAxisTypes.includes(type)
 export const isSingleValue = type => type === VIS_TYPE_SINGLE_VALUE
-export const isDualCategoryChartType = type =>
-    dualCategoryChartTypes.includes(type)
+export const isTwoCategoryChartType = type =>
+    twoCategoryChartTypes.includes(type)

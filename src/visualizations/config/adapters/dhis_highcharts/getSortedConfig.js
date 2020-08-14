@@ -1,8 +1,8 @@
 import arrayPluck from 'd2-utilizr/lib/arrayPluck'
 import arraySort from 'd2-utilizr/lib/arraySort'
 import getStackedData from './getStackedData'
-import { isDualCategoryChartType } from '../../../../modules/visTypes'
-import getDualCategorySplitSerieData from './getDualCategorySplitSerieData'
+import { isTwoCategoryChartType } from '../../../../modules/visTypes'
+import getTwoCategorySplitSerieData from './getTwoCategorySplitSerieData'
 
 const sortOrderMap = new Map([
     [-1, 'ASC'],
@@ -22,7 +22,7 @@ function getIndexOrder(dataToBeSorted, layout) {
     return arrayPluck(dataObjectsToBeSorted, 'index')
 }
 
-function getDualCategorySortedConfig(config, layout, stacked) {
+function getTwoCategorySortedConfig(config, layout, stacked) {
     const series = config.series
     const sortedConfig = Object.assign({}, config)
 
@@ -31,7 +31,7 @@ function getDualCategorySortedConfig(config, layout, stacked) {
 
     // loop through serie groups
     sortedConfig.series = series.map((seriesObj, seriesIndex) => {
-        if (seriesObj.custom.isDualCategoryFakeSerie) {
+        if (seriesObj.custom.isTwoCategoryFakeSerie) {
             return seriesObj
         } else {
             seriesObj.custom.data = seriesObj.custom.data.map(
@@ -65,9 +65,7 @@ function getDualCategorySortedConfig(config, layout, stacked) {
                 }
             )
 
-            seriesObj.data = getDualCategorySplitSerieData(
-                seriesObj.custom.data
-            )
+            seriesObj.data = getTwoCategorySplitSerieData(seriesObj.custom.data)
 
             return seriesObj
         }
@@ -99,8 +97,8 @@ function getDefaultSortedConfig(config, layout, stacked) {
 }
 
 export default function(config, layout, stacked) {
-    if (isDualCategoryChartType(layout.type) && layout.rows.length > 1) {
-        return getDualCategorySortedConfig(config, layout, stacked)
+    if (isTwoCategoryChartType(layout.type) && layout.rows.length > 1) {
+        return getTwoCategorySortedConfig(config, layout, stacked)
     } else {
         return getDefaultSortedConfig(config, layout, stacked)
     }

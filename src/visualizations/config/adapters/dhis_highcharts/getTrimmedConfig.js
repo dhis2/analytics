@@ -1,7 +1,7 @@
 import arrayContains from 'd2-utilizr/lib/arrayContains'
 import arrayUnique from 'd2-utilizr/lib/arrayUnique'
-import { isDualCategoryChartType } from '../../../../modules/visTypes'
-import getDualCategorySplitSerieData from './getDualCategorySplitSerieData'
+import { isTwoCategoryChartType } from '../../../../modules/visTypes'
+import getTwoCategorySplitSerieData from './getTwoCategorySplitSerieData'
 
 function arrayCleanUndefined(array) {
     return array.filter(item => item !== undefined)
@@ -94,8 +94,8 @@ function cleanData(
 }
 
 export default function(config, layout) {
-    if (isDualCategoryChartType(layout.type) && layout.rows.length > 1) {
-        return getDualCategoryTrimmedConfig(config, layout)
+    if (isTwoCategoryChartType(layout.type) && layout.rows.length > 1) {
+        return getTwoCategoryTrimmedConfig(config, layout)
     } else {
         return getDefaultTrimmedConfig(config, layout)
     }
@@ -152,9 +152,9 @@ function getFirstLastGroupWithValuesIndexes(series) {
     return { firstGroupWithValuesIndex, lastGroupWithValuesIndex }
 }
 
-function getDualCategoryTrimmedConfig(config, layout) {
+function getTwoCategoryTrimmedConfig(config, layout) {
     const filteredSeries = config.series.filter(
-        serieObj => !serieObj.custom.isDualCategoryFakeSerie
+        serieObj => !serieObj.custom.isTwoCategoryFakeSerie
     )
     const emptyGroupIndexes = getEmptySeriesGroupIndexes(filteredSeries)
 
@@ -164,7 +164,7 @@ function getDualCategoryTrimmedConfig(config, layout) {
     } = getFirstLastGroupWithValuesIndexes(filteredSeries)
 
     const trimmedSeries = config.series.map(seriesObj => {
-        if (seriesObj.custom.isDualCategoryFakeSerie) {
+        if (seriesObj.custom.isTwoCategoryFakeSerie) {
             seriesObj.data = cleanData(
                 seriesObj.data,
                 emptyGroupIndexes,
@@ -181,9 +181,7 @@ function getDualCategoryTrimmedConfig(config, layout) {
                 layout.hideEmptyRowItems
             )
 
-            seriesObj.data = getDualCategorySplitSerieData(
-                seriesObj.custom.data
-            )
+            seriesObj.data = getTwoCategorySplitSerieData(seriesObj.custom.data)
         }
 
         return seriesObj

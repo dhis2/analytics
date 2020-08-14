@@ -1,8 +1,8 @@
-import { isDualCategoryChartType } from '../../../../modules/visTypes'
+import { isTwoCategoryChartType } from '../../../../modules/visTypes'
 
 export default function(series, layout) {
-    if (isDualCategoryChartType(layout.type) && layout.rows.length > 1) {
-        return getDualCategoryStackedData(series)
+    if (isTwoCategoryChartType(layout.type) && layout.rows.length > 1) {
+        return getTwoCategoryStackedData(series)
     } else {
         return getDefaultStackedData(series)
     }
@@ -18,11 +18,11 @@ function getDefaultStackedData(series, isZeroAsNull) {
         .map(value => (isZeroAsNull && value === 0 ? null : value))
 }
 
-function getDualCategoryStackedData(series) {
+function getTwoCategoryStackedData(series) {
     return series[0].custom.data.map((groupObj, groupIndex) => {
         return groupObj.map((value, index) => {
             return series
-                .filter(serieObj => !serieObj.custom.isDualCategoryFakeSerie)
+                .filter(serieObj => !serieObj.custom.isTwoCategoryFakeSerie)
                 .reduce((total, serieObj) => {
                     return total + serieObj.custom.data[groupIndex][index]
                 }, 0)

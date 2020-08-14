@@ -1,4 +1,4 @@
-import getDualCategorySplitSerieData from '../../../config/adapters/dhis_highcharts/getDualCategorySplitSerieData'
+import getTwoCategorySplitSerieData from '../../../config/adapters/dhis_highcharts/getTwoCategorySplitSerieData'
 
 // 1 series, 2 categories
 export default function(acc, series, categories, idValueMap, metaData) {
@@ -19,7 +19,7 @@ export default function(acc, series, categories, idValueMap, metaData) {
             groupedData.push(groupData)
         })
 
-        const serieData = getDualCategorySplitSerieData(groupedData)
+        const serieData = getTwoCategorySplitSerieData(groupedData)
 
         // avoid a list of null values
         if (serieData.every(e => e === serieData[0])) {
@@ -51,7 +51,7 @@ export default function(acc, series, categories, idValueMap, metaData) {
             enabled: false,
         },
         custom: {
-            isDualCategoryFakeSerie: true,
+            isTwoCategoryFakeSerie: true,
         },
     })
 
