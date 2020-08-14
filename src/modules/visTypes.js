@@ -130,7 +130,12 @@ const yearOverYearTypes = [
     VIS_TYPE_YEAR_OVER_YEAR_COLUMN,
 ]
 
-const dualAxisTypes = [VIS_TYPE_COLUMN, VIS_TYPE_BAR, VIS_TYPE_LINE]
+const dualAxisTypes = [
+    VIS_TYPE_COLUMN,
+    VIS_TYPE_BAR,
+    VIS_TYPE_LINE,
+    VIS_TYPE_AREA,
+]
 
 const twoCategoryChartTypes = [
     VIS_TYPE_COLUMN,
