@@ -1,11 +1,9 @@
 import isArray from 'd2-utilizr/lib/isArray'
 
-export default function(metaData, layout) {
-    const dimensionName = layout.rows[0].dimension
-
-    const dimensionIds = isArray(metaData.dimensions[dimensionName])
-        ? metaData.dimensions[dimensionName]
+export default function(metaData, dimensionId) {
+    const dimensionItemsIds = isArray(metaData.dimensions[dimensionId])
+        ? metaData.dimensions[dimensionId]
         : []
 
-    return dimensionIds.map(id => metaData.items[id].name)
+    return dimensionItemsIds.map(id => metaData.items[id].name)
 }

@@ -1,4 +1,4 @@
-import getCumulativeData from './../getCumulativeData'
+import getCumulativeData from '../getCumulativeData'
 import getPie from './pie'
 import getGauge from './gauge'
 import getType from '../type'
@@ -59,6 +59,7 @@ function getIdColorMap(series, layout, extraOptions) {
             seriesItem => seriesItem.id === layoutSeriesItem.dimensionItem
         )
     )
+
     if (isDualAxisType(layout.type) && hasCustomAxes(filteredSeries)) {
         const axisIdsMap = getAxisIdsMap(layout.series, series)
         const theme = extraOptions.multiAxisTheme
@@ -109,19 +110,21 @@ function getDefault(series, layout, isStacked, extraOptions) {
 
     series.forEach((seriesObj, index) => {
         // show values
-        if (layout.showValues || layout.showData) {
+        if (!seriesObj.dataLabels && (layout.showValues || layout.showData)) {
             seriesObj.dataLabels = {
                 enabled: true,
             }
         }
 
         // stacked
-        if (isStacked) {
+        if (isStacked && !seriesObj?.custom?.isTwoCategoryFakeSerie) {
             // DHIS2-1060: stacked charts can optionally be shown as 100% stacked charts
-            seriesObj.stacking =
-                layout.percentStackedValues === true
-                    ? HIGHCHARTS_TYPE_PERCENT
-                    : HIGHCHARTS_TYPE_NORMAL
+            if (layout.percentStackedValues === true) {
+                seriesObj.stacking = HIGHCHARTS_TYPE_PERCENT
+                seriesObj.connectNulls = false
+            } else {
+                seriesObj.stacking = HIGHCHARTS_TYPE_NORMAL
+            }
         }
 
         const matchedObject = layout.series?.find(
@@ -171,7 +174,7 @@ function getDefault(series, layout, isStacked, extraOptions) {
 
     // DHIS2-701: use cumulative values
     if (layout.cumulativeValues === true) {
-        series = getCumulativeData(series)
+        series = getCumulativeData(series, layout)
     }
 
     return series

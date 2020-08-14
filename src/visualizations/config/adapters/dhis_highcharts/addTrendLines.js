@@ -2,7 +2,11 @@ import arrayContains from 'd2-utilizr/lib/arrayContains'
 import { rgb } from 'd3-color'
 
 import getStackedData from './getStackedData'
-import { VIS_TYPE_GAUGE, VIS_TYPE_PIE } from '../../../../modules/visTypes'
+import {
+    VIS_TYPE_GAUGE,
+    VIS_TYPE_PIE,
+    isTwoCategoryChartType,
+} from '../../../../modules/visTypes'
 
 const DEFAULT_TRENDLINE = {
     type: 'spline',
@@ -20,7 +24,15 @@ const DEFAULT_TRENDLINE = {
 export const isRegressionIneligible = type =>
     arrayContains([VIS_TYPE_GAUGE, VIS_TYPE_PIE], type)
 
-export default function(regressionType, series, isStacked) {
+export default function(layout, series, isStacked) {
+    if (isTwoCategoryChartType(layout.type) && layout.rows.length > 1) {
+        return getTwoCategoryTrendLines(layout, series, isStacked)
+    } else {
+        return getDefaultTrendLines(layout, series, isStacked)
+    }
+}
+
+function getDefaultTrendLines(layout, series, isStacked) {
     const newSeries = []
 
     if (isStacked) {
@@ -28,7 +40,10 @@ export default function(regressionType, series, isStacked) {
             ...series,
             Object.assign(
                 {},
-                getRegressionObj(getStackedData(series), regressionType)
+                getRegressionObj(
+                    getStackedData(series, layout),
+                    layout.regressionType
+                )
             )
         )
     } else {
@@ -37,13 +52,78 @@ export default function(regressionType, series, isStacked) {
                 seriesObj,
                 Object.assign(
                     {},
-                    getRegressionObj(seriesObj.data, regressionType),
+                    getRegressionObj(seriesObj.data, layout.regressionType),
                     {
                         name: seriesObj.name + ' (trend)',
                         color: getDarkerColor(seriesObj.color),
                     }
                 )
             )
+        })
+    }
+
+    return newSeries
+}
+
+function getTwoCategoryTrendLines(layout, series, isStacked) {
+    const newSeries = []
+
+    if (isStacked) {
+        newSeries.push(
+            ...series,
+            Object.assign(
+                {},
+                getRegressionObj(
+                    getStackedData(series, layout),
+                    layout.regressionType
+                )
+            )
+        )
+    } else {
+        series.forEach(seriesObj => {
+            const trendlineSerieId = `trendline-${seriesObj.id}`
+
+            newSeries.push(seriesObj)
+
+            if (!seriesObj.custom.isTwoCategoryFakeSerie) {
+                const groupRegressionTemplate = Array.from(
+                    { length: seriesObj.custom.data.flat().length },
+                    () => null
+                )
+
+                seriesObj.custom.data.forEach((groupObj, groupIndex) => {
+                    const trendlineConfig = getRegressionObj(
+                        groupObj,
+                        layout.regressionType
+                    )
+
+                    const groupRegressionObject = groupRegressionTemplate.slice()
+
+                    groupRegressionObject.splice(
+                        groupIndex * groupObj.length,
+                        groupObj.length,
+                        ...trendlineConfig.data.map(point => point[1])
+                    )
+
+                    trendlineConfig.data = groupRegressionObject
+
+                    // link all trendlines for the same serie
+                    // so only 1 label in the legend is shown and all trendlines
+                    // for that serie can be toggled simultaneously
+                    if (groupIndex === 0) {
+                        trendlineConfig.id = trendlineSerieId
+                    } else {
+                        trendlineConfig.linkedTo = trendlineSerieId
+                    }
+
+                    newSeries.push(
+                        Object.assign({}, trendlineConfig, {
+                            name: seriesObj.name + ' (trend)',
+                            color: getDarkerColor(seriesObj.color),
+                        })
+                    )
+                })
+            }
         })
     }
 

@@ -34,19 +34,19 @@ export default function({ store, layout, el, extraConfig, extraOptions }) {
     const _layout = getTransformedLayout(layout)
     const _extraOptions = getTransformedExtraOptions(extraOptions)
 
+    const stacked = isStacked(_layout.type)
+
     const series = store.generateData({
         type: _layout.type,
         seriesId:
             _layout.columns && _layout.columns.length
                 ? _layout.columns[0].dimension
                 : null,
-        categoryId:
+        categoryIds:
             _layout.rows && _layout.rows.length
-                ? _layout.rows[0].dimension
+                ? _layout.rows.map(row => row.dimension)
                 : null,
     })
-
-    const stacked = isStacked(_layout.type)
 
     let config = {
         // type etc
@@ -108,7 +108,7 @@ export default function({ store, layout, el, extraConfig, extraOptions }) {
 
     // hide empty categories
     if (_layout.hideEmptyRowItems !== 'NONE') {
-        config = getTrimmedConfig(config, _layout.hideEmptyRowItems)
+        config = getTrimmedConfig(config, _layout)
     }
 
     // sorting
@@ -117,7 +117,11 @@ export default function({ store, layout, el, extraConfig, extraOptions }) {
     }
 
     // DHIS2-9010 prevent trend lines from render when using multiple axes
-    const filteredSeries = layout.series?.filter(layoutSeriesItem => series.some(seriesItem => seriesItem.id === layoutSeriesItem.dimensionItem))
+    const filteredSeries = layout.series?.filter(layoutSeriesItem =>
+        series.some(
+            seriesItem => seriesItem.id === layoutSeriesItem.dimensionItem
+        )
+    )
 
     // DHIS2-1243 add trend lines after sorting
     // trend line on pie and gauge does not make sense
@@ -127,14 +131,19 @@ export default function({ store, layout, el, extraConfig, extraOptions }) {
         !isRegressionIneligible(_layout.type) &&
         !(isDualAxisType(layout.type) && hasCustomAxes(filteredSeries))
     ) {
-        config.series = addTrendLines(
-            _layout.regressionType,
-            config.series,
-            stacked
-        )
+        config.series = addTrendLines(_layout, config.series, stacked)
+    }
+
+    // flatten category groups
+    if (config.xAxis?.length) {
+        config.xAxis = config.xAxis.map(xAxis => ({
+            ...xAxis,
+            categories: xAxis.categories.flat(),
+        }))
     }
 
     // force apply extra config
     Object.assign(config, extraConfig)
+
     return objectClean(config)
 }
