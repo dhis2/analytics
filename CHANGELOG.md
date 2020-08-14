@@ -1,3 +1,10 @@
+## [8.6.1](https://github.com/dhis2/analytics/compare/v8.6.0...v8.6.1) (2020-08-14)
+
+
+### Bug Fixes
+
+* enable multi axis for Area (DHIS2-9011) ([#550](https://github.com/dhis2/analytics/issues/550)) ([1a9cce0](https://github.com/dhis2/analytics/commit/1a9cce0af066de202c239bc9e174fe70a3631072))
+
 # [8.6.0](https://github.com/dhis2/analytics/compare/v8.5.1...v8.6.0) (2020-08-14)
 
 
