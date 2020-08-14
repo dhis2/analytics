@@ -108,7 +108,6 @@ function getSeriesFunction(type, categoryIds) {
 }
 
 export default function({ type, data, seriesId, categoryIds }) {
-    console.log('cat ids', categoryIds)
     categoryIds = categoryIds || []
     const seriesFunction = getSeriesFunction(type, categoryIds)
 
