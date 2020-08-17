@@ -1,3 +1,10 @@
+# [8.7.0](https://github.com/dhis2/analytics/compare/v8.6.1...v8.7.0) (2020-08-17)
+
+
+### Features
+
+* bump cli-app-scripts and ui ([#553](https://github.com/dhis2/analytics/issues/553)) ([69e9283](https://github.com/dhis2/analytics/commit/69e92839d7fc123c089914aaa614a6644382b554))
+
 ## [8.6.1](https://github.com/dhis2/analytics/compare/v8.6.0...v8.6.1) (2020-08-14)
 
 
