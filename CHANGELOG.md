@@ -1,3 +1,31 @@
+# [8.7.0](https://github.com/dhis2/analytics/compare/v8.6.1...v8.7.0) (2020-08-17)
+
+
+### Features
+
+* bump cli-app-scripts and ui ([#553](https://github.com/dhis2/analytics/issues/553)) ([69e9283](https://github.com/dhis2/analytics/commit/69e92839d7fc123c089914aaa614a6644382b554))
+
+## [8.6.1](https://github.com/dhis2/analytics/compare/v8.6.0...v8.6.1) (2020-08-14)
+
+
+### Bug Fixes
+
+* enable multi axis for Area (DHIS2-9011) ([#550](https://github.com/dhis2/analytics/issues/550)) ([1a9cce0](https://github.com/dhis2/analytics/commit/1a9cce0af066de202c239bc9e174fe70a3631072))
+
+# [8.6.0](https://github.com/dhis2/analytics/compare/v8.5.1...v8.6.0) (2020-08-14)
+
+
+### Features
+
+* 2 category charts (DHIS2-7876) ([#508](https://github.com/dhis2/analytics/issues/508)) ([9e7f5c2](https://github.com/dhis2/analytics/commit/9e7f5c222c00bcf9db76c754e43436d9caba2296))
+
+## [8.5.1](https://github.com/dhis2/analytics/compare/v8.5.0...v8.5.1) (2020-08-13)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([7e3587b](https://github.com/dhis2/analytics/commit/7e3587b84b72b52b374b42b491b56dafbde89dda))
+
 # [8.5.0](https://github.com/dhis2/analytics/compare/v8.4.0...v8.5.0) (2020-08-13)
 
 

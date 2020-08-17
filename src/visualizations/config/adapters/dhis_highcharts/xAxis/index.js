@@ -2,11 +2,13 @@ import objectClean from 'd2-utilizr/lib/objectClean'
 import getAxisTitle from '../getAxisTitle'
 import getCategories from '../getCategories'
 import getYearOnYear from './yearOnYear'
+import getTwoCategory from './twoCategory'
 import {
     VIS_TYPE_GAUGE,
     VIS_TYPE_YEAR_OVER_YEAR_LINE,
     VIS_TYPE_YEAR_OVER_YEAR_COLUMN,
     VIS_TYPE_PIE,
+    isTwoCategoryChartType,
 } from '../../../../../modules/visTypes'
 import { 
     FONT_STYLE_HORIZONTAL_AXIS_TITLE, 
@@ -33,7 +35,7 @@ const getLabelsStyle = fontStyle => fontStyle ? {
 
 const getDefault = (store, layout) =>
     objectClean({
-        categories: getCategories(store.data[0].metaData, layout),
+        categories: getCategories(store.data[0].metaData, layout.rows[0].dimension),
         title: getAxisTitle(layout.domainAxisLabel, layout.fontStyle[FONT_STYLE_HORIZONTAL_AXIS_TITLE]),
         labels: getLabelsStyle(layout.fontStyle[FONT_STYLE_CATEGORY_AXIS_LABELS]),
     })
@@ -41,17 +43,21 @@ const getDefault = (store, layout) =>
 export default function(store, layout, extraOptions) {
     let xAxis
 
-    switch (layout.type) {
-        case VIS_TYPE_PIE:
-        case VIS_TYPE_GAUGE:
-            xAxis = noAxis()
-            break
-        case VIS_TYPE_YEAR_OVER_YEAR_LINE:
-        case VIS_TYPE_YEAR_OVER_YEAR_COLUMN:
-            xAxis = getYearOnYear(store, layout, extraOptions)
-            break
-        default:
-            xAxis = getDefault(store, layout)
+    if (isTwoCategoryChartType(layout.type) && layout.rows.length > 1) {
+        xAxis = getTwoCategory(store, layout, extraOptions)
+    } else {
+        switch (layout.type) {
+            case VIS_TYPE_PIE:
+            case VIS_TYPE_GAUGE:
+                xAxis = noAxis()
+                break
+            case VIS_TYPE_YEAR_OVER_YEAR_LINE:
+            case VIS_TYPE_YEAR_OVER_YEAR_COLUMN:
+                xAxis = [getYearOnYear(store, layout, extraOptions)]
+                break
+            default:
+                xAxis = [getDefault(store, layout)]
+        }
     }
 
     return xAxis

@@ -1,7 +1,7 @@
-export default function(acc, seriesIds, categoryIds, idValueMap) {
-    const seriesId = seriesIds[0]
+export default function(acc, series, categories, idValueMap) {
+    const serieItemId = series[0][0]
 
     acc.push({
-        data: [parseFloat(idValueMap.get(seriesId))],
+        data: [parseFloat(idValueMap.get(serieItemId))],
     })
 }

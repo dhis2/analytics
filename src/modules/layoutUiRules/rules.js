@@ -32,7 +32,7 @@ const defaultRules = {
     ],
     [RULE_PROP_MAX_DIMS_PER_AXIS]: {
         [AXIS_ID_COLUMNS]: 1,
-        [AXIS_ID_ROWS]: 1,
+        [AXIS_ID_ROWS]: 2,
     },
     [RULE_PROP_MIN_DIMS_PER_AXIS]: {
         [AXIS_ID_COLUMNS]: 1,
@@ -47,6 +47,22 @@ const pieRules = {
     },
     [RULE_PROP_MIN_DIMS_PER_AXIS]: {
         [AXIS_ID_COLUMNS]: 1,
+    },
+}
+
+const radarRules = {
+    [RULE_PROP_AVAILABLE_AXES]: [
+        AXIS_ID_COLUMNS,
+        AXIS_ID_ROWS,
+        AXIS_ID_FILTERS,
+    ],
+    [RULE_PROP_MAX_DIMS_PER_AXIS]: {
+        [AXIS_ID_COLUMNS]: 1,
+        [AXIS_ID_ROWS]: 1,
+    },
+    [RULE_PROP_MIN_DIMS_PER_AXIS]: {
+        [AXIS_ID_COLUMNS]: 1,
+        [AXIS_ID_ROWS]: 1,
     },
 }
 
@@ -87,7 +103,7 @@ const visTypeToRules = {
     [VIS_TYPE_LINE]: defaultRules,
     [VIS_TYPE_AREA]: defaultRules,
     [VIS_TYPE_STACKED_AREA]: defaultRules,
-    [VIS_TYPE_RADAR]: defaultRules,
+    [VIS_TYPE_RADAR]: radarRules,
     [VIS_TYPE_GAUGE]: singleValueRules,
     [VIS_TYPE_PIE]: pieRules,
     [VIS_TYPE_SINGLE_VALUE]: singleValueRules,
