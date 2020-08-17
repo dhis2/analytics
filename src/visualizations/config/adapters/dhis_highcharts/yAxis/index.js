@@ -6,17 +6,21 @@ import isNumeric from 'd2-utilizr/lib/isNumeric'
 import isString from 'd2-utilizr/lib/isString'
 import getAxisTitle from '../getAxisTitle'
 import getGauge from './gauge'
-import { isStacked, VIS_TYPE_GAUGE, isDualAxisType } from '../../../../../modules/visTypes'
+import {
+    isStacked,
+    VIS_TYPE_GAUGE,
+    isDualAxisType,
+} from '../../../../../modules/visTypes'
 import { hasCustomAxes } from '../../../../../modules/axis'
 import { getAxisIdsMap } from '../customAxes'
 import { getAxisStringFromId } from '../../../../util/axisId'
-import { 
-    FONT_STYLE_VERTICAL_AXIS_TITLE, 
-    FONT_STYLE_SERIES_AXIS_LABELS, 
-    FONT_STYLE_OPTION_TEXT_COLOR, 
+import {
+    FONT_STYLE_VERTICAL_AXIS_TITLE,
+    FONT_STYLE_SERIES_AXIS_LABELS,
+    FONT_STYLE_OPTION_TEXT_COLOR,
     FONT_STYLE_OPTION_FONT_SIZE,
     FONT_STYLE_OPTION_BOLD,
-    FONT_STYLE_OPTION_ITALIC 
+    FONT_STYLE_OPTION_ITALIC,
 } from '../../../../../modules/fontStyle'
 
 const DEFAULT_MIN_VALUE = 0
@@ -88,11 +92,13 @@ function getBaseLine(layout) {
 }
 
 function getFormatter(layout) {
-    return isNumeric(layout.rangeAxisDecimals) ? {
-        formatter: function() {
-            return this.value.toFixed(layout.rangeAxisDecimals)
-        },
-    } : {}
+    return isNumeric(layout.rangeAxisDecimals)
+        ? {
+              formatter: function() {
+                  return this.value.toFixed(layout.rangeAxisDecimals)
+              },
+          }
+        : {}
 }
 
 function getLabels(layout) {
@@ -102,10 +108,14 @@ function getLabels(layout) {
             color: fontStyle[FONT_STYLE_OPTION_TEXT_COLOR],
             textShadow: '0 0 #ccc',
             fontSize: `${fontStyle[FONT_STYLE_OPTION_FONT_SIZE]}px`,
-            fontWeight: fontStyle[FONT_STYLE_OPTION_BOLD] ? FONT_STYLE_OPTION_BOLD : 'normal',
-            fontStyle: fontStyle[FONT_STYLE_OPTION_ITALIC] ? FONT_STYLE_OPTION_ITALIC : 'normal'
+            fontWeight: fontStyle[FONT_STYLE_OPTION_BOLD]
+                ? FONT_STYLE_OPTION_BOLD
+                : 'normal',
+            fontStyle: fontStyle[FONT_STYLE_OPTION_ITALIC]
+                ? FONT_STYLE_OPTION_ITALIC
+                : 'normal',
         },
-        ...getFormatter(layout)
+        ...getFormatter(layout),
     }
 }
 
@@ -132,17 +142,29 @@ function getMultipleAxes(theme, axes) {
 
 function getDefault(layout, series, extraOptions) {
     const axes = []
-    const filteredSeries = layout.series?.filter(layoutSeriesItem => series.some(seriesItem => seriesItem.id === layoutSeriesItem.dimensionItem))
+    const filteredSeries = layout.series?.filter(layoutSeriesItem =>
+        series.some(
+            seriesItem => seriesItem.id === layoutSeriesItem.dimensionItem
+        )
+    )
     if (isDualAxisType(layout.type) && hasCustomAxes(filteredSeries)) {
         const axisIdsMap = getAxisIdsMap(layout.series, series)
-        axes.push(...getMultipleAxes(extraOptions.multiAxisTheme, [...new Set(Object.keys(axisIdsMap))].sort((a, b) => a - b)))
+        axes.push(
+            ...getMultipleAxes(
+                extraOptions.multiAxisTheme,
+                [...new Set(Object.keys(axisIdsMap))].sort((a, b) => a - b)
+            )
+        )
     } else {
         axes.push(
             objectClean({
                 min: getMinValue(layout),
                 max: getMaxValue(layout),
                 tickAmount: getSteps(layout),
-                title: getAxisTitle(layout.rangeAxisLabel, (layout.fontStyle || {})[FONT_STYLE_VERTICAL_AXIS_TITLE]),
+                title: getAxisTitle(
+                    layout.rangeAxisLabel,
+                    (layout.fontStyle || {})[FONT_STYLE_VERTICAL_AXIS_TITLE]
+                ),
                 plotLines: arrayClean([
                     getTargetLine(layout),
                     getBaseLine(layout),
