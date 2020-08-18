@@ -24,6 +24,9 @@ import {
     FONT_STYLE_OPTION_BOLD,
     FONT_STYLE_OPTION_ITALIC,
     FONT_STYLE_OPTION_TEXT_ALIGN,
+    TEXT_ALIGN_LEFT,
+    TEXT_ALIGN_CENTER,
+    TEXT_ALIGN_RIGHT,
 } from '../../../../../modules/fontStyle'
 
 const DEFAULT_MIN_VALUE = 0
@@ -52,6 +55,18 @@ function getPlotLineLabelStyle(fontStyle) {
                 : 'normal',
             textShadow: '0 0 6px #ccc',
         },
+    }
+}
+
+function getLabelXFromTextAlign(textAlign) {
+    switch (textAlign) {
+        case TEXT_ALIGN_LEFT:
+            return 10
+        case TEXT_ALIGN_RIGHT:
+            return -10
+        case TEXT_ALIGN_CENTER:
+        default:
+            return 0
     }
 }
 
@@ -89,6 +104,9 @@ function getTargetLine(layout) {
                             align: (
                                 fontStyle[FONT_STYLE_OPTION_TEXT_ALIGN] || ''
                             ).toLowerCase(),
+                            x: getLabelXFromTextAlign(
+                                fontStyle[FONT_STYLE_OPTION_TEXT_ALIGN]
+                            ),
                         })
                       : undefined,
               })
@@ -114,6 +132,9 @@ function getBaseLine(layout) {
                             align: (
                                 fontStyle[FONT_STYLE_OPTION_TEXT_ALIGN] || ''
                             ).toLowerCase(),
+                            x: getLabelXFromTextAlign(
+                                fontStyle[FONT_STYLE_OPTION_TEXT_ALIGN]
+                            ),
                         })
                       : undefined,
               })
