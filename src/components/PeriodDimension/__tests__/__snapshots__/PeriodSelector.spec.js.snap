@@ -5,10 +5,8 @@ exports[`The Period Selector component matches the snapshot 1`] = `
   dataTest="dhis2-uicore-transfer"
   enableOrderChange={true}
   filterCallback={[Function]}
-  filterCallbackPicked={[Function]}
   height="512px"
   initialSearchTerm=""
-  initialSearchTermPicked=""
   leftHeader={
     <React.Fragment>
       <TabBar
