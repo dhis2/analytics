@@ -1,3 +1,10 @@
+# [8.8.0](https://github.com/dhis2/analytics/compare/v8.7.0...v8.8.0) (2020-08-18)
+
+
+### Features
+
+* support font style options (DHIS2-8426) ([#534](https://github.com/dhis2/analytics/issues/534)) ([27939c3](https://github.com/dhis2/analytics/commit/27939c3380024178522504ea47905ba2411eb3c1))
+
 # [8.7.0](https://github.com/dhis2/analytics/compare/v8.6.1...v8.7.0) (2020-08-17)
 
 
