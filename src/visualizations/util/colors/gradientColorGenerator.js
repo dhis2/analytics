@@ -1,44 +1,35 @@
-const hex = (c) => {
-    const s = "0123456789abcdef";
-    let i = parseInt(c, 10);
-    if (i === 0 || isNaN(c)) {
-      return "00";
+export const generateColors = (start, end, steps) => {
+    if (!end || !steps || steps < 2) {
+      return [start];
     }
-    i = Math.round(Math.min(Math.max(0, i), 255));
-    return s.charAt((i - (i % 16)) / 16) + s.charAt(i % 16);
-  };
+    const stepFactor = 1 / (steps - 1),
+      result = [];
   
-  /* Convert an RGB triplet to a hex string */
-  const convertToHex = (rgb) => hex(rgb[0]) + hex(rgb[1]) + hex(rgb[2]);
+    for (let step = 0; step < steps; step++) {
+      const color1 = convertHexToRGB(start),
+        color2 = convertHexToRGB(end),
+        factor = stepFactor * step;
   
-  /* Remove '#' in color hex string */
-  const trim = (s) => (s.charAt(0) === "#" ? s.substring(1, 7) : s);
-  
-  /* Convert a hex string to an RGB triplet */
-  const convertToRGB = (hex) => {
-    const color = [];
-    color[0] = parseInt(trim(hex).substring(0, 2), 16);
-    color[1] = parseInt(trim(hex).substring(2, 4), 16);
-    color[2] = parseInt(trim(hex).substring(4, 6), 16);
-    return color;
-  };
-  
-  export const generateColors = (colorStart, colorEnd, colorCount, addHash) => {
-    const start = convertToRGB(colorStart), // The beginning of gradient
-        end = convertToRGB(colorEnd), // The end of gradient
-        result = [];
-    let alpha = 0.0; //Alpha blending amount
-  
-    for (let i = 0; i < colorCount; i++) {
-      const colors = [];
-      alpha += 1.0 / colorCount;
-  
-      colors[0] = start[0] * alpha + (1 - alpha) * end[0];
-      colors[1] = start[1] * alpha + (1 - alpha) * end[1];
-      colors[2] = start[2] * alpha + (1 - alpha) * end[2];
-  
-      result.push((addHash ? "#" : "") + convertToHex(colors));
+      const rgbArray = color1.slice();
+      rgbArray.forEach(
+        (part, index, array) =>
+          (array[index] = Math.round(
+            part + factor * (color2[index] - color1[index])
+          ))
+      );
+      result.push(convertRGBToHex(rgbArray));
     }
   
     return result;
   };
+  
+  const convertRGBToHex = (rgb) =>
+    "#" +
+    ((1 << 24) + (rgb[0] << 16) + (rgb[1] << 8) + rgb[2]).toString(16).slice(1);
+  
+  const convertHexToRGB = (hex) =>
+    hex
+      .replace(/^#/, "")
+      .match(/.{1,2}/g)
+      .map((val) => parseInt(val, 16));
+  
