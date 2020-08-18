@@ -1,3 +1,10 @@
+# [8.9.0](https://github.com/dhis2/analytics/compare/v8.8.0...v8.9.0) (2020-08-18)
+
+
+### Features
+
+* add more daily relative periods (DHIS2-8438) ([#557](https://github.com/dhis2/analytics/issues/557)) ([a181068](https://github.com/dhis2/analytics/commit/a1810684f21fdb82420e5b4b52d3fe00d51018d9))
+
 # [8.8.0](https://github.com/dhis2/analytics/compare/v8.7.0...v8.8.0) (2020-08-18)
 
 
