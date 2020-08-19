@@ -209,7 +209,7 @@ msgid "Last 14 days"
 msgstr "最近14天"
 
 msgid "Last 30 days"
-msgstr ""
+msgstr "最近30天"
 
 msgid "Last 60 days"
 msgstr ""
@@ -416,28 +416,28 @@ msgid "Extra Small"
 msgstr ""
 
 msgid "Small"
-msgstr ""
+msgstr "小"
 
 msgid "Regular"
-msgstr ""
+msgstr "定期"
 
 msgid "Large"
-msgstr ""
+msgstr "较大"
 
 msgid "Extra Large"
 msgstr ""
 
 msgid "Left"
-msgstr ""
+msgstr "左"
 
 msgid "Center"
 msgstr ""
 
 msgid "Right"
-msgstr ""
+msgstr "右"
 
 msgid "Start"
-msgstr ""
+msgstr "开始"
 
 msgid "Middle"
 msgstr ""

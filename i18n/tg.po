@@ -209,7 +209,7 @@ msgid "Last 14 days"
 msgstr ""
 
 msgid "Last 30 days"
-msgstr ""
+msgstr "30 рӯзи охир"
 
 msgid "Last 60 days"
 msgstr ""
@@ -416,28 +416,28 @@ msgid "Extra Small"
 msgstr ""
 
 msgid "Small"
-msgstr ""
+msgstr "Хурд"
 
 msgid "Regular"
-msgstr ""
+msgstr "Муқаррарӣ"
 
 msgid "Large"
-msgstr ""
+msgstr "Калон"
 
 msgid "Extra Large"
 msgstr ""
 
 msgid "Left"
-msgstr ""
+msgstr "Чап"
 
 msgid "Center"
 msgstr ""
 
 msgid "Right"
-msgstr ""
+msgstr "Рост"
 
 msgid "Start"
-msgstr ""
+msgstr "Оғоз"
 
 msgid "Middle"
 msgstr ""

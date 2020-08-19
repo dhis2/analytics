@@ -416,13 +416,13 @@ msgid "Extra Small"
 msgstr ""
 
 msgid "Small"
-msgstr ""
+msgstr "Kiik"
 
 msgid "Regular"
 msgstr ""
 
 msgid "Large"
-msgstr ""
+msgstr "Bo'ot"
 
 msgid "Extra Large"
 msgstr ""
