@@ -428,13 +428,13 @@ msgid "Extra Large"
 msgstr ""
 
 msgid "Left"
-msgstr ""
+msgstr "Left"
 
 msgid "Center"
 msgstr ""
 
 msgid "Right"
-msgstr ""
+msgstr "Right"
 
 msgid "Start"
 msgstr ""

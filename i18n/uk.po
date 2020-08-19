@@ -417,13 +417,13 @@ msgid "Extra Small"
 msgstr ""
 
 msgid "Small"
-msgstr ""
+msgstr "Маленький"
 
 msgid "Regular"
 msgstr ""
 
 msgid "Large"
-msgstr ""
+msgstr "Великий"
 
 msgid "Extra Large"
 msgstr ""

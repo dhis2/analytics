@@ -415,13 +415,13 @@ msgid "Extra Small"
 msgstr ""
 
 msgid "Small"
-msgstr ""
+msgstr "صغير"
 
 msgid "Regular"
 msgstr ""
 
 msgid "Large"
-msgstr ""
+msgstr "كبير"
 
 msgid "Extra Large"
 msgstr ""

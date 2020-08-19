@@ -1,15 +1,15 @@
 # 
 # Translators:
-# Viktor Varland <viktor@dhis2.org>, 2020
 # Wanda <wanda@frontlineaids.org>, 2020
 # phil_dhis2, 2020
+# Viktor Varland <viktor@dhis2.org>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2020-08-18T13:39:43.818Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: phil_dhis2, 2020\n"
+"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2020\n"
 "Language-Team: Russian (https://www.transifex.com/hisp-uio/teams/100509/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -210,7 +210,7 @@ msgid "Last 14 days"
 msgstr "Последние 14 дней"
 
 msgid "Last 30 days"
-msgstr ""
+msgstr "Последние 30 дней"
 
 msgid "Last 60 days"
 msgstr ""
@@ -417,28 +417,28 @@ msgid "Extra Small"
 msgstr ""
 
 msgid "Small"
-msgstr ""
+msgstr "Маленький"
 
 msgid "Regular"
-msgstr ""
+msgstr "регулярный"
 
 msgid "Large"
-msgstr ""
+msgstr "Большой"
 
 msgid "Extra Large"
 msgstr ""
 
 msgid "Left"
-msgstr ""
+msgstr "Слева"
 
 msgid "Center"
 msgstr ""
 
 msgid "Right"
-msgstr ""
+msgstr "Справа"
 
 msgid "Start"
-msgstr ""
+msgstr "Начать"
 
 msgid "Middle"
 msgstr ""
