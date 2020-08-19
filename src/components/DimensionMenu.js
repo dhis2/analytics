@@ -84,11 +84,6 @@ export class DimensionMenu extends Component {
             closeSubMenu()
         }
 
-        // divider
-        if (applicableAxisIds.length) {
-            menuItems.push(getDividerItem('dual-axis-item-divider'))
-        }
-
         // Assigned categories
         if (
             dimensionId === DIMENSION_ID_DATA &&
