@@ -1,3 +1,10 @@
+## [8.9.2](https://github.com/dhis2/analytics/compare/v8.9.1...v8.9.2) (2020-08-19)
+
+
+### Bug Fixes
+
+* remove manage axis divider (DHIS2-6385) ([#555](https://github.com/dhis2/analytics/issues/555)) ([1794afe](https://github.com/dhis2/analytics/commit/1794afea3749ad76396673fb2a88882ca692920f))
+
 ## [8.9.1](https://github.com/dhis2/analytics/compare/v8.9.0...v8.9.1) (2020-08-18)
 
 
