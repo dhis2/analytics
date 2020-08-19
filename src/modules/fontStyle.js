@@ -182,12 +182,11 @@ export const defaultFontStyle = {
 }
 
 export const mergeFontStyleWithDefault = fontStyle => {
-    const result = cloneDeep(defaultFontStyle)
+    const result = { ...defaultFontStyle }
     for (const style in fontStyle) {
-        for (const option in fontStyle[style]) {
-            if (result[style]) {
-                result[style][option] = fontStyle[style][option]
-            }
+        result[style] = {
+            ...result[style],
+            ...fontStyle[style],
         }
     }
     return result
