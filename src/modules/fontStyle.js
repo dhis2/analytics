@@ -192,19 +192,13 @@ export const mergeFontStyleWithDefault = fontStyle => {
 }
 
 export const deleteFontStyleOption = (inputFontStyle, fontStyleKey, option) => {
-    let fontStyle = { ...inputFontStyle }
-    if (fontStyle[fontStyleKey]) {
-        const { [option]: remove, ...rest } = fontStyle[fontStyleKey]
-        fontStyle[fontStyleKey] = { ...rest }
-
-        if (!Object.keys(fontStyle[fontStyleKey]).length) {
-            const { [fontStyleKey]: remove, ...rest } = fontStyle
-            fontStyle = { ...rest }
-        }
+    const style = {
+        ...inputFontStyle,
+        [fontStyleKey]: {
+            ...inputFontStyle[fontStyleKey],
+        },
     }
-    if (!Object.keys(fontStyle).length) {
-        fontStyle = null
-    }
-
-    return fontStyle
+    style[fontStyleKey] && delete style[fontStyleKey][option]
+    !Object.keys(style[fontStyleKey]).length && delete style[fontStyleKey]
+    return Object.keys(style).length ? style : null
 }
