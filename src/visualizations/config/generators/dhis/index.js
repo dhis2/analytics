@@ -19,18 +19,13 @@ export default function(config, parentEl, extraOptions) {
 
             switch (config.type) {
                 case VIS_TYPE_SINGLE_VALUE:
-                    content = getSingleValueGenerator(
-                        config,
-                        node,
-                        extraOptions
-                    )
-                    break
                 default:
                     content = getSingleValueGenerator(
                         config,
                         node,
-                        extraOptions
+                        extraOptions,
                     )
+                    break
             }
 
             node.appendChild(content)

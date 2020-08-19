@@ -9,7 +9,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-08-12T08:24:29.482Z\n"
+"POT-Creation-Date: 2020-08-18T13:39:43.818Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2020\n"
 "Language-Team: French (https://www.transifex.com/hisp-uio/teams/100509/fr/)\n"
@@ -211,6 +211,18 @@ msgstr "7 derniers jours"
 msgid "Last 14 days"
 msgstr "14 dernier jours"
 
+msgid "Last 30 days"
+msgstr ""
+
+msgid "Last 60 days"
+msgstr ""
+
+msgid "Last 90 days"
+msgstr ""
+
+msgid "Last 180 days"
+msgstr ""
+
 msgid "This week"
 msgstr "Cette semaine"
 
@@ -402,6 +414,39 @@ msgstr "Eléments de données évènement"
 
 msgid "Program indicators"
 msgstr "Program indicators"
+
+msgid "Extra Small"
+msgstr ""
+
+msgid "Small"
+msgstr ""
+
+msgid "Regular"
+msgstr ""
+
+msgid "Large"
+msgstr ""
+
+msgid "Extra Large"
+msgstr ""
+
+msgid "Left"
+msgstr ""
+
+msgid "Center"
+msgstr ""
+
+msgid "Right"
+msgstr ""
+
+msgid "Start"
+msgstr ""
+
+msgid "Middle"
+msgstr ""
+
+msgid "End"
+msgstr ""
 
 msgid "{{dynamicOuNames}} and {{lastOuName}}"
 msgstr "{{NomsOudynamiques}} et {{dernièreOuNom}}"

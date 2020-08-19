@@ -1,3 +1,31 @@
+## [8.9.2](https://github.com/dhis2/analytics/compare/v8.9.1...v8.9.2) (2020-08-19)
+
+
+### Bug Fixes
+
+* remove manage axis divider (DHIS2-6385) ([#555](https://github.com/dhis2/analytics/issues/555)) ([1794afe](https://github.com/dhis2/analytics/commit/1794afea3749ad76396673fb2a88882ca692920f))
+
+## [8.9.1](https://github.com/dhis2/analytics/compare/v8.9.0...v8.9.1) (2020-08-18)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([ab1f70f](https://github.com/dhis2/analytics/commit/ab1f70f4a0437bfe3ba71d987ceb8353ae7263e2))
+
+# [8.9.0](https://github.com/dhis2/analytics/compare/v8.8.0...v8.9.0) (2020-08-18)
+
+
+### Features
+
+* add more daily relative periods (DHIS2-8438) ([#557](https://github.com/dhis2/analytics/issues/557)) ([a181068](https://github.com/dhis2/analytics/commit/a1810684f21fdb82420e5b4b52d3fe00d51018d9))
+
+# [8.8.0](https://github.com/dhis2/analytics/compare/v8.7.0...v8.8.0) (2020-08-18)
+
+
+### Features
+
+* support font style options (DHIS2-8426) ([#534](https://github.com/dhis2/analytics/issues/534)) ([27939c3](https://github.com/dhis2/analytics/commit/27939c3380024178522504ea47905ba2411eb3c1))
+
 # [8.7.0](https://github.com/dhis2/analytics/compare/v8.6.1...v8.7.0) (2020-08-17)
 
 

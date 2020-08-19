@@ -16,6 +16,10 @@ const getDaysPeriodType = () => [
     { id: 'LAST_3_DAYS', name: i18n.t('Last 3 days') },
     { id: 'LAST_7_DAYS', name: i18n.t('Last 7 days') },
     { id: 'LAST_14_DAYS', name: i18n.t('Last 14 days') },
+    { id: 'LAST_30_DAYS', name: i18n.t('Last 30 days') },
+    { id: 'LAST_60_DAYS', name: i18n.t('Last 60 days') },
+    { id: 'LAST_90_DAYS', name: i18n.t('Last 90 days') },
+    { id: 'LAST_180_DAYS', name: i18n.t('Last 180 days') },
 ]
 
 const getWeeksPeriodType = () => [

@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-08-12T08:24:29.482Z\n"
+"POT-Creation-Date: 2020-08-18T13:39:43.818Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: Viktor Varland <viktor@dhis2.org>, 2020\n"
 "Language-Team: Ukrainian (https://www.transifex.com/hisp-uio/teams/100509/uk/)\n"
@@ -209,6 +209,18 @@ msgstr "Минулі 7 днів"
 msgid "Last 14 days"
 msgstr "Минулі 14 днів"
 
+msgid "Last 30 days"
+msgstr ""
+
+msgid "Last 60 days"
+msgstr ""
+
+msgid "Last 90 days"
+msgstr ""
+
+msgid "Last 180 days"
+msgstr ""
+
 msgid "This week"
 msgstr "Поточний тиждень"
 
@@ -400,6 +412,39 @@ msgstr "Складові дані події"
 
 msgid "Program indicators"
 msgstr "Програмні показники"
+
+msgid "Extra Small"
+msgstr ""
+
+msgid "Small"
+msgstr ""
+
+msgid "Regular"
+msgstr ""
+
+msgid "Large"
+msgstr ""
+
+msgid "Extra Large"
+msgstr ""
+
+msgid "Left"
+msgstr ""
+
+msgid "Center"
+msgstr ""
+
+msgid "Right"
+msgstr ""
+
+msgid "Start"
+msgstr ""
+
+msgid "Middle"
+msgstr ""
+
+msgid "End"
+msgstr ""
 
 msgid "{{dynamicOuNames}} and {{lastOuName}}"
 msgstr ""
