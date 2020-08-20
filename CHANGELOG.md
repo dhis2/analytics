@@ -1,3 +1,10 @@
+## [8.9.4](https://github.com/dhis2/analytics/compare/v8.9.3...v8.9.4) (2020-08-20)
+
+
+### Bug Fixes
+
+* Multi-axis colors incorrect (DHIS2-9220) ([#554](https://github.com/dhis2/analytics/issues/554)) ([390b8a0](https://github.com/dhis2/analytics/commit/390b8a092bfb85535e262ac4f7b091a9789747cc))
+
 ## [8.9.3](https://github.com/dhis2/analytics/compare/v8.9.2...v8.9.3) (2020-08-19)
 
 
