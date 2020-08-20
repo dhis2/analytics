@@ -66,12 +66,11 @@ function getIdColorMap(series, layout, extraOptions) {
 
         const colorsByAxis = Object.keys(axisIdsMap).reduce((map, axis) => {
             const numberOfIds = axisIdsMap[axis].length
-            map[axis] = generateColors(
+            map[axis] = numberOfIds > 1 ? generateColors(
                 theme[axis].startColor,
                 theme[axis].endColor,
-                numberOfIds,
-                true
-            )
+                numberOfIds
+            ) : [theme[axis].mainColor]
             return map
         }, {})
 
