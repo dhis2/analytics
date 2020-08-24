@@ -209,7 +209,7 @@ msgid "Last 14 days"
 msgstr ""
 
 msgid "Last 30 days"
-msgstr ""
+msgstr "Últimos 30 dias"
 
 msgid "Last 60 days"
 msgstr ""
@@ -419,7 +419,7 @@ msgid "Small"
 msgstr ""
 
 msgid "Regular"
-msgstr ""
+msgstr "Regula"
 
 msgid "Large"
 msgstr ""
@@ -428,16 +428,16 @@ msgid "Extra Large"
 msgstr ""
 
 msgid "Left"
-msgstr ""
+msgstr "Esquerda"
 
 msgid "Center"
 msgstr ""
 
 msgid "Right"
-msgstr ""
+msgstr "Direita"
 
 msgid "Start"
-msgstr ""
+msgstr "Inicio"
 
 msgid "Middle"
 msgstr ""

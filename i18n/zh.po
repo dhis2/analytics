@@ -211,16 +211,16 @@ msgid "Last 14 days"
 msgstr "Last 14 days"
 
 msgid "Last 30 days"
-msgstr ""
+msgstr "最近30天"
 
 msgid "Last 60 days"
-msgstr ""
+msgstr "最近60天"
 
 msgid "Last 90 days"
-msgstr ""
+msgstr "最近90天"
 
 msgid "Last 180 days"
-msgstr ""
+msgstr "最近180天"
 
 msgid "This week"
 msgstr "本年"
@@ -415,37 +415,37 @@ msgid "Program indicators"
 msgstr "项目指标"
 
 msgid "Extra Small"
-msgstr ""
+msgstr "特小"
 
 msgid "Small"
-msgstr ""
+msgstr "小"
 
 msgid "Regular"
-msgstr ""
+msgstr "定期"
 
 msgid "Large"
-msgstr ""
+msgstr "较大"
 
 msgid "Extra Large"
-msgstr ""
+msgstr "特大"
 
 msgid "Left"
-msgstr ""
+msgstr "左"
 
 msgid "Center"
-msgstr ""
+msgstr "居中"
 
 msgid "Right"
-msgstr ""
+msgstr "Right"
 
 msgid "Start"
-msgstr ""
+msgstr "开始"
 
 msgid "Middle"
-msgstr ""
+msgstr "中间"
 
 msgid "End"
-msgstr ""
+msgstr "尾巴"
 
 msgid "{{dynamicOuNames}} and {{lastOuName}}"
 msgstr "{{dynamicOuNames}} 和{{lastOuName}}"
@@ -493,7 +493,7 @@ msgid "Area"
 msgstr "面积"
 
 msgid "Stacked area"
-msgstr ""
+msgstr "堆积面积"
 
 msgid "Pie"
 msgstr "饼图"
@@ -514,54 +514,54 @@ msgid "Single value"
 msgstr "单个值"
 
 msgid "View data and indicators in a manipulatable table."
-msgstr ""
+msgstr "在可操作的表格中查看数据和指标。"
 
 msgid ""
 "Compare sizes of related element, displayed vertically. Recommend period in "
 "filter."
-msgstr ""
+msgstr "比较相关元素的大小并垂直显示。推荐期间过滤器。"
 
 msgid ""
 "Compare parts of a whole against related elements, vertically. Recommend "
 "data or org. unit as series."
-msgstr ""
+msgstr "垂直比较整个部分与相关元素。推荐数据或机构作为系列。"
 
 msgid ""
 "Compare sizes of related elements, displayed horizontally. Recommend period "
 "in filter."
-msgstr ""
+msgstr "比较水平显示的相关元素的大小。推荐期间作为过滤。"
 
 msgid ""
 "Compare parts of a whole against related elements, horizontally. Recommend "
 "data or org. unit as series."
-msgstr ""
+msgstr "水平地将整个部分与相关元素进行比较。推荐数据或机构为系列。"
 
 msgid "Track or compare changes over time. Recommend period as the category."
-msgstr ""
+msgstr "跟踪或比较随时间的变化。推荐时期为分类。"
 
 msgid ""
 "Track or compare over time parts of a whole. Recommend data in series and "
 "period in category."
-msgstr ""
+msgstr "跟踪或比较整个时间的一部分。推荐数据序列和期间作为分类。"
 
 msgid ""
 "Compare parts of a whole at a single point in time. Recommend period in the "
 "filter."
-msgstr ""
+msgstr "在单个时间点比较整个部分。推荐过滤器的时期。"
 
 msgid "Compare several items against multiple variables."
-msgstr ""
+msgstr "将多个变量与多个条目进行比较。"
 
 msgid ""
 "Compare a percentage indicator against a 100% scale. Recommend period in "
 "filter."
-msgstr ""
+msgstr "将百分比指标与100％比例进行比较。推荐期间作为过滤。"
 
 msgid "Compare changes over time between multiple time periods."
-msgstr ""
+msgstr "比较多个时间段之间随时间的变化。"
 
 msgid "Display a single value. Recommend relative period to show latest data."
-msgstr ""
+msgstr "显示单个值。推荐相对时期以显示最新数据。"
 
 msgid "Target"
 msgstr "目标"
@@ -570,7 +570,7 @@ msgid "Base"
 msgstr "基"
 
 msgid "Axis {{axisId}}"
-msgstr ""
+msgstr "轴{{axisId}}"
 
 msgid "No data"
 msgstr "无数据"

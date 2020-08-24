@@ -209,7 +209,7 @@ msgid "Last 14 days"
 msgstr "14 ມື້ກ່ອນ"
 
 msgid "Last 30 days"
-msgstr ""
+msgstr "Last 30 days"
 
 msgid "Last 60 days"
 msgstr ""
@@ -416,28 +416,28 @@ msgid "Extra Small"
 msgstr ""
 
 msgid "Small"
-msgstr ""
+msgstr "ນ້ອຍ"
 
 msgid "Regular"
-msgstr ""
+msgstr "Regular"
 
 msgid "Large"
-msgstr ""
+msgstr "ໃຫຍ່"
 
 msgid "Extra Large"
 msgstr ""
 
 msgid "Left"
-msgstr ""
+msgstr "ຊ້າຍ"
 
 msgid "Center"
 msgstr ""
 
 msgid "Right"
-msgstr ""
+msgstr "ຂວາ"
 
 msgid "Start"
-msgstr ""
+msgstr "Start"
 
 msgid "Middle"
 msgstr ""

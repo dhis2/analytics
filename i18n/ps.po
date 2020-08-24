@@ -416,13 +416,13 @@ msgid "Extra Small"
 msgstr ""
 
 msgid "Small"
-msgstr ""
+msgstr "کوچنۍ"
 
 msgid "Regular"
 msgstr ""
 
 msgid "Large"
-msgstr ""
+msgstr "لوی"
 
 msgid "Extra Large"
 msgstr ""

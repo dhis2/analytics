@@ -1,3 +1,24 @@
+## [8.9.5](https://github.com/dhis2/analytics/compare/v8.9.4...v8.9.5) (2020-08-20)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([142a47b](https://github.com/dhis2/analytics/commit/142a47b636b1b6f183f33aea01aba516844c5e32))
+
+## [8.9.4](https://github.com/dhis2/analytics/compare/v8.9.3...v8.9.4) (2020-08-20)
+
+
+### Bug Fixes
+
+* Multi-axis colors incorrect (DHIS2-9220) ([#554](https://github.com/dhis2/analytics/issues/554)) ([390b8a0](https://github.com/dhis2/analytics/commit/390b8a092bfb85535e262ac4f7b091a9789747cc))
+
+## [8.9.3](https://github.com/dhis2/analytics/compare/v8.9.2...v8.9.3) (2020-08-19)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([1026fd2](https://github.com/dhis2/analytics/commit/1026fd22aaa31cf1abd04ce8a973260825215cc4))
+
 ## [8.9.2](https://github.com/dhis2/analytics/compare/v8.9.1...v8.9.2) (2020-08-19)
 
 

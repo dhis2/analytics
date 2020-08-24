@@ -208,7 +208,7 @@ msgid "Last 14 days"
 msgstr "14 روز گذشته"
 
 msgid "Last 30 days"
-msgstr ""
+msgstr "30 روز گذشته"
 
 msgid "Last 60 days"
 msgstr ""
@@ -415,28 +415,28 @@ msgid "Extra Small"
 msgstr ""
 
 msgid "Small"
-msgstr ""
+msgstr "کوچک"
 
 msgid "Regular"
-msgstr ""
+msgstr "منظم"
 
 msgid "Large"
-msgstr ""
+msgstr "بزرگ"
 
 msgid "Extra Large"
 msgstr ""
 
 msgid "Left"
-msgstr ""
+msgstr "چپ"
 
 msgid "Center"
 msgstr ""
 
 msgid "Right"
-msgstr ""
+msgstr "راست"
 
 msgid "Start"
-msgstr ""
+msgstr "شروع"
 
 msgid "Middle"
 msgstr ""
