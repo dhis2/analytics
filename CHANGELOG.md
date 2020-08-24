@@ -1,3 +1,10 @@
+## [8.9.6](https://github.com/dhis2/analytics/compare/v8.9.5...v8.9.6) (2020-08-24)
+
+
+### Bug Fixes
+
+* Remove deep cloning from fontStyle (DHIS2-8426) ([#560](https://github.com/dhis2/analytics/issues/560)) ([8ae9a57](https://github.com/dhis2/analytics/commit/8ae9a57e501210da19ea295e5c3a72234a1696b4))
+
 ## [8.9.5](https://github.com/dhis2/analytics/compare/v8.9.4...v8.9.5) (2020-08-20)
 
 
