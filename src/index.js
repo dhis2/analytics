@@ -29,7 +29,7 @@ export { apiFetchDimensions, apiFetchRecommendedIds } from './api/dimensions'
 export {
     getAxisName,
     getAxisNameByLayoutType,
-    hasCustomAxes,
+    hasOptionalAxis,
 } from './modules/axis'
 
 // Modules: predefined dimensions
