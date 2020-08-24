@@ -33,7 +33,7 @@ function getColor(colors, index) {
 }
 
 function getIdColorMap(series, layout, extraOptions) {
-    if (hasOptionalAxis(layout.optionalAxes)) {
+    if (isDualAxisType(layout.type) && hasOptionalAxis(layout.optionalAxes)) {
         const axisIdsMap = getAxisIdsMap(layout.optionalAxes, series)
         const theme = extraOptions.multiAxisTheme
 
