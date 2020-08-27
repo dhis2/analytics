@@ -1,15 +1,15 @@
 import { getColorByValueFromLegendSet } from '../../../../modules/legends'
-import { 
-    FONT_STYLE_VISUALIZATION_TITLE, 
+import {
+    FONT_STYLE_VISUALIZATION_TITLE,
     FONT_STYLE_VISUALIZATION_SUBTITLE,
-    FONT_STYLE_OPTION_FONT_SIZE, 
-    FONT_STYLE_OPTION_TEXT_COLOR, 
-    FONT_STYLE_OPTION_TEXT_ALIGN, 
-    FONT_STYLE_OPTION_ITALIC, 
-    FONT_STYLE_OPTION_BOLD, 
-    TEXT_ALIGN_LEFT, 
-    TEXT_ALIGN_RIGHT, 
-    TEXT_ALIGN_CENTER 
+    FONT_STYLE_OPTION_FONT_SIZE,
+    FONT_STYLE_OPTION_TEXT_COLOR,
+    FONT_STYLE_OPTION_TEXT_ALIGN,
+    FONT_STYLE_OPTION_ITALIC,
+    FONT_STYLE_OPTION_BOLD,
+    TEXT_ALIGN_LEFT,
+    TEXT_ALIGN_RIGHT,
+    TEXT_ALIGN_CENTER,
 } from '../../../../modules/fontStyle'
 
 const svgNS = 'http://www.w3.org/2000/svg'
@@ -30,7 +30,9 @@ const generateValueSVG = (value, legendSet, y) => {
         svgValue.setAttribute('y', y)
     }
 
-    const fillColor = legendSet ? getColorByValueFromLegendSet(legendSet, value) : defaultFillColor
+    const fillColor = legendSet
+        ? getColorByValueFromLegendSet(legendSet, value)
+        : defaultFillColor
 
     const text = document.createElementNS(svgNS, 'text')
     text.setAttribute('text-anchor', 'middle')
@@ -116,12 +118,31 @@ const generateDVItem = (config, legendSet, parentEl, fontStyle) => {
 
     const title = document.createElementNS(svgNS, 'text')
     const titleFontStyle = fontStyle[FONT_STYLE_VISUALIZATION_TITLE]
-    title.setAttribute('x', getXFromTextAlign(titleFontStyle[FONT_STYLE_OPTION_TEXT_ALIGN]))
+    title.setAttribute(
+        'x',
+        getXFromTextAlign(titleFontStyle[FONT_STYLE_OPTION_TEXT_ALIGN])
+    )
     title.setAttribute('y', 28)
-    title.setAttribute('text-anchor', getTextAnchorFromTextAlign(titleFontStyle[FONT_STYLE_OPTION_TEXT_ALIGN]))
-    title.setAttribute('font-size', `${titleFontStyle[FONT_STYLE_OPTION_FONT_SIZE]}px`)
-    title.setAttribute('font-weight', titleFontStyle[FONT_STYLE_OPTION_BOLD] ? FONT_STYLE_OPTION_BOLD : 'normal')
-    title.setAttribute('font-style', titleFontStyle[FONT_STYLE_OPTION_ITALIC] ? FONT_STYLE_OPTION_ITALIC : 'normal')
+    title.setAttribute(
+        'text-anchor',
+        getTextAnchorFromTextAlign(titleFontStyle[FONT_STYLE_OPTION_TEXT_ALIGN])
+    )
+    title.setAttribute(
+        'font-size',
+        `${titleFontStyle[FONT_STYLE_OPTION_FONT_SIZE]}px`
+    )
+    title.setAttribute(
+        'font-weight',
+        titleFontStyle[FONT_STYLE_OPTION_BOLD]
+            ? FONT_STYLE_OPTION_BOLD
+            : 'normal'
+    )
+    title.setAttribute(
+        'font-style',
+        titleFontStyle[FONT_STYLE_OPTION_ITALIC]
+            ? FONT_STYLE_OPTION_ITALIC
+            : 'normal'
+    )
     title.setAttribute('fill', titleFontStyle[FONT_STYLE_OPTION_TEXT_COLOR])
 
     if (config.title) {
@@ -132,14 +153,38 @@ const generateDVItem = (config, legendSet, parentEl, fontStyle) => {
 
     const subtitleFontStyle = fontStyle[FONT_STYLE_VISUALIZATION_SUBTITLE]
     const subtitle = document.createElementNS(svgNS, 'text')
-    subtitle.setAttribute('x', getXFromTextAlign(subtitleFontStyle[FONT_STYLE_OPTION_TEXT_ALIGN]))
+    subtitle.setAttribute(
+        'x',
+        getXFromTextAlign(subtitleFontStyle[FONT_STYLE_OPTION_TEXT_ALIGN])
+    )
     subtitle.setAttribute('y', 28)
     subtitle.setAttribute('dy', 22)
-    subtitle.setAttribute('text-anchor', getTextAnchorFromTextAlign(subtitleFontStyle[FONT_STYLE_OPTION_TEXT_ALIGN]))
-    subtitle.setAttribute('font-size', `${subtitleFontStyle[FONT_STYLE_OPTION_FONT_SIZE]}px`)
-    subtitle.setAttribute('font-weight', subtitleFontStyle[FONT_STYLE_OPTION_BOLD] ? FONT_STYLE_OPTION_BOLD : 'normal')
-    subtitle.setAttribute('font-style', subtitleFontStyle[FONT_STYLE_OPTION_ITALIC] ? FONT_STYLE_OPTION_ITALIC : 'normal')
-    subtitle.setAttribute('fill', subtitleFontStyle[FONT_STYLE_OPTION_TEXT_COLOR])
+    subtitle.setAttribute(
+        'text-anchor',
+        getTextAnchorFromTextAlign(
+            subtitleFontStyle[FONT_STYLE_OPTION_TEXT_ALIGN]
+        )
+    )
+    subtitle.setAttribute(
+        'font-size',
+        `${subtitleFontStyle[FONT_STYLE_OPTION_FONT_SIZE]}px`
+    )
+    subtitle.setAttribute(
+        'font-weight',
+        subtitleFontStyle[FONT_STYLE_OPTION_BOLD]
+            ? FONT_STYLE_OPTION_BOLD
+            : 'normal'
+    )
+    subtitle.setAttribute(
+        'font-style',
+        subtitleFontStyle[FONT_STYLE_OPTION_ITALIC]
+            ? FONT_STYLE_OPTION_ITALIC
+            : 'normal'
+    )
+    subtitle.setAttribute(
+        'fill',
+        subtitleFontStyle[FONT_STYLE_OPTION_TEXT_COLOR]
+    )
     if (config.subtitle) {
         subtitle.appendChild(document.createTextNode(config.subtitle))
 
@@ -151,7 +196,11 @@ const generateDVItem = (config, legendSet, parentEl, fontStyle) => {
     return svg
 }
 
-export default function(config, parentEl, { dashboard, legendSets, fontStyle }) {
+export default function(
+    config,
+    parentEl,
+    { dashboard, legendSets, fontStyle }
+) {
     const legendSet = legendSets[0]
     parentEl.style.overflow = 'hidden'
     parentEl.style.display = 'flex'
