@@ -22,7 +22,7 @@ export default function(acc, series, categories, idValueMap, metaData) {
         const serieData = getTwoCategorySplitSerieData(groupedData)
 
         // avoid a list of null values
-        if (serieData.every(e => e === serieData[0])) {
+        if (serieData.every(e => e === null)) {
             serieData.length = 0
             groupedData.length = 0
         }
