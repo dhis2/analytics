@@ -109,6 +109,7 @@ function getSeriesFunction(type, categoryIds) {
 
 export default function({ type, data, seriesId, categoryIds }) {
     categoryIds = categoryIds || []
+
     const seriesFunction = getSeriesFunction(type, categoryIds)
 
     return data.reduce((acc, res) => {
