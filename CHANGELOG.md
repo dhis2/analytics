@@ -1,3 +1,10 @@
+## [8.9.7](https://github.com/dhis2/analytics/compare/v8.9.6...v8.9.7) (2020-08-27)
+
+
+### Bug Fixes
+
+* implement digit group separator in SV ([#571](https://github.com/dhis2/analytics/issues/571)) ([5159c8e](https://github.com/dhis2/analytics/commit/5159c8ea0ea39001cd11d5b29dae3551966d0ded))
+
 ## [8.9.6](https://github.com/dhis2/analytics/compare/v8.9.5...v8.9.6) (2020-08-24)
 
 
