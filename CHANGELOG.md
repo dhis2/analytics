@@ -1,3 +1,17 @@
+# [9.0.0](https://github.com/dhis2/analytics/compare/v8.9.8...v9.0.0) (2020-08-28)
+
+
+### Features
+
+* allow multi dx (DHIS2-8808) ([#574](https://github.com/dhis2/analytics/issues/574)) ([c184e8b](https://github.com/dhis2/analytics/commit/c184e8bb1193acfa513e08237ff87fb274d65be1))
+
+
+### BREAKING CHANGES
+
+* no series for YOY charts
+
+* fix: newline
+
 ## [8.9.8](https://github.com/dhis2/analytics/compare/v8.9.7...v8.9.8) (2020-08-28)
 
 
