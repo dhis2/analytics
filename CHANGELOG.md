@@ -1,3 +1,10 @@
+## [8.9.8](https://github.com/dhis2/analytics/compare/v8.9.7...v8.9.8) (2020-08-28)
+
+
+### Bug Fixes
+
+* fix bug when 1 item is selected for each of the 2 categories (DHIS2-9350) ([#573](https://github.com/dhis2/analytics/issues/573)) ([e0c726b](https://github.com/dhis2/analytics/commit/e0c726b89ea33cadfdff78b7c5379c6bb03e2d4e))
+
 ## [8.9.7](https://github.com/dhis2/analytics/compare/v8.9.6...v8.9.7) (2020-08-27)
 
 
