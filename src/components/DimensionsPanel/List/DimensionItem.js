@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, createRef } from 'react'
 import PropTypes from 'prop-types'
 import LockIcon from '@material-ui/icons/Lock'
 
@@ -12,7 +12,8 @@ import { styles } from './styles/DimensionItem.style'
 export class DimensionItem extends Component {
     state = { mouseOver: false }
 
-    onOptionsClick = id => event => this.props.onOptionsClick(event, id)
+    onOptionsClick = (id, ref) => event =>
+        this.props.onOptionsClick(event, id, ref)
 
     onMouseOver = () => {
         this.setState({ mouseOver: true })
@@ -68,6 +69,8 @@ export class DimensionItem extends Component {
                 ? { ...styles.item, ...styles.selected }
                 : styles.item
 
+        const optionsRef = createRef()
+
         return (
             <li
                 onMouseOver={this.onMouseOver}
@@ -93,11 +96,11 @@ export class DimensionItem extends Component {
                     )}
                 </DimensionLabel>
                 {onOptionsClick ? (
-                    <div style={styles.optionsWrapper}>
+                    <div style={styles.optionsWrapper} ref={optionsRef}>
                         {this.state.mouseOver && !isDeactivated && !isLocked ? (
                             <OptionsButton
                                 style={styles.optionsButton}
-                                onClick={this.onOptionsClick(id)}
+                                onClick={this.onOptionsClick(id, optionsRef)}
                             />
                         ) : null}
                     </div>
