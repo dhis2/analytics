@@ -46,9 +46,16 @@ const ItemSelector = ({
             debouncedFilter // search filter
         )
 
-        debugger
+        // TODO: Remove this, test only!
+        const test = fetchResult.dataElements.dataElements.map(
+            ({ id, displayName }) => ({
+                name: displayName,
+                id,
+                disabled: false,
+            })
+        )
 
-        const newOptions = fetchResult.map(({ id, name, disabled }) => ({
+        const newOptions = test.map(({ id, name, disabled }) => ({
             label: name,
             value: id,
             disabled,

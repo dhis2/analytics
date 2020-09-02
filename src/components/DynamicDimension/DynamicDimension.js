@@ -1,19 +1,21 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'
+import { useDataEngine } from '@dhis2/app-runtime'
 
 import ItemSelector from './ItemSelector'
 import { apiFetchItemsByDimension } from '../../api/dimensions'
 
 export const DynamicDimension = ({
-    context,
     dimensionId,
     onSelect,
     selectedItems,
     rightFooter,
     dimensionTitle,
 }) => {
-    const fetchItemsEndpoint = async (pageSize, page, searchTerm) => {
+    const engine = useDataEngine()
+
+    const fetchItemsEndpoint = (pageSize, page, searchTerm) => {
         console.log(
             'PAGESIZE: ' +
                 pageSize +
@@ -22,8 +24,14 @@ export const DynamicDimension = ({
                 ' SEARCHTERM: ' +
                 searchTerm
         )
-        await apiFetchItemsByDimension(context, dimensionId)
-    } // TODO: refactor to use the data engine instead
+        return apiFetchItemsByDimension({
+            engine,
+            dimensionId,
+            searchTerm,
+            pageSize,
+            page,
+        })
+    }
 
     const onSelectItems = selectedItem =>
         onSelect({
@@ -57,7 +65,6 @@ export const DynamicDimension = ({
 }
 
 DynamicDimension.propTypes = {
-    context: PropTypes.object.isRequired,
     dimensionId: PropTypes.string.isRequired,
     dimensionTitle: PropTypes.string.isRequired,
     selectedItems: PropTypes.arrayOf(

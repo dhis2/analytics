@@ -1,4 +1,5 @@
 import sortBy from 'lodash/sortBy'
+import objectClean from 'd2-utilizr/lib/objectClean'
 
 import { onError } from './index'
 import { DATA_SETS_CONSTANTS } from '../modules/dataSets'
@@ -66,7 +67,7 @@ export const apiFetchRecommendedIds = (d2, dxIds, ouIds) => {
         .catch(onError)
 }
 
-export const apiFetchItemsByDimension = (d2, dimensionId) => {
+export const apiFetchItemsByDimensionOld = (d2, dimensionId) => {
     const fields = `fields=id,displayName~rename(name)`
     const order = `order=displayName:asc`
 
@@ -75,6 +76,29 @@ export const apiFetchItemsByDimension = (d2, dimensionId) => {
     return d2.Api.getApi()
         .get(url)
         .then(response => response.items)
+}
+
+export const apiFetchItemsByDimension = ({
+    engine,
+    dimensionId,
+    searchTerm,
+    pageSize,
+    page,
+}) => {
+    // This is just a dummy query to test the pagination
+    // TODO: Change to the correct query
+
+    const query = {
+        dataElements: {
+            resource: 'dataElements',
+            params: objectClean({
+                pageSize: pageSize || 25,
+                page: page || 1,
+                filter: searchTerm ? `name:ilike:${searchTerm}` : undefined,
+            }),
+        },
+    }
+    return engine.query(query)
 }
 
 export const apiFetchGroups = (d2, dataType, nameProp) => {
