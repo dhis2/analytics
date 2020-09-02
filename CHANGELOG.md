@@ -1,3 +1,10 @@
+## [10.0.1](https://github.com/dhis2/analytics/compare/v10.0.0...v10.0.1) (2020-09-02)
+
+
+### Bug Fixes
+
+* deduplicate yarn.lock ([#582](https://github.com/dhis2/analytics/issues/582)) ([66e65c2](https://github.com/dhis2/analytics/commit/66e65c206830382cdf905f77c9c6418a4aa8f078))
+
 # [10.0.0](https://github.com/dhis2/analytics/compare/v9.0.1...v10.0.0) (2020-09-02)
 
 
