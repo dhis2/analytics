@@ -1,3 +1,29 @@
+## [10.0.1](https://github.com/dhis2/analytics/compare/v10.0.0...v10.0.1) (2020-09-02)
+
+
+### Bug Fixes
+
+* deduplicate yarn.lock ([#582](https://github.com/dhis2/analytics/issues/582)) ([66e65c2](https://github.com/dhis2/analytics/commit/66e65c206830382cdf905f77c9c6418a4aa8f078))
+
+# [10.0.0](https://github.com/dhis2/analytics/compare/v9.0.1...v10.0.0) (2020-09-02)
+
+
+### Features
+
+* 6f3562c00068a76201cba6c64d655c1bc217c514 ([eaed76e](https://github.com/dhis2/analytics/commit/eaed76ea875e38edefde5d8834a748093f2df2b5))
+
+
+### BREAKING CHANGES
+
+* DimensionMenu no longer accepts anchorEl
+
+## [9.0.1](https://github.com/dhis2/analytics/compare/v9.0.0...v9.0.1) (2020-09-02)
+
+
+### Bug Fixes
+
+* dimension menu updates requested by DV (DHIS2-9365) ([#578](https://github.com/dhis2/analytics/issues/578)) ([6f3562c](https://github.com/dhis2/analytics/commit/6f3562c00068a76201cba6c64d655c1bc217c514))
+
 # [9.0.0](https://github.com/dhis2/analytics/compare/v8.9.8...v9.0.0) (2020-08-28)
 
 
