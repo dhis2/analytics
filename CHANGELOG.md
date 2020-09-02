@@ -1,3 +1,10 @@
+## [9.0.1](https://github.com/dhis2/analytics/compare/v9.0.0...v9.0.1) (2020-09-02)
+
+
+### Bug Fixes
+
+* dimension menu updates requested by DV (DHIS2-9365) ([#578](https://github.com/dhis2/analytics/issues/578)) ([6f3562c](https://github.com/dhis2/analytics/commit/6f3562c00068a76201cba6c64d655c1bc217c514))
+
 # [9.0.0](https://github.com/dhis2/analytics/compare/v8.9.8...v9.0.0) (2020-08-28)
 
 
