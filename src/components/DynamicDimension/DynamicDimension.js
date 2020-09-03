@@ -15,23 +15,14 @@ export const DynamicDimension = ({
 }) => {
     const engine = useDataEngine()
 
-    const fetchItemsEndpoint = (pageSize, page, searchTerm) => {
-        console.log(
-            'PAGESIZE: ' +
-                pageSize +
-                ' PAGE: ' +
-                page +
-                ' SEARCHTERM: ' +
-                searchTerm
-        )
-        return apiFetchItemsByDimension({
+    const fetchItemsEndpoint = (pageSize, page, searchTerm) =>
+        apiFetchItemsByDimension({
             engine,
             dimensionId,
             searchTerm,
             pageSize,
             page,
         })
-    }
 
     const onSelectItems = selectedItem =>
         onSelect({
@@ -43,24 +34,15 @@ export const DynamicDimension = ({
         })
 
     return (
-        <>
-            {/*<ItemSelector
+        <ItemSelector
+            initialSelected={selectedItems}
+            noItemsMessage={i18n.t('Nothing found in {{dimensionTitle}}', {
+                dimensionTitle,
+            })}
+            onFetch={fetchItemsEndpoint}
             onSelect={onSelectItems}
-            allItems={items}
-            initialSelectedItemIds={selectedItems.map(item => item.id)}
             rightFooter={rightFooter}
-            // TODO: Pass in a func prop to fetch items, instead of fetching them on this level, to enable the loading spinner?
-        />*/}
-            <ItemSelector
-                initialSelected={selectedItems}
-                noItemsMessage={i18n.t('Nothing found in {{dimensionTitle}}', {
-                    dimensionTitle,
-                })}
-                onFetch={fetchItemsEndpoint}
-                onSelect={onSelectItems}
-                rightFooter={rightFooter}
-            />
-        </>
+        />
     )
 }
 
