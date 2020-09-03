@@ -15,7 +15,7 @@ export const DynamicDimension = ({
 }) => {
     const engine = useDataEngine()
 
-    const fetchItemsEndpoint = (pageSize, page, searchTerm) =>
+    const fetchItems = (pageSize, page, searchTerm) =>
         apiFetchItemsByDimension({
             engine,
             dimensionId,
@@ -39,7 +39,7 @@ export const DynamicDimension = ({
             noItemsMessage={i18n.t('Nothing found in {{dimensionTitle}}', {
                 dimensionTitle,
             })}
-            onFetch={fetchItemsEndpoint}
+            onFetch={fetchItems}
             onSelect={onSelectItems}
             rightFooter={rightFooter}
         />
