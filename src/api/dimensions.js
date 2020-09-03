@@ -67,6 +67,7 @@ export const apiFetchRecommendedIds = (d2, dxIds, ouIds) => {
         .catch(onError)
 }
 
+//TODO: Remove this once it's replaced by apiFetchItemsByDimension
 export const apiFetchItemsByDimensionOld = (d2, dimensionId) => {
     const fields = `fields=id,displayName~rename(name)`
     const order = `order=displayName:asc`
@@ -80,7 +81,7 @@ export const apiFetchItemsByDimensionOld = (d2, dimensionId) => {
 
 export const apiFetchItemsByDimension = ({
     engine,
-    dimensionId,
+    //dimensionId,
     searchTerm,
     pageSize,
     page,
