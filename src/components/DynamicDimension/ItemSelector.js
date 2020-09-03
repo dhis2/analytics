@@ -14,6 +14,22 @@ import {
 
 const PAGE_SIZE = 50
 
+const useDebounce = (value, delay) => {
+    const [debouncedValue, setDebouncedValue] = useState(value)
+
+    useEffect(() => {
+        const handler = setTimeout(() => {
+            setDebouncedValue(value)
+        }, delay)
+
+        return () => {
+            clearTimeout(handler)
+        }
+    }, [value, delay])
+
+    return debouncedValue
+}
+
 const ItemSelector = ({
     initialSelected,
     moItemsMessage,
@@ -29,24 +45,18 @@ const ItemSelector = ({
     const [hasNoItems, setHasNoItems] = useState(false)
     const pageSize = PAGE_SIZE
 
-    const debouncedFilter = useDebounce(filter, 500) // custom debounce since it's used in useEffect
+    const debouncedFilter = useDebounce(filter, 500)
 
     useEffect(() => {
-        console.log('useEffect TRIGGERED')
         setEndReached(false)
         fetchItems(1)
     }, [debouncedFilter])
 
     const fetchItems = async page => {
         setLoading(true)
-        console.log('FETCH ITEMS ' + page + ' ' + debouncedFilter)
-        const fetchResult = await onFetch(
-            pageSize, // pageSize
-            page, // page
-            debouncedFilter // search filter
-        )
+        const fetchResult = await onFetch(pageSize, page, debouncedFilter)
 
-        // TODO: Remove this, test only!
+        // TODO: Test only, need to remap the result as it's coming from the wrong endpoint. Remove this once the real endpoint is used
         const test = fetchResult.dataElements.dataElements.map(
             ({ id, displayName }) => ({
                 name: displayName,
@@ -62,20 +72,18 @@ const ItemSelector = ({
         }))
 
         if (
-            // No current options + no response + no filter = no options on server at all
+            // No current options + no server response + no filter used = no options on the server at all
             !options.length &&
             !newOptions.length &&
             !debouncedFilter
         ) {
-            console.log('HAS NO ITEMS!')
             setHasNoItems(true)
             setEndReached(true)
         } else if (
-            // No new options (server returned 0 options) + not in the beginning of the search
+            // No new options (server returned 0 options) + not in the beginning of the search = end has been reached
             !newOptions.length &&
             page > 1
         ) {
-            console.log('NO NEW OPTIONS')
             setEndReached(true)
         } else {
             setEndReached(newOptions.length < pageSize)
@@ -94,12 +102,17 @@ const ItemSelector = ({
         onSelect(newSelectedWithLabel)
     }
 
-    const renderHeader = () => (
-        <InputField
-            value={filter}
-            onChange={({ value }) => setFilter(value)}
-            placeholder={i18n.t('Search')}
-        />
+    const renderLeftHeader = () => (
+        <>
+            <div className="leftHeader">
+                <InputField
+                    value={filter}
+                    onChange={({ value }) => setFilter(value)}
+                    placeholder={i18n.t('Search')}
+                />
+            </div>
+            <style jsx>{styles}</style>
+        </>
     )
 
     const renderEmptySelection = () => (
@@ -118,11 +131,8 @@ const ItemSelector = ({
 
     const renderSourceEmptyPlaceholder = () => {
         if (hasNoItems) {
-            // Show message for completely empty server result (i.e. no items on server)
             return <p>{moItemsMessage}</p>
         } else if (!loading && !options.length && debouncedFilter) {
-            // Show message for empty search result, but prevent message from showing is searching for x and x is selected
-            // Don't display the message while loading to prevent the message from changing behind the spinner when the filter has changed
             return (
                 <p>
                     {i18n.t('Nothing found for {{searchTerm}}', {
@@ -143,12 +153,10 @@ const ItemSelector = ({
             sourceEmptyPlaceholder={renderSourceEmptyPlaceholder()}
             onEndReached={() => {
                 if (options.length >= pageSize && !endReached) {
-                    // Prevent triggering when options are fewer than pageSize or the end has been reached
-                    console.log('END REACHED')
                     fetchItems(Math.ceil(options.length / pageSize) + 1)
                 }
             }}
-            leftHeader={renderHeader()}
+            leftHeader={renderLeftHeader()}
             enableOrderChange
             height={TRANSFER_HEIGHT}
             optionsWidth={TRANSFER_OPTIONS_WIDTH}
@@ -181,96 +189,3 @@ ItemSelector.defaultProps = {
 }
 
 export default ItemSelector
-
-// Custom debounce, since regular lodash/debounce doesn't work within a useEffect hook
-// Alternatively the regular debounce can be used if wrapped in a useCallback, but I couldn't get this to work properly =/
-const useDebounce = (value, delay) => {
-    const [debouncedValue, setDebouncedValue] = useState(value)
-
-    useEffect(() => {
-        const handler = setTimeout(() => {
-            setDebouncedValue(value)
-        }, delay)
-
-        return () => {
-            clearTimeout(handler)
-        }
-    }, [value, delay])
-
-    return debouncedValue
-}
-
-/*
-const ItemSelector = ({
-    allItems,
-    onSelect,
-    initialSelectedItemIds,
-    leftHeader,
-    rightFooter,
-}) => {
-    const [selectedItemIds, setSelectedItemIds] = useState(
-        initialSelectedItemIds
-    )
-
-    const renderEmptySelection = () => (
-        <>
-            <p className="emptySelection">{i18n.t('No items selected')}</p>
-            <style jsx>{styles}</style>
-        </>
-    )
-
-    const renderRightHeader = () => (
-        <>
-            <p className="rightHeader">{i18n.t('Selected Items')}</p>
-            <style jsx>{styles}</style>
-        </>
-    )
-
-    return (
-        <Transfer
-            onChange={({ selected }) => {
-                setSelectedItemIds(selected)
-                onSelect(selected)
-            }}
-            selected={selectedItemIds}
-            leftHeader={leftHeader}
-            filterable
-            filterPlaceholder={i18n.t('Search')}
-            enableOrderChange
-            height={TRANSFER_HEIGHT}
-            optionsWidth={TRANSFER_OPTIONS_WIDTH}
-            selectedWidth={TRANSFER_SELECTED_WIDTH}
-            selectedEmptyComponent={renderEmptySelection()}
-            rightHeader={renderRightHeader()}
-            rightFooter={rightFooter}
-            options={allItems.map(({ id, name, disabled }) => ({
-                label: name,
-                value: id,
-                disabled,
-            }))}
-            renderOption={props => (
-                <TransferOption {...props} icon={GenericIcon} />
-            )}
-        />
-    )
-}
-
-ItemSelector.propTypes = {
-    allItems: PropTypes.arrayOf(
-        PropTypes.shape({
-            id: PropTypes.string,
-            name: PropTypes.string,
-        })
-    ).isRequired,
-    onSelect: PropTypes.func.isRequired,
-    initialSelectedItemIds: PropTypes.arrayOf(PropTypes.string),
-    leftHeader: PropTypes.node,
-    rightFooter: PropTypes.node,
-}
-
-ItemSelector.defaultProps = {
-    initialSelectedItemIds: [],
-}
-
-export default ItemSelector
-*/

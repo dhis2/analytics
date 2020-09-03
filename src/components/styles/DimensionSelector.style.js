@@ -18,4 +18,7 @@ export default css`
         font-size: 14px;
         font-weight: 400;
     }
+    .leftHeader {
+        padding: ${spacers.dp8} 0;
+    }
 `
