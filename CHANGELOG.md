@@ -1,3 +1,10 @@
+## [10.0.3](https://github.com/dhis2/analytics/compare/v10.0.2...v10.0.3) (2020-09-07)
+
+
+### Bug Fixes
+
+* subtract initial empty columns from partition calculation ([#591](https://github.com/dhis2/analytics/issues/591)) ([df458d9](https://github.com/dhis2/analytics/commit/df458d95f7a5900e0a5ba369e90efd0f5db1e2a8))
+
 ## [10.0.2](https://github.com/dhis2/analytics/compare/v10.0.1...v10.0.2) (2020-09-07)
 
 
