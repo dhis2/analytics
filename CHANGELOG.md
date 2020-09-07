@@ -1,3 +1,11 @@
+## [10.0.2](https://github.com/dhis2/analytics/compare/v10.0.1...v10.0.2) (2020-09-07)
+
+
+### Bug Fixes
+
+* optional chaining for legend items ([#587](https://github.com/dhis2/analytics/issues/587)) ([b0c8124](https://github.com/dhis2/analytics/commit/b0c8124de1326ab4fac927b011424fd8e40d9f13))
+* resolve previously introduced build error (DHIS2-9413) ([#589](https://github.com/dhis2/analytics/issues/589)) ([3246306](https://github.com/dhis2/analytics/commit/3246306d6e0647ab1adb31121c902de5c1cf72a6))
+
 ## [10.0.1](https://github.com/dhis2/analytics/compare/v10.0.0...v10.0.1) (2020-09-02)
 
 

@@ -172,7 +172,7 @@ function getLabels(layout) {
 
 function getMultipleAxes(theme, axes) {
     const axisObjects = []
-    axes.map(axisId => {
+    axes.forEach(axisId => {
         const id = Number(axisId)
         axisObjects.push({
             title: {
