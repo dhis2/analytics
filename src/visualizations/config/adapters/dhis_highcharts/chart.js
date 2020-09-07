@@ -18,10 +18,12 @@ const getEvents = () => ({
     events: {
         load: function() { // Align legend icon with legend text
             this.legend.allItems.forEach((item) => {
-                // eslint-disable-next-line no-unused-expressions
-                item.legendSymbol?.attr({
-                    translateY: -((item.legendItem.getBBox().height) * 0.75 / 4 ) + ( item.legendSymbol.r / 2 )
-                });
+                if (item.legendSymbol) {
+                    item.legendSymbol.attr({
+                        translateY: -((item.legendItem.getBBox().height) * 0.75 / 4 ) + ( item.legendSymbol.r / 2 )
+                    });
+                }
+                
             });
         }
     }
