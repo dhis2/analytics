@@ -35,7 +35,10 @@ export const DynamicDimension = ({
 
     return (
         <ItemSelector
-            initialSelected={selectedItems}
+            initialSelected={selectedItems.map(item => ({
+                value: item.id,
+                label: item.name,
+            }))}
             noItemsMessage={i18n.t('Nothing found in {{dimensionTitle}}', {
                 dimensionTitle,
             })}
