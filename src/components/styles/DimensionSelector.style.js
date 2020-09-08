@@ -7,7 +7,7 @@ export default css`
         margin-bottom: ${spacers.dp12};
         margin-top: ${spacers.dp8};
     }
-    .emptySelection {
+    .emptyList {
         text-align: center;
         font-size: 14px;
         line-height: 16px;

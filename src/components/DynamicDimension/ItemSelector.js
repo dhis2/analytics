@@ -110,7 +110,7 @@ const ItemSelector = ({
 
     const renderEmptySelection = () => (
         <>
-            <p className="emptySelection">{i18n.t('No items selected')}</p>
+            <p className="emptyList">{i18n.t('No items selected')}</p>
             <style jsx>{styles}</style>
         </>
     )
@@ -123,17 +123,22 @@ const ItemSelector = ({
     )
 
     const renderSourceEmptyPlaceholder = () => {
-        if (hasNoItems) {
-            return <p>{moItemsMessage}</p>
+        let message = ''
+        if (!loading && hasNoItems) {
+            message = moItemsMessage
         } else if (!loading && !options.length && debouncedFilter) {
-            return (
-                <p>
-                    {i18n.t('Nothing found for {{searchTerm}}', {
-                        searchTerm: debouncedFilter,
-                    })}
-                </p>
-            )
+            message = i18n.t('Nothing found for {{searchTerm}}', {
+                searchTerm: debouncedFilter,
+            })
         }
+        return (
+            message && (
+                <>
+                    <p className="emptyList">{message}</p>
+                    <style jsx>{styles}</style>
+                </>
+            )
+        )
     }
 
     return (
