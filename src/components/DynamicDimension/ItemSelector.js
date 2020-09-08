@@ -124,7 +124,7 @@ const ItemSelector = ({
 
     const renderSourceEmptyPlaceholder = () => {
         let message = ''
-        if (!loading && hasNoItems) {
+        if (hasNoItems) {
             message = moItemsMessage
         } else if (!loading && !options.length && debouncedFilter) {
             message = i18n.t('Nothing found for {{searchTerm}}', {
