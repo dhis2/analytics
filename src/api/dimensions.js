@@ -67,32 +67,19 @@ export const apiFetchRecommendedIds = (d2, dxIds, ouIds) => {
         .catch(onError)
 }
 
-//TODO: Remove this once it's replaced by apiFetchItemsByDimension
-export const apiFetchItemsByDimensionOld = (d2, dimensionId) => {
-    const fields = `fields=id,displayName~rename(name)`
-    const order = `order=displayName:asc`
-
-    const url = `dimensions/${dimensionId}/items?${fields}&${order}`
-
-    return d2.Api.getApi()
-        .get(url)
-        .then(response => response.items)
-}
-
 export const apiFetchItemsByDimension = ({
     engine,
-    //dimensionId,
+    dimensionId,
     searchTerm,
     pageSize,
     page,
 }) => {
-    // This is just a dummy query to test the pagination
-    // TODO: Change to the correct query
-
     const query = {
-        dataElements: {
-            resource: 'dataElements',
+        dimensions: {
+            resource: `dimensions/${dimensionId}/items`,
             params: objectClean({
+                fields: 'id,displayName~rename(name)',
+                order: 'displayName:asc',
                 pageSize: pageSize || 25,
                 page: page || 1,
                 filter: searchTerm ? `name:ilike:${searchTerm}` : undefined,

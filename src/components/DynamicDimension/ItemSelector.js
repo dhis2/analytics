@@ -56,20 +56,13 @@ const ItemSelector = ({
         setLoading(true)
         const fetchResult = await onFetch(pageSize, page, debouncedFilter)
 
-        // TODO: Test only, need to remap the result as it's coming from the wrong endpoint. Remove this once the real endpoint is used
-        const test = fetchResult.dataElements.dataElements.map(
-            ({ id, displayName }) => ({
-                name: displayName,
-                id,
-                disabled: false,
+        const newOptions = fetchResult.dimensions.items.map(
+            ({ id, name, disabled }) => ({
+                label: name,
+                value: id,
+                disabled,
             })
         )
-
-        const newOptions = test.map(({ id, name, disabled }) => ({
-            label: name,
-            value: id,
-            disabled,
-        }))
 
         if (
             // No current options + no server response + no filter used = no options on the server at all
