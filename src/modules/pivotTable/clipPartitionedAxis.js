@@ -17,7 +17,7 @@ export const clipPartitionedAxis = ({
         }
     }
 
-    let start = partitions[partition]
+    let start = partitions[partition] - partitions[0]
     while (
         start < axisMap.length &&
         widthMap[axisMap[start]].pre < viewportPosition

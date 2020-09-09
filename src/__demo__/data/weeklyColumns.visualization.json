@@ -1,0 +1,492 @@
+{
+    "lastUpdated": "2020-09-07T13:42:11.044",
+    "id": "YXZjH1F9ntO",
+    "created": "2020-09-07T13:01:07.853",
+    "name": "TEST - Empty Columns Error 2",
+    "publicAccess": "--------",
+    "legendDisplayStyle": "FILL",
+    "type": "PIVOT_TABLE",
+    "hideEmptyColumns": false,
+    "subscribed": false,
+    "rowSubTotals": false,
+    "cumulativeValues": false,
+    "showDimensionLabels": false,
+    "sortOrder": 0,
+    "fontSize": "NORMAL",
+    "favorite": false,
+    "topLimit": 0,
+    "displayName": "TEST - Empty Columns Error 2",
+    "percentStackedValues": false,
+    "noSpaceBetweenColumns": false,
+    "showHierarchy": false,
+    "hideTitle": false,
+    "skipRounding": false,
+    "showData": true,
+    "numberType": "VALUE",
+    "hideEmptyRows": false,
+    "parentGraphMap": {
+        "ImspTQPwCqd": ""
+    },
+    "displayDensity": "NORMAL",
+    "regressionType": "NONE",
+    "completedOnly": false,
+    "colTotals": false,
+    "hideEmptyRowItems": "NONE",
+    "aggregationType": "DEFAULT",
+    "hideSubtitle": false,
+    "hideLegend": false,
+    "colSubTotals": false,
+    "legendDisplayStrategy": "FIXED",
+    "rowTotals": false,
+    "digitGroupSeparator": "SPACE",
+    "regression": false,
+    "access": {
+        "read": true,
+        "update": true,
+        "externalize": true,
+        "delete": true,
+        "write": true,
+        "manage": true,
+        "data": {
+            "read": false,
+            "write": false
+        }
+    },
+    "reportingParams": {
+        "parentOrganisationUnit": false,
+        "reportingPeriod": false,
+        "organisationUnit": false,
+        "grandParentOrganisationUnit": false
+    },
+    "lastUpdatedBy": {
+        "id": "xE7jOejl9FI"
+    },
+    "user": {
+        "name": "Astride Traore",
+        "displayName": "Astride Traore",
+        "userCredentials": {
+            "username": "admin"
+        }
+    },
+    "translations": [],
+    "yearlySeries": [],
+    "interpretations": [],
+    "userGroupAccesses": [],
+    "subscribers": [],
+    "optionalAxes": [],
+    "columns": [
+        {
+            "dimension": "pe",
+            "items": [
+                {
+                    "name": "W1 2018",
+                    "id": "2018W1",
+                    "displayName": "W1 2018",
+                    "displayShortName": "2018W1",
+                    "dimensionItemType": "PERIOD"
+                },
+                {
+                    "name": "W3 2018",
+                    "id": "2018W3",
+                    "displayName": "W3 2018",
+                    "displayShortName": "2018W3",
+                    "dimensionItemType": "PERIOD"
+                },
+                {
+                    "name": "W2 2018",
+                    "id": "2018W2",
+                    "displayName": "W2 2018",
+                    "displayShortName": "2018W2",
+                    "dimensionItemType": "PERIOD"
+                },
+                {
+                    "name": "W1 2020",
+                    "id": "2020W1",
+                    "displayName": "W1 2020",
+                    "displayShortName": "2020W1",
+                    "dimensionItemType": "PERIOD"
+                },
+                {
+                    "name": "W2 2020",
+                    "id": "2020W2",
+                    "displayName": "W2 2020",
+                    "displayShortName": "2020W2",
+                    "dimensionItemType": "PERIOD"
+                },
+                {
+                    "name": "W3 2020",
+                    "id": "2020W3",
+                    "displayName": "W3 2020",
+                    "displayShortName": "2020W3",
+                    "dimensionItemType": "PERIOD"
+                },
+                {
+                    "name": "W4 2018",
+                    "id": "2018W4",
+                    "displayName": "W4 2018",
+                    "displayShortName": "2018W4",
+                    "dimensionItemType": "PERIOD"
+                },
+                {
+                    "name": "W5 2018",
+                    "id": "2018W5",
+                    "displayName": "W5 2018",
+                    "displayShortName": "2018W5",
+                    "dimensionItemType": "PERIOD"
+                },
+                {
+                    "name": "W6 2018",
+                    "id": "2018W6",
+                    "displayName": "W6 2018",
+                    "displayShortName": "2018W6",
+                    "dimensionItemType": "PERIOD"
+                },
+                {
+                    "name": "W4 2020",
+                    "id": "2020W4",
+                    "displayName": "W4 2020",
+                    "displayShortName": "2020W4",
+                    "dimensionItemType": "PERIOD"
+                },
+                {
+                    "name": "W5 2020",
+                    "id": "2020W5",
+                    "displayName": "W5 2020",
+                    "displayShortName": "2020W5",
+                    "dimensionItemType": "PERIOD"
+                },
+                {
+                    "name": "W7 2018",
+                    "id": "2018W7",
+                    "displayName": "W7 2018",
+                    "displayShortName": "2018W7",
+                    "dimensionItemType": "PERIOD"
+                },
+                {
+                    "name": "W8 2018",
+                    "id": "2018W8",
+                    "displayName": "W8 2018",
+                    "displayShortName": "2018W8",
+                    "dimensionItemType": "PERIOD"
+                },
+                {
+                    "name": "W9 2018",
+                    "id": "2018W9",
+                    "displayName": "W9 2018",
+                    "displayShortName": "2018W9",
+                    "dimensionItemType": "PERIOD"
+                },
+                {
+                    "name": "W10 2018",
+                    "id": "2018W10",
+                    "displayName": "W10 2018",
+                    "displayShortName": "2018W10",
+                    "dimensionItemType": "PERIOD"
+                },
+                {
+                    "name": "W11 2018",
+                    "id": "2018W11",
+                    "displayName": "W11 2018",
+                    "displayShortName": "2018W11",
+                    "dimensionItemType": "PERIOD"
+                },
+                {
+                    "name": "W12 2018",
+                    "id": "2018W12",
+                    "displayName": "W12 2018",
+                    "displayShortName": "2018W12",
+                    "dimensionItemType": "PERIOD"
+                },
+                {
+                    "name": "W13 2018",
+                    "id": "2018W13",
+                    "displayName": "W13 2018",
+                    "displayShortName": "2018W13",
+                    "dimensionItemType": "PERIOD"
+                },
+                {
+                    "name": "W14 2018",
+                    "id": "2018W14",
+                    "displayName": "W14 2018",
+                    "displayShortName": "2018W14",
+                    "dimensionItemType": "PERIOD"
+                },
+                {
+                    "name": "W15 2018",
+                    "id": "2018W15",
+                    "displayName": "W15 2018",
+                    "displayShortName": "2018W15",
+                    "dimensionItemType": "PERIOD"
+                },
+                {
+                    "name": "W16 2018",
+                    "id": "2018W16",
+                    "displayName": "W16 2018",
+                    "displayShortName": "2018W16",
+                    "dimensionItemType": "PERIOD"
+                },
+                {
+                    "name": "W17 2018",
+                    "id": "2018W17",
+                    "displayName": "W17 2018",
+                    "displayShortName": "2018W17",
+                    "dimensionItemType": "PERIOD"
+                },
+                {
+                    "name": "W18 2018",
+                    "id": "2018W18",
+                    "displayName": "W18 2018",
+                    "displayShortName": "2018W18",
+                    "dimensionItemType": "PERIOD"
+                },
+                {
+                    "name": "W19 2018",
+                    "id": "2018W19",
+                    "displayName": "W19 2018",
+                    "displayShortName": "2018W19",
+                    "dimensionItemType": "PERIOD"
+                },
+                {
+                    "name": "W20 2018",
+                    "id": "2018W20",
+                    "displayName": "W20 2018",
+                    "displayShortName": "2018W20",
+                    "dimensionItemType": "PERIOD"
+                },
+                {
+                    "name": "W21 2018",
+                    "id": "2018W21",
+                    "displayName": "W21 2018",
+                    "displayShortName": "2018W21",
+                    "dimensionItemType": "PERIOD"
+                },
+                {
+                    "name": "W22 2018",
+                    "id": "2018W22",
+                    "displayName": "W22 2018",
+                    "displayShortName": "2018W22",
+                    "dimensionItemType": "PERIOD"
+                },
+                {
+                    "name": "W23 2018",
+                    "id": "2018W23",
+                    "displayName": "W23 2018",
+                    "displayShortName": "2018W23",
+                    "dimensionItemType": "PERIOD"
+                },
+                {
+                    "name": "W24 2018",
+                    "id": "2018W24",
+                    "displayName": "W24 2018",
+                    "displayShortName": "2018W24",
+                    "dimensionItemType": "PERIOD"
+                },
+                {
+                    "name": "W25 2018",
+                    "id": "2018W25",
+                    "displayName": "W25 2018",
+                    "displayShortName": "2018W25",
+                    "dimensionItemType": "PERIOD"
+                },
+                {
+                    "name": "W26 2018",
+                    "id": "2018W26",
+                    "displayName": "W26 2018",
+                    "displayShortName": "2018W26",
+                    "dimensionItemType": "PERIOD"
+                },
+                {
+                    "name": "W27 2018",
+                    "id": "2018W27",
+                    "displayName": "W27 2018",
+                    "displayShortName": "2018W27",
+                    "dimensionItemType": "PERIOD"
+                },
+                {
+                    "name": "W28 2018",
+                    "id": "2018W28",
+                    "displayName": "W28 2018",
+                    "displayShortName": "2018W28",
+                    "dimensionItemType": "PERIOD"
+                },
+                {
+                    "name": "W29 2018",
+                    "id": "2018W29",
+                    "displayName": "W29 2018",
+                    "displayShortName": "2018W29",
+                    "dimensionItemType": "PERIOD"
+                },
+                {
+                    "name": "W30 2018",
+                    "id": "2018W30",
+                    "displayName": "W30 2018",
+                    "displayShortName": "2018W30",
+                    "dimensionItemType": "PERIOD"
+                },
+                {
+                    "name": "W31 2018",
+                    "id": "2018W31",
+                    "displayName": "W31 2018",
+                    "displayShortName": "2018W31",
+                    "dimensionItemType": "PERIOD"
+                },
+                {
+                    "name": "W32 2018",
+                    "id": "2018W32",
+                    "displayName": "W32 2018",
+                    "displayShortName": "2018W32",
+                    "dimensionItemType": "PERIOD"
+                },
+                {
+                    "name": "W33 2018",
+                    "id": "2018W33",
+                    "displayName": "W33 2018",
+                    "displayShortName": "2018W33",
+                    "dimensionItemType": "PERIOD"
+                },
+                {
+                    "name": "W34 2018",
+                    "id": "2018W34",
+                    "displayName": "W34 2018",
+                    "displayShortName": "2018W34",
+                    "dimensionItemType": "PERIOD"
+                },
+                {
+                    "name": "W35 2018",
+                    "id": "2018W35",
+                    "displayName": "W35 2018",
+                    "displayShortName": "2018W35",
+                    "dimensionItemType": "PERIOD"
+                },
+                {
+                    "name": "W36 2018",
+                    "id": "2018W36",
+                    "displayName": "W36 2018",
+                    "displayShortName": "2018W36",
+                    "dimensionItemType": "PERIOD"
+                },
+                {
+                    "name": "W37 2018",
+                    "id": "2018W37",
+                    "displayName": "W37 2018",
+                    "displayShortName": "2018W37",
+                    "dimensionItemType": "PERIOD"
+                },
+                {
+                    "name": "W38 2018",
+                    "id": "2018W38",
+                    "displayName": "W38 2018",
+                    "displayShortName": "2018W38",
+                    "dimensionItemType": "PERIOD"
+                },
+                {
+                    "name": "W39 2018",
+                    "id": "2018W39",
+                    "displayName": "W39 2018",
+                    "displayShortName": "2018W39",
+                    "dimensionItemType": "PERIOD"
+                },
+                {
+                    "name": "W6 2020",
+                    "id": "2020W6",
+                    "displayName": "W6 2020",
+                    "displayShortName": "2020W6",
+                    "dimensionItemType": "PERIOD"
+                },
+                {
+                    "name": "W7 2020",
+                    "id": "2020W7",
+                    "displayName": "W7 2020",
+                    "displayShortName": "2020W7",
+                    "dimensionItemType": "PERIOD"
+                },
+                {
+                    "name": "W8 2020",
+                    "id": "2020W8",
+                    "displayName": "W8 2020",
+                    "displayShortName": "2020W8",
+                    "dimensionItemType": "PERIOD"
+                },
+                {
+                    "name": "W9 2020",
+                    "id": "2020W9",
+                    "displayName": "W9 2020",
+                    "displayShortName": "2020W9",
+                    "dimensionItemType": "PERIOD"
+                },
+                {
+                    "name": "W10 2020",
+                    "id": "2020W10",
+                    "displayName": "W10 2020",
+                    "displayShortName": "2020W10",
+                    "dimensionItemType": "PERIOD"
+                },
+                {
+                    "name": "W40 2018",
+                    "id": "2018W40",
+                    "displayName": "W40 2018",
+                    "displayShortName": "2018W40",
+                    "dimensionItemType": "PERIOD"
+                },
+                {
+                    "name": "W41 2018",
+                    "id": "2018W41",
+                    "displayName": "W41 2018",
+                    "displayShortName": "2018W41",
+                    "dimensionItemType": "PERIOD"
+                },
+                {
+                    "name": "W42 2018",
+                    "id": "2018W42",
+                    "displayName": "W42 2018",
+                    "displayShortName": "2018W42",
+                    "dimensionItemType": "PERIOD"
+                },
+                {
+                    "name": "W43 2018",
+                    "id": "2018W43",
+                    "displayName": "W43 2018",
+                    "displayShortName": "2018W43",
+                    "dimensionItemType": "PERIOD"
+                },
+                {
+                    "name": "W44 2018",
+                    "id": "2018W44",
+                    "displayName": "W44 2018",
+                    "displayShortName": "2018W44",
+                    "dimensionItemType": "PERIOD"
+                }
+            ]
+        }
+    ],
+    "userAccesses": [],
+    "favorites": [],
+    "filters": [
+        {
+            "dimension": "ou",
+            "items": [
+                {
+                    "name": "Sierra Leone",
+                    "id": "ImspTQPwCqd",
+                    "displayName": "Sierra Leone",
+                    "displayShortName": "Sierra Leone",
+                    "dimensionItemType": "ORGANISATION_UNIT"
+                }
+            ]
+        }
+    ],
+    "rows": [
+        {
+            "dimension": "dx",
+            "items": [
+                {
+                    "name": "Malaria case count",
+                    "id": "nFICjJluo74",
+                    "displayName": "Malaria case count",
+                    "displayShortName": "Malaria case count",
+                    "dimensionItemType": "PROGRAM_INDICATOR"
+                }
+            ]
+        }
+    ]
+}

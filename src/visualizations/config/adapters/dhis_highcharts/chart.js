@@ -18,9 +18,12 @@ const getEvents = () => ({
     events: {
         load: function() { // Align legend icon with legend text
             this.legend.allItems.forEach((item) => {
-                item.legendSymbol.attr({
-                    translateY: -((item.legendItem.getBBox().height) * 0.75 / 4 ) + ( item.legendSymbol.r / 2 )
-                });
+                if (item.legendSymbol) {
+                    item.legendSymbol.attr({
+                        translateY: -((item.legendItem.getBBox().height) * 0.75 / 4 ) + ( item.legendSymbol.r / 2 )
+                    });
+                }
+                
             });
         }
     }
