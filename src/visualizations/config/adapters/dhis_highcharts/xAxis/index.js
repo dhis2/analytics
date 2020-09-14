@@ -23,7 +23,7 @@ function noAxis() {
     return null
 }
 
-const getLabelsStyle = fontStyle => fontStyle ? {
+export const getLabelsStyle = fontStyle => fontStyle ? {
     style: {
         color: fontStyle[FONT_STYLE_OPTION_TEXT_COLOR],
         textShadow: '0 0 #ccc',
