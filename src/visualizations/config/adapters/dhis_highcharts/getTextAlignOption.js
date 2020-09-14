@@ -1,5 +1,5 @@
 import { TEXT_ALIGN_LEFT, TEXT_ALIGN_CENTER, TEXT_ALIGN_RIGHT, FONT_STYLE_HORIZONTAL_AXIS_TITLE, FONT_STYLE_VERTICAL_AXIS_TITLE, FONT_STYLE_TARGET_LINE_LABEL, FONT_STYLE_BASE_LINE_LABEL, FONT_STYLE_VISUALIZATION_TITLE, FONT_STYLE_VISUALIZATION_SUBTITLE, FONT_STYLE_LEGEND } from "../../../../modules/fontStyle"
-import { VIS_TYPE_BAR, VIS_TYPE_STACKED_BAR } from "../../../../modules/visTypes"
+import { isVerticalType } from "../../../../modules/visTypes"
 
 const defaultAlignOptions = {
     [TEXT_ALIGN_LEFT]: 'left',
@@ -26,7 +26,7 @@ const getTextAlignOptions = (fontStyleKey, visType) => {
             return axisTitleAlignOptions
         case FONT_STYLE_TARGET_LINE_LABEL:
         case FONT_STYLE_BASE_LINE_LABEL:
-            return [VIS_TYPE_BAR, VIS_TYPE_STACKED_BAR].includes(visType)
+            return isVerticalType(visType)
                 ? verticalAlignOptions
                 : defaultAlignOptions
         case FONT_STYLE_VISUALIZATION_TITLE:

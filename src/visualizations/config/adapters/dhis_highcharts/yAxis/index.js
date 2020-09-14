@@ -10,8 +10,7 @@ import {
     isStacked,
     VIS_TYPE_GAUGE,
     isDualAxisType,
-    VIS_TYPE_BAR,
-    VIS_TYPE_STACKED_BAR,
+    isVerticalType,
 } from '../../../../../modules/visTypes'
 import { hasCustomAxes } from '../../../../../modules/axis'
 import { getAxisIdsMap } from '../customAxes'
@@ -90,7 +89,7 @@ function getLabelOffsetFromTextAlign(textAlign) {
 }
 
 const getLineLabelStyle = (fontStyle, fontStyleType, visType) => {
-    const isVertical = [VIS_TYPE_BAR, VIS_TYPE_STACKED_BAR].includes(visType)
+    const isVertical = isVerticalType(visType)
     const alignKey = isVertical ? 'verticalAlign' : 'align'
     const alignValue = getTextAlignOption(fontStyle, fontStyleType, visType)
     const offsetKey = isVertical ? 'y' : 'x'

@@ -1,6 +1,6 @@
 /*eslint no-unused-vars: ["error", { "ignoreRestSiblings": true }]*/
 import i18n from '@dhis2/d2-i18n'
-import { VIS_TYPE_BAR, VIS_TYPE_STACKED_BAR } from './visTypes'
+import { isVerticalType } from './visTypes'
 
 // Font styles
 export const FONT_STYLE_VISUALIZATION_TITLE = 'visualizationTitle'
@@ -55,7 +55,7 @@ export const getTextAlignOptions = (fontStyleKey, visType) => {
             return axisTitleAlignOptions()
         case FONT_STYLE_TARGET_LINE_LABEL:
         case FONT_STYLE_BASE_LINE_LABEL:
-            return [VIS_TYPE_BAR, VIS_TYPE_STACKED_BAR].includes(visType)
+            return isVerticalType(visType)
                 ? verticalAlignOptions()
                 : defaultAlignOptions()
         case FONT_STYLE_VISUALIZATION_TITLE:
