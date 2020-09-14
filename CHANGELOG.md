@@ -1,3 +1,10 @@
+## [10.0.4](https://github.com/dhis2/analytics/compare/v10.0.3...v10.0.4) (2020-09-14)
+
+
+### Bug Fixes
+
+* text styling not applied when switching to 2 category ([#595](https://github.com/dhis2/analytics/issues/595)) ([1694652](https://github.com/dhis2/analytics/commit/16946523993061a0ea8b1c23a01c0db456bcf2ab))
+
 ## [10.0.3](https://github.com/dhis2/analytics/compare/v10.0.2...v10.0.3) (2020-09-07)
 
 
