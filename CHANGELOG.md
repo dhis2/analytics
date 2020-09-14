@@ -1,3 +1,10 @@
+## [10.0.5](https://github.com/dhis2/analytics/compare/v10.0.4...v10.0.5) (2020-09-14)
+
+
+### Bug Fixes
+
+* exclude negative sign from digit group separation ([#598](https://github.com/dhis2/analytics/issues/598)) ([d7ec310](https://github.com/dhis2/analytics/commit/d7ec310f31dcdbb6053f0104d97b80f435ddfdd0))
+
 ## [10.0.4](https://github.com/dhis2/analytics/compare/v10.0.3...v10.0.4) (2020-09-14)
 
 
