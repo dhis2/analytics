@@ -9,11 +9,16 @@ const trimTrailingZeros = stringValue => stringValue.replace(/\.?0+$/, '')
 const defaultDecimalSeparator = '.'
 
 const separateDigitGroups = (stringValue, decimalSeparator) => {
-    const [integer, remainder] = stringValue.split('.')
+    const isNegative = stringValue[0] === '-'
+    const [integer, remainder] = stringValue.replace(/^-/, '').split('.')
 
     const groups = []
     for (let i = integer.length; i > 0; i -= 3) {
         groups.unshift(integer.substring(i - 3, i))
+    }
+
+    if (isNegative) {
+        groups[0] = '-' + groups[0]
     }
 
     if (remainder) {
