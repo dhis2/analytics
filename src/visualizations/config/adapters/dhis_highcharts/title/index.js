@@ -14,6 +14,7 @@ import {
     FONT_STYLE_OPTION_TEXT_ALIGN,
     FONT_STYLE_VISUALIZATION_TITLE
  } from '../../../../../modules/fontStyle'
+import { getTextAlignOption } from '../getTextAlignOption'
 
 const DASHBOARD_TITLE_STYLE = {
     margin: 15,
@@ -66,7 +67,7 @@ export default function(layout, metaData, dashboard) {
         {},
         dashboard ? DASHBOARD_TITLE_STYLE : {
             margin: 30,
-            align: (fontStyle[FONT_STYLE_OPTION_TEXT_ALIGN] || '').toLowerCase(),
+            align: (getTextAlignOption(fontStyle[FONT_STYLE_OPTION_TEXT_ALIGN], FONT_STYLE_VISUALIZATION_TITLE, layout.type)),
             style: {
                 color: fontStyle[FONT_STYLE_OPTION_TEXT_COLOR],
                 fontSize: `${fontStyle[FONT_STYLE_OPTION_FONT_SIZE]}px`,

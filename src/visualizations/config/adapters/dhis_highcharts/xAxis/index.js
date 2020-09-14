@@ -36,7 +36,7 @@ export const getLabelsStyle = fontStyle => fontStyle ? {
 const getDefault = (store, layout) =>
     objectClean({
         categories: getCategories(store.data[0].metaData, layout.rows[0].dimension),
-        title: getAxisTitle(layout.domainAxisLabel, layout.fontStyle[FONT_STYLE_HORIZONTAL_AXIS_TITLE]),
+        title: getAxisTitle(layout.domainAxisLabel, layout.fontStyle[FONT_STYLE_HORIZONTAL_AXIS_TITLE], FONT_STYLE_HORIZONTAL_AXIS_TITLE, layout.type),
         labels: getLabelsStyle(layout.fontStyle[FONT_STYLE_CATEGORY_AXIS_LABELS]),
     })
 

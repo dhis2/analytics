@@ -13,6 +13,7 @@ import {
     FONT_STYLE_OPTION_TEXT_ALIGN,
     FONT_STYLE_VISUALIZATION_SUBTITLE
  } from '../../../../../modules/fontStyle'
+import { getTextAlignOption } from '../getTextAlignOption'
 
 const DASHBOARD_SUBTITLE = {
     style: {
@@ -66,7 +67,7 @@ export default function(series, layout, metaData, dashboard) {
         ? Object.assign(
               {},
               dashboard ? DASHBOARD_SUBTITLE : {
-                align: (fontStyle[FONT_STYLE_OPTION_TEXT_ALIGN] || '').toLowerCase(),
+                align: (getTextAlignOption(fontStyle[FONT_STYLE_OPTION_TEXT_ALIGN], FONT_STYLE_VISUALIZATION_SUBTITLE, layout.type)),
                 style: {
                     // DHIS2-578: dynamically truncate subtitle when it's taking more than 1 line
                     color: fontStyle[FONT_STYLE_OPTION_TEXT_COLOR],

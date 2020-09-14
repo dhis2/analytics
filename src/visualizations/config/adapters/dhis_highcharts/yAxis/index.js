@@ -10,6 +10,8 @@ import {
     isStacked,
     VIS_TYPE_GAUGE,
     isDualAxisType,
+    VIS_TYPE_BAR,
+    VIS_TYPE_STACKED_BAR,
 } from '../../../../../modules/visTypes'
 import { hasCustomAxes } from '../../../../../modules/axis'
 import { getAxisIdsMap } from '../customAxes'
@@ -28,6 +30,7 @@ import {
     TEXT_ALIGN_CENTER,
     TEXT_ALIGN_RIGHT,
 } from '../../../../../modules/fontStyle'
+import { getTextAlignOption } from '../getTextAlignOption'
 
 const DEFAULT_MIN_VALUE = 0
 
@@ -58,18 +61,6 @@ function getPlotLineLabelStyle(fontStyle) {
     }
 }
 
-function getLabelXFromTextAlign(textAlign) {
-    switch (textAlign) {
-        case TEXT_ALIGN_LEFT:
-            return 10
-        case TEXT_ALIGN_RIGHT:
-            return -10
-        case TEXT_ALIGN_CENTER:
-        default:
-            return 0
-    }
-}
-
 function getMinValue(layout) {
     return isNumeric(layout.rangeAxisMinValue)
         ? layout.rangeAxisMinValue
@@ -84,6 +75,35 @@ function getMaxValue(layout) {
 
 function getSteps(layout) {
     return isNumeric(layout.rangeAxisSteps) ? layout.rangeAxisSteps : undefined
+}
+
+function getLabelOffsetFromTextAlign(textAlign) {
+    switch (textAlign) {
+        case TEXT_ALIGN_LEFT:
+            return 10
+        case TEXT_ALIGN_RIGHT:
+            return -10
+        case TEXT_ALIGN_CENTER:
+        default:
+            return 0
+    }
+}
+
+const getLineLabelStyle = (fontStyle, fontStyleType, visType) => {
+    const isVertical = [VIS_TYPE_BAR, VIS_TYPE_STACKED_BAR].includes(visType)
+    const alignKey = isVertical ? 'verticalAlign' : 'align'
+    const alignValue = getTextAlignOption(fontStyle, fontStyleType, visType)
+    const offsetKey = isVertical ? 'y' : 'x'
+    const offsetValue = getLabelOffsetFromTextAlign(fontStyle)
+    
+    const result = {[alignKey]: alignValue, [offsetKey]: offsetValue }
+    if (isVertical) {
+        result.align = getTextAlignOption(fontStyle, fontStyleType)
+    }
+    console.log('---------------------------')
+    console.log(fontStyleType + ' ' + visType)
+    console.log(result)
+    return result
 }
 
 function getTargetLine(layout) {
@@ -101,12 +121,7 @@ function getTargetLine(layout) {
                   label: isString(layout.targetLineLabel)
                       ? Object.assign({}, plotLineLabelStyle, {
                             text: layout.targetLineLabel,
-                            align: (
-                                fontStyle[FONT_STYLE_OPTION_TEXT_ALIGN] || ''
-                            ).toLowerCase(),
-                            x: getLabelXFromTextAlign(
-                                fontStyle[FONT_STYLE_OPTION_TEXT_ALIGN]
-                            ),
+                            ...getLineLabelStyle(fontStyle[FONT_STYLE_OPTION_TEXT_ALIGN], FONT_STYLE_BASE_LINE_LABEL, layout.type),
                         })
                       : undefined,
               })
@@ -129,12 +144,7 @@ function getBaseLine(layout) {
                   label: isString(layout.baseLineLabel)
                       ? Object.assign({}, plotLineLabelStyle, {
                             text: layout.baseLineLabel,
-                            align: (
-                                fontStyle[FONT_STYLE_OPTION_TEXT_ALIGN] || ''
-                            ).toLowerCase(),
-                            x: getLabelXFromTextAlign(
-                                fontStyle[FONT_STYLE_OPTION_TEXT_ALIGN]
-                            ),
+                            ...getLineLabelStyle(fontStyle[FONT_STYLE_OPTION_TEXT_ALIGN], FONT_STYLE_BASE_LINE_LABEL, layout.type),
                         })
                       : undefined,
               })
@@ -212,9 +222,7 @@ function getDefault(layout, series, extraOptions) {
                 min: getMinValue(layout),
                 max: getMaxValue(layout),
                 tickAmount: getSteps(layout),
-                title: getAxisTitle(
-                    layout.rangeAxisLabel,
-                    (layout.fontStyle || {})[FONT_STYLE_VERTICAL_AXIS_TITLE]
+                title: getAxisTitle(layout.rangeAxisLabel, layout.fontStyle[FONT_STYLE_VERTICAL_AXIS_TITLE], FONT_STYLE_VERTICAL_AXIS_TITLE, layout.type
                 ),
                 plotLines: arrayClean([
                     getTargetLine(layout),
