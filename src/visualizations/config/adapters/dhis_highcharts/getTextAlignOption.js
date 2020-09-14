@@ -37,5 +37,5 @@ const getTextAlignOptions = (fontStyleKey, visType) => {
     }
 }
 
-export const getTextAlignOption = (option, fontStyleKey, visType) =>
+export const getTextAlignOption = (option, fontStyleKey, visType) => 
     getTextAlignOptions(fontStyleKey, visType)[option]
