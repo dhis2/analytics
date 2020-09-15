@@ -1,5 +1,7 @@
 /*eslint no-unused-vars: ["error", { "ignoreRestSiblings": true }]*/
 import i18n from '@dhis2/d2-i18n'
+import { colors } from '@dhis2/ui'
+
 import { isVerticalType } from './visTypes'
 
 // Font styles
@@ -112,7 +114,6 @@ const verticalAlignOptions = () => [
 ]
 
 const defaultFont = 'Roboto'
-const defaultTextColor = '#000000'
 
 export const defaultFontStyle = {
     [FONT_STYLE_VISUALIZATION_TITLE]: {
@@ -121,7 +122,7 @@ export const defaultFontStyle = {
         [FONT_STYLE_OPTION_BOLD]: false,
         [FONT_STYLE_OPTION_ITALIC]: false,
         [FONT_STYLE_OPTION_UNDERLINE]: false,
-        [FONT_STYLE_OPTION_TEXT_COLOR]: defaultTextColor,
+        [FONT_STYLE_OPTION_TEXT_COLOR]: colors.grey900,
         [FONT_STYLE_OPTION_TEXT_ALIGN]: TEXT_ALIGN_CENTER,
     },
     [FONT_STYLE_VISUALIZATION_SUBTITLE]: {
@@ -130,7 +131,7 @@ export const defaultFontStyle = {
         [FONT_STYLE_OPTION_BOLD]: false,
         [FONT_STYLE_OPTION_ITALIC]: false,
         [FONT_STYLE_OPTION_UNDERLINE]: false,
-        [FONT_STYLE_OPTION_TEXT_COLOR]: defaultTextColor,
+        [FONT_STYLE_OPTION_TEXT_COLOR]: colors.grey700,
         [FONT_STYLE_OPTION_TEXT_ALIGN]: TEXT_ALIGN_CENTER,
     },
     [FONT_STYLE_HORIZONTAL_AXIS_TITLE]: {
@@ -139,8 +140,8 @@ export const defaultFontStyle = {
         [FONT_STYLE_OPTION_BOLD]: false,
         [FONT_STYLE_OPTION_ITALIC]: false,
         [FONT_STYLE_OPTION_UNDERLINE]: false,
-        [FONT_STYLE_OPTION_TEXT_COLOR]: defaultTextColor,
-        [FONT_STYLE_OPTION_TEXT_ALIGN]: TEXT_ALIGN_LEFT,
+        [FONT_STYLE_OPTION_TEXT_COLOR]: colors.grey900,
+        [FONT_STYLE_OPTION_TEXT_ALIGN]: TEXT_ALIGN_CENTER,
     },
     [FONT_STYLE_VERTICAL_AXIS_TITLE]: {
         [FONT_STYLE_OPTION_FONT]: defaultFont,
@@ -148,8 +149,8 @@ export const defaultFontStyle = {
         [FONT_STYLE_OPTION_BOLD]: false,
         [FONT_STYLE_OPTION_ITALIC]: false,
         [FONT_STYLE_OPTION_UNDERLINE]: false,
-        [FONT_STYLE_OPTION_TEXT_COLOR]: defaultTextColor,
-        [FONT_STYLE_OPTION_TEXT_ALIGN]: TEXT_ALIGN_LEFT,
+        [FONT_STYLE_OPTION_TEXT_COLOR]: colors.grey900,
+        [FONT_STYLE_OPTION_TEXT_ALIGN]: TEXT_ALIGN_CENTER,
     },
     [FONT_STYLE_LEGEND]: {
         [FONT_STYLE_OPTION_FONT]: defaultFont,
@@ -157,7 +158,7 @@ export const defaultFontStyle = {
         [FONT_STYLE_OPTION_BOLD]: false,
         [FONT_STYLE_OPTION_ITALIC]: false,
         [FONT_STYLE_OPTION_UNDERLINE]: false,
-        [FONT_STYLE_OPTION_TEXT_COLOR]: defaultTextColor,
+        [FONT_STYLE_OPTION_TEXT_COLOR]: colors.grey900,
         [FONT_STYLE_OPTION_TEXT_ALIGN]: TEXT_ALIGN_CENTER,
     },
     [FONT_STYLE_SERIES_AXIS_LABELS]: {
@@ -166,7 +167,7 @@ export const defaultFontStyle = {
         [FONT_STYLE_OPTION_BOLD]: false,
         [FONT_STYLE_OPTION_ITALIC]: false,
         [FONT_STYLE_OPTION_UNDERLINE]: false,
-        [FONT_STYLE_OPTION_TEXT_COLOR]: defaultTextColor,
+        [FONT_STYLE_OPTION_TEXT_COLOR]: colors.grey800,
     },
     [FONT_STYLE_CATEGORY_AXIS_LABELS]: {
         [FONT_STYLE_OPTION_FONT]: defaultFont,
@@ -174,7 +175,7 @@ export const defaultFontStyle = {
         [FONT_STYLE_OPTION_BOLD]: false,
         [FONT_STYLE_OPTION_ITALIC]: false,
         [FONT_STYLE_OPTION_UNDERLINE]: false,
-        [FONT_STYLE_OPTION_TEXT_COLOR]: defaultTextColor,
+        [FONT_STYLE_OPTION_TEXT_COLOR]: colors.grey800,
     },
     [FONT_STYLE_TARGET_LINE_LABEL]: {
         [FONT_STYLE_OPTION_FONT]: defaultFont,
@@ -182,7 +183,7 @@ export const defaultFontStyle = {
         [FONT_STYLE_OPTION_BOLD]: false,
         [FONT_STYLE_OPTION_ITALIC]: false,
         [FONT_STYLE_OPTION_UNDERLINE]: false,
-        [FONT_STYLE_OPTION_TEXT_COLOR]: defaultTextColor,
+        [FONT_STYLE_OPTION_TEXT_COLOR]: colors.grey900,
         [FONT_STYLE_OPTION_TEXT_ALIGN]: TEXT_ALIGN_LEFT,
     },
     [FONT_STYLE_BASE_LINE_LABEL]: {
@@ -191,7 +192,7 @@ export const defaultFontStyle = {
         [FONT_STYLE_OPTION_BOLD]: false,
         [FONT_STYLE_OPTION_ITALIC]: false,
         [FONT_STYLE_OPTION_UNDERLINE]: false,
-        [FONT_STYLE_OPTION_TEXT_COLOR]: defaultTextColor,
+        [FONT_STYLE_OPTION_TEXT_COLOR]: colors.grey900,
         [FONT_STYLE_OPTION_TEXT_ALIGN]: TEXT_ALIGN_LEFT,
     },
 }
