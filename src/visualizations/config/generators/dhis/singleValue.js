@@ -1,3 +1,5 @@
+import { colors } from '@dhis2/ui'
+
 import { getColorByValueFromLegendSet } from '../../../../modules/legends'
 import {
     FONT_STYLE_VISUALIZATION_TITLE,
@@ -16,7 +18,7 @@ const svgNS = 'http://www.w3.org/2000/svg'
 
 const generateValueSVG = (value, legendSet, y) => {
     const textSize = 300
-    const defaultFillColor = '#000000'
+    const defaultFillColor = colors.grey900
 
     const svgValue = document.createElementNS(svgNS, 'svg')
     svgValue.setAttribute('xmlns', svgNS)

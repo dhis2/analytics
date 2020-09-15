@@ -1,3 +1,5 @@
+import { colors } from '@dhis2/ui'
+
 import getCumulativeData from '../getCumulativeData'
 import getPie from './pie'
 import getGauge from './gauge'
@@ -112,6 +114,7 @@ function getDefault(series, layout, isStacked, extraOptions) {
         if (!seriesObj.dataLabels && (layout.showValues || layout.showData)) {
             seriesObj.dataLabels = {
                 enabled: true,
+                color: colors.grey900
             }
         }
 
