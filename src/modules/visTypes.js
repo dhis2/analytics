@@ -147,7 +147,7 @@ const twoCategoryChartTypes = [
     VIS_TYPE_STACKED_AREA,
 ]
 
-const verticalTypes = [VIS_TYPE_BAR, VIS_TYPE_STACKED_BAR]
+const verticalTypes = [VIS_TYPE_BAR, VIS_TYPE_STACKED_BAR, VIS_TYPE_GAUGE]
 
 export const defaultVisType = VIS_TYPE_COLUMN
 export const isStacked = type => stackedTypes.includes(type)

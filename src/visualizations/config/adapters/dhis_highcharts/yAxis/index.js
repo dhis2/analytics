@@ -76,7 +76,7 @@ function getSteps(layout) {
     return isNumeric(layout.rangeAxisSteps) ? layout.rangeAxisSteps : undefined
 }
 
-function getLabelOffsetFromTextAlign(textAlign) {
+const getLabelOffsetFromTextAlign = textAlign => {
     switch (textAlign) {
         case TEXT_ALIGN_LEFT:
             return 10
@@ -99,9 +99,6 @@ const getLineLabelStyle = (fontStyle, fontStyleType, visType) => {
     if (isVertical) {
         result.align = getTextAlignOption(fontStyle, fontStyleType)
     }
-    console.log('---------------------------')
-    console.log(fontStyleType + ' ' + visType)
-    console.log(result)
     return result
 }
 
