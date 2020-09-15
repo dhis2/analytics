@@ -6,7 +6,15 @@ import { getColorByValueFromLegendSet, LEGEND_DISPLAY_STYLE_FILL } from '../../.
 import { FONT_STYLE_OPTION_TEXT_COLOR,
     FONT_STYLE_OPTION_FONT_SIZE,
     FONT_STYLE_OPTION_BOLD,
-    FONT_STYLE_OPTION_ITALIC, TEXT_ALIGN_LEFT, TEXT_ALIGN_RIGHT, TEXT_ALIGN_CENTER, FONT_STYLE_BASE_LINE_LABEL, FONT_STYLE_TARGET_LINE_LABEL, FONT_STYLE_OPTION_TEXT_ALIGN } from '../../../../../modules/fontStyle'
+    FONT_STYLE_OPTION_ITALIC, 
+    TEXT_ALIGN_LEFT, 
+    TEXT_ALIGN_RIGHT, 
+    TEXT_ALIGN_CENTER, 
+    FONT_STYLE_BASE_LINE_LABEL, 
+    FONT_STYLE_TARGET_LINE_LABEL, 
+    FONT_STYLE_OPTION_TEXT_ALIGN, 
+    FONT_STYLE_SERIES_AXIS_LABELS 
+} from '../../../../../modules/fontStyle'
 import { VIS_TYPE_GAUGE } from '../../../../../modules/visTypes'
 import { getTextAlignOption } from '../getTextAlignOption'
 
@@ -55,6 +63,22 @@ function getPlotLine(value, label, fontStyle, fontStyleType) {
     }
 }
 
+const getLabels = fontStyle => (
+    {
+        y: parseInt(fontStyle[FONT_STYLE_OPTION_FONT_SIZE], 10) + 7,
+        style: {
+            color: fontStyle[FONT_STYLE_OPTION_TEXT_COLOR],
+            fontSize: `${fontStyle[FONT_STYLE_OPTION_FONT_SIZE]}px`,
+            fontWeight: fontStyle[FONT_STYLE_OPTION_BOLD]
+                ? FONT_STYLE_OPTION_BOLD
+                : 'normal',
+            fontStyle: fontStyle[FONT_STYLE_OPTION_ITALIC]
+                ? FONT_STYLE_OPTION_ITALIC
+                : 'normal',
+        },
+    }
+)
+
 export default function(layout, series, legendSet) {
     const plotLines = arrayClean([
         isNumber(layout.baseLineValue) ? getPlotLine(layout.baseLineValue, layout.baseLineLabel || DEFAULT_BASE_LINE_LABEL, layout.fontStyle[FONT_STYLE_BASE_LINE_LABEL], FONT_STYLE_BASE_LINE_LABEL) : null,
@@ -73,12 +97,7 @@ export default function(layout, series, legendSet) {
         }, 
         minColor: fillColor,
         maxColor: fillColor,
-        labels: {
-            y: 18,
-            style: {
-                fontSize: '13px',
-            },
-        },
+        labels: getLabels(layout.fontStyle[FONT_STYLE_SERIES_AXIS_LABELS]),
         title: {
             text: series[0].name,
         },
