@@ -26,7 +26,6 @@ function noAxis() {
 export const getLabelsStyle = fontStyle => fontStyle ? {
     style: {
         color: fontStyle[FONT_STYLE_OPTION_TEXT_COLOR],
-        textShadow: '0 0 #ccc',
         fontSize: `${fontStyle[FONT_STYLE_OPTION_FONT_SIZE]}px`,
         fontWeight: fontStyle[FONT_STYLE_OPTION_BOLD] ? FONT_STYLE_OPTION_BOLD : 'normal',
         fontStyle: fontStyle[FONT_STYLE_OPTION_ITALIC] ? FONT_STYLE_OPTION_ITALIC : 'normal'

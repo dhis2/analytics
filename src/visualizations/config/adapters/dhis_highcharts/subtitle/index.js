@@ -77,7 +77,6 @@ export default function(series, layout, metaData, dashboard) {
                     whiteSpace: 'nowrap',
                     overflow: 'hidden',
                     textOverflow: 'ellipsis',
-                    textShadow: '0 0 #999',
                 },
             },
               subtitle

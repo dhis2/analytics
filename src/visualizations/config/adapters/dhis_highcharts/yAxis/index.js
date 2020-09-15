@@ -55,7 +55,6 @@ function getPlotLineLabelStyle(fontStyle) {
             fontStyle: fontStyle[FONT_STYLE_OPTION_ITALIC]
                 ? FONT_STYLE_OPTION_ITALIC
                 : 'normal',
-            textShadow: '0 0 6px #ccc',
         },
     }
 }
@@ -163,7 +162,6 @@ function getLabels(layout) {
     return {
         style: {
             color: fontStyle[FONT_STYLE_OPTION_TEXT_COLOR],
-            textShadow: '0 0 #ccc',
             fontSize: `${fontStyle[FONT_STYLE_OPTION_FONT_SIZE]}px`,
             fontWeight: fontStyle[FONT_STYLE_OPTION_BOLD]
                 ? FONT_STYLE_OPTION_BOLD
