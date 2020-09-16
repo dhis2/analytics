@@ -1,3 +1,17 @@
+## [10.0.5](https://github.com/dhis2/analytics/compare/v10.0.4...v10.0.5) (2020-09-14)
+
+
+### Bug Fixes
+
+* exclude negative sign from digit group separation ([#598](https://github.com/dhis2/analytics/issues/598)) ([d7ec310](https://github.com/dhis2/analytics/commit/d7ec310f31dcdbb6053f0104d97b80f435ddfdd0))
+
+## [10.0.4](https://github.com/dhis2/analytics/compare/v10.0.3...v10.0.4) (2020-09-14)
+
+
+### Bug Fixes
+
+* text styling not applied when switching to 2 category ([#595](https://github.com/dhis2/analytics/issues/595)) ([1694652](https://github.com/dhis2/analytics/commit/16946523993061a0ea8b1c23a01c0db456bcf2ab))
+
 ## [10.0.3](https://github.com/dhis2/analytics/compare/v10.0.2...v10.0.3) (2020-09-07)
 
 
