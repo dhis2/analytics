@@ -65,20 +65,59 @@ function getDefaultTrendLines(layout, series, isStacked) {
     return newSeries
 }
 
+function getTwoCategoryTrendlineConfig(
+    groupObj,
+    groupIndex,
+    groupRegressionObject,
+    regressionType,
+    trendlineId
+) {
+    const trendlineConfig = getRegressionObj(groupObj, regressionType)
+
+    groupRegressionObject.splice(
+        groupIndex * groupObj.length,
+        groupObj.length,
+        ...trendlineConfig.data.map(point => point[1])
+    )
+
+    trendlineConfig.data = groupRegressionObject
+
+    // link trendlines
+    // so only 1 label in the legend is shown and all linked trendlines
+    // can be toggled simultaneously
+    if (groupIndex === 0) {
+        trendlineConfig.id = trendlineId
+    } else {
+        trendlineConfig.linkedTo = trendlineId
+    }
+
+    return trendlineConfig
+}
+
 function getTwoCategoryTrendLines(layout, series, isStacked) {
     const newSeries = []
 
     if (isStacked) {
-        newSeries.push(
-            ...series,
-            Object.assign(
-                {},
-                getRegressionObj(
-                    getStackedData(series, layout),
-                    layout.regressionType
-                )
-            )
+        newSeries.push(...series)
+
+        const stackedData = getStackedData(series, layout)
+
+        const groupRegressionTemplate = Array.from(
+            { length: stackedData.flat().length },
+            () => null
         )
+
+        stackedData.forEach((groupObj, groupIndex) => {
+            const trendlineConfig = getTwoCategoryTrendlineConfig(
+                groupObj,
+                groupIndex,
+                groupRegressionTemplate.slice(),
+                layout.regressionType,
+                'trendline-stacked'
+            )
+
+            newSeries.push(trendlineConfig)
+        })
     } else {
         series.forEach(seriesObj => {
             const trendlineSerieId = `trendline-${seriesObj.id}`
@@ -92,29 +131,13 @@ function getTwoCategoryTrendLines(layout, series, isStacked) {
                 )
 
                 seriesObj.custom.data.forEach((groupObj, groupIndex) => {
-                    const trendlineConfig = getRegressionObj(
+                    const trendlineConfig = getTwoCategoryTrendlineConfig(
                         groupObj,
-                        layout.regressionType
+                        groupIndex,
+                        groupRegressionTemplate.slice(),
+                        layout.regressionType,
+                        trendlineSerieId
                     )
-
-                    const groupRegressionObject = groupRegressionTemplate.slice()
-
-                    groupRegressionObject.splice(
-                        groupIndex * groupObj.length,
-                        groupObj.length,
-                        ...trendlineConfig.data.map(point => point[1])
-                    )
-
-                    trendlineConfig.data = groupRegressionObject
-
-                    // link all trendlines for the same serie
-                    // so only 1 label in the legend is shown and all trendlines
-                    // for that serie can be toggled simultaneously
-                    if (groupIndex === 0) {
-                        trendlineConfig.id = trendlineSerieId
-                    } else {
-                        trendlineConfig.linkedTo = trendlineSerieId
-                    }
 
                     newSeries.push(
                         Object.assign({}, trendlineConfig, {
