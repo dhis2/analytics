@@ -5,6 +5,7 @@ export { default as DataDimension } from './components/DataDimension/DataDimensi
 
 export { default as PeriodDimension } from './components/PeriodDimension/PeriodDimension'
 export { default as FixedPeriodSelect } from './components/PeriodDimension/FixedPeriodSelect'
+export { getRelativePeriodIds } from './components/PeriodDimension/utils/relativePeriods'
 
 export { default as OrgUnitDimension } from './components/OrgUnitDimension/OrgUnitDimension'
 
