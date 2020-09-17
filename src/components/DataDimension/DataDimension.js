@@ -150,6 +150,8 @@ export class DataDimension extends Component {
         })
     }
 
+    debouncedUpdateAlternatives = debounce(this.updateAlternatives, 300)
+
     onGroupChange = async groupId => {
         if (groupId !== this.state.groupId) {
             this.setState({ groupId }, this.updateAlternatives)
@@ -163,17 +165,11 @@ export class DataDimension extends Component {
     }
 
     onClearFilter = () => {
-        this.setState(
-            { filterText: '' },
-            debounce(async () => this.updateAlternatives(), 300)
-        )
+        this.setState({ filterText: '' }, this.debouncedUpdateAlternatives)
     }
 
     onFilterTextChange = filterText => {
-        this.setState(
-            { filterText },
-            debounce(async () => this.updateAlternatives(), 300)
-        )
+        this.setState({ filterText }, this.debouncedUpdateAlternatives)
     }
 
     selectItems = selectedIds => {
