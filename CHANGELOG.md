@@ -1,3 +1,10 @@
+## [10.0.6](https://github.com/dhis2/analytics/compare/v10.0.5...v10.0.6) (2020-09-17)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([6674d93](https://github.com/dhis2/analytics/commit/6674d933b6f223c5b9290f9577bc94996227b753))
+
 ## [10.0.5](https://github.com/dhis2/analytics/compare/v10.0.4...v10.0.5) (2020-09-14)
 
 
