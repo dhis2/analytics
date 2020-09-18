@@ -21,7 +21,7 @@ export default function(store, layout) {
     // bottom x axis
     const xAxis = [
         {
-            title: getAxisTitle(layout.domainAxisLabel, layout.fontStyle[FONT_STYLE_HORIZONTAL_AXIS_TITLE]),
+            title: getAxisTitle(layout.domainAxisLabel, layout.fontStyle[FONT_STYLE_HORIZONTAL_AXIS_TITLE], FONT_STYLE_HORIZONTAL_AXIS_TITLE, layout.type),
             categories: Array.from(
                 { length: axis2Categories.length || 1 },
                 () => axis1Categories

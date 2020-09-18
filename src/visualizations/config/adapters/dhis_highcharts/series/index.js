@@ -1,3 +1,5 @@
+import { colors } from '@dhis2/ui'
+
 import getCumulativeData from '../getCumulativeData'
 import getPie from './pie'
 import getGauge from './gauge'
@@ -6,7 +8,7 @@ import { getFullIdAxisMap, getAxisIdsMap } from '../customAxes'
 import { generateColors } from '../../../../util/colors/gradientColorGenerator'
 import {
     colorSets,
-    COLOR_SET_MONO_PATTERNS,
+    COLOR_SET_PATTERNS,
 } from '../../../../util/colors/colorSets'
 import {
     VIS_TYPE_PIE,
@@ -46,7 +48,7 @@ function getIndexColorPatternMap(series, layout, extraOptions) {
 
     return series.reduce((map, s, index) => {
         map[index] =
-            layout.colorSet === COLOR_SET_MONO_PATTERNS
+            layout.colorSet === COLOR_SET_PATTERNS
                 ? { patternIndex: getPatternIndex(index) }
                 : getColor(colors, index)
         return map
@@ -66,11 +68,14 @@ function getIdColorMap(series, layout, extraOptions) {
 
         const colorsByAxis = Object.keys(axisIdsMap).reduce((map, axis) => {
             const numberOfIds = axisIdsMap[axis].length
-            map[axis] = numberOfIds > 1 ? generateColors(
-                theme[axis].startColor,
-                theme[axis].endColor,
-                numberOfIds
-            ) : [theme[axis].mainColor]
+            map[axis] =
+                numberOfIds > 1
+                    ? generateColors(
+                          theme[axis].startColor,
+                          theme[axis].endColor,
+                          numberOfIds
+                      )
+                    : [theme[axis].mainColor]
             return map
         }, {})
 
@@ -112,6 +117,7 @@ function getDefault(series, layout, isStacked, extraOptions) {
         if (!seriesObj.dataLabels && (layout.showValues || layout.showData)) {
             seriesObj.dataLabels = {
                 enabled: true,
+                color: colors.grey900
             }
         }
 

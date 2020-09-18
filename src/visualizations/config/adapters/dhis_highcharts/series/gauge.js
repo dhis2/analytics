@@ -1,3 +1,5 @@
+import { colors } from '@dhis2/ui'
+
 import {
     getColorByValueFromLegendSet,
     LEGEND_DISPLAY_STYLE_TEXT,
@@ -24,7 +26,7 @@ export default function(series, layout, legendSet) {
                                   legendSet,
                                   series[0].data
                               )
-                            : undefined,
+                            : colors.grey900,
                 },
             },
         },

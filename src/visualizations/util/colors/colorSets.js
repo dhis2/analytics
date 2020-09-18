@@ -8,7 +8,7 @@ export const COLOR_SET_BRIGHT = 'BRIGHT'
 export const COLOR_SET_DARK = 'DARK'
 export const COLOR_SET_GRAY = 'GRAY'
 export const COLOR_SET_COLOR_BLIND = 'COLOR_BLIND'
-export const COLOR_SET_MONO_PATTERNS = 'MONO_PATTERNS'
+export const COLOR_SET_PATTERNS = 'PATTERNS'
 
 export const colorSets = {
     [COLOR_SET_DEFAULT]: {
@@ -83,7 +83,7 @@ export const colorSets = {
             '#006ba4',
         ],
     },
-    [COLOR_SET_MONO_PATTERNS]: {
+    [COLOR_SET_PATTERNS]: {
         patterns: H.patterns,
     },
 }
