@@ -1,3 +1,19 @@
+## [10.0.7](https://github.com/dhis2/analytics/compare/v10.0.6...v10.0.7) (2020-09-18)
+
+
+### Bug Fixes
+
+* apply legend color to SV when using DGS ([#599](https://github.com/dhis2/analytics/issues/599)) ([5fb7538](https://github.com/dhis2/analytics/commit/5fb7538612c4b1dcc4b78d3b7251a8f6f8a9b69f))
+* custom sort order, hide empty categories options crash pie/gauge ([#596](https://github.com/dhis2/analytics/issues/596)) ([97970a1](https://github.com/dhis2/analytics/commit/97970a14bb70358236b315fb4d450f7d06d98791))
+* fix trendline handling for stacked area with 2 categories ([#603](https://github.com/dhis2/analytics/issues/603)) ([4c53d9a](https://github.com/dhis2/analytics/commit/4c53d9a0e2c2a9ad99dbd7071359969f09f6ee52))
+
+## [10.0.6](https://github.com/dhis2/analytics/compare/v10.0.5...v10.0.6) (2020-09-17)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([6674d93](https://github.com/dhis2/analytics/commit/6674d933b6f223c5b9290f9577bc94996227b753))
+
 ## [10.0.5](https://github.com/dhis2/analytics/compare/v10.0.4...v10.0.5) (2020-09-14)
 
 
