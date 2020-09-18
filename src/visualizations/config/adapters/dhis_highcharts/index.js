@@ -130,7 +130,7 @@ export default function({ store, layout, el, extraConfig, extraOptions }) {
         isString(_layout.regressionType) &&
         _layout.regressionType !== 'NONE' &&
         !isRegressionIneligible(_layout.type) &&
-        ((!(isDualAxisType(layout.type) && hasCustomAxes(filteredSeries)) || hasRelativeItems(layout.columns[0]?.dimension, layout.columns[0]?.items)))
+        ((!(isDualAxisType(layout.type) && hasCustomAxes(filteredSeries)) || hasRelativeItems(layout.columns[0]?.dimension, layout.columns[0]?.items.map(item => item.id))))
     ) {
         config.series = addTrendLines(_layout, config.series, stacked)
     }

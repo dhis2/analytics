@@ -61,7 +61,7 @@ function getIdColorMap(series, layout, extraOptions) {
         )
     )
 
-    if (isDualAxisType(layout.type) && hasCustomAxes(filteredSeries) && !hasRelativeItems(layout.columns[0]?.dimension, layout.columns[0]?.items)) {
+    if (isDualAxisType(layout.type) && hasCustomAxes(filteredSeries) && !hasRelativeItems(layout.columns[0]?.dimension, layout.columns[0]?.items.map(item => item.id))) {
         const axisIdsMap = getAxisIdsMap(layout.series, series)
         const theme = extraOptions.multiAxisTheme
 
@@ -131,7 +131,7 @@ function getDefault(series, layout, isStacked, extraOptions) {
             item => item.dimensionItem === seriesObj.id
         )
 
-        if (matchedObject && !hasRelativeItems(layout.columns[0]?.dimension, layout.columns[0]?.items)) {
+        if (matchedObject && !hasRelativeItems(layout.columns[0]?.dimension, layout.columns[0]?.items.map(item => item.id))) {
             // Checks if the item has custom options
             if (matchedObject.type) {
                 seriesObj.type = getType(matchedObject.type).type
@@ -162,7 +162,7 @@ function getDefault(series, layout, isStacked, extraOptions) {
             : idColorMap[seriesObj.id]
 
         // axis number
-        seriesObj.yAxis = isDualAxisType(layout.type) && !hasRelativeItems(layout.columns[0]?.dimension, layout.columns[0]?.items)
+        seriesObj.yAxis = isDualAxisType(layout.type) && !hasRelativeItems(layout.columns[0]?.dimension, layout.columns[0]?.items.map(item => item.id))
             ? getAxisStringFromId(fullIdAxisMap[seriesObj.id])
             : getAxisStringFromId(0)
 

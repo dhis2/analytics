@@ -199,7 +199,7 @@ function getDefault(layout, series, extraOptions) {
             seriesItem => seriesItem.id === layoutSeriesItem.dimensionItem
         )
     )
-    if (isDualAxisType(layout.type) && hasCustomAxes(filteredSeries) && !hasRelativeItems(layout.columns[0]?.dimension, layout.columns[0]?.items)) {
+    if (isDualAxisType(layout.type) && hasCustomAxes(filteredSeries) && !hasRelativeItems(layout.columns[0]?.dimension, layout.columns[0]?.items.map(item => item.id))) {
         const axisIdsMap = getAxisIdsMap(layout.series, series)
         axes.push(
             ...getMultipleAxes(
