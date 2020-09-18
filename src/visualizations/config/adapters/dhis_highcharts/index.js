@@ -15,6 +15,7 @@ import getTrimmedConfig from './getTrimmedConfig'
 import addTrendLines, { isRegressionIneligible } from './addTrendLines'
 import { defaultMultiAxisTheme1 } from '../../../util/colors/themes'
 import { hasCustomAxes } from '../../../../modules/axis'
+import { hasRelativeItems } from './hasRelativeItems'
 
 const getTransformedLayout = layout => ({
     ...layout,
@@ -129,7 +130,7 @@ export default function({ store, layout, el, extraConfig, extraOptions }) {
         isString(_layout.regressionType) &&
         _layout.regressionType !== 'NONE' &&
         !isRegressionIneligible(_layout.type) &&
-        !(isDualAxisType(layout.type) && hasCustomAxes(filteredSeries))
+        ((!(isDualAxisType(layout.type) && hasCustomAxes(filteredSeries)) || hasRelativeItems(layout.columns[0]?.dimension, layout.columns[0]?.items)))
     ) {
         config.series = addTrendLines(_layout, config.series, stacked)
     }

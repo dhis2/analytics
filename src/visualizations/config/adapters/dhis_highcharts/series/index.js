@@ -17,6 +17,7 @@ import {
 } from '../../../../../modules/visTypes'
 import { hasCustomAxes } from '../../../../../modules/axis'
 import { getAxisStringFromId } from '../../../../util/axisId'
+import { hasRelativeItems } from '../hasRelativeItems'
 
 const DEFAULT_ANIMATION_DURATION = 200
 
@@ -60,7 +61,7 @@ function getIdColorMap(series, layout, extraOptions) {
         )
     )
 
-    if (isDualAxisType(layout.type) && hasCustomAxes(filteredSeries)) {
+    if (isDualAxisType(layout.type) && hasCustomAxes(filteredSeries) && !hasRelativeItems(layout.columns[0]?.dimension, layout.columns[0]?.items)) {
         const axisIdsMap = getAxisIdsMap(layout.series, series)
         const theme = extraOptions.multiAxisTheme
 
@@ -130,7 +131,7 @@ function getDefault(series, layout, isStacked, extraOptions) {
             item => item.dimensionItem === seriesObj.id
         )
 
-        if (matchedObject) {
+        if (matchedObject && !hasRelativeItems(layout.columns[0]?.dimension, layout.columns[0]?.items)) {
             // Checks if the item has custom options
             if (matchedObject.type) {
                 seriesObj.type = getType(matchedObject.type).type
@@ -161,7 +162,7 @@ function getDefault(series, layout, isStacked, extraOptions) {
             : idColorMap[seriesObj.id]
 
         // axis number
-        seriesObj.yAxis = isDualAxisType(layout.type)
+        seriesObj.yAxis = isDualAxisType(layout.type) && !hasRelativeItems(layout.columns[0]?.dimension, layout.columns[0]?.items)
             ? getAxisStringFromId(fullIdAxisMap[seriesObj.id])
             : getAxisStringFromId(0)
 

@@ -28,6 +28,7 @@ import {
     TEXT_ALIGN_CENTER,
     TEXT_ALIGN_RIGHT,
 } from '../../../../../modules/fontStyle'
+import { hasRelativeItems } from '../hasRelativeItems'
 
 const DEFAULT_MIN_VALUE = 0
 
@@ -198,7 +199,7 @@ function getDefault(layout, series, extraOptions) {
             seriesItem => seriesItem.id === layoutSeriesItem.dimensionItem
         )
     )
-    if (isDualAxisType(layout.type) && hasCustomAxes(filteredSeries)) {
+    if (isDualAxisType(layout.type) && hasCustomAxes(filteredSeries) && !hasRelativeItems(layout.columns[0]?.dimension, layout.columns[0]?.items)) {
         const axisIdsMap = getAxisIdsMap(layout.series, series)
         axes.push(
             ...getMultipleAxes(
