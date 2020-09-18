@@ -208,6 +208,6 @@ export {
     COLOR_SET_DARK,
     COLOR_SET_GRAY,
     COLOR_SET_COLOR_BLIND,
-    COLOR_SET_MONO_PATTERNS,
+    COLOR_SET_PATTERNS,
     colorSets,
 } from './visualizations/util/colors/colorSets'
