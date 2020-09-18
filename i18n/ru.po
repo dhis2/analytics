@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-08-18T13:39:43.818Z\n"
+"POT-Creation-Date: 2020-09-15T07:30:45.529Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: Viktor Varland <viktor@dhis2.org>, 2020\n"
 "Language-Team: Russian (https://www.transifex.com/hisp-uio/teams/100509/ru/)\n"
@@ -444,6 +444,12 @@ msgid "Middle"
 msgstr ""
 
 msgid "End"
+msgstr ""
+
+msgid "Top"
+msgstr ""
+
+msgid "Bottom"
 msgstr ""
 
 msgid "{{dynamicOuNames}} and {{lastOuName}}"
