@@ -28,7 +28,7 @@ import {
     TEXT_ALIGN_CENTER,
     TEXT_ALIGN_RIGHT,
 } from '../../../../../modules/fontStyle'
-import { hasRelativeItems } from '../hasRelativeItems'
+import { hasRelativeItems } from '../../../../../modules/relativeItems'
 
 const DEFAULT_MIN_VALUE = 0
 

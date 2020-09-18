@@ -17,7 +17,7 @@ import {
 } from '../../../../../modules/visTypes'
 import { hasCustomAxes } from '../../../../../modules/axis'
 import { getAxisStringFromId } from '../../../../util/axisId'
-import { hasRelativeItems } from '../hasRelativeItems'
+import { hasRelativeItems } from '../../../../../modules/relativeItems'
 
 const DEFAULT_ANIMATION_DURATION = 200
 
