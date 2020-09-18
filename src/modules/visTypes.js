@@ -147,6 +147,8 @@ const twoCategoryChartTypes = [
     VIS_TYPE_STACKED_AREA,
 ]
 
+const verticalTypes = [VIS_TYPE_BAR, VIS_TYPE_STACKED_BAR, VIS_TYPE_GAUGE]
+
 export const defaultVisType = VIS_TYPE_COLUMN
 export const isStacked = type => stackedTypes.includes(type)
 export const isYearOverYear = type => yearOverYearTypes.includes(type)
@@ -154,3 +156,4 @@ export const isDualAxisType = type => dualAxisTypes.includes(type)
 export const isSingleValue = type => type === VIS_TYPE_SINGLE_VALUE
 export const isTwoCategoryChartType = type =>
     twoCategoryChartTypes.includes(type)
+export const isVerticalType = type => verticalTypes.includes(type)
