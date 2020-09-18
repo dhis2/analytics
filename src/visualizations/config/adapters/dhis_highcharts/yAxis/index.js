@@ -30,6 +30,7 @@ import {
     TEXT_ALIGN_RIGHT,
 } from '../../../../../modules/fontStyle'
 import { getTextAlignOption } from '../getTextAlignOption'
+import { axisHasRelativeItems } from '../../../../../modules/layout/axisHasRelativeItems'
 
 const DEFAULT_MIN_VALUE = 0
 
@@ -93,7 +94,7 @@ const getLineLabelStyle = (fontStyle, fontStyleType, visType) => {
     const alignValue = getTextAlignOption(fontStyle, fontStyleType, visType)
     const offsetKey = isVertical ? 'y' : 'x'
     const offsetValue = getLabelOffsetFromTextAlign(fontStyle)
-    
+
     const result = {[alignKey]: alignValue, [offsetKey]: offsetValue }
     if (isVertical) {
         result.align = getTextAlignOption(fontStyle, fontStyleType)
@@ -202,7 +203,7 @@ function getDefault(layout, series, extraOptions) {
             seriesItem => seriesItem.id === layoutSeriesItem.dimensionItem
         )
     )
-    if (isDualAxisType(layout.type) && hasCustomAxes(filteredSeries)) {
+    if (isDualAxisType(layout.type) && hasCustomAxes(filteredSeries) && !axisHasRelativeItems(layout.columns)) {
         const axisIdsMap = getAxisIdsMap(layout.series, series)
         axes.push(
             ...getMultipleAxes(

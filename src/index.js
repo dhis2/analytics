@@ -52,6 +52,10 @@ export {
 
 export { ouIdHelper } from './modules/ouIdHelper'
 
+// Modules: relativeItems
+
+export { hasRelativeItems } from './modules/relativeItems'
+
 // Modules: layout
 
 export { LAYOUT } from './modules/layout/layout'
