@@ -158,89 +158,95 @@ function getTwoCategoryTrimmedConfig(config, layout) {
     )
     const emptyGroupIndexes = getEmptySeriesGroupIndexes(filteredSeries)
 
-    const {
-        firstGroupWithValuesIndex,
-        lastGroupWithValuesIndex,
-    } = getFirstLastGroupWithValuesIndexes(filteredSeries)
-
-    const trimmedSeries = config.series.map(seriesObj => {
-        if (seriesObj.custom.isTwoCategoryFakeSerie) {
-            seriesObj.data = cleanData(
-                seriesObj.data,
-                emptyGroupIndexes,
-                firstGroupWithValuesIndex,
-                lastGroupWithValuesIndex,
-                layout.hideEmptyRowItems
-            )
-        } else {
-            seriesObj.custom.data = cleanData(
-                seriesObj.custom.data,
-                emptyGroupIndexes,
-                firstGroupWithValuesIndex,
-                lastGroupWithValuesIndex,
-                layout.hideEmptyRowItems
-            )
-
-            seriesObj.data = getTwoCategorySplitSerieData(seriesObj.custom.data)
-        }
-
-        return seriesObj
-    })
-
-    const trimmedXAxis = config.xAxis.map(xAxis => {
-        xAxis.categories = cleanData(
-            xAxis.categories,
-            emptyGroupIndexes,
+    if (emptyGroupIndexes.length && config.xAxis && config.series) {
+        const {
             firstGroupWithValuesIndex,
             lastGroupWithValuesIndex,
-            layout.hideEmptyRowItems
-        )
+        } = getFirstLastGroupWithValuesIndexes(filteredSeries)
 
-        return xAxis
-    })
+        const trimmedSeries = config.series.map(seriesObj => {
+            if (seriesObj.custom.isTwoCategoryFakeSerie) {
+                seriesObj.data = cleanData(
+                    seriesObj.data,
+                    emptyGroupIndexes,
+                    firstGroupWithValuesIndex,
+                    lastGroupWithValuesIndex,
+                    layout.hideEmptyRowItems
+                )
+            } else {
+                seriesObj.custom.data = cleanData(
+                    seriesObj.custom.data,
+                    emptyGroupIndexes,
+                    firstGroupWithValuesIndex,
+                    lastGroupWithValuesIndex,
+                    layout.hideEmptyRowItems
+                )
 
-    return emptyGroupIndexes.length && config.xAxis && config.series
-        ? Object.assign({}, config, {
-              series: trimmedSeries,
-              xAxis: trimmedXAxis,
-          })
-        : config
+                seriesObj.data = getTwoCategorySplitSerieData(
+                    seriesObj.custom.data
+                )
+            }
+
+            return seriesObj
+        })
+
+        const trimmedXAxis = config.xAxis.map(xAxis => {
+            xAxis.categories = cleanData(
+                xAxis.categories,
+                emptyGroupIndexes,
+                firstGroupWithValuesIndex,
+                lastGroupWithValuesIndex,
+                layout.hideEmptyRowItems
+            )
+
+            return xAxis
+        })
+
+        return Object.assign({}, config, {
+            series: trimmedSeries,
+            xAxis: trimmedXAxis,
+        })
+    } else {
+        return config
+    }
 }
 
 function getDefaultTrimmedConfig(config, layout) {
     const emptySeriesIndexes = getEmptySeriesIndexes(config.series)
 
-    const { firstValueIndex, lastValueIndex } = getFirstLastValueIndexes(
-        config.series
-    )
-    const trimmedSeries = config.series.map(seriesObj => ({
-        ...seriesObj,
-        data: cleanData(
-            seriesObj.data,
-            emptySeriesIndexes,
-            firstValueIndex,
-            lastValueIndex,
-            layout.hideEmptyRowItems
-        ),
-    }))
-
-    const trimmedXAxis = [
-        {
-            ...config.xAxis,
-            categories: cleanData(
-                config.xAxis[0].categories,
+    if (emptySeriesIndexes.length && config.xAxis && config.series) {
+        const { firstValueIndex, lastValueIndex } = getFirstLastValueIndexes(
+            config.series
+        )
+        const trimmedSeries = config.series.map(seriesObj => ({
+            ...seriesObj,
+            data: cleanData(
+                seriesObj.data,
                 emptySeriesIndexes,
                 firstValueIndex,
                 lastValueIndex,
                 layout.hideEmptyRowItems
             ),
-        },
-    ]
+        }))
 
-    return emptySeriesIndexes.length && config.xAxis && config.series
-        ? Object.assign({}, config, {
-              series: trimmedSeries,
-              xAxis: trimmedXAxis,
-          })
-        : config
+        const trimmedXAxis = [
+            {
+                ...config.xAxis,
+                categories: cleanData(
+                    config.xAxis[0].categories,
+                    emptySeriesIndexes,
+                    firstValueIndex,
+                    lastValueIndex,
+                    layout.hideEmptyRowItems
+                ),
+            },
+        ]
+
+        return Object.assign({}, config, {
+            series: trimmedSeries,
+            xAxis: trimmedXAxis,
+        })
+    } else {
+        return config
+    }
 }
