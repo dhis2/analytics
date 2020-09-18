@@ -1,3 +1,10 @@
+## [11.0.2](https://github.com/dhis2/analytics/compare/v11.0.1...v11.0.2) (2020-09-18)
+
+
+### Bug Fixes
+
+* export hasRelativeItems and use as condition for Highcharts config ([#605](https://github.com/dhis2/analytics/issues/605)) ([1892347](https://github.com/dhis2/analytics/commit/189234705f90c5d28d21fc675f1c6d1fa79fcd96)), closes [dhis2/data-visualizer-app#1280](https://github.com/dhis2/data-visualizer-app/issues/1280)
+
 ## [11.0.1](https://github.com/dhis2/analytics/compare/v11.0.0...v11.0.1) (2020-09-18)
 
 
