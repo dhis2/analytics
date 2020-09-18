@@ -1,3 +1,17 @@
+# [11.0.0](https://github.com/dhis2/analytics/compare/v10.0.7...v11.0.0) (2020-09-18)
+
+
+### Features
+
+* solve font style related issues ([#597](https://github.com/dhis2/analytics/issues/597)) ([a9ca8b6](https://github.com/dhis2/analytics/commit/a9ca8b62c4bcee8d5e793d1c34ffc27bb98b7b2d))
+
+
+### BREAKING CHANGES
+
+* - COLOR_SET_MONO_PATTERNS renamed to COLOR_SET_PATTERNS
+- getFontSizeOptions requires the prop fontStyleKey to be passed in
+- getTextAlignOptions exports an array instead of an object and requires the prop visType to be passed in
+
 ## [10.0.7](https://github.com/dhis2/analytics/compare/v10.0.6...v10.0.7) (2020-09-18)
 
 
