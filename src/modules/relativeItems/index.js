@@ -6,9 +6,10 @@ import {
     DIMENSION_ID_PERIOD,
 } from '../predefinedDimensions'
 
-export const hasRelativeItems = (dimension, itemIds) =>
+export const hasRelativeItems = (dimension, itemIds = []) =>
     dimension === DIMENSION_ID_ASSIGNED_CATEGORIES ||
     (dimension === DIMENSION_ID_ORGUNIT &&
+        Array.isArray(itemIds) &&
         itemIds.some(
             id =>
                 ouIdHelper.hasLevelPrefix(id) ||
@@ -16,4 +17,5 @@ export const hasRelativeItems = (dimension, itemIds) =>
                 id.startsWith('USER_ORGUNIT')
         )) ||
     (dimension === DIMENSION_ID_PERIOD &&
+        Array.isArray(itemIds) &&
         itemIds.some(id => getRelativePeriodIds().includes(id)))
