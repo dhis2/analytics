@@ -1,3 +1,10 @@
+## [11.0.1](https://github.com/dhis2/analytics/compare/v11.0.0...v11.0.1) (2020-09-18)
+
+
+### Bug Fixes
+
+* org unit z-index ([#602](https://github.com/dhis2/analytics/issues/602)) ([f173e53](https://github.com/dhis2/analytics/commit/f173e5354ee27cf890c4c18060018ea6f0805df9))
+
 # [11.0.0](https://github.com/dhis2/analytics/compare/v10.0.7...v11.0.0) (2020-09-18)
 
 
