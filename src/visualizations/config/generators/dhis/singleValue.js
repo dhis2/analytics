@@ -16,7 +16,7 @@ import {
 
 const svgNS = 'http://www.w3.org/2000/svg'
 
-const generateValueSVG = (value, legendSet, y) => {
+const generateValueSVG = (value, formattedValue, legendSet, y) => {
     const textSize = 300
     const defaultFillColor = colors.grey900
 
@@ -24,8 +24,9 @@ const generateValueSVG = (value, legendSet, y) => {
     svgValue.setAttribute('xmlns', svgNS)
     svgValue.setAttribute(
         'viewBox',
-        `0 -${textSize + 50} ${textSize * 0.75 * value.length} ${textSize +
-            200}`
+        `0 -${textSize + 50} ${textSize *
+            0.75 *
+            formattedValue.length} ${textSize + 200}`
     )
 
     if (y) {
@@ -43,7 +44,7 @@ const generateValueSVG = (value, legendSet, y) => {
     text.setAttribute('letter-spacing', '-5')
     text.setAttribute('x', '50%')
     text.setAttribute('fill', fillColor)
-    text.appendChild(document.createTextNode(value))
+    text.appendChild(document.createTextNode(formattedValue))
 
     svgValue.appendChild(text)
 
@@ -75,7 +76,9 @@ const generateDashboardItem = (config, legendSet) => {
         container.appendChild(subtitle)
     }
 
-    container.appendChild(generateValueSVG(config.value, legendSet))
+    container.appendChild(
+        generateValueSVG(config.value, config.formattedValue, legendSet)
+    )
 
     return container
 }
@@ -193,7 +196,9 @@ const generateDVItem = (config, legendSet, parentEl, fontStyle) => {
         svg.appendChild(subtitle)
     }
 
-    svg.appendChild(generateValueSVG(config.value, legendSet, 20))
+    svg.appendChild(
+        generateValueSVG(config.value, config.formattedValue, legendSet, 20)
+    )
 
     return svg
 }

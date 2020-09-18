@@ -75,7 +75,7 @@ function getTwoCategorySortedConfig(config, layout, stacked) {
 }
 
 function getDefaultSortedConfig(config, layout, stacked) {
-    const categories = config.xAxis[0].categories
+    const categories = config.xAxis?.length && config.xAxis[0].categories
     const series = config.series
     const indexOrder = getIndexOrder(
         stacked ? getStackedData(series, layout) : series[0].data,
@@ -83,9 +83,12 @@ function getDefaultSortedConfig(config, layout, stacked) {
     )
     const sortedConfig = Object.assign({}, config)
 
-    sortedConfig.xAxis[0].categories = indexOrder.map(
-        index => categories[index]
-    )
+    if (categories) {
+        sortedConfig.xAxis[0].categories = indexOrder.map(
+            index => categories[index]
+        )
+    }
+
     sortedConfig.series = series.map(seriesObj => ({
         ...seriesObj,
         data: seriesObj.data.map(
