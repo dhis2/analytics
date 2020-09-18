@@ -14,7 +14,11 @@ export const hasRelativeItems = (dimension, itemIds = []) =>
             id =>
                 ouIdHelper.hasLevelPrefix(id) ||
                 ouIdHelper.hasGroupPrefix(id) ||
-                id.startsWith('USER_ORGUNIT')
+                [
+                    'USER_ORGUNIT',
+                    'USER_ORGUNIT_CHILDREN',
+                    'USER_ORGUNIT_GRAND_CHILDREN',
+                ].includes(id)
         )) ||
     (dimension === DIMENSION_ID_PERIOD &&
         Array.isArray(itemIds) &&
