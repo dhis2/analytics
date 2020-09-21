@@ -1,3 +1,11 @@
+## [11.0.5](https://github.com/dhis2/analytics/compare/v11.0.4...v11.0.5) (2020-09-21)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([1772a05](https://github.com/dhis2/analytics/commit/1772a058d2dd016850e8bd594dfdcc26d58c35a6))
+* setting org unit as series cause crash ([#613](https://github.com/dhis2/analytics/issues/613)) ([2077592](https://github.com/dhis2/analytics/commit/20775926ee3b7e22fb0ea7c428bf15f9009e2f9a))
+
 ## [11.0.4](https://github.com/dhis2/analytics/compare/v11.0.3...v11.0.4) (2020-09-19)
 
 
