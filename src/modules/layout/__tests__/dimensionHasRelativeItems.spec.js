@@ -6,7 +6,7 @@ describe('dimensionHasRelativeItems', () => {
         expect(dimensionHasRelativeItems(TEST_DIMENSION_5)).toBe(true)
     })
 
-    it('has no relative items and should be false', () => {
+    it('has no relative items and should return false', () => {
         expect(dimensionHasRelativeItems(TEST_DIMENSION_1)).toBe(false)
     })
 })
