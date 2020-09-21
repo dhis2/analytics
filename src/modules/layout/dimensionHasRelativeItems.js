@@ -1,7 +1,6 @@
 import { hasRelativeItems } from '../relativeItems'
+import { dimensionGetId } from './dimensionGetId'
+import { dimensionGetItemIds } from './dimensionGetItemIds'
 
 export const dimensionHasRelativeItems = dimension =>
-    hasRelativeItems(
-        dimension.dimension,
-        dimension.items.map(item => item.id)
-    )
+    hasRelativeItems(dimensionGetId(dimension), dimensionGetItemIds(dimension))
