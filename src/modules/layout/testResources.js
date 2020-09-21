@@ -11,6 +11,7 @@ import {
     DIMENSION_ID_PERIOD,
     DIMENSION_ID_ORGUNIT,
 } from '../predefinedDimensions'
+import { getRelativePeriodIds } from '../../components/PeriodDimension/utils/relativePeriods'
 
 // Items
 
@@ -19,6 +20,7 @@ export const TEST_ITEM_ID_2 = 'dxItem2Id'
 export const TEST_ITEM_ID_3 = 'peItem1Id'
 export const TEST_ITEM_ID_4 = 'ouItem1Id'
 export const TEST_ITEM_ID_5 = 'dynamicItem1Id'
+export const TEST_ITEM_ID_6 = getRelativePeriodIds()[0]
 
 export const TEST_ITEM_1 = {
     [ITEM_PROP_ID.name]: TEST_ITEM_ID_1,
@@ -38,6 +40,10 @@ export const TEST_ITEM_4 = {
 
 export const TEST_ITEM_5 = {
     [ITEM_PROP_ID.name]: TEST_ITEM_ID_5,
+}
+
+export const TEST_ITEM_6 = {
+    [ITEM_PROP_ID.name]: TEST_ITEM_ID_6,
 }
 
 export const TEST_ITEM_INVALID_1 = {
@@ -82,6 +88,11 @@ export const TEST_DIMENSION_3 = {
 export const TEST_DIMENSION_4 = {
     [DIMENSION_PROP_ID.name]: DIMENSION_ID_DYNAMIC,
     [DIMENSION_PROP_ITEMS.name]: [TEST_ITEM_5],
+}
+
+export const TEST_DIMENSION_5 = {
+    [DIMENSION_PROP_ID.name]: DIMENSION_ID_PERIOD,
+    [DIMENSION_PROP_ITEMS.name]: [TEST_ITEM_6],
 }
 
 export const TEST_DIMENSION_EMPTY_1 = {
