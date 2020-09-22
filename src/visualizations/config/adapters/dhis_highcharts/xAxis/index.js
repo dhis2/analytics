@@ -3,12 +3,14 @@ import getAxisTitle from '../getAxisTitle'
 import getCategories from '../getCategories'
 import getYearOnYear from './yearOnYear'
 import getTwoCategory from './twoCategory'
+import getRadar from './radar'
 import {
     VIS_TYPE_GAUGE,
     VIS_TYPE_YEAR_OVER_YEAR_LINE,
     VIS_TYPE_YEAR_OVER_YEAR_COLUMN,
     VIS_TYPE_PIE,
-    isTwoCategoryChartType,
+    VIS_TYPE_RADAR,
+    isTwoCategoryChartType, 
 } from '../../../../../modules/visTypes'
 import { 
     FONT_STYLE_HORIZONTAL_AXIS_TITLE, 
@@ -32,7 +34,7 @@ export const getLabelsStyle = fontStyle => fontStyle ? {
     },
 } : {}
 
-const getDefault = (store, layout) =>
+export const getDefault = (store, layout) =>
     objectClean({
         categories: getCategories(store.data[0].metaData, layout.rows[0].dimension),
         title: getAxisTitle(layout.domainAxisLabel, layout.fontStyle[FONT_STYLE_HORIZONTAL_AXIS_TITLE], FONT_STYLE_HORIZONTAL_AXIS_TITLE, layout.type),
@@ -53,6 +55,9 @@ export default function(store, layout, extraOptions) {
             case VIS_TYPE_YEAR_OVER_YEAR_LINE:
             case VIS_TYPE_YEAR_OVER_YEAR_COLUMN:
                 xAxis = [getYearOnYear(store, layout, extraOptions)]
+                break
+            case VIS_TYPE_RADAR:
+                xAxis = [getRadar(store, layout)]
                 break
             default:
                 xAxis = [getDefault(store, layout)]
