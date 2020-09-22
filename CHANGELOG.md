@@ -1,3 +1,10 @@
+## [11.0.6](https://github.com/dhis2/analytics/compare/v11.0.5...v11.0.6) (2020-09-22)
+
+
+### Bug Fixes
+
+* radar clashing axis titles ([#618](https://github.com/dhis2/analytics/issues/618)) ([c875950](https://github.com/dhis2/analytics/commit/c875950cfbeca3eeb00679821c4666cefadf71b8))
+
 ## [11.0.5](https://github.com/dhis2/analytics/compare/v11.0.4...v11.0.5) (2020-09-21)
 
 
