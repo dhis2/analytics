@@ -1,3 +1,10 @@
+## [11.0.7](https://github.com/dhis2/analytics/compare/v11.0.6...v11.0.7) (2020-09-23)
+
+
+### Bug Fixes
+
+* extract color from pattern for trendlines ([#619](https://github.com/dhis2/analytics/issues/619)) ([27356be](https://github.com/dhis2/analytics/commit/27356be1320196517083472da44dac735532913a))
+
 ## [11.0.6](https://github.com/dhis2/analytics/compare/v11.0.5...v11.0.6) (2020-09-22)
 
 
