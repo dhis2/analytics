@@ -16,13 +16,13 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 msgid "Data"
-msgstr ""
+msgstr "Маълумот"
 
 msgid "Data Type"
 msgstr ""
 
 msgid "Totals"
-msgstr ""
+msgstr "Жами"
 
 msgid "Details"
 msgstr "Тафсилотлари"
@@ -49,7 +49,7 @@ msgid "Select all"
 msgstr ""
 
 msgid "Organisation units"
-msgstr ""
+msgstr "Ташкилий бирликлар"
 
 msgid "Period"
 msgstr ""
@@ -133,16 +133,16 @@ msgid "Monthly"
 msgstr "Ойлик"
 
 msgid "Bi-monthly"
-msgstr ""
+msgstr "Жуфт ойлик"
 
 msgid "Quarterly"
 msgstr "Ҳар квартал"
 
 msgid "Six-monthly"
-msgstr ""
+msgstr "Ярим йиллик"
 
 msgid "Six-monthly April"
-msgstr ""
+msgstr "Ярим йиллик Апрель"
 
 msgid "Yearly"
 msgstr "Йиллик"
@@ -151,13 +151,13 @@ msgid "Financial year (Start November)"
 msgstr ""
 
 msgid "Financial year (Start October)"
-msgstr ""
+msgstr "Молиявий йил (бошланиши Октябрь)"
 
 msgid "Financial year (Start July)"
-msgstr ""
+msgstr "Молиявий йил (бошланиши Июль)"
 
 msgid "Financial year (Start April)"
-msgstr ""
+msgstr "Молиявий йил (бошланиши Апрель)"
 
 msgid "Today"
 msgstr ""
@@ -175,13 +175,13 @@ msgid "Last 14 days"
 msgstr "Охирги 14 кун"
 
 msgid "This week"
-msgstr ""
+msgstr "Ушбу ҳафта"
 
 msgid "Last week"
-msgstr ""
+msgstr "Охирги ҳафта"
 
 msgid "Last 4 weeks"
-msgstr ""
+msgstr "Охирги 4 ҳафта"
 
 msgid "Last 12 weeks"
 msgstr "Охирги 12 ҳафта"
@@ -202,7 +202,7 @@ msgid "Last 4 bi-weeks"
 msgstr ""
 
 msgid "This month"
-msgstr ""
+msgstr "Ушбу ой"
 
 msgid "Last month"
 msgstr "Охирги ой"
@@ -220,19 +220,19 @@ msgid "Months this year"
 msgstr "Ойлар айни йилда"
 
 msgid "This bi-month"
-msgstr ""
+msgstr "Ушбу жуфт ой"
 
 msgid "Last bi-month"
 msgstr "Охирги 2 ой"
 
 msgid "Last 6 bi-months"
-msgstr ""
+msgstr "Охирги 6 жуфт ойлар"
 
 msgid "Bi-months this year"
 msgstr "Айни йилдаги жуфт ойлар"
 
 msgid "This quarter"
-msgstr ""
+msgstr "Ушбу квартал"
 
 msgid "Last quarter"
 msgstr "Охирги квартал"
@@ -244,7 +244,7 @@ msgid "Quarters this year"
 msgstr ""
 
 msgid "This six-month"
-msgstr ""
+msgstr "Ушбу ярим йиллик"
 
 msgid "Last six-month"
 msgstr "Охирги 6 ой"
@@ -253,7 +253,7 @@ msgid "Last 2 six-month"
 msgstr ""
 
 msgid "This financial year"
-msgstr ""
+msgstr "Ушбу молиявий йил"
 
 msgid "Last financial year"
 msgstr "Охирги молиявий йил"
@@ -262,7 +262,7 @@ msgid "Last 5 financial years"
 msgstr "Охирги 5 молиявий йиллар"
 
 msgid "This year"
-msgstr ""
+msgstr "Ушбу йил"
 
 msgid "Last year"
 msgstr "Охирги йил"
@@ -289,7 +289,7 @@ msgid "Quarters"
 msgstr "Квартал"
 
 msgid "Six-months"
-msgstr ""
+msgstr "Ярим йиллик"
 
 msgid "Financial Years"
 msgstr "Молиявий йиллар"
@@ -319,7 +319,7 @@ msgid "Indicators"
 msgstr "Индикаторлар"
 
 msgid "Select indicator group"
-msgstr ""
+msgstr "Индикатор гуруҳини танлаш"
 
 msgid "[ All groups ]"
 msgstr ""
@@ -328,13 +328,13 @@ msgid "Data elements"
 msgstr "Маълумот элементлари"
 
 msgid "Select data element group"
-msgstr ""
+msgstr "Маълумотлар элементи гуруҳини танлаш"
 
 msgid "[ All data elements ]"
 msgstr ""
 
 msgid "Data sets"
-msgstr ""
+msgstr "Маълумотлар тўплами"
 
 msgid "Select data sets"
 msgstr ""
