@@ -1,6 +1,7 @@
 import arrayContains from 'd2-utilizr/lib/arrayContains'
 import { rgb } from 'd3-color'
 
+import { colorSets, COLOR_SET_PATTERNS } from '../../../util/colors/colorSets'
 import getStackedData from './getStackedData'
 import {
     VIS_TYPE_GAUGE,
@@ -154,6 +155,13 @@ function getTwoCategoryTrendLines(layout, series, isStacked) {
 }
 
 function getDarkerColor(color) {
+    if (Object.prototype.hasOwnProperty.call(color, 'patternIndex')) {
+        const colorSetPatterns = colorSets[COLOR_SET_PATTERNS].patterns
+        color =
+            colorSetPatterns[color.patternIndex].color ||
+            DEFAULT_TRENDLINE.color
+    }
+
     return rgb(color)
         .darker(0.5)
         .toString()
