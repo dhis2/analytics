@@ -188,20 +188,27 @@ function getRegressionObj(data, regressionType) {
 
     let regression
     const regressionTypeOptions = {}
+    const regressionData = getRegressionData(data)
 
     switch (regressionType) {
         case 'POLYNOMIAL':
             // polynomial(data, order, extrapolate)
-            regression = polynomial(getRegressionData(data))
+            // min 2 data points for this regression to work
+            if (regressionData.length > 1) {
+                regression = polynomial(regressionData)
+            } else {
+                regression = { points: [] }
+            }
+
             break
         case 'LOESS':
             // loess(data, smoothing)
-            regression = loess(getRegressionData(data), 0.25)
+            regression = loess(regressionData, 0.25)
             break
         case 'LINEAR':
         default:
             // linear(data, decimalPlaces)
-            regression = linear(getRegressionData(data))
+            regression = linear(regressionData)
             regressionTypeOptions.type = 'line'
             break
     }
