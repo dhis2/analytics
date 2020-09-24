@@ -1,6 +1,7 @@
 import arrayContains from 'd2-utilizr/lib/arrayContains'
 import { rgb } from 'd3-color'
 
+import { colorSets, COLOR_SET_PATTERNS } from '../../../util/colors/colorSets'
 import getStackedData from './getStackedData'
 import {
     VIS_TYPE_GAUGE,
@@ -154,6 +155,16 @@ function getTwoCategoryTrendLines(layout, series, isStacked) {
 }
 
 function getDarkerColor(color) {
+    // For patterns, color is an object containing patternIndex.
+    // patternIndex can be 0, thus the need to check for the presence of the key in the object.
+    // The actual color code needs to be extracted for the the Highcharts pattern definition.
+    if (Object.prototype.hasOwnProperty.call(color, 'patternIndex')) {
+        const colorSetPatterns = colorSets[COLOR_SET_PATTERNS].patterns
+        color =
+            colorSetPatterns[color.patternIndex].color ||
+            DEFAULT_TRENDLINE.color
+    }
+
     return rgb(color)
         .darker(0.5)
         .toString()
