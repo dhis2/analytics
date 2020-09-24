@@ -1,3 +1,10 @@
+## [11.0.9](https://github.com/dhis2/analytics/compare/v11.0.8...v11.0.9) (2020-09-24)
+
+
+### Bug Fixes
+
+* polynomial regression breaks with 1 data point only ([#626](https://github.com/dhis2/analytics/issues/626)) ([7825e04](https://github.com/dhis2/analytics/commit/7825e047dd4b096b786933e58f45b89b4d4b245d))
+
 ## [11.0.8](https://github.com/dhis2/analytics/compare/v11.0.7...v11.0.8) (2020-09-23)
 
 
