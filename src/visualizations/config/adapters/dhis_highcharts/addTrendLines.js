@@ -200,216 +200,6 @@ function getRegressionObj(data, regressionType) {
     })
 }
 
-// Code extracted from https://github.com/Tom-Alexander/regression-js/
-function gaussianElimination(a, o) {
-    let maxrow = 0,
-        tmp = 0
-    const n = a.length - 1,
-        x = new Array(o)
-
-    for (let i = 0; i < n; i++) {
-        maxrow = i
-
-        for (let j = i + 1; j < n; j++) {
-            if (Math.abs(a[i][j]) > Math.abs(a[i][maxrow])) {
-                maxrow = j
-            }
-        }
-
-        for (let k = i; k < n + 1; k++) {
-            tmp = a[k][i]
-            a[k][i] = a[k][maxrow]
-            a[k][maxrow] = tmp
-        }
-
-        for (let j = i + 1; j < n; j++) {
-            for (let k = n; k >= i; k--) {
-                a[k][j] -= (a[k][i] * a[i][j]) / a[i][i]
-            }
-        }
-    }
-
-    for (let j = n - 1; j >= 0; j--) {
-        tmp = 0
-
-        for (let k = j + 1; k < n; k++) {
-            tmp += a[k][j] * x[k]
-        }
-
-        x[j] = (a[n][j] - tmp) / a[j][j]
-    }
-
-    return x
-}
-
-// Code extracted from https://github.com/Tom-Alexander/regression-js/
-// Human readable formulas:
-//
-//              N * Σ(XY) - Σ(X)
-// intercept = ---------------------
-//              N * Σ(X^2) - Σ(X)^2
-//
-// correlation = N * Σ(XY) - Σ(X) * Σ (Y) / √ (  N * Σ(X^2) - Σ(X) ) * ( N * Σ(Y^2) - Σ(Y)^2 ) ) )
-function linear(data, decimalPlaces = 2) {
-    const sum = [0, 0, 0, 0, 0],
-        results = []
-    let N = data.length
-
-    for (let n = 0, len = data.length; n < len; n++) {
-        if (data[n]['x'] != null) {
-            data[n][0] = data[n].x
-            data[n][1] = data[n].y
-        }
-        if (data[n][1] != null) {
-            sum[0] += data[n][0] // Σ(X)
-            sum[1] += data[n][1] // Σ(Y)
-            sum[2] += data[n][0] * data[n][0] // Σ(X^2)
-            sum[3] += data[n][0] * data[n][1] // Σ(XY)
-            sum[4] += data[n][1] * data[n][1] // Σ(Y^2)
-        } else {
-            N -= 1
-        }
-    }
-
-    const gradient =
-        (N * sum[3] - sum[0] * sum[1]) / (N * sum[2] - sum[0] * sum[0])
-    const intercept = sum[1] / N - (gradient * sum[0]) / N
-    // let correlation = (N * sum[3] - sum[0] * sum[1]) / Math.sqrt((N * sum[2] - sum[0] * sum[0]) * (N * sum[4] - sum[1] * sum[1]));
-
-    for (let i = 0, len = data.length; i < len; i++) {
-        let coorY = data[i][0] * gradient + intercept
-
-        if (decimalPlaces) {
-            coorY = parseFloat(coorY.toFixed(decimalPlaces))
-        }
-
-        const coordinate = [data[i][0], coorY]
-        results.push(coordinate)
-    }
-
-    results.sort((a, b) => {
-        if (a[0] > b[0]) {
-            return 1
-        }
-        if (a[0] < b[0]) {
-            return -1
-        }
-
-        return 0
-    })
-
-    const string =
-        'y = ' +
-        Math.round(gradient * 100) / 100 +
-        'x + ' +
-        Math.round(intercept * 100) / 100
-
-    return {
-        equation: [gradient, intercept],
-        points: results,
-        string: string,
-    }
-}
-
-// Code extracted from https://github.com/Tom-Alexander/regression-js/
-function polynomial(data, order = 2, extrapolate = 0, decimalPlaces = 2) {
-    const lhs = [],
-        rhs = [],
-        results = [],
-        k = order + 1
-    let a = 0,
-        b = 0
-
-    for (let i = 0; i < k; i++) {
-        for (let l = 0, len = data.length; l < len; l++) {
-            if (data[l].x != null) {
-                data[l][0] = data[l].x
-                data[l][1] = data[l].y
-            }
-            if (data[l][1] != null) {
-                a += Math.pow(data[l][0], i) * data[l][1]
-            }
-        }
-
-        lhs.push(a)
-
-        a = 0
-
-        const c = []
-
-        for (let j = 0; j < k; j++) {
-            for (let l = 0, len = data.length; l < len; l++) {
-                if (data[l][1]) {
-                    b += Math.pow(data[l][0], i + j)
-                }
-            }
-
-            c.push(b)
-
-            b = 0
-        }
-
-        rhs.push(c)
-    }
-
-    rhs.push(lhs)
-
-    const equation = gaussianElimination(rhs, k)
-
-    const resultLength = data.length + extrapolate
-    const step = data[data.length - 1][0] - data[data.length - 2][0]
-
-    for (let i = 0, len = resultLength; i < len; i++) {
-        let answer = 0,
-            x = 0
-
-        if (typeof data[i] !== 'undefined') {
-            x = data[i][0]
-        } else {
-            x = data[data.length - 1][0] + (i - data.length) * step
-        }
-
-        for (let w = 0; w < equation.length; w++) {
-            answer += equation[w] * Math.pow(x, w)
-
-            if (decimalPlaces) {
-                answer = parseFloat(answer.toFixed(decimalPlaces))
-            }
-        }
-
-        results.push([x, answer])
-    }
-
-    results.sort((a, b) => {
-        if (a[0] > b[0]) {
-            return 1
-        }
-        if (a[0] < b[0]) {
-            return -1
-        }
-
-        return 0
-    })
-
-    let string = 'y = '
-
-    for (let i = equation.length - 1; i >= 0; i--) {
-        if (i > 1) {
-            string += Math.round(equation[i] * 100) / 100 + 'x^' + i + ' + '
-        } else if (i === 1) {
-            string += Math.round(equation[i] * 100) / 100 + 'x + '
-        } else {
-            string += Math.round(equation[i] * 100) / 100
-        }
-    }
-
-    return {
-        equation: equation,
-        points: results,
-        string: string,
-    }
-}
-
 // @author: Ignacio Vazquez
 // Based on
 // - http://commons.apache.org/proper/commons-math/download_math.cgi LoesInterpolator.java
@@ -531,5 +321,222 @@ function loess(data, bandwidth = 0.25) {
             return [x, res[i]]
         }),
         string: '',
+    }
+}
+
+/*
+ *
+ * Code from here to EOF adapted from https://github.com/Tom-Alexander/regression-js/
+ *
+ */
+const DEFAULT_OPTIONS = { order: 2, precision: 2, period: null }
+
+/**
+ * Determine the coefficient of determination (r^2) of a fit from the observations
+ * and predictions.
+ *
+ * @param {Array<Array<number>>} data - Pairs of observed x-y values
+ * @param {Array<Array<number>>} results - Pairs of observed predicted x-y values
+ *
+ * @return {number} - The r^2 value, or NaN if one cannot be calculated.
+ */
+function determinationCoefficient(data, results) {
+    const predictions = []
+    const observations = []
+
+    data.forEach((d, i) => {
+        if (d[1] !== null) {
+            observations.push(d)
+            predictions.push(results[i])
+        }
+    })
+
+    const sum = observations.reduce((a, observation) => a + observation[1], 0)
+    const mean = sum / observations.length
+
+    const ssyy = observations.reduce((a, observation) => {
+        const difference = observation[1] - mean
+        return a + difference * difference
+    }, 0)
+
+    const sse = observations.reduce((accum, observation, index) => {
+        const prediction = predictions[index]
+        const residual = observation[1] - prediction[1]
+        return accum + residual * residual
+    }, 0)
+
+    return 1 - sse / ssyy
+}
+
+/**
+ * Determine the solution of a system of linear equations A * x = b using
+ * Gaussian elimination.
+ *
+ * @param {Array<Array<number>>} input - A 2-d matrix of data in row-major form [ A | b ]
+ * @param {number} order - How many degrees to solve for
+ *
+ * @return {Array<number>} - Vector of normalized solution coefficients matrix (x)
+ */
+function gaussianElimination(input, order) {
+    const matrix = input
+    const n = input.length - 1
+    const coefficients = [order]
+
+    for (let i = 0; i < n; i++) {
+        let maxrow = i
+        for (let j = i + 1; j < n; j++) {
+            if (Math.abs(matrix[i][j]) > Math.abs(matrix[i][maxrow])) {
+                maxrow = j
+            }
+        }
+
+        for (let k = i; k < n + 1; k++) {
+            const tmp = matrix[k][i]
+            matrix[k][i] = matrix[k][maxrow]
+            matrix[k][maxrow] = tmp
+        }
+
+        for (let j = i + 1; j < n; j++) {
+            for (let k = n; k >= i; k--) {
+                matrix[k][j] -= (matrix[k][i] * matrix[i][j]) / matrix[i][i]
+            }
+        }
+    }
+
+    for (let j = n - 1; j >= 0; j--) {
+        let total = 0
+        for (let k = j + 1; k < n; k++) {
+            total += matrix[k][j] * coefficients[k]
+        }
+
+        coefficients[j] = (matrix[n][j] - total) / matrix[j][j]
+    }
+
+    return coefficients
+}
+
+/**
+ * Round a number to a precision, specificed in number of decimal places
+ *
+ * @param {number} number - The number to round
+ * @param {number} precision - The number of decimal places to round to:
+ *                             > 0 means decimals, < 0 means powers of 10
+ *
+ *
+ * @return {numbr} - The number, rounded
+ */
+function round(number, precision) {
+    const factor = 10 ** precision
+    return Math.round(number * factor) / factor
+}
+
+function linear(data, options = DEFAULT_OPTIONS) {
+    const sum = [0, 0, 0, 0, 0]
+    let len = 0
+
+    for (let n = 0; n < data.length; n++) {
+        if (data[n][1] !== null) {
+            len++
+            sum[0] += data[n][0]
+            sum[1] += data[n][1]
+            sum[2] += data[n][0] * data[n][0]
+            sum[3] += data[n][0] * data[n][1]
+            sum[4] += data[n][1] * data[n][1]
+        }
+    }
+
+    const run = len * sum[2] - sum[0] * sum[0]
+    const rise = len * sum[3] - sum[0] * sum[1]
+    const gradient = run === 0 ? 0 : round(rise / run, options.precision)
+    const intercept = round(
+        sum[1] / len - (gradient * sum[0]) / len,
+        options.precision
+    )
+
+    const predict = x => [
+        round(x, options.precision),
+        round(gradient * x + intercept, options.precision),
+    ]
+
+    const points = data.map(point => predict(point[0]))
+
+    return {
+        points,
+        predict,
+        equation: [gradient, intercept],
+        r2: round(determinationCoefficient(data, points), options.precision),
+        string:
+            intercept === 0
+                ? `y = ${gradient}x`
+                : `y = ${gradient}x + ${intercept}`,
+    }
+}
+
+function polynomial(data, options = DEFAULT_OPTIONS) {
+    const lhs = []
+    const rhs = []
+    let a = 0
+    let b = 0
+    const len = data.length
+    const k = options.order + 1
+
+    for (let i = 0; i < k; i++) {
+        for (let l = 0; l < len; l++) {
+            if (data[l][1] !== null) {
+                a += data[l][0] ** i * data[l][1]
+            }
+        }
+
+        lhs.push(a)
+        a = 0
+
+        const c = []
+        for (let j = 0; j < k; j++) {
+            for (let l = 0; l < len; l++) {
+                if (data[l][1] !== null) {
+                    b += data[l][0] ** (i + j)
+                }
+            }
+            c.push(b)
+            b = 0
+        }
+        rhs.push(c)
+    }
+    rhs.push(lhs)
+
+    const coefficients = gaussianElimination(rhs, k).map(v =>
+        round(v, options.precision)
+    )
+
+    const predict = x => [
+        round(x, options.precision),
+        round(
+            coefficients.reduce(
+                (sum, coeff, power) => sum + coeff * x ** power,
+                0
+            ),
+            options.precision
+        ),
+    ]
+
+    const points = data.map(point => predict(point[0]))
+
+    let string = 'y = '
+    for (let i = coefficients.length - 1; i >= 0; i--) {
+        if (i > 1) {
+            string += `${coefficients[i]}x^${i} + `
+        } else if (i === 1) {
+            string += `${coefficients[i]}x + `
+        } else {
+            string += coefficients[i]
+        }
+    }
+
+    return {
+        string,
+        points,
+        predict,
+        equation: [...coefficients].reverse(),
+        r2: round(determinationCoefficient(data, points), options.precision),
     }
 }
