@@ -148,7 +148,7 @@ msgid "Weekly"
 msgstr "Ҳафталик"
 
 msgid "Bi-weekly"
-msgstr ""
+msgstr "Жуфт ҳафта"
 
 msgid "Weekly (Start Wednesday)"
 msgstr ""
@@ -193,7 +193,7 @@ msgid "Financial year (Start April)"
 msgstr "Молиявий йил (бошланиши Апрель)"
 
 msgid "Today"
-msgstr ""
+msgstr "бугун"
 
 msgid "Yesterday"
 msgstr "Кеча"
@@ -208,16 +208,16 @@ msgid "Last 14 days"
 msgstr "Охирги 14 кун"
 
 msgid "Last 30 days"
-msgstr ""
+msgstr "Охирги 30 кун"
 
 msgid "Last 60 days"
-msgstr ""
+msgstr "Охирги 60 кун"
 
 msgid "Last 90 days"
-msgstr ""
+msgstr "Охирги 90 кун"
 
 msgid "Last 180 days"
-msgstr ""
+msgstr "Охирги 180 кун"
 
 msgid "This week"
 msgstr "Ушбу ҳафта"
@@ -238,13 +238,13 @@ msgid "Weeks this year"
 msgstr "Ҳафталар айни йилда "
 
 msgid "This bi-week"
-msgstr ""
+msgstr "Ушбу жуфт ҳафта"
 
 msgid "Last bi-week"
-msgstr ""
+msgstr "Охирги жуфт ҳафта"
 
 msgid "Last 4 bi-weeks"
-msgstr ""
+msgstr "Охирги 4 жуфт ҳафталар"
 
 msgid "This month"
 msgstr "Ушбу ой"
@@ -286,7 +286,7 @@ msgid "Last 4 quarters"
 msgstr "Охирги 4 квартал"
 
 msgid "Quarters this year"
-msgstr ""
+msgstr "Ушбу йилдаги кварталлар"
 
 msgid "This six-month"
 msgstr "Ушбу ярим йиллик"
@@ -322,7 +322,7 @@ msgid "Weeks"
 msgstr "Ҳафталар"
 
 msgid "Bi-weeks"
-msgstr ""
+msgstr "Жуфт ҳафталар"
 
 msgid "Months"
 msgstr "Ойлар"
@@ -406,10 +406,10 @@ msgid "[ All metrics ]"
 msgstr ""
 
 msgid "Event data items"
-msgstr ""
+msgstr "Ҳодисалар ҳақида маълумот элементлари"
 
 msgid "Program indicators"
-msgstr ""
+msgstr "Дастур кўрсатгичлари"
 
 msgid "Extra Small"
 msgstr ""
@@ -445,10 +445,10 @@ msgid "End"
 msgstr ""
 
 msgid "Top"
-msgstr ""
+msgstr "Юқоридаги"
 
 msgid "Bottom"
-msgstr ""
+msgstr "Пастки"
 
 msgid "{{dynamicOuNames}} and {{lastOuName}}"
 msgstr ""
@@ -475,7 +475,7 @@ msgid "Assigned Categories"
 msgstr ""
 
 msgid "Pivot table"
-msgstr ""
+msgstr "Таянч жадвал"
 
 msgid "Column"
 msgstr "Устун"
