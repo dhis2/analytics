@@ -9,11 +9,12 @@ import getSubtitle from './subtitle'
 import getLegend from './legend'
 import getPane from './pane'
 import getNoData from './noData'
-import { isStacked } from '../../../../modules/visTypes'
+import { isStacked, isDualAxisType } from '../../../../modules/visTypes'
 import getSortedConfig from './getSortedConfig'
 import getTrimmedConfig from './getTrimmedConfig'
 import addTrendLines, { isRegressionIneligible } from './addTrendLines'
 import { defaultMultiAxisTheme1 } from '../../../util/colors/themes'
+import { hasOptionalAxis } from '../../../../modules/axis'
 
 const getTransformedLayout = layout => ({
     ...layout,
@@ -123,7 +124,8 @@ export default function({ store, layout, el, extraConfig, extraOptions }) {
     if (
         isString(_layout.regressionType) &&
         _layout.regressionType !== 'NONE' &&
-        !isRegressionIneligible(_layout.type)
+        !isRegressionIneligible(_layout.type) &&
+        !(isDualAxisType(_layout.type) && hasOptionalAxis(_layout.optionalAxes))
     ) {
         config.series = addTrendLines(
             _layout.regressionType,

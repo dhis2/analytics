@@ -38,3 +38,5 @@ export const getAxisNameByLayoutType = (axisId, layoutType) => {
 
 export const getAxisName = axisId =>
     getAxisNameByLayoutType(axisId, LAYOUT_TYPE_DEFAULT)
+
+export const hasOptionalAxis = optionalAxes => Boolean(optionalAxes.length)
