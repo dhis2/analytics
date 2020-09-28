@@ -1,0 +1,121 @@
+{
+    "lastUpdated": "2020-09-07T13:01:07.853",
+    "id": "jWJZ6I3bNZx",
+    "created": "2020-09-07T13:01:07.853",
+    "name": "TEST - Empty Columns Error",
+    "publicAccess": "--------",
+    "legendDisplayStyle": "FILL",
+    "type": "PIVOT_TABLE",
+    "hideEmptyColumns": false,
+    "subscribed": false,
+    "rowSubTotals": false,
+    "cumulativeValues": false,
+    "showDimensionLabels": false,
+    "sortOrder": 0,
+    "fontSize": "NORMAL",
+    "favorite": false,
+    "topLimit": 0,
+    "displayName": "TEST - Empty Columns Error",
+    "percentStackedValues": false,
+    "noSpaceBetweenColumns": false,
+    "showHierarchy": false,
+    "hideTitle": false,
+    "skipRounding": false,
+    "showData": true,
+    "numberType": "VALUE",
+    "hideEmptyRows": false,
+    "parentGraphMap": {
+        "ImspTQPwCqd": ""
+    },
+    "displayDensity": "NORMAL",
+    "regressionType": "NONE",
+    "completedOnly": false,
+    "colTotals": false,
+    "hideEmptyRowItems": "NONE",
+    "aggregationType": "DEFAULT",
+    "hideSubtitle": false,
+    "hideLegend": false,
+    "colSubTotals": false,
+    "legendDisplayStrategy": "FIXED",
+    "rowTotals": false,
+    "digitGroupSeparator": "SPACE",
+    "regression": false,
+    "access": {
+        "read": true,
+        "update": true,
+        "externalize": true,
+        "delete": true,
+        "write": true,
+        "manage": true,
+        "data": {
+            "read": false,
+            "write": false
+        }
+    },
+    "reportingParams": {
+        "parentOrganisationUnit": false,
+        "reportingPeriod": false,
+        "organisationUnit": false,
+        "grandParentOrganisationUnit": false
+    },
+    "lastUpdatedBy": {
+        "id": "xE7jOejl9FI"
+    },
+    "user": {
+        "name": "Astride Traore",
+        "displayName": "Astride Traore",
+        "userCredentials": {
+            "username": "admin"
+        }
+    },
+    "translations": [],
+    "yearlySeries": [],
+    "interpretations": [],
+    "userGroupAccesses": [],
+    "subscribers": [],
+    "optionalAxes": [],
+    "columns": [
+        {
+            "dimension": "pe",
+            "items": [
+                {
+                    "name": "LAST_5_YEARS",
+                    "id": "LAST_5_YEARS",
+                    "displayName": "LAST_5_YEARS",
+                    "displayShortName": "LAST_5_YEARS",
+                    "dimensionItemType": "PERIOD"
+                }
+            ]
+        }
+    ],
+    "userAccesses": [],
+    "favorites": [],
+    "filters": [
+        {
+            "dimension": "ou",
+            "items": [
+                {
+                    "name": "Sierra Leone",
+                    "id": "ImspTQPwCqd",
+                    "displayName": "Sierra Leone",
+                    "displayShortName": "Sierra Leone",
+                    "dimensionItemType": "ORGANISATION_UNIT"
+                }
+            ]
+        }
+    ],
+    "rows": [
+        {
+            "dimension": "dx",
+            "items": [
+                {
+                    "name": "ANC IPT 1 Coverage",
+                    "id": "dwEq7wi6nXV",
+                    "displayName": "ANC IPT 1 Coverage",
+                    "displayShortName": "ANC IPT 1 Coverage",
+                    "dimensionItemType": "INDICATOR"
+                }
+            ]
+        }
+    ]
+}
