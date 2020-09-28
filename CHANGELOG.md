@@ -1,3 +1,11 @@
+## [4.5.12](https://github.com/dhis2/analytics/compare/v4.5.11...v4.5.12) (2020-09-28)
+
+
+### Bug Fixes
+
+* exclude negative sign from digit group separation (DHIS2-9633) ([#631](https://github.com/dhis2/analytics/issues/631)) ([15fdf94](https://github.com/dhis2/analytics/commit/15fdf9475542cd3ef0b2088c6269e62cab875e7e))
+* subtract initial empty columns from partition calculation ([#591](https://github.com/dhis2/analytics/issues/591)) ([#633](https://github.com/dhis2/analytics/issues/633)) ([dafb82c](https://github.com/dhis2/analytics/commit/dafb82cf8106f4b879ec01d4f6bee1e8bc2695ea))
+
 ## [4.5.11](https://github.com/dhis2/analytics/compare/v4.5.10...v4.5.11) (2020-09-28)
 
 
