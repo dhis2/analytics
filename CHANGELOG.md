@@ -1,3 +1,10 @@
+## [4.5.11](https://github.com/dhis2/analytics/compare/v4.5.10...v4.5.11) (2020-09-28)
+
+
+### Bug Fixes
+
+* multiple axes bugs (DHIS2-9010, DHIS2-9011, DHIS2-9012, DHIS2-9013, DHIS2-9014) v34 ([#568](https://github.com/dhis2/analytics/issues/568)) ([b1727fe](https://github.com/dhis2/analytics/commit/b1727fe5dcb573834134d04cdee9a71c7a22cfde)), closes [#529](https://github.com/dhis2/analytics/issues/529)
+
 ## [4.5.10](https://github.com/dhis2/analytics/compare/v4.5.9...v4.5.10) (2020-09-24)
 
 
