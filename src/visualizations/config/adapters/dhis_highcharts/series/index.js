@@ -5,7 +5,6 @@ import getType from '../type'
 import {
     getFullIdAxisMap,
     getAxisIdsMap,
-    hasOptionalAxis,
 } from '../optionalAxes'
 import { generateColors } from '../../../../util/colors/gradientColorGenerator'
 import {
@@ -14,6 +13,7 @@ import {
     isDualAxisType,
     isYearOverYear,
 } from '../../../../../modules/visTypes'
+import { hasOptionalAxis } from '../../../../../modules/axis'
 
 const DEFAULT_ANIMATION_DURATION = 200
 
@@ -33,7 +33,7 @@ function getColor(colors, index) {
 }
 
 function getIdColorMap(series, layout, extraOptions) {
-    if (hasOptionalAxis(layout.optionalAxes)) {
+    if (isDualAxisType(layout.type) && hasOptionalAxis(layout.optionalAxes)) {
         const axisIdsMap = getAxisIdsMap(layout.optionalAxes, series)
         const theme = extraOptions.multiAxisTheme
 

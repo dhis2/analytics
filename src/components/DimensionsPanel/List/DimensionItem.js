@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import i18n from '@dhis2/d2-i18n'
 import LockIcon from '@material-ui/icons/Lock'
 
 import DimensionLabel from './DimensionLabel'

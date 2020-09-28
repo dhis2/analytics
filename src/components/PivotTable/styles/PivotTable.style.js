@@ -93,6 +93,9 @@ export const cell = css`
     .NUMBER {
         text-align: right;
     }
+    .clickable {
+        cursor: pointer;
+    }
 
     .value:hover {
         background-color: #f3f3f3;

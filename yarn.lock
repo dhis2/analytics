@@ -1086,27 +1086,27 @@
     update-notifier "^3.0.0"
     yargs "^13.1.0"
 
-"@dhis2/cli-style@^5.0.3":
-  version "5.2.0"
-  resolved "https://registry.yarnpkg.com/@dhis2/cli-style/-/cli-style-5.2.0.tgz#4b7f34bf53760dcab073647f06419a6bfd4eca53"
-  integrity sha512-wQGw8sKKukNOKSJYWf5gcyKGgLbdtH9haczEYrMvO6hnMtKWZ0fP4dkc9X/J2hwGkhxDgqzQFUfokA6aXZhtWw==
+"@dhis2/cli-style@^7.0.0":
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/@dhis2/cli-style/-/cli-style-7.0.0.tgz#50bfdac29527d1ecb7eb66e560e98331075b84de"
+  integrity sha512-SYT7nmT4N5jYhRnoF6eRGa2zLDSjaG+NHOx1nqhospzrkyZroyVWdqfMANFTYYX4/PE3gAYEcz4Y2gB8mwg88w==
   dependencies:
     "@commitlint/cli" "^8.3.5"
     "@commitlint/config-conventional" "^8.3.4"
     "@dhis2/cli-helpers-engine" "1.5.0"
-    babel-eslint "^10.0.3"
+    babel-eslint "^10.1.0"
     cross-spawn "^7.0.1"
     eslint "^6.8.0"
-    eslint-config-prettier "^6.10.0"
+    eslint-config-prettier "^6.10.1"
     eslint-plugin-prettier "^3.1.2"
-    eslint-plugin-react "^7.18.0"
-    fast-glob "^3.1.1"
+    eslint-plugin-react "^7.19.0"
+    fast-glob "^3.2.2"
     fs-extra "^8.1.0"
-    husky "^4.2.1"
+    husky "^4.2.3"
     perfy "^1.1.5"
     prettier "^1.19.1"
-    semver "^7.1.1"
-    yargs "^15.1.0"
+    semver "^7.1.3"
+    yargs "^15.3.1"
 
 "@dhis2/d2-i18n-extract@^1.0.8":
   version "1.0.8"
@@ -1136,10 +1136,10 @@
     i18next "^10.3"
     moment "^2.24.0"
 
-"@dhis2/d2-ui-core@7.0.3":
-  version "7.0.3"
-  resolved "https://registry.yarnpkg.com/@dhis2/d2-ui-core/-/d2-ui-core-7.0.3.tgz#75cf0bc7dfadfa6b000bcf61b17fb76f5efb7b1d"
-  integrity sha512-l2uFWjK8Te473B2p6wxaVi+gniN6bMGAMjX6t/qJKQtWMVK9wfF/tZmwWvypP8UlShMvn+MHSdLOZxQF2bINfg==
+"@dhis2/d2-ui-core@7.0.4":
+  version "7.0.4"
+  resolved "https://registry.yarnpkg.com/@dhis2/d2-ui-core/-/d2-ui-core-7.0.4.tgz#18c9858ac5adda54593d3f575128eb8b9df6da68"
+  integrity sha512-yTBhJ53xvAGBh49/HDPLmAH2LlWkGtGj8RfhEuN64Z8GsKAo1YS6tAmB79srMnUF91dCFaqAtLx80NqAZ4fHCQ==
   dependencies:
     babel-runtime "^6.26.0"
     d2 "~31.7"
@@ -1147,22 +1147,22 @@
     material-ui "^0.20.0"
     rxjs "^5.5.7"
 
-"@dhis2/d2-ui-org-unit-dialog@^7.0.3":
-  version "7.0.3"
-  resolved "https://registry.yarnpkg.com/@dhis2/d2-ui-org-unit-dialog/-/d2-ui-org-unit-dialog-7.0.3.tgz#2eec30a569d5fb07f256d4727fa8986c7d91c047"
-  integrity sha512-+TkjfXXat2GIZRWDJqFqB+rF8CO6bA1If3tq7//1v3wuyznVA0kPvYqOC22JIxpDZ+tuEROGY1h1gt214buHzQ==
+"@dhis2/d2-ui-org-unit-dialog@^7.0.4":
+  version "7.0.4"
+  resolved "https://registry.yarnpkg.com/@dhis2/d2-ui-org-unit-dialog/-/d2-ui-org-unit-dialog-7.0.4.tgz#6a358a2e9c37a16d2d3c5ec082955220e7b61050"
+  integrity sha512-IkxJn3pbkxCEmKaa2QWjlXEwAQT/Kb5d+YzZyW3T3nNABSiJvxcOcwsR3pI7oAiBER0Cjpw0/O3rawuiyBWtGw==
   dependencies:
-    "@dhis2/d2-ui-org-unit-tree" "7.0.3"
+    "@dhis2/d2-ui-org-unit-tree" "7.0.4"
     "@material-ui/core" "^3.3.1"
     "@material-ui/icons" "^3.0.1"
     prop-types "^15.5.10"
 
-"@dhis2/d2-ui-org-unit-tree@7.0.3":
-  version "7.0.3"
-  resolved "https://registry.yarnpkg.com/@dhis2/d2-ui-org-unit-tree/-/d2-ui-org-unit-tree-7.0.3.tgz#df16c7591a2c6b0dae22971604ffc653118b87ae"
-  integrity sha512-PI6nf94A/RjrQOIWwckXAgB8oQNstBVTidvfm//IzhPmQG3BGH7WF/74NKAVVeZ3Vr6QUAKiJr1PU+OEdnes4A==
+"@dhis2/d2-ui-org-unit-tree@7.0.4":
+  version "7.0.4"
+  resolved "https://registry.yarnpkg.com/@dhis2/d2-ui-org-unit-tree/-/d2-ui-org-unit-tree-7.0.4.tgz#97321a7e6bdf882f1c305d0b7dbda60cf7363ebc"
+  integrity sha512-qZN4tgigNYDEe9Qvb13zjfY0w2c1DzZ+TpWND4LA1ozNqI/EAAHzxF8822rWbgsc2SKeCVwxifjjNWe+2o1XBg==
   dependencies:
-    "@dhis2/d2-ui-core" "7.0.3"
+    "@dhis2/d2-ui-core" "7.0.4"
     "@material-ui/core" "^3.3.1"
     babel-runtime "^6.26.0"
     prop-types "^15.5.10"
@@ -2966,7 +2966,7 @@ babel-code-frame@^6.22.0:
     esutils "^2.0.2"
     js-tokens "^3.0.2"
 
-babel-eslint@^10.0.3:
+babel-eslint@^10.1.0:
   version "10.1.0"
   resolved "https://registry.yarnpkg.com/babel-eslint/-/babel-eslint-10.1.0.tgz#6968e568a910b78fb3779cdd8b6ac2f479943232"
   integrity sha512-ifWaTHQ0ce+448CYop8AdrQiBsGrnC+bMgfyKFdi6EsPLTAWG+QfyDeM6OH+FmWnKvEq5NnBMLvlBUPKQZoDSg==
@@ -5473,7 +5473,7 @@ escodegen@^1.9.1:
   optionalDependencies:
     source-map "~0.6.1"
 
-eslint-config-prettier@^6.10.0:
+eslint-config-prettier@^6.10.1:
   version "6.11.0"
   resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-6.11.0.tgz#f6d2238c1290d01c859a8b5c1f7d352a0b0da8b1"
   integrity sha512-oB8cpLWSAjOVFEJhhyMZh6NOEOtBVziaqdDQ86+qhDHFbZXoRTM7pNSvFRfW/W/L/LrQ38C99J5CGuRBBzBsdA==
@@ -5492,7 +5492,7 @@ eslint-plugin-react-hooks@^2.3.0:
   resolved "https://registry.yarnpkg.com/eslint-plugin-react-hooks/-/eslint-plugin-react-hooks-2.5.1.tgz#4ef5930592588ce171abeb26f400c7fbcbc23cd0"
   integrity sha512-Y2c4b55R+6ZzwtTppKwSmK/Kar8AdLiC2f9NADCuxbcTgPPg41Gyqa6b9GppgXSvCtkRw43ZE86CT5sejKC6/g==
 
-eslint-plugin-react@^7.18.0:
+eslint-plugin-react@^7.19.0:
   version "7.20.0"
   resolved "https://registry.yarnpkg.com/eslint-plugin-react/-/eslint-plugin-react-7.20.0.tgz#f98712f0a5e57dfd3e5542ef0604b8739cd47be3"
   integrity sha512-rqe1abd0vxMjmbPngo4NaYxTcR3Y4Hrmc/jg4T+sYz63yqlmJRknpEQfmWY+eDWPuMmix6iUIK+mv0zExjeLgA==
@@ -5830,7 +5830,7 @@ fast-glob@^2.0.2:
     merge2 "^1.2.3"
     micromatch "^3.1.10"
 
-fast-glob@^3.1.1:
+fast-glob@^3.2.2:
   version "3.2.2"
   resolved "https://registry.yarnpkg.com/fast-glob/-/fast-glob-3.2.2.tgz#ade1a9d91148965d4bf7c51f72e1ca662d32e63d"
   integrity sha512-UDV82o4uQyljznxwMxyVRJgZZt3O5wENYojjzbaGEGZgeOxkLFf+V4cnUD+krzb2F72E18RhamkMZ7AdeggF7A==
@@ -6885,7 +6885,7 @@ husky@^1.0.1:
     run-node "^1.0.0"
     slash "^2.0.0"
 
-husky@^4.2.1:
+husky@^4.2.3:
   version "4.2.5"
   resolved "https://registry.yarnpkg.com/husky/-/husky-4.2.5.tgz#2b4f7622673a71579f901d9885ed448394b5fa36"
   integrity sha512-SYZ95AjKcX7goYVZtVZF2i6XiZcHknw50iXvY7b0MiGoj5RwdgRQNEHdb+gPDPCXKlzwrybjFjkL6FOj8uRhZQ==
@@ -11467,7 +11467,7 @@ semver@7.0.0:
   resolved "https://registry.yarnpkg.com/semver/-/semver-7.0.0.tgz#5f3ca35761e47e05b206c6daff2cf814f0316b8e"
   integrity sha512-+GB6zVA9LWh6zovYQLALHwv5rb2PHGlJi3lfiqIHxR0uuwCgefcOJc59v9fv1w8GbStwxuuqqAjI9NMAOOgq1A==
 
-semver@^7.1.1:
+semver@^7.1.3:
   version "7.3.2"
   resolved "https://registry.yarnpkg.com/semver/-/semver-7.3.2.tgz#604962b052b81ed0786aae84389ffba70ffd3938"
   integrity sha512-OrOb32TeeambH6UrhtShmF7CRDqhL6/5XpPNp2DuRH6+9QLw/orhp72j87v8Qa1ScDkvrrBNpZcDejAirJmfXQ==
@@ -13394,7 +13394,7 @@ yargs@^13.1.0, yargs@^13.3.0:
     y18n "^4.0.0"
     yargs-parser "^13.1.2"
 
-yargs@^15.1.0:
+yargs@^15.3.1:
   version "15.3.1"
   resolved "https://registry.yarnpkg.com/yargs/-/yargs-15.3.1.tgz#9505b472763963e54afe60148ad27a330818e98b"
   integrity sha512-92O1HWEjw27sBfgmXiixJWT5hRBp2eobqXicLtPBIDBhYB+1HpwZlXmbW2luivBJHBzki+7VyCLRtAkScbTBQA==

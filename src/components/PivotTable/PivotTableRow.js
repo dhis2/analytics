@@ -7,7 +7,11 @@ import { PivotTableEmptyCell } from './PivotTableEmptyCell'
 import { usePivotTableEngine } from './PivotTableEngineContext'
 import times from 'lodash/times'
 
-export const PivotTableRow = ({ clippingResult, rowIndex }) => {
+export const PivotTableRow = ({
+    clippingResult,
+    rowIndex,
+    onToggleContextualMenu,
+}) => {
     const engine = usePivotTableEngine()
     return (
         <tr>
@@ -21,9 +25,13 @@ export const PivotTableRow = ({ clippingResult, rowIndex }) => {
             ))}
             <PivotTableClippedAxis
                 axisClippingResult={clippingResult.columns}
-                EmptyComponent={() => <PivotTableEmptyCell type="value" />}
+                EmptyComponent={() => <PivotTableEmptyCell classes="value" />}
                 ItemComponent={({ index: columnIndex }) => (
-                    <PivotTableValueCell row={rowIndex} column={columnIndex} />
+                    <PivotTableValueCell
+                        row={rowIndex}
+                        column={columnIndex}
+                        onToggleContextualMenu={onToggleContextualMenu}
+                    />
                 )}
             />
         </tr>
@@ -36,4 +44,5 @@ PivotTableRow.propTypes = {
         rows: PropTypes.object.isRequired,
     }).isRequired,
     rowIndex: PropTypes.number.isRequired,
+    onToggleContextualMenu: PropTypes.func,
 }

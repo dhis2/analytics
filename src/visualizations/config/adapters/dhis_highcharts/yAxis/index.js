@@ -4,8 +4,8 @@ import isNumeric from 'd2-utilizr/lib/isNumeric'
 import isString from 'd2-utilizr/lib/isString'
 import getAxisTitle from '../getAxisTitle'
 import getGauge from './gauge'
-import { isStacked, VIS_TYPE_GAUGE } from '../../../../../modules/visTypes'
-import { hasOptionalAxis } from '../optionalAxes'
+import { isStacked, VIS_TYPE_GAUGE, isDualAxisType } from '../../../../../modules/visTypes'
+import { hasOptionalAxis } from '../../../../../modules/axis'
 
 const DEFAULT_MIN_VALUE = 0
 
@@ -116,7 +116,7 @@ function getDualAxes(theme) {
 function getDefault(layout, extraOptions) {
     const axes = []
 
-    if (hasOptionalAxis(layout.optionalAxes)) {
+    if (isDualAxisType(layout.type) && hasOptionalAxis(layout.optionalAxes)) {
         const dualAxes = getDualAxes(extraOptions.multiAxisTheme)
         axes.push(dualAxes[0], dualAxes[1])
     } else {

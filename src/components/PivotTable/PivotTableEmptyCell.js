@@ -1,16 +1,13 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import { cell as cellStyle } from './styles/PivotTable.style'
 import { PivotTableCell } from './PivotTableCell'
 
-export const PivotTableEmptyCell = ({ type, ...props }) => {
+export const PivotTableEmptyCell = React.forwardRef(({ ...props }, ref) => {
     return (
-        <PivotTableCell className={type} {...props}>
+        <PivotTableCell ref={ref} {...props}>
             <style jsx>{cellStyle}</style>
         </PivotTableCell>
     )
-}
+})
 
-PivotTableEmptyCell.propTypes = {
-    type: PropTypes.string.isRequired,
-}
+PivotTableEmptyCell.displayName = 'PivotTableEmptyCell'

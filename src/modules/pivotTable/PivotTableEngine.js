@@ -34,6 +34,8 @@ import {
     NUMBER_TYPE_ROW_PERCENTAGE,
     DIMENSION_TYPE_DATA,
     DIMENSION_TYPE_DATA_ELEMENT_GROUP_SET,
+    DIMENSION_TYPE_ORGUNIT,
+    DIMENSION_TYPE_PERIOD,
     VALUE_TYPE_TEXT,
     NUMBER_TYPE_VALUE,
 } from './pivotTableConstants'
@@ -311,10 +313,23 @@ export class PivotTableEngine {
         const cellType = this.getRawCellType({ row, column })
         const dxDimension = this.getRawCellDxDimension({ row, column })
 
+        const headers = [
+            ...this.getRawRowHeader(row),
+            ...this.getRawColumnHeader(column),
+        ]
+        const peId = headers.find(
+            header => header?.dimensionItemType === DIMENSION_TYPE_PERIOD
+        )?.uid
+        const ouId = headers.find(
+            header => header?.dimensionItemType === DIMENSION_TYPE_ORGUNIT
+        )?.uid
+
         if (!this.data[row] || !this.data[row][column]) {
             return {
                 cellType,
                 empty: true,
+                ouId,
+                peId,
             }
         }
 
@@ -353,6 +368,8 @@ export class PivotTableEngine {
             rawValue,
             renderedValue,
             dxDimension,
+            ouId,
+            peId,
         }
     }
 

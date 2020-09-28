@@ -1,14 +1,14 @@
 # 
 # Translators:
-# Karoline Tufte Lien <karoline@dhis2.org>, 2020
 # Caroline Hesthagen Holen <caroline@devotta.no>, 2020
+# Karoline Tufte Lien <karoline@dhis2.org>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2020-05-20T21:46:25.914Z\n"
 "PO-Revision-Date: 2020-05-18 10:55+0000\n"
-"Last-Translator: Caroline Hesthagen Holen <caroline@devotta.no>, 2020\n"
+"Last-Translator: Karoline Tufte Lien <karoline@dhis2.org>, 2020\n"
 "Language-Team: Norwegian Bokmål (https://www.transifex.com/hisp-uio/teams/100509/nb/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -422,7 +422,7 @@ msgid "Assigned Categories"
 msgstr "Tildelte Kategorier"
 
 msgid "Column"
-msgstr "Kolonne"
+msgstr "Stolpe"
 
 msgid "Stacked column"
 msgstr "Stablet stående stolpe"
@@ -431,7 +431,7 @@ msgid "Bar"
 msgstr "Liggende stolpe"
 
 msgid "Stacked bar"
-msgstr "Liggende stablet stolpe"
+msgstr "Stablet liggende stolpe"
 
 msgid "Line"
 msgstr "Linje"

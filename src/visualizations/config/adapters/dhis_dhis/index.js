@@ -1,5 +1,6 @@
 import getTitle from './title'
 import getSubtitle from './subtitle'
+import getValue from './value'
 
 export default function({ store, layout, extraOptions }) {
     const data = store.generateData({
@@ -12,10 +13,8 @@ export default function({ store, layout, extraOptions }) {
             layout.rows && layout.rows.length ? layout.rows[0].dimension : null,
     })
 
-    const value = data[0] === undefined ? extraOptions.noData.text : data[0]
-
     const config = {
-        value: value,
+        value: getValue(data[0], layout, store.data[0].metaData, extraOptions),
         title: getTitle(layout, store.data[0].metaData, extraOptions.dashboard),
         subtitle: getSubtitle(
             layout,
