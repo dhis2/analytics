@@ -16,7 +16,7 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 msgid "Data Type"
-msgstr ""
+msgstr "Маълумот тури"
 
 msgid "Totals"
 msgstr "Жами"
@@ -25,7 +25,7 @@ msgid "Details"
 msgstr "Тафсилотлари"
 
 msgid "Detail"
-msgstr ""
+msgstr "Тафсилот"
 
 msgid "Move to {{axisName}}"
 msgstr ""
@@ -469,7 +469,7 @@ msgid "Data"
 msgstr "Маълумот"
 
 msgid "Organisation Unit"
-msgstr "Ташкилий бирлик"
+msgstr "Ташкилий Бўлим"
 
 msgid "Assigned Categories"
 msgstr ""
@@ -567,7 +567,7 @@ msgid "Display a single value. Recommend relative period to show latest data."
 msgstr ""
 
 msgid "Target"
-msgstr ""
+msgstr "Нишон"
 
 msgid "Base"
 msgstr ""
