@@ -19,7 +19,7 @@ msgid "Data"
 msgstr "Маълумот"
 
 msgid "Data Type"
-msgstr ""
+msgstr "Маълумот тури"
 
 msgid "Totals"
 msgstr "Жами"
@@ -28,7 +28,7 @@ msgid "Details"
 msgstr "Тафсилотлари"
 
 msgid "Detail"
-msgstr ""
+msgstr "Тафсилот"
 
 msgid "Move to {{axisName}}"
 msgstr ""
@@ -82,7 +82,7 @@ msgid "Select all"
 msgstr ""
 
 msgid "Organisation units"
-msgstr "Ташкилий бирликлар"
+msgstr "Ташкилий бўлимлар"
 
 msgid "Period"
 msgstr ""
@@ -460,7 +460,7 @@ msgid "Pivot table"
 msgstr "Таянч жадвал"
 
 msgid "Target"
-msgstr ""
+msgstr "Нишон"
 
 msgid "Base"
 msgstr ""
