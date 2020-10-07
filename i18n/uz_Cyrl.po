@@ -19,7 +19,7 @@ msgid "Data"
 msgstr "Маълумот"
 
 msgid "Data Type"
-msgstr ""
+msgstr "Маълумот тури"
 
 msgid "Totals"
 msgstr "Жами"
@@ -28,7 +28,7 @@ msgid "Details"
 msgstr "Тафсилотлари"
 
 msgid "Detail"
-msgstr ""
+msgstr "Тафсилот"
 
 msgid "Search dimensions"
 msgstr ""
