@@ -88,7 +88,7 @@ msgid "Period"
 msgstr ""
 
 msgid "Year"
-msgstr ""
+msgstr "Йил"
 
 msgid "Relative periods"
 msgstr "Нисбий даврлар"
@@ -466,4 +466,4 @@ msgid "Base"
 msgstr ""
 
 msgid "No data"
-msgstr ""
+msgstr "Маълумот йўқ"
