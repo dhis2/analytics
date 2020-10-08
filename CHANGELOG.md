@@ -1,3 +1,111 @@
+## [11.0.11](https://github.com/dhis2/analytics/compare/v11.0.10...v11.0.11) (2020-10-07)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([63fc012](https://github.com/dhis2/analytics/commit/63fc0124a1ede906567c69c8722f4c8f4aea5fdb))
+
+## [11.0.10](https://github.com/dhis2/analytics/compare/v11.0.9...v11.0.10) (2020-09-24)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([956060f](https://github.com/dhis2/analytics/commit/956060f46f1f0a473c76bd16216571784c2208b8))
+
+## [11.0.9](https://github.com/dhis2/analytics/compare/v11.0.8...v11.0.9) (2020-09-24)
+
+
+### Bug Fixes
+
+* polynomial regression breaks with 1 data point only ([#626](https://github.com/dhis2/analytics/issues/626)) ([7825e04](https://github.com/dhis2/analytics/commit/7825e047dd4b096b786933e58f45b89b4d4b245d))
+
+## [11.0.8](https://github.com/dhis2/analytics/compare/v11.0.7...v11.0.8) (2020-09-23)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([a3623d9](https://github.com/dhis2/analytics/commit/a3623d954212bdb04e8f4c925eb134ebf5cc0c48))
+
+## [11.0.7](https://github.com/dhis2/analytics/compare/v11.0.6...v11.0.7) (2020-09-23)
+
+
+### Bug Fixes
+
+* extract color from pattern for trendlines ([#619](https://github.com/dhis2/analytics/issues/619)) ([27356be](https://github.com/dhis2/analytics/commit/27356be1320196517083472da44dac735532913a))
+
+## [11.0.6](https://github.com/dhis2/analytics/compare/v11.0.5...v11.0.6) (2020-09-22)
+
+
+### Bug Fixes
+
+* radar clashing axis titles ([#618](https://github.com/dhis2/analytics/issues/618)) ([c875950](https://github.com/dhis2/analytics/commit/c875950cfbeca3eeb00679821c4666cefadf71b8))
+
+## [11.0.5](https://github.com/dhis2/analytics/compare/v11.0.4...v11.0.5) (2020-09-21)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([1772a05](https://github.com/dhis2/analytics/commit/1772a058d2dd016850e8bd594dfdcc26d58c35a6))
+* setting org unit as series cause crash ([#613](https://github.com/dhis2/analytics/issues/613)) ([2077592](https://github.com/dhis2/analytics/commit/20775926ee3b7e22fb0ea7c428bf15f9009e2f9a))
+
+## [11.0.4](https://github.com/dhis2/analytics/compare/v11.0.3...v11.0.4) (2020-09-19)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([6006030](https://github.com/dhis2/analytics/commit/6006030a76976f748e9ca708b828a9995ce4b6c4))
+
+## [11.0.3](https://github.com/dhis2/analytics/compare/v11.0.2...v11.0.3) (2020-09-18)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([39e81f0](https://github.com/dhis2/analytics/commit/39e81f0ab2d96d881512f5236be3cf76bdd8ed84))
+
+## [11.0.2](https://github.com/dhis2/analytics/compare/v11.0.1...v11.0.2) (2020-09-18)
+
+
+### Bug Fixes
+
+* export hasRelativeItems and use as condition for Highcharts config ([#605](https://github.com/dhis2/analytics/issues/605)) ([1892347](https://github.com/dhis2/analytics/commit/189234705f90c5d28d21fc675f1c6d1fa79fcd96)), closes [dhis2/data-visualizer-app#1280](https://github.com/dhis2/data-visualizer-app/issues/1280)
+
+## [11.0.1](https://github.com/dhis2/analytics/compare/v11.0.0...v11.0.1) (2020-09-18)
+
+
+### Bug Fixes
+
+* org unit z-index ([#602](https://github.com/dhis2/analytics/issues/602)) ([f173e53](https://github.com/dhis2/analytics/commit/f173e5354ee27cf890c4c18060018ea6f0805df9))
+
+# [11.0.0](https://github.com/dhis2/analytics/compare/v10.0.7...v11.0.0) (2020-09-18)
+
+
+### Features
+
+* solve font style related issues ([#597](https://github.com/dhis2/analytics/issues/597)) ([a9ca8b6](https://github.com/dhis2/analytics/commit/a9ca8b62c4bcee8d5e793d1c34ffc27bb98b7b2d))
+
+
+### BREAKING CHANGES
+
+* - COLOR_SET_MONO_PATTERNS renamed to COLOR_SET_PATTERNS
+- getFontSizeOptions requires the prop fontStyleKey to be passed in
+- getTextAlignOptions exports an array instead of an object and requires the prop visType to be passed in
+
+## [10.0.7](https://github.com/dhis2/analytics/compare/v10.0.6...v10.0.7) (2020-09-18)
+
+
+### Bug Fixes
+
+* apply legend color to SV when using DGS ([#599](https://github.com/dhis2/analytics/issues/599)) ([5fb7538](https://github.com/dhis2/analytics/commit/5fb7538612c4b1dcc4b78d3b7251a8f6f8a9b69f))
+* custom sort order, hide empty categories options crash pie/gauge ([#596](https://github.com/dhis2/analytics/issues/596)) ([97970a1](https://github.com/dhis2/analytics/commit/97970a14bb70358236b315fb4d450f7d06d98791))
+* fix trendline handling for stacked area with 2 categories ([#603](https://github.com/dhis2/analytics/issues/603)) ([4c53d9a](https://github.com/dhis2/analytics/commit/4c53d9a0e2c2a9ad99dbd7071359969f09f6ee52))
+
+## [10.0.6](https://github.com/dhis2/analytics/compare/v10.0.5...v10.0.6) (2020-09-17)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([6674d93](https://github.com/dhis2/analytics/commit/6674d933b6f223c5b9290f9577bc94996227b753))
+
 ## [10.0.5](https://github.com/dhis2/analytics/compare/v10.0.4...v10.0.5) (2020-09-14)
 
 

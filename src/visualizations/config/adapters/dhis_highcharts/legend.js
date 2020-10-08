@@ -7,6 +7,7 @@ import {
     FONT_STYLE_OPTION_TEXT_ALIGN,
     FONT_STYLE_LEGEND,
 } from '../../../../modules/fontStyle'
+import { getTextAlignOption } from './getTextAlignOption'
 
 const DASHBOARD_ITEM_STYLE = {
     fontSize: '11px',
@@ -36,7 +37,7 @@ function getItemStyle(fontStyle, dashboard) {
     }
 }
 
-function getLegend(fontStyle, dashboard) {
+function getLegend(fontStyle, dashboard, visType) {
     return Object.assign(
         {},
         {
@@ -45,7 +46,7 @@ function getLegend(fontStyle, dashboard) {
             itemMarginBottom: 2,
         },
         dashboard ? DASHBOARD_LEGEND : {
-            align: (fontStyle[FONT_STYLE_OPTION_TEXT_ALIGN] || '').toLowerCase(),
+            align: (getTextAlignOption(fontStyle[FONT_STYLE_OPTION_TEXT_ALIGN], FONT_STYLE_LEGEND, visType)),
         }
     )
 }
@@ -56,5 +57,5 @@ export default function(layout, dashboard) {
         ? {
               enabled: false,
           }
-        : Object.assign({}, getLegend(fontStyle, dashboard), getItemStyle(fontStyle, dashboard))
+        : Object.assign({}, getLegend(fontStyle, dashboard, layout.type), getItemStyle(fontStyle, dashboard))
 }

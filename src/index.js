@@ -52,6 +52,10 @@ export {
 
 export { ouIdHelper } from './modules/ouIdHelper'
 
+// Modules: relativeItems
+
+export { hasRelativeItems } from './modules/relativeItems'
+
 // Modules: layout
 
 export { LAYOUT } from './modules/layout/layout'
@@ -204,6 +208,6 @@ export {
     COLOR_SET_DARK,
     COLOR_SET_GRAY,
     COLOR_SET_COLOR_BLIND,
-    COLOR_SET_MONO_PATTERNS,
+    COLOR_SET_PATTERNS,
     colorSets,
 } from './visualizations/util/colors/colorSets'
