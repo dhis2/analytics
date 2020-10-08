@@ -79,7 +79,7 @@ msgid "Period type"
 msgstr ""
 
 msgid "Year"
-msgstr ""
+msgstr "Йил"
 
 msgid "Select year"
 msgstr ""
@@ -576,4 +576,4 @@ msgid "Axis {{axisId}}"
 msgstr ""
 
 msgid "No data"
-msgstr ""
+msgstr "Маълумот йўқ"
