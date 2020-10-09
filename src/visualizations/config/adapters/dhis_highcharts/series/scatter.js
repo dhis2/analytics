@@ -1,7 +1,5 @@
 const marker = {
-    symbol: 'circle',
-    fillColor: '#439bf2'
-    //TODO: Change to proper marker style
+    symbol: 'circle'
 }
 
 export default function(series) {
