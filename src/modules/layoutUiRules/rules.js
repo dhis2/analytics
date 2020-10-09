@@ -15,6 +15,7 @@ import {
     VIS_TYPE_YEAR_OVER_YEAR_LINE,
     VIS_TYPE_YEAR_OVER_YEAR_COLUMN,
     VIS_TYPE_PIVOT_TABLE,
+    VIS_TYPE_SCATTER,
 } from '../visTypes'
 
 const RULE_PROP_AVAILABLE_AXES = 'availableAxes',
@@ -110,6 +111,7 @@ const visTypeToRules = {
     [VIS_TYPE_YEAR_OVER_YEAR_LINE]: yearOverYearRules,
     [VIS_TYPE_YEAR_OVER_YEAR_COLUMN]: yearOverYearRules,
     [VIS_TYPE_PIVOT_TABLE]: pivotTableRules,
+    [VIS_TYPE_SCATTER]: radarRules, //TODO: Add rule to force Rows: 1 dim, 2 items
 }
 
 const getRulesByVisType = visType => {

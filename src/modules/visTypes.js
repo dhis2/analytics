@@ -29,6 +29,7 @@ export const VIS_TYPE_YEAR_OVER_YEAR_LINE = 'YEAR_OVER_YEAR_LINE'
 export const VIS_TYPE_YEAR_OVER_YEAR_COLUMN = 'YEAR_OVER_YEAR_COLUMN'
 export const VIS_TYPE_SINGLE_VALUE = 'SINGLE_VALUE'
 export const VIS_TYPE_PIVOT_TABLE = 'PIVOT_TABLE'
+export const VIS_TYPE_SCATTER = 'SCATTER'
 
 export const visTypeDisplayNames = {
     [VIS_TYPE_PIVOT_TABLE]: i18n.t('Pivot table'),
@@ -45,6 +46,7 @@ export const visTypeDisplayNames = {
     [VIS_TYPE_YEAR_OVER_YEAR_LINE]: i18n.t('Year over year (line)'),
     [VIS_TYPE_YEAR_OVER_YEAR_COLUMN]: i18n.t('Year over year (column)'),
     [VIS_TYPE_SINGLE_VALUE]: i18n.t('Single value'),
+    [VIS_TYPE_SCATTER]: i18n.t('Scatter'),
 }
 
 export const visTypeDescriptions = {
@@ -90,6 +92,7 @@ export const visTypeDescriptions = {
     [VIS_TYPE_SINGLE_VALUE]: i18n.t(
         'Display a single value. Recommend relative period to show latest data.'
     ),
+    [VIS_TYPE_SCATTER]: i18n.t('No description'), //TODO: Add description
 }
 
 export const visTypeIcons = {
@@ -107,6 +110,7 @@ export const visTypeIcons = {
     [VIS_TYPE_YEAR_OVER_YEAR_LINE]: YearOverYearLineIcon,
     [VIS_TYPE_YEAR_OVER_YEAR_COLUMN]: YearOverYearColumnIcon,
     [VIS_TYPE_SINGLE_VALUE]: SingleValueIcon,
+    [VIS_TYPE_SCATTER]: YearOverYearLineIcon, //TODO: Add icon
 }
 
 export const getDisplayNameByVisType = visType => {
