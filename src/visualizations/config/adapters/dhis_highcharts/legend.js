@@ -7,7 +7,6 @@ import {
     FONT_STYLE_OPTION_TEXT_ALIGN,
     FONT_STYLE_LEGEND,
 } from '../../../../modules/fontStyle'
-import { VIS_TYPE_SCATTER } from '../../../../modules/visTypes'
 import { getTextAlignOption } from './getTextAlignOption'
 
 const DASHBOARD_ITEM_STYLE = {
@@ -54,7 +53,7 @@ function getLegend(fontStyle, dashboard, visType) {
 
 export default function(layout, dashboard) {
     const fontStyle = layout.fontStyle[FONT_STYLE_LEGEND]
-    return layout.hideLegend || layout.type === VIS_TYPE_SCATTER //TODO:  Should Scatter have a legend?
+    return layout.hideLegend
         ? {
               enabled: false,
           }
