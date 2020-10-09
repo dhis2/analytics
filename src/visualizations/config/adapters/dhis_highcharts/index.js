@@ -106,8 +106,15 @@ export default function({ store, layout, el, extraConfig, extraOptions }) {
             // disable exporting context menu
             enabled: false,
         },
+    }
 
-        plotOptions: _layout.type === VIS_TYPE_SCATTER ? getPlotOptions({visType: _layout.type, xAxisName: store.data[0].metaData.items[_layout.rows[0].items[0].id].name, yAxisName: store.data[0].metaData.items[_layout.rows[0].items[1].id].name}) : {},
+    // get plot options for scatter
+    if (_layout.type === VIS_TYPE_SCATTER) {
+        const metaDataItems = store.data[0].metaData.items
+        const rowItems = _layout.rows[0].items
+        const xAxisName = metaDataItems[rowItems[0].id].name
+        const yAxisName = metaDataItems[rowItems[1].id].name
+        config.plotOptions = getPlotOptions({visType: _layout.type, xAxisName, yAxisName})
     }
 
     // hide empty categories
