@@ -7,9 +7,10 @@ import getSeries from './series'
 import getTitle from './title'
 import getSubtitle from './subtitle'
 import getLegend from './legend'
+import getPlotOptions from './plotOptions'
 import getPane from './pane'
 import getNoData from './noData'
-import { isStacked, isDualAxisType } from '../../../../modules/visTypes'
+import { isStacked, isDualAxisType, VIS_TYPE_SCATTER } from '../../../../modules/visTypes'
 import getSortedConfig from './getSortedConfig'
 import getTrimmedConfig from './getTrimmedConfig'
 import addTrendLines, { isRegressionIneligible } from './addTrendLines'
@@ -105,6 +106,8 @@ export default function({ store, layout, el, extraConfig, extraOptions }) {
             // disable exporting context menu
             enabled: false,
         },
+
+        plotOptions: _layout.type === VIS_TYPE_SCATTER ? getPlotOptions({visType: _layout.type, xAxisName: store.data[0].metaData.items[_layout.rows[0].items[0].id].name, yAxisName: store.data[0].metaData.items[_layout.rows[0].items[1].id].name}) : {},
     }
 
     // hide empty categories
