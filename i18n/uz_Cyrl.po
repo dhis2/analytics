@@ -52,7 +52,7 @@ msgid "Organisation units"
 msgstr "Ташкилий бирликлар"
 
 msgid "Period"
-msgstr ""
+msgstr "давр"
 
 msgid "Year"
 msgstr "Йил"
