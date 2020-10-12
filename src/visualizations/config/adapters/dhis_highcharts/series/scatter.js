@@ -3,12 +3,12 @@ const marker = {
 }
 
 export default function(series) {
-    return series.map(item => ({name: item.name, data: [item.data], marker}))
-    // return [
-    //     {
-    //         data: series.map(item => item.data),
-    //     },
-    // ]
+    return [
+        {
+            data: series.map(item => ({x: item.data[0], y: item.data[1], name: item.name})),
+            marker
+        },
+    ]
 }
 
 //TODO: This assumes there are exactly 1 dimension on Columns which contains exactly 2 items. This should be supported by a rule.

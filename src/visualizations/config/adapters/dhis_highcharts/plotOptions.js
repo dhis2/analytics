@@ -1,24 +1,28 @@
 import { VIS_TYPE_SCATTER, VIS_TYPE_BUBBLE } from "../../../../modules/visTypes"
 
 export default ({visType, xAxisName, yAxisName, zAxisName, showLabels}) => {
+    const series = { 
+        dataLabels: {
+            enabled: showLabels,
+            format: '{point.name}'
+        }
+    }
     switch(visType) {
         case VIS_TYPE_SCATTER: 
             return {
+                series,
                 scatter: {
                     tooltip: {
-                        headerFormat: '<b>{series.name}</b><br>',
-                        pointFormat: `${xAxisName}: {point.x}<br>${yAxisName}: {point.y}`
+                        useHTML: true,
+                        headerFormat: '',
+                        pointFormat: `<b>{point.name}</b><br>` +  
+                            `${xAxisName}: {point.x}<br>${yAxisName}: {point.y}`
                     }
                 }
             }
         case VIS_TYPE_BUBBLE:
             return {
-                series: {
-                    dataLabels: {
-                        enabled: showLabels,
-                        format: '{point.name}'
-                    }
-                },
+                series,
                 bubble: {
                     tooltip: {
                         useHTML: true,
