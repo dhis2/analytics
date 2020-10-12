@@ -14,6 +14,7 @@ import {
     VIS_TYPE_SINGLE_VALUE,
     VIS_TYPE_PIVOT_TABLE,
     VIS_TYPE_SCATTER,
+    VIS_TYPE_BUBBLE,
 } from './visTypes'
 import {
     LAYOUT_TYPE_DEFAULT,
@@ -38,6 +39,7 @@ const visTypeToLayoutType = {
     [VIS_TYPE_SINGLE_VALUE]: LAYOUT_TYPE_PIE,
     [VIS_TYPE_PIVOT_TABLE]: LAYOUT_TYPE_PIVOT_TABLE,
     [VIS_TYPE_SCATTER]: LAYOUT_TYPE_DEFAULT,
+    [VIS_TYPE_BUBBLE]: LAYOUT_TYPE_DEFAULT,
 }
 
 export const getLayoutTypeByVisType = visType => visTypeToLayoutType[visType]

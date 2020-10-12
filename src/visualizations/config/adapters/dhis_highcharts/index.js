@@ -10,7 +10,7 @@ import getLegend from './legend'
 import getPlotOptions from './plotOptions'
 import getPane from './pane'
 import getNoData from './noData'
-import { isStacked, isDualAxisType, VIS_TYPE_SCATTER } from '../../../../modules/visTypes'
+import { isStacked, isDualAxisType, VIS_TYPE_SCATTER, VIS_TYPE_BUBBLE } from '../../../../modules/visTypes'
 import getSortedConfig from './getSortedConfig'
 import getTrimmedConfig from './getTrimmedConfig'
 import addTrendLines, { isRegressionIneligible } from './addTrendLines'
@@ -109,7 +109,7 @@ export default function({ store, layout, el, extraConfig, extraOptions }) {
     }
 
     // get plot options for scatter
-    if (_layout.type === VIS_TYPE_SCATTER) {
+    if ([VIS_TYPE_SCATTER, VIS_TYPE_BUBBLE].includes(_layout.type)) {
         const metaDataItems = store.data[0].metaData.items
         const rowItems = _layout.rows[0].items
         const xAxisName = metaDataItems[rowItems[0].id].name
