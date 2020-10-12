@@ -85,7 +85,7 @@ msgid "Organisation units"
 msgstr "Ташкилий бўлимлар"
 
 msgid "Period"
-msgstr ""
+msgstr "давр"
 
 msgid "Year"
 msgstr "Йил"
@@ -331,7 +331,7 @@ msgid "Years"
 msgstr "Йиллар"
 
 msgid "Series"
-msgstr ""
+msgstr "Кетма-кетликлар"
 
 msgid "Category"
 msgstr "Категория"
@@ -463,7 +463,7 @@ msgid "Target"
 msgstr "Нишон"
 
 msgid "Base"
-msgstr ""
+msgstr "Асос"
 
 msgid "No data"
 msgstr "Маълумот йўқ"
