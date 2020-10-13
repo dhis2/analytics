@@ -27,7 +27,7 @@
     },
     "devDependencies": {
         "@dhis2/cli-app-scripts": "^5.1.0",
-        "@dhis2/cli-style": "^7.0.0",
+        "@dhis2/cli-style": "^7.1.0",
         "@dhis2/d2-i18n": "^1.0.6",
         "@sambego/storybook-state": "^2.0.1",
         "@storybook/addons": "^5.0.6",
