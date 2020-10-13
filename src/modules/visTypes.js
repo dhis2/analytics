@@ -152,6 +152,8 @@ const twoCategoryChartTypes = [
     VIS_TYPE_LINE,
     VIS_TYPE_AREA,
     VIS_TYPE_STACKED_AREA,
+    VIS_TYPE_SCATTER,
+    VIS_TYPE_BUBBLE,
 ]
 
 const verticalTypes = [VIS_TYPE_BAR, VIS_TYPE_STACKED_BAR, VIS_TYPE_GAUGE]
