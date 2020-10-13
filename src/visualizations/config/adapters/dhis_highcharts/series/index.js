@@ -208,7 +208,7 @@ export default function(series, store, layout, isStacked, extraOptions) {
             series = getScatter(series, secondCategoryItemNames)
             break
         case VIS_TYPE_BUBBLE:
-            series = getBubble(series)
+            series = getBubble(series, secondCategoryItemNames)
             break
         default:
             series = getDefault(series, layout, isStacked, extraOptions)
