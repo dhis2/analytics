@@ -16,10 +16,13 @@ import {
     isDualAxisType,
     isYearOverYear,
     VIS_TYPE_LINE,
+    VIS_TYPE_COLUMN,
+    VIS_TYPE_BAR,
 } from '../../../../../modules/visTypes'
 import { hasCustomAxes } from '../../../../../modules/axis'
 import { getAxisStringFromId } from '../../../../util/axisId'
 import { axisHasRelativeItems } from '../../../../../modules/layout/axisHasRelativeItems'
+import { getColorByValueFromLegendSet } from '../../../../../modules/legends'
 
 const DEFAULT_ANIMATION_DURATION = 200
 
@@ -160,6 +163,11 @@ function getDefault(series, layout, isStacked, extraOptions) {
         ) {
             seriesObj.pointPadding = 0
             seriesObj.groupPadding = 0
+        }
+        const legendSet = extraOptions.legendSets[0]
+
+        if (legendSet && [VIS_TYPE_COLUMN, VIS_TYPE_BAR].includes(layout.type)) {
+            seriesObj.data = seriesObj.data.map(value => ({y: value, color: getColorByValueFromLegendSet(legendSet, value)}))
         }
 
         // color
