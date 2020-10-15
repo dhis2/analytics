@@ -1,0 +1,8 @@
+import { getColorByValueFromLegendSet } from "../../../../modules/legends"
+
+export default (series, legendSet) => {
+    series.forEach(seriesObj => {
+        seriesObj.data = seriesObj.data.map(value => ({y: value, color: getColorByValueFromLegendSet(legendSet, value)}))
+    })
+    return series
+}

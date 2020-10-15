@@ -9,7 +9,8 @@ import getSubtitle from './subtitle'
 import getLegend from './legend'
 import getPane from './pane'
 import getNoData from './noData'
-import { isStacked, isDualAxisType } from '../../../../modules/visTypes'
+import applyLegendSet from './applyLegendSet'
+import { isStacked, isDualAxisType, VIS_TYPE_COLUMN, VIS_TYPE_BAR } from '../../../../modules/visTypes'
 import getSortedConfig from './getSortedConfig'
 import getTrimmedConfig from './getTrimmedConfig'
 import addTrendLines, { isRegressionIneligible } from './addTrendLines'
@@ -133,6 +134,13 @@ export default function({ store, layout, el, extraConfig, extraOptions }) {
         ((!(isDualAxisType(layout.type) && hasCustomAxes(filteredSeries)) || axisHasRelativeItems(layout.columns)))
     ) {
         config.series = addTrendLines(_layout, config.series, stacked)
+    }
+
+    // DHIS2-147 add legendset to Column and Bar
+    const legendSet = extraOptions.legendSets[0]
+
+    if (legendSet && [VIS_TYPE_COLUMN, VIS_TYPE_BAR].includes(layout.type)) {
+        config.series = applyLegendSet(config.series, legendSet)
     }
 
     // flatten category groups
