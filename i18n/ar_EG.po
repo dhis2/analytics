@@ -8,12 +8,12 @@ msgstr ""
 "POT-Creation-Date: 2020-09-15T07:30:45.529Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: phil_dhis2, 2020\n"
-"Language-Team: Danish (https://www.transifex.com/hisp-uio/teams/100509/da/)\n"
+"Language-Team: Arabic (Egypt) (https://www.transifex.com/hisp-uio/teams/100509/ar_EG/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: da\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: ar_EG\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 
 msgid "Data Type"
 msgstr ""
@@ -22,7 +22,7 @@ msgid "Totals"
 msgstr ""
 
 msgid "Details"
-msgstr "Details"
+msgstr ""
 
 msgid "Detail"
 msgstr ""
@@ -34,7 +34,7 @@ msgid "Add to {{axisName}}"
 msgstr ""
 
 msgid "Remove"
-msgstr "Remove"
+msgstr ""
 
 msgid "Not available for {{visualizationType}}"
 msgstr ""
@@ -73,13 +73,13 @@ msgid "Deselect All"
 msgstr ""
 
 msgid "Select all"
-msgstr "Select all"
+msgstr ""
 
 msgid "Period type"
 msgstr ""
 
 msgid "Year"
-msgstr "Year"
+msgstr ""
 
 msgid "Select year"
 msgstr ""
@@ -100,40 +100,40 @@ msgid "No periods selected"
 msgstr ""
 
 msgid "January"
-msgstr "January"
+msgstr "يناير"
 
 msgid "February"
-msgstr "February"
+msgstr "فبراير"
 
 msgid "March"
-msgstr "March"
+msgstr "مارس"
 
 msgid "April"
-msgstr "April"
+msgstr "ابريل"
 
 msgid "May"
-msgstr "May"
+msgstr "مايو"
 
 msgid "June"
-msgstr "June"
+msgstr "يونيو"
 
 msgid "July"
-msgstr "July"
+msgstr "يوليو"
 
 msgid "August"
-msgstr "August"
+msgstr "أغسطس"
 
 msgid "September"
-msgstr "September"
+msgstr "سبتمبر"
 
 msgid "October"
-msgstr "October"
+msgstr "اكتوبر"
 
 msgid "November"
-msgstr "November"
+msgstr "نوفمبر"
 
 msgid "December"
-msgstr "December"
+msgstr "ديسمبر"
 
 msgid "Week {{weekNumber}}"
 msgstr ""
@@ -142,10 +142,10 @@ msgid "Bi-Week {{biWeekNumber}}"
 msgstr ""
 
 msgid "Daily"
-msgstr "Daily"
+msgstr ""
 
 msgid "Weekly"
-msgstr "Weekly"
+msgstr ""
 
 msgid "Bi-weekly"
 msgstr ""
@@ -163,22 +163,22 @@ msgid "Weekly (Start Sunday)"
 msgstr ""
 
 msgid "Monthly"
-msgstr "Monthly"
+msgstr ""
 
 msgid "Bi-monthly"
-msgstr "Bi-monthly"
+msgstr ""
 
 msgid "Quarterly"
-msgstr "Quarterly"
+msgstr ""
 
 msgid "Six-monthly"
-msgstr "Six-monthly"
+msgstr ""
 
 msgid "Six-monthly April"
 msgstr ""
 
 msgid "Yearly"
-msgstr "Yearly"
+msgstr ""
 
 msgid "Financial year (Start November)"
 msgstr ""
@@ -223,7 +223,7 @@ msgid "This week"
 msgstr ""
 
 msgid "Last week"
-msgstr "Last week"
+msgstr ""
 
 msgid "Last 4 weeks"
 msgstr ""
@@ -250,16 +250,16 @@ msgid "This month"
 msgstr ""
 
 msgid "Last month"
-msgstr "Last month"
+msgstr ""
 
 msgid "Last 3 months"
-msgstr "Last 3 months"
+msgstr ""
 
 msgid "Last 6 months"
-msgstr "Last 6 months"
+msgstr ""
 
 msgid "Last 12 months"
-msgstr "Last 12 months"
+msgstr ""
 
 msgid "Months this year"
 msgstr ""
@@ -346,10 +346,10 @@ msgid "Series"
 msgstr ""
 
 msgid "Category"
-msgstr "Category"
+msgstr ""
 
 msgid "Filter"
-msgstr "Filter"
+msgstr ""
 
 msgid "Columns"
 msgstr ""
@@ -379,7 +379,7 @@ msgid "Select a program"
 msgstr ""
 
 msgid "Indicators"
-msgstr "Indicators"
+msgstr ""
 
 msgid "Select indicator group"
 msgstr ""
@@ -388,7 +388,7 @@ msgid "[ All groups ]"
 msgstr ""
 
 msgid "Data elements"
-msgstr "Data elements"
+msgstr ""
 
 msgid "Select data element group"
 msgstr ""
@@ -397,7 +397,7 @@ msgid "[ All data elements ]"
 msgstr ""
 
 msgid "Data sets"
-msgstr "Data sets"
+msgstr ""
 
 msgid "Select data sets"
 msgstr ""

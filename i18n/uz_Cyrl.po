@@ -85,7 +85,7 @@ msgid "Select year"
 msgstr ""
 
 msgid "Period"
-msgstr ""
+msgstr "давр"
 
 msgid "Relative periods"
 msgstr "Нисбий даврлар"
@@ -343,7 +343,7 @@ msgid "Years"
 msgstr "Йиллар"
 
 msgid "Series"
-msgstr ""
+msgstr "Кетма-кетликлар"
 
 msgid "Category"
 msgstr "Категория"
@@ -570,7 +570,7 @@ msgid "Target"
 msgstr "Нишон"
 
 msgid "Base"
-msgstr ""
+msgstr "Асос"
 
 msgid "Axis {{axisId}}"
 msgstr ""
