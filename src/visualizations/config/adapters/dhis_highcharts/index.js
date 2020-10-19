@@ -17,6 +17,7 @@ import addTrendLines, { isRegressionIneligible } from './addTrendLines'
 import { defaultMultiAxisTheme1 } from '../../../util/colors/themes'
 import { hasCustomAxes } from '../../../../modules/axis'
 import { axisHasRelativeItems } from '../../../../modules/layout/axisHasRelativeItems'
+import { LEGEND_DISPLAY_STRATEGY_BY_DATA_ITEM, LEGEND_DISPLAY_STRATEGY_FIXED } from '../../../../modules/legends'
 
 const getTransformedLayout = layout => ({
     ...layout,
@@ -140,11 +141,14 @@ export default function({ store, layout, el, extraConfig, extraOptions }) {
     const legendSets = extraOptions.legendSets
 
     if (legendSets?.length && [VIS_TYPE_COLUMN, VIS_TYPE_BAR].includes(layout.type)) {
-        // TODO: add check if "single for entire" then use legendSets[0]
-        config.series = config.series.map(seriesObj => {
-            const legendSet = legendSets.find(legendSet => legendSet.id === store.data[0].metaData.items[seriesObj.id]?.legendSet)
-            return legendSet ? applyLegendSet(seriesObj, legendSet) : seriesObj
-        })
+        if (_layout.legendDisplayStrategy === LEGEND_DISPLAY_STRATEGY_BY_DATA_ITEM) {
+            config.series = config.series.map(seriesObj => {
+                const legendSet = legendSets.find(legendSet => legendSet.id === store.data[0].metaData.items[seriesObj.id]?.legendSet)
+                return legendSet ? applyLegendSet(seriesObj, legendSet) : seriesObj
+            }) 
+        } else if (_layout.legendDisplayStrategy === LEGEND_DISPLAY_STRATEGY_FIXED) {
+            config.series = config.series.map(seriesObj => applyLegendSet(seriesObj, legendSets[0])) 
+        }
     }
 
     // flatten category groups
