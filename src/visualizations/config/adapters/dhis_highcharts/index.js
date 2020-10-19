@@ -138,6 +138,10 @@ export default function({ store, layout, el, extraConfig, extraOptions }) {
     }
 
     // DHIS2-147 add legendset to Column and Bar
+    /* 
+    ** Note: This needs to go last, after all other data manipulation is done, as it changes 
+    ** the format of the data prop from an array of values to an array of objects with y and color props.
+    */
     const legendSets = extraOptions.legendSets
 
     if (legendSets?.length && [VIS_TYPE_COLUMN, VIS_TYPE_BAR].includes(layout.type)) {
