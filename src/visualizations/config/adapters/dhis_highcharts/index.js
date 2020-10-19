@@ -137,10 +137,14 @@ export default function({ store, layout, el, extraConfig, extraOptions }) {
     }
 
     // DHIS2-147 add legendset to Column and Bar
-    const legendSet = extraOptions.legendSets[0]
+    const legendSets = extraOptions.legendSets
 
-    if (legendSet && [VIS_TYPE_COLUMN, VIS_TYPE_BAR].includes(layout.type)) {
-        config.series = applyLegendSet(config.series, legendSet)
+    if (legendSets?.length && [VIS_TYPE_COLUMN, VIS_TYPE_BAR].includes(layout.type)) {
+        // TODO: add check if "single for entire" then use legendSets[0]
+        config.series = config.series.map(seriesObj => {
+            const legendSet = legendSets.find(legendSet => legendSet.id === store.data[0].metaData.items[seriesObj.id]?.legendSet)
+            return legendSet ? applyLegendSet(seriesObj, legendSet) : seriesObj
+        })
     }
 
     // flatten category groups
