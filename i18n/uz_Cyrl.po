@@ -64,7 +64,7 @@ msgid "Fixed periods"
 msgstr ""
 
 msgid "Period type"
-msgstr ""
+msgstr "Давр тури"
 
 msgid "January"
 msgstr "Январь"
