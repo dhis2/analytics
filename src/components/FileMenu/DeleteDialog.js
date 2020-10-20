@@ -1,0 +1,83 @@
+import React from 'react'
+
+import PropTypes from '@dhis2/prop-types'
+import i18n from '@dhis2/d2-i18n'
+import { useDataMutation } from '@dhis2/app-runtime'
+import {
+    Modal,
+    ModalTitle,
+    ModalContent,
+    ModalActions,
+    ButtonStrip,
+    Button,
+} from '@dhis2/ui'
+
+import { supportedFileTypes, endpointFromFileType } from './utils'
+
+const getMutation = type => ({
+    resource: endpointFromFileType(type),
+    id: ({ id }) => id,
+    type: 'delete',
+})
+/*
+const mapMutation = {
+    resource: 'maps',
+    id: ({ id }) => id,
+    type: 'delete',
+}
+
+const visualizationMutation = {
+    resource: 'visualizations',
+    id: ({ id }) => id,
+    type: 'delete',
+}
+*/
+export const DeleteDialog = ({ type, id, onClose, onDelete, onError }) => {
+    const [mutate, { error }] = useDataMutation(
+        //        type === 'map' ? mapMutation : visualizationMutation,
+        getMutation(type)
+    )
+
+    const deleteObject = async () => {
+        await mutate({ id })
+
+        onDelete()
+        onClose()
+    }
+
+    if (error) {
+        onError(error)
+        onClose()
+    }
+
+    return (
+        <Modal onClose={onClose}>
+            <ModalTitle>
+                {i18n.t('Delete {{fileType}}', { fileType: type })}
+            </ModalTitle>
+            <ModalContent>
+                {i18n.t('This {{fileType}} will be deleted. Continue?', {
+                    fileType: type,
+                })}
+            </ModalContent>
+            <ModalActions>
+                <ButtonStrip>
+                    <Button onClick={onClose} secondary>
+                        {i18n.t('Cancel')}
+                    </Button>
+                    <Button onClick={deleteObject} destructive>
+                        {i18n.t('Delete')}
+                    </Button>
+                </ButtonStrip>
+            </ModalActions>
+        </Modal>
+    )
+}
+
+DeleteDialog.propTypes = {
+    id: PropTypes.string,
+    type: PropTypes.oneOf(supportedFileTypes),
+    onClose: PropTypes.func,
+    onDelete: PropTypes.func,
+    onError: PropTypes.func,
+}
