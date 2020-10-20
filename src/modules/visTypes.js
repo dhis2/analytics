@@ -137,6 +137,8 @@ const dualAxisTypes = [
     VIS_TYPE_AREA,
 ]
 
+const multiTypeTypes = [VIS_TYPE_COLUMN, VIS_TYPE_LINE]
+
 const twoCategoryChartTypes = [
     VIS_TYPE_COLUMN,
     VIS_TYPE_STACKED_COLUMN,
@@ -147,13 +149,26 @@ const twoCategoryChartTypes = [
     VIS_TYPE_STACKED_AREA,
 ]
 
+const columnBasedTypes = [
+    VIS_TYPE_COLUMN,
+    VIS_TYPE_BAR,
+    VIS_TYPE_YEAR_OVER_YEAR_COLUMN,
+    VIS_TYPE_STACKED_COLUMN,
+    VIS_TYPE_STACKED_BAR,
+]
+
 const verticalTypes = [VIS_TYPE_BAR, VIS_TYPE_STACKED_BAR, VIS_TYPE_GAUGE]
+
+const legendSetTypes = [VIS_TYPE_COLUMN, VIS_TYPE_BAR]
 
 export const defaultVisType = VIS_TYPE_COLUMN
 export const isStacked = type => stackedTypes.includes(type)
 export const isYearOverYear = type => yearOverYearTypes.includes(type)
 export const isDualAxisType = type => dualAxisTypes.includes(type)
+export const isMultiType = type => multiTypeTypes.includes(type)
 export const isSingleValue = type => type === VIS_TYPE_SINGLE_VALUE
 export const isTwoCategoryChartType = type =>
     twoCategoryChartTypes.includes(type)
 export const isVerticalType = type => verticalTypes.includes(type)
+export const isLegendSetType = type => legendSetTypes.includes(type)
+export const isColumnBasedType = type => columnBasedTypes.includes(type)
