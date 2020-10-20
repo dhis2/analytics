@@ -1,11 +1,11 @@
 import isNumeric from 'd2-utilizr/lib/isNumeric'
 
-import { getColorByValueFromLegendSet } from "../../../../modules/legends"
+import { getLegendByValueFromLegendSet } from "../../../../modules/legends"
 
-const getColor = (value, legendSet) =>
+const getLegend = (value, legendSet) =>
     value && legendSet
-        ? getColorByValueFromLegendSet(legendSet, value)
-        : undefined
+        ? getLegendByValueFromLegendSet(legendSet, value)
+        : {}
 
 export default (seriesObj, legendSet) =>
     !seriesObj.type
@@ -15,13 +15,17 @@ export default (seriesObj, legendSet) =>
                     isNumeric(value) // Single category pass data as [value1, value2]
                         ? {
                             y: value,
-                            color: getColor(value, legendSet),
+                            color: getLegend(value, legendSet)?.color,
+                            legend: getLegend(value, legendSet)?.name,
+                            legendSet: legendSet.name,
                         }
                         : Array.isArray(value) // Dual category pass data as [[position1, value1], [position2, value2]]
                         ? {
                             x: value[0],
                             y: value[1],
-                            color: getColor(value[1], legendSet),
+                            color: getLegend(value[1], legendSet)?.color,
+                            legend: getLegend(value[1], legendSet)?.name,
+                            legendSet: legendSet.name,
                         }
                         : value
                 ),

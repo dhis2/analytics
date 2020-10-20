@@ -144,7 +144,7 @@ export default function({ store, layout, el, extraConfig, extraOptions }) {
     */
     const legendSets = extraOptions.legendSets
 
-    if (legendSets?.length && [VIS_TYPE_COLUMN, VIS_TYPE_BAR].includes(layout.type)) {
+    if (legendSets?.length && [VIS_TYPE_COLUMN, VIS_TYPE_BAR].includes(layout.type)) { // TODO: Change [VIS_TYPE_COLUMN, VIS_TYPE_BAR] to a central type
         if (_layout.legendDisplayStrategy === LEGEND_DISPLAY_STRATEGY_BY_DATA_ITEM) {
             config.series = config.series.map(seriesObj => {
                 const legendSet = legendSets.find(legendSet => legendSet.id === store.data[0].metaData.items[seriesObj.id]?.legendSet)
@@ -152,6 +152,12 @@ export default function({ store, layout, el, extraConfig, extraOptions }) {
             }) 
         } else if (_layout.legendDisplayStrategy === LEGEND_DISPLAY_STRATEGY_FIXED) {
             config.series = config.series.map(seriesObj => applyLegendSet(seriesObj, legendSets[0])) 
+        }
+        config.tooltip = {
+            useHTML: true,
+            pointFormat:  `<span style="color:{point.color}">●</span> ` +
+                `{series.name}: <b>{point.y}</b><br>` +  
+                `{point.legendSet}: <b>{point.legend}</b>`
         }
     }
 
