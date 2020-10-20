@@ -76,7 +76,7 @@ msgid "Select all"
 msgstr ""
 
 msgid "Period type"
-msgstr ""
+msgstr "Давр тури"
 
 msgid "Year"
 msgstr "Йил"

@@ -1,3 +1,17 @@
+## [11.0.16](https://github.com/dhis2/analytics/compare/v11.0.15...v11.0.16) (2020-10-20)
+
+
+### Bug Fixes
+
+* dynamic min/max based on content of data values ([#635](https://github.com/dhis2/analytics/issues/635)) ([000cd18](https://github.com/dhis2/analytics/commit/000cd1896b90da5cda9fe3ff477f3d3a7a2ec799))
+
+## [11.0.15](https://github.com/dhis2/analytics/compare/v11.0.14...v11.0.15) (2020-10-19)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([f7221bc](https://github.com/dhis2/analytics/commit/f7221bc0a651945d7f0851e2ab31d74f1b1e351a))
+
 ## [11.0.14](https://github.com/dhis2/analytics/compare/v11.0.13...v11.0.14) (2020-10-19)
 
 
