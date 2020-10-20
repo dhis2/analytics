@@ -16,7 +16,7 @@ export const applyLegendSet = (seriesObj, legendSet) =>
                         ? {
                             y: value,
                             color: getLegend(value, legendSet)?.color,
-                            legend: getLegend(value, legendSet)?.name,
+                            legend: getLegend(value, legendSet)?.name || '-',
                             legendSet: legendSet.name,
                         }
                         : Array.isArray(value) // Dual category pass data as [[position1, value1], [position2, value2]]
@@ -24,7 +24,7 @@ export const applyLegendSet = (seriesObj, legendSet) =>
                             x: value[0],
                             y: value[1],
                             color: getLegend(value[1], legendSet)?.color,
-                            legend: getLegend(value[1], legendSet)?.name,
+                            legend: getLegend(value[1], legendSet)?.name || '-',
                             legendSet: legendSet.name,
                         }
                         : value
