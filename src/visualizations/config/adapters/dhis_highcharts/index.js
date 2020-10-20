@@ -10,7 +10,7 @@ import getLegend from './legend'
 import getPane from './pane'
 import getNoData from './noData'
 import applyLegendSet from './applyLegendSet'
-import { isStacked, isDualAxisType, VIS_TYPE_COLUMN, VIS_TYPE_BAR } from '../../../../modules/visTypes'
+import { isStacked, isDualAxisType, isLegendSetType } from '../../../../modules/visTypes'
 import getSortedConfig from './getSortedConfig'
 import getTrimmedConfig from './getTrimmedConfig'
 import addTrendLines, { isRegressionIneligible } from './addTrendLines'
@@ -144,7 +144,7 @@ export default function({ store, layout, el, extraConfig, extraOptions }) {
     */
     const legendSets = extraOptions.legendSets
 
-    if (legendSets?.length && [VIS_TYPE_COLUMN, VIS_TYPE_BAR].includes(layout.type)) { // TODO: Change [VIS_TYPE_COLUMN, VIS_TYPE_BAR] to a central type
+    if (legendSets?.length && isLegendSetType(layout.type)) {
         if (_layout.legendDisplayStrategy === LEGEND_DISPLAY_STRATEGY_BY_DATA_ITEM) {
             config.series = config.series.map(seriesObj => {
                 const legendSet = legendSets.find(legendSet => legendSet.id === store.data[0].metaData.items[seriesObj.id]?.legendSet)
