@@ -32,9 +32,9 @@ export const applyLegendSet = (seriesObj, legendSet) =>
             }
         : { ...seriesObj }
 
-export const getLegendSetTooltip = {
+export const getLegendSetTooltip = () => ({
     useHTML: true,
-    pointFormat:  `<span style="color:{point.color}">●</span> ` +
+    pointFormat: `<span style="color:{point.color}">●</span> ` +
         `{series.name}: <b>{point.y}</b><br>` +  
         `{point.legendSet}: <b>{point.legend}</b>`
-}
+})
