@@ -9,7 +9,7 @@ import getSubtitle from './subtitle'
 import getLegend from './legend'
 import getPane from './pane'
 import getNoData from './noData'
-import applyLegendSet from './applyLegendSet'
+import { applyLegendSet, getLegendSetTooltip } from './legendSet'
 import { isStacked, isDualAxisType, isLegendSetType } from '../../../../modules/visTypes'
 import getSortedConfig from './getSortedConfig'
 import getTrimmedConfig from './getTrimmedConfig'
@@ -153,12 +153,7 @@ export default function({ store, layout, el, extraConfig, extraOptions }) {
         } else if (_layout.legendDisplayStrategy === LEGEND_DISPLAY_STRATEGY_FIXED) {
             config.series = config.series.map(seriesObj => applyLegendSet(seriesObj, legendSets[0])) 
         }
-        config.tooltip = {
-            useHTML: true,
-            pointFormat:  `<span style="color:{point.color}">●</span> ` +
-                `{series.name}: <b>{point.y}</b><br>` +  
-                `{point.legendSet}: <b>{point.legend}</b>`
-        }
+        config.tooltip = getLegendSetTooltip()
     }
 
     // flatten category groups

@@ -7,7 +7,7 @@ const getLegend = (value, legendSet) =>
         ? getLegendByValueFromLegendSet(legendSet, value)
         : {}
 
-export default (seriesObj, legendSet) =>
+export const applyLegendSet = (seriesObj, legendSet) =>
     !seriesObj.type
         ? {
                 ...seriesObj,
@@ -32,3 +32,9 @@ export default (seriesObj, legendSet) =>
             }
         : { ...seriesObj }
 
+export const getLegendSetTooltip = {
+    useHTML: true,
+    pointFormat:  `<span style="color:{point.color}">●</span> ` +
+        `{series.name}: <b>{point.y}</b><br>` +  
+        `{point.legendSet}: <b>{point.legend}</b>`
+}
