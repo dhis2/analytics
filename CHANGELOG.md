@@ -1,3 +1,10 @@
+# [11.1.0](https://github.com/dhis2/analytics/compare/v11.0.16...v11.1.0) (2020-10-20)
+
+
+### Features
+
+* legend sets for column + bar (DHIS2-147) ([#650](https://github.com/dhis2/analytics/issues/650)) ([fde0eaf](https://github.com/dhis2/analytics/commit/fde0eaf9b8aeb67dc0f34b3015b5a8822c9c4f60))
+
 ## [11.0.16](https://github.com/dhis2/analytics/compare/v11.0.15...v11.0.16) (2020-10-20)
 
 

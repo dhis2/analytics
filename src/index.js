@@ -137,10 +137,13 @@ export {
     getDisplayNameByVisType,
     defaultVisType,
     isStacked,
+    isMultiType,
     isYearOverYear,
     isDualAxisType,
     isSingleValue,
     isTwoCategoryChartType,
+    isLegendSetType,
+    isColumnBasedType,
 } from './modules/visTypes'
 
 // Modules: layoutTypes
