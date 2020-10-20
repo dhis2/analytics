@@ -1,3 +1,10 @@
+## [11.0.16](https://github.com/dhis2/analytics/compare/v11.0.15...v11.0.16) (2020-10-20)
+
+
+### Bug Fixes
+
+* dynamic min/max based on content of data values ([#635](https://github.com/dhis2/analytics/issues/635)) ([000cd18](https://github.com/dhis2/analytics/commit/000cd1896b90da5cda9fe3ff477f3d3a7a2ec799))
+
 ## [11.0.15](https://github.com/dhis2/analytics/compare/v11.0.14...v11.0.15) (2020-10-19)
 
 
