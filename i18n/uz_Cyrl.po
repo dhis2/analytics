@@ -436,7 +436,7 @@ msgid "Line"
 msgstr ""
 
 msgid "Area"
-msgstr ""
+msgstr "Майдон"
 
 msgid "Pie"
 msgstr ""
