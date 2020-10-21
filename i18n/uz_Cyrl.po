@@ -82,7 +82,7 @@ msgid "Year"
 msgstr "Йил"
 
 msgid "Select year"
-msgstr ""
+msgstr "Йилни танланг"
 
 msgid "Period"
 msgstr "давр"
@@ -493,7 +493,7 @@ msgid "Line"
 msgstr ""
 
 msgid "Area"
-msgstr ""
+msgstr "Майдон"
 
 msgid "Stacked area"
 msgstr ""
