@@ -1,4 +1,5 @@
 import isNumeric from 'd2-utilizr/lib/isNumeric'
+import i18n from '@dhis2/d2-i18n'
 
 import { getLegendByValueFromLegendSet } from "../../../../modules/legends"
 
@@ -33,8 +34,12 @@ export const applyLegendSet = (seriesObj, legendSet) =>
         : { ...seriesObj }
 
 export const getLegendSetTooltip = () => ({
-    useHTML: true,
-    pointFormat: `<span style="color:{point.color}">●</span> ` +
-        `{series.name}: <b>{point.y}</b><br>` +  
-        `{point.legendSet}: <b>{point.legend}</b>`
+    pointFormatter: function() {
+        return (
+            `<span style="color:${this.color}">●</span> ${this.series.name}: <b>${this.y}</b><br>` +
+            (this.legend
+                ? `${this.legendSet}: <b>${this.legend}</b>`
+                : `${i18n.t('No legend for this series')}`)
+        )
+    },
 })
