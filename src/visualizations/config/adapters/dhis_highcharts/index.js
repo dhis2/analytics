@@ -9,13 +9,15 @@ import getSubtitle from './subtitle'
 import getLegend from './legend'
 import getPane from './pane'
 import getNoData from './noData'
-import { isStacked, isDualAxisType } from '../../../../modules/visTypes'
+import { applyLegendSet, getLegendSetTooltip } from './legendSet'
+import { isStacked, isDualAxisType, isLegendSetType } from '../../../../modules/visTypes'
 import getSortedConfig from './getSortedConfig'
 import getTrimmedConfig from './getTrimmedConfig'
 import addTrendLines, { isRegressionIneligible } from './addTrendLines'
 import { defaultMultiAxisTheme1 } from '../../../util/colors/themes'
 import { hasCustomAxes } from '../../../../modules/axis'
 import { axisHasRelativeItems } from '../../../../modules/layout/axisHasRelativeItems'
+import { LEGEND_DISPLAY_STRATEGY_BY_DATA_ITEM, LEGEND_DISPLAY_STRATEGY_FIXED } from '../../../../modules/legends'
 
 const getTransformedLayout = layout => ({
     ...layout,
@@ -133,6 +135,25 @@ export default function({ store, layout, el, extraConfig, extraOptions }) {
         ((!(isDualAxisType(layout.type) && hasCustomAxes(filteredSeries)) || axisHasRelativeItems(layout.columns)))
     ) {
         config.series = addTrendLines(_layout, config.series, stacked)
+    }
+
+    // DHIS2-147 add legendset to Column and Bar
+    /* 
+    ** Note: This needs to go last, after all other data manipulation is done, as it changes 
+    ** the format of the data prop from an array of values to an array of objects with y and color props.
+    */
+    const legendSets = extraOptions.legendSets
+
+    if (legendSets?.length && isLegendSetType(layout.type)) {
+        if (_layout.legendDisplayStrategy === LEGEND_DISPLAY_STRATEGY_BY_DATA_ITEM) {
+            config.series = config.series.map(seriesObj => {
+                const legendSet = legendSets.find(legendSet => legendSet.id === store.data[0].metaData.items[seriesObj.id]?.legendSet)
+                return legendSet ? applyLegendSet(seriesObj, legendSet) : seriesObj
+            }) 
+        } else if (_layout.legendDisplayStrategy === LEGEND_DISPLAY_STRATEGY_FIXED) {
+            config.series = config.series.map(seriesObj => applyLegendSet(seriesObj, legendSets[0])) 
+        }
+        config.tooltip = getLegendSetTooltip()
     }
 
     // flatten category groups
