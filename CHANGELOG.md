@@ -1,3 +1,10 @@
+## [11.1.1](https://github.com/dhis2/analytics/compare/v11.1.0...v11.1.1) (2020-10-21)
+
+
+### Bug Fixes
+
+* display info msg when no legend is found (DHIS2-147) ([#656](https://github.com/dhis2/analytics/issues/656)) ([19d7860](https://github.com/dhis2/analytics/commit/19d786065edcd3cdd87fc4e61590357cc590cfa5))
+
 # [11.1.0](https://github.com/dhis2/analytics/compare/v11.0.16...v11.1.0) (2020-10-20)
 
 
