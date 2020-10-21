@@ -1,5 +1,5 @@
-import { DIMENSION_ID_DATA, DIMENSION_ID_PERIOD } from '../predefinedDimensions'
-import { AXIS_ID_COLUMNS, AXIS_ID_ROWS, AXIS_ID_FILTERS } from './axis'
+import { DIMENSION_ID_DATA, DIMENSION_ID_PERIOD } from './predefinedDimensions'
+import { AXIS_ID_COLUMNS, AXIS_ID_ROWS, AXIS_ID_FILTERS } from './layout/axis'
 import {
     VIS_TYPE_YEAR_OVER_YEAR_LINE,
     VIS_TYPE_YEAR_OVER_YEAR_COLUMN,
@@ -8,9 +8,9 @@ import {
     VIS_TYPE_SINGLE_VALUE,
     VIS_TYPE_PIVOT_TABLE,
     isTwoCategoryChartType,
-} from '../visTypes'
+} from './visTypes'
 
-export const layoutGetAdaptedLayoutByType = (layout, type) => {
+export const getAdaptedUiLayoutByType = (layout, type) => {
     if (isTwoCategoryChartType(type) && layout.rows.length > 1) {
         return getDualCategoryLayout(layout)
     }

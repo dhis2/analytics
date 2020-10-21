@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2020-09-15T07:30:45.529Z\n"
-"PO-Revision-Date: 2020-09-15T07:30:45.529Z\n"
+"POT-Creation-Date: 2020-10-21T12:15:29.127Z\n"
+"PO-Revision-Date: 2020-10-21T12:15:29.127Z\n"
 
 msgid "Data Type"
 msgstr ""
@@ -557,6 +557,9 @@ msgid "Compare changes over time between multiple time periods."
 msgstr ""
 
 msgid "Display a single value. Recommend relative period to show latest data."
+msgstr ""
+
+msgid "No legend for this series"
 msgstr ""
 
 msgid "Target"

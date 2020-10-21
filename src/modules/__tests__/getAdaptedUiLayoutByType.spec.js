@@ -1,21 +1,21 @@
-import { layoutGetAdaptedLayoutByType } from '../layoutGetAdaptedLayoutByType'
-import { AXIS_ID_COLUMNS, AXIS_ID_ROWS, AXIS_ID_FILTERS } from '../axis'
+import { getAdaptedUiLayoutByType } from '../getAdaptedUiLayoutByType'
+import { AXIS_ID_COLUMNS, AXIS_ID_ROWS, AXIS_ID_FILTERS } from '../layout/axis'
 import {
     VIS_TYPE_COLUMN,
     VIS_TYPE_YEAR_OVER_YEAR_LINE,
     VIS_TYPE_BAR,
     VIS_TYPE_PIE,
-} from '../../visTypes'
+} from '../visTypes'
 import {
     DIMENSION_ID_DATA,
     DIMENSION_ID_PERIOD,
     DIMENSION_ID_ORGUNIT,
-} from '../../predefinedDimensions'
+} from '../predefinedDimensions'
 
 const someId = 'someId'
 const otherId = 'otherId'
 
-describe('layoutGetAdaptedLayoutByType', () => {
+describe('getAdaptedUiLayoutByType', () => {
     it('column: moves all extra dimensions in columns and rows to filters', () => {
         const initialState = {
             [AXIS_ID_COLUMNS]: [DIMENSION_ID_DATA, someId],
@@ -27,7 +27,7 @@ describe('layoutGetAdaptedLayoutByType', () => {
             ],
         }
 
-        const actualState = layoutGetAdaptedLayoutByType(
+        const actualState = getAdaptedUiLayoutByType(
             initialState,
             VIS_TYPE_COLUMN
         )
@@ -53,10 +53,7 @@ describe('layoutGetAdaptedLayoutByType', () => {
             [AXIS_ID_FILTERS]: [DIMENSION_ID_ORGUNIT],
         }
 
-        const actualState = layoutGetAdaptedLayoutByType(
-            initialState,
-            VIS_TYPE_BAR
-        )
+        const actualState = getAdaptedUiLayoutByType(initialState, VIS_TYPE_BAR)
 
         const expectedState = {
             [AXIS_ID_COLUMNS]: [DIMENSION_ID_DATA],
@@ -74,10 +71,7 @@ describe('layoutGetAdaptedLayoutByType', () => {
             [AXIS_ID_FILTERS]: [DIMENSION_ID_ORGUNIT],
         }
 
-        const actualState = layoutGetAdaptedLayoutByType(
-            initialState,
-            VIS_TYPE_PIE
-        )
+        const actualState = getAdaptedUiLayoutByType(initialState, VIS_TYPE_PIE)
 
         const expectedState = {
             [AXIS_ID_COLUMNS]: [DIMENSION_ID_DATA],
@@ -100,10 +94,7 @@ describe('layoutGetAdaptedLayoutByType', () => {
             [AXIS_ID_FILTERS]: [DIMENSION_ID_ORGUNIT],
         }
 
-        const actualState = layoutGetAdaptedLayoutByType(
-            initialState,
-            VIS_TYPE_PIE
-        )
+        const actualState = getAdaptedUiLayoutByType(initialState, VIS_TYPE_PIE)
 
         const expectedState = {
             [AXIS_ID_COLUMNS]: [DIMENSION_ID_DATA],
@@ -125,7 +116,7 @@ describe('layoutGetAdaptedLayoutByType', () => {
             [AXIS_ID_FILTERS]: [DIMENSION_ID_ORGUNIT],
         }
 
-        const actualState = layoutGetAdaptedLayoutByType(
+        const actualState = getAdaptedUiLayoutByType(
             initialState,
             VIS_TYPE_YEAR_OVER_YEAR_LINE
         )
