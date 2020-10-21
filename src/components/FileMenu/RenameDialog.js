@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useMemo, useState } from 'react'
 
 import PropTypes from '@dhis2/prop-types'
 import i18n from '@dhis2/d2-i18n'
@@ -23,23 +23,7 @@ const getMutation = type => ({
     partial: true,
     data: ({ name, description }) => ({ name, description }),
 })
-/*
-const mapMutation = {
-    resource: 'maps',
-    id: ({ id }) => id,
-    type: 'update',
-    partial: true,
-    data: ({ name, description }) => ({ name, description }),
-}
 
-const visualizationMutation = {
-    resource: 'visualizations',
-    id: ({ id }) => id,
-    type: 'update',
-    partial: true,
-    data: ({ name, description }) => ({ name, description }),
-}
-*/
 export const RenameDialog = ({
     type,
     id,
@@ -51,10 +35,8 @@ export const RenameDialog = ({
     const [name, setName] = useState(object.name)
     const [description, setDescription] = useState(object.description)
 
-    const [mutate, { loading, error }] = useDataMutation(
-        //type === 'map' ? mapMutation : visualizationMutation
-        getMutation(type)
-    )
+    const mutation = useMemo(() => getMutation(type), [])
+    const [mutate, { loading, error }] = useDataMutation(mutation)
 
     const renameObject = async () => {
         await mutate({

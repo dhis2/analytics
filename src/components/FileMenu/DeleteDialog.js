@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 
 import PropTypes from '@dhis2/prop-types'
 import i18n from '@dhis2/d2-i18n'
@@ -19,24 +19,10 @@ const getMutation = type => ({
     id: ({ id }) => id,
     type: 'delete',
 })
-/*
-const mapMutation = {
-    resource: 'maps',
-    id: ({ id }) => id,
-    type: 'delete',
-}
 
-const visualizationMutation = {
-    resource: 'visualizations',
-    id: ({ id }) => id,
-    type: 'delete',
-}
-*/
 export const DeleteDialog = ({ type, id, onClose, onDelete, onError }) => {
-    const [mutate, { error }] = useDataMutation(
-        //        type === 'map' ? mapMutation : visualizationMutation,
-        getMutation(type)
-    )
+    const mutation = useMemo(() => getMutation(type), [])
+    const [mutate, { error }] = useDataMutation(mutation)
 
     const deleteObject = async () => {
         await mutate({ id })
