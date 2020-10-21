@@ -1,4 +1,4 @@
-import { layoutGetAdaptedLayoutForType } from '../layoutGetAdaptedLayoutForType'
+import { layoutGetAdaptedLayoutByType } from '../layoutGetAdaptedLayoutByType'
 import { AXIS_ID_COLUMNS, AXIS_ID_ROWS, AXIS_ID_FILTERS } from '../axis'
 import {
     VIS_TYPE_COLUMN,
@@ -15,7 +15,7 @@ import {
 const someId = 'someId'
 const otherId = 'otherId'
 
-describe('layoutGetAdaptedLayoutForType', () => {
+describe('layoutGetAdaptedLayoutByType', () => {
     it('column: moves all extra dimensions in columns and rows to filters', () => {
         const initialState = {
             [AXIS_ID_COLUMNS]: [DIMENSION_ID_DATA, someId],
@@ -27,7 +27,7 @@ describe('layoutGetAdaptedLayoutForType', () => {
             ],
         }
 
-        const actualState = layoutGetAdaptedLayoutForType(
+        const actualState = layoutGetAdaptedLayoutByType(
             initialState,
             VIS_TYPE_COLUMN
         )
@@ -53,7 +53,7 @@ describe('layoutGetAdaptedLayoutForType', () => {
             [AXIS_ID_FILTERS]: [DIMENSION_ID_ORGUNIT],
         }
 
-        const actualState = layoutGetAdaptedLayoutForType(
+        const actualState = layoutGetAdaptedLayoutByType(
             initialState,
             VIS_TYPE_BAR
         )
@@ -74,7 +74,7 @@ describe('layoutGetAdaptedLayoutForType', () => {
             [AXIS_ID_FILTERS]: [DIMENSION_ID_ORGUNIT],
         }
 
-        const actualState = layoutGetAdaptedLayoutForType(
+        const actualState = layoutGetAdaptedLayoutByType(
             initialState,
             VIS_TYPE_PIE
         )
@@ -100,7 +100,7 @@ describe('layoutGetAdaptedLayoutForType', () => {
             [AXIS_ID_FILTERS]: [DIMENSION_ID_ORGUNIT],
         }
 
-        const actualState = layoutGetAdaptedLayoutForType(
+        const actualState = layoutGetAdaptedLayoutByType(
             initialState,
             VIS_TYPE_PIE
         )
@@ -125,7 +125,7 @@ describe('layoutGetAdaptedLayoutForType', () => {
             [AXIS_ID_FILTERS]: [DIMENSION_ID_ORGUNIT],
         }
 
-        const actualState = layoutGetAdaptedLayoutForType(
+        const actualState = layoutGetAdaptedLayoutByType(
             initialState,
             VIS_TYPE_YEAR_OVER_YEAR_LINE
         )

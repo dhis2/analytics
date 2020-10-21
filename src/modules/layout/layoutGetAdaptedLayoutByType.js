@@ -10,31 +10,31 @@ import {
     isTwoCategoryChartType,
 } from '../visTypes'
 
-export const layoutGetAdaptedLayoutForType = (layout, type) => {
+export const layoutGetAdaptedLayoutByType = (layout, type) => {
     if (isTwoCategoryChartType(type) && layout.rows.length > 1) {
-        return dualCategoryLayoutAdapter(layout)
+        return getDualCategoryLayout(layout)
     }
     switch (type) {
         case VIS_TYPE_YEAR_OVER_YEAR_LINE:
         case VIS_TYPE_YEAR_OVER_YEAR_COLUMN: {
-            return yearOverYearLayoutAdapter(layout)
+            return getYearOverYearLayout(layout)
         }
         case VIS_TYPE_PIE: {
-            return pieLayoutAdapter(layout)
+            return getPieLayout(layout)
         }
         case VIS_TYPE_SINGLE_VALUE:
         case VIS_TYPE_GAUGE: {
-            return singleValueLayoutAdapter(layout)
+            return getSingleValueLayout(layout)
         }
         case VIS_TYPE_PIVOT_TABLE:
             return layout
         default:
-            return defaultLayoutAdapter(layout)
+            return getDefaultLayout(layout)
     }
 }
 
 // Transform from ui.layout to default layout format
-const defaultLayoutAdapter = layout => {
+const getDefaultLayout = layout => {
     const columns = layout[AXIS_ID_COLUMNS].slice()
     const rows = layout[AXIS_ID_ROWS].slice()
 
@@ -45,7 +45,7 @@ const defaultLayoutAdapter = layout => {
     }
 }
 
-const dualCategoryLayoutAdapter = layout => {
+const getDualCategoryLayout = layout => {
     const columns = layout[AXIS_ID_COLUMNS].slice()
     const rows = layout[AXIS_ID_ROWS].slice()
 
@@ -58,7 +58,7 @@ const dualCategoryLayoutAdapter = layout => {
 }
 
 // Transform from ui.layout to pie layout format
-const pieLayoutAdapter = layout => {
+const getPieLayout = layout => {
     const columns = layout[AXIS_ID_COLUMNS].slice()
     const rows = layout[AXIS_ID_ROWS].slice()
 
@@ -74,7 +74,7 @@ const pieLayoutAdapter = layout => {
 }
 
 // Transform from ui.layout to year on year layout format
-const yearOverYearLayoutAdapter = layout => ({
+const getYearOverYearLayout = layout => ({
     [AXIS_ID_COLUMNS]: [],
     [AXIS_ID_ROWS]: [],
     [AXIS_ID_FILTERS]: [
@@ -85,7 +85,7 @@ const yearOverYearLayoutAdapter = layout => ({
 })
 
 // Transform from ui.layout to single value layout format
-const singleValueLayoutAdapter = layout => {
+const getSingleValueLayout = layout => {
     const columns = layout[AXIS_ID_COLUMNS].slice()
     const rows = layout[AXIS_ID_ROWS].slice()
 

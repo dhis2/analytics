@@ -73,7 +73,7 @@ export { layoutHasDataDimension } from './modules/layout/layoutHasDataDimension'
 export { layoutHasDimension } from './modules/layout/layoutHasDimension'
 export { layoutHasDynamicDimension } from './modules/layout/layoutHasDynamicDimension'
 export { layoutHasPeriodDimension } from './modules/layout/layoutHasPeriodDimension'
-export { layoutGetAdaptedLayoutForType } from './modules/layout/layoutGetAdaptedLayoutForType'
+export { layoutGetAdaptedLayoutByType } from './modules/layout/layoutGetAdaptedLayoutByType'
 
 export {
     AXIS,
