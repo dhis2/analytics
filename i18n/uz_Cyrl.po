@@ -31,28 +31,28 @@ msgid "Detail"
 msgstr "Тафсилот"
 
 msgid "Search dimensions"
-msgstr ""
+msgstr "Қидирув созламалари"
 
 msgid "Dimension recommended with selected data"
-msgstr ""
+msgstr "Танланган маълумотлар учун созламалар тавсия этилади"
 
 msgid "Search"
 msgstr "Излаш"
 
 msgid "Selected Data"
-msgstr ""
+msgstr "Танланган маълумот"
 
 msgid "Deselect All"
-msgstr ""
+msgstr "Барчасини танланганлигини бекор қилиш"
 
 msgid "Select all"
-msgstr ""
+msgstr "Барчасини танлаш"
 
 msgid "Organisation units"
-msgstr "Ташкилий бирликлар"
+msgstr "Ташкилий бўлимлар"
 
 msgid "Period"
-msgstr "давр"
+msgstr "Давр"
 
 msgid "Year"
 msgstr "Йил"
@@ -61,7 +61,7 @@ msgid "Relative periods"
 msgstr "Нисбий даврлар"
 
 msgid "Fixed periods"
-msgstr ""
+msgstr "Белигаланган даврлар"
 
 msgid "Period type"
 msgstr "Давр тури"
@@ -103,10 +103,10 @@ msgid "December"
 msgstr "Декабрь"
 
 msgid "Week {{weekNumber}}"
-msgstr ""
+msgstr "Ҳафта {{ҳафтаРақам}}"
 
 msgid "Bi-Week {{biWeekNumber}}"
-msgstr ""
+msgstr "Жуфт ҳафта {{жуфтҲафтаРақам}}"
 
 msgid "Daily"
 msgstr "Кунлик"
@@ -118,16 +118,16 @@ msgid "Bi-weekly"
 msgstr "Жуфт ҳафта"
 
 msgid "Weekly (Start Wednesday)"
-msgstr ""
+msgstr "Ҳафталик (Бошланиши Чоршанба)"
 
 msgid "Weekly (Start Thursday)"
-msgstr ""
+msgstr "Ҳафталик (Бошланиши Пайшанба)"
 
 msgid "Weekly (Start Saturday)"
-msgstr ""
+msgstr "Ҳафталик (Бошланиши Шанба)"
 
 msgid "Weekly (Start Sunday)"
-msgstr ""
+msgstr "Ҳафталик (Бошланиши Якшанба)"
 
 msgid "Monthly"
 msgstr "Ойлик"
@@ -148,7 +148,7 @@ msgid "Yearly"
 msgstr "Йиллик"
 
 msgid "Financial year (Start November)"
-msgstr ""
+msgstr "Молиявий йил (Бошланиши Ноябрь)"
 
 msgid "Financial year (Start October)"
 msgstr "Молиявий йил (бошланиши Октябрь)"
@@ -160,7 +160,7 @@ msgid "Financial year (Start April)"
 msgstr "Молиявий йил (бошланиши Апрель)"
 
 msgid "Today"
-msgstr "бугун"
+msgstr "Бугун"
 
 msgid "Yesterday"
 msgstr "Кеча"
@@ -250,7 +250,7 @@ msgid "Last six-month"
 msgstr "Охирги 6 ой"
 
 msgid "Last 2 six-month"
-msgstr ""
+msgstr "Охирги жуфт ярим йиллик"
 
 msgid "This financial year"
 msgstr "Ушбу молиявий йил"
@@ -298,22 +298,22 @@ msgid "Years"
 msgstr "Йиллар"
 
 msgid "Reporting rate"
-msgstr ""
+msgstr "Ҳисоботдаги ставка"
 
 msgid "Reporting rate on time"
-msgstr ""
+msgstr "Ҳисоботдаги ставка ўз вақтида"
 
 msgid "Actual reports"
-msgstr ""
+msgstr "Ҳақиқий ҳисоботлар"
 
 msgid "Actual reports on time"
-msgstr ""
+msgstr "Ҳақиқий ҳисоботлар ўз вақтида"
 
 msgid "Expected reports"
-msgstr ""
+msgstr "Кутилаётган ҳисоботлар"
 
 msgid "Program"
-msgstr "Программа"
+msgstr "Дастур"
 
 msgid "Indicators"
 msgstr "Индикаторлар"
@@ -322,7 +322,7 @@ msgid "Select indicator group"
 msgstr "Индикатор гуруҳини танлаш"
 
 msgid "[ All groups ]"
-msgstr ""
+msgstr "[Барча гуруҳлар]"
 
 msgid "Data elements"
 msgstr "Маълумот элементлари"
@@ -331,22 +331,22 @@ msgid "Select data element group"
 msgstr "Маълумотлар элементи гуруҳини танлаш"
 
 msgid "[ All data elements ]"
-msgstr ""
+msgstr "[Маълумотлар барча  элементлари]"
 
 msgid "Data sets"
 msgstr "Маълумотлар тўплами"
 
 msgid "Select data sets"
-msgstr ""
+msgstr "Маълумотлар тўпламларини танланг"
 
 msgid "[ All metrics ]"
-msgstr ""
+msgstr "[Барча ўлчовлар]"
 
 msgid "Event data items"
 msgstr "Ҳодисалар ҳақида маълумот элементлари"
 
 msgid "Select a program"
-msgstr ""
+msgstr "Дастурни танланг"
 
 msgid "Program indicators"
 msgstr "Дастур кўрсатгичлари"
@@ -355,19 +355,19 @@ msgid "Organisation Unit"
 msgstr "Ташкилий бирлик"
 
 msgid "{{dynamicOuNames}} and {{lastOuName}}"
-msgstr ""
+msgstr "{{dynamicOuNames}} ва {{lastOuName}}"
 
 msgid "{{allDynamicOuNames}} levels"
-msgstr ""
+msgstr "{{allDynamicOuNames}} поғоналар"
 
 msgid "{{allDynamicOuNames}} groups"
-msgstr ""
+msgstr "{{allDynamicOuNames}} гуруҳлар"
 
 msgid "{{allDynamicOuNames}} levels in {{staticOuNames}}"
-msgstr ""
+msgstr "{{allDynamicOuNames}} поғоналар {{staticOuNames}} ичида"
 
 msgid "{{allDynamicOuNames}} groups in {{staticOuNames}}"
-msgstr ""
+msgstr "{{allDynamicOuNames}} гуруҳлар {{staticOuNames}} ичида"
 
 msgid "No data"
 msgstr "Маълумот йўқ"
