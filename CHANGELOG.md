@@ -1,3 +1,10 @@
+## [11.1.3](https://github.com/dhis2/analytics/compare/v11.1.2...v11.1.3) (2020-10-22)
+
+
+### Bug Fixes
+
+* render trendlines in front of columns (DHIS2-9829) ([#657](https://github.com/dhis2/analytics/issues/657)) ([66fd0e9](https://github.com/dhis2/analytics/commit/66fd0e9e0aee6eb5efc8ebb4eb6d7744910fecd4))
+
 ## [11.1.2](https://github.com/dhis2/analytics/compare/v11.1.1...v11.1.2) (2020-10-21)
 
 
