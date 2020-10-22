@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-09-15T07:30:45.529Z\n"
+"POT-Creation-Date: 2020-10-21T13:43:05.146Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: phil_dhis2, 2020\n"
 "Language-Team: Danish (https://www.transifex.com/hisp-uio/teams/100509/da/)\n"
@@ -564,6 +564,9 @@ msgid "Compare changes over time between multiple time periods."
 msgstr ""
 
 msgid "Display a single value. Recommend relative period to show latest data."
+msgstr ""
+
+msgid "No legend for this series"
 msgstr ""
 
 msgid "Target"
