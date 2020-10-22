@@ -22,19 +22,17 @@ const getMutation = type => ({
 
 export const DeleteDialog = ({ type, id, onClose, onDelete, onError }) => {
     const mutation = useMemo(() => getMutation(type), [])
-    const [mutate, { error }] = useDataMutation(mutation)
-
-    const deleteObject = async () => {
-        await mutate({ id })
-
-        onDelete()
-        onClose()
-    }
-
-    if (error) {
-        onError(error)
-        onClose()
-    }
+    const [mutate] = useDataMutation(mutation, {
+        variables: { id },
+        onError: error => {
+            onError(error)
+            onClose()
+        },
+        onComplete: () => {
+            onDelete()
+            onClose()
+        },
+    })
 
     return (
         <Modal onClose={onClose}>
@@ -51,7 +49,7 @@ export const DeleteDialog = ({ type, id, onClose, onDelete, onError }) => {
                     <Button onClick={onClose} secondary>
                         {i18n.t('Cancel')}
                     </Button>
-                    <Button onClick={deleteObject} destructive>
+                    <Button onClick={mutate} destructive>
                         {i18n.t('Delete')}
                     </Button>
                 </ButtonStrip>

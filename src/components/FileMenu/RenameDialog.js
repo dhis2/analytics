@@ -24,34 +24,28 @@ const getMutation = type => ({
     data: ({ name, description }) => ({ name, description }),
 })
 
-export const RenameDialog = ({
-    type,
-    id,
-    object,
-    onClose,
-    onRename,
-    onError,
-}) => {
+export const RenameDialog = ({ type, object, onClose, onRename, onError }) => {
     const [name, setName] = useState(object.name)
     const [description, setDescription] = useState(object.description)
 
     const mutation = useMemo(() => getMutation(type), [])
-    const [mutate, { loading, error }] = useDataMutation(mutation)
+    const [mutate, { loading }] = useDataMutation(mutation, {
+        onError: error => {
+            onError(error)
+            onClose()
+        },
+        onComplete: () => {
+            onRename({ name, description })
+            onClose()
+        },
+    })
 
-    const renameObject = async () => {
-        await mutate({
-            id,
+    const renameObject = () => {
+        mutate({
+            id: object.id,
             name,
             description,
         })
-
-        onRename({ name, description })
-        onClose()
-    }
-
-    if (error) {
-        onError(error)
-        onClose()
     }
 
     return (

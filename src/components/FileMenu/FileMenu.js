@@ -4,7 +4,6 @@ import PropTypes from '@dhis2/prop-types'
 import i18n from '@dhis2/d2-i18n'
 import FavoritesDialog from '@dhis2/d2-ui-favorites-dialog'
 import TranslationDialog from '@dhis2/d2-ui-translation-dialog'
-
 import { FlyoutMenu, MenuItem, MenuDivider, Popover } from '@dhis2/ui-core'
 import { SharingDialog } from '@dhis2/ui-widgets'
 
@@ -67,7 +66,6 @@ export const FileMenu = ({
                     <RenameDialog
                         type={fileType}
                         object={fileObject}
-                        id={fileObject.id}
                         onClose={onDialogClose}
                         onRename={onRename}
                         onError={onError}
@@ -80,7 +78,8 @@ export const FileMenu = ({
                         d2={d2}
                         objectToTranslate={{
                             ...fileObject,
-                            // mock modelDefinition
+                            // mock modelDefinition to avoid an error
+                            // in the TranslationDialog component
                             modelDefinition: { name: fileType },
                         }}
                         fieldsToTranslate={['name', 'description']}
@@ -218,7 +217,7 @@ export const FileMenu = ({
                     </FlyoutMenu>
                 </Popover>
             )}
-            {openDialog && renderDialog()}
+            {renderDialog()}
         </>
     )
 }
