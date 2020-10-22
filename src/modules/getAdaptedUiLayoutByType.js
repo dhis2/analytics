@@ -85,17 +85,35 @@ const getYearOverYearLayout = layout => ({
 })
 
 // Transform from ui.layout to single value layout format
+// layout axes may contain objects or strings
 const getSingleValueLayout = layout => {
     const columns = layout[AXIS_ID_COLUMNS].slice()
     const rows = layout[AXIS_ID_ROWS].slice()
+    const filters = layout[AXIS_ID_FILTERS].slice()
+
+    let dxDimensionArr = []
+    const layoutArr = [columns, rows, filters]
+
+    for (let i = 0; i < layoutArr.length; ++i) {
+        const axis = layoutArr[i]
+        for (let j = 0; j < axis.length; ++j) {
+            const dimension = axis[j]
+            if (
+                dimension === DIMENSION_ID_DATA ||
+                dimension.dimension === DIMENSION_ID_DATA
+            ) {
+                dxDimensionArr = axis.splice(j, 1)
+                break
+            }
+        }
+        if (dxDimensionArr.length > 0) {
+            break
+        }
+    }
 
     return {
-        [AXIS_ID_COLUMNS]: [DIMENSION_ID_DATA],
+        [AXIS_ID_COLUMNS]: dxDimensionArr,
         [AXIS_ID_ROWS]: [],
-        [AXIS_ID_FILTERS]: [
-            ...layout[AXIS_ID_FILTERS],
-            ...columns,
-            ...rows,
-        ].filter(dim => dim !== DIMENSION_ID_DATA),
+        [AXIS_ID_FILTERS]: [...layout[AXIS_ID_FILTERS], ...columns, ...rows],
     }
 }

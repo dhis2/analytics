@@ -5,6 +5,7 @@ import {
     VIS_TYPE_YEAR_OVER_YEAR_LINE,
     VIS_TYPE_BAR,
     VIS_TYPE_PIE,
+    VIS_TYPE_SINGLE_VALUE,
 } from '../visTypes'
 import {
     DIMENSION_ID_DATA,
@@ -133,5 +134,58 @@ describe('getAdaptedUiLayoutByType', () => {
         }
 
         expect(actualState).toEqual(expectedState)
+    })
+
+    it('adapts pivot table to single value', () => {
+        const initialLayout = {
+            [AXIS_ID_COLUMNS]: [DIMENSION_ID_DATA, DIMENSION_ID_PERIOD],
+            [AXIS_ID_ROWS]: [DIMENSION_ID_ORGUNIT],
+            [AXIS_ID_FILTERS]: [someId],
+        }
+
+        const actualLayout = getAdaptedUiLayoutByType(
+            initialLayout,
+            VIS_TYPE_SINGLE_VALUE
+        )
+
+        const expectedLayout = {
+            [AXIS_ID_COLUMNS]: [DIMENSION_ID_DATA],
+            [AXIS_ID_ROWS]: [],
+            [AXIS_ID_FILTERS]: [
+                someId,
+                DIMENSION_ID_PERIOD,
+                DIMENSION_ID_ORGUNIT,
+            ],
+        }
+
+        expect(actualLayout).toEqual(expectedLayout)
+    })
+
+    it('adapts pivot table to single value with dimension objects', () => {
+        const initialLayout = {
+            [AXIS_ID_COLUMNS]: [
+                { dimension: DIMENSION_ID_DATA },
+                { dimension: DIMENSION_ID_PERIOD },
+            ],
+            [AXIS_ID_ROWS]: [{ dimension: DIMENSION_ID_ORGUNIT }],
+            [AXIS_ID_FILTERS]: [{ dimension: someId }],
+        }
+
+        const actualLayout = getAdaptedUiLayoutByType(
+            initialLayout,
+            VIS_TYPE_SINGLE_VALUE
+        )
+
+        const expectedLayout = {
+            [AXIS_ID_COLUMNS]: [{ dimension: DIMENSION_ID_DATA }],
+            [AXIS_ID_ROWS]: [],
+            [AXIS_ID_FILTERS]: [
+                { dimension: someId },
+                { dimension: DIMENSION_ID_PERIOD },
+                { dimension: DIMENSION_ID_ORGUNIT },
+            ],
+        }
+
+        expect(actualLayout).toEqual(expectedLayout)
     })
 })
