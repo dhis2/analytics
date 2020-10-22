@@ -1,5 +1,11 @@
 import getAxisTitle from '../getAxisTitle'
 import getCategories from '../getCategories'
+import { getLabelsStyle } from './'
+import {
+    FONT_STYLE_HORIZONTAL_AXIS_TITLE,
+    FONT_STYLE_CATEGORY_AXIS_LABELS,
+} from '../../../../../modules/fontStyle'
+
 
 export default function(store, layout) {
     const axis1Categories = getCategories(
@@ -15,17 +21,12 @@ export default function(store, layout) {
     // bottom x axis
     const xAxis = [
         {
-            title: getAxisTitle(layout.domainAxisLabel),
+            title: getAxisTitle(layout.domainAxisLabel, layout.fontStyle[FONT_STYLE_HORIZONTAL_AXIS_TITLE], FONT_STYLE_HORIZONTAL_AXIS_TITLE, layout.type),
             categories: Array.from(
                 { length: axis2Categories.length || 1 },
                 () => axis1Categories
             ),
-            labels: {
-                style: {
-                    color: '#666',
-                    textShadow: '0 0 #ccc',
-                },
-            },
+            labels: getLabelsStyle(layout.fontStyle[FONT_STYLE_CATEGORY_AXIS_LABELS]),
         },
     ]
 

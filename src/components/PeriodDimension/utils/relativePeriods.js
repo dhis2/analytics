@@ -150,3 +150,8 @@ export const getRelativePeriodsOptionsById = id =>
     getOptions().find(option => option.id === id)
 
 export const getRelativePeriodsOptions = () => getOptions()
+
+export const getRelativePeriodIds = () =>
+    Object.values(getOptions())
+        .map(option => option.getPeriods().map(period => period.id))
+        .flat()

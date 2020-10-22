@@ -10,6 +10,7 @@ import {
     isStacked,
     VIS_TYPE_GAUGE,
     isDualAxisType,
+    isVerticalType,
 } from '../../../../../modules/visTypes'
 import { hasCustomAxes } from '../../../../../modules/axis'
 import { getAxisIdsMap } from '../customAxes'
@@ -28,6 +29,8 @@ import {
     TEXT_ALIGN_CENTER,
     TEXT_ALIGN_RIGHT,
 } from '../../../../../modules/fontStyle'
+import { getTextAlignOption } from '../getTextAlignOption'
+import { axisHasRelativeItems } from '../../../../../modules/layout/axisHasRelativeItems'
 
 const DEFAULT_MIN_VALUE = 0
 
@@ -53,12 +56,29 @@ function getPlotLineLabelStyle(fontStyle) {
             fontStyle: fontStyle[FONT_STYLE_OPTION_ITALIC]
                 ? FONT_STYLE_OPTION_ITALIC
                 : 'normal',
-            textShadow: '0 0 6px #ccc',
         },
     }
 }
 
-function getLabelXFromTextAlign(textAlign) {
+const getMinValue = (rangeAxisMinValue, dataValues) => 
+    isNumeric(rangeAxisMinValue) ? 
+        rangeAxisMinValue : 
+        dataValues?.some(value => value < DEFAULT_MIN_VALUE) ? 
+            undefined : 
+            DEFAULT_MIN_VALUE
+
+const getMaxValue = (rangeAxisMaxValue, dataValues) =>
+    isNumeric(rangeAxisMaxValue) ? 
+        rangeAxisMaxValue :
+        dataValues?.every(value => value < DEFAULT_MIN_VALUE) ?
+            DEFAULT_MIN_VALUE :
+            undefined
+
+function getSteps(layout) {
+    return isNumeric(layout.rangeAxisSteps) ? layout.rangeAxisSteps : undefined
+}
+
+const getLabelOffsetFromTextAlign = textAlign => {
     switch (textAlign) {
         case TEXT_ALIGN_LEFT:
             return 10
@@ -70,20 +90,18 @@ function getLabelXFromTextAlign(textAlign) {
     }
 }
 
-function getMinValue(layout) {
-    return isNumeric(layout.rangeAxisMinValue)
-        ? layout.rangeAxisMinValue
-        : DEFAULT_MIN_VALUE
-}
+const getLineLabelStyle = (fontStyle, fontStyleType, visType) => {
+    const isVertical = isVerticalType(visType)
+    const alignKey = isVertical ? 'verticalAlign' : 'align'
+    const alignValue = getTextAlignOption(fontStyle, fontStyleType, visType)
+    const offsetKey = isVertical ? 'y' : 'x'
+    const offsetValue = getLabelOffsetFromTextAlign(fontStyle)
 
-function getMaxValue(layout) {
-    return isNumeric(layout.rangeAxisMaxValue)
-        ? layout.rangeAxisMaxValue
-        : undefined
-}
-
-function getSteps(layout) {
-    return isNumeric(layout.rangeAxisSteps) ? layout.rangeAxisSteps : undefined
+    const result = {[alignKey]: alignValue, [offsetKey]: offsetValue }
+    if (isVertical) {
+        result.align = getTextAlignOption(fontStyle, fontStyleType)
+    }
+    return result
 }
 
 function getTargetLine(layout) {
@@ -101,12 +119,7 @@ function getTargetLine(layout) {
                   label: isString(layout.targetLineLabel)
                       ? Object.assign({}, plotLineLabelStyle, {
                             text: layout.targetLineLabel,
-                            align: (
-                                fontStyle[FONT_STYLE_OPTION_TEXT_ALIGN] || ''
-                            ).toLowerCase(),
-                            x: getLabelXFromTextAlign(
-                                fontStyle[FONT_STYLE_OPTION_TEXT_ALIGN]
-                            ),
+                            ...getLineLabelStyle(fontStyle[FONT_STYLE_OPTION_TEXT_ALIGN], FONT_STYLE_BASE_LINE_LABEL, layout.type),
                         })
                       : undefined,
               })
@@ -129,12 +142,7 @@ function getBaseLine(layout) {
                   label: isString(layout.baseLineLabel)
                       ? Object.assign({}, plotLineLabelStyle, {
                             text: layout.baseLineLabel,
-                            align: (
-                                fontStyle[FONT_STYLE_OPTION_TEXT_ALIGN] || ''
-                            ).toLowerCase(),
-                            x: getLabelXFromTextAlign(
-                                fontStyle[FONT_STYLE_OPTION_TEXT_ALIGN]
-                            ),
+                            ...getLineLabelStyle(fontStyle[FONT_STYLE_OPTION_TEXT_ALIGN], FONT_STYLE_BASE_LINE_LABEL, layout.type),
                         })
                       : undefined,
               })
@@ -157,7 +165,6 @@ function getLabels(layout) {
     return {
         style: {
             color: fontStyle[FONT_STYLE_OPTION_TEXT_COLOR],
-            textShadow: '0 0 #ccc',
             fontSize: `${fontStyle[FONT_STYLE_OPTION_FONT_SIZE]}px`,
             fontWeight: fontStyle[FONT_STYLE_OPTION_BOLD]
                 ? FONT_STYLE_OPTION_BOLD
@@ -198,7 +205,8 @@ function getDefault(layout, series, extraOptions) {
             seriesItem => seriesItem.id === layoutSeriesItem.dimensionItem
         )
     )
-    if (isDualAxisType(layout.type) && hasCustomAxes(filteredSeries)) {
+    const dataValues = series?.map(item => item.data).flat()
+    if (isDualAxisType(layout.type) && hasCustomAxes(filteredSeries) && !axisHasRelativeItems(layout.columns)) {
         const axisIdsMap = getAxisIdsMap(layout.series, series)
         axes.push(
             ...getMultipleAxes(
@@ -209,12 +217,10 @@ function getDefault(layout, series, extraOptions) {
     } else {
         axes.push(
             objectClean({
-                min: getMinValue(layout),
-                max: getMaxValue(layout),
+                min: getMinValue(layout.rangeAxisMinValue, dataValues),
+                max: getMaxValue(layout.rangeAxisMaxValue, dataValues),
                 tickAmount: getSteps(layout),
-                title: getAxisTitle(
-                    layout.rangeAxisLabel,
-                    (layout.fontStyle || {})[FONT_STYLE_VERTICAL_AXIS_TITLE]
+                title: getAxisTitle(layout.rangeAxisLabel, layout.fontStyle[FONT_STYLE_VERTICAL_AXIS_TITLE], FONT_STYLE_VERTICAL_AXIS_TITLE, layout.type
                 ),
                 plotLines: arrayClean([
                     getTargetLine(layout),

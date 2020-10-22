@@ -1,14 +1,14 @@
 # 
 # Translators:
-# Karoline Tufte Lien <karoline@dhis2.org>, 2020
 # Caroline Hesthagen Holen <caroline@devotta.no>, 2020
+# Karoline Tufte Lien <karoline@dhis2.org>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-08-18T13:39:43.818Z\n"
+"POT-Creation-Date: 2020-09-15T07:30:45.529Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Caroline Hesthagen Holen <caroline@devotta.no>, 2020\n"
+"Last-Translator: Karoline Tufte Lien <karoline@dhis2.org>, 2020\n"
 "Language-Team: Norwegian Bokmål (https://www.transifex.com/hisp-uio/teams/100509/nb/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -212,13 +212,13 @@ msgid "Last 30 days"
 msgstr "Siste 30 dager"
 
 msgid "Last 60 days"
-msgstr ""
+msgstr "Siste 60 dager"
 
 msgid "Last 90 days"
-msgstr ""
+msgstr "Siste 90 dager"
 
 msgid "Last 180 days"
-msgstr ""
+msgstr "Siste 180 dager"
 
 msgid "This week"
 msgstr "Denne uken"
@@ -413,7 +413,7 @@ msgid "Program indicators"
 msgstr "Programindikatorer"
 
 msgid "Extra Small"
-msgstr ""
+msgstr "Ekstra liten"
 
 msgid "Small"
 msgstr "Liten"
@@ -425,13 +425,13 @@ msgid "Large"
 msgstr "Stor"
 
 msgid "Extra Large"
-msgstr ""
+msgstr "Ekstra stor"
 
 msgid "Left"
 msgstr "Venstre"
 
 msgid "Center"
-msgstr ""
+msgstr "Sentrum"
 
 msgid "Right"
 msgstr "Høyre"
@@ -440,10 +440,16 @@ msgid "Start"
 msgstr "Start"
 
 msgid "Middle"
-msgstr ""
+msgstr "Midten"
 
 msgid "End"
-msgstr ""
+msgstr "Slutt"
+
+msgid "Top"
+msgstr "Topp"
+
+msgid "Bottom"
+msgstr "Bunn"
 
 msgid "{{dynamicOuNames}} and {{lastOuName}}"
 msgstr "{{dynamicOuNames}} og {{lastOuName}}"
@@ -491,7 +497,7 @@ msgid "Area"
 msgstr "Areal"
 
 msgid "Stacked area"
-msgstr ""
+msgstr "Stablet område"
 
 msgid "Pie"
 msgstr "Sektor"
@@ -512,54 +518,70 @@ msgid "Single value"
 msgstr "Enkeltverdi"
 
 msgid "View data and indicators in a manipulatable table."
-msgstr ""
+msgstr "Vis data og indikatorer i en manipulerbar tabell."
 
 msgid ""
 "Compare sizes of related element, displayed vertically. Recommend period in "
 "filter."
 msgstr ""
+"Sammenlign størrelser av relatert element, vist vertikalt. Anbefal periode i"
+" filter."
 
 msgid ""
 "Compare parts of a whole against related elements, vertically. Recommend "
 "data or org. unit as series."
 msgstr ""
+"Sammenlign deler av en helhet med relaterte elementer, vertikalt. Anbefal "
+"data eller organisasjons|enhet som serie."
 
 msgid ""
 "Compare sizes of related elements, displayed horizontally. Recommend period "
 "in filter."
 msgstr ""
+"Sammenlign størrelser av relaterte elementer, vist horisontalt. Anbefal "
+"periode i filter."
 
 msgid ""
 "Compare parts of a whole against related elements, horizontally. Recommend "
 "data or org. unit as series."
 msgstr ""
+"Sammenlign deler av en helhet med relaterte elementer, horisontalt. Anbefal "
+"data eller organisasjonsenhet som serie."
 
 msgid "Track or compare changes over time. Recommend period as the category."
 msgstr ""
+"Følg eller sammenlign endringer over tid. Anbefal periode som kategori."
 
 msgid ""
 "Track or compare over time parts of a whole. Recommend data in series and "
 "period in category."
 msgstr ""
+"Spor eller sammenlign deler av en helhet over tid. Anbefal data i serie og "
+"periode i kategori."
 
 msgid ""
 "Compare parts of a whole at a single point in time. Recommend period in the "
 "filter."
 msgstr ""
+"Sammenlign deler av en helhet på et enkelt tidspunkt. Anbefal periode i "
+"filteret."
 
 msgid "Compare several items against multiple variables."
-msgstr ""
+msgstr "Sammenlign flere elementer mot flere variabler."
 
 msgid ""
 "Compare a percentage indicator against a 100% scale. Recommend period in "
 "filter."
 msgstr ""
+"Sammenlign en prosentvis indikator mot en 100% skala. Anbefal periode i "
+"filter."
 
 msgid "Compare changes over time between multiple time periods."
-msgstr ""
+msgstr "Sammenlign endringer over tid mellom flere tidsperioder."
 
 msgid "Display a single value. Recommend relative period to show latest data."
 msgstr ""
+"Vis en enkelt verdi. Anbefal relativ periode for å vise de nyeste dataene."
 
 msgid "Target"
 msgstr "Mål"
