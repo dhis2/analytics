@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-09-15T07:30:45.529Z\n"
+"POT-Creation-Date: 2020-10-21T13:43:05.146Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: Ibatov <ibatovk@who.int>, 2020\n"
 "Language-Team: Uzbek (Cyrillic) (https://www.transifex.com/hisp-uio/teams/100509/uz@Cyrl/)\n"
@@ -28,52 +28,52 @@ msgid "Detail"
 msgstr "Тафсилот"
 
 msgid "Move to {{axisName}}"
-msgstr ""
+msgstr "Ҳаракатланинг {{axisName}} га қараб"
 
 msgid "Add to {{axisName}}"
-msgstr ""
+msgstr "{{axisName}} га қўшинг"
 
 msgid "Remove"
 msgstr "Ўчириш"
 
 msgid "Not available for {{visualizationType}}"
-msgstr ""
+msgstr "{{visualizationType}} учун мавжуд эмас"
 
 msgid "Remove Assigned Categories"
-msgstr ""
+msgstr "Белгиланган категориялар ўчирилсин"
 
 msgid "Add Assigned Categories"
-msgstr ""
+msgstr "Белгиланган категориялар қўшилсин"
 
 msgid "Filter dimensions"
-msgstr ""
+msgstr "Фильтр созламалари"
 
 msgid "Main dimensions"
-msgstr ""
+msgstr "Умумий ўлчамлар"
 
 msgid "Your dimensions"
-msgstr ""
+msgstr "Сизнинг созламаларингиз"
 
 msgid "Dimension recommended with selected data"
-msgstr ""
+msgstr "Танланган маълумотлар учун созламалар тавсия этилади"
 
 msgid "No items selected"
-msgstr ""
+msgstr "Элемент танланмаган"
 
 msgid "Selected Items"
-msgstr ""
+msgstr "Элемент танланган"
 
 msgid "Search"
 msgstr "Излаш"
 
 msgid "Selected Data"
-msgstr ""
+msgstr "Танланган маълумот"
 
 msgid "Deselect All"
-msgstr ""
+msgstr "Барчасини танланганлигини бекор қилиш"
 
 msgid "Select all"
-msgstr ""
+msgstr "Барчасини танлаш"
 
 msgid "Period type"
 msgstr "Давр тури"
@@ -85,19 +85,19 @@ msgid "Select year"
 msgstr "Йилни танланг"
 
 msgid "Period"
-msgstr "давр"
+msgstr "Давр"
 
 msgid "Relative periods"
 msgstr "Нисбий даврлар"
 
 msgid "Fixed periods"
-msgstr ""
+msgstr "Белигаланган даврлар"
 
 msgid "Selected Periods"
-msgstr ""
+msgstr "Танланган Даврлар"
 
 msgid "No periods selected"
-msgstr ""
+msgstr "Давр танланмаган"
 
 msgid "January"
 msgstr "Январь"
@@ -136,10 +136,10 @@ msgid "December"
 msgstr "Декабрь"
 
 msgid "Week {{weekNumber}}"
-msgstr ""
+msgstr "Ҳафта {{ҳафтаРақам}}"
 
 msgid "Bi-Week {{biWeekNumber}}"
-msgstr ""
+msgstr "Жуфт ҳафта {{жуфтҲафтаРақам}}"
 
 msgid "Daily"
 msgstr "Кунлик"
@@ -148,19 +148,19 @@ msgid "Weekly"
 msgstr "Ҳафталик"
 
 msgid "Bi-weekly"
-msgstr "Жуфт ҳафта"
+msgstr "Жуфт ҳафталик"
 
 msgid "Weekly (Start Wednesday)"
-msgstr ""
+msgstr "Ҳафталик (Бошланиши Чоршанба)"
 
 msgid "Weekly (Start Thursday)"
-msgstr ""
+msgstr "Ҳафталик (Бошланиши Пайшанба)"
 
 msgid "Weekly (Start Saturday)"
-msgstr ""
+msgstr "Ҳафталик (Бошланиши Шанба)"
 
 msgid "Weekly (Start Sunday)"
-msgstr ""
+msgstr "Ҳафталик (Бошланиши Якшанба)"
 
 msgid "Monthly"
 msgstr "Ойлик"
@@ -181,7 +181,7 @@ msgid "Yearly"
 msgstr "Йиллик"
 
 msgid "Financial year (Start November)"
-msgstr ""
+msgstr "Молиявий йил (Бошланиши Ноябрь)"
 
 msgid "Financial year (Start October)"
 msgstr "Молиявий йил (бошланиши Октябрь)"
@@ -193,7 +193,7 @@ msgid "Financial year (Start April)"
 msgstr "Молиявий йил (бошланиши Апрель)"
 
 msgid "Today"
-msgstr "бугун"
+msgstr "Бугун"
 
 msgid "Yesterday"
 msgstr "Кеча"
@@ -295,7 +295,7 @@ msgid "Last six-month"
 msgstr "Охирги 6 ой"
 
 msgid "Last 2 six-month"
-msgstr ""
+msgstr "Охирги жуфт ярим йиллик"
 
 msgid "This financial year"
 msgstr "Ушбу молиявий йил"
@@ -352,31 +352,31 @@ msgid "Filter"
 msgstr "Фильтр"
 
 msgid "Columns"
-msgstr ""
+msgstr "Устунлар"
 
 msgid "Rows"
-msgstr ""
+msgstr "Қаторлар"
 
 msgid "Reporting rate"
-msgstr ""
+msgstr "Ҳисоботдаги ставка"
 
 msgid "Reporting rate on time"
-msgstr ""
+msgstr "Ҳисоботдаги ставка ўз вақтида"
 
 msgid "Actual reports"
-msgstr ""
+msgstr "Ҳақиқий ҳисоботлар"
 
 msgid "Actual reports on time"
-msgstr ""
+msgstr "Ҳақиқий ҳисоботлар ўз вақтида"
 
 msgid "Expected reports"
-msgstr ""
+msgstr "Кутилаётган ҳисоботлар"
 
 msgid "Program"
 msgstr "Программа"
 
 msgid "Select a program"
-msgstr ""
+msgstr "Дастурни танланг"
 
 msgid "Indicators"
 msgstr "Индикаторлар"
@@ -385,7 +385,7 @@ msgid "Select indicator group"
 msgstr "Индикатор гуруҳини танлаш"
 
 msgid "[ All groups ]"
-msgstr ""
+msgstr "[Барча гуруҳлар]"
 
 msgid "Data elements"
 msgstr "Маълумот элементлари"
@@ -394,16 +394,16 @@ msgid "Select data element group"
 msgstr "Маълумотлар элементи гуруҳини танлаш"
 
 msgid "[ All data elements ]"
-msgstr ""
+msgstr "[Маълумотлар барча  элементлари]"
 
 msgid "Data sets"
 msgstr "Маълумотлар тўплами"
 
 msgid "Select data sets"
-msgstr ""
+msgstr "Маълумотлар тўпламларини танланг"
 
 msgid "[ All metrics ]"
-msgstr ""
+msgstr "[Барча ўлчовлар]"
 
 msgid "Event data items"
 msgstr "Ҳодисалар ҳақида маълумот элементлари"
@@ -412,37 +412,37 @@ msgid "Program indicators"
 msgstr "Дастур кўрсатгичлари"
 
 msgid "Extra Small"
-msgstr ""
+msgstr "Жуда Кичик"
 
 msgid "Small"
 msgstr "Кичик"
 
 msgid "Regular"
-msgstr ""
+msgstr "Регуляр"
 
 msgid "Large"
 msgstr "Катта"
 
 msgid "Extra Large"
-msgstr ""
+msgstr "Жуда Катта"
 
 msgid "Left"
-msgstr ""
+msgstr "Чап"
 
 msgid "Center"
-msgstr ""
+msgstr "Марказ"
 
 msgid "Right"
-msgstr ""
+msgstr "Ўнг"
 
 msgid "Start"
-msgstr ""
+msgstr "Бошлаш"
 
 msgid "Middle"
-msgstr ""
+msgstr "Ўртав"
 
 msgid "End"
-msgstr ""
+msgstr "Охири"
 
 msgid "Top"
 msgstr "Юқоридаги"
@@ -451,19 +451,19 @@ msgid "Bottom"
 msgstr "Пастки"
 
 msgid "{{dynamicOuNames}} and {{lastOuName}}"
-msgstr ""
+msgstr "{{dynamicOuNames}} ва {{lastOuName}}"
 
 msgid "{{allDynamicOuNames}} levels"
-msgstr ""
+msgstr "Барча {{allDynamicOuNames}} поғоналар"
 
 msgid "{{allDynamicOuNames}} groups"
-msgstr ""
+msgstr "{{allDynamicOuNames}} гуруҳлар"
 
 msgid "{{allDynamicOuNames}} levels in {{staticOuNames}}"
-msgstr ""
+msgstr "{{allDynamicOuNames}} поғоналар {{staticOuNames}} ичида"
 
 msgid "{{allDynamicOuNames}} groups in {{staticOuNames}}"
-msgstr ""
+msgstr "{{allDynamicOuNames}} гуруҳлар {{staticOuNames}} ичида"
 
 msgid "Data"
 msgstr "Маълумот"
@@ -472,7 +472,7 @@ msgid "Organisation Unit"
 msgstr "Ташкилий Бўлим"
 
 msgid "Assigned Categories"
-msgstr ""
+msgstr "Белгиланган Категориялар"
 
 msgid "Pivot table"
 msgstr "Таянч жадвал"
@@ -481,89 +481,110 @@ msgid "Column"
 msgstr "Устун"
 
 msgid "Stacked column"
-msgstr ""
+msgstr "Йиғилган устун"
 
 msgid "Bar"
-msgstr ""
+msgstr "Тизимча"
 
 msgid "Stacked bar"
-msgstr ""
+msgstr "Йиғилган тизимча"
 
 msgid "Line"
-msgstr ""
+msgstr "Қатор"
 
 msgid "Area"
 msgstr "Майдон"
 
 msgid "Stacked area"
-msgstr ""
+msgstr "Йиғилган майдон"
 
 msgid "Pie"
-msgstr ""
+msgstr "Бутун айлана"
 
 msgid "Radar"
-msgstr ""
+msgstr "Радар"
 
 msgid "Gauge"
-msgstr ""
+msgstr "Ҳисоблагич"
 
 msgid "Year over year (line)"
-msgstr ""
+msgstr "Йилдан йилга (қатор)"
 
 msgid "Year over year (column)"
-msgstr ""
+msgstr "Йилдан йилга (устун)"
 
 msgid "Single value"
-msgstr ""
+msgstr "Ягона қиймат"
 
 msgid "View data and indicators in a manipulatable table."
-msgstr ""
+msgstr "Бошқариладиган жадвалда индикаторлар ва маълумотларни кўздан кечиринг"
 
 msgid ""
 "Compare sizes of related element, displayed vertically. Recommend period in "
 "filter."
 msgstr ""
+"Вертикал кўрсатилаётган боғланган элементлар ўлчамларини солиштиринг. Фильтр"
+" учун даврни тавсия этинг."
 
 msgid ""
 "Compare parts of a whole against related elements, vertically. Recommend "
 "data or org. unit as series."
 msgstr ""
+"Яхлитликнинг қисмларини вертикал бўйича боғлиқликларини таққосланг. Серия "
+"сифатида маълумот ёки ташкилий бўлимни тавсия этинг. "
 
 msgid ""
 "Compare sizes of related elements, displayed horizontally. Recommend period "
 "in filter."
 msgstr ""
+"Боғлиқ элементлар ўлчамларини таққосланг, горизонтал кўринишдагиларни. "
+"Фильтр ичида даврни тавсия этинг."
 
 msgid ""
 "Compare parts of a whole against related elements, horizontally. Recommend "
 "data or org. unit as series."
 msgstr ""
+"Яхлитликнинг қисмларини горизонтал бўйича боғлиқликларини таққосланг. Серия "
+"сифатида маълумот ёки ташкилий бўлимни тавсия этинг. "
 
 msgid "Track or compare changes over time. Recommend period as the category."
 msgstr ""
+"Доимий равишда кузатинг ва солиштиринг. Даврни категория сифатида тавсия "
+"этинг."
 
 msgid ""
 "Track or compare over time parts of a whole. Recommend data in series and "
 "period in category."
 msgstr ""
+"Яхлитлик қисмларини кузатинг ва солиштиринг.Маълумотларни серияларда ва "
+"даврий категорияларда тавсия этинг."
 
 msgid ""
 "Compare parts of a whole at a single point in time. Recommend period in the "
 "filter."
 msgstr ""
+"Яхлитликнинг қисмларини айни бир вақт нуқтасида таққосланг. Фильтрда даврни "
+"тавсия этинг."
 
 msgid "Compare several items against multiple variables."
-msgstr ""
+msgstr "Бир неча элементлар ва бир неча ўзгарувчиларга нисбатан таққосланг."
 
 msgid ""
 "Compare a percentage indicator against a 100% scale. Recommend period in "
 "filter."
 msgstr ""
+"100 фоизлик шкала асосида фоизлар нисбатини таққосланг. Фильтрда даврни "
+"тавсия этинг."
 
 msgid "Compare changes over time between multiple time periods."
-msgstr ""
+msgstr "Вақт ўтиши билан бир неча вақт оралиғидаги ўзгаришларни таққосланг."
 
 msgid "Display a single value. Recommend relative period to show latest data."
+msgstr ""
+"Битта қийматни кўрсатиш. Охирги маълумотларни кўрсатиш учун боғлиқ даврни "
+"таққосланг."
+
+msgid "No legend for this series"
 msgstr ""
 
 msgid "Target"
@@ -573,7 +594,7 @@ msgid "Base"
 msgstr "Асос"
 
 msgid "Axis {{axisId}}"
-msgstr ""
+msgstr "Ўқлар {{axisId}}"
 
 msgid "No data"
 msgstr "Маълумот йўқ"
