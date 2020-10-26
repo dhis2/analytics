@@ -415,7 +415,7 @@ msgid "{{allDynamicOuNames}} groups in {{staticOuNames}}"
 msgstr "{{allDynamicOuNames}} гуруҳлар {{staticOuNames}} ичида"
 
 msgid "Organisation Unit"
-msgstr "Ташкилий бирлик"
+msgstr "Ташкилий бўлим"
 
 msgid "Assigned Categories"
 msgstr "Белгиланган Категориялар"
