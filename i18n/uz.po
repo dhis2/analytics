@@ -352,7 +352,7 @@ msgid "Program indicators"
 msgstr "Дастур кўрсатгичлари"
 
 msgid "Organisation Unit"
-msgstr "Ташкилий бирлик"
+msgstr "Ташкилий бўлим"
 
 msgid "{{dynamicOuNames}} and {{lastOuName}}"
 msgstr "{{dynamicOuNames}} ва {{lastOuName}}"
