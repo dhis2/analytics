@@ -3,6 +3,7 @@ import 'core-js/fn/array/find-index'
 
 import Store from './store'
 import Config from './config'
+import { mergeFontStyleWithDefault } from '../modules/fontStyle'
 
 const defaultError = error => {
     throw new Error(error)
@@ -25,7 +26,12 @@ function createVisualization(
     const store = new Store({ data: _data, error, warning, outputFormat })
     const config = new Config({
         store,
-        layout,
+        layout: {
+            ...layout,
+            fontStyle: mergeFontStyleWithDefault(
+                layout.fontStyle
+            ),
+        },
         el,
         outputFormat,
         extraOptions,

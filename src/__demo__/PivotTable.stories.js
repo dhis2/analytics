@@ -43,6 +43,14 @@ import diseaseWeeksDataResponse from './data/diseaseWeeks.data.json'
 import diseaseWeeksMetadataResponse from './data/diseaseWeeks.metadata.json'
 import diseaseWeeksVisualization from './data/diseaseWeeks.visualization.json'
 
+import lastFiveYearsDataResponse from './data/lastFiveYears.data.json'
+import lastFiveYearsMetadataResponse from './data/lastFiveYears.metadata.json'
+import lastFiveYearsVisualization from './data/lastFiveYears.visualization.json'
+
+import weeklyColumnsDataResponse from './data/weeklyColumns.data.json'
+import weeklyColumnsMetadataResponse from './data/weeklyColumns.metadata.json'
+import weeklyColumnsVisualization from './data/weeklyColumns.visualization.json'
+
 import underAbove100LegendSet from './data/under-above-100.legendSet.json'
 
 const visualizationReset = {
@@ -85,10 +93,33 @@ const diseaseWeeksData = combineDataWithMetadata(
     diseaseWeeksMetadataResponse
 )
 
+const lastFiveYearsData = combineDataWithMetadata(
+    lastFiveYearsDataResponse,
+    lastFiveYearsMetadataResponse
+)
+
+const weeklyColumnsData = combineDataWithMetadata(
+    weeklyColumnsDataResponse,
+    weeklyColumnsMetadataResponse
+)
+
 storiesOf('PivotTable', module).add('simple', () => {
     const visualization = {
         ...simpleVisualization,
         ...visualizationReset,
+    }
+    return (
+        <div style={{ width: 800, height: 600 }}>
+            <PivotTable data={simpleData} visualization={visualization} />
+        </div>
+    )
+})
+
+storiesOf('PivotTable', module).add('simple - comma DGS', () => {
+    const visualization = {
+        ...simpleVisualization,
+        ...visualizationReset,
+        digitGroupSeparator: 'COMMA',
     }
     return (
         <div style={{ width: 800, height: 600 }}>
@@ -478,6 +509,66 @@ storiesOf('PivotTable', module).add('empty rows - hidden', () => {
     return (
         <div style={{ width: 800, height: 600 }}>
             <PivotTable data={emptyRowsData} visualization={visualization} />
+        </div>
+    )
+})
+
+storiesOf('PivotTable', module).add('empty columns - shown', () => {
+    const visualization = {
+        ...lastFiveYearsVisualization,
+        hideEmptyColumns: false,
+    }
+    return (
+        <div style={{ width: 800, height: 600 }}>
+            <PivotTable
+                data={lastFiveYearsData}
+                visualization={visualization}
+            />
+        </div>
+    )
+})
+
+storiesOf('PivotTable', module).add('empty columns - hidden', () => {
+    const visualization = {
+        ...lastFiveYearsVisualization,
+        hideEmptyColumns: true,
+    }
+    return (
+        <div style={{ width: 800, height: 600 }}>
+            <PivotTable
+                data={lastFiveYearsData}
+                visualization={visualization}
+            />
+        </div>
+    )
+})
+
+storiesOf('PivotTable', module).add('empty columns (weekly) - shown', () => {
+    const visualization = {
+        ...weeklyColumnsVisualization,
+        hideEmptyColumns: false,
+    }
+    return (
+        <div style={{ width: 800, height: 600 }}>
+            <PivotTable
+                data={weeklyColumnsData}
+                visualization={visualization}
+            />
+        </div>
+    )
+})
+
+storiesOf('PivotTable', module).add('empty columns (weekly) - hidden', () => {
+    const visualization = {
+        ...weeklyColumnsVisualization,
+        hideEmptyColumns: true,
+    }
+    return (
+        <div style={{ width: 800, height: 600 }}>
+            <PivotTable
+                data={weeklyColumnsData}
+                visualization={visualization}
+            />
         </div>
     )
 })

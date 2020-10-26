@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2020-08-12T08:24:29.482Z\n"
-"PO-Revision-Date: 2020-08-12T08:24:29.482Z\n"
+"POT-Creation-Date: 2020-10-21T13:43:05.146Z\n"
+"PO-Revision-Date: 2020-10-21T13:43:05.146Z\n"
 
 msgid "Data Type"
 msgstr ""
@@ -198,6 +198,18 @@ msgid "Last 7 days"
 msgstr ""
 
 msgid "Last 14 days"
+msgstr ""
+
+msgid "Last 30 days"
+msgstr ""
+
+msgid "Last 60 days"
+msgstr ""
+
+msgid "Last 90 days"
+msgstr ""
+
+msgid "Last 180 days"
 msgstr ""
 
 msgid "This week"
@@ -392,6 +404,45 @@ msgstr ""
 msgid "Program indicators"
 msgstr ""
 
+msgid "Extra Small"
+msgstr ""
+
+msgid "Small"
+msgstr ""
+
+msgid "Regular"
+msgstr ""
+
+msgid "Large"
+msgstr ""
+
+msgid "Extra Large"
+msgstr ""
+
+msgid "Left"
+msgstr ""
+
+msgid "Center"
+msgstr ""
+
+msgid "Right"
+msgstr ""
+
+msgid "Start"
+msgstr ""
+
+msgid "Middle"
+msgstr ""
+
+msgid "End"
+msgstr ""
+
+msgid "Top"
+msgstr ""
+
+msgid "Bottom"
+msgstr ""
+
 msgid "{{dynamicOuNames}} and {{lastOuName}}"
 msgstr ""
 
@@ -506,6 +557,9 @@ msgid "Compare changes over time between multiple time periods."
 msgstr ""
 
 msgid "Display a single value. Recommend relative period to show latest data."
+msgstr ""
+
+msgid "No legend for this series"
 msgstr ""
 
 msgid "Target"

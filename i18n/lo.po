@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-08-12T08:24:29.482Z\n"
+"POT-Creation-Date: 2020-10-21T13:43:05.146Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: Viktor Varland <viktor@dhis2.org>, 2020\n"
 "Language-Team: Lao (https://www.transifex.com/hisp-uio/teams/100509/lo/)\n"
@@ -208,6 +208,18 @@ msgstr "7 ມື້ກ່ອນ"
 msgid "Last 14 days"
 msgstr "14 ມື້ກ່ອນ"
 
+msgid "Last 30 days"
+msgstr "Last 30 days"
+
+msgid "Last 60 days"
+msgstr ""
+
+msgid "Last 90 days"
+msgstr ""
+
+msgid "Last 180 days"
+msgstr ""
+
 msgid "This week"
 msgstr "ທິດນີ້"
 
@@ -400,6 +412,45 @@ msgstr "ຂໍ້ມູນລາຍບຸກຄົນ"
 msgid "Program indicators"
 msgstr "ຕົວຊີ້ວັດສະເພາະວຽກຂອງຂະແໜງ"
 
+msgid "Extra Small"
+msgstr ""
+
+msgid "Small"
+msgstr "ນ້ອຍ"
+
+msgid "Regular"
+msgstr "Regular"
+
+msgid "Large"
+msgstr "ໃຫຍ່"
+
+msgid "Extra Large"
+msgstr ""
+
+msgid "Left"
+msgstr "ຊ້າຍ"
+
+msgid "Center"
+msgstr ""
+
+msgid "Right"
+msgstr "ຂວາ"
+
+msgid "Start"
+msgstr "Start"
+
+msgid "Middle"
+msgstr ""
+
+msgid "End"
+msgstr ""
+
+msgid "Top"
+msgstr "ເທິງສຸດ"
+
+msgid "Bottom"
+msgstr "ລຸ່ມສຸດ"
+
 msgid "{{dynamicOuNames}} and {{lastOuName}}"
 msgstr ""
 
@@ -514,6 +565,9 @@ msgid "Compare changes over time between multiple time periods."
 msgstr ""
 
 msgid "Display a single value. Recommend relative period to show latest data."
+msgstr ""
+
+msgid "No legend for this series"
 msgstr ""
 
 msgid "Target"

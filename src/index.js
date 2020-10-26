@@ -52,6 +52,10 @@ export {
 
 export { ouIdHelper } from './modules/ouIdHelper'
 
+// Modules: relativeItems
+
+export { hasRelativeItems } from './modules/relativeItems'
+
 // Modules: layout
 
 export { LAYOUT } from './modules/layout/layout'
@@ -132,10 +136,13 @@ export {
     getDisplayNameByVisType,
     defaultVisType,
     isStacked,
+    isMultiType,
     isYearOverYear,
     isDualAxisType,
     isSingleValue,
     isTwoCategoryChartType,
+    isLegendSetType,
+    isColumnBasedType,
 } from './modules/visTypes'
 
 // Modules: layoutTypes
@@ -169,6 +176,34 @@ export {
 
 export { createVisualization } from './visualizations'
 
+// Modules: fontStyle
+
+export {
+    FONT_STYLE_VISUALIZATION_TITLE,
+    FONT_STYLE_VISUALIZATION_SUBTITLE,
+    FONT_STYLE_HORIZONTAL_AXIS_TITLE,
+    FONT_STYLE_VERTICAL_AXIS_TITLE,
+    FONT_STYLE_LEGEND,
+    FONT_STYLE_SERIES_AXIS_LABELS,
+    FONT_STYLE_CATEGORY_AXIS_LABELS,
+    FONT_STYLE_TARGET_LINE_LABEL,
+    FONT_STYLE_BASE_LINE_LABEL,
+    FONT_STYLE_OPTION_FONT,
+    FONT_STYLE_OPTION_FONT_SIZE,
+    FONT_STYLE_OPTION_BOLD,
+    FONT_STYLE_OPTION_ITALIC,
+    FONT_STYLE_OPTION_UNDERLINE,
+    FONT_STYLE_OPTION_TEXT_COLOR,
+    FONT_STYLE_OPTION_TEXT_ALIGN,
+    TEXT_ALIGN_LEFT,
+    TEXT_ALIGN_CENTER,
+    TEXT_ALIGN_RIGHT,
+    defaultFontStyle,
+    getFontSizeOptions,
+    getTextAlignOptions,
+    deleteFontStyleOption,
+} from './modules/fontStyle'
+
 // Utils: colorSets
 export {
     COLOR_SET_DEFAULT,
@@ -176,6 +211,6 @@ export {
     COLOR_SET_DARK,
     COLOR_SET_GRAY,
     COLOR_SET_COLOR_BLIND,
-    COLOR_SET_MONO_PATTERNS,
+    COLOR_SET_PATTERNS,
     colorSets,
 } from './visualizations/util/colors/colorSets'

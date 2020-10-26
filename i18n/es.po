@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-08-12T08:24:29.482Z\n"
+"POT-Creation-Date: 2020-10-21T13:43:05.146Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: Viktor Varland <viktor@dhis2.org>, 2020\n"
 "Language-Team: Spanish (https://www.transifex.com/hisp-uio/teams/100509/es/)\n"
@@ -210,6 +210,18 @@ msgstr "Últimos 7 diass"
 msgid "Last 14 days"
 msgstr "Últimos 14 días"
 
+msgid "Last 30 days"
+msgstr "Últimos 30 días"
+
+msgid "Last 60 days"
+msgstr ""
+
+msgid "Last 90 days"
+msgstr ""
+
+msgid "Last 180 days"
+msgstr ""
+
 msgid "This week"
 msgstr "Esta semana"
 
@@ -402,6 +414,45 @@ msgstr "Datos de eventos"
 msgid "Program indicators"
 msgstr "Indicadores de programa"
 
+msgid "Extra Small"
+msgstr ""
+
+msgid "Small"
+msgstr "Pequeña"
+
+msgid "Regular"
+msgstr "Normal"
+
+msgid "Large"
+msgstr "Grande"
+
+msgid "Extra Large"
+msgstr ""
+
+msgid "Left"
+msgstr "Izquierdo"
+
+msgid "Center"
+msgstr ""
+
+msgid "Right"
+msgstr "Derecha"
+
+msgid "Start"
+msgstr "Comienzo"
+
+msgid "Middle"
+msgstr ""
+
+msgid "End"
+msgstr ""
+
+msgid "Top"
+msgstr "Arriba"
+
+msgid "Bottom"
+msgstr "Abajo"
+
 msgid "{{dynamicOuNames}} and {{lastOuName}}"
 msgstr ""
 
@@ -516,6 +567,9 @@ msgid "Compare changes over time between multiple time periods."
 msgstr ""
 
 msgid "Display a single value. Recommend relative period to show latest data."
+msgstr ""
+
+msgid "No legend for this series"
 msgstr ""
 
 msgid "Target"

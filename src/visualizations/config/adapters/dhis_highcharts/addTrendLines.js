@@ -1,6 +1,7 @@
 import arrayContains from 'd2-utilizr/lib/arrayContains'
 import { rgb } from 'd3-color'
 
+import { colorSets, COLOR_SET_PATTERNS } from '../../../util/colors/colorSets'
 import getStackedData from './getStackedData'
 import {
     VIS_TYPE_GAUGE,
@@ -19,6 +20,7 @@ const DEFAULT_TRENDLINE = {
         symbol: 'circle',
         radius: 2,
     },
+    zIndex: 1
 }
 
 export const isRegressionIneligible = type =>
@@ -65,20 +67,59 @@ function getDefaultTrendLines(layout, series, isStacked) {
     return newSeries
 }
 
+function getTwoCategoryTrendlineConfig(
+    groupObj,
+    groupIndex,
+    groupRegressionObject,
+    regressionType,
+    trendlineId
+) {
+    const trendlineConfig = getRegressionObj(groupObj, regressionType)
+
+    groupRegressionObject.splice(
+        groupIndex * groupObj.length,
+        groupObj.length,
+        ...trendlineConfig.data.map(point => point[1])
+    )
+
+    trendlineConfig.data = groupRegressionObject
+
+    // link trendlines
+    // so only 1 label in the legend is shown and all linked trendlines
+    // can be toggled simultaneously
+    if (groupIndex === 0) {
+        trendlineConfig.id = trendlineId
+    } else {
+        trendlineConfig.linkedTo = trendlineId
+    }
+
+    return trendlineConfig
+}
+
 function getTwoCategoryTrendLines(layout, series, isStacked) {
     const newSeries = []
 
     if (isStacked) {
-        newSeries.push(
-            ...series,
-            Object.assign(
-                {},
-                getRegressionObj(
-                    getStackedData(series, layout),
-                    layout.regressionType
-                )
-            )
+        newSeries.push(...series)
+
+        const stackedData = getStackedData(series, layout)
+
+        const groupRegressionTemplate = Array.from(
+            { length: stackedData.flat().length },
+            () => null
         )
+
+        stackedData.forEach((groupObj, groupIndex) => {
+            const trendlineConfig = getTwoCategoryTrendlineConfig(
+                groupObj,
+                groupIndex,
+                groupRegressionTemplate.slice(),
+                layout.regressionType,
+                'trendline-stacked'
+            )
+
+            newSeries.push(trendlineConfig)
+        })
     } else {
         series.forEach(seriesObj => {
             const trendlineSerieId = `trendline-${seriesObj.id}`
@@ -92,29 +133,13 @@ function getTwoCategoryTrendLines(layout, series, isStacked) {
                 )
 
                 seriesObj.custom.data.forEach((groupObj, groupIndex) => {
-                    const trendlineConfig = getRegressionObj(
+                    const trendlineConfig = getTwoCategoryTrendlineConfig(
                         groupObj,
-                        layout.regressionType
+                        groupIndex,
+                        groupRegressionTemplate.slice(),
+                        layout.regressionType,
+                        trendlineSerieId
                     )
-
-                    const groupRegressionObject = groupRegressionTemplate.slice()
-
-                    groupRegressionObject.splice(
-                        groupIndex * groupObj.length,
-                        groupObj.length,
-                        ...trendlineConfig.data.map(point => point[1])
-                    )
-
-                    trendlineConfig.data = groupRegressionObject
-
-                    // link all trendlines for the same serie
-                    // so only 1 label in the legend is shown and all trendlines
-                    // for that serie can be toggled simultaneously
-                    if (groupIndex === 0) {
-                        trendlineConfig.id = trendlineSerieId
-                    } else {
-                        trendlineConfig.linkedTo = trendlineSerieId
-                    }
 
                     newSeries.push(
                         Object.assign({}, trendlineConfig, {
@@ -131,6 +156,16 @@ function getTwoCategoryTrendLines(layout, series, isStacked) {
 }
 
 function getDarkerColor(color) {
+    // For patterns, color is an object containing patternIndex.
+    // patternIndex can be 0, thus the need to check for the presence of the key in the object.
+    // The actual color code needs to be extracted for the the Highcharts pattern definition.
+    if (Object.prototype.hasOwnProperty.call(color, 'patternIndex')) {
+        const colorSetPatterns = colorSets[COLOR_SET_PATTERNS].patterns
+        color =
+            colorSetPatterns[color.patternIndex].color ||
+            DEFAULT_TRENDLINE.color
+    }
+
     return rgb(color)
         .darker(0.5)
         .toString()
@@ -154,20 +189,27 @@ function getRegressionObj(data, regressionType) {
 
     let regression
     const regressionTypeOptions = {}
+    const regressionData = getRegressionData(data)
 
     switch (regressionType) {
         case 'POLYNOMIAL':
             // polynomial(data, order, extrapolate)
-            regression = polynomial(getRegressionData(data))
+            // min 2 data points for this regression to work
+            if (regressionData.length > 1) {
+                regression = polynomial(regressionData)
+            } else {
+                regression = { points: [] }
+            }
+
             break
         case 'LOESS':
             // loess(data, smoothing)
-            regression = loess(getRegressionData(data), 0.25)
+            regression = loess(regressionData, 0.25)
             break
         case 'LINEAR':
         default:
             // linear(data, decimalPlaces)
-            regression = linear(getRegressionData(data))
+            regression = linear(regressionData)
             regressionTypeOptions.type = 'line'
             break
     }

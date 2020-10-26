@@ -1,6 +1,6 @@
 {
     "name": "@dhis2/analytics",
-    "version": "8.6.0",
+    "version": "11.1.5",
     "main": "./build/cjs/lib.js",
     "module": "./build/es/lib.js",
     "sideEffects": [
@@ -21,10 +21,12 @@
         "start": "yarn start-storybook",
         "test": "d2-app-scripts test",
         "lint": "d2-style js check || d2-style text check",
-        "format": "d2-style js apply || d2-style text apply"
+        "format": "d2-style js apply || d2-style text apply",
+        "validate-commit": "d2-style js check --staged && d2-style text check --staged",
+        "validate-push": "yarn test"
     },
     "devDependencies": {
-        "@dhis2/cli-app-scripts": "^4.0.9",
+        "@dhis2/cli-app-scripts": "^5.1.0",
         "@dhis2/cli-style": "^7.0.0",
         "@dhis2/d2-i18n": "^1.0.6",
         "@sambego/storybook-state": "^2.0.1",
@@ -32,7 +34,7 @@
         "@storybook/preset-create-react-app": "^2.1.2",
         "@storybook/react": "^5.3.17",
         "enzyme": "^3.9.0",
-        "enzyme-adapter-react-16": "^1.11.2",
+        "enzyme-adapter-react-16": "^1.15.4",
         "fs-extra": "^9.0.0",
         "jest-enzyme": "^7.0.2",
         "typeface-roboto": "^0.0.75"
@@ -44,15 +46,15 @@
         "react-dom": "^16.3"
     },
     "dependencies": {
-        "@dhis2/d2-ui-org-unit-dialog": "^7.0.4",
-        "@dhis2/ui": "^5.3.0",
+        "@dhis2/d2-ui-org-unit-dialog": "^7.0.8",
+        "@dhis2/ui": "^5.5.6",
         "@material-ui/core": "^3.9.3",
         "@material-ui/icons": "^3.0.2",
         "classnames": "^2.2.6",
         "d2-utilizr": "^0.2.16",
         "d3-color": "^1.2.3",
-        "highcharts": "^8.1.2",
-        "lodash": "^4.17.19",
+        "highcharts": "^8.2.0",
+        "lodash": "^4.17.20",
         "react-beautiful-dnd": "^10.1.1",
         "resize-observer-polyfill": "^1.5.1",
         "styled-jsx": "^3.3.0"

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-08-11T09:04:09.929Z\n"
+"POT-Creation-Date: 2020-10-21T13:43:05.146Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: phil_dhis2, 2020\n"
 "Language-Team: Danish (https://www.transifex.com/hisp-uio/teams/100509/da/)\n"
@@ -82,6 +82,9 @@ msgid "Year"
 msgstr "Year"
 
 msgid "Select year"
+msgstr ""
+
+msgid "Period"
 msgstr ""
 
 msgid "Relative periods"
@@ -202,6 +205,18 @@ msgid "Last 7 days"
 msgstr ""
 
 msgid "Last 14 days"
+msgstr ""
+
+msgid "Last 30 days"
+msgstr ""
+
+msgid "Last 60 days"
+msgstr ""
+
+msgid "Last 90 days"
+msgstr ""
+
+msgid "Last 180 days"
 msgstr ""
 
 msgid "This week"
@@ -396,6 +411,45 @@ msgstr ""
 msgid "Program indicators"
 msgstr ""
 
+msgid "Extra Small"
+msgstr ""
+
+msgid "Small"
+msgstr ""
+
+msgid "Regular"
+msgstr ""
+
+msgid "Large"
+msgstr ""
+
+msgid "Extra Large"
+msgstr ""
+
+msgid "Left"
+msgstr ""
+
+msgid "Center"
+msgstr ""
+
+msgid "Right"
+msgstr ""
+
+msgid "Start"
+msgstr ""
+
+msgid "Middle"
+msgstr ""
+
+msgid "End"
+msgstr ""
+
+msgid "Top"
+msgstr ""
+
+msgid "Bottom"
+msgstr ""
+
 msgid "{{dynamicOuNames}} and {{lastOuName}}"
 msgstr ""
 
@@ -412,9 +466,6 @@ msgid "{{allDynamicOuNames}} groups in {{staticOuNames}}"
 msgstr ""
 
 msgid "Data"
-msgstr ""
-
-msgid "Period"
 msgstr ""
 
 msgid "Organisation Unit"
@@ -492,6 +543,11 @@ msgid "Track or compare changes over time. Recommend period as the category."
 msgstr ""
 
 msgid ""
+"Track or compare over time parts of a whole. Recommend data in series and "
+"period in category."
+msgstr ""
+
+msgid ""
 "Compare parts of a whole at a single point in time. Recommend period in the "
 "filter."
 msgstr ""
@@ -508,6 +564,9 @@ msgid "Compare changes over time between multiple time periods."
 msgstr ""
 
 msgid "Display a single value. Recommend relative period to show latest data."
+msgstr ""
+
+msgid "No legend for this series"
 msgstr ""
 
 msgid "Target"
