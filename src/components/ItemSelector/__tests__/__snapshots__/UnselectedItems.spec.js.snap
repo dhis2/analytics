@@ -8,9 +8,12 @@ exports[`UnselectedItems component list with items matches the snapshot when lis
   >
     <ul
       className="unselected-list"
+      data-test="item-selector-unselected-list"
+      dataTest="undefined-list"
     >
       <li
         className="unselected-list-item"
+        dataTest="undefined-list-item"
         key="rb"
         onDoubleClick={[Function]}
       >
@@ -25,6 +28,7 @@ exports[`UnselectedItems component list with items matches the snapshot when lis
       </li>
       <li
         className="unselected-list-item"
+        dataTest="undefined-list-item"
         key="rr"
         onDoubleClick={[Function]}
       >
@@ -70,6 +74,8 @@ exports[`UnselectedItems component matches the snapshot when list is empty 1`] =
   >
     <ul
       className="unselected-list"
+      data-test="item-selector-unselected-list"
+      dataTest="undefined-list"
     />
   </div>
   <div

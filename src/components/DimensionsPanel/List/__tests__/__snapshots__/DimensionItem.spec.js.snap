@@ -17,6 +17,7 @@ exports[`DimensionItem matches the snapshot 1`] = `
   }
 >
   <DimensionLabel
+    dataTest="undefined-button-pe"
     id="pe"
     isDeactivated={false}
     onClick={[Function]}
@@ -85,6 +86,7 @@ exports[`DimensionItem matches the snapshot with locked 1`] = `
   }
 >
   <DimensionLabel
+    dataTest="undefined-button-pe"
     id="pe"
     isDeactivated={false}
     onClick={[Function]}
@@ -171,6 +173,7 @@ exports[`DimensionItem matches the snapshot with onOptionsClick 1`] = `
   }
 >
   <DimensionLabel
+    dataTest="undefined-button-pe"
     id="pe"
     isDeactivated={false}
     onClick={[Function]}
@@ -220,6 +223,7 @@ exports[`DimensionItem matches the snapshot with onOptionsClick 1`] = `
     </div>
   </DimensionLabel>
   <div
+    dataTest="undefined-menu-pe"
     style={
       Object {
         "alignSelf": "start",
@@ -250,6 +254,7 @@ exports[`DimensionItem matches the snapshot with recommended 1`] = `
   }
 >
   <DimensionLabel
+    dataTest="undefined-button-pe"
     id="pe"
     isDeactivated={false}
     onClick={[Function]}
@@ -320,6 +325,7 @@ exports[`DimensionItem matches the snapshot with selected 1`] = `
   }
 >
   <DimensionLabel
+    dataTest="undefined-button-pe"
     id="pe"
     isDeactivated={false}
     onClick={[Function]}
