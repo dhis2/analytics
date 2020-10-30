@@ -66,7 +66,7 @@ export class UnselectedItems extends Component {
             className="unselected-list-item"
             key={dataDim.id}
             onDoubleClick={() => this.onDoubleClickItem(dataDim.id)}
-            dataTest={`${this.props.dataTest}-list-item`}
+            data-test={`${this.props.dataTest}-list-item`}
         >
             <Item
                 id={dataDim.id}
@@ -107,8 +107,7 @@ export class UnselectedItems extends Component {
                 >
                     <ul
                         className="unselected-list"
-                        data-test="item-selector-unselected-list"
-                        dataTest={`${this.props.dataTest}-list`}
+                        data-test={`${this.props.dataTest}-list`}
                     >
                         {listItems}
                     </ul>

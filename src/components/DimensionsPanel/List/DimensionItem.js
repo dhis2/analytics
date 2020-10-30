@@ -102,7 +102,7 @@ export class DimensionItem extends Component {
                     <div
                         style={styles.optionsWrapper}
                         ref={optionsRef}
-                        dataTest={`${dataTest}-menu-${id}`}
+                        data-test={`${dataTest}-menu-${id}`}
                     >
                         {this.state.mouseOver && !isDeactivated && !isLocked ? (
                             <OptionsButton

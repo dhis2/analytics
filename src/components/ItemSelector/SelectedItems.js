@@ -27,7 +27,7 @@ const InfoBox = ({ message }) => (
 )
 
 const ItemsList = ({ innerRef, children, dataTest }) => (
-    <ul className="selected-list" ref={innerRef} dataTest={dataTest}>
+    <ul className="selected-list" ref={innerRef} data-test={dataTest}>
         {children}
         <style jsx>{styles}</style>
     </ul>
@@ -144,7 +144,7 @@ export class SelectedItems extends Component {
                         {...provided.draggableProps}
                         {...provided.dragHandleProps}
                         ref={provided.innerRef}
-                        dataTest={`${this.props.dataTest}-list-item`}
+                        data-test={`${this.props.dataTest}-list-item`}
                     >
                         <Item
                             id={id}
