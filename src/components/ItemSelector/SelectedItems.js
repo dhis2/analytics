@@ -26,12 +26,8 @@ const InfoBox = ({ message }) => (
     </div>
 )
 
-const ItemsList = ({ innerRef, children }) => (
-    <ul
-        className="selected-list"
-        ref={innerRef}
-        dataTest={`${this.props.dataTest}-list`}
-    >
+const ItemsList = ({ innerRef, children, dataTest }) => (
+    <ul className="selected-list" ref={innerRef} dataTest={dataTest}>
         {children}
         <style jsx>{styles}</style>
     </ul>
@@ -238,6 +234,7 @@ export class SelectedItems extends Component {
                         {provided => (
                             <ItemsList
                                 innerRef={provided.innerRef}
+                                dataTest={`${this.props.dataTest}-list`}
                                 {...provided.droppableProps}
                             >
                                 {itemList}
@@ -269,6 +266,7 @@ InfoBox.propTypes = {
 
 ItemsList.propTypes = {
     children: PropTypes.array,
+    dataTest: PropTypes.string,
     innerRef: PropTypes.func,
 }
 
