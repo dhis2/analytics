@@ -223,7 +223,7 @@ exports[`DimensionItem matches the snapshot with onOptionsClick 1`] = `
     </div>
   </DimensionLabel>
   <div
-    dataTest="undefined-menu-pe"
+    data-test="undefined-menu-pe"
     style={
       Object {
         "alignSelf": "start",

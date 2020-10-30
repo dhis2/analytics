@@ -79,7 +79,7 @@ exports[`The SelectedItems component list with items matches the snapshot with l
             >
               <ul
                 className="selected-list"
-                dataTest="undefined-list"
+                data-test="undefined-list"
               >
                 <Connect(Draggable)
                   disableInteractiveElementBlocking={false}
@@ -160,7 +160,7 @@ exports[`The SelectedItems component list with items matches the snapshot with l
                           className="selected-list-item"
                           data-react-beautiful-dnd-drag-handle="1"
                           data-react-beautiful-dnd-draggable="1"
-                          dataTest="undefined-list-item"
+                          data-test="undefined-list-item"
                           draggable={false}
                           id="rb"
                           onBlur={[Function]}
@@ -395,7 +395,7 @@ exports[`The SelectedItems component list with items matches the snapshot with l
                           className="selected-list-item"
                           data-react-beautiful-dnd-drag-handle="1"
                           data-react-beautiful-dnd-draggable="1"
-                          dataTest="undefined-list-item"
+                          data-test="undefined-list-item"
                           draggable={false}
                           id="rr"
                           onBlur={[Function]}
@@ -718,7 +718,7 @@ exports[`The SelectedItems component matches the snapshot when list is empty 1`]
             >
               <ul
                 className="selected-list"
-                dataTest="undefined-list"
+                data-test="undefined-list"
               >
                 <AnimateInOut
                   on={null}
