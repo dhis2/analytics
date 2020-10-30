@@ -66,6 +66,7 @@ export class UnselectedItems extends Component {
             className="unselected-list-item"
             key={dataDim.id}
             onDoubleClick={() => this.onDoubleClickItem(dataDim.id)}
+            dataTest={`${this.props.dataTest}-list-item`}
         >
             <Item
                 id={dataDim.id}
@@ -104,7 +105,13 @@ export class UnselectedItems extends Component {
                     onScroll={this.requestMoreItems}
                     className="unselected-list-container"
                 >
-                    <ul className="unselected-list">{listItems}</ul>
+                    <ul
+                        className="unselected-list"
+                        data-test="item-selector-unselected-list"
+                        dataTest={`${this.props.dataTest}-list`}
+                    >
+                        {listItems}
+                    </ul>
                 </div>
                 <div className="select-all-button">
                     <Button onClick={this.onSelectAllClick}>
@@ -131,6 +138,7 @@ UnselectedItems.propTypes = {
         })
     ).isRequired,
     onSelect: PropTypes.func.isRequired,
+    dataTest: PropTypes.string,
     filterText: PropTypes.string,
     requestMoreItems: PropTypes.func,
 }

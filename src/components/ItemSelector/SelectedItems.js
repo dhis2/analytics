@@ -27,7 +27,11 @@ const InfoBox = ({ message }) => (
 )
 
 const ItemsList = ({ innerRef, children }) => (
-    <ul className="selected-list" ref={innerRef}>
+    <ul
+        className="selected-list"
+        ref={innerRef}
+        dataTest={`${this.props.dataTest}-list`}
+    >
         {children}
         <style jsx>{styles}</style>
     </ul>
@@ -144,6 +148,7 @@ export class SelectedItems extends Component {
                         {...provided.draggableProps}
                         {...provided.dragHandleProps}
                         ref={provided.innerRef}
+                        dataTest={`${this.props.dataTest}-list-item`}
                     >
                         <Item
                             id={id}
@@ -271,6 +276,7 @@ SelectedItems.propTypes = {
     items: PropTypes.array.isRequired,
     onDeselect: PropTypes.func.isRequired,
     onReorder: PropTypes.func.isRequired,
+    dataTest: PropTypes.string,
     infoBoxMessage: PropTypes.string,
 }
 
