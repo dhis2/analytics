@@ -19,13 +19,13 @@ msgid "Data Type"
 msgstr ""
 
 msgid "Totals"
-msgstr ""
+msgstr "Součty"
 
 msgid "Details"
-msgstr ""
+msgstr "Detaily"
 
 msgid "Detail"
-msgstr ""
+msgstr "Detail"
 
 msgid "Move to {{axisName}}"
 msgstr ""
@@ -34,7 +34,7 @@ msgid "Add to {{axisName}}"
 msgstr ""
 
 msgid "Remove"
-msgstr ""
+msgstr "Odebrat"
 
 msgid "Not available for {{visualizationType}}"
 msgstr ""
@@ -64,7 +64,7 @@ msgid "Selected Items"
 msgstr ""
 
 msgid "Search"
-msgstr ""
+msgstr "Hledat"
 
 msgid "Selected Data"
 msgstr ""
@@ -73,19 +73,19 @@ msgid "Deselect All"
 msgstr "Odznačit vše"
 
 msgid "Select all"
-msgstr ""
+msgstr "Vybrat vše"
 
 msgid "Period type"
 msgstr ""
 
 msgid "Year"
-msgstr ""
+msgstr "Rok"
 
 msgid "Select year"
 msgstr ""
 
 msgid "Period"
-msgstr ""
+msgstr "Období"
 
 msgid "Relative periods"
 msgstr ""
@@ -343,19 +343,19 @@ msgid "Years"
 msgstr ""
 
 msgid "Series"
-msgstr ""
+msgstr "Série"
 
 msgid "Category"
 msgstr "Kategorie"
 
 msgid "Filter"
-msgstr ""
+msgstr "Filtr"
 
 msgid "Columns"
-msgstr ""
+msgstr "Sloupce"
 
 msgid "Rows"
-msgstr ""
+msgstr "Řádky"
 
 msgid "Reporting rate"
 msgstr ""
@@ -364,7 +364,7 @@ msgid "Reporting rate on time"
 msgstr ""
 
 msgid "Actual reports"
-msgstr ""
+msgstr "Aktuální zprávy"
 
 msgid "Actual reports on time"
 msgstr ""
@@ -373,25 +373,25 @@ msgid "Expected reports"
 msgstr ""
 
 msgid "Program"
-msgstr ""
+msgstr "Program"
 
 msgid "Select a program"
 msgstr ""
 
 msgid "Indicators"
-msgstr ""
+msgstr "Indikátory"
 
 msgid "Select indicator group"
 msgstr ""
 
 msgid "[ All groups ]"
-msgstr ""
+msgstr "[ Všechny skupiny ]"
 
 msgid "Data elements"
 msgstr ""
 
 msgid "Select data element group"
-msgstr ""
+msgstr "Vybrat skupinu datových prvků"
 
 msgid "[ All data elements ]"
 msgstr ""
@@ -466,7 +466,7 @@ msgid "{{allDynamicOuNames}} groups in {{staticOuNames}}"
 msgstr ""
 
 msgid "Data"
-msgstr ""
+msgstr "Data"
 
 msgid "Organisation Unit"
 msgstr "Organizační jednotka"
@@ -475,10 +475,10 @@ msgid "Assigned Categories"
 msgstr ""
 
 msgid "Pivot table"
-msgstr ""
+msgstr "Kontingenční tabulka"
 
 msgid "Column"
-msgstr ""
+msgstr "Sloupec"
 
 msgid "Stacked column"
 msgstr ""
@@ -499,19 +499,19 @@ msgid "Stacked area"
 msgstr ""
 
 msgid "Pie"
-msgstr ""
+msgstr "Koláč"
 
 msgid "Radar"
-msgstr ""
+msgstr "Radar"
 
 msgid "Gauge"
-msgstr ""
+msgstr "Gauge"
 
 msgid "Year over year (line)"
 msgstr ""
 
 msgid "Year over year (column)"
-msgstr ""
+msgstr "Rok po roce (sloupce)"
 
 msgid "Single value"
 msgstr ""
@@ -573,7 +573,7 @@ msgid "Target"
 msgstr ""
 
 msgid "Base"
-msgstr ""
+msgstr "Základ"
 
 msgid "Axis {{axisId}}"
 msgstr ""
