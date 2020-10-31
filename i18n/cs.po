@@ -16,19 +16,19 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n <= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;\n"
 
 msgid "Data"
-msgstr ""
+msgstr "Data"
 
 msgid "Data Type"
 msgstr ""
 
 msgid "Totals"
-msgstr ""
+msgstr "Součty"
 
 msgid "Details"
-msgstr ""
+msgstr "Detaily"
 
 msgid "Detail"
-msgstr ""
+msgstr "Detail"
 
 msgid "Search dimensions"
 msgstr ""
@@ -37,7 +37,7 @@ msgid "Dimension recommended with selected data"
 msgstr ""
 
 msgid "Search"
-msgstr ""
+msgstr "Hledat"
 
 msgid "Selected Data"
 msgstr ""
@@ -46,13 +46,13 @@ msgid "Deselect All"
 msgstr "Odznačit vše"
 
 msgid "Select all"
-msgstr ""
+msgstr "Vybrat vše"
 
 msgid "Organisation units"
 msgstr "Organizační jednotky"
 
 msgid "Period"
-msgstr ""
+msgstr "Období"
 
 msgid "Year"
 msgstr ""
@@ -304,7 +304,7 @@ msgid "Reporting rate on time"
 msgstr ""
 
 msgid "Actual reports"
-msgstr ""
+msgstr "Aktuální zprávy"
 
 msgid "Actual reports on time"
 msgstr ""
@@ -313,22 +313,22 @@ msgid "Expected reports"
 msgstr ""
 
 msgid "Program"
-msgstr ""
+msgstr "Program"
 
 msgid "Indicators"
-msgstr ""
+msgstr "Indikátory"
 
 msgid "Select indicator group"
 msgstr ""
 
 msgid "[ All groups ]"
-msgstr ""
+msgstr "[ Všechny skupiny ]"
 
 msgid "Data elements"
 msgstr ""
 
 msgid "Select data element group"
-msgstr ""
+msgstr "Vybrat skupinu datových prvků"
 
 msgid "[ All data elements ]"
 msgstr ""
