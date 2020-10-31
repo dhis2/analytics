@@ -70,7 +70,7 @@ msgid "Selected Data"
 msgstr ""
 
 msgid "Deselect All"
-msgstr ""
+msgstr "Odznačit vše"
 
 msgid "Select all"
 msgstr ""
@@ -100,7 +100,7 @@ msgid "No periods selected"
 msgstr ""
 
 msgid "January"
-msgstr ""
+msgstr "Leden"
 
 msgid "February"
 msgstr ""
@@ -166,7 +166,7 @@ msgid "Monthly"
 msgstr ""
 
 msgid "Bi-monthly"
-msgstr ""
+msgstr "Dvakrát za měsíc"
 
 msgid "Quarterly"
 msgstr ""
@@ -397,7 +397,7 @@ msgid "[ All data elements ]"
 msgstr ""
 
 msgid "Data sets"
-msgstr ""
+msgstr "Datové sady"
 
 msgid "Select data sets"
 msgstr ""
@@ -484,7 +484,7 @@ msgid "Stacked column"
 msgstr ""
 
 msgid "Bar"
-msgstr ""
+msgstr "LIšta"
 
 msgid "Stacked bar"
 msgstr ""
