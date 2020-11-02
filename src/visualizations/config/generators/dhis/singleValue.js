@@ -121,6 +121,7 @@ const generateDVItem = (config, legendSet, parentEl, fontStyle) => {
     svg.setAttribute('viewBox', `0 0 ${width} ${height}`)
     svg.setAttribute('width', '100%')
     svg.setAttribute('height', '100%')
+    svg.setAttribute('data-test', 'visualization-container')
 
     const title = document.createElementNS(svgNS, 'text')
     const titleFontStyle = fontStyle[FONT_STYLE_VISUALIZATION_TITLE]
