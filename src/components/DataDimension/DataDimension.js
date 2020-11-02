@@ -69,7 +69,7 @@ export class DataDimension extends Component {
 
         if (!this.state.groups[dataType].length) {
             const dataTypeGroups = await apiFetchGroups(
-                this.props.d2,
+                this.props.dataEngine,
                 dataType,
                 this.props.displayNameProp
             )
@@ -121,7 +121,7 @@ export class DataDimension extends Component {
 
         const alternatives =
             (await apiFetchAlternatives({
-                d2: this.props.d2,
+                dataEngine: this.props.dataEngine,
                 dataType,
                 groupId,
                 groupDetail,
@@ -265,7 +265,7 @@ export class DataDimension extends Component {
 }
 
 DataDimension.propTypes = {
-    d2: PropTypes.object.isRequired,
+    dataEngine: PropTypes.object.isRequired,
     displayNameProp: PropTypes.string.isRequired,
     selectedDimensions: PropTypes.array.isRequired,
     onDeselect: PropTypes.func.isRequired,
