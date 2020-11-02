@@ -23,6 +23,11 @@ export { default as PivotTable } from './components/PivotTable/PivotTable'
 // Api
 
 export { apiFetchDimensions, apiFetchRecommendedIds } from './api/dimensions'
+export {
+    apiFetchOrganisationUnitLevels,
+    apiFetchOrganisationUnitRoots,
+    apiFetchOrganisationUnit,
+} from './api/organisationUnits-dataEngine'
 
 // Modules: axis
 
