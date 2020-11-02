@@ -44,6 +44,7 @@ const generateValueSVG = (value, formattedValue, legendSet, y) => {
     text.setAttribute('letter-spacing', '-5')
     text.setAttribute('x', '50%')
     text.setAttribute('fill', fillColor)
+    text.setAttribute('data-test', 'visualization-primary-value')
     text.appendChild(document.createTextNode(formattedValue))
 
     svgValue.appendChild(text)
@@ -150,6 +151,8 @@ const generateDVItem = (config, legendSet, parentEl, fontStyle) => {
     )
     title.setAttribute('fill', titleFontStyle[FONT_STYLE_OPTION_TEXT_COLOR])
 
+    title.setAttribute('data-test', 'visualization-title')
+
     if (config.title) {
         title.appendChild(document.createTextNode(config.title))
 
@@ -190,6 +193,9 @@ const generateDVItem = (config, legendSet, parentEl, fontStyle) => {
         'fill',
         subtitleFontStyle[FONT_STYLE_OPTION_TEXT_COLOR]
     )
+
+    subtitle.setAttribute('data-test', 'visualization-subtitle')
+
     if (config.subtitle) {
         subtitle.appendChild(document.createTextNode(config.subtitle))
 
