@@ -46,7 +46,7 @@ exports[`UnselectedItems component list with items matches the snapshot when lis
     className="select-all-button"
   >
     <Button
-      dataTest="dhis2-uicore-button"
+      dataTest="undefined-select-all-button"
       onClick={[Function]}
       type="button"
     >
@@ -80,7 +80,7 @@ exports[`UnselectedItems component matches the snapshot when list is empty 1`] =
     className="select-all-button"
   >
     <Button
-      dataTest="dhis2-uicore-button"
+      dataTest="undefined-select-all-button"
       onClick={[Function]}
       type="button"
     >

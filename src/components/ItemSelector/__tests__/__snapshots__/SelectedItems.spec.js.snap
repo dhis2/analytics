@@ -567,13 +567,13 @@ exports[`The SelectedItems component list with items matches the snapshot with l
     className="deselect-all-button"
   >
     <Button
-      dataTest="dhis2-uicore-button"
+      dataTest="undefined-deselect-all-button"
       onClick={[Function]}
       type="button"
     >
       <button
         className="jsx-1653853836 "
-        data-test="dhis2-uicore-button"
+        data-test="undefined-deselect-all-button"
         onBlur={[Function]}
         onClick={[Function]}
         onFocus={[Function]}
@@ -736,13 +736,13 @@ exports[`The SelectedItems component matches the snapshot when list is empty 1`]
     className="deselect-all-button"
   >
     <Button
-      dataTest="dhis2-uicore-button"
+      dataTest="undefined-deselect-all-button"
       onClick={[Function]}
       type="button"
     >
       <button
         className="jsx-1653853836 "
-        data-test="dhis2-uicore-button"
+        data-test="undefined-deselect-all-button"
         onBlur={[Function]}
         onClick={[Function]}
         onFocus={[Function]}
