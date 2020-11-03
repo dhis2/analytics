@@ -244,7 +244,10 @@ export class SelectedItems extends Component {
                     </Droppable>
                 </DragDropContext>
                 <div className="deselect-all-button">
-                    <Button onClick={this.onDeselectAll}>
+                    <Button
+                        onClick={this.onDeselectAll}
+                        dataTest={`${this.props.dataTest}-deselect-all-button`}
+                    >
                         {i18n.t('Deselect All')}
                     </Button>
                 </div>

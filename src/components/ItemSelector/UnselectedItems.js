@@ -113,7 +113,10 @@ export class UnselectedItems extends Component {
                     </ul>
                 </div>
                 <div className="select-all-button">
-                    <Button onClick={this.onSelectAllClick}>
+                    <Button
+                        onClick={this.onSelectAllClick}
+                        dataTest={`${this.props.dataTest}-select-all-button`}
+                    >
                         {i18n.t('Select all')}
                     </Button>
                 </div>
