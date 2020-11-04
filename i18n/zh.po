@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-09-15T07:30:45.529Z\n"
+"POT-Creation-Date: 2020-10-21T13:43:05.146Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: 晓东 林 <13981924470@126.com>, 2020\n"
 "Language-Team: Chinese (https://www.transifex.com/hisp-uio/teams/100509/zh/)\n"
@@ -568,6 +568,9 @@ msgstr "比较多个时间段之间随时间的变化。"
 
 msgid "Display a single value. Recommend relative period to show latest data."
 msgstr "显示单个值。推荐相对时期以显示最新数据。"
+
+msgid "No legend for this series"
+msgstr ""
 
 msgid "Target"
 msgstr "目标"

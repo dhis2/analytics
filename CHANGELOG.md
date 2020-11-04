@@ -1,3 +1,73 @@
+## [11.1.11](https://github.com/dhis2/analytics/compare/v11.1.10...v11.1.11) (2020-11-02)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([e383893](https://github.com/dhis2/analytics/commit/e3838931da3d53ccce1a13279fbba0911d36c7be))
+
+## [11.1.10](https://github.com/dhis2/analytics/compare/v11.1.9...v11.1.10) (2020-11-01)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([6a38f4d](https://github.com/dhis2/analytics/commit/6a38f4d315f7b7876f8cb96dabd9c0b8c03aeff8))
+
+## [11.1.9](https://github.com/dhis2/analytics/compare/v11.1.8...v11.1.9) (2020-10-31)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([41fdf6c](https://github.com/dhis2/analytics/commit/41fdf6ccd766f80b0dd5955f5ad5faceb606e040))
+
+## [11.1.8](https://github.com/dhis2/analytics/compare/v11.1.7...v11.1.8) (2020-10-30)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([970f178](https://github.com/dhis2/analytics/commit/970f178e338be04ed19c2c1efa8f52e550fc9425))
+
+## [11.1.7](https://github.com/dhis2/analytics/compare/v11.1.6...v11.1.7) (2020-10-29)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([10adbcd](https://github.com/dhis2/analytics/commit/10adbcdb435e0f2c46aa626e578916450d8c0745))
+
+## [11.1.6](https://github.com/dhis2/analytics/compare/v11.1.5...v11.1.6) (2020-10-27)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([a91f72b](https://github.com/dhis2/analytics/commit/a91f72b1891092a44dbd72306db37b40ca871750))
+
+## [11.1.5](https://github.com/dhis2/analytics/compare/v11.1.4...v11.1.5) (2020-10-23)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([63be072](https://github.com/dhis2/analytics/commit/63be0725169cdbeec0af7b9b0794da9923ecc8c1))
+
+## [11.1.4](https://github.com/dhis2/analytics/compare/v11.1.3...v11.1.4) (2020-10-22)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([d5a29ca](https://github.com/dhis2/analytics/commit/d5a29ca2a81d9f8df2ce8cffc5b8d6b4b7abcc68))
+
+## [11.1.3](https://github.com/dhis2/analytics/compare/v11.1.2...v11.1.3) (2020-10-22)
+
+
+### Bug Fixes
+
+* render trendlines in front of columns (DHIS2-9829) ([#657](https://github.com/dhis2/analytics/issues/657)) ([66fd0e9](https://github.com/dhis2/analytics/commit/66fd0e9e0aee6eb5efc8ebb4eb6d7744910fecd4))
+
+## [11.1.2](https://github.com/dhis2/analytics/compare/v11.1.1...v11.1.2) (2020-10-21)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([444a918](https://github.com/dhis2/analytics/commit/444a91860dce3d58d7cb1459f6a12c6445e3e789))
+
 ## [11.1.1](https://github.com/dhis2/analytics/compare/v11.1.0...v11.1.1) (2020-10-21)
 
 
