@@ -1,3 +1,4 @@
+import isObject from 'lodash/isObject'
 import { DIMENSION_ID_DATA, DIMENSION_ID_PERIOD } from './predefinedDimensions'
 import { AXIS_ID_COLUMNS, AXIS_ID_ROWS, AXIS_ID_FILTERS } from './layout/axis'
 import {
@@ -74,18 +75,36 @@ const getPieLayout = layout => {
 }
 
 // Transform from ui.layout to year on year layout format
-const getYearOverYearLayout = layout => ({
-    [AXIS_ID_COLUMNS]: [],
-    [AXIS_ID_ROWS]: [],
-    [AXIS_ID_FILTERS]: [
-        ...layout[AXIS_ID_FILTERS],
-        ...layout[AXIS_ID_COLUMNS],
-        ...layout[AXIS_ID_ROWS],
-    ].filter(dim => dim !== DIMENSION_ID_PERIOD),
-})
+const getYearOverYearLayout = layout => {
+    const columns = layout[AXIS_ID_COLUMNS].slice()
+    const rows = layout[AXIS_ID_ROWS].slice()
+    const filters = layout[AXIS_ID_FILTERS].slice()
+
+    let peDimensionArr = null
+    const layoutArr = [columns, rows, filters]
+
+    for (let i = 0; i < layoutArr.length; ++i) {
+        const axis = layoutArr[i]
+        for (let j = 0; j < axis.length; ++j) {
+            const dimension = axis[j]
+            if (getDimensionId(dimension) === DIMENSION_ID_PERIOD) {
+                peDimensionArr = axis.splice(j, 1)
+                break
+            }
+        }
+        if (peDimensionArr) {
+            break
+        }
+    }
+
+    return {
+        [AXIS_ID_COLUMNS]: [],
+        [AXIS_ID_ROWS]: [],
+        [AXIS_ID_FILTERS]: [...filters, ...columns, ...rows],
+    }
+}
 
 // Transform from ui.layout to single value layout format
-// layout axes may contain objects or strings
 const getSingleValueLayout = layout => {
     const columns = layout[AXIS_ID_COLUMNS].slice()
     const rows = layout[AXIS_ID_ROWS].slice()
@@ -98,10 +117,7 @@ const getSingleValueLayout = layout => {
         const axis = layoutArr[i]
         for (let j = 0; j < axis.length; ++j) {
             const dimension = axis[j]
-            if (
-                dimension === DIMENSION_ID_DATA ||
-                dimension.dimension === DIMENSION_ID_DATA
-            ) {
+            if (getDimensionId(dimension) == DIMENSION_ID_DATA) {
                 dxDimensionArr = axis.splice(j, 1)
                 break
             }
@@ -116,4 +132,13 @@ const getSingleValueLayout = layout => {
         [AXIS_ID_ROWS]: [],
         [AXIS_ID_FILTERS]: [...layout[AXIS_ID_FILTERS], ...columns, ...rows],
     }
+}
+
+/**
+ *
+ * @param {string|object} dimension
+ * @returns {string}
+ */
+const getDimensionId = dimension => {
+    return isObject(dimension) ? dimension.dimension : dimension
 }

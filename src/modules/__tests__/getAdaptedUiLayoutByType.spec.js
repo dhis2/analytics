@@ -136,7 +136,39 @@ describe('getAdaptedUiLayoutByType', () => {
         expect(actualState).toEqual(expectedState)
     })
 
-    it('adapts pivot table to single value', () => {
+    it('yoy: removes the "pe" dimension and moves all other dimensions to filter with dimension objects', () => {
+        const initialState = {
+            [AXIS_ID_COLUMNS]: [
+                { dimension: DIMENSION_ID_DATA },
+                { dimension: someId },
+            ],
+            [AXIS_ID_ROWS]: [
+                { dimension: DIMENSION_ID_PERIOD },
+                { dimension: otherId },
+            ],
+            [AXIS_ID_FILTERS]: [{ dimension: DIMENSION_ID_ORGUNIT }],
+        }
+
+        const actualState = getAdaptedUiLayoutByType(
+            initialState,
+            VIS_TYPE_YEAR_OVER_YEAR_LINE
+        )
+
+        const expectedState = {
+            [AXIS_ID_COLUMNS]: [],
+            [AXIS_ID_ROWS]: [],
+            [AXIS_ID_FILTERS]: [
+                { dimension: DIMENSION_ID_ORGUNIT },
+                { dimension: DIMENSION_ID_DATA },
+                { dimension: someId },
+                { dimension: otherId },
+            ],
+        }
+
+        expect(actualState).toEqual(expectedState)
+    })
+
+    it('pivot -> sv with dimension strings', () => {
         const initialLayout = {
             [AXIS_ID_COLUMNS]: [DIMENSION_ID_DATA, DIMENSION_ID_PERIOD],
             [AXIS_ID_ROWS]: [DIMENSION_ID_ORGUNIT],
@@ -161,7 +193,7 @@ describe('getAdaptedUiLayoutByType', () => {
         expect(actualLayout).toEqual(expectedLayout)
     })
 
-    it('adapts pivot table to single value with dimension objects', () => {
+    it('pivot -> sv with dimension objects', () => {
         const initialLayout = {
             [AXIS_ID_COLUMNS]: [
                 { dimension: DIMENSION_ID_DATA },
