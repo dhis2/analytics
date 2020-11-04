@@ -220,4 +220,30 @@ describe('getAdaptedUiLayoutByType', () => {
 
         expect(actualLayout).toEqual(expectedLayout)
     })
+
+    it('column -> sv with dimension strings', () => {
+        const initialLayout = {
+            [AXIS_ID_COLUMNS]: [DIMENSION_ID_DATA],
+            [AXIS_ID_ROWS]: [DIMENSION_ID_PERIOD, otherId],
+            [AXIS_ID_FILTERS]: [DIMENSION_ID_ORGUNIT, someId],
+        }
+
+        const actualLayout = getAdaptedUiLayoutByType(
+            initialLayout,
+            VIS_TYPE_SINGLE_VALUE
+        )
+
+        const expectedLayout = {
+            [AXIS_ID_COLUMNS]: [DIMENSION_ID_DATA],
+            [AXIS_ID_ROWS]: [],
+            [AXIS_ID_FILTERS]: [
+                DIMENSION_ID_ORGUNIT,
+                someId,
+                DIMENSION_ID_PERIOD,
+                otherId,
+            ],
+        }
+
+        expect(actualLayout).toEqual(expectedLayout)
+    })
 })

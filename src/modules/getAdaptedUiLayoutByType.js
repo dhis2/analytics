@@ -81,10 +81,10 @@ const getYearOverYearLayout = layout => {
     const filters = layout[AXIS_ID_FILTERS].slice()
 
     let peDimensionArr = null
-    const layoutArr = [columns, rows, filters]
+    const clonedLayout = [columns, rows, filters]
 
-    for (let i = 0; i < layoutArr.length; ++i) {
-        const axis = layoutArr[i]
+    for (let i = 0; i < clonedLayout.length; ++i) {
+        const axis = clonedLayout[i]
         for (let j = 0; j < axis.length; ++j) {
             const dimension = axis[j]
             if (getDimensionId(dimension) === DIMENSION_ID_PERIOD) {
@@ -111,10 +111,10 @@ const getSingleValueLayout = layout => {
     const filters = layout[AXIS_ID_FILTERS].slice()
 
     let dxDimensionArr = []
-    const layoutArr = [columns, rows, filters]
+    const clonedLayout = [columns, rows, filters]
 
-    for (let i = 0; i < layoutArr.length; ++i) {
-        const axis = layoutArr[i]
+    for (let i = 0; i < clonedLayout.length; ++i) {
+        const axis = clonedLayout[i]
         for (let j = 0; j < axis.length; ++j) {
             const dimension = axis[j]
             if (getDimensionId(dimension) == DIMENSION_ID_DATA) {
@@ -130,7 +130,7 @@ const getSingleValueLayout = layout => {
     return {
         [AXIS_ID_COLUMNS]: dxDimensionArr,
         [AXIS_ID_ROWS]: [],
-        [AXIS_ID_FILTERS]: [...layout[AXIS_ID_FILTERS], ...columns, ...rows],
+        [AXIS_ID_FILTERS]: [...filters, ...columns, ...rows],
     }
 }
 
