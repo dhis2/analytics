@@ -110,7 +110,7 @@ describe('getAdaptedUiLayoutByType', () => {
         expect(actualState).toEqual(expectedState)
     })
 
-    it('yoy: removes the "pe" dimension and moves all other dimensions to filter', () => {
+    it('yoy: removes the "pe" dimension and moves all other dimensions to filter with dimension strings', () => {
         const initialState = {
             [AXIS_ID_COLUMNS]: [DIMENSION_ID_DATA, someId],
             [AXIS_ID_ROWS]: [DIMENSION_ID_PERIOD, otherId],

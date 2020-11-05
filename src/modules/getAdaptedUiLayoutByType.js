@@ -74,35 +74,15 @@ const getPieLayout = layout => {
     }
 }
 
-// Transform from ui.layout to year on year layout format
-const getYearOverYearLayout = layout => {
-    const columns = layout[AXIS_ID_COLUMNS].slice()
-    const rows = layout[AXIS_ID_ROWS].slice()
-    const filters = layout[AXIS_ID_FILTERS].slice()
-
-    let peDimensionArr = null
-    const clonedLayout = [columns, rows, filters]
-
-    for (let i = 0; i < clonedLayout.length; ++i) {
-        const axis = clonedLayout[i]
-        for (let j = 0; j < axis.length; ++j) {
-            const dimension = axis[j]
-            if (getDimensionId(dimension) === DIMENSION_ID_PERIOD) {
-                peDimensionArr = axis.splice(j, 1)
-                break
-            }
-        }
-        if (peDimensionArr) {
-            break
-        }
-    }
-
-    return {
-        [AXIS_ID_COLUMNS]: [],
-        [AXIS_ID_ROWS]: [],
-        [AXIS_ID_FILTERS]: [...filters, ...columns, ...rows],
-    }
-}
+const getYearOverYearLayout = layout => ({
+    [AXIS_ID_COLUMNS]: [],
+    [AXIS_ID_ROWS]: [],
+    [AXIS_ID_FILTERS]: [
+        ...layout[AXIS_ID_FILTERS],
+        ...layout[AXIS_ID_COLUMNS],
+        ...layout[AXIS_ID_ROWS],
+    ].filter(dim => getDimensionId(dim) !== DIMENSION_ID_PERIOD),
+})
 
 // Transform from ui.layout to single value layout format
 const getSingleValueLayout = layout => {
