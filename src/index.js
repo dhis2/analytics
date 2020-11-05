@@ -22,6 +22,7 @@ export { default as PivotTable } from './components/PivotTable/PivotTable'
 
 // Api
 
+export { default as Analytics } from './api/analytics/Analytics'
 export { apiFetchDimensions, apiFetchRecommendedIds } from './api/dimensions'
 export {
     apiFetchOrganisationUnitLevels,
