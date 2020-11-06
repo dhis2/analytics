@@ -1,3 +1,10 @@
+# [11.2.0](https://github.com/dhis2/analytics/compare/v11.1.11...v11.2.0) (2020-11-06)
+
+
+### Features
+
+* add function that returns a modified layout based on a given visualization type and original layout [DHIS2-9599] ([#654](https://github.com/dhis2/analytics/issues/654)) ([3de1f77](https://github.com/dhis2/analytics/commit/3de1f773d41980ad33b00462664e7c5048a0e844))
+
 ## [11.1.11](https://github.com/dhis2/analytics/compare/v11.1.10...v11.1.11) (2020-11-02)
 
 
