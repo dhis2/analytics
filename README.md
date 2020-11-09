@@ -32,3 +32,15 @@ Commits to the 4.x branch cannot trigger a major version bump, even if it is tec
 ### 2.4.x branch
 
 Commits to the 2.4.x branch cannot trigger a major or minor version bump, even if it is technically a breaking or feature change. This is because 2.5.0 and 3.0.0 have already been published. In the unlikely case that you need to commit a change that is considered breaking or feature, you will have to mark it to only trigger a patch bump, then make sure to update the apps that are locked to the 2.4.x version of analytics
+
+## Report an issue
+
+The issue tracker can be found in [DHIS2 JIRA](https://jira.dhis2.org)
+under the [LIBS](https://jira.dhis2.org/projects/LIBS) project.
+
+Deeplinks:
+
+-   [Bug](https://jira.dhis2.org/secure/CreateIssueDetails!init.jspa?pid=10700&issuetype=10006&components=11023)
+-   [Improvement](https://jira.dhis2.org/secure/CreateIssueDetails!init.jspa?pid=10700&issuetype=10002&components=11023)
+-   [New Feature](https://jira.dhis2.org/secure/CreateIssueDetails!init.jspa?pid=10700&issuetype=10005&components=11023)
+-   [Task](https://jira.dhis2.org/secure/CreateIssueDetails!init.jspa?pid=10700&issuetype=10003&components=11023)
