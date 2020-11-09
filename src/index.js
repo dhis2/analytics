@@ -52,6 +52,10 @@ export {
 
 export { ouIdHelper } from './modules/ouIdHelper'
 
+// Modules: adapted ui layout
+
+export { getAdaptedUiLayoutByType } from './modules/getAdaptedUiLayoutByType'
+
 // Modules: relativeItems
 
 export { hasRelativeItems } from './modules/relativeItems'
