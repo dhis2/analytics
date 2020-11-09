@@ -75,7 +75,7 @@ const DimensionMenu = ({
                     <MenuItem
                         label={assignedCategoriesItemLabel}
                         key={`assigned-categories-item-${dimensionId}`}
-                        dataTest={`${dataTest}-item-assigned-categories-menu`}
+                        dataTest={`${dataTest}-item-co-menu`}
                     >
                         {assignedCategoriesAvailableDestinations.map(
                             destination => (
@@ -93,7 +93,7 @@ const DimensionMenu = ({
                                             getLayoutTypeByVisType(visType)
                                         )
                                     )}
-                                    dataTest={`${dataTest}-item-action-assigned-categories-to-${destination}`}
+                                    dataTest={`${dataTest}-item-action-co-to-${destination}`}
                                 />
                             )
                         )}
@@ -108,7 +108,7 @@ const DimensionMenu = ({
                             onClose()
                         }}
                         label={assignedCategoriesItemLabel}
-                        dataTest={`${dataTest}-item-remove-assigned-categories`}
+                        dataTest={`${dataTest}-item-remove-co`}
                     />
                 )
             }
@@ -124,7 +124,7 @@ const DimensionMenu = ({
                         disabled
                         dense
                         label={assignedCategoriesItemLabel}
-                        dataTest={`${dataTest}-item-assigned-categories-menu`}
+                        dataTest={`${dataTest}-item-co-menu`}
                     />
                 </Tooltip>
             )

@@ -90,7 +90,10 @@ export class DimensionItem extends Component {
                     <div style={styles.iconWrapper}>{Icon}</div>
                     <div style={styles.labelWrapper}>
                         {Label}
-                        <RecommendedIcon isRecommended={isRecommended} />
+                        <RecommendedIcon
+                            isRecommended={isRecommended}
+                            dataTest={`${dataTest}-recommended-icon`}
+                        />
                     </div>
                     {isLocked && (
                         <div style={styles.iconWrapper}>
