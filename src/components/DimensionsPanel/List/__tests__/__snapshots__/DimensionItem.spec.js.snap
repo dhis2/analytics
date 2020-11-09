@@ -62,6 +62,7 @@ exports[`DimensionItem matches the snapshot 1`] = `
         Period
       </span>
       <RecommendedIcon
+        dataTest="undefined-recommended-icon"
         isRecommended={false}
       />
     </div>
@@ -131,6 +132,7 @@ exports[`DimensionItem matches the snapshot with locked 1`] = `
         Period
       </span>
       <RecommendedIcon
+        dataTest="undefined-recommended-icon"
         isRecommended={false}
       />
     </div>
@@ -218,6 +220,7 @@ exports[`DimensionItem matches the snapshot with onOptionsClick 1`] = `
         Period
       </span>
       <RecommendedIcon
+        dataTest="undefined-recommended-icon"
         isRecommended={false}
       />
     </div>
@@ -299,6 +302,7 @@ exports[`DimensionItem matches the snapshot with recommended 1`] = `
         Period
       </span>
       <RecommendedIcon
+        dataTest="undefined-recommended-icon"
         isRecommended={true}
       />
     </div>
@@ -370,6 +374,7 @@ exports[`DimensionItem matches the snapshot with selected 1`] = `
         Period
       </span>
       <RecommendedIcon
+        dataTest="undefined-recommended-icon"
         isRecommended={false}
       />
     </div>
