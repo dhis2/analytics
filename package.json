@@ -1,6 +1,6 @@
 {
     "name": "@dhis2/analytics",
-    "version": "11.2.0",
+    "version": "11.2.1",
     "main": "./build/cjs/lib.js",
     "module": "./build/es/lib.js",
     "sideEffects": [
