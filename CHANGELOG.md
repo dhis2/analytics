@@ -1,3 +1,17 @@
+## [11.2.2](https://github.com/dhis2/analytics/compare/v11.2.1...v11.2.2) (2020-11-11)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([59a58a7](https://github.com/dhis2/analytics/commit/59a58a7b63e2ceeda3a3c75d709b366b7bd30ef4))
+
+## [11.2.1](https://github.com/dhis2/analytics/compare/v11.2.0...v11.2.1) (2020-11-10)
+
+
+### Bug Fixes
+
+* trigger release to finalize jira migration ([ac993cc](https://github.com/dhis2/analytics/commit/ac993cce7d2a568a802c922df7c4fb7d15720f19))
+
 # [11.2.0](https://github.com/dhis2/analytics/compare/v11.1.11...v11.2.0) (2020-11-06)
 
 
