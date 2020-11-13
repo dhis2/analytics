@@ -1,3 +1,10 @@
+## [11.2.5](https://github.com/dhis2/analytics/compare/v11.2.4...v11.2.5) (2020-11-13)
+
+
+### Bug Fixes
+
+* bump ui to latest 5.7.3 ([#697](https://github.com/dhis2/analytics/issues/697)) ([5c3b372](https://github.com/dhis2/analytics/commit/5c3b372dc72f041c6ac85387dd7c4f033f721e48))
+
 ## [11.2.4](https://github.com/dhis2/analytics/compare/v11.2.3...v11.2.4) (2020-11-13)
 
 
