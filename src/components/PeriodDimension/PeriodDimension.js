@@ -17,6 +17,7 @@ export const PeriodDimension = ({ onSelect, selectedPeriods, rightFooter }) => {
             onSelect={selectPeriods}
             initialSelectedPeriods={selectedPeriods}
             rightFooter={rightFooter}
+            dataTest={'period-dimension'}
         />
     )
 }

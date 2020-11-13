@@ -74,10 +74,12 @@ exports[`The SelectedItems component list with items matches the snapshot with l
           >
             <ItemsList
               data-react-beautiful-dnd-droppable="1"
+              dataTest="undefined-list"
               innerRef={[Function]}
             >
               <ul
                 className="selected-list"
+                data-test="undefined-list"
               >
                 <Connect(Draggable)
                   disableInteractiveElementBlocking={false}
@@ -158,6 +160,7 @@ exports[`The SelectedItems component list with items matches the snapshot with l
                           className="selected-list-item"
                           data-react-beautiful-dnd-drag-handle="1"
                           data-react-beautiful-dnd-draggable="1"
+                          data-test="undefined-list-item"
                           draggable={false}
                           id="rb"
                           onBlur={[Function]}
@@ -392,6 +395,7 @@ exports[`The SelectedItems component list with items matches the snapshot with l
                           className="selected-list-item"
                           data-react-beautiful-dnd-drag-handle="1"
                           data-react-beautiful-dnd-draggable="1"
+                          data-test="undefined-list-item"
                           draggable={false}
                           id="rr"
                           onBlur={[Function]}
@@ -563,13 +567,13 @@ exports[`The SelectedItems component list with items matches the snapshot with l
     className="deselect-all-button"
   >
     <Button
-      dataTest="dhis2-uicore-button"
+      dataTest="undefined-deselect-all-button"
       onClick={[Function]}
       type="button"
     >
       <button
         className="jsx-1653853836 "
-        data-test="dhis2-uicore-button"
+        data-test="undefined-deselect-all-button"
         onBlur={[Function]}
         onClick={[Function]}
         onFocus={[Function]}
@@ -709,10 +713,12 @@ exports[`The SelectedItems component matches the snapshot when list is empty 1`]
           >
             <ItemsList
               data-react-beautiful-dnd-droppable="0"
+              dataTest="undefined-list"
               innerRef={[Function]}
             >
               <ul
                 className="selected-list"
+                data-test="undefined-list"
               >
                 <AnimateInOut
                   on={null}
@@ -730,13 +736,13 @@ exports[`The SelectedItems component matches the snapshot when list is empty 1`]
     className="deselect-all-button"
   >
     <Button
-      dataTest="dhis2-uicore-button"
+      dataTest="undefined-deselect-all-button"
       onClick={[Function]}
       type="button"
     >
       <button
         className="jsx-1653853836 "
-        data-test="dhis2-uicore-button"
+        data-test="undefined-deselect-all-button"
         onBlur={[Function]}
         onClick={[Function]}
         onFocus={[Function]}

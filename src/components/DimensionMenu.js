@@ -19,14 +19,6 @@ const getAxisItemLabel = (axisName, isDimensionInLayout) =>
         ? i18n.t('Move to {{axisName}}', { axisName })
         : i18n.t('Add to {{axisName}}', { axisName })
 
-const getRemoveMenuItem = onClick => (
-    <MenuItem
-        key="remove-menu-item"
-        onClick={onClick}
-        label={i18n.t('Remove')}
-    />
-)
-
 const getDividerItem = key => <MenuDivider dense key={key} />
 
 const getUnavailableLabel = visType =>
@@ -45,6 +37,7 @@ const DimensionMenu = ({
     removeItemHandler,
     classes,
     onClose,
+    dataTest,
 }) => {
     const menuItems = []
 
@@ -65,6 +58,15 @@ const DimensionMenu = ({
         ? i18n.t('Remove Assigned Categories')
         : i18n.t('Add Assigned Categories')
 
+    const getRemoveMenuItem = onClick => (
+        <MenuItem
+            key="remove-menu-item"
+            onClick={onClick}
+            label={i18n.t('Remove')}
+            dataTest={`${dataTest}-item-remove-${dimensionId}`}
+        />
+    )
+
     // Assigned categories
     if (dimensionId === DIMENSION_ID_DATA && assignedCategoriesItemHandler) {
         if (assignedCategoriesAvailableDestinations.length) {
@@ -73,6 +75,7 @@ const DimensionMenu = ({
                     <MenuItem
                         label={assignedCategoriesItemLabel}
                         key={`assigned-categories-item-${dimensionId}`}
+                        dataTest={`${dataTest}-item-co-menu`}
                     >
                         {assignedCategoriesAvailableDestinations.map(
                             destination => (
@@ -90,6 +93,7 @@ const DimensionMenu = ({
                                             getLayoutTypeByVisType(visType)
                                         )
                                     )}
+                                    dataTest={`${dataTest}-item-action-co-to-${destination}`}
                                 />
                             )
                         )}
@@ -104,6 +108,7 @@ const DimensionMenu = ({
                             onClose()
                         }}
                         label={assignedCategoriesItemLabel}
+                        dataTest={`${dataTest}-item-remove-co`}
                     />
                 )
             }
@@ -119,6 +124,7 @@ const DimensionMenu = ({
                         disabled
                         dense
                         label={assignedCategoriesItemLabel}
+                        dataTest={`${dataTest}-item-co-menu`}
                     />
                 </Tooltip>
             )
@@ -153,6 +159,7 @@ const DimensionMenu = ({
                     ),
                     isDimensionInLayout
                 )}
+                dataTest={`${dataTest}-item-action-${dimensionId}-to-${axisId}`}
             />
         ))
     )
@@ -172,7 +179,11 @@ const DimensionMenu = ({
         )
     }
 
-    return <FlyoutMenu dense>{menuItems}</FlyoutMenu>
+    return (
+        <FlyoutMenu dense dataTest={dataTest}>
+            {menuItems}
+        </FlyoutMenu>
+    )
 }
 
 DimensionMenu.propTypes = {
@@ -183,6 +194,7 @@ DimensionMenu.propTypes = {
     assignedCategoriesItemHandler: PropTypes.func,
     classes: PropTypes.object,
     currentAxisId: PropTypes.string,
+    dataTest: PropTypes.string,
     dimensionId: PropTypes.string,
     isAssignedCategoriesInLayout: PropTypes.bool,
     visType: PropTypes.string,
