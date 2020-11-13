@@ -9,7 +9,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-10-21T13:43:05.146Z\n"
+"POT-Creation-Date: 2020-11-02T07:31:40.378Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: Viktor Varland <viktor@dhis2.org>, 2020\n"
 "Language-Team: French (https://www.transifex.com/hisp-uio/teams/100509/fr/)\n"
@@ -37,9 +37,6 @@ msgstr "Déménager à {{nomdel'axe}}"
 msgid "Add to {{axisName}}"
 msgstr "Ajouter à {{nomdel'axe}} "
 
-msgid "Remove"
-msgstr "Supprimer"
-
 msgid "Not available for {{visualizationType}}"
 msgstr "Non disponible pour {{Typedevisualisation}}"
 
@@ -48,6 +45,9 @@ msgstr "Supprimer les Catégories Attribuées"
 
 msgid "Add Assigned Categories"
 msgstr "Ajouter des Catégories Affectées"
+
+msgid "Remove"
+msgstr "Supprimer"
 
 msgid "Filter dimensions"
 msgstr "Dimensions du filtre"

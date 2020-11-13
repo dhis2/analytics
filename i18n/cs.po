@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-10-21T13:43:05.146Z\n"
+"POT-Creation-Date: 2020-11-02T07:31:40.378Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: trendspotter, 2020\n"
 "Language-Team: Czech (https://www.transifex.com/hisp-uio/teams/100509/cs/)\n"
@@ -33,9 +33,6 @@ msgstr "Přesunout na {{axisName}}"
 msgid "Add to {{axisName}}"
 msgstr "Přidat k {{axisName}}"
 
-msgid "Remove"
-msgstr "Odebrat"
-
 msgid "Not available for {{visualizationType}}"
 msgstr "Není k dispozici pro {{visualizationType}}"
 
@@ -44,6 +41,9 @@ msgstr "Odebrat přiřazené kategorie"
 
 msgid "Add Assigned Categories"
 msgstr "Přidat přiřazené kategorie"
+
+msgid "Remove"
+msgstr "Odebrat"
 
 msgid "Filter dimensions"
 msgstr "Rozsahy filtru"

@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-10-21T13:43:05.146Z\n"
+"POT-Creation-Date: 2020-11-02T07:31:40.378Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: Viktor Varland <viktor@dhis2.org>, 2020\n"
 "Language-Team: Ukrainian (https://www.transifex.com/hisp-uio/teams/100509/uk/)\n"
@@ -35,9 +35,6 @@ msgstr ""
 msgid "Add to {{axisName}}"
 msgstr ""
 
-msgid "Remove"
-msgstr "Прибрати"
-
 msgid "Not available for {{visualizationType}}"
 msgstr ""
 
@@ -46,6 +43,9 @@ msgstr ""
 
 msgid "Add Assigned Categories"
 msgstr ""
+
+msgid "Remove"
+msgstr "Прибрати"
 
 msgid "Filter dimensions"
 msgstr ""
