@@ -1,12 +1,20 @@
+# 
+# Translators:
+# Viktor Varland <viktor@dhis2.org>, 2020
+# KRG HIS <antonia.bezenchek@informa.pro>, 2020
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
+"POT-Creation-Date: 2020-10-21T13:43:05.146Z\n"
+"PO-Revision-Date: 2020-04-28 22:05+0000\n"
+"Last-Translator: KRG HIS <antonia.bezenchek@informa.pro>, 2020\n"
+"Language-Team: Central Kurdish (https://www.transifex.com/hisp-uio/teams/100509/ckb/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2020-11-02T07:31:40.378Z\n"
-"PO-Revision-Date: 2020-11-02T07:31:40.378Z\n"
+"Language: ckb\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "Data Type"
 msgstr ""
@@ -26,6 +34,9 @@ msgstr ""
 msgid "Add to {{axisName}}"
 msgstr ""
 
+msgid "Remove"
+msgstr "لابردن"
+
 msgid "Not available for {{visualizationType}}"
 msgstr ""
 
@@ -33,9 +44,6 @@ msgid "Remove Assigned Categories"
 msgstr ""
 
 msgid "Add Assigned Categories"
-msgstr ""
-
-msgid "Remove"
 msgstr ""
 
 msgid "Filter dimensions"
@@ -57,7 +65,7 @@ msgid "Selected Items"
 msgstr ""
 
 msgid "Search"
-msgstr ""
+msgstr "گەڕان"
 
 msgid "Selected Data"
 msgstr ""
@@ -78,7 +86,7 @@ msgid "Select year"
 msgstr ""
 
 msgid "Period"
-msgstr ""
+msgstr "ماوة"
 
 msgid "Relative periods"
 msgstr ""
@@ -186,7 +194,7 @@ msgid "Financial year (Start April)"
 msgstr ""
 
 msgid "Today"
-msgstr ""
+msgstr "ئەمڕۆ"
 
 msgid "Yesterday"
 msgstr ""
@@ -213,10 +221,10 @@ msgid "Last 180 days"
 msgstr ""
 
 msgid "This week"
-msgstr ""
+msgstr "ئەم هەفتەیە"
 
 msgid "Last week"
-msgstr ""
+msgstr "هەفتەی ڕابردوو"
 
 msgid "Last 4 weeks"
 msgstr ""
@@ -240,13 +248,13 @@ msgid "Last 4 bi-weeks"
 msgstr ""
 
 msgid "This month"
-msgstr ""
+msgstr "ئەم مانگە"
 
 msgid "Last month"
-msgstr ""
+msgstr "مانگی ڕابردوو"
 
 msgid "Last 3 months"
-msgstr ""
+msgstr "٣ مانگ پێشووتر"
 
 msgid "Last 6 months"
 msgstr ""
@@ -309,7 +317,7 @@ msgid "Last 5 years"
 msgstr ""
 
 msgid "Days"
-msgstr ""
+msgstr "رۆژەکان"
 
 msgid "Weeks"
 msgstr ""
@@ -318,7 +326,7 @@ msgid "Bi-weeks"
 msgstr ""
 
 msgid "Months"
-msgstr ""
+msgstr "مانگەکان"
 
 msgid "Bi-months"
 msgstr ""
@@ -333,7 +341,7 @@ msgid "Financial Years"
 msgstr ""
 
 msgid "Years"
-msgstr ""
+msgstr "ساڵەکان"
 
 msgid "Series"
 msgstr ""
@@ -366,13 +374,13 @@ msgid "Expected reports"
 msgstr ""
 
 msgid "Program"
-msgstr ""
+msgstr "بةرنامة"
 
 msgid "Select a program"
 msgstr ""
 
 msgid "Indicators"
-msgstr ""
+msgstr "نیشاندەر"
 
 msgid "Select indicator group"
 msgstr ""
@@ -462,7 +470,7 @@ msgid "Data"
 msgstr ""
 
 msgid "Organisation Unit"
-msgstr ""
+msgstr "یەکەی ڕێخکڕاو"
 
 msgid "Assigned Categories"
 msgstr ""
@@ -471,7 +479,7 @@ msgid "Pivot table"
 msgstr ""
 
 msgid "Column"
-msgstr ""
+msgstr "ستوون"
 
 msgid "Stacked column"
 msgstr ""
@@ -486,7 +494,7 @@ msgid "Line"
 msgstr ""
 
 msgid "Area"
-msgstr ""
+msgstr "ناوچە"
 
 msgid "Stacked area"
 msgstr ""

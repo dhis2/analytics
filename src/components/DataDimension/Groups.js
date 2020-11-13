@@ -13,6 +13,7 @@ export const Groups = ({
     groups,
     onDetailChange,
     onGroupChange,
+    dataTest,
 }) => {
     let optionItems = groups
 
@@ -29,6 +30,7 @@ export const Groups = ({
             <div className="group-container">
                 <SingleSelectField
                     label={dataTypes[dataType].getGroupLabel()}
+                    dataTest={dataTest}
                     selected={groupId}
                     placeholder={
                         !groupId && dataTypes[dataType].getPlaceholder
@@ -43,6 +45,7 @@ export const Groups = ({
                             value={item.id}
                             key={item.id}
                             label={item.name}
+                            dataTest={`${dataTest}-option-${item.id}`}
                         />
                     ))}
                 </SingleSelectField>
@@ -61,6 +64,7 @@ Groups.propTypes = {
     groups: PropTypes.array.isRequired,
     onDetailChange: PropTypes.func.isRequired,
     onGroupChange: PropTypes.func.isRequired,
+    dataTest: PropTypes.string,
 }
 
 export default Groups

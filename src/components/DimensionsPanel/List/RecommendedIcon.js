@@ -37,6 +37,7 @@ export class RecommendedIcon extends Component {
                 style={styles.recommendedIcon}
                 onMouseOver={this.onMouseOver}
                 onMouseLeave={this.onMouseExit}
+                data-test={this.props.dataTest}
             >
                 {TooltipOnHover}
             </div>
@@ -46,6 +47,7 @@ export class RecommendedIcon extends Component {
 
 RecommendedIcon.propTypes = {
     isRecommended: PropTypes.bool.isRequired,
+    dataTest: PropTypes.string,
 }
 
 export default RecommendedIcon

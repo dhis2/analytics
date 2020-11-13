@@ -26,8 +26,8 @@ const InfoBox = ({ message }) => (
     </div>
 )
 
-const ItemsList = ({ innerRef, children }) => (
-    <ul className="selected-list" ref={innerRef}>
+const ItemsList = ({ innerRef, children, dataTest }) => (
+    <ul className="selected-list" ref={innerRef} data-test={dataTest}>
         {children}
         <style jsx>{styles}</style>
     </ul>
@@ -144,6 +144,7 @@ export class SelectedItems extends Component {
                         {...provided.draggableProps}
                         {...provided.dragHandleProps}
                         ref={provided.innerRef}
+                        data-test={`${this.props.dataTest}-list-item`}
                     >
                         <Item
                             id={id}
@@ -233,6 +234,7 @@ export class SelectedItems extends Component {
                         {provided => (
                             <ItemsList
                                 innerRef={provided.innerRef}
+                                dataTest={`${this.props.dataTest}-list`}
                                 {...provided.droppableProps}
                             >
                                 {itemList}
@@ -242,7 +244,10 @@ export class SelectedItems extends Component {
                     </Droppable>
                 </DragDropContext>
                 <div className="deselect-all-button">
-                    <Button onClick={this.onDeselectAll}>
+                    <Button
+                        onClick={this.onDeselectAll}
+                        dataTest={`${this.props.dataTest}-deselect-all-button`}
+                    >
                         {i18n.t('Deselect All')}
                     </Button>
                 </div>
@@ -264,6 +269,7 @@ InfoBox.propTypes = {
 
 ItemsList.propTypes = {
     children: PropTypes.array,
+    dataTest: PropTypes.string,
     innerRef: PropTypes.func,
 }
 
@@ -271,6 +277,7 @@ SelectedItems.propTypes = {
     items: PropTypes.array.isRequired,
     onDeselect: PropTypes.func.isRequired,
     onReorder: PropTypes.func.isRequired,
+    dataTest: PropTypes.string,
     infoBoxMessage: PropTypes.string,
 }
 

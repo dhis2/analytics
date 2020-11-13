@@ -59,6 +59,7 @@ export class DimensionItem extends Component {
             onOptionsClick,
             innerRef,
             style,
+            dataTest,
             ...rest
         } = this.props
 
@@ -77,17 +78,22 @@ export class DimensionItem extends Component {
                 onMouseLeave={this.onMouseExit}
                 ref={innerRef}
                 style={Object.assign({}, itemStyle, style)}
+                data-test={dataTest}
                 {...rest}
             >
                 <DimensionLabel
                     id={id}
                     isDeactivated={isDeactivated}
                     onClick={onClick}
+                    dataTest={`${dataTest}-button-${id}`}
                 >
                     <div style={styles.iconWrapper}>{Icon}</div>
                     <div style={styles.labelWrapper}>
                         {Label}
-                        <RecommendedIcon isRecommended={isRecommended} />
+                        <RecommendedIcon
+                            isRecommended={isRecommended}
+                            dataTest={`${dataTest}-recommended-icon`}
+                        />
                     </div>
                     {isLocked && (
                         <div style={styles.iconWrapper}>
@@ -96,7 +102,11 @@ export class DimensionItem extends Component {
                     )}
                 </DimensionLabel>
                 {onOptionsClick ? (
-                    <div style={styles.optionsWrapper} ref={optionsRef}>
+                    <div
+                        style={styles.optionsWrapper}
+                        ref={optionsRef}
+                        data-test={`${dataTest}-menu-${id}`}
+                    >
                         {this.state.mouseOver && !isDeactivated && !isLocked ? (
                             <OptionsButton
                                 style={styles.optionsButton}
@@ -114,6 +124,7 @@ DimensionItem.propTypes = {
     id: PropTypes.string.isRequired,
     isSelected: PropTypes.bool.isRequired, // XXX
     name: PropTypes.string.isRequired,
+    dataTest: PropTypes.string,
     innerRef: PropTypes.func,
     isDeactivated: PropTypes.bool,
     isLocked: PropTypes.bool,

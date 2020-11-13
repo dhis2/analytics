@@ -13,6 +13,7 @@ export class DimensionLabel extends Component {
         isDeactivated: PropTypes.bool.isRequired,
         onClick: PropTypes.func.isRequired,
         children: PropTypes.array,
+        dataTest: PropTypes.string,
     }
 
     onLabelClick = () => {
@@ -33,7 +34,7 @@ export class DimensionLabel extends Component {
     render() {
         return (
             <div
-                data-test={`dimension-id-${this.props.id}`}
+                data-test={this.props.dataTest}
                 className="label"
                 onClick={this.onLabelClick}
                 onKeyPress={this.onKeyPress}
