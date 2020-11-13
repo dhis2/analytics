@@ -1,3 +1,10 @@
+## [11.2.4](https://github.com/dhis2/analytics/compare/v11.2.3...v11.2.4) (2020-11-13)
+
+
+### Bug Fixes
+
+* add data test props ([#679](https://github.com/dhis2/analytics/issues/679)) ([d45b39f](https://github.com/dhis2/analytics/commit/d45b39f499617f1671de736a06c2c122c01ac13b))
+
 ## [11.2.3](https://github.com/dhis2/analytics/compare/v11.2.2...v11.2.3) (2020-11-13)
 
 
