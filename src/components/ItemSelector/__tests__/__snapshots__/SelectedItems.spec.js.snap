@@ -572,7 +572,7 @@ exports[`The SelectedItems component list with items matches the snapshot with l
       type="button"
     >
       <button
-        className="jsx-1653853836 "
+        className="jsx-2371629422 "
         data-test="undefined-deselect-all-button"
         onBlur={[Function]}
         onClick={[Function]}
@@ -581,7 +581,7 @@ exports[`The SelectedItems component list with items matches the snapshot with l
       >
         Deselect All
         <JSXStyle
-          id="1653853836"
+          id="2371629422"
         />
       </button>
     </Button>
@@ -741,7 +741,7 @@ exports[`The SelectedItems component matches the snapshot when list is empty 1`]
       type="button"
     >
       <button
-        className="jsx-1653853836 "
+        className="jsx-2371629422 "
         data-test="undefined-deselect-all-button"
         onBlur={[Function]}
         onClick={[Function]}
@@ -750,7 +750,7 @@ exports[`The SelectedItems component matches the snapshot when list is empty 1`]
       >
         Deselect All
         <JSXStyle
-          id="1653853836"
+          id="2371629422"
         />
       </button>
     </Button>
