@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-10-21T13:43:05.146Z\n"
+"POT-Creation-Date: 2020-11-02T07:31:40.378Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: KRG HIS <antonia.bezenchek@informa.pro>, 2020\n"
 "Language-Team: Arabic (Iraq) (https://www.transifex.com/hisp-uio/teams/100509/ar_IQ/)\n"
@@ -33,9 +33,6 @@ msgstr ""
 msgid "Add to {{axisName}}"
 msgstr ""
 
-msgid "Remove"
-msgstr "إزالة"
-
 msgid "Not available for {{visualizationType}}"
 msgstr ""
 
@@ -44,6 +41,9 @@ msgstr ""
 
 msgid "Add Assigned Categories"
 msgstr ""
+
+msgid "Remove"
+msgstr "إزالة"
 
 msgid "Filter dimensions"
 msgstr ""

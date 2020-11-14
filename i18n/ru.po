@@ -9,7 +9,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-10-21T13:43:05.146Z\n"
+"POT-Creation-Date: 2020-11-02T07:31:40.378Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: Yury Rogachev <yury@dhis2.org>, 2020\n"
 "Language-Team: Russian (https://www.transifex.com/hisp-uio/teams/100509/ru/)\n"
@@ -37,9 +37,6 @@ msgstr "Переместить в {{axisName}}"
 msgid "Add to {{axisName}}"
 msgstr "Добавить в {{axisName}}"
 
-msgid "Remove"
-msgstr "Убрать"
-
 msgid "Not available for {{visualizationType}}"
 msgstr "Недоступно для {{visualizationType}}"
 
@@ -48,6 +45,9 @@ msgstr "Удалить назначенные категории"
 
 msgid "Add Assigned Categories"
 msgstr "Добавить Назначенные категории"
+
+msgid "Remove"
+msgstr "Убрать"
 
 msgid "Filter dimensions"
 msgstr "Фильтровать измерения"

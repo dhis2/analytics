@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-10-21T13:43:05.146Z\n"
+"POT-Creation-Date: 2020-11-02T07:31:40.378Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: Ibatov <ibatovk@who.int>, 2020\n"
 "Language-Team: Uzbek (Cyrillic) (https://www.transifex.com/hisp-uio/teams/100509/uz@Cyrl/)\n"
@@ -33,9 +33,6 @@ msgstr "Ҳаракатланинг {{axisName}} га қараб"
 msgid "Add to {{axisName}}"
 msgstr "{{axisName}} га қўшинг"
 
-msgid "Remove"
-msgstr "Ўчириш"
-
 msgid "Not available for {{visualizationType}}"
 msgstr "{{visualizationType}} учун мавжуд эмас"
 
@@ -44,6 +41,9 @@ msgstr "Белгиланган категориялар ўчирилсин"
 
 msgid "Add Assigned Categories"
 msgstr "Белгиланган категориялар қўшилсин"
+
+msgid "Remove"
+msgstr "Ўчириш"
 
 msgid "Filter dimensions"
 msgstr "Фильтр созламалари"

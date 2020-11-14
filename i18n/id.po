@@ -9,7 +9,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-10-21T13:43:05.146Z\n"
+"POT-Creation-Date: 2020-11-02T07:31:40.378Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: Viktor Varland <viktor@dhis2.org>, 2020\n"
 "Language-Team: Indonesian (https://www.transifex.com/hisp-uio/teams/100509/id/)\n"
@@ -37,9 +37,6 @@ msgstr ""
 msgid "Add to {{axisName}}"
 msgstr "Tambahkan ke {{axisName}}"
 
-msgid "Remove"
-msgstr "Hapus"
-
 msgid "Not available for {{visualizationType}}"
 msgstr ""
 
@@ -48,6 +45,9 @@ msgstr ""
 
 msgid "Add Assigned Categories"
 msgstr ""
+
+msgid "Remove"
+msgstr "Hapus"
 
 msgid "Filter dimensions"
 msgstr "Filter dimensi"
