@@ -60,10 +60,10 @@ msgid "Dimension recommended with selected data"
 msgstr "البعد موصى به مع البيانات المحددة"
 
 msgid "No items selected"
-msgstr ""
+msgstr "لم يتم تحديد عناصر"
 
 msgid "Selected Items"
-msgstr ""
+msgstr "العناصر المحددة"
 
 msgid "Search"
 msgstr "البحث"
@@ -96,7 +96,7 @@ msgid "Fixed periods"
 msgstr "فترات زمنية ثابتة"
 
 msgid "Selected Periods"
-msgstr ""
+msgstr "الفترات المحددة"
 
 msgid "No periods selected"
 msgstr "لم يتم تحديد أية فترات زمنية"
@@ -414,7 +414,7 @@ msgid "Program indicators"
 msgstr "مؤشرات البرنامج"
 
 msgid "Extra Small"
-msgstr ""
+msgstr "صغير جدا"
 
 msgid "Small"
 msgstr "صغير"
@@ -426,13 +426,13 @@ msgid "Large"
 msgstr "كبير"
 
 msgid "Extra Large"
-msgstr ""
+msgstr "كبير جدا"
 
 msgid "Left"
 msgstr "الأيسر"
 
 msgid "Center"
-msgstr ""
+msgstr "المركز"
 
 msgid "Right"
 msgstr "الأيمن"
@@ -441,10 +441,10 @@ msgid "Start"
 msgstr "بدء"
 
 msgid "Middle"
-msgstr ""
+msgstr "الوسط"
 
 msgid "End"
-msgstr ""
+msgstr "النهاية"
 
 msgid "Top"
 msgstr "القمة"
@@ -519,7 +519,7 @@ msgid "Single value"
 msgstr "قيمة مفردة"
 
 msgid "View data and indicators in a manipulatable table."
-msgstr ""
+msgstr "اعرض البيانات والمؤشرات في جدول يمكن معالجته."
 
 msgid ""
 "Compare sizes of related element, displayed vertically. Recommend period in "
@@ -555,7 +555,7 @@ msgid ""
 msgstr ""
 
 msgid "Compare several items against multiple variables."
-msgstr ""
+msgstr "قارن عدة عناصر مقابل متغيرات متعددة."
 
 msgid ""
 "Compare a percentage indicator against a 100% scale. Recommend period in "
