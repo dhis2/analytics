@@ -1,3 +1,10 @@
+## [11.2.8](https://github.com/dhis2/analytics/compare/v11.2.7...v11.2.8) (2020-11-17)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([d62c44a](https://github.com/dhis2/analytics/commit/d62c44a19f7eacdd71ce5b4b37de055f4b2c0ccf))
+
 ## [11.2.7](https://github.com/dhis2/analytics/compare/v11.2.6...v11.2.7) (2020-11-15)
 
 
