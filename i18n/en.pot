@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2020-11-02T07:31:40.378Z\n"
-"PO-Revision-Date: 2020-11-02T07:31:40.378Z\n"
+"POT-Creation-Date: 2020-11-20T12:51:41.763Z\n"
+"PO-Revision-Date: 2020-11-20T12:51:41.763Z\n"
 
 msgid "Data Type"
 msgstr ""
@@ -510,9 +510,6 @@ msgid "Single value"
 msgstr ""
 
 msgid "Scatter"
-msgstr ""
-
-msgid "Bubble"
 msgstr ""
 
 msgid "View data and indicators in a manipulatable table."

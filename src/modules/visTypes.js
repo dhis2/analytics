@@ -47,7 +47,6 @@ export const visTypeDisplayNames = {
     [VIS_TYPE_YEAR_OVER_YEAR_COLUMN]: i18n.t('Year over year (column)'),
     [VIS_TYPE_SINGLE_VALUE]: i18n.t('Single value'),
     [VIS_TYPE_SCATTER]: i18n.t('Scatter'),
-    [VIS_TYPE_BUBBLE]: i18n.t('Bubble'),
 }
 
 export const visTypeDescriptions = {
@@ -94,7 +93,6 @@ export const visTypeDescriptions = {
         'Display a single value. Recommend relative period to show latest data.'
     ),
     [VIS_TYPE_SCATTER]: i18n.t('No description'), //TODO: Add description
-    [VIS_TYPE_BUBBLE]: i18n.t('No description'), //TODO: Add description
 }
 
 export const visTypeIcons = {
@@ -113,7 +111,6 @@ export const visTypeIcons = {
     [VIS_TYPE_YEAR_OVER_YEAR_COLUMN]: YearOverYearColumnIcon,
     [VIS_TYPE_SINGLE_VALUE]: SingleValueIcon,
     [VIS_TYPE_SCATTER]: YearOverYearLineIcon, //TODO: Add icon
-    [VIS_TYPE_BUBBLE]: PieIcon, //TODO: Add icon
 }
 
 export const getDisplayNameByVisType = visType => {
@@ -154,8 +151,7 @@ const twoCategoryChartTypes = [
     VIS_TYPE_LINE,
     VIS_TYPE_AREA,
     VIS_TYPE_STACKED_AREA,
-    VIS_TYPE_SCATTER,
-    VIS_TYPE_BUBBLE,
+    VIS_TYPE_SCATTER, // TODO: Remove once new layout is in place
 ]
 
 const columnBasedTypes = [

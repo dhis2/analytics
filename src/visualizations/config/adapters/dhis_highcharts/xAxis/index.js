@@ -11,7 +11,6 @@ import {
     VIS_TYPE_PIE,
     VIS_TYPE_RADAR,
     VIS_TYPE_SCATTER,
-    VIS_TYPE_BUBBLE,
     isTwoCategoryChartType, 
 } from '../../../../../modules/visTypes'
 import { 
@@ -53,7 +52,6 @@ export default function(store, layout, extraOptions) {
             case VIS_TYPE_PIE:
             case VIS_TYPE_GAUGE:
             case VIS_TYPE_SCATTER:
-            case VIS_TYPE_BUBBLE:
                 xAxis = noAxis()
                 break
             case VIS_TYPE_YEAR_OVER_YEAR_LINE:

@@ -1,6 +1,6 @@
-import { VIS_TYPE_SCATTER, VIS_TYPE_BUBBLE } from "../../../../modules/visTypes"
+import { VIS_TYPE_SCATTER } from "../../../../modules/visTypes"
 
-export default ({visType, xAxisName, yAxisName, zAxisName, showLabels}) => {
+export default ({visType, xAxisName, yAxisName, showLabels}) => {
     const series = { 
         dataLabels: {
             enabled: showLabels,
@@ -20,21 +20,21 @@ export default ({visType, xAxisName, yAxisName, zAxisName, showLabels}) => {
                     }
                 }
             }
-        case VIS_TYPE_BUBBLE:
-            return {
-                series,
-                bubble: {
-                    tooltip: {
-                        useHTML: true,
-                        headerFormat: '',
-                        pointFormat: `<b>{point.name}</b><br>` +  
-                            `${xAxisName}: {point.x}<br>` +
-                            `${yAxisName}: {point.y}<br>` +
-                            `${zAxisName}: {point.z}`,
-                        followPointer: true
-                    },
-                }
-            }
+        // case VIS_TYPE_BUBBLE:
+        //     return {
+        //         series,
+        //         bubble: {
+        //             tooltip: {
+        //                 useHTML: true,
+        //                 headerFormat: '',
+        //                 pointFormat: `<b>{point.name}</b><br>` +  
+        //                     `${xAxisName}: {point.x}<br>` +
+        //                     `${yAxisName}: {point.y}<br>` +
+        //                     `${zAxisName}: {point.z}`,
+        //                 followPointer: true
+        //             },
+        //         }
+        //     }
         default:
             return {}
     }

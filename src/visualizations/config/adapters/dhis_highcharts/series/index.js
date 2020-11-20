@@ -4,7 +4,6 @@ import getCumulativeData from '../getCumulativeData'
 import getPie from './pie'
 import getGauge from './gauge'
 import getScatter from './scatter'
-import getBubble from './bubble'
 import getType from '../type'
 import { getFullIdAxisMap, getAxisIdsMap } from '../customAxes'
 import { generateColors } from '../../../../util/colors/gradientColorGenerator'
@@ -19,7 +18,6 @@ import {
     isYearOverYear,
     VIS_TYPE_LINE,
     VIS_TYPE_SCATTER,
-    VIS_TYPE_BUBBLE,
 } from '../../../../../modules/visTypes'
 import { hasCustomAxes } from '../../../../../modules/axis'
 import { getAxisStringFromId } from '../../../../util/axisId'
@@ -206,9 +204,6 @@ export default function(series, store, layout, isStacked, extraOptions) {
             break
         case VIS_TYPE_SCATTER:
             series = getScatter(series, secondCategoryItemNames)
-            break
-        case VIS_TYPE_BUBBLE:
-            series = getBubble(series, secondCategoryItemNames)
             break
         default:
             series = getDefault(series, layout, isStacked, extraOptions)
