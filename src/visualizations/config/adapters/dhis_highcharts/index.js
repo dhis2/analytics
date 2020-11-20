@@ -116,8 +116,7 @@ export default function({ store, layout, el, extraConfig, extraOptions }) {
         const rowItems = _layout.rows[0].items
         const xAxisName = metaDataItems[rowItems[0].id].name
         const yAxisName = metaDataItems[rowItems[1].id].name
-        const zAxisName = metaDataItems[rowItems[2]?.id]?.name
-        config.plotOptions = getPlotOptions({visType: _layout.type, xAxisName, yAxisName, zAxisName, showLabels: _layout.showValues || _layout.showData})
+        config.plotOptions = getPlotOptions({visType: _layout.type, xAxisName, yAxisName, showLabels: _layout.showValues || _layout.showData})
     }
 
     // hide empty categories
