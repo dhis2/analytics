@@ -13,6 +13,7 @@ import YearOverYearLineIcon from '../assets/YearOverYearLineIcon'
 import YearOverYearColumnIcon from '../assets/YearOverYearColumnIcon'
 import SingleValueIcon from '../assets/SingleValueIcon'
 import PivotTableIcon from '../assets/PivotTableIcon'
+import ScatterIcon from '../assets/ScatterIcon'
 
 export const VIS_TYPE_COLUMN = 'COLUMN'
 export const VIS_TYPE_STACKED_COLUMN = 'STACKED_COLUMN'
@@ -110,7 +111,7 @@ export const visTypeIcons = {
     [VIS_TYPE_YEAR_OVER_YEAR_LINE]: YearOverYearLineIcon,
     [VIS_TYPE_YEAR_OVER_YEAR_COLUMN]: YearOverYearColumnIcon,
     [VIS_TYPE_SINGLE_VALUE]: SingleValueIcon,
-    [VIS_TYPE_SCATTER]: YearOverYearLineIcon, //TODO: Add icon
+    [VIS_TYPE_SCATTER]: ScatterIcon,
 }
 
 export const getDisplayNameByVisType = visType => {
