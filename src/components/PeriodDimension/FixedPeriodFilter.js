@@ -12,6 +12,7 @@ const FixedPeriodFilter = ({
     currentYear,
     onSelectPeriodType,
     onSelectYear,
+    dataTest,
 }) => {
     const onlyAllowedTypeIsSelected =
         Array.isArray(allowedPeriodTypes) &&
@@ -28,6 +29,7 @@ const FixedPeriodFilter = ({
                     selected={currentPeriodType}
                     disabled={onlyAllowedTypeIsSelected}
                     className="filterElement"
+                    dataTest={`${dataTest}-period-type`}
                 >
                     {getFixedPeriodsOptions()
                         .filter(
@@ -42,6 +44,7 @@ const FixedPeriodFilter = ({
                                 key={option.id}
                                 value={option.id}
                                 label={option.name}
+                                dataTest={`${dataTest}-period-type-option-${option.id}`}
                             />
                         ))}
                 </SingleSelectField>
@@ -55,6 +58,7 @@ const FixedPeriodFilter = ({
                     value={currentYear}
                     onChange={({ value }) => onSelectYear(value)}
                     dense
+                    dataTest={`${dataTest}-year`}
                 ></InputField>
             </div>
             <style jsx>{styles}</style>
@@ -68,6 +72,7 @@ FixedPeriodFilter.propTypes = {
     onSelectPeriodType: PropTypes.func.isRequired,
     onSelectYear: PropTypes.func.isRequired,
     allowedPeriodTypes: PropTypes.arrayOf(PropTypes.string),
+    dataTest: PropTypes.string,
 }
 
 export default FixedPeriodFilter

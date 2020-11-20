@@ -1,29 +1,29 @@
 # 
 # Translators:
-# phil_dhis2, 2020
 # Viktor Varland <viktor@dhis2.org>, 2020
+# KRG HIS <antonia.bezenchek@informa.pro>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2020-11-02T07:31:40.378Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2020\n"
-"Language-Team: Lao (https://www.transifex.com/hisp-uio/teams/100509/lo/)\n"
+"Last-Translator: KRG HIS <antonia.bezenchek@informa.pro>, 2020\n"
+"Language-Team: Central Kurdish (https://www.transifex.com/hisp-uio/teams/100509/ckb/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: lo\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Language: ckb\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "Data Type"
 msgstr ""
 
 msgid "Totals"
-msgstr "ລວມທັງໝົດ"
+msgstr ""
 
 msgid "Details"
-msgstr "ລາຍລະອຽດ"
+msgstr ""
 
 msgid "Detail"
 msgstr ""
@@ -44,7 +44,7 @@ msgid "Add Assigned Categories"
 msgstr ""
 
 msgid "Remove"
-msgstr "ລົບອອກ"
+msgstr "لابردن"
 
 msgid "Filter dimensions"
 msgstr ""
@@ -65,7 +65,7 @@ msgid "Selected Items"
 msgstr ""
 
 msgid "Search"
-msgstr "ຄົນຫາ"
+msgstr "گەڕان"
 
 msgid "Selected Data"
 msgstr ""
@@ -74,67 +74,67 @@ msgid "Deselect All"
 msgstr ""
 
 msgid "Select all"
-msgstr "Select all"
+msgstr ""
 
 msgid "Period type"
-msgstr "ແບບຊ່ວງເວລາ"
+msgstr ""
 
 msgid "Year"
-msgstr "ປີ"
+msgstr ""
 
 msgid "Select year"
 msgstr ""
 
 msgid "Period"
-msgstr "ຊ່ວງເວລາ"
+msgstr "ماوة"
 
 msgid "Relative periods"
-msgstr "​ໄລ​ຍະ​ເວ​ລາ​ໄກ້​ຄຽງ"
+msgstr ""
 
 msgid "Fixed periods"
-msgstr "ໄລຍະເວລາທີ່ໄດ້ກຳນົດ"
+msgstr ""
 
 msgid "Selected Periods"
 msgstr ""
 
 msgid "No periods selected"
-msgstr "ບໍ່ທັນໄດ້ເລືອກໄລຍະເວລາ"
+msgstr ""
 
 msgid "January"
-msgstr "ມັງກອນ"
+msgstr ""
 
 msgid "February"
-msgstr "ກຸມພາ"
+msgstr ""
 
 msgid "March"
-msgstr "ມີນາ"
+msgstr ""
 
 msgid "April"
-msgstr "ເມສາ"
+msgstr ""
 
 msgid "May"
-msgstr "ພຶດສະພາ"
+msgstr ""
 
 msgid "June"
-msgstr "ມີຖຸນາ"
+msgstr ""
 
 msgid "July"
-msgstr "ກໍລະກົດ"
+msgstr ""
 
 msgid "August"
-msgstr "ສິງຫາ"
+msgstr ""
 
 msgid "September"
-msgstr "ກັນຍາ"
+msgstr ""
 
 msgid "October"
-msgstr "ຕຸລາ"
+msgstr ""
 
 msgid "November"
-msgstr "ພະຈິກ"
+msgstr ""
 
 msgid "December"
-msgstr "ທັນວາ"
+msgstr ""
 
 msgid "Week {{weekNumber}}"
 msgstr ""
@@ -143,10 +143,10 @@ msgid "Bi-Week {{biWeekNumber}}"
 msgstr ""
 
 msgid "Daily"
-msgstr "ທຸກໆມື້"
+msgstr ""
 
 msgid "Weekly"
-msgstr "ເປັນອາທິດ"
+msgstr ""
 
 msgid "Bi-weekly"
 msgstr ""
@@ -164,52 +164,52 @@ msgid "Weekly (Start Sunday)"
 msgstr ""
 
 msgid "Monthly"
-msgstr "ລາຍເດືອນ"
+msgstr ""
 
 msgid "Bi-monthly"
-msgstr "ທຸກໆສອງເດືອນ"
+msgstr ""
 
 msgid "Quarterly"
-msgstr "ໄຕມາດ"
+msgstr ""
 
 msgid "Six-monthly"
-msgstr "ແຕ່ລະ 6 ເດືອນ"
+msgstr ""
 
 msgid "Six-monthly April"
-msgstr "ແຕ່ລະຫົກເດືອນ ແລະ ເດືອນເມສາ"
+msgstr ""
 
 msgid "Yearly"
-msgstr "ລາຍປີ"
+msgstr ""
 
 msgid "Financial year (Start November)"
 msgstr ""
 
 msgid "Financial year (Start October)"
-msgstr "ສົກປີງົບປະມານ (ເລີ່ມແຕ່ເດືອນຕຸລາ)"
+msgstr ""
 
 msgid "Financial year (Start July)"
-msgstr "ສົກປີງົບປະມານ (ເລີ່ມແຕ່ເດືອນມິຖຸນາ)"
+msgstr ""
 
 msgid "Financial year (Start April)"
-msgstr "ສົກປີງົບປະມານ (ເລີ່ມແຕ່ເດືອນເມສາ)"
+msgstr ""
 
 msgid "Today"
-msgstr "ມື້ນີ້"
+msgstr "ئەمڕۆ"
 
 msgid "Yesterday"
-msgstr "ມື້ວານນີ"
+msgstr ""
 
 msgid "Last 3 days"
-msgstr "3 ມື້ກ່ອນ"
+msgstr ""
 
 msgid "Last 7 days"
-msgstr "7 ມື້ກ່ອນ"
+msgstr ""
 
 msgid "Last 14 days"
-msgstr "14 ມື້ກ່ອນ"
+msgstr ""
 
 msgid "Last 30 days"
-msgstr "Last 30 days"
+msgstr ""
 
 msgid "Last 60 days"
 msgstr ""
@@ -221,22 +221,22 @@ msgid "Last 180 days"
 msgstr ""
 
 msgid "This week"
-msgstr "ທິດນີ້"
+msgstr "ئەم هەفتەیە"
 
 msgid "Last week"
-msgstr "ອາທິດທີ່ຜ່ານມາ"
+msgstr "هەفتەی ڕابردوو"
 
 msgid "Last 4 weeks"
-msgstr "4 ອາທິດຍ້ອນຫຼັງ"
+msgstr ""
 
 msgid "Last 12 weeks"
-msgstr "12 ອາທິດຍ້ອນຫຼັງ"
+msgstr ""
 
 msgid "Last 52 weeks"
-msgstr "52 ອາທິດຜ່ານມາ"
+msgstr ""
 
 msgid "Weeks this year"
-msgstr "ອາທິດ ຂອງປີນີ້"
+msgstr ""
 
 msgid "This bi-week"
 msgstr ""
@@ -248,109 +248,109 @@ msgid "Last 4 bi-weeks"
 msgstr ""
 
 msgid "This month"
-msgstr "ເດືອນນີ້"
+msgstr "ئەم مانگە"
 
 msgid "Last month"
-msgstr "ເດືອນຜ່ານມາ"
+msgstr "مانگی ڕابردوو"
 
 msgid "Last 3 months"
-msgstr "3 ເດືອນຍ້ອນຫຼັງ"
+msgstr "٣ مانگ پێشووتر"
 
 msgid "Last 6 months"
-msgstr "6 ເດືອນຜ່ານມາ"
+msgstr ""
 
 msgid "Last 12 months"
-msgstr "12 ເດືອນຍ້ອນຫຼັງ"
+msgstr ""
 
 msgid "Months this year"
-msgstr "​ເດືອນ​ໃນ​ປີ"
+msgstr ""
 
 msgid "This bi-month"
-msgstr "ສອງເດືອນນີ້"
+msgstr ""
 
 msgid "Last bi-month"
-msgstr "ສອງເດືອນກ່ອນທ້າຍປີ"
+msgstr ""
 
 msgid "Last 6 bi-months"
-msgstr "6 ຂອງສອງເດືອນສຸດທ້າຍ"
+msgstr ""
 
 msgid "Bi-months this year"
-msgstr "ສອງເດືອນ ຂອງປີນີ້"
+msgstr ""
 
 msgid "This quarter"
-msgstr "ໄຕມານີ້"
+msgstr ""
 
 msgid "Last quarter"
-msgstr "ໄຕມາດຜ່ານມາ"
+msgstr ""
 
 msgid "Last 4 quarters"
-msgstr "4 ໄຕມາດຍ້ອນຫຼັງ"
+msgstr ""
 
 msgid "Quarters this year"
-msgstr "​ໄຕຼມາດ​ໃນ​ປີ"
+msgstr ""
 
 msgid "This six-month"
-msgstr "6 ເດືອນນີ້"
+msgstr ""
 
 msgid "Last six-month"
-msgstr "6 ເດືອນຜ່ານມາ"
+msgstr ""
 
 msgid "Last 2 six-month"
 msgstr ""
 
 msgid "This financial year"
-msgstr "ສົກປີງົບປະມານຂອງປິນີ້"
+msgstr ""
 
 msgid "Last financial year"
-msgstr "​ສົກ​ປີ​ງົບ​ປະ​ມານ​ປີ​ກາຍ"
+msgstr ""
 
 msgid "Last 5 financial years"
-msgstr "​ສົກ​ປິ​ງົບ​ປະ​ມານ 5ປີ​ຜ່ານ​ມາ"
+msgstr ""
 
 msgid "This year"
-msgstr "ປີນີ້"
+msgstr ""
 
 msgid "Last year"
-msgstr "ປີກາຍ"
+msgstr ""
 
 msgid "Last 5 years"
-msgstr "5 ປີຍ້ອນຫຼັງ"
+msgstr ""
 
 msgid "Days"
-msgstr "ມື້"
+msgstr "رۆژەکان"
 
 msgid "Weeks"
-msgstr "ອາທິດ"
+msgstr ""
 
 msgid "Bi-weeks"
 msgstr ""
 
 msgid "Months"
-msgstr "ເດືອນ"
+msgstr "مانگەکان"
 
 msgid "Bi-months"
-msgstr "2ເດືອນ"
+msgstr ""
 
 msgid "Quarters"
-msgstr "ໄຕມາດ"
+msgstr ""
 
 msgid "Six-months"
-msgstr "6 ເດືອນ"
+msgstr ""
 
 msgid "Financial Years"
 msgstr ""
 
 msgid "Years"
-msgstr "ປີ"
+msgstr "ساڵەکان"
 
 msgid "Series"
-msgstr "ແທ່ງ"
+msgstr ""
 
 msgid "Category"
-msgstr "ລວງນອນ"
+msgstr ""
 
 msgid "Filter"
-msgstr "Filter"
+msgstr ""
 
 msgid "Columns"
 msgstr ""
@@ -374,31 +374,31 @@ msgid "Expected reports"
 msgstr ""
 
 msgid "Program"
-msgstr "Program"
+msgstr "بةرنامة"
 
 msgid "Select a program"
 msgstr ""
 
 msgid "Indicators"
-msgstr "ຕົວຊີ້ວັດ"
+msgstr "نیشاندەر"
 
 msgid "Select indicator group"
-msgstr "ເລືອກກຸ່ມຕົວຊີ້ວັດ"
+msgstr ""
 
 msgid "[ All groups ]"
 msgstr ""
 
 msgid "Data elements"
-msgstr "ອົງປະກອບຂໍ້ມູນ"
+msgstr ""
 
 msgid "Select data element group"
-msgstr "ເລືອກກຸ່ມອົງປະກອບຂອງຂໍ້ມູນ"
+msgstr ""
 
 msgid "[ All data elements ]"
 msgstr ""
 
 msgid "Data sets"
-msgstr "ແບບຟອມ"
+msgstr ""
 
 msgid "Select data sets"
 msgstr ""
@@ -407,37 +407,37 @@ msgid "[ All metrics ]"
 msgstr ""
 
 msgid "Event data items"
-msgstr "ຂໍ້ມູນລາຍບຸກຄົນ"
+msgstr ""
 
 msgid "Program indicators"
-msgstr "ຕົວຊີ້ວັດສະເພາະວຽກຂອງຂະແໜງ"
+msgstr ""
 
 msgid "Extra Small"
 msgstr ""
 
 msgid "Small"
-msgstr "ນ້ອຍ"
+msgstr ""
 
 msgid "Regular"
-msgstr "Regular"
+msgstr ""
 
 msgid "Large"
-msgstr "ໃຫຍ່"
+msgstr ""
 
 msgid "Extra Large"
 msgstr ""
 
 msgid "Left"
-msgstr "ຊ້າຍ"
+msgstr ""
 
 msgid "Center"
 msgstr ""
 
 msgid "Right"
-msgstr "ຂວາ"
+msgstr ""
 
 msgid "Start"
-msgstr "Start"
+msgstr ""
 
 msgid "Middle"
 msgstr ""
@@ -446,10 +446,10 @@ msgid "End"
 msgstr ""
 
 msgid "Top"
-msgstr "ເທິງສຸດ"
+msgstr ""
 
 msgid "Bottom"
-msgstr "ລຸ່ມສຸດ"
+msgstr ""
 
 msgid "{{dynamicOuNames}} and {{lastOuName}}"
 msgstr ""
@@ -467,10 +467,10 @@ msgid "{{allDynamicOuNames}} groups in {{staticOuNames}}"
 msgstr ""
 
 msgid "Data"
-msgstr "ຂໍ້ມູນ"
+msgstr ""
 
 msgid "Organisation Unit"
-msgstr "ຫົວໜ່ວຍ ການຈັດຕັ້ງ"
+msgstr "یەکەی ڕێخکڕاو"
 
 msgid "Assigned Categories"
 msgstr ""
@@ -479,7 +479,7 @@ msgid "Pivot table"
 msgstr ""
 
 msgid "Column"
-msgstr "ຖັນ"
+msgstr "ستوون"
 
 msgid "Stacked column"
 msgstr ""
@@ -494,7 +494,7 @@ msgid "Line"
 msgstr ""
 
 msgid "Area"
-msgstr ""
+msgstr "ناوچە"
 
 msgid "Stacked area"
 msgstr ""
@@ -571,13 +571,13 @@ msgid "No legend for this series"
 msgstr ""
 
 msgid "Target"
-msgstr "ເປົ້າໝາຍ"
+msgstr ""
 
 msgid "Base"
-msgstr "ຖານ"
+msgstr ""
 
 msgid "Axis {{axisId}}"
 msgstr ""
 
 msgid "No data"
-msgstr "ບໍ່ມີຂໍ້ມູນ"
+msgstr ""

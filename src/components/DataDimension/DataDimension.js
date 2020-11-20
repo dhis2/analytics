@@ -150,6 +150,8 @@ export class DataDimension extends Component {
         })
     }
 
+    debouncedUpdateAlternatives = debounce(this.updateAlternatives, 300)
+
     onGroupChange = async groupId => {
         if (groupId !== this.state.groupId) {
             this.setState({ groupId }, this.updateAlternatives)
@@ -163,17 +165,11 @@ export class DataDimension extends Component {
     }
 
     onClearFilter = () => {
-        this.setState(
-            { filterText: '' },
-            debounce(async () => this.updateAlternatives(), 300)
-        )
+        this.setState({ filterText: '' }, this.debouncedUpdateAlternatives)
     }
 
     onFilterTextChange = filterText => {
-        this.setState(
-            { filterText },
-            debounce(async () => this.updateAlternatives(), 300)
-        )
+        this.setState({ filterText }, this.debouncedUpdateAlternatives)
     }
 
     selectItems = selectedIds => {
@@ -219,6 +215,7 @@ export class DataDimension extends Component {
                     <DataTypes
                         currentDataType={this.state.dataType}
                         onChange={this.onDataTypeChange}
+                        dataTest={'data-dimension-data-types-select-field'}
                     />
                     <Groups
                         dataType={this.state.dataType}
@@ -227,11 +224,13 @@ export class DataDimension extends Component {
                         onGroupChange={this.onGroupChange}
                         onDetailChange={this.onDetailChange}
                         detailValue={this.state.groupDetail}
+                        dataTest={'data-dimension-groups-select-field'}
                     />
                     <FilterField
                         text={this.state.filterText}
                         onFilterTextChange={this.onFilterTextChange}
                         onClearFilter={this.onClearFilter}
+                        dataTest={'data-dimension-filter-input-field'}
                     />
                 </div>
             )
@@ -257,6 +256,7 @@ export class DataDimension extends Component {
                 itemClassName="data-dimension"
                 unselected={unselected}
                 selected={selected}
+                dataTest={'data-dimension-item-selector'}
             >
                 {filterZone()}
             </ItemSelector>

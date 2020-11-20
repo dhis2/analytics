@@ -60,17 +60,19 @@ function getPlotLineLabelStyle(fontStyle) {
     }
 }
 
-function getMinValue(layout) {
-    return isNumeric(layout.rangeAxisMinValue)
-        ? layout.rangeAxisMinValue
-        : DEFAULT_MIN_VALUE
-}
+const getMinValue = (rangeAxisMinValue, dataValues) => 
+    isNumeric(rangeAxisMinValue) ? 
+        rangeAxisMinValue : 
+        dataValues?.some(value => value < DEFAULT_MIN_VALUE) ? 
+            undefined : 
+            DEFAULT_MIN_VALUE
 
-function getMaxValue(layout) {
-    return isNumeric(layout.rangeAxisMaxValue)
-        ? layout.rangeAxisMaxValue
-        : undefined
-}
+const getMaxValue = (rangeAxisMaxValue, dataValues) =>
+    isNumeric(rangeAxisMaxValue) ? 
+        rangeAxisMaxValue :
+        dataValues?.every(value => value < DEFAULT_MIN_VALUE) ?
+            DEFAULT_MIN_VALUE :
+            undefined
 
 function getSteps(layout) {
     return isNumeric(layout.rangeAxisSteps) ? layout.rangeAxisSteps : undefined
@@ -203,6 +205,7 @@ function getDefault(layout, series, extraOptions) {
             seriesItem => seriesItem.id === layoutSeriesItem.dimensionItem
         )
     )
+    const dataValues = series?.map(item => item.data).flat()
     if (isDualAxisType(layout.type) && hasCustomAxes(filteredSeries) && !axisHasRelativeItems(layout.columns)) {
         const axisIdsMap = getAxisIdsMap(layout.series, series)
         axes.push(
@@ -214,8 +217,8 @@ function getDefault(layout, series, extraOptions) {
     } else {
         axes.push(
             objectClean({
-                min: getMinValue(layout),
-                max: getMaxValue(layout),
+                min: getMinValue(layout.rangeAxisMinValue, dataValues),
+                max: getMaxValue(layout.rangeAxisMaxValue, dataValues),
                 tickAmount: getSteps(layout),
                 title: getAxisTitle(layout.rangeAxisLabel, layout.fontStyle[FONT_STYLE_VERTICAL_AXIS_TITLE], FONT_STYLE_VERTICAL_AXIS_TITLE, layout.type
                 ),

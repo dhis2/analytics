@@ -5,7 +5,10 @@ import { cell as cellStyle } from './styles/PivotTable.style'
 import { usePivotTableEngine } from './PivotTableEngineContext'
 
 export const PivotTableCell = React.forwardRef(
-    ({ classes, isColumnHeader, children, style = {}, ...props }, ref) => {
+    (
+        { classes, isColumnHeader, children, dataTest, style = {}, ...props },
+        ref
+    ) => {
         const engine = usePivotTableEngine()
         style.height = style.minHeight = style.maxHeight =
             style.height || engine.fontSize + engine.cellPadding * 2 + 2
@@ -17,12 +20,23 @@ export const PivotTableCell = React.forwardRef(
         )
 
         return isColumnHeader ? (
-            <th className={className} style={style} {...props}>
+            <th
+                className={className}
+                style={style}
+                data-test={dataTest}
+                {...props}
+            >
                 <style jsx>{cellStyle}</style>
                 {children}
             </th>
         ) : (
-            <td ref={ref} className={className} style={style} {...props}>
+            <td
+                ref={ref}
+                className={className}
+                style={style}
+                data-test={dataTest}
+                {...props}
+            >
                 <style jsx>{cellStyle}</style>
                 {children}
             </td>
@@ -42,6 +56,7 @@ PivotTableCell.propTypes = {
         PropTypes.object,
         PropTypes.string,
     ]),
+    dataTest: PropTypes.string,
     isColumnHeader: PropTypes.bool,
     style: PropTypes.object,
 }

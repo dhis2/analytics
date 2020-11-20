@@ -8,16 +8,27 @@ import styles from './styles/ItemSelector.style'
 
 class ItemSelector extends Component {
     render() {
-        const { unselected, selected, children: filterZone } = this.props
+        const {
+            unselected,
+            selected,
+            children: filterZone,
+            dataTest,
+        } = this.props
 
         return (
-            <div className="item-selector-container">
+            <div className="item-selector-container" data-test={dataTest}>
                 <div className={cx('section', 'unselected')}>
                     {filterZone}
-                    <UnselectedItems {...unselected} />
+                    <UnselectedItems
+                        {...unselected}
+                        dataTest={`${dataTest}-unselected-items`}
+                    />
                 </div>
                 <div className={cx('section', 'selected')}>
-                    <SelectedItems {...selected} />
+                    <SelectedItems
+                        {...selected}
+                        dataTest={`${dataTest}-selected-items`}
+                    />
                 </div>
                 <style jsx>{styles}</style>
             </div>
@@ -27,6 +38,7 @@ class ItemSelector extends Component {
 
 ItemSelector.propTypes = {
     children: PropTypes.object,
+    dataTest: PropTypes.string,
     selected: PropTypes.shape({
         items: PropTypes.arrayOf(
             PropTypes.shape({

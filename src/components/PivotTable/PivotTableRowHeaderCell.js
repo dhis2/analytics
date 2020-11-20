@@ -32,6 +32,7 @@ export const PivotTableRowHeaderCell = ({
                     rowSpan={header.span}
                     title={header.label}
                     style={{ width, maxWidth: width, minWidth: width }}
+                    dataTest="visualization-row-header"
                 >
                     {header.label}
                 </PivotTableCell>

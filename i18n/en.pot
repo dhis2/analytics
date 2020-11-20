@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2020-10-12T11:43:41.336Z\n"
-"PO-Revision-Date: 2020-10-12T11:43:41.336Z\n"
+"POT-Creation-Date: 2020-11-02T07:31:40.378Z\n"
+"PO-Revision-Date: 2020-11-02T07:31:40.378Z\n"
 
 msgid "Data Type"
 msgstr ""
@@ -26,9 +26,6 @@ msgstr ""
 msgid "Add to {{axisName}}"
 msgstr ""
 
-msgid "Remove"
-msgstr ""
-
 msgid "Not available for {{visualizationType}}"
 msgstr ""
 
@@ -36,6 +33,9 @@ msgid "Remove Assigned Categories"
 msgstr ""
 
 msgid "Add Assigned Categories"
+msgstr ""
+
+msgid "Remove"
 msgstr ""
 
 msgid "Filter dimensions"
@@ -566,6 +566,9 @@ msgid "Display a single value. Recommend relative period to show latest data."
 msgstr ""
 
 msgid "No description"
+msgstr ""
+
+msgid "No legend for this series"
 msgstr ""
 
 msgid "Target"
