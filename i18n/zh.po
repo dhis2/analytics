@@ -2,15 +2,15 @@
 # Translators:
 # phil_dhis2, 2020
 # Viktor Varland <viktor@dhis2.org>, 2020
-# 晓东 林 <13981924470@126.com>, 2020
 # easylin <lin_xd@126.com>, 2020
+# 晓东 林 <13981924470@126.com>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-08-18T13:39:43.818Z\n"
+"POT-Creation-Date: 2020-11-02T07:31:40.378Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: easylin <lin_xd@126.com>, 2020\n"
+"Last-Translator: 晓东 林 <13981924470@126.com>, 2020\n"
 "Language-Team: Chinese (https://www.transifex.com/hisp-uio/teams/100509/zh/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -36,9 +36,6 @@ msgstr "移动到 {{axisName}}"
 msgid "Add to {{axisName}}"
 msgstr "添加到 {{axisName}}"
 
-msgid "Remove"
-msgstr "移除"
-
 msgid "Not available for {{visualizationType}}"
 msgstr " {{visualizationType}}不可用"
 
@@ -47,6 +44,9 @@ msgstr "移除指定的分类"
 
 msgid "Add Assigned Categories"
 msgstr "添加指定的分类"
+
+msgid "Remove"
+msgstr "移除"
 
 msgid "Filter dimensions"
 msgstr "过滤器维度"
@@ -447,6 +447,12 @@ msgstr "中间"
 msgid "End"
 msgstr "尾巴"
 
+msgid "Top"
+msgstr "顶"
+
+msgid "Bottom"
+msgstr "底"
+
 msgid "{{dynamicOuNames}} and {{lastOuName}}"
 msgstr "{{dynamicOuNames}} 和{{lastOuName}}"
 
@@ -562,6 +568,9 @@ msgstr "比较多个时间段之间随时间的变化。"
 
 msgid "Display a single value. Recommend relative period to show latest data."
 msgstr "显示单个值。推荐相对时期以显示最新数据。"
+
+msgid "No legend for this series"
+msgstr ""
 
 msgid "Target"
 msgstr "目标"

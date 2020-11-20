@@ -8,6 +8,7 @@ export const PivotTableContainer = React.forwardRef(
             className="pivot-table-container"
             style={{ width, height }}
             ref={ref}
+            data-test="visualization-container"
         >
             <style jsx>{tableStyle}</style>
             {width === 0 || height === 0 ? null : <table>{children}</table>}

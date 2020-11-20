@@ -3,15 +3,15 @@
 # phil_dhis2, 2020
 # Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2020
 # Sheila André <sandre@saudigitus.org>, 2020
-# Ge Joao <gsimango@saudigitus.org>, 2020
 # Viktor Varland <viktor@dhis2.org>, 2020
+# Ge Joao <gsimango@saudigitus.org>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-08-18T13:39:43.818Z\n"
+"POT-Creation-Date: 2020-11-02T07:31:40.378Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2020\n"
+"Last-Translator: Ge Joao <gsimango@saudigitus.org>, 2020\n"
 "Language-Team: Portuguese (https://www.transifex.com/hisp-uio/teams/100509/pt/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -37,9 +37,6 @@ msgstr "Mover para {{Nomedoeixo}}"
 msgid "Add to {{axisName}}"
 msgstr "Adicionar à {{Nomedoeixo}}"
 
-msgid "Remove"
-msgstr "Remover"
-
 msgid "Not available for {{visualizationType}}"
 msgstr "Não disponível para {{Tipodevisualização}}"
 
@@ -48,6 +45,9 @@ msgstr "Remover categorias atribuídas"
 
 msgid "Add Assigned Categories"
 msgstr "Adicionar categorias atribuídas"
+
+msgid "Remove"
+msgstr "Remover"
 
 msgid "Filter dimensions"
 msgstr "Dimensões do filtro"
@@ -448,6 +448,12 @@ msgstr ""
 msgid "End"
 msgstr ""
 
+msgid "Top"
+msgstr "Topo"
+
+msgid "Bottom"
+msgstr "Inferior"
+
 msgid "{{dynamicOuNames}} and {{lastOuName}}"
 msgstr "{{nomesdinâmicosOu}} e {{últimoNomeOu}}"
 
@@ -562,6 +568,9 @@ msgid "Compare changes over time between multiple time periods."
 msgstr ""
 
 msgid "Display a single value. Recommend relative period to show latest data."
+msgstr ""
+
+msgid "No legend for this series"
 msgstr ""
 
 msgid "Target"

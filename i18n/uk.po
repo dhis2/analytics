@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-08-18T13:39:43.818Z\n"
+"POT-Creation-Date: 2020-11-02T07:31:40.378Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: Viktor Varland <viktor@dhis2.org>, 2020\n"
 "Language-Team: Ukrainian (https://www.transifex.com/hisp-uio/teams/100509/uk/)\n"
@@ -35,9 +35,6 @@ msgstr ""
 msgid "Add to {{axisName}}"
 msgstr ""
 
-msgid "Remove"
-msgstr "Прибрати"
-
 msgid "Not available for {{visualizationType}}"
 msgstr ""
 
@@ -46,6 +43,9 @@ msgstr ""
 
 msgid "Add Assigned Categories"
 msgstr ""
+
+msgid "Remove"
+msgstr "Прибрати"
 
 msgid "Filter dimensions"
 msgstr ""
@@ -446,6 +446,12 @@ msgstr ""
 msgid "End"
 msgstr ""
 
+msgid "Top"
+msgstr "Верх"
+
+msgid "Bottom"
+msgstr "Низ"
+
 msgid "{{dynamicOuNames}} and {{lastOuName}}"
 msgstr ""
 
@@ -560,6 +566,9 @@ msgid "Compare changes over time between multiple time periods."
 msgstr ""
 
 msgid "Display a single value. Recommend relative period to show latest data."
+msgstr ""
+
+msgid "No legend for this series"
 msgstr ""
 
 msgid "Target"

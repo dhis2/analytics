@@ -1,3 +1,5 @@
+import { colors } from '@dhis2/ui'
+
 import { getColorByValueFromLegendSet } from '../../../../modules/legends'
 import {
     FONT_STYLE_VISUALIZATION_TITLE,
@@ -14,16 +16,17 @@ import {
 
 const svgNS = 'http://www.w3.org/2000/svg'
 
-const generateValueSVG = (value, legendSet, y) => {
+const generateValueSVG = (value, formattedValue, legendSet, y) => {
     const textSize = 300
-    const defaultFillColor = '#000000'
+    const defaultFillColor = colors.grey900
 
     const svgValue = document.createElementNS(svgNS, 'svg')
     svgValue.setAttribute('xmlns', svgNS)
     svgValue.setAttribute(
         'viewBox',
-        `0 -${textSize + 50} ${textSize * 0.75 * value.length} ${textSize +
-            200}`
+        `0 -${textSize + 50} ${textSize *
+            0.75 *
+            formattedValue.length} ${textSize + 200}`
     )
 
     if (y) {
@@ -41,7 +44,8 @@ const generateValueSVG = (value, legendSet, y) => {
     text.setAttribute('letter-spacing', '-5')
     text.setAttribute('x', '50%')
     text.setAttribute('fill', fillColor)
-    text.appendChild(document.createTextNode(value))
+    text.setAttribute('data-test', 'visualization-primary-value')
+    text.appendChild(document.createTextNode(formattedValue))
 
     svgValue.appendChild(text)
 
@@ -73,7 +77,9 @@ const generateDashboardItem = (config, legendSet) => {
         container.appendChild(subtitle)
     }
 
-    container.appendChild(generateValueSVG(config.value, legendSet))
+    container.appendChild(
+        generateValueSVG(config.value, config.formattedValue, legendSet)
+    )
 
     return container
 }
@@ -115,6 +121,7 @@ const generateDVItem = (config, legendSet, parentEl, fontStyle) => {
     svg.setAttribute('viewBox', `0 0 ${width} ${height}`)
     svg.setAttribute('width', '100%')
     svg.setAttribute('height', '100%')
+    svg.setAttribute('data-test', 'visualization-container')
 
     const title = document.createElementNS(svgNS, 'text')
     const titleFontStyle = fontStyle[FONT_STYLE_VISUALIZATION_TITLE]
@@ -144,6 +151,8 @@ const generateDVItem = (config, legendSet, parentEl, fontStyle) => {
             : 'normal'
     )
     title.setAttribute('fill', titleFontStyle[FONT_STYLE_OPTION_TEXT_COLOR])
+
+    title.setAttribute('data-test', 'visualization-title')
 
     if (config.title) {
         title.appendChild(document.createTextNode(config.title))
@@ -185,13 +194,18 @@ const generateDVItem = (config, legendSet, parentEl, fontStyle) => {
         'fill',
         subtitleFontStyle[FONT_STYLE_OPTION_TEXT_COLOR]
     )
+
+    subtitle.setAttribute('data-test', 'visualization-subtitle')
+
     if (config.subtitle) {
         subtitle.appendChild(document.createTextNode(config.subtitle))
 
         svg.appendChild(subtitle)
     }
 
-    svg.appendChild(generateValueSVG(config.value, legendSet, 20))
+    svg.appendChild(
+        generateValueSVG(config.value, config.formattedValue, legendSet, 20)
+    )
 
     return svg
 }

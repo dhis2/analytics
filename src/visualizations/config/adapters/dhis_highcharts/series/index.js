@@ -1,3 +1,5 @@
+import { colors } from '@dhis2/ui'
+
 import getCumulativeData from '../getCumulativeData'
 import getPie from './pie'
 import getGauge from './gauge'
@@ -6,7 +8,7 @@ import { getFullIdAxisMap, getAxisIdsMap } from '../customAxes'
 import { generateColors } from '../../../../util/colors/gradientColorGenerator'
 import {
     colorSets,
-    COLOR_SET_MONO_PATTERNS,
+    COLOR_SET_PATTERNS,
 } from '../../../../util/colors/colorSets'
 import {
     VIS_TYPE_PIE,
@@ -17,6 +19,7 @@ import {
 } from '../../../../../modules/visTypes'
 import { hasCustomAxes } from '../../../../../modules/axis'
 import { getAxisStringFromId } from '../../../../util/axisId'
+import { axisHasRelativeItems } from '../../../../../modules/layout/axisHasRelativeItems'
 
 const DEFAULT_ANIMATION_DURATION = 200
 
@@ -46,7 +49,7 @@ function getIndexColorPatternMap(series, layout, extraOptions) {
 
     return series.reduce((map, s, index) => {
         map[index] =
-            layout.colorSet === COLOR_SET_MONO_PATTERNS
+            layout.colorSet === COLOR_SET_PATTERNS
                 ? { patternIndex: getPatternIndex(index) }
                 : getColor(colors, index)
         return map
@@ -60,17 +63,20 @@ function getIdColorMap(series, layout, extraOptions) {
         )
     )
 
-    if (isDualAxisType(layout.type) && hasCustomAxes(filteredSeries)) {
+    if (isDualAxisType(layout.type) && hasCustomAxes(filteredSeries) && !axisHasRelativeItems(layout.columns)) {
         const axisIdsMap = getAxisIdsMap(layout.series, series)
         const theme = extraOptions.multiAxisTheme
 
         const colorsByAxis = Object.keys(axisIdsMap).reduce((map, axis) => {
             const numberOfIds = axisIdsMap[axis].length
-            map[axis] = numberOfIds > 1 ? generateColors(
-                theme[axis].startColor,
-                theme[axis].endColor,
-                numberOfIds
-            ) : [theme[axis].mainColor]
+            map[axis] =
+                numberOfIds > 1
+                    ? generateColors(
+                          theme[axis].startColor,
+                          theme[axis].endColor,
+                          numberOfIds
+                      )
+                    : [theme[axis].mainColor]
             return map
         }, {})
 
@@ -112,6 +118,7 @@ function getDefault(series, layout, isStacked, extraOptions) {
         if (!seriesObj.dataLabels && (layout.showValues || layout.showData)) {
             seriesObj.dataLabels = {
                 enabled: true,
+                color: colors.grey900
             }
         }
 
@@ -130,7 +137,7 @@ function getDefault(series, layout, isStacked, extraOptions) {
             item => item.dimensionItem === seriesObj.id
         )
 
-        if (matchedObject) {
+        if (matchedObject && !axisHasRelativeItems(layout.columns)) {
             // Checks if the item has custom options
             if (matchedObject.type) {
                 seriesObj.type = getType(matchedObject.type).type
@@ -161,7 +168,7 @@ function getDefault(series, layout, isStacked, extraOptions) {
             : idColorMap[seriesObj.id]
 
         // axis number
-        seriesObj.yAxis = isDualAxisType(layout.type)
+        seriesObj.yAxis = isDualAxisType(layout.type) && !axisHasRelativeItems(layout.columns)
             ? getAxisStringFromId(fullIdAxisMap[seriesObj.id])
             : getAxisStringFromId(0)
 
