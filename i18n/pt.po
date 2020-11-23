@@ -9,7 +9,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-09-15T07:30:45.529Z\n"
+"POT-Creation-Date: 2020-11-02T07:31:40.378Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: Ge Joao <gsimango@saudigitus.org>, 2020\n"
 "Language-Team: Portuguese (https://www.transifex.com/hisp-uio/teams/100509/pt/)\n"
@@ -37,9 +37,6 @@ msgstr "Mover para {{Nomedoeixo}}"
 msgid "Add to {{axisName}}"
 msgstr "Adicionar à {{Nomedoeixo}}"
 
-msgid "Remove"
-msgstr "Remover"
-
 msgid "Not available for {{visualizationType}}"
 msgstr "Não disponível para {{Tipodevisualização}}"
 
@@ -48,6 +45,9 @@ msgstr "Remover categorias atribuídas"
 
 msgid "Add Assigned Categories"
 msgstr "Adicionar categorias atribuídas"
+
+msgid "Remove"
+msgstr "Remover"
 
 msgid "Filter dimensions"
 msgstr "Dimensões do filtro"
@@ -568,6 +568,9 @@ msgid "Compare changes over time between multiple time periods."
 msgstr ""
 
 msgid "Display a single value. Recommend relative period to show latest data."
+msgstr ""
+
+msgid "No legend for this series"
 msgstr ""
 
 msgid "Target"

@@ -52,6 +52,10 @@ export {
 
 export { ouIdHelper } from './modules/ouIdHelper'
 
+// Modules: adapted ui layout
+
+export { getAdaptedUiLayoutByType } from './modules/getAdaptedUiLayoutByType'
+
 // Modules: relativeItems
 
 export { hasRelativeItems } from './modules/relativeItems'
@@ -136,10 +140,13 @@ export {
     getDisplayNameByVisType,
     defaultVisType,
     isStacked,
+    isMultiType,
     isYearOverYear,
     isDualAxisType,
     isSingleValue,
     isTwoCategoryChartType,
+    isLegendSetType,
+    isColumnBasedType,
 } from './modules/visTypes'
 
 // Modules: layoutTypes

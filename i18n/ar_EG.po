@@ -1,12 +1,19 @@
+# 
+# Translators:
+# phil_dhis2, 2020
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "POT-Creation-Date: 2020-11-02T07:31:40.378Z\n"
-"PO-Revision-Date: 2020-11-02T07:31:40.378Z\n"
+"PO-Revision-Date: 2020-04-28 22:05+0000\n"
+"Last-Translator: phil_dhis2, 2020\n"
+"Language-Team: Arabic (Egypt) (https://www.transifex.com/hisp-uio/teams/100509/ar_EG/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ar_EG\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 
 msgid "Data Type"
 msgstr ""
@@ -93,40 +100,40 @@ msgid "No periods selected"
 msgstr ""
 
 msgid "January"
-msgstr ""
+msgstr "يناير"
 
 msgid "February"
-msgstr ""
+msgstr "فبراير"
 
 msgid "March"
-msgstr ""
+msgstr "مارس"
 
 msgid "April"
-msgstr ""
+msgstr "ابريل"
 
 msgid "May"
-msgstr ""
+msgstr "مايو"
 
 msgid "June"
-msgstr ""
+msgstr "يونيو"
 
 msgid "July"
-msgstr ""
+msgstr "يوليو"
 
 msgid "August"
-msgstr ""
+msgstr "أغسطس"
 
 msgid "September"
-msgstr ""
+msgstr "سبتمبر"
 
 msgid "October"
-msgstr ""
+msgstr "اكتوبر"
 
 msgid "November"
-msgstr ""
+msgstr "نوفمبر"
 
 msgid "December"
-msgstr ""
+msgstr "ديسمبر"
 
 msgid "Week {{weekNumber}}"
 msgstr ""

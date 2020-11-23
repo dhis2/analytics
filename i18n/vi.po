@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-09-15T07:30:45.529Z\n"
+"POT-Creation-Date: 2020-11-02T07:31:40.378Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: Viktor Varland <viktor@dhis2.org>, 2020\n"
 "Language-Team: Vietnamese (https://www.transifex.com/hisp-uio/teams/100509/vi/)\n"
@@ -35,9 +35,6 @@ msgstr ""
 msgid "Add to {{axisName}}"
 msgstr "Thêm {{tên trục}"
 
-msgid "Remove"
-msgstr "Tháo ra"
-
 msgid "Not available for {{visualizationType}}"
 msgstr ""
 
@@ -46,6 +43,9 @@ msgstr ""
 
 msgid "Add Assigned Categories"
 msgstr ""
+
+msgid "Remove"
+msgstr "Tháo ra"
 
 msgid "Filter dimensions"
 msgstr "Các chiều lọc"
@@ -566,6 +566,9 @@ msgid "Compare changes over time between multiple time periods."
 msgstr ""
 
 msgid "Display a single value. Recommend relative period to show latest data."
+msgstr ""
+
+msgid "No legend for this series"
 msgstr ""
 
 msgid "Target"

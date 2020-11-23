@@ -1,6 +1,6 @@
 {
     "name": "@dhis2/analytics",
-    "version": "11.0.11",
+    "version": "11.2.8",
     "main": "./build/cjs/lib.js",
     "module": "./build/es/lib.js",
     "sideEffects": [
@@ -34,7 +34,7 @@
         "@storybook/preset-create-react-app": "^2.1.2",
         "@storybook/react": "^5.3.17",
         "enzyme": "^3.9.0",
-        "enzyme-adapter-react-16": "^1.15.4",
+        "enzyme-adapter-react-16": "^1.15.5",
         "fs-extra": "^9.0.0",
         "jest-enzyme": "^7.0.2",
         "typeface-roboto": "^0.0.75"
@@ -47,7 +47,7 @@
     },
     "dependencies": {
         "@dhis2/d2-ui-org-unit-dialog": "^7.0.8",
-        "@dhis2/ui": "^5.5.6",
+        "@dhis2/ui": "^5.7.7",
         "@material-ui/core": "^3.9.3",
         "@material-ui/icons": "^3.0.2",
         "classnames": "^2.2.6",
@@ -57,7 +57,7 @@
         "lodash": "^4.17.20",
         "react-beautiful-dnd": "^10.1.1",
         "resize-observer-polyfill": "^1.5.1",
-        "styled-jsx": "^3.3.0"
+        "styled-jsx": "^3.3.2"
     },
     "files": [
         "build"

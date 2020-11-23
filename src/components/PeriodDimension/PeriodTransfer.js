@@ -68,12 +68,14 @@ class PeriodTransfer extends Component {
                 <Tab
                     selected={this.state.isRelative}
                     onClick={() => this.onIsRelativeClick(true)}
+                    dataTest={`${this.props.dataTest}-relative-periods-button`}
                 >
                     {i18n.t('Relative periods')}
                 </Tab>
                 <Tab
                     selected={!this.state.isRelative}
                     onClick={() => this.onIsRelativeClick(false)}
+                    dataTest={`${this.props.dataTest}-fixed-periods-button`}
                 >
                     {i18n.t('Fixed periods')}
                 </Tab>
@@ -92,6 +94,7 @@ class PeriodTransfer extends Component {
                                 ).getPeriods(),
                             })
                         }}
+                        dataTest={`${this.props.dataTest}-relative-period-filter`}
                     />
                 ) : (
                     <FixedPeriodFilter
@@ -109,6 +112,7 @@ class PeriodTransfer extends Component {
                                 year,
                             })
                         }}
+                        dataTest={`${this.props.dataTest}-fixed-period-filter`}
                     />
                 )}
             </div>
@@ -177,6 +181,7 @@ class PeriodTransfer extends Component {
 
 PeriodTransfer.propTypes = {
     onSelect: PropTypes.func.isRequired,
+    dataTest: PropTypes.string,
     initialSelectedPeriods: PropTypes.arrayOf(
         PropTypes.shape({
             id: PropTypes.string,

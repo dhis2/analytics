@@ -32,6 +32,7 @@ export const PivotTableTitleRow = ({
                         maxWidth: containerWidth,
                         textAlign: 'center',
                     }}
+                    data-test="visualization-title"
                 >
                     {title}
                 </div>
