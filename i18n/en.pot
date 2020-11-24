@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2020-11-20T12:51:41.763Z\n"
-"PO-Revision-Date: 2020-11-20T12:51:41.763Z\n"
+"POT-Creation-Date: 2020-11-24T10:45:17.729Z\n"
+"PO-Revision-Date: 2020-11-24T10:45:17.729Z\n"
 
 msgid "Data Type"
 msgstr ""
@@ -350,6 +350,18 @@ msgstr ""
 msgid "Rows"
 msgstr ""
 
+msgid "Vertical"
+msgstr ""
+
+msgid "Horizontal"
+msgstr ""
+
+msgid "Points"
+msgstr ""
+
+msgid "Points category"
+msgstr ""
+
 msgid "Reporting rate"
 msgstr ""
 
@@ -562,7 +574,9 @@ msgstr ""
 msgid "Display a single value. Recommend relative period to show latest data."
 msgstr ""
 
-msgid "No description"
+msgid ""
+"View the relationship between two data items at a place or time. "
+"Recommended for finding outliers."
 msgstr ""
 
 msgid "No legend for this series"

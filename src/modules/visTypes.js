@@ -93,7 +93,9 @@ export const visTypeDescriptions = {
     [VIS_TYPE_SINGLE_VALUE]: i18n.t(
         'Display a single value. Recommend relative period to show latest data.'
     ),
-    [VIS_TYPE_SCATTER]: i18n.t('No description'), //TODO: Add description
+    [VIS_TYPE_SCATTER]: i18n.t(
+        'View the relationship between two data items at a place or time. Recommended for finding outliers.'
+    ),
 }
 
 export const visTypeIcons = {

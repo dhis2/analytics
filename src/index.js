@@ -83,6 +83,9 @@ export {
     AXIS_ID_COLUMNS,
     AXIS_ID_ROWS,
     AXIS_ID_FILTERS,
+    AXIS_ID_VERTICAL,
+    AXIS_ID_HORIZONTAL,
+    //AXIS_ID_POINTS_CATEGORY,
     DEFAULT_AXIS_IDS,
 } from './modules/layout/axis'
 export { axisGetAllItems } from './modules/layout/axisGetAllItems'
@@ -158,6 +161,7 @@ export {
     LAYOUT_TYPE_SINGLE_VALUE,
     LAYOUT_TYPE_YEAR_OVER_YEAR,
     LAYOUT_TYPE_PIVOT_TABLE,
+    LAYOUT_TYPE_SCATTER,
 } from './modules/layoutTypes'
 
 // Modules: layoutUiRules
