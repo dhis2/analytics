@@ -1,12 +1,10 @@
 import isObject from 'lodash/isObject'
-import { DIMENSION_ID_DATA, DIMENSION_ID_PERIOD } from './predefinedDimensions'
 import {
-    AXIS_ID_COLUMNS,
-    AXIS_ID_ROWS,
-    AXIS_ID_FILTERS,
-    AXIS_ID_VERTICAL,
-    AXIS_ID_HORIZONTAL,
-} from './layout/axis'
+    DIMENSION_ID_DATA,
+    DIMENSION_ID_ORGUNIT,
+    DIMENSION_ID_PERIOD,
+} from './predefinedDimensions'
+import { AXIS_ID_COLUMNS, AXIS_ID_ROWS, AXIS_ID_FILTERS } from './layout/axis'
 import {
     VIS_TYPE_YEAR_OVER_YEAR_LINE,
     VIS_TYPE_YEAR_OVER_YEAR_COLUMN,
@@ -19,7 +17,7 @@ import {
 } from './visTypes'
 
 export const getAdaptedUiLayoutByType = (layout, type) => {
-    if (isTwoCategoryChartType(type) && layout.rows.length > 1) {
+    if (isTwoCategoryChartType(type) && layout.rows?.length > 1) {
         return getDualCategoryLayout(layout)
     }
     switch (type) {
@@ -93,21 +91,20 @@ const getYearOverYearLayout = layout => ({
     ].filter(dim => getDimensionId(dim) !== DIMENSION_ID_PERIOD),
 })
 
-const getScatterLayout = layout => {
-    const columns = [...layout[AXIS_ID_COLUMNS]].filter(
-        dim => getDimensionId(dim) !== DIMENSION_ID_DATA
-    )
-    return {
-        [AXIS_ID_VERTICAL]: [DIMENSION_ID_DATA],
-        [AXIS_ID_HORIZONTAL]: [DIMENSION_ID_DATA],
-        [AXIS_ID_COLUMNS]: columns.length ? [columns.shift()] : [],
-        [AXIS_ID_FILTERS]: [
-            ...layout[AXIS_ID_FILTERS],
-            ...layout[AXIS_ID_ROWS],
-            ...columns,
-        ].filter(dim => getDimensionId(dim) !== DIMENSION_ID_DATA),
-    }
-}
+const getScatterLayout = layout => ({
+    [AXIS_ID_COLUMNS]: [DIMENSION_ID_DATA],
+    [AXIS_ID_ROWS]: [DIMENSION_ID_ORGUNIT],
+    [AXIS_ID_FILTERS]: [
+        ...layout[AXIS_ID_COLUMNS],
+        ...layout[AXIS_ID_ROWS],
+        ...layout[AXIS_ID_FILTERS],
+    ].filter(
+        dim =>
+            ![DIMENSION_ID_DATA, DIMENSION_ID_ORGUNIT].includes(
+                getDimensionId(dim)
+            )
+    ),
+})
 
 // Transform from ui.layout to single value layout format
 const getSingleValueLayout = layout => {

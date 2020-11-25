@@ -1,12 +1,5 @@
 import i18n from '@dhis2/d2-i18n'
-import {
-    AXIS_ID_COLUMNS,
-    AXIS_ID_ROWS,
-    AXIS_ID_FILTERS,
-    AXIS_ID_VERTICAL,
-    AXIS_ID_HORIZONTAL,
-    //AXIS_ID_POINTS_CATEGORY,
-} from './layout/axis'
+import { AXIS_ID_COLUMNS, AXIS_ID_ROWS, AXIS_ID_FILTERS } from './layout/axis'
 import {
     LAYOUT_TYPE_DEFAULT,
     LAYOUT_TYPE_PIE,
@@ -34,10 +27,7 @@ const getAxisNamesByLayoutType = layoutType => {
             }
         case LAYOUT_TYPE_SCATTER:
             return {
-                [AXIS_ID_VERTICAL]: i18n.t('Vertical'),
-                [AXIS_ID_HORIZONTAL]: i18n.t('Horizontal'),
-                [AXIS_ID_COLUMNS]: i18n.t('Points'),
-                //[AXIS_ID_POINTS_CATEGORY]: i18n.t('Points category'),
+                [AXIS_ID_ROWS]: i18n.t('Points'),
                 [AXIS_ID_FILTERS]: i18n.t('Filter'),
             }
     }

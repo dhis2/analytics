@@ -83,9 +83,6 @@ export {
     AXIS_ID_COLUMNS,
     AXIS_ID_ROWS,
     AXIS_ID_FILTERS,
-    AXIS_ID_VERTICAL,
-    AXIS_ID_HORIZONTAL,
-    //AXIS_ID_POINTS_CATEGORY,
     DEFAULT_AXIS_IDS,
 } from './modules/layout/axis'
 export { axisGetAllItems } from './modules/layout/axisGetAllItems'
