@@ -1,6 +1,6 @@
 {
     "name": "@dhis2/analytics",
-    "version": "2.4.29",
+    "version": "2.4.30",
     "main": "./build/index.js",
     "repository": "git@github.com:dhis2/analytics.git",
     "author": "Jennifer Jones Arnesen <jennifer@dhis2.org>",
