@@ -181,7 +181,7 @@ msgid "Yearly"
 msgstr "Ročně"
 
 msgid "Financial year (Start November)"
-msgstr "Fiskální rok (od listopadu)"
+msgstr "Finanční rok (od listopadu)"
 
 msgid "Financial year (Start October)"
 msgstr "Finanční rok (od října)"
@@ -346,7 +346,7 @@ msgid "Rows"
 msgstr "Řádky"
 
 msgid "Reporting rate"
-msgstr "Míra hlášení"
+msgstr "Četnost hlášení"
 
 msgid "Reporting rate on time"
 msgstr "Četnost hlášení na čas"
