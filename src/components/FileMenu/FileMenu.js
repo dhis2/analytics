@@ -54,7 +54,7 @@ export const FileMenu = ({
                 return (
                     <FavoritesDialog
                         open={true}
-                        //refreshData={true}
+                        refreshData={true}
                         type={fileType}
                         d2={d2}
                         onRequestClose={onDialogClose}
