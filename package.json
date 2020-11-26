@@ -40,6 +40,7 @@
         "typeface-roboto": "^0.0.75"
     },
     "peerDependencies": {
+        "@dhis2/app-runtime": "^2.6.1",
         "@dhis2/d2-i18n": "^1.0.6",
         "prop-types": "^15",
         "react": "^16.3",
