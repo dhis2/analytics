@@ -148,7 +148,7 @@ msgid "Yearly"
 msgstr "Ročně"
 
 msgid "Financial year (Start November)"
-msgstr "Fiskální rok (od listopadu)"
+msgstr "Finanční rok (od listopadu)"
 
 msgid "Financial year (Start October)"
 msgstr "Finanční rok (od října)"
