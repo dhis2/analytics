@@ -24,6 +24,7 @@ describe.only('DataDimension component ', () => {
         }
         shallowDataDim = undefined
 
+        // eslint-disable-next-line no-import-assign
         api.apiFetchAlternatives = jest.fn().mockResolvedValue({
             dimensionItems: [
                 { id: 'dimId1', name: 'dim Id1' },
@@ -35,6 +36,7 @@ describe.only('DataDimension component ', () => {
 
     describe('has groups', () => {
         beforeEach(() => {
+            // eslint-disable-next-line no-import-assign
             api.apiFetchGroups = jest.fn().mockResolvedValue([
                 { id: 'rarity', name: 'Rarity' },
                 { id: 'rainbow', name: 'Rainbow Dash' },

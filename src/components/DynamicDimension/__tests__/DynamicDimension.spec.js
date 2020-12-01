@@ -28,9 +28,7 @@ describe('The Period Dimension component ', () => {
     })
 
     it('renders an <ItemSelector>', () => {
-        const itemSelector = dynamicSelector()
-            .find('ItemSelector')
-            .first()
+        const itemSelector = dynamicSelector().find('ItemSelector').first()
 
         expect(itemSelector.children()).toEqual(dynamicSelector().children())
     })

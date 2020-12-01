@@ -52,10 +52,7 @@ describe('UnselectedItems component', () => {
         })
 
         it('triggers onSelect when item double-clicked', () => {
-            unselectedItems()
-                .find('li')
-                .first()
-                .simulate('doubleClick')
+            unselectedItems().find('li').first().simulate('doubleClick')
 
             expect(props.onSelect).toHaveBeenCalled()
             expect(props.onSelect).toHaveBeenCalledWith(['rb'])
@@ -63,18 +60,14 @@ describe('UnselectedItems component', () => {
 
         it('triggers onSelect when "assign" button clicked', () => {
             const list = unselectedItems()
-            list.find('Item')
-                .first()
-                .simulate('click', {
-                    isCtrlPressed: false,
-                    isShiftPressed: false,
-                    index: 0,
-                    id: 'rb',
-                })
+            list.find('Item').first().simulate('click', {
+                isCtrlPressed: false,
+                isShiftPressed: false,
+                index: 0,
+                id: 'rb',
+            })
 
-            list.find('ArrowButton')
-                .first()
-                .simulate('click')
+            list.find('ArrowButton').first().simulate('click')
 
             expect(props.onSelect).toHaveBeenCalled()
             expect(props.onSelect).toHaveBeenCalledWith(['rb'])
