@@ -113,6 +113,7 @@ const scatterRules = {
     [RULE_PROP_MAX_ITEMS_PER_AXIS]: {
         [AXIS_ID_COLUMNS]: 1,
     },
+    // TODO: Add a rule that forces DIMENSION_ID_DATA to have >= 2 items?
     [RULE_PROP_LOCKED_DIMS]: {
         [DIMENSION_ID_DATA]: AXIS_ID_COLUMNS,
         [DIMENSION_ID_ORGUNIT]: AXIS_ID_ROWS,
