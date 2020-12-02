@@ -16,7 +16,7 @@ export default ({visType, xAxisName, yAxisName, showLabels}) => {
                         useHTML: true,
                         headerFormat: '',
                         pointFormat: `<b>{point.name}</b><br>` +  
-                            `${xAxisName}: {point.x}<br>${yAxisName}: {point.y}`
+                            `${yAxisName}: {point.y}<br>${xAxisName}: {point.x}`
                     }
                 }
             }

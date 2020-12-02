@@ -1,5 +1,9 @@
 import { AXIS_ID_COLUMNS, AXIS_ID_ROWS, AXIS_ID_FILTERS } from '../layout/axis'
-import { DIMENSION_ID_PERIOD, DIMENSION_ID_DATA } from '../predefinedDimensions'
+import {
+    DIMENSION_ID_PERIOD,
+    DIMENSION_ID_DATA,
+    DIMENSION_ID_ORGUNIT,
+} from '../predefinedDimensions'
 import {
     VIS_TYPE_COLUMN,
     VIS_TYPE_STACKED_COLUMN,
@@ -96,6 +100,25 @@ const pivotTableRules = {
     ],
 }
 
+const scatterRules = {
+    [RULE_PROP_AVAILABLE_AXES]: [AXIS_ID_FILTERS],
+    [RULE_PROP_MAX_DIMS_PER_AXIS]: {
+        [AXIS_ID_COLUMNS]: 1,
+        [AXIS_ID_ROWS]: 1,
+    },
+    [RULE_PROP_MIN_DIMS_PER_AXIS]: {
+        [AXIS_ID_COLUMNS]: 1,
+        [AXIS_ID_ROWS]: 1,
+    },
+    [RULE_PROP_MAX_ITEMS_PER_AXIS]: {
+        [AXIS_ID_COLUMNS]: 1,
+    },
+    [RULE_PROP_LOCKED_DIMS]: {
+        [DIMENSION_ID_DATA]: AXIS_ID_COLUMNS,
+        [DIMENSION_ID_ORGUNIT]: AXIS_ID_ROWS,
+    },
+}
+
 const visTypeToRules = {
     [VIS_TYPE_COLUMN]: defaultRules,
     [VIS_TYPE_STACKED_COLUMN]: defaultRules,
@@ -111,7 +134,7 @@ const visTypeToRules = {
     [VIS_TYPE_YEAR_OVER_YEAR_LINE]: yearOverYearRules,
     [VIS_TYPE_YEAR_OVER_YEAR_COLUMN]: yearOverYearRules,
     [VIS_TYPE_PIVOT_TABLE]: pivotTableRules,
-    [VIS_TYPE_SCATTER]: defaultRules, //TODO: Add rule to force Rows: 1-2 dim, 2 items
+    [VIS_TYPE_SCATTER]: scatterRules,
 }
 
 const getRulesByVisType = visType => {

@@ -22,7 +22,6 @@ import {
 import { hasCustomAxes } from '../../../../../modules/axis'
 import { getAxisStringFromId } from '../../../../util/axisId'
 import { axisHasRelativeItems } from '../../../../../modules/layout/axisHasRelativeItems'
-import { ouIdHelper } from '../../../../../modules/ouIdHelper'
 
 const DEFAULT_ANIMATION_DURATION = 200
 
@@ -190,7 +189,7 @@ function getDefault(series, layout, isStacked, extraOptions) {
 }
 
 export default function(series, store, layout, isStacked, extraOptions) {
-    const secondCategoryItemNames = layout.rows[1]?.items?.filter(item => !ouIdHelper.hasGroupPrefix(item.id) && !ouIdHelper.hasLevelPrefix(item.id)).map(item => store.data[0].metaData.items[item.id].name)
+    //const secondCategoryItemNames = layout.rows[1]?.items?.filter(item => !ouIdHelper.hasGroupPrefix(item.id) && !ouIdHelper.hasLevelPrefix(item.id)).map(item => store.data[0].metaData.items[item.id].name)
 
     switch (layout.type) {
         case VIS_TYPE_PIE:
@@ -203,7 +202,7 @@ export default function(series, store, layout, isStacked, extraOptions) {
             series = getGauge(series, layout, extraOptions.legendSets[0])
             break
         case VIS_TYPE_SCATTER:
-            series = getScatter(series, secondCategoryItemNames)
+            series = getScatter(series, store)
             break
         default:
             series = getDefault(series, layout, isStacked, extraOptions)

@@ -113,9 +113,9 @@ export default function({ store, layout, el, extraConfig, extraOptions }) {
     // get plot options for scatter
     if ([VIS_TYPE_SCATTER].includes(_layout.type)) {
         const metaDataItems = store.data[0].metaData.items
-        const rowItems = _layout.rows[0].items
-        const xAxisName = metaDataItems[rowItems[0].id].name
-        const yAxisName = metaDataItems[rowItems[1].id].name
+        const columnItems = _layout.columns[0].items
+        const xAxisName = metaDataItems[columnItems[1].id].name
+        const yAxisName = metaDataItems[columnItems[0].id].name
         config.plotOptions = getPlotOptions({visType: _layout.type, xAxisName, yAxisName, showLabels: _layout.showValues || _layout.showData})
     }
 

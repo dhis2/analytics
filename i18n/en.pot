@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2020-11-24T10:45:17.729Z\n"
-"PO-Revision-Date: 2020-11-24T10:45:17.729Z\n"
+"POT-Creation-Date: 2020-11-30T10:27:09.237Z\n"
+"PO-Revision-Date: 2020-11-30T10:27:09.237Z\n"
 
 msgid "Data Type"
 msgstr ""
@@ -350,16 +350,7 @@ msgstr ""
 msgid "Rows"
 msgstr ""
 
-msgid "Vertical"
-msgstr ""
-
-msgid "Horizontal"
-msgstr ""
-
 msgid "Points"
-msgstr ""
-
-msgid "Points category"
 msgstr ""
 
 msgid "Reporting rate"
