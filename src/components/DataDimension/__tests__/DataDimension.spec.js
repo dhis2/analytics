@@ -1,7 +1,20 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 import { DataDimension } from '../DataDimension'
-import * as api from '../../../api/dimensions'
+
+jest.mock('../../../api/dimensions', () => ({
+    apiFetchAlternatives: jest.fn().mockResolvedValue({
+        dimensionItems: [
+            { id: 'dimId1', name: 'dim Id1' },
+            { id: 'dimId2', name: 'dim Id2' },
+        ],
+        nextPage: null,
+    }),
+    apiFetchGroups: jest.fn().mockResolvedValue([
+        { id: 'rarity', name: 'Rarity' },
+        { id: 'rainbow', name: 'Rainbow Dash' },
+    ]),
+}))
 
 describe.only('DataDimension component ', () => {
     let props
@@ -23,26 +36,9 @@ describe.only('DataDimension component ', () => {
             onReorder: jest.fn(),
         }
         shallowDataDim = undefined
-
-        // eslint-disable-next-line no-import-assign
-        api.apiFetchAlternatives = jest.fn().mockResolvedValue({
-            dimensionItems: [
-                { id: 'dimId1', name: 'dim Id1' },
-                { id: 'dimId2', name: 'dim Id2' },
-            ],
-            nextPage: null,
-        })
     })
 
     describe('has groups', () => {
-        beforeEach(() => {
-            // eslint-disable-next-line no-import-assign
-            api.apiFetchGroups = jest.fn().mockResolvedValue([
-                { id: 'rarity', name: 'Rarity' },
-                { id: 'rainbow', name: 'Rainbow Dash' },
-            ])
-        })
-
         it('renders an ItemSelector', done => {
             const wrapper = dataDim()
 
