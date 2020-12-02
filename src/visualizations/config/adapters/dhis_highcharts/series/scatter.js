@@ -2,7 +2,6 @@ const marker = {
     symbol: 'circle',
 }
 
-//TODO: This assumes there are exactly 1 dimension on Columns which contains exactly 2 items. This should be supported by a rule.
 export default (series, store) => {
     const data = [...new Set(store.data[0].rows.map(row => row[1]))]
         .filter(

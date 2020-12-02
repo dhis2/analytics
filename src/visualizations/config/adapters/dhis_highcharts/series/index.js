@@ -189,8 +189,6 @@ function getDefault(series, layout, isStacked, extraOptions) {
 }
 
 export default function(series, store, layout, isStacked, extraOptions) {
-    //const secondCategoryItemNames = layout.rows[1]?.items?.filter(item => !ouIdHelper.hasGroupPrefix(item.id) && !ouIdHelper.hasLevelPrefix(item.id)).map(item => store.data[0].metaData.items[item.id].name)
-
     switch (layout.type) {
         case VIS_TYPE_PIE:
             series = getPie(
