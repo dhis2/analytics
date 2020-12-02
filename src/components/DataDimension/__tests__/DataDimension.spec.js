@@ -16,7 +16,7 @@ jest.mock('../../../api/dimensions', () => ({
     ]),
 }))
 
-describe.only('DataDimension component ', () => {
+describe('DataDimension component ', () => {
     let props
     let shallowDataDim
     const dataDim = () => {
