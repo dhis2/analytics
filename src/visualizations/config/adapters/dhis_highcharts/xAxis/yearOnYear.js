@@ -1,4 +1,4 @@
-export default function(store, layout, extraOptions) {
+export default function (store, layout, extraOptions) {
     let categories
 
     if (extraOptions.xAxisLabels) {
