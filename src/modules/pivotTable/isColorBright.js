@@ -1,4 +1,4 @@
-const calculateColorBrightness = function (rgb) {
+const calculateColorBrightness = function(rgb) {
     return Math.round(
         (parseInt(rgb[0]) * 299 +
             parseInt(rgb[1]) * 587 +

@@ -359,9 +359,8 @@ const getSixMonthlyAprilPeriodType = fnFilter => {
         period = {}
         period.startDate = `${year}-10-01`
         period.endDate = `${year + 1}-03-31`
-        period.name = `${getMonthName(9)} ${year} - ${getMonthName(2)} ${
-            year + 1
-        }`
+        period.name = `${getMonthName(9)} ${year} - ${getMonthName(2)} ${year +
+            1}`
         period.iso = `${year}AprilS2`
         period.id = period.iso
         periods.push(period)

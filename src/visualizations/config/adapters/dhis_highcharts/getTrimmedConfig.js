@@ -93,7 +93,7 @@ function cleanData(
     return cleanedData
 }
 
-export default function (config, layout) {
+export default function(config, layout) {
     if (isTwoCategoryChartType(layout.type) && layout.rows.length > 1) {
         return getTwoCategoryTrimmedConfig(config, layout)
     } else {

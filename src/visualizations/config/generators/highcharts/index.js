@@ -12,7 +12,7 @@ HNDTD(H)
 HE(H)
 HPF(H)
 
-export default function (config, el) {
+export default function(config, el) {
     if (config) {
         config.chart.renderTo = el || config.chart.renderTo
 

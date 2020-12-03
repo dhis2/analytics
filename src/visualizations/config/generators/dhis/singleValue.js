@@ -24,9 +24,9 @@ const generateValueSVG = (value, formattedValue, legendSet, y) => {
     svgValue.setAttribute('xmlns', svgNS)
     svgValue.setAttribute(
         'viewBox',
-        `0 -${textSize + 50} ${textSize * 0.75 * formattedValue.length} ${
-            textSize + 200
-        }`
+        `0 -${textSize + 50} ${textSize *
+            0.75 *
+            formattedValue.length} ${textSize + 200}`
     )
 
     if (y) {
@@ -210,7 +210,7 @@ const generateDVItem = (config, legendSet, parentEl, fontStyle) => {
     return svg
 }
 
-export default function (
+export default function(
     config,
     parentEl,
     { dashboard, legendSets, fontStyle }

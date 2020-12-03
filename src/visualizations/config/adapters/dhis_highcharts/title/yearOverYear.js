@@ -1,6 +1,6 @@
 import getFilterText from '../../../../util/getFilterText'
 
-export default function (layout, metaData, dashboard) {
+export default function(layout, metaData, dashboard) {
     const titleFragments = []
 
     if (layout.columns && layout.columns.length && !dashboard) {

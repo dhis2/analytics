@@ -1,7 +1,7 @@
 import getTwoCategorySplitSerieData from '../../../config/adapters/dhis_highcharts/getTwoCategorySplitSerieData'
 
 // 1 series, 2 categories
-export default function (acc, series, categories, idValueMap, metaData) {
+export default function(acc, series, categories, idValueMap, metaData) {
     series[0].forEach(seriesItemId => {
         const groupedData = []
 

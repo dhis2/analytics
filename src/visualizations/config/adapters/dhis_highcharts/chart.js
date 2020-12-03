@@ -16,7 +16,7 @@ const DASHBOARD_CHART = {
 
 const getEvents = () => ({
     events: {
-        load: function () {
+        load: function() {
             // Align legend icon with legend text
             this.legend.allItems.forEach(item => {
                 if (item.legendSymbol) {
@@ -31,7 +31,7 @@ const getEvents = () => ({
     },
 })
 
-export default function (layout, el, dashboard) {
+export default function(layout, el, dashboard) {
     return Object.assign(
         {},
         getType(layout.type),

@@ -7,7 +7,7 @@ import {
 import { dimensionGetItems } from '../../modules/layout/dimensionGetItems'
 import { getOuLevelAndGroupText } from '../../modules/getOuLevelAndGroupText'
 
-export default function (filters, metaData) {
+export default function(filters, metaData) {
     if (!Array.isArray(filters) || !filters.length) {
         return ''
     }

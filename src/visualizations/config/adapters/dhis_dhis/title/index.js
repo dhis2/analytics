@@ -8,7 +8,7 @@ function getDefault(layout, metaData, dashboard) {
         : ''
 }
 
-export default function (layout, metaData, dashboard) {
+export default function(layout, metaData, dashboard) {
     if (layout.hideTitle) {
         return ''
     }

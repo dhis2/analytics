@@ -1,4 +1,4 @@
-export default function (series, colors) {
+export default function(series, colors) {
     return [
         {
             colorByPoint: true,
@@ -8,7 +8,7 @@ export default function (series, colors) {
             colors: colors,
             dataLabels: {
                 enabled: true,
-                formatter: function () {
+                formatter: function() {
                     return (
                         '<span style="font-weight:normal">' +
                         this.point.name +

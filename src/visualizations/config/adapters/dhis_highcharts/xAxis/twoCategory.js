@@ -6,7 +6,7 @@ import {
     FONT_STYLE_CATEGORY_AXIS_LABELS,
 } from '../../../../../modules/fontStyle'
 
-export default function (store, layout) {
+export default function(store, layout) {
     const axis1Categories = getCategories(
         store.data[0].metaData,
         layout.rows[1].dimension

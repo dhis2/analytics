@@ -1,6 +1,6 @@
 const DEFAULT_PANE_SIZE = '100%'
 
-export default function () {
+export default function() {
     return {
         center: ['50%', '85%'],
         size: DEFAULT_PANE_SIZE,

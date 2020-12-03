@@ -41,14 +41,20 @@ describe('The SelectedItems component', () => {
         })
 
         it('triggers onDeselect when item double-clicked', () => {
-            selectedItems().find('li').first().simulate('doubleClick')
+            selectedItems()
+                .find('li')
+                .first()
+                .simulate('doubleClick')
 
             expect(props.onDeselect).toHaveBeenCalled()
             expect(props.onDeselect).toHaveBeenCalledWith(['rb'])
         })
 
         it('triggers onDeselect when Deselect All button clicked', () => {
-            selectedItems().find('Button').first().simulate('click')
+            selectedItems()
+                .find('Button')
+                .first()
+                .simulate('click')
 
             expect(props.onDeselect).toHaveBeenCalled()
             expect(props.onDeselect).toHaveBeenCalledWith(['rb', 'rr'])
@@ -57,7 +63,9 @@ describe('The SelectedItems component', () => {
         it('triggers onDeselect when "Deselect highlighted" button clicked', () => {
             const list = selectedItems()
 
-            list.find('Item').first().simulate('click', false, false, 0, 'rb')
+            list.find('Item')
+                .first()
+                .simulate('click', false, false, 0, 'rb')
 
             const onClickFn = list.find('ArrowButton').prop('onClick')
 

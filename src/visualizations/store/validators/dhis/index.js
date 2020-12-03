@@ -38,7 +38,7 @@ function validateRow(row, headersLength, error) {
     row.forEach(rowValue => validateRowValue(rowValue, error))
 }
 
-export default function ({ data, error, warning }) {
+export default function({ data, error, warning }) {
     if (!isObject(data)) {
         error(getMessage('Data is not an object'))
     }
