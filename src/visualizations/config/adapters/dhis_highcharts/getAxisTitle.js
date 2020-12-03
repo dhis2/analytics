@@ -30,7 +30,7 @@ const getTitleStyle = (fontStyle, titleType, visType) =>
           }
         : {}
 
-export default function(title, fontStyle, titleType, visType) {
+export default function (title, fontStyle, titleType, visType) {
     return isString(title)
         ? Object.assign({}, getTitleStyle(fontStyle, titleType, visType), {
               text: title,

@@ -42,7 +42,7 @@ const getTransformedExtraOptions = extraOptions => ({
     multiAxisTheme: extraOptions.multiAxisTheme || defaultMultiAxisTheme1,
 })
 
-export default function({ store, layout, el, extraConfig, extraOptions }) {
+export default function ({ store, layout, el, extraConfig, extraOptions }) {
     const _layout = getTransformedLayout(layout)
     const _extraOptions = getTransformedExtraOptions(extraOptions)
 

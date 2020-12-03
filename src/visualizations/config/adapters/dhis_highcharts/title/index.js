@@ -37,7 +37,7 @@ function getDefault(layout, metaData, dashboard) {
     return null
 }
 
-export default function(layout, metaData, dashboard) {
+export default function (layout, metaData, dashboard) {
     const fontStyle =
         layout.fontStyle && layout.fontStyle[FONT_STYLE_VISUALIZATION_TITLE]
 

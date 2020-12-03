@@ -59,7 +59,7 @@ export const getDefault = (store, layout) =>
         ),
     })
 
-export default function(store, layout, extraOptions) {
+export default function (store, layout, extraOptions) {
     let xAxis
 
     if (isTwoCategoryChartType(layout.type) && layout.rows.length > 1) {

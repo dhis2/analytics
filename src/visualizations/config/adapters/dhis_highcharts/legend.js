@@ -62,7 +62,7 @@ function getLegend(fontStyle, dashboard, visType) {
     )
 }
 
-export default function(layout, dashboard) {
+export default function (layout, dashboard) {
     const fontStyle = layout.fontStyle[FONT_STYLE_LEGEND]
     return layout.hideLegend
         ? {

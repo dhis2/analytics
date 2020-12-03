@@ -33,7 +33,7 @@ function getDefault(layout, dashboard, filterTitle) {
     }
 }
 
-export default function(series, layout, metaData, dashboard) {
+export default function (series, layout, metaData, dashboard) {
     const fontStyle =
         layout.fontStyle && layout.fontStyle[FONT_STYLE_VISUALIZATION_SUBTITLE]
     let subtitle = {

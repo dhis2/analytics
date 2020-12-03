@@ -26,7 +26,7 @@ const DEFAULT_TRENDLINE = {
 export const isRegressionIneligible = type =>
     arrayContains([VIS_TYPE_GAUGE, VIS_TYPE_PIE], type)
 
-export default function(layout, series, isStacked) {
+export default function (layout, series, isStacked) {
     if (isTwoCategoryChartType(layout.type) && layout.rows.length > 1) {
         return getTwoCategoryTrendLines(layout, series, isStacked)
     } else {
@@ -166,9 +166,7 @@ function getDarkerColor(color) {
             DEFAULT_TRENDLINE.color
     }
 
-    return rgb(color)
-        .darker(0.5)
-        .toString()
+    return rgb(color).darker(0.5).toString()
 }
 
 function getRegressionData(data) {

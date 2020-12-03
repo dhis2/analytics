@@ -193,7 +193,7 @@ function getDefault(series, layout, isStacked, extraOptions) {
     return series
 }
 
-export default function(series, store, layout, isStacked, extraOptions) {
+export default function (series, store, layout, isStacked, extraOptions) {
     switch (layout.type) {
         case VIS_TYPE_PIE:
             series = getPie(

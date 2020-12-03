@@ -87,7 +87,7 @@ const getLabels = fontStyle => ({
     },
 })
 
-export default function(layout, series, legendSet) {
+export default function (layout, series, legendSet) {
     const plotLines = arrayClean([
         isNumber(layout.baseLineValue)
             ? getPlotLine(
@@ -119,7 +119,7 @@ export default function(layout, series, legendSet) {
         minorTickInterval: null,
         tickLength: 0,
         tickAmount: 0,
-        tickPositioner: function() {
+        tickPositioner: function () {
             return [this.min, this.max]
         },
         minColor: fillColor,

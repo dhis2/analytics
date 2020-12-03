@@ -32,7 +32,7 @@ export const applyLegendSet = (seriesObj, legendSet) =>
         : { ...seriesObj }
 
 export const getLegendSetTooltip = () => ({
-    pointFormatter: function() {
+    pointFormatter: function () {
         return (
             `<span style="color:${this.color}">●</span> ${this.series.name}: <b>${this.y}</b><br>` +
             (this.legend

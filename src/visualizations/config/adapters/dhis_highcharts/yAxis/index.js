@@ -161,7 +161,7 @@ function getBaseLine(layout) {
 function getFormatter(layout) {
     return isNumeric(layout.rangeAxisDecimals)
         ? {
-              formatter: function() {
+              formatter: function () {
                   return this.value.toFixed(layout.rangeAxisDecimals)
               },
           }
@@ -256,7 +256,7 @@ function getDefault(layout, series, extraOptions) {
     return axes
 }
 
-export default function(layout, series, extraOptions) {
+export default function (layout, series, extraOptions) {
     let yAxis
     switch (layout.type) {
         case VIS_TYPE_GAUGE:
