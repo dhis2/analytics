@@ -42,7 +42,7 @@ const getTransformedExtraOptions = extraOptions => ({
     multiAxisTheme: extraOptions.multiAxisTheme || defaultMultiAxisTheme1,
 })
 
-export default function ({ store, layout, el, extraConfig, extraOptions }) {
+export default function({ store, layout, el, extraConfig, extraOptions }) {
     const _layout = getTransformedLayout(layout)
     const _extraOptions = getTransformedExtraOptions(extraOptions)
 
@@ -124,7 +124,12 @@ export default function ({ store, layout, el, extraConfig, extraOptions }) {
         const columnItems = _layout.columns[0].items
         const xAxisName = metaDataItems[columnItems[1].id].name
         const yAxisName = metaDataItems[columnItems[0].id].name
-        config.plotOptions = getPlotOptions({visType: _layout.type, xAxisName, yAxisName, showLabels: _layout.showValues || _layout.showData})
+        config.plotOptions = getPlotOptions({
+            visType: _layout.type,
+            xAxisName,
+            yAxisName,
+            showLabels: _layout.showValues || _layout.showData,
+        })
     }
 
     // hide empty categories
