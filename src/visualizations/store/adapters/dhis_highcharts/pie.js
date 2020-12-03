@@ -1,4 +1,4 @@
-export default function(acc, series, categories, idValueMap, metaData) {
+export default function (acc, series, categories, idValueMap, metaData) {
     series[0].forEach(serieItemId => {
         const value = idValueMap.get(serieItemId)
 

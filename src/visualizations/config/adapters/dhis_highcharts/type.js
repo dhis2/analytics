@@ -13,7 +13,7 @@ import {
     VIS_TYPE_YEAR_OVER_YEAR_COLUMN,
 } from '../../../../modules/visTypes'
 
-export default function(type) {
+export default function (type) {
     switch (type) {
         case VIS_TYPE_BAR:
         case VIS_TYPE_STACKED_BAR:

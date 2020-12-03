@@ -4,7 +4,7 @@ import adapters from './adapters'
 import generators from './generators'
 import { theme1 } from '../util/colors'
 
-export default function({
+export default function ({
     store,
     layout,
     el,
@@ -56,9 +56,9 @@ export default function({
         })
     }
 
-    this.createVisualization = () => 
+    this.createVisualization = () =>
         _generator(this.getConfig(), el, {
             ...extraOptions,
-            fontStyle: layout.fontStyle
+            fontStyle: layout.fontStyle,
         })
 }
