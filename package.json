@@ -37,7 +37,7 @@
         "enzyme-adapter-react-16": "^1.15.5",
         "fs-extra": "^9.0.0",
         "jest-enzyme": "^7.0.2",
-        "typeface-roboto": "^0.0.75"
+        "typeface-roboto": "^1.1.13"
     },
     "peerDependencies": {
         "@dhis2/d2-i18n": "^1.0.6",
