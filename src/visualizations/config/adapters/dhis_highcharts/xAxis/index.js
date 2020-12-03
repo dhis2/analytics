@@ -11,7 +11,7 @@ import {
     VIS_TYPE_PIE,
     VIS_TYPE_RADAR,
     VIS_TYPE_SCATTER,
-    isTwoCategoryChartType, 
+    isTwoCategoryChartType,
 } from '../../../../../modules/visTypes'
 import {
     FONT_STYLE_HORIZONTAL_AXIS_TITLE,
@@ -59,7 +59,7 @@ export const getDefault = (store, layout) =>
         ),
     })
 
-export default function (store, layout, extraOptions) {
+export default function(store, layout, extraOptions) {
     let xAxis
 
     if (isTwoCategoryChartType(layout.type) && layout.rows.length > 1) {

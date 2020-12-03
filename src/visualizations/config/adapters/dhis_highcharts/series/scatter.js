@@ -29,7 +29,8 @@ export default (series, store) => {
 
     return [
         {
-            data: data.length >= 1000 ? data.map(item => [item.x, item.y]) : data,
+            data:
+                data.length >= 1000 ? data.map(item => [item.x, item.y]) : data,
             marker,
         },
     ]
