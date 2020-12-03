@@ -111,7 +111,7 @@ export default function({ store, layout, el, extraConfig, extraOptions }) {
     }
 
     // get plot options for scatter
-    if ([VIS_TYPE_SCATTER].includes(_layout.type)) {
+    if (_layout.type === VIS_TYPE_SCATTER) {
         const metaDataItems = store.data[0].metaData.items
         const columnItems = _layout.columns[0].items
         const xAxisName = metaDataItems[columnItems[1].id].name
