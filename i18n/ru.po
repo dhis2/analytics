@@ -9,7 +9,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-11-02T07:31:40.378Z\n"
+"POT-Creation-Date: 2020-11-30T10:27:09.237Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: Yury Rogachev <yury@dhis2.org>, 2020\n"
 "Language-Team: Russian (https://www.transifex.com/hisp-uio/teams/100509/ru/)\n"
@@ -361,6 +361,9 @@ msgstr "Колонны"
 msgid "Rows"
 msgstr "Строки"
 
+msgid "Points"
+msgstr ""
+
 msgid "Reporting rate"
 msgstr "Показатель отчетности"
 
@@ -520,6 +523,9 @@ msgstr "Год за годом (столбец)"
 msgid "Single value"
 msgstr "Одиночное значение"
 
+msgid "Scatter"
+msgstr ""
+
 msgid "View data and indicators in a manipulatable table."
 msgstr ""
 
@@ -571,6 +577,11 @@ msgid "Display a single value. Recommend relative period to show latest data."
 msgstr ""
 "Показать единичное значение. Рекомендуется использовать относительную дату "
 "для отображения последних данных"
+
+msgid ""
+"View the relationship between two data items at a place or time. Recommended"
+" for finding outliers."
+msgstr ""
 
 msgid "No legend for this series"
 msgstr "Отсутвует легенда для этого ряда"
