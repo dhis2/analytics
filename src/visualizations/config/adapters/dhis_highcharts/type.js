@@ -14,7 +14,7 @@ import {
     VIS_TYPE_SCATTER,
 } from '../../../../modules/visTypes'
 
-export default function(type) {
+export default function (type) {
     switch (type) {
         case VIS_TYPE_BAR:
         case VIS_TYPE_STACKED_BAR:

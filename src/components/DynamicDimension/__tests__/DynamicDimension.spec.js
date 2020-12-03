@@ -16,21 +16,16 @@ describe('The Period Dimension component ', () => {
 
     beforeEach(() => {
         props = {
-            d2: {},
+            context: {},
             selectedItems: [],
             onSelect: jest.fn(),
-            onDeselect: jest.fn(),
-            onReorder: jest.fn(),
-            dialogTitle: 'test',
-            dialogId: '123abc',
+            dimensionId: '123abc',
         }
         shallowSelector = undefined
     })
 
     it('renders an <ItemSelector>', () => {
-        const itemSelector = dynamicSelector()
-            .find('ItemSelector')
-            .first()
+        const itemSelector = dynamicSelector().find('ItemSelector').first()
 
         expect(itemSelector.children()).toEqual(dynamicSelector().children())
     })

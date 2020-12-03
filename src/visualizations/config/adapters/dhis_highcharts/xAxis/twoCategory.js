@@ -6,8 +6,7 @@ import {
     FONT_STYLE_CATEGORY_AXIS_LABELS,
 } from '../../../../../modules/fontStyle'
 
-
-export default function(store, layout) {
+export default function (store, layout) {
     const axis1Categories = getCategories(
         store.data[0].metaData,
         layout.rows[1].dimension
@@ -21,12 +20,19 @@ export default function(store, layout) {
     // bottom x axis
     const xAxis = [
         {
-            title: getAxisTitle(layout.domainAxisLabel, layout.fontStyle[FONT_STYLE_HORIZONTAL_AXIS_TITLE], FONT_STYLE_HORIZONTAL_AXIS_TITLE, layout.type),
+            title: getAxisTitle(
+                layout.domainAxisLabel,
+                layout.fontStyle[FONT_STYLE_HORIZONTAL_AXIS_TITLE],
+                FONT_STYLE_HORIZONTAL_AXIS_TITLE,
+                layout.type
+            ),
             categories: Array.from(
                 { length: axis2Categories.length || 1 },
                 () => axis1Categories
             ),
-            labels: getLabelsStyle(layout.fontStyle[FONT_STYLE_CATEGORY_AXIS_LABELS]),
+            labels: getLabelsStyle(
+                layout.fontStyle[FONT_STYLE_CATEGORY_AXIS_LABELS]
+            ),
         },
     ]
 

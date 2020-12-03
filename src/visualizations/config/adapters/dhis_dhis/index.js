@@ -2,7 +2,7 @@ import getTitle from './title'
 import getSubtitle from './subtitle'
 import getValue from './value'
 
-export default function({ store, layout, extraOptions }) {
+export default function ({ store, layout, extraOptions }) {
     const data = store.generateData({
         type: layout.type,
         seriesId:

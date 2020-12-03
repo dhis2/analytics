@@ -1,7 +1,7 @@
 import getSingleValueGenerator from './singleValue'
 import { VIS_TYPE_SINGLE_VALUE } from '../../../../modules/visTypes'
 
-export default function(config, parentEl, extraOptions) {
+export default function (config, parentEl, extraOptions) {
     if (config) {
         const node =
             typeof parentEl === 'object'
@@ -23,7 +23,7 @@ export default function(config, parentEl, extraOptions) {
                     content = getSingleValueGenerator(
                         config,
                         node,
-                        extraOptions,
+                        extraOptions
                     )
                     break
             }

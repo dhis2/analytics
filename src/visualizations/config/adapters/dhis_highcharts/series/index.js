@@ -65,7 +65,11 @@ function getIdColorMap(series, layout, extraOptions) {
         )
     )
 
-    if (isDualAxisType(layout.type) && hasCustomAxes(filteredSeries) && !axisHasRelativeItems(layout.columns)) {
+    if (
+        isDualAxisType(layout.type) &&
+        hasCustomAxes(filteredSeries) &&
+        !axisHasRelativeItems(layout.columns)
+    ) {
         const axisIdsMap = getAxisIdsMap(layout.series, series)
         const theme = extraOptions.multiAxisTheme
 
@@ -120,7 +124,7 @@ function getDefault(series, layout, isStacked, extraOptions) {
         if (!seriesObj.dataLabels && (layout.showValues || layout.showData)) {
             seriesObj.dataLabels = {
                 enabled: true,
-                color: colors.grey900
+                color: colors.grey900,
             }
         }
 
@@ -170,9 +174,10 @@ function getDefault(series, layout, isStacked, extraOptions) {
             : idColorMap[seriesObj.id]
 
         // axis number
-        seriesObj.yAxis = isDualAxisType(layout.type) && !axisHasRelativeItems(layout.columns)
-            ? getAxisStringFromId(fullIdAxisMap[seriesObj.id])
-            : getAxisStringFromId(0)
+        seriesObj.yAxis =
+            isDualAxisType(layout.type) && !axisHasRelativeItems(layout.columns)
+                ? getAxisStringFromId(fullIdAxisMap[seriesObj.id])
+                : getAxisStringFromId(0)
 
         // custom names for "year over year" series
         if (extraOptions.yearlySeries) {
@@ -188,7 +193,7 @@ function getDefault(series, layout, isStacked, extraOptions) {
     return series
 }
 
-export default function(series, store, layout, isStacked, extraOptions) {
+export default function (series, store, layout, isStacked, extraOptions) {
     switch (layout.type) {
         case VIS_TYPE_PIE:
             series = getPie(

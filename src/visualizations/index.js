@@ -1,5 +1,4 @@
 import isArray from 'd2-utilizr/lib/isArray'
-import 'core-js/fn/array/find-index'
 
 import Store from './store'
 import Config from './config'
@@ -28,9 +27,7 @@ function createVisualization(
         store,
         layout: {
             ...layout,
-            fontStyle: mergeFontStyleWithDefault(
-                layout.fontStyle
-            ),
+            fontStyle: mergeFontStyleWithDefault(layout.fontStyle),
         },
         el,
         outputFormat,
