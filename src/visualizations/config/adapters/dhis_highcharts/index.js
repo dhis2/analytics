@@ -7,6 +7,7 @@ import getSeries from './series'
 import getTitle from './title'
 import getSubtitle from './subtitle'
 import getLegend from './legend'
+import getPlotOptions from './plotOptions'
 import getPane from './pane'
 import getNoData from './noData'
 import { applyLegendSet, getLegendSetTooltip } from './legendSet'
@@ -14,6 +15,7 @@ import {
     isStacked,
     isDualAxisType,
     isLegendSetType,
+    VIS_TYPE_SCATTER,
 } from '../../../../modules/visTypes'
 import getSortedConfig from './getSortedConfig'
 import getTrimmedConfig from './getTrimmedConfig'
@@ -114,6 +116,20 @@ export default function ({ store, layout, el, extraConfig, extraOptions }) {
             // disable exporting context menu
             enabled: false,
         },
+    }
+
+    // get plot options for scatter
+    if (_layout.type === VIS_TYPE_SCATTER) {
+        const metaDataItems = store.data[0].metaData.items
+        const columnItems = _layout.columns[0].items
+        const xAxisName = metaDataItems[columnItems[1].id].name
+        const yAxisName = metaDataItems[columnItems[0].id].name
+        config.plotOptions = getPlotOptions({
+            visType: _layout.type,
+            xAxisName,
+            yAxisName,
+            showLabels: _layout.showValues || _layout.showData,
+        })
     }
 
     // hide empty categories

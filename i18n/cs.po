@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-11-02T07:31:40.378Z\n"
+"POT-Creation-Date: 2020-11-30T10:27:09.237Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: trendspotter, 2020\n"
 "Language-Team: Czech (https://www.transifex.com/hisp-uio/teams/100509/cs/)\n"
@@ -357,6 +357,9 @@ msgstr "Sloupce"
 msgid "Rows"
 msgstr "Řádky"
 
+msgid "Points"
+msgstr ""
+
 msgid "Reporting rate"
 msgstr "Míra hlášení"
 
@@ -516,6 +519,9 @@ msgstr "Rok po roce (sloupce)"
 msgid "Single value"
 msgstr "Jedna hodnota"
 
+msgid "Scatter"
+msgstr ""
+
 msgid "View data and indicators in a manipulatable table."
 msgstr "Zobrazit data a ukazatele v manipulovatelné tabulce."
 
@@ -581,6 +587,11 @@ msgid "Display a single value. Recommend relative period to show latest data."
 msgstr ""
 "Zobrazit jednu hodnotu. Doporučit relativní období pro zobrazení "
 "nejnovějších údajů."
+
+msgid ""
+"View the relationship between two data items at a place or time. Recommended"
+" for finding outliers."
+msgstr ""
 
 msgid "No legend for this series"
 msgstr "Pro tuto sérii není legenda"

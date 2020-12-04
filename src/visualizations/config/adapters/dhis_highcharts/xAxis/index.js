@@ -10,6 +10,7 @@ import {
     VIS_TYPE_YEAR_OVER_YEAR_COLUMN,
     VIS_TYPE_PIE,
     VIS_TYPE_RADAR,
+    VIS_TYPE_SCATTER,
     isTwoCategoryChartType,
 } from '../../../../../modules/visTypes'
 import {
@@ -67,6 +68,7 @@ export default function (store, layout, extraOptions) {
         switch (layout.type) {
             case VIS_TYPE_PIE:
             case VIS_TYPE_GAUGE:
+            case VIS_TYPE_SCATTER:
                 xAxis = noAxis()
                 break
             case VIS_TYPE_YEAR_OVER_YEAR_LINE:

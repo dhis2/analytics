@@ -3,6 +3,7 @@ import { colors } from '@dhis2/ui'
 import getCumulativeData from '../getCumulativeData'
 import getPie from './pie'
 import getGauge from './gauge'
+import getScatter from './scatter'
 import getType from '../type'
 import { getFullIdAxisMap, getAxisIdsMap } from '../customAxes'
 import { generateColors } from '../../../../util/colors/gradientColorGenerator'
@@ -16,6 +17,7 @@ import {
     isDualAxisType,
     isYearOverYear,
     VIS_TYPE_LINE,
+    VIS_TYPE_SCATTER,
 } from '../../../../../modules/visTypes'
 import { hasCustomAxes } from '../../../../../modules/axis'
 import { getAxisStringFromId } from '../../../../util/axisId'
@@ -201,6 +203,9 @@ export default function (series, store, layout, isStacked, extraOptions) {
             break
         case VIS_TYPE_GAUGE:
             series = getGauge(series, layout, extraOptions.legendSets[0])
+            break
+        case VIS_TYPE_SCATTER:
+            series = getScatter(series, store)
             break
         default:
             series = getDefault(series, layout, isStacked, extraOptions)

@@ -6,11 +6,16 @@ import {
 import { ALL_AXIS_IDS } from '../../layout/axis'
 import {
     DIMENSION_ID_DATA,
+    DIMENSION_ID_ORGUNIT,
     DIMENSION_ID_PERIOD,
 } from '../../predefinedDimensions'
 
 // Consts
-const lockableDims = [DIMENSION_ID_DATA, DIMENSION_ID_PERIOD]
+const lockableDims = [
+    DIMENSION_ID_DATA,
+    DIMENSION_ID_PERIOD,
+    DIMENSION_ID_ORGUNIT,
+]
 const disallowableDims = [DIMENSION_ID_DATA, DIMENSION_ID_PERIOD]
 
 // Helper fns
