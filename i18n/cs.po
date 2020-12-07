@@ -358,7 +358,7 @@ msgid "Rows"
 msgstr "Řádky"
 
 msgid "Points"
-msgstr ""
+msgstr "Body"
 
 msgid "Reporting rate"
 msgstr "Míra hlášení"
@@ -520,7 +520,7 @@ msgid "Single value"
 msgstr "Jedna hodnota"
 
 msgid "Scatter"
-msgstr ""
+msgstr "Rozptyl"
 
 msgid "View data and indicators in a manipulatable table."
 msgstr "Zobrazit data a ukazatele v manipulovatelné tabulce."
@@ -592,6 +592,8 @@ msgid ""
 "View the relationship between two data items at a place or time. Recommended"
 " for finding outliers."
 msgstr ""
+"Zobrazte vztah mezi dvěma datovými položkami v určitém místě nebo čase. "
+"Doporučeno pro hledání odlehlých hodnot."
 
 msgid "No legend for this series"
 msgstr "Pro tuto sérii není legenda"
