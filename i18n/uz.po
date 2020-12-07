@@ -358,7 +358,7 @@ msgid "Rows"
 msgstr "Қаторлар"
 
 msgid "Points"
-msgstr ""
+msgstr "Нуқталар"
 
 msgid "Reporting rate"
 msgstr "Ҳисоботдаги ставка"
@@ -520,7 +520,7 @@ msgid "Single value"
 msgstr "Ягона қиймат"
 
 msgid "Scatter"
-msgstr ""
+msgstr "Тарқоқлик"
 
 msgid "View data and indicators in a manipulatable table."
 msgstr "Бошқариладиган жадвалда индикаторлар ва маълумотларни кўздан кечиринг"
@@ -594,6 +594,8 @@ msgid ""
 "View the relationship between two data items at a place or time. Recommended"
 " for finding outliers."
 msgstr ""
+"Жой ва вақт сифатидаги икки маълумотлар орасидаги ўзаро муносабатларни "
+"кўриш. ортиқча натижаларни топиш учун тавсия этилади."
 
 msgid "No legend for this series"
 msgstr "Ушбу серия учун таъриф мавжуд эмас"
