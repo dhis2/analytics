@@ -110,7 +110,7 @@ export const dataElementOperandsQuery = {
         }
 
         if (filterText) {
-            filters.push(`${nameProp}:ilike:{$filterText}`)
+            filters.push(`${nameProp}:ilike:${filterText}`)
         }
 
         return {
