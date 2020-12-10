@@ -1,3 +1,10 @@
+## [11.3.4](https://github.com/dhis2/analytics/compare/v11.3.3...v11.3.4) (2020-12-09)
+
+
+### Bug Fixes
+
+* add data test to the data dim info box ([#726](https://github.com/dhis2/analytics/issues/726)) ([001136d](https://github.com/dhis2/analytics/commit/001136d8de0e52948138f25bdfa7fdecfb139231))
+
 ## [11.3.3](https://github.com/dhis2/analytics/compare/v11.3.2...v11.3.3) (2020-12-08)
 
 
