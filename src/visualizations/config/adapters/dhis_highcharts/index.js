@@ -27,6 +27,7 @@ import {
     LEGEND_DISPLAY_STRATEGY_BY_DATA_ITEM,
     LEGEND_DISPLAY_STRATEGY_FIXED,
 } from '../../../../modules/legends'
+import getScatterData from './getScatterData'
 
 const getTransformedLayout = layout => ({
     ...layout,
@@ -129,6 +130,7 @@ export default function ({ store, layout, el, extraConfig, extraOptions }) {
             xAxisName,
             yAxisName,
             showLabels: _layout.showValues || _layout.showData,
+            tooltipData: getScatterData(series, store),
         })
     }
 
