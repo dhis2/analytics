@@ -27,6 +27,7 @@ export default ({ visType, xAxisName, yAxisName, showLabels, tooltipData }) => {
                             return getTooltip(this.x, this.y)
                         },
                     },
+                    boostThreshold: 1,
                 },
             }
         default:
