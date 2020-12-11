@@ -1,3 +1,22 @@
+# [12.0.0](https://github.com/dhis2/analytics/compare/v11.3.5...v12.0.0) (2020-12-11)
+
+
+### Features
+
+* use dataEngine (trigger publish) ([#730](https://github.com/dhis2/analytics/issues/730)) ([93a2703](https://github.com/dhis2/analytics/commit/93a2703922a40cb95bb030b51c4a4ea7d8a73922))
+
+
+### BREAKING CHANGES
+
+* Apps need to pass the dataEngine in place of d2
+
+## [11.3.5](https://github.com/dhis2/analytics/compare/v11.3.4...v11.3.5) (2020-12-11)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([708153d](https://github.com/dhis2/analytics/commit/708153d6610cfe7b9b707fa057e87c31ceddcc71))
+
 ## [11.3.4](https://github.com/dhis2/analytics/compare/v11.3.3...v11.3.4) (2020-12-09)
 
 
