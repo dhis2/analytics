@@ -62,6 +62,9 @@ export default function ({ store, layout, el, extraConfig, extraOptions }) {
                 : null,
     })
 
+    if (_layout.type === VIS_TYPE_SCATTER) {
+        _extraOptions.scatterData = getScatterData(series, store)
+    }
     let config = {
         // type etc
         chart: getChart(_layout, el, _extraOptions.dashboard),

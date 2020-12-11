@@ -22,7 +22,6 @@ import {
 import { hasCustomAxes } from '../../../../../modules/axis'
 import { getAxisStringFromId } from '../../../../util/axisId'
 import { axisHasRelativeItems } from '../../../../../modules/layout/axisHasRelativeItems'
-import getScatterData from '../getScatterData'
 
 const DEFAULT_ANIMATION_DURATION = 200
 
@@ -206,7 +205,7 @@ export default function (series, store, layout, isStacked, extraOptions) {
             series = getGauge(series, layout, extraOptions.legendSets[0])
             break
         case VIS_TYPE_SCATTER:
-            series = getScatter(getScatterData(series, store))
+            series = getScatter(extraOptions.scatterData)
             break
         default:
             series = getDefault(series, layout, isStacked, extraOptions)
