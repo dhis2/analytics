@@ -1,5 +1,6 @@
 import objectClean from 'd2-utilizr/lib/objectClean'
 import isString from 'd2-utilizr/lib/isString'
+
 import getChart from './chart'
 import getXAxis from './xAxis'
 import getYAxis from './yAxis'
@@ -101,9 +102,10 @@ export default function ({ store, layout, el, extraConfig, extraOptions }) {
         // pane
         pane: getPane(_layout.type),
 
-        // no data
+        // no data + zoom
         lang: {
             noData: _extraOptions.noData.text,
+            resetZoom: _extraOptions.resetZoom.text,
         },
         noData: getNoData(),
 

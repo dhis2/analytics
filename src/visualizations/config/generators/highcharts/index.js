@@ -16,6 +16,12 @@ export default function (config, el) {
     if (config) {
         config.chart.renderTo = el || config.chart.renderTo
 
+        if (config.lang) {
+            H.setOptions({
+                lang: config.lang,
+            })
+        }
+
         return new H.Chart(config)
     }
 }

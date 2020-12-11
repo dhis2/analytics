@@ -41,6 +41,9 @@ export default function ({
             noData: {
                 text: i18n.t('No data'),
             },
+            resetZoom: {
+                text: i18n.t('Reset zoom'),
+            },
         }
 
         return _adapter({
