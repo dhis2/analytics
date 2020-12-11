@@ -359,7 +359,7 @@ msgid "Rows"
 msgstr "Rader"
 
 msgid "Points"
-msgstr ""
+msgstr "Punkter"
 
 msgid "Reporting rate"
 msgstr "Rapporteringfrekvens"
@@ -521,7 +521,7 @@ msgid "Single value"
 msgstr "Enkeltverdi"
 
 msgid "Scatter"
-msgstr ""
+msgstr " Spredning"
 
 msgid "View data and indicators in a manipulatable table."
 msgstr "Vis data og indikatorer i en manipulerbar tabell."
@@ -593,6 +593,8 @@ msgid ""
 "View the relationship between two data items at a place or time. Recommended"
 " for finding outliers."
 msgstr ""
+"Se forholdet mellom to datapunkter på et sted eller tidspunkt. Anbefalt for "
+"å finne avvikere."
 
 msgid "No legend for this series"
 msgstr "Ingen tegnforklaring for denne serien"
