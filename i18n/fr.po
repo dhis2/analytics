@@ -592,7 +592,7 @@ msgid "Base"
 msgstr "Base"
 
 msgid "Axis {{axisId}}"
-msgstr ""
+msgstr "Axe {{{axisId}}"
 
 msgid "No data"
 msgstr "Aucune donnée"
