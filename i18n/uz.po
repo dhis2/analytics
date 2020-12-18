@@ -412,7 +412,7 @@ msgid "Event data items"
 msgstr "Ҳодисалар ҳақида маълумот элементлари"
 
 msgid "Program indicators"
-msgstr "Дастур кўрсатгичлари"
+msgstr "Дастур индикаторлари"
 
 msgid "Extra Small"
 msgstr "Жуда Кичик"
