@@ -34,11 +34,7 @@ export default function ({
     if (!_generator) {
         onError(`No visualization implementation for format ${outputFormat}`)
     }
-    this._config = undefined
     this.getConfig = () => {
-        if (this._config) {
-            return this._config
-        }
         const DEFAULT_EXTRA_OPTIONS = {
             colors: theme1,
             noData: {
@@ -49,7 +45,7 @@ export default function ({
             },
         }
 
-        this._config = _adapter({
+        const config = _adapter({
             layout: _validator({ layout, onError, onWarning }),
             extraOptions: Object.assign(
                 {},
@@ -60,7 +56,11 @@ export default function ({
             el,
             extraLayout,
         })
-        return this._config
+        window.$config = {
+            ...config,
+            chart: { ...config.chart, renderTo: null },
+        }
+        return config
     }
 
     this.createVisualization = () =>
