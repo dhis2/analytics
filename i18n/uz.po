@@ -37,7 +37,7 @@ msgid "Add to {{axisName}}"
 msgstr "{{axisName}} га қўшинг"
 
 msgid "Remove"
-msgstr "Ўчириш"
+msgstr "Олиб ташлаш"
 
 msgid "Not available for {{visualizationType}}"
 msgstr "{{visualizationType}} учун мавжуд эмас"
