@@ -1,3 +1,10 @@
+# [12.1.0](https://github.com/dhis2/analytics/compare/v12.0.5...v12.1.0) (2020-12-21)
+
+
+### Features
+
+* reverse-map values to labels for large datasets (DHIS2-10103) ([#727](https://github.com/dhis2/analytics/issues/727)) ([8e8ad91](https://github.com/dhis2/analytics/commit/8e8ad9128a50ae99279daf71ef9949d48b3acd2a))
+
 ## [12.0.5](https://github.com/dhis2/analytics/compare/v12.0.4...v12.0.5) (2020-12-21)
 
 
