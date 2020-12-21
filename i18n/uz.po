@@ -43,7 +43,7 @@ msgid "Add Assigned Categories"
 msgstr "Белгиланган категориялар қўшилсин"
 
 msgid "Remove"
-msgstr "Ўчириш"
+msgstr "Олиб ташлаш"
 
 msgid "Filter dimensions"
 msgstr "Фильтр созламалари"
