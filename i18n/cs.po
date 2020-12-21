@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-11-30T10:27:09.237Z\n"
+"POT-Creation-Date: 2020-12-21T08:01:55.494Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: trendspotter, 2020\n"
 "Language-Team: Czech (https://www.transifex.com/hisp-uio/teams/100509/cs/)\n"
@@ -598,6 +598,9 @@ msgstr ""
 msgid "No legend for this series"
 msgstr "Pro tuto sérii není legenda"
 
+msgid "and {{amount}} more..."
+msgstr ""
+
 msgid "Target"
 msgstr "Cíl"
 
@@ -609,3 +612,6 @@ msgstr "Osa {{axisId}}"
 
 msgid "No data"
 msgstr "Nejsou data"
+
+msgid "Reset zoom"
+msgstr ""
