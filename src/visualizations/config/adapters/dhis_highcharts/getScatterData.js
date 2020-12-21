@@ -18,7 +18,7 @@ export default function (series, store) {
 
         const name = metaDataItems[row].name
 
-        if (y && x && name) {
+        if (!isNaN(y) && !isNaN(x) && name) {
             return { y, x, name }
         }
     })
