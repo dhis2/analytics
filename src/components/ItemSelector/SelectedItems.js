@@ -18,8 +18,8 @@ const Subtitle = () => (
     </div>
 )
 
-const InfoBox = ({ message }) => (
-    <div className="info-container">
+const InfoBox = ({ message, dataTest }) => (
+    <div className="info-container" data-test={dataTest}>
         <InfoIcon style={{ fontSize: 16, color: colors.grey600 }} />
         <span className="info-text">{message}</span>
         <style jsx>{styles}</style>
@@ -224,7 +224,10 @@ export class SelectedItems extends Component {
             <Fragment>
                 <Subtitle />
                 {this.props.infoBoxMessage ? (
-                    <InfoBox message={this.props.infoBoxMessage} />
+                    <InfoBox
+                        message={this.props.infoBoxMessage}
+                        dataTest={`${this.props.dataTest}-info-box`}
+                    />
                 ) : null}
                 <DragDropContext
                     onDragStart={this.onDragStart}
@@ -264,6 +267,7 @@ export class SelectedItems extends Component {
 }
 
 InfoBox.propTypes = {
+    dataTest: PropTypes.string,
     message: PropTypes.string,
 }
 

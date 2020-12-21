@@ -69,7 +69,7 @@ function getValueFunction(type) {
     }
 }
 
-export default function({ type, data, seriesId, categoryId }) {
+export default function ({ type, data, seriesId, categoryId }) {
     const valueFunction = getValueFunction(type)
 
     return data.reduce((acc, res) => {

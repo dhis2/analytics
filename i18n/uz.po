@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-11-02T07:31:40.378Z\n"
+"POT-Creation-Date: 2020-11-30T10:27:09.237Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: Ibatov <ibatovk@who.int>, 2020\n"
 "Language-Team: Uzbek (Cyrillic) (https://www.transifex.com/hisp-uio/teams/100509/uz@Cyrl/)\n"
@@ -43,7 +43,7 @@ msgid "Add Assigned Categories"
 msgstr "Белгиланган категориялар қўшилсин"
 
 msgid "Remove"
-msgstr "Ўчириш"
+msgstr "Олиб ташлаш"
 
 msgid "Filter dimensions"
 msgstr "Фильтр созламалари"
@@ -357,6 +357,9 @@ msgstr "Устунлар"
 msgid "Rows"
 msgstr "Қаторлар"
 
+msgid "Points"
+msgstr "Нуқталар"
+
 msgid "Reporting rate"
 msgstr "Ҳисоботдаги ставка"
 
@@ -409,7 +412,7 @@ msgid "Event data items"
 msgstr "Ҳодисалар ҳақида маълумот элементлари"
 
 msgid "Program indicators"
-msgstr "Дастур кўрсатгичлари"
+msgstr "Дастур индикаторлари"
 
 msgid "Extra Small"
 msgstr "Жуда Кичик"
@@ -516,6 +519,9 @@ msgstr "Йилдан йилга (устун)"
 msgid "Single value"
 msgstr "Ягона қиймат"
 
+msgid "Scatter"
+msgstr "Тарқоқлик"
+
 msgid "View data and indicators in a manipulatable table."
 msgstr "Бошқариладиган жадвалда индикаторлар ва маълумотларни кўздан кечиринг"
 
@@ -584,8 +590,15 @@ msgstr ""
 "Битта қийматни кўрсатиш. Охирги маълумотларни кўрсатиш учун боғлиқ даврни "
 "таққосланг."
 
-msgid "No legend for this series"
+msgid ""
+"View the relationship between two data items at a place or time. Recommended"
+" for finding outliers."
 msgstr ""
+"Жой ва вақт сифатидаги икки маълумотлар орасидаги ўзаро муносабатларни "
+"кўриш. ортиқча натижаларни топиш учун тавсия этилади."
+
+msgid "No legend for this series"
+msgstr "Ушбу серия учун таъриф мавжуд эмас"
 
 msgid "Target"
 msgstr "Нишон"

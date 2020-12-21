@@ -1,6 +1,6 @@
 import getFilterText from '../../../../util/getFilterText'
 
-export default function(layout, metaData) {
+export default function (layout, metaData) {
     if (layout.columns) {
         const firstItem = layout.columns[0].items[0]
 

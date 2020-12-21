@@ -2,15 +2,15 @@
 # Translators:
 # phil_dhis2, 2020
 # Viktor Varland <viktor@dhis2.org>, 2020
-# easylin <lin_xd@126.com>, 2020
 # 晓东 林 <13981924470@126.com>, 2020
+# easylin <lin_xd@126.com>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-11-02T07:31:40.378Z\n"
+"POT-Creation-Date: 2020-11-30T10:27:09.237Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: 晓东 林 <13981924470@126.com>, 2020\n"
+"Last-Translator: easylin <lin_xd@126.com>, 2020\n"
 "Language-Team: Chinese (https://www.transifex.com/hisp-uio/teams/100509/zh/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -360,6 +360,9 @@ msgstr "列"
 msgid "Rows"
 msgstr "行"
 
+msgid "Points"
+msgstr "点数"
+
 msgid "Reporting rate"
 msgstr "上报率"
 
@@ -519,6 +522,9 @@ msgstr "逐年（列图）"
 msgid "Single value"
 msgstr "单个值"
 
+msgid "Scatter"
+msgstr "分散"
+
 msgid "View data and indicators in a manipulatable table."
 msgstr "在可操作的表格中查看数据和指标。"
 
@@ -569,8 +575,13 @@ msgstr "比较多个时间段之间随时间的变化。"
 msgid "Display a single value. Recommend relative period to show latest data."
 msgstr "显示单个值。推荐相对时期以显示最新数据。"
 
+msgid ""
+"View the relationship between two data items at a place or time. Recommended"
+" for finding outliers."
+msgstr "查看某个地点或时间的两个数据项之间的关系。推荐用于发现异常值。"
+
 msgid "No legend for this series"
-msgstr ""
+msgstr "这个系列没有图例"
 
 msgid "Target"
 msgstr "目标"
