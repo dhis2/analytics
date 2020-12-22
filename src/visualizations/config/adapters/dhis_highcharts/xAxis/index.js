@@ -4,6 +4,7 @@ import getCategories from '../getCategories'
 import getYearOnYear from './yearOnYear'
 import getTwoCategory from './twoCategory'
 import getRadar from './radar'
+import getScatter from './scatter'
 import {
     VIS_TYPE_GAUGE,
     VIS_TYPE_YEAR_OVER_YEAR_LINE,
@@ -59,7 +60,7 @@ export const getDefault = (store, layout) =>
         ),
     })
 
-export default function (store, layout, extraOptions) {
+export default function (store, layout, extraOptions, series) {
     let xAxis
 
     if (isTwoCategoryChartType(layout.type) && layout.rows.length > 1) {
@@ -68,7 +69,6 @@ export default function (store, layout, extraOptions) {
         switch (layout.type) {
             case VIS_TYPE_PIE:
             case VIS_TYPE_GAUGE:
-            case VIS_TYPE_SCATTER:
                 xAxis = noAxis()
                 break
             case VIS_TYPE_YEAR_OVER_YEAR_LINE:
@@ -77,6 +77,9 @@ export default function (store, layout, extraOptions) {
                 break
             case VIS_TYPE_RADAR:
                 xAxis = [getRadar(store, layout)]
+                break
+            case VIS_TYPE_SCATTER:
+                xAxis = [getScatter(layout, series)]
                 break
             default:
                 xAxis = [getDefault(store, layout)]

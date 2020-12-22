@@ -85,7 +85,7 @@ export default function ({ store, layout, el, extraConfig, extraOptions }) {
         ),
 
         // x-axis
-        xAxis: getXAxis(store, _layout, _extraOptions),
+        xAxis: getXAxis(store, _layout, _extraOptions, series),
 
         // y-axis
         yAxis: getYAxis(_layout, series, _extraOptions),
@@ -203,10 +203,14 @@ export default function ({ store, layout, el, extraConfig, extraOptions }) {
 
     // flatten category groups
     if (config.xAxis?.length) {
-        config.xAxis = config.xAxis.map(xAxis => ({
-            ...xAxis,
-            categories: xAxis.categories.flat(),
-        }))
+        config.xAxis = config.xAxis.map(xAxis =>
+            xAxis.categories
+                ? {
+                      ...xAxis,
+                      categories: xAxis.categories.flat(),
+                  }
+                : xAxis
+        )
     }
 
     // force apply extra config
