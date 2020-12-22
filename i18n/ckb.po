@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-11-30T10:27:09.237Z\n"
+"POT-Creation-Date: 2020-12-21T08:01:55.494Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: KRG HIS <antonia.bezenchek@informa.pro>, 2020\n"
 "Language-Team: Central Kurdish (https://www.transifex.com/hisp-uio/teams/100509/ckb/)\n"
@@ -581,6 +581,9 @@ msgstr ""
 msgid "No legend for this series"
 msgstr ""
 
+msgid "and {{amount}} more..."
+msgstr ""
+
 msgid "Target"
 msgstr ""
 
@@ -591,4 +594,7 @@ msgid "Axis {{axisId}}"
 msgstr ""
 
 msgid "No data"
+msgstr ""
+
+msgid "Reset zoom"
 msgstr ""
