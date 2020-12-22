@@ -163,7 +163,8 @@ export default function ({ store, layout, el, extraConfig, extraOptions }) {
         _layout.regressionType !== 'NONE' &&
         !isRegressionIneligible(_layout.type) &&
         (!(isDualAxisType(layout.type) && hasCustomAxes(filteredSeries)) ||
-            axisHasRelativeItems(layout.columns))
+            axisHasRelativeItems(layout.columns)) &&
+        _layout.type !== VIS_TYPE_SCATTER
     ) {
         config.series = addTrendLines(_layout, config.series, stacked)
     }

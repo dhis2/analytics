@@ -1,12 +1,16 @@
-const marker = {
-    symbol: 'circle',
-}
+const DEFAULT_COLOR = '#a8bf24'
 
-export default data => {
+export default (data, color = DEFAULT_COLOR) => {
     return [
         {
             data: data.map(item => [item.x, item.y]),
-            marker,
+            marker: {
+                symbol: 'circle',
+                fillColor: color,
+                lineColor: color,
+                radius: 4,
+            },
+            color,
         },
     ]
 }
