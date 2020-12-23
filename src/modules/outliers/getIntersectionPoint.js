@@ -1,3 +1,3 @@
 import { intersect } from 'mathjs'
 
-export const getIntersectionPoint = (...points) => intersect(points)
+export const getIntersectionPoint = (...endPoints) => intersect(endPoints)
