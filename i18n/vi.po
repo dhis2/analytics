@@ -21,7 +21,7 @@ msgid "Data"
 msgstr "Dữ liệu"
 
 msgid "Data Type"
-msgstr ""
+msgstr "Loại dữ liệu"
 
 msgid "Totals"
 msgstr "Tổng"
@@ -30,7 +30,7 @@ msgid "Details"
 msgstr "Chi tiết"
 
 msgid "Detail"
-msgstr ""
+msgstr "Chi tiết"
 
 msgid "Move to {{axisName}}"
 msgstr ""
@@ -54,7 +54,7 @@ msgid "Remove Assigned Categories"
 msgstr ""
 
 msgid "Add Assigned Categories"
-msgstr ""
+msgstr "Thêm phân loại được chỉ định"
 
 msgid "Manage chart axes"
 msgstr ""
@@ -69,16 +69,16 @@ msgid "Your dimensions"
 msgstr "Các chiều dữ liệu của bạn"
 
 msgid "Dimension recommended with selected data"
-msgstr ""
+msgstr "Chiều được đề xuất với dữ liệu đã chọn"
 
 msgid "Search"
 msgstr "Tìm kiếm"
 
 msgid "Selected Data"
-msgstr ""
+msgstr "Dữ liệu đã chọn"
 
 msgid "Deselect All"
-msgstr ""
+msgstr "Bỏ chọn tất cả"
 
 msgid "Select all"
 msgstr "Chọn tất cả"
@@ -372,7 +372,7 @@ msgid "Select indicator group"
 msgstr "Chọn nhóm chỉ số"
 
 msgid "[ All groups ]"
-msgstr ""
+msgstr "[Tất cả các nhóm]"
 
 msgid "Data elements"
 msgstr "Các phần tử dữ liệu"
@@ -381,22 +381,22 @@ msgid "Select data element group"
 msgstr "Chọn nhóm phần tử dữ liệu"
 
 msgid "[ All data elements ]"
-msgstr ""
+msgstr "[Tất cả các phần tử dữ liệu]"
 
 msgid "Data sets"
 msgstr "Biểu nhập"
 
 msgid "Select data sets"
-msgstr ""
+msgstr "Chọn tập dữ liệu"
 
 msgid "[ All metrics ]"
-msgstr ""
+msgstr "[Tất cả các chỉ số]"
 
 msgid "Event data items"
 msgstr "Mục dữ liệu sự kiện"
 
 msgid "Select a program"
-msgstr ""
+msgstr "Chọn một chương trình"
 
 msgid "Program indicators"
 msgstr "Chỉ Số Chương Trình"
@@ -450,10 +450,10 @@ msgid "Gauge"
 msgstr "Biểu đồ đo lường"
 
 msgid "Year over year (line)"
-msgstr ""
+msgstr "Năm qua năm (dòng)"
 
 msgid "Year over year (column)"
-msgstr ""
+msgstr "Năm qua năm (cột)"
 
 msgid "Single value"
 msgstr "Giá trị đơn"
