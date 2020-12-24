@@ -599,7 +599,7 @@ msgid "No legend for this series"
 msgstr "Pro tuto sérii není legenda"
 
 msgid "and {{amount}} more..."
-msgstr ""
+msgstr "a {{amount}} další ..."
 
 msgid "Target"
 msgstr "Cíl"
@@ -614,4 +614,4 @@ msgid "No data"
 msgstr "Nejsou data"
 
 msgid "Reset zoom"
-msgstr ""
+msgstr "Obnovit přiblížení"
