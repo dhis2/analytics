@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2020-12-21T08:01:55.494Z\n"
-"PO-Revision-Date: 2020-12-21T08:01:55.494Z\n"
+"POT-Creation-Date: 2020-12-25T09:35:47.221Z\n"
+"PO-Revision-Date: 2020-12-25T09:35:47.221Z\n"
 
 msgid "Data Type"
 msgstr ""
@@ -568,6 +568,12 @@ msgstr ""
 msgid ""
 "View the relationship between two data items at a place or time. "
 "Recommended for finding outliers."
+msgstr ""
+
+msgid "{{seriesName}} (trend)"
+msgstr ""
+
+msgid "Trend"
 msgstr ""
 
 msgid "No legend for this series"
