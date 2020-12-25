@@ -31,10 +31,12 @@ import {
 } from '../../../../../modules/fontStyle'
 import { getTextAlignOption } from '../getTextAlignOption'
 import { axisHasRelativeItems } from '../../../../../modules/layout/axisHasRelativeItems'
+import getSteps from '../getSteps'
 
 const DEFAULT_MIN_VALUE = 0
-
 const DEFAULT_GRIDLINE_COLOR = '#E1E1E1'
+const AXIS_TYPE = 'RANGE'
+const AXIS_INDEX = '0'
 
 function getPlotLineStyle(fontStyle) {
     return {
@@ -73,10 +75,6 @@ const getMaxValue = (rangeAxisMaxValue, dataValues) =>
         : dataValues?.every(value => value < DEFAULT_MIN_VALUE)
         ? DEFAULT_MIN_VALUE
         : undefined
-
-function getSteps(layout) {
-    return isNumeric(layout.rangeAxisSteps) ? layout.rangeAxisSteps : undefined
-}
 
 const getLabelOffsetFromTextAlign = textAlign => {
     switch (textAlign) {
@@ -231,7 +229,7 @@ function getDefault(layout, series, extraOptions) {
             objectClean({
                 min: getMinValue(layout.rangeAxisMinValue, dataValues),
                 max: getMaxValue(layout.rangeAxisMaxValue, dataValues),
-                tickAmount: getSteps(layout),
+                tickAmount: getSteps(layout.axes, AXIS_TYPE, AXIS_INDEX),
                 title: getAxisTitle(
                     layout.rangeAxisLabel,
                     layout.fontStyle[FONT_STYLE_VERTICAL_AXIS_TITLE],
