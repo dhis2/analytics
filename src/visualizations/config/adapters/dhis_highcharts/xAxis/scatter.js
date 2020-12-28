@@ -22,6 +22,7 @@ import {
 import { getTextAlignOption } from '../getTextAlignOption'
 import getSteps from '../getSteps'
 import getFormatter from '../getFormatter'
+import { getAxis } from '../../../../util/axes'
 
 const DEFAULT_MIN_VALUE = 0
 const DEFAULT_GRIDLINE_COLOR = '#E1E1E1'
@@ -52,16 +53,16 @@ function getPlotLineLabelStyle(fontStyle) {
     }
 }
 
-const getMinValue = (rangeAxisMinValue, dataValues) =>
-    isNumeric(rangeAxisMinValue)
-        ? rangeAxisMinValue
+const getMinValue = (minValue, dataValues) =>
+    isNumeric(minValue)
+        ? minValue
         : dataValues?.some(value => value < DEFAULT_MIN_VALUE)
         ? undefined
         : DEFAULT_MIN_VALUE
 
-const getMaxValue = (rangeAxisMaxValue, dataValues) =>
-    isNumeric(rangeAxisMaxValue)
-        ? rangeAxisMaxValue
+const getMaxValue = (maxValue, dataValues) =>
+    isNumeric(maxValue)
+        ? maxValue
         : dataValues?.every(value => value < DEFAULT_MIN_VALUE)
         ? DEFAULT_MIN_VALUE
         : undefined
@@ -165,9 +166,10 @@ function getLabels(layout) {
 
 export default function (layout, series) {
     const dataValues = series?.map(item => item.data).flat()
+    const axis = getAxis(layout.axes, AXIS_TYPE, AXIS_INDEX)
     return objectClean({
-        min: getMinValue(layout.rangeAxisMinValue, dataValues),
-        max: getMaxValue(layout.rangeAxisMaxValue, dataValues),
+        min: getMinValue(axis.minValue, dataValues),
+        max: getMaxValue(axis.maxValue, dataValues),
         tickAmount: getSteps(layout.axes, AXIS_TYPE, AXIS_INDEX),
         title: getAxisTitle(
             layout.rangeAxisLabel,
