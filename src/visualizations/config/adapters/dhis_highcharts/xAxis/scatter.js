@@ -21,11 +21,12 @@ import {
 } from '../../../../../modules/fontStyle'
 import { getTextAlignOption } from '../getTextAlignOption'
 import getSteps from '../getSteps'
+import getFormatter from '../getFormatter'
 
 const DEFAULT_MIN_VALUE = 0
 const DEFAULT_GRIDLINE_COLOR = '#E1E1E1'
 const AXIS_TYPE = 'RANGE'
-const AXIS_INDEX = '1'
+const AXIS_INDEX = 1
 
 function getPlotLineStyle(fontStyle) {
     return {
@@ -145,16 +146,6 @@ function getBaseLine(layout) {
         : undefined
 }
 
-function getFormatter(layout) {
-    return isNumeric(layout.rangeAxisDecimals)
-        ? {
-              formatter: function () {
-                  return this.value.toFixed(layout.rangeAxisDecimals)
-              },
-          }
-        : {}
-}
-
 function getLabels(layout) {
     const fontStyle = layout.fontStyle[FONT_STYLE_SERIES_AXIS_LABELS]
     return {
@@ -168,7 +159,7 @@ function getLabels(layout) {
                 ? FONT_STYLE_OPTION_ITALIC
                 : 'normal',
         },
-        ...getFormatter(layout),
+        ...getFormatter(layout.axes, AXIS_TYPE, AXIS_INDEX),
     }
 }
 
