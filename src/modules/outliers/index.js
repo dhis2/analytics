@@ -19,10 +19,10 @@ export const getOutliers = (data, stdDevThreshold = 1) => {
     let intersectionPoint
 
     data.forEach(dataPoint => {
-        intersectionPoint = getIntersectionPoint([
+        intersectionPoint = getIntersectionPoint(
             ...getNormalEndPoints(dataPoint, normalGradient),
-            ...regEndPoints,
-        ])
+            ...regEndPoints
+        )
 
         getPointDistance(dataPoint, intersectionPoint) > stdDevValue &&
             outlierPoints.push(dataPoint)
