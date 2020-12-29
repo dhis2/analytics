@@ -2,12 +2,13 @@ import arrayClean from 'd2-utilizr/lib/arrayClean'
 import objectClean from 'd2-utilizr/lib/objectClean'
 import isNumeric from 'd2-utilizr/lib/isNumeric'
 import isString from 'd2-utilizr/lib/isString'
+
 import getAxisTitle from '../getAxisTitle'
 import { isVerticalType } from '../../../../../modules/visTypes'
 import { getAxisStringFromId } from '../../../../util/axisId'
 import {
     FONT_STYLE_VERTICAL_AXIS_TITLE,
-    FONT_STYLE_SERIES_AXIS_LABELS,
+    FONT_STYLE_AXIS_LABELS,
     FONT_STYLE_TARGET_LINE_LABEL,
     FONT_STYLE_BASE_LINE_LABEL,
     FONT_STYLE_OPTION_TEXT_COLOR,
@@ -18,6 +19,7 @@ import {
     TEXT_ALIGN_LEFT,
     TEXT_ALIGN_CENTER,
     TEXT_ALIGN_RIGHT,
+    defaultFontStyle,
 } from '../../../../../modules/fontStyle'
 import { getTextAlignOption } from '../getTextAlignOption'
 import getSteps from '../getSteps'
@@ -147,8 +149,11 @@ function getBaseLine(layout) {
         : undefined
 }
 
-function getLabels(layout) {
-    const fontStyle = layout.fontStyle[FONT_STYLE_SERIES_AXIS_LABELS]
+function getLabels(axis) {
+    const fontStyle = {
+        ...defaultFontStyle[FONT_STYLE_AXIS_LABELS],
+        ...axis.label?.fontStyle,
+    }
     return {
         style: {
             color: fontStyle[FONT_STYLE_OPTION_TEXT_COLOR],
@@ -160,7 +165,7 @@ function getLabels(layout) {
                 ? FONT_STYLE_OPTION_ITALIC
                 : 'normal',
         },
-        ...getFormatter(layout.axes, AXIS_TYPE, AXIS_INDEX),
+        ...getFormatter(axis),
     }
 }
 
@@ -170,7 +175,7 @@ export default function (layout, series) {
     return objectClean({
         min: getMinValue(axis.minValue, dataValues),
         max: getMaxValue(axis.maxValue, dataValues),
-        tickAmount: getSteps(layout.axes, AXIS_TYPE, AXIS_INDEX),
+        tickAmount: getSteps(axis),
         title: getAxisTitle(
             layout.rangeAxisLabel,
             layout.fontStyle[FONT_STYLE_VERTICAL_AXIS_TITLE],
@@ -179,7 +184,7 @@ export default function (layout, series) {
         ),
         plotLines: arrayClean([getTargetLine(layout), getBaseLine(layout)]),
         gridLineColor: DEFAULT_GRIDLINE_COLOR,
-        labels: getLabels(layout),
+        labels: getLabels(axis),
         id: getAxisStringFromId(0),
     })
 }

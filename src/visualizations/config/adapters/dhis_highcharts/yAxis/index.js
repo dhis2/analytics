@@ -17,7 +17,7 @@ import { getAxisIdsMap } from '../customAxes'
 import { getAxisStringFromId } from '../../../../util/axisId'
 import {
     FONT_STYLE_VERTICAL_AXIS_TITLE,
-    FONT_STYLE_SERIES_AXIS_LABELS,
+    FONT_STYLE_AXIS_LABELS,
     FONT_STYLE_TARGET_LINE_LABEL,
     FONT_STYLE_BASE_LINE_LABEL,
     FONT_STYLE_OPTION_TEXT_COLOR,
@@ -28,6 +28,7 @@ import {
     TEXT_ALIGN_LEFT,
     TEXT_ALIGN_CENTER,
     TEXT_ALIGN_RIGHT,
+    defaultFontStyle,
 } from '../../../../../modules/fontStyle'
 import { getTextAlignOption } from '../getTextAlignOption'
 import { axisHasRelativeItems } from '../../../../../modules/layout/axisHasRelativeItems'
@@ -158,8 +159,11 @@ function getBaseLine(layout) {
         : undefined
 }
 
-function getLabels(layout) {
-    const fontStyle = layout.fontStyle[FONT_STYLE_SERIES_AXIS_LABELS]
+function getLabels(axis) {
+    const fontStyle = {
+        ...defaultFontStyle[FONT_STYLE_AXIS_LABELS],
+        ...axis.label?.fontStyle,
+    }
     return {
         style: {
             color: fontStyle[FONT_STYLE_OPTION_TEXT_COLOR],
@@ -171,7 +175,7 @@ function getLabels(layout) {
                 ? FONT_STYLE_OPTION_ITALIC
                 : 'normal',
         },
-        ...getFormatter(layout.axes, AXIS_TYPE, AXIS_INDEX),
+        ...getFormatter(axis),
     }
 }
 
@@ -222,7 +226,7 @@ function getDefault(layout, series, extraOptions) {
             objectClean({
                 min: getMinValue(axis.minValue, dataValues),
                 max: getMaxValue(axis.maxValue, dataValues),
-                tickAmount: getSteps(layout.axes, AXIS_TYPE, AXIS_INDEX),
+                tickAmount: getSteps(axis),
                 title: getAxisTitle(
                     layout.rangeAxisLabel,
                     layout.fontStyle[FONT_STYLE_VERTICAL_AXIS_TITLE],
@@ -234,7 +238,7 @@ function getDefault(layout, series, extraOptions) {
                     getBaseLine(layout),
                 ]),
                 gridLineColor: DEFAULT_GRIDLINE_COLOR,
-                labels: getLabels(layout),
+                labels: getLabels(axis),
                 id: getAxisStringFromId(0),
 
                 // DHIS2-649: put first serie at the bottom of the stack

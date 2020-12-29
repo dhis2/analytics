@@ -1,9 +1,7 @@
 import isNumeric from 'd2-utilizr/lib/isNumeric'
 
-import { getAxis } from '../../../util/axes'
-
-export default function (axes = [], axisType, axisIndex) {
-    const decimals = getAxis(axes, axisType, axisIndex).decimals
+export default function (axis) {
+    const decimals = axis.decimals
     return isNumeric(decimals)
         ? {
               formatter: function () {

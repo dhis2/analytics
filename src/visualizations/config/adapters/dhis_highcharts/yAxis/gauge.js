@@ -17,7 +17,7 @@ import {
     FONT_STYLE_BASE_LINE_LABEL,
     FONT_STYLE_TARGET_LINE_LABEL,
     FONT_STYLE_OPTION_TEXT_ALIGN,
-    FONT_STYLE_SERIES_AXIS_LABELS,
+    FONT_STYLE_AXIS_LABELS,
 } from '../../../../../modules/fontStyle'
 import { VIS_TYPE_GAUGE } from '../../../../../modules/visTypes'
 import { getTextAlignOption } from '../getTextAlignOption'
@@ -124,7 +124,7 @@ export default function (layout, series, legendSet) {
         },
         minColor: fillColor,
         maxColor: fillColor,
-        labels: getLabels(layout.fontStyle[FONT_STYLE_SERIES_AXIS_LABELS]),
+        labels: getLabels(layout.fontStyle[FONT_STYLE_AXIS_LABELS]), // FIXME: Needs to be updated to use axes.label.fontStyle
         title: {
             text: series[0].name,
         },

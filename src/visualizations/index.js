@@ -41,6 +41,7 @@ function createVisualization(
                     },
                 },
             },
+            // FIXME: Move this to each use of fontStyle instead of keeping it centralised
         },
         el,
         outputFormat,

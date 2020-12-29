@@ -10,8 +10,7 @@ export const FONT_STYLE_VISUALIZATION_SUBTITLE = 'visualizationSubtitle'
 export const FONT_STYLE_HORIZONTAL_AXIS_TITLE = 'horizontalAxisTitle'
 export const FONT_STYLE_VERTICAL_AXIS_TITLE = 'verticalAxisTitle'
 export const FONT_STYLE_LEGEND = 'legend'
-export const FONT_STYLE_SERIES_AXIS_LABELS = 'seriesAxisLabel'
-export const FONT_STYLE_CATEGORY_AXIS_LABELS = 'categoryAxisLabel'
+export const FONT_STYLE_AXIS_LABELS = 'axisLabel'
 export const FONT_STYLE_TARGET_LINE_LABEL = 'targetLineLabel'
 export const FONT_STYLE_BASE_LINE_LABEL = 'baseLineLabel'
 // Options
@@ -202,20 +201,10 @@ export const defaultFontStyle = {
         [FONT_STYLE_OPTION_TEXT_COLOR]: colors.grey900,
         [FONT_STYLE_OPTION_TEXT_ALIGN]: TEXT_ALIGN_CENTER,
     },
-    [FONT_STYLE_SERIES_AXIS_LABELS]: {
+    [FONT_STYLE_AXIS_LABELS]: {
         [FONT_STYLE_OPTION_FONT]: defaultFont,
         [FONT_STYLE_OPTION_FONT_SIZE]: getFontSizeOptions(
-            FONT_STYLE_SERIES_AXIS_LABELS
-        ).small.value,
-        [FONT_STYLE_OPTION_BOLD]: false,
-        [FONT_STYLE_OPTION_ITALIC]: false,
-        [FONT_STYLE_OPTION_UNDERLINE]: false,
-        [FONT_STYLE_OPTION_TEXT_COLOR]: colors.grey800,
-    },
-    [FONT_STYLE_CATEGORY_AXIS_LABELS]: {
-        [FONT_STYLE_OPTION_FONT]: defaultFont,
-        [FONT_STYLE_OPTION_FONT_SIZE]: getFontSizeOptions(
-            FONT_STYLE_CATEGORY_AXIS_LABELS
+            FONT_STYLE_AXIS_LABELS
         ).small.value,
         [FONT_STYLE_OPTION_BOLD]: false,
         [FONT_STYLE_OPTION_ITALIC]: false,
