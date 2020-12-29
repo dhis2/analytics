@@ -1,7 +1,10 @@
 import getAxisTitle from '../getAxisTitle'
 import getCategories from '../getCategories'
 import { getLabels } from './'
-import { FONT_STYLE_HORIZONTAL_AXIS_TITLE } from '../../../../../modules/fontStyle'
+import {
+    defaultFontStyle,
+    FONT_STYLE_HORIZONTAL_AXIS_TITLE,
+} from '../../../../../modules/fontStyle'
 import { getAxis } from '../../../../util/axes'
 
 const AXIS_TYPE = 'DOMAIN'
@@ -24,8 +27,11 @@ export default function (store, layout) {
     const xAxis = [
         {
             title: getAxisTitle(
-                layout.domainAxisLabel,
-                layout.fontStyle[FONT_STYLE_HORIZONTAL_AXIS_TITLE],
+                axis.title?.text,
+                {
+                    ...defaultFontStyle[FONT_STYLE_HORIZONTAL_AXIS_TITLE],
+                    ...axis.title?.fontStyle,
+                },
                 FONT_STYLE_HORIZONTAL_AXIS_TITLE,
                 layout.type
             ),

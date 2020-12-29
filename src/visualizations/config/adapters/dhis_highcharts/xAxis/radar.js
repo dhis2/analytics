@@ -10,7 +10,7 @@ export default (store, layout) => {
     const config = getDefault(store, layout)
 
     if (
-        isString(layout.domainAxisLabel) &&
+        isString(layout.domainAxisLabel) && //FIXME: Change to axis.title?.text
         config.title &&
         layout.fontStyle[FONT_STYLE_HORIZONTAL_AXIS_TITLE][
             FONT_STYLE_OPTION_TEXT_ALIGN

@@ -228,8 +228,11 @@ function getDefault(layout, series, extraOptions) {
                 max: getMaxValue(axis.maxValue, dataValues),
                 tickAmount: getSteps(axis),
                 title: getAxisTitle(
-                    layout.rangeAxisLabel,
-                    layout.fontStyle[FONT_STYLE_VERTICAL_AXIS_TITLE],
+                    axis.title?.text,
+                    {
+                        ...defaultFontStyle[FONT_STYLE_VERTICAL_AXIS_TITLE],
+                        ...axis.title?.fontStyle,
+                    },
                     FONT_STYLE_VERTICAL_AXIS_TITLE,
                     layout.type
                 ),

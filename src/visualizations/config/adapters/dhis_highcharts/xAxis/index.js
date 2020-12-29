@@ -62,8 +62,11 @@ export const getDefault = (store, layout) => {
             layout.rows[0].dimension
         ),
         title: getAxisTitle(
-            layout.domainAxisLabel,
-            layout.fontStyle[FONT_STYLE_HORIZONTAL_AXIS_TITLE],
+            axis.title?.text,
+            {
+                ...defaultFontStyle[FONT_STYLE_HORIZONTAL_AXIS_TITLE],
+                ...axis.title?.fontStyle,
+            },
             FONT_STYLE_HORIZONTAL_AXIS_TITLE,
             layout.type
         ),
