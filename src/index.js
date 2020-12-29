@@ -216,6 +216,9 @@ export {
     deleteFontStyleOption,
 } from './modules/fontStyle'
 
+// Modules: outliers
+export { getOutliers } from './modules/outliers'
+
 // Utils: colorSets
 export {
     COLOR_SET_DEFAULT,

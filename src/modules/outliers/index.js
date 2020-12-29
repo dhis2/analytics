@@ -5,7 +5,7 @@ import { getPointDistance } from './getPointDistance'
 import { getNormalGradient } from './getNormalGradient'
 import { getNormalEndPoints } from './getNormalEndPoints'
 
-export default (data, stdDevThreshold = 1) => {
+export const getOutliers = (data, stdDevThreshold = 1) => {
     const stdDevValue = getStdDev(data) * stdDevThreshold
     const reg = getRegression(data)
 
