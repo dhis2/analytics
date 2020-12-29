@@ -1,15 +1,15 @@
 # 
 # Translators:
 # phil_dhis2, 2020
-# Mai Nguyen <thanhmai.jica@gmail.com>, 2020
 # Viktor Varland <viktor@dhis2.org>, 2020
+# Mai Nguyen <thanhmai.jica@gmail.com>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2020-12-21T08:01:55.494Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2020\n"
+"Last-Translator: Mai Nguyen <thanhmai.jica@gmail.com>, 2020\n"
 "Language-Team: Vietnamese (https://www.transifex.com/hisp-uio/teams/100509/vi/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 msgid "Data Type"
-msgstr ""
+msgstr "Loại dữ liệu"
 
 msgid "Totals"
 msgstr "Tổng"
@@ -27,7 +27,7 @@ msgid "Details"
 msgstr "Chi tiết"
 
 msgid "Detail"
-msgstr ""
+msgstr "Chi tiết"
 
 msgid "Move to {{axisName}}"
 msgstr ""
@@ -42,7 +42,7 @@ msgid "Remove Assigned Categories"
 msgstr ""
 
 msgid "Add Assigned Categories"
-msgstr ""
+msgstr "Thêm phân loại được chỉ định"
 
 msgid "Remove"
 msgstr "Tháo ra"
@@ -57,7 +57,7 @@ msgid "Your dimensions"
 msgstr "Các chiều dữ liệu của bạn"
 
 msgid "Dimension recommended with selected data"
-msgstr ""
+msgstr "Chiều được đề xuất với dữ liệu đã chọn"
 
 msgid "No items selected"
 msgstr ""
@@ -69,10 +69,10 @@ msgid "Search"
 msgstr "Tìm kiếm"
 
 msgid "Selected Data"
-msgstr ""
+msgstr "Dữ liệu đã chọn"
 
 msgid "Deselect All"
-msgstr ""
+msgstr "Bỏ chọn tất cả"
 
 msgid "Select all"
 msgstr "Chọn tất cả"
@@ -213,13 +213,13 @@ msgid "Last 30 days"
 msgstr "30 ngày trước"
 
 msgid "Last 60 days"
-msgstr ""
+msgstr "60 ngày qua"
 
 msgid "Last 90 days"
-msgstr ""
+msgstr "90 ngày qua"
 
 msgid "Last 180 days"
-msgstr ""
+msgstr "180 ngày qua"
 
 msgid "This week"
 msgstr "Tuần này"
@@ -381,7 +381,7 @@ msgid "Program"
 msgstr "Chương trình"
 
 msgid "Select a program"
-msgstr ""
+msgstr "Chọn một chương trình"
 
 msgid "Indicators"
 msgstr "Các chỉ số"
@@ -390,7 +390,7 @@ msgid "Select indicator group"
 msgstr "Chọn nhóm chỉ số"
 
 msgid "[ All groups ]"
-msgstr ""
+msgstr "[Tất cả các nhóm]"
 
 msgid "Data elements"
 msgstr "Các phần tử dữ liệu"
@@ -399,16 +399,16 @@ msgid "Select data element group"
 msgstr "Chọn nhóm yếu tố dữ liệu"
 
 msgid "[ All data elements ]"
-msgstr ""
+msgstr "[Tất cả các phần tử dữ liệu]"
 
 msgid "Data sets"
 msgstr "Biểu nhập"
 
 msgid "Select data sets"
-msgstr ""
+msgstr "Chọn tập dữ liệu"
 
 msgid "[ All metrics ]"
-msgstr ""
+msgstr "[Tất cả các chỉ số]"
 
 msgid "Event data items"
 msgstr "Mục dữ liệu sự kiện"
@@ -501,7 +501,7 @@ msgid "Area"
 msgstr "Khu vực"
 
 msgid "Stacked area"
-msgstr ""
+msgstr "Khu vực xếp chồng "
 
 msgid "Pie"
 msgstr "Bánh"
@@ -513,16 +513,16 @@ msgid "Gauge"
 msgstr "Biểu đồ đo lường"
 
 msgid "Year over year (line)"
-msgstr ""
+msgstr "Năm qua năm (dòng)"
 
 msgid "Year over year (column)"
-msgstr ""
+msgstr "Năm qua năm (cột)"
 
 msgid "Single value"
 msgstr "Giá trị đơn"
 
 msgid "Scatter"
-msgstr ""
+msgstr "phân tán"
 
 msgid "View data and indicators in a manipulatable table."
 msgstr ""
@@ -592,7 +592,7 @@ msgid "Base"
 msgstr "Đường đáy"
 
 msgid "Axis {{axisId}}"
-msgstr ""
+msgstr "Trục {{axisId}}"
 
 msgid "No data"
 msgstr "Không có dữ liệu"
