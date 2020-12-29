@@ -16,19 +16,16 @@ export default (data, stdDevThreshold = 1) => {
     const outlierPoints = []
     // const stdDevGraphs = []
 
-    let normalEndPoints
     let intersectionPoint
-    let pointDistance
 
     data.forEach(dataPoint => {
-        normalEndPoints = getNormalEndPoints(dataPoint, normalGradient)
         intersectionPoint = getIntersectionPoint([
-            ...normalEndPoints,
+            ...getNormalEndPoints(dataPoint, normalGradient),
             ...regEndPoints,
         ])
-        pointDistance = getPointDistance(dataPoint, intersectionPoint)
 
-        pointDistance > stdDevValue && outlierPoints.push(dataPoint)
+        getPointDistance(dataPoint, intersectionPoint) > stdDevValue &&
+            outlierPoints.push(dataPoint)
     })
 
     return {
