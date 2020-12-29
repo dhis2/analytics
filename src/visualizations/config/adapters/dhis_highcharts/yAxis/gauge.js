@@ -18,14 +18,17 @@ import {
     FONT_STYLE_TARGET_LINE_LABEL,
     FONT_STYLE_OPTION_TEXT_ALIGN,
     FONT_STYLE_AXIS_LABELS,
+    defaultFontStyle,
 } from '../../../../../modules/fontStyle'
 import { VIS_TYPE_GAUGE } from '../../../../../modules/visTypes'
 import { getTextAlignOption } from '../getTextAlignOption'
+import { getAxis } from '../../../../util/axes'
 
 const DEFAULT_MAX_VALUE = 100
-
 const DEFAULT_TARGET_LINE_LABEL = i18n.t('Target')
 const DEFAULT_BASE_LINE_LABEL = i18n.t('Base')
+const AXIS_TYPE = 'RANGE'
+const AXIS_INDEX = 0
 
 const getLabelOffsetFromTextAlign = textAlign => {
     switch (textAlign) {
@@ -73,21 +76,30 @@ function getPlotLine(value, label, fontStyle, fontStyleType) {
     }
 }
 
-const getLabels = fontStyle => ({
-    y: parseInt(fontStyle[FONT_STYLE_OPTION_FONT_SIZE], 10) + 7,
-    style: {
-        color: fontStyle[FONT_STYLE_OPTION_TEXT_COLOR],
-        fontSize: `${fontStyle[FONT_STYLE_OPTION_FONT_SIZE]}px`,
-        fontWeight: fontStyle[FONT_STYLE_OPTION_BOLD]
-            ? FONT_STYLE_OPTION_BOLD
-            : 'normal',
-        fontStyle: fontStyle[FONT_STYLE_OPTION_ITALIC]
-            ? FONT_STYLE_OPTION_ITALIC
-            : 'normal',
-    },
-})
+const getLabels = axis => {
+    const fontStyle = {
+        ...defaultFontStyle[FONT_STYLE_AXIS_LABELS],
+        ...axis.label?.fontStyle,
+    }
+
+    return {
+        y: parseInt(fontStyle[FONT_STYLE_OPTION_FONT_SIZE], 10) + 7,
+        style: {
+            color: fontStyle[FONT_STYLE_OPTION_TEXT_COLOR],
+            fontSize: `${fontStyle[FONT_STYLE_OPTION_FONT_SIZE]}px`,
+            fontWeight: fontStyle[FONT_STYLE_OPTION_BOLD]
+                ? FONT_STYLE_OPTION_BOLD
+                : 'normal',
+            fontStyle: fontStyle[FONT_STYLE_OPTION_ITALIC]
+                ? FONT_STYLE_OPTION_ITALIC
+                : 'normal',
+        },
+    }
+}
 
 export default function (layout, series, legendSet) {
+    const axis = getAxis(layout.axes, AXIS_TYPE, AXIS_INDEX)
+
     const plotLines = arrayClean([
         isNumber(layout.baseLineValue)
             ? getPlotLine(
@@ -111,10 +123,8 @@ export default function (layout, series, legendSet) {
             ? getColorByValueFromLegendSet(legendSet, series[0].data)
             : undefined
     return objectClean({
-        min: isNumber(layout.rangeAxisMinValue) ? layout.rangeAxisMinValue : 0,
-        max: isNumber(layout.rangeAxisMaxValue)
-            ? layout.rangeAxisMaxValue
-            : DEFAULT_MAX_VALUE,
+        min: isNumber(axis.minValue) ? axis.minValue : 0,
+        max: isNumber(axis.maxValue) ? axis.maxValue : DEFAULT_MAX_VALUE,
         lineWidth: 0,
         minorTickInterval: null,
         tickLength: 0,
@@ -124,7 +134,7 @@ export default function (layout, series, legendSet) {
         },
         minColor: fillColor,
         maxColor: fillColor,
-        labels: getLabels(layout.fontStyle[FONT_STYLE_AXIS_LABELS]), // FIXME: Needs to be updated to use axes.label.fontStyle
+        labels: getLabels(axis),
         title: {
             text: series[0].name,
         },
