@@ -24,7 +24,7 @@ import { getTextAlignOption } from '../getTextAlignOption'
 import { getAxis } from '../../../../util/axes'
 
 const DEFAULT_MAX_VALUE = 100
-//const DEFAULT_TARGET_LINE_LABEL = i18n.t('Target')
+const DEFAULT_TARGET_LINE_LABEL = i18n.t('Target')
 const DEFAULT_BASE_LINE_LABEL = i18n.t('Base')
 const AXIS_TYPE = 'RANGE'
 const AXIS_INDEX = 0
@@ -41,10 +41,20 @@ const getLabelOffsetFromTextAlign = textAlign => {
     }
 }
 
-function getPlotLine(value, label, fontStyle, fontStyleType) {
+function getPlotLine(regressionLine = {}, defaultLabel) {
+    const value = regressionLine.value
+    if (!isNumber(value)) {
+        return null
+    }
+    const label = regressionLine.title?.text || defaultLabel
+    const fontStyle = {
+        ...defaultFontStyle[FONT_STYLE_REGRESSION_LINE_LABEL],
+        ...regressionLine.title?.fontStyle,
+    }
+
     const verticalAlign = getTextAlignOption(
         fontStyle[FONT_STYLE_OPTION_TEXT_ALIGN],
-        fontStyleType,
+        FONT_STYLE_REGRESSION_LINE_LABEL,
         VIS_TYPE_GAUGE
     )
     const y = getLabelOffsetFromTextAlign(
@@ -100,23 +110,8 @@ export default function (layout, series, legendSet) {
     const axis = getAxis(layout.axes, AXIS_TYPE, AXIS_INDEX)
 
     const plotLines = arrayClean([
-        isNumber(layout.baseLineValue)
-            ? getPlotLine(
-                  layout.baseLineValue,
-                  layout.baseLineLabel || DEFAULT_BASE_LINE_LABEL,
-                  layout.fontStyle[FONT_STYLE_REGRESSION_LINE_LABEL],
-                  FONT_STYLE_REGRESSION_LINE_LABEL
-              )
-            : null,
-        // TODO: Add back targetLine
-        // isNumber(layout.targetLineValue)
-        //     ? getPlotLine(
-        //           layout.targetLineValue,
-        //           layout.targetLineLabel || DEFAULT_TARGET_LINE_LABEL,
-        //           layout.fontStyle[FONT_STYLE_TARGET_LINE_LABEL],
-        //           FONT_STYLE_TARGET_LINE_LABEL
-        //       )
-        //     : null,
+        getPlotLine(axis.baseLine, DEFAULT_BASE_LINE_LABEL),
+        getPlotLine(axis.targetLine, DEFAULT_TARGET_LINE_LABEL),
     ])
     const fillColor =
         layout.legendDisplayStyle === LEGEND_DISPLAY_STYLE_FILL && legendSet

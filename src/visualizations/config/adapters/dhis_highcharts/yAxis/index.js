@@ -104,31 +104,6 @@ const getLineLabelStyle = (fontStyle, fontStyleType, visType) => {
     return result
 }
 
-function getTargetLine() {
-    // const fontStyle = layout.fontStyle[FONT_STYLE_TARGET_LINE_LABEL]
-    // const plotLineStyle = getPlotLineStyle(fontStyle)
-    // const plotLineLabelStyle = getPlotLineLabelStyle(fontStyle)
-    // return isNumeric(layout.targetLineValue)
-    //     ? Object.assign(
-    //           {},
-    //           plotLineStyle,
-    //           objectClean({
-    //               value: layout.targetLineValue,
-    //               label: isString(layout.targetLineLabel)
-    //                   ? Object.assign({}, plotLineLabelStyle, {
-    //                         text: layout.targetLineLabel,
-    //                         ...getLineLabelStyle(
-    //                             fontStyle[FONT_STYLE_OPTION_TEXT_ALIGN],
-    //                             FONT_STYLE_REGRESSION_LINE_LABEL,
-    //                             layout.type
-    //                         ),
-    //                     })
-    //                   : undefined,
-    //           })
-    //       )
-    //     : undefined
-}
-
 function getRegressionLine(regressionLine = {}, visType) {
     const fontStyle = {
         ...defaultFontStyle[FONT_STYLE_REGRESSION_LINE_LABEL],
@@ -237,7 +212,7 @@ function getDefault(layout, series, extraOptions) {
                     layout.type
                 ),
                 plotLines: arrayClean([
-                    getTargetLine(layout),
+                    getRegressionLine(axis.targetLine, layout.type),
                     getRegressionLine(axis.baseLine, layout.type),
                 ]),
                 gridLineColor: DEFAULT_GRIDLINE_COLOR,
