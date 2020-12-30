@@ -18,8 +18,7 @@ import { getAxisStringFromId } from '../../../../util/axisId'
 import {
     FONT_STYLE_VERTICAL_AXIS_TITLE,
     FONT_STYLE_AXIS_LABELS,
-    FONT_STYLE_TARGET_LINE_LABEL,
-    FONT_STYLE_BASE_LINE_LABEL,
+    FONT_STYLE_REGRESSION_LINE_LABEL,
     FONT_STYLE_OPTION_TEXT_COLOR,
     FONT_STYLE_OPTION_FONT_SIZE,
     FONT_STYLE_OPTION_BOLD,
@@ -105,52 +104,53 @@ const getLineLabelStyle = (fontStyle, fontStyleType, visType) => {
     return result
 }
 
-function getTargetLine(layout) {
-    const fontStyle = layout.fontStyle[FONT_STYLE_TARGET_LINE_LABEL]
-
-    const plotLineStyle = getPlotLineStyle(fontStyle)
-    const plotLineLabelStyle = getPlotLineLabelStyle(fontStyle)
-
-    return isNumeric(layout.targetLineValue)
-        ? Object.assign(
-              {},
-              plotLineStyle,
-              objectClean({
-                  value: layout.targetLineValue,
-                  label: isString(layout.targetLineLabel)
-                      ? Object.assign({}, plotLineLabelStyle, {
-                            text: layout.targetLineLabel,
-                            ...getLineLabelStyle(
-                                fontStyle[FONT_STYLE_OPTION_TEXT_ALIGN],
-                                FONT_STYLE_BASE_LINE_LABEL,
-                                layout.type
-                            ),
-                        })
-                      : undefined,
-              })
-          )
-        : undefined
+function getTargetLine() {
+    // const fontStyle = layout.fontStyle[FONT_STYLE_TARGET_LINE_LABEL]
+    // const plotLineStyle = getPlotLineStyle(fontStyle)
+    // const plotLineLabelStyle = getPlotLineLabelStyle(fontStyle)
+    // return isNumeric(layout.targetLineValue)
+    //     ? Object.assign(
+    //           {},
+    //           plotLineStyle,
+    //           objectClean({
+    //               value: layout.targetLineValue,
+    //               label: isString(layout.targetLineLabel)
+    //                   ? Object.assign({}, plotLineLabelStyle, {
+    //                         text: layout.targetLineLabel,
+    //                         ...getLineLabelStyle(
+    //                             fontStyle[FONT_STYLE_OPTION_TEXT_ALIGN],
+    //                             FONT_STYLE_REGRESSION_LINE_LABEL,
+    //                             layout.type
+    //                         ),
+    //                     })
+    //                   : undefined,
+    //           })
+    //       )
+    //     : undefined
 }
 
-function getBaseLine(layout) {
-    const fontStyle = layout.fontStyle[FONT_STYLE_BASE_LINE_LABEL]
+function getRegressionLine(regressionLine = {}, visType) {
+    const fontStyle = {
+        ...defaultFontStyle[FONT_STYLE_REGRESSION_LINE_LABEL],
+        ...regressionLine.title?.fontStyle,
+    }
 
     const plotLineStyle = getPlotLineStyle(fontStyle)
     const plotLineLabelStyle = getPlotLineLabelStyle(fontStyle)
 
-    return isNumeric(layout.baseLineValue)
+    return isNumeric(regressionLine.value)
         ? Object.assign(
               {},
               plotLineStyle,
               objectClean({
-                  value: layout.baseLineValue,
-                  label: isString(layout.baseLineLabel)
+                  value: regressionLine.value,
+                  label: isString(regressionLine.title?.text)
                       ? Object.assign({}, plotLineLabelStyle, {
-                            text: layout.baseLineLabel,
+                            text: regressionLine.title.text,
                             ...getLineLabelStyle(
                                 fontStyle[FONT_STYLE_OPTION_TEXT_ALIGN],
-                                FONT_STYLE_BASE_LINE_LABEL,
-                                layout.type
+                                FONT_STYLE_REGRESSION_LINE_LABEL,
+                                visType
                             ),
                         })
                       : undefined,
@@ -238,7 +238,7 @@ function getDefault(layout, series, extraOptions) {
                 ),
                 plotLines: arrayClean([
                     getTargetLine(layout),
-                    getBaseLine(layout),
+                    getRegressionLine(axis.baseLine, layout.type),
                 ]),
                 gridLineColor: DEFAULT_GRIDLINE_COLOR,
                 labels: getLabels(axis),

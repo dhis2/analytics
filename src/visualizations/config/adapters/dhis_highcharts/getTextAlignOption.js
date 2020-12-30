@@ -4,8 +4,7 @@ import {
     TEXT_ALIGN_RIGHT,
     FONT_STYLE_HORIZONTAL_AXIS_TITLE,
     FONT_STYLE_VERTICAL_AXIS_TITLE,
-    FONT_STYLE_TARGET_LINE_LABEL,
-    FONT_STYLE_BASE_LINE_LABEL,
+    FONT_STYLE_REGRESSION_LINE_LABEL,
     FONT_STYLE_VISUALIZATION_TITLE,
     FONT_STYLE_VISUALIZATION_SUBTITLE,
     FONT_STYLE_LEGEND,
@@ -35,8 +34,7 @@ const getTextAlignOptions = (fontStyleKey, visType) => {
         case FONT_STYLE_HORIZONTAL_AXIS_TITLE:
         case FONT_STYLE_VERTICAL_AXIS_TITLE:
             return axisTitleAlignOptions
-        case FONT_STYLE_TARGET_LINE_LABEL:
-        case FONT_STYLE_BASE_LINE_LABEL:
+        case FONT_STYLE_REGRESSION_LINE_LABEL:
             return isVerticalType(visType)
                 ? verticalAlignOptions
                 : defaultAlignOptions

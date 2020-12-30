@@ -11,8 +11,7 @@ export const FONT_STYLE_HORIZONTAL_AXIS_TITLE = 'horizontalAxisTitle'
 export const FONT_STYLE_VERTICAL_AXIS_TITLE = 'verticalAxisTitle'
 export const FONT_STYLE_LEGEND = 'legend'
 export const FONT_STYLE_AXIS_LABELS = 'axisLabel'
-export const FONT_STYLE_TARGET_LINE_LABEL = 'targetLineLabel'
-export const FONT_STYLE_BASE_LINE_LABEL = 'baseLineLabel'
+export const FONT_STYLE_REGRESSION_LINE_LABEL = 'regressionLineLabel'
 // Options
 export const FONT_STYLE_OPTION_FONT = 'font'
 export const FONT_STYLE_OPTION_FONT_SIZE = 'fontSize'
@@ -86,8 +85,7 @@ export const getTextAlignOptions = (fontStyleKey, visType) => {
         case FONT_STYLE_HORIZONTAL_AXIS_TITLE:
         case FONT_STYLE_VERTICAL_AXIS_TITLE:
             return axisTitleAlignOptions()
-        case FONT_STYLE_TARGET_LINE_LABEL:
-        case FONT_STYLE_BASE_LINE_LABEL:
+        case FONT_STYLE_REGRESSION_LINE_LABEL:
             return isVerticalType(visType)
                 ? verticalAlignOptions()
                 : defaultAlignOptions()
@@ -211,21 +209,10 @@ export const defaultFontStyle = {
         [FONT_STYLE_OPTION_UNDERLINE]: false,
         [FONT_STYLE_OPTION_TEXT_COLOR]: colors.grey800,
     },
-    [FONT_STYLE_TARGET_LINE_LABEL]: {
+    [FONT_STYLE_REGRESSION_LINE_LABEL]: {
         [FONT_STYLE_OPTION_FONT]: defaultFont,
         [FONT_STYLE_OPTION_FONT_SIZE]: getFontSizeOptions(
-            FONT_STYLE_TARGET_LINE_LABEL
-        ).regular.value,
-        [FONT_STYLE_OPTION_BOLD]: false,
-        [FONT_STYLE_OPTION_ITALIC]: false,
-        [FONT_STYLE_OPTION_UNDERLINE]: false,
-        [FONT_STYLE_OPTION_TEXT_COLOR]: colors.grey900,
-        [FONT_STYLE_OPTION_TEXT_ALIGN]: TEXT_ALIGN_LEFT,
-    },
-    [FONT_STYLE_BASE_LINE_LABEL]: {
-        [FONT_STYLE_OPTION_FONT]: defaultFont,
-        [FONT_STYLE_OPTION_FONT_SIZE]: getFontSizeOptions(
-            FONT_STYLE_BASE_LINE_LABEL
+            FONT_STYLE_REGRESSION_LINE_LABEL
         ).regular.value,
         [FONT_STYLE_OPTION_BOLD]: false,
         [FONT_STYLE_OPTION_ITALIC]: false,

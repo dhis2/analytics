@@ -14,8 +14,7 @@ import {
     TEXT_ALIGN_LEFT,
     TEXT_ALIGN_RIGHT,
     TEXT_ALIGN_CENTER,
-    FONT_STYLE_BASE_LINE_LABEL,
-    FONT_STYLE_TARGET_LINE_LABEL,
+    FONT_STYLE_REGRESSION_LINE_LABEL,
     FONT_STYLE_OPTION_TEXT_ALIGN,
     FONT_STYLE_AXIS_LABELS,
     defaultFontStyle,
@@ -25,7 +24,7 @@ import { getTextAlignOption } from '../getTextAlignOption'
 import { getAxis } from '../../../../util/axes'
 
 const DEFAULT_MAX_VALUE = 100
-const DEFAULT_TARGET_LINE_LABEL = i18n.t('Target')
+//const DEFAULT_TARGET_LINE_LABEL = i18n.t('Target')
 const DEFAULT_BASE_LINE_LABEL = i18n.t('Base')
 const AXIS_TYPE = 'RANGE'
 const AXIS_INDEX = 0
@@ -105,18 +104,19 @@ export default function (layout, series, legendSet) {
             ? getPlotLine(
                   layout.baseLineValue,
                   layout.baseLineLabel || DEFAULT_BASE_LINE_LABEL,
-                  layout.fontStyle[FONT_STYLE_BASE_LINE_LABEL],
-                  FONT_STYLE_BASE_LINE_LABEL
+                  layout.fontStyle[FONT_STYLE_REGRESSION_LINE_LABEL],
+                  FONT_STYLE_REGRESSION_LINE_LABEL
               )
             : null,
-        isNumber(layout.targetLineValue)
-            ? getPlotLine(
-                  layout.targetLineValue,
-                  layout.targetLineLabel || DEFAULT_TARGET_LINE_LABEL,
-                  layout.fontStyle[FONT_STYLE_TARGET_LINE_LABEL],
-                  FONT_STYLE_TARGET_LINE_LABEL
-              )
-            : null,
+        // TODO: Add back targetLine
+        // isNumber(layout.targetLineValue)
+        //     ? getPlotLine(
+        //           layout.targetLineValue,
+        //           layout.targetLineLabel || DEFAULT_TARGET_LINE_LABEL,
+        //           layout.fontStyle[FONT_STYLE_TARGET_LINE_LABEL],
+        //           FONT_STYLE_TARGET_LINE_LABEL
+        //       )
+        //     : null,
     ])
     const fillColor =
         layout.legendDisplayStyle === LEGEND_DISPLAY_STYLE_FILL && legendSet

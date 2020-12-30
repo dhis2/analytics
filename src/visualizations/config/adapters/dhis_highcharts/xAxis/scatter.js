@@ -9,8 +9,7 @@ import { getAxisStringFromId } from '../../../../util/axisId'
 import {
     FONT_STYLE_VERTICAL_AXIS_TITLE,
     FONT_STYLE_AXIS_LABELS,
-    FONT_STYLE_TARGET_LINE_LABEL,
-    FONT_STYLE_BASE_LINE_LABEL,
+    FONT_STYLE_REGRESSION_LINE_LABEL,
     FONT_STYLE_OPTION_TEXT_COLOR,
     FONT_STYLE_OPTION_FONT_SIZE,
     FONT_STYLE_OPTION_BOLD,
@@ -95,35 +94,34 @@ const getLineLabelStyle = (fontStyle, fontStyleType, visType) => {
     return result
 }
 
-function getTargetLine(layout) {
-    const fontStyle = layout.fontStyle[FONT_STYLE_TARGET_LINE_LABEL]
-
-    const plotLineStyle = getPlotLineStyle(fontStyle)
-    const plotLineLabelStyle = getPlotLineLabelStyle(fontStyle)
-
-    return isNumeric(layout.targetLineValue)
-        ? Object.assign(
-              {},
-              plotLineStyle,
-              objectClean({
-                  value: layout.targetLineValue,
-                  label: isString(layout.targetLineLabel)
-                      ? Object.assign({}, plotLineLabelStyle, {
-                            text: layout.targetLineLabel,
-                            ...getLineLabelStyle(
-                                fontStyle[FONT_STYLE_OPTION_TEXT_ALIGN],
-                                FONT_STYLE_BASE_LINE_LABEL,
-                                layout.type
-                            ),
-                        })
-                      : undefined,
-              })
-          )
-        : undefined
+function getTargetLine() {
+    // const fontStyle = layout.fontStyle[FONT_STYLE_TARGET_LINE_LABEL]
+    // const plotLineStyle = getPlotLineStyle(fontStyle)
+    // const plotLineLabelStyle = getPlotLineLabelStyle(fontStyle)
+    // return isNumeric(layout.targetLineValue)
+    //     ? Object.assign(
+    //           {},
+    //           plotLineStyle,
+    //           objectClean({
+    //               value: layout.targetLineValue,
+    //               label: isString(layout.targetLineLabel)
+    //                   ? Object.assign({}, plotLineLabelStyle, {
+    //                         text: layout.targetLineLabel,
+    //                         ...getLineLabelStyle(
+    //                             fontStyle[FONT_STYLE_OPTION_TEXT_ALIGN],
+    //                             FONT_STYLE_REGRESSION_LINE_LABEL,
+    //                             layout.type
+    //                         ),
+    //                     })
+    //                   : undefined,
+    //           })
+    //       )
+    //     : undefined
 }
 
+//FIXME: Replace this with getRegressionLine from yAxys
 function getBaseLine(layout) {
-    const fontStyle = layout.fontStyle[FONT_STYLE_BASE_LINE_LABEL]
+    const fontStyle = layout.fontStyle[FONT_STYLE_REGRESSION_LINE_LABEL]
 
     const plotLineStyle = getPlotLineStyle(fontStyle)
     const plotLineLabelStyle = getPlotLineLabelStyle(fontStyle)
@@ -139,7 +137,7 @@ function getBaseLine(layout) {
                             text: layout.baseLineLabel,
                             ...getLineLabelStyle(
                                 fontStyle[FONT_STYLE_OPTION_TEXT_ALIGN],
-                                FONT_STYLE_BASE_LINE_LABEL,
+                                FONT_STYLE_REGRESSION_LINE_LABEL,
                                 layout.type
                             ),
                         })
