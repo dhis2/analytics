@@ -17,7 +17,7 @@ import {
     FONT_STYLE_REGRESSION_LINE_LABEL,
     FONT_STYLE_OPTION_TEXT_ALIGN,
     FONT_STYLE_AXIS_LABELS,
-    defaultFontStyle,
+    mergeFontStyleWithDefault,
 } from '../../../../../modules/fontStyle'
 import { VIS_TYPE_GAUGE } from '../../../../../modules/visTypes'
 import { getTextAlignOption } from '../getTextAlignOption'
@@ -47,10 +47,10 @@ function getPlotLine(regressionLine = {}, defaultLabel) {
         return null
     }
     const label = regressionLine.title?.text || defaultLabel
-    const fontStyle = {
-        ...defaultFontStyle[FONT_STYLE_REGRESSION_LINE_LABEL],
-        ...regressionLine.title?.fontStyle,
-    }
+    const fontStyle = mergeFontStyleWithDefault(
+        regressionLine.title?.fontStyle,
+        FONT_STYLE_REGRESSION_LINE_LABEL
+    )
 
     const verticalAlign = getTextAlignOption(
         fontStyle[FONT_STYLE_OPTION_TEXT_ALIGN],
@@ -86,10 +86,10 @@ function getPlotLine(regressionLine = {}, defaultLabel) {
 }
 
 const getLabels = axis => {
-    const fontStyle = {
-        ...defaultFontStyle[FONT_STYLE_AXIS_LABELS],
-        ...axis.label?.fontStyle,
-    }
+    const fontStyle = mergeFontStyleWithDefault(
+        axis.label?.fontStyle,
+        FONT_STYLE_AXIS_LABELS
+    )
 
     return {
         y: parseInt(fontStyle[FONT_STYLE_OPTION_FONT_SIZE], 10) + 7,

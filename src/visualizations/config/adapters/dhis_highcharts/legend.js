@@ -5,6 +5,7 @@ import {
     FONT_STYLE_OPTION_ITALIC,
     FONT_STYLE_OPTION_TEXT_ALIGN,
     FONT_STYLE_LEGEND,
+    mergeFontStyleWithDefault,
 } from '../../../../modules/fontStyle'
 import { getTextAlignOption } from './getTextAlignOption'
 
@@ -63,7 +64,10 @@ function getLegend(fontStyle, dashboard, visType) {
 }
 
 export default function (layout, dashboard) {
-    const fontStyle = layout.legend?.label?.fontStyle
+    const fontStyle = mergeFontStyleWithDefault(
+        layout.legend?.label?.fontStyle,
+        FONT_STYLE_LEGEND
+    )
     return layout.legend?.hidden
         ? {
               enabled: false,

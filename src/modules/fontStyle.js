@@ -222,16 +222,10 @@ export const defaultFontStyle = {
     },
 }
 
-export const mergeFontStyleWithDefault = fontStyle => {
-    const result = { ...defaultFontStyle }
-    for (const style in fontStyle) {
-        result[style] = {
-            ...result[style],
-            ...fontStyle[style],
-        }
-    }
-    return result
-}
+export const mergeFontStyleWithDefault = (fontStyle, fontStyleKey) => ({
+    ...defaultFontStyle[fontStyleKey],
+    ...fontStyle,
+})
 
 export const deleteFontStyleOption = (inputFontStyle, fontStyleKey, option) => {
     const style = {

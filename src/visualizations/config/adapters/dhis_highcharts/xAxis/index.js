@@ -22,7 +22,7 @@ import {
     FONT_STYLE_OPTION_FONT_SIZE,
     FONT_STYLE_OPTION_BOLD,
     FONT_STYLE_OPTION_ITALIC,
-    defaultFontStyle,
+    mergeFontStyleWithDefault,
 } from '../../../../../modules/fontStyle'
 import getFormatter from '../getFormatter'
 import { getAxis } from '../../../../util/axes'
@@ -35,10 +35,10 @@ function noAxis() {
 }
 
 export const getLabels = axis => {
-    const fontStyle = {
-        ...defaultFontStyle[FONT_STYLE_AXIS_LABELS],
-        ...axis.label?.fontStyle,
-    }
+    const fontStyle = mergeFontStyleWithDefault(
+        axis.label?.fontStyle,
+        FONT_STYLE_AXIS_LABELS
+    )
     return {
         style: {
             color: fontStyle[FONT_STYLE_OPTION_TEXT_COLOR],
@@ -63,10 +63,10 @@ export const getDefault = (store, layout) => {
         ),
         title: getAxisTitle(
             axis.title?.text,
-            {
-                ...defaultFontStyle[FONT_STYLE_HORIZONTAL_AXIS_TITLE],
-                ...axis.title?.fontStyle,
-            },
+            mergeFontStyleWithDefault(
+                axis.title?.fontStyle,
+                FONT_STYLE_HORIZONTAL_AXIS_TITLE
+            ),
             FONT_STYLE_HORIZONTAL_AXIS_TITLE,
             layout.type
         ),

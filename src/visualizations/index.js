@@ -2,11 +2,6 @@ import isArray from 'd2-utilizr/lib/isArray'
 
 import Store from './store'
 import Config from './config'
-import {
-    defaultFontStyle,
-    FONT_STYLE_LEGEND,
-    mergeFontStyleWithDefault,
-} from '../modules/fontStyle'
 
 const defaultError = error => {
     throw new Error(error)
@@ -29,20 +24,7 @@ function createVisualization(
     const store = new Store({ data: _data, error, warning, outputFormat })
     const config = new Config({
         store,
-        layout: {
-            ...layout,
-            fontStyle: mergeFontStyleWithDefault(layout.fontStyle),
-            legend: {
-                ...layout.legend,
-                label: {
-                    fontStyle: {
-                        ...defaultFontStyle[FONT_STYLE_LEGEND],
-                        ...layout.legend?.label?.fontStyle,
-                    },
-                },
-            },
-            // FIXME: Move this to each use of fontStyle instead of keeping it centralised
-        },
+        layout,
         el,
         outputFormat,
         extraOptions,

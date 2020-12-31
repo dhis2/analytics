@@ -18,7 +18,7 @@ import {
     TEXT_ALIGN_LEFT,
     TEXT_ALIGN_CENTER,
     TEXT_ALIGN_RIGHT,
-    defaultFontStyle,
+    mergeFontStyleWithDefault,
 } from '../../../../../modules/fontStyle'
 import { getTextAlignOption } from '../getTextAlignOption'
 import getSteps from '../getSteps'
@@ -148,10 +148,10 @@ function getBaseLine(layout) {
 }
 
 function getLabels(axis) {
-    const fontStyle = {
-        ...defaultFontStyle[FONT_STYLE_AXIS_LABELS],
-        ...axis.label?.fontStyle,
-    }
+    const fontStyle = mergeFontStyleWithDefault(
+        axis.label?.fontStyle,
+        FONT_STYLE_AXIS_LABELS
+    )
     return {
         style: {
             color: fontStyle[FONT_STYLE_OPTION_TEXT_COLOR],
@@ -176,10 +176,10 @@ export default function (layout, series) {
         tickAmount: getSteps(axis),
         title: getAxisTitle(
             axis.title?.text,
-            {
-                ...defaultFontStyle[FONT_STYLE_VERTICAL_AXIS_TITLE],
-                ...axis.title?.fontStyle,
-            },
+            mergeFontStyleWithDefault(
+                axis.title?.fontStyle,
+                FONT_STYLE_VERTICAL_AXIS_TITLE
+            ),
             FONT_STYLE_VERTICAL_AXIS_TITLE,
             layout.type
         ),

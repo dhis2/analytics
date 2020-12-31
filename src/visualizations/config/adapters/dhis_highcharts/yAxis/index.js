@@ -27,7 +27,7 @@ import {
     TEXT_ALIGN_LEFT,
     TEXT_ALIGN_CENTER,
     TEXT_ALIGN_RIGHT,
-    defaultFontStyle,
+    mergeFontStyleWithDefault,
 } from '../../../../../modules/fontStyle'
 import { getTextAlignOption } from '../getTextAlignOption'
 import { axisHasRelativeItems } from '../../../../../modules/layout/axisHasRelativeItems'
@@ -105,10 +105,10 @@ const getLineLabelStyle = (fontStyle, fontStyleType, visType) => {
 }
 
 function getRegressionLine(regressionLine = {}, visType) {
-    const fontStyle = {
-        ...defaultFontStyle[FONT_STYLE_REGRESSION_LINE_LABEL],
-        ...regressionLine.title?.fontStyle,
-    }
+    const fontStyle = mergeFontStyleWithDefault(
+        regressionLine.title?.fontStyle,
+        FONT_STYLE_REGRESSION_LINE_LABEL
+    )
 
     const plotLineStyle = getPlotLineStyle(fontStyle)
     const plotLineLabelStyle = getPlotLineLabelStyle(fontStyle)
@@ -135,10 +135,10 @@ function getRegressionLine(regressionLine = {}, visType) {
 }
 
 function getLabels(axis) {
-    const fontStyle = {
-        ...defaultFontStyle[FONT_STYLE_AXIS_LABELS],
-        ...axis.label?.fontStyle,
-    }
+    const fontStyle = mergeFontStyleWithDefault(
+        axis.label?.fontStyle,
+        FONT_STYLE_AXIS_LABELS
+    )
     return {
         style: {
             color: fontStyle[FONT_STYLE_OPTION_TEXT_COLOR],
@@ -204,10 +204,10 @@ function getDefault(layout, series, extraOptions) {
                 tickAmount: getSteps(axis),
                 title: getAxisTitle(
                     axis.title?.text,
-                    {
-                        ...defaultFontStyle[FONT_STYLE_VERTICAL_AXIS_TITLE],
-                        ...axis.title?.fontStyle,
-                    },
+                    mergeFontStyleWithDefault(
+                        axis.title?.fontStyle,
+                        FONT_STYLE_VERTICAL_AXIS_TITLE
+                    ),
                     FONT_STYLE_VERTICAL_AXIS_TITLE,
                     layout.type
                 ),

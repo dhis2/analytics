@@ -13,6 +13,7 @@ import {
     FONT_STYLE_OPTION_FONT_SIZE,
     FONT_STYLE_OPTION_TEXT_ALIGN,
     FONT_STYLE_VISUALIZATION_TITLE,
+    mergeFontStyleWithDefault,
 } from '../../../../../modules/fontStyle'
 import { getTextAlignOption } from '../getTextAlignOption'
 
@@ -38,8 +39,10 @@ function getDefault(layout, metaData, dashboard) {
 }
 
 export default function (layout, metaData, dashboard) {
-    const fontStyle =
-        layout.fontStyle && layout.fontStyle[FONT_STYLE_VISUALIZATION_TITLE]
+    const fontStyle = mergeFontStyleWithDefault(
+        layout.fontStyle && layout.fontStyle[FONT_STYLE_VISUALIZATION_TITLE],
+        FONT_STYLE_VISUALIZATION_TITLE
+    )
 
     const title = {
         text: undefined,

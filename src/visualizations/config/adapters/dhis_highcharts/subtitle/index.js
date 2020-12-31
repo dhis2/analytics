@@ -12,6 +12,7 @@ import {
     FONT_STYLE_OPTION_FONT_SIZE,
     FONT_STYLE_OPTION_TEXT_ALIGN,
     FONT_STYLE_VISUALIZATION_SUBTITLE,
+    mergeFontStyleWithDefault,
 } from '../../../../../modules/fontStyle'
 import { getTextAlignOption } from '../getTextAlignOption'
 
@@ -34,8 +35,10 @@ function getDefault(layout, dashboard, filterTitle) {
 }
 
 export default function (series, layout, metaData, dashboard) {
-    const fontStyle =
-        layout.fontStyle && layout.fontStyle[FONT_STYLE_VISUALIZATION_SUBTITLE]
+    const fontStyle = mergeFontStyleWithDefault(
+        layout.fontStyle && layout.fontStyle[FONT_STYLE_VISUALIZATION_SUBTITLE],
+        FONT_STYLE_VISUALIZATION_SUBTITLE
+    )
     let subtitle = {
         text: undefined,
     }

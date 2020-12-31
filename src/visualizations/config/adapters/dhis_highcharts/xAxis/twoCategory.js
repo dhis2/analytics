@@ -2,8 +2,8 @@ import getAxisTitle from '../getAxisTitle'
 import getCategories from '../getCategories'
 import { getLabels } from './'
 import {
-    defaultFontStyle,
     FONT_STYLE_HORIZONTAL_AXIS_TITLE,
+    mergeFontStyleWithDefault,
 } from '../../../../../modules/fontStyle'
 import { getAxis } from '../../../../util/axes'
 
@@ -28,10 +28,10 @@ export default function (store, layout) {
         {
             title: getAxisTitle(
                 axis.title?.text,
-                {
-                    ...defaultFontStyle[FONT_STYLE_HORIZONTAL_AXIS_TITLE],
-                    ...axis.title?.fontStyle,
-                },
+                mergeFontStyleWithDefault(
+                    axis.title?.fontStyle,
+                    FONT_STYLE_HORIZONTAL_AXIS_TITLE
+                ),
                 FONT_STYLE_HORIZONTAL_AXIS_TITLE,
                 layout.type
             ),
