@@ -16,7 +16,7 @@ export const getOutliers = (data, stdDevThreshold = 1) => {
     const normalGradient = getNormalGradient(regGradient)
 
     const outlierPoints = []
-    // const stdDevGraphs = []
+    // const stdDevLines = []
 
     let intersectionPoint
 
@@ -32,10 +32,10 @@ export const getOutliers = (data, stdDevThreshold = 1) => {
 
     return {
         stdDevValue,
-        regressionGraph: reg.points,
+        regressionLine: reg.points,
         regressionGradient: regGradient,
         outlierPoints,
         normalGradient,
-        // stdDevGraphs,
+        // stdDevLines,
     }
 }

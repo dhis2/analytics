@@ -1,1 +1,1 @@
-export const getNormalGradient = graphGradient => -1 / graphGradient
+export const getNormalGradient = lineGradient => -1 / lineGradient
