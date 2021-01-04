@@ -42,7 +42,8 @@ export const getOutliers = (data, stdDevThreshold = 1) => {
 
         pointAnalysis.push({
             point: dataPoint,
-            distanceToRegression: pointDistance,
+            regressionPoint: intersectionPoint,
+            distanceToRegressionPoint: pointDistance,
             isOutlier,
         })
     })
