@@ -27,7 +27,12 @@ export const getOutliers = (data, stdDevThreshold = 1) => {
             ...getNormalEndPoints(dataPoint, normalGradient),
             ...regEndPoints
         )
-
+        console.log(
+            dataPoint,
+            intersectionPoint,
+            stdDevValue,
+            getPointDistance(dataPoint, intersectionPoint) > stdDevValue
+        )
         if (getPointDistance(dataPoint, intersectionPoint) > stdDevValue) {
             outlierPoints.push(dataPoint)
         } else {
