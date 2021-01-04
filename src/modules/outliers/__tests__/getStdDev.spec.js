@@ -1,7 +1,5 @@
 import { getStdDev } from '../getStdDev'
 
-const expectedType = 'number'
-
 describe('getStdDev', () => {
     it('should return a number', () => {
         const points = [
@@ -12,6 +10,6 @@ describe('getStdDev', () => {
         ]
         const stdDev = getStdDev(points)
 
-        expect(typeof stdDev).toBe(expectedType)
+        expect(typeof stdDev).toBe('number')
     })
 })
