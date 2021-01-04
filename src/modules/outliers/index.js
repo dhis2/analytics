@@ -18,26 +18,33 @@ export const getOutliers = (data, stdDevThreshold = 1) => {
 
     const outlierPoints = []
     const allPointsExceptOutliers = []
+    const pointAnalysis = []
     // const stdDevLines = []
 
     let intersectionPoint
+    let pointDistance
+    let isOutlier
 
     data.forEach(dataPoint => {
         intersectionPoint = getIntersectionPoint(
             ...getNormalEndPoints(dataPoint, normalGradient),
             ...regEndPoints
         )
-        console.log(
-            dataPoint,
-            intersectionPoint,
-            stdDevValue,
-            getPointDistance(dataPoint, intersectionPoint) > stdDevValue
-        )
-        if (getPointDistance(dataPoint, intersectionPoint) > stdDevValue) {
+
+        pointDistance = getPointDistance(dataPoint, intersectionPoint)
+        isOutlier = pointDistance > stdDevValue
+
+        if (isOutlier) {
             outlierPoints.push(dataPoint)
         } else {
             allPointsExceptOutliers.push(dataPoint)
         }
+
+        pointAnalysis.push({
+            point: dataPoint,
+            distanceToRegression: pointDistance,
+            isOutlier,
+        })
     })
 
     return {
@@ -57,6 +64,9 @@ export const getOutliers = (data, stdDevThreshold = 1) => {
             all: data,
             outliers: outlierPoints,
             allExceptOutliers: allPointsExceptOutliers,
+        },
+        analysis: {
+            points: pointAnalysis,
         },
         // stdDevLines,
     }
