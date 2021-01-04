@@ -1,5 +1,5 @@
 import { getStdDev } from './getStdDev'
-import { getRegression } from './getRegression'
+import { getRegression } from '../regression/getRegression'
 import { getIntersectionPoint } from './getIntersectionPoint'
 import { getPointDistance } from './getPointDistance'
 import { getNormalGradient } from './getNormalGradient'
