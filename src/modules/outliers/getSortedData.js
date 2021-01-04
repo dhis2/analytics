@@ -1,2 +1,0 @@
-export const getSortedData = data =>
-    data.slice().sort((x, y) => (x[0] > y[0] ? 1 : x[0] < y[0] ? -1 : 0))

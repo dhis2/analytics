@@ -7,7 +7,9 @@ import { getNormalEndPoints } from './getNormalEndPoints'
 
 export const getOutliers = (data, stdDevThreshold = 1) => {
     const stdDevValue = getStdDev(data) * stdDevThreshold
-    const reg = getRegression(data)
+    const reg = getRegression(
+        data.slice().sort((a, b) => (a[0] < b[0] ? -1 : a[0] > b[0] ? 1 : 0))
+    )
 
     const regGradient = reg.equation[0]
     const regEndPoints = [reg.points[0], reg.points[reg.points.length - 1]]

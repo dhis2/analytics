@@ -1,6 +1,6 @@
 import { getStdDev } from '../getStdDev'
 
-const type = 'number'
+const expectedType = 'number'
 
 describe('getStdDev', () => {
     it('should return a number', () => {
@@ -12,6 +12,6 @@ describe('getStdDev', () => {
         ]
         const stdDev = getStdDev(points)
 
-        expect(typeof stdDev).toBe(type)
+        expect(typeof stdDev).toBe(expectedType)
     })
 })
