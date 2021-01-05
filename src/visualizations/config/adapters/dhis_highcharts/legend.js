@@ -63,18 +63,18 @@ function getLegend(fontStyle, dashboard, visType) {
     )
 }
 
-export default function (layout, dashboard) {
-    const fontStyle = mergeFontStyleWithDefault(
-        layout.legend?.label?.fontStyle,
+export default function (isHidden, fontStyle, visType, dashboard) {
+    const mergedFontStyle = mergeFontStyleWithDefault(
+        fontStyle,
         FONT_STYLE_LEGEND
     )
-    return layout.legend?.hidden
+    return isHidden
         ? {
               enabled: false,
           }
         : Object.assign(
               {},
-              getLegend(fontStyle, dashboard, layout.type),
-              getItemStyle(fontStyle, dashboard)
+              getLegend(mergedFontStyle, dashboard, visType),
+              getItemStyle(mergedFontStyle, dashboard)
           )
 }

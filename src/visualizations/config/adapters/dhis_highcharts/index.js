@@ -98,7 +98,12 @@ export default function ({ store, layout, el, extraConfig, extraOptions }) {
         ),
 
         // legend
-        legend: getLegend(_layout, _extraOptions.dashboard),
+        legend: getLegend(
+            _layout.legend?.hidden,
+            _layout.legend?.label?.fontStyle,
+            _layout.type,
+            _extraOptions.dashboard
+        ),
 
         // pane
         pane: getPane(_layout.type),
