@@ -7,7 +7,7 @@ import {
     FONT_STYLE_LEGEND,
     mergeFontStyleWithDefault,
 } from '../../../../modules/fontStyle'
-import { isVerticalType } from '../../../../modules/visTypes'
+import { isVerticalType, VIS_TYPE_SCATTER } from '../../../../modules/visTypes'
 import { getTextAlignOption } from './getTextAlignOption'
 
 const DASHBOARD_ITEM_STYLE = {
@@ -69,7 +69,7 @@ export default function (isHidden, fontStyle, visType, dashboard) {
         fontStyle,
         FONT_STYLE_LEGEND
     )
-    return isHidden
+    return isHidden || visType === VIS_TYPE_SCATTER
         ? {
               enabled: false,
           }
