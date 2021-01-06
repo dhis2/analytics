@@ -154,6 +154,7 @@ export {
     isTwoCategoryChartType,
     isLegendSetType,
     isColumnBasedType,
+    isVerticalType,
 } from './modules/visTypes'
 
 // Modules: layoutTypes

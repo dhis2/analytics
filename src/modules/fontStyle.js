@@ -2,8 +2,6 @@
 import i18n from '@dhis2/d2-i18n'
 import { colors } from '@dhis2/ui'
 
-import { isVerticalType } from './visTypes'
-
 // Font styles
 export const FONT_STYLE_VISUALIZATION_TITLE = 'visualizationTitle'
 export const FONT_STYLE_VISUALIZATION_SUBTITLE = 'visualizationSubtitle'
@@ -80,20 +78,18 @@ export const getFontSizeOptions = fontStyleKey => {
     return result
 }
 
-export const getTextAlignOptions = (fontStyleKey, visType) => {
+export const getTextAlignOptions = (fontStyleKey, isVertical) => {
     switch (fontStyleKey) {
         case FONT_STYLE_HORIZONTAL_AXIS_TITLE:
         case FONT_STYLE_VERTICAL_AXIS_TITLE:
             return axisTitleAlignOptions()
-        case FONT_STYLE_REGRESSION_LINE_LABEL:
-            return isVerticalType(visType)
-                ? verticalAlignOptions()
-                : defaultAlignOptions()
         case FONT_STYLE_VISUALIZATION_TITLE:
         case FONT_STYLE_VISUALIZATION_SUBTITLE:
         case FONT_STYLE_LEGEND:
-        default:
             return defaultAlignOptions()
+        case FONT_STYLE_REGRESSION_LINE_LABEL:
+        default:
+            return isVertical ? verticalAlignOptions() : defaultAlignOptions()
     }
 }
 

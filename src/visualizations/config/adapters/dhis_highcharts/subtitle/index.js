@@ -3,6 +3,7 @@ import getFilterText from '../../../../util/getFilterText'
 import {
     VIS_TYPE_YEAR_OVER_YEAR_LINE,
     VIS_TYPE_YEAR_OVER_YEAR_COLUMN,
+    isVerticalType,
 } from '../../../../../modules/visTypes'
 import getYearOverYearTitle from '../title/yearOverYear'
 import {
@@ -76,7 +77,7 @@ export default function (series, layout, metaData, dashboard) {
                         align: getTextAlignOption(
                             fontStyle[FONT_STYLE_OPTION_TEXT_ALIGN],
                             FONT_STYLE_VISUALIZATION_SUBTITLE,
-                            layout.type
+                            isVerticalType(layout.type)
                         ),
                         style: {
                             // DHIS2-578: dynamically truncate subtitle when it's taking more than 1 line

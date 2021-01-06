@@ -1,9 +1,10 @@
 import isString from 'd2-utilizr/lib/isString'
+
 import {
     FONT_STYLE_HORIZONTAL_AXIS_TITLE,
     TEXT_ALIGN_CENTER,
 } from '../../../../../modules/fontStyle'
-import { VIS_TYPE_RADAR } from '../../../../../modules/visTypes'
+import { isVerticalType, VIS_TYPE_RADAR } from '../../../../../modules/visTypes'
 import { getTextAlignOption } from '../getTextAlignOption'
 import { getDefault } from './'
 
@@ -16,7 +17,7 @@ export default (store, layout) => {
             getTextAlignOption(
                 TEXT_ALIGN_CENTER,
                 FONT_STYLE_HORIZONTAL_AXIS_TITLE,
-                VIS_TYPE_RADAR
+                isVerticalType(VIS_TYPE_RADAR)
             )
     ) {
         config.title.textAlign = 'right'

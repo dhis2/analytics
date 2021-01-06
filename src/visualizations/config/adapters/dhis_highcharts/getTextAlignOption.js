@@ -9,7 +9,6 @@ import {
     FONT_STYLE_VISUALIZATION_SUBTITLE,
     FONT_STYLE_LEGEND,
 } from '../../../../modules/fontStyle'
-import { isVerticalType } from '../../../../modules/visTypes'
 
 const defaultAlignOptions = {
     [TEXT_ALIGN_LEFT]: 'left',
@@ -29,15 +28,13 @@ const verticalAlignOptions = {
     [TEXT_ALIGN_RIGHT]: 'bottom',
 }
 
-const getTextAlignOptions = (fontStyleKey, visType) => {
+const getTextAlignOptions = (fontStyleKey, isVertical) => {
     switch (fontStyleKey) {
         case FONT_STYLE_HORIZONTAL_AXIS_TITLE:
         case FONT_STYLE_VERTICAL_AXIS_TITLE:
             return axisTitleAlignOptions
         case FONT_STYLE_REGRESSION_LINE_LABEL:
-            return isVerticalType(visType)
-                ? verticalAlignOptions
-                : defaultAlignOptions
+            return isVertical ? verticalAlignOptions : defaultAlignOptions
         case FONT_STYLE_VISUALIZATION_TITLE:
         case FONT_STYLE_VISUALIZATION_SUBTITLE:
         case FONT_STYLE_LEGEND:
@@ -46,5 +43,5 @@ const getTextAlignOptions = (fontStyleKey, visType) => {
     }
 }
 
-export const getTextAlignOption = (option, fontStyleKey, visType) =>
-    getTextAlignOptions(fontStyleKey, visType)[option]
+export const getTextAlignOption = (option, fontStyleKey, isVertical) =>
+    getTextAlignOptions(fontStyleKey, isVertical)[option]

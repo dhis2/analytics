@@ -7,6 +7,7 @@ import {
     FONT_STYLE_LEGEND,
     mergeFontStyleWithDefault,
 } from '../../../../modules/fontStyle'
+import { isVerticalType } from '../../../../modules/visTypes'
 import { getTextAlignOption } from './getTextAlignOption'
 
 const DASHBOARD_ITEM_STYLE = {
@@ -57,7 +58,7 @@ function getLegend(fontStyle, dashboard, visType) {
                   align: getTextAlignOption(
                       fontStyle[FONT_STYLE_OPTION_TEXT_ALIGN],
                       FONT_STYLE_LEGEND,
-                      visType
+                      isVerticalType(visType)
                   ),
               }
     )

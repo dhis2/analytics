@@ -4,6 +4,7 @@ import {
     VIS_TYPE_YEAR_OVER_YEAR_LINE,
     VIS_TYPE_YEAR_OVER_YEAR_COLUMN,
     VIS_TYPE_GAUGE,
+    isVerticalType,
 } from '../../../../../modules/visTypes'
 import getYearOverYearTitle from './yearOverYear'
 import {
@@ -76,7 +77,7 @@ export default function (layout, metaData, dashboard) {
                   align: getTextAlignOption(
                       fontStyle[FONT_STYLE_OPTION_TEXT_ALIGN],
                       FONT_STYLE_VISUALIZATION_TITLE,
-                      layout.type
+                      isVerticalType(layout.type)
                   ),
                   style: {
                       color: fontStyle[FONT_STYLE_OPTION_TEXT_COLOR],

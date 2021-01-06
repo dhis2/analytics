@@ -19,7 +19,7 @@ import {
     FONT_STYLE_AXIS_LABELS,
     mergeFontStyleWithDefault,
 } from '../../../../../modules/fontStyle'
-import { VIS_TYPE_GAUGE } from '../../../../../modules/visTypes'
+import { isVerticalType, VIS_TYPE_GAUGE } from '../../../../../modules/visTypes'
 import { getTextAlignOption } from '../getTextAlignOption'
 import { getAxis } from '../../../../util/axes'
 
@@ -55,7 +55,7 @@ function getPlotLine(regressionLine = {}, defaultLabel) {
     const verticalAlign = getTextAlignOption(
         fontStyle[FONT_STYLE_OPTION_TEXT_ALIGN],
         FONT_STYLE_REGRESSION_LINE_LABEL,
-        VIS_TYPE_GAUGE
+        isVerticalType(VIS_TYPE_GAUGE)
     )
     const y = getLabelOffsetFromTextAlign(
         fontStyle[FONT_STYLE_OPTION_TEXT_ALIGN]
