@@ -223,6 +223,7 @@ export const mergeFontStyleWithDefault = (fontStyle, fontStyleKey) => ({
     ...fontStyle,
 })
 
+//FIXME: Is this function unused? Remove?
 export const deleteFontStyleOption = (inputFontStyle, fontStyleKey, option) => {
     const style = {
         ...inputFontStyle,
