@@ -2,14 +2,14 @@
 # Translators:
 # phil_dhis2, 2020
 # Viktor Varland <viktor@dhis2.org>, 2020
-# Mai Nguyen <thanhmai.jica@gmail.com>, 2020
+# Mai Nguyen <thanhmai.jica@gmail.com>, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2020-05-20T21:46:25.914Z\n"
 "PO-Revision-Date: 2020-05-18 10:55+0000\n"
-"Last-Translator: Mai Nguyen <thanhmai.jica@gmail.com>, 2020\n"
+"Last-Translator: Mai Nguyen <thanhmai.jica@gmail.com>, 2021\n"
 "Language-Team: Vietnamese (https://www.transifex.com/hisp-uio/teams/100509/vi/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -33,7 +33,7 @@ msgid "Detail"
 msgstr "Chi tiết"
 
 msgid "Move to {{axisName}}"
-msgstr ""
+msgstr "Di chuyển đến {{axisName}}"
 
 msgid "Add to {{axisName}}"
 msgstr "Thêm {{tên trục}"
@@ -42,22 +42,22 @@ msgid "Remove"
 msgstr "Tháo ra"
 
 msgid "Not available for {{visualizationType}}"
-msgstr ""
+msgstr "Không có sẵn cho {{visualizationType}}"
 
 msgid "Requires 2 or more data items"
-msgstr ""
+msgstr "Yêu cầu 2 mục dữ liệu trở lên"
 
 msgid "Only available when data is in Series"
-msgstr ""
+msgstr "Chỉ khả dụng khi dữ liệu ở chiều chuỗi"
 
 msgid "Remove Assigned Categories"
-msgstr ""
+msgstr "Xóa phân loại đã chỉ định"
 
 msgid "Add Assigned Categories"
 msgstr "Thêm phân loại được chỉ định"
 
 msgid "Manage chart axes"
-msgstr ""
+msgstr "Quản lý trục biểu đồ"
 
 msgid "Filter dimensions"
 msgstr "Các chiều lọc"
@@ -138,10 +138,10 @@ msgid "December"
 msgstr "Tháng mười hai"
 
 msgid "Week {{weekNumber}}"
-msgstr ""
+msgstr "Tuần {{weekNumber}}"
 
 msgid "Bi-Week {{biWeekNumber}}"
-msgstr ""
+msgstr "Hai tuần {{biWeekNumber}}"
 
 msgid "Daily"
 msgstr "Hàng ngày"
@@ -153,16 +153,16 @@ msgid "Bi-weekly"
 msgstr "Hai-tuần"
 
 msgid "Weekly (Start Wednesday)"
-msgstr ""
+msgstr "Hàng tuần (Bắt đầu từ Thứ Tư)"
 
 msgid "Weekly (Start Thursday)"
-msgstr ""
+msgstr "Hàng tuần (Bắt đầu từ Thứ Năm)"
 
 msgid "Weekly (Start Saturday)"
-msgstr ""
+msgstr "Hàng tuần (Bắt đầu từ Thứ Bảy)"
 
 msgid "Weekly (Start Sunday)"
-msgstr ""
+msgstr "Hàng tuần (Bắt đầu từ Chủ nhật)"
 
 msgid "Monthly"
 msgstr "Hàng tháng"
@@ -183,7 +183,7 @@ msgid "Yearly"
 msgstr "Một năm"
 
 msgid "Financial year (Start November)"
-msgstr ""
+msgstr "Năm tài chính (Bắt đầu từ tháng 11)"
 
 msgid "Financial year (Start October)"
 msgstr "Năm Tài Chính - Tháng 10"
@@ -285,7 +285,7 @@ msgid "Last six-month"
 msgstr "6 tháng trước"
 
 msgid "Last 2 six-month"
-msgstr ""
+msgstr "2 lần sáu tháng qua"
 
 msgid "This financial year"
 msgstr "Năm tài chính này"
@@ -342,10 +342,10 @@ msgid "Filter"
 msgstr "Lọc"
 
 msgid "Columns"
-msgstr ""
+msgstr "Cột"
 
 msgid "Rows"
-msgstr ""
+msgstr "Dòng"
 
 msgid "Reporting rate"
 msgstr "Tỉ lệ báo cáo"
@@ -402,25 +402,25 @@ msgid "Program indicators"
 msgstr "Chỉ Số Chương Trình"
 
 msgid "{{dynamicOuNames}} and {{lastOuName}}"
-msgstr ""
+msgstr "{{dynamicOuNames}} và {{lastOuName}}"
 
 msgid "{{allDynamicOuNames}} levels"
-msgstr ""
+msgstr "{{allDynamicOuNames}} cấp độ"
 
 msgid "{{allDynamicOuNames}} groups"
-msgstr ""
+msgstr "{{allDynamicOuNames}} nhóm"
 
 msgid "{{allDynamicOuNames}} levels in {{staticOuNames}}"
-msgstr ""
+msgstr "{{allDynamicOuNames}} cấp trong {{staticOuNames}}"
 
 msgid "{{allDynamicOuNames}} groups in {{staticOuNames}}"
-msgstr ""
+msgstr "{{allDynamicOuNames}} nhóm trong {{staticOuNames}}"
 
 msgid "Organisation Unit"
 msgstr "Đơn vị"
 
 msgid "Assigned Categories"
-msgstr ""
+msgstr "Phân loại được chỉ định"
 
 msgid "Column"
 msgstr "Biểu đồ cột"
