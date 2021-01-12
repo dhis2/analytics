@@ -61,7 +61,7 @@ export default function (series, layout, metaData, dashboard) {
                 )
                 break
             case VIS_TYPE_SCATTER:
-                subtitle.text = dashboard || filterTitle
+                subtitle.text = filterTitle
                 break
             default:
                 subtitle = getDefault(layout, dashboard, filterTitle)
