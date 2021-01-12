@@ -1,3 +1,10 @@
+## [12.1.4](https://github.com/dhis2/analytics/compare/v12.1.3...v12.1.4) (2021-01-12)
+
+
+### Bug Fixes
+
+* add custom title and subtitle for scatter (DHIS2-10170) ([#754](https://github.com/dhis2/analytics/issues/754)) ([f266a8f](https://github.com/dhis2/analytics/commit/f266a8f27ca0efa4b38c7bf8fc2ead97cf70eee7))
+
 ## [12.1.3](https://github.com/dhis2/analytics/compare/v12.1.2...v12.1.3) (2021-01-06)
 
 
