@@ -60,7 +60,7 @@ export default function ({ store, layout, el, extraConfig, extraOptions }) {
             _layout.rows && _layout.rows.length
                 ? _layout.rows.map(row => row.dimension)
                 : null,
-        _extraOptions,
+        extraOptions: _extraOptions,
     })
 
     if (_layout.type === VIS_TYPE_SCATTER) {
