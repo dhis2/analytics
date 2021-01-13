@@ -7,7 +7,7 @@ export default function (
     extraOptions
 ) {
     const serieData = Array.from(
-        { length: extraOptions.xAxisLabels.length },
+        { length: extraOptions?.xAxisLabels?.length || 0 },
         () => null
     )
 
