@@ -31,12 +31,14 @@ export default function ({
         type,
         seriesId = initialSeriesId,
         categoryIds = [initialCategoryId],
+        extraOptions,
     }) => {
         return _adapter({
             type,
             data: data.map(d => _validator({ data: d, error, warning })),
             seriesId,
             categoryIds,
+            extraOptions,
         })
     }
 }
