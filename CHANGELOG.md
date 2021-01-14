@@ -1,3 +1,10 @@
+## [12.1.7](https://github.com/dhis2/analytics/compare/v12.1.6...v12.1.7) (2021-01-14)
+
+
+### Bug Fixes
+
+* add default color for values out of bounds ([#762](https://github.com/dhis2/analytics/issues/762)) ([b52e00f](https://github.com/dhis2/analytics/commit/b52e00fb2398c24a2fb689ee2d436c66bb8bdc3b))
+
 ## [12.1.6](https://github.com/dhis2/analytics/compare/v12.1.5...v12.1.6) (2021-01-14)
 
 
