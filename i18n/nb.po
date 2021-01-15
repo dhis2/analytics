@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-11-30T10:27:09.237Z\n"
+"POT-Creation-Date: 2020-12-21T08:01:55.494Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: Karoline Tufte Lien <karoline@dhis2.org>, 2020\n"
 "Language-Team: Norwegian Bokmål (https://www.transifex.com/hisp-uio/teams/100509/nb/)\n"
@@ -599,6 +599,9 @@ msgstr ""
 msgid "No legend for this series"
 msgstr "Ingen tegnforklaring for denne serien"
 
+msgid "and {{amount}} more..."
+msgstr ""
+
 msgid "Target"
 msgstr "Mål"
 
@@ -610,3 +613,6 @@ msgstr "Akse {{axisId}}"
 
 msgid "No data"
 msgstr "Ingen data"
+
+msgid "Reset zoom"
+msgstr ""

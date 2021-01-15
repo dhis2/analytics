@@ -9,7 +9,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-11-30T10:27:09.237Z\n"
+"POT-Creation-Date: 2020-12-21T08:01:55.494Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: Ge Joao <gsimango@saudigitus.org>, 2020\n"
 "Language-Team: Portuguese (https://www.transifex.com/hisp-uio/teams/100509/pt/)\n"
@@ -584,6 +584,9 @@ msgstr ""
 msgid "No legend for this series"
 msgstr ""
 
+msgid "and {{amount}} more..."
+msgstr ""
+
 msgid "Target"
 msgstr "Meta"
 
@@ -595,3 +598,6 @@ msgstr ""
 
 msgid "No data"
 msgstr "Não ha dados"
+
+msgid "Reset zoom"
+msgstr ""
