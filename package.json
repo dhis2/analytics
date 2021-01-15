@@ -1,6 +1,6 @@
 {
     "name": "@dhis2/analytics",
-    "version": "12.1.0",
+    "version": "12.1.7",
     "main": "./build/cjs/lib.js",
     "module": "./build/es/lib.js",
     "sideEffects": [
@@ -26,7 +26,7 @@
         "validate-push": "yarn test"
     },
     "devDependencies": {
-        "@dhis2/cli-app-scripts": "^5.1.0",
+        "@dhis2/cli-app-scripts": "^5.2.2",
         "@dhis2/cli-style": "^7.2.2",
         "@dhis2/d2-i18n": "^1.0.6",
         "@sambego/storybook-state": "^2.0.1",

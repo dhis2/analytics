@@ -10,7 +10,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-11-30T10:27:09.237Z\n"
+"POT-Creation-Date: 2020-12-21T08:01:55.494Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: Yao Selom SAKA <saka.yao@yahoo.fr>, 2020\n"
 "Language-Team: French (https://www.transifex.com/hisp-uio/teams/100509/fr/)\n"
@@ -585,6 +585,9 @@ msgstr ""
 msgid "No legend for this series"
 msgstr ""
 
+msgid "and {{amount}} more..."
+msgstr ""
+
 msgid "Target"
 msgstr "Cible"
 
@@ -596,3 +599,6 @@ msgstr "Axe {{{axisId}}"
 
 msgid "No data"
 msgstr "Aucune donnée"
+
+msgid "Reset zoom"
+msgstr ""

@@ -9,7 +9,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-11-30T10:27:09.237Z\n"
+"POT-Creation-Date: 2020-12-21T08:01:55.494Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: Yury Rogachev <yury@dhis2.org>, 2020\n"
 "Language-Team: Russian (https://www.transifex.com/hisp-uio/teams/100509/ru/)\n"
@@ -586,6 +586,9 @@ msgstr ""
 msgid "No legend for this series"
 msgstr "Отсутвует легенда для этого ряда"
 
+msgid "and {{amount}} more..."
+msgstr ""
+
 msgid "Target"
 msgstr "Цель"
 
@@ -597,3 +600,6 @@ msgstr "Ось {{axisId}}"
 
 msgid "No data"
 msgstr "Нет данных"
+
+msgid "Reset zoom"
+msgstr ""
