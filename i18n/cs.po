@@ -1,13 +1,13 @@
 # 
 # Translators:
-# trendspotter, 2020
+# Jiří Podhorecký, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2020-05-20T21:46:25.914Z\n"
 "PO-Revision-Date: 2020-05-18 10:55+0000\n"
-"Last-Translator: trendspotter, 2020\n"
+"Last-Translator: Jiří Podhorecký, 2021\n"
 "Language-Team: Czech (https://www.transifex.com/hisp-uio/teams/100509/cs/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -64,7 +64,7 @@ msgid "Main dimensions"
 msgstr "Hlavní rozměry"
 
 msgid "Your dimensions"
-msgstr "Vaše rozměry"
+msgstr "Vaše dimenze"
 
 msgid "Dimension recommended with selected data"
 msgstr "U vybraných dat je doporučen rozměr"
@@ -106,7 +106,7 @@ msgid "February"
 msgstr "únor"
 
 msgid "March"
-msgstr "březen"
+msgstr "Březen"
 
 msgid "April"
 msgstr "Duben"
@@ -118,7 +118,7 @@ msgid "June"
 msgstr "červen"
 
 msgid "July"
-msgstr "červenec"
+msgstr "Červenec"
 
 msgid "August"
 msgstr "Srpen"
@@ -127,16 +127,16 @@ msgid "September"
 msgstr "Září"
 
 msgid "October"
-msgstr "říjen"
+msgstr "Říjen"
 
 msgid "November"
 msgstr "Listopad"
 
 msgid "December"
-msgstr "prosinec"
+msgstr "Prosinec"
 
 msgid "Week {{weekNumber}}"
-msgstr "Táden {{weekNumber}}"
+msgstr "Týden {{weekNumber}}"
 
 msgid "Bi-Week {{biWeekNumber}}"
 msgstr "dva týdny {{biWeekNumber}}"
@@ -166,7 +166,7 @@ msgid "Monthly"
 msgstr "Měsíčně"
 
 msgid "Bi-monthly"
-msgstr "Dvakrát za měsíc"
+msgstr "Dva měsíce"
 
 msgid "Quarterly"
 msgstr "Čtvrtletně"
@@ -253,7 +253,7 @@ msgid "Months this year"
 msgstr "Měsíce tohoto roku"
 
 msgid "This bi-month"
-msgstr "Těchto 14 dní"
+msgstr "Tyto dva měsíce"
 
 msgid "Last bi-month"
 msgstr "Poslední dva měsíce"
