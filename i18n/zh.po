@@ -3,14 +3,14 @@
 # phil_dhis2, 2020
 # Viktor Varland <viktor@dhis2.org>, 2020
 # 晓东 林 <13981924470@126.com>, 2020
-# easylin <lin_xd@126.com>, 2020
+# easylin <lin_xd@126.com>, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-11-30T10:27:09.237Z\n"
+"POT-Creation-Date: 2020-12-21T08:01:55.494Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: easylin <lin_xd@126.com>, 2020\n"
+"Last-Translator: easylin <lin_xd@126.com>, 2021\n"
 "Language-Team: Chinese (https://www.transifex.com/hisp-uio/teams/100509/zh/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -583,6 +583,9 @@ msgstr "查看某个地点或时间的两个数据项之间的关系。推荐用
 msgid "No legend for this series"
 msgstr "这个系列没有图例"
 
+msgid "and {{amount}} more..."
+msgstr "还有{{amount}}个..."
+
 msgid "Target"
 msgstr "目标"
 
@@ -594,3 +597,6 @@ msgstr "轴{{axisId}}"
 
 msgid "No data"
 msgstr "无数据"
+
+msgid "Reset zoom"
+msgstr "重设缩放"

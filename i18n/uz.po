@@ -1,13 +1,13 @@
 # 
 # Translators:
-# Ibatov <ibatovk@who.int>, 2020
+# Ibatov <ibatovk@who.int>, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-11-30T10:27:09.237Z\n"
+"POT-Creation-Date: 2020-12-21T08:01:55.494Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Ibatov <ibatovk@who.int>, 2020\n"
+"Last-Translator: Ibatov <ibatovk@who.int>, 2021\n"
 "Language-Team: Uzbek (Cyrillic) (https://www.transifex.com/hisp-uio/teams/100509/uz@Cyrl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -43,7 +43,7 @@ msgid "Add Assigned Categories"
 msgstr "Белгиланган категориялар қўшилсин"
 
 msgid "Remove"
-msgstr "Ўчириш"
+msgstr "Олиб ташлаш"
 
 msgid "Filter dimensions"
 msgstr "Фильтр созламалари"
@@ -412,7 +412,7 @@ msgid "Event data items"
 msgstr "Ҳодисалар ҳақида маълумот элементлари"
 
 msgid "Program indicators"
-msgstr "Дастур кўрсатгичлари"
+msgstr "Дастур индикаторлари"
 
 msgid "Extra Small"
 msgstr "Жуда Кичик"
@@ -478,7 +478,7 @@ msgid "Assigned Categories"
 msgstr "Белгиланган Категориялар"
 
 msgid "Pivot table"
-msgstr "Таянч жадвал"
+msgstr "Солиштирма жадвал"
 
 msgid "Column"
 msgstr "Устун"
@@ -600,6 +600,9 @@ msgstr ""
 msgid "No legend for this series"
 msgstr "Ушбу серия учун таъриф мавжуд эмас"
 
+msgid "and {{amount}} more..."
+msgstr ""
+
 msgid "Target"
 msgstr "Нишон"
 
@@ -611,3 +614,6 @@ msgstr "Ўқлар {{axisId}}"
 
 msgid "No data"
 msgstr "Маълумот йўқ"
+
+msgid "Reset zoom"
+msgstr ""

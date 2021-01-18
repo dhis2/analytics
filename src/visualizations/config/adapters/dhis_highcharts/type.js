@@ -32,7 +32,7 @@ export default function (type) {
         case VIS_TYPE_GAUGE:
             return { type: 'solidgauge' }
         case VIS_TYPE_SCATTER:
-            return { type: 'scatter' }
+            return { type: 'scatter', zoomType: 'xy' }
         case VIS_TYPE_COLUMN:
         case VIS_TYPE_STACKED_COLUMN:
         case VIS_TYPE_YEAR_OVER_YEAR_COLUMN:
