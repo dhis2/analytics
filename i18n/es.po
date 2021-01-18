@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-11-02T07:31:40.378Z\n"
+"POT-Creation-Date: 2020-12-21T08:01:55.494Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: Viktor Varland <viktor@dhis2.org>, 2020\n"
 "Language-Team: Spanish (https://www.transifex.com/hisp-uio/teams/100509/es/)\n"
@@ -360,6 +360,9 @@ msgstr ""
 msgid "Rows"
 msgstr ""
 
+msgid "Points"
+msgstr ""
+
 msgid "Reporting rate"
 msgstr ""
 
@@ -519,6 +522,9 @@ msgstr "Año tras año (columna)"
 msgid "Single value"
 msgstr "Valor único"
 
+msgid "Scatter"
+msgstr ""
+
 msgid "View data and indicators in a manipulatable table."
 msgstr ""
 
@@ -569,7 +575,15 @@ msgstr ""
 msgid "Display a single value. Recommend relative period to show latest data."
 msgstr ""
 
+msgid ""
+"View the relationship between two data items at a place or time. Recommended"
+" for finding outliers."
+msgstr ""
+
 msgid "No legend for this series"
+msgstr ""
+
+msgid "and {{amount}} more..."
 msgstr ""
 
 msgid "Target"
@@ -583,3 +597,6 @@ msgstr ""
 
 msgid "No data"
 msgstr "No hay datos"
+
+msgid "Reset zoom"
+msgstr ""

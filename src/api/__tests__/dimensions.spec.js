@@ -1,91 +1,120 @@
 import {
+    dimensionsQuery,
+    indicatorGroupsQuery,
+    dataElementGroupsQuery,
+    programsQuery,
+    indicatorsQuery,
+    dataSetsQuery,
+    dataElementsQuery,
+    dataElementOperandsQuery,
+    programIndicatorsQuery,
+    programDataElementsQuery,
+    trackedEntityAttributesQuery,
     apiFetchAlternatives,
     apiFetchGroups,
     apiFetchDimensions,
 } from '../dimensions'
 
-let mockD2
-let mockGetFn
-let dimensionProps
+let mockDataEngine
+let mockQueryFn
+let queryVariables
+let fetchFnArgs
 
-const checkMatches = (url, matches) => {
-    matches.forEach(match => {
-        if (match.not) {
-            expect(url).not.toMatch(match.regex)
-        } else {
-            expect(url).toMatch(match.regex)
-        }
-    })
-}
-
-const asyncCheckMatches = (matches, done) => {
+const asyncCheckMatches = (
+    [queryDefinition, queryVariables, callCount = 1, callIndex = 0],
+    done
+) => {
     setTimeout(() => {
-        expect(mockGetFn).toHaveBeenCalledTimes(1)
-        const url = mockGetFn.mock.calls[0][0]
+        expect(mockQueryFn).toHaveBeenCalledTimes(callCount)
+        expect(mockQueryFn.mock.calls[callIndex][0]).toEqual(queryDefinition)
+        expect(mockQueryFn.mock.calls[callIndex][1].variables).toEqual(
+            queryVariables
+        )
 
-        checkMatches(url, matches)
         done()
     })
 }
 
 describe('api: dimensions', () => {
     beforeEach(() => {
-        mockGetFn = jest.fn().mockResolvedValue({ pager: {} })
-        mockD2 = { Api: { getApi: () => ({ get: mockGetFn }) } }
+        mockQueryFn = jest.fn().mockResolvedValue({
+            dimensions: { dimensions: [] },
+            indicatorGroups: { indicatorGroups: [] },
+            dataElementGroups: { dataElementGroups: [] },
+            programs: { pager: {}, programs: [] },
+            indicators: { pager: {}, indicators: [] },
+            dataElements: { pager: {}, dataElements: [] },
+            dataElementOperands: { pager: {}, dataElementOperands: [] },
+            dataSets: { pager: {}, dataSets: [] },
+            programIndicators: { pager: {}, programIndicators: [] },
+            programDataElements: {
+                pager: {},
+                programDataElements: [],
+            },
+            trackedEntityAttributes: { trackedEntityAttributes: [] },
+        })
+        mockDataEngine = { query: mockQueryFn }
     })
 
     describe('apiFetchDimensions', () => {
         it('has correct entity and name property', done => {
-            apiFetchDimensions(mockD2, 'entireName')
+            apiFetchDimensions(mockDataEngine, 'entireName')
 
             asyncCheckMatches(
-                [
-                    { regex: /\/dimensions\?/ },
-                    { regex: /entireName~rename\(name\)/ },
-                ],
+                [{ dimensions: dimensionsQuery }, { nameProp: 'entireName' }],
                 done
             )
         })
     })
 
     describe('apiFetchGroups', () => {
-        beforeEach(() => {
-            dimensionProps = {
-                groupDetail: '',
-                nameProp: 'entireName',
-                groupId: 'ALL',
-                page: 1,
-            }
-        })
-
         it('has correct endpoint, name prop, and page value for indicators', done => {
-            apiFetchGroups(mockD2, 'indicators', 'entireName')
+            apiFetchGroups(mockDataEngine, 'indicators', 'entireName')
 
-            const matches = [
-                { regex: /\/indicatorGroups\?/ },
-                { regex: /displayName~rename\(name\)/ },
-                { regex: /paging=false/ },
-            ]
-
-            asyncCheckMatches(matches, done)
+            asyncCheckMatches(
+                [
+                    { indicatorGroups: indicatorGroupsQuery },
+                    { nameProp: 'displayName' },
+                ],
+                done
+            )
         })
 
         it('has correct name prop for dataElements', done => {
-            apiFetchGroups(mockD2, 'dataElements', 'entireName')
+            apiFetchGroups(mockDataEngine, 'dataElements', 'entireName')
 
-            const matches = [
-                { regex: /\/dataElementGroups\?/ },
-                { regex: /entireName~rename\(name\)/ },
-            ]
+            asyncCheckMatches(
+                [
+                    { dataElementGroups: dataElementGroupsQuery },
+                    { nameProp: 'entireName' },
+                ],
+                done
+            )
+        })
 
-            asyncCheckMatches(matches, done)
+        it('has correct name prop for eventDataItems', done => {
+            apiFetchGroups(mockDataEngine, 'eventDataItems', 'entireName')
+
+            asyncCheckMatches(
+                [{ programs: programsQuery }, { nameProp: 'entireName' }],
+                done
+            )
+        })
+
+        it('has correct name prop for programIndicators', done => {
+            apiFetchGroups(mockDataEngine, 'programIndicators', 'entireName')
+
+            asyncCheckMatches(
+                [{ programs: programsQuery }, { nameProp: 'entireName' }],
+                done
+            )
         })
 
         it('does not make an api request for dataSets', done => {
-            apiFetchGroups(mockD2, 'dataSets')
+            apiFetchGroups(mockDataEngine, 'dataSets')
 
             setTimeout(() => {
-                expect(mockGetFn).not.toHaveBeenCalled()
+                expect(mockQueryFn).not.toHaveBeenCalled()
                 done()
             })
         })
@@ -93,50 +122,53 @@ describe('api: dimensions', () => {
 
     describe('apiFetchAlternatives', () => {
         beforeEach(() => {
-            dimensionProps = {
-                d2: mockD2,
-                groupDetail: '',
+            queryVariables = {
                 nameProp: 'entireName',
                 groupId: 'ALL',
                 page: 1,
+                filterText: '',
+            }
+
+            fetchFnArgs = {
+                dataEngine: mockDataEngine,
+                dataType: '',
+                groupDetail: '',
+                ...queryVariables,
             }
         })
 
         describe('indicators url', () => {
             beforeEach(() => {
-                dimensionProps.dataType = 'indicators'
+                fetchFnArgs.dataType = 'indicators'
             })
 
             it('has correct name, filter and page value', done => {
-                apiFetchAlternatives(dimensionProps)
+                apiFetchAlternatives(fetchFnArgs)
 
-                const matches = [
-                    { regex: /\/indicators\?/ },
-                    { regex: /entireName~rename\(name\)/ },
-                    { regex: /filter/, not: true },
-                    { regex: /page=1/ },
-                ]
-                asyncCheckMatches(matches, done)
+                asyncCheckMatches(
+                    [{ indicators: indicatorsQuery }, queryVariables],
+                    done
+                )
             })
 
             it('has correct filter text value', done => {
-                dimensionProps.filterText = 'rarity'
+                queryVariables.filterText = 'rarity'
 
-                apiFetchAlternatives(dimensionProps)
+                apiFetchAlternatives({ ...fetchFnArgs, ...queryVariables })
 
                 asyncCheckMatches(
-                    [{ regex: /filter=entireName:ilike:rarity/ }],
+                    [{ indicators: indicatorsQuery }, queryVariables],
                     done
                 )
             })
 
             it('has correct filter based on group Id', done => {
-                dimensionProps.groupId = 'rarity'
+                queryVariables.groupId = 'rarity'
 
-                apiFetchAlternatives(dimensionProps)
+                apiFetchAlternatives({ ...fetchFnArgs, ...queryVariables })
 
                 asyncCheckMatches(
-                    [{ regex: /filter=indicatorGroups\.id:eq:rarity/ }],
+                    [{ indicators: indicatorsQuery }, queryVariables],
                     done
                 )
             })
@@ -144,41 +176,37 @@ describe('api: dimensions', () => {
 
         describe('dataElements url', () => {
             beforeEach(() => {
-                dimensionProps.dataType = 'dataElements'
+                fetchFnArgs.dataType = 'dataElements'
             })
 
             describe('totals', () => {
                 it('has correct fields, filter, and page', done => {
-                    apiFetchAlternatives(dimensionProps)
+                    apiFetchAlternatives(fetchFnArgs)
 
-                    const matches = [
-                        { regex: /\/dataElements\?/ },
-                        { regex: /fields=id,entireName~rename\(name\)/ },
-                        { regex: /filter=domainType:eq:AGGREGATE/ },
-                        { regex: /filter=dataElementGroups/, not: true },
-                        { regex: /page=1/ },
-                    ]
-                    asyncCheckMatches(matches, done)
+                    asyncCheckMatches(
+                        [{ dataElements: dataElementsQuery }, queryVariables],
+                        done
+                    )
                 })
 
                 it('has correct filter text value', done => {
-                    dimensionProps.filterText = 'rarity'
+                    queryVariables.filterText = 'rarity'
 
-                    apiFetchAlternatives(dimensionProps)
+                    apiFetchAlternatives({ ...fetchFnArgs, ...queryVariables })
 
                     asyncCheckMatches(
-                        [{ regex: /filter=entireName:ilike:rarity/ }],
+                        [{ dataElements: dataElementsQuery }, queryVariables],
                         done
                     )
                 })
 
                 it('has correct filter based on group Id', done => {
-                    dimensionProps.groupId = 'rarity'
+                    queryVariables.groupId = 'rarity'
 
-                    apiFetchAlternatives(dimensionProps)
+                    apiFetchAlternatives({ ...fetchFnArgs, ...queryVariables })
 
                     asyncCheckMatches(
-                        [{ regex: /filter=dataElementGroups\.id:eq:rarity/ }],
+                        [{ dataElements: dataElementsQuery }, queryVariables],
                         done
                     )
                 })
@@ -186,59 +214,59 @@ describe('api: dimensions', () => {
 
             describe('details', () => {
                 beforeEach(() => {
-                    dimensionProps.groupDetail = 'detail'
+                    fetchFnArgs.groupDetail = 'detail'
                 })
 
                 it('has correct fields, filter, and page', done => {
-                    apiFetchAlternatives(dimensionProps)
+                    apiFetchAlternatives(fetchFnArgs)
 
-                    const matches = [
-                        { regex: /\/dataElementOperands\?/ },
-                        { regex: /fields=id,entireName~rename\(name\)/ },
-                        { regex: /filter/, not: true },
-                        { regex: /page=1/ },
-                    ]
-                    asyncCheckMatches(matches, done)
+                    asyncCheckMatches(
+                        [
+                            { dataElementOperands: dataElementOperandsQuery },
+                            queryVariables,
+                        ],
+                        done
+                    )
                 })
 
                 it('has correct filter text value', done => {
-                    dimensionProps.filterText = 'rarity'
+                    queryVariables.filterText = 'rarity'
 
-                    apiFetchAlternatives(dimensionProps)
+                    apiFetchAlternatives({ ...fetchFnArgs, ...queryVariables })
 
                     asyncCheckMatches(
-                        [{ regex: /filter=entireName:ilike:rarity/ }],
+                        [
+                            { dataElementOperands: dataElementOperandsQuery },
+                            queryVariables,
+                        ],
                         done
                     )
                 })
 
                 it('has correct filter based on group Id', done => {
-                    dimensionProps.groupId = 'rarity'
+                    queryVariables.groupId = 'rarity'
 
-                    apiFetchAlternatives(dimensionProps)
+                    apiFetchAlternatives({ ...fetchFnArgs, ...queryVariables })
 
                     asyncCheckMatches(
                         [
-                            {
-                                regex: /filter=dataElement\.dataElementGroups\.id:eq:rarity/,
-                            },
+                            { dataElementOperands: dataElementOperandsQuery },
+                            queryVariables,
                         ],
                         done
                     )
                 })
 
                 it('has correct url params for filterText and group Id', done => {
-                    dimensionProps.filterText = 'rarity'
-                    dimensionProps.groupId = 'rainbow'
+                    queryVariables.filterText = 'rarity'
+                    queryVariables.groupId = 'rainbow'
 
-                    apiFetchAlternatives(dimensionProps)
+                    apiFetchAlternatives({ ...fetchFnArgs, ...queryVariables })
 
                     asyncCheckMatches(
                         [
-                            { regex: /filter=entireName:ilike:rarity/ },
-                            {
-                                regex: /filter=dataElement\.dataElementGroups\.id:eq:rainbow/,
-                            },
+                            { dataElementOperands: dataElementOperandsQuery },
+                            queryVariables,
                         ],
                         done
                     )
@@ -248,28 +276,26 @@ describe('api: dimensions', () => {
 
         describe('dataSets url', () => {
             beforeEach(() => {
-                dimensionProps.dataType = 'dataSets'
+                delete queryVariables.groupId
+                fetchFnArgs.dataType = 'dataSets'
             })
 
             it('has correct fields, filter, and page', done => {
-                apiFetchAlternatives(dimensionProps)
+                apiFetchAlternatives({ ...fetchFnArgs, ...queryVariables })
 
-                const matches = [
-                    { regex: /\/dataSets\?/ },
-                    { regex: /entireName~rename\(name\)/ },
-                    { regex: /filter/, not: true },
-                    { regex: /page=1/ },
-                ]
-                asyncCheckMatches(matches, done)
+                asyncCheckMatches(
+                    [{ dataSets: dataSetsQuery }, queryVariables],
+                    done
+                )
             })
 
             it('has correct filter text value', done => {
-                dimensionProps.filterText = 'rarity'
+                queryVariables.filterText = 'rarity'
 
-                apiFetchAlternatives(dimensionProps)
+                apiFetchAlternatives({ ...fetchFnArgs, ...queryVariables })
 
                 asyncCheckMatches(
-                    [{ regex: /filter=entireName:ilike:rarity/ }],
+                    [{ dataSets: dataSetsQuery }, queryVariables],
                     done
                 )
             })
@@ -277,157 +303,92 @@ describe('api: dimensions', () => {
 
         describe('eventDataItems', () => {
             beforeEach(() => {
-                dimensionProps.dataType = 'eventDataItems'
-                mockGetFn = jest.fn().mockImplementation(url => {
-                    if (url.includes('programDataElements')) {
-                        return Promise.resolve({
-                            programDataElements: [
-                                {
-                                    id: 'cc',
-                                    name: 'Chocolate cake',
-                                    valueType: 'NUMBER',
-                                },
-                                {
-                                    id: 'em',
-                                    name: 'English muffin',
-                                    valueType: 'TEXT',
-                                },
-                            ],
-                            pager: {},
-                        })
-                    } else if (url.includes('programs/')) {
-                        return Promise.resolve({
-                            name: 'Veggies',
-                            programTrackedEntityAttributes: [
-                                {
-                                    trackedEntityAttribute: {
-                                        id: 'spin',
-                                        name: 'Spinach',
-                                        valueType: 'TEXT',
-                                    },
-                                },
-                                {
-                                    trackedEntityAttribute: {
-                                        id: 'broc',
-                                        name: 'Broccoli',
-                                        valueType: 'NUMBER',
-                                    },
-                                },
-                            ],
-                        })
-                    }
-
-                    return Promise.resolve({ pager: {} })
-                })
+                fetchFnArgs.dataType = 'eventDataItems'
             })
 
-            it('returns the correct dimension items', done => {
-                dimensionProps.groupId = 'rainbowdash'
+            it('has correct fields, filter, and page (data elements) in request', done => {
+                queryVariables.groupId = 'rainbowdash'
 
-                const expectedResult = {
-                    dimensionItems: [
-                        {
-                            id: 'cc',
-                            name: 'Chocolate cake',
-                            valueType: 'NUMBER',
-                        },
-                        {
-                            id: 'rainbowdash.broc',
-                            name: 'Veggies Broccoli',
-                            valueType: 'NUMBER',
-                        },
+                apiFetchAlternatives({ ...fetchFnArgs, ...queryVariables })
+
+                asyncCheckMatches(
+                    [
+                        { programDataElements: programDataElementsQuery },
+                        queryVariables,
+                        2,
                     ],
-                    nextPage: null,
-                }
-
-                setTimeout(() => {
-                    expect(
-                        apiFetchAlternatives(dimensionProps)
-                    ).resolves.toEqual(expectedResult)
-
-                    done()
-                })
-            })
-
-            it('has correct fields, filter, and page (data elements) in request url', done => {
-                dimensionProps.groupId = 'rainbowdash'
-
-                const matches = [
-                    { regex: /\/programDataElements\?/ },
-                    { regex: /entireName~rename\(name\)/ },
-                    { regex: /filter/, not: true },
-                    { regex: /page=1/ },
-                    { regex: /program=rainbowdash/ },
-                ]
-                apiFetchAlternatives(dimensionProps)
-
-                setTimeout(() => {
-                    expect(mockGetFn).toHaveBeenCalledTimes(2)
-                    const url = mockGetFn.mock.calls[0][0]
-
-                    checkMatches(url, matches)
-                    done()
-                })
+                    done
+                )
             })
 
             it('has correct filter text value in request url', done => {
-                dimensionProps.filterText = 'rarity'
+                queryVariables.filterText = 'rarity'
 
-                const matches = [{ regex: /filter=entireName:ilike:rarity/ }]
-                apiFetchAlternatives(dimensionProps)
+                apiFetchAlternatives({ ...fetchFnArgs, ...queryVariables })
 
-                setTimeout(() => {
-                    expect(mockGetFn).toHaveBeenCalledTimes(2)
-                    const url = mockGetFn.mock.calls[0][0]
-
-                    checkMatches(url, matches)
-                    done()
-                })
+                asyncCheckMatches(
+                    [
+                        { programDataElements: programDataElementsQuery },
+                        queryVariables,
+                        2,
+                    ],
+                    done
+                )
             })
 
             it('has correct fields and filter (attributes) in request url', done => {
-                dimensionProps.groupId = 'rainbowdash'
-                apiFetchAlternatives(dimensionProps)
+                queryVariables.groupId = 'rainbowdash'
+                delete queryVariables.page
 
-                const matches = [
-                    { regex: /\/programs\/rainbowdash/ },
-                    { regex: /entireName~rename\(name\)/ },
-                    { regex: /filter/, not: true },
-                ]
-                setTimeout(() => {
-                    expect(mockGetFn).toHaveBeenCalledTimes(2)
-                    const url = mockGetFn.mock.calls[1][0]
+                apiFetchAlternatives({ ...fetchFnArgs, ...queryVariables })
 
-                    checkMatches(url, matches)
-                    done()
-                })
+                asyncCheckMatches(
+                    [
+                        {
+                            trackedEntityAttributes: trackedEntityAttributesQuery,
+                        },
+                        {
+                            ...queryVariables,
+                            id: queryVariables.groupId,
+                            groupId: undefined,
+                        },
+                        2,
+                        1,
+                    ],
+                    done
+                )
             })
         })
 
         describe('programIndicators url', () => {
             beforeEach(() => {
-                dimensionProps.dataType = 'programIndicators'
+                fetchFnArgs.dataType = 'programIndicators'
             })
 
             it('has correct fields, filter, and page', done => {
-                dimensionProps.groupId = 'rainbowdash'
-                apiFetchAlternatives(dimensionProps)
+                queryVariables.groupId = 'rainbowdash'
 
-                const matches = [
-                    { regex: /\/programIndicators\?/ },
-                    { regex: /entireName~rename\(name\)/ },
-                    { regex: /page=1/ },
-                    { regex: /filter=program.id:eq:rainbowdash/ },
-                ]
-                asyncCheckMatches(matches, done)
+                apiFetchAlternatives({ ...fetchFnArgs, ...queryVariables })
+
+                asyncCheckMatches(
+                    [
+                        { programIndicators: programIndicatorsQuery },
+                        queryVariables,
+                    ],
+                    done
+                )
             })
 
             it('has correct filter text value', done => {
-                dimensionProps.filterText = 'rarity'
-                apiFetchAlternatives(dimensionProps)
+                queryVariables.filterText = 'rarity'
+
+                apiFetchAlternatives({ ...fetchFnArgs, ...queryVariables })
 
                 asyncCheckMatches(
-                    [{ regex: /filter=entireName:ilike:rarity/ }],
+                    [
+                        { programIndicators: programIndicatorsQuery },
+                        queryVariables,
+                    ],
                     done
                 )
             })
