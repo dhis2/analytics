@@ -1,6 +1,6 @@
 {
     "name": "@dhis2/analytics",
-    "version": "12.1.7",
+    "version": "12.1.8",
     "main": "./build/cjs/lib.js",
     "module": "./build/es/lib.js",
     "sideEffects": [
@@ -57,7 +57,7 @@
         "lodash": "^4.17.20",
         "react-beautiful-dnd": "^10.1.1",
         "resize-observer-polyfill": "^1.5.1",
-        "styled-jsx": "^3.3.2"
+        "styled-jsx": "^3.4.1"
     },
     "files": [
         "build"
