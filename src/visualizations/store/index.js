@@ -1,7 +1,7 @@
 import validators from './validators'
 import adapters from './adapters'
 
-export default function({
+export default function ({
     data,
     inputFormat = 'dhis',
     outputFormat = 'highcharts',

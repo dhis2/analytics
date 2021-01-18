@@ -1,4 +1,4 @@
-export default function() {
+export default function () {
     return {
         style: {
             fontSize: '13px',

@@ -1,13 +1,13 @@
 # 
 # Translators:
-# trendspotter, 2020
+# Jiří Podhorecký, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-11-02T07:31:40.378Z\n"
+"POT-Creation-Date: 2020-12-21T08:01:55.494Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: trendspotter, 2020\n"
+"Last-Translator: Jiří Podhorecký, 2021\n"
 "Language-Team: Czech (https://www.transifex.com/hisp-uio/teams/100509/cs/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -136,7 +136,7 @@ msgid "December"
 msgstr "prosinec"
 
 msgid "Week {{weekNumber}}"
-msgstr "Táden {{weekNumber}}"
+msgstr "Týden {{weekNumber}}"
 
 msgid "Bi-Week {{biWeekNumber}}"
 msgstr "dva týdny {{biWeekNumber}}"
@@ -160,7 +160,7 @@ msgid "Weekly (Start Saturday)"
 msgstr "Týdně (od soboty)"
 
 msgid "Weekly (Start Sunday)"
-msgstr "Týdně (začáná nedělí)"
+msgstr "Týdně (začíná nedělí)"
 
 msgid "Monthly"
 msgstr "Měsíčně"
@@ -181,7 +181,7 @@ msgid "Yearly"
 msgstr "Ročně"
 
 msgid "Financial year (Start November)"
-msgstr "Fiskální rok (od listopadu)"
+msgstr "Finanční rok (od listopadu)"
 
 msgid "Financial year (Start October)"
 msgstr "Finanční rok (od října)"
@@ -298,13 +298,13 @@ msgid "Last 2 six-month"
 msgstr "Poslední 2 půlroky"
 
 msgid "This financial year"
-msgstr "Tento fiskální rok"
+msgstr "Tento finanční rok"
 
 msgid "Last financial year"
 msgstr "Poslední finanční rok"
 
 msgid "Last 5 financial years"
-msgstr "Posledních 5 fiskálních roků"
+msgstr "Posledních 5 finančních roků"
 
 msgid "This year"
 msgstr "Tento rok"
@@ -356,6 +356,9 @@ msgstr "Sloupce"
 
 msgid "Rows"
 msgstr "Řádky"
+
+msgid "Points"
+msgstr "Body"
 
 msgid "Reporting rate"
 msgstr "Míra hlášení"
@@ -409,7 +412,7 @@ msgid "Event data items"
 msgstr "Položky dat události"
 
 msgid "Program indicators"
-msgstr "Ukazatele programu"
+msgstr "Indikátory programu"
 
 msgid "Extra Small"
 msgstr "Velmi malý"
@@ -499,7 +502,7 @@ msgid "Stacked area"
 msgstr "Skládaná plocha"
 
 msgid "Pie"
-msgstr "Koláč"
+msgstr "Výseč"
 
 msgid "Radar"
 msgstr "Radar"
@@ -516,8 +519,11 @@ msgstr "Rok po roce (sloupce)"
 msgid "Single value"
 msgstr "Jedna hodnota"
 
+msgid "Scatter"
+msgstr "Rozptyl"
+
 msgid "View data and indicators in a manipulatable table."
-msgstr "Zobrazit data a ukazatele v manipulovatelné tabulce."
+msgstr "Zobrazit data a indikátory v manipulovatelné tabulce."
 
 msgid ""
 "Compare sizes of related element, displayed vertically. Recommend period in "
@@ -582,8 +588,18 @@ msgstr ""
 "Zobrazit jednu hodnotu. Doporučit relativní období pro zobrazení "
 "nejnovějších údajů."
 
+msgid ""
+"View the relationship between two data items at a place or time. Recommended"
+" for finding outliers."
+msgstr ""
+"Zobrazte vztah mezi dvěma datovými položkami v určitém místě nebo čase. "
+"Doporučeno pro hledání odlehlých hodnot."
+
 msgid "No legend for this series"
 msgstr "Pro tuto sérii není legenda"
+
+msgid "and {{amount}} more..."
+msgstr "a {{amount}} další ..."
 
 msgid "Target"
 msgstr "Cíl"
@@ -596,3 +612,6 @@ msgstr "Osa {{axisId}}"
 
 msgid "No data"
 msgstr "Nejsou data"
+
+msgid "Reset zoom"
+msgstr "Obnovit přiblížení"

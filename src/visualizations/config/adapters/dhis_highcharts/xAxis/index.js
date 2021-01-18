@@ -10,38 +10,56 @@ import {
     VIS_TYPE_YEAR_OVER_YEAR_COLUMN,
     VIS_TYPE_PIE,
     VIS_TYPE_RADAR,
-    isTwoCategoryChartType, 
+    VIS_TYPE_SCATTER,
+    isTwoCategoryChartType,
 } from '../../../../../modules/visTypes'
-import { 
-    FONT_STYLE_HORIZONTAL_AXIS_TITLE, 
+import {
+    FONT_STYLE_HORIZONTAL_AXIS_TITLE,
     FONT_STYLE_CATEGORY_AXIS_LABELS,
     FONT_STYLE_OPTION_TEXT_COLOR,
     FONT_STYLE_OPTION_FONT_SIZE,
     FONT_STYLE_OPTION_BOLD,
-    FONT_STYLE_OPTION_ITALIC 
+    FONT_STYLE_OPTION_ITALIC,
 } from '../../../../../modules/fontStyle'
 
 function noAxis() {
     return null
 }
 
-export const getLabelsStyle = fontStyle => fontStyle ? {
-    style: {
-        color: fontStyle[FONT_STYLE_OPTION_TEXT_COLOR],
-        fontSize: `${fontStyle[FONT_STYLE_OPTION_FONT_SIZE]}px`,
-        fontWeight: fontStyle[FONT_STYLE_OPTION_BOLD] ? FONT_STYLE_OPTION_BOLD : 'normal',
-        fontStyle: fontStyle[FONT_STYLE_OPTION_ITALIC] ? FONT_STYLE_OPTION_ITALIC : 'normal'
-    },
-} : {}
+export const getLabelsStyle = fontStyle =>
+    fontStyle
+        ? {
+              style: {
+                  color: fontStyle[FONT_STYLE_OPTION_TEXT_COLOR],
+                  fontSize: `${fontStyle[FONT_STYLE_OPTION_FONT_SIZE]}px`,
+                  fontWeight: fontStyle[FONT_STYLE_OPTION_BOLD]
+                      ? FONT_STYLE_OPTION_BOLD
+                      : 'normal',
+                  fontStyle: fontStyle[FONT_STYLE_OPTION_ITALIC]
+                      ? FONT_STYLE_OPTION_ITALIC
+                      : 'normal',
+              },
+          }
+        : {}
 
 export const getDefault = (store, layout) =>
     objectClean({
-        categories: getCategories(store.data[0].metaData, layout.rows[0].dimension),
-        title: getAxisTitle(layout.domainAxisLabel, layout.fontStyle[FONT_STYLE_HORIZONTAL_AXIS_TITLE], FONT_STYLE_HORIZONTAL_AXIS_TITLE, layout.type),
-        labels: getLabelsStyle(layout.fontStyle[FONT_STYLE_CATEGORY_AXIS_LABELS]),
+        categories: getCategories(
+            store.data[0].metaData,
+            layout.rows[0].dimension
+        ),
+        title: getAxisTitle(
+            layout.domainAxisLabel,
+            layout.fontStyle[FONT_STYLE_HORIZONTAL_AXIS_TITLE],
+            FONT_STYLE_HORIZONTAL_AXIS_TITLE,
+            layout.type
+        ),
+        labels: getLabelsStyle(
+            layout.fontStyle[FONT_STYLE_CATEGORY_AXIS_LABELS]
+        ),
     })
 
-export default function(store, layout, extraOptions) {
+export default function (store, layout, extraOptions) {
     let xAxis
 
     if (isTwoCategoryChartType(layout.type) && layout.rows.length > 1) {
@@ -50,6 +68,7 @@ export default function(store, layout, extraOptions) {
         switch (layout.type) {
             case VIS_TYPE_PIE:
             case VIS_TYPE_GAUGE:
+            case VIS_TYPE_SCATTER:
                 xAxis = noAxis()
                 break
             case VIS_TYPE_YEAR_OVER_YEAR_LINE:

@@ -10,7 +10,7 @@ function getDefault(layout, dashboard, metaData) {
     return ''
 }
 
-export default function(layout, metaData, dashboard) {
+export default function (layout, metaData, dashboard) {
     if (layout.hideSubtitle) {
         return ''
     }

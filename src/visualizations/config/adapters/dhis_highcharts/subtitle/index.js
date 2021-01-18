@@ -3,16 +3,17 @@ import getFilterText from '../../../../util/getFilterText'
 import {
     VIS_TYPE_YEAR_OVER_YEAR_LINE,
     VIS_TYPE_YEAR_OVER_YEAR_COLUMN,
+    VIS_TYPE_SCATTER,
 } from '../../../../../modules/visTypes'
 import getYearOverYearTitle from '../title/yearOverYear'
-import { 
-    FONT_STYLE_OPTION_ITALIC, 
-    FONT_STYLE_OPTION_BOLD, 
+import {
+    FONT_STYLE_OPTION_ITALIC,
+    FONT_STYLE_OPTION_BOLD,
     FONT_STYLE_OPTION_TEXT_COLOR,
     FONT_STYLE_OPTION_FONT_SIZE,
     FONT_STYLE_OPTION_TEXT_ALIGN,
-    FONT_STYLE_VISUALIZATION_SUBTITLE
- } from '../../../../../modules/fontStyle'
+    FONT_STYLE_VISUALIZATION_SUBTITLE,
+} from '../../../../../modules/fontStyle'
 import { getTextAlignOption } from '../getTextAlignOption'
 
 const DASHBOARD_SUBTITLE = {
@@ -33,8 +34,9 @@ function getDefault(layout, dashboard, filterTitle) {
     }
 }
 
-export default function(series, layout, metaData, dashboard) {
-    const fontStyle = layout.fontStyle && layout.fontStyle[FONT_STYLE_VISUALIZATION_SUBTITLE]
+export default function (series, layout, metaData, dashboard) {
+    const fontStyle =
+        layout.fontStyle && layout.fontStyle[FONT_STYLE_VISUALIZATION_SUBTITLE]
     let subtitle = {
         text: undefined,
     }
@@ -58,6 +60,9 @@ export default function(series, layout, metaData, dashboard) {
                     Boolean(!dashboard)
                 )
                 break
+            case VIS_TYPE_SCATTER:
+                subtitle.text = filterTitle
+                break
             default:
                 subtitle = getDefault(layout, dashboard, filterTitle)
         }
@@ -66,19 +71,29 @@ export default function(series, layout, metaData, dashboard) {
     return subtitle
         ? Object.assign(
               {},
-              dashboard ? DASHBOARD_SUBTITLE : {
-                align: (getTextAlignOption(fontStyle[FONT_STYLE_OPTION_TEXT_ALIGN], FONT_STYLE_VISUALIZATION_SUBTITLE, layout.type)),
-                style: {
-                    // DHIS2-578: dynamically truncate subtitle when it's taking more than 1 line
-                    color: fontStyle[FONT_STYLE_OPTION_TEXT_COLOR],
-                    fontSize: `${fontStyle[FONT_STYLE_OPTION_FONT_SIZE]}px`,
-                    fontWeight: fontStyle[FONT_STYLE_OPTION_BOLD] ? FONT_STYLE_OPTION_BOLD : 'normal',
-                    fontStyle: fontStyle[FONT_STYLE_OPTION_ITALIC] ? FONT_STYLE_OPTION_ITALIC : 'normal',
-                    whiteSpace: 'nowrap',
-                    overflow: 'hidden',
-                    textOverflow: 'ellipsis',
-                },
-            },
+              dashboard
+                  ? DASHBOARD_SUBTITLE
+                  : {
+                        align: getTextAlignOption(
+                            fontStyle[FONT_STYLE_OPTION_TEXT_ALIGN],
+                            FONT_STYLE_VISUALIZATION_SUBTITLE,
+                            layout.type
+                        ),
+                        style: {
+                            // DHIS2-578: dynamically truncate subtitle when it's taking more than 1 line
+                            color: fontStyle[FONT_STYLE_OPTION_TEXT_COLOR],
+                            fontSize: `${fontStyle[FONT_STYLE_OPTION_FONT_SIZE]}px`,
+                            fontWeight: fontStyle[FONT_STYLE_OPTION_BOLD]
+                                ? FONT_STYLE_OPTION_BOLD
+                                : 'normal',
+                            fontStyle: fontStyle[FONT_STYLE_OPTION_ITALIC]
+                                ? FONT_STYLE_OPTION_ITALIC
+                                : 'normal',
+                            whiteSpace: 'nowrap',
+                            overflow: 'hidden',
+                            textOverflow: 'ellipsis',
+                        },
+                    },
               subtitle
           )
         : subtitle

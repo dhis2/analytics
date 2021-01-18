@@ -22,7 +22,13 @@ export { default as PivotTable } from './components/PivotTable/PivotTable'
 
 // Api
 
+export { default as Analytics } from './api/analytics/Analytics'
 export { apiFetchDimensions, apiFetchRecommendedIds } from './api/dimensions'
+export {
+    apiFetchOrganisationUnitLevels,
+    apiFetchOrganisationUnitRoots,
+    apiFetchOrganisationUnit,
+} from './api/organisationUnits-dataEngine'
 
 // Modules: axis
 
@@ -134,6 +140,7 @@ export {
     VIS_TYPE_YEAR_OVER_YEAR_COLUMN,
     VIS_TYPE_SINGLE_VALUE,
     VIS_TYPE_PIVOT_TABLE,
+    VIS_TYPE_SCATTER,
     visTypeDisplayNames,
     visTypeDescriptions,
     visTypeIcons,
@@ -157,6 +164,7 @@ export {
     LAYOUT_TYPE_SINGLE_VALUE,
     LAYOUT_TYPE_YEAR_OVER_YEAR,
     LAYOUT_TYPE_PIVOT_TABLE,
+    LAYOUT_TYPE_SCATTER,
 } from './modules/layoutTypes'
 
 // Modules: layoutUiRules

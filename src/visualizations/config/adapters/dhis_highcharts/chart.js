@@ -16,26 +16,28 @@ const DASHBOARD_CHART = {
 
 const getEvents = () => ({
     events: {
-        load: function() { // Align legend icon with legend text
-            this.legend.allItems.forEach((item) => {
+        load: function () {
+            // Align legend icon with legend text
+            this.legend.allItems.forEach(item => {
                 if (item.legendSymbol) {
                     item.legendSymbol.attr({
-                        translateY: -((item.legendItem.getBBox().height) * 0.75 / 4 ) + ( item.legendSymbol.r / 2 )
-                    });
+                        translateY:
+                            -((item.legendItem.getBBox().height * 0.75) / 4) +
+                            item.legendSymbol.r / 2,
+                    })
                 }
-                
-            });
-        }
-    }
+            })
+        },
+    },
 })
 
-export default function(layout, el, dashboard) {
+export default function (layout, el, dashboard) {
     return Object.assign(
         {},
         getType(layout.type),
         { renderTo: el || layout.el },
         DEFAULT_CHART,
         dashboard ? DASHBOARD_CHART : undefined,
-        getEvents(),
+        getEvents()
     )
 }

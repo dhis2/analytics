@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-11-02T07:31:40.378Z\n"
+"POT-Creation-Date: 2020-12-21T08:01:55.494Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: Hamza Assada <7amza.it@gmail.com>, 2020\n"
 "Language-Team: Arabic (https://www.transifex.com/hisp-uio/teams/100509/ar/)\n"
@@ -359,6 +359,9 @@ msgstr "الأعمدة"
 msgid "Rows"
 msgstr "الصفوف"
 
+msgid "Points"
+msgstr ""
+
 msgid "Reporting rate"
 msgstr "معدل الإبلاغ"
 
@@ -518,6 +521,9 @@ msgstr "عام بعد عام (عمود)"
 msgid "Single value"
 msgstr "قيمة مفردة"
 
+msgid "Scatter"
+msgstr ""
+
 msgid "View data and indicators in a manipulatable table."
 msgstr "اعرض البيانات والمؤشرات في جدول يمكن معالجته."
 
@@ -525,34 +531,45 @@ msgid ""
 "Compare sizes of related element, displayed vertically. Recommend period in "
 "filter."
 msgstr ""
+"قارن أحجام العناصر ذات الصلة ، المعروضة عموديًا. يوصى بإن تكون الفترة في "
+"عامل التصفية."
 
 msgid ""
 "Compare parts of a whole against related elements, vertically. Recommend "
 "data or org. unit as series."
 msgstr ""
+"قارن أجزاء من الكل بالعناصر ذات الصلة عموديًا. يوصي بإن تكون البيانات أو "
+"الوحدة التنظيمية في السلسلة."
 
 msgid ""
 "Compare sizes of related elements, displayed horizontally. Recommend period "
 "in filter."
 msgstr ""
+"قارن أحجام العناصر ذات الصلة ، المعروضة أفقيًا. يوصى بإن تكون الفترة في عامل"
+" التصفية."
 
 msgid ""
 "Compare parts of a whole against related elements, horizontally. Recommend "
 "data or org. unit as series."
 msgstr ""
+"قارن أجزاء من الكل بالعناصر ذات الصلة ، أفقيًا. يوصي بإن تكون البيانات أو "
+"الوحدة التنظيمية في السلسلة."
 
 msgid "Track or compare changes over time. Recommend period as the category."
-msgstr ""
+msgstr "تتبع أو قارن التغييرات حسب مرور الوقت. يوصي بإن تكون الفترة في الفئة."
 
 msgid ""
 "Track or compare over time parts of a whole. Recommend data in series and "
 "period in category."
 msgstr ""
+"تتبع أو قارن مع مرور الوقت أجزاء من الكل. يوصي بإن تكون البيانات في السلسلة "
+"والفترة في الفئة."
 
 msgid ""
 "Compare parts of a whole at a single point in time. Recommend period in the "
 "filter."
 msgstr ""
+"قارن أجزاء من الكل في وقت واحد محدد. يوصى بإن تكون الفترة في عامل التصفية."
 
 msgid "Compare several items against multiple variables."
 msgstr "قارن عدة عناصر مقابل متغيرات متعددة."
@@ -561,14 +578,23 @@ msgid ""
 "Compare a percentage indicator against a 100% scale. Recommend period in "
 "filter."
 msgstr ""
+"قارن مؤشر النسبة المئوية بمقياس 100٪. يوصى بإن تكون الفترة في عامل التصفية."
 
 msgid "Compare changes over time between multiple time periods."
-msgstr ""
+msgstr "قارن التغييرات بمرور الوقت بين فترات زمنية متعددة."
 
 msgid "Display a single value. Recommend relative period to show latest data."
+msgstr "اعرض قيمة واحدة. يوصي الفترة النسبية لإظهار أحدث البيانات."
+
+msgid ""
+"View the relationship between two data items at a place or time. Recommended"
+" for finding outliers."
 msgstr ""
 
 msgid "No legend for this series"
+msgstr "لا معلومات مفاتيح إيضاحية لهذه السلسلة"
+
+msgid "and {{amount}} more..."
 msgstr ""
 
 msgid "Target"
@@ -582,3 +608,6 @@ msgstr "محور {{axisId}}"
 
 msgid "No data"
 msgstr "لا توجد بيانات"
+
+msgid "Reset zoom"
+msgstr ""
