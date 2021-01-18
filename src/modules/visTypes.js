@@ -13,6 +13,7 @@ import YearOverYearLineIcon from '../assets/YearOverYearLineIcon'
 import YearOverYearColumnIcon from '../assets/YearOverYearColumnIcon'
 import SingleValueIcon from '../assets/SingleValueIcon'
 import PivotTableIcon from '../assets/PivotTableIcon'
+import ScatterIcon from '../assets/ScatterIcon'
 
 export const VIS_TYPE_COLUMN = 'COLUMN'
 export const VIS_TYPE_STACKED_COLUMN = 'STACKED_COLUMN'
@@ -29,6 +30,7 @@ export const VIS_TYPE_YEAR_OVER_YEAR_LINE = 'YEAR_OVER_YEAR_LINE'
 export const VIS_TYPE_YEAR_OVER_YEAR_COLUMN = 'YEAR_OVER_YEAR_COLUMN'
 export const VIS_TYPE_SINGLE_VALUE = 'SINGLE_VALUE'
 export const VIS_TYPE_PIVOT_TABLE = 'PIVOT_TABLE'
+export const VIS_TYPE_SCATTER = 'SCATTER'
 
 export const visTypeDisplayNames = {
     [VIS_TYPE_PIVOT_TABLE]: i18n.t('Pivot table'),
@@ -45,6 +47,7 @@ export const visTypeDisplayNames = {
     [VIS_TYPE_YEAR_OVER_YEAR_LINE]: i18n.t('Year over year (line)'),
     [VIS_TYPE_YEAR_OVER_YEAR_COLUMN]: i18n.t('Year over year (column)'),
     [VIS_TYPE_SINGLE_VALUE]: i18n.t('Single value'),
+    [VIS_TYPE_SCATTER]: i18n.t('Scatter'),
 }
 
 export const visTypeDescriptions = {
@@ -90,6 +93,9 @@ export const visTypeDescriptions = {
     [VIS_TYPE_SINGLE_VALUE]: i18n.t(
         'Display a single value. Recommend relative period to show latest data.'
     ),
+    [VIS_TYPE_SCATTER]: i18n.t(
+        'View the relationship between two data items at a place or time. Recommended for finding outliers.'
+    ),
 }
 
 export const visTypeIcons = {
@@ -107,6 +113,7 @@ export const visTypeIcons = {
     [VIS_TYPE_YEAR_OVER_YEAR_LINE]: YearOverYearLineIcon,
     [VIS_TYPE_YEAR_OVER_YEAR_COLUMN]: YearOverYearColumnIcon,
     [VIS_TYPE_SINGLE_VALUE]: SingleValueIcon,
+    [VIS_TYPE_SCATTER]: ScatterIcon,
 }
 
 export const getDisplayNameByVisType = visType => {
@@ -147,6 +154,7 @@ const twoCategoryChartTypes = [
     VIS_TYPE_LINE,
     VIS_TYPE_AREA,
     VIS_TYPE_STACKED_AREA,
+    VIS_TYPE_SCATTER, // TODO: Remove once new layout is in place
 ]
 
 const columnBasedTypes = [

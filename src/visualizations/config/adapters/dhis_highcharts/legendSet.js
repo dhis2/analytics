@@ -3,6 +3,8 @@ import i18n from '@dhis2/d2-i18n'
 
 import { getLegendByValueFromLegendSet } from '../../../../modules/legends'
 
+const OUT_OF_BOUNDS_COLOR = '#CCCCCC'
+
 const getLegend = (value, legendSet) =>
     value && legendSet ? getLegendByValueFromLegendSet(legendSet, value) : {}
 
@@ -14,7 +16,9 @@ export const applyLegendSet = (seriesObj, legendSet) =>
                   isNumeric(value) // Single category pass data as [value1, value2]
                       ? {
                             y: value,
-                            color: getLegend(value, legendSet)?.color,
+                            color:
+                                getLegend(value, legendSet)?.color ||
+                                OUT_OF_BOUNDS_COLOR,
                             legend: getLegend(value, legendSet)?.name || '-',
                             legendSet: legendSet.name,
                         }
@@ -22,7 +26,9 @@ export const applyLegendSet = (seriesObj, legendSet) =>
                       ? {
                             x: value[0],
                             y: value[1],
-                            color: getLegend(value[1], legendSet)?.color,
+                            color:
+                                getLegend(value[1], legendSet)?.color ||
+                                OUT_OF_BOUNDS_COLOR,
                             legend: getLegend(value[1], legendSet)?.name || '-',
                             legendSet: legendSet.name,
                         }
