@@ -35,7 +35,7 @@
         "@storybook/react": "^6.1.14",
         "enzyme": "^3.9.0",
         "enzyme-adapter-react-16": "^1.15.5",
-        "fs-extra": "^9.0.0",
+        "fs-extra": "^9.0.1",
         "jest-enzyme": "^7.0.2",
         "typeface-roboto": "^0.0.75"
     },
