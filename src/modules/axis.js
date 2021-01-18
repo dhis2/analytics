@@ -5,6 +5,7 @@ import {
     LAYOUT_TYPE_PIE,
     LAYOUT_TYPE_YEAR_OVER_YEAR,
     LAYOUT_TYPE_PIVOT_TABLE,
+    LAYOUT_TYPE_SCATTER,
 } from './layoutTypes'
 
 const getAxisNamesByLayoutType = layoutType => {
@@ -22,6 +23,11 @@ const getAxisNamesByLayoutType = layoutType => {
             return {
                 [AXIS_ID_COLUMNS]: i18n.t('Columns'),
                 [AXIS_ID_ROWS]: i18n.t('Rows'),
+                [AXIS_ID_FILTERS]: i18n.t('Filter'),
+            }
+        case LAYOUT_TYPE_SCATTER:
+            return {
+                [AXIS_ID_ROWS]: i18n.t('Points'),
                 [AXIS_ID_FILTERS]: i18n.t('Filter'),
             }
     }

@@ -28,7 +28,7 @@ describe('DataDimension component ', () => {
 
     beforeEach(() => {
         props = {
-            d2: {},
+            dataEngine: {},
             selectedDimensions: [],
             displayNameProp: 'string',
             onSelect: jest.fn(),

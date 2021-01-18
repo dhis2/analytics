@@ -1,5 +1,6 @@
 import objectClean from 'd2-utilizr/lib/objectClean'
 import isString from 'd2-utilizr/lib/isString'
+
 import getChart from './chart'
 import getXAxis from './xAxis'
 import getYAxis from './yAxis'
@@ -7,6 +8,7 @@ import getSeries from './series'
 import getTitle from './title'
 import getSubtitle from './subtitle'
 import getLegend from './legend'
+import getPlotOptions from './plotOptions'
 import getPane from './pane'
 import getNoData from './noData'
 import { applyLegendSet, getLegendSetTooltip } from './legendSet'
@@ -14,6 +16,7 @@ import {
     isStacked,
     isDualAxisType,
     isLegendSetType,
+    VIS_TYPE_SCATTER,
 } from '../../../../modules/visTypes'
 import getSortedConfig from './getSortedConfig'
 import getTrimmedConfig from './getTrimmedConfig'
@@ -25,6 +28,7 @@ import {
     LEGEND_DISPLAY_STRATEGY_BY_DATA_ITEM,
     LEGEND_DISPLAY_STRATEGY_FIXED,
 } from '../../../../modules/legends'
+import getScatterData from './getScatterData'
 
 const getTransformedLayout = layout => ({
     ...layout,
@@ -58,6 +62,9 @@ export default function ({ store, layout, el, extraConfig, extraOptions }) {
                 : null,
     })
 
+    if (_layout.type === VIS_TYPE_SCATTER) {
+        _extraOptions.scatterData = getScatterData(series, store)
+    }
     let config = {
         // type etc
         chart: getChart(_layout, el, _extraOptions.dashboard),
@@ -98,9 +105,10 @@ export default function ({ store, layout, el, extraConfig, extraOptions }) {
         // pane
         pane: getPane(_layout.type),
 
-        // no data
+        // no data + zoom
         lang: {
             noData: _extraOptions.noData.text,
+            resetZoom: _extraOptions.resetZoom.text,
         },
         noData: getNoData(),
 
@@ -114,6 +122,21 @@ export default function ({ store, layout, el, extraConfig, extraOptions }) {
             // disable exporting context menu
             enabled: false,
         },
+    }
+
+    // get plot options for scatter
+    if (_layout.type === VIS_TYPE_SCATTER) {
+        const metaDataItems = store.data[0].metaData.items
+        const columnItems = _layout.columns[0].items
+        const xAxisName = metaDataItems[columnItems[1].id].name
+        const yAxisName = metaDataItems[columnItems[0].id].name
+        config.plotOptions = getPlotOptions({
+            visType: _layout.type,
+            xAxisName,
+            yAxisName,
+            showLabels: _layout.showValues || _layout.showData,
+            tooltipData: getScatterData(series, store),
+        })
     }
 
     // hide empty categories
