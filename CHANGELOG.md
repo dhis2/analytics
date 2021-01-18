@@ -1,3 +1,24 @@
+## [12.1.8](https://github.com/dhis2/analytics/compare/v12.1.7...v12.1.8) (2021-01-18)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([5ce6b36](https://github.com/dhis2/analytics/commit/5ce6b36063db539ffc18339ff633f34a343d7d27))
+
+## [12.1.7](https://github.com/dhis2/analytics/compare/v12.1.6...v12.1.7) (2021-01-14)
+
+
+### Bug Fixes
+
+* add default color for values out of bounds ([#762](https://github.com/dhis2/analytics/issues/762)) ([b52e00f](https://github.com/dhis2/analytics/commit/b52e00fb2398c24a2fb689ee2d436c66bb8bdc3b))
+
+## [12.1.6](https://github.com/dhis2/analytics/compare/v12.1.5...v12.1.6) (2021-01-14)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([72d73d6](https://github.com/dhis2/analytics/commit/72d73d69f6fef22a55b7ed3184d6e3d9f78e86ba))
+
 ## [12.1.5](https://github.com/dhis2/analytics/compare/v12.1.4...v12.1.5) (2021-01-13)
 
 
