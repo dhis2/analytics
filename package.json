@@ -1,6 +1,6 @@
 {
     "name": "@dhis2/analytics",
-    "version": "11.2.10",
+    "version": "12.1.8",
     "main": "./build/cjs/lib.js",
     "module": "./build/es/lib.js",
     "sideEffects": [
@@ -26,7 +26,7 @@
         "validate-push": "yarn test"
     },
     "devDependencies": {
-        "@dhis2/cli-app-scripts": "^5.1.0",
+        "@dhis2/cli-app-scripts": "^5.2.2",
         "@dhis2/cli-style": "^7.2.2",
         "@dhis2/d2-i18n": "^1.0.6",
         "@sambego/storybook-state": "^2.0.1",
@@ -47,7 +47,7 @@
     },
     "dependencies": {
         "@dhis2/d2-ui-org-unit-dialog": "^7.0.8",
-        "@dhis2/ui": "^5.7.7",
+        "@dhis2/ui": "^6.0.2",
         "@material-ui/core": "^3.9.3",
         "@material-ui/icons": "^3.0.2",
         "classnames": "^2.2.6",
@@ -57,7 +57,7 @@
         "lodash": "^4.17.20",
         "react-beautiful-dnd": "^10.1.1",
         "resize-observer-polyfill": "^1.5.1",
-        "styled-jsx": "^3.3.2"
+        "styled-jsx": "^3.4.1"
     },
     "files": [
         "build"
