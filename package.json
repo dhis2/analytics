@@ -26,7 +26,7 @@
         "validate-push": "yarn test"
     },
     "devDependencies": {
-        "@dhis2/cli-app-scripts": "^5.2.2",
+        "@dhis2/cli-app-scripts": "^5.5.1",
         "@dhis2/cli-style": "^7.2.2",
         "@dhis2/d2-i18n": "^1.0.6",
         "@sambego/storybook-state": "^2.0.1",
