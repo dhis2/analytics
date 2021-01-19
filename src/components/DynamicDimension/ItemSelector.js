@@ -54,15 +54,13 @@ const ItemSelector = ({
 
     const fetchItems = async page => {
         setLoading(true)
-        const fetchResult = await onFetch(pageSize, page, debouncedFilter)
+        const result = await onFetch(pageSize, page, debouncedFilter)
 
-        const newOptions = fetchResult.dimensions.items.map(
-            ({ id, name, disabled }) => ({
-                label: name,
-                value: id,
-                disabled,
-            })
-        )
+        const newOptions = result.map(({ id, name, disabled }) => ({
+            label: name,
+            value: id,
+            disabled,
+        }))
 
         if (
             // No current options + no server response + no filter used = no options on the server at all

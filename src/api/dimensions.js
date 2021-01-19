@@ -1,5 +1,4 @@
 import sortBy from 'lodash/sortBy'
-import objectClean from 'd2-utilizr/lib/objectClean'
 
 import { onError } from './index'
 import { DATA_SETS_CONSTANTS } from '../modules/dataSets'
@@ -100,26 +99,24 @@ export const dataElementGroupsQuery = {
     }),
 }
 
-export const apiFetchItemsByDimension = ({
-    engine,
-    dimensionId,
-    searchTerm,
-    pageSize,
-    page,
-}) => {
-    const query = {
-        dimensions: {
-            resource: `dimensions/${dimensionId}/items`,
-            params: objectClean({
-                fields: 'id,displayName~rename(name)',
-                order: 'displayName:asc',
-                pageSize: pageSize || 25,
-                page: page || 1,
-                filter: searchTerm ? `name:ilike:${searchTerm}` : undefined,
-            }),
-        },
-    }
-    return engine.query(query)
+export const itemsByDimensionQuery = {
+    resource: `dimensions`,
+    id: ({ id }) => `${id}/items`,
+    params: ({ searchTerm, pageSize, page }) => {
+        const filters = []
+
+        if (searchTerm) {
+            filters.push(`name:ilike:${searchTerm}`)
+        }
+
+        return {
+            fields: 'id,displayName~rename(name)',
+            order: 'displayName:asc',
+            pageSize: pageSize || 25,
+            page: page || 1,
+            filter: filters,
+        }
+    },
 }
 
 export const dataElementOperandsQuery = {
@@ -408,6 +405,29 @@ const fetchDataElements = async ({
     const response = dataElementsData.dataElements
 
     return formatResponse(response.dataElements, response.pager)
+}
+
+export const apiFetchItemsByDimension = async ({
+    dataEngine,
+    dimensionId,
+    searchTerm,
+    pageSize,
+    page,
+}) => {
+    const itemsByDimensionData = await dataEngine.query(
+        { itemsByDimensions: itemsByDimensionQuery },
+        {
+            variables: {
+                id: dimensionId,
+                searchTerm,
+                pageSize,
+                page,
+            },
+            onError,
+        }
+    )
+
+    return itemsByDimensionData.itemsByDimensions.items
 }
 
 const fetchDataElementOperands = async ({
