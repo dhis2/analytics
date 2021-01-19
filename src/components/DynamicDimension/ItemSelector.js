@@ -32,7 +32,7 @@ const useDebounce = (value, delay) => {
 
 const ItemSelector = ({
     initialSelected,
-    moItemsMessage,
+    noItemsMessage,
     onFetch,
     onSelect,
     rightFooter,
@@ -125,7 +125,7 @@ const ItemSelector = ({
     const renderSourceEmptyPlaceholder = () => {
         let message = ''
         if (hasNoItems) {
-            message = moItemsMessage
+            message = noItemsMessage
         } else if (!loading && !options.length && debouncedFilter) {
             message = i18n.t('Nothing found for {{searchTerm}}', {
                 searchTerm: debouncedFilter,
@@ -178,7 +178,7 @@ ItemSelector.propTypes = {
             value: PropTypes.string.isRequired,
         })
     ),
-    moItemsMessage: PropTypes.string,
+    noItemsMessage: PropTypes.string,
     rightFooter: PropTypes.node,
 }
 
