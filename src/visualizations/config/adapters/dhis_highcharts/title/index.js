@@ -1,12 +1,15 @@
 import isString from 'd2-utilizr/lib/isString'
+
 import getFilterText from '../../../../util/getFilterText'
 import {
     VIS_TYPE_YEAR_OVER_YEAR_LINE,
     VIS_TYPE_YEAR_OVER_YEAR_COLUMN,
     VIS_TYPE_GAUGE,
     isVerticalType,
+    VIS_TYPE_SCATTER,
 } from '../../../../../modules/visTypes'
 import getYearOverYearTitle from './yearOverYear'
+import getScatterTitle from './scatter'
 import {
     FONT_STYLE_OPTION_ITALIC,
     FONT_STYLE_OPTION_BOLD,
@@ -61,6 +64,9 @@ export default function (layout, metaData, dashboard) {
             case VIS_TYPE_YEAR_OVER_YEAR_LINE:
             case VIS_TYPE_YEAR_OVER_YEAR_COLUMN:
                 title.text = getYearOverYearTitle(layout, metaData, dashboard)
+                break
+            case VIS_TYPE_SCATTER:
+                title.text = getScatterTitle(layout, metaData, dashboard)
                 break
             default:
                 title.text = getDefault(layout, metaData, dashboard)

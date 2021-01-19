@@ -4,6 +4,7 @@ import {
     VIS_TYPE_YEAR_OVER_YEAR_LINE,
     VIS_TYPE_YEAR_OVER_YEAR_COLUMN,
     isVerticalType,
+    VIS_TYPE_SCATTER,
 } from '../../../../../modules/visTypes'
 import getYearOverYearTitle from '../title/yearOverYear'
 import {
@@ -62,6 +63,9 @@ export default function (series, layout, metaData, dashboard) {
                     metaData,
                     Boolean(!dashboard)
                 )
+                break
+            case VIS_TYPE_SCATTER:
+                subtitle.text = filterTitle
                 break
             default:
                 subtitle = getDefault(layout, dashboard, filterTitle)

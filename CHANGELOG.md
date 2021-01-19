@@ -1,3 +1,38 @@
+## [12.1.8](https://github.com/dhis2/analytics/compare/v12.1.7...v12.1.8) (2021-01-18)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([5ce6b36](https://github.com/dhis2/analytics/commit/5ce6b36063db539ffc18339ff633f34a343d7d27))
+
+## [12.1.7](https://github.com/dhis2/analytics/compare/v12.1.6...v12.1.7) (2021-01-14)
+
+
+### Bug Fixes
+
+* add default color for values out of bounds ([#762](https://github.com/dhis2/analytics/issues/762)) ([b52e00f](https://github.com/dhis2/analytics/commit/b52e00fb2398c24a2fb689ee2d436c66bb8bdc3b))
+
+## [12.1.6](https://github.com/dhis2/analytics/compare/v12.1.5...v12.1.6) (2021-01-14)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([72d73d6](https://github.com/dhis2/analytics/commit/72d73d69f6fef22a55b7ed3184d6e3d9f78e86ba))
+
+## [12.1.5](https://github.com/dhis2/analytics/compare/v12.1.4...v12.1.5) (2021-01-13)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([73f8c22](https://github.com/dhis2/analytics/commit/73f8c2286fe612037a3123c5bbbf331554e6bd6b))
+
+## [12.1.4](https://github.com/dhis2/analytics/compare/v12.1.3...v12.1.4) (2021-01-12)
+
+
+### Bug Fixes
+
+* add custom title and subtitle for scatter (DHIS2-10170) ([#754](https://github.com/dhis2/analytics/issues/754)) ([f266a8f](https://github.com/dhis2/analytics/commit/f266a8f27ca0efa4b38c7bf8fc2ead97cf70eee7))
+
 ## [12.1.3](https://github.com/dhis2/analytics/compare/v12.1.2...v12.1.3) (2021-01-06)
 
 
