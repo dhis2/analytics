@@ -1,3 +1,10 @@
+## [12.1.10](https://github.com/dhis2/analytics/compare/v12.1.9...v12.1.10) (2021-01-19)
+
+
+### Bug Fixes
+
+* update vis type descriptions ([#772](https://github.com/dhis2/analytics/issues/772)) ([ce79923](https://github.com/dhis2/analytics/commit/ce7992369fc9f42b1bc81bcc5a2d84e6834651e4))
+
 ## [12.1.9](https://github.com/dhis2/analytics/compare/v12.1.8...v12.1.9) (2021-01-19)
 
 
