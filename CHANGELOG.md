@@ -1,3 +1,11 @@
+## [12.1.9](https://github.com/dhis2/analytics/compare/v12.1.8...v12.1.9) (2021-01-19)
+
+
+### Bug Fixes
+
+* migrate to storybook 6 ([#771](https://github.com/dhis2/analytics/issues/771)) ([49e0f0a](https://github.com/dhis2/analytics/commit/49e0f0a18529d4d64f09e96d1231ee79b9cc9fef))
+* revert styled-jsx to avoid bug ([#770](https://github.com/dhis2/analytics/issues/770)) ([1a53c6a](https://github.com/dhis2/analytics/commit/1a53c6af5186ca203b63f0628fe8b30b79ec9092))
+
 ## [12.1.8](https://github.com/dhis2/analytics/compare/v12.1.7...v12.1.8) (2021-01-18)
 
 
