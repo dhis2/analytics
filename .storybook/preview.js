@@ -1,4 +1,5 @@
 import React from 'react'
+import { CssReset } from '@dhis2/ui-core'
 
 export const decorators = [
     Story => (
