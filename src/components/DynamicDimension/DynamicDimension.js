@@ -14,7 +14,7 @@ export const DynamicDimension = ({
     dimensionTitle,
 }) => {
     const engine = useDataEngine()
-    // TODO: Add breaking change
+
     const fetchItems = (pageSize, page, searchTerm) =>
         apiFetchItemsByDimension({
             engine,
