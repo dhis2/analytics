@@ -61,5 +61,8 @@
     },
     "files": [
         "build"
-    ]
+    ],
+    "resolutions": {
+        "@dhis2/ui": "^6.1.3"
+    }
 }
