@@ -1,6 +1,6 @@
 {
     "name": "@dhis2/analytics",
-    "version": "12.1.8",
+    "version": "12.1.9",
     "main": "./build/cjs/lib.js",
     "module": "./build/es/lib.js",
     "sideEffects": [
@@ -30,8 +30,8 @@
         "@dhis2/cli-style": "^7.2.2",
         "@dhis2/d2-i18n": "^1.0.6",
         "@sambego/storybook-state": "^2.0.1",
-        "@storybook/addons": "^5.3.21",
-        "@storybook/preset-create-react-app": "^2.1.2",
+        "@storybook/addons": "^6.1.14",
+        "@storybook/preset-create-react-app": "^3.1.5",
         "@storybook/react": "^6.1.14",
         "enzyme": "^3.9.0",
         "enzyme-adapter-react-16": "^1.15.5",
@@ -61,5 +61,8 @@
     },
     "files": [
         "build"
-    ]
+    ],
+    "resolutions": {
+        "@dhis2/ui": "^6.1.3"
+    }
 }
