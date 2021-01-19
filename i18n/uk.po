@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-10-21T13:43:05.146Z\n"
+"POT-Creation-Date: 2020-12-21T08:01:55.494Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: Viktor Varland <viktor@dhis2.org>, 2020\n"
 "Language-Team: Ukrainian (https://www.transifex.com/hisp-uio/teams/100509/uk/)\n"
@@ -35,9 +35,6 @@ msgstr ""
 msgid "Add to {{axisName}}"
 msgstr ""
 
-msgid "Remove"
-msgstr "Прибрати"
-
 msgid "Not available for {{visualizationType}}"
 msgstr ""
 
@@ -46,6 +43,9 @@ msgstr ""
 
 msgid "Add Assigned Categories"
 msgstr ""
+
+msgid "Remove"
+msgstr "Прибрати"
 
 msgid "Filter dimensions"
 msgstr ""
@@ -359,6 +359,9 @@ msgstr ""
 msgid "Rows"
 msgstr ""
 
+msgid "Points"
+msgstr ""
+
 msgid "Reporting rate"
 msgstr ""
 
@@ -518,6 +521,9 @@ msgstr ""
 msgid "Single value"
 msgstr ""
 
+msgid "Scatter"
+msgstr ""
+
 msgid "View data and indicators in a manipulatable table."
 msgstr ""
 
@@ -568,7 +574,15 @@ msgstr ""
 msgid "Display a single value. Recommend relative period to show latest data."
 msgstr ""
 
+msgid ""
+"View the relationship between two data items at a place or time. Recommended"
+" for finding outliers."
+msgstr ""
+
 msgid "No legend for this series"
+msgstr ""
+
+msgid "and {{amount}} more..."
 msgstr ""
 
 msgid "Target"
@@ -582,3 +596,6 @@ msgstr ""
 
 msgid "No data"
 msgstr "Немає даних"
+
+msgid "Reset zoom"
+msgstr ""

@@ -1,6 +1,6 @@
 import { isTwoCategoryChartType } from '../../../../modules/visTypes'
 
-export default function(series, layout) {
+export default function (series, layout) {
     if (isTwoCategoryChartType(layout.type) && layout.rows.length > 1) {
         return getTwoCategoryStackedData(series)
     } else {

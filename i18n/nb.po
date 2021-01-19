@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-10-21T13:43:05.146Z\n"
+"POT-Creation-Date: 2020-12-21T08:01:55.494Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: Karoline Tufte Lien <karoline@dhis2.org>, 2020\n"
 "Language-Team: Norwegian Bokmål (https://www.transifex.com/hisp-uio/teams/100509/nb/)\n"
@@ -34,9 +34,6 @@ msgstr "Flytt til {{axisName}}"
 msgid "Add to {{axisName}}"
 msgstr "Legg til {{axisName}}"
 
-msgid "Remove"
-msgstr "Fjern"
-
 msgid "Not available for {{visualizationType}}"
 msgstr "Ikke tilgjengelig for {{visualizationType}}"
 
@@ -45,6 +42,9 @@ msgstr "Fjern Tildelte Kategorier"
 
 msgid "Add Assigned Categories"
 msgstr "Legg tildelte kategorier"
+
+msgid "Remove"
+msgstr "Fjern"
 
 msgid "Filter dimensions"
 msgstr "Filterdimensjoner"
@@ -358,6 +358,9 @@ msgstr "Kolonner"
 msgid "Rows"
 msgstr "Rader"
 
+msgid "Points"
+msgstr "Punkter"
+
 msgid "Reporting rate"
 msgstr "Rapporteringfrekvens"
 
@@ -517,6 +520,9 @@ msgstr "År over år (stolpe)"
 msgid "Single value"
 msgstr "Enkeltverdi"
 
+msgid "Scatter"
+msgstr " Spredning"
+
 msgid "View data and indicators in a manipulatable table."
 msgstr "Vis data og indikatorer i en manipulerbar tabell."
 
@@ -583,7 +589,17 @@ msgid "Display a single value. Recommend relative period to show latest data."
 msgstr ""
 "Vis en enkelt verdi. Anbefal relativ periode for å vise de nyeste dataene."
 
+msgid ""
+"View the relationship between two data items at a place or time. Recommended"
+" for finding outliers."
+msgstr ""
+"Se forholdet mellom to datapunkter på et sted eller tidspunkt. Anbefalt for "
+"å finne avvikere."
+
 msgid "No legend for this series"
+msgstr "Ingen tegnforklaring for denne serien"
+
+msgid "and {{amount}} more..."
 msgstr ""
 
 msgid "Target"
@@ -597,3 +613,6 @@ msgstr "Akse {{axisId}}"
 
 msgid "No data"
 msgstr "Ingen data"
+
+msgid "Reset zoom"
+msgstr ""

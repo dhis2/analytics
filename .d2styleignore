@@ -5,3 +5,5 @@
 /storybook-static/*
 /build/*
 /coverage/*
+/src/locales/*
+/src/__fixtures__/*

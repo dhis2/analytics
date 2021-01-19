@@ -99,7 +99,7 @@ function getDefaultSortedConfig(config, layout, stacked) {
     return sortedConfig
 }
 
-export default function(config, layout, stacked) {
+export default function (config, layout, stacked) {
     if (isTwoCategoryChartType(layout.type) && layout.rows.length > 1) {
         return getTwoCategorySortedConfig(config, layout, stacked)
     } else {

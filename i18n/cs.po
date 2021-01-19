@@ -1,0 +1,617 @@
+# 
+# Translators:
+# Jiří Podhorecký, 2021
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: i18next-conv\n"
+"POT-Creation-Date: 2020-12-21T08:01:55.494Z\n"
+"PO-Revision-Date: 2020-04-28 22:05+0000\n"
+"Last-Translator: Jiří Podhorecký, 2021\n"
+"Language-Team: Czech (https://www.transifex.com/hisp-uio/teams/100509/cs/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: cs\n"
+"Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n <= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;\n"
+
+msgid "Data Type"
+msgstr "Typ dat"
+
+msgid "Totals"
+msgstr "Součty"
+
+msgid "Details"
+msgstr "Detaily"
+
+msgid "Detail"
+msgstr "Detail"
+
+msgid "Move to {{axisName}}"
+msgstr "Přesunout na {{axisName}}"
+
+msgid "Add to {{axisName}}"
+msgstr "Přidat k {{axisName}}"
+
+msgid "Not available for {{visualizationType}}"
+msgstr "Není k dispozici pro {{visualizationType}}"
+
+msgid "Remove Assigned Categories"
+msgstr "Odebrat přiřazené kategorie"
+
+msgid "Add Assigned Categories"
+msgstr "Přidat přiřazené kategorie"
+
+msgid "Remove"
+msgstr "Odebrat"
+
+msgid "Filter dimensions"
+msgstr "Rozsahy filtru"
+
+msgid "Main dimensions"
+msgstr "Hlavní rozměry"
+
+msgid "Your dimensions"
+msgstr "Vaše rozměry"
+
+msgid "Dimension recommended with selected data"
+msgstr "U vybraných dat je doporučen rozsah"
+
+msgid "No items selected"
+msgstr "Nevybrány žádné položky"
+
+msgid "Selected Items"
+msgstr "Vybrané položky"
+
+msgid "Search"
+msgstr "Hledat"
+
+msgid "Selected Data"
+msgstr "Vybraná data"
+
+msgid "Deselect All"
+msgstr "Odznačit vše"
+
+msgid "Select all"
+msgstr "Vybrat vše"
+
+msgid "Period type"
+msgstr "Typ období"
+
+msgid "Year"
+msgstr "Rok"
+
+msgid "Select year"
+msgstr "Vybrat rok"
+
+msgid "Period"
+msgstr "Období"
+
+msgid "Relative periods"
+msgstr "Relativní období"
+
+msgid "Fixed periods"
+msgstr "Pevné období"
+
+msgid "Selected Periods"
+msgstr "Vybraná období"
+
+msgid "No periods selected"
+msgstr "Nejsou vybrána žádná období"
+
+msgid "January"
+msgstr "Leden"
+
+msgid "February"
+msgstr "únor"
+
+msgid "March"
+msgstr "březen"
+
+msgid "April"
+msgstr "Duben"
+
+msgid "May"
+msgstr "Květen"
+
+msgid "June"
+msgstr "červen"
+
+msgid "July"
+msgstr "červenec"
+
+msgid "August"
+msgstr "Srpen"
+
+msgid "September"
+msgstr "Září"
+
+msgid "October"
+msgstr "říjen"
+
+msgid "November"
+msgstr "Listopad"
+
+msgid "December"
+msgstr "prosinec"
+
+msgid "Week {{weekNumber}}"
+msgstr "Týden {{weekNumber}}"
+
+msgid "Bi-Week {{biWeekNumber}}"
+msgstr "dva týdny {{biWeekNumber}}"
+
+msgid "Daily"
+msgstr "Denně"
+
+msgid "Weekly"
+msgstr "Týdně"
+
+msgid "Bi-weekly"
+msgstr "po 14ti dnech"
+
+msgid "Weekly (Start Wednesday)"
+msgstr "Týdně (od středy)"
+
+msgid "Weekly (Start Thursday)"
+msgstr "Týdně (od čtvrtka)"
+
+msgid "Weekly (Start Saturday)"
+msgstr "Týdně (od soboty)"
+
+msgid "Weekly (Start Sunday)"
+msgstr "Týdně (začíná nedělí)"
+
+msgid "Monthly"
+msgstr "Měsíčně"
+
+msgid "Bi-monthly"
+msgstr "Dvakrát za měsíc"
+
+msgid "Quarterly"
+msgstr "Čtvrtletně"
+
+msgid "Six-monthly"
+msgstr "Šestiměsíční"
+
+msgid "Six-monthly April"
+msgstr "Duben šest měsíců"
+
+msgid "Yearly"
+msgstr "Ročně"
+
+msgid "Financial year (Start November)"
+msgstr "Finanční rok (od listopadu)"
+
+msgid "Financial year (Start October)"
+msgstr "Finanční rok (od října)"
+
+msgid "Financial year (Start July)"
+msgstr "Finanční rok (od července)"
+
+msgid "Financial year (Start April)"
+msgstr "Finanční rok (od dubna)"
+
+msgid "Today"
+msgstr "Dnes"
+
+msgid "Yesterday"
+msgstr "Včera"
+
+msgid "Last 3 days"
+msgstr "Poslední 3 dny"
+
+msgid "Last 7 days"
+msgstr "Posledních 7 dní"
+
+msgid "Last 14 days"
+msgstr "Posledních 14 dní"
+
+msgid "Last 30 days"
+msgstr "Poledních 30 dní"
+
+msgid "Last 60 days"
+msgstr "Posledních 60 dní"
+
+msgid "Last 90 days"
+msgstr "Posledních 90 dní"
+
+msgid "Last 180 days"
+msgstr "Posledních 180 dní"
+
+msgid "This week"
+msgstr "Tento týden"
+
+msgid "Last week"
+msgstr "Minulý týden"
+
+msgid "Last 4 weeks"
+msgstr "Poslední 4 týdny"
+
+msgid "Last 12 weeks"
+msgstr "Posledních 12 týdnů"
+
+msgid "Last 52 weeks"
+msgstr "Posledních 52 týdnů"
+
+msgid "Weeks this year"
+msgstr "Týdny tohoto roku"
+
+msgid "This bi-week"
+msgstr "Těchto 14 dní"
+
+msgid "Last bi-week"
+msgstr "Posledních dní "
+
+msgid "Last 4 bi-weeks"
+msgstr "4 poslední dvoutýdny"
+
+msgid "This month"
+msgstr "Tento měsíc"
+
+msgid "Last month"
+msgstr "Minulý měsíc"
+
+msgid "Last 3 months"
+msgstr "Poslední 3 měsíce"
+
+msgid "Last 6 months"
+msgstr "Posledních 6 měsíců"
+
+msgid "Last 12 months"
+msgstr "Posledních 12 měsíců"
+
+msgid "Months this year"
+msgstr "Měsíce tohoto roku"
+
+msgid "This bi-month"
+msgstr "Těchto 14 dní"
+
+msgid "Last bi-month"
+msgstr "Poslední dva měsíce"
+
+msgid "Last 6 bi-months"
+msgstr "Posledních 6 dvou-měsíců"
+
+msgid "Bi-months this year"
+msgstr "Dvouměsíčně tento rok"
+
+msgid "This quarter"
+msgstr "Toto čtvrtletí"
+
+msgid "Last quarter"
+msgstr "Poslední čtvrtletí"
+
+msgid "Last 4 quarters"
+msgstr "Poslední 4 čtvrtletí "
+
+msgid "Quarters this year"
+msgstr "Čtvrtletí tohoto roku"
+
+msgid "This six-month"
+msgstr "Tento půlrok"
+
+msgid "Last six-month"
+msgstr "Poslední půlrok"
+
+msgid "Last 2 six-month"
+msgstr "Poslední 2 půlroky"
+
+msgid "This financial year"
+msgstr "Tento finanční rok"
+
+msgid "Last financial year"
+msgstr "Poslední finanční rok"
+
+msgid "Last 5 financial years"
+msgstr "Posledních 5 finančních roků"
+
+msgid "This year"
+msgstr "Tento rok"
+
+msgid "Last year"
+msgstr "Poslední rok"
+
+msgid "Last 5 years"
+msgstr "Posledních 5 let"
+
+msgid "Days"
+msgstr "Dnů"
+
+msgid "Weeks"
+msgstr "Týdnů"
+
+msgid "Bi-weeks"
+msgstr "14 dní"
+
+msgid "Months"
+msgstr "Měsíce"
+
+msgid "Bi-months"
+msgstr "Dva měsíce"
+
+msgid "Quarters"
+msgstr "Čtvrtletí"
+
+msgid "Six-months"
+msgstr "Půlrok"
+
+msgid "Financial Years"
+msgstr "Finanční roky"
+
+msgid "Years"
+msgstr "Let"
+
+msgid "Series"
+msgstr "Série"
+
+msgid "Category"
+msgstr "Kategorie"
+
+msgid "Filter"
+msgstr "Filtr"
+
+msgid "Columns"
+msgstr "Sloupce"
+
+msgid "Rows"
+msgstr "Řádky"
+
+msgid "Points"
+msgstr "Body"
+
+msgid "Reporting rate"
+msgstr "Míra hlášení"
+
+msgid "Reporting rate on time"
+msgstr "Četnost hlášení na čas"
+
+msgid "Actual reports"
+msgstr "Aktuální zprávy"
+
+msgid "Actual reports on time"
+msgstr "Aktuální zprávy včas"
+
+msgid "Expected reports"
+msgstr "Očekávané zprávy"
+
+msgid "Program"
+msgstr "Program"
+
+msgid "Select a program"
+msgstr "Vybrat program"
+
+msgid "Indicators"
+msgstr "Indikátory"
+
+msgid "Select indicator group"
+msgstr "Vybrat skupinu indikátorů"
+
+msgid "[ All groups ]"
+msgstr "[ Všechny skupiny ]"
+
+msgid "Data elements"
+msgstr "Datové prvky"
+
+msgid "Select data element group"
+msgstr "Vybrat skupinu datových prvků"
+
+msgid "[ All data elements ]"
+msgstr "[ Všechny datové prvky ]"
+
+msgid "Data sets"
+msgstr "Datové sady"
+
+msgid "Select data sets"
+msgstr "Vybrat datové sady"
+
+msgid "[ All metrics ]"
+msgstr "[ Všechny metriky ]"
+
+msgid "Event data items"
+msgstr "Položky dat události"
+
+msgid "Program indicators"
+msgstr "Indikátory programu"
+
+msgid "Extra Small"
+msgstr "Velmi malý"
+
+msgid "Small"
+msgstr "Malý"
+
+msgid "Regular"
+msgstr "Pravidelný"
+
+msgid "Large"
+msgstr "Velký"
+
+msgid "Extra Large"
+msgstr "Velmi velký"
+
+msgid "Left"
+msgstr "Vlevo"
+
+msgid "Center"
+msgstr "střed"
+
+msgid "Right"
+msgstr "Vpravo"
+
+msgid "Start"
+msgstr "Start"
+
+msgid "Middle"
+msgstr "Střední"
+
+msgid "End"
+msgstr "Konec"
+
+msgid "Top"
+msgstr "Nahoře"
+
+msgid "Bottom"
+msgstr "Dole"
+
+msgid "{{dynamicOuNames}} and {{lastOuName}}"
+msgstr "{{dynamicOuNames}} a {{lastOuName}}"
+
+msgid "{{allDynamicOuNames}} levels"
+msgstr "úrovně {{allDynamicOuNames}}"
+
+msgid "{{allDynamicOuNames}} groups"
+msgstr "skupiny {{allDynamicOuNames}}"
+
+msgid "{{allDynamicOuNames}} levels in {{staticOuNames}}"
+msgstr "úrovně {{allDynamicOuNames}} v {{staticOuNames}}"
+
+msgid "{{allDynamicOuNames}} groups in {{staticOuNames}}"
+msgstr "Skupiny {{allDynamicOuNames}} v {{staticOuNames}}"
+
+msgid "Data"
+msgstr "Data"
+
+msgid "Organisation Unit"
+msgstr "Organizační jednotka"
+
+msgid "Assigned Categories"
+msgstr "Přiřazené kategorie"
+
+msgid "Pivot table"
+msgstr "Kontingenční tabulka"
+
+msgid "Column"
+msgstr "Sloupec"
+
+msgid "Stacked column"
+msgstr "Skládaný sloupec"
+
+msgid "Bar"
+msgstr "LIšta"
+
+msgid "Stacked bar"
+msgstr "Skládaný lištový graf"
+
+msgid "Line"
+msgstr "Linie"
+
+msgid "Area"
+msgstr "Oblast"
+
+msgid "Stacked area"
+msgstr "Skládaná plocha"
+
+msgid "Pie"
+msgstr "Výseč"
+
+msgid "Radar"
+msgstr "Radar"
+
+msgid "Gauge"
+msgstr "Gauge"
+
+msgid "Year over year (line)"
+msgstr "Rok po roce (řádek)"
+
+msgid "Year over year (column)"
+msgstr "Rok po roce (sloupce)"
+
+msgid "Single value"
+msgstr "Jedna hodnota"
+
+msgid "Scatter"
+msgstr "Rozptyl"
+
+msgid "View data and indicators in a manipulatable table."
+msgstr "Zobrazit data a indikátory v manipulovatelné tabulce."
+
+msgid ""
+"Compare sizes of related element, displayed vertically. Recommend period in "
+"filter."
+msgstr ""
+"Porovnat velikosti souvisejícího prvku, které se zobrazují svisle. "
+"Doporučené období ve filtru."
+
+msgid ""
+"Compare parts of a whole against related elements, vertically. Recommend "
+"data or org. unit as series."
+msgstr ""
+"Porovnat části celku s příbuznými prvky svisle. Doporučeny data nebo org. "
+"jednotky jako série."
+
+msgid ""
+"Compare sizes of related elements, displayed horizontally. Recommend period "
+"in filter."
+msgstr ""
+"Porovnat velikosti souvisejících prvků zobrazených vodorovně. Doporučené "
+"období ve filtru."
+
+msgid ""
+"Compare parts of a whole against related elements, horizontally. Recommend "
+"data or org. unit as series."
+msgstr ""
+"Porovnat části celku s příbuznými prvky vodorovně. Doporučeny data nebo org."
+" jednotky jako série."
+
+msgid "Track or compare changes over time. Recommend period as the category."
+msgstr ""
+"Trasovat nebo porovnat změny v průběhu času. Doporučit období jako "
+"kategorii."
+
+msgid ""
+"Track or compare over time parts of a whole. Recommend data in series and "
+"period in category."
+msgstr ""
+"Trasovat nebo porovnat části celku v průběhu času. Doporučeny data v sérii a"
+" období v kategorii."
+
+msgid ""
+"Compare parts of a whole at a single point in time. Recommend period in the "
+"filter."
+msgstr ""
+"Porovnat části celku v jednom časovém okamžiku. Doporučit období ve filtru."
+
+msgid "Compare several items against multiple variables."
+msgstr "Porovnat několik položek s více proměnnými."
+
+msgid ""
+"Compare a percentage indicator against a 100% scale. Recommend period in "
+"filter."
+msgstr ""
+"Porovnat procentní indikátor se 100% stupnicí. Doporučené období ve filtru."
+
+msgid "Compare changes over time between multiple time periods."
+msgstr "Porovnat změny v čase mezi více časovými obdobími."
+
+msgid "Display a single value. Recommend relative period to show latest data."
+msgstr ""
+"Zobrazit jednu hodnotu. Doporučit relativní období pro zobrazení "
+"nejnovějších údajů."
+
+msgid ""
+"View the relationship between two data items at a place or time. Recommended"
+" for finding outliers."
+msgstr ""
+"Zobrazte vztah mezi dvěma datovými položkami v určitém místě nebo čase. "
+"Doporučeno pro hledání odlehlých hodnot."
+
+msgid "No legend for this series"
+msgstr "Pro tuto sérii není legenda"
+
+msgid "and {{amount}} more..."
+msgstr "a {{amount}} další ..."
+
+msgid "Target"
+msgstr "Cíl"
+
+msgid "Base"
+msgstr "Základ"
+
+msgid "Axis {{axisId}}"
+msgstr "Osa {{axisId}}"
+
+msgid "No data"
+msgstr "Nejsou data"
+
+msgid "Reset zoom"
+msgstr "Obnovit přiblížení"

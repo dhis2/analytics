@@ -9,7 +9,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-10-21T13:43:05.146Z\n"
+"POT-Creation-Date: 2020-12-21T08:01:55.494Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: Ge Joao <gsimango@saudigitus.org>, 2020\n"
 "Language-Team: Portuguese (https://www.transifex.com/hisp-uio/teams/100509/pt/)\n"
@@ -37,9 +37,6 @@ msgstr "Mover para {{Nomedoeixo}}"
 msgid "Add to {{axisName}}"
 msgstr "Adicionar à {{Nomedoeixo}}"
 
-msgid "Remove"
-msgstr "Remover"
-
 msgid "Not available for {{visualizationType}}"
 msgstr "Não disponível para {{Tipodevisualização}}"
 
@@ -48,6 +45,9 @@ msgstr "Remover categorias atribuídas"
 
 msgid "Add Assigned Categories"
 msgstr "Adicionar categorias atribuídas"
+
+msgid "Remove"
+msgstr "Remover"
 
 msgid "Filter dimensions"
 msgstr "Dimensões do filtro"
@@ -361,6 +361,9 @@ msgstr "Colunas"
 msgid "Rows"
 msgstr "Linhas"
 
+msgid "Points"
+msgstr ""
+
 msgid "Reporting rate"
 msgstr "Taxa de relatórios"
 
@@ -520,6 +523,9 @@ msgstr "Ano após ano (coluna)"
 msgid "Single value"
 msgstr "Valor unico"
 
+msgid "Scatter"
+msgstr ""
+
 msgid "View data and indicators in a manipulatable table."
 msgstr ""
 
@@ -570,7 +576,15 @@ msgstr ""
 msgid "Display a single value. Recommend relative period to show latest data."
 msgstr ""
 
+msgid ""
+"View the relationship between two data items at a place or time. Recommended"
+" for finding outliers."
+msgstr ""
+
 msgid "No legend for this series"
+msgstr ""
+
+msgid "and {{amount}} more..."
 msgstr ""
 
 msgid "Target"
@@ -584,3 +598,6 @@ msgstr ""
 
 msgid "No data"
 msgstr "Não ha dados"
+
+msgid "Reset zoom"
+msgstr ""

@@ -15,14 +15,14 @@ exports[`The Period Selector component matches the snapshot 1`] = `
         dataTest="dhis2-uicore-tabbar"
       >
         <Tab
-          dataTest="dhis2-uicore-tab"
+          dataTest="undefined-relative-periods-button"
           onClick={[Function]}
           selected={true}
         >
           Relative periods
         </Tab>
         <Tab
-          dataTest="dhis2-uicore-tab"
+          dataTest="undefined-fixed-periods-button"
           onClick={[Function]}
           selected={false}
         >
@@ -34,6 +34,7 @@ exports[`The Period Selector component matches the snapshot 1`] = `
       >
         <RelativePeriodFilter
           currentFilter="Months"
+          dataTest="undefined-relative-period-filter"
           onSelectFilter={[Function]}
         />
       </div>

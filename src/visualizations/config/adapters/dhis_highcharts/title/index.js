@@ -1,19 +1,22 @@
 import isString from 'd2-utilizr/lib/isString'
+
 import getFilterText from '../../../../util/getFilterText'
 import {
     VIS_TYPE_YEAR_OVER_YEAR_LINE,
     VIS_TYPE_YEAR_OVER_YEAR_COLUMN,
     VIS_TYPE_GAUGE,
+    VIS_TYPE_SCATTER,
 } from '../../../../../modules/visTypes'
 import getYearOverYearTitle from './yearOverYear'
-import { 
-    FONT_STYLE_OPTION_ITALIC, 
-    FONT_STYLE_OPTION_BOLD, 
+import getScatterTitle from './scatter'
+import {
+    FONT_STYLE_OPTION_ITALIC,
+    FONT_STYLE_OPTION_BOLD,
     FONT_STYLE_OPTION_TEXT_COLOR,
     FONT_STYLE_OPTION_FONT_SIZE,
     FONT_STYLE_OPTION_TEXT_ALIGN,
-    FONT_STYLE_VISUALIZATION_TITLE
- } from '../../../../../modules/fontStyle'
+    FONT_STYLE_VISUALIZATION_TITLE,
+} from '../../../../../modules/fontStyle'
 import { getTextAlignOption } from '../getTextAlignOption'
 
 const DASHBOARD_TITLE_STYLE = {
@@ -37,9 +40,10 @@ function getDefault(layout, metaData, dashboard) {
     return null
 }
 
-export default function(layout, metaData, dashboard) {
-    const fontStyle = layout.fontStyle && layout.fontStyle[FONT_STYLE_VISUALIZATION_TITLE]
-    
+export default function (layout, metaData, dashboard) {
+    const fontStyle =
+        layout.fontStyle && layout.fontStyle[FONT_STYLE_VISUALIZATION_TITLE]
+
     const title = {
         text: undefined,
     }
@@ -57,6 +61,9 @@ export default function(layout, metaData, dashboard) {
             case VIS_TYPE_YEAR_OVER_YEAR_COLUMN:
                 title.text = getYearOverYearTitle(layout, metaData, dashboard)
                 break
+            case VIS_TYPE_SCATTER:
+                title.text = getScatterTitle(layout, metaData, dashboard)
+                break
             default:
                 title.text = getDefault(layout, metaData, dashboard)
                 break
@@ -65,19 +72,29 @@ export default function(layout, metaData, dashboard) {
 
     return Object.assign(
         {},
-        dashboard ? DASHBOARD_TITLE_STYLE : {
-            margin: 30,
-            align: (getTextAlignOption(fontStyle[FONT_STYLE_OPTION_TEXT_ALIGN], FONT_STYLE_VISUALIZATION_TITLE, layout.type)),
-            style: {
-                color: fontStyle[FONT_STYLE_OPTION_TEXT_COLOR],
-                fontSize: `${fontStyle[FONT_STYLE_OPTION_FONT_SIZE]}px`,
-                fontWeight: fontStyle[FONT_STYLE_OPTION_BOLD] ? FONT_STYLE_OPTION_BOLD : 'normal',
-                fontStyle: fontStyle[FONT_STYLE_OPTION_ITALIC] ? FONT_STYLE_OPTION_ITALIC : 'normal',
-                whiteSpace: 'nowrap',
-                overflow: 'hidden',
-                textOverflow: 'ellipsis',
-            },
-        },
+        dashboard
+            ? DASHBOARD_TITLE_STYLE
+            : {
+                  margin: 30,
+                  align: getTextAlignOption(
+                      fontStyle[FONT_STYLE_OPTION_TEXT_ALIGN],
+                      FONT_STYLE_VISUALIZATION_TITLE,
+                      layout.type
+                  ),
+                  style: {
+                      color: fontStyle[FONT_STYLE_OPTION_TEXT_COLOR],
+                      fontSize: `${fontStyle[FONT_STYLE_OPTION_FONT_SIZE]}px`,
+                      fontWeight: fontStyle[FONT_STYLE_OPTION_BOLD]
+                          ? FONT_STYLE_OPTION_BOLD
+                          : 'normal',
+                      fontStyle: fontStyle[FONT_STYLE_OPTION_ITALIC]
+                          ? FONT_STYLE_OPTION_ITALIC
+                          : 'normal',
+                      whiteSpace: 'nowrap',
+                      overflow: 'hidden',
+                      textOverflow: 'ellipsis',
+                  },
+              },
         title
     )
 }

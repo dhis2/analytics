@@ -17,6 +17,7 @@ jobs:
 
             - name: Lint
               run: |
+                  yarn d2-app-scripts i18n generate
                   yarn d2-style js check
                   yarn d2-style text check
 

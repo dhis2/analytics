@@ -16,17 +16,17 @@ describe('The Dynamic Dimension component ', () => {
 
     beforeEach(() => {
         props = {
-            onSelect: jest.fn(),
             dimensionTitle: 'test',
+            context: {},
+            selectedItems: [],
+            onSelect: jest.fn(),
             dimensionId: '123abc',
         }
         shallowSelector = undefined
     })
 
     it('renders an <ItemSelector>', () => {
-        const itemSelector = dynamicSelector()
-            .find('ItemSelector')
-            .first()
+        const itemSelector = dynamicSelector().find('ItemSelector').first()
 
         expect(itemSelector.children()).toEqual(dynamicSelector().children())
     })

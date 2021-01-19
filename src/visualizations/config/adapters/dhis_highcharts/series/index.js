@@ -3,6 +3,7 @@ import { colors } from '@dhis2/ui'
 import getCumulativeData from '../getCumulativeData'
 import getPie from './pie'
 import getGauge from './gauge'
+import getScatter from './scatter'
 import getType from '../type'
 import { getFullIdAxisMap, getAxisIdsMap } from '../customAxes'
 import { generateColors } from '../../../../util/colors/gradientColorGenerator'
@@ -16,6 +17,7 @@ import {
     isDualAxisType,
     isYearOverYear,
     VIS_TYPE_LINE,
+    VIS_TYPE_SCATTER,
 } from '../../../../../modules/visTypes'
 import { hasCustomAxes } from '../../../../../modules/axis'
 import { getAxisStringFromId } from '../../../../util/axisId'
@@ -63,7 +65,11 @@ function getIdColorMap(series, layout, extraOptions) {
         )
     )
 
-    if (isDualAxisType(layout.type) && hasCustomAxes(filteredSeries) && !axisHasRelativeItems(layout.columns)) {
+    if (
+        isDualAxisType(layout.type) &&
+        hasCustomAxes(filteredSeries) &&
+        !axisHasRelativeItems(layout.columns)
+    ) {
         const axisIdsMap = getAxisIdsMap(layout.series, series)
         const theme = extraOptions.multiAxisTheme
 
@@ -118,7 +124,7 @@ function getDefault(series, layout, isStacked, extraOptions) {
         if (!seriesObj.dataLabels && (layout.showValues || layout.showData)) {
             seriesObj.dataLabels = {
                 enabled: true,
-                color: colors.grey900
+                color: colors.grey900,
             }
         }
 
@@ -168,9 +174,10 @@ function getDefault(series, layout, isStacked, extraOptions) {
             : idColorMap[seriesObj.id]
 
         // axis number
-        seriesObj.yAxis = isDualAxisType(layout.type) && !axisHasRelativeItems(layout.columns)
-            ? getAxisStringFromId(fullIdAxisMap[seriesObj.id])
-            : getAxisStringFromId(0)
+        seriesObj.yAxis =
+            isDualAxisType(layout.type) && !axisHasRelativeItems(layout.columns)
+                ? getAxisStringFromId(fullIdAxisMap[seriesObj.id])
+                : getAxisStringFromId(0)
 
         // custom names for "year over year" series
         if (extraOptions.yearlySeries) {
@@ -186,7 +193,7 @@ function getDefault(series, layout, isStacked, extraOptions) {
     return series
 }
 
-export default function(series, store, layout, isStacked, extraOptions) {
+export default function (series, store, layout, isStacked, extraOptions) {
     switch (layout.type) {
         case VIS_TYPE_PIE:
             series = getPie(
@@ -196,6 +203,9 @@ export default function(series, store, layout, isStacked, extraOptions) {
             break
         case VIS_TYPE_GAUGE:
             series = getGauge(series, layout, extraOptions.legendSets[0])
+            break
+        case VIS_TYPE_SCATTER:
+            series = getScatter(extraOptions.scatterData)
             break
         default:
             series = getDefault(series, layout, isStacked, extraOptions)
