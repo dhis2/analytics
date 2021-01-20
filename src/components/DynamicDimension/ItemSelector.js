@@ -12,8 +12,6 @@ import {
     TRANSFER_SELECTED_WIDTH,
 } from '../../modules/dimensionSelectorHelper'
 
-const PAGE_SIZE = 50
-
 const useDebounce = (value, delay) => {
     const [debouncedValue, setDebouncedValue] = useState(value)
 
@@ -41,26 +39,30 @@ const ItemSelector = ({
     const [selected, setSelected] = useState(initialSelected)
     const [options, setOptions] = useState([])
     const [loading, setLoading] = useState(true)
-    const [endReached, setEndReached] = useState(false)
     const [hasNoItems, setHasNoItems] = useState(false)
-    const pageSize = PAGE_SIZE
+    const [nextPage, setNextPage] = useState(null)
 
     const debouncedFilter = useDebounce(filter, 500)
 
     useEffect(() => {
-        setEndReached(false)
         fetchItems(1)
     }, [debouncedFilter])
 
     const fetchItems = async page => {
         setLoading(true)
-        const result = await onFetch(pageSize, page, debouncedFilter)
+        const result = await onFetch(page, debouncedFilter)
 
-        const newOptions = result.map(({ id, name, disabled }) => ({
-            label: name,
-            value: id,
-            disabled,
-        }))
+        const newOptions = result.dimensionItems.map(
+            ({ id, name, disabled }) => ({
+                label: name,
+                value: id,
+                disabled,
+            })
+        )
+
+        // The following line is causing a rerender, which in turn causes options to be reverted back to []
+        // comment it out to make the infinite scrolling work again
+        setNextPage(result.nextPage)
 
         if (
             // No current options + no server response + no filter used = no options on the server at all
@@ -69,16 +71,14 @@ const ItemSelector = ({
             !debouncedFilter
         ) {
             setHasNoItems(true)
-            setEndReached(true)
-        } else if (
-            // No new options (server returned 0 options) + not in the beginning of the search = end has been reached
-            !newOptions.length &&
-            page > 1
-        ) {
-            setEndReached(true)
-        } else {
-            setEndReached(newOptions.length < pageSize)
-            setOptions(page > 1 ? [...options, ...newOptions] : newOptions)
+        } else if (!newOptions.length && debouncedFilter && page === 1) {
+            // Filter used but no options for the first page = filter has no options
+            setOptions([])
+        } else if (newOptions.length) {
+            //
+            const allOptions =
+                page > 1 ? [...options, ...newOptions] : newOptions
+            setOptions(allOptions)
         }
         setLoading(false)
     }
@@ -148,9 +148,13 @@ const ItemSelector = ({
             loadingPicked={loading}
             sourceEmptyPlaceholder={renderSourceEmptyPlaceholder()}
             onEndReached={() => {
-                if (options.length >= pageSize && !endReached) {
-                    fetchItems(Math.ceil(options.length / pageSize) + 1)
+                if (options.length >= 50) {
+                    fetchItems(Math.ceil(options.length / 50) + 1)
                 }
+                // TODO: Replace the above with this once nextPage can be used again
+                // if (nextPage) {
+                //     fetchItems(nextPage)
+                // }
             }}
             leftHeader={renderLeftHeader()}
             enableOrderChange

@@ -15,12 +15,11 @@ export const DynamicDimension = ({
 }) => {
     const dataEngine = useDataEngine()
 
-    const fetchItems = (pageSize, page, searchTerm) =>
+    const fetchItems = (page, searchTerm) =>
         apiFetchItemsByDimension({
             dataEngine,
             dimensionId,
             searchTerm,
-            pageSize,
             page,
         })
 

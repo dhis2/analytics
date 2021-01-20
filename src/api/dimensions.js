@@ -102,7 +102,7 @@ export const dataElementGroupsQuery = {
 export const itemsByDimensionQuery = {
     resource: `dimensions`,
     id: ({ id }) => `${id}/items`,
-    params: ({ searchTerm, pageSize, page }) => {
+    params: ({ searchTerm, page }) => {
         const filters = []
 
         if (searchTerm) {
@@ -112,9 +112,9 @@ export const itemsByDimensionQuery = {
         return {
             fields: 'id,displayName~rename(name)',
             order: 'displayName:asc',
-            pageSize: pageSize || 25,
-            page: page || 1,
             filter: filters,
+            paging: true,
+            page,
         }
     },
 }
@@ -411,7 +411,6 @@ export const apiFetchItemsByDimension = async ({
     dataEngine,
     dimensionId,
     searchTerm,
-    pageSize,
     page,
 }) => {
     const itemsByDimensionData = await dataEngine.query(
@@ -420,14 +419,15 @@ export const apiFetchItemsByDimension = async ({
             variables: {
                 id: dimensionId,
                 searchTerm,
-                pageSize,
                 page,
             },
             onError,
         }
     )
 
-    return itemsByDimensionData.itemsByDimensions.items
+    const response = itemsByDimensionData.itemsByDimensions
+
+    return formatResponse(response.items, response.pager)
 }
 
 const fetchDataElementOperands = async ({
