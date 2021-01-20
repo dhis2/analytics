@@ -55,34 +55,34 @@ export const visTypeDescriptions = {
         'View data and indicators in a manipulatable table.'
     ),
     [VIS_TYPE_COLUMN]: i18n.t(
-        'Compare sizes of related element, displayed vertically. Recommend period in filter.'
+        'Compare sizes of related elements vertically. Recommend period as filter.'
     ),
     [VIS_TYPE_STACKED_COLUMN]: i18n.t(
-        'Compare parts of a whole against related elements, vertically. Recommend data or org. unit as series.'
+        'Compare parts of a whole against related elements vertically. Recommend data or org. unit as series.'
     ),
     [VIS_TYPE_BAR]: i18n.t(
-        'Compare sizes of related elements, displayed horizontally. Recommend period in filter.'
+        'Compare sizes of related elements horizontally. Recommend period as filter.'
     ),
     [VIS_TYPE_STACKED_BAR]: i18n.t(
-        'Compare parts of a whole against related elements, horizontally. Recommend data or org. unit as series.'
+        'Compare parts of a whole against related elements horizontally. Recommend data or org. unit as series.'
     ),
     [VIS_TYPE_LINE]: i18n.t(
-        'Track or compare changes over time. Recommend period as the category.'
+        'Track or compare changes over time. Recommend period as category.'
     ),
     [VIS_TYPE_AREA]: i18n.t(
-        'Track or compare changes over time. Recommend period as the category.'
+        'Track or compare changes over time. Recommend period as category.'
     ),
     [VIS_TYPE_STACKED_AREA]: i18n.t(
-        'Track or compare over time parts of a whole. Recommend data in series and period in category.'
+        'Track or compare parts of a whole over time. Recommend data as series and period as category.'
     ),
     [VIS_TYPE_PIE]: i18n.t(
-        'Compare parts of a whole at a single point in time. Recommend period in the filter.'
+        'Compare parts of a whole at a single point in time. Recommend period as filter.'
     ),
     [VIS_TYPE_RADAR]: i18n.t(
         'Compare several items against multiple variables.'
     ),
     [VIS_TYPE_GAUGE]: i18n.t(
-        'Compare a percentage indicator against a 100% scale. Recommend period in filter.'
+        'Compare a percentage indicator against a 100% scale. Recommend period as filter.'
     ),
     [VIS_TYPE_YEAR_OVER_YEAR_LINE]: i18n.t(
         'Compare changes over time between multiple time periods.'
