@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useCallback } from 'react'
 import PropTypes from 'prop-types'
 import { Transfer, InputField } from '@dhis2/ui'
 import i18n from '@dhis2/d2-i18n'
@@ -14,18 +14,75 @@ import {
 
 const useDebounce = (value, delay) => {
     const [debouncedValue, setDebouncedValue] = useState(value)
-
     useEffect(() => {
         const handler = setTimeout(() => {
             setDebouncedValue(value)
         }, delay)
-
         return () => {
             clearTimeout(handler)
         }
     }, [value, delay])
-
     return debouncedValue
+}
+const LeftHeader = ({ filter, setFilter }) => (
+    <>
+        <div className="leftHeader">
+            <InputField
+                value={filter}
+                onChange={({ value }) => setFilter(value)}
+                placeholder={i18n.t('Search')}
+            />
+        </div>
+        <style jsx>{styles}</style>
+    </>
+)
+
+LeftHeader.propTypes = {
+    filter: PropTypes.string,
+    setFilter: PropTypes.func,
+}
+
+const EmptySelection = () => (
+    <>
+        <p className="emptyList">{i18n.t('No items selected')}</p>
+        <style jsx>{styles}</style>
+    </>
+)
+const RightHeader = () => (
+    <>
+        <p className="rightHeader">{i18n.t('Selected Items')}</p>
+        <style jsx>{styles}</style>
+    </>
+)
+const SourceEmptyPlaceholder = ({
+    loading,
+    filter,
+    options,
+    noItemsMessage,
+}) => {
+    let message = ''
+    if (!loading && !options.length && !filter) {
+        message = noItemsMessage
+    } else if (!loading && !options.length && filter) {
+        message = i18n.t('Nothing found for {{searchTerm}}', {
+            searchTerm: filter,
+        })
+    }
+    return (
+        message && (
+            <>
+                <p className="emptyList">{message}</p>
+                <style jsx>{styles}</style>
+            </>
+        )
+    )
+}
+
+SourceEmptyPlaceholder.propTypes = {
+    filter: PropTypes.string,
+    loading: PropTypes.bool,
+    noItemsMessage: PropTypes.string,
+    options: PropTypes.array,
 }
 
 const ItemSelector = ({
@@ -35,134 +92,79 @@ const ItemSelector = ({
     onSelect,
     rightFooter,
 }) => {
-    const [filter, setFilter] = useState('')
-    const [selected, setSelected] = useState(initialSelected)
-    const [options, setOptions] = useState([])
-    const [loading, setLoading] = useState(true)
-    const [hasNoItems, setHasNoItems] = useState(false)
-    const [nextPage, setNextPage] = useState(null)
-
-    const debouncedFilter = useDebounce(filter, 500)
-
-    useEffect(() => {
-        fetchItems(1)
-    }, [debouncedFilter])
-
+    const [state, setState] = useState({
+        filter: '',
+        selected: initialSelected,
+        options: [],
+        loading: true,
+        nextPage: null,
+    })
+    const setFilter = filter => setState(state => ({ ...state, filter }))
+    const setSelected = selected => setState(state => ({ ...state, selected }))
+    const debouncedFilter = useDebounce(state.filter, 500)
     const fetchItems = async page => {
-        setLoading(true)
-        const result = await onFetch(page, debouncedFilter)
-
-        const newOptions = result.dimensionItems.map(
+        setState(state => ({ ...state, loading: true }))
+        const result = await onFetch(page, state.filter)
+        const newOptions = result.dimensionItems?.map(
             ({ id, name, disabled }) => ({
                 label: name,
                 value: id,
                 disabled,
             })
         )
-
-        // The following line is causing a rerender, which in turn causes options to be reverted back to []
-        // comment it out to make the infinite scrolling work again
-        setNextPage(result.nextPage)
-
-        if (
-            // No current options + no server response + no filter used = no options on the server at all
-            !options.length &&
-            !newOptions.length &&
-            !debouncedFilter
-        ) {
-            setHasNoItems(true)
-        } else if (!newOptions.length && debouncedFilter && page === 1) {
-            // Filter used but no options for the first page = filter has no options
-            setOptions([])
-        } else if (newOptions.length) {
-            //
-            const allOptions =
-                page > 1 ? [...options, ...newOptions] : newOptions
-            setOptions(allOptions)
-        }
-        setLoading(false)
-    }
-
-    const onChange = newSelected => {
-        const newSelectedWithLabel = newSelected.map(value => ({
-            value,
-            label: [...options, ...selected].find(item => item.value === value)
-                .label,
+        setState(state => ({
+            ...state,
+            loading: false,
+            options: page > 1 ? [...state.options, ...newOptions] : newOptions,
+            nextPage: result.nextPage,
         }))
-        setSelected(newSelectedWithLabel)
-        onSelect(newSelectedWithLabel)
     }
-
-    const renderLeftHeader = () => (
-        <>
-            <div className="leftHeader">
-                <InputField
-                    value={filter}
-                    onChange={({ value }) => setFilter(value)}
-                    placeholder={i18n.t('Search')}
-                />
-            </div>
-            <style jsx>{styles}</style>
-        </>
+    useEffect(() => {
+        fetchItems(1)
+    }, [debouncedFilter])
+    const onChange = useCallback(
+        newSelected => {
+            const newSelectedWithLabel = newSelected.map(value => ({
+                value,
+                label: [...state.options, ...state.selected].find(
+                    item => item.value === value
+                ).label,
+            }))
+            setSelected(newSelectedWithLabel)
+            onSelect(newSelectedWithLabel)
+        },
+        [state.options, state.selected]
     )
-
-    const renderEmptySelection = () => (
-        <>
-            <p className="emptyList">{i18n.t('No items selected')}</p>
-            <style jsx>{styles}</style>
-        </>
-    )
-
-    const renderRightHeader = () => (
-        <>
-            <p className="rightHeader">{i18n.t('Selected Items')}</p>
-            <style jsx>{styles}</style>
-        </>
-    )
-
-    const renderSourceEmptyPlaceholder = () => {
-        let message = ''
-        if (hasNoItems) {
-            message = noItemsMessage
-        } else if (!loading && !options.length && debouncedFilter) {
-            message = i18n.t('Nothing found for {{searchTerm}}', {
-                searchTerm: debouncedFilter,
-            })
+    const onEndReached = useCallback(() => {
+        if (state.nextPage) {
+            fetchItems(state.nextPage)
         }
-        return (
-            message && (
-                <>
-                    <p className="emptyList">{message}</p>
-                    <style jsx>{styles}</style>
-                </>
-            )
-        )
-    }
-
+    }, [state.nextPage])
     return (
         <Transfer
             onChange={({ selected }) => onChange(selected)}
-            selected={selected.map(item => item.value)}
-            options={[...options, ...selected]}
-            loading={loading}
-            loadingPicked={loading}
-            sourceEmptyPlaceholder={renderSourceEmptyPlaceholder()}
-            onEndReached={() => {
-                if (options.length >= 50) {
-                    fetchItems(Math.ceil(options.length / 50) + 1)
-                }
-                // TODO: Replace the above with this once nextPage can be used again
-                // if (nextPage) {
-                //     fetchItems(nextPage)
-                // }
-            }}
-            leftHeader={renderLeftHeader()}
+            selected={state.selected.map(item => item.value)}
+            options={[...state.options, ...state.selected]}
+            loading={state.loading}
+            loadingPicked={state.loading}
+            sourceEmptyPlaceholder={
+                <SourceEmptyPlaceholder
+                    loading={state.loading}
+                    filter={debouncedFilter}
+                    options={state.options}
+                    noItemsMessage={noItemsMessage}
+                />
+            }
+            onEndReached={onEndReached}
+            leftHeader={
+                <LeftHeader filter={state.filter} setFilter={setFilter} />
+            }
             enableOrderChange
             height={TRANSFER_HEIGHT}
             optionsWidth={TRANSFER_OPTIONS_WIDTH}
             selectedWidth={TRANSFER_SELECTED_WIDTH}
-            selectedEmptyComponent={renderEmptySelection()}
-            rightHeader={renderRightHeader()}
+            selectedEmptyComponent={<EmptySelection />}
+            rightHeader={<RightHeader />}
             rightFooter={rightFooter}
             renderOption={props => (
                 <TransferOption {...props} icon={GenericIcon} />
