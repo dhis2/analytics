@@ -66,15 +66,47 @@ export const apiFetchRecommendedIds = (d2, dxIds, ouIds) => {
         .catch(onError)
 }
 
-export const apiFetchItemsByDimension = (d2, dimensionId) => {
-    const fields = `fields=id,displayName~rename(name)`
-    const order = `order=displayName:asc`
+export const itemsByDimensionQuery = {
+    resource: `dimensions`,
+    id: ({ id }) => `${id}/items`,
+    params: ({ searchTerm, page }) => {
+        const filters = []
 
-    const url = `dimensions/${dimensionId}/items?${fields}&${order}`
+        if (searchTerm) {
+            filters.push(`name:ilike:${searchTerm}`)
+        }
 
-    return d2.Api.getApi()
-        .get(url)
-        .then(response => response.items)
+        return {
+            fields: 'id,displayName~rename(name)',
+            order: 'displayName:asc',
+            filter: filters,
+            paging: true,
+            page,
+        }
+    },
+}
+
+export const apiFetchItemsByDimension = async ({
+    dataEngine,
+    dimensionId,
+    searchTerm,
+    page,
+}) => {
+    const itemsByDimensionData = await dataEngine.query(
+        { itemsByDimensions: itemsByDimensionQuery },
+        {
+            variables: {
+                id: dimensionId,
+                searchTerm,
+                page,
+            },
+            onError,
+        }
+    )
+
+    const response = itemsByDimensionData.itemsByDimensions
+
+    return formatResponse(response.items, response.pager)
 }
 
 export const apiFetchGroups = (d2, dataType, nameProp) => {
@@ -292,3 +324,8 @@ const fetchProgramIndicators = ({
 
     return requestWithPaging(d2, 'programIndicators', { paramString, page })
 }
+
+const formatResponse = (dimensionItems, pager) => ({
+    dimensionItems,
+    nextPage: pager.nextPage ? pager.page + 1 : null,
+})

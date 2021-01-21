@@ -1,54 +1,56 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
+import i18n from '@dhis2/d2-i18n'
+import { useDataEngine } from '@dhis2/app-runtime'
 
 import ItemSelector from './ItemSelector'
 import { apiFetchItemsByDimension } from '../../api/dimensions'
 
 export const DynamicDimension = ({
-    context,
     dimensionId,
     onSelect,
     selectedItems,
     rightFooter,
+    dimensionTitle,
 }) => {
-    const [items, setItems] = useState([])
+    const dataEngine = useDataEngine()
 
-    useEffect(() => {
-        if (!items || !items.length) {
-            getItems()
-        }
-    }, [])
+    const fetchItems = (page, searchTerm) =>
+        apiFetchItemsByDimension({
+            dataEngine,
+            dimensionId,
+            searchTerm,
+            page,
+        })
 
-    const getItems = async () =>
-        setItems(await apiFetchItemsByDimension(context, dimensionId)) // TODO: refactor to use the data engine instead
-    // TODO: *** Once pagination is in use, check if there are items that are in selectedItems that needs to be added to the items list
-    // TODO: This needs to be refactored to use a loading spinner once Transfer supports it: https://jira.dhis2.org/browse/TECH-379
-
-    const onSelectItems = selectedItemIds => {
-        const formattedItems = selectedItemIds.map(id => ({
-            id,
-            name: items.find(item => item.id === id).name, // TODO: Re: *** above, this won't work with pagination
-        })) // TODO: fetch the name from somewhere else, as not all content in selectedItems might be present in the items list
+    const onSelectItems = selectedItem =>
         onSelect({
             dimensionId: dimensionId,
-            items: formattedItems,
+            items: selectedItem.map(item => ({
+                id: item.value,
+                name: item.label,
+            })),
         })
-    }
 
     return (
         <ItemSelector
+            initialSelected={selectedItems.map(item => ({
+                value: item.id,
+                label: item.name,
+            }))}
+            noItemsMessage={i18n.t('Nothing found in {{dimensionTitle}}', {
+                dimensionTitle,
+            })}
+            onFetch={fetchItems}
             onSelect={onSelectItems}
-            allItems={items}
-            initialSelectedItemIds={selectedItems.map(item => item.id)}
             rightFooter={rightFooter}
-            // TODO: Pass in a func prop to fetch items, instead of fetching them on this level, to enable the loading spinner?
         />
     )
 }
 
 DynamicDimension.propTypes = {
-    context: PropTypes.object.isRequired,
     dimensionId: PropTypes.string.isRequired,
+    dimensionTitle: PropTypes.string.isRequired,
     selectedItems: PropTypes.arrayOf(
         PropTypes.shape({
             id: PropTypes.string,
