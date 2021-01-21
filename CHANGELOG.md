@@ -1,3 +1,15 @@
+# [13.0.0](https://github.com/dhis2/analytics/compare/v12.1.10...v13.0.0) (2021-01-21)
+
+
+### Features
+
+* paging of dynamic dimension items (DHIS2-9274) ([#583](https://github.com/dhis2/analytics/issues/583)) ([670dc79](https://github.com/dhis2/analytics/commit/670dc79a4c55aa070a3219c4d01799bb38b5b631))
+
+
+### BREAKING CHANGES
+
+* DynamicDimension no longer requires context and instead requires dimensionTitle
+
 ## [12.1.10](https://github.com/dhis2/analytics/compare/v12.1.9...v12.1.10) (2021-01-19)
 
 
