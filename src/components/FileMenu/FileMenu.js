@@ -5,7 +5,7 @@ import i18n from '@dhis2/d2-i18n'
 import FavoritesDialog from '@dhis2/d2-ui-favorites-dialog'
 import TranslationDialog from '@dhis2/d2-ui-translation-dialog'
 import { FlyoutMenu, MenuItem, MenuDivider, Popover } from '@dhis2/ui-core'
-import { SharingDialog } from '@dhis2/ui-widgets'
+import SharingDialog from '@dhis2/d2-ui-sharing-dialog'
 
 import { supportedFileTypes } from './utils'
 import { fileMenuStyles } from './FileMenu.styles'
@@ -31,7 +31,7 @@ export const FileMenu = ({
     onSave,
     onSaveAs,
     onRename,
-    onShare,
+    //    onShare,
     onDelete,
     onError,
     onTranslate,
@@ -91,10 +91,11 @@ export const FileMenu = ({
             case 'sharing':
                 return (
                     <SharingDialog
+                        open={true}
+                        d2={d2}
                         type={fileType}
                         id={fileObject.id}
-                        onClose={onDialogClose}
-                        onShare={onShare}
+                        onRequestClose={onDialogClose}
                     />
                 )
             case 'getlink':
@@ -244,7 +245,7 @@ FileMenu.propTypes = {
     onRename: PropTypes.func,
     onSave: PropTypes.func,
     onSaveAs: PropTypes.func,
-    onShare: PropTypes.func,
+    //    onShare: PropTypes.func,
     onTranslate: PropTypes.func,
 }
 
