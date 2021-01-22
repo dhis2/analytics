@@ -5,6 +5,6 @@ export default css`
         display: flex;
         flex-flow: column;
         border-bottom: 0;
-        padding: 5px 5px 10px 10px;
+        padding: 12px 0 0;
     }
 `

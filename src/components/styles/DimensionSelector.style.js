@@ -19,6 +19,6 @@ export default css`
         font-weight: 400;
     }
     .leftHeader {
-        padding: ${spacers.dp8} 0;
+        padding: 12px 4px;
     }
 `
