@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2021-01-19T14:22:01.500Z\n"
-"PO-Revision-Date: 2021-01-19T14:22:01.500Z\n"
+"POT-Creation-Date: 2021-01-22T09:45:46.348Z\n"
+"PO-Revision-Date: 2021-01-22T09:45:46.348Z\n"
 
 msgid "Data Type"
 msgstr ""
@@ -18,6 +18,18 @@ msgid "Details"
 msgstr ""
 
 msgid "Detail"
+msgstr ""
+
+msgid "Search"
+msgstr ""
+
+msgid "No items selected"
+msgstr ""
+
+msgid "Selected Items"
+msgstr ""
+
+msgid "Nothing found for {{searchTerm}}"
 msgstr ""
 
 msgid "Move to {{axisName}}"
@@ -51,18 +63,6 @@ msgid "Dimension recommended with selected data"
 msgstr ""
 
 msgid "Nothing found in {{dimensionTitle}}"
-msgstr ""
-
-msgid "Search"
-msgstr ""
-
-msgid "No items selected"
-msgstr ""
-
-msgid "Selected Items"
-msgstr ""
-
-msgid "Nothing found for {{searchTerm}}"
 msgstr ""
 
 msgid "Selected Data"

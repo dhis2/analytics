@@ -2,7 +2,17 @@ import sortBy from 'lodash/sortBy'
 
 import { onError } from './index'
 import { DATA_SETS_CONSTANTS } from '../modules/dataSets'
-import { CHART_AGGREGATE_AGGREGATABLE_TYPES } from '../modules/dataTypes'
+import {
+    ALL_ID,
+    CHART_AGGREGATE_AGGREGATABLE_TYPES,
+    INDICATORS,
+    DATA_ELEMENTS,
+    DATA_SETS,
+    PROGRAM_INDICATORS,
+    EVENT_DATA_ITEMS,
+    PROGRAM_DATA_ELEMENT,
+    PROGRAM_ATTRIBUTE,
+} from '../modules/dataTypes'
 
 // Query definitions
 export const dimensionsQuery = {
@@ -30,6 +40,38 @@ const recommendedDimensionsQuery = {
         return {
             fields: 'id',
             dimension: dimensions,
+        }
+    },
+}
+
+export const dataItemsQuery = {
+    resource: 'dataItems',
+    params: ({ nameProp, filter, searchTerm, page }) => {
+        const filters = []
+
+        if (!filter?.dataType || filter.dataType === ALL_ID) {
+            // TODO: Specifing a filter when no filter is used is a temporary fix as skipping the filter to the endpoint will currently return DATA_ELEMENT_OPERAND and other unwanted types
+            filters.push(
+                `dimensionItemType:in:[${INDICATORS},${DATA_ELEMENTS},${DATA_SETS},${PROGRAM_INDICATORS},${PROGRAM_DATA_ELEMENT},${PROGRAM_ATTRIBUTE}]`
+            )
+        } else if (filter.dataType === EVENT_DATA_ITEMS) {
+            filters.push(
+                `dimensionItemType:in:[${PROGRAM_DATA_ELEMENT},${PROGRAM_ATTRIBUTE}]`
+            )
+        } else {
+            filters.push(`dimensionItemType:eq:${filter.dataType}`)
+        }
+
+        if (searchTerm) {
+            filters.push(`${nameProp}:ilike:${searchTerm}`)
+        }
+
+        return {
+            fields: `id,${nameProp}~rename(name),dimensionItemType`,
+            order: `${nameProp}:asc`,
+            filter: filters,
+            paging: true,
+            page,
         }
     },
 }
@@ -375,6 +417,31 @@ const fetchIndicators = async ({
     const response = indicatorsData.indicators
 
     return formatResponse(response.indicators, response.pager)
+}
+
+export const fetchDataItems = async ({
+    dataEngine,
+    nameProp,
+    filter,
+    searchTerm,
+    page,
+}) => {
+    const dataItemsData = await dataEngine.query(
+        { dataItems: dataItemsQuery },
+        {
+            variables: {
+                nameProp,
+                filter,
+                searchTerm,
+                page,
+            },
+            onError,
+        }
+    )
+
+    const response = dataItemsData.dataItems
+
+    return formatResponse(response.dataItems, response.pager)
 }
 
 const formatResponse = (dimensionItems, pager) => ({

@@ -9,6 +9,8 @@ import { ArrowButton as AssignButton } from './widgets/ArrowButton'
 import { toggler } from './modules/toggler'
 import styles from './styles/UnselectedItems.style'
 
+// TODO: Remove this file
+
 export class UnselectedItems extends Component {
     constructor(props) {
         super(props)

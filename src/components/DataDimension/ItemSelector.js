@@ -11,6 +11,9 @@ import {
     TRANSFER_OPTIONS_WIDTH,
     TRANSFER_SELECTED_WIDTH,
 } from '../../modules/dimensionSelectorHelper'
+import DataTypes from './DataTypesSelector'
+import Groups from './Groups'
+import { ALL_ID } from '../../modules/dataTypes'
 
 const useDebounce = (value, delay) => {
     const [debouncedValue, setDebouncedValue] = useState(value)
@@ -24,22 +27,39 @@ const useDebounce = (value, delay) => {
     }, [value, delay])
     return debouncedValue
 }
-const LeftHeader = ({ filter, setFilter }) => (
+const LeftHeader = ({ searchTerm, setSearchTerm, dataType, setDataType }) => (
     <>
         <div className="leftHeader">
             <InputField
-                value={filter}
-                onChange={({ value }) => setFilter(value)}
+                value={searchTerm}
+                onChange={({ value }) => setSearchTerm(value)}
                 placeholder={i18n.t('Search')}
+                dataTest={'data-dimension-filter-input-field'}
             />
+            <DataTypes
+                currentDataType={dataType}
+                onChange={setDataType}
+                dataTest={'data-dimension-data-types-select-field'}
+            />
+            {/* <Groups
+                dataType={this.state.dataType}
+                groups={groups}
+                groupId={this.state.groupId}
+                onGroupChange={this.onGroupChange}
+                onDetailChange={this.onDetailChange}
+                detailValue={this.state.groupDetail}
+                dataTest={'data-dimension-groups-select-field'}
+            /> */}
         </div>
         <style jsx>{styles}</style>
     </>
 )
 
 LeftHeader.propTypes = {
-    filter: PropTypes.string,
-    setFilter: PropTypes.func,
+    dataType: PropTypes.string,
+    searchTerm: PropTypes.string,
+    setDataType: PropTypes.func,
+    setSearchTerm: PropTypes.func,
 }
 
 const EmptySelection = () => (
@@ -56,16 +76,16 @@ const RightHeader = () => (
 )
 const SourceEmptyPlaceholder = ({
     loading,
-    filter,
+    searchTerm,
     options,
     noItemsMessage,
 }) => {
     let message = ''
-    if (!loading && !options.length && !filter) {
+    if (!loading && !options.length && !searchTerm) {
         message = noItemsMessage
-    } else if (!loading && !options.length && filter) {
+    } else if (!loading && !options.length && searchTerm) {
         message = i18n.t('Nothing found for {{searchTerm}}', {
-            searchTerm: filter,
+            searchTerm: searchTerm,
         })
     }
     return (
@@ -79,10 +99,10 @@ const SourceEmptyPlaceholder = ({
 }
 
 SourceEmptyPlaceholder.propTypes = {
-    filter: PropTypes.string,
     loading: PropTypes.bool,
     noItemsMessage: PropTypes.string,
     options: PropTypes.array,
+    searchTerm: PropTypes.string,
 }
 
 const ItemSelector = ({
@@ -93,18 +113,23 @@ const ItemSelector = ({
     rightFooter,
 }) => {
     const [state, setState] = useState({
-        filter: '',
+        searchTerm: '',
         selected: initialSelected,
+        filter: {
+            dataType: ALL_ID,
+        },
         options: [],
         loading: true,
         nextPage: null,
     })
+    const setSearchTerm = searchTerm =>
+        setState(state => ({ ...state, searchTerm }))
     const setFilter = filter => setState(state => ({ ...state, filter }))
     const setSelected = selected => setState(state => ({ ...state, selected }))
-    const debouncedFilter = useDebounce(state.filter, 200)
+    const debouncedSearchTerm = useDebounce(state.searchTerm, 200)
     const fetchItems = async page => {
         setState(state => ({ ...state, loading: true }))
-        const result = await onFetch(page, state.filter)
+        const result = await onFetch(page, state.filter, state.searchTerm) // page, filter, searchTerm
         const newOptions = result.dimensionItems?.map(
             ({ id, name, disabled }) => ({
                 label: name,
@@ -121,7 +146,7 @@ const ItemSelector = ({
     }
     useEffect(() => {
         fetchItems(1)
-    }, [debouncedFilter])
+    }, [debouncedSearchTerm, state.filter])
     const onChange = useCallback(
         newSelected => {
             const newSelectedWithLabel = newSelected.map(value => ({
@@ -150,14 +175,21 @@ const ItemSelector = ({
             sourceEmptyPlaceholder={
                 <SourceEmptyPlaceholder
                     loading={state.loading}
-                    filter={debouncedFilter}
+                    searchTerm={debouncedSearchTerm}
                     options={state.options}
                     noItemsMessage={noItemsMessage}
                 />
             }
             onEndReached={onEndReached}
             leftHeader={
-                <LeftHeader filter={state.filter} setFilter={setFilter} />
+                <LeftHeader
+                    dataType={state.filter.dataType}
+                    setDataType={dataType =>
+                        setFilter({ ...state.filter, dataType })
+                    }
+                    searchTerm={state.searchTerm}
+                    setSearchTerm={setSearchTerm}
+                />
             }
             enableOrderChange
             height={TRANSFER_HEIGHT}

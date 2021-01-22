@@ -16,11 +16,13 @@ export const CHART_AGGREGATE_AGGREGATABLE_TYPES = [
 
 export const ALL_ID = 'ALL'
 
-const INDICATORS = 'indicators'
-const DATA_ELEMENTS = 'dataElements'
-const DATA_SETS = 'dataSets'
-const EVENT_DATA_ITEMS = 'eventDataItems'
-const PROGRAM_INDICATORS = 'programIndicators'
+export const INDICATORS = 'INDICATOR'
+export const DATA_ELEMENTS = 'DATA_ELEMENT'
+export const DATA_SETS = 'DATA_SET'
+export const EVENT_DATA_ITEMS = 'EVENT_DATA_ITEM'
+export const PROGRAM_INDICATORS = 'PROGRAM_INDICATOR'
+export const PROGRAM_DATA_ELEMENT = 'PROGRAM_DATA_ELEMENT'
+export const PROGRAM_ATTRIBUTE = 'PROGRAM_ATTRIBUTE'
 
 export const TOTALS = 'totals'
 export const DETAIL = 'detail'
@@ -32,17 +34,17 @@ export const dataTypes = {
     [INDICATORS]: {
         id: INDICATORS,
         getName: () => i18n.t('Indicators'),
-        getGroupLabel: () => i18n.t('Select indicator group'),
-        defaultGroup: { id: ALL_ID, getName: () => i18n.t('[ All groups ]') },
+        getGroupLabel: () => i18n.t('Indicator group'),
+        defaultGroup: { id: ALL_ID, getName: () => i18n.t('All groups') },
         groupDetail: false,
     },
     [DATA_ELEMENTS]: {
         id: DATA_ELEMENTS,
         getName: () => i18n.t('Data elements'),
-        getGroupLabel: () => i18n.t('Select data element group'),
+        getGroupLabel: () => i18n.t('Data element groups'),
         defaultGroup: {
             id: ALL_ID,
-            getName: () => i18n.t('[ All data elements ]'),
+            getName: () => i18n.t('All groups'),
         },
         groupDetail: { default: TOTALS },
     },
