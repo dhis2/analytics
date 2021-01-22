@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-12-21T08:01:55.494Z\n"
+"POT-Creation-Date: 2021-01-19T14:22:01.500Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: easylin <lin_xd@126.com>, 2021\n"
 "Language-Team: Chinese (https://www.transifex.com/hisp-uio/teams/100509/zh/)\n"
@@ -60,14 +60,20 @@ msgstr "你的维度"
 msgid "Dimension recommended with selected data"
 msgstr "选择的数据的推荐维度"
 
+msgid "Nothing found in {{dimensionTitle}}"
+msgstr ""
+
+msgid "Search"
+msgstr "搜索"
+
 msgid "No items selected"
 msgstr "没有选择条目"
 
 msgid "Selected Items"
 msgstr "选择的条目"
 
-msgid "Search"
-msgstr "搜索"
+msgid "Nothing found for {{searchTerm}}"
+msgstr ""
 
 msgid "Selected Data"
 msgstr "选择的数据"
@@ -529,45 +535,43 @@ msgid "View data and indicators in a manipulatable table."
 msgstr "在可操作的表格中查看数据和指标。"
 
 msgid ""
-"Compare sizes of related element, displayed vertically. Recommend period in "
-"filter."
-msgstr "比较相关元素的大小并垂直显示。推荐期间过滤器。"
+"Compare sizes of related elements vertically. Recommend period as filter."
+msgstr ""
 
 msgid ""
-"Compare parts of a whole against related elements, vertically. Recommend "
+"Compare parts of a whole against related elements vertically. Recommend data"
+" or org. unit as series."
+msgstr ""
+
+msgid ""
+"Compare sizes of related elements horizontally. Recommend period as filter."
+msgstr ""
+
+msgid ""
+"Compare parts of a whole against related elements horizontally. Recommend "
 "data or org. unit as series."
-msgstr "垂直比较整个部分与相关元素。推荐数据或机构作为系列。"
+msgstr ""
+
+msgid "Track or compare changes over time. Recommend period as category."
+msgstr ""
 
 msgid ""
-"Compare sizes of related elements, displayed horizontally. Recommend period "
-"in filter."
-msgstr "比较水平显示的相关元素的大小。推荐期间作为过滤。"
+"Track or compare parts of a whole over time. Recommend data as series and "
+"period as category."
+msgstr ""
 
 msgid ""
-"Compare parts of a whole against related elements, horizontally. Recommend "
-"data or org. unit as series."
-msgstr "水平地将整个部分与相关元素进行比较。推荐数据或机构为系列。"
-
-msgid "Track or compare changes over time. Recommend period as the category."
-msgstr "跟踪或比较随时间的变化。推荐时期为分类。"
-
-msgid ""
-"Track or compare over time parts of a whole. Recommend data in series and "
-"period in category."
-msgstr "跟踪或比较整个时间的一部分。推荐数据序列和期间作为分类。"
-
-msgid ""
-"Compare parts of a whole at a single point in time. Recommend period in the "
+"Compare parts of a whole at a single point in time. Recommend period as "
 "filter."
-msgstr "在单个时间点比较整个部分。推荐过滤器的时期。"
+msgstr ""
 
 msgid "Compare several items against multiple variables."
 msgstr "将多个变量与多个条目进行比较。"
 
 msgid ""
-"Compare a percentage indicator against a 100% scale. Recommend period in "
+"Compare a percentage indicator against a 100% scale. Recommend period as "
 "filter."
-msgstr "将百分比指标与100％比例进行比较。推荐期间作为过滤。"
+msgstr ""
 
 msgid "Compare changes over time between multiple time periods."
 msgstr "比较多个时间段之间随时间的变化。"
