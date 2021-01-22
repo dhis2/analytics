@@ -1,3 +1,10 @@
+## [13.0.2](https://github.com/dhis2/analytics/compare/v13.0.1...v13.0.2) (2021-01-22)
+
+
+### Bug Fixes
+
+* only pass fixed dimensions as dimension ([#776](https://github.com/dhis2/analytics/issues/776)) ([9c02508](https://github.com/dhis2/analytics/commit/9c02508bb04c1a7db4ee5766828c1b42ac611e63))
+
 ## [13.0.1](https://github.com/dhis2/analytics/compare/v13.0.0...v13.0.1) (2021-01-22)
 
 
