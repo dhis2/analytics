@@ -4,8 +4,19 @@ import PropTypes from '@dhis2/prop-types'
 import i18n from '@dhis2/d2-i18n'
 import FavoritesDialog from '@dhis2/d2-ui-favorites-dialog'
 import TranslationDialog from '@dhis2/d2-ui-translation-dialog'
-import { FlyoutMenu, MenuItem, MenuDivider, Popover } from '@dhis2/ui-core'
 import SharingDialog from '@dhis2/d2-ui-sharing-dialog'
+import { Menu, MenuItem, MenuDivider, Popover } from '@dhis2/ui-core'
+import { colors } from '@dhis2/ui-constants'
+import {
+    IconAdd24,
+    IconLaunch24,
+    IconSave24,
+    IconEdit24,
+    IconTranslate24,
+    IconShare24,
+    IconLink24,
+    IconDelete24,
+} from '@dhis2/ui'
 
 import { supportedFileTypes } from './utils'
 import { fileMenuStyles } from './FileMenu.styles'
@@ -13,14 +24,6 @@ import { GetLinkDialog } from './GetLinkDialog'
 import { DeleteDialog } from './DeleteDialog'
 import { RenameDialog } from './RenameDialog'
 import { SaveAsDialog } from './SaveAsDialog'
-import { NewIcon } from './icons/NewIcon'
-import { OpenIcon } from './icons/OpenIcon'
-import { SaveIcon } from './icons/SaveIcon'
-import { RenameIcon } from './icons/RenameIcon'
-import { TranslateIcon } from './icons/TranslateIcon'
-import { ShareIcon } from './icons/ShareIcon'
-import { LinkIcon } from './icons/LinkIcon'
-import { DeleteIcon } from './icons/DeleteIcon'
 
 export const FileMenu = ({
     d2, // to be removed as soon as TranslateDialog and FavoritesDialog are rewritten
@@ -130,6 +133,9 @@ export const FileMenu = ({
         }
     }
 
+    const iconActiveColor = colors.grey700
+    const iconInactiveColor = colors.grey500
+
     return (
         <>
             <style jsx>{fileMenuStyles}</style>
@@ -145,10 +151,10 @@ export const FileMenu = ({
                     arrow={false}
                     onClickOutside={toggleMenu}
                 >
-                    <FlyoutMenu>
+                    <Menu>
                         <MenuItem
                             label={i18n.t('New')}
-                            icon={<NewIcon style={{ opacity: 0.54 }} />}
+                            icon={<IconAdd24 color={iconActiveColor} />}
                             onClick={() => {
                                 toggleMenu()
                                 onNew()
@@ -157,15 +163,23 @@ export const FileMenu = ({
                         <MenuDivider />
                         <MenuItem
                             label={i18n.t('Open')}
-                            icon={<OpenIcon style={{ opacity: 0.54 }} />}
+                            icon={<IconLaunch24 color={iconActiveColor} />}
                             onClick={onMenuItemClick('open')}
                         />
-                        <MenuDivider />
                         <MenuItem
                             label={i18n.t('Save')}
-                            icon={<SaveIcon style={{ opacity: 0.54 }} />}
+                            icon={
+                                <IconSave24
+                                    color={
+                                        !fileObject?.id ||
+                                        fileObject?.access?.update
+                                            ? iconActiveColor
+                                            : iconInactiveColor
+                                    }
+                                />
+                            }
                             disabled={
-                                !(!fileObject || fileObject.access.update)
+                                !(!fileObject || fileObject?.access?.update)
                             }
                             onClick={
                                 fileObject
@@ -178,44 +192,104 @@ export const FileMenu = ({
                         />
                         <MenuItem
                             label={i18n.t('Save as...')}
-                            icon={<SaveIcon style={{ opacity: 0.54 }} />}
+                            icon={
+                                <IconSave24
+                                    color={
+                                        fileObject?.id
+                                            ? iconActiveColor
+                                            : iconInactiveColor
+                                    }
+                                />
+                            }
                             disabled={!fileObject}
                             onClick={onMenuItemClick('saveas')}
                         />
-                        <MenuDivider />
                         <MenuItem
                             label={i18n.t('Rename')}
-                            icon={<RenameIcon style={{ opacity: 0.54 }} />}
-                            disabled={!(fileObject && fileObject.access.update)}
+                            icon={
+                                <IconEdit24
+                                    color={
+                                        fileObject?.id &&
+                                        fileObject?.access?.update
+                                            ? iconActiveColor
+                                            : iconInactiveColor
+                                    }
+                                />
+                            }
+                            disabled={
+                                !(fileObject?.id && fileObject?.access?.update)
+                            }
                             onClick={onMenuItemClick('rename')}
                         />
                         <MenuItem
                             label={i18n.t('Translate')}
-                            icon={<TranslateIcon style={{ opacity: 0.54 }} />}
-                            disabled={!(fileObject && fileObject.access.update)}
+                            icon={
+                                <IconTranslate24
+                                    color={
+                                        fileObject?.id &&
+                                        fileObject?.access?.update
+                                            ? iconActiveColor
+                                            : iconInactiveColor
+                                    }
+                                />
+                            }
+                            disabled={
+                                !(fileObject?.id && fileObject?.access?.update)
+                            }
                             onClick={onMenuItemClick('translate')}
                         />
                         <MenuDivider />
                         <MenuItem
                             label={i18n.t('Share')}
-                            icon={<ShareIcon style={{ opacity: 0.54 }} />}
-                            disabled={!(fileObject && fileObject.access.manage)}
+                            icon={
+                                <IconShare24
+                                    color={
+                                        fileObject?.id &&
+                                        fileObject?.access?.manage
+                                            ? iconActiveColor
+                                            : iconInactiveColor
+                                    }
+                                />
+                            }
+                            disabled={
+                                !(fileObject?.id && fileObject?.access?.manage)
+                            }
                             onClick={onMenuItemClick('sharing')}
                         />
                         <MenuItem
                             label={i18n.t('Get link')}
-                            icon={<LinkIcon style={{ opacity: 0.54 }} />}
-                            disabled={!fileObject}
+                            icon={
+                                <IconLink24
+                                    color={
+                                        fileObject?.id
+                                            ? iconActiveColor
+                                            : iconInactiveColor
+                                    }
+                                />
+                            }
+                            disabled={!fileObject?.id}
                             onClick={onMenuItemClick('getlink')}
                         />
                         <MenuDivider />
                         <MenuItem
                             label={i18n.t('Delete')}
-                            icon={<DeleteIcon style={{ opacity: 0.54 }} />}
-                            disabled={!(fileObject && fileObject.access.delete)}
+                            destructive
+                            icon={
+                                <IconDelete24
+                                    color={
+                                        fileObject?.id &&
+                                        fileObject?.access?.delete
+                                            ? colors.red700
+                                            : iconInactiveColor
+                                    }
+                                />
+                            }
+                            disabled={
+                                !(fileObject?.id && fileObject?.access?.delete)
+                            }
                             onClick={onMenuItemClick('delete')}
                         />
-                    </FlyoutMenu>
+                    </Menu>
                 </Popover>
             )}
             {renderDialog()}
