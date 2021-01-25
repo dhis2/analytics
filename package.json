@@ -30,7 +30,7 @@
         "@dhis2/cli-style": "^7.2.2",
         "@dhis2/d2-i18n": "^1.0.6",
         "@sambego/storybook-state": "^2.0.1",
-        "@storybook/addons": "^6.1.14",
+        "@storybook/addons": "^6.1.15",
         "@storybook/preset-create-react-app": "^3.1.5",
         "@storybook/react": "^6.1.14",
         "enzyme": "^3.9.0",
