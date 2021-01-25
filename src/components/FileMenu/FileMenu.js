@@ -162,12 +162,16 @@ export const FileMenu = ({
                         />
                         <MenuDivider />
                         <MenuItem
-                            label={i18n.t('Open')}
+                            label={i18n.t('Open…')}
                             icon={<IconLaunch24 color={iconActiveColor} />}
                             onClick={onMenuItemClick('open')}
                         />
                         <MenuItem
-                            label={i18n.t('Save')}
+                            label={
+                                fileObject?.id
+                                    ? i18n.t('Save')
+                                    : i18n.t('Save…')
+                            }
                             icon={
                                 <IconSave24
                                     color={
@@ -191,7 +195,7 @@ export const FileMenu = ({
                             }
                         />
                         <MenuItem
-                            label={i18n.t('Save as...')}
+                            label={i18n.t('Save as…')}
                             icon={
                                 <IconSave24
                                     color={
@@ -205,7 +209,7 @@ export const FileMenu = ({
                             onClick={onMenuItemClick('saveas')}
                         />
                         <MenuItem
-                            label={i18n.t('Rename')}
+                            label={i18n.t('Rename…')}
                             icon={
                                 <IconEdit24
                                     color={
@@ -222,7 +226,7 @@ export const FileMenu = ({
                             onClick={onMenuItemClick('rename')}
                         />
                         <MenuItem
-                            label={i18n.t('Translate')}
+                            label={i18n.t('Translate…')}
                             icon={
                                 <IconTranslate24
                                     color={
@@ -240,7 +244,7 @@ export const FileMenu = ({
                         />
                         <MenuDivider />
                         <MenuItem
-                            label={i18n.t('Share')}
+                            label={i18n.t('Share…')}
                             icon={
                                 <IconShare24
                                     color={
@@ -257,7 +261,7 @@ export const FileMenu = ({
                             onClick={onMenuItemClick('sharing')}
                         />
                         <MenuItem
-                            label={i18n.t('Get link')}
+                            label={i18n.t('Get link…')}
                             icon={
                                 <IconLink24
                                     color={

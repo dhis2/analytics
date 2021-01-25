@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2021-01-19T14:22:01.500Z\n"
-"PO-Revision-Date: 2021-01-19T14:22:01.500Z\n"
+"POT-Creation-Date: 2021-01-25T09:08:51.790Z\n"
+"PO-Revision-Date: 2021-01-25T09:08:51.790Z\n"
 
 msgid "Data Type"
 msgstr ""
@@ -83,25 +83,28 @@ msgstr ""
 msgid "New"
 msgstr ""
 
-msgid "Open"
+msgid "Open…"
 msgstr ""
 
 msgid "Save"
 msgstr ""
 
-msgid "Save as..."
+msgid "Save…"
 msgstr ""
 
-msgid "Rename"
+msgid "Save as…"
 msgstr ""
 
-msgid "Translate"
+msgid "Rename…"
 msgstr ""
 
-msgid "Share"
+msgid "Translate…"
 msgstr ""
 
-msgid "Get link"
+msgid "Share…"
+msgstr ""
+
+msgid "Get link…"
 msgstr ""
 
 msgid "Open in this app"
@@ -117,6 +120,9 @@ msgid "Name"
 msgstr ""
 
 msgid "Description"
+msgstr ""
+
+msgid "Rename"
 msgstr ""
 
 msgid "Save {{fileType}} as"

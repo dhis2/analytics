@@ -66,7 +66,7 @@ describe('The FileMenu component ', () => {
         const fileMenuComponent = getFileMenuComponent(props)
         fileMenuComponent.find('button').simulate('click')
 
-        const buttonLabels = ['New', 'Open']
+        const buttonLabels = ['New', 'Open…']
 
         buttonLabels.forEach(buttonLabel =>
             expect(
@@ -82,11 +82,11 @@ describe('The FileMenu component ', () => {
         fileMenuComponent.find('button').simulate('click')
 
         const buttonLabels = [
-            'Save as...',
-            'Rename',
-            'Translate',
-            'Share',
-            'Get link',
+            'Save as…',
+            'Rename…',
+            'Translate…',
+            'Share…',
+            'Get link…',
             'Delete',
         ]
 
@@ -112,7 +112,7 @@ describe('The FileMenu component ', () => {
         const fileMenuComponent = getFileMenuComponent(props)
         fileMenuComponent.find('button').simulate('click')
 
-        const buttonLabels = ['Save', 'Rename', 'Translate']
+        const buttonLabels = ['Save', 'Rename…', 'Translate…']
 
         buttonLabels.forEach(buttonLabel =>
             expect(
@@ -158,7 +158,7 @@ describe('The FileMenu component ', () => {
 
         expect(
             fileMenuComponent
-                .findWhere(n => n.prop('label') === 'Share')
+                .findWhere(n => n.prop('label') === 'Share…')
                 .prop('disabled')
         ).toBe(false)
     })
@@ -168,7 +168,7 @@ describe('The FileMenu component ', () => {
         fileMenuComponent.find('button').simulate('click')
 
         fileMenuComponent
-            .findWhere(n => n.prop('label') === 'Open')
+            .findWhere(n => n.prop('label') === 'Open…')
             .simulate('click')
 
         expect(fileMenuComponent.find(FavoritesDialog)).toHaveLength(1)
@@ -188,7 +188,7 @@ describe('The FileMenu component ', () => {
         fileMenuComponent.find('button').simulate('click')
 
         fileMenuComponent
-            .findWhere(n => n.prop('label') === 'Rename')
+            .findWhere(n => n.prop('label') === 'Rename…')
             .simulate('click')
 
         expect(fileMenuComponent.find(RenameDialog)).toHaveLength(1)
@@ -208,7 +208,7 @@ describe('The FileMenu component ', () => {
         fileMenuComponent.find('button').simulate('click')
 
         fileMenuComponent
-            .findWhere(n => n.prop('label') === 'Translate')
+            .findWhere(n => n.prop('label') === 'Translate…')
             .simulate('click')
 
         expect(fileMenuComponent.find(TranslationDialog)).toHaveLength(1)
@@ -228,7 +228,7 @@ describe('The FileMenu component ', () => {
         fileMenuComponent.find('button').simulate('click')
 
         fileMenuComponent
-            .findWhere(n => n.prop('label') === 'Share')
+            .findWhere(n => n.prop('label') === 'Share…')
             .simulate('click')
 
         expect(fileMenuComponent.find(SharingDialog)).toHaveLength(1)
@@ -248,7 +248,7 @@ describe('The FileMenu component ', () => {
         fileMenuComponent.find('button').simulate('click')
 
         fileMenuComponent
-            .findWhere(n => n.prop('label') === 'Get link')
+            .findWhere(n => n.prop('label') === 'Get link…')
             .simulate('click')
 
         expect(fileMenuComponent.find(GetLinkDialog)).toHaveLength(1)
@@ -274,7 +274,7 @@ describe('The FileMenu component ', () => {
         expect(fileMenuComponent.find(DeleteDialog)).toHaveLength(1)
     })
 
-    it('renders the SaveAsDialog when the Save as... button is clicked', () => {
+    it('renders the SaveAsDialog when the Save as… button is clicked', () => {
         props.fileObject = {
             id: 'test',
             access: {
@@ -288,18 +288,18 @@ describe('The FileMenu component ', () => {
         fileMenuComponent.find('button').simulate('click')
 
         fileMenuComponent
-            .findWhere(n => n.prop('label') === 'Save as...')
+            .findWhere(n => n.prop('label') === 'Save as…')
             .simulate('click')
 
         expect(fileMenuComponent.find(SaveAsDialog)).toHaveLength(1)
     })
 
-    it('renders the SaveAsDialog when the Save button is clicked but no fileObject is present', () => {
+    it('renders the SaveAsDialog when the Save… button is clicked but no fileObject is present', () => {
         const fileMenuComponent = getFileMenuComponent(props)
         fileMenuComponent.find('button').simulate('click')
 
         fileMenuComponent
-            .findWhere(n => n.prop('label') === 'Save')
+            .findWhere(n => n.prop('label') === 'Save…')
             .simulate('click')
 
         expect(fileMenuComponent.find(SaveAsDialog)).toHaveLength(1)
