@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect, useCallback } from 'react'
 import PropTypes from 'prop-types'
-import { Transfer } from '@dhis2/ui'
+import { Transfer, InputField } from '@dhis2/ui'
 import i18n from '@dhis2/d2-i18n'
 
 import styles from '../styles/DimensionSelector.style'
@@ -12,53 +12,160 @@ import {
     TRANSFER_SELECTED_WIDTH,
 } from '../../modules/dimensionSelectorHelper'
 
+const useDebounce = (value, delay) => {
+    const [debouncedValue, setDebouncedValue] = useState(value)
+    useEffect(() => {
+        const handler = setTimeout(() => {
+            setDebouncedValue(value)
+        }, delay)
+        return () => {
+            clearTimeout(handler)
+        }
+    }, [value, delay])
+    return debouncedValue
+}
+const LeftHeader = ({ filter, setFilter }) => (
+    <>
+        <div className="leftHeader">
+            <InputField
+                value={filter}
+                onChange={({ value }) => setFilter(value)}
+                placeholder={i18n.t('Search')}
+            />
+        </div>
+        <style jsx>{styles}</style>
+    </>
+)
+
+LeftHeader.propTypes = {
+    filter: PropTypes.string,
+    setFilter: PropTypes.func,
+}
+
+const EmptySelection = () => (
+    <>
+        <p className="emptyList">{i18n.t('No items selected')}</p>
+        <style jsx>{styles}</style>
+    </>
+)
+const RightHeader = () => (
+    <>
+        <p className="rightHeader">{i18n.t('Selected Items')}</p>
+        <style jsx>{styles}</style>
+    </>
+)
+const SourceEmptyPlaceholder = ({
+    loading,
+    filter,
+    options,
+    noItemsMessage,
+}) => {
+    let message = ''
+    if (!loading && !options.length && !filter) {
+        message = noItemsMessage
+    } else if (!loading && !options.length && filter) {
+        message = i18n.t('Nothing found for {{searchTerm}}', {
+            searchTerm: filter,
+        })
+    }
+    return (
+        message && (
+            <>
+                <p className="emptyList">{message}</p>
+                <style jsx>{styles}</style>
+            </>
+        )
+    )
+}
+
+SourceEmptyPlaceholder.propTypes = {
+    filter: PropTypes.string,
+    loading: PropTypes.bool,
+    noItemsMessage: PropTypes.string,
+    options: PropTypes.array,
+}
+
 const ItemSelector = ({
-    allItems,
+    initialSelected,
+    noItemsMessage,
+    onFetch,
     onSelect,
-    initialSelectedItemIds,
-    leftHeader,
     rightFooter,
 }) => {
-    const [selectedItemIds, setSelectedItemIds] = useState(
-        initialSelectedItemIds
+    const [state, setState] = useState({
+        filter: '',
+        selected: initialSelected,
+        options: [],
+        loading: true,
+        nextPage: null,
+    })
+    const setFilter = filter => setState(state => ({ ...state, filter }))
+    const setSelected = selected => setState(state => ({ ...state, selected }))
+    const debouncedFilter = useDebounce(state.filter, 500)
+    const fetchItems = async page => {
+        setState(state => ({ ...state, loading: true }))
+        const result = await onFetch(page, state.filter)
+        const newOptions = result.dimensionItems?.map(
+            ({ id, name, disabled }) => ({
+                label: name,
+                value: id,
+                disabled,
+            })
+        )
+        setState(state => ({
+            ...state,
+            loading: false,
+            options: page > 1 ? [...state.options, ...newOptions] : newOptions,
+            nextPage: result.nextPage,
+        }))
+    }
+    useEffect(() => {
+        fetchItems(1)
+    }, [debouncedFilter])
+    const onChange = useCallback(
+        newSelected => {
+            const newSelectedWithLabel = newSelected.map(value => ({
+                value,
+                label: [...state.options, ...state.selected].find(
+                    item => item.value === value
+                ).label,
+            }))
+            setSelected(newSelectedWithLabel)
+            onSelect(newSelectedWithLabel)
+        },
+        [state.options, state.selected]
     )
-
-    const renderEmptySelection = () => (
-        <>
-            <p className="emptySelection">{i18n.t('No items selected')}</p>
-            <style jsx>{styles}</style>
-        </>
-    )
-
-    const renderRightHeader = () => (
-        <>
-            <p className="rightHeader">{i18n.t('Selected Items')}</p>
-            <style jsx>{styles}</style>
-        </>
-    )
-
+    const onEndReached = useCallback(() => {
+        if (state.nextPage) {
+            fetchItems(state.nextPage)
+        }
+    }, [state.nextPage])
     return (
         <Transfer
-            onChange={({ selected }) => {
-                setSelectedItemIds(selected)
-                onSelect(selected)
-            }}
-            selected={selectedItemIds}
-            leftHeader={leftHeader}
-            filterable
-            filterPlaceholder={i18n.t('Search')}
+            onChange={({ selected }) => onChange(selected)}
+            selected={state.selected.map(item => item.value)}
+            options={[...state.options, ...state.selected]}
+            loading={state.loading}
+            loadingPicked={state.loading}
+            sourceEmptyPlaceholder={
+                <SourceEmptyPlaceholder
+                    loading={state.loading}
+                    filter={debouncedFilter}
+                    options={state.options}
+                    noItemsMessage={noItemsMessage}
+                />
+            }
+            onEndReached={onEndReached}
+            leftHeader={
+                <LeftHeader filter={state.filter} setFilter={setFilter} />
+            }
             enableOrderChange
             height={TRANSFER_HEIGHT}
             optionsWidth={TRANSFER_OPTIONS_WIDTH}
             selectedWidth={TRANSFER_SELECTED_WIDTH}
-            selectedEmptyComponent={renderEmptySelection()}
-            rightHeader={renderRightHeader()}
+            selectedEmptyComponent={<EmptySelection />}
+            rightHeader={<RightHeader />}
             rightFooter={rightFooter}
-            options={allItems.map(({ id, name, disabled }) => ({
-                label: name,
-                value: id,
-                disabled,
-            }))}
             renderOption={props => (
                 <TransferOption {...props} icon={GenericIcon} />
             )}
@@ -67,20 +174,20 @@ const ItemSelector = ({
 }
 
 ItemSelector.propTypes = {
-    allItems: PropTypes.arrayOf(
-        PropTypes.shape({
-            id: PropTypes.string,
-            name: PropTypes.string,
-        })
-    ).isRequired,
+    onFetch: PropTypes.func.isRequired,
     onSelect: PropTypes.func.isRequired,
-    initialSelectedItemIds: PropTypes.arrayOf(PropTypes.string),
-    leftHeader: PropTypes.node,
+    initialSelected: PropTypes.arrayOf(
+        PropTypes.exact({
+            label: PropTypes.string.isRequired,
+            value: PropTypes.string.isRequired,
+        })
+    ),
+    noItemsMessage: PropTypes.string,
     rightFooter: PropTypes.node,
 }
 
 ItemSelector.defaultProps = {
-    initialSelectedItemIds: [],
+    initialSelected: [],
 }
 
 export default ItemSelector

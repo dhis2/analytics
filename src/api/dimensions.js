@@ -99,6 +99,26 @@ export const dataElementGroupsQuery = {
     }),
 }
 
+export const itemsByDimensionQuery = {
+    resource: `dimensions`,
+    id: ({ id }) => `${id}/items`,
+    params: ({ searchTerm, page }) => {
+        const filters = []
+
+        if (searchTerm) {
+            filters.push(`name:ilike:${searchTerm}`)
+        }
+
+        return {
+            fields: 'id,displayName~rename(name)',
+            order: 'displayName:asc',
+            filter: filters,
+            paging: true,
+            page,
+        }
+    },
+}
+
 export const dataElementOperandsQuery = {
     resource: 'dataElementOperands',
     params: ({ nameProp, groupId, filterText, page }) => {
@@ -385,6 +405,29 @@ const fetchDataElements = async ({
     const response = dataElementsData.dataElements
 
     return formatResponse(response.dataElements, response.pager)
+}
+
+export const apiFetchItemsByDimension = async ({
+    dataEngine,
+    dimensionId,
+    searchTerm,
+    page,
+}) => {
+    const itemsByDimensionData = await dataEngine.query(
+        { itemsByDimensions: itemsByDimensionQuery },
+        {
+            variables: {
+                id: dimensionId,
+                searchTerm,
+                page,
+            },
+            onError,
+        }
+    )
+
+    const response = itemsByDimensionData.itemsByDimensions
+
+    return formatResponse(response.items, response.pager)
 }
 
 const fetchDataElementOperands = async ({
