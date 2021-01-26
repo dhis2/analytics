@@ -50,7 +50,7 @@ export const dataItemsQuery = {
         const filters = []
 
         if (!filter?.dataType || filter.dataType === ALL_ID) {
-            // TODO: Specifing a filter when no filter is used is a temporary fix as skipping the filter to the endpoint will currently return DATA_ELEMENT_OPERAND and other unwanted types
+            // TODO: Specifing a filter when no filter is used is a temporary fix as providing no dimensionItemType will currently return DATA_ELEMENT_OPERAND and other unwanted types
             filters.push(
                 `dimensionItemType:in:[${INDICATORS},${DATA_ELEMENTS},${DATA_SETS},${PROGRAM_INDICATORS},${PROGRAM_DATA_ELEMENT},${PROGRAM_ATTRIBUTE}]`
             )
@@ -60,6 +60,22 @@ export const dataItemsQuery = {
             )
         } else {
             filters.push(`dimensionItemType:eq:${filter.dataType}`)
+        }
+
+        if (filter?.group && filter.group !== ALL_ID) {
+            switch (filter.dataType) {
+                case INDICATORS:
+                    filters.push(`indicatorGroups.id:eq:${filter.group}`)
+                    break
+                case DATA_ELEMENTS:
+                    filters.push(`dataElementGroups.id:eq:${filter.group}`)
+                    break
+                case PROGRAM_INDICATORS:
+                case PROGRAM_DATA_ELEMENT:
+                case PROGRAM_ATTRIBUTE:
+                    filters.push(`program.id:eq:${filter.group}`)
+                    break
+            }
         }
 
         if (searchTerm) {
@@ -302,10 +318,10 @@ export const apiFetchRecommendedIds = async (dataEngine, dxIds, ouIds) => {
 
 export const apiFetchGroups = async (dataEngine, dataType, nameProp) => {
     // indicatorGroups does not support shortName
-    const name = dataType === 'indicators' ? 'displayName' : nameProp
+    const name = dataType === INDICATORS ? 'displayName' : nameProp
 
     switch (dataType) {
-        case 'indicators': {
+        case INDICATORS: {
             const indicatorGroupsData = await dataEngine.query(
                 { indicatorGroups: indicatorGroupsQuery },
                 {
@@ -318,7 +334,7 @@ export const apiFetchGroups = async (dataEngine, dataType, nameProp) => {
 
             return indicatorGroupsData.indicatorGroups.indicatorGroups
         }
-        case 'dataElements': {
+        case DATA_ELEMENTS: {
             const dataElementGroupsData = await dataEngine.query(
                 { dataElementGroups: dataElementGroupsQuery },
                 {
@@ -331,7 +347,7 @@ export const apiFetchGroups = async (dataEngine, dataType, nameProp) => {
 
             return dataElementGroupsData.dataElementGroups.dataElementGroups
         }
-        case 'dataSets': {
+        case DATA_SETS: {
             const dataSetGroups = DATA_SETS_CONSTANTS.map(
                 ({ id, getName }) => ({
                     id,
@@ -340,8 +356,8 @@ export const apiFetchGroups = async (dataEngine, dataType, nameProp) => {
             )
             return dataSetGroups
         }
-        case 'eventDataItems':
-        case 'programIndicators': {
+        case EVENT_DATA_ITEMS:
+        case PROGRAM_INDICATORS: {
             const programsData = await dataEngine.query(
                 { programs: programsQuery },
                 {
@@ -360,6 +376,7 @@ export const apiFetchGroups = async (dataEngine, dataType, nameProp) => {
 }
 
 export const apiFetchAlternatives = ({
+    // TODO: Remove this fn
     dataEngine,
     dataType,
     groupDetail,

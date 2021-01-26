@@ -5,22 +5,28 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2021-01-22T09:45:46.348Z\n"
-"PO-Revision-Date: 2021-01-22T09:45:46.348Z\n"
+"POT-Creation-Date: 2021-01-26T16:10:57.174Z\n"
+"PO-Revision-Date: 2021-01-26T16:10:57.174Z\n"
 
 msgid "Data Type"
 msgstr ""
 
-msgid "Totals"
+msgid "All types"
 msgstr ""
 
-msgid "Details"
+msgid "Totals & Details"
 msgstr ""
 
-msgid "Detail"
+msgid "Totals only"
 msgstr ""
 
-msgid "Search"
+msgid "Details only"
+msgstr ""
+
+msgid "Disaggregation"
+msgstr ""
+
+msgid "Search by data item name or id"
 msgstr ""
 
 msgid "No items selected"
@@ -30,6 +36,12 @@ msgid "Selected Items"
 msgstr ""
 
 msgid "Nothing found for {{searchTerm}}"
+msgstr ""
+
+msgid "Metric type"
+msgstr ""
+
+msgid "All metrics"
 msgstr ""
 
 msgid "Move to {{axisName}}"
@@ -63,6 +75,9 @@ msgid "Dimension recommended with selected data"
 msgstr ""
 
 msgid "Nothing found in {{dimensionTitle}}"
+msgstr ""
+
+msgid "Search"
 msgstr ""
 
 msgid "Selected Data"
@@ -383,31 +398,31 @@ msgstr ""
 msgid "Indicators"
 msgstr ""
 
-msgid "Select indicator group"
+msgid "Indicator group"
 msgstr ""
 
-msgid "[ All groups ]"
+msgid "All groups"
 msgstr ""
 
 msgid "Data elements"
 msgstr ""
 
-msgid "Select data element group"
-msgstr ""
-
-msgid "[ All data elements ]"
+msgid "Data element group"
 msgstr ""
 
 msgid "Data sets"
 msgstr ""
 
-msgid "Select data sets"
+msgid "Data set"
 msgstr ""
 
-msgid "[ All metrics ]"
+msgid "All data sets"
 msgstr ""
 
 msgid "Event data items"
+msgstr ""
+
+msgid "All programs"
 msgstr ""
 
 msgid "Program indicators"

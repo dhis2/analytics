@@ -2,6 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react'
 import PropTypes from 'prop-types'
 import { Transfer, InputField } from '@dhis2/ui'
 import i18n from '@dhis2/d2-i18n'
+import { useDataEngine } from '@dhis2/app-runtime'
 
 import styles from '../styles/DimensionSelector.style'
 import { TransferOption } from '../TransferOption'
@@ -13,7 +14,8 @@ import {
 } from '../../modules/dimensionSelectorHelper'
 import DataTypes from './DataTypesSelector'
 import Groups from './Groups'
-import { ALL_ID } from '../../modules/dataTypes'
+import { ALL_ID, dataTypes } from '../../modules/dataTypes'
+import { fetchDataItems } from '../../api/dimensions'
 
 const useDebounce = (value, delay) => {
     const [debouncedValue, setDebouncedValue] = useState(value)
@@ -27,29 +29,40 @@ const useDebounce = (value, delay) => {
     }, [value, delay])
     return debouncedValue
 }
-const LeftHeader = ({ searchTerm, setSearchTerm, dataType, setDataType }) => (
+const LeftHeader = ({
+    searchTerm,
+    setSearchTerm,
+    dataType,
+    setDataType,
+    group,
+    setGroup,
+    displayNameProp,
+}) => (
     <>
         <div className="leftHeader">
             <InputField
                 value={searchTerm}
                 onChange={({ value }) => setSearchTerm(value)}
-                placeholder={i18n.t('Search')}
+                placeholder={i18n.t('Search by data item name or id')}
                 dataTest={'data-dimension-filter-input-field'}
+                dense
             />
             <DataTypes
                 currentDataType={dataType}
                 onChange={setDataType}
                 dataTest={'data-dimension-data-types-select-field'}
             />
-            {/* <Groups
-                dataType={this.state.dataType}
-                groups={groups}
-                groupId={this.state.groupId}
-                onGroupChange={this.onGroupChange}
-                onDetailChange={this.onDetailChange}
-                detailValue={this.state.groupDetail}
-                dataTest={'data-dimension-groups-select-field'}
-            /> */}
+            {dataTypes[dataType] && (
+                <Groups
+                    dataType={dataType}
+                    displayNameProp={displayNameProp}
+                    currentGroup={group}
+                    onGroupChange={setGroup}
+                    detailValue={''} // TODO: Implement
+                    onDetailChange={() => {}} // TODO: Implement
+                    dataTest={'data-dimension-groups-select-field'}
+                />
+            )}
         </div>
         <style jsx>{styles}</style>
     </>
@@ -57,8 +70,11 @@ const LeftHeader = ({ searchTerm, setSearchTerm, dataType, setDataType }) => (
 
 LeftHeader.propTypes = {
     dataType: PropTypes.string,
+    displayNameProp: PropTypes.string,
+    group: PropTypes.string,
     searchTerm: PropTypes.string,
     setDataType: PropTypes.func,
+    setGroup: PropTypes.func,
     setSearchTerm: PropTypes.func,
 }
 
@@ -108,9 +124,9 @@ SourceEmptyPlaceholder.propTypes = {
 const ItemSelector = ({
     initialSelected,
     noItemsMessage,
-    onFetch,
     onSelect,
     rightFooter,
+    displayNameProp,
 }) => {
     const [state, setState] = useState({
         searchTerm: '',
@@ -122,6 +138,7 @@ const ItemSelector = ({
         loading: true,
         nextPage: null,
     })
+    const dataEngine = useDataEngine()
     const setSearchTerm = searchTerm =>
         setState(state => ({ ...state, searchTerm }))
     const setFilter = filter => setState(state => ({ ...state, filter }))
@@ -129,7 +146,13 @@ const ItemSelector = ({
     const debouncedSearchTerm = useDebounce(state.searchTerm, 200)
     const fetchItems = async page => {
         setState(state => ({ ...state, loading: true }))
-        const result = await onFetch(page, state.filter, state.searchTerm) // page, filter, searchTerm
+        const result = await fetchDataItems({
+            dataEngine,
+            nameProp: displayNameProp,
+            page,
+            filter: state.filter,
+            searchTerm: state.searchTerm,
+        })
         const newOptions = result.dimensionItems?.map(
             ({ id, name, disabled }) => ({
                 label: name,
@@ -184,11 +207,20 @@ const ItemSelector = ({
             leftHeader={
                 <LeftHeader
                     dataType={state.filter.dataType}
-                    setDataType={dataType =>
-                        setFilter({ ...state.filter, dataType })
-                    }
+                    setDataType={dataType => {
+                        setFilter({
+                            ...state.filter,
+                            dataType,
+                            group: null,
+                        })
+                    }}
+                    group={state.filter.group}
+                    setGroup={group => {
+                        setFilter({ ...state.filter, group })
+                    }}
                     searchTerm={state.searchTerm}
                     setSearchTerm={setSearchTerm}
+                    displayNameProp={displayNameProp}
                 />
             }
             enableOrderChange
@@ -206,7 +238,7 @@ const ItemSelector = ({
 }
 
 ItemSelector.propTypes = {
-    onFetch: PropTypes.func.isRequired,
+    displayNameProp: PropTypes.string.isRequired,
     onSelect: PropTypes.func.isRequired,
     initialSelected: PropTypes.arrayOf(
         PropTypes.exact({

@@ -27,6 +27,9 @@ export const PROGRAM_ATTRIBUTE = 'PROGRAM_ATTRIBUTE'
 export const TOTALS = 'totals'
 export const DETAIL = 'detail'
 
+export const SUB_GROUP_DETAIL = 'DETAIL'
+export const SUB_GROUP_METRIC = 'METRIC'
+
 const getProgramText = () => i18n.t('Program')
 const getSelectProgramText = () => i18n.t('Select a program')
 
@@ -36,42 +39,39 @@ export const dataTypes = {
         getName: () => i18n.t('Indicators'),
         getGroupLabel: () => i18n.t('Indicator group'),
         defaultGroup: { id: ALL_ID, getName: () => i18n.t('All groups') },
-        groupDetail: false,
     },
     [DATA_ELEMENTS]: {
         id: DATA_ELEMENTS,
         getName: () => i18n.t('Data elements'),
-        getGroupLabel: () => i18n.t('Data element groups'),
+        getGroupLabel: () => i18n.t('Data element group'),
         defaultGroup: {
             id: ALL_ID,
             getName: () => i18n.t('All groups'),
         },
-        groupDetail: { default: TOTALS },
+        subGroup: SUB_GROUP_DETAIL,
     },
     [DATA_SETS]: {
         id: DATA_SETS,
         getName: () => i18n.t('Data sets'),
-        getGroupLabel: () => i18n.t('Select data sets'),
-        defaultGroup: { id: ALL_ID, getName: () => i18n.t('[ All metrics ]') },
-        groupDetail: false,
+        getGroupLabel: () => i18n.t('Data set'),
+        defaultGroup: { id: ALL_ID, getName: () => i18n.t('All data sets') },
         augmentAlternatives: (alternatives, groupId) =>
             getReportingRates(alternatives, groupId),
+        subGroup: SUB_GROUP_METRIC,
     },
     [EVENT_DATA_ITEMS]: {
         id: EVENT_DATA_ITEMS,
         getName: () => i18n.t('Event data items'),
         getGroupLabel: getProgramText,
         getPlaceholder: getSelectProgramText,
-        defaultGroup: null,
-        groupDetail: false,
+        defaultGroup: { id: ALL_ID, getName: () => i18n.t('All programs') },
     },
     [PROGRAM_INDICATORS]: {
         id: PROGRAM_INDICATORS,
         getName: () => i18n.t('Program indicators'),
         getGroupLabel: getProgramText,
         getPlaceholder: getSelectProgramText,
-        defaultGroup: null,
-        groupDetail: false,
+        defaultGroup: { id: ALL_ID, getName: () => i18n.t('All programs') },
     },
 }
 

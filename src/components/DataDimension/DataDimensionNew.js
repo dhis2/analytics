@@ -1,29 +1,15 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import i18n from '@dhis2/d2-i18n'
-import { useDataEngine } from '@dhis2/app-runtime'
 
 import ItemSelector from './ItemSelector'
-import { fetchDataItems } from '../../api/dimensions'
 import { DIMENSION_ID_DATA } from '../../modules/predefinedDimensions'
 
 const DataDimension = ({
     onSelect,
     selectedItems,
     displayNameProp,
-    infoBoxMessage,
+    //infoBoxMessage, // TODO: Implement
 }) => {
-    const dataEngine = useDataEngine()
-
-    const fetchItems = (page, filter, searchTerm) =>
-        fetchDataItems({
-            dataEngine,
-            nameProp: displayNameProp,
-            filter,
-            searchTerm,
-            page,
-        })
-
     const onSelectItems = selectedItem =>
         onSelect({
             dimensionId: DIMENSION_ID_DATA,
@@ -39,8 +25,8 @@ const DataDimension = ({
                 value: item.id,
                 label: item.name,
             }))}
-            onFetch={fetchItems}
             onSelect={onSelectItems}
+            displayNameProp={displayNameProp}
         />
     )
 }
@@ -54,7 +40,7 @@ DataDimension.propTypes = {
         })
     ).isRequired,
     onSelect: PropTypes.func.isRequired,
-    infoBoxMessage: PropTypes.string,
+    //infoBoxMessage: PropTypes.string,
 }
 
 DataDimension.defaultProps = {
