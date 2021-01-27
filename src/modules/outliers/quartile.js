@@ -37,8 +37,8 @@ const getQuartileUtils = (data, thresholdFactor) => {
     const iqrThreshold = iqr * thresholdFactor
     const q1Threshold = q1 - iqrThreshold
     const q3Threshold = q3 + iqrThreshold
-    const isLowOutlier = value => value < lowThreshold
-    const isHighOutlier = value => value > highThreshold
+    const isLowOutlier = value => value < q1Threshold
+    const isHighOutlier = value => value > q3Threshold
     const isOutlier = value => isLowOutlier(value) || isHighOutlier(value)
     const getOutliers = () =>
         data.reduce((outliers, value) => {
