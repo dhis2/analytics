@@ -1,3 +1,10 @@
+## [13.0.5](https://github.com/dhis2/analytics/compare/v13.0.4...v13.0.5) (2021-01-27)
+
+
+### Bug Fixes
+
+* restore buildUrl and buildQuery functions ([#785](https://github.com/dhis2/analytics/issues/785)) ([a348fac](https://github.com/dhis2/analytics/commit/a348fac4d6604f36a12dea9ff0cf95c9c6084174))
+
 ## [13.0.4](https://github.com/dhis2/analytics/compare/v13.0.3...v13.0.4) (2021-01-26)
 
 
