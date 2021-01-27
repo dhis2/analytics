@@ -17,15 +17,15 @@ const getQuartile = (data, q = 0.25) => {
         return
     }
 
-    const pos = getQuartilePosition(sortedData, q)
+    const pos = getQuartilePosition(data, q)
     const rest = pos % 1
 
     if (rest === 0) {
-        return sortedData[pos - 1]
+        return data[pos - 1]
     }
 
     var base = Math.floor(pos)
-    var diff = sortedData[base] - sortedData[base - 1]
+    var diff = data[base] - data[base - 1]
 
     return base + diff * rest
 }
@@ -63,7 +63,7 @@ const getQuartileUtils = (data, thresholdFactor) => {
 export const getOutliersByQuartile = (data, thresholdFactor, { isSorted }) => {
     const sortedData = isSorted ? data : data.slice().sort()
 
-    const utils = getQuartileTools(sortedData, thresholdFactor)
+    const utils = getQuartileUtils(sortedData, thresholdFactor)
 
     return utils.getOutliers()
 }
