@@ -1,3 +1,29 @@
+# [14.0.0](https://github.com/dhis2/analytics/compare/v13.0.5...v14.0.0) (2021-01-27)
+
+
+### Features
+
+* scatter options (DHIS2-10006) ([#751](https://github.com/dhis2/analytics/issues/751)) ([89ad5aa](https://github.com/dhis2/analytics/commit/89ad5aa7730e3c894b13230d1060d565230b2031))
+
+
+### BREAKING CHANGES
+
+* FONT_STYLE_SERIES_AXIS_LABELS and FONT_STYLE_CATEGORY_AXIS_LABELS are replaced by FONT_STYLE_AXIS_LABELS
+
+## [13.0.5](https://github.com/dhis2/analytics/compare/v13.0.4...v13.0.5) (2021-01-27)
+
+
+### Bug Fixes
+
+* restore buildUrl and buildQuery functions ([#785](https://github.com/dhis2/analytics/issues/785)) ([a348fac](https://github.com/dhis2/analytics/commit/a348fac4d6604f36a12dea9ff0cf95c9c6084174))
+
+## [13.0.4](https://github.com/dhis2/analytics/compare/v13.0.3...v13.0.4) (2021-01-26)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([1935ee9](https://github.com/dhis2/analytics/commit/1935ee9b715607e5d9e58e33a5ee14496f0beeeb))
+
 ## [13.0.3](https://github.com/dhis2/analytics/compare/v13.0.2...v13.0.3) (2021-01-24)
 
 

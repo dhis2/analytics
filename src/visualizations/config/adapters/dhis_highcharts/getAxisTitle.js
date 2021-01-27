@@ -6,6 +6,7 @@ import {
     FONT_STYLE_OPTION_ITALIC,
     FONT_STYLE_OPTION_TEXT_ALIGN,
 } from '../../../../modules/fontStyle'
+import { isVerticalType } from '../../../../modules/visTypes'
 import { getTextAlignOption } from './getTextAlignOption'
 
 const getTitleStyle = (fontStyle, titleType, visType) =>
@@ -14,7 +15,7 @@ const getTitleStyle = (fontStyle, titleType, visType) =>
               align: getTextAlignOption(
                   fontStyle[FONT_STYLE_OPTION_TEXT_ALIGN],
                   titleType,
-                  visType
+                  isVerticalType(visType)
               ),
               margin: 15,
               style: {

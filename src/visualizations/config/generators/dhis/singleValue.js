@@ -12,6 +12,7 @@ import {
     TEXT_ALIGN_LEFT,
     TEXT_ALIGN_RIGHT,
     TEXT_ALIGN_CENTER,
+    mergeFontStyleWithDefault,
 } from '../../../../modules/fontStyle'
 
 const svgNS = 'http://www.w3.org/2000/svg'
@@ -124,7 +125,10 @@ const generateDVItem = (config, legendSet, parentEl, fontStyle) => {
     svg.setAttribute('data-test', 'visualization-container')
 
     const title = document.createElementNS(svgNS, 'text')
-    const titleFontStyle = fontStyle[FONT_STYLE_VISUALIZATION_TITLE]
+    const titleFontStyle = mergeFontStyleWithDefault(
+        fontStyle && fontStyle[FONT_STYLE_VISUALIZATION_TITLE],
+        FONT_STYLE_VISUALIZATION_TITLE
+    )
     title.setAttribute(
         'x',
         getXFromTextAlign(titleFontStyle[FONT_STYLE_OPTION_TEXT_ALIGN])
@@ -160,7 +164,10 @@ const generateDVItem = (config, legendSet, parentEl, fontStyle) => {
         svg.appendChild(title)
     }
 
-    const subtitleFontStyle = fontStyle[FONT_STYLE_VISUALIZATION_SUBTITLE]
+    const subtitleFontStyle = mergeFontStyleWithDefault(
+        fontStyle && fontStyle[FONT_STYLE_VISUALIZATION_SUBTITLE],
+        FONT_STYLE_VISUALIZATION_SUBTITLE
+    )
     const subtitle = document.createElementNS(svgNS, 'text')
     subtitle.setAttribute(
         'x',
