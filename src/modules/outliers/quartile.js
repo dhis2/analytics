@@ -17,7 +17,7 @@ const getQuartile = (data, q = 0.25) => {
         return
     }
 
-    const pos = getQuantilePosition(sortedData, q)
+    const pos = getQuartilePosition(sortedData, q)
     const rest = pos % 1
 
     if (rest === 0) {
@@ -30,7 +30,7 @@ const getQuartile = (data, q = 0.25) => {
     return base + diff * rest
 }
 
-const getQuantileUtils = (data, thresholdFactor) => {
+const getQuartileUtils = (data, thresholdFactor) => {
     const q1 = getQuartile(data, 0.25)
     const q3 = getQuartile(data, 0.75)
     const iqr = q3 - q1
@@ -63,7 +63,7 @@ const getQuantileUtils = (data, thresholdFactor) => {
 export const getOutliersByQuartile = (data, thresholdFactor, { isSorted }) => {
     const sortedData = isSorted ? data : data.slice().sort()
 
-    const utils = getQuantileTools(sortedData, thresholdFactor)
+    const utils = getQuartileTools(sortedData, thresholdFactor)
 
     return utils.getOutliers()
 }
