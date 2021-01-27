@@ -154,7 +154,6 @@ const twoCategoryChartTypes = [
     VIS_TYPE_LINE,
     VIS_TYPE_AREA,
     VIS_TYPE_STACKED_AREA,
-    VIS_TYPE_SCATTER, // TODO: Remove once new layout is in place
 ]
 
 const columnBasedTypes = [

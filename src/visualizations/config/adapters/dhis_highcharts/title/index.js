@@ -5,6 +5,7 @@ import {
     VIS_TYPE_YEAR_OVER_YEAR_LINE,
     VIS_TYPE_YEAR_OVER_YEAR_COLUMN,
     VIS_TYPE_GAUGE,
+    isVerticalType,
     VIS_TYPE_SCATTER,
 } from '../../../../../modules/visTypes'
 import getYearOverYearTitle from './yearOverYear'
@@ -16,6 +17,7 @@ import {
     FONT_STYLE_OPTION_FONT_SIZE,
     FONT_STYLE_OPTION_TEXT_ALIGN,
     FONT_STYLE_VISUALIZATION_TITLE,
+    mergeFontStyleWithDefault,
 } from '../../../../../modules/fontStyle'
 import { getTextAlignOption } from '../getTextAlignOption'
 
@@ -41,8 +43,10 @@ function getDefault(layout, metaData, dashboard) {
 }
 
 export default function (layout, metaData, dashboard) {
-    const fontStyle =
-        layout.fontStyle && layout.fontStyle[FONT_STYLE_VISUALIZATION_TITLE]
+    const fontStyle = mergeFontStyleWithDefault(
+        layout.fontStyle && layout.fontStyle[FONT_STYLE_VISUALIZATION_TITLE],
+        FONT_STYLE_VISUALIZATION_TITLE
+    )
 
     const title = {
         text: undefined,
@@ -79,7 +83,7 @@ export default function (layout, metaData, dashboard) {
                   align: getTextAlignOption(
                       fontStyle[FONT_STYLE_OPTION_TEXT_ALIGN],
                       FONT_STYLE_VISUALIZATION_TITLE,
-                      layout.type
+                      isVerticalType(layout.type)
                   ),
                   style: {
                       color: fontStyle[FONT_STYLE_OPTION_TEXT_COLOR],
