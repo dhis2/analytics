@@ -12,6 +12,7 @@ import {
     EVENT_DATA_ITEMS,
     PROGRAM_DATA_ELEMENT,
     PROGRAM_ATTRIBUTE,
+    TOTALS,
 } from '../modules/dataTypes'
 
 // Query definitions
@@ -95,9 +96,10 @@ export const dataItemsQuery = {
 export const indicatorsQuery = {
     resource: 'indicators',
     params: ({ nameProp, groupId, filterText, page }) => {
+        // TODO: Refactor to new prop names
         const filters = []
 
-        if (groupId !== 'ALL') {
+        if (groupId && groupId !== ALL_ID) {
             filters.push(`indicatorGroups.id:eq:${groupId}`)
         }
 
@@ -127,10 +129,11 @@ export const indicatorGroupsQuery = {
 export const dataElementsQuery = {
     resource: 'dataElements',
     params: ({ nameProp, groupId, filterText, page }) => {
-        const idField = groupId === 'ALL' ? 'id' : 'dimensionItem~rename(id)'
+        // TODO: Refactor to new prop names
+        const idField = groupId === ALL_ID ? 'id' : 'dimensionItem~rename(id)'
         const filters = ['domainType:eq:AGGREGATE']
 
-        if (groupId !== 'ALL') {
+        if (groupId && groupId !== ALL_ID) {
             filters.push(`dataElementGroups.id:eq:${groupId}`)
         }
 
@@ -180,10 +183,11 @@ export const itemsByDimensionQuery = {
 export const dataElementOperandsQuery = {
     resource: 'dataElementOperands',
     params: ({ nameProp, groupId, filterText, page }) => {
-        const idField = groupId === 'ALL' ? 'id' : 'dimensionItem~rename(id)'
+        // TODO: Refactor to new prop names
+        const idField = groupId === ALL_ID ? 'id' : 'dimensionItem~rename(id)'
         const filters = []
 
-        if (groupId !== 'ALL') {
+        if (groupId && groupId !== ALL_ID) {
             filters.push(`dataElement.dataElementGroups.id:eq:${groupId}`)
         }
 
@@ -316,6 +320,68 @@ export const apiFetchRecommendedIds = async (dataEngine, dxIds, ouIds) => {
     )
 }
 
+export const apiFetchOptions = ({
+    dataEngine,
+    nameProp,
+    filter,
+    searchTerm,
+    page,
+}) => {
+    if (filter?.dataType && filter.dataType !== ALL_ID) {
+        switch (filter.dataType) {
+            case INDICATORS: {
+                return fetchIndicators({
+                    dataEngine,
+                    nameProp,
+                    groupId: filter.group,
+                    filterText: searchTerm,
+                    page,
+                })
+            }
+            case DATA_ELEMENTS: {
+                if (filter.subGroup === TOTALS) {
+                    return fetchDataElements({
+                        dataEngine,
+                        nameProp,
+                        groupId: filter.group,
+                        filterText: searchTerm,
+                        page,
+                    })
+                } else {
+                    return fetchDataElementOperands({
+                        dataEngine,
+                        nameProp,
+                        groupId: filter.group,
+                        filterText: searchTerm,
+                        page,
+                    })
+                }
+            }
+            case DATA_SETS: {
+                return fetchDataSets({ dataEngine, ...queryParams })
+            }
+            case EVENT_DATA_ITEMS: {
+                return queryParams.groupId
+                    ? getEventDataItems({ dataEngine, ...queryParams })
+                    : null
+            }
+            case PROGRAM_INDICATORS: {
+                return queryParams.groupId
+                    ? fetchProgramIndicators({ dataEngine, ...queryParams })
+                    : null
+            }
+        }
+    } else {
+        return fetchDataItems({
+            dataEngine,
+            nameProp,
+            filter,
+            searchTerm,
+            page,
+        })
+    }
+}
+
 export const apiFetchGroups = async (dataEngine, dataType, nameProp) => {
     // indicatorGroups does not support shortName
     const name = dataType === INDICATORS ? 'displayName' : nameProp
@@ -375,7 +441,7 @@ export const apiFetchGroups = async (dataEngine, dataType, nameProp) => {
     }
 }
 
-export const apiFetchAlternatives = ({
+const apiFetchAlternatives = ({
     // TODO: Remove this fn
     dataEngine,
     dataType,
@@ -436,7 +502,7 @@ const fetchIndicators = async ({
     return formatResponse(response.indicators, response.pager)
 }
 
-export const fetchDataItems = async ({
+const fetchDataItems = async ({
     dataEngine,
     nameProp,
     filter,

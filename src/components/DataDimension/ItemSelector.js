@@ -14,8 +14,13 @@ import {
 } from '../../modules/dimensionSelectorHelper'
 import DataTypes from './DataTypesSelector'
 import Groups from './Groups'
-import { ALL_ID, dataTypes } from '../../modules/dataTypes'
-import { fetchDataItems } from '../../api/dimensions'
+import {
+    ALL_ID,
+    dataTypes,
+    DATA_ELEMENTS,
+    TOTALS,
+} from '../../modules/dataTypes'
+import { apiFetchOptions } from '../../api/dimensions'
 
 const useDebounce = (value, delay) => {
     const [debouncedValue, setDebouncedValue] = useState(value)
@@ -36,6 +41,8 @@ const LeftHeader = ({
     setDataType,
     group,
     setGroup,
+    subGroup,
+    setSubGroup,
     displayNameProp,
 }) => (
     <>
@@ -58,8 +65,8 @@ const LeftHeader = ({
                     displayNameProp={displayNameProp}
                     currentGroup={group}
                     onGroupChange={setGroup}
-                    detailValue={''} // TODO: Implement
-                    onDetailChange={() => {}} // TODO: Implement
+                    currentSubGroup={subGroup}
+                    onSubGroupChange={setSubGroup}
                     dataTest={'data-dimension-groups-select-field'}
                 />
             )}
@@ -76,6 +83,8 @@ LeftHeader.propTypes = {
     setDataType: PropTypes.func,
     setGroup: PropTypes.func,
     setSearchTerm: PropTypes.func,
+    setSubGroup: PropTypes.func,
+    subGroup: PropTypes.string,
 }
 
 const EmptySelection = () => (
@@ -146,7 +155,7 @@ const ItemSelector = ({
     const debouncedSearchTerm = useDebounce(state.searchTerm, 200)
     const fetchItems = async page => {
         setState(state => ({ ...state, loading: true }))
-        const result = await fetchDataItems({
+        const result = await apiFetchOptions({
             dataEngine,
             nameProp: displayNameProp,
             page,
@@ -212,11 +221,17 @@ const ItemSelector = ({
                             ...state.filter,
                             dataType,
                             group: null,
+                            subGroup:
+                                dataType === DATA_ELEMENTS ? TOTALS : null,
                         })
                     }}
                     group={state.filter.group}
                     setGroup={group => {
                         setFilter({ ...state.filter, group })
+                    }}
+                    subGroup={state.filter.subGroup}
+                    setSubGroup={subGroup => {
+                        setFilter({ ...state.filter, subGroup })
                     }}
                     searchTerm={state.searchTerm}
                     setSearchTerm={setSearchTerm}

@@ -15,19 +15,17 @@ import { Metric } from './Metric'
 
 const Groups = ({
     dataType,
-    detailValue,
     currentGroup,
-    onDetailChange,
     onGroupChange,
     dataTest,
     displayNameProp,
-    metricValue,
-    onMetricChange,
+    currentSubGroup,
+    onSubGroupChange,
 }) => {
     const dataEngine = useDataEngine()
     const [groups, setGroups] = useState([])
     const defaultGroup = dataTypes[dataType]?.defaultGroup
-    const subGroup = dataTypes[dataType]?.subGroup
+    const subGroupType = dataTypes[dataType]?.subGroup
 
     const fetchGroups = async () => {
         const result = await apiFetchGroups(
@@ -76,22 +74,28 @@ const Groups = ({
                     ))}
                 </SingleSelectField>
             </div>
-            {subGroup === SUB_GROUP_DETAIL && (
-                <Detail currentValue={detailValue} onChange={onDetailChange} />
+            {subGroupType === SUB_GROUP_DETAIL && (
+                <Detail
+                    currentValue={currentSubGroup}
+                    onChange={onSubGroupChange}
+                />
             )}
-            {subGroup === SUB_GROUP_METRIC && (
-                <Metric currentValue={metricValue} onChange={onMetricChange} />
+            {subGroupType === SUB_GROUP_METRIC && (
+                <Metric
+                    currentValue={currentSubGroup}
+                    onChange={onSubGroupChange}
+                />
             )}
         </div>
     )
 }
 
 Groups.propTypes = {
+    currentSubGroup: PropTypes.string.isRequired,
     dataType: PropTypes.string.isRequired,
-    detailValue: PropTypes.string.isRequired,
     displayNameProp: PropTypes.string.isRequired,
-    onDetailChange: PropTypes.func.isRequired,
     onGroupChange: PropTypes.func.isRequired,
+    onSubGroupChange: PropTypes.func.isRequired,
     currentGroup: PropTypes.string,
     dataTest: PropTypes.string,
 }

@@ -2,12 +2,11 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'
 import { SingleSelectField, SingleSelectOption } from '@dhis2/ui'
-import { TOTALS, DETAIL, ALL_ID } from '../../modules/dataTypes'
+import { TOTALS, DETAIL } from '../../modules/dataTypes'
 
 import styles from './styles/Detail.style'
 
 const getOptions = () => ({
-    [ALL_ID]: i18n.t('Totals & Details'),
     [TOTALS]: i18n.t('Totals only'),
     [DETAIL]: i18n.t('Details only'),
 })
