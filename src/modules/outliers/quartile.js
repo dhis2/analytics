@@ -1,4 +1,4 @@
-const getQuartilePosition = (data, q) => {
+export const getQuartilePosition = (data, q) => {
     const pos = (data.length + 1) / 4
 
     switch (q) {
@@ -12,7 +12,7 @@ const getQuartilePosition = (data, q) => {
     }
 }
 
-const getQuartile = (data, q = 0.25) => {
+export const getQuartile = (data, q = 0.25) => {
     if (data.length < 3) {
         return
     }
@@ -30,7 +30,7 @@ const getQuartile = (data, q = 0.25) => {
     return base + diff * rest
 }
 
-const getQuartileUtils = (data, thresholdFactor) => {
+export const getQuartileUtils = (data, thresholdFactor) => {
     const q1 = getQuartile(data, 0.25)
     const q3 = getQuartile(data, 0.75)
     const iqr = q3 - q1
@@ -60,7 +60,11 @@ const getQuartileUtils = (data, thresholdFactor) => {
     }
 }
 
-export const getOutliersByQuartile = (data, thresholdFactor, { isSorted }) => {
+export const getOutliersByQuartile = (
+    data,
+    thresholdFactor,
+    config = { isSorted: false }
+) => {
     const sortedData = isSorted ? data : data.slice().sort()
 
     const utils = getQuartileUtils(sortedData, thresholdFactor)
