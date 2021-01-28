@@ -33,8 +33,6 @@ import getScatterData from './getScatterData'
 const getTransformedLayout = layout => ({
     ...layout,
     type: String(layout.type).toUpperCase(),
-    rangeAxisLabel: layout.rangeAxisLabel || layout.rangeAxisTitle,
-    domainAxisLabel: layout.domainAxisLabel || layout.domainAxisTitle,
     targetLineLabel: layout.targetLineLabel || layout.targetLineTitle,
     baseLineLabel: layout.baseLineLabel || layout.baseLineTitle,
 })
@@ -86,7 +84,7 @@ export default function ({ store, layout, el, extraConfig, extraOptions }) {
         ),
 
         // x-axis
-        xAxis: getXAxis(store, _layout, _extraOptions),
+        xAxis: getXAxis(store, _layout, _extraOptions, series),
 
         // y-axis
         yAxis: getYAxis(_layout, series, _extraOptions),
@@ -101,7 +99,12 @@ export default function ({ store, layout, el, extraConfig, extraOptions }) {
         ),
 
         // legend
-        legend: getLegend(_layout, _extraOptions.dashboard),
+        legend: getLegend(
+            _layout.legend?.hidden,
+            _layout.legend?.label?.fontStyle,
+            _layout.type,
+            _extraOptions.dashboard
+        ),
 
         // pane
         pane: getPane(_layout.type),
@@ -164,7 +167,8 @@ export default function ({ store, layout, el, extraConfig, extraOptions }) {
         _layout.regressionType !== 'NONE' &&
         !isRegressionIneligible(_layout.type) &&
         (!(isDualAxisType(layout.type) && hasCustomAxes(filteredSeries)) ||
-            axisHasRelativeItems(layout.columns))
+            axisHasRelativeItems(layout.columns)) &&
+        _layout.type !== VIS_TYPE_SCATTER
     ) {
         config.series = addTrendLines(_layout, config.series, stacked)
     }
@@ -203,10 +207,14 @@ export default function ({ store, layout, el, extraConfig, extraOptions }) {
 
     // flatten category groups
     if (config.xAxis?.length) {
-        config.xAxis = config.xAxis.map(xAxis => ({
-            ...xAxis,
-            categories: xAxis.categories.flat(),
-        }))
+        config.xAxis = config.xAxis.map(xAxis =>
+            xAxis.categories
+                ? {
+                      ...xAxis,
+                      categories: xAxis.categories.flat(),
+                  }
+                : xAxis
+        )
     }
 
     // force apply extra config
