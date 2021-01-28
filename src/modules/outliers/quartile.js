@@ -30,7 +30,7 @@ export const getQuartileValue = (data, q = 0.25) => {
     return data[base - 1] + diff * rest
 }
 
-export const getQuartileUtils = (data, thresholdFactor) => {
+export const getQuartileHelper = (data, thresholdFactor = 1.5) => {
     const q1 = getQuartileValue(data, 0.25)
     const q3 = getQuartileValue(data, 0.75)
     const iqr = q3 - q1
@@ -50,6 +50,7 @@ export const getQuartileUtils = (data, thresholdFactor) => {
         q1,
         q3,
         iqr,
+        thresholdFactor,
         iqrThreshold,
         q1Threshold,
         q3Threshold,
@@ -67,7 +68,7 @@ export const getOutliersByQuartile = (
 ) => {
     const sortedData = isSorted ? data : data.slice().sort()
 
-    const utils = getQuartileUtils(sortedData, thresholdFactor)
+    const helper = getQuartileHelper(sortedData, thresholdFactor)
 
-    return utils.getOutliers()
+    return helper.getOutliers()
 }

@@ -1,4 +1,8 @@
-import { getQuartilePosition, getQuartileValue } from '../quartile'
+import {
+    getQuartilePosition,
+    getQuartileValue,
+    getQuartileHelper,
+} from '../quartile'
 
 const a3 = [2, 4, 5]
 const a4 = [2, 4, 5, 7]
@@ -96,5 +100,43 @@ describe('getQuartileValue', () => {
         test('.75 skewness', () => {
             expect(getQuartileValue(a6, 0.75)).toBe(21.25)
         })
+    })
+})
+
+describe('getQuartileHelper', () => {
+    const data = [2, 3, 3, 5, 6, 7, 7, 8, 9, 10, 40]
+    const thresholdFactor = 1.5
+    const helper = getQuartileHelper(data, thresholdFactor)
+    console.log('HELPER:', helper)
+    console.log('getOutliers:', helper.getOutliers())
+
+    test('interquartile range', () => {
+        expect(helper.iqr).toBe(9 - 3)
+    })
+
+    test('interquartile range threshold', () => {
+        expect(helper.iqrThreshold).toBe(1.5 * (9 - 3))
+    })
+
+    test('first quartile threshold', () => {
+        expect(helper.q1Threshold).toBe(3 - (9 - 3) * 1.5)
+    })
+
+    test('third quartile threshold', () => {
+        expect(helper.q3Threshold).toBe(9 + (9 - 3) * 1.5)
+    })
+
+    test('isLowOutlier', () => {
+        expect(helper.isLowOutlier(-5)).toBe(false)
+        expect(helper.isLowOutlier(-7)).toBe(true)
+    })
+
+    test('isHighOutlier', () => {
+        expect(helper.isHighOutlier(17)).toBe(false)
+        expect(helper.isHighOutlier(19)).toBe(true)
+    })
+
+    test('getOutliers', () => {
+        expect(helper.getOutliers()).toEqual([40])
     })
 })
