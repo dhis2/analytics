@@ -584,6 +584,12 @@ msgid ""
 " for finding outliers."
 msgstr "查看某个地点或时间的两个数据项之间的关系。推荐用于发现异常值。"
 
+msgid "{{seriesName}} (trend)"
+msgstr ""
+
+msgid "Trend"
+msgstr ""
+
 msgid "No legend for this series"
 msgstr "这个系列没有图例"
 
