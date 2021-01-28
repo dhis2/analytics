@@ -603,6 +603,12 @@ msgstr ""
 "Xem mối quan hệ giữa hai mục dữ liệu tại một địa điểm hoặc thời gian. Đề "
 "xuất để tìm ra những điểm khác biệt."
 
+msgid "{{seriesName}} (trend)"
+msgstr ""
+
+msgid "Trend"
+msgstr ""
+
 msgid "No legend for this series"
 msgstr "Không có chú giải cho chuỗi này"
 
