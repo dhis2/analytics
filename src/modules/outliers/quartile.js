@@ -47,6 +47,7 @@ export const getQuartileHelper = (data, thresholdFactor = 1.5) => {
         }, [])
 
     return {
+        data,
         q1,
         q3,
         iqr,
@@ -66,7 +67,7 @@ export const getOutliersByQuartile = (
     thresholdFactor,
     config = { isSorted: false }
 ) => {
-    const sortedData = isSorted ? data : data.slice().sort()
+    const sortedData = config.isSorted ? data : data.slice().sort()
 
     const helper = getQuartileHelper(sortedData, thresholdFactor)
 
