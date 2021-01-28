@@ -12,7 +12,7 @@ export const getQuartilePosition = (data, q) => {
     }
 }
 
-export const getQuartile = (data, q = 0.25) => {
+export const getQuartileValue = (data, q = 0.25) => {
     if (data.length < 3) {
         return
     }
@@ -27,12 +27,12 @@ export const getQuartile = (data, q = 0.25) => {
     var base = Math.floor(pos)
     var diff = data[base] - data[base - 1]
 
-    return base + diff * rest
+    return data[base - 1] + diff * rest
 }
 
 export const getQuartileUtils = (data, thresholdFactor) => {
-    const q1 = getQuartile(data, 0.25)
-    const q3 = getQuartile(data, 0.75)
+    const q1 = getQuartileValue(data, 0.25)
+    const q3 = getQuartileValue(data, 0.75)
     const iqr = q3 - q1
     const iqrThreshold = iqr * thresholdFactor
     const q1Threshold = q1 - iqrThreshold
