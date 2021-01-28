@@ -1,10 +1,10 @@
-import sortBy from 'lodash/sortBy'
+// import sortBy from 'lodash/sortBy'
 
 import { onError } from './index'
 import { DATA_SETS_CONSTANTS } from '../modules/dataSets'
 import {
     ALL_ID,
-    CHART_AGGREGATE_AGGREGATABLE_TYPES,
+    // CHART_AGGREGATE_AGGREGATABLE_TYPES,
     INDICATORS,
     DATA_ELEMENTS,
     DATA_SETS,
@@ -63,21 +63,15 @@ export const dataItemsQuery = {
             filters.push(`dimensionItemType:eq:${filter.dataType}`)
         }
 
-        if (filter?.group && filter.group !== ALL_ID) {
-            switch (filter.dataType) {
-                case INDICATORS:
-                    filters.push(`indicatorGroups.id:eq:${filter.group}`)
-                    break
-                case DATA_ELEMENTS:
-                    filters.push(`dataElementGroups.id:eq:${filter.group}`)
-                    break
-                case PROGRAM_INDICATORS:
-                case PROGRAM_DATA_ELEMENT:
-                case PROGRAM_ATTRIBUTE:
-                    filters.push(`program.id:eq:${filter.group}`)
-                    break
-            }
-        }
+        // if (filter?.group && filter.group !== ALL_ID) {
+        //     switch (filter.dataType) {
+        //         case PROGRAM_INDICATORS:
+        //         case PROGRAM_DATA_ELEMENT:
+        //         case PROGRAM_ATTRIBUTE:
+        //             filters.push(`program.id:eq:${filter.group}`)
+        //             break
+        //     }
+        // }
 
         if (searchTerm) {
             filters.push(`${nameProp}:ilike:${searchTerm}`)
@@ -208,6 +202,7 @@ export const dataElementOperandsQuery = {
 export const dataSetsQuery = {
     resource: 'dataSets',
     params: ({ nameProp, filterText, page }) => {
+        // TODO: Refactor to new prop names
         const filters = []
 
         if (filterText) {
@@ -358,18 +353,23 @@ export const apiFetchOptions = ({
                 }
             }
             case DATA_SETS: {
-                return fetchDataSets({ dataEngine, ...queryParams })
+                return fetchDataSets({
+                    dataEngine,
+                    nameProp,
+                    filterText: searchTerm,
+                    page,
+                })
             }
-            case EVENT_DATA_ITEMS: {
-                return queryParams.groupId
-                    ? getEventDataItems({ dataEngine, ...queryParams })
-                    : null
-            }
-            case PROGRAM_INDICATORS: {
-                return queryParams.groupId
-                    ? fetchProgramIndicators({ dataEngine, ...queryParams })
-                    : null
-            }
+            // case EVENT_DATA_ITEMS: {
+            //     return queryParams.groupId
+            //         ? getEventDataItems({ dataEngine, ...queryParams })
+            //         : null
+            // }
+            // case PROGRAM_INDICATORS: {
+            //     return queryParams.groupId
+            //         ? fetchProgramIndicators({ dataEngine, ...queryParams })
+            //         : null
+            // }
         }
     } else {
         return fetchDataItems({
@@ -441,41 +441,41 @@ export const apiFetchGroups = async (dataEngine, dataType, nameProp) => {
     }
 }
 
-const apiFetchAlternatives = ({
-    // TODO: Remove this fn
-    dataEngine,
-    dataType,
-    groupDetail,
-    ...queryParams
-}) => {
-    switch (dataType) {
-        case 'indicators': {
-            return fetchIndicators({ dataEngine, ...queryParams })
-        }
-        case 'dataElements': {
-            if (groupDetail === 'detail') {
-                return fetchDataElementOperands({ dataEngine, ...queryParams })
-            } else {
-                return fetchDataElements({ dataEngine, ...queryParams })
-            }
-        }
-        case 'dataSets': {
-            return fetchDataSets({ dataEngine, ...queryParams })
-        }
-        case 'eventDataItems': {
-            return queryParams.groupId
-                ? getEventDataItems({ dataEngine, ...queryParams })
-                : null
-        }
-        case 'programIndicators': {
-            return queryParams.groupId
-                ? fetchProgramIndicators({ dataEngine, ...queryParams })
-                : null
-        }
-        default:
-            return null
-    }
-}
+// const apiFetchAlternatives = ({
+//     // TODO: Remove this fn
+//     dataEngine,
+//     dataType,
+//     groupDetail,
+//     ...queryParams
+// }) => {
+//     switch (dataType) {
+//         case 'indicators': {
+//             return fetchIndicators({ dataEngine, ...queryParams })
+//         }
+//         case 'dataElements': {
+//             if (groupDetail === 'detail') {
+//                 return fetchDataElementOperands({ dataEngine, ...queryParams })
+//             } else {
+//                 return fetchDataElements({ dataEngine, ...queryParams })
+//             }
+//         }
+//         case 'dataSets': {
+//             return fetchDataSets({ dataEngine, ...queryParams })
+//         }
+//         case 'eventDataItems': {
+//             return queryParams.groupId
+//                 ? getEventDataItems({ dataEngine, ...queryParams })
+//                 : null
+//         }
+//         case 'programIndicators': {
+//             return queryParams.groupId
+//                 ? fetchProgramIndicators({ dataEngine, ...queryParams })
+//                 : null
+//         }
+//         default:
+//             return null
+//     }
+// }
 
 const fetchIndicators = async ({
     dataEngine,
@@ -623,103 +623,103 @@ const fetchDataSets = async ({ dataEngine, nameProp, filterText, page }) => {
     return formatResponse(response.dataSets, response.pager)
 }
 
-const fetchProgramIndicators = async ({
-    dataEngine,
-    nameProp,
-    groupId,
-    filterText,
-    page,
-}) => {
-    const programIndicatorsData = await dataEngine.query(
-        { programIndicators: programIndicatorsQuery },
-        {
-            variables: {
-                nameProp,
-                groupId,
-                filterText,
-                page,
-            },
-            onError,
-        }
-    )
+// const fetchProgramIndicators = async ({
+//     dataEngine,
+//     nameProp,
+//     groupId,
+//     filterText,
+//     page,
+// }) => {
+//     const programIndicatorsData = await dataEngine.query(
+//         { programIndicators: programIndicatorsQuery },
+//         {
+//             variables: {
+//                 nameProp,
+//                 groupId,
+//                 filterText,
+//                 page,
+//             },
+//             onError,
+//         }
+//     )
 
-    const response = programIndicatorsData.programIndicators
+//     const response = programIndicatorsData.programIndicators
 
-    return formatResponse(response.programIndicators, response.pager)
-}
+//     return formatResponse(response.programIndicators, response.pager)
+// }
 
-const fetchProgramDataElements = async ({
-    dataEngine,
-    nameProp,
-    groupId,
-    filterText,
-    page,
-}) => {
-    const programDataElementsData = await dataEngine.query(
-        { programDataElements: programDataElementsQuery },
-        {
-            variables: {
-                nameProp,
-                groupId,
-                filterText,
-                page,
-            },
-            onError,
-        }
-    )
+// const fetchProgramDataElements = async ({
+//     dataEngine,
+//     nameProp,
+//     groupId,
+//     filterText,
+//     page,
+// }) => {
+//     const programDataElementsData = await dataEngine.query(
+//         { programDataElements: programDataElementsQuery },
+//         {
+//             variables: {
+//                 nameProp,
+//                 groupId,
+//                 filterText,
+//                 page,
+//             },
+//             onError,
+//         }
+//     )
 
-    const response = programDataElementsData.programDataElements
+//     const response = programDataElementsData.programDataElements
 
-    return formatResponse(response.programDataElements, response.pager)
-}
+//     return formatResponse(response.programDataElements, response.pager)
+// }
 
-const fetchTrackedEntityAttributes = async ({
-    dataEngine,
-    nameProp,
-    groupId,
-    filterText,
-}) => {
-    const trackedEntityAttributesData = await dataEngine.query(
-        { trackedEntityAttributes: trackedEntityAttributesQuery },
-        {
-            variables: {
-                nameProp,
-                id: groupId,
-                filterText,
-            },
-            onError,
-        }
-    )
+// const fetchTrackedEntityAttributes = async ({
+//     dataEngine,
+//     nameProp,
+//     groupId,
+//     filterText,
+// }) => {
+//     const trackedEntityAttributesData = await dataEngine.query(
+//         { trackedEntityAttributes: trackedEntityAttributesQuery },
+//         {
+//             variables: {
+//                 nameProp,
+//                 id: groupId,
+//                 filterText,
+//             },
+//             onError,
+//         }
+//     )
 
-    const r = trackedEntityAttributesData.trackedEntityAttributes
+//     const r = trackedEntityAttributesData.trackedEntityAttributes
 
-    return Array.isArray(r.programTrackedEntityAttributes)
-        ? r.programTrackedEntityAttributes
-              .map(a => a.trackedEntityAttribute)
-              .map(a => ({
-                  ...a,
-                  id: `${groupId}.${a.id}`,
-                  name: `${r.name} ${a.name}`,
-              }))
-        : []
-}
+//     return Array.isArray(r.programTrackedEntityAttributes)
+//         ? r.programTrackedEntityAttributes
+//               .map(a => a.trackedEntityAttribute)
+//               .map(a => ({
+//                   ...a,
+//                   id: `${groupId}.${a.id}`,
+//                   name: `${r.name} ${a.name}`,
+//               }))
+//         : []
+// }
 
-const getEventDataItems = async args => {
-    const [dataElementsObj, attributes] = await Promise.all([
-        fetchProgramDataElements(args),
-        fetchTrackedEntityAttributes(args),
-    ])
+// const getEventDataItems = async args => {
+//     const [dataElementsObj, attributes] = await Promise.all([
+//         fetchProgramDataElements(args),
+//         fetchTrackedEntityAttributes(args),
+//     ])
 
-    const filterInvalidTypes = item =>
-        Boolean(CHART_AGGREGATE_AGGREGATABLE_TYPES.includes(item.valueType))
+//     const filterInvalidTypes = item =>
+//         Boolean(CHART_AGGREGATE_AGGREGATABLE_TYPES.includes(item.valueType))
 
-    return {
-        ...dataElementsObj,
-        dimensionItems: sortBy(
-            [...dataElementsObj.dimensionItems, ...attributes].filter(
-                filterInvalidTypes
-            ),
-            'name'
-        ),
-    }
-}
+//     return {
+//         ...dataElementsObj,
+//         dimensionItems: sortBy(
+//             [...dataElementsObj.dimensionItems, ...attributes].filter(
+//                 filterInvalidTypes
+//             ),
+//             'name'
+//         ),
+//     }
+// }
