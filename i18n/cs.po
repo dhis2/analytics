@@ -601,6 +601,12 @@ msgstr ""
 "Zobrazte vztah mezi dvěma datovými položkami v určitém místě nebo čase. "
 "Doporučeno pro hledání odlehlých hodnot."
 
+msgid "{{seriesName}} (trend)"
+msgstr ""
+
+msgid "Trend"
+msgstr "Trend"
+
 msgid "No legend for this series"
 msgstr "Pro tuto sérii není legenda"
 

@@ -587,6 +587,12 @@ msgid ""
 " for finding outliers."
 msgstr ""
 
+msgid "{{seriesName}} (trend)"
+msgstr ""
+
+msgid "Trend"
+msgstr ""
+
 msgid "No legend for this series"
 msgstr "Отсутвует легенда для этого ряда"
 
