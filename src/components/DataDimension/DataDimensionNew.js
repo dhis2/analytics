@@ -8,7 +8,7 @@ const DataDimension = ({
     onSelect,
     selectedItems,
     displayNameProp,
-    //infoBoxMessage, // TODO: Implement
+    infoBoxMessage,
 }) => {
     const onSelectItems = selectedItem =>
         onSelect({
@@ -27,6 +27,7 @@ const DataDimension = ({
             }))}
             onSelect={onSelectItems}
             displayNameProp={displayNameProp}
+            infoBoxMessage={infoBoxMessage}
         />
     )
 }
@@ -40,7 +41,7 @@ DataDimension.propTypes = {
         })
     ).isRequired,
     onSelect: PropTypes.func.isRequired,
-    //infoBoxMessage: PropTypes.string,
+    infoBoxMessage: PropTypes.string,
 }
 
 DataDimension.defaultProps = {

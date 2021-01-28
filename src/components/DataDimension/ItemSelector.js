@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react'
 import PropTypes from 'prop-types'
-import { Transfer, InputField } from '@dhis2/ui'
+import { Transfer, InputField, IconInfo16 } from '@dhis2/ui'
 import i18n from '@dhis2/d2-i18n'
 import { useDataEngine } from '@dhis2/app-runtime'
 
@@ -93,12 +93,23 @@ const EmptySelection = () => (
         <style jsx>{styles}</style>
     </>
 )
-const RightHeader = () => (
+const RightHeader = ({ infoText }) => (
     <>
         <p className="rightHeader">{i18n.t('Selected Items')}</p>
+        {infoText && (
+            <div className="info-container">
+                <div>
+                    <IconInfo16 />
+                </div>
+                <span className="info-text">{infoText}</span>
+            </div>
+        )}
         <style jsx>{styles}</style>
     </>
 )
+RightHeader.propTypes = {
+    infoText: PropTypes.string,
+}
 const SourceEmptyPlaceholder = ({
     loading,
     searchTerm,
@@ -136,6 +147,7 @@ const ItemSelector = ({
     onSelect,
     rightFooter,
     displayNameProp,
+    infoBoxMessage,
 }) => {
     const [state, setState] = useState({
         searchTerm: '',
@@ -243,7 +255,7 @@ const ItemSelector = ({
             optionsWidth={TRANSFER_OPTIONS_WIDTH}
             selectedWidth={TRANSFER_SELECTED_WIDTH}
             selectedEmptyComponent={<EmptySelection />}
-            rightHeader={<RightHeader />}
+            rightHeader={<RightHeader infoText={infoBoxMessage} />}
             rightFooter={rightFooter}
             renderOption={props => (
                 <TransferOption {...props} icon={GenericIcon} />
@@ -255,6 +267,7 @@ const ItemSelector = ({
 ItemSelector.propTypes = {
     displayNameProp: PropTypes.string.isRequired,
     onSelect: PropTypes.func.isRequired,
+    infoBoxMessage: PropTypes.string,
     initialSelected: PropTypes.arrayOf(
         PropTypes.exact({
             label: PropTypes.string.isRequired,
