@@ -6,7 +6,7 @@ import { DIMENSION_ID_DATA } from '../../modules/predefinedDimensions'
 
 const DataDimension = ({
     onSelect,
-    selectedItems,
+    selectedDimensions,
     displayNameProp,
     infoBoxMessage,
 }) => {
@@ -21,20 +21,22 @@ const DataDimension = ({
 
     return (
         <ItemSelector
-            initialSelected={selectedItems.map(item => ({
+            selectedItems={selectedDimensions.map(item => ({
                 value: item.id,
                 label: item.name,
+                isActive: item.isActive,
             }))}
             onSelect={onSelectItems}
             displayNameProp={displayNameProp}
             infoBoxMessage={infoBoxMessage}
+            dataTest={'data-dimension'}
         />
     )
 }
 
 DataDimension.propTypes = {
     displayNameProp: PropTypes.string.isRequired,
-    selectedItems: PropTypes.arrayOf(
+    selectedDimensions: PropTypes.arrayOf(
         PropTypes.shape({
             id: PropTypes.string,
             name: PropTypes.string,
@@ -45,7 +47,7 @@ DataDimension.propTypes = {
 }
 
 DataDimension.defaultProps = {
-    selectedItems: [],
+    selectedDimensions: [],
     onSelect: Function.prototype,
 }
 

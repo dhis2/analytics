@@ -49,6 +49,10 @@ export default css`
         cursor: not-allowed;
     }
 
+    .inactive {
+        opacity: 0.3;
+    }
+
     .icon,
     .label {
         line-height: 18px;

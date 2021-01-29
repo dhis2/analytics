@@ -142,16 +142,16 @@ SourceEmptyPlaceholder.propTypes = {
 }
 
 const ItemSelector = ({
-    initialSelected,
+    selectedItems,
     noItemsMessage,
     onSelect,
     rightFooter,
     displayNameProp,
     infoBoxMessage,
+    dataTest,
 }) => {
     const [state, setState] = useState({
         searchTerm: '',
-        selected: initialSelected,
         filter: {
             dataType: ALL_ID,
         },
@@ -163,7 +163,6 @@ const ItemSelector = ({
     const setSearchTerm = searchTerm =>
         setState(state => ({ ...state, searchTerm }))
     const setFilter = filter => setState(state => ({ ...state, filter }))
-    const setSelected = selected => setState(state => ({ ...state, selected }))
     const debouncedSearchTerm = useDebounce(state.searchTerm, 200)
     const fetchItems = async page => {
         setState(state => ({ ...state, loading: true }))
@@ -191,29 +190,29 @@ const ItemSelector = ({
     useEffect(() => {
         fetchItems(1)
     }, [debouncedSearchTerm, state.filter])
-    const onChange = useCallback(
-        newSelected => {
-            const newSelectedWithLabel = newSelected.map(value => ({
-                value,
-                label: [...state.options, ...state.selected].find(
-                    item => item.value === value
-                ).label,
-            }))
-            setSelected(newSelectedWithLabel)
-            onSelect(newSelectedWithLabel)
-        },
-        [state.options, state.selected]
-    )
+    const onChange = newSelected => {
+        const newSelectedWithLabel = newSelected.map(value => ({
+            value,
+            label: [...state.options, ...selectedItems].find(
+                item => item.value === value
+            ).label,
+        }))
+        onSelect(newSelectedWithLabel)
+    }
     const onEndReached = useCallback(() => {
         if (state.nextPage) {
             fetchItems(state.nextPage)
         }
     }, [state.nextPage])
+    const isActive = value => {
+        const item = selectedItems.find(item => item.value === value)
+        return !item || item.isActive
+    }
     return (
         <Transfer
             onChange={({ selected }) => onChange(selected)}
-            selected={state.selected.map(item => item.value)}
-            options={[...state.options, ...state.selected]}
+            selected={selectedItems.map(item => item.value)}
+            options={[...state.options, ...selectedItems]}
             loading={state.loading}
             loadingPicked={state.loading}
             sourceEmptyPlaceholder={
@@ -258,8 +257,15 @@ const ItemSelector = ({
             rightHeader={<RightHeader infoText={infoBoxMessage} />}
             rightFooter={rightFooter}
             renderOption={props => (
-                <TransferOption {...props} icon={GenericIcon} />
+                <TransferOption
+                    {...props}
+                    active={isActive(
+                        props.value /* eslint-disable-line react/prop-types */
+                    )}
+                    icon={GenericIcon}
+                />
             )}
+            dataTest={`${dataTest}-transfer`}
         />
     )
 }
@@ -267,19 +273,21 @@ const ItemSelector = ({
 ItemSelector.propTypes = {
     displayNameProp: PropTypes.string.isRequired,
     onSelect: PropTypes.func.isRequired,
+    dataTest: PropTypes.string,
     infoBoxMessage: PropTypes.string,
-    initialSelected: PropTypes.arrayOf(
+    noItemsMessage: PropTypes.string,
+    rightFooter: PropTypes.node,
+    selectedItems: PropTypes.arrayOf(
         PropTypes.exact({
             label: PropTypes.string.isRequired,
             value: PropTypes.string.isRequired,
+            isActive: PropTypes.bool,
         })
     ),
-    noItemsMessage: PropTypes.string,
-    rightFooter: PropTypes.node,
 }
 
 ItemSelector.defaultProps = {
-    initialSelected: [],
+    selectedItems: [],
 }
 
 export default ItemSelector

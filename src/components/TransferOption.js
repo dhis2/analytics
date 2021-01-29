@@ -13,11 +13,17 @@ export const TransferOption = ({
     onDoubleClick,
     value,
     icon,
+    active,
 }) => {
     return (
         <div data-value={value} className="wrapper">
             <div
-                className={cx('chip', { highlighted, disabled, selected })}
+                className={cx('chip', {
+                    highlighted,
+                    disabled,
+                    selected,
+                    inactive: active !== undefined && !active,
+                })}
                 onClick={event => {
                     if (disabled) return
                     onClick({ label, value }, event)
@@ -39,6 +45,7 @@ export const TransferOption = ({
 TransferOption.propTypes = {
     label: propTypes.string.isRequired,
     value: propTypes.string.isRequired,
+    active: propTypes.bool,
     disabled: propTypes.bool,
     highlighted: propTypes.bool,
     icon: propTypes.node,
