@@ -1,14 +1,18 @@
-import { getOutliersByQuartile } from './quartile'
+import { getStdDevHelper } from './stdDev'
+import { getQuartileHelper } from './quartile'
 
 const QUARTILE = 'QUARTILE'
+const STDDEV = 'STDDEV'
 
-export const getOutliers = (
+export const getOutlierHelper = (
     data,
     config = { method: 'QUARTILE', thresholdFactor: 1.5 }
 ) => {
     switch (method) {
+        case STDDEV:
+            return getStdDevHelper(data, config)
         case QUARTILE:
         default:
-            return getOutliersByQuartile(data, config)
+            return getQuartileHelper(data, config)
     }
 }
