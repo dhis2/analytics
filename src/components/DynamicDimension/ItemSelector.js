@@ -62,7 +62,7 @@ const SourceEmptyPlaceholder = ({
 }) => {
     let message = ''
     if (!loading && !options.length && !filter) {
-        message = noItemsMessage
+        message = noItemsMessage || i18n.t('No data')
     } else if (!loading && !options.length && filter) {
         message = i18n.t('Nothing found for {{searchTerm}}', {
             searchTerm: filter,
@@ -95,6 +95,8 @@ const ItemSelector = ({
     const [state, setState] = useState({
         filter: '',
         selected: initialSelected,
+        // FIXME: keeping selected in state is redundant, use the initialSelected prop directly instead
+        // The useCallback from onChange should be removed in favor of a regular fn as well
         options: [],
         loading: true,
         nextPage: null,
