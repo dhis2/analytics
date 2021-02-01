@@ -53,6 +53,7 @@ const LeftHeader = ({
                 placeholder={i18n.t('Search by data item name or id')}
                 dataTest={'data-dimension-filter-input-field'}
                 dense
+                initialFocus
             />
             <DataTypes
                 currentDataType={dataType}

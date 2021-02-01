@@ -5,16 +5,13 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2021-01-26T16:10:57.174Z\n"
-"PO-Revision-Date: 2021-01-26T16:10:57.174Z\n"
+"POT-Creation-Date: 2021-02-01T08:01:15.751Z\n"
+"PO-Revision-Date: 2021-02-01T08:01:15.751Z\n"
 
 msgid "Data Type"
 msgstr ""
 
 msgid "All types"
-msgstr ""
-
-msgid "Totals & Details"
 msgstr ""
 
 msgid "Totals only"
@@ -33,6 +30,9 @@ msgid "No items selected"
 msgstr ""
 
 msgid "Selected Items"
+msgstr ""
+
+msgid "No data"
 msgstr ""
 
 msgid "Nothing found for {{searchTerm}}"
@@ -606,9 +606,6 @@ msgid "Base"
 msgstr ""
 
 msgid "Axis {{axisId}}"
-msgstr ""
-
-msgid "No data"
 msgstr ""
 
 msgid "Reset zoom"

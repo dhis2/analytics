@@ -31,6 +31,7 @@ const LeftHeader = ({ filter, setFilter }) => (
                 value={filter}
                 onChange={({ value }) => setFilter(value)}
                 placeholder={i18n.t('Search')}
+                initialFocus
             />
         </div>
         <style jsx>{styles}</style>
