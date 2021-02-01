@@ -18,9 +18,11 @@ import {
     ALL_ID,
     dataTypes,
     DATA_ELEMENTS,
+    DATA_SETS,
     TOTALS,
 } from '../../modules/dataTypes'
 import { apiFetchOptions } from '../../api/dimensions'
+import { DATA_SETS_CONSTANTS, REPORTING_RATE } from '../../modules/dataSets'
 
 const useDebounce = (value, delay) => {
     const [debouncedValue, setDebouncedValue] = useState(value)
@@ -174,13 +176,38 @@ const ItemSelector = ({
             filter: state.filter,
             searchTerm: state.searchTerm,
         })
-        const newOptions = result.dimensionItems?.map(
-            ({ id, name, disabled }) => ({
-                label: name,
-                value: id,
-                disabled,
-            })
-        )
+        const newOptions = []
+        result.dimensionItems?.forEach(item => {
+            if (
+                state.filter.dataType === DATA_SETS ||
+                item.dimensionItemType === REPORTING_RATE
+            ) {
+                if (state.filter.subGroup && state.filter.subGroup !== ALL_ID) {
+                    const metric = DATA_SETS_CONSTANTS.find(
+                        item => item.id === state.filter.subGroup
+                    )
+                    newOptions.push({
+                        label: `${item.name} - ${metric.getName()}`,
+                        value: `${item.id}.${metric.id}`,
+                        disabled: item.disabled,
+                    })
+                } else {
+                    DATA_SETS_CONSTANTS.forEach(metric => {
+                        newOptions.push({
+                            label: `${item.name} - ${metric.getName()}`,
+                            value: `${item.id}.${metric.id}`,
+                            disabled: item.disabled,
+                        })
+                    })
+                }
+            } else {
+                newOptions.push({
+                    label: item.name,
+                    value: item.id,
+                    disabled: item.disabled,
+                })
+            }
+        })
         setState(state => ({
             ...state,
             loading: false,

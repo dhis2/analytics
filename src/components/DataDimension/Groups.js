@@ -91,12 +91,12 @@ const Groups = ({
 }
 
 Groups.propTypes = {
-    currentSubGroup: PropTypes.string.isRequired,
     dataType: PropTypes.string.isRequired,
     displayNameProp: PropTypes.string.isRequired,
     onGroupChange: PropTypes.func.isRequired,
     onSubGroupChange: PropTypes.func.isRequired,
     currentGroup: PropTypes.string,
+    currentSubGroup: PropTypes.string,
     dataTest: PropTypes.string,
 }
 

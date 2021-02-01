@@ -55,6 +55,7 @@ export const dataTypes = {
         getName: () => i18n.t('Data sets'),
         getGroupLabel: () => i18n.t('Data set'),
         defaultGroup: { id: ALL_ID, getName: () => i18n.t('All data sets') },
+        // TODO: augmentAlternatives is unused?
         augmentAlternatives: (alternatives, groupId) =>
             getReportingRates(alternatives, groupId),
         subGroup: SUB_GROUP_METRIC,

@@ -35,8 +35,8 @@ export const Metric = ({ currentValue, onChange }) => {
 }
 
 Metric.propTypes = {
-    currentValue: PropTypes.string.isRequired,
     onChange: PropTypes.func.isRequired,
+    currentValue: PropTypes.string,
 }
 
 export default Metric

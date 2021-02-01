@@ -1,7 +1,6 @@
 // import sortBy from 'lodash/sortBy'
 
 import { onError } from './index'
-import { DATA_SETS_CONSTANTS } from '../modules/dataSets'
 import {
     ALL_ID,
     // CHART_AGGREGATE_AGGREGATABLE_TYPES,
@@ -201,7 +200,7 @@ export const dataElementOperandsQuery = {
 
 export const dataSetsQuery = {
     resource: 'dataSets',
-    params: ({ nameProp, filterText, page }) => {
+    params: ({ nameProp, filterText, id, page }) => {
         // TODO: Refactor to new prop names
         const filters = []
 
@@ -209,13 +208,22 @@ export const dataSetsQuery = {
             filters.push(`${nameProp}:ilike:${filterText}`)
         }
 
-        return {
+        if (id && id !== ALL_ID) {
+            filters.push(`id:eq:${id}`)
+        }
+
+        const query = {
             fields: `dimensionItem~rename(id),${nameProp}~rename(name)`,
             order: `${nameProp}:asc`,
             filter: filters,
-            paging: true,
-            page,
         }
+
+        if (page) {
+            query.page = page
+            query.paging = true
+        } else query.paging = false
+
+        return query
     },
 }
 
@@ -356,6 +364,7 @@ export const apiFetchOptions = ({
                 return fetchDataSets({
                     dataEngine,
                     nameProp,
+                    id: filter.group,
                     filterText: searchTerm,
                     page,
                 })
@@ -414,13 +423,16 @@ export const apiFetchGroups = async (dataEngine, dataType, nameProp) => {
             return dataElementGroupsData.dataElementGroups.dataElementGroups
         }
         case DATA_SETS: {
-            const dataSetGroups = DATA_SETS_CONSTANTS.map(
-                ({ id, getName }) => ({
-                    id,
-                    name: getName(),
-                })
+            const response = await dataEngine.query(
+                { data: dataSetsQuery },
+                {
+                    variables: {
+                        nameProp: name,
+                    },
+                    onError,
+                }
             )
-            return dataSetGroups
+            return response.data.dataSets
         }
         case EVENT_DATA_ITEMS:
         case PROGRAM_INDICATORS: {
@@ -605,13 +617,20 @@ const fetchDataElementOperands = async ({
     return formatResponse(response.dataElementOperands, response.pager)
 }
 
-const fetchDataSets = async ({ dataEngine, nameProp, filterText, page }) => {
+const fetchDataSets = async ({
+    dataEngine,
+    nameProp,
+    filterText,
+    id,
+    page,
+}) => {
     const dataSetsData = await dataEngine.query(
         { dataSets: dataSetsQuery },
         {
             variables: {
                 nameProp,
                 filterText,
+                id,
                 page,
             },
             onError,

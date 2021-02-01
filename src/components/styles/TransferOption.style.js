@@ -11,8 +11,7 @@ export default css`
         font-size: 14px;
         line-height: 16px;
         padding: 2px ${spacers.dp8} 2px ${spacers.dp4};
-        margin-top: ${spacers.dp4};
-        margin-left: ${spacers.dp8};
+        margin: ${spacers.dp4} ${spacers.dp8} 0 ${spacers.dp8};
         border-radius: 3px;
         user-select: none;
     }
