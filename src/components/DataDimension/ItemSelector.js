@@ -187,14 +187,14 @@ const ItemSelector = ({
                         item => item.id === state.filter.subGroup
                     )
                     newOptions.push({
-                        label: `${item.name} - ${metric.getName()}`,
+                        label: `${item.name} – ${metric.getName()}`,
                         value: `${item.id}.${metric.id}`,
                         disabled: item.disabled,
                     })
                 } else {
                     DATA_SETS_CONSTANTS.forEach(metric => {
                         newOptions.push({
-                            label: `${item.name} - ${metric.getName()}`,
+                            label: `${item.name} – ${metric.getName()}`,
                             value: `${item.id}.${metric.id}`,
                             disabled: item.disabled,
                         })
