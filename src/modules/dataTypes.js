@@ -23,6 +23,7 @@ export const EVENT_DATA_ITEMS = 'EVENT_DATA_ITEM'
 export const PROGRAM_INDICATORS = 'PROGRAM_INDICATOR'
 export const PROGRAM_DATA_ELEMENT = 'PROGRAM_DATA_ELEMENT'
 export const PROGRAM_ATTRIBUTE = 'PROGRAM_ATTRIBUTE'
+export const DATA_ELEMENT_OPERAND = 'DATA_ELEMENT_OPERAND'
 
 export const TOTALS = 'totals'
 export const DETAIL = 'detail'
@@ -39,6 +40,7 @@ export const dataTypes = {
         getName: () => i18n.t('Indicators'),
         getGroupLabel: () => i18n.t('Indicator group'),
         defaultGroup: { id: ALL_ID, getName: () => i18n.t('All groups') },
+        getItemName: () => i18n.t('Indicator'),
     },
     [DATA_ELEMENTS]: {
         id: DATA_ELEMENTS,
@@ -49,6 +51,7 @@ export const dataTypes = {
             getName: () => i18n.t('All groups'),
         },
         subGroup: SUB_GROUP_DETAIL,
+        getItemName: () => i18n.t('Data element'),
     },
     [DATA_SETS]: {
         id: DATA_SETS,
@@ -59,6 +62,7 @@ export const dataTypes = {
         augmentAlternatives: (alternatives, groupId) =>
             getReportingRates(alternatives, groupId),
         subGroup: SUB_GROUP_METRIC,
+        getItemName: () => i18n.t('Data set'),
     },
     [EVENT_DATA_ITEMS]: {
         id: EVENT_DATA_ITEMS,
@@ -66,6 +70,7 @@ export const dataTypes = {
         getGroupLabel: getProgramText,
         getPlaceholder: getSelectProgramText,
         defaultGroup: { id: ALL_ID, getName: () => i18n.t('All programs') },
+        getItemName: () => i18n.t('Event data item'),
     },
     [PROGRAM_INDICATORS]: {
         id: PROGRAM_INDICATORS,
@@ -73,6 +78,7 @@ export const dataTypes = {
         getGroupLabel: getProgramText,
         getPlaceholder: getSelectProgramText,
         defaultGroup: { id: ALL_ID, getName: () => i18n.t('All programs') },
+        getItemName: () => i18n.t('Program indicator'),
     },
 }
 

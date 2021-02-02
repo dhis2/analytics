@@ -18,6 +18,8 @@ import {
     ALL_ID,
     dataTypes,
     DATA_ELEMENTS,
+    DATA_ELEMENT_OPERAND,
+    DATA_SETS,
     TOTALS,
 } from '../../modules/dataTypes'
 import { apiFetchOptions } from '../../api/dimensions'
@@ -242,6 +244,16 @@ const ItemSelector = ({
     }
     const getItemType = value =>
         state.options.find(item => item.value === value)?.type
+    const getTooltipText = itemType => {
+        switch (itemType) {
+            case DATA_ELEMENT_OPERAND:
+                return dataTypes[DATA_ELEMENTS].getItemName()
+            case REPORTING_RATE:
+                return dataTypes[DATA_SETS].getItemName()
+            default:
+                return dataTypes[itemType]?.getItemName()
+        }
+    }
     return (
         <Transfer
             onChange={({ selected }) => onChange(selected)}
@@ -297,8 +309,10 @@ const ItemSelector = ({
                         props.value /* eslint-disable-line react/prop-types */
                     )}
                     icon={GenericIcon}
-                    tooltipText={getItemType(
-                        props.value /* eslint-disable-line react/prop-types */
+                    tooltipText={getTooltipText(
+                        getItemType(
+                            props.value /* eslint-disable-line react/prop-types */
+                        )
                     )}
                 />
             )}
