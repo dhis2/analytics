@@ -4,7 +4,7 @@ import { shallow } from 'enzyme'
 import FavoritesDialog from '@dhis2/d2-ui-favorites-dialog'
 import TranslationDialog from '@dhis2/d2-ui-translation-dialog'
 import SharingDialog from '@dhis2/d2-ui-sharing-dialog'
-import { Popover } from '@dhis2/ui'
+import { Popper } from '@dhis2/ui'
 
 import { FileMenu } from '../FileMenu'
 import { RenameDialog } from '../RenameDialog'
@@ -55,11 +55,11 @@ describe('The FileMenu component ', () => {
         expect(getFileMenuComponent(props).find('button')).toHaveLength(1)
     })
 
-    it('renders a Popover when the button is clicked', () => {
+    it('renders a Popper when the button is clicked', () => {
         const fileMenuComponent = getFileMenuComponent(props)
         fileMenuComponent.find('button').simulate('click')
 
-        expect(fileMenuComponent.find(Popover)).toHaveLength(1)
+        expect(fileMenuComponent.find(Popper)).toHaveLength(1)
     })
 
     it('renders some enabled buttons regardless of the access settings', () => {
@@ -322,7 +322,7 @@ describe('The FileMenu component ', () => {
             .findWhere(n => n.prop('label') === 'Save')
             .simulate('click')
 
-        expect(fileMenuComponent.find(Popover).exists()).toBe(false)
+        expect(fileMenuComponent.find(Popper).exists()).toBe(false)
         expect(onSave).toHaveBeenCalled()
     })
 
@@ -334,7 +334,7 @@ describe('The FileMenu component ', () => {
             .findWhere(n => n.prop('label') === 'New')
             .simulate('click')
 
-        expect(fileMenuComponent.find(Popover).exists()).toBe(false)
+        expect(fileMenuComponent.find(Popper).exists()).toBe(false)
         expect(onNew).toHaveBeenCalled()
     })
 })
