@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-01-19T14:22:01.500Z\n"
+"POT-Creation-Date: 2021-01-25T09:08:51.790Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: phil_dhis2, 2021\n"
 "Language-Team: Persian (Afghanistan) (https://www.transifex.com/hisp-uio/teams/100509/fa_AF/)\n"
@@ -70,6 +70,69 @@ msgid "Selected Items"
 msgstr ""
 
 msgid "Nothing found for {{searchTerm}}"
+msgstr ""
+
+msgid "Delete {{fileType}}"
+msgstr ""
+
+msgid "This {{fileType}} will be deleted. Continue?"
+msgstr ""
+
+msgid "Cancel"
+msgstr ""
+
+msgid "Delete"
+msgstr ""
+
+msgid "File"
+msgstr ""
+
+msgid "New"
+msgstr ""
+
+msgid "Open…"
+msgstr ""
+
+msgid "Save"
+msgstr ""
+
+msgid "Save…"
+msgstr ""
+
+msgid "Save as…"
+msgstr ""
+
+msgid "Rename…"
+msgstr ""
+
+msgid "Translate…"
+msgstr ""
+
+msgid "Share…"
+msgstr ""
+
+msgid "Get link…"
+msgstr ""
+
+msgid "Open in this app"
+msgstr ""
+
+msgid "Close"
+msgstr ""
+
+msgid "Rename {{fileType}}"
+msgstr ""
+
+msgid "Name"
+msgstr ""
+
+msgid "Description"
+msgstr ""
+
+msgid "Rename"
+msgstr ""
+
+msgid "Save {{fileType}} as"
 msgstr ""
 
 msgid "Selected Data"
