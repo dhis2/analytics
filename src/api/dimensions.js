@@ -50,7 +50,7 @@ export const dataItemsQuery = {
         const filters = []
 
         if (!filter?.dataType || filter.dataType === ALL_ID) {
-            // TODO: Specifing a filter when no filter is used is a temporary fix as providing no dimensionItemType will currently return DATA_ELEMENT_OPERAND and other unwanted types
+            // TODO: Specifing a filter when no filter is used is a temporary fix as providing no dimensionItemType will currently return duplicates of DATA_ELEMENT_OPERAND and other unwanted types
             filters.push(
                 `dimensionItemType:in:[${INDICATORS},${DATA_ELEMENTS},${DATA_SETS},${PROGRAM_INDICATORS},${PROGRAM_DATA_ELEMENT},${PROGRAM_ATTRIBUTE}]`
             )
@@ -135,7 +135,7 @@ export const dataElementsQuery = {
         }
 
         return {
-            fields: `${idField},${nameProp}~rename(name)`,
+            fields: `${idField},${nameProp}~rename(name),dimensionItemType`,
             order: `${nameProp}:asc`,
             filter: filters,
             paging: true,
@@ -189,7 +189,7 @@ export const dataElementOperandsQuery = {
         }
 
         return {
-            fields: `${idField},${nameProp}~rename(name)`,
+            fields: `${idField},${nameProp}~rename(name),dimensionItemType`,
             order: `${nameProp}:asc`,
             filter: filters,
             paging: true,
@@ -213,7 +213,7 @@ export const dataSetsQuery = {
         }
 
         const query = {
-            fields: `dimensionItem~rename(id),${nameProp}~rename(name)`,
+            fields: `dimensionItem~rename(id),${nameProp}~rename(name),dimensionItemType`,
             order: `${nameProp}:asc`,
             filter: filters,
         }

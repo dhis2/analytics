@@ -178,10 +178,7 @@ const ItemSelector = ({
         })
         const newOptions = []
         result.dimensionItems?.forEach(item => {
-            if (
-                state.filter.dataType === DATA_SETS ||
-                item.dimensionItemType === REPORTING_RATE
-            ) {
+            if (item.dimensionItemType === REPORTING_RATE) {
                 if (state.filter.subGroup && state.filter.subGroup !== ALL_ID) {
                     const metric = DATA_SETS_CONSTANTS.find(
                         item => item.id === state.filter.subGroup
@@ -190,6 +187,7 @@ const ItemSelector = ({
                         label: `${item.name} – ${metric.getName()}`,
                         value: `${item.id}.${metric.id}`,
                         disabled: item.disabled,
+                        type: item.dimensionItemType,
                     })
                 } else {
                     DATA_SETS_CONSTANTS.forEach(metric => {
@@ -197,6 +195,7 @@ const ItemSelector = ({
                             label: `${item.name} – ${metric.getName()}`,
                             value: `${item.id}.${metric.id}`,
                             disabled: item.disabled,
+                            type: item.dimensionItemType,
                         })
                     })
                 }
@@ -205,6 +204,7 @@ const ItemSelector = ({
                     label: item.name,
                     value: item.id,
                     disabled: item.disabled,
+                    type: item.dimensionItemType,
                 })
             }
         })
@@ -219,13 +219,18 @@ const ItemSelector = ({
         fetchItems(1)
     }, [debouncedSearchTerm, state.filter])
     const onChange = newSelected => {
-        const newSelectedWithLabel = newSelected.map(value => ({
-            value,
-            label: [...state.options, ...selectedItems].find(
-                item => item.value === value
-            ).label,
-        }))
-        onSelect(newSelectedWithLabel)
+        onSelect(
+            newSelected.map(value => {
+                const matchingItem = [...state.options, ...selectedItems].find(
+                    item => item.value === value
+                )
+                return {
+                    value,
+                    label: matchingItem.label,
+                    type: matchingItem.type,
+                }
+            })
+        )
     }
     const onEndReached = useCallback(() => {
         if (state.nextPage) {
@@ -236,6 +241,8 @@ const ItemSelector = ({
         const item = selectedItems.find(item => item.value === value)
         return !item || item.isActive
     }
+    const getItemType = value =>
+        state.options.find(item => item.value === value)?.type
     return (
         <Transfer
             onChange={({ selected }) => onChange(selected)}
@@ -291,6 +298,9 @@ const ItemSelector = ({
                         props.value /* eslint-disable-line react/prop-types */
                     )}
                     icon={GenericIcon}
+                    tooltipText={getItemType(
+                        props.value /* eslint-disable-line react/prop-types */
+                    )}
                 />
             )}
             dataTest={`${dataTest}-transfer`}
