@@ -20,6 +20,8 @@ export { default as DimensionMenu } from './components/DimensionMenu'
 
 export { default as PivotTable } from './components/PivotTable/PivotTable'
 
+export { default as FileMenu } from './components/FileMenu/FileMenu'
+
 // Api
 
 export { default as Analytics } from './api/analytics/Analytics'
