@@ -18,7 +18,6 @@ import {
     ALL_ID,
     dataTypes,
     DATA_ELEMENTS,
-    DATA_SETS,
     TOTALS,
 } from '../../modules/dataTypes'
 import { apiFetchOptions } from '../../api/dimensions'
