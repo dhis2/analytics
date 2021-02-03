@@ -30,12 +30,11 @@ export const DeleteDialog = ({ type, id, onClose, onDelete, onError }) => {
         },
         onComplete: () => {
             onDelete()
-            onClose()
         },
     })
 
     return (
-        <Modal onClose={onClose}>
+        <Modal onClose={onClose} dataTest="file-menu-delete-modal">
             <ModalTitle>
                 {i18n.t('Delete {{fileType}}', { fileType: type })}
             </ModalTitle>
@@ -46,10 +45,18 @@ export const DeleteDialog = ({ type, id, onClose, onDelete, onError }) => {
             </ModalContent>
             <ModalActions>
                 <ButtonStrip>
-                    <Button onClick={onClose} secondary>
+                    <Button
+                        onClick={onClose}
+                        secondary
+                        dataTest="file-menu-delete-modal-cancel"
+                    >
                         {i18n.t('Cancel')}
                     </Button>
-                    <Button onClick={mutate} destructive>
+                    <Button
+                        onClick={mutate}
+                        destructive
+                        dataTest="file-menu-delete-modal-delete"
+                    >
                         {i18n.t('Delete')}
                     </Button>
                 </ButtonStrip>

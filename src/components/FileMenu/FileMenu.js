@@ -54,6 +54,14 @@ export const FileMenu = ({
     }
     const onDialogClose = () => setOpenDialog(null)
     const toggleMenu = () => setMenuIsOpen(!menuIsOpen)
+    const onDeleteConfirm = () => {
+        // The dialog must be closed before calling the callback
+        // otherwise the fileObject is changed to null before the
+        // dialog is closed causing a crash in renderDialog() below
+        // due to fileObject.id not being available
+        onDialogClose()
+        onDelete()
+    }
 
     const buttonRef = createRef()
 
@@ -120,7 +128,7 @@ export const FileMenu = ({
                     <DeleteDialog
                         type={fileType}
                         id={fileObject.id}
-                        onDelete={onDelete}
+                        onDelete={onDeleteConfirm}
                         onError={onError}
                         onClose={onDialogClose}
                     />
@@ -146,14 +154,23 @@ export const FileMenu = ({
         <>
             <style jsx>{fileMenuStyles}</style>
             <div ref={buttonRef}>
-                <button className="menu-toggle" onClick={toggleMenu}>
+                <button
+                    className="menu-toggle"
+                    onClick={toggleMenu}
+                    data-test="file-menu-toggle"
+                >
                     {i18n.t('File')}
                 </button>
             </div>
             {menuIsOpen && (
-                <Layer onClick={toggleMenu} position="fixed" level={2000}>
+                <Layer
+                    onClick={toggleMenu}
+                    position="fixed"
+                    level={2000}
+                    dataTest="file-menu-toggle-layer"
+                >
                     <Popper reference={buttonRef} placement="bottom-start">
-                        <FlyoutMenu>
+                        <FlyoutMenu dataTest="file-menu-container">
                             <MenuItem
                                 label={i18n.t('New')}
                                 icon={<IconAdd24 color={iconActiveColor} />}
@@ -161,12 +178,14 @@ export const FileMenu = ({
                                     toggleMenu()
                                     onNew()
                                 }}
+                                dataTest="file-menu-new"
                             />
                             <MenuDivider />
                             <MenuItem
                                 label={i18n.t('Open…')}
                                 icon={<IconLaunch24 color={iconActiveColor} />}
                                 onClick={onMenuItemClick('open')}
+                                dataTest="file-menu-open"
                             />
                             <MenuItem
                                 label={
@@ -185,16 +204,20 @@ export const FileMenu = ({
                                     />
                                 }
                                 disabled={
-                                    !(!fileObject || fileObject?.access?.update)
+                                    !(
+                                        !fileObject?.id ||
+                                        fileObject?.access?.update
+                                    )
                                 }
                                 onClick={
-                                    fileObject
+                                    fileObject?.id
                                         ? () => {
                                               toggleMenu()
                                               onSave()
                                           }
                                         : onMenuItemClick('saveas')
                                 }
+                                dataTest="file-menu-save"
                             />
                             <MenuItem
                                 label={i18n.t('Save as…')}
@@ -207,8 +230,9 @@ export const FileMenu = ({
                                         }
                                     />
                                 }
-                                disabled={!fileObject}
+                                disabled={!fileObject?.id}
                                 onClick={onMenuItemClick('saveas')}
+                                dataTest="file-menu-saveas"
                             />
                             <MenuItem
                                 label={i18n.t('Rename…')}
@@ -229,6 +253,7 @@ export const FileMenu = ({
                                     )
                                 }
                                 onClick={onMenuItemClick('rename')}
+                                dataTest="file-menu-rename"
                             />
                             <MenuItem
                                 label={i18n.t('Translate…')}
@@ -249,6 +274,7 @@ export const FileMenu = ({
                                     )
                                 }
                                 onClick={onMenuItemClick('translate')}
+                                dataTest="file-menu-translate"
                             />
                             <MenuDivider />
                             <MenuItem
@@ -270,6 +296,7 @@ export const FileMenu = ({
                                     )
                                 }
                                 onClick={onMenuItemClick('sharing')}
+                                dataTest="file-menu-sharing"
                             />
                             <MenuItem
                                 label={i18n.t('Get link…')}
@@ -284,6 +311,7 @@ export const FileMenu = ({
                                 }
                                 disabled={!fileObject?.id}
                                 onClick={onMenuItemClick('getlink')}
+                                dataTest="file-menu-getlink"
                             />
                             <MenuDivider />
                             <MenuItem
@@ -306,6 +334,7 @@ export const FileMenu = ({
                                     )
                                 }
                                 onClick={onMenuItemClick('delete')}
+                                dataTest="file-menu-delete"
                             />
                         </FlyoutMenu>
                     </Popper>
