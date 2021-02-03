@@ -79,22 +79,22 @@ msgid "This {{fileType}} will be deleted. Continue?"
 msgstr ""
 
 msgid "Cancel"
-msgstr ""
+msgstr "Бекор қилиш"
 
 msgid "Delete"
-msgstr ""
+msgstr "Oʼchirib tashlash"
 
 msgid "File"
-msgstr ""
+msgstr "Fayl"
 
 msgid "New"
-msgstr ""
+msgstr "Yangi"
 
 msgid "Open…"
 msgstr ""
 
 msgid "Save"
-msgstr ""
+msgstr "Saqlash"
 
 msgid "Save…"
 msgstr ""
@@ -115,22 +115,22 @@ msgid "Get link…"
 msgstr ""
 
 msgid "Open in this app"
-msgstr ""
+msgstr "Ushbu ilovada oching"
 
 msgid "Close"
-msgstr ""
+msgstr "Yopmoq"
 
 msgid "Rename {{fileType}}"
 msgstr ""
 
 msgid "Name"
-msgstr ""
+msgstr "Исми"
 
 msgid "Description"
-msgstr ""
+msgstr "Tavsif"
 
 msgid "Rename"
-msgstr ""
+msgstr "Қайта номлаш"
 
 msgid "Save {{fileType}} as"
 msgstr ""

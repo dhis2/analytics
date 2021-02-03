@@ -1,14 +1,14 @@
 # 
 # Translators:
-# Caroline Hesthagen Holen <caroline@devotta.no>, 2020
 # Karoline Tufte Lien <karoline@dhis2.org>, 2021
+# Caroline Hesthagen Holen <caroline@devotta.no>, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2021-01-25T09:08:51.790Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Karoline Tufte Lien <karoline@dhis2.org>, 2021\n"
+"Last-Translator: Caroline Hesthagen Holen <caroline@devotta.no>, 2021\n"
 "Language-Team: Norwegian Bokmål (https://www.transifex.com/hisp-uio/teams/100509/nb/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -80,22 +80,22 @@ msgid "This {{fileType}} will be deleted. Continue?"
 msgstr ""
 
 msgid "Cancel"
-msgstr ""
+msgstr "Avbryt"
 
 msgid "Delete"
-msgstr ""
+msgstr "Slett"
 
 msgid "File"
-msgstr ""
+msgstr "Fil"
 
 msgid "New"
-msgstr ""
+msgstr "Ny"
 
 msgid "Open…"
 msgstr ""
 
 msgid "Save"
-msgstr ""
+msgstr "Lagre"
 
 msgid "Save…"
 msgstr ""
@@ -116,22 +116,22 @@ msgid "Get link…"
 msgstr ""
 
 msgid "Open in this app"
-msgstr ""
+msgstr "Åpne i denne appen"
 
 msgid "Close"
-msgstr ""
+msgstr "Lukk"
 
 msgid "Rename {{fileType}}"
 msgstr ""
 
 msgid "Name"
-msgstr ""
+msgstr "Navn"
 
 msgid "Description"
-msgstr ""
+msgstr "Beskrivelse"
 
 msgid "Rename"
-msgstr ""
+msgstr "Gi nytt navn"
 
 msgid "Save {{fileType}} as"
 msgstr ""

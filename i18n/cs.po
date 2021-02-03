@@ -79,22 +79,22 @@ msgid "This {{fileType}} will be deleted. Continue?"
 msgstr ""
 
 msgid "Cancel"
-msgstr ""
+msgstr "Zrušit"
 
 msgid "Delete"
-msgstr ""
+msgstr "Smazat"
 
 msgid "File"
-msgstr ""
+msgstr "Soubor"
 
 msgid "New"
-msgstr ""
+msgstr "Nový"
 
 msgid "Open…"
 msgstr ""
 
 msgid "Save"
-msgstr ""
+msgstr "Uložit"
 
 msgid "Save…"
 msgstr ""
@@ -115,22 +115,22 @@ msgid "Get link…"
 msgstr ""
 
 msgid "Open in this app"
-msgstr ""
+msgstr "Otevřít v této aplikaci"
 
 msgid "Close"
-msgstr ""
+msgstr "Zavřít"
 
 msgid "Rename {{fileType}}"
 msgstr ""
 
 msgid "Name"
-msgstr ""
+msgstr "Název"
 
 msgid "Description"
-msgstr ""
+msgstr "Popis"
 
 msgid "Rename"
-msgstr ""
+msgstr "Přejmenovat"
 
 msgid "Save {{fileType}} as"
 msgstr ""
