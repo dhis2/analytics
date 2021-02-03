@@ -1,73 +1,73 @@
 # 
 # Translators:
-# KRG HIS <antonia.bezenchek@informa.pro>, 2020
+# Yury Rogachev <yury@dhis2.org>, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2021-01-25T09:08:51.790Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: KRG HIS <antonia.bezenchek@informa.pro>, 2020\n"
-"Language-Team: Arabic (Iraq) (https://www.transifex.com/hisp-uio/teams/100509/ar_IQ/)\n"
+"Last-Translator: Yury Rogachev <yury@dhis2.org>, 2021\n"
+"Language-Team: Uzbek (Latin) (https://www.transifex.com/hisp-uio/teams/100509/uz@Latn/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: ar_IQ\n"
-"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+"Language: uz@Latn\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 msgid "Data Type"
-msgstr ""
+msgstr "Maʼlumot turi"
 
 msgid "Totals"
-msgstr "الإجماليات"
+msgstr "Jami"
 
 msgid "Details"
-msgstr "التفاصيل"
+msgstr "Tafsilotlari"
 
 msgid "Detail"
-msgstr ""
+msgstr "Tafsilot"
 
 msgid "Move to {{axisName}}"
-msgstr ""
+msgstr "Harakatlaning {{axisName}} ga qarab"
 
 msgid "Add to {{axisName}}"
-msgstr ""
+msgstr "{{axisName}} ga qoʼshing"
 
 msgid "Not available for {{visualizationType}}"
-msgstr ""
+msgstr "{{visualizationType}} uchun mavjud emas"
 
 msgid "Remove Assigned Categories"
-msgstr ""
+msgstr "Belgilangan kategoriyalar oʼchirilsin"
 
 msgid "Add Assigned Categories"
-msgstr ""
+msgstr "Belgilangan kategoriyalar qoʼshilsin"
 
 msgid "Remove"
-msgstr "إزالة"
+msgstr "Olib tashlash"
 
 msgid "Filter dimensions"
-msgstr ""
+msgstr "Filtr sozlamalari"
 
 msgid "Main dimensions"
-msgstr ""
+msgstr "Umumiy oʼlchamlar"
 
 msgid "Your dimensions"
-msgstr ""
+msgstr "Sizning sozlamalaringiz"
 
 msgid "Dimension recommended with selected data"
-msgstr ""
+msgstr "Tanlangan maʼlumotlar uchun sozlamalar tavsiya etiladi"
 
 msgid "Nothing found in {{dimensionTitle}}"
 msgstr ""
 
 msgid "Search"
-msgstr "البحث"
+msgstr "Izlash"
 
 msgid "No items selected"
-msgstr ""
+msgstr "Element tanlanmagan"
 
 msgid "Selected Items"
-msgstr ""
+msgstr "Element tanlangan"
 
 msgid "Nothing found for {{searchTerm}}"
 msgstr ""
@@ -136,463 +136,464 @@ msgid "Save {{fileType}} as"
 msgstr ""
 
 msgid "Selected Data"
-msgstr ""
+msgstr "Tanlangan maʼlumot"
 
 msgid "Deselect All"
-msgstr ""
+msgstr "Barchasini tanlanganligini bekor qilish"
 
 msgid "Select all"
-msgstr ""
+msgstr "Barchasini tanlash"
 
 msgid "Period type"
-msgstr ""
+msgstr "Davr turi"
 
 msgid "Year"
-msgstr ""
+msgstr "Yil"
 
 msgid "Select year"
-msgstr ""
+msgstr "Yilni tanlang"
 
 msgid "Period"
-msgstr ""
+msgstr "Davr"
 
 msgid "Relative periods"
-msgstr "الفترات الزمنية النسبية"
+msgstr "Nisbiy davrlar"
 
 msgid "Fixed periods"
-msgstr ""
+msgstr "Beligalangan davrlar"
 
 msgid "Selected Periods"
-msgstr ""
+msgstr "Tanlangan Davrlar"
 
 msgid "No periods selected"
-msgstr ""
+msgstr "Davr tanlanmagan"
 
 msgid "January"
-msgstr ""
+msgstr "Yanvar"
 
 msgid "February"
-msgstr ""
+msgstr "Fevral"
 
 msgid "March"
-msgstr ""
+msgstr "Mart"
 
 msgid "April"
-msgstr ""
+msgstr "Аprel"
 
 msgid "May"
-msgstr ""
+msgstr "May"
 
 msgid "June"
-msgstr ""
+msgstr "Iyun"
 
 msgid "July"
-msgstr ""
+msgstr "Iyul"
 
 msgid "August"
-msgstr ""
+msgstr "Аvgust"
 
 msgid "September"
-msgstr ""
+msgstr "Sentyabr"
 
 msgid "October"
-msgstr ""
+msgstr "Oktyabr"
 
 msgid "November"
-msgstr ""
+msgstr "Noyabr"
 
 msgid "December"
-msgstr ""
+msgstr "Dekabr"
 
 msgid "Week {{weekNumber}}"
-msgstr ""
+msgstr "Hafta {{weekNumber}}"
 
 msgid "Bi-Week {{biWeekNumber}}"
-msgstr ""
+msgstr "Juft hafta {{biWeekNumber}}"
 
 msgid "Daily"
-msgstr "يومي"
+msgstr "Kunlik"
 
 msgid "Weekly"
-msgstr "أسبوعي"
+msgstr "Haftalik"
 
 msgid "Bi-weekly"
-msgstr "كل اسبوعين"
+msgstr "Juft haftalik"
 
 msgid "Weekly (Start Wednesday)"
-msgstr ""
+msgstr "Haftalik (Boshlanishi Chorshanba)"
 
 msgid "Weekly (Start Thursday)"
-msgstr ""
+msgstr "Haftalik (Boshlanishi Payshanba)"
 
 msgid "Weekly (Start Saturday)"
-msgstr ""
+msgstr "Haftalik (Boshlanishi Shanba)"
 
 msgid "Weekly (Start Sunday)"
-msgstr ""
+msgstr "Haftalik (Boshlanishi Yakshanba)"
 
 msgid "Monthly"
-msgstr "شهري"
+msgstr "Oylik"
 
 msgid "Bi-monthly"
-msgstr "أشهر مزدوجة"
+msgstr "Juft oylik"
 
 msgid "Quarterly"
-msgstr "ربع سنوي"
+msgstr "Har kvartal"
 
 msgid "Six-monthly"
-msgstr "ستة أشهر"
+msgstr "Yarim yillik"
 
 msgid "Six-monthly April"
-msgstr "ستة أشهر نيسان"
+msgstr "Yarim yillik Аprel"
 
 msgid "Yearly"
-msgstr "سنوي"
+msgstr "Yillik"
 
 msgid "Financial year (Start November)"
-msgstr ""
+msgstr "Moliyaviy yil (Boshlanishi Noyabr)"
 
 msgid "Financial year (Start October)"
-msgstr "السنة المالية (بداية تشرين الأول)"
+msgstr "Moliyaviy yil (boshlanishi Oktyabr)"
 
 msgid "Financial year (Start July)"
-msgstr "السنة المالية (بداية تموز)"
+msgstr "Moliyaviy yil (boshlanishi Iyul)"
 
 msgid "Financial year (Start April)"
-msgstr "السنة المالية (بداية نيسان)"
+msgstr "Moliyaviy yil (boshlanishi Аprel)"
 
 msgid "Today"
-msgstr "اليوم"
+msgstr "Bugun"
 
 msgid "Yesterday"
-msgstr "الأمس"
+msgstr "Kecha"
 
 msgid "Last 3 days"
-msgstr "آخر 3 أيام"
+msgstr "Oxirgi 3 kun"
 
 msgid "Last 7 days"
-msgstr "آخر 7 أيام"
+msgstr "Oxirgi 7 kun"
 
 msgid "Last 14 days"
-msgstr "آخر 14 يوم"
+msgstr "Oxirgi 14 kun"
 
 msgid "Last 30 days"
-msgstr ""
+msgstr "Oxirgi 30 kun"
 
 msgid "Last 60 days"
-msgstr ""
+msgstr "Oxirgi 60 kun"
 
 msgid "Last 90 days"
-msgstr ""
+msgstr "Oxirgi 90 kun"
 
 msgid "Last 180 days"
-msgstr ""
+msgstr "Oxirgi 180 kun"
 
 msgid "This week"
-msgstr "الأسبوع الحالي"
+msgstr "Ushbu hafta"
 
 msgid "Last week"
-msgstr "الأسبوع الماضي"
+msgstr "Oxirgi hafta"
 
 msgid "Last 4 weeks"
-msgstr "آخر 4 أسابيع"
+msgstr "Oxirgi 4 hafta"
 
 msgid "Last 12 weeks"
-msgstr "آخر 12 أسبوع"
+msgstr "Oxirgi 12 hafta"
 
 msgid "Last 52 weeks"
-msgstr "آخر 52 أسبوع"
+msgstr "Oxirgi 52 hafta"
 
 msgid "Weeks this year"
-msgstr "أسابيع السنة الحالية"
+msgstr "Haftalar ayni yilda"
 
 msgid "This bi-week"
-msgstr "الأسبوعين الحاليين"
+msgstr "Ushbu juft hafta"
 
 msgid "Last bi-week"
-msgstr "آخر اسبوعين"
+msgstr "Oxirgi juft hafta"
 
 msgid "Last 4 bi-weeks"
-msgstr "آخر 4 زوج اسابيع"
+msgstr "Oxirgi 4 juft haftalar"
 
 msgid "This month"
-msgstr "الشهر الحالي"
+msgstr "Ushbu oy"
 
 msgid "Last month"
-msgstr "الشهر الماضي"
+msgstr "Oxirgi oy"
 
 msgid "Last 3 months"
-msgstr "آخر 3 أشهر"
+msgstr "Oxirgi 3 oy"
 
 msgid "Last 6 months"
-msgstr "آخر 6 أشهر"
+msgstr "Oxirgi 6 oy"
 
 msgid "Last 12 months"
-msgstr "آخر 12 شهر"
+msgstr "Oxirgi 12 oy"
 
 msgid "Months this year"
-msgstr "أشهر السنة الحالية"
+msgstr "Oylar ayni yilda"
 
 msgid "This bi-month"
-msgstr "الشهران المزدوجان الحاليان"
+msgstr "Ushbu juft oy"
 
 msgid "Last bi-month"
-msgstr "آخر شهرين مزدوجين"
+msgstr "Oxirgi 2 oy"
 
 msgid "Last 6 bi-months"
-msgstr "آخر 6 أشهر مزدوجة"
+msgstr "Oxirgi 6 juft oylar"
 
 msgid "Bi-months this year"
-msgstr "الأشهر المزدوجة في السنة الحالية"
+msgstr "Аyni yildagi juft oylar"
 
 msgid "This quarter"
-msgstr "ربع السنة الحالي"
+msgstr "Ushbu kvartal"
 
 msgid "Last quarter"
-msgstr "ربع السنة الماضي"
+msgstr "Oxirgi kvartal"
 
 msgid "Last 4 quarters"
-msgstr "آخر 4 أرباع السنة"
+msgstr "Oxirgi 4 kvartal"
 
 msgid "Quarters this year"
-msgstr "أرباع السنة الحالية"
+msgstr "Ushbu yildagi kvartallar"
 
 msgid "This six-month"
-msgstr "نصف السنة الحالي (فترة من ستة أشهر)"
+msgstr "Ushbu yarim yillik"
 
 msgid "Last six-month"
-msgstr "آخر ستة أشهر"
+msgstr "Oxirgi 6 oy"
 
 msgid "Last 2 six-month"
-msgstr ""
+msgstr "Oxirgi juft yarim yillik"
 
 msgid "This financial year"
-msgstr "السنة المالية الحالية"
+msgstr "Ushbu moliyaviy yil"
 
 msgid "Last financial year"
-msgstr "السنة المالية الماضية"
+msgstr "Oxirgi moliyaviy yil"
 
 msgid "Last 5 financial years"
-msgstr "آخر 5 سنوات مالية"
+msgstr "Oxirgi 5 moliyaviy yillar"
 
 msgid "This year"
-msgstr "السنة الحالية"
+msgstr "Ushbu yil"
 
 msgid "Last year"
-msgstr "السنة الماضية"
+msgstr "Oxirgi yil"
 
 msgid "Last 5 years"
-msgstr "آخر 5 سنوات"
+msgstr "Oxirgi 5 yil"
 
 msgid "Days"
-msgstr "‏‏الأيام"
+msgstr "Kunlar"
 
 msgid "Weeks"
-msgstr "الأسابيع"
+msgstr "Haftalar"
 
 msgid "Bi-weeks"
-msgstr "كل اسبوعين"
+msgstr "Juft haftalar"
 
 msgid "Months"
-msgstr "الأشهر"
+msgstr "Oylar"
 
 msgid "Bi-months"
-msgstr "الأشهر المزدوجة"
+msgstr "2 oy"
 
 msgid "Quarters"
-msgstr "أرباع السنة"
+msgstr "Kvartal"
 
 msgid "Six-months"
-msgstr "ستة أشهر"
+msgstr "Yarim yillik"
 
 msgid "Financial Years"
-msgstr ""
+msgstr "Moliyaviy yillar"
 
 msgid "Years"
-msgstr "السنوات"
+msgstr "Yillar"
 
 msgid "Series"
-msgstr ""
+msgstr "Ketma-ketliklar"
 
 msgid "Category"
-msgstr ""
+msgstr "Kategoriya"
 
 msgid "Filter"
-msgstr ""
+msgstr "Filtr"
 
 msgid "Columns"
-msgstr ""
+msgstr "Ustunlar"
 
 msgid "Rows"
-msgstr ""
+msgstr "Qatorlar"
 
 msgid "Points"
-msgstr ""
+msgstr "Nuqtalar"
 
 msgid "Reporting rate"
-msgstr ""
+msgstr "Hisobotdagi stavka"
 
 msgid "Reporting rate on time"
-msgstr ""
+msgstr "Hisobotdagi stavka oʼz vaqtida"
 
 msgid "Actual reports"
-msgstr ""
+msgstr "Haqiqiy hisobotlar"
 
 msgid "Actual reports on time"
-msgstr ""
+msgstr "Haqiqiy hisobotlar oʼz vaqtida"
 
 msgid "Expected reports"
-msgstr ""
+msgstr "Kutilayotgan hisobotlar"
 
 msgid "Program"
-msgstr "البرنامج"
+msgstr "Programma"
 
 msgid "Select a program"
-msgstr ""
+msgstr "Dasturni tanlang"
 
 msgid "Indicators"
-msgstr "المؤشرات"
+msgstr "Indikatorlar"
 
 msgid "Select indicator group"
-msgstr "تحديد مجموعة المؤشرات"
+msgstr "Indikator guruhini tanlash"
 
 msgid "[ All groups ]"
-msgstr ""
+msgstr "[Barcha guruhlar]"
 
 msgid "Data elements"
-msgstr "عناصر البيانات"
+msgstr "Maʼlumot elementlari"
 
 msgid "Select data element group"
-msgstr "تحديد مجموعة عناصر البيانات"
+msgstr "Maʼlumotlar elementi guruhini tanlash"
 
 msgid "[ All data elements ]"
-msgstr ""
+msgstr "[Maʼlumotlar barcha elementlari]"
 
 msgid "Data sets"
-msgstr "حزم البيانات"
+msgstr "Maʼlumotlar toʼplami"
 
 msgid "Select data sets"
-msgstr ""
+msgstr "Maʼlumotlar toʼplamlarini tanlang"
 
 msgid "[ All metrics ]"
-msgstr ""
+msgstr "[Barcha oʼlchovlar]"
 
 msgid "Event data items"
-msgstr ""
+msgstr "Hodisalar haqida maʼlumot elementlari"
 
 msgid "Program indicators"
-msgstr ""
+msgstr "Dastur indikatorlari"
 
 msgid "Extra Small"
-msgstr ""
+msgstr "Juda Kichik"
 
 msgid "Small"
-msgstr "صغير"
+msgstr "Kichik"
 
 msgid "Regular"
-msgstr ""
+msgstr "Regulyar"
 
 msgid "Large"
-msgstr "كبير"
+msgstr "Katta"
 
 msgid "Extra Large"
-msgstr ""
+msgstr "Juda Katta"
 
 msgid "Left"
-msgstr ""
+msgstr "Chap"
 
 msgid "Center"
-msgstr ""
+msgstr "Markaz"
 
 msgid "Right"
-msgstr ""
+msgstr "Oʼng"
 
 msgid "Start"
-msgstr ""
+msgstr "Boshlash"
 
 msgid "Middle"
-msgstr ""
+msgstr "Oʼrtav"
 
 msgid "End"
-msgstr ""
+msgstr "Oxiri"
 
 msgid "Top"
-msgstr "القمة"
+msgstr "Yuqoridagi"
 
 msgid "Bottom"
-msgstr "الأسفل"
+msgstr "Pastki"
 
 msgid "{{dynamicOuNames}} and {{lastOuName}}"
-msgstr ""
+msgstr "{{dynamicOuNames}} va {{lastOuName}}"
 
 msgid "{{allDynamicOuNames}} levels"
-msgstr ""
+msgstr "Barcha {{allDynamicOuNames}} pogʼonalar"
 
 msgid "{{allDynamicOuNames}} groups"
-msgstr ""
+msgstr "{{allDynamicOuNames}} guruhlar"
 
 msgid "{{allDynamicOuNames}} levels in {{staticOuNames}}"
-msgstr ""
+msgstr "{{allDynamicOuNames}} pogʼonalar {{staticOuNames}} ichida"
 
 msgid "{{allDynamicOuNames}} groups in {{staticOuNames}}"
-msgstr ""
+msgstr "{{allDynamicOuNames}} guruhlar {{staticOuNames}} ichida"
 
 msgid "Data"
-msgstr "البيانات"
+msgstr "Maʼlumot"
 
 msgid "Organisation Unit"
-msgstr "الوحدة التنظيمية"
+msgstr "Tashkiliy birlik"
 
 msgid "Assigned Categories"
-msgstr ""
+msgstr "Belgilangan Kategoriyalar"
 
 msgid "Pivot table"
-msgstr "الجدول المحوري"
+msgstr "Solishtirma jadval"
 
 msgid "Column"
-msgstr "العمود"
+msgstr "Ustun"
 
 msgid "Stacked column"
-msgstr ""
+msgstr "Yigʼilgan ustun"
 
 msgid "Bar"
-msgstr ""
+msgstr "Tizimcha"
 
 msgid "Stacked bar"
-msgstr ""
+msgstr "Yigʼilgan tizimcha"
 
 msgid "Line"
-msgstr ""
+msgstr "Qator"
 
 msgid "Area"
-msgstr "مساحة"
+msgstr "Maydon"
 
 msgid "Stacked area"
-msgstr ""
+msgstr "Yigʼilgan maydon"
 
 msgid "Pie"
-msgstr ""
+msgstr "Butun aylana"
 
 msgid "Radar"
-msgstr ""
+msgstr "Radar"
 
 msgid "Gauge"
-msgstr ""
+msgstr "Hisoblagich"
 
 msgid "Year over year (line)"
-msgstr ""
+msgstr "Yildan yilga (qator)"
 
 msgid "Year over year (column)"
-msgstr ""
+msgstr "Yildan yilga (ustun)"
 
 msgid "Single value"
-msgstr ""
+msgstr "Yagona qiymat"
 
 msgid "Scatter"
-msgstr ""
+msgstr "Tarqoqlik"
 
 msgid "View data and indicators in a manipulatable table."
 msgstr ""
+"Boshqariladigan jadvalda indikatorlar va maʼlumotlarni koʼzdan kechiring"
 
 msgid ""
 "Compare sizes of related elements vertically. Recommend period as filter."
@@ -627,6 +628,7 @@ msgstr ""
 
 msgid "Compare several items against multiple variables."
 msgstr ""
+"Bir necha elementlar va bir necha oʼzgaruvchilarga nisbatan taqqoslang."
 
 msgid ""
 "Compare a percentage indicator against a 100% scale. Recommend period as "
@@ -635,38 +637,43 @@ msgstr ""
 
 msgid "Compare changes over time between multiple time periods."
 msgstr ""
+"Vaqt oʼtishi bilan bir necha vaqt oraligʼidagi oʼzgarishlarni taqqoslang."
 
 msgid "Display a single value. Recommend relative period to show latest data."
 msgstr ""
+"Bitta qiymatni koʼrsatish. Oxirgi maʼlumotlarni koʼrsatish uchun bogʼliq "
+"davrni taqqoslang."
 
 msgid ""
 "View the relationship between two data items at a place or time. Recommended"
 " for finding outliers."
 msgstr ""
+"Joy va vaqt sifatidagi ikki maʼlumotlar orasidagi oʼzaro munosabatlarni "
+"koʼrish. ortiqcha natijalarni topish uchun tavsiya etiladi."
 
 msgid "{{seriesName}} (trend)"
 msgstr ""
 
 msgid "Trend"
-msgstr ""
+msgstr "Yoʼnalish"
 
 msgid "No legend for this series"
-msgstr ""
+msgstr "Ushbu seriya uchun taʼrif mavjud emas"
 
 msgid "and {{amount}} more..."
 msgstr ""
 
 msgid "Target"
-msgstr ""
+msgstr "Nishon"
 
 msgid "Base"
-msgstr ""
+msgstr "Аsos"
 
 msgid "Axis {{axisId}}"
-msgstr ""
+msgstr "Oʼqlar {{axisId}}"
 
 msgid "No data"
-msgstr ""
+msgstr "Maʼlumot yoʼq"
 
 msgid "Reset zoom"
 msgstr ""
