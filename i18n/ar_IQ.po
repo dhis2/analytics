@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-12-21T08:01:55.494Z\n"
+"POT-Creation-Date: 2021-01-25T09:08:51.790Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: KRG HIS <antonia.bezenchek@informa.pro>, 2020\n"
 "Language-Team: Arabic (Iraq) (https://www.transifex.com/hisp-uio/teams/100509/ar_IQ/)\n"
@@ -57,14 +57,83 @@ msgstr ""
 msgid "Dimension recommended with selected data"
 msgstr ""
 
+msgid "Nothing found in {{dimensionTitle}}"
+msgstr ""
+
+msgid "Search"
+msgstr "البحث"
+
 msgid "No items selected"
 msgstr ""
 
 msgid "Selected Items"
 msgstr ""
 
-msgid "Search"
-msgstr "البحث"
+msgid "Nothing found for {{searchTerm}}"
+msgstr ""
+
+msgid "Delete {{fileType}}"
+msgstr ""
+
+msgid "This {{fileType}} will be deleted. Continue?"
+msgstr ""
+
+msgid "Cancel"
+msgstr ""
+
+msgid "Delete"
+msgstr ""
+
+msgid "File"
+msgstr ""
+
+msgid "New"
+msgstr ""
+
+msgid "Open…"
+msgstr ""
+
+msgid "Save"
+msgstr ""
+
+msgid "Save…"
+msgstr ""
+
+msgid "Save as…"
+msgstr ""
+
+msgid "Rename…"
+msgstr ""
+
+msgid "Translate…"
+msgstr ""
+
+msgid "Share…"
+msgstr ""
+
+msgid "Get link…"
+msgstr ""
+
+msgid "Open in this app"
+msgstr ""
+
+msgid "Close"
+msgstr ""
+
+msgid "Rename {{fileType}}"
+msgstr ""
+
+msgid "Name"
+msgstr ""
+
+msgid "Description"
+msgstr ""
+
+msgid "Rename"
+msgstr ""
+
+msgid "Save {{fileType}} as"
+msgstr ""
 
 msgid "Selected Data"
 msgstr ""
@@ -526,35 +595,33 @@ msgid "View data and indicators in a manipulatable table."
 msgstr ""
 
 msgid ""
-"Compare sizes of related element, displayed vertically. Recommend period in "
-"filter."
+"Compare sizes of related elements vertically. Recommend period as filter."
 msgstr ""
 
 msgid ""
-"Compare parts of a whole against related elements, vertically. Recommend "
+"Compare parts of a whole against related elements vertically. Recommend data"
+" or org. unit as series."
+msgstr ""
+
+msgid ""
+"Compare sizes of related elements horizontally. Recommend period as filter."
+msgstr ""
+
+msgid ""
+"Compare parts of a whole against related elements horizontally. Recommend "
 "data or org. unit as series."
 msgstr ""
 
-msgid ""
-"Compare sizes of related elements, displayed horizontally. Recommend period "
-"in filter."
+msgid "Track or compare changes over time. Recommend period as category."
 msgstr ""
 
 msgid ""
-"Compare parts of a whole against related elements, horizontally. Recommend "
-"data or org. unit as series."
-msgstr ""
-
-msgid "Track or compare changes over time. Recommend period as the category."
+"Track or compare parts of a whole over time. Recommend data as series and "
+"period as category."
 msgstr ""
 
 msgid ""
-"Track or compare over time parts of a whole. Recommend data in series and "
-"period in category."
-msgstr ""
-
-msgid ""
-"Compare parts of a whole at a single point in time. Recommend period in the "
+"Compare parts of a whole at a single point in time. Recommend period as "
 "filter."
 msgstr ""
 
@@ -562,7 +629,7 @@ msgid "Compare several items against multiple variables."
 msgstr ""
 
 msgid ""
-"Compare a percentage indicator against a 100% scale. Recommend period in "
+"Compare a percentage indicator against a 100% scale. Recommend period as "
 "filter."
 msgstr ""
 
@@ -575,6 +642,12 @@ msgstr ""
 msgid ""
 "View the relationship between two data items at a place or time. Recommended"
 " for finding outliers."
+msgstr ""
+
+msgid "{{seriesName}} (trend)"
+msgstr ""
+
+msgid "Trend"
 msgstr ""
 
 msgid "No legend for this series"

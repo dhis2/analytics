@@ -2,6 +2,7 @@ import AnalyticsRequestDimensionsMixin from './AnalyticsRequestDimensionsMixin'
 import AnalyticsRequestFiltersMixin from './AnalyticsRequestFiltersMixin'
 import AnalyticsRequestPropertiesMixin from './AnalyticsRequestPropertiesMixin'
 import AnalyticsRequestBase from './AnalyticsRequestBase'
+import { getFixedDimensions } from '../../modules/predefinedDimensions'
 
 /**
  * @description
@@ -63,16 +64,20 @@ class AnalyticsRequest extends AnalyticsRequestDimensionsMixin(
         // extract filters from visualization
         const filters = visualization.filters || []
 
+        // only pass dx/pe/ou as dimension
+        const fixedIds = Object.keys(getFixedDimensions())
+
         filters.forEach(f => {
-            request = passFilterAsDimension
-                ? request.addDimension(
-                      f.dimension,
-                      f.items.map(item => item.id)
-                  )
-                : request.addFilter(
-                      f.dimension,
-                      f.items.map(item => item.id)
-                  )
+            request =
+                passFilterAsDimension && fixedIds.includes(f.dimension)
+                    ? request.addDimension(
+                          f.dimension,
+                          f.items.map(item => item.id)
+                      )
+                    : request.addFilter(
+                          f.dimension,
+                          f.items.map(item => item.id)
+                      )
         })
 
         return request

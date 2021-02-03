@@ -1,3 +1,97 @@
+## [14.1.1](https://github.com/dhis2/analytics/compare/v14.1.0...v14.1.1) (2021-02-03)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([ef7c166](https://github.com/dhis2/analytics/commit/ef7c1662f97f1936c84fe1c196bf6192dbeae2da))
+
+# [14.1.0](https://github.com/dhis2/analytics/compare/v14.0.3...v14.1.0) (2021-02-02)
+
+
+### Features
+
+* implement FileMenu using @dhis2/ui components ([#655](https://github.com/dhis2/analytics/issues/655)) ([853dc7c](https://github.com/dhis2/analytics/commit/853dc7cc4681f7826b7c17af265fc1f4d43fc55e))
+
+## [14.0.3](https://github.com/dhis2/analytics/compare/v14.0.2...v14.0.3) (2021-02-01)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([348fa5d](https://github.com/dhis2/analytics/commit/348fa5d394bfad0e68f5e9ed6649d37790336042))
+
+## [14.0.2](https://github.com/dhis2/analytics/compare/v14.0.1...v14.0.2) (2021-01-29)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([79c4cc6](https://github.com/dhis2/analytics/commit/79c4cc6b33f538638335e624ee691d4c0cbfbdb7))
+
+## [14.0.1](https://github.com/dhis2/analytics/compare/v14.0.0...v14.0.1) (2021-01-28)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([4046218](https://github.com/dhis2/analytics/commit/40462187c1c3e2174d5f374edd9a6905ed4d8bac))
+
+# [14.0.0](https://github.com/dhis2/analytics/compare/v13.0.5...v14.0.0) (2021-01-27)
+
+
+### Features
+
+* scatter options (DHIS2-10006) ([#751](https://github.com/dhis2/analytics/issues/751)) ([89ad5aa](https://github.com/dhis2/analytics/commit/89ad5aa7730e3c894b13230d1060d565230b2031))
+
+
+### BREAKING CHANGES
+
+* FONT_STYLE_SERIES_AXIS_LABELS and FONT_STYLE_CATEGORY_AXIS_LABELS are replaced by FONT_STYLE_AXIS_LABELS
+
+## [13.0.5](https://github.com/dhis2/analytics/compare/v13.0.4...v13.0.5) (2021-01-27)
+
+
+### Bug Fixes
+
+* restore buildUrl and buildQuery functions ([#785](https://github.com/dhis2/analytics/issues/785)) ([a348fac](https://github.com/dhis2/analytics/commit/a348fac4d6604f36a12dea9ff0cf95c9c6084174))
+
+## [13.0.4](https://github.com/dhis2/analytics/compare/v13.0.3...v13.0.4) (2021-01-26)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([1935ee9](https://github.com/dhis2/analytics/commit/1935ee9b715607e5d9e58e33a5ee14496f0beeeb))
+
+## [13.0.3](https://github.com/dhis2/analytics/compare/v13.0.2...v13.0.3) (2021-01-24)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([482b621](https://github.com/dhis2/analytics/commit/482b6211681f723ca28935d0ea6dd6f335d12cb4))
+
+## [13.0.2](https://github.com/dhis2/analytics/compare/v13.0.1...v13.0.2) (2021-01-22)
+
+
+### Bug Fixes
+
+* only pass fixed dimensions as dimension ([#776](https://github.com/dhis2/analytics/issues/776)) ([9c02508](https://github.com/dhis2/analytics/commit/9c02508bb04c1a7db4ee5766828c1b42ac611e63))
+
+## [13.0.1](https://github.com/dhis2/analytics/compare/v13.0.0...v13.0.1) (2021-01-22)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([a1aaba6](https://github.com/dhis2/analytics/commit/a1aaba6b1d4ec25b388c9416f656857a28bb07e7))
+
+# [13.0.0](https://github.com/dhis2/analytics/compare/v12.1.10...v13.0.0) (2021-01-21)
+
+
+### Features
+
+* paging of dynamic dimension items (DHIS2-9274) ([#583](https://github.com/dhis2/analytics/issues/583)) ([670dc79](https://github.com/dhis2/analytics/commit/670dc79a4c55aa070a3219c4d01799bb38b5b631))
+
+
+### BREAKING CHANGES
+
+* DynamicDimension no longer requires context and instead requires dimensionTitle
+
 ## [12.1.10](https://github.com/dhis2/analytics/compare/v12.1.9...v12.1.10) (2021-01-19)
 
 

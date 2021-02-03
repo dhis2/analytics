@@ -20,6 +20,8 @@ export { default as DimensionMenu } from './components/DimensionMenu'
 
 export { default as PivotTable } from './components/PivotTable/PivotTable'
 
+export { default as FileMenu } from './components/FileMenu/FileMenu'
+
 // Api
 
 export { default as Analytics } from './api/analytics/Analytics'
@@ -154,6 +156,7 @@ export {
     isTwoCategoryChartType,
     isLegendSetType,
     isColumnBasedType,
+    isVerticalType,
 } from './modules/visTypes'
 
 // Modules: layoutTypes
@@ -196,10 +199,8 @@ export {
     FONT_STYLE_HORIZONTAL_AXIS_TITLE,
     FONT_STYLE_VERTICAL_AXIS_TITLE,
     FONT_STYLE_LEGEND,
-    FONT_STYLE_SERIES_AXIS_LABELS,
-    FONT_STYLE_CATEGORY_AXIS_LABELS,
-    FONT_STYLE_TARGET_LINE_LABEL,
-    FONT_STYLE_BASE_LINE_LABEL,
+    FONT_STYLE_AXIS_LABELS,
+    FONT_STYLE_REGRESSION_LINE_LABEL,
     FONT_STYLE_OPTION_FONT,
     FONT_STYLE_OPTION_FONT_SIZE,
     FONT_STYLE_OPTION_BOLD,
