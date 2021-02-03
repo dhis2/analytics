@@ -8,7 +8,7 @@ export const getOutlierHelper = (
     data,
     config = { method: 'QUARTILE', thresholdFactor: 1.5 }
 ) => {
-    switch (method) {
+    switch (config.method) {
         case STDDEV:
             return getStdDevHelper(data, config)
         case QUARTILE:
