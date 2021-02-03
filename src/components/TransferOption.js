@@ -43,7 +43,11 @@ export const TransferOption = ({
     return (
         <div data-value={value} className="wrapper">
             {tooltipText ? (
-                <Tooltip key={`${value}`} content={tooltipText}>
+                <Tooltip
+                    key={`${value}`}
+                    content={tooltipText}
+                    placement={'top-start'}
+                >
                     {renderContent()}
                 </Tooltip>
             ) : (
