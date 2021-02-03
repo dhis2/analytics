@@ -4,7 +4,7 @@ export const getStdDev = (data, normalization) => std(data, normalization)
 
 export const getMean = data => mean(data)
 
-export const getStdDevHelper = (
+export const getStdDevMethodHelper = (
     data,
     config = {
         thresholdFactor: 1.5,

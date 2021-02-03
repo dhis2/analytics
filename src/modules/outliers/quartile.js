@@ -30,7 +30,7 @@ export const getQuartileValue = (data, q = 0.25) => {
     return data[base - 1] + diff * rest
 }
 
-export const getQuartileHelper = (
+export const getQuartileMethodHelper = (
     data,
     config = {
         thresholdFactor: 1.5,

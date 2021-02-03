@@ -1,7 +1,7 @@
 import {
     getQuartilePosition,
     getQuartileValue,
-    getQuartileHelper,
+    getQuartileMethodHelper,
 } from '../quartile'
 
 const a3 = [2, 4, 5]
@@ -106,7 +106,10 @@ describe('getQuartileValue', () => {
 describe('getQuartileHelper', () => {
     const data = [2, 3, 3, 5, 6, 7, 7, 8, 9, 10, 40]
     const thresholdFactor = 1.5
-    const helper = getQuartileHelper(data, { thresholdFactor, isSorted: true })
+    const helper = getQuartileMethodHelper(data, {
+        thresholdFactor,
+        isSorted: true,
+    })
 
     test('interquartile range', () => {
         expect(helper.iqr).toBe(9 - 3)
