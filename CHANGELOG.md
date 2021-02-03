@@ -1,3 +1,24 @@
+## [14.1.1](https://github.com/dhis2/analytics/compare/v14.1.0...v14.1.1) (2021-02-03)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([ef7c166](https://github.com/dhis2/analytics/commit/ef7c1662f97f1936c84fe1c196bf6192dbeae2da))
+
+# [14.1.0](https://github.com/dhis2/analytics/compare/v14.0.3...v14.1.0) (2021-02-02)
+
+
+### Features
+
+* implement FileMenu using @dhis2/ui components ([#655](https://github.com/dhis2/analytics/issues/655)) ([853dc7c](https://github.com/dhis2/analytics/commit/853dc7cc4681f7826b7c17af265fc1f4d43fc55e))
+
+## [14.0.3](https://github.com/dhis2/analytics/compare/v14.0.2...v14.0.3) (2021-02-01)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([348fa5d](https://github.com/dhis2/analytics/commit/348fa5d394bfad0e68f5e9ed6649d37790336042))
+
 ## [14.0.2](https://github.com/dhis2/analytics/compare/v14.0.1...v14.0.2) (2021-01-29)
 
 
