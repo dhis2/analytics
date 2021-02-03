@@ -20,6 +20,9 @@ import {
     DATA_ELEMENTS,
     DATA_ELEMENT_OPERAND,
     DATA_SETS,
+    EVENT_DATA_ITEMS,
+    PROGRAM_INDICATORS,
+    INDICATORS,
     TOTALS,
 } from '../../modules/dataTypes'
 import { apiFetchOptions } from '../../api/dimensions'
@@ -119,14 +122,50 @@ const SourceEmptyPlaceholder = ({
     searchTerm,
     options,
     noItemsMessage,
+    dataType,
 }) => {
     let message = ''
     if (!loading && !options.length && !searchTerm) {
         message = noItemsMessage || i18n.t('No data')
     } else if (!loading && !options.length && searchTerm) {
-        message = i18n.t('Nothing found for {{searchTerm}}', {
-            searchTerm: searchTerm,
-        })
+        switch (dataType) {
+            case INDICATORS:
+                message = i18n.t('No indicators found for {{searchTerm}}', {
+                    searchTerm: searchTerm,
+                })
+                break
+            case DATA_ELEMENTS:
+                message = i18n.t('No data elements found for {{searchTerm}}', {
+                    searchTerm: searchTerm,
+                })
+                break
+            case DATA_SETS:
+                message = i18n.t('No data sets found for {{searchTerm}}', {
+                    searchTerm: searchTerm,
+                })
+                break
+            case EVENT_DATA_ITEMS:
+                message = i18n.t(
+                    'No event data items found for {{searchTerm}}',
+                    {
+                        searchTerm: searchTerm,
+                    }
+                )
+                break
+            case PROGRAM_INDICATORS:
+                message = i18n.t(
+                    'No program indicators found for {{searchTerm}}',
+                    {
+                        searchTerm: searchTerm,
+                    }
+                )
+                break
+            default:
+                message = i18n.t('Nothing found for {{searchTerm}}', {
+                    searchTerm: searchTerm,
+                })
+                break
+        }
     }
     return (
         message && (
@@ -139,6 +178,7 @@ const SourceEmptyPlaceholder = ({
 }
 
 SourceEmptyPlaceholder.propTypes = {
+    dataType: PropTypes.string,
     loading: PropTypes.bool,
     noItemsMessage: PropTypes.string,
     options: PropTypes.array,
@@ -267,6 +307,7 @@ const ItemSelector = ({
                     searchTerm={debouncedSearchTerm}
                     options={state.options}
                     noItemsMessage={noItemsMessage}
+                    dataType={state.filter.dataType}
                 />
             }
             onEndReached={onEndReached}
