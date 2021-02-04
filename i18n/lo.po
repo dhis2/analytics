@@ -1,6 +1,6 @@
 # 
 # Translators:
-# phil_dhis2, 2020
+# phil_dhis2, 2021
 # Viktor Varland <viktor@dhis2.org>, 2021
 # 
 msgid ""
@@ -80,22 +80,22 @@ msgid "This {{fileType}} will be deleted. Continue?"
 msgstr ""
 
 msgid "Cancel"
-msgstr ""
+msgstr "Cancel"
 
 msgid "Delete"
-msgstr ""
+msgstr "ລົບ"
 
 msgid "File"
-msgstr ""
+msgstr "ເອກະສານ"
 
 msgid "New"
-msgstr ""
+msgstr "ສ້າງໃຫມ່"
 
 msgid "Open…"
 msgstr ""
 
 msgid "Save"
-msgstr ""
+msgstr "ບັນທຶກ"
 
 msgid "Save…"
 msgstr ""
@@ -119,19 +119,19 @@ msgid "Open in this app"
 msgstr ""
 
 msgid "Close"
-msgstr ""
+msgstr "ປິດ"
 
 msgid "Rename {{fileType}}"
 msgstr ""
 
 msgid "Name"
-msgstr ""
+msgstr "ຊື່"
 
 msgid "Description"
-msgstr ""
+msgstr "ລາຍລະອຽດ"
 
 msgid "Rename"
-msgstr ""
+msgstr "ປ່ຽນຊື່"
 
 msgid "Save {{fileType}} as"
 msgstr ""
