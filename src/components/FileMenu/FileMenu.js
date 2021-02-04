@@ -48,6 +48,12 @@ export const FileMenu = ({
     const [menuIsOpen, setMenuIsOpen] = useState(false)
     const [openDialog, setOpenDialog] = useState(null)
 
+    // Escape key press closes the menu
+    const onKeyDown = e => {
+        if (e?.keyCode === 27) {
+            setMenuIsOpen(false)
+        }
+    }
     const onMenuItemClick = dialogToOpen => () => {
         setMenuIsOpen(false)
         setOpenDialog(dialogToOpen)
@@ -151,7 +157,7 @@ export const FileMenu = ({
     const iconInactiveColor = colors.grey500
 
     return (
-        <>
+        <div onKeyDown={onKeyDown}>
             <style jsx>{fileMenuStyles}</style>
             <div ref={buttonRef}>
                 <button
@@ -341,7 +347,7 @@ export const FileMenu = ({
                 </Layer>
             )}
             {renderDialog()}
-        </>
+        </div>
     )
 }
 
