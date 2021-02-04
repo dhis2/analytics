@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import { SingleSelectField, SingleSelectOption } from '@dhis2/ui'
 import { useDataEngine } from '@dhis2/app-runtime'
+import i18n from '@dhis2/d2-i18n'
 
 import { Detail } from './Detail'
 import {
@@ -24,16 +25,19 @@ const Groups = ({
 }) => {
     const dataEngine = useDataEngine()
     const [groups, setGroups] = useState([])
+    const [isLoading, setIsLoading] = useState(true)
     const defaultGroup = dataTypes[dataType]?.defaultGroup
     const subGroupType = dataTypes[dataType]?.subGroup
 
     const fetchGroups = async () => {
+        setIsLoading(true)
         const result = await apiFetchGroups(
             dataEngine,
             dataType,
             displayNameProp
         )
         setGroups(result)
+        setIsLoading(false)
     }
 
     useEffect(() => {
@@ -55,6 +59,15 @@ const Groups = ({
                     }
                     onChange={ref => onGroupChange(ref.selected)}
                     dense
+                    empty={
+                        dataTypes[dataType]?.getGroupEmptyLabel() ||
+                        i18n.t('No data')
+                    }
+                    loadingText={
+                        dataTypes[dataType]?.getGroupLoadingLabel() ||
+                        i18n.t('Loading')
+                    }
+                    loading={isLoading}
                 >
                     {dataTypes[dataType]?.defaultGroup ? (
                         <SingleSelectOption
@@ -64,14 +77,16 @@ const Groups = ({
                             dataTest={`${dataTest}-option-${defaultGroup.id}`}
                         />
                     ) : null}
-                    {groups.map(item => (
-                        <SingleSelectOption
-                            value={item.id}
-                            key={item.id}
-                            label={item.name}
-                            dataTest={`${dataTest}-option-${item.id}`}
-                        />
-                    ))}
+                    {!isLoading
+                        ? groups.map(item => (
+                              <SingleSelectOption
+                                  value={item.id}
+                                  key={item.id}
+                                  label={item.name}
+                                  dataTest={`${dataTest}-option-${item.id}`}
+                              />
+                          ))
+                        : null}
                 </SingleSelectField>
             </div>
             {subGroupType === SUB_GROUP_DETAIL && (

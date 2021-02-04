@@ -100,7 +100,8 @@ const ItemSelector = ({
         // The useCallback from onChange should be removed in favor of a regular fn as well
         options: [],
         loading: true,
-        nextPage: null,
+        nextPage: null, // FIXME: Selecting all 50 items from a page prevents the loading of more items.
+        // Implement the solution found in the DataDimension/ItemSelector.js
     })
     const setFilter = filter => setState(state => ({ ...state, filter }))
     const setSelected = selected => setState(state => ({ ...state, selected }))
