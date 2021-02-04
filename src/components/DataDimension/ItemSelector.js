@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import PropTypes from 'prop-types'
 import { Transfer, InputField, IconInfo16 } from '@dhis2/ui'
 import i18n from '@dhis2/d2-i18n'
@@ -201,7 +201,7 @@ const ItemSelector = ({
         },
         options: [],
         loading: true,
-        nextPage: null,
+        nextPage: 1,
     })
     const dataEngine = useDataEngine()
     const setSearchTerm = searchTerm =>
@@ -255,9 +255,34 @@ const ItemSelector = ({
             options: page > 1 ? [...state.options, ...newOptions] : newOptions,
             nextPage: result.nextPage,
         }))
+        if (
+            newOptions.length &&
+            selectedItems.length >= newOptions.length &&
+            newOptions.every(newOption =>
+                selectedItems.find(
+                    selectedItem => selectedItem.value === newOption.value
+                )
+            )
+        ) {
+            fetchItems(result.nextPage)
+        }
     }
-    useEffect(() => {
-        fetchItems(1)
+    const useDidUpdateEffect = (fn, inputs) => {
+        // TODO: Move this to a utils file
+        const didMountRef = useRef(false)
+
+        useEffect(() => {
+            if (didMountRef.current) fn()
+            else didMountRef.current = true
+        }, inputs)
+    }
+    useDidUpdateEffect(() => {
+        setState(state => ({
+            ...state,
+            loading: true,
+            options: [],
+            nextPage: 1,
+        }))
     }, [debouncedSearchTerm, state.filter])
     const onChange = newSelected => {
         onSelect(
@@ -273,11 +298,11 @@ const ItemSelector = ({
             })
         )
     }
-    const onEndReached = useCallback(() => {
+    const onEndReached = () => {
         if (state.nextPage) {
             fetchItems(state.nextPage)
         }
-    }, [state.nextPage])
+    }
     const isActive = value => {
         const item = selectedItems.find(item => item.value === value)
         return !item || item.isActive
