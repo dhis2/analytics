@@ -16,8 +16,10 @@ function getEmptySeriesIndexes(series) {
     series[0].data.forEach((value, index) => {
         seriesValues = []
 
-        series.forEach(seriesObj => {
-            seriesValues.push(seriesObj.data[index])
+        series.forEach(({ data }) => {
+            // handle undefined values due to empty (or shorter) serie data
+            // preserve 0 as valid value
+            seriesValues.push(data[index] === undefined ? null : data[index])
         })
 
         if (arrayNullsOnly(seriesValues)) {
