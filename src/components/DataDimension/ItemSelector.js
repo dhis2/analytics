@@ -1,12 +1,19 @@
 import React, { useState, useEffect, useRef } from 'react'
 import PropTypes from 'prop-types'
-import { Transfer, InputField, IconInfo16 } from '@dhis2/ui'
+import {
+    Transfer,
+    InputField,
+    IconInfo16,
+    IconDimensionDataSet16,
+    IconDimensionIndicator16,
+    IconDimensionEventDataItem16,
+    IconDimensionProgramIndicator16,
+} from '@dhis2/ui'
 import i18n from '@dhis2/d2-i18n'
 import { useDataEngine } from '@dhis2/app-runtime'
 
 import styles from '../styles/DimensionSelector.style'
 import { TransferOption } from '../TransferOption'
-import GenericIcon from '../../assets/DimensionItemIcons/GenericIcon'
 import {
     TRANSFER_HEIGHT,
     TRANSFER_OPTIONS_WIDTH,
@@ -27,6 +34,8 @@ import {
 } from '../../modules/dataTypes'
 import { apiFetchOptions } from '../../api/dimensions'
 import { DATA_SETS_CONSTANTS, REPORTING_RATE } from '../../modules/dataSets'
+import DataElementIcon from '../../assets/DimensionItemIcons/DataElementIcon'
+import GenericIcon from '../../assets/DimensionItemIcons/GenericIcon'
 
 const useDebounce = (value, delay) => {
     const [debouncedValue, setDebouncedValue] = useState(value)
@@ -256,6 +265,7 @@ const ItemSelector = ({
             nextPage: result.nextPage,
         }))
         if (
+            result.nextPage &&
             newOptions.length &&
             selectedItems.length >= newOptions.length &&
             newOptions.every(newOption =>
@@ -280,9 +290,10 @@ const ItemSelector = ({
         setState(state => ({
             ...state,
             loading: true,
-            options: [],
+            //options: [],
             nextPage: 1,
         }))
+        fetchItems(1)
     }, [debouncedSearchTerm, state.filter])
     const onChange = newSelected => {
         onSelect(
@@ -308,7 +319,8 @@ const ItemSelector = ({
         return !item || item.isActive
     }
     const getItemType = value =>
-        state.options.find(item => item.value === value)?.type
+        [...state.options, ...selectedItems].find(item => item.value === value)
+            ?.type
     const getTooltipText = itemType => {
         switch (itemType) {
             case DATA_ELEMENT_OPERAND:
@@ -317,6 +329,23 @@ const ItemSelector = ({
                 return dataTypes[DATA_SETS].getItemName()
             default:
                 return dataTypes[itemType]?.getItemName()
+        }
+    }
+    const getIcon = itemType => {
+        switch (itemType) {
+            case INDICATORS:
+                return <IconDimensionIndicator16 />
+            case DATA_ELEMENT_OPERAND:
+            case DATA_ELEMENTS:
+                return DataElementIcon
+            case REPORTING_RATE:
+                return <IconDimensionDataSet16 />
+            case EVENT_DATA_ITEMS:
+                return <IconDimensionEventDataItem16 />
+            case PROGRAM_INDICATORS:
+                return <IconDimensionProgramIndicator16 />
+            default:
+                return GenericIcon
         }
     }
     return (
@@ -374,7 +403,11 @@ const ItemSelector = ({
                     active={isActive(
                         props.value /* eslint-disable-line react/prop-types */
                     )}
-                    icon={GenericIcon}
+                    icon={getIcon(
+                        getItemType(
+                            props.value /* eslint-disable-line react/prop-types */
+                        )
+                    )}
                     tooltipText={getTooltipText(
                         getItemType(
                             props.value /* eslint-disable-line react/prop-types */
@@ -399,6 +432,7 @@ ItemSelector.propTypes = {
             label: PropTypes.string.isRequired,
             value: PropTypes.string.isRequired,
             isActive: PropTypes.bool,
+            type: PropTypes.string,
         })
     ),
 }

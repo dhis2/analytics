@@ -16,6 +16,7 @@ const DataDimension = ({
             items: selectedItem.map(item => ({
                 id: item.value,
                 name: item.label,
+                type: item.type,
             })),
         })
 
@@ -25,6 +26,7 @@ const DataDimension = ({
                 value: item.id,
                 label: item.name,
                 isActive: item.isActive,
+                type: item.type,
             }))}
             onSelect={onSelectItems}
             displayNameProp={displayNameProp}
