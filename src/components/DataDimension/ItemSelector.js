@@ -290,7 +290,6 @@ const ItemSelector = ({
         setState(state => ({
             ...state,
             loading: true,
-            //options: [],
             nextPage: 1,
         }))
         fetchItems(1)
