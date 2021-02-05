@@ -1,3 +1,10 @@
+## [14.1.4](https://github.com/dhis2/analytics/compare/v14.1.3...v14.1.4) (2021-02-05)
+
+
+### Bug Fixes
+
+* add data-test attributes for testing, fixed delete callback ([#798](https://github.com/dhis2/analytics/issues/798)) ([d75bc56](https://github.com/dhis2/analytics/commit/d75bc56bff089a17812118131d33407d03520d37))
+
 ## [14.1.3](https://github.com/dhis2/analytics/compare/v14.1.2...v14.1.3) (2021-02-05)
 
 
