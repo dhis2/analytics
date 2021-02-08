@@ -30,8 +30,15 @@ const normalizerMap = {
     [Y_VALUE]: getYValue,
 }
 
-const getDataWithNormalization = (data, config = { method: XY_RATIO }) => {
-    const normalizer = normalizerMap[config.method]
+const getDataWithNormalization = (
+    data,
+    config = { normalization: XY_RATIO }
+) => {
+    const normalizer = normalizerMap[config.normalization]
+
+    if (typeof normalizer !== 'function') {
+        throw `Normalization method ${config.normalization} not supported`
+    }
 
     return data
         .map(point => ({

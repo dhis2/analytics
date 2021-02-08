@@ -1,6 +1,6 @@
 import { std, mean } from 'mathjs'
 
-export const getStdDev = (data, normalization) => std(data, 'unbiased')
+export const getStdDev = data => std(data, 'unbiased')
 
 export const getMean = data => mean(data)
 
@@ -10,7 +10,7 @@ export const getStdDevMethodHelper = (
         thresholdFactor: 1.5,
     }
 ) => {
-    if (!dataWithNormalization.points.length) {
+    if (!dataWithNormalization.length) {
         throw 'Std dev analysis requires at least one number'
     }
     const normalizedData = dataWithNormalization.map(obj => obj.normalized)
