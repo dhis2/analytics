@@ -1,2 +1,2 @@
-export const getXyRatioData = data =>
-    data.map(dataPoint => dataPoint[0] / dataPoint[1])
+export const getXyRatio = point => point[0] / point[1]
+a

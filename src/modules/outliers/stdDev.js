@@ -1,22 +1,20 @@
 import { std, mean } from 'mathjs'
 
-export const getStdDev = (data, normalization) => std(data, normalization)
+export const getStdDev = (data, normalization) => std(data, 'unbiased')
 
 export const getMean = data => mean(data)
 
 export const getStdDevMethodHelper = (
-    data,
+    dataWithNormalization,
     config = {
         thresholdFactor: 1.5,
-        isSorted: false,
-        normalization: 'unbiased',
     }
 ) => {
-    if (!data.length) {
+    if (!dataWithNormalization.points.length) {
         throw 'Std dev analysis requires at least one number'
     }
-    const sortedData = config.isSorted ? data : data.slice().sort()
-    const stdDev = getStdDev(sortedData, config.normalization)
+    const normalizedData = dataWithNormalization.map(obj => obj.normalized)
+    const stdDev = getStdDev(sortedData)
     const stdDevThreshold = stdDev * config.thresholdFactor
     const mean = getMean(sortedData)
     const lowThreshold = mean - stdDevThreshold
@@ -24,11 +22,14 @@ export const getStdDevMethodHelper = (
     const isLowOutlier = value => value < lowThreshold
     const isHighOutlier = value => value > highThreshold
     const isOutlier = value => isLowOutlier(value) || isHighOutlier(value)
-    const getOutliers = () =>
-        sortedData.reduce((arr, value) => {
-            isOutlier(value) && arr.push(value)
-            return arr
-        }, [])
+    const outlierPoints = []
+    const inlierPoints = []
+    const detectOutliers = () =>
+        dataWithNormalization.forEach(obj => {
+            isOutlier(obj.normalized)
+                ? outlierPoints.push(obj.point)
+                : inlierPoints.push(obj.point)
+        })
 
     return {
         stdDev,
@@ -39,9 +40,10 @@ export const getStdDevMethodHelper = (
         isLowOutlier,
         isHighOutlier,
         isOutlier,
-        getOutliers,
-        normalization: config.normalization,
+        outlierPoints,
+        inlierPoints,
+        detectOutliers,
+        dataWithNormalization,
         thresholdFactor: config.thresholdFactor,
-        data: sortedData,
     }
 }

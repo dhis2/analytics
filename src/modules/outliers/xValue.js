@@ -1,1 +1,1 @@
-export const getXValueData = data => data.map(dataPoint => dataPoint[0])
+export const getXValue = point => point[0]

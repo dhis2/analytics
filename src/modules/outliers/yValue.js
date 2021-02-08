@@ -1,1 +1,1 @@
-export const getYValueData = data => data.map(dataPoint => dataPoint[1])
+export const getYValue = point => point[1]

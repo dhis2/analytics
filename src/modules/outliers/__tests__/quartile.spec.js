@@ -104,12 +104,24 @@ describe('getQuartileValue', () => {
 })
 
 describe('getQuartileHelper', () => {
-    const data = [2, 3, 3, 5, 6, 7, 7, 8, 9, 10, 40]
-    const thresholdFactor = 1.5
-    const helper = getQuartileMethodHelper(data, {
-        thresholdFactor,
-        isSorted: true,
-    })
+    const helper = getQuartileMethodHelper(
+        [
+            { point: [2, 1], normalized: 2 },
+            { point: [3, 1], normalized: 3 },
+            { point: [6, 2], normalized: 3 },
+            { point: [5, 1], normalized: 5 },
+            { point: [6, 1], normalized: 6 },
+            { point: [7, 1], normalized: 7 },
+            { point: [14, 2], normalized: 7 },
+            { point: [8, 1], normalized: 8 },
+            { point: [9, 1], normalized: 9 },
+            { point: [10, 1], normalized: 10 },
+            { point: [40, 1], normalized: 40 },
+        ],
+        {
+            thresholdFactor: 1.5,
+        }
+    )
 
     test('interquartile range', () => {
         expect(helper.iqr).toBe(9 - 3)
@@ -141,9 +153,5 @@ describe('getQuartileHelper', () => {
         expect(helper.isOutlier(0)).toBe(false)
         expect(helper.isOutlier(-20)).toBe(true)
         expect(helper.isOutlier(60)).toBe(true)
-    })
-
-    test('getOutliers', () => {
-        expect(helper.getOutliers()).toEqual([40])
     })
 })

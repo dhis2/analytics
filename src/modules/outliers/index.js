@@ -1,8 +1,8 @@
 import { getStdDevMethodHelper } from './stdDev'
 import { getQuartileMethodHelper } from './quartile'
-import { getXValueData } from './xValue'
-import { getYValueData } from './yValue'
-import { getXyRatioData } from './xyRatio'
+import { getXValue } from './xValue'
+import { getYValue } from './yValue'
+import { getXyRatio } from './xyRatio'
 
 export const THRESHOLD_FACTOR = 1.5
 export const QUARTILE = 'QUARTILE'
@@ -33,12 +33,12 @@ const normalizerMap = {
 const getDataWithNormalization = (data, config = { method: XY_RATIO }) => {
     const normalizer = normalizerMap[config.method]
 
-    const dataObjects = data.map(point => ({
-        point,
-        normalized: normalizer(point),
-    }))
-
-    return dataObjects.sort((a, b) => (a.normalized < b.normalized ? -1 : 1))
+    return data
+        .map(point => ({
+            point,
+            normalized: normalizer(point),
+        }))
+        .sort((a, b) => (a.normalized < b.normalized ? -1 : 1))
 }
 
 export const getOutlierHelper = (

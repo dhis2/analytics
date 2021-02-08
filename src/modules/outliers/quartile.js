@@ -36,6 +36,9 @@ export const getQuartileMethodHelper = (
         thresholdFactor: 1.5,
     }
 ) => {
+    if (!dataWithNormalization.length) {
+        throw 'Quartile analysis requires at least one number'
+    }
     const normalizedData = dataWithNormalization.map(obj => obj.normalized)
     const q1 = getQuartileValue(normalizedData, 0.25)
     const q3 = getQuartileValue(normalizedData, 0.75)
@@ -51,8 +54,8 @@ export const getQuartileMethodHelper = (
     const detectOutliers = () =>
         dataWithNormalization.forEach(obj => {
             isOutlier(obj.normalized)
-                ? outliers.push(obj.point)
-                : inliers.push(obj.point)
+                ? outlierPoints.push(obj.point)
+                : inlierPoints.push(obj.point)
         })
 
     return {
