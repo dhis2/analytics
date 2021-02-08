@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-01-19T14:22:01.500Z\n"
+"POT-Creation-Date: 2021-01-25T09:08:51.790Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: Ibatov <ibatovk@who.int>, 2021\n"
 "Language-Team: Uzbek (Cyrillic) (https://www.transifex.com/hisp-uio/teams/100509/uz@Cyrl/)\n"
@@ -70,6 +70,69 @@ msgid "Selected Items"
 msgstr "Элемент танланган"
 
 msgid "Nothing found for {{searchTerm}}"
+msgstr ""
+
+msgid "Delete {{fileType}}"
+msgstr ""
+
+msgid "This {{fileType}} will be deleted. Continue?"
+msgstr ""
+
+msgid "Cancel"
+msgstr "Бекор қилиш"
+
+msgid "Delete"
+msgstr "Ўчириб ташлаш"
+
+msgid "File"
+msgstr "Файл"
+
+msgid "New"
+msgstr "Янги"
+
+msgid "Open…"
+msgstr ""
+
+msgid "Save"
+msgstr "Сақлаш"
+
+msgid "Save…"
+msgstr ""
+
+msgid "Save as…"
+msgstr ""
+
+msgid "Rename…"
+msgstr ""
+
+msgid "Translate…"
+msgstr ""
+
+msgid "Share…"
+msgstr ""
+
+msgid "Get link…"
+msgstr ""
+
+msgid "Open in this app"
+msgstr "Ушбу иловада очинг"
+
+msgid "Close"
+msgstr "Ёпиш"
+
+msgid "Rename {{fileType}}"
+msgstr ""
+
+msgid "Name"
+msgstr "Исми"
+
+msgid "Description"
+msgstr "Тавсиф"
+
+msgid "Rename"
+msgstr "Қайта номлашч"
+
+msgid "Save {{fileType}} as"
 msgstr ""
 
 msgid "Selected Data"

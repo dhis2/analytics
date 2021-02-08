@@ -1,3 +1,45 @@
+## [14.1.5](https://github.com/dhis2/analytics/compare/v14.1.4...v14.1.5) (2021-02-07)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([c4137b9](https://github.com/dhis2/analytics/commit/c4137b9d10133b81dafe6c2e7eb758a1ffd47775))
+
+## [14.1.4](https://github.com/dhis2/analytics/compare/v14.1.3...v14.1.4) (2021-02-05)
+
+
+### Bug Fixes
+
+* add data-test attributes for testing, fixed delete callback ([#798](https://github.com/dhis2/analytics/issues/798)) ([d75bc56](https://github.com/dhis2/analytics/commit/d75bc56bff089a17812118131d33407d03520d37))
+
+## [14.1.3](https://github.com/dhis2/analytics/compare/v14.1.2...v14.1.3) (2021-02-05)
+
+
+### Bug Fixes
+
+* fix hide empty categories with non-available data DHIS2-8174 ([#773](https://github.com/dhis2/analytics/issues/773)) ([5703a57](https://github.com/dhis2/analytics/commit/5703a570ecbf31c27cbe0a2b327723fcb4d3e231))
+
+## [14.1.2](https://github.com/dhis2/analytics/compare/v14.1.1...v14.1.2) (2021-02-04)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([6815ced](https://github.com/dhis2/analytics/commit/6815ceda929b4581576ebf8d4ee3b47700afed64))
+
+## [14.1.1](https://github.com/dhis2/analytics/compare/v14.1.0...v14.1.1) (2021-02-03)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([ef7c166](https://github.com/dhis2/analytics/commit/ef7c1662f97f1936c84fe1c196bf6192dbeae2da))
+
+# [14.1.0](https://github.com/dhis2/analytics/compare/v14.0.3...v14.1.0) (2021-02-02)
+
+
+### Features
+
+* implement FileMenu using @dhis2/ui components ([#655](https://github.com/dhis2/analytics/issues/655)) ([853dc7c](https://github.com/dhis2/analytics/commit/853dc7cc4681f7826b7c17af265fc1f4d43fc55e))
+
 ## [14.0.3](https://github.com/dhis2/analytics/compare/v14.0.2...v14.0.3) (2021-02-01)
 
 

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-01-19T14:22:01.500Z\n"
+"POT-Creation-Date: 2021-01-25T09:08:51.790Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: Yury Rogachev <yury@dhis2.org>, 2021\n"
 "Language-Team: Uzbek (Latin) (https://www.transifex.com/hisp-uio/teams/100509/uz@Latn/)\n"
@@ -70,6 +70,69 @@ msgid "Selected Items"
 msgstr "Element tanlangan"
 
 msgid "Nothing found for {{searchTerm}}"
+msgstr ""
+
+msgid "Delete {{fileType}}"
+msgstr ""
+
+msgid "This {{fileType}} will be deleted. Continue?"
+msgstr ""
+
+msgid "Cancel"
+msgstr "Бекор қилиш"
+
+msgid "Delete"
+msgstr "Oʼchirib tashlash"
+
+msgid "File"
+msgstr "Fayl"
+
+msgid "New"
+msgstr "Yangi"
+
+msgid "Open…"
+msgstr ""
+
+msgid "Save"
+msgstr "Saqlash"
+
+msgid "Save…"
+msgstr ""
+
+msgid "Save as…"
+msgstr ""
+
+msgid "Rename…"
+msgstr ""
+
+msgid "Translate…"
+msgstr ""
+
+msgid "Share…"
+msgstr ""
+
+msgid "Get link…"
+msgstr ""
+
+msgid "Open in this app"
+msgstr "Ushbu ilovada oching"
+
+msgid "Close"
+msgstr "Yopmoq"
+
+msgid "Rename {{fileType}}"
+msgstr ""
+
+msgid "Name"
+msgstr "Исми"
+
+msgid "Description"
+msgstr "Tavsif"
+
+msgid "Rename"
+msgstr "Қайта номлаш"
+
+msgid "Save {{fileType}} as"
 msgstr ""
 
 msgid "Selected Data"

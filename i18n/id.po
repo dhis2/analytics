@@ -1,17 +1,17 @@
 # 
 # Translators:
 # phil_dhis2, 2020
-# Guardian Sanjaya <gysanjaya@ugm.ac.id>, 2020
-# Carwoto Sa'an <carwoto@gmail.com>, 2020
-# Aprisa Chrysantina <aprisa.chrysantina@gmail.com>, 2020
+# Guardian Sanjaya <gysanjaya@ugm.ac.id>, 2021
+# Aprisa Chrysantina <aprisa.chrysantina@gmail.com>, 2021
 # Viktor Varland <viktor@dhis2.org>, 2021
+# Carwoto Sa'an <carwoto@gmail.com>, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-01-19T14:22:01.500Z\n"
+"POT-Creation-Date: 2021-01-25T09:08:51.790Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2021\n"
+"Last-Translator: Carwoto Sa'an <carwoto@gmail.com>, 2021\n"
 "Language-Team: Indonesian (https://www.transifex.com/hisp-uio/teams/100509/id/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -74,6 +74,69 @@ msgid "Selected Items"
 msgstr ""
 
 msgid "Nothing found for {{searchTerm}}"
+msgstr ""
+
+msgid "Delete {{fileType}}"
+msgstr ""
+
+msgid "This {{fileType}} will be deleted. Continue?"
+msgstr ""
+
+msgid "Cancel"
+msgstr "Batal"
+
+msgid "Delete"
+msgstr "Hapus"
+
+msgid "File"
+msgstr ""
+
+msgid "New"
+msgstr "Baru"
+
+msgid "Open…"
+msgstr ""
+
+msgid "Save"
+msgstr "Simpan"
+
+msgid "Save…"
+msgstr ""
+
+msgid "Save as…"
+msgstr ""
+
+msgid "Rename…"
+msgstr ""
+
+msgid "Translate…"
+msgstr ""
+
+msgid "Share…"
+msgstr ""
+
+msgid "Get link…"
+msgstr ""
+
+msgid "Open in this app"
+msgstr ""
+
+msgid "Close"
+msgstr "Tutup"
+
+msgid "Rename {{fileType}}"
+msgstr ""
+
+msgid "Name"
+msgstr "Nama"
+
+msgid "Description"
+msgstr "Deskripsi"
+
+msgid "Rename"
+msgstr "Ganti nama"
+
+msgid "Save {{fileType}} as"
 msgstr ""
 
 msgid "Selected Data"
