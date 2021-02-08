@@ -12,28 +12,33 @@ export const X_VALUE = 'X_VALUE'
 export const Y_VALUE = 'Y_VALUE'
 
 const getOutlierMethodHelper = (
-    data,
+    dataWithNormalization,
     config = { method: QUARTILE, thresholdFactor: THRESHOLD_FACTOR }
 ) => {
     switch (config.method) {
         case STDDEV:
-            return getStdDevMethodHelper(data, config)
+            return getStdDevMethodHelper(dataWithNormalization, config)
         case QUARTILE:
         default:
-            return getQuartileMethodHelper(data, config)
+            return getQuartileMethodHelper(dataWithNormalization, config)
     }
 }
 
-const getNormalizedData = (data, config = { method: XY_RATIO }) => {
-    switch (config.method) {
-        case X_VALUE:
-            return getXValueData(data)
-        case Y_VALUE:
-            return getYValueData(data)
-        case XY_RATIO:
-        default:
-            return getXyRatioData(data)
-    }
+const normalizerMap = {
+    [XY_RATIO]: getXyRatio,
+    [X_VALUE]: getXValue,
+    [Y_VALUE]: getYValue,
+}
+
+const getDataWithNormalization = (data, config = { method: XY_RATIO }) => {
+    const normalizer = normalizerMap[config.method]
+
+    const dataObjects = data.map(point => ({
+        point,
+        normalized: normalizer(point),
+    }))
+
+    return dataObjects.sort((a, b) => (a.normalized < b.normalized ? -1 : 1))
 }
 
 export const getOutlierHelper = (
@@ -43,4 +48,4 @@ export const getOutlierHelper = (
         method: QUARTILE,
         thresholdFactor: THRESHOLD_FACTOR,
     }
-) => getOutlierMethodHelper(getNormalizedData(data, config), config)
+) => getOutlierMethodHelper(getDataWithNormalization(data, config), config)

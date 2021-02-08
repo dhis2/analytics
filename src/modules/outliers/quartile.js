@@ -31,15 +31,14 @@ export const getQuartileValue = (data, q = 0.25) => {
 }
 
 export const getQuartileMethodHelper = (
-    data,
+    dataWithNormalization,
     config = {
         thresholdFactor: 1.5,
-        isSorted: false,
     }
 ) => {
-    const sortedData = config.isSorted ? data : data.slice().sort()
-    const q1 = getQuartileValue(sortedData, 0.25)
-    const q3 = getQuartileValue(sortedData, 0.75)
+    const normalizedData = dataWithNormalization.map(obj => obj.normalized)
+    const q1 = getQuartileValue(normalizedData, 0.25)
+    const q3 = getQuartileValue(normalizedData, 0.75)
     const iqr = q3 - q1
     const iqrThreshold = iqr * config.thresholdFactor
     const q1Threshold = q1 - iqrThreshold
@@ -47,11 +46,14 @@ export const getQuartileMethodHelper = (
     const isLowOutlier = value => value < q1Threshold
     const isHighOutlier = value => value > q3Threshold
     const isOutlier = value => isLowOutlier(value) || isHighOutlier(value)
-    const getOutliers = () =>
-        sortedData.reduce((outliers, value) => {
-            isOutlier(value) && outliers.push(value)
-            return outliers
-        }, [])
+    const outlierPoints = []
+    const inlierPoints = []
+    const detectOutliers = () =>
+        dataWithNormalization.forEach(obj => {
+            isOutlier(obj.normalized)
+                ? outliers.push(obj.point)
+                : inliers.push(obj.point)
+        })
 
     return {
         q1,
@@ -63,8 +65,10 @@ export const getQuartileMethodHelper = (
         isLowOutlier,
         isHighOutlier,
         isOutlier,
-        getOutliers,
+        outlierPoints,
+        inlierPoints,
+        detectOutliers,
+        dataWithNormalization,
         thresholdFactor: config.thresholdFactor,
-        data: sortedData,
     }
 }
