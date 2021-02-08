@@ -11,7 +11,7 @@ export const getStdDevMethodHelper = (
     }
 ) => {
     if (!dataWithNormalization.length) {
-        throw 'Std dev analysis requires at least one number'
+        throw 'Std dev analysis requires at least one value'
     }
     const normalizedData = dataWithNormalization.map(obj => obj.normalized)
     const stdDev = getStdDev(sortedData)

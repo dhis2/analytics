@@ -1,3 +1,5 @@
+import { XY_RATIO } from '.'
+
 export const getQuartilePosition = (data, q) => {
     const pos = (data.length + 1) / 4
 
@@ -34,10 +36,11 @@ export const getQuartileMethodHelper = (
     dataWithNormalization,
     config = {
         thresholdFactor: 1.5,
+        normalization: XY_RATIO,
     }
 ) => {
     if (!dataWithNormalization.length) {
-        throw 'Quartile analysis requires at least one number'
+        throw 'Quartile analysis requires at least one value'
     }
     const normalizedData = dataWithNormalization.map(obj => obj.normalized)
     const q1 = getQuartileValue(normalizedData, 0.25)
@@ -46,6 +49,15 @@ export const getQuartileMethodHelper = (
     const iqrThreshold = iqr * config.thresholdFactor
     const q1Threshold = q1 - iqrThreshold
     const q3Threshold = q3 + iqrThreshold
+    const deNormalizer = deNormalizerMap[config.normalization]
+    const q1ThresholdLine = [
+        [config.xMin, deNormalizer(config.xMin, q1Threshold)],
+        [config.xMax, deNormalizer(config.xMax, q1Threshold)],
+    ]
+    const q3ThresholdLine = [
+        [config.xMin, deNormalizer(config.xMin, q3Threshold)],
+        [config.xMax, deNormalizer(config.xMax, q3Threshold)],
+    ]
     const isLowOutlier = value => value < q1Threshold
     const isHighOutlier = value => value > q3Threshold
     const isOutlier = value => isLowOutlier(value) || isHighOutlier(value)
@@ -65,6 +77,8 @@ export const getQuartileMethodHelper = (
         iqrThreshold,
         q1Threshold,
         q3Threshold,
+        q1ThresholdLine,
+        q3ThresholdLine,
         isLowOutlier,
         isHighOutlier,
         isOutlier,

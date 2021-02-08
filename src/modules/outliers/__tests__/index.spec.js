@@ -1,4 +1,8 @@
+import { std } from 'mathjs'
+
 import { getOutlierHelper } from '..'
+
+jest.mock('mathjs')
 
 describe('getOutlierHelper', () => {
     it('returs the outlier helper', () => {
