@@ -110,7 +110,7 @@ function getIdColorMap(series, layout, extraOptions) {
     }
 }
 
-function getDefault(series, layout, isStacked, extraOptions) {
+function getDefault(series, metaData, layout, isStacked, extraOptions) {
     const fullIdAxisMap = getFullIdAxisMap(layout.series, series)
     const idColorMap = getIdColorMap(series, layout, extraOptions)
     const indexColorPatternMap = getIndexColorPatternMap(
@@ -168,10 +168,21 @@ function getDefault(series, layout, isStacked, extraOptions) {
             seriesObj.groupPadding = 0
         }
 
+        const legendSet = extraOptions?.legendSets?.find(
+            legendSet =>
+                legendSet.id === metaData.items[seriesObj.id]?.legendSet
+        )
+
         // color
-        seriesObj.color = isYearOverYear(layout.type)
-            ? indexColorPatternMap[index]
-            : idColorMap[seriesObj.id]
+        if (isYearOverYear(layout.type)) {
+            seriesObj.color = indexColorPatternMap[index]
+        } else if (legendSet && legendSet.legends?.length) {
+            seriesObj.color = legendSet.legends.sort(
+                (a, b) => a.startValue - b.startValue
+            )[Math.ceil(legendSet.legends.length / 2) - 1]?.color
+        } else {
+            seriesObj.color = idColorMap[seriesObj.id]
+        }
 
         // axis number
         seriesObj.yAxis =
@@ -193,7 +204,7 @@ function getDefault(series, layout, isStacked, extraOptions) {
     return series
 }
 
-export default function (series, store, layout, isStacked, extraOptions) {
+export default function (series, metaData, layout, isStacked, extraOptions) {
     switch (layout.type) {
         case VIS_TYPE_PIE:
             series = getPie(
@@ -208,7 +219,13 @@ export default function (series, store, layout, isStacked, extraOptions) {
             series = getScatter(extraOptions.scatterData)
             break
         default:
-            series = getDefault(series, layout, isStacked, extraOptions)
+            series = getDefault(
+                series,
+                metaData,
+                layout,
+                isStacked,
+                extraOptions
+            )
     }
 
     series.forEach(seriesObj => {
