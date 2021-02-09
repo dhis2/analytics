@@ -31,7 +31,7 @@ export default function ({
         type,
         seriesId = initialSeriesId,
         categoryIds = [initialCategoryId],
-        extraOptions,
+        extraOptions = {},
     }) => {
         return _adapter({
             type,
