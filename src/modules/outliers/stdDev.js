@@ -1,5 +1,7 @@
 import { std, mean } from 'mathjs'
 
+export const STDDEV = 'STDDEV'
+
 export const getStdDev = data => std(data, 'unbiased')
 
 export const getMean = data => mean(data)

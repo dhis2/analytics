@@ -1,6 +1,7 @@
 // most performant way of getting min and max
 export const getXMinMax = points => {
-    let xMin = (xMax = points[0][0])
+    let xMin = points[0][0]
+    let xMax = xMin
     let i
     let x
 

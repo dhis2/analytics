@@ -1,4 +1,6 @@
-import { XY_RATIO } from '.'
+import { deNormalizerMap, XY_RATIO } from './normalization'
+
+export const QUARTILE = 'QUARTILE'
 
 export const getQuartilePosition = (data, q) => {
     const pos = (data.length + 1) / 4
@@ -32,16 +34,11 @@ export const getQuartileValue = (data, q = 0.25) => {
     return data[base - 1] + diff * rest
 }
 
-export const getQuartileMethodHelper = (
-    dataWithNormalization,
-    config = {
-        thresholdFactor: 1.5,
-        normalization: XY_RATIO,
-    }
-) => {
+export const getQuartileMethodHelper = (dataWithNormalization, config) => {
     if (!dataWithNormalization.length) {
         throw 'Quartile analysis requires at least one value'
     }
+
     const normalizedData = dataWithNormalization.map(obj => obj.normalized)
     const q1 = getQuartileValue(normalizedData, 0.25)
     const q3 = getQuartileValue(normalizedData, 0.75)
@@ -86,6 +83,6 @@ export const getQuartileMethodHelper = (
         inlierPoints,
         detectOutliers,
         dataWithNormalization,
-        thresholdFactor: config.thresholdFactor,
+        ...config,
     }
 }

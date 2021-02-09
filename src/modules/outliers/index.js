@@ -1,30 +1,14 @@
-import { getStdDevMethodHelper } from './stdDev'
-import { getQuartileMethodHelper } from './quartile'
-import { normalizerMap } from './normalization'
+import { getStdDevMethodHelper, STDDEV } from './stdDev'
+import { getQuartileMethodHelper, QUARTILE } from './quartile'
+import { normalizerMap, XY_RATIO } from './normalization'
 import { getXMinMax } from './minMax'
 
 export const THRESHOLD_FACTOR = 1.5
-export const QUARTILE = 'QUARTILE'
-export const STDDEV = 'STDDEV'
-export const XY_RATIO = 'XY_RATIO'
-export const X_VALUE = 'X_VALUE'
-export const Y_VALUE = 'Y_VALUE'
 
-const getOutlierMethodHelper = (
-    dataWithNormalization,
-    config = {
-        normalization: XY_RATIO,
-        method: QUARTILE,
-        thresholdFactor: THRESHOLD_FACTOR,
-    }
-) => {
-    switch (config.method) {
-        case STDDEV:
-            return getStdDevMethodHelper(dataWithNormalization, config)
-        case QUARTILE:
-        default:
-            return getQuartileMethodHelper(dataWithNormalization, config)
-    }
+export const defaultConfig = {
+    thresholdFactor: THRESHOLD_FACTOR,
+    normalization: XY_RATIO,
+    method: QUARTILE,
 }
 
 const getDataWithNormalization = (
@@ -45,15 +29,19 @@ const getDataWithNormalization = (
         .sort((a, b) => (a.normalized < b.normalized ? -1 : 1))
 }
 
-export const getOutlierHelper = (
-    data,
-    config = {
-        normalization: XY_RATIO,
-        method: QUARTILE,
-        thresholdFactor: THRESHOLD_FACTOR,
+const getOutlierMethodHelper = (dataWithNormalization, config) => {
+    switch (config.method) {
+        case STDDEV:
+            return getStdDevMethodHelper(dataWithNormalization, config)
+        case QUARTILE:
+        default:
+            return getQuartileMethodHelper(dataWithNormalization, config)
     }
-) =>
+}
+
+export const getOutlierHelper = (data, config) =>
     getOutlierMethodHelper(getDataWithNormalization(data, config), {
+        ...defaultConfig,
         ...config,
         ...getXMinMax(data),
     })

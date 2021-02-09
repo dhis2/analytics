@@ -1,3 +1,4 @@
+import { defaultConfig } from '..'
 import {
     getQuartilePosition,
     getQuartileValue,
@@ -118,9 +119,7 @@ describe('getQuartileHelper', () => {
             { point: [10, 1], normalized: 10 },
             { point: [40, 1], normalized: 40 },
         ],
-        {
-            thresholdFactor: 1.5,
-        }
+        defaultConfig
     )
 
     test('interquartile range', () => {
