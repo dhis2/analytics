@@ -1,25 +1,27 @@
 import { getOutlierHelper } from '..'
 
 describe('getOutlierHelper', () => {
-    it('returs the outlier helper', () => {
-        const outlierPoint = [40, 1]
+    it('returns the outlier helper', () => {
+        const outlierPoint1 = [8, 12]
+        const outlierPoint2 = [40, 10]
         const data = [
-            [2, 1],
-            [3, 1],
-            [6, 2],
-            [5, 1],
-            [6, 1],
-            [7, 1],
-            [14, 2],
-            [8, 1],
-            [9, 1],
-            [10, 1],
-            outlierPoint,
+            [2, 2],
+            [3, 3],
+            [6, 5],
+            outlierPoint1,
+            [12, 11],
+            [15, 17],
+            [20, 18],
+            [24, 24],
+            [30, 28],
+            [35, 30],
+            outlierPoint2,
         ]
 
         const helper = getOutlierHelper(data)
         helper.detectOutliers()
 
-        expect(helper.outlierPoints[0]).toBe(outlierPoint)
+        expect(helper.outlierPoints[0]).toBe(outlierPoint1)
+        expect(helper.outlierPoints[1]).toBe(outlierPoint2)
     })
 })
