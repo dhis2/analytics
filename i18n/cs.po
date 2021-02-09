@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-01-19T14:22:01.500Z\n"
+"POT-Creation-Date: 2021-01-25T09:08:51.790Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: Jiří Podhorecký, 2021\n"
 "Language-Team: Czech (https://www.transifex.com/hisp-uio/teams/100509/cs/)\n"
@@ -71,6 +71,69 @@ msgstr "Vybrané položky"
 
 msgid "Nothing found for {{searchTerm}}"
 msgstr "Pro dotaz {{searchTerm}} nebylo nic nalezeno"
+
+msgid "Delete {{fileType}}"
+msgstr "Smazat {{fileType}}"
+
+msgid "This {{fileType}} will be deleted. Continue?"
+msgstr "Tento {{fileType}} bude smazán. Pokračovat?"
+
+msgid "Cancel"
+msgstr "Zrušit"
+
+msgid "Delete"
+msgstr "Smazat"
+
+msgid "File"
+msgstr "Soubor"
+
+msgid "New"
+msgstr "Nový"
+
+msgid "Open…"
+msgstr "Otevřít…"
+
+msgid "Save"
+msgstr "Uložit"
+
+msgid "Save…"
+msgstr "Uložit…"
+
+msgid "Save as…"
+msgstr "Uložit jako…"
+
+msgid "Rename…"
+msgstr "Přejmenovat…"
+
+msgid "Translate…"
+msgstr "Přeložit…"
+
+msgid "Share…"
+msgstr "Sdílet…"
+
+msgid "Get link…"
+msgstr "Získat odkaz ..."
+
+msgid "Open in this app"
+msgstr "Otevřít v této aplikaci"
+
+msgid "Close"
+msgstr "Zavřít"
+
+msgid "Rename {{fileType}}"
+msgstr "Přejmenovat {{fileType}}"
+
+msgid "Name"
+msgstr "Název"
+
+msgid "Description"
+msgstr "Popis"
+
+msgid "Rename"
+msgstr "Přejmenovat"
+
+msgid "Save {{fileType}} as"
+msgstr "Uložit {{fileType}} jako"
 
 msgid "Selected Data"
 msgstr "Vybraná data"
@@ -602,7 +665,7 @@ msgstr ""
 "Doporučeno pro hledání odlehlých hodnot."
 
 msgid "{{seriesName}} (trend)"
-msgstr ""
+msgstr "{{seriesName}} (trend)"
 
 msgid "Trend"
 msgstr "Trend"

@@ -92,7 +92,7 @@ export default function ({ store, layout, el, extraConfig, extraOptions }) {
         // series
         series: getSeries(
             series.slice(),
-            store,
+            store.data[0].metaData,
             _layout,
             stacked,
             _extraOptions
