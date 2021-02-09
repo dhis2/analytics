@@ -49,6 +49,7 @@ export const dataItemsQuery = {
     params: ({ nameProp, filter, searchTerm, page }) => {
         const filters = []
 
+        // TODO: Extract all of this logic out of the query?
         if (!filter?.dataType || filter.dataType === ALL_ID) {
             // TODO: Specifing a filter when no filter is used is a temporary fix as providing no dimensionItemType will currently return duplicates of DATA_ELEMENT_OPERAND and other unwanted types
             filters.push(
@@ -60,6 +61,12 @@ export const dataItemsQuery = {
             )
         } else {
             filters.push(`dimensionItemType:eq:${filter.dataType}`)
+        }
+        if (
+            filter?.group &&
+            [EVENT_DATA_ITEMS, PROGRAM_INDICATORS].includes(filter.dataType)
+        ) {
+            filters.push(`programId:eq:${filter.group}`)
         }
 
         // if (filter?.group && filter.group !== ALL_ID) {
@@ -330,10 +337,27 @@ export const apiFetchOptions = ({
     searchTerm,
     page,
 }) => {
-    if (filter?.dataType && filter.dataType !== ALL_ID) {
-        switch (filter.dataType) {
-            case INDICATORS: {
-                return fetchIndicators({
+    switch (filter?.dataType) {
+        case INDICATORS: {
+            return fetchIndicators({
+                dataEngine,
+                nameProp,
+                groupId: filter.group,
+                filterText: searchTerm,
+                page,
+            })
+        }
+        case DATA_ELEMENTS: {
+            if (filter.subGroup === TOTALS) {
+                return fetchDataElements({
+                    dataEngine,
+                    nameProp,
+                    groupId: filter.group,
+                    filterText: searchTerm,
+                    page,
+                })
+            } else {
+                return fetchDataElementOperands({
                     dataEngine,
                     nameProp,
                     groupId: filter.group,
@@ -341,53 +365,24 @@ export const apiFetchOptions = ({
                     page,
                 })
             }
-            case DATA_ELEMENTS: {
-                if (filter.subGroup === TOTALS) {
-                    return fetchDataElements({
-                        dataEngine,
-                        nameProp,
-                        groupId: filter.group,
-                        filterText: searchTerm,
-                        page,
-                    })
-                } else {
-                    return fetchDataElementOperands({
-                        dataEngine,
-                        nameProp,
-                        groupId: filter.group,
-                        filterText: searchTerm,
-                        page,
-                    })
-                }
-            }
-            case DATA_SETS: {
-                return fetchDataSets({
-                    dataEngine,
-                    nameProp,
-                    id: filter.group,
-                    filterText: searchTerm,
-                    page,
-                })
-            }
-            // case EVENT_DATA_ITEMS: {
-            //     return queryParams.groupId
-            //         ? getEventDataItems({ dataEngine, ...queryParams })
-            //         : null
-            // }
-            // case PROGRAM_INDICATORS: {
-            //     return queryParams.groupId
-            //         ? fetchProgramIndicators({ dataEngine, ...queryParams })
-            //         : null
-            // }
         }
-    } else {
-        return fetchDataItems({
-            dataEngine,
-            nameProp,
-            filter,
-            searchTerm,
-            page,
-        })
+        case DATA_SETS: {
+            return fetchDataSets({
+                dataEngine,
+                nameProp,
+                id: filter.group,
+                filterText: searchTerm,
+                page,
+            })
+        }
+        default:
+            return fetchDataItems({
+                dataEngine,
+                nameProp,
+                filter,
+                searchTerm,
+                page,
+            })
     }
 }
 
