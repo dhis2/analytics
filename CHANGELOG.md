@@ -1,3 +1,38 @@
+## [14.1.6](https://github.com/dhis2/analytics/compare/v14.1.5...v14.1.6) (2021-02-09)
+
+
+### Bug Fixes
+
+* series item color set color of middle legend in legendset (DHIS2-147) ([#807](https://github.com/dhis2/analytics/issues/807)) ([1d8d130](https://github.com/dhis2/analytics/commit/1d8d130573f0eb8d53c4a0b6642d80d8eba90f97))
+
+## [14.1.5](https://github.com/dhis2/analytics/compare/v14.1.4...v14.1.5) (2021-02-07)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([c4137b9](https://github.com/dhis2/analytics/commit/c4137b9d10133b81dafe6c2e7eb758a1ffd47775))
+
+## [14.1.4](https://github.com/dhis2/analytics/compare/v14.1.3...v14.1.4) (2021-02-05)
+
+
+### Bug Fixes
+
+* add data-test attributes for testing, fixed delete callback ([#798](https://github.com/dhis2/analytics/issues/798)) ([d75bc56](https://github.com/dhis2/analytics/commit/d75bc56bff089a17812118131d33407d03520d37))
+
+## [14.1.3](https://github.com/dhis2/analytics/compare/v14.1.2...v14.1.3) (2021-02-05)
+
+
+### Bug Fixes
+
+* fix hide empty categories with non-available data DHIS2-8174 ([#773](https://github.com/dhis2/analytics/issues/773)) ([5703a57](https://github.com/dhis2/analytics/commit/5703a570ecbf31c27cbe0a2b327723fcb4d3e231))
+
+## [14.1.2](https://github.com/dhis2/analytics/compare/v14.1.1...v14.1.2) (2021-02-04)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([6815ced](https://github.com/dhis2/analytics/commit/6815ceda929b4581576ebf8d4ee3b47700afed64))
+
 ## [14.1.1](https://github.com/dhis2/analytics/compare/v14.1.0...v14.1.1) (2021-02-03)
 
 

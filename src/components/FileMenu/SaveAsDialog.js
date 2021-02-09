@@ -30,7 +30,7 @@ export const SaveAsDialog = ({ type, object, onClose, onSaveAs }) => {
     }
 
     return (
-        <Modal onClose={onClose}>
+        <Modal onClose={onClose} dataTest="file-menu-saveas-modal">
             <ModalTitle>
                 {i18n.t('Save {{fileType}} as', { fileType: type })}
             </ModalTitle>
@@ -40,20 +40,30 @@ export const SaveAsDialog = ({ type, object, onClose, onSaveAs }) => {
                     required
                     value={name}
                     onChange={({ value }) => setName(value)}
+                    dataTest="file-menu-saveas-modal-name"
                 />
                 <TextAreaField
                     label={i18n.t('Description')}
                     value={description}
                     rows={3}
                     onChange={({ value }) => setDescription(value)}
+                    dataTest="file-menu-saveas-modal-description"
                 />
             </ModalContent>
             <ModalActions>
                 <ButtonStrip>
-                    <Button onClick={onClose} secondary>
+                    <Button
+                        onClick={onClose}
+                        secondary
+                        dataTest="file-menu-saveas-modal-cancel"
+                    >
                         {i18n.t('Cancel')}
                     </Button>
-                    <Button onClick={saveObjectAs} primary>
+                    <Button
+                        onClick={saveObjectAs}
+                        primary
+                        dataTest="file-menu-saveas-modal-save"
+                    >
                         {i18n.t('Save')}
                     </Button>
                 </ButtonStrip>
