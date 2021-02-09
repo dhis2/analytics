@@ -16,6 +16,7 @@ export const TransferOption = ({
     icon,
     active,
     tooltipText,
+    dataTest,
 }) => {
     const renderContent = () => (
         <div
@@ -41,7 +42,7 @@ export const TransferOption = ({
     )
 
     return (
-        <div data-value={value} className="wrapper">
+        <div data-value={value} data-test={dataTest} className="wrapper">
             {tooltipText ? (
                 <Tooltip
                     key={`${value}`}
@@ -61,6 +62,7 @@ TransferOption.propTypes = {
     label: propTypes.string.isRequired,
     value: propTypes.string.isRequired,
     active: propTypes.bool,
+    dataTest: propTypes.string,
     disabled: propTypes.bool,
     highlighted: propTypes.bool,
     icon: propTypes.node,

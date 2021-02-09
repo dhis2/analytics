@@ -412,6 +412,7 @@ const ItemSelector = ({
                             props.value /* eslint-disable-line react/prop-types */
                         )
                     )}
+                    dataTest={`${dataTest}-transfer-option`}
                 />
             )}
             dataTest={`${dataTest}-transfer`}
