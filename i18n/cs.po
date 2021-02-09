@@ -73,67 +73,67 @@ msgid "Nothing found for {{searchTerm}}"
 msgstr "Pro dotaz {{searchTerm}} nebylo nic nalezeno"
 
 msgid "Delete {{fileType}}"
-msgstr ""
+msgstr "Smazat {{fileType}}"
 
 msgid "This {{fileType}} will be deleted. Continue?"
-msgstr ""
+msgstr "Tento {{fileType}} bude smazán. Pokračovat?"
 
 msgid "Cancel"
-msgstr ""
+msgstr "Zrušit"
 
 msgid "Delete"
-msgstr ""
+msgstr "Smazat"
 
 msgid "File"
-msgstr ""
+msgstr "Soubor"
 
 msgid "New"
-msgstr ""
+msgstr "Nový"
 
 msgid "Open…"
-msgstr ""
+msgstr "Otevřít…"
 
 msgid "Save"
-msgstr ""
+msgstr "Uložit"
 
 msgid "Save…"
-msgstr ""
+msgstr "Uložit…"
 
 msgid "Save as…"
-msgstr ""
+msgstr "Uložit jako…"
 
 msgid "Rename…"
-msgstr ""
+msgstr "Přejmenovat…"
 
 msgid "Translate…"
-msgstr ""
+msgstr "Přeložit…"
 
 msgid "Share…"
-msgstr ""
+msgstr "Sdílet…"
 
 msgid "Get link…"
-msgstr ""
+msgstr "Získat odkaz ..."
 
 msgid "Open in this app"
-msgstr ""
+msgstr "Otevřít v této aplikaci"
 
 msgid "Close"
-msgstr ""
+msgstr "Zavřít"
 
 msgid "Rename {{fileType}}"
-msgstr ""
+msgstr "Přejmenovat {{fileType}}"
 
 msgid "Name"
-msgstr ""
+msgstr "Název"
 
 msgid "Description"
-msgstr ""
+msgstr "Popis"
 
 msgid "Rename"
-msgstr ""
+msgstr "Přejmenovat"
 
 msgid "Save {{fileType}} as"
-msgstr ""
+msgstr "Uložit {{fileType}} jako"
 
 msgid "Selected Data"
 msgstr "Vybraná data"
@@ -665,7 +665,7 @@ msgstr ""
 "Doporučeno pro hledání odlehlých hodnot."
 
 msgid "{{seriesName}} (trend)"
-msgstr ""
+msgstr "{{seriesName}} (trend)"
 
 msgid "Trend"
 msgstr "Trend"
