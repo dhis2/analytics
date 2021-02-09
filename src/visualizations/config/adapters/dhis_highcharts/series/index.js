@@ -175,12 +175,15 @@ function getDefault(series, metaData, layout, isStacked, extraOptions) {
 
         // color
         if (isYearOverYear(layout.type)) {
+            // YearOverYear: Fetch colors directly from color sets
             seriesObj.color = indexColorPatternMap[index]
         } else if (legendSet && legendSet.legends?.length) {
+            // Legendset: Fetch the middle color of the set
             seriesObj.color = legendSet.legends.sort(
                 (a, b) => a.startValue - b.startValue
             )[Math.ceil(legendSet.legends.length / 2) - 1]?.color
         } else {
+            // Default: Either generate colors or fetch from color sets
             seriesObj.color = idColorMap[seriesObj.id]
         }
 
