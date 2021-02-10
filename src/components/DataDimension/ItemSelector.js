@@ -354,6 +354,9 @@ const ItemSelector = ({
                 return dataTypes[DATA_ELEMENTS].getItemName()
             case REPORTING_RATE:
                 return dataTypes[DATA_SETS].getItemName()
+            case PROGRAM_DATA_ELEMENT:
+            case PROGRAM_ATTRIBUTE:
+                return dataTypes[EVENT_DATA_ITEMS].getItemName()
             default:
                 return dataTypes[itemType]?.getItemName()
         }
