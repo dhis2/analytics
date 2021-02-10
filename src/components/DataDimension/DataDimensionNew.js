@@ -1,3 +1,4 @@
+// FIXME: Rename file to DataDimension.js and remove the old data dimension selector and its associated files
 import React from 'react'
 import PropTypes from 'prop-types'
 
