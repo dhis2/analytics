@@ -31,6 +31,8 @@ import {
     PROGRAM_INDICATORS,
     INDICATORS,
     TOTALS,
+    PROGRAM_DATA_ELEMENT,
+    PROGRAM_ATTRIBUTE,
 } from '../../modules/dataTypes'
 import { apiFetchOptions } from '../../api/dimensions'
 import { DATA_SETS_CONSTANTS, REPORTING_RATE } from '../../modules/dataSets'
@@ -135,27 +137,53 @@ const SourceEmptyPlaceholder = ({
 }) => {
     let message = ''
     if (!loading && !options.length && !searchTerm) {
-        message = noItemsMessage || i18n.t('No data')
+        if (noItemsMessage) {
+            message = noItemsMessage
+        } else {
+            switch (dataType) {
+                case INDICATORS:
+                    message = i18n.t('No indicators found')
+                    break
+                case DATA_ELEMENTS:
+                    message = i18n.t('No data elements found')
+                    break
+                case DATA_SETS:
+                    message = i18n.t('No data sets found')
+                    break
+                case EVENT_DATA_ITEMS:
+                    message = i18n.t('No event data items found')
+                    break
+                case PROGRAM_INDICATORS:
+                    message = i18n.t('No program indicators found')
+                    break
+                default:
+                    message = i18n.t('No data')
+                    break
+            }
+        }
     } else if (!loading && !options.length && searchTerm) {
         switch (dataType) {
             case INDICATORS:
-                message = i18n.t('No indicators found for {{searchTerm}}', {
+                message = i18n.t('No indicators found for "{{searchTerm}}"', {
                     searchTerm: searchTerm,
                 })
                 break
             case DATA_ELEMENTS:
-                message = i18n.t('No data elements found for {{searchTerm}}', {
-                    searchTerm: searchTerm,
-                })
+                message = i18n.t(
+                    'No data elements found for "{{searchTerm}}"',
+                    {
+                        searchTerm: searchTerm,
+                    }
+                )
                 break
             case DATA_SETS:
-                message = i18n.t('No data sets found for {{searchTerm}}', {
+                message = i18n.t('No data sets found for "{{searchTerm}}"', {
                     searchTerm: searchTerm,
                 })
                 break
             case EVENT_DATA_ITEMS:
                 message = i18n.t(
-                    'No event data items found for {{searchTerm}}',
+                    'No event data items found for "{{searchTerm}}"',
                     {
                         searchTerm: searchTerm,
                     }
@@ -163,14 +191,14 @@ const SourceEmptyPlaceholder = ({
                 break
             case PROGRAM_INDICATORS:
                 message = i18n.t(
-                    'No program indicators found for {{searchTerm}}',
+                    'No program indicators found for "{{searchTerm}}"',
                     {
                         searchTerm: searchTerm,
                     }
                 )
                 break
             default:
-                message = i18n.t('Nothing found for {{searchTerm}}', {
+                message = i18n.t('Nothing found for "{{searchTerm}}"', {
                     searchTerm: searchTerm,
                 })
                 break
@@ -340,6 +368,8 @@ const ItemSelector = ({
             case REPORTING_RATE:
                 return <IconDimensionDataSet16 />
             case EVENT_DATA_ITEMS:
+            case PROGRAM_DATA_ELEMENT:
+            case PROGRAM_ATTRIBUTE:
                 return <IconDimensionEventDataItem16 />
             case PROGRAM_INDICATORS:
                 return <IconDimensionProgramIndicator16 />
