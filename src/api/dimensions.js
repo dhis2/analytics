@@ -59,6 +59,7 @@ export const dataItemsQuery = {
         }
         if (
             filter?.group &&
+            filter.group !== ALL_ID &&
             [EVENT_DATA_ITEMS, PROGRAM_INDICATORS].includes(filter.dataType)
         ) {
             filters.push(`programId:eq:${filter.group}`)
