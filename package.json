@@ -68,6 +68,6 @@
         "build"
     ],
     "resolutions": {
-        "@dhis2/ui": "^6.2.0"
+        "@dhis2/ui": "^6.2.1"
     }
 }

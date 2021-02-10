@@ -50,16 +50,11 @@ export const dataItemsQuery = {
         const filters = []
 
         // TODO: Extract all of this logic out of the query?
-        if (!filter?.dataType || filter.dataType === ALL_ID) {
-            // TODO: Specifing a filter when no filter is used is a temporary fix as providing no dimensionItemType will currently return duplicates of DATA_ELEMENT_OPERAND and other unwanted types
-            filters.push(
-                `dimensionItemType:in:[${INDICATORS},${DATA_ELEMENTS},${DATA_SETS},${PROGRAM_INDICATORS},${PROGRAM_DATA_ELEMENT},${PROGRAM_ATTRIBUTE}]`
-            )
-        } else if (filter.dataType === EVENT_DATA_ITEMS) {
+        if (filter?.dataType === EVENT_DATA_ITEMS) {
             filters.push(
                 `dimensionItemType:in:[${PROGRAM_DATA_ELEMENT},${PROGRAM_ATTRIBUTE}]`
             )
-        } else {
+        } else if (filter?.dataType && filter.dataType !== ALL_ID) {
             filters.push(`dimensionItemType:eq:${filter.dataType}`)
         }
         if (
@@ -79,7 +74,7 @@ export const dataItemsQuery = {
         //     }
         // }
 
-        if (searchTerm) {
+        if ((searchTerm || '').length >= 2) {
             filters.push(`${nameProp}:ilike:${searchTerm}`)
         }
 
