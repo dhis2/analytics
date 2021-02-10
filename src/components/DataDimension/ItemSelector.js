@@ -71,6 +71,7 @@ const LeftHeader = ({
                 dataTest={'data-dimension-filter-input-field'}
                 dense
                 initialFocus
+                type={'search'}
             />
             <DataTypes
                 currentDataType={dataType}
