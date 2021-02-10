@@ -1,3 +1,10 @@
+## [14.1.6](https://github.com/dhis2/analytics/compare/v14.1.5...v14.1.6) (2021-02-09)
+
+
+### Bug Fixes
+
+* series item color set color of middle legend in legendset (DHIS2-147) ([#807](https://github.com/dhis2/analytics/issues/807)) ([1d8d130](https://github.com/dhis2/analytics/commit/1d8d130573f0eb8d53c4a0b6642d80d8eba90f97))
+
 ## [14.1.5](https://github.com/dhis2/analytics/compare/v14.1.4...v14.1.5) (2021-02-07)
 
 
