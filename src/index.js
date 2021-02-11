@@ -227,3 +227,10 @@ export {
     COLOR_SET_PATTERNS,
     colorSets,
 } from './visualizations/util/colors/colorSets'
+
+// Utils: relativePeriods
+export {
+    DAYS,
+    WEEKS,
+    getRelativePeriodsOptionsById,
+} from './components/PeriodDimension/utils/relativePeriods'

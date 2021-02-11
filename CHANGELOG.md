@@ -1,3 +1,10 @@
+## [14.1.8](https://github.com/dhis2/analytics/compare/v14.1.7...v14.1.8) (2021-02-11)
+
+
+### Bug Fixes
+
+* YOY with relative week/days periods DHIS2-9729 ([#758](https://github.com/dhis2/analytics/issues/758)) ([d7c8695](https://github.com/dhis2/analytics/commit/d7c8695a59ac0667a6df4d767efc7d49bfe71762))
+
 ## [14.1.7](https://github.com/dhis2/analytics/compare/v14.1.6...v14.1.7) (2021-02-11)
 
 
