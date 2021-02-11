@@ -18,10 +18,15 @@ import {
     isYearOverYear,
     VIS_TYPE_LINE,
     VIS_TYPE_SCATTER,
+    isLegendSetType,
 } from '../../../../../modules/visTypes'
 import { hasCustomAxes } from '../../../../../modules/axis'
 import { getAxisStringFromId } from '../../../../util/axisId'
 import { axisHasRelativeItems } from '../../../../../modules/layout/axisHasRelativeItems'
+import {
+    LEGEND_DISPLAY_STRATEGY_BY_DATA_ITEM,
+    LEGEND_DISPLAY_STRATEGY_FIXED,
+} from '../../../../../modules/legends'
 
 const DEFAULT_ANIMATION_DURATION = 200
 
@@ -168,16 +173,29 @@ function getDefault(series, metaData, layout, isStacked, extraOptions) {
             seriesObj.groupPadding = 0
         }
 
-        const legendSet = extraOptions?.legendSets?.find(
-            legendSet =>
-                legendSet.id === metaData.items[seriesObj.id]?.legendSet
-        )
+        let legendSet
+        if (isLegendSetType(layout.type)) {
+            const legendSets = extraOptions?.legendSets || []
+            if (
+                layout.legendDisplayStrategy ===
+                LEGEND_DISPLAY_STRATEGY_BY_DATA_ITEM
+            ) {
+                legendSet = legendSets.find(
+                    legendSet =>
+                        legendSet.id === metaData.items[seriesObj.id]?.legendSet
+                )
+            } else if (
+                layout.legendDisplayStrategy === LEGEND_DISPLAY_STRATEGY_FIXED
+            ) {
+                legendSet = legendSets[0]
+            }
+        }
 
         // color
         if (isYearOverYear(layout.type)) {
             // YearOverYear: Fetch colors directly from color sets
             seriesObj.color = indexColorPatternMap[index]
-        } else if (legendSet && legendSet.legends?.length) {
+        } else if (legendSet?.legends?.length) {
             // Legendset: Fetch the middle color of the set
             seriesObj.color = legendSet.legends.sort(
                 (a, b) => a.startValue - b.startValue
