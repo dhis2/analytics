@@ -1,4 +1,4 @@
-import { deNormalizerMap, XY_RATIO } from './normalization'
+import { deNormalizerMap } from './normalization'
 
 export const QUARTILE = 'QUARTILE'
 

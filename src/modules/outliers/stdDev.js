@@ -16,9 +16,9 @@ export const getStdDevMethodHelper = (
         throw 'Std dev analysis requires at least one value'
     }
     const normalizedData = dataWithNormalization.map(obj => obj.normalized)
-    const stdDev = getStdDev(sortedData)
+    const stdDev = getStdDev(normalizedData)
     const stdDevThreshold = stdDev * config.thresholdFactor
-    const mean = getMean(sortedData)
+    const mean = getMean(normalizedData)
     const lowThreshold = mean - stdDevThreshold
     const highThreshold = mean + stdDevThreshold
     const isLowOutlier = value => value < lowThreshold
