@@ -17,14 +17,14 @@ export const getZScoreHelper = (
     }
     const normalizedData = dataWithNormalization.map(obj => obj.normalized)
     const stdDev = getStdDev(normalizedData)
-    const stdDevThreshold = stdDev * config.thresholdFactor
+    const zScoreThreshold = stdDev * config.thresholdFactor
     const mean = getMean(normalizedData)
-    const lowThreshold = mean - stdDevThreshold
-    const highThreshold = mean + stdDevThreshold
-    // const lowThresholdLine
-    // const highThresholdLine
-    const isLowOutlier = value => value < lowThreshold
-    const isHighOutlier = value => value > highThreshold
+    const lowZScoreThreshold = mean - zScoreThreshold
+    const highZScoreThreshold = mean + zScoreThreshold
+    // const lowZScoreThresholdLine
+    // const highZScoreThresholdLine
+    const isLowOutlier = value => value < lowZScoreThreshold
+    const isHighOutlier = value => value > highZScoreThreshold
     const isOutlier = value => isLowOutlier(value) || isHighOutlier(value)
     const outlierPoints = []
     const inlierPoints = []
@@ -39,13 +39,13 @@ export const getZScoreHelper = (
         thresholds: [
             {
                 name: `${config.thresholdFactor} x Z-score Low`,
-                threshold: lowThreshold,
-                line: lowThresholdLine,
+                threshold: lowZScoreThreshold,
+                line: lowZScoreThresholdLine,
             },
             {
                 name: `${config.thresholdFactor} x Z-score High`,
-                threshold: highThreshold,
-                line: highThresholdLine,
+                threshold: highZScoreThreshold,
+                line: highZScoreThresholdLine,
             },
         ],
         isLowOutlier,
@@ -56,10 +56,10 @@ export const getZScoreHelper = (
         inlierPoints,
         vars: {
             stdDev,
-            stdDevThreshold,
+            zScoreThreshold,
             mean,
-            lowThreshold,
-            highThreshold,
+            lowZScoreThreshold,
+            highZScoreThreshold,
             dataWithNormalization,
             ...config,
         },

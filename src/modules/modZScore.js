@@ -1,6 +1,6 @@
 export const MODZSCORE = 'MODZSCORE'
 
-const MAD_CORRECT = 1.486
+const MAD_CORRECTION = 1.486
 const MEANAD_CORRECTION = 1.253314
 
 export const getMean = values =>
@@ -13,20 +13,32 @@ export const getMedian = values => {
         : getMean([values[hl - 1], values[hl]])
 }
 
-export const getMedianAbsoluteDeviation = values => {
-    const median = getMedian(values)
-    return getMedian(values.map(value => Math.abs(value - median)))
-}
+export const getMedianAbsoluteDeviation = (
+    values,
+    median = getMedian(values)
+) =>
+    getMedian(
+        values.map(value => Math.abs(value - median)).sort((a, b) => a - b)
+    )
 
-export const getMeanAbsoluteDeviation = values => {
-    const mean = getMean(values)
-    return getMean(values.map(value => Math.abs(value - median)))
-}
+export const getMeanAbsoluteDeviation = (values, mean = getMean(values)) =>
+    getMean(values.map(value => Math.abs(value - mean)).sort((a, b) => a - b))
+
+export const getModZScoreByMAD0 = (value, median, meanAd) =>
+    (value - median) / (meanAd * MEANAD_CORRECTION)
+
+export const getModZScore = (value, median, mad) =>
+    (value - median) / (mad * MAD_CORRECTION)
 
 export const getModZScore = values => {
-    const mad = getMedianAbsoluteDeviation(values)
+    const median = getMedian(values)
+    const mad = getMedianAbsoluteDeviation(values, median)
 
     if (mad === 0) {
-        const meanAD = getMeanAbsoluteDeviation(values)
+        const mean = getMean(values)
+        const meanAD = getMeanAbsoluteDeviation(values, mean)
+        return values.map(value => getModZScoreByMAD0(value, median, meanAd))
+    } else {
+        return
     }
 }
