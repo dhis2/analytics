@@ -1,7 +1,7 @@
 import { getOutlierHelper } from '..'
 
 describe('getOutlierHelper', () => {
-    it('calculates the correct outliers and returns a reference to the points', () => {
+    it('should return a reference to the outlier points', () => {
         const outlierPoint1 = [8, 12]
         const outlierPoint2 = [40, 10]
         const data = [

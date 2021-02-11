@@ -1,6 +1,6 @@
 import { deNormalizerMap } from './normalization'
 
-export const QUARTILE = 'QUARTILE'
+export const IQR = 'IQR'
 
 export const getQuartilePosition = (data, q) => {
     const pos = (data.length + 1) / 4
@@ -34,7 +34,7 @@ export const getQuartileValue = (data, q = 0.25) => {
     return data[base - 1] + diff * rest
 }
 
-export const getQuartileMethodHelper = (dataWithNormalization, config) => {
+export const getIQRHelper = (dataWithNormalization, config) => {
     if (!dataWithNormalization.length) {
         throw 'Quartile analysis requires at least one value'
     }
@@ -68,21 +68,35 @@ export const getQuartileMethodHelper = (dataWithNormalization, config) => {
         })
 
     return {
-        q1,
-        q3,
-        iqr,
-        iqrThreshold,
-        q1Threshold,
-        q3Threshold,
-        q1ThresholdLine,
-        q3ThresholdLine,
+        thresholds: [
+            {
+                name: `${config.thresholdFactor} x IQR Q1`,
+                threshold: q1Threshold,
+                line: q1ThresholdLine,
+            },
+            {
+                name: `${config.thresholdFactor} x IQR Q3`,
+                threshold: q3Threshold,
+                line: q3ThresholdLine,
+            },
+        ],
         isLowOutlier,
         isHighOutlier,
         isOutlier,
+        detectOutliers,
         outlierPoints,
         inlierPoints,
-        detectOutliers,
-        dataWithNormalization,
-        ...config,
+        vars: {
+            q1,
+            q3,
+            iqr,
+            iqrThreshold,
+            q1Threshold,
+            q3Threshold,
+            q1ThresholdLine,
+            q3ThresholdLine,
+            dataWithNormalization,
+            ...config,
+        },
     }
 }

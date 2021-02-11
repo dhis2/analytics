@@ -1,9 +1,5 @@
 import { defaultConfig } from '..'
-import {
-    getQuartilePosition,
-    getQuartileValue,
-    getQuartileMethodHelper,
-} from '../quartile'
+import { getQuartilePosition, getQuartileValue, getIQRHelper } from '../iqr'
 
 const a3 = [2, 4, 5]
 const a4 = [2, 4, 5, 7]
@@ -104,8 +100,8 @@ describe('getQuartileValue', () => {
     })
 })
 
-describe('getQuartileHelper', () => {
-    const helper = getQuartileMethodHelper(
+describe('getIQRHelper', () => {
+    const helper = getIQRHelper(
         [
             { point: [2, 1], normalized: 2 },
             { point: [3, 1], normalized: 3 },
@@ -123,19 +119,19 @@ describe('getQuartileHelper', () => {
     )
 
     test('interquartile range', () => {
-        expect(helper.iqr).toBe(9 - 3)
+        expect(helper.vars.iqr).toBe(9 - 3)
     })
 
     test('interquartile range threshold', () => {
-        expect(helper.iqrThreshold).toBe(1.5 * (9 - 3))
+        expect(helper.vars.iqrThreshold).toBe(1.5 * (9 - 3))
     })
 
     test('first quartile threshold', () => {
-        expect(helper.q1Threshold).toBe(3 - (9 - 3) * 1.5)
+        expect(helper.vars.q1Threshold).toBe(3 - (9 - 3) * 1.5)
     })
 
     test('third quartile threshold', () => {
-        expect(helper.q3Threshold).toBe(9 + (9 - 3) * 1.5)
+        expect(helper.vars.q3Threshold).toBe(9 + (9 - 3) * 1.5)
     })
 
     test('isLowOutlier', () => {

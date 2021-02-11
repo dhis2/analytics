@@ -1,5 +1,5 @@
-import { getStdDevMethodHelper, STDDEV } from './stdDev'
-import { getQuartileMethodHelper, QUARTILE } from './quartile'
+import { getZScoreHelper, ZSCORE } from './zScore'
+import { getIQRHelper, IQR } from './iqr'
 import { normalizerMap, XY_RATIO } from './normalization'
 import { getXMinMax } from './minMax'
 
@@ -8,7 +8,7 @@ export const THRESHOLD_FACTOR = 1.5
 export const defaultConfig = {
     thresholdFactor: THRESHOLD_FACTOR,
     normalization: XY_RATIO,
-    method: QUARTILE,
+    method: IQR,
 }
 
 const getDataWithNormalization = (
@@ -29,19 +29,19 @@ const getDataWithNormalization = (
         .sort((a, b) => (a.normalized < b.normalized ? -1 : 1))
 }
 
-const getOutlierMethodHelper = (dataWithNormalization, config) => {
-    switch (config.method) {
-        case STDDEV:
-            return getStdDevMethodHelper(dataWithNormalization, config)
-        case QUARTILE:
+export const getOutlierHelper = (data, config) => {
+    const dataWithNormalization = getDataWithNormalization(data, config)
+    const extendedConfig = {
+        ...defaultConfig,
+        ...getXMinMax(data),
+        ...config,
+    }
+
+    switch (extendedConfig.method) {
+        case ZSCORE:
+            return getZScoreHelper(dataWithNormalization, extendedConfig)
+        case IQR:
         default:
-            return getQuartileMethodHelper(dataWithNormalization, config)
+            return getIQRHelper(dataWithNormalization, extendedConfig)
     }
 }
-
-export const getOutlierHelper = (data, config) =>
-    getOutlierMethodHelper(getDataWithNormalization(data, config), {
-        ...defaultConfig,
-        ...config,
-        ...getXMinMax(data),
-    })

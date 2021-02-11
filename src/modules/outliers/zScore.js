@@ -1,12 +1,12 @@
 import { std, mean } from 'mathjs'
 
-export const STDDEV = 'STDDEV'
+export const ZSCORE = 'ZSCORE'
 
 export const getStdDev = data => std(data, 'unbiased')
 
 export const getMean = data => mean(data)
 
-export const getStdDevMethodHelper = (
+export const getZScoreHelper = (
     dataWithNormalization,
     config = {
         thresholdFactor: 1.5,
@@ -21,6 +21,8 @@ export const getStdDevMethodHelper = (
     const mean = getMean(normalizedData)
     const lowThreshold = mean - stdDevThreshold
     const highThreshold = mean + stdDevThreshold
+    // const lowThresholdLine
+    // const highThresholdLine
     const isLowOutlier = value => value < lowThreshold
     const isHighOutlier = value => value > highThreshold
     const isOutlier = value => isLowOutlier(value) || isHighOutlier(value)
@@ -34,18 +36,32 @@ export const getStdDevMethodHelper = (
         })
 
     return {
-        stdDev,
-        stdDevThreshold,
-        mean,
-        lowThreshold,
-        highThreshold,
+        thresholds: [
+            {
+                name: `${config.thresholdFactor} x Z-score Low`,
+                threshold: lowThreshold,
+                line: lowThresholdLine,
+            },
+            {
+                name: `${config.thresholdFactor} x Z-score High`,
+                threshold: highThreshold,
+                line: highThresholdLine,
+            },
+        ],
         isLowOutlier,
         isHighOutlier,
         isOutlier,
+        detectOutliers,
         outlierPoints,
         inlierPoints,
-        detectOutliers,
-        dataWithNormalization,
-        thresholdFactor: config.thresholdFactor,
+        vars: {
+            stdDev,
+            stdDevThreshold,
+            mean,
+            lowThreshold,
+            highThreshold,
+            dataWithNormalization,
+            ...config,
+        },
     }
 }
