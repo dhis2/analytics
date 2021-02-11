@@ -1,4 +1,4 @@
-export const MODZSCORE = 'MODZSCORE'
+export const MOD_ZSCORE = 'MOD_ZSCORE'
 
 const MAD_CORRECTION = 1.486
 const MEANAD_CORRECTION = 1.253314
@@ -27,7 +27,7 @@ export const getMeanAbsoluteDeviation = (values, mean = getMean(values)) =>
 export const getModZScoreByMAD0 = (value, median, meanAd) =>
     (value - median) / (meanAd * MEANAD_CORRECTION)
 
-export const getModZScore = (value, median, mad) =>
+export const getModZScoreByMAD = (value, median, mad) =>
     (value - median) / (mad * MAD_CORRECTION)
 
 export const getModZScore = values => {
@@ -39,6 +39,6 @@ export const getModZScore = values => {
         const meanAD = getMeanAbsoluteDeviation(values, mean)
         return values.map(value => getModZScoreByMAD0(value, median, meanAd))
     } else {
-        return
+        return values.map(value => getModZScoreByMAD(value, median, mad))
     }
 }
