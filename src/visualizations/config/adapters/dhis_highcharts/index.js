@@ -58,6 +58,7 @@ export default function ({ store, layout, el, extraConfig, extraOptions }) {
             _layout.rows && _layout.rows.length
                 ? _layout.rows.map(row => row.dimension)
                 : null,
+        extraOptions: _extraOptions,
     })
 
     if (_layout.type === VIS_TYPE_SCATTER) {
@@ -91,7 +92,7 @@ export default function ({ store, layout, el, extraConfig, extraOptions }) {
         // series
         series: getSeries(
             series.slice(),
-            store,
+            store.data[0].metaData,
             _layout,
             stacked,
             _extraOptions

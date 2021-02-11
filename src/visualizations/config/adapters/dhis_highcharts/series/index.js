@@ -18,10 +18,15 @@ import {
     isYearOverYear,
     VIS_TYPE_LINE,
     VIS_TYPE_SCATTER,
+    isLegendSetType,
 } from '../../../../../modules/visTypes'
 import { hasCustomAxes } from '../../../../../modules/axis'
 import { getAxisStringFromId } from '../../../../util/axisId'
 import { axisHasRelativeItems } from '../../../../../modules/layout/axisHasRelativeItems'
+import {
+    LEGEND_DISPLAY_STRATEGY_BY_DATA_ITEM,
+    LEGEND_DISPLAY_STRATEGY_FIXED,
+} from '../../../../../modules/legends'
 
 const DEFAULT_ANIMATION_DURATION = 200
 
@@ -110,7 +115,7 @@ function getIdColorMap(series, layout, extraOptions) {
     }
 }
 
-function getDefault(series, layout, isStacked, extraOptions) {
+function getDefault(series, metaData, layout, isStacked, extraOptions) {
     const fullIdAxisMap = getFullIdAxisMap(layout.series, series)
     const idColorMap = getIdColorMap(series, layout, extraOptions)
     const indexColorPatternMap = getIndexColorPatternMap(
@@ -168,10 +173,37 @@ function getDefault(series, layout, isStacked, extraOptions) {
             seriesObj.groupPadding = 0
         }
 
+        let legendSet
+        if (isLegendSetType(layout.type)) {
+            const legendSets = extraOptions?.legendSets || []
+            if (
+                layout.legendDisplayStrategy ===
+                LEGEND_DISPLAY_STRATEGY_BY_DATA_ITEM
+            ) {
+                legendSet = legendSets.find(
+                    legendSet =>
+                        legendSet.id === metaData.items[seriesObj.id]?.legendSet
+                )
+            } else if (
+                layout.legendDisplayStrategy === LEGEND_DISPLAY_STRATEGY_FIXED
+            ) {
+                legendSet = legendSets[0]
+            }
+        }
+
         // color
-        seriesObj.color = isYearOverYear(layout.type)
-            ? indexColorPatternMap[index]
-            : idColorMap[seriesObj.id]
+        if (isYearOverYear(layout.type)) {
+            // YearOverYear: Fetch colors directly from color sets
+            seriesObj.color = indexColorPatternMap[index]
+        } else if (legendSet?.legends?.length) {
+            // Legendset: Fetch the middle color of the set
+            seriesObj.color = legendSet.legends.sort(
+                (a, b) => a.startValue - b.startValue
+            )[Math.ceil(legendSet.legends.length / 2) - 1].color
+        } else {
+            // Default: Either generate colors or fetch from color sets
+            seriesObj.color = idColorMap[seriesObj.id]
+        }
 
         // axis number
         seriesObj.yAxis =
@@ -193,7 +225,7 @@ function getDefault(series, layout, isStacked, extraOptions) {
     return series
 }
 
-export default function (series, store, layout, isStacked, extraOptions) {
+export default function (series, metaData, layout, isStacked, extraOptions) {
     switch (layout.type) {
         case VIS_TYPE_PIE:
             series = getPie(
@@ -208,7 +240,13 @@ export default function (series, store, layout, isStacked, extraOptions) {
             series = getScatter(extraOptions.scatterData)
             break
         default:
-            series = getDefault(series, layout, isStacked, extraOptions)
+            series = getDefault(
+                series,
+                metaData,
+                layout,
+                isStacked,
+                extraOptions
+            )
     }
 
     series.forEach(seriesObj => {

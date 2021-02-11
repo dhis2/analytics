@@ -1,3 +1,24 @@
+## [14.1.8](https://github.com/dhis2/analytics/compare/v14.1.7...v14.1.8) (2021-02-11)
+
+
+### Bug Fixes
+
+* YOY with relative week/days periods DHIS2-9729 ([#758](https://github.com/dhis2/analytics/issues/758)) ([d7c8695](https://github.com/dhis2/analytics/commit/d7c8695a59ac0667a6df4d767efc7d49bfe71762))
+
+## [14.1.7](https://github.com/dhis2/analytics/compare/v14.1.6...v14.1.7) (2021-02-11)
+
+
+### Bug Fixes
+
+* color items based on legend strategy + only for legendset types ([#808](https://github.com/dhis2/analytics/issues/808)) ([869dc48](https://github.com/dhis2/analytics/commit/869dc48fa73b40f8f6aaa6beec28382798f82779))
+
+## [14.1.6](https://github.com/dhis2/analytics/compare/v14.1.5...v14.1.6) (2021-02-09)
+
+
+### Bug Fixes
+
+* series item color set color of middle legend in legendset (DHIS2-147) ([#807](https://github.com/dhis2/analytics/issues/807)) ([1d8d130](https://github.com/dhis2/analytics/commit/1d8d130573f0eb8d53c4a0b6642d80d8eba90f97))
+
 ## [14.1.5](https://github.com/dhis2/analytics/compare/v14.1.4...v14.1.5) (2021-02-07)
 
 

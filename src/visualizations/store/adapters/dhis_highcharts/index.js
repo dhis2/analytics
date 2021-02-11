@@ -107,7 +107,7 @@ function getSeriesFunction(type, categoryIds) {
     }
 }
 
-export default function ({ type, data, seriesId, categoryIds }) {
+export default function ({ type, data, seriesId, categoryIds, extraOptions }) {
     categoryIds = categoryIds || []
 
     const seriesFunction = getSeriesFunction(type, categoryIds)
@@ -133,7 +133,14 @@ export default function ({ type, data, seriesId, categoryIds }) {
         const series = [metaData.dimensions[seriesId]]
         const categories = categoryIds.map(id => metaData.dimensions[id])
 
-        seriesFunction(acc, series, categories, idValueMap, metaData)
+        seriesFunction(
+            acc,
+            series,
+            categories,
+            idValueMap,
+            metaData,
+            extraOptions
+        )
 
         return acc
     }, [])
