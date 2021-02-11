@@ -1,3 +1,10 @@
+## [14.1.7](https://github.com/dhis2/analytics/compare/v14.1.6...v14.1.7) (2021-02-11)
+
+
+### Bug Fixes
+
+* color items based on legend strategy + only for legendset types ([#808](https://github.com/dhis2/analytics/issues/808)) ([869dc48](https://github.com/dhis2/analytics/commit/869dc48fa73b40f8f6aaa6beec28382798f82779))
+
 ## [14.1.6](https://github.com/dhis2/analytics/compare/v14.1.5...v14.1.6) (2021-02-09)
 
 
