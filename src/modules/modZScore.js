@@ -22,23 +22,23 @@ export const getMedianAbsoluteDeviation = (
     )
 
 export const getMeanAbsoluteDeviation = (values, mean = getMean(values)) =>
-    getMean(values.map(value => Math.abs(value - mean)).sort((a, b) => a - b))
+    getMean(values.map(value => Math.abs(value - mean)))
 
-export const getModZScoreByMAD0 = (value, median, meanAd) =>
+export const getModZScoreByMad0 = (value, median, meanAd) =>
     (value - median) / (meanAd * MEANAD_CORRECTION)
 
-export const getModZScoreByMAD = (value, median, mad) =>
+export const getModZScore = (value, median, mad) =>
     (value - median) / (mad * MAD_CORRECTION)
 
-export const getModZScore = values => {
+export const getModZScores = values => {
     const median = getMedian(values)
     const mad = getMedianAbsoluteDeviation(values, median)
 
     if (mad === 0) {
         const mean = getMean(values)
-        const meanAD = getMeanAbsoluteDeviation(values, mean)
-        return values.map(value => getModZScoreByMAD0(value, median, meanAd))
+        const meanAd = getMeanAbsoluteDeviation(values, mean)
+        return values.map(value => getModZScoreByMad0(value, median, meanAd))
     } else {
-        return values.map(value => getModZScoreByMAD(value, median, mad))
+        return values.map(value => getModZScore(value, median, mad))
     }
 }
