@@ -91,16 +91,15 @@ export const dataItemsQuery = {
 
 export const indicatorsQuery = {
     resource: 'indicators',
-    params: ({ nameProp, groupId, filterText, page }) => {
-        // TODO: Refactor to new prop names
+    params: ({ nameProp, filter, searchTerm, page }) => {
         const filters = []
 
-        if (groupId && groupId !== ALL_ID) {
-            filters.push(`indicatorGroups.id:eq:${groupId}`)
+        if (filter?.group && filter.group !== ALL_ID) {
+            filters.push(`indicatorGroups.id:eq:${filter.group}`)
         }
 
-        if (filterText) {
-            filters.push(`${nameProp}:ilike:${filterText}`)
+        if (searchTerm) {
+            filters.push(`${nameProp}:ilike:${searchTerm}`)
         }
 
         return {
@@ -124,17 +123,17 @@ export const indicatorGroupsQuery = {
 
 export const dataElementsQuery = {
     resource: 'dataElements',
-    params: ({ nameProp, groupId, filterText, page }) => {
-        // TODO: Refactor to new prop names
-        const idField = groupId === ALL_ID ? 'id' : 'dimensionItem~rename(id)'
+    params: ({ nameProp, filter, searchTerm, page }) => {
+        const idField =
+            filter?.group === ALL_ID ? 'id' : 'dimensionItem~rename(id)'
         const filters = ['domainType:eq:AGGREGATE']
 
-        if (groupId && groupId !== ALL_ID) {
-            filters.push(`dataElementGroups.id:eq:${groupId}`)
+        if (filter?.group && filter.group !== ALL_ID) {
+            filters.push(`dataElementGroups.id:eq:${filter.group}`)
         }
 
-        if (filterText) {
-            filters.push(`${nameProp}:ilike:${filterText}`)
+        if (searchTerm) {
+            filters.push(`${nameProp}:ilike:${searchTerm}`)
         }
 
         return {
@@ -178,17 +177,17 @@ export const itemsByDimensionQuery = {
 
 export const dataElementOperandsQuery = {
     resource: 'dataElementOperands',
-    params: ({ nameProp, groupId, filterText, page }) => {
-        // TODO: Refactor to new prop names
-        const idField = groupId === ALL_ID ? 'id' : 'dimensionItem~rename(id)'
+    params: ({ nameProp, filter, searchTerm, page }) => {
+        const idField =
+            filter?.group === ALL_ID ? 'id' : 'dimensionItem~rename(id)'
         const filters = []
 
-        if (groupId && groupId !== ALL_ID) {
-            filters.push(`dataElement.dataElementGroups.id:eq:${groupId}`)
+        if (filter?.group && filter.group !== ALL_ID) {
+            filters.push(`dataElement.dataElementGroups.id:eq:${filter.group}`)
         }
 
-        if (filterText) {
-            filters.push(`${nameProp}:ilike:${filterText}`)
+        if (searchTerm) {
+            filters.push(`${nameProp}:ilike:${searchTerm}`)
         }
 
         return {
@@ -203,16 +202,15 @@ export const dataElementOperandsQuery = {
 
 export const dataSetsQuery = {
     resource: 'dataSets',
-    params: ({ nameProp, filterText, id, page }) => {
-        // TODO: Refactor to new prop names
+    params: ({ nameProp, searchTerm, filter, page }) => {
         const filters = []
 
-        if (filterText) {
-            filters.push(`${nameProp}:ilike:${filterText}`)
+        if (searchTerm) {
+            filters.push(`${nameProp}:ilike:${searchTerm}`)
         }
 
-        if (id && id !== ALL_ID) {
-            filters.push(`id:eq:${id}`)
+        if (filter?.group && filter.group !== ALL_ID) {
+            filters.push(`id:eq:${filter.group}`)
         }
 
         const query = {
@@ -239,62 +237,62 @@ export const programsQuery = {
     }),
 }
 
-export const programDataElementsQuery = {
-    resource: 'programDataElements',
-    params: ({ nameProp, groupId, filterText, page }) => {
-        const filters = []
+// export const programDataElementsQuery = {
+//     resource: 'programDataElements',
+//     params: ({ nameProp, groupId, filterText, page }) => {
+//         const filters = []
 
-        if (filterText) {
-            filters.push(`${nameProp}:ilike:${filterText}`)
-        }
+//         if (filterText) {
+//             filters.push(`${nameProp}:ilike:${filterText}`)
+//         }
 
-        return {
-            fields: `dimensionItem~rename(id),${nameProp}~rename(name),valueType`,
-            order: `${nameProp}:asc`,
-            program: groupId,
-            filter: filters,
-            paging: true,
-            page,
-        }
-    },
-}
+//         return {
+//             fields: `dimensionItem~rename(id),${nameProp}~rename(name),valueType`,
+//             order: `${nameProp}:asc`,
+//             program: groupId,
+//             filter: filters,
+//             paging: true,
+//             page,
+//         }
+//     },
+// }
 
-export const programIndicatorsQuery = {
-    resource: 'programIndicators',
-    params: ({ nameProp, groupId, filterText, page }) => {
-        const filters = [`program.id:eq:${groupId}`]
+// export const programIndicatorsQuery = {
+//     resource: 'programIndicators',
+//     params: ({ nameProp, groupId, filterText, page }) => {
+//         const filters = [`program.id:eq:${groupId}`]
 
-        if (filterText) {
-            filters.push(`${nameProp}:ilike:${filterText}`)
-        }
+//         if (filterText) {
+//             filters.push(`${nameProp}:ilike:${filterText}`)
+//         }
 
-        return {
-            fields: `dimensionItem~rename(id),${nameProp}~rename(name)`,
-            order: `${nameProp}:asc`,
-            filter: filters,
-            paging: true,
-            page,
-        }
-    },
-}
+//         return {
+//             fields: `dimensionItem~rename(id),${nameProp}~rename(name)`,
+//             order: `${nameProp}:asc`,
+//             filter: filters,
+//             paging: true,
+//             page,
+//         }
+//     },
+// }
 
-export const trackedEntityAttributesQuery = {
-    resource: 'programs',
-    id: ({ id }) => id,
-    params: ({ nameProp, filterText }) => {
-        const filters = []
+// export const trackedEntityAttributesQuery = {
+//     resource: 'programs',
+//     id: ({ id }) => id,
+//     params: ({ nameProp, filterText }) => {
+//         const filters = []
 
-        if (filterText) {
-            filters.push(`${nameProp}:ilike:${filterText}`)
-        }
+//         if (filterText) {
+//             filters.push(`${nameProp}:ilike:${filterText}`)
+//         }
 
-        return {
-            fields: `${nameProp}~rename(name),programTrackedEntityAttributes[trackedEntityAttribute[id,${nameProp}~rename(name),valueType]]`,
-            filter: filters,
-            paging: false,
-        }
-    },
-}
+//         return {
+//             fields: `${nameProp}~rename(name),programTrackedEntityAttributes[trackedEntityAttribute[id,${nameProp}~rename(name),valueType]]`,
+//             filter: filters,
+//             paging: false,
+//         }
+//     },
+// }
 
 // Fetch functions
 export const apiFetchDimensions = async (dataEngine, nameProp) => {
@@ -338,8 +336,8 @@ export const apiFetchOptions = ({
             return fetchIndicators({
                 dataEngine,
                 nameProp,
-                groupId: filter.group,
-                filterText: searchTerm,
+                filter,
+                searchTerm,
                 page,
             })
         }
@@ -348,16 +346,16 @@ export const apiFetchOptions = ({
                 return fetchDataElements({
                     dataEngine,
                     nameProp,
-                    groupId: filter.group,
-                    filterText: searchTerm,
+                    filter,
+                    searchTerm,
                     page,
                 })
             } else {
                 return fetchDataElementOperands({
                     dataEngine,
                     nameProp,
-                    groupId: filter.group,
-                    filterText: searchTerm,
+                    filter,
+                    searchTerm,
                     page,
                 })
             }
@@ -366,8 +364,8 @@ export const apiFetchOptions = ({
             return fetchDataSets({
                 dataEngine,
                 nameProp,
-                id: filter.group,
-                filterText: searchTerm,
+                filter,
+                searchTerm,
                 page,
             })
         }
@@ -483,8 +481,8 @@ export const apiFetchGroups = async (dataEngine, dataType, nameProp) => {
 const fetchIndicators = async ({
     dataEngine,
     nameProp,
-    groupId,
-    filterText,
+    filter,
+    searchTerm,
     page,
 }) => {
     const indicatorsData = await dataEngine.query(
@@ -492,8 +490,8 @@ const fetchIndicators = async ({
         {
             variables: {
                 nameProp,
-                groupId,
-                filterText,
+                filter,
+                searchTerm,
                 page,
             },
             onError,
@@ -538,8 +536,8 @@ const formatResponse = (dimensionItems, pager) => ({
 const fetchDataElements = async ({
     dataEngine,
     nameProp,
-    groupId,
-    filterText,
+    filter,
+    searchTerm,
     page,
 }) => {
     const dataElementsData = await dataEngine.query(
@@ -547,8 +545,8 @@ const fetchDataElements = async ({
         {
             variables: {
                 nameProp,
-                groupId,
-                filterText,
+                filter,
+                searchTerm,
                 page,
             },
             onError,
@@ -586,8 +584,8 @@ export const apiFetchItemsByDimension = async ({
 const fetchDataElementOperands = async ({
     dataEngine,
     nameProp,
-    groupId,
-    filterText,
+    filter,
+    searchTerm,
     page,
 }) => {
     const dataElementOperandsData = await dataEngine.query(
@@ -595,8 +593,8 @@ const fetchDataElementOperands = async ({
         {
             variables: {
                 nameProp,
-                groupId,
-                filterText,
+                filter,
+                searchTerm,
                 page,
             },
             onError,
@@ -611,8 +609,8 @@ const fetchDataElementOperands = async ({
 const fetchDataSets = async ({
     dataEngine,
     nameProp,
-    filterText,
-    id,
+    searchTerm,
+    filter,
     page,
 }) => {
     const dataSetsData = await dataEngine.query(
@@ -620,8 +618,8 @@ const fetchDataSets = async ({
         {
             variables: {
                 nameProp,
-                filterText,
-                id,
+                searchTerm,
+                filter,
                 page,
             },
             onError,
