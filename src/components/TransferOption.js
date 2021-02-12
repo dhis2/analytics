@@ -34,6 +34,7 @@ export const TransferOption = ({
                 if (disabled) return
                 onDoubleClick({ label, value }, event)
             }}
+            data-test={`${dataTest}-content`}
         >
             <span className="icon">{icon}</span>
             <span className="label">{label}</span>

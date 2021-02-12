@@ -7,7 +7,7 @@ import { ALL_ID } from '../../modules/dataTypes'
 import styles from './styles/Metric.style'
 import { DATA_SETS_CONSTANTS } from '../../modules/dataSets'
 
-export const Metric = ({ currentValue, onChange }) => {
+export const Metric = ({ currentValue, onChange, dataTest }) => {
     return (
         <div className="metric-container">
             <SingleSelectField
@@ -15,17 +15,20 @@ export const Metric = ({ currentValue, onChange }) => {
                 selected={currentValue || ALL_ID}
                 onChange={ref => onChange(ref.selected)}
                 dense
+                dataTest={dataTest}
             >
                 <SingleSelectOption
                     value={ALL_ID}
                     key={ALL_ID}
                     label={i18n.t('All metrics')}
+                    dataTest={`${dataTest}-option-${ALL_ID}`}
                 />
                 {DATA_SETS_CONSTANTS.map(option => (
                     <SingleSelectOption
                         value={option.id}
                         key={option.id}
                         label={option.getName()}
+                        dataTest={`${dataTest}-option-${option.id}`}
                     />
                 ))}
             </SingleSelectField>
@@ -37,6 +40,7 @@ export const Metric = ({ currentValue, onChange }) => {
 Metric.propTypes = {
     onChange: PropTypes.func.isRequired,
     currentValue: PropTypes.string,
+    dataTest: PropTypes.string,
 }
 
 export default Metric

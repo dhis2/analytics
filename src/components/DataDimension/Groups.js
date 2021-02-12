@@ -50,7 +50,7 @@ const Groups = ({
             <div className="group-container">
                 <SingleSelectField
                     label={dataTypes[dataType]?.getGroupLabel()}
-                    dataTest={dataTest}
+                    dataTest={`${dataTest}-groups-select-field`}
                     selected={currentGroup || defaultGroup.id}
                     placeholder={
                         !currentGroup && dataTypes[dataType]?.getPlaceholder
@@ -74,7 +74,7 @@ const Groups = ({
                             value={defaultGroup.id}
                             key={defaultGroup.id}
                             label={defaultGroup.getName()}
-                            dataTest={`${dataTest}-option-${defaultGroup.id}`}
+                            dataTest={`${dataTest}-groups-select-field-option-${defaultGroup.id}`}
                         />
                     ) : null}
                     {!isLoading
@@ -83,7 +83,7 @@ const Groups = ({
                                   value={item.id}
                                   key={item.id}
                                   label={item.name}
-                                  dataTest={`${dataTest}-option-${item.id}`}
+                                  dataTest={`${dataTest}-groups-select-field-option-${item.id}`}
                               />
                           ))
                         : null}
@@ -93,12 +93,14 @@ const Groups = ({
                 <Detail
                     currentValue={currentSubGroup}
                     onChange={onSubGroupChange}
+                    dataTest={`${dataTest}-detail-select-field`}
                 />
             )}
             {subGroupType === SUB_GROUP_METRIC && (
                 <Metric
                     currentValue={currentSubGroup}
                     onChange={onSubGroupChange}
+                    dataTest={`${dataTest}-metric-select-field`}
                 />
             )}
         </div>

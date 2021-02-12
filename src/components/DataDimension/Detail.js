@@ -11,11 +11,12 @@ const getOptions = () => ({
     [DETAIL]: i18n.t('Details only'),
 })
 
-export const Detail = ({ currentValue, onChange }) => {
+export const Detail = ({ currentValue, onChange, dataTest }) => {
     const options = getOptions()
     return (
         <div className="detail-container">
             <SingleSelectField
+                dataTest={dataTest}
                 label={i18n.t('Disaggregation')}
                 selected={currentValue}
                 onChange={ref => onChange(ref.selected)}
@@ -26,6 +27,7 @@ export const Detail = ({ currentValue, onChange }) => {
                         value={option[0]}
                         key={option[0]}
                         label={option[1]}
+                        dataTest={`${dataTest}-option-${option[0]}`}
                     />
                 ))}
             </SingleSelectField>
@@ -37,6 +39,7 @@ export const Detail = ({ currentValue, onChange }) => {
 Detail.propTypes = {
     currentValue: PropTypes.string.isRequired,
     onChange: PropTypes.func.isRequired,
+    dataTest: PropTypes.string,
 }
 
 export default Detail

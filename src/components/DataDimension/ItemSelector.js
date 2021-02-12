@@ -61,6 +61,7 @@ const LeftHeader = ({
     subGroup,
     setSubGroup,
     displayNameProp,
+    dataTest,
 }) => (
     <>
         <div className="leftHeader">
@@ -68,7 +69,7 @@ const LeftHeader = ({
                 value={searchTerm}
                 onChange={({ value }) => setSearchTerm(value)}
                 placeholder={i18n.t('Search by data item name or id')}
-                dataTest={'data-dimension-filter-input-field'}
+                dataTest={`${dataTest}-filter-input-field`}
                 dense
                 initialFocus
                 type={'search'}
@@ -76,7 +77,7 @@ const LeftHeader = ({
             <DataTypes
                 currentDataType={dataType}
                 onChange={setDataType}
-                dataTest={'data-dimension-data-types-select-field'}
+                dataTest={`${dataTest}-data-types-select-field`}
             />
             {dataTypes[dataType] && (
                 <Groups
@@ -86,7 +87,7 @@ const LeftHeader = ({
                     onGroupChange={setGroup}
                     currentSubGroup={subGroup}
                     onSubGroupChange={setSubGroup}
-                    dataTest={'data-dimension-groups-select-field'}
+                    dataTest={dataTest}
                 />
             )}
         </div>
@@ -95,6 +96,7 @@ const LeftHeader = ({
 )
 
 LeftHeader.propTypes = {
+    dataTest: PropTypes.string,
     dataType: PropTypes.string,
     displayNameProp: PropTypes.string,
     group: PropTypes.string,
@@ -135,6 +137,7 @@ const SourceEmptyPlaceholder = ({
     options,
     noItemsMessage,
     dataType,
+    dataTest,
 }) => {
     let message = ''
     if (!loading && !options.length && !searchTerm) {
@@ -208,7 +211,9 @@ const SourceEmptyPlaceholder = ({
     return (
         message && (
             <>
-                <p className="emptyList">{message}</p>
+                <p className="emptyList" data-test={dataTest}>
+                    {message}
+                </p>
                 <style jsx>{styles}</style>
             </>
         )
@@ -216,6 +221,7 @@ const SourceEmptyPlaceholder = ({
 }
 
 SourceEmptyPlaceholder.propTypes = {
+    dataTest: PropTypes.string,
     dataType: PropTypes.string,
     loading: PropTypes.bool,
     noItemsMessage: PropTypes.string,
@@ -395,6 +401,7 @@ const ItemSelector = ({
                     options={state.options}
                     noItemsMessage={noItemsMessage}
                     dataType={state.filter.dataType}
+                    dataTest={`${dataTest}-empty-source`}
                 />
             }
             onEndReached={onEndReached}
@@ -421,6 +428,7 @@ const ItemSelector = ({
                     searchTerm={state.searchTerm}
                     setSearchTerm={setSearchTerm}
                     displayNameProp={displayNameProp}
+                    dataTest={`${dataTest}-left-header`}
                 />
             }
             enableOrderChange
