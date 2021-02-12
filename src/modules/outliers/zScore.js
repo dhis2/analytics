@@ -6,12 +6,7 @@ export const getStdDev = data => std(data, 'unbiased')
 
 export const getMean = data => mean(data)
 
-export const getZScoreHelper = (
-    dataWithNormalization,
-    config = {
-        thresholdFactor: 1.5,
-    }
-) => {
+export const getZScoreHelper = (dataWithNormalization, config) => {
     if (!dataWithNormalization.length) {
         throw 'Std dev analysis requires at least one value'
     }
@@ -21,8 +16,9 @@ export const getZScoreHelper = (
     const mean = getMean(normalizedData)
     const lowZScoreThreshold = mean - zScoreThreshold
     const highZScoreThreshold = mean + zScoreThreshold
-    // const lowZScoreThresholdLine
-    // const highZScoreThresholdLine
+    //TODO
+    const lowZScoreThresholdLine
+    const highZScoreThresholdLine
     const isLowOutlier = value => value < lowZScoreThreshold
     const isHighOutlier = value => value > highZScoreThreshold
     const isOutlier = value => isLowOutlier(value) || isHighOutlier(value)

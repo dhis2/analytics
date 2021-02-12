@@ -1,6 +1,6 @@
 export const MOD_ZSCORE = 'MOD_ZSCORE'
 
-const MAD_CORRECTION = 1.486
+const MAD_CORRECTION = 0.6745
 const MEANAD_CORRECTION = 1.253314
 
 export const getMean = values =>
@@ -28,7 +28,7 @@ export const getModZScoreByMad0 = (value, median, meanAd) =>
     (value - median) / (meanAd * MEANAD_CORRECTION)
 
 export const getModZScore = (value, median, mad) =>
-    (value - median) / (mad * MAD_CORRECTION)
+    (MAD_CORRECTION * (value - median)) / mad
 
 export const getModZScores = values => {
     const median = getMedian(values)
@@ -41,4 +41,16 @@ export const getModZScores = values => {
     } else {
         return values.map(value => getModZScore(value, median, mad))
     }
+}
+
+export const getModZScoreThresholds = (mzs, mad, median, k) => [
+    median - (mad * mzs) / k,
+    median + (mad * mzs) / k,
+]
+
+export const getModZScoreHelper = (dataWithNormalization, config) => {
+    if (!dataWithNormalization.length) {
+        throw 'Std dev analysis requires at least one value'
+    }
+    const normalizedData = dataWithNormalization.map(obj => obj.normalized)
 }
