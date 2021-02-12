@@ -1,4 +1,13 @@
 import {
+    ALL_ID,
+    DATA_ELEMENTS,
+    DATA_SETS,
+    DETAIL,
+    EVENT_DATA_ITEMS,
+    INDICATORS,
+    PROGRAM_INDICATORS,
+} from '../../modules/dataTypes'
+import {
     dimensionsQuery,
     indicatorGroupsQuery,
     dataElementGroupsQuery,
@@ -7,12 +16,9 @@ import {
     dataSetsQuery,
     dataElementsQuery,
     dataElementOperandsQuery,
-    programIndicatorsQuery,
-    programDataElementsQuery,
-    trackedEntityAttributesQuery,
-    apiFetchAlternatives,
     apiFetchGroups,
     apiFetchDimensions,
+    apiFetchOptions,
 } from '../dimensions'
 
 let mockDataEngine
@@ -69,7 +75,7 @@ describe('api: dimensions', () => {
 
     describe('apiFetchGroups', () => {
         it('has correct endpoint, name prop, and page value for indicators', done => {
-            apiFetchGroups(mockDataEngine, 'indicators', 'entireName')
+            apiFetchGroups(mockDataEngine, INDICATORS, 'entireName')
 
             asyncCheckMatches(
                 [
@@ -81,7 +87,7 @@ describe('api: dimensions', () => {
         })
 
         it('has correct name prop for dataElements', done => {
-            apiFetchGroups(mockDataEngine, 'dataElements', 'entireName')
+            apiFetchGroups(mockDataEngine, DATA_ELEMENTS, 'entireName')
 
             asyncCheckMatches(
                 [
@@ -93,7 +99,7 @@ describe('api: dimensions', () => {
         })
 
         it('has correct name prop for eventDataItems', done => {
-            apiFetchGroups(mockDataEngine, 'eventDataItems', 'entireName')
+            apiFetchGroups(mockDataEngine, EVENT_DATA_ITEMS, 'entireName')
 
             asyncCheckMatches(
                 [{ programs: programsQuery }, { nameProp: 'entireName' }],
@@ -102,7 +108,7 @@ describe('api: dimensions', () => {
         })
 
         it('has correct name prop for programIndicators', done => {
-            apiFetchGroups(mockDataEngine, 'programIndicators', 'entireName')
+            apiFetchGroups(mockDataEngine, PROGRAM_INDICATORS, 'entireName')
 
             asyncCheckMatches(
                 [{ programs: programsQuery }, { nameProp: 'entireName' }],
@@ -110,65 +116,63 @@ describe('api: dimensions', () => {
             )
         })
 
-        it('does not make an api request for dataSets', done => {
-            apiFetchGroups(mockDataEngine, 'dataSets')
+        it('has correct name prop for dataSets', done => {
+            apiFetchGroups(mockDataEngine, DATA_SETS, 'entireName')
 
-            setTimeout(() => {
-                expect(mockQueryFn).not.toHaveBeenCalled()
-                done()
-            })
+            asyncCheckMatches(
+                [{ data: dataSetsQuery }, { nameProp: 'entireName' }],
+                done
+            )
         })
     })
 
-    describe('apiFetchAlternatives', () => {
+    describe('apiFetchOptions', () => {
         beforeEach(() => {
             queryVariables = {
                 nameProp: 'entireName',
-                groupId: 'ALL',
+                filter: { group: ALL_ID },
                 page: 1,
-                filterText: '',
+                searchTerm: '',
             }
 
             fetchFnArgs = {
                 dataEngine: mockDataEngine,
-                dataType: '',
-                groupDetail: '',
                 ...queryVariables,
             }
         })
 
         describe('indicators url', () => {
             beforeEach(() => {
-                fetchFnArgs.dataType = 'indicators'
+                fetchFnArgs.filter.dataType = INDICATORS
             })
 
             it('has correct name, filter and page value', done => {
-                apiFetchAlternatives(fetchFnArgs)
+                apiFetchOptions(fetchFnArgs)
 
                 asyncCheckMatches(
-                    [{ indicators: indicatorsQuery }, queryVariables],
+                    [{ indicators: indicatorsQuery }, { ...queryVariables }],
                     done
                 )
             })
 
             it('has correct filter text value', done => {
-                queryVariables.filterText = 'rarity'
+                queryVariables.searchTerm = 'rarity'
 
-                apiFetchAlternatives({ ...fetchFnArgs, ...queryVariables })
+                apiFetchOptions({ ...fetchFnArgs, ...queryVariables })
 
                 asyncCheckMatches(
-                    [{ indicators: indicatorsQuery }, queryVariables],
+                    [{ indicators: indicatorsQuery }, { ...queryVariables }],
                     done
                 )
             })
 
             it('has correct filter based on group Id', done => {
-                queryVariables.groupId = 'rarity'
+                queryVariables.filter.group = 'rarity'
 
-                apiFetchAlternatives({ ...fetchFnArgs, ...queryVariables })
+                apiFetchOptions({ ...fetchFnArgs, ...queryVariables })
 
                 asyncCheckMatches(
-                    [{ indicators: indicatorsQuery }, queryVariables],
+                    [{ indicators: indicatorsQuery }, { ...queryVariables }],
                     done
                 )
             })
@@ -176,12 +180,12 @@ describe('api: dimensions', () => {
 
         describe('dataElements url', () => {
             beforeEach(() => {
-                fetchFnArgs.dataType = 'dataElements'
+                fetchFnArgs.filter.dataType = DATA_ELEMENTS
             })
 
             describe('totals', () => {
                 it('has correct fields, filter, and page', done => {
-                    apiFetchAlternatives(fetchFnArgs)
+                    apiFetchOptions(fetchFnArgs)
 
                     asyncCheckMatches(
                         [{ dataElements: dataElementsQuery }, queryVariables],
@@ -190,9 +194,9 @@ describe('api: dimensions', () => {
                 })
 
                 it('has correct filter text value', done => {
-                    queryVariables.filterText = 'rarity'
+                    queryVariables.searchTerm = 'rarity'
 
-                    apiFetchAlternatives({ ...fetchFnArgs, ...queryVariables })
+                    apiFetchOptions({ ...fetchFnArgs, ...queryVariables })
 
                     asyncCheckMatches(
                         [{ dataElements: dataElementsQuery }, queryVariables],
@@ -201,9 +205,9 @@ describe('api: dimensions', () => {
                 })
 
                 it('has correct filter based on group Id', done => {
-                    queryVariables.groupId = 'rarity'
+                    queryVariables.filter.group = 'rarity'
 
-                    apiFetchAlternatives({ ...fetchFnArgs, ...queryVariables })
+                    apiFetchOptions({ ...fetchFnArgs, ...queryVariables })
 
                     asyncCheckMatches(
                         [{ dataElements: dataElementsQuery }, queryVariables],
@@ -214,11 +218,11 @@ describe('api: dimensions', () => {
 
             describe('details', () => {
                 beforeEach(() => {
-                    fetchFnArgs.groupDetail = 'detail'
+                    fetchFnArgs.filter.subGroup = DETAIL
                 })
 
                 it('has correct fields, filter, and page', done => {
-                    apiFetchAlternatives(fetchFnArgs)
+                    apiFetchOptions(fetchFnArgs)
 
                     asyncCheckMatches(
                         [
@@ -230,9 +234,9 @@ describe('api: dimensions', () => {
                 })
 
                 it('has correct filter text value', done => {
-                    queryVariables.filterText = 'rarity'
+                    queryVariables.searchTerm = 'rarity'
 
-                    apiFetchAlternatives({ ...fetchFnArgs, ...queryVariables })
+                    apiFetchOptions({ ...fetchFnArgs, ...queryVariables })
 
                     asyncCheckMatches(
                         [
@@ -244,9 +248,9 @@ describe('api: dimensions', () => {
                 })
 
                 it('has correct filter based on group Id', done => {
-                    queryVariables.groupId = 'rarity'
+                    queryVariables.filter.group = 'rarity'
 
-                    apiFetchAlternatives({ ...fetchFnArgs, ...queryVariables })
+                    apiFetchOptions({ ...fetchFnArgs, ...queryVariables })
 
                     asyncCheckMatches(
                         [
@@ -257,11 +261,11 @@ describe('api: dimensions', () => {
                     )
                 })
 
-                it('has correct url params for filterText and group Id', done => {
-                    queryVariables.filterText = 'rarity'
-                    queryVariables.groupId = 'rainbow'
+                it('has correct url params for searchTerm and group Id', done => {
+                    queryVariables.searchTerm = 'rarity'
+                    queryVariables.filter.group = 'rainbow'
 
-                    apiFetchAlternatives({ ...fetchFnArgs, ...queryVariables })
+                    apiFetchOptions({ ...fetchFnArgs, ...queryVariables })
 
                     asyncCheckMatches(
                         [
@@ -276,12 +280,12 @@ describe('api: dimensions', () => {
 
         describe('dataSets url', () => {
             beforeEach(() => {
-                delete queryVariables.groupId
-                fetchFnArgs.dataType = 'dataSets'
+                delete queryVariables.filter.group
+                fetchFnArgs.filter.dataType = DATA_SETS
             })
 
             it('has correct fields, filter, and page', done => {
-                apiFetchAlternatives({ ...fetchFnArgs, ...queryVariables })
+                apiFetchOptions({ ...fetchFnArgs, ...queryVariables })
 
                 asyncCheckMatches(
                     [{ dataSets: dataSetsQuery }, queryVariables],
@@ -290,9 +294,9 @@ describe('api: dimensions', () => {
             })
 
             it('has correct filter text value', done => {
-                queryVariables.filterText = 'rarity'
+                queryVariables.searchTerm = 'rarity'
 
-                apiFetchAlternatives({ ...fetchFnArgs, ...queryVariables })
+                apiFetchOptions({ ...fetchFnArgs, ...queryVariables })
 
                 asyncCheckMatches(
                     [{ dataSets: dataSetsQuery }, queryVariables],
@@ -303,13 +307,13 @@ describe('api: dimensions', () => {
 
         describe('eventDataItems', () => {
             beforeEach(() => {
-                fetchFnArgs.dataType = 'eventDataItems'
+                fetchFnArgs.filter.dataType = EVENT_DATA_ITEMS
             })
 
             it('has correct fields, filter, and page (data elements) in request', done => {
-                queryVariables.groupId = 'rainbowdash'
+                queryVariables.filter.group = 'rainbowdash'
 
-                apiFetchAlternatives({ ...fetchFnArgs, ...queryVariables })
+                apiFetchOptions({ ...fetchFnArgs, ...queryVariables })
 
                 asyncCheckMatches(
                     [
@@ -322,9 +326,9 @@ describe('api: dimensions', () => {
             })
 
             it('has correct filter text value in request url', done => {
-                queryVariables.filterText = 'rarity'
+                queryVariables.searchTerm = 'rarity'
 
-                apiFetchAlternatives({ ...fetchFnArgs, ...queryVariables })
+                apiFetchOptions({ ...fetchFnArgs, ...queryVariables })
 
                 asyncCheckMatches(
                     [
@@ -337,10 +341,10 @@ describe('api: dimensions', () => {
             })
 
             it('has correct fields and filter (attributes) in request url', done => {
-                queryVariables.groupId = 'rainbowdash'
+                queryVariables.filter.group = 'rainbowdash'
                 delete queryVariables.page
 
-                apiFetchAlternatives({ ...fetchFnArgs, ...queryVariables })
+                apiFetchOptions({ ...fetchFnArgs, ...queryVariables })
 
                 asyncCheckMatches(
                     [
@@ -349,8 +353,8 @@ describe('api: dimensions', () => {
                         },
                         {
                             ...queryVariables,
-                            id: queryVariables.groupId,
-                            groupId: undefined,
+                            id: queryVariables.filter.group,
+                            groupId: undefined, //FIXME: remove this line?
                         },
                         2,
                         1,
@@ -362,13 +366,13 @@ describe('api: dimensions', () => {
 
         describe('programIndicators url', () => {
             beforeEach(() => {
-                fetchFnArgs.dataType = 'programIndicators'
+                fetchFnArgs.filter.dataType = PROGRAM_INDICATORS
             })
 
             it('has correct fields, filter, and page', done => {
-                queryVariables.groupId = 'rainbowdash'
+                queryVariables.filter.group = 'rainbowdash'
 
-                apiFetchAlternatives({ ...fetchFnArgs, ...queryVariables })
+                apiFetchOptions({ ...fetchFnArgs, ...queryVariables })
 
                 asyncCheckMatches(
                     [
@@ -380,9 +384,9 @@ describe('api: dimensions', () => {
             })
 
             it('has correct filter text value', done => {
-                queryVariables.filterText = 'rarity'
+                queryVariables.searchTerm = 'rarity'
 
-                apiFetchAlternatives({ ...fetchFnArgs, ...queryVariables })
+                apiFetchOptions({ ...fetchFnArgs, ...queryVariables })
 
                 asyncCheckMatches(
                     [
