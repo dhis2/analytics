@@ -1,7 +1,5 @@
 import i18n from '@dhis2/d2-i18n'
 
-import { DATA_SETS_CONSTANTS } from '../modules/dataSets'
-
 export const CHART_AGGREGATE_AGGREGATABLE_TYPES = [
     'BOOLEAN',
     'TRUE_ONLY',
@@ -62,9 +60,6 @@ export const dataTypes = {
         getName: () => i18n.t('Data sets'),
         getGroupLabel: () => i18n.t('Data set'),
         defaultGroup: { id: ALL_ID, getName: () => i18n.t('All data sets') },
-        // TODO: augmentAlternatives is unused?
-        augmentAlternatives: (alternatives, groupId) =>
-            getReportingRates(alternatives, groupId),
         subGroup: SUB_GROUP_METRIC,
         getItemName: () => i18n.t('Data set'),
         getGroupEmptyLabel: () => i18n.t('No data sets found'),
@@ -105,36 +100,3 @@ export function defaultGroupDetail(dataType) {
 }
 
 export const DEFAULT_DATATYPE_ID = INDICATORS
-
-const getReportingRates = (contents, groupSetId) => {
-    let dataSets = []
-
-    if (groupSetId === ALL_ID) {
-        DATA_SETS_CONSTANTS.forEach(
-            reportingRate =>
-                (dataSets = [
-                    ...dataSets,
-                    ...contents.map(dataSet =>
-                        concatReportingRate(dataSet, reportingRate)
-                    ),
-                ])
-        )
-    } else {
-        const reportingRateIndex = DATA_SETS_CONSTANTS.find(
-            item => item.id === groupSetId
-        )
-
-        dataSets = contents.map(dataSet =>
-            concatReportingRate(dataSet, reportingRateIndex)
-        )
-    }
-
-    return dataSets
-}
-
-const concatReportingRate = (dataSet, reportingRate) => {
-    return {
-        id: `${dataSet.id}.${reportingRate.id}`,
-        name: `${dataSet.name} (${reportingRate.getName()})`,
-    }
-}
