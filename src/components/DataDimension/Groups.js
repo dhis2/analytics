@@ -93,14 +93,14 @@ const Groups = ({
                 <Detail
                     currentValue={currentSubGroup}
                     onChange={onSubGroupChange}
-                    dataTest={`${dataTest}-detail-select-field`}
+                    dataTest={`${dataTest}-sub-group-select-field`}
                 />
             )}
             {subGroupType === SUB_GROUP_METRIC && (
                 <Metric
                     currentValue={currentSubGroup}
                     onChange={onSubGroupChange}
-                    dataTest={`${dataTest}-metric-select-field`}
+                    dataTest={`${dataTest}-sub-group-select-field`}
                 />
             )}
         </div>
