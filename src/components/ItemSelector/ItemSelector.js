@@ -6,7 +6,7 @@ import UnselectedItems from './UnselectedItems'
 import SelectedItems from './SelectedItems'
 import styles from './styles/ItemSelector.style'
 
-// TODO: Remove this file
+// TODO: Unused in Analytics apps, remove or deprecate?
 class ItemSelector extends Component {
     render() {
         const {
