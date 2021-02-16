@@ -24,33 +24,83 @@ export const getMedianAbsoluteDeviation = (
 export const getMeanAbsoluteDeviation = (values, mean = getMean(values)) =>
     getMean(values.map(value => Math.abs(value - mean)))
 
-export const getModZScoreByMad0 = (value, median, meanAd) =>
+export const getModZScoreMad0 = (value, median, meanAd) =>
     (value - median) / (meanAd * MEANAD_CORRECTION)
 
 export const getModZScore = (value, median, mad) =>
     (MAD_CORRECTION * (value - median)) / mad
 
-export const getModZScores = values => {
-    const median = getMedian(values)
-    const mad = getMedianAbsoluteDeviation(values, median)
+export const getModZScoreThresholds = (
+    thresholdFactor,
+    mad,
+    median,
+    k = MAD_CORRECTION
+) => [
+    median - (mad * thresholdFactor) / k,
+    median + (mad * thresholdFactor) / k,
+]
+
+export const getModZScoreMad0Thresholds = (
+    thresholdFactor,
+    meanAd,
+    median,
+    k = MEANAD_CORRECTION
+) => [
+    median - thresholdFactor * meanAd * k,
+    median + thresholdFactor * meanAd * k,
+]
+
+export const getDataWithZScore = (dataWithNormalization, cache) => {
+    const normalizedData =
+        cache.normalizedData || dataWithNormalization.map(obj => obj.normalized)
+    const median = cache.median || getMedian(normalizedData)
+    const mad = cache.mad || getMedianAbsoluteDeviation()
+    let dataWithZScore
 
     if (mad === 0) {
-        const mean = getMean(values)
-        const meanAd = getMeanAbsoluteDeviation(values, mean)
-        return values.map(value => getModZScoreByMad0(value, median, meanAd))
+        const meanAd = cache.meanAd || getMeanAbsoluteDeviation(normalizedData)
+        dataWithZScore = dataWithNormalization.map(obj => ({
+            ...obj,
+            zScore: getModZScoreMad0(obj.normalized, median, meanAd),
+        }))
     } else {
-        return values.map(value => getModZScore(value, median, mad))
+        dataWithZScore = dataWithNormalization.map(obj => ({
+            ...obj,
+            zScore: getModZScore(obj.normalized, median, mad),
+        }))
     }
-}
 
-export const getModZScoreThresholds = (mzs, mad, median, k) => [
-    median - (mad * mzs) / k,
-    median + (mad * mzs) / k,
-]
+    return dataWithZScore
+}
 
 export const getModZScoreHelper = (dataWithNormalization, config) => {
     if (!dataWithNormalization.length) {
         throw 'Std dev analysis requires at least one value'
     }
     const normalizedData = dataWithNormalization.map(obj => obj.normalized)
+    const median = getMedian(normalizedData)
+    const mad = getMedianAbsoluteDeviation(normalizedData, median)
+    const meanAd = mad === 0 ? getMeanAbsoluteDeviation(normalizedData) : null
+
+    const dataWithZScore = getDataWithZScore(dataWithNormalization, median, mad)
+
+    const [lowThreshold, highThreshold] =
+        mad === 0
+            ? getModZScoreMad0Thresholds(config.thresholdFactor, meanAd, median)
+            : getModZScoreThresholds(config.thresholdFactor, mad, median)
+
+    return {
+        thresholds: [
+            {
+                name: `${config.thresholdFactor} x Modified Z-score Low`,
+                threshold: lowThreshold,
+                // line: q1ThresholdLine,
+            },
+            {
+                name: `${config.thresholdFactor} x Modified Z-score High`,
+                threshold: highThreshold,
+                // line: q3ThresholdLine,
+            },
+        ],
+    }
 }
