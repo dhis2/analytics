@@ -6,7 +6,7 @@ export default css`
         margin-bottom: ${spacers.dp4};
     }
     .chip {
-        display: inline-block;
+        display: inline-flex;
         background: ${colors.grey200};
         font-size: 14px;
         line-height: 16px;
@@ -61,6 +61,7 @@ export default css`
         margin-right: ${spacers.dp4};
         display: inline-flex;
         vertical-align: text-bottom;
+        padding-top: 1px;
     }
 
     .label {
