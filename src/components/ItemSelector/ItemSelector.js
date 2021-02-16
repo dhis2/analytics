@@ -6,7 +6,7 @@ import UnselectedItems from './UnselectedItems'
 import SelectedItems from './SelectedItems'
 import styles from './styles/ItemSelector.style'
 
-// TODO: Unused in Analytics apps, remove or deprecate?
+// TODO: Unused by Analytics apps, consider moving it to the d2-ui PeriodSelector, where it's still used
 class ItemSelector extends Component {
     render() {
         const {

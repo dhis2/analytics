@@ -1,4 +1,4 @@
-// import sortBy from 'lodash/sortBy'
+import objectClean from 'd2-utilizr/lib/objectClean'
 
 import { onError } from './index'
 import {
@@ -48,6 +48,7 @@ export const dataItemsQuery = {
     resource: 'dataItems',
     params: ({ nameProp, filter, searchTerm, page }) => {
         const filters = []
+        const shouldSearch = (searchTerm || '').length >= 2
 
         // TODO: Extract all of this logic out of the query?
         if (filter?.dataType === EVENT_DATA_ITEMS) {
@@ -65,27 +66,19 @@ export const dataItemsQuery = {
             filters.push(`programId:eq:${filter.group}`)
         }
 
-        // if (filter?.group && filter.group !== ALL_ID) {
-        //     switch (filter.dataType) {
-        //         case PROGRAM_INDICATORS:
-        //         case PROGRAM_DATA_ELEMENT:
-        //         case PROGRAM_ATTRIBUTE:
-        //             filters.push(`program.id:eq:${filter.group}`)
-        //             break
-        //     }
-        // }
-
-        if ((searchTerm || '').length >= 2) {
+        if (shouldSearch) {
             filters.push(`${nameProp}:ilike:${searchTerm}`)
+            filters.push(`id:eq:${searchTerm}`)
         }
 
-        return {
+        return objectClean({
             fields: `id,${nameProp}~rename(name),dimensionItemType`,
             order: `${nameProp}:asc`,
             filter: filters,
             paging: true,
             page,
-        }
+            rootJunction: shouldSearch ? 'OR' : undefined,
+        })
     },
 }
 
