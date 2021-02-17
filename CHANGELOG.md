@@ -1,3 +1,10 @@
+## [14.1.10](https://github.com/dhis2/analytics/compare/v14.1.9...v14.1.10) (2021-02-17)
+
+
+### Bug Fixes
+
+* account for perpendicular totals row when finalizing totals ([#816](https://github.com/dhis2/analytics/issues/816)) ([6cdb15e](https://github.com/dhis2/analytics/commit/6cdb15e9c7842747bb1ffb01437222a85b026e25))
+
 ## [14.1.9](https://github.com/dhis2/analytics/compare/v14.1.8...v14.1.9) (2021-02-15)
 
 
