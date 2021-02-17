@@ -4,10 +4,10 @@ import i18n from '@dhis2/d2-i18n'
 import { SingleSelectField, SingleSelectOption } from '@dhis2/ui'
 import { ALL_ID } from '../../modules/dataTypes'
 
-import styles from './styles/Metric.style'
+import styles from './styles/MetricSelector.style'
 import { DATA_SETS_CONSTANTS } from '../../modules/dataSets'
 
-export const Metric = ({ currentValue, onChange, dataTest }) => {
+export const MetricSelector = ({ currentValue, onChange, dataTest }) => {
     return (
         <div className="metric-container">
             <SingleSelectField
@@ -37,10 +37,10 @@ export const Metric = ({ currentValue, onChange, dataTest }) => {
     )
 }
 
-Metric.propTypes = {
+MetricSelector.propTypes = {
     onChange: PropTypes.func.isRequired,
     currentValue: PropTypes.string,
     dataTest: PropTypes.string,
 }
 
-export default Metric
+export default MetricSelector

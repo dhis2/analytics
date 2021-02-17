@@ -4,14 +4,14 @@ import i18n from '@dhis2/d2-i18n'
 import { SingleSelectField, SingleSelectOption } from '@dhis2/ui'
 import { TOTALS, DETAIL } from '../../modules/dataTypes'
 
-import styles from './styles/Detail.style'
+import styles from './styles/DetailSelector.style'
 
 const getOptions = () => ({
     [TOTALS]: i18n.t('Totals only'),
     [DETAIL]: i18n.t('Details only'),
 })
 
-export const Detail = ({ currentValue, onChange, dataTest }) => {
+export const DetailSelector = ({ currentValue, onChange, dataTest }) => {
     const options = getOptions()
     return (
         <div className="detail-container">
@@ -36,10 +36,10 @@ export const Detail = ({ currentValue, onChange, dataTest }) => {
     )
 }
 
-Detail.propTypes = {
+DetailSelector.propTypes = {
     currentValue: PropTypes.string.isRequired,
     onChange: PropTypes.func.isRequired,
     dataTest: PropTypes.string,
 }
 
-export default Detail
+export default DetailSelector

@@ -4,17 +4,17 @@ import { SingleSelectField, SingleSelectOption } from '@dhis2/ui'
 import { useDataEngine } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 
-import { Detail } from './Detail'
+import { DetailSelector } from './DetailSelector'
 import {
     dataTypes,
     SUB_GROUP_DETAIL,
     SUB_GROUP_METRIC,
 } from '../../modules/dataTypes'
-import styles from './styles/Groups.style'
+import styles from './styles/GroupSelector.style'
 import { apiFetchGroups } from '../../api/dimensions'
-import { Metric } from './Metric'
+import { MetricSelector } from './MetricSelector'
 
-const Groups = ({
+const GroupsSelector = ({
     dataType,
     currentGroup,
     onGroupChange,
@@ -90,14 +90,14 @@ const Groups = ({
                 </SingleSelectField>
             </div>
             {subGroupType === SUB_GROUP_DETAIL && (
-                <Detail
+                <DetailSelector
                     currentValue={currentSubGroup}
                     onChange={onSubGroupChange}
                     dataTest={`${dataTest}-sub-group-select-field`}
                 />
             )}
             {subGroupType === SUB_GROUP_METRIC && (
-                <Metric
+                <MetricSelector
                     currentValue={currentSubGroup}
                     onChange={onSubGroupChange}
                     dataTest={`${dataTest}-sub-group-select-field`}
@@ -107,7 +107,7 @@ const Groups = ({
     )
 }
 
-Groups.propTypes = {
+GroupsSelector.propTypes = {
     dataType: PropTypes.string.isRequired,
     displayNameProp: PropTypes.string.isRequired,
     onGroupChange: PropTypes.func.isRequired,
@@ -117,4 +117,4 @@ Groups.propTypes = {
     dataTest: PropTypes.string,
 }
 
-export default Groups
+export default GroupsSelector

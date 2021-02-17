@@ -19,8 +19,8 @@ import {
     TRANSFER_OPTIONS_WIDTH,
     TRANSFER_SELECTED_WIDTH,
 } from '../../modules/dimensionSelectorHelper'
-import DataTypes from './DataTypesSelector'
-import Groups from './Groups'
+import DataTypeSelector from './DataTypesSelector'
+import GroupSelector from './GroupSelector'
 import {
     ALL_ID,
     dataTypes,
@@ -74,13 +74,13 @@ const LeftHeader = ({
                 initialFocus
                 type={'search'}
             />
-            <DataTypes
+            <DataTypeSelector
                 currentDataType={dataType}
                 onChange={setDataType}
                 dataTest={`${dataTest}-data-types-select-field`}
             />
             {dataTypes[dataType] && (
-                <Groups
+                <GroupSelector
                     dataType={dataType}
                     displayNameProp={displayNameProp}
                     currentGroup={group}
