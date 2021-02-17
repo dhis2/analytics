@@ -299,6 +299,15 @@ const ItemSelector = ({
             options: page > 1 ? [...state.options, ...newOptions] : newOptions,
             nextPage: result.nextPage,
         }))
+        /*  The following handles a very specific edge-case where the user can select all items from a 
+            page and then reopen the modal. Usually Transfer triggers the onEndReached when the end of 
+            the page is reached (scrolling down) or if too few items are on the left side (e.g. selecting 
+            49 items from page 1, leaving only 1 item on the left side). However, due to the way Transfer 
+            works, if 0 items are available, more items are fetched, but all items are already selected 
+            (leaving 0 items on the left side still), the onReachedEnd won't trigger. Hence the code below:
+            IF there is a next page AND some options were just fetched AND you have the same or more
+            selected items than fetched items AND all fetched items are already selected -> fetch more!
+        */
         if (
             result.nextPage &&
             newOptions.length &&
