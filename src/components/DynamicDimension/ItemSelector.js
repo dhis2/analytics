@@ -11,19 +11,8 @@ import {
     TRANSFER_OPTIONS_WIDTH,
     TRANSFER_SELECTED_WIDTH,
 } from '../../modules/dimensionSelectorHelper'
+import { useDebounce } from '../../modules/utils'
 
-const useDebounce = (value, delay) => {
-    const [debouncedValue, setDebouncedValue] = useState(value)
-    useEffect(() => {
-        const handler = setTimeout(() => {
-            setDebouncedValue(value)
-        }, delay)
-        return () => {
-            clearTimeout(handler)
-        }
-    }, [value, delay])
-    return debouncedValue
-}
 const LeftHeader = ({ filter, setFilter }) => (
     <>
         <div className="leftHeader">

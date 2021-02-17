@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import {
     Transfer,
@@ -38,19 +38,8 @@ import { apiFetchOptions } from '../../api/dimensions'
 import { DATA_SETS_CONSTANTS, REPORTING_RATE } from '../../modules/dataSets'
 import DataElementIcon from '../../assets/DimensionItemIcons/DataElementIcon'
 import GenericIcon from '../../assets/DimensionItemIcons/GenericIcon'
+import { useDebounce, useDidUpdateEffect } from '../../modules/utils'
 
-const useDebounce = (value, delay) => {
-    const [debouncedValue, setDebouncedValue] = useState(value)
-    useEffect(() => {
-        const handler = setTimeout(() => {
-            setDebouncedValue(value)
-        }, delay)
-        return () => {
-            clearTimeout(handler)
-        }
-    }, [value, delay])
-    return debouncedValue
-}
 const LeftHeader = ({
     searchTerm,
     setSearchTerm,
@@ -321,15 +310,7 @@ const ItemSelector = ({
             fetchItems(result.nextPage)
         }
     }
-    const useDidUpdateEffect = (fn, inputs) => {
-        // TODO: Move this to a utils file
-        const didMountRef = useRef(false)
 
-        useEffect(() => {
-            if (didMountRef.current) fn()
-            else didMountRef.current = true
-        }, inputs)
-    }
     useDidUpdateEffect(() => {
         setState(state => ({
             ...state,
