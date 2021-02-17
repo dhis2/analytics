@@ -893,14 +893,20 @@ export class PivotTableEngine {
         }
         if (this.doRowTotals) {
             const column = this.dataWidth - 1
-            times(this.dataHeight - 1, n => n).forEach(row => {
+            const rowCount = this.doColumnTotals
+                ? this.dataHeight - 1
+                : this.dataHeight
+            times(rowCount, n => n).forEach(row => {
                 this.finalizeTotal({ row, column })
             })
         }
 
         if (this.doColumnTotals) {
             const row = this.dataHeight - 1
-            times(this.dataWidth - 1, n => n).forEach(column => {
+            const colCount = this.doRowTotals
+                ? this.dataWidth - 1
+                : this.dataWidth
+            times(colCount, n => n).forEach(column => {
                 this.finalizeTotal({ row, column })
             })
         }
