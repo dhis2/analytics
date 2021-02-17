@@ -19,19 +19,19 @@ export default css`
         font-weight: 400;
     }
     .leftHeader {
-        padding: 12px 4px;
+        padding: ${spacers.dp12} ${spacers.dp4};
     }
     .info-container {
         display: flex;
-        margin-bottom: 8px;
-        padding: 8px;
+        margin-bottom: ${spacers.dp8};
+        padding: ${spacers.dp8};
         background-color: ${colors.grey200};
-        border-radius: 4px;
+        border-radius: 3px;
     }
     .info-text {
-        padding-left: 6px;
+        padding-left: ${spacers.dp8};
         color: ${colors.grey900};
         font-size: 12px;
-        line-height: 17px;
+        line-height: 16px;
     }
 `
