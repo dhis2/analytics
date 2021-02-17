@@ -17,8 +17,8 @@ export const getZScoreHelper = (dataWithNormalization, config) => {
     const lowZScoreThreshold = mean - zScoreThreshold
     const highZScoreThreshold = mean + zScoreThreshold
     //TODO
-    const lowZScoreThresholdLine
-    const highZScoreThresholdLine
+    // const lowZScoreThresholdLine
+    // const highZScoreThresholdLine
     const isLowOutlier = value => value < lowZScoreThreshold
     const isHighOutlier = value => value > highZScoreThreshold
     const isOutlier = value => isLowOutlier(value) || isHighOutlier(value)
@@ -36,12 +36,12 @@ export const getZScoreHelper = (dataWithNormalization, config) => {
             {
                 name: `${config.thresholdFactor} x Z-score Low`,
                 threshold: lowZScoreThreshold,
-                line: lowZScoreThresholdLine,
+                // line: lowZScoreThresholdLine,
             },
             {
                 name: `${config.thresholdFactor} x Z-score High`,
                 threshold: highZScoreThreshold,
-                line: highZScoreThresholdLine,
+                // line: highZScoreThresholdLine,
             },
         ],
         isLowOutlier,
