@@ -210,12 +210,13 @@ export const dataSetsQuery = {
             fields: `dimensionItem~rename(id),${nameProp}~rename(name),dimensionItemType`,
             order: `${nameProp}:asc`,
             filter: filters,
+            paging: false,
         }
 
         if (page) {
             query.page = page
             query.paging = true
-        } else query.paging = false
+        }
 
         return query
     },
