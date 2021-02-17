@@ -96,6 +96,7 @@ export const getIQRHelper = (dataWithNormalization, config) => {
             q1ThresholdLine,
             q3ThresholdLine,
             dataWithNormalization,
+            normalizedData,
             ...config,
         },
     }

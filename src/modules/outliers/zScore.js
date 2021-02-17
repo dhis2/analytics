@@ -1,6 +1,6 @@
 import { std, mean } from 'mathjs'
 
-export const ZSCORE = 'ZSCORE'
+export const Z_SCORE = 'Z_SCORE'
 
 export const getStdDev = data => std(data, 'unbiased')
 

@@ -1,10 +1,10 @@
-export const MOD_ZSCORE = 'MOD_ZSCORE'
+export const MOD_Z_SCORE = 'MOD_Z_SCORE'
 
 const MAD_CORRECTION = 0.6745
 const MEANAD_CORRECTION = 1.253314
 
 export const getMean = values =>
-    values.reduce((total, value) => total + value, 0) / 2
+    values.reduce((total, value) => total + value, 0) / values.length
 
 export const getMedian = values => {
     const hl = values.length / 2
@@ -24,11 +24,11 @@ export const getMedianAbsoluteDeviation = (
 export const getMeanAbsoluteDeviation = (values, mean = getMean(values)) =>
     getMean(values.map(value => Math.abs(value - mean)))
 
-export const getModZScoreMad0 = (value, median, meanAd) =>
-    (value - median) / (meanAd * MEANAD_CORRECTION)
-
 export const getModZScore = (value, median, mad) =>
     (MAD_CORRECTION * (value - median)) / mad
+
+export const getModZScoreMad0 = (value, median, meanAd) =>
+    (value - median) / (meanAd * MEANAD_CORRECTION)
 
 export const getModZScoreThresholds = (
     thresholdFactor,
@@ -82,12 +82,28 @@ export const getModZScoreHelper = (dataWithNormalization, config) => {
     const mad = getMedianAbsoluteDeviation(normalizedData, median)
     const meanAd = mad === 0 ? getMeanAbsoluteDeviation(normalizedData) : null
 
-    const dataWithZScore = getDataWithZScore(dataWithNormalization, median, mad)
+    const dataWithZScore = getDataWithZScore(dataWithNormalization, {
+        normalizedData,
+        median,
+        mad,
+    })
 
     const [lowThreshold, highThreshold] =
         mad === 0
             ? getModZScoreMad0Thresholds(config.thresholdFactor, meanAd, median)
             : getModZScoreThresholds(config.thresholdFactor, mad, median)
+
+    const isLowOutlier = value => value < lowThreshold
+    const isHighOutlier = value => value > highThreshold
+    const isOutlier = value => isLowOutlier(value) || isHighOutlier(value)
+    const outlierPoints = []
+    const inlierPoints = []
+    const detectOutliers = () =>
+        dataWithZScore.forEach(obj => {
+            isOutlier(obj.normalized)
+                ? outlierPoints.push(obj.point)
+                : inlierPoints.push(obj.point)
+        })
 
     return {
         thresholds: [
@@ -102,5 +118,21 @@ export const getModZScoreHelper = (dataWithNormalization, config) => {
                 // line: q3ThresholdLine,
             },
         ],
+        isLowOutlier,
+        isHighOutlier,
+        isOutlier,
+        detectOutliers,
+        outlierPoints,
+        inlierPoints,
+        vars: {
+            normalizedData,
+            median,
+            mad,
+            meanAd,
+            dataWithNormalization,
+            dataWithZScore,
+            normalizedData,
+            ...config,
+        },
     }
 }
