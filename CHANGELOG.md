@@ -1,3 +1,10 @@
+## [14.1.11](https://github.com/dhis2/analytics/compare/v14.1.10...v14.1.11) (2021-02-17)
+
+
+### Bug Fixes
+
+* move singletons to peer dependencies ([#815](https://github.com/dhis2/analytics/issues/815)) ([8ccf306](https://github.com/dhis2/analytics/commit/8ccf30678d0750edc0b9b1e3a11fa1bb8f688739))
+
 ## [14.1.10](https://github.com/dhis2/analytics/compare/v14.1.9...v14.1.10) (2021-02-17)
 
 
