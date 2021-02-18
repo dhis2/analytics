@@ -4,19 +4,20 @@ import i18n from '@dhis2/d2-i18n'
 import { SingleSelectField, SingleSelectOption } from '@dhis2/ui'
 import { TOTALS, DETAIL } from '../../modules/dataTypes'
 
-import styles from './styles/Detail.style'
+import styles from './styles/DetailSelector.style'
 
 const getOptions = () => ({
-    [TOTALS]: i18n.t('Totals'),
-    [DETAIL]: i18n.t('Details'),
+    [TOTALS]: i18n.t('Totals only'),
+    [DETAIL]: i18n.t('Details only'),
 })
 
-export const Detail = ({ currentValue, onChange }) => {
+export const DetailSelector = ({ currentValue, onChange, dataTest }) => {
     const options = getOptions()
     return (
         <div className="detail-container">
             <SingleSelectField
-                label={i18n.t('Detail')}
+                dataTest={dataTest}
+                label={i18n.t('Disaggregation')}
                 selected={currentValue}
                 onChange={ref => onChange(ref.selected)}
                 dense
@@ -26,6 +27,7 @@ export const Detail = ({ currentValue, onChange }) => {
                         value={option[0]}
                         key={option[0]}
                         label={option[1]}
+                        dataTest={`${dataTest}-option-${option[0]}`}
                     />
                 ))}
             </SingleSelectField>
@@ -34,9 +36,10 @@ export const Detail = ({ currentValue, onChange }) => {
     )
 }
 
-Detail.propTypes = {
+DetailSelector.propTypes = {
     currentValue: PropTypes.string.isRequired,
     onChange: PropTypes.func.isRequired,
+    dataTest: PropTypes.string,
 }
 
-export default Detail
+export default DetailSelector

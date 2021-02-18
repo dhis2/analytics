@@ -6,13 +6,12 @@ export default css`
         margin-bottom: ${spacers.dp4};
     }
     .chip {
-        display: inline-block;
+        display: inline-flex;
         background: ${colors.grey200};
         font-size: 14px;
         line-height: 16px;
         padding: 2px ${spacers.dp8} 2px ${spacers.dp4};
-        margin-top: ${spacers.dp4};
-        margin-left: ${spacers.dp8};
+        margin: ${spacers.dp4} ${spacers.dp8} 0 ${spacers.dp8};
         border-radius: 3px;
         user-select: none;
     }
@@ -49,6 +48,10 @@ export default css`
         cursor: not-allowed;
     }
 
+    .inactive {
+        opacity: 0.3;
+    }
+
     .icon,
     .label {
         line-height: 18px;
@@ -58,6 +61,7 @@ export default css`
         margin-right: ${spacers.dp4};
         display: inline-flex;
         vertical-align: text-bottom;
+        padding-top: 1px;
     }
 
     .label {
