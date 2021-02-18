@@ -1,3 +1,17 @@
+## [14.1.13](https://github.com/dhis2/analytics/compare/v14.1.12...v14.1.13) (2021-02-18)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([a4631e3](https://github.com/dhis2/analytics/commit/a4631e3ff5ae7d264bf295eb5f0910a9379b173c))
+
+## [14.1.12](https://github.com/dhis2/analytics/compare/v14.1.11...v14.1.12) (2021-02-17)
+
+
+### Bug Fixes
+
+* pin styled-jsx to 3.3.2 ([#818](https://github.com/dhis2/analytics/issues/818)) ([9c12156](https://github.com/dhis2/analytics/commit/9c121569cedec018c6e018979e36b139d4905c24))
+
 ## [14.1.11](https://github.com/dhis2/analytics/compare/v14.1.10...v14.1.11) (2021-02-17)
 
 

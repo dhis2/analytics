@@ -1,6 +1,6 @@
 {
     "name": "@dhis2/analytics",
-    "version": "14.1.11",
+    "version": "14.1.13",
     "main": "./build/cjs/lib.js",
     "module": "./build/es/lib.js",
     "sideEffects": [
@@ -39,8 +39,8 @@
         "enzyme-adapter-react-16": "^1.15.5",
         "fs-extra": "^9.0.1",
         "jest-enzyme": "^7.0.2",
-        "typeface-roboto": "^0.0.75",
-        "styled-jsx": "^3.3.2"
+        "styled-jsx": "3.3.2",
+        "typeface-roboto": "^0.0.75"
     },
     "peerDependencies": {
         "@dhis2/app-runtime": "^2.6.1",
@@ -71,5 +71,6 @@
     ],
     "resolutions": {
         "@dhis2/ui": "^6.2.2"
+        "styled-jsx": "3.3.2"
     }
 }
