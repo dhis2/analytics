@@ -70,7 +70,7 @@
         "build"
     ],
     "resolutions": {
-        "@dhis2/ui": "^6.2.2"
+        "@dhis2/ui": "^6.2.2",
         "styled-jsx": "3.3.2"
     }
 }
