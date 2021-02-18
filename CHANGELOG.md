@@ -1,3 +1,15 @@
+# [15.0.0](https://github.com/dhis2/analytics/compare/v14.1.13...v15.0.0) (2021-02-18)
+
+
+### Features
+
+* new data dim selector (DHIS2-7943) ([#787](https://github.com/dhis2/analytics/issues/787)) ([2eac045](https://github.com/dhis2/analytics/commit/2eac045602c5d9b004aadd421a075f803a4d8c02))
+
+
+### BREAKING CHANGES
+
+* DataDimension no longer accepts the following props: DataEngine, onDeselect, onReorder
+
 ## [14.1.13](https://github.com/dhis2/analytics/compare/v14.1.12...v14.1.13) (2021-02-18)
 
 
