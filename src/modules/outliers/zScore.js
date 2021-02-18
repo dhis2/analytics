@@ -6,7 +6,7 @@ export const getStdDev = data => std(data, 'unbiased')
 
 export const getMean = data => mean(data)
 
-export const getZScoreHelper = (dataWithNormalization, config) => {
+export const getZScoreHelper = (dataWithNormalization, config, { xyStats }) => {
     if (!dataWithNormalization.length) {
         throw 'Std dev analysis requires at least one value'
     }

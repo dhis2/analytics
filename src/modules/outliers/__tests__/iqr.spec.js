@@ -1,5 +1,5 @@
-import { defaultConfig } from '..'
-import { getQuartilePosition, getQuartileValue, getIQRHelper } from '../iqr'
+import { getOutlierHelper } from '..'
+import { getQuartilePosition, getQuartileValue, IQR } from '../iqr'
 
 const a3 = [2, 4, 5]
 const a4 = [2, 4, 5, 7]
@@ -101,21 +101,24 @@ describe('getQuartileValue', () => {
 })
 
 describe('getIQRHelper', () => {
-    const helper = getIQRHelper(
+    const helper = getOutlierHelper(
         [
-            { point: [2, 1], normalized: 2 },
-            { point: [3, 1], normalized: 3 },
-            { point: [6, 2], normalized: 3 },
-            { point: [5, 1], normalized: 5 },
-            { point: [6, 1], normalized: 6 },
-            { point: [7, 1], normalized: 7 },
-            { point: [14, 2], normalized: 7 },
-            { point: [8, 1], normalized: 8 },
-            { point: [9, 1], normalized: 9 },
-            { point: [10, 1], normalized: 10 },
-            { point: [40, 1], normalized: 40 },
+            [2, 1],
+            [3, 1],
+            [6, 2],
+            [5, 1],
+            [6, 1],
+            [7, 1],
+            [14, 2],
+            [8, 1],
+            [9, 1],
+            [10, 1],
+            [40, 1],
         ],
-        defaultConfig
+        {
+            outlierMethod: IQR,
+            percentile: 1,
+        }
     )
 
     test('interquartile range', () => {

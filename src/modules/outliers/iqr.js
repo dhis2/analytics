@@ -34,7 +34,7 @@ export const getQuartileValue = (data, q = 0.25) => {
     return data[base - 1] + diff * rest
 }
 
-export const getIQRHelper = (dataWithNormalization, config) => {
+export const getIQRHelper = (dataWithNormalization, config, { xyStats }) => {
     if (!dataWithNormalization.length) {
         throw 'Quartile analysis requires at least one value'
     }
@@ -46,7 +46,7 @@ export const getIQRHelper = (dataWithNormalization, config) => {
     const iqrThreshold = iqr * config.thresholdFactor
     const q1Threshold = q1 - iqrThreshold
     const q3Threshold = q3 + iqrThreshold
-    const deNormalizer = deNormalizerMap[config.normalization]
+    const deNormalizer = deNormalizerMap[config.normalizationMethod]
     const q1ThresholdLine = [
         [config.xMin, deNormalizer(config.xMin, q1Threshold)],
         [config.xMax, deNormalizer(config.xMax, q1Threshold)],

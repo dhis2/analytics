@@ -1,11 +1,10 @@
-import { defaultConfig } from '..'
+import { getOutlierHelper } from '..'
 import {
     getMean,
     getMeanAbsoluteDeviation,
     getMedian,
     getMedianAbsoluteDeviation,
-    MOD_Z_SCORE,
-    getModZScoreHelper,
+    MODIFIED_Z_SCORE,
 } from '../modZScore'
 
 const a4 = [1, 2, 3, 10]
@@ -34,23 +33,23 @@ describe('Helper functions', () => {
 })
 
 describe('getModZScoreHelper', () => {
-    const helper = getModZScoreHelper(
+    const helper = getOutlierHelper(
         [
-            { point: [2, 1], normalized: 2 },
-            { point: [3, 1], normalized: 3 },
-            { point: [6, 2], normalized: 3 },
-            { point: [5, 1], normalized: 5 },
-            { point: [6, 1], normalized: 6 },
-            { point: [7, 1], normalized: 7 },
-            { point: [14, 2], normalized: 7 },
-            { point: [8, 1], normalized: 8 },
-            { point: [9, 1], normalized: 9 },
-            { point: [10, 1], normalized: 10 },
-            { point: [40, 1], normalized: 40 },
+            [2, 1],
+            [3, 1],
+            [6, 2],
+            [5, 1],
+            [6, 1],
+            [7, 1],
+            [14, 2],
+            [8, 1],
+            [9, 1],
+            [10, 1],
+            [40, 1],
         ],
         {
-            ...defaultConfig,
-            method: MOD_Z_SCORE,
+            outlierMethod: MODIFIED_Z_SCORE,
+            percentile: 1,
         }
     )
 

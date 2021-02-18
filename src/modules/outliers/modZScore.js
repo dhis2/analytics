@@ -1,7 +1,9 @@
-export const MOD_Z_SCORE = 'MOD_Z_SCORE'
+import { deNormalizerMap } from './normalization'
 
-const MAD_CORRECTION = 0.6745
-const MEANAD_CORRECTION = 1.253314
+export const MODIFIED_Z_SCORE = 'MODIFIED_Z_SCORE'
+
+const MEDIAN_AD_CORRECTION = 0.6745
+const MEAN_AD_CORRECTION = 1.253314
 
 export const getMean = values =>
     values.reduce((total, value) => total + value, 0) / values.length
@@ -12,6 +14,8 @@ export const getMedian = values => {
         ? values[Math.floor(hl)]
         : getMean([values[hl - 1], values[hl]])
 }
+
+// Absolute deviation
 
 export const getMedianAbsoluteDeviation = (
     values,
@@ -24,74 +28,102 @@ export const getMedianAbsoluteDeviation = (
 export const getMeanAbsoluteDeviation = (values, mean = getMean(values)) =>
     getMean(values.map(value => Math.abs(value - mean)))
 
-export const getModZScore = (value, median, mad) =>
-    (MAD_CORRECTION * (value - median)) / mad
+// Modified z-scores
 
-export const getModZScoreMad0 = (value, median, meanAd) =>
-    (value - median) / (meanAd * MEANAD_CORRECTION)
+export const getModZScore = (value, median, medianAD) =>
+    (MEDIAN_AD_CORRECTION * (value - median)) / medianAD
+
+export const getModZScoreMAD0 = (value, median, meanAD) =>
+    (value - median) / (meanAD * MEAN_AD_CORRECTION)
+
+// Thresholds
 
 export const getModZScoreThresholds = (
     thresholdFactor,
-    mad,
+    medianAD,
     median,
-    k = MAD_CORRECTION
+    k = MEDIAN_AD_CORRECTION
 ) => [
-    median - (mad * thresholdFactor) / k,
-    median + (mad * thresholdFactor) / k,
+    median - (medianAD * thresholdFactor) / k,
+    median + (medianAD * thresholdFactor) / k,
 ]
 
-export const getModZScoreMad0Thresholds = (
+export const getModZScoreMAD0Thresholds = (
     thresholdFactor,
-    meanAd,
+    meanAD,
     median,
-    k = MEANAD_CORRECTION
+    k = MEAN_AD_CORRECTION
 ) => [
-    median - thresholdFactor * meanAd * k,
-    median + thresholdFactor * meanAd * k,
+    median - thresholdFactor * meanAD * k,
+    median + thresholdFactor * meanAD * k,
 ]
 
 export const getDataWithZScore = (dataWithNormalization, cache) => {
     const normalizedData =
         cache.normalizedData || dataWithNormalization.map(obj => obj.normalized)
     const median = cache.median || getMedian(normalizedData)
-    const mad = cache.mad || getMedianAbsoluteDeviation()
+    const medianAD = cache.medianAD || getMedianAbsoluteDeviation()
     let dataWithZScore
 
-    if (mad === 0) {
-        const meanAd = cache.meanAd || getMeanAbsoluteDeviation(normalizedData)
+    if (medianAD === 0) {
+        const meanAD = cache.meanAD || getMeanAbsoluteDeviation(normalizedData)
         dataWithZScore = dataWithNormalization.map(obj => ({
             ...obj,
-            zScore: getModZScoreMad0(obj.normalized, median, meanAd),
+            zScore: getModZScoreMAD0(obj.normalized, median, meanAD),
         }))
     } else {
         dataWithZScore = dataWithNormalization.map(obj => ({
             ...obj,
-            zScore: getModZScore(obj.normalized, median, mad),
+            zScore: getModZScore(obj.normalized, median, medianAD),
         }))
     }
 
     return dataWithZScore
 }
 
-export const getModZScoreHelper = (dataWithNormalization, config) => {
+export const getModZScoreHelper = (
+    dataWithNormalization,
+    config,
+    { xyStats }
+) => {
     if (!dataWithNormalization.length) {
-        throw 'Std dev analysis requires at least one value'
+        throw 'Modified z-score analysis requires at least one value'
     }
+    console.log('modzscore dataWN', dataWithNormalization)
     const normalizedData = dataWithNormalization.map(obj => obj.normalized)
     const median = getMedian(normalizedData)
-    const mad = getMedianAbsoluteDeviation(normalizedData, median)
-    const meanAd = mad === 0 ? getMeanAbsoluteDeviation(normalizedData) : null
+    const medianAD = getMedianAbsoluteDeviation(normalizedData, median)
+    const meanAD =
+        medianAD === 0 ? getMeanAbsoluteDeviation(normalizedData) : null
 
     const dataWithZScore = getDataWithZScore(dataWithNormalization, {
         normalizedData,
         median,
-        mad,
+        medianAD,
     })
 
     const [lowThreshold, highThreshold] =
-        mad === 0
-            ? getModZScoreMad0Thresholds(config.thresholdFactor, meanAd, median)
-            : getModZScoreThresholds(config.thresholdFactor, mad, median)
+        medianAD === 0
+            ? getModZScoreMAD0Thresholds(config.thresholdFactor, meanAD, median)
+            : getModZScoreThresholds(config.thresholdFactor, medianAD, median)
+
+    const deNormalizer = deNormalizerMap[config.normalizationMethod]
+
+    const lowThresholdLine = [
+        [config.xMin, deNormalizer(xyStats.xMin, lowThreshold)],
+        [config.xMax, deNormalizer(xyStats.xMax, lowThreshold)],
+    ]
+    const highThresholdLine = [
+        [config.xMin, deNormalizer(xyStats.xMin, highThreshold)],
+        [config.xMax, deNormalizer(xyStats.xMax, highThreshold)],
+    ]
+
+    const xPercentile = config.percentile
+        ? xyStats.xSum * (config.percentile / 100)
+        : null
+    const yPercentile = config.percentile
+        ? xyStats.ySum * (config.percentile / 100)
+        : null
 
     const isLowOutlier = value => value < lowThreshold
     const isHighOutlier = value => value > highThreshold
@@ -110,12 +142,12 @@ export const getModZScoreHelper = (dataWithNormalization, config) => {
             {
                 name: `${config.thresholdFactor} x Modified Z-score Low`,
                 threshold: lowThreshold,
-                // line: q1ThresholdLine,
+                line: lowThresholdLine,
             },
             {
                 name: `${config.thresholdFactor} x Modified Z-score High`,
                 threshold: highThreshold,
-                // line: q3ThresholdLine,
+                line: highThresholdLine,
             },
         ],
         isLowOutlier,
@@ -124,11 +156,15 @@ export const getModZScoreHelper = (dataWithNormalization, config) => {
         detectOutliers,
         outlierPoints,
         inlierPoints,
+        xPercentile,
+        yPercentile,
         vars: {
             normalizedData,
             median,
-            mad,
-            meanAd,
+            medianAD,
+            meanAD,
+            lowThreshold,
+            highThreshold,
             dataWithNormalization,
             dataWithZScore,
             normalizedData,
