@@ -157,48 +157,42 @@ const SourceEmptyPlaceholder = ({
     } else if (!loading && !options.length && searchTerm) {
         switch (dataType) {
             case INDICATORS:
-                message = i18n.t('No indicators found for "{{searchTerm}}"', {
+                message = i18n.t('No indicators found for "{{- searchTerm}}"', {
                     searchTerm: searchTerm,
-                    interpolation: { escapeValue: false },
                 })
                 break
             case DATA_ELEMENTS:
                 message = i18n.t(
-                    'No data elements found for "{{searchTerm}}"',
+                    'No data elements found for "{{- searchTerm}}"',
                     {
                         searchTerm: searchTerm,
-                        interpolation: { escapeValue: false },
                     }
                 )
                 break
             case DATA_SETS:
-                message = i18n.t('No data sets found for "{{searchTerm}}"', {
+                message = i18n.t('No data sets found for "{{- searchTerm}}"', {
                     searchTerm: searchTerm,
-                    interpolation: { escapeValue: false },
                 })
                 break
             case EVENT_DATA_ITEMS:
                 message = i18n.t(
-                    'No event data items found for "{{searchTerm}}"',
+                    'No event data items found for "{{- searchTerm}}"',
                     {
                         searchTerm: searchTerm,
-                        interpolation: { escapeValue: false },
                     }
                 )
                 break
             case PROGRAM_INDICATORS:
                 message = i18n.t(
-                    'No program indicators found for "{{searchTerm}}"',
+                    'No program indicators found for "{{- searchTerm}}"',
                     {
                         searchTerm: searchTerm,
-                        interpolation: { escapeValue: false },
                     }
                 )
                 break
             default:
-                message = i18n.t('Nothing found for "{{searchTerm}}"', {
+                message = i18n.t('Nothing found for "{{- searchTerm}}"', {
                     searchTerm: searchTerm,
-                    interpolation: { escapeValue: false },
                 })
                 break
         }
