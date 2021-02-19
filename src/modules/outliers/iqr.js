@@ -48,12 +48,12 @@ export const getIQRHelper = (dataWithNormalization, config, { xyStats }) => {
     const q3Threshold = q3 + iqrThreshold
     const deNormalizer = deNormalizerMap[config.normalizationMethod]
     const q1ThresholdLine = [
-        [config.xMin, deNormalizer(config.xMin, q1Threshold)],
-        [config.xMax, deNormalizer(config.xMax, q1Threshold)],
+        [xyStats.xMin, deNormalizer(xyStats.xMin, q1Threshold)],
+        [xyStats.xMax, deNormalizer(xyStats.xMax, q1Threshold)],
     ]
     const q3ThresholdLine = [
-        [config.xMin, deNormalizer(config.xMin, q3Threshold)],
-        [config.xMax, deNormalizer(config.xMax, q3Threshold)],
+        [xyStats.xMin, deNormalizer(xyStats.xMin, q3Threshold)],
+        [xyStats.xMax, deNormalizer(xyStats.xMax, q3Threshold)],
     ]
     const isLowOutlier = value => value < q1Threshold
     const isHighOutlier = value => value > q3Threshold

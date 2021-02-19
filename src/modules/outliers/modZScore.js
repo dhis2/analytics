@@ -108,12 +108,12 @@ export const getModZScoreHelper = (
     const deNormalizer = deNormalizerMap[config.normalizationMethod]
 
     const lowThresholdLine = [
-        [config.xMin, deNormalizer(xyStats.xMin, lowThreshold)],
-        [config.xMax, deNormalizer(xyStats.xMax, lowThreshold)],
+        [xyStats.xMin, deNormalizer(xyStats.xMin, lowThreshold)],
+        [xyStats.xMax, deNormalizer(xyStats.xMax, lowThreshold)],
     ]
     const highThresholdLine = [
-        [config.xMin, deNormalizer(xyStats.xMin, highThreshold)],
-        [config.xMax, deNormalizer(xyStats.xMax, highThreshold)],
+        [xyStats.xMin, deNormalizer(xyStats.xMin, highThreshold)],
+        [xyStats.xMax, deNormalizer(xyStats.xMax, highThreshold)],
     ]
 
     const isLowOutlier = value => value < lowThreshold

@@ -19,12 +19,12 @@ export const getZScoreHelper = (dataWithNormalization, config, { xyStats }) => {
     const highZScoreThreshold = mean + zScoreThreshold
     const deNormalizer = deNormalizerMap[config.normalizationMethod]
     const lowThresholdLine = [
-        [config.xMin, deNormalizer(xyStats.xMin, lowZScoreThreshold)],
-        [config.xMax, deNormalizer(xyStats.xMax, lowZScoreThreshold)],
+        [xyStats.xMin, deNormalizer(xyStats.xMin, lowZScoreThreshold)],
+        [xyStats.xMax, deNormalizer(xyStats.xMax, lowZScoreThreshold)],
     ]
     const highThresholdLine = [
-        [config.xMin, deNormalizer(xyStats.xMin, highZScoreThreshold)],
-        [config.xMax, deNormalizer(xyStats.xMax, highZScoreThreshold)],
+        [xyStats.xMin, deNormalizer(xyStats.xMin, highZScoreThreshold)],
+        [xyStats.xMax, deNormalizer(xyStats.xMax, highZScoreThreshold)],
     ]
 
     const isLowOutlier = value => value < lowZScoreThreshold
