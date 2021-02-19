@@ -51,12 +51,21 @@ export const getModZScoreMAD0Thresholds = (thresholdFactor, meanAD, median) => [
 export const getDataWithZScore = (dataWithNormalization, cache = {}) => {
     const normalizedData =
         cache.normalizedData || dataWithNormalization.map(obj => obj.normalized)
-    const median = cache.median || getMedian(normalizedData)
-    const medianAD = cache.medianAD || getMedianAbsoluteDeviation()
+    const median =
+        typeof cache.median === 'number'
+            ? cache.median
+            : getMedian(normalizedData)
+    const medianAD =
+        typeof cache.medianAD === 'number'
+            ? cache.medianAD
+            : getMedianAbsoluteDeviation()
     let dataWithZScore
 
     if (medianAD === 0) {
-        const meanAD = cache.meanAD || getMeanAbsoluteDeviation(normalizedData)
+        const meanAD =
+            typeof cache.meanAD === 'number'
+                ? cache.meanAD
+                : getMeanAbsoluteDeviation(normalizedData)
         dataWithZScore = dataWithNormalization.map(obj => ({
             ...obj,
             zScore: getModZScoreMAD0(obj.normalized, median, meanAD),
