@@ -64,12 +64,10 @@ export const getOutlierHelper = (data, userConfig) => {
         data,
         config.normalizationMethod
     )
-    console.log('dataWithNormalization', dataWithNormalization)
 
     const options = {
         xyStats: getXYStats(data),
     }
-    console.log('XYSTATS', options.xyStats)
 
     let helper
 
@@ -83,7 +81,7 @@ export const getOutlierHelper = (data, userConfig) => {
             helper = getIQRHelper(dataWithNormalization, config, options)
     }
 
-    helper.percentiles = getPercentiles(options.percentile, options.xyStats)
-
+    helper.percentiles = getPercentiles(config.percentile, options.xyStats)
+    console.log('HELPER', helper)
     return helper
 }
