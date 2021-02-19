@@ -48,7 +48,7 @@ export const dataItemsQuery = {
     resource: 'dataItems',
     params: ({ nameProp, filter, searchTerm, page }) => {
         const filters = []
-        const shouldSearch = (searchTerm || '').length >= 2
+        const shouldSearch = searchTerm && searchTerm.length
 
         // TODO: Extract all of this logic out of the query?
         if (filter?.dataType === EVENT_DATA_ITEMS) {
