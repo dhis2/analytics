@@ -19,7 +19,7 @@ msgid "Data Type"
 msgstr "Maʼlumot turi"
 
 msgid "All types"
-msgstr ""
+msgstr "Barcha turlari"
 
 msgid "Totals only"
 msgstr ""
@@ -34,7 +34,7 @@ msgid "No data"
 msgstr "Maʼlumot yoʼq"
 
 msgid "Loading"
-msgstr ""
+msgstr "Yuklanmoqda"
 
 msgid "Search by data item name or id"
 msgstr ""
@@ -82,7 +82,7 @@ msgid "Metric type"
 msgstr ""
 
 msgid "All metrics"
-msgstr ""
+msgstr "Barcha koʼrsatgichlar"
 
 msgid "Move to {{axisName}}"
 msgstr "Harakatlaning {{axisName}} ga qarab"
@@ -505,13 +505,13 @@ msgid "Indicators"
 msgstr "Indikatorlar"
 
 msgid "Indicator group"
-msgstr ""
+msgstr "Koʼrsatgich guruhi"
 
 msgid "All groups"
 msgstr ""
 
 msgid "Indicator"
-msgstr ""
+msgstr "Indikator"
 
 msgid "No indicator groups found"
 msgstr ""
@@ -523,10 +523,10 @@ msgid "Data elements"
 msgstr "Maʼlumot elementlari"
 
 msgid "Data element group"
-msgstr ""
+msgstr "Maʼlumotlar elementi guruhi"
 
 msgid "Data element"
-msgstr ""
+msgstr "Maʼlumotlar elementi"
 
 msgid "No data element groups found"
 msgstr ""
@@ -538,7 +538,7 @@ msgid "Data sets"
 msgstr "Maʼlumotlar toʼplami"
 
 msgid "Data set"
-msgstr ""
+msgstr "Maʼlumotlar toʼplami"
 
 msgid "All data sets"
 msgstr ""
@@ -553,7 +553,7 @@ msgid "All programs"
 msgstr ""
 
 msgid "Event data item"
-msgstr ""
+msgstr "Hodisa/Tadbir maʼlumoti elementi"
 
 msgid "No programs found"
 msgstr ""
@@ -565,7 +565,7 @@ msgid "Program indicators"
 msgstr "Dastur indikatorlari"
 
 msgid "Program indicator"
-msgstr ""
+msgstr "Dastur indikatori"
 
 msgid "Extra Small"
 msgstr "Juda Kichik"
