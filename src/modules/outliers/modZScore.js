@@ -48,7 +48,7 @@ export const getModZScoreMAD0Thresholds = (thresholdFactor, meanAD, median) => [
     median + thresholdFactor * meanAD * MEAN_AD_CORRECTION,
 ]
 
-export const getDataWithZScore = (dataWithNormalization, cache) => {
+export const getDataWithZScore = (dataWithNormalization, cache = {}) => {
     const normalizedData =
         cache.normalizedData || dataWithNormalization.map(obj => obj.normalized)
     const median = cache.median || getMedian(normalizedData)
