@@ -55,37 +55,5 @@ describe('getModZScoreHelper', () => {
 
     helper.detectOutliers()
 
-    console.log(helper)
-
-    // test('interquartile range', () => {
-    //     expect(helper.vars.iqr).toBe(9 - 3)
-    // })
-
-    // test('interquartile range threshold', () => {
-    //     expect(helper.vars.iqrThreshold).toBe(1.5 * (9 - 3))
-    // })
-
-    // test('first quartile threshold', () => {
-    //     expect(helper.vars.q1Threshold).toBe(3 - (9 - 3) * 1.5)
-    // })
-
-    // test('third quartile threshold', () => {
-    //     expect(helper.vars.q3Threshold).toBe(9 + (9 - 3) * 1.5)
-    // })
-
-    // test('isLowOutlier', () => {
-    //     expect(helper.isLowOutlier(-5)).toBe(false)
-    //     expect(helper.isLowOutlier(-7)).toBe(true)
-    // })
-
-    // test('isHighOutlier', () => {
-    //     expect(helper.isHighOutlier(17)).toBe(false)
-    //     expect(helper.isHighOutlier(19)).toBe(true)
-    // })
-
-    // test('isOutlier', () => {
-    //     expect(helper.isOutlier(0)).toBe(false)
-    //     expect(helper.isOutlier(-20)).toBe(true)
-    //     expect(helper.isOutlier(60)).toBe(true)
-    // })
+    //TODO add tests
 })
