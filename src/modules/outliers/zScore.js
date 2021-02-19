@@ -1,4 +1,5 @@
 import { std, mean } from 'mathjs'
+import { deNormalizerMap } from './normalization'
 
 export const Z_SCORE = 'Z_SCORE'
 
@@ -16,14 +17,14 @@ export const getZScoreHelper = (dataWithNormalization, config, { xyStats }) => {
     const mean = getMean(normalizedData)
     const lowZScoreThreshold = mean - zScoreThreshold
     const highZScoreThreshold = mean + zScoreThreshold
-
+    const deNormalizer = deNormalizerMap[config.normalizationMethod]
     const lowThresholdLine = [
-        [config.xMin, deNormalizer(xyStats.xMin, lowThreshold)],
-        [config.xMax, deNormalizer(xyStats.xMax, lowThreshold)],
+        [config.xMin, deNormalizer(xyStats.xMin, lowZScoreThreshold)],
+        [config.xMax, deNormalizer(xyStats.xMax, lowZScoreThreshold)],
     ]
     const highThresholdLine = [
-        [config.xMin, deNormalizer(xyStats.xMin, highThreshold)],
-        [config.xMax, deNormalizer(xyStats.xMax, highThreshold)],
+        [config.xMin, deNormalizer(xyStats.xMin, highZScoreThreshold)],
+        [config.xMax, deNormalizer(xyStats.xMax, highZScoreThreshold)],
     ]
 
     const isLowOutlier = value => value < lowZScoreThreshold
@@ -57,8 +58,6 @@ export const getZScoreHelper = (dataWithNormalization, config, { xyStats }) => {
         detectOutliers,
         outlierPoints,
         inlierPoints,
-        xPercentile,
-        yPercentile,
         vars: {
             stdDev,
             zScoreThreshold,
@@ -66,6 +65,7 @@ export const getZScoreHelper = (dataWithNormalization, config, { xyStats }) => {
             lowZScoreThreshold,
             highZScoreThreshold,
             dataWithNormalization,
+            normalizedData,
             config,
             xyStats,
         },

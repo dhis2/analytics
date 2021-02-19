@@ -38,24 +38,14 @@ export const getModZScoreMAD0 = (value, median, meanAD) =>
 
 // Thresholds
 
-export const getModZScoreThresholds = (
-    thresholdFactor,
-    medianAD,
-    median,
-    k = MEDIAN_AD_CORRECTION
-) => [
-    median - (medianAD * thresholdFactor) / k,
-    median + (medianAD * thresholdFactor) / k,
+export const getModZScoreThresholds = (thresholdFactor, medianAD, median) => [
+    median - (medianAD * thresholdFactor) / MEDIAN_AD_CORRECTION,
+    median + (medianAD * thresholdFactor) / MEDIAN_AD_CORRECTION,
 ]
 
-export const getModZScoreMAD0Thresholds = (
-    thresholdFactor,
-    meanAD,
-    median,
-    k = MEAN_AD_CORRECTION
-) => [
-    median - thresholdFactor * meanAD * k,
-    median + thresholdFactor * meanAD * k,
+export const getModZScoreMAD0Thresholds = (thresholdFactor, meanAD, median) => [
+    median - thresholdFactor * meanAD * MEAN_AD_CORRECTION,
+    median + thresholdFactor * meanAD * MEAN_AD_CORRECTION,
 ]
 
 export const getDataWithZScore = (dataWithNormalization, cache) => {
@@ -149,7 +139,6 @@ export const getModZScoreHelper = (
         outlierPoints,
         inlierPoints,
         vars: {
-            normalizedData,
             median,
             medianAD,
             meanAD,

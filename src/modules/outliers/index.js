@@ -74,8 +74,10 @@ export const getOutlierHelper = (data, userConfig) => {
     switch (config.outlierMethod) {
         case Z_SCORE:
             helper = getZScoreHelper(dataWithNormalization, config, options)
+            break
         case MODIFIED_Z_SCORE:
             helper = getModZScoreHelper(dataWithNormalization, config, options)
+            break
         case IQR:
         default:
             helper = getIQRHelper(dataWithNormalization, config, options)
