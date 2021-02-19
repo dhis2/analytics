@@ -159,6 +159,7 @@ const SourceEmptyPlaceholder = ({
             case INDICATORS:
                 message = i18n.t('No indicators found for "{{searchTerm}}"', {
                     searchTerm: searchTerm,
+                    interpolation: { escapeValue: false },
                 })
                 break
             case DATA_ELEMENTS:
@@ -166,12 +167,14 @@ const SourceEmptyPlaceholder = ({
                     'No data elements found for "{{searchTerm}}"',
                     {
                         searchTerm: searchTerm,
+                        interpolation: { escapeValue: false },
                     }
                 )
                 break
             case DATA_SETS:
                 message = i18n.t('No data sets found for "{{searchTerm}}"', {
                     searchTerm: searchTerm,
+                    interpolation: { escapeValue: false },
                 })
                 break
             case EVENT_DATA_ITEMS:
@@ -179,6 +182,7 @@ const SourceEmptyPlaceholder = ({
                     'No event data items found for "{{searchTerm}}"',
                     {
                         searchTerm: searchTerm,
+                        interpolation: { escapeValue: false },
                     }
                 )
                 break
@@ -187,12 +191,14 @@ const SourceEmptyPlaceholder = ({
                     'No program indicators found for "{{searchTerm}}"',
                     {
                         searchTerm: searchTerm,
+                        interpolation: { escapeValue: false },
                     }
                 )
                 break
             default:
                 message = i18n.t('Nothing found for "{{searchTerm}}"', {
                     searchTerm: searchTerm,
+                    interpolation: { escapeValue: false },
                 })
                 break
         }
@@ -258,7 +264,7 @@ const ItemSelector = ({
                         item => item.id === state.filter.subGroup
                     )
                     newOptions.push({
-                        label: `${item.name} – ${metric.getName()}`,
+                        label: `${item.name} - ${metric.getName()}`,
                         value: `${item.id}.${metric.id}`,
                         disabled: item.disabled,
                         type: item.dimensionItemType,
@@ -266,7 +272,7 @@ const ItemSelector = ({
                 } else {
                     DATA_SETS_CONSTANTS.forEach(metric => {
                         newOptions.push({
-                            label: `${item.name} – ${metric.getName()}`,
+                            label: `${item.name} - ${metric.getName()}`,
                             value: `${item.id}.${metric.id}`,
                             disabled: item.disabled,
                             type: item.dimensionItemType,
