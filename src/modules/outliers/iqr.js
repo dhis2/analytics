@@ -93,11 +93,10 @@ export const getIQRHelper = (dataWithNormalization, config, { xyStats }) => {
             iqrThreshold,
             q1Threshold,
             q3Threshold,
-            q1ThresholdLine,
-            q3ThresholdLine,
             dataWithNormalization,
             normalizedData,
-            ...config,
+            config,
+            xyStats,
         },
     }
 }

@@ -10,6 +10,7 @@ export const defaultConfig = {
     thresholdFactor: THRESHOLD_FACTOR,
     normalizationMethod: XY_RATIO,
     outlierMethod: IQR,
+    percentile: 1,
 }
 
 const getDataWithNormalization = (data, normalizationMethod) => {
@@ -27,6 +28,30 @@ const getDataWithNormalization = (data, normalizationMethod) => {
         .sort((a, b) => (a.normalized < b.normalized ? -1 : 1))
 }
 
+const getPercentiles = (percentile, xyStats) => {
+    const xPercentileValue = xyStats.xSum * (percentile / 100)
+    const yPercentileValue = xyStats.ySum * (percentile / 100)
+
+    return [
+        {
+            name: `${percentile}% of Total X Values`,
+            value: xPercentileValue,
+            line: [
+                [xPercentileValue, xyStats.yMin],
+                [xPercentileValue, xyStats.yMax],
+            ],
+        },
+        {
+            name: `${percentile}% of Total Y Values`,
+            value: yPercentileValue,
+            line: [
+                [xyStats.xMin, yPercentileValue],
+                [xyStats.xMax, yPercentileValue],
+            ],
+        },
+    ]
+}
+
 export const getOutlierHelper = (data, userConfig) => {
     const config = {
         ...defaultConfig,
@@ -34,24 +59,31 @@ export const getOutlierHelper = (data, userConfig) => {
     }
     console.log('DATA', data)
     console.log('CONFIG', config)
+
     const dataWithNormalization = getDataWithNormalization(
         data,
         config.normalizationMethod
     )
-
     console.log('dataWithNormalization', dataWithNormalization)
+
     const options = {
         xyStats: getXYStats(data),
     }
     console.log('XYSTATS', options.xyStats)
 
+    let helper
+
     switch (config.outlierMethod) {
         case Z_SCORE:
-            return getZScoreHelper(dataWithNormalization, config, options)
+            helper = getZScoreHelper(dataWithNormalization, config, options)
         case MODIFIED_Z_SCORE:
-            return getModZScoreHelper(dataWithNormalization, config, options)
+            helper = getModZScoreHelper(dataWithNormalization, config, options)
         case IQR:
         default:
-            return getIQRHelper(dataWithNormalization, config, options)
+            helper = getIQRHelper(dataWithNormalization, config, options)
     }
+
+    helper.percentiles = getPercentiles(options.percentile, options.xyStats)
+
+    return helper
 }

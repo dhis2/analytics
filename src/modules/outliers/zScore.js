@@ -8,7 +8,7 @@ export const getMean = data => mean(data)
 
 export const getZScoreHelper = (dataWithNormalization, config, { xyStats }) => {
     if (!dataWithNormalization.length) {
-        throw 'Std dev analysis requires at least one value'
+        throw 'Z-score analysis requires at least one value'
     }
     const normalizedData = dataWithNormalization.map(obj => obj.normalized)
     const stdDev = getStdDev(normalizedData)
@@ -16,9 +16,27 @@ export const getZScoreHelper = (dataWithNormalization, config, { xyStats }) => {
     const mean = getMean(normalizedData)
     const lowZScoreThreshold = mean - zScoreThreshold
     const highZScoreThreshold = mean + zScoreThreshold
+
+    const lowThresholdLine = [
+        [config.xMin, deNormalizer(xyStats.xMin, lowThreshold)],
+        [config.xMax, deNormalizer(xyStats.xMax, lowThreshold)],
+    ]
+    const highThresholdLine = [
+        [config.xMin, deNormalizer(xyStats.xMin, highThreshold)],
+        [config.xMax, deNormalizer(xyStats.xMax, highThreshold)],
+    ]
+
     //TODO
     // const lowZScoreThresholdLine
     // const highZScoreThresholdLine
+
+    const xPercentile = config.percentile
+        ? xyStats.xSum * (config.percentile / 100)
+        : null
+    const yPercentile = config.percentile
+        ? xyStats.ySum * (config.percentile / 100)
+        : null
+
     const isLowOutlier = value => value < lowZScoreThreshold
     const isHighOutlier = value => value > highZScoreThreshold
     const isOutlier = value => isLowOutlier(value) || isHighOutlier(value)
@@ -50,6 +68,8 @@ export const getZScoreHelper = (dataWithNormalization, config, { xyStats }) => {
         detectOutliers,
         outlierPoints,
         inlierPoints,
+        xPercentile,
+        yPercentile,
         vars: {
             stdDev,
             zScoreThreshold,

@@ -4,8 +4,8 @@ export const getXYStats = points => {
     let ySum = 0
     let xMin = points[0][0]
     let xMax = xMin
-    // let yMin = points[0][1]
-    // let yMax = yMax
+    let yMin = points[0][1]
+    let yMax = yMin
     let i
     let x
     let y
@@ -17,8 +17,8 @@ export const getXYStats = points => {
         ySum += y
         xMin = x < xMin ? x : xMin
         xMax = x > xMax ? x : xMax
-        // yMin = y < yMin ? y : yMin
-        // yMax = y > yMax ? y : yMax
+        yMin = y < yMin ? y : yMin
+        yMax = y > yMax ? y : yMax
     }
 
     return {
@@ -26,7 +26,7 @@ export const getXYStats = points => {
         ySum,
         xMin,
         xMax,
-        // yMin,
-        // yMax,
+        yMin,
+        yMax,
     }
 }

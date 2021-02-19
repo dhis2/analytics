@@ -89,7 +89,6 @@ export const getModZScoreHelper = (
     if (!dataWithNormalization.length) {
         throw 'Modified z-score analysis requires at least one value'
     }
-    console.log('modzscore dataWN', dataWithNormalization)
     const normalizedData = dataWithNormalization.map(obj => obj.normalized)
     const median = getMedian(normalizedData)
     const medianAD = getMedianAbsoluteDeviation(normalizedData, median)
@@ -118,13 +117,6 @@ export const getModZScoreHelper = (
         [config.xMax, deNormalizer(xyStats.xMax, highThreshold)],
     ]
 
-    const xPercentile = config.percentile
-        ? xyStats.xSum * (config.percentile / 100)
-        : null
-    const yPercentile = config.percentile
-        ? xyStats.ySum * (config.percentile / 100)
-        : null
-
     const isLowOutlier = value => value < lowThreshold
     const isHighOutlier = value => value > highThreshold
     const isOutlier = value => isLowOutlier(value) || isHighOutlier(value)
@@ -141,12 +133,12 @@ export const getModZScoreHelper = (
         thresholds: [
             {
                 name: `${config.thresholdFactor} x Modified Z-score Low`,
-                threshold: lowThreshold,
+                value: lowThreshold,
                 line: lowThresholdLine,
             },
             {
                 name: `${config.thresholdFactor} x Modified Z-score High`,
-                threshold: highThreshold,
+                value: highThreshold,
                 line: highThresholdLine,
             },
         ],
@@ -156,8 +148,6 @@ export const getModZScoreHelper = (
         detectOutliers,
         outlierPoints,
         inlierPoints,
-        xPercentile,
-        yPercentile,
         vars: {
             normalizedData,
             median,
@@ -168,7 +158,8 @@ export const getModZScoreHelper = (
             dataWithNormalization,
             dataWithZScore,
             normalizedData,
-            ...config,
+            config,
+            xyStats,
         },
     }
 }
