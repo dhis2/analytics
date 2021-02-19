@@ -13,6 +13,10 @@ import simpleMetadataResponse from './data/simple.metadata.json'
 import simpleDataResponse from './data/simple.data.json'
 import simpleVisualization from './data/simple.visualization.json'
 
+import avgMetadataResponse from './data/avgTotalAggregationType.metadata.json'
+import avgDataResponse from './data/avgTotalAggregationType.data.json'
+import avgVisualization from './data/avgTotalAggregationType.visualization.json'
+
 import deepData from './data/deep.data.json'
 import deepVisualization from './data/deep.visualization.json'
 
@@ -71,6 +75,7 @@ const simpleData = combineDataWithMetadata(
     simpleDataResponse,
     simpleMetadataResponse
 )
+const avgData = combineDataWithMetadata(avgDataResponse, avgMetadataResponse)
 const emptyColumnsData = combineDataWithMetadata(
     emptyColumnsDataResponse,
     emptyColumnsMetadataResponse
@@ -280,6 +285,42 @@ storiesOf('PivotTable', module).add('simple - no rows (large)', () => {
         </div>
     )
 })
+
+storiesOf('PivotTable', module).add(
+    'simple - avg totalAggregationType columns',
+    () => {
+        const visualization = {
+            ...avgVisualization,
+            ...visualizationReset,
+            colTotals: true,
+            hideEmptyRows: true,
+        }
+        return (
+            <div style={{ width: 800, height: 600 }}>
+                <PivotTable data={avgData} visualization={visualization} />
+            </div>
+        )
+    }
+)
+
+storiesOf('PivotTable', module).add(
+    'simple - avg totalAggregationType rows',
+    () => {
+        const visualization = {
+            ...avgVisualization,
+            ...visualizationReset,
+            columns: avgVisualization.rows,
+            rows: avgVisualization.columns,
+            rowTotals: true,
+            hideEmptyColumns: true,
+        }
+        return (
+            <div style={{ width: 800, height: 600 }}>
+                <PivotTable data={avgData} visualization={visualization} />
+            </div>
+        )
+    }
+)
 
 storiesOf('PivotTable', module).add('deep', () => {
     const visualization = {
