@@ -26,17 +26,6 @@ export const getZScoreHelper = (dataWithNormalization, config, { xyStats }) => {
         [config.xMax, deNormalizer(xyStats.xMax, highThreshold)],
     ]
 
-    //TODO
-    // const lowZScoreThresholdLine
-    // const highZScoreThresholdLine
-
-    const xPercentile = config.percentile
-        ? xyStats.xSum * (config.percentile / 100)
-        : null
-    const yPercentile = config.percentile
-        ? xyStats.ySum * (config.percentile / 100)
-        : null
-
     const isLowOutlier = value => value < lowZScoreThreshold
     const isHighOutlier = value => value > highZScoreThreshold
     const isOutlier = value => isLowOutlier(value) || isHighOutlier(value)
@@ -53,13 +42,13 @@ export const getZScoreHelper = (dataWithNormalization, config, { xyStats }) => {
         thresholds: [
             {
                 name: `${config.thresholdFactor} x Z-score Low`,
-                threshold: lowZScoreThreshold,
-                // line: lowZScoreThresholdLine,
+                value: lowZScoreThreshold,
+                line: lowThresholdLine,
             },
             {
                 name: `${config.thresholdFactor} x Z-score High`,
-                threshold: highZScoreThreshold,
-                // line: highZScoreThresholdLine,
+                value: highZScoreThreshold,
+                line: highThresholdLine,
             },
         ],
         isLowOutlier,
@@ -77,7 +66,8 @@ export const getZScoreHelper = (dataWithNormalization, config, { xyStats }) => {
             lowZScoreThreshold,
             highZScoreThreshold,
             dataWithNormalization,
-            ...config,
+            config,
+            xyStats,
         },
     }
 }

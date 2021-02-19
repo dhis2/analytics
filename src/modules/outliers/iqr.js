@@ -71,12 +71,12 @@ export const getIQRHelper = (dataWithNormalization, config, { xyStats }) => {
         thresholds: [
             {
                 name: `${config.thresholdFactor} x IQR Q1`,
-                threshold: q1Threshold,
+                value: q1Threshold,
                 line: q1ThresholdLine,
             },
             {
                 name: `${config.thresholdFactor} x IQR Q3`,
-                threshold: q3Threshold,
+                value: q3Threshold,
                 line: q3ThresholdLine,
             },
         ],
