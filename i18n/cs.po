@@ -19,7 +19,7 @@ msgid "Data Type"
 msgstr "Typ dat"
 
 msgid "All types"
-msgstr ""
+msgstr "Všechny typy"
 
 msgid "Totals only"
 msgstr ""
@@ -28,13 +28,13 @@ msgid "Details only"
 msgstr ""
 
 msgid "Disaggregation"
-msgstr ""
+msgstr "Rozčlenění"
 
 msgid "No data"
 msgstr "Nejsou data"
 
 msgid "Loading"
-msgstr ""
+msgstr "Načítání"
 
 msgid "Search by data item name or id"
 msgstr ""
@@ -82,7 +82,7 @@ msgid "Metric type"
 msgstr ""
 
 msgid "All metrics"
-msgstr ""
+msgstr "Všechny metriky"
 
 msgid "Move to {{axisName}}"
 msgstr "Přesunout na {{axisName}}"
@@ -505,13 +505,13 @@ msgid "Indicators"
 msgstr "Indikátory"
 
 msgid "Indicator group"
-msgstr ""
+msgstr "Skupina indikátorů"
 
 msgid "All groups"
 msgstr ""
 
 msgid "Indicator"
-msgstr ""
+msgstr "Indikátor"
 
 msgid "No indicator groups found"
 msgstr ""
@@ -523,10 +523,10 @@ msgid "Data elements"
 msgstr "Datové prvky"
 
 msgid "Data element group"
-msgstr ""
+msgstr "Skupina datových prvků"
 
 msgid "Data element"
-msgstr ""
+msgstr "Datový prvek"
 
 msgid "No data element groups found"
 msgstr ""
@@ -538,13 +538,13 @@ msgid "Data sets"
 msgstr "Datové sady"
 
 msgid "Data set"
-msgstr ""
+msgstr "Datová sada"
 
 msgid "All data sets"
 msgstr ""
 
 msgid "Loading data sets"
-msgstr ""
+msgstr "Načítání datových sad"
 
 msgid "Event data items"
 msgstr "Položky dat události"
@@ -553,7 +553,7 @@ msgid "All programs"
 msgstr ""
 
 msgid "Event data item"
-msgstr ""
+msgstr "Datová položka události"
 
 msgid "No programs found"
 msgstr ""
@@ -565,7 +565,7 @@ msgid "Program indicators"
 msgstr "Indikátory programu"
 
 msgid "Program indicator"
-msgstr ""
+msgstr "Indikátor programu"
 
 msgid "Extra Small"
 msgstr "Velmi malý"

@@ -29,13 +29,13 @@ msgid "Details only"
 msgstr ""
 
 msgid "Disaggregation"
-msgstr ""
+msgstr "Disaggregation"
 
 msgid "No data"
 msgstr "ບໍ່ມີຂໍ້ມູນ"
 
 msgid "Loading"
-msgstr ""
+msgstr "ກໍາລັງໂຫຼດ"
 
 msgid "Search by data item name or id"
 msgstr ""
@@ -83,7 +83,7 @@ msgid "Metric type"
 msgstr ""
 
 msgid "All metrics"
-msgstr ""
+msgstr "ທຸກການປັບປຸງ"
 
 msgid "Move to {{axisName}}"
 msgstr ""
@@ -506,13 +506,13 @@ msgid "Indicators"
 msgstr "ຕົວຊີ້ວັດ"
 
 msgid "Indicator group"
-msgstr ""
+msgstr "ກຸ່ມຂອງຕົວຊີ້ວັດ"
 
 msgid "All groups"
 msgstr ""
 
 msgid "Indicator"
-msgstr ""
+msgstr "ຕົວຊີ້ວັດ"
 
 msgid "No indicator groups found"
 msgstr ""
@@ -524,10 +524,10 @@ msgid "Data elements"
 msgstr "ອົງປະກອບຂໍ້ມູນ"
 
 msgid "Data element group"
-msgstr ""
+msgstr "ກຸ່ມຂອລອົງປະກອບຂໍ້ມູນ"
 
 msgid "Data element"
-msgstr ""
+msgstr "Data Element"
 
 msgid "No data element groups found"
 msgstr ""
@@ -539,7 +539,7 @@ msgid "Data sets"
 msgstr "ແບບຟອມ"
 
 msgid "Data set"
-msgstr ""
+msgstr "Data set\\:"
 
 msgid "All data sets"
 msgstr ""
@@ -566,7 +566,7 @@ msgid "Program indicators"
 msgstr "ຕົວຊີ້ວັດສະເພາະວຽກຂອງຂະແໜງ"
 
 msgid "Program indicator"
-msgstr ""
+msgstr "Program Indicator Management"
 
 msgid "Extra Small"
 msgstr ""
