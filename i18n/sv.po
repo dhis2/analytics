@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-01-25T09:08:51.790Z\n"
+"POT-Creation-Date: 2021-02-10T14:32:21.690Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: phil_dhis2, 2021\n"
 "Language-Team: Swedish (https://www.transifex.com/hisp-uio/teams/100509/sv/)\n"
@@ -19,13 +19,70 @@ msgstr ""
 msgid "Data Type"
 msgstr ""
 
-msgid "Totals"
-msgstr "Totals"
+msgid "All types"
+msgstr ""
 
-msgid "Details"
-msgstr "detaljer"
+msgid "Totals only"
+msgstr ""
 
-msgid "Detail"
+msgid "Details only"
+msgstr ""
+
+msgid "Disaggregation"
+msgstr ""
+
+msgid "No data"
+msgstr ""
+
+msgid "Loading"
+msgstr ""
+
+msgid "Search by data item name or id"
+msgstr ""
+
+msgid "No items selected"
+msgstr ""
+
+msgid "Selected Items"
+msgstr ""
+
+msgid "No indicators found"
+msgstr ""
+
+msgid "No data elements found"
+msgstr ""
+
+msgid "No data sets found"
+msgstr ""
+
+msgid "No event data items found"
+msgstr ""
+
+msgid "No program indicators found"
+msgstr ""
+
+msgid "No indicators found for \"{{searchTerm}}\""
+msgstr ""
+
+msgid "No data elements found for \"{{searchTerm}}\""
+msgstr ""
+
+msgid "No data sets found for \"{{searchTerm}}\""
+msgstr ""
+
+msgid "No event data items found for \"{{searchTerm}}\""
+msgstr ""
+
+msgid "No program indicators found for \"{{searchTerm}}\""
+msgstr ""
+
+msgid "Nothing found for \"{{searchTerm}}\""
+msgstr ""
+
+msgid "Metric type"
+msgstr ""
+
+msgid "All metrics"
 msgstr ""
 
 msgid "Move to {{axisName}}"
@@ -63,12 +120,6 @@ msgstr ""
 
 msgid "Search"
 msgstr "Sök"
-
-msgid "No items selected"
-msgstr ""
-
-msgid "Selected Items"
-msgstr ""
 
 msgid "Nothing found for {{searchTerm}}"
 msgstr ""
@@ -454,35 +505,68 @@ msgstr ""
 msgid "Indicators"
 msgstr "indikatorer"
 
-msgid "Select indicator group"
+msgid "Indicator group"
 msgstr ""
 
-msgid "[ All groups ]"
+msgid "All groups"
+msgstr ""
+
+msgid "Indicator"
+msgstr ""
+
+msgid "No indicator groups found"
+msgstr ""
+
+msgid "Loading indicator groups"
 msgstr ""
 
 msgid "Data elements"
 msgstr "dataelement"
 
-msgid "Select data element group"
+msgid "Data element group"
 msgstr ""
 
-msgid "[ All data elements ]"
+msgid "Data element"
+msgstr ""
+
+msgid "No data element groups found"
+msgstr ""
+
+msgid "Loading data element groups"
 msgstr ""
 
 msgid "Data sets"
 msgstr "dataset"
 
-msgid "Select data sets"
+msgid "Data set"
 msgstr ""
 
-msgid "[ All metrics ]"
+msgid "All data sets"
+msgstr ""
+
+msgid "Loading data sets"
 msgstr ""
 
 msgid "Event data items"
 msgstr "Händelsedataposter"
 
+msgid "All programs"
+msgstr ""
+
+msgid "Event data item"
+msgstr ""
+
+msgid "No programs found"
+msgstr ""
+
+msgid "Loading programs"
+msgstr ""
+
 msgid "Program indicators"
 msgstr "programindikatorer"
+
+msgid "Program indicator"
+msgstr ""
 
 msgid "Extra Small"
 msgstr ""
@@ -664,9 +748,6 @@ msgid "Base"
 msgstr ""
 
 msgid "Axis {{axisId}}"
-msgstr ""
-
-msgid "No data"
 msgstr ""
 
 msgid "Reset zoom"

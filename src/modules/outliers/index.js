@@ -1,24 +1,23 @@
-import { getStdDevMethodHelper, STDDEV } from './stdDev'
-import { getQuartileMethodHelper, QUARTILE } from './quartile'
+import { getZScoreHelper, Z_SCORE } from './zScore'
+import { getModZScoreHelper, MODIFIED_Z_SCORE } from './modZScore'
+import { getIQRHelper, IQR } from './iqr'
 import { normalizerMap, XY_RATIO } from './normalization'
-import { getXMinMax } from './minMax'
+import { getXYStats } from './xyStats'
 
 export const THRESHOLD_FACTOR = 1.5
 
 export const defaultConfig = {
     thresholdFactor: THRESHOLD_FACTOR,
-    normalization: XY_RATIO,
-    method: QUARTILE,
+    normalizationMethod: XY_RATIO,
+    outlierMethod: IQR,
+    percentile: 1,
 }
 
-const getDataWithNormalization = (
-    data,
-    config = { normalization: XY_RATIO }
-) => {
-    const normalizer = normalizerMap[config.normalization]
+const getDataWithNormalization = (data, normalizationMethod) => {
+    const normalizer = normalizerMap[normalizationMethod]
 
     if (typeof normalizer !== 'function') {
-        throw `Normalization method ${config.normalization} not supported`
+        throw `Normalization method ${normalizationMethod} not supported`
     }
 
     return data
@@ -29,19 +28,62 @@ const getDataWithNormalization = (
         .sort((a, b) => (a.normalized < b.normalized ? -1 : 1))
 }
 
-const getOutlierMethodHelper = (dataWithNormalization, config) => {
-    switch (config.method) {
-        case STDDEV:
-            return getStdDevMethodHelper(dataWithNormalization, config)
-        case QUARTILE:
-        default:
-            return getQuartileMethodHelper(dataWithNormalization, config)
-    }
+const getPercentiles = (percentile, xyStats) => {
+    const xPercentileValue = xyStats.xSum * (percentile / 100)
+    const yPercentileValue = xyStats.ySum * (percentile / 100)
+
+    return [
+        {
+            name: `${percentile}% of Total X Values`,
+            value: xPercentileValue,
+            line: [
+                [xPercentileValue, xyStats.yMin],
+                [xPercentileValue, xyStats.yMax],
+            ],
+        },
+        {
+            name: `${percentile}% of Total Y Values`,
+            value: yPercentileValue,
+            line: [
+                [xyStats.xMin, yPercentileValue],
+                [xyStats.xMax, yPercentileValue],
+            ],
+        },
+    ]
 }
 
-export const getOutlierHelper = (data, config) =>
-    getOutlierMethodHelper(getDataWithNormalization(data, config), {
+export const getOutlierHelper = (data, userConfig) => {
+    const config = {
         ...defaultConfig,
-        ...config,
-        ...getXMinMax(data),
-    })
+        ...userConfig,
+    }
+    console.log('DATA', data)
+    console.log('CONFIG', config)
+
+    const dataWithNormalization = getDataWithNormalization(
+        data,
+        config.normalizationMethod
+    )
+
+    const options = {
+        xyStats: getXYStats(data),
+    }
+
+    let helper
+
+    switch (config.outlierMethod) {
+        case Z_SCORE:
+            helper = getZScoreHelper(dataWithNormalization, config, options)
+            break
+        case MODIFIED_Z_SCORE:
+            helper = getModZScoreHelper(dataWithNormalization, config, options)
+            break
+        case IQR:
+        default:
+            helper = getIQRHelper(dataWithNormalization, config, options)
+    }
+
+    helper.percentiles = getPercentiles(config.percentile, options.xyStats)
+    console.log('HELPER', helper)
+    return helper
+}

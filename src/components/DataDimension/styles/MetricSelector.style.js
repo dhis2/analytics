@@ -2,10 +2,10 @@ import css from 'styled-jsx/css'
 import { spacers } from '@dhis2/ui'
 
 export default css`
-    .container {
+    .metric-container {
         display: flex;
         flex-flow: column;
-        border-bottom: 0;
-        padding: ${spacers.dp12} 0 0;
+        padding-left: ${spacers.dp4};
+        width: 50%;
     }
 `

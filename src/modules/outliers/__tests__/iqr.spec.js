@@ -1,9 +1,5 @@
-import { defaultConfig } from '..'
-import {
-    getQuartilePosition,
-    getQuartileValue,
-    getQuartileMethodHelper,
-} from '../quartile'
+import { getOutlierHelper } from '..'
+import { getQuartilePosition, getQuartileValue, IQR } from '../iqr'
 
 const a3 = [2, 4, 5]
 const a4 = [2, 4, 5, 7]
@@ -12,46 +8,46 @@ const a6 = [2, 4, 5, 7, 15, 40]
 
 describe('getQuartilePosition', () => {
     describe('first quartile position', () => {
-        test('no skewness', () => {
+        test('no skew', () => {
             expect(getQuartilePosition(a3, 0.25)).toBe(1)
         })
-        test('.25 skewness', () => {
+        test('.25 skew', () => {
             expect(getQuartilePosition(a4, 0.25)).toBe(1.25)
         })
-        test('.50 skewness', () => {
+        test('.50 skew', () => {
             expect(getQuartilePosition(a5, 0.25)).toBe(1.5)
         })
-        test('.75 skewness', () => {
+        test('.75 skew', () => {
             expect(getQuartilePosition(a6, 0.25)).toBe(1.75)
         })
     })
 
     describe('second quartile position', () => {
-        test('no skewness', () => {
+        test('no skew', () => {
             expect(getQuartilePosition(a3, 0.5)).toBe(2)
         })
-        test('.25 skewness', () => {
+        test('.25 skew', () => {
             expect(getQuartilePosition(a4, 0.5)).toBe(2.5)
         })
-        test('.50 skewness', () => {
+        test('.50 skew', () => {
             expect(getQuartilePosition(a5, 0.5)).toBe(3)
         })
-        test('.75 skewness', () => {
+        test('.75 skew', () => {
             expect(getQuartilePosition(a6, 0.5)).toBe(3.5)
         })
     })
 
     describe('third quartile position', () => {
-        test('no skewness', () => {
+        test('no skew', () => {
             expect(getQuartilePosition(a3, 0.75)).toBe(3)
         })
-        test('.25 skewness', () => {
+        test('.25 skew', () => {
             expect(getQuartilePosition(a4, 0.75)).toBe(3.75)
         })
-        test('.50 skewness', () => {
+        test('.50 skew', () => {
             expect(getQuartilePosition(a5, 0.75)).toBe(4.5)
         })
-        test('.75 skewness', () => {
+        test('.75 skew', () => {
             expect(getQuartilePosition(a6, 0.75)).toBe(5.25)
         })
     })
@@ -59,83 +55,86 @@ describe('getQuartilePosition', () => {
 
 describe('getQuartileValue', () => {
     describe('first quartile value', () => {
-        test('no skewness', () => {
+        test('no skew', () => {
             expect(getQuartileValue(a3, 0.25)).toBe(2)
         })
-        test('.25 skewness', () => {
+        test('.25 skew', () => {
             expect(getQuartileValue(a4, 0.25)).toBe(2.5)
         })
-        test('.50 skewness', () => {
+        test('.50 skew', () => {
             expect(getQuartileValue(a5, 0.25)).toBe(3)
         })
-        test('.75 skewness', () => {
+        test('.75 skew', () => {
             expect(getQuartileValue(a6, 0.25)).toBe(3.5)
         })
     })
 
     describe('second quartile value', () => {
-        test('no skewness', () => {
+        test('no skew', () => {
             expect(getQuartileValue(a3, 0.5)).toBe(4)
         })
-        test('.25 skewness', () => {
+        test('.25 skew', () => {
             expect(getQuartileValue(a4, 0.5)).toBe(4.5)
         })
-        test('.50 skewness', () => {
+        test('.50 skew', () => {
             expect(getQuartileValue(a5, 0.5)).toBe(5)
         })
-        test('.75 skewness', () => {
+        test('.75 skew', () => {
             expect(getQuartileValue(a6, 0.5)).toBe(6)
         })
     })
 
     describe('third quartile value', () => {
-        test('no skewness', () => {
+        test('no skew', () => {
             expect(getQuartileValue(a3, 0.75)).toBe(5)
         })
-        test('.25 skewness', () => {
+        test('.25 skew', () => {
             expect(getQuartileValue(a4, 0.75)).toBe(6.5)
         })
-        test('.50 skewness', () => {
+        test('.50 skew', () => {
             expect(getQuartileValue(a5, 0.75)).toBe(11)
         })
-        test('.75 skewness', () => {
+        test('.75 skew', () => {
             expect(getQuartileValue(a6, 0.75)).toBe(21.25)
         })
     })
 })
 
-describe('getQuartileHelper', () => {
-    const helper = getQuartileMethodHelper(
+describe('getIQRHelper', () => {
+    const helper = getOutlierHelper(
         [
-            { point: [2, 1], normalized: 2 },
-            { point: [3, 1], normalized: 3 },
-            { point: [6, 2], normalized: 3 },
-            { point: [5, 1], normalized: 5 },
-            { point: [6, 1], normalized: 6 },
-            { point: [7, 1], normalized: 7 },
-            { point: [14, 2], normalized: 7 },
-            { point: [8, 1], normalized: 8 },
-            { point: [9, 1], normalized: 9 },
-            { point: [10, 1], normalized: 10 },
-            { point: [40, 1], normalized: 40 },
+            [2, 1],
+            [3, 1],
+            [6, 2],
+            [5, 1],
+            [6, 1],
+            [7, 1],
+            [14, 2],
+            [8, 1],
+            [9, 1],
+            [10, 1],
+            [40, 1],
         ],
-        defaultConfig
+        {
+            outlierMethod: IQR,
+            percentile: 1,
+        }
     )
 
     test('interquartile range', () => {
-        expect(helper.iqr).toBe(9 - 3)
+        expect(helper.vars.iqr).toBe(9 - 3)
     })
 
     test('interquartile range threshold', () => {
-        expect(helper.iqrThreshold).toBe(1.5 * (9 - 3))
+        expect(helper.vars.iqrThreshold).toBe(1.5 * (9 - 3))
     })
 
     test('first quartile threshold', () => {
-        expect(helper.q1Threshold).toBe(3 - (9 - 3) * 1.5)
+        expect(helper.vars.q1Threshold).toBe(3 - (9 - 3) * 1.5)
     })
 
     test('third quartile threshold', () => {
-        expect(helper.q3Threshold).toBe(9 + (9 - 3) * 1.5)
+        expect(helper.vars.q3Threshold).toBe(9 + (9 - 3) * 1.5)
     })
 
     test('isLowOutlier', () => {

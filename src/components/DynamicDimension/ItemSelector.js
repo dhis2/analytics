@@ -11,19 +11,8 @@ import {
     TRANSFER_OPTIONS_WIDTH,
     TRANSFER_SELECTED_WIDTH,
 } from '../../modules/dimensionSelectorHelper'
+import { useDebounce } from '../../modules/utils'
 
-const useDebounce = (value, delay) => {
-    const [debouncedValue, setDebouncedValue] = useState(value)
-    useEffect(() => {
-        const handler = setTimeout(() => {
-            setDebouncedValue(value)
-        }, delay)
-        return () => {
-            clearTimeout(handler)
-        }
-    }, [value, delay])
-    return debouncedValue
-}
 const LeftHeader = ({ filter, setFilter }) => (
     <>
         <div className="leftHeader">
@@ -31,6 +20,8 @@ const LeftHeader = ({ filter, setFilter }) => (
                 value={filter}
                 onChange={({ value }) => setFilter(value)}
                 placeholder={i18n.t('Search')}
+                initialFocus
+                type={'search'}
             />
         </div>
         <style jsx>{styles}</style>
@@ -62,7 +53,7 @@ const SourceEmptyPlaceholder = ({
 }) => {
     let message = ''
     if (!loading && !options.length && !filter) {
-        message = noItemsMessage
+        message = noItemsMessage || i18n.t('No data')
     } else if (!loading && !options.length && filter) {
         message = i18n.t('Nothing found for {{searchTerm}}', {
             searchTerm: filter,
@@ -95,13 +86,16 @@ const ItemSelector = ({
     const [state, setState] = useState({
         filter: '',
         selected: initialSelected,
+        // FIXME: keeping selected in state is redundant, use the initialSelected prop directly instead
+        // The useCallback from onChange should be removed in favor of a regular fn as well
         options: [],
         loading: true,
-        nextPage: null,
+        nextPage: null, // FIXME: Selecting all 50 items from a page prevents the loading of more items.
+        // Implement the solution found in the DataDimension/ItemSelector.js
     })
     const setFilter = filter => setState(state => ({ ...state, filter }))
     const setSelected = selected => setState(state => ({ ...state, selected }))
-    const debouncedFilter = useDebounce(state.filter, 500)
+    const debouncedFilter = useDebounce(state.filter, 200)
     const fetchItems = async page => {
         setState(state => ({ ...state, loading: true }))
         const result = await onFetch(page, state.filter)

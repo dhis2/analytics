@@ -1,6 +1,6 @@
 import { deNormalizerMap } from './normalization'
 
-export const QUARTILE = 'QUARTILE'
+export const IQR = 'IQR'
 
 export const getQuartilePosition = (data, q) => {
     const pos = (data.length + 1) / 4
@@ -34,7 +34,7 @@ export const getQuartileValue = (data, q = 0.25) => {
     return data[base - 1] + diff * rest
 }
 
-export const getQuartileMethodHelper = (dataWithNormalization, config) => {
+export const getIQRHelper = (dataWithNormalization, config, { xyStats }) => {
     if (!dataWithNormalization.length) {
         throw 'Quartile analysis requires at least one value'
     }
@@ -46,14 +46,14 @@ export const getQuartileMethodHelper = (dataWithNormalization, config) => {
     const iqrThreshold = iqr * config.thresholdFactor
     const q1Threshold = q1 - iqrThreshold
     const q3Threshold = q3 + iqrThreshold
-    const deNormalizer = deNormalizerMap[config.normalization]
+    const deNormalizer = deNormalizerMap[config.normalizationMethod]
     const q1ThresholdLine = [
-        [config.xMin, deNormalizer(config.xMin, q1Threshold)],
-        [config.xMax, deNormalizer(config.xMax, q1Threshold)],
+        [xyStats.xMin, deNormalizer(xyStats.xMin, q1Threshold)],
+        [xyStats.xMax, deNormalizer(xyStats.xMax, q1Threshold)],
     ]
     const q3ThresholdLine = [
-        [config.xMin, deNormalizer(config.xMin, q3Threshold)],
-        [config.xMax, deNormalizer(config.xMax, q3Threshold)],
+        [xyStats.xMin, deNormalizer(xyStats.xMin, q3Threshold)],
+        [xyStats.xMax, deNormalizer(xyStats.xMax, q3Threshold)],
     ]
     const isLowOutlier = value => value < q1Threshold
     const isHighOutlier = value => value > q3Threshold
@@ -68,21 +68,35 @@ export const getQuartileMethodHelper = (dataWithNormalization, config) => {
         })
 
     return {
-        q1,
-        q3,
-        iqr,
-        iqrThreshold,
-        q1Threshold,
-        q3Threshold,
-        q1ThresholdLine,
-        q3ThresholdLine,
+        thresholds: [
+            {
+                name: `${config.thresholdFactor} x IQR Q1`,
+                value: q1Threshold,
+                line: q1ThresholdLine,
+            },
+            {
+                name: `${config.thresholdFactor} x IQR Q3`,
+                value: q3Threshold,
+                line: q3ThresholdLine,
+            },
+        ],
         isLowOutlier,
         isHighOutlier,
         isOutlier,
+        detectOutliers,
         outlierPoints,
         inlierPoints,
-        detectOutliers,
-        dataWithNormalization,
-        ...config,
+        vars: {
+            q1,
+            q3,
+            iqr,
+            iqrThreshold,
+            q1Threshold,
+            q3Threshold,
+            dataWithNormalization,
+            normalizedData,
+            config,
+            xyStats,
+        },
     }
 }

@@ -1,3 +1,71 @@
+## [15.0.1](https://github.com/dhis2/analytics/compare/v15.0.0...v15.0.1) (2021-02-19)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([de42b5b](https://github.com/dhis2/analytics/commit/de42b5b1ebc80e563bf0a6d7d5159fda3f85342c))
+
+# [15.0.0](https://github.com/dhis2/analytics/compare/v14.1.13...v15.0.0) (2021-02-18)
+
+
+### Features
+
+* new data dim selector (DHIS2-7943) ([#787](https://github.com/dhis2/analytics/issues/787)) ([2eac045](https://github.com/dhis2/analytics/commit/2eac045602c5d9b004aadd421a075f803a4d8c02))
+
+
+### BREAKING CHANGES
+
+* DataDimension no longer accepts the following props: DataEngine, onDeselect, onReorder
+
+## [14.1.13](https://github.com/dhis2/analytics/compare/v14.1.12...v14.1.13) (2021-02-18)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([a4631e3](https://github.com/dhis2/analytics/commit/a4631e3ff5ae7d264bf295eb5f0910a9379b173c))
+
+## [14.1.12](https://github.com/dhis2/analytics/compare/v14.1.11...v14.1.12) (2021-02-17)
+
+
+### Bug Fixes
+
+* pin styled-jsx to 3.3.2 ([#818](https://github.com/dhis2/analytics/issues/818)) ([9c12156](https://github.com/dhis2/analytics/commit/9c121569cedec018c6e018979e36b139d4905c24))
+
+## [14.1.11](https://github.com/dhis2/analytics/compare/v14.1.10...v14.1.11) (2021-02-17)
+
+
+### Bug Fixes
+
+* move singletons to peer dependencies ([#815](https://github.com/dhis2/analytics/issues/815)) ([8ccf306](https://github.com/dhis2/analytics/commit/8ccf30678d0750edc0b9b1e3a11fa1bb8f688739))
+
+## [14.1.10](https://github.com/dhis2/analytics/compare/v14.1.9...v14.1.10) (2021-02-17)
+
+
+### Bug Fixes
+
+* account for perpendicular totals row when finalizing totals ([#816](https://github.com/dhis2/analytics/issues/816)) ([6cdb15e](https://github.com/dhis2/analytics/commit/6cdb15e9c7842747bb1ffb01437222a85b026e25))
+
+## [14.1.9](https://github.com/dhis2/analytics/compare/v14.1.8...v14.1.9) (2021-02-15)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([7440aaa](https://github.com/dhis2/analytics/commit/7440aaa6ba241d863a526aeb449ef5d34a639a50))
+
+## [14.1.8](https://github.com/dhis2/analytics/compare/v14.1.7...v14.1.8) (2021-02-11)
+
+
+### Bug Fixes
+
+* YOY with relative week/days periods DHIS2-9729 ([#758](https://github.com/dhis2/analytics/issues/758)) ([d7c8695](https://github.com/dhis2/analytics/commit/d7c8695a59ac0667a6df4d767efc7d49bfe71762))
+
+## [14.1.7](https://github.com/dhis2/analytics/compare/v14.1.6...v14.1.7) (2021-02-11)
+
+
+### Bug Fixes
+
+* color items based on legend strategy + only for legendset types ([#808](https://github.com/dhis2/analytics/issues/808)) ([869dc48](https://github.com/dhis2/analytics/commit/869dc48fa73b40f8f6aaa6beec28382798f82779))
+
 ## [14.1.6](https://github.com/dhis2/analytics/compare/v14.1.5...v14.1.6) (2021-02-09)
 
 
