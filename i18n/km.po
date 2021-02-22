@@ -1,14 +1,14 @@
 # 
 # Translators:
-# Viktor Varland <viktor@dhis2.org>, 2020
 # phil_dhis2, 2021
+# Viktor Varland <viktor@dhis2.org>, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2021-02-10T14:32:21.690Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: phil_dhis2, 2021\n"
+"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2021\n"
 "Language-Team: Khmer (https://www.transifex.com/hisp-uio/teams/100509/km/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -35,7 +35,7 @@ msgid "No data"
 msgstr ""
 
 msgid "Loading"
-msgstr ""
+msgstr "Loading"
 
 msgid "Search by data item name or id"
 msgstr ""
@@ -506,7 +506,7 @@ msgid "Indicators"
 msgstr "Indicators"
 
 msgid "Indicator group"
-msgstr ""
+msgstr "Indicator group"
 
 msgid "All groups"
 msgstr ""
@@ -527,7 +527,7 @@ msgid "Data element group"
 msgstr ""
 
 msgid "Data element"
-msgstr ""
+msgstr "ទិន្នន័យធាតុដើម"
 
 msgid "No data element groups found"
 msgstr ""
@@ -539,7 +539,7 @@ msgid "Data sets"
 msgstr ""
 
 msgid "Data set"
-msgstr ""
+msgstr "Data set"
 
 msgid "All data sets"
 msgstr ""

@@ -34,7 +34,7 @@ msgid "No data"
 msgstr ""
 
 msgid "Loading"
-msgstr ""
+msgstr "جار التحميل"
 
 msgid "Search by data item name or id"
 msgstr ""

@@ -1,8 +1,8 @@
 # 
 # Translators:
 # ericbp <ericbarredap@gmail.com>, 2020
-# Viktor Varland <viktor@dhis2.org>, 2021
 # phil_dhis2, 2021
+# Viktor Varland <viktor@dhis2.org>, 2021
 # Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2021
 # 
 msgid ""
@@ -22,7 +22,7 @@ msgid "Data Type"
 msgstr "Tipo de datos"
 
 msgid "All types"
-msgstr ""
+msgstr "Todos los tipos"
 
 msgid "Totals only"
 msgstr ""
@@ -37,7 +37,7 @@ msgid "No data"
 msgstr "No hay datos"
 
 msgid "Loading"
-msgstr ""
+msgstr "Cargando"
 
 msgid "Search by data item name or id"
 msgstr ""
@@ -85,7 +85,7 @@ msgid "Metric type"
 msgstr ""
 
 msgid "All metrics"
-msgstr ""
+msgstr "Todas las métricas"
 
 msgid "Move to {{axisName}}"
 msgstr "Mover a {{Nombredeleje}}"
@@ -508,13 +508,13 @@ msgid "Indicators"
 msgstr "Indicadores"
 
 msgid "Indicator group"
-msgstr ""
+msgstr "Grupo de indicadores"
 
 msgid "All groups"
 msgstr ""
 
 msgid "Indicator"
-msgstr ""
+msgstr "Indicadores"
 
 msgid "No indicator groups found"
 msgstr ""
@@ -526,10 +526,10 @@ msgid "Data elements"
 msgstr "Elementos de datos"
 
 msgid "Data element group"
-msgstr ""
+msgstr "Grupo de elemento de datos"
 
 msgid "Data element"
-msgstr ""
+msgstr "Elemento de datos"
 
 msgid "No data element groups found"
 msgstr ""
@@ -541,7 +541,7 @@ msgid "Data sets"
 msgstr "Sets de datos"
 
 msgid "Data set"
-msgstr ""
+msgstr "Set de Datos\\:"
 
 msgid "All data sets"
 msgstr ""
@@ -556,7 +556,7 @@ msgid "All programs"
 msgstr ""
 
 msgid "Event data item"
-msgstr ""
+msgstr "Event data item"
 
 msgid "No programs found"
 msgstr ""

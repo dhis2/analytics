@@ -1,7 +1,7 @@
 # 
 # Translators:
-# Viktor Varland <viktor@dhis2.org>, 2021
 # phil_dhis2, 2021
+# Viktor Varland <viktor@dhis2.org>, 2021
 # Mai Nguyen <thanhmai.jica@gmail.com>, 2021
 # 
 msgid ""
@@ -21,7 +21,7 @@ msgid "Data Type"
 msgstr "Loại dữ liệu"
 
 msgid "All types"
-msgstr ""
+msgstr "Các loại"
 
 msgid "Totals only"
 msgstr ""
@@ -30,13 +30,13 @@ msgid "Details only"
 msgstr ""
 
 msgid "Disaggregation"
-msgstr ""
+msgstr "Phân Tách Phần Tử Dữ Liệu"
 
 msgid "No data"
 msgstr "Không có dữ liệu"
 
 msgid "Loading"
-msgstr ""
+msgstr "Đang tải"
 
 msgid "Search by data item name or id"
 msgstr ""
@@ -84,7 +84,7 @@ msgid "Metric type"
 msgstr ""
 
 msgid "All metrics"
-msgstr ""
+msgstr "Tất cả hệ đo lường"
 
 msgid "Move to {{axisName}}"
 msgstr "Di chuyển đến {{axisName}}"
@@ -507,13 +507,13 @@ msgid "Indicators"
 msgstr "Các chỉ số"
 
 msgid "Indicator group"
-msgstr ""
+msgstr "Nhóm chỉ số"
 
 msgid "All groups"
 msgstr ""
 
 msgid "Indicator"
-msgstr ""
+msgstr "Chỉ số"
 
 msgid "No indicator groups found"
 msgstr ""
@@ -525,10 +525,10 @@ msgid "Data elements"
 msgstr "Các phần tử dữ liệu"
 
 msgid "Data element group"
-msgstr ""
+msgstr "Nhóm dữ liệu"
 
 msgid "Data element"
-msgstr ""
+msgstr "Phần tử dữ liệu"
 
 msgid "No data element groups found"
 msgstr ""
@@ -540,13 +540,13 @@ msgid "Data sets"
 msgstr "Biểu nhập"
 
 msgid "Data set"
-msgstr ""
+msgstr "Tập dữ liệu"
 
 msgid "All data sets"
 msgstr ""
 
 msgid "Loading data sets"
-msgstr ""
+msgstr "Đang tải tập dữ liệu"
 
 msgid "Event data items"
 msgstr "Mục dữ liệu sự kiện"
@@ -555,7 +555,7 @@ msgid "All programs"
 msgstr ""
 
 msgid "Event data item"
-msgstr ""
+msgstr "Mục dữ liệu sự kiện"
 
 msgid "No programs found"
 msgstr ""
@@ -567,7 +567,7 @@ msgid "Program indicators"
 msgstr "Chỉ Số Chương Trình"
 
 msgid "Program indicator"
-msgstr ""
+msgstr "Quản lý Chỉ số chương trình"
 
 msgid "Extra Small"
 msgstr "Rất nhỏ"

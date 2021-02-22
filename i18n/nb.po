@@ -20,7 +20,7 @@ msgid "Data Type"
 msgstr "Datatype"
 
 msgid "All types"
-msgstr ""
+msgstr "Alle typer"
 
 msgid "Totals only"
 msgstr ""
@@ -29,13 +29,13 @@ msgid "Details only"
 msgstr ""
 
 msgid "Disaggregation"
-msgstr ""
+msgstr "Disaggregering"
 
 msgid "No data"
 msgstr "Ingen data"
 
 msgid "Loading"
-msgstr ""
+msgstr "Laster"
 
 msgid "Search by data item name or id"
 msgstr ""
@@ -83,7 +83,7 @@ msgid "Metric type"
 msgstr ""
 
 msgid "All metrics"
-msgstr ""
+msgstr "Alle beregninger"
 
 msgid "Move to {{axisName}}"
 msgstr "Flytt til {{axisName}}"
@@ -506,13 +506,13 @@ msgid "Indicators"
 msgstr "Indikatorer"
 
 msgid "Indicator group"
-msgstr ""
+msgstr "Indikatorgruppe"
 
 msgid "All groups"
 msgstr ""
 
 msgid "Indicator"
-msgstr ""
+msgstr "Indikator"
 
 msgid "No indicator groups found"
 msgstr ""
@@ -524,10 +524,10 @@ msgid "Data elements"
 msgstr "Dataelementer"
 
 msgid "Data element group"
-msgstr ""
+msgstr "Dataelementgruppe"
 
 msgid "Data element"
-msgstr ""
+msgstr "Dataelement"
 
 msgid "No data element groups found"
 msgstr ""
@@ -539,7 +539,7 @@ msgid "Data sets"
 msgstr "Datasett"
 
 msgid "Data set"
-msgstr ""
+msgstr "Datasett"
 
 msgid "All data sets"
 msgstr ""
@@ -554,7 +554,7 @@ msgid "All programs"
 msgstr ""
 
 msgid "Event data item"
-msgstr ""
+msgstr "Hendelsesdatapunkt"
 
 msgid "No programs found"
 msgstr ""
@@ -566,7 +566,7 @@ msgid "Program indicators"
 msgstr "Programindikatorer"
 
 msgid "Program indicator"
-msgstr ""
+msgstr "Programindikator"
 
 msgid "Extra Small"
 msgstr "Ekstra liten"

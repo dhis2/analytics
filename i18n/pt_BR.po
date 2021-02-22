@@ -1,14 +1,14 @@
 # 
 # Translators:
-# Viktor Varland <viktor@dhis2.org>, 2021
 # phil_dhis2, 2021
+# Viktor Varland <viktor@dhis2.org>, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2021-02-10T14:32:21.690Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: phil_dhis2, 2021\n"
+"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2021\n"
 "Language-Team: Portuguese (Brazil) (https://www.transifex.com/hisp-uio/teams/100509/pt_BR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -35,7 +35,7 @@ msgid "No data"
 msgstr "Não ha dados"
 
 msgid "Loading"
-msgstr ""
+msgstr "Carregando.."
 
 msgid "Search by data item name or id"
 msgstr ""
@@ -506,13 +506,13 @@ msgid "Indicators"
 msgstr "Indicadores"
 
 msgid "Indicator group"
-msgstr ""
+msgstr "Grupo do indicador"
 
 msgid "All groups"
 msgstr ""
 
 msgid "Indicator"
-msgstr ""
+msgstr "Indicador"
 
 msgid "No indicator groups found"
 msgstr ""
@@ -524,10 +524,10 @@ msgid "Data elements"
 msgstr "Os elementos de dados"
 
 msgid "Data element group"
-msgstr ""
+msgstr "Grupo de elemento de dado"
 
 msgid "Data element"
-msgstr ""
+msgstr "Elemento de dado"
 
 msgid "No data element groups found"
 msgstr ""
@@ -539,7 +539,7 @@ msgid "Data sets"
 msgstr "Agregação de Dados"
 
 msgid "Data set"
-msgstr ""
+msgstr "Conjunto de dados"
 
 msgid "All data sets"
 msgstr ""
