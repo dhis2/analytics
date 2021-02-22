@@ -1,4 +1,4 @@
-import { getZScoreHelper, Z_SCORE } from './zScore'
+import { getZScoreHelper, STANDARD_Z_SCORE } from './zScore'
 import { getModZScoreHelper, MODIFIED_Z_SCORE } from './modZScore'
 import { getIQRHelper, IQR } from './iqr'
 import { normalizerMap, XY_RATIO } from './normalization'
@@ -10,7 +10,7 @@ export const defaultConfig = {
     thresholdFactor: THRESHOLD_FACTOR,
     normalizationMethod: XY_RATIO,
     outlierMethod: IQR,
-    percentile: 1,
+    largeValuePercentage: 1,
 }
 
 const getDataWithNormalization = (data, normalizationMethod) => {
@@ -28,13 +28,13 @@ const getDataWithNormalization = (data, normalizationMethod) => {
         .sort((a, b) => (a.normalized < b.normalized ? -1 : 1))
 }
 
-const getPercentiles = (percentile, xyStats) => {
-    const xPercentileValue = xyStats.xSum * (percentile / 100)
-    const yPercentileValue = xyStats.ySum * (percentile / 100)
+const getLargeValues = (largeValuePercentage, xyStats) => {
+    const xPercentileValue = xyStats.xSum * (largeValuePercentage / 100)
+    const yPercentileValue = xyStats.ySum * (largeValuePercentage / 100)
 
     return [
         {
-            name: `${percentile}% of Total X Values`,
+            name: `${largeValuePercentage}% of Total X Values`,
             value: xPercentileValue,
             line: [
                 [xPercentileValue, xyStats.yMin],
@@ -42,7 +42,7 @@ const getPercentiles = (percentile, xyStats) => {
             ],
         },
         {
-            name: `${percentile}% of Total Y Values`,
+            name: `${largeValuePercentage}% of Total Y Values`,
             value: yPercentileValue,
             line: [
                 [xyStats.xMin, yPercentileValue],
@@ -72,7 +72,7 @@ export const getOutlierHelper = (data, userConfig) => {
     let helper
 
     switch (config.outlierMethod) {
-        case Z_SCORE:
+        case STANDARD_Z_SCORE:
             helper = getZScoreHelper(dataWithNormalization, config, options)
             break
         case MODIFIED_Z_SCORE:
@@ -83,7 +83,10 @@ export const getOutlierHelper = (data, userConfig) => {
             helper = getIQRHelper(dataWithNormalization, config, options)
     }
 
-    helper.percentiles = getPercentiles(config.percentile, options.xyStats)
+    helper.largeValues = getLargeValues(
+        config.largeValuePercentage,
+        options.xyStats
+    )
     console.log('HELPER', helper)
     return helper
 }

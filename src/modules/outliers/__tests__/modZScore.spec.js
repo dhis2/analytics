@@ -49,7 +49,7 @@ describe('getModZScoreHelper', () => {
         ],
         {
             outlierMethod: MODIFIED_Z_SCORE,
-            percentile: 1,
+            largeValuePercentage: 1,
         }
     )
 

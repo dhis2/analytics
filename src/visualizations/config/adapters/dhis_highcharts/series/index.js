@@ -237,7 +237,7 @@ export default function (series, metaData, layout, isStacked, extraOptions) {
             series = getGauge(series, layout, extraOptions.legendSets[0])
             break
         case VIS_TYPE_SCATTER:
-            series = getScatter(extraOptions.scatterData)
+            series = getScatter(extraOptions)
             break
         default:
             series = getDefault(

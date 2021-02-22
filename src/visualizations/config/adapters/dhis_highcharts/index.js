@@ -29,6 +29,7 @@ import {
     LEGEND_DISPLAY_STRATEGY_FIXED,
 } from '../../../../modules/legends'
 import getScatterData from './getScatterData'
+import { getOutlierHelper } from '../../../../modules/outliers'
 
 const getTransformedLayout = layout => ({
     ...layout,
@@ -45,6 +46,14 @@ const getTransformedExtraOptions = extraOptions => ({
 export default function ({ store, layout, el, extraConfig, extraOptions }) {
     const _layout = getTransformedLayout(layout)
     const _extraOptions = getTransformedExtraOptions(extraOptions)
+
+    // fix this
+    _layout.outlierAnalysis = {
+        enabled: true,
+        method: 'MODIFIED_Z_SCORE', // 'IQR' | 'STANDARD_Z_SCORE'
+        thresholdFactor: 1.5,
+        largeValuePercentage: 1,
+    }
 
     const stacked = isStacked(_layout.type)
 
@@ -63,7 +72,20 @@ export default function ({ store, layout, el, extraConfig, extraOptions }) {
 
     if (_layout.type === VIS_TYPE_SCATTER) {
         _extraOptions.scatterData = getScatterData(series, store)
+        _extraOptions.scatterPoints = _extraOptions.scatterData.map(item => [
+            item.x,
+            item.y,
+        ])
+        _extraOptions.outlierHelper = _layout.outlierAnalysis.enabled
+            ? getOutlierHelper(
+                  _extraOptions.scatterPoints,
+                  _layout.outlierAnalysis
+              )
+            : null
+
+        console.log('_extraOptions', _extraOptions)
     }
+
     let config = {
         // type etc
         chart: getChart(_layout, el, _extraOptions.dashboard),
@@ -139,7 +161,7 @@ export default function ({ store, layout, el, extraConfig, extraOptions }) {
             xAxisName,
             yAxisName,
             showLabels: _layout.showValues || _layout.showData,
-            tooltipData: getScatterData(series, store),
+            tooltipData: _extraOptions.scatterData,
         })
     }
 
@@ -219,6 +241,6 @@ export default function ({ store, layout, el, extraConfig, extraOptions }) {
 
     // force apply extra config
     Object.assign(config, extraConfig)
-
+    console.log('config', config)
     return objectClean(config)
 }
