@@ -48,7 +48,7 @@ export const dataItemsQuery = {
     resource: 'dataItems',
     params: ({ nameProp, filter, searchTerm, page }) => {
         const filters = []
-        const shouldSearch = (searchTerm || '').length >= 2
+        const shouldSearch = searchTerm && searchTerm.length
 
         // TODO: Extract all of this logic out of the query?
         if (filter?.dataType === EVENT_DATA_ITEMS) {
@@ -69,6 +69,7 @@ export const dataItemsQuery = {
         if (shouldSearch) {
             filters.push(`${nameProp}:ilike:${searchTerm}`)
             filters.push(`id:eq:${searchTerm}`)
+            // TODO: Replace both with `identifiable:token:${searchTerm}` and remove rootJunction below
         }
 
         return objectClean({
@@ -92,7 +93,7 @@ export const indicatorsQuery = {
         }
 
         if (searchTerm) {
-            filters.push(`${nameProp}:ilike:${searchTerm}`)
+            filters.push(`identifiable:token:${searchTerm}`)
         }
 
         return {
@@ -126,7 +127,7 @@ export const dataElementsQuery = {
         }
 
         if (searchTerm) {
-            filters.push(`${nameProp}:ilike:${searchTerm}`)
+            filters.push(`identifiable:token:${searchTerm}`)
         }
 
         return {
@@ -180,7 +181,7 @@ export const dataElementOperandsQuery = {
         }
 
         if (searchTerm) {
-            filters.push(`${nameProp}:ilike:${searchTerm}`)
+            filters.push(`identifiable:token:${searchTerm}`)
         }
 
         return {
@@ -199,7 +200,7 @@ export const dataSetsQuery = {
         const filters = []
 
         if (searchTerm) {
-            filters.push(`${nameProp}:ilike:${searchTerm}`)
+            filters.push(`identifiable:token:${searchTerm}`)
         }
 
         if (filter?.group && filter.group !== ALL_ID) {

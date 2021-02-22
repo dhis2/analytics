@@ -139,7 +139,7 @@ export default function ({ store, layout, el, extraConfig, extraOptions }) {
             xAxisName,
             yAxisName,
             showLabels: _layout.showValues || _layout.showData,
-            tooltipData: getScatterData(series, store),
+            tooltipData: _extraOptions.scatterData,
         })
     }
 
