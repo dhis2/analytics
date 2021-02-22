@@ -1,14 +1,14 @@
 # 
 # Translators:
-# Viktor Varland <viktor@dhis2.org>, 2021
 # phil_dhis2, 2021
+# Viktor Varland <viktor@dhis2.org>, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2021-02-10T14:32:21.690Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: phil_dhis2, 2021\n"
+"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2021\n"
 "Language-Team: Urdu (https://www.transifex.com/hisp-uio/teams/100509/ur/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -29,13 +29,13 @@ msgid "Details only"
 msgstr ""
 
 msgid "Disaggregation"
-msgstr ""
+msgstr "ناجائز"
 
 msgid "No data"
 msgstr "کوئی مواد نہیں"
 
 msgid "Loading"
-msgstr ""
+msgstr "لوڈ کر رہا ہے"
 
 msgid "Search by data item name or id"
 msgstr ""
@@ -83,7 +83,7 @@ msgid "Metric type"
 msgstr ""
 
 msgid "All metrics"
-msgstr ""
+msgstr "تمام میٹرکس"
 
 msgid "Move to {{axisName}}"
 msgstr ""
@@ -506,13 +506,13 @@ msgid "Indicators"
 msgstr "اشارے"
 
 msgid "Indicator group"
-msgstr ""
+msgstr "اشاروں کا گروپ"
 
 msgid "All groups"
 msgstr ""
 
 msgid "Indicator"
-msgstr ""
+msgstr "اشارے"
 
 msgid "No indicator groups found"
 msgstr ""
@@ -524,10 +524,10 @@ msgid "Data elements"
 msgstr "ڈیٹا عنصر"
 
 msgid "Data element group"
-msgstr ""
+msgstr "ڈیٹا عناصر گروپ"
 
 msgid "Data element"
-msgstr ""
+msgstr "ڈیٹا عنصر"
 
 msgid "No data element groups found"
 msgstr ""
@@ -539,7 +539,7 @@ msgid "Data sets"
 msgstr "ڈیٹا سیٹس"
 
 msgid "Data set"
-msgstr ""
+msgstr "ڈیٹا سیٹ"
 
 msgid "All data sets"
 msgstr ""
@@ -554,7 +554,7 @@ msgid "All programs"
 msgstr ""
 
 msgid "Event data item"
-msgstr ""
+msgstr "واقعہ کے اعداد و شمار کے آئٹم"
 
 msgid "No programs found"
 msgstr ""
@@ -566,7 +566,7 @@ msgid "Program indicators"
 msgstr "پروگرام اشارے"
 
 msgid "Program indicator"
-msgstr ""
+msgstr "پروگرام کا اشارہ"
 
 msgid "Extra Small"
 msgstr ""

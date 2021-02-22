@@ -1,19 +1,19 @@
 # 
 # Translators:
-# Bram Piot <bram.piot@gmail.com>, 2020
-# Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2020
 # Yao Selom SAKA <saka.yao@yahoo.fr>, 2020
-# Viktor Varland <viktor@dhis2.org>, 2021
-# phil_dhis2, 2021
 # Edem Kossi <ekossi@hispwca.org>, 2021
 # Karoline Tufte Lien <karoline@dhis2.org>, 2021
+# phil_dhis2, 2021
+# Viktor Varland <viktor@dhis2.org>, 2021
+# Bram Piot <bram.piot@gmail.com>, 2021
+# Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2021-02-10T14:32:21.690Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Karoline Tufte Lien <karoline@dhis2.org>, 2021\n"
+"Last-Translator: Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2021\n"
 "Language-Team: French (https://www.transifex.com/hisp-uio/teams/100509/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -25,7 +25,7 @@ msgid "Data Type"
 msgstr "Type de données"
 
 msgid "All types"
-msgstr ""
+msgstr "Tous les types"
 
 msgid "Totals only"
 msgstr ""
@@ -34,13 +34,13 @@ msgid "Details only"
 msgstr ""
 
 msgid "Disaggregation"
-msgstr ""
+msgstr "Disaggregation"
 
 msgid "No data"
 msgstr "Aucune donnée"
 
 msgid "Loading"
-msgstr ""
+msgstr "Chargement"
 
 msgid "Search by data item name or id"
 msgstr ""
@@ -88,7 +88,7 @@ msgid "Metric type"
 msgstr ""
 
 msgid "All metrics"
-msgstr ""
+msgstr "Tous les éléments"
 
 msgid "Move to {{axisName}}"
 msgstr "Déménager à {{nomdel'axe}}"
@@ -511,13 +511,13 @@ msgid "Indicators"
 msgstr "Indicateurs"
 
 msgid "Indicator group"
-msgstr ""
+msgstr "Groupe d'indicateurs"
 
 msgid "All groups"
 msgstr ""
 
 msgid "Indicator"
-msgstr ""
+msgstr "Indicateur"
 
 msgid "No indicator groups found"
 msgstr ""
@@ -529,10 +529,10 @@ msgid "Data elements"
 msgstr "Eléments de données"
 
 msgid "Data element group"
-msgstr ""
+msgstr "Groupe d'éléments de données"
 
 msgid "Data element"
-msgstr ""
+msgstr "Élément de données"
 
 msgid "No data element groups found"
 msgstr ""
@@ -544,7 +544,7 @@ msgid "Data sets"
 msgstr "Ensembles de données"
 
 msgid "Data set"
-msgstr ""
+msgstr "Ensemble de données"
 
 msgid "All data sets"
 msgstr ""
@@ -559,7 +559,7 @@ msgid "All programs"
 msgstr ""
 
 msgid "Event data item"
-msgstr ""
+msgstr "Elément de données évènement"
 
 msgid "No programs found"
 msgstr ""
@@ -571,7 +571,7 @@ msgid "Program indicators"
 msgstr "Program indicators"
 
 msgid "Program indicator"
-msgstr ""
+msgstr "Gestion des indicateurs de programme"
 
 msgid "Extra Small"
 msgstr ""
