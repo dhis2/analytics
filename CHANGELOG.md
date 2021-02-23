@@ -1,3 +1,10 @@
+## [15.0.6](https://github.com/dhis2/analytics/compare/v15.0.5...v15.0.6) (2021-02-23)
+
+
+### Bug Fixes
+
+* data dim selector improvements (DHIS2-7943) ([#828](https://github.com/dhis2/analytics/issues/828)) ([79bff70](https://github.com/dhis2/analytics/commit/79bff70d729035e0684b724c310bd52c0ae9d725))
+
 ## [15.0.5](https://github.com/dhis2/analytics/compare/v15.0.4...v15.0.5) (2021-02-23)
 
 
