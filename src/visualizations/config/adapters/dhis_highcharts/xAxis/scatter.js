@@ -50,7 +50,7 @@ export default function (layout, series, extraOptions) {
             extremeObj &&
                 getRegressionLine(
                     {
-                        value: extremeObj.value / 2, //TODO
+                        value: extremeObj.value, //TODO
                         color: '#a9adb3',
                         width: 1,
                         dashStyle: 'Dash',
