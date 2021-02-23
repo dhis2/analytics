@@ -9,6 +9,7 @@ import {
     isStacked,
     VIS_TYPE_GAUGE,
     isDualAxisType,
+    VIS_TYPE_SCATTER,
 } from '../../../../../modules/visTypes'
 import { hasCustomAxes } from '../../../../../modules/axis'
 import { getAxisIdsMap } from '../customAxes'
@@ -52,6 +53,8 @@ function getMultipleAxes(theme, axes) {
     return axisObjects
 }
 
+// function getScatterMax
+
 function getDefault(layout, series, extraOptions) {
     const axes = []
     const filteredSeries = layout.series?.filter(layoutSeriesItem =>
@@ -74,19 +77,26 @@ function getDefault(layout, series, extraOptions) {
         )
     } else {
         const axis = getAxis(layout.axes, AXIS_TYPE, AXIS_INDEX)
-        const extremeObj =
-            extraOptions.outlierHelper?.extremes?.length &&
-            extraOptions.outlierHelper.extremes[1]
-        const maxVal = getMaxValue(axis.maxValue, dataValues)
+        let extremeObj
+        let scatterMax
+
+        if (
+            layout.type === VIS_TYPE_SCATTER &&
+            extraOptions.outlierHelper?.extremes?.length
+        ) {
+            extremeObj = extraOptions.outlierHelper.extremes[1]
+            scatterMax =
+                extremeObj.value > extraOptions.outlierHelper.vars.xyStats.yMax
+                    ? extremeObj.value * 1.1
+                    : undefined
+        }
 
         axes.push(
             objectClean({
                 min: getMinValue(axis.minValue, dataValues),
-                max:
-                    Math.max(
-                        isNumeric(maxVal) ? maxVal : null,
-                        extremeObj.value
-                    ) ?? undefined,
+                max: extremeObj
+                    ? scatterMax
+                    : getMaxValue(axis.minValue, dataValues),
                 tickAmount: getSteps(axis),
                 title: getAxisTitle(
                     axis.title?.text,

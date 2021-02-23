@@ -27,13 +27,11 @@ export default function (layout, series, extraOptions) {
     const extremeObj =
         extraOptions.outlierHelper?.extremes?.length &&
         extraOptions.outlierHelper.extremes[0]
-    const maxVal = getMaxValue(axis.maxValue, dataValues)
+    const xMax = extraOptions.outlierHelper?.vars?.xyStats?.xMax
 
     return objectClean({
         min: getMinValue(axis.minValue, dataValues),
-        max:
-            Math.max(isNumeric(maxVal) ? maxVal : null, extremeObj.value) ??
-            undefined,
+        max: extremeObj?.value > xMax ? extremeObj?.value * 1.1 : undefined,
         tickAmount: getSteps(axis),
         title: getAxisTitle(
             axis.title?.text,

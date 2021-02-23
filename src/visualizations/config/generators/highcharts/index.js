@@ -5,6 +5,7 @@ import HNDTD from 'highcharts/modules/no-data-to-display'
 import HE from 'highcharts/modules/exporting'
 import HPF from 'highcharts/modules/pattern-fill'
 import HB from 'highcharts/modules/boost'
+import HSL from 'highcharts/modules/series-label'
 
 // apply
 HM(H)
@@ -13,6 +14,7 @@ HNDTD(H)
 HE(H)
 HPF(H)
 HB(H)
+HSL(H)
 
 export default function (config, el) {
     if (config) {
