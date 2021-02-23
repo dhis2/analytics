@@ -48,7 +48,6 @@ export const dataItemsQuery = {
     resource: 'dataItems',
     params: ({ nameProp, filter, searchTerm, page }) => {
         const filters = []
-        const shouldSearch = (searchTerm || '').length >= 2
 
         // TODO: Extract all of this logic out of the query?
         if (filter?.dataType === EVENT_DATA_ITEMS) {
@@ -66,9 +65,8 @@ export const dataItemsQuery = {
             filters.push(`programId:eq:${filter.group}`)
         }
 
-        if (shouldSearch) {
+        if (searchTerm) {
             filters.push(`${nameProp}:ilike:${searchTerm}`)
-            filters.push(`id:eq:${searchTerm}`)
         }
 
         return objectClean({
@@ -77,7 +75,6 @@ export const dataItemsQuery = {
             filter: filters,
             paging: true,
             page,
-            rootJunction: shouldSearch ? 'OR' : undefined,
         })
     },
 }

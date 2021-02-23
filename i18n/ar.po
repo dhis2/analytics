@@ -1,13 +1,13 @@
 # 
 # Translators:
-# Viktor Varland <viktor@dhis2.org>, 2021
 # phil_dhis2, 2021
+# Viktor Varland <viktor@dhis2.org>, 2021
 # Hamza Assada <7amza.it@gmail.com>, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-02-10T14:32:21.690Z\n"
+"POT-Creation-Date: 2021-02-19T13:51:23.537Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: Hamza Assada <7amza.it@gmail.com>, 2021\n"
 "Language-Team: Arabic (https://www.transifex.com/hisp-uio/teams/100509/ar/)\n"
@@ -21,7 +21,7 @@ msgid "Data Type"
 msgstr "نوع البيانات"
 
 msgid "All types"
-msgstr ""
+msgstr "جميع الأنواع"
 
 msgid "Totals only"
 msgstr ""
@@ -30,13 +30,13 @@ msgid "Details only"
 msgstr ""
 
 msgid "Disaggregation"
-msgstr ""
+msgstr "تصنيف"
 
 msgid "No data"
 msgstr "لا توجد بيانات"
 
 msgid "Loading"
-msgstr ""
+msgstr "جار التحميل"
 
 msgid "Search by data item name or id"
 msgstr ""
@@ -62,29 +62,29 @@ msgstr ""
 msgid "No program indicators found"
 msgstr ""
 
-msgid "No indicators found for \"{{searchTerm}}\""
+msgid "No indicators found for \"{{- searchTerm}}\""
 msgstr ""
 
-msgid "No data elements found for \"{{searchTerm}}\""
+msgid "No data elements found for \"{{- searchTerm}}\""
 msgstr ""
 
-msgid "No data sets found for \"{{searchTerm}}\""
+msgid "No data sets found for \"{{- searchTerm}}\""
 msgstr ""
 
-msgid "No event data items found for \"{{searchTerm}}\""
+msgid "No event data items found for \"{{- searchTerm}}\""
 msgstr ""
 
-msgid "No program indicators found for \"{{searchTerm}}\""
+msgid "No program indicators found for \"{{- searchTerm}}\""
 msgstr ""
 
-msgid "Nothing found for \"{{searchTerm}}\""
+msgid "Nothing found for \"{{- searchTerm}}\""
 msgstr ""
 
 msgid "Metric type"
 msgstr ""
 
 msgid "All metrics"
-msgstr ""
+msgstr "جميع المقاييس"
 
 msgid "Move to {{axisName}}"
 msgstr "تحريك إلى {{axisName}}"
@@ -507,13 +507,13 @@ msgid "Indicators"
 msgstr "المؤشرات"
 
 msgid "Indicator group"
-msgstr ""
+msgstr "مجموعة المؤشرات"
 
 msgid "All groups"
 msgstr ""
 
 msgid "Indicator"
-msgstr ""
+msgstr "المؤشر"
 
 msgid "No indicator groups found"
 msgstr ""
@@ -525,10 +525,10 @@ msgid "Data elements"
 msgstr "عناصر البيانات"
 
 msgid "Data element group"
-msgstr ""
+msgstr "مجموعة عناصر البيانات"
 
 msgid "Data element"
-msgstr ""
+msgstr "عنصر البيانات"
 
 msgid "No data element groups found"
 msgstr ""
@@ -540,13 +540,13 @@ msgid "Data sets"
 msgstr "حزم البيانات"
 
 msgid "Data set"
-msgstr ""
+msgstr "حزمة البيانات"
 
 msgid "All data sets"
 msgstr ""
 
 msgid "Loading data sets"
-msgstr ""
+msgstr "تحميل حزم البيانات"
 
 msgid "Event data items"
 msgstr "عناصر بيانات الحدث"
@@ -555,7 +555,7 @@ msgid "All programs"
 msgstr ""
 
 msgid "Event data item"
-msgstr ""
+msgstr "عنصر بيانات حدث"
 
 msgid "No programs found"
 msgstr ""
@@ -567,7 +567,7 @@ msgid "Program indicators"
 msgstr "مؤشرات البرنامج"
 
 msgid "Program indicator"
-msgstr ""
+msgstr "مؤشرات البرنامج"
 
 msgid "Extra Small"
 msgstr "صغير جدا"
