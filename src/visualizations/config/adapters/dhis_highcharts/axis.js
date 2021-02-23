@@ -54,15 +54,15 @@ const getLabelOffsetFromTextAlign = textAlign => {
     }
 }
 
-const getLineLabelStyle = (fontStyle, fontStyleType, isVertical) => {
+const getLineLabelStyle = (textAlign, fontStyleType, isVertical) => {
     const alignKey = isVertical ? 'verticalAlign' : 'align'
-    const alignValue = getTextAlignOption(fontStyle, fontStyleType, isVertical)
+    const alignValue = getTextAlignOption(textAlign, fontStyleType, isVertical)
     const offsetKey = isVertical ? 'y' : 'x'
-    const offsetValue = getLabelOffsetFromTextAlign(fontStyle)
+    const offsetValue = getLabelOffsetFromTextAlign(textAlign)
 
     const result = { [alignKey]: alignValue, [offsetKey]: offsetValue }
     if (isVertical) {
-        result.align = getTextAlignOption(fontStyle, fontStyleType)
+        result.align = getTextAlignOption(textAlign, fontStyleType)
     }
     return result
 }

@@ -36,19 +36,11 @@ const getExtremes = (extremePercentage, xyStats) => {
         {
             name: `${extremePercentage}% of Total X Values`,
             value: xExtremeValue,
-            line: [
-                [xExtremeValue, xyStats.yMin],
-                [xExtremeValue, xyStats.yMax],
-            ],
             isVertical: true,
         },
         {
             name: `${extremePercentage}% of Total Y Values`,
             value: yExtremeValue,
-            line: [
-                [xyStats.xMin, yExtremeValue],
-                [xyStats.xMax, yExtremeValue],
-            ],
         },
     ]
 }

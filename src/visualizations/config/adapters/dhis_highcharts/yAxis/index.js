@@ -1,7 +1,6 @@
 import i18n from '@dhis2/d2-i18n'
 import arrayClean from 'd2-utilizr/lib/arrayClean'
 import objectClean from 'd2-utilizr/lib/objectClean'
-import isNumeric from 'd2-utilizr/lib/isNumeric'
 
 import getAxisTitle from '../getAxisTitle'
 import getGauge from './gauge'
@@ -17,6 +16,7 @@ import { getAxisStringFromId } from '../../../../util/axisId'
 import {
     FONT_STYLE_VERTICAL_AXIS_TITLE,
     mergeFontStyleWithDefault,
+    TEXT_ALIGN_RIGHT,
 } from '../../../../../modules/fontStyle'
 import { axisHasRelativeItems } from '../../../../../modules/layout/axisHasRelativeItems'
 import getSteps from '../getSteps'
@@ -118,6 +118,9 @@ function getDefault(layout, series, extraOptions) {
                             dashStyle: 'Dash',
                             title: {
                                 text: extremeObj.name,
+                                fontStyle: {
+                                    textAlign: TEXT_ALIGN_RIGHT,
+                                },
                             },
                         }),
                 ]),

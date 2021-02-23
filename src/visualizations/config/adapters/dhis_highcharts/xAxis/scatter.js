@@ -1,6 +1,5 @@
 import arrayClean from 'd2-utilizr/lib/arrayClean'
 import objectClean from 'd2-utilizr/lib/objectClean'
-import isNumeric from 'd2-utilizr/lib/isNumeric'
 
 import getAxisTitle from '../getAxisTitle'
 import { getAxisStringFromId } from '../../../../util/axisId'
@@ -13,7 +12,6 @@ import { getAxis } from '../../../../util/axes'
 import {
     getGridLineColor,
     getLabels,
-    getMaxValue,
     getMinValue,
     getRegressionLine,
 } from '../axis'
