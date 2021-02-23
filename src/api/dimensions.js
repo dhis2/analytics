@@ -89,7 +89,7 @@ export const indicatorsQuery = {
         }
 
         if (searchTerm) {
-            filters.push(`identifiable:token:${searchTerm}`)
+            filters.push(`${nameProp}:ilike:${searchTerm}`)
         }
 
         return {
@@ -123,7 +123,7 @@ export const dataElementsQuery = {
         }
 
         if (searchTerm) {
-            filters.push(`identifiable:token:${searchTerm}`)
+            filters.push(`${nameProp}:ilike:${searchTerm}`)
         }
 
         return {
@@ -177,7 +177,7 @@ export const dataElementOperandsQuery = {
         }
 
         if (searchTerm) {
-            filters.push(`identifiable:token:${searchTerm}`)
+            filters.push(`${nameProp}:ilike:${searchTerm}`)
         }
 
         return {
@@ -196,7 +196,7 @@ export const dataSetsQuery = {
         const filters = []
 
         if (searchTerm) {
-            filters.push(`identifiable:token:${searchTerm}`)
+            filters.push(`${nameProp}:ilike:${searchTerm}`)
         }
 
         if (filter?.group && filter.group !== ALL_ID) {
