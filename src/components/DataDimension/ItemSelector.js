@@ -57,7 +57,7 @@ const LeftHeader = ({
             <InputField
                 value={searchTerm}
                 onChange={({ value }) => setSearchTerm(value)}
-                placeholder={i18n.t('Search by data item name or id')}
+                placeholder={i18n.t('Search by data item name')}
                 dataTest={`${dataTest}-filter-input-field`}
                 dense
                 initialFocus
