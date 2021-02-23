@@ -1,3 +1,38 @@
+## [15.0.6](https://github.com/dhis2/analytics/compare/v15.0.5...v15.0.6) (2021-02-23)
+
+
+### Bug Fixes
+
+* data dim selector improvements (DHIS2-7943) ([#828](https://github.com/dhis2/analytics/issues/828)) ([79bff70](https://github.com/dhis2/analytics/commit/79bff70d729035e0684b724c310bd52c0ae9d725))
+
+## [15.0.5](https://github.com/dhis2/analytics/compare/v15.0.4...v15.0.5) (2021-02-23)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([4f68ff2](https://github.com/dhis2/analytics/commit/4f68ff255565caf08e74ad67b252d98c1b0b746b))
+
+## [15.0.4](https://github.com/dhis2/analytics/compare/v15.0.3...v15.0.4) (2021-02-22)
+
+
+### Bug Fixes
+
+* data dim selector improvements (DHIS2-7943) ([#826](https://github.com/dhis2/analytics/issues/826)) ([2d3d389](https://github.com/dhis2/analytics/commit/2d3d3898326de1d06dd0c026206b21762d7a8da6))
+
+## [15.0.3](https://github.com/dhis2/analytics/compare/v15.0.2...v15.0.3) (2021-02-21)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([4225a86](https://github.com/dhis2/analytics/commit/4225a86649eb2a36ab1d368c1fa831d8f2737a87))
+
+## [15.0.2](https://github.com/dhis2/analytics/compare/v15.0.1...v15.0.2) (2021-02-20)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([58f8282](https://github.com/dhis2/analytics/commit/58f8282a33550fe0d969f7080af301c2f412063e))
+
 ## [15.0.1](https://github.com/dhis2/analytics/compare/v15.0.0...v15.0.1) (2021-02-19)
 
 
