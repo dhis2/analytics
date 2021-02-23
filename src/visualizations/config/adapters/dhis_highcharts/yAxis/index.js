@@ -1,6 +1,7 @@
 import i18n from '@dhis2/d2-i18n'
 import arrayClean from 'd2-utilizr/lib/arrayClean'
 import objectClean from 'd2-utilizr/lib/objectClean'
+import isNumeric from 'd2-utilizr/lib/isNumeric'
 
 import getAxisTitle from '../getAxisTitle'
 import getGauge from './gauge'
@@ -73,10 +74,19 @@ function getDefault(layout, series, extraOptions) {
         )
     } else {
         const axis = getAxis(layout.axes, AXIS_TYPE, AXIS_INDEX)
+        const extremeObj =
+            extraOptions.outlierHelper?.extremes?.length &&
+            extraOptions.outlierHelper.extremes[1]
+        const maxVal = getMaxValue(axis.maxValue, dataValues)
+
         axes.push(
             objectClean({
                 min: getMinValue(axis.minValue, dataValues),
-                max: getMaxValue(axis.maxValue, dataValues),
+                max:
+                    Math.max(
+                        isNumeric(maxVal) ? maxVal : null,
+                        extremeObj.value
+                    ) ?? undefined,
                 tickAmount: getSteps(axis),
                 title: getAxisTitle(
                     axis.title?.text,
@@ -90,6 +100,16 @@ function getDefault(layout, series, extraOptions) {
                 plotLines: arrayClean([
                     getRegressionLine(axis.targetLine, layout.type),
                     getRegressionLine(axis.baseLine, layout.type),
+                    extremeObj &&
+                        getRegressionLine({
+                            value: extremeObj.value, //TODO
+                            color: '#a9adb3',
+                            width: 1,
+                            dashStyle: 'Dash',
+                            title: {
+                                text: extremeObj.name,
+                            },
+                        }),
                 ]),
                 gridLineColor: getGridLineColor(),
                 labels: getLabels(axis),

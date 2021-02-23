@@ -1,6 +1,4 @@
-import { getOutlierHelper } from '../../../../../modules/outliers'
-
-// const DEFAULT_COLOR = '#a8bf24'
+const DEFAULT_COLOR = '#a8bf24'
 
 export default extraOptions => {
     const series = []
@@ -40,10 +38,10 @@ export default extraOptions => {
         helper.thresholds.forEach(obj => {
             series.push({
                 data: obj.line,
-                name: obj.name,
-                label: {
-                    text: obj.name,
-                },
+                title: obj.name,
+                // label: {
+                //     text: obj.name,
+                // },
                 type: 'line',
                 color: '#444',
                 marker: { radius: 0 },

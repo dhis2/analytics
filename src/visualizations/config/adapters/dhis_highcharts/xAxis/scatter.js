@@ -1,5 +1,6 @@
 import arrayClean from 'd2-utilizr/lib/arrayClean'
 import objectClean from 'd2-utilizr/lib/objectClean'
+import isNumeric from 'd2-utilizr/lib/isNumeric'
 
 import getAxisTitle from '../getAxisTitle'
 import { getAxisStringFromId } from '../../../../util/axisId'
@@ -20,31 +21,19 @@ import {
 const AXIS_TYPE = 'RANGE'
 const AXIS_INDEX = 1
 
-const getLargeValueLines = helper => {
-    if (!(helper && helper.largeValues.length)) {
-        return []
-    }
-
-    return helper.largeValues.map(obj =>
-        getRegressionLine({
-            value: obj.value / 2, //TODO
-            title: {
-                text: obj.name,
-                fontStyle: {
-                    bold: true,
-                },
-            },
-        })
-    )
-}
-
 export default function (layout, series, extraOptions) {
     const dataValues = series?.map(item => item.data).flat()
     const axis = getAxis(layout.axes, AXIS_TYPE, AXIS_INDEX)
+    const extremeObj =
+        extraOptions.outlierHelper?.extremes?.length &&
+        extraOptions.outlierHelper.extremes[0]
+    const maxVal = getMaxValue(axis.maxValue, dataValues)
 
     return objectClean({
         min: getMinValue(axis.minValue, dataValues),
-        max: getMaxValue(axis.maxValue, dataValues),
+        max:
+            Math.max(isNumeric(maxVal) ? maxVal : null, extremeObj.value) ??
+            undefined,
         tickAmount: getSteps(axis),
         title: getAxisTitle(
             axis.title?.text,
@@ -58,7 +47,20 @@ export default function (layout, series, extraOptions) {
         plotLines: arrayClean([
             getRegressionLine(axis.targetLine, layout.type, true),
             getRegressionLine(axis.baseLine, layout.type, true),
-            ...getLargeValueLines(extraOptions.outlierHelper),
+            extremeObj &&
+                getRegressionLine(
+                    {
+                        value: extremeObj.value / 2, //TODO
+                        color: '#a9adb3',
+                        width: 1,
+                        dashStyle: 'Dash',
+                        title: {
+                            text: extremeObj.name,
+                        },
+                    },
+                    null,
+                    true
+                ),
         ]),
         gridLineColor: getGridLineColor(),
         labels: getLabels(axis),

@@ -10,7 +10,7 @@ export const defaultConfig = {
     thresholdFactor: THRESHOLD_FACTOR,
     normalizationMethod: XY_RATIO,
     outlierMethod: IQR,
-    largeValuePercentage: 1,
+    extremePercentage: 1,
 }
 
 const getDataWithNormalization = (data, normalizationMethod) => {
@@ -28,25 +28,26 @@ const getDataWithNormalization = (data, normalizationMethod) => {
         .sort((a, b) => (a.normalized < b.normalized ? -1 : 1))
 }
 
-const getLargeValues = (largeValuePercentage, xyStats) => {
-    const xPercentileValue = xyStats.xSum * (largeValuePercentage / 100)
-    const yPercentileValue = xyStats.ySum * (largeValuePercentage / 100)
+const getExtremes = (extremePercentage, xyStats) => {
+    const xExtremeValue = xyStats.xSum * (extremePercentage / 100)
+    const yExtremeValue = xyStats.ySum * (extremePercentage / 100)
 
     return [
         {
-            name: `${largeValuePercentage}% of Total X Values`,
-            value: xPercentileValue,
+            name: `${extremePercentage}% of Total X Values`,
+            value: xExtremeValue,
             line: [
-                [xPercentileValue, xyStats.yMin],
-                [xPercentileValue, xyStats.yMax],
+                [xExtremeValue, xyStats.yMin],
+                [xExtremeValue, xyStats.yMax],
             ],
+            isVertical: true,
         },
         {
-            name: `${largeValuePercentage}% of Total Y Values`,
-            value: yPercentileValue,
+            name: `${extremePercentage}% of Total Y Values`,
+            value: yExtremeValue,
             line: [
-                [xyStats.xMin, yPercentileValue],
-                [xyStats.xMax, yPercentileValue],
+                [xyStats.xMin, yExtremeValue],
+                [xyStats.xMax, yExtremeValue],
             ],
         },
     ]
@@ -83,10 +84,7 @@ export const getOutlierHelper = (data, userConfig) => {
             helper = getIQRHelper(dataWithNormalization, config, options)
     }
 
-    helper.largeValues = getLargeValues(
-        config.largeValuePercentage,
-        options.xyStats
-    )
+    helper.extremes = getExtremes(config.extremePercentage, options.xyStats)
     console.log('HELPER', helper)
     return helper
 }

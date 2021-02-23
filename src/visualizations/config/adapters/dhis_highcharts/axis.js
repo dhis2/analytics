@@ -20,7 +20,7 @@ import { getTextAlignOption } from './getTextAlignOption'
 import getFormatter from './getFormatter'
 
 const DEFAULT_MIN_VALUE = 0
-const DEFAULT_GRIDLINE_COLOR = '#E1E1E1'
+const DEFAULT_GRIDLINE_COLOR = '#F1F1F1'
 
 const getPlotLineStyle = fontStyle => ({
     color: fontStyle[FONT_STYLE_OPTION_TEXT_COLOR] || '#000',
@@ -96,6 +96,9 @@ export const getRegressionLine = (regressionLine = {}, visType, isVertical) => {
               plotLineStyle,
               objectClean({
                   value: regressionLine.value,
+                  color: regressionLine.color,
+                  width: regressionLine.width,
+                  dashStyle: regressionLine.dashStyle,
                   label: isString(regressionLine.title?.text)
                       ? Object.assign({}, plotLineLabelStyle, {
                             text: regressionLine.title.text,

@@ -50,9 +50,9 @@ export default function ({ store, layout, el, extraConfig, extraOptions }) {
     // fix this
     _layout.outlierAnalysis = {
         enabled: true,
-        method: 'MODIFIED_Z_SCORE', // 'IQR' | 'STANDARD_Z_SCORE'
+        outlierMethod: 'MODIFIED_Z_SCORE', // 'IQR' | 'STANDARD_Z_SCORE'
         thresholdFactor: 1.5,
-        largeValuePercentage: 1,
+        extremePercentage: 1,
     }
 
     const stacked = isStacked(_layout.type)
