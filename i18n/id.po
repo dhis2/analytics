@@ -9,7 +9,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-02-10T14:32:21.690Z\n"
+"POT-Creation-Date: 2021-02-19T13:51:23.537Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: Viktor Varland <viktor@dhis2.org>, 2021\n"
 "Language-Team: Indonesian (https://www.transifex.com/hisp-uio/teams/100509/id/)\n"
@@ -64,22 +64,22 @@ msgstr ""
 msgid "No program indicators found"
 msgstr ""
 
-msgid "No indicators found for \"{{searchTerm}}\""
+msgid "No indicators found for \"{{- searchTerm}}\""
 msgstr ""
 
-msgid "No data elements found for \"{{searchTerm}}\""
+msgid "No data elements found for \"{{- searchTerm}}\""
 msgstr ""
 
-msgid "No data sets found for \"{{searchTerm}}\""
+msgid "No data sets found for \"{{- searchTerm}}\""
 msgstr ""
 
-msgid "No event data items found for \"{{searchTerm}}\""
+msgid "No event data items found for \"{{- searchTerm}}\""
 msgstr ""
 
-msgid "No program indicators found for \"{{searchTerm}}\""
+msgid "No program indicators found for \"{{- searchTerm}}\""
 msgstr ""
 
-msgid "Nothing found for \"{{searchTerm}}\""
+msgid "Nothing found for \"{{- searchTerm}}\""
 msgstr ""
 
 msgid "Metric type"
