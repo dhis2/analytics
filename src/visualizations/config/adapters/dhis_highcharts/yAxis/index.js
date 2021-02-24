@@ -78,10 +78,13 @@ function getDefault(layout, series, extraOptions) {
         const axis = getAxis(layout.axes, AXIS_TYPE, AXIS_INDEX)
         let extremeObj
         let scatterMax
+        const extremeLines =
+            extraOptions.outlierHelper?.vars?.config?.extremeLines
 
         if (
             layout.type === VIS_TYPE_SCATTER &&
-            extraOptions.outlierHelper?.vars?.config?.extremeLines?.enabled
+            extremeLines?.enabled &&
+            extremeLines?.length
         ) {
             extremeObj = extraOptions.outlierHelper[PROP_EXTREME_LINES][1]
             scatterMax =

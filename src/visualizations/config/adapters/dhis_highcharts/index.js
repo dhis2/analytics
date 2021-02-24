@@ -52,10 +52,10 @@ export default function ({ store, layout, el, extraConfig, extraOptions }) {
         enabled: true,
         normalizationMethod: 'XY_RATIO',
         outlierMethod: 'MODIFIED_Z_SCORE', // 'IQR' | 'STANDARD_Z_SCORE'
-        thresholdFactor: 1.5,
+        thresholdFactor: 3,
         extremeLines: {
             enabled: true,
-            value: 1,
+            value: null,
         },
     }
 

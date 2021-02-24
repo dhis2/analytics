@@ -1,4 +1,5 @@
 import i18n from '@dhis2/d2-i18n'
+import isNumeric from 'd2-utilizr/lib/isNumeric'
 
 import { getZScoreHelper, STANDARD_Z_SCORE } from './zScore'
 import { getModZScoreHelper, MODIFIED_Z_SCORE } from './modZScore'
@@ -42,24 +43,31 @@ const getDataWithNormalization = (data, normalizationMethod) => {
 }
 
 const getExtremeLines = (percentage, xyStats) => {
+    const lines = []
+
+    if (!isNumeric(percentage)) {
+        return lines
+    }
+
     const xExtremeValue = xyStats.xSum * (percentage / 100)
     const yExtremeValue = xyStats.ySum * (percentage / 100)
 
-    return [
-        {
-            name: i18n.t('{{percentage}}% of Total X Values', {
-                percentage,
-            }),
-            value: xExtremeValue,
-            isVertical: true,
-        },
-        {
-            name: i18n.t('{{percentage}}% of Total Y Values', {
-                percentage,
-            }),
-            value: yExtremeValue,
-        },
-    ]
+    lines.push({
+        name: i18n.t('{{percentage}}% of Total X Values', {
+            percentage,
+        }),
+        value: xExtremeValue,
+        isVertical: true,
+    })
+
+    lines.push({
+        name: i18n.t('{{percentage}}% of Total Y Values', {
+            percentage,
+        }),
+        value: yExtremeValue,
+    })
+
+    return lines
 }
 
 export const getOutlierHelper = (data, userConfig) => {
