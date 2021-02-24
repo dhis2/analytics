@@ -116,7 +116,7 @@ describe('getIQRHelper', () => {
             [40, 1],
         ],
         {
-            outlierMethod: IQR,
+            method: IQR,
             extremePercentage: 1,
         }
     )

@@ -13,8 +13,8 @@ export const getXYStats = points => {
     for (i = 1; i < points.length; i++) {
         x = points[i][0]
         y = points[i][1]
-        xSum += x
-        ySum += y
+        xSum += xMin
+        ySum += yMin
         xMin = x < xMin ? x : xMin
         xMax = x > xMax ? x : xMax
         yMin = y < yMin ? y : yMin

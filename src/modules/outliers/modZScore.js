@@ -1,3 +1,4 @@
+import { PROP_NORMALIZATION_METHOD, PROP_THRESHOLD_FACTOR } from './index'
 import { deNormalizerMap } from './normalization'
 
 export const MODIFIED_Z_SCORE = 'MODIFIED_Z_SCORE'
@@ -102,10 +103,18 @@ export const getModZScoreHelper = (
 
     const [lowThreshold, highThreshold] =
         medianAD === 0
-            ? getModZScoreMAD0Thresholds(config.thresholdFactor, meanAD, median)
-            : getModZScoreThresholds(config.thresholdFactor, medianAD, median)
+            ? getModZScoreMAD0Thresholds(
+                  config[PROP_THRESHOLD_FACTOR],
+                  meanAD,
+                  median
+              )
+            : getModZScoreThresholds(
+                  config[PROP_THRESHOLD_FACTOR],
+                  medianAD,
+                  median
+              )
 
-    const deNormalizer = deNormalizerMap[config.normalizationMethod]
+    const deNormalizer = deNormalizerMap[config[PROP_NORMALIZATION_METHOD]]
 
     const lowThresholdLine = [
         [xyStats.xMin, deNormalizer(xyStats.xMin, lowThreshold)],
@@ -129,14 +138,15 @@ export const getModZScoreHelper = (
         })
 
     return {
+        name: MODIFIED_Z_SCORE,
         thresholds: [
             {
-                name: `${config.thresholdFactor} x Modified Z-score Low`,
+                name: `${config[PROP_THRESHOLD_FACTOR]} x Modified Z-score Low`,
                 value: lowThreshold,
                 line: lowThresholdLine,
             },
             {
-                name: `${config.thresholdFactor} x Modified Z-score High`,
+                name: `${config[PROP_THRESHOLD_FACTOR]} x Modified Z-score High`,
                 value: highThreshold,
                 line: highThresholdLine,
             },

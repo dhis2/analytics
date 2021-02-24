@@ -4,13 +4,28 @@ import { getIQRHelper, IQR } from './iqr'
 import { normalizerMap, XY_RATIO } from './normalization'
 import { getXYStats } from './xyStats'
 
-export const THRESHOLD_FACTOR = 1.5
+export const PROP_ENABLED = 'enabled'
+export const PROP_THRESHOLD_FACTOR = 'thresholdFactor'
+export const PROP_NORMALIZATION_METHOD = 'normalizationMethod'
+export const PROP_OUTLIER_METHOD = 'outlierMethod'
+export const PROP_EXTREME_LINES = 'extremeLines'
+export const PROP_EXTREME_LINES_VALUE = 'value'
+
+export const DEFAULT_ENABLED = true
+export const DEFAULT_THRESHOLD_FACTOR = 1.5
+export const DEFAULT_NORMALIZATION_METHOD = XY_RATIO
+export const DEFAULT_OUTLIER_METHOD = IQR
+export const DEFAULT_EXTREME_LINES_VALUE = 1
 
 export const defaultConfig = {
-    thresholdFactor: THRESHOLD_FACTOR,
-    normalizationMethod: XY_RATIO,
-    outlierMethod: IQR,
-    extremePercentage: 1,
+    [PROP_ENABLED]: DEFAULT_ENABLED,
+    [PROP_THRESHOLD_FACTOR]: DEFAULT_THRESHOLD_FACTOR,
+    [PROP_NORMALIZATION_METHOD]: XY_RATIO,
+    [PROP_OUTLIER_METHOD]: IQR,
+    [PROP_EXTREME_LINES]: {
+        [PROP_ENABLED]: DEFAULT_ENABLED,
+        [PROP_EXTREME_LINES_VALUE]: DEFAULT_EXTREME_LINES_VALUE,
+    },
 }
 
 const getDataWithNormalization = (data, normalizationMethod) => {
@@ -28,18 +43,18 @@ const getDataWithNormalization = (data, normalizationMethod) => {
         .sort((a, b) => (a.normalized < b.normalized ? -1 : 1))
 }
 
-const getExtremes = (extremePercentage, xyStats) => {
-    const xExtremeValue = xyStats.xSum * (extremePercentage / 100)
-    const yExtremeValue = xyStats.ySum * (extremePercentage / 100)
+const getExtremeLines = (percentage, xyStats) => {
+    const xExtremeValue = xyStats.xSum * (percentage / 100)
+    const yExtremeValue = xyStats.ySum * (percentage / 100)
 
     return [
         {
-            name: `${extremePercentage}% of Total X Values`,
+            name: `${percentage}% of Total X Values`,
             value: xExtremeValue,
             isVertical: true,
         },
         {
-            name: `${extremePercentage}% of Total Y Values`,
+            name: `${percentage}% of Total Y Values`,
             value: yExtremeValue,
         },
     ]
@@ -64,7 +79,7 @@ export const getOutlierHelper = (data, userConfig) => {
 
     let helper
 
-    switch (config.outlierMethod) {
+    switch (config[PROP_OUTLIER_METHOD]) {
         case STANDARD_Z_SCORE:
             helper = getZScoreHelper(dataWithNormalization, config, options)
             break
@@ -76,7 +91,10 @@ export const getOutlierHelper = (data, userConfig) => {
             helper = getIQRHelper(dataWithNormalization, config, options)
     }
 
-    helper.extremes = getExtremes(config.extremePercentage, options.xyStats)
+    helper[PROP_EXTREME_LINES] = getExtremeLines(
+        config[PROP_EXTREME_LINES][PROP_EXTREME_LINES_VALUE],
+        options.xyStats
+    )
     console.log('HELPER', helper)
     return helper
 }

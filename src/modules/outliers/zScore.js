@@ -1,4 +1,5 @@
 import { std, mean } from 'mathjs'
+import { PROP_NORMALIZATION_METHOD, PROP_THRESHOLD_FACTOR } from './index'
 import { deNormalizerMap } from './normalization'
 
 export const STANDARD_Z_SCORE = 'STANDARD_Z_SCORE'
@@ -13,11 +14,11 @@ export const getZScoreHelper = (dataWithNormalization, config, { xyStats }) => {
     }
     const normalizedData = dataWithNormalization.map(obj => obj.normalized)
     const stdDev = getStdDev(normalizedData)
-    const zScoreThreshold = stdDev * config.thresholdFactor
+    const zScoreThreshold = stdDev * config[PROP_THRESHOLD_FACTOR]
     const mean = getMean(normalizedData)
     const lowZScoreThreshold = mean - zScoreThreshold
     const highZScoreThreshold = mean + zScoreThreshold
-    const deNormalizer = deNormalizerMap[config.normalizationMethod]
+    const deNormalizer = deNormalizerMap[config[PROP_NORMALIZATION_METHOD]]
     const lowThresholdLine = [
         [xyStats.xMin, deNormalizer(xyStats.xMin, lowZScoreThreshold)],
         [xyStats.xMax, deNormalizer(xyStats.xMax, lowZScoreThreshold)],
@@ -40,14 +41,15 @@ export const getZScoreHelper = (dataWithNormalization, config, { xyStats }) => {
         })
 
     return {
+        name: STANDARD_Z_SCORE,
         thresholds: [
             {
-                name: `${config.thresholdFactor} x Z-score Low`,
+                name: `${config[PROP_THRESHOLD_FACTOR]} x Z-score Low`,
                 value: lowZScoreThreshold,
                 line: lowThresholdLine,
             },
             {
-                name: `${config.thresholdFactor} x Z-score High`,
+                name: `${config[PROP_THRESHOLD_FACTOR]} x Z-score High`,
                 value: highZScoreThreshold,
                 line: highThresholdLine,
             },

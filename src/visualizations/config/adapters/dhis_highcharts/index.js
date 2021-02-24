@@ -50,9 +50,13 @@ export default function ({ store, layout, el, extraConfig, extraOptions }) {
     // fix this
     _layout.outlierAnalysis = {
         enabled: true,
-        outlierMethod: 'MODIFIED_Z_SCORE', // 'IQR' | 'STANDARD_Z_SCORE'
+        normalizationMethod: 'XY_RATIO',
+        outlierMethod: 'IQR', // 'IQR' | 'STANDARD_Z_SCORE'
         thresholdFactor: 1.5,
-        extremePercentage: 1,
+        extremeLines: {
+            enabled: true,
+            value: 1,
+        },
     }
 
     const stacked = isStacked(_layout.type)
@@ -76,12 +80,15 @@ export default function ({ store, layout, el, extraConfig, extraOptions }) {
             item.x,
             item.y,
         ])
-        _extraOptions.outlierHelper = _layout.outlierAnalysis.enabled
-            ? getOutlierHelper(
-                  _extraOptions.scatterPoints,
-                  _layout.outlierAnalysis
-              )
-            : null
+
+        if (_layout.outlierAnalysis?.enabled) {
+            _extraOptions.outlierHelper = _layout.outlierAnalysis.enabled
+                ? getOutlierHelper(
+                      _extraOptions.scatterPoints,
+                      _layout.outlierAnalysis
+                  )
+                : null
+        }
 
         console.log('_extraOptions', _extraOptions)
     }
@@ -241,6 +248,6 @@ export default function ({ store, layout, el, extraConfig, extraOptions }) {
 
     // force apply extra config
     Object.assign(config, extraConfig)
-    console.log('config', config)
+    console.log('highcharts config', config)
     return objectClean(config)
 }

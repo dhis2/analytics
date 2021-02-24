@@ -1,3 +1,4 @@
+import { PROP_NORMALIZATION_METHOD, PROP_THRESHOLD_FACTOR } from './index'
 import { deNormalizerMap } from './normalization'
 
 export const IQR = 'IQR'
@@ -43,10 +44,10 @@ export const getIQRHelper = (dataWithNormalization, config, { xyStats }) => {
     const q1 = getQuartileValue(normalizedData, 0.25)
     const q3 = getQuartileValue(normalizedData, 0.75)
     const iqr = q3 - q1
-    const iqrThreshold = iqr * config.thresholdFactor
+    const iqrThreshold = iqr * config[PROP_THRESHOLD_FACTOR]
     const q1Threshold = q1 - iqrThreshold
     const q3Threshold = q3 + iqrThreshold
-    const deNormalizer = deNormalizerMap[config.normalizationMethod]
+    const deNormalizer = deNormalizerMap[config[PROP_NORMALIZATION_METHOD]]
     const q1ThresholdLine = [
         [xyStats.xMin, deNormalizer(xyStats.xMin, q1Threshold)],
         [xyStats.xMax, deNormalizer(xyStats.xMax, q1Threshold)],
@@ -68,14 +69,15 @@ export const getIQRHelper = (dataWithNormalization, config, { xyStats }) => {
         })
 
     return {
+        name: IQR,
         thresholds: [
             {
-                name: `${config.thresholdFactor} x IQR Q1`,
+                name: `${config[PROP_THRESHOLD_FACTOR]} x IQR Q1`,
                 value: q1Threshold,
                 line: q1ThresholdLine,
             },
             {
-                name: `${config.thresholdFactor} x IQR Q3`,
+                name: `${config[PROP_THRESHOLD_FACTOR]} x IQR Q3`,
                 value: q3Threshold,
                 line: q3ThresholdLine,
             },

@@ -48,7 +48,7 @@ describe('getModZScoreHelper', () => {
             [40, 1],
         ],
         {
-            outlierMethod: MODIFIED_Z_SCORE,
+            method: MODIFIED_Z_SCORE,
             extremePercentage: 1,
         }
     )

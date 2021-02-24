@@ -15,6 +15,7 @@ import {
     getMinValue,
     getRegressionLine,
 } from '../axis'
+import { PROP_EXTREME_LINES } from '../../../../../modules/outliers'
 
 const AXIS_TYPE = 'RANGE'
 const AXIS_INDEX = 1
@@ -22,9 +23,10 @@ const AXIS_INDEX = 1
 export default function (layout, series, extraOptions) {
     const dataValues = series?.map(item => item.data).flat()
     const axis = getAxis(layout.axes, AXIS_TYPE, AXIS_INDEX)
-    const extremeObj =
-        extraOptions.outlierHelper?.extremes?.length &&
-        extraOptions.outlierHelper.extremes[0]
+    const extremeObj = extraOptions.outlierHelper?.vars?.config?.extremeLines
+        ?.enabled
+        ? extraOptions.outlierHelper[PROP_EXTREME_LINES][0]
+        : null
     const xMax = extraOptions.outlierHelper?.vars?.xyStats?.xMax
 
     return objectClean({
@@ -43,20 +45,21 @@ export default function (layout, series, extraOptions) {
         plotLines: arrayClean([
             getRegressionLine(axis.targetLine, layout.type, true),
             getRegressionLine(axis.baseLine, layout.type, true),
-            extremeObj &&
-                getRegressionLine(
-                    {
-                        value: extremeObj.value, //TODO
-                        color: '#a9adb3',
-                        width: 1,
-                        dashStyle: 'Dash',
-                        title: {
-                            text: extremeObj.name,
-                        },
-                    },
-                    null,
-                    true
-                ),
+            extremeObj
+                ? getRegressionLine(
+                      {
+                          value: extremeObj.value,
+                          color: '#a9adb3',
+                          width: 1,
+                          dashStyle: 'Dash',
+                          title: {
+                              text: extremeObj.name,
+                          },
+                      },
+                      null,
+                      true
+                  )
+                : null,
         ]),
         gridLineColor: getGridLineColor(),
         labels: getLabels(axis),

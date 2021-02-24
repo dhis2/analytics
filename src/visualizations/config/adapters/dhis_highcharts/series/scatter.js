@@ -38,13 +38,14 @@ export default extraOptions => {
         helper.thresholds.forEach(obj => {
             series.push({
                 data: obj.line,
+                name: obj.name,
                 title: obj.name,
-                // label: {
-                //     text: obj.name,
-                // },
                 type: 'line',
                 color: '#444',
                 marker: { radius: 0 },
+                tooltip: {
+                    pointFormatter: () => obj.name,
+                },
             })
         })
     } else {

@@ -28,6 +28,7 @@ import {
     getMinValue,
     getRegressionLine,
 } from '../axis'
+import { PROP_EXTREME_LINES } from '../../../../../modules/outliers'
 
 const AXIS_TYPE = 'RANGE'
 const AXIS_INDEX = 0
@@ -52,8 +53,6 @@ function getMultipleAxes(theme, axes) {
     })
     return axisObjects
 }
-
-// function getScatterMax
 
 function getDefault(layout, series, extraOptions) {
     const axes = []
@@ -82,9 +81,9 @@ function getDefault(layout, series, extraOptions) {
 
         if (
             layout.type === VIS_TYPE_SCATTER &&
-            extraOptions.outlierHelper?.extremes?.length
+            extraOptions.outlierHelper?.vars?.config?.extremeLines?.enabled
         ) {
-            extremeObj = extraOptions.outlierHelper.extremes[1]
+            extremeObj = extraOptions.outlierHelper[PROP_EXTREME_LINES][1]
             scatterMax =
                 extremeObj.value > extraOptions.outlierHelper.vars.xyStats.yMax
                     ? extremeObj.value * 1.1
