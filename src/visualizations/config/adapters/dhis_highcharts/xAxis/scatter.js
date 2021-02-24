@@ -13,6 +13,7 @@ import {
     getGridLineColor,
     getLabels,
     getMinValue,
+    getMaxValue,
     getRegressionLine,
 } from '../axis'
 import { PROP_EXTREME_LINES } from '../../../../../modules/outliers'
@@ -23,15 +24,25 @@ const AXIS_INDEX = 1
 export default function (layout, series, extraOptions) {
     const dataValues = series?.map(item => item.data).flat()
     const axis = getAxis(layout.axes, AXIS_TYPE, AXIS_INDEX)
-    const extremeObj = extraOptions.outlierHelper?.vars?.config?.extremeLines
-        ?.enabled
-        ? extraOptions.outlierHelper[PROP_EXTREME_LINES][0]
+    const extremeObj = extraOptions.outlierHelper?.extremeLines
+        ? extraOptions.outlierHelper.extremeLines[0]
         : null
-    const xMax = extraOptions.outlierHelper?.vars?.xyStats?.xMax
+    // const xMax = extraOptions.outlierHelper?.vars?.xyStats?.xMax
 
     return objectClean({
         min: getMinValue(axis.minValue, dataValues),
-        max: extremeObj?.value > xMax ? extremeObj?.value * 1.1 : undefined,
+        max: getMaxValue(
+            axis.maxValue,
+            dataValues,
+            extraOptions.outlierHelper?.xAxisMax
+        ),
+        // extremeObj?.value > xMax
+        //     ? extremeObj?.value * 1.1
+        // : getMaxValue(
+        //       axis.maxValue,
+        //       dataValues,
+        //       extraOptions.outlierHelper
+        //   ),
         tickAmount: getSteps(axis),
         title: getAxisTitle(
             axis.title?.text,

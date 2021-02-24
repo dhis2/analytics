@@ -74,12 +74,34 @@ export const getMinValue = (minValue, dataValues) =>
         ? undefined
         : DEFAULT_MIN_VALUE
 
-export const getMaxValue = (maxValue, dataValues) =>
-    isNumeric(maxValue)
-        ? maxValue
-        : dataValues?.every(value => value < DEFAULT_MIN_VALUE)
+export const getMaxValue = (maxValue, dataValues, xMax) => {
+    if (isNumeric(maxValue)) {
+        return maxValue
+    }
+
+    if (isNumeric(xMax)) {
+        return xMax
+    }
+
+    return dataValues?.every(value => value < DEFAULT_MIN_VALUE)
         ? DEFAULT_MIN_VALUE
         : undefined
+}
+
+// extremeObj?.value > xMax
+//     ? extremeObj?.value * 1.1
+
+//     const extremeObj = extraOptions.outlierHelper?.vars?.config?.extremeLines
+//     ?.enabled
+//     ? extraOptions.outlierHelper[PROP_EXTREME_LINES][0]
+//     : null
+// const xMax = extraOptions.outlierHelper?.vars?.xyStats?.xMax
+
+// isNumeric(maxValue)
+// ? maxValue
+// : dataValues?.every(value => value < DEFAULT_MIN_VALUE)
+// ? DEFAULT_MIN_VALUE
+// : undefined
 
 export const getRegressionLine = (regressionLine = {}, visType, isVertical) => {
     const fontStyle = mergeFontStyleWithDefault(

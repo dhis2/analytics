@@ -75,8 +75,8 @@ export const getOutlierHelper = (data, userConfig) => {
         ...defaultConfig,
         ...userConfig,
     }
-    // console.log('DATA', data)
-    // console.log('CONFIG', config)
+    console.log('DATA', data)
+    console.log('CONFIG', config)
 
     const dataWithNormalization = getDataWithNormalization(
         data,
@@ -101,11 +101,62 @@ export const getOutlierHelper = (data, userConfig) => {
             helper = getIQRHelper(dataWithNormalization, config, options)
     }
 
-    helper[PROP_EXTREME_LINES] = getExtremeLines(
-        config[PROP_EXTREME_LINES][PROP_EXTREME_LINES_VALUE],
-        options.xyStats
-    )
+    if (
+        config[PROP_EXTREME_LINES][PROP_ENABLED] &&
+        isNumeric(config[PROP_EXTREME_LINES][PROP_EXTREME_LINES_VALUE])
+    ) {
+        helper.extremeLines = getExtremeLines(
+            config[PROP_EXTREME_LINES][PROP_EXTREME_LINES_VALUE],
+            options.xyStats
+        )
+    }
 
-    // console.log('HELPER', helper)
+    const lineXMax = [
+        // options.xyStats.xMax,
+        helper.thresholds[0].line[0][0],
+        helper.thresholds[0].line[1][0],
+        helper.thresholds[1].line[0][0],
+        helper.thresholds[1].line[1][0],
+        helper.extremeLines && helper.extremeLines[0].value * 1.1,
+    ]
+        .filter(isNumeric)
+        .sort((a, b) => b - a)[0]
+
+    helper.xAxisMax = lineXMax > options.xyStats.xMax ? lineXMax : undefined
+
+    const lineYMax = [
+        // options.xyStats.yMax,
+        helper.thresholds[0].line[0][1],
+        helper.thresholds[0].line[1][1],
+        helper.thresholds[1].line[0][1],
+        helper.thresholds[1].line[1][1],
+        helper.extremeLines && helper.extremeLines[1].value * 1.1,
+    ]
+        .filter(isNumeric)
+        .sort((a, b) => b - a)[0]
+
+    helper.yAxisMax = lineYMax > options.xyStats.yMax ? lineYMax : undefined
+
+    const lineXMin = [
+        // options.xyStats.xMin,
+        helper.thresholds[0].line[0][0],
+        helper.thresholds[0].line[1][0],
+        helper.thresholds[1].line[0][0],
+        helper.thresholds[1].line[1][0],
+    ].sort((a, b) => a - b)[0]
+
+    helper.xAxisMin = lineXMin < options.xyStats.xMin ? lineXMin : undefined
+
+    const lineYMin = [
+        // options.xyStats.yMin,
+        helper.thresholds[0].line[0][1],
+        helper.thresholds[0].line[1][1],
+        helper.thresholds[1].line[0][1],
+        helper.thresholds[1].line[1][1],
+    ].sort((a, b) => a - b)[0]
+
+    helper.yAxisMin = lineYMin < options.xyStats.yMin ? lineYMin : undefined
+
+    console.log('HELPER', helper)
     return helper
 }

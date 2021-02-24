@@ -52,7 +52,7 @@ export default function ({ store, layout, el, extraConfig, extraOptions }) {
         enabled: true,
         normalizationMethod: 'XY_RATIO',
         outlierMethod: 'MODIFIED_Z_SCORE', // 'IQR' | 'STANDARD_Z_SCORE'
-        thresholdFactor: 3,
+        thresholdFactor: 5,
         extremeLines: {
             enabled: true,
             value: null,
@@ -90,7 +90,7 @@ export default function ({ store, layout, el, extraConfig, extraOptions }) {
                 : null
         }
 
-        // console.log('_extraOptions', _extraOptions)
+        console.log('_extraOptions', _extraOptions)
     }
 
     let config = {
@@ -249,6 +249,6 @@ export default function ({ store, layout, el, extraConfig, extraOptions }) {
     // force apply extra config
     Object.assign(config, extraConfig)
 
-    // console.log('highcharts config', config)
+    console.log('highcharts config', config)
     return objectClean(config)
 }

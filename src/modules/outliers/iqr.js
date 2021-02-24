@@ -38,10 +38,6 @@ export const getQuartileValue = (data, q = 0.25) => {
 }
 
 export const getIQRHelper = (dataWithNormalization, config, { xyStats }) => {
-    if (!dataWithNormalization.length) {
-        throw 'Quartile analysis requires at least one value'
-    }
-
     const normalizedData = dataWithNormalization.map(obj => obj.normalized)
     const q1 = getQuartileValue(normalizedData, 0.25)
     const q3 = getQuartileValue(normalizedData, 0.75)

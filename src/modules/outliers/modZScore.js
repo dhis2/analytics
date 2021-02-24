@@ -147,7 +147,7 @@ export const getModZScoreHelper = (
                 line: lowThresholdLine,
             },
             {
-                name: i18n.t('{{thresholdFactor}} x Modified Z-score Low', {
+                name: i18n.t('{{thresholdFactor}} x Modified Z-score High', {
                     thresholdFactor: config[PROP_THRESHOLD_FACTOR],
                 }),
                 value: highThreshold,
