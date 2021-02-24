@@ -90,7 +90,7 @@ export default function ({ store, layout, el, extraConfig, extraOptions }) {
                 : null
         }
 
-        console.log('_extraOptions', _extraOptions)
+        // console.log('_extraOptions', _extraOptions)
     }
 
     let config = {
@@ -248,6 +248,7 @@ export default function ({ store, layout, el, extraConfig, extraOptions }) {
 
     // force apply extra config
     Object.assign(config, extraConfig)
-    console.log('highcharts config', config)
+
+    // console.log('highcharts config', config)
     return objectClean(config)
 }

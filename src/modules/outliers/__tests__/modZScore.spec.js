@@ -1,10 +1,8 @@
-import { getOutlierHelper } from '..'
 import {
     getMean,
     getMeanAbsoluteDeviation,
     getMedian,
     getMedianAbsoluteDeviation,
-    MODIFIED_Z_SCORE,
 } from '../modZScore'
 
 const a4 = [1, 2, 3, 10]
@@ -30,30 +28,4 @@ describe('Helper functions', () => {
         expect(getMeanAbsoluteDeviation(a4)).toBe(3)
         expect(getMeanAbsoluteDeviation(a5)).toBe(6.24)
     })
-})
-
-describe('getModZScoreHelper', () => {
-    const helper = getOutlierHelper(
-        [
-            [2, 1],
-            [3, 1],
-            [6, 2],
-            [5, 1],
-            [6, 1],
-            [7, 1],
-            [14, 2],
-            [8, 1],
-            [9, 1],
-            [10, 1],
-            [40, 1],
-        ],
-        {
-            method: MODIFIED_Z_SCORE,
-            extremePercentage: 1,
-        }
-    )
-
-    helper.detectOutliers()
-
-    //TODO add tests
 })

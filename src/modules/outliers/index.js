@@ -65,8 +65,8 @@ export const getOutlierHelper = (data, userConfig) => {
         ...defaultConfig,
         ...userConfig,
     }
-    console.log('DATA', data)
-    console.log('CONFIG', config)
+    // console.log('DATA', data)
+    // console.log('CONFIG', config)
 
     const dataWithNormalization = getDataWithNormalization(
         data,
@@ -95,6 +95,7 @@ export const getOutlierHelper = (data, userConfig) => {
         config[PROP_EXTREME_LINES][PROP_EXTREME_LINES_VALUE],
         options.xyStats
     )
-    console.log('HELPER', helper)
+
+    // console.log('HELPER', helper)
     return helper
 }
