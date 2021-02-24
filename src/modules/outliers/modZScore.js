@@ -1,3 +1,5 @@
+import i18n from '@dhis2/d2-i18n'
+
 import { PROP_NORMALIZATION_METHOD, PROP_THRESHOLD_FACTOR } from './index'
 import { deNormalizerMap } from './normalization'
 
@@ -138,12 +140,16 @@ export const getModZScoreHelper = (
         name: MODIFIED_Z_SCORE,
         thresholds: [
             {
-                name: `${config[PROP_THRESHOLD_FACTOR]} x Modified Z-score Low`,
+                name: i18n.t('{{thresholdFactor}} x Modified Z-score Low', {
+                    thresholdFactor: config[PROP_THRESHOLD_FACTOR],
+                }),
                 value: lowThreshold,
                 line: lowThresholdLine,
             },
             {
-                name: `${config[PROP_THRESHOLD_FACTOR]} x Modified Z-score High`,
+                name: i18n.t('{{thresholdFactor}} x Modified Z-score Low', {
+                    thresholdFactor: config[PROP_THRESHOLD_FACTOR],
+                }),
                 value: highThreshold,
                 line: highThresholdLine,
             },

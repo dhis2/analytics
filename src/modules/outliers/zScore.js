@@ -1,3 +1,4 @@
+import i18n from '@dhis2/d2-i18n'
 import { std, mean } from 'mathjs'
 import { PROP_NORMALIZATION_METHOD, PROP_THRESHOLD_FACTOR } from './index'
 import { deNormalizerMap } from './normalization'
@@ -41,12 +42,16 @@ export const getZScoreHelper = (dataWithNormalization, config, { xyStats }) => {
         name: STANDARD_Z_SCORE,
         thresholds: [
             {
-                name: `${config[PROP_THRESHOLD_FACTOR]} x Z-score Low`,
+                name: i18n.t('{{thresholdFactor}} x Z-score Low', {
+                    thresholdFactor: config[PROP_THRESHOLD_FACTOR],
+                }),
                 value: lowZScoreThreshold,
                 line: lowThresholdLine,
             },
             {
-                name: `${config[PROP_THRESHOLD_FACTOR]} x Z-score High`,
+                name: i18n.t('{{thresholdFactor}} x Z-score High', {
+                    thresholdFactor: config[PROP_THRESHOLD_FACTOR],
+                }),
                 value: highZScoreThreshold,
                 line: highThresholdLine,
             },

@@ -1,3 +1,5 @@
+import i18n from '@dhis2/d2-i18n'
+
 import { PROP_NORMALIZATION_METHOD, PROP_THRESHOLD_FACTOR } from './index'
 import { deNormalizerMap } from './normalization'
 
@@ -72,12 +74,16 @@ export const getIQRHelper = (dataWithNormalization, config, { xyStats }) => {
         name: IQR,
         thresholds: [
             {
-                name: `${config[PROP_THRESHOLD_FACTOR]} x IQR Q1`,
+                name: i18n.t('{{thresholdFactor}} x IQR Q1', {
+                    thresholdFactor: config[PROP_THRESHOLD_FACTOR],
+                }),
                 value: q1Threshold,
                 line: q1ThresholdLine,
             },
             {
-                name: `${config[PROP_THRESHOLD_FACTOR]} x IQR Q3`,
+                name: i18n.t('{{thresholdFactor}} x IQR Q3', {
+                    thresholdFactor: config[PROP_THRESHOLD_FACTOR],
+                }),
                 value: q3Threshold,
                 line: q3ThresholdLine,
             },

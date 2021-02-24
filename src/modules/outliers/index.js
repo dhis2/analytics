@@ -1,3 +1,5 @@
+import i18n from '@dhis2/d2-i18n'
+
 import { getZScoreHelper, STANDARD_Z_SCORE } from './zScore'
 import { getModZScoreHelper, MODIFIED_Z_SCORE } from './modZScore'
 import { getIQRHelper, IQR } from './iqr'
@@ -45,12 +47,16 @@ const getExtremeLines = (percentage, xyStats) => {
 
     return [
         {
-            name: `${percentage}% of Total X Values`,
+            name: i18n.t('{{percentage}}% of Total X Values', {
+                percentage,
+            }),
             value: xExtremeValue,
             isVertical: true,
         },
         {
-            name: `${percentage}% of Total Y Values`,
+            name: i18n.t('{{percentage}}% of Total Y Values', {
+                percentage,
+            }),
             value: yExtremeValue,
         },
     ]

@@ -51,7 +51,7 @@ export default function ({ store, layout, el, extraConfig, extraOptions }) {
     _layout.outlierAnalysis = {
         enabled: true,
         normalizationMethod: 'XY_RATIO',
-        outlierMethod: 'IQR', // 'IQR' | 'STANDARD_Z_SCORE'
+        outlierMethod: 'MODIFIED_Z_SCORE', // 'IQR' | 'STANDARD_Z_SCORE'
         thresholdFactor: 1.5,
         extremeLines: {
             enabled: true,
