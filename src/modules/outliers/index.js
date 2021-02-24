@@ -31,10 +31,6 @@ export const defaultConfig = {
 const getDataWithNormalization = (data, normalizationMethod) => {
     const normalizer = normalizerMap[normalizationMethod]
 
-    if (typeof normalizer !== 'function') {
-        throw `Normalization method ${normalizationMethod} not supported`
-    }
-
     return data
         .map(point => ({
             point,

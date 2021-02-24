@@ -9,9 +9,6 @@ export const getStdDev = data => std(data, 'unbiased')
 export const getMean = data => mean(data)
 
 export const getZScoreHelper = (dataWithNormalization, config, { xyStats }) => {
-    if (!dataWithNormalization.length) {
-        throw 'Z-score analysis requires at least one value'
-    }
     const normalizedData = dataWithNormalization.map(obj => obj.normalized)
     const stdDev = getStdDev(normalizedData)
     const zScoreThreshold = stdDev * config[PROP_THRESHOLD_FACTOR]

@@ -86,9 +86,6 @@ export const getModZScoreHelper = (
     config,
     { xyStats }
 ) => {
-    if (!dataWithNormalization.length) {
-        throw 'Modified z-score analysis requires at least one value'
-    }
     const normalizedData = dataWithNormalization.map(obj => obj.normalized)
     const median = getMedian(normalizedData)
     const medianAD = getMedianAbsoluteDeviation(normalizedData, median)
