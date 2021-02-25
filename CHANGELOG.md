@@ -1,3 +1,10 @@
+## [15.0.8](https://github.com/dhis2/analytics/compare/v15.0.7...v15.0.8) (2021-02-25)
+
+
+### Bug Fixes
+
+* tooltip placement and only for data type all ([#835](https://github.com/dhis2/analytics/issues/835)) ([b6a5fae](https://github.com/dhis2/analytics/commit/b6a5fae15e0d7658a4a6bfbaec06e0b5bacddca8))
+
 ## [15.0.7](https://github.com/dhis2/analytics/compare/v15.0.6...v15.0.7) (2021-02-25)
 
 
