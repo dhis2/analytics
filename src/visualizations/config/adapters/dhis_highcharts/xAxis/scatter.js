@@ -16,7 +16,6 @@ import {
     getMaxValue,
     getRegressionLine,
 } from '../axis'
-import { PROP_EXTREME_LINES } from '../../../../../modules/outliers'
 
 const AXIS_TYPE = 'RANGE'
 const AXIS_INDEX = 1
