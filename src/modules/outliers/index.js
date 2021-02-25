@@ -75,8 +75,6 @@ export const getOutlierHelper = (data, userConfig) => {
         ...defaultConfig,
         ...userConfig,
     }
-    console.log('DATA', data)
-    console.log('CONFIG', config)
 
     const dataWithNormalization = getDataWithNormalization(
         data,
@@ -112,7 +110,6 @@ export const getOutlierHelper = (data, userConfig) => {
     }
 
     const lineXMax = [
-        // options.xyStats.xMax,
         helper.thresholds[0].line[0][0],
         helper.thresholds[0].line[1][0],
         helper.thresholds[1].line[0][0],
@@ -125,7 +122,6 @@ export const getOutlierHelper = (data, userConfig) => {
     helper.xAxisMax = lineXMax > options.xyStats.xMax ? lineXMax : undefined
 
     const lineYMax = [
-        // options.xyStats.yMax,
         helper.thresholds[0].line[0][1],
         helper.thresholds[0].line[1][1],
         helper.thresholds[1].line[0][1],
@@ -138,7 +134,6 @@ export const getOutlierHelper = (data, userConfig) => {
     helper.yAxisMax = lineYMax > options.xyStats.yMax ? lineYMax : undefined
 
     const lineXMin = [
-        // options.xyStats.xMin,
         helper.thresholds[0].line[0][0],
         helper.thresholds[0].line[1][0],
         helper.thresholds[1].line[0][0],
@@ -148,7 +143,6 @@ export const getOutlierHelper = (data, userConfig) => {
     helper.xAxisMin = lineXMin < options.xyStats.xMin ? lineXMin : undefined
 
     const lineYMin = [
-        // options.xyStats.yMin,
         helper.thresholds[0].line[0][1],
         helper.thresholds[0].line[1][1],
         helper.thresholds[1].line[0][1],
@@ -157,6 +151,5 @@ export const getOutlierHelper = (data, userConfig) => {
 
     helper.yAxisMin = lineYMin < options.xyStats.yMin ? lineYMin : undefined
 
-    console.log('HELPER', helper)
     return helper
 }
