@@ -69,12 +69,10 @@ export default function ({ store, layout, el, extraConfig, extraOptions }) {
         ])
 
         if (_layout.outlierAnalysis?.enabled) {
-            _extraOptions.outlierHelper = _layout.outlierAnalysis.enabled
-                ? getOutlierHelper(
-                      _extraOptions.scatterPoints,
-                      _layout.outlierAnalysis
-                  )
-                : null
+            _extraOptions.outlierHelper = getOutlierHelper(
+                _extraOptions.scatterPoints,
+                _layout.outlierAnalysis
+            )
         }
     }
 
