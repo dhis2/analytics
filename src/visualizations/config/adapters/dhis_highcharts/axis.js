@@ -67,6 +67,7 @@ const getLineLabelStyle = (textAlign, fontStyleType, isVertical) => {
     return result
 }
 
+// outlierLineMin: if there are lines with smaller x or y than the data
 export const getMinValue = (minValue, dataValues, outlierLineMin) => {
     if (isNumeric(minValue)) {
         return minValue
@@ -79,11 +80,6 @@ export const getMinValue = (minValue, dataValues, outlierLineMin) => {
     return dataValues?.some(value => value < DEFAULT_MIN_VALUE)
         ? undefined
         : DEFAULT_MIN_VALUE
-    // isNumeric(minValue)
-    //     ? minValue
-    // : dataValues?.some(value => value < DEFAULT_MIN_VALUE)
-    // ? undefined
-    // : DEFAULT_MIN_VALUE
 }
 
 // outlierLineMax: if there are lines with larger x or y than the data
@@ -100,21 +96,6 @@ export const getMaxValue = (maxValue, dataValues, outlierLineMax) => {
         ? DEFAULT_MIN_VALUE
         : undefined
 }
-
-// extremeObj?.value > xMax
-//     ? extremeObj?.value * 1.1
-
-//     const extremeObj = extraOptions.outlierHelper?.vars?.config?.extremeLines
-//     ?.enabled
-//     ? extraOptions.outlierHelper[PROP_EXTREME_LINES][0]
-//     : null
-// const xMax = extraOptions.outlierHelper?.vars?.xyStats?.xMax
-
-// isNumeric(maxValue)
-// ? maxValue
-// : dataValues?.every(value => value < DEFAULT_MIN_VALUE)
-// ? DEFAULT_MIN_VALUE
-// : undefined
 
 export const getRegressionLine = (regressionLine = {}, visType, isVertical) => {
     const fontStyle = mergeFontStyleWithDefault(
