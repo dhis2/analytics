@@ -1,4 +1,6 @@
 const DEFAULT_COLOR = '#a8bf24'
+const OUTLIER_COLOR = 'red'
+const POINT_MARKER_SYMBOL = 'circle'
 
 export default extraOptions => {
     const series = []
@@ -13,24 +15,24 @@ export default extraOptions => {
             series.push({
                 data: helper.inlierPoints,
                 marker: {
-                    symbol: 'circle',
-                    fillColor: 'rgb(168, 191, 36)',
-                    lineColor: 'rgb(168, 191, 36)',
+                    symbol: POINT_MARKER_SYMBOL,
+                    fillColor: DEFAULT_COLOR,
+                    lineColor: DEFAULT_COLOR,
                     radius: 4,
                 },
-                color: 'rgb(168, 191, 36)',
+                color: DEFAULT_COLOR,
             })
 
         helper.outlierPoints.length &&
             series.push({
                 data: helper.outlierPoints,
                 marker: {
-                    symbol: 'circle',
-                    fillColor: 'red',
-                    lineColor: 'red',
+                    symbol: POINT_MARKER_SYMBOL,
+                    fillColor: OUTLIER_COLOR,
+                    lineColor: OUTLIER_COLOR,
                     radius: 4,
                 },
-                color: 'red',
+                color: OUTLIER_COLOR,
             })
 
         // thresholds
@@ -50,18 +52,16 @@ export default extraOptions => {
             })
         })
     } else {
-        series.push([
-            {
-                data: extraOptions.scatterPoints,
-                marker: {
-                    symbol: 'circle',
-                    fillColor: DEFAULT_COLOR,
-                    lineColor: DEFAULT_COLOR,
-                    radius: 4,
-                },
-                color: DEFAULT_COLOR,
+        series.push({
+            data: extraOptions.scatterPoints,
+            marker: {
+                symbol: POINT_MARKER_SYMBOL,
+                fillColor: DEFAULT_COLOR,
+                lineColor: DEFAULT_COLOR,
+                radius: 4,
             },
-        ])
+            color: DEFAULT_COLOR,
+        })
     }
 
     return series

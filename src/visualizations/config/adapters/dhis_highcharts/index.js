@@ -68,6 +68,13 @@ export default function ({ store, layout, el, extraConfig, extraOptions }) {
             item.y,
         ])
 
+        _layout.outlierAnalysis = {
+            enabled: true,
+            extremeLines: {
+                enabled: true,
+            },
+        }
+
         if (_layout.outlierAnalysis?.enabled) {
             _extraOptions.outlierHelper = getOutlierHelper(
                 _extraOptions.scatterPoints,

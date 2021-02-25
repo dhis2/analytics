@@ -14,7 +14,7 @@ export const PROP_OUTLIER_METHOD = 'outlierMethod'
 export const PROP_EXTREME_LINES = 'extremeLines'
 export const PROP_EXTREME_LINES_VALUE = 'value'
 
-export const DEFAULT_ENABLED = true
+export const DEFAULT_ENABLED = false
 export const DEFAULT_THRESHOLD_FACTOR = 1.5
 export const DEFAULT_NORMALIZATION_METHOD = XY_RATIO
 export const DEFAULT_OUTLIER_METHOD = IQR
@@ -74,6 +74,10 @@ export const getOutlierHelper = (data, userConfig) => {
     const config = {
         ...defaultConfig,
         ...userConfig,
+        [PROP_EXTREME_LINES]: {
+            ...defaultConfig[PROP_EXTREME_LINES],
+            ...userConfig[PROP_EXTREME_LINES],
+        },
     }
 
     const dataWithNormalization = getDataWithNormalization(
