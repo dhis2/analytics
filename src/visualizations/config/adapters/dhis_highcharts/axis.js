@@ -67,20 +67,33 @@ const getLineLabelStyle = (textAlign, fontStyleType, isVertical) => {
     return result
 }
 
-export const getMinValue = (minValue, dataValues) =>
-    isNumeric(minValue)
-        ? minValue
-        : dataValues?.some(value => value < DEFAULT_MIN_VALUE)
+export const getMinValue = (minValue, dataValues, outlierLineMin) => {
+    if (isNumeric(minValue)) {
+        return minValue
+    }
+
+    if (isNumeric(outlierLineMin)) {
+        return outlierLineMin
+    }
+
+    return dataValues?.some(value => value < DEFAULT_MIN_VALUE)
         ? undefined
         : DEFAULT_MIN_VALUE
+    // isNumeric(minValue)
+    //     ? minValue
+    // : dataValues?.some(value => value < DEFAULT_MIN_VALUE)
+    // ? undefined
+    // : DEFAULT_MIN_VALUE
+}
 
-export const getMaxValue = (maxValue, dataValues, xMax) => {
+// outlierLineMax: if there are lines with larger x or y than the data
+export const getMaxValue = (maxValue, dataValues, outlierLineMax) => {
     if (isNumeric(maxValue)) {
         return maxValue
     }
 
-    if (isNumeric(xMax)) {
-        return xMax
+    if (isNumeric(outlierLineMax)) {
+        return outlierLineMax
     }
 
     return dataValues?.every(value => value < DEFAULT_MIN_VALUE)

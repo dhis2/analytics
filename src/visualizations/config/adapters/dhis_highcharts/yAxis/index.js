@@ -95,10 +95,19 @@ function getDefault(layout, series, extraOptions) {
 
         axes.push(
             objectClean({
-                min: getMinValue(axis.minValue, dataValues),
-                max: extremeObj
-                    ? scatterMax
-                    : getMaxValue(axis.minValue, dataValues),
+                min: getMinValue(
+                    axis.minValue,
+                    dataValues,
+                    extraOptions.outlierHelper?.yAxisMin
+                ),
+                max: getMaxValue(
+                    axis.minValue,
+                    dataValues,
+                    extraOptions.outlierHelper?.yAxisMax
+                ),
+                // max: extremeObj
+                //     ? scatterMax
+                //     : getMaxValue(axis.minValue, dataValues),
                 tickAmount: getSteps(axis),
                 title: getAxisTitle(
                     axis.title?.text,
@@ -114,7 +123,7 @@ function getDefault(layout, series, extraOptions) {
                     getRegressionLine(axis.baseLine, layout.type),
                     extremeObj &&
                         getRegressionLine({
-                            value: extremeObj.value, //TODO
+                            value: extremeObj.value,
                             color: '#a9adb3',
                             width: 1,
                             dashStyle: 'Dash',

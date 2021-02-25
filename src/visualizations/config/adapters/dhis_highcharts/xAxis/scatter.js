@@ -30,7 +30,11 @@ export default function (layout, series, extraOptions) {
     // const xMax = extraOptions.outlierHelper?.vars?.xyStats?.xMax
 
     return objectClean({
-        min: getMinValue(axis.minValue, dataValues),
+        min: getMinValue(
+            axis.minValue,
+            dataValues,
+            extraOptions.outlierHelper?.xAxisMin
+        ),
         max: getMaxValue(
             axis.maxValue,
             dataValues,
