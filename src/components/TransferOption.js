@@ -49,6 +49,8 @@ export const TransferOption = ({
                     key={`${value}`}
                     content={tooltipText}
                     placement={'top-start'}
+                    openDelay={750}
+                    closeDelay={150}
                 >
                     {renderContent()}
                 </Tooltip>
