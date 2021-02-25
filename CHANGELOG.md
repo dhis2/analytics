@@ -1,3 +1,10 @@
+# [15.1.0](https://github.com/dhis2/analytics/compare/v15.0.8...v15.1.0) (2021-02-25)
+
+
+### Features
+
+* outlier detection ([#831](https://github.com/dhis2/analytics/issues/831)) ([fbab244](https://github.com/dhis2/analytics/commit/fbab244b621fb90d5b5d9f7c01dffc1cfd6cb2fb))
+
 ## [15.0.8](https://github.com/dhis2/analytics/compare/v15.0.7...v15.0.8) (2021-02-25)
 
 
