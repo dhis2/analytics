@@ -48,7 +48,7 @@ export const TransferOption = ({
                 <Tooltip
                     key={`${value}`}
                     content={tooltipText}
-                    placement={'top-start'}
+                    placement={'top'}
                     openDelay={750}
                     closeDelay={150}
                 >
