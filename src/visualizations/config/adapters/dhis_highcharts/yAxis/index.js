@@ -8,6 +8,7 @@ import {
     isStacked,
     VIS_TYPE_GAUGE,
     isDualAxisType,
+    VIS_TYPE_SCATTER,
 } from '../../../../../modules/visTypes'
 import { hasCustomAxes } from '../../../../../modules/axis'
 import { getAxisIdsMap } from '../customAxes'
@@ -15,6 +16,7 @@ import { getAxisStringFromId } from '../../../../util/axisId'
 import {
     FONT_STYLE_VERTICAL_AXIS_TITLE,
     mergeFontStyleWithDefault,
+    TEXT_ALIGN_RIGHT,
 } from '../../../../../modules/fontStyle'
 import { axisHasRelativeItems } from '../../../../../modules/layout/axisHasRelativeItems'
 import getSteps from '../getSteps'
@@ -73,10 +75,27 @@ function getDefault(layout, series, extraOptions) {
         )
     } else {
         const axis = getAxis(layout.axes, AXIS_TYPE, AXIS_INDEX)
+        let extremeObj
+
+        if (
+            layout.type === VIS_TYPE_SCATTER &&
+            extraOptions.outlierHelper?.extremeLines
+        ) {
+            extremeObj = extraOptions.outlierHelper.extremeLines[1]
+        }
+
         axes.push(
             objectClean({
-                min: getMinValue(axis.minValue, dataValues),
-                max: getMaxValue(axis.maxValue, dataValues),
+                min: getMinValue(
+                    axis.minValue,
+                    dataValues,
+                    extraOptions.outlierHelper?.yAxisMin
+                ),
+                max: getMaxValue(
+                    axis.minValue,
+                    dataValues,
+                    extraOptions.outlierHelper?.yAxisMax
+                ),
                 tickAmount: getSteps(axis),
                 title: getAxisTitle(
                     axis.title?.text,
@@ -90,6 +109,19 @@ function getDefault(layout, series, extraOptions) {
                 plotLines: arrayClean([
                     getRegressionLine(axis.targetLine, layout.type),
                     getRegressionLine(axis.baseLine, layout.type),
+                    extremeObj &&
+                        getRegressionLine({
+                            value: extremeObj.value,
+                            color: '#a9adb3',
+                            width: 1,
+                            dashStyle: 'Dash',
+                            title: {
+                                text: extremeObj.name,
+                                fontStyle: {
+                                    textAlign: TEXT_ALIGN_RIGHT,
+                                },
+                            },
+                        }),
                 ]),
                 gridLineColor: getGridLineColor(),
                 labels: getLabels(axis),

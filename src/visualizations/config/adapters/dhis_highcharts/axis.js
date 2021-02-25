@@ -20,7 +20,7 @@ import { getTextAlignOption } from './getTextAlignOption'
 import getFormatter from './getFormatter'
 
 const DEFAULT_MIN_VALUE = 0
-const DEFAULT_GRIDLINE_COLOR = '#E1E1E1'
+const DEFAULT_GRIDLINE_COLOR = '#F1F1F1'
 
 const getPlotLineStyle = fontStyle => ({
     color: fontStyle[FONT_STYLE_OPTION_TEXT_COLOR] || '#000',
@@ -54,32 +54,48 @@ const getLabelOffsetFromTextAlign = textAlign => {
     }
 }
 
-const getLineLabelStyle = (fontStyle, fontStyleType, isVertical) => {
+const getLineLabelStyle = (textAlign, fontStyleType, isVertical) => {
     const alignKey = isVertical ? 'verticalAlign' : 'align'
-    const alignValue = getTextAlignOption(fontStyle, fontStyleType, isVertical)
+    const alignValue = getTextAlignOption(textAlign, fontStyleType, isVertical)
     const offsetKey = isVertical ? 'y' : 'x'
-    const offsetValue = getLabelOffsetFromTextAlign(fontStyle)
+    const offsetValue = getLabelOffsetFromTextAlign(textAlign)
 
     const result = { [alignKey]: alignValue, [offsetKey]: offsetValue }
     if (isVertical) {
-        result.align = getTextAlignOption(fontStyle, fontStyleType)
+        result.align = getTextAlignOption(textAlign, fontStyleType)
     }
     return result
 }
 
-export const getMinValue = (minValue, dataValues) =>
-    isNumeric(minValue)
-        ? minValue
-        : dataValues?.some(value => value < DEFAULT_MIN_VALUE)
+// outlierLineMin: if there are lines with smaller x or y than the data
+export const getMinValue = (minValue, dataValues, outlierLineMin) => {
+    if (isNumeric(minValue)) {
+        return minValue
+    }
+
+    if (isNumeric(outlierLineMin)) {
+        return outlierLineMin
+    }
+
+    return dataValues?.some(value => value < DEFAULT_MIN_VALUE)
         ? undefined
         : DEFAULT_MIN_VALUE
+}
 
-export const getMaxValue = (maxValue, dataValues) =>
-    isNumeric(maxValue)
-        ? maxValue
-        : dataValues?.every(value => value < DEFAULT_MIN_VALUE)
+// outlierLineMax: if there are lines with larger x or y than the data
+export const getMaxValue = (maxValue, dataValues, outlierLineMax) => {
+    if (isNumeric(maxValue)) {
+        return maxValue
+    }
+
+    if (isNumeric(outlierLineMax)) {
+        return outlierLineMax
+    }
+
+    return dataValues?.every(value => value < DEFAULT_MIN_VALUE)
         ? DEFAULT_MIN_VALUE
         : undefined
+}
 
 export const getRegressionLine = (regressionLine = {}, visType, isVertical) => {
     const fontStyle = mergeFontStyleWithDefault(
@@ -96,6 +112,9 @@ export const getRegressionLine = (regressionLine = {}, visType, isVertical) => {
               plotLineStyle,
               objectClean({
                   value: regressionLine.value,
+                  color: regressionLine.color,
+                  width: regressionLine.width,
+                  dashStyle: regressionLine.dashStyle,
                   label: isString(regressionLine.title?.text)
                       ? Object.assign({}, plotLineLabelStyle, {
                             text: regressionLine.title.text,

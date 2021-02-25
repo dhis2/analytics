@@ -29,6 +29,7 @@ import {
     LEGEND_DISPLAY_STRATEGY_FIXED,
 } from '../../../../modules/legends'
 import getScatterData from './getScatterData'
+import { getOutlierHelper } from '../../../../modules/outliers'
 
 const getTransformedLayout = layout => ({
     ...layout,
@@ -45,7 +46,6 @@ const getTransformedExtraOptions = extraOptions => ({
 export default function ({ store, layout, el, extraConfig, extraOptions }) {
     const _layout = getTransformedLayout(layout)
     const _extraOptions = getTransformedExtraOptions(extraOptions)
-
     const stacked = isStacked(_layout.type)
 
     const series = store.generateData({
@@ -63,7 +63,19 @@ export default function ({ store, layout, el, extraConfig, extraOptions }) {
 
     if (_layout.type === VIS_TYPE_SCATTER) {
         _extraOptions.scatterData = getScatterData(series, store)
+        _extraOptions.scatterPoints = _extraOptions.scatterData.map(item => [
+            item.x,
+            item.y,
+        ])
+
+        if (_layout.outlierAnalysis?.enabled) {
+            _extraOptions.outlierHelper = getOutlierHelper(
+                _extraOptions.scatterPoints,
+                _layout.outlierAnalysis
+            )
+        }
     }
+
     let config = {
         // type etc
         chart: getChart(_layout, el, _extraOptions.dashboard),

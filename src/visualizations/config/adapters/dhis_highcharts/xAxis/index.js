@@ -93,7 +93,7 @@ export default function (store, layout, extraOptions, series) {
                 xAxis = [getRadar(store, layout)]
                 break
             case VIS_TYPE_SCATTER:
-                xAxis = [getScatter(layout, series)]
+                xAxis = [getScatter(layout, series, extraOptions)]
                 break
             default:
                 xAxis = [getDefault(store, layout)]
