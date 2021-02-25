@@ -1,3 +1,10 @@
+## [15.0.7](https://github.com/dhis2/analytics/compare/v15.0.6...v15.0.7) (2021-02-25)
+
+
+### Bug Fixes
+
+* tooltip delay ([#832](https://github.com/dhis2/analytics/issues/832)) ([37dfed8](https://github.com/dhis2/analytics/commit/37dfed8bf4ccfe52a79ec0a87abfc9c16d4d15d6))
+
 ## [15.0.6](https://github.com/dhis2/analytics/compare/v15.0.5...v15.0.6) (2021-02-23)
 
 
