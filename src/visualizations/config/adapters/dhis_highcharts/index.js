@@ -46,19 +46,6 @@ const getTransformedExtraOptions = extraOptions => ({
 export default function ({ store, layout, el, extraConfig, extraOptions }) {
     const _layout = getTransformedLayout(layout)
     const _extraOptions = getTransformedExtraOptions(extraOptions)
-
-    // fix this
-    _layout.outlierAnalysis = {
-        enabled: true,
-        normalizationMethod: 'XY_RATIO',
-        outlierMethod: 'MODIFIED_Z_SCORE', // 'IQR' | 'STANDARD_Z_SCORE'
-        thresholdFactor: 3,
-        extremeLines: {
-            enabled: true,
-            value: null,
-        },
-    }
-
     const stacked = isStacked(_layout.type)
 
     const series = store.generateData({
@@ -89,8 +76,6 @@ export default function ({ store, layout, el, extraConfig, extraOptions }) {
                   )
                 : null
         }
-
-        console.log('_extraOptions', _extraOptions)
     }
 
     let config = {
