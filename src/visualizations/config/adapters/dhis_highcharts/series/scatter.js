@@ -44,7 +44,8 @@ export default extraOptions => {
                 color: '#444',
                 marker: { radius: 0 },
                 tooltip: {
-                    pointFormatter: () => obj.name,
+                    pointFormat: '{series.name}',
+                    headerFormat: '',
                 },
             })
         })
