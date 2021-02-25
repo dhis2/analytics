@@ -70,7 +70,7 @@ const getExtremeLines = (percentage, xyStats) => {
     return lines
 }
 
-export const getOutlierHelper = (data, userConfig) => {
+export const getOutlierHelper = (data, userConfig = {}) => {
     const config = {
         ...defaultConfig,
         ...userConfig,
