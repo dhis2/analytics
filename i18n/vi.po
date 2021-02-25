@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-02-19T13:51:23.537Z\n"
+"POT-Creation-Date: 2021-02-25T08:47:22.024Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: Mai Nguyen <thanhmai.jica@gmail.com>, 2021\n"
 "Language-Team: Vietnamese (https://www.transifex.com/hisp-uio/teams/100509/vi/)\n"
@@ -38,7 +38,7 @@ msgstr "Không có dữ liệu"
 msgid "Loading"
 msgstr "Đang tải"
 
-msgid "Search by data item name or id"
+msgid "Search by data item name"
 msgstr ""
 
 msgid "No items selected"

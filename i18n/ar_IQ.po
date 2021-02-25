@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-02-19T13:51:23.537Z\n"
+"POT-Creation-Date: 2021-02-25T08:47:22.024Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: KRG HIS <antonia.bezenchek@informa.pro>, 2021\n"
 "Language-Team: Arabic (Iraq) (https://www.transifex.com/hisp-uio/teams/100509/ar_IQ/)\n"
@@ -36,7 +36,7 @@ msgstr ""
 msgid "Loading"
 msgstr "جار التحميل"
 
-msgid "Search by data item name or id"
+msgid "Search by data item name"
 msgstr ""
 
 msgid "No items selected"
