@@ -439,11 +439,15 @@ const ItemSelector = ({
                             props.value /* eslint-disable-line react/prop-types */
                         )
                     )}
-                    tooltipText={getTooltipText(
-                        getItemType(
-                            props.value /* eslint-disable-line react/prop-types */
-                        )
-                    )}
+                    tooltipText={
+                        state.filter.dataType === ALL_ID
+                            ? getTooltipText(
+                                  getItemType(
+                                      props.value /* eslint-disable-line react/prop-types */
+                                  )
+                              )
+                            : undefined
+                    }
                     dataTest={`${dataTest}-transfer-option`}
                 />
             )}
