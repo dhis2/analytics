@@ -34,7 +34,7 @@
         "@sambego/storybook-state": "^2.0.1",
         "@storybook/addons": "^6.1.14",
         "@storybook/preset-create-react-app": "^3.1.5",
-        "@storybook/react": "^6.1.14",
+        "@storybook/react": "^6.1.20",
         "enzyme": "^3.9.0",
         "enzyme-adapter-react-16": "^1.15.5",
         "fs-extra": "^9.0.1",
