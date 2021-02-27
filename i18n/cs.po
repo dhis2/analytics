@@ -37,7 +37,7 @@ msgid "Loading"
 msgstr "Načítání"
 
 msgid "Search by data item name"
-msgstr ""
+msgstr "Hledání podle názvu datové položky"
 
 msgid "No items selected"
 msgstr "Nevybrány žádné položky"
@@ -61,22 +61,22 @@ msgid "No program indicators found"
 msgstr "Nebyly nalezeny žádné programové indikátory"
 
 msgid "No indicators found for \"{{- searchTerm}}\""
-msgstr ""
+msgstr "Nebyly nalezeny žádné indikátory pro „{{- searchTerm}}“"
 
 msgid "No data elements found for \"{{- searchTerm}}\""
-msgstr ""
+msgstr "Nebyly nalezeny žádné datové prvky pro „{{- searchTerm}}“"
 
 msgid "No data sets found for \"{{- searchTerm}}\""
-msgstr ""
+msgstr "Nebyly nalezeny žádné soubory dat pro „{{- searchTerm}}“"
 
 msgid "No event data items found for \"{{- searchTerm}}\""
-msgstr ""
+msgstr "Pro „{{- searchTerm}}“ nebyly nalezeny žádné datové položky události"
 
 msgid "No program indicators found for \"{{- searchTerm}}\""
-msgstr ""
+msgstr "Nebyly nalezeny žádné programové indikátory pro „{{- searchTerm}}“"
 
 msgid "Nothing found for \"{{- searchTerm}}\""
-msgstr ""
+msgstr "Pro dotaz „{{- searchTerm}}“ nebylo nic nalezeno"
 
 msgid "Metric type"
 msgstr "Metrický typ"
