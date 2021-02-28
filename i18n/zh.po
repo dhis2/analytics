@@ -1,16 +1,16 @@
 # 
 # Translators:
-# easylin <lin_xd@126.com>, 2021
 # phil_dhis2, 2021
 # Viktor Varland <viktor@dhis2.org>, 2021
 # 晓东 林 <13981924470@126.com>, 2021
+# easylin <lin_xd@126.com>, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2021-02-25T08:47:22.024Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: 晓东 林 <13981924470@126.com>, 2021\n"
+"Last-Translator: easylin <lin_xd@126.com>, 2021\n"
 "Language-Team: Chinese (https://www.transifex.com/hisp-uio/teams/100509/zh/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -25,10 +25,10 @@ msgid "All types"
 msgstr "所有类型"
 
 msgid "Totals only"
-msgstr ""
+msgstr "总计"
 
 msgid "Details only"
-msgstr ""
+msgstr "仅详细信息"
 
 msgid "Disaggregation"
 msgstr "分解"
@@ -40,7 +40,7 @@ msgid "Loading"
 msgstr "载入"
 
 msgid "Search by data item name"
-msgstr ""
+msgstr "按数据项名称搜索"
 
 msgid "No items selected"
 msgstr "没有选择条目"
@@ -49,40 +49,40 @@ msgid "Selected Items"
 msgstr "选择的条目"
 
 msgid "No indicators found"
-msgstr ""
+msgstr "找不到指标"
 
 msgid "No data elements found"
-msgstr ""
+msgstr "找不到数据元素"
 
 msgid "No data sets found"
-msgstr ""
+msgstr "找不到数据集"
 
 msgid "No event data items found"
-msgstr ""
+msgstr "找不到事件数据项"
 
 msgid "No program indicators found"
-msgstr ""
+msgstr "找不到项目指标"
 
 msgid "No indicators found for \"{{- searchTerm}}\""
-msgstr ""
+msgstr "找不到“ {{-searchTerm}}”的指标"
 
 msgid "No data elements found for \"{{- searchTerm}}\""
-msgstr ""
+msgstr "找不到“ {{-searchTerm}}”的数据元素"
 
 msgid "No data sets found for \"{{- searchTerm}}\""
-msgstr ""
+msgstr "找不到“ {{-searchTerm}}”的数据集"
 
 msgid "No event data items found for \"{{- searchTerm}}\""
-msgstr ""
+msgstr "找不到“ {{-searchTerm}}”的事件数据项"
 
 msgid "No program indicators found for \"{{- searchTerm}}\""
-msgstr ""
+msgstr "找不到“ {{-searchTerm}}”的计划指标"
 
 msgid "Nothing found for \"{{- searchTerm}}\""
-msgstr ""
+msgstr "找不到“ {{-searchTerm}}”"
 
 msgid "Metric type"
-msgstr ""
+msgstr "尺度类型"
 
 msgid "All metrics"
 msgstr "所有尺度"
@@ -511,16 +511,16 @@ msgid "Indicator group"
 msgstr "指标组"
 
 msgid "All groups"
-msgstr ""
+msgstr "所有组"
 
 msgid "Indicator"
 msgstr "指标"
 
 msgid "No indicator groups found"
-msgstr ""
+msgstr "找不到指标组"
 
 msgid "Loading indicator groups"
-msgstr ""
+msgstr "加载指标组"
 
 msgid "Data elements"
 msgstr "数据元"
@@ -532,10 +532,10 @@ msgid "Data element"
 msgstr "数据元"
 
 msgid "No data element groups found"
-msgstr ""
+msgstr "找不到数据元素组"
 
 msgid "Loading data element groups"
-msgstr ""
+msgstr "加载数据元素组"
 
 msgid "Data sets"
 msgstr "数据集"
@@ -544,7 +544,7 @@ msgid "Data set"
 msgstr "数据集"
 
 msgid "All data sets"
-msgstr ""
+msgstr "所有数据集"
 
 msgid "Loading data sets"
 msgstr "载入数据集"
@@ -553,16 +553,16 @@ msgid "Event data items"
 msgstr "事件数据条目"
 
 msgid "All programs"
-msgstr ""
+msgstr "所有项目"
 
 msgid "Event data item"
 msgstr "事件数据条目"
 
 msgid "No programs found"
-msgstr ""
+msgstr "找不到项目"
 
 msgid "Loading programs"
-msgstr ""
+msgstr "正在载入项目"
 
 msgid "Program indicators"
 msgstr "项目指标"
