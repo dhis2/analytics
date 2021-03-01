@@ -1,7 +1,5 @@
-const babelPath = require.resolve(
-    '@dhis2/cli-app-scripts/config/app.babel.config.js'
+const makeBabelConfig = require(
+    '@dhis2/cli-app-scripts/config/makeBabelConfig.js'
 )
 
-module.exports = {
-    extends: babelPath,
-}
+module.exports = makeBabelConfig('es', 'development')

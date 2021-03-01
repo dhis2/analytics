@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2021-02-25T08:47:22.024Z\n"
-"PO-Revision-Date: 2021-02-25T08:47:22.024Z\n"
+"POT-Creation-Date: 2021-02-26T20:40:26.365Z\n"
+"PO-Revision-Date: 2021-02-26T20:40:26.365Z\n"
 
 msgid "Data Type"
 msgstr ""
@@ -612,6 +612,30 @@ msgid "{{allDynamicOuNames}} levels in {{staticOuNames}}"
 msgstr ""
 
 msgid "{{allDynamicOuNames}} groups in {{staticOuNames}}"
+msgstr ""
+
+msgid "{{percentage}}% of Total X Values"
+msgstr ""
+
+msgid "{{percentage}}% of Total Y Values"
+msgstr ""
+
+msgid "{{thresholdFactor}} x IQR Q1"
+msgstr ""
+
+msgid "{{thresholdFactor}} x IQR Q3"
+msgstr ""
+
+msgid "{{thresholdFactor}} x Modified Z-score Low"
+msgstr ""
+
+msgid "{{thresholdFactor}} x Modified Z-score High"
+msgstr ""
+
+msgid "{{thresholdFactor}} x Z-score Low"
+msgstr ""
+
+msgid "{{thresholdFactor}} x Z-score High"
 msgstr ""
 
 msgid "Data"
