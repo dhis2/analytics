@@ -1,7 +1,7 @@
 import i18n from '@dhis2/d2-i18n'
 
 import { PROP_NORMALIZATION_METHOD, PROP_THRESHOLD_FACTOR } from './index'
-import { deNormalizerMap } from './normalization'
+import { denormalizerMap } from './normalization'
 
 export const MODIFIED_Z_SCORE = 'MODIFIED_Z_SCORE'
 
@@ -113,15 +113,15 @@ export const getModZScoreHelper = (
                   median
               )
 
-    const deNormalizer = deNormalizerMap[config[PROP_NORMALIZATION_METHOD]]
+    const denormalizer = denormalizerMap[config[PROP_NORMALIZATION_METHOD]]
 
     const lowThresholdLine = [
-        [xyStats.xMin, deNormalizer(xyStats.xMin, lowThreshold)],
-        [xyStats.xMax, deNormalizer(xyStats.xMax, lowThreshold)],
+        [xyStats.xMin, denormalizer(xyStats.xMin, lowThreshold)],
+        [xyStats.xMax, denormalizer(xyStats.xMax, lowThreshold)],
     ]
     const highThresholdLine = [
-        [xyStats.xMin, deNormalizer(xyStats.xMin, highThreshold)],
-        [xyStats.xMax, deNormalizer(xyStats.xMax, highThreshold)],
+        [xyStats.xMin, denormalizer(xyStats.xMin, highThreshold)],
+        [xyStats.xMax, denormalizer(xyStats.xMax, highThreshold)],
     ]
 
     const isLowOutlier = value => value < lowThreshold

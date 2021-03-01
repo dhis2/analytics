@@ -3,7 +3,6 @@ export const X_VALUE = 'X_VALUE'
 export const Y_VALUE = 'Y_VALUE'
 
 const getXyRatio = point => point[0] / point[1]
-
 const getXyRatioY = (x, ratio) => x / ratio
 
 const getXValue = point => point[0]
@@ -15,6 +14,6 @@ export const normalizerMap = {
     [Y_VALUE]: getYValue,
 }
 
-export const deNormalizerMap = {
+export const denormalizerMap = {
     [XY_RATIO]: getXyRatioY,
 }
