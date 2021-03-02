@@ -35,6 +35,22 @@ export default extraOptions => {
                 color: OUTLIER_COLOR,
             })
 
+        // regression
+
+        helper.vars.normalizationHelper?.regression &&
+            series.push({
+                data: helper.vars.normalizationHelper.regression.points,
+                name: 'Linear Regression',
+                title: 'Linear Regression',
+                type: 'line',
+                color: '#000',
+                marker: { radius: 0 },
+                tooltip: {
+                    pointFormat: '{series.name}',
+                    headerFormat: '',
+                },
+            })
+
         // thresholds
 
         helper.thresholds.forEach(obj => {
@@ -43,7 +59,7 @@ export default extraOptions => {
                 name: obj.name,
                 title: obj.name,
                 type: 'line',
-                color: '#444',
+                color: '#789',
                 marker: { radius: 0 },
                 tooltip: {
                     pointFormat: '{series.name}',

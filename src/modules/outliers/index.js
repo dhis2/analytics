@@ -4,7 +4,7 @@ import isNumeric from 'd2-utilizr/lib/isNumeric'
 import { getZScoreHelper, STANDARD_Z_SCORE } from './zScore'
 import { getModZScoreHelper, MODIFIED_Z_SCORE } from './modZScore'
 import { getIQRHelper, IQR } from './iqr'
-import { getDataWithNormalization, Y_RESIDUALS_LINEAR } from './normalization'
+import { getNormalizationHelper, Y_RESIDUALS_LINEAR } from './normalization'
 import { getXYStats } from './xyStats'
 
 export const PROP_ENABLED = 'enabled'
@@ -69,7 +69,7 @@ export const getOutlierHelper = (data, userConfig = {}) => {
         },
     }
 
-    const dataWithNormalization = getDataWithNormalization(
+    const dataWithNormalization = getNormalizationHelper(
         data,
         config.normalizationMethod
     )
@@ -144,5 +144,6 @@ export const getOutlierHelper = (data, userConfig = {}) => {
 
     helper.yAxisMin = lineYMin < options.xyStats.yMin ? lineYMin : undefined
 
+    console.log('HELPER', helper)
     return helper
 }
