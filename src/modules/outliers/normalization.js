@@ -19,13 +19,25 @@ const getXyRatioY = (x, ratio) => x / ratio
 
 const getYResiduals = sortedData => {
     const sortedRegPoints = linear(sortedData).points
+    const regStartPoint = sortedRegPoints[0]
+    const regEndPoint = sortedRegPoints[sortedRegPoints.length - 1]
 
-    return sortedData
-        .map((point, i) => ({
-            point,
-            normalized: point[1] - sortedRegPoints[i][1],
-        }))
-        .sort((a, b) => a.normalized - b.normalized)
+    return {
+        data: sortedData,
+        normalized: sortedData
+            .map((point, i) => point[1] - sortedRegPoints[i][1])
+            .sort((a, b) => a - b),
+        getThresholdLines: (q1Threshold, q3Threshold) => [
+            [
+                [regStartPoint[0], regStartPoint[1] - q1Threshold],
+                [regEndPoint[0], regEndPoint[1] - q1Threshold],
+            ],
+            [
+                [regStartPoint[0], regStartPoint[1] + q3Threshold],
+                [regEndPoint[0], regEndPoint[1] + q3Threshold],
+            ],
+        ],
+    }
 }
 
 export const denormalizerMap = {
