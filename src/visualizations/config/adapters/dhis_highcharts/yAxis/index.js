@@ -92,7 +92,7 @@ function getDefault(layout, series, extraOptions) {
                     extraOptions.outlierHelper?.yAxisMin
                 ),
                 max: getMaxValue(
-                    axis.minValue,
+                    axis.maxValue,
                     dataValues,
                     extraOptions.outlierHelper?.yAxisMax
                 ),
