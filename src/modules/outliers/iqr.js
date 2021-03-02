@@ -1,14 +1,14 @@
 import i18n from '@dhis2/d2-i18n'
 
 import { PROP_NORMALIZATION_METHOD, PROP_THRESHOLD_FACTOR } from './index'
-import { deNormalizerMap } from './normalization'
+import { denormalizerMap } from './normalization'
 
 export const IQR = 'IQR'
 
-export const getQuartilePosition = (data, q) => {
+export const getQuartilePosition = (data, quartile) => {
     const pos = (data.length + 1) / 4
 
-    switch (q) {
+    switch (quartile) {
         case 0.75:
             return pos * 3
         case 0.5:
@@ -19,12 +19,12 @@ export const getQuartilePosition = (data, q) => {
     }
 }
 
-export const getQuartileValue = (data, q = 0.25) => {
+export const getQuartileValue = (data, quartile = 0.25) => {
     if (data.length < 3) {
         return
     }
 
-    const pos = getQuartilePosition(data, q)
+    const pos = getQuartilePosition(data, quartile)
     const rest = pos % 1
 
     if (rest === 0) {
@@ -45,14 +45,14 @@ export const getIQRHelper = (dataWithNormalization, config, { xyStats }) => {
     const iqrThreshold = iqr * config[PROP_THRESHOLD_FACTOR]
     const q1Threshold = q1 - iqrThreshold
     const q3Threshold = q3 + iqrThreshold
-    const deNormalizer = deNormalizerMap[config[PROP_NORMALIZATION_METHOD]]
+    const denormalizer = denormalizerMap[config[PROP_NORMALIZATION_METHOD]]
     const q1ThresholdLine = [
-        [xyStats.xMin, deNormalizer(xyStats.xMin, q1Threshold)],
-        [xyStats.xMax, deNormalizer(xyStats.xMax, q1Threshold)],
+        [xyStats.xMin, denormalizer(xyStats.xMin, q1Threshold)],
+        [xyStats.xMax, denormalizer(xyStats.xMax, q1Threshold)],
     ]
     const q3ThresholdLine = [
-        [xyStats.xMin, deNormalizer(xyStats.xMin, q3Threshold)],
-        [xyStats.xMax, deNormalizer(xyStats.xMax, q3Threshold)],
+        [xyStats.xMin, denormalizer(xyStats.xMin, q3Threshold)],
+        [xyStats.xMax, denormalizer(xyStats.xMax, q3Threshold)],
     ]
     const isLowOutlier = value => value < q1Threshold
     const isHighOutlier = value => value > q3Threshold
