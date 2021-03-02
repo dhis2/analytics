@@ -4,7 +4,7 @@ import isNumeric from 'd2-utilizr/lib/isNumeric'
 import { getZScoreHelper, STANDARD_Z_SCORE } from './zScore'
 import { getModZScoreHelper, MODIFIED_Z_SCORE } from './modZScore'
 import { getIQRHelper, IQR } from './iqr'
-import { Y_RESIDUALS_LINEAR } from './normalization'
+import { getDataWithNormalization, Y_RESIDUALS_LINEAR } from './normalization'
 import { getXYStats } from './xyStats'
 
 export const PROP_ENABLED = 'enabled'

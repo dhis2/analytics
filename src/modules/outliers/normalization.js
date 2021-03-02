@@ -36,17 +36,12 @@ export const getDataWithNormalization = (data, normalizationMethod) => {
     const sortedData = data.slice().sort((a, b) => a[0] - b[0])
 
     switch (normalizationMethod) {
-        case Y_RESIDUALS_LINEAR: {
-            return getYResiduals(sortedData)
-        }
-
         case XY_RATIO: {
-            return data
-                .map(point => ({
-                    point,
-                    normalized: normalizer(point),
-                }))
-                .sort((a, b) => (a.normalized < b.normalized ? -1 : 1))
+            return getXyRatio(sortedData)
+        }
+        case Y_RESIDUALS_LINEAR:
+        default: {
+            return getYResiduals(sortedData)
         }
     }
 }
