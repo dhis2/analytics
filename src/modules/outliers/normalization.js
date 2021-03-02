@@ -1,19 +1,52 @@
-export const XY_RATIO = 'XY_RATIO'
-export const X_VALUE = 'X_VALUE'
-export const Y_VALUE = 'Y_VALUE'
+import { linear } from '../../visualizations/config/adapters/dhis_highcharts/addTrendLines'
 
-const getXyRatio = point => point[0] / point[1]
+export const XY_RATIO = 'XY_RATIO'
+export const Y_RESIDUALS_LINEAR = 'Y_RESIDUALS_LINEAR'
+
+// XY ratio
+
+const getXyRatio = sortedData =>
+    sortedData
+        .map(point => ({
+            point,
+            normalized: point[0] / point[1],
+        }))
+        .sort((a, b) => a.normalized - b.normalized)
+
 const getXyRatioY = (x, ratio) => x / ratio
 
-const getXValue = point => point[0]
-const getYValue = point => point[1]
+// Y residuals
 
-export const normalizerMap = {
-    [XY_RATIO]: getXyRatio,
-    [X_VALUE]: getXValue,
-    [Y_VALUE]: getYValue,
+const getYResiduals = sortedData => {
+    const sortedRegPoints = linear(sortedData).points
+
+    return sortedData
+        .map((point, i) => ({
+            point,
+            normalized: point[1] - sortedRegPoints[i][1],
+        }))
+        .sort((a, b) => a.normalized - b.normalized)
 }
 
 export const denormalizerMap = {
     [XY_RATIO]: getXyRatioY,
+}
+
+export const getDataWithNormalization = (data, normalizationMethod) => {
+    const sortedData = data.slice().sort((a, b) => a[0] - b[0])
+
+    switch (normalizationMethod) {
+        case Y_RESIDUALS_LINEAR: {
+            return getYResiduals(sortedData)
+        }
+
+        case XY_RATIO: {
+            return data
+                .map(point => ({
+                    point,
+                    normalized: normalizer(point),
+                }))
+                .sort((a, b) => (a.normalized < b.normalized ? -1 : 1))
+        }
+    }
 }
