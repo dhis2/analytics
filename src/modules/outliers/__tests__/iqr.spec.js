@@ -1,6 +1,4 @@
-import { getOutlierHelper } from '..'
-import { getQuartilePosition, getQuartileValue, IQR } from '../iqr'
-import { Y_RESIDUALS_LINEAR } from '../normalization'
+import { getQuartilePosition, getQuartileValue } from '../iqr'
 
 const a3 = [2, 4, 5]
 const a4 = [2, 4, 5, 7]
