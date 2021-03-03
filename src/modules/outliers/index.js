@@ -42,7 +42,7 @@ const getExtremeLines = (percentage, xyStats) => {
     const yExtremeValue = xyStats.ySum * (percentage / 100)
 
     lines.push({
-        name: i18n.t('{{percentage}}% of Total X Values', {
+        name: i18n.t('{{percentage}}% of total x values', {
             percentage,
         }),
         value: xExtremeValue,
@@ -50,7 +50,7 @@ const getExtremeLines = (percentage, xyStats) => {
     })
 
     lines.push({
-        name: i18n.t('{{percentage}}% of Total Y Values', {
+        name: i18n.t('{{percentage}}% of total y values', {
             percentage,
         }),
         value: yExtremeValue,
