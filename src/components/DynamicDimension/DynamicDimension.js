@@ -12,6 +12,7 @@ export const DynamicDimension = ({
     selectedItems,
     rightFooter,
     dimensionTitle,
+    displayNameProp,
 }) => {
     const dataEngine = useDataEngine()
 
@@ -21,6 +22,7 @@ export const DynamicDimension = ({
             dimensionId,
             searchTerm,
             page,
+            nameProp: displayNameProp,
         })
 
     const onSelectItems = selectedItem =>
@@ -51,6 +53,7 @@ export const DynamicDimension = ({
 DynamicDimension.propTypes = {
     dimensionId: PropTypes.string.isRequired,
     dimensionTitle: PropTypes.string.isRequired,
+    displayNameProp: PropTypes.string.isRequired,
     selectedItems: PropTypes.arrayOf(
         PropTypes.shape({
             id: PropTypes.string,
