@@ -1,3 +1,10 @@
+## [15.1.5](https://github.com/dhis2/analytics/compare/v15.1.4...v15.1.5) (2021-03-03)
+
+
+### Bug Fixes
+
+* correct texts for outlier strings ([#843](https://github.com/dhis2/analytics/issues/843)) ([96f9f17](https://github.com/dhis2/analytics/commit/96f9f17109d2f4116ad69daef6e8d18eaacd8fb9))
+
 ## [15.1.4](https://github.com/dhis2/analytics/compare/v15.1.3...v15.1.4) (2021-03-01)
 
 
