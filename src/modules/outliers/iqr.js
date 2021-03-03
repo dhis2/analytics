@@ -70,14 +70,14 @@ export const getIQRHelper = (dataWithNormalization, config, { xyStats }) => {
         name: IQR,
         thresholds: [
             {
-                name: i18n.t('{{thresholdFactor}} x IQR Q1', {
+                name: i18n.t('{{thresholdFactor}} × IQR Q1', {
                     thresholdFactor: config[PROP_THRESHOLD_FACTOR],
                 }),
                 value: q1Threshold,
                 line: q1ThresholdLine,
             },
             {
-                name: i18n.t('{{thresholdFactor}} x IQR Q3', {
+                name: i18n.t('{{thresholdFactor}} × IQR Q3', {
                     thresholdFactor: config[PROP_THRESHOLD_FACTOR],
                 }),
                 value: q3Threshold,

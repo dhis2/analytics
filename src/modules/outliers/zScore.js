@@ -42,14 +42,14 @@ export const getZScoreHelper = (dataWithNormalization, config, { xyStats }) => {
         name: STANDARD_Z_SCORE,
         thresholds: [
             {
-                name: i18n.t('{{thresholdFactor}} x Z-score Low', {
+                name: i18n.t('{{thresholdFactor}} × Z-score low', {
                     thresholdFactor: config[PROP_THRESHOLD_FACTOR],
                 }),
                 value: lowZScoreThreshold,
                 line: lowThresholdLine,
             },
             {
-                name: i18n.t('{{thresholdFactor}} x Z-score High', {
+                name: i18n.t('{{thresholdFactor}} × Z-score high', {
                     thresholdFactor: config[PROP_THRESHOLD_FACTOR],
                 }),
                 value: highZScoreThreshold,
