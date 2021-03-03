@@ -69,7 +69,7 @@ export const getOutlierHelper = (data, userConfig = {}) => {
         },
     }
 
-    const dataWithNormalization = getNormalizationHelper(
+    const normalizationHelper = getNormalizationHelper(
         data,
         config.normalizationMethod
     )
@@ -82,14 +82,14 @@ export const getOutlierHelper = (data, userConfig = {}) => {
 
     switch (config[PROP_OUTLIER_METHOD]) {
         case STANDARD_Z_SCORE:
-            helper = getZScoreHelper(dataWithNormalization, config, options)
+            helper = getZScoreHelper(normalizationHelper, config, options)
             break
         case MODIFIED_Z_SCORE:
-            helper = getModZScoreHelper(dataWithNormalization, config, options)
+            helper = getModZScoreHelper(normalizationHelper, config, options)
             break
         case IQR:
         default:
-            helper = getIQRHelper(dataWithNormalization, config, options)
+            helper = getIQRHelper(normalizationHelper, config, options)
     }
 
     if (
@@ -144,6 +144,5 @@ export const getOutlierHelper = (data, userConfig = {}) => {
 
     helper.yAxisMin = lineYMin < options.xyStats.yMin ? lineYMin : undefined
 
-    console.log('HELPER', helper)
     return helper
 }

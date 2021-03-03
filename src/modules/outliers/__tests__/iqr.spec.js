@@ -1,5 +1,6 @@
 import { getOutlierHelper } from '..'
 import { getQuartilePosition, getQuartileValue, IQR } from '../iqr'
+import { Y_RESIDUALS_LINEAR } from '../normalization'
 
 const a3 = [2, 4, 5]
 const a4 = [2, 4, 5, 7]
@@ -97,59 +98,5 @@ describe('getQuartileValue', () => {
         test('.75 skew', () => {
             expect(getQuartileValue(a6, 0.75)).toBe(21.25)
         })
-    })
-})
-
-describe('getIQRHelper', () => {
-    const helper = getOutlierHelper(
-        [
-            [2, 1],
-            [3, 1],
-            [6, 2],
-            [5, 1],
-            [6, 1],
-            [7, 1],
-            [14, 2],
-            [8, 1],
-            [9, 1],
-            [10, 1],
-            [40, 1],
-        ],
-        {
-            method: IQR,
-            extremePercentage: 1,
-        }
-    )
-
-    test('interquartile range', () => {
-        expect(helper.vars.iqr).toBe(9 - 3)
-    })
-
-    test('interquartile range threshold', () => {
-        expect(helper.vars.iqrThreshold).toBe(1.5 * (9 - 3))
-    })
-
-    test('first quartile threshold', () => {
-        expect(helper.vars.q1Threshold).toBe(3 - (9 - 3) * 1.5)
-    })
-
-    test('third quartile threshold', () => {
-        expect(helper.vars.q3Threshold).toBe(9 + (9 - 3) * 1.5)
-    })
-
-    test('isLowOutlier', () => {
-        expect(helper.isLowOutlier(-5)).toBe(false)
-        expect(helper.isLowOutlier(-7)).toBe(true)
-    })
-
-    test('isHighOutlier', () => {
-        expect(helper.isHighOutlier(17)).toBe(false)
-        expect(helper.isHighOutlier(19)).toBe(true)
-    })
-
-    test('isOutlier', () => {
-        expect(helper.isOutlier(0)).toBe(false)
-        expect(helper.isOutlier(-20)).toBe(true)
-        expect(helper.isOutlier(60)).toBe(true)
     })
 })
