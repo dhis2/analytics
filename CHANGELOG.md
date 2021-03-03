@@ -1,3 +1,15 @@
+# [16.0.0](https://github.com/dhis2/analytics/compare/v15.1.5...v16.0.0) (2021-03-03)
+
+
+### Bug Fixes
+
+* dynamic dimension use displayNameProp ([#841](https://github.com/dhis2/analytics/issues/841)) ([f1be837](https://github.com/dhis2/analytics/commit/f1be837b43bbfd66f9cb1e029da4097e638c01b7))
+
+
+### BREAKING CHANGES
+
+* DynamicDimension requires displayNameProp
+
 ## [15.1.5](https://github.com/dhis2/analytics/compare/v15.1.4...v15.1.5) (2021-03-03)
 
 
