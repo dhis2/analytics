@@ -1,3 +1,10 @@
+## [16.0.3](https://github.com/dhis2/analytics/compare/v16.0.2...v16.0.3) (2021-03-04)
+
+
+### Bug Fixes
+
+* use y-residuals instead of xy-ratio for normalization (DHIS2-10261) ([#845](https://github.com/dhis2/analytics/issues/845)) ([653823b](https://github.com/dhis2/analytics/commit/653823b3e8b5dcab49c3144c7197172fde65adeb))
+
 ## [16.0.2](https://github.com/dhis2/analytics/compare/v16.0.1...v16.0.2) (2021-03-04)
 
 
