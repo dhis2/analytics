@@ -4,7 +4,7 @@ import isNumeric from 'd2-utilizr/lib/isNumeric'
 import { getZScoreHelper, STANDARD_Z_SCORE } from './zScore'
 import { getModZScoreHelper, MODIFIED_Z_SCORE } from './modZScore'
 import { getIQRHelper, IQR } from './iqr'
-import { normalizerMap, XY_RATIO } from './normalization'
+import { getNormalizationHelper, Y_RESIDUALS_LINEAR } from './normalization'
 import { getXYStats } from './xyStats'
 
 export const PROP_ENABLED = 'enabled'
@@ -16,30 +16,19 @@ export const PROP_EXTREME_LINES_VALUE = 'value'
 
 export const DEFAULT_ENABLED = false
 export const DEFAULT_THRESHOLD_FACTOR = 1.5
-export const DEFAULT_NORMALIZATION_METHOD = XY_RATIO
+export const DEFAULT_NORMALIZATION_METHOD = Y_RESIDUALS_LINEAR
 export const DEFAULT_OUTLIER_METHOD = IQR
 export const DEFAULT_EXTREME_LINES_VALUE = 1
 
 export const defaultConfig = {
     [PROP_ENABLED]: DEFAULT_ENABLED,
     [PROP_THRESHOLD_FACTOR]: DEFAULT_THRESHOLD_FACTOR,
-    [PROP_NORMALIZATION_METHOD]: XY_RATIO,
-    [PROP_OUTLIER_METHOD]: IQR,
+    [PROP_NORMALIZATION_METHOD]: DEFAULT_NORMALIZATION_METHOD,
+    [PROP_OUTLIER_METHOD]: DEFAULT_OUTLIER_METHOD,
     [PROP_EXTREME_LINES]: {
         [PROP_ENABLED]: DEFAULT_ENABLED,
         [PROP_EXTREME_LINES_VALUE]: DEFAULT_EXTREME_LINES_VALUE,
     },
-}
-
-const getDataWithNormalization = (data, normalizationMethod) => {
-    const normalizer = normalizerMap[normalizationMethod]
-
-    return data
-        .map(point => ({
-            point,
-            normalized: normalizer(point),
-        }))
-        .sort((a, b) => (a.normalized < b.normalized ? -1 : 1))
 }
 
 const getExtremeLines = (percentage, xyStats) => {
@@ -80,7 +69,7 @@ export const getOutlierHelper = (data, userConfig = {}) => {
         },
     }
 
-    const dataWithNormalization = getDataWithNormalization(
+    const normalizationHelper = getNormalizationHelper(
         data,
         config.normalizationMethod
     )
@@ -93,14 +82,14 @@ export const getOutlierHelper = (data, userConfig = {}) => {
 
     switch (config[PROP_OUTLIER_METHOD]) {
         case STANDARD_Z_SCORE:
-            helper = getZScoreHelper(dataWithNormalization, config, options)
+            helper = getZScoreHelper(normalizationHelper, config, options)
             break
         case MODIFIED_Z_SCORE:
-            helper = getModZScoreHelper(dataWithNormalization, config, options)
+            helper = getModZScoreHelper(normalizationHelper, config, options)
             break
         case IQR:
         default:
-            helper = getIQRHelper(dataWithNormalization, config, options)
+            helper = getIQRHelper(normalizationHelper, config, options)
     }
 
     if (

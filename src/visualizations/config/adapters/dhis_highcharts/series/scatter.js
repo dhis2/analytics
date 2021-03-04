@@ -17,7 +17,7 @@ export default extraOptions => {
                 marker: {
                     symbol: POINT_MARKER_SYMBOL,
                     fillColor: DEFAULT_COLOR,
-                    lineColor: DEFAULT_COLOR,
+                    lineColor: 'rgb(0,0,0,0.5)',
                     radius: 4,
                 },
                 color: DEFAULT_COLOR,
@@ -35,6 +35,22 @@ export default extraOptions => {
                 color: OUTLIER_COLOR,
             })
 
+        // regression
+
+        helper.vars.normalizationHelper?.regression &&
+            series.push({
+                data: helper.vars.normalizationHelper.regression.points,
+                name: 'Linear Regression',
+                title: 'Linear Regression',
+                type: 'line',
+                color: '#000',
+                marker: { radius: 0 },
+                tooltip: {
+                    pointFormat: '{series.name}',
+                    headerFormat: '',
+                },
+            })
+
         // thresholds
 
         helper.thresholds.forEach(obj => {
@@ -43,7 +59,7 @@ export default extraOptions => {
                 name: obj.name,
                 title: obj.name,
                 type: 'line',
-                color: '#444',
+                color: '#789',
                 marker: { radius: 0 },
                 tooltip: {
                     pointFormat: '{series.name}',
