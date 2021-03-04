@@ -62,14 +62,14 @@ export default function ({ store, layout, el, extraConfig, extraOptions }) {
     })
 
     //TODO REMOVE
-    // _layout.outlierAnalysis = {
-    //     enabled: true,
-    //     outlierMethod: 'MODIFIED_Z_SCORE',
-    //     extremeLines: {
-    //         enabled: true,
-    //         value: 1,
-    //     },
-    // }
+    _layout.outlierAnalysis = {
+        enabled: true,
+        outlierMethod: 'STANDARD_Z_SCORE',
+        extremeLines: {
+            enabled: true,
+            value: 1,
+        },
+    }
 
     if (_layout.type === VIS_TYPE_SCATTER) {
         _extraOptions.scatterData = getScatterData(series, store)

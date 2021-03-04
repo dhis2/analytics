@@ -1,6 +1,6 @@
 import i18n from '@dhis2/d2-i18n'
 import { std, mean } from 'mathjs'
-import { PROP_NORMALIZATION_METHOD, PROP_THRESHOLD_FACTOR } from './index'
+import { PROP_THRESHOLD_FACTOR } from './index'
 
 export const STANDARD_Z_SCORE = 'STANDARD_Z_SCORE'
 
@@ -8,11 +8,13 @@ export const getStdDev = data => std(data, 'unbiased')
 
 export const getMean = data => mean(data)
 
-export const getZScoreHelper = (dataWithNormalization, config, { xyStats }) => {
-    const normalizedData = dataWithNormalization.map(obj => obj.normalized)
-    const stdDev = getStdDev(normalizedData)
+export const getZScoreHelper = (normalizationHelper, config, { xyStats }) => {
+    const sortedNormalized = normalizationHelper.normalized
+        .slice()
+        .sort((a, b) => a - b)
+    const stdDev = getStdDev(sortedNormalized)
     const zScoreThreshold = stdDev * config[PROP_THRESHOLD_FACTOR]
-    const mean = getMean(normalizedData)
+    const mean = getMean(sortedNormalized)
     const lowZScoreThreshold = mean - zScoreThreshold
     const highZScoreThreshold = mean + zScoreThreshold
     // const denormalizer = denormalizerMap[config[PROP_NORMALIZATION_METHOD]]
@@ -25,16 +27,26 @@ export const getZScoreHelper = (dataWithNormalization, config, { xyStats }) => {
     //     [xyStats.xMax, denormalizer(xyStats.xMax, highZScoreThreshold)],
     // ]
 
-    const isLowOutlier = value => value < lowZScoreThreshold
-    const isHighOutlier = value => value > highZScoreThreshold
-    const isOutlier = value => isLowOutlier(value) || isHighOutlier(value)
+    const [
+        lowThresholdLine,
+        highThresholdLine,
+    ] = normalizationHelper.getThresholdLines(
+        lowZScoreThreshold,
+        highZScoreThreshold
+    )
+
     const outlierPoints = []
     const inlierPoints = []
+
     const detectOutliers = () =>
-        dataWithNormalization.forEach(obj => {
-            isOutlier(obj.normalized)
-                ? outlierPoints.push(obj.point)
-                : inlierPoints.push(obj.point)
+        normalizationHelper.data.forEach((point, idx) => {
+            normalizationHelper.isOutlierByIndex(
+                idx,
+                lowZScoreThreshold,
+                highZScoreThreshold
+            )
+                ? outlierPoints.push(point)
+                : inlierPoints.push(point)
         })
 
     return {
@@ -45,19 +57,16 @@ export const getZScoreHelper = (dataWithNormalization, config, { xyStats }) => {
                     thresholdFactor: config[PROP_THRESHOLD_FACTOR],
                 }),
                 value: lowZScoreThreshold,
-                // line: lowThresholdLine,
+                line: lowThresholdLine,
             },
             {
                 name: i18n.t('{{thresholdFactor}} × Z-score high', {
                     thresholdFactor: config[PROP_THRESHOLD_FACTOR],
                 }),
                 value: highZScoreThreshold,
-                // line: highThresholdLine,
+                line: highThresholdLine,
             },
         ],
-        isLowOutlier,
-        isHighOutlier,
-        isOutlier,
         detectOutliers,
         outlierPoints,
         inlierPoints,
@@ -67,8 +76,8 @@ export const getZScoreHelper = (dataWithNormalization, config, { xyStats }) => {
             mean,
             lowZScoreThreshold,
             highZScoreThreshold,
-            dataWithNormalization,
-            normalizedData,
+            normalizationHelper,
+            sortedNormalized,
             config,
             xyStats,
         },

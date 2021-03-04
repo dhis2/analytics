@@ -1,8 +1,7 @@
 import i18n from '@dhis2/d2-i18n'
 import isNumber from 'd2-utilizr/lib/isNumber'
 
-import { PROP_NORMALIZATION_METHOD, PROP_THRESHOLD_FACTOR } from './index'
-import { denormalizerMap } from './normalization'
+import { PROP_THRESHOLD_FACTOR } from './index'
 
 export const MODIFIED_Z_SCORE = 'MODIFIED_Z_SCORE'
 
