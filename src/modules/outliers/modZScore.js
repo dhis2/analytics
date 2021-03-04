@@ -93,12 +93,6 @@ export const getModZScoreHelper = (
     const meanAD =
         medianAD === 0 ? getMeanAbsoluteDeviation(sortedNormalized) : null
 
-    // const dataWithZScore = getDataWithZScore(normalizationHelper, {
-    //     sortedNormalized,
-    //     median,
-    //     medianAD,
-    // })
-
     const [lowThreshold, highThreshold] =
         medianAD === 0
             ? getModZScoreMAD0Thresholds(
