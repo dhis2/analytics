@@ -1,27 +1,12 @@
 import { linear } from '../../visualizations/config/adapters/dhis_highcharts/addTrendLines'
 
-export const XY_RATIO = 'XY_RATIO'
 export const Y_RESIDUALS_LINEAR = 'Y_RESIDUALS_LINEAR'
-
-// XY ratio
-
-// const getXyRatio = sortedData =>
-//     sortedData
-//         .map(point => ({
-//             point,
-//             normalized: point[0] / point[1],
-//         }))
-//         .sort((a, b) => a.normalized - b.normalized)
-
-// const getXyRatioY = (x, ratio) => x / ratio
 
 // Y residuals
 
 const getYResidualsHelper = sortedData => {
     const regression = linear(sortedData)
     const sortedRegPoints = regression.points
-    const regStartPoint = sortedRegPoints[0]
-    const regEndPoint = sortedRegPoints[sortedRegPoints.length - 1]
 
     const helper = {
         regression,
@@ -29,27 +14,24 @@ const getYResidualsHelper = sortedData => {
         normalized: sortedData.map(
             (point, i) => point[1] - sortedRegPoints[i][1]
         ),
-        getThresholdLines: (lowThreshold, highThreshold) => [
-            [
-                [regStartPoint[0], regStartPoint[1] - Math.abs(lowThreshold)],
-                [regEndPoint[0], regEndPoint[1] - Math.abs(lowThreshold)],
-            ],
-            [
-                [regStartPoint[0], regStartPoint[1] + highThreshold],
-                [regEndPoint[0], regEndPoint[1] + highThreshold],
-            ],
-        ],
+        getThresholdLines: (lowThreshold, highThreshold) => {
+            const low = []
+            const high = []
+
+            sortedRegPoints.forEach(regPoint => {
+                low.push([regPoint[0], regPoint[1] - Math.abs(lowThreshold)])
+                high.push([regPoint[0], regPoint[1] + highThreshold])
+            })
+
+            return [low, high]
+        },
     }
 
-    helper.isOutlier = (idx, lowThreshold, highThreshold) =>
+    helper.isOutlierByIndex = (idx, lowThreshold, highThreshold) =>
         helper.normalized[idx] < lowThreshold ||
         helper.normalized[idx] > highThreshold
 
     return helper
-}
-
-export const denormalizerMap = {
-    // [XY_RATIO]: getXyRatioY,
 }
 
 export const getNormalizationHelper = (data, normalizationMethod) => {

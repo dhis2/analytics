@@ -43,34 +43,24 @@ export const getIQRHelper = (normalizationHelper, config, { xyStats }) => {
     const sortedNormalized = normalizationHelper.normalized
         .slice()
         .sort((a, b) => a - b)
-    const q1 = getQuartileValue(sortedNormalized, Q1) // 3
-    const q3 = getQuartileValue(sortedNormalized, Q3) // 7
-    const iqr = q3 - q1 // 4
-    const iqrThreshold = iqr * config[PROP_THRESHOLD_FACTOR] // 6
-    const q1Threshold = q1 - iqrThreshold // -3
-    const q3Threshold = q3 + iqrThreshold // 13
-    // const denormalizer = denormalizerMap[config[PROP_NORMALIZATION_METHOD]]
+    const q1 = getQuartileValue(sortedNormalized, Q1)
+    const q3 = getQuartileValue(sortedNormalized, Q3)
+    const iqr = q3 - q1
+    const iqrThreshold = iqr * config[PROP_THRESHOLD_FACTOR]
+    const q1Threshold = q1 - iqrThreshold
+    const q3Threshold = q3 + iqrThreshold
 
     const [
         q1ThresholdLine,
         q3ThresholdLine,
     ] = normalizationHelper.getThresholdLines(q1Threshold, q3Threshold)
 
-    // const q1ThresholdLine = [
-    //     [xyStats.xMin, denormalizer(xyStats.xMin, q1Threshold)],
-    //     [xyStats.xMax, denormalizer(xyStats.xMax, q1Threshold)],
-    // ]
-    // const q3ThresholdLine = [
-    //     [xyStats.xMin, denormalizer(xyStats.xMin, q3Threshold)],
-    //     [xyStats.xMax, denormalizer(xyStats.xMax, q3Threshold)],
-    // ]
-
     const outlierPoints = []
     const inlierPoints = []
 
     const detectOutliers = () =>
         normalizationHelper.data.forEach((point, idx) => {
-            normalizationHelper.isOutlier(idx, q1Threshold, q3Threshold)
+            normalizationHelper.isOutlierByIndex(idx, q1Threshold, q3Threshold)
                 ? outlierPoints.push(point)
                 : inlierPoints.push(point)
         })

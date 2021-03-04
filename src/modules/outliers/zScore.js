@@ -1,7 +1,6 @@
 import i18n from '@dhis2/d2-i18n'
 import { std, mean } from 'mathjs'
 import { PROP_NORMALIZATION_METHOD, PROP_THRESHOLD_FACTOR } from './index'
-import { denormalizerMap } from './normalization'
 
 export const STANDARD_Z_SCORE = 'STANDARD_Z_SCORE'
 
@@ -16,15 +15,15 @@ export const getZScoreHelper = (dataWithNormalization, config, { xyStats }) => {
     const mean = getMean(normalizedData)
     const lowZScoreThreshold = mean - zScoreThreshold
     const highZScoreThreshold = mean + zScoreThreshold
-    const denormalizer = denormalizerMap[config[PROP_NORMALIZATION_METHOD]]
-    const lowThresholdLine = [
-        [xyStats.xMin, denormalizer(xyStats.xMin, lowZScoreThreshold)],
-        [xyStats.xMax, denormalizer(xyStats.xMax, lowZScoreThreshold)],
-    ]
-    const highThresholdLine = [
-        [xyStats.xMin, denormalizer(xyStats.xMin, highZScoreThreshold)],
-        [xyStats.xMax, denormalizer(xyStats.xMax, highZScoreThreshold)],
-    ]
+    // const denormalizer = denormalizerMap[config[PROP_NORMALIZATION_METHOD]]
+    // const lowThresholdLine = [
+    //     [xyStats.xMin, denormalizer(xyStats.xMin, lowZScoreThreshold)],
+    //     [xyStats.xMax, denormalizer(xyStats.xMax, lowZScoreThreshold)],
+    // ]
+    // const highThresholdLine = [
+    //     [xyStats.xMin, denormalizer(xyStats.xMin, highZScoreThreshold)],
+    //     [xyStats.xMax, denormalizer(xyStats.xMax, highZScoreThreshold)],
+    // ]
 
     const isLowOutlier = value => value < lowZScoreThreshold
     const isHighOutlier = value => value > highZScoreThreshold
@@ -46,14 +45,14 @@ export const getZScoreHelper = (dataWithNormalization, config, { xyStats }) => {
                     thresholdFactor: config[PROP_THRESHOLD_FACTOR],
                 }),
                 value: lowZScoreThreshold,
-                line: lowThresholdLine,
+                // line: lowThresholdLine,
             },
             {
                 name: i18n.t('{{thresholdFactor}} × Z-score high', {
                     thresholdFactor: config[PROP_THRESHOLD_FACTOR],
                 }),
                 value: highZScoreThreshold,
-                line: highThresholdLine,
+                // line: highThresholdLine,
             },
         ],
         isLowOutlier,
