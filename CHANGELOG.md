@@ -1,3 +1,10 @@
+## [16.0.2](https://github.com/dhis2/analytics/compare/v16.0.1...v16.0.2) (2021-03-04)
+
+
+### Bug Fixes
+
+* bump d2-ui dependencies ([#852](https://github.com/dhis2/analytics/issues/852)) ([da0c0f2](https://github.com/dhis2/analytics/commit/da0c0f275bec4cd0491fa75d7f1f582d5b775a7e))
+
 ## [16.0.1](https://github.com/dhis2/analytics/compare/v16.0.0...v16.0.1) (2021-03-04)
 
 
