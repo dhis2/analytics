@@ -60,6 +60,10 @@ const getExtremeLines = (percentage, xyStats) => {
 }
 
 export const getOutlierHelper = (data, userConfig = {}) => {
+    if (data.length < 3) {
+        return null
+    }
+
     const config = {
         ...defaultConfig,
         ...userConfig,
