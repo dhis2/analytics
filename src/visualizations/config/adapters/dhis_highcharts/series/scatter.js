@@ -17,7 +17,7 @@ export default extraOptions => {
                 marker: {
                     symbol: POINT_MARKER_SYMBOL,
                     fillColor: DEFAULT_COLOR,
-                    lineColor: DEFAULT_COLOR,
+                    lineColor: 'rgb(0,0,0,0.5)',
                     radius: 4,
                 },
                 color: DEFAULT_COLOR,
