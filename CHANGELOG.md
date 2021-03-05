@@ -1,3 +1,10 @@
+## [16.0.5](https://github.com/dhis2/analytics/compare/v16.0.4...v16.0.5) (2021-03-05)
+
+
+### Bug Fixes
+
+* check number of points ([#857](https://github.com/dhis2/analytics/issues/857)) ([bff8e0a](https://github.com/dhis2/analytics/commit/bff8e0af587c2822ce25bb867fe2e6d856c81df3))
+
 ## [16.0.4](https://github.com/dhis2/analytics/compare/v16.0.3...v16.0.4) (2021-03-05)
 
 
