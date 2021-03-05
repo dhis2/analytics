@@ -59,6 +59,17 @@ const getExtremeLines = (percentage, xyStats) => {
     return lines
 }
 
+const getMinMaxValue = (outlierHelper, prop) => [
+    [
+        ...outlierHelper.thresholds.map(
+            t => getXYStats([t.line[0], t.line[t.line.length - 1]])[prop]
+        ),
+        outlierHelper.extremeLines && outlierHelper.extremeLines[0].value * 1.1,
+    ]
+        .filter(isNumeric)
+        .sort((a, b) => b - a)[0],
+]
+
 export const getOutlierHelper = (data, userConfig = {}) => {
     if (data.length < 3) {
         return null
@@ -106,47 +117,36 @@ export const getOutlierHelper = (data, userConfig = {}) => {
         )
     }
 
-    const lineXMax = [
-        helper.thresholds[0].line[0][0],
-        helper.thresholds[0].line[1][0],
-        helper.thresholds[1].line[0][0],
-        helper.thresholds[1].line[1][0],
-        helper.extremeLines && helper.extremeLines[0].value * 1.1,
-    ]
-        .filter(isNumeric)
-        .sort((a, b) => b - a)[0]
-
+    // if data is the highest value return undefined to let highcharts decide
+    const lineXMax = getMinMaxValue(helper, 'xMax')
     helper.xAxisMax = lineXMax > options.xyStats.xMax ? lineXMax : undefined
 
-    const lineYMax = [
-        helper.thresholds[0].line[0][1],
-        helper.thresholds[0].line[1][1],
-        helper.thresholds[1].line[0][1],
-        helper.thresholds[1].line[1][1],
-        helper.extremeLines && helper.extremeLines[1].value * 1.1,
-    ]
-        .filter(isNumeric)
-        .sort((a, b) => b - a)[0]
-
+    const lineYMax = getMinMaxValue(helper, 'yMax')
     helper.yAxisMax = lineYMax > options.xyStats.yMax ? lineYMax : undefined
 
-    const lineXMin = [
-        helper.thresholds[0].line[0][0],
-        helper.thresholds[0].line[1][0],
-        helper.thresholds[1].line[0][0],
-        helper.thresholds[1].line[1][0],
-    ].sort((a, b) => a - b)[0]
+    console.log(
+        'lineYMax',
+        lineYMax,
+        'options.xyStats.yMax',
+        options.xyStats.yMax,
+        'RES',
+        helper.yAxisMax
+    )
 
+    const lineXMin = getMinMaxValue(helper, 'xMin')
     helper.xAxisMin = lineXMin < options.xyStats.xMin ? lineXMin : undefined
 
-    const lineYMin = [
-        helper.thresholds[0].line[0][1],
-        helper.thresholds[0].line[1][1],
-        helper.thresholds[1].line[0][1],
-        helper.thresholds[1].line[1][1],
-    ].sort((a, b) => a - b)[0]
-
+    const lineYMin = getMinMaxValue(helper, 'yMin')
     helper.yAxisMin = lineYMin < options.xyStats.yMin ? lineYMin : undefined
+
+    console.log(
+        'lineYMin',
+        lineYMin,
+        'options.xyStats.yMin',
+        options.xyStats.yMin,
+        'RES',
+        helper.yAxisMin
+    )
 
     return helper
 }
