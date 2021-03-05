@@ -278,7 +278,7 @@ function gaussianElimination(a, o) {
 //              N * Σ(X^2) - Σ(X)^2
 //
 // correlation = N * Σ(XY) - Σ(X) * Σ (Y) / √ (  N * Σ(X^2) - Σ(X) ) * ( N * Σ(Y^2) - Σ(Y)^2 ) ) )
-function linear(data, decimalPlaces = 2) {
+export function linear(data, decimalPlaces = 2) {
     const sum = [0, 0, 0, 0, 0],
         results = []
     let N = data.length

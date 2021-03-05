@@ -1,3 +1,31 @@
+## [16.0.5](https://github.com/dhis2/analytics/compare/v16.0.4...v16.0.5) (2021-03-05)
+
+
+### Bug Fixes
+
+* check number of points ([#857](https://github.com/dhis2/analytics/issues/857)) ([bff8e0a](https://github.com/dhis2/analytics/commit/bff8e0af587c2822ce25bb867fe2e6d856c81df3))
+
+## [16.0.4](https://github.com/dhis2/analytics/compare/v16.0.3...v16.0.4) (2021-03-05)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([502407a](https://github.com/dhis2/analytics/commit/502407a7dc4b86651f72d52454bdedc2845b2d73))
+
+## [16.0.3](https://github.com/dhis2/analytics/compare/v16.0.2...v16.0.3) (2021-03-04)
+
+
+### Bug Fixes
+
+* use y-residuals instead of xy-ratio for normalization (DHIS2-10261) ([#845](https://github.com/dhis2/analytics/issues/845)) ([653823b](https://github.com/dhis2/analytics/commit/653823b3e8b5dcab49c3144c7197172fde65adeb))
+
+## [16.0.2](https://github.com/dhis2/analytics/compare/v16.0.1...v16.0.2) (2021-03-04)
+
+
+### Bug Fixes
+
+* bump d2-ui dependencies ([#852](https://github.com/dhis2/analytics/issues/852)) ([da0c0f2](https://github.com/dhis2/analytics/commit/da0c0f275bec4cd0491fa75d7f1f582d5b775a7e))
+
 ## [16.0.1](https://github.com/dhis2/analytics/compare/v16.0.0...v16.0.1) (2021-03-04)
 
 
