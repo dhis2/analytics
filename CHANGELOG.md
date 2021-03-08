@@ -1,3 +1,10 @@
+## [16.0.6](https://github.com/dhis2/analytics/compare/v16.0.5...v16.0.6) (2021-03-05)
+
+
+### Bug Fixes
+
+* bump @dhis2/ui from 6.5.0 to 6.5.1 ([#854](https://github.com/dhis2/analytics/issues/854)) ([f5b85ce](https://github.com/dhis2/analytics/commit/f5b85ce16f71b305af077744c9c50224efcccb1e))
+
 ## [16.0.5](https://github.com/dhis2/analytics/compare/v16.0.4...v16.0.5) (2021-03-05)
 
 
