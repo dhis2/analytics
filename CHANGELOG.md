@@ -1,3 +1,10 @@
+## [16.0.8](https://github.com/dhis2/analytics/compare/v16.0.7...v16.0.8) (2021-03-08)
+
+
+### Bug Fixes
+
+* handle threshold factor 0 ([#860](https://github.com/dhis2/analytics/issues/860)) ([3f2612d](https://github.com/dhis2/analytics/commit/3f2612db3a140f4762ad1e898f327569f7d9f4e6))
+
 ## [16.0.7](https://github.com/dhis2/analytics/compare/v16.0.6...v16.0.7) (2021-03-08)
 
 
