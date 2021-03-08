@@ -73,6 +73,15 @@ export const getOutlierHelper = (data, userConfig = {}) => {
         },
     }
 
+    if (
+        config[PROP_THRESHOLD_FACTOR] <= 0 &&
+        [STANDARD_Z_SCORE, MODIFIED_Z_SCORE].includes(
+            config[PROP_OUTLIER_METHOD]
+        )
+    ) {
+        return null
+    }
+
     const normalizationHelper = getNormalizationHelper(
         data,
         config.normalizationMethod
