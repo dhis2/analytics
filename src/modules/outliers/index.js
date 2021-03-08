@@ -59,7 +59,7 @@ const getExtremeLines = (percentage, xyStats) => {
     return lines
 }
 
-const getMinMaxValue = (outlierHelper, prop) => [
+const getMinMaxValue = (outlierHelper, prop, sortFn) => [
     [
         ...outlierHelper.thresholds.map(
             t => getXYStats([t.line[0], t.line[t.line.length - 1]])[prop]
@@ -67,7 +67,7 @@ const getMinMaxValue = (outlierHelper, prop) => [
         outlierHelper.extremeLines && outlierHelper.extremeLines[0].value * 1.1,
     ]
         .filter(isNumeric)
-        .sort((a, b) => b - a)[0],
+        .sort(sortFn)[0],
 ]
 
 export const getOutlierHelper = (data, userConfig = {}) => {
@@ -118,35 +118,17 @@ export const getOutlierHelper = (data, userConfig = {}) => {
     }
 
     // if data is the highest value return undefined to let highcharts decide
-    const lineXMax = getMinMaxValue(helper, 'xMax')
+    const lineXMax = getMinMaxValue(helper, 'xMax', (a, b) => b - a)
     helper.xAxisMax = lineXMax > options.xyStats.xMax ? lineXMax : undefined
 
-    const lineYMax = getMinMaxValue(helper, 'yMax')
+    const lineYMax = getMinMaxValue(helper, 'yMax', (a, b) => b - a)
     helper.yAxisMax = lineYMax > options.xyStats.yMax ? lineYMax : undefined
 
-    console.log(
-        'lineYMax',
-        lineYMax,
-        'options.xyStats.yMax',
-        options.xyStats.yMax,
-        'RES',
-        helper.yAxisMax
-    )
-
-    const lineXMin = getMinMaxValue(helper, 'xMin')
+    const lineXMin = getMinMaxValue(helper, 'xMin', (a, b) => a - b)
     helper.xAxisMin = lineXMin < options.xyStats.xMin ? lineXMin : undefined
 
-    const lineYMin = getMinMaxValue(helper, 'yMin')
+    const lineYMin = getMinMaxValue(helper, 'yMin', (a, b) => a - b)
     helper.yAxisMin = lineYMin < options.xyStats.yMin ? lineYMin : undefined
-
-    console.log(
-        'lineYMin',
-        lineYMin,
-        'options.xyStats.yMin',
-        options.xyStats.yMin,
-        'RES',
-        helper.yAxisMin
-    )
 
     return helper
 }
