@@ -1,3 +1,10 @@
+## [16.0.7](https://github.com/dhis2/analytics/compare/v16.0.6...v16.0.7) (2021-03-08)
+
+
+### Bug Fixes
+
+* axis min/max values ([#859](https://github.com/dhis2/analytics/issues/859)) ([28c6f5c](https://github.com/dhis2/analytics/commit/28c6f5cdc179272a0220f6623152118e329e4f2f))
+
 ## [16.0.6](https://github.com/dhis2/analytics/compare/v16.0.5...v16.0.6) (2021-03-05)
 
 
