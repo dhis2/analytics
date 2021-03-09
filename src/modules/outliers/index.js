@@ -67,8 +67,8 @@ const getMinMaxValue = (outlierHelper, isVertical, isMax) => {
         outlierHelper.extremeLines[isVertical ? 1 : 0].value
     const extremeFactor =
         isNumber(extremeValue) && isMax
-            ? extremeValue * 1.1
-            : extremeValue - extremeValue * 0.1
+            ? extremeValue + Math.abs(extremeValue) * 0.1
+            : extremeValue - Math.abs(extremeValue) * 0.1
     return [
         ...outlierHelper.thresholds.map(
             t => getXYStats([t.line[0], t.line[t.line.length - 1]])[prop]
@@ -145,10 +145,12 @@ export const getOutlierHelper = (data, userConfig = {}) => {
         lineYMin < 0 && lineYMin < options.xyStats.yMin ? lineYMin : undefined
 
     const lineXMax = getMinMaxValue(helper, false, true)
-    helper.xAxisMax = lineXMax > options.xyStats.xMax ? lineXMax : undefined
+    helper.xAxisMax =
+        lineXMax > 0 && lineXMax > options.xyStats.xMax ? lineXMax : undefined
 
     const lineYMax = getMinMaxValue(helper, true, true)
-    helper.yAxisMax = lineYMax > options.xyStats.yMax ? lineYMax : undefined
+    helper.yAxisMax =
+        lineYMax > 0 && lineYMax > options.xyStats.yMax ? lineYMax : undefined
 
     return helper
 }
