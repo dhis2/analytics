@@ -1,3 +1,10 @@
+## [16.0.11](https://github.com/dhis2/analytics/compare/v16.0.10...v16.0.11) (2021-03-09)
+
+
+### Bug Fixes
+
+* xmax and ymax ([#864](https://github.com/dhis2/analytics/issues/864)) ([bf54a20](https://github.com/dhis2/analytics/commit/bf54a2004416db08a8bbe8a9f321d2b4aefb86dd))
+
 ## [16.0.10](https://github.com/dhis2/analytics/compare/v16.0.9...v16.0.10) (2021-03-09)
 
 
