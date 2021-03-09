@@ -59,16 +59,19 @@ const getExtremeLines = (percentage, xyStats) => {
     return lines
 }
 
-const getMinMaxValue = (outlierHelper, prop, sortFn) => [
-    [
+const getMinMaxValue = (outlierHelper, isVertical, isMax) => {
+    const prop = (isVertical ? 'y' : 'x') + (isMax ? 'Max' : 'Min')
+
+    return [
         ...outlierHelper.thresholds.map(
             t => getXYStats([t.line[0], t.line[t.line.length - 1]])[prop]
         ),
-        outlierHelper.extremeLines && outlierHelper.extremeLines[0].value * 1.1,
+        outlierHelper.extremeLines &&
+            outlierHelper.extremeLines[isVertical ? 1 : 0].value * 1.1,
     ]
         .filter(isNumeric)
-        .sort(sortFn)[0],
-]
+        .sort(isMax ? (a, b) => b - a : (a, b) => a - b)[0]
+}
 
 export const getOutlierHelper = (data, userConfig = {}) => {
     if (data.length < 3) {
@@ -126,18 +129,18 @@ export const getOutlierHelper = (data, userConfig = {}) => {
         )
     }
 
-    // if data is the highest value return undefined to let highcharts decide
-    const lineXMax = getMinMaxValue(helper, 'xMax', (a, b) => b - a)
-    helper.xAxisMax = lineXMax > options.xyStats.xMax ? lineXMax : undefined
-
-    const lineYMax = getMinMaxValue(helper, 'yMax', (a, b) => b - a)
-    helper.yAxisMax = lineYMax > options.xyStats.yMax ? lineYMax : undefined
-
-    const lineXMin = getMinMaxValue(helper, 'xMin', (a, b) => a - b)
+    // if data is min/max value return undefined to let highcharts decide
+    const lineXMin = getMinMaxValue(helper, false, false)
     helper.xAxisMin = lineXMin < options.xyStats.xMin ? lineXMin : undefined
 
-    const lineYMin = getMinMaxValue(helper, 'yMin', (a, b) => a - b)
+    const lineYMin = getMinMaxValue(helper, true, true)
     helper.yAxisMin = lineYMin < options.xyStats.yMin ? lineYMin : undefined
+
+    const lineXMax = getMinMaxValue(helper, false, true)
+    helper.xAxisMax = lineXMax > options.xyStats.xMax ? lineXMax : undefined
+
+    const lineYMax = getMinMaxValue(helper, true, true)
+    helper.yAxisMax = lineYMax > options.xyStats.yMax ? lineYMax : undefined
 
     return helper
 }
