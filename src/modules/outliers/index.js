@@ -140,7 +140,7 @@ export const getOutlierHelper = (data, userConfig = {}) => {
     helper.xAxisMin =
         lineXMin < 0 && lineXMin < options.xyStats.xMin ? lineXMin : undefined
 
-    const lineYMin = getMinMaxValue(helper, true, true)
+    const lineYMin = getMinMaxValue(helper, true, false)
     helper.yAxisMin =
         lineYMin < 0 && lineYMin < options.xyStats.yMin ? lineYMin : undefined
 
