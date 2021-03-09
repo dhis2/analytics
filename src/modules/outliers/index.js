@@ -6,6 +6,7 @@ import { getModZScoreHelper, MODIFIED_Z_SCORE } from './modZScore'
 import { getIQRHelper, IQR } from './iqr'
 import { getNormalizationHelper, Y_RESIDUALS_LINEAR } from './normalization'
 import { getXYStats } from './xyStats'
+import isNumber from 'd2-utilizr/lib/isNumber'
 
 export const PROP_ENABLED = 'enabled'
 export const PROP_THRESHOLD_FACTOR = 'thresholdFactor'
@@ -61,13 +62,18 @@ const getExtremeLines = (percentage, xyStats) => {
 
 const getMinMaxValue = (outlierHelper, isVertical, isMax) => {
     const prop = (isVertical ? 'y' : 'x') + (isMax ? 'Max' : 'Min')
-
+    const extremeValue =
+        outlierHelper.extremeLines &&
+        outlierHelper.extremeLines[isVertical ? 1 : 0].value
+    const extremeFactor =
+        isNumber(extremeValue) && isMax
+            ? extremeValue * 1.1
+            : extremeValue - extremeValue * 0.1
     return [
         ...outlierHelper.thresholds.map(
             t => getXYStats([t.line[0], t.line[t.line.length - 1]])[prop]
         ),
-        outlierHelper.extremeLines &&
-            outlierHelper.extremeLines[isVertical ? 1 : 0].value * 1.1,
+        extremeFactor,
     ]
         .filter(isNumeric)
         .sort(isMax ? (a, b) => b - a : (a, b) => a - b)[0]
@@ -129,12 +135,14 @@ export const getOutlierHelper = (data, userConfig = {}) => {
         )
     }
 
-    // if data is min/max value return undefined to let highcharts decide
+    // undefined means let highcharts decide
     const lineXMin = getMinMaxValue(helper, false, false)
-    helper.xAxisMin = lineXMin < options.xyStats.xMin ? lineXMin : undefined
+    helper.xAxisMin =
+        lineXMin < 0 && lineXMin < options.xyStats.xMin ? lineXMin : undefined
 
     const lineYMin = getMinMaxValue(helper, true, true)
-    helper.yAxisMin = lineYMin < options.xyStats.yMin ? lineYMin : undefined
+    helper.yAxisMin =
+        lineYMin < 0 && lineYMin < options.xyStats.yMin ? lineYMin : undefined
 
     const lineXMax = getMinMaxValue(helper, false, true)
     helper.xAxisMax = lineXMax > options.xyStats.xMax ? lineXMax : undefined
