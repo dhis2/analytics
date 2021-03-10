@@ -42,6 +42,7 @@ describe('performance with 1 mill points', () => {
         const t1 = performance.now()
         const helper = getOutlierHelper(data, { outlierMethod: IQR })
         helper.detectOutliers()
+        console.log(performance.now() - t1)
         expect(performance.now() - t1 < 3000).toBe(true)
     })
 
