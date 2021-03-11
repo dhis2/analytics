@@ -1,10 +1,15 @@
 {
     "name": "@dhis2/analytics",
     "version": "16.0.12",
-    "main": "./build/cjs/lib.js",
-    "module": "./build/es/lib.js",
+    "main": "./build/cjs/index.js",
+    "module": "./build/es/index.js",
+    "exports": {
+        "import": "./build/es/index.js",
+        "require": "./build/cjs/index.js"
+    },
     "sideEffects": [
-        "./src/locales/index.js"
+        "./build/es/locales/index.js",
+        "./build/cjs/locales/index.js"
     ],
     "repository": "git@github.com:dhis2/analytics.git",
     "author": "Jennifer Jones Arnesen <jennifer@dhis2.org>",
@@ -26,11 +31,11 @@
         "validate-push": "yarn test"
     },
     "devDependencies": {
-        "@dhis2/app-runtime": "^2.6.1",
-        "@dhis2/cli-app-scripts": "^5.5.1",
+        "@dhis2/app-runtime": "^2.8.0",
+        "@dhis2/cli-app-scripts": "^6.0.0",
         "@dhis2/cli-style": "^7.2.2",
-        "@dhis2/d2-i18n": "^1.0.6",
-        "@dhis2/ui": "^6.5.1",
+        "@dhis2/d2-i18n": "^1.1.0",
+        "@dhis2/ui": "^6.5.3",
         "@sambego/storybook-state": "^2.0.1",
         "@storybook/addons": "^6.1.14",
         "@storybook/preset-create-react-app": "^3.1.5",
@@ -43,9 +48,9 @@
         "typeface-roboto": "^0.0.75"
     },
     "peerDependencies": {
-        "@dhis2/app-runtime": "^2.6.1",
-        "@dhis2/d2-i18n": "^1.0.6",
-        "@dhis2/ui": "^6.5.1",
+        "@dhis2/app-runtime": "^2",
+        "@dhis2/d2-i18n": "^1.1",
+        "@dhis2/ui": "^6.5.2",
         "prop-types": "^15",
         "react": "^16.3",
         "react-dom": "^16.3",
@@ -69,9 +74,5 @@
     },
     "files": [
         "build"
-    ],
-    "resolutions": {
-        "@dhis2/ui": "^6.5.0",
-        "styled-jsx": "3.3.2"
-    }
+    ]
 }
