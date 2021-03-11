@@ -40,9 +40,7 @@ describe('performance with 1 mill points', () => {
         const startTime = performance.now()
         const helper = getOutlierHelper(data, { outlierMethod: IQR })
         helper.detectOutliers()
-        const endTime = performance.now()
-        console.log(endTime)
-        expect(endTime - startTime < 3000).toBe(true)
+        expect(performance.now() - startTime).toBeLessThanOrEqual(3000)
     })
 
     it('SZS should take less than 4 seconds', () => {
@@ -51,9 +49,7 @@ describe('performance with 1 mill points', () => {
             outlierMethod: STANDARD_Z_SCORE,
         })
         helper.detectOutliers()
-        const endTime = performance.now()
-        console.log(endTime)
-        expect(endTime - startTime < 4000).toBe(true)
+        expect(performance.now() - startTime).toBeLessThanOrEqual(4000)
     })
 
     it('MZS should take less than 4 seconds', () => {
@@ -62,8 +58,6 @@ describe('performance with 1 mill points', () => {
             outlierMethod: MODIFIED_Z_SCORE,
         })
         helper.detectOutliers()
-        const endTime = performance.now()
-        console.log(endTime)
-        expect(endTime - startTime < 4000).toBe(true)
+        expect(performance.now() - startTime).toBeLessThanOrEqual(4000)
     })
 })
