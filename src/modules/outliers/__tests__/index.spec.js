@@ -27,11 +27,9 @@ describe('getOutlierHelper', () => {
 })
 
 describe('performance with 1 mill points', () => {
-    const getRandomInt = (min, max) => {
-        min = Math.ceil(min)
-        max = Math.floor(max)
-        return Math.floor(Math.random() * (max - min + 1)) + min
-    }
+    const getRandomInt = (min, max) =>
+        Math.floor(Math.random() * (max - min + 1)) + min
+
     const data = []
 
     for (let i = 0; i < 1000000; i++) {
