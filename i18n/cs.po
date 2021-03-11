@@ -622,28 +622,28 @@ msgid "{{allDynamicOuNames}} groups in {{staticOuNames}}"
 msgstr "Skupiny {{allDynamicOuNames}} v {{staticOuNames}}"
 
 msgid "{{percentage}}% of total x values"
-msgstr ""
+msgstr "{{percentage}}% z celkových hodnot x"
 
 msgid "{{percentage}}% of total y values"
-msgstr ""
+msgstr "{{percentage}}% z celkových hodnot y"
 
 msgid "{{thresholdFactor}} × IQR Q1"
-msgstr ""
+msgstr "{{thresholdFactor}} × IQR Q1"
 
 msgid "{{thresholdFactor}} × IQR Q3"
-msgstr ""
+msgstr "{{thresholdFactor}} × IQR Q3"
 
 msgid "{{thresholdFactor}} × Modified Z-score low"
-msgstr ""
+msgstr "{{thresholdFactor}} × Upravené nízké Z-skóre"
 
 msgid "{{thresholdFactor}} × Modified Z-score high"
-msgstr ""
+msgstr "{{thresholdFactor}} × Upravené vysoké Z-skóre"
 
 msgid "{{thresholdFactor}} × Z-score low"
-msgstr ""
+msgstr "{{thresholdFactor}} × nízké Z-skóre"
 
 msgid "{{thresholdFactor}} × Z-score high"
-msgstr ""
+msgstr "{{thresholdFactor}} × Z-skóre vysoké"
 
 msgid "Data"
 msgstr "Data"
@@ -785,7 +785,7 @@ msgid "and {{amount}} more..."
 msgstr "a {{amount}} další ..."
 
 msgid "Linear Regression"
-msgstr ""
+msgstr "Lineární regrese"
 
 msgid "Target"
 msgstr "Cíl"
