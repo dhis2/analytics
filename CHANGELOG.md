@@ -1,3 +1,10 @@
+## [16.0.13](https://github.com/dhis2/analytics/compare/v16.0.12...v16.0.13) (2021-03-11)
+
+
+### Bug Fixes
+
+* use latest d2-app-scripts to build tree-shakable library ([#840](https://github.com/dhis2/analytics/issues/840)) ([6720546](https://github.com/dhis2/analytics/commit/6720546c92ab1a2180371cc3946a993a53fa28a9))
+
 ## [16.0.12](https://github.com/dhis2/analytics/compare/v16.0.11...v16.0.12) (2021-03-11)
 
 
