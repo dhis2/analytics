@@ -31,11 +31,11 @@
         "validate-push": "yarn test"
     },
     "devDependencies": {
-        "@dhis2/app-runtime": "^2.6.1",
-        "@dhis2/cli-app-scripts": "^5.7.2",
+        "@dhis2/app-runtime": "^2.8.0",
+        "@dhis2/cli-app-scripts": "^6.0.0",
         "@dhis2/cli-style": "^7.2.2",
-        "@dhis2/d2-i18n": "^1.0.6",
-        "@dhis2/ui": "^6.5.0",
+        "@dhis2/d2-i18n": "^1.1.0",
+        "@dhis2/ui": "^6.5.3",
         "@sambego/storybook-state": "^2.0.1",
         "@storybook/addons": "^6.1.14",
         "@storybook/preset-create-react-app": "^3.1.5",
@@ -48,9 +48,9 @@
         "typeface-roboto": "^0.0.75"
     },
     "peerDependencies": {
-        "@dhis2/app-runtime": "^2.6.1",
-        "@dhis2/d2-i18n": "^1.0.6",
-        "@dhis2/ui": "^6.5.0",
+        "@dhis2/app-runtime": "^2",
+        "@dhis2/d2-i18n": "^1.1",
+        "@dhis2/ui": "^6.5.2",
         "prop-types": "^15",
         "react": "^16.3",
         "react-dom": "^16.3",
@@ -74,9 +74,5 @@
     },
     "files": [
         "build"
-    ],
-    "resolutions": {
-        "@dhis2/ui": "^6.5.0",
-        "styled-jsx": "3.3.2"
-    }
+    ]
 }
