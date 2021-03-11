@@ -1,3 +1,10 @@
+## [16.0.14](https://github.com/dhis2/analytics/compare/v16.0.13...v16.0.14) (2021-03-11)
+
+
+### Bug Fixes
+
+* always load locale-aware i18n ([#870](https://github.com/dhis2/analytics/issues/870)) ([ecbcfaa](https://github.com/dhis2/analytics/commit/ecbcfaab9ff7da7ecce7dab068d07f8667e092d8))
+
 ## [16.0.13](https://github.com/dhis2/analytics/compare/v16.0.12...v16.0.13) (2021-03-11)
 
 
