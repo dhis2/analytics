@@ -1,6 +1,6 @@
 import React from 'react'
 import { MenuDivider, FlyoutMenu, MenuItem, Tooltip } from '@dhis2/ui'
-import i18n from '@dhis2/d2-i18n'
+import i18n from '../locales/index.js'
 import PropTypes from 'prop-types'
 
 import { getAvailableAxes } from '../modules/layoutUiRules'
