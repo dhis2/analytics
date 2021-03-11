@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import i18n from '@dhis2/d2-i18n'
+import i18n from '../../locales/index.js'
 import { SingleSelectField, SingleSelectOption } from '@dhis2/ui'
 
 import { ALL_ID, dataTypes } from '../../modules/dataTypes'

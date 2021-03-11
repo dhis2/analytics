@@ -1,4 +1,4 @@
-import i18n from '@dhis2/d2-i18n'
+import i18n from '../locales/index.js'
 import { AXIS_ID_COLUMNS, AXIS_ID_ROWS, AXIS_ID_FILTERS } from './layout/axis'
 import {
     LAYOUT_TYPE_DEFAULT,

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
 import PropTypes from '@dhis2/prop-types'
-import i18n from '@dhis2/d2-i18n'
+import i18n from '../../locales/index.js'
 import {
     Modal,
     ModalTitle,

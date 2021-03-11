@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import Paper from '@material-ui/core/Paper'
 import Popper from '@material-ui/core/Popper'
-import i18n from '@dhis2/d2-i18n'
+import i18n from '../../../locales/index.js'
 
 import { styles } from './styles/RecommendedIcon.style'
 

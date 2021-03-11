@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { withStyles } from '@material-ui/core/styles'
-import i18n from '@dhis2/d2-i18n'
+import i18n from '../../../locales/index.js'
 
 import DimensionItem from './DimensionItem'
 import { styles } from './styles/DimensionList.style'
