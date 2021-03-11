@@ -625,28 +625,28 @@ msgid "{{allDynamicOuNames}} groups in {{staticOuNames}}"
 msgstr "{{allDynamicOuNames}} 组在 {{staticOuNames}}"
 
 msgid "{{percentage}}% of total x values"
-msgstr ""
+msgstr "占总x值的{{percentage}}％"
 
 msgid "{{percentage}}% of total y values"
-msgstr ""
+msgstr "占总y值的{{percentage}}％"
 
 msgid "{{thresholdFactor}} × IQR Q1"
-msgstr ""
+msgstr "{{thresholdFactor}}×IQR Q1"
 
 msgid "{{thresholdFactor}} × IQR Q3"
-msgstr ""
+msgstr "{{thresholdFactor}}×IQR Q3"
 
 msgid "{{thresholdFactor}} × Modified Z-score low"
-msgstr ""
+msgstr "{{thresholdFactor}}×修正的Z分数低值"
 
 msgid "{{thresholdFactor}} × Modified Z-score high"
-msgstr ""
+msgstr "{{thresholdFactor}}×修改后的Z分数高值"
 
 msgid "{{thresholdFactor}} × Z-score low"
-msgstr ""
+msgstr "{{thresholdFactor}}×Z分数低"
 
 msgid "{{thresholdFactor}} × Z-score high"
-msgstr ""
+msgstr "{{thresholdFactor}}×Z分数高"
 
 msgid "Data"
 msgstr "数据"
@@ -768,7 +768,7 @@ msgid "and {{amount}} more..."
 msgstr "还有{{amount}}个..."
 
 msgid "Linear Regression"
-msgstr ""
+msgstr "线性回归"
 
 msgid "Target"
 msgstr "目标"
