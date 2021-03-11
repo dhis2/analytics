@@ -1,3 +1,10 @@
+## [16.0.15](https://github.com/dhis2/analytics/compare/v16.0.14...v16.0.15) (2021-03-11)
+
+
+### Bug Fixes
+
+* missed one locale import ([#871](https://github.com/dhis2/analytics/issues/871)) ([31774ea](https://github.com/dhis2/analytics/commit/31774ea4d27d91e4fb007fab0eb4985069899972))
+
 ## [16.0.14](https://github.com/dhis2/analytics/compare/v16.0.13...v16.0.14) (2021-03-11)
 
 
