@@ -1,4 +1,4 @@
-import i18n from '@dhis2/d2-i18n'
+import i18n from '../../../locales/index.js'
 
 export const DAYS = 'Days'
 export const WEEKS = 'Weeks'

@@ -1,4 +1,4 @@
-import i18n from '@dhis2/d2-i18n'
+import i18n from '../locales/index.js'
 import BarIcon from '../assets/BarIcon'
 import StackedBarIcon from '../assets/StackedBarIcon'
 import ColumnIcon from '../assets/ColumnIcon'

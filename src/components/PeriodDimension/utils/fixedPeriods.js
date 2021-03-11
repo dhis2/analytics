@@ -1,4 +1,4 @@
-import i18n from '@dhis2/d2-i18n'
+import i18n from '../../../locales/index.js'
 // generate periods config object: { boolean offset, boolean filterFuturePeriods, boolean reversePeriods }
 
 export const DAILY = 'DAILY'
