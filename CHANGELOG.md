@@ -1,3 +1,106 @@
+## [16.0.12](https://github.com/dhis2/analytics/compare/v16.0.11...v16.0.12) (2021-03-11)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([e92e23b](https://github.com/dhis2/analytics/commit/e92e23b091b11e5088803f291468018214408be8))
+
+## [16.0.11](https://github.com/dhis2/analytics/compare/v16.0.10...v16.0.11) (2021-03-09)
+
+
+### Bug Fixes
+
+* xmax and ymax ([#864](https://github.com/dhis2/analytics/issues/864)) ([bf54a20](https://github.com/dhis2/analytics/commit/bf54a2004416db08a8bbe8a9f321d2b4aefb86dd))
+
+## [16.0.10](https://github.com/dhis2/analytics/compare/v16.0.9...v16.0.10) (2021-03-09)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([9a87fa0](https://github.com/dhis2/analytics/commit/9a87fa04d1468b4fbf2c10f5e1a3a9af048b48db))
+
+## [16.0.9](https://github.com/dhis2/analytics/compare/v16.0.8...v16.0.9) (2021-03-09)
+
+
+### Bug Fixes
+
+* min/max axis config issue ([#862](https://github.com/dhis2/analytics/issues/862)) ([10b467f](https://github.com/dhis2/analytics/commit/10b467fc27783949b5847d6ba6a0f398af85b928))
+
+## [16.0.8](https://github.com/dhis2/analytics/compare/v16.0.7...v16.0.8) (2021-03-08)
+
+
+### Bug Fixes
+
+* handle threshold factor 0 ([#860](https://github.com/dhis2/analytics/issues/860)) ([3f2612d](https://github.com/dhis2/analytics/commit/3f2612db3a140f4762ad1e898f327569f7d9f4e6))
+
+## [16.0.7](https://github.com/dhis2/analytics/compare/v16.0.6...v16.0.7) (2021-03-08)
+
+
+### Bug Fixes
+
+* axis min/max values ([#859](https://github.com/dhis2/analytics/issues/859)) ([28c6f5c](https://github.com/dhis2/analytics/commit/28c6f5cdc179272a0220f6623152118e329e4f2f))
+
+## [16.0.6](https://github.com/dhis2/analytics/compare/v16.0.5...v16.0.6) (2021-03-05)
+
+
+### Bug Fixes
+
+* bump @dhis2/ui from 6.5.0 to 6.5.1 ([#854](https://github.com/dhis2/analytics/issues/854)) ([f5b85ce](https://github.com/dhis2/analytics/commit/f5b85ce16f71b305af077744c9c50224efcccb1e))
+
+## [16.0.5](https://github.com/dhis2/analytics/compare/v16.0.4...v16.0.5) (2021-03-05)
+
+
+### Bug Fixes
+
+* check number of points ([#857](https://github.com/dhis2/analytics/issues/857)) ([bff8e0a](https://github.com/dhis2/analytics/commit/bff8e0af587c2822ce25bb867fe2e6d856c81df3))
+
+## [16.0.4](https://github.com/dhis2/analytics/compare/v16.0.3...v16.0.4) (2021-03-05)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([502407a](https://github.com/dhis2/analytics/commit/502407a7dc4b86651f72d52454bdedc2845b2d73))
+
+## [16.0.3](https://github.com/dhis2/analytics/compare/v16.0.2...v16.0.3) (2021-03-04)
+
+
+### Bug Fixes
+
+* use y-residuals instead of xy-ratio for normalization (DHIS2-10261) ([#845](https://github.com/dhis2/analytics/issues/845)) ([653823b](https://github.com/dhis2/analytics/commit/653823b3e8b5dcab49c3144c7197172fde65adeb))
+
+## [16.0.2](https://github.com/dhis2/analytics/compare/v16.0.1...v16.0.2) (2021-03-04)
+
+
+### Bug Fixes
+
+* bump d2-ui dependencies ([#852](https://github.com/dhis2/analytics/issues/852)) ([da0c0f2](https://github.com/dhis2/analytics/commit/da0c0f275bec4cd0491fa75d7f1f582d5b775a7e))
+
+## [16.0.1](https://github.com/dhis2/analytics/compare/v16.0.0...v16.0.1) (2021-03-04)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([dd896e2](https://github.com/dhis2/analytics/commit/dd896e2b33b1febe1788c353b806e64cda53fd6b))
+
+# [16.0.0](https://github.com/dhis2/analytics/compare/v15.1.5...v16.0.0) (2021-03-03)
+
+
+### Bug Fixes
+
+* dynamic dimension use displayNameProp ([#841](https://github.com/dhis2/analytics/issues/841)) ([f1be837](https://github.com/dhis2/analytics/commit/f1be837b43bbfd66f9cb1e029da4097e638c01b7))
+
+
+### BREAKING CHANGES
+
+* DynamicDimension requires displayNameProp
+
+## [15.1.5](https://github.com/dhis2/analytics/compare/v15.1.4...v15.1.5) (2021-03-03)
+
+
+### Bug Fixes
+
+* correct texts for outlier strings ([#843](https://github.com/dhis2/analytics/issues/843)) ([96f9f17](https://github.com/dhis2/analytics/commit/96f9f17109d2f4116ad69daef6e8d18eaacd8fb9))
+
 ## [15.1.4](https://github.com/dhis2/analytics/compare/v15.1.3...v15.1.4) (2021-03-01)
 
 

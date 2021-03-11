@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-02-25T08:47:22.024Z\n"
+"POT-Creation-Date: 2021-03-09T11:13:51.855Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: easylin <lin_xd@126.com>, 2021\n"
 "Language-Team: Chinese (https://www.transifex.com/hisp-uio/teams/100509/zh/)\n"
@@ -624,6 +624,30 @@ msgstr "{{allDynamicOuNames}} 等级在 {{staticOuNames}}"
 msgid "{{allDynamicOuNames}} groups in {{staticOuNames}}"
 msgstr "{{allDynamicOuNames}} 组在 {{staticOuNames}}"
 
+msgid "{{percentage}}% of total x values"
+msgstr "占总x值的{{percentage}}％"
+
+msgid "{{percentage}}% of total y values"
+msgstr "占总y值的{{percentage}}％"
+
+msgid "{{thresholdFactor}} × IQR Q1"
+msgstr "{{thresholdFactor}}×IQR Q1"
+
+msgid "{{thresholdFactor}} × IQR Q3"
+msgstr "{{thresholdFactor}}×IQR Q3"
+
+msgid "{{thresholdFactor}} × Modified Z-score low"
+msgstr "{{thresholdFactor}}×修正的Z分数低值"
+
+msgid "{{thresholdFactor}} × Modified Z-score high"
+msgstr "{{thresholdFactor}}×修改后的Z分数高值"
+
+msgid "{{thresholdFactor}} × Z-score low"
+msgstr "{{thresholdFactor}}×Z分数低"
+
+msgid "{{thresholdFactor}} × Z-score high"
+msgstr "{{thresholdFactor}}×Z分数高"
+
 msgid "Data"
 msgstr "数据"
 
@@ -742,6 +766,9 @@ msgstr "这个系列没有图例"
 
 msgid "and {{amount}} more..."
 msgstr "还有{{amount}}个..."
+
+msgid "Linear Regression"
+msgstr "线性回归"
 
 msgid "Target"
 msgstr "目标"

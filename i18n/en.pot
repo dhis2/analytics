@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2021-02-26T20:40:26.365Z\n"
-"PO-Revision-Date: 2021-02-26T20:40:26.365Z\n"
+"POT-Creation-Date: 2021-03-09T11:13:51.855Z\n"
+"PO-Revision-Date: 2021-03-09T11:13:51.855Z\n"
 
 msgid "Data Type"
 msgstr ""
@@ -614,28 +614,28 @@ msgstr ""
 msgid "{{allDynamicOuNames}} groups in {{staticOuNames}}"
 msgstr ""
 
-msgid "{{percentage}}% of Total X Values"
+msgid "{{percentage}}% of total x values"
 msgstr ""
 
-msgid "{{percentage}}% of Total Y Values"
+msgid "{{percentage}}% of total y values"
 msgstr ""
 
-msgid "{{thresholdFactor}} x IQR Q1"
+msgid "{{thresholdFactor}} × IQR Q1"
 msgstr ""
 
-msgid "{{thresholdFactor}} x IQR Q3"
+msgid "{{thresholdFactor}} × IQR Q3"
 msgstr ""
 
-msgid "{{thresholdFactor}} x Modified Z-score Low"
+msgid "{{thresholdFactor}} × Modified Z-score low"
 msgstr ""
 
-msgid "{{thresholdFactor}} x Modified Z-score High"
+msgid "{{thresholdFactor}} × Modified Z-score high"
 msgstr ""
 
-msgid "{{thresholdFactor}} x Z-score Low"
+msgid "{{thresholdFactor}} × Z-score low"
 msgstr ""
 
-msgid "{{thresholdFactor}} x Z-score High"
+msgid "{{thresholdFactor}} × Z-score high"
 msgstr ""
 
 msgid "Data"
@@ -753,6 +753,9 @@ msgid "No legend for this series"
 msgstr ""
 
 msgid "and {{amount}} more..."
+msgstr ""
+
+msgid "Linear Regression"
 msgstr ""
 
 msgid "Target"

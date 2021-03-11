@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-02-25T08:47:22.024Z\n"
+"POT-Creation-Date: 2021-03-09T11:13:51.855Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: trendspotter, 2021\n"
 "Language-Team: Czech (https://www.transifex.com/hisp-uio/teams/100509/cs/)\n"
@@ -621,6 +621,30 @@ msgstr "úrovně {{allDynamicOuNames}} v {{staticOuNames}}"
 msgid "{{allDynamicOuNames}} groups in {{staticOuNames}}"
 msgstr "Skupiny {{allDynamicOuNames}} v {{staticOuNames}}"
 
+msgid "{{percentage}}% of total x values"
+msgstr "{{percentage}}% z celkových hodnot x"
+
+msgid "{{percentage}}% of total y values"
+msgstr "{{percentage}}% z celkových hodnot y"
+
+msgid "{{thresholdFactor}} × IQR Q1"
+msgstr "{{thresholdFactor}} × IQR Q1"
+
+msgid "{{thresholdFactor}} × IQR Q3"
+msgstr "{{thresholdFactor}} × IQR Q3"
+
+msgid "{{thresholdFactor}} × Modified Z-score low"
+msgstr "{{thresholdFactor}} × Upravené nízké Z-skóre"
+
+msgid "{{thresholdFactor}} × Modified Z-score high"
+msgstr "{{thresholdFactor}} × Upravené vysoké Z-skóre"
+
+msgid "{{thresholdFactor}} × Z-score low"
+msgstr "{{thresholdFactor}} × nízké Z-skóre"
+
+msgid "{{thresholdFactor}} × Z-score high"
+msgstr "{{thresholdFactor}} × Z-skóre vysoké"
+
 msgid "Data"
 msgstr "Data"
 
@@ -759,6 +783,9 @@ msgstr "Pro tuto sérii není legenda"
 
 msgid "and {{amount}} more..."
 msgstr "a {{amount}} další ..."
+
+msgid "Linear Regression"
+msgstr "Lineární regrese"
 
 msgid "Target"
 msgstr "Cíl"

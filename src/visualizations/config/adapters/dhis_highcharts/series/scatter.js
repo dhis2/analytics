@@ -1,3 +1,5 @@
+import i18n from '@dhis2/d2-i18n'
+
 const DEFAULT_COLOR = '#a8bf24'
 const OUTLIER_COLOR = 'red'
 const POINT_MARKER_SYMBOL = 'circle'
@@ -17,7 +19,7 @@ export default extraOptions => {
                 marker: {
                     symbol: POINT_MARKER_SYMBOL,
                     fillColor: DEFAULT_COLOR,
-                    lineColor: DEFAULT_COLOR,
+                    lineColor: 'rgb(0,0,0,0.5)',
                     radius: 4,
                 },
                 color: DEFAULT_COLOR,
@@ -41,9 +43,8 @@ export default extraOptions => {
             series.push({
                 data: obj.line,
                 name: obj.name,
-                title: obj.name,
                 type: 'line',
-                color: '#444',
+                color: '#789',
                 marker: { radius: 0 },
                 tooltip: {
                     pointFormat: '{series.name}',
@@ -51,6 +52,21 @@ export default extraOptions => {
                 },
             })
         })
+
+        // regression
+
+        helper.vars.normalizationHelper?.regression &&
+            series.push({
+                data: helper.vars.normalizationHelper.regression.points,
+                name: i18n.t('Linear Regression'),
+                type: 'line',
+                color: '#000',
+                marker: { radius: 0 },
+                tooltip: {
+                    pointFormat: '{series.name}',
+                    headerFormat: '',
+                },
+            })
     } else {
         series.push({
             data: extraOptions.scatterPoints,

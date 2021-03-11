@@ -4,8 +4,9 @@ import isNumeric from 'd2-utilizr/lib/isNumeric'
 import { getZScoreHelper, STANDARD_Z_SCORE } from './zScore'
 import { getModZScoreHelper, MODIFIED_Z_SCORE } from './modZScore'
 import { getIQRHelper, IQR } from './iqr'
-import { normalizerMap, XY_RATIO } from './normalization'
+import { getNormalizationHelper, Y_RESIDUALS_LINEAR } from './normalization'
 import { getXYStats } from './xyStats'
+import isNumber from 'd2-utilizr/lib/isNumber'
 
 export const PROP_ENABLED = 'enabled'
 export const PROP_THRESHOLD_FACTOR = 'thresholdFactor'
@@ -16,30 +17,19 @@ export const PROP_EXTREME_LINES_VALUE = 'value'
 
 export const DEFAULT_ENABLED = false
 export const DEFAULT_THRESHOLD_FACTOR = 1.5
-export const DEFAULT_NORMALIZATION_METHOD = XY_RATIO
+export const DEFAULT_NORMALIZATION_METHOD = Y_RESIDUALS_LINEAR
 export const DEFAULT_OUTLIER_METHOD = IQR
 export const DEFAULT_EXTREME_LINES_VALUE = 1
 
 export const defaultConfig = {
     [PROP_ENABLED]: DEFAULT_ENABLED,
     [PROP_THRESHOLD_FACTOR]: DEFAULT_THRESHOLD_FACTOR,
-    [PROP_NORMALIZATION_METHOD]: XY_RATIO,
-    [PROP_OUTLIER_METHOD]: IQR,
+    [PROP_NORMALIZATION_METHOD]: DEFAULT_NORMALIZATION_METHOD,
+    [PROP_OUTLIER_METHOD]: DEFAULT_OUTLIER_METHOD,
     [PROP_EXTREME_LINES]: {
         [PROP_ENABLED]: DEFAULT_ENABLED,
         [PROP_EXTREME_LINES_VALUE]: DEFAULT_EXTREME_LINES_VALUE,
     },
-}
-
-const getDataWithNormalization = (data, normalizationMethod) => {
-    const normalizer = normalizerMap[normalizationMethod]
-
-    return data
-        .map(point => ({
-            point,
-            normalized: normalizer(point),
-        }))
-        .sort((a, b) => (a.normalized < b.normalized ? -1 : 1))
 }
 
 const getExtremeLines = (percentage, xyStats) => {
@@ -53,7 +43,7 @@ const getExtremeLines = (percentage, xyStats) => {
     const yExtremeValue = xyStats.ySum * (percentage / 100)
 
     lines.push({
-        name: i18n.t('{{percentage}}% of Total X Values', {
+        name: i18n.t('{{percentage}}% of total x values', {
             percentage,
         }),
         value: xExtremeValue,
@@ -61,7 +51,7 @@ const getExtremeLines = (percentage, xyStats) => {
     })
 
     lines.push({
-        name: i18n.t('{{percentage}}% of Total Y Values', {
+        name: i18n.t('{{percentage}}% of total y values', {
             percentage,
         }),
         value: yExtremeValue,
@@ -70,7 +60,30 @@ const getExtremeLines = (percentage, xyStats) => {
     return lines
 }
 
+const getMinMaxValue = (outlierHelper, isVertical, isMax) => {
+    const prop = (isVertical ? 'y' : 'x') + (isMax ? 'Max' : 'Min')
+    const extremeValue =
+        outlierHelper.extremeLines &&
+        outlierHelper.extremeLines[isVertical ? 1 : 0].value
+    const extremeFactor =
+        isNumber(extremeValue) && isMax
+            ? extremeValue + Math.abs(extremeValue) * 0.1
+            : extremeValue - Math.abs(extremeValue) * 0.1
+    return [
+        ...outlierHelper.thresholds.map(
+            t => getXYStats([t.line[0], t.line[t.line.length - 1]])[prop]
+        ),
+        extremeFactor,
+    ]
+        .filter(isNumeric)
+        .sort(isMax ? (a, b) => b - a : (a, b) => a - b)[0]
+}
+
 export const getOutlierHelper = (data, userConfig = {}) => {
+    if (data.length < 3) {
+        return null
+    }
+
     const config = {
         ...defaultConfig,
         ...userConfig,
@@ -80,7 +93,16 @@ export const getOutlierHelper = (data, userConfig = {}) => {
         },
     }
 
-    const dataWithNormalization = getDataWithNormalization(
+    if (
+        config[PROP_THRESHOLD_FACTOR] <= 0 &&
+        [STANDARD_Z_SCORE, MODIFIED_Z_SCORE].includes(
+            config[PROP_OUTLIER_METHOD]
+        )
+    ) {
+        return null
+    }
+
+    const normalizationHelper = getNormalizationHelper(
         data,
         config.normalizationMethod
     )
@@ -93,14 +115,14 @@ export const getOutlierHelper = (data, userConfig = {}) => {
 
     switch (config[PROP_OUTLIER_METHOD]) {
         case STANDARD_Z_SCORE:
-            helper = getZScoreHelper(dataWithNormalization, config, options)
+            helper = getZScoreHelper(normalizationHelper, config, options)
             break
         case MODIFIED_Z_SCORE:
-            helper = getModZScoreHelper(dataWithNormalization, config, options)
+            helper = getModZScoreHelper(normalizationHelper, config, options)
             break
         case IQR:
         default:
-            helper = getIQRHelper(dataWithNormalization, config, options)
+            helper = getIQRHelper(normalizationHelper, config, options)
     }
 
     if (
@@ -113,47 +135,22 @@ export const getOutlierHelper = (data, userConfig = {}) => {
         )
     }
 
-    const lineXMax = [
-        helper.thresholds[0].line[0][0],
-        helper.thresholds[0].line[1][0],
-        helper.thresholds[1].line[0][0],
-        helper.thresholds[1].line[1][0],
-        helper.extremeLines && helper.extremeLines[0].value * 1.1,
-    ]
-        .filter(isNumeric)
-        .sort((a, b) => b - a)[0]
+    // undefined means let highcharts decide
+    const lineXMin = getMinMaxValue(helper, false, false)
+    helper.xAxisMin =
+        lineXMin < 0 && lineXMin < options.xyStats.xMin ? lineXMin : undefined
 
-    helper.xAxisMax = lineXMax > options.xyStats.xMax ? lineXMax : undefined
+    const lineYMin = getMinMaxValue(helper, true, false)
+    helper.yAxisMin =
+        lineYMin < 0 && lineYMin < options.xyStats.yMin ? lineYMin : undefined
 
-    const lineYMax = [
-        helper.thresholds[0].line[0][1],
-        helper.thresholds[0].line[1][1],
-        helper.thresholds[1].line[0][1],
-        helper.thresholds[1].line[1][1],
-        helper.extremeLines && helper.extremeLines[1].value * 1.1,
-    ]
-        .filter(isNumeric)
-        .sort((a, b) => b - a)[0]
+    const lineXMax = getMinMaxValue(helper, false, true)
+    helper.xAxisMax =
+        lineXMax > 0 && lineXMax > options.xyStats.xMax ? lineXMax : undefined
 
-    helper.yAxisMax = lineYMax > options.xyStats.yMax ? lineYMax : undefined
-
-    const lineXMin = [
-        helper.thresholds[0].line[0][0],
-        helper.thresholds[0].line[1][0],
-        helper.thresholds[1].line[0][0],
-        helper.thresholds[1].line[1][0],
-    ].sort((a, b) => a - b)[0]
-
-    helper.xAxisMin = lineXMin < options.xyStats.xMin ? lineXMin : undefined
-
-    const lineYMin = [
-        helper.thresholds[0].line[0][1],
-        helper.thresholds[0].line[1][1],
-        helper.thresholds[1].line[0][1],
-        helper.thresholds[1].line[1][1],
-    ].sort((a, b) => a - b)[0]
-
-    helper.yAxisMin = lineYMin < options.xyStats.yMin ? lineYMin : undefined
+    const lineYMax = getMinMaxValue(helper, true, true)
+    helper.yAxisMax =
+        lineYMax > 0 && lineYMax > options.xyStats.yMax ? lineYMax : undefined
 
     return helper
 }
