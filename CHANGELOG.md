@@ -1,3 +1,11 @@
+## [2.4.37](https://github.com/dhis2/analytics/compare/v2.4.36...v2.4.37) (2021-03-23)
+
+
+### Bug Fixes
+
+* backport DHIS2-9829 ([#873](https://github.com/dhis2/analytics/issues/873)) ([549878e](https://github.com/dhis2/analytics/commit/549878edba8788b515380e96713f915cfea03bef))
+* **translations:** sync translations from transifex (2.4.x) ([4038f7c](https://github.com/dhis2/analytics/commit/4038f7caecc8260e9940a81e48766bb4f6747453))
+
 ## [2.4.36](https://github.com/dhis2/analytics/compare/v2.4.35...v2.4.36) (2021-02-01)
 
 
