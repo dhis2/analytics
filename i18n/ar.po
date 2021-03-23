@@ -105,10 +105,10 @@ msgid "December"
 msgstr "ديسمبر"
 
 msgid "Week {{weekNumber}}"
-msgstr ""
+msgstr "الإسبوع {{weekNumber}}"
 
 msgid "Bi-Week {{biWeekNumber}}"
-msgstr ""
+msgstr "ثنائي الإسبوع {{biWeekNumber}}"
 
 msgid "Daily"
 msgstr "يومي"
@@ -120,16 +120,16 @@ msgid "Bi-weekly"
 msgstr "كل اسبوعين"
 
 msgid "Weekly (Start Wednesday)"
-msgstr "أسبوعياً (يبدأ الأربعاء)"
+msgstr "اسبوعياً (يبدأ الأربعاء)"
 
 msgid "Weekly (Start Thursday)"
-msgstr "أسبوعياً (يبدأ الخميس)"
+msgstr "اسبوعياً (يبدأ الخميس)"
 
 msgid "Weekly (Start Saturday)"
-msgstr "أسبوعياً (يبدأ السبت)"
+msgstr "اسبوعياً (يبدأ السبت)"
 
 msgid "Weekly (Start Sunday)"
-msgstr "أسبوعياً (يبدأ الأحد)"
+msgstr "اسبوعياً (يبدأ الأحد)"
 
 msgid "Monthly"
 msgstr "شهري"
@@ -144,22 +144,22 @@ msgid "Six-monthly"
 msgstr "كل ستة أشهر"
 
 msgid "Six-monthly April"
-msgstr "نصف سنة (فترة من ستة أشهر) نيسان"
+msgstr "نصف سنوي، كل ستة أشهر، ابريل"
 
 msgid "Yearly"
 msgstr "سنوي"
 
 msgid "Financial year (Start November)"
-msgstr ""
+msgstr "السنة المالية (تبدأ في نوفمبر)"
 
 msgid "Financial year (Start October)"
-msgstr "السنة المالية (بداية تشرين الأول)"
+msgstr "السنة المالية (تبدأ في اكتوبر)"
 
 msgid "Financial year (Start July)"
-msgstr "مالي يوليو"
+msgstr "السنة المالية (تبدأ في يوليو)"
 
 msgid "Financial year (Start April)"
-msgstr "السنة المالية (بداية نيسان)"
+msgstr "السنة المالية (تبدأ في ابريل)"
 
 msgid "Today"
 msgstr "اليوم"
@@ -249,10 +249,10 @@ msgid "This six-month"
 msgstr "الستة أشهر الحالية"
 
 msgid "Last six-month"
-msgstr "آخر نصف السنة (فترة من ستة أشهر)"
+msgstr "آخر ستة-أشهر"
 
 msgid "Last 2 six-month"
-msgstr ""
+msgstr "آخر نصفي سنة (فترتي ستة-أشهر)"
 
 msgid "This financial year"
 msgstr "السنة المالية الحالية"
@@ -291,7 +291,7 @@ msgid "Quarters"
 msgstr "أرباع السنة"
 
 msgid "Six-months"
-msgstr "أنصاف السنة (فترات من ستة أشهر)"
+msgstr "ستة-أشهر"
 
 msgid "Financial Years"
 msgstr "السنوات المالية"
@@ -372,4 +372,4 @@ msgid "{{allDynamicOuNames}} groups in {{staticOuNames}}"
 msgstr "مجموعات {{allDynamicOuNames}} في {{staticOuNames}}"
 
 msgid "No data"
-msgstr ""
+msgstr "لا توجد بيانات"

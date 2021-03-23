@@ -1,3 +1,5 @@
+/* eslint-disable max-params, prefer-const */
+
 import arrayContains from 'd2-utilizr/lib/arrayContains'
 import { rgb } from 'd3-color'
 

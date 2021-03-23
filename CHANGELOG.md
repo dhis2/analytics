@@ -1,3 +1,161 @@
+## [2.4.36](https://github.com/dhis2/analytics/compare/v2.4.35...v2.4.36) (2021-02-01)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (2.4.x) ([a54e987](https://github.com/dhis2/analytics/commit/a54e98798ffdff834dd5f6015ff623099b1a9c22))
+
+## [2.4.35](https://github.com/dhis2/analytics/compare/v2.4.34...v2.4.35) (2021-01-18)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (2.4.x) ([1b98917](https://github.com/dhis2/analytics/commit/1b98917f9fd3cb5df17ea423537865582672768b))
+
+## [2.4.34](https://github.com/dhis2/analytics/compare/v2.4.33...v2.4.34) (2021-01-14)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (2.4.x) ([6dacc06](https://github.com/dhis2/analytics/commit/6dacc06b75de701ac392f3236801d625292cbaf0))
+
+## [2.4.33](https://github.com/dhis2/analytics/compare/v2.4.32...v2.4.33) (2021-01-13)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (2.4.x) ([d056bd3](https://github.com/dhis2/analytics/commit/d056bd3f3bf62db0c6578e3109f331332e317be7))
+
+## [2.4.32](https://github.com/dhis2/analytics/compare/v2.4.31...v2.4.32) (2020-12-24)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (2.4.x) ([8861e30](https://github.com/dhis2/analytics/commit/8861e3091cec1a84a6ca7425d9b1179bcbd77612))
+
+## [2.4.31](https://github.com/dhis2/analytics/compare/v2.4.30...v2.4.31) (2020-12-14)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (2.4.x) ([924700a](https://github.com/dhis2/analytics/commit/924700a137f7bf6e7b4a3792f9dba04b5360d73e))
+* **translations:** sync translations from transifex (2.4.x) ([d23cd98](https://github.com/dhis2/analytics/commit/d23cd98a6a07cba348e1a18b6095ba85cab1768d))
+
+## [2.4.30](https://github.com/dhis2/analytics/compare/v2.4.29...v2.4.30) (2020-11-26)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (2.4.x) ([f1b31d5](https://github.com/dhis2/analytics/commit/f1b31d5e566443e1c11eb0f55ae3b064d21cdc0e))
+* **translations:** sync translations from transifex (2.4.x) ([fb25c1b](https://github.com/dhis2/analytics/commit/fb25c1b0ef48680d42c915a88627c5905b17ac8f))
+
+## [2.4.29](https://github.com/dhis2/analytics/compare/v2.4.28...v2.4.29) (2020-11-02)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (2.4.x) ([4e2599d](https://github.com/dhis2/analytics/commit/4e2599d6e2286146a1b973500d07869f6f160200))
+* **translations:** sync translations from transifex (2.4.x) ([9f6f0f4](https://github.com/dhis2/analytics/commit/9f6f0f4ad8985d7a1d5e94fa0342fee18ccf1822))
+
+## [2.4.28](https://github.com/dhis2/analytics/compare/v2.4.27...v2.4.28) (2020-10-31)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (2.4.x) ([d8cf6d6](https://github.com/dhis2/analytics/commit/d8cf6d62f7aa258621d54526dbcc8fd859da5b79))
+
+## [2.4.27](https://github.com/dhis2/analytics/compare/v2.4.26...v2.4.27) (2020-10-30)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (2.4.x) ([ebdddaf](https://github.com/dhis2/analytics/commit/ebdddafb525a3726e5bbf05c9e4b6e2fe0bfad2a))
+
+## [2.4.26](https://github.com/dhis2/analytics/compare/v2.4.25...v2.4.26) (2020-10-29)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (2.4.x) ([4f5089c](https://github.com/dhis2/analytics/commit/4f5089cd21633271922587318aa9aaeb55d70ae6))
+
+## [2.4.25](https://github.com/dhis2/analytics/compare/v2.4.24...v2.4.25) (2020-10-27)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (2.4.x) ([ddb070e](https://github.com/dhis2/analytics/commit/ddb070e3a781744d22e2fe56c12460f25e78e8f5))
+
+## [2.4.24](https://github.com/dhis2/analytics/compare/v2.4.23...v2.4.24) (2020-10-23)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (2.4.x) ([c07a541](https://github.com/dhis2/analytics/commit/c07a5417f5e0c4eca7c1ffa023cbeecc47c9f90b))
+* **translations:** sync translations from transifex (2.4.x) ([e193516](https://github.com/dhis2/analytics/commit/e193516e47b8e950b5fd789782e6b493e2427f24))
+
+## [2.4.23](https://github.com/dhis2/analytics/compare/v2.4.22...v2.4.23) (2020-10-19)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (2.4.x) ([c8f9cb5](https://github.com/dhis2/analytics/commit/c8f9cb50dae5342c5c09f320f331d36c30ccba51))
+* **translations:** sync translations from transifex (2.4.x) ([422c1f3](https://github.com/dhis2/analytics/commit/422c1f368fe5af450fa7721a63201ad5a84eeb9b))
+
+## [2.4.22](https://github.com/dhis2/analytics/compare/v2.4.21...v2.4.22) (2020-10-08)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (2.4.x) ([6e47300](https://github.com/dhis2/analytics/commit/6e47300413eda06b889dda36797532a6907f74c3))
+
+## [2.4.21](https://github.com/dhis2/analytics/compare/v2.4.20...v2.4.21) (2020-10-07)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (2.4.x) ([edfd37a](https://github.com/dhis2/analytics/commit/edfd37ab946a618fb56875559bdab90d46a8c36b))
+
+## [2.4.20](https://github.com/dhis2/analytics/compare/v2.4.19...v2.4.20) (2020-09-24)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (2.4.x) ([5d31a1e](https://github.com/dhis2/analytics/commit/5d31a1e12615b3343e1937968761859e1b81d638))
+* **translations:** sync translations from transifex (2.4.x) ([71e9767](https://github.com/dhis2/analytics/commit/71e97674db5967b6e37d4f7891d9ea08d6edfbc3))
+
+## [2.4.19](https://github.com/dhis2/analytics/compare/v2.4.18...v2.4.19) (2020-09-21)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (2.4.x) ([a374c0d](https://github.com/dhis2/analytics/commit/a374c0d1cccee00fd512c0865786aa8e1f668920))
+* **translations:** sync translations from transifex (2.4.x) ([e5ade73](https://github.com/dhis2/analytics/commit/e5ade73a0eb94c16862017384ff1e1983243c3fa))
+
+## [2.4.18](https://github.com/dhis2/analytics/compare/v2.4.17...v2.4.18) (2020-06-14)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (2.4.x) ([4655512](https://github.com/dhis2/analytics/commit/4655512bcdd82f69af144f908c60ffc804e464f6))
+* **translations:** sync translations from transifex (2.4.x) ([17a4e3b](https://github.com/dhis2/analytics/commit/17a4e3bb9cee58f420ceb31da3099ceac855f528))
+* **translations:** sync translations from transifex (2.4.x) ([d2d4eeb](https://github.com/dhis2/analytics/commit/d2d4eeb3111312bfe09245fa81588a1c72c8ce11))
+
+## [2.4.17](https://github.com/dhis2/analytics/compare/v2.4.16...v2.4.17) (2020-06-09)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (2.4.x) ([35ba66d](https://github.com/dhis2/analytics/commit/35ba66d3f2f6d1bef4a0de29c4babbeb4e3b9d52))
+
+## [2.4.16](https://github.com/dhis2/analytics/compare/v2.4.15...v2.4.16) (2020-06-08)
+
+
+### Bug Fixes
+
+* need lint script for the build and publish ([#479](https://github.com/dhis2/analytics/issues/479)) ([a7bd51b](https://github.com/dhis2/analytics/commit/a7bd51b9b1a9e96cae1d1235a19780591a9497a0))
+* upgrade d2-ui dependencies for translations ([#477](https://github.com/dhis2/analytics/issues/477)) ([152507c](https://github.com/dhis2/analytics/commit/152507cfc3e02d916becba9194acc7d2dc10e1dc))
+* **translations:** sync translations from transifex (2.4.x) ([f796aba](https://github.com/dhis2/analytics/commit/f796abab9dde80b6bcfd02d1f359f640e44607aa))
+
 ## [2.4.5](https://github.com/dhis2/analytics/compare/v2.4.4...v2.4.5) (2019-10-10)
 
 

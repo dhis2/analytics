@@ -1,15 +1,16 @@
 # 
 # Translators:
-# phil_dhis2, 2020
 # Viktor Varland <viktor@dhis2.org>, 2020
 # Wanda <wanda@frontlineaids.org>, 2020
+# phil_dhis2, 2020
+# Ulanbek Abakirov <ulans@mail.ru>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2020-05-13T16:46:50.486Z\n"
 "PO-Revision-Date: 2020-04-29 08:10+0000\n"
-"Last-Translator: Wanda <wanda@frontlineaids.org>, 2020\n"
+"Last-Translator: Ulanbek Abakirov <ulans@mail.ru>, 2020\n"
 "Language-Team: Russian (https://www.transifex.com/hisp-uio/teams/100509/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -21,7 +22,7 @@ msgid "Data"
 msgstr "Данные"
 
 msgid "Data Type"
-msgstr ""
+msgstr "Тип данных"
 
 msgid "Totals"
 msgstr "Итоги"
@@ -30,22 +31,22 @@ msgid "Details"
 msgstr "Детали"
 
 msgid "Detail"
-msgstr ""
+msgstr "Подробнее"
 
 msgid "Search dimensions"
-msgstr ""
+msgstr "Измерения для поиска"
 
 msgid "Dimension recommended with selected data"
-msgstr ""
+msgstr "Рекомендованное измерение с выбранными данными"
 
 msgid "Search"
 msgstr "Поиск"
 
 msgid "Selected Data"
-msgstr ""
+msgstr "Избранные данные"
 
 msgid "Deselect All"
-msgstr ""
+msgstr "Отменить выбор всех"
 
 msgid "Select all"
 msgstr "Выбрать все"
@@ -105,10 +106,10 @@ msgid "December"
 msgstr "Декабрь"
 
 msgid "Week {{weekNumber}}"
-msgstr ""
+msgstr "Неделя  {{weekNumber}}"
 
 msgid "Bi-Week {{biWeekNumber}}"
-msgstr ""
+msgstr "Двухнедельный {{biWeekNumber}}"
 
 msgid "Daily"
 msgstr "Ежедневно"
@@ -120,16 +121,16 @@ msgid "Bi-weekly"
 msgstr "Каждые две недели"
 
 msgid "Weekly (Start Wednesday)"
-msgstr ""
+msgstr "Еженедельно(Начало Среда)"
 
 msgid "Weekly (Start Thursday)"
-msgstr ""
+msgstr "Еженедельно(Начало Четверг)"
 
 msgid "Weekly (Start Saturday)"
-msgstr ""
+msgstr "Еженедельно(Начало Суббота)"
 
 msgid "Weekly (Start Sunday)"
-msgstr ""
+msgstr "Еженедельно(Начало Воскресенье)"
 
 msgid "Monthly"
 msgstr "Ежемесячно"
@@ -150,16 +151,16 @@ msgid "Yearly"
 msgstr "Ежегодно"
 
 msgid "Financial year (Start November)"
-msgstr ""
+msgstr "Финансовый год (начало Ноябрь)"
 
 msgid "Financial year (Start October)"
-msgstr "Финансовый год - Октябрь"
+msgstr "Финансовый год (начало Октябрь)"
 
 msgid "Financial year (Start July)"
-msgstr "Финансовый год - Июль"
+msgstr "Финансовый год (начало Июль)"
 
 msgid "Financial year (Start April)"
-msgstr "Финансовый год - Апрель"
+msgstr "Финансовый год (начало Апрель)"
 
 msgid "Today"
 msgstr "Сегодня"
@@ -252,7 +253,7 @@ msgid "Last six-month"
 msgstr "Прошлое полугодие"
 
 msgid "Last 2 six-month"
-msgstr ""
+msgstr "Прошлые 2 полугодия"
 
 msgid "This financial year"
 msgstr "Этот финансовый год"
@@ -294,7 +295,7 @@ msgid "Six-months"
 msgstr "Полугодие"
 
 msgid "Financial Years"
-msgstr ""
+msgstr "Финансовые годы"
 
 msgid "Years"
 msgstr "Годы"
@@ -357,19 +358,19 @@ msgid "Organisation Unit"
 msgstr "Организация"
 
 msgid "{{dynamicOuNames}} and {{lastOuName}}"
-msgstr ""
+msgstr "{{dynamicOuNames}} и {{lastOuName}}"
 
 msgid "{{allDynamicOuNames}} levels"
-msgstr ""
+msgstr "уровень {{allDynamicOuNames}}"
 
 msgid "{{allDynamicOuNames}} groups"
-msgstr ""
+msgstr "Группы {{allDynamicOuNames}}"
 
 msgid "{{allDynamicOuNames}} levels in {{staticOuNames}}"
-msgstr ""
+msgstr "Уровни {{allDynamicOuNames}} в {{staticOuNames}}"
 
 msgid "{{allDynamicOuNames}} groups in {{staticOuNames}}"
-msgstr ""
+msgstr "Группы {{allDynamicOuNames}} в {{staticOuNames}}"
 
 msgid "No data"
-msgstr ""
+msgstr "Нет данных"

@@ -1,3 +1,5 @@
+/* eslint-disable max-params */
+
 import getSingleValue from './singleValue'
 import { VISUALIZATION_TYPE_SINGLE_VALUE } from '../../../config/adapters/dhis_dhis/type'
 

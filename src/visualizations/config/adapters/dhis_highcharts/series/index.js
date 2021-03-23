@@ -1,3 +1,5 @@
+/* eslint-disable max-params */
+
 import getCumulativeData from './../getCumulativeData'
 import getPie from './pie'
 import getGauge from './gauge'

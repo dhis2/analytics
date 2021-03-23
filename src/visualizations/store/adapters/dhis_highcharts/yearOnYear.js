@@ -1,3 +1,5 @@
+/* eslint-disable max-params */
+
 export default function(acc, seriesIds, categoryIds, idValueMap, metaData) {
     const serieData = []
     let serieLabel

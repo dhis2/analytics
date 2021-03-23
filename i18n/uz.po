@@ -1,0 +1,373 @@
+# 
+# Translators:
+# Ibatov <ibatovk@who.int>, 2020
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: i18next-conv\n"
+"POT-Creation-Date: 2020-05-13T16:46:50.486Z\n"
+"PO-Revision-Date: 2020-04-29 08:10+0000\n"
+"Last-Translator: Ibatov <ibatovk@who.int>, 2020\n"
+"Language-Team: Uzbek (Cyrillic) (https://www.transifex.com/hisp-uio/teams/100509/uz@Cyrl/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: uz@Cyrl\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "Data"
+msgstr "Маълумот"
+
+msgid "Data Type"
+msgstr "Маълумот тури"
+
+msgid "Totals"
+msgstr "Жами"
+
+msgid "Details"
+msgstr "Тафсилотлари"
+
+msgid "Detail"
+msgstr "Тафсилот"
+
+msgid "Search dimensions"
+msgstr "Қидирув созламалари"
+
+msgid "Dimension recommended with selected data"
+msgstr "Танланган маълумотлар учун созламалар тавсия этилади"
+
+msgid "Search"
+msgstr "Излаш"
+
+msgid "Selected Data"
+msgstr "Танланган маълумот"
+
+msgid "Deselect All"
+msgstr "Барчасини танланганлигини бекор қилиш"
+
+msgid "Select all"
+msgstr "Барчасини танлаш"
+
+msgid "Organisation units"
+msgstr "Ташкилий бўлимлар"
+
+msgid "Period"
+msgstr "Давр"
+
+msgid "Year"
+msgstr "Йил"
+
+msgid "Relative periods"
+msgstr "Нисбий даврлар"
+
+msgid "Fixed periods"
+msgstr "Белигаланган даврлар"
+
+msgid "Period type"
+msgstr "Давр тури"
+
+msgid "January"
+msgstr "Январь"
+
+msgid "February"
+msgstr "Февраль"
+
+msgid "March"
+msgstr "Март"
+
+msgid "April"
+msgstr "Апрель"
+
+msgid "May"
+msgstr "Май"
+
+msgid "June"
+msgstr "Июнь"
+
+msgid "July"
+msgstr "Июль"
+
+msgid "August"
+msgstr "Август"
+
+msgid "September"
+msgstr "Сентябрь"
+
+msgid "October"
+msgstr "Октябрь"
+
+msgid "November"
+msgstr "Ноябрь"
+
+msgid "December"
+msgstr "Декабрь"
+
+msgid "Week {{weekNumber}}"
+msgstr "Ҳафта {{ҳафтаРақам}}"
+
+msgid "Bi-Week {{biWeekNumber}}"
+msgstr "Жуфт ҳафта {{жуфтҲафтаРақам}}"
+
+msgid "Daily"
+msgstr "Кунлик"
+
+msgid "Weekly"
+msgstr "Ҳафталик"
+
+msgid "Bi-weekly"
+msgstr "Жуфт ҳафта"
+
+msgid "Weekly (Start Wednesday)"
+msgstr "Ҳафталик (Бошланиши Чоршанба)"
+
+msgid "Weekly (Start Thursday)"
+msgstr "Ҳафталик (Бошланиши Пайшанба)"
+
+msgid "Weekly (Start Saturday)"
+msgstr "Ҳафталик (Бошланиши Шанба)"
+
+msgid "Weekly (Start Sunday)"
+msgstr "Ҳафталик (Бошланиши Якшанба)"
+
+msgid "Monthly"
+msgstr "Ойлик"
+
+msgid "Bi-monthly"
+msgstr "Жуфт ойлик"
+
+msgid "Quarterly"
+msgstr "Ҳар квартал"
+
+msgid "Six-monthly"
+msgstr "Ярим йиллик"
+
+msgid "Six-monthly April"
+msgstr "Ярим йиллик Апрель"
+
+msgid "Yearly"
+msgstr "Йиллик"
+
+msgid "Financial year (Start November)"
+msgstr "Молиявий йил (Бошланиши Ноябрь)"
+
+msgid "Financial year (Start October)"
+msgstr "Молиявий йил (бошланиши Октябрь)"
+
+msgid "Financial year (Start July)"
+msgstr "Молиявий йил (бошланиши Июль)"
+
+msgid "Financial year (Start April)"
+msgstr "Молиявий йил (бошланиши Апрель)"
+
+msgid "Today"
+msgstr "Бугун"
+
+msgid "Yesterday"
+msgstr "Кеча"
+
+msgid "Last 3 days"
+msgstr "Охирги 3 кун"
+
+msgid "Last 7 days"
+msgstr "Охирги 7 кун"
+
+msgid "Last 14 days"
+msgstr "Охирги 14 кун"
+
+msgid "This week"
+msgstr "Ушбу ҳафта"
+
+msgid "Last week"
+msgstr "Охирги ҳафта"
+
+msgid "Last 4 weeks"
+msgstr "Охирги 4 ҳафта"
+
+msgid "Last 12 weeks"
+msgstr "Охирги 12 ҳафта"
+
+msgid "Last 52 weeks"
+msgstr "Охирги 52 ҳафта"
+
+msgid "Weeks this year"
+msgstr "Ҳафталар айни йилда "
+
+msgid "This bi-week"
+msgstr "Ушбу жуфт ҳафта"
+
+msgid "Last bi-week"
+msgstr "Охирги жуфт ҳафта"
+
+msgid "Last 4 bi-weeks"
+msgstr "Охирги 4 жуфт ҳафталар"
+
+msgid "This month"
+msgstr "Ушбу ой"
+
+msgid "Last month"
+msgstr "Охирги ой"
+
+msgid "Last 3 months"
+msgstr "Охирги 3 ой"
+
+msgid "Last 6 months"
+msgstr "Охирги 6 ой"
+
+msgid "Last 12 months"
+msgstr "Охирги 12 ой"
+
+msgid "Months this year"
+msgstr "Ойлар айни йилда"
+
+msgid "This bi-month"
+msgstr "Ушбу жуфт ой"
+
+msgid "Last bi-month"
+msgstr "Охирги 2 ой"
+
+msgid "Last 6 bi-months"
+msgstr "Охирги 6 жуфт ойлар"
+
+msgid "Bi-months this year"
+msgstr "Айни йилдаги жуфт ойлар"
+
+msgid "This quarter"
+msgstr "Ушбу квартал"
+
+msgid "Last quarter"
+msgstr "Охирги квартал"
+
+msgid "Last 4 quarters"
+msgstr "Охирги 4 квартал"
+
+msgid "Quarters this year"
+msgstr "Ушбу йилдаги кварталлар"
+
+msgid "This six-month"
+msgstr "Ушбу ярим йиллик"
+
+msgid "Last six-month"
+msgstr "Охирги 6 ой"
+
+msgid "Last 2 six-month"
+msgstr "Охирги жуфт ярим йиллик"
+
+msgid "This financial year"
+msgstr "Ушбу молиявий йил"
+
+msgid "Last financial year"
+msgstr "Охирги молиявий йил"
+
+msgid "Last 5 financial years"
+msgstr "Охирги 5 молиявий йиллар"
+
+msgid "This year"
+msgstr "Ушбу йил"
+
+msgid "Last year"
+msgstr "Охирги йил"
+
+msgid "Last 5 years"
+msgstr "Охирги 5 йил"
+
+msgid "Days"
+msgstr "Кунлар"
+
+msgid "Weeks"
+msgstr "Ҳафталар"
+
+msgid "Bi-weeks"
+msgstr "Жуфт ҳафталар"
+
+msgid "Months"
+msgstr "Ойлар"
+
+msgid "Bi-months"
+msgstr "2 ой"
+
+msgid "Quarters"
+msgstr "Квартал"
+
+msgid "Six-months"
+msgstr "Ярим йиллик"
+
+msgid "Financial Years"
+msgstr "Молиявий йиллар"
+
+msgid "Years"
+msgstr "Йиллар"
+
+msgid "Reporting rate"
+msgstr "Ҳисоботдаги ставка"
+
+msgid "Reporting rate on time"
+msgstr "Ҳисоботдаги ставка ўз вақтида"
+
+msgid "Actual reports"
+msgstr "Ҳақиқий ҳисоботлар"
+
+msgid "Actual reports on time"
+msgstr "Ҳақиқий ҳисоботлар ўз вақтида"
+
+msgid "Expected reports"
+msgstr "Кутилаётган ҳисоботлар"
+
+msgid "Program"
+msgstr "Дастур"
+
+msgid "Indicators"
+msgstr "Индикаторлар"
+
+msgid "Select indicator group"
+msgstr "Индикатор гуруҳини танлаш"
+
+msgid "[ All groups ]"
+msgstr "[Барча гуруҳлар]"
+
+msgid "Data elements"
+msgstr "Маълумот элементлари"
+
+msgid "Select data element group"
+msgstr "Маълумотлар элементи гуруҳини танлаш"
+
+msgid "[ All data elements ]"
+msgstr "[Маълумотлар барча  элементлари]"
+
+msgid "Data sets"
+msgstr "Маълумотлар тўплами"
+
+msgid "Select data sets"
+msgstr "Маълумотлар тўпламларини танланг"
+
+msgid "[ All metrics ]"
+msgstr "[Барча ўлчовлар]"
+
+msgid "Event data items"
+msgstr "Ҳодисалар ҳақида маълумот элементлари"
+
+msgid "Select a program"
+msgstr "Дастурни танланг"
+
+msgid "Program indicators"
+msgstr "Дастур кўрсатгичлари"
+
+msgid "Organisation Unit"
+msgstr "Ташкилий бўлим"
+
+msgid "{{dynamicOuNames}} and {{lastOuName}}"
+msgstr "{{dynamicOuNames}} ва {{lastOuName}}"
+
+msgid "{{allDynamicOuNames}} levels"
+msgstr "{{allDynamicOuNames}} поғоналар"
+
+msgid "{{allDynamicOuNames}} groups"
+msgstr "{{allDynamicOuNames}} гуруҳлар"
+
+msgid "{{allDynamicOuNames}} levels in {{staticOuNames}}"
+msgstr "{{allDynamicOuNames}} поғоналар {{staticOuNames}} ичида"
+
+msgid "{{allDynamicOuNames}} groups in {{staticOuNames}}"
+msgstr "{{allDynamicOuNames}} гуруҳлар {{staticOuNames}} ичида"
+
+msgid "No data"
+msgstr "Маълумот йўқ"

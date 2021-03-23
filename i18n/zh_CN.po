@@ -1,14 +1,14 @@
 # 
 # Translators:
-# easylin <lin_xd@126.com>, 2020
 # 晓东 林 <13981924470@126.com>, 2020
+# easylin <lin_xd@126.com>, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2020-05-13T16:46:50.486Z\n"
 "PO-Revision-Date: 2020-04-29 08:10+0000\n"
-"Last-Translator: 晓东 林 <13981924470@126.com>, 2020\n"
+"Last-Translator: easylin <lin_xd@126.com>, 2021\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/hisp-uio/teams/100509/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -116,19 +116,19 @@ msgid "Weekly"
 msgstr "每周"
 
 msgid "Bi-weekly"
-msgstr ""
+msgstr "双周"
 
 msgid "Weekly (Start Wednesday)"
-msgstr ""
+msgstr "每周（始于周二）"
 
 msgid "Weekly (Start Thursday)"
-msgstr ""
+msgstr "每周（始于周四）"
 
 msgid "Weekly (Start Saturday)"
-msgstr ""
+msgstr "每周（始于周六）"
 
 msgid "Weekly (Start Sunday)"
-msgstr ""
+msgstr "每周（始于周日）"
 
 msgid "Monthly"
 msgstr "每月"
@@ -143,7 +143,7 @@ msgid "Six-monthly"
 msgstr "六个月"
 
 msgid "Six-monthly April"
-msgstr ""
+msgstr "半年的四月"
 
 msgid "Yearly"
 msgstr "每年"
@@ -152,13 +152,13 @@ msgid "Financial year (Start November)"
 msgstr ""
 
 msgid "Financial year (Start October)"
-msgstr ""
+msgstr "财务十月"
 
 msgid "Financial year (Start July)"
-msgstr ""
+msgstr "财务七月"
 
 msgid "Financial year (Start April)"
-msgstr ""
+msgstr "财务四月"
 
 msgid "Today"
 msgstr "今天"
@@ -194,13 +194,13 @@ msgid "Weeks this year"
 msgstr "今年的星期"
 
 msgid "This bi-week"
-msgstr ""
+msgstr "这两周"
 
 msgid "Last bi-week"
-msgstr ""
+msgstr "最近双周"
 
 msgid "Last 4 bi-weeks"
-msgstr ""
+msgstr "最近四个双周"
 
 msgid "This month"
 msgstr "本月"
@@ -224,13 +224,13 @@ msgid "This bi-month"
 msgstr "本两月"
 
 msgid "Last bi-month"
-msgstr ""
+msgstr "最近双月"
 
 msgid "Last 6 bi-months"
-msgstr ""
+msgstr "最近六个双月"
 
 msgid "Bi-months this year"
-msgstr ""
+msgstr "今年的双月"
 
 msgid "This quarter"
 msgstr "本季"
@@ -344,13 +344,13 @@ msgid "[ All metrics ]"
 msgstr ""
 
 msgid "Event data items"
-msgstr ""
+msgstr "事件数据项"
 
 msgid "Select a program"
 msgstr ""
 
 msgid "Program indicators"
-msgstr ""
+msgstr "项目指标"
 
 msgid "Organisation Unit"
 msgstr "组织机构"
@@ -371,4 +371,4 @@ msgid "{{allDynamicOuNames}} groups in {{staticOuNames}}"
 msgstr ""
 
 msgid "No data"
-msgstr ""
+msgstr "无数据"

@@ -1,3 +1,5 @@
+/* eslint-disable max-params, prefer-const */
+
 import React, { Component, Fragment } from 'react'
 import PropTypes from 'prop-types'
 import i18n from '@dhis2/d2-i18n'

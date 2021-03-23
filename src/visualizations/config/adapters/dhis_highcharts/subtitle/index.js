@@ -1,3 +1,5 @@
+/* eslint-disable max-params */
+
 import isString from 'd2-utilizr/lib/isString'
 import getGauge from './gauge'
 import getFilterText from '../../../../util/getFilterText'

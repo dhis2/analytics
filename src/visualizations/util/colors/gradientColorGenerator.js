@@ -1,3 +1,5 @@
+/* eslint-disable max-params */
+
 function hex(c) {
     var s = '0123456789abcdef'
     var i = parseInt(c)

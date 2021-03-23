@@ -1,31 +1,27 @@
 # 
-# Translators:
-# phil_dhis2, 2020
-# 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2020-05-13T16:46:50.486Z\n"
 "PO-Revision-Date: 2020-04-29 08:10+0000\n"
-"Last-Translator: phil_dhis2, 2020\n"
-"Language-Team: Persian (Afghanistan) (https://www.transifex.com/hisp-uio/teams/100509/fa_AF/)\n"
+"Language-Team: Arabic (Sudan) (https://www.transifex.com/hisp-uio/teams/100509/ar_SD/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: fa_AF\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Language: ar_SD\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 
 msgid "Data"
-msgstr "دیتا"
+msgstr ""
 
 msgid "Data Type"
 msgstr ""
 
 msgid "Totals"
-msgstr "مجموعه"
+msgstr ""
 
 msgid "Details"
-msgstr "جزئیات"
+msgstr ""
 
 msgid "Detail"
 msgstr ""
@@ -37,7 +33,7 @@ msgid "Dimension recommended with selected data"
 msgstr ""
 
 msgid "Search"
-msgstr "جستجو"
+msgstr ""
 
 msgid "Selected Data"
 msgstr ""
@@ -46,61 +42,61 @@ msgid "Deselect All"
 msgstr ""
 
 msgid "Select all"
-msgstr "انتخاب همه"
+msgstr ""
 
 msgid "Organisation units"
-msgstr "واحد های سازمان"
+msgstr ""
 
 msgid "Period"
-msgstr "دوره"
+msgstr ""
 
 msgid "Year"
-msgstr "سال"
+msgstr ""
 
 msgid "Relative periods"
-msgstr "دوره های ارتباطی"
+msgstr ""
 
 msgid "Fixed periods"
-msgstr "ثابتې مودې"
+msgstr ""
 
 msgid "Period type"
-msgstr "د مودې ډول"
+msgstr ""
 
 msgid "January"
-msgstr "جنوری"
+msgstr ""
 
 msgid "February"
-msgstr "فبروری"
+msgstr ""
 
 msgid "March"
-msgstr "مارچ"
+msgstr ""
 
 msgid "April"
-msgstr "آپریل"
+msgstr ""
 
 msgid "May"
-msgstr "می"
+msgstr ""
 
 msgid "June"
-msgstr "جون"
+msgstr ""
 
 msgid "July"
-msgstr "جولای"
+msgstr ""
 
 msgid "August"
-msgstr "آگست"
+msgstr ""
 
 msgid "September"
-msgstr "سپتامبر"
+msgstr ""
 
 msgid "October"
-msgstr "اکتبر"
+msgstr ""
 
 msgid "November"
-msgstr "نوامبر"
+msgstr ""
 
 msgid "December"
-msgstr "دسامبر"
+msgstr ""
 
 msgid "Week {{weekNumber}}"
 msgstr ""
@@ -109,10 +105,10 @@ msgid "Bi-Week {{biWeekNumber}}"
 msgstr ""
 
 msgid "Daily"
-msgstr "روزنه"
+msgstr ""
 
 msgid "Weekly"
-msgstr "هفته وار"
+msgstr ""
 
 msgid "Bi-weekly"
 msgstr ""
@@ -130,64 +126,64 @@ msgid "Weekly (Start Sunday)"
 msgstr ""
 
 msgid "Monthly"
-msgstr "ماهانه"
+msgstr ""
 
 msgid "Bi-monthly"
-msgstr "دوبار در- ماه"
+msgstr ""
 
 msgid "Quarterly"
-msgstr "سه ماهه"
+msgstr ""
 
 msgid "Six-monthly"
-msgstr "شش-ماهه"
+msgstr ""
 
 msgid "Six-monthly April"
-msgstr "شش-ماهه اپریل"
+msgstr ""
 
 msgid "Yearly"
-msgstr "سالانه"
+msgstr ""
 
 msgid "Financial year (Start November)"
 msgstr ""
 
 msgid "Financial year (Start October)"
-msgstr "اکتوبر مالی"
+msgstr ""
 
 msgid "Financial year (Start July)"
-msgstr "مالی جولای"
+msgstr ""
 
 msgid "Financial year (Start April)"
-msgstr "مالی اپریل"
+msgstr ""
 
 msgid "Today"
-msgstr "امروز"
+msgstr ""
 
 msgid "Yesterday"
-msgstr "دیروز"
+msgstr ""
 
 msgid "Last 3 days"
-msgstr "3 روز گذشته"
+msgstr ""
 
 msgid "Last 7 days"
-msgstr "7 روز گذشته"
+msgstr ""
 
 msgid "Last 14 days"
-msgstr "14 روز گذشته"
+msgstr ""
 
 msgid "This week"
-msgstr "هفته جاری"
+msgstr ""
 
 msgid "Last week"
-msgstr "هفته گذشته"
+msgstr ""
 
 msgid "Last 4 weeks"
-msgstr "4 هفته گذشته"
+msgstr ""
 
 msgid "Last 12 weeks"
-msgstr "12 هفته گذشته"
+msgstr ""
 
 msgid "Last 52 weeks"
-msgstr "52 هفته گذشته"
+msgstr ""
 
 msgid "Weeks this year"
 msgstr ""
@@ -202,100 +198,100 @@ msgid "Last 4 bi-weeks"
 msgstr ""
 
 msgid "This month"
-msgstr "ماه جاری"
+msgstr ""
 
 msgid "Last month"
-msgstr "ماه گذشته"
+msgstr ""
 
 msgid "Last 3 months"
-msgstr "3 ماهه گذشته"
+msgstr ""
 
 msgid "Last 6 months"
-msgstr "6 ماه گذشته"
+msgstr ""
 
 msgid "Last 12 months"
-msgstr "12 ماهه گذشته"
+msgstr ""
 
 msgid "Months this year"
-msgstr "ماه های سال هذا"
+msgstr ""
 
 msgid "This bi-month"
-msgstr "دوبار در ماه جاری"
+msgstr ""
 
 msgid "Last bi-month"
-msgstr "دوبار در ماه گذشته"
+msgstr ""
 
 msgid "Last 6 bi-months"
-msgstr "دروبار در شش-ماه گذشته"
+msgstr ""
 
 msgid "Bi-months this year"
 msgstr ""
 
 msgid "This quarter"
-msgstr "سه ماهه جاری"
+msgstr ""
 
 msgid "Last quarter"
-msgstr "سه ماهه آخیر"
+msgstr ""
 
 msgid "Last 4 quarters"
-msgstr "4 سه ماهه آخیر"
+msgstr ""
 
 msgid "Quarters this year"
-msgstr "ربع های سال هذا"
+msgstr ""
 
 msgid "This six-month"
-msgstr "شش-ماه جاری"
+msgstr ""
 
 msgid "Last six-month"
-msgstr "شش-ماهه گذشته"
+msgstr ""
 
 msgid "Last 2 six-month"
 msgstr ""
 
 msgid "This financial year"
-msgstr "سال مالی جاری"
+msgstr ""
 
 msgid "Last financial year"
-msgstr "سال گذشته مالی"
+msgstr ""
 
 msgid "Last 5 financial years"
-msgstr "5 سال گذشته مالی"
+msgstr ""
 
 msgid "This year"
-msgstr "سال جاری"
+msgstr ""
 
 msgid "Last year"
-msgstr "سال گذشته"
+msgstr ""
 
 msgid "Last 5 years"
-msgstr "5 سال گذشته"
+msgstr ""
 
 msgid "Days"
-msgstr "روزها"
+msgstr ""
 
 msgid "Weeks"
-msgstr "هفته ها"
+msgstr ""
 
 msgid "Bi-weeks"
 msgstr ""
 
 msgid "Months"
-msgstr "ماه ها"
+msgstr ""
 
 msgid "Bi-months"
-msgstr "دوبار در ماه"
+msgstr ""
 
 msgid "Quarters"
-msgstr "سه ماهه"
+msgstr ""
 
 msgid "Six-months"
-msgstr "شش-ماهه"
+msgstr ""
 
 msgid "Financial Years"
 msgstr ""
 
 msgid "Years"
-msgstr "سالانه"
+msgstr ""
 
 msgid "Reporting rate"
 msgstr ""
@@ -313,28 +309,28 @@ msgid "Expected reports"
 msgstr ""
 
 msgid "Program"
-msgstr "برنامه"
+msgstr ""
 
 msgid "Indicators"
-msgstr "شاخص ها"
+msgstr ""
 
 msgid "Select indicator group"
-msgstr "انتخاب گروپ شاخص"
+msgstr ""
 
 msgid "[ All groups ]"
 msgstr ""
 
 msgid "Data elements"
-msgstr "دیتا ایلمنت ها"
+msgstr ""
 
 msgid "Select data element group"
-msgstr "انتخاب گروپ دیتا ایلمنت"
+msgstr ""
 
 msgid "[ All data elements ]"
 msgstr ""
 
 msgid "Data sets"
-msgstr "دیتا سیت ها"
+msgstr ""
 
 msgid "Select data sets"
 msgstr ""
@@ -343,16 +339,16 @@ msgid "[ All metrics ]"
 msgstr ""
 
 msgid "Event data items"
-msgstr "د پېښې د مالوماتو (ډاټا) موضوعات"
+msgstr ""
 
 msgid "Select a program"
 msgstr ""
 
 msgid "Program indicators"
-msgstr "د پروګرام شاخصونه"
+msgstr ""
 
 msgid "Organisation Unit"
-msgstr "واحد سازمان"
+msgstr ""
 
 msgid "{{dynamicOuNames}} and {{lastOuName}}"
 msgstr ""
@@ -370,4 +366,4 @@ msgid "{{allDynamicOuNames}} groups in {{staticOuNames}}"
 msgstr ""
 
 msgid "No data"
-msgstr "معلوماتی وجود ندارد"
+msgstr ""
