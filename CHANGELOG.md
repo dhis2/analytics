@@ -1,3 +1,10 @@
+## [11.0.17](https://github.com/dhis2/analytics/compare/v11.0.16...v11.0.17) (2021-03-23)
+
+
+### Bug Fixes
+
+* backport DHIS2-9829 ([#874](https://github.com/dhis2/analytics/issues/874)) ([6588b1d](https://github.com/dhis2/analytics/commit/6588b1d476725b6fb91b7e5eca8b2220f6701d45))
+
 ## [11.0.16](https://github.com/dhis2/analytics/compare/v11.0.15...v11.0.16) (2020-10-20)
 
 
