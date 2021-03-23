@@ -17,12 +17,13 @@ const DEFAULT_TRENDLINE = {
         symbol: 'circle',
         radius: 2,
     },
+    zIndex: 1,
 }
 
 export const isRegressionIneligible = type =>
     arrayContains([CHART_TYPE_GAUGE, CHART_TYPE_PIE], type)
 
-export default function(regressionType, series, isStacked) {
+export default function (regressionType, series, isStacked) {
     const newSeries = []
 
     if (isStacked) {
@@ -57,9 +58,7 @@ function getColor(colors, index) {
 }
 
 function getDarkerColor(color) {
-    return rgb(color)
-        .darker(0.5)
-        .toString()
+    return rgb(color).darker(0.5).toString()
 }
 
 function getRegressionData(data) {
