@@ -1,3 +1,10 @@
+## [4.5.33](https://github.com/dhis2/analytics/compare/v4.5.32...v4.5.33) (2021-03-23)
+
+
+### Bug Fixes
+
+* backport DHIS2-9829 ([#876](https://github.com/dhis2/analytics/issues/876)) ([d67dd46](https://github.com/dhis2/analytics/commit/d67dd463c5e116ab273000b112b040c83a2c8763))
+
 ## [4.5.32](https://github.com/dhis2/analytics/compare/v4.5.31...v4.5.32) (2021-02-15)
 
 
