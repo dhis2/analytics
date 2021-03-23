@@ -15,6 +15,7 @@ const DEFAULT_TRENDLINE = {
         symbol: 'circle',
         radius: 2,
     },
+    zIndex: 1,
 }
 
 export const isRegressionIneligible = type =>
