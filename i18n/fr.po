@@ -557,16 +557,16 @@ msgid "Event data items"
 msgstr "Eléments de données évènement"
 
 msgid "All programs"
-msgstr ""
+msgstr "Tous les programmes"
 
 msgid "Event data item"
 msgstr "Elément de données évènement"
 
 msgid "No programs found"
-msgstr ""
+msgstr "Aucun programme trouvé"
 
 msgid "Loading programs"
-msgstr ""
+msgstr "Chargement des programmes"
 
 msgid "Program indicators"
 msgstr "Program indicators"
@@ -575,7 +575,7 @@ msgid "Program indicator"
 msgstr "Gestion des indicateurs de programme"
 
 msgid "Extra Small"
-msgstr ""
+msgstr "Super petit"
 
 msgid "Small"
 msgstr "Petit"
@@ -587,13 +587,13 @@ msgid "Large"
 msgstr "Grand"
 
 msgid "Extra Large"
-msgstr ""
+msgstr "Très grand"
 
 msgid "Left"
 msgstr "Gauche"
 
 msgid "Center"
-msgstr ""
+msgstr "Centre"
 
 msgid "Right"
 msgstr "Droite"
@@ -602,10 +602,10 @@ msgid "Start"
 msgstr "Démarrer"
 
 msgid "Middle"
-msgstr ""
+msgstr "Milieu"
 
 msgid "End"
-msgstr ""
+msgstr "Fin"
 
 msgid "Top"
 msgstr "Haut"
@@ -629,10 +629,10 @@ msgid "{{allDynamicOuNames}} groups in {{staticOuNames}}"
 msgstr "{{touslesnomsOudynamiques}} groupes dans {{NomsOustatiques}}"
 
 msgid "{{percentage}}% of total x values"
-msgstr ""
+msgstr "{{percentage}}% de nombre total de X valeurs"
 
 msgid "{{percentage}}% of total y values"
-msgstr ""
+msgstr "{{percentage}}% de nombre total de Y valeurs"
 
 msgid "{{thresholdFactor}} × IQR Q1"
 msgstr ""
@@ -641,7 +641,7 @@ msgid "{{thresholdFactor}} × IQR Q3"
 msgstr ""
 
 msgid "{{thresholdFactor}} × Modified Z-score low"
-msgstr ""
+msgstr "{{thresholdFactor}} × Modifié Z-score faible"
 
 msgid "{{thresholdFactor}} × Modified Z-score high"
 msgstr ""
