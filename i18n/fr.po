@@ -4,7 +4,7 @@
 # Bram Piot <bram.piot@gmail.com>, 2020
 # Viktor Varland <viktor@dhis2.org>, 2020
 # Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2020
-# Yao Selom SAKA <saka.yao@yahoo.fr>, 2020
+# Yao Selom SAKA <ysaka@hispwca.org>, 2020
 # Yayra Gomado <ygomado@hispwca.org>, 2021
 # 
 msgid ""
