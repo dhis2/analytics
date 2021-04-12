@@ -635,7 +635,7 @@ msgid "{{percentage}}% of total y values"
 msgstr "{{percentage}}% de nombre total de Y valeurs"
 
 msgid "{{thresholdFactor}} × IQR Q1"
-msgstr ""
+msgstr "{{thresholdFactor}} × IQR Q1"
 
 msgid "{{thresholdFactor}} × IQR Q3"
 msgstr ""
@@ -644,13 +644,13 @@ msgid "{{thresholdFactor}} × Modified Z-score low"
 msgstr "{{thresholdFactor}} × Modifié Z-score faible"
 
 msgid "{{thresholdFactor}} × Modified Z-score high"
-msgstr ""
+msgstr "{{thresholdFactor}} × Modifié Z-score élevé"
 
 msgid "{{thresholdFactor}} × Z-score low"
-msgstr ""
+msgstr "{{thresholdFactor}} × Z-score faible"
 
 msgid "{{thresholdFactor}} × Z-score high"
-msgstr ""
+msgstr "{{thresholdFactor}} × Z-score élevé"
 
 msgid "Data"
 msgstr "Données"
@@ -683,7 +683,7 @@ msgid "Area"
 msgstr "Aire"
 
 msgid "Stacked area"
-msgstr ""
+msgstr "Zone empilée"
 
 msgid "Pie"
 msgstr "Tarte"
@@ -704,75 +704,95 @@ msgid "Single value"
 msgstr "Valeur unique"
 
 msgid "Scatter"
-msgstr ""
+msgstr "Dispersion"
 
 msgid "View data and indicators in a manipulatable table."
-msgstr ""
+msgstr "Affichez les données et les indicateurs dans un tableau manipulable."
 
 msgid ""
 "Compare sizes of related elements vertically. Recommend period as filter."
 msgstr ""
+"Comparez les tailles des éléments connexes verticalement. Recommander la "
+"période comme filtre."
 
 msgid ""
 "Compare parts of a whole against related elements vertically. Recommend data"
 " or org. unit as series."
 msgstr ""
+"Comparez les parties d'un tout avec des éléments connexes verticalement. "
+"Recommander des données ou une unité d'organisation en série."
 
 msgid ""
 "Compare sizes of related elements horizontally. Recommend period as filter."
 msgstr ""
+"Comparez les tailles des éléments connexes horizontalement. Recommander la "
+"période comme filtre."
 
 msgid ""
 "Compare parts of a whole against related elements horizontally. Recommend "
 "data or org. unit as series."
 msgstr ""
+"Comparez les parties d'un tout avec des éléments connexes horizontalement. "
+"Recommander des données ou une unité d'organisation en série."
 
 msgid "Track or compare changes over time. Recommend period as category."
 msgstr ""
+"Suivez ou comparez les changements au fil du temps. Recommander la période "
+"comme catégorie."
 
 msgid ""
 "Track or compare parts of a whole over time. Recommend data as series and "
 "period as category."
 msgstr ""
+"Suivez ou comparez des parties d'un tout au fil du temps. Recommander les "
+"données comme séries et la période comme catégorie."
 
 msgid ""
 "Compare parts of a whole at a single point in time. Recommend period as "
 "filter."
 msgstr ""
+"Comparez des parties d'un tout à un moment ponctuel. Recommander la période "
+"comme filtre."
 
 msgid "Compare several items against multiple variables."
-msgstr ""
+msgstr "Comparez plusieurs éléments à plusieurs variables."
 
 msgid ""
 "Compare a percentage indicator against a 100% scale. Recommend period as "
 "filter."
 msgstr ""
+"Comparez un indicateur de pourcentage à une échelle de 100%. Recommander la "
+"période comme filtre."
 
 msgid "Compare changes over time between multiple time periods."
-msgstr ""
+msgstr "Comparez les changements au fil du temps entre plusieurs périodes."
 
 msgid "Display a single value. Recommend relative period to show latest data."
 msgstr ""
+"Afficher une valeur unique. Recommander la période relative pour afficher "
+"les dernières données."
 
 msgid ""
 "View the relationship between two data items at a place or time. Recommended"
 " for finding outliers."
 msgstr ""
+"Affichez la relation entre deux éléments de données à un endroit ou à un "
+"temps. Recommandé pour trouver des valeurs atypiques"
 
 msgid "{{seriesName}} (trend)"
-msgstr ""
+msgstr "{{seriesName}} (tendance)"
 
 msgid "Trend"
 msgstr "Tendance"
 
 msgid "No legend for this series"
-msgstr ""
+msgstr "Aucune légende pour ces séries"
 
 msgid "and {{amount}} more..."
-msgstr ""
+msgstr "et {{amount}} plus..."
 
 msgid "Linear Regression"
-msgstr ""
+msgstr "Régression linéaire"
 
 msgid "Target"
 msgstr "Cible"
@@ -784,4 +804,4 @@ msgid "Axis {{axisId}}"
 msgstr "Axe {{{axisId}}"
 
 msgid "Reset zoom"
-msgstr ""
+msgstr "Réinitialiser le zoom"
