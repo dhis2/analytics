@@ -1,4 +1,4 @@
-import i18n from '../../../../../locales/index.js'
+// import i18n from '../../../../../locales/index.js'
 import arrayClean from 'd2-utilizr/lib/arrayClean'
 import objectClean from 'd2-utilizr/lib/objectClean'
 
@@ -7,18 +7,14 @@ import getGauge from './gauge'
 import {
     isStacked,
     VIS_TYPE_GAUGE,
-    isDualAxisType,
     VIS_TYPE_SCATTER,
 } from '../../../../../modules/visTypes'
-import { hasCustomAxes } from '../../../../../modules/axis'
-import { getAxisIdsMap } from '../customAxes'
 import { getAxisStringFromId } from '../../../../util/axisId'
 import {
     FONT_STYLE_VERTICAL_AXIS_TITLE,
     mergeFontStyleWithDefault,
     TEXT_ALIGN_RIGHT,
 } from '../../../../../modules/fontStyle'
-import { axisHasRelativeItems } from '../../../../../modules/layout/axisHasRelativeItems'
 import getSteps from '../getSteps'
 import { getAxis } from '../../../../util/axes'
 import {
@@ -28,62 +24,36 @@ import {
     getMinValue,
     getRegressionLine,
 } from '../axis'
+import { getAxisIdsMap } from '../customAxes'
 
-const AXIS_TYPE = 'RANGE'
-const AXIS_INDEX = 0
-
-function getMultipleAxes(theme, axes) {
-    const axisObjects = []
-    axes.forEach(axisId => {
-        const id = Number(axisId)
-        axisObjects.push({
-            title: {
-                text: i18n.t('Axis {{axisId}}', {
-                    axisId: id + 1,
-                }),
-                style: {
-                    color: theme[id].mainColor,
-                    'font-weight': 700,
-                },
-            },
-            id: getAxisStringFromId(id),
-            opposite: !!(id % 2),
-        })
-    })
-    return axisObjects
-}
+const AXIS_TYPE_RANGE = 'RANGE'
 
 function getDefault(layout, series, extraOptions) {
     const axes = []
-    const filteredSeries = layout.series?.filter(layoutSeriesItem =>
-        series.some(
-            seriesItem => seriesItem.id === layoutSeriesItem.dimensionItem
-        )
-    )
     const dataValues = series?.map(item => item.data).flat()
-    if (
-        isDualAxisType(layout.type) &&
-        hasCustomAxes(filteredSeries) &&
-        !axisHasRelativeItems(layout.columns)
-    ) {
-        const axisIdsMap = getAxisIdsMap(layout.series, series)
-        axes.push(
-            ...getMultipleAxes(
-                extraOptions.multiAxisTheme,
-                [...new Set(Object.keys(axisIdsMap))].sort((a, b) => a - b)
-            )
-        )
+    const layoutAxes = []
+    if (layout.type === VIS_TYPE_SCATTER) {
+        layoutAxes.push(getAxis(layout.axes, AXIS_TYPE_RANGE, 0))
     } else {
-        const axis = getAxis(layout.axes, AXIS_TYPE, AXIS_INDEX)
-        let extremeObj
+        const axisIdsMap = getAxisIdsMap(layout.series, series)
+        const axisIds = [...new Set(Object.keys(axisIdsMap))].sort(
+            (a, b) => a - b
+        )
+        axisIds.forEach(id =>
+            layoutAxes.push(getAxis(layout.axes, AXIS_TYPE_RANGE, Number(id)))
+        )
+    }
 
-        if (
-            layout.type === VIS_TYPE_SCATTER &&
-            extraOptions.outlierHelper?.extremeLines
-        ) {
-            extremeObj = extraOptions.outlierHelper.extremeLines[1]
-        }
+    let extremeObj
 
+    if (
+        layout.type === VIS_TYPE_SCATTER &&
+        extraOptions.outlierHelper?.extremeLines
+    ) {
+        extremeObj = extraOptions.outlierHelper.extremeLines[1]
+    }
+
+    layoutAxes.forEach(axis => {
         axes.push(
             objectClean({
                 min: getMinValue(
@@ -125,14 +95,16 @@ function getDefault(layout, series, extraOptions) {
                 ]),
                 gridLineColor: getGridLineColor(),
                 labels: getLabels(axis),
-                id: getAxisStringFromId(0),
+                id: getAxisStringFromId(axis.index),
 
                 // DHIS2-649: put first serie at the bottom of the stack
                 // in this way the legend sequence matches the serie sequence
                 reversedStacks: isStacked(layout.type) ? false : true,
+                opposite: !!(axis.index % 2),
             })
         )
-    }
+    })
+    // }
 
     return axes
 }
