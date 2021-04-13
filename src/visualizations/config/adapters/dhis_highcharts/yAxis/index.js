@@ -25,6 +25,7 @@ import {
     getRegressionLine,
 } from '../axis'
 import { getAxisIdsMap } from '../customAxes'
+import i18n from '../../../../../locales'
 
 const AXIS_TYPE_RANGE = 'RANGE'
 
@@ -32,6 +33,7 @@ function getDefault(layout, series, extraOptions) {
     const axes = []
     const dataValues = series?.map(item => item.data).flat()
     const layoutAxes = []
+    let useMultiAxisMode = false
     if (layout.type === VIS_TYPE_SCATTER) {
         layoutAxes.push(getAxis(layout.axes, AXIS_TYPE_RANGE, 0))
     } else {
@@ -42,6 +44,7 @@ function getDefault(layout, series, extraOptions) {
         axisIds.forEach(id =>
             layoutAxes.push(getAxis(layout.axes, AXIS_TYPE_RANGE, Number(id)))
         )
+        useMultiAxisMode = axisIds.length > 1 || axisIds.some(id => id > 0)
     }
 
     let extremeObj
@@ -54,6 +57,24 @@ function getDefault(layout, series, extraOptions) {
     }
 
     layoutAxes.forEach(axis => {
+        const targetLine = { ...axis.targetLine }
+        const baseLine = { ...axis.baseLine }
+        if (useMultiAxisMode) {
+            const regressionLines = [targetLine, baseLine]
+            regressionLines.forEach(rl => {
+                if (rl.title?.text) {
+                    rl.title = {
+                        ...rl.title,
+                        text: `${rl.title.text} - ${
+                            axis.title?.text ||
+                            i18n.t('Axis {{axisId}}', {
+                                axisId: axis.index + 1,
+                            })
+                        }`,
+                    }
+                }
+            })
+        }
         axes.push(
             objectClean({
                 min: getMinValue(
@@ -77,8 +98,8 @@ function getDefault(layout, series, extraOptions) {
                     layout.type
                 ),
                 plotLines: arrayClean([
-                    getRegressionLine(axis.targetLine, layout.type),
-                    getRegressionLine(axis.baseLine, layout.type),
+                    getRegressionLine(targetLine, layout.type),
+                    getRegressionLine(baseLine, layout.type),
                     extremeObj &&
                         getRegressionLine({
                             value: extremeObj.value,
