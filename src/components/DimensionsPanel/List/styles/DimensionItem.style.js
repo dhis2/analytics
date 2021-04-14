@@ -40,10 +40,6 @@ export const styles = {
         flexDirection: 'column',
         padding: '3px 8px 0 8px',
     },
-    lockIcon: {
-        fontSize: '14px',
-        marginTop: '1px',
-    },
     optionsWrapper: {
         position: 'relative',
         height: '24px',

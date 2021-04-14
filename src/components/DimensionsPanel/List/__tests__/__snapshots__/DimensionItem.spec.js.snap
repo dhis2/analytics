@@ -145,14 +145,7 @@ exports[`DimensionItem matches the snapshot with locked 1`] = `
         }
       }
     >
-      <pure(LockIcon)
-        style={
-          Object {
-            "fontSize": "14px",
-            "marginTop": "1px",
-          }
-        }
-      />
+      <SvgLock16 />
     </div>
   </DimensionLabel>
 </li>
