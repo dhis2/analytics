@@ -1,8 +1,7 @@
 import React from 'react'
-import SvgIcon from '@material-ui/core/SvgIcon'
 
 export default (
-    <SvgIcon viewBox="0 0 16 16">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
         <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
             <g>
                 <mask id="mask-2" fill="white">
@@ -38,5 +37,5 @@ export default (
                 ></polyline>
             </g>
         </g>
-    </SvgIcon>
+    </svg>
 )
