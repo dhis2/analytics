@@ -31,7 +31,7 @@ exports[`DimensionItem matches the snapshot 1`] = `
         }
       }
     >
-      <PeriodIcon
+      <SvgClock16
         style={
           Object {
             "paddingBottom": "2px",
@@ -101,7 +101,7 @@ exports[`DimensionItem matches the snapshot with locked 1`] = `
         }
       }
     >
-      <PeriodIcon
+      <SvgClock16
         style={
           Object {
             "paddingBottom": "2px",
@@ -182,7 +182,7 @@ exports[`DimensionItem matches the snapshot with onOptionsClick 1`] = `
         }
       }
     >
-      <PeriodIcon
+      <SvgClock16
         style={
           Object {
             "paddingBottom": "2px",
@@ -264,7 +264,7 @@ exports[`DimensionItem matches the snapshot with recommended 1`] = `
         }
       }
     >
-      <PeriodIcon
+      <SvgClock16
         style={
           Object {
             "paddingBottom": "2px",
@@ -336,7 +336,7 @@ exports[`DimensionItem matches the snapshot with selected 1`] = `
         }
       }
     >
-      <PeriodIcon
+      <SvgClock16
         style={
           Object {
             "paddingBottom": "2px",
