@@ -1,6 +1,5 @@
 import React, { Component, createRef } from 'react'
 import PropTypes from 'prop-types'
-
 import { IconLock16 } from '@dhis2/ui'
 
 import DimensionLabel from './DimensionLabel'
