@@ -1,10 +1,9 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { withStyles } from '@material-ui/core/styles'
-import i18n from '../../../locales/index.js'
 
+import i18n from '../../../locales/index.js'
 import DimensionItem from './DimensionItem'
-import { styles } from './styles/DimensionList.style'
+import styles from './styles/DimensionList.style'
 import {
     getPredefinedDimensions,
     getFixedDimensions,
@@ -46,7 +45,6 @@ export class DimensionList extends Component {
             .map(this.renderItem)
 
     render() {
-        const { classes } = this.props
         const fixedDimensions = this.getDimensionItemsByFilter(dimension =>
             Object.values(getFixedDimensions()).some(
                 fixedDim => fixedDim.id === dimension.id
@@ -60,23 +58,18 @@ export class DimensionList extends Component {
         )
 
         return (
-            <div className={classes.container}>
-                <div className={classes.wrapper}>
-                    <div className={classes.section}>
-                        <h3 className={classes.header}>
-                            {i18n.t('Main dimensions')}
-                        </h3>
-                        <ul className={classes.list}>{fixedDimensions}</ul>
+            <div className="container">
+                <div className="wrapper">
+                    <div className="section">
+                        <h3 className="header">{i18n.t('Main dimensions')}</h3>
+                        <ul className="list">{fixedDimensions}</ul>
                     </div>
-                    <div className={classes.section}>
-                        <h3 className={classes.header}>
-                            {i18n.t('Your dimensions')}
-                        </h3>
-                        <ul className={classes.list}>
-                            {nonPredefinedDimensions}
-                        </ul>
+                    <div className="section">
+                        <h3 className="header">{i18n.t('Your dimensions')}</h3>
+                        <ul className="list">{nonPredefinedDimensions}</ul>
                     </div>
                 </div>
+                <style jsx>{styles}</style>
             </div>
         )
     }
@@ -85,7 +78,6 @@ export class DimensionList extends Component {
 DimensionList.propTypes = {
     dimensions: PropTypes.array.isRequired,
     filterText: PropTypes.string.isRequired,
-    classes: PropTypes.object,
     disabledDimension: PropTypes.func,
     lockedDimension: PropTypes.func,
     recommendedDimension: PropTypes.func,
@@ -102,4 +94,4 @@ DimensionList.defaultProps = {
     recommendedDimension: Function.prototype,
 }
 
-export default withStyles(styles)(DimensionList)
+export default DimensionList
