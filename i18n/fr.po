@@ -638,7 +638,7 @@ msgid "{{thresholdFactor}} × IQR Q1"
 msgstr "{{thresholdFactor}} × IQR Q1"
 
 msgid "{{thresholdFactor}} × IQR Q3"
-msgstr ""
+msgstr "{{thresholdFactor}} × IQR Q3"
 
 msgid "{{thresholdFactor}} × Modified Z-score low"
 msgstr "{{thresholdFactor}} × Modifié Z-score faible"
