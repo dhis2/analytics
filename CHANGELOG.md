@@ -1,3 +1,16 @@
+# [17.0.0](https://github.com/dhis2/analytics/compare/v16.0.19...v17.0.0) (2021-04-19)
+
+
+### Code Refactoring
+
+* remove MUI ([#894](https://github.com/dhis2/analytics/issues/894)) ([469ff6c](https://github.com/dhis2/analytics/commit/469ff6c37f46f6fde672d910fc53d03e910ea1ff))
+
+
+### BREAKING CHANGES
+
+* The icons for visualization types are now imported from ui-icons and are functional components instead of plain svg tags.
+This might break parts of the apps where visTypeIcons is used.
+
 ## [16.0.19](https://github.com/dhis2/analytics/compare/v16.0.18...v16.0.19) (2021-04-12)
 
 
