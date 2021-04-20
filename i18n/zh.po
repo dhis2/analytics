@@ -1,16 +1,16 @@
 # 
 # Translators:
-# easylin <lin_xd@126.com>, 2020
 # phil_dhis2, 2020
 # Viktor Varland <viktor@dhis2.org>, 2020
 # 晓东 林 <13981924470@126.com>, 2020
+# easylin <lin_xd@126.com>, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2020-05-20T21:46:25.914Z\n"
 "PO-Revision-Date: 2020-05-18 10:55+0000\n"
-"Last-Translator: 晓东 林 <13981924470@126.com>, 2020\n"
+"Last-Translator: easylin <lin_xd@126.com>, 2021\n"
 "Language-Team: Chinese (https://www.transifex.com/hisp-uio/teams/100509/zh/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -94,13 +94,13 @@ msgid "Year"
 msgstr "年"
 
 msgid "Relative periods"
-msgstr "相关周期"
+msgstr "相对期间"
 
 msgid "Fixed periods"
-msgstr "固定周期"
+msgstr "固定期间"
 
 msgid "Period type"
-msgstr "周期类型"
+msgstr "期间类型"
 
 msgid "January"
 msgstr "1月"
