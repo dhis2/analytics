@@ -109,6 +109,7 @@ export const FileMenu = ({
                         onRequestClose={onDialogClose}
                         onTranslationSaved={onTranslate}
                         onTranslationError={onError}
+                        insertTheme={true}
                     />
                 )
             case 'sharing':
@@ -119,6 +120,7 @@ export const FileMenu = ({
                         type={fileType}
                         id={fileObject.id}
                         onRequestClose={onDialogClose}
+                        insertTheme={true}
                     />
                 )
             case 'getlink':
