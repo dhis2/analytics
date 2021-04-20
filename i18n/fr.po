@@ -1,6 +1,6 @@
 # 
 # Translators:
-# Yao Selom SAKA <ysaka@hispwca.org>, 2020
+# Yao Selom Saka <ysaka@hispwca.org>, 2020
 # Edem Kossi <ekossi@hispwca.org>, 2021
 # Karoline Tufte Lien <karoline@dhis2.org>, 2021
 # phil_dhis2, 2021

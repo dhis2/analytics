@@ -211,16 +211,16 @@ msgid "Period"
 msgstr "期间"
 
 msgid "Relative periods"
-msgstr "相关周期"
+msgstr "相对期间"
 
 msgid "Fixed periods"
-msgstr "固定周期"
+msgstr "固定期间"
 
 msgid "Selected Periods"
 msgstr "选择的期间"
 
 msgid "No periods selected"
-msgstr "没有选择相对周期"
+msgstr "未选择期间"
 
 msgid "January"
 msgstr "1月"
