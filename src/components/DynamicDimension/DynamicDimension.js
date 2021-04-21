@@ -11,7 +11,6 @@ export const DynamicDimension = ({
     onSelect,
     selectedItems,
     rightFooter,
-    dimensionTitle,
 }) => {
     const dataEngine = useDataEngine()
 
@@ -38,9 +37,7 @@ export const DynamicDimension = ({
                 value: item.id,
                 label: item.name,
             }))}
-            noItemsMessage={i18n.t('Nothing found in {{dimensionTitle}}', {
-                dimensionTitle,
-            })}
+            noItemsMessage={i18n.t('Nothing found')}
             onFetch={fetchItems}
             onSelect={onSelectItems}
             rightFooter={rightFooter}
@@ -50,7 +47,6 @@ export const DynamicDimension = ({
 
 DynamicDimension.propTypes = {
     dimensionId: PropTypes.string.isRequired,
-    dimensionTitle: PropTypes.string.isRequired,
     selectedItems: PropTypes.arrayOf(
         PropTypes.shape({
             id: PropTypes.string,

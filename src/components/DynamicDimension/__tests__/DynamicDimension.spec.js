@@ -16,7 +16,6 @@ describe('The Dynamic Dimension component ', () => {
 
     beforeEach(() => {
         props = {
-            dimensionTitle: 'test',
             context: {},
             selectedItems: [],
             onSelect: jest.fn(),
