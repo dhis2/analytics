@@ -1,3 +1,10 @@
+## [11.0.18](https://github.com/dhis2/analytics/compare/v11.0.17...v11.0.18) (2021-04-22)
+
+
+### Bug Fixes
+
+* paging of dynamic dimension items (DHIS2-10988) ([#903](https://github.com/dhis2/analytics/issues/903)) ([6f3295d](https://github.com/dhis2/analytics/commit/6f3295db7f76f21ba7b21cef67d185f7eb85f4b3))
+
 ## [11.0.17](https://github.com/dhis2/analytics/compare/v11.0.16...v11.0.17) (2021-03-23)
 
 
