@@ -82,6 +82,7 @@ export const FileMenu = ({
                         d2={d2}
                         onRequestClose={onDialogClose}
                         onFavoriteSelect={onOpen}
+                        insertTheme={true}
                     />
                 )
             case 'rename':
