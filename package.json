@@ -57,10 +57,10 @@
         "styled-jsx": "^3.3.2"
     },
     "dependencies": {
-        "@dhis2/d2-ui-favorites-dialog": "^7.1.8",
-        "@dhis2/d2-ui-org-unit-dialog": "^7.1.8",
-        "@dhis2/d2-ui-sharing-dialog": "^7.1.8",
-        "@dhis2/d2-ui-translation-dialog": "^7.1.8",
+        "@dhis2/d2-ui-favorites-dialog": "^7.2.0",
+        "@dhis2/d2-ui-org-unit-dialog": "^7.2.0",
+        "@dhis2/d2-ui-sharing-dialog": "^7.2.0",
+        "@dhis2/d2-ui-translation-dialog": "^7.2.0",
         "classnames": "^2.2.6",
         "d2-utilizr": "^0.2.16",
         "d3-color": "^1.2.3",
