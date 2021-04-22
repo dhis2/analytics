@@ -134,7 +134,7 @@ class PeriodTransfer extends Component {
 
     renderEmptySelection = () => (
         <>
-            <p className="emptySelection">{i18n.t('No periods selected')}</p>
+            <p className="emptyList">{i18n.t('No periods selected')}</p>
             <style jsx>{styles}</style>
         </>
     )

@@ -3,7 +3,7 @@ import { shallow } from 'enzyme'
 
 import { DynamicDimension } from '../DynamicDimension'
 
-describe('The Period Dimension component ', () => {
+describe('The Dynamic Dimension component ', () => {
     let props
     let shallowSelector
 
@@ -16,7 +16,7 @@ describe('The Period Dimension component ', () => {
 
     beforeEach(() => {
         props = {
-            d2: {},
+            context: {},
             selectedItems: [],
             onSelect: jest.fn(),
             onDeselect: jest.fn(),

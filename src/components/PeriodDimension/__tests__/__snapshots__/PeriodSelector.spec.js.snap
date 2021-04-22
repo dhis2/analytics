@@ -91,7 +91,7 @@ exports[`The Period Selector component matches the snapshot 1`] = `
   selectedEmptyComponent={
     <React.Fragment>
       <p
-        className="emptySelection"
+        className="emptyList"
       >
         No periods selected
       </p>
