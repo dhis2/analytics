@@ -1,3 +1,10 @@
+## [17.0.3](https://github.com/dhis2/analytics/compare/v17.0.2...v17.0.3) (2021-04-26)
+
+
+### Bug Fixes
+
+* pass insertTheme to d2-ui components to fix narrow dialogs ([#898](https://github.com/dhis2/analytics/issues/898)) ([948f7d5](https://github.com/dhis2/analytics/commit/948f7d553440580cb076349a07e5cf2eec730f7b))
+
 ## [17.0.2](https://github.com/dhis2/analytics/compare/v17.0.1...v17.0.2) (2021-04-20)
 
 
