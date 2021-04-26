@@ -5,6 +5,7 @@ import objectClean from 'd2-utilizr/lib/objectClean'
 import getAxisTitle from '../getAxisTitle'
 import getGauge from './gauge'
 import {
+    isDualAxisType,
     isStacked,
     VIS_TYPE_GAUGE,
     VIS_TYPE_SCATTER,
@@ -41,10 +42,16 @@ function getDefault(layout, series, extraOptions) {
         const axisIds = [...new Set(Object.keys(axisIdsMap))].sort(
             (a, b) => a - b
         )
-        axisIds.forEach(id =>
-            layoutAxes.push(getAxis(layout.axes, AXIS_TYPE_RANGE, Number(id)))
-        )
-        useMultiAxisMode = axisIds.length > 1 || axisIds.some(id => id > 0)
+        if (isDualAxisType(layout.type)) {
+            axisIds.forEach(id =>
+                layoutAxes.push(
+                    getAxis(layout.axes, AXIS_TYPE_RANGE, Number(id))
+                )
+            )
+            useMultiAxisMode = axisIds.length > 1 || axisIds.some(id => id > 0)
+        } else {
+            layoutAxes.push(getAxis(layout.axes, AXIS_TYPE_RANGE, 0))
+        }
     }
 
     let extremeObj
