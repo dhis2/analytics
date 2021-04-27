@@ -1,9 +1,8 @@
 import React, { Component, Fragment } from 'react'
 import PropTypes from 'prop-types'
 import i18n from '../../locales/index.js'
-import InfoIcon from '@material-ui/icons/InfoOutlined'
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd'
-import { Button, colors } from '@dhis2/ui'
+import { Button, IconInfo16, colors } from '@dhis2/ui'
 
 import Item from './widgets/SelectedItem'
 import { ArrowButton as UnAssignButton } from './widgets/ArrowButton'
@@ -20,7 +19,7 @@ const Subtitle = () => (
 
 const InfoBox = ({ message, dataTest }) => (
     <div className="info-container" data-test={dataTest}>
-        <InfoIcon style={{ fontSize: 16, color: colors.grey600 }} />
+        <IconInfo16 color={colors.grey600} />
         <span className="info-text">{message}</span>
         <style jsx>{styles}</style>
     </div>

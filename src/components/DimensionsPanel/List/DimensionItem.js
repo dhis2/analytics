@@ -1,6 +1,6 @@
 import React, { Component, createRef } from 'react'
 import PropTypes from 'prop-types'
-import LockIcon from '@material-ui/icons/Lock'
+import { IconLock16 } from '@dhis2/ui'
 
 import DimensionLabel from './DimensionLabel'
 import RecommendedIcon from './RecommendedIcon'
@@ -97,7 +97,7 @@ export class DimensionItem extends Component {
                     </div>
                     {isLocked && (
                         <div style={styles.iconWrapper}>
-                            <LockIcon style={styles.lockIcon} />
+                            <IconLock16 />
                         </div>
                     )}
                 </DimensionLabel>
