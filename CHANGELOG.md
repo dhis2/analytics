@@ -1,3 +1,10 @@
+## [17.0.5](https://github.com/dhis2/analytics/compare/v17.0.4...v17.0.5) (2021-05-03)
+
+
+### Bug Fixes
+
+* add margin below dimension panel search field (DHIS2-11017) ([#909](https://github.com/dhis2/analytics/issues/909)) ([88a15c2](https://github.com/dhis2/analytics/commit/88a15c25a0e1a7d3efa43ddda4b76b999a6e223d))
+
 ## [17.0.4](https://github.com/dhis2/analytics/compare/v17.0.3...v17.0.4) (2021-04-29)
 
 
