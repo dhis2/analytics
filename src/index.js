@@ -56,9 +56,10 @@ export {
     getDynamicDimensions,
 } from './modules/predefinedDimensions'
 
-// Modules: ouIdHelper
+// Modules: ou utils
 
 export { ouIdHelper } from './modules/ouIdHelper'
+export { convertOuLevelsToUids } from './modules/ouLevelUtils'
 
 // Modules: adapted ui layout
 
