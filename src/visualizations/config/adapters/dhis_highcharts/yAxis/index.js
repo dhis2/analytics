@@ -84,11 +84,19 @@ function getDefault(layout, series, extraOptions) {
         }
         let titleText = axis.title?.text
         if (axis.title?.type === 'AUTO') {
-            if (layout.type === VIS_TYPE_SCATTER && series[0]?.name) {
-                titleText = series[0].name
-            } else if (layout.type !== VIS_TYPE_SCATTER) {
+            if (layout.type === VIS_TYPE_SCATTER || series.length === 1) {
+                if (series[0]?.name) {
+                    titleText = series[0].name
+                }
+            } else if (useMultiAxisMode) {
                 titleText = i18n.t('Axis {{axisId}}', {
                     axisId: axis.index + 1,
+                })
+            } else if (series.length > 1) {
+                titleText = i18n.t('{{count}} data items', {
+                    count: series.length,
+                    defaultValue: '{{count}} data item',
+                    defaultValue_plural: '{{count}} data items',
                 })
             }
         }
