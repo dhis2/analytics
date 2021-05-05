@@ -82,6 +82,16 @@ function getDefault(layout, series, extraOptions) {
                 }
             })
         }
+        let titleText = axis.title?.text
+        if (axis.title?.type === 'AUTO') {
+            if (layout.type === VIS_TYPE_SCATTER && series[0]?.name) {
+                titleText = series[0].name
+            } else if (layout.type !== VIS_TYPE_SCATTER) {
+                titleText = i18n.t('Axis {{axisId}}', {
+                    axisId: axis.index + 1,
+                })
+            }
+        }
         axes.push(
             objectClean({
                 min: getMinValue(
@@ -96,7 +106,7 @@ function getDefault(layout, series, extraOptions) {
                 ),
                 tickAmount: getSteps(axis),
                 title: getAxisTitle(
-                    axis.title?.text,
+                    titleText,
                     mergeFontStyleWithDefault(
                         axis.title?.fontStyle,
                         FONT_STYLE_VERTICAL_AXIS_TITLE
