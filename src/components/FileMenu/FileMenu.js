@@ -31,7 +31,7 @@ import { DeleteDialog } from './DeleteDialog'
 import { GetLinkDialog } from './GetLinkDialog'
 import { RenameDialog } from './RenameDialog'
 import { SaveAsDialog } from './SaveAsDialog'
-import { FileOpenDialog } from '../FileOpenDialog/FileOpenDialog'
+import { OpenFileDialog } from '../OpenFileDialog/OpenFileDialog'
 
 export const FileMenu = ({
     d2, // to be removed as soon as TranslateDialog and FavoritesDialog are rewritten
@@ -161,7 +161,7 @@ export const FileMenu = ({
                     {i18n.t('File')}
                 </button>
             </div>
-            <FileOpenDialog
+            <OpenFileDialog
                 open={openDialog === 'open'}
                 type={fileType}
                 onClose={onDialogClose}

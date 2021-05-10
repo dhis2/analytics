@@ -19,7 +19,7 @@ import {
     Button,
 } from '@dhis2/ui'
 import { useDebounce } from '../../modules/utils'
-import { styles } from './FileOpenDialog.styles'
+import { styles } from './OpenFileDialog.styles'
 import { FileList } from './FileList'
 import { NameFilter } from './NameFilter'
 import { VisTypeFilter } from './VisTypeFilter'
@@ -45,7 +45,7 @@ const getQuery = type => ({
     }),
 })
 
-export const FileOpenDialog = ({
+export const OpenFileDialog = ({
     type,
     open,
     onClose,
@@ -395,11 +395,11 @@ export const FileOpenDialog = ({
     )
 }
 
-FileOpenDialog.defaultProps = {
+OpenFileDialog.defaultProps = {
     open: false,
 }
 
-FileOpenDialog.propTypes = {
+OpenFileDialog.propTypes = {
     type: PropTypes.oneOf(['visualization', 'eventChart', 'eventReport', 'map'])
         .isRequired,
     onClose: PropTypes.func.isRequired,
@@ -409,4 +409,4 @@ FileOpenDialog.propTypes = {
     open: PropTypes.bool,
 }
 
-export default FileOpenDialog
+export default OpenFileDialog
