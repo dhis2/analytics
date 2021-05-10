@@ -1,7 +1,18 @@
-import FavoritesDialog from '@dhis2/d2-ui-favorites-dialog'
-import SharingDialog from '@dhis2/d2-ui-sharing-dialog'
-import TranslationDialog from '@dhis2/d2-ui-translation-dialog'
+import React, { createRef, useState } from 'react'
+
 import PropTypes from '@dhis2/prop-types'
+import i18n from '../../locales/index.js'
+
+import TranslationDialog from '@dhis2/d2-ui-translation-dialog'
+import SharingDialog from '@dhis2/d2-ui-sharing-dialog'
+import {
+    FlyoutMenu,
+    Layer,
+    MenuItem,
+    MenuDivider,
+    Popper,
+} from '@dhis2/ui-core'
+import { colors } from '@dhis2/ui-constants'
 import {
     IconAdd24,
     IconLaunch24,
@@ -12,22 +23,15 @@ import {
     IconLink24,
     IconDelete24,
 } from '@dhis2/ui'
-import { colors } from '@dhis2/ui-constants'
-import {
-    FlyoutMenu,
-    Layer,
-    MenuItem,
-    MenuDivider,
-    Popper,
-} from '@dhis2/ui-core'
-import React, { createRef, useState } from 'react'
-import i18n from '../../locales/index.js'
-import { DeleteDialog } from './DeleteDialog'
+
+import { supportedFileTypes } from './utils'
 import { fileMenuStyles } from './FileMenu.styles'
+
+import { DeleteDialog } from './DeleteDialog'
 import { GetLinkDialog } from './GetLinkDialog'
 import { RenameDialog } from './RenameDialog'
 import { SaveAsDialog } from './SaveAsDialog'
-import { supportedFileTypes } from './utils'
+import { FileOpenDialog } from '../FileOpenDialog/FileOpenDialog'
 
 export const FileMenu = ({
     d2, // to be removed as soon as TranslateDialog and FavoritesDialog are rewritten
@@ -71,18 +75,6 @@ export const FileMenu = ({
 
     const renderDialog = () => {
         switch (openDialog) {
-            case 'open':
-                return (
-                    <FavoritesDialog
-                        open={true}
-                        refreshData={true}
-                        type={fileType}
-                        d2={d2}
-                        onRequestClose={onDialogClose}
-                        onFavoriteSelect={onOpen}
-                        insertTheme={true}
-                    />
-                )
             case 'rename':
                 return (
                     <RenameDialog
@@ -169,6 +161,17 @@ export const FileMenu = ({
                     {i18n.t('File')}
                 </button>
             </div>
+            <FileOpenDialog
+                open={openDialog === 'open'}
+                type={fileType}
+                onClose={onDialogClose}
+                onFileSelect={id => {
+                    onOpen(id)
+                    onDialogClose()
+                }}
+                onNew={onNew}
+                currentUser={d2.currentUser}
+            />
             {menuIsOpen && (
                 <Layer
                     onClick={toggleMenu}
