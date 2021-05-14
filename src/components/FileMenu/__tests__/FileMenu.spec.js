@@ -1,11 +1,13 @@
-import FavoritesDialog from '@dhis2/d2-ui-favorites-dialog'
+import React from 'react'
+import { shallow } from 'enzyme'
+
 import SharingDialog from '@dhis2/d2-ui-sharing-dialog'
 import TranslationDialog from '@dhis2/d2-ui-translation-dialog'
 import { Popper } from '@dhis2/ui'
-import { shallow } from 'enzyme'
-import React from 'react'
-import { DeleteDialog } from '../DeleteDialog'
+
 import { FileMenu } from '../FileMenu'
+import { OpenFileDialog } from '../../OpenFileDialog/OpenFileDialog'
+import { DeleteDialog } from '../DeleteDialog'
 import { GetLinkDialog } from '../GetLinkDialog'
 import { RenameDialog } from '../RenameDialog'
 import { SaveAsDialog } from '../SaveAsDialog'
@@ -161,7 +163,7 @@ describe('The FileMenu component ', () => {
         ).toBe(false)
     })
 
-    it('renders the FavoritesDialog component when the Open button is clicked', () => {
+    it('renders the OpenFileDialog component when the Open button is clicked', () => {
         const fileMenuComponent = getFileMenuComponent(props)
         fileMenuComponent.find('button').simulate('click')
 
@@ -169,7 +171,7 @@ describe('The FileMenu component ', () => {
             .findWhere(n => n.prop('label') === 'Open…')
             .simulate('click')
 
-        expect(fileMenuComponent.find(FavoritesDialog)).toHaveLength(1)
+        expect(fileMenuComponent.find(OpenFileDialog)).toHaveLength(1)
     })
 
     it('renders the RenameDialog when the Rename button is clicked', () => {
