@@ -4,6 +4,7 @@ import isEqual from 'lodash/isEqual'
 import i18n from '@dhis2/d2-i18n'
 import { useDataQuery } from '@dhis2/app-runtime'
 import {
+    Box,
     Modal,
     ModalTitle,
     ModalContent,
@@ -232,170 +233,186 @@ export const OpenFileDialog = ({
             <Modal large position="middle" onClose={onClose}>
                 <ModalTitle>{getString(type, 'modalTitle')}</ModalTitle>
                 <ModalContent>
-                    <div className="search-and-filter-bar">
-                        <div className="search-field-container">
-                            <NameFilter
-                                value={searchTerm}
-                                onChange={setSearchTerm}
-                            />
-                        </div>
-                        {type === 'visualization' && (
-                            <div className="type-field-container">
-                                <VisTypeFilter
-                                    selected={visType}
-                                    onChange={setVisTypeFilter}
+                    <Box minHeight="496px">
+                        <div className="search-and-filter-bar">
+                            <div className="search-field-container">
+                                <NameFilter
+                                    value={searchTerm}
+                                    onChange={setSearchTerm}
                                 />
                             </div>
-                        )}
-                        <div className="created-by-field-container">
-                            <OwnerFilter
-                                selected={createdBy}
-                                onChange={setCreatedBy}
-                            />
+                            {type === 'visualization' && (
+                                <div className="type-field-container">
+                                    <VisTypeFilter
+                                        selected={visType}
+                                        onChange={setVisTypeFilter}
+                                    />
+                                </div>
+                            )}
+                            <div className="created-by-field-container">
+                                <OwnerFilter
+                                    selected={createdBy}
+                                    onChange={setCreatedBy}
+                                />
+                            </div>
+                            {!isEqual(filters, defaultFilters) && (
+                                <Button onClick={resetFilters} secondary small>
+                                    {i18n.t('Clear filters')}
+                                </Button>
+                            )}
                         </div>
-                        {!isEqual(filters, defaultFilters) && (
-                            <Button onClick={resetFilters} secondary small>
-                                {i18n.t('Clear filters')}
-                            </Button>
-                        )}
-                    </div>
-                    {error ? (
-                        <NoticeBox
-                            title={getString(type, 'errorTitle')}
-                            warning
-                        >
-                            {getString(type, 'errorText')}
-                        </NoticeBox>
-                    ) : (
-                        <>
-                            <DataTable>
-                                <DataTableHead>
-                                    <DataTableRow>
-                                        {data?.files[getResourceFromType(type)]
-                                            .length ? (
-                                            headers.map(({ field, label }) => (
+                        {error ? (
+                            <NoticeBox
+                                title={getString(type, 'errorTitle')}
+                                warning
+                            >
+                                {getString(type, 'errorText')}
+                            </NoticeBox>
+                        ) : (
+                            <>
+                                <DataTable>
+                                    <DataTableHead>
+                                        <DataTableRow>
+                                            {data?.files[
+                                                getResourceFromType(type)
+                                            ].length ? (
+                                                headers.map(
+                                                    ({ field, label }) => (
+                                                        <DataTableColumnHeader
+                                                            fixed
+                                                            top="0"
+                                                            key={field}
+                                                            name={field}
+                                                            onSortIconClick={({
+                                                                name,
+                                                                direction,
+                                                            }) =>
+                                                                setSorting({
+                                                                    sortField: name,
+                                                                    sortDirection: direction,
+                                                                })
+                                                            }
+                                                            sortDirection={getSortDirection(
+                                                                field
+                                                            )}
+                                                        >
+                                                            {label}
+                                                        </DataTableColumnHeader>
+                                                    )
+                                                )
+                                            ) : (
                                                 <DataTableColumnHeader
                                                     fixed
                                                     top="0"
-                                                    key={field}
-                                                    name={field}
-                                                    onSortIconClick={({
-                                                        name,
-                                                        direction,
-                                                    }) =>
-                                                        setSorting({
-                                                            sortField: name,
-                                                            sortDirection: direction,
-                                                        })
-                                                    }
-                                                    sortDirection={getSortDirection(
-                                                        field
-                                                    )}
-                                                >
-                                                    {label}
-                                                </DataTableColumnHeader>
-                                            ))
-                                        ) : (
-                                            <DataTableColumnHeader
-                                                fixed
-                                                top="0"
-                                            />
-                                        )}
-                                    </DataTableRow>
-                                </DataTableHead>
-                                <DataTableBody className="data-table-body">
-                                    {loading && (
-                                        <DataTableRow>
-                                            <DataTableCell large>
-                                                <div className="info-cell">
-                                                    <CircularLoader small />
-                                                    <span className="info-text">
-                                                        {getString(
-                                                            type,
-                                                            'loadingText'
-                                                        )}
-                                                    </span>
-                                                </div>
-                                            </DataTableCell>
+                                                />
+                                            )}
                                         </DataTableRow>
-                                    )}
-                                    {!loading &&
-                                        !data?.files[getResourceFromType(type)]
-                                            .length && (
+                                    </DataTableHead>
+                                    <DataTableBody className="data-table-body">
+                                        {loading && (
                                             <DataTableRow>
                                                 <DataTableCell large>
-                                                    <div className="info-cell">
-                                                        <div className="info-container">
-                                                            {!isEqual(
-                                                                filters,
-                                                                defaultFilters
-                                                            ) ? (
-                                                                <span className="info-text">
-                                                                    {getString(
-                                                                        type,
-                                                                        'noFilteredDataText'
-                                                                    )}
-                                                                </span>
-                                                            ) : (
-                                                                <>
-                                                                    <div className="info-text">
-                                                                        {getString(
-                                                                            type,
-                                                                            'noDataText'
-                                                                        )}
-                                                                    </div>
-                                                                    <div className="info-button">
-                                                                        <Button
-                                                                            onClick={() => {
-                                                                                onNew()
-                                                                                onClose()
-                                                                            }}
-                                                                        >
-                                                                            {getString(
-                                                                                type,
-                                                                                'newButtonLabel'
-                                                                            )}
-                                                                        </Button>
-                                                                    </div>
-                                                                </>
-                                                            )}
+                                                    <Box height="384px">
+                                                        <div className="info-cell">
+                                                            <CircularLoader
+                                                                small
+                                                            />
+                                                            <span className="info-text">
+                                                                {getString(
+                                                                    type,
+                                                                    'loadingText'
+                                                                )}
+                                                            </span>
                                                         </div>
-                                                    </div>
+                                                    </Box>
                                                 </DataTableCell>
                                             </DataTableRow>
                                         )}
-                                    {Boolean(
-                                        data?.files[getResourceFromType(type)]
-                                            .length
-                                    ) && (
-                                        <FileList
-                                            type={type}
-                                            data={
-                                                data.files[
-                                                    getResourceFromType(type)
-                                                ]
-                                            }
-                                            onSelect={onFileSelect}
-                                        />
-                                    )}
-                                </DataTableBody>
-                            </DataTable>
-                            {Boolean(
-                                data?.files[getResourceFromType(type)].length
-                            ) && (
-                                <DataTableToolbar position="bottom">
-                                    <div className="pagination-controls">
-                                        <PaginationControls
-                                            page={page}
-                                            pager={data.files.pager}
-                                            onPageChange={setPage}
-                                        />
-                                    </div>
-                                </DataTableToolbar>
-                            )}
-                        </>
-                    )}
-                    <style jsx>{styles}</style>
+                                        {!loading &&
+                                            !data?.files[
+                                                getResourceFromType(type)
+                                            ].length && (
+                                                <DataTableRow>
+                                                    <DataTableCell large>
+                                                        <Box minHeight="384px">
+                                                            <div className="info-cell">
+                                                                <div className="info-container">
+                                                                    {!isEqual(
+                                                                        filters,
+                                                                        defaultFilters
+                                                                    ) ? (
+                                                                        <span className="info-text">
+                                                                            {getString(
+                                                                                type,
+                                                                                'noFilteredDataText'
+                                                                            )}
+                                                                        </span>
+                                                                    ) : (
+                                                                        <>
+                                                                            <div className="info-text">
+                                                                                {getString(
+                                                                                    type,
+                                                                                    'noDataText'
+                                                                                )}
+                                                                            </div>
+                                                                            <div className="info-button">
+                                                                                <Button
+                                                                                    onClick={() => {
+                                                                                        onNew()
+                                                                                        onClose()
+                                                                                    }}
+                                                                                >
+                                                                                    {getString(
+                                                                                        type,
+                                                                                        'newButtonLabel'
+                                                                                    )}
+                                                                                </Button>
+                                                                            </div>
+                                                                        </>
+                                                                    )}
+                                                                </div>
+                                                            </div>
+                                                        </Box>
+                                                    </DataTableCell>
+                                                </DataTableRow>
+                                            )}
+                                        {Boolean(
+                                            data?.files[
+                                                getResourceFromType(type)
+                                            ].length
+                                        ) && (
+                                            <FileList
+                                                type={type}
+                                                data={
+                                                    data.files[
+                                                        getResourceFromType(
+                                                            type
+                                                        )
+                                                    ]
+                                                }
+                                                onSelect={onFileSelect}
+                                            />
+                                        )}
+                                    </DataTableBody>
+                                </DataTable>
+                                {Boolean(
+                                    data?.files[getResourceFromType(type)]
+                                        .length
+                                ) && (
+                                    <DataTableToolbar position="bottom">
+                                        <div className="pagination-controls">
+                                            <PaginationControls
+                                                page={page}
+                                                pager={data.files.pager}
+                                                onPageChange={setPage}
+                                            />
+                                        </div>
+                                    </DataTableToolbar>
+                                )}
+                            </>
+                        )}
+                        <style jsx>{styles}</style>
+                    </Box>
                 </ModalContent>
             </Modal>
         )
