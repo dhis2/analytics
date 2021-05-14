@@ -6,7 +6,7 @@ import { Input } from '@dhis2/ui'
 export const NameFilter = ({ value, onChange }) => (
     <Input
         type="search"
-        placeholder={i18n.t('Filter by name or ID')}
+        placeholder={i18n.t('Filter by name')}
         onChange={({ value }) => onChange(value)}
         value={value}
         initialFocus={true}

@@ -179,6 +179,18 @@ msgstr ""
 msgid "Save {{fileType}} as"
 msgstr ""
 
+msgid "Selected Data"
+msgstr ""
+
+msgid "Deselect All"
+msgstr ""
+
+msgid "Select all"
+msgstr ""
+
+msgid "Filter by name"
+msgstr ""
+
 msgid "Open"
 msgstr ""
 
@@ -263,9 +275,6 @@ msgstr ""
 msgid "Clear filters"
 msgstr ""
 
-msgid "Filter by name or ID"
-msgstr ""
-
 msgid "Created by"
 msgstr ""
 
@@ -282,15 +291,6 @@ msgid "{{firstItem}}-{{lastItem}} of {{total}}"
 msgstr ""
 
 msgid "All charts"
-msgstr ""
-
-msgid "Selected Data"
-msgstr ""
-
-msgid "Deselect All"
-msgstr ""
-
-msgid "Select all"
 msgstr ""
 
 msgid "Period type"
