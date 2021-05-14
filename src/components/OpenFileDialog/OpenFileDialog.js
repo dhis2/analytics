@@ -35,14 +35,21 @@ const getQuery = type => ({
         sortDirection = 'asc',
         page = 1,
         filters,
-    }) => ({
-        filter: filters,
-        fields: `id,type,displayName,title,displayDescription,created,lastUpdated,user,access,href`,
-        order: `${sortField}:${sortDirection}`,
-        paging: true,
-        pageSize: 8,
-        page,
-    }),
+    }) => {
+        const queryParams = {
+            filter: filters,
+            fields: `id,type,displayName,title,displayDescription,created,lastUpdated,user,access,href`,
+            paging: true,
+            pageSize: 8,
+            page,
+        }
+
+        if (sortDirection !== 'default') {
+            queryParams.order = `${sortField}:${sortDirection}`
+        }
+
+        return queryParams
+    },
 })
 
 export const OpenFileDialog = ({
