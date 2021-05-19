@@ -1,0 +1,5 @@
+export const HIDE_BI_MONTHLY = 'keyHideBiMonthlyPeriods'
+export const HIDE_DAILY = 'keyHideDailyPeriods'
+export const HIDE_MONTHLY = 'keyHideMonthlyPeriods'
+export const HIDE_WEEKLY = 'keyHideWeeklyPeriods'
+export const HIDE_BI_WEEKLY = 'keyHideBiWeeklyPeriods'

@@ -13,6 +13,7 @@ const FixedPeriodFilter = ({
     onSelectPeriodType,
     onSelectYear,
     dataTest,
+    settings,
 }) => {
     const onlyAllowedTypeIsSelected =
         Array.isArray(allowedPeriodTypes) &&
@@ -31,7 +32,7 @@ const FixedPeriodFilter = ({
                     className="filterElement"
                     dataTest={`${dataTest}-period-type`}
                 >
-                    {getFixedPeriodsOptions()
+                    {getFixedPeriodsOptions(settings)
                         .filter(
                             option =>
                                 !allowedPeriodTypes ||
@@ -73,6 +74,7 @@ FixedPeriodFilter.propTypes = {
     onSelectYear: PropTypes.func.isRequired,
     allowedPeriodTypes: PropTypes.arrayOf(PropTypes.string),
     dataTest: PropTypes.string,
+    settings: PropTypes.object,
 }
 
 export default FixedPeriodFilter

@@ -5,8 +5,16 @@ import i18n from '../../locales/index.js'
 
 import FixedPeriodFilter from './FixedPeriodFilter'
 import RelativePeriodFilter from './RelativePeriodFilter'
-import { MONTHS, getRelativePeriodsOptionsById } from './utils/relativePeriods'
-import { MONTHLY, getFixedPeriodsOptionsById } from './utils/fixedPeriods'
+import {
+    MONTHS,
+    QUARTERS,
+    getRelativePeriodsOptionsById,
+} from './utils/relativePeriods'
+import {
+    MONTHLY,
+    QUARTERLY,
+    getFixedPeriodsOptionsById,
+} from './utils/fixedPeriods'
 import styles from '../styles/DimensionSelector.style'
 import { TransferOption } from '../TransferOption'
 import PeriodIcon from '../../assets/DimensionItemIcons/PeriodIcon' //TODO: Reimplement the icon
@@ -15,22 +23,28 @@ import {
     TRANSFER_OPTIONS_WIDTH,
     TRANSFER_SELECTED_WIDTH,
 } from '../../modules/dimensionSelectorHelper'
-
-const defaultRelativePeriodType = getRelativePeriodsOptionsById(MONTHS)
-const defaultFixedPeriodType = getFixedPeriodsOptionsById(MONTHLY)
-const defaultFixedPeriodYear = new Date().getFullYear()
-const fixedPeriodConfig = year => ({
-    offset: year - defaultFixedPeriodYear,
-    filterFuturePeriods: false,
-    reversePeriods: false,
-})
+import { HIDE_MONTHLY } from './utils/settings.js'
 
 export const PeriodTransfer = ({
     onSelect,
     dataTest,
     initialSelectedPeriods,
     rightFooter,
+    settings,
 }) => {
+    const defaultRelativePeriodType = settings[HIDE_MONTHLY]
+        ? getRelativePeriodsOptionsById(QUARTERS)
+        : getRelativePeriodsOptionsById(MONTHS)
+    const defaultFixedPeriodType = settings[HIDE_MONTHLY]
+        ? getFixedPeriodsOptionsById(QUARTERLY)
+        : getFixedPeriodsOptionsById(MONTHLY)
+    const defaultFixedPeriodYear = new Date().getFullYear()
+    const fixedPeriodConfig = year => ({
+        offset: year - defaultFixedPeriodYear,
+        filterFuturePeriods: false,
+        reversePeriods: false,
+    })
+
     const [allPeriods, setAllPeriods] = useState(
         defaultRelativePeriodType.getPeriods()
     )
@@ -92,6 +106,7 @@ export const PeriodTransfer = ({
                             )
                         }}
                         dataTest={`${dataTest}-relative-period-filter`}
+                        settings={settings}
                     />
                 ) : (
                     <FixedPeriodFilter
@@ -110,6 +125,7 @@ export const PeriodTransfer = ({
                             })
                         }}
                         dataTest={`${dataTest}-fixed-period-filter`}
+                        settings={settings}
                     />
                 )}
             </div>
@@ -184,10 +200,12 @@ PeriodTransfer.propTypes = {
         })
     ),
     rightFooter: PropTypes.node,
+    settings: PropTypes.object,
 }
 
 PeriodTransfer.defaultProps = {
     initialSelectedPeriods: [],
+    settings: {},
 }
 
 export default PeriodTransfer

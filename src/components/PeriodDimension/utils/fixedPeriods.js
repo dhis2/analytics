@@ -1,4 +1,11 @@
 import i18n from '../../../locales/index.js'
+import {
+    HIDE_BI_MONTHLY,
+    HIDE_BI_WEEKLY,
+    HIDE_DAILY,
+    HIDE_MONTHLY,
+    HIDE_WEEKLY,
+} from './settings.js'
 // generate periods config object: { boolean offset, boolean filterFuturePeriods, boolean reversePeriods }
 
 export const DAILY = 'DAILY'
@@ -559,130 +566,165 @@ const filterFuturePeriods = periods => {
     return array
 }
 
-const getOptions = () => [
-    {
-        id: DAILY,
-        getPeriods: getDailyPeriodType(formatYyyyMmDd, filterFuturePeriods),
-        name: i18n.t('Daily'),
-    },
-    {
-        id: WEEKLY,
-        getPeriods: getWeeklyPeriodType(
-            formatYyyyMmDd,
-            { shortName: '', startDay: 1 },
-            filterFuturePeriods
-        ),
-        name: i18n.t('Weekly'),
-    },
-    {
-        id: BIWEEKLY,
-        getPeriods: getBiWeeklyPeriodType(formatYyyyMmDd, filterFuturePeriods),
-        name: i18n.t('Bi-weekly'),
-    },
-    {
-        id: WEEKLYWED,
-        getPeriods: getWeeklyPeriodType(
-            formatYyyyMmDd,
-            { shortName: 'Wed', startDay: 3 },
-            filterFuturePeriods
-        ),
-        name: i18n.t('Weekly (Start Wednesday)'),
-    },
-    {
-        id: WEEKLYTHU,
-        getPeriods: getWeeklyPeriodType(
-            formatYyyyMmDd,
-            { shortName: 'Thu', startDay: 4 },
-            filterFuturePeriods
-        ),
-        name: i18n.t('Weekly (Start Thursday)'),
-    },
-    {
-        id: WEEKLYSAT,
-        getPeriods: getWeeklyPeriodType(
-            formatYyyyMmDd,
-            { shortName: 'Sat', startDay: 6 },
-            filterFuturePeriods
-        ),
-        name: i18n.t('Weekly (Start Saturday)'),
-    },
-    {
-        id: WEEKLYSUN,
-        getPeriods: getWeeklyPeriodType(
-            formatYyyyMmDd,
-            { shortName: 'Sun', startDay: 7 },
-            filterFuturePeriods
-        ),
-        name: i18n.t('Weekly (Start Sunday)'),
-    },
-    {
-        id: MONTHLY,
-        getPeriods: getMonthlyPeriodType(formatYyyyMmDd, filterFuturePeriods),
-        name: i18n.t('Monthly'),
-    },
-    {
-        id: BIMONTHLY,
-        getPeriods: getBiMonthlyPeriodType(formatYyyyMmDd, filterFuturePeriods),
-        name: i18n.t('Bi-monthly'),
-    },
-    {
-        id: QUARTERLY,
-        getPeriods: getQuarterlyPeriodType(formatYyyyMmDd, filterFuturePeriods),
-        name: i18n.t('Quarterly'),
-    },
-    {
-        id: SIXMONTHLY,
-        getPeriods: getSixMonthlyPeriodType(filterFuturePeriods),
-        name: i18n.t('Six-monthly'),
-    },
-    {
-        id: SIXMONTHLYAPR,
-        getPeriods: getSixMonthlyAprilPeriodType(filterFuturePeriods),
-        name: i18n.t('Six-monthly April'),
-    },
-    {
-        id: YEARLY,
-        getPeriods: getYearlyPeriodType(formatYyyyMmDd, filterFuturePeriods),
-        name: i18n.t('Yearly'),
-    },
-    {
-        id: FYNOV,
-        getPeriods: getFinancialNovemberPeriodType(
-            formatYyyyMmDd,
-            filterFuturePeriods
-        ),
-        name: i18n.t('Financial year (Start November)'),
-    },
-    {
-        id: FYOCT,
-        getPeriods: getFinancialOctoberPeriodType(
-            formatYyyyMmDd,
-            filterFuturePeriods
-        ),
-        name: i18n.t('Financial year (Start October)'),
-    },
-    {
-        id: FYJUL,
-        getPeriods: getFinancialJulyPeriodType(
-            formatYyyyMmDd,
-            filterFuturePeriods
-        ),
-        name: i18n.t('Financial year (Start July)'),
-    },
-    {
-        id: FYAPR,
-        getPeriods: getFinancialAprilPeriodType(
-            formatYyyyMmDd,
-            filterFuturePeriods
-        ),
-        name: i18n.t('Financial year (Start April)'),
-    },
-]
+const getOptions = (settings = {}) => {
+    const options = [
+        {
+            id: DAILY,
+            getPeriods: getDailyPeriodType(formatYyyyMmDd, filterFuturePeriods),
+            name: i18n.t('Daily'),
+        },
+        {
+            id: WEEKLY,
+            getPeriods: getWeeklyPeriodType(
+                formatYyyyMmDd,
+                { shortName: '', startDay: 1 },
+                filterFuturePeriods
+            ),
+            name: i18n.t('Weekly'),
+        },
+        {
+            id: BIWEEKLY,
+            getPeriods: getBiWeeklyPeriodType(
+                formatYyyyMmDd,
+                filterFuturePeriods
+            ),
+            name: i18n.t('Bi-weekly'),
+        },
+        {
+            id: WEEKLYWED,
+            getPeriods: getWeeklyPeriodType(
+                formatYyyyMmDd,
+                { shortName: 'Wed', startDay: 3 },
+                filterFuturePeriods
+            ),
+            name: i18n.t('Weekly (Start Wednesday)'),
+        },
+        {
+            id: WEEKLYTHU,
+            getPeriods: getWeeklyPeriodType(
+                formatYyyyMmDd,
+                { shortName: 'Thu', startDay: 4 },
+                filterFuturePeriods
+            ),
+            name: i18n.t('Weekly (Start Thursday)'),
+        },
+        {
+            id: WEEKLYSAT,
+            getPeriods: getWeeklyPeriodType(
+                formatYyyyMmDd,
+                { shortName: 'Sat', startDay: 6 },
+                filterFuturePeriods
+            ),
+            name: i18n.t('Weekly (Start Saturday)'),
+        },
+        {
+            id: WEEKLYSUN,
+            getPeriods: getWeeklyPeriodType(
+                formatYyyyMmDd,
+                { shortName: 'Sun', startDay: 7 },
+                filterFuturePeriods
+            ),
+            name: i18n.t('Weekly (Start Sunday)'),
+        },
+        {
+            id: MONTHLY,
+            getPeriods: getMonthlyPeriodType(
+                formatYyyyMmDd,
+                filterFuturePeriods
+            ),
+            name: i18n.t('Monthly'),
+        },
+        {
+            id: BIMONTHLY,
+            getPeriods: getBiMonthlyPeriodType(
+                formatYyyyMmDd,
+                filterFuturePeriods
+            ),
+            name: i18n.t('Bi-monthly'),
+        },
+        {
+            id: QUARTERLY,
+            getPeriods: getQuarterlyPeriodType(
+                formatYyyyMmDd,
+                filterFuturePeriods
+            ),
+            name: i18n.t('Quarterly'),
+        },
+        {
+            id: SIXMONTHLY,
+            getPeriods: getSixMonthlyPeriodType(filterFuturePeriods),
+            name: i18n.t('Six-monthly'),
+        },
+        {
+            id: SIXMONTHLYAPR,
+            getPeriods: getSixMonthlyAprilPeriodType(filterFuturePeriods),
+            name: i18n.t('Six-monthly April'),
+        },
+        {
+            id: YEARLY,
+            getPeriods: getYearlyPeriodType(
+                formatYyyyMmDd,
+                filterFuturePeriods
+            ),
+            name: i18n.t('Yearly'),
+        },
+        {
+            id: FYNOV,
+            getPeriods: getFinancialNovemberPeriodType(
+                formatYyyyMmDd,
+                filterFuturePeriods
+            ),
+            name: i18n.t('Financial year (Start November)'),
+        },
+        {
+            id: FYOCT,
+            getPeriods: getFinancialOctoberPeriodType(
+                formatYyyyMmDd,
+                filterFuturePeriods
+            ),
+            name: i18n.t('Financial year (Start October)'),
+        },
+        {
+            id: FYJUL,
+            getPeriods: getFinancialJulyPeriodType(
+                formatYyyyMmDd,
+                filterFuturePeriods
+            ),
+            name: i18n.t('Financial year (Start July)'),
+        },
+        {
+            id: FYAPR,
+            getPeriods: getFinancialAprilPeriodType(
+                formatYyyyMmDd,
+                filterFuturePeriods
+            ),
+            name: i18n.t('Financial year (Start April)'),
+        },
+    ]
+
+    return options.filter(
+        option =>
+            !(
+                (settings[HIDE_DAILY] && option.id === DAILY) ||
+                (settings[HIDE_WEEKLY] &&
+                    [
+                        WEEKLY,
+                        WEEKLYWED,
+                        WEEKLYTHU,
+                        WEEKLYSAT,
+                        WEEKLYSUN,
+                    ].includes(option.id)) ||
+                (settings[HIDE_BI_WEEKLY] && option.id === BIWEEKLY) ||
+                (settings[HIDE_MONTHLY] && option.id === MONTHLY) ||
+                (settings[HIDE_BI_MONTHLY] && option.id === BIMONTHLY)
+            )
+    )
+}
 
 export const getFixedPeriodsOptionsById = id =>
     getOptions().find(option => option.id === id)
 
-export const getFixedPeriodsOptions = () => getOptions()
+export const getFixedPeriodsOptions = settings => getOptions(settings)
 
 export const getYearOffsetFromNow = yearStr =>
     parseInt(yearStr) - new Date(Date.now()).getFullYear()
