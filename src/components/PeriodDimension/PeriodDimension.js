@@ -3,26 +3,23 @@ import PropTypes from 'prop-types'
 
 import PeriodTransfer from './PeriodTransfer'
 import { DIMENSION_ID_PERIOD } from '../../modules/predefinedDimensions'
-
-import { useDataQuery } from '@dhis2/app-runtime'
-
-const systemSettingsQuery = {
-    systemSettings: {
-        resource: 'systemSettings',
-        params: {
-            key: [
-                'keyHideDailyPeriods',
-                'keyHideWeeklyPeriods',
-                'keyHideBiWeeklyPeriods',
-                'keyHideMonthlyPeriods',
-                'keyHideBiMonthlyPeriods',
-            ],
-        },
-    },
-}
+import { apiGetSystemSettings } from '../../api/systemSettings'
+import {
+    HIDE_BI_MONTHLY,
+    HIDE_DAILY,
+    HIDE_MONTHLY,
+    HIDE_WEEKLY,
+    HIDE_BI_WEEKLY,
+} from './utils/settings'
 
 export const PeriodDimension = ({ onSelect, selectedPeriods, rightFooter }) => {
-    const { loading, error, data } = useDataQuery(systemSettingsQuery)
+    const { loading, error, data } = apiGetSystemSettings([
+        HIDE_BI_MONTHLY,
+        HIDE_DAILY,
+        HIDE_MONTHLY,
+        HIDE_WEEKLY,
+        HIDE_BI_WEEKLY,
+    ])
 
     const selectPeriods = periods => {
         onSelect({
