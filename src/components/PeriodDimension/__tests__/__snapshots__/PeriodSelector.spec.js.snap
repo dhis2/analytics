@@ -33,7 +33,7 @@ exports[`The Period Selector component matches the snapshot 1`] = `
         className="filterContainer"
       >
         <RelativePeriodFilter
-          currentFilter="Months"
+          currentFilter="MONTHLY"
           dataTest="undefined-relative-period-filter"
           onSelectFilter={[Function]}
           settings={Object {}}

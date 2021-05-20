@@ -1,21 +1,22 @@
 import i18n from '../../../locales/index.js'
 import {
+    DAILY,
+    WEEKLY,
+    BIWEEKLY,
+    MONTHLY,
+    BIMONTHLY,
+    QUARTERLY,
+    SIXMONTHLY,
+    FINANCIAL,
+    YEARLY,
+} from './index.js'
+import {
     HIDE_BI_MONTHLY,
     HIDE_BI_WEEKLY,
     HIDE_DAILY,
     HIDE_MONTHLY,
     HIDE_WEEKLY,
 } from './settings.js'
-
-export const DAYS = 'Days'
-export const WEEKS = 'Weeks'
-export const BIWEEKS = 'BiWeeks'
-export const MONTHS = 'Months'
-export const BIMONTHS = 'BiMonths'
-export const QUARTERS = 'Quarters'
-export const SIXMONTHS = 'SixMonths'
-export const FINACIALYEARS = 'FinancialYears'
-export const YEARS = 'Years'
 
 const getDaysPeriodType = () => [
     { id: 'TODAY', name: i18n.t('Today') },
@@ -112,47 +113,47 @@ const getYearsPeriodType = () => [
 const getOptions = (settings = {}) => {
     const options = [
         {
-            id: DAYS,
+            id: DAILY,
             getPeriods: () => getDaysPeriodType(),
             name: i18n.t('Days'),
         },
         {
-            id: WEEKS,
+            id: WEEKLY,
             getPeriods: () => getWeeksPeriodType(),
             name: i18n.t('Weeks'),
         },
         {
-            id: BIWEEKS,
+            id: BIWEEKLY,
             getPeriods: () => getBiWeeksPeriodType(),
             name: i18n.t('Bi-weeks'),
         },
         {
-            id: MONTHS,
+            id: MONTHLY,
             getPeriods: () => getMonthsPeriodType(),
             name: i18n.t('Months'),
         },
         {
-            id: BIMONTHS,
+            id: BIMONTHLY,
             getPeriods: () => getBiMonthsPeriodType(),
             name: i18n.t('Bi-months'),
         },
         {
-            id: QUARTERS,
+            id: QUARTERLY,
             getPeriods: () => getQuartersPeriodType(),
             name: i18n.t('Quarters'),
         },
         {
-            id: SIXMONTHS,
+            id: SIXMONTHLY,
             getPeriods: () => getSixMonthsPeriodType(),
             name: i18n.t('Six-months'),
         },
         {
-            id: FINACIALYEARS,
+            id: FINANCIAL,
             getPeriods: () => getFinancialYearsPeriodType(),
             name: i18n.t('Financial Years'),
         },
         {
-            id: YEARS,
+            id: YEARLY,
             getPeriods: () => getYearsPeriodType(),
             name: i18n.t('Years'),
         },
@@ -161,11 +162,11 @@ const getOptions = (settings = {}) => {
     return options.filter(
         option =>
             !(
-                (settings[HIDE_DAILY] && option.id === DAYS) ||
-                (settings[HIDE_WEEKLY] && option.id === WEEKS) ||
-                (settings[HIDE_BI_WEEKLY] && option.id === BIWEEKS) ||
-                (settings[HIDE_MONTHLY] && option.id === MONTHS) ||
-                (settings[HIDE_BI_MONTHLY] && option.id === BIMONTHS)
+                (settings[HIDE_DAILY] && option.id === DAILY) ||
+                (settings[HIDE_WEEKLY] && option.id === WEEKLY) ||
+                (settings[HIDE_BI_WEEKLY] && option.id === BIWEEKLY) ||
+                (settings[HIDE_MONTHLY] && option.id === MONTHLY) ||
+                (settings[HIDE_BI_MONTHLY] && option.id === BIMONTHLY)
             )
     )
 }

@@ -1,5 +1,24 @@
 import i18n from '../../../locales/index.js'
 import {
+    DAILY,
+    WEEKLY,
+    WEEKLYWED,
+    WEEKLYTHU,
+    WEEKLYSAT,
+    WEEKLYSUN,
+    BIWEEKLY,
+    MONTHLY,
+    BIMONTHLY,
+    QUARTERLY,
+    SIXMONTHLY,
+    SIXMONTHLYAPR,
+    YEARLY,
+    FYNOV,
+    FYOCT,
+    FYJUL,
+    FYAPR,
+} from './index.js'
+import {
     HIDE_BI_MONTHLY,
     HIDE_BI_WEEKLY,
     HIDE_DAILY,
@@ -7,24 +26,6 @@ import {
     HIDE_WEEKLY,
 } from './settings.js'
 // generate periods config object: { boolean offset, boolean filterFuturePeriods, boolean reversePeriods }
-
-export const DAILY = 'DAILY'
-export const WEEKLY = 'WEEKLY'
-export const BIWEEKLY = 'BIWEEKLY'
-export const WEEKLYWED = 'WEEKLYWED'
-export const WEEKLYTHU = 'WEEKLYTHU'
-export const WEEKLYSAT = 'WEEKLYSAT'
-export const WEEKLYSUN = 'WEEKLYSUN'
-export const MONTHLY = 'MONTHLY'
-export const BIMONTHLY = 'BIMONTHLY'
-export const QUARTERLY = 'QUARTERLY'
-export const SIXMONTHLY = 'SIXMONTHLY'
-export const SIXMONTHLYAPR = 'SIXMONTHLYAPR'
-export const YEARLY = 'YEARLY'
-export const FYNOV = 'FYNOV'
-export const FYOCT = 'FYOCT'
-export const FYJUL = 'FYJUL'
-export const FYAPR = 'FYAPR'
 
 const PERIOD_TYPE_REGEX = {
     [DAILY]: /^([0-9]{4})([0-9]{2})([0-9]{2})$/, // YYYYMMDD

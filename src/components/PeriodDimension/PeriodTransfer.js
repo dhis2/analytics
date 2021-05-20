@@ -5,16 +5,8 @@ import i18n from '../../locales/index.js'
 
 import FixedPeriodFilter from './FixedPeriodFilter'
 import RelativePeriodFilter from './RelativePeriodFilter'
-import {
-    MONTHS,
-    QUARTERS,
-    getRelativePeriodsOptionsById,
-} from './utils/relativePeriods'
-import {
-    MONTHLY,
-    QUARTERLY,
-    getFixedPeriodsOptionsById,
-} from './utils/fixedPeriods'
+import { getRelativePeriodsOptionsById } from './utils/relativePeriods'
+import { getFixedPeriodsOptionsById } from './utils/fixedPeriods'
 import styles from '../styles/DimensionSelector.style'
 import { TransferOption } from '../TransferOption'
 import PeriodIcon from '../../assets/DimensionItemIcons/PeriodIcon' //TODO: Reimplement the icon
@@ -24,6 +16,7 @@ import {
     TRANSFER_SELECTED_WIDTH,
 } from '../../modules/dimensionSelectorHelper'
 import { HIDE_MONTHLY } from './utils/settings.js'
+import { MONTHLY, QUARTERLY } from './utils/index.js'
 
 export const PeriodTransfer = ({
     onSelect,
@@ -33,8 +26,8 @@ export const PeriodTransfer = ({
     settings,
 }) => {
     const defaultRelativePeriodType = settings[HIDE_MONTHLY]
-        ? getRelativePeriodsOptionsById(QUARTERS)
-        : getRelativePeriodsOptionsById(MONTHS)
+        ? getRelativePeriodsOptionsById(QUARTERLY)
+        : getRelativePeriodsOptionsById(MONTHLY)
     const defaultFixedPeriodType = settings[HIDE_MONTHLY]
         ? getFixedPeriodsOptionsById(QUARTERLY)
         : getFixedPeriodsOptionsById(MONTHLY)

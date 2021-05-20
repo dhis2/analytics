@@ -229,9 +229,16 @@ export {
     colorSets,
 } from './visualizations/util/colors/colorSets'
 
-// Utils: relativePeriods
+// Utils: periods
 export {
-    DAYS,
-    WEEKS,
-    getRelativePeriodsOptionsById,
-} from './components/PeriodDimension/utils/relativePeriods'
+    DAILY,
+    WEEKLY,
+    BIWEEKLY,
+    MONTHLY,
+    BIMONTHLY,
+    QUARTERLY,
+    SIXMONTHLY,
+    YEARLY,
+    FINANCIAL,
+} from './components/PeriodDimension/utils'
+export { getRelativePeriodsOptionsById } from './components/PeriodDimension/utils/relativePeriods'
