@@ -15,7 +15,6 @@ import {
     TRANSFER_OPTIONS_WIDTH,
     TRANSFER_SELECTED_WIDTH,
 } from '../../modules/dimensionSelectorHelper'
-import { HIDE_MONTHLY } from './utils/settings.js'
 import { MONTHLY, QUARTERLY } from './utils/index.js'
 
 export const PeriodTransfer = ({
@@ -23,12 +22,12 @@ export const PeriodTransfer = ({
     dataTest,
     initialSelectedPeriods,
     rightFooter,
-    settings,
+    excludedPeriodTypes,
 }) => {
-    const defaultRelativePeriodType = settings[HIDE_MONTHLY]
+    const defaultRelativePeriodType = excludedPeriodTypes.includes(MONTHLY)
         ? getRelativePeriodsOptionsById(QUARTERLY)
         : getRelativePeriodsOptionsById(MONTHLY)
-    const defaultFixedPeriodType = settings[HIDE_MONTHLY]
+    const defaultFixedPeriodType = excludedPeriodTypes.includes(MONTHLY)
         ? getFixedPeriodsOptionsById(QUARTERLY)
         : getFixedPeriodsOptionsById(MONTHLY)
     const defaultFixedPeriodYear = new Date().getFullYear()
@@ -99,7 +98,7 @@ export const PeriodTransfer = ({
                             )
                         }}
                         dataTest={`${dataTest}-relative-period-filter`}
-                        settings={settings}
+                        excludedPeriodTypes={excludedPeriodTypes}
                     />
                 ) : (
                     <FixedPeriodFilter
@@ -118,7 +117,7 @@ export const PeriodTransfer = ({
                             })
                         }}
                         dataTest={`${dataTest}-fixed-period-filter`}
-                        settings={settings}
+                        excludedPeriodTypes={excludedPeriodTypes}
                     />
                 )}
             </div>
@@ -183,9 +182,15 @@ export const PeriodTransfer = ({
     )
 }
 
+PeriodTransfer.defaultProps = {
+    initialSelectedPeriods: [],
+    excludedPeriodTypes: [],
+}
+
 PeriodTransfer.propTypes = {
     onSelect: PropTypes.func.isRequired,
     dataTest: PropTypes.string,
+    excludedPeriodTypes: PropTypes.arrayOf(PropTypes.string),
     initialSelectedPeriods: PropTypes.arrayOf(
         PropTypes.shape({
             id: PropTypes.string,
@@ -193,12 +198,6 @@ PeriodTransfer.propTypes = {
         })
     ),
     rightFooter: PropTypes.node,
-    settings: PropTypes.object,
-}
-
-PeriodTransfer.defaultProps = {
-    initialSelectedPeriods: [],
-    settings: {},
 }
 
 export default PeriodTransfer

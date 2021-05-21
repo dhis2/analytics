@@ -10,7 +10,7 @@ const RelativePeriodFilter = ({
     currentFilter,
     onSelectFilter,
     dataTest,
-    settings,
+    excludedPeriodTypes,
 }) => (
     <div className="leftSection">
         <SingleSelectField
@@ -21,14 +21,16 @@ const RelativePeriodFilter = ({
             className="filterElement"
             dataTest={dataTest}
         >
-            {getRelativePeriodsOptions(settings).map(option => (
-                <SingleSelectOption
-                    key={option.id}
-                    value={option.id}
-                    label={option.name}
-                    dataTest={`${dataTest}-option-${option.id}`}
-                />
-            ))}
+            {getRelativePeriodsOptions()
+                .filter(period => !excludedPeriodTypes.includes(period.id))
+                .map(option => (
+                    <SingleSelectOption
+                        key={option.id}
+                        value={option.id}
+                        label={option.name}
+                        dataTest={`${dataTest}-option-${option.id}`}
+                    />
+                ))}
         </SingleSelectField>
         <style jsx>{styles}</style>
     </div>
@@ -38,7 +40,7 @@ RelativePeriodFilter.propTypes = {
     currentFilter: PropTypes.string.isRequired,
     onSelectFilter: PropTypes.func.isRequired,
     dataTest: PropTypes.string,
-    settings: PropTypes.object,
+    excludedPeriodTypes: PropTypes.arrayOf(PropTypes.string),
 }
 
 export default RelativePeriodFilter

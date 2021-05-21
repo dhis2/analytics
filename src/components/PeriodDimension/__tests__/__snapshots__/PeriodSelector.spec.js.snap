@@ -35,8 +35,8 @@ exports[`The Period Selector component matches the snapshot 1`] = `
         <RelativePeriodFilter
           currentFilter="MONTHLY"
           dataTest="undefined-relative-period-filter"
+          excludedPeriodTypes={Array []}
           onSelectFilter={[Function]}
-          settings={Object {}}
         />
       </div>
       <style>

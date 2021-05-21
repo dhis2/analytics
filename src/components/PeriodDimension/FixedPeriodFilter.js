@@ -8,12 +8,12 @@ import styles from './styles/PeriodFilter.style'
 
 const FixedPeriodFilter = ({
     allowedPeriodTypes,
+    excludedPeriodTypes,
     currentPeriodType,
     currentYear,
     onSelectPeriodType,
     onSelectYear,
     dataTest,
-    settings,
 }) => {
     const onlyAllowedTypeIsSelected =
         Array.isArray(allowedPeriodTypes) &&
@@ -32,7 +32,10 @@ const FixedPeriodFilter = ({
                     className="filterElement"
                     dataTest={`${dataTest}-period-type`}
                 >
-                    {getFixedPeriodsOptions(settings)
+                    {getFixedPeriodsOptions()
+                        .filter(
+                            period => !excludedPeriodTypes.includes(period.id)
+                        )
                         .filter(
                             option =>
                                 !allowedPeriodTypes ||
@@ -74,7 +77,7 @@ FixedPeriodFilter.propTypes = {
     onSelectYear: PropTypes.func.isRequired,
     allowedPeriodTypes: PropTypes.arrayOf(PropTypes.string),
     dataTest: PropTypes.string,
-    settings: PropTypes.object,
+    excludedPeriodTypes: PropTypes.arrayOf(PropTypes.string),
 }
 
 export default FixedPeriodFilter
