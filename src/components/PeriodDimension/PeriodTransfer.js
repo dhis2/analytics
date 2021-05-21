@@ -176,8 +176,13 @@ export const PeriodTransfer = ({
                 })
             )}
             renderOption={props => (
-                <TransferOption {...props} icon={PeriodIcon} />
+                <TransferOption
+                    {...props}
+                    icon={PeriodIcon}
+                    dataTest={`${dataTest}-transfer-option`}
+                />
             )}
+            dataTest={`${dataTest}-transfer`}
         ></Transfer>
     )
 }
