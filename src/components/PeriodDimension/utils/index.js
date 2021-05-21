@@ -16,3 +16,6 @@ export const FYNOV = 'FYNOV'
 export const FYOCT = 'FYOCT'
 export const FYJUL = 'FYJUL'
 export const FYAPR = 'FYAPR'
+
+export const filterPeriodTypesById = (allPeriodTypes, excludedPeriodTypes) =>
+    allPeriodTypes.filter(period => !excludedPeriodTypes.includes(period.id))

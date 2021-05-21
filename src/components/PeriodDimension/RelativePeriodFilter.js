@@ -5,6 +5,7 @@ import { SingleSelectField, SingleSelectOption } from '@dhis2/ui'
 
 import { getRelativePeriodsOptions } from './utils/relativePeriods'
 import styles from './styles/PeriodFilter.style'
+import { filterPeriodTypesById } from './utils/index.js'
 
 const RelativePeriodFilter = ({
     currentFilter,
@@ -21,16 +22,17 @@ const RelativePeriodFilter = ({
             className="filterElement"
             dataTest={dataTest}
         >
-            {getRelativePeriodsOptions()
-                .filter(period => !excludedPeriodTypes.includes(period.id))
-                .map(option => (
-                    <SingleSelectOption
-                        key={option.id}
-                        value={option.id}
-                        label={option.name}
-                        dataTest={`${dataTest}-option-${option.id}`}
-                    />
-                ))}
+            {filterPeriodTypesById(
+                getRelativePeriodsOptions(),
+                excludedPeriodTypes
+            ).map(option => (
+                <SingleSelectOption
+                    key={option.id}
+                    value={option.id}
+                    label={option.name}
+                    dataTest={`${dataTest}-option-${option.id}`}
+                />
+            ))}
         </SingleSelectField>
         <style jsx>{styles}</style>
     </div>

@@ -5,6 +5,7 @@ import { SingleSelectField, InputField, SingleSelectOption } from '@dhis2/ui'
 
 import { getFixedPeriodsOptions } from './utils/fixedPeriods'
 import styles from './styles/PeriodFilter.style'
+import { filterPeriodTypesById } from './utils/index.js'
 
 const FixedPeriodFilter = ({
     allowedPeriodTypes,
@@ -32,25 +33,24 @@ const FixedPeriodFilter = ({
                     className="filterElement"
                     dataTest={`${dataTest}-period-type`}
                 >
-                    {getFixedPeriodsOptions()
-                        .filter(
-                            period => !excludedPeriodTypes.includes(period.id)
-                        )
-                        .filter(
-                            option =>
-                                !allowedPeriodTypes ||
-                                allowedPeriodTypes.some(
-                                    type => type === option.id
-                                )
-                        )
-                        .map(option => (
-                            <SingleSelectOption
-                                key={option.id}
-                                value={option.id}
-                                label={option.name}
-                                dataTest={`${dataTest}-period-type-option-${option.id}`}
-                            />
-                        ))}
+                    {(allowedPeriodTypes
+                        ? getFixedPeriodsOptions().filter(option =>
+                              allowedPeriodTypes.some(
+                                  type => type === option.id
+                              )
+                          )
+                        : filterPeriodTypesById(
+                              getFixedPeriodsOptions(),
+                              excludedPeriodTypes
+                          )
+                    ).map(option => (
+                        <SingleSelectOption
+                            key={option.id}
+                            value={option.id}
+                            label={option.name}
+                            dataTest={`${dataTest}-period-type-option-${option.id}`}
+                        />
+                    ))}
                 </SingleSelectField>
             </div>
             <div className="rightSection">
