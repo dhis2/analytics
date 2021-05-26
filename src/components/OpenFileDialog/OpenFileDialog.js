@@ -19,7 +19,6 @@ import {
     CircularLoader,
     Button,
 } from '@dhis2/ui'
-import { useDebounce } from '../../modules/utils'
 import { styles } from './OpenFileDialog.styles'
 import { FileList } from './FileList'
 import { NameFilter } from './NameFilter'
@@ -74,9 +73,7 @@ export const OpenFileDialog = ({
     })
     const [page, setPage] = useState(1)
     const [searchTerm, setSearchTerm] = useState(defaultFilters.searchTerm)
-    const searchTermDebounced = useDebounce(searchTerm, 200)
-    const [createdBy, setCreatedBy] = useState(defaultFilters.createdBy)
-    const [visType, setVisTypeFilter] = useState(defaultFilters.visType)
+    const [searchTimeout, setSearchTimeout] = useState(null)
     const [filters, setFilters] = useState(defaultFilters)
 
     const formatFilters = ({ searchTerm, createdBy, visType }) => {
@@ -120,8 +117,6 @@ export const OpenFileDialog = ({
     const resetFilters = () => {
         setFilters(defaultFilters)
         setSearchTerm(defaultFilters.searchTerm)
-        setCreatedBy(defaultFilters.createdBy)
-        setVisTypeFilter(defaultFilters.visType)
     }
 
     const getString = (type, key) => {
@@ -182,26 +177,26 @@ export const OpenFileDialog = ({
     }
 
     useEffect(() => {
-        setFilters({
-            ...filters,
-            searchTerm: searchTermDebounced,
-            createdBy,
-            visType,
-        })
-        setPage(1)
-    }, [searchTermDebounced, createdBy, visType])
-
-    useEffect(() => {
         // only fetch data when the dialog is open
         if (open) {
             refetch({
                 page,
                 sortField,
                 sortDirection,
-                filters: formatFilters(filters),
             })
         }
-    }, [open, page, sortField, sortDirection, filters])
+    }, [open, page, sortField, sortDirection])
+
+    useEffect(() => {
+        // reset pagination when filters are applied/changed
+        setPage(1)
+
+        refetch({
+            sortField,
+            sortDirection,
+            filters: formatFilters(filters),
+        })
+    }, [filters])
 
     const headers = [
         {
@@ -238,21 +233,45 @@ export const OpenFileDialog = ({
                             <div className="search-field-container">
                                 <NameFilter
                                     value={searchTerm}
-                                    onChange={setSearchTerm}
+                                    onChange={value => {
+                                        setSearchTerm(value)
+
+                                        clearTimeout(searchTimeout)
+                                        setSearchTimeout(
+                                            setTimeout(
+                                                () =>
+                                                    setFilters({
+                                                        ...filters,
+                                                        searchTerm: value,
+                                                    }),
+                                                200
+                                            )
+                                        )
+                                    }}
                                 />
                             </div>
                             {type === 'visualization' && (
                                 <div className="type-field-container">
                                     <VisTypeFilter
-                                        selected={visType}
-                                        onChange={setVisTypeFilter}
+                                        selected={filters.visType}
+                                        onChange={value =>
+                                            setFilters({
+                                                ...filters,
+                                                visType: value,
+                                            })
+                                        }
                                     />
                                 </div>
                             )}
                             <div className="created-by-field-container">
                                 <OwnerFilter
-                                    selected={createdBy}
-                                    onChange={setCreatedBy}
+                                    selected={filters.createdBy}
+                                    onChange={value =>
+                                        setFilters({
+                                            ...filters,
+                                            createdBy: value,
+                                        })
+                                    }
                                 />
                             </div>
                             {!isEqual(filters, defaultFilters) && (
