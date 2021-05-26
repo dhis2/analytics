@@ -71,3 +71,22 @@ storiesOf('PeriodDimension', module).add('All below Quarterly excluded', () => {
         />
     )
 })
+
+storiesOf('PeriodDimension', module).add('Right footer', () => {
+    return (
+        <PeriodDimension
+            rightFooter={
+                <div
+                    style={{
+                        padding: '8px',
+                        margin: '8px 0',
+                        border: '1px solid #f79533',
+                    }}
+                >
+                    <p>Right footer goes here</p>
+                </div>
+            }
+            onSelect={selected => console.log(selected)}
+        />
+    )
+})
