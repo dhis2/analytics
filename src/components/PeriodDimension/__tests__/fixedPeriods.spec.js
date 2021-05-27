@@ -18,11 +18,11 @@ describe('fixedPeriods utils', () => {
             expect(periodIds).toEqual([
                 'DAILY',
                 'WEEKLY',
-                'BIWEEKLY',
                 'WEEKLYWED',
                 'WEEKLYTHU',
                 'WEEKLYSAT',
                 'WEEKLYSUN',
+                'BIWEEKLY',
                 'MONTHLY',
                 'BIMONTHLY',
                 'QUARTERLY',
