@@ -150,6 +150,13 @@ export default function ({ store, layout, el, extraConfig, extraOptions }) {
             showLabels: _layout.showValues || _layout.showData,
             tooltipData: _extraOptions.scatterData,
         })
+    } else {
+        config.plotOptions = getPlotOptions({
+            visType: _layout.type,
+            ...(_extraOptions.onToggleContextualMenu
+                ? { onClick: _extraOptions.onToggleContextualMenu }
+                : {}),
+        })
     }
 
     // hide empty categories
