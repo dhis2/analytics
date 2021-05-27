@@ -1,3 +1,10 @@
+# [17.2.0](https://github.com/dhis2/analytics/compare/v17.1.0...v17.2.0) (2021-05-27)
+
+
+### Features
+
+* hide periods based on excludedPeriodTypes (DHIS2-11161) ([#920](https://github.com/dhis2/analytics/issues/920)) ([3b0237e](https://github.com/dhis2/analytics/commit/3b0237e28940f69c8967d22b0c5524be0f71a64e))
+
 # [17.1.0](https://github.com/dhis2/analytics/compare/v17.0.5...v17.1.0) (2021-05-25)
 
 
