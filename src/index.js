@@ -229,25 +229,9 @@ export {
     colorSets,
 } from './visualizations/util/colors/colorSets'
 
-// Utils: periods
+// Utils: relativePeriods
 export {
-    DAILY,
-    WEEKLY,
-    WEEKLYWED,
-    WEEKLYTHU,
-    WEEKLYSAT,
-    WEEKLYSUN,
-    BIWEEKLY,
-    MONTHLY,
-    BIMONTHLY,
-    QUARTERLY,
-    SIXMONTHLY,
-    SIXMONTHLYAPR,
-    YEARLY,
-    FINANCIAL,
-    FYNOV,
-    FYOCT,
-    FYJUL,
-    FYAPR,
-} from './components/PeriodDimension/utils'
-export { getRelativePeriodsOptionsById } from './components/PeriodDimension/utils/relativePeriods'
+    DAYS,
+    WEEKS,
+    getRelativePeriodsOptionsById,
+} from './components/PeriodDimension/utils/relativePeriods'

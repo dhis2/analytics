@@ -1,15 +1,14 @@
 import i18n from '../../../locales/index.js'
-import {
-    DAILY,
-    WEEKLY,
-    BIWEEKLY,
-    MONTHLY,
-    BIMONTHLY,
-    QUARTERLY,
-    SIXMONTHLY,
-    FINANCIAL,
-    YEARLY,
-} from './index.js'
+
+export const DAYS = 'Days'
+export const WEEKS = 'Weeks'
+export const BIWEEKS = 'BiWeeks'
+export const MONTHS = 'Months'
+export const BIMONTHS = 'BiMonths'
+export const QUARTERS = 'Quarters'
+export const SIXMONTHS = 'SixMonths'
+export const FINACIALYEARS = 'FinancialYears'
+export const YEARS = 'Years'
 
 const getDaysPeriodType = () => [
     { id: 'TODAY', name: i18n.t('Today') },
@@ -105,48 +104,44 @@ const getYearsPeriodType = () => [
 ]
 
 const getOptions = () => [
+    { id: DAYS, getPeriods: () => getDaysPeriodType(), name: i18n.t('Days') },
     {
-        id: DAILY,
-        getPeriods: () => getDaysPeriodType(),
-        name: i18n.t('Days'),
-    },
-    {
-        id: WEEKLY,
+        id: WEEKS,
         getPeriods: () => getWeeksPeriodType(),
         name: i18n.t('Weeks'),
     },
     {
-        id: BIWEEKLY,
+        id: BIWEEKS,
         getPeriods: () => getBiWeeksPeriodType(),
         name: i18n.t('Bi-weeks'),
     },
     {
-        id: MONTHLY,
+        id: MONTHS,
         getPeriods: () => getMonthsPeriodType(),
         name: i18n.t('Months'),
     },
     {
-        id: BIMONTHLY,
+        id: BIMONTHS,
         getPeriods: () => getBiMonthsPeriodType(),
         name: i18n.t('Bi-months'),
     },
     {
-        id: QUARTERLY,
+        id: QUARTERS,
         getPeriods: () => getQuartersPeriodType(),
         name: i18n.t('Quarters'),
     },
     {
-        id: SIXMONTHLY,
+        id: SIXMONTHS,
         getPeriods: () => getSixMonthsPeriodType(),
         name: i18n.t('Six-months'),
     },
     {
-        id: FINANCIAL,
+        id: FINACIALYEARS,
         getPeriods: () => getFinancialYearsPeriodType(),
         name: i18n.t('Financial Years'),
     },
     {
-        id: YEARLY,
+        id: YEARS,
         getPeriods: () => getYearsPeriodType(),
         name: i18n.t('Years'),
     },
