@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-03-09T11:13:51.855Z\n"
+"POT-Creation-Date: 2021-05-28T13:23:46.712Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: Mai Nguyen <thanhmai.jica@gmail.com>, 2021\n"
 "Language-Team: Vietnamese (https://www.transifex.com/hisp-uio/teams/100509/vi/)\n"
@@ -128,7 +128,8 @@ msgstr "Không tìm thấy cho {{searchTerm}}"
 msgid "Delete {{fileType}}"
 msgstr ""
 
-msgid "This {{fileType}} will be deleted. Continue?"
+msgid ""
+"This {{fileType}} and related interpretations will be deleted. Continue?"
 msgstr ""
 
 msgid "Cancel"
@@ -269,9 +270,6 @@ msgstr "Hàng ngày"
 msgid "Weekly"
 msgstr "Hàng tuần"
 
-msgid "Bi-weekly"
-msgstr "Hai-tuần"
-
 msgid "Weekly (Start Wednesday)"
 msgstr "Hàng tuần (Bắt đầu từ Thứ Tư)"
 
@@ -283,6 +281,9 @@ msgstr "Hàng tuần (Bắt đầu từ Thứ Bảy)"
 
 msgid "Weekly (Start Sunday)"
 msgstr "Hàng tuần (Bắt đầu từ Chủ nhật)"
+
+msgid "Bi-weekly"
+msgstr "Hai-tuần"
 
 msgid "Monthly"
 msgstr "Hàng tháng"
@@ -436,6 +437,9 @@ msgstr "Năm ngoái"
 
 msgid "Last 5 years"
 msgstr "5 năm trước"
+
+msgid "Last 10 years"
+msgstr ""
 
 msgid "Days"
 msgstr "Ngày"

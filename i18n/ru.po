@@ -9,7 +9,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-03-09T11:13:51.855Z\n"
+"POT-Creation-Date: 2021-05-28T13:23:46.712Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: Ulanbek Abakirov <ulans@mail.ru>, 2021\n"
 "Language-Team: Russian (https://www.transifex.com/hisp-uio/teams/100509/ru/)\n"
@@ -130,7 +130,8 @@ msgstr ""
 msgid "Delete {{fileType}}"
 msgstr ""
 
-msgid "This {{fileType}} will be deleted. Continue?"
+msgid ""
+"This {{fileType}} and related interpretations will be deleted. Continue?"
 msgstr ""
 
 msgid "Cancel"
@@ -271,9 +272,6 @@ msgstr "Ежедневно"
 msgid "Weekly"
 msgstr "Еженедельно"
 
-msgid "Bi-weekly"
-msgstr "Каждые две недели"
-
 msgid "Weekly (Start Wednesday)"
 msgstr "Еженедельно(Начало Среда)"
 
@@ -285,6 +283,9 @@ msgstr "Еженедельно(Начало Суббота)"
 
 msgid "Weekly (Start Sunday)"
 msgstr "Еженедельно(Начало Воскресенье)"
+
+msgid "Bi-weekly"
+msgstr "Каждые две недели"
 
 msgid "Monthly"
 msgstr "Ежемесячно"
@@ -438,6 +439,9 @@ msgstr "Прошлый год"
 
 msgid "Last 5 years"
 msgstr "Прошлые 5 лет"
+
+msgid "Last 10 years"
+msgstr ""
 
 msgid "Days"
 msgstr "Дни"
