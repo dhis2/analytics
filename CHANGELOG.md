@@ -1,3 +1,15 @@
+# [18.0.0](https://github.com/dhis2/analytics/compare/v17.2.1...v18.0.0) (2021-05-28)
+
+
+### Features
+
+* hide periods based on excludedPeriodTypes (DHIS2-11161) ([#920](https://github.com/dhis2/analytics/issues/920)) mk2 ([#923](https://github.com/dhis2/analytics/issues/923)) ([4ecf4d6](https://github.com/dhis2/analytics/commit/4ecf4d69a3e0afb3b386cd427d0fce952ae466df))
+
+
+### BREAKING CHANGES
+
+* DAYS and WEEKS is not exported anymore (use DAILY and WEEKLY instead)
+
 ## [17.2.1](https://github.com/dhis2/analytics/compare/v17.2.0...v17.2.1) (2021-05-28)
 
 
