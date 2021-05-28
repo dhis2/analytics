@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-03-09T11:13:51.855Z\n"
+"POT-Creation-Date: 2021-05-28T13:23:46.712Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: trendspotter, 2021\n"
 "Language-Team: Czech (https://www.transifex.com/hisp-uio/teams/100509/cs/)\n"
@@ -126,8 +126,9 @@ msgstr "Pro dotaz {{searchTerm}} nebylo nic nalezeno"
 msgid "Delete {{fileType}}"
 msgstr "Smazat {{fileType}}"
 
-msgid "This {{fileType}} will be deleted. Continue?"
-msgstr "Tento {{fileType}} bude smazán. Pokračovat?"
+msgid ""
+"This {{fileType}} and related interpretations will be deleted. Continue?"
+msgstr ""
 
 msgid "Cancel"
 msgstr "Zrušit"
@@ -267,9 +268,6 @@ msgstr "Denně"
 msgid "Weekly"
 msgstr "Týdně"
 
-msgid "Bi-weekly"
-msgstr "po 14ti dnech"
-
 msgid "Weekly (Start Wednesday)"
 msgstr "Týdně (od středy)"
 
@@ -281,6 +279,9 @@ msgstr "Týdně (od soboty)"
 
 msgid "Weekly (Start Sunday)"
 msgstr "Týdně (začíná nedělí)"
+
+msgid "Bi-weekly"
+msgstr "po 14ti dnech"
 
 msgid "Monthly"
 msgstr "Měsíčně"
@@ -434,6 +435,9 @@ msgstr "Poslední rok"
 
 msgid "Last 5 years"
 msgstr "Posledních 5 let"
+
+msgid "Last 10 years"
+msgstr ""
 
 msgid "Days"
 msgstr "Dnů"
