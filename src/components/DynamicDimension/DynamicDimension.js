@@ -46,6 +46,9 @@ export const DynamicDimension = ({
             onFetch={fetchItems}
             onSelect={onSelectItems}
             rightFooter={rightFooter}
+            dataTest={`${dimensionTitle
+                .replace(/\s+/g, '-')
+                .toLowerCase()}-dimension`}
         />
     )
 }
