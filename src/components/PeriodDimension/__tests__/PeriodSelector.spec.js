@@ -18,7 +18,6 @@ describe('The Period Selector component', () => {
             initialSelectedPeriods: [],
             onSelect: jest.fn(),
             rightFooter: <></>,
-            dataTest: 'period-dimension',
         }
         shallowPeriodTransfer = undefined
     })

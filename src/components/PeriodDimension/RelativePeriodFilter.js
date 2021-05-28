@@ -5,14 +5,8 @@ import { SingleSelectField, SingleSelectOption } from '@dhis2/ui'
 
 import { getRelativePeriodsOptions } from './utils/relativePeriods'
 import styles from './styles/PeriodFilter.style'
-import { filterPeriodTypesById } from './utils/index.js'
 
-const RelativePeriodFilter = ({
-    currentFilter,
-    onSelectFilter,
-    dataTest,
-    excludedPeriodTypes,
-}) => (
+const RelativePeriodFilter = ({ currentFilter, onSelectFilter, dataTest }) => (
     <div className="leftSection">
         <SingleSelectField
             label={i18n.t('Period type')}
@@ -22,10 +16,7 @@ const RelativePeriodFilter = ({
             className="filterElement"
             dataTest={dataTest}
         >
-            {filterPeriodTypesById(
-                getRelativePeriodsOptions(),
-                excludedPeriodTypes
-            ).map(option => (
+            {getRelativePeriodsOptions().map(option => (
                 <SingleSelectOption
                     key={option.id}
                     value={option.id}
@@ -42,7 +33,6 @@ RelativePeriodFilter.propTypes = {
     currentFilter: PropTypes.string.isRequired,
     onSelectFilter: PropTypes.func.isRequired,
     dataTest: PropTypes.string,
-    excludedPeriodTypes: PropTypes.arrayOf(PropTypes.string),
 }
 
 export default RelativePeriodFilter

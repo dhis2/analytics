@@ -1,12 +1,12 @@
-import React, { useState } from 'react'
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { TabBar, Tab, Transfer } from '@dhis2/ui'
 import i18n from '../../locales/index.js'
 
 import FixedPeriodFilter from './FixedPeriodFilter'
 import RelativePeriodFilter from './RelativePeriodFilter'
-import { getRelativePeriodsOptionsById } from './utils/relativePeriods'
-import { getFixedPeriodsOptionsById } from './utils/fixedPeriods'
+import { MONTHS, getRelativePeriodsOptionsById } from './utils/relativePeriods'
+import { MONTHLY, getFixedPeriodsOptionsById } from './utils/fixedPeriods'
 import styles from '../styles/DimensionSelector.style'
 import { TransferOption } from '../TransferOption'
 import PeriodIcon from '../../assets/DimensionItemIcons/PeriodIcon' //TODO: Reimplement the icon
@@ -15,109 +15,104 @@ import {
     TRANSFER_OPTIONS_WIDTH,
     TRANSFER_SELECTED_WIDTH,
 } from '../../modules/dimensionSelectorHelper'
-import { MONTHLY, QUARTERLY } from './utils/index.js'
 
-export const PeriodTransfer = ({
-    onSelect,
-    dataTest,
-    initialSelectedPeriods,
-    rightFooter,
-    excludedPeriodTypes,
-}) => {
-    const defaultRelativePeriodType = excludedPeriodTypes.includes(MONTHLY)
-        ? getRelativePeriodsOptionsById(QUARTERLY)
-        : getRelativePeriodsOptionsById(MONTHLY)
-    const defaultFixedPeriodType = excludedPeriodTypes.includes(MONTHLY)
-        ? getFixedPeriodsOptionsById(QUARTERLY)
-        : getFixedPeriodsOptionsById(MONTHLY)
-    const defaultFixedPeriodYear = new Date().getFullYear()
-    const fixedPeriodConfig = year => ({
-        offset: year - defaultFixedPeriodYear,
-        filterFuturePeriods: false,
-        reversePeriods: false,
-    })
+const defaultRelativePeriodType = getRelativePeriodsOptionsById(MONTHS)
+const defaultFixedPeriodType = getFixedPeriodsOptionsById(MONTHLY)
+const defaultFixedPeriodYear = new Date().getFullYear()
+const fixedPeriodConfig = year => ({
+    offset: year - defaultFixedPeriodYear,
+    filterFuturePeriods: false,
+    reversePeriods: false,
+})
 
-    const [allPeriods, setAllPeriods] = useState(
-        defaultRelativePeriodType.getPeriods()
-    )
-    const [selectedPeriods, setSelectedPeriods] = useState(
-        initialSelectedPeriods
-    )
-    const [isRelative, setIsRelative] = useState(true)
-    const [relativeFilter, setRelativeFilter] = useState({
-        periodType: defaultRelativePeriodType.id,
-    })
-    const [fixedFilter, setFixedFilter] = useState({
-        periodType: defaultFixedPeriodType.id,
-        year: defaultFixedPeriodYear.toString(),
-    })
+class PeriodTransfer extends Component {
+    state = {
+        allPeriods: defaultRelativePeriodType.getPeriods(),
+        selectedPeriods: [],
+        isRelative: true,
+        relativeFilter: {
+            periodType: defaultRelativePeriodType.id,
+        },
+        fixedFilter: {
+            periodType: defaultFixedPeriodType.id,
+            year: defaultFixedPeriodYear.toString(),
+        },
+    }
 
-    const onIsRelativeClick = state => {
-        if (state !== isRelative) {
-            setIsRelative(state)
-            setAllPeriods(
-                state
+    constructor(props) {
+        super(props)
+
+        this.state.selectedPeriods = this.props.initialSelectedPeriods
+    }
+
+    onIsRelativeClick = isRelative => {
+        if (this.state.isRelative !== isRelative) {
+            this.setState({ isRelative })
+            this.setState({
+                allPeriods: isRelative
                     ? getRelativePeriodsOptionsById(
-                          relativeFilter.periodType
+                          this.state.relativeFilter.periodType
                       ).getPeriods()
                     : getFixedPeriodsOptionsById(
-                          fixedFilter.periodType
-                      ).getPeriods(fixedPeriodConfig(Number(fixedFilter.year)))
-            )
+                          this.state.fixedFilter.periodType
+                      ).getPeriods(
+                          fixedPeriodConfig(Number(this.state.fixedFilter.year))
+                      ),
+            })
         }
     }
 
-    const renderLeftHeader = () => (
+    renderLeftHeader = () => (
         <>
             <TabBar>
                 <Tab
-                    selected={isRelative}
-                    onClick={() => onIsRelativeClick(true)}
-                    dataTest={`${dataTest}-relative-periods-button`}
+                    selected={this.state.isRelative}
+                    onClick={() => this.onIsRelativeClick(true)}
+                    dataTest={`${this.props.dataTest}-relative-periods-button`}
                 >
                     {i18n.t('Relative periods')}
                 </Tab>
                 <Tab
-                    selected={!isRelative}
-                    onClick={() => onIsRelativeClick(false)}
-                    dataTest={`${dataTest}-fixed-periods-button`}
+                    selected={!this.state.isRelative}
+                    onClick={() => this.onIsRelativeClick(false)}
+                    dataTest={`${this.props.dataTest}-fixed-periods-button`}
                 >
                     {i18n.t('Fixed periods')}
                 </Tab>
             </TabBar>
             <div className="filterContainer">
-                {isRelative ? (
+                {this.state.isRelative ? (
                     <RelativePeriodFilter
-                        currentFilter={relativeFilter.periodType}
+                        currentFilter={this.state.relativeFilter.periodType}
                         onSelectFilter={filter => {
-                            setRelativeFilter({ periodType: filter })
-                            setAllPeriods(
-                                getRelativePeriodsOptionsById(
+                            this.setState({
+                                relativeFilter: { periodType: filter },
+                            })
+                            this.setState({
+                                allPeriods: getRelativePeriodsOptionsById(
                                     filter
-                                ).getPeriods()
-                            )
+                                ).getPeriods(),
+                            })
                         }}
-                        dataTest={`${dataTest}-relative-period-filter`}
-                        excludedPeriodTypes={excludedPeriodTypes}
+                        dataTest={`${this.props.dataTest}-relative-period-filter`}
                     />
                 ) : (
                     <FixedPeriodFilter
-                        currentPeriodType={fixedFilter.periodType}
-                        currentYear={fixedFilter.year}
+                        currentPeriodType={this.state.fixedFilter.periodType}
+                        currentYear={this.state.fixedFilter.year}
                         onSelectPeriodType={periodType => {
-                            onSelectFixedPeriods({
+                            this.onSelectFixedPeriods({
                                 periodType,
-                                year: fixedFilter.year,
+                                year: this.state.fixedFilter.year,
                             })
                         }}
                         onSelectYear={year => {
-                            onSelectFixedPeriods({
-                                periodType: fixedFilter.periodType,
+                            this.onSelectFixedPeriods({
+                                periodType: this.state.fixedFilter.periodType,
                                 year,
                             })
                         }}
-                        dataTest={`${dataTest}-fixed-period-filter`}
-                        excludedPeriodTypes={excludedPeriodTypes}
+                        dataTest={`${this.props.dataTest}-fixed-period-filter`}
                     />
                 )}
             </div>
@@ -125,77 +120,68 @@ export const PeriodTransfer = ({
         </>
     )
 
-    const renderRightHeader = () => (
+    renderRightHeader = () => (
         <>
             <p className="rightHeader">{i18n.t('Selected Periods')}</p>
             <style jsx>{styles}</style>
         </>
     )
 
-    const onSelectFixedPeriods = filter => {
-        setFixedFilter(filter)
-        setAllPeriods(
-            getFixedPeriodsOptionsById(filter.periodType).getPeriods(
-                fixedPeriodConfig(Number(filter.year))
-            )
-        )
+    onSelectFixedPeriods = fixedFilter => {
+        this.setState({
+            fixedFilter,
+            allPeriods: getFixedPeriodsOptionsById(
+                fixedFilter.periodType
+            ).getPeriods(fixedPeriodConfig(Number(fixedFilter.year))),
+        })
     }
 
-    const renderEmptySelection = () => (
+    renderEmptySelection = () => (
         <>
             <p className="emptyList">{i18n.t('No periods selected')}</p>
             <style jsx>{styles}</style>
         </>
     )
 
-    return (
+    render = () => (
         <Transfer
             onChange={({ selected }) => {
                 const formattedItems = selected.map(id => ({
                     id,
-                    name: [...allPeriods, ...selectedPeriods].find(
-                        item => item.id === id
-                    ).name,
+                    name: [
+                        ...this.state.allPeriods,
+                        ...this.state.selectedPeriods,
+                    ].find(item => item.id === id).name,
                 }))
-                setSelectedPeriods(formattedItems)
-                onSelect(formattedItems)
+                this.setState({ selectedPeriods: formattedItems })
+                this.props.onSelect(formattedItems)
             }}
-            selected={selectedPeriods.map(period => period.id)}
-            leftHeader={renderLeftHeader()}
+            selected={this.state.selectedPeriods.map(period => period.id)}
+            leftHeader={this.renderLeftHeader()}
             enableOrderChange
             height={TRANSFER_HEIGHT}
             optionsWidth={TRANSFER_OPTIONS_WIDTH}
             selectedWidth={TRANSFER_SELECTED_WIDTH}
-            selectedEmptyComponent={renderEmptySelection()}
-            rightHeader={renderRightHeader()}
-            rightFooter={rightFooter}
-            options={[...allPeriods, ...selectedPeriods].map(
-                ({ id, name }) => ({
-                    label: name,
-                    value: id,
-                })
-            )}
+            selectedEmptyComponent={this.renderEmptySelection()}
+            rightHeader={this.renderRightHeader()}
+            rightFooter={this.props.rightFooter}
+            options={[
+                ...this.state.allPeriods,
+                ...this.state.selectedPeriods,
+            ].map(({ id, name }) => ({
+                label: name,
+                value: id,
+            }))}
             renderOption={props => (
-                <TransferOption
-                    {...props}
-                    icon={PeriodIcon}
-                    dataTest={`${dataTest}-transfer-option`}
-                />
+                <TransferOption {...props} icon={PeriodIcon} />
             )}
-            dataTest={`${dataTest}-transfer`}
         ></Transfer>
     )
-}
-
-PeriodTransfer.defaultProps = {
-    initialSelectedPeriods: [],
-    excludedPeriodTypes: [],
 }
 
 PeriodTransfer.propTypes = {
     onSelect: PropTypes.func.isRequired,
     dataTest: PropTypes.string,
-    excludedPeriodTypes: PropTypes.arrayOf(PropTypes.string),
     initialSelectedPeriods: PropTypes.arrayOf(
         PropTypes.shape({
             id: PropTypes.string,
@@ -203,6 +189,10 @@ PeriodTransfer.propTypes = {
         })
     ),
     rightFooter: PropTypes.node,
+}
+
+PeriodTransfer.defaultProps = {
+    initialSelectedPeriods: [],
 }
 
 export default PeriodTransfer
