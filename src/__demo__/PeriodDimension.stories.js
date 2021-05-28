@@ -72,7 +72,7 @@ storiesOf('PeriodDimension', module).add('All below Quarterly excluded', () => {
     )
 })
 
-storiesOf('PeriodDimension', module).add('Right footer', () => {
+storiesOf('PeriodDimension', module).add('Using right footer', () => {
     return (
         <PeriodDimension
             rightFooter={
