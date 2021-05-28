@@ -1,3 +1,10 @@
+# [18.1.0](https://github.com/dhis2/analytics/compare/v18.0.0...v18.1.0) (2021-05-28)
+
+
+### Features
+
+* add last 10 years relative period ([#924](https://github.com/dhis2/analytics/issues/924)) ([085bb32](https://github.com/dhis2/analytics/commit/085bb32768888fce40cf5608a5204fb2dcbffdfe))
+
 # [18.0.0](https://github.com/dhis2/analytics/compare/v17.2.1...v18.0.0) (2021-05-28)
 
 
