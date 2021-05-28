@@ -101,6 +101,7 @@ const getYearsPeriodType = () => [
     { id: 'THIS_YEAR', name: i18n.t('This year') },
     { id: 'LAST_YEAR', name: i18n.t('Last year') },
     { id: 'LAST_5_YEARS', name: i18n.t('Last 5 years') },
+    { id: 'LAST_10_YEARS', name: i18n.t('Last 10 years') },
 ]
 
 const getOptions = () => [
