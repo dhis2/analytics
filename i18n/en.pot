@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2021-03-09T11:13:51.855Z\n"
-"PO-Revision-Date: 2021-03-09T11:13:51.855Z\n"
+"POT-Creation-Date: 2021-05-28T08:58:10.698Z\n"
+"PO-Revision-Date: 2021-05-28T08:58:10.698Z\n"
 
 msgid "Data Type"
 msgstr ""
@@ -260,9 +260,6 @@ msgstr ""
 msgid "Weekly"
 msgstr ""
 
-msgid "Bi-weekly"
-msgstr ""
-
 msgid "Weekly (Start Wednesday)"
 msgstr ""
 
@@ -273,6 +270,9 @@ msgid "Weekly (Start Saturday)"
 msgstr ""
 
 msgid "Weekly (Start Sunday)"
+msgstr ""
+
+msgid "Bi-weekly"
 msgstr ""
 
 msgid "Monthly"
@@ -426,6 +426,9 @@ msgid "Last year"
 msgstr ""
 
 msgid "Last 5 years"
+msgstr ""
+
+msgid "Last 10 years"
 msgstr ""
 
 msgid "Days"
