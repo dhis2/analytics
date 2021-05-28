@@ -1,3 +1,10 @@
+## [18.1.1](https://github.com/dhis2/analytics/compare/v18.1.0...v18.1.1) (2021-05-28)
+
+
+### Bug Fixes
+
+* update message in delete confirm dialog ([#925](https://github.com/dhis2/analytics/issues/925)) ([e875bb9](https://github.com/dhis2/analytics/commit/e875bb913439610b5f1113a2a4e6c34c238ef7e6))
+
 # [18.1.0](https://github.com/dhis2/analytics/compare/v18.0.0...v18.1.0) (2021-05-28)
 
 
