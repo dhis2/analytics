@@ -82,7 +82,6 @@ const ItemSelector = ({
     onFetch,
     onSelect,
     rightFooter,
-    dataTest,
 }) => {
     const [state, setState] = useState({
         filter: '',
@@ -162,13 +161,8 @@ const ItemSelector = ({
             rightHeader={<RightHeader />}
             rightFooter={rightFooter}
             renderOption={props => (
-                <TransferOption
-                    {...props}
-                    icon={GenericIcon}
-                    dataTest={`${dataTest}-transfer-option`}
-                />
+                <TransferOption {...props} icon={GenericIcon} />
             )}
-            dataTest={`${dataTest}-transfer`}
         />
     )
 }
@@ -176,7 +170,6 @@ const ItemSelector = ({
 ItemSelector.propTypes = {
     onFetch: PropTypes.func.isRequired,
     onSelect: PropTypes.func.isRequired,
-    dataTest: PropTypes.string,
     initialSelected: PropTypes.arrayOf(
         PropTypes.exact({
             label: PropTypes.string.isRequired,
