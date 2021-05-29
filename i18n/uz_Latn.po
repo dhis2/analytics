@@ -437,7 +437,7 @@ msgid "Last 5 years"
 msgstr "Oxirgi 5 yil"
 
 msgid "Last 10 years"
-msgstr ""
+msgstr "Oxirgi 10 yil"
 
 msgid "Days"
 msgstr "Kunlar"
