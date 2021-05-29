@@ -438,7 +438,7 @@ msgid "Last 5 years"
 msgstr "最近5年"
 
 msgid "Last 10 years"
-msgstr ""
+msgstr "最近10年"
 
 msgid "Days"
 msgstr "天数"

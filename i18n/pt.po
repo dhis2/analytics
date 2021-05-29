@@ -441,7 +441,7 @@ msgid "Last 5 years"
 msgstr "Últimos cinco anos"
 
 msgid "Last 10 years"
-msgstr ""
+msgstr "Últimos 10 anos"
 
 msgid "Days"
 msgstr "Dias"
