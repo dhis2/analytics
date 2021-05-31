@@ -1,3 +1,50 @@
+## [18.1.3](https://github.com/dhis2/analytics/compare/v18.1.2...v18.1.3) (2021-05-29)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([0a6dd05](https://github.com/dhis2/analytics/commit/0a6dd05a2bace0059152892cb592125d8d542eda))
+
+## [18.1.2](https://github.com/dhis2/analytics/compare/v18.1.1...v18.1.2) (2021-05-28)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([f574cf5](https://github.com/dhis2/analytics/commit/f574cf5f21e351950436e8e0303a9b5243cc05c0))
+
+## [18.1.1](https://github.com/dhis2/analytics/compare/v18.1.0...v18.1.1) (2021-05-28)
+
+
+### Bug Fixes
+
+* update message in delete confirm dialog ([#925](https://github.com/dhis2/analytics/issues/925)) ([e875bb9](https://github.com/dhis2/analytics/commit/e875bb913439610b5f1113a2a4e6c34c238ef7e6))
+
+# [18.1.0](https://github.com/dhis2/analytics/compare/v18.0.0...v18.1.0) (2021-05-28)
+
+
+### Features
+
+* add last 10 years relative period ([#924](https://github.com/dhis2/analytics/issues/924)) ([085bb32](https://github.com/dhis2/analytics/commit/085bb32768888fce40cf5608a5204fb2dcbffdfe))
+
+# [18.0.0](https://github.com/dhis2/analytics/compare/v17.2.1...v18.0.0) (2021-05-28)
+
+
+### Features
+
+* hide periods based on excludedPeriodTypes (DHIS2-11161) ([#920](https://github.com/dhis2/analytics/issues/920)) mk2 ([#923](https://github.com/dhis2/analytics/issues/923)) ([4ecf4d6](https://github.com/dhis2/analytics/commit/4ecf4d69a3e0afb3b386cd427d0fce952ae466df))
+
+
+### BREAKING CHANGES
+
+* DAYS and WEEKS is not exported anymore (use DAILY and WEEKLY instead)
+
+## [17.2.1](https://github.com/dhis2/analytics/compare/v17.2.0...v17.2.1) (2021-05-28)
+
+
+### Bug Fixes
+
+* revert "feat: hide periods based on excludedPeriodTypes (DHIS2-11161) ([#920](https://github.com/dhis2/analytics/issues/920))" ([#922](https://github.com/dhis2/analytics/issues/922)) ([477248d](https://github.com/dhis2/analytics/commit/477248d7e8149cfb2bf47ed462f6f3b9a9062ca6))
+
 # [17.2.0](https://github.com/dhis2/analytics/compare/v17.1.0...v17.2.0) (2021-05-27)
 
 

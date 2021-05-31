@@ -119,9 +119,6 @@ msgstr "Nothing found for {{searchTerm}}"
 msgid "Delete {{fileType}}"
 msgstr "Delete {{fileType}}"
 
-msgid "This {{fileType}} will be deleted. Continue?"
-msgstr "This {{fileType}} will be deleted. Continue?"
-
 msgid "Cancel"
 msgstr "Cancel"
 
@@ -275,6 +272,9 @@ msgstr "Weekly (Start Sunday)"
 msgid "Bi-weekly"
 msgstr "Bi-weekly"
 
+msgid "Bi-weekly"
+msgstr ""
+
 msgid "Monthly"
 msgstr "Monthly"
 
@@ -427,6 +427,9 @@ msgstr "Last year"
 
 msgid "Last 5 years"
 msgstr "Last 5 years"
+
+msgid "Last 10 years"
+msgstr ""
 
 msgid "Days"
 msgstr "Days"
