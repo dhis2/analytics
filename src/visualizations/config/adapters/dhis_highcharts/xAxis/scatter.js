@@ -40,7 +40,7 @@ export default function (layout, series, extraOptions) {
         ),
         tickAmount: getSteps(axis),
         title: getAxisTitle(
-            axis.title?.type === 'AUTO' && series[1]?.name
+            axis.title?.textMode === 'AUTO' && series[1]?.name
                 ? series[1].name
                 : axis.title?.text,
             mergeFontStyleWithDefault(

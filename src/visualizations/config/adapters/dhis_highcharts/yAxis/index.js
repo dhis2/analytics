@@ -83,7 +83,7 @@ function getDefault(layout, series, extraOptions) {
             })
         }
         let titleText = axis.title?.text
-        if (axis.title?.type === 'AUTO') {
+        if (axis.title?.textMode === 'AUTO') {
             if (layout.type === VIS_TYPE_SCATTER || series.length === 1) {
                 if (series[0]?.name) {
                     titleText = series[0].name
