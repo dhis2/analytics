@@ -93,10 +93,10 @@ function getDefault(layout, series, extraOptions) {
                     axisId: axis.index + 1,
                 })
             } else if (series.length > 1) {
-                titleText = i18n.t('{{count}} data items', {
+                titleText = i18n.t('{{count}} items', {
                     count: series.length,
-                    defaultValue: '{{count}} data item',
-                    defaultValue_plural: '{{count}} data items',
+                    defaultValue: '{{count}} item',
+                    defaultValue_plural: '{{count}} items',
                 })
             }
         }
