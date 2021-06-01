@@ -1,3 +1,10 @@
+# [18.2.0](https://github.com/dhis2/analytics/compare/v18.1.4...v18.2.0) (2021-06-01)
+
+
+### Features
+
+* support options for multi axes (DHIS2-6672) ([#890](https://github.com/dhis2/analytics/issues/890)) ([a3ad56e](https://github.com/dhis2/analytics/commit/a3ad56e9314a48fd9676e48a501b6c12bc4b2edd))
+
 ## [18.1.4](https://github.com/dhis2/analytics/compare/v18.1.3...v18.1.4) (2021-05-31)
 
 
