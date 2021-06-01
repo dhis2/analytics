@@ -150,7 +150,6 @@ function getDefault(layout, series, extraOptions) {
             })
         )
     })
-    // }
 
     return axes
 }
