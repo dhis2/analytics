@@ -1,4 +1,3 @@
-// import i18n from '../../../../../locales/index.js'
 import arrayClean from 'd2-utilizr/lib/arrayClean'
 import objectClean from 'd2-utilizr/lib/objectClean'
 
