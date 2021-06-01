@@ -34,23 +34,18 @@ function getDefault(layout, series, extraOptions) {
     const dataValues = series?.map(item => item.data).flat()
     const layoutAxes = []
     let useMultiAxisMode = false
-    if (layout.type === VIS_TYPE_SCATTER) {
-        layoutAxes.push(getAxis(layout.axes, AXIS_TYPE_RANGE, 0))
-    } else {
+
+    if (isDualAxisType(layout.type)) {
         const axisIdsMap = getAxisIdsMap(layout.series, series)
         const axisIds = [...new Set(Object.keys(axisIdsMap))].sort(
             (a, b) => a - b
         )
-        if (isDualAxisType(layout.type)) {
-            axisIds.forEach(id =>
-                layoutAxes.push(
-                    getAxis(layout.axes, AXIS_TYPE_RANGE, Number(id))
-                )
-            )
-            useMultiAxisMode = axisIds.length > 1 || axisIds.some(id => id > 0)
-        } else {
-            layoutAxes.push(getAxis(layout.axes, AXIS_TYPE_RANGE, 0))
-        }
+        axisIds.forEach(id =>
+            layoutAxes.push(getAxis(layout.axes, AXIS_TYPE_RANGE, Number(id)))
+        )
+        useMultiAxisMode = axisIds.length > 1 || axisIds.some(id => id > 0)
+    } else {
+        layoutAxes.push(getAxis(layout.axes, AXIS_TYPE_RANGE, 0))
     }
 
     let extremeObj
