@@ -39,3 +39,13 @@ storiesOf('OpenFileDialog', module).add('List of maps', () => (
         />
     </Provider>
 ))
+storiesOf('OpenFileDialog', module).add('No connection', () => (
+    <OpenFileDialog
+        type="map"
+        onClose={Function.prototype}
+        onFileSelect={Function.prototype}
+        onNew={Function.prototype}
+        open={true}
+        currentUser={user}
+    />
+))
