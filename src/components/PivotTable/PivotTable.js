@@ -52,6 +52,45 @@ const PivotTable = ({
                     clippingResult={clippingResult}
                     onToggleContextualMenu={onToggleContextualMenu}
                 />
+                <div
+                    style={{
+                        position: 'absolute',
+                        bottom: 0,
+                        background: '#fff',
+                        left: 0,
+                        right: 0,
+                        padding: '8px',
+                    }}
+                >
+                    {legendSets.map(legendSet => (
+                        <div
+                            key={legendSet.id}
+                            style={{
+                                display: 'inline-flex',
+                                marginLeft: '20px',
+                            }}
+                        >
+                            <span style={{ paddingRight: '8px' }}>
+                                {legendSet.name}
+                            </span>
+                            {legendSet.legends
+                                .sort((a, b) => a.startValue - b.startValue)
+                                .map(legend => (
+                                    <div
+                                        key={legend.startValue}
+                                        style={{
+                                            display: 'inline-block',
+                                            height: '20px',
+                                            width: '20px',
+                                            background: legend.color,
+                                            borderRadius: '100px',
+                                            marginRight: '10px',
+                                        }}
+                                    ></div>
+                                ))}
+                        </div>
+                    ))}
+                </div>
             </PivotTableContainer>
         </Provider>
     )
