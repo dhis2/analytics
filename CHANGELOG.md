@@ -1,3 +1,10 @@
+## [18.2.2](https://github.com/dhis2/analytics/compare/v18.2.1...v18.2.2) (2021-06-03)
+
+
+### Bug Fixes
+
+* bind popup to highcharts graphic instead of data label (DHIS2-11061) ([#931](https://github.com/dhis2/analytics/issues/931)) ([6bcc12b](https://github.com/dhis2/analytics/commit/6bcc12b928f5a0431ab3ab074730d2ad9ffc8e59))
+
 ## [18.2.1](https://github.com/dhis2/analytics/compare/v18.2.0...v18.2.1) (2021-06-03)
 
 
