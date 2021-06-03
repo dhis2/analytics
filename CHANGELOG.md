@@ -1,3 +1,10 @@
+## [18.2.1](https://github.com/dhis2/analytics/compare/v18.2.0...v18.2.1) (2021-06-03)
+
+
+### Bug Fixes
+
+* export fixed periods generator ([#930](https://github.com/dhis2/analytics/issues/930)) ([7de0afe](https://github.com/dhis2/analytics/commit/7de0afe0b16f719cd0949d2f84487de18f4c4871))
+
 # [18.2.0](https://github.com/dhis2/analytics/compare/v18.1.4...v18.2.0) (2021-06-01)
 
 
