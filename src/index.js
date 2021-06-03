@@ -251,3 +251,4 @@ export {
     FYAPR,
 } from './components/PeriodDimension/utils'
 export { getRelativePeriodsOptionsById } from './components/PeriodDimension/utils/relativePeriods'
+export { getFixedPeriodsOptionsById } from './components/PeriodDimension/utils/fixedPeriods'
