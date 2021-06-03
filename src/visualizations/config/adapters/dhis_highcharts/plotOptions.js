@@ -69,7 +69,7 @@ export default ({
                           point: {
                               events: {
                                   click: function () {
-                                      onClick(this.dataLabel?.element, {
+                                      onClick(this.graphic?.element, {
                                           category: this.category,
                                           series: this.series.name,
                                       })
