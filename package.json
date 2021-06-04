@@ -1,6 +1,6 @@
 {
     "name": "@dhis2/analytics",
-    "version": "16.0.18",
+    "version": "18.2.2",
     "main": "./build/cjs/index.js",
     "module": "./build/es/index.js",
     "exports": {
@@ -57,12 +57,10 @@
         "styled-jsx": "^3.3.2"
     },
     "dependencies": {
-        "@dhis2/d2-ui-favorites-dialog": "^7.1.5",
-        "@dhis2/d2-ui-org-unit-dialog": "^7.1.5",
-        "@dhis2/d2-ui-sharing-dialog": "^7.1.5",
-        "@dhis2/d2-ui-translation-dialog": "^7.1.5",
-        "@material-ui/core": "^3.9.3",
-        "@material-ui/icons": "^3.0.2",
+        "@dhis2/d2-ui-favorites-dialog": "^7.2.0",
+        "@dhis2/d2-ui-org-unit-dialog": "^7.2.0",
+        "@dhis2/d2-ui-sharing-dialog": "^7.2.0",
+        "@dhis2/d2-ui-translation-dialog": "^7.2.0",
         "classnames": "^2.2.6",
         "d2-utilizr": "^0.2.16",
         "d3-color": "^1.2.3",

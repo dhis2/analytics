@@ -1,23 +1,23 @@
 import i18n from '../../../locales/index.js'
-// generate periods config object: { boolean offset, boolean filterFuturePeriods, boolean reversePeriods }
-
-export const DAILY = 'DAILY'
-export const WEEKLY = 'WEEKLY'
-export const BIWEEKLY = 'BIWEEKLY'
-export const WEEKLYWED = 'WEEKLYWED'
-export const WEEKLYTHU = 'WEEKLYTHU'
-export const WEEKLYSAT = 'WEEKLYSAT'
-export const WEEKLYSUN = 'WEEKLYSUN'
-export const MONTHLY = 'MONTHLY'
-export const BIMONTHLY = 'BIMONTHLY'
-export const QUARTERLY = 'QUARTERLY'
-export const SIXMONTHLY = 'SIXMONTHLY'
-export const SIXMONTHLYAPR = 'SIXMONTHLYAPR'
-export const YEARLY = 'YEARLY'
-export const FYNOV = 'FYNOV'
-export const FYOCT = 'FYOCT'
-export const FYJUL = 'FYJUL'
-export const FYAPR = 'FYAPR'
+import {
+    DAILY,
+    WEEKLY,
+    WEEKLYWED,
+    WEEKLYTHU,
+    WEEKLYSAT,
+    WEEKLYSUN,
+    BIWEEKLY,
+    MONTHLY,
+    BIMONTHLY,
+    QUARTERLY,
+    SIXMONTHLY,
+    SIXMONTHLYAPR,
+    YEARLY,
+    FYNOV,
+    FYOCT,
+    FYJUL,
+    FYAPR,
+} from './index.js'
 
 const PERIOD_TYPE_REGEX = {
     [DAILY]: /^([0-9]{4})([0-9]{2})([0-9]{2})$/, // YYYYMMDD
@@ -575,11 +575,6 @@ const getOptions = () => [
         name: i18n.t('Weekly'),
     },
     {
-        id: BIWEEKLY,
-        getPeriods: getBiWeeklyPeriodType(formatYyyyMmDd, filterFuturePeriods),
-        name: i18n.t('Bi-weekly'),
-    },
-    {
         id: WEEKLYWED,
         getPeriods: getWeeklyPeriodType(
             formatYyyyMmDd,
@@ -614,6 +609,11 @@ const getOptions = () => [
             filterFuturePeriods
         ),
         name: i18n.t('Weekly (Start Sunday)'),
+    },
+    {
+        id: BIWEEKLY,
+        getPeriods: getBiWeeklyPeriodType(formatYyyyMmDd, filterFuturePeriods),
+        name: i18n.t('Bi-weekly'),
     },
     {
         id: MONTHLY,
