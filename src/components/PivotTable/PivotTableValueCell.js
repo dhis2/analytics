@@ -33,7 +33,7 @@ export const PivotTableValueCell = ({
         isClickable && 'clickable',
     ]
     const onClick = () => {
-        onToggleContextualMenu(cellRef, cellContent)
+        onToggleContextualMenu(cellRef.current, { ouId: cellContent.ouId })
     }
 
     if (!cellContent || cellContent.empty) {

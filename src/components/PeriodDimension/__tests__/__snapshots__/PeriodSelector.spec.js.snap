@@ -2,7 +2,7 @@
 
 exports[`The Period Selector component matches the snapshot 1`] = `
 <Transfer
-  dataTest="dhis2-uicore-transfer"
+  dataTest="period-dimension-transfer"
   enableOrderChange={true}
   filterCallback={[Function]}
   filterCallbackPicked={[Function]}
@@ -15,14 +15,14 @@ exports[`The Period Selector component matches the snapshot 1`] = `
         dataTest="dhis2-uicore-tabbar"
       >
         <Tab
-          dataTest="undefined-relative-periods-button"
+          dataTest="period-dimension-relative-periods-button"
           onClick={[Function]}
           selected={true}
         >
           Relative periods
         </Tab>
         <Tab
-          dataTest="undefined-fixed-periods-button"
+          dataTest="period-dimension-fixed-periods-button"
           onClick={[Function]}
           selected={false}
         >
@@ -33,8 +33,9 @@ exports[`The Period Selector component matches the snapshot 1`] = `
         className="filterContainer"
       >
         <RelativePeriodFilter
-          currentFilter="Months"
-          dataTest="undefined-relative-period-filter"
+          currentFilter="MONTHLY"
+          dataTest="period-dimension-relative-period-filter"
+          excludedPeriodTypes={Array []}
           onSelectFilter={[Function]}
         />
       </div>

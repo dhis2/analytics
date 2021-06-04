@@ -12,7 +12,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-03-09T11:13:51.855Z\n"
+"POT-Creation-Date: 2021-05-28T13:23:46.712Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: Yayra Gomado <ygomado@hispwca.org>, 2021\n"
 "Language-Team: French (https://www.transifex.com/hisp-uio/teams/100509/fr/)\n"
@@ -133,8 +133,9 @@ msgstr "Rien retrouvé pour {{searchTerm}}"
 msgid "Delete {{fileType}}"
 msgstr "Supprimer {{fileType}}"
 
-msgid "This {{fileType}} will be deleted. Continue?"
-msgstr "Ce {{fileType}} sera supprimé. Continuer ?"
+msgid ""
+"This {{fileType}} and related interpretations will be deleted. Continue?"
+msgstr ""
 
 msgid "Cancel"
 msgstr "Annuler"
@@ -274,9 +275,6 @@ msgstr "Quotidien"
 msgid "Weekly"
 msgstr "Hebdomadaire"
 
-msgid "Bi-weekly"
-msgstr "Bi-hebdomadaire"
-
 msgid "Weekly (Start Wednesday)"
 msgstr "Hebdomadaire (début mercredi)"
 
@@ -288,6 +286,9 @@ msgstr "Hebdomadaire (début samedi)"
 
 msgid "Weekly (Start Sunday)"
 msgstr "Hebdomadaire (début dimanche)"
+
+msgid "Bi-weekly"
+msgstr "Bi-hebdomadaire"
 
 msgid "Monthly"
 msgstr "Mensuel"
@@ -441,6 +442,9 @@ msgstr "L'année passée"
 
 msgid "Last 5 years"
 msgstr "5 dernières années"
+
+msgid "Last 10 years"
+msgstr ""
 
 msgid "Days"
 msgstr "Jours"
