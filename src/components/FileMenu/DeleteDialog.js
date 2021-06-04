@@ -39,9 +39,12 @@ export const DeleteDialog = ({ type, id, onClose, onDelete, onError }) => {
                 {i18n.t('Delete {{fileType}}', { fileType: type })}
             </ModalTitle>
             <ModalContent>
-                {i18n.t('This {{fileType}} will be deleted. Continue?', {
-                    fileType: type,
-                })}
+                {i18n.t(
+                    'This {{fileType}} and related interpretations will be deleted. Continue?',
+                    {
+                        fileType: type,
+                    }
+                )}
             </ModalContent>
             <ModalActions>
                 <ButtonStrip>

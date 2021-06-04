@@ -33,7 +33,6 @@ export class DimensionsPanel extends Component {
         return (
             <div style={{ ...styles.divContainer, ...style }}>
                 <Filter
-                    style={styles.textField}
                     placeholder={i18n.t('Filter dimensions')}
                     text={this.state.filterText}
                     onChange={this.onFilterTextChange}
