@@ -1,7 +1,7 @@
 import arrayClean from 'd2-utilizr/lib/arrayClean'
 import isNumber from 'd2-utilizr/lib/isNumber'
 import objectClean from 'd2-utilizr/lib/objectClean'
-import i18n from '@dhis2/d2-i18n'
+import i18n from '../../../../../locales/index.js'
 import {
     getColorByValueFromLegendSet,
     LEGEND_DISPLAY_STYLE_FILL,

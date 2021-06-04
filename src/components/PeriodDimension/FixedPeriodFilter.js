@@ -1,13 +1,15 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import i18n from '@dhis2/d2-i18n'
+import i18n from '../../locales/index.js'
 import { SingleSelectField, InputField, SingleSelectOption } from '@dhis2/ui'
 
 import { getFixedPeriodsOptions } from './utils/fixedPeriods'
 import styles from './styles/PeriodFilter.style'
+import { filterPeriodTypesById } from './utils/index.js'
 
 const FixedPeriodFilter = ({
     allowedPeriodTypes,
+    excludedPeriodTypes,
     currentPeriodType,
     currentYear,
     onSelectPeriodType,
@@ -31,22 +33,24 @@ const FixedPeriodFilter = ({
                     className="filterElement"
                     dataTest={`${dataTest}-period-type`}
                 >
-                    {getFixedPeriodsOptions()
-                        .filter(
-                            option =>
-                                !allowedPeriodTypes ||
-                                allowedPeriodTypes.some(
-                                    type => type === option.id
-                                )
-                        )
-                        .map(option => (
-                            <SingleSelectOption
-                                key={option.id}
-                                value={option.id}
-                                label={option.name}
-                                dataTest={`${dataTest}-period-type-option-${option.id}`}
-                            />
-                        ))}
+                    {(allowedPeriodTypes
+                        ? getFixedPeriodsOptions().filter(option =>
+                              allowedPeriodTypes.some(
+                                  type => type === option.id
+                              )
+                          )
+                        : filterPeriodTypesById(
+                              getFixedPeriodsOptions(),
+                              excludedPeriodTypes
+                          )
+                    ).map(option => (
+                        <SingleSelectOption
+                            key={option.id}
+                            value={option.id}
+                            label={option.name}
+                            dataTest={`${dataTest}-period-type-option-${option.id}`}
+                        />
+                    ))}
                 </SingleSelectField>
             </div>
             <div className="rightSection">
@@ -73,6 +77,7 @@ FixedPeriodFilter.propTypes = {
     onSelectYear: PropTypes.func.isRequired,
     allowedPeriodTypes: PropTypes.arrayOf(PropTypes.string),
     dataTest: PropTypes.string,
+    excludedPeriodTypes: PropTypes.arrayOf(PropTypes.string),
 }
 
 export default FixedPeriodFilter

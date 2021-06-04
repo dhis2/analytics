@@ -21,6 +21,7 @@ describe('The Dynamic Dimension component ', () => {
             selectedItems: [],
             onSelect: jest.fn(),
             dimensionId: '123abc',
+            displayNameProp: 'displayName',
         }
         shallowSelector = undefined
     })

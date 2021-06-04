@@ -1,15 +1,15 @@
 # 
 # Translators:
 # phil_dhis2, 2021
-# Viktor Varland <viktor@dhis2.org>, 2021
 # Mai Nguyen <thanhmai.jica@gmail.com>, 2021
+# Viktor Varland <viktor@dhis2.org>, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-03-04T09:26:00.595Z\n"
+"POT-Creation-Date: 2021-05-28T13:23:46.712Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Mai Nguyen <thanhmai.jica@gmail.com>, 2021\n"
+"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2021\n"
 "Language-Team: Vietnamese (https://www.transifex.com/hisp-uio/teams/100509/vi/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -128,7 +128,8 @@ msgstr "Không tìm thấy cho {{searchTerm}}"
 msgid "Delete {{fileType}}"
 msgstr ""
 
-msgid "This {{fileType}} will be deleted. Continue?"
+msgid ""
+"This {{fileType}} and related interpretations will be deleted. Continue?"
 msgstr ""
 
 msgid "Cancel"
@@ -269,9 +270,6 @@ msgstr "Hàng ngày"
 msgid "Weekly"
 msgstr "Hàng tuần"
 
-msgid "Bi-weekly"
-msgstr "Hai-tuần"
-
 msgid "Weekly (Start Wednesday)"
 msgstr "Hàng tuần (Bắt đầu từ Thứ Tư)"
 
@@ -283,6 +281,9 @@ msgstr "Hàng tuần (Bắt đầu từ Thứ Bảy)"
 
 msgid "Weekly (Start Sunday)"
 msgstr "Hàng tuần (Bắt đầu từ Chủ nhật)"
+
+msgid "Bi-weekly"
+msgstr "Hai-tuần"
 
 msgid "Monthly"
 msgstr "Hàng tháng"
@@ -436,6 +437,9 @@ msgstr "Năm ngoái"
 
 msgid "Last 5 years"
 msgstr "5 năm trước"
+
+msgid "Last 10 years"
+msgstr "10 năm trước"
 
 msgid "Days"
 msgstr "Ngày"
@@ -785,6 +789,9 @@ msgstr "Không có chú giải cho chuỗi này"
 
 msgid "and {{amount}} more..."
 msgstr "và {{amount}} khác ..."
+
+msgid "Linear Regression"
+msgstr ""
 
 msgid "Target"
 msgstr "Mục tiêu"

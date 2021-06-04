@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react'
 import PropTypes from 'prop-types'
 import { Transfer, InputField } from '@dhis2/ui'
-import i18n from '@dhis2/d2-i18n'
+import i18n from '../../locales/index.js'
 
 import styles from '../styles/DimensionSelector.style'
 import { TransferOption } from '../TransferOption'
@@ -82,6 +82,7 @@ const ItemSelector = ({
     onFetch,
     onSelect,
     rightFooter,
+    dataTest,
 }) => {
     const [state, setState] = useState({
         filter: '',
@@ -161,8 +162,13 @@ const ItemSelector = ({
             rightHeader={<RightHeader />}
             rightFooter={rightFooter}
             renderOption={props => (
-                <TransferOption {...props} icon={GenericIcon} />
+                <TransferOption
+                    {...props}
+                    icon={GenericIcon}
+                    dataTest={`${dataTest}-transfer-option`}
+                />
             )}
+            dataTest={`${dataTest}-transfer`}
         />
     )
 }
@@ -170,6 +176,7 @@ const ItemSelector = ({
 ItemSelector.propTypes = {
     onFetch: PropTypes.func.isRequired,
     onSelect: PropTypes.func.isRequired,
+    dataTest: PropTypes.string,
     initialSelected: PropTypes.arrayOf(
         PropTypes.exact({
             label: PropTypes.string.isRequired,
