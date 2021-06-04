@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-03-09T11:13:51.855Z\n"
+"POT-Creation-Date: 2021-05-28T13:23:46.712Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: 晓东 林 <13981924470@126.com>, 2021\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/hisp-uio/teams/100509/zh_CN/)\n"
@@ -127,7 +127,8 @@ msgstr ""
 msgid "Delete {{fileType}}"
 msgstr ""
 
-msgid "This {{fileType}} will be deleted. Continue?"
+msgid ""
+"This {{fileType}} and related interpretations will be deleted. Continue?"
 msgstr ""
 
 msgid "Cancel"
@@ -268,9 +269,6 @@ msgstr "每日"
 msgid "Weekly"
 msgstr "每周"
 
-msgid "Bi-weekly"
-msgstr "双周"
-
 msgid "Weekly (Start Wednesday)"
 msgstr "每周（始于周二）"
 
@@ -282,6 +280,9 @@ msgstr "每周（始于周六）"
 
 msgid "Weekly (Start Sunday)"
 msgstr "每周（始于周日）"
+
+msgid "Bi-weekly"
+msgstr "双周"
 
 msgid "Monthly"
 msgstr "每月"
@@ -435,6 +436,9 @@ msgstr "去年"
 
 msgid "Last 5 years"
 msgstr "最近5年"
+
+msgid "Last 10 years"
+msgstr "最近10年"
 
 msgid "Days"
 msgstr "天数"
