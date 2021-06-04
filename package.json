@@ -1,10 +1,15 @@
 {
     "name": "@dhis2/analytics",
-    "version": "12.1.8",
-    "main": "./build/cjs/lib.js",
-    "module": "./build/es/lib.js",
+    "version": "18.2.2",
+    "main": "./build/cjs/index.js",
+    "module": "./build/es/index.js",
+    "exports": {
+        "import": "./build/es/index.js",
+        "require": "./build/cjs/index.js"
+    },
     "sideEffects": [
-        "./src/locales/index.js"
+        "./build/es/locales/index.js",
+        "./build/cjs/locales/index.js"
     ],
     "repository": "git@github.com:dhis2/analytics.git",
     "author": "Jennifer Jones Arnesen <jennifer@dhis2.org>",
@@ -26,38 +31,44 @@
         "validate-push": "yarn test"
     },
     "devDependencies": {
-        "@dhis2/cli-app-scripts": "^5.2.2",
+        "@dhis2/app-runtime": "^2.8.0",
+        "@dhis2/cli-app-scripts": "^6.0.0",
         "@dhis2/cli-style": "^7.3.0",
-        "@dhis2/d2-i18n": "^1.0.6",
+        "@dhis2/d2-i18n": "^1.1.0",
+        "@dhis2/ui": "^6.5.3",
         "@sambego/storybook-state": "^2.0.1",
-        "@storybook/addons": "^5.0.6",
-        "@storybook/preset-create-react-app": "^2.1.2",
-        "@storybook/react": "^5.3.17",
+        "@storybook/addons": "^6.1.14",
+        "@storybook/preset-create-react-app": "^3.1.5",
+        "@storybook/react": "^6.1.14",
         "enzyme": "^3.9.0",
         "enzyme-adapter-react-16": "^1.15.5",
-        "fs-extra": "^9.0.0",
+        "fs-extra": "^10.0.0",
         "jest-enzyme": "^7.0.2",
+        "styled-jsx": "3.3.2",
         "typeface-roboto": "^0.0.75"
     },
     "peerDependencies": {
-        "@dhis2/d2-i18n": "^1.0.6",
+        "@dhis2/app-runtime": "^2",
+        "@dhis2/d2-i18n": "^1.1",
+        "@dhis2/ui": "^6.5.2",
         "prop-types": "^15",
         "react": "^16.3",
-        "react-dom": "^16.3"
+        "react-dom": "^16.3",
+        "styled-jsx": "^3.3.2"
     },
     "dependencies": {
-        "@dhis2/d2-ui-org-unit-dialog": "^7.0.8",
-        "@dhis2/ui": "^6.0.2",
-        "@material-ui/core": "^3.9.3",
-        "@material-ui/icons": "^3.0.2",
-        "classnames": "^2.2.6",
+        "@dhis2/d2-ui-favorites-dialog": "^7.2.0",
+        "@dhis2/d2-ui-org-unit-dialog": "^7.2.0",
+        "@dhis2/d2-ui-sharing-dialog": "^7.2.0",
+        "@dhis2/d2-ui-translation-dialog": "^7.2.0",
+        "classnames": "^2.3.1",
         "d2-utilizr": "^0.2.16",
         "d3-color": "^1.2.3",
-        "highcharts": "^8.2.0",
-        "lodash": "^4.17.20",
+        "highcharts": "^9.0.0",
+        "lodash": "^4.17.21",
+        "mathjs": "^9.2.0",
         "react-beautiful-dnd": "^10.1.1",
-        "resize-observer-polyfill": "^1.5.1",
-        "styled-jsx": "^3.4.1"
+        "resize-observer-polyfill": "^1.5.1"
     },
     "files": [
         "build"

@@ -1,5 +1,6 @@
 import arrayContains from 'd2-utilizr/lib/arrayContains'
 import { rgb } from 'd3-color'
+import i18n from '../../../../locales/index.js'
 
 import { colorSets, COLOR_SET_PATTERNS } from '../../../util/colors/colorSets'
 import getStackedData from './getStackedData'
@@ -56,7 +57,11 @@ function getDefaultTrendLines(layout, series, isStacked) {
                     {},
                     getRegressionObj(seriesObj.data, layout.regressionType),
                     {
-                        name: seriesObj.name + ' (trend)',
+                        name: seriesObj.name
+                            ? i18n.t('{{seriesName}} (trend)', {
+                                  seriesName: seriesObj.name,
+                              })
+                            : i18n.t('Trend'),
                         color: getDarkerColor(seriesObj.color),
                     }
                 )
@@ -143,7 +148,11 @@ function getTwoCategoryTrendLines(layout, series, isStacked) {
 
                     newSeries.push(
                         Object.assign({}, trendlineConfig, {
-                            name: seriesObj.name + ' (trend)',
+                            name: seriesObj.name
+                                ? i18n.t('{{seriesName}} (trend)', {
+                                      seriesName: seriesObj.name,
+                                  })
+                                : i18n.t('Trend'),
                             color: getDarkerColor(seriesObj.color),
                         })
                     )
@@ -187,7 +196,9 @@ function getRegressionObj(data, regressionType) {
 
     let regression
     const regressionTypeOptions = {}
-    const regressionData = getRegressionData(data)
+    const regressionData = data.some(i => Array.isArray(i))
+        ? data
+        : getRegressionData(data)
 
     switch (regressionType) {
         case 'POLYNOMIAL':
@@ -267,7 +278,7 @@ function gaussianElimination(a, o) {
 //              N * Σ(X^2) - Σ(X)^2
 //
 // correlation = N * Σ(XY) - Σ(X) * Σ (Y) / √ (  N * Σ(X^2) - Σ(X) ) * ( N * Σ(Y^2) - Σ(Y)^2 ) ) )
-function linear(data, decimalPlaces = 2) {
+export function linear(data, decimalPlaces = 2) {
     const sum = [0, 0, 0, 0, 0],
         results = []
     let N = data.length

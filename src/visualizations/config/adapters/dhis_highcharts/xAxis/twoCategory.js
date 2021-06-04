@@ -1,10 +1,14 @@
 import getAxisTitle from '../getAxisTitle'
 import getCategories from '../getCategories'
-import { getLabelsStyle } from './'
+import { getLabels } from './'
 import {
     FONT_STYLE_HORIZONTAL_AXIS_TITLE,
-    FONT_STYLE_CATEGORY_AXIS_LABELS,
+    mergeFontStyleWithDefault,
 } from '../../../../../modules/fontStyle'
+import { getAxis } from '../../../../util/axes'
+
+const AXIS_TYPE = 'DOMAIN'
+const AXIS_INDEX = 0
 
 export default function (store, layout) {
     const axis1Categories = getCategories(
@@ -17,12 +21,17 @@ export default function (store, layout) {
         layout.rows[0].dimension
     )
 
+    const axis = getAxis(layout.axes, AXIS_TYPE, AXIS_INDEX)
+
     // bottom x axis
     const xAxis = [
         {
             title: getAxisTitle(
-                layout.domainAxisLabel,
-                layout.fontStyle[FONT_STYLE_HORIZONTAL_AXIS_TITLE],
+                axis.title?.text,
+                mergeFontStyleWithDefault(
+                    axis.title?.fontStyle,
+                    FONT_STYLE_HORIZONTAL_AXIS_TITLE
+                ),
                 FONT_STYLE_HORIZONTAL_AXIS_TITLE,
                 layout.type
             ),
@@ -30,9 +39,7 @@ export default function (store, layout) {
                 { length: axis2Categories.length || 1 },
                 () => axis1Categories
             ),
-            labels: getLabelsStyle(
-                layout.fontStyle[FONT_STYLE_CATEGORY_AXIS_LABELS]
-            ),
+            labels: getLabels(axis),
         },
     ]
 

@@ -3,6 +3,7 @@ import getFilterText from '../../../../util/getFilterText'
 import {
     VIS_TYPE_YEAR_OVER_YEAR_LINE,
     VIS_TYPE_YEAR_OVER_YEAR_COLUMN,
+    isVerticalType,
     VIS_TYPE_SCATTER,
 } from '../../../../../modules/visTypes'
 import getYearOverYearTitle from '../title/yearOverYear'
@@ -13,6 +14,7 @@ import {
     FONT_STYLE_OPTION_FONT_SIZE,
     FONT_STYLE_OPTION_TEXT_ALIGN,
     FONT_STYLE_VISUALIZATION_SUBTITLE,
+    mergeFontStyleWithDefault,
 } from '../../../../../modules/fontStyle'
 import { getTextAlignOption } from '../getTextAlignOption'
 
@@ -35,8 +37,10 @@ function getDefault(layout, dashboard, filterTitle) {
 }
 
 export default function (series, layout, metaData, dashboard) {
-    const fontStyle =
-        layout.fontStyle && layout.fontStyle[FONT_STYLE_VISUALIZATION_SUBTITLE]
+    const fontStyle = mergeFontStyleWithDefault(
+        layout.fontStyle && layout.fontStyle[FONT_STYLE_VISUALIZATION_SUBTITLE],
+        FONT_STYLE_VISUALIZATION_SUBTITLE
+    )
     let subtitle = {
         text: undefined,
     }
@@ -77,7 +81,7 @@ export default function (series, layout, metaData, dashboard) {
                         align: getTextAlignOption(
                             fontStyle[FONT_STYLE_OPTION_TEXT_ALIGN],
                             FONT_STYLE_VISUALIZATION_SUBTITLE,
-                            layout.type
+                            isVerticalType(layout.type)
                         ),
                         style: {
                             // DHIS2-578: dynamically truncate subtitle when it's taking more than 1 line

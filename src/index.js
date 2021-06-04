@@ -20,6 +20,8 @@ export { default as DimensionMenu } from './components/DimensionMenu'
 
 export { default as PivotTable } from './components/PivotTable/PivotTable'
 
+export { default as FileMenu } from './components/FileMenu/FileMenu'
+
 // Api
 
 export { default as Analytics } from './api/analytics/Analytics'
@@ -54,9 +56,10 @@ export {
     getDynamicDimensions,
 } from './modules/predefinedDimensions'
 
-// Modules: ouIdHelper
+// Modules: ou utils
 
 export { ouIdHelper } from './modules/ouIdHelper'
+export { convertOuLevelsToUids } from './modules/ouLevelUtils'
 
 // Modules: adapted ui layout
 
@@ -154,6 +157,7 @@ export {
     isTwoCategoryChartType,
     isLegendSetType,
     isColumnBasedType,
+    isVerticalType,
 } from './modules/visTypes'
 
 // Modules: layoutTypes
@@ -196,10 +200,8 @@ export {
     FONT_STYLE_HORIZONTAL_AXIS_TITLE,
     FONT_STYLE_VERTICAL_AXIS_TITLE,
     FONT_STYLE_LEGEND,
-    FONT_STYLE_SERIES_AXIS_LABELS,
-    FONT_STYLE_CATEGORY_AXIS_LABELS,
-    FONT_STYLE_TARGET_LINE_LABEL,
-    FONT_STYLE_BASE_LINE_LABEL,
+    FONT_STYLE_AXIS_LABELS,
+    FONT_STYLE_REGRESSION_LINE_LABEL,
     FONT_STYLE_OPTION_FONT,
     FONT_STYLE_OPTION_FONT_SIZE,
     FONT_STYLE_OPTION_BOLD,
@@ -226,3 +228,27 @@ export {
     COLOR_SET_PATTERNS,
     colorSets,
 } from './visualizations/util/colors/colorSets'
+
+// Utils: periods
+export {
+    DAILY,
+    WEEKLY,
+    WEEKLYWED,
+    WEEKLYTHU,
+    WEEKLYSAT,
+    WEEKLYSUN,
+    BIWEEKLY,
+    MONTHLY,
+    BIMONTHLY,
+    QUARTERLY,
+    SIXMONTHLY,
+    SIXMONTHLYAPR,
+    YEARLY,
+    FINANCIAL,
+    FYNOV,
+    FYOCT,
+    FYJUL,
+    FYAPR,
+} from './components/PeriodDimension/utils'
+export { getRelativePeriodsOptionsById } from './components/PeriodDimension/utils/relativePeriods'
+export { getFixedPeriodsOptionsById } from './components/PeriodDimension/utils/fixedPeriods'

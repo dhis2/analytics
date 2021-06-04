@@ -1,7 +1,7 @@
 import arrayClean from 'd2-utilizr/lib/arrayClean'
 import isNumber from 'd2-utilizr/lib/isNumber'
 import objectClean from 'd2-utilizr/lib/objectClean'
-import i18n from '@dhis2/d2-i18n'
+import i18n from '../../../../../locales/index.js'
 import {
     getColorByValueFromLegendSet,
     LEGEND_DISPLAY_STYLE_FILL,
@@ -14,18 +14,20 @@ import {
     TEXT_ALIGN_LEFT,
     TEXT_ALIGN_RIGHT,
     TEXT_ALIGN_CENTER,
-    FONT_STYLE_BASE_LINE_LABEL,
-    FONT_STYLE_TARGET_LINE_LABEL,
+    FONT_STYLE_REGRESSION_LINE_LABEL,
     FONT_STYLE_OPTION_TEXT_ALIGN,
-    FONT_STYLE_SERIES_AXIS_LABELS,
+    FONT_STYLE_AXIS_LABELS,
+    mergeFontStyleWithDefault,
 } from '../../../../../modules/fontStyle'
-import { VIS_TYPE_GAUGE } from '../../../../../modules/visTypes'
+import { isVerticalType, VIS_TYPE_GAUGE } from '../../../../../modules/visTypes'
 import { getTextAlignOption } from '../getTextAlignOption'
+import { getAxis } from '../../../../util/axes'
 
 const DEFAULT_MAX_VALUE = 100
-
 const DEFAULT_TARGET_LINE_LABEL = i18n.t('Target')
 const DEFAULT_BASE_LINE_LABEL = i18n.t('Base')
+const AXIS_TYPE = 'RANGE'
+const AXIS_INDEX = 0
 
 const getLabelOffsetFromTextAlign = textAlign => {
     switch (textAlign) {
@@ -39,11 +41,21 @@ const getLabelOffsetFromTextAlign = textAlign => {
     }
 }
 
-function getPlotLine(value, label, fontStyle, fontStyleType) {
+function getPlotLine(regressionLine = {}, defaultLabel) {
+    const value = regressionLine.value
+    if (!isNumber(value)) {
+        return null
+    }
+    const label = regressionLine.title?.text || defaultLabel
+    const fontStyle = mergeFontStyleWithDefault(
+        regressionLine.title?.fontStyle,
+        FONT_STYLE_REGRESSION_LINE_LABEL
+    )
+
     const verticalAlign = getTextAlignOption(
         fontStyle[FONT_STYLE_OPTION_TEXT_ALIGN],
-        fontStyleType,
-        VIS_TYPE_GAUGE
+        FONT_STYLE_REGRESSION_LINE_LABEL,
+        isVerticalType(VIS_TYPE_GAUGE)
     )
     const y = getLabelOffsetFromTextAlign(
         fontStyle[FONT_STYLE_OPTION_TEXT_ALIGN]
@@ -73,48 +85,41 @@ function getPlotLine(value, label, fontStyle, fontStyleType) {
     }
 }
 
-const getLabels = fontStyle => ({
-    y: parseInt(fontStyle[FONT_STYLE_OPTION_FONT_SIZE], 10) + 7,
-    style: {
-        color: fontStyle[FONT_STYLE_OPTION_TEXT_COLOR],
-        fontSize: `${fontStyle[FONT_STYLE_OPTION_FONT_SIZE]}px`,
-        fontWeight: fontStyle[FONT_STYLE_OPTION_BOLD]
-            ? FONT_STYLE_OPTION_BOLD
-            : 'normal',
-        fontStyle: fontStyle[FONT_STYLE_OPTION_ITALIC]
-            ? FONT_STYLE_OPTION_ITALIC
-            : 'normal',
-    },
-})
+const getLabels = axis => {
+    const fontStyle = mergeFontStyleWithDefault(
+        axis.label?.fontStyle,
+        FONT_STYLE_AXIS_LABELS
+    )
+
+    return {
+        y: parseInt(fontStyle[FONT_STYLE_OPTION_FONT_SIZE], 10) + 7,
+        style: {
+            color: fontStyle[FONT_STYLE_OPTION_TEXT_COLOR],
+            fontSize: `${fontStyle[FONT_STYLE_OPTION_FONT_SIZE]}px`,
+            fontWeight: fontStyle[FONT_STYLE_OPTION_BOLD]
+                ? FONT_STYLE_OPTION_BOLD
+                : 'normal',
+            fontStyle: fontStyle[FONT_STYLE_OPTION_ITALIC]
+                ? FONT_STYLE_OPTION_ITALIC
+                : 'normal',
+        },
+    }
+}
 
 export default function (layout, series, legendSet) {
+    const axis = getAxis(layout.axes, AXIS_TYPE, AXIS_INDEX)
+
     const plotLines = arrayClean([
-        isNumber(layout.baseLineValue)
-            ? getPlotLine(
-                  layout.baseLineValue,
-                  layout.baseLineLabel || DEFAULT_BASE_LINE_LABEL,
-                  layout.fontStyle[FONT_STYLE_BASE_LINE_LABEL],
-                  FONT_STYLE_BASE_LINE_LABEL
-              )
-            : null,
-        isNumber(layout.targetLineValue)
-            ? getPlotLine(
-                  layout.targetLineValue,
-                  layout.targetLineLabel || DEFAULT_TARGET_LINE_LABEL,
-                  layout.fontStyle[FONT_STYLE_TARGET_LINE_LABEL],
-                  FONT_STYLE_TARGET_LINE_LABEL
-              )
-            : null,
+        getPlotLine(axis.baseLine, DEFAULT_BASE_LINE_LABEL),
+        getPlotLine(axis.targetLine, DEFAULT_TARGET_LINE_LABEL),
     ])
     const fillColor =
         layout.legendDisplayStyle === LEGEND_DISPLAY_STYLE_FILL && legendSet
             ? getColorByValueFromLegendSet(legendSet, series[0].data)
             : undefined
     return objectClean({
-        min: isNumber(layout.rangeAxisMinValue) ? layout.rangeAxisMinValue : 0,
-        max: isNumber(layout.rangeAxisMaxValue)
-            ? layout.rangeAxisMaxValue
-            : DEFAULT_MAX_VALUE,
+        min: isNumber(axis.minValue) ? axis.minValue : 0,
+        max: isNumber(axis.maxValue) ? axis.maxValue : DEFAULT_MAX_VALUE,
         lineWidth: 0,
         minorTickInterval: null,
         tickLength: 0,
@@ -124,7 +129,7 @@ export default function (layout, series, legendSet) {
         },
         minColor: fillColor,
         maxColor: fillColor,
-        labels: getLabels(layout.fontStyle[FONT_STYLE_SERIES_AXIS_LABELS]),
+        labels: getLabels(axis),
         title: {
             text: series[0].name,
         },

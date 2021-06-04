@@ -1,49 +1,21 @@
-import React, { Component } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
-import Paper from '@material-ui/core/Paper'
-import Popper from '@material-ui/core/Popper'
-import i18n from '@dhis2/d2-i18n'
+import { Tooltip } from '@dhis2/ui'
+
+import i18n from '../../../locales/index.js'
 
 import { styles } from './styles/RecommendedIcon.style'
 
-export class RecommendedIcon extends Component {
-    state = { anchorEl: null }
-
-    onMouseOver = event => {
-        this.setState({ anchorEl: event.currentTarget })
-    }
-
-    onMouseExit = () => {
-        this.setState({ anchorEl: null })
-    }
-
-    showTooltip = () => (
-        <Popper
-            anchorEl={this.state.anchorEl}
-            open={Boolean(this.state.anchorEl)}
+export const RecommendedIcon = ({ isRecommended, dataTest }) =>
+    isRecommended ? (
+        <Tooltip
+            content={i18n.t('Dimension recommended with selected data')}
             placement="bottom"
+            maxWidth={160}
         >
-            <Paper style={styles.toolTip}>
-                {i18n.t('Dimension recommended with selected data')}
-            </Paper>
-        </Popper>
-    )
-
-    render() {
-        const TooltipOnHover = this.state.anchorEl ? this.showTooltip() : null
-
-        return this.props.isRecommended ? (
-            <div
-                style={styles.recommendedIcon}
-                onMouseOver={this.onMouseOver}
-                onMouseLeave={this.onMouseExit}
-                data-test={this.props.dataTest}
-            >
-                {TooltipOnHover}
-            </div>
-        ) : null
-    }
-}
+            <div style={styles.recommendedIcon} data-test={dataTest} />
+        </Tooltip>
+    ) : null
 
 RecommendedIcon.propTypes = {
     isRecommended: PropTypes.bool.isRequired,

@@ -7,7 +7,7 @@ export default css`
         margin-bottom: ${spacers.dp12};
         margin-top: ${spacers.dp8};
     }
-    .emptySelection {
+    .emptyList {
         text-align: center;
         font-size: 14px;
         line-height: 16px;
@@ -17,5 +17,21 @@ export default css`
     .rightHeader {
         font-size: 14px;
         font-weight: 400;
+    }
+    .leftHeader {
+        padding: ${spacers.dp12} ${spacers.dp4};
+    }
+    .info-container {
+        display: flex;
+        margin-bottom: ${spacers.dp8};
+        padding: ${spacers.dp8};
+        background-color: ${colors.grey200};
+        border-radius: 3px;
+    }
+    .info-text {
+        padding-left: ${spacers.dp8};
+        color: ${colors.grey900};
+        font-size: 12px;
+        line-height: 16px;
     }
 `

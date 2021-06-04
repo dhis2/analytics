@@ -5,7 +5,9 @@ import {
     FONT_STYLE_OPTION_ITALIC,
     FONT_STYLE_OPTION_TEXT_ALIGN,
     FONT_STYLE_LEGEND,
+    mergeFontStyleWithDefault,
 } from '../../../../modules/fontStyle'
+import { isVerticalType, VIS_TYPE_SCATTER } from '../../../../modules/visTypes'
 import { getTextAlignOption } from './getTextAlignOption'
 
 const DASHBOARD_ITEM_STYLE = {
@@ -56,21 +58,24 @@ function getLegend(fontStyle, dashboard, visType) {
                   align: getTextAlignOption(
                       fontStyle[FONT_STYLE_OPTION_TEXT_ALIGN],
                       FONT_STYLE_LEGEND,
-                      visType
+                      isVerticalType(visType)
                   ),
               }
     )
 }
 
-export default function (layout, dashboard) {
-    const fontStyle = layout.fontStyle[FONT_STYLE_LEGEND]
-    return layout.hideLegend
+export default function (isHidden, fontStyle, visType, dashboard) {
+    const mergedFontStyle = mergeFontStyleWithDefault(
+        fontStyle,
+        FONT_STYLE_LEGEND
+    )
+    return isHidden || visType === VIS_TYPE_SCATTER
         ? {
               enabled: false,
           }
         : Object.assign(
               {},
-              getLegend(fontStyle, dashboard, layout.type),
-              getItemStyle(fontStyle, dashboard)
+              getLegend(mergedFontStyle, dashboard, visType),
+              getItemStyle(mergedFontStyle, dashboard)
           )
 }

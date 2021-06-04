@@ -1,14 +1,14 @@
 # 
 # Translators:
-# phil_dhis2, 2020
-# Viktor Varland <viktor@dhis2.org>, 2020
-# 晓东 林 <13981924470@126.com>, 2020
+# phil_dhis2, 2021
+# Viktor Varland <viktor@dhis2.org>, 2021
+# 晓东 林 <13981924470@126.com>, 2021
 # easylin <lin_xd@126.com>, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-12-21T08:01:55.494Z\n"
+"POT-Creation-Date: 2021-05-28T13:23:46.712Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: easylin <lin_xd@126.com>, 2021\n"
 "Language-Team: Chinese (https://www.transifex.com/hisp-uio/teams/100509/zh/)\n"
@@ -21,14 +21,71 @@ msgstr ""
 msgid "Data Type"
 msgstr "数据类型"
 
-msgid "Totals"
-msgstr "总共"
+msgid "All types"
+msgstr "所有类型"
 
-msgid "Details"
-msgstr "详情"
+msgid "Totals only"
+msgstr "总计"
 
-msgid "Detail"
-msgstr "详情"
+msgid "Details only"
+msgstr "仅详细信息"
+
+msgid "Disaggregation"
+msgstr "分解"
+
+msgid "No data"
+msgstr "无数据"
+
+msgid "Loading"
+msgstr "载入"
+
+msgid "Search by data item name"
+msgstr "按数据项名称搜索"
+
+msgid "No items selected"
+msgstr "没有选择条目"
+
+msgid "Selected Items"
+msgstr "选择的条目"
+
+msgid "No indicators found"
+msgstr "找不到指标"
+
+msgid "No data elements found"
+msgstr "找不到数据元素"
+
+msgid "No data sets found"
+msgstr "找不到数据集"
+
+msgid "No event data items found"
+msgstr "找不到事件数据项"
+
+msgid "No program indicators found"
+msgstr "找不到项目指标"
+
+msgid "No indicators found for \"{{- searchTerm}}\""
+msgstr "找不到“ {{-searchTerm}}”的指标"
+
+msgid "No data elements found for \"{{- searchTerm}}\""
+msgstr "找不到“ {{-searchTerm}}”的数据元素"
+
+msgid "No data sets found for \"{{- searchTerm}}\""
+msgstr "找不到“ {{-searchTerm}}”的数据集"
+
+msgid "No event data items found for \"{{- searchTerm}}\""
+msgstr "找不到“ {{-searchTerm}}”的事件数据项"
+
+msgid "No program indicators found for \"{{- searchTerm}}\""
+msgstr "找不到“ {{-searchTerm}}”的计划指标"
+
+msgid "Nothing found for \"{{- searchTerm}}\""
+msgstr "找不到“ {{-searchTerm}}”"
+
+msgid "Metric type"
+msgstr "尺度类型"
+
+msgid "All metrics"
+msgstr "所有尺度"
 
 msgid "Move to {{axisName}}"
 msgstr "移动到 {{axisName}}"
@@ -60,14 +117,78 @@ msgstr "你的维度"
 msgid "Dimension recommended with selected data"
 msgstr "选择的数据的推荐维度"
 
-msgid "No items selected"
-msgstr "没有选择条目"
-
-msgid "Selected Items"
-msgstr "选择的条目"
+msgid "Nothing found in {{dimensionTitle}}"
+msgstr "在{{dimensionTitle}}中找不到任何内容"
 
 msgid "Search"
 msgstr "搜索"
+
+msgid "Nothing found for {{searchTerm}}"
+msgstr "找不到{{searchTerm}}的任何内容"
+
+msgid "Delete {{fileType}}"
+msgstr "删除{{fileType}}"
+
+msgid ""
+"This {{fileType}} and related interpretations will be deleted. Continue?"
+msgstr "此{{fileType}}和相关解释将被删除。继续？"
+
+msgid "Cancel"
+msgstr "取消"
+
+msgid "Delete"
+msgstr "删除"
+
+msgid "File"
+msgstr "文件"
+
+msgid "New"
+msgstr "新建"
+
+msgid "Open…"
+msgstr "打开…"
+
+msgid "Save"
+msgstr "保存"
+
+msgid "Save…"
+msgstr "保存…"
+
+msgid "Save as…"
+msgstr "另存为…"
+
+msgid "Rename…"
+msgstr "改名…"
+
+msgid "Translate…"
+msgstr "翻译…"
+
+msgid "Share…"
+msgstr "分享…"
+
+msgid "Get link…"
+msgstr "获取链接…"
+
+msgid "Open in this app"
+msgstr "在该App打开"
+
+msgid "Close"
+msgstr "关闭"
+
+msgid "Rename {{fileType}}"
+msgstr "重命名{{fileType}}"
+
+msgid "Name"
+msgstr "名称"
+
+msgid "Description"
+msgstr "描述"
+
+msgid "Rename"
+msgstr "改名"
+
+msgid "Save {{fileType}} as"
+msgstr "将{{fileType}}另存为"
 
 msgid "Selected Data"
 msgstr "选择的数据"
@@ -91,16 +212,16 @@ msgid "Period"
 msgstr "期间"
 
 msgid "Relative periods"
-msgstr "相关周期"
+msgstr "相对期间"
 
 msgid "Fixed periods"
-msgstr "固定周期"
+msgstr "固定期间"
 
 msgid "Selected Periods"
 msgstr "选择的期间"
 
 msgid "No periods selected"
-msgstr "没有选择相对周期"
+msgstr "未选择期间"
 
 msgid "January"
 msgstr "1月"
@@ -150,9 +271,6 @@ msgstr "每日"
 msgid "Weekly"
 msgstr "每周"
 
-msgid "Bi-weekly"
-msgstr "两周"
-
 msgid "Weekly (Start Wednesday)"
 msgstr "每周（始于周二）"
 
@@ -164,6 +282,9 @@ msgstr "每周（始于周六）"
 
 msgid "Weekly (Start Sunday)"
 msgstr "每周（始于周日）"
+
+msgid "Bi-weekly"
+msgstr "两周"
 
 msgid "Monthly"
 msgstr "每月"
@@ -318,6 +439,9 @@ msgstr "去年"
 msgid "Last 5 years"
 msgstr "最近5年"
 
+msgid "Last 10 years"
+msgstr "最近10年"
+
 msgid "Days"
 msgstr "天数"
 
@@ -387,34 +511,67 @@ msgstr "选择一个项目"
 msgid "Indicators"
 msgstr "指标"
 
-msgid "Select indicator group"
-msgstr "选择指标组"
+msgid "Indicator group"
+msgstr "指标组"
 
-msgid "[ All groups ]"
-msgstr "【所有组】"
+msgid "All groups"
+msgstr "所有组"
+
+msgid "Indicator"
+msgstr "指标"
+
+msgid "No indicator groups found"
+msgstr "找不到指标组"
+
+msgid "Loading indicator groups"
+msgstr "加载指标组"
 
 msgid "Data elements"
 msgstr "数据元"
 
-msgid "Select data element group"
-msgstr "选择数据元组"
+msgid "Data element group"
+msgstr "数据元组"
 
-msgid "[ All data elements ]"
-msgstr "【所有数据元】"
+msgid "Data element"
+msgstr "数据元"
+
+msgid "No data element groups found"
+msgstr "找不到数据元素组"
+
+msgid "Loading data element groups"
+msgstr "加载数据元素组"
 
 msgid "Data sets"
 msgstr "数据集"
 
-msgid "Select data sets"
-msgstr "选择数据集"
+msgid "Data set"
+msgstr "数据集"
 
-msgid "[ All metrics ]"
-msgstr "[ 所有尺度 ]"
+msgid "All data sets"
+msgstr "所有数据集"
+
+msgid "Loading data sets"
+msgstr "载入数据集"
 
 msgid "Event data items"
 msgstr "事件数据条目"
 
+msgid "All programs"
+msgstr "所有项目"
+
+msgid "Event data item"
+msgstr "事件数据条目"
+
+msgid "No programs found"
+msgstr "找不到项目"
+
+msgid "Loading programs"
+msgstr "正在载入项目"
+
 msgid "Program indicators"
+msgstr "项目指标"
+
+msgid "Program indicator"
 msgstr "项目指标"
 
 msgid "Extra Small"
@@ -470,6 +627,30 @@ msgstr "{{allDynamicOuNames}} 等级在 {{staticOuNames}}"
 
 msgid "{{allDynamicOuNames}} groups in {{staticOuNames}}"
 msgstr "{{allDynamicOuNames}} 组在 {{staticOuNames}}"
+
+msgid "{{percentage}}% of total x values"
+msgstr "占总x值的{{percentage}}％"
+
+msgid "{{percentage}}% of total y values"
+msgstr "占总y值的{{percentage}}％"
+
+msgid "{{thresholdFactor}} × IQR Q1"
+msgstr "{{thresholdFactor}}×IQR Q1"
+
+msgid "{{thresholdFactor}} × IQR Q3"
+msgstr "{{thresholdFactor}}×IQR Q3"
+
+msgid "{{thresholdFactor}} × Modified Z-score low"
+msgstr "{{thresholdFactor}}×修正的Z分数低值"
+
+msgid "{{thresholdFactor}} × Modified Z-score high"
+msgstr "{{thresholdFactor}}×修改后的Z分数高值"
+
+msgid "{{thresholdFactor}} × Z-score low"
+msgstr "{{thresholdFactor}}×Z分数低"
+
+msgid "{{thresholdFactor}} × Z-score high"
+msgstr "{{thresholdFactor}}×Z分数高"
 
 msgid "Data"
 msgstr "数据"
@@ -529,45 +710,43 @@ msgid "View data and indicators in a manipulatable table."
 msgstr "在可操作的表格中查看数据和指标。"
 
 msgid ""
-"Compare sizes of related element, displayed vertically. Recommend period in "
-"filter."
-msgstr "比较相关元素的大小并垂直显示。推荐期间过滤器。"
+"Compare sizes of related elements vertically. Recommend period as filter."
+msgstr "垂直比较相关元素的大小。推荐时段为过滤条件。"
 
 msgid ""
-"Compare parts of a whole against related elements, vertically. Recommend "
+"Compare parts of a whole against related elements vertically. Recommend data"
+" or org. unit as series."
+msgstr "垂直比较整个部分和相关元素。推荐数据或组织机构为系列。"
+
+msgid ""
+"Compare sizes of related elements horizontally. Recommend period as filter."
+msgstr "水平比较相关元素的大小。推荐时段为过滤条件。"
+
+msgid ""
+"Compare parts of a whole against related elements horizontally. Recommend "
 "data or org. unit as series."
-msgstr "垂直比较整个部分与相关元素。推荐数据或机构作为系列。"
+msgstr "水平比较整个部分和相关元素。推荐数据或组织机构为系列。"
+
+msgid "Track or compare changes over time. Recommend period as category."
+msgstr "跟踪或比较随时间的变化规律。推荐时期为分类。"
 
 msgid ""
-"Compare sizes of related elements, displayed horizontally. Recommend period "
-"in filter."
-msgstr "比较水平显示的相关元素的大小。推荐期间作为过滤。"
+"Track or compare parts of a whole over time. Recommend data as series and "
+"period as category."
+msgstr "随着时间的推移跟踪或比较整个部分。建议将数据作为系列，将周期作为类别。"
 
 msgid ""
-"Compare parts of a whole against related elements, horizontally. Recommend "
-"data or org. unit as series."
-msgstr "水平地将整个部分与相关元素进行比较。推荐数据或机构为系列。"
-
-msgid "Track or compare changes over time. Recommend period as the category."
-msgstr "跟踪或比较随时间的变化。推荐时期为分类。"
-
-msgid ""
-"Track or compare over time parts of a whole. Recommend data in series and "
-"period in category."
-msgstr "跟踪或比较整个时间的一部分。推荐数据序列和期间作为分类。"
-
-msgid ""
-"Compare parts of a whole at a single point in time. Recommend period in the "
+"Compare parts of a whole at a single point in time. Recommend period as "
 "filter."
-msgstr "在单个时间点比较整个部分。推荐过滤器的时期。"
+msgstr "在单个时间点比较整个的一部分。推荐时段为过滤条件。"
 
 msgid "Compare several items against multiple variables."
 msgstr "将多个变量与多个条目进行比较。"
 
 msgid ""
-"Compare a percentage indicator against a 100% scale. Recommend period in "
+"Compare a percentage indicator against a 100% scale. Recommend period as "
 "filter."
-msgstr "将百分比指标与100％比例进行比较。推荐期间作为过滤。"
+msgstr "将百分比指标与100％比例进行比较。推荐时段为过滤条件。"
 
 msgid "Compare changes over time between multiple time periods."
 msgstr "比较多个时间段之间随时间的变化。"
@@ -580,11 +759,20 @@ msgid ""
 " for finding outliers."
 msgstr "查看某个地点或时间的两个数据项之间的关系。推荐用于发现异常值。"
 
+msgid "{{seriesName}} (trend)"
+msgstr "{{seriesName}}（趋势）"
+
+msgid "Trend"
+msgstr "趋势"
+
 msgid "No legend for this series"
 msgstr "这个系列没有图例"
 
 msgid "and {{amount}} more..."
 msgstr "还有{{amount}}个..."
+
+msgid "Linear Regression"
+msgstr "线性回归"
 
 msgid "Target"
 msgstr "目标"
@@ -594,9 +782,6 @@ msgstr "基"
 
 msgid "Axis {{axisId}}"
 msgstr "轴{{axisId}}"
-
-msgid "No data"
-msgstr "无数据"
 
 msgid "Reset zoom"
 msgstr "重设缩放"

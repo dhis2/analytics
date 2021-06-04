@@ -1,20 +1,21 @@
-import i18n from '@dhis2/d2-i18n'
-import BarIcon from '../assets/BarIcon'
-import StackedBarIcon from '../assets/StackedBarIcon'
-import ColumnIcon from '../assets/ColumnIcon'
-import StackedColumnIcon from '../assets/StackedColumnIcon'
-import LineIcon from '../assets/LineIcon'
-import AreaIcon from '../assets/AreaIcon'
-import StackedAreaIcon from '../assets/StackedAreaIcon'
-import PieIcon from '../assets/PieIcon'
-import RadarIcon from '../assets/RadarIcon'
-import GaugeIcon from '../assets/GaugeIcon'
-import YearOverYearLineIcon from '../assets/YearOverYearLineIcon'
-import YearOverYearColumnIcon from '../assets/YearOverYearColumnIcon'
-import SingleValueIcon from '../assets/SingleValueIcon'
-import PivotTableIcon from '../assets/PivotTableIcon'
-import ScatterIcon from '../assets/ScatterIcon'
-
+import i18n from '../locales/index.js'
+import {
+    IconTable24,
+    IconVisualizationArea24,
+    IconVisualizationAreaStacked24,
+    IconVisualizationBar24,
+    IconVisualizationBarStacked24,
+    IconVisualizationColumn24,
+    IconVisualizationColumnMulti24,
+    IconVisualizationColumnStacked24,
+    IconVisualizationGauge24,
+    IconVisualizationLine24,
+    IconVisualizationLineMulti24,
+    IconVisualizationPie24,
+    IconVisualizationRadar24,
+    IconVisualizationScatter24,
+    IconVisualizationSingleValue24,
+} from '@dhis2/ui'
 export const VIS_TYPE_COLUMN = 'COLUMN'
 export const VIS_TYPE_STACKED_COLUMN = 'STACKED_COLUMN'
 export const VIS_TYPE_BAR = 'BAR'
@@ -55,34 +56,34 @@ export const visTypeDescriptions = {
         'View data and indicators in a manipulatable table.'
     ),
     [VIS_TYPE_COLUMN]: i18n.t(
-        'Compare sizes of related element, displayed vertically. Recommend period in filter.'
+        'Compare sizes of related elements vertically. Recommend period as filter.'
     ),
     [VIS_TYPE_STACKED_COLUMN]: i18n.t(
-        'Compare parts of a whole against related elements, vertically. Recommend data or org. unit as series.'
+        'Compare parts of a whole against related elements vertically. Recommend data or org. unit as series.'
     ),
     [VIS_TYPE_BAR]: i18n.t(
-        'Compare sizes of related elements, displayed horizontally. Recommend period in filter.'
+        'Compare sizes of related elements horizontally. Recommend period as filter.'
     ),
     [VIS_TYPE_STACKED_BAR]: i18n.t(
-        'Compare parts of a whole against related elements, horizontally. Recommend data or org. unit as series.'
+        'Compare parts of a whole against related elements horizontally. Recommend data or org. unit as series.'
     ),
     [VIS_TYPE_LINE]: i18n.t(
-        'Track or compare changes over time. Recommend period as the category.'
+        'Track or compare changes over time. Recommend period as category.'
     ),
     [VIS_TYPE_AREA]: i18n.t(
-        'Track or compare changes over time. Recommend period as the category.'
+        'Track or compare changes over time. Recommend period as category.'
     ),
     [VIS_TYPE_STACKED_AREA]: i18n.t(
-        'Track or compare over time parts of a whole. Recommend data in series and period in category.'
+        'Track or compare parts of a whole over time. Recommend data as series and period as category.'
     ),
     [VIS_TYPE_PIE]: i18n.t(
-        'Compare parts of a whole at a single point in time. Recommend period in the filter.'
+        'Compare parts of a whole at a single point in time. Recommend period as filter.'
     ),
     [VIS_TYPE_RADAR]: i18n.t(
         'Compare several items against multiple variables.'
     ),
     [VIS_TYPE_GAUGE]: i18n.t(
-        'Compare a percentage indicator against a 100% scale. Recommend period in filter.'
+        'Compare a percentage indicator against a 100% scale. Recommend period as filter.'
     ),
     [VIS_TYPE_YEAR_OVER_YEAR_LINE]: i18n.t(
         'Compare changes over time between multiple time periods.'
@@ -99,21 +100,21 @@ export const visTypeDescriptions = {
 }
 
 export const visTypeIcons = {
-    [VIS_TYPE_PIVOT_TABLE]: PivotTableIcon,
-    [VIS_TYPE_BAR]: BarIcon,
-    [VIS_TYPE_STACKED_BAR]: StackedBarIcon,
-    [VIS_TYPE_COLUMN]: ColumnIcon,
-    [VIS_TYPE_STACKED_COLUMN]: StackedColumnIcon,
-    [VIS_TYPE_LINE]: LineIcon,
-    [VIS_TYPE_AREA]: AreaIcon,
-    [VIS_TYPE_STACKED_AREA]: StackedAreaIcon,
-    [VIS_TYPE_PIE]: PieIcon,
-    [VIS_TYPE_RADAR]: RadarIcon,
-    [VIS_TYPE_GAUGE]: GaugeIcon,
-    [VIS_TYPE_YEAR_OVER_YEAR_LINE]: YearOverYearLineIcon,
-    [VIS_TYPE_YEAR_OVER_YEAR_COLUMN]: YearOverYearColumnIcon,
-    [VIS_TYPE_SINGLE_VALUE]: SingleValueIcon,
-    [VIS_TYPE_SCATTER]: ScatterIcon,
+    [VIS_TYPE_PIVOT_TABLE]: IconTable24,
+    [VIS_TYPE_BAR]: IconVisualizationBar24,
+    [VIS_TYPE_STACKED_BAR]: IconVisualizationBarStacked24,
+    [VIS_TYPE_COLUMN]: IconVisualizationColumn24,
+    [VIS_TYPE_STACKED_COLUMN]: IconVisualizationColumnStacked24,
+    [VIS_TYPE_LINE]: IconVisualizationLine24,
+    [VIS_TYPE_AREA]: IconVisualizationArea24,
+    [VIS_TYPE_STACKED_AREA]: IconVisualizationAreaStacked24,
+    [VIS_TYPE_PIE]: IconVisualizationPie24,
+    [VIS_TYPE_RADAR]: IconVisualizationRadar24,
+    [VIS_TYPE_GAUGE]: IconVisualizationGauge24,
+    [VIS_TYPE_YEAR_OVER_YEAR_LINE]: IconVisualizationLineMulti24,
+    [VIS_TYPE_YEAR_OVER_YEAR_COLUMN]: IconVisualizationColumnMulti24,
+    [VIS_TYPE_SINGLE_VALUE]: IconVisualizationSingleValue24,
+    [VIS_TYPE_SCATTER]: IconVisualizationScatter24,
 }
 
 export const getDisplayNameByVisType = visType => {
@@ -154,7 +155,6 @@ const twoCategoryChartTypes = [
     VIS_TYPE_LINE,
     VIS_TYPE_AREA,
     VIS_TYPE_STACKED_AREA,
-    VIS_TYPE_SCATTER, // TODO: Remove once new layout is in place
 ]
 
 const columnBasedTypes = [

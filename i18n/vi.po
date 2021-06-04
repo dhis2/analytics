@@ -1,15 +1,15 @@
 # 
 # Translators:
-# phil_dhis2, 2020
-# Viktor Varland <viktor@dhis2.org>, 2020
+# phil_dhis2, 2021
 # Mai Nguyen <thanhmai.jica@gmail.com>, 2021
+# Viktor Varland <viktor@dhis2.org>, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-12-21T08:01:55.494Z\n"
+"POT-Creation-Date: 2021-05-28T13:23:46.712Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Mai Nguyen <thanhmai.jica@gmail.com>, 2021\n"
+"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2021\n"
 "Language-Team: Vietnamese (https://www.transifex.com/hisp-uio/teams/100509/vi/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,14 +20,71 @@ msgstr ""
 msgid "Data Type"
 msgstr "Loại dữ liệu"
 
-msgid "Totals"
-msgstr "Tổng"
+msgid "All types"
+msgstr "Các loại"
 
-msgid "Details"
-msgstr "Chi tiết"
+msgid "Totals only"
+msgstr ""
 
-msgid "Detail"
-msgstr "Chi tiết"
+msgid "Details only"
+msgstr ""
+
+msgid "Disaggregation"
+msgstr "Phân Tách Phần Tử Dữ Liệu"
+
+msgid "No data"
+msgstr "Không có dữ liệu"
+
+msgid "Loading"
+msgstr "Đang tải"
+
+msgid "Search by data item name"
+msgstr ""
+
+msgid "No items selected"
+msgstr "Không có mục nào được chọn"
+
+msgid "Selected Items"
+msgstr "Các mục đã chọn"
+
+msgid "No indicators found"
+msgstr ""
+
+msgid "No data elements found"
+msgstr ""
+
+msgid "No data sets found"
+msgstr ""
+
+msgid "No event data items found"
+msgstr ""
+
+msgid "No program indicators found"
+msgstr ""
+
+msgid "No indicators found for \"{{- searchTerm}}\""
+msgstr ""
+
+msgid "No data elements found for \"{{- searchTerm}}\""
+msgstr ""
+
+msgid "No data sets found for \"{{- searchTerm}}\""
+msgstr ""
+
+msgid "No event data items found for \"{{- searchTerm}}\""
+msgstr ""
+
+msgid "No program indicators found for \"{{- searchTerm}}\""
+msgstr ""
+
+msgid "Nothing found for \"{{- searchTerm}}\""
+msgstr ""
+
+msgid "Metric type"
+msgstr ""
+
+msgid "All metrics"
+msgstr "Tất cả hệ đo lường"
 
 msgid "Move to {{axisName}}"
 msgstr "Di chuyển đến {{axisName}}"
@@ -59,14 +116,78 @@ msgstr "Các chiều dữ liệu của bạn"
 msgid "Dimension recommended with selected data"
 msgstr "Chiều được đề xuất với dữ liệu đã chọn"
 
-msgid "No items selected"
-msgstr "Không có mục nào được chọn"
-
-msgid "Selected Items"
-msgstr "Các mục đã chọn"
+msgid "Nothing found in {{dimensionTitle}}"
+msgstr "Không tìm thấy trong {{mensTitle}}"
 
 msgid "Search"
 msgstr "Tìm kiếm"
+
+msgid "Nothing found for {{searchTerm}}"
+msgstr "Không tìm thấy cho {{searchTerm}}"
+
+msgid "Delete {{fileType}}"
+msgstr ""
+
+msgid ""
+"This {{fileType}} and related interpretations will be deleted. Continue?"
+msgstr ""
+
+msgid "Cancel"
+msgstr "Hủy"
+
+msgid "Delete"
+msgstr "Xóa"
+
+msgid "File"
+msgstr "Tập tin"
+
+msgid "New"
+msgstr "Mới"
+
+msgid "Open…"
+msgstr ""
+
+msgid "Save"
+msgstr "Lưu lại"
+
+msgid "Save…"
+msgstr ""
+
+msgid "Save as…"
+msgstr ""
+
+msgid "Rename…"
+msgstr ""
+
+msgid "Translate…"
+msgstr ""
+
+msgid "Share…"
+msgstr ""
+
+msgid "Get link…"
+msgstr ""
+
+msgid "Open in this app"
+msgstr "Mở trong ứng dụng này"
+
+msgid "Close"
+msgstr "Đóng lại"
+
+msgid "Rename {{fileType}}"
+msgstr ""
+
+msgid "Name"
+msgstr "Tên"
+
+msgid "Description"
+msgstr "Miêu tả"
+
+msgid "Rename"
+msgstr "Đổi tên"
+
+msgid "Save {{fileType}} as"
+msgstr ""
 
 msgid "Selected Data"
 msgstr "Dữ liệu đã chọn"
@@ -149,9 +270,6 @@ msgstr "Hàng ngày"
 msgid "Weekly"
 msgstr "Hàng tuần"
 
-msgid "Bi-weekly"
-msgstr "Hai-tuần"
-
 msgid "Weekly (Start Wednesday)"
 msgstr "Hàng tuần (Bắt đầu từ Thứ Tư)"
 
@@ -163,6 +281,9 @@ msgstr "Hàng tuần (Bắt đầu từ Thứ Bảy)"
 
 msgid "Weekly (Start Sunday)"
 msgstr "Hàng tuần (Bắt đầu từ Chủ nhật)"
+
+msgid "Bi-weekly"
+msgstr "Hai-tuần"
 
 msgid "Monthly"
 msgstr "Hàng tháng"
@@ -317,6 +438,9 @@ msgstr "Năm ngoái"
 msgid "Last 5 years"
 msgstr "5 năm trước"
 
+msgid "Last 10 years"
+msgstr "10 năm trước"
+
 msgid "Days"
 msgstr "Ngày"
 
@@ -386,35 +510,68 @@ msgstr "Chọn một chương trình"
 msgid "Indicators"
 msgstr "Các chỉ số"
 
-msgid "Select indicator group"
-msgstr "Chọn nhóm chỉ số"
+msgid "Indicator group"
+msgstr "Nhóm chỉ số"
 
-msgid "[ All groups ]"
-msgstr "[Tất cả các nhóm]"
+msgid "All groups"
+msgstr ""
+
+msgid "Indicator"
+msgstr "Chỉ số"
+
+msgid "No indicator groups found"
+msgstr ""
+
+msgid "Loading indicator groups"
+msgstr ""
 
 msgid "Data elements"
 msgstr "Các phần tử dữ liệu"
 
-msgid "Select data element group"
-msgstr "Chọn nhóm yếu tố dữ liệu"
+msgid "Data element group"
+msgstr "Nhóm dữ liệu"
 
-msgid "[ All data elements ]"
-msgstr "[Tất cả các phần tử dữ liệu]"
+msgid "Data element"
+msgstr "Phần tử dữ liệu"
+
+msgid "No data element groups found"
+msgstr ""
+
+msgid "Loading data element groups"
+msgstr ""
 
 msgid "Data sets"
 msgstr "Biểu nhập"
 
-msgid "Select data sets"
-msgstr "Chọn tập dữ liệu"
+msgid "Data set"
+msgstr "Tập dữ liệu"
 
-msgid "[ All metrics ]"
-msgstr "[Tất cả các chỉ số]"
+msgid "All data sets"
+msgstr ""
+
+msgid "Loading data sets"
+msgstr "Đang tải tập dữ liệu"
 
 msgid "Event data items"
 msgstr "Mục dữ liệu sự kiện"
 
+msgid "All programs"
+msgstr ""
+
+msgid "Event data item"
+msgstr "Mục dữ liệu sự kiện"
+
+msgid "No programs found"
+msgstr ""
+
+msgid "Loading programs"
+msgstr ""
+
 msgid "Program indicators"
 msgstr "Chỉ Số Chương Trình"
+
+msgid "Program indicator"
+msgstr "Quản lý Chỉ số chương trình"
 
 msgid "Extra Small"
 msgstr "Rất nhỏ"
@@ -469,6 +626,30 @@ msgstr "{{allDynamicOuNames}} cấp trong {{staticOuNames}}"
 
 msgid "{{allDynamicOuNames}} groups in {{staticOuNames}}"
 msgstr "{{allDynamicOuNames}} nhóm trong {{staticOuNames}}"
+
+msgid "{{percentage}}% of total x values"
+msgstr ""
+
+msgid "{{percentage}}% of total y values"
+msgstr ""
+
+msgid "{{thresholdFactor}} × IQR Q1"
+msgstr ""
+
+msgid "{{thresholdFactor}} × IQR Q3"
+msgstr ""
+
+msgid "{{thresholdFactor}} × Modified Z-score low"
+msgstr ""
+
+msgid "{{thresholdFactor}} × Modified Z-score high"
+msgstr ""
+
+msgid "{{thresholdFactor}} × Z-score low"
+msgstr ""
+
+msgid "{{thresholdFactor}} × Z-score high"
+msgstr ""
 
 msgid "Data"
 msgstr "Lấy dữ liệu"
@@ -528,61 +709,59 @@ msgid "View data and indicators in a manipulatable table."
 msgstr "Xem dữ liệu và chỉ số trong một bảng."
 
 msgid ""
-"Compare sizes of related element, displayed vertically. Recommend period in "
-"filter."
+"Compare sizes of related elements vertically. Recommend period as filter."
 msgstr ""
-"So sánh kích thước của phần tử liên quan, được hiển thị theo chiều dọc. Đề "
-"xuất thời điểm trong bộ lọc."
+"So sánh kích thước của các yếu tố liên quan theo chiều dọc. Đề xuất khoảng "
+"thời gian làm bộ lọc."
 
 msgid ""
-"Compare parts of a whole against related elements, vertically. Recommend "
+"Compare parts of a whole against related elements vertically. Recommend data"
+" or org. unit as series."
+msgstr ""
+"So sánh các phần của tổng thể với các phần tử liên quan theo chiều dọc. Đề "
+"xuất dữ liệu hoặc đơn vị làm chiều phân loại."
+
+msgid ""
+"Compare sizes of related elements horizontally. Recommend period as filter."
+msgstr ""
+"So sánh kích thước của các yếu tố liên quan theo chiều ngang. Đề xuất khoảng"
+" thời gian làm bộ lọc."
+
+msgid ""
+"Compare parts of a whole against related elements horizontally. Recommend "
 "data or org. unit as series."
 msgstr ""
-"So sánh các phần tổng thể với các phần tử liên quan, theo chiều dọc. Đề xuất"
-" dữ liệu hoặc đơn vị ở chiều chuỗi."
+"So sánh các phần của tổng thể với các phần tử liên quan theo chiều ngang. Đề"
+" xuất dữ liệu hoặc đơn vị làm chiều phân loại."
+
+msgid "Track or compare changes over time. Recommend period as category."
+msgstr ""
+"Theo dõi hoặc so sánh các thay đổi theo thời gian. Đề xuất khoảng thời gian "
+"dưới dạng danh mục."
 
 msgid ""
-"Compare sizes of related elements, displayed horizontally. Recommend period "
-"in filter."
+"Track or compare parts of a whole over time. Recommend data as series and "
+"period as category."
 msgstr ""
-"So sánh kích thước của các phần tử liên quan, hiển thị theo chiều ngang. Đề "
-"xuất thời điểm trong bộ lọc."
+"Theo dõi hoặc so sánh các phần của tổng thể theo thời gian. Đề xuất dữ liệu "
+"dưới dạng chuỗi và khoảng thời gian dưới dạng phân loại."
 
 msgid ""
-"Compare parts of a whole against related elements, horizontally. Recommend "
-"data or org. unit as series."
-msgstr ""
-"So sánh các phần của một tổng thể với các phần tử liên quan, theo chiều "
-"ngang. Đề xuất dữ liệu hoặc đơn vị ở chiều chuỗi."
-
-msgid "Track or compare changes over time. Recommend period as the category."
-msgstr ""
-"Theo dõi hoặc so sánh các thay đổi theo thời gian. Đề xuất thời điểm ở chiều"
-" phân loại."
-
-msgid ""
-"Track or compare over time parts of a whole. Recommend data in series and "
-"period in category."
-msgstr ""
-"Theo dõi hoặc so sánh các phần của một tổng thể theo thời gian. Đề xuất dữ "
-"liệu ở chiều chuỗi và thời điểm ở chiều phân loại."
-
-msgid ""
-"Compare parts of a whole at a single point in time. Recommend period in the "
+"Compare parts of a whole at a single point in time. Recommend period as "
 "filter."
 msgstr ""
-"So sánh các phần của tổng thể tại một thời điểm. Đề xuất thời điểm trong bộ "
-"lọc."
+"So sánh các phần của tổng thể tại một thời điểm. Đề xuất khoảng thời gian "
+"làm bộ lọc."
 
 msgid "Compare several items against multiple variables."
 msgstr "So sánh một số mục với nhiều biến."
 
 msgid ""
-"Compare a percentage indicator against a 100% scale. Recommend period in "
+"Compare a percentage indicator against a 100% scale. Recommend period as "
 "filter."
 msgstr ""
-"So sánh chỉ số phần trăm với thang điểm 100%. Đề xuất thời điểm trong bộ "
-"lọc."
+"So sánh chỉ số phần trăm với thang điểm 100%. Đề xuất khoảng thời gian làm "
+"bộ lọc."
 
 msgid "Compare changes over time between multiple time periods."
 msgstr "So sánh các thay đổi theo thời gian giữa nhiều khoảng thời gian."
@@ -599,11 +778,20 @@ msgstr ""
 "Xem mối quan hệ giữa hai mục dữ liệu tại một địa điểm hoặc thời gian. Đề "
 "xuất để tìm ra những điểm khác biệt."
 
+msgid "{{seriesName}} (trend)"
+msgstr ""
+
+msgid "Trend"
+msgstr "Xu hướng"
+
 msgid "No legend for this series"
 msgstr "Không có chú giải cho chuỗi này"
 
 msgid "and {{amount}} more..."
 msgstr "và {{amount}} khác ..."
+
+msgid "Linear Regression"
+msgstr ""
 
 msgid "Target"
 msgstr "Mục tiêu"
@@ -613,9 +801,6 @@ msgstr "Đường đáy"
 
 msgid "Axis {{axisId}}"
 msgstr "Trục {{axisId}}"
-
-msgid "No data"
-msgstr "Không có dữ liệu"
 
 msgid "Reset zoom"
 msgstr "Đặt lại thu phóng"

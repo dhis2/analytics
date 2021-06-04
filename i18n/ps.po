@@ -1,14 +1,14 @@
 # 
 # Translators:
-# phil_dhis2, 2020
-# Viktor Varland <viktor@dhis2.org>, 2020
+# phil_dhis2, 2021
+# Viktor Varland <viktor@dhis2.org>, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-12-21T08:01:55.494Z\n"
+"POT-Creation-Date: 2021-05-28T13:23:46.712Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2020\n"
+"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2021\n"
 "Language-Team: Pushto (https://www.transifex.com/hisp-uio/teams/100509/ps/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -19,14 +19,71 @@ msgstr ""
 msgid "Data Type"
 msgstr ""
 
-msgid "Totals"
-msgstr "مجموعې"
-
-msgid "Details"
-msgstr "جزیات [ ژباړه ـ جزیات ]"
-
-msgid "Detail"
+msgid "All types"
 msgstr ""
+
+msgid "Totals only"
+msgstr ""
+
+msgid "Details only"
+msgstr ""
+
+msgid "Disaggregation"
+msgstr ""
+
+msgid "No data"
+msgstr "د مالوماتو (ډاټا) نشتوالۍ"
+
+msgid "Loading"
+msgstr "د پورته کېدو یا لوډینګ په حال کې"
+
+msgid "Search by data item name"
+msgstr ""
+
+msgid "No items selected"
+msgstr ""
+
+msgid "Selected Items"
+msgstr ""
+
+msgid "No indicators found"
+msgstr ""
+
+msgid "No data elements found"
+msgstr ""
+
+msgid "No data sets found"
+msgstr ""
+
+msgid "No event data items found"
+msgstr ""
+
+msgid "No program indicators found"
+msgstr ""
+
+msgid "No indicators found for \"{{- searchTerm}}\""
+msgstr ""
+
+msgid "No data elements found for \"{{- searchTerm}}\""
+msgstr ""
+
+msgid "No data sets found for \"{{- searchTerm}}\""
+msgstr ""
+
+msgid "No event data items found for \"{{- searchTerm}}\""
+msgstr ""
+
+msgid "No program indicators found for \"{{- searchTerm}}\""
+msgstr ""
+
+msgid "Nothing found for \"{{- searchTerm}}\""
+msgstr ""
+
+msgid "Metric type"
+msgstr ""
+
+msgid "All metrics"
+msgstr "ټول متریک"
 
 msgid "Move to {{axisName}}"
 msgstr ""
@@ -58,14 +115,78 @@ msgstr ""
 msgid "Dimension recommended with selected data"
 msgstr ""
 
-msgid "No items selected"
-msgstr ""
-
-msgid "Selected Items"
+msgid "Nothing found in {{dimensionTitle}}"
 msgstr ""
 
 msgid "Search"
 msgstr "جستجو"
+
+msgid "Nothing found for {{searchTerm}}"
+msgstr ""
+
+msgid "Delete {{fileType}}"
+msgstr ""
+
+msgid ""
+"This {{fileType}} and related interpretations will be deleted. Continue?"
+msgstr ""
+
+msgid "Cancel"
+msgstr "رد یې کړئ [ ژباړه ـ ردول ]"
+
+msgid "Delete"
+msgstr "خذف یې کړئ"
+
+msgid "File"
+msgstr "فایل"
+
+msgid "New"
+msgstr "نوی"
+
+msgid "Open…"
+msgstr ""
+
+msgid "Save"
+msgstr "ثبت یې کړئ [ ژباړه - ثبت کړئ ]"
+
+msgid "Save…"
+msgstr ""
+
+msgid "Save as…"
+msgstr ""
+
+msgid "Rename…"
+msgstr ""
+
+msgid "Translate…"
+msgstr ""
+
+msgid "Share…"
+msgstr ""
+
+msgid "Get link…"
+msgstr ""
+
+msgid "Open in this app"
+msgstr ""
+
+msgid "Close"
+msgstr "بند یې کړئ"
+
+msgid "Rename {{fileType}}"
+msgstr ""
+
+msgid "Name"
+msgstr "نوم"
+
+msgid "Description"
+msgstr "تشریح [ ژباړه ـ نښه ـ تشریح ]"
+
+msgid "Rename"
+msgstr "بیا نومول"
+
+msgid "Save {{fileType}} as"
+msgstr ""
 
 msgid "Selected Data"
 msgstr ""
@@ -148,9 +269,6 @@ msgstr "ورځني [ د مودې ډول ]"
 msgid "Weekly"
 msgstr "اوونیز"
 
-msgid "Bi-weekly"
-msgstr ""
-
 msgid "Weekly (Start Wednesday)"
 msgstr ""
 
@@ -161,6 +279,9 @@ msgid "Weekly (Start Saturday)"
 msgstr ""
 
 msgid "Weekly (Start Sunday)"
+msgstr ""
+
+msgid "Bi-weekly"
 msgstr ""
 
 msgid "Monthly"
@@ -316,6 +437,9 @@ msgstr "تېر کال"
 msgid "Last 5 years"
 msgstr "تېر 5 کلونه"
 
+msgid "Last 10 years"
+msgstr "لس کلونه"
+
 msgid "Days"
 msgstr "ورځې"
 
@@ -385,35 +509,68 @@ msgstr ""
 msgid "Indicators"
 msgstr "شاخصونه"
 
-msgid "Select indicator group"
-msgstr "د شاخص ګروپ انتخاب یا غوره کړئ"
+msgid "Indicator group"
+msgstr "د شاخص ګروپ"
 
-msgid "[ All groups ]"
+msgid "All groups"
+msgstr ""
+
+msgid "Indicator"
+msgstr "شاخص"
+
+msgid "No indicator groups found"
+msgstr ""
+
+msgid "Loading indicator groups"
 msgstr ""
 
 msgid "Data elements"
 msgstr "د مالوماتو (ډاټا) برخې"
 
-msgid "Select data element group"
-msgstr "د ډاټا یا مالوماتو د برخې ګروپ انتخاب یا غوره کړئ."
+msgid "Data element group"
+msgstr "د مالوماتو (ډاټا) د برخې ګروپ"
 
-msgid "[ All data elements ]"
+msgid "Data element"
+msgstr "د مالوماتو (ډاټا) برخه"
+
+msgid "No data element groups found"
+msgstr ""
+
+msgid "Loading data element groups"
 msgstr ""
 
 msgid "Data sets"
 msgstr "د مالوماتو یا ډاټا ټولګې"
 
-msgid "Select data sets"
+msgid "Data set"
+msgstr "د مالوماتو (ډاټا) ټولګه"
+
+msgid "All data sets"
 msgstr ""
 
-msgid "[ All metrics ]"
+msgid "Loading data sets"
 msgstr ""
 
 msgid "Event data items"
 msgstr "د پېښې د ډاټا یا مالوماتو محتویات"
 
+msgid "All programs"
+msgstr ""
+
+msgid "Event data item"
+msgstr "لایه رویداد"
+
+msgid "No programs found"
+msgstr ""
+
+msgid "Loading programs"
+msgstr ""
+
 msgid "Program indicators"
 msgstr "د پروګرام شاخص"
+
+msgid "Program indicator"
+msgstr ""
 
 msgid "Extra Small"
 msgstr ""
@@ -467,6 +624,30 @@ msgid "{{allDynamicOuNames}} levels in {{staticOuNames}}"
 msgstr ""
 
 msgid "{{allDynamicOuNames}} groups in {{staticOuNames}}"
+msgstr ""
+
+msgid "{{percentage}}% of total x values"
+msgstr ""
+
+msgid "{{percentage}}% of total y values"
+msgstr ""
+
+msgid "{{thresholdFactor}} × IQR Q1"
+msgstr ""
+
+msgid "{{thresholdFactor}} × IQR Q3"
+msgstr ""
+
+msgid "{{thresholdFactor}} × Modified Z-score low"
+msgstr ""
+
+msgid "{{thresholdFactor}} × Modified Z-score high"
+msgstr ""
+
+msgid "{{thresholdFactor}} × Z-score low"
+msgstr ""
+
+msgid "{{thresholdFactor}} × Z-score high"
 msgstr ""
 
 msgid "Data"
@@ -527,35 +708,33 @@ msgid "View data and indicators in a manipulatable table."
 msgstr ""
 
 msgid ""
-"Compare sizes of related element, displayed vertically. Recommend period in "
-"filter."
+"Compare sizes of related elements vertically. Recommend period as filter."
 msgstr ""
 
 msgid ""
-"Compare parts of a whole against related elements, vertically. Recommend "
+"Compare parts of a whole against related elements vertically. Recommend data"
+" or org. unit as series."
+msgstr ""
+
+msgid ""
+"Compare sizes of related elements horizontally. Recommend period as filter."
+msgstr ""
+
+msgid ""
+"Compare parts of a whole against related elements horizontally. Recommend "
 "data or org. unit as series."
 msgstr ""
 
-msgid ""
-"Compare sizes of related elements, displayed horizontally. Recommend period "
-"in filter."
+msgid "Track or compare changes over time. Recommend period as category."
 msgstr ""
 
 msgid ""
-"Compare parts of a whole against related elements, horizontally. Recommend "
-"data or org. unit as series."
-msgstr ""
-
-msgid "Track or compare changes over time. Recommend period as the category."
+"Track or compare parts of a whole over time. Recommend data as series and "
+"period as category."
 msgstr ""
 
 msgid ""
-"Track or compare over time parts of a whole. Recommend data in series and "
-"period in category."
-msgstr ""
-
-msgid ""
-"Compare parts of a whole at a single point in time. Recommend period in the "
+"Compare parts of a whole at a single point in time. Recommend period as "
 "filter."
 msgstr ""
 
@@ -563,7 +742,7 @@ msgid "Compare several items against multiple variables."
 msgstr ""
 
 msgid ""
-"Compare a percentage indicator against a 100% scale. Recommend period in "
+"Compare a percentage indicator against a 100% scale. Recommend period as "
 "filter."
 msgstr ""
 
@@ -578,10 +757,19 @@ msgid ""
 " for finding outliers."
 msgstr ""
 
+msgid "{{seriesName}} (trend)"
+msgstr ""
+
+msgid "Trend"
+msgstr "محاسبه"
+
 msgid "No legend for this series"
 msgstr ""
 
 msgid "and {{amount}} more..."
+msgstr ""
+
+msgid "Linear Regression"
 msgstr ""
 
 msgid "Target"
@@ -592,9 +780,6 @@ msgstr "اساس"
 
 msgid "Axis {{axisId}}"
 msgstr ""
-
-msgid "No data"
-msgstr "د مالوماتو (ډاټا) نشتوالۍ"
 
 msgid "Reset zoom"
 msgstr ""

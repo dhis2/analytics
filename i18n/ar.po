@@ -1,15 +1,15 @@
 # 
 # Translators:
-# phil_dhis2, 2020
-# Viktor Varland <viktor@dhis2.org>, 2020
-# Hamza Assada <7amza.it@gmail.com>, 2020
+# phil_dhis2, 2021
+# Hamza Assada <7amza.it@gmail.com>, 2021
+# Viktor Varland <viktor@dhis2.org>, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-12-21T08:01:55.494Z\n"
+"POT-Creation-Date: 2021-05-28T13:23:46.712Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Hamza Assada <7amza.it@gmail.com>, 2020\n"
+"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2021\n"
 "Language-Team: Arabic (https://www.transifex.com/hisp-uio/teams/100509/ar/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,14 +20,71 @@ msgstr ""
 msgid "Data Type"
 msgstr "نوع البيانات"
 
-msgid "Totals"
-msgstr "الإجمالي"
+msgid "All types"
+msgstr "جميع الأنواع"
 
-msgid "Details"
-msgstr "التفاصيل"
+msgid "Totals only"
+msgstr ""
 
-msgid "Detail"
-msgstr "تفصيل"
+msgid "Details only"
+msgstr ""
+
+msgid "Disaggregation"
+msgstr "تصنيف"
+
+msgid "No data"
+msgstr "لا توجد بيانات"
+
+msgid "Loading"
+msgstr "جار التحميل"
+
+msgid "Search by data item name"
+msgstr ""
+
+msgid "No items selected"
+msgstr "لم يتم تحديد عناصر"
+
+msgid "Selected Items"
+msgstr "العناصر المحددة"
+
+msgid "No indicators found"
+msgstr ""
+
+msgid "No data elements found"
+msgstr ""
+
+msgid "No data sets found"
+msgstr ""
+
+msgid "No event data items found"
+msgstr ""
+
+msgid "No program indicators found"
+msgstr ""
+
+msgid "No indicators found for \"{{- searchTerm}}\""
+msgstr ""
+
+msgid "No data elements found for \"{{- searchTerm}}\""
+msgstr ""
+
+msgid "No data sets found for \"{{- searchTerm}}\""
+msgstr ""
+
+msgid "No event data items found for \"{{- searchTerm}}\""
+msgstr ""
+
+msgid "No program indicators found for \"{{- searchTerm}}\""
+msgstr ""
+
+msgid "Nothing found for \"{{- searchTerm}}\""
+msgstr ""
+
+msgid "Metric type"
+msgstr ""
+
+msgid "All metrics"
+msgstr "جميع المقاييس"
 
 msgid "Move to {{axisName}}"
 msgstr "تحريك إلى {{axisName}}"
@@ -59,14 +116,78 @@ msgstr "الأبعاد الخاصة بك"
 msgid "Dimension recommended with selected data"
 msgstr "البعد موصى به مع البيانات المحددة"
 
-msgid "No items selected"
-msgstr "لم يتم تحديد عناصر"
-
-msgid "Selected Items"
-msgstr "العناصر المحددة"
+msgid "Nothing found in {{dimensionTitle}}"
+msgstr ""
 
 msgid "Search"
 msgstr "البحث"
+
+msgid "Nothing found for {{searchTerm}}"
+msgstr ""
+
+msgid "Delete {{fileType}}"
+msgstr ""
+
+msgid ""
+"This {{fileType}} and related interpretations will be deleted. Continue?"
+msgstr ""
+
+msgid "Cancel"
+msgstr "إلغاء"
+
+msgid "Delete"
+msgstr "حذف"
+
+msgid "File"
+msgstr "ملف"
+
+msgid "New"
+msgstr "جديد"
+
+msgid "Open…"
+msgstr ""
+
+msgid "Save"
+msgstr "حفظ"
+
+msgid "Save…"
+msgstr ""
+
+msgid "Save as…"
+msgstr ""
+
+msgid "Rename…"
+msgstr ""
+
+msgid "Translate…"
+msgstr ""
+
+msgid "Share…"
+msgstr ""
+
+msgid "Get link…"
+msgstr ""
+
+msgid "Open in this app"
+msgstr "فتح في هذا التطبيق"
+
+msgid "Close"
+msgstr "إغلاق"
+
+msgid "Rename {{fileType}}"
+msgstr ""
+
+msgid "Name"
+msgstr "الإسم"
+
+msgid "Description"
+msgstr "الوصف"
+
+msgid "Rename"
+msgstr "إعادة التسمية"
+
+msgid "Save {{fileType}} as"
+msgstr ""
 
 msgid "Selected Data"
 msgstr "البيانات المحددة"
@@ -149,9 +270,6 @@ msgstr "يومي"
 msgid "Weekly"
 msgstr "أسبوعي"
 
-msgid "Bi-weekly"
-msgstr "كل اسبوعين"
-
 msgid "Weekly (Start Wednesday)"
 msgstr "اسبوعياً (يبدأ الأربعاء)"
 
@@ -163,6 +281,9 @@ msgstr "اسبوعياً (يبدأ السبت)"
 
 msgid "Weekly (Start Sunday)"
 msgstr "اسبوعياً (يبدأ الأحد)"
+
+msgid "Bi-weekly"
+msgstr "كل اسبوعين"
 
 msgid "Monthly"
 msgstr "شهري"
@@ -317,6 +438,9 @@ msgstr "السنة الماضية"
 msgid "Last 5 years"
 msgstr "آخر 5 سنوات"
 
+msgid "Last 10 years"
+msgstr "آخر 10 سنوات"
+
 msgid "Days"
 msgstr "‏‏الأيام"
 
@@ -386,34 +510,67 @@ msgstr "حدد برنامجاً"
 msgid "Indicators"
 msgstr "المؤشرات"
 
-msgid "Select indicator group"
-msgstr "تحديد مجموعة المؤشرات"
+msgid "Indicator group"
+msgstr "مجموعة المؤشرات"
 
-msgid "[ All groups ]"
-msgstr "[ كل المجموعات ]"
+msgid "All groups"
+msgstr ""
+
+msgid "Indicator"
+msgstr "المؤشر"
+
+msgid "No indicator groups found"
+msgstr ""
+
+msgid "Loading indicator groups"
+msgstr ""
 
 msgid "Data elements"
 msgstr "عناصر البيانات"
 
-msgid "Select data element group"
-msgstr "تحديد مجموعة عناصر البيانات"
+msgid "Data element group"
+msgstr "مجموعة عناصر البيانات"
 
-msgid "[ All data elements ]"
-msgstr "[ كل عناصر البيانات ]"
+msgid "Data element"
+msgstr "عنصر البيانات"
+
+msgid "No data element groups found"
+msgstr ""
+
+msgid "Loading data element groups"
+msgstr ""
 
 msgid "Data sets"
 msgstr "حزم البيانات"
 
-msgid "Select data sets"
-msgstr "حدد حزم بيانات"
+msgid "Data set"
+msgstr "حزمة البيانات"
 
-msgid "[ All metrics ]"
-msgstr "[جميع المقاييس]"
+msgid "All data sets"
+msgstr ""
+
+msgid "Loading data sets"
+msgstr "تحميل حزم البيانات"
 
 msgid "Event data items"
 msgstr "عناصر بيانات الحدث"
 
+msgid "All programs"
+msgstr ""
+
+msgid "Event data item"
+msgstr "عنصر بيانات حدث"
+
+msgid "No programs found"
+msgstr ""
+
+msgid "Loading programs"
+msgstr ""
+
 msgid "Program indicators"
+msgstr "مؤشرات البرنامج"
+
+msgid "Program indicator"
 msgstr "مؤشرات البرنامج"
 
 msgid "Extra Small"
@@ -469,6 +626,30 @@ msgstr "مستويات {{allDynamicOuNames}} في {{staticOuNames}}"
 
 msgid "{{allDynamicOuNames}} groups in {{staticOuNames}}"
 msgstr "مجموعات {{allDynamicOuNames}} في {{staticOuNames}}"
+
+msgid "{{percentage}}% of total x values"
+msgstr ""
+
+msgid "{{percentage}}% of total y values"
+msgstr ""
+
+msgid "{{thresholdFactor}} × IQR Q1"
+msgstr ""
+
+msgid "{{thresholdFactor}} × IQR Q3"
+msgstr ""
+
+msgid "{{thresholdFactor}} × Modified Z-score low"
+msgstr ""
+
+msgid "{{thresholdFactor}} × Modified Z-score high"
+msgstr ""
+
+msgid "{{thresholdFactor}} × Z-score low"
+msgstr ""
+
+msgid "{{thresholdFactor}} × Z-score high"
+msgstr ""
 
 msgid "Data"
 msgstr "بيانات"
@@ -528,57 +709,43 @@ msgid "View data and indicators in a manipulatable table."
 msgstr "اعرض البيانات والمؤشرات في جدول يمكن معالجته."
 
 msgid ""
-"Compare sizes of related element, displayed vertically. Recommend period in "
-"filter."
+"Compare sizes of related elements vertically. Recommend period as filter."
 msgstr ""
-"قارن أحجام العناصر ذات الصلة ، المعروضة عموديًا. يوصى بإن تكون الفترة في "
-"عامل التصفية."
 
 msgid ""
-"Compare parts of a whole against related elements, vertically. Recommend "
+"Compare parts of a whole against related elements vertically. Recommend data"
+" or org. unit as series."
+msgstr ""
+
+msgid ""
+"Compare sizes of related elements horizontally. Recommend period as filter."
+msgstr ""
+
+msgid ""
+"Compare parts of a whole against related elements horizontally. Recommend "
 "data or org. unit as series."
 msgstr ""
-"قارن أجزاء من الكل بالعناصر ذات الصلة عموديًا. يوصي بإن تكون البيانات أو "
-"الوحدة التنظيمية في السلسلة."
 
-msgid ""
-"Compare sizes of related elements, displayed horizontally. Recommend period "
-"in filter."
+msgid "Track or compare changes over time. Recommend period as category."
 msgstr ""
-"قارن أحجام العناصر ذات الصلة ، المعروضة أفقيًا. يوصى بإن تكون الفترة في عامل"
-" التصفية."
 
 msgid ""
-"Compare parts of a whole against related elements, horizontally. Recommend "
-"data or org. unit as series."
+"Track or compare parts of a whole over time. Recommend data as series and "
+"period as category."
 msgstr ""
-"قارن أجزاء من الكل بالعناصر ذات الصلة ، أفقيًا. يوصي بإن تكون البيانات أو "
-"الوحدة التنظيمية في السلسلة."
-
-msgid "Track or compare changes over time. Recommend period as the category."
-msgstr "تتبع أو قارن التغييرات حسب مرور الوقت. يوصي بإن تكون الفترة في الفئة."
 
 msgid ""
-"Track or compare over time parts of a whole. Recommend data in series and "
-"period in category."
-msgstr ""
-"تتبع أو قارن مع مرور الوقت أجزاء من الكل. يوصي بإن تكون البيانات في السلسلة "
-"والفترة في الفئة."
-
-msgid ""
-"Compare parts of a whole at a single point in time. Recommend period in the "
+"Compare parts of a whole at a single point in time. Recommend period as "
 "filter."
 msgstr ""
-"قارن أجزاء من الكل في وقت واحد محدد. يوصى بإن تكون الفترة في عامل التصفية."
 
 msgid "Compare several items against multiple variables."
 msgstr "قارن عدة عناصر مقابل متغيرات متعددة."
 
 msgid ""
-"Compare a percentage indicator against a 100% scale. Recommend period in "
+"Compare a percentage indicator against a 100% scale. Recommend period as "
 "filter."
 msgstr ""
-"قارن مؤشر النسبة المئوية بمقياس 100٪. يوصى بإن تكون الفترة في عامل التصفية."
 
 msgid "Compare changes over time between multiple time periods."
 msgstr "قارن التغييرات بمرور الوقت بين فترات زمنية متعددة."
@@ -591,10 +758,19 @@ msgid ""
 " for finding outliers."
 msgstr ""
 
+msgid "{{seriesName}} (trend)"
+msgstr ""
+
+msgid "Trend"
+msgstr "الاتجاه"
+
 msgid "No legend for this series"
 msgstr "لا معلومات مفاتيح إيضاحية لهذه السلسلة"
 
 msgid "and {{amount}} more..."
+msgstr ""
+
+msgid "Linear Regression"
 msgstr ""
 
 msgid "Target"
@@ -605,9 +781,6 @@ msgstr "الأساس"
 
 msgid "Axis {{axisId}}"
 msgstr "محور {{axisId}}"
-
-msgid "No data"
-msgstr "لا توجد بيانات"
 
 msgid "Reset zoom"
 msgstr ""

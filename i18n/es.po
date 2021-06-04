@@ -1,16 +1,16 @@
 # 
 # Translators:
-# Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2020
-# phil_dhis2, 2020
 # ericbp <ericbarredap@gmail.com>, 2020
-# Viktor Varland <viktor@dhis2.org>, 2020
+# phil_dhis2, 2021
+# Viktor Varland <viktor@dhis2.org>, 2021
+# Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-12-21T08:01:55.494Z\n"
+"POT-Creation-Date: 2021-05-28T13:23:46.712Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2020\n"
+"Last-Translator: Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2021\n"
 "Language-Team: Spanish (https://www.transifex.com/hisp-uio/teams/100509/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -21,14 +21,71 @@ msgstr ""
 msgid "Data Type"
 msgstr "Tipo de datos"
 
-msgid "Totals"
-msgstr "Totales"
+msgid "All types"
+msgstr "Todos los tipos"
 
-msgid "Details"
-msgstr "Detalles"
+msgid "Totals only"
+msgstr ""
 
-msgid "Detail"
-msgstr "Detalle"
+msgid "Details only"
+msgstr ""
+
+msgid "Disaggregation"
+msgstr ""
+
+msgid "No data"
+msgstr "No hay datos"
+
+msgid "Loading"
+msgstr "Cargando"
+
+msgid "Search by data item name"
+msgstr ""
+
+msgid "No items selected"
+msgstr ""
+
+msgid "Selected Items"
+msgstr ""
+
+msgid "No indicators found"
+msgstr ""
+
+msgid "No data elements found"
+msgstr ""
+
+msgid "No data sets found"
+msgstr ""
+
+msgid "No event data items found"
+msgstr ""
+
+msgid "No program indicators found"
+msgstr ""
+
+msgid "No indicators found for \"{{- searchTerm}}\""
+msgstr ""
+
+msgid "No data elements found for \"{{- searchTerm}}\""
+msgstr ""
+
+msgid "No data sets found for \"{{- searchTerm}}\""
+msgstr ""
+
+msgid "No event data items found for \"{{- searchTerm}}\""
+msgstr ""
+
+msgid "No program indicators found for \"{{- searchTerm}}\""
+msgstr ""
+
+msgid "Nothing found for \"{{- searchTerm}}\""
+msgstr ""
+
+msgid "Metric type"
+msgstr ""
+
+msgid "All metrics"
+msgstr "Todas las métricas"
 
 msgid "Move to {{axisName}}"
 msgstr "Mover a {{Nombredeleje}}"
@@ -60,14 +117,78 @@ msgstr ""
 msgid "Dimension recommended with selected data"
 msgstr ""
 
-msgid "No items selected"
-msgstr ""
-
-msgid "Selected Items"
+msgid "Nothing found in {{dimensionTitle}}"
 msgstr ""
 
 msgid "Search"
 msgstr "Buscar"
+
+msgid "Nothing found for {{searchTerm}}"
+msgstr ""
+
+msgid "Delete {{fileType}}"
+msgstr ""
+
+msgid ""
+"This {{fileType}} and related interpretations will be deleted. Continue?"
+msgstr ""
+
+msgid "Cancel"
+msgstr "Cancelar"
+
+msgid "Delete"
+msgstr "Eliminar"
+
+msgid "File"
+msgstr "Fichero"
+
+msgid "New"
+msgstr "Nuevo"
+
+msgid "Open…"
+msgstr ""
+
+msgid "Save"
+msgstr "Guardar"
+
+msgid "Save…"
+msgstr ""
+
+msgid "Save as…"
+msgstr ""
+
+msgid "Rename…"
+msgstr ""
+
+msgid "Translate…"
+msgstr ""
+
+msgid "Share…"
+msgstr ""
+
+msgid "Get link…"
+msgstr ""
+
+msgid "Open in this app"
+msgstr "Abierto en esta aplicación"
+
+msgid "Close"
+msgstr "Cerrar"
+
+msgid "Rename {{fileType}}"
+msgstr ""
+
+msgid "Name"
+msgstr "Nombre"
+
+msgid "Description"
+msgstr "Descripción"
+
+msgid "Rename"
+msgstr "Renombrar"
+
+msgid "Save {{fileType}} as"
+msgstr ""
 
 msgid "Selected Data"
 msgstr ""
@@ -150,9 +271,6 @@ msgstr "Diario"
 msgid "Weekly"
 msgstr "Semanal"
 
-msgid "Bi-weekly"
-msgstr ""
-
 msgid "Weekly (Start Wednesday)"
 msgstr ""
 
@@ -163,6 +281,9 @@ msgid "Weekly (Start Saturday)"
 msgstr ""
 
 msgid "Weekly (Start Sunday)"
+msgstr ""
+
+msgid "Bi-weekly"
 msgstr ""
 
 msgid "Monthly"
@@ -318,6 +439,9 @@ msgstr "El año pasado"
 msgid "Last 5 years"
 msgstr "Últimos 5 años"
 
+msgid "Last 10 years"
+msgstr ""
+
 msgid "Days"
 msgstr "Días"
 
@@ -387,35 +511,68 @@ msgstr ""
 msgid "Indicators"
 msgstr "Indicadores"
 
-msgid "Select indicator group"
-msgstr "Elija un grupo de indicadores"
+msgid "Indicator group"
+msgstr "Grupo de indicadores"
 
-msgid "[ All groups ]"
+msgid "All groups"
+msgstr ""
+
+msgid "Indicator"
+msgstr "Indicadores"
+
+msgid "No indicator groups found"
+msgstr ""
+
+msgid "Loading indicator groups"
 msgstr ""
 
 msgid "Data elements"
 msgstr "Elementos de datos"
 
-msgid "Select data element group"
-msgstr "Seleccionar grupo de elementos de datos"
+msgid "Data element group"
+msgstr "Grupo de elemento de datos"
 
-msgid "[ All data elements ]"
+msgid "Data element"
+msgstr "Elemento de datos"
+
+msgid "No data element groups found"
+msgstr ""
+
+msgid "Loading data element groups"
 msgstr ""
 
 msgid "Data sets"
 msgstr "Sets de datos"
 
-msgid "Select data sets"
+msgid "Data set"
+msgstr "Set de Datos\\:"
+
+msgid "All data sets"
 msgstr ""
 
-msgid "[ All metrics ]"
+msgid "Loading data sets"
 msgstr ""
 
 msgid "Event data items"
 msgstr "Datos de eventos"
 
+msgid "All programs"
+msgstr ""
+
+msgid "Event data item"
+msgstr "Event data item"
+
+msgid "No programs found"
+msgstr ""
+
+msgid "Loading programs"
+msgstr ""
+
 msgid "Program indicators"
 msgstr "Indicadores de programa"
+
+msgid "Program indicator"
+msgstr ""
 
 msgid "Extra Small"
 msgstr ""
@@ -469,6 +626,30 @@ msgid "{{allDynamicOuNames}} levels in {{staticOuNames}}"
 msgstr ""
 
 msgid "{{allDynamicOuNames}} groups in {{staticOuNames}}"
+msgstr ""
+
+msgid "{{percentage}}% of total x values"
+msgstr ""
+
+msgid "{{percentage}}% of total y values"
+msgstr ""
+
+msgid "{{thresholdFactor}} × IQR Q1"
+msgstr ""
+
+msgid "{{thresholdFactor}} × IQR Q3"
+msgstr ""
+
+msgid "{{thresholdFactor}} × Modified Z-score low"
+msgstr ""
+
+msgid "{{thresholdFactor}} × Modified Z-score high"
+msgstr ""
+
+msgid "{{thresholdFactor}} × Z-score low"
+msgstr ""
+
+msgid "{{thresholdFactor}} × Z-score high"
 msgstr ""
 
 msgid "Data"
@@ -529,35 +710,33 @@ msgid "View data and indicators in a manipulatable table."
 msgstr ""
 
 msgid ""
-"Compare sizes of related element, displayed vertically. Recommend period in "
-"filter."
+"Compare sizes of related elements vertically. Recommend period as filter."
 msgstr ""
 
 msgid ""
-"Compare parts of a whole against related elements, vertically. Recommend "
+"Compare parts of a whole against related elements vertically. Recommend data"
+" or org. unit as series."
+msgstr ""
+
+msgid ""
+"Compare sizes of related elements horizontally. Recommend period as filter."
+msgstr ""
+
+msgid ""
+"Compare parts of a whole against related elements horizontally. Recommend "
 "data or org. unit as series."
 msgstr ""
 
-msgid ""
-"Compare sizes of related elements, displayed horizontally. Recommend period "
-"in filter."
+msgid "Track or compare changes over time. Recommend period as category."
 msgstr ""
 
 msgid ""
-"Compare parts of a whole against related elements, horizontally. Recommend "
-"data or org. unit as series."
-msgstr ""
-
-msgid "Track or compare changes over time. Recommend period as the category."
+"Track or compare parts of a whole over time. Recommend data as series and "
+"period as category."
 msgstr ""
 
 msgid ""
-"Track or compare over time parts of a whole. Recommend data in series and "
-"period in category."
-msgstr ""
-
-msgid ""
-"Compare parts of a whole at a single point in time. Recommend period in the "
+"Compare parts of a whole at a single point in time. Recommend period as "
 "filter."
 msgstr ""
 
@@ -565,7 +744,7 @@ msgid "Compare several items against multiple variables."
 msgstr ""
 
 msgid ""
-"Compare a percentage indicator against a 100% scale. Recommend period in "
+"Compare a percentage indicator against a 100% scale. Recommend period as "
 "filter."
 msgstr ""
 
@@ -580,10 +759,19 @@ msgid ""
 " for finding outliers."
 msgstr ""
 
+msgid "{{seriesName}} (trend)"
+msgstr ""
+
+msgid "Trend"
+msgstr "Tendencia"
+
 msgid "No legend for this series"
 msgstr ""
 
 msgid "and {{amount}} more..."
+msgstr ""
+
+msgid "Linear Regression"
 msgstr ""
 
 msgid "Target"
@@ -594,9 +782,6 @@ msgstr ""
 
 msgid "Axis {{axisId}}"
 msgstr ""
-
-msgid "No data"
-msgstr "No hay datos"
 
 msgid "Reset zoom"
 msgstr ""
