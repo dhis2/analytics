@@ -82,6 +82,7 @@ export const FileMenu = ({
                         d2={d2}
                         onRequestClose={onDialogClose}
                         onFavoriteSelect={onOpen}
+                        insertTheme={true}
                     />
                 )
             case 'rename':
@@ -109,6 +110,7 @@ export const FileMenu = ({
                         onRequestClose={onDialogClose}
                         onTranslationSaved={onTranslate}
                         onTranslationError={onError}
+                        insertTheme={true}
                     />
                 )
             case 'sharing':
@@ -119,6 +121,7 @@ export const FileMenu = ({
                         type={fileType}
                         id={fileObject.id}
                         onRequestClose={onDialogClose}
+                        insertTheme={true}
                     />
                 )
             case 'getlink':
