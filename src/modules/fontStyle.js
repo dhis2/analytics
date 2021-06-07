@@ -1,6 +1,6 @@
 /*eslint no-unused-vars: ["error", { "ignoreRestSiblings": true }]*/
-import i18n from '../locales/index.js'
 import { colors } from '@dhis2/ui'
+import i18n from '../locales/index.js'
 
 // Font styles
 export const FONT_STYLE_VISUALIZATION_TITLE = 'visualizationTitle'

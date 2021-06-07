@@ -1,7 +1,6 @@
 import { dimensionGetItems } from '../layout/dimensionGetItems'
-import { layoutReplaceDimension } from '../layout/layoutReplaceDimension'
 import { layoutGetDimension } from '../layout/layoutGetDimension'
-
+import { layoutReplaceDimension } from '../layout/layoutReplaceDimension'
 import { ouIdHelper } from '../ouIdHelper'
 import { DIMENSION_ID_ORGUNIT } from '../predefinedDimensions'
 

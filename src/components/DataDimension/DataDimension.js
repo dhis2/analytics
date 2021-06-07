@@ -1,8 +1,7 @@
-import React from 'react'
 import PropTypes from 'prop-types'
-
-import ItemSelector from './ItemSelector'
+import React from 'react'
 import { DIMENSION_ID_DATA } from '../../modules/predefinedDimensions'
+import ItemSelector from './ItemSelector'
 
 const DataDimension = ({
     onSelect,

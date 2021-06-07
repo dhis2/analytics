@@ -1,8 +1,6 @@
-import React from 'react'
-import { shallow } from 'enzyme'
-
 import { Button, Modal } from '@dhis2/ui'
-
+import { shallow } from 'enzyme'
+import React from 'react'
 import { GetLinkDialog } from '../GetLinkDialog'
 import { appPathFor } from '../utils'
 

@@ -1,11 +1,5 @@
 import arrayContains from 'd2-utilizr/lib/arrayContains'
 import arrayUnique from 'd2-utilizr/lib/arrayUnique'
-
-import getYearOnYear from './yearOnYear'
-import getPie from './pie'
-import getGauge from './gauge'
-import getTwoCategory from './twoCategory'
-
 import {
     VIS_TYPE_YEAR_OVER_YEAR_COLUMN,
     VIS_TYPE_YEAR_OVER_YEAR_LINE,
@@ -13,6 +7,10 @@ import {
     VIS_TYPE_GAUGE,
     isTwoCategoryChartType,
 } from '../../../../modules/visTypes'
+import getGauge from './gauge'
+import getPie from './pie'
+import getTwoCategory from './twoCategory'
+import getYearOnYear from './yearOnYear'
 
 const VALUE_ID = 'value'
 

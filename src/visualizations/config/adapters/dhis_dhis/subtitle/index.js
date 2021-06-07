@@ -1,6 +1,6 @@
+import { VIS_TYPE_SINGLE_VALUE } from '../../../../../modules/visTypes'
 import getFilterText from '../../../../util/getFilterText'
 import getSingleValueTitle from './singleValue'
-import { VIS_TYPE_SINGLE_VALUE } from '../../../../../modules/visTypes'
 
 function getDefault(layout, dashboard, metaData) {
     if (dashboard || typeof layout.title === 'string') {

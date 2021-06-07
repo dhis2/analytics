@@ -1,7 +1,7 @@
-import React from 'react'
 import PropTypes from 'prop-types'
-import { usePivotTableEngine } from './PivotTableEngineContext'
+import React from 'react'
 import { PivotTableCell } from './PivotTableCell'
+import { usePivotTableEngine } from './PivotTableEngineContext'
 
 export const PivotTableEmptyRow = ({ height, columns }) => {
     const engine = usePivotTableEngine()

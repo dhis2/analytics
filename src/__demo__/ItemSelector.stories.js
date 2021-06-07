@@ -1,8 +1,7 @@
-import React from 'react'
-import cloneDeep from 'lodash/cloneDeep'
-import { storiesOf } from '@storybook/react'
 import { State, Store } from '@sambego/storybook-state'
-
+import { storiesOf } from '@storybook/react'
+import cloneDeep from 'lodash/cloneDeep'
+import React from 'react'
 import { ItemSelector } from '../index'
 
 const defaultItems = {

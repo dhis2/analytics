@@ -1,8 +1,7 @@
-import React from 'react'
-import cx from 'classnames'
 import propTypes from '@dhis2/prop-types'
 import { Tooltip } from '@dhis2/ui'
-
+import cx from 'classnames'
+import React from 'react'
 import styles from './styles/TransferOption.style'
 
 export const TransferOption = ({

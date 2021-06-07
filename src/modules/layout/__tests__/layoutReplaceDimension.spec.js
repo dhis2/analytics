@@ -1,6 +1,6 @@
+import { DIMENSION_ID_ORGUNIT } from '../../predefinedDimensions'
 import { layoutReplaceDimension } from '../layoutReplaceDimension'
 import { TEST_LAYOUT, TEST_DIMENSION_4 } from '../testResources'
-import { DIMENSION_ID_ORGUNIT } from '../../predefinedDimensions'
 
 const newOuDimensions = [
     {

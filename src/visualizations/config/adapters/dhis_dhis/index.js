@@ -1,5 +1,5 @@
-import getTitle from './title'
 import getSubtitle from './subtitle'
+import getTitle from './title'
 import getValue from './value'
 
 export default function ({ store, layout, extraOptions }) {

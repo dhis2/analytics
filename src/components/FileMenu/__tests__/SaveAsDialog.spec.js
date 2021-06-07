@@ -1,8 +1,6 @@
-import React from 'react'
-import { shallow } from 'enzyme'
-
 import { Button, Modal, ModalTitle } from '@dhis2/ui'
-
+import { shallow } from 'enzyme'
+import React from 'react'
 import { SaveAsDialog } from '../SaveAsDialog'
 
 describe('The FileMenu - SaveAsDialog component', () => {

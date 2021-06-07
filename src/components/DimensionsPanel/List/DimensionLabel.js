@@ -1,11 +1,10 @@
-import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-
-import { styles } from './styles/DimensionLabel.style'
+import React, { Component } from 'react'
 import {
     getPredefinedDimensionProp,
     DIMENSION_PROP_NO_ITEMS,
 } from '../../../modules/predefinedDimensions'
+import { styles } from './styles/DimensionLabel.style'
 
 export class DimensionLabel extends Component {
     static propTypes = {

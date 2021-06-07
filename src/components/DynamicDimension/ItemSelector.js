@@ -1,17 +1,16 @@
-import React, { useState, useEffect, useCallback } from 'react'
-import PropTypes from 'prop-types'
 import { Transfer, InputField } from '@dhis2/ui'
-import i18n from '../../locales/index.js'
-
-import styles from '../styles/DimensionSelector.style'
-import { TransferOption } from '../TransferOption'
+import PropTypes from 'prop-types'
+import React, { useState, useEffect, useCallback } from 'react'
 import GenericIcon from '../../assets/DimensionItemIcons/GenericIcon'
+import i18n from '../../locales/index.js'
 import {
     TRANSFER_HEIGHT,
     TRANSFER_OPTIONS_WIDTH,
     TRANSFER_SELECTED_WIDTH,
 } from '../../modules/dimensionSelectorHelper'
 import { useDebounce } from '../../modules/utils'
+import styles from '../styles/DimensionSelector.style'
+import { TransferOption } from '../TransferOption'
 
 const LeftHeader = ({ filter, setFilter }) => (
     <>
