@@ -1,18 +1,17 @@
-import React, { useEffect, useState } from 'react'
-import PropTypes from 'prop-types'
-import { SingleSelectField, SingleSelectOption } from '@dhis2/ui'
 import { useDataEngine } from '@dhis2/app-runtime'
+import { SingleSelectField, SingleSelectOption } from '@dhis2/ui'
+import PropTypes from 'prop-types'
+import React, { useEffect, useState } from 'react'
+import { apiFetchGroups } from '../../api/dimensions'
 import i18n from '../../locales/index.js'
-
-import { DetailSelector } from './DetailSelector'
 import {
     dataTypes,
     SUB_GROUP_DETAIL,
     SUB_GROUP_METRIC,
 } from '../../modules/dataTypes'
-import styles from './styles/GroupSelector.style'
-import { apiFetchGroups } from '../../api/dimensions'
+import { DetailSelector } from './DetailSelector'
 import { MetricSelector } from './MetricSelector'
+import styles from './styles/GroupSelector.style'
 
 const GroupsSelector = ({
     dataType,

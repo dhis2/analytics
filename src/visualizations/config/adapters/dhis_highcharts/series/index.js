@@ -1,16 +1,10 @@
 import { colors } from '@dhis2/ui'
-
-import getCumulativeData from '../getCumulativeData'
-import getPie from './pie'
-import getGauge from './gauge'
-import getScatter from './scatter'
-import getType from '../type'
-import { getFullIdAxisMap, getAxisIdsMap } from '../customAxes'
-import { generateColors } from '../../../../util/colors/gradientColorGenerator'
+import { hasCustomAxes } from '../../../../../modules/axis'
+import { axisHasRelativeItems } from '../../../../../modules/layout/axisHasRelativeItems'
 import {
-    colorSets,
-    COLOR_SET_PATTERNS,
-} from '../../../../util/colors/colorSets'
+    LEGEND_DISPLAY_STRATEGY_BY_DATA_ITEM,
+    LEGEND_DISPLAY_STRATEGY_FIXED,
+} from '../../../../../modules/legends'
 import {
     VIS_TYPE_PIE,
     VIS_TYPE_GAUGE,
@@ -20,13 +14,18 @@ import {
     VIS_TYPE_SCATTER,
     isLegendSetType,
 } from '../../../../../modules/visTypes'
-import { hasCustomAxes } from '../../../../../modules/axis'
 import { getAxisStringFromId } from '../../../../util/axisId'
-import { axisHasRelativeItems } from '../../../../../modules/layout/axisHasRelativeItems'
 import {
-    LEGEND_DISPLAY_STRATEGY_BY_DATA_ITEM,
-    LEGEND_DISPLAY_STRATEGY_FIXED,
-} from '../../../../../modules/legends'
+    colorSets,
+    COLOR_SET_PATTERNS,
+} from '../../../../util/colors/colorSets'
+import { generateColors } from '../../../../util/colors/gradientColorGenerator'
+import { getFullIdAxisMap, getAxisIdsMap } from '../customAxes'
+import getCumulativeData from '../getCumulativeData'
+import getType from '../type'
+import getGauge from './gauge'
+import getPie from './pie'
+import getScatter from './scatter'
 
 const DEFAULT_ANIMATION_DURATION = 200
 

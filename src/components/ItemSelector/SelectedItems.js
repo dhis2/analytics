@@ -1,14 +1,13 @@
-import React, { Component, Fragment } from 'react'
-import PropTypes from 'prop-types'
-import i18n from '../../locales/index.js'
-import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd'
 import { Button, IconInfo16, colors } from '@dhis2/ui'
-
-import Item from './widgets/SelectedItem'
-import { ArrowButton as UnAssignButton } from './widgets/ArrowButton'
-import { toggler } from './modules/toggler'
+import PropTypes from 'prop-types'
+import React, { Component, Fragment } from 'react'
+import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd'
+import i18n from '../../locales/index.js'
 import { reorderList } from './modules/reorderList'
+import { toggler } from './modules/toggler'
 import styles from './styles/SelectedItems.style'
+import { ArrowButton as UnAssignButton } from './widgets/ArrowButton'
+import Item from './widgets/SelectedItem'
 
 const Subtitle = () => (
     <div className="subtitle-container">

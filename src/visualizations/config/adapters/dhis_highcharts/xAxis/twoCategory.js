@@ -1,11 +1,11 @@
-import getAxisTitle from '../getAxisTitle'
-import getCategories from '../getCategories'
-import { getLabels } from './'
 import {
     FONT_STYLE_HORIZONTAL_AXIS_TITLE,
     mergeFontStyleWithDefault,
 } from '../../../../../modules/fontStyle'
 import { getAxis } from '../../../../util/axes'
+import getAxisTitle from '../getAxisTitle'
+import getCategories from '../getCategories'
+import { getLabels } from './'
 
 const AXIS_TYPE = 'DOMAIN'
 const AXIS_INDEX = 0

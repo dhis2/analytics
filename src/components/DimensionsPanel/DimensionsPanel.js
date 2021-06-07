@@ -1,7 +1,6 @@
-import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import React, { Component } from 'react'
 import i18n from '../../locales/index.js'
-
 import Filter from '../Filter/Filter'
 import DimensionList from './List/DimensionList'
 import { styles } from './styles/DimensionsPanel.style'

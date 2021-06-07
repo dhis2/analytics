@@ -1,5 +1,5 @@
-import React from 'react'
 import { shallow } from 'enzyme'
+import React from 'react'
 import PeriodDimension from '../PeriodDimension'
 
 describe('The Period Dimension component', () => {

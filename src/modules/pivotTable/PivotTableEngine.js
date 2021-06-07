@@ -1,11 +1,7 @@
 import times from 'lodash/times'
-
-import { parseValue } from './parseValue'
-import { renderValue } from './renderValue'
-import { measureText } from './measureText'
-
 import { DIMENSION_ID_ORGUNIT } from '../predefinedDimensions'
-
+import { measureText } from './measureText'
+import { parseValue } from './parseValue'
 import {
     AGGREGATE_TYPE_NA,
     AGGREGATE_TYPE_AVERAGE,
@@ -39,6 +35,7 @@ import {
     VALUE_TYPE_TEXT,
     NUMBER_TYPE_VALUE,
 } from './pivotTableConstants'
+import { renderValue } from './renderValue'
 
 const dataFields = [
     'value',

@@ -1,5 +1,5 @@
-import React from 'react'
 import PropTypes from 'prop-types'
+import React from 'react'
 import { table as tableStyle } from './styles/PivotTable.style'
 
 export const PivotTableContainer = React.forwardRef(

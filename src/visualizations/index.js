@@ -1,7 +1,6 @@
 import isArray from 'd2-utilizr/lib/isArray'
-
-import Store from './store'
 import Config from './config'
+import Store from './store'
 
 const defaultError = error => {
     throw new Error(error)
