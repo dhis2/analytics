@@ -25,9 +25,9 @@
         "start-storybook": "start-storybook --port 5000",
         "start": "yarn start-storybook",
         "test": "d2-app-scripts test",
-        "lint": "d2-style js check || d2-style text check",
-        "format": "d2-style js apply || d2-style text apply",
-        "validate-commit": "d2-style js check --staged && d2-style text check --staged",
+        "lint": "d2-style check",
+        "format": "d2-style apply",
+        "validate-commit": "d2-style check --staged",
         "validate-push": "yarn test"
     },
     "devDependencies": {
