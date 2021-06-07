@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-03-04T09:26:00.595Z\n"
+"POT-Creation-Date: 2021-05-28T13:23:46.712Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: easylin <lin_xd@126.com>, 2021\n"
 "Language-Team: Chinese (https://www.transifex.com/hisp-uio/teams/100509/zh/)\n"
@@ -129,8 +129,9 @@ msgstr "找不到{{searchTerm}}的任何内容"
 msgid "Delete {{fileType}}"
 msgstr "删除{{fileType}}"
 
-msgid "This {{fileType}} will be deleted. Continue?"
-msgstr "此{{fileType}}将被删除。继续？"
+msgid ""
+"This {{fileType}} and related interpretations will be deleted. Continue?"
+msgstr "此{{fileType}}和相关解释将被删除。继续？"
 
 msgid "Cancel"
 msgstr "取消"
@@ -211,16 +212,16 @@ msgid "Period"
 msgstr "期间"
 
 msgid "Relative periods"
-msgstr "相关周期"
+msgstr "相对期间"
 
 msgid "Fixed periods"
-msgstr "固定周期"
+msgstr "固定期间"
 
 msgid "Selected Periods"
 msgstr "选择的期间"
 
 msgid "No periods selected"
-msgstr "没有选择相对周期"
+msgstr "未选择期间"
 
 msgid "January"
 msgstr "1月"
@@ -270,9 +271,6 @@ msgstr "每日"
 msgid "Weekly"
 msgstr "每周"
 
-msgid "Bi-weekly"
-msgstr "两周"
-
 msgid "Weekly (Start Wednesday)"
 msgstr "每周（始于周二）"
 
@@ -284,6 +282,9 @@ msgstr "每周（始于周六）"
 
 msgid "Weekly (Start Sunday)"
 msgstr "每周（始于周日）"
+
+msgid "Bi-weekly"
+msgstr "两周"
 
 msgid "Monthly"
 msgstr "每月"
@@ -437,6 +438,9 @@ msgstr "去年"
 
 msgid "Last 5 years"
 msgstr "最近5年"
+
+msgid "Last 10 years"
+msgstr "最近10年"
 
 msgid "Days"
 msgstr "天数"
@@ -625,28 +629,28 @@ msgid "{{allDynamicOuNames}} groups in {{staticOuNames}}"
 msgstr "{{allDynamicOuNames}} 组在 {{staticOuNames}}"
 
 msgid "{{percentage}}% of total x values"
-msgstr ""
+msgstr "占总x值的{{percentage}}％"
 
 msgid "{{percentage}}% of total y values"
-msgstr ""
+msgstr "占总y值的{{percentage}}％"
 
 msgid "{{thresholdFactor}} × IQR Q1"
-msgstr ""
+msgstr "{{thresholdFactor}}×IQR Q1"
 
 msgid "{{thresholdFactor}} × IQR Q3"
-msgstr ""
+msgstr "{{thresholdFactor}}×IQR Q3"
 
 msgid "{{thresholdFactor}} × Modified Z-score low"
-msgstr ""
+msgstr "{{thresholdFactor}}×修正的Z分数低值"
 
 msgid "{{thresholdFactor}} × Modified Z-score high"
-msgstr ""
+msgstr "{{thresholdFactor}}×修改后的Z分数高值"
 
 msgid "{{thresholdFactor}} × Z-score low"
-msgstr ""
+msgstr "{{thresholdFactor}}×Z分数低"
 
 msgid "{{thresholdFactor}} × Z-score high"
-msgstr ""
+msgstr "{{thresholdFactor}}×Z分数高"
 
 msgid "Data"
 msgstr "数据"
@@ -766,6 +770,9 @@ msgstr "这个系列没有图例"
 
 msgid "and {{amount}} more..."
 msgstr "还有{{amount}}个..."
+
+msgid "Linear Regression"
+msgstr "线性回归"
 
 msgid "Target"
 msgstr "目标"

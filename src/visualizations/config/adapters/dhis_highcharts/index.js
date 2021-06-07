@@ -14,7 +14,6 @@ import getNoData from './noData'
 import { applyLegendSet, getLegendSetTooltip } from './legendSet'
 import {
     isStacked,
-    isDualAxisType,
     isLegendSetType,
     VIS_TYPE_SCATTER,
 } from '../../../../modules/visTypes'
@@ -22,8 +21,6 @@ import getSortedConfig from './getSortedConfig'
 import getTrimmedConfig from './getTrimmedConfig'
 import addTrendLines, { isRegressionIneligible } from './addTrendLines'
 import { defaultMultiAxisTheme1 } from '../../../util/colors/themes'
-import { hasCustomAxes } from '../../../../modules/axis'
-import { axisHasRelativeItems } from '../../../../modules/layout/axisHasRelativeItems'
 import {
     LEGEND_DISPLAY_STRATEGY_BY_DATA_ITEM,
     LEGEND_DISPLAY_STRATEGY_FIXED,
@@ -153,6 +150,13 @@ export default function ({ store, layout, el, extraConfig, extraOptions }) {
             showLabels: _layout.showValues || _layout.showData,
             tooltipData: _extraOptions.scatterData,
         })
+    } else {
+        config.plotOptions = getPlotOptions({
+            visType: _layout.type,
+            ...(_extraOptions.onToggleContextualMenu
+                ? { onClick: _extraOptions.onToggleContextualMenu }
+                : {}),
+        })
     }
 
     // hide empty categories
@@ -165,21 +169,12 @@ export default function ({ store, layout, el, extraConfig, extraOptions }) {
         config = getSortedConfig(config, _layout, stacked)
     }
 
-    // DHIS2-9010 prevent trend lines from render when using multiple axes
-    const filteredSeries = layout.series?.filter(layoutSeriesItem =>
-        series.some(
-            seriesItem => seriesItem.id === layoutSeriesItem.dimensionItem
-        )
-    )
-
     // DHIS2-1243 add trend lines after sorting
     // trend line on pie and gauge does not make sense
     if (
         isString(_layout.regressionType) &&
         _layout.regressionType !== 'NONE' &&
         !isRegressionIneligible(_layout.type) &&
-        (!(isDualAxisType(layout.type) && hasCustomAxes(filteredSeries)) ||
-            axisHasRelativeItems(layout.columns)) &&
         _layout.type !== VIS_TYPE_SCATTER
     ) {
         config.series = addTrendLines(_layout, config.series, stacked)

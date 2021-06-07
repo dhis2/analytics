@@ -26,7 +26,6 @@ export default function (layout, series, extraOptions) {
     const extremeObj = extraOptions.outlierHelper?.extremeLines
         ? extraOptions.outlierHelper.extremeLines[0]
         : null
-    // const xMax = extraOptions.outlierHelper?.vars?.xyStats?.xMax
 
     return objectClean({
         min: getMinValue(
@@ -39,16 +38,11 @@ export default function (layout, series, extraOptions) {
             dataValues,
             extraOptions.outlierHelper?.xAxisMax
         ),
-        // extremeObj?.value > xMax
-        //     ? extremeObj?.value * 1.1
-        // : getMaxValue(
-        //       axis.maxValue,
-        //       dataValues,
-        //       extraOptions.outlierHelper
-        //   ),
         tickAmount: getSteps(axis),
         title: getAxisTitle(
-            axis.title?.text,
+            axis.title?.textMode === 'AUTO' && series[1]?.name
+                ? series[1].name
+                : axis.title?.text,
             mergeFontStyleWithDefault(
                 axis.title?.fontStyle,
                 FONT_STYLE_VERTICAL_AXIS_TITLE

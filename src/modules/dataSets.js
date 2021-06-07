@@ -1,4 +1,4 @@
-import i18n from '@dhis2/d2-i18n'
+import i18n from '../locales/index.js'
 
 export const REPORTING_RATE = 'REPORTING_RATE'
 export const REPORTING_RATE_ON_TIME = 'REPORTING_RATE_ON_TIME'

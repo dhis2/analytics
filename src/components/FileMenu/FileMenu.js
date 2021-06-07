@@ -1,7 +1,7 @@
 import React, { createRef, useState } from 'react'
 
 import PropTypes from '@dhis2/prop-types'
-import i18n from '@dhis2/d2-i18n'
+import i18n from '../../locales/index.js'
 import FavoritesDialog from '@dhis2/d2-ui-favorites-dialog'
 import TranslationDialog from '@dhis2/d2-ui-translation-dialog'
 import SharingDialog from '@dhis2/d2-ui-sharing-dialog'
@@ -82,6 +82,7 @@ export const FileMenu = ({
                         d2={d2}
                         onRequestClose={onDialogClose}
                         onFavoriteSelect={onOpen}
+                        insertTheme={true}
                     />
                 )
             case 'rename':
@@ -109,6 +110,7 @@ export const FileMenu = ({
                         onRequestClose={onDialogClose}
                         onTranslationSaved={onTranslate}
                         onTranslationError={onError}
+                        insertTheme={true}
                     />
                 )
             case 'sharing':
@@ -119,6 +121,7 @@ export const FileMenu = ({
                         type={fileType}
                         id={fileObject.id}
                         onRequestClose={onDialogClose}
+                        insertTheme={true}
                     />
                 )
             case 'getlink':

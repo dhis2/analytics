@@ -1,6 +1,6 @@
 import arrayContains from 'd2-utilizr/lib/arrayContains'
 import { rgb } from 'd3-color'
-import i18n from '@dhis2/d2-i18n'
+import i18n from '../../../../locales/index.js'
 
 import { colorSets, COLOR_SET_PATTERNS } from '../../../util/colors/colorSets'
 import getStackedData from './getStackedData'

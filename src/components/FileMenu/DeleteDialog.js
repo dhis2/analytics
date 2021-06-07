@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react'
 
 import PropTypes from '@dhis2/prop-types'
-import i18n from '@dhis2/d2-i18n'
+import i18n from '../../locales/index.js'
 import { useDataMutation } from '@dhis2/app-runtime'
 import {
     Modal,
@@ -39,9 +39,12 @@ export const DeleteDialog = ({ type, id, onClose, onDelete, onError }) => {
                 {i18n.t('Delete {{fileType}}', { fileType: type })}
             </ModalTitle>
             <ModalContent>
-                {i18n.t('This {{fileType}} will be deleted. Continue?', {
-                    fileType: type,
-                })}
+                {i18n.t(
+                    'This {{fileType}} and related interpretations will be deleted. Continue?',
+                    {
+                        fileType: type,
+                    }
+                )}
             </ModalContent>
             <ModalActions>
                 <ButtonStrip>

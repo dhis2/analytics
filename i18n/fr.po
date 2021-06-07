@@ -1,19 +1,20 @@
 # 
 # Translators:
-# Yao Selom SAKA <saka.yao@yahoo.fr>, 2020
+# Yao Selom Saka <ysaka@hispwca.org>, 2020
 # Edem Kossi <ekossi@hispwca.org>, 2021
 # Karoline Tufte Lien <karoline@dhis2.org>, 2021
 # phil_dhis2, 2021
 # Viktor Varland <viktor@dhis2.org>, 2021
 # Bram Piot <bram.piot@gmail.com>, 2021
 # Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2021
+# Yayra Gomado <ygomado@hispwca.org>, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-03-04T09:26:00.595Z\n"
+"POT-Creation-Date: 2021-05-28T13:23:46.712Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2021\n"
+"Last-Translator: Yayra Gomado <ygomado@hispwca.org>, 2021\n"
 "Language-Team: French (https://www.transifex.com/hisp-uio/teams/100509/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -28,10 +29,10 @@ msgid "All types"
 msgstr "Tous les types"
 
 msgid "Totals only"
-msgstr ""
+msgstr "Totaux uniquement"
 
 msgid "Details only"
-msgstr ""
+msgstr "Détails seulement"
 
 msgid "Disaggregation"
 msgstr "Disaggregation"
@@ -43,49 +44,49 @@ msgid "Loading"
 msgstr "Chargement"
 
 msgid "Search by data item name"
-msgstr ""
+msgstr "Rechercher par le nom de la donnée"
 
 msgid "No items selected"
-msgstr ""
+msgstr "Aucun élément sélectionné"
 
 msgid "Selected Items"
-msgstr ""
+msgstr "Éléments sélectionnés"
 
 msgid "No indicators found"
-msgstr ""
+msgstr "Aucun indicateur trouvé"
 
 msgid "No data elements found"
-msgstr ""
+msgstr "Aucun élément de donnée trouvé"
 
 msgid "No data sets found"
-msgstr ""
+msgstr "Aucun ensemble de données trouvé"
 
 msgid "No event data items found"
-msgstr ""
+msgstr "Aucun éléments de données événement trouvé"
 
 msgid "No program indicators found"
-msgstr ""
+msgstr "Aucun Indicateurs de programme trouvé"
 
 msgid "No indicators found for \"{{- searchTerm}}\""
-msgstr ""
+msgstr "Aucun indicateur trouvé pour \"{{- searchTerm}}\""
 
 msgid "No data elements found for \"{{- searchTerm}}\""
-msgstr ""
+msgstr "Aucun élément de données trouvé pour \"{{- searchTerm}}\""
 
 msgid "No data sets found for \"{{- searchTerm}}\""
-msgstr ""
+msgstr "Aucune donnée trouvée pour \"{{- searchTerm}}\""
 
 msgid "No event data items found for \"{{- searchTerm}}\""
-msgstr ""
+msgstr "Aucune donnée événement retrouvée pour \"{{- searchTerm}}\""
 
 msgid "No program indicators found for \"{{- searchTerm}}\""
-msgstr ""
+msgstr "Aucun Indicateur de programme trouvé pour \"{{- searchTerm}}\""
 
 msgid "Nothing found for \"{{- searchTerm}}\""
-msgstr ""
+msgstr "Rien retrouvé pour \"{{- searchTerm}}\""
 
 msgid "Metric type"
-msgstr ""
+msgstr "Type de métrique"
 
 msgid "All metrics"
 msgstr "Tous les éléments"
@@ -121,18 +122,19 @@ msgid "Dimension recommended with selected data"
 msgstr "Dimension recommandée avec les données sélectionnées"
 
 msgid "Nothing found in {{dimensionTitle}}"
-msgstr ""
+msgstr "Rien trouvé dans {{dimensionTitle}}"
 
 msgid "Search"
 msgstr "Chercher"
 
 msgid "Nothing found for {{searchTerm}}"
-msgstr ""
+msgstr "Rien retrouvé pour {{searchTerm}}"
 
 msgid "Delete {{fileType}}"
-msgstr ""
+msgstr "Supprimer {{fileType}}"
 
-msgid "This {{fileType}} will be deleted. Continue?"
+msgid ""
+"This {{fileType}} and related interpretations will be deleted. Continue?"
 msgstr ""
 
 msgid "Cancel"
@@ -148,28 +150,28 @@ msgid "New"
 msgstr "Nouveau"
 
 msgid "Open…"
-msgstr ""
+msgstr "Ouvrir"
 
 msgid "Save"
 msgstr "Enregistrer"
 
 msgid "Save…"
-msgstr ""
+msgstr "Enregistrer..."
 
 msgid "Save as…"
-msgstr ""
+msgstr "Enregistrer sous..."
 
 msgid "Rename…"
-msgstr ""
+msgstr "Renommer..."
 
 msgid "Translate…"
-msgstr ""
+msgstr "Traduire..."
 
 msgid "Share…"
-msgstr ""
+msgstr "Partager..."
 
 msgid "Get link…"
-msgstr ""
+msgstr "Obtenir le lien..."
 
 msgid "Open in this app"
 msgstr "Ouvrir dans cette app"
@@ -178,7 +180,7 @@ msgid "Close"
 msgstr "Fermer"
 
 msgid "Rename {{fileType}}"
-msgstr ""
+msgstr "Renommer {{fileType}}"
 
 msgid "Name"
 msgstr "Nom"
@@ -190,7 +192,7 @@ msgid "Rename"
 msgstr "Renommer"
 
 msgid "Save {{fileType}} as"
-msgstr ""
+msgstr "Enregistrer {{fileType}} comme"
 
 msgid "Selected Data"
 msgstr "Données sélectionnées"
@@ -220,7 +222,7 @@ msgid "Fixed periods"
 msgstr "Périodes fixes"
 
 msgid "Selected Periods"
-msgstr ""
+msgstr "Périodes sélectionnées"
 
 msgid "No periods selected"
 msgstr "Aucune périodes n'est sélectionnée"
@@ -262,19 +264,16 @@ msgid "December"
 msgstr "Décembre"
 
 msgid "Week {{weekNumber}}"
-msgstr ""
+msgstr "Semaine{{NuméroSemaine}}"
 
 msgid "Bi-Week {{biWeekNumber}}"
-msgstr ""
+msgstr "Bimensuel{{biWeekNumber}}"
 
 msgid "Daily"
 msgstr "Quotidien"
 
 msgid "Weekly"
 msgstr "Hebdomadaire"
-
-msgid "Bi-weekly"
-msgstr "Bi-hebdomadaire"
 
 msgid "Weekly (Start Wednesday)"
 msgstr "Hebdomadaire (début mercredi)"
@@ -287,6 +286,9 @@ msgstr "Hebdomadaire (début samedi)"
 
 msgid "Weekly (Start Sunday)"
 msgstr "Hebdomadaire (début dimanche)"
+
+msgid "Bi-weekly"
+msgstr "Bi-hebdomadaire"
 
 msgid "Monthly"
 msgstr "Mensuel"
@@ -307,7 +309,7 @@ msgid "Yearly"
 msgstr "Annuel"
 
 msgid "Financial year (Start November)"
-msgstr ""
+msgstr "Fiscale Novembre"
 
 msgid "Financial year (Start October)"
 msgstr "Financière Octobre"
@@ -421,7 +423,7 @@ msgid "Last six-month"
 msgstr "Dernier semestre"
 
 msgid "Last 2 six-month"
-msgstr ""
+msgstr "2 derniers semestres"
 
 msgid "This financial year"
 msgstr "Année fiscale en cours"
@@ -440,6 +442,9 @@ msgstr "L'année passée"
 
 msgid "Last 5 years"
 msgstr "5 dernières années"
+
+msgid "Last 10 years"
+msgstr ""
 
 msgid "Days"
 msgstr "Jours"
@@ -463,7 +468,7 @@ msgid "Six-months"
 msgstr "Semestres"
 
 msgid "Financial Years"
-msgstr ""
+msgstr "Années fiscales"
 
 msgid "Years"
 msgstr "Années"
@@ -484,7 +489,7 @@ msgid "Rows"
 msgstr "Lignes"
 
 msgid "Points"
-msgstr ""
+msgstr "Points"
 
 msgid "Reporting rate"
 msgstr "Taux de déclaration"
@@ -514,16 +519,16 @@ msgid "Indicator group"
 msgstr "Groupe d'indicateurs"
 
 msgid "All groups"
-msgstr ""
+msgstr " Tous les groupes"
 
 msgid "Indicator"
 msgstr "Indicateur"
 
 msgid "No indicator groups found"
-msgstr ""
+msgstr "Aucun groupe d'indicateurs trouvé"
 
 msgid "Loading indicator groups"
-msgstr ""
+msgstr "Chargement des groupes d'indicateurs"
 
 msgid "Data elements"
 msgstr "Eléments de données"
@@ -535,10 +540,10 @@ msgid "Data element"
 msgstr "Élément de données"
 
 msgid "No data element groups found"
-msgstr ""
+msgstr "Aucun groupe d'éléments de donnée trouvé"
 
 msgid "Loading data element groups"
-msgstr ""
+msgstr "Chargement de groupes d'éléments de données"
 
 msgid "Data sets"
 msgstr "Ensembles de données"
@@ -547,25 +552,25 @@ msgid "Data set"
 msgstr "Ensemble de données"
 
 msgid "All data sets"
-msgstr ""
+msgstr "Tous les ensembles de données"
 
 msgid "Loading data sets"
-msgstr ""
+msgstr "Chargement d'ensemble de données"
 
 msgid "Event data items"
 msgstr "Eléments de données évènement"
 
 msgid "All programs"
-msgstr ""
+msgstr "Tous les programmes"
 
 msgid "Event data item"
 msgstr "Elément de données évènement"
 
 msgid "No programs found"
-msgstr ""
+msgstr "Aucun programme trouvé"
 
 msgid "Loading programs"
-msgstr ""
+msgstr "Chargement des programmes"
 
 msgid "Program indicators"
 msgstr "Program indicators"
@@ -574,7 +579,7 @@ msgid "Program indicator"
 msgstr "Gestion des indicateurs de programme"
 
 msgid "Extra Small"
-msgstr ""
+msgstr "Super petit"
 
 msgid "Small"
 msgstr "Petit"
@@ -586,13 +591,13 @@ msgid "Large"
 msgstr "Grand"
 
 msgid "Extra Large"
-msgstr ""
+msgstr "Très grand"
 
 msgid "Left"
 msgstr "Gauche"
 
 msgid "Center"
-msgstr ""
+msgstr "Centre"
 
 msgid "Right"
 msgstr "Droite"
@@ -601,10 +606,10 @@ msgid "Start"
 msgstr "Démarrer"
 
 msgid "Middle"
-msgstr ""
+msgstr "Milieu"
 
 msgid "End"
-msgstr ""
+msgstr "Fin"
 
 msgid "Top"
 msgstr "Haut"
@@ -628,28 +633,28 @@ msgid "{{allDynamicOuNames}} groups in {{staticOuNames}}"
 msgstr "{{touslesnomsOudynamiques}} groupes dans {{NomsOustatiques}}"
 
 msgid "{{percentage}}% of total x values"
-msgstr ""
+msgstr "{{percentage}}% de nombre total de X valeurs"
 
 msgid "{{percentage}}% of total y values"
-msgstr ""
+msgstr "{{percentage}}% de nombre total de Y valeurs"
 
 msgid "{{thresholdFactor}} × IQR Q1"
-msgstr ""
+msgstr "{{thresholdFactor}} × IQR Q1"
 
 msgid "{{thresholdFactor}} × IQR Q3"
-msgstr ""
+msgstr "{{thresholdFactor}} × IQR Q3"
 
 msgid "{{thresholdFactor}} × Modified Z-score low"
-msgstr ""
+msgstr "{{thresholdFactor}} × Modifié Z-score faible"
 
 msgid "{{thresholdFactor}} × Modified Z-score high"
-msgstr ""
+msgstr "{{thresholdFactor}} × Modifié Z-score élevé"
 
 msgid "{{thresholdFactor}} × Z-score low"
-msgstr ""
+msgstr "{{thresholdFactor}} × Z-score faible"
 
 msgid "{{thresholdFactor}} × Z-score high"
-msgstr ""
+msgstr "{{thresholdFactor}} × Z-score élevé"
 
 msgid "Data"
 msgstr "Données"
@@ -682,7 +687,7 @@ msgid "Area"
 msgstr "Aire"
 
 msgid "Stacked area"
-msgstr ""
+msgstr "Zone empilée"
 
 msgid "Pie"
 msgstr "Tarte"
@@ -703,72 +708,95 @@ msgid "Single value"
 msgstr "Valeur unique"
 
 msgid "Scatter"
-msgstr ""
+msgstr "Dispersion"
 
 msgid "View data and indicators in a manipulatable table."
-msgstr ""
+msgstr "Affichez les données et les indicateurs dans un tableau manipulable."
 
 msgid ""
 "Compare sizes of related elements vertically. Recommend period as filter."
 msgstr ""
+"Comparez les tailles des éléments connexes verticalement. Recommander la "
+"période comme filtre."
 
 msgid ""
 "Compare parts of a whole against related elements vertically. Recommend data"
 " or org. unit as series."
 msgstr ""
+"Comparez les parties d'un tout avec des éléments connexes verticalement. "
+"Recommander des données ou une unité d'organisation en série."
 
 msgid ""
 "Compare sizes of related elements horizontally. Recommend period as filter."
 msgstr ""
+"Comparez les tailles des éléments connexes horizontalement. Recommander la "
+"période comme filtre."
 
 msgid ""
 "Compare parts of a whole against related elements horizontally. Recommend "
 "data or org. unit as series."
 msgstr ""
+"Comparez les parties d'un tout avec des éléments connexes horizontalement. "
+"Recommander des données ou une unité d'organisation en série."
 
 msgid "Track or compare changes over time. Recommend period as category."
 msgstr ""
+"Suivez ou comparez les changements au fil du temps. Recommander la période "
+"comme catégorie."
 
 msgid ""
 "Track or compare parts of a whole over time. Recommend data as series and "
 "period as category."
 msgstr ""
+"Suivez ou comparez des parties d'un tout au fil du temps. Recommander les "
+"données comme séries et la période comme catégorie."
 
 msgid ""
 "Compare parts of a whole at a single point in time. Recommend period as "
 "filter."
 msgstr ""
+"Comparez des parties d'un tout à un moment ponctuel. Recommander la période "
+"comme filtre."
 
 msgid "Compare several items against multiple variables."
-msgstr ""
+msgstr "Comparez plusieurs éléments à plusieurs variables."
 
 msgid ""
 "Compare a percentage indicator against a 100% scale. Recommend period as "
 "filter."
 msgstr ""
+"Comparez un indicateur de pourcentage à une échelle de 100%. Recommander la "
+"période comme filtre."
 
 msgid "Compare changes over time between multiple time periods."
-msgstr ""
+msgstr "Comparez les changements au fil du temps entre plusieurs périodes."
 
 msgid "Display a single value. Recommend relative period to show latest data."
 msgstr ""
+"Afficher une valeur unique. Recommander la période relative pour afficher "
+"les dernières données."
 
 msgid ""
 "View the relationship between two data items at a place or time. Recommended"
 " for finding outliers."
 msgstr ""
+"Affichez la relation entre deux éléments de données à un endroit ou à un "
+"temps. Recommandé pour trouver des valeurs atypiques"
 
 msgid "{{seriesName}} (trend)"
-msgstr ""
+msgstr "{{seriesName}} (tendance)"
 
 msgid "Trend"
 msgstr "Tendance"
 
 msgid "No legend for this series"
-msgstr ""
+msgstr "Aucune légende pour ces séries"
 
 msgid "and {{amount}} more..."
-msgstr ""
+msgstr "et {{amount}} plus..."
+
+msgid "Linear Regression"
+msgstr "Régression linéaire"
 
 msgid "Target"
 msgstr "Cible"
@@ -780,4 +808,4 @@ msgid "Axis {{axisId}}"
 msgstr "Axe {{{axisId}}"
 
 msgid "Reset zoom"
-msgstr ""
+msgstr "Réinitialiser le zoom"

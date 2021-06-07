@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-03-04T09:26:00.595Z\n"
+"POT-Creation-Date: 2021-05-28T13:23:46.712Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: trendspotter, 2021\n"
 "Language-Team: Czech (https://www.transifex.com/hisp-uio/teams/100509/cs/)\n"
@@ -126,8 +126,9 @@ msgstr "Pro dotaz {{searchTerm}} nebylo nic nalezeno"
 msgid "Delete {{fileType}}"
 msgstr "Smazat {{fileType}}"
 
-msgid "This {{fileType}} will be deleted. Continue?"
-msgstr "Tento {{fileType}} bude smazán. Pokračovat?"
+msgid ""
+"This {{fileType}} and related interpretations will be deleted. Continue?"
+msgstr ""
 
 msgid "Cancel"
 msgstr "Zrušit"
@@ -267,9 +268,6 @@ msgstr "Denně"
 msgid "Weekly"
 msgstr "Týdně"
 
-msgid "Bi-weekly"
-msgstr "po 14ti dnech"
-
 msgid "Weekly (Start Wednesday)"
 msgstr "Týdně (od středy)"
 
@@ -281,6 +279,9 @@ msgstr "Týdně (od soboty)"
 
 msgid "Weekly (Start Sunday)"
 msgstr "Týdně (začíná nedělí)"
+
+msgid "Bi-weekly"
+msgstr "po 14ti dnech"
 
 msgid "Monthly"
 msgstr "Měsíčně"
@@ -434,6 +435,9 @@ msgstr "Poslední rok"
 
 msgid "Last 5 years"
 msgstr "Posledních 5 let"
+
+msgid "Last 10 years"
+msgstr "Posledních 10 let"
 
 msgid "Days"
 msgstr "Dnů"
@@ -622,28 +626,28 @@ msgid "{{allDynamicOuNames}} groups in {{staticOuNames}}"
 msgstr "Skupiny {{allDynamicOuNames}} v {{staticOuNames}}"
 
 msgid "{{percentage}}% of total x values"
-msgstr ""
+msgstr "{{percentage}}% z celkových hodnot x"
 
 msgid "{{percentage}}% of total y values"
-msgstr ""
+msgstr "{{percentage}}% z celkových hodnot y"
 
 msgid "{{thresholdFactor}} × IQR Q1"
-msgstr ""
+msgstr "{{thresholdFactor}} × IQR Q1"
 
 msgid "{{thresholdFactor}} × IQR Q3"
-msgstr ""
+msgstr "{{thresholdFactor}} × IQR Q3"
 
 msgid "{{thresholdFactor}} × Modified Z-score low"
-msgstr ""
+msgstr "{{thresholdFactor}} × Upravené nízké Z-skóre"
 
 msgid "{{thresholdFactor}} × Modified Z-score high"
-msgstr ""
+msgstr "{{thresholdFactor}} × Upravené vysoké Z-skóre"
 
 msgid "{{thresholdFactor}} × Z-score low"
-msgstr ""
+msgstr "{{thresholdFactor}} × nízké Z-skóre"
 
 msgid "{{thresholdFactor}} × Z-score high"
-msgstr ""
+msgstr "{{thresholdFactor}} × Z-skóre vysoké"
 
 msgid "Data"
 msgstr "Data"
@@ -783,6 +787,9 @@ msgstr "Pro tuto sérii není legenda"
 
 msgid "and {{amount}} more..."
 msgstr "a {{amount}} další ..."
+
+msgid "Linear Regression"
+msgstr "Lineární regrese"
 
 msgid "Target"
 msgstr "Cíl"

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-03-04T09:26:00.595Z\n"
+"POT-Creation-Date: 2021-05-28T13:23:46.712Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: KRG HIS <antonia.bezenchek@informa.pro>, 2021\n"
 "Language-Team: Arabic (Iraq) (https://www.transifex.com/hisp-uio/teams/100509/ar_IQ/)\n"
@@ -126,7 +126,8 @@ msgstr ""
 msgid "Delete {{fileType}}"
 msgstr ""
 
-msgid "This {{fileType}} will be deleted. Continue?"
+msgid ""
+"This {{fileType}} and related interpretations will be deleted. Continue?"
 msgstr ""
 
 msgid "Cancel"
@@ -267,9 +268,6 @@ msgstr "يومي"
 msgid "Weekly"
 msgstr "أسبوعي"
 
-msgid "Bi-weekly"
-msgstr "كل اسبوعين"
-
 msgid "Weekly (Start Wednesday)"
 msgstr ""
 
@@ -281,6 +279,9 @@ msgstr ""
 
 msgid "Weekly (Start Sunday)"
 msgstr ""
+
+msgid "Bi-weekly"
+msgstr "كل اسبوعين"
 
 msgid "Monthly"
 msgstr "شهري"
@@ -434,6 +435,9 @@ msgstr "السنة الماضية"
 
 msgid "Last 5 years"
 msgstr "آخر 5 سنوات"
+
+msgid "Last 10 years"
+msgstr ""
 
 msgid "Days"
 msgstr "‏‏الأيام"
@@ -762,6 +766,9 @@ msgid "No legend for this series"
 msgstr ""
 
 msgid "and {{amount}} more..."
+msgstr ""
+
+msgid "Linear Regression"
 msgstr ""
 
 msgid "Target"
