@@ -1,6 +1,5 @@
-import React from 'react'
 import { storiesOf } from '@storybook/react'
-
+import React from 'react'
 import ItemSelector from '../components/DynamicDimension/ItemSelector'
 
 const items = [

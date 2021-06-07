@@ -1,6 +1,5 @@
 import isNumeric from 'd2-utilizr/lib/isNumeric'
 import i18n from '../../../../locales/index.js'
-
 import { getLegendByValueFromLegendSet } from '../../../../modules/legends'
 
 const OUT_OF_BOUNDS_COLOR = '#CCCCCC'

@@ -1,5 +1,5 @@
-import { TEST_DIMENSION_1, TEST_DIMENSION_5 } from '../testResources'
 import { dimensionHasRelativeItems } from '../dimensionHasRelativeItems'
+import { TEST_DIMENSION_1, TEST_DIMENSION_5 } from '../testResources'
 
 describe('dimensionHasRelativeItems', () => {
     it('has relative items and should return true', () => {

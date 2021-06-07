@@ -1,5 +1,5 @@
-import getFilterText from '../../../../util/getFilterText'
 import { VIS_TYPE_SINGLE_VALUE } from '../../../../../modules/visTypes'
+import getFilterText from '../../../../util/getFilterText'
 import getSingleValueTitle from './singleValue'
 
 function getDefault(layout, metaData, dashboard) {

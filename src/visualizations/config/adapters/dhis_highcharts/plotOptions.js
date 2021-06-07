@@ -1,5 +1,4 @@
 import i18n from '../../../../locales/index.js'
-
 import {
     VIS_TYPE_COLUMN,
     VIS_TYPE_SCATTER,

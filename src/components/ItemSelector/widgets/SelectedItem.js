@@ -1,10 +1,9 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import cx from 'classnames'
-
-import ItemIcon from './ItemIcon'
-import DeselectIconButton from './DeselectIconButton'
 import { colors, theme } from '@dhis2/ui'
+import cx from 'classnames'
+import PropTypes from 'prop-types'
+import React from 'react'
+import DeselectIconButton from './DeselectIconButton'
+import ItemIcon from './ItemIcon'
 import styles from './styles/SelectedItem.style'
 
 const onClickWrapper = ({ id, index, onClick }) => event =>

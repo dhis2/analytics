@@ -1,18 +1,7 @@
-import React, { createRef, useState } from 'react'
-
-import PropTypes from '@dhis2/prop-types'
-import i18n from '../../locales/index.js'
 import FavoritesDialog from '@dhis2/d2-ui-favorites-dialog'
-import TranslationDialog from '@dhis2/d2-ui-translation-dialog'
 import SharingDialog from '@dhis2/d2-ui-sharing-dialog'
-import {
-    FlyoutMenu,
-    Layer,
-    MenuItem,
-    MenuDivider,
-    Popper,
-} from '@dhis2/ui-core'
-import { colors } from '@dhis2/ui-constants'
+import TranslationDialog from '@dhis2/d2-ui-translation-dialog'
+import PropTypes from '@dhis2/prop-types'
 import {
     IconAdd24,
     IconLaunch24,
@@ -23,13 +12,22 @@ import {
     IconLink24,
     IconDelete24,
 } from '@dhis2/ui'
-
-import { supportedFileTypes } from './utils'
+import { colors } from '@dhis2/ui-constants'
+import {
+    FlyoutMenu,
+    Layer,
+    MenuItem,
+    MenuDivider,
+    Popper,
+} from '@dhis2/ui-core'
+import React, { createRef, useState } from 'react'
+import i18n from '../../locales/index.js'
+import { DeleteDialog } from './DeleteDialog'
 import { fileMenuStyles } from './FileMenu.styles'
 import { GetLinkDialog } from './GetLinkDialog'
-import { DeleteDialog } from './DeleteDialog'
 import { RenameDialog } from './RenameDialog'
 import { SaveAsDialog } from './SaveAsDialog'
+import { supportedFileTypes } from './utils'
 
 export const FileMenu = ({
     d2, // to be removed as soon as TranslateDialog and FavoritesDialog are rewritten

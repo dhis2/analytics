@@ -1,12 +1,11 @@
-import i18n from '../../locales/index.js'
+import isNumber from 'd2-utilizr/lib/isNumber'
 import isNumeric from 'd2-utilizr/lib/isNumeric'
-
-import { getZScoreHelper, STANDARD_Z_SCORE } from './zScore'
-import { getModZScoreHelper, MODIFIED_Z_SCORE } from './modZScore'
+import i18n from '../../locales/index.js'
 import { getIQRHelper, IQR } from './iqr'
+import { getModZScoreHelper, MODIFIED_Z_SCORE } from './modZScore'
 import { getNormalizationHelper, Y_RESIDUALS_LINEAR } from './normalization'
 import { getXYStats } from './xyStats'
-import isNumber from 'd2-utilizr/lib/isNumber'
+import { getZScoreHelper, STANDARD_Z_SCORE } from './zScore'
 
 export const PROP_ENABLED = 'enabled'
 export const PROP_THRESHOLD_FACTOR = 'thresholdFactor'

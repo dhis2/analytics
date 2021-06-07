@@ -1,6 +1,4 @@
 import objectClean from 'd2-utilizr/lib/objectClean'
-
-import { onError } from './index'
 import {
     ALL_ID,
     // CHART_AGGREGATE_AGGREGATABLE_TYPES,
@@ -13,6 +11,7 @@ import {
     PROGRAM_ATTRIBUTE,
     TOTALS,
 } from '../modules/dataTypes'
+import { onError } from './index'
 
 // Query definitions
 export const dimensionsQuery = {

@@ -1,5 +1,5 @@
-import css from 'styled-jsx/css'
 import { colors, spacers, theme } from '@dhis2/ui'
+import css from 'styled-jsx/css'
 
 export default css`
     .wrapper:last-child {

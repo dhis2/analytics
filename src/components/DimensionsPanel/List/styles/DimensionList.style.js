@@ -1,5 +1,5 @@
-import css from 'styled-jsx/css'
 import { colors, spacers } from '@dhis2/ui'
+import css from 'styled-jsx/css'
 
 // Fix for vertical flex scrolling in Firefox/Safari:
 // Wrap the list in a div with position:relative (and flex:1 instead of on the list)
