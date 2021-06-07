@@ -17,15 +17,12 @@ module.exports = {
         // with the storybook babel configuration.
         return {
             ...config,
-            presets: [
-                ...config.presets,
-                ...custom.presets,
-            ],
+            presets: [...config.presets, ...custom.presets],
             plugins: [
                 ...config.plugins,
                 ...custom.plugins,
                 ...custom.env[mode].plugins,
             ],
         }
-    }
+    },
 }
