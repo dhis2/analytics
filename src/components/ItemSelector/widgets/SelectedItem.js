@@ -6,13 +6,15 @@ import DeselectIconButton from './DeselectIconButton'
 import ItemIcon from './ItemIcon'
 import styles from './styles/SelectedItem.style'
 
-const onClickWrapper = ({ id, index, onClick }) => event =>
-    onClick({
-        isCtrlPressed: event.metaKey || event.ctrlKey,
-        isShiftPressed: event.shiftKey,
-        index,
-        id,
-    })
+const onClickWrapper =
+    ({ id, index, onClick }) =>
+    event =>
+        onClick({
+            isCtrlPressed: event.metaKey || event.ctrlKey,
+            isShiftPressed: event.shiftKey,
+            index,
+            id,
+        })
 
 export const Item = ({
     name,

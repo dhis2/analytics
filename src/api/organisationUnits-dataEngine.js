@@ -39,8 +39,7 @@ const orgUnitQuery = {
     resource: 'organisationUnits',
     id: ({ id }) => id,
     params: {
-        fields:
-            'id,level,displayName~rename(name),path,parent[id,displayName~rename(name)],children[level]',
+        fields: 'id,level,displayName~rename(name),path,parent[id,displayName~rename(name)],children[level]',
         userDataViewFallback: true,
         paging: false,
     },

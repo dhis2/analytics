@@ -187,8 +187,8 @@ export const defaultFontStyle = {
     },
     [FONT_STYLE_LEGEND]: {
         [FONT_STYLE_OPTION_FONT]: defaultFont,
-        [FONT_STYLE_OPTION_FONT_SIZE]: getFontSizeOptions(FONT_STYLE_LEGEND)
-            .regular.value,
+        [FONT_STYLE_OPTION_FONT_SIZE]:
+            getFontSizeOptions(FONT_STYLE_LEGEND).regular.value,
         [FONT_STYLE_OPTION_BOLD]: false,
         [FONT_STYLE_OPTION_ITALIC]: false,
         [FONT_STYLE_OPTION_UNDERLINE]: false,

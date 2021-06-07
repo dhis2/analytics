@@ -119,11 +119,9 @@ class OrgUnitDimension extends Component {
     }
 
     loadOrgUnitGroups = (d2, displayNameProperty) => {
-        apiFetchOrganisationUnitGroups(
-            d2,
-            displayNameProperty
-        ).then(organisationUnitGroups =>
-            this.setState({ ouGroups: organisationUnitGroups })
+        apiFetchOrganisationUnitGroups(d2, displayNameProperty).then(
+            organisationUnitGroups =>
+                this.setState({ ouGroups: organisationUnitGroups })
         )
     }
 

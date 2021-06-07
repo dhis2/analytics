@@ -18,13 +18,11 @@ export const getZScoreHelper = (normalizationHelper, config, { xyStats }) => {
     const lowZScoreThreshold = mean - zScoreThreshold
     const highZScoreThreshold = mean + zScoreThreshold
 
-    const [
-        lowThresholdLine,
-        highThresholdLine,
-    ] = normalizationHelper.getThresholdLines(
-        lowZScoreThreshold,
-        highZScoreThreshold
-    )
+    const [lowThresholdLine, highThresholdLine] =
+        normalizationHelper.getThresholdLines(
+            lowZScoreThreshold,
+            highZScoreThreshold
+        )
 
     const outlierPoints = []
     const inlierPoints = []

@@ -48,14 +48,13 @@ function getTwoCategorySortedConfig(config, layout, stacked) {
                         const groupCategoryLabels =
                             config.xAxis[0].categories[groupIndex]
 
-                        sortedConfig.xAxis[0].categories[
-                            groupIndex
-                        ] = groupCategoryLabels.map(
-                            (value, index) =>
-                                groupCategoryLabels[
-                                    indexOrder[groupIndex][index]
-                                ]
-                        )
+                        sortedConfig.xAxis[0].categories[groupIndex] =
+                            groupCategoryLabels.map(
+                                (value, index) =>
+                                    groupCategoryLabels[
+                                        indexOrder[groupIndex][index]
+                                    ]
+                            )
                     }
 
                     return groupObj.map(
