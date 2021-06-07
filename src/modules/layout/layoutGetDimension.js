@@ -1,5 +1,5 @@
-import { layoutGetAllDimensions } from './layoutGetAllDimensions'
 import { dimensionIs } from './dimensionIs'
+import { layoutGetAllDimensions } from './layoutGetAllDimensions'
 
 export const layoutGetDimension = (layout, dimensionId) =>
     layoutGetAllDimensions(layout).find(dimension =>

@@ -1,11 +1,10 @@
-import React from 'react'
 import PropTypes from 'prop-types'
-import { PivotTableHeaderCell } from './PivotTableHeaderCell'
-import { cell as cellStyle } from './styles/PivotTable.style'
-
+import React from 'react'
 import { PivotTableCell } from './PivotTableCell'
 import { usePivotTableEngine } from './PivotTableEngineContext'
+import { PivotTableHeaderCell } from './PivotTableHeaderCell'
 import { PivotTableSortIcon } from './PivotTableSortIcon'
+import { cell as cellStyle } from './styles/PivotTable.style'
 
 export const PivotTableColumnHeaderCell = ({
     clippingResult,

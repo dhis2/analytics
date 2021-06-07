@@ -1,7 +1,7 @@
 import i18n from '../locales/index.js'
-import { ouIdHelper } from './ouIdHelper'
-import { dimensionIs } from './layout/dimensionIs'
 import { dimensionGetItems } from './layout/dimensionGetItems'
+import { dimensionIs } from './layout/dimensionIs'
+import { ouIdHelper } from './ouIdHelper'
 import { DIMENSION_ID_ORGUNIT } from './predefinedDimensions'
 
 export const getOuLevelAndGroupText = (filter, metaData) => {

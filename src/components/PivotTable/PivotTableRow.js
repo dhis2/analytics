@@ -1,11 +1,11 @@
-import React from 'react'
+import times from 'lodash/times'
 import PropTypes from 'prop-types'
+import React from 'react'
 import { PivotTableClippedAxis } from './PivotTableClippedAxis'
-import { PivotTableRowHeaderCell } from './PivotTableRowHeaderCell'
-import { PivotTableValueCell } from './PivotTableValueCell'
 import { PivotTableEmptyCell } from './PivotTableEmptyCell'
 import { usePivotTableEngine } from './PivotTableEngineContext'
-import times from 'lodash/times'
+import { PivotTableRowHeaderCell } from './PivotTableRowHeaderCell'
+import { PivotTableValueCell } from './PivotTableValueCell'
 
 export const PivotTableRow = ({
     clippingResult,

@@ -1,5 +1,5 @@
-import React from 'react'
 import { shallow } from 'enzyme'
+import React from 'react'
 import { UnselectedItems } from '../UnselectedItems'
 
 describe('UnselectedItems component', () => {

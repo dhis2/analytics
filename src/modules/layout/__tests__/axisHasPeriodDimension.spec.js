@@ -1,5 +1,5 @@
-import { TEST_AXIS_COLUMNS, TEST_AXIS_ROWS } from '../testResources'
 import { axisHasPeriodDimension } from '../axisHasPeriodDimension'
+import { TEST_AXIS_COLUMNS, TEST_AXIS_ROWS } from '../testResources'
 
 describe('axisHasPeriodDimension', () => {
     it('should return true if the dimension is found in the axis', () => {

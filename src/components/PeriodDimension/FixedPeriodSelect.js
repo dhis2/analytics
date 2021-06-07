@@ -1,14 +1,14 @@
-import React, { Component } from 'react'
 import propTypes from '@dhis2/prop-types'
-import i18n from '../../locales/index.js'
 import { SingleSelectField, SingleSelectOption } from '@dhis2/ui'
+import React, { Component } from 'react'
+import i18n from '../../locales/index.js'
 import FixedPeriodFilter from './FixedPeriodFilter.js'
+import styles from './styles/FixedPeriodSelect.style.js'
 import {
     parsePeriodCode,
     getFixedPeriodsOptionsById as getPeriodById,
     getYearOffsetFromNow,
 } from './utils/fixedPeriods.js'
-import styles from './styles/FixedPeriodSelect.style.js'
 
 class FixedPeriodSelect extends Component {
     state = {

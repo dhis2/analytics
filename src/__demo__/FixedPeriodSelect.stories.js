@@ -1,6 +1,5 @@
-import React, { useState } from 'react'
 import { storiesOf } from '@storybook/react'
-
+import React, { useState } from 'react'
 import FixedPeriodSelect from '../components/PeriodDimension/FixedPeriodSelect'
 
 storiesOf('FixedPeriodSelect', module).add('No value', () => {

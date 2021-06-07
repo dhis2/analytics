@@ -1,12 +1,11 @@
-import React, { Component, createRef } from 'react'
-import PropTypes from 'prop-types'
 import { IconLock16 } from '@dhis2/ui'
-
-import DimensionLabel from './DimensionLabel'
-import RecommendedIcon from './RecommendedIcon'
-import OptionsButton from './OptionsButton'
+import PropTypes from 'prop-types'
+import React, { Component, createRef } from 'react'
 import DynamicDimensionIcon from '../../../assets/DynamicDimensionIcon'
 import { getPredefinedDimensionProp } from '../../../modules/predefinedDimensions'
+import DimensionLabel from './DimensionLabel'
+import OptionsButton from './OptionsButton'
+import RecommendedIcon from './RecommendedIcon'
 import { styles } from './styles/DimensionItem.style'
 
 export class DimensionItem extends Component {

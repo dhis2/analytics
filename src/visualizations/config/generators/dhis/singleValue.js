@@ -1,6 +1,4 @@
 import { colors } from '@dhis2/ui'
-
-import { getColorByValueFromLegendSet } from '../../../../modules/legends'
 import {
     FONT_STYLE_VISUALIZATION_TITLE,
     FONT_STYLE_VISUALIZATION_SUBTITLE,
@@ -14,6 +12,7 @@ import {
     TEXT_ALIGN_CENTER,
     mergeFontStyleWithDefault,
 } from '../../../../modules/fontStyle'
+import { getColorByValueFromLegendSet } from '../../../../modules/legends'
 
 const svgNS = 'http://www.w3.org/2000/svg'
 
