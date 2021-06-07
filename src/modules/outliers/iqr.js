@@ -1,5 +1,4 @@
 import i18n from '../../locales/index.js'
-
 import { PROP_THRESHOLD_FACTOR } from './index'
 
 export const IQR = 'IQR'

@@ -1,6 +1,5 @@
-import React from 'react'
 import { shallow } from 'enzyme'
-
+import React from 'react'
 import OrgUnitDimension, { defaultState } from '../OrgUnitDimension'
 
 /* eslint-disable react/display-name */

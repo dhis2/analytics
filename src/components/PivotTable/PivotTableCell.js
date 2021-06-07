@@ -1,8 +1,8 @@
-import React from 'react'
-import PropTypes from 'prop-types'
 import classnames from 'classnames'
-import { cell as cellStyle } from './styles/PivotTable.style'
+import PropTypes from 'prop-types'
+import React from 'react'
 import { usePivotTableEngine } from './PivotTableEngineContext'
+import { cell as cellStyle } from './styles/PivotTable.style'
 
 export const PivotTableCell = React.forwardRef(
     (

@@ -1,5 +1,4 @@
 import isString from 'd2-utilizr/lib/isString'
-
 import {
     FONT_STYLE_HORIZONTAL_AXIS_TITLE,
     TEXT_ALIGN_CENTER,

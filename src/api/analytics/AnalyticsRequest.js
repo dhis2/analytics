@@ -1,8 +1,8 @@
+import { getFixedDimensions } from '../../modules/predefinedDimensions'
+import AnalyticsRequestBase from './AnalyticsRequestBase'
 import AnalyticsRequestDimensionsMixin from './AnalyticsRequestDimensionsMixin'
 import AnalyticsRequestFiltersMixin from './AnalyticsRequestFiltersMixin'
 import AnalyticsRequestPropertiesMixin from './AnalyticsRequestPropertiesMixin'
-import AnalyticsRequestBase from './AnalyticsRequestBase'
-import { getFixedDimensions } from '../../modules/predefinedDimensions'
 
 /**
  * @description

@@ -1,5 +1,4 @@
-import React, { useState } from 'react'
-import PropTypes from 'prop-types'
+import { useDataEngine } from '@dhis2/app-runtime'
 import {
     Transfer,
     InputField,
@@ -9,18 +8,13 @@ import {
     IconDimensionEventDataItem16,
     IconDimensionProgramIndicator16,
 } from '@dhis2/ui'
+import PropTypes from 'prop-types'
+import React, { useState } from 'react'
+import { apiFetchOptions } from '../../api/dimensions'
+import DataElementIcon from '../../assets/DimensionItemIcons/DataElementIcon'
+import GenericIcon from '../../assets/DimensionItemIcons/GenericIcon'
 import i18n from '../../locales/index.js'
-import { useDataEngine } from '@dhis2/app-runtime'
-
-import styles from '../styles/DimensionSelector.style'
-import { TransferOption } from '../TransferOption'
-import {
-    TRANSFER_HEIGHT,
-    TRANSFER_OPTIONS_WIDTH,
-    TRANSFER_SELECTED_WIDTH,
-} from '../../modules/dimensionSelectorHelper'
-import DataTypeSelector from './DataTypesSelector'
-import GroupSelector from './GroupSelector'
+import { DATA_SETS_CONSTANTS, REPORTING_RATE } from '../../modules/dataSets'
 import {
     ALL_ID,
     dataTypes,
@@ -34,11 +28,16 @@ import {
     PROGRAM_DATA_ELEMENT,
     PROGRAM_ATTRIBUTE,
 } from '../../modules/dataTypes'
-import { apiFetchOptions } from '../../api/dimensions'
-import { DATA_SETS_CONSTANTS, REPORTING_RATE } from '../../modules/dataSets'
-import DataElementIcon from '../../assets/DimensionItemIcons/DataElementIcon'
-import GenericIcon from '../../assets/DimensionItemIcons/GenericIcon'
+import {
+    TRANSFER_HEIGHT,
+    TRANSFER_OPTIONS_WIDTH,
+    TRANSFER_SELECTED_WIDTH,
+} from '../../modules/dimensionSelectorHelper'
 import { useDebounce, useDidUpdateEffect } from '../../modules/utils'
+import styles from '../styles/DimensionSelector.style'
+import { TransferOption } from '../TransferOption'
+import DataTypeSelector from './DataTypesSelector'
+import GroupSelector from './GroupSelector'
 
 const LeftHeader = ({
     searchTerm,

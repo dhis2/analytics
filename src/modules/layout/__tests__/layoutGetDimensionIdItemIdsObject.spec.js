@@ -1,6 +1,6 @@
-import { layoutGetDimensionIdItemIdsObject } from '../layoutGetDimensionIdItemIdsObject'
 import { DIMENSION_PROP_ID, DIMENSION_PROP_ITEMS } from '../dimension'
 import { ITEM_PROP_ID } from '../item'
+import { layoutGetDimensionIdItemIdsObject } from '../layoutGetDimensionIdItemIdsObject'
 import { TEST_LAYOUT, TEST_DIMENSIONS_IN_LAYOUT } from '../testResources'
 
 describe('layoutGetDimensionIdItemIdsObject', () => {

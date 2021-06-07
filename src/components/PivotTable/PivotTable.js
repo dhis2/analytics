@@ -1,14 +1,13 @@
-import React, { useRef, useMemo } from 'react'
 import PropTypes from 'prop-types'
-
+import React, { useRef, useMemo } from 'react'
 import { PivotTableEngine } from '../../modules/pivotTable/PivotTableEngine'
 import { useParentSize } from '../../modules/pivotTable/useParentSize'
-import { useTableClipping } from '../../modules/pivotTable/useTableClipping'
-import { Provider } from './PivotTableEngineContext'
-import { PivotTableContainer } from './PivotTableContainer'
-import { PivotTableHead } from './PivotTableHead'
-import { PivotTableBody } from './PivotTableBody'
 import { useSortableColumns } from '../../modules/pivotTable/useSortableColumns'
+import { useTableClipping } from '../../modules/pivotTable/useTableClipping'
+import { PivotTableBody } from './PivotTableBody'
+import { PivotTableContainer } from './PivotTableContainer'
+import { Provider } from './PivotTableEngineContext'
+import { PivotTableHead } from './PivotTableHead'
 
 const PivotTable = ({
     visualization,
