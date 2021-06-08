@@ -1,3 +1,10 @@
+## [18.2.3](https://github.com/dhis2/analytics/compare/v18.2.2...v18.2.3) (2021-06-08)
+
+
+### Bug Fixes
+
+* hide empty sections in the DimensionsPanel ([#872](https://github.com/dhis2/analytics/issues/872)) ([30176b2](https://github.com/dhis2/analytics/commit/30176b2260b017d626c3e65ef9f1a95aca30804c))
+
 ## [18.2.2](https://github.com/dhis2/analytics/compare/v18.2.1...v18.2.2) (2021-06-03)
 
 
