@@ -59,17 +59,21 @@ export class DimensionList extends Component {
         return (
             <div className="container">
                 <div className="wrapper">
-                  {fixedDimensions?.length ? (
-                      <div className="section">
-                          <h3 className="header">{i18n.t('Main dimensions')}</h3>
-                          <ul className="list">{fixedDimensions}</ul>
-                      </div>
+                    {fixedDimensions?.length ? (
+                        <div className="section">
+                            <h3 className="header">
+                                {i18n.t('Main dimensions')}
+                            </h3>
+                            <ul className="list">{fixedDimensions}</ul>
+                        </div>
                     ) : null}
                     {nonPredefinedDimensions?.length ? (
-                      <div className="section">
-                          <h3 className="header">{i18n.t('Your dimensions')}</h3>
-                          <ul className="list">{nonPredefinedDimensions}</ul>
-                      </div>
+                        <div className="section">
+                            <h3 className="header">
+                                {i18n.t('Your dimensions')}
+                            </h3>
+                            <ul className="list">{nonPredefinedDimensions}</ul>
+                        </div>
                     ) : null}
                 </div>
                 <style jsx>{styles}</style>

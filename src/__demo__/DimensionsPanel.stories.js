@@ -1,6 +1,5 @@
-import React from 'react'
 import { storiesOf } from '@storybook/react'
-
+import React from 'react'
 import DimensionsPanel from '../components/DimensionsPanel/DimensionsPanel'
 import {
     DIMENSION_ID_DATA,
