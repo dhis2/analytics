@@ -1,13 +1,11 @@
-import React from 'react'
-import { shallow } from 'enzyme'
-
 import SharingDialog from '@dhis2/d2-ui-sharing-dialog'
 import TranslationDialog from '@dhis2/d2-ui-translation-dialog'
 import { Popper } from '@dhis2/ui'
-
-import { FileMenu } from '../FileMenu'
+import { shallow } from 'enzyme'
+import React from 'react'
 import { OpenFileDialog } from '../../OpenFileDialog/OpenFileDialog'
 import { DeleteDialog } from '../DeleteDialog'
+import { FileMenu } from '../FileMenu'
 import { GetLinkDialog } from '../GetLinkDialog'
 import { RenameDialog } from '../RenameDialog'
 import { SaveAsDialog } from '../SaveAsDialog'

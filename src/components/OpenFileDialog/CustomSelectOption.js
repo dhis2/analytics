@@ -1,8 +1,7 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import cx from 'classnames'
-
 import { colors, spacers } from '@dhis2/ui'
+import cx from 'classnames'
+import PropTypes from 'prop-types'
+import React from 'react'
 
 export const CustomSelectOption = ({
     value,

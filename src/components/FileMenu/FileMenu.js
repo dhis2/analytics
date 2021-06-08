@@ -1,18 +1,6 @@
-import React, { createRef, useState } from 'react'
-
-import PropTypes from '@dhis2/prop-types'
-import i18n from '../../locales/index.js'
-
-import TranslationDialog from '@dhis2/d2-ui-translation-dialog'
 import SharingDialog from '@dhis2/d2-ui-sharing-dialog'
-import {
-    FlyoutMenu,
-    Layer,
-    MenuItem,
-    MenuDivider,
-    Popper,
-} from '@dhis2/ui-core'
-import { colors } from '@dhis2/ui-constants'
+import TranslationDialog from '@dhis2/d2-ui-translation-dialog'
+import PropTypes from '@dhis2/prop-types'
 import {
     IconAdd24,
     IconLaunch24,
@@ -23,15 +11,23 @@ import {
     IconLink24,
     IconDelete24,
 } from '@dhis2/ui'
-
-import { supportedFileTypes } from './utils'
-import { fileMenuStyles } from './FileMenu.styles'
-
+import { colors } from '@dhis2/ui-constants'
+import {
+    FlyoutMenu,
+    Layer,
+    MenuItem,
+    MenuDivider,
+    Popper,
+} from '@dhis2/ui-core'
+import React, { createRef, useState } from 'react'
+import i18n from '../../locales/index.js'
+import { OpenFileDialog } from '../OpenFileDialog/OpenFileDialog'
 import { DeleteDialog } from './DeleteDialog'
+import { fileMenuStyles } from './FileMenu.styles'
 import { GetLinkDialog } from './GetLinkDialog'
 import { RenameDialog } from './RenameDialog'
 import { SaveAsDialog } from './SaveAsDialog'
-import { OpenFileDialog } from '../OpenFileDialog/OpenFileDialog'
+import { supportedFileTypes } from './utils'
 
 export const FileMenu = ({
     d2, // to be removed as soon as TranslateDialog and FavoritesDialog are rewritten

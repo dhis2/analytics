@@ -1,6 +1,3 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-
 import {
     IconTable16,
     IconVisualizationArea16,
@@ -33,7 +30,8 @@ import {
     IconVisualizationScatter24,
     IconVisualizationSingleValue24,
 } from '@dhis2/ui'
-
+import PropTypes from 'prop-types'
+import React from 'react'
 import {
     VIS_TYPE_PIVOT_TABLE,
     VIS_TYPE_COLUMN,

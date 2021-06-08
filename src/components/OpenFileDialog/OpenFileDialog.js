@@ -1,8 +1,5 @@
-import React, { useEffect, useMemo, useState } from 'react'
-import PropTypes from 'prop-types'
-import isEqual from 'lodash/isEqual'
-import i18n from '@dhis2/d2-i18n'
 import { useDataQuery } from '@dhis2/app-runtime'
+import i18n from '@dhis2/d2-i18n'
 import {
     Box,
     Modal,
@@ -19,12 +16,15 @@ import {
     CircularLoader,
     Button,
 } from '@dhis2/ui'
-import { styles } from './OpenFileDialog.styles'
+import isEqual from 'lodash/isEqual'
+import PropTypes from 'prop-types'
+import React, { useEffect, useMemo, useState } from 'react'
 import { FileList } from './FileList'
 import { NameFilter } from './NameFilter'
-import { VisTypeFilter } from './VisTypeFilter'
+import { styles } from './OpenFileDialog.styles'
 import { OwnerFilter } from './OwnerFilter'
 import { PaginationControls } from './PaginationControls'
+import { VisTypeFilter } from './VisTypeFilter'
 
 const getResourceFromType = type => `${type}s`
 
@@ -305,7 +305,8 @@ export const OpenFileDialog = ({
                                                     }) =>
                                                         setSorting({
                                                             sortField: name,
-                                                            sortDirection: direction,
+                                                            sortDirection:
+                                                                direction,
                                                         })
                                                     }
                                                     sortDirection={getSortDirection(

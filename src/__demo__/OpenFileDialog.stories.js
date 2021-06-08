@@ -1,7 +1,6 @@
-import React from 'react'
-import { storiesOf } from '@storybook/react'
 import { Provider } from '@dhis2/app-runtime'
-
+import { storiesOf } from '@storybook/react'
+import React from 'react'
 import { OpenFileDialog } from '../components/OpenFileDialog/OpenFileDialog.js'
 
 const configMock = {

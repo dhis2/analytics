@@ -1,5 +1,5 @@
-import css from 'styled-jsx/css'
 import { colors, spacers } from '@dhis2/ui'
+import css from 'styled-jsx/css'
 
 export const styles = css`
     .data-table-body {

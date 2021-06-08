@@ -1,6 +1,6 @@
-import React from 'react'
-import PropTypes from 'prop-types'
 import { DataTableRow, DataTableCell, colors } from '@dhis2/ui'
+import PropTypes from 'prop-types'
+import React from 'react'
 import { VisTypeIcon } from '../VisTypeIcon'
 import { DateField } from './DateField'
 

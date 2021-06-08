@@ -1,5 +1,5 @@
-import React from 'react'
 import PropTypes from 'prop-types'
+import React from 'react'
 
 export const DateField = ({ date }) => {
     const d = new Date(date)
