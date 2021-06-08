@@ -74,7 +74,47 @@ storiesOf('DimensionsPanel', module).add('selected dimension', () => {
         <DimensionsPanel
             dimensions={[...fixedDimensions, ...dynamicDimensions]}
             onDimensionClick={onDimensionClick}
-            selectedIds={DIMENSION_ID_DATA}
+            selectedIds={[DIMENSION_ID_DATA]}
+        />
+    )
+})
+
+storiesOf('DimensionsPanel', module).add('disabled dimension', () => {
+    return (
+        <DimensionsPanel
+            dimensions={[...fixedDimensions, ...dynamicDimensions]}
+            onDimensionClick={onDimensionClick}
+            disabledDimension={dimension => dimension === DIMENSION_ID_DATA}
+        />
+    )
+})
+
+storiesOf('DimensionsPanel', module).add('locked dimension', () => {
+    return (
+        <DimensionsPanel
+            dimensions={[...fixedDimensions, ...dynamicDimensions]}
+            onDimensionClick={onDimensionClick}
+            lockedDimension={dimension => dimension === DIMENSION_ID_DATA}
+        />
+    )
+})
+
+storiesOf('DimensionsPanel', module).add('recommended dimension', () => {
+    return (
+        <DimensionsPanel
+            dimensions={[...fixedDimensions, ...dynamicDimensions]}
+            onDimensionClick={onDimensionClick}
+            recommendedDimension={dimension => dimension === DIMENSION_ID_DATA}
+        />
+    )
+})
+
+storiesOf('DimensionsPanel', module).add('with menu', () => {
+    return (
+        <DimensionsPanel
+            dimensions={[...fixedDimensions, ...dynamicDimensions]}
+            onDimensionClick={onDimensionClick}
+            onDimensionOptionsClick={() => alert('options click')}
         />
     )
 })
