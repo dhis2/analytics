@@ -1,6 +1,6 @@
-import React from 'react'
+import { IconCross16 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
-import DeselectIcon from '@material-ui/icons/Close'
+import React from 'react'
 import styles from './styles/DeselectIconButton.style'
 
 export const DeselectIconButton = ({ fill, onClick }) => {
@@ -18,8 +18,8 @@ export const DeselectIconButton = ({ fill, onClick }) => {
                 onClick()
             }}
         >
-            <span>
-                <DeselectIcon style={iconStyle} />
+            <span style={iconStyle}>
+                <IconCross16 />
             </span>
             <style jsx>{styles}</style>
         </button>

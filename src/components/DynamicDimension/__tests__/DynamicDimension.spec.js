@@ -1,6 +1,5 @@
-import React from 'react'
 import { shallow } from 'enzyme'
-
+import React from 'react'
 import { DynamicDimension } from '../DynamicDimension'
 
 describe('The Dynamic Dimension component ', () => {
@@ -21,6 +20,7 @@ describe('The Dynamic Dimension component ', () => {
             selectedItems: [],
             onSelect: jest.fn(),
             dimensionId: '123abc',
+            displayNameProp: 'displayName',
         }
         shallowSelector = undefined
     })

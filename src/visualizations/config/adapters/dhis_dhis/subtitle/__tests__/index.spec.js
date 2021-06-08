@@ -1,9 +1,10 @@
-import getSubtitle from '../index'
 import { VIS_TYPE_SINGLE_VALUE } from '../../../../../../modules/visTypes'
+import getSubtitle from '../index'
 
 jest.mock('../singleValue', () => () => 'The sv filter title')
-jest.mock('../../../../../util/getFilterText', () => () =>
-    'The default filter text'
+jest.mock(
+    '../../../../../util/getFilterText',
+    () => () => 'The default filter text'
 )
 
 describe('getSubtitle', () => {

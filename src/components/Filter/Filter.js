@@ -1,6 +1,7 @@
-import React from 'react'
-import PropTypes from 'prop-types'
 import { InputField } from '@dhis2/ui'
+import PropTypes from 'prop-types'
+import React from 'react'
+import styles from './styles/Filter.style'
 
 export const Filter = ({
     text,
@@ -10,14 +11,19 @@ export const Filter = ({
     type,
     dataTest,
 }) => (
-    <InputField
-        placeholder={placeholder}
-        onChange={ref => (ref.value.length ? onChange(ref.value) : onClear())}
-        value={text}
-        dense
-        type={type}
-        dataTest={dataTest}
-    />
+    <div className="container">
+        <InputField
+            placeholder={placeholder}
+            onChange={ref =>
+                ref.value.length ? onChange(ref.value) : onClear()
+            }
+            value={text}
+            dense
+            type={type}
+            dataTest={dataTest}
+        />
+        <style jsx>{styles}</style>
+    </div>
 )
 
 Filter.propTypes = {

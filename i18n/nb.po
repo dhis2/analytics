@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-03-09T11:13:51.855Z\n"
+"POT-Creation-Date: 2021-05-28T13:23:46.712Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: Caroline Hesthagen Holen <caroline@devotta.no>, 2021\n"
 "Language-Team: Norwegian Bokmål (https://www.transifex.com/hisp-uio/teams/100509/nb/)\n"
@@ -127,7 +127,8 @@ msgstr ""
 msgid "Delete {{fileType}}"
 msgstr ""
 
-msgid "This {{fileType}} will be deleted. Continue?"
+msgid ""
+"This {{fileType}} and related interpretations will be deleted. Continue?"
 msgstr ""
 
 msgid "Cancel"
@@ -268,9 +269,6 @@ msgstr "Daglig"
 msgid "Weekly"
 msgstr "Ukentlig"
 
-msgid "Bi-weekly"
-msgstr "Toukentlig"
-
 msgid "Weekly (Start Wednesday)"
 msgstr "Ukentlig (start onsdag)"
 
@@ -282,6 +280,9 @@ msgstr "Ukentlig (start lørdag)"
 
 msgid "Weekly (Start Sunday)"
 msgstr "Ukentlig (start søndag)"
+
+msgid "Bi-weekly"
+msgstr "Toukentlig"
 
 msgid "Monthly"
 msgstr "Månedlig"
@@ -435,6 +436,9 @@ msgstr "Forrige år"
 
 msgid "Last 5 years"
 msgstr "Siste 5 år"
+
+msgid "Last 10 years"
+msgstr "Siste 10 år"
 
 msgid "Days"
 msgstr "Dager"

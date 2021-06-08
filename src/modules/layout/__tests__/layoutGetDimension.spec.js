@@ -1,5 +1,5 @@
-import { layoutGetDimension } from '../layoutGetDimension'
 import { DIMENSION_PROP_ID } from '../dimension'
+import { layoutGetDimension } from '../layoutGetDimension'
 import { TEST_LAYOUT, TEST_DIMENSION_1 } from '../testResources'
 
 describe('layoutGetDimension', () => {

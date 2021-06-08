@@ -3,10 +3,6 @@ import isNumber from 'd2-utilizr/lib/isNumber'
 import objectClean from 'd2-utilizr/lib/objectClean'
 import i18n from '../../../../../locales/index.js'
 import {
-    getColorByValueFromLegendSet,
-    LEGEND_DISPLAY_STYLE_FILL,
-} from '../../../../../modules/legends'
-import {
     FONT_STYLE_OPTION_TEXT_COLOR,
     FONT_STYLE_OPTION_FONT_SIZE,
     FONT_STYLE_OPTION_BOLD,
@@ -19,9 +15,13 @@ import {
     FONT_STYLE_AXIS_LABELS,
     mergeFontStyleWithDefault,
 } from '../../../../../modules/fontStyle'
+import {
+    getColorByValueFromLegendSet,
+    LEGEND_DISPLAY_STYLE_FILL,
+} from '../../../../../modules/legends'
 import { isVerticalType, VIS_TYPE_GAUGE } from '../../../../../modules/visTypes'
-import { getTextAlignOption } from '../getTextAlignOption'
 import { getAxis } from '../../../../util/axes'
+import { getTextAlignOption } from '../getTextAlignOption'
 
 const DEFAULT_MAX_VALUE = 100
 const DEFAULT_TARGET_LINE_LABEL = i18n.t('Target')

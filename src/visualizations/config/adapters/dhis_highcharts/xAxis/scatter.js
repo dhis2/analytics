@@ -1,14 +1,11 @@
 import arrayClean from 'd2-utilizr/lib/arrayClean'
 import objectClean from 'd2-utilizr/lib/objectClean'
-
-import getAxisTitle from '../getAxisTitle'
-import { getAxisStringFromId } from '../../../../util/axisId'
 import {
     FONT_STYLE_VERTICAL_AXIS_TITLE,
     mergeFontStyleWithDefault,
 } from '../../../../../modules/fontStyle'
-import getSteps from '../getSteps'
 import { getAxis } from '../../../../util/axes'
+import { getAxisStringFromId } from '../../../../util/axisId'
 import {
     getGridLineColor,
     getLabels,
@@ -16,6 +13,8 @@ import {
     getMaxValue,
     getRegressionLine,
 } from '../axis'
+import getAxisTitle from '../getAxisTitle'
+import getSteps from '../getSteps'
 
 const AXIS_TYPE = 'RANGE'
 const AXIS_INDEX = 1
@@ -40,7 +39,9 @@ export default function (layout, series, extraOptions) {
         ),
         tickAmount: getSteps(axis),
         title: getAxisTitle(
-            axis.title?.text,
+            axis.title?.textMode === 'AUTO' && series[1]?.name
+                ? series[1].name
+                : axis.title?.text,
             mergeFontStyleWithDefault(
                 axis.title?.fontStyle,
                 FONT_STYLE_VERTICAL_AXIS_TITLE

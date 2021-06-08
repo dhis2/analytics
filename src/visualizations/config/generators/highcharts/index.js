@@ -1,10 +1,10 @@
 import H from 'highcharts'
 import HM from 'highcharts/highcharts-more'
-import HSG from 'highcharts/modules/solid-gauge'
-import HNDTD from 'highcharts/modules/no-data-to-display'
-import HE from 'highcharts/modules/exporting'
-import HPF from 'highcharts/modules/pattern-fill'
 import HB from 'highcharts/modules/boost'
+import HE from 'highcharts/modules/exporting'
+import HNDTD from 'highcharts/modules/no-data-to-display'
+import HPF from 'highcharts/modules/pattern-fill'
+import HSG from 'highcharts/modules/solid-gauge'
 
 // apply
 HM(H)

@@ -1,14 +1,16 @@
-import React from 'react'
+import { IconArrowLeft24, IconArrowRight24 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
-import ArrowForward from '@material-ui/icons/ArrowForward'
-import ArrowBack from '@material-ui/icons/ArrowBack'
-
+import React from 'react'
 import styles from './styles/ArrowButton.style'
 
 export const ArrowButton = ({ onClick, iconType }) => (
     <button className="arrow-button" onClick={onClick}>
         <span className="arrow-icon">
-            {iconType === 'arrowForward' ? <ArrowForward /> : <ArrowBack />}
+            {iconType === 'arrowForward' ? (
+                <IconArrowRight24 />
+            ) : (
+                <IconArrowLeft24 />
+            )}
         </span>
         <style jsx>{styles}</style>
     </button>

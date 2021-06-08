@@ -1,7 +1,6 @@
-import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import React, { Component } from 'react'
 import i18n from '../../locales/index.js'
-
 import Filter from '../Filter/Filter'
 import DimensionList from './List/DimensionList'
 import { styles } from './styles/DimensionsPanel.style'
@@ -33,7 +32,6 @@ export class DimensionsPanel extends Component {
         return (
             <div style={{ ...styles.divContainer, ...style }}>
                 <Filter
-                    style={styles.textField}
                     placeholder={i18n.t('Filter dimensions')}
                     text={this.state.filterText}
                     onChange={this.onFilterTextChange}

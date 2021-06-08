@@ -1,10 +1,22 @@
 import i18n from '../../../../locales/index.js'
-
-import { VIS_TYPE_SCATTER } from '../../../../modules/visTypes'
+import {
+    VIS_TYPE_COLUMN,
+    VIS_TYPE_SCATTER,
+    VIS_TYPE_STACKED_COLUMN,
+    VIS_TYPE_BAR,
+    VIS_TYPE_STACKED_BAR,
+} from '../../../../modules/visTypes'
 
 const MAX_LABELS = 10
 
-export default ({ visType, xAxisName, yAxisName, showLabels, tooltipData }) => {
+export default ({
+    visType,
+    xAxisName,
+    yAxisName,
+    showLabels,
+    tooltipData,
+    onClick,
+}) => {
     const series = {
         dataLabels: {
             enabled: showLabels,
@@ -45,6 +57,27 @@ export default ({ visType, xAxisName, yAxisName, showLabels, tooltipData }) => {
                     boostThreshold: 1,
                 },
             }
+        case VIS_TYPE_COLUMN:
+        case VIS_TYPE_STACKED_COLUMN:
+        case VIS_TYPE_BAR:
+        case VIS_TYPE_STACKED_BAR:
+            return onClick
+                ? {
+                      series: {
+                          cursor: 'pointer',
+                          point: {
+                              events: {
+                                  click: function () {
+                                      onClick(this.graphic?.element, {
+                                          category: this.category,
+                                          series: this.series.name,
+                                      })
+                                  },
+                              },
+                          },
+                      },
+                  }
+                : {}
         default:
             return {}
     }

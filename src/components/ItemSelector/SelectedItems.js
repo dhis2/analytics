@@ -1,15 +1,13 @@
-import React, { Component, Fragment } from 'react'
+import { Button, IconInfo16, colors } from '@dhis2/ui'
 import PropTypes from 'prop-types'
-import i18n from '../../locales/index.js'
-import InfoIcon from '@material-ui/icons/InfoOutlined'
+import React, { Component, Fragment } from 'react'
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd'
-import { Button, colors } from '@dhis2/ui'
-
-import Item from './widgets/SelectedItem'
-import { ArrowButton as UnAssignButton } from './widgets/ArrowButton'
-import { toggler } from './modules/toggler'
+import i18n from '../../locales/index.js'
 import { reorderList } from './modules/reorderList'
+import { toggler } from './modules/toggler'
 import styles from './styles/SelectedItems.style'
+import { ArrowButton as UnAssignButton } from './widgets/ArrowButton'
+import Item from './widgets/SelectedItem'
 
 const Subtitle = () => (
     <div className="subtitle-container">
@@ -20,7 +18,7 @@ const Subtitle = () => (
 
 const InfoBox = ({ message, dataTest }) => (
     <div className="info-container" data-test={dataTest}>
-        <InfoIcon style={{ fontSize: 16, color: colors.grey600 }} />
+        <IconInfo16 color={colors.grey600} />
         <span className="info-text">{message}</span>
         <style jsx>{styles}</style>
     </div>

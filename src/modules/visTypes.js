@@ -1,20 +1,21 @@
+import {
+    IconTable24,
+    IconVisualizationArea24,
+    IconVisualizationAreaStacked24,
+    IconVisualizationBar24,
+    IconVisualizationBarStacked24,
+    IconVisualizationColumn24,
+    IconVisualizationColumnMulti24,
+    IconVisualizationColumnStacked24,
+    IconVisualizationGauge24,
+    IconVisualizationLine24,
+    IconVisualizationLineMulti24,
+    IconVisualizationPie24,
+    IconVisualizationRadar24,
+    IconVisualizationScatter24,
+    IconVisualizationSingleValue24,
+} from '@dhis2/ui'
 import i18n from '../locales/index.js'
-import BarIcon from '../assets/BarIcon'
-import StackedBarIcon from '../assets/StackedBarIcon'
-import ColumnIcon from '../assets/ColumnIcon'
-import StackedColumnIcon from '../assets/StackedColumnIcon'
-import LineIcon from '../assets/LineIcon'
-import AreaIcon from '../assets/AreaIcon'
-import StackedAreaIcon from '../assets/StackedAreaIcon'
-import PieIcon from '../assets/PieIcon'
-import RadarIcon from '../assets/RadarIcon'
-import GaugeIcon from '../assets/GaugeIcon'
-import YearOverYearLineIcon from '../assets/YearOverYearLineIcon'
-import YearOverYearColumnIcon from '../assets/YearOverYearColumnIcon'
-import SingleValueIcon from '../assets/SingleValueIcon'
-import PivotTableIcon from '../assets/PivotTableIcon'
-import ScatterIcon from '../assets/ScatterIcon'
-
 export const VIS_TYPE_COLUMN = 'COLUMN'
 export const VIS_TYPE_STACKED_COLUMN = 'STACKED_COLUMN'
 export const VIS_TYPE_BAR = 'BAR'
@@ -99,21 +100,21 @@ export const visTypeDescriptions = {
 }
 
 export const visTypeIcons = {
-    [VIS_TYPE_PIVOT_TABLE]: PivotTableIcon,
-    [VIS_TYPE_BAR]: BarIcon,
-    [VIS_TYPE_STACKED_BAR]: StackedBarIcon,
-    [VIS_TYPE_COLUMN]: ColumnIcon,
-    [VIS_TYPE_STACKED_COLUMN]: StackedColumnIcon,
-    [VIS_TYPE_LINE]: LineIcon,
-    [VIS_TYPE_AREA]: AreaIcon,
-    [VIS_TYPE_STACKED_AREA]: StackedAreaIcon,
-    [VIS_TYPE_PIE]: PieIcon,
-    [VIS_TYPE_RADAR]: RadarIcon,
-    [VIS_TYPE_GAUGE]: GaugeIcon,
-    [VIS_TYPE_YEAR_OVER_YEAR_LINE]: YearOverYearLineIcon,
-    [VIS_TYPE_YEAR_OVER_YEAR_COLUMN]: YearOverYearColumnIcon,
-    [VIS_TYPE_SINGLE_VALUE]: SingleValueIcon,
-    [VIS_TYPE_SCATTER]: ScatterIcon,
+    [VIS_TYPE_PIVOT_TABLE]: IconTable24,
+    [VIS_TYPE_BAR]: IconVisualizationBar24,
+    [VIS_TYPE_STACKED_BAR]: IconVisualizationBarStacked24,
+    [VIS_TYPE_COLUMN]: IconVisualizationColumn24,
+    [VIS_TYPE_STACKED_COLUMN]: IconVisualizationColumnStacked24,
+    [VIS_TYPE_LINE]: IconVisualizationLine24,
+    [VIS_TYPE_AREA]: IconVisualizationArea24,
+    [VIS_TYPE_STACKED_AREA]: IconVisualizationAreaStacked24,
+    [VIS_TYPE_PIE]: IconVisualizationPie24,
+    [VIS_TYPE_RADAR]: IconVisualizationRadar24,
+    [VIS_TYPE_GAUGE]: IconVisualizationGauge24,
+    [VIS_TYPE_YEAR_OVER_YEAR_LINE]: IconVisualizationLineMulti24,
+    [VIS_TYPE_YEAR_OVER_YEAR_COLUMN]: IconVisualizationColumnMulti24,
+    [VIS_TYPE_SINGLE_VALUE]: IconVisualizationSingleValue24,
+    [VIS_TYPE_SCATTER]: IconVisualizationScatter24,
 }
 
 export const getDisplayNameByVisType = visType => {

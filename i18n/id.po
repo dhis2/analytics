@@ -9,7 +9,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-03-09T11:13:51.855Z\n"
+"POT-Creation-Date: 2021-05-28T13:23:46.712Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: Viktor Varland <viktor@dhis2.org>, 2021\n"
 "Language-Team: Indonesian (https://www.transifex.com/hisp-uio/teams/100509/id/)\n"
@@ -130,7 +130,8 @@ msgstr ""
 msgid "Delete {{fileType}}"
 msgstr ""
 
-msgid "This {{fileType}} will be deleted. Continue?"
+msgid ""
+"This {{fileType}} and related interpretations will be deleted. Continue?"
 msgstr ""
 
 msgid "Cancel"
@@ -271,9 +272,6 @@ msgstr "Harian"
 msgid "Weekly"
 msgstr "Mingguan"
 
-msgid "Bi-weekly"
-msgstr "Dwiwulanan"
-
 msgid "Weekly (Start Wednesday)"
 msgstr ""
 
@@ -285,6 +283,9 @@ msgstr ""
 
 msgid "Weekly (Start Sunday)"
 msgstr ""
+
+msgid "Bi-weekly"
+msgstr "Dwiwulanan"
 
 msgid "Monthly"
 msgstr "Bulanan"
@@ -438,6 +439,9 @@ msgstr "Tahun kemarin"
 
 msgid "Last 5 years"
 msgstr "5 tahun terakhir"
+
+msgid "Last 10 years"
+msgstr ""
 
 msgid "Days"
 msgstr "Hari"

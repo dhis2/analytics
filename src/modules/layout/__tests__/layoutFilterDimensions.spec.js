@@ -1,6 +1,6 @@
-import { layoutFilterDimensions } from '../layoutFilterDimensions'
-import { DIMENSION_PROP_ID } from '../dimension'
 import { AXIS, AXIS_ID_FILTERS } from '../axis'
+import { DIMENSION_PROP_ID } from '../dimension'
+import { layoutFilterDimensions } from '../layoutFilterDimensions'
 import { TEST_LAYOUT } from '../testResources'
 
 describe('layoutFilterDimensions', () => {
