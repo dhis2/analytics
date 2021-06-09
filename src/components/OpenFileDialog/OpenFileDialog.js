@@ -19,10 +19,15 @@ import {
 import isEqual from 'lodash/isEqual'
 import PropTypes from 'prop-types'
 import React, { useEffect, useMemo, useState } from 'react'
+import {
+    CreatedByFilter,
+    CREATED_BY_ALL,
+    CREATED_BY_ALL_BUT_CURRENT_USER,
+    CREATED_BY_CURRENT_USER,
+} from './CreatedByFilter'
 import { FileList } from './FileList'
 import { NameFilter } from './NameFilter'
 import { styles } from './OpenFileDialog.styles'
-import { OwnerFilter } from './OwnerFilter'
 import { PaginationControls } from './PaginationControls'
 import { getTranslatedString } from './utils'
 import { VisTypeFilter } from './VisTypeFilter'
@@ -64,8 +69,8 @@ export const OpenFileDialog = ({
     const filesQuery = useMemo(() => getQuery(type), [])
     const defaultFilters = {
         searchTerm: '',
-        createdBy: 'all',
-        visType: 'all',
+        createdBy: CREATED_BY_ALL,
+        visType: VIS_TYPE_ALL,
     }
 
     const [{ sortField, sortDirection }, setSorting] = useState({
@@ -83,13 +88,13 @@ export const OpenFileDialog = ({
         const queryFilters = []
 
         switch (filters.createdBy) {
-            case 'byothers':
+            case CREATED_BY_ALL_BUT_CURRENT_USER:
                 queryFilters.push(`user.id:!eq:${currentUser.id}`)
                 break
-            case 'byme':
+            case CREATED_BY_CURRENT_USER:
                 queryFilters.push(`user.id:eq:${currentUser.id}`)
                 break
-            case 'all':
+            case CREATED_BY_ALL:
             default:
                 break
         }
@@ -209,7 +214,7 @@ export const OpenFileDialog = ({
                             </div>
                         )}
                         <div className="created-by-field-container">
-                            <OwnerFilter
+                            <CreatedByFilter
                                 selected={filters.createdBy}
                                 onChange={value =>
                                     setFilters({
