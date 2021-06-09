@@ -24,6 +24,7 @@ import { NameFilter } from './NameFilter'
 import { styles } from './OpenFileDialog.styles'
 import { OwnerFilter } from './OwnerFilter'
 import { PaginationControls } from './PaginationControls'
+import { getTranslatedString } from './utils'
 import { VisTypeFilter } from './VisTypeFilter'
 
 const getResourceFromType = type => `${type}s`
@@ -121,63 +122,6 @@ export const OpenFileDialog = ({
         setNameFilterValue(defaultFilters.searchTerm)
     }
 
-    const getString = (type, key) => {
-        let texts = {
-            modalTitle: i18n.t('Open'),
-            loadingText: i18n.t('Loading'),
-            errorTitle: i18n.t("Couldn't load items"),
-            errorText: i18n.t(
-                'There was a problem loading items. Try again or contact your system administrator.'
-            ),
-            noDataText: i18n.t('No items found. Create a new to get started.'),
-            noFilteredDataText: i18n.t(
-                "No items found. Try adjusting your search or filter options to find what you're looking for."
-            ),
-            newButtonLabel: i18n.t('Create new'),
-        }
-
-        switch (type) {
-            case 'visualization': {
-                texts = {
-                    modalTitle: i18n.t('Open a visualization'),
-                    loadingText: i18n.t('Loading visualizations'),
-                    errorTitle: i18n.t("Couldn't load visualizations"),
-                    errorText: i18n.t(
-                        'There was a problem loading visualizations. Try again or contact your system administrator.'
-                    ),
-                    noDataText: i18n.t(
-                        'No visualizations found. Click New visualization to get started.'
-                    ),
-                    noFilteredDataText: i18n.t(
-                        "No visualizations found. Try adjusting your search or filter options to find what you're looking for."
-                    ),
-                    newButtonLabel: i18n.t('New visualization'),
-                }
-                break
-            }
-            case 'map': {
-                texts = {
-                    modalTitle: i18n.t('Open a map'),
-                    loadingText: i18n.t('Loading maps'),
-                    errorTitle: i18n.t("Couldn't load maps"),
-                    errorText: i18n.t(
-                        'There was a problem loading maps. Try again or contact your system administrator.'
-                    ),
-                    noDataText: i18n.t(
-                        'No maps found. Click New map to get started.'
-                    ),
-                    noFilteredDataText: i18n.t(
-                        "No maps found. Try adjusting your search or filter options to find what you're looking for."
-                    ),
-                    newButtonLabel: i18n.t('New map'),
-                }
-                break
-            }
-        }
-
-        return texts[key]
-    }
-
     useEffect(() => {
         // only fetch data when the dialog is open
         if (open) {
@@ -227,7 +171,7 @@ export const OpenFileDialog = ({
 
     return (
         <Modal large position="middle" hide={!open} onClose={onClose}>
-            <ModalTitle>{getString(type, 'modalTitle')}</ModalTitle>
+            <ModalTitle>{getTranslatedString(type, 'modalTitle')}</ModalTitle>
             <ModalContent>
                 <Box minHeight="496px">
                     <div className="search-and-filter-bar">
@@ -283,10 +227,10 @@ export const OpenFileDialog = ({
                     </div>
                     {error ? (
                         <NoticeBox
-                            title={getString(type, 'errorTitle')}
+                            title={getTranslatedString(type, 'errorTitle')}
                             warning
                         >
-                            {getString(type, 'errorText')}
+                            {getTranslatedString(type, 'errorText')}
                         </NoticeBox>
                     ) : (
                         <>
@@ -334,7 +278,7 @@ export const OpenFileDialog = ({
                                                     <div className="info-cell">
                                                         <CircularLoader small />
                                                         <span className="info-text">
-                                                            {getString(
+                                                            {getTranslatedString(
                                                                 type,
                                                                 'loadingText'
                                                             )}
@@ -357,7 +301,7 @@ export const OpenFileDialog = ({
                                                                     defaultFilters
                                                                 ) ? (
                                                                     <span className="info-text">
-                                                                        {getString(
+                                                                        {getTranslatedString(
                                                                             type,
                                                                             'noFilteredDataText'
                                                                         )}
@@ -365,7 +309,7 @@ export const OpenFileDialog = ({
                                                                 ) : (
                                                                     <>
                                                                         <div className="info-text">
-                                                                            {getString(
+                                                                            {getTranslatedString(
                                                                                 type,
                                                                                 'noDataText'
                                                                             )}
@@ -377,7 +321,7 @@ export const OpenFileDialog = ({
                                                                                     onClose()
                                                                                 }}
                                                                             >
-                                                                                {getString(
+                                                                                {getTranslatedString(
                                                                                     type,
                                                                                     'newButtonLabel'
                                                                                 )}

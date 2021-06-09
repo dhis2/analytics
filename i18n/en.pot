@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2021-06-09T11:17:00.868Z\n"
-"PO-Revision-Date: 2021-06-09T11:17:00.868Z\n"
+"POT-Creation-Date: 2021-06-09T14:12:01.391Z\n"
+"PO-Revision-Date: 2021-06-09T14:12:01.391Z\n"
 
 msgid "Data Type"
 msgstr "Data Type"
@@ -191,6 +191,36 @@ msgstr "Select all"
 msgid "Filter by name"
 msgstr "Filter by name"
 
+msgid "Created"
+msgstr "Created"
+
+msgid "Last updated"
+msgstr "Last updated"
+
+msgid "Type"
+msgstr "Type"
+
+msgid "Clear filters"
+msgstr "Clear filters"
+
+msgid "Created by"
+msgstr "Created by"
+
+msgid "Anyone"
+msgstr "Anyone"
+
+msgid "Only you"
+msgstr "Only you"
+
+msgid "Others"
+msgstr "Others"
+
+msgid "{{firstItemIndex}}-{{lastItemIndex}} of {{totalNumberOfItems}}"
+msgstr "{{firstItemIndex}}-{{lastItemIndex}} of {{totalNumberOfItems}}"
+
+msgid "All charts"
+msgstr "All charts"
+
 msgid "Open"
 msgstr "Open"
 
@@ -274,36 +304,6 @@ msgstr ""
 
 msgid "New map"
 msgstr "New map"
-
-msgid "Created"
-msgstr "Created"
-
-msgid "Last updated"
-msgstr "Last updated"
-
-msgid "Type"
-msgstr "Type"
-
-msgid "Clear filters"
-msgstr "Clear filters"
-
-msgid "Created by"
-msgstr "Created by"
-
-msgid "Anyone"
-msgstr "Anyone"
-
-msgid "Only you"
-msgstr "Only you"
-
-msgid "Others"
-msgstr "Others"
-
-msgid "{{firstItemIndex}}-{{lastItemIndex}} of {{totalNumberOfItems}}"
-msgstr "{{firstItemIndex}}-{{lastItemIndex}} of {{totalNumberOfItems}}"
-
-msgid "All charts"
-msgstr "All charts"
 
 msgid "Period type"
 msgstr "Period type"
