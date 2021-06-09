@@ -72,7 +72,9 @@ export const OpenFileDialog = ({
         sortDirection: 'asc',
     })
     const [page, setPage] = useState(1)
-    const [searchTerm, setSearchTerm] = useState(defaultFilters.searchTerm)
+    const [nameFilterValue, setNameFilterValue] = useState(
+        defaultFilters.searchTerm
+    )
     const [searchTimeout, setSearchTimeout] = useState(null)
     const [filters, setFilters] = useState(defaultFilters)
 
@@ -116,7 +118,7 @@ export const OpenFileDialog = ({
 
     const resetFilters = () => {
         setFilters(defaultFilters)
-        setSearchTerm(defaultFilters.searchTerm)
+        setNameFilterValue(defaultFilters.searchTerm)
     }
 
     const getString = (type, key) => {
@@ -231,9 +233,9 @@ export const OpenFileDialog = ({
                     <div className="search-and-filter-bar">
                         <div className="search-field-container">
                             <NameFilter
-                                value={searchTerm}
+                                value={nameFilterValue}
                                 onChange={value => {
-                                    setSearchTerm(value)
+                                    setNameFilterValue(value)
 
                                     clearTimeout(searchTimeout)
                                     setSearchTimeout(
