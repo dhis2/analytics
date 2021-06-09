@@ -375,12 +375,12 @@ OpenFileDialog.defaultProps = {
 }
 
 OpenFileDialog.propTypes = {
+    currentUser: PropTypes.object.isRequired,
     type: PropTypes.oneOf(['visualization', 'eventChart', 'eventReport', 'map'])
         .isRequired,
     onClose: PropTypes.func.isRequired,
     onFileSelect: PropTypes.func.isRequired,
     onNew: PropTypes.func.isRequired,
-    currentUser: PropTypes.object,
     open: PropTypes.bool,
 }
 
