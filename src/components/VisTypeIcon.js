@@ -50,103 +50,93 @@ import {
     VIS_TYPE_SCATTER,
 } from '../modules/visTypes'
 
-export const VisTypeIcon = ({ type, size = 24, ...props }) => {
+export const VisTypeIcon = ({ type, useSmall = false, ...props }) => {
     let VisIcon
 
     switch (type) {
         case VIS_TYPE_PIVOT_TABLE: {
-            VisIcon = size === 16 ? IconTable16 : IconTable24
+            VisIcon = useSmall ? IconTable16 : IconTable24
             break
         }
         case VIS_TYPE_BAR: {
-            VisIcon =
-                size === 16 ? IconVisualizationBar16 : IconVisualizationBar24
+            VisIcon = useSmall ? IconVisualizationBar16 : IconVisualizationBar24
             break
         }
         case VIS_TYPE_STACKED_BAR: {
-            VisIcon =
-                size === 16
-                    ? IconVisualizationBarStacked16
-                    : IconVisualizationBarStacked24
+            VisIcon = useSmall
+                ? IconVisualizationBarStacked16
+                : IconVisualizationBarStacked24
             break
         }
         case VIS_TYPE_STACKED_COLUMN: {
-            VisIcon =
-                size === 16
-                    ? IconVisualizationColumnStacked16
-                    : IconVisualizationColumnStacked24
+            VisIcon = useSmall
+                ? IconVisualizationColumnStacked16
+                : IconVisualizationColumnStacked24
             break
         }
         case VIS_TYPE_LINE: {
-            VisIcon =
-                size === 16 ? IconVisualizationLine16 : IconVisualizationLine24
+            VisIcon = useSmall
+                ? IconVisualizationLine16
+                : IconVisualizationLine24
             break
         }
         case VIS_TYPE_AREA: {
-            VisIcon =
-                size === 16 ? IconVisualizationArea16 : IconVisualizationArea24
+            VisIcon = useSmall
+                ? IconVisualizationArea16
+                : IconVisualizationArea24
             break
         }
         case VIS_TYPE_STACKED_AREA: {
-            VisIcon =
-                size === 16
-                    ? IconVisualizationAreaStacked16
-                    : IconVisualizationAreaStacked24
+            VisIcon = useSmall
+                ? IconVisualizationAreaStacked16
+                : IconVisualizationAreaStacked24
             break
         }
         case VIS_TYPE_PIE: {
-            VisIcon =
-                size === 16 ? IconVisualizationPie16 : IconVisualizationPie24
+            VisIcon = useSmall ? IconVisualizationPie16 : IconVisualizationPie24
             break
         }
         case VIS_TYPE_RADAR: {
-            VisIcon =
-                size === 16
-                    ? IconVisualizationRadar16
-                    : IconVisualizationRadar24
+            VisIcon = useSmall
+                ? IconVisualizationRadar16
+                : IconVisualizationRadar24
             break
         }
         case VIS_TYPE_GAUGE: {
-            VisIcon =
-                size === 16
-                    ? IconVisualizationGauge16
-                    : IconVisualizationGauge24
+            VisIcon = useSmall
+                ? IconVisualizationGauge16
+                : IconVisualizationGauge24
             break
         }
         case VIS_TYPE_YEAR_OVER_YEAR_LINE: {
-            VisIcon =
-                size === 16
-                    ? IconVisualizationLineMulti16
-                    : IconVisualizationLineMulti24
+            VisIcon = useSmall
+                ? IconVisualizationLineMulti16
+                : IconVisualizationLineMulti24
             break
         }
         case VIS_TYPE_YEAR_OVER_YEAR_COLUMN: {
-            VisIcon =
-                size === 16
-                    ? IconVisualizationColumnMulti16
-                    : IconVisualizationColumnMulti24
+            VisIcon = useSmall
+                ? IconVisualizationColumnMulti16
+                : IconVisualizationColumnMulti24
             break
         }
         case VIS_TYPE_SINGLE_VALUE: {
-            VisIcon =
-                size === 16
-                    ? IconVisualizationSingleValue16
-                    : IconVisualizationSingleValue24
+            VisIcon = useSmall
+                ? IconVisualizationSingleValue16
+                : IconVisualizationSingleValue24
             break
         }
         case VIS_TYPE_SCATTER: {
-            VisIcon =
-                size === 16
-                    ? IconVisualizationScatter16
-                    : IconVisualizationScatter24
+            VisIcon = useSmall
+                ? IconVisualizationScatter16
+                : IconVisualizationScatter24
             break
         }
         case VIS_TYPE_COLUMN:
         default: {
-            VisIcon =
-                size === 16
-                    ? IconVisualizationColumn16
-                    : IconVisualizationColumn24
+            VisIcon = useSmall
+                ? IconVisualizationColumn16
+                : IconVisualizationColumn24
             break
         }
     }
@@ -155,8 +145,8 @@ export const VisTypeIcon = ({ type, size = 24, ...props }) => {
 }
 
 VisTypeIcon.propTypes = {
-    size: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     type: PropTypes.string,
+    useSmall: PropTypes.bool,
 }
 
 export default VisTypeIcon

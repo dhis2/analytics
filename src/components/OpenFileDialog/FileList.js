@@ -15,7 +15,7 @@ export const FileList = ({ type, data, onSelect }) => (
                     <DataTableCell>
                         <VisTypeIcon
                             type={visualization.type}
-                            size={16}
+                            useSmall
                             color={colors.grey600}
                         />
                     </DataTableCell>
