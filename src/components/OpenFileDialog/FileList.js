@@ -32,9 +32,17 @@ export const FileList = ({ type, data, onSelect }) => (
 )
 
 FileList.propTypes = {
-    data: PropTypes.array,
-    type: PropTypes.string,
-    onSelect: PropTypes.func,
+    data: PropTypes.arrayOf(
+        PropTypes.shape({
+            created: PropTypes.string,
+            displayName: PropTypes.string,
+            id: PropTypes.string,
+            lastUpdated: PropTypes.string,
+            type: PropTypes.string,
+        })
+    ).isRequired,
+    type: PropTypes.string.isRequired,
+    onSelect: PropTypes.func.isRequired,
 }
 
 export default FileList
