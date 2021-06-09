@@ -78,10 +78,10 @@ export const OpenFileDialog = ({
     const [searchTimeout, setSearchTimeout] = useState(null)
     const [filters, setFilters] = useState(defaultFilters)
 
-    const formatFilters = ({ searchTerm, createdBy, visType }) => {
+    const formatFilters = () => {
         const queryFilters = []
 
-        switch (createdBy) {
+        switch (filters.createdBy) {
             case 'byothers':
                 queryFilters.push(`user.id:!eq:${currentUser.id}`)
                 break
@@ -93,19 +93,19 @@ export const OpenFileDialog = ({
                 break
         }
 
-        switch (visType) {
+        switch (filters.visType) {
             case 'all':
                 break
             case 'chart':
                 queryFilters.push('type:!eq:PIVOT_TABLE')
                 break
             default:
-                queryFilters.push(`type:eq:${visType}`)
+                queryFilters.push(`type:eq:${filters.visType}`)
                 break
         }
 
-        if (searchTerm) {
-            queryFilters.push(`name:ilike:${searchTerm}`)
+        if (filters.searchTerm) {
+            queryFilters.push(`name:ilike:${filters.searchTerm}`)
         }
 
         return queryFilters
@@ -196,7 +196,7 @@ export const OpenFileDialog = ({
         refetch({
             sortField,
             sortDirection,
-            filters: formatFilters(filters),
+            filters: formatFilters(),
         })
     }, [filters])
 
