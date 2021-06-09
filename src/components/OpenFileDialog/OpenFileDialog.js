@@ -335,10 +335,8 @@ export const OpenFileDialog = ({
                                                 </DataTableCell>
                                             </DataTableRow>
                                         )}
-                                    {Boolean(
-                                        data?.files[getResourceFromType(type)]
-                                            .length
-                                    ) && (
+                                    {data?.files[getResourceFromType(type)]
+                                        .length > 0 && (
                                         <FileList
                                             type={type}
                                             data={
@@ -351,9 +349,8 @@ export const OpenFileDialog = ({
                                     )}
                                 </DataTableBody>
                             </DataTable>
-                            {Boolean(
-                                data?.files[getResourceFromType(type)].length
-                            ) && (
+                            {data?.files[getResourceFromType(type)].length >
+                                0 && (
                                 <DataTableToolbar position="bottom">
                                     <div className="pagination-controls">
                                         <PaginationControls
