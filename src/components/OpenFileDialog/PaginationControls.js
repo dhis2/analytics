@@ -12,10 +12,18 @@ export const PaginationControls = ({ page, pager, onPageChange }) => (
         onPageChange={onPageChange}
         onPageSizeChange={Function.prototype}
         hidePageSizeSelect
-        pageSummaryText={interpolationObject =>
+        pageSummaryText={({
+            firstItem: firstItemIndex,
+            lastItem: lastItemIndex,
+            total: totalNumberOfItems,
+        }) =>
             i18n.t(
-                '{{firstItem}}-{{lastItem}} of {{total}}',
-                interpolationObject
+                '{{firstItemIndex}}-{{lastItemIndex}} of {{totalNumberOfItems}}',
+                {
+                    firstItemIndex,
+                    lastItemIndex,
+                    totalNumberOfItems,
+                }
             )
         }
     />
