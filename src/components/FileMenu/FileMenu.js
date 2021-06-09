@@ -44,7 +44,7 @@ export const FileMenu = ({
     onTranslate,
 }) => {
     const [menuIsOpen, setMenuIsOpen] = useState(false)
-    const [openDialog, setOpenDialog] = useState(null)
+    const [currentDialog, setCurrentDialog] = useState(null)
 
     // Escape key press closes the menu
     const onKeyDown = e => {
@@ -54,9 +54,9 @@ export const FileMenu = ({
     }
     const onMenuItemClick = dialogToOpen => () => {
         setMenuIsOpen(false)
-        setOpenDialog(dialogToOpen)
+        setCurrentDialog(dialogToOpen)
     }
-    const onDialogClose = () => setOpenDialog(null)
+    const onDialogClose = () => setCurrentDialog(null)
     const toggleMenu = () => setMenuIsOpen(!menuIsOpen)
     const onDeleteConfirm = () => {
         // The dialog must be closed before calling the callback
@@ -70,7 +70,7 @@ export const FileMenu = ({
     const buttonRef = createRef()
 
     const renderDialog = () => {
-        switch (openDialog) {
+        switch (currentDialog) {
             case 'rename':
                 return (
                     <RenameDialog
@@ -158,7 +158,7 @@ export const FileMenu = ({
                 </button>
             </div>
             <OpenFileDialog
-                open={openDialog === 'open'}
+                open={currentDialog === 'open'}
                 type={fileType}
                 onClose={onDialogClose}
                 onFileSelect={id => {
