@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2021-06-09T14:12:01.391Z\n"
-"PO-Revision-Date: 2021-06-09T14:12:01.391Z\n"
+"POT-Creation-Date: 2021-06-10T07:19:35.004Z\n"
+"PO-Revision-Date: 2021-06-10T07:19:35.004Z\n"
 
 msgid "Data Type"
 msgstr "Data Type"
@@ -188,6 +188,18 @@ msgstr "Deselect All"
 msgid "Select all"
 msgstr "Select all"
 
+msgid "Created by"
+msgstr "Created by"
+
+msgid "Anyone"
+msgstr "Anyone"
+
+msgid "Only you"
+msgstr "Only you"
+
+msgid "Others"
+msgstr "Others"
+
 msgid "Filter by name"
 msgstr "Filter by name"
 
@@ -202,18 +214,6 @@ msgstr "Type"
 
 msgid "Clear filters"
 msgstr "Clear filters"
-
-msgid "Created by"
-msgstr "Created by"
-
-msgid "Anyone"
-msgstr "Anyone"
-
-msgid "Only you"
-msgstr "Only you"
-
-msgid "Others"
-msgstr "Others"
 
 msgid "{{firstItemIndex}}-{{lastItemIndex}} of {{totalNumberOfItems}}"
 msgstr "{{firstItemIndex}}-{{lastItemIndex}} of {{totalNumberOfItems}}"
