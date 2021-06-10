@@ -6,6 +6,9 @@ import { visTypeDisplayNames } from '../../modules/visTypes'
 import { VisTypeIcon } from '../VisTypeIcon'
 import { CustomSelectOption } from './CustomSelectOption'
 
+export const VIS_TYPE_ALL = 'all'
+export const VIS_TYPE_CHARTS = 'charts'
+
 export const VisTypeFilter = ({ selected, onChange }) => (
     <SingleSelect
         selected={selected}
@@ -14,8 +17,11 @@ export const VisTypeFilter = ({ selected, onChange }) => (
         dense
     >
         {/* TODO figure out if this distinction still make sense since we have SV and potentially other new types in the future which might not fall into the chart/PT categories */}
-        <SingleSelectOption label={i18n.t('All types')} value="all" />
-        <SingleSelectOption label={i18n.t('All charts')} value="chart" />
+        <SingleSelectOption label={i18n.t('All types')} value={VIS_TYPE_ALL} />
+        <SingleSelectOption
+            label={i18n.t('All charts')}
+            value={VIS_TYPE_CHARTS}
+        />
         <Divider />
         {Object.entries(visTypeDisplayNames).map(([type, label]) => (
             <CustomSelectOption

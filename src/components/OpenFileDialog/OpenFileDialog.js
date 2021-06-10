@@ -30,7 +30,7 @@ import { NameFilter } from './NameFilter'
 import { styles } from './OpenFileDialog.styles'
 import { PaginationControls } from './PaginationControls'
 import { getTranslatedString, AO_TYPE_VISUALIZATION, AOTypeMap } from './utils'
-import { VisTypeFilter } from './VisTypeFilter'
+import { VisTypeFilter, VIS_TYPE_ALL, VIS_TYPE_CHARTS } from './VisTypeFilter'
 
 const getQuery = type => ({
     resource: AOTypeMap[type].apiEndpoint,
@@ -68,7 +68,7 @@ export const OpenFileDialog = ({
     const defaultFilters = {
         searchTerm: '',
         createdBy: CREATED_BY_ALL,
-        visType: 'all',
+        visType: VIS_TYPE_ALL,
     }
 
     const [{ sortField, sortDirection }, setSorting] = useState({
@@ -98,9 +98,9 @@ export const OpenFileDialog = ({
         }
 
         switch (filters.visType) {
-            case 'all':
+            case VIS_TYPE_ALL:
                 break
-            case 'chart':
+            case VIS_TYPE_CHARTS:
                 queryFilters.push('type:!eq:PIVOT_TABLE')
                 break
             default:
@@ -198,7 +198,7 @@ export const OpenFileDialog = ({
                                 }}
                             />
                         </div>
-                        {type === 'visualization' && (
+                        {type === AO_TYPE_VISUALIZATION && (
                             <div className="type-field-container">
                                 <VisTypeFilter
                                     selected={filters.visType}
@@ -375,17 +375,13 @@ export const OpenFileDialog = ({
     )
 }
 
-OpenFileDialog.defaultProps = {
-    open: false,
-}
-
 OpenFileDialog.propTypes = {
     currentUser: PropTypes.object.isRequired,
+    open: PropTypes.bool.isRequired,
     type: PropTypes.oneOf(Object.keys(AOTypeMap)).isRequired,
     onClose: PropTypes.func.isRequired,
     onFileSelect: PropTypes.func.isRequired,
     onNew: PropTypes.func.isRequired,
-    open: PropTypes.bool,
 }
 
 export default OpenFileDialog
