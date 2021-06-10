@@ -29,13 +29,11 @@ import { FileList } from './FileList'
 import { NameFilter } from './NameFilter'
 import { styles } from './OpenFileDialog.styles'
 import { PaginationControls } from './PaginationControls'
-import { getTranslatedString } from './utils'
+import { getTranslatedString, AO_TYPE_VISUALIZATION, AOTypeMap } from './utils'
 import { VisTypeFilter } from './VisTypeFilter'
 
-const getResourceFromType = type => `${type}s`
-
 const getQuery = type => ({
-    resource: getResourceFromType(type),
+    resource: AOTypeMap[type].apiEndpoint,
     params: ({
         sortField = 'name',
         sortDirection = 'asc',
@@ -70,7 +68,7 @@ export const OpenFileDialog = ({
     const defaultFilters = {
         searchTerm: '',
         createdBy: CREATED_BY_ALL,
-        visType: VIS_TYPE_ALL,
+        visType: 'all',
     }
 
     const [{ sortField, sortDirection }, setSorting] = useState({
@@ -164,7 +162,7 @@ export const OpenFileDialog = ({
         },
     ]
 
-    if (type === 'visualization') {
+    if (type === AO_TYPE_VISUALIZATION) {
         headers.splice(1, 0, {
             field: 'type',
             label: i18n.t('Type'),
@@ -242,8 +240,9 @@ export const OpenFileDialog = ({
                             <DataTable>
                                 <DataTableHead>
                                     <DataTableRow>
-                                        {data?.files[getResourceFromType(type)]
-                                            .length ? (
+                                        {data?.files[
+                                            AOTypeMap[type].apiEndpoint
+                                        ].length ? (
                                             headers.map(({ field, label }) => (
                                                 <DataTableColumnHeader
                                                     fixed
@@ -294,8 +293,9 @@ export const OpenFileDialog = ({
                                         </DataTableRow>
                                     )}
                                     {!loading &&
-                                        !data?.files[getResourceFromType(type)]
-                                            .length && (
+                                        !data?.files[
+                                            AOTypeMap[type].apiEndpoint
+                                        ].length > 0 && (
                                             <DataTableRow>
                                                 <DataTableCell large>
                                                     <Box minHeight="384px">
@@ -340,13 +340,13 @@ export const OpenFileDialog = ({
                                                 </DataTableCell>
                                             </DataTableRow>
                                         )}
-                                    {data?.files[getResourceFromType(type)]
+                                    {data?.files[AOTypeMap[type].apiEndpoint]
                                         .length > 0 && (
                                         <FileList
                                             type={type}
                                             data={
                                                 data.files[
-                                                    getResourceFromType(type)
+                                                    AOTypeMap[type].apiEndpoint
                                                 ]
                                             }
                                             onSelect={onFileSelect}
@@ -354,7 +354,7 @@ export const OpenFileDialog = ({
                                     )}
                                 </DataTableBody>
                             </DataTable>
-                            {data?.files[getResourceFromType(type)].length >
+                            {data?.files[AOTypeMap[type].apiEndpoint].length >
                                 0 && (
                                 <DataTableToolbar position="bottom">
                                     <div className="pagination-controls">
@@ -381,8 +381,7 @@ OpenFileDialog.defaultProps = {
 
 OpenFileDialog.propTypes = {
     currentUser: PropTypes.object.isRequired,
-    type: PropTypes.oneOf(['visualization', 'eventChart', 'eventReport', 'map'])
-        .isRequired,
+    type: PropTypes.oneOf(Object.keys(AOTypeMap)).isRequired,
     onClose: PropTypes.func.isRequired,
     onFileSelect: PropTypes.func.isRequired,
     onNew: PropTypes.func.isRequired,

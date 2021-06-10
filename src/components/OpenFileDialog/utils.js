@@ -1,5 +1,25 @@
 import i18n from '@dhis2/d2-i18n'
 
+export const AO_TYPE_VISUALIZATION = 'visualization'
+export const AO_TYPE_MAP = 'map'
+export const AO_TYPE_EVENT_CHART = 'eventChart'
+export const AO_TYPE_EVENT_REPORT = 'eventReport'
+
+export const AOTypeMap = {
+    [AO_TYPE_VISUALIZATION]: {
+        apiEndpoint: 'visualizations',
+    },
+    [AO_TYPE_MAP]: {
+        apiEndpoint: 'maps',
+    },
+    [AO_TYPE_EVENT_CHART]: {
+        apiEndpoint: 'eventCharts',
+    },
+    [AO_TYPE_EVENT_REPORT]: {
+        apiEndpoint: 'eventReports',
+    },
+}
+
 export const getTranslatedString = (type, key) => {
     let texts = {
         modalTitle: i18n.t('Open'),
