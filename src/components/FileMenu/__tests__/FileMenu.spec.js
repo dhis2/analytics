@@ -33,7 +33,7 @@ describe('The FileMenu component ', () => {
     beforeEach(() => {
         shallowFileMenu = undefined
         props = {
-            d2: {},
+            d2: { currentUser: { id: 'u1', displayName: 'Test user' } },
             fileType: 'visualization',
             fileObject: undefined,
             onDelete,
