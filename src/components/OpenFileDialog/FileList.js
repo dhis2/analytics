@@ -34,11 +34,11 @@ export const FileList = ({ type, data, onSelect }) => (
 FileList.propTypes = {
     data: PropTypes.arrayOf(
         PropTypes.shape({
-            created: PropTypes.string,
-            displayName: PropTypes.string,
-            id: PropTypes.string,
-            lastUpdated: PropTypes.string,
-            type: PropTypes.string,
+            created: PropTypes.string.isRequired,
+            displayName: PropTypes.string.isRequired,
+            id: PropTypes.string.isRequired,
+            lastUpdated: PropTypes.string.isRequired,
+            type: PropTypes.string.isRequired,
         })
     ).isRequired,
     type: PropTypes.string.isRequired,
