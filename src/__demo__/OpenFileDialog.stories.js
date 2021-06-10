@@ -14,12 +14,14 @@ const user = {
     username: 'admin',
 }
 
+const onFileSelect = id => alert(`Opening ${id}`)
+
 storiesOf('OpenFileDialog', module).add('List of visualizations', () => (
     <Provider config={configMock}>
         <OpenFileDialog
             type="visualization"
             onClose={Function.prototype}
-            onFileSelect={Function.prototype}
+            onFileSelect={onFileSelect}
             onNew={Function.prototype}
             open={true}
             currentUser={user}
@@ -31,18 +33,33 @@ storiesOf('OpenFileDialog', module).add('List of maps', () => (
         <OpenFileDialog
             type="map"
             onClose={Function.prototype}
-            onFileSelect={Function.prototype}
+            onFileSelect={onFileSelect}
             onNew={Function.prototype}
             open={true}
             currentUser={user}
         />
     </Provider>
 ))
+storiesOf('OpenFileDialog', module).add(
+    'List of a supported type without custom titles/texts',
+    () => (
+        <Provider config={configMock}>
+            <OpenFileDialog
+                type="eventChart"
+                onClose={Function.prototype}
+                onFileSelect={onFileSelect}
+                onNew={Function.prototype}
+                open={true}
+                currentUser={user}
+            />
+        </Provider>
+    )
+)
 storiesOf('OpenFileDialog', module).add('No connection', () => (
     <OpenFileDialog
         type="map"
         onClose={Function.prototype}
-        onFileSelect={Function.prototype}
+        onFileSelect={onFileSelect}
         onNew={Function.prototype}
         open={true}
         currentUser={user}
