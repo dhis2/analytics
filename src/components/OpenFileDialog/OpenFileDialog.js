@@ -173,7 +173,13 @@ export const OpenFileDialog = ({
         fieldName === sortField ? sortDirection : 'default'
 
     return (
-        <Modal large position="middle" hide={!open} onClose={onClose}>
+        <Modal
+            large
+            position="middle"
+            hide={!open}
+            onClose={onClose}
+            dataTest="open-file-dialog-modal"
+        >
             <ModalTitle>{getTranslatedString(type, 'modalTitle')}</ModalTitle>
             <ModalContent>
                 <Box minHeight="496px">
