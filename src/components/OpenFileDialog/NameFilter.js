@@ -3,7 +3,7 @@ import { Input } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
 
-export const NameFilter = ({ value, onChange }) => (
+export const NameFilter = ({ dataTest, value, onChange }) => (
     <Input
         type="search"
         placeholder={i18n.t('Filter by name')}
@@ -11,12 +11,14 @@ export const NameFilter = ({ value, onChange }) => (
         value={value}
         initialFocus={true}
         dense
+        dataTest={`${dataTest}-name-filter`}
     />
 )
 
 NameFilter.propTypes = {
+    dataTest: PropTypes.string.isRequired,
+    onChange: PropTypes.func.isRequired,
     value: PropTypes.string,
-    onChange: PropTypes.func,
 }
 
 export default NameFilter

@@ -172,13 +172,15 @@ export const OpenFileDialog = ({
     const getSortDirection = fieldName =>
         fieldName === sortField ? sortDirection : 'default'
 
+    const cypressSelector = 'open-file-dialog-modal'
+
     return (
         <Modal
             large
             position="middle"
             hide={!open}
             onClose={onClose}
-            dataTest="open-file-dialog-modal"
+            dataTest={cypressSelector}
         >
             <ModalTitle>{getTranslatedString(type, 'modalTitle')}</ModalTitle>
             <ModalContent>
@@ -186,6 +188,7 @@ export const OpenFileDialog = ({
                     <div className="search-and-filter-bar">
                         <div className="search-field-container">
                             <NameFilter
+                                dataTest={cypressSelector}
                                 value={nameFilterValue}
                                 onChange={value => {
                                     setNameFilterValue(value)
