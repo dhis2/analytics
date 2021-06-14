@@ -1,9 +1,8 @@
-import FavoritesDialog from '@dhis2/d2-ui-favorites-dialog'
 import SharingDialog from '@dhis2/d2-ui-sharing-dialog'
 import TranslationDialog from '@dhis2/d2-ui-translation-dialog'
-import { Popper } from '@dhis2/ui'
 import { shallow } from 'enzyme'
 import React from 'react'
+import { OpenFileDialog } from '../../OpenFileDialog/OpenFileDialog'
 import { DeleteDialog } from '../DeleteDialog'
 import { FileMenu } from '../FileMenu'
 import { GetLinkDialog } from '../GetLinkDialog'
@@ -34,7 +33,7 @@ describe('The FileMenu component ', () => {
     beforeEach(() => {
         shallowFileMenu = undefined
         props = {
-            d2: {},
+            d2: { currentUser: { id: 'u1', displayName: 'Test user' } },
             fileType: 'visualization',
             fileObject: undefined,
             onDelete,
@@ -51,13 +50,6 @@ describe('The FileMenu component ', () => {
 
     it('renders a button', () => {
         expect(getFileMenuComponent(props).find('button')).toHaveLength(1)
-    })
-
-    it('renders a Popper when the button is clicked', () => {
-        const fileMenuComponent = getFileMenuComponent(props)
-        fileMenuComponent.find('button').simulate('click')
-
-        expect(fileMenuComponent.find(Popper)).toHaveLength(1)
     })
 
     it('renders some enabled buttons regardless of the access settings', () => {
@@ -161,7 +153,7 @@ describe('The FileMenu component ', () => {
         ).toBe(false)
     })
 
-    it('renders the FavoritesDialog component when the Open button is clicked', () => {
+    it('renders the OpenFileDialog component when the Open button is clicked', () => {
         const fileMenuComponent = getFileMenuComponent(props)
         fileMenuComponent.find('button').simulate('click')
 
@@ -169,7 +161,7 @@ describe('The FileMenu component ', () => {
             .findWhere(n => n.prop('label') === 'Open…')
             .simulate('click')
 
-        expect(fileMenuComponent.find(FavoritesDialog)).toHaveLength(1)
+        expect(fileMenuComponent.find(OpenFileDialog)).toHaveLength(1)
     })
 
     it('renders the RenameDialog when the Rename button is clicked', () => {
@@ -320,7 +312,7 @@ describe('The FileMenu component ', () => {
             .findWhere(n => n.prop('label') === 'Save')
             .simulate('click')
 
-        expect(fileMenuComponent.find(Popper).exists()).toBe(false)
+        expect(fileMenuComponent.find(OpenFileDialog).prop('open')).toBe(false)
         expect(onSave).toHaveBeenCalled()
     })
 
@@ -332,7 +324,7 @@ describe('The FileMenu component ', () => {
             .findWhere(n => n.prop('label') === 'New')
             .simulate('click')
 
-        expect(fileMenuComponent.find(Popper).exists()).toBe(false)
+        expect(fileMenuComponent.find(OpenFileDialog).prop('open')).toBe(false)
         expect(onNew).toHaveBeenCalled()
     })
 })
