@@ -1,3 +1,10 @@
+# [18.3.0](https://github.com/dhis2/analytics/compare/v18.2.4...v18.3.0) (2021-06-14)
+
+
+### Features
+
+* OpenFileDialog component ([#919](https://github.com/dhis2/analytics/issues/919)) ([6c8d39a](https://github.com/dhis2/analytics/commit/6c8d39a4e22e6cdacfbf73da642d53ff6f21ad39))
+
 ## [18.2.4](https://github.com/dhis2/analytics/compare/v18.2.3...v18.2.4) (2021-06-08)
 
 
