@@ -712,9 +712,8 @@ export class PivotTableEngine {
                         totalCount: this.rawDataWidth,
                     }
                 }
-                const percentageTotal = this.percentageTotals[
-                    totals.columnSubtotal.row
-                ]
+                const percentageTotal =
+                    this.percentageTotals[totals.columnSubtotal.row]
                 dataFields.forEach(field => {
                     const headerIndex = this.dimensionLookup.dataHeaders[field]
                     const value = parseValue(dataRow[headerIndex])
@@ -732,9 +731,8 @@ export class PivotTableEngine {
                         totalCount: this.rawDataWidth,
                     }
                 }
-                const percentageTotal = this.percentageTotals[
-                    totals.columnTotal.row
-                ]
+                const percentageTotal =
+                    this.percentageTotals[totals.columnTotal.row]
                 dataFields.forEach(field => {
                     const headerIndex = this.dimensionLookup.dataHeaders[field]
                     const value = parseValue(dataRow[headerIndex])
@@ -770,9 +768,8 @@ export class PivotTableEngine {
                         totalCount: this.rawDataHeight,
                     }
                 }
-                const percentageTotal = this.percentageTotals[
-                    totals.rowSubtotal.column
-                ]
+                const percentageTotal =
+                    this.percentageTotals[totals.rowSubtotal.column]
                 dataFields.forEach(field => {
                     const headerIndex = this.dimensionLookup.dataHeaders[field]
                     const value = parseValue(dataRow[headerIndex])
@@ -790,9 +787,8 @@ export class PivotTableEngine {
                         totalCount: this.rawDataHeight,
                     }
                 }
-                const percentageTotal = this.percentageTotals[
-                    totals.rowTotal.column
-                ]
+                const percentageTotal =
+                    this.percentageTotals[totals.rowTotal.column]
                 dataFields.forEach(field => {
                     const headerIndex = this.dimensionLookup.dataHeaders[field]
                     const value = parseValue(dataRow[headerIndex])

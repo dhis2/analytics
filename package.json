@@ -1,6 +1,6 @@
 {
     "name": "@dhis2/analytics",
-    "version": "18.2.2",
+    "version": "18.2.4",
     "main": "./build/cjs/index.js",
     "module": "./build/es/index.js",
     "exports": {
@@ -25,15 +25,15 @@
         "start-storybook": "start-storybook --port 5000",
         "start": "yarn start-storybook",
         "test": "d2-app-scripts test",
-        "lint": "d2-style js check || d2-style text check",
-        "format": "d2-style js apply || d2-style text apply",
-        "validate-commit": "d2-style js check --staged && d2-style text check --staged",
+        "lint": "d2-style check",
+        "format": "d2-style apply",
+        "validate-commit": "d2-style check --staged",
         "validate-push": "yarn test"
     },
     "devDependencies": {
         "@dhis2/app-runtime": "^2.8.0",
         "@dhis2/cli-app-scripts": "^6.2.0",
-        "@dhis2/cli-style": "^7.3.0",
+        "@dhis2/cli-style": "^8.4.0",
         "@dhis2/d2-i18n": "^1.1.0",
         "@dhis2/ui": "^6.9.0",
         "@sambego/storybook-state": "^2.0.1",
