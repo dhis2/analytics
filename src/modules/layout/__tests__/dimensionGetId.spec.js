@@ -1,5 +1,5 @@
-import { dimensionGetId } from '../dimensionGetId'
 import { DIMENSION_PROP_ID } from '../dimension'
+import { dimensionGetId } from '../dimensionGetId'
 import { TEST_DIMENSION_1 } from '../testResources'
 
 describe('dimensionGetId', () => {

@@ -1,4 +1,3 @@
-import { isColorBright } from './isColorBright'
 import { colors } from '@dhis2/ui'
 import {
     getColorByValueFromLegendSet,
@@ -7,6 +6,7 @@ import {
     LEGEND_DISPLAY_STYLE_TEXT,
     LEGEND_DISPLAY_STYLE_FILL,
 } from '../legends'
+import { isColorBright } from './isColorBright'
 
 const getLegendSet = (engine, dxDimension) => {
     let legendSetId

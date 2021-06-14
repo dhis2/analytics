@@ -1,7 +1,7 @@
 import arrayPluck from 'd2-utilizr/lib/arrayPluck'
 import arraySort from 'd2-utilizr/lib/arraySort'
-import getStackedData from './getStackedData'
 import { isTwoCategoryChartType } from '../../../../modules/visTypes'
+import getStackedData from './getStackedData'
 import getTwoCategorySplitSerieData from './getTwoCategorySplitSerieData'
 
 const sortOrderMap = new Map([
@@ -48,14 +48,13 @@ function getTwoCategorySortedConfig(config, layout, stacked) {
                         const groupCategoryLabels =
                             config.xAxis[0].categories[groupIndex]
 
-                        sortedConfig.xAxis[0].categories[
-                            groupIndex
-                        ] = groupCategoryLabels.map(
-                            (value, index) =>
-                                groupCategoryLabels[
-                                    indexOrder[groupIndex][index]
-                                ]
-                        )
+                        sortedConfig.xAxis[0].categories[groupIndex] =
+                            groupCategoryLabels.map(
+                                (value, index) =>
+                                    groupCategoryLabels[
+                                        indexOrder[groupIndex][index]
+                                    ]
+                            )
                     }
 
                     return groupObj.map(

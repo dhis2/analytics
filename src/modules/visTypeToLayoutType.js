@@ -1,4 +1,11 @@
 import {
+    LAYOUT_TYPE_DEFAULT,
+    LAYOUT_TYPE_PIE,
+    LAYOUT_TYPE_YEAR_OVER_YEAR,
+    LAYOUT_TYPE_PIVOT_TABLE,
+    LAYOUT_TYPE_SCATTER,
+} from './layoutTypes'
+import {
     VIS_TYPE_COLUMN,
     VIS_TYPE_STACKED_COLUMN,
     VIS_TYPE_BAR,
@@ -15,13 +22,6 @@ import {
     VIS_TYPE_PIVOT_TABLE,
     VIS_TYPE_SCATTER,
 } from './visTypes'
-import {
-    LAYOUT_TYPE_DEFAULT,
-    LAYOUT_TYPE_PIE,
-    LAYOUT_TYPE_YEAR_OVER_YEAR,
-    LAYOUT_TYPE_PIVOT_TABLE,
-    LAYOUT_TYPE_SCATTER,
-} from './layoutTypes'
 
 const visTypeToLayoutType = {
     [VIS_TYPE_COLUMN]: LAYOUT_TYPE_DEFAULT,

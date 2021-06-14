@@ -1,6 +1,6 @@
 /*eslint no-unused-vars: ["error", { "ignoreRestSiblings": true }]*/
-import i18n from '../locales/index.js'
 import { colors } from '@dhis2/ui'
+import i18n from '../locales/index.js'
 
 // Font styles
 export const FONT_STYLE_VISUALIZATION_TITLE = 'visualizationTitle'
@@ -187,8 +187,8 @@ export const defaultFontStyle = {
     },
     [FONT_STYLE_LEGEND]: {
         [FONT_STYLE_OPTION_FONT]: defaultFont,
-        [FONT_STYLE_OPTION_FONT_SIZE]: getFontSizeOptions(FONT_STYLE_LEGEND)
-            .regular.value,
+        [FONT_STYLE_OPTION_FONT_SIZE]:
+            getFontSizeOptions(FONT_STYLE_LEGEND).regular.value,
         [FONT_STYLE_OPTION_BOLD]: false,
         [FONT_STYLE_OPTION_ITALIC]: false,
         [FONT_STYLE_OPTION_UNDERLINE]: false,

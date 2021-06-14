@@ -1,6 +1,6 @@
 import { DIMENSION_PROP_ITEMS } from '../dimension'
-import { TEST_DIMENSION_1 } from '../testResources'
 import { dimensionGetItems } from '../dimensionGetItems'
+import { TEST_DIMENSION_1 } from '../testResources'
 
 describe('dimensionGetItems', () => {
     it('should return the items in the dimension', () => {

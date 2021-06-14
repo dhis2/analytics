@@ -1,10 +1,10 @@
 import isObject from 'lodash/isObject'
+import { AXIS_ID_COLUMNS, AXIS_ID_ROWS, AXIS_ID_FILTERS } from './layout/axis'
 import {
     DIMENSION_ID_DATA,
     DIMENSION_ID_ORGUNIT,
     DIMENSION_ID_PERIOD,
 } from './predefinedDimensions'
-import { AXIS_ID_COLUMNS, AXIS_ID_ROWS, AXIS_ID_FILTERS } from './layout/axis'
 import {
     VIS_TYPE_YEAR_OVER_YEAR_LINE,
     VIS_TYPE_YEAR_OVER_YEAR_COLUMN,

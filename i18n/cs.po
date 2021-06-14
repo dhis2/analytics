@@ -129,6 +129,7 @@ msgstr "Smazat {{fileType}}"
 msgid ""
 "This {{fileType}} and related interpretations will be deleted. Continue?"
 msgstr ""
+"Tento {{fileType}} a související interpretace budou smazány. Pokračovat?"
 
 msgid "Cancel"
 msgstr "Zrušit"

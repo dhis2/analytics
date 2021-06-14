@@ -1,6 +1,6 @@
-import { layoutGetAllDimensions } from './layoutGetAllDimensions'
-import { dimensionGetItemIds } from './dimensionGetItemIds'
 import { dimensionGetId } from './dimensionGetId'
+import { dimensionGetItemIds } from './dimensionGetItemIds'
+import { layoutGetAllDimensions } from './layoutGetAllDimensions'
 
 export const layoutGetDimensionIdItemIdsObject = layout =>
     layoutGetAllDimensions(layout).reduce((obj, dimension) => {

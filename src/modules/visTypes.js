@@ -1,4 +1,3 @@
-import i18n from '../locales/index.js'
 import {
     IconTable24,
     IconVisualizationArea24,
@@ -16,6 +15,7 @@ import {
     IconVisualizationScatter24,
     IconVisualizationSingleValue24,
 } from '@dhis2/ui'
+import i18n from '../locales/index.js'
 export const VIS_TYPE_COLUMN = 'COLUMN'
 export const VIS_TYPE_STACKED_COLUMN = 'STACKED_COLUMN'
 export const VIS_TYPE_BAR = 'BAR'

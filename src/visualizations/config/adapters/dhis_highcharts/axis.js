@@ -1,8 +1,6 @@
-import objectClean from 'd2-utilizr/lib/objectClean'
 import isNumeric from 'd2-utilizr/lib/isNumeric'
 import isString from 'd2-utilizr/lib/isString'
-
-import { isVerticalType } from '../../../../modules/visTypes'
+import objectClean from 'd2-utilizr/lib/objectClean'
 import {
     FONT_STYLE_AXIS_LABELS,
     FONT_STYLE_REGRESSION_LINE_LABEL,
@@ -16,8 +14,9 @@ import {
     TEXT_ALIGN_RIGHT,
     mergeFontStyleWithDefault,
 } from '../../../../modules/fontStyle'
-import { getTextAlignOption } from './getTextAlignOption'
+import { isVerticalType } from '../../../../modules/visTypes'
 import getFormatter from './getFormatter'
+import { getTextAlignOption } from './getTextAlignOption'
 
 const DEFAULT_MIN_VALUE = 0
 const DEFAULT_GRIDLINE_COLOR = '#F1F1F1'

@@ -1,7 +1,7 @@
 import fixtures from '../../../__fixtures__/fixtures'
 import DataEngineMock from '../__mocks__/DataEngine'
-import AnalyticsRequest from '../AnalyticsRequest'
 import AnalyticsAggregate from '../AnalyticsAggregate'
+import AnalyticsRequest from '../AnalyticsRequest'
 
 const debugSqlFixture = `select de.name as de_name, de.uid as de_uid, de.dataelementid as de_id, pe.startdate as
 start_date, pe.enddate as end_date, pt.name as pt_name, ou.name as ou_name, ou.uid as ou_uid, ou.organisationunitid as

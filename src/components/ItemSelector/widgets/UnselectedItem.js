@@ -1,18 +1,19 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import cx from 'classnames'
-
-import ItemIcon from './ItemIcon'
 import { colors } from '@dhis2/ui'
+import cx from 'classnames'
+import PropTypes from 'prop-types'
+import React from 'react'
+import ItemIcon from './ItemIcon'
 import styles from './styles/UnselectedItem.style'
 
-const onClickWrapper = ({ id, index, onClick }) => event =>
-    onClick({
-        isCtrlPressed: event.metaKey || event.ctrlKey,
-        isShiftPressed: event.shiftKey,
-        index,
-        id,
-    })
+const onClickWrapper =
+    ({ id, index, onClick }) =>
+    event =>
+        onClick({
+            isCtrlPressed: event.metaKey || event.ctrlKey,
+            isShiftPressed: event.shiftKey,
+            index,
+            id,
+        })
 
 export const Item = ({ name, highlighted, ...rest }) => {
     return (

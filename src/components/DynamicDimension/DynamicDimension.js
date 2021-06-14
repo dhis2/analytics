@@ -1,10 +1,9 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import i18n from '../../locales/index.js'
 import { useDataEngine } from '@dhis2/app-runtime'
-
-import ItemSelector from './ItemSelector'
+import PropTypes from 'prop-types'
+import React from 'react'
 import { apiFetchItemsByDimension } from '../../api/dimensions'
+import i18n from '../../locales/index.js'
+import ItemSelector from './ItemSelector'
 
 export const DynamicDimension = ({
     dimensionId,

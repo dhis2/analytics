@@ -1,5 +1,5 @@
-import { renderValue } from '../../../../../modules/pivotTable/renderValue'
 import { VALUE_TYPE_TEXT } from '../../../../../modules/pivotTable/pivotTableConstants'
+import { renderValue } from '../../../../../modules/pivotTable/renderValue'
 
 export default function (value, layout, metaData, extraOptions) {
     const valueType = metaData.items[metaData.dimensions.dx[0]].valueType

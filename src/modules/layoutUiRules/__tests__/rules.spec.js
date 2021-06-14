@@ -1,14 +1,14 @@
-import {
-    testResourceRules,
-    testResourceRequiredProps,
-    testResourceAllRuleProps,
-} from '../rules'
 import { ALL_AXIS_IDS } from '../../layout/axis'
 import {
     DIMENSION_ID_DATA,
     DIMENSION_ID_ORGUNIT,
     DIMENSION_ID_PERIOD,
 } from '../../predefinedDimensions'
+import {
+    testResourceRules,
+    testResourceRequiredProps,
+    testResourceAllRuleProps,
+} from '../rules'
 
 // Consts
 const lockableDims = [

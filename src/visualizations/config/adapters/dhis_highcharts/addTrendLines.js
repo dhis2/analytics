@@ -1,14 +1,13 @@
 import arrayContains from 'd2-utilizr/lib/arrayContains'
 import { rgb } from 'd3-color'
 import i18n from '../../../../locales/index.js'
-
-import { colorSets, COLOR_SET_PATTERNS } from '../../../util/colors/colorSets'
-import getStackedData from './getStackedData'
 import {
     VIS_TYPE_GAUGE,
     VIS_TYPE_PIE,
     isTwoCategoryChartType,
 } from '../../../../modules/visTypes'
+import { colorSets, COLOR_SET_PATTERNS } from '../../../util/colors/colorSets'
+import getStackedData from './getStackedData'
 
 const DEFAULT_TRENDLINE = {
     type: 'spline',

@@ -1,8 +1,8 @@
-import React from 'react'
 import PropTypes from 'prop-types'
+import React from 'react'
+import getFilterText from '../../visualizations/util/getFilterText'
 import { usePivotTableEngine } from './PivotTableEngineContext'
 import { PivotTableTitleRow } from './PivotTableTitleRow'
-import getFilterText from '../../visualizations/util/getFilterText'
 
 export const PivotTableTitleRows = ({ clippingResult, width }) => {
     const engine = usePivotTableEngine()
