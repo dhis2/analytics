@@ -11,13 +11,13 @@ export const NameFilter = ({ dataTest, value, onChange }) => (
         value={value}
         initialFocus={true}
         dense
-        dataTest={`${dataTest}-name-filter`}
+        dataTest={dataTest}
     />
 )
 
 NameFilter.propTypes = {
-    dataTest: PropTypes.string.isRequired,
     onChange: PropTypes.func.isRequired,
+    dataTest: PropTypes.string,
     value: PropTypes.string,
 }
 

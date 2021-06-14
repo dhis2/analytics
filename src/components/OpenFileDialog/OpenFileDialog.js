@@ -188,7 +188,7 @@ export const OpenFileDialog = ({
                     <div className="search-and-filter-bar">
                         <div className="search-field-container">
                             <NameFilter
-                                dataTest={cypressSelector}
+                                dataTest={`${cypressSelector}-name-filter`}
                                 value={nameFilterValue}
                                 onChange={value => {
                                     setNameFilterValue(value)
