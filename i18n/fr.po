@@ -1,20 +1,20 @@
 # 
 # Translators:
-# Yao Selom Saka <ysaka@hispwca.org>, 2020
 # Edem Kossi <ekossi@hispwca.org>, 2021
-# Karoline Tufte Lien <karoline@dhis2.org>, 2021
+# Bram Piot <bram.piot@gmail.com>, 2021
+# Yayra Gomado <ygomado@hispwca.org>, 2021
 # phil_dhis2, 2021
 # Viktor Varland <viktor@dhis2.org>, 2021
-# Bram Piot <bram.piot@gmail.com>, 2021
+# Karoline Tufte Lien <karoline@dhis2.org>, 2021
+# Yao Selom Saka <ysaka@hispwca.org>, 2021
 # Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2021
-# Yayra Gomado <ygomado@hispwca.org>, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2021-06-10T07:19:35.004Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Yayra Gomado <ygomado@hispwca.org>, 2021\n"
+"Last-Translator: Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2021\n"
 "Language-Team: French (https://www.transifex.com/hisp-uio/teams/100509/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -204,31 +204,31 @@ msgid "Select all"
 msgstr "Sélectionner tout"
 
 msgid "Created by"
-msgstr ""
+msgstr "Créé par"
 
 msgid "Anyone"
-msgstr ""
+msgstr "Toute personne"
 
 msgid "Only you"
 msgstr ""
 
 msgid "Others"
-msgstr ""
+msgstr "Autres"
 
 msgid "Filter by name"
-msgstr ""
+msgstr "Filtrer par nom"
 
 msgid "Created"
-msgstr ""
+msgstr "Créé"
 
 msgid "Last updated"
-msgstr ""
+msgstr "Dernière mise à jour"
 
 msgid "Type"
-msgstr ""
+msgstr "Type"
 
 msgid "Clear filters"
-msgstr ""
+msgstr "Effacer les filtres"
 
 msgid "{{firstItemIndex}}-{{lastItemIndex}} of {{totalNumberOfItems}}"
 msgstr ""
@@ -237,7 +237,7 @@ msgid "All charts"
 msgstr ""
 
 msgid "Open"
-msgstr ""
+msgstr "Ouvrir"
 
 msgid "Couldn't load items"
 msgstr ""
@@ -256,7 +256,7 @@ msgid ""
 msgstr ""
 
 msgid "Create new"
-msgstr ""
+msgstr "Créer nouveau"
 
 msgid "Open a visualization"
 msgstr ""

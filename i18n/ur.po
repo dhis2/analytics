@@ -198,7 +198,7 @@ msgid "Select all"
 msgstr "تمام کو چنو"
 
 msgid "Created by"
-msgstr ""
+msgstr "تخلیق کیا"
 
 msgid "Anyone"
 msgstr ""
@@ -207,19 +207,19 @@ msgid "Only you"
 msgstr ""
 
 msgid "Others"
-msgstr ""
+msgstr "دیگر"
 
 msgid "Filter by name"
-msgstr ""
+msgstr "فلٹر برائے نام"
 
 msgid "Created"
-msgstr ""
+msgstr "تخلیق"
 
 msgid "Last updated"
-msgstr ""
+msgstr "آخری اپ ڈیٹ"
 
 msgid "Type"
-msgstr ""
+msgstr "ٹائپ"
 
 msgid "Clear filters"
 msgstr ""
@@ -231,7 +231,7 @@ msgid "All charts"
 msgstr ""
 
 msgid "Open"
-msgstr ""
+msgstr "کھلا"
 
 msgid "Couldn't load items"
 msgstr ""

@@ -1,9 +1,9 @@
 # 
 # Translators:
 # Carwoto Sa'an <carwoto@gmail.com>, 2021
+# phil_dhis2, 2021
 # Guardian Sanjaya <gysanjaya@ugm.ac.id>, 2021
 # Aprisa Chrysantina <aprisa.chrysantina@gmail.com>, 2021
-# phil_dhis2, 2021
 # Viktor Varland <viktor@dhis2.org>, 2021
 # 
 msgid ""
@@ -201,7 +201,7 @@ msgid "Select all"
 msgstr ""
 
 msgid "Created by"
-msgstr ""
+msgstr "Dibuat oleh"
 
 msgid "Anyone"
 msgstr ""
@@ -210,22 +210,22 @@ msgid "Only you"
 msgstr ""
 
 msgid "Others"
-msgstr ""
+msgstr "Yang lain"
 
 msgid "Filter by name"
 msgstr ""
 
 msgid "Created"
-msgstr ""
+msgstr "Dibuat"
 
 msgid "Last updated"
-msgstr ""
+msgstr "Terakhir diperbarui"
 
 msgid "Type"
-msgstr ""
+msgstr "Tipe"
 
 msgid "Clear filters"
-msgstr ""
+msgstr "Hapus penyaring"
 
 msgid "{{firstItemIndex}}-{{lastItemIndex}} of {{totalNumberOfItems}}"
 msgstr ""
@@ -234,7 +234,7 @@ msgid "All charts"
 msgstr ""
 
 msgid "Open"
-msgstr ""
+msgstr "Buka"
 
 msgid "Couldn't load items"
 msgstr ""

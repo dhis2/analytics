@@ -197,31 +197,31 @@ msgid "Select all"
 msgstr "Барчасини танлаш"
 
 msgid "Created by"
-msgstr ""
+msgstr "Томонидан яратилган"
 
 msgid "Anyone"
-msgstr ""
+msgstr "Кимдир"
 
 msgid "Only you"
 msgstr ""
 
 msgid "Others"
-msgstr ""
+msgstr "Бошқалар"
 
 msgid "Filter by name"
-msgstr ""
+msgstr "Номи бўйича фильтрлаш"
 
 msgid "Created"
-msgstr ""
+msgstr "Яратилган"
 
 msgid "Last updated"
-msgstr ""
+msgstr "Охирги янгиланган"
 
 msgid "Type"
-msgstr ""
+msgstr "Тури"
 
 msgid "Clear filters"
-msgstr ""
+msgstr "Фильтрларни тозалаш"
 
 msgid "{{firstItemIndex}}-{{lastItemIndex}} of {{totalNumberOfItems}}"
 msgstr ""
@@ -230,7 +230,7 @@ msgid "All charts"
 msgstr ""
 
 msgid "Open"
-msgstr ""
+msgstr "Очиқ"
 
 msgid "Couldn't load items"
 msgstr ""
@@ -249,7 +249,7 @@ msgid ""
 msgstr ""
 
 msgid "Create new"
-msgstr ""
+msgstr "Янгисини яратиш"
 
 msgid "Open a visualization"
 msgstr ""
