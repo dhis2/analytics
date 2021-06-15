@@ -1,3 +1,24 @@
+## [18.3.1](https://github.com/dhis2/analytics/compare/v18.3.0...v18.3.1) (2021-06-14)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([6c925ca](https://github.com/dhis2/analytics/commit/6c925ca6f03905e96b6fd5fe949d7e1dffde05b4))
+
+# [18.3.0](https://github.com/dhis2/analytics/compare/v18.2.4...v18.3.0) (2021-06-14)
+
+
+### Features
+
+* OpenFileDialog component ([#919](https://github.com/dhis2/analytics/issues/919)) ([6c8d39a](https://github.com/dhis2/analytics/commit/6c8d39a4e22e6cdacfbf73da642d53ff6f21ad39))
+
+## [18.2.4](https://github.com/dhis2/analytics/compare/v18.2.3...v18.2.4) (2021-06-08)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([63e45b2](https://github.com/dhis2/analytics/commit/63e45b2a077dc8fa00bb6e81049b0f4581a01553))
+
 ## [18.2.3](https://github.com/dhis2/analytics/compare/v18.2.2...v18.2.3) (2021-06-08)
 
 
