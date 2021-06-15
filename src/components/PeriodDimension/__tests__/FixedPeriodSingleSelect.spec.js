@@ -27,4 +27,3 @@ describe('The Fixed Period Single Select component', () => {
         expect(wrapper).toMatchSnapshot()
     })
 })
-	
