@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import styles from './styles/Filter.style'
 
-export const Filter = ({
+const Filter = ({
     text,
     onChange,
     onClear,

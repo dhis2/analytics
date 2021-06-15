@@ -4,7 +4,7 @@ import React from 'react'
 import i18n from '../../../locales/index.js'
 import { styles } from './styles/RecommendedIcon.style'
 
-export const RecommendedIcon = ({ isRecommended, dataTest }) =>
+const RecommendedIcon = ({ isRecommended, dataTest }) =>
     isRecommended ? (
         <Tooltip
             content={i18n.t('Dimension recommended with selected data')}

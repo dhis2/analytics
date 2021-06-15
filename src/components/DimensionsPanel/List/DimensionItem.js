@@ -8,7 +8,7 @@ import OptionsButton from './OptionsButton'
 import RecommendedIcon from './RecommendedIcon'
 import { styles } from './styles/DimensionItem.style'
 
-export class DimensionItem extends Component {
+export class DimensionItemInternal extends Component {
     state = { mouseOver: false }
 
     onOptionsClick = (id, ref) => event =>
@@ -119,7 +119,7 @@ export class DimensionItem extends Component {
     }
 }
 
-DimensionItem.propTypes = {
+DimensionItemInternal.propTypes = {
     id: PropTypes.string.isRequired,
     isSelected: PropTypes.bool.isRequired, // XXX
     name: PropTypes.string.isRequired,
@@ -133,7 +133,7 @@ DimensionItem.propTypes = {
     onOptionsClick: PropTypes.func,
 }
 
-DimensionItem.defaultProps = {
+DimensionItemInternal.defaultProps = {
     isDeactivated: false,
     isRecommended: false,
     isSelected: false,
@@ -143,4 +143,4 @@ DimensionItem.defaultProps = {
     style: {},
 }
 
-export default DimensionItem
+export default DimensionItemInternal
