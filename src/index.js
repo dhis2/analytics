@@ -4,7 +4,6 @@ import './locales'
 export { default as DataDimension } from './components/DataDimension/DataDimension'
 
 export { default as PeriodDimension } from './components/PeriodDimension/PeriodDimension'
-export { default as FixedPeriodSelect } from './components/PeriodDimension/FixedPeriodSelect'
 
 export { default as OrgUnitDimension } from './components/OrgUnitDimension/OrgUnitDimension'
 
@@ -13,8 +12,6 @@ export { default as DynamicDimension } from './components/DynamicDimension/Dynam
 export { default as DimensionsPanel } from './components/DimensionsPanel/DimensionsPanel'
 export { default as DimensionItem } from './components/DimensionsPanel/List/DimensionItem'
 export { default as DimensionFilter } from './components/Filter/Filter'
-
-export { default as ItemSelector } from './components/ItemSelector/ItemSelector'
 
 export { default as DimensionMenu } from './components/DimensionMenu'
 
