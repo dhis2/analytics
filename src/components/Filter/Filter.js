@@ -3,14 +3,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import styles from './styles/Filter.style'
 
-const Filter = ({
-    text,
-    onChange,
-    onClear,
-    placeholder,
-    type,
-    dataTest,
-}) => (
+const Filter = ({ text, onChange, onClear, placeholder, type, dataTest }) => (
     <div className="container">
         <InputField
             placeholder={placeholder}
