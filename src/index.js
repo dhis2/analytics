@@ -22,6 +22,8 @@ export { default as PivotTable } from './components/PivotTable/PivotTable'
 
 export { default as FileMenu } from './components/FileMenu/FileMenu'
 
+export { default as VisTypeIcon } from './components/VisTypeIcon'
+
 // Api
 
 export { default as Analytics } from './api/analytics/Analytics'
