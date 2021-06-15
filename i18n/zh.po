@@ -200,109 +200,109 @@ msgid "Select all"
 msgstr "全选"
 
 msgid "Created by"
-msgstr ""
+msgstr "创建人"
 
 msgid "Anyone"
-msgstr ""
+msgstr "任何人"
 
 msgid "Only you"
-msgstr ""
+msgstr "只有你"
 
 msgid "Others"
-msgstr ""
+msgstr "其它"
 
 msgid "Filter by name"
-msgstr ""
+msgstr "按名称过滤"
 
 msgid "Created"
-msgstr ""
+msgstr "已创建"
 
 msgid "Last updated"
-msgstr ""
+msgstr "上次更新"
 
 msgid "Type"
-msgstr ""
+msgstr "类型"
 
 msgid "Clear filters"
-msgstr ""
+msgstr "清除过滤器"
 
 msgid "{{firstItemIndex}}-{{lastItemIndex}} of {{totalNumberOfItems}}"
-msgstr ""
+msgstr "{{firstItemIndex}}-{{lastItemIndex}} 的 {{totalNumberOfItems}}"
 
 msgid "All charts"
-msgstr ""
+msgstr "所有图表"
 
 msgid "Open"
-msgstr ""
+msgstr "开放"
 
 msgid "Couldn't load items"
-msgstr ""
+msgstr "无法加载项目"
 
 msgid ""
 "There was a problem loading items. Try again or contact your system "
 "administrator."
-msgstr ""
+msgstr "加载项目时出现问题。重试或联系您的系统管理员。"
 
 msgid "No items found. Create a new to get started."
-msgstr ""
+msgstr "未找到任何项目。创建一个新的开始。"
 
 msgid ""
 "No items found. Try adjusting your search or filter options to find what "
 "you're looking for."
-msgstr ""
+msgstr "未找到任何项目。尝试调整您的搜索或过滤选项以找到您要查找的内容。"
 
 msgid "Create new"
-msgstr ""
+msgstr "新建"
 
 msgid "Open a visualization"
-msgstr ""
+msgstr "打开可视化"
 
 msgid "Loading visualizations"
-msgstr ""
+msgstr "加载可视化"
 
 msgid "Couldn't load visualizations"
-msgstr ""
+msgstr "无法加载可视化"
 
 msgid ""
 "There was a problem loading visualizations. Try again or contact your system"
 " administrator."
-msgstr ""
+msgstr "加载可视化时出现问题。重试或联系您的系统管理员。"
 
 msgid "No visualizations found. Click New visualization to get started."
-msgstr ""
+msgstr "未找到可视化效果。单击新建可视化开始。"
 
 msgid ""
 "No visualizations found. Try adjusting your search or filter options to find"
 " what you're looking for."
-msgstr ""
+msgstr "未找到可视化效果。尝试调整您的搜索或过滤选项以找到您要查找的内容。"
 
 msgid "New visualization"
-msgstr ""
+msgstr "新的可视化"
 
 msgid "Open a map"
-msgstr ""
+msgstr "打开地图"
 
 msgid "Loading maps"
-msgstr ""
+msgstr "加载地图"
 
 msgid "Couldn't load maps"
-msgstr ""
+msgstr "无法加载地图"
 
 msgid ""
 "There was a problem loading maps. Try again or contact your system "
 "administrator."
-msgstr ""
+msgstr "加载地图时出现问题。重试或联系您的系统管理员。"
 
 msgid "No maps found. Click New map to get started."
-msgstr ""
+msgstr "未找到地图。单击新地图开始。"
 
 msgid ""
 "No maps found. Try adjusting your search or filter options to find what "
 "you're looking for."
-msgstr ""
+msgstr "未找到地图。尝试调整您的搜索或过滤选项以找到您要查找的内容。"
 
 msgid "New map"
-msgstr ""
+msgstr "新地图"
 
 msgid "Period type"
 msgstr "周期类型"
@@ -740,10 +740,10 @@ msgid "{{percentage}}% of total y values"
 msgstr "占总y值的{{percentage}}％"
 
 msgid "{{thresholdFactor}} × IQR Q1"
-msgstr "{{thresholdFactor}}×IQR Q1"
+msgstr "{{thresholdFactor}} × IQR Q1"
 
 msgid "{{thresholdFactor}} × IQR Q3"
-msgstr "{{thresholdFactor}}×IQR Q3"
+msgstr "{{thresholdFactor}} × IQR Q3"
 
 msgid "{{thresholdFactor}} × Modified Z-score low"
 msgstr "{{thresholdFactor}}×修正的Z分数低值"
@@ -890,7 +890,7 @@ msgstr "轴{{axisId}}"
 
 msgid "{{count}} items"
 msgid_plural "{{count}} items"
-msgstr[0] ""
+msgstr[0] "{{count}} 个条目"
 
 msgid "Reset zoom"
 msgstr "重设缩放"

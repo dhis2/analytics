@@ -197,7 +197,7 @@ msgid "Select all"
 msgstr "انتخاب همه"
 
 msgid "Created by"
-msgstr ""
+msgstr "ایجاد شده توسط"
 
 msgid "Anyone"
 msgstr ""
@@ -206,19 +206,19 @@ msgid "Only you"
 msgstr ""
 
 msgid "Others"
-msgstr ""
+msgstr "دیگران"
 
 msgid "Filter by name"
-msgstr ""
+msgstr "فلتر با اسم"
 
 msgid "Created"
-msgstr ""
+msgstr "ایجاد شده"
 
 msgid "Last updated"
-msgstr ""
+msgstr "تجدید آخیر"
 
 msgid "Type"
-msgstr ""
+msgstr "نمونه/ډول"
 
 msgid "Clear filters"
 msgstr ""
@@ -230,7 +230,7 @@ msgid "All charts"
 msgstr ""
 
 msgid "Open"
-msgstr ""
+msgstr "باز کردن"
 
 msgid "Couldn't load items"
 msgstr ""

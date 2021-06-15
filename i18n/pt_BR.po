@@ -207,19 +207,19 @@ msgid "Only you"
 msgstr ""
 
 msgid "Others"
-msgstr ""
+msgstr "Outros"
 
 msgid "Filter by name"
-msgstr ""
+msgstr "Filtrar por nome"
 
 msgid "Created"
 msgstr ""
 
 msgid "Last updated"
-msgstr ""
+msgstr "Última actualização"
 
 msgid "Type"
-msgstr ""
+msgstr "Tipo"
 
 msgid "Clear filters"
 msgstr ""

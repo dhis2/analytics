@@ -198,7 +198,7 @@ msgid "Select all"
 msgstr "Välj alla"
 
 msgid "Created by"
-msgstr ""
+msgstr "Skapad av"
 
 msgid "Anyone"
 msgstr ""
@@ -210,19 +210,19 @@ msgid "Others"
 msgstr ""
 
 msgid "Filter by name"
-msgstr ""
+msgstr "Filtrera efter namn"
 
 msgid "Created"
-msgstr ""
+msgstr "Skapad"
 
 msgid "Last updated"
 msgstr ""
 
 msgid "Type"
-msgstr ""
+msgstr "Typ"
 
 msgid "Clear filters"
-msgstr ""
+msgstr "Rensa filter"
 
 msgid "{{firstItemIndex}}-{{lastItemIndex}} of {{totalNumberOfItems}}"
 msgstr ""
@@ -231,7 +231,7 @@ msgid "All charts"
 msgstr ""
 
 msgid "Open"
-msgstr ""
+msgstr "Öppen"
 
 msgid "Couldn't load items"
 msgstr ""
@@ -250,7 +250,7 @@ msgid ""
 msgstr ""
 
 msgid "Create new"
-msgstr ""
+msgstr "Skapa ny"
 
 msgid "Open a visualization"
 msgstr ""

@@ -197,7 +197,7 @@ msgid "Select all"
 msgstr "Select all"
 
 msgid "Created by"
-msgstr ""
+msgstr "Created by"
 
 msgid "Anyone"
 msgstr ""
@@ -209,7 +209,7 @@ msgid "Others"
 msgstr ""
 
 msgid "Filter by name"
-msgstr ""
+msgstr "Filter by name"
 
 msgid "Created"
 msgstr ""
@@ -230,7 +230,7 @@ msgid "All charts"
 msgstr ""
 
 msgid "Open"
-msgstr ""
+msgstr "Open"
 
 msgid "Couldn't load items"
 msgstr ""

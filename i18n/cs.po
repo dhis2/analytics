@@ -198,31 +198,31 @@ msgid "Select all"
 msgstr "Vybrat vše"
 
 msgid "Created by"
-msgstr ""
+msgstr "Vytvořil"
 
 msgid "Anyone"
-msgstr ""
+msgstr "Kdokoliv"
 
 msgid "Only you"
 msgstr ""
 
 msgid "Others"
-msgstr ""
+msgstr "Ostatní"
 
 msgid "Filter by name"
-msgstr ""
+msgstr "Filtrovat podle názvu"
 
 msgid "Created"
-msgstr ""
+msgstr "Vytvořeno"
 
 msgid "Last updated"
-msgstr ""
+msgstr "Naposledy aktualizováno"
 
 msgid "Type"
-msgstr ""
+msgstr "Typ"
 
 msgid "Clear filters"
-msgstr ""
+msgstr "Vymazat filtry"
 
 msgid "{{firstItemIndex}}-{{lastItemIndex}} of {{totalNumberOfItems}}"
 msgstr ""
@@ -231,7 +231,7 @@ msgid "All charts"
 msgstr ""
 
 msgid "Open"
-msgstr ""
+msgstr "Otevřít"
 
 msgid "Couldn't load items"
 msgstr ""
@@ -250,7 +250,7 @@ msgid ""
 msgstr ""
 
 msgid "Create new"
-msgstr ""
+msgstr "Vytvořit nový"
 
 msgid "Open a visualization"
 msgstr ""

@@ -198,31 +198,31 @@ msgid "Select all"
 msgstr "Velg alt"
 
 msgid "Created by"
-msgstr ""
+msgstr "Opprettet av"
 
 msgid "Anyone"
-msgstr ""
+msgstr "Hvem som helst"
 
 msgid "Only you"
 msgstr ""
 
 msgid "Others"
-msgstr ""
+msgstr "Andre"
 
 msgid "Filter by name"
-msgstr ""
+msgstr "Filtrer etter navn"
 
 msgid "Created"
-msgstr ""
+msgstr "Opprettet"
 
 msgid "Last updated"
-msgstr ""
+msgstr "Sist oppdatert"
 
 msgid "Type"
-msgstr ""
+msgstr "Type"
 
 msgid "Clear filters"
-msgstr ""
+msgstr "Tøm filtre"
 
 msgid "{{firstItemIndex}}-{{lastItemIndex}} of {{totalNumberOfItems}}"
 msgstr ""
@@ -231,7 +231,7 @@ msgid "All charts"
 msgstr ""
 
 msgid "Open"
-msgstr ""
+msgstr "Åpne"
 
 msgid "Couldn't load items"
 msgstr ""
@@ -250,7 +250,7 @@ msgid ""
 msgstr ""
 
 msgid "Create new"
-msgstr ""
+msgstr "Opprett ny"
 
 msgid "Open a visualization"
 msgstr ""

@@ -198,7 +198,7 @@ msgid "Select all"
 msgstr "ټول غوره یا انتخاب کړئ"
 
 msgid "Created by"
-msgstr ""
+msgstr "لخوا ایجاد یا رامنځ ته شوی"
 
 msgid "Anyone"
 msgstr ""
@@ -210,16 +210,16 @@ msgid "Others"
 msgstr ""
 
 msgid "Filter by name"
-msgstr ""
+msgstr "د نوم له مخې یې فیلټر کړئ"
 
 msgid "Created"
-msgstr ""
+msgstr "ایجاد شوی دی"
 
 msgid "Last updated"
-msgstr ""
+msgstr "د وروستي ځل لپاره تجدید شوې"
 
 msgid "Type"
-msgstr ""
+msgstr "نمونه/ډول"
 
 msgid "Clear filters"
 msgstr ""
@@ -231,7 +231,7 @@ msgid "All charts"
 msgstr ""
 
 msgid "Open"
-msgstr ""
+msgstr "خلاص یې کړئ"
 
 msgid "Couldn't load items"
 msgstr ""

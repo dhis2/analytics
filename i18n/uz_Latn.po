@@ -197,10 +197,10 @@ msgid "Select all"
 msgstr "Barchasini tanlash"
 
 msgid "Created by"
-msgstr ""
+msgstr "Томонидан яратилган"
 
 msgid "Anyone"
-msgstr ""
+msgstr "Kimdir"
 
 msgid "Only you"
 msgstr ""
@@ -209,19 +209,19 @@ msgid "Others"
 msgstr ""
 
 msgid "Filter by name"
-msgstr ""
+msgstr "Nomi boʼyicha filtrlash"
 
 msgid "Created"
-msgstr ""
+msgstr "Yaratilgan"
 
 msgid "Last updated"
-msgstr ""
+msgstr "Oxirgi yangilangan"
 
 msgid "Type"
-msgstr ""
+msgstr "Turi"
 
 msgid "Clear filters"
-msgstr ""
+msgstr "Filtrlarni tozalash"
 
 msgid "{{firstItemIndex}}-{{lastItemIndex}} of {{totalNumberOfItems}}"
 msgstr ""
@@ -230,7 +230,7 @@ msgid "All charts"
 msgstr ""
 
 msgid "Open"
-msgstr ""
+msgstr "Ochiq"
 
 msgid "Couldn't load items"
 msgstr ""
@@ -249,7 +249,7 @@ msgid ""
 msgstr ""
 
 msgid "Create new"
-msgstr ""
+msgstr "Yangisini yaratish"
 
 msgid "Open a visualization"
 msgstr ""

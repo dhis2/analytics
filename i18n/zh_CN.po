@@ -198,31 +198,31 @@ msgid "Select all"
 msgstr "全选"
 
 msgid "Created by"
-msgstr ""
+msgstr "创建自"
 
 msgid "Anyone"
-msgstr ""
+msgstr "任何人"
 
 msgid "Only you"
 msgstr ""
 
 msgid "Others"
-msgstr ""
+msgstr "其它"
 
 msgid "Filter by name"
-msgstr ""
+msgstr "按名称过滤"
 
 msgid "Created"
-msgstr ""
+msgstr "已创建"
 
 msgid "Last updated"
-msgstr ""
+msgstr "上次更新"
 
 msgid "Type"
-msgstr ""
+msgstr "类型"
 
 msgid "Clear filters"
-msgstr ""
+msgstr "清除过滤器"
 
 msgid "{{firstItemIndex}}-{{lastItemIndex}} of {{totalNumberOfItems}}"
 msgstr ""
@@ -231,7 +231,7 @@ msgid "All charts"
 msgstr ""
 
 msgid "Open"
-msgstr ""
+msgstr "打开"
 
 msgid "Couldn't load items"
 msgstr ""
@@ -250,7 +250,7 @@ msgid ""
 msgstr ""
 
 msgid "Create new"
-msgstr ""
+msgstr "新建"
 
 msgid "Open a visualization"
 msgstr ""

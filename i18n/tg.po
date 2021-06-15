@@ -207,19 +207,19 @@ msgid "Only you"
 msgstr ""
 
 msgid "Others"
-msgstr ""
+msgstr "Дигарҳо"
 
 msgid "Filter by name"
-msgstr ""
+msgstr "Филтркунӣ аз рӯи ном"
 
 msgid "Created"
 msgstr ""
 
 msgid "Last updated"
-msgstr ""
+msgstr "Навсозии охирин"
 
 msgid "Type"
-msgstr ""
+msgstr "Навъ"
 
 msgid "Clear filters"
 msgstr ""

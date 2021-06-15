@@ -199,7 +199,7 @@ msgid "Select all"
 msgstr "Вибрати усе"
 
 msgid "Created by"
-msgstr ""
+msgstr "Створено"
 
 msgid "Anyone"
 msgstr ""
@@ -211,16 +211,16 @@ msgid "Others"
 msgstr ""
 
 msgid "Filter by name"
-msgstr ""
+msgstr "Відфільтрувати за іменем"
 
 msgid "Created"
-msgstr ""
+msgstr "Створено"
 
 msgid "Last updated"
-msgstr ""
+msgstr "Останнє оновлення"
 
 msgid "Type"
-msgstr ""
+msgstr "Тип"
 
 msgid "Clear filters"
 msgstr ""
@@ -232,7 +232,7 @@ msgid "All charts"
 msgstr ""
 
 msgid "Open"
-msgstr ""
+msgstr "Відкрити"
 
 msgid "Couldn't load items"
 msgstr ""

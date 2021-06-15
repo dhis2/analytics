@@ -197,10 +197,10 @@ msgid "Select all"
 msgstr ""
 
 msgid "Created by"
-msgstr ""
+msgstr "تم الإنشاء بواسطة"
 
 msgid "Anyone"
-msgstr ""
+msgstr "أي شخص"
 
 msgid "Only you"
 msgstr ""
@@ -212,10 +212,10 @@ msgid "Filter by name"
 msgstr ""
 
 msgid "Created"
-msgstr ""
+msgstr "تم الإنشاء"
 
 msgid "Last updated"
-msgstr ""
+msgstr "آخر تحديث"
 
 msgid "Type"
 msgstr ""
@@ -230,7 +230,7 @@ msgid "All charts"
 msgstr ""
 
 msgid "Open"
-msgstr ""
+msgstr "فتح"
 
 msgid "Couldn't load items"
 msgstr ""

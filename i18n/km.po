@@ -216,13 +216,13 @@ msgid "Created"
 msgstr ""
 
 msgid "Last updated"
-msgstr ""
+msgstr "បាន​ធ្វើ​បច្ចុប្បន្នភាព​ចុងក្រោយ"
 
 msgid "Type"
 msgstr ""
 
 msgid "Clear filters"
-msgstr ""
+msgstr "លុបចោលការច្រោះមើលទិន្នន័យ"
 
 msgid "{{firstItemIndex}}-{{lastItemIndex}} of {{totalNumberOfItems}}"
 msgstr ""
@@ -231,7 +231,7 @@ msgid "All charts"
 msgstr ""
 
 msgid "Open"
-msgstr ""
+msgstr "បើក"
 
 msgid "Couldn't load items"
 msgstr ""
