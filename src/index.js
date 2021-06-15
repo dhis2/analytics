@@ -4,6 +4,7 @@ import './locales'
 export { default as DataDimension } from './components/DataDimension/DataDimension'
 
 export { default as PeriodDimension } from './components/PeriodDimension/PeriodDimension'
+export { default as FixedPeriodSelect } from './components/PeriodDimension/FixedPeriodSelect'
 
 export { default as OrgUnitDimension } from './components/OrgUnitDimension/OrgUnitDimension'
 
