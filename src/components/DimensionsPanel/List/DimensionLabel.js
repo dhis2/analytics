@@ -6,7 +6,7 @@ import {
 } from '../../../modules/predefinedDimensions'
 import { styles } from './styles/DimensionLabel.style'
 
-export class DimensionLabel extends Component {
+class DimensionLabel extends Component {
     static propTypes = {
         id: PropTypes.string.isRequired,
         isDeactivated: PropTypes.bool.isRequired,

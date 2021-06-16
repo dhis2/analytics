@@ -10,6 +10,7 @@ exports[`The Fixed Period Single Select component matches the snapshot 1`] = `
     <FixedPeriodFilter
       currentPeriodType="MONTHLY"
       currentYear="2014"
+      excludedPeriodTypes={Array []}
       onSelectPeriodType={[Function]}
       onSelectYear={[Function]}
     />

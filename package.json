@@ -1,6 +1,6 @@
 {
     "name": "@dhis2/analytics",
-    "version": "18.3.0",
+    "version": "18.3.1",
     "main": "./build/cjs/index.js",
     "module": "./build/es/index.js",
     "exports": {
@@ -33,7 +33,7 @@
     "devDependencies": {
         "@dhis2/app-runtime": "^2.8.0",
         "@dhis2/cli-app-scripts": "^6.2.0",
-        "@dhis2/cli-style": "^8.4.0",
+        "@dhis2/cli-style": "^8.4.1",
         "@dhis2/d2-i18n": "^1.1.0",
         "@dhis2/ui": "^6.9.0",
         "@sambego/storybook-state": "^2.0.1",
