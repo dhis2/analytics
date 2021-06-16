@@ -56,7 +56,7 @@ const defaultOptions = {
 
 const defaultVisualizationProps = {
     fontSize: FONT_SIZE_OPTION_NORMAL,
-    displayDensity: DISPLAY_DENSITY_OPTION_NORMAL
+    displayDensity: DISPLAY_DENSITY_OPTION_NORMAL,
 }
 
 const isDxDimension = dimensionItem =>
@@ -265,7 +265,11 @@ export class PivotTableEngine {
     columnMap = []
 
     constructor(visualization, data, legendSets) {
-        this.visualization = Object.assign({}, defaultVisualizationProps, visualization)
+        this.visualization = Object.assign(
+            {},
+            defaultVisualizationProps,
+            visualization
+        )
         this.legendSets = (legendSets || []).reduce((sets, set) => {
             sets[set.id] = set
             return sets
