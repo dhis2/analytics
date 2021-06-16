@@ -69,6 +69,10 @@ const FixedPeriodFilter = ({
     )
 }
 
+FixedPeriodFilter.defaultProps = {
+    excludedPeriodTypes: [],
+}
+
 FixedPeriodFilter.propTypes = {
     currentPeriodType: PropTypes.string.isRequired,
     currentYear: PropTypes.string.isRequired,

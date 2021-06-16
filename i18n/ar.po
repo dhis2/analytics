@@ -1,15 +1,15 @@
 # 
 # Translators:
 # phil_dhis2, 2021
-# Hamza Assada <7amza.it@gmail.com>, 2021
 # Viktor Varland <viktor@dhis2.org>, 2021
+# Hamza Assada <7amza.it@gmail.com>, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-05-28T13:23:46.712Z\n"
+"POT-Creation-Date: 2021-06-10T07:19:35.004Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2021\n"
+"Last-Translator: Hamza Assada <7amza.it@gmail.com>, 2021\n"
 "Language-Team: Arabic (https://www.transifex.com/hisp-uio/teams/100509/ar/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -197,6 +197,111 @@ msgstr "إلغاء تحديد الكل"
 
 msgid "Select all"
 msgstr "تحديد الكل"
+
+msgid "Created by"
+msgstr "تم الإنشاء بواسطة"
+
+msgid "Anyone"
+msgstr "أي شخص"
+
+msgid "Only you"
+msgstr ""
+
+msgid "Others"
+msgstr "أخرى"
+
+msgid "Filter by name"
+msgstr "تصفية بواسطة الاسم"
+
+msgid "Created"
+msgstr "تم الإنشاء"
+
+msgid "Last updated"
+msgstr "آخر تحديث"
+
+msgid "Type"
+msgstr "النوع"
+
+msgid "Clear filters"
+msgstr "إلغاء عوامل التصفية"
+
+msgid "{{firstItemIndex}}-{{lastItemIndex}} of {{totalNumberOfItems}}"
+msgstr ""
+
+msgid "All charts"
+msgstr ""
+
+msgid "Open"
+msgstr "مفتوح"
+
+msgid "Couldn't load items"
+msgstr ""
+
+msgid ""
+"There was a problem loading items. Try again or contact your system "
+"administrator."
+msgstr ""
+
+msgid "No items found. Create a new to get started."
+msgstr ""
+
+msgid ""
+"No items found. Try adjusting your search or filter options to find what "
+"you're looking for."
+msgstr ""
+
+msgid "Create new"
+msgstr "إنشاء جديد"
+
+msgid "Open a visualization"
+msgstr ""
+
+msgid "Loading visualizations"
+msgstr ""
+
+msgid "Couldn't load visualizations"
+msgstr ""
+
+msgid ""
+"There was a problem loading visualizations. Try again or contact your system"
+" administrator."
+msgstr ""
+
+msgid "No visualizations found. Click New visualization to get started."
+msgstr ""
+
+msgid ""
+"No visualizations found. Try adjusting your search or filter options to find"
+" what you're looking for."
+msgstr ""
+
+msgid "New visualization"
+msgstr ""
+
+msgid "Open a map"
+msgstr ""
+
+msgid "Loading maps"
+msgstr ""
+
+msgid "Couldn't load maps"
+msgstr ""
+
+msgid ""
+"There was a problem loading maps. Try again or contact your system "
+"administrator."
+msgstr ""
+
+msgid "No maps found. Click New map to get started."
+msgstr ""
+
+msgid ""
+"No maps found. Try adjusting your search or filter options to find what "
+"you're looking for."
+msgstr ""
+
+msgid "New map"
+msgstr ""
 
 msgid "Period type"
 msgstr "نوع الفترة الزمنية"
@@ -781,6 +886,15 @@ msgstr "الأساس"
 
 msgid "Axis {{axisId}}"
 msgstr "محور {{axisId}}"
+
+msgid "{{count}} items"
+msgid_plural "{{count}} items"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
+msgstr[5] ""
 
 msgid "Reset zoom"
 msgstr ""

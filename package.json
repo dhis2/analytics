@@ -1,6 +1,6 @@
 {
     "name": "@dhis2/analytics",
-    "version": "18.3.0",
+    "version": "19.0.1",
     "main": "./build/cjs/index.js",
     "module": "./build/es/index.js",
     "exports": {
@@ -33,7 +33,7 @@
     "devDependencies": {
         "@dhis2/app-runtime": "^2.8.0",
         "@dhis2/cli-app-scripts": "^6.2.0",
-        "@dhis2/cli-style": "^8.4.0",
+        "@dhis2/cli-style": "^8.4.1",
         "@dhis2/d2-i18n": "^1.1.0",
         "@dhis2/ui": "^6.9.0",
         "@sambego/storybook-state": "^2.0.1",
@@ -60,7 +60,7 @@
         "@dhis2/d2-ui-favorites-dialog": "^7.3.0",
         "@dhis2/d2-ui-org-unit-dialog": "^7.3.0",
         "@dhis2/d2-ui-sharing-dialog": "^7.2.0",
-        "@dhis2/d2-ui-translation-dialog": "^7.2.0",
+        "@dhis2/d2-ui-translation-dialog": "^7.3.0",
         "classnames": "^2.3.1",
         "d2-utilizr": "^0.2.16",
         "d3-color": "^1.2.3",
