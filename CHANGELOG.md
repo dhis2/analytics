@@ -1,3 +1,20 @@
+# [19.0.0](https://github.com/dhis2/analytics/compare/v18.3.1...v19.0.0) (2021-06-16)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([b246cca](https://github.com/dhis2/analytics/commit/b246cca6f517bfa6bfdf950c4780577f5d2d02ef))
+
+
+### Features
+
+* remove ItemSelector component ([#949](https://github.com/dhis2/analytics/issues/949)) ([5856049](https://github.com/dhis2/analytics/commit/5856049fdf148e4e74a515b872742bad0c559869)), closes [dhis2/d2-ui#681](https://github.com/dhis2/d2-ui/issues/681)
+
+
+### BREAKING CHANGES
+
+* ItemSelector has been removed.
+
 ## [18.3.1](https://github.com/dhis2/analytics/compare/v18.3.0...v18.3.1) (2021-06-14)
 
 
