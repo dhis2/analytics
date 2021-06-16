@@ -198,7 +198,7 @@ msgid "Select all"
 msgstr "Select all"
 
 msgid "Created by"
-msgstr ""
+msgstr "ສ້າງໂດຍ"
 
 msgid "Anyone"
 msgstr ""
@@ -207,22 +207,22 @@ msgid "Only you"
 msgstr ""
 
 msgid "Others"
-msgstr ""
+msgstr "Others"
 
 msgid "Filter by name"
-msgstr ""
+msgstr "Filter by name"
 
 msgid "Created"
-msgstr ""
+msgstr "ສ້າງແລ້ວ"
 
 msgid "Last updated"
-msgstr ""
+msgstr "ປັບປຸງ​ຄັ້ງຫລ້າສຸດ"
 
 msgid "Type"
-msgstr ""
+msgstr "Type"
 
 msgid "Clear filters"
-msgstr ""
+msgstr "ປັບປຸງເຄື່ອງມືຄັດຈ້ອນ"
 
 msgid "{{firstItemIndex}}-{{lastItemIndex}} of {{totalNumberOfItems}}"
 msgstr ""
@@ -231,7 +231,7 @@ msgid "All charts"
 msgstr ""
 
 msgid "Open"
-msgstr ""
+msgstr "ເປີດ"
 
 msgid "Couldn't load items"
 msgstr ""

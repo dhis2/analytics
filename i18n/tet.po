@@ -1,14 +1,14 @@
 # 
 # Translators:
-# phil_dhis2, 2021
 # Viktor Varland <viktor@dhis2.org>, 2021
+# phil_dhis2, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2021-06-10T07:19:35.004Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2021\n"
+"Last-Translator: phil_dhis2, 2021\n"
 "Language-Team: Tetum (Tetun) (https://www.transifex.com/hisp-uio/teams/100509/tet/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -198,7 +198,7 @@ msgid "Select all"
 msgstr "Hili hotu"
 
 msgid "Created by"
-msgstr ""
+msgstr "Kria husi"
 
 msgid "Anyone"
 msgstr ""
@@ -210,16 +210,16 @@ msgid "Others"
 msgstr ""
 
 msgid "Filter by name"
-msgstr ""
+msgstr "Filtru tuir naran"
 
 msgid "Created"
 msgstr ""
 
 msgid "Last updated"
-msgstr ""
+msgstr "Atualizasaun ikus"
 
 msgid "Type"
-msgstr ""
+msgstr "Tipu"
 
 msgid "Clear filters"
 msgstr ""
