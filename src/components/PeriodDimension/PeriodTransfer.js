@@ -16,7 +16,7 @@ import { getFixedPeriodsOptionsById } from './utils/fixedPeriods'
 import { MONTHLY, QUARTERLY } from './utils/index.js'
 import { getRelativePeriodsOptionsById } from './utils/relativePeriods'
 
-export const PeriodTransfer = ({
+const PeriodTransfer = ({
     onSelect,
     dataTest,
     initialSelectedPeriods,

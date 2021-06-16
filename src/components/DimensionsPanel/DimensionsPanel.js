@@ -5,7 +5,7 @@ import Filter from '../Filter/Filter'
 import DimensionList from './List/DimensionList'
 import { styles } from './styles/DimensionsPanel.style'
 
-export class DimensionsPanel extends Component {
+class DimensionsPanel extends Component {
     state = { filterText: '' }
 
     onClearFilter = () => {

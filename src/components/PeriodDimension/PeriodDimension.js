@@ -3,7 +3,7 @@ import React from 'react'
 import { DIMENSION_ID_PERIOD } from '../../modules/predefinedDimensions'
 import PeriodTransfer from './PeriodTransfer'
 
-export const PeriodDimension = ({
+const PeriodDimension = ({
     onSelect,
     selectedPeriods,
     rightFooter,

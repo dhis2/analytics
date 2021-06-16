@@ -8,7 +8,7 @@ import {
 import DimensionItem from './DimensionItem'
 import styles from './styles/DimensionList.style'
 
-export class DimensionList extends Component {
+class DimensionList extends Component {
     nameContainsFilterText = dimension =>
         dimension.name
             .toLowerCase()

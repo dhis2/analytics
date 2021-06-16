@@ -8,7 +8,7 @@ import OptionsButton from './OptionsButton'
 import RecommendedIcon from './RecommendedIcon'
 import { styles } from './styles/DimensionItem.style'
 
-export class DimensionItem extends Component {
+class DimensionItem extends Component {
     state = { mouseOver: false }
 
     onOptionsClick = (id, ref) => event =>
