@@ -1,3 +1,10 @@
+## [19.0.1](https://github.com/dhis2/analytics/compare/v19.0.0...v19.0.1) (2021-06-16)
+
+
+### Bug Fixes
+
+* provide default values for visualizations ([#947](https://github.com/dhis2/analytics/issues/947)) ([dfecac9](https://github.com/dhis2/analytics/commit/dfecac9cf4eb556990a5f2c1cc8652e6f81fb335))
+
 # [19.0.0](https://github.com/dhis2/analytics/compare/v18.3.1...v19.0.0) (2021-06-16)
 
 
