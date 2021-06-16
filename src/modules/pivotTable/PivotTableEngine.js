@@ -54,6 +54,11 @@ const defaultOptions = {
     showColumnSubtotals: false,
 }
 
+const defaultVisualizationProps = {
+    fontSize: FONT_SIZE_OPTION_NORMAL,
+    displayDensity: DISPLAY_DENSITY_OPTION_NORMAL,
+}
+
 const isDxDimension = dimensionItem =>
     [DIMENSION_TYPE_DATA, DIMENSION_TYPE_DATA_ELEMENT_GROUP_SET].includes(
         dimensionItem.dimensionType
@@ -260,7 +265,11 @@ export class PivotTableEngine {
     columnMap = []
 
     constructor(visualization, data, legendSets) {
-        this.visualization = visualization
+        this.visualization = Object.assign(
+            {},
+            defaultVisualizationProps,
+            visualization
+        )
         this.legendSets = (legendSets || []).reduce((sets, set) => {
             sets[set.id] = set
             return sets
