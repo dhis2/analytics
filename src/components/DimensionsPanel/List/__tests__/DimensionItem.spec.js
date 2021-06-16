@@ -1,6 +1,6 @@
-import React from 'react'
-import { DimensionItem } from '../DimensionItem'
 import { shallow } from 'enzyme'
+import React from 'react'
+import DimensionItem from '../DimensionItem'
 
 describe('DimensionItem', () => {
     let props

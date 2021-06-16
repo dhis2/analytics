@@ -1,8 +1,7 @@
-import React from 'react'
-import { shallow } from 'enzyme'
 import { InputField } from '@dhis2/ui'
-
-import { Filter } from '../Filter'
+import { shallow } from 'enzyme'
+import React from 'react'
+import Filter from '../Filter'
 
 describe('The Filter component ', () => {
     let shallowFilter

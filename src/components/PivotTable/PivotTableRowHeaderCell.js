@@ -1,8 +1,8 @@
-import React from 'react'
 import PropTypes from 'prop-types'
-import { PivotTableHeaderCell } from './PivotTableHeaderCell'
+import React from 'react'
 import { PivotTableCell } from './PivotTableCell'
 import { usePivotTableEngine } from './PivotTableEngineContext'
+import { PivotTableHeaderCell } from './PivotTableHeaderCell'
 
 export const PivotTableRowHeaderCell = ({
     clippingResult,

@@ -1,23 +1,22 @@
-import React, { useState } from 'react'
-import PropTypes from 'prop-types'
 import { TabBar, Tab, Transfer } from '@dhis2/ui'
-import i18n from '../../locales/index.js'
-
-import FixedPeriodFilter from './FixedPeriodFilter'
-import RelativePeriodFilter from './RelativePeriodFilter'
-import { getRelativePeriodsOptionsById } from './utils/relativePeriods'
-import { getFixedPeriodsOptionsById } from './utils/fixedPeriods'
-import styles from '../styles/DimensionSelector.style'
-import { TransferOption } from '../TransferOption'
+import PropTypes from 'prop-types'
+import React, { useState } from 'react'
 import PeriodIcon from '../../assets/DimensionItemIcons/PeriodIcon' //TODO: Reimplement the icon
+import i18n from '../../locales/index.js'
 import {
     TRANSFER_HEIGHT,
     TRANSFER_OPTIONS_WIDTH,
     TRANSFER_SELECTED_WIDTH,
 } from '../../modules/dimensionSelectorHelper'
+import styles from '../styles/DimensionSelector.style'
+import { TransferOption } from '../TransferOption'
+import FixedPeriodFilter from './FixedPeriodFilter'
+import RelativePeriodFilter from './RelativePeriodFilter'
+import { getFixedPeriodsOptionsById } from './utils/fixedPeriods'
 import { MONTHLY, QUARTERLY } from './utils/index.js'
+import { getRelativePeriodsOptionsById } from './utils/relativePeriods'
 
-export const PeriodTransfer = ({
+const PeriodTransfer = ({
     onSelect,
     dataTest,
     initialSelectedPeriods,

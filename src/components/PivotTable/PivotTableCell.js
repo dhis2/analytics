@@ -1,8 +1,8 @@
-import React from 'react'
-import PropTypes from 'prop-types'
 import classnames from 'classnames'
-import { cell as cellStyle } from './styles/PivotTable.style'
+import PropTypes from 'prop-types'
+import React from 'react'
 import { usePivotTableEngine } from './PivotTableEngineContext'
+import { cell as cellStyle } from './styles/PivotTable.style'
 
 export const PivotTableCell = React.forwardRef(
     (
@@ -10,8 +10,10 @@ export const PivotTableCell = React.forwardRef(
         ref
     ) => {
         const engine = usePivotTableEngine()
-        style.height = style.minHeight = style.maxHeight =
-            style.height || engine.fontSize + engine.cellPadding * 2 + 2
+        style.height =
+            style.minHeight =
+            style.maxHeight =
+                style.height || engine.fontSize + engine.cellPadding * 2 + 2
 
         const className = classnames(
             classes,

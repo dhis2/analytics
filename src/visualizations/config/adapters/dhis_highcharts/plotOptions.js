@@ -1,5 +1,4 @@
 import i18n from '../../../../locales/index.js'
-
 import {
     VIS_TYPE_COLUMN,
     VIS_TYPE_SCATTER,
@@ -69,7 +68,7 @@ export default ({
                           point: {
                               events: {
                                   click: function () {
-                                      onClick(this.dataLabel?.element, {
+                                      onClick(this.graphic?.element, {
                                           category: this.category,
                                           series: this.series.name,
                                       })

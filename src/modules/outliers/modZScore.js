@@ -1,6 +1,5 @@
-import i18n from '../../locales/index.js'
 import isNumber from 'd2-utilizr/lib/isNumber'
-
+import i18n from '../../locales/index.js'
 import { PROP_THRESHOLD_FACTOR } from './index'
 
 export const MODIFIED_Z_SCORE = 'MODIFIED_Z_SCORE'
@@ -106,10 +105,8 @@ export const getModZScoreHelper = (
                   median
               )
 
-    const [
-        lowThresholdLine,
-        highThresholdLine,
-    ] = normalizationHelper.getThresholdLines(lowThreshold, highThreshold)
+    const [lowThresholdLine, highThresholdLine] =
+        normalizationHelper.getThresholdLines(lowThreshold, highThreshold)
 
     const outlierPoints = []
     const inlierPoints = []

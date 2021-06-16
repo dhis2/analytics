@@ -1,8 +1,8 @@
-import React from 'react'
-import PropTypes from 'prop-types'
 import { IconMore16 } from '@dhis2/ui'
+import PropTypes from 'prop-types'
+import React from 'react'
 
-export const OptionsButton = ({ style, onClick }) => (
+const OptionsButton = ({ style, onClick }) => (
     <button style={style} onClick={onClick}>
         <IconMore16 />
     </button>

@@ -1,11 +1,7 @@
 import times from 'lodash/times'
-
-import { parseValue } from './parseValue'
-import { renderValue } from './renderValue'
-import { measureText } from './measureText'
-
 import { DIMENSION_ID_ORGUNIT } from '../predefinedDimensions'
-
+import { measureText } from './measureText'
+import { parseValue } from './parseValue'
 import {
     AGGREGATE_TYPE_NA,
     AGGREGATE_TYPE_AVERAGE,
@@ -39,6 +35,7 @@ import {
     VALUE_TYPE_TEXT,
     NUMBER_TYPE_VALUE,
 } from './pivotTableConstants'
+import { renderValue } from './renderValue'
 
 const dataFields = [
     'value',
@@ -55,6 +52,11 @@ const defaultOptions = {
     showColumnTotals: false,
     showRowSubtotals: false,
     showColumnSubtotals: false,
+}
+
+const defaultVisualizationProps = {
+    fontSize: FONT_SIZE_OPTION_NORMAL,
+    displayDensity: DISPLAY_DENSITY_OPTION_NORMAL,
 }
 
 const isDxDimension = dimensionItem =>
@@ -263,7 +265,11 @@ export class PivotTableEngine {
     columnMap = []
 
     constructor(visualization, data, legendSets) {
-        this.visualization = visualization
+        this.visualization = Object.assign(
+            {},
+            defaultVisualizationProps,
+            visualization
+        )
         this.legendSets = (legendSets || []).reduce((sets, set) => {
             sets[set.id] = set
             return sets
@@ -715,9 +721,8 @@ export class PivotTableEngine {
                         totalCount: this.rawDataWidth,
                     }
                 }
-                const percentageTotal = this.percentageTotals[
-                    totals.columnSubtotal.row
-                ]
+                const percentageTotal =
+                    this.percentageTotals[totals.columnSubtotal.row]
                 dataFields.forEach(field => {
                     const headerIndex = this.dimensionLookup.dataHeaders[field]
                     const value = parseValue(dataRow[headerIndex])
@@ -735,9 +740,8 @@ export class PivotTableEngine {
                         totalCount: this.rawDataWidth,
                     }
                 }
-                const percentageTotal = this.percentageTotals[
-                    totals.columnTotal.row
-                ]
+                const percentageTotal =
+                    this.percentageTotals[totals.columnTotal.row]
                 dataFields.forEach(field => {
                     const headerIndex = this.dimensionLookup.dataHeaders[field]
                     const value = parseValue(dataRow[headerIndex])
@@ -773,9 +777,8 @@ export class PivotTableEngine {
                         totalCount: this.rawDataHeight,
                     }
                 }
-                const percentageTotal = this.percentageTotals[
-                    totals.rowSubtotal.column
-                ]
+                const percentageTotal =
+                    this.percentageTotals[totals.rowSubtotal.column]
                 dataFields.forEach(field => {
                     const headerIndex = this.dimensionLookup.dataHeaders[field]
                     const value = parseValue(dataRow[headerIndex])
@@ -793,9 +796,8 @@ export class PivotTableEngine {
                         totalCount: this.rawDataHeight,
                     }
                 }
-                const percentageTotal = this.percentageTotals[
-                    totals.rowTotal.column
-                ]
+                const percentageTotal =
+                    this.percentageTotals[totals.rowTotal.column]
                 dataFields.forEach(field => {
                     const headerIndex = this.dimensionLookup.dataHeaders[field]
                     const value = parseValue(dataRow[headerIndex])

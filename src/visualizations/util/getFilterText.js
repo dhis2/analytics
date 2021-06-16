@@ -1,11 +1,11 @@
-import { ouIdHelper } from '../../modules/ouIdHelper'
+import { getOuLevelAndGroupText } from '../../modules/getOuLevelAndGroupText'
+import { dimensionGetItems } from '../../modules/layout/dimensionGetItems'
 import { dimensionIs } from '../../modules/layout/dimensionIs'
+import { ouIdHelper } from '../../modules/ouIdHelper'
 import {
     DIMENSION_ID_ORGUNIT,
     DIMENSION_ID_PERIOD,
 } from '../../modules/predefinedDimensions'
-import { dimensionGetItems } from '../../modules/layout/dimensionGetItems'
-import { getOuLevelAndGroupText } from '../../modules/getOuLevelAndGroupText'
 
 export default function (filters, metaData) {
     if (!Array.isArray(filters) || !filters.length) {

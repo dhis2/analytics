@@ -1,5 +1,4 @@
 import i18n from '../../locales/index.js'
-
 import { PROP_THRESHOLD_FACTOR } from './index'
 
 export const IQR = 'IQR'
@@ -50,10 +49,8 @@ export const getIQRHelper = (normalizationHelper, config, { xyStats }) => {
     const q1Threshold = q1 - iqrThreshold
     const q3Threshold = q3 + iqrThreshold
 
-    const [
-        q1ThresholdLine,
-        q3ThresholdLine,
-    ] = normalizationHelper.getThresholdLines(q1Threshold, q3Threshold)
+    const [q1ThresholdLine, q3ThresholdLine] =
+        normalizationHelper.getThresholdLines(q1Threshold, q3Threshold)
 
     const outlierPoints = []
     const inlierPoints = []

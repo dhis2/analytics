@@ -161,10 +161,8 @@ function getTwoCategoryTrimmedConfig(config, layout) {
     const emptyGroupIndexes = getEmptySeriesGroupIndexes(filteredSeries)
 
     if (emptyGroupIndexes.length && config.xAxis && config.series) {
-        const {
-            firstGroupWithValuesIndex,
-            lastGroupWithValuesIndex,
-        } = getFirstLastGroupWithValuesIndexes(filteredSeries)
+        const { firstGroupWithValuesIndex, lastGroupWithValuesIndex } =
+            getFirstLastGroupWithValuesIndexes(filteredSeries)
 
         const trimmedSeries = config.series.map(seriesObj => {
             if (seriesObj.custom.isTwoCategoryFakeSerie) {

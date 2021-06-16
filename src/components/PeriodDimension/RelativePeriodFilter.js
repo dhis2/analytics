@@ -1,11 +1,10 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import i18n from '../../locales/index.js'
 import { SingleSelectField, SingleSelectOption } from '@dhis2/ui'
-
-import { getRelativePeriodsOptions } from './utils/relativePeriods'
+import PropTypes from 'prop-types'
+import React from 'react'
+import i18n from '../../locales/index.js'
 import styles from './styles/PeriodFilter.style'
 import { filterPeriodTypesById } from './utils/index.js'
+import { getRelativePeriodsOptions } from './utils/relativePeriods'
 
 const RelativePeriodFilter = ({
     currentFilter,

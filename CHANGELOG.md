@@ -1,3 +1,69 @@
+## [19.0.1](https://github.com/dhis2/analytics/compare/v19.0.0...v19.0.1) (2021-06-16)
+
+
+### Bug Fixes
+
+* provide default values for visualizations ([#947](https://github.com/dhis2/analytics/issues/947)) ([dfecac9](https://github.com/dhis2/analytics/commit/dfecac9cf4eb556990a5f2c1cc8652e6f81fb335))
+
+# [19.0.0](https://github.com/dhis2/analytics/compare/v18.3.1...v19.0.0) (2021-06-16)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([b246cca](https://github.com/dhis2/analytics/commit/b246cca6f517bfa6bfdf950c4780577f5d2d02ef))
+
+
+### Features
+
+* remove ItemSelector component ([#949](https://github.com/dhis2/analytics/issues/949)) ([5856049](https://github.com/dhis2/analytics/commit/5856049fdf148e4e74a515b872742bad0c559869)), closes [dhis2/d2-ui#681](https://github.com/dhis2/d2-ui/issues/681)
+
+
+### BREAKING CHANGES
+
+* ItemSelector has been removed.
+
+## [18.3.1](https://github.com/dhis2/analytics/compare/v18.3.0...v18.3.1) (2021-06-14)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([6c925ca](https://github.com/dhis2/analytics/commit/6c925ca6f03905e96b6fd5fe949d7e1dffde05b4))
+
+# [18.3.0](https://github.com/dhis2/analytics/compare/v18.2.4...v18.3.0) (2021-06-14)
+
+
+### Features
+
+* OpenFileDialog component ([#919](https://github.com/dhis2/analytics/issues/919)) ([6c8d39a](https://github.com/dhis2/analytics/commit/6c8d39a4e22e6cdacfbf73da642d53ff6f21ad39))
+
+## [18.2.4](https://github.com/dhis2/analytics/compare/v18.2.3...v18.2.4) (2021-06-08)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([63e45b2](https://github.com/dhis2/analytics/commit/63e45b2a077dc8fa00bb6e81049b0f4581a01553))
+
+## [18.2.3](https://github.com/dhis2/analytics/compare/v18.2.2...v18.2.3) (2021-06-08)
+
+
+### Bug Fixes
+
+* hide empty sections in the DimensionsPanel ([#872](https://github.com/dhis2/analytics/issues/872)) ([30176b2](https://github.com/dhis2/analytics/commit/30176b2260b017d626c3e65ef9f1a95aca30804c))
+
+## [18.2.2](https://github.com/dhis2/analytics/compare/v18.2.1...v18.2.2) (2021-06-03)
+
+
+### Bug Fixes
+
+* bind popup to highcharts graphic instead of data label (DHIS2-11061) ([#931](https://github.com/dhis2/analytics/issues/931)) ([6bcc12b](https://github.com/dhis2/analytics/commit/6bcc12b928f5a0431ab3ab074730d2ad9ffc8e59))
+
+## [18.2.1](https://github.com/dhis2/analytics/compare/v18.2.0...v18.2.1) (2021-06-03)
+
+
+### Bug Fixes
+
+* export fixed periods generator ([#930](https://github.com/dhis2/analytics/issues/930)) ([7de0afe](https://github.com/dhis2/analytics/commit/7de0afe0b16f719cd0949d2f84487de18f4c4871))
+
 # [18.2.0](https://github.com/dhis2/analytics/compare/v18.1.4...v18.2.0) (2021-06-01)
 
 

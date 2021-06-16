@@ -1,9 +1,8 @@
-import React, { Component, Fragment } from 'react'
-import PropTypes from 'prop-types'
-import sortBy from 'lodash/sortBy'
 import { OrgUnitSelector, userOrgUnits } from '@dhis2/d2-ui-org-unit-dialog'
 import { CircularLoader, colors } from '@dhis2/ui'
-
+import sortBy from 'lodash/sortBy'
+import PropTypes from 'prop-types'
+import React, { Component, Fragment } from 'react'
 import {
     apiFetchOrganisationUnitGroups,
     apiFetchOrganisationUnitLevels,
@@ -120,11 +119,9 @@ class OrgUnitDimension extends Component {
     }
 
     loadOrgUnitGroups = (d2, displayNameProperty) => {
-        apiFetchOrganisationUnitGroups(
-            d2,
-            displayNameProperty
-        ).then(organisationUnitGroups =>
-            this.setState({ ouGroups: organisationUnitGroups })
+        apiFetchOrganisationUnitGroups(d2, displayNameProperty).then(
+            organisationUnitGroups =>
+                this.setState({ ouGroups: organisationUnitGroups })
         )
     }
 

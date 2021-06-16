@@ -1,5 +1,5 @@
-import i18n from '../../locales/index.js'
 import { std, mean } from 'mathjs'
+import i18n from '../../locales/index.js'
 import { PROP_THRESHOLD_FACTOR } from './index'
 
 export const STANDARD_Z_SCORE = 'STANDARD_Z_SCORE'
@@ -18,13 +18,11 @@ export const getZScoreHelper = (normalizationHelper, config, { xyStats }) => {
     const lowZScoreThreshold = mean - zScoreThreshold
     const highZScoreThreshold = mean + zScoreThreshold
 
-    const [
-        lowThresholdLine,
-        highThresholdLine,
-    ] = normalizationHelper.getThresholdLines(
-        lowZScoreThreshold,
-        highZScoreThreshold
-    )
+    const [lowThresholdLine, highThresholdLine] =
+        normalizationHelper.getThresholdLines(
+            lowZScoreThreshold,
+            highZScoreThreshold
+        )
 
     const outlierPoints = []
     const inlierPoints = []

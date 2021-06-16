@@ -1,18 +1,6 @@
-import React, { createRef, useState } from 'react'
-
-import PropTypes from '@dhis2/prop-types'
-import i18n from '../../locales/index.js'
-import FavoritesDialog from '@dhis2/d2-ui-favorites-dialog'
-import TranslationDialog from '@dhis2/d2-ui-translation-dialog'
 import SharingDialog from '@dhis2/d2-ui-sharing-dialog'
-import {
-    FlyoutMenu,
-    Layer,
-    MenuItem,
-    MenuDivider,
-    Popper,
-} from '@dhis2/ui-core'
-import { colors } from '@dhis2/ui-constants'
+import TranslationDialog from '@dhis2/d2-ui-translation-dialog'
+import PropTypes from '@dhis2/prop-types'
 import {
     IconAdd24,
     IconLaunch24,
@@ -23,13 +11,23 @@ import {
     IconLink24,
     IconDelete24,
 } from '@dhis2/ui'
-
-import { supportedFileTypes } from './utils'
+import { colors } from '@dhis2/ui-constants'
+import {
+    FlyoutMenu,
+    Layer,
+    MenuItem,
+    MenuDivider,
+    Popper,
+} from '@dhis2/ui-core'
+import React, { createRef, useState } from 'react'
+import i18n from '../../locales/index.js'
+import { OpenFileDialog } from '../OpenFileDialog/OpenFileDialog'
+import { DeleteDialog } from './DeleteDialog'
 import { fileMenuStyles } from './FileMenu.styles'
 import { GetLinkDialog } from './GetLinkDialog'
-import { DeleteDialog } from './DeleteDialog'
 import { RenameDialog } from './RenameDialog'
 import { SaveAsDialog } from './SaveAsDialog'
+import { supportedFileTypes } from './utils'
 
 export const FileMenu = ({
     d2, // to be removed as soon as TranslateDialog and FavoritesDialog are rewritten
@@ -46,7 +44,7 @@ export const FileMenu = ({
     onTranslate,
 }) => {
     const [menuIsOpen, setMenuIsOpen] = useState(false)
-    const [openDialog, setOpenDialog] = useState(null)
+    const [currentDialog, setCurrentDialog] = useState(null)
 
     // Escape key press closes the menu
     const onKeyDown = e => {
@@ -56,9 +54,9 @@ export const FileMenu = ({
     }
     const onMenuItemClick = dialogToOpen => () => {
         setMenuIsOpen(false)
-        setOpenDialog(dialogToOpen)
+        setCurrentDialog(dialogToOpen)
     }
-    const onDialogClose = () => setOpenDialog(null)
+    const onDialogClose = () => setCurrentDialog(null)
     const toggleMenu = () => setMenuIsOpen(!menuIsOpen)
     const onDeleteConfirm = () => {
         // The dialog must be closed before calling the callback
@@ -72,19 +70,7 @@ export const FileMenu = ({
     const buttonRef = createRef()
 
     const renderDialog = () => {
-        switch (openDialog) {
-            case 'open':
-                return (
-                    <FavoritesDialog
-                        open={true}
-                        refreshData={true}
-                        type={fileType}
-                        d2={d2}
-                        onRequestClose={onDialogClose}
-                        onFavoriteSelect={onOpen}
-                        insertTheme={true}
-                    />
-                )
+        switch (currentDialog) {
             case 'rename':
                 return (
                     <RenameDialog
@@ -171,6 +157,17 @@ export const FileMenu = ({
                     {i18n.t('File')}
                 </button>
             </div>
+            <OpenFileDialog
+                open={currentDialog === 'open'}
+                type={fileType}
+                onClose={onDialogClose}
+                onFileSelect={id => {
+                    onOpen(id)
+                    onDialogClose()
+                }}
+                onNew={onNew}
+                currentUser={d2.currentUser}
+            />
             {menuIsOpen && (
                 <Layer
                     onClick={toggleMenu}

@@ -1,8 +1,8 @@
 import i18n from '../../locales/index.js'
-import validators from './validators'
+import { theme1 } from '../util/colors'
 import adapters from './adapters'
 import generators from './generators'
-import { theme1 } from '../util/colors'
+import validators from './validators'
 
 export default function ({
     store,

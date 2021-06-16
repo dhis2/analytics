@@ -1,61 +1,47 @@
-import React, { useState, useEffect } from 'react'
-import PropTypes from 'prop-types'
 import { storiesOf } from '@storybook/react'
 import cloneDeep from 'lodash/cloneDeep'
-
+import PropTypes from 'prop-types'
+import React, { useState, useEffect } from 'react'
 import { PivotTable } from '../index'
 import {
     NUMBER_TYPE_COLUMN_PERCENTAGE,
     NUMBER_TYPE_ROW_PERCENTAGE,
 } from '../modules/pivotTable/pivotTableConstants'
-
-import simpleMetadataResponse from './data/simple.metadata.json'
-import simpleDataResponse from './data/simple.data.json'
-import simpleVisualization from './data/simple.visualization.json'
-
-import avgMetadataResponse from './data/avgTotalAggregationType.metadata.json'
 import avgDataResponse from './data/avgTotalAggregationType.data.json'
+import avgMetadataResponse from './data/avgTotalAggregationType.metadata.json'
 import avgVisualization from './data/avgTotalAggregationType.visualization.json'
-
 import deepData from './data/deep.data.json'
 import deepVisualization from './data/deep.visualization.json'
-
-import emptyRowsData from './data/emptyRows.data.json'
-import emptyRowsVisualization from './data/emptyRows.visualization.json'
-
-import emptyColumnsDataResponse from './data/emptyColumns.data.json'
-import emptyColumnsMetadataResponse from './data/emptyColumns.metadata.json'
-import emptyColumnsVisualization from './data/emptyColumns.visualization.json'
-
-import targetDataResponse from './data/target-with-legend.data.json'
-import targetMetadataResponse from './data/target-with-legend.metadata.json'
-import targetVisualization from './data/target-with-legend.visualization.json'
-
-import hierarchyDataResponse from './data/hierarchy.data.json'
-import hierarchyMetadataResponse from './data/hierarchy.metadata.json'
-import hierarchyVisualization from './data/hierarchy.visualization.json'
-
-import narrativeDataResponse from './data/narrative.data.json'
-import narrativeMetadataResponse from './data/narrative.metadata.json'
-import narrativeVisualization from './data/narrative.visualization.json'
-
 import degsDataResponse from './data/degs.data.json'
 import degsMetadataResponse from './data/degs.metadata.json'
 import degsVisualization from './data/degs.visualization.json'
-
 import diseaseWeeksDataResponse from './data/diseaseWeeks.data.json'
 import diseaseWeeksMetadataResponse from './data/diseaseWeeks.metadata.json'
 import diseaseWeeksVisualization from './data/diseaseWeeks.visualization.json'
-
+import emptyColumnsDataResponse from './data/emptyColumns.data.json'
+import emptyColumnsMetadataResponse from './data/emptyColumns.metadata.json'
+import emptyColumnsVisualization from './data/emptyColumns.visualization.json'
+import emptyRowsData from './data/emptyRows.data.json'
+import emptyRowsVisualization from './data/emptyRows.visualization.json'
+import hierarchyDataResponse from './data/hierarchy.data.json'
+import hierarchyMetadataResponse from './data/hierarchy.metadata.json'
+import hierarchyVisualization from './data/hierarchy.visualization.json'
 import lastFiveYearsDataResponse from './data/lastFiveYears.data.json'
 import lastFiveYearsMetadataResponse from './data/lastFiveYears.metadata.json'
 import lastFiveYearsVisualization from './data/lastFiveYears.visualization.json'
-
+import narrativeDataResponse from './data/narrative.data.json'
+import narrativeMetadataResponse from './data/narrative.metadata.json'
+import narrativeVisualization from './data/narrative.visualization.json'
+import simpleDataResponse from './data/simple.data.json'
+import simpleMetadataResponse from './data/simple.metadata.json'
+import simpleVisualization from './data/simple.visualization.json'
+import targetDataResponse from './data/target-with-legend.data.json'
+import targetMetadataResponse from './data/target-with-legend.metadata.json'
+import targetVisualization from './data/target-with-legend.visualization.json'
+import underAbove100LegendSet from './data/under-above-100.legendSet.json'
 import weeklyColumnsDataResponse from './data/weeklyColumns.data.json'
 import weeklyColumnsMetadataResponse from './data/weeklyColumns.metadata.json'
 import weeklyColumnsVisualization from './data/weeklyColumns.visualization.json'
-
-import underAbove100LegendSet from './data/under-above-100.legendSet.json'
 
 const visualizationReset = {
     colTotals: false,

@@ -1,32 +1,31 @@
-import objectClean from 'd2-utilizr/lib/objectClean'
 import isString from 'd2-utilizr/lib/isString'
-
-import getChart from './chart'
-import getXAxis from './xAxis'
-import getYAxis from './yAxis'
-import getSeries from './series'
-import getTitle from './title'
-import getSubtitle from './subtitle'
-import getLegend from './legend'
-import getPlotOptions from './plotOptions'
-import getPane from './pane'
-import getNoData from './noData'
-import { applyLegendSet, getLegendSetTooltip } from './legendSet'
+import objectClean from 'd2-utilizr/lib/objectClean'
+import {
+    LEGEND_DISPLAY_STRATEGY_BY_DATA_ITEM,
+    LEGEND_DISPLAY_STRATEGY_FIXED,
+} from '../../../../modules/legends'
+import { getOutlierHelper } from '../../../../modules/outliers'
 import {
     isStacked,
     isLegendSetType,
     VIS_TYPE_SCATTER,
 } from '../../../../modules/visTypes'
+import { defaultMultiAxisTheme1 } from '../../../util/colors/themes'
+import addTrendLines, { isRegressionIneligible } from './addTrendLines'
+import getChart from './chart'
+import getScatterData from './getScatterData'
 import getSortedConfig from './getSortedConfig'
 import getTrimmedConfig from './getTrimmedConfig'
-import addTrendLines, { isRegressionIneligible } from './addTrendLines'
-import { defaultMultiAxisTheme1 } from '../../../util/colors/themes'
-import {
-    LEGEND_DISPLAY_STRATEGY_BY_DATA_ITEM,
-    LEGEND_DISPLAY_STRATEGY_FIXED,
-} from '../../../../modules/legends'
-import getScatterData from './getScatterData'
-import { getOutlierHelper } from '../../../../modules/outliers'
+import getLegend from './legend'
+import { applyLegendSet, getLegendSetTooltip } from './legendSet'
+import getNoData from './noData'
+import getPane from './pane'
+import getPlotOptions from './plotOptions'
+import getSeries from './series'
+import getSubtitle from './subtitle'
+import getTitle from './title'
+import getXAxis from './xAxis'
+import getYAxis from './yAxis'
 
 const getTransformedLayout = layout => ({
     ...layout,

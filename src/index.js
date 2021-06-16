@@ -14,13 +14,13 @@ export { default as DimensionsPanel } from './components/DimensionsPanel/Dimensi
 export { default as DimensionItem } from './components/DimensionsPanel/List/DimensionItem'
 export { default as DimensionFilter } from './components/Filter/Filter'
 
-export { default as ItemSelector } from './components/ItemSelector/ItemSelector'
-
 export { default as DimensionMenu } from './components/DimensionMenu'
 
 export { default as PivotTable } from './components/PivotTable/PivotTable'
 
 export { default as FileMenu } from './components/FileMenu/FileMenu'
+
+export { default as VisTypeIcon } from './components/VisTypeIcon'
 
 // Api
 
@@ -251,3 +251,4 @@ export {
     FYAPR,
 } from './components/PeriodDimension/utils'
 export { getRelativePeriodsOptionsById } from './components/PeriodDimension/utils/relativePeriods'
+export { getFixedPeriodsOptionsById } from './components/PeriodDimension/utils/fixedPeriods'

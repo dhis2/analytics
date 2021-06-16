@@ -1,22 +1,19 @@
 import arrayClean from 'd2-utilizr/lib/arrayClean'
 import objectClean from 'd2-utilizr/lib/objectClean'
-
-import getAxisTitle from '../getAxisTitle'
-import getGauge from './gauge'
+import i18n from '../../../../../locales'
+import {
+    FONT_STYLE_VERTICAL_AXIS_TITLE,
+    mergeFontStyleWithDefault,
+    TEXT_ALIGN_RIGHT,
+} from '../../../../../modules/fontStyle'
 import {
     isDualAxisType,
     isStacked,
     VIS_TYPE_GAUGE,
     VIS_TYPE_SCATTER,
 } from '../../../../../modules/visTypes'
-import { getAxisStringFromId } from '../../../../util/axisId'
-import {
-    FONT_STYLE_VERTICAL_AXIS_TITLE,
-    mergeFontStyleWithDefault,
-    TEXT_ALIGN_RIGHT,
-} from '../../../../../modules/fontStyle'
-import getSteps from '../getSteps'
 import { getAxis } from '../../../../util/axes'
+import { getAxisStringFromId } from '../../../../util/axisId'
 import {
     getGridLineColor,
     getLabels,
@@ -25,7 +22,9 @@ import {
     getRegressionLine,
 } from '../axis'
 import { getAxisIdsMap } from '../customAxes'
-import i18n from '../../../../../locales'
+import getAxisTitle from '../getAxisTitle'
+import getSteps from '../getSteps'
+import getGauge from './gauge'
 
 const AXIS_TYPE_RANGE = 'RANGE'
 
