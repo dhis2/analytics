@@ -54,38 +54,41 @@ const PivotTable = ({
                 <div
                     style={{
                         position: 'absolute',
-                        bottom: 0,
+                        top: 0,
                         background: '#fff',
-                        left: 0,
                         right: 0,
                         padding: '8px',
+                        width: '180px',
                     }}
                 >
                     {legendSets.map(legendSet => (
                         <div
                             key={legendSet.id}
                             style={{
-                                display: 'inline-flex',
-                                marginLeft: '20px',
+                                display: 'flex',
+                                flexDirection: 'column',
+                                marginLeft: '4px',
+                                fontSize: '13px',
                             }}
                         >
-                            <span style={{ paddingRight: '8px' }}>
-                                {legendSet.name}
-                            </span>
                             {legendSet.legends
                                 .sort((a, b) => a.startValue - b.startValue)
                                 .map(legend => (
                                     <div
                                         key={legend.startValue}
                                         style={{
-                                            display: 'inline-block',
-                                            height: '20px',
-                                            width: '20px',
-                                            background: legend.color,
-                                            borderRadius: '100px',
-                                            marginRight: '10px',
+                                            display: 'flex',
+                                            flexDirection: 'column',
+                                            flexWrap: 'wrap',
+                                            borderLeft: `6px ${legend.color} solid`,
+                                            padding: '4px 0 4px 4px',
+                                            whiteSpace: 'break-spaces',
+                                            textAlign: 'left',
                                         }}
-                                    ></div>
+                                    >
+                                        <span>{legend.name}</span>
+                                        <span>{`${legend.startValue}-<${legend.endValue}`}</span>
+                                    </div>
                                 ))}
                         </div>
                     ))}
