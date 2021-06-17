@@ -22,6 +22,8 @@ export { default as FileMenu } from './components/FileMenu/FileMenu'
 
 export { default as VisTypeIcon } from './components/VisTypeIcon'
 
+export { default as LegendKey } from './components/LegendKey/LegendKey'
+
 // Api
 
 export { default as Analytics } from './api/analytics/Analytics'

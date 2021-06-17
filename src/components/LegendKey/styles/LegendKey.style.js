@@ -3,12 +3,10 @@ import css from 'styled-jsx/css'
 
 export default css`
     .container {
-        position: absolute;
-        top: 0;
-        right: 0;
         width: 180px;
         background: ${colors.white};
         padding: ${spacers.dp8};
+        border: 1px solid ${colors.grey400};
     }
     .legendSet {
         display: flex;
@@ -23,5 +21,8 @@ export default css`
         padding: ${spacers.dp4} 0 ${spacers.dp4} ${spacers.dp4};
         white-space: break-spaces;
         text-align: left;
+    }
+    .values {
+        color: ${colors.grey600};
     }
 `

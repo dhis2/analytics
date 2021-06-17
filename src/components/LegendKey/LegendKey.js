@@ -18,7 +18,7 @@ const LegendKey = ({ legendSets }) => {
                                 }}
                             >
                                 <span>{legend.name}</span>
-                                <span>{`${legend.startValue}-<${legend.endValue}`}</span>
+                                <span className="values">{`${legend.startValue}-<${legend.endValue}`}</span>
                             </div>
                         ))}
                 </div>

@@ -4,7 +4,6 @@ import { PivotTableEngine } from '../../modules/pivotTable/PivotTableEngine'
 import { useParentSize } from '../../modules/pivotTable/useParentSize'
 import { useSortableColumns } from '../../modules/pivotTable/useSortableColumns'
 import { useTableClipping } from '../../modules/pivotTable/useTableClipping'
-import LegendKey from '../LegendKey/LegendKey'
 import { PivotTableBody } from './PivotTableBody'
 import { PivotTableContainer } from './PivotTableContainer'
 import { Provider } from './PivotTableEngineContext'
@@ -52,7 +51,6 @@ const PivotTable = ({
                     clippingResult={clippingResult}
                     onToggleContextualMenu={onToggleContextualMenu}
                 />
-                <LegendKey legendSets={legendSets} />
             </PivotTableContainer>
         </Provider>
     )
