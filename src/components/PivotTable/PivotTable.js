@@ -4,6 +4,7 @@ import { PivotTableEngine } from '../../modules/pivotTable/PivotTableEngine'
 import { useParentSize } from '../../modules/pivotTable/useParentSize'
 import { useSortableColumns } from '../../modules/pivotTable/useSortableColumns'
 import { useTableClipping } from '../../modules/pivotTable/useTableClipping'
+import LegendKey from '../LegendKey/LegendKey'
 import { PivotTableBody } from './PivotTableBody'
 import { PivotTableContainer } from './PivotTableContainer'
 import { Provider } from './PivotTableEngineContext'
@@ -51,48 +52,7 @@ const PivotTable = ({
                     clippingResult={clippingResult}
                     onToggleContextualMenu={onToggleContextualMenu}
                 />
-                <div
-                    style={{
-                        position: 'absolute',
-                        top: 0,
-                        background: '#fff',
-                        right: 0,
-                        padding: '8px',
-                        width: '180px',
-                    }}
-                >
-                    {legendSets.map(legendSet => (
-                        <div
-                            key={legendSet.id}
-                            style={{
-                                display: 'flex',
-                                flexDirection: 'column',
-                                marginLeft: '4px',
-                                fontSize: '13px',
-                            }}
-                        >
-                            {legendSet.legends
-                                .sort((a, b) => a.startValue - b.startValue)
-                                .map(legend => (
-                                    <div
-                                        key={legend.startValue}
-                                        style={{
-                                            display: 'flex',
-                                            flexDirection: 'column',
-                                            flexWrap: 'wrap',
-                                            borderLeft: `6px ${legend.color} solid`,
-                                            padding: '4px 0 4px 4px',
-                                            whiteSpace: 'break-spaces',
-                                            textAlign: 'left',
-                                        }}
-                                    >
-                                        <span>{legend.name}</span>
-                                        <span>{`${legend.startValue}-<${legend.endValue}`}</span>
-                                    </div>
-                                ))}
-                        </div>
-                    ))}
-                </div>
+                <LegendKey legendSets={legendSets} />
             </PivotTableContainer>
         </Provider>
     )
