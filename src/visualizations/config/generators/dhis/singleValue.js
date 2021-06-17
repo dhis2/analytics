@@ -15,10 +15,10 @@ import {
 import { getColorByValueFromLegendSet } from '../../../../modules/legends'
 
 const svgNS = 'http://www.w3.org/2000/svg'
+const defaultFillColor = colors.grey900
 
-const generateValueSVG = (value, formattedValue, legendSet, y) => {
+const generateValueSVG = (value, formattedValue, subText, legendSet, y) => {
     const textSize = 300
-    const defaultFillColor = colors.grey900
 
     const svgValue = document.createElementNS(svgNS, 'svg')
     svgValue.setAttribute('xmlns', svgNS)
@@ -37,17 +37,42 @@ const generateValueSVG = (value, formattedValue, legendSet, y) => {
         ? getColorByValueFromLegendSet(legendSet, value)
         : defaultFillColor
 
-    const text = document.createElementNS(svgNS, 'text')
-    text.setAttribute('text-anchor', 'middle')
-    text.setAttribute('font-size', textSize)
-    text.setAttribute('font-weight', '300')
-    text.setAttribute('letter-spacing', '-5')
-    text.setAttribute('x', '50%')
-    text.setAttribute('fill', fillColor)
-    text.setAttribute('data-test', 'visualization-primary-value')
-    text.appendChild(document.createTextNode(formattedValue))
+    const textNode = document.createElementNS(svgNS, 'text')
+    textNode.setAttribute('text-anchor', 'middle')
+    textNode.setAttribute('font-size', textSize)
+    textNode.setAttribute('font-weight', '300')
+    textNode.setAttribute('letter-spacing', '-5')
+    textNode.setAttribute('x', '50%')
+    textNode.setAttribute('fill', fillColor)
+    textNode.setAttribute('data-test', 'visualization-primary-value')
+    textNode.appendChild(document.createTextNode(formattedValue))
 
-    svgValue.appendChild(text)
+    svgValue.appendChild(textNode)
+
+    if (subText) {
+        const svgSubText = document.createElementNS(svgNS, 'svg')
+        const subTextSize = 30
+        svgSubText.setAttribute(
+            'viewBox',
+            `0 -50 ${textSize * 0.75 * formattedValue.length} ${textSize + 200}`
+        )
+
+        if (y) {
+            svgSubText.setAttribute('y', y)
+        }
+
+        const subTextNode = document.createElementNS(svgNS, 'text')
+        subTextNode.setAttribute('text-anchor', 'middle')
+        subTextNode.setAttribute('font-size', subTextSize)
+        subTextNode.setAttribute('x', '50%')
+        subTextNode.setAttribute('x', '50%')
+        subTextNode.setAttribute('fill', defaultFillColor)
+        subTextNode.appendChild(document.createTextNode(subText))
+
+        svgSubText.appendChild(subTextNode)
+
+        svgValue.appendChild(svgSubText)
+    }
 
     return svgValue
 }
@@ -78,7 +103,12 @@ const generateDashboardItem = (config, legendSet) => {
     }
 
     container.appendChild(
-        generateValueSVG(config.value, config.formattedValue, legendSet)
+        generateValueSVG(
+            config.value,
+            config.formattedValue,
+            config.subText,
+            legendSet
+        )
     )
 
     return container
@@ -210,7 +240,13 @@ const generateDVItem = (config, legendSet, parentEl, fontStyle) => {
     }
 
     svg.appendChild(
-        generateValueSVG(config.value, config.formattedValue, legendSet, 20)
+        generateValueSVG(
+            config.value,
+            config.formattedValue,
+            config.subText,
+            legendSet,
+            20
+        )
     )
 
     return svg
