@@ -43,6 +43,7 @@ export default function ({ store, layout, el, extraConfig, extraOptions }) {
     const _layout = getTransformedLayout(layout)
     const _extraOptions = getTransformedExtraOptions(extraOptions)
     const stacked = isStacked(_layout.type)
+    const legendSets = extraOptions.legendSets
 
     const series = store.generateData({
         type: _layout.type,
@@ -108,10 +109,12 @@ export default function ({ store, layout, el, extraConfig, extraOptions }) {
 
         // legend
         legend: getLegend(
-            _layout.legend?.hidden,
-            _layout.legend?.label?.fontStyle,
+            _layout.seriesKey?.hidden,
+            _layout.seriesKey?.label?.fontStyle,
             _layout.type,
-            _extraOptions.dashboard
+            _extraOptions.dashboard,
+            legendSets,
+            store.data[0].metaData.items
         ),
 
         // pane
@@ -184,7 +187,6 @@ export default function ({ store, layout, el, extraConfig, extraOptions }) {
      ** Note: This needs to go last, after all other data manipulation is done, as it changes
      ** the format of the data prop from an array of values to an array of objects with y and color props.
      */
-    const legendSets = extraOptions.legendSets
 
     if (legendSets?.length && isLegendSetType(layout.type)) {
         if (

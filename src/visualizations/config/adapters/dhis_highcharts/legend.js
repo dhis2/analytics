@@ -47,11 +47,6 @@ function getItemStyle(fontStyle, dashboard) {
 function getLegend(fontStyle, dashboard, visType) {
     return Object.assign(
         {},
-        {
-            symbolWidth: 11,
-            symbolHeight: 11,
-            itemMarginBottom: 2,
-        },
         dashboard
             ? DASHBOARD_LEGEND
             : {
@@ -64,7 +59,14 @@ function getLegend(fontStyle, dashboard, visType) {
     )
 }
 
-export default function (isHidden, fontStyle, visType, dashboard) {
+export default function (
+    isHidden,
+    fontStyle,
+    visType,
+    dashboard,
+    legendSets = [],
+    metaData
+) {
     const mergedFontStyle = mergeFontStyleWithDefault(
         fontStyle,
         FONT_STYLE_LEGEND
@@ -76,6 +78,33 @@ export default function (isHidden, fontStyle, visType, dashboard) {
         : Object.assign(
               {},
               getLegend(mergedFontStyle, dashboard, visType),
-              getItemStyle(mergedFontStyle, dashboard)
+              getItemStyle(mergedFontStyle, dashboard),
+              {
+                  useHTML: true,
+                  symbolWidth: 0.001,
+                  symbolHeight: 0.001,
+                  labelFormatter: function () {
+                      const seriesId = this.userOptions?.id
+                      const legendSet = legendSets.find(
+                          legendSet =>
+                              legendSet.id === metaData[seriesId]?.legendSet
+                      )
+                      // TODO: Extract to a separate file and clean up the code
+                      let format =
+                          '<div style="display: flex; align-items: center;">'
+                      format += legendSet?.legends?.length
+                          ? legendSet.legends
+                                .map(
+                                    legend =>
+                                        `<span style="border-radius: 50%; width: 13px; height: 13px; background-color: ${legend.color}; display: inline-block; margin-right:-5px"></span>`
+                                )
+                                .join('') +
+                            `<span style="margin-left: 8px">${this.name}</span>`
+                          : `<span style="border-radius: 50%; width: 13px; height: 13px; background-color: ${this.color}; display: inline-block; margin-right:5px"></span>` +
+                            `<span>${this.name}</span>`
+                      format += '</div>'
+                      return format
+                  },
+              }
           )
 }
