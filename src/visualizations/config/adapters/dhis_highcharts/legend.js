@@ -96,8 +96,12 @@ export default function (
                       format += legendSet?.legends?.length
                           ? legendSet.legends
                                 .map(
-                                    legend =>
-                                        `<span style="${bulletStyle} background-color: ${legend.color}; margin-right:-5px"></span>`
+                                    (legend, index) =>
+                                        `<span style="${bulletStyle} background-color: ${
+                                            legend.color
+                                        }; margin-right:-5px; z-index: ${
+                                            legendSet.legends.length - index
+                                        }"></span>`
                                 )
                                 .join('') +
                             `<span style="margin-left: 8px">${this.name}</span>`
