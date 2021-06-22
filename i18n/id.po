@@ -3,13 +3,14 @@
 # phil_dhis2, 2020
 # Viktor Varland <viktor@dhis2.org>, 2020
 # Aprisa Chrysantina <aprisa.chrysantina@gmail.com>, 2020
+# Untoro Dwi Raharjo <untoro.dwi.raharjo@mail.ugm.ac.id>, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2020-05-13T16:46:50.486Z\n"
 "PO-Revision-Date: 2020-04-29 08:10+0000\n"
-"Last-Translator: Aprisa Chrysantina <aprisa.chrysantina@gmail.com>, 2020\n"
+"Last-Translator: Untoro Dwi Raharjo <untoro.dwi.raharjo@mail.ugm.ac.id>, 2021\n"
 "Language-Team: Indonesian (https://www.transifex.com/hisp-uio/teams/100509/id/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -45,10 +46,10 @@ msgid "Selected Data"
 msgstr "Data Terpilih"
 
 msgid "Deselect All"
-msgstr ""
+msgstr "Batalkan Pilihan Semua"
 
 msgid "Select all"
-msgstr ""
+msgstr "Pilih semua"
 
 msgid "Organisation units"
 msgstr "Unit organisasi"
@@ -57,7 +58,7 @@ msgid "Period"
 msgstr "Periode"
 
 msgid "Year"
-msgstr ""
+msgstr "Tahun"
 
 msgid "Relative periods"
 msgstr "Periode relatif"
@@ -105,10 +106,10 @@ msgid "December"
 msgstr "Desember"
 
 msgid "Week {{weekNumber}}"
-msgstr ""
+msgstr "Minggu {{weekNumber}}"
 
 msgid "Bi-Week {{biWeekNumber}}"
-msgstr ""
+msgstr "Dua Minggu {{biWeekNumber}}"
 
 msgid "Daily"
 msgstr "Harian"
@@ -120,16 +121,16 @@ msgid "Bi-weekly"
 msgstr "Dwiwulanan"
 
 msgid "Weekly (Start Wednesday)"
-msgstr ""
+msgstr "Mingguan (Mulai Rabu)"
 
 msgid "Weekly (Start Thursday)"
-msgstr ""
+msgstr "Mingguan (Mulai Kamis)"
 
 msgid "Weekly (Start Saturday)"
-msgstr ""
+msgstr "Mingguan (Mulai Sabtu)"
 
 msgid "Weekly (Start Sunday)"
-msgstr ""
+msgstr "Mingguan (Mulai Minggu)"
 
 msgid "Monthly"
 msgstr "Bulanan"
@@ -150,7 +151,7 @@ msgid "Yearly"
 msgstr "Tahunan"
 
 msgid "Financial year (Start November)"
-msgstr ""
+msgstr "Keuangan tahunan (Mulai November)"
 
 msgid "Financial year (Start October)"
 msgstr "Financial October"
@@ -252,7 +253,7 @@ msgid "Last six-month"
 msgstr "Semester lalu"
 
 msgid "Last 2 six-month"
-msgstr ""
+msgstr "2 enam bulan terakhir"
 
 msgid "This financial year"
 msgstr "Tahun finansial ini"
@@ -294,7 +295,7 @@ msgid "Six-months"
 msgstr "Semester"
 
 msgid "Financial Years"
-msgstr ""
+msgstr "Keuangan tahunan"
 
 msgid "Years"
 msgstr "Tahun"
@@ -357,19 +358,19 @@ msgid "Organisation Unit"
 msgstr "Unit Organisasi"
 
 msgid "{{dynamicOuNames}} and {{lastOuName}}"
-msgstr ""
+msgstr "{{dynamicOuNames}} dan {{lastOuName}}"
 
 msgid "{{allDynamicOuNames}} levels"
-msgstr ""
+msgstr "{{allDynamicOuNames}} level"
 
 msgid "{{allDynamicOuNames}} groups"
-msgstr ""
+msgstr "{{allDynamicOuNames}} grup"
 
 msgid "{{allDynamicOuNames}} levels in {{staticOuNames}}"
-msgstr ""
+msgstr "{{allDynamicOuNames}} level di {{staticOuNames}}"
 
 msgid "{{allDynamicOuNames}} groups in {{staticOuNames}}"
-msgstr ""
+msgstr "{{allDynamicOuNames}} grup di {{staticOuNames}}"
 
 msgid "No data"
 msgstr "Tidak ada data"
