@@ -84,23 +84,24 @@ export default function (
                   symbolWidth: 0.001,
                   symbolHeight: 0.001,
                   labelFormatter: function () {
+                      // TODO: Extract to a separate file and clean up the code
                       const seriesId = this.userOptions?.id
                       const legendSet = legendSets.find(
                           legendSet =>
                               legendSet.id === metaData[seriesId]?.legendSet
                       )
-                      // TODO: Extract to a separate file and clean up the code
+                      const bulletStyle = `display: inline-block; border-radius: 50%; width: ${mergedFontStyle[FONT_STYLE_OPTION_FONT_SIZE]}px; height: ${mergedFontStyle[FONT_STYLE_OPTION_FONT_SIZE]}px;`
                       let format =
                           '<div style="display: flex; align-items: center;">'
                       format += legendSet?.legends?.length
                           ? legendSet.legends
                                 .map(
                                     legend =>
-                                        `<span style="border-radius: 50%; width: 13px; height: 13px; background-color: ${legend.color}; display: inline-block; margin-right:-5px"></span>`
+                                        `<span style="${bulletStyle} background-color: ${legend.color}; margin-right:-5px"></span>`
                                 )
                                 .join('') +
                             `<span style="margin-left: 8px">${this.name}</span>`
-                          : `<span style="border-radius: 50%; width: 13px; height: 13px; background-color: ${this.color}; display: inline-block; margin-right:5px"></span>` +
+                          : `<span style="${bulletStyle} background-color: ${this.color}; margin-right:5px"></span>` +
                             `<span>${this.name}</span>`
                       format += '</div>'
                       return format
