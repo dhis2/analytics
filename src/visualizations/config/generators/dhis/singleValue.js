@@ -15,7 +15,6 @@ import {
 import { getColorByValueFromLegendSet } from '../../../../modules/legends'
 
 const svgNS = 'http://www.w3.org/2000/svg'
-const defaultFillColor = colors.grey900
 
 const generateValueSVG = (value, formattedValue, subText, legendSet, y) => {
     const textSize = 300
@@ -35,7 +34,7 @@ const generateValueSVG = (value, formattedValue, subText, legendSet, y) => {
 
     const fillColor = legendSet
         ? getColorByValueFromLegendSet(legendSet, value)
-        : defaultFillColor
+        : colors.grey900
 
     const textNode = document.createElementNS(svgNS, 'text')
     textNode.setAttribute('text-anchor', 'middle')
@@ -66,7 +65,7 @@ const generateValueSVG = (value, formattedValue, subText, legendSet, y) => {
         subTextNode.setAttribute('font-size', subTextSize)
         subTextNode.setAttribute('x', '50%')
         subTextNode.setAttribute('x', '50%')
-        subTextNode.setAttribute('fill', defaultFillColor)
+        subTextNode.setAttribute('fill', colors.grey600)
         subTextNode.appendChild(document.createTextNode(subText))
 
         svgSubText.appendChild(subTextNode)

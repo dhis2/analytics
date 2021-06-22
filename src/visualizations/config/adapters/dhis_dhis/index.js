@@ -23,15 +23,12 @@ export default function ({ store, layout, extraOptions }) {
         subtitle: getSubtitle(layout, metaData, extraOptions.dashboard),
     }
 
-    // TODO find a better name and way of accessing this extra object
-    // also, is not necessarily present at all times
-    // should we look at the indicatorType too?
-    const indicatorInfo =
-        metaData.items[metaData.dimensions.dx[0]].indicatorInfo
+    const indicatorType =
+        metaData.items[metaData.dimensions.dx[0]].indicatorType
 
     // Use % symbol for factor 100 and the full string for others
-    if (indicatorInfo?.factor !== INDICATOR_FACTOR_100) {
-        config.subText = indicatorInfo?.displayName
+    if (indicatorType?.factor !== INDICATOR_FACTOR_100) {
+        config.subText = indicatorType?.displayName
     }
 
     return config
