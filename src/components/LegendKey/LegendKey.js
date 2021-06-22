@@ -1,12 +1,21 @@
+import cx from 'classnames'
 import PropTypes from 'prop-types'
 import React from 'react'
 import styles from './styles/LegendKey.style'
 
 const LegendKey = ({ legendSets }) => {
-    return (
+    return legendSets.length ? (
         <div className="container">
-            {legendSets.map(legendSet => (
-                <div key={legendSet.id} className="legendSet">
+            {legendSets.map((legendSet, index) => (
+                <div
+                    key={legendSet.id}
+                    className={cx('legendSet', {
+                        divider: index > 0,
+                    })}
+                >
+                    {legendSets.length > 1 && (
+                        <span className="legendSetName">{legendSet.name}</span>
+                    )}
                     {legendSet.legends
                         .sort((a, b) => a.startValue - b.startValue)
                         .map(legend => (
@@ -25,7 +34,7 @@ const LegendKey = ({ legendSets }) => {
             ))}
             <style jsx>{styles}</style>
         </div>
-    )
+    ) : null
 }
 
 LegendKey.propTypes = {
@@ -35,9 +44,9 @@ LegendKey.propTypes = {
             legends: PropTypes.arrayOf(
                 PropTypes.shape({
                     color: PropTypes.string.isRequired,
-                    endValue: PropTypes.string.isRequired,
+                    endValue: PropTypes.number.isRequired,
                     name: PropTypes.string.isRequired,
-                    startValue: PropTypes.string.isRequired,
+                    startValue: PropTypes.number.isRequired,
                 })
             ).isRequired,
         })
