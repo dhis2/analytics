@@ -189,10 +189,7 @@ export default function ({ store, layout, el, extraConfig, extraOptions }) {
      */
 
     if (legendSets?.length && isLegendSetType(layout.type)) {
-        if (
-            _layout.legendDisplayStrategy ===
-            LEGEND_DISPLAY_STRATEGY_BY_DATA_ITEM
-        ) {
+        if (_layout.legend?.strategy === LEGEND_DISPLAY_STRATEGY_BY_DATA_ITEM) {
             config.series = config.series.map(seriesObj => {
                 const legendSet = legendSets.find(
                     legendSet =>
@@ -203,9 +200,7 @@ export default function ({ store, layout, el, extraConfig, extraOptions }) {
                     ? applyLegendSet(seriesObj, legendSet)
                     : seriesObj
             })
-        } else if (
-            _layout.legendDisplayStrategy === LEGEND_DISPLAY_STRATEGY_FIXED
-        ) {
+        } else if (_layout.legend?.strategy === LEGEND_DISPLAY_STRATEGY_FIXED) {
             config.series = config.series.map(seriesObj =>
                 applyLegendSet(seriesObj, legendSets[0])
             )

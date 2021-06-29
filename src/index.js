@@ -220,6 +220,15 @@ export {
     deleteFontStyleOption,
 } from './modules/fontStyle'
 
+// Modules: legend
+
+export {
+    LEGEND_DISPLAY_STRATEGY_BY_DATA_ITEM,
+    LEGEND_DISPLAY_STRATEGY_FIXED,
+    LEGEND_DISPLAY_STYLE_FILL,
+    LEGEND_DISPLAY_STYLE_TEXT,
+} from './modules/legends'
+
 // Utils: colorSets
 export {
     COLOR_SET_DEFAULT,
