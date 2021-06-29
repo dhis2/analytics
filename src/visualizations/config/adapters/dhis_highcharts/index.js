@@ -108,15 +108,15 @@ export default function ({ store, layout, el, extraConfig, extraOptions }) {
         ),
 
         // legend
-        legend: getLegend(
-            _layout.seriesKey?.hidden,
-            _layout.seriesKey?.label?.fontStyle,
-            _layout.type,
-            _extraOptions.dashboard,
+        legend: getLegend({
+            isHidden: _layout.seriesKey?.hidden,
+            fontStyle: _layout.seriesKey?.label?.fontStyle,
+            visType: _layout.type,
+            dashboard: _extraOptions.dashboard,
             legendSets,
-            store.data[0].metaData.items,
-            _layout.legend?.strategy
-        ),
+            metaData: store.data[0].metaData.items,
+            displayStrategy: _layout.legend?.strategy,
+        }),
 
         // pane
         pane: getPane(_layout.type),

@@ -7,7 +7,10 @@ import {
     FONT_STYLE_LEGEND,
     mergeFontStyleWithDefault,
 } from '../../../../modules/fontStyle'
-import { LEGEND_DISPLAY_STRATEGY_FIXED } from '../../../../modules/legends'
+import {
+    LEGEND_DISPLAY_STRATEGY_BY_DATA_ITEM,
+    LEGEND_DISPLAY_STRATEGY_FIXED,
+} from '../../../../modules/legends'
 import { isVerticalType, VIS_TYPE_SCATTER } from '../../../../modules/visTypes'
 import { getTextAlignOption } from './getTextAlignOption'
 
@@ -60,15 +63,72 @@ function getLegend(fontStyle, dashboard, visType) {
     )
 }
 
-export default function (
+const getLegendSetByDisplayStrategy = ({
+    displayStrategy,
+    legendSets,
+    legendSetId,
+}) => {
+    if (
+        displayStrategy === LEGEND_DISPLAY_STRATEGY_FIXED &&
+        legendSets.length
+    ) {
+        return legendSets[0]
+    } else if (displayStrategy === LEGEND_DISPLAY_STRATEGY_BY_DATA_ITEM) {
+        return legendSets.find(legendSet => legendSet.id === legendSetId)
+    } else {
+        return null
+    }
+}
+
+const getBulletStyleByFontStyle = fontStyle =>
+    `display: inline-block; border-radius: 50%; width: ${fontStyle[FONT_STYLE_OPTION_FONT_SIZE]}px; height: ${fontStyle[FONT_STYLE_OPTION_FONT_SIZE]}px;`
+
+const formatLabel = ({
+    seriesId,
+    metaData,
+    displayStrategy,
+    legendSets,
+    fontStyle,
+    seriesColor,
+    seriesName,
+}) => {
+    const legendSet = getLegendSetByDisplayStrategy({
+        displayStrategy,
+        legendSets,
+        legendSetId: metaData[seriesId]?.legendSet,
+    })
+
+    let result = '<div style="display: flex; align-items: center;">'
+    result += legendSet?.legends?.length
+        ? legendSet.legends
+              .map(
+                  (legend, index) =>
+                      `<span style="${getBulletStyleByFontStyle(
+                          fontStyle
+                      )} background-color: ${
+                          legend.color
+                      }; margin-right:-5px; z-index: ${
+                          legendSet.legends.length - index
+                      }"></span>`
+              )
+              .join('') + `<span style="margin-left: 8px">${seriesName}</span>`
+        : `<span style="${getBulletStyleByFontStyle(
+              fontStyle
+          )} background-color: ${seriesColor}; margin-right:5px"></span>` +
+          `<span>${seriesName}</span>`
+    result += '</div>'
+    return result
+}
+
+export default function ({
     isHidden,
     fontStyle,
     visType,
     dashboard,
     legendSets = [],
     metaData,
-    displayStrategy
-) {
+    displayStrategy,
+}) {
     const mergedFontStyle = mergeFontStyleWithDefault(
         fontStyle,
         FONT_STYLE_LEGEND
@@ -86,36 +146,15 @@ export default function (
                   symbolWidth: 0.001,
                   symbolHeight: 0.001,
                   labelFormatter: function () {
-                      // TODO: Extract to a separate file and clean up the code
-                      const seriesId = this.userOptions?.id
-                      const legendSet =
-                          displayStrategy === LEGEND_DISPLAY_STRATEGY_FIXED &&
-                          legendSets.length
-                              ? legendSets[0]
-                              : legendSets.find(
-                                    legendSet =>
-                                        legendSet.id ===
-                                        metaData[seriesId]?.legendSet
-                                )
-                      const bulletStyle = `display: inline-block; border-radius: 50%; width: ${mergedFontStyle[FONT_STYLE_OPTION_FONT_SIZE]}px; height: ${mergedFontStyle[FONT_STYLE_OPTION_FONT_SIZE]}px;`
-                      let format =
-                          '<div style="display: flex; align-items: center;">'
-                      format += legendSet?.legends?.length
-                          ? legendSet.legends
-                                .map(
-                                    (legend, index) =>
-                                        `<span style="${bulletStyle} background-color: ${
-                                            legend.color
-                                        }; margin-right:-5px; z-index: ${
-                                            legendSet.legends.length - index
-                                        }"></span>`
-                                )
-                                .join('') +
-                            `<span style="margin-left: 8px">${this.name}</span>`
-                          : `<span style="${bulletStyle} background-color: ${this.color}; margin-right:5px"></span>` +
-                            `<span>${this.name}</span>`
-                      format += '</div>'
-                      return format
+                      return formatLabel({
+                          seriesId: this.userOptions?.id,
+                          seriesColor: this.color,
+                          seriesName: this.name,
+                          metaData,
+                          displayStrategy,
+                          legendSets,
+                          fontStyle: mergedFontStyle,
+                      })
                   },
               }
           )
