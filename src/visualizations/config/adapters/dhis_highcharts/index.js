@@ -114,7 +114,8 @@ export default function ({ store, layout, el, extraConfig, extraOptions }) {
             _layout.type,
             _extraOptions.dashboard,
             legendSets,
-            store.data[0].metaData.items
+            store.data[0].metaData.items,
+            _layout.legend?.strategy
         ),
 
         // pane

@@ -7,6 +7,7 @@ import {
     FONT_STYLE_LEGEND,
     mergeFontStyleWithDefault,
 } from '../../../../modules/fontStyle'
+import { LEGEND_DISPLAY_STRATEGY_FIXED } from '../../../../modules/legends'
 import { isVerticalType, VIS_TYPE_SCATTER } from '../../../../modules/visTypes'
 import { getTextAlignOption } from './getTextAlignOption'
 
@@ -65,7 +66,8 @@ export default function (
     visType,
     dashboard,
     legendSets = [],
-    metaData
+    metaData,
+    displayStrategy
 ) {
     const mergedFontStyle = mergeFontStyleWithDefault(
         fontStyle,
@@ -86,10 +88,15 @@ export default function (
                   labelFormatter: function () {
                       // TODO: Extract to a separate file and clean up the code
                       const seriesId = this.userOptions?.id
-                      const legendSet = legendSets.find(
-                          legendSet =>
-                              legendSet.id === metaData[seriesId]?.legendSet
-                      )
+                      const legendSet =
+                          displayStrategy === LEGEND_DISPLAY_STRATEGY_FIXED &&
+                          legendSets.length
+                              ? legendSets[0]
+                              : legendSets.find(
+                                    legendSet =>
+                                        legendSet.id ===
+                                        metaData[seriesId]?.legendSet
+                                )
                       const bulletStyle = `display: inline-block; border-radius: 50%; width: ${mergedFontStyle[FONT_STYLE_OPTION_FONT_SIZE]}px; height: ${mergedFontStyle[FONT_STYLE_OPTION_FONT_SIZE]}px;`
                       let format =
                           '<div style="display: flex; align-items: center;">'
