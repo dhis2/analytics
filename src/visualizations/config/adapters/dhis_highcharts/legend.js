@@ -81,7 +81,7 @@ const getLegendSetByDisplayStrategy = ({
 }
 
 const getBulletStyleByFontStyle = fontStyle =>
-    `display: inline-block; border-radius: 50%; width: ${fontStyle[FONT_STYLE_OPTION_FONT_SIZE]}px; height: ${fontStyle[FONT_STYLE_OPTION_FONT_SIZE]}px;`
+    `display: inline-block; border-radius: 50%; width: ${fontStyle[FONT_STYLE_OPTION_FONT_SIZE]}px; height: ${fontStyle[FONT_STYLE_OPTION_FONT_SIZE]}px; margin-bottom: 4px;`
 
 const formatLabel = ({
     seriesId,
