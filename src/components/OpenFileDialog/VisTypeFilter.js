@@ -15,6 +15,7 @@ export const VisTypeFilter = ({ selected, onChange }) => (
         onChange={({ selected }) => onChange(selected)}
         prefix={i18n.t('Type')}
         dense
+        maxHeight="400px"
     >
         {/* TODO figure out if this distinction still make sense since we have SV and potentially other new types in the future which might not fall into the chart/PT categories */}
         <SingleSelectOption label={i18n.t('All types')} value={VIS_TYPE_ALL} />
