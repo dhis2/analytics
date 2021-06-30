@@ -64,9 +64,9 @@
         "classnames": "^2.3.1",
         "d2-utilizr": "^0.2.16",
         "d3-color": "^1.2.3",
-        "highcharts": "^9.1.1",
+        "highcharts": "^9.1.2",
         "lodash": "^4.17.21",
-        "mathjs": "^9.4.2",
+        "mathjs": "^9.4.3",
         "react-beautiful-dnd": "^10.1.1",
         "resize-observer-polyfill": "^1.5.1"
     },
