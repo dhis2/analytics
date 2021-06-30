@@ -35,7 +35,7 @@ import { VisTypeFilter, VIS_TYPE_ALL, VIS_TYPE_CHARTS } from './VisTypeFilter'
 const getQuery = type => ({
     resource: AOTypeMap[type].apiEndpoint,
     params: ({
-        sortField = 'name',
+        sortField = 'displayName',
         sortDirection = 'asc',
         page = 1,
         filters,
