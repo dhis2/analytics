@@ -10,7 +10,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-06-10T07:19:35.004Z\n"
+"POT-Creation-Date: 2021-06-16T13:08:18.884Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: Untoro Dwi Raharjo <untoro.dwi.raharjo@mail.ugm.ac.id>, 2021\n"
 "Language-Team: Indonesian (https://www.transifex.com/hisp-uio/teams/100509/id/)\n"
@@ -191,15 +191,6 @@ msgstr "Ganti nama"
 
 msgid "Save {{fileType}} as"
 msgstr "Simpan {{fileType}} sebagai"
-
-msgid "Selected Data"
-msgstr "Data Terpilih"
-
-msgid "Deselect All"
-msgstr "Batalkan Pilihan Semua"
-
-msgid "Select all"
-msgstr "Pilih semua"
 
 msgid "Created by"
 msgstr "Dibuat oleh"

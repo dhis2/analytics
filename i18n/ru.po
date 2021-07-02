@@ -9,7 +9,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-06-10T07:19:35.004Z\n"
+"POT-Creation-Date: 2021-06-16T13:08:18.884Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: Ulanbek Abakirov <ulans@mail.ru>, 2021\n"
 "Language-Team: Russian (https://www.transifex.com/hisp-uio/teams/100509/ru/)\n"
@@ -190,15 +190,6 @@ msgstr "Переименовать"
 
 msgid "Save {{fileType}} as"
 msgstr ""
-
-msgid "Selected Data"
-msgstr "Избранные данные"
-
-msgid "Deselect All"
-msgstr "Отменить выбор всех"
-
-msgid "Select all"
-msgstr "Выбрать все"
 
 msgid "Created by"
 msgstr "Создано"
