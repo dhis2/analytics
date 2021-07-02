@@ -43,6 +43,7 @@ export default function ({ store, layout, el, extraConfig, extraOptions }) {
     const _layout = getTransformedLayout(layout)
     const _extraOptions = getTransformedExtraOptions(extraOptions)
     const stacked = isStacked(_layout.type)
+    const legendSets = extraOptions.legendSets
 
     const series = store.generateData({
         type: _layout.type,
@@ -107,12 +108,15 @@ export default function ({ store, layout, el, extraConfig, extraOptions }) {
         ),
 
         // legend
-        legend: getLegend(
-            _layout.legend?.hidden,
-            _layout.legend?.label?.fontStyle,
-            _layout.type,
-            _extraOptions.dashboard
-        ),
+        legend: getLegend({
+            isHidden: _layout.seriesKey?.hidden,
+            fontStyle: _layout.seriesKey?.label?.fontStyle,
+            visType: _layout.type,
+            dashboard: _extraOptions.dashboard,
+            legendSets,
+            metaData: store.data[0].metaData.items,
+            displayStrategy: _layout.legend?.strategy,
+        }),
 
         // pane
         pane: getPane(_layout.type),
@@ -184,13 +188,9 @@ export default function ({ store, layout, el, extraConfig, extraOptions }) {
      ** Note: This needs to go last, after all other data manipulation is done, as it changes
      ** the format of the data prop from an array of values to an array of objects with y and color props.
      */
-    const legendSets = extraOptions.legendSets
 
     if (legendSets?.length && isLegendSetType(layout.type)) {
-        if (
-            _layout.legendDisplayStrategy ===
-            LEGEND_DISPLAY_STRATEGY_BY_DATA_ITEM
-        ) {
+        if (_layout.legend?.strategy === LEGEND_DISPLAY_STRATEGY_BY_DATA_ITEM) {
             config.series = config.series.map(seriesObj => {
                 const legendSet = legendSets.find(
                     legendSet =>
@@ -201,9 +201,7 @@ export default function ({ store, layout, el, extraConfig, extraOptions }) {
                     ? applyLegendSet(seriesObj, legendSet)
                     : seriesObj
             })
-        } else if (
-            _layout.legendDisplayStrategy === LEGEND_DISPLAY_STRATEGY_FIXED
-        ) {
+        } else if (_layout.legend?.strategy === LEGEND_DISPLAY_STRATEGY_FIXED) {
             config.series = config.series.map(seriesObj =>
                 applyLegendSet(seriesObj, legendSets[0])
             )
