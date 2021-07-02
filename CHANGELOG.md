@@ -1,3 +1,10 @@
+## [19.1.1](https://github.com/dhis2/analytics/compare/v19.1.0...v19.1.1) (2021-07-02)
+
+
+### Reverts
+
+* Revert "feat: legend key (DHIS2-11239) (#951)" (#973) ([96c4446](https://github.com/dhis2/analytics/commit/96c4446fdb475b819d1a3d158aea110343fe47c4)), closes [#951](https://github.com/dhis2/analytics/issues/951) [#973](https://github.com/dhis2/analytics/issues/973)
+
 # [19.1.0](https://github.com/dhis2/analytics/compare/v19.0.3...v19.1.0) (2021-07-02)
 
 
