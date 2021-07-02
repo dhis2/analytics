@@ -7,7 +7,7 @@ master: ![DHIS2: Test](https://github.com/dhis2/analytics/workflows/DHIS2:%20Tes
 
 ## Overview
 
-The analytics library contains components and modules that are used in DHIS 2 analytics apps, including:
+The analytics library contains components and modules that are used in DHIS2 analytics apps, including:
 
 -   [dhis2/dashboards-app](https://github.com/dhis2/dashboards-app)
 -   [dhis2/data-visualizer-app](https://github.com/dhis2/data-visualizer-app)
