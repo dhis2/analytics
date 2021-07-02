@@ -1,3 +1,10 @@
+# [19.1.0](https://github.com/dhis2/analytics/compare/v19.0.3...v19.1.0) (2021-07-02)
+
+
+### Features
+
+* legend key (DHIS2-11239) ([#951](https://github.com/dhis2/analytics/issues/951)) ([f6d4178](https://github.com/dhis2/analytics/commit/f6d41788bef19d7ce174e6f45b30007a278a2d72))
+
 ## [19.0.3](https://github.com/dhis2/analytics/compare/v19.0.2...v19.0.3) (2021-06-30)
 
 
