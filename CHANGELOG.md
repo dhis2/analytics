@@ -1,3 +1,10 @@
+## [19.0.3](https://github.com/dhis2/analytics/compare/v19.0.2...v19.0.3) (2021-06-30)
+
+
+### Bug Fixes
+
+* bump highcharts from 9.1.1 to 9.1.2 ([#956](https://github.com/dhis2/analytics/issues/956)) ([7f31602](https://github.com/dhis2/analytics/commit/7f3160245abee0c5558220d4b3852d2736517373))
+
 ## [19.0.2](https://github.com/dhis2/analytics/compare/v19.0.1...v19.0.2) (2021-06-22)
 
 

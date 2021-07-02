@@ -1,6 +1,6 @@
 {
     "name": "@dhis2/analytics",
-    "version": "19.0.2",
+    "version": "19.0.3",
     "main": "./build/cjs/index.js",
     "module": "./build/es/index.js",
     "exports": {
@@ -64,7 +64,7 @@
         "classnames": "^2.3.1",
         "d2-utilizr": "^0.2.16",
         "d3-color": "^1.2.3",
-        "highcharts": "^9.1.1",
+        "highcharts": "^9.1.2",
         "lodash": "^4.17.21",
         "mathjs": "^9.4.2",
         "react-beautiful-dnd": "^10.1.1",
