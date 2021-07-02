@@ -81,7 +81,7 @@ const getLegendSetByDisplayStrategy = ({
 }
 
 const getBulletStyleByFontStyle = fontStyle =>
-    `display: inline-block; border-radius: 50%; width: ${fontStyle[FONT_STYLE_OPTION_FONT_SIZE]}px; height: ${fontStyle[FONT_STYLE_OPTION_FONT_SIZE]}px; margin-bottom: 4px;`
+    `display: inline-block; border-radius: 50%; width: ${fontStyle[FONT_STYLE_OPTION_FONT_SIZE]}px; height: ${fontStyle[FONT_STYLE_OPTION_FONT_SIZE]}px;`
 
 const formatLabel = ({
     seriesId,
@@ -97,27 +97,33 @@ const formatLabel = ({
         legendSets,
         legendSetId: metaData[seriesId]?.legendSet,
     })
-
-    let result = '<div style="display: flex; align-items: center;">'
-    result += legendSet?.legends?.length
-        ? legendSet.legends
-              .map(
-                  (legend, index) =>
-                      `<span style="${getBulletStyleByFontStyle(
-                          fontStyle
-                      )} background-color: ${
-                          legend.color
-                      }; margin-right:-5px; z-index: ${
-                          legendSet.legends.length - index
-                      }"></span>`
-              )
-              .join('') + `<span style="margin-left: 8px">${seriesName}</span>`
-        : `<span style="${getBulletStyleByFontStyle(
-              fontStyle
-          )} background-color: ${seriesColor}; margin-right:5px"></span>` +
-          `<span>${seriesName}</span>`
-    result += '</div>'
-    return result
+    const result = []
+    result.push(
+        '<div style="display: flex; align-items: center; margin-bottom: 4px;">'
+    )
+    if (legendSet?.legends?.length) {
+        legendSet.legends.forEach((legend, index) =>
+            result.push(
+                `<span style="${getBulletStyleByFontStyle(
+                    fontStyle
+                )} background-color: ${
+                    legend.color
+                }; margin-right:-5px; z-index: ${
+                    legendSet.legends.length - index
+                }"></span>`
+            )
+        )
+        result.push(`<span style="margin-left: 8px">${seriesName}</span>`)
+    } else {
+        result.push(
+            `<span style="${getBulletStyleByFontStyle(
+                fontStyle
+            )} background-color: ${seriesColor}; margin-right:5px"></span>`
+        )
+        result.push(`<span>${seriesName}</span>`)
+    }
+    result.push('</div>')
+    return result.join('')
 }
 
 export default function ({
