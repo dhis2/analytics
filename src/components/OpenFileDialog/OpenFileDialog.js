@@ -152,14 +152,17 @@ export const OpenFileDialog = ({
         {
             field: 'displayName',
             label: i18n.t('Name'),
+            width: '470px',
         },
         {
             field: 'created',
             label: i18n.t('Created'),
+            width: '110px',
         },
         {
             field: 'lastUpdated',
             label: i18n.t('Last updated'),
+            width: '110px',
         },
     ]
 
@@ -167,6 +170,7 @@ export const OpenFileDialog = ({
         headers.splice(1, 0, {
             field: 'type',
             label: i18n.t('Type'),
+            width: '60px',
         })
     }
 
@@ -247,40 +251,38 @@ export const OpenFileDialog = ({
                         </NoticeBox>
                     ) : (
                         <>
-                            <DataTable>
+                            <DataTable layout="fixed">
                                 <DataTableHead>
                                     <DataTableRow>
                                         {data?.files[
                                             AOTypeMap[type].apiEndpoint
                                         ].length ? (
-                                            headers.map(({ field, label }) => (
-                                                <DataTableColumnHeader
-                                                    fixed
-                                                    top="0"
-                                                    key={field}
-                                                    name={field}
-                                                    onSortIconClick={({
-                                                        name,
-                                                        direction,
-                                                    }) =>
-                                                        setSorting({
-                                                            sortField: name,
-                                                            sortDirection:
-                                                                direction,
-                                                        })
-                                                    }
-                                                    sortDirection={getSortDirection(
-                                                        field
-                                                    )}
-                                                >
-                                                    {label}
-                                                </DataTableColumnHeader>
-                                            ))
+                                            headers.map(
+                                                ({ field, label, width }) => (
+                                                    <DataTableColumnHeader
+                                                        width={width}
+                                                        key={field}
+                                                        name={field}
+                                                        onSortIconClick={({
+                                                            name,
+                                                            direction,
+                                                        }) =>
+                                                            setSorting({
+                                                                sortField: name,
+                                                                sortDirection:
+                                                                    direction,
+                                                            })
+                                                        }
+                                                        sortDirection={getSortDirection(
+                                                            field
+                                                        )}
+                                                    >
+                                                        {label}
+                                                    </DataTableColumnHeader>
+                                                )
+                                            )
                                         ) : (
-                                            <DataTableColumnHeader
-                                                fixed
-                                                top="0"
-                                            />
+                                            <DataTableColumnHeader />
                                         )}
                                     </DataTableRow>
                                 </DataTableHead>

@@ -12,7 +12,7 @@ export const FileList = ({ type, data, onSelect }) => (
                     {visualization.displayName}
                 </DataTableCell>
                 {type === 'visualization' && (
-                    <DataTableCell>
+                    <DataTableCell align="center">
                         <VisTypeIcon
                             type={visualization.type}
                             useSmall
