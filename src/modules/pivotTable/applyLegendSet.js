@@ -10,7 +10,7 @@ import { isColorBright } from './isColorBright'
 
 const getLegendSet = (engine, dxDimension) => {
     let legendSetId
-    switch (engine.visualization.legendDisplayStrategy) {
+    switch (engine.visualization.legend?.strategy) {
         case LEGEND_DISPLAY_STRATEGY_BY_DATA_ITEM:
             if (dxDimension && dxDimension.legendSet) {
                 legendSetId = dxDimension.legendSet
@@ -18,9 +18,7 @@ const getLegendSet = (engine, dxDimension) => {
             break
         case LEGEND_DISPLAY_STRATEGY_FIXED:
         default:
-            legendSetId = engine.visualization.legendSet
-                ? engine.visualization.legendSet.id
-                : undefined
+            legendSetId = engine.visualization.legend?.set?.id
             break
     }
 
@@ -29,7 +27,7 @@ const getLegendSet = (engine, dxDimension) => {
 
 const buildStyleObject = (legendColor, engine) => {
     const style = {}
-    switch (engine.visualization.legendDisplayStyle) {
+    switch (engine.visualization.legend?.style) {
         case LEGEND_DISPLAY_STYLE_TEXT:
             style.color = legendColor
             break

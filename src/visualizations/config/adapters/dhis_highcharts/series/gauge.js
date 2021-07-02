@@ -19,8 +19,8 @@ export default function (series, layout, legendSet) {
                 style: {
                     fontSize: DEFAULT_FONT_SIZE,
                     color:
-                        layout.legendDisplayStyle ===
-                            LEGEND_DISPLAY_STYLE_TEXT && legendSet
+                        layout.legend?.style === LEGEND_DISPLAY_STYLE_TEXT &&
+                        legendSet
                             ? getColorByValueFromLegendSet(
                                   legendSet,
                                   series[0].data

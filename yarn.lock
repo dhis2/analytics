@@ -1448,7 +1448,7 @@
     parse-gitignore "^1.0.1"
     styled-jsx "<3.3.3"
 
-"@dhis2/cli-helpers-engine@^2.1.1", "@dhis2/cli-helpers-engine@^2.4.0":
+"@dhis2/cli-helpers-engine@^2.1.1":
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/@dhis2/cli-helpers-engine/-/cli-helpers-engine-2.4.0.tgz#1609d358088f0616fb400aa9f90fc8bb57d4b196"
   integrity sha512-SRcN3s/sQTkd5VUbWAs2+UeYtJ0zLdj4F/RkrL8x2/RX/79vIxvryqBom4FFw/meY0c2GDpXgrpKNQcST/OHBQ==
@@ -1463,14 +1463,29 @@
     update-notifier "^3.0.0"
     yargs "^13.1.0"
 
-"@dhis2/cli-style@^8.4.1":
-  version "8.4.1"
-  resolved "https://registry.yarnpkg.com/@dhis2/cli-style/-/cli-style-8.4.1.tgz#6246df4e2b5879af92239c3c15e9f54129799a84"
-  integrity sha512-4jNRCh/WO5jhzeGkDJ9+2Dx16muy67xTNuniQdJdb7eq7Dm9DN8X9h1QlKxEQuyc4O8jJ08Sk1j3YDL1ApS+ZA==
+"@dhis2/cli-helpers-engine@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@dhis2/cli-helpers-engine/-/cli-helpers-engine-3.0.0.tgz#dacddea16de7e5e60280aefbee2e5661795b78b3"
+  integrity sha512-e8cZFFsunQp56iLx1FKBWGZ1tmWOjdbqJaBwOnzvsKPyYopV9RzNcPm+HIBwfnCjHBWoWTf6ijaf3xVnimZC2w==
+  dependencies:
+    chalk "^3.0.0"
+    cross-spawn "^7.0.3"
+    find-up "^5.0.0"
+    fs-extra "^8.0.1"
+    inquirer "^7.3.3"
+    request "^2.88.0"
+    tar "^4.4.8"
+    update-notifier "^3.0.0"
+    yargs "^13.1.0"
+
+"@dhis2/cli-style@^9.0.1":
+  version "9.0.1"
+  resolved "https://registry.yarnpkg.com/@dhis2/cli-style/-/cli-style-9.0.1.tgz#919bb978362ed9aeb7a253a3b58d6f25e3c09bd9"
+  integrity sha512-CGZQebdhh3EtpjyQGeQEbwVE0vmSqzz8TWrVEkuo9bVxBu7Gjpok5mnsFE0wXLP0kqga9zBuwfeIbY8iAoO1kA==
   dependencies:
     "@commitlint/cli" "^11.0.0"
     "@commitlint/config-conventional" "^11.0.0"
-    "@dhis2/cli-helpers-engine" "^2.4.0"
+    "@dhis2/cli-helpers-engine" "^3.0.0"
     "@ls-lint/ls-lint" "^1.9.2"
     babel-eslint "^10.1.0"
     eslint "^7.18.0"
@@ -1499,6 +1514,17 @@
   version "7.3.0"
   resolved "https://registry.yarnpkg.com/@dhis2/d2-ui-core/-/d2-ui-core-7.3.0.tgz#d30fe5aea507a1d1f203d524f2172e293b0a9bf9"
   integrity sha512-0mklIH4aQX6qonv1oaM+p3jlijszKmvykb0/cL7xkSb40No5KsBxwlT5gL+xCmqWxX9UhNUPtqiuU2kNmGaoEg==
+  dependencies:
+    babel-runtime "^6.26.0"
+    d2 "~31.7"
+    lodash "^4.17.10"
+    material-ui "^0.20.0"
+    rxjs "^5.5.7"
+
+"@dhis2/d2-ui-core@7.3.1":
+  version "7.3.1"
+  resolved "https://registry.yarnpkg.com/@dhis2/d2-ui-core/-/d2-ui-core-7.3.1.tgz#8ee0bce960890234815835909a9ac921c23d7235"
+  integrity sha512-ntdngkL+nojkGElFsZd92JcGggRGnZ3HdgFVPIFqhpTjMBOWgHFmkAKBGVWhRQIQZAZ31LCt/NR5Dhk+ouYhMA==
   dependencies:
     babel-runtime "^6.26.0"
     d2 "~31.7"
@@ -1556,12 +1582,12 @@
     recompose "^0.26.0"
     rxjs "^5.5.7"
 
-"@dhis2/d2-ui-translation-dialog@^7.3.0":
-  version "7.3.0"
-  resolved "https://registry.yarnpkg.com/@dhis2/d2-ui-translation-dialog/-/d2-ui-translation-dialog-7.3.0.tgz#3c7ee0851ff685814bf603e8dd0f69c1d6953327"
-  integrity sha512-6+wHW1LHE+N1VEEuEGH9BiyM41e2lq+IoMKUn2htScLJStugTB5QLWU7YJ1iET3QNJT8XOZlAPAKuQuOpAs4bw==
+"@dhis2/d2-ui-translation-dialog@^7.3.1":
+  version "7.3.1"
+  resolved "https://registry.yarnpkg.com/@dhis2/d2-ui-translation-dialog/-/d2-ui-translation-dialog-7.3.1.tgz#aa10fad9e0cbf134ecc02b7dee6b9e07fa4edae3"
+  integrity sha512-yApQUlj6F3Ll5zkdcnqspAm6m7KosL6Vbj7qa6rHooz/Dvu8fA2Isg/wqYN+ZuKmutaTpX26B7zlN4l1OOP9yw==
   dependencies:
-    "@dhis2/d2-ui-core" "7.3.0"
+    "@dhis2/d2-ui-core" "7.3.1"
     "@material-ui/core" "^3.3.1"
     "@material-ui/icons" "^3.0.1"
     babel-runtime "^6.26.0"
