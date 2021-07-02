@@ -72,6 +72,7 @@ export const PivotTableValueCell = ({
             style={style}
             onClick={isClickable ? onClick : undefined}
             ref={cellRef}
+            dataTest={'visualization-value-cell'}
         >
             {cellContent.renderedValue ?? null}
         </PivotTableCell>

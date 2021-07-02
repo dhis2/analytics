@@ -7,6 +7,10 @@ import {
     FONT_STYLE_LEGEND,
     mergeFontStyleWithDefault,
 } from '../../../../modules/fontStyle'
+import {
+    LEGEND_DISPLAY_STRATEGY_BY_DATA_ITEM,
+    LEGEND_DISPLAY_STRATEGY_FIXED,
+} from '../../../../modules/legends'
 import { isVerticalType, VIS_TYPE_SCATTER } from '../../../../modules/visTypes'
 import { getTextAlignOption } from './getTextAlignOption'
 
@@ -47,11 +51,6 @@ function getItemStyle(fontStyle, dashboard) {
 function getLegend(fontStyle, dashboard, visType) {
     return Object.assign(
         {},
-        {
-            symbolWidth: 11,
-            symbolHeight: 11,
-            itemMarginBottom: 2,
-        },
         dashboard
             ? DASHBOARD_LEGEND
             : {
@@ -64,7 +63,83 @@ function getLegend(fontStyle, dashboard, visType) {
     )
 }
 
-export default function (isHidden, fontStyle, visType, dashboard) {
+const getLegendSetByDisplayStrategy = ({
+    displayStrategy,
+    legendSets,
+    legendSetId,
+}) => {
+    if (
+        displayStrategy === LEGEND_DISPLAY_STRATEGY_FIXED &&
+        legendSets.length
+    ) {
+        return legendSets[0]
+    } else if (displayStrategy === LEGEND_DISPLAY_STRATEGY_BY_DATA_ITEM) {
+        return legendSets.find(legendSet => legendSet.id === legendSetId)
+    } else {
+        return null
+    }
+}
+
+const getBulletStyleByFontStyle = fontStyle =>
+    `display: inline-block; border-radius: 50%; width: ${fontStyle[FONT_STYLE_OPTION_FONT_SIZE]}px; height: ${fontStyle[FONT_STYLE_OPTION_FONT_SIZE]}px;`
+
+const formatLabel = ({
+    seriesId,
+    metaData,
+    displayStrategy,
+    legendSets,
+    fontStyle,
+    seriesColor,
+    seriesName,
+}) => {
+    const legendSet = getLegendSetByDisplayStrategy({
+        displayStrategy,
+        legendSets,
+        legendSetId: metaData[seriesId]?.legendSet,
+    })
+    const result = []
+    // Note: Highcharts strips out 'data-test' and similar attributes, hence 'class="data-test-..." was used instead
+    result.push(
+        '<div style="display: flex; align-items: center; margin-bottom: 4px;" class="data-test-series-key-item">'
+    )
+    if (legendSet?.legends?.length) {
+        legendSet.legends.forEach((legend, index) =>
+            result.push(
+                `<span style="${getBulletStyleByFontStyle(
+                    fontStyle
+                )} background-color: ${
+                    legend.color
+                }; margin-right:-5px; z-index: ${
+                    legendSet.legends.length - index
+                }" class="data-test-series-key-item-bullet"></span>`
+            )
+        )
+        result.push(
+            `<span style="margin-left: 8px" class="data-test-series-key-item-name">${seriesName}</span>`
+        )
+    } else {
+        result.push(
+            `<span style="${getBulletStyleByFontStyle(
+                fontStyle
+            )} background-color: ${seriesColor}; margin-right:5px" class="data-test-series-key-item-bullet"></span>`
+        )
+        result.push(
+            `<span class="data-test-series-key-item-name">${seriesName}</span>`
+        )
+    }
+    result.push('</div>')
+    return result.join('')
+}
+
+export default function ({
+    isHidden,
+    fontStyle,
+    visType,
+    dashboard,
+    legendSets = [],
+    metaData,
+    displayStrategy,
+}) {
     const mergedFontStyle = mergeFontStyleWithDefault(
         fontStyle,
         FONT_STYLE_LEGEND
@@ -76,6 +151,22 @@ export default function (isHidden, fontStyle, visType, dashboard) {
         : Object.assign(
               {},
               getLegend(mergedFontStyle, dashboard, visType),
-              getItemStyle(mergedFontStyle, dashboard)
+              getItemStyle(mergedFontStyle, dashboard),
+              {
+                  useHTML: true,
+                  symbolWidth: 0.001,
+                  symbolHeight: 0.001,
+                  labelFormatter: function () {
+                      return formatLabel({
+                          seriesId: this.userOptions?.id,
+                          seriesColor: this.color,
+                          seriesName: this.name,
+                          metaData,
+                          displayStrategy,
+                          legendSets,
+                          fontStyle: mergedFontStyle,
+                      })
+                  },
+              }
           )
 }
