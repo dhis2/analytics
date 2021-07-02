@@ -33,26 +33,28 @@ import { getTranslatedString, AO_TYPE_VISUALIZATION, AOTypeMap } from './utils'
 import { VisTypeFilter, VIS_TYPE_ALL, VIS_TYPE_CHARTS } from './VisTypeFilter'
 
 const getQuery = type => ({
-    resource: AOTypeMap[type].apiEndpoint,
-    params: ({
-        sortField = 'displayName',
-        sortDirection = 'asc',
-        page = 1,
-        filters,
-    }) => {
-        const queryParams = {
-            filter: filters,
-            fields: `id,type,displayName,title,displayDescription,created,lastUpdated,user,access,href`,
-            paging: true,
-            pageSize: 8,
-            page,
-        }
+    files: {
+        resource: AOTypeMap[type].apiEndpoint,
+        params: ({
+            sortField = 'displayName',
+            sortDirection = 'asc',
+            page = 1,
+            filters,
+        }) => {
+            const queryParams = {
+                filter: filters,
+                fields: `id,type,displayName,title,displayDescription,created,lastUpdated,user,access,href`,
+                paging: true,
+                pageSize: 8,
+                page,
+            }
 
-        if (sortDirection !== 'default') {
-            queryParams.order = `${sortField}:${sortDirection}`
-        }
+            if (sortDirection !== 'default') {
+                queryParams.order = `${sortField}:${sortDirection}`
+            }
 
-        return queryParams
+            return queryParams
+        },
     },
 })
 
@@ -115,10 +117,9 @@ export const OpenFileDialog = ({
         return queryFilters
     }
 
-    const { loading, error, data, refetch } = useDataQuery(
-        { files: filesQuery },
-        { lazy: true }
-    )
+    const { loading, error, data, refetch } = useDataQuery(filesQuery, {
+        lazy: true,
+    })
 
     const resetFilters = () => {
         setFilters(defaultFilters)
