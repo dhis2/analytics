@@ -98,8 +98,9 @@ const formatLabel = ({
         legendSetId: metaData[seriesId]?.legendSet,
     })
     const result = []
+    // Note: Highcharts strips out 'data-test' and similar attributes, hence 'class="data-test-..." was used instead
     result.push(
-        '<div style="display: flex; align-items: center; margin-bottom: 4px;">'
+        '<div style="display: flex; align-items: center; margin-bottom: 4px;" class="data-test-series-key-item">'
     )
     if (legendSet?.legends?.length) {
         legendSet.legends.forEach((legend, index) =>
@@ -110,17 +111,21 @@ const formatLabel = ({
                     legend.color
                 }; margin-right:-5px; z-index: ${
                     legendSet.legends.length - index
-                }"></span>`
+                }" class="data-test-series-key-item-bullet"></span>`
             )
         )
-        result.push(`<span style="margin-left: 8px">${seriesName}</span>`)
+        result.push(
+            `<span style="margin-left: 8px" class="data-test-series-key-item-name">${seriesName}</span>`
+        )
     } else {
         result.push(
             `<span style="${getBulletStyleByFontStyle(
                 fontStyle
-            )} background-color: ${seriesColor}; margin-right:5px"></span>`
+            )} background-color: ${seriesColor}; margin-right:5px" class="data-test-series-key-item-bullet"></span>`
         )
-        result.push(`<span>${seriesName}</span>`)
+        result.push(
+            `<span class="data-test-series-key-item-name">${seriesName}</span>`
+        )
     }
     result.push('</div>')
     return result.join('')
