@@ -114,7 +114,7 @@ export default function (layout, series, legendSet) {
         getPlotLine(axis.targetLine, DEFAULT_TARGET_LINE_LABEL),
     ])
     const fillColor =
-        layout.legend?.style === LEGEND_DISPLAY_STYLE_FILL && legendSet
+        layout.legendDisplayStyle === LEGEND_DISPLAY_STYLE_FILL && legendSet
             ? getColorByValueFromLegendSet(legendSet, series[0].data)
             : undefined
     return objectClean({

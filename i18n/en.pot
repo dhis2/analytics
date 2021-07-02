@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2021-06-16T13:08:18.884Z\n"
-"PO-Revision-Date: 2021-06-16T13:08:18.884Z\n"
+"POT-Creation-Date: 2021-06-10T07:19:35.004Z\n"
+"PO-Revision-Date: 2021-06-10T07:19:35.004Z\n"
 
 msgid "Data Type"
 msgstr "Data Type"
@@ -178,6 +178,15 @@ msgstr "Rename"
 
 msgid "Save {{fileType}} as"
 msgstr "Save {{fileType}} as"
+
+msgid "Selected Data"
+msgstr "Selected Data"
+
+msgid "Deselect All"
+msgstr "Deselect All"
+
+msgid "Select all"
+msgstr "Select all"
 
 msgid "Created by"
 msgstr "Created by"
