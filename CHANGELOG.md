@@ -1,3 +1,15 @@
+# [20.0.0](https://github.com/dhis2/analytics/compare/v19.1.1...v20.0.0) (2021-07-02)
+
+
+### Features
+
+* legend key (DHIS2-11239) ([#951](https://github.com/dhis2/analytics/issues/951)) ([#975](https://github.com/dhis2/analytics/issues/975)) ([c4403c6](https://github.com/dhis2/analytics/commit/c4403c69b3427cb5f0085c10d0540b4b4bab4c81))
+
+
+### BREAKING CHANGES
+
+* layout.legend replaced by layout.seriesKey. legendSet, legendDisplayStyle, legendDisplayStrategy replaced by the consolidated legend prop
+
 ## [19.1.1](https://github.com/dhis2/analytics/compare/v19.1.0...v19.1.1) (2021-07-02)
 
 
