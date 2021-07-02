@@ -22,8 +22,6 @@ export { default as FileMenu } from './components/FileMenu/FileMenu'
 
 export { default as VisTypeIcon } from './components/VisTypeIcon'
 
-export { default as LegendKey } from './components/LegendKey/LegendKey'
-
 // Api
 
 export { default as Analytics } from './api/analytics/Analytics'
@@ -219,15 +217,6 @@ export {
     getTextAlignOptions,
     deleteFontStyleOption,
 } from './modules/fontStyle'
-
-// Modules: legend
-
-export {
-    LEGEND_DISPLAY_STRATEGY_BY_DATA_ITEM,
-    LEGEND_DISPLAY_STRATEGY_FIXED,
-    LEGEND_DISPLAY_STYLE_FILL,
-    LEGEND_DISPLAY_STYLE_TEXT,
-} from './modules/legends'
 
 // Utils: colorSets
 export {

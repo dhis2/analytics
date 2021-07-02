@@ -176,14 +176,15 @@ function getDefault(series, metaData, layout, isStacked, extraOptions) {
         if (isLegendSetType(layout.type)) {
             const legendSets = extraOptions?.legendSets || []
             if (
-                layout.legend?.strategy === LEGEND_DISPLAY_STRATEGY_BY_DATA_ITEM
+                layout.legendDisplayStrategy ===
+                LEGEND_DISPLAY_STRATEGY_BY_DATA_ITEM
             ) {
                 legendSet = legendSets.find(
                     legendSet =>
                         legendSet.id === metaData.items[seriesObj.id]?.legendSet
                 )
             } else if (
-                layout.legend?.strategy === LEGEND_DISPLAY_STRATEGY_FIXED
+                layout.legendDisplayStrategy === LEGEND_DISPLAY_STRATEGY_FIXED
             ) {
                 legendSet = legendSets[0]
             }
