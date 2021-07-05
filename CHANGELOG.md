@@ -1,3 +1,11 @@
+## [16.0.20](https://github.com/dhis2/analytics/compare/v16.0.19...v16.0.20) (2021-07-05)
+
+
+### Bug Fixes
+
+* provide default props for maps being displayed as table [16.x] ([#980](https://github.com/dhis2/analytics/issues/980)) ([57db3da](https://github.com/dhis2/analytics/commit/57db3da8fbdbe75c95c140e95a1c46073a872b25)), closes [#947](https://github.com/dhis2/analytics/issues/947) [#947](https://github.com/dhis2/analytics/issues/947)
+* update readme with correct 16.x.x branch name ([#981](https://github.com/dhis2/analytics/issues/981)) ([647c125](https://github.com/dhis2/analytics/commit/647c125b10283e848014b2a12e97975bf2c355b4))
+
 ## [16.0.19](https://github.com/dhis2/analytics/compare/v16.0.18...v16.0.19) (2021-04-12)
 
 
