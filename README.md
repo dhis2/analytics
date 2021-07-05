@@ -25,9 +25,9 @@ To publish, simply mark the commit using [semantic release terminology](https://
 
 The master branch follows semantic versioning according to spec.
 
-### 16.x branch
+### 16.x.x branch
 
-Commits to the 16.x branch cannot trigger a major version bump, even if it is technically a breaking change. This is because 17.0.0 has already been published. In the unlikely case that you need to commit a change that is considered breaking, you will have to mark it to only trigger a patch or minor bump, then make sure to update the apps that are locked to the 16.x version of analytics
+Commits to the 16.x.x branch cannot trigger a major version bump, even if it is technically a breaking change. This is because 17.0.0 has already been published. In the unlikely case that you need to commit a change that is considered breaking, you will have to mark it to only trigger a patch or minor bump, then make sure to update the apps that are locked to the 16.x.x version of analytics
 
 ### 11.0.x branch
 
