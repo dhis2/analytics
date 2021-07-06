@@ -11,7 +11,11 @@ import {
     LEGEND_DISPLAY_STRATEGY_BY_DATA_ITEM,
     LEGEND_DISPLAY_STRATEGY_FIXED,
 } from '../../../../modules/legends'
-import { isVerticalType, VIS_TYPE_SCATTER } from '../../../../modules/visTypes'
+import {
+    isLegendSetType,
+    isVerticalType,
+    VIS_TYPE_SCATTER,
+} from '../../../../modules/visTypes'
 import { getTextAlignOption } from './getTextAlignOption'
 
 const DASHBOARD_ITEM_STYLE = {
@@ -91,6 +95,7 @@ const formatLabel = ({
     fontStyle,
     seriesColor,
     seriesName,
+    visType,
 }) => {
     const legendSet = getLegendSetByDisplayStrategy({
         displayStrategy,
@@ -102,7 +107,7 @@ const formatLabel = ({
     result.push(
         '<div style="display: flex; align-items: center; margin-bottom: 4px;" class="data-test-series-key-item">'
     )
-    if (legendSet?.legends?.length) {
+    if (legendSet?.legends?.length && isLegendSetType(visType)) {
         legendSet.legends.forEach((legend, index) =>
             result.push(
                 `<span style="${getBulletStyleByFontStyle(
@@ -165,6 +170,7 @@ export default function ({
                           displayStrategy,
                           legendSets,
                           fontStyle: mergedFontStyle,
+                          visType,
                       })
                   },
               }
