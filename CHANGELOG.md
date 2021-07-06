@@ -1,3 +1,10 @@
+## [20.0.2](https://github.com/dhis2/analytics/compare/v20.0.1...v20.0.2) (2021-07-06)
+
+
+### Bug Fixes
+
+* legend options bleed (DHIS2-11239) ([#982](https://github.com/dhis2/analytics/issues/982)) ([64768c6](https://github.com/dhis2/analytics/commit/64768c636259f67249148b04f5520bd7d7157176))
+
 ## [20.0.1](https://github.com/dhis2/analytics/compare/v20.0.0...v20.0.1) (2021-07-02)
 
 
