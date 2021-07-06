@@ -167,7 +167,13 @@ const columnBasedTypes = [
 
 const verticalTypes = [VIS_TYPE_BAR, VIS_TYPE_STACKED_BAR, VIS_TYPE_GAUGE]
 
-const legendSetTypes = [VIS_TYPE_COLUMN, VIS_TYPE_BAR]
+const legendSetTypes = [
+    VIS_TYPE_COLUMN,
+    VIS_TYPE_BAR,
+    VIS_TYPE_GAUGE,
+    VIS_TYPE_SINGLE_VALUE,
+    VIS_TYPE_PIVOT_TABLE,
+]
 
 export const defaultVisType = VIS_TYPE_COLUMN
 export const isStacked = type => stackedTypes.includes(type)
