@@ -21,6 +21,7 @@ export const PivotTableRowHeaderCell = ({
             showHierarchy={engine.visualization.showHierarchy}
             render={header => (
                 <PivotTableCell
+                    isHeader
                     classes={[
                         header.label &&
                         header.label !== 'Total' &&
@@ -28,10 +29,19 @@ export const PivotTableRowHeaderCell = ({
                             ? 'row-header'
                             : 'empty-header',
                         header.includesHierarchy && 'row-header-hierarchy',
+                        { fixedHeader: engine.options.fixedRowHeaders },
                     ]}
                     rowSpan={header.span}
                     title={header.label}
-                    style={{ width, maxWidth: width, minWidth: width }}
+                    style={{
+                        width,
+                        maxWidth: width,
+                        minWidth: width,
+                        left:
+                            rowLevel > 0
+                                ? engine.rowHeaderWidths[rowLevel - 1]
+                                : 0,
+                    }}
                     dataTest="visualization-row-header"
                 >
                     {header.label}

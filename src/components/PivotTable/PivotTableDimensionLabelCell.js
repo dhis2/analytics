@@ -37,13 +37,44 @@ export const PivotTableDimensionLabelCell = ({ rowLevel, columnLevel }) => {
     }
 
     const width = engine.rowHeaderWidths[rowLevel]
+    const style = {
+        width,
+        maxWidth: width,
+        minWidth: width,
+    }
+
+    if (engine.options.fixedColumnHeaders || engine.options.fixedRowHeaders) {
+        style.zIndex =
+            engine.options.fixedColumnHeaders && engine.options.fixedRowHeaders
+                ? 2
+                : 1
+        style.top = engine.options.fixedColumnHeaders
+            ? columnLevel * (engine.fontSize + engine.cellPadding * 2 + 2)
+            : 0
+        style.left = engine.options.fixedRowHeaders
+            ? // calculate the width of all row header cells on the left of current cell
+              engine.rowHeaderWidths
+                  .slice(0, rowLevel)
+                  .reduce((width, acc) => (acc += width), 0)
+            : 0
+    }
+
     return (
         <PivotTableCell
-            classes={['empty-header', 'column-header']}
+            isHeader={true}
+            classes={[
+                'empty-header',
+                'column-header',
+                {
+                    fixedHeader:
+                        engine.options.fixedColumnHeaders ||
+                        engine.options.fixedRowHeaders,
+                },
+            ]}
             colSpan={colSpan}
             rowSpan={rowSpan}
             title={label}
-            style={{ width, maxWidth: width, minWidth: width }}
+            style={style}
         >
             {label}
         </PivotTableCell>

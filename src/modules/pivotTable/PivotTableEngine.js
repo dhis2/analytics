@@ -52,6 +52,8 @@ const defaultOptions = {
     showColumnTotals: false,
     showRowSubtotals: false,
     showColumnSubtotals: false,
+    fixedColumnHeaders: false,
+    fixedRowHeaders: false,
 }
 
 const defaultVisualizationProps = {
@@ -287,6 +289,8 @@ export class PivotTableEngine {
             subtitle: visualization.hideSubtitle
                 ? undefined
                 : visualization.subtitle,
+            fixedColumnHeaders: visualization.fixedColumnHeaders,
+            fixedRowHeaders: visualization.fixedRowHeaders,
         }
 
         this.dimensionLookup = buildDimensionLookup(

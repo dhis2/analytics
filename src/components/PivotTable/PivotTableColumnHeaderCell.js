@@ -30,24 +30,41 @@ export const PivotTableColumnHeaderCell = ({
                     header.span === 1 &&
                     engine.isSortable(index)
 
+                const style = {
+                    cursor: isSortable ? 'pointer' : 'default',
+                    width,
+                    maxWidth: width,
+                    minWidth: width,
+                }
+
+                if (
+                    engine.options.fixedColumnHeaders ||
+                    engine.options.fixedRowHeaders
+                ) {
+                    style.top =
+                        level * (engine.fontSize + engine.cellPadding * 2 + 2)
+                    // left value for the column header cells should be sum of row headers' width when engine.options.fixedRowHeaders is true
+                    style.left = engine.options.fixedRowHeaders
+                        ? engine.rowHeaderPixelWidth
+                        : 0
+                }
+
                 return (
                     <PivotTableCell
-                        isColumnHeader
-                        classes={
+                        isHeader
+                        classes={[
                             header.label &&
                             header.label !== 'Total' &&
                             header.label !== 'Subtotal' // TODO: Actually look up the column type!
                                 ? 'column-header'
-                                : 'empty-header'
-                        }
+                                : 'empty-header',
+                            {
+                                fixedHeader: engine.options.fixedColumnHeaders,
+                            },
+                        ]}
                         colSpan={header.span}
                         title={header.label}
-                        style={{
-                            cursor: isSortable ? 'pointer' : 'default',
-                            width,
-                            maxWidth: width,
-                            minWidth: width,
-                        }}
+                        style={style}
                         onClick={
                             isSortable ? () => onSortByColumn(index) : undefined
                         }
@@ -75,8 +92,9 @@ export const PivotTableColumnHeaderCell = ({
 }
 
 PivotTableColumnHeaderCell.propTypes = {
-    clippingResult: PropTypes.shape({ columns: PropTypes.object.isRequired })
-        .isRequired,
+    clippingResult: PropTypes.shape({
+        columns: PropTypes.object.isRequired,
+    }).isRequired,
     index: PropTypes.number.isRequired,
     level: PropTypes.number.isRequired,
     onSortByColumn: PropTypes.func.isRequired,

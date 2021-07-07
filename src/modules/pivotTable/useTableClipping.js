@@ -24,6 +24,7 @@ export const useTableClipping = ({
                     visualization.columns.length +
                     (engine.options.title ? 1 : 0) +
                     (engine.options.subtitle ? 1 : 0),
+                fixedColumnHeaders: engine.options.fixedColumnHeaders,
             }),
         [
             scrollPosition.y,
