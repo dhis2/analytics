@@ -9,6 +9,7 @@ import {
     isStacked,
     isLegendSetType,
     VIS_TYPE_SCATTER,
+    VIS_TYPE_GAUGE,
 } from '../../../../modules/visTypes'
 import { defaultMultiAxisTheme1 } from '../../../util/colors/themes'
 import addTrendLines, { isRegressionIneligible } from './addTrendLines'
@@ -189,7 +190,11 @@ export default function ({ store, layout, el, extraConfig, extraOptions }) {
      ** the format of the data prop from an array of values to an array of objects with y and color props.
      */
 
-    if (legendSets?.length && isLegendSetType(layout.type)) {
+    if (
+        legendSets?.length &&
+        isLegendSetType(layout.type) &&
+        layout.type !== VIS_TYPE_GAUGE
+    ) {
         if (_layout.legend?.strategy === LEGEND_DISPLAY_STRATEGY_BY_DATA_ITEM) {
             config.series = config.series.map(seriesObj => {
                 const legendSet = legendSets.find(
