@@ -111,7 +111,10 @@ const formatLabel = ({
     result.push(
         '<div style="display: flex; align-items: center; margin-bottom: 4px;" class="data-test-series-key-item">'
     )
-    if (!seriesId && seriesType === getType(VIS_TYPE_LINE).type) {
+    if (
+        (!seriesId || seriesId.startsWith('trendline')) &&
+        seriesType === getType(VIS_TYPE_LINE).type
+    ) {
         // trendline
         result.push(
             `<span style="height: ${
