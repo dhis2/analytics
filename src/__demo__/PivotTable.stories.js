@@ -404,6 +404,25 @@ storiesOf('PivotTable', module).add('deep', (_, { pivotTableOptions }) => {
 })
 
 storiesOf('PivotTable', module).add(
+    'deep - title / subtitle / filter',
+    (_, { pivotTableOptions }) => {
+        const visualization = {
+            ...deepVisualization,
+            ...visualizationReset,
+            ...pivotTableOptions,
+            showDimensionLabels: false,
+            title: 'This is a Table',
+            subtitle: "It's a rather big table",
+        }
+        return (
+            <div style={{ width: 800, height: 600 }}>
+                <PivotTable data={deepData} visualization={visualization} />
+            </div>
+        )
+    }
+)
+
+storiesOf('PivotTable', module).add(
     'deep - dimension labels',
     (_, { pivotTableOptions }) => {
         const visualization = {
