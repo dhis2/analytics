@@ -10,6 +10,7 @@ import {
     isLegendSetType,
     VIS_TYPE_SCATTER,
     VIS_TYPE_GAUGE,
+    VIS_TYPE_LINE,
 } from '../../../../modules/visTypes'
 import { defaultMultiAxisTheme1 } from '../../../util/colors/themes'
 import addTrendLines, { isRegressionIneligible } from './addTrendLines'
@@ -197,6 +198,9 @@ export default function ({ store, layout, el, extraConfig, extraOptions }) {
     ) {
         if (_layout.legend?.strategy === LEGEND_DISPLAY_STRATEGY_BY_DATA_ITEM) {
             config.series = config.series.map(seriesObj => {
+                if (seriesObj.type === VIS_TYPE_LINE) {
+                    return seriesObj
+                }
                 const legendSet = legendSets.find(
                     legendSet =>
                         legendSet.id ===
@@ -208,7 +212,9 @@ export default function ({ store, layout, el, extraConfig, extraOptions }) {
             })
         } else if (_layout.legend?.strategy === LEGEND_DISPLAY_STRATEGY_FIXED) {
             config.series = config.series.map(seriesObj =>
-                applyLegendSet(seriesObj, legendSets[0])
+                seriesObj.type === VIS_TYPE_LINE
+                    ? seriesObj
+                    : applyLegendSet(seriesObj, legendSets[0])
             )
         }
         config.tooltip = getLegendSetTooltip()

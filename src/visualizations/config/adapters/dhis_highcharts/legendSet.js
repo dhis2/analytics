@@ -7,7 +7,7 @@ const OUT_OF_BOUNDS_COLOR = '#CCCCCC'
 const getLegend = (value, legendSet) =>
     value && legendSet ? getLegendByValueFromLegendSet(legendSet, value) : {}
 
-export const applyLegendSet = (seriesObj, legendSet) =>
+export const applyLegendSet = (seriesObj = {}, legendSet) =>
     !seriesObj.type
         ? {
               ...seriesObj,
