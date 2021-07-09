@@ -5,13 +5,14 @@ import styles from './styles/LegendKey.style'
 
 const LegendKey = ({ legendSets }) => {
     return legendSets.length ? (
-        <div className="container">
+        <div className="container" data-test={'legend-key-container'}>
             {legendSets.map((legendSet, index) => (
                 <div
                     key={legendSet.id}
                     className={cx('legendSet', {
                         divider: index > 0,
                     })}
+                    data-test={`legend-key-item-${legendSet.id}`}
                 >
                     {legendSets.length > 1 && (
                         <span className="legendSetName">{legendSet.name}</span>
