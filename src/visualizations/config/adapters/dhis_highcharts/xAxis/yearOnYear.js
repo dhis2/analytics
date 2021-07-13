@@ -1,17 +1,16 @@
 import objectClean from 'd2-utilizr/lib/objectClean'
 import {
-    FONT_STYLE_VERTICAL_AXIS_TITLE,
-    mergeFontStyleWithDefault,
+    FONT_STYLE_HORIZONTAL_AXIS_TITLE,
+    FONT_STYLE_CATEGORY_AXIS_LABELS,
+    FONT_STYLE_OPTION_TEXT_COLOR,
+    FONT_STYLE_OPTION_FONT_SIZE,
+    FONT_STYLE_OPTION_BOLD,
+    FONT_STYLE_OPTION_ITALIC
 } from '../../../../../modules/fontStyle'
-import { getAxis } from '../../../../util/axes'
 import getAxisTitle from '../getAxisTitle'
-import { getLabels } from '.'
 
 export default function (store, layout, extraOptions) {
     let categories
-    const AXIS_TYPE = 'DOMAIN'
-    const AXIS_INDEX = 0
-    const axis = getAxis(layout.axes, AXIS_TYPE, AXIS_INDEX)
 
     if (extraOptions.xAxisLabels) {
         categories = extraOptions.xAxisLabels
@@ -42,17 +41,18 @@ export default function (store, layout, extraOptions) {
         }, [])
     }
 
+    const labelFontStyle = layout.fontStyle[FONT_STYLE_CATEGORY_AXIS_LABELS]
+
     return objectClean({
         categories,
-        title: getAxisTitle(
-            axis.title?.text,
-            mergeFontStyleWithDefault(
-                axis.title?.fontStyle,
-                FONT_STYLE_VERTICAL_AXIS_TITLE
-            ),
-            FONT_STYLE_VERTICAL_AXIS_TITLE,
-            layout.type
-        ),
-        labels: getLabels(axis),
+        title: getAxisTitle(layout.domainAxisLabel, layout.fontStyle[FONT_STYLE_HORIZONTAL_AXIS_TITLE], FONT_STYLE_HORIZONTAL_AXIS_TITLE, layout.type),
+        labels: labelFontStyle ? {
+            style: {
+                color: labelFontStyle[FONT_STYLE_OPTION_TEXT_COLOR],
+                fontSize: `${labelFontStyle[FONT_STYLE_OPTION_FONT_SIZE]}px`,
+                fontWeight: labelFontStyle[FONT_STYLE_OPTION_BOLD] ? FONT_STYLE_OPTION_BOLD : 'normal',
+                fontStyle: labelFontStyle[FONT_STYLE_OPTION_ITALIC] ? FONT_STYLE_OPTION_ITALIC : 'normal'
+            },
+        } : {},
     })
 }
