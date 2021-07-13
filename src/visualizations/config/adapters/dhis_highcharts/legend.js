@@ -14,9 +14,12 @@ import {
 import {
     isLegendSetType,
     isVerticalType,
+    VIS_TYPE_LINE,
     VIS_TYPE_SCATTER,
 } from '../../../../modules/visTypes'
+import { colorSets, COLOR_SET_PATTERNS } from '../../../util/colors/colorSets'
 import { getTextAlignOption } from './getTextAlignOption'
+import getType from './type'
 
 const DASHBOARD_ITEM_STYLE = {
     fontSize: '11px',
@@ -89,12 +92,13 @@ const getBulletStyleByFontStyle = fontStyle =>
 
 const formatLabel = ({
     seriesId,
+    seriesColor,
+    seriesName,
+    seriesType,
     metaData,
     displayStrategy,
     legendSets,
     fontStyle,
-    seriesColor,
-    seriesName,
     visType,
 }) => {
     const legendSet = getLegendSetByDisplayStrategy({
@@ -107,27 +111,78 @@ const formatLabel = ({
     result.push(
         '<div style="display: flex; align-items: center; margin-bottom: 4px;" class="data-test-series-key-item">'
     )
-    if (legendSet?.legends?.length && isLegendSetType(visType)) {
-        legendSet.legends.forEach((legend, index) =>
-            result.push(
-                `<span style="${getBulletStyleByFontStyle(
-                    fontStyle
-                )} background-color: ${
-                    legend.color
-                }; margin-right:-5px; z-index: ${
-                    legendSet.legends.length - index
-                }" class="data-test-series-key-item-bullet"></span>`
-            )
+    if (
+        (!seriesId || seriesId.startsWith('trendline')) &&
+        seriesType === getType(VIS_TYPE_LINE).type
+    ) {
+        // trendline
+        result.push(
+            `<span style="height: ${
+                fontStyle[FONT_STYLE_OPTION_FONT_SIZE] / 6.5
+            }px; width: ${
+                fontStyle[FONT_STYLE_OPTION_FONT_SIZE]
+            }px; background-color: ${seriesColor}; display: inline-block;"></span>`
         )
         result.push(
             `<span style="margin-left: 8px" class="data-test-series-key-item-name">${seriesName}</span>`
         )
-    } else {
+    } else if (
+        legendSet?.legends?.length &&
+        isLegendSetType(visType) &&
+        seriesType !== getType(VIS_TYPE_LINE).type
+    ) {
+        // item with legend set
+        legendSet.legends
+            .sort((a, b) => a.startValue - b.startValue)
+            .forEach((legend, index) =>
+                result.push(
+                    `<span style="${getBulletStyleByFontStyle(
+                        fontStyle
+                    )} background-color: ${
+                        legend.color
+                    }; margin-right:-5px; z-index: ${
+                        legendSet.legends.length - index
+                    }" class="data-test-series-key-item-bullet"></span>`
+                )
+            )
         result.push(
-            `<span style="${getBulletStyleByFontStyle(
-                fontStyle
-            )} background-color: ${seriesColor}; margin-right:5px" class="data-test-series-key-item-bullet"></span>`
+            `<span style="margin-left: 8px" class="data-test-series-key-item-name">${seriesName}</span>`
         )
+    } else {
+        // regular item (not a trendline, no applied legend set)
+        if (seriesColor?.patternIndex !== undefined) {
+            const pattern =
+                colorSets[COLOR_SET_PATTERNS].patterns[seriesColor.patternIndex]
+            result.push(
+                `<svg xmlns="http://www.w3.org/2000/svg" style="height: ${
+                    fontStyle[FONT_STYLE_OPTION_FONT_SIZE]
+                }px; width: ${
+                    fontStyle[FONT_STYLE_OPTION_FONT_SIZE]
+                }px; display: inline-block; margin-right:5px" class="data-test-series-key-item-bullet">
+                <defs>
+                  <pattern id="pattern${
+                      seriesColor.patternIndex
+                  }" patternUnits="userSpaceOnUse" width="${
+                    pattern.width
+                }" height="${pattern.height}">
+                    <path stroke="${pattern.color}" d="${pattern.path}"/>
+                  </pattern>
+                </defs>
+                <circle cx="${
+                    fontStyle[FONT_STYLE_OPTION_FONT_SIZE] / 2
+                }" cy="${fontStyle[FONT_STYLE_OPTION_FONT_SIZE] / 2}" r="${
+                    fontStyle[FONT_STYLE_OPTION_FONT_SIZE] / 2
+                }" fill="url(#pattern${seriesColor.patternIndex})"/>
+              </svg>`
+            )
+        } else {
+            result.push(
+                `<span style="${getBulletStyleByFontStyle(
+                    fontStyle
+                )} background-color: ${seriesColor}; margin-right:5px" class="data-test-series-key-item-bullet"></span>`
+            )
+        }
+
         result.push(
             `<span class="data-test-series-key-item-name">${seriesName}</span>`
         )
@@ -166,6 +221,7 @@ export default function ({
                           seriesId: this.userOptions?.id,
                           seriesColor: this.color,
                           seriesName: this.name,
+                          seriesType: this.userOptions?.type,
                           metaData,
                           displayStrategy,
                           legendSets,
