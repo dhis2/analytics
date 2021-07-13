@@ -1,3 +1,10 @@
+## [20.0.4](https://github.com/dhis2/analytics/compare/v20.0.3...v20.0.4) (2021-07-13)
+
+
+### Bug Fixes
+
+* yoy x axis title and labels (DHIS2-11411) ([#989](https://github.com/dhis2/analytics/issues/989)) ([5d69c70](https://github.com/dhis2/analytics/commit/5d69c7012ebbcd1b035ab8553be37cd55230bb09))
+
 ## [20.0.3](https://github.com/dhis2/analytics/compare/v20.0.2...v20.0.3) (2021-07-13)
 
 
