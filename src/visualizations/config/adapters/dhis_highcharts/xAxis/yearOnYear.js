@@ -1,6 +1,6 @@
 import objectClean from 'd2-utilizr/lib/objectClean'
 import {
-    FONT_STYLE_VERTICAL_AXIS_TITLE,
+    FONT_STYLE_HORIZONTAL_AXIS_TITLE,
     mergeFontStyleWithDefault,
 } from '../../../../../modules/fontStyle'
 import { getAxis } from '../../../../util/axes'
@@ -48,9 +48,9 @@ export default function (store, layout, extraOptions) {
             axis.title?.text,
             mergeFontStyleWithDefault(
                 axis.title?.fontStyle,
-                FONT_STYLE_VERTICAL_AXIS_TITLE
+                FONT_STYLE_HORIZONTAL_AXIS_TITLE
             ),
-            FONT_STYLE_VERTICAL_AXIS_TITLE,
+            FONT_STYLE_HORIZONTAL_AXIS_TITLE,
             layout.type
         ),
         labels: getLabels(axis),
