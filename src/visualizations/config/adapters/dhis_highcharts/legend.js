@@ -150,8 +150,7 @@ const formatLabel = ({
         )
     } else {
         // regular item (not a trendline, no applied legend set)
-        const hasPattern = seriesColor?.patternIndex !== undefined
-        if (hasPattern) {
+        if (seriesColor?.patternIndex !== undefined) {
             const pattern =
                 colorSets[COLOR_SET_PATTERNS].patterns[seriesColor.patternIndex]
             result.push(
