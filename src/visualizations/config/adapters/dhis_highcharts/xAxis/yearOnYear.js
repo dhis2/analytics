@@ -7,7 +7,7 @@ import { getAxis } from '../../../../util/axes'
 import getAxisTitle from '../getAxisTitle'
 import { getLabels } from '.'
 
-export default function (store, layout, extraOptions) {
+export default function(store, layout, extraOptions) {
     let categories
     const AXIS_TYPE = 'DOMAIN'
     const AXIS_INDEX = 0
