@@ -1,4 +1,7 @@
-export default function(store, layout, extraOptions) {
+import objectClean from 'd2-utilizr/lib/objectClean'
+import getAxisTitle from '../getAxisTitle'
+
+export default function (store, layout, extraOptions) {
     let categories
 
     if (extraOptions.xAxisLabels) {
@@ -30,7 +33,8 @@ export default function(store, layout, extraOptions) {
         }, [])
     }
 
-    return {
+    return objectClean({
         categories,
-    }
+        title: getAxisTitle(layout.domainAxisLabel),
+    })
 }
