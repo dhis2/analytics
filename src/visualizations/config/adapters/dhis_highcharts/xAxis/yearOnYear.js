@@ -1,5 +1,17 @@
+import objectClean from 'd2-utilizr/lib/objectClean'
+import {
+    FONT_STYLE_HORIZONTAL_AXIS_TITLE,
+    mergeFontStyleWithDefault,
+} from '../../../../../modules/fontStyle'
+import { getAxis } from '../../../../util/axes'
+import getAxisTitle from '../getAxisTitle'
+import { getLabels } from '.'
+
 export default function (store, layout, extraOptions) {
     let categories
+    const AXIS_TYPE = 'DOMAIN'
+    const AXIS_INDEX = 0
+    const axis = getAxis(layout.axes, AXIS_TYPE, AXIS_INDEX)
 
     if (extraOptions.xAxisLabels) {
         categories = extraOptions.xAxisLabels
@@ -30,7 +42,17 @@ export default function (store, layout, extraOptions) {
         }, [])
     }
 
-    return {
+    return objectClean({
         categories,
-    }
+        title: getAxisTitle(
+            axis.title?.text,
+            mergeFontStyleWithDefault(
+                axis.title?.fontStyle,
+                FONT_STYLE_HORIZONTAL_AXIS_TITLE
+            ),
+            FONT_STYLE_HORIZONTAL_AXIS_TITLE,
+            layout.type
+        ),
+        labels: getLabels(axis),
+    })
 }
