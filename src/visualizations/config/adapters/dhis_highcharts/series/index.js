@@ -2,17 +2,12 @@ import { colors } from '@dhis2/ui'
 import { hasCustomAxes } from '../../../../../modules/axis'
 import { axisHasRelativeItems } from '../../../../../modules/layout/axisHasRelativeItems'
 import {
-    LEGEND_DISPLAY_STRATEGY_BY_DATA_ITEM,
-    LEGEND_DISPLAY_STRATEGY_FIXED,
-} from '../../../../../modules/legends'
-import {
     VIS_TYPE_PIE,
     VIS_TYPE_GAUGE,
     isDualAxisType,
     isYearOverYear,
     VIS_TYPE_LINE,
     VIS_TYPE_SCATTER,
-    isLegendSetType,
 } from '../../../../../modules/visTypes'
 import { getAxisStringFromId } from '../../../../util/axisId'
 import {
@@ -172,32 +167,10 @@ function getDefault(series, metaData, layout, isStacked, extraOptions) {
             seriesObj.groupPadding = 0
         }
 
-        let legendSet
-        if (isLegendSetType(layout.type)) {
-            const legendSets = extraOptions?.legendSets || []
-            if (
-                layout.legend?.strategy === LEGEND_DISPLAY_STRATEGY_BY_DATA_ITEM
-            ) {
-                legendSet = legendSets.find(
-                    legendSet =>
-                        legendSet.id === metaData.items[seriesObj.id]?.legendSet
-                )
-            } else if (
-                layout.legend?.strategy === LEGEND_DISPLAY_STRATEGY_FIXED
-            ) {
-                legendSet = legendSets[0]
-            }
-        }
-
         // color
         if (isYearOverYear(layout.type)) {
             // YearOverYear: Fetch colors directly from color sets
             seriesObj.color = indexColorPatternMap[index]
-        } else if (legendSet?.legends?.length) {
-            // Legendset: Fetch the middle color of the set
-            seriesObj.color = legendSet.legends.sort(
-                (a, b) => a.startValue - b.startValue
-            )[Math.ceil(legendSet.legends.length / 2) - 1].color
         } else {
             // Default: Either generate colors or fetch from color sets
             seriesObj.color = idColorMap[seriesObj.id]
