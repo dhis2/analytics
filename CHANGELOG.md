@@ -1,3 +1,10 @@
+## [4.5.37](https://github.com/dhis2/analytics/compare/v4.5.36...v4.5.37) (2021-07-14)
+
+
+### Bug Fixes
+
+* yoy x axis title and labels (DHIS2-11411) v34 ([#992](https://github.com/dhis2/analytics/issues/992)) ([ff14cfa](https://github.com/dhis2/analytics/commit/ff14cfa28110e10a4fd9610f6bdf0f46cad1e12d))
+
 ## [4.5.36](https://github.com/dhis2/analytics/compare/v4.5.35...v4.5.36) (2021-07-05)
 
 
