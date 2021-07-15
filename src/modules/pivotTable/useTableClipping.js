@@ -34,16 +34,23 @@ export const useTableClipping = ({
             engine.height,
             engine.options.title,
             engine.options.subtitle,
+            engine.options.fixedColumnHeaders,
             visualization.columns.length,
         ]
     )
     const columns = useMemo(() => {
         const viewportPosition = Math.max(
             0,
-            scrollPosition.x - engine.rowHeaderPixelWidth
+            engine.options.fixedRowHeaders
+                ? scrollPosition.x
+                : scrollPosition.x - engine.rowHeaderPixelWidth
         )
         const viewportWidth =
-            width - Math.max(engine.rowHeaderPixelWidth - scrollPosition.x, 0)
+            width -
+            (engine.options.fixedRowHeaders
+                ? engine.rowHeaderPixelWidth
+                : Math.max(engine.rowHeaderPixelWidth - scrollPosition.x, 0))
+
         return clipPartitionedAxis({
             partitionSize: COLUMN_PARTITION_SIZE_PX,
             partitions: engine.columnPartitions,
@@ -60,6 +67,7 @@ export const useTableClipping = ({
         engine.columnMap,
         engine.columnWidths,
         engine.dataPixelWidth,
+        engine.options.fixedRowHeaders,
         width,
     ])
 
