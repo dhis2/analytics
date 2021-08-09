@@ -44,7 +44,7 @@
         "enzyme-adapter-react-16": "^1.15.6",
         "fs-extra": "^10.0.0",
         "jest-enzyme": "^7.0.2",
-        "styled-jsx": "3.3.2",
+        "styled-jsx": "3.4.7",
         "typeface-roboto": "^0.0.75"
     },
     "peerDependencies": {
