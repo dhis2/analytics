@@ -1,6 +1,7 @@
 import TranslationDialog from '@dhis2/d2-ui-translation-dialog'
 import PropTypes from '@dhis2/prop-types'
 import {
+    colors,
     IconAdd24,
     IconLaunch24,
     IconSave24,
@@ -10,15 +11,12 @@ import {
     IconLink24,
     IconDelete24,
     SharingDialog,
-} from '@dhis2/ui'
-import { colors } from '@dhis2/ui-constants'
-import {
     FlyoutMenu,
     Layer,
     MenuItem,
     MenuDivider,
     Popper,
-} from '@dhis2/ui-core'
+} from '@dhis2/ui'
 import React, { createRef, useState } from 'react'
 import i18n from '../../locales/index.js'
 import { OpenFileDialog } from '../OpenFileDialog/OpenFileDialog'

@@ -56,12 +56,14 @@ storiesOf('OpenFileDialog', module).add(
     )
 )
 storiesOf('OpenFileDialog', module).add('No connection', () => (
-    <OpenFileDialog
-        type="map"
-        onClose={Function.prototype}
-        onFileSelect={onFileSelect}
-        onNew={Function.prototype}
-        open={true}
-        currentUser={user}
-    />
+    <Provider config={configMock}>
+        <OpenFileDialog
+            type="map"
+            onClose={Function.prototype}
+            onFileSelect={onFileSelect}
+            onNew={Function.prototype}
+            open={true}
+            currentUser={user}
+        />
+    </Provider>
 ))

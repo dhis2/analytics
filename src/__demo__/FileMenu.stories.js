@@ -63,7 +63,11 @@ const visReadonlyObject = {
 }
 
 storiesOf('FileMenu', module)
-    .add('Simple', () => <FileMenu d2={d2Mock} fileType="visualization" />)
+    .add('Simple', () => (
+        <Provider config={configMock}>
+            <FileMenu d2={d2Mock} fileType="visualization" />
+        </Provider>
+    ))
     .add('With AO', () => (
         <Provider config={configMock}>
             <FileMenu
