@@ -1,13 +1,13 @@
 # 
 # Translators:
-# trendspotter, 2021
+# trendspotter <jirka.p@volny.cz>, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2021-06-16T13:08:18.884Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: trendspotter, 2021\n"
+"Last-Translator: trendspotter <jirka.p@volny.cz>, 2021\n"
 "Language-Team: Czech (https://www.transifex.com/hisp-uio/teams/100509/cs/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -195,7 +195,7 @@ msgid "Anyone"
 msgstr "Kdokoliv"
 
 msgid "Only you"
-msgstr ""
+msgstr "Jen vy"
 
 msgid "Others"
 msgstr "Ostatní"
@@ -216,82 +216,95 @@ msgid "Clear filters"
 msgstr "Vymazat filtry"
 
 msgid "{{firstItemIndex}}-{{lastItemIndex}} of {{totalNumberOfItems}}"
-msgstr ""
+msgstr "{{firstItemIndex}}-{{lastItemIndex}} z {{totalNumberOfItems}}"
 
 msgid "All charts"
-msgstr ""
+msgstr "Všechny grafy"
 
 msgid "Open"
 msgstr "Otevřít"
 
 msgid "Couldn't load items"
-msgstr ""
+msgstr "Položky nelze načíst"
 
 msgid ""
 "There was a problem loading items. Try again or contact your system "
 "administrator."
 msgstr ""
+"Při načítání položek došlo k problému. Zkuste to znovu nebo se obraťte na "
+"správce systému."
 
 msgid "No items found. Create a new to get started."
-msgstr ""
+msgstr "Žádné položky nenalezeny. Začněte vytvořením nové."
 
 msgid ""
 "No items found. Try adjusting your search or filter options to find what "
 "you're looking for."
 msgstr ""
+"Žádné položky nenalezeny. Zkuste upravit možnosti vyhledávání nebo "
+"filtrování, abyste našli to, co hledáte."
 
 msgid "Create new"
 msgstr "Vytvořit nový"
 
 msgid "Open a visualization"
-msgstr ""
+msgstr "Otevřít vizualizaci"
 
 msgid "Loading visualizations"
-msgstr ""
+msgstr "Načítání vizualizací"
 
 msgid "Couldn't load visualizations"
-msgstr ""
+msgstr "Nelze načíst vizualizace"
 
 msgid ""
 "There was a problem loading visualizations. Try again or contact your system"
 " administrator."
 msgstr ""
+"Při načítání vizualizací došlo k problému. Zkuste to znovu nebo se obraťte "
+"na správce systému."
 
 msgid "No visualizations found. Click New visualization to get started."
 msgstr ""
+"Nebyly nalezeny žádné vizualizace. Začněte kliknutím na Nová vizualizace."
 
 msgid ""
 "No visualizations found. Try adjusting your search or filter options to find"
 " what you're looking for."
 msgstr ""
+"Nenalezeny žádné vizualizace. Zkuste upravit možnosti vyhledávání nebo "
+"filtrování, abyste našli to, co hledáte."
 
 msgid "New visualization"
-msgstr ""
+msgstr "Nová vizualizace"
 
 msgid "Open a map"
-msgstr ""
+msgstr "Otevřít mapu"
 
 msgid "Loading maps"
-msgstr ""
+msgstr "Načítání map"
 
 msgid "Couldn't load maps"
-msgstr ""
+msgstr "Mapy se nepodařilo načíst"
 
 msgid ""
 "There was a problem loading maps. Try again or contact your system "
 "administrator."
 msgstr ""
+"Při načítání map došlo k problému. Zkuste to znovu nebo se obraťte na "
+"správce systému."
 
 msgid "No maps found. Click New map to get started."
-msgstr ""
+msgstr "Nenalezeny žádné mapy. Začněte kliknutím na Nová mapa."
 
 msgid ""
 "No maps found. Try adjusting your search or filter options to find what "
 "you're looking for."
 msgstr ""
+"Nenalezeny žádné mapy. Zkuste upravit možnosti vyhledávání nebo filtrování, "
+"abyste našli to, co hledáte."
 
 msgid "New map"
-msgstr ""
+msgstr "Nová mapa"
 
 msgid "Period type"
 msgstr "Typ období"
@@ -899,10 +912,10 @@ msgstr "Osa {{axisId}}"
 
 msgid "{{count}} items"
 msgid_plural "{{count}} items"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "{{count}} položka"
+msgstr[1] " {{count}} položky"
+msgstr[2] " {{count}} položek"
+msgstr[3] "{{count}} položek"
 
 msgid "Reset zoom"
 msgstr "Obnovit přiblížení"
