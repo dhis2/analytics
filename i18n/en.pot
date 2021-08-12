@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2021-06-16T13:08:18.884Z\n"
-"PO-Revision-Date: 2021-06-16T13:08:18.884Z\n"
+"POT-Creation-Date: 2021-08-12T10:03:57.410Z\n"
+"PO-Revision-Date: 2021-08-12T10:03:57.410Z\n"
 
 msgid "Data Type"
 msgstr "Data Type"
@@ -106,6 +106,15 @@ msgstr "Your dimensions"
 
 msgid "Dimension recommended with selected data"
 msgstr "Dimension recommended with selected data"
+
+msgid "All items"
+msgstr "All items"
+
+msgid "Automatically include all items"
+msgstr "Automatically include all items"
+
+msgid "Manually select items..."
+msgstr "Manually select items..."
 
 msgid "Nothing found in {{dimensionTitle}}"
 msgstr "Nothing found in {{dimensionTitle}}"
