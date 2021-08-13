@@ -5,6 +5,7 @@ import React from 'react'
 import { apiFetchItemsByDimension } from '../../api/dimensions'
 import i18n from '../../locales/index.js'
 import ItemSelector from './ItemSelector'
+import styles from './styles/DynamicDimension.style'
 
 export const ALL_DYNAMIC_DIMENSION_ITEMS = 'ALL_ITEMS'
 
@@ -65,20 +66,32 @@ export const DynamicDimension = ({
     return (
         <>
             <Field name="hideTitle-selector" dense>
-                <Radio
-                    key={'AUTOMATIC'}
-                    label={i18n.t('Automatically include all items')}
-                    dense
-                    onChange={() => selectAutomatic()}
-                    checked={allIsSelected}
-                />
-                <Radio
-                    key={'MANUAL'}
-                    label={i18n.t('Manually select items...')}
-                    dense
-                    onChange={() => selectManual()}
-                    checked={!allIsSelected}
-                />
+                <div className="automatic">
+                    <Radio
+                        key={'AUTOMATIC'}
+                        label={i18n.t('Automatically include all items')}
+                        dense
+                        onChange={() => selectAutomatic()}
+                        checked={allIsSelected}
+                    />
+                    <span className="help-text">
+                        {i18n.t(
+                            'Select all {{dimensionTitle}} items. With this option, new items added in the future will be automatically included.',
+                            {
+                                dimensionTitle,
+                            }
+                        )}
+                    </span>
+                </div>
+                <div className="manual">
+                    <Radio
+                        key={'MANUAL'}
+                        label={i18n.t('Manually select items...')}
+                        dense
+                        onChange={() => selectManual()}
+                        checked={!allIsSelected}
+                    />
+                </div>
             </Field>
             {!allIsSelected && (
                 <ItemSelector
@@ -100,6 +113,7 @@ export const DynamicDimension = ({
                         .toLowerCase()}-dimension`}
                 />
             )}
+            <style jsx>{styles}</style>
         </>
     )
 }
