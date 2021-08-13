@@ -65,7 +65,7 @@ export const DynamicDimension = ({
 
     return (
         <>
-            <Field name="hideTitle-selector" dense>
+            <Field name="dynamic-dimension-selection-type-selector" dense>
                 <div className="automatic">
                     <Radio
                         key={'AUTOMATIC'}
@@ -73,6 +73,7 @@ export const DynamicDimension = ({
                         dense
                         onChange={() => selectAutomatic()}
                         checked={allIsSelected}
+                        dataTest={'dynamic-dimension-selection-type-automatic'}
                     />
                     <span className="help-text">
                         {i18n.t(
@@ -90,6 +91,7 @@ export const DynamicDimension = ({
                         dense
                         onChange={() => selectManual()}
                         checked={!allIsSelected}
+                        dataTest={'dynamic-dimension-selection-type-manual'}
                     />
                 </div>
             </Field>
