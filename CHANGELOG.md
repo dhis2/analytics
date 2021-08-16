@@ -1,3 +1,10 @@
+# [20.1.0](https://github.com/dhis2/analytics/compare/v20.0.6...v20.1.0) (2021-08-16)
+
+
+### Features
+
+* all items option for dynamic dimension (DHIS2-9734)  ([#1008](https://github.com/dhis2/analytics/issues/1008)) ([89526af](https://github.com/dhis2/analytics/commit/89526afdfcbc66497b3d91c38026cc12ea5ff8c8))
+
 ## [20.0.6](https://github.com/dhis2/analytics/compare/v20.0.5...v20.0.6) (2021-08-12)
 
 
