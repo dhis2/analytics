@@ -8,7 +8,10 @@ export { default as FixedPeriodSelect } from './components/PeriodDimension/Fixed
 
 export { default as OrgUnitDimension } from './components/OrgUnitDimension/OrgUnitDimension'
 
-export { default as DynamicDimension } from './components/DynamicDimension/DynamicDimension'
+export {
+    default as DynamicDimension,
+    ALL_DYNAMIC_DIMENSION_ITEMS,
+} from './components/DynamicDimension/DynamicDimension'
 
 export { default as DimensionsPanel } from './components/DimensionsPanel/DimensionsPanel'
 export { default as DimensionItem } from './components/DimensionsPanel/List/DimensionItem'

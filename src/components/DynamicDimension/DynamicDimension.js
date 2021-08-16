@@ -1,9 +1,13 @@
 import { useDataEngine } from '@dhis2/app-runtime'
+import { Radio, Field } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
 import { apiFetchItemsByDimension } from '../../api/dimensions'
 import i18n from '../../locales/index.js'
 import ItemSelector from './ItemSelector'
+import styles from './styles/DynamicDimension.style'
+
+export const ALL_DYNAMIC_DIMENSION_ITEMS = 'ALL_ITEMS'
 
 export const DynamicDimension = ({
     dimensionId,
@@ -24,31 +28,95 @@ export const DynamicDimension = ({
             nameProp: displayNameProp,
         })
 
-    const onSelectItems = selectedItem =>
+    const onSelectItems = newSelectedItems =>
         onSelect({
-            dimensionId: dimensionId,
-            items: selectedItem.map(item => ({
+            dimensionId,
+            items: newSelectedItems.map(item => ({
                 id: item.value,
                 name: item.label,
             })),
         })
 
+    const allIsSelected = selectedItems.some(
+        item => item.id === ALL_DYNAMIC_DIMENSION_ITEMS
+    )
+
+    const selectAutomatic = () =>
+        onSelect({
+            dimensionId,
+            items: [
+                {
+                    id: ALL_DYNAMIC_DIMENSION_ITEMS,
+                    name: i18n.t('All items'),
+                },
+                ...selectedItems,
+            ],
+        })
+
+    const selectManual = () =>
+        onSelect({
+            dimensionId,
+            items: [
+                ...selectedItems.filter(
+                    item => item.id !== ALL_DYNAMIC_DIMENSION_ITEMS
+                ),
+            ],
+        })
+
     return (
-        <ItemSelector
-            initialSelected={selectedItems.map(item => ({
-                value: item.id,
-                label: item.name,
-            }))}
-            noItemsMessage={i18n.t('Nothing found in {{dimensionTitle}}', {
-                dimensionTitle,
-            })}
-            onFetch={fetchItems}
-            onSelect={onSelectItems}
-            rightFooter={rightFooter}
-            dataTest={`${dimensionTitle
-                .replace(/\s+/g, '-')
-                .toLowerCase()}-dimension`}
-        />
+        <>
+            <Field name="dynamic-dimension-selection-type-selector" dense>
+                <div className="automatic">
+                    <Radio
+                        key={'AUTOMATIC'}
+                        label={i18n.t('Automatically include all items')}
+                        dense
+                        onChange={() => selectAutomatic()}
+                        checked={allIsSelected}
+                        dataTest={'dynamic-dimension-selection-type-automatic'}
+                    />
+                    <span className="help-text">
+                        {i18n.t(
+                            'Select all {{dimensionTitle}} items. With this option, new items added in the future will be automatically included.',
+                            {
+                                dimensionTitle,
+                            }
+                        )}
+                    </span>
+                </div>
+                <div className="manual">
+                    <Radio
+                        key={'MANUAL'}
+                        label={i18n.t('Manually select items...')}
+                        dense
+                        onChange={() => selectManual()}
+                        checked={!allIsSelected}
+                        dataTest={'dynamic-dimension-selection-type-manual'}
+                    />
+                </div>
+            </Field>
+            {!allIsSelected && (
+                <ItemSelector
+                    initialSelected={selectedItems.map(item => ({
+                        value: item.id,
+                        label: item.name,
+                    }))}
+                    noItemsMessage={i18n.t(
+                        'Nothing found in {{dimensionTitle}}',
+                        {
+                            dimensionTitle,
+                        }
+                    )}
+                    onFetch={fetchItems}
+                    onSelect={onSelectItems}
+                    rightFooter={rightFooter}
+                    dataTest={`${dimensionTitle
+                        .replace(/\s+/g, '-')
+                        .toLowerCase()}-dimension`}
+                />
+            )}
+            <style jsx>{styles}</style>
+        </>
     )
 }
 
