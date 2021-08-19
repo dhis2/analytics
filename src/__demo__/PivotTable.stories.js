@@ -99,8 +99,8 @@ const weeklyColumnsData = combineDataWithMetadata(
 
 const PivotTableOptionsWrapper = story => {
     const [pivotTableOptions, setPivotTableOptions] = useState({
-        fixedColumnHeaders: false,
-        fixedRowHeaders: false,
+        fixColumnHeaders: false,
+        fixRowHeaders: false,
     })
 
     return (
@@ -108,22 +108,22 @@ const PivotTableOptionsWrapper = story => {
             <div>
                 <Checkbox
                     label="Use fixed column headers"
-                    checked={pivotTableOptions.fixedColumnHeaders}
+                    checked={pivotTableOptions.fixColumnHeaders}
                     onChange={({ checked }) =>
                         setPivotTableOptions({
                             ...pivotTableOptions,
-                            fixedColumnHeaders: checked,
+                            fixColumnHeaders: checked,
                         })
                     }
                     dense
                 />
                 <Checkbox
                     label="Use fixed row headers"
-                    checked={pivotTableOptions.fixedRowHeaders}
+                    checked={pivotTableOptions.fixRowHeaders}
                     onChange={({ checked }) =>
                         setPivotTableOptions({
                             ...pivotTableOptions,
-                            fixedRowHeaders: checked,
+                            fixRowHeaders: checked,
                         })
                     }
                     dense

@@ -43,15 +43,15 @@ export const PivotTableDimensionLabelCell = ({ rowLevel, columnLevel }) => {
         minWidth: width,
     }
 
-    if (engine.options.fixedColumnHeaders || engine.options.fixedRowHeaders) {
+    if (engine.options.fixColumnHeaders || engine.options.fixRowHeaders) {
         style.zIndex =
-            engine.options.fixedColumnHeaders && engine.options.fixedRowHeaders
+            engine.options.fixColumnHeaders && engine.options.fixRowHeaders
                 ? 2
                 : 1
-        style.top = engine.options.fixedColumnHeaders
+        style.top = engine.options.fixColumnHeaders
             ? columnLevel * (engine.fontSize + engine.cellPadding * 2 + 2)
             : 0
-        style.left = engine.options.fixedRowHeaders
+        style.left = engine.options.fixRowHeaders
             ? // calculate the width of all row header cells on the left of current cell
               engine.rowHeaderWidths
                   .slice(0, rowLevel)
@@ -67,8 +67,8 @@ export const PivotTableDimensionLabelCell = ({ rowLevel, columnLevel }) => {
                 'column-header',
                 {
                     fixedHeader:
-                        engine.options.fixedColumnHeaders ||
-                        engine.options.fixedRowHeaders,
+                        engine.options.fixColumnHeaders ||
+                        engine.options.fixRowHeaders,
                 },
             ]}
             colSpan={colSpan}

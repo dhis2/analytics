@@ -29,7 +29,7 @@ export const PivotTableRowHeaderCell = ({
                             ? 'row-header'
                             : 'empty-header',
                         header.includesHierarchy && 'row-header-hierarchy',
-                        { fixedHeader: engine.options.fixedRowHeaders },
+                        { fixedHeader: engine.options.fixRowHeaders },
                     ]}
                     rowSpan={header.span}
                     title={header.label}

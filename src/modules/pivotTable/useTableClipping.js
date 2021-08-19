@@ -22,11 +22,10 @@ export const useTableClipping = ({
                 totalCount: engine.height,
                 headerCount:
                     visualization.columns.length +
-                    (engine.options.title && !engine.options.fixedColumnHeaders
+                    (engine.options.title && !engine.options.fixColumnHeaders
                         ? 1
                         : 0) +
-                    (engine.options.subtitle &&
-                    !engine.options.fixedColumnHeaders
+                    (engine.options.subtitle && !engine.options.fixColumnHeaders
                         ? 1
                         : 0),
             }),
@@ -38,20 +37,20 @@ export const useTableClipping = ({
             engine.height,
             engine.options.title,
             engine.options.subtitle,
-            engine.options.fixedColumnHeaders,
+            engine.options.fixColumnHeaders,
             visualization.columns.length,
         ]
     )
     const columns = useMemo(() => {
         const viewportPosition = Math.max(
             0,
-            engine.options.fixedRowHeaders
+            engine.options.fixRowHeaders
                 ? scrollPosition.x
                 : scrollPosition.x - engine.rowHeaderPixelWidth
         )
         const viewportWidth =
             width -
-            (engine.options.fixedRowHeaders
+            (engine.options.fixRowHeaders
                 ? engine.rowHeaderPixelWidth
                 : Math.max(engine.rowHeaderPixelWidth - scrollPosition.x, 0))
 
@@ -71,7 +70,7 @@ export const useTableClipping = ({
         engine.columnMap,
         engine.columnWidths,
         engine.dataPixelWidth,
-        engine.options.fixedRowHeaders,
+        engine.options.fixRowHeaders,
         width,
     ])
 
