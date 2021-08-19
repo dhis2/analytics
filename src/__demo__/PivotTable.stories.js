@@ -13,6 +13,8 @@ import avgMetadataResponse from './data/avgTotalAggregationType.metadata.json'
 import avgVisualization from './data/avgTotalAggregationType.visualization.json'
 import deepData from './data/deep.data.json'
 import deepVisualization from './data/deep.visualization.json'
+import deepWithFiltersData from './data/deepWithFilters.data.json'
+import deepWithFiltersVisualization from './data/deepWithFilters.visualization.json'
 import degsDataResponse from './data/degs.data.json'
 import degsMetadataResponse from './data/degs.metadata.json'
 import degsVisualization from './data/degs.visualization.json'
@@ -402,6 +404,26 @@ storiesOf('PivotTable', module).add('deep', (_, { pivotTableOptions }) => {
         </div>
     )
 })
+
+storiesOf('PivotTable', module).add(
+    'deep - filter',
+    (_, { pivotTableOptions }) => {
+        const visualization = {
+            ...deepWithFiltersVisualization,
+            ...visualizationReset,
+            ...pivotTableOptions,
+            showDimensionLabels: false,
+        }
+        return (
+            <div style={{ width: 800, height: 600 }}>
+                <PivotTable
+                    data={deepWithFiltersData}
+                    visualization={visualization}
+                />
+            </div>
+        )
+    }
+)
 
 storiesOf('PivotTable', module).add(
     'deep - title / subtitle / filter',

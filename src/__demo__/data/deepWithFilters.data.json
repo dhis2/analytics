@@ -1,0 +1,488 @@
+{
+    "headers": [
+        {
+            "name": "dx",
+            "column": "Data",
+            "valueType": "TEXT",
+            "type": "java.lang.String",
+            "hidden": false,
+            "meta": true
+        },
+        {
+            "name": "pe",
+            "column": "Period",
+            "valueType": "TEXT",
+            "type": "java.lang.String",
+            "hidden": false,
+            "meta": true
+        },
+        {
+            "name": "ou",
+            "column": "Organisation unit",
+            "valueType": "TEXT",
+            "type": "java.lang.String",
+            "hidden": false,
+            "meta": true
+        },
+        {
+            "name": "value",
+            "column": "Value",
+            "valueType": "NUMBER",
+            "type": "java.lang.Double",
+            "hidden": false,
+            "meta": false
+        },
+        {
+            "name": "numerator",
+            "column": "Numerator",
+            "valueType": "NUMBER",
+            "type": "java.lang.Double",
+            "hidden": false,
+            "meta": false
+        },
+        {
+            "name": "denominator",
+            "column": "Denominator",
+            "valueType": "NUMBER",
+            "type": "java.lang.Double",
+            "hidden": false,
+            "meta": false
+        },
+        {
+            "name": "factor",
+            "column": "Factor",
+            "valueType": "NUMBER",
+            "type": "java.lang.Double",
+            "hidden": false,
+            "meta": false
+        },
+        {
+            "name": "multiplier",
+            "column": "Multiplier",
+            "valueType": "NUMBER",
+            "type": "java.lang.Double",
+            "hidden": false,
+            "meta": false
+        },
+        {
+            "name": "divisor",
+            "column": "Divisor",
+            "valueType": "NUMBER",
+            "type": "java.lang.Double",
+            "hidden": false,
+            "meta": false
+        }
+    ],
+    "metaData": {
+        "items": {
+            "202008": {
+                "name": "August 2020"
+            },
+            "202009": {
+                "name": "September 2020"
+            },
+            "202010": {
+                "name": "October 2020"
+            },
+            "202011": {
+                "name": "November 2020"
+            },
+            "202012": {
+                "name": "December 2020"
+            },
+            "202101": {
+                "name": "January 2021"
+            },
+            "202102": {
+                "name": "February 2021"
+            },
+            "202103": {
+                "name": "March 2021"
+            },
+            "202104": {
+                "name": "April 2021"
+            },
+            "202105": {
+                "name": "May 2021"
+            },
+            "202106": {
+                "name": "June 2021"
+            },
+            "202107": {
+                "name": "July 2021"
+            },
+            "nlX2VoouN63": {
+                "name": "Eastern Area"
+            },
+            "jUb8gELQApl": {
+                "name": "Kailahun"
+            },
+            "eIQbndfxQMb": {
+                "name": "Tonkolili"
+            },
+            "Vth0fbpFcsO": {
+                "name": "Kono"
+            },
+            "O6uvpzGd5pu": {
+                "name": "Bo"
+            },
+            "bL4ooGhyHRQ": {
+                "name": "Pujehun"
+            },
+            "kJq2mPyFEHo": {
+                "name": "Kenema"
+            },
+            "wjP19dkFeIk": {
+                "uid": "wjP19dkFeIk",
+                "name": "District"
+            },
+            "LAST_12_MONTHS": {
+                "name": "Last 12 months"
+            },
+            "ImspTQPwCqd": {
+                "uid": "ImspTQPwCqd",
+                "code": "OU_525",
+                "name": "Sierra Leone"
+            },
+            "at6UHUQatSo": {
+                "name": "Western Area"
+            },
+            "dx": {
+                "name": "Data"
+            },
+            "TEQlaapDQoK": {
+                "name": "Port Loko"
+            },
+            "PMa2VCrupOd": {
+                "name": "Kambia"
+            },
+            "ou": {
+                "name": "Organisation unit"
+            },
+            "uIuxlbV1vRT": {
+                "name": "Area"
+            },
+            "fdc6uOvgoji": {
+                "name": "Bombali"
+            },
+            "pe": {
+                "name": "Period"
+            },
+            "dwEq7wi6nXV": {
+                "name": "ANC IPT 1 Coverage"
+            },
+            "lc3eMKXaEfw": {
+                "name": "Bonthe"
+            },
+            "qhqAxPSTUXp": {
+                "name": "Koinadugu"
+            },
+            "jmIPBj66vD6": {
+                "name": "Moyamba"
+            }
+        },
+        "dimensions": {
+            "dx": ["dwEq7wi6nXV"],
+            "pe": [
+                "202008",
+                "202009",
+                "202010",
+                "202011",
+                "202012",
+                "202101",
+                "202102",
+                "202103",
+                "202104",
+                "202105",
+                "202106",
+                "202107"
+            ],
+            "ou": [
+                "O6uvpzGd5pu",
+                "fdc6uOvgoji",
+                "lc3eMKXaEfw",
+                "jUb8gELQApl",
+                "PMa2VCrupOd",
+                "kJq2mPyFEHo",
+                "qhqAxPSTUXp",
+                "Vth0fbpFcsO",
+                "jmIPBj66vD6",
+                "TEQlaapDQoK",
+                "bL4ooGhyHRQ",
+                "eIQbndfxQMb",
+                "at6UHUQatSo"
+            ],
+            "uIuxlbV1vRT": ["nlX2VoouN63"],
+            "co": []
+        }
+    },
+    "width": 9,
+    "rows": [
+        [
+            "dwEq7wi6nXV",
+            "202008",
+            "jUb8gELQApl",
+            "84.9",
+            "1131.0",
+            "1332.0",
+            "100.0",
+            "100",
+            "1"
+        ],
+        [
+            "dwEq7wi6nXV",
+            "202008",
+            "bL4ooGhyHRQ",
+            "157.2",
+            "1674.0",
+            "1065.0",
+            "100.0",
+            "100",
+            "1"
+        ],
+        [
+            "dwEq7wi6nXV",
+            "202009",
+            "jUb8gELQApl",
+            "75.8",
+            "903.0",
+            "1192.0",
+            "100.0",
+            "100",
+            "1"
+        ],
+        [
+            "dwEq7wi6nXV",
+            "202009",
+            "bL4ooGhyHRQ",
+            "152.2",
+            "1577.0",
+            "1036.0",
+            "100.0",
+            "100",
+            "1"
+        ],
+        [
+            "dwEq7wi6nXV",
+            "202010",
+            "jUb8gELQApl",
+            "156.0",
+            "1764.0",
+            "1131.0",
+            "100.0",
+            "100",
+            "1"
+        ],
+        [
+            "dwEq7wi6nXV",
+            "202010",
+            "bL4ooGhyHRQ",
+            "100.0",
+            "7.0",
+            "7.0",
+            "100.0",
+            "100",
+            "1"
+        ],
+        [
+            "dwEq7wi6nXV",
+            "202011",
+            "jUb8gELQApl",
+            "118.2",
+            "1497.0",
+            "1266.0",
+            "100.0",
+            "100",
+            "1"
+        ],
+        [
+            "dwEq7wi6nXV",
+            "202011",
+            "bL4ooGhyHRQ",
+            "225.0",
+            "18.0",
+            "8.0",
+            "100.0",
+            "100",
+            "1"
+        ],
+        [
+            "dwEq7wi6nXV",
+            "202012",
+            "jUb8gELQApl",
+            "117.6",
+            "1355.0",
+            "1152.0",
+            "100.0",
+            "100",
+            "1"
+        ],
+        [
+            "dwEq7wi6nXV",
+            "202012",
+            "bL4ooGhyHRQ",
+            "366.7",
+            "22.0",
+            "6.0",
+            "100.0",
+            "100",
+            "1"
+        ],
+        [
+            "dwEq7wi6nXV",
+            "202101",
+            "jUb8gELQApl",
+            "97.1",
+            "1184.0",
+            "1219.0",
+            "100.0",
+            "100",
+            "1"
+        ],
+        [
+            "dwEq7wi6nXV",
+            "202101",
+            "bL4ooGhyHRQ",
+            "101.5",
+            "1263.0",
+            "1244.0",
+            "100.0",
+            "100",
+            "1"
+        ],
+        [
+            "dwEq7wi6nXV",
+            "202102",
+            "jUb8gELQApl",
+            "91.1",
+            "1044.0",
+            "1146.0",
+            "100.0",
+            "100",
+            "1"
+        ],
+        [
+            "dwEq7wi6nXV",
+            "202102",
+            "bL4ooGhyHRQ",
+            "111.1",
+            "1123.0",
+            "1011.0",
+            "100.0",
+            "100",
+            "1"
+        ],
+        [
+            "dwEq7wi6nXV",
+            "202103",
+            "jUb8gELQApl",
+            "91.6",
+            "1115.0",
+            "1217.0",
+            "100.0",
+            "100",
+            "1"
+        ],
+        [
+            "dwEq7wi6nXV",
+            "202103",
+            "bL4ooGhyHRQ",
+            "95.4",
+            "959.0",
+            "1005.0",
+            "100.0",
+            "100",
+            "1"
+        ],
+        [
+            "dwEq7wi6nXV",
+            "202104",
+            "jUb8gELQApl",
+            "100.3",
+            "1268.0",
+            "1264.0",
+            "100.0",
+            "100",
+            "1"
+        ],
+        [
+            "dwEq7wi6nXV",
+            "202104",
+            "bL4ooGhyHRQ",
+            "101.1",
+            "1320.0",
+            "1306.0",
+            "100.0",
+            "100",
+            "1"
+        ],
+        [
+            "dwEq7wi6nXV",
+            "202105",
+            "jUb8gELQApl",
+            "102.5",
+            "1539.0",
+            "1501.0",
+            "100.0",
+            "100",
+            "1"
+        ],
+        [
+            "dwEq7wi6nXV",
+            "202105",
+            "bL4ooGhyHRQ",
+            "132.9",
+            "1811.0",
+            "1363.0",
+            "100.0",
+            "100",
+            "1"
+        ],
+        [
+            "dwEq7wi6nXV",
+            "202106",
+            "jUb8gELQApl",
+            "109.0",
+            "1488.0",
+            "1365.0",
+            "100.0",
+            "100",
+            "1"
+        ],
+        [
+            "dwEq7wi6nXV",
+            "202106",
+            "bL4ooGhyHRQ",
+            "107.0",
+            "1443.0",
+            "1348.0",
+            "100.0",
+            "100",
+            "1"
+        ],
+        [
+            "dwEq7wi6nXV",
+            "202107",
+            "jUb8gELQApl",
+            "87.5",
+            "1190.0",
+            "1360.0",
+            "100.0",
+            "100",
+            "1"
+        ],
+        [
+            "dwEq7wi6nXV",
+            "202107",
+            "bL4ooGhyHRQ",
+            "125.0",
+            "1579.0",
+            "1263.0",
+            "100.0",
+            "100",
+            "1"
+        ]
+    ],
+    "height": 24,
+    "headerWidth": 9
+}

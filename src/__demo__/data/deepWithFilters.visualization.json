@@ -1,0 +1,147 @@
+{
+    "lastUpdated": "2021-08-13T12:37:08.665",
+    "href": "https://debug.dhis2.org/dev/api/37/visualizations/puDQiGqmvuU",
+    "id": "puDQiGqmvuU",
+    "created": "2021-08-13T12:37:08.665",
+    "name": "For edoardo",
+    "showData": true,
+    "numberType": "VALUE",
+    "legend": {
+        "showKey": false
+    },
+    "publicAccess": "--------",
+    "type": "PIVOT_TABLE",
+    "hideEmptyColumns": false,
+    "hideEmptyRows": false,
+    "subscribed": false,
+    "parentGraphMap": {
+        "ImspTQPwCqd": ""
+    },
+    "rowSubTotals": false,
+    "displayDensity": "NORMAL",
+    "regressionType": "NONE",
+    "completedOnly": false,
+    "cumulativeValues": false,
+    "colTotals": false,
+    "showDimensionLabels": false,
+    "sortOrder": 0,
+    "fontSize": "NORMAL",
+    "favorite": false,
+    "topLimit": 0,
+    "hideEmptyRowItems": "NONE",
+    "aggregationType": "DEFAULT",
+    "displayName": "For edoardo",
+    "hideSubtitle": false,
+    "title": "Hello",
+    "percentStackedValues": false,
+    "colSubTotals": false,
+    "noSpaceBetweenColumns": false,
+    "showHierarchy": false,
+    "rowTotals": false,
+    "seriesKey": {
+        "hidden": false
+    },
+    "digitGroupSeparator": "SPACE",
+    "hideTitle": false,
+    "regression": false,
+    "colorSet": "DEFAULT",
+    "skipRounding": false,
+    "lastUpdatedBy": {
+        "displayName": "Thor Odinsson",
+        "name": "Thor Odinsson",
+        "id": "Z7mGnIfGgqL",
+        "username": "analytics"
+    },
+    "fontStyle": {},
+    "access": {
+        "read": false,
+        "update": false,
+        "externalize": true,
+        "delete": false,
+        "write": false,
+        "manage": false
+    },
+    "reportingParams": {
+        "parentOrganisationUnit": false,
+        "reportingPeriod": false,
+        "organisationUnit": false,
+        "grandParentOrganisationUnit": false
+    },
+    "user": {
+        "displayName": "Thor Odinsson",
+        "name": "Thor Odinsson"
+    },
+    "axes": [],
+    "translations": [],
+    "yearlySeries": [],
+    "interpretations": [],
+    "userGroupAccesses": [],
+    "subscribers": [],
+    "userAccesses": [],
+    "favorites": [],
+    "columns": [
+        {
+            "dimension": "dx",
+            "items": [
+                {
+                    "name": "ANC IPT 1 Coverage",
+                    "id": "dwEq7wi6nXV",
+                    "displayName": "ANC IPT 1 Coverage",
+                    "displayShortName": "ANC IPT 1 Coverage",
+                    "dimensionItemType": "INDICATOR"
+                }
+            ]
+        }
+    ],
+    "filters": [
+        {
+            "dimension": "uIuxlbV1vRT",
+            "items": [
+                {
+                    "name": "Eastern Area",
+                    "id": "nlX2VoouN63",
+                    "displayName": "Eastern Area",
+                    "displayShortName": "Eastern Area",
+                    "dimensionItemType": "ORGANISATION_UNIT_GROUP"
+                }
+            ]
+        }
+    ],
+    "rows": [
+        {
+            "dimension": "pe",
+            "items": [
+                {
+                    "name": "LAST_12_MONTHS",
+                    "id": "LAST_12_MONTHS",
+                    "displayName": "LAST_12_MONTHS",
+                    "displayShortName": "LAST_12_MONTHS",
+                    "dimensionItemType": "PERIOD"
+                }
+            ]
+        },
+        {
+            "dimension": "ou",
+            "items": [
+                {
+                    "name": "Sierra Leone",
+                    "id": "ImspTQPwCqd",
+                    "displayName": "Sierra Leone",
+                    "displayShortName": "Sierra Leone",
+                    "dimensionItemType": "ORGANISATION_UNIT"
+                },
+                {
+                    "name": "LEVEL-2",
+                    "id": "LEVEL-2",
+                    "displayName": "LEVEL-2"
+                }
+            ]
+        }
+    ],
+    "series": [
+        {
+            "dimensionItem": "dwEq7wi6nXV",
+            "axis": 0
+        }
+    ]
+}
