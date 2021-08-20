@@ -12,5 +12,6 @@ export default css`
         font-size: 14px;
         padding-left: 23px;
         color: ${colors.grey700};
+        margin: 0;
     }
 `
