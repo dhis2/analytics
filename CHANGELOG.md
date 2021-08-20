@@ -1,3 +1,10 @@
+## [20.1.3](https://github.com/dhis2/analytics/compare/v20.1.2...v20.1.3) (2021-08-20)
+
+
+### Bug Fixes
+
+* dynamic dimension minor bugs ([#1012](https://github.com/dhis2/analytics/issues/1012)) ([cebcb81](https://github.com/dhis2/analytics/commit/cebcb812d65540a78299efecd374f3b813b2dd7d))
+
 ## [20.1.2](https://github.com/dhis2/analytics/compare/v20.1.1...v20.1.2) (2021-08-19)
 
 
