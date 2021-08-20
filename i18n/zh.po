@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-08-13T09:14:02.595Z\n"
+"POT-Creation-Date: 2021-08-20T13:36:17.268Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: easylin <lin_xd@126.com>, 2021\n"
 "Language-Team: Chinese (https://www.transifex.com/hisp-uio/teams/100509/zh/)\n"
@@ -124,15 +124,15 @@ msgid "Automatically include all items"
 msgstr "自动包含所有条目"
 
 msgid ""
-"Select all {{dimensionTitle}} items. With this option, new items added in "
+"Select all {{- dimensionTitle}} items. With this option, new items added in "
 "the future will be automatically included."
-msgstr "选择所有 {{dimensionTitle}} 项。使用此选项，将来添加的新条目将自动包含在内。"
+msgstr ""
 
 msgid "Manually select items..."
 msgstr "手动选择条目..."
 
-msgid "Nothing found in {{dimensionTitle}}"
-msgstr "在{{dimensionTitle}}中找不到任何内容"
+msgid "Nothing found in {{- dimensionTitle}}"
+msgstr ""
 
 msgid "Search"
 msgstr "搜索"
