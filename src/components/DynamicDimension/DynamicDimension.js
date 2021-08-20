@@ -75,14 +75,14 @@ export const DynamicDimension = ({
                         checked={allIsSelected}
                         dataTest={'dynamic-dimension-selection-type-automatic'}
                     />
-                    <span className="help-text">
+                    <p className="help-text">
                         {i18n.t(
-                            'Select all {{dimensionTitle}} items. With this option, new items added in the future will be automatically included.',
+                            'Select all {{- dimensionTitle}} items. With this option, new items added in the future will be automatically included.',
                             {
                                 dimensionTitle,
                             }
                         )}
-                    </span>
+                    </p>
                 </div>
                 <div className="manual">
                     <Radio
@@ -102,7 +102,7 @@ export const DynamicDimension = ({
                         label: item.name,
                     }))}
                     noItemsMessage={i18n.t(
-                        'Nothing found in {{dimensionTitle}}',
+                        'Nothing found in {{- dimensionTitle}}',
                         {
                             dimensionTitle,
                         }
