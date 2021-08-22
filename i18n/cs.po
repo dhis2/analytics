@@ -115,21 +115,23 @@ msgid "Dimension recommended with selected data"
 msgstr "U vybraných dat je doporučen rozsah"
 
 msgid "All items"
-msgstr ""
+msgstr "Všechny položky"
 
 msgid "Automatically include all items"
-msgstr ""
+msgstr "Automaticky zahrnout všechny položky"
 
 msgid ""
 "Select all {{- dimensionTitle}} items. With this option, new items added in "
 "the future will be automatically included."
 msgstr ""
+"Vyberte všechny položky {{- dimensionTitle}}. Díky této možnosti budou "
+"automaticky přidány nové položky přidané v budoucnosti."
 
 msgid "Manually select items..."
-msgstr ""
+msgstr "Ručně vybrat položky ..."
 
 msgid "Nothing found in {{- dimensionTitle}}"
-msgstr ""
+msgstr "V {{- dimensionTitle}} nebylo nic nalezeno"
 
 msgid "Search"
 msgstr "Hledat"
