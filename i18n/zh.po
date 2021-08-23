@@ -126,13 +126,13 @@ msgstr "自动包含所有条目"
 msgid ""
 "Select all {{- dimensionTitle}} items. With this option, new items added in "
 "the future will be automatically included."
-msgstr ""
+msgstr "选择所有 {{- dimensionTitle}} 项。使用此选项，将来添加的新条目将自动包含在内。"
 
 msgid "Manually select items..."
 msgstr "手动选择条目..."
 
 msgid "Nothing found in {{- dimensionTitle}}"
-msgstr ""
+msgstr "在 {{- dimensionTitle}} 中找不到任何内容"
 
 msgid "Search"
 msgstr "搜索"
