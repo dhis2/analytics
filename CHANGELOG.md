@@ -1,3 +1,10 @@
+# [20.2.0](https://github.com/dhis2/analytics/compare/v20.1.5...v20.2.0) (2021-08-23)
+
+
+### Features
+
+* show indicator type in SV visualization (DHIS2-7420) ([#952](https://github.com/dhis2/analytics/issues/952)) ([9f44f2e](https://github.com/dhis2/analytics/commit/9f44f2e0174bca3166f4274b219bbe1816be7225))
+
 ## [20.1.5](https://github.com/dhis2/analytics/compare/v20.1.4...v20.1.5) (2021-08-23)
 
 
