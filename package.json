@@ -57,7 +57,7 @@
         "styled-jsx": "^3.3.2"
     },
     "dependencies": {
-        "@dhis2/d2-ui-favorites-dialog": "^7.3.0",
+        "@dhis2/d2-ui-favorites-dialog": "^7.3.2",
         "@dhis2/d2-ui-org-unit-dialog": "^7.3.0",
         "@dhis2/d2-ui-sharing-dialog": "^7.2.0",
         "@dhis2/d2-ui-translation-dialog": "^7.3.1",
