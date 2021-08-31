@@ -56,13 +56,17 @@ export const PivotTableValueCell = ({
               )
             : undefined
 
-    const width = engine.adaptiveClippingController.columns.sizes[engine.columnMap[column]].size
-    const height = engine.adaptiveClippingController.rows.sizes[engine.rowMap[row]].size
+    const width =
+        engine.adaptiveClippingController.columns.sizes[
+            engine.columnMap[column]
+        ].size
+    const height =
+        engine.adaptiveClippingController.rows.sizes[engine.rowMap[row]].size
     const style = {
         ...legendStyle,
         width,
         height,
-        whiteSpace: 'pre-line'
+        whiteSpace: 'pre-line',
     }
 
     return (

@@ -36,8 +36,10 @@ export const PivotTableDimensionLabelCell = ({ rowLevel, columnLevel }) => {
         return null
     }
 
-    const width = engine.adaptiveClippingController.columns.headerSizes[rowLevel]
-    const height = engine.adaptiveClippingController.rows.headerSizes[columnLevel]
+    const width =
+        engine.adaptiveClippingController.columns.headerSizes[rowLevel]
+    const height =
+        engine.adaptiveClippingController.rows.headerSizes[columnLevel]
 
     return (
         <PivotTableCell

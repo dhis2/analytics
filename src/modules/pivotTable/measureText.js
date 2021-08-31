@@ -63,7 +63,7 @@ export const measureTextWithWrapping = (
                     currentLineWidth = 0
 
                     words.unshift(nextWord.substring(1)) // Get rid of the extra space
-                    continue;
+                    continue
                 }
             }
             currentLine += nextWord

@@ -1,5 +1,8 @@
 import { measureTextWithWrapping } from './measureText'
-import { CLIPPED_AXIS_PARTITION_SIZE_PX, CLIPPED_CELL_MIN_SIZE } from './pivotTableConstants'
+import {
+    CLIPPED_AXIS_PARTITION_SIZE_PX,
+    CLIPPED_CELL_MIN_SIZE,
+} from './pivotTableConstants'
 
 export class AdaptiveClippingController {
     columns
@@ -22,7 +25,10 @@ export class AdaptiveClippingController {
             this.columns.sizes[column] = columnSize
         } else {
             const index = this.engine.rowDepth + column
-            this.columns.headerSizes[index] = Math.max(this.columns.headerSizes[index] || 0, width)
+            this.columns.headerSizes[index] = Math.max(
+                this.columns.headerSizes[index] || 0,
+                width
+            )
         }
 
         if (row >= 0) {
@@ -34,7 +40,10 @@ export class AdaptiveClippingController {
             this.rows.sizes[row] = rowSize
         } else {
             const index = this.engine.columnDepth + row
-            this.rows.headerSizes[index] = Math.max(this.rows.headerSizes[index] || 0, height)
+            this.rows.headerSizes[index] = Math.max(
+                this.rows.headerSizes[index] || 0,
+                height
+            )
         }
     }
 
@@ -45,19 +54,17 @@ export class AdaptiveClippingController {
     measureText(renderedValue, options = {}) {
         return measureTextWithWrapping(renderedValue, {
             fontSize: this.engine.fontSize,
-            ...options
+            ...options,
         })
     }
 
     getCellSize(contentSize) {
-            return Math.ceil(contentSize) +
-            this.engine.cellPadding * 2 +
-            /*border*/ 2
+        return (
+            Math.ceil(contentSize) + this.engine.cellPadding * 2 + /*border*/ 2
+        )
     }
 
-    finalizeAxis(
-        axis
-    ) {
+    finalizeAxis(axis) {
         axis.totalSize = 0
         axis.headerSize = 0
 
@@ -65,10 +72,13 @@ export class AdaptiveClippingController {
         axis.partitions = []
 
         const isColumn = axis.orientation === 'column'
-        
+
         const map = isColumn ? this.engine.columnMap : this.engine.rowMap
-        const getHeader = index => isColumn ? this.engine.getRawColumnHeader(index) : this.engine.getRawRowHeader(index)
-        
+        const getHeader = index =>
+            isColumn
+                ? this.engine.getRawColumnHeader(index)
+                : this.engine.getRawRowHeader(index)
+
         map.forEach((index, mapIndex) => {
             const headerStack = getHeader(index)
             headerStack.forEach((header, level) => {
@@ -80,16 +90,24 @@ export class AdaptiveClippingController {
                 if (label) {
                     const isLeafHeader = level === headerStack.length - 1
                     if (isColumn) {
-                        const headerSize = this.measureText(label, { maxWidth: isLeafHeader ? Math.max(CLIPPED_CELL_MIN_SIZE, axis.sizes[index]?.size || 0) : 0 })
+                        const headerSize = this.measureText(label, {
+                            maxWidth: isLeafHeader
+                                ? Math.max(
+                                      CLIPPED_CELL_MIN_SIZE,
+                                      axis.sizes[index]?.size || 0
+                                  )
+                                : 0,
+                        })
                         this.addSize(
                             { row: -headerStack.length + level, column: index },
                             {
                                 height: headerSize.height,
-                                width:
-                                    isLeafHeader ? headerSize.width +
-                                    (this.engine.isSortable(mapIndex)
-                                        ? this.engine.scrollIconBuffer
-                                        : 0) : 0,
+                                width: isLeafHeader
+                                    ? headerSize.width +
+                                      (this.engine.isSortable(mapIndex)
+                                          ? this.engine.scrollIconBuffer
+                                          : 0)
+                                    : 0,
                             }
                         )
                     } else {
@@ -98,7 +116,7 @@ export class AdaptiveClippingController {
                             { row: index, column: -headerStack.length + level },
                             {
                                 height: isLeafHeader ? headerSize.height : 0,
-                                width: headerSize.width
+                                width: headerSize.width,
                             }
                         )
                     }
@@ -121,30 +139,46 @@ export class AdaptiveClippingController {
 
     finalize() {
         if (this.engine.visualization.showDimensionLabels) {
-            const columnDimensionCount = this.engine.dimensionLookup.columnHeaders.length
-            const rowDimensionCount = this.engine.dimensionLookup.rowHeaders.length
-            this.engine.dimensionLookup.columnHeaders.forEach((_, columnLevel) => {
-                this.engine.dimensionLookup.rowHeaders.forEach((_, rowLevel) => {
-                    const label = this.engine.getDimensionLabel(rowLevel, columnLevel)
-                    if (label) {
-                        this.add({ row: -rowDimensionCount + rowLevel, column: -columnDimensionCount + columnLevel }, label)
-                    }
-                })
-            })
+            const columnDimensionCount =
+                this.engine.dimensionLookup.columnHeaders.length
+            const rowDimensionCount =
+                this.engine.dimensionLookup.rowHeaders.length
+            this.engine.dimensionLookup.columnHeaders.forEach(
+                (_, columnLevel) => {
+                    this.engine.dimensionLookup.rowHeaders.forEach(
+                        (_, rowLevel) => {
+                            const label = this.engine.getDimensionLabel(
+                                rowLevel,
+                                columnLevel
+                            )
+                            if (label) {
+                                this.add(
+                                    {
+                                        row: -rowDimensionCount + rowLevel,
+                                        column:
+                                            -columnDimensionCount + columnLevel,
+                                    },
+                                    label
+                                )
+                            }
+                        }
+                    )
+                }
+            )
         }
 
         this.finalizeAxis(this.columns)
         this.finalizeAxis(this.rows)
 
         this.columns.headerSize = 0
-        this.columns.headerSizes = this.columns.headerSizes.map((size) => {
+        this.columns.headerSizes = this.columns.headerSizes.map(size => {
             const paddedSize = this.getCellSize(size)
             this.columns.headerSize += paddedSize
             return paddedSize
         })
 
         this.rows.headerSize = 0
-        this.rows.headerSizes = this.rows.headerSizes.map((size) => {
+        this.rows.headerSizes = this.rows.headerSizes.map(size => {
             const paddedSize = this.getCellSize(size)
             this.rows.headerSize += paddedSize
             return paddedSize
