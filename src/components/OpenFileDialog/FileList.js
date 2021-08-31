@@ -12,7 +12,7 @@ export const FileList = ({ type, data, onSelect }) => (
                     {visualization.displayName}
                 </DataTableCell>
                 {type === 'visualization' && (
-                    <DataTableCell>
+                    <DataTableCell align="center">
                         <VisTypeIcon
                             type={visualization.type}
                             useSmall
@@ -38,7 +38,7 @@ FileList.propTypes = {
             displayName: PropTypes.string.isRequired,
             id: PropTypes.string.isRequired,
             lastUpdated: PropTypes.string.isRequired,
-            type: PropTypes.string.isRequired,
+            type: PropTypes.string,
         })
     ).isRequired,
     type: PropTypes.string.isRequired,
