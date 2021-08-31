@@ -38,7 +38,7 @@ FileList.propTypes = {
             displayName: PropTypes.string.isRequired,
             id: PropTypes.string.isRequired,
             lastUpdated: PropTypes.string.isRequired,
-            type: PropTypes.string.isRequired,
+            type: PropTypes.string,
         })
     ).isRequired,
     type: PropTypes.string.isRequired,
