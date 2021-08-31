@@ -130,7 +130,7 @@ export class AdaptiveClippingController {
             }
 
             if (axis.totalSize >= nextPartitionPx) {
-                axis.partitions.push(index)
+                axis.partitions.push(mapIndex)
                 nextPartitionPx += CLIPPED_AXIS_PARTITION_SIZE_PX
             }
             axis.totalSize += cellSize
