@@ -15,7 +15,10 @@ export const PivotTableColumnHeaderCell = ({
 }) => {
     const engine = usePivotTableEngine()
 
-    const width = engine.columnWidths[index]?.width
+    const width =
+        engine.adaptiveClippingController.columns.sizes[engine.columnMap[index]]
+            ?.size
+    const height = engine.adaptiveClippingController.rows.headerSizes[level]
 
     return (
         <PivotTableHeaderCell
@@ -33,8 +36,11 @@ export const PivotTableColumnHeaderCell = ({
                 const style = {
                     cursor: isSortable ? 'pointer' : 'default',
                     width,
-                    maxWidth: width,
-                    minWidth: width,
+                    height,
+                    whiteSpace:
+                        level === engine.columnDepth - 1
+                            ? 'pre-line'
+                            : 'nowrap',
                 }
 
                 if (engine.options.fixColumnHeaders) {

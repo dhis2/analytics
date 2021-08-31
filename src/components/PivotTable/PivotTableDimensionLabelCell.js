@@ -36,11 +36,13 @@ export const PivotTableDimensionLabelCell = ({ rowLevel, columnLevel }) => {
         return null
     }
 
-    const width = engine.rowHeaderWidths[rowLevel]
+    const width =
+        engine.adaptiveClippingController.columns.headerSizes[rowLevel]
+    const height =
+        engine.adaptiveClippingController.rows.headerSizes[columnLevel]
     const style = {
         width,
-        maxWidth: width,
-        minWidth: width,
+        height,
     }
 
     if (engine.options.fixColumnHeaders || engine.options.fixRowHeaders) {
@@ -53,7 +55,7 @@ export const PivotTableDimensionLabelCell = ({ rowLevel, columnLevel }) => {
             : 0
         style.left = engine.options.fixRowHeaders
             ? // calculate the width of all row header cells on the left of current cell
-              engine.rowHeaderWidths
+              engine.adaptiveClippingController.columns.headerSizes
                   .slice(0, rowLevel)
                   .reduce((width, acc) => (acc += width), 0)
             : 0

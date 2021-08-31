@@ -7,6 +7,8 @@ import { cell as cellStyle } from './styles/PivotTable.style'
 export const PivotTableCell = React.forwardRef(
     ({ classes, isHeader, children, dataTest, style = {}, ...props }, ref) => {
         const engine = usePivotTableEngine()
+        style.width = style.minWidth = style.maxWidth = style.width
+
         style.height =
             style.minHeight =
             style.maxHeight =

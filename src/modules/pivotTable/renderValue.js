@@ -59,7 +59,7 @@ const toFixedPrecisionString = (value, skipRounding) => {
 
 export const renderValue = (value, valueType, visualization) => {
     if (valueType !== VALUE_TYPE_NUMBER || value === undefined) {
-        return value
+        return String(value).replace(/[^\S\n]+/, ' ')
     }
 
     if (
