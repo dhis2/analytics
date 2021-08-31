@@ -17,9 +17,8 @@ export const table = css`
     }
     table {
         border-spacing: 0;
-        border-collapse: collapse;
+        border-collapse: separate;
         white-space: nowrap;
-        overflow: hidden;
         box-sizing: border-box;
         text-align: center;
     }
@@ -34,6 +33,13 @@ export const cell = css`
         text-overflow: ellipsis;
         border: 1px solid #b2b2b2;
         cursor: default;
+    }
+
+    .fixedHeader {
+        position: sticky;
+        z-index: 1;
+        top: 0;
+        left: 0;
     }
 
     .fontsize-SMALL {
