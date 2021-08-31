@@ -1,3 +1,10 @@
+# [20.4.0](https://github.com/dhis2/analytics/compare/v20.3.1...v20.4.0) (2021-08-31)
+
+
+### Features
+
+* support vertical axis clipping and text wrapping in cells [DHIS2-11556] ([#1023](https://github.com/dhis2/analytics/issues/1023)) ([2f25f65](https://github.com/dhis2/analytics/commit/2f25f653ffea14e984fe30752e94d05e0092a89e))
+
 ## [20.3.1](https://github.com/dhis2/analytics/compare/v20.3.0...v20.3.1) (2021-08-31)
 
 
