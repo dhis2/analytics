@@ -1,6 +1,6 @@
 import times from 'lodash/times'
 import { DIMENSION_ID_ORGUNIT } from '../predefinedDimensions'
-import { measureText } from './measureText'
+import { AdaptiveClippingController } from './AdaptiveClippingController.js'
 import { parseValue } from './parseValue'
 import {
     AGGREGATE_TYPE_NA,
@@ -23,8 +23,6 @@ import {
     FONT_SIZE_LARGE,
     FONT_SIZE_OPTION_NORMAL,
     FONT_SIZE_NORMAL,
-    COLUMN_PARTITION_SIZE_PX,
-    CLIPPED_CELL_MAX_WIDTH,
     VALUE_TYPE_NUMBER,
     NUMBER_TYPE_COLUMN_PERCENTAGE,
     NUMBER_TYPE_ROW_PERCENTAGE,
@@ -253,6 +251,7 @@ export class PivotTableEngine {
     legendSets
 
     dimensionLookup
+    adaptiveClippingController
 
     columnDepth = 0
     rowDepth = 0
@@ -260,7 +259,6 @@ export class PivotTableEngine {
     height = 0
     width = 0
     data = []
-    columnWidths = []
     rowMap = []
     columnMap = []
 
@@ -294,6 +292,7 @@ export class PivotTableEngine {
             this.rawData.metaData,
             this.rawData.headers
         )
+        this.adaptiveClippingController = new AdaptiveClippingController(this)
 
         const doColumnSubtotals =
             this.options.showColumnSubtotals &&
@@ -519,7 +518,7 @@ export class PivotTableEngine {
         return !this.data[row] || this.data[row].length === 0
     }
     columnIsEmpty(column) {
-        return !this.columnWidths[column]
+        return !this.adaptiveClippingController.columns.sizes[column]
     }
 
     getRawColumnHeader(column) {
@@ -820,7 +819,7 @@ export class PivotTableEngine {
                 this.visualization.numberType !== NUMBER_TYPE_VALUE &&
                     AGGREGATE_TYPE_SUM
             )
-            this.addCellForAdaptiveClipping(
+            this.adaptiveClippingController.add(
                 { row, column },
                 renderValue(
                     totalCell.value,
@@ -927,101 +926,6 @@ export class PivotTableEngine {
         }
     }
 
-    addCellForAdaptiveClipping({ column }, renderedValue) {
-        this.columnWidths[column] = Math.max(
-            this.columnWidths[column] || 0,
-            measureText(renderedValue, this.fontSize)
-        )
-    }
-
-    finalizeAdaptiveClipping() {
-        this.dataPixelWidth = 0
-        this.rowHeaderPixelWidth = 0
-
-        let nextPartitionPx = 0
-        this.columnPartitions = []
-
-        const getColumnWidth = contentWidth =>
-            Math.min(CLIPPED_CELL_MAX_WIDTH, Math.ceil(contentWidth)) +
-            this.cellPadding * 2 +
-            /*border*/ 2
-
-        this.columnMap.forEach(column => {
-            const header = this.getRawColumnHeader(column)[this.columnDepth - 1]
-            const label =
-                this.visualization.showHierarchy && header?.hierarchy
-                    ? header.hierarchy.join(' / ')
-                    : header?.name
-
-            if (label) {
-                const headerSize = measureText(label, this.fontSize)
-                this.columnWidths[column] = Math.max(
-                    this.columnWidths[column] || 0,
-                    headerSize +
-                        (this.isSortable(column) ? this.scrollIconBuffer : 0)
-                )
-            }
-
-            const colWidth = getColumnWidth(this.columnWidths[column])
-            this.columnWidths[column] = {
-                pre: this.dataPixelWidth,
-                width: colWidth,
-            }
-
-            if (this.dataPixelWidth >= nextPartitionPx) {
-                this.columnPartitions.push(column)
-                nextPartitionPx += COLUMN_PARTITION_SIZE_PX
-            }
-            this.dataPixelWidth += colWidth
-        })
-
-        if (
-            !this.dimensionLookup.rows.length &&
-            this.visualization.showDimensionLabels
-        ) {
-            let maxWidth = 0
-            this.dimensionLookup.columns.forEach((_, columnLevel) => {
-                const label = this.getDimensionLabel(0, columnLevel)
-                if (label) {
-                    const headerSize = measureText(label, this.fontSize)
-                    maxWidth = Math.max(maxWidth, headerSize)
-                }
-            })
-
-            const columnWidth = getColumnWidth(maxWidth)
-            this.rowHeaderPixelWidth = columnWidth
-            this.rowHeaderWidths = [columnWidth]
-        }
-
-        this.rowHeaderWidths = this.dimensionLookup.rows.map((_, rowLevel) => {
-            let maxWidth = 0
-            this.rowMap.forEach(rawColumn => {
-                const header = this.getRawRowHeader(rawColumn)[rowLevel]
-                const label =
-                    this.visualization.showHierarchy && header?.hierarchy
-                        ? header.hierarchy.join(' / ')
-                        : header?.name
-                if (label) {
-                    const headerSize = measureText(label, this.fontSize)
-                    maxWidth = Math.max(maxWidth, headerSize)
-                }
-            }, 0)
-
-            if (this.visualization.showDimensionLabels) {
-                this.dimensionLookup.columns.forEach((_, columnLevel) => {
-                    const label = this.getDimensionLabel(rowLevel, columnLevel)
-                    if (label) {
-                        const headerSize = measureText(label, this.fontSize)
-                        maxWidth = Math.max(maxWidth, headerSize)
-                    }
-                })
-            }
-            const columnWidth = getColumnWidth(maxWidth)
-            this.rowHeaderPixelWidth += columnWidth
-            return columnWidth
-        })
-    }
-
     resetRowMap() {
         this.rowMap = this.options.hideEmptyRows
             ? times(this.dataHeight, n => n).filter(idx => !!this.data[idx])
@@ -1031,7 +935,7 @@ export class PivotTableEngine {
     resetColumnMap() {
         this.columnMap = this.options.hideEmptyColumns
             ? times(this.dataWidth, n => n).filter(
-                  idx => !!this.columnWidths[idx]
+                  idx => !this.columnIsEmpty(idx)
               )
             : times(this.dataWidth, n => n)
     }
@@ -1074,7 +978,7 @@ export class PivotTableEngine {
 
     buildMatrix() {
         this.data = []
-        this.columnWidths = []
+        this.adaptiveClippingController.reset()
 
         this.dataHeight = this.rawDataHeight = countFromDisaggregates(
             this.dimensionLookup.rows
@@ -1131,7 +1035,7 @@ export class PivotTableEngine {
         this.rawData.rows.forEach(dataRow => {
             const pos = lookup(dataRow, this.dimensionLookup, this)
             if (pos) {
-                this.addCellForAdaptiveClipping(
+                this.adaptiveClippingController.add(
                     pos,
                     this.getRaw(pos).renderedValue
                 )
@@ -1144,7 +1048,7 @@ export class PivotTableEngine {
         this.height = this.rowMap.length
         this.width = this.columnMap.length
 
-        this.finalizeAdaptiveClipping()
+        this.adaptiveClippingController.finalize()
     }
 
     getColumnType(column) {

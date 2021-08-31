@@ -7,10 +7,11 @@ import { PivotTableHeaderCell } from './PivotTableHeaderCell'
 export const PivotTableRowHeaderCell = ({
     clippingResult,
     rowIndex,
-    rowLevel,
+    rowLevel
 }) => {
     const engine = usePivotTableEngine()
-    const width = engine.rowHeaderWidths[rowLevel]
+    const width = engine.adaptiveClippingController.columns.headerSizes[rowLevel]
+    const height = engine.adaptiveClippingController.rows.sizes[engine.rowMap[rowIndex]]?.size
 
     return (
         <PivotTableHeaderCell
@@ -31,7 +32,7 @@ export const PivotTableRowHeaderCell = ({
                     ]}
                     rowSpan={header.span}
                     title={header.label}
-                    style={{ width, maxWidth: width, minWidth: width }}
+                    style={{ width, height }}
                     dataTest="visualization-row-header"
                 >
                     {header.label}

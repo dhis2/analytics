@@ -31,7 +31,6 @@ const PivotTable = ({
         width,
         height,
         engine,
-        visualization,
     })
 
     return (

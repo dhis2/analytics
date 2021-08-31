@@ -36,14 +36,16 @@ export const PivotTableDimensionLabelCell = ({ rowLevel, columnLevel }) => {
         return null
     }
 
-    const width = engine.rowHeaderWidths[rowLevel]
+    const width = engine.adaptiveClippingController.columns.headerSizes[rowLevel]
+    const height = engine.adaptiveClippingController.rows.headerSizes[columnLevel]
+
     return (
         <PivotTableCell
             classes={['empty-header', 'column-header']}
             colSpan={colSpan}
             rowSpan={rowSpan}
             title={label}
-            style={{ width, maxWidth: width, minWidth: width }}
+            style={{ width, height }}
         >
             {label}
         </PivotTableCell>

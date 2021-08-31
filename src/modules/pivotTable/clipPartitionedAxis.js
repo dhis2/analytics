@@ -37,7 +37,7 @@ export const clipPartitionedAxis = ({
     }
     end = end === 0 ? end : end - 1
     const post =
-        totalWidth - (widthMap[axisMap[end]].pre + widthMap[axisMap[end]].width)
+        totalWidth - (widthMap[axisMap[end]].pre + widthMap[axisMap[end]].size)
 
     return {
         indices,

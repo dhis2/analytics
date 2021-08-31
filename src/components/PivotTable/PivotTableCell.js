@@ -10,6 +10,11 @@ export const PivotTableCell = React.forwardRef(
         ref
     ) => {
         const engine = usePivotTableEngine()
+        style.width =
+            style.minWidth =
+            style.maxWidth =
+            style.width
+        
         style.height =
             style.minHeight =
             style.maxHeight =

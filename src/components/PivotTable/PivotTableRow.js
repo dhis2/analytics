@@ -25,7 +25,7 @@ export const PivotTableRow = ({
             ))}
             <PivotTableClippedAxis
                 axisClippingResult={clippingResult.columns}
-                EmptyComponent={() => <PivotTableEmptyCell classes="value" />}
+                EmptyComponent={({ size }) => <PivotTableEmptyCell classes="value" style={{ width: size }} />}
                 ItemComponent={({ index: columnIndex }) => (
                     <PivotTableValueCell
                         row={rowIndex}
