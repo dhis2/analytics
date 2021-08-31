@@ -1,3 +1,17 @@
+## [20.3.1](https://github.com/dhis2/analytics/compare/v20.3.0...v20.3.1) (2021-08-31)
+
+
+### Bug Fixes
+
+* OpenFileDialog fixes ([#967](https://github.com/dhis2/analytics/issues/967)) ([91cb9ae](https://github.com/dhis2/analytics/commit/91cb9ae2a4375b0eeb753b3f8e957d3728eac1dc))
+
+# [20.3.0](https://github.com/dhis2/analytics/compare/v20.2.2...v20.3.0) (2021-08-31)
+
+
+### Features
+
+* fixed headers in PT (DHIS2-11057) ([#984](https://github.com/dhis2/analytics/issues/984)) ([04b389c](https://github.com/dhis2/analytics/commit/04b389c2f728b358da364c4e7793991712111fc6))
+
 ## [20.2.2](https://github.com/dhis2/analytics/compare/v20.2.1...v20.2.2) (2021-08-31)
 
 

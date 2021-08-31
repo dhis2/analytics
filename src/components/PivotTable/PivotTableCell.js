@@ -5,10 +5,7 @@ import { usePivotTableEngine } from './PivotTableEngineContext'
 import { cell as cellStyle } from './styles/PivotTable.style'
 
 export const PivotTableCell = React.forwardRef(
-    (
-        { classes, isColumnHeader, children, dataTest, style = {}, ...props },
-        ref
-    ) => {
+    ({ classes, isHeader, children, dataTest, style = {}, ...props }, ref) => {
         const engine = usePivotTableEngine()
         style.width = style.minWidth = style.maxWidth = style.width
 
@@ -23,7 +20,7 @@ export const PivotTableCell = React.forwardRef(
             `displaydensity-${engine.visualization.displayDensity}`
         )
 
-        return isColumnHeader ? (
+        return isHeader ? (
             <th
                 className={className}
                 style={style}
@@ -51,7 +48,7 @@ export const PivotTableCell = React.forwardRef(
 PivotTableCell.displayName = 'PivotTableCell'
 
 PivotTableCell.defaultProps = {
-    isColumnHeader: false,
+    isHeader: false,
 }
 PivotTableCell.propTypes = {
     children: PropTypes.node,
@@ -61,6 +58,6 @@ PivotTableCell.propTypes = {
         PropTypes.string,
     ]),
     dataTest: PropTypes.string,
-    isColumnHeader: PropTypes.bool,
+    isHeader: PropTypes.bool,
     style: PropTypes.object,
 }

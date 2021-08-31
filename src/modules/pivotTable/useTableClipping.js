@@ -12,9 +12,14 @@ export const useTableClipping = ({ containerRef, width, height, engine }) => {
             engine.adaptiveClippingController.rows.headerSize +
             (engine.options.title ? lineHeight : 0) +
             (engine.options.subtitle ? lineHeight : 0)
-        const viewportPosition = Math.max(0, scrollPosition.y - headerSize)
+        const viewportPosition = engine.options.fixColumnHeaders
+            ? scrollPosition.y
+            : Math.max(0, scrollPosition.y - headerSize)
         const viewportWidth =
-            height - Math.max(headerSize - scrollPosition.y, 0)
+            height -
+            (engine.options.fixColumnHeaders
+                ? engine.adaptiveClippingController.rows.headerSize
+                : Math.max(headerSize - scrollPosition.y, 0))
 
         return clipPartitionedAxis({
             partitionSize: CLIPPED_AXIS_PARTITION_SIZE_PX,
@@ -33,6 +38,7 @@ export const useTableClipping = ({ containerRef, width, height, engine }) => {
         engine.adaptiveClippingController.rows.partitions,
         engine.adaptiveClippingController.rows.sizes,
         engine.adaptiveClippingController.rows.totalSize,
+        engine.options.fixColumnHeaders,
         engine.rowMap,
         engine.options.title,
         engine.options.subtitle,
@@ -40,16 +46,20 @@ export const useTableClipping = ({ containerRef, width, height, engine }) => {
     const columns = useMemo(() => {
         const viewportPosition = Math.max(
             0,
-            scrollPosition.x -
-                engine.adaptiveClippingController.columns.headerSize
+            engine.options.fixRowHeaders
+                ? scrollPosition.x
+                : scrollPosition.x -
+                      engine.adaptiveClippingController.columns.headerSize
         )
         const viewportWidth =
             width -
-            Math.max(
-                engine.adaptiveClippingController.columns.headerSize -
-                    scrollPosition.x,
-                0
-            )
+            (engine.options.fixRowHeaders
+                ? engine.adaptiveClippingController.columns.headerSize
+                : Math.max(
+                      engine.adaptiveClippingController.columns.headerSize -
+                          scrollPosition.x,
+                      0
+                  ))
         return clipPartitionedAxis({
             partitionSize: CLIPPED_AXIS_PARTITION_SIZE_PX,
             partitions: engine.adaptiveClippingController.columns.partitions,
@@ -66,6 +76,7 @@ export const useTableClipping = ({ containerRef, width, height, engine }) => {
         engine.adaptiveClippingController.columns.partitions,
         engine.adaptiveClippingController.columns.sizes,
         engine.adaptiveClippingController.columns.totalSize,
+        engine.options.fixRowHeaders,
         engine.columnMap,
     ])
 

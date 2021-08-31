@@ -9,9 +9,15 @@ export const PivotTableEmptyRow = ({ height, columns }) => {
     return (
         <tr>
             <PivotTableCell
+                isHeader={true}
                 colSpan={engine.rowDepth}
                 style={{ height }}
-                classes="row-header"
+                classes={[
+                    'row-header',
+                    {
+                        fixedHeader: engine.options.fixRowHeaders,
+                    },
+                ]}
             />
             {columns.map(i => (
                 <PivotTableCell key={i} />
