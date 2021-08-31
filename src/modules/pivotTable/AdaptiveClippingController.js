@@ -12,7 +12,6 @@ export class AdaptiveClippingController {
     constructor(engine) {
         this.engine = engine
         this.reset()
-        console.log(this.engine)
     }
 
     addSize({ row, column }, { width, height }) {
