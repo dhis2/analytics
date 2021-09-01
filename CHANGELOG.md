@@ -1,3 +1,10 @@
+## [20.4.2](https://github.com/dhis2/analytics/compare/v20.4.1...v20.4.2) (2021-09-01)
+
+
+### Bug Fixes
+
+* use the new SharingDialog and remove old deps ([#1027](https://github.com/dhis2/analytics/issues/1027)) ([9ba1527](https://github.com/dhis2/analytics/commit/9ba15272fca7a187d404044e0c2296c587c395c1))
+
 ## [20.4.1](https://github.com/dhis2/analytics/compare/v20.4.0...v20.4.1) (2021-09-01)
 
 
