@@ -1,5 +1,5 @@
-import SharingDialog from '@dhis2/d2-ui-sharing-dialog'
 import TranslationDialog from '@dhis2/d2-ui-translation-dialog'
+import { SharingDialog } from '@dhis2/ui'
 import { shallow } from 'enzyme'
 import React from 'react'
 import { OpenFileDialog } from '../../OpenFileDialog/OpenFileDialog'

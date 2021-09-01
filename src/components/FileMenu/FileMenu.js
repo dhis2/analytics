@@ -1,4 +1,3 @@
-import SharingDialog from '@dhis2/d2-ui-sharing-dialog'
 import TranslationDialog from '@dhis2/d2-ui-translation-dialog'
 import PropTypes from '@dhis2/prop-types'
 import {
@@ -10,6 +9,7 @@ import {
     IconShare24,
     IconLink24,
     IconDelete24,
+    SharingDialog,
 } from '@dhis2/ui'
 import { colors } from '@dhis2/ui-constants'
 import {
@@ -103,11 +103,9 @@ export const FileMenu = ({
                 return (
                     <SharingDialog
                         open={true}
-                        d2={d2}
                         type={fileType}
                         id={fileObject.id}
-                        onRequestClose={onDialogClose}
-                        insertTheme={true}
+                        onClose={onDialogClose}
                     />
                 )
             case 'getlink':
