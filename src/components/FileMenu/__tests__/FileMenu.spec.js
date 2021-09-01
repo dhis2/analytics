@@ -1,4 +1,4 @@
-import SharingDialog from '@dhis2/d2-ui-sharing-dialog'
+import { SharingDialog } from '@dhis2/ui'
 import TranslationDialog from '@dhis2/d2-ui-translation-dialog'
 import { shallow } from 'enzyme'
 import React from 'react'
