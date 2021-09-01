@@ -1,3 +1,10 @@
+## [20.4.1](https://github.com/dhis2/analytics/compare/v20.4.0...v20.4.1) (2021-09-01)
+
+
+### Bug Fixes
+
+* bump app-runtime and ui ([#1026](https://github.com/dhis2/analytics/issues/1026)) ([be3c34c](https://github.com/dhis2/analytics/commit/be3c34cf3135f25d419f867ab2462951c9160c39))
+
 # [20.4.0](https://github.com/dhis2/analytics/compare/v20.3.1...v20.4.0) (2021-08-31)
 
 
