@@ -87,9 +87,6 @@ const getLegendSetByDisplayStrategy = ({
     }
 }
 
-const getBulletStyleByFontStyle = fontStyle =>
-    `display: inline-block; border-radius: 50%; width: ${fontStyle[FONT_STYLE_OPTION_FONT_SIZE]}px; height: ${fontStyle[FONT_STYLE_OPTION_FONT_SIZE]}px;`
-
 const formatLabel = ({
     seriesId,
     seriesColor,
@@ -136,13 +133,19 @@ const formatLabel = ({
             .sort((a, b) => a.startValue - b.startValue)
             .forEach((legend, index) =>
                 result.push(
-                    `<span style="${getBulletStyleByFontStyle(
-                        fontStyle
-                    )} background-color: ${
-                        legend.color
-                    }; margin-right:-5px; z-index: ${
+                    `<svg xmlns="http://www.w3.org/2000/svg" width="${
+                        fontStyle[FONT_STYLE_OPTION_FONT_SIZE]
+                    }" height="${
+                        fontStyle[FONT_STYLE_OPTION_FONT_SIZE]
+                    }" version="1.1"  style="margin-right:-5px; z-index: ${
                         legendSet.legends.length - index
-                    }" class="data-test-series-key-item-bullet"></span>`
+                    }" class="data-test-series-key-item-bullet">
+                    <circle cx="${
+                        fontStyle[FONT_STYLE_OPTION_FONT_SIZE] / 2
+                    }" cy="${fontStyle[FONT_STYLE_OPTION_FONT_SIZE] / 2}" r="${
+                        fontStyle[FONT_STYLE_OPTION_FONT_SIZE] / 2
+                    }" fill="${legend.color}"></circle>
+                    </svg>`
                 )
             )
         result.push(
@@ -177,9 +180,17 @@ const formatLabel = ({
             )
         } else {
             result.push(
-                `<span style="${getBulletStyleByFontStyle(
-                    fontStyle
-                )} background-color: ${seriesColor}; margin-right:5px" class="data-test-series-key-item-bullet"></span>`
+                `<svg xmlns="http://www.w3.org/2000/svg" width="${
+                    fontStyle[FONT_STYLE_OPTION_FONT_SIZE]
+                }" height="${
+                    fontStyle[FONT_STYLE_OPTION_FONT_SIZE]
+                }" version="1.1"  style="margin-right:5px" class="data-test-series-key-item-bullet">
+                    <circle cx="${
+                        fontStyle[FONT_STYLE_OPTION_FONT_SIZE] / 2
+                    }" cy="${fontStyle[FONT_STYLE_OPTION_FONT_SIZE] / 2}" r="${
+                    fontStyle[FONT_STYLE_OPTION_FONT_SIZE] / 2
+                }" fill="${seriesColor}"></circle>
+                    </svg>`
             )
         }
 
