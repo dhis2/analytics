@@ -1,3 +1,10 @@
+## [20.4.3](https://github.com/dhis2/analytics/compare/v20.4.2...v20.4.3) (2021-09-06)
+
+
+### Bug Fixes
+
+* legend key bullet as svg ([#1035](https://github.com/dhis2/analytics/issues/1035)) ([0b57e93](https://github.com/dhis2/analytics/commit/0b57e9333c4cd532008832cb17707e1c8c2ca5f7))
+
 ## [20.4.2](https://github.com/dhis2/analytics/compare/v20.4.1...v20.4.2) (2021-09-01)
 
 
