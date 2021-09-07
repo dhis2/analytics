@@ -107,7 +107,7 @@ const generateDashboardItem = (config, legendSet) => {
             config.formattedValue,
             config.subText,
             legendSet,
-            20
+            40
         )
     )
 
