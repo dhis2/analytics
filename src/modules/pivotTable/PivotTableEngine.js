@@ -1123,7 +1123,9 @@ export class PivotTableEngine {
             )
         })
 
-        this.adaptiveClippingController.populateAxisPartitions(this.adaptiveClippingController.rows)
+        this.adaptiveClippingController.populateAxisPartitions(
+            this.adaptiveClippingController.rows
+        )
     }
 
     clearSort() {
