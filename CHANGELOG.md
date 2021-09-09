@@ -1,3 +1,10 @@
+## [20.4.4](https://github.com/dhis2/analytics/compare/v20.4.3...v20.4.4) (2021-09-08)
+
+
+### Bug Fixes
+
+* bump @dhis2/ui to latest ([#1037](https://github.com/dhis2/analytics/issues/1037)) ([b9148cc](https://github.com/dhis2/analytics/commit/b9148ccafbacbab4af37db1ed28100ecf921ffac))
+
 ## [20.4.3](https://github.com/dhis2/analytics/compare/v20.4.2...v20.4.3) (2021-09-06)
 
 
