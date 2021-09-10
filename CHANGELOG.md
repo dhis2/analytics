@@ -1,3 +1,10 @@
+## [20.4.5](https://github.com/dhis2/analytics/compare/v20.4.4...v20.4.5) (2021-09-09)
+
+
+### Bug Fixes
+
+* SV indicator type increase font size and spacing DHIS2-7420 ([#1038](https://github.com/dhis2/analytics/issues/1038)) ([f8b6680](https://github.com/dhis2/analytics/commit/f8b6680dd484aacfc14ecb7aaa65b9dcc7fa486a))
+
 ## [20.4.4](https://github.com/dhis2/analytics/compare/v20.4.3...v20.4.4) (2021-09-08)
 
 

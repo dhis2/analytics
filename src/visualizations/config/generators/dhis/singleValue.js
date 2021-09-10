@@ -50,7 +50,7 @@ const generateValueSVG = (value, formattedValue, subText, legendSet, y) => {
 
     if (subText) {
         const svgSubText = document.createElementNS(svgNS, 'svg')
-        const subTextSize = 30
+        const subTextSize = 40
         svgSubText.setAttribute(
             'viewBox',
             `0 -50 ${textSize * 0.75 * formattedValue.length} ${textSize + 200}`
@@ -106,7 +106,8 @@ const generateDashboardItem = (config, legendSet) => {
             config.value,
             config.formattedValue,
             config.subText,
-            legendSet
+            legendSet,
+            40
         )
     )
 
