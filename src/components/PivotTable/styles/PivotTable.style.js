@@ -17,10 +17,11 @@ export const table = css`
     }
     table {
         border-spacing: 0;
-        border-collapse: separate;
         white-space: nowrap;
         box-sizing: border-box;
         text-align: center;
+        border: 1px solid #b2b2b2;
+        border-width: 0 1px 1px 0;
     }
 `
 
@@ -32,10 +33,11 @@ export const cell = css`
         overflow: hidden;
         text-overflow: ellipsis;
         border: 1px solid #b2b2b2;
+        border-width: 1px 0 0 1px;
         cursor: default;
     }
 
-    .fixedHeader {
+    th.fixedHeader {
         position: sticky;
         z-index: 1;
         top: 0;
