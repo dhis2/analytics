@@ -25,6 +25,20 @@ export const table = css`
     }
 `
 
+export const thead = css.global`
+    thead tr:first-child th:first-child,
+    thead tr:last-child th {
+        border-bottom: 1px solid #b2b2b2;
+    }
+`
+
+export const tbody = css.global`
+    tbody tr:first-child th,
+    tbody tr:first-child td {
+        border-top: none;
+    }
+`
+
 export const cell = css`
     td,
     th {
