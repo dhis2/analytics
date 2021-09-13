@@ -21,7 +21,7 @@ export const table = css`
         box-sizing: border-box;
         text-align: center;
         border: 1px solid #b2b2b2;
-        border-width: 0 1px 1px 0;
+        border-width: 0 0 1px 1px;
     }
 `
 
@@ -47,7 +47,7 @@ export const cell = css`
         overflow: hidden;
         text-overflow: ellipsis;
         border: 1px solid #b2b2b2;
-        border-width: 1px 0 0 1px;
+        border-width: 1px 1px 0 0;
         cursor: default;
     }
 
