@@ -23,6 +23,7 @@ export const PivotTableTitleRow = ({
         <tr>
             <style jsx>{cellStyle}</style>
             <PivotTableCell
+                isHeader
                 classes={['column-header', 'title']}
                 colSpan={columnCount}
             >
