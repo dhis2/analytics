@@ -2,7 +2,6 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import { PivotTableColumnHeaders } from './PivotTableColumnHeaders'
 import { PivotTableTitleRows } from './PivotTableTitleRows'
-import { thead as theadStyle } from './styles/PivotTable.style'
 
 export const PivotTableHead = ({
     clippingResult,
@@ -17,7 +16,6 @@ export const PivotTableHead = ({
             sortBy={sortBy}
             onSortByColumn={onSortByColumn}
         />
-        <style jsx>{theadStyle}</style>
     </thead>
 )
 

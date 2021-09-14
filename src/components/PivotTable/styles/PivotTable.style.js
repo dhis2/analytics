@@ -9,36 +9,54 @@ import {
     FONT_SIZE_LARGE,
 } from '../../../modules/pivotTable/pivotTableConstants'
 
-export const table = css`
+export const table = css.global`
     div.pivot-table-container {
         font-family: 'Roboto', Arial, sans-serif;
         overflow: auto;
         color: ${colors.grey900};
     }
+
     table {
         border-spacing: 0;
         white-space: nowrap;
         box-sizing: border-box;
         text-align: center;
         border: 1px solid #b2b2b2;
+        border-width: 1px 1px 0 0;
+    }
+
+    table.fixed-headers {
+        border-width: 0 0 0 1px;
+    }
+
+    table.fixed-headers tr th,
+    table.fixed-headers tr td {
+        border-width: 0 1px 1px 0;
+    }
+
+    table.fix-column-headers {
+        border-width: 0 1px 0 0;
+    }
+
+    table.fix-column-headers tr th,
+    table.fix-column-headers tr td {
         border-width: 0 0 1px 1px;
     }
-`
 
-export const thead = css.global`
-    thead tr:first-child th:first-child,
-    thead tr:last-child th {
-        border-bottom: 1px solid #b2b2b2;
+    table.fixed-headers thead tr:first-of-type th,
+    table.fix-column-headers thead tr:first-of-type th {
+        border-top: 1px solid #b2b2b2;
+    }
+
+    table.fix-row-headers {
+        border-width: 0 0 1px 1px;
+    }
+
+    table.fix-row-headers tr th,
+    table.fix-row-headers tr td {
+        border-width: 1px 1px 0 0;
     }
 `
-
-export const tbody = css.global`
-    tbody tr:first-child th,
-    tbody tr:first-child td {
-        border-top: none;
-    }
-`
-
 export const cell = css`
     td,
     th {
@@ -47,11 +65,11 @@ export const cell = css`
         overflow: hidden;
         text-overflow: ellipsis;
         border: 1px solid #b2b2b2;
-        border-width: 1px 1px 0 0;
+        border-width: 0 0 1px 1px;
         cursor: default;
     }
 
-    th.fixedHeader {
+    th.fixed-header {
         position: sticky;
         z-index: 1;
         top: 0;

@@ -33,7 +33,9 @@ export const PivotTableRowHeaderCell = ({
                             ? 'row-header'
                             : 'empty-header',
                         header.includesHierarchy && 'row-header-hierarchy',
-                        { fixedHeader: engine.options.fixRowHeaders },
+                        {
+                            'fixed-header': engine.options.fixRowHeaders,
+                        },
                     ]}
                     rowSpan={header.span}
                     title={header.label}
