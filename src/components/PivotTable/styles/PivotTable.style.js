@@ -1,6 +1,7 @@
 import { colors } from '@dhis2/ui'
 import css from 'styled-jsx/css'
 import {
+    BORDER_COLOR,
     DISPLAY_DENSITY_PADDING_COMPACT,
     DISPLAY_DENSITY_PADDING_NORMAL,
     DISPLAY_DENSITY_PADDING_COMFORTABLE,
@@ -21,7 +22,7 @@ export const table = css.global`
         white-space: nowrap;
         box-sizing: border-box;
         text-align: center;
-        border: 1px solid #b2b2b2;
+        border: 1px solid ${BORDER_COLOR};
         border-width: 1px 1px 0 0;
     }
 
@@ -34,26 +35,26 @@ export const table = css.global`
         border-width: 0 1px 1px 0;
     }
 
-    table.fix-column-headers {
+    table.fixed-column-headers {
         border-width: 0 1px 0 0;
     }
 
-    table.fix-column-headers tr th,
-    table.fix-column-headers tr td {
+    table.fixed-column-headers tr th,
+    table.fixed-column-headers tr td {
         border-width: 0 0 1px 1px;
     }
 
     table.fixed-headers thead tr:first-of-type th,
-    table.fix-column-headers thead tr:first-of-type th {
-        border-top: 1px solid #b2b2b2;
+    table.fixed-column-headers thead tr:first-of-type th {
+        border-top: 1px solid ${BORDER_COLOR};
     }
 
-    table.fix-row-headers {
+    table.fixed-row-headers {
         border-width: 0 0 1px 1px;
     }
 
-    table.fix-row-headers tr th,
-    table.fix-row-headers tr td {
+    table.fixed-row-headers tr th,
+    table.fixed-row-headers tr td {
         border-width: 1px 1px 0 0;
     }
 `
@@ -64,7 +65,7 @@ export const cell = css`
         font-weight: normal;
         overflow: hidden;
         text-overflow: ellipsis;
-        border: 1px solid #b2b2b2;
+        border: 1px solid ${BORDER_COLOR};
         border-width: 0 0 1px 1px;
         cursor: default;
     }

@@ -22,10 +22,10 @@ export const PivotTableContainer = React.forwardRef(
                             'fixed-headers':
                                 engine.options.fixColumnHeaders &&
                                 engine.options.fixRowHeaders,
-                            'fix-column-headers':
+                            'fixed-column-headers':
                                 engine.options.fixColumnHeaders &&
                                 !engine.options.fixRowHeaders,
-                            'fix-row-headers':
+                            'fixed-row-headers':
                                 engine.options.fixRowHeaders &&
                                 !engine.options.fixColumnHeaders,
                         })}
