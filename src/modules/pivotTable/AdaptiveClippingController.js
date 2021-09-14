@@ -136,6 +136,10 @@ export class AdaptiveClippingController {
         })
     }
 
+    resetRowPartitions() {
+        this.populateAxisPartitions(this.rows)
+    }
+
     finalize() {
         if (this.engine.visualization.showDimensionLabels) {
             const columnDimensionCount =
