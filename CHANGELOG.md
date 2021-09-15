@@ -1,3 +1,10 @@
+## [11.0.20](https://github.com/dhis2/analytics/compare/v11.0.19...v11.0.20) (2021-09-15)
+
+
+### Bug Fixes
+
+* add convertOuLevelsToUids (DHIS2-11016) ([#908](https://github.com/dhis2/analytics/issues/908)) ([#1045](https://github.com/dhis2/analytics/issues/1045)) ([7366f26](https://github.com/dhis2/analytics/commit/7366f26d88d467f3d70afdaf82958ffa6df43006))
+
 ## [11.0.19](https://github.com/dhis2/analytics/compare/v11.0.18...v11.0.19) (2021-07-14)
 
 
