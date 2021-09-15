@@ -1,3 +1,10 @@
+## [20.4.7](https://github.com/dhis2/analytics/compare/v20.4.6...v20.4.7) (2021-09-15)
+
+
+### Bug Fixes
+
+* adjust row clipping partitions after sorting [DHIS2-11724] ([#1036](https://github.com/dhis2/analytics/issues/1036)) ([c455140](https://github.com/dhis2/analytics/commit/c4551407032389b721394e1aa16f57637f987012))
+
 ## [20.4.6](https://github.com/dhis2/analytics/compare/v20.4.5...v20.4.6) (2021-09-14)
 
 
