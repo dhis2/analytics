@@ -1,3 +1,10 @@
+## [16.0.23](https://github.com/dhis2/analytics/compare/v16.0.22...v16.0.23) (2021-09-15)
+
+
+### Bug Fixes
+
+* add convertOuLevelsToUids (DHIS2-11016) ([#908](https://github.com/dhis2/analytics/issues/908)) ([#1044](https://github.com/dhis2/analytics/issues/1044)) ([c568a00](https://github.com/dhis2/analytics/commit/c568a00390324055486c538ae084083a7873c786))
+
 ## [16.0.22](https://github.com/dhis2/analytics/compare/v16.0.21...v16.0.22) (2021-09-15)
 
 
