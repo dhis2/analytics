@@ -64,11 +64,7 @@ export class AdaptiveClippingController {
     }
 
     finalizeAxis(axis) {
-        axis.totalSize = 0
         axis.headerSize = 0
-
-        let nextPartitionPx = 0
-        axis.partitions = []
 
         const isColumn = axis.orientation === 'column'
 
@@ -122,18 +118,34 @@ export class AdaptiveClippingController {
                 }
             })
 
-            const cellSize = this.getCellSize(axis.sizes[index]?.size)
             axis.sizes[index] = {
-                pre: axis.totalSize,
-                size: cellSize,
+                pre: 0,
+                size: this.getCellSize(axis.sizes[index]?.size),
             }
+        })
 
+        this.populateAxisPartitions(axis)
+    }
+
+    populateAxisPartitions(axis) {
+        axis.totalSize = 0
+        axis.partitions = []
+        let nextPartitionPx = 0
+
+        const isColumn = axis.orientation === 'column'
+        const map = isColumn ? this.engine.columnMap : this.engine.rowMap
+        map.forEach((index, mapIndex) => {
             if (axis.totalSize >= nextPartitionPx) {
                 axis.partitions.push(mapIndex)
                 nextPartitionPx += CLIPPED_AXIS_PARTITION_SIZE_PX
             }
-            axis.totalSize += cellSize
+            axis.sizes[index].pre = axis.totalSize
+            axis.totalSize += axis.sizes[index].size
         })
+    }
+
+    resetRowPartitions() {
+        this.populateAxisPartitions(this.rows)
     }
 
     finalize() {

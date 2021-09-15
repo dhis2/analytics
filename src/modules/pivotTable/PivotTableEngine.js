@@ -1122,9 +1122,12 @@ export class PivotTableEngine {
                 valueA.renderedValue.localeCompare(valueB.renderedValue) * order
             )
         })
+
+        this.adaptiveClippingController.resetRowPartitions()
     }
 
     clearSort() {
         this.resetRowMap()
+        this.adaptiveClippingController.resetRowPartitions()
     }
 }
