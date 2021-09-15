@@ -1,6 +1,7 @@
 import { colors } from '@dhis2/ui'
 import css from 'styled-jsx/css'
 import {
+    BORDER_COLOR,
     DISPLAY_DENSITY_PADDING_COMPACT,
     DISPLAY_DENSITY_PADDING_NORMAL,
     DISPLAY_DENSITY_PADDING_COMFORTABLE,
@@ -9,21 +10,54 @@ import {
     FONT_SIZE_LARGE,
 } from '../../../modules/pivotTable/pivotTableConstants'
 
-export const table = css`
+export const table = css.global`
     div.pivot-table-container {
         font-family: 'Roboto', Arial, sans-serif;
         overflow: auto;
         color: ${colors.grey900};
     }
+
     table {
         border-spacing: 0;
-        border-collapse: separate;
         white-space: nowrap;
         box-sizing: border-box;
         text-align: center;
+        border: 1px solid ${BORDER_COLOR};
+        border-width: 1px 1px 0 0;
+    }
+
+    table.fixed-headers {
+        border-width: 0 0 0 1px;
+    }
+
+    table.fixed-headers tr th,
+    table.fixed-headers tr td {
+        border-width: 0 1px 1px 0;
+    }
+
+    table.fixed-column-headers {
+        border-width: 0 1px 0 0;
+    }
+
+    table.fixed-column-headers tr th,
+    table.fixed-column-headers tr td {
+        border-width: 0 0 1px 1px;
+    }
+
+    table.fixed-headers thead tr:first-of-type th,
+    table.fixed-column-headers thead tr:first-of-type th {
+        border-top: 1px solid ${BORDER_COLOR};
+    }
+
+    table.fixed-row-headers {
+        border-width: 0 0 1px 1px;
+    }
+
+    table.fixed-row-headers tr th,
+    table.fixed-row-headers tr td {
+        border-width: 1px 1px 0 0;
     }
 `
-
 export const cell = css`
     td,
     th {
@@ -31,11 +65,12 @@ export const cell = css`
         font-weight: normal;
         overflow: hidden;
         text-overflow: ellipsis;
-        border: 1px solid #b2b2b2;
+        border: 1px solid ${BORDER_COLOR};
+        border-width: 0 0 1px 1px;
         cursor: default;
     }
 
-    .fixedHeader {
+    th.fixed-header {
         position: sticky;
         z-index: 1;
         top: 0;

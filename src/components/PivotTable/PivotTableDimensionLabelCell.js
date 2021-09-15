@@ -68,7 +68,7 @@ export const PivotTableDimensionLabelCell = ({ rowLevel, columnLevel }) => {
                 'empty-header',
                 'column-header',
                 {
-                    fixedHeader:
+                    'fixed-header':
                         engine.options.fixColumnHeaders ||
                         engine.options.fixRowHeaders,
                 },

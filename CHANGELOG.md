@@ -1,3 +1,10 @@
+## [20.4.6](https://github.com/dhis2/analytics/compare/v20.4.5...v20.4.6) (2021-09-14)
+
+
+### Bug Fixes
+
+* avoid double thickness border ([#1040](https://github.com/dhis2/analytics/issues/1040)) ([20c2906](https://github.com/dhis2/analytics/commit/20c2906d0780459c0665c72e2e222e8f0a3c070b))
+
 ## [20.4.5](https://github.com/dhis2/analytics/compare/v20.4.4...v20.4.5) (2021-09-09)
 
 
