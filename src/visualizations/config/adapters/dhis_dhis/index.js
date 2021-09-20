@@ -17,8 +17,11 @@ export default function ({ store, layout, extraOptions }) {
     const metaData = store.data[0].metaData
 
     const config = {
-        value: data[0] === undefined ? extraOptions.noData.text : data[0],
-        formattedValue: getValue(data[0], layout, metaData, extraOptions),
+        value: data[0],
+        formattedValue:
+            data[0] === undefined
+                ? extraOptions.noData.text
+                : getValue(data[0], layout, metaData),
         title: getTitle(layout, metaData, extraOptions.dashboard),
         subtitle: getSubtitle(layout, metaData, extraOptions.dashboard),
     }
