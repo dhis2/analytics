@@ -1,3 +1,10 @@
+## [20.4.8](https://github.com/dhis2/analytics/compare/v20.4.7...v20.4.8) (2021-09-20)
+
+
+### Bug Fixes
+
+* show no data text instead of undefined ([#1048](https://github.com/dhis2/analytics/issues/1048)) ([a4f577d](https://github.com/dhis2/analytics/commit/a4f577d6a8fec3183a5430d241a1f752d6e0f217))
+
 ## [20.4.7](https://github.com/dhis2/analytics/compare/v20.4.6...v20.4.7) (2021-09-15)
 
 
