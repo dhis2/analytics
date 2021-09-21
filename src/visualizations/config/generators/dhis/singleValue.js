@@ -39,11 +39,13 @@ const generateValueSVG = ({
         svgValue.setAttribute('y', y)
     }
 
-    const fillColor = legendSet
-        ? getColorByValueFromLegendSet(legendSet, value)
-        : formattedValue === noData.text
-        ? colors.grey600
-        : colors.grey900
+    let fillColor = colors.grey900
+
+    if (legendSet) {
+        fillColor = getColorByValueFromLegendSet(legendSet, value)
+    } else if (formattedValue === noData.text) {
+        fillColor = colors.grey600
+    }
 
     const textNode = document.createElementNS(svgNS, 'text')
     textNode.setAttribute('text-anchor', 'middle')
