@@ -1,3 +1,10 @@
+## [20.4.9](https://github.com/dhis2/analytics/compare/v20.4.8...v20.4.9) (2021-09-21)
+
+
+### Bug Fixes
+
+* use lighter grey for No data text in SV ([#1050](https://github.com/dhis2/analytics/issues/1050)) ([ff16657](https://github.com/dhis2/analytics/commit/ff1665778131fad0eefcbc2ac609ee83fc097f6d))
+
 ## [20.4.8](https://github.com/dhis2/analytics/compare/v20.4.7...v20.4.8) (2021-09-20)
 
 
