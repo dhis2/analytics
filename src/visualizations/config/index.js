@@ -34,17 +34,18 @@ export default function ({
     if (!_generator) {
         onError(`No visualization implementation for format ${outputFormat}`)
     }
-    this.getConfig = () => {
-        const DEFAULT_EXTRA_OPTIONS = {
-            colors: theme1,
-            noData: {
-                text: i18n.t('No data'),
-            },
-            resetZoom: {
-                text: i18n.t('Reset zoom'),
-            },
-        }
 
+    const DEFAULT_EXTRA_OPTIONS = {
+        colors: theme1,
+        noData: {
+            text: i18n.t('No data'),
+        },
+        resetZoom: {
+            text: i18n.t('Reset zoom'),
+        },
+    }
+
+    this.getConfig = () => {
         const config = _adapter({
             layout: _validator({ layout, onError, onWarning }),
             extraOptions: Object.assign(
@@ -66,6 +67,7 @@ export default function ({
     this.createVisualization = () =>
         _generator(this.getConfig(), el, {
             ...extraOptions,
+            noData: DEFAULT_EXTRA_OPTIONS.noData,
             fontStyle: layout.fontStyle,
         })
 }

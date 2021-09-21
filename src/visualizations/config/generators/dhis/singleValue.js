@@ -16,7 +16,14 @@ import { getColorByValueFromLegendSet } from '../../../../modules/legends'
 
 const svgNS = 'http://www.w3.org/2000/svg'
 
-const generateValueSVG = (value, formattedValue, subText, legendSet, y) => {
+const generateValueSVG = ({
+    value,
+    formattedValue,
+    subText,
+    legendSet,
+    noData,
+    y,
+}) => {
     const textSize = 300
 
     const svgValue = document.createElementNS(svgNS, 'svg')
@@ -32,9 +39,13 @@ const generateValueSVG = (value, formattedValue, subText, legendSet, y) => {
         svgValue.setAttribute('y', y)
     }
 
-    const fillColor = legendSet
-        ? getColorByValueFromLegendSet(legendSet, value)
-        : colors.grey900
+    let fillColor = colors.grey900
+
+    if (legendSet) {
+        fillColor = getColorByValueFromLegendSet(legendSet, value)
+    } else if (formattedValue === noData.text) {
+        fillColor = colors.grey600
+    }
 
     const textNode = document.createElementNS(svgNS, 'text')
     textNode.setAttribute('text-anchor', 'middle')
@@ -76,7 +87,7 @@ const generateValueSVG = (value, formattedValue, subText, legendSet, y) => {
     return svgValue
 }
 
-const generateDashboardItem = (config, legendSet) => {
+const generateDashboardItem = (config, { legendSet, noData }) => {
     const container = document.createElement('div')
     container.setAttribute(
         'style',
@@ -102,13 +113,14 @@ const generateDashboardItem = (config, legendSet) => {
     }
 
     container.appendChild(
-        generateValueSVG(
-            config.value,
-            config.formattedValue,
-            config.subText,
+        generateValueSVG({
+            value: config.value,
+            formattedValue: config.formattedValue,
+            subText: config.subText,
             legendSet,
-            40
-        )
+            noData,
+            y: 40,
+        })
     )
 
     return container
@@ -138,7 +150,7 @@ const getXFromTextAlign = textAlign => {
     }
 }
 
-const generateDVItem = (config, legendSet, parentEl, fontStyle) => {
+const generateDVItem = (config, { legendSet, parentEl, fontStyle, noData }) => {
     const parentElBBox = parentEl.getBoundingClientRect()
 
     const width = parentElBBox.width
@@ -240,13 +252,14 @@ const generateDVItem = (config, legendSet, parentEl, fontStyle) => {
     }
 
     svg.appendChild(
-        generateValueSVG(
-            config.value,
-            config.formattedValue,
-            config.subText,
+        generateValueSVG({
+            value: config.value,
+            formattedValue: config.formattedValue,
+            subText: config.subText,
             legendSet,
-            20
-        )
+            noData,
+            y: 20,
+        })
     )
 
     return svg
@@ -255,7 +268,7 @@ const generateDVItem = (config, legendSet, parentEl, fontStyle) => {
 export default function (
     config,
     parentEl,
-    { dashboard, legendSets, fontStyle }
+    { dashboard, legendSets, fontStyle, noData }
 ) {
     const legendSet = legendSets[0]
     parentEl.style.overflow = 'hidden'
@@ -263,6 +276,6 @@ export default function (
     parentEl.style.justifyContent = 'center'
 
     return dashboard
-        ? generateDashboardItem(config, legendSet)
-        : generateDVItem(config, legendSet, parentEl, fontStyle)
+        ? generateDashboardItem(config, { legendSet, noData })
+        : generateDVItem(config, { legendSet, parentEl, fontStyle, noData })
 }
