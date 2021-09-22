@@ -2174,6 +2174,13 @@
     react-select "^2.0.0"
     rxjs "^5.5.7"
 
+"@dhis2/prop-types@^1.0.0":
+  version "1.6.4"
+  resolved "https://registry.yarnpkg.com/@dhis2/prop-types/-/prop-types-1.6.4.tgz#ec4d256c9440d4d00071524422a727c61ddaa6f6"
+  integrity sha512-qkVj8OuyjDmSxzYDlCWZllvC9hIbrIImMp79/U5CVsIRbjUF0zA/tfbv4rWnsWALmwEHOQFbzl5GnO5D8RNneA==
+  dependencies:
+    prop-types "^15"
+
 "@dhis2/prop-types@^3.0.0-beta.1":
   version "3.0.0-beta.1"
   resolved "https://registry.yarnpkg.com/@dhis2/prop-types/-/prop-types-3.0.0-beta.1.tgz#31a724ebac900bed5218f3663b792b1b860e1b26"
@@ -15776,7 +15783,7 @@ prop-types-exact@^1.2.0:
     object.assign "^4.1.0"
     reflect.ownkeys "^0.2.0"
 
-prop-types@^15.5.10, prop-types@^15.5.6, prop-types@^15.5.7, prop-types@^15.5.8, prop-types@^15.6.0, prop-types@^15.6.1, prop-types@^15.6.2, prop-types@^15.7.2:
+prop-types@^15, prop-types@^15.5.10, prop-types@^15.5.6, prop-types@^15.5.7, prop-types@^15.5.8, prop-types@^15.6.0, prop-types@^15.6.1, prop-types@^15.6.2, prop-types@^15.7.2:
   version "15.7.2"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.7.2.tgz#52c41e75b8c87e72b9d9360e0206b99dcbffa6c5"
   integrity sha512-8QQikdH7//R2vurIJSutZ1smHYTcLpRWEOlHnzcWHmBYrOGUysKwSsrC89BCiFj3CbrfJ/nXFdJepOVrY1GCHQ==
