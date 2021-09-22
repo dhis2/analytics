@@ -44,8 +44,10 @@ export const PivotTableRowHeaderCell = ({
                         height,
                         left:
                             rowLevel > 0
-                                ? engine.adaptiveClippingController.columns
-                                      .headerSizes[rowLevel - 1]
+                                ? // calculate the width of all row header cells on the left of current cell
+                                  engine.adaptiveClippingController.columns.headerSizes
+                                      .slice(0, rowLevel)
+                                      .reduce((width, acc) => (acc += width), 0)
                                 : 0,
                     }}
                     dataTest="visualization-row-header"
