@@ -1,3 +1,10 @@
+## [20.4.10](https://github.com/dhis2/analytics/compare/v20.4.9...v20.4.10) (2021-09-22)
+
+
+### Bug Fixes
+
+* fix fixed row header with more than 2 cells DHIS2-11835 ([#1053](https://github.com/dhis2/analytics/issues/1053)) ([d0771d9](https://github.com/dhis2/analytics/commit/d0771d9187ea2e1c14ac6e2d2b083eb737e77f52))
+
 ## [20.4.9](https://github.com/dhis2/analytics/compare/v20.4.8...v20.4.9) (2021-09-21)
 
 
