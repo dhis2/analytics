@@ -29,7 +29,6 @@ import {
     tabContent,
     tabSectionOptionIcon,
 } from './styles/VisualizationOptions.style.js'
-//import styles from './styles/VisualizationOptionsManager.module.css'
 
 export class VisualizationOptions extends Component {
     state = { activeTabKey: undefined }
@@ -136,7 +135,7 @@ export class VisualizationOptions extends Component {
                             {i18n.t('Hide')}
                         </Button>
                         <Button
-                            onClick={this.props.onPrimaryClick}
+                            onClick={this.props.onUpdate}
                             dataTest={'options-modal-action-confirm'}
                             type="button"
                             primary
@@ -154,7 +153,7 @@ export class VisualizationOptions extends Component {
 VisualizationOptions.propTypes = {
     optionsConfig: PropTypes.array.isRequired,
     onClose: PropTypes.func,
-    onPrimaryClick: PropTypes.func,
+    onUpdate: PropTypes.func,
 }
 
 export default VisualizationOptions
