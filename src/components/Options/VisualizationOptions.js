@@ -15,6 +15,7 @@ import {
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 import {
+    modalContent,
     tabSection,
     tabSectionTitle,
     tabSectionTitleMargin,
@@ -124,7 +125,7 @@ export class VisualizationOptions extends Component {
             >
                 <ModalTitle>{i18n.t('Options')}</ModalTitle>
                 <ModalContent
-                    //className={styles.modalContent}
+                    className={modalContent.className}
                     dataTest={'options-modal-content'}
                 >
                     {this.getModalContent()}
@@ -149,6 +150,7 @@ export class VisualizationOptions extends Component {
                         </Button>
                     </ButtonStrip>
                 </ModalActions>
+                {modalContent.styles}
             </Modal>
         )
     }

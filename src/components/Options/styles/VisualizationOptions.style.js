@@ -2,6 +2,15 @@ import { colors, spacers } from '@dhis2/ui'
 import React from 'react' /* eslint-disable-line no-unused-vars */
 import css from 'styled-jsx/css'
 
+export const modalContent = css.resolve`
+    div {
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        padding-right: 0;
+    }
+`
+
 export const tabBar = css.resolve`
     div {
         padding-right: ${spacers.dp24};
