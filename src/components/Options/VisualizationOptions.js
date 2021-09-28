@@ -32,11 +32,6 @@ import {
 //import styles from './styles/VisualizationOptionsManager.module.css'
 
 export class VisualizationOptions extends Component {
-    getPrimaryOnClick = handler => () => {
-        handler()
-        this.onClose()
-    }
-
     state = { activeTabKey: undefined }
 
     selectTab = tabKey => {
@@ -118,7 +113,7 @@ export class VisualizationOptions extends Component {
     render() {
         return (
             <Modal
-                onClose={this.onClose}
+                onClose={this.props.onClose}
                 position="top"
                 large
                 dataTest={'options-modal'}
@@ -135,13 +130,13 @@ export class VisualizationOptions extends Component {
                         <Button
                             type="button"
                             secondary
-                            onClick={this.onClose}
+                            onClick={this.props.onClose}
                             dataTest={'options-modal-action-cancel'}
                         >
                             {i18n.t('Hide')}
                         </Button>
                         <Button
-                            onClick={this.getPrimaryOnClick()}
+                            onClick={this.props.onPrimaryClick}
                             dataTest={'options-modal-action-confirm'}
                             type="button"
                             primary
@@ -158,6 +153,8 @@ export class VisualizationOptions extends Component {
 
 VisualizationOptions.propTypes = {
     optionsConfig: PropTypes.array.isRequired,
+    onClose: PropTypes.func,
+    onPrimaryClick: PropTypes.func,
 }
 
 export default VisualizationOptions
