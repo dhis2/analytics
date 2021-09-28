@@ -10,15 +10,13 @@ import {
     IconLink24,
     IconDelete24,
     SharingDialog,
-} from '@dhis2/ui'
-import { colors } from '@dhis2/ui-constants'
-import {
+    colors,
     FlyoutMenu,
     Layer,
     MenuItem,
     MenuDivider,
     Popper,
-} from '@dhis2/ui-core'
+} from '@dhis2/ui'
 import React, { createRef, useState } from 'react'
 import i18n from '../../locales/index.js'
 import { OpenFileDialog } from '../OpenFileDialog/OpenFileDialog'
