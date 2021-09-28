@@ -1,4 +1,17 @@
-import { FieldSet, Legend, TabBar, Tab, Help } from '@dhis2/ui'
+import i18n from '@dhis2/d2-i18n'
+import {
+    ButtonStrip,
+    Modal,
+    ModalTitle,
+    ModalContent,
+    ModalActions,
+    Button,
+    FieldSet,
+    Legend,
+    TabBar,
+    Tab,
+    Help,
+} from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 import {
@@ -15,8 +28,14 @@ import {
     tabContent,
     tabSectionOptionIcon,
 } from './styles/VisualizationOptions.style.js'
+//import styles from './styles/VisualizationOptionsManager.module.css'
 
 export class VisualizationOptions extends Component {
+    getPrimaryOnClick = handler => () => {
+        handler()
+        this.onClose()
+    }
+
     state = { activeTabKey: undefined }
 
     selectTab = tabKey => {
@@ -51,7 +70,7 @@ export class VisualizationOptions extends Component {
             content: this.generateTabContent(content),
         }))
 
-    render() {
+    getModalContent = () => {
         const tabs = this.generateTabs(this.props.optionsConfig)
 
         let activeTabIndex = tabs.findIndex(
@@ -61,7 +80,6 @@ export class VisualizationOptions extends Component {
         if (activeTabIndex < 0) {
             activeTabIndex = 0
         }
-
         return (
             <>
                 <div className={tabBar.className}>
@@ -93,6 +111,45 @@ export class VisualizationOptions extends Component {
                     {tabSectionOptionIcon.styles}
                 </div>
             </>
+        )
+    }
+
+    render() {
+        return (
+            <Modal
+                onClose={this.onClose}
+                position="top"
+                large
+                dataTest={'options-modal'}
+            >
+                <ModalTitle>{i18n.t('Options')}</ModalTitle>
+                <ModalContent
+                    //className={styles.modalContent}
+                    dataTest={'options-modal-content'}
+                >
+                    {this.getModalContent()}
+                </ModalContent>
+                <ModalActions dataTest={'options-modal-actions'}>
+                    <ButtonStrip>
+                        <Button
+                            type="button"
+                            secondary
+                            onClick={this.onClose}
+                            dataTest={'options-modal-action-cancel'}
+                        >
+                            {i18n.t('Hide')}
+                        </Button>
+                        <Button
+                            onClick={this.getPrimaryOnClick()}
+                            dataTest={'options-modal-action-confirm'}
+                            type="button"
+                            primary
+                        >
+                            {i18n.t('Update')}
+                        </Button>
+                    </ButtonStrip>
+                </ModalActions>
+            </Modal>
         )
     }
 }
