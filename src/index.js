@@ -267,4 +267,4 @@ export {
 export { getRelativePeriodsOptionsById } from './components/PeriodDimension/utils/relativePeriods'
 export { getFixedPeriodsOptionsById } from './components/PeriodDimension/utils/fixedPeriods'
 
-export { VisualizationOptions } from './components/Options/VisualizationOptions'
+export { default as VisualizationOptions } from './components/Options/VisualizationOptions'

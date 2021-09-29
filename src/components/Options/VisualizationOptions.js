@@ -13,7 +13,7 @@ import {
     Help,
 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
-import React, { Component } from 'react'
+import React, { useState } from 'react'
 import {
     modalContent,
     tabSection,
@@ -30,14 +30,10 @@ import {
     tabSectionOptionIcon,
 } from './styles/VisualizationOptions.style.js'
 
-export class VisualizationOptions extends Component {
-    state = { activeTabKey: undefined }
+const VisualizationOptions = ({ optionsConfig, onClose, onUpdate }) => {
+    const [activeTabKey, setActiveTabKey] = useState()
 
-    selectTab = tabKey => {
-        this.setState({ activeTabKey: tabKey })
-    }
-
-    generateTabContent = sections =>
+    const generateTabContent = sections =>
         sections.map(({ key, label, content, helpText }) => (
             <div key={key} className={tabSection.className}>
                 <FieldSet>
@@ -58,19 +54,17 @@ export class VisualizationOptions extends Component {
             </div>
         ))
 
-    generateTabs = tabs =>
+    const generateTabs = tabs =>
         tabs.map(({ key, label, content }) => ({
             key,
             label,
-            content: this.generateTabContent(content),
+            content: generateTabContent(content),
         }))
 
-    getModalContent = () => {
-        const tabs = this.generateTabs(this.props.optionsConfig)
+    const getModalContent = () => {
+        const tabs = generateTabs(optionsConfig)
 
-        let activeTabIndex = tabs.findIndex(
-            tab => tab.key === this.state.activeTabKey
-        )
+        let activeTabIndex = tabs.findIndex(tab => tab.key === activeTabKey)
 
         if (activeTabIndex < 0) {
             activeTabIndex = 0
@@ -82,7 +76,7 @@ export class VisualizationOptions extends Component {
                         {tabs.map(({ key, label }, index) => (
                             <Tab
                                 key={key}
-                                onClick={() => this.selectTab(key)}
+                                onClick={() => setActiveTabKey(key)}
                                 selected={index === activeTabIndex}
                             >
                                 {label}
@@ -109,45 +103,43 @@ export class VisualizationOptions extends Component {
         )
     }
 
-    render() {
-        return (
-            <Modal
-                onClose={this.props.onClose}
-                position="top"
-                large
-                dataTest={'options-modal'}
+    return (
+        <Modal
+            onClose={onClose}
+            position="top"
+            large
+            dataTest={'options-modal'}
+        >
+            <ModalTitle>{i18n.t('Options')}</ModalTitle>
+            <ModalContent
+                className={modalContent.className}
+                dataTest={'options-modal-content'}
             >
-                <ModalTitle>{i18n.t('Options')}</ModalTitle>
-                <ModalContent
-                    className={modalContent.className}
-                    dataTest={'options-modal-content'}
-                >
-                    {this.getModalContent()}
-                </ModalContent>
-                <ModalActions dataTest={'options-modal-actions'}>
-                    <ButtonStrip>
-                        <Button
-                            type="button"
-                            secondary
-                            onClick={this.props.onClose}
-                            dataTest={'options-modal-action-cancel'}
-                        >
-                            {i18n.t('Hide')}
-                        </Button>
-                        <Button
-                            onClick={this.props.onUpdate}
-                            dataTest={'options-modal-action-confirm'}
-                            type="button"
-                            primary
-                        >
-                            {i18n.t('Update')}
-                        </Button>
-                    </ButtonStrip>
-                </ModalActions>
-                {modalContent.styles}
-            </Modal>
-        )
-    }
+                {getModalContent()}
+            </ModalContent>
+            <ModalActions dataTest={'options-modal-actions'}>
+                <ButtonStrip>
+                    <Button
+                        type="button"
+                        secondary
+                        onClick={onClose}
+                        dataTest={'options-modal-action-cancel'}
+                    >
+                        {i18n.t('Hide')}
+                    </Button>
+                    <Button
+                        onClick={onUpdate}
+                        dataTest={'options-modal-action-confirm'}
+                        type="button"
+                        primary
+                    >
+                        {i18n.t('Update')}
+                    </Button>
+                </ButtonStrip>
+            </ModalActions>
+            {modalContent.styles}
+        </Modal>
+    )
 }
 
 VisualizationOptions.propTypes = {
