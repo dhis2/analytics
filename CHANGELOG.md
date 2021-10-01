@@ -1,3 +1,10 @@
+# [20.5.0](https://github.com/dhis2/analytics/compare/v20.4.10...v20.5.0) (2021-10-01)
+
+
+### Features
+
+* visualization options in Analytics ([#1055](https://github.com/dhis2/analytics/issues/1055)) ([e993cc5](https://github.com/dhis2/analytics/commit/e993cc5540fcc297e241ddc92ff4863852d8b465))
+
 ## [20.4.10](https://github.com/dhis2/analytics/compare/v20.4.9...v20.4.10) (2021-09-22)
 
 
