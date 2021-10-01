@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2021-08-20T13:36:17.268Z\n"
-"PO-Revision-Date: 2021-08-20T13:36:17.268Z\n"
+"POT-Creation-Date: 2021-09-27T13:00:47.259Z\n"
+"PO-Revision-Date: 2021-09-27T13:00:47.259Z\n"
 
 msgid "Data Type"
 msgstr "Data Type"
@@ -311,6 +311,15 @@ msgstr ""
 
 msgid "New map"
 msgstr "New map"
+
+msgid "Options"
+msgstr "Options"
+
+msgid "Hide"
+msgstr "Hide"
+
+msgid "Update"
+msgstr "Update"
 
 msgid "Period type"
 msgstr "Period type"
