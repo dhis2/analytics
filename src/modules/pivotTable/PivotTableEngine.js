@@ -277,6 +277,13 @@ export class PivotTableEngine {
             return sets
         }, {})
         this.rawData = data
+
+        this.dimensionLookup = buildDimensionLookup(
+            this.visualization,
+            this.rawData.metaData,
+            this.rawData.headers
+        )
+
         this.options = {
             ...defaultOptions,
             showColumnTotals: visualization.colTotals,
@@ -289,15 +296,15 @@ export class PivotTableEngine {
             subtitle: visualization.hideSubtitle
                 ? undefined
                 : visualization.subtitle,
-            fixColumnHeaders: visualization.fixColumnHeaders,
-            fixRowHeaders: visualization.fixRowHeaders,
+            // turn on fixed headers only when there are dimensions
+            fixColumnHeaders: this.dimensionLookup.columns.length
+                ? visualization.fixColumnHeaders
+                : false,
+            fixRowHeaders: this.dimensionLookup.rows.length
+                ? visualization.fixRowHeaders
+                : false,
         }
 
-        this.dimensionLookup = buildDimensionLookup(
-            this.visualization,
-            this.rawData.metaData,
-            this.rawData.headers
-        )
         this.adaptiveClippingController = new AdaptiveClippingController(this)
 
         const doColumnSubtotals =
