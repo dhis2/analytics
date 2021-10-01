@@ -1,16 +1,16 @@
 # 
 # Translators:
-# phil_dhis2, 2021
-# Viktor Varland <viktor@dhis2.org>, 2021
 # 晓东 林 <13981924470@126.com>, 2021
 # easylin <lin_xd@126.com>, 2021
+# phil_dhis2, 2021
+# Viktor Varland <viktor@dhis2.org>, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-08-20T13:36:17.268Z\n"
+"POT-Creation-Date: 2021-09-27T13:00:47.259Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: easylin <lin_xd@126.com>, 2021\n"
+"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2021\n"
 "Language-Team: Chinese (https://www.transifex.com/hisp-uio/teams/100509/zh/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -308,6 +308,15 @@ msgstr "未找到地图。尝试调整您的搜索或过滤选项以找到您要
 
 msgid "New map"
 msgstr "新地图"
+
+msgid "Options"
+msgstr "选项"
+
+msgid "Hide"
+msgstr "隐藏"
+
+msgid "Update"
+msgstr "更新"
 
 msgid "Period type"
 msgstr "周期类型"
