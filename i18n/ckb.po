@@ -311,10 +311,10 @@ msgid "Options"
 msgstr ""
 
 msgid "Hide"
-msgstr ""
+msgstr "شاردنەوە"
 
 msgid "Update"
-msgstr ""
+msgstr "نوێ کردنەوە"
 
 msgid "Period type"
 msgstr ""

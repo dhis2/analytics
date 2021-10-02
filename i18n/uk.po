@@ -309,13 +309,13 @@ msgid "New map"
 msgstr ""
 
 msgid "Options"
-msgstr ""
+msgstr "Опції"
 
 msgid "Hide"
-msgstr ""
+msgstr "Сховати"
 
 msgid "Update"
-msgstr ""
+msgstr "Оновити"
 
 msgid "Period type"
 msgstr ""
