@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-08-20T13:36:17.268Z\n"
+"POT-Creation-Date: 2021-09-27T13:00:47.259Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: Viktor Varland <viktor@dhis2.org>, 2021\n"
 "Language-Team: Lao (https://www.transifex.com/hisp-uio/teams/100509/lo/)\n"
@@ -306,6 +306,15 @@ msgstr ""
 
 msgid "New map"
 msgstr ""
+
+msgid "Options"
+msgstr "ຈັດການ"
+
+msgid "Hide"
+msgstr "ເຊື່ອງ"
+
+msgid "Update"
+msgstr "ປັບປຸງ"
 
 msgid "Period type"
 msgstr "ແບບຊ່ວງເວລາ"
