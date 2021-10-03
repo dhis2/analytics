@@ -308,13 +308,13 @@ msgid "New map"
 msgstr ""
 
 msgid "Options"
-msgstr ""
+msgstr "选项"
 
 msgid "Hide"
-msgstr ""
+msgstr "隐藏"
 
 msgid "Update"
-msgstr ""
+msgstr "更新"
 
 msgid "Period type"
 msgstr "周期类型"

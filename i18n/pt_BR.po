@@ -308,13 +308,13 @@ msgid "New map"
 msgstr ""
 
 msgid "Options"
-msgstr ""
+msgstr "Opções"
 
 msgid "Hide"
 msgstr ""
 
 msgid "Update"
-msgstr ""
+msgstr "Actualizar"
 
 msgid "Period type"
 msgstr "Tipo de período"

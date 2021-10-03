@@ -313,7 +313,7 @@ msgid "Hide"
 msgstr ""
 
 msgid "Update"
-msgstr ""
+msgstr "Update"
 
 msgid "Period type"
 msgstr ""

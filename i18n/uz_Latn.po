@@ -307,13 +307,13 @@ msgid "New map"
 msgstr ""
 
 msgid "Options"
-msgstr ""
+msgstr "Вариант"
 
 msgid "Hide"
-msgstr ""
+msgstr "Berkitish"
 
 msgid "Update"
-msgstr ""
+msgstr "Янгилаш"
 
 msgid "Period type"
 msgstr "Davr turi"
