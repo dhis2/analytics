@@ -72,6 +72,24 @@ export const getTranslatedString = (type, key) => {
             }
             break
         }
+        case 'eventReport': {
+            texts = {
+                modalTitle: i18n.t('Open an event report'),
+                loadingText: i18n.t('Loading event reports'),
+                errorTitle: i18n.t("Couldn't load event reports"),
+                errorText: i18n.t(
+                    'There was a problem loading event reports. Try again or contact your system administrator.'
+                ),
+                noDataText: i18n.t(
+                    'No event reports found. Click New event report to get started.'
+                ),
+                noFilteredDataText: i18n.t(
+                    "No event reports found. Try adjusting your search or filter options to find what you're looking for."
+                ),
+                newButtonLabel: i18n.t('New event report'),
+            }
+            break
+        }
     }
 
     return texts[key]
