@@ -29,7 +29,12 @@ import { FileList } from './FileList'
 import { NameFilter } from './NameFilter'
 import { styles } from './OpenFileDialog.styles'
 import { PaginationControls } from './PaginationControls'
-import { getTranslatedString, AO_TYPE_VISUALIZATION, AOTypeMap } from './utils'
+import {
+    getTranslatedString,
+    AO_TYPE_VISUALIZATION,
+    AO_TYPE_EVENT_REPORT,
+    AOTypeMap,
+} from './utils'
 import { VisTypeFilter, VIS_TYPE_ALL, VIS_TYPE_CHARTS } from './VisTypeFilter'
 
 const getQuery = type => ({
@@ -112,6 +117,11 @@ export const OpenFileDialog = ({
 
         if (filters.searchTerm) {
             queryFilters.push(`name:ilike:${filters.searchTerm}`)
+        }
+
+        // for ER 2.38 only show line list ER types
+        if (type === AO_TYPE_EVENT_REPORT) {
+            queryFilters.push('dataType:eq:EVENTS')
         }
 
         return queryFilters

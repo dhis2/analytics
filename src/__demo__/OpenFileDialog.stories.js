@@ -41,6 +41,21 @@ storiesOf('OpenFileDialog', module).add('List of maps', () => (
     </Provider>
 ))
 storiesOf('OpenFileDialog', module).add(
+    'List of event reports (Line list only)',
+    () => (
+        <Provider config={configMock}>
+            <OpenFileDialog
+                type="eventReport"
+                onClose={Function.prototype}
+                onFileSelect={onFileSelect}
+                onNew={Function.prototype}
+                open={true}
+                currentUser={user}
+            />
+        </Provider>
+    )
+)
+storiesOf('OpenFileDialog', module).add(
     'List of a supported type without custom titles/texts',
     () => (
         <Provider config={configMock}>
