@@ -1,3 +1,10 @@
+# [20.6.0](https://github.com/dhis2/analytics/compare/v20.5.2...v20.6.0) (2021-10-04)
+
+
+### Features
+
+* add support for ER (TECH-704) ([#1062](https://github.com/dhis2/analytics/issues/1062)) ([97300ce](https://github.com/dhis2/analytics/commit/97300ce62c2707961f00802fee0346228c3a11bd))
+
 ## [20.5.2](https://github.com/dhis2/analytics/compare/v20.5.1...v20.5.2) (2021-10-03)
 
 
