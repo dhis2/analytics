@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2021-09-27T13:00:47.259Z\n"
-"PO-Revision-Date: 2021-09-27T13:00:47.259Z\n"
+"POT-Creation-Date: 2021-10-04T08:35:00.972Z\n"
+"PO-Revision-Date: 2021-10-04T08:35:00.972Z\n"
 
 msgid "Data Type"
 msgstr "Data Type"
@@ -311,6 +311,35 @@ msgstr ""
 
 msgid "New map"
 msgstr "New map"
+
+msgid "Open an event report"
+msgstr "Open an event report"
+
+msgid "Loading event reports"
+msgstr "Loading event reports"
+
+msgid "Couldn't load event reports"
+msgstr "Couldn't load event reports"
+
+msgid ""
+"There was a problem loading event reports. Try again or contact your system "
+"administrator."
+msgstr ""
+"There was a problem loading event reports. Try again or contact your system "
+"administrator."
+
+msgid "No event reports found. Click New event report to get started."
+msgstr "No event reports found. Click New event report to get started."
+
+msgid ""
+"No event reports found. Try adjusting your search or filter options to find "
+"what you're looking for."
+msgstr ""
+"No event reports found. Try adjusting your search or filter options to find "
+"what you're looking for."
+
+msgid "New event report"
+msgstr "New event report"
 
 msgid "Options"
 msgstr "Options"
