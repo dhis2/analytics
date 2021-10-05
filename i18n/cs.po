@@ -323,29 +323,35 @@ msgid "New map"
 msgstr "Nová mapa"
 
 msgid "Open an event report"
-msgstr ""
+msgstr "Otevřít zprávu o události"
 
 msgid "Loading event reports"
-msgstr ""
+msgstr "Načítání zpráv o událostech"
 
 msgid "Couldn't load event reports"
-msgstr ""
+msgstr "Nelze načíst zprávy o událostech"
 
 msgid ""
 "There was a problem loading event reports. Try again or contact your system "
 "administrator."
 msgstr ""
+"Při načítání zpráv o událostech došlo k problému. Zkuste to znovu nebo se "
+"obraťte na správce systému."
 
 msgid "No event reports found. Click New event report to get started."
 msgstr ""
+"Nebyly nalezeny žádné zprávy o událostech. Začněte kliknutím na Nový přehled"
+" událostí."
 
 msgid ""
 "No event reports found. Try adjusting your search or filter options to find "
 "what you're looking for."
 msgstr ""
+"Nebyly nalezeny žádné zprávy o událostech. Zkuste upravit možnosti "
+"vyhledávání nebo filtrování, abyste našli to, co hledáte."
 
 msgid "New event report"
-msgstr ""
+msgstr "Nová zpráva o události"
 
 msgid "Options"
 msgstr "Možnosti"
