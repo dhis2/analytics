@@ -1,5 +1,6 @@
 // import { useDataEngine } from '@dhis2/app-runtime'
 import { OrganisationUnitTree, Checkbox } from '@dhis2/ui'
+import cx from 'classnames'
 import PropTypes from 'prop-types'
 import React from 'react'
 import i18n from '../../locales/index.js'
@@ -9,6 +10,7 @@ import {
     USER_ORG_UNIT_GRANDCHILDREN,
 } from '../../modules/ouIdHelper'
 import { DIMENSION_ID_ORGUNIT } from '../../modules/predefinedDimensions'
+import styles from './styles/OrgUnitDimension.style'
 
 const DYNAMIC_ORG_UNITS = [
     USER_ORG_UNIT,
@@ -84,25 +86,33 @@ const OrgUnitDimension = ({ root, selected, onSelect }) => {
                     dense
                 />
             </div>
-            <OrganisationUnitTree
-                roots={root}
-                disableSelection={selected.some(item =>
-                    DYNAMIC_ORG_UNITS.includes(item.id)
-                )}
-                initiallyExpanded={[
-                    root,
-                    ...selected
+            <div
+                className={cx({
+                    disabled: selected.some(item =>
+                        DYNAMIC_ORG_UNITS.includes(item.id)
+                    ),
+                })}
+            >
+                <OrganisationUnitTree
+                    roots={root}
+                    initiallyExpanded={[
+                        root,
+                        ...selected
+                            .filter(
+                                item => !DYNAMIC_ORG_UNITS.includes(item.id)
+                            )
+                            .map(item => item.path),
+                    ]}
+                    selected={selected
                         .filter(item => !DYNAMIC_ORG_UNITS.includes(item.id))
-                        .map(item => item.path),
-                ]}
-                selected={selected
-                    .filter(item => !DYNAMIC_ORG_UNITS.includes(item.id))
-                    .map(item => item.path)}
-                onChange={onSelectItems}
-            />
-            {
-                // TODO: Groups and levels
-            }
+                        .map(item => item.path)}
+                    onChange={onSelectItems}
+                />
+                {
+                    // TODO: Groups and levels
+                }
+            </div>
+            <style jsx>{styles}</style>
         </>
     )
 }
