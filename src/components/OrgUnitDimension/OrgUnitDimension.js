@@ -8,7 +8,10 @@ import {
 import cx from 'classnames'
 import PropTypes from 'prop-types'
 import React, { useEffect, useState } from 'react'
-import { apiFetchOrganisationUnitLevels } from '../../api/organisationUnits-dataEngine'
+import {
+    apiFetchOrganisationUnitGroups,
+    apiFetchOrganisationUnitLevels,
+} from '../../api/organisationUnits-dataEngine'
 import i18n from '../../locales/index.js'
 import {
     ouIdHelper,
@@ -27,6 +30,7 @@ const DYNAMIC_ORG_UNITS = [
 
 const OrgUnitDimension = ({ root, selected, onSelect }) => {
     const [ouLevels, setOuLevels] = useState([])
+    const [ouGroups, setOuGroups] = useState([])
     const dataEngine = useDataEngine()
 
     const onSelectItems = selectedItem => {
@@ -56,8 +60,13 @@ const OrgUnitDimension = ({ root, selected, onSelect }) => {
             result.sort((a, b) => (a.level > b.level ? 1 : -1))
             setOuLevels(result)
         }
+        const doFetchOuGroups = async () => {
+            const result = await apiFetchOrganisationUnitGroups(dataEngine)
+            setOuGroups(result)
+        }
 
         doFetchOuLevels()
+        doFetchOuGroups()
     }, [dataEngine])
 
     const onLevelChange = ids => {
@@ -70,6 +79,21 @@ const OrgUnitDimension = ({ root, selected, onSelect }) => {
             dimensionId: DIMENSION_ID_ORGUNIT,
             items: [
                 ...selected.filter(ou => !ouIdHelper.hasLevelPrefix(ou.id)),
+                ...items,
+            ],
+        })
+    }
+
+    const onGroupChange = ids => {
+        const items = ids.map(id => ({
+            id: ouIdHelper.addGroupPrefix(id),
+            name: ouGroups.find(group => group.id === id).displayName,
+        }))
+
+        onSelect({
+            dimensionId: DIMENSION_ID_ORGUNIT,
+            items: [
+                ...selected.filter(ou => !ouIdHelper.hasGroupPrefix(ou.id)),
                 ...items,
             ],
         })
@@ -134,7 +158,8 @@ const OrgUnitDimension = ({ root, selected, onSelect }) => {
                             .filter(
                                 item =>
                                     !DYNAMIC_ORG_UNITS.includes(item.id) &&
-                                    !ouIdHelper.hasLevelPrefix(item.id)
+                                    !ouIdHelper.hasLevelPrefix(item.id) &&
+                                    !ouIdHelper.hasGroupPrefix(item.id)
                             )
                             .map(item => item.path),
                     ]}
@@ -142,14 +167,12 @@ const OrgUnitDimension = ({ root, selected, onSelect }) => {
                         .filter(
                             item =>
                                 !DYNAMIC_ORG_UNITS.includes(item.id) &&
-                                !ouIdHelper.hasLevelPrefix(item.id)
+                                !ouIdHelper.hasLevelPrefix(item.id) &&
+                                !ouIdHelper.hasGroupPrefix(item.id)
                         )
                         .map(item => item.path)}
                     onChange={onSelectItems}
                 />
-                {
-                    // TODO: Groups and levels
-                }
                 {Boolean(ouLevels.length) && (
                     <MultiSelect
                         selected={selected
@@ -164,6 +187,24 @@ const OrgUnitDimension = ({ root, selected, onSelect }) => {
                                 key={level.id}
                                 value={level.id}
                                 label={level.displayName}
+                            />
+                        ))}
+                    </MultiSelect>
+                )}
+                {Boolean(ouGroups.length) && (
+                    <MultiSelect
+                        selected={selected
+                            .filter(item => ouIdHelper.hasGroupPrefix(item.id))
+                            .map(item => ouIdHelper.removePrefix(item.id))}
+                        onChange={({ selected }) => onGroupChange(selected)}
+                        placeholder={i18n.t('Select a group')}
+                        dense
+                    >
+                        {ouGroups.map(group => (
+                            <MultiSelectOption
+                                key={group.id}
+                                value={group.id}
+                                label={group.displayName}
                             />
                         ))}
                     </MultiSelect>

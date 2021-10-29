@@ -2,15 +2,15 @@ import { onError } from './index'
 
 const orgUnitLevelsQuery = {
     resource: 'organisationUnitLevels',
-    params: {
-        fields: 'id,level,displayName,name',
+    params: ({ displayNameProp = 'displayName' }) => ({
+        fields: `id,level,${displayNameProp}~rename(displayName),name`,
         paging: false,
-    },
+    }),
 }
 
 const orgUnitGroupsQuery = {
     resource: 'organisationUnitGroups',
-    params: ({ displayNameProp }) => ({
+    params: ({ displayNameProp = 'displayName' }) => ({
         fields: `id,${displayNameProp}~rename(displayName),name`,
         paging: false,
     }),
