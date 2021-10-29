@@ -26,7 +26,7 @@ storiesOf('OrgUnitDimension', module)
                 <div>
                     {selected.map(item => (
                         <p key={item.id}>
-                            {item.id} - {item.path} - {item.name}
+                            {item.id} - {item.path || 'NO PATH'} - {item.name}
                         </p>
                     ))}
                 </div>

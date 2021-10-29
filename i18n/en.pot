@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2021-10-04T08:35:00.972Z\n"
-"PO-Revision-Date: 2021-10-04T08:35:00.972Z\n"
+"POT-Creation-Date: 2021-10-29T08:59:02.865Z\n"
+"PO-Revision-Date: 2021-10-29T08:59:02.865Z\n"
 
 msgid "Data Type"
 msgstr "Data Type"
@@ -349,6 +349,18 @@ msgstr "Hide"
 
 msgid "Update"
 msgstr "Update"
+
+msgid "User organisation unit"
+msgstr "User organisation unit"
+
+msgid "User sub-units"
+msgstr "User sub-units"
+
+msgid "User sub-x2-units"
+msgstr "User sub-x2-units"
+
+msgid "Select a level"
+msgstr "Select a level"
 
 msgid "Period type"
 msgstr "Period type"

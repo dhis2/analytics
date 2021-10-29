@@ -1,10 +1,17 @@
-// import { useDataEngine } from '@dhis2/app-runtime'
-import { OrganisationUnitTree, Checkbox } from '@dhis2/ui'
+import { useDataEngine } from '@dhis2/app-runtime'
+import {
+    OrganisationUnitTree,
+    Checkbox,
+    SingleSelect,
+    SingleSelectOption,
+} from '@dhis2/ui'
 import cx from 'classnames'
 import PropTypes from 'prop-types'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { apiFetchOrganisationUnitLevels } from '../../api/organisationUnits-dataEngine'
 import i18n from '../../locales/index.js'
 import {
+    ouIdHelper,
     USER_ORG_UNIT,
     USER_ORG_UNIT_CHILDREN,
     USER_ORG_UNIT_GRANDCHILDREN,
@@ -19,7 +26,8 @@ const DYNAMIC_ORG_UNITS = [
 ]
 
 const OrgUnitDimension = ({ root, selected, onSelect }) => {
-    // const dataEngine = useDataEngine()
+    const [ouLevels, setOuLevels] = useState([])
+    const dataEngine = useDataEngine()
 
     const onSelectItems = selectedItem => {
         const { id, checked, displayName, path } = selectedItem
@@ -37,6 +45,30 @@ const OrgUnitDimension = ({ root, selected, onSelect }) => {
         }
 
         return onSelect({
+            dimensionId: DIMENSION_ID_ORGUNIT,
+            items: result,
+        })
+    }
+
+    useEffect(() => {
+        const doFetchOuLevels = async () => {
+            const result = await apiFetchOrganisationUnitLevels(dataEngine)
+            result.sort((a, b) => (a.level > b.level ? 1 : -1))
+            setOuLevels(result)
+        }
+
+        doFetchOuLevels()
+    }, [dataEngine])
+
+    const onLevelChange = id => {
+        const result = selected.filter(ou => !ouIdHelper.hasLevelPrefix(ou.id))
+
+        result.push({
+            id: ouIdHelper.addLevelPrefix(id),
+            name: ouLevels.find(level => level.id === id).displayName,
+        })
+
+        onSelect({
             dimensionId: DIMENSION_ID_ORGUNIT,
             items: result,
         })
@@ -99,18 +131,44 @@ const OrgUnitDimension = ({ root, selected, onSelect }) => {
                         root,
                         ...selected
                             .filter(
-                                item => !DYNAMIC_ORG_UNITS.includes(item.id)
+                                item =>
+                                    !DYNAMIC_ORG_UNITS.includes(item.id) &&
+                                    !ouIdHelper.hasLevelPrefix(item.id)
                             )
                             .map(item => item.path),
                     ]}
                     selected={selected
-                        .filter(item => !DYNAMIC_ORG_UNITS.includes(item.id))
+                        .filter(
+                            item =>
+                                !DYNAMIC_ORG_UNITS.includes(item.id) &&
+                                !ouIdHelper.hasLevelPrefix(item.id)
+                        )
                         .map(item => item.path)}
                     onChange={onSelectItems}
                 />
                 {
                     // TODO: Groups and levels
                 }
+                {Boolean(ouLevels.length) && (
+                    <SingleSelect
+                        selected={ouIdHelper.removePrefix(
+                            selected.find(item =>
+                                ouIdHelper.hasLevelPrefix(item.id)
+                            )?.id || ''
+                        )}
+                        onChange={({ selected }) => onLevelChange(selected)}
+                        placeholder={i18n.t('Select a level')}
+                        dense
+                    >
+                        {ouLevels.map(level => (
+                            <SingleSelectOption
+                                key={level.id}
+                                value={level.id}
+                                label={level.displayName}
+                            />
+                        ))}
+                    </SingleSelect>
+                )}
             </div>
             <style jsx>{styles}</style>
         </>
@@ -122,7 +180,7 @@ OrgUnitDimension.propTypes = {
         PropTypes.shape({
             id: PropTypes.string.isRequired,
             name: PropTypes.string.isRequired,
-            path: PropTypes.string.isRequired,
+            path: PropTypes.string,
         })
     ),
     onSelect: PropTypes.func,
