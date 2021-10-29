@@ -2,8 +2,8 @@ import { useDataEngine } from '@dhis2/app-runtime'
 import {
     OrganisationUnitTree,
     Checkbox,
-    SingleSelect,
-    SingleSelectOption,
+    MultiSelect,
+    MultiSelectOption,
 } from '@dhis2/ui'
 import cx from 'classnames'
 import PropTypes from 'prop-types'
@@ -60,17 +60,18 @@ const OrgUnitDimension = ({ root, selected, onSelect }) => {
         doFetchOuLevels()
     }, [dataEngine])
 
-    const onLevelChange = id => {
-        const result = selected.filter(ou => !ouIdHelper.hasLevelPrefix(ou.id))
-
-        result.push({
+    const onLevelChange = ids => {
+        const items = ids.map(id => ({
             id: ouIdHelper.addLevelPrefix(id),
             name: ouLevels.find(level => level.id === id).displayName,
-        })
+        }))
 
         onSelect({
             dimensionId: DIMENSION_ID_ORGUNIT,
-            items: result,
+            items: [
+                ...selected.filter(ou => !ouIdHelper.hasLevelPrefix(ou.id)),
+                ...items,
+            ],
         })
     }
 
@@ -150,24 +151,22 @@ const OrgUnitDimension = ({ root, selected, onSelect }) => {
                     // TODO: Groups and levels
                 }
                 {Boolean(ouLevels.length) && (
-                    <SingleSelect
-                        selected={ouIdHelper.removePrefix(
-                            selected.find(item =>
-                                ouIdHelper.hasLevelPrefix(item.id)
-                            )?.id || ''
-                        )}
+                    <MultiSelect
+                        selected={selected
+                            .filter(item => ouIdHelper.hasLevelPrefix(item.id))
+                            .map(item => ouIdHelper.removePrefix(item.id))}
                         onChange={({ selected }) => onLevelChange(selected)}
                         placeholder={i18n.t('Select a level')}
                         dense
                     >
                         {ouLevels.map(level => (
-                            <SingleSelectOption
+                            <MultiSelectOption
                                 key={level.id}
                                 value={level.id}
                                 label={level.displayName}
                             />
                         ))}
-                    </SingleSelect>
+                    </MultiSelect>
                 )}
             </div>
             <style jsx>{styles}</style>
