@@ -35,7 +35,7 @@ export {
     apiFetchOrganisationUnitLevels,
     apiFetchOrganisationUnitRoots,
     apiFetchOrganisationUnit,
-} from './api/organisationUnits-dataEngine'
+} from './api/organisationUnits'
 
 // Modules: axis
 

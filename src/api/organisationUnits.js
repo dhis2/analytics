@@ -1,64 +1,115 @@
 import { onError } from './index'
 
-export const apiFetchOrganisationUnitRoot = d2 => {
-    const endPoint = '/organisationUnits'
-    const fields = ['id', 'displayName', 'name']
-    const url = `${endPoint}?paging=false&userDataViewFallback=true&fields=${fields.join(
-        ','
-    )}`
-
-    return d2.Api.getApi()
-        .get(url)
-        .then(({ organisationUnits }) => organisationUnits[0])
-        .catch(onError)
-}
-
-/**
- * Fetch organisation units
- * @returns {Promise<T | never>}
- */
-export const apiFetchOrganisationUnits = (d2, displayNameProperty) => {
-    const fields = [
-        'id',
-        'path',
-        `${displayNameProperty}~rename(displayName)`,
-        'children::isNotEmpty',
-    ]
-
-    return d2.models.organisationUnits.list({
+const orgUnitLevelsQuery = {
+    resource: 'organisationUnitLevels',
+    params: ({ displayNameProp = 'displayName' }) => ({
+        fields: `id,level,${displayNameProp}~rename(displayName),name`,
         paging: false,
-        level: 1,
-        fields: fields.join(','),
+    }),
+}
+
+const orgUnitGroupsQuery = {
+    resource: 'organisationUnitGroups',
+    params: ({ displayNameProp = 'displayName' }) => ({
+        fields: `id,${displayNameProp}~rename(displayName),name`,
+        paging: false,
+    }),
+}
+
+const orgUnitRootsQuery = {
+    resource: 'organisationUnits',
+    params: {
+        fields: 'id,displayName,name',
         userDataViewFallback: true,
-    })
+        paging: false,
+    },
 }
 
-/**
- * Fetch organisation unit groups
- * @returns {*}
- */
-export const apiFetchOrganisationUnitGroups = (d2, displayNameProperty) => {
-    const endPoint = '/organisationUnitGroups'
-    const fields = ['id', `${displayNameProperty}~rename(displayName)`, 'name']
-    const url = `${endPoint}?paging=false&fields=${fields.join(',')}`
-
-    return d2.Api.getApi()
-        .get(url)
-        .then(({ organisationUnitGroups }) => organisationUnitGroups)
-        .catch(onError)
+const orgUnitsQuery = {
+    resource: 'organisationUnits',
+    params: ({ displayNameProp }) => ({
+        fields: `id,path,${displayNameProp}~rename(displayName),children::isNotEmpty`,
+        level: 1,
+        userDataViewFallback: true,
+        paging: false,
+    }),
 }
 
-/**
- * Fetch organisation unit levels
- * @returns {*}
- */
-export const apiFetchOrganisationUnitLevels = d2 => {
-    const endPoint = '/organisationUnitLevels'
-    const fields = ['id', 'displayName', 'name', 'level']
-    const url = `${endPoint}?paging=false&fields=${fields.join(',')}`
+const orgUnitQuery = {
+    resource: 'organisationUnits',
+    id: ({ id }) => id,
+    params: {
+        fields: 'id,level,displayName~rename(name),path,parent[id,displayName~rename(name)],children[level]',
+        userDataViewFallback: true,
+        paging: false,
+    },
+}
 
-    return d2.Api.getApi()
-        .get(url)
-        .then(({ organisationUnitLevels }) => organisationUnitLevels)
-        .catch(onError)
+export const apiFetchOrganisationUnitLevels = async dataEngine => {
+    const orgUnitLevelsData = await dataEngine.query(
+        { orgUnitLevels: orgUnitLevelsQuery },
+        {
+            onError,
+        }
+    )
+
+    return orgUnitLevelsData.orgUnitLevels.organisationUnitLevels
+}
+
+export const apiFetchOrganisationUnitGroups = async (
+    dataEngine,
+    displayNameProp
+) => {
+    const orgUnitGroupsData = await dataEngine.query(
+        { orgUnitGroups: orgUnitGroupsQuery },
+        {
+            variables: {
+                displayNameProp,
+            },
+            onError,
+        }
+    )
+
+    return orgUnitGroupsData.orgUnitGroups.organisationUnitGroups
+}
+
+export const apiFetchOrganisationUnitRoots = async dataEngine => {
+    const orgUnitRootsData = await dataEngine.query(
+        { orgUnitRoots: orgUnitRootsQuery },
+        {
+            onError,
+        }
+    )
+
+    return orgUnitRootsData.orgUnitRoots.organisationUnits
+}
+
+// TODO: Unused, previously used to load all org units for the tree, but that is done by the ui component internally now, remove?
+export const apiFetchOrganisationUnits = async (
+    dataEngine,
+    displayNameProp
+) => {
+    const orgUnitsData = await dataEngine.query(
+        { orgUnits: orgUnitsQuery },
+        {
+            variables: {
+                displayNameProp,
+            },
+            onError,
+        }
+    )
+
+    return orgUnitsData.orgUnits.organisationUnits
+}
+
+export const apiFetchOrganisationUnit = async (dataEngine, id) => {
+    const orgUnitData = await dataEngine.query(
+        { orgUnit: orgUnitQuery },
+        {
+            variables: { id },
+            onError,
+        }
+    )
+
+    return orgUnitData.orgUnit
 }
