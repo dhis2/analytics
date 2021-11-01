@@ -17,20 +17,11 @@ storiesOf('OrgUnitDimension', module)
         const [selected, setSelected] = useState([])
 
         return (
-            <>
-                <OrgUnitDimension
-                    selected={selected}
-                    onSelect={response => setSelected(response.items)}
-                    root={rootOrgUnit}
-                />
-                <div>
-                    {selected.map(item => (
-                        <p key={item.id}>
-                            {item.id} - {item.path || 'NO PATH'} - {item.name}
-                        </p>
-                    ))}
-                </div>
-            </>
+            <OrgUnitDimension
+                selected={selected}
+                onSelect={response => setSelected(response.items)}
+                root={rootOrgUnit}
+            />
         )
     })
 
