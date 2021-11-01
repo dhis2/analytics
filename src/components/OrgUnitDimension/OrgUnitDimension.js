@@ -182,9 +182,12 @@ const OrgUnitDimension = ({ root, selected, onSelect }) => {
                 })}
             >
                 <MultiSelect
-                    selected={selected
-                        .filter(item => ouIdHelper.hasLevelPrefix(item.id))
-                        .map(item => ouIdHelper.removePrefix(item.id))}
+                    selected={
+                        ouLevels.length &&
+                        selected
+                            .filter(item => ouIdHelper.hasLevelPrefix(item.id))
+                            .map(item => ouIdHelper.removePrefix(item.id))
+                    }
                     onChange={({ selected }) => onLevelChange(selected)}
                     placeholder={i18n.t('Select a level')}
                     loading={!ouLevels.length}
@@ -199,9 +202,12 @@ const OrgUnitDimension = ({ root, selected, onSelect }) => {
                     ))}
                 </MultiSelect>
                 <MultiSelect
-                    selected={selected
-                        .filter(item => ouIdHelper.hasGroupPrefix(item.id))
-                        .map(item => ouIdHelper.removePrefix(item.id))}
+                    selected={
+                        ouGroups.length &&
+                        selected
+                            .filter(item => ouIdHelper.hasGroupPrefix(item.id))
+                            .map(item => ouIdHelper.removePrefix(item.id))
+                    }
                     onChange={({ selected }) => onGroupChange(selected)}
                     placeholder={i18n.t('Select a group')}
                     loading={!ouGroups.length}

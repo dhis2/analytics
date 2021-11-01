@@ -40,11 +40,12 @@ export default css`
 
     .selectsWrapper {
         display: flex;
+        align-items: flex-start;
         gap: ${spacers.dp12};
         margin-top: ${spacers.dp12};
     }
 
     .selectsWrapper > :global(*) {
-        width: 33%;
+        width: 50%;
     }
 `
