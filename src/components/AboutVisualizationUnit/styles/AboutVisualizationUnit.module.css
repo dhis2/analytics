@@ -1,0 +1,56 @@
+.container {
+    padding: 16px;
+    border-bottom: 1px solid var(--colors-grey400);
+    background-color: var(--colors-white);
+}
+
+.expanded {
+    padding-bottom: 32px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 21px;
+    color: var(--colors-grey900);
+}
+
+.content {
+    font-size: 14px;
+    line-height: 18px;
+    color: var(--colors-grey900);
+}
+
+.content p {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    gap: 8px;
+}
+
+.content p:not(first-child) {
+    padding-top: 12px;
+}
+
+.content p svg {
+    flex-shrink: 0;
+}
+
+.noDescription {
+    color: var(--colors-grey600);
+}
+
+.subsection {
+    margin-top: 24px;
+}
+
+.subsectionTitle {
+    color: var(--colors-grey700);
+    font-weight: 500;
+}
+
+.subsection button {
+    margin-top: 8px;
+}

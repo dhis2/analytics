@@ -27,6 +27,8 @@ export { default as VisTypeIcon } from './components/VisTypeIcon'
 
 export { default as LegendKey } from './components/LegendKey/LegendKey'
 
+export { default as AboutVisualizationUnit } from './components/AboutVisualizationUnit/AboutVisualizationUnit'
+
 // Api
 
 export { default as Analytics } from './api/analytics/Analytics'
