@@ -172,6 +172,7 @@ const OrgUnitDimension = ({ root, selected, onSelect }) => {
                         )
                         .map(item => item.path)}
                     onChange={onSelectItems}
+                    dataTest={'org-unit-tree'}
                 />
             </div>
             <div
@@ -195,12 +196,14 @@ const OrgUnitDimension = ({ root, selected, onSelect }) => {
                     placeholder={i18n.t('Select a level')}
                     loading={!ouLevels.length}
                     dense
+                    dataTest={'org-unit-level-select'}
                 >
                     {ouLevels.map(level => (
                         <MultiSelectOption
                             key={level.id}
                             value={level.id}
                             label={level.displayName}
+                            dataTest={`org-unit-level-select-option-${level.id}`}
                         />
                     ))}
                 </MultiSelect>
@@ -218,12 +221,14 @@ const OrgUnitDimension = ({ root, selected, onSelect }) => {
                     placeholder={i18n.t('Select a group')}
                     loading={!ouGroups.length}
                     dense
+                    dataTest={'org-unit-group-select'}
                 >
                     {ouGroups.map(group => (
                         <MultiSelectOption
                             key={group.id}
                             value={group.id}
                             label={group.displayName}
+                            dataTest={`org-unit-group-select-option-${group.id}`}
                         />
                     ))}
                 </MultiSelect>
