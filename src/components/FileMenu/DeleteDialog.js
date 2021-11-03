@@ -1,5 +1,4 @@
 import { useDataMutation } from '@dhis2/app-runtime'
-import PropTypes from 'prop-types'
 import {
     Modal,
     ModalTitle,
@@ -8,6 +7,7 @@ import {
     ButtonStrip,
     Button,
 } from '@dhis2/ui'
+import PropTypes from 'prop-types'
 import React, { useMemo } from 'react'
 import i18n from '../../locales/index.js'
 import { supportedFileTypes, endpointFromFileType } from './utils'

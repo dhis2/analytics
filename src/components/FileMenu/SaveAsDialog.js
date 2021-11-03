@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types'
 import {
     Modal,
     ModalTitle,
@@ -9,6 +8,7 @@ import {
     InputField,
     TextAreaField,
 } from '@dhis2/ui'
+import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 import i18n from '../../locales/index.js'
 import { supportedFileTypes } from './utils'

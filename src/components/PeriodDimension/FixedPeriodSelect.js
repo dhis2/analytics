@@ -1,5 +1,5 @@
-import propTypes from 'prop-types'
 import { SingleSelectField, SingleSelectOption } from '@dhis2/ui'
+import propTypes from 'prop-types'
 import React, { Component } from 'react'
 import i18n from '../../locales/index.js'
 import FixedPeriodFilter from './FixedPeriodFilter.js'
