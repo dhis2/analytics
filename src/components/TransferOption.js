@@ -1,4 +1,4 @@
-import propTypes from '@dhis2/prop-types'
+import propTypes from 'prop-types'
 import { Tooltip } from '@dhis2/ui'
 import cx from 'classnames'
 import React from 'react'

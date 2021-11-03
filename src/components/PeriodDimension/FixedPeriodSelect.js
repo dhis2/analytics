@@ -1,4 +1,4 @@
-import propTypes from '@dhis2/prop-types'
+import propTypes from 'prop-types'
 import { SingleSelectField, SingleSelectOption } from '@dhis2/ui'
 import React, { Component } from 'react'
 import i18n from '../../locales/index.js'
