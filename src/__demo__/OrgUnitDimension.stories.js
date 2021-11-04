@@ -9,7 +9,7 @@ const Wrapper = story => (
     </DataProvider>
 )
 
-const rootOrgUnit = 'ImspTQPwCqd' // Sierra Leone
+const defaultRootOrgUnits = ['ImspTQPwCqd'] // Sierra Leone
 
 storiesOf('OrgUnitDimension', module)
     .addDecorator(Wrapper)
@@ -20,7 +20,7 @@ storiesOf('OrgUnitDimension', module)
             <OrgUnitDimension
                 selected={selected}
                 onSelect={response => setSelected(response.items)}
-                root={rootOrgUnit}
+                roots={defaultRootOrgUnits}
             />
         )
     })
@@ -40,7 +40,7 @@ storiesOf('OrgUnitDimension', module)
             <OrgUnitDimension
                 selected={selected}
                 onSelect={response => setSelected(response.items)}
-                root={rootOrgUnit}
+                roots={defaultRootOrgUnits}
             />
         )
     })
@@ -60,7 +60,7 @@ storiesOf('OrgUnitDimension', module)
             <OrgUnitDimension
                 selected={selected}
                 onSelect={response => setSelected(response.items)}
-                root={rootOrgUnit}
+                roots={defaultRootOrgUnits}
             />
         )
     })
@@ -86,7 +86,7 @@ storiesOf('OrgUnitDimension', module)
             <OrgUnitDimension
                 selected={selected}
                 onSelect={response => setSelected(response.items)}
-                root={rootOrgUnit}
+                roots={defaultRootOrgUnits}
             />
         )
     })
@@ -116,7 +116,21 @@ storiesOf('OrgUnitDimension', module)
             <OrgUnitDimension
                 selected={selected}
                 onSelect={response => setSelected(response.items)}
-                root={rootOrgUnit}
+                roots={defaultRootOrgUnits}
+            />
+        )
+    })
+
+storiesOf('OrgUnitDimension', module)
+    .addDecorator(Wrapper)
+    .add('Multiple roots', () => {
+        const [selected, setSelected] = useState([])
+
+        return (
+            <OrgUnitDimension
+                selected={selected}
+                onSelect={response => setSelected(response.items)}
+                roots={['O6uvpzGd5pu', 'fdc6uOvgoji']} // Bo + Bombali
             />
         )
     })

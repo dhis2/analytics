@@ -29,7 +29,7 @@ const DYNAMIC_ORG_UNITS = [
     USER_ORG_UNIT_GRANDCHILDREN,
 ]
 
-const OrgUnitDimension = ({ root, selected, onSelect }) => {
+const OrgUnitDimension = ({ roots, selected, onSelect }) => {
     const [ouLevels, setOuLevels] = useState([])
     const [ouGroups, setOuGroups] = useState([])
     const dataEngine = useDataEngine()
@@ -229,18 +229,7 @@ const OrgUnitDimension = ({ root, selected, onSelect }) => {
                 })}
             >
                 <OrganisationUnitTree
-                    roots={root}
-                    initiallyExpanded={[
-                        root,
-                        ...selected
-                            .filter(
-                                item =>
-                                    !DYNAMIC_ORG_UNITS.includes(item.id) &&
-                                    !ouIdHelper.hasLevelPrefix(item.id) &&
-                                    !ouIdHelper.hasGroupPrefix(item.id)
-                            )
-                            .map(item => item.path),
-                    ]}
+                    roots={roots}
                     selected={selected
                         .filter(
                             item =>
@@ -323,7 +312,7 @@ const OrgUnitDimension = ({ root, selected, onSelect }) => {
     )
 }
 OrgUnitDimension.propTypes = {
-    root: PropTypes.string,
+    roots: PropTypes.arrayOf(PropTypes.string),
     selected: PropTypes.arrayOf(
         PropTypes.shape({
             id: PropTypes.string.isRequired,

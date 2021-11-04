@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2021-11-04T10:19:57.966Z\n"
-"PO-Revision-Date: 2021-11-04T10:19:57.966Z\n"
+"POT-Creation-Date: 2021-11-04T14:06:55.501Z\n"
+"PO-Revision-Date: 2021-11-04T14:06:55.501Z\n"
 
 msgid "Data Type"
 msgstr "Data Type"
@@ -350,6 +350,29 @@ msgstr "Hide"
 msgid "Update"
 msgstr "Update"
 
+msgid "{{count}} org units"
+msgid_plural "{{count}} org units"
+msgstr[0] "{{count}} org unit"
+msgstr[1] "{{count}} org units"
+
+msgid "{{count}} levels"
+msgid_plural "{{count}} levels"
+msgstr[0] "{{count}} level"
+msgstr[1] "{{count}} levels"
+
+msgid "{{count}} groups"
+msgid_plural "{{count}} groups"
+msgstr[0] "{{count}} group"
+msgstr[1] "{{count}} groups"
+
+msgid "{{count}} user org units"
+msgid_plural "{{count}} user org units"
+msgstr[0] "{{count}} user org unit"
+msgstr[1] "{{count}} user org units"
+
+msgid "Nothing selected"
+msgstr "Nothing selected"
+
 msgid "User organisation unit"
 msgstr "User organisation unit"
 
@@ -364,18 +387,6 @@ msgstr "Select a level"
 
 msgid "Select a group"
 msgstr "Select a group"
-
-msgid ""
-"{{numberOfOrgUnits}} org unit(s), {{numberOfLevels}} level(s), "
-"{{numberOfGroups}} group(s), {{numberOfUserOrgUnits}} user org unit(s) "
-"selected"
-msgstr ""
-"{{numberOfOrgUnits}} org unit(s), {{numberOfLevels}} level(s), "
-"{{numberOfGroups}} group(s), {{numberOfUserOrgUnits}} user org unit(s) "
-"selected"
-
-msgid "Nothing selected"
-msgstr "Nothing selected"
 
 msgid "Deselect all"
 msgstr "Deselect all"

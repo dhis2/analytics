@@ -63,7 +63,12 @@ export {
 
 // Modules: ou utils
 
-export { ouIdHelper } from './modules/ouIdHelper'
+export {
+    ouIdHelper,
+    USER_ORG_UNIT,
+    USER_ORG_UNIT_CHILDREN,
+    USER_ORG_UNIT_GRANDCHILDREN,
+} from './modules/ouIdHelper'
 export { convertOuLevelsToUids } from './modules/ouLevelUtils'
 
 // Modules: adapted ui layout
