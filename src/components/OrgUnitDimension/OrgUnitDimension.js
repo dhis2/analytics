@@ -111,6 +111,72 @@ const OrgUnitDimension = ({ root, selected, onSelect }) => {
         })
     }
 
+    const getSummary = () => {
+        let summary
+        if (selected.length) {
+            const numberOfOrgUnits = selected.filter(
+                item =>
+                    !DYNAMIC_ORG_UNITS.includes(item.id) &&
+                    !ouIdHelper.hasLevelPrefix(item.id) &&
+                    !ouIdHelper.hasGroupPrefix(item.id)
+            ).length
+
+            const numberOfLevels = selected.filter(item =>
+                ouIdHelper.hasLevelPrefix(item.id)
+            ).length
+            const numberOfGroups = selected.filter(item =>
+                ouIdHelper.hasGroupPrefix(item.id)
+            ).length
+            const numberOfUserOrgUnits = selected.filter(item =>
+                DYNAMIC_ORG_UNITS.includes(item.id)
+            ).length
+
+            const parts = []
+
+            if (numberOfOrgUnits) {
+                parts.push(
+                    i18n.t('{{count}} org units', {
+                        count: numberOfOrgUnits,
+                        defaultValue: '{{count}} org unit',
+                        defaultValue_plural: '{{count}} org units',
+                    })
+                )
+            }
+            if (numberOfLevels) {
+                parts.push(
+                    i18n.t('{{count}} levels', {
+                        count: numberOfLevels,
+                        defaultValue: '{{count}} level',
+                        defaultValue_plural: '{{count}} levels',
+                    })
+                )
+            }
+            if (numberOfGroups) {
+                parts.push(
+                    i18n.t('{{count}} groups', {
+                        count: numberOfGroups,
+                        defaultValue: '{{count}} group',
+                        defaultValue_plural: '{{count}} groups',
+                    })
+                )
+            }
+            if (numberOfUserOrgUnits) {
+                parts.push(
+                    i18n.t('{{count}} user org units', {
+                        count: numberOfUserOrgUnits,
+                        defaultValue: '{{count}} user org unit',
+                        defaultValue_plural: '{{count}} user org units',
+                    })
+                )
+            }
+            summary = i18n.t('Selected: ') + parts.join(', ')
+        } else {
+            summary = i18n.t('Nothing selected')
+        }
+
+        return summary
+    }
+
     return (
         <div className="container">
             <div className="userOrgUnitsWrapper">
@@ -240,32 +306,7 @@ const OrgUnitDimension = ({ root, selected, onSelect }) => {
                 </MultiSelect>
             </div>
             <div className="summaryWrapper">
-                <span className="summaryText">
-                    {selected.length
-                        ? i18n.t(
-                              '{{numberOfOrgUnits}} org unit(s), {{numberOfLevels}} level(s), {{numberOfGroups}} group(s), {{numberOfUserOrgUnits}} user org unit(s) selected',
-                              {
-                                  numberOfOrgUnits: selected.filter(
-                                      item =>
-                                          !DYNAMIC_ORG_UNITS.includes(
-                                              item.id
-                                          ) &&
-                                          !ouIdHelper.hasLevelPrefix(item.id) &&
-                                          !ouIdHelper.hasGroupPrefix(item.id)
-                                  ).length,
-                                  numberOfLevels: selected.filter(item =>
-                                      ouIdHelper.hasLevelPrefix(item.id)
-                                  ).length,
-                                  numberOfGroups: selected.filter(item =>
-                                      ouIdHelper.hasGroupPrefix(item.id)
-                                  ).length,
-                                  numberOfUserOrgUnits: selected.filter(item =>
-                                      DYNAMIC_ORG_UNITS.includes(item.id)
-                                  ).length,
-                              }
-                          )
-                        : i18n.t('Nothing selected')}
-                </span>
+                <span className="summaryText">{getSummary()}</span>
                 <div className="deselectButton">
                     <Button
                         secondary
