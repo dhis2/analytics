@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2021-10-29T10:07:27.268Z\n"
-"PO-Revision-Date: 2021-10-29T10:07:27.268Z\n"
+"POT-Creation-Date: 2021-11-04T10:19:57.966Z\n"
+"PO-Revision-Date: 2021-11-04T10:19:57.966Z\n"
 
 msgid "Data Type"
 msgstr "Data Type"
@@ -364,6 +364,21 @@ msgstr "Select a level"
 
 msgid "Select a group"
 msgstr "Select a group"
+
+msgid ""
+"{{numberOfOrgUnits}} org unit(s), {{numberOfLevels}} level(s), "
+"{{numberOfGroups}} group(s), {{numberOfUserOrgUnits}} user org unit(s) "
+"selected"
+msgstr ""
+"{{numberOfOrgUnits}} org unit(s), {{numberOfLevels}} level(s), "
+"{{numberOfGroups}} group(s), {{numberOfUserOrgUnits}} user org unit(s) "
+"selected"
+
+msgid "Nothing selected"
+msgstr "Nothing selected"
+
+msgid "Deselect all"
+msgstr "Deselect all"
 
 msgid "Period type"
 msgstr "Period type"

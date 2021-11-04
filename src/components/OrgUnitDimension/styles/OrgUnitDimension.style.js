@@ -41,11 +41,26 @@ export default css`
     .selectsWrapper {
         display: flex;
         align-items: flex-start;
-        gap: ${spacers.dp12};
+        gap: ${spacers.dp8};
         margin-top: ${spacers.dp12};
     }
 
     .selectsWrapper > :global(*) {
         width: 50%;
+    }
+
+    .summaryWrapper {
+        margin-top: ${spacers.dp8};
+    }
+
+    .summaryText {
+        font-size: 14px;
+        line-height: 18px;
+        color: ${colors.grey700};
+    }
+
+    .deselectButton {
+        display: inline-block;
+        margin-left: ${spacers.dp8};
     }
 `

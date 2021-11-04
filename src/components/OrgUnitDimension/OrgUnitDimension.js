@@ -4,6 +4,7 @@ import {
     Checkbox,
     MultiSelect,
     MultiSelectOption,
+    Button,
 } from '@dhis2/ui'
 import cx from 'classnames'
 import PropTypes from 'prop-types'
@@ -39,7 +40,12 @@ const OrgUnitDimension = ({ root, selected, onSelect }) => {
 
         if (checked && DYNAMIC_ORG_UNITS.includes(id)) {
             result = [
-                ...result.filter(item => DYNAMIC_ORG_UNITS.includes(item.id)),
+                ...result.filter(
+                    item =>
+                        DYNAMIC_ORG_UNITS.includes(item.id) ||
+                        ouIdHelper.hasLevelPrefix(item.id) ||
+                        ouIdHelper.hasGroupPrefix(item.id)
+                ),
                 { id, displayName },
             ]
         } else if (checked) {
@@ -48,11 +54,17 @@ const OrgUnitDimension = ({ root, selected, onSelect }) => {
             result = [...result.filter(item => item.id !== id)]
         }
 
-        return onSelect({
+        onSelect({
             dimensionId: DIMENSION_ID_ORGUNIT,
             items: result,
         })
     }
+
+    const clearSelection = () =>
+        onSelect({
+            dimensionId: DIMENSION_ID_ORGUNIT,
+            items: [],
+        })
 
     useEffect(() => {
         const doFetchOuLevels = async () => {
@@ -175,13 +187,7 @@ const OrgUnitDimension = ({ root, selected, onSelect }) => {
                     dataTest={'org-unit-tree'}
                 />
             </div>
-            <div
-                className={cx('selectsWrapper', {
-                    disabled: selected.some(item =>
-                        DYNAMIC_ORG_UNITS.includes(item.id)
-                    ),
-                })}
-            >
+            <div className="selectsWrapper">
                 <MultiSelect
                     selected={
                         ouLevels.length
@@ -232,6 +238,44 @@ const OrgUnitDimension = ({ root, selected, onSelect }) => {
                         />
                     ))}
                 </MultiSelect>
+            </div>
+            <div className="summaryWrapper">
+                <span className="summaryText">
+                    {selected.length
+                        ? i18n.t(
+                              '{{numberOfOrgUnits}} org unit(s), {{numberOfLevels}} level(s), {{numberOfGroups}} group(s), {{numberOfUserOrgUnits}} user org unit(s) selected',
+                              {
+                                  numberOfOrgUnits: selected.filter(
+                                      item =>
+                                          !DYNAMIC_ORG_UNITS.includes(
+                                              item.id
+                                          ) &&
+                                          !ouIdHelper.hasLevelPrefix(item.id) &&
+                                          !ouIdHelper.hasGroupPrefix(item.id)
+                                  ).length,
+                                  numberOfLevels: selected.filter(item =>
+                                      ouIdHelper.hasLevelPrefix(item.id)
+                                  ).length,
+                                  numberOfGroups: selected.filter(item =>
+                                      ouIdHelper.hasGroupPrefix(item.id)
+                                  ).length,
+                                  numberOfUserOrgUnits: selected.filter(item =>
+                                      DYNAMIC_ORG_UNITS.includes(item.id)
+                                  ).length,
+                              }
+                          )
+                        : i18n.t('Nothing selected')}
+                </span>
+                <div className="deselectButton">
+                    <Button
+                        secondary
+                        small
+                        onClick={clearSelection}
+                        disabled={!selected.length}
+                    >
+                        {i18n.t('Deselect all')}
+                    </Button>
+                </div>
             </div>
             <style jsx>{styles}</style>
         </div>
