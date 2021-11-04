@@ -1,17 +1,17 @@
 .container {
-    padding: 16px;
+    padding: var(--spacers-dp16);
     border-bottom: 1px solid var(--colors-grey400);
     background-color: var(--colors-white);
 }
 
 .expanded {
-    padding-bottom: 32px;
+    padding-bottom: var(--spacers-dp32);
 }
 
 .header {
     display: flex;
     justify-content: space-between;
-    font-size: 16px;
+    font-size: var(--spacers-dp16);
     font-weight: 500;
     line-height: 21px;
     color: var(--colors-grey900);
@@ -27,11 +27,11 @@
     display: flex;
     margin: 0;
     padding: 0;
-    gap: 8px;
+    gap: var(--spacers-dp8);
 }
 
 .content p:not(first-child) {
-    padding-top: 12px;
+    padding-top: var(--spacers-dp12);
 }
 
 .content p svg {
@@ -43,7 +43,7 @@
 }
 
 .subsection {
-    margin-top: 24px;
+    margin-top: var(--spacers-dp24);
 }
 
 .subsectionTitle {
@@ -52,5 +52,5 @@
 }
 
 .subsection button {
-    margin-top: 8px;
+    margin-top: var(--spacers-dp8);
 }
