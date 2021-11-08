@@ -153,7 +153,11 @@ const AboutVisualizationUnit = ({ type, id }) => {
             </div>
             {isExpanded && (
                 <>
-                    {dataIsLoading && <CircularLoader small />}
+                    {dataIsLoading && (
+                        <div className={classes.loader}>
+                            <CircularLoader small />
+                        </div>
+                    )}
                     {data && (
                         <div className={classes.content}>
                             <p
