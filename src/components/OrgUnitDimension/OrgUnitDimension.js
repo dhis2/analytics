@@ -230,6 +230,23 @@ const OrgUnitDimension = ({ roots, selected, onSelect }) => {
             >
                 <OrganisationUnitTree
                     roots={roots}
+                    initiallyExpanded={[
+                        ...(roots.length === 1 ? [`/${roots[0]}`] : []),
+                        ...selected
+                            .filter(
+                                item =>
+                                    !DYNAMIC_ORG_UNITS.includes(item.id) &&
+                                    !ouIdHelper.hasLevelPrefix(item.id) &&
+                                    !ouIdHelper.hasGroupPrefix(item.id)
+                            )
+                            .map(item =>
+                                item.path.substring(
+                                    0,
+                                    item.path.lastIndexOf('/')
+                                )
+                            )
+                            .filter(path => path),
+                    ]}
                     selected={selected
                         .filter(
                             item =>
