@@ -127,9 +127,9 @@ const OrgUnitDimension = ({ roots, selected, onSelect }) => {
             const numberOfGroups = selected.filter(item =>
                 ouIdHelper.hasGroupPrefix(item.id)
             ).length
-            const numberOfUserOrgUnits = selected.filter(item =>
+            const userOrgUnits = selected.filter(item =>
                 DYNAMIC_ORG_UNITS.includes(item.id)
-            ).length
+            )
 
             const parts = []
 
@@ -160,15 +160,9 @@ const OrgUnitDimension = ({ roots, selected, onSelect }) => {
                     })
                 )
             }
-            if (numberOfUserOrgUnits) {
-                parts.push(
-                    i18n.t('{{count}} user org units', {
-                        count: numberOfUserOrgUnits,
-                        defaultValue: '{{count}} user org unit',
-                        defaultValue_plural: '{{count}} user org units',
-                    })
-                )
-            }
+            userOrgUnits.forEach(orgUnit => {
+                parts.push(orgUnit.name || orgUnit.displayName)
+            })
             summary = i18n.t('Selected: ') + parts.join(', ')
         } else {
             summary = i18n.t('Nothing selected')
