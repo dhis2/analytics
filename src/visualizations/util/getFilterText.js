@@ -2,10 +2,7 @@ import { getOuLevelAndGroupText } from '../../modules/getOuLevelAndGroupText'
 import { dimensionGetItems } from '../../modules/layout/dimensionGetItems'
 import { dimensionIs } from '../../modules/layout/dimensionIs'
 import { ouIdHelper } from '../../modules/ouIdHelper'
-import {
-    DIMENSION_ID_ORGUNIT,
-    DIMENSION_ID_PERIOD,
-} from '../../modules/predefinedDimensions'
+import { DIMENSION_ID_ORGUNIT } from '../../modules/predefinedDimensions'
 
 export default function (filters, metaData) {
     if (!Array.isArray(filters) || !filters.length) {
@@ -29,13 +26,7 @@ export default function (filters, metaData) {
         ) {
             titleFragments.push(getOuLevelAndGroupText(filter, metaData))
         } else {
-            let filterItems = []
-
-            if (dimensionIs(filter, DIMENSION_ID_PERIOD)) {
-                filterItems = items.map(({ id }) => id)
-            } else {
-                filterItems = metaData.dimensions[filter.dimension]
-            }
+            const filterItems = metaData.dimensions[filter.dimension]
 
             if (Array.isArray(filterItems)) {
                 l = filterItems.length
