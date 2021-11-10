@@ -9,7 +9,7 @@ export default css`
     }
 
     .orgUnitTreeWrapper {
-        height: 418px;
+        height: 382px;
         flex-grow: 1;
         overflow: auto;
     }
