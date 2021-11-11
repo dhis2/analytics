@@ -19,6 +19,9 @@ import PropTypes from 'prop-types'
 import React, { useEffect, useMemo, useState } from 'react'
 import styles from './styles/AboutAOUnit.style'
 
+const READ_ONLY = 'r'
+const READ_AND_WRITE = 'rw'
+
 const getQueries = type => ({
     ao: {
         resource: type,
@@ -92,12 +95,13 @@ const AboutAOUnit = ({ type, id }) => {
     }, [type, id])
 
     const getAccessLevelString = access => {
-        const accessMatch = access.match(/(?<accessLevel>rw?)/)
+        const re = new RegExp(`(?<accessLevel>${READ_AND_WRITE}?)`)
+        const accessMatch = re.exec(access)
 
         switch (accessMatch.groups.accessLevel) {
-            case 'r':
+            case READ_ONLY:
                 return i18n.t('view only')
-            case 'rw':
+            case READ_AND_WRITE:
                 return i18n.t('view and edit')
         }
     }
@@ -105,7 +109,9 @@ const AboutAOUnit = ({ type, id }) => {
     const getSharingSummary = ao => {
         const sharingText = []
 
-        if (/^rw?/.test(ao.publicAccess)) {
+        const re = new RegExp(`^${READ_AND_WRITE}?`)
+
+        if (re.test(ao.publicAccess)) {
             sharingText.push(
                 i18n.t('all users ({{accessLevel}})', {
                     accessLevel: getAccessLevelString(ao.publicAccess),
