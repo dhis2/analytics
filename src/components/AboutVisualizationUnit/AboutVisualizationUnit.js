@@ -128,8 +128,8 @@ const AboutVisualizationUnit = ({ type, id }) => {
         })
 
         return sharingText.length
-            ? i18n.t('Shared with {{commaSeparatedListOfUsersGroups}}', {
-                  commaSeparatedListOfUsersGroups: sharingText.join(', '),
+            ? i18n.t('Shared with {{commaSeparatedListOfUsersAndGroups}}', {
+                  commaSeparatedListOfUsersAndGroups: sharingText.join(', '),
               })
             : i18n.t('Not shared with any users or groups')
     }
