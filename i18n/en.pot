@@ -5,8 +5,58 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2021-10-04T08:35:00.972Z\n"
-"PO-Revision-Date: 2021-10-04T08:35:00.972Z\n"
+"POT-Creation-Date: 2021-11-11T10:46:00.284Z\n"
+"PO-Revision-Date: 2021-11-11T10:46:00.285Z\n"
+
+msgid "view only"
+msgstr "view only"
+
+msgid "view and edit"
+msgstr "view and edit"
+
+msgid "all users ({{accessLevel}})"
+msgstr "all users ({{accessLevel}})"
+
+msgid "{{userOrGroup}} ({{accessLevel}})"
+msgstr "{{userOrGroup}} ({{accessLevel}})"
+
+msgid "Shared with {{commaSeparatedListOfUsersAndGroups}}"
+msgstr "Shared with {{commaSeparatedListOfUsersAndGroups}}"
+
+msgid "Not shared with any users or groups"
+msgstr "Not shared with any users or groups"
+
+msgid "About this visualization"
+msgstr "About this visualization"
+
+msgid "No description"
+msgstr "No description"
+
+msgid "Last updated {{time}}"
+msgstr "Last updated {{time}}"
+
+msgid "Created {{time}} by {{author}}"
+msgstr "Created {{time}} by {{author}}"
+
+msgid "Viewed {{count}} times"
+msgid_plural "Viewed {{count}} times"
+msgstr[0] "Viewed 1 time"
+msgstr[1] "Viewed {{count}} times"
+
+msgid "Notifications"
+msgstr "Notifications"
+
+msgid "You're subscribed and getting updates about new interpretations."
+msgstr "You're subscribed and getting updates about new interpretations."
+
+msgid "Unsubscribe"
+msgstr "Unsubscribe"
+
+msgid "Subscribe to get updates about new interpretations."
+msgstr "Subscribe to get updates about new interpretations."
+
+msgid "Subscribe"
+msgstr "Subscribe"
 
 msgid "Data Type"
 msgstr "Data Type"
