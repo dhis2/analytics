@@ -17,7 +17,7 @@ import cx from 'classnames'
 import moment from 'moment'
 import PropTypes from 'prop-types'
 import React, { useEffect, useMemo, useState } from 'react'
-import classes from './styles/AboutVisualizationUnit.module.css'
+import styles from './styles/AboutVisualizationUnit.style'
 
 const getQueries = type => ({
     visualization: {
@@ -136,14 +136,11 @@ const AboutVisualizationUnit = ({ type, id }) => {
 
     return (
         <div
-            className={cx(classes.container, {
-                [classes.expanded]: isExpanded,
+            className={cx('container', {
+                expanded: isExpanded,
             })}
         >
-            <div
-                className={classes.header}
-                onClick={() => setIsExpanded(!isExpanded)}
-            >
+            <div className="header" onClick={() => setIsExpanded(!isExpanded)}>
                 {i18n.t('About this visualization')}
                 {isExpanded ? (
                     <IconChevronUp24 color={colors.grey700} />
@@ -154,15 +151,15 @@ const AboutVisualizationUnit = ({ type, id }) => {
             {isExpanded && (
                 <>
                     {dataIsLoading && (
-                        <div className={classes.loader}>
+                        <div className="loader">
                             <CircularLoader small />
                         </div>
                     )}
                     {data && (
-                        <div className={classes.content}>
+                        <div className="content">
                             <p
-                                className={cx({
-                                    [classes.noDescription]:
+                                className={cx('detailLine', {
+                                    noDescription:
                                         !data.visualization.displayDescription,
                                 })}
                             >
@@ -171,11 +168,11 @@ const AboutVisualizationUnit = ({ type, id }) => {
                                     : i18n.t('No description')}
                             </p>
                             <div>
-                                <p>
+                                <p className="detailLine">
                                     <IconShare16 color={colors.grey700} />
                                     {getSharingSummary(data.visualization)}
                                 </p>
-                                <p>
+                                <p className="detailLine">
                                     <IconClock16 color={colors.grey700} />
                                     {i18n.t('Last updated {{time}}', {
                                         time: moment(
@@ -183,7 +180,7 @@ const AboutVisualizationUnit = ({ type, id }) => {
                                         ).fromNow(),
                                     })}
                                 </p>
-                                <p>
+                                <p className="detailLine">
                                     <IconUser16 color={colors.grey700} />
                                     {i18n.t('Created {{time}} by {{author}}', {
                                         time: moment(
@@ -193,7 +190,7 @@ const AboutVisualizationUnit = ({ type, id }) => {
                                             .displayName,
                                     })}
                                 </p>
-                                <p>
+                                <p className="detailLine">
                                     <IconView16 color={colors.grey700} />
                                     {i18n.t('Viewed {{count}} times', {
                                         count: data.dataStatistics.views,
@@ -203,13 +200,13 @@ const AboutVisualizationUnit = ({ type, id }) => {
                                     })}
                                 </p>
                             </div>
-                            <div className={classes.subsection}>
-                                <span className={classes.subsectionTitle}>
+                            <div className="subsection">
+                                <span className="subsectionTitle">
                                     {i18n.t('Notifications')}
                                 </span>
                                 {data.visualization.subscribed ? (
                                     <>
-                                        <p>
+                                        <p className="subscriptionLabel">
                                             {i18n.t(
                                                 "You're subscribed and getting updates about new interpretations."
                                             )}
@@ -230,7 +227,7 @@ const AboutVisualizationUnit = ({ type, id }) => {
                                     </>
                                 ) : (
                                     <>
-                                        <p>
+                                        <p className="subscriptionLabel">
                                             {i18n.t(
                                                 'Subscribe to get updates about new interpretations.'
                                             )}
@@ -255,6 +252,7 @@ const AboutVisualizationUnit = ({ type, id }) => {
                     )}
                 </>
             )}
+            <style jsx>{styles}</style>
         </div>
     )
 }
