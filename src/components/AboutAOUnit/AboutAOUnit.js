@@ -17,10 +17,10 @@ import cx from 'classnames'
 import moment from 'moment'
 import PropTypes from 'prop-types'
 import React, { useEffect, useMemo, useState } from 'react'
-import styles from './styles/AboutVisualizationUnit.style'
+import styles from './styles/AboutAOUnit.style'
 
 const getQueries = type => ({
-    visualization: {
+    ao: {
         resource: type,
         id: ({ id }) => id,
         params: {
@@ -43,7 +43,7 @@ const getUnsubscribeMutation = (type, id) => ({
     type: 'delete',
 })
 
-const AboutVisualizationUnit = ({ type, id }) => {
+const AboutAOUnit = ({ type, id }) => {
     const [isExpanded, setIsExpanded] = useState(true)
 
     const queries = useMemo(() => getQueries(type), [])
@@ -102,21 +102,19 @@ const AboutVisualizationUnit = ({ type, id }) => {
         }
     }
 
-    const getSharingSummary = visualization => {
+    const getSharingSummary = ao => {
         const sharingText = []
 
-        if (/^rw?/.test(visualization.publicAccess)) {
+        if (/^rw?/.test(ao.publicAccess)) {
             sharingText.push(
                 i18n.t('all users ({{accessLevel}})', {
-                    accessLevel: getAccessLevelString(
-                        visualization.publicAccess
-                    ),
+                    accessLevel: getAccessLevelString(ao.publicAccess),
                 })
             )
         }
 
-        const userAccesses = visualization.userAccesses
-        const groupAccesses = visualization.userGroupAccesses
+        const userAccesses = ao.userAccesses
+        const groupAccesses = ao.userGroupAccesses
 
         userAccesses.concat(groupAccesses).forEach(accessRule => {
             sharingText.push(
@@ -159,35 +157,31 @@ const AboutVisualizationUnit = ({ type, id }) => {
                         <div className="content">
                             <p
                                 className={cx('detailLine', {
-                                    noDescription:
-                                        !data.visualization.displayDescription,
+                                    noDescription: !data.ao.displayDescription,
                                 })}
                             >
-                                {data.visualization.displayDescription
-                                    ? data.visualization.displayDescription
+                                {data.ao.displayDescription
+                                    ? data.ao.displayDescription
                                     : i18n.t('No description')}
                             </p>
                             <div>
                                 <p className="detailLine">
                                     <IconShare16 color={colors.grey700} />
-                                    {getSharingSummary(data.visualization)}
+                                    {getSharingSummary(data.ao)}
                                 </p>
                                 <p className="detailLine">
                                     <IconClock16 color={colors.grey700} />
                                     {i18n.t('Last updated {{time}}', {
                                         time: moment(
-                                            data.visualization.lastUpdated
+                                            data.ao.lastUpdated
                                         ).fromNow(),
                                     })}
                                 </p>
                                 <p className="detailLine">
                                     <IconUser16 color={colors.grey700} />
                                     {i18n.t('Created {{time}} by {{author}}', {
-                                        time: moment(
-                                            data.visualization.created
-                                        ).fromNow(),
-                                        author: data.visualization.createdBy
-                                            .displayName,
+                                        time: moment(data.ao.created).fromNow(),
+                                        author: data.ao.createdBy.displayName,
                                     })}
                                 </p>
                                 <p className="detailLine">
@@ -204,7 +198,7 @@ const AboutVisualizationUnit = ({ type, id }) => {
                                 <span className="subsectionTitle">
                                     {i18n.t('Notifications')}
                                 </span>
-                                {data.visualization.subscribed ? (
+                                {data.ao.subscribed ? (
                                     <>
                                         <p className="subscriptionLabel">
                                             {i18n.t(
@@ -257,9 +251,9 @@ const AboutVisualizationUnit = ({ type, id }) => {
     )
 }
 
-AboutVisualizationUnit.propTypes = {
+AboutAOUnit.propTypes = {
     id: PropTypes.string.isRequired,
     type: PropTypes.string.isRequired,
 }
 
-export default AboutVisualizationUnit
+export default AboutAOUnit
