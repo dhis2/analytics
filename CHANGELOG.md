@@ -1,3 +1,10 @@
+# [20.7.0](https://github.com/dhis2/analytics/compare/v20.6.5...v20.7.0) (2021-11-11)
+
+
+### Features
+
+* implement AboutAOUnit component ([#1082](https://github.com/dhis2/analytics/issues/1082)) ([8ab8e27](https://github.com/dhis2/analytics/commit/8ab8e271077ce24b9f032303dad8999ce65b47d3))
+
 ## [20.6.5](https://github.com/dhis2/analytics/compare/v20.6.4...v20.6.5) (2021-10-27)
 
 
