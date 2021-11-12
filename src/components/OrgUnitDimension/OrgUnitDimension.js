@@ -163,7 +163,10 @@ const OrgUnitDimension = ({ roots, selected, onSelect }) => {
             userOrgUnits.forEach(orgUnit => {
                 parts.push(orgUnit.name || orgUnit.displayName)
             })
-            summary = i18n.t('Selected: ') + parts.join(', ')
+            summary = i18n.t(
+                'Selected: {{commaSeparatedListOfOrganisationUnits}}',
+                { commaSeparatedListOfOrganisationUnits: parts.join(', ') }
+            )
         } else {
             summary = i18n.t('Nothing selected')
         }
