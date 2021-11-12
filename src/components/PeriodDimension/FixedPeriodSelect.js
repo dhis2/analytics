@@ -101,11 +101,11 @@ FixedPeriodSelect.defaultProps = {
 }
 
 FixedPeriodSelect.propTypes = {
-    onChange: propTypes.func.isRequired,
-    allowedPeriodTypes: propTypes.arrayOf(propTypes.string),
-    className: propTypes.string,
-    dataTest: propTypes.string,
-    value: propTypes.string,
+    onChange: PropTypes.func.isRequired,
+    allowedPeriodTypes: PropTypes.arrayOf(PropTypes.string),
+    className: PropTypes.string,
+    dataTest: PropTypes.string,
+    value: PropTypes.string,
 }
 
 export default FixedPeriodSelect

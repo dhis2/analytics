@@ -61,15 +61,15 @@ export const TransferOption = ({
 }
 
 TransferOption.propTypes = {
-    label: propTypes.string.isRequired,
-    value: propTypes.string.isRequired,
-    active: propTypes.bool,
-    dataTest: propTypes.string,
-    disabled: propTypes.bool,
-    highlighted: propTypes.bool,
-    icon: propTypes.node,
-    selected: propTypes.bool,
-    tooltipText: propTypes.string,
-    onClick: propTypes.func,
-    onDoubleClick: propTypes.func,
+    label: PropTypes.string.isRequired,
+    value: PropTypes.string.isRequired,
+    active: PropTypes.bool,
+    dataTest: PropTypes.string,
+    disabled: PropTypes.bool,
+    highlighted: PropTypes.bool,
+    icon: PropTypes.node,
+    selected: PropTypes.bool,
+    tooltipText: PropTypes.string,
+    onClick: PropTypes.func,
+    onDoubleClick: PropTypes.func,
 }
