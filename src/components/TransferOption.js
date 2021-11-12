@@ -1,6 +1,6 @@
 import { Tooltip } from '@dhis2/ui'
 import cx from 'classnames'
-import propTypes from 'prop-types'
+import PropTypes from 'prop-types'
 import React from 'react'
 import styles from './styles/TransferOption.style'
 
