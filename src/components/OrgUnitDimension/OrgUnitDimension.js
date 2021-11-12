@@ -165,7 +165,11 @@ const OrgUnitDimension = ({ roots, selected, onSelect }) => {
             })
             summary = i18n.t(
                 'Selected: {{commaSeparatedListOfOrganisationUnits}}',
-                { commaSeparatedListOfOrganisationUnits: parts.join(', ') }
+                {
+                    keySeparator: '>',
+                    nsSeparator: '|',
+                    commaSeparatedListOfOrganisationUnits: parts.join(', '),
+                }
             )
         } else {
             summary = i18n.t('Nothing selected')
