@@ -10,7 +10,7 @@ const orgUnitLevelsQuery = {
 
 const orgUnitGroupsQuery = {
     resource: 'organisationUnitGroups',
-    params: ({ displayNameProp = 'displayName' }) => ({
+    params: ({ displayNameProp = 'displayName' } = {}) => ({
         fields: `id,${displayNameProp}~rename(displayName),name`,
         paging: false,
     }),
