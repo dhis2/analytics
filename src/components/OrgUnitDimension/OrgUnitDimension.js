@@ -14,6 +14,7 @@ import {
     apiFetchOrganisationUnitLevels,
 } from '../../api/organisationUnits'
 import i18n from '../../locales/index.js'
+import { formatList } from '../../modules/list'
 import {
     ouIdHelper,
     USER_ORG_UNIT,
@@ -168,7 +169,7 @@ const OrgUnitDimension = ({ roots, selected, onSelect }) => {
                 {
                     keySeparator: '>',
                     nsSeparator: '|',
-                    commaSeparatedListOfOrganisationUnits: parts.join(', '),
+                    commaSeparatedListOfOrganisationUnits: formatList(parts),
                 }
             )
         } else {
