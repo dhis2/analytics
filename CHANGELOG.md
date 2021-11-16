@@ -1,3 +1,15 @@
+# [21.0.0](https://github.com/dhis2/analytics/compare/v20.7.0...v21.0.0) (2021-11-16)
+
+
+### Features
+
+* new org unit dimension (TECH-707) ([#1081](https://github.com/dhis2/analytics/issues/1081)) ([14f72a7](https://github.com/dhis2/analytics/commit/14f72a78bc900af809a34a41055f27d98054ee2b))
+
+
+### BREAKING CHANGES
+
+* changed props for org the unit dimension. removed current, d2, displayNameProperty, ouItems, onDeselect. replaced by root, selected
+
 # [20.7.0](https://github.com/dhis2/analytics/compare/v20.6.5...v20.7.0) (2021-11-11)
 
 
