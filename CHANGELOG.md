@@ -1,3 +1,10 @@
+## [21.0.1](https://github.com/dhis2/analytics/compare/v21.0.0...v21.0.1) (2021-11-16)
+
+
+### Bug Fixes
+
+* use Intl.ListFormat for formatting the sharing list ([#1086](https://github.com/dhis2/analytics/issues/1086)) ([68e2889](https://github.com/dhis2/analytics/commit/68e288955185be0429206af88ca50bf70873ac81))
+
 # [21.0.0](https://github.com/dhis2/analytics/compare/v20.7.0...v21.0.0) (2021-11-16)
 
 
