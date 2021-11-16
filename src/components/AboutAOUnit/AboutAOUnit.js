@@ -17,6 +17,7 @@ import cx from 'classnames'
 import moment from 'moment'
 import PropTypes from 'prop-types'
 import React, { useEffect, useMemo, useState } from 'react'
+import { formatList } from '../../modules/list'
 import styles from './styles/AboutAOUnit.style'
 
 const READ_ONLY = 'r'
@@ -107,12 +108,12 @@ const AboutAOUnit = ({ type, id }) => {
     }
 
     const getSharingSummary = ao => {
-        const sharingText = []
+        const sharingTextParts = []
 
         const re = new RegExp(`^${READ_AND_WRITE}?`)
 
         if (re.test(ao.publicAccess)) {
-            sharingText.push(
+            sharingTextParts.push(
                 i18n.t('all users ({{accessLevel}})', {
                     accessLevel: getAccessLevelString(ao.publicAccess),
                 })
@@ -123,7 +124,7 @@ const AboutAOUnit = ({ type, id }) => {
         const groupAccesses = ao.userGroupAccesses
 
         userAccesses.concat(groupAccesses).forEach(accessRule => {
-            sharingText.push(
+            sharingTextParts.push(
                 i18n.t('{{userOrGroup}} ({{accessLevel}})', {
                     userOrGroup: accessRule.displayName,
                     accessLevel: getAccessLevelString(accessRule.access),
@@ -131,9 +132,10 @@ const AboutAOUnit = ({ type, id }) => {
             )
         })
 
-        return sharingText.length
+        return sharingTextParts.length
             ? i18n.t('Shared with {{commaSeparatedListOfUsersAndGroups}}', {
-                  commaSeparatedListOfUsersAndGroups: sharingText.join(', '),
+                  commaSeparatedListOfUsersAndGroups:
+                      formatList(sharingTextParts),
               })
             : i18n.t('Not shared with any users or groups')
     }
