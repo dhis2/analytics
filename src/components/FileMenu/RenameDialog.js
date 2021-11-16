@@ -1,5 +1,4 @@
 import { useDataMutation } from '@dhis2/app-runtime'
-import PropTypes from '@dhis2/prop-types'
 import {
     Modal,
     ModalTitle,
@@ -10,6 +9,7 @@ import {
     InputField,
     TextAreaField,
 } from '@dhis2/ui'
+import PropTypes from 'prop-types'
 import React, { useMemo, useState } from 'react'
 import i18n from '../../locales/index.js'
 import { supportedFileTypes, endpointFromFileType } from './utils'

@@ -1,5 +1,8 @@
 const LEVEL_ID_PREFIX = 'LEVEL'
 const GROUP_ID_PREFIX = 'OU_GROUP'
+export const USER_ORG_UNIT = 'USER_ORGUNIT'
+export const USER_ORG_UNIT_CHILDREN = 'USER_ORGUNIT_CHILDREN'
+export const USER_ORG_UNIT_GRANDCHILDREN = 'USER_ORGUNIT_GRANDCHILDREN'
 
 const hasGroupPrefix = id =>
     id.substr(0, GROUP_ID_PREFIX.length) === GROUP_ID_PREFIX

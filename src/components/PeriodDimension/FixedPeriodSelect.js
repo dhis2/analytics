@@ -1,5 +1,5 @@
-import propTypes from '@dhis2/prop-types'
 import { SingleSelectField, SingleSelectOption } from '@dhis2/ui'
+import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 import i18n from '../../locales/index.js'
 import FixedPeriodFilter from './FixedPeriodFilter.js'
@@ -101,11 +101,11 @@ FixedPeriodSelect.defaultProps = {
 }
 
 FixedPeriodSelect.propTypes = {
-    onChange: propTypes.func.isRequired,
-    allowedPeriodTypes: propTypes.arrayOf(propTypes.string),
-    className: propTypes.string,
-    dataTest: propTypes.string,
-    value: propTypes.string,
+    onChange: PropTypes.func.isRequired,
+    allowedPeriodTypes: PropTypes.arrayOf(PropTypes.string),
+    className: PropTypes.string,
+    dataTest: PropTypes.string,
+    value: PropTypes.string,
 }
 
 export default FixedPeriodSelect

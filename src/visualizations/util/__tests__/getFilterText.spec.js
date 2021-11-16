@@ -173,7 +173,7 @@ describe('getFilterText', () => {
             }
 
             expect(getFilterText(filters, metaData)).toEqual(
-                'Clinics, Hospital - Last 2 months'
+                'Clinics, Hospital - 01 of 2018, 02 of 2018'
             )
         })
     })

@@ -1,5 +1,4 @@
 import { useConfig } from '@dhis2/app-runtime'
-import PropTypes from '@dhis2/prop-types'
 import {
     Modal,
     ModalContent,
@@ -7,6 +6,7 @@ import {
     ButtonStrip,
     Button,
 } from '@dhis2/ui'
+import PropTypes from 'prop-types'
 import React from 'react'
 import i18n from '../../locales/index.js'
 import { supportedFileTypes, appPathFor } from './utils'

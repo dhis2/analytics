@@ -1,276 +1,344 @@
-import { OrgUnitSelector, userOrgUnits } from '@dhis2/d2-ui-org-unit-dialog'
-import { CircularLoader, colors } from '@dhis2/ui'
-import sortBy from 'lodash/sortBy'
+import { useDataEngine } from '@dhis2/app-runtime'
+import {
+    OrganisationUnitTree,
+    Checkbox,
+    MultiSelect,
+    MultiSelectOption,
+    Button,
+} from '@dhis2/ui'
+import cx from 'classnames'
 import PropTypes from 'prop-types'
-import React, { Component, Fragment } from 'react'
+import React, { useEffect, useState } from 'react'
 import {
     apiFetchOrganisationUnitGroups,
     apiFetchOrganisationUnitLevels,
-    apiFetchOrganisationUnits,
 } from '../../api/organisationUnits'
-import { ouIdHelper } from '../../modules/ouIdHelper'
+import i18n from '../../locales/index.js'
+import { formatList } from '../../modules/list'
+import {
+    ouIdHelper,
+    USER_ORG_UNIT,
+    USER_ORG_UNIT_CHILDREN,
+    USER_ORG_UNIT_GRANDCHILDREN,
+} from '../../modules/ouIdHelper'
 import { DIMENSION_ID_ORGUNIT } from '../../modules/predefinedDimensions'
 import styles from './styles/OrgUnitDimension.style'
 
-export const defaultState = {
-    root: undefined,
-    roots: undefined,
-    // use "selected" property for cloning org units while user org unit(s) is (are) selected
-    selected: [],
-    ouLevels: [],
-    ouGroups: [],
-    showOrgUnitsTree: true,
-}
+const DYNAMIC_ORG_UNITS = [
+    USER_ORG_UNIT,
+    USER_ORG_UNIT_CHILDREN,
+    USER_ORG_UNIT_GRANDCHILDREN,
+]
 
-class OrgUnitDimension extends Component {
-    constructor(props) {
-        super(props)
+const OrgUnitDimension = ({ roots, selected, onSelect }) => {
+    const [ouLevels, setOuLevels] = useState([])
+    const [ouGroups, setOuGroups] = useState([])
+    const dataEngine = useDataEngine()
 
-        this.state = defaultState
-        this.userOrgUnitIds = userOrgUnits.map(ou => ou.id)
+    const onSelectItems = selectedItem => {
+        const { id, checked, displayName, path } = selectedItem
+        let result = [...selected]
 
-        this.loadOrgUnitTree(props.d2, props.displayNameProperty)
-        this.loadOrgUnitGroups(props.d2, props.displayNameProperty)
-        this.loadOrgUnitLevels(props.d2)
-    }
-
-    componentDidUpdate(prevProps) {
-        const previousId = prevProps.current ? prevProps.current.id : null
-        const currentId = this.props.current ? this.props.current.id : null
-
-        // remount org units selector component to ensure
-        // only selected org units are expanded
-        if (previousId !== currentId) {
-            this.hideOrgUnitsTree()
-
-            setTimeout(this.showOrgUnitsTree, 0)
-        }
-    }
-
-    showOrgUnitsTree = () => {
-        this.setState({ showOrgUnitsTree: true })
-    }
-
-    hideOrgUnitsTree = () => {
-        this.setState({ showOrgUnitsTree: false })
-    }
-
-    getUserOrgUnitsFromIds = ids => {
-        return userOrgUnits.filter(ou => ids.includes(ou.id))
-    }
-
-    onLevelChange = event => {
-        const levelIds = event.target.value.filter(id => !!id)
-
-        this.props.onSelect({
-            dimensionId: DIMENSION_ID_ORGUNIT,
-            items: [
-                ...this.props.ouItems.filter(
-                    ou => !ouIdHelper.hasLevelPrefix(ou.id)
+        if (checked && DYNAMIC_ORG_UNITS.includes(id)) {
+            result = [
+                ...result.filter(
+                    item =>
+                        DYNAMIC_ORG_UNITS.includes(item.id) ||
+                        ouIdHelper.hasLevelPrefix(item.id) ||
+                        ouIdHelper.hasGroupPrefix(item.id)
                 ),
-                ...levelIds.map(id => {
-                    const levelOu = this.state.ouLevels.find(ou => ou.id === id)
-
-                    return {
-                        ...levelOu,
-                        id: ouIdHelper.addLevelPrefix(levelOu.id),
-                    }
-                }),
-            ],
-        })
-    }
-
-    onGroupChange = event => {
-        const groupIds = event.target.value.filter(id => !!id)
-
-        this.props.onSelect({
-            dimensionId: DIMENSION_ID_ORGUNIT,
-            items: [
-                ...this.props.ouItems.filter(
-                    ou => !ouIdHelper.hasGroupPrefix(ou.id)
-                ),
-                ...groupIds.map(id => {
-                    const groupOu = this.state.ouGroups.find(ou => ou.id === id)
-
-                    return {
-                        ...groupOu,
-                        id: ouIdHelper.addGroupPrefix(id),
-                    }
-                }),
-            ],
-        })
-    }
-
-    onDeselectAllClick = () =>
-        this.props.onDeselect({
-            dimensionId: DIMENSION_ID_ORGUNIT,
-            itemIdsToRemove: this.props.ouItems.map(ou => ou.id),
-        })
-
-    loadOrgUnitTree = (d2, displayNameProperty) => {
-        apiFetchOrganisationUnits(d2, displayNameProperty)
-            .then(rootLevel => rootLevel.toArray())
-            .then(roots => {
-                this.setState({
-                    roots,
-                    root: roots[0],
-                })
-            })
-    }
-
-    loadOrgUnitGroups = (d2, displayNameProperty) => {
-        apiFetchOrganisationUnitGroups(d2, displayNameProperty).then(
-            organisationUnitGroups =>
-                this.setState({ ouGroups: organisationUnitGroups })
-        )
-    }
-
-    loadOrgUnitLevels = d2 => {
-        apiFetchOrganisationUnitLevels(d2).then(organisationUnitLevels =>
-            this.setState({
-                ouLevels: sortBy(organisationUnitLevels, ['level']),
-            })
-        )
-    }
-
-    handleOrgUnitClick = (event, orgUnit) => {
-        const selected = this.props.ouItems
-
-        if (selected.some(ou => ou.path === orgUnit.path)) {
-            this.props.onDeselect({
-                dimensionId: DIMENSION_ID_ORGUNIT,
-                itemIdsToRemove: [orgUnit.id],
-            })
+                { id, displayName },
+            ]
+        } else if (checked) {
+            result.push({ id, path, name: displayName })
         } else {
-            this.props.onSelect({
-                dimensionId: DIMENSION_ID_ORGUNIT,
-                items: [
-                    ...selected,
-                    {
-                        ...orgUnit,
-                        name: orgUnit.name || orgUnit.displayName,
-                    },
-                ],
-            })
+            result = [...result.filter(item => item.id !== id)]
         }
+
+        onSelect({
+            dimensionId: DIMENSION_ID_ORGUNIT,
+            items: result,
+        })
     }
 
-    handleUserOrgUnitClick = (event, checked) => {
-        if (checked) {
-            if (!this.state.selected.length) {
-                this.setState({
-                    selected: this.props.ouItems.slice(),
-                })
-            }
+    const clearSelection = () =>
+        onSelect({
+            dimensionId: DIMENSION_ID_ORGUNIT,
+            items: [],
+        })
 
-            this.props.onSelect({
-                dimensionId: DIMENSION_ID_ORGUNIT,
-                items: [
-                    ...this.props.ouItems.filter(ou =>
-                        this.userOrgUnitIds.includes(ou.id)
+    useEffect(() => {
+        const doFetchOuLevels = async () => {
+            const result = await apiFetchOrganisationUnitLevels(dataEngine)
+            result.sort((a, b) => (a.level > b.level ? 1 : -1))
+            setOuLevels(result)
+        }
+        const doFetchOuGroups = async () => {
+            const result = await apiFetchOrganisationUnitGroups(dataEngine)
+            setOuGroups(result)
+        }
+
+        doFetchOuLevels()
+        doFetchOuGroups()
+    }, [dataEngine])
+
+    const onLevelChange = ids => {
+        const items = ids.map(id => ({
+            id: ouIdHelper.addLevelPrefix(id),
+            name: ouLevels.find(level => level.id === id).displayName,
+        }))
+
+        onSelect({
+            dimensionId: DIMENSION_ID_ORGUNIT,
+            items: [
+                ...selected.filter(ou => !ouIdHelper.hasLevelPrefix(ou.id)),
+                ...items,
+            ],
+        })
+    }
+
+    const onGroupChange = ids => {
+        const items = ids.map(id => ({
+            id: ouIdHelper.addGroupPrefix(id),
+            name: ouGroups.find(group => group.id === id).displayName,
+        }))
+
+        onSelect({
+            dimensionId: DIMENSION_ID_ORGUNIT,
+            items: [
+                ...selected.filter(ou => !ouIdHelper.hasGroupPrefix(ou.id)),
+                ...items,
+            ],
+        })
+    }
+
+    const getSummary = () => {
+        let summary
+        if (selected.length) {
+            const numberOfOrgUnits = selected.filter(
+                item =>
+                    !DYNAMIC_ORG_UNITS.includes(item.id) &&
+                    !ouIdHelper.hasLevelPrefix(item.id) &&
+                    !ouIdHelper.hasGroupPrefix(item.id)
+            ).length
+
+            const numberOfLevels = selected.filter(item =>
+                ouIdHelper.hasLevelPrefix(item.id)
+            ).length
+            const numberOfGroups = selected.filter(item =>
+                ouIdHelper.hasGroupPrefix(item.id)
+            ).length
+            const userOrgUnits = selected.filter(item =>
+                DYNAMIC_ORG_UNITS.includes(item.id)
+            )
+
+            const parts = []
+
+            if (numberOfOrgUnits) {
+                parts.push(
+                    i18n.t('{{count}} org units', {
+                        count: numberOfOrgUnits,
+                        defaultValue: '{{count}} org unit',
+                        defaultValue_plural: '{{count}} org units',
+                    })
+                )
+            }
+            if (numberOfLevels) {
+                parts.push(
+                    i18n.t('{{count}} levels', {
+                        count: numberOfLevels,
+                        defaultValue: '{{count}} level',
+                        defaultValue_plural: '{{count}} levels',
+                    })
+                )
+            }
+            if (numberOfGroups) {
+                parts.push(
+                    i18n.t('{{count}} groups', {
+                        count: numberOfGroups,
+                        defaultValue: '{{count}} group',
+                        defaultValue_plural: '{{count}} groups',
+                    })
+                )
+            }
+            userOrgUnits.forEach(orgUnit => {
+                parts.push(orgUnit.name || orgUnit.displayName)
+            })
+            summary = i18n.t(
+                'Selected: {{commaSeparatedListOfOrganisationUnits}}',
+                {
+                    keySeparator: '>',
+                    nsSeparator: '|',
+                    commaSeparatedListOfOrganisationUnits: formatList(parts),
+                }
+            )
+        } else {
+            summary = i18n.t('Nothing selected')
+        }
+
+        return summary
+    }
+
+    return (
+        <div className="container">
+            <div className="userOrgUnitsWrapper">
+                <Checkbox
+                    label={i18n.t('User organisation unit')}
+                    checked={selected.some(item => item.id === USER_ORG_UNIT)}
+                    onChange={({ checked }) =>
+                        onSelectItems({
+                            id: USER_ORG_UNIT,
+                            checked,
+                            displayName: i18n.t('User organisation unit'),
+                        })
+                    }
+                    dense
+                />
+                <Checkbox
+                    label={i18n.t('User sub-units')}
+                    checked={selected.some(
+                        item => item.id === USER_ORG_UNIT_CHILDREN
+                    )}
+                    onChange={({ checked }) =>
+                        onSelectItems({
+                            id: USER_ORG_UNIT_CHILDREN,
+                            checked,
+                            displayName: i18n.t('User sub-units'),
+                        })
+                    }
+                    dense
+                />
+                <Checkbox
+                    label={i18n.t('User sub-x2-units')}
+                    checked={selected.some(
+                        item => item.id === USER_ORG_UNIT_GRANDCHILDREN
+                    )}
+                    onChange={({ checked }) =>
+                        onSelectItems({
+                            id: USER_ORG_UNIT_GRANDCHILDREN,
+                            checked,
+                            displayName: i18n.t('User sub-x2-units'),
+                        })
+                    }
+                    dense
+                />
+            </div>
+            <div
+                className={cx('orgUnitTreeWrapper', {
+                    disabled: selected.some(item =>
+                        DYNAMIC_ORG_UNITS.includes(item.id)
                     ),
-                    userOrgUnits.find(ou => ou.id === event.target.name),
-                ],
-            })
-        } else {
-            if (
-                this.props.ouItems.length === 1 &&
-                this.state.selected.length > 0
-            ) {
-                this.props.onSelect({
-                    dimensionId: DIMENSION_ID_ORGUNIT,
-                    items: this.state.selected,
-                })
-            } else {
-                this.props.onDeselect({
-                    dimensionId: DIMENSION_ID_ORGUNIT,
-                    itemIdsToRemove: [event.target.name],
-                })
-            }
-        }
-    }
-
-    handleMultipleOrgUnitsSelect = orgUnits => {
-        const selected = this.props.ouItems
-
-        this.props.onSelect({
-            dimensionId: DIMENSION_ID_ORGUNIT,
-            items: [
-                ...selected,
-                ...orgUnits.reduce((obj, ou) => {
-                    // avoid duplicates when clicking "Select children" multiple times
-                    if (!selected.find(i => i.id === ou.id)) {
-                        obj.push({ ...ou, name: ou.name || ou.displayName })
+                })}
+            >
+                <OrganisationUnitTree
+                    roots={roots}
+                    initiallyExpanded={[
+                        ...(roots.length === 1 ? [`/${roots[0]}`] : []),
+                        ...selected
+                            .filter(
+                                item =>
+                                    !DYNAMIC_ORG_UNITS.includes(item.id) &&
+                                    !ouIdHelper.hasLevelPrefix(item.id) &&
+                                    !ouIdHelper.hasGroupPrefix(item.id)
+                            )
+                            .map(item =>
+                                item.path.substring(
+                                    0,
+                                    item.path.lastIndexOf('/')
+                                )
+                            )
+                            .filter(path => path),
+                    ]}
+                    selected={selected
+                        .filter(
+                            item =>
+                                !DYNAMIC_ORG_UNITS.includes(item.id) &&
+                                !ouIdHelper.hasLevelPrefix(item.id) &&
+                                !ouIdHelper.hasGroupPrefix(item.id)
+                        )
+                        .map(item => item.path)}
+                    onChange={onSelectItems}
+                    dataTest={'org-unit-tree'}
+                />
+            </div>
+            <div className="selectsWrapper">
+                <MultiSelect
+                    selected={
+                        ouLevels.length
+                            ? selected
+                                  .filter(item =>
+                                      ouIdHelper.hasLevelPrefix(item.id)
+                                  )
+                                  .map(item => ouIdHelper.removePrefix(item.id))
+                            : []
                     }
-
-                    return obj
-                }, []),
-            ],
-        })
-    }
-
-    render = () => {
-        const ids = this.props.ouItems.map(ou => ou.id)
-        const selected = this.props.ouItems.filter(
-            ou =>
-                !this.userOrgUnitIds.includes(ou.id) &&
-                !ouIdHelper.hasLevelPrefix(ou.id) &&
-                !ouIdHelper.hasGroupPrefix(ou.id)
-        )
-
-        const userOrgUnits = this.getUserOrgUnitsFromIds(ids)
-        const level = ids
-            .filter(ouIdHelper.hasLevelPrefix)
-            .map(ouIdHelper.removePrefix)
-        const group = ids
-            .filter(ouIdHelper.hasGroupPrefix)
-            .map(ouIdHelper.removePrefix)
-
-        return (
-            <Fragment>
-                {this.state.root && this.state.showOrgUnitsTree && (
-                    <OrgUnitSelector
-                        d2={this.props.d2}
-                        root={this.state.root}
-                        roots={this.state.roots}
-                        selected={selected}
-                        userOrgUnits={userOrgUnits}
-                        level={level}
-                        group={group}
-                        levelOptions={this.state.ouLevels}
-                        groupOptions={this.state.ouGroups}
-                        onLevelChange={this.onLevelChange}
-                        onGroupChange={this.onGroupChange}
-                        onDeselectAllClick={this.onDeselectAllClick}
-                        handleUserOrgUnitClick={this.handleUserOrgUnitClick}
-                        handleOrgUnitClick={this.handleOrgUnitClick}
-                        handleMultipleOrgUnitsSelect={
-                            this.handleMultipleOrgUnitsSelect
-                        }
-                        checkboxColor="secondary"
-                        deselectAllTooltipFontColor={colors.grey900}
-                        deselectAllTooltipBackgroundColor={colors.grey300}
-                        displayNameProperty={this.props.displayNameProperty}
-                        isUserDataViewFallback={true}
-                    />
-                )}
-                {!this.state.root && (
-                    <div className="loader">
-                        <CircularLoader />
-                    </div>
-                )}
-                <style jsx>{styles}</style>
-            </Fragment>
-        )
-    }
+                    onChange={({ selected }) => onLevelChange(selected)}
+                    placeholder={i18n.t('Select a level')}
+                    loading={!ouLevels.length}
+                    dense
+                    dataTest={'org-unit-level-select'}
+                >
+                    {ouLevels.map(level => (
+                        <MultiSelectOption
+                            key={level.id}
+                            value={level.id}
+                            label={level.displayName}
+                            dataTest={`org-unit-level-select-option-${level.id}`}
+                        />
+                    ))}
+                </MultiSelect>
+                <MultiSelect
+                    selected={
+                        ouGroups.length
+                            ? selected
+                                  .filter(item =>
+                                      ouIdHelper.hasGroupPrefix(item.id)
+                                  )
+                                  .map(item => ouIdHelper.removePrefix(item.id))
+                            : []
+                    }
+                    onChange={({ selected }) => onGroupChange(selected)}
+                    placeholder={i18n.t('Select a group')}
+                    loading={!ouGroups.length}
+                    dense
+                    dataTest={'org-unit-group-select'}
+                >
+                    {ouGroups.map(group => (
+                        <MultiSelectOption
+                            key={group.id}
+                            value={group.id}
+                            label={group.displayName}
+                            dataTest={`org-unit-group-select-option-${group.id}`}
+                        />
+                    ))}
+                </MultiSelect>
+            </div>
+            <div className="summaryWrapper">
+                <span className="summaryText">{getSummary()}</span>
+                <div className="deselectButton">
+                    <Button
+                        secondary
+                        small
+                        onClick={clearSelection}
+                        disabled={!selected.length}
+                    >
+                        {i18n.t('Deselect all')}
+                    </Button>
+                </div>
+            </div>
+            <style jsx>{styles}</style>
+        </div>
+    )
 }
-
 OrgUnitDimension.propTypes = {
-    current: PropTypes.object,
-    d2: PropTypes.object,
-    displayNameProperty: PropTypes.string,
-    ouItems: PropTypes.array,
-    onDeselect: PropTypes.func,
+    roots: PropTypes.arrayOf(PropTypes.string),
+    selected: PropTypes.arrayOf(
+        PropTypes.shape({
+            id: PropTypes.string.isRequired,
+            name: PropTypes.string.isRequired,
+            path: PropTypes.string,
+        })
+    ),
     onSelect: PropTypes.func,
 }
 

@@ -1,5 +1,10 @@
 import { getRelativePeriodIds } from '../../components/PeriodDimension/utils/relativePeriods'
-import { ouIdHelper } from '../ouIdHelper'
+import {
+    ouIdHelper,
+    USER_ORG_UNIT,
+    USER_ORG_UNIT_CHILDREN,
+    USER_ORG_UNIT_GRANDCHILDREN,
+} from '../ouIdHelper'
 import {
     DIMENSION_ID_ASSIGNED_CATEGORIES,
     DIMENSION_ID_ORGUNIT,
@@ -15,9 +20,9 @@ export const hasRelativeItems = (dimension, itemIds = []) =>
                 ouIdHelper.hasLevelPrefix(id) ||
                 ouIdHelper.hasGroupPrefix(id) ||
                 [
-                    'USER_ORGUNIT',
-                    'USER_ORGUNIT_CHILDREN',
-                    'USER_ORGUNIT_GRAND_CHILDREN',
+                    USER_ORG_UNIT,
+                    USER_ORG_UNIT_CHILDREN,
+                    USER_ORG_UNIT_GRANDCHILDREN,
                 ].includes(id)
         )) ||
     (dimension === DIMENSION_ID_PERIOD &&
