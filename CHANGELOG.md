@@ -1,3 +1,10 @@
+## [21.0.2](https://github.com/dhis2/analytics/compare/v21.0.1...v21.0.2) (2021-11-18)
+
+
+### Bug Fixes
+
+* file button styles ([67213b1](https://github.com/dhis2/analytics/commit/67213b1d0897bb245d012410d9085a726d59f8f8))
+
 ## [21.0.1](https://github.com/dhis2/analytics/compare/v21.0.0...v21.0.1) (2021-11-16)
 
 
