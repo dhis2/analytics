@@ -221,7 +221,7 @@ const AboutAOUnit = ({ type, id }) => {
                                             }
                                             secondary
                                             small
-                                            disabled={unsubscribeIsLoading}
+                                            loading={unsubscribeIsLoading}
                                             onClick={unsubscribe}
                                         >
                                             {i18n.t('Unsubscribe')}
@@ -242,7 +242,7 @@ const AboutAOUnit = ({ type, id }) => {
                                             }
                                             secondary
                                             small
-                                            disabled={subscribeIsLoading}
+                                            loading={subscribeIsLoading}
                                             onClick={subscribe}
                                         >
                                             {i18n.t('Subscribe')}
