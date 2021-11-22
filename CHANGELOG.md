@@ -1,3 +1,10 @@
+## [21.0.3](https://github.com/dhis2/analytics/compare/v21.0.2...v21.0.3) (2021-11-22)
+
+
+### Bug Fixes
+
+* use loading state instead of disabling subscribe button ([#1088](https://github.com/dhis2/analytics/issues/1088)) ([10f407b](https://github.com/dhis2/analytics/commit/10f407bfaf4aa016668b5591e663ccabfbf9f9f1))
+
 ## [21.0.2](https://github.com/dhis2/analytics/compare/v21.0.1...v21.0.2) (2021-11-18)
 
 
