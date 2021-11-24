@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-10-04T08:35:00.972Z\n"
+"POT-Creation-Date: 2021-11-12T14:52:40.534Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: Viktor Varland <viktor@dhis2.org>, 2021\n"
 "Language-Team: Arabic (https://www.transifex.com/hisp-uio/teams/100509/ar/)\n"
@@ -16,6 +16,60 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: ar\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+msgid "view only"
+msgstr ""
+
+msgid "view and edit"
+msgstr ""
+
+msgid "all users ({{accessLevel}})"
+msgstr ""
+
+msgid "{{userOrGroup}} ({{accessLevel}})"
+msgstr ""
+
+msgid "Shared with {{commaSeparatedListOfUsersAndGroups}}"
+msgstr ""
+
+msgid "Not shared with any users or groups"
+msgstr ""
+
+msgid "About this visualization"
+msgstr ""
+
+msgid "No description"
+msgstr ""
+
+msgid "Last updated {{time}}"
+msgstr ""
+
+msgid "Created {{time}} by {{author}}"
+msgstr ""
+
+msgid "Viewed {{count}} times"
+msgid_plural "Viewed {{count}} times"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
+msgstr[5] ""
+
+msgid "Notifications"
+msgstr ""
+
+msgid "You're subscribed and getting updates about new interpretations."
+msgstr ""
+
+msgid "Unsubscribe"
+msgstr ""
+
+msgid "Subscribe to get updates about new interpretations."
+msgstr ""
+
+msgid "Subscribe"
+msgstr ""
 
 msgid "Data Type"
 msgstr "نوع البيانات"
@@ -341,6 +395,57 @@ msgstr "إخفاء"
 
 msgid "Update"
 msgstr "تحديث"
+
+msgid "{{count}} org units"
+msgid_plural "{{count}} org units"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
+msgstr[5] ""
+
+msgid "{{count}} levels"
+msgid_plural "{{count}} levels"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
+msgstr[5] ""
+
+msgid "{{count}} groups"
+msgid_plural "{{count}} groups"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
+msgstr[5] ""
+
+msgid "Selected: {{commaSeparatedListOfOrganisationUnits}}"
+msgstr ""
+
+msgid "Nothing selected"
+msgstr ""
+
+msgid "User organisation unit"
+msgstr ""
+
+msgid "User sub-units"
+msgstr ""
+
+msgid "User sub-x2-units"
+msgstr ""
+
+msgid "Select a level"
+msgstr ""
+
+msgid "Select a group"
+msgstr ""
+
+msgid "Deselect all"
+msgstr ""
 
 msgid "Period type"
 msgstr "نوع الفترة الزمنية"
