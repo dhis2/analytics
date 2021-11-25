@@ -37,7 +37,7 @@ msgid "About this visualization"
 msgstr ""
 
 msgid "No description"
-msgstr ""
+msgstr "Tavsif yoʼq"
 
 msgid "Last updated {{time}}"
 msgstr ""
@@ -408,22 +408,22 @@ msgid "Nothing selected"
 msgstr ""
 
 msgid "User organisation unit"
-msgstr ""
+msgstr "Ташкилий бўлим фойдаланувчиси"
 
 msgid "User sub-units"
-msgstr ""
+msgstr "Фойдаланувчига бўйсунувчи бирликлар"
 
 msgid "User sub-x2-units"
-msgstr ""
+msgstr "Фойдаланувчига бўйсунувчи 2 даражали бирликлар"
 
 msgid "Select a level"
-msgstr ""
+msgstr "Pogʼonani tanlang"
 
 msgid "Select a group"
-msgstr ""
+msgstr "Guruhni tanlang"
 
 msgid "Deselect all"
-msgstr ""
+msgstr "Barcha tanlanganni bekor qilish"
 
 msgid "Period type"
 msgstr "Davr turi"

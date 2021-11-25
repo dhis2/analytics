@@ -38,7 +38,7 @@ msgid "About this visualization"
 msgstr ""
 
 msgid "No description"
-msgstr ""
+msgstr "Ingen beskrivning"
 
 msgid "Last updated {{time}}"
 msgstr ""
@@ -413,13 +413,13 @@ msgid "Nothing selected"
 msgstr ""
 
 msgid "User organisation unit"
-msgstr ""
+msgstr "Användare organisation enheter"
 
 msgid "User sub-units"
-msgstr ""
+msgstr "Användarunderenheter"
 
 msgid "User sub-x2-units"
-msgstr ""
+msgstr "Användarunder x2-enheter"
 
 msgid "Select a level"
 msgstr ""

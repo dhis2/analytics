@@ -38,7 +38,7 @@ msgid "About this visualization"
 msgstr ""
 
 msgid "No description"
-msgstr ""
+msgstr "Ingen beskrivelse"
 
 msgid "Last updated {{time}}"
 msgstr ""
@@ -52,7 +52,7 @@ msgstr[0] ""
 msgstr[1] ""
 
 msgid "Notifications"
-msgstr ""
+msgstr "Varsler"
 
 msgid "You're subscribed and getting updates about new interpretations."
 msgstr ""
@@ -413,22 +413,22 @@ msgid "Nothing selected"
 msgstr ""
 
 msgid "User organisation unit"
-msgstr ""
+msgstr "Brukerorganisasjonsenhet"
 
 msgid "User sub-units"
-msgstr ""
+msgstr "Underenheter"
 
 msgid "User sub-x2-units"
-msgstr ""
+msgstr "Under-x2-enheter"
 
 msgid "Select a level"
-msgstr ""
+msgstr "Velg et nivå"
 
 msgid "Select a group"
-msgstr ""
+msgstr "Velg en gruppe"
 
 msgid "Deselect all"
-msgstr ""
+msgstr "Fjern valg"
 
 msgid "Period type"
 msgstr "Periodetype"
