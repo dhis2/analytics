@@ -38,7 +38,7 @@ msgid "About this visualization"
 msgstr ""
 
 msgid "No description"
-msgstr ""
+msgstr "کوئی وضاحت نہیں"
 
 msgid "Last updated {{time}}"
 msgstr ""
@@ -413,13 +413,13 @@ msgid "Nothing selected"
 msgstr ""
 
 msgid "User organisation unit"
-msgstr ""
+msgstr "صارف تنظیم یونٹ"
 
 msgid "User sub-units"
-msgstr ""
+msgstr "صارف ذیلی یونٹس"
 
 msgid "User sub-x2-units"
-msgstr ""
+msgstr "صارف ذیلی X2-یونٹس"
 
 msgid "Select a level"
 msgstr ""
@@ -428,7 +428,7 @@ msgid "Select a group"
 msgstr ""
 
 msgid "Deselect all"
-msgstr ""
+msgstr "سب کو منتخب کریں"
 
 msgid "Period type"
 msgstr "مدت کی قسم"

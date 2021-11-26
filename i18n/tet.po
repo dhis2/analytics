@@ -412,10 +412,10 @@ msgid "User organisation unit"
 msgstr ""
 
 msgid "User sub-units"
-msgstr ""
+msgstr "Utilizador nia  sub-unidades"
 
 msgid "User sub-x2-units"
-msgstr ""
+msgstr "Utilizador nia sub-x2-unidades"
 
 msgid "Select a level"
 msgstr ""

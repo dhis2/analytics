@@ -1,16 +1,16 @@
 # 
 # Translators:
-# 晓东 林 <13981924470@126.com>, 2021
 # phil_dhis2, 2021
 # Viktor Varland <viktor@dhis2.org>, 2021
 # easylin <lin_xd@126.com>, 2021
+# 晓东 林 <13981924470@126.com>, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2021-11-12T14:52:40.534Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: easylin <lin_xd@126.com>, 2021\n"
+"Last-Translator: 晓东 林 <13981924470@126.com>, 2021\n"
 "Language-Team: Chinese (https://www.transifex.com/hisp-uio/teams/100509/zh/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -40,7 +40,7 @@ msgid "About this visualization"
 msgstr ""
 
 msgid "No description"
-msgstr ""
+msgstr "无描述"
 
 msgid "Last updated {{time}}"
 msgstr ""
@@ -53,7 +53,7 @@ msgid_plural "Viewed {{count}} times"
 msgstr[0] ""
 
 msgid "Notifications"
-msgstr ""
+msgstr "通知"
 
 msgid "You're subscribed and getting updates about new interpretations."
 msgstr ""
@@ -411,22 +411,22 @@ msgid "Nothing selected"
 msgstr ""
 
 msgid "User organisation unit"
-msgstr ""
+msgstr "用户所在机构"
 
 msgid "User sub-units"
-msgstr ""
+msgstr "我的下属机构"
 
 msgid "User sub-x2-units"
-msgstr ""
+msgstr "该用户2级下属机构"
 
 msgid "Select a level"
-msgstr ""
+msgstr "选择一个等级"
 
 msgid "Select a group"
-msgstr ""
+msgstr "选择一个组"
 
 msgid "Deselect all"
-msgstr ""
+msgstr "取消全选"
 
 msgid "Period type"
 msgstr "周期类型"

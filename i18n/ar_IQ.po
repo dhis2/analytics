@@ -37,7 +37,7 @@ msgid "About this visualization"
 msgstr ""
 
 msgid "No description"
-msgstr ""
+msgstr "لا يوجد وصف"
 
 msgid "Last updated {{time}}"
 msgstr ""
@@ -431,10 +431,10 @@ msgid "User organisation unit"
 msgstr ""
 
 msgid "User sub-units"
-msgstr ""
+msgstr "وحدات المستخدم الفرعية"
 
 msgid "User sub-x2-units"
-msgstr ""
+msgstr "وحدات المستخدم الفرعية من المستوى الثاني"
 
 msgid "Select a level"
 msgstr ""

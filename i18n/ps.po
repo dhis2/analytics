@@ -38,7 +38,7 @@ msgid "About this visualization"
 msgstr ""
 
 msgid "No description"
-msgstr ""
+msgstr "هېڅ ډول تشریح نه لري"
 
 msgid "Last updated {{time}}"
 msgstr ""
@@ -413,13 +413,13 @@ msgid "Nothing selected"
 msgstr ""
 
 msgid "User organisation unit"
-msgstr ""
+msgstr "کارکوڼکی واحدو سازمان"
 
 msgid "User sub-units"
-msgstr ""
+msgstr "واحد های فرعی استفاده کننده"
 
 msgid "User sub-x2-units"
-msgstr ""
+msgstr "واحد های نیم فرعی استفاده کننده"
 
 msgid "Select a level"
 msgstr ""
