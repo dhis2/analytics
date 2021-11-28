@@ -2,15 +2,15 @@
 # Translators:
 # phil_dhis2, 2021
 # Viktor Varland <viktor@dhis2.org>, 2021
-# easylin <lin_xd@126.com>, 2021
 # 晓东 林 <13981924470@126.com>, 2021
+# easylin <lin_xd@126.com>, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2021-11-12T14:52:40.534Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: 晓东 林 <13981924470@126.com>, 2021\n"
+"Last-Translator: easylin <lin_xd@126.com>, 2021\n"
 "Language-Team: Chinese (https://www.transifex.com/hisp-uio/teams/100509/zh/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -19,53 +19,53 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 msgid "view only"
-msgstr ""
+msgstr "只读"
 
 msgid "view and edit"
-msgstr ""
+msgstr "查看和编辑"
 
 msgid "all users ({{accessLevel}})"
-msgstr ""
+msgstr "所有用户 ({{accessLevel}})"
 
 msgid "{{userOrGroup}} ({{accessLevel}})"
-msgstr ""
+msgstr "{{userOrGroup}} ({{accessLevel}})"
 
 msgid "Shared with {{commaSeparatedListOfUsersAndGroups}}"
-msgstr ""
+msgstr "与 {{commaSeparatedListOfUsersAndGroups}} 共享"
 
 msgid "Not shared with any users or groups"
-msgstr ""
+msgstr "不与任何用户或组共享"
 
 msgid "About this visualization"
-msgstr ""
+msgstr "关于此可视化"
 
 msgid "No description"
 msgstr "无描述"
 
 msgid "Last updated {{time}}"
-msgstr ""
+msgstr "最后更新 {{time}}"
 
 msgid "Created {{time}} by {{author}}"
-msgstr ""
+msgstr "由 {{author}} 在 {{time}} 创建"
 
 msgid "Viewed {{count}} times"
 msgid_plural "Viewed {{count}} times"
-msgstr[0] ""
+msgstr[0] "查看了 {{count}} 次"
 
 msgid "Notifications"
 msgstr "通知"
 
 msgid "You're subscribed and getting updates about new interpretations."
-msgstr ""
+msgstr "您已订阅并获取有关新解释的更新。"
 
 msgid "Unsubscribe"
-msgstr ""
+msgstr "退订"
 
 msgid "Subscribe to get updates about new interpretations."
-msgstr ""
+msgstr "订阅以获取有关新解释的更新。"
 
 msgid "Subscribe"
-msgstr ""
+msgstr "订阅"
 
 msgid "Data Type"
 msgstr "数据类型"
@@ -394,21 +394,21 @@ msgstr "更新"
 
 msgid "{{count}} org units"
 msgid_plural "{{count}} org units"
-msgstr[0] ""
+msgstr[0] "{{count}} 个组织单位"
 
 msgid "{{count}} levels"
 msgid_plural "{{count}} levels"
-msgstr[0] ""
+msgstr[0] "{{count}} 级"
 
 msgid "{{count}} groups"
 msgid_plural "{{count}} groups"
-msgstr[0] ""
+msgstr[0] "{{count}} 组"
 
 msgid "Selected: {{commaSeparatedListOfOrganisationUnits}}"
-msgstr ""
+msgstr "已选择：{{commaSeparatedListOfOrganisationUnits}}"
 
 msgid "Nothing selected"
-msgstr ""
+msgstr "未选择任何内容"
 
 msgid "User organisation unit"
 msgstr "用户所在机构"

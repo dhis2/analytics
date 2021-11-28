@@ -16,56 +16,57 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n <= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;\n"
 
 msgid "view only"
-msgstr ""
+msgstr "pouze zobrazit"
 
 msgid "view and edit"
-msgstr ""
+msgstr "zobrazit a upravit"
 
 msgid "all users ({{accessLevel}})"
-msgstr ""
+msgstr "všichni uživatelé ({{accessLevel}})"
 
 msgid "{{userOrGroup}} ({{accessLevel}})"
-msgstr ""
+msgstr "{{userOrGroup}} ({{accessLevel}})"
 
 msgid "Shared with {{commaSeparatedListOfUsersAndGroups}}"
-msgstr ""
+msgstr "Sdíleno s {{commaSeparatedListOfUsersAndGroups}}"
 
 msgid "Not shared with any users or groups"
-msgstr ""
+msgstr "Nesdíleno s žádnými uživateli ani skupinami"
 
 msgid "About this visualization"
-msgstr ""
+msgstr "O této vizualizaci"
 
 msgid "No description"
 msgstr "Bez popisu"
 
 msgid "Last updated {{time}}"
-msgstr ""
+msgstr "Poslední aktualizace {{time}}"
 
 msgid "Created {{time}} by {{author}}"
-msgstr ""
+msgstr "Vytvořeno {{time}} uživatelem {{author}}"
 
 msgid "Viewed {{count}} times"
 msgid_plural "Viewed {{count}} times"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "Zobrazeno 1 krát"
+msgstr[1] "Zobrazeno {{count}}krát"
+msgstr[2] "Zobrazeno {{count}}krát"
+msgstr[3] "Zobrazeno {{count}}krát"
 
 msgid "Notifications"
 msgstr "Oznámení"
 
 msgid "You're subscribed and getting updates about new interpretations."
 msgstr ""
+"Jste přihlášeni k odběru a dostáváte aktualizace o nových interpretacích."
 
 msgid "Unsubscribe"
-msgstr ""
+msgstr "Odhlásit odběr"
 
 msgid "Subscribe to get updates about new interpretations."
-msgstr ""
+msgstr "Přihlaste se k odběru novinek o nových interpretacích."
 
 msgid "Subscribe"
-msgstr ""
+msgstr "Odebírat"
 
 msgid "Data Type"
 msgstr "Typ dat"
@@ -416,30 +417,30 @@ msgstr "Aktualizovat"
 
 msgid "{{count}} org units"
 msgid_plural "{{count}} org units"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "{{count}} organizační jednotka"
+msgstr[1] "{{count}} organizační jednotky"
+msgstr[2] "{{count}} organizačních jednotek"
+msgstr[3] "{{count}} organizačních jednotek"
 
 msgid "{{count}} levels"
 msgid_plural "{{count}} levels"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "{{count}} úroveň"
+msgstr[1] "{{count}} úrovně"
+msgstr[2] "{{count}} úrovní"
+msgstr[3] "{{count}} úrovní"
 
 msgid "{{count}} groups"
 msgid_plural "{{count}} groups"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "{{count}} skupina"
+msgstr[1] "{{count}} skupiny"
+msgstr[2] "{{count}} skupin"
+msgstr[3] "{{count}} skupin"
 
 msgid "Selected: {{commaSeparatedListOfOrganisationUnits}}"
-msgstr ""
+msgstr "Vybráno: {{commaSeparatedListOfOfOrganisationUnits}}"
 
 msgid "Nothing selected"
-msgstr ""
+msgstr "Není vybráno nic"
 
 msgid "User organisation unit"
 msgstr "Organizační jednotka uživatele"
