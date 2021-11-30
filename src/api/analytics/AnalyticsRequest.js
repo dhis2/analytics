@@ -57,7 +57,7 @@ class AnalyticsRequest extends AnalyticsRequestDimensionsMixin(
 
             request = request.addDimension(
                 dimension,
-                d.items.map(item => item.id)
+                d.items?.map(item => item.id)
             )
         })
 
@@ -72,11 +72,11 @@ class AnalyticsRequest extends AnalyticsRequestDimensionsMixin(
                 passFilterAsDimension && fixedIds.includes(f.dimension)
                     ? request.addDimension(
                           f.dimension,
-                          f.items.map(item => item.id)
+                          f.items?.map(item => item.id)
                       )
                     : request.addFilter(
                           f.dimension,
-                          f.items.map(item => item.id)
+                          f.items?.map(item => item.id)
                       )
         })
 
