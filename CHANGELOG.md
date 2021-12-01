@@ -1,3 +1,10 @@
+## [21.0.7](https://github.com/dhis2/analytics/compare/v21.0.6...v21.0.7) (2021-12-01)
+
+
+### Bug Fixes
+
+* dimension without items + filter (TECH-788) ([#1097](https://github.com/dhis2/analytics/issues/1097)) ([37369ce](https://github.com/dhis2/analytics/commit/37369ce74eb189724d0943d35492d377f0ff44f8))
+
 ## [21.0.6](https://github.com/dhis2/analytics/compare/v21.0.5...v21.0.6) (2021-11-28)
 
 
