@@ -116,10 +116,13 @@ const AnalyticsRequestDimensionsMixin = base =>
             if (existingDimension) {
                 this.dimensions.splice(dimensionIndex, 1, {
                     dimension,
-                    items: updatedItems,
+                    ...(items && { items: updatedItems }),
                 })
             } else {
-                this.dimensions.push({ dimension, items: updatedItems })
+                this.dimensions.push({
+                    dimension,
+                    ...(items && { items: updatedItems }),
+                })
             }
 
             return new AnalyticsRequest(this)

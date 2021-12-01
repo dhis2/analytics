@@ -158,7 +158,7 @@ describe('AnalyticsRequest', () => {
                 request.addDimension('Jtf34kNZhzP')
 
                 expect(request.dimensions).toEqual([
-                    { dimension: 'Jtf34kNZhzP', items: [] },
+                    { dimension: 'Jtf34kNZhzP' },
                 ])
             })
 
