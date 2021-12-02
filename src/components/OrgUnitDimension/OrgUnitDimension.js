@@ -41,12 +41,7 @@ const OrgUnitDimension = ({ roots, selected, onSelect }) => {
 
         if (checked && DYNAMIC_ORG_UNITS.includes(id)) {
             result = [
-                ...result.filter(
-                    item =>
-                        DYNAMIC_ORG_UNITS.includes(item.id) ||
-                        ouIdHelper.hasLevelPrefix(item.id) ||
-                        ouIdHelper.hasGroupPrefix(item.id)
-                ),
+                ...result.filter(item => DYNAMIC_ORG_UNITS.includes(item.id)),
                 { id, displayName },
             ]
         } else if (checked) {
@@ -261,7 +256,13 @@ const OrgUnitDimension = ({ roots, selected, onSelect }) => {
                     dataTest={'org-unit-tree'}
                 />
             </div>
-            <div className="selectsWrapper">
+            <div
+                className={cx('selectsWrapper', {
+                    disabled: selected.some(item =>
+                        DYNAMIC_ORG_UNITS.includes(item.id)
+                    ),
+                })}
+            >
                 <MultiSelect
                     selected={
                         ouLevels.length
