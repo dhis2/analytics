@@ -1,3 +1,10 @@
+## [21.0.8](https://github.com/dhis2/analytics/compare/v21.0.7...v21.0.8) (2021-12-02)
+
+
+### Bug Fixes
+
+* disable org unit filters and groups when user org units are used ([#1100](https://github.com/dhis2/analytics/issues/1100)) ([ce63e14](https://github.com/dhis2/analytics/commit/ce63e14517abfe5f7edc6f42b46c6e1dc07a3555))
+
 ## [21.0.7](https://github.com/dhis2/analytics/compare/v21.0.6...v21.0.7) (2021-12-01)
 
 
