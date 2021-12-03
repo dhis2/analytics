@@ -1,3 +1,10 @@
+## [21.0.9](https://github.com/dhis2/analytics/compare/v21.0.8...v21.0.9) (2021-12-03)
+
+
+### Bug Fixes
+
+* include legendset in the analytics request ([#1102](https://github.com/dhis2/analytics/issues/1102)) ([14d5261](https://github.com/dhis2/analytics/commit/14d52618c714cca1a2d7b3441a7aba5ea209efc2))
+
 ## [21.0.8](https://github.com/dhis2/analytics/compare/v21.0.7...v21.0.8) (2021-12-02)
 
 
