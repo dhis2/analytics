@@ -51,6 +51,10 @@ class AnalyticsRequest extends AnalyticsRequestDimensionsMixin(
         columns.concat(rows).forEach(d => {
             let dimension = d.dimension
 
+            if (d.legendSet?.id) {
+                dimension += `-${d.legendSet.id}`
+            }
+
             if (d.filter) {
                 dimension += `:${d.filter}`
             }
