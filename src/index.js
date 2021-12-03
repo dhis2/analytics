@@ -241,7 +241,7 @@ export {
 
 // Modules: pivotTable
 
-export { renderValue } from './modules/pivotTable/renderValue'
+export { renderValue as formatValue } from './modules/pivotTable/renderValue'
 
 // Utils: colorSets
 export {
