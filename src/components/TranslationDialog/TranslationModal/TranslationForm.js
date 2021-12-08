@@ -61,15 +61,15 @@ export const TranslationForm = ({
 
         const translationIndex = getTranslationIndexForField(field)
 
+        const updatedTranslations = [...newTranslations]
+
         if (translationIndex !== -1) {
-            newTranslations.splice(translationIndex, 1, newTranslation)
+            updatedTranslations.splice(translationIndex, 1, newTranslation)
         } else {
-            newTranslations.push(newTranslation)
+            updatedTranslations.push(newTranslation)
         }
 
-        setNewTranslations(newTranslations)
-
-        onUpdateTranslations(newTranslations)
+        setNewTranslations(updatedTranslations)
     }
 
     return (
