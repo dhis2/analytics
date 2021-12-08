@@ -1,4 +1,4 @@
-import { dimensionGetItems } from './dimensionGetItems'
+import { dimensionGetItems } from './dimensionGetItems.js'
 
 export const axisGetAllItems = (axis) =>
     axis.reduce((allItems, dimension) => {

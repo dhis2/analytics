@@ -1,4 +1,4 @@
-import getType from './type'
+import getType from './type.js'
 
 const DEFAULT_CHART = {
     spacingTop: 20,

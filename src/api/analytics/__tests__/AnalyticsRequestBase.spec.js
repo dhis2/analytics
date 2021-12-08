@@ -1,5 +1,5 @@
-import AnalyticsRequestBase from '../AnalyticsRequestBase'
-import { customEncodeURIComponent } from '../utils'
+import AnalyticsRequestBase from '../AnalyticsRequestBase.js'
+import { customEncodeURIComponent } from '../utils.js'
 
 jest.mock('../utils', () => ({
     customEncodeURIComponent: jest.fn((x) => `<${x}>`),

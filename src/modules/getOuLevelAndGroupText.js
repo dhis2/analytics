@@ -1,8 +1,8 @@
 import i18n from '../locales/index.js'
-import { dimensionGetItems } from './layout/dimensionGetItems'
-import { dimensionIs } from './layout/dimensionIs'
-import { ouIdHelper } from './ouIdHelper'
-import { DIMENSION_ID_ORGUNIT } from './predefinedDimensions'
+import { dimensionGetItems } from './layout/dimensionGetItems.js'
+import { dimensionIs } from './layout/dimensionIs.js'
+import { ouIdHelper } from './ouIdHelper/index.js'
+import { DIMENSION_ID_ORGUNIT } from './predefinedDimensions.js'
 
 export const getOuLevelAndGroupText = (filter, metaData) => {
     if (!dimensionIs(DIMENSION_ID_ORGUNIT)) {

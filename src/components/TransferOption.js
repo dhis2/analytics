@@ -2,7 +2,7 @@ import { Tooltip } from '@dhis2/ui'
 import cx from 'classnames'
 import PropTypes from 'prop-types'
 import React from 'react'
-import styles from './styles/TransferOption.style'
+import styles from './styles/TransferOption.style.js'
 
 export const TransferOption = ({
     disabled,

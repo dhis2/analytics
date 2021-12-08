@@ -10,11 +10,11 @@ import {
 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
-import { apiFetchOptions } from '../../api/dimensions'
-import DataElementIcon from '../../assets/DimensionItemIcons/DataElementIcon'
-import GenericIcon from '../../assets/DimensionItemIcons/GenericIcon'
+import { apiFetchOptions } from '../../api/dimensions.js'
+import DataElementIcon from '../../assets/DimensionItemIcons/DataElementIcon.js'
+import GenericIcon from '../../assets/DimensionItemIcons/GenericIcon.js'
 import i18n from '../../locales/index.js'
-import { DATA_SETS_CONSTANTS, REPORTING_RATE } from '../../modules/dataSets'
+import { DATA_SETS_CONSTANTS, REPORTING_RATE } from '../../modules/dataSets.js'
 import {
     ALL_ID,
     dataTypes,
@@ -27,17 +27,17 @@ import {
     TOTALS,
     PROGRAM_DATA_ELEMENT,
     PROGRAM_ATTRIBUTE,
-} from '../../modules/dataTypes'
+} from '../../modules/dataTypes.js'
 import {
     TRANSFER_HEIGHT,
     TRANSFER_OPTIONS_WIDTH,
     TRANSFER_SELECTED_WIDTH,
-} from '../../modules/dimensionSelectorHelper'
-import { useDebounce, useDidUpdateEffect } from '../../modules/utils'
-import styles from '../styles/DimensionSelector.style'
-import { TransferOption } from '../TransferOption'
-import DataTypeSelector from './DataTypesSelector'
-import GroupSelector from './GroupSelector'
+} from '../../modules/dimensionSelectorHelper.js'
+import { useDebounce, useDidUpdateEffect } from '../../modules/utils.js'
+import styles from '../styles/DimensionSelector.style.js'
+import { TransferOption } from '../TransferOption.js'
+import DataTypeSelector from './DataTypesSelector.js'
+import GroupSelector from './GroupSelector.js'
 
 const LeftHeader = ({
     searchTerm,

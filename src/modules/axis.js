@@ -1,12 +1,16 @@
 import i18n from '../locales/index.js'
-import { AXIS_ID_COLUMNS, AXIS_ID_ROWS, AXIS_ID_FILTERS } from './layout/axis'
+import {
+    AXIS_ID_COLUMNS,
+    AXIS_ID_ROWS,
+    AXIS_ID_FILTERS,
+} from './layout/axis.js'
 import {
     LAYOUT_TYPE_DEFAULT,
     LAYOUT_TYPE_PIE,
     LAYOUT_TYPE_YEAR_OVER_YEAR,
     LAYOUT_TYPE_PIVOT_TABLE,
     LAYOUT_TYPE_SCATTER,
-} from './layoutTypes'
+} from './layoutTypes.js'
 
 const getAxisNamesByLayoutType = (layoutType) => {
     switch (layoutType) {

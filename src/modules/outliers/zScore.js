@@ -1,6 +1,6 @@
 import { std, mean } from 'mathjs'
 import i18n from '../../locales/index.js'
-import { PROP_THRESHOLD_FACTOR } from './index'
+import { PROP_THRESHOLD_FACTOR } from './index.js'
 
 export const STANDARD_Z_SCORE = 'STANDARD_Z_SCORE'
 

@@ -1,20 +1,20 @@
 import { TabBar, Tab, Transfer } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
-import PeriodIcon from '../../assets/DimensionItemIcons/PeriodIcon' //TODO: Reimplement the icon
+import PeriodIcon from '../../assets/DimensionItemIcons/PeriodIcon.js' //TODO: Reimplement the icon.js
 import i18n from '../../locales/index.js'
 import {
     TRANSFER_HEIGHT,
     TRANSFER_OPTIONS_WIDTH,
     TRANSFER_SELECTED_WIDTH,
-} from '../../modules/dimensionSelectorHelper'
-import styles from '../styles/DimensionSelector.style'
-import { TransferOption } from '../TransferOption'
-import FixedPeriodFilter from './FixedPeriodFilter'
-import RelativePeriodFilter from './RelativePeriodFilter'
-import { getFixedPeriodsOptionsById } from './utils/fixedPeriods'
+} from '../../modules/dimensionSelectorHelper.js'
+import styles from '../styles/DimensionSelector.style.js'
+import { TransferOption } from '../TransferOption.js'
+import FixedPeriodFilter from './FixedPeriodFilter.js'
+import RelativePeriodFilter from './RelativePeriodFilter.js'
+import { getFixedPeriodsOptionsById } from './utils/fixedPeriods.js'
 import { MONTHLY, QUARTERLY } from './utils/index.js'
-import { getRelativePeriodsOptionsById } from './utils/relativePeriods'
+import { getRelativePeriodsOptionsById } from './utils/relativePeriods.js'
 
 const PeriodTransfer = ({
     onSelect,

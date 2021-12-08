@@ -1,10 +1,14 @@
 import isObject from 'lodash/isObject'
-import { AXIS_ID_COLUMNS, AXIS_ID_ROWS, AXIS_ID_FILTERS } from './layout/axis'
+import {
+    AXIS_ID_COLUMNS,
+    AXIS_ID_ROWS,
+    AXIS_ID_FILTERS,
+} from './layout/axis.js'
 import {
     DIMENSION_ID_DATA,
     DIMENSION_ID_ORGUNIT,
     DIMENSION_ID_PERIOD,
-} from './predefinedDimensions'
+} from './predefinedDimensions.js'
 import {
     VIS_TYPE_YEAR_OVER_YEAR_LINE,
     VIS_TYPE_YEAR_OVER_YEAR_COLUMN,
@@ -14,7 +18,7 @@ import {
     VIS_TYPE_PIVOT_TABLE,
     VIS_TYPE_SCATTER,
     isTwoCategoryChartType,
-} from './visTypes'
+} from './visTypes.js'
 
 export const getAdaptedUiLayoutByType = (layout, type) => {
     if (isTwoCategoryChartType(type) && layout.rows?.length > 1) {

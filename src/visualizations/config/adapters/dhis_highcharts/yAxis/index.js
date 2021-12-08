@@ -1,30 +1,30 @@
 import arrayClean from 'd2-utilizr/lib/arrayClean'
 import objectClean from 'd2-utilizr/lib/objectClean'
-import i18n from '../../../../../locales'
+import i18n from '../../../../../locales/index.js'
 import {
     FONT_STYLE_VERTICAL_AXIS_TITLE,
     mergeFontStyleWithDefault,
     TEXT_ALIGN_RIGHT,
-} from '../../../../../modules/fontStyle'
+} from '../../../../../modules/fontStyle.js'
 import {
     isDualAxisType,
     isStacked,
     VIS_TYPE_GAUGE,
     VIS_TYPE_SCATTER,
-} from '../../../../../modules/visTypes'
-import { getAxis } from '../../../../util/axes'
-import { getAxisStringFromId } from '../../../../util/axisId'
+} from '../../../../../modules/visTypes.js'
+import { getAxis } from '../../../../util/axes.js'
+import { getAxisStringFromId } from '../../../../util/axisId.js'
 import {
     getGridLineColor,
     getLabels,
     getMaxValue,
     getMinValue,
     getRegressionLine,
-} from '../axis'
-import { getAxisIdsMap } from '../customAxes'
-import getAxisTitle from '../getAxisTitle'
-import getSteps from '../getSteps'
-import getGauge from './gauge'
+} from '../axis.js'
+import { getAxisIdsMap } from '../customAxes.js'
+import getAxisTitle from '../getAxisTitle.js'
+import getSteps from '../getSteps.js'
+import getGauge from './gauge.js'
 
 const AXIS_TYPE_RANGE = 'RANGE'
 

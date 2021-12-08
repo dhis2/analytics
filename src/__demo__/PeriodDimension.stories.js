@@ -1,6 +1,6 @@
 import { storiesOf } from '@storybook/react'
 import React from 'react'
-import PeriodDimension from '../components/PeriodDimension/PeriodDimension'
+import PeriodDimension from '../components/PeriodDimension/PeriodDimension.js'
 import {
     MONTHLY,
     WEEKLY,
@@ -11,7 +11,7 @@ import {
     DAILY,
     BIWEEKLY,
     BIMONTHLY,
-} from '../components/PeriodDimension/utils'
+} from '../components/PeriodDimension/utils/index.js'
 
 const selectedPeriods = [{ id: 'LAST_12_MONTHS', name: 'Last 12 months' }]
 

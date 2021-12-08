@@ -1,4 +1,4 @@
-import { linear } from '../../visualizations/config/adapters/dhis_highcharts/addTrendLines'
+import { linear } from '../../visualizations/config/adapters/dhis_highcharts/addTrendLines.js'
 
 export const Y_RESIDUALS_LINEAR = 'Y_RESIDUALS_LINEAR'
 

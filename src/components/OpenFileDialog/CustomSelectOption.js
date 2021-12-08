@@ -1,7 +1,7 @@
 import cx from 'classnames'
 import PropTypes from 'prop-types'
 import React from 'react'
-import styles from './styles/CustomSelectOption.style'
+import styles from './styles/CustomSelectOption.style.js'
 
 export const CustomSelectOption = ({
     value,

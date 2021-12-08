@@ -2,9 +2,9 @@ import { SingleSelectField, SingleSelectOption } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
 import i18n from '../../locales/index.js'
-import { DATA_SETS_CONSTANTS } from '../../modules/dataSets'
-import { ALL_ID } from '../../modules/dataTypes'
-import styles from './styles/MetricSelector.style'
+import { DATA_SETS_CONSTANTS } from '../../modules/dataSets.js'
+import { ALL_ID } from '../../modules/dataTypes.js'
+import styles from './styles/MetricSelector.style.js'
 
 export const MetricSelector = ({ currentValue, onChange, dataTest }) => {
     return (

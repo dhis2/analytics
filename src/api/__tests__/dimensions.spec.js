@@ -1,4 +1,4 @@
-import { dimensionsQuery, apiFetchDimensions } from '../dimensions'
+import { dimensionsQuery, apiFetchDimensions } from '../dimensions.js'
 
 let mockDataEngine
 let mockQueryFn

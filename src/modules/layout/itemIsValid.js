@@ -1,4 +1,4 @@
-import { ITEM, ITEM_PROPS } from './item'
+import { ITEM, ITEM_PROPS } from './item.js'
 
 export const itemIsValid = (item) => {
     if (!ITEM.isValid(item)) {

@@ -1,11 +1,11 @@
 import { storiesOf } from '@storybook/react'
 import React from 'react'
-import DimensionsPanel from '../components/DimensionsPanel/DimensionsPanel'
+import DimensionsPanel from '../components/DimensionsPanel/DimensionsPanel.js'
 import {
     DIMENSION_ID_DATA,
     DIMENSION_ID_ORGUNIT,
     DIMENSION_ID_PERIOD,
-} from '../modules/predefinedDimensions'
+} from '../modules/predefinedDimensions.js'
 
 const fixedDimensions = [
     {

@@ -1,5 +1,5 @@
-import fixtures from '../../../__fixtures__/fixtures'
-import AnalyticsRequest from '../AnalyticsRequest'
+import fixtures from '../../../__fixtures__/fixtures.js'
+import AnalyticsRequest from '../AnalyticsRequest.js'
 
 let request
 let expectedParameters

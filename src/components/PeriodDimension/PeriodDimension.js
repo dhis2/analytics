@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import React from 'react'
-import { DIMENSION_ID_PERIOD } from '../../modules/predefinedDimensions'
-import PeriodTransfer from './PeriodTransfer'
+import { DIMENSION_ID_PERIOD } from '../../modules/predefinedDimensions.js'
+import PeriodTransfer from './PeriodTransfer.js'
 
 const PeriodDimension = ({
     onSelect,

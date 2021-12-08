@@ -1,7 +1,7 @@
 import { useMemo } from 'react'
-import { clipPartitionedAxis } from './clipPartitionedAxis'
-import { CLIPPED_AXIS_PARTITION_SIZE_PX } from './pivotTableConstants'
-import { useScrollPosition } from './useScrollPosition'
+import { clipPartitionedAxis } from './clipPartitionedAxis.js'
+import { CLIPPED_AXIS_PARTITION_SIZE_PX } from './pivotTableConstants.js'
+import { useScrollPosition } from './useScrollPosition.js'
 
 export const useTableClipping = ({ containerRef, width, height, engine }) => {
     const scrollPosition = useScrollPosition(containerRef)

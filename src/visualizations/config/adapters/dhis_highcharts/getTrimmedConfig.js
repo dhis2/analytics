@@ -1,7 +1,7 @@
 import arrayContains from 'd2-utilizr/lib/arrayContains'
 import arrayUnique from 'd2-utilizr/lib/arrayUnique'
-import { isTwoCategoryChartType } from '../../../../modules/visTypes'
-import getTwoCategorySplitSerieData from './getTwoCategorySplitSerieData'
+import { isTwoCategoryChartType } from '../../../../modules/visTypes.js'
+import getTwoCategorySplitSerieData from './getTwoCategorySplitSerieData.js'
 
 function arrayCleanUndefined(array) {
     return array.filter((item) => item !== undefined)

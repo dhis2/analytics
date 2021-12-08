@@ -2,12 +2,12 @@ import TranslationDialog from '@dhis2/d2-ui-translation-dialog'
 import { SharingDialog } from '@dhis2/ui'
 import { shallow } from 'enzyme'
 import React from 'react'
-import { OpenFileDialog } from '../../OpenFileDialog/OpenFileDialog'
-import { DeleteDialog } from '../DeleteDialog'
-import { FileMenu } from '../FileMenu'
-import { GetLinkDialog } from '../GetLinkDialog'
-import { RenameDialog } from '../RenameDialog'
-import { SaveAsDialog } from '../SaveAsDialog'
+import { OpenFileDialog } from '../../OpenFileDialog/OpenFileDialog.js'
+import { DeleteDialog } from '../DeleteDialog.js'
+import { FileMenu } from '../FileMenu.js'
+import { GetLinkDialog } from '../GetLinkDialog.js'
+import { RenameDialog } from '../RenameDialog.js'
+import { SaveAsDialog } from '../SaveAsDialog.js'
 
 describe('The FileMenu component ', () => {
     let shallowFileMenu

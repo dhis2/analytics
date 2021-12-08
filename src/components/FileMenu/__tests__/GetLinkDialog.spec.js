@@ -1,8 +1,8 @@
 import { Button, Modal } from '@dhis2/ui'
 import { shallow } from 'enzyme'
 import React from 'react'
-import { GetLinkDialog } from '../GetLinkDialog'
-import { appPathFor } from '../utils'
+import { GetLinkDialog } from '../GetLinkDialog.js'
+import { appPathFor } from '../utils.js'
 
 describe('The FileMenu - GetLinkDialog component', () => {
     let shallowGetLinkDialog

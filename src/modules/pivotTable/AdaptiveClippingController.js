@@ -1,8 +1,8 @@
-import { measureTextWithWrapping } from './measureText'
+import { measureTextWithWrapping } from './measureText.js'
 import {
     CLIPPED_AXIS_PARTITION_SIZE_PX,
     CLIPPED_CELL_MIN_SIZE,
-} from './pivotTableConstants'
+} from './pivotTableConstants.js'
 
 export class AdaptiveClippingController {
     columns

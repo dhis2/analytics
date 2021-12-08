@@ -1,4 +1,4 @@
-import { ITEM_PROP_ID } from './item'
+import { ITEM_PROP_ID } from './item.js'
 
 export const itemGetId = (item) =>
     ITEM_PROP_ID.isValid(item[ITEM_PROP_ID.name])

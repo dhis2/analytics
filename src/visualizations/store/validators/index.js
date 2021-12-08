@@ -1,4 +1,4 @@
-import dhis from './dhis'
+import dhis from './dhis/index.js'
 
 const noValidation = (data) => data
 

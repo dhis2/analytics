@@ -1,4 +1,4 @@
-import { isTwoCategoryChartType } from '../../../../modules/visTypes'
+import { isTwoCategoryChartType } from '../../../../modules/visTypes.js'
 
 export default function (series, layout) {
     if (isTwoCategoryChartType(layout.type) && layout.rows.length > 1) {

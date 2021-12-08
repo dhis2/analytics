@@ -1,6 +1,6 @@
 import numberDecimals from 'd2-utilizr/lib/numberDecimals'
-import { isTwoCategoryChartType } from '../../../../modules/visTypes'
-import getTwoCategorySplitSerieData from './getTwoCategorySplitSerieData'
+import { isTwoCategoryChartType } from '../../../../modules/visTypes.js'
+import getTwoCategorySplitSerieData from './getTwoCategorySplitSerieData.js'
 
 function getDefaultCumulativeData(series) {
     let decimals = 0

@@ -6,11 +6,11 @@ import {
     VIS_TYPE_PIE,
     VIS_TYPE_GAUGE,
     isTwoCategoryChartType,
-} from '../../../../modules/visTypes'
-import getGauge from './gauge'
-import getPie from './pie'
-import getTwoCategory from './twoCategory'
-import getYearOnYear from './yearOnYear'
+} from '../../../../modules/visTypes.js'
+import getGauge from './gauge.js'
+import getPie from './pie.js'
+import getTwoCategory from './twoCategory.js'
+import getYearOnYear from './yearOnYear.js'
 
 const VALUE_ID = 'value'
 

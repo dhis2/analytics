@@ -1,5 +1,5 @@
-import adapters from './adapters'
-import validators from './validators'
+import adapters from './adapters/index.js'
+import validators from './validators/index.js'
 
 export default function ({
     data,

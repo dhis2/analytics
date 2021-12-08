@@ -13,10 +13,10 @@ import {
     TEXT_ALIGN_CENTER,
     TEXT_ALIGN_RIGHT,
     mergeFontStyleWithDefault,
-} from '../../../../modules/fontStyle'
-import { isVerticalType } from '../../../../modules/visTypes'
-import getFormatter from './getFormatter'
-import { getTextAlignOption } from './getTextAlignOption'
+} from '../../../../modules/fontStyle.js'
+import { isVerticalType } from '../../../../modules/visTypes.js'
+import getFormatter from './getFormatter.js'
+import { getTextAlignOption } from './getTextAlignOption.js'
 
 const DEFAULT_MIN_VALUE = 0
 const DEFAULT_GRIDLINE_COLOR = '#F1F1F1'

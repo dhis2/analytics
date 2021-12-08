@@ -3,7 +3,7 @@ import {
     getFixedPeriodsOptions,
     parsePeriodCode,
     getYearOffsetFromNow,
-} from '../utils/fixedPeriods'
+} from '../utils/fixedPeriods.js'
 
 describe('fixedPeriods utils', () => {
     beforeAll(() =>

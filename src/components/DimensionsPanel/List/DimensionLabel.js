@@ -3,8 +3,8 @@ import React, { Component } from 'react'
 import {
     getPredefinedDimensionProp,
     DIMENSION_PROP_NO_ITEMS,
-} from '../../../modules/predefinedDimensions'
-import { styles } from './styles/DimensionLabel.style'
+} from '../../../modules/predefinedDimensions.js'
+import { styles } from './styles/DimensionLabel.style.js'
 
 class DimensionLabel extends Component {
     static propTypes = {

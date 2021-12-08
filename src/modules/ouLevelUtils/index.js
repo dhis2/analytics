@@ -1,8 +1,8 @@
-import { dimensionGetItems } from '../layout/dimensionGetItems'
-import { layoutGetDimension } from '../layout/layoutGetDimension'
-import { layoutReplaceDimension } from '../layout/layoutReplaceDimension'
-import { ouIdHelper } from '../ouIdHelper'
-import { DIMENSION_ID_ORGUNIT } from '../predefinedDimensions'
+import { dimensionGetItems } from '../layout/dimensionGetItems.js'
+import { layoutGetDimension } from '../layout/layoutGetDimension.js'
+import { layoutReplaceDimension } from '../layout/layoutReplaceDimension.js'
+import { ouIdHelper } from '../ouIdHelper/index.js'
+import { DIMENSION_ID_ORGUNIT } from '../predefinedDimensions.js'
 
 const isOuLevelIntId = (id) =>
     ouIdHelper.hasLevelPrefix(id)

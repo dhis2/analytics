@@ -1,5 +1,5 @@
-import { DIMENSION_PROP_ITEMS } from './dimension'
-import { dimensionIsValid } from './dimensionIsValid'
+import { DIMENSION_PROP_ITEMS } from './dimension.js'
+import { dimensionIsValid } from './dimensionIsValid.js'
 
 export const dimensionGetItems = (dimension) =>
     dimensionIsValid(dimension, { requireItems: true })

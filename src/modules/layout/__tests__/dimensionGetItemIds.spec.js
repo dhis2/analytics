@@ -1,7 +1,7 @@
-import { DIMENSION_PROP_ITEMS } from '../dimension'
-import { dimensionGetItemIds } from '../dimensionGetItemIds'
-import { ITEM_PROP_ID } from '../item'
-import { TEST_DIMENSION_1 } from '../testResources'
+import { DIMENSION_PROP_ITEMS } from '../dimension.js'
+import { dimensionGetItemIds } from '../dimensionGetItemIds.js'
+import { ITEM_PROP_ID } from '../item.js'
+import { TEST_DIMENSION_1 } from '../testResources.js'
 
 describe('dimensionGetItemIds', () => {
     it('should return the item ids in the dimension', () => {

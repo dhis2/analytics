@@ -1,6 +1,6 @@
-import { DIMENSION_PROP_ID, DIMENSION_PROP_ITEMS } from '../dimension'
-import { dimensionCreate } from '../dimensionCreate'
-import { TEST_DIMENSION_1 } from '../testResources'
+import { DIMENSION_PROP_ID, DIMENSION_PROP_ITEMS } from '../dimension.js'
+import { dimensionCreate } from '../dimensionCreate.js'
+import { TEST_DIMENSION_1 } from '../testResources.js'
 
 describe('dimensionCreate', () => {
     it('should return the created dimension', () => {

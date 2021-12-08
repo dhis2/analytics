@@ -1,5 +1,5 @@
-import { AXIS } from './axis'
-import { dimensionIs } from './dimensionIs'
+import { AXIS } from './axis.js'
+import { dimensionIs } from './dimensionIs.js'
 
 export const axisGetDimension = (axis, dimensionId) =>
     AXIS.isValid(axis) &&

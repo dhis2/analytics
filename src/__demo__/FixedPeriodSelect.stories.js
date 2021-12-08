@@ -1,6 +1,6 @@
 import { storiesOf } from '@storybook/react'
 import React, { useState } from 'react'
-import FixedPeriodSelect from '../components/PeriodDimension/FixedPeriodSelect'
+import FixedPeriodSelect from '../components/PeriodDimension/FixedPeriodSelect.js'
 
 storiesOf('FixedPeriodSelect', module).add('No value', () => {
     const [value, setValue] = useState()

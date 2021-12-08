@@ -2,7 +2,7 @@ import {
     CLIPPED_CELL_MAX_SIZE,
     WRAPPED_TEXT_JUSTIFY_BUFFER,
     WRAPPED_TEXT_LINE_HEIGHT,
-} from './pivotTableConstants'
+} from './pivotTableConstants.js'
 
 let canvas
 

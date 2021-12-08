@@ -5,9 +5,12 @@ import {
     VIS_TYPE_GAUGE,
     VIS_TYPE_PIE,
     isTwoCategoryChartType,
-} from '../../../../modules/visTypes'
-import { colorSets, COLOR_SET_PATTERNS } from '../../../util/colors/colorSets'
-import getStackedData from './getStackedData'
+} from '../../../../modules/visTypes.js'
+import {
+    colorSets,
+    COLOR_SET_PATTERNS,
+} from '../../../util/colors/colorSets.js'
+import getStackedData from './getStackedData.js'
 
 const DEFAULT_TRENDLINE = {
     type: 'spline',

@@ -1,4 +1,4 @@
-import { DIMENSION, DIMENSION_PROP_ITEMS } from './dimension'
+import { DIMENSION, DIMENSION_PROP_ITEMS } from './dimension.js'
 
 export const dimensionIsEmpty = (dimension) =>
     !(

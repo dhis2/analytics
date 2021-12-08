@@ -1,6 +1,6 @@
 /* eslint no-console: 0 */
 
-import AnalyticsRequest from './AnalyticsRequest'
+import AnalyticsRequest from './AnalyticsRequest.js'
 
 /**
  * @private

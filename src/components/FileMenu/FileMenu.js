@@ -19,13 +19,13 @@ import {
 import PropTypes from 'prop-types'
 import React, { createRef, useState } from 'react'
 import i18n from '../../locales/index.js'
-import { OpenFileDialog } from '../OpenFileDialog/OpenFileDialog'
-import { DeleteDialog } from './DeleteDialog'
-import { fileMenuStyles } from './FileMenu.styles'
-import { GetLinkDialog } from './GetLinkDialog'
-import { RenameDialog } from './RenameDialog'
-import { SaveAsDialog } from './SaveAsDialog'
-import { supportedFileTypes } from './utils'
+import { OpenFileDialog } from '../OpenFileDialog/OpenFileDialog.js'
+import { DeleteDialog } from './DeleteDialog.js'
+import { fileMenuStyles } from './FileMenu.styles.js'
+import { GetLinkDialog } from './GetLinkDialog.js'
+import { RenameDialog } from './RenameDialog.js'
+import { SaveAsDialog } from './SaveAsDialog.js'
+import { supportedFileTypes } from './utils.js'
 
 export const FileMenu = ({
     d2, // to be removed as soon as TranslateDialog and FavoritesDialog are rewritten

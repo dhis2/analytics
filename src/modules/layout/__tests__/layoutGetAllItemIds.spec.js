@@ -1,6 +1,6 @@
-import { ITEM_PROP_ID } from '../item'
-import { layoutGetAllItemIds } from '../layoutGetAllItemIds'
-import { TEST_LAYOUT, TEST_ITEMS_IN_LAYOUT } from '../testResources'
+import { ITEM_PROP_ID } from '../item.js'
+import { layoutGetAllItemIds } from '../layoutGetAllItemIds.js'
+import { TEST_LAYOUT, TEST_ITEMS_IN_LAYOUT } from '../testResources.js'
 
 describe('layoutGetAllItemIds', () => {
     it('should return all item ids in the layout', () => {

@@ -4,9 +4,9 @@ import i18n from '../../../locales/index.js'
 import {
     getPredefinedDimensions,
     getFixedDimensions,
-} from '../../../modules/predefinedDimensions'
-import DimensionItem from './DimensionItem'
-import styles from './styles/DimensionList.style'
+} from '../../../modules/predefinedDimensions.js'
+import DimensionItem from './DimensionItem.js'
+import styles from './styles/DimensionList.style.js'
 
 class DimensionList extends Component {
     nameContainsFilterText = (dimension) =>

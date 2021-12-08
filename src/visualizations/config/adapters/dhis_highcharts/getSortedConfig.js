@@ -1,8 +1,8 @@
 import arrayPluck from 'd2-utilizr/lib/arrayPluck'
 import arraySort from 'd2-utilizr/lib/arraySort'
-import { isTwoCategoryChartType } from '../../../../modules/visTypes'
-import getStackedData from './getStackedData'
-import getTwoCategorySplitSerieData from './getTwoCategorySplitSerieData'
+import { isTwoCategoryChartType } from '../../../../modules/visTypes.js'
+import getStackedData from './getStackedData.js'
+import getTwoCategorySplitSerieData from './getTwoCategorySplitSerieData.js'
 
 const sortOrderMap = new Map([
     [-1, 'ASC'],

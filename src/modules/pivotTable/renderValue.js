@@ -2,7 +2,7 @@ import {
     NUMBER_TYPE_ROW_PERCENTAGE,
     NUMBER_TYPE_COLUMN_PERCENTAGE,
     VALUE_TYPE_NUMBER,
-} from './pivotTableConstants'
+} from './pivotTableConstants.js'
 
 const trimTrailingZeros = (stringValue) => stringValue.replace(/\.?0+$/, '')
 

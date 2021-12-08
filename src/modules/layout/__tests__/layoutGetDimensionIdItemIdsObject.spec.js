@@ -1,7 +1,7 @@
-import { DIMENSION_PROP_ID, DIMENSION_PROP_ITEMS } from '../dimension'
-import { ITEM_PROP_ID } from '../item'
-import { layoutGetDimensionIdItemIdsObject } from '../layoutGetDimensionIdItemIdsObject'
-import { TEST_LAYOUT, TEST_DIMENSIONS_IN_LAYOUT } from '../testResources'
+import { DIMENSION_PROP_ID, DIMENSION_PROP_ITEMS } from '../dimension.js'
+import { ITEM_PROP_ID } from '../item.js'
+import { layoutGetDimensionIdItemIdsObject } from '../layoutGetDimensionIdItemIdsObject.js'
+import { TEST_LAYOUT, TEST_DIMENSIONS_IN_LAYOUT } from '../testResources.js'
 
 describe('layoutGetDimensionIdItemIdsObject', () => {
     it('should return a dimensionId:[itemdIds] object based on the layout', () => {

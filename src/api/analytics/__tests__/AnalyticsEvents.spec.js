@@ -1,7 +1,7 @@
-import fixtures from '../../../__fixtures__/fixtures'
-import DataEngineMock from '../__mocks__/DataEngine'
-import AnalyticsEvents from '../AnalyticsEvents'
-import AnalyticsRequest from '../AnalyticsRequest'
+import fixtures from '../../../__fixtures__/fixtures.js'
+import DataEngineMock from '../__mocks__/DataEngine.js'
+import AnalyticsEvents from '../AnalyticsEvents.js'
+import AnalyticsRequest from '../AnalyticsRequest.js'
 
 describe('analytics.events', () => {
     let events

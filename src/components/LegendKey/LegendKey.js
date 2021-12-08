@@ -1,7 +1,7 @@
 import cx from 'classnames'
 import PropTypes from 'prop-types'
 import React from 'react'
-import styles from './styles/LegendKey.style'
+import styles from './styles/LegendKey.style.js'
 
 const LegendKey = ({ legendSets }) => {
     return legendSets.length ? (

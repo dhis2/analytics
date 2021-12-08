@@ -10,7 +10,7 @@ import {
 import PropTypes from 'prop-types'
 import React, { useMemo } from 'react'
 import i18n from '../../locales/index.js'
-import { supportedFileTypes, endpointFromFileType } from './utils'
+import { supportedFileTypes, endpointFromFileType } from './utils.js'
 
 const getMutation = (type) => ({
     resource: endpointFromFileType(type),

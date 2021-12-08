@@ -1,7 +1,7 @@
 import { DataProvider } from '@dhis2/app-runtime'
 import { storiesOf } from '@storybook/react'
 import React, { useState } from 'react'
-import OrgUnitDimension from '../components/OrgUnitDimension/OrgUnitDimension'
+import OrgUnitDimension from '../components/OrgUnitDimension/OrgUnitDimension.js'
 
 const Wrapper = (story) => (
     <DataProvider baseUrl="http://localhost:8080/" apiVersion="">

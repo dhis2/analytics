@@ -1,8 +1,8 @@
-import { getOuLevelAndGroupText } from '../../modules/getOuLevelAndGroupText'
-import { dimensionGetItems } from '../../modules/layout/dimensionGetItems'
-import { dimensionIs } from '../../modules/layout/dimensionIs'
-import { ouIdHelper } from '../../modules/ouIdHelper'
-import { DIMENSION_ID_ORGUNIT } from '../../modules/predefinedDimensions'
+import { getOuLevelAndGroupText } from '../../modules/getOuLevelAndGroupText.js'
+import { dimensionGetItems } from '../../modules/layout/dimensionGetItems.js'
+import { dimensionIs } from '../../modules/layout/dimensionIs.js'
+import { ouIdHelper } from '../../modules/ouIdHelper/index.js'
+import { DIMENSION_ID_ORGUNIT } from '../../modules/predefinedDimensions.js'
 
 export default function (filters, metaData) {
     if (!Array.isArray(filters) || !filters.length) {

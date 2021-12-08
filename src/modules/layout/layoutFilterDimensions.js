@@ -1,5 +1,5 @@
-import { AXIS, DEFAULT_AXIS_IDS } from './axis'
-import { dimensionGetId } from './dimensionGetId'
+import { AXIS, DEFAULT_AXIS_IDS } from './axis.js'
+import { dimensionGetId } from './dimensionGetId.js'
 
 export const layoutFilterDimensions = (layout, dimensionIds) => {
     const idArray = Array.isArray(dimensionIds) ? dimensionIds : [dimensionIds]

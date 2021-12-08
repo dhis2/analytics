@@ -9,7 +9,7 @@ import {
 import PropTypes from 'prop-types'
 import React from 'react'
 import i18n from '../../locales/index.js'
-import { supportedFileTypes, appPathFor } from './utils'
+import { supportedFileTypes, appPathFor } from './utils.js'
 
 export const GetLinkDialog = ({ type, id, onClose }) => {
     const { baseUrl } = useConfig()

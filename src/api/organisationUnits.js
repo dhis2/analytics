@@ -1,4 +1,4 @@
-import { onError } from './index'
+import { onError } from './index.js'
 
 const orgUnitLevelsQuery = {
     resource: 'organisationUnitLevels',

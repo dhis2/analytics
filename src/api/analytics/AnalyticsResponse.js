@@ -1,4 +1,4 @@
-import AnalyticsResponseHeader from './AnalyticsResponseHeader'
+import AnalyticsResponseHeader from './AnalyticsResponseHeader.js'
 
 const booleanMap = {
     0: 'No', // XXX i18n.no || 'No',

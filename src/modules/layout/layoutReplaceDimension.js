@@ -1,6 +1,6 @@
-import { DEFAULT_AXIS_IDS } from './axis'
-import { axisHasDimension } from './axisHasDimension'
-import { dimensionIs } from './dimensionIs'
+import { DEFAULT_AXIS_IDS } from './axis.js'
+import { axisHasDimension } from './axisHasDimension.js'
+import { dimensionIs } from './dimensionIs.js'
 
 export const layoutReplaceDimension = (layout, dimensionId, items) => {
     const axisId = DEFAULT_AXIS_IDS.find((a) =>

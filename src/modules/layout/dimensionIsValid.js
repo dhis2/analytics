@@ -1,5 +1,5 @@
-import { DIMENSION, DIMENSION_PROPS } from './dimension'
-import { dimensionIsEmpty } from './dimensionIsEmpty'
+import { DIMENSION, DIMENSION_PROPS } from './dimension.js'
+import { dimensionIsEmpty } from './dimensionIsEmpty.js'
 
 export const dimensionIsValid = (dimension, { requireItems } = {}) => {
     if (!DIMENSION.isValid(dimension)) {

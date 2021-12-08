@@ -1,7 +1,7 @@
 import { Button, Modal, ModalTitle } from '@dhis2/ui'
 import { shallow } from 'enzyme'
 import React from 'react'
-import { DeleteDialog } from '../DeleteDialog'
+import { DeleteDialog } from '../DeleteDialog.js'
 
 describe('The FileMenu - DeleteDialog component', () => {
     let shallowDeleteDialog

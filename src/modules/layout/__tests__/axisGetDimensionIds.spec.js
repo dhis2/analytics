@@ -1,7 +1,7 @@
-import { AXIS } from '../axis'
-import { axisGetDimensionIds } from '../axisGetDimensionIds'
-import { DIMENSION_PROP_ID } from '../dimension'
-import { TEST_AXIS_COLUMNS, TEST_AXIS_ROWS } from '../testResources'
+import { AXIS } from '../axis.js'
+import { axisGetDimensionIds } from '../axisGetDimensionIds.js'
+import { DIMENSION_PROP_ID } from '../dimension.js'
+import { TEST_AXIS_COLUMNS, TEST_AXIS_ROWS } from '../testResources.js'
 
 describe('axisGetDimensionIds', () => {
     it('should return the id of the dimensions in the axis', () => {

@@ -1,7 +1,7 @@
 import times from 'lodash/times'
-import { DIMENSION_ID_ORGUNIT } from '../predefinedDimensions'
+import { DIMENSION_ID_ORGUNIT } from '../predefinedDimensions.js'
 import { AdaptiveClippingController } from './AdaptiveClippingController.js'
-import { parseValue } from './parseValue'
+import { parseValue } from './parseValue.js'
 import {
     AGGREGATE_TYPE_NA,
     AGGREGATE_TYPE_AVERAGE,
@@ -32,8 +32,8 @@ import {
     DIMENSION_TYPE_PERIOD,
     VALUE_TYPE_TEXT,
     NUMBER_TYPE_VALUE,
-} from './pivotTableConstants'
-import { renderValue } from './renderValue'
+} from './pivotTableConstants.js'
+import { renderValue } from './renderValue.js'
 
 const dataFields = [
     'value',

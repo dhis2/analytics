@@ -1,6 +1,6 @@
-import { filterPeriodTypesById } from '../utils'
-import { getFixedPeriodsOptions } from '../utils/fixedPeriods'
-import { getRelativePeriodsOptions } from '../utils/relativePeriods'
+import { getFixedPeriodsOptions } from '../utils/fixedPeriods.js'
+import { filterPeriodTypesById } from '../utils/index.js'
+import { getRelativePeriodsOptions } from '../utils/relativePeriods.js'
 
 describe('utils', () => {
     describe('filterPeriodTypesById', () => {

@@ -2,16 +2,16 @@ import { MenuDivider, FlyoutMenu, MenuItem, Tooltip } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
 import i18n from '../locales/index.js'
-import { getAxisNameByLayoutType } from '../modules/axis'
-import { AXIS_ID_FILTERS } from '../modules/layout/axis'
-import { getAvailableAxes } from '../modules/layoutUiRules'
+import { getAxisNameByLayoutType } from '../modules/axis.js'
+import { AXIS_ID_FILTERS } from '../modules/layout/axis.js'
+import { getAvailableAxes } from '../modules/layoutUiRules/index.js'
 import {
     DIMENSION_ID_DATA,
     getPredefinedDimensionProp,
     DIMENSION_PROP_NO_ITEMS,
-} from '../modules/predefinedDimensions'
-import { getDisplayNameByVisType } from '../modules/visTypes'
-import { getLayoutTypeByVisType } from '../modules/visTypeToLayoutType'
+} from '../modules/predefinedDimensions.js'
+import { getDisplayNameByVisType } from '../modules/visTypes.js'
+import { getLayoutTypeByVisType } from '../modules/visTypeToLayoutType.js'
 
 const getAxisItemLabel = (axisName, isDimensionInLayout) =>
     isDimensionInLayout

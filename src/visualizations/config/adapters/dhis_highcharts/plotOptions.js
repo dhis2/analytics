@@ -5,7 +5,7 @@ import {
     VIS_TYPE_STACKED_COLUMN,
     VIS_TYPE_BAR,
     VIS_TYPE_STACKED_BAR,
-} from '../../../../modules/visTypes'
+} from '../../../../modules/visTypes.js'
 
 const MAX_LABELS = 10
 

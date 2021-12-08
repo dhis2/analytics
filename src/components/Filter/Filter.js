@@ -1,7 +1,7 @@
 import { InputField } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
-import styles from './styles/Filter.style'
+import styles from './styles/Filter.style.js'
 
 const Filter = ({ text, onChange, onClear, placeholder, type, dataTest }) => (
     <div className="container">

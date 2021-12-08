@@ -3,11 +3,14 @@ import {
     getMaxNumberOfDimsPerAxisByVisType,
     getMinNumberOfDimsPerAxisByVisType,
     getLockedDimsByVisType,
-} from './rules'
+} from './rules.js'
 
 // Selectors
 
-export { getAvailableAxesByVisType, getDisallowedDimsByVisType } from './rules'
+export {
+    getAvailableAxesByVisType,
+    getDisallowedDimsByVisType,
+} from './rules.js'
 
 export const getAxisMaxNumberOfItemsByVisType = (visType, axisId) =>
     getMaxNumberOfItemsPerAxisByVisType(visType)[axisId]

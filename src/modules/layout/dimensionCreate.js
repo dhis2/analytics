@@ -2,7 +2,7 @@ import {
     DIMENSION_PROP_ID,
     DIMENSION_PROP_ITEMS,
     DIMENSION_PROP_FILTER,
-} from './dimension'
+} from './dimension.js'
 
 export const dimensionCreate = (dimensionId, itemIds = [], args = {}) => {
     const dimension = {

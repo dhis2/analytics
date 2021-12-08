@@ -1,4 +1,4 @@
-import { VIS_TYPE_SINGLE_VALUE } from '../../../../modules/visTypes'
+import { VIS_TYPE_SINGLE_VALUE } from '../../../../modules/visTypes.js'
 
 export default function (type) {
     switch (type) {

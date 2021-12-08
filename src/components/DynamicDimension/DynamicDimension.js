@@ -2,10 +2,10 @@ import { useDataEngine } from '@dhis2/app-runtime'
 import { Radio, Field } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
-import { apiFetchItemsByDimension } from '../../api/dimensions'
+import { apiFetchItemsByDimension } from '../../api/dimensions.js'
 import i18n from '../../locales/index.js'
-import ItemSelector from './ItemSelector'
-import styles from './styles/DynamicDimension.style'
+import ItemSelector from './ItemSelector.js'
+import styles from './styles/DynamicDimension.style.js'
 
 export const ALL_DYNAMIC_DIMENSION_ITEMS = 'ALL_ITEMS'
 

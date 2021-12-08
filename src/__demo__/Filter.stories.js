@@ -1,6 +1,6 @@
 import { storiesOf } from '@storybook/react'
 import React, { useState } from 'react'
-import Filter from '../components/Filter/Filter'
+import Filter from '../components/Filter/Filter.js'
 
 function FilterWithState() {
     const [text, setText] = useState(null)

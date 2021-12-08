@@ -1,4 +1,4 @@
-import AnalyticsResponseHeader from '../AnalyticsResponseHeader'
+import AnalyticsResponseHeader from '../AnalyticsResponseHeader.js'
 
 let responseHeader
 let expectedResponseHeader

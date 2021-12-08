@@ -1,5 +1,5 @@
-import { VIS_TYPE_SINGLE_VALUE } from '../../../../modules/visTypes'
-import getSingleValue from './singleValue'
+import { VIS_TYPE_SINGLE_VALUE } from '../../../../modules/visTypes.js'
+import getSingleValue from './singleValue.js'
 
 const VALUE_ID = 'value'
 

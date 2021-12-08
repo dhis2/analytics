@@ -2,8 +2,8 @@ import { SingleSelectField, SingleSelectOption } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
 import i18n from '../../locales/index.js'
-import { ALL_ID, dataTypes } from '../../modules/dataTypes'
-import styles from './styles/DataTypesSelector.style'
+import { ALL_ID, dataTypes } from '../../modules/dataTypes.js'
+import styles from './styles/DataTypesSelector.style.js'
 
 const DataTypes = ({ currentDataType, onChange, dataTest }) => (
     <div className="container">

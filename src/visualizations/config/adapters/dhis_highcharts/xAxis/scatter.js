@@ -3,18 +3,18 @@ import objectClean from 'd2-utilizr/lib/objectClean'
 import {
     FONT_STYLE_VERTICAL_AXIS_TITLE,
     mergeFontStyleWithDefault,
-} from '../../../../../modules/fontStyle'
-import { getAxis } from '../../../../util/axes'
-import { getAxisStringFromId } from '../../../../util/axisId'
+} from '../../../../../modules/fontStyle.js'
+import { getAxis } from '../../../../util/axes.js'
+import { getAxisStringFromId } from '../../../../util/axisId.js'
 import {
     getGridLineColor,
     getLabels,
     getMinValue,
     getMaxValue,
     getRegressionLine,
-} from '../axis'
-import getAxisTitle from '../getAxisTitle'
-import getSteps from '../getSteps'
+} from '../axis.js'
+import getAxisTitle from '../getAxisTitle.js'
+import getSteps from '../getSteps.js'
 
 const AXIS_TYPE = 'RANGE'
 const AXIS_INDEX = 1

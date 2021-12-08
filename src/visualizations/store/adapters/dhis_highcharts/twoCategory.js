@@ -1,4 +1,4 @@
-import getTwoCategorySplitSerieData from '../../../config/adapters/dhis_highcharts/getTwoCategorySplitSerieData'
+import getTwoCategorySplitSerieData from '../../../config/adapters/dhis_highcharts/getTwoCategorySplitSerieData.js'
 
 // 1 series, 2 categories
 export default function (acc, series, categories, idValueMap, metaData) {

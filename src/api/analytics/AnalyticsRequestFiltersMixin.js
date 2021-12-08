@@ -1,4 +1,4 @@
-import AnalyticsRequest from './AnalyticsRequest'
+import AnalyticsRequest from './AnalyticsRequest.js'
 
 /**
  * @private

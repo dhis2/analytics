@@ -12,17 +12,17 @@ import React, { useEffect, useState } from 'react'
 import {
     apiFetchOrganisationUnitGroups,
     apiFetchOrganisationUnitLevels,
-} from '../../api/organisationUnits'
+} from '../../api/organisationUnits.js'
 import i18n from '../../locales/index.js'
-import { formatList } from '../../modules/list'
+import { formatList } from '../../modules/list.js'
 import {
     ouIdHelper,
     USER_ORG_UNIT,
     USER_ORG_UNIT_CHILDREN,
     USER_ORG_UNIT_GRANDCHILDREN,
-} from '../../modules/ouIdHelper'
-import { DIMENSION_ID_ORGUNIT } from '../../modules/predefinedDimensions'
-import styles from './styles/OrgUnitDimension.style'
+} from '../../modules/ouIdHelper/index.js'
+import { DIMENSION_ID_ORGUNIT } from '../../modules/predefinedDimensions.js'
+import styles from './styles/OrgUnitDimension.style.js'
 
 const DYNAMIC_ORG_UNITS = [
     USER_ORG_UNIT,
