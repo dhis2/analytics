@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import React from 'react'
 
 export const PivotTableClippedAxis = ({
@@ -15,3 +16,9 @@ export const PivotTableClippedAxis = ({
         <EmptyComponent key="post" size={axisClippingResult.post} />
     ) : null,
 ]
+
+PivotTableClippedAxis.propTypes = {
+    axisClippingResult: PropTypes.object.isRequired,
+    EmptyComponent: PropTypes.func,
+    ItemComponent: PropTypes.func,
+}
