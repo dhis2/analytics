@@ -253,7 +253,7 @@ export const apiFetchRecommendedIds = async (dataEngine, dxIds, ouIds) => {
     )
 
     return recommendedDimensionsData.recommendedDimensions.dimensions.map(
-        item => item.id
+        (item) => item.id
     )
 }
 

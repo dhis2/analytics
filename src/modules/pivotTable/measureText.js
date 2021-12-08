@@ -6,7 +6,7 @@ import {
 
 let canvas
 
-const getContext = fontSize => {
+const getContext = (fontSize) => {
     if (!canvas) {
         canvas = document.createElement('canvas')
     }

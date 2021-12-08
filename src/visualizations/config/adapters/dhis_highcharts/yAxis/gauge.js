@@ -29,7 +29,7 @@ const DEFAULT_BASE_LINE_LABEL = i18n.t('Base')
 const AXIS_TYPE = 'RANGE'
 const AXIS_INDEX = 0
 
-const getLabelOffsetFromTextAlign = textAlign => {
+const getLabelOffsetFromTextAlign = (textAlign) => {
     switch (textAlign) {
         case TEXT_ALIGN_LEFT:
             return -10
@@ -85,7 +85,7 @@ function getPlotLine(regressionLine = {}, defaultLabel) {
     }
 }
 
-const getLabels = axis => {
+const getLabels = (axis) => {
     const fontStyle = mergeFontStyleWithDefault(
         axis.label?.fontStyle,
         FONT_STYLE_AXIS_LABELS

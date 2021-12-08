@@ -41,4 +41,4 @@ const visTypeToLayoutType = {
     [VIS_TYPE_SCATTER]: LAYOUT_TYPE_SCATTER,
 }
 
-export const getLayoutTypeByVisType = visType => visTypeToLayoutType[visType]
+export const getLayoutTypeByVisType = (visType) => visTypeToLayoutType[visType]

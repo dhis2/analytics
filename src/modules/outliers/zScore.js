@@ -4,9 +4,9 @@ import { PROP_THRESHOLD_FACTOR } from './index'
 
 export const STANDARD_Z_SCORE = 'STANDARD_Z_SCORE'
 
-export const getStdDev = data => std(data, 'unbiased')
+export const getStdDev = (data) => std(data, 'unbiased')
 
-export const getMean = data => mean(data)
+export const getMean = (data) => mean(data)
 
 export const getZScoreHelper = (normalizationHelper, config, { xyStats }) => {
     const sortedNormalized = normalizationHelper.normalized

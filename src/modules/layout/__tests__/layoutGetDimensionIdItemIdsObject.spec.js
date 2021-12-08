@@ -7,10 +7,10 @@ describe('layoutGetDimensionIdItemIdsObject', () => {
     it('should return a dimensionId:[itemdIds] object based on the layout', () => {
         const expectedState = {}
 
-        TEST_DIMENSIONS_IN_LAYOUT.forEach(dimension => {
+        TEST_DIMENSIONS_IN_LAYOUT.forEach((dimension) => {
             expectedState[dimension[DIMENSION_PROP_ID.name]] = dimension[
                 DIMENSION_PROP_ITEMS.name
-            ].map(item => item[ITEM_PROP_ID.name])
+            ].map((item) => item[ITEM_PROP_ID.name])
         })
 
         expect(layoutGetDimensionIdItemIdsObject(TEST_LAYOUT)).toEqual(

@@ -236,12 +236,12 @@ const ItemSelector = ({
         nextPage: 1,
     })
     const dataEngine = useDataEngine()
-    const setSearchTerm = searchTerm =>
-        setState(state => ({ ...state, searchTerm }))
-    const setFilter = filter => setState(state => ({ ...state, filter }))
+    const setSearchTerm = (searchTerm) =>
+        setState((state) => ({ ...state, searchTerm }))
+    const setFilter = (filter) => setState((state) => ({ ...state, filter }))
     const debouncedSearchTerm = useDebounce(state.searchTerm, 200)
-    const fetchItems = async page => {
-        setState(state => ({ ...state, loading: true }))
+    const fetchItems = async (page) => {
+        setState((state) => ({ ...state, loading: true }))
         const result = await apiFetchOptions({
             dataEngine,
             nameProp: displayNameProp,
@@ -250,11 +250,11 @@ const ItemSelector = ({
             searchTerm: state.searchTerm,
         })
         const newOptions = []
-        result.dimensionItems?.forEach(item => {
+        result.dimensionItems?.forEach((item) => {
             if (item.dimensionItemType === REPORTING_RATE) {
                 if (state.filter.subGroup && state.filter.subGroup !== ALL_ID) {
                     const metric = DATA_SETS_CONSTANTS.find(
-                        item => item.id === state.filter.subGroup
+                        (item) => item.id === state.filter.subGroup
                     )
                     newOptions.push({
                         label: `${item.name} - ${metric.getName()}`,
@@ -263,7 +263,7 @@ const ItemSelector = ({
                         type: item.dimensionItemType,
                     })
                 } else {
-                    DATA_SETS_CONSTANTS.forEach(metric => {
+                    DATA_SETS_CONSTANTS.forEach((metric) => {
                         newOptions.push({
                             label: `${item.name} - ${metric.getName()}`,
                             value: `${item.id}.${metric.id}`,
@@ -281,7 +281,7 @@ const ItemSelector = ({
                 })
             }
         })
-        setState(state => ({
+        setState((state) => ({
             ...state,
             loading: false,
             options: page > 1 ? [...state.options, ...newOptions] : newOptions,
@@ -300,9 +300,9 @@ const ItemSelector = ({
             result.nextPage &&
             newOptions.length &&
             selectedItems.length >= newOptions.length &&
-            newOptions.every(newOption =>
+            newOptions.every((newOption) =>
                 selectedItems.find(
-                    selectedItem => selectedItem.value === newOption.value
+                    (selectedItem) => selectedItem.value === newOption.value
                 )
             )
         ) {
@@ -311,18 +311,18 @@ const ItemSelector = ({
     }
 
     useDidUpdateEffect(() => {
-        setState(state => ({
+        setState((state) => ({
             ...state,
             loading: true,
             nextPage: 1,
         }))
         fetchItems(1)
     }, [debouncedSearchTerm, state.filter])
-    const onChange = newSelected => {
+    const onChange = (newSelected) => {
         onSelect(
-            newSelected.map(value => {
+            newSelected.map((value) => {
                 const matchingItem = [...state.options, ...selectedItems].find(
-                    item => item.value === value
+                    (item) => item.value === value
                 )
                 return {
                     value,
@@ -337,14 +337,15 @@ const ItemSelector = ({
             fetchItems(state.nextPage)
         }
     }
-    const isActive = value => {
-        const item = selectedItems.find(item => item.value === value)
+    const isActive = (value) => {
+        const item = selectedItems.find((item) => item.value === value)
         return !item || item.isActive
     }
-    const getItemType = value =>
-        [...state.options, ...selectedItems].find(item => item.value === value)
-            ?.type
-    const getTooltipText = itemType => {
+    const getItemType = (value) =>
+        [...state.options, ...selectedItems].find(
+            (item) => item.value === value
+        )?.type
+    const getTooltipText = (itemType) => {
         switch (itemType) {
             case DATA_ELEMENT_OPERAND:
                 return dataTypes[DATA_ELEMENTS].getItemName()
@@ -357,7 +358,7 @@ const ItemSelector = ({
                 return dataTypes[itemType]?.getItemName()
         }
     }
-    const getIcon = itemType => {
+    const getIcon = (itemType) => {
         switch (itemType) {
             case INDICATORS:
                 return <IconDimensionIndicator16 />
@@ -379,7 +380,7 @@ const ItemSelector = ({
     return (
         <Transfer
             onChange={({ selected }) => onChange(selected)}
-            selected={selectedItems.map(item => item.value)}
+            selected={selectedItems.map((item) => item.value)}
             options={[...state.options, ...selectedItems]}
             loading={state.loading}
             loadingPicked={state.loading}
@@ -397,7 +398,7 @@ const ItemSelector = ({
             leftHeader={
                 <LeftHeader
                     dataType={state.filter.dataType}
-                    setDataType={dataType => {
+                    setDataType={(dataType) => {
                         setFilter({
                             ...state.filter,
                             dataType,
@@ -407,11 +408,11 @@ const ItemSelector = ({
                         })
                     }}
                     group={state.filter.group}
-                    setGroup={group => {
+                    setGroup={(group) => {
                         setFilter({ ...state.filter, group })
                     }}
                     subGroup={state.filter.subGroup}
-                    setSubGroup={subGroup => {
+                    setSubGroup={(subGroup) => {
                         setFilter({ ...state.filter, subGroup })
                     }}
                     searchTerm={state.searchTerm}
@@ -427,7 +428,7 @@ const ItemSelector = ({
             selectedEmptyComponent={<EmptySelection />}
             rightHeader={<RightHeader infoText={infoBoxMessage} />}
             rightFooter={rightFooter}
-            renderOption={props => (
+            renderOption={(props) => (
                 <TransferOption
                     {...props}
                     active={isActive(

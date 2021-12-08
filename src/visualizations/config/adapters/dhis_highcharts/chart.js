@@ -18,7 +18,7 @@ const getEvents = () => ({
     events: {
         load: function () {
             // Align legend icon with legend text
-            this.legend.allItems.forEach(item => {
+            this.legend.allItems.forEach((item) => {
                 if (item.legendSymbol) {
                     item.legendSymbol.attr({
                         translateY:

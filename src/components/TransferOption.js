@@ -25,12 +25,16 @@ export const TransferOption = ({
                 selected,
                 inactive: active !== undefined && !active,
             })}
-            onClick={event => {
-                if (disabled) return
+            onClick={(event) => {
+                if (disabled) {
+                    return
+                }
                 onClick({ label, value }, event)
             }}
-            onDoubleClick={event => {
-                if (disabled) return
+            onDoubleClick={(event) => {
+                if (disabled) {
+                    return
+                }
                 onDoubleClick({ label, value }, event)
             }}
             data-test={`${dataTest}-content`}

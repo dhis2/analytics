@@ -19,7 +19,7 @@ const LegendKey = ({ legendSets }) => {
                     )}
                     {legendSet.legends
                         .sort((a, b) => a.startValue - b.startValue)
-                        .map(legend => (
+                        .map((legend) => (
                             <div
                                 key={legend.startValue}
                                 className="legend"

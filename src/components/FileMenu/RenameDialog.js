@@ -14,7 +14,7 @@ import React, { useMemo, useState } from 'react'
 import i18n from '../../locales/index.js'
 import { supportedFileTypes, endpointFromFileType } from './utils'
 
-const getMutation = type => ({
+const getMutation = (type) => ({
     resource: endpointFromFileType(type),
     id: ({ id }) => id,
     type: 'update',
@@ -28,7 +28,7 @@ export const RenameDialog = ({ type, object, onClose, onRename, onError }) => {
 
     const mutation = useMemo(() => getMutation(type), [])
     const [mutate, { loading }] = useDataMutation(mutation, {
-        onError: error => {
+        onError: (error) => {
             onError(error)
             onClose()
         },

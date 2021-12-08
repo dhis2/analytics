@@ -35,7 +35,7 @@ export default function ({
     }) => {
         return _adapter({
             type,
-            data: data.map(d => _validator({ data: d, error, warning })),
+            data: data.map((d) => _validator({ data: d, error, warning })),
             seriesId,
             categoryIds,
             extraOptions,

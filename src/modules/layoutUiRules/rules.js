@@ -138,7 +138,7 @@ const visTypeToRules = {
     [VIS_TYPE_SCATTER]: scatterRules,
 }
 
-const getRulesByVisType = visType => {
+const getRulesByVisType = (visType) => {
     const rules = visTypeToRules[visType]
 
     if (!rules) {
@@ -150,22 +150,22 @@ const getRulesByVisType = visType => {
 
 // Selectors
 
-export const getAvailableAxesByVisType = visType =>
+export const getAvailableAxesByVisType = (visType) =>
     getRulesByVisType(visType)[RULE_PROP_AVAILABLE_AXES] || []
 
-export const getMaxNumberOfDimsPerAxisByVisType = visType =>
+export const getMaxNumberOfDimsPerAxisByVisType = (visType) =>
     getRulesByVisType(visType)[RULE_PROP_MAX_DIMS_PER_AXIS] || {}
 
-export const getMinNumberOfDimsPerAxisByVisType = visType =>
+export const getMinNumberOfDimsPerAxisByVisType = (visType) =>
     getRulesByVisType(visType)[RULE_PROP_MIN_DIMS_PER_AXIS] || {}
 
-export const getMaxNumberOfItemsPerAxisByVisType = visType =>
+export const getMaxNumberOfItemsPerAxisByVisType = (visType) =>
     getRulesByVisType(visType)[RULE_PROP_MAX_ITEMS_PER_AXIS] || {}
 
-export const getDisallowedDimsByVisType = visType =>
+export const getDisallowedDimsByVisType = (visType) =>
     getRulesByVisType(visType)[RULE_PROP_DISALLOWED_DIMS] || []
 
-export const getLockedDimsByVisType = visType =>
+export const getLockedDimsByVisType = (visType) =>
     getRulesByVisType(visType)[RULE_PROP_LOCKED_DIMS] || {}
 
 // Test exports

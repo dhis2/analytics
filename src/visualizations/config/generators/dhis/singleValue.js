@@ -126,7 +126,7 @@ const generateDashboardItem = (config, { legendSet, noData }) => {
     return container
 }
 
-const getTextAnchorFromTextAlign = textAlign => {
+const getTextAnchorFromTextAlign = (textAlign) => {
     switch (textAlign) {
         default:
         case TEXT_ALIGN_LEFT:
@@ -138,7 +138,7 @@ const getTextAnchorFromTextAlign = textAlign => {
     }
 }
 
-const getXFromTextAlign = textAlign => {
+const getXFromTextAlign = (textAlign) => {
     switch (textAlign) {
         default:
         case TEXT_ALIGN_LEFT:

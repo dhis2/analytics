@@ -21,5 +21,5 @@ export const getAxisMinNumberOfDimsByVisType = (visType, axisId) =>
 export const getAxisPerLockedDimByVisType = (visType, dimensionId) =>
     getLockedDimsByVisType(visType)[dimensionId]
 
-export const getAllLockedDimIdsByVisType = visType =>
+export const getAllLockedDimIdsByVisType = (visType) =>
     Object.keys(getLockedDimsByVisType(visType))

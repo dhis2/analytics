@@ -81,7 +81,7 @@ const getLegendSetByDisplayStrategy = ({
     ) {
         return legendSets[0]
     } else if (displayStrategy === LEGEND_DISPLAY_STRATEGY_BY_DATA_ITEM) {
-        return legendSets.find(legendSet => legendSet.id === legendSetId)
+        return legendSets.find((legendSet) => legendSet.id === legendSetId)
     } else {
         return null
     }

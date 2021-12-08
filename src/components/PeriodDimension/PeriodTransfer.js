@@ -30,7 +30,7 @@ const PeriodTransfer = ({
         ? getFixedPeriodsOptionsById(QUARTERLY)
         : getFixedPeriodsOptionsById(MONTHLY)
     const defaultFixedPeriodYear = new Date().getFullYear()
-    const fixedPeriodConfig = year => ({
+    const fixedPeriodConfig = (year) => ({
         offset: year - defaultFixedPeriodYear,
         filterFuturePeriods: false,
         reversePeriods: false,
@@ -51,7 +51,7 @@ const PeriodTransfer = ({
         year: defaultFixedPeriodYear.toString(),
     })
 
-    const onIsRelativeClick = state => {
+    const onIsRelativeClick = (state) => {
         if (state !== isRelative) {
             setIsRelative(state)
             setAllPeriods(
@@ -88,7 +88,7 @@ const PeriodTransfer = ({
                 {isRelative ? (
                     <RelativePeriodFilter
                         currentFilter={relativeFilter.periodType}
-                        onSelectFilter={filter => {
+                        onSelectFilter={(filter) => {
                             setRelativeFilter({ periodType: filter })
                             setAllPeriods(
                                 getRelativePeriodsOptionsById(
@@ -103,13 +103,13 @@ const PeriodTransfer = ({
                     <FixedPeriodFilter
                         currentPeriodType={fixedFilter.periodType}
                         currentYear={fixedFilter.year}
-                        onSelectPeriodType={periodType => {
+                        onSelectPeriodType={(periodType) => {
                             onSelectFixedPeriods({
                                 periodType,
                                 year: fixedFilter.year,
                             })
                         }}
-                        onSelectYear={year => {
+                        onSelectYear={(year) => {
                             onSelectFixedPeriods({
                                 periodType: fixedFilter.periodType,
                                 year,
@@ -131,7 +131,7 @@ const PeriodTransfer = ({
         </>
     )
 
-    const onSelectFixedPeriods = filter => {
+    const onSelectFixedPeriods = (filter) => {
         setFixedFilter(filter)
         setAllPeriods(
             getFixedPeriodsOptionsById(filter.periodType).getPeriods(
@@ -150,16 +150,16 @@ const PeriodTransfer = ({
     return (
         <Transfer
             onChange={({ selected }) => {
-                const formattedItems = selected.map(id => ({
+                const formattedItems = selected.map((id) => ({
                     id,
                     name: [...allPeriods, ...selectedPeriods].find(
-                        item => item.id === id
+                        (item) => item.id === id
                     ).name,
                 }))
                 setSelectedPeriods(formattedItems)
                 onSelect(formattedItems)
             }}
-            selected={selectedPeriods.map(period => period.id)}
+            selected={selectedPeriods.map((period) => period.id)}
             leftHeader={renderLeftHeader()}
             enableOrderChange
             height={TRANSFER_HEIGHT}
@@ -174,7 +174,7 @@ const PeriodTransfer = ({
                     value: id,
                 })
             )}
-            renderOption={props => (
+            renderOption={(props) => (
                 <TransferOption
                     {...props}
                     icon={PeriodIcon}

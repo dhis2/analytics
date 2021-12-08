@@ -18,10 +18,10 @@ export const DetailSelector = ({ currentValue, onChange, dataTest }) => {
                 dataTest={dataTest}
                 label={i18n.t('Disaggregation')}
                 selected={currentValue}
-                onChange={ref => onChange(ref.selected)}
+                onChange={(ref) => onChange(ref.selected)}
                 dense
             >
-                {Object.entries(options).map(option => (
+                {Object.entries(options).map((option) => (
                     <SingleSelectOption
                         value={option[0]}
                         key={option[0]}

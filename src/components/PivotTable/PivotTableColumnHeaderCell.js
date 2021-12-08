@@ -25,9 +25,9 @@ export const PivotTableColumnHeaderCell = ({
             axisClippingResult={clippingResult.columns}
             index={index}
             level={level}
-            getHeader={idx => engine.getColumnHeader(idx)}
+            getHeader={(idx) => engine.getColumnHeader(idx)}
             showHierarchy={engine.visualization.showHierarchy}
-            render={header => {
+            render={(header) => {
                 const isSortable =
                     level === engine.columnDepth - 1 &&
                     header.span === 1 &&

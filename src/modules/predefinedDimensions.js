@@ -48,14 +48,14 @@ export const getPredefinedDimensions = () => ({
     ...getDynamicDimensions(),
 })
 
-export const filterOutPredefinedDimensions = dimensionIds =>
+export const filterOutPredefinedDimensions = (dimensionIds) =>
     dimensionIds.filter(
-        dimensionId =>
+        (dimensionId) =>
             !Object.keys(getPredefinedDimensions()).includes(dimensionId)
     )
 
 export const getPredefinedDimensionProp = (dimensionId, propName) =>
     (getPredefinedDimensions()[dimensionId] || {})[propName]
 
-export const getDimensionById = dimensionId =>
+export const getDimensionById = (dimensionId) =>
     getPredefinedDimensions()[dimensionId]

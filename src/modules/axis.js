@@ -8,7 +8,7 @@ import {
     LAYOUT_TYPE_SCATTER,
 } from './layoutTypes'
 
-const getAxisNamesByLayoutType = layoutType => {
+const getAxisNamesByLayoutType = (layoutType) => {
     switch (layoutType) {
         case LAYOUT_TYPE_DEFAULT:
         case LAYOUT_TYPE_PIE:
@@ -42,8 +42,8 @@ export const getAxisNameByLayoutType = (axisId, layoutType) => {
     return name
 }
 
-export const getAxisName = axisId =>
+export const getAxisName = (axisId) =>
     getAxisNameByLayoutType(axisId, LAYOUT_TYPE_DEFAULT)
 
-export const hasCustomAxes = series =>
-    Boolean(series?.length && series.some(item => item.axis > 0))
+export const hasCustomAxes = (series) =>
+    Boolean(series?.length && series.some((item) => item.axis > 0))

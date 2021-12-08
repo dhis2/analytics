@@ -45,12 +45,12 @@ export const FileMenu = ({
     const [currentDialog, setCurrentDialog] = useState(null)
 
     // Escape key press closes the menu
-    const onKeyDown = e => {
+    const onKeyDown = (e) => {
         if (e?.keyCode === 27) {
             setMenuIsOpen(false)
         }
     }
-    const onMenuItemClick = dialogToOpen => () => {
+    const onMenuItemClick = (dialogToOpen) => () => {
         setMenuIsOpen(false)
         setCurrentDialog(dialogToOpen)
     }
@@ -157,7 +157,7 @@ export const FileMenu = ({
                 open={currentDialog === 'open'}
                 type={fileType}
                 onClose={onDialogClose}
-                onFileSelect={id => {
+                onFileSelect={(id) => {
                     onOpen(id)
                     onDialogClose()
                 }}

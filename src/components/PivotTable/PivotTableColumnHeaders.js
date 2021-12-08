@@ -14,12 +14,12 @@ export const PivotTableColumnHeaders = ({
 }) => {
     const engine = usePivotTableEngine()
 
-    const columns = times(engine.columnDepth, x => x)
-    const rows = times(engine.rowDepth, x => x)
+    const columns = times(engine.columnDepth, (x) => x)
+    const rows = times(engine.rowDepth, (x) => x)
 
-    return columns.map(columnLevel => (
+    return columns.map((columnLevel) => (
         <tr key={columnLevel}>
-            {rows.map(rowLevel => (
+            {rows.map((rowLevel) => (
                 <PivotTableDimensionLabelCell
                     key={rowLevel}
                     rowLevel={rowLevel}

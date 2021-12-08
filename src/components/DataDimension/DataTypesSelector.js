@@ -11,7 +11,7 @@ const DataTypes = ({ currentDataType, onChange, dataTest }) => (
             label={i18n.t('Data Type')}
             dataTest={dataTest}
             selected={dataTypes[currentDataType]?.id || ALL_ID}
-            onChange={ref => onChange(ref.selected)}
+            onChange={(ref) => onChange(ref.selected)}
             dense
         >
             <SingleSelectOption
@@ -20,7 +20,7 @@ const DataTypes = ({ currentDataType, onChange, dataTest }) => (
                 label={i18n.t('All types')}
                 dataTest={`${dataTest}-option-all`}
             />
-            {Object.values(dataTypes).map(type => (
+            {Object.values(dataTypes).map((type) => (
                 <SingleSelectOption
                     value={type.id}
                     key={type.id}

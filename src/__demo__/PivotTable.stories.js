@@ -97,7 +97,7 @@ const weeklyColumnsData = combineDataWithMetadata(
     weeklyColumnsMetadataResponse
 )
 
-const PivotTableOptionsWrapper = story => {
+const PivotTableOptionsWrapper = (story) => {
     const [pivotTableOptions, setPivotTableOptions] = useState({
         fixColumnHeaders: false,
         fixRowHeaders: false,

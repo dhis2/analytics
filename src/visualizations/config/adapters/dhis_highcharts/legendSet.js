@@ -11,7 +11,7 @@ export const applyLegendSet = (seriesObj = {}, legendSet) =>
     !seriesObj.type
         ? {
               ...seriesObj,
-              data: seriesObj.data.map(value =>
+              data: seriesObj.data.map((value) =>
                   isNumeric(value) // Single category pass data as [value1, value2]
                       ? {
                             y: value,

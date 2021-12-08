@@ -33,7 +33,7 @@ function noAxis() {
     return null
 }
 
-export const getLabels = axis => {
+export const getLabels = (axis) => {
     const fontStyle = mergeFontStyleWithDefault(
         axis.label?.fontStyle,
         FONT_STYLE_AXIS_LABELS

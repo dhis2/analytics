@@ -28,17 +28,17 @@ export const DynamicDimension = ({
             nameProp: displayNameProp,
         })
 
-    const onSelectItems = newSelectedItems =>
+    const onSelectItems = (newSelectedItems) =>
         onSelect({
             dimensionId,
-            items: newSelectedItems.map(item => ({
+            items: newSelectedItems.map((item) => ({
                 id: item.value,
                 name: item.label,
             })),
         })
 
     const allIsSelected = selectedItems.some(
-        item => item.id === ALL_DYNAMIC_DIMENSION_ITEMS
+        (item) => item.id === ALL_DYNAMIC_DIMENSION_ITEMS
     )
 
     const selectAutomatic = () =>
@@ -58,7 +58,7 @@ export const DynamicDimension = ({
             dimensionId,
             items: [
                 ...selectedItems.filter(
-                    item => item.id !== ALL_DYNAMIC_DIMENSION_ITEMS
+                    (item) => item.id !== ALL_DYNAMIC_DIMENSION_ITEMS
                 ),
             ],
         })
@@ -97,7 +97,7 @@ export const DynamicDimension = ({
             </Field>
             {!allIsSelected && (
                 <ItemSelector
-                    initialSelected={selectedItems.map(item => ({
+                    initialSelected={selectedItems.map((item) => ({
                         value: item.id,
                         label: item.name,
                     }))}

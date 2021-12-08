@@ -19,7 +19,7 @@ export const PivotTableEmptyRow = ({ height, columns }) => {
                     },
                 ]}
             />
-            {columns.map(i => (
+            {columns.map((i) => (
                 <PivotTableCell key={i} />
             ))}
         </tr>

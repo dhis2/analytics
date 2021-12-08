@@ -5,5 +5,5 @@ export default function (metaData, dimensionId) {
         ? metaData.dimensions[dimensionId]
         : []
 
-    return dimensionItemsIds.map(id => metaData.items[id].name)
+    return dimensionItemsIds.map((id) => metaData.items[id].name)
 }

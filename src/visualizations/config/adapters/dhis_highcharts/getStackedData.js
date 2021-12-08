@@ -15,14 +15,14 @@ function getDefaultStackedData(series, isZeroAsNull) {
                 return total + obj.data[index]
             }, 0)
         })
-        .map(value => (isZeroAsNull && value === 0 ? null : value))
+        .map((value) => (isZeroAsNull && value === 0 ? null : value))
 }
 
 function getTwoCategoryStackedData(series) {
     return series[0].custom.data.map((groupObj, groupIndex) => {
         return groupObj.map((value, index) => {
             return series
-                .filter(serieObj => !serieObj.custom.isTwoCategoryFakeSerie)
+                .filter((serieObj) => !serieObj.custom.isTwoCategoryFakeSerie)
                 .reduce((total, serieObj) => {
                     return total + serieObj.custom.data[groupIndex][index]
                 }, 0)

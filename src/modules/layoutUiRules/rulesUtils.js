@@ -48,11 +48,11 @@ export const getTransferableDimensionPerAxisByVisType = (
 ) => {
     const lockedDimsByVisType = getLockedDimsByVisType(visType)
     const lockedDimIdsByAxis = Object.keys(lockedDimsByVisType).filter(
-        dimId => lockedDimsByVisType[dimId] === axisId
+        (dimId) => lockedDimsByVisType[dimId] === axisId
     )
 
     // return the last "transferable" dimension, this needs to be adjusted
     // if we allow a defined max limit > 1 and the DND wants to drop the new
     // dimension in a specific position
-    return axis.filter(dimId => !lockedDimIdsByAxis.includes(dimId)).pop()
+    return axis.filter((dimId) => !lockedDimIdsByAxis.includes(dimId)).pop()
 }

@@ -2,11 +2,11 @@ import isArray from 'd2-utilizr/lib/isArray'
 import Config from './config'
 import Store from './store'
 
-const defaultError = error => {
+const defaultError = (error) => {
     throw new Error(error)
 }
 
-const defaultWarning = warning => {
+const defaultWarning = (warning) => {
     console.log(warning)
 }
 
