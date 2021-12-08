@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2021-12-08T09:57:08.531Z\n"
-"PO-Revision-Date: 2021-12-08T09:57:08.531Z\n"
+"POT-Creation-Date: 2021-12-08T12:57:50.394Z\n"
+"PO-Revision-Date: 2021-12-08T12:57:50.394Z\n"
 
 msgid "view only"
 msgstr "view only"
@@ -721,11 +721,11 @@ msgstr "Base locale reference"
 msgid "Choose a locale to translate from the menu above"
 msgstr "Choose a locale to translate from the menu above"
 
-msgid "Translate: {{objectName}}"
-msgstr "Translate: {{objectName}}"
-
 msgid "Save translations"
 msgstr "Save translations"
+
+msgid "Translate: {{objectName}}"
+msgstr "Translate: {{objectName}}"
 
 msgid "Series"
 msgstr "Series"
