@@ -1,30 +1,28 @@
 import { useAlert, useDataQuery } from '@dhis2/app-runtime'
-import { useEffect, useMemo, useState } from 'react'
-
-const getTranslationsQuery = resource => ({
-    translations: {
-        resource: `${resource}/translations`,
-    },
-})
+import i18n from '@dhis2/d2-i18n'
+import { useRef } from 'react'
 
 export const useTranslationsResults = ({ resource }) => {
-    const { show: showError } = useAlert(error => error, { critical: true })
-    const [translationsData, setTranslationsData] = useState([])
-
-    const translationsQuery = useMemo(() => getTranslationsQuery(resource), [])
-    const { data, fetching } = useDataQuery(translationsQuery, {
-        onError: error => showError(error),
+    const translationsQueryRef = useRef({
+        translations: {
+            resource: `${resource}/translations`,
+        },
     })
 
-    useEffect(() => {
-        if (data) {
-            setTranslationsData(data.translations.translations)
+    const { data, fetching, refetch } = useDataQuery(
+        translationsQueryRef.current,
+        {
+            onError: error => showError(error),
         }
-    }, [data])
+    )
+
+    const { show: showError } = useAlert(error => error.message, {
+        critical: true,
+        actions: [{ label: i18n.t('Retry'), onClick: refetch }],
+    })
 
     return {
-        translationsData,
+        translationsData: fetching ? undefined : data.translations.translations,
         fetching,
-        clear: () => setTranslationsData([]),
     }
 }
