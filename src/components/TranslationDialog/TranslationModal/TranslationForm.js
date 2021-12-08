@@ -15,7 +15,7 @@ import {
     ModalContent,
 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
-import React, { useMemo, useState } from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 import { LocalesSelect } from './LocalesSelect.js'
 
 const getTranslationsMutation = resource => ({
@@ -32,7 +32,7 @@ export const TranslationForm = ({
     onTranslationSaved,
     onClose,
 }) => {
-    const [newTranslations, setNewTranslations] = useState(translations)
+    const [newTranslations, setNewTranslations] = useState()
     const [translationLocale, setTranslationLocale] = useState()
 
     const { show: showError } = useAlert(error => error, { critical: true })
@@ -107,6 +107,8 @@ export const TranslationForm = ({
 
     const save = () => saveTranslations({ translations: newTranslations })
 
+    useEffect(() => setNewTranslations(translations), [translations])
+
     return (
         <>
             <ModalContent>
@@ -177,7 +179,12 @@ export const TranslationForm = ({
                     <Button secondary onClick={onClose}>
                         {i18n.t('Cancel')}
                     </Button>
-                    <Button primary onClick={save} loading={saveInProgress}>
+                    <Button
+                        primary
+                        onClick={save}
+                        loading={saveInProgress}
+                        disabled={!translationLocale}
+                    >
                         {i18n.t('Save translations')}
                     </Button>
                 </ButtonStrip>
