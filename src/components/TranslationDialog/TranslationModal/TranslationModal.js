@@ -1,4 +1,3 @@
-import { useAlert, useDataMutation } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import {
     Button,
@@ -11,15 +10,9 @@ import {
     ModalTitle,
 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
-import React, { useEffect, useMemo, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { TranslationForm } from './TranslationForm.js'
 import { useTranslationsResults } from './useTranslationsResults.js'
-
-const getTranslationsMutation = resource => ({
-    resource: `${resource}/translations`,
-    type: 'update',
-    data: ({ translations }) => ({ translations }),
-})
 
 export const TranslationModal = ({
     objectToTranslate,
@@ -27,8 +20,6 @@ export const TranslationModal = ({
     onClose,
     onTranslationSaved,
 }) => {
-    const { show: showError } = useAlert(error => error, { critical: true })
-
     const [translations, setTranslations] = useState([])
 
     const endpointPath = new URL(objectToTranslate.href).pathname
@@ -40,25 +31,6 @@ export const TranslationModal = ({
     const { translationsData, fetching } = useTranslationsResults({
         resource,
     })
-
-    const translationsMutation = useMemo(
-        () => getTranslationsMutation(resource),
-        []
-    )
-    const [updateTranslations, { loading: saveInProgress }] = useDataMutation(
-        translationsMutation,
-        {
-            onComplete: () => {
-                onTranslationSaved()
-                onClose()
-            },
-            onError: error => {
-                showError(error)
-            },
-        }
-    )
-
-    const save = () => updateTranslations({ translations })
 
     useEffect(() => {
         if (translationsData) {
@@ -74,31 +46,34 @@ export const TranslationModal = ({
                     nsSeparator: '^^',
                 })}
             </ModalTitle>
-            <ModalContent>
-                {fetching && (
-                    <CenteredContent>
-                        <CircularLoader />
-                    </CenteredContent>
-                )}
-                {translations.length && (
-                    <TranslationForm
-                        fieldsToTranslate={fieldsToTranslate}
-                        objectToTranslate={objectToTranslate}
-                        translations={translations}
-                        onUpdateTranslations={setTranslations}
-                    />
-                )}
-            </ModalContent>
-            <ModalActions>
-                <ButtonStrip>
-                    <Button secondary onClick={onClose}>
-                        {i18n.t('Cancel')}
-                    </Button>
-                    <Button primary onClick={save} loading={saveInProgress}>
-                        {i18n.t('Save translations')}
-                    </Button>
-                </ButtonStrip>
-            </ModalActions>
+            {fetching ? (
+                <>
+                    <ModalContent>
+                        <CenteredContent>
+                            <CircularLoader />
+                        </CenteredContent>
+                    </ModalContent>
+                    <ModalActions>
+                        <ButtonStrip>
+                            <Button secondary onClick={onClose}>
+                                {i18n.t('Cancel')}
+                            </Button>
+                            <Button primary disabled>
+                                {i18n.t('Save translations')}
+                            </Button>
+                        </ButtonStrip>
+                    </ModalActions>
+                </>
+            ) : (
+                <TranslationForm
+                    fieldsToTranslate={fieldsToTranslate}
+                    objectToTranslate={objectToTranslate}
+                    translations={translations}
+                    onTranslationSaved={onTranslationSaved}
+                    resource={resource}
+                    onClose={onClose}
+                />
+            )}
         </Modal>
     )
 }

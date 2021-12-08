@@ -1,5 +1,8 @@
+import { useAlert, useDataMutation } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import {
+    Button,
+    ButtonStrip,
     CenteredContent,
     DataTable,
     DataTableBody,
@@ -8,24 +11,36 @@ import {
     DataTableHead,
     DataTableRow,
     Input,
+    ModalActions,
+    ModalContent,
 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
-import React, { useState } from 'react'
+import React, { useMemo, useState } from 'react'
 import { LocalesSelect } from './LocalesSelect.js'
+
+const getTranslationsMutation = resource => ({
+    resource: `${resource}/translations`,
+    type: 'update',
+    data: ({ translations }) => ({ translations }),
+})
 
 export const TranslationForm = ({
     fieldsToTranslate,
     objectToTranslate,
     translations,
-    onUpdateTranslations,
+    resource,
+    onTranslationSaved,
+    onClose,
 }) => {
     const [newTranslations, setNewTranslations] = useState(translations)
     const [translationLocale, setTranslationLocale] = useState()
 
+    const { show: showError } = useAlert(error => error, { critical: true })
+
     const camelCaseToUnderscores = field =>
         field
             .replace(/[a-z][A-Z]/g, match =>
-                [match.chartAt(0), match.chartAt(1)].join('_')
+                [match.charAt(0), match.charAt(1)].join('_')
             )
             .toLowerCase()
 
@@ -72,67 +87,110 @@ export const TranslationForm = ({
         setNewTranslations(updatedTranslations)
     }
 
+    const translationsMutation = useMemo(
+        () => getTranslationsMutation(resource),
+        []
+    )
+
+    const [saveTranslations, { loading: saveInProgress }] = useDataMutation(
+        translationsMutation,
+        {
+            onComplete: () => {
+                onTranslationSaved()
+                onClose()
+            },
+            onError: error => {
+                showError(error)
+            },
+        }
+    )
+
+    const save = () => saveTranslations({ translations: newTranslations })
+
     return (
-        <DataTable layout="fixed">
-            <DataTableHead>
-                <DataTableRow>
-                    <DataTableColumnHeader fixed top="0">
-                        {i18n.t('Base locale reference')}
-                    </DataTableColumnHeader>
-                    <DataTableColumnHeader fixed top="0">
-                        <LocalesSelect
-                            selected={translationLocale}
-                            onChange={setTranslationLocale}
-                        />
-                    </DataTableColumnHeader>
-                </DataTableRow>
-            </DataTableHead>
-            <DataTableBody>
-                {fieldsToTranslate.map((field, index) => (
-                    <DataTableRow key={field}>
-                        <DataTableCell>
-                            <div className="">
-                                {field}
-                                <Input
-                                    value={objectToTranslate[field]}
-                                    readOnly
+        <>
+            <ModalContent>
+                <DataTable layout="fixed">
+                    <DataTableHead>
+                        <DataTableRow>
+                            <DataTableColumnHeader fixed top="0">
+                                {i18n.t('Base locale reference')}
+                            </DataTableColumnHeader>
+                            <DataTableColumnHeader fixed top="0">
+                                <LocalesSelect
+                                    selected={translationLocale}
+                                    onChange={setTranslationLocale}
                                 />
-                            </div>
-                        </DataTableCell>
-                        {translationLocale && (
-                            <DataTableCell>
-                                <div className="">
-                                    {field}
-                                    <Input
-                                        value={getTranslationForField(field)}
-                                        onChange={({ value }) =>
-                                            setTranslationForField(field, value)
-                                        }
-                                    />
-                                </div>
-                            </DataTableCell>
-                        )}
-                        {!translationLocale && index === 0 && (
-                            <DataTableCell
-                                rowSpan={String(fieldsToTranslate.length)}
-                            >
-                                <CenteredContent>
-                                    {i18n.t(
-                                        'Choose a locale to translate from the menu above'
-                                    )}
-                                </CenteredContent>
-                            </DataTableCell>
-                        )}
-                    </DataTableRow>
-                ))}
-            </DataTableBody>
-        </DataTable>
+                            </DataTableColumnHeader>
+                        </DataTableRow>
+                    </DataTableHead>
+                    <DataTableBody>
+                        {fieldsToTranslate.map((field, index) => (
+                            <DataTableRow key={field}>
+                                <DataTableCell>
+                                    <div className="">
+                                        {field}
+                                        <Input
+                                            value={objectToTranslate[field]}
+                                            readOnly
+                                        />
+                                    </div>
+                                </DataTableCell>
+                                {translationLocale && (
+                                    <DataTableCell>
+                                        <div className="">
+                                            {field}
+                                            <Input
+                                                value={getTranslationForField(
+                                                    field
+                                                )}
+                                                onChange={({ value }) =>
+                                                    setTranslationForField(
+                                                        field,
+                                                        value
+                                                    )
+                                                }
+                                            />
+                                        </div>
+                                    </DataTableCell>
+                                )}
+                                {!translationLocale && index === 0 && (
+                                    <DataTableCell
+                                        rowSpan={String(
+                                            fieldsToTranslate.length
+                                        )}
+                                    >
+                                        <CenteredContent>
+                                            {i18n.t(
+                                                'Choose a locale to translate from the menu above'
+                                            )}
+                                        </CenteredContent>
+                                    </DataTableCell>
+                                )}
+                            </DataTableRow>
+                        ))}
+                    </DataTableBody>
+                </DataTable>
+            </ModalContent>
+            <ModalActions>
+                <ButtonStrip>
+                    <Button secondary onClick={onClose}>
+                        {i18n.t('Cancel')}
+                    </Button>
+                    <Button primary onClick={save} loading={saveInProgress}>
+                        {i18n.t('Save translations')}
+                    </Button>
+                </ButtonStrip>
+            </ModalActions>
+        </>
     )
 }
 
 TranslationForm.propTypes = {
     fieldsToTranslate: PropTypes.array.isRequired,
     objectToTranslate: PropTypes.object.isRequired,
+    resource: PropTypes.string.isRequired,
     translations: PropTypes.array.isRequired,
-    onUpdateTranslations: PropTypes.func.isRequired,
+    onClose: PropTypes.func.isRequired,
+    onTranslationSaved: PropTypes.func.isRequired,
 }
