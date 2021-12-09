@@ -17,13 +17,13 @@ import cx from 'classnames'
 import moment from 'moment'
 import PropTypes from 'prop-types'
 import React, { useEffect, useMemo, useState } from 'react'
-import { formatList } from '../../modules/list'
-import styles from './styles/AboutAOUnit.style'
+import { formatList } from '../../modules/list.js'
+import styles from './styles/AboutAOUnit.style.js'
 
 const READ_ONLY = 'r'
 const READ_AND_WRITE = 'rw'
 
-const getQueries = type => ({
+const getQueries = (type) => ({
     ao: {
         resource: type,
         id: ({ id }) => id,
@@ -70,7 +70,7 @@ const AboutAOUnit = ({ type, id }) => {
     const [subscribe, { loading: subscribeIsLoading }] = useDataMutation(
         subscribeMutation,
         {
-            onComplete: res => {
+            onComplete: (res) => {
                 if (res.status === 'OK') {
                     refetch({ id })
                 }
@@ -81,7 +81,7 @@ const AboutAOUnit = ({ type, id }) => {
     const [unsubscribe, { loading: unsubscribeIsLoading }] = useDataMutation(
         unsubscribeMutation,
         {
-            onComplete: res => {
+            onComplete: (res) => {
                 if (res.status === 'OK') {
                     refetch({ id })
                 }
@@ -95,7 +95,7 @@ const AboutAOUnit = ({ type, id }) => {
         }
     }, [type, id])
 
-    const getAccessLevelString = access => {
+    const getAccessLevelString = (access) => {
         const re = new RegExp(`(?<accessLevel>${READ_AND_WRITE}?)`)
         const accessMatch = re.exec(access)
 
@@ -107,7 +107,7 @@ const AboutAOUnit = ({ type, id }) => {
         }
     }
 
-    const getSharingSummary = ao => {
+    const getSharingSummary = (ao) => {
         const sharingTextParts = []
 
         const re = new RegExp(`^${READ_AND_WRITE}?`)
@@ -123,7 +123,7 @@ const AboutAOUnit = ({ type, id }) => {
         const userAccesses = ao.userAccesses
         const groupAccesses = ao.userGroupAccesses
 
-        userAccesses.concat(groupAccesses).forEach(accessRule => {
+        userAccesses.concat(groupAccesses).forEach((accessRule) => {
             sharingTextParts.push(
                 i18n.t('{{userOrGroup}} ({{accessLevel}})', {
                     userOrGroup: accessRule.displayName,

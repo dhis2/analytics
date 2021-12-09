@@ -10,9 +10,9 @@ import {
 import PropTypes from 'prop-types'
 import React, { useMemo } from 'react'
 import i18n from '../../locales/index.js'
-import { supportedFileTypes, endpointFromFileType } from './utils'
+import { supportedFileTypes, endpointFromFileType } from './utils.js'
 
-const getMutation = type => ({
+const getMutation = (type) => ({
     resource: endpointFromFileType(type),
     id: ({ id }) => id,
     type: 'delete',
@@ -22,7 +22,7 @@ export const DeleteDialog = ({ type, id, onClose, onDelete, onError }) => {
     const mutation = useMemo(() => getMutation(type), [])
     const [mutate] = useDataMutation(mutation, {
         variables: { id },
-        onError: error => {
+        onError: (error) => {
             onError(error)
             onClose()
         },

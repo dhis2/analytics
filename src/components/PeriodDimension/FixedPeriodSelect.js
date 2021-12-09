@@ -31,7 +31,7 @@ class FixedPeriodSelect extends Component {
         }
     }
 
-    onSelectPeriodType = periodType => {
+    onSelectPeriodType = (periodType) => {
         this.setState({
             periodType,
             options: this.getUpdatedOptions(periodType, this.state.year),
@@ -39,7 +39,7 @@ class FixedPeriodSelect extends Component {
         this.props.onChange()
     }
 
-    onSelectYear = year => {
+    onSelectYear = (year) => {
         this.setState({
             year,
             options: this.getUpdatedOptions(this.state.periodType, year),
@@ -80,7 +80,7 @@ class FixedPeriodSelect extends Component {
                         dense
                         selected={this.props.value}
                     >
-                        {this.state.options.map(option => (
+                        {this.state.options.map((option) => (
                             <SingleSelectOption
                                 key={option.id}
                                 value={option.id}

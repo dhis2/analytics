@@ -48,7 +48,7 @@ import {
     VIS_TYPE_YEAR_OVER_YEAR_COLUMN,
     VIS_TYPE_SINGLE_VALUE,
     VIS_TYPE_SCATTER,
-} from '../modules/visTypes'
+} from '../modules/visTypes.js'
 
 export const VisTypeIcon = ({ type, useSmall = false, ...props }) => {
     let VisIcon

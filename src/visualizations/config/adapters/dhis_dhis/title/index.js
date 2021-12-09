@@ -1,6 +1,6 @@
-import { VIS_TYPE_SINGLE_VALUE } from '../../../../../modules/visTypes'
-import getFilterText from '../../../../util/getFilterText'
-import getSingleValueTitle from './singleValue'
+import { VIS_TYPE_SINGLE_VALUE } from '../../../../../modules/visTypes.js'
+import getFilterText from '../../../../util/getFilterText.js'
+import getSingleValueTitle from './singleValue.js'
 
 function getDefault(layout, metaData, dashboard) {
     return layout.filters && !dashboard

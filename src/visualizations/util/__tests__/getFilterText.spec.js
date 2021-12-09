@@ -1,4 +1,4 @@
-import getFilterText from '../getFilterText'
+import getFilterText from '../getFilterText.js'
 
 let filters
 let metaData

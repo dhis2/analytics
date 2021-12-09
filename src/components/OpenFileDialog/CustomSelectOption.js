@@ -1,7 +1,7 @@
 import cx from 'classnames'
 import PropTypes from 'prop-types'
 import React from 'react'
-import styles from './styles/CustomSelectOption.style'
+import styles from './styles/CustomSelectOption.style.js'
 
 export const CustomSelectOption = ({
     value,
@@ -12,7 +12,7 @@ export const CustomSelectOption = ({
     disabled,
 }) => (
     <div
-        onClick={e => onClick({}, e)}
+        onClick={(e) => onClick({}, e)}
         data-value={value}
         data-label={label}
         className={cx({ active, disabled })}

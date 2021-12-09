@@ -117,7 +117,7 @@ export const visTypeIcons = {
     [VIS_TYPE_SCATTER]: IconVisualizationScatter24,
 }
 
-export const getDisplayNameByVisType = visType => {
+export const getDisplayNameByVisType = (visType) => {
     const displayName = visTypeDisplayNames[visType]
 
     if (!displayName) {
@@ -176,13 +176,13 @@ const legendSetTypes = [
 ]
 
 export const defaultVisType = VIS_TYPE_COLUMN
-export const isStacked = type => stackedTypes.includes(type)
-export const isYearOverYear = type => yearOverYearTypes.includes(type)
-export const isDualAxisType = type => dualAxisTypes.includes(type)
-export const isMultiType = type => multiTypeTypes.includes(type)
-export const isSingleValue = type => type === VIS_TYPE_SINGLE_VALUE
-export const isTwoCategoryChartType = type =>
+export const isStacked = (type) => stackedTypes.includes(type)
+export const isYearOverYear = (type) => yearOverYearTypes.includes(type)
+export const isDualAxisType = (type) => dualAxisTypes.includes(type)
+export const isMultiType = (type) => multiTypeTypes.includes(type)
+export const isSingleValue = (type) => type === VIS_TYPE_SINGLE_VALUE
+export const isTwoCategoryChartType = (type) =>
     twoCategoryChartTypes.includes(type)
-export const isVerticalType = type => verticalTypes.includes(type)
-export const isLegendSetType = type => legendSetTypes.includes(type)
-export const isColumnBasedType = type => columnBasedTypes.includes(type)
+export const isVerticalType = (type) => verticalTypes.includes(type)
+export const isLegendSetType = (type) => legendSetTypes.includes(type)
+export const isColumnBasedType = (type) => columnBasedTypes.includes(type)

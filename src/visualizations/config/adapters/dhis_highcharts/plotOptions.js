@@ -5,7 +5,7 @@ import {
     VIS_TYPE_STACKED_COLUMN,
     VIS_TYPE_BAR,
     VIS_TYPE_STACKED_BAR,
-} from '../../../../modules/visTypes'
+} from '../../../../modules/visTypes.js'
 
 const MAX_LABELS = 10
 
@@ -25,8 +25,8 @@ export default ({
     }
     const getLabels = (x, y) =>
         tooltipData
-            .filter(item => item.x === x && item.y === y)
-            .map(item => item.name)
+            .filter((item) => item.x === x && item.y === y)
+            .map((item) => item.name)
     const getTooltip = (x, y) => {
         let labels = getLabels(x, y)
         const length = labels.length
@@ -39,7 +39,7 @@ export default ({
             )
         }
         return `${labels
-            .map(label => `<b>${label}</b><br>`)
+            .map((label) => `<b>${label}</b><br>`)
             .join('')}${yAxisName}: ${y}<br>${xAxisName}: ${x}`
     }
     switch (visType) {

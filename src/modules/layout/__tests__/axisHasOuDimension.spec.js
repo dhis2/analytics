@@ -1,5 +1,5 @@
-import { axisHasOuDimension } from '../axisHasOuDimension'
-import { TEST_AXIS_COLUMNS, TEST_AXIS_FILTERS } from '../testResources'
+import { axisHasOuDimension } from '../axisHasOuDimension.js'
+import { TEST_AXIS_COLUMNS, TEST_AXIS_FILTERS } from '../testResources.js'
 
 describe('axisHasOuDimension', () => {
     it('should return true if the ou dimension is found in the axis', () => {

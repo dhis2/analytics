@@ -2,11 +2,11 @@ import {
     CLIPPED_CELL_MAX_SIZE,
     WRAPPED_TEXT_JUSTIFY_BUFFER,
     WRAPPED_TEXT_LINE_HEIGHT,
-} from './pivotTableConstants'
+} from './pivotTableConstants.js'
 
 let canvas
 
-const getContext = fontSize => {
+const getContext = (fontSize) => {
     if (!canvas) {
         canvas = document.createElement('canvas')
     }

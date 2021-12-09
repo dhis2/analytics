@@ -1,9 +1,13 @@
-import { AXIS_ID_COLUMNS, AXIS_ID_ROWS, AXIS_ID_FILTERS } from '../layout/axis'
+import {
+    AXIS_ID_COLUMNS,
+    AXIS_ID_ROWS,
+    AXIS_ID_FILTERS,
+} from '../layout/axis.js'
 import {
     DIMENSION_ID_PERIOD,
     DIMENSION_ID_DATA,
     DIMENSION_ID_ORGUNIT,
-} from '../predefinedDimensions'
+} from '../predefinedDimensions.js'
 import {
     VIS_TYPE_COLUMN,
     VIS_TYPE_STACKED_COLUMN,
@@ -20,7 +24,7 @@ import {
     VIS_TYPE_YEAR_OVER_YEAR_COLUMN,
     VIS_TYPE_PIVOT_TABLE,
     VIS_TYPE_SCATTER,
-} from '../visTypes'
+} from '../visTypes.js'
 
 const RULE_PROP_AVAILABLE_AXES = 'availableAxes',
     RULE_PROP_MAX_DIMS_PER_AXIS = 'maxNumberOfDimsPerAxis',
@@ -138,7 +142,7 @@ const visTypeToRules = {
     [VIS_TYPE_SCATTER]: scatterRules,
 }
 
-const getRulesByVisType = visType => {
+const getRulesByVisType = (visType) => {
     const rules = visTypeToRules[visType]
 
     if (!rules) {
@@ -150,22 +154,22 @@ const getRulesByVisType = visType => {
 
 // Selectors
 
-export const getAvailableAxesByVisType = visType =>
+export const getAvailableAxesByVisType = (visType) =>
     getRulesByVisType(visType)[RULE_PROP_AVAILABLE_AXES] || []
 
-export const getMaxNumberOfDimsPerAxisByVisType = visType =>
+export const getMaxNumberOfDimsPerAxisByVisType = (visType) =>
     getRulesByVisType(visType)[RULE_PROP_MAX_DIMS_PER_AXIS] || {}
 
-export const getMinNumberOfDimsPerAxisByVisType = visType =>
+export const getMinNumberOfDimsPerAxisByVisType = (visType) =>
     getRulesByVisType(visType)[RULE_PROP_MIN_DIMS_PER_AXIS] || {}
 
-export const getMaxNumberOfItemsPerAxisByVisType = visType =>
+export const getMaxNumberOfItemsPerAxisByVisType = (visType) =>
     getRulesByVisType(visType)[RULE_PROP_MAX_ITEMS_PER_AXIS] || {}
 
-export const getDisallowedDimsByVisType = visType =>
+export const getDisallowedDimsByVisType = (visType) =>
     getRulesByVisType(visType)[RULE_PROP_DISALLOWED_DIMS] || []
 
-export const getLockedDimsByVisType = visType =>
+export const getLockedDimsByVisType = (visType) =>
     getRulesByVisType(visType)[RULE_PROP_LOCKED_DIMS] || {}
 
 // Test exports

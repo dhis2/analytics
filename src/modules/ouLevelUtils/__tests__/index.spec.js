@@ -1,4 +1,4 @@
-import { convertOuLevelsToUids } from '..'
+import { convertOuLevelsToUids } from '../index.js'
 
 const ouLevels = [
     {

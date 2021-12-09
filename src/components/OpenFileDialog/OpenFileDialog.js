@@ -24,20 +24,24 @@ import {
     CREATED_BY_ALL,
     CREATED_BY_ALL_BUT_CURRENT_USER,
     CREATED_BY_CURRENT_USER,
-} from './CreatedByFilter'
-import { FileList } from './FileList'
-import { NameFilter } from './NameFilter'
-import { styles } from './OpenFileDialog.styles'
-import { PaginationControls } from './PaginationControls'
+} from './CreatedByFilter.js'
+import { FileList } from './FileList.js'
+import { NameFilter } from './NameFilter.js'
+import { styles } from './OpenFileDialog.styles.js'
+import { PaginationControls } from './PaginationControls.js'
 import {
     getTranslatedString,
     AO_TYPE_VISUALIZATION,
     AO_TYPE_EVENT_REPORT,
     AOTypeMap,
-} from './utils'
-import { VisTypeFilter, VIS_TYPE_ALL, VIS_TYPE_CHARTS } from './VisTypeFilter'
+} from './utils.js'
+import {
+    VisTypeFilter,
+    VIS_TYPE_ALL,
+    VIS_TYPE_CHARTS,
+} from './VisTypeFilter.js'
 
-const getQuery = type => ({
+const getQuery = (type) => ({
     files: {
         resource: AOTypeMap[type].apiEndpoint,
         params: ({
@@ -184,7 +188,7 @@ export const OpenFileDialog = ({
         })
     }
 
-    const getSortDirection = fieldName =>
+    const getSortDirection = (fieldName) =>
         fieldName === sortField ? sortDirection : 'default'
 
     const cypressSelector = 'open-file-dialog-modal'
@@ -205,7 +209,7 @@ export const OpenFileDialog = ({
                             <NameFilter
                                 dataTest={`${cypressSelector}-name-filter`}
                                 value={nameFilterValue}
-                                onChange={value => {
+                                onChange={(value) => {
                                     setNameFilterValue(value)
 
                                     clearTimeout(searchTimeout)
@@ -226,7 +230,7 @@ export const OpenFileDialog = ({
                             <div className="type-field-container">
                                 <VisTypeFilter
                                     selected={filters.visType}
-                                    onChange={value =>
+                                    onChange={(value) =>
                                         setFilters({
                                             ...filters,
                                             visType: value,
@@ -238,7 +242,7 @@ export const OpenFileDialog = ({
                         <div className="created-by-field-container">
                             <CreatedByFilter
                                 selected={filters.createdBy}
-                                onChange={value =>
+                                onChange={(value) =>
                                     setFilters({
                                         ...filters,
                                         createdBy: value,
