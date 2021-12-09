@@ -10,7 +10,7 @@ import {
     DataTableColumnHeader,
     DataTableHead,
     DataTableRow,
-    Input,
+    InputField,
     ModalActions,
     ModalContent,
 } from '@dhis2/ui'
@@ -39,6 +39,16 @@ export const TranslationForm = ({
     const [translationLocale, setTranslationLocale] = useState()
 
     const { show: showError } = useAlert(error => error, { critical: true })
+
+    const formatFieldLabel = field => {
+        field
+            .replace(/[a-z][A-Z]/g, match =>
+                [match.charAt(0), match.charAt(1)].join(' ')
+            )
+            .toLowerCase()
+
+        return field.charAt(0).toUpperCase() + field.slice(1)
+    }
 
     const camelCaseToUnderscores = field =>
         field
@@ -145,8 +155,8 @@ export const TranslationForm = ({
                             <DataTableRow key={field}>
                                 <DataTableCell>
                                     <div className="">
-                                        {field}
-                                        <Input
+                                        <InputField
+                                            label={formatFieldLabel(field)}
                                             value={objectToTranslate[field]}
                                             readOnly
                                         />
@@ -155,8 +165,8 @@ export const TranslationForm = ({
                                 {translationLocale && (
                                     <DataTableCell>
                                         <div className="">
-                                            {field}
-                                            <Input
+                                            <InputField
+                                                label={formatFieldLabel(field)}
                                                 value={getTranslationForField(
                                                     field
                                                 )}
