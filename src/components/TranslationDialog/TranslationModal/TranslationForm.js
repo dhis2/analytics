@@ -18,6 +18,9 @@ import PropTypes from 'prop-types'
 import React, { useEffect, useMemo, useState } from 'react'
 import { LocalesSelect } from './LocalesSelect.js'
 
+const SESSION_STORAGE_TRANSLATION_LOCALE_KEY =
+    'translation-dialog-selected-locale'
+
 const getTranslationsMutation = resource => ({
     resource: `${resource}/translations`,
     type: 'update',
@@ -34,7 +37,6 @@ export const TranslationForm = ({
 }) => {
     const [newTranslations, setNewTranslations] = useState()
     const [translationLocale, setTranslationLocale] = useState()
-
     const { show: showError } = useAlert(error => error, { critical: true })
 
     const camelCaseToUnderscores = field =>
@@ -44,30 +46,22 @@ export const TranslationForm = ({
             )
             .toLowerCase()
 
-    const getTranslationIndexForField = field => {
-        console.log(
-            'translations',
-            newTranslations,
-            camelCaseToUnderscores(field)
-        )
-        return newTranslations.findIndex(
+    const getTranslationIndexForField = field =>
+        newTranslations.findIndex(
             element =>
                 element.locale === translationLocale &&
                 element.property.toLowerCase() === camelCaseToUnderscores(field)
         )
-    }
 
     const getTranslationForField = field => {
         const translationIndex = getTranslationIndexForField(field)
-        console.log(field, translationIndex)
+
         return translationIndex !== -1
             ? newTranslations[translationIndex]?.value || ''
             : ''
     }
 
     const setTranslationForField = (field, translation) => {
-        console.log('setTranslationField called', field, translation)
-
         const newTranslation = {
             locale: translationLocale,
             property: camelCaseToUnderscores(field).toUpperCase(),
@@ -106,6 +100,23 @@ export const TranslationForm = ({
     )
 
     const save = () => saveTranslations({ translations: newTranslations })
+
+    useEffect(() => {
+        const tmp = window.sessionStorage.getItem(
+            SESSION_STORAGE_TRANSLATION_LOCALE_KEY
+        )
+
+        setTranslationLocale(tmp)
+    }, [])
+
+    useEffect(
+        () =>
+            window.sessionStorage.setItem(
+                SESSION_STORAGE_TRANSLATION_LOCALE_KEY,
+                translationLocale
+            ),
+        [translationLocale]
+    )
 
     useEffect(() => setNewTranslations(translations), [translations])
 
