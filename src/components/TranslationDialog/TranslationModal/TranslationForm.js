@@ -37,6 +37,7 @@ export const TranslationForm = ({
 }) => {
     const [newTranslations, setNewTranslations] = useState()
     const [translationLocale, setTranslationLocale] = useState()
+
     const { show: showError } = useAlert(error => error, { critical: true })
 
     const camelCaseToUnderscores = field =>
@@ -99,23 +100,25 @@ export const TranslationForm = ({
         }
     )
 
-    const save = () => saveTranslations({ translations: newTranslations })
+    const onLocaleChange = locale => {
+        setTranslationLocale(locale)
 
-    useEffect(() => {
-        const tmp = window.sessionStorage.getItem(
-            SESSION_STORAGE_TRANSLATION_LOCALE_KEY
+        window.sessionStorage.setItem(
+            SESSION_STORAGE_TRANSLATION_LOCALE_KEY,
+            locale
         )
+    }
 
-        setTranslationLocale(tmp)
-    }, [])
+    const save = () => saveTranslations({ translations: newTranslations })
 
     useEffect(
         () =>
-            window.sessionStorage.setItem(
-                SESSION_STORAGE_TRANSLATION_LOCALE_KEY,
-                translationLocale
+            setTranslationLocale(
+                window.sessionStorage.getItem(
+                    SESSION_STORAGE_TRANSLATION_LOCALE_KEY
+                )
             ),
-        [translationLocale]
+        []
     )
 
     useEffect(() => setNewTranslations(translations), [translations])
@@ -132,7 +135,7 @@ export const TranslationForm = ({
                             <DataTableColumnHeader fixed top="0">
                                 <LocalesSelect
                                     selected={translationLocale}
-                                    onChange={setTranslationLocale}
+                                    onChange={onLocaleChange}
                                 />
                             </DataTableColumnHeader>
                         </DataTableRow>
