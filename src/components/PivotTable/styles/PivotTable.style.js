@@ -8,7 +8,7 @@ import {
     FONT_SIZE_SMALL,
     FONT_SIZE_NORMAL,
     FONT_SIZE_LARGE,
-} from '../../../modules/pivotTable/pivotTableConstants'
+} from '../../../modules/pivotTable/pivotTableConstants.js'
 
 export const table = css.global`
     div.pivot-table-container {

@@ -11,7 +11,7 @@ import {
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 import i18n from '../../locales/index.js'
-import { supportedFileTypes } from './utils'
+import { supportedFileTypes } from './utils.js'
 
 export const SaveAsDialog = ({ type, object, onClose, onSaveAs }) => {
     const [name, setName] = useState(object?.name)

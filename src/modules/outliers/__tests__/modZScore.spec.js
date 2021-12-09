@@ -3,7 +3,7 @@ import {
     getMeanAbsoluteDeviation,
     getMedian,
     getMedianAbsoluteDeviation,
-} from '../modZScore'
+} from '../modZScore.js'
 
 const a4 = [1, 2, 3, 10]
 const a5 = [1, 2, 3, 10, 20]

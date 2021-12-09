@@ -1,12 +1,12 @@
 import { DataTableRow, DataTableCell, colors } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
-import { VisTypeIcon } from '../VisTypeIcon'
-import { DateField } from './DateField'
+import { VisTypeIcon } from '../VisTypeIcon.js'
+import { DateField } from './DateField.js'
 
 export const FileList = ({ type, data, onSelect }) => (
     <>
-        {data.map(visualization => (
+        {data.map((visualization) => (
             <DataTableRow key={visualization.id}>
                 <DataTableCell onClick={() => onSelect(visualization.id)}>
                     {visualization.displayName}

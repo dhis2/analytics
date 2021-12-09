@@ -3,7 +3,7 @@ const makeBabelConfig = require('@dhis2/cli-app-scripts/config/makeBabelConfig.j
 module.exports = {
     addons: ['@storybook/preset-create-react-app'],
     stories: ['../src/**/*.stories.@(js|mdx)'],
-    babel: async config => {
+    babel: async (config) => {
         // currently styled-jsx is configured the same way for prod and
         // dev so it doesn't matter what the mode is here.
         const mode = 'production'

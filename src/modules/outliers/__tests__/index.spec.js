@@ -1,4 +1,4 @@
-import { getOutlierHelper } from '..'
+import { getOutlierHelper } from '../index.js'
 
 describe('getOutlierHelper', () => {
     it('should return a reference to the outlier points', () => {

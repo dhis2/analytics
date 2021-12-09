@@ -3,7 +3,7 @@ import {
     getFixedPeriodsOptions,
     parsePeriodCode,
     getYearOffsetFromNow,
-} from '../utils/fixedPeriods'
+} from '../utils/fixedPeriods.js'
 
 describe('fixedPeriods utils', () => {
     beforeAll(() =>
@@ -13,7 +13,9 @@ describe('fixedPeriods utils', () => {
 
     describe('getOptions', () => {
         it('should return a list of available period ranges', () => {
-            const periodIds = getFixedPeriodsOptions().map(option => option.id)
+            const periodIds = getFixedPeriodsOptions().map(
+                (option) => option.id
+            )
 
             expect(periodIds).toEqual([
                 'DAILY',

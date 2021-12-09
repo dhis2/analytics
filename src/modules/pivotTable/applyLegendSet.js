@@ -5,8 +5,8 @@ import {
     LEGEND_DISPLAY_STRATEGY_FIXED,
     LEGEND_DISPLAY_STYLE_TEXT,
     LEGEND_DISPLAY_STYLE_FILL,
-} from '../legends'
-import { isColorBright } from './isColorBright'
+} from '../legends.js'
+import { isColorBright } from './isColorBright.js'
 
 const getLegendSet = (engine, dxDimension) => {
     let legendSetId

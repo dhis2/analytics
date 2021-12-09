@@ -5,9 +5,9 @@ import {
     FONT_STYLE_OPTION_BOLD,
     FONT_STYLE_OPTION_ITALIC,
     FONT_STYLE_OPTION_TEXT_ALIGN,
-} from '../../../../modules/fontStyle'
-import { isVerticalType } from '../../../../modules/visTypes'
-import { getTextAlignOption } from './getTextAlignOption'
+} from '../../../../modules/fontStyle.js'
+import { isVerticalType } from '../../../../modules/visTypes.js'
+import { getTextAlignOption } from './getTextAlignOption.js'
 
 const getTitleStyle = (fontStyle, titleType, visType) =>
     fontStyle

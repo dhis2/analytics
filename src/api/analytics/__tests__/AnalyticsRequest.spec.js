@@ -1,10 +1,10 @@
-import fixtures from '../../../__fixtures__/fixtures'
-import AnalyticsRequest from '../AnalyticsRequest'
+import fixtures from '../../../__fixtures__/fixtures.js'
+import AnalyticsRequest from '../AnalyticsRequest.js'
 
 let request
 let expectedParameters
 
-const getFuncName = parameter =>
+const getFuncName = (parameter) =>
     `with${parameter.charAt(0).toUpperCase()}${parameter.slice(1)}`
 
 describe('AnalyticsRequest', () => {
@@ -334,7 +334,7 @@ describe('AnalyticsRequest', () => {
                 'skipRounding',
                 'tableLayout',
                 'includeMetadataDetails',
-            ].forEach(parameter => {
+            ].forEach((parameter) => {
                 const funcName = getFuncName(parameter)
 
                 it(`should add the ${parameter} parameter with default value`, () => {
@@ -372,7 +372,7 @@ describe('AnalyticsRequest', () => {
                 'startDate',
                 'userOrgUnit',
                 'value', // XXX
-            ].forEach(parameter => {
+            ].forEach((parameter) => {
                 const funcName = getFuncName(parameter)
 
                 it(`should add the ${parameter} parameter with the specified value`, () => {

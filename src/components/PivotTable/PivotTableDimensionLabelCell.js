@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import React from 'react'
-import { PivotTableCell } from './PivotTableCell'
-import { usePivotTableEngine } from './PivotTableEngineContext'
+import { PivotTableCell } from './PivotTableCell.js'
+import { usePivotTableEngine } from './PivotTableEngineContext.js'
 
 export const PivotTableDimensionLabelCell = ({ rowLevel, columnLevel }) => {
     const engine = usePivotTableEngine()

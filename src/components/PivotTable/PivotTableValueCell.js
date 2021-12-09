@@ -1,13 +1,13 @@
 import PropTypes from 'prop-types'
 import React, { useRef } from 'react'
-import { applyLegendSet } from '../../modules/pivotTable/applyLegendSet'
+import { applyLegendSet } from '../../modules/pivotTable/applyLegendSet.js'
 import {
     VALUE_TYPE_NUMBER,
     CELL_TYPE_VALUE,
-} from '../../modules/pivotTable/pivotTableConstants'
-import { PivotTableCell } from './PivotTableCell'
-import { PivotTableEmptyCell } from './PivotTableEmptyCell'
-import { usePivotTableEngine } from './PivotTableEngineContext'
+} from '../../modules/pivotTable/pivotTableConstants.js'
+import { PivotTableCell } from './PivotTableCell.js'
+import { PivotTableEmptyCell } from './PivotTableEmptyCell.js'
+import { usePivotTableEngine } from './PivotTableEngineContext.js'
 
 export const PivotTableValueCell = ({
     row,

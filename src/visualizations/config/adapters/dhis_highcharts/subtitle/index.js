@@ -7,16 +7,16 @@ import {
     FONT_STYLE_OPTION_TEXT_ALIGN,
     FONT_STYLE_VISUALIZATION_SUBTITLE,
     mergeFontStyleWithDefault,
-} from '../../../../../modules/fontStyle'
+} from '../../../../../modules/fontStyle.js'
 import {
     VIS_TYPE_YEAR_OVER_YEAR_LINE,
     VIS_TYPE_YEAR_OVER_YEAR_COLUMN,
     isVerticalType,
     VIS_TYPE_SCATTER,
-} from '../../../../../modules/visTypes'
-import getFilterText from '../../../../util/getFilterText'
-import { getTextAlignOption } from '../getTextAlignOption'
-import getYearOverYearTitle from '../title/yearOverYear'
+} from '../../../../../modules/visTypes.js'
+import getFilterText from '../../../../util/getFilterText.js'
+import { getTextAlignOption } from '../getTextAlignOption.js'
+import getYearOverYearTitle from '../title/yearOverYear.js'
 
 const DASHBOARD_SUBTITLE = {
     style: {

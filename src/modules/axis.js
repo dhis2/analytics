@@ -1,14 +1,18 @@
 import i18n from '../locales/index.js'
-import { AXIS_ID_COLUMNS, AXIS_ID_ROWS, AXIS_ID_FILTERS } from './layout/axis'
+import {
+    AXIS_ID_COLUMNS,
+    AXIS_ID_ROWS,
+    AXIS_ID_FILTERS,
+} from './layout/axis.js'
 import {
     LAYOUT_TYPE_DEFAULT,
     LAYOUT_TYPE_PIE,
     LAYOUT_TYPE_YEAR_OVER_YEAR,
     LAYOUT_TYPE_PIVOT_TABLE,
     LAYOUT_TYPE_SCATTER,
-} from './layoutTypes'
+} from './layoutTypes.js'
 
-const getAxisNamesByLayoutType = layoutType => {
+const getAxisNamesByLayoutType = (layoutType) => {
     switch (layoutType) {
         case LAYOUT_TYPE_DEFAULT:
         case LAYOUT_TYPE_PIE:
@@ -42,8 +46,8 @@ export const getAxisNameByLayoutType = (axisId, layoutType) => {
     return name
 }
 
-export const getAxisName = axisId =>
+export const getAxisName = (axisId) =>
     getAxisNameByLayoutType(axisId, LAYOUT_TYPE_DEFAULT)
 
-export const hasCustomAxes = series =>
-    Boolean(series?.length && series.some(item => item.axis > 0))
+export const hasCustomAxes = (series) =>
+    Boolean(series?.length && series.some((item) => item.axis > 0))

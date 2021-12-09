@@ -1,4 +1,4 @@
-import AnalyticsRequest from './AnalyticsRequest'
+import AnalyticsRequest from './AnalyticsRequest.js'
 
 /**
  * @private
@@ -8,7 +8,7 @@ import AnalyticsRequest from './AnalyticsRequest'
  * @param {*} base The base class to mix onto
  * @return {module:analytics.AnalyticsRequestDimensionsMixin} The mixin class
  */
-const AnalyticsRequestDimensionsMixin = base =>
+const AnalyticsRequestDimensionsMixin = (base) =>
     /**
      * @private
      * @description

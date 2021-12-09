@@ -1,8 +1,8 @@
-import { getFixedDimensions } from '../../modules/predefinedDimensions'
-import AnalyticsRequestBase from './AnalyticsRequestBase'
-import AnalyticsRequestDimensionsMixin from './AnalyticsRequestDimensionsMixin'
-import AnalyticsRequestFiltersMixin from './AnalyticsRequestFiltersMixin'
-import AnalyticsRequestPropertiesMixin from './AnalyticsRequestPropertiesMixin'
+import { getFixedDimensions } from '../../modules/predefinedDimensions.js'
+import AnalyticsRequestBase from './AnalyticsRequestBase.js'
+import AnalyticsRequestDimensionsMixin from './AnalyticsRequestDimensionsMixin.js'
+import AnalyticsRequestFiltersMixin from './AnalyticsRequestFiltersMixin.js'
+import AnalyticsRequestPropertiesMixin from './AnalyticsRequestPropertiesMixin.js'
 
 /**
  * @description
@@ -48,7 +48,7 @@ class AnalyticsRequest extends AnalyticsRequestDimensionsMixin(
         const columns = visualization.columns || []
         const rows = visualization.rows || []
 
-        columns.concat(rows).forEach(d => {
+        columns.concat(rows).forEach((d) => {
             let dimension = d.dimension
 
             if (d.legendSet?.id) {
@@ -61,7 +61,7 @@ class AnalyticsRequest extends AnalyticsRequestDimensionsMixin(
 
             request = request.addDimension(
                 dimension,
-                d.items?.map(item => item.id)
+                d.items?.map((item) => item.id)
             )
         })
 
@@ -71,16 +71,16 @@ class AnalyticsRequest extends AnalyticsRequestDimensionsMixin(
         // only pass dx/pe/ou as dimension
         const fixedIds = Object.keys(getFixedDimensions())
 
-        filters.forEach(f => {
+        filters.forEach((f) => {
             request =
                 passFilterAsDimension && fixedIds.includes(f.dimension)
                     ? request.addDimension(
                           f.dimension,
-                          f.items?.map(item => item.id)
+                          f.items?.map((item) => item.id)
                       )
                     : request.addFilter(
                           f.dimension,
-                          f.items?.map(item => item.id)
+                          f.items?.map((item) => item.id)
                       )
         })
 

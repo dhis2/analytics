@@ -1,14 +1,14 @@
-import { ALL_AXIS_IDS } from '../../layout/axis'
+import { ALL_AXIS_IDS } from '../../layout/axis.js'
 import {
     DIMENSION_ID_DATA,
     DIMENSION_ID_ORGUNIT,
     DIMENSION_ID_PERIOD,
-} from '../../predefinedDimensions'
+} from '../../predefinedDimensions.js'
 import {
     testResourceRules,
     testResourceRequiredProps,
     testResourceAllRuleProps,
-} from '../rules'
+} from '../rules.js'
 
 // Consts
 const lockableDims = [
@@ -20,58 +20,58 @@ const disallowableDims = [DIMENSION_ID_DATA, DIMENSION_ID_PERIOD]
 
 // Helper fns
 const allArrayItemsAreValid = (allItems, validItems) =>
-    allItems.every(value => validItems.includes(value))
+    allItems.every((value) => validItems.includes(value))
 
-const allArrayItemsAreValidAxisIds = array =>
+const allArrayItemsAreValidAxisIds = (array) =>
     allArrayItemsAreValid(array, ALL_AXIS_IDS)
 
-const onlyRulesWithProp = ruleProp =>
-    testResourceRules.filter(rule => rule[ruleProp])
+const onlyRulesWithProp = (ruleProp) =>
+    testResourceRules.filter((rule) => rule[ruleProp])
 
 // Partial tests
-const testPropHasKeysAndValues = ruleProp =>
+const testPropHasKeysAndValues = (ruleProp) =>
     it('has keys and values', () => {
         expect(
             onlyRulesWithProp(ruleProp).every(
-                rule =>
+                (rule) =>
                     Object.keys(rule[ruleProp]).length &&
                     Object.values(rule[ruleProp]).length
             )
         ).toBe(true)
     })
 
-const testPropIsArray = ruleProp =>
+const testPropIsArray = (ruleProp) =>
     it('is an array', () => {
         expect(
-            onlyRulesWithProp(ruleProp).every(rule =>
+            onlyRulesWithProp(ruleProp).every((rule) =>
                 Array.isArray(rule[ruleProp])
             )
         ).toBe(true)
     })
 
-const testKeysAreValidAxisIds = ruleProp =>
+const testKeysAreValidAxisIds = (ruleProp) =>
     it('keys should be valid axis ids', () => {
         expect(
-            onlyRulesWithProp(ruleProp).every(rule =>
+            onlyRulesWithProp(ruleProp).every((rule) =>
                 allArrayItemsAreValidAxisIds(Object.keys(rule[ruleProp]))
             )
         ).toBe(true)
     })
 
-const testNoValuesZero = ruleProp =>
+const testNoValuesZero = (ruleProp) =>
     it('values should not be 0', () => {
         expect(
-            onlyRulesWithProp(ruleProp).every(rule =>
-                Object.values(rule[ruleProp]).every(value => value !== 0)
+            onlyRulesWithProp(ruleProp).every((rule) =>
+                Object.values(rule[ruleProp]).every((value) => value !== 0)
             )
         ).toBe(true)
     })
 
-const testNoValuesNegative = ruleProp =>
+const testNoValuesNegative = (ruleProp) =>
     it('values should not be negative', () => {
         expect(
-            onlyRulesWithProp(ruleProp).every(rule =>
-                Object.values(rule[ruleProp]).every(value => value >= 0)
+            onlyRulesWithProp(ruleProp).every((rule) =>
+                Object.values(rule[ruleProp]).every((value) => value >= 0)
             )
         ).toBe(true)
     })
@@ -90,9 +90,9 @@ describe('verify test resource', () => {
 describe('verify all rules', () => {
     it('implements all required props', () => {
         expect(
-            testResourceRules.every(rule =>
+            testResourceRules.every((rule) =>
                 testResourceRequiredProps.every(
-                    val => Object.keys(rule).indexOf(val) !== -1
+                    (val) => Object.keys(rule).indexOf(val) !== -1
                 )
             )
         ).toBe(true)
@@ -100,7 +100,7 @@ describe('verify all rules', () => {
 
     it('only implements allowed rule props', () => {
         expect(
-            testResourceRules.every(rule =>
+            testResourceRules.every((rule) =>
                 allArrayItemsAreValid(
                     Object.keys(rule),
                     Object.values(testResourceAllRuleProps)
@@ -116,7 +116,7 @@ describe("verify each rule's ", () => {
         'MIN_DIMS_PER_AXIS',
         'MAX_ITEMS_PER_AXIS',
     ]
-    axisIdNumericProps.forEach(prop => {
+    axisIdNumericProps.forEach((prop) => {
         describe(prop, () => {
             const ruleProp = testResourceAllRuleProps[prop]
 
@@ -134,7 +134,7 @@ describe("verify each rule's ", () => {
 
         it('array items should be valid axis ids', () => {
             expect(
-                onlyRulesWithProp(ruleProp).every(rule =>
+                onlyRulesWithProp(ruleProp).every((rule) =>
                     allArrayItemsAreValidAxisIds(rule[ruleProp])
                 )
             ).toBe(true)
@@ -143,7 +143,7 @@ describe("verify each rule's ", () => {
         it('array should not be empty', () => {
             expect(
                 onlyRulesWithProp(ruleProp).every(
-                    rule => rule[ruleProp].length > 0
+                    (rule) => rule[ruleProp].length > 0
                 )
             ).toBe(true)
         })
@@ -156,7 +156,7 @@ describe("verify each rule's ", () => {
 
         it('keys should be valid lockable dimensions', () => {
             expect(
-                onlyRulesWithProp(ruleProp).every(rule =>
+                onlyRulesWithProp(ruleProp).every((rule) =>
                     allArrayItemsAreValid(
                         Object.keys(rule[ruleProp]),
                         lockableDims
@@ -167,7 +167,7 @@ describe("verify each rule's ", () => {
 
         it('values should be valid axis id', () => {
             expect(
-                onlyRulesWithProp(ruleProp).every(rule =>
+                onlyRulesWithProp(ruleProp).every((rule) =>
                     allArrayItemsAreValidAxisIds(Object.values(rule[ruleProp]))
                 )
             ).toBe(true)
@@ -181,7 +181,7 @@ describe("verify each rule's ", () => {
 
         it('array items should be valid disallowable dims', () => {
             expect(
-                onlyRulesWithProp(ruleProp).every(rule =>
+                onlyRulesWithProp(ruleProp).every((rule) =>
                     allArrayItemsAreValid(rule[ruleProp], disallowableDims)
                 )
             ).toBe(true)

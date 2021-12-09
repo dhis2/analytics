@@ -14,7 +14,7 @@ const user = {
     username: 'admin',
 }
 
-const onFileSelect = id => alert(`Opening ${id}`)
+const onFileSelect = (id) => alert(`Opening ${id}`)
 
 storiesOf('OpenFileDialog', module).add('List of visualizations', () => (
     <Provider config={configMock}>
