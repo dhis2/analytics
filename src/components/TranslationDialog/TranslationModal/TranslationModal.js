@@ -1,17 +1,15 @@
 import i18n from '@dhis2/d2-i18n'
 import {
-    Button,
-    ButtonStrip,
     CenteredContent,
     CircularLoader,
     Modal,
-    ModalActions,
     ModalContent,
     ModalTitle,
 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useEffect, useState } from 'react'
 import { TranslationForm } from './TranslationForm.js'
+import { TranslationModalActions } from './TranslationModalActions.js'
 import { useTranslationsResults } from './useTranslationsResults.js'
 
 export const TranslationModal = ({
@@ -53,16 +51,10 @@ export const TranslationModal = ({
                             <CircularLoader />
                         </CenteredContent>
                     </ModalContent>
-                    <ModalActions>
-                        <ButtonStrip>
-                            <Button secondary onClick={onClose}>
-                                {i18n.t('Cancel')}
-                            </Button>
-                            <Button primary disabled>
-                                {i18n.t('Save translations')}
-                            </Button>
-                        </ButtonStrip>
-                    </ModalActions>
+                    <TranslationModalActions
+                        onClose={onClose}
+                        saveButtonDisabled={true}
+                    />
                 </>
             ) : (
                 <TranslationForm

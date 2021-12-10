@@ -1,8 +1,6 @@
 import { useAlert, useDataMutation } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import {
-    Button,
-    ButtonStrip,
     CenteredContent,
     DataTable,
     DataTableBody,
@@ -11,12 +9,12 @@ import {
     DataTableHead,
     DataTableRow,
     InputField,
-    ModalActions,
     ModalContent,
 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useEffect, useMemo, useState } from 'react'
 import { LocalesSelect } from './LocalesSelect.js'
+import { TranslationModalActions } from './TranslationModalActions.js'
 
 const SESSION_STORAGE_TRANSLATION_LOCALE_KEY =
     'translation-dialog-selected-locale'
@@ -198,21 +196,12 @@ export const TranslationForm = ({
                     </DataTableBody>
                 </DataTable>
             </ModalContent>
-            <ModalActions>
-                <ButtonStrip>
-                    <Button secondary onClick={onClose}>
-                        {i18n.t('Cancel')}
-                    </Button>
-                    <Button
-                        primary
-                        onClick={save}
-                        loading={saveInProgress}
-                        disabled={!translationLocale}
-                    >
-                        {i18n.t('Save translations')}
-                    </Button>
-                </ButtonStrip>
-            </ModalActions>
+            <TranslationModalActions
+                onClose={onClose}
+                onSave={save}
+                saveInProgress={saveInProgress}
+                saveButtonDisabled={!translationLocale}
+            />
         </>
     )
 }
