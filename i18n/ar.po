@@ -847,7 +847,7 @@ msgid "Right"
 msgstr "الأيمن"
 
 msgid "Start"
-msgstr "بدء"
+msgstr "البدء"
 
 msgid "Middle"
 msgstr "الوسط"
