@@ -1,3 +1,10 @@
+## [21.0.11](https://github.com/dhis2/analytics/compare/v21.0.10...v21.0.11) (2021-12-10)
+
+
+### Bug Fixes
+
+* support legendset in dimension create ([#1107](https://github.com/dhis2/analytics/issues/1107)) ([4b4dbe7](https://github.com/dhis2/analytics/commit/4b4dbe74c0012419f12c6b2f9c297e1a3e256c05))
+
 ## [21.0.10](https://github.com/dhis2/analytics/compare/v21.0.9...v21.0.10) (2021-12-09)
 
 
