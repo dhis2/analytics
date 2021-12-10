@@ -30,8 +30,16 @@ export const DIMENSION_PROP_FILTER = {
     isValid: (prop) => isString(prop),
 }
 
+export const DIMENSION_PROP_LEGEND_SET = {
+    name: 'legendSet',
+    defaultValue: [],
+    required: false,
+    isValid: (prop) => isString(prop),
+}
+
 export const DIMENSION_PROPS = [
     DIMENSION_PROP_ID,
     DIMENSION_PROP_ITEMS,
     DIMENSION_PROP_FILTER,
+    DIMENSION_PROP_LEGEND_SET,
 ]
