@@ -14,6 +14,12 @@ const d2Mock = {
     },
 }
 
+const user = {
+    displayName: 'John Traore',
+    id: 'xE7jOejl9FI',
+    username: 'admin',
+}
+
 const visObject = {
     lastUpdated: '2020-10-12T09:44:46.194',
     href: 'http://localhost:8080/api/32/visualizations/a8LrqsBQlHP',
@@ -63,11 +69,14 @@ const visReadonlyObject = {
 }
 
 storiesOf('FileMenu', module)
-    .add('Simple', () => <FileMenu d2={d2Mock} fileType="visualization" />)
+    .add('Simple', () => (
+        <FileMenu d2={d2Mock} currentUser={user} fileType="visualization" />
+    ))
     .add('With AO', () => (
         <Provider config={configMock}>
             <FileMenu
                 d2={d2Mock}
+                currentUser={user}
                 fileType="visualization"
                 fileObject={visObject}
             />
@@ -77,6 +86,7 @@ storiesOf('FileMenu', module)
         <Provider config={configMock}>
             <FileMenu
                 d2={d2Mock}
+                currentUser={user}
                 fileType="visualization"
                 fileObject={visReadonlyObject}
             />
