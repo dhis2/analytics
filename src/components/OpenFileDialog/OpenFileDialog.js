@@ -148,14 +148,17 @@ export const OpenFileDialog = ({
     }, [open, page, sortField, sortDirection])
 
     useEffect(() => {
-        // reset pagination when filters are applied/changed
-        setPage(1)
+        // avoid fetching data when the dialog is first rendered (hidden)
+        if (open) {
+            // reset pagination when filters are applied/changed
+            setPage(1)
 
-        refetch({
-            sortField,
-            sortDirection,
-            filters: formatFilters(),
-        })
+            refetch({
+                sortField,
+                sortDirection,
+                filters: formatFilters(),
+            })
+        }
     }, [filters])
 
     const headers = [
