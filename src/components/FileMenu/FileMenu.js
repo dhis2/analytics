@@ -29,6 +29,7 @@ import { supportedFileTypes } from './utils.js'
 
 export const FileMenu = ({
     d2, // to be removed as soon as TranslateDialog and FavoritesDialog are rewritten
+    currentUser,
     fileType,
     fileObject,
     onNew,
@@ -153,7 +154,7 @@ export const FileMenu = ({
                     onDialogClose()
                 }}
                 onNew={onNew}
-                currentUser={d2.currentUser}
+                currentUser={currentUser}
             />
             {menuIsOpen && (
                 <Layer
@@ -350,6 +351,7 @@ FileMenu.defaultProps = {
 }
 
 FileMenu.propTypes = {
+    currentUser: PropTypes.object,
     d2: PropTypes.object,
     fileObject: PropTypes.object,
     fileType: PropTypes.oneOf(supportedFileTypes),
