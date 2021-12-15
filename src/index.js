@@ -34,6 +34,11 @@ export {
     useCurrentUser,
 } from './components/CurrentUserProvider'
 
+export {
+    default as CurrentUserProvider,
+    useCurrentUser,
+} from './components/CurrentUserProvider'
+
 // Api
 
 export { default as Analytics } from './api/analytics/Analytics.js'

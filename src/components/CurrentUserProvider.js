@@ -58,7 +58,11 @@ export const CurrentUserProvider = ({ children }) => {
 }
 
 CurrentUserProvider.propTypes = {
+<<<<<<< HEAD
     children: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),
+=======
+    children: PropTypes.node,
+>>>>>>> feat: add CurrentUserProvider component and hook
 }
 
 export default CurrentUserProvider
