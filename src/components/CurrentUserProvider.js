@@ -19,21 +19,29 @@ const query = {
 
 const CurrentUserCtx = createContext({})
 
+const tranformUserSettings = (userSettings) => {
+    if (!userSettings) {
+        return undefined
+    }
+
+    const { keyAnalysisDisplayProperty, keyUiLocale, ...rest } = userSettings
+
+    return {
+        ...rest,
+        displayProperty: keyAnalysisDisplayProperty,
+        displayNameProperty:
+            keyAnalysisDisplayProperty === 'name'
+                ? 'displayName'
+                : 'displayShortName',
+        uiLocale: keyUiLocale,
+    }
+}
+
 export const CurrentUserProvider = ({ children }) => {
     const { data, loading, error } = useDataQuery(query)
-    const { keyAnalysisDisplayProperty, keyUiLocale, ...rest } =
-        data.userSettings
     const providerData = {
-        currentUser: data.currentUser,
-        userSettings: {
-            ...rest,
-            displayProperty: keyAnalysisDisplayProperty,
-            displayNameProperty:
-                keyAnalysisDisplayProperty === 'name'
-                    ? 'displayName'
-                    : 'displayShortName',
-            uiLocale: keyUiLocale,
-        },
+        currentUser: data?.currentUser,
+        userSettings: tranformUserSettings(data?.userSettings),
         loading,
         error,
     }
