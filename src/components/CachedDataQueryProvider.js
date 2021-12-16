@@ -10,7 +10,7 @@ const CachedDataQueryProvider = ({
     query,
     dataTransformation,
     children,
-    swr,
+    disableSwr,
 }) => {
     const { data: rawData, ...rest } = useDataQuery(query)
     const { error, loading, fetching } = rest
@@ -44,7 +44,7 @@ const CachedDataQueryProvider = ({
                         <CircularLoader />
                     </CenteredContent>
                 </Layer>
-                {!loading && swr && (
+                {!loading && !disableSwr && (
                     <CachedDataQueryCtx.Provider value={providerValue}>
                         {children}
                     </CachedDataQueryCtx.Provider>
@@ -74,7 +74,7 @@ CachedDataQueryProvider.propTypes = {
     children: PropTypes.node.isRequired,
     query: PropTypes.object.isRequired,
     dataTransformation: PropTypes.func,
-    swr: PropTypes.bool,
+    disableSwr: PropTypes.bool,
 }
 
 const useCachedDataQuery = () => useContext(CachedDataQueryCtx)
