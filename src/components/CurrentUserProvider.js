@@ -1,6 +1,6 @@
 import { useDataQuery } from '@dhis2/app-runtime'
 import PropTypes from 'prop-types'
-import React, { createContext, useContext, useEffect, useState } from 'react'
+import React, { createContext, useContext } from 'react'
 
 const query = {
     currentUser: {
@@ -20,39 +20,27 @@ const query = {
 const CurrentUserCtx = createContext({})
 
 export const CurrentUserProvider = ({ children }) => {
-    const [currentUser, setCurrentUser] = useState({})
-    const [userSettings, setUserSettings] = useState([])
-    const { data } = useDataQuery(query)
-
-    useEffect(() => {
-        if (data) {
-            setCurrentUser(data.currentUser)
-
-            const { keyAnalysisDisplayProperty, keyUiLocale, ...rest } =
-                data.userSettings
-
-            setUserSettings({
-                ...rest,
-                displayProperty: keyAnalysisDisplayProperty,
-                displayNameProperty:
-                    keyAnalysisDisplayProperty === 'name'
-                        ? 'displayName'
-                        : 'displayShortName',
-                uiLocale: keyUiLocale,
-            })
-        }
-    }, [data])
+    const { data, loading, error } = useDataQuery(query)
+    const { keyAnalysisDisplayProperty, keyUiLocale, ...rest } =
+        data.userSettings
+    const providerData = {
+        currentUser: data.currentUser,
+        userSettings: {
+            ...rest,
+            displayProperty: keyAnalysisDisplayProperty,
+            displayNameProperty:
+                keyAnalysisDisplayProperty === 'name'
+                    ? 'displayName'
+                    : 'displayShortName',
+            uiLocale: keyUiLocale,
+        },
+        loading,
+        error,
+    }
 
     return (
-        <CurrentUserCtx.Provider
-            value={{
-                currentUser,
-                userSettings,
-            }}
-        >
-            {typeof children === 'function'
-                ? children({ currentUser, userSettings })
-                : children}
+        <CurrentUserCtx.Provider value={providerData}>
+            {typeof children === 'function' ? children(providerData) : children}
         </CurrentUserCtx.Provider>
     )
 }
