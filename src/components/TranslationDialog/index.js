@@ -1,3 +1,3 @@
-import { TranslationModal as TranslationDialog } from './TranslationModal/TranslationModal'
+import { TranslationModal as TranslationDialog } from './TranslationModal/TranslationModal.js'
 
 export { TranslationDialog }
