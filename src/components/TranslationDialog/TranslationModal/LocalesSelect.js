@@ -27,7 +27,7 @@ export const LocalesSelect = ({ onChange, selected }) => {
                 data.locales
                     // XXX remove duplicates ?! fr_SN - French (Senegal)
                     .reduce((locales, { locale, name }) => {
-                        if (!locales.find(entry => entry.locale === locale)) {
+                        if (!locales.find((entry) => entry.locale === locale)) {
                             locales.push({ locale, name })
                         }
 

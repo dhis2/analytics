@@ -12,11 +12,11 @@ export const useTranslationsResults = ({ resource }) => {
     const { data, fetching, refetch } = useDataQuery(
         translationsQueryRef.current,
         {
-            onError: error => showError(error),
+            onError: (error) => showError(error),
         }
     )
 
-    const { show: showError } = useAlert(error => error.message, {
+    const { show: showError } = useAlert((error) => error.message, {
         critical: true,
         actions: [{ label: i18n.t('Retry'), onClick: refetch }],
     })

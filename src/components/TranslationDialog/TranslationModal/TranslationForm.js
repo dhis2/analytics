@@ -19,7 +19,7 @@ import { TranslationModalActions } from './TranslationModalActions.js'
 const SESSION_STORAGE_TRANSLATION_LOCALE_KEY =
     'translation-dialog-selected-locale'
 
-const getTranslationsMutation = resource => ({
+const getTranslationsMutation = (resource) => ({
     resource: `${resource}/translations`,
     type: 'update',
     data: ({ translations }) => ({ translations }),
@@ -36,11 +36,11 @@ export const TranslationForm = ({
     const [newTranslations, setNewTranslations] = useState()
     const [translationLocale, setTranslationLocale] = useState()
 
-    const { show: showError } = useAlert(error => error, { critical: true })
+    const { show: showError } = useAlert((error) => error, { critical: true })
 
-    const formatFieldLabel = field => {
+    const formatFieldLabel = (field) => {
         field
-            .replace(/[a-z][A-Z]/g, match =>
+            .replace(/[a-z][A-Z]/g, (match) =>
                 [match.charAt(0), match.charAt(1)].join(' ')
             )
             .toLowerCase()
@@ -48,21 +48,21 @@ export const TranslationForm = ({
         return field.charAt(0).toUpperCase() + field.slice(1)
     }
 
-    const camelCaseToUnderscores = field =>
+    const camelCaseToUnderscores = (field) =>
         field
-            .replace(/[a-z][A-Z]/g, match =>
+            .replace(/[a-z][A-Z]/g, (match) =>
                 [match.charAt(0), match.charAt(1)].join('_')
             )
             .toLowerCase()
 
-    const getTranslationIndexForField = field =>
+    const getTranslationIndexForField = (field) =>
         newTranslations.findIndex(
-            element =>
+            (element) =>
                 element.locale === translationLocale &&
                 element.property.toLowerCase() === camelCaseToUnderscores(field)
         )
 
-    const getTranslationForField = field => {
+    const getTranslationForField = (field) => {
         const translationIndex = getTranslationIndexForField(field)
 
         return translationIndex !== -1
@@ -102,13 +102,13 @@ export const TranslationForm = ({
                 onTranslationSaved()
                 onClose()
             },
-            onError: error => {
+            onError: (error) => {
                 showError(error)
             },
         }
     )
 
-    const onLocaleChange = locale => {
+    const onLocaleChange = (locale) => {
         setTranslationLocale(locale)
 
         window.sessionStorage.setItem(
