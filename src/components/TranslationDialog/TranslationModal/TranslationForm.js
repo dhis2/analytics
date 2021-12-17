@@ -12,18 +12,12 @@ import {
     ModalContent,
 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
-import React, { useEffect, useMemo, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { LocalesSelect } from './LocalesSelect.js'
 import { TranslationModalActions } from './TranslationModalActions.js'
 
 const SESSION_STORAGE_TRANSLATION_LOCALE_KEY =
     'translation-dialog-selected-locale'
-
-const getTranslationsMutation = (resource) => ({
-    resource: `${resource}/translations`,
-    type: 'update',
-    data: ({ translations }) => ({ translations }),
-})
 
 export const TranslationForm = ({
     fieldsToTranslate,
@@ -79,24 +73,23 @@ export const TranslationForm = ({
 
         const translationIndex = getTranslationIndexForField(field)
 
-        const updatedTranslations = [...newTranslations]
-
-        if (translationIndex !== -1) {
-            updatedTranslations.splice(translationIndex, 1, newTranslation)
-        } else {
-            updatedTranslations.push(newTranslation)
-        }
-
-        setNewTranslations(updatedTranslations)
+        setNewTranslations(
+            translationIndex === -1
+                ? [...newTranslations, newTranslation]
+                : newTranslations.map((translation, index) =>
+                      index === translationIndex ? newTranslation : translation
+                  )
+        )
     }
 
-    const translationsMutation = useMemo(
-        () => getTranslationsMutation(resource),
-        []
-    )
+    const translationsMutationRef = useRef({
+        resource: `${resource}/translations`,
+        type: 'update',
+        data: ({ translations }) => ({ translations }),
+    })
 
     const [saveTranslations, { loading: saveInProgress }] = useDataMutation(
-        translationsMutation,
+        translationsMutationRef.current,
         {
             onComplete: () => {
                 onTranslationSaved()

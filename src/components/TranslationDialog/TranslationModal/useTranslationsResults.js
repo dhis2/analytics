@@ -16,10 +16,13 @@ export const useTranslationsResults = ({ resource }) => {
         }
     )
 
-    const { show: showError } = useAlert((error) => error.message, {
-        critical: true,
-        actions: [{ label: i18n.t('Retry'), onClick: refetch }],
-    })
+    const { show: showError } = useAlert(
+        (error) => error.message || i18n.t('Could not load translations'),
+        {
+            critical: true,
+            actions: [{ label: i18n.t('Retry'), onClick: refetch }],
+        }
+    )
 
     return {
         translationsData: fetching ? undefined : data.translations.translations,
