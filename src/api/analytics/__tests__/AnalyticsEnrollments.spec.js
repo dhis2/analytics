@@ -1,7 +1,7 @@
-import fixtures from '../../../__fixtures__/fixtures'
-import DataEngineMock from '../__mocks__/DataEngine'
-import AnalyticsEnrollments from '../AnalyticsEnrollments'
-import AnalyticsRequest from '../AnalyticsRequest'
+import fixtures from '../../../__fixtures__/fixtures.js'
+import DataEngineMock from '../__mocks__/DataEngine.js'
+import AnalyticsEnrollments from '../AnalyticsEnrollments.js'
+import AnalyticsRequest from '../AnalyticsRequest.js'
 
 describe('analytics.enrollments', () => {
     let enrollments
@@ -56,7 +56,7 @@ describe('analytics.enrollments', () => {
         })
 
         it('should resolve a promise with data', () =>
-            enrollments.getQuery(request).then(data => {
+            enrollments.getQuery(request).then((data) => {
                 expect(data.width).toEqual(fixture.width)
                 expect(data.height).toEqual(fixture.height)
             }))
