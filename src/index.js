@@ -239,6 +239,10 @@ export {
     LEGEND_DISPLAY_STYLE_TEXT,
 } from './modules/legends.js'
 
+// Modules: pivotTable
+
+export { renderValue as formatValue } from './modules/pivotTable/renderValue.js'
+
 // Utils: colorSets
 export {
     COLOR_SET_DEFAULT,
