@@ -1,3 +1,10 @@
+# [21.1.0](https://github.com/dhis2/analytics/compare/v21.0.12...v21.1.0) (2021-12-20)
+
+
+### Features
+
+* export formatValue function ([#1080](https://github.com/dhis2/analytics/issues/1080)) ([20d0f5a](https://github.com/dhis2/analytics/commit/20d0f5a1b2eda14879f03a4c6d37337c80bb15ff))
+
 ## [21.0.12](https://github.com/dhis2/analytics/compare/v21.0.11...v21.0.12) (2021-12-11)
 
 
