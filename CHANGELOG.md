@@ -1,3 +1,10 @@
+## [21.1.1](https://github.com/dhis2/analytics/compare/v21.1.0...v21.1.1) (2021-12-22)
+
+
+### Bug Fixes
+
+* do not fix headers if no dimension items are selected ([#1057](https://github.com/dhis2/analytics/issues/1057)) ([ae51967](https://github.com/dhis2/analytics/commit/ae51967ff35a17b8589f4959015b06c4913b7dae))
+
 # [21.1.0](https://github.com/dhis2/analytics/compare/v21.0.12...v21.1.0) (2021-12-20)
 
 
