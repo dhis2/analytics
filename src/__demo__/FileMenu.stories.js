@@ -10,7 +10,7 @@ const configMock = {
 
 const d2Mock = {
     i18n: {
-        getTranslation: (string) => string,
+        getTranslation: string => string,
     },
 }
 

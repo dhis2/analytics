@@ -24,7 +24,7 @@ class DimensionLabel extends Component {
         }
     }
 
-    onKeyPress = (event) => {
+    onKeyPress = event => {
         if (event.key === 'Enter' && event.ctrlKey === false) {
             this.onLabelClick()
         }

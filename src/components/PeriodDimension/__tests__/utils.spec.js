@@ -15,7 +15,7 @@ describe('utils', () => {
             const periodIds = filterPeriodTypesById(
                 getFixedPeriodsOptions(),
                 excludedPeriodTypes
-            ).map((option) => option.id)
+            ).map(option => option.id)
 
             expect(periodIds).toEqual([
                 'WEEKLYWED',
@@ -38,7 +38,7 @@ describe('utils', () => {
             const periodIds = filterPeriodTypesById(
                 getRelativePeriodsOptions(),
                 excludedPeriodTypes
-            ).map((option) => option.id)
+            ).map(option => option.id)
 
             expect(periodIds).toEqual([
                 'DAILY',

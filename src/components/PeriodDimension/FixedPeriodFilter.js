@@ -33,16 +33,16 @@ const FixedPeriodFilter = ({
                     dataTest={`${dataTest}-period-type`}
                 >
                     {(allowedPeriodTypes
-                        ? getFixedPeriodsOptions().filter((option) =>
+                        ? getFixedPeriodsOptions().filter(option =>
                               allowedPeriodTypes.some(
-                                  (type) => type === option.id
+                                  type => type === option.id
                               )
                           )
                         : filterPeriodTypesById(
                               getFixedPeriodsOptions(),
                               excludedPeriodTypes
                           )
-                    ).map((option) => (
+                    ).map(option => (
                         <SingleSelectOption
                             key={option.id}
                             value={option.id}

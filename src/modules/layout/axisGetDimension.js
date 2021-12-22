@@ -3,4 +3,4 @@ import { dimensionIs } from './dimensionIs.js'
 
 export const axisGetDimension = (axis, dimensionId) =>
     AXIS.isValid(axis) &&
-    axis.find((dimension) => dimensionIs(dimension, dimensionId))
+    axis.find(dimension => dimensionIs(dimension, dimensionId))

@@ -7,13 +7,13 @@ function mockInit() {
 }
 
 function values(object) {
-    return Object.keys(object).map((key) => object[key])
+    return Object.keys(object).map(key => object[key])
 }
 
 function mockClear() {
     values(dataEngineMock)
-        .filter((property) => typeof property === 'function')
-        .forEach((spyFn) => spyFn.mockClear())
+        .filter(property => typeof property === 'function')
+        .forEach(spyFn => spyFn.mockClear())
 }
 
 export default function DataEngine() {

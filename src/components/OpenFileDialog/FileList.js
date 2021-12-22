@@ -6,7 +6,7 @@ import { DateField } from './DateField.js'
 
 export const FileList = ({ type, data, onSelect }) => (
     <>
-        {data.map((visualization) => (
+        {data.map(visualization => (
             <DataTableRow key={visualization.id}>
                 <DataTableCell onClick={() => onSelect(visualization.id)}>
                     {visualization.displayName}

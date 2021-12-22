@@ -4,10 +4,10 @@ import {
     SORT_ORDER_DESCENDING,
 } from './pivotTableConstants.js'
 
-export const useSortableColumns = (engine) => {
+export const useSortableColumns = engine => {
     const [sortBy, setSortBy] = useState(null)
 
-    const onSortByColumn = (column) => {
+    const onSortByColumn = column => {
         let order = SORT_ORDER_ASCENDING
         if (sortBy && sortBy.column === column) {
             if (sortBy.order === SORT_ORDER_ASCENDING) {

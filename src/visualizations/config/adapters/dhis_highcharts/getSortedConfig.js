@@ -84,11 +84,11 @@ function getDefaultSortedConfig(config, layout, stacked) {
 
     if (categories) {
         sortedConfig.xAxis[0].categories = indexOrder.map(
-            (index) => categories[index]
+            index => categories[index]
         )
     }
 
-    sortedConfig.series = series.map((seriesObj) => ({
+    sortedConfig.series = series.map(seriesObj => ({
         ...seriesObj,
         data: seriesObj.data.map(
             (value, index) => seriesObj.data[indexOrder[index]]

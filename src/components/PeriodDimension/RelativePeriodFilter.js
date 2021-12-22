@@ -24,7 +24,7 @@ const RelativePeriodFilter = ({
             {filterPeriodTypesById(
                 getRelativePeriodsOptions(),
                 excludedPeriodTypes
-            ).map((option) => (
+            ).map(option => (
                 <SingleSelectOption
                     key={option.id}
                     value={option.id}

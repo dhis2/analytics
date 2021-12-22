@@ -16,7 +16,7 @@ storiesOf('DynamicDimension', module).add(
     () => {
         return (
             <ItemSelector
-                onSelect={(selected) => console.log(selected)}
+                onSelect={selected => console.log(selected)}
                 onFetch={() => ({ dimensionItems: items })}
             />
         )
@@ -28,9 +28,9 @@ storiesOf('DynamicDimension', module).add(
     () => {
         return (
             <ItemSelector
-                onSelect={(selected) => console.log(selected)}
+                onSelect={selected => console.log(selected)}
                 onFetch={() => ({ dimensionItems: items })}
-                initialSelected={[items[2]].map((item) => ({
+                initialSelected={[items[2]].map(item => ({
                     value: item.id,
                     label: item.name,
                 }))}
@@ -44,9 +44,9 @@ storiesOf('DynamicDimension', module).add(
     () => {
         return (
             <ItemSelector
-                onSelect={(selected) => console.log(selected)}
+                onSelect={selected => console.log(selected)}
                 onFetch={() => ({ dimensionItems: items })}
-                initialSelected={[items[5]].map((item) => ({
+                initialSelected={[items[5]].map(item => ({
                     value: item.id,
                     label: item.name,
                 }))}

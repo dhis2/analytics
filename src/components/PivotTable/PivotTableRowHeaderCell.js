@@ -21,9 +21,9 @@ export const PivotTableRowHeaderCell = ({
             axisClippingResult={clippingResult.rows}
             index={rowIndex}
             level={rowLevel}
-            getHeader={(idx) => engine.getRowHeader(idx)}
+            getHeader={idx => engine.getRowHeader(idx)}
             showHierarchy={engine.visualization.showHierarchy}
-            render={(header) => (
+            render={header => (
                 <PivotTableCell
                     isHeader
                     classes={[

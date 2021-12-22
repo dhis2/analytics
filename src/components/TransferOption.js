@@ -25,13 +25,13 @@ export const TransferOption = ({
                 selected,
                 inactive: active !== undefined && !active,
             })}
-            onClick={(event) => {
+            onClick={event => {
                 if (disabled) {
                     return
                 }
                 onClick({ label, value }, event)
             }}
-            onDoubleClick={(event) => {
+            onDoubleClick={event => {
                 if (disabled) {
                     return
                 }

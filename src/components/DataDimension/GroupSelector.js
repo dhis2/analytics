@@ -56,7 +56,7 @@ const GroupsSelector = ({
                             ? dataTypes[dataType].getPlaceholder()
                             : null
                     }
-                    onChange={(ref) => onGroupChange(ref.selected)}
+                    onChange={ref => onGroupChange(ref.selected)}
                     dense
                     empty={
                         dataTypes[dataType]?.getGroupEmptyLabel() ||
@@ -77,7 +77,7 @@ const GroupsSelector = ({
                         />
                     ) : null}
                     {!isLoading
-                        ? groups.map((item) => (
+                        ? groups.map(item => (
                               <SingleSelectOption
                                   value={item.id}
                                   key={item.id}

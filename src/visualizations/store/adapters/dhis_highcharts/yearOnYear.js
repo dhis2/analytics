@@ -11,7 +11,7 @@ export default function (
         () => null
     )
 
-    categories[0].forEach((categoryItemId) => {
+    categories[0].forEach(categoryItemId => {
         const position = extraOptions.periodKeyAxisIndexMap[categoryItemId]
         const value = idValueMap.get(categoryItemId)
 

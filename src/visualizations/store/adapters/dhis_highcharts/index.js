@@ -38,11 +38,11 @@ function getIdValueMap(rows, seriesHeader, categoryHeaders, valueIndex) {
     let key
     let value
 
-    rows.forEach((row) => {
+    rows.forEach(row => {
         key = [
             ...(seriesHeader ? [getPrefixedId(row, seriesHeader)] : []),
             ...(categoryHeaders
-                ? categoryHeaders.map((categoryHeader) =>
+                ? categoryHeaders.map(categoryHeader =>
                       getPrefixedId(row, categoryHeader)
                   )
                 : []),
@@ -58,10 +58,10 @@ function getIdValueMap(rows, seriesHeader, categoryHeaders, valueIndex) {
 
 // 1 series, 1 category
 function getDefault(acc, series, categories, idValueMap, metaData) {
-    series[0].forEach((serieItemId) => {
+    series[0].forEach(serieItemId => {
         const serieData = []
 
-        categories[0].forEach((categoryItemId) => {
+        categories[0].forEach(categoryItemId => {
             const value = idValueMap.get(`${serieItemId}-${categoryItemId}`)
 
             // DHIS2-1261: 0 is a valid value
@@ -118,7 +118,7 @@ export default function ({ type, data, seriesId, categoryIds, extraOptions }) {
 
         const seriesHeader = headers[headerIdIndexMap.get(seriesId)]
         const categoryHeaders = categoryIds.map(
-            (categoryId) => headers[headerIdIndexMap.get(categoryId)]
+            categoryId => headers[headerIdIndexMap.get(categoryId)]
         )
 
         const idValueMap = getIdValueMap(
@@ -129,7 +129,7 @@ export default function ({ type, data, seriesId, categoryIds, extraOptions }) {
         )
 
         const series = [metaData.dimensions[seriesId]]
-        const categories = categoryIds.map((id) => metaData.dimensions[id])
+        const categories = categoryIds.map(id => metaData.dimensions[id])
 
         seriesFunction(
             acc,

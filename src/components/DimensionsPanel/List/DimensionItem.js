@@ -11,7 +11,7 @@ import { styles } from './styles/DimensionItem.style.js'
 class DimensionItem extends Component {
     state = { mouseOver: false }
 
-    onOptionsClick = (id, ref) => (event) =>
+    onOptionsClick = (id, ref) => event =>
         this.props.onOptionsClick(event, id, ref)
 
     onMouseOver = () => {

@@ -12,7 +12,7 @@ export const CustomSelectOption = ({
     disabled,
 }) => (
     <div
-        onClick={(e) => onClick({}, e)}
+        onClick={e => onClick({}, e)}
         data-value={value}
         data-label={label}
         className={cx({ active, disabled })}

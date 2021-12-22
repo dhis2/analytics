@@ -1,5 +1,5 @@
 export default function (acc, series, categories, idValueMap, metaData) {
-    series[0].forEach((serieItemId) => {
+    series[0].forEach(serieItemId => {
         const value = idValueMap.get(serieItemId)
 
         if (value) {

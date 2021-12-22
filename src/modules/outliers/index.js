@@ -70,7 +70,7 @@ const getMinMaxValue = (outlierHelper, isVertical, isMax) => {
             : extremeValue - Math.abs(extremeValue) * 0.1
     return [
         ...outlierHelper.thresholds.map(
-            (t) => getXYStats([t.line[0], t.line[t.line.length - 1]])[prop]
+            t => getXYStats([t.line[0], t.line[t.line.length - 1]])[prop]
         ),
         extremeFactor,
     ]

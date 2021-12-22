@@ -16,7 +16,7 @@ export const hasRelativeItems = (dimension, itemIds = []) =>
     (dimension === DIMENSION_ID_ORGUNIT &&
         Array.isArray(itemIds) &&
         itemIds.some(
-            (id) =>
+            id =>
                 ouIdHelper.hasLevelPrefix(id) ||
                 ouIdHelper.hasGroupPrefix(id) ||
                 [
@@ -27,4 +27,4 @@ export const hasRelativeItems = (dimension, itemIds = []) =>
         )) ||
     (dimension === DIMENSION_ID_PERIOD &&
         Array.isArray(itemIds) &&
-        itemIds.some((id) => getRelativePeriodIds().includes(id)))
+        itemIds.some(id => getRelativePeriodIds().includes(id)))

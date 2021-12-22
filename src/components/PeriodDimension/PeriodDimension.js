@@ -9,7 +9,7 @@ const PeriodDimension = ({
     rightFooter,
     excludedPeriodTypes,
 }) => {
-    const selectPeriods = (periods) => {
+    const selectPeriods = periods => {
         onSelect({
             dimensionId: DIMENSION_ID_PERIOD,
             items: periods,

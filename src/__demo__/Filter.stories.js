@@ -5,7 +5,7 @@ import Filter from '../components/Filter/Filter.js'
 function FilterWithState() {
     const [text, setText] = useState(null)
 
-    const onTextChange = (value) => setText(value)
+    const onTextChange = value => setText(value)
     const onClearFilter = () => setText(null)
     return (
         <Filter

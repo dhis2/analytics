@@ -10,7 +10,7 @@ import AnalyticsRequest from './AnalyticsRequest.js'
  * @param {*} base The base class to mix onto
  * @return {module:analytics.AnalyticsRequestPropertiesMixin} The mixin class
  */
-const AnalyticsRequestPropertiesMixin = (base) =>
+const AnalyticsRequestPropertiesMixin = base =>
     /**
      * @private
      * @description

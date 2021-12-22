@@ -4,7 +4,7 @@ export const Y_RESIDUALS_LINEAR = 'Y_RESIDUALS_LINEAR'
 
 // Y residuals
 
-const getYResidualsHelper = (sortedData) => {
+const getYResidualsHelper = sortedData => {
     const regression = linear(sortedData)
     const sortedRegPoints = regression.points
 
@@ -18,7 +18,7 @@ const getYResidualsHelper = (sortedData) => {
             const low = []
             const high = []
 
-            sortedRegPoints.forEach((regPoint) => {
+            sortedRegPoints.forEach(regPoint => {
                 low.push([regPoint[0], regPoint[1] - Math.abs(lowThreshold)])
                 high.push([regPoint[0], regPoint[1] + highThreshold])
             })

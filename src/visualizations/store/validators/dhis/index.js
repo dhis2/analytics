@@ -35,7 +35,7 @@ function validateRow(row, headersLength, error) {
         error(getMessage('Data row length is invalid'))
     }
 
-    row.forEach((rowValue) => validateRowValue(rowValue, error))
+    row.forEach(rowValue => validateRowValue(rowValue, error))
 }
 
 export default function ({ data, error, warning }) {
@@ -53,7 +53,7 @@ export default function ({ data, error, warning }) {
         error(getMessage('At least two response headers required'))
     }
 
-    data.headers.forEach((header) => validateHeader(header, error))
+    data.headers.forEach(header => validateHeader(header, error))
 
     // meta data
 
@@ -79,7 +79,7 @@ export default function ({ data, error, warning }) {
         warning(getMessage('No data rows provided'))
     }
 
-    data.rows.forEach((row) => validateRow(row, data.headers.length, error))
+    data.rows.forEach(row => validateRow(row, data.headers.length, error))
 
     return data
 }

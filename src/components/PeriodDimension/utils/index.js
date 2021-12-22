@@ -20,4 +20,4 @@ export const FYAPR = 'FYAPR'
 export const filterPeriodTypesById = (
     allPeriodTypes = [],
     excludedPeriodTypes = []
-) => allPeriodTypes.filter((period) => !excludedPeriodTypes.includes(period.id))
+) => allPeriodTypes.filter(period => !excludedPeriodTypes.includes(period.id))

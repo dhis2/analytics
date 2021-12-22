@@ -7,7 +7,7 @@ const Filter = ({ text, onChange, onClear, placeholder, type, dataTest }) => (
     <div className="container">
         <InputField
             placeholder={placeholder}
-            onChange={(ref) =>
+            onChange={ref =>
                 ref.value.length ? onChange(ref.value) : onClear()
             }
             value={text}

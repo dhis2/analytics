@@ -41,7 +41,7 @@ import {
     VIS_TYPE_CHARTS,
 } from './VisTypeFilter.js'
 
-const getQuery = (type) => ({
+const getQuery = type => ({
     files: {
         resource: AOTypeMap[type].apiEndpoint,
         params: ({
@@ -188,7 +188,7 @@ export const OpenFileDialog = ({
         })
     }
 
-    const getSortDirection = (fieldName) =>
+    const getSortDirection = fieldName =>
         fieldName === sortField ? sortDirection : 'default'
 
     const cypressSelector = 'open-file-dialog-modal'
@@ -209,7 +209,7 @@ export const OpenFileDialog = ({
                             <NameFilter
                                 dataTest={`${cypressSelector}-name-filter`}
                                 value={nameFilterValue}
-                                onChange={(value) => {
+                                onChange={value => {
                                     setNameFilterValue(value)
 
                                     clearTimeout(searchTimeout)
@@ -230,7 +230,7 @@ export const OpenFileDialog = ({
                             <div className="type-field-container">
                                 <VisTypeFilter
                                     selected={filters.visType}
-                                    onChange={(value) =>
+                                    onChange={value =>
                                         setFilters({
                                             ...filters,
                                             visType: value,
@@ -242,7 +242,7 @@ export const OpenFileDialog = ({
                         <div className="created-by-field-container">
                             <CreatedByFilter
                                 selected={filters.createdBy}
-                                onChange={(value) =>
+                                onChange={value =>
                                     setFilters({
                                         ...filters,
                                         createdBy: value,

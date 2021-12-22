@@ -9,7 +9,7 @@ export const PivotTableClippedAxis = ({
     axisClippingResult.pre ? (
         <EmptyComponent key="pre" size={axisClippingResult.pre} />
     ) : null,
-    axisClippingResult.indices.map((index) => (
+    axisClippingResult.indices.map(index => (
         <ItemComponent key={index} index={index} />
     )),
     axisClippingResult.post ? (

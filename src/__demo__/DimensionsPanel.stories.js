@@ -84,7 +84,7 @@ storiesOf('DimensionsPanel', module).add('disabled dimension', () => {
         <DimensionsPanel
             dimensions={[...fixedDimensions, ...dynamicDimensions]}
             onDimensionClick={onDimensionClick}
-            disabledDimension={(dimension) => dimension === DIMENSION_ID_DATA}
+            disabledDimension={dimension => dimension === DIMENSION_ID_DATA}
         />
     )
 })
@@ -94,7 +94,7 @@ storiesOf('DimensionsPanel', module).add('locked dimension', () => {
         <DimensionsPanel
             dimensions={[...fixedDimensions, ...dynamicDimensions]}
             onDimensionClick={onDimensionClick}
-            lockedDimension={(dimension) => dimension === DIMENSION_ID_DATA}
+            lockedDimension={dimension => dimension === DIMENSION_ID_DATA}
         />
     )
 })
@@ -104,9 +104,7 @@ storiesOf('DimensionsPanel', module).add('recommended dimension', () => {
         <DimensionsPanel
             dimensions={[...fixedDimensions, ...dynamicDimensions]}
             onDimensionClick={onDimensionClick}
-            recommendedDimension={(dimension) =>
-                dimension === DIMENSION_ID_DATA
-            }
+            recommendedDimension={dimension => dimension === DIMENSION_ID_DATA}
         />
     )
 })

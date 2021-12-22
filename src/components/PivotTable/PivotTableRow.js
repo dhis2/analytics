@@ -15,7 +15,7 @@ export const PivotTableRow = ({
     const engine = usePivotTableEngine()
     return (
         <tr>
-            {times(engine.rowDepth, (x) => x).map((rowLevel) => (
+            {times(engine.rowDepth, x => x).map(rowLevel => (
                 <PivotTableRowHeaderCell
                     key={rowLevel}
                     clippingResult={clippingResult}

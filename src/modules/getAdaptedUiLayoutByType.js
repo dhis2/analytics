@@ -46,7 +46,7 @@ export const getAdaptedUiLayoutByType = (layout, type) => {
 }
 
 // Transform from ui.layout to default layout format
-const getDefaultLayout = (layout) => {
+const getDefaultLayout = layout => {
     const columns = layout[AXIS_ID_COLUMNS].slice()
     const rows = layout[AXIS_ID_ROWS].slice()
 
@@ -57,7 +57,7 @@ const getDefaultLayout = (layout) => {
     }
 }
 
-const getDualCategoryLayout = (layout) => {
+const getDualCategoryLayout = layout => {
     const columns = layout[AXIS_ID_COLUMNS].slice()
     const rows = layout[AXIS_ID_ROWS].slice()
 
@@ -70,7 +70,7 @@ const getDualCategoryLayout = (layout) => {
 }
 
 // Transform from ui.layout to pie layout format
-const getPieLayout = (layout) => {
+const getPieLayout = layout => {
     const columns = layout[AXIS_ID_COLUMNS].slice()
     const rows = layout[AXIS_ID_ROWS].slice()
 
@@ -85,17 +85,17 @@ const getPieLayout = (layout) => {
     }
 }
 
-const getYearOverYearLayout = (layout) => ({
+const getYearOverYearLayout = layout => ({
     [AXIS_ID_COLUMNS]: [],
     [AXIS_ID_ROWS]: [],
     [AXIS_ID_FILTERS]: [
         ...layout[AXIS_ID_FILTERS],
         ...layout[AXIS_ID_COLUMNS],
         ...layout[AXIS_ID_ROWS],
-    ].filter((dim) => getDimensionId(dim) !== DIMENSION_ID_PERIOD),
+    ].filter(dim => getDimensionId(dim) !== DIMENSION_ID_PERIOD),
 })
 
-const getScatterLayout = (layout) => ({
+const getScatterLayout = layout => ({
     [AXIS_ID_COLUMNS]: [DIMENSION_ID_DATA],
     [AXIS_ID_ROWS]: [DIMENSION_ID_ORGUNIT],
     [AXIS_ID_FILTERS]: [
@@ -103,7 +103,7 @@ const getScatterLayout = (layout) => ({
         ...layout[AXIS_ID_ROWS],
         ...layout[AXIS_ID_FILTERS],
     ].filter(
-        (dim) =>
+        dim =>
             ![DIMENSION_ID_DATA, DIMENSION_ID_ORGUNIT].includes(
                 getDimensionId(dim)
             )
@@ -111,7 +111,7 @@ const getScatterLayout = (layout) => ({
 })
 
 // Transform from ui.layout to single value layout format
-const getSingleValueLayout = (layout) => {
+const getSingleValueLayout = layout => {
     const columns = layout[AXIS_ID_COLUMNS].slice()
     const rows = layout[AXIS_ID_ROWS].slice()
     const filters = layout[AXIS_ID_FILTERS].slice()
@@ -145,6 +145,6 @@ const getSingleValueLayout = (layout) => {
  * @param {string|object} dimension
  * @returns {string}
  */
-const getDimensionId = (dimension) => {
+const getDimensionId = dimension => {
     return isObject(dimension) ? dimension.dimension : dimension
 }

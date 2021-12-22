@@ -1,1 +1,1 @@
-export const axisIsEmpty = (axis) => !axis.length
+export const axisIsEmpty = axis => !axis.length

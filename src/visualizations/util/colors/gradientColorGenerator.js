@@ -23,12 +23,12 @@ export const generateColors = (start, end, steps) => {
     return result
 }
 
-const convertRGBToHex = (rgb) =>
+const convertRGBToHex = rgb =>
     '#' +
     ((1 << 24) + (rgb[0] << 16) + (rgb[1] << 8) + rgb[2]).toString(16).slice(1)
 
-const convertHexToRGB = (hex) =>
+const convertHexToRGB = hex =>
     hex
         .replace(/^#/, '')
         .match(/.{1,2}/g)
-        .map((val) => parseInt(val, 16))
+        .map(val => parseInt(val, 16))

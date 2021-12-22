@@ -45,7 +45,7 @@ const orgUnitQuery = {
     },
 }
 
-export const apiFetchOrganisationUnitLevels = async (dataEngine) => {
+export const apiFetchOrganisationUnitLevels = async dataEngine => {
     const orgUnitLevelsData = await dataEngine.query(
         { orgUnitLevels: orgUnitLevelsQuery },
         {
@@ -73,7 +73,7 @@ export const apiFetchOrganisationUnitGroups = async (
     return orgUnitGroupsData.orgUnitGroups.organisationUnitGroups
 }
 
-export const apiFetchOrganisationUnitRoots = async (dataEngine) => {
+export const apiFetchOrganisationUnitRoots = async dataEngine => {
     const orgUnitRootsData = await dataEngine.query(
         { orgUnitRoots: orgUnitRootsQuery },
         {

@@ -4,7 +4,7 @@ const DEFAULT_COLOR = '#a8bf24'
 const OUTLIER_COLOR = 'red'
 const POINT_MARKER_SYMBOL = 'circle'
 
-export default (extraOptions) => {
+export default extraOptions => {
     const series = []
 
     if (extraOptions.outlierHelper) {
@@ -39,7 +39,7 @@ export default (extraOptions) => {
 
         // thresholds
 
-        helper.thresholds.forEach((obj) => {
+        helper.thresholds.forEach(obj => {
             series.push({
                 data: obj.line,
                 name: obj.name,

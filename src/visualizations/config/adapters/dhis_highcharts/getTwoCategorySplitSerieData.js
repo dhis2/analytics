@@ -5,7 +5,7 @@ export default function getTwoCategorySplitSerieData(serieData) {
     let index = 0
 
     serieData.forEach((groupData, groupIndex) => {
-        groupData.map((point) => splitSerieData.push([index++, point]))
+        groupData.map(point => splitSerieData.push([index++, point]))
 
         if (groupIndex + 1 < serieData.length) {
             splitSerieData.push([index - 0.5, null])

@@ -93,12 +93,11 @@ const ItemSelector = ({
         nextPage: null, // FIXME: Selecting all 50 items from a page prevents the loading of more items.
         // Implement the solution found in the DataDimension/ItemSelector.js
     })
-    const setFilter = (filter) => setState((state) => ({ ...state, filter }))
-    const setSelected = (selected) =>
-        setState((state) => ({ ...state, selected }))
+    const setFilter = filter => setState(state => ({ ...state, filter }))
+    const setSelected = selected => setState(state => ({ ...state, selected }))
     const debouncedFilter = useDebounce(state.filter, 200)
-    const fetchItems = async (page) => {
-        setState((state) => ({ ...state, loading: true }))
+    const fetchItems = async page => {
+        setState(state => ({ ...state, loading: true }))
         const result = await onFetch(page, state.filter)
         const newOptions = result.dimensionItems?.map(
             ({ id, name, disabled }) => ({
@@ -107,7 +106,7 @@ const ItemSelector = ({
                 disabled,
             })
         )
-        setState((state) => ({
+        setState(state => ({
             ...state,
             loading: false,
             options: page > 1 ? [...state.options, ...newOptions] : newOptions,
@@ -118,11 +117,11 @@ const ItemSelector = ({
         fetchItems(1)
     }, [debouncedFilter])
     const onChange = useCallback(
-        (newSelected) => {
-            const newSelectedWithLabel = newSelected.map((value) => ({
+        newSelected => {
+            const newSelectedWithLabel = newSelected.map(value => ({
                 value,
                 label: [...state.options, ...state.selected].find(
-                    (item) => item.value === value
+                    item => item.value === value
                 ).label,
             }))
             setSelected(newSelectedWithLabel)
@@ -138,7 +137,7 @@ const ItemSelector = ({
     return (
         <Transfer
             onChange={({ selected }) => onChange(selected)}
-            selected={state.selected.map((item) => item.value)}
+            selected={state.selected.map(item => item.value)}
             options={[...state.options, ...state.selected]}
             loading={state.loading}
             loadingPicked={state.loading}
@@ -161,7 +160,7 @@ const ItemSelector = ({
             selectedEmptyComponent={<EmptySelection />}
             rightHeader={<RightHeader />}
             rightFooter={rightFooter}
-            renderOption={(props) => (
+            renderOption={props => (
                 <TransferOption
                     {...props}
                     icon={GenericIcon}

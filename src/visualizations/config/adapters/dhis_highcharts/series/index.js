@@ -58,9 +58,9 @@ function getIndexColorPatternMap(series, layout, extraOptions) {
 }
 
 function getIdColorMap(series, layout, extraOptions) {
-    const filteredSeries = layout.series?.filter((layoutSeriesItem) =>
+    const filteredSeries = layout.series?.filter(layoutSeriesItem =>
         series.some(
-            (seriesItem) => seriesItem.id === layoutSeriesItem.dimensionItem
+            seriesItem => seriesItem.id === layoutSeriesItem.dimensionItem
         )
     )
 
@@ -139,7 +139,7 @@ function getDefault(series, metaData, layout, isStacked, extraOptions) {
         }
 
         const matchedObject = layout.series?.find(
-            (item) => item.dimensionItem === seriesObj.id
+            item => item.dimensionItem === seriesObj.id
         )
 
         if (matchedObject && !axisHasRelativeItems(layout.columns)) {
@@ -220,7 +220,7 @@ export default function (series, metaData, layout, isStacked, extraOptions) {
             )
     }
 
-    series.forEach((seriesObj) => {
+    series.forEach(seriesObj => {
         // animation
         seriesObj.animation = {
             duration: getAnimation(

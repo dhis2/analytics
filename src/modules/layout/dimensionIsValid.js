@@ -6,9 +6,9 @@ export const dimensionIsValid = (dimension, { requireItems } = {}) => {
         return false
     }
 
-    const requiredProps = DIMENSION_PROPS.filter((prop) => prop.required)
+    const requiredProps = DIMENSION_PROPS.filter(prop => prop.required)
 
-    if (!requiredProps.every((prop) => prop.isValid(dimension[prop.name]))) {
+    if (!requiredProps.every(prop => prop.isValid(dimension[prop.name]))) {
         return false
     }
 

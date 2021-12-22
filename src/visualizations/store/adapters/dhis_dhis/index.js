@@ -23,7 +23,7 @@ function getIdValueMap(rows, seriesHeader, categoryHeader, valueIndex) {
     let key
     let value
 
-    rows.forEach((row) => {
+    rows.forEach(row => {
         key = [
             ...(seriesHeader ? [getPrefixedId(row, seriesHeader)] : []),
             ...(categoryHeader ? [getPrefixedId(row, categoryHeader)] : []),
@@ -38,10 +38,10 @@ function getIdValueMap(rows, seriesHeader, categoryHeader, valueIndex) {
 }
 
 function getDefault(acc, seriesIds, categoryIds, idValueMap, metaData) {
-    seriesIds.forEach((seriesId) => {
+    seriesIds.forEach(seriesId => {
         const serieData = []
 
-        categoryIds.forEach((categoryId) => {
+        categoryIds.forEach(categoryId => {
             const value = idValueMap.get(`${seriesId}-${categoryId}`)
 
             // DHIS2-1261: 0 is a valid value

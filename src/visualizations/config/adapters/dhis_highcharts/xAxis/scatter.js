@@ -20,7 +20,7 @@ const AXIS_TYPE = 'RANGE'
 const AXIS_INDEX = 1
 
 export default function (layout, series, extraOptions) {
-    const dataValues = series?.map((item) => item.data).flat()
+    const dataValues = series?.map(item => item.data).flat()
     const axis = getAxis(layout.axes, AXIS_TYPE, AXIS_INDEX)
     const extremeObj = extraOptions.outlierHelper?.extremeLines
         ? extraOptions.outlierHelper.extremeLines[0]

@@ -13,7 +13,7 @@ export default function (filters, metaData) {
     let i
     let l
 
-    filters.forEach((filter) => {
+    filters.forEach(filter => {
         const items = dimensionGetItems(filter)
 
         if (

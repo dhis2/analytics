@@ -35,19 +35,19 @@ const OrgUnitDimension = ({ roots, selected, onSelect }) => {
     const [ouGroups, setOuGroups] = useState([])
     const dataEngine = useDataEngine()
 
-    const onSelectItems = (selectedItem) => {
+    const onSelectItems = selectedItem => {
         const { id, checked, displayName, path } = selectedItem
         let result = [...selected]
 
         if (checked && DYNAMIC_ORG_UNITS.includes(id)) {
             result = [
-                ...result.filter((item) => DYNAMIC_ORG_UNITS.includes(item.id)),
+                ...result.filter(item => DYNAMIC_ORG_UNITS.includes(item.id)),
                 { id, displayName },
             ]
         } else if (checked) {
             result.push({ id, path, name: displayName })
         } else {
-            result = [...result.filter((item) => item.id !== id)]
+            result = [...result.filter(item => item.id !== id)]
         }
 
         onSelect({
@@ -77,31 +77,31 @@ const OrgUnitDimension = ({ roots, selected, onSelect }) => {
         doFetchOuGroups()
     }, [dataEngine])
 
-    const onLevelChange = (ids) => {
-        const items = ids.map((id) => ({
+    const onLevelChange = ids => {
+        const items = ids.map(id => ({
             id: ouIdHelper.addLevelPrefix(id),
-            name: ouLevels.find((level) => level.id === id).displayName,
+            name: ouLevels.find(level => level.id === id).displayName,
         }))
 
         onSelect({
             dimensionId: DIMENSION_ID_ORGUNIT,
             items: [
-                ...selected.filter((ou) => !ouIdHelper.hasLevelPrefix(ou.id)),
+                ...selected.filter(ou => !ouIdHelper.hasLevelPrefix(ou.id)),
                 ...items,
             ],
         })
     }
 
-    const onGroupChange = (ids) => {
-        const items = ids.map((id) => ({
+    const onGroupChange = ids => {
+        const items = ids.map(id => ({
             id: ouIdHelper.addGroupPrefix(id),
-            name: ouGroups.find((group) => group.id === id).displayName,
+            name: ouGroups.find(group => group.id === id).displayName,
         }))
 
         onSelect({
             dimensionId: DIMENSION_ID_ORGUNIT,
             items: [
-                ...selected.filter((ou) => !ouIdHelper.hasGroupPrefix(ou.id)),
+                ...selected.filter(ou => !ouIdHelper.hasGroupPrefix(ou.id)),
                 ...items,
             ],
         })
@@ -111,19 +111,19 @@ const OrgUnitDimension = ({ roots, selected, onSelect }) => {
         let summary
         if (selected.length) {
             const numberOfOrgUnits = selected.filter(
-                (item) =>
+                item =>
                     !DYNAMIC_ORG_UNITS.includes(item.id) &&
                     !ouIdHelper.hasLevelPrefix(item.id) &&
                     !ouIdHelper.hasGroupPrefix(item.id)
             ).length
 
-            const numberOfLevels = selected.filter((item) =>
+            const numberOfLevels = selected.filter(item =>
                 ouIdHelper.hasLevelPrefix(item.id)
             ).length
-            const numberOfGroups = selected.filter((item) =>
+            const numberOfGroups = selected.filter(item =>
                 ouIdHelper.hasGroupPrefix(item.id)
             ).length
-            const userOrgUnits = selected.filter((item) =>
+            const userOrgUnits = selected.filter(item =>
                 DYNAMIC_ORG_UNITS.includes(item.id)
             )
 
@@ -156,7 +156,7 @@ const OrgUnitDimension = ({ roots, selected, onSelect }) => {
                     })
                 )
             }
-            userOrgUnits.forEach((orgUnit) => {
+            userOrgUnits.forEach(orgUnit => {
                 parts.push(orgUnit.name || orgUnit.displayName)
             })
             summary = i18n.t(
@@ -179,7 +179,7 @@ const OrgUnitDimension = ({ roots, selected, onSelect }) => {
             <div className="userOrgUnitsWrapper">
                 <Checkbox
                     label={i18n.t('User organisation unit')}
-                    checked={selected.some((item) => item.id === USER_ORG_UNIT)}
+                    checked={selected.some(item => item.id === USER_ORG_UNIT)}
                     onChange={({ checked }) =>
                         onSelectItems({
                             id: USER_ORG_UNIT,
@@ -192,7 +192,7 @@ const OrgUnitDimension = ({ roots, selected, onSelect }) => {
                 <Checkbox
                     label={i18n.t('User sub-units')}
                     checked={selected.some(
-                        (item) => item.id === USER_ORG_UNIT_CHILDREN
+                        item => item.id === USER_ORG_UNIT_CHILDREN
                     )}
                     onChange={({ checked }) =>
                         onSelectItems({
@@ -206,7 +206,7 @@ const OrgUnitDimension = ({ roots, selected, onSelect }) => {
                 <Checkbox
                     label={i18n.t('User sub-x2-units')}
                     checked={selected.some(
-                        (item) => item.id === USER_ORG_UNIT_GRANDCHILDREN
+                        item => item.id === USER_ORG_UNIT_GRANDCHILDREN
                     )}
                     onChange={({ checked }) =>
                         onSelectItems({
@@ -220,7 +220,7 @@ const OrgUnitDimension = ({ roots, selected, onSelect }) => {
             </div>
             <div
                 className={cx('orgUnitTreeWrapper', {
-                    disabled: selected.some((item) =>
+                    disabled: selected.some(item =>
                         DYNAMIC_ORG_UNITS.includes(item.id)
                     ),
                 })}
@@ -231,34 +231,34 @@ const OrgUnitDimension = ({ roots, selected, onSelect }) => {
                         ...(roots.length === 1 ? [`/${roots[0]}`] : []),
                         ...selected
                             .filter(
-                                (item) =>
+                                item =>
                                     !DYNAMIC_ORG_UNITS.includes(item.id) &&
                                     !ouIdHelper.hasLevelPrefix(item.id) &&
                                     !ouIdHelper.hasGroupPrefix(item.id)
                             )
-                            .map((item) =>
+                            .map(item =>
                                 item.path.substring(
                                     0,
                                     item.path.lastIndexOf('/')
                                 )
                             )
-                            .filter((path) => path),
+                            .filter(path => path),
                     ]}
                     selected={selected
                         .filter(
-                            (item) =>
+                            item =>
                                 !DYNAMIC_ORG_UNITS.includes(item.id) &&
                                 !ouIdHelper.hasLevelPrefix(item.id) &&
                                 !ouIdHelper.hasGroupPrefix(item.id)
                         )
-                        .map((item) => item.path)}
+                        .map(item => item.path)}
                     onChange={onSelectItems}
                     dataTest={'org-unit-tree'}
                 />
             </div>
             <div
                 className={cx('selectsWrapper', {
-                    disabled: selected.some((item) =>
+                    disabled: selected.some(item =>
                         DYNAMIC_ORG_UNITS.includes(item.id)
                     ),
                 })}
@@ -267,12 +267,10 @@ const OrgUnitDimension = ({ roots, selected, onSelect }) => {
                     selected={
                         ouLevels.length
                             ? selected
-                                  .filter((item) =>
+                                  .filter(item =>
                                       ouIdHelper.hasLevelPrefix(item.id)
                                   )
-                                  .map((item) =>
-                                      ouIdHelper.removePrefix(item.id)
-                                  )
+                                  .map(item => ouIdHelper.removePrefix(item.id))
                             : []
                     }
                     onChange={({ selected }) => onLevelChange(selected)}
@@ -281,7 +279,7 @@ const OrgUnitDimension = ({ roots, selected, onSelect }) => {
                     dense
                     dataTest={'org-unit-level-select'}
                 >
-                    {ouLevels.map((level) => (
+                    {ouLevels.map(level => (
                         <MultiSelectOption
                             key={level.id}
                             value={level.id}
@@ -294,12 +292,10 @@ const OrgUnitDimension = ({ roots, selected, onSelect }) => {
                     selected={
                         ouGroups.length
                             ? selected
-                                  .filter((item) =>
+                                  .filter(item =>
                                       ouIdHelper.hasGroupPrefix(item.id)
                                   )
-                                  .map((item) =>
-                                      ouIdHelper.removePrefix(item.id)
-                                  )
+                                  .map(item => ouIdHelper.removePrefix(item.id))
                             : []
                     }
                     onChange={({ selected }) => onGroupChange(selected)}
@@ -308,7 +304,7 @@ const OrgUnitDimension = ({ roots, selected, onSelect }) => {
                     dense
                     dataTest={'org-unit-group-select'}
                 >
-                    {ouGroups.map((group) => (
+                    {ouGroups.map(group => (
                         <MultiSelectOption
                             key={group.id}
                             value={group.id}
