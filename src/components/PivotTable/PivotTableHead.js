@@ -1,7 +1,7 @@
-import React from 'react'
 import PropTypes from 'prop-types'
-import { PivotTableColumnHeaders } from './PivotTableColumnHeaders'
-import { PivotTableTitleRows } from './PivotTableTitleRows'
+import React from 'react'
+import { PivotTableColumnHeaders } from './PivotTableColumnHeaders.js'
+import { PivotTableTitleRows } from './PivotTableTitleRows.js'
 
 export const PivotTableHead = ({
     clippingResult,

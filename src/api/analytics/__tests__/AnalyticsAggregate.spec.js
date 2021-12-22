@@ -1,7 +1,7 @@
-import fixtures from '../../../__fixtures__/fixtures'
-import DataEngineMock from '../__mocks__/DataEngine'
-import AnalyticsRequest from '../AnalyticsRequest'
-import AnalyticsAggregate from '../AnalyticsAggregate'
+import fixtures from '../../../__fixtures__/fixtures.js'
+import DataEngineMock from '../__mocks__/DataEngine.js'
+import AnalyticsAggregate from '../AnalyticsAggregate.js'
+import AnalyticsRequest from '../AnalyticsRequest.js'
 
 const debugSqlFixture = `select de.name as de_name, de.uid as de_uid, de.dataelementid as de_id, pe.startdate as
 start_date, pe.enddate as end_date, pt.name as pt_name, ou.name as ou_name, ou.uid as ou_uid, ou.organisationunitid as
@@ -65,7 +65,7 @@ describe('Analytics.aggregate', () => {
         })
 
         it('should resolve a promise with data', () =>
-            aggregate.getDataValueSet(request).then(data => {
+            aggregate.getDataValueSet(request).then((data) => {
                 expect(data.dataValues.length).toEqual(
                     fixture.dataValues.length
                 )
@@ -93,7 +93,7 @@ describe('Analytics.aggregate', () => {
         })
 
         it('should resolve a promise with data', () =>
-            aggregate.getDebugSql(request).then(data => {
+            aggregate.getDebugSql(request).then((data) => {
                 expect(data).toEqual(debugSqlFixture)
             }))
     })
@@ -124,7 +124,7 @@ describe('Analytics.aggregate', () => {
         })
 
         it('should resolve a promise with data', () =>
-            aggregate.getRawData(request).then(data => {
+            aggregate.getRawData(request).then((data) => {
                 expect(data.metaData.items).toEqual(fixture.metaData.items)
                 expect(data.metaData.dimensions).toEqual(
                     fixture.metaData.dimensions

@@ -1,6 +1,6 @@
-import { layoutGetDimensionItems } from '../layoutGetDimensionItems'
-import { DIMENSION_PROP_ID, DIMENSION_PROP_ITEMS } from '../dimension'
-import { TEST_LAYOUT, TEST_DIMENSION_1 } from '../testResources'
+import { DIMENSION_PROP_ID, DIMENSION_PROP_ITEMS } from '../dimension.js'
+import { layoutGetDimensionItems } from '../layoutGetDimensionItems.js'
+import { TEST_LAYOUT, TEST_DIMENSION_1 } from '../testResources.js'
 
 describe('layoutGetDimensionItems', () => {
     it('should return an array of items', () => {

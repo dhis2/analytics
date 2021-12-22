@@ -1,6 +1,6 @@
-import { layoutGetDimension } from '../layoutGetDimension'
-import { DIMENSION_PROP_ID } from '../dimension'
-import { TEST_LAYOUT, TEST_DIMENSION_1 } from '../testResources'
+import { DIMENSION_PROP_ID } from '../dimension.js'
+import { layoutGetDimension } from '../layoutGetDimension.js'
+import { TEST_LAYOUT, TEST_DIMENSION_1 } from '../testResources.js'
 
 describe('layoutGetDimension', () => {
     it('should return true if the dimension id is found in the layout, otherwise false', () => {

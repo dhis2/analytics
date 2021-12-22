@@ -1,11 +1,11 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { PivotTableClippedAxis } from './PivotTableClippedAxis'
-import { PivotTableColumnHeaderCell } from './PivotTableColumnHeaderCell'
-import { PivotTableDimensionLabelCell } from './PivotTableDimensionLabelCell'
-import { PivotTableEmptyCell } from './PivotTableEmptyCell'
-import { usePivotTableEngine } from './PivotTableEngineContext'
 import times from 'lodash/times'
+import PropTypes from 'prop-types'
+import React from 'react'
+import { PivotTableClippedAxis } from './PivotTableClippedAxis.js'
+import { PivotTableColumnHeaderCell } from './PivotTableColumnHeaderCell.js'
+import { PivotTableDimensionLabelCell } from './PivotTableDimensionLabelCell.js'
+import { PivotTableEmptyCell } from './PivotTableEmptyCell.js'
+import { usePivotTableEngine } from './PivotTableEngineContext.js'
 
 export const PivotTableColumnHeaders = ({
     clippingResult,
@@ -14,12 +14,12 @@ export const PivotTableColumnHeaders = ({
 }) => {
     const engine = usePivotTableEngine()
 
-    const columns = times(engine.columnDepth, x => x)
-    const rows = times(engine.rowDepth, x => x)
+    const columns = times(engine.columnDepth, (x) => x)
+    const rows = times(engine.rowDepth, (x) => x)
 
-    return columns.map(columnLevel => (
+    return columns.map((columnLevel) => (
         <tr key={columnLevel}>
-            {rows.map(rowLevel => (
+            {rows.map((rowLevel) => (
                 <PivotTableDimensionLabelCell
                     key={rowLevel}
                     rowLevel={rowLevel}

@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
-import { cell as cellStyle } from './styles/PivotTable.style'
-import { usePivotTableEngine } from './PivotTableEngineContext'
-import { PivotTableCell } from './PivotTableCell'
+import React, { useState, useEffect } from 'react'
+import { PivotTableCell } from './PivotTableCell.js'
+import { usePivotTableEngine } from './PivotTableEngineContext.js'
+import { cell as cellStyle } from './styles/PivotTable.style.js'
 
 export const PivotTableTitleRow = ({
     title,
@@ -23,6 +23,7 @@ export const PivotTableTitleRow = ({
         <tr>
             <style jsx>{cellStyle}</style>
             <PivotTableCell
+                isHeader
                 classes={['column-header', 'title']}
                 colSpan={columnCount}
             >

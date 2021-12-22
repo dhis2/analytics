@@ -1,19 +1,72 @@
 # 
 # Translators:
-# trendspotter, 2021
+# trendspotter <jirka.p@volny.cz>, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-03-09T11:13:51.855Z\n"
+"POT-Creation-Date: 2021-11-12T14:52:40.534Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: trendspotter, 2021\n"
+"Last-Translator: trendspotter <jirka.p@volny.cz>, 2021\n"
 "Language-Team: Czech (https://www.transifex.com/hisp-uio/teams/100509/cs/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: cs\n"
 "Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n <= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;\n"
+
+msgid "view only"
+msgstr "pouze zobrazit"
+
+msgid "view and edit"
+msgstr "zobrazit a upravit"
+
+msgid "all users ({{accessLevel}})"
+msgstr "všichni uživatelé ({{accessLevel}})"
+
+msgid "{{userOrGroup}} ({{accessLevel}})"
+msgstr "{{userOrGroup}} ({{accessLevel}})"
+
+msgid "Shared with {{commaSeparatedListOfUsersAndGroups}}"
+msgstr "Sdíleno s {{commaSeparatedListOfUsersAndGroups}}"
+
+msgid "Not shared with any users or groups"
+msgstr "Nesdíleno s žádnými uživateli ani skupinami"
+
+msgid "About this visualization"
+msgstr "O této vizualizaci"
+
+msgid "No description"
+msgstr "Bez popisu"
+
+msgid "Last updated {{time}}"
+msgstr "Poslední aktualizace {{time}}"
+
+msgid "Created {{time}} by {{author}}"
+msgstr "Vytvořeno {{time}} uživatelem {{author}}"
+
+msgid "Viewed {{count}} times"
+msgid_plural "Viewed {{count}} times"
+msgstr[0] "Zobrazeno 1 krát"
+msgstr[1] "Zobrazeno {{count}}krát"
+msgstr[2] "Zobrazeno {{count}}krát"
+msgstr[3] "Zobrazeno {{count}}krát"
+
+msgid "Notifications"
+msgstr "Oznámení"
+
+msgid "You're subscribed and getting updates about new interpretations."
+msgstr ""
+"Jste přihlášeni k odběru a dostáváte aktualizace o nových interpretacích."
+
+msgid "Unsubscribe"
+msgstr "Odhlásit odběr"
+
+msgid "Subscribe to get updates about new interpretations."
+msgstr "Přihlaste se k odběru novinek o nových interpretacích."
+
+msgid "Subscribe"
+msgstr "Odebírat"
 
 msgid "Data Type"
 msgstr "Typ dat"
@@ -114,8 +167,24 @@ msgstr "Vaše rozměry"
 msgid "Dimension recommended with selected data"
 msgstr "U vybraných dat je doporučen rozsah"
 
-msgid "Nothing found in {{dimensionTitle}}"
-msgstr "Nic nebylo nalezeno v {{dimensionTitle}}"
+msgid "All items"
+msgstr "Všechny položky"
+
+msgid "Automatically include all items"
+msgstr "Automaticky zahrnout všechny položky"
+
+msgid ""
+"Select all {{- dimensionTitle}} items. With this option, new items added in "
+"the future will be automatically included."
+msgstr ""
+"Vyberte všechny položky {{- dimensionTitle}}. Díky této možnosti budou "
+"automaticky přidány nové položky přidané v budoucnosti."
+
+msgid "Manually select items..."
+msgstr "Ručně vybrat položky ..."
+
+msgid "Nothing found in {{- dimensionTitle}}"
+msgstr "V {{- dimensionTitle}} nebylo nic nalezeno"
 
 msgid "Search"
 msgstr "Hledat"
@@ -126,8 +195,10 @@ msgstr "Pro dotaz {{searchTerm}} nebylo nic nalezeno"
 msgid "Delete {{fileType}}"
 msgstr "Smazat {{fileType}}"
 
-msgid "This {{fileType}} will be deleted. Continue?"
-msgstr "Tento {{fileType}} bude smazán. Pokračovat?"
+msgid ""
+"This {{fileType}} and related interpretations will be deleted. Continue?"
+msgstr ""
+"Tento {{fileType}} a související interpretace budou smazány. Pokračovat?"
 
 msgid "Cancel"
 msgstr "Zrušit"
@@ -186,14 +257,208 @@ msgstr "Přejmenovat"
 msgid "Save {{fileType}} as"
 msgstr "Uložit {{fileType}} jako"
 
-msgid "Selected Data"
-msgstr "Vybraná data"
+msgid "Created by"
+msgstr "Vytvořil"
 
-msgid "Deselect All"
+msgid "Anyone"
+msgstr "Kdokoliv"
+
+msgid "Only you"
+msgstr "Jen vy"
+
+msgid "Others"
+msgstr "Ostatní"
+
+msgid "Filter by name"
+msgstr "Filtrovat podle názvu"
+
+msgid "Created"
+msgstr "Vytvořeno"
+
+msgid "Last updated"
+msgstr "Naposledy aktualizováno"
+
+msgid "Type"
+msgstr "Typ"
+
+msgid "Clear filters"
+msgstr "Vymazat filtry"
+
+msgid "{{firstItemIndex}}-{{lastItemIndex}} of {{totalNumberOfItems}}"
+msgstr "{{firstItemIndex}}-{{lastItemIndex}} z {{totalNumberOfItems}}"
+
+msgid "All charts"
+msgstr "Všechny grafy"
+
+msgid "Open"
+msgstr "Otevřít"
+
+msgid "Couldn't load items"
+msgstr "Položky nelze načíst"
+
+msgid ""
+"There was a problem loading items. Try again or contact your system "
+"administrator."
+msgstr ""
+"Při načítání položek došlo k problému. Zkuste to znovu nebo se obraťte na "
+"správce systému."
+
+msgid "No items found. Create a new to get started."
+msgstr "Žádné položky nenalezeny. Začněte vytvořením nové."
+
+msgid ""
+"No items found. Try adjusting your search or filter options to find what "
+"you're looking for."
+msgstr ""
+"Žádné položky nenalezeny. Zkuste upravit možnosti vyhledávání nebo "
+"filtrování, abyste našli to, co hledáte."
+
+msgid "Create new"
+msgstr "Vytvořit nový"
+
+msgid "Open a visualization"
+msgstr "Otevřít vizualizaci"
+
+msgid "Loading visualizations"
+msgstr "Načítání vizualizací"
+
+msgid "Couldn't load visualizations"
+msgstr "Nelze načíst vizualizace"
+
+msgid ""
+"There was a problem loading visualizations. Try again or contact your system"
+" administrator."
+msgstr ""
+"Při načítání vizualizací došlo k problému. Zkuste to znovu nebo se obraťte "
+"na správce systému."
+
+msgid "No visualizations found. Click New visualization to get started."
+msgstr ""
+"Nebyly nalezeny žádné vizualizace. Začněte kliknutím na Nová vizualizace."
+
+msgid ""
+"No visualizations found. Try adjusting your search or filter options to find"
+" what you're looking for."
+msgstr ""
+"Nenalezeny žádné vizualizace. Zkuste upravit možnosti vyhledávání nebo "
+"filtrování, abyste našli to, co hledáte."
+
+msgid "New visualization"
+msgstr "Nová vizualizace"
+
+msgid "Open a map"
+msgstr "Otevřít mapu"
+
+msgid "Loading maps"
+msgstr "Načítání map"
+
+msgid "Couldn't load maps"
+msgstr "Mapy se nepodařilo načíst"
+
+msgid ""
+"There was a problem loading maps. Try again or contact your system "
+"administrator."
+msgstr ""
+"Při načítání map došlo k problému. Zkuste to znovu nebo se obraťte na "
+"správce systému."
+
+msgid "No maps found. Click New map to get started."
+msgstr "Nenalezeny žádné mapy. Začněte kliknutím na Nová mapa."
+
+msgid ""
+"No maps found. Try adjusting your search or filter options to find what "
+"you're looking for."
+msgstr ""
+"Nenalezeny žádné mapy. Zkuste upravit možnosti vyhledávání nebo filtrování, "
+"abyste našli to, co hledáte."
+
+msgid "New map"
+msgstr "Nová mapa"
+
+msgid "Open an event report"
+msgstr "Otevřít zprávu o události"
+
+msgid "Loading event reports"
+msgstr "Načítání zpráv o událostech"
+
+msgid "Couldn't load event reports"
+msgstr "Nelze načíst zprávy o událostech"
+
+msgid ""
+"There was a problem loading event reports. Try again or contact your system "
+"administrator."
+msgstr ""
+"Při načítání zpráv o událostech došlo k problému. Zkuste to znovu nebo se "
+"obraťte na správce systému."
+
+msgid "No event reports found. Click New event report to get started."
+msgstr ""
+"Nebyly nalezeny žádné zprávy o událostech. Začněte kliknutím na Nový přehled"
+" událostí."
+
+msgid ""
+"No event reports found. Try adjusting your search or filter options to find "
+"what you're looking for."
+msgstr ""
+"Nebyly nalezeny žádné zprávy o událostech. Zkuste upravit možnosti "
+"vyhledávání nebo filtrování, abyste našli to, co hledáte."
+
+msgid "New event report"
+msgstr "Nová zpráva o události"
+
+msgid "Options"
+msgstr "Možnosti"
+
+msgid "Hide"
+msgstr "Skrýt"
+
+msgid "Update"
+msgstr "Aktualizovat"
+
+msgid "{{count}} org units"
+msgid_plural "{{count}} org units"
+msgstr[0] "{{count}} organizační jednotka"
+msgstr[1] "{{count}} organizační jednotky"
+msgstr[2] "{{count}} organizačních jednotek"
+msgstr[3] "{{count}} organizačních jednotek"
+
+msgid "{{count}} levels"
+msgid_plural "{{count}} levels"
+msgstr[0] "{{count}} úroveň"
+msgstr[1] "{{count}} úrovně"
+msgstr[2] "{{count}} úrovní"
+msgstr[3] "{{count}} úrovní"
+
+msgid "{{count}} groups"
+msgid_plural "{{count}} groups"
+msgstr[0] "{{count}} skupina"
+msgstr[1] "{{count}} skupiny"
+msgstr[2] "{{count}} skupin"
+msgstr[3] "{{count}} skupin"
+
+msgid "Selected: {{commaSeparatedListOfOrganisationUnits}}"
+msgstr "Vybráno: {{commaSeparatedListOfOfOrganisationUnits}}"
+
+msgid "Nothing selected"
+msgstr "Není vybráno nic"
+
+msgid "User organisation unit"
+msgstr "Organizační jednotka uživatele"
+
+msgid "User sub-units"
+msgstr "Podjednotky uživatele"
+
+msgid "User sub-x2-units"
+msgstr "Jednotky 2. řádu uživatele"
+
+msgid "Select a level"
+msgstr "Vybrat úroveň"
+
+msgid "Select a group"
+msgstr "Vybrat skupinu"
+
+msgid "Deselect all"
 msgstr "Odznačit vše"
-
-msgid "Select all"
-msgstr "Vybrat vše"
 
 msgid "Period type"
 msgstr "Typ období"
@@ -267,9 +532,6 @@ msgstr "Denně"
 msgid "Weekly"
 msgstr "Týdně"
 
-msgid "Bi-weekly"
-msgstr "po 14ti dnech"
-
 msgid "Weekly (Start Wednesday)"
 msgstr "Týdně (od středy)"
 
@@ -281,6 +543,9 @@ msgstr "Týdně (od soboty)"
 
 msgid "Weekly (Start Sunday)"
 msgstr "Týdně (začíná nedělí)"
+
+msgid "Bi-weekly"
+msgstr "po 14ti dnech"
 
 msgid "Monthly"
 msgstr "Měsíčně"
@@ -434,6 +699,9 @@ msgstr "Poslední rok"
 
 msgid "Last 5 years"
 msgstr "Posledních 5 let"
+
+msgid "Last 10 years"
+msgstr "Posledních 10 let"
 
 msgid "Days"
 msgstr "Dnů"
@@ -795,6 +1063,13 @@ msgstr "Základ"
 
 msgid "Axis {{axisId}}"
 msgstr "Osa {{axisId}}"
+
+msgid "{{count}} items"
+msgid_plural "{{count}} items"
+msgstr[0] "{{count}} položka"
+msgstr[1] " {{count}} položky"
+msgstr[2] " {{count}} položek"
+msgstr[3] "{{count}} položek"
 
 msgid "Reset zoom"
 msgstr "Obnovit přiblížení"

@@ -1,11 +1,11 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { PivotTableClippedAxis } from './PivotTableClippedAxis'
-import { PivotTableRowHeaderCell } from './PivotTableRowHeaderCell'
-import { PivotTableValueCell } from './PivotTableValueCell'
-import { PivotTableEmptyCell } from './PivotTableEmptyCell'
-import { usePivotTableEngine } from './PivotTableEngineContext'
 import times from 'lodash/times'
+import PropTypes from 'prop-types'
+import React from 'react'
+import { PivotTableClippedAxis } from './PivotTableClippedAxis.js'
+import { PivotTableEmptyCell } from './PivotTableEmptyCell.js'
+import { usePivotTableEngine } from './PivotTableEngineContext.js'
+import { PivotTableRowHeaderCell } from './PivotTableRowHeaderCell.js'
+import { PivotTableValueCell } from './PivotTableValueCell.js'
 
 export const PivotTableRow = ({
     clippingResult,
@@ -15,7 +15,7 @@ export const PivotTableRow = ({
     const engine = usePivotTableEngine()
     return (
         <tr>
-            {times(engine.rowDepth, x => x).map(rowLevel => (
+            {times(engine.rowDepth, (x) => x).map((rowLevel) => (
                 <PivotTableRowHeaderCell
                     key={rowLevel}
                     clippingResult={clippingResult}
@@ -25,7 +25,12 @@ export const PivotTableRow = ({
             ))}
             <PivotTableClippedAxis
                 axisClippingResult={clippingResult.columns}
-                EmptyComponent={() => <PivotTableEmptyCell classes="value" />}
+                EmptyComponent={({ size }) => (
+                    <PivotTableEmptyCell
+                        classes="value"
+                        style={{ width: size }}
+                    />
+                )}
                 ItemComponent={({ index: columnIndex }) => (
                     <PivotTableValueCell
                         row={rowIndex}

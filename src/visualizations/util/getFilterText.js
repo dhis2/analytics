@@ -1,11 +1,8 @@
-import { ouIdHelper } from '../../modules/ouIdHelper'
-import { dimensionIs } from '../../modules/layout/dimensionIs'
-import {
-    DIMENSION_ID_ORGUNIT,
-    DIMENSION_ID_PERIOD,
-} from '../../modules/predefinedDimensions'
-import { dimensionGetItems } from '../../modules/layout/dimensionGetItems'
-import { getOuLevelAndGroupText } from '../../modules/getOuLevelAndGroupText'
+import { getOuLevelAndGroupText } from '../../modules/getOuLevelAndGroupText.js'
+import { dimensionGetItems } from '../../modules/layout/dimensionGetItems.js'
+import { dimensionIs } from '../../modules/layout/dimensionIs.js'
+import { ouIdHelper } from '../../modules/ouIdHelper/index.js'
+import { DIMENSION_ID_ORGUNIT } from '../../modules/predefinedDimensions.js'
 
 export default function (filters, metaData) {
     if (!Array.isArray(filters) || !filters.length) {
@@ -16,7 +13,7 @@ export default function (filters, metaData) {
     let i
     let l
 
-    filters.forEach(filter => {
+    filters.forEach((filter) => {
         const items = dimensionGetItems(filter)
 
         if (
@@ -29,13 +26,7 @@ export default function (filters, metaData) {
         ) {
             titleFragments.push(getOuLevelAndGroupText(filter, metaData))
         } else {
-            let filterItems = []
-
-            if (dimensionIs(filter, DIMENSION_ID_PERIOD)) {
-                filterItems = items.map(({ id }) => id)
-            } else {
-                filterItems = metaData.dimensions[filter.dimension]
-            }
+            const filterItems = metaData.dimensions[filter.dimension]
 
             if (Array.isArray(filterItems)) {
                 l = filterItems.length

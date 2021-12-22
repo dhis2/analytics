@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-03-09T11:13:51.855Z\n"
+"POT-Creation-Date: 2021-11-12T14:52:40.534Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: easylin <lin_xd@126.com>, 2021\n"
 "Language-Team: Chinese (https://www.transifex.com/hisp-uio/teams/100509/zh/)\n"
@@ -17,6 +17,55 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: zh\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "view only"
+msgstr "只读"
+
+msgid "view and edit"
+msgstr "查看和编辑"
+
+msgid "all users ({{accessLevel}})"
+msgstr "所有用户 ({{accessLevel}})"
+
+msgid "{{userOrGroup}} ({{accessLevel}})"
+msgstr "{{userOrGroup}} ({{accessLevel}})"
+
+msgid "Shared with {{commaSeparatedListOfUsersAndGroups}}"
+msgstr "与 {{commaSeparatedListOfUsersAndGroups}} 共享"
+
+msgid "Not shared with any users or groups"
+msgstr "不与任何用户或组共享"
+
+msgid "About this visualization"
+msgstr "关于此可视化"
+
+msgid "No description"
+msgstr "无描述"
+
+msgid "Last updated {{time}}"
+msgstr "最后更新 {{time}}"
+
+msgid "Created {{time}} by {{author}}"
+msgstr "由 {{author}} 在 {{time}} 创建"
+
+msgid "Viewed {{count}} times"
+msgid_plural "Viewed {{count}} times"
+msgstr[0] "查看了 {{count}} 次"
+
+msgid "Notifications"
+msgstr "通知"
+
+msgid "You're subscribed and getting updates about new interpretations."
+msgstr "您已订阅并获取有关新解释的更新。"
+
+msgid "Unsubscribe"
+msgstr "退订"
+
+msgid "Subscribe to get updates about new interpretations."
+msgstr "订阅以获取有关新解释的更新。"
+
+msgid "Subscribe"
+msgstr "订阅"
 
 msgid "Data Type"
 msgstr "数据类型"
@@ -117,8 +166,22 @@ msgstr "你的维度"
 msgid "Dimension recommended with selected data"
 msgstr "选择的数据的推荐维度"
 
-msgid "Nothing found in {{dimensionTitle}}"
-msgstr "在{{dimensionTitle}}中找不到任何内容"
+msgid "All items"
+msgstr "所有条目"
+
+msgid "Automatically include all items"
+msgstr "自动包含所有条目"
+
+msgid ""
+"Select all {{- dimensionTitle}} items. With this option, new items added in "
+"the future will be automatically included."
+msgstr "选择所有 {{- dimensionTitle}} 项。使用此选项，将来添加的新条目将自动包含在内。"
+
+msgid "Manually select items..."
+msgstr "手动选择条目..."
+
+msgid "Nothing found in {{- dimensionTitle}}"
+msgstr "在 {{- dimensionTitle}} 中找不到任何内容"
 
 msgid "Search"
 msgstr "搜索"
@@ -129,8 +192,9 @@ msgstr "找不到{{searchTerm}}的任何内容"
 msgid "Delete {{fileType}}"
 msgstr "删除{{fileType}}"
 
-msgid "This {{fileType}} will be deleted. Continue?"
-msgstr "此{{fileType}}将被删除。继续？"
+msgid ""
+"This {{fileType}} and related interpretations will be deleted. Continue?"
+msgstr "此{{fileType}}和相关解释将被删除。继续？"
 
 msgid "Cancel"
 msgstr "取消"
@@ -189,14 +253,180 @@ msgstr "改名"
 msgid "Save {{fileType}} as"
 msgstr "将{{fileType}}另存为"
 
-msgid "Selected Data"
-msgstr "选择的数据"
+msgid "Created by"
+msgstr "创建人"
 
-msgid "Deselect All"
-msgstr "去全选"
+msgid "Anyone"
+msgstr "任何人"
 
-msgid "Select all"
-msgstr "全选"
+msgid "Only you"
+msgstr "只有你"
+
+msgid "Others"
+msgstr "其它"
+
+msgid "Filter by name"
+msgstr "按名称过滤"
+
+msgid "Created"
+msgstr "已创建"
+
+msgid "Last updated"
+msgstr "上次更新"
+
+msgid "Type"
+msgstr "类型"
+
+msgid "Clear filters"
+msgstr "清除过滤器"
+
+msgid "{{firstItemIndex}}-{{lastItemIndex}} of {{totalNumberOfItems}}"
+msgstr "{{firstItemIndex}}-{{lastItemIndex}} 的 {{totalNumberOfItems}}"
+
+msgid "All charts"
+msgstr "所有图表"
+
+msgid "Open"
+msgstr "开放"
+
+msgid "Couldn't load items"
+msgstr "无法加载项目"
+
+msgid ""
+"There was a problem loading items. Try again or contact your system "
+"administrator."
+msgstr "加载项目时出现问题。重试或联系您的系统管理员。"
+
+msgid "No items found. Create a new to get started."
+msgstr "未找到任何项目。创建一个新的开始。"
+
+msgid ""
+"No items found. Try adjusting your search or filter options to find what "
+"you're looking for."
+msgstr "未找到任何项目。尝试调整您的搜索或过滤选项以找到您要查找的内容。"
+
+msgid "Create new"
+msgstr "新建"
+
+msgid "Open a visualization"
+msgstr "打开可视化"
+
+msgid "Loading visualizations"
+msgstr "加载可视化"
+
+msgid "Couldn't load visualizations"
+msgstr "无法加载可视化"
+
+msgid ""
+"There was a problem loading visualizations. Try again or contact your system"
+" administrator."
+msgstr "加载可视化时出现问题。重试或联系您的系统管理员。"
+
+msgid "No visualizations found. Click New visualization to get started."
+msgstr "未找到可视化效果。单击新建可视化开始。"
+
+msgid ""
+"No visualizations found. Try adjusting your search or filter options to find"
+" what you're looking for."
+msgstr "未找到可视化效果。尝试调整您的搜索或过滤选项以找到您要查找的内容。"
+
+msgid "New visualization"
+msgstr "新的可视化"
+
+msgid "Open a map"
+msgstr "打开地图"
+
+msgid "Loading maps"
+msgstr "加载地图"
+
+msgid "Couldn't load maps"
+msgstr "无法加载地图"
+
+msgid ""
+"There was a problem loading maps. Try again or contact your system "
+"administrator."
+msgstr "加载地图时出现问题。重试或联系您的系统管理员。"
+
+msgid "No maps found. Click New map to get started."
+msgstr "未找到地图。单击新地图开始。"
+
+msgid ""
+"No maps found. Try adjusting your search or filter options to find what "
+"you're looking for."
+msgstr "未找到地图。尝试调整您的搜索或过滤选项以找到您要查找的内容。"
+
+msgid "New map"
+msgstr "新地图"
+
+msgid "Open an event report"
+msgstr "打开事件报告"
+
+msgid "Loading event reports"
+msgstr "加载事件报告"
+
+msgid "Couldn't load event reports"
+msgstr "无法加载事件报告"
+
+msgid ""
+"There was a problem loading event reports. Try again or contact your system "
+"administrator."
+msgstr "加载事件报告时出现问题。重试或联系您的系统管理员。"
+
+msgid "No event reports found. Click New event report to get started."
+msgstr "未找到事件报告。单击新建事件报告开始。"
+
+msgid ""
+"No event reports found. Try adjusting your search or filter options to find "
+"what you're looking for."
+msgstr "未找到事件报告。尝试调整您的搜索或过滤选项以找到您要查找的内容。"
+
+msgid "New event report"
+msgstr "新建事件报告"
+
+msgid "Options"
+msgstr "选项"
+
+msgid "Hide"
+msgstr "隐藏"
+
+msgid "Update"
+msgstr "更新"
+
+msgid "{{count}} org units"
+msgid_plural "{{count}} org units"
+msgstr[0] "{{count}} 个组织单位"
+
+msgid "{{count}} levels"
+msgid_plural "{{count}} levels"
+msgstr[0] "{{count}} 级"
+
+msgid "{{count}} groups"
+msgid_plural "{{count}} groups"
+msgstr[0] "{{count}} 组"
+
+msgid "Selected: {{commaSeparatedListOfOrganisationUnits}}"
+msgstr "已选择：{{commaSeparatedListOfOrganisationUnits}}"
+
+msgid "Nothing selected"
+msgstr "未选择任何内容"
+
+msgid "User organisation unit"
+msgstr "用户所在机构"
+
+msgid "User sub-units"
+msgstr "我的下属机构"
+
+msgid "User sub-x2-units"
+msgstr "该用户2级下属机构"
+
+msgid "Select a level"
+msgstr "选择一个等级"
+
+msgid "Select a group"
+msgstr "选择一个组"
+
+msgid "Deselect all"
+msgstr "取消全选"
 
 msgid "Period type"
 msgstr "周期类型"
@@ -211,16 +441,16 @@ msgid "Period"
 msgstr "期间"
 
 msgid "Relative periods"
-msgstr "相关周期"
+msgstr "相对期间"
 
 msgid "Fixed periods"
-msgstr "固定周期"
+msgstr "固定期间"
 
 msgid "Selected Periods"
 msgstr "选择的期间"
 
 msgid "No periods selected"
-msgstr "没有选择相对周期"
+msgstr "未选择期间"
 
 msgid "January"
 msgstr "1月"
@@ -270,9 +500,6 @@ msgstr "每日"
 msgid "Weekly"
 msgstr "每周"
 
-msgid "Bi-weekly"
-msgstr "两周"
-
 msgid "Weekly (Start Wednesday)"
 msgstr "每周（始于周二）"
 
@@ -284,6 +511,9 @@ msgstr "每周（始于周六）"
 
 msgid "Weekly (Start Sunday)"
 msgstr "每周（始于周日）"
+
+msgid "Bi-weekly"
+msgstr "两周"
 
 msgid "Monthly"
 msgstr "每月"
@@ -437,6 +667,9 @@ msgstr "去年"
 
 msgid "Last 5 years"
 msgstr "最近5年"
+
+msgid "Last 10 years"
+msgstr "最近10年"
 
 msgid "Days"
 msgstr "天数"
@@ -631,10 +864,10 @@ msgid "{{percentage}}% of total y values"
 msgstr "占总y值的{{percentage}}％"
 
 msgid "{{thresholdFactor}} × IQR Q1"
-msgstr "{{thresholdFactor}}×IQR Q1"
+msgstr "{{thresholdFactor}} × IQR Q1"
 
 msgid "{{thresholdFactor}} × IQR Q3"
-msgstr "{{thresholdFactor}}×IQR Q3"
+msgstr "{{thresholdFactor}} × IQR Q3"
 
 msgid "{{thresholdFactor}} × Modified Z-score low"
 msgstr "{{thresholdFactor}}×修正的Z分数低值"
@@ -778,6 +1011,10 @@ msgstr "基"
 
 msgid "Axis {{axisId}}"
 msgstr "轴{{axisId}}"
+
+msgid "{{count}} items"
+msgid_plural "{{count}} items"
+msgstr[0] "{{count}} 个条目"
 
 msgid "Reset zoom"
 msgstr "重设缩放"

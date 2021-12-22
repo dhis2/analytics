@@ -1,18 +1,17 @@
-import React, { Component, createRef } from 'react'
+import { IconLock16 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
-import LockIcon from '@material-ui/icons/Lock'
+import React, { Component, createRef } from 'react'
+import DynamicDimensionIcon from '../../../assets/DynamicDimensionIcon.js'
+import { getPredefinedDimensionProp } from '../../../modules/predefinedDimensions.js'
+import DimensionLabel from './DimensionLabel.js'
+import OptionsButton from './OptionsButton.js'
+import RecommendedIcon from './RecommendedIcon.js'
+import { styles } from './styles/DimensionItem.style.js'
 
-import DimensionLabel from './DimensionLabel'
-import RecommendedIcon from './RecommendedIcon'
-import OptionsButton from './OptionsButton'
-import DynamicDimensionIcon from '../../../assets/DynamicDimensionIcon'
-import { getPredefinedDimensionProp } from '../../../modules/predefinedDimensions'
-import { styles } from './styles/DimensionItem.style'
-
-export class DimensionItem extends Component {
+class DimensionItem extends Component {
     state = { mouseOver: false }
 
-    onOptionsClick = (id, ref) => event =>
+    onOptionsClick = (id, ref) => (event) =>
         this.props.onOptionsClick(event, id, ref)
 
     onMouseOver = () => {
@@ -97,7 +96,7 @@ export class DimensionItem extends Component {
                     </div>
                     {isLocked && (
                         <div style={styles.iconWrapper}>
-                            <LockIcon style={styles.lockIcon} />
+                            <IconLock16 />
                         </div>
                     )}
                 </DimensionLabel>

@@ -1,16 +1,6 @@
 import { colors } from '@dhis2/ui'
-
-import getCumulativeData from '../getCumulativeData'
-import getPie from './pie'
-import getGauge from './gauge'
-import getScatter from './scatter'
-import getType from '../type'
-import { getFullIdAxisMap, getAxisIdsMap } from '../customAxes'
-import { generateColors } from '../../../../util/colors/gradientColorGenerator'
-import {
-    colorSets,
-    COLOR_SET_PATTERNS,
-} from '../../../../util/colors/colorSets'
+import { hasCustomAxes } from '../../../../../modules/axis.js'
+import { axisHasRelativeItems } from '../../../../../modules/layout/axisHasRelativeItems.js'
 import {
     VIS_TYPE_PIE,
     VIS_TYPE_GAUGE,
@@ -18,15 +8,19 @@ import {
     isYearOverYear,
     VIS_TYPE_LINE,
     VIS_TYPE_SCATTER,
-    isLegendSetType,
-} from '../../../../../modules/visTypes'
-import { hasCustomAxes } from '../../../../../modules/axis'
-import { getAxisStringFromId } from '../../../../util/axisId'
-import { axisHasRelativeItems } from '../../../../../modules/layout/axisHasRelativeItems'
+} from '../../../../../modules/visTypes.js'
+import { getAxisStringFromId } from '../../../../util/axisId.js'
 import {
-    LEGEND_DISPLAY_STRATEGY_BY_DATA_ITEM,
-    LEGEND_DISPLAY_STRATEGY_FIXED,
-} from '../../../../../modules/legends'
+    colorSets,
+    COLOR_SET_PATTERNS,
+} from '../../../../util/colors/colorSets.js'
+import { generateColors } from '../../../../util/colors/gradientColorGenerator.js'
+import { getFullIdAxisMap, getAxisIdsMap } from '../customAxes.js'
+import getCumulativeData from '../getCumulativeData.js'
+import getType from '../type.js'
+import getGauge from './gauge.js'
+import getPie from './pie.js'
+import getScatter from './scatter.js'
 
 const DEFAULT_ANIMATION_DURATION = 200
 
@@ -64,9 +58,9 @@ function getIndexColorPatternMap(series, layout, extraOptions) {
 }
 
 function getIdColorMap(series, layout, extraOptions) {
-    const filteredSeries = layout.series?.filter(layoutSeriesItem =>
+    const filteredSeries = layout.series?.filter((layoutSeriesItem) =>
         series.some(
-            seriesItem => seriesItem.id === layoutSeriesItem.dimensionItem
+            (seriesItem) => seriesItem.id === layoutSeriesItem.dimensionItem
         )
     )
 
@@ -145,7 +139,7 @@ function getDefault(series, metaData, layout, isStacked, extraOptions) {
         }
 
         const matchedObject = layout.series?.find(
-            item => item.dimensionItem === seriesObj.id
+            (item) => item.dimensionItem === seriesObj.id
         )
 
         if (matchedObject && !axisHasRelativeItems(layout.columns)) {
@@ -173,33 +167,10 @@ function getDefault(series, metaData, layout, isStacked, extraOptions) {
             seriesObj.groupPadding = 0
         }
 
-        let legendSet
-        if (isLegendSetType(layout.type)) {
-            const legendSets = extraOptions?.legendSets || []
-            if (
-                layout.legendDisplayStrategy ===
-                LEGEND_DISPLAY_STRATEGY_BY_DATA_ITEM
-            ) {
-                legendSet = legendSets.find(
-                    legendSet =>
-                        legendSet.id === metaData.items[seriesObj.id]?.legendSet
-                )
-            } else if (
-                layout.legendDisplayStrategy === LEGEND_DISPLAY_STRATEGY_FIXED
-            ) {
-                legendSet = legendSets[0]
-            }
-        }
-
         // color
         if (isYearOverYear(layout.type)) {
             // YearOverYear: Fetch colors directly from color sets
             seriesObj.color = indexColorPatternMap[index]
-        } else if (legendSet?.legends?.length) {
-            // Legendset: Fetch the middle color of the set
-            seriesObj.color = legendSet.legends.sort(
-                (a, b) => a.startValue - b.startValue
-            )[Math.ceil(legendSet.legends.length / 2) - 1].color
         } else {
             // Default: Either generate colors or fetch from color sets
             seriesObj.color = idColorMap[seriesObj.id]
@@ -249,7 +220,7 @@ export default function (series, metaData, layout, isStacked, extraOptions) {
             )
     }
 
-    series.forEach(seriesObj => {
+    series.forEach((seriesObj) => {
         // animation
         seriesObj.animation = {
             duration: getAnimation(

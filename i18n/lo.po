@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-03-09T11:13:51.855Z\n"
+"POT-Creation-Date: 2021-11-12T14:52:40.534Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: Viktor Varland <viktor@dhis2.org>, 2021\n"
 "Language-Team: Lao (https://www.transifex.com/hisp-uio/teams/100509/lo/)\n"
@@ -15,6 +15,55 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: lo\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "view only"
+msgstr ""
+
+msgid "view and edit"
+msgstr ""
+
+msgid "all users ({{accessLevel}})"
+msgstr ""
+
+msgid "{{userOrGroup}} ({{accessLevel}})"
+msgstr ""
+
+msgid "Shared with {{commaSeparatedListOfUsersAndGroups}}"
+msgstr ""
+
+msgid "Not shared with any users or groups"
+msgstr ""
+
+msgid "About this visualization"
+msgstr ""
+
+msgid "No description"
+msgstr "ບໍ່ມີລາຍລະອຽດ"
+
+msgid "Last updated {{time}}"
+msgstr ""
+
+msgid "Created {{time}} by {{author}}"
+msgstr ""
+
+msgid "Viewed {{count}} times"
+msgid_plural "Viewed {{count}} times"
+msgstr[0] ""
+
+msgid "Notifications"
+msgstr ""
+
+msgid "You're subscribed and getting updates about new interpretations."
+msgstr ""
+
+msgid "Unsubscribe"
+msgstr ""
+
+msgid "Subscribe to get updates about new interpretations."
+msgstr ""
+
+msgid "Subscribe"
+msgstr ""
 
 msgid "Data Type"
 msgstr ""
@@ -115,7 +164,21 @@ msgstr ""
 msgid "Dimension recommended with selected data"
 msgstr ""
 
-msgid "Nothing found in {{dimensionTitle}}"
+msgid "All items"
+msgstr ""
+
+msgid "Automatically include all items"
+msgstr ""
+
+msgid ""
+"Select all {{- dimensionTitle}} items. With this option, new items added in "
+"the future will be automatically included."
+msgstr ""
+
+msgid "Manually select items..."
+msgstr ""
+
+msgid "Nothing found in {{- dimensionTitle}}"
 msgstr ""
 
 msgid "Search"
@@ -127,7 +190,8 @@ msgstr ""
 msgid "Delete {{fileType}}"
 msgstr ""
 
-msgid "This {{fileType}} will be deleted. Continue?"
+msgid ""
+"This {{fileType}} and related interpretations will be deleted. Continue?"
 msgstr ""
 
 msgid "Cancel"
@@ -187,14 +251,180 @@ msgstr "ປ່ຽນຊື່"
 msgid "Save {{fileType}} as"
 msgstr ""
 
-msgid "Selected Data"
+msgid "Created by"
+msgstr "ສ້າງໂດຍ"
+
+msgid "Anyone"
 msgstr ""
 
-msgid "Deselect All"
+msgid "Only you"
 msgstr ""
 
-msgid "Select all"
-msgstr "Select all"
+msgid "Others"
+msgstr "Others"
+
+msgid "Filter by name"
+msgstr "Filter by name"
+
+msgid "Created"
+msgstr "ສ້າງແລ້ວ"
+
+msgid "Last updated"
+msgstr "ປັບປຸງ​ຄັ້ງຫລ້າສຸດ"
+
+msgid "Type"
+msgstr "Type"
+
+msgid "Clear filters"
+msgstr "ປັບປຸງເຄື່ອງມືຄັດຈ້ອນ"
+
+msgid "{{firstItemIndex}}-{{lastItemIndex}} of {{totalNumberOfItems}}"
+msgstr ""
+
+msgid "All charts"
+msgstr ""
+
+msgid "Open"
+msgstr "ເປີດ"
+
+msgid "Couldn't load items"
+msgstr ""
+
+msgid ""
+"There was a problem loading items. Try again or contact your system "
+"administrator."
+msgstr ""
+
+msgid "No items found. Create a new to get started."
+msgstr ""
+
+msgid ""
+"No items found. Try adjusting your search or filter options to find what "
+"you're looking for."
+msgstr ""
+
+msgid "Create new"
+msgstr ""
+
+msgid "Open a visualization"
+msgstr ""
+
+msgid "Loading visualizations"
+msgstr ""
+
+msgid "Couldn't load visualizations"
+msgstr ""
+
+msgid ""
+"There was a problem loading visualizations. Try again or contact your system"
+" administrator."
+msgstr ""
+
+msgid "No visualizations found. Click New visualization to get started."
+msgstr ""
+
+msgid ""
+"No visualizations found. Try adjusting your search or filter options to find"
+" what you're looking for."
+msgstr ""
+
+msgid "New visualization"
+msgstr ""
+
+msgid "Open a map"
+msgstr ""
+
+msgid "Loading maps"
+msgstr ""
+
+msgid "Couldn't load maps"
+msgstr ""
+
+msgid ""
+"There was a problem loading maps. Try again or contact your system "
+"administrator."
+msgstr ""
+
+msgid "No maps found. Click New map to get started."
+msgstr ""
+
+msgid ""
+"No maps found. Try adjusting your search or filter options to find what "
+"you're looking for."
+msgstr ""
+
+msgid "New map"
+msgstr ""
+
+msgid "Open an event report"
+msgstr ""
+
+msgid "Loading event reports"
+msgstr ""
+
+msgid "Couldn't load event reports"
+msgstr ""
+
+msgid ""
+"There was a problem loading event reports. Try again or contact your system "
+"administrator."
+msgstr ""
+
+msgid "No event reports found. Click New event report to get started."
+msgstr ""
+
+msgid ""
+"No event reports found. Try adjusting your search or filter options to find "
+"what you're looking for."
+msgstr ""
+
+msgid "New event report"
+msgstr ""
+
+msgid "Options"
+msgstr "ຈັດການ"
+
+msgid "Hide"
+msgstr "ເຊື່ອງ"
+
+msgid "Update"
+msgstr "ປັບປຸງ"
+
+msgid "{{count}} org units"
+msgid_plural "{{count}} org units"
+msgstr[0] ""
+
+msgid "{{count}} levels"
+msgid_plural "{{count}} levels"
+msgstr[0] ""
+
+msgid "{{count}} groups"
+msgid_plural "{{count}} groups"
+msgstr[0] ""
+
+msgid "Selected: {{commaSeparatedListOfOrganisationUnits}}"
+msgstr ""
+
+msgid "Nothing selected"
+msgstr ""
+
+msgid "User organisation unit"
+msgstr ""
+
+msgid "User sub-units"
+msgstr "ຫົວໜ່ວຍຍ່ອຍຂອງທ່ານ"
+
+msgid "User sub-x2-units"
+msgstr "ຫົວໜ່ວຍຍ່ອຍຂັ້ນສອງຂອງທ່ານ"
+
+msgid "Select a level"
+msgstr ""
+
+msgid "Select a group"
+msgstr ""
+
+msgid "Deselect all"
+msgstr ""
 
 msgid "Period type"
 msgstr "ແບບຊ່ວງເວລາ"
@@ -268,9 +498,6 @@ msgstr "ທຸກໆມື້"
 msgid "Weekly"
 msgstr "ເປັນອາທິດ"
 
-msgid "Bi-weekly"
-msgstr ""
-
 msgid "Weekly (Start Wednesday)"
 msgstr ""
 
@@ -281,6 +508,9 @@ msgid "Weekly (Start Saturday)"
 msgstr ""
 
 msgid "Weekly (Start Sunday)"
+msgstr ""
+
+msgid "Bi-weekly"
 msgstr ""
 
 msgid "Monthly"
@@ -435,6 +665,9 @@ msgstr "ປີກາຍ"
 
 msgid "Last 5 years"
 msgstr "5 ປີຍ້ອນຫຼັງ"
+
+msgid "Last 10 years"
+msgstr ""
 
 msgid "Days"
 msgstr "ມື້"
@@ -776,6 +1009,10 @@ msgstr "ຖານ"
 
 msgid "Axis {{axisId}}"
 msgstr ""
+
+msgid "{{count}} items"
+msgid_plural "{{count}} items"
+msgstr[0] ""
 
 msgid "Reset zoom"
 msgstr ""

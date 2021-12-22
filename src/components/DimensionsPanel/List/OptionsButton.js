@@ -1,13 +1,11 @@
-import React from 'react'
-import IconButton from '@material-ui/core/IconButton'
+import { IconMore16 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
+import React from 'react'
 
-import MoreHorizontalIcon from '../../../assets/MoreHorizontalIcon'
-
-export const OptionsButton = ({ style, onClick }) => (
-    <IconButton style={style} onClick={onClick}>
-        <MoreHorizontalIcon />
-    </IconButton>
+const OptionsButton = ({ style, onClick }) => (
+    <button style={style} onClick={onClick}>
+        <IconMore16 />
+    </button>
 )
 
 OptionsButton.propTypes = {

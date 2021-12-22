@@ -1,14 +1,16 @@
 import arrayContains from 'd2-utilizr/lib/arrayContains'
 import { rgb } from 'd3-color'
-import i18n from '@dhis2/d2-i18n'
-
-import { colorSets, COLOR_SET_PATTERNS } from '../../../util/colors/colorSets'
-import getStackedData from './getStackedData'
+import i18n from '../../../../locales/index.js'
 import {
     VIS_TYPE_GAUGE,
     VIS_TYPE_PIE,
     isTwoCategoryChartType,
-} from '../../../../modules/visTypes'
+} from '../../../../modules/visTypes.js'
+import {
+    colorSets,
+    COLOR_SET_PATTERNS,
+} from '../../../util/colors/colorSets.js'
+import getStackedData from './getStackedData.js'
 
 const DEFAULT_TRENDLINE = {
     type: 'spline',
@@ -24,7 +26,7 @@ const DEFAULT_TRENDLINE = {
     zIndex: 1,
 }
 
-export const isRegressionIneligible = type =>
+export const isRegressionIneligible = (type) =>
     arrayContains([VIS_TYPE_GAUGE, VIS_TYPE_PIE], type)
 
 export default function (layout, series, isStacked) {
@@ -50,7 +52,7 @@ function getDefaultTrendLines(layout, series, isStacked) {
             )
         )
     } else {
-        series.forEach(seriesObj => {
+        series.forEach((seriesObj) => {
             newSeries.push(
                 seriesObj,
                 Object.assign(
@@ -84,7 +86,7 @@ function getTwoCategoryTrendlineConfig(
     groupRegressionObject.splice(
         groupIndex * groupObj.length,
         groupObj.length,
-        ...trendlineConfig.data.map(point => point[1])
+        ...trendlineConfig.data.map((point) => point[1])
     )
 
     trendlineConfig.data = groupRegressionObject
@@ -126,7 +128,7 @@ function getTwoCategoryTrendLines(layout, series, isStacked) {
             newSeries.push(trendlineConfig)
         })
     } else {
-        series.forEach(seriesObj => {
+        series.forEach((seriesObj) => {
             const trendlineSerieId = `trendline-${seriesObj.id}`
 
             newSeries.push(seriesObj)
@@ -196,7 +198,7 @@ function getRegressionObj(data, regressionType) {
 
     let regression
     const regressionTypeOptions = {}
-    const regressionData = data.some(i => Array.isArray(i))
+    const regressionData = data.some((i) => Array.isArray(i))
         ? data
         : getRegressionData(data)
 
@@ -443,7 +445,7 @@ function polynomial(data, order = 2, extrapolate = 0, decimalPlaces = 2) {
 // - http://commons.apache.org/proper/commons-math/download_math.cgi LoesInterpolator.java
 // - https://gist.github.com/avibryant/1151823
 function loess(data, bandwidth = 0.25) {
-    const xval = data.map(pair => {
+    const xval = data.map((pair) => {
         return pair[0]
     })
 
@@ -453,7 +455,7 @@ function loess(data, bandwidth = 0.25) {
         bandwidth = Math.min(2 / distinctX.length, 1)
     }
 
-    const yval = data.map(pair => {
+    const yval = data.map((pair) => {
         return pair[1]
     })
 

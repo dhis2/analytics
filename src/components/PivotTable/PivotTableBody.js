@@ -1,8 +1,8 @@
-import React from 'react'
 import PropTypes from 'prop-types'
-import { PivotTableClippedAxis } from './PivotTableClippedAxis'
-import { PivotTableEmptyRow } from './PivotTableEmptyRow'
-import { PivotTableRow } from './PivotTableRow'
+import React from 'react'
+import { PivotTableClippedAxis } from './PivotTableClippedAxis.js'
+import { PivotTableEmptyRow } from './PivotTableEmptyRow.js'
+import { PivotTableRow } from './PivotTableRow.js'
 
 export const PivotTableBody = ({ clippingResult, onToggleContextualMenu }) => (
     <tbody>

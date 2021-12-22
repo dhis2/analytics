@@ -1,8 +1,8 @@
 import arrayPluck from 'd2-utilizr/lib/arrayPluck'
 import arraySort from 'd2-utilizr/lib/arraySort'
-import getStackedData from './getStackedData'
-import { isTwoCategoryChartType } from '../../../../modules/visTypes'
-import getTwoCategorySplitSerieData from './getTwoCategorySplitSerieData'
+import { isTwoCategoryChartType } from '../../../../modules/visTypes.js'
+import getStackedData from './getStackedData.js'
+import getTwoCategorySplitSerieData from './getTwoCategorySplitSerieData.js'
 
 const sortOrderMap = new Map([
     [-1, 'ASC'],
@@ -48,14 +48,13 @@ function getTwoCategorySortedConfig(config, layout, stacked) {
                         const groupCategoryLabels =
                             config.xAxis[0].categories[groupIndex]
 
-                        sortedConfig.xAxis[0].categories[
-                            groupIndex
-                        ] = groupCategoryLabels.map(
-                            (value, index) =>
-                                groupCategoryLabels[
-                                    indexOrder[groupIndex][index]
-                                ]
-                        )
+                        sortedConfig.xAxis[0].categories[groupIndex] =
+                            groupCategoryLabels.map(
+                                (value, index) =>
+                                    groupCategoryLabels[
+                                        indexOrder[groupIndex][index]
+                                    ]
+                            )
                     }
 
                     return groupObj.map(
@@ -85,11 +84,11 @@ function getDefaultSortedConfig(config, layout, stacked) {
 
     if (categories) {
         sortedConfig.xAxis[0].categories = indexOrder.map(
-            index => categories[index]
+            (index) => categories[index]
         )
     }
 
-    sortedConfig.series = series.map(seriesObj => ({
+    sortedConfig.series = series.map((seriesObj) => ({
         ...seriesObj,
         data: seriesObj.data.map(
             (value, index) => seriesObj.data[indexOrder[index]]

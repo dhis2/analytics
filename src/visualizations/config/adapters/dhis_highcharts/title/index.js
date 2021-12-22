@@ -1,15 +1,4 @@
 import isString from 'd2-utilizr/lib/isString'
-
-import getFilterText from '../../../../util/getFilterText'
-import {
-    VIS_TYPE_YEAR_OVER_YEAR_LINE,
-    VIS_TYPE_YEAR_OVER_YEAR_COLUMN,
-    VIS_TYPE_GAUGE,
-    isVerticalType,
-    VIS_TYPE_SCATTER,
-} from '../../../../../modules/visTypes'
-import getYearOverYearTitle from './yearOverYear'
-import getScatterTitle from './scatter'
 import {
     FONT_STYLE_OPTION_ITALIC,
     FONT_STYLE_OPTION_BOLD,
@@ -18,8 +7,18 @@ import {
     FONT_STYLE_OPTION_TEXT_ALIGN,
     FONT_STYLE_VISUALIZATION_TITLE,
     mergeFontStyleWithDefault,
-} from '../../../../../modules/fontStyle'
-import { getTextAlignOption } from '../getTextAlignOption'
+} from '../../../../../modules/fontStyle.js'
+import {
+    VIS_TYPE_YEAR_OVER_YEAR_LINE,
+    VIS_TYPE_YEAR_OVER_YEAR_COLUMN,
+    VIS_TYPE_GAUGE,
+    isVerticalType,
+    VIS_TYPE_SCATTER,
+} from '../../../../../modules/visTypes.js'
+import getFilterText from '../../../../util/getFilterText.js'
+import { getTextAlignOption } from '../getTextAlignOption.js'
+import getScatterTitle from './scatter.js'
+import getYearOverYearTitle from './yearOverYear.js'
 
 const DASHBOARD_TITLE_STYLE = {
     margin: 15,

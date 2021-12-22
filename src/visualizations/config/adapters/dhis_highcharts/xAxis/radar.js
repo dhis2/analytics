@@ -1,12 +1,14 @@
 import isString from 'd2-utilizr/lib/isString'
-
 import {
     FONT_STYLE_HORIZONTAL_AXIS_TITLE,
     TEXT_ALIGN_CENTER,
-} from '../../../../../modules/fontStyle'
-import { isVerticalType, VIS_TYPE_RADAR } from '../../../../../modules/visTypes'
-import { getTextAlignOption } from '../getTextAlignOption'
-import { getDefault } from './'
+} from '../../../../../modules/fontStyle.js'
+import {
+    isVerticalType,
+    VIS_TYPE_RADAR,
+} from '../../../../../modules/visTypes.js'
+import { getTextAlignOption } from '../getTextAlignOption.js'
+import { getDefault } from './index.js'
 
 export default (store, layout) => {
     const config = getDefault(store, layout)

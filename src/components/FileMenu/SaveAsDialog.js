@@ -1,7 +1,3 @@
-import React, { useState } from 'react'
-
-import PropTypes from '@dhis2/prop-types'
-import i18n from '@dhis2/d2-i18n'
 import {
     Modal,
     ModalTitle,
@@ -12,8 +8,10 @@ import {
     InputField,
     TextAreaField,
 } from '@dhis2/ui'
-
-import { supportedFileTypes } from './utils'
+import PropTypes from 'prop-types'
+import React, { useState } from 'react'
+import i18n from '../../locales/index.js'
+import { supportedFileTypes } from './utils.js'
 
 export const SaveAsDialog = ({ type, object, onClose, onSaveAs }) => {
     const [name, setName] = useState(object?.name)

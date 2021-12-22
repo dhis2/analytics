@@ -1,17 +1,16 @@
-import i18n from '@dhis2/d2-i18n'
 import isNumber from 'd2-utilizr/lib/isNumber'
-
-import { PROP_THRESHOLD_FACTOR } from './index'
+import i18n from '../../locales/index.js'
+import { PROP_THRESHOLD_FACTOR } from './index.js'
 
 export const MODIFIED_Z_SCORE = 'MODIFIED_Z_SCORE'
 
 const MEDIAN_AD_CORRECTION = 0.6745
 const MEAN_AD_CORRECTION = 1.253314
 
-export const getMean = values =>
+export const getMean = (values) =>
     values.reduce((total, value) => total + value, 0) / values.length
 
-export const getMedian = values => {
+export const getMedian = (values) => {
     const hl = values.length / 2
     return hl % 1
         ? values[Math.floor(hl)]
@@ -25,11 +24,11 @@ export const getMedianAbsoluteDeviation = (
     median = getMedian(values)
 ) =>
     getMedian(
-        values.map(value => Math.abs(value - median)).sort((a, b) => a - b)
+        values.map((value) => Math.abs(value - median)).sort((a, b) => a - b)
     )
 
 export const getMeanAbsoluteDeviation = (values, mean = getMean(values)) =>
-    getMean(values.map(value => Math.abs(value - mean)))
+    getMean(values.map((value) => Math.abs(value - mean)))
 
 // Modified z-scores
 
@@ -53,7 +52,8 @@ export const getModZScoreMAD0Thresholds = (thresholdFactor, meanAD, median) => [
 
 export const getDataWithZScore = (dataWithNormalization, cache = {}) => {
     const normalizedData =
-        cache.normalizedData || dataWithNormalization.map(obj => obj.normalized)
+        cache.normalizedData ||
+        dataWithNormalization.map((obj) => obj.normalized)
     const median = isNumber(cache.median)
         ? cache.median
         : getMedian(normalizedData)
@@ -66,12 +66,12 @@ export const getDataWithZScore = (dataWithNormalization, cache = {}) => {
         const meanAD = isNumber(cache.meanAD)
             ? cache.meanAD
             : getMeanAbsoluteDeviation(normalizedData)
-        dataWithZScore = dataWithNormalization.map(obj => ({
+        dataWithZScore = dataWithNormalization.map((obj) => ({
             ...obj,
             zScore: getModZScoreMAD0(obj.normalized, median, meanAD),
         }))
     } else {
-        dataWithZScore = dataWithNormalization.map(obj => ({
+        dataWithZScore = dataWithNormalization.map((obj) => ({
             ...obj,
             zScore: getModZScore(obj.normalized, median, medianAD),
         }))
@@ -106,10 +106,8 @@ export const getModZScoreHelper = (
                   median
               )
 
-    const [
-        lowThresholdLine,
-        highThresholdLine,
-    ] = normalizationHelper.getThresholdLines(lowThreshold, highThreshold)
+    const [lowThresholdLine, highThresholdLine] =
+        normalizationHelper.getThresholdLines(lowThreshold, highThreshold)
 
     const outlierPoints = []
     const inlierPoints = []

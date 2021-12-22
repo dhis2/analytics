@@ -1,17 +1,21 @@
-import { getAdaptedUiLayoutByType } from '../getAdaptedUiLayoutByType'
-import { AXIS_ID_COLUMNS, AXIS_ID_ROWS, AXIS_ID_FILTERS } from '../layout/axis'
+import { getAdaptedUiLayoutByType } from '../getAdaptedUiLayoutByType.js'
+import {
+    AXIS_ID_COLUMNS,
+    AXIS_ID_ROWS,
+    AXIS_ID_FILTERS,
+} from '../layout/axis.js'
+import {
+    DIMENSION_ID_DATA,
+    DIMENSION_ID_PERIOD,
+    DIMENSION_ID_ORGUNIT,
+} from '../predefinedDimensions.js'
 import {
     VIS_TYPE_COLUMN,
     VIS_TYPE_YEAR_OVER_YEAR_LINE,
     VIS_TYPE_BAR,
     VIS_TYPE_PIE,
     VIS_TYPE_SINGLE_VALUE,
-} from '../visTypes'
-import {
-    DIMENSION_ID_DATA,
-    DIMENSION_ID_PERIOD,
-    DIMENSION_ID_ORGUNIT,
-} from '../predefinedDimensions'
+} from '../visTypes.js'
 
 const someId = 'someId'
 const otherId = 'otherId'

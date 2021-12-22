@@ -1,19 +1,18 @@
-import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import i18n from '@dhis2/d2-i18n'
+import React, { Component } from 'react'
+import i18n from '../../locales/index.js'
+import Filter from '../Filter/Filter.js'
+import DimensionList from './List/DimensionList.js'
+import { styles } from './styles/DimensionsPanel.style.js'
 
-import Filter from '../Filter/Filter'
-import DimensionList from './List/DimensionList'
-import { styles } from './styles/DimensionsPanel.style'
-
-export class DimensionsPanel extends Component {
+class DimensionsPanel extends Component {
     state = { filterText: '' }
 
     onClearFilter = () => {
         this.setState({ filterText: '' })
     }
 
-    onFilterTextChange = filterText => {
+    onFilterTextChange = (filterText) => {
         this.setState({ filterText })
     }
 
@@ -33,7 +32,6 @@ export class DimensionsPanel extends Component {
         return (
             <div style={{ ...styles.divContainer, ...style }}>
                 <Filter
-                    style={styles.textField}
                     placeholder={i18n.t('Filter dimensions')}
                     text={this.state.filterText}
                     onChange={this.onFilterTextChange}

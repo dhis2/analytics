@@ -1,7 +1,7 @@
-import React from 'react'
 import PropTypes from 'prop-types'
-import { usePivotTableEngine } from './PivotTableEngineContext'
-import { PivotTableCell } from './PivotTableCell'
+import React from 'react'
+import { PivotTableCell } from './PivotTableCell.js'
+import { usePivotTableEngine } from './PivotTableEngineContext.js'
 
 export const PivotTableDimensionLabelCell = ({ rowLevel, columnLevel }) => {
     const engine = usePivotTableEngine()
@@ -36,14 +36,47 @@ export const PivotTableDimensionLabelCell = ({ rowLevel, columnLevel }) => {
         return null
     }
 
-    const width = engine.rowHeaderWidths[rowLevel]
+    const width =
+        engine.adaptiveClippingController.columns.headerSizes[rowLevel]
+    const height =
+        engine.adaptiveClippingController.rows.headerSizes[columnLevel]
+    const style = {
+        width,
+        height,
+    }
+
+    if (engine.options.fixColumnHeaders || engine.options.fixRowHeaders) {
+        style.zIndex =
+            engine.options.fixColumnHeaders && engine.options.fixRowHeaders
+                ? 2
+                : 1
+        style.top = engine.options.fixColumnHeaders
+            ? columnLevel * (engine.fontSize + engine.cellPadding * 2 + 2)
+            : 0
+        style.left = engine.options.fixRowHeaders
+            ? // calculate the width of all row header cells on the left of current cell
+              engine.adaptiveClippingController.columns.headerSizes
+                  .slice(0, rowLevel)
+                  .reduce((width, acc) => (acc += width), 0)
+            : 0
+    }
+
     return (
         <PivotTableCell
-            classes={['empty-header', 'column-header']}
+            isHeader={true}
+            classes={[
+                'empty-header',
+                'column-header',
+                {
+                    'fixed-header':
+                        engine.options.fixColumnHeaders ||
+                        engine.options.fixRowHeaders,
+                },
+            ]}
             colSpan={colSpan}
             rowSpan={rowSpan}
             title={label}
-            style={{ width, maxWidth: width, minWidth: width }}
+            style={style}
         >
             {label}
         </PivotTableCell>

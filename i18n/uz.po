@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-03-09T11:13:51.855Z\n"
+"POT-Creation-Date: 2021-11-12T14:52:40.534Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: Ibatov <ibatovk@who.int>, 2021\n"
 "Language-Team: Uzbek (Cyrillic) (https://www.transifex.com/hisp-uio/teams/100509/uz@Cyrl/)\n"
@@ -14,6 +14,55 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: uz@Cyrl\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "view only"
+msgstr ""
+
+msgid "view and edit"
+msgstr ""
+
+msgid "all users ({{accessLevel}})"
+msgstr ""
+
+msgid "{{userOrGroup}} ({{accessLevel}})"
+msgstr ""
+
+msgid "Shared with {{commaSeparatedListOfUsersAndGroups}}"
+msgstr ""
+
+msgid "Not shared with any users or groups"
+msgstr ""
+
+msgid "About this visualization"
+msgstr ""
+
+msgid "No description"
+msgstr "Тавсиф йўқ"
+
+msgid "Last updated {{time}}"
+msgstr ""
+
+msgid "Created {{time}} by {{author}}"
+msgstr ""
+
+msgid "Viewed {{count}} times"
+msgid_plural "Viewed {{count}} times"
+msgstr[0] ""
+
+msgid "Notifications"
+msgstr "Билдиришномалар"
+
+msgid "You're subscribed and getting updates about new interpretations."
+msgstr ""
+
+msgid "Unsubscribe"
+msgstr ""
+
+msgid "Subscribe to get updates about new interpretations."
+msgstr ""
+
+msgid "Subscribe"
+msgstr ""
 
 msgid "Data Type"
 msgstr "Маълумот тури"
@@ -114,7 +163,21 @@ msgstr "Сизнинг созламаларингиз"
 msgid "Dimension recommended with selected data"
 msgstr "Танланган маълумотлар учун созламалар тавсия этилади"
 
-msgid "Nothing found in {{dimensionTitle}}"
+msgid "All items"
+msgstr ""
+
+msgid "Automatically include all items"
+msgstr ""
+
+msgid ""
+"Select all {{- dimensionTitle}} items. With this option, new items added in "
+"the future will be automatically included."
+msgstr ""
+
+msgid "Manually select items..."
+msgstr ""
+
+msgid "Nothing found in {{- dimensionTitle}}"
 msgstr ""
 
 msgid "Search"
@@ -126,7 +189,8 @@ msgstr ""
 msgid "Delete {{fileType}}"
 msgstr ""
 
-msgid "This {{fileType}} will be deleted. Continue?"
+msgid ""
+"This {{fileType}} and related interpretations will be deleted. Continue?"
 msgstr ""
 
 msgid "Cancel"
@@ -186,14 +250,180 @@ msgstr "Қайта номлашч"
 msgid "Save {{fileType}} as"
 msgstr ""
 
-msgid "Selected Data"
-msgstr "Танланган маълумот"
+msgid "Created by"
+msgstr "Томонидан яратилган"
 
-msgid "Deselect All"
-msgstr "Барчасини танланганлигини бекор қилиш"
+msgid "Anyone"
+msgstr "Кимдир"
 
-msgid "Select all"
-msgstr "Барчасини танлаш"
+msgid "Only you"
+msgstr ""
+
+msgid "Others"
+msgstr "Бошқалар"
+
+msgid "Filter by name"
+msgstr "Номи бўйича фильтрлаш"
+
+msgid "Created"
+msgstr "Яратилган"
+
+msgid "Last updated"
+msgstr "Охирги янгиланган"
+
+msgid "Type"
+msgstr "Тури"
+
+msgid "Clear filters"
+msgstr "Фильтрларни тозалаш"
+
+msgid "{{firstItemIndex}}-{{lastItemIndex}} of {{totalNumberOfItems}}"
+msgstr ""
+
+msgid "All charts"
+msgstr ""
+
+msgid "Open"
+msgstr "Очиқ"
+
+msgid "Couldn't load items"
+msgstr ""
+
+msgid ""
+"There was a problem loading items. Try again or contact your system "
+"administrator."
+msgstr ""
+
+msgid "No items found. Create a new to get started."
+msgstr ""
+
+msgid ""
+"No items found. Try adjusting your search or filter options to find what "
+"you're looking for."
+msgstr ""
+
+msgid "Create new"
+msgstr "Янгисини яратиш"
+
+msgid "Open a visualization"
+msgstr ""
+
+msgid "Loading visualizations"
+msgstr ""
+
+msgid "Couldn't load visualizations"
+msgstr ""
+
+msgid ""
+"There was a problem loading visualizations. Try again or contact your system"
+" administrator."
+msgstr ""
+
+msgid "No visualizations found. Click New visualization to get started."
+msgstr ""
+
+msgid ""
+"No visualizations found. Try adjusting your search or filter options to find"
+" what you're looking for."
+msgstr ""
+
+msgid "New visualization"
+msgstr ""
+
+msgid "Open a map"
+msgstr ""
+
+msgid "Loading maps"
+msgstr ""
+
+msgid "Couldn't load maps"
+msgstr ""
+
+msgid ""
+"There was a problem loading maps. Try again or contact your system "
+"administrator."
+msgstr ""
+
+msgid "No maps found. Click New map to get started."
+msgstr ""
+
+msgid ""
+"No maps found. Try adjusting your search or filter options to find what "
+"you're looking for."
+msgstr ""
+
+msgid "New map"
+msgstr ""
+
+msgid "Open an event report"
+msgstr ""
+
+msgid "Loading event reports"
+msgstr ""
+
+msgid "Couldn't load event reports"
+msgstr ""
+
+msgid ""
+"There was a problem loading event reports. Try again or contact your system "
+"administrator."
+msgstr ""
+
+msgid "No event reports found. Click New event report to get started."
+msgstr ""
+
+msgid ""
+"No event reports found. Try adjusting your search or filter options to find "
+"what you're looking for."
+msgstr ""
+
+msgid "New event report"
+msgstr ""
+
+msgid "Options"
+msgstr "Вариант"
+
+msgid "Hide"
+msgstr "Беркитиш"
+
+msgid "Update"
+msgstr "Янгилаш"
+
+msgid "{{count}} org units"
+msgid_plural "{{count}} org units"
+msgstr[0] ""
+
+msgid "{{count}} levels"
+msgid_plural "{{count}} levels"
+msgstr[0] ""
+
+msgid "{{count}} groups"
+msgid_plural "{{count}} groups"
+msgstr[0] ""
+
+msgid "Selected: {{commaSeparatedListOfOrganisationUnits}}"
+msgstr ""
+
+msgid "Nothing selected"
+msgstr ""
+
+msgid "User organisation unit"
+msgstr "Ташкилий бўлим фойдаланувчиси"
+
+msgid "User sub-units"
+msgstr "Фойдаланувчига бўйсунувчи бирликлар"
+
+msgid "User sub-x2-units"
+msgstr "Фойдаланувчига бўйсунувчи 2 поғонадаги бўлимлар"
+
+msgid "Select a level"
+msgstr "Поғонани танланг"
+
+msgid "Select a group"
+msgstr "Гуруҳни танланг"
+
+msgid "Deselect all"
+msgstr "Барча танланганни бекор қилиш"
 
 msgid "Period type"
 msgstr "Давр тури"
@@ -267,9 +497,6 @@ msgstr "Кунлик"
 msgid "Weekly"
 msgstr "Ҳафталик"
 
-msgid "Bi-weekly"
-msgstr "Жуфт ҳафталик"
-
 msgid "Weekly (Start Wednesday)"
 msgstr "Ҳафталик (Бошланиши Чоршанба)"
 
@@ -281,6 +508,9 @@ msgstr "Ҳафталик (Бошланиши Шанба)"
 
 msgid "Weekly (Start Sunday)"
 msgstr "Ҳафталик (Бошланиши Якшанба)"
+
+msgid "Bi-weekly"
+msgstr "Жуфт ҳафталик"
 
 msgid "Monthly"
 msgstr "Ойлик"
@@ -434,6 +664,9 @@ msgstr "Охирги йил"
 
 msgid "Last 5 years"
 msgstr "Охирги 5 йил"
+
+msgid "Last 10 years"
+msgstr "Охирги 10 йил"
 
 msgid "Days"
 msgstr "Кунлар"
@@ -779,6 +1012,10 @@ msgstr "Асос"
 
 msgid "Axis {{axisId}}"
 msgstr "Ўқлар {{axisId}}"
+
+msgid "{{count}} items"
+msgid_plural "{{count}} items"
+msgstr[0] ""
 
 msgid "Reset zoom"
 msgstr ""

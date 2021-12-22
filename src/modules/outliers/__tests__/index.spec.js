@@ -1,7 +1,7 @@
-import { getOutlierHelper } from '..'
-import { IQR } from '../iqr'
-import { MODIFIED_Z_SCORE } from '../modZScore'
-import { STANDARD_Z_SCORE } from '../zScore'
+import { getOutlierHelper } from '../index.js'
+import { IQR } from '../iqr.js'
+import { MODIFIED_Z_SCORE } from '../modZScore.js'
+import { STANDARD_Z_SCORE } from '../zScore.js'
 
 describe('getOutlierHelper', () => {
     it('should return a reference to the outlier points', () => {

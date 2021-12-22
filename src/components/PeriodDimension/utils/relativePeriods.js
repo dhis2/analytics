@@ -1,14 +1,15 @@
-import i18n from '@dhis2/d2-i18n'
-
-export const DAYS = 'Days'
-export const WEEKS = 'Weeks'
-export const BIWEEKS = 'BiWeeks'
-export const MONTHS = 'Months'
-export const BIMONTHS = 'BiMonths'
-export const QUARTERS = 'Quarters'
-export const SIXMONTHS = 'SixMonths'
-export const FINACIALYEARS = 'FinancialYears'
-export const YEARS = 'Years'
+import i18n from '../../../locales/index.js'
+import {
+    DAILY,
+    WEEKLY,
+    BIWEEKLY,
+    MONTHLY,
+    BIMONTHLY,
+    QUARTERLY,
+    SIXMONTHLY,
+    FINANCIAL,
+    YEARLY,
+} from './index.js'
 
 const getDaysPeriodType = () => [
     { id: 'TODAY', name: i18n.t('Today') },
@@ -100,58 +101,63 @@ const getYearsPeriodType = () => [
     { id: 'THIS_YEAR', name: i18n.t('This year') },
     { id: 'LAST_YEAR', name: i18n.t('Last year') },
     { id: 'LAST_5_YEARS', name: i18n.t('Last 5 years') },
+    { id: 'LAST_10_YEARS', name: i18n.t('Last 10 years') },
 ]
 
 const getOptions = () => [
-    { id: DAYS, getPeriods: () => getDaysPeriodType(), name: i18n.t('Days') },
     {
-        id: WEEKS,
+        id: DAILY,
+        getPeriods: () => getDaysPeriodType(),
+        name: i18n.t('Days'),
+    },
+    {
+        id: WEEKLY,
         getPeriods: () => getWeeksPeriodType(),
         name: i18n.t('Weeks'),
     },
     {
-        id: BIWEEKS,
+        id: BIWEEKLY,
         getPeriods: () => getBiWeeksPeriodType(),
         name: i18n.t('Bi-weeks'),
     },
     {
-        id: MONTHS,
+        id: MONTHLY,
         getPeriods: () => getMonthsPeriodType(),
         name: i18n.t('Months'),
     },
     {
-        id: BIMONTHS,
+        id: BIMONTHLY,
         getPeriods: () => getBiMonthsPeriodType(),
         name: i18n.t('Bi-months'),
     },
     {
-        id: QUARTERS,
+        id: QUARTERLY,
         getPeriods: () => getQuartersPeriodType(),
         name: i18n.t('Quarters'),
     },
     {
-        id: SIXMONTHS,
+        id: SIXMONTHLY,
         getPeriods: () => getSixMonthsPeriodType(),
         name: i18n.t('Six-months'),
     },
     {
-        id: FINACIALYEARS,
+        id: FINANCIAL,
         getPeriods: () => getFinancialYearsPeriodType(),
         name: i18n.t('Financial Years'),
     },
     {
-        id: YEARS,
+        id: YEARLY,
         getPeriods: () => getYearsPeriodType(),
         name: i18n.t('Years'),
     },
 ]
 
-export const getRelativePeriodsOptionsById = id =>
-    getOptions().find(option => option.id === id)
+export const getRelativePeriodsOptionsById = (id) =>
+    getOptions().find((option) => option.id === id)
 
 export const getRelativePeriodsOptions = () => getOptions()
 
 export const getRelativePeriodIds = () =>
     Object.values(getOptions())
-        .map(option => option.getPeriods().map(period => period.id))
+        .map((option) => option.getPeriods().map((period) => period.id))
         .flat()

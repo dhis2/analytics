@@ -1,7 +1,6 @@
-import React from 'react'
 import { storiesOf } from '@storybook/react'
-
-import ItemSelector from '../components/DynamicDimension/ItemSelector'
+import React from 'react'
+import ItemSelector from '../components/DynamicDimension/ItemSelector.js'
 
 const items = [
     { id: '1', name: 'One' },
@@ -17,7 +16,7 @@ storiesOf('DynamicDimension', module).add(
     () => {
         return (
             <ItemSelector
-                onSelect={selected => console.log(selected)}
+                onSelect={(selected) => console.log(selected)}
                 onFetch={() => ({ dimensionItems: items })}
             />
         )
@@ -29,9 +28,9 @@ storiesOf('DynamicDimension', module).add(
     () => {
         return (
             <ItemSelector
-                onSelect={selected => console.log(selected)}
+                onSelect={(selected) => console.log(selected)}
                 onFetch={() => ({ dimensionItems: items })}
-                initialSelected={[items[2]].map(item => ({
+                initialSelected={[items[2]].map((item) => ({
                     value: item.id,
                     label: item.name,
                 }))}
@@ -45,9 +44,9 @@ storiesOf('DynamicDimension', module).add(
     () => {
         return (
             <ItemSelector
-                onSelect={selected => console.log(selected)}
+                onSelect={(selected) => console.log(selected)}
                 onFetch={() => ({ dimensionItems: items })}
-                initialSelected={[items[5]].map(item => ({
+                initialSelected={[items[5]].map((item) => ({
                     value: item.id,
                     label: item.name,
                 }))}

@@ -1,7 +1,6 @@
-import React from 'react'
-import { storiesOf } from '@storybook/react'
 import { Provider } from '@dhis2/app-runtime'
-
+import { storiesOf } from '@storybook/react'
+import React from 'react'
 import { FileMenu } from '../components/FileMenu/FileMenu.js'
 
 const configMock = {
@@ -11,7 +10,7 @@ const configMock = {
 
 const d2Mock = {
     i18n: {
-        getTranslation: string => string,
+        getTranslation: (string) => string,
     },
 }
 

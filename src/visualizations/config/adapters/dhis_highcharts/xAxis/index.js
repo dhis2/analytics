@@ -1,20 +1,4 @@
 import objectClean from 'd2-utilizr/lib/objectClean'
-
-import getAxisTitle from '../getAxisTitle'
-import getCategories from '../getCategories'
-import getYearOnYear from './yearOnYear'
-import getTwoCategory from './twoCategory'
-import getRadar from './radar'
-import getScatter from './scatter'
-import {
-    VIS_TYPE_GAUGE,
-    VIS_TYPE_YEAR_OVER_YEAR_LINE,
-    VIS_TYPE_YEAR_OVER_YEAR_COLUMN,
-    VIS_TYPE_PIE,
-    VIS_TYPE_RADAR,
-    VIS_TYPE_SCATTER,
-    isTwoCategoryChartType,
-} from '../../../../../modules/visTypes'
 import {
     FONT_STYLE_HORIZONTAL_AXIS_TITLE,
     FONT_STYLE_AXIS_LABELS,
@@ -23,9 +7,24 @@ import {
     FONT_STYLE_OPTION_BOLD,
     FONT_STYLE_OPTION_ITALIC,
     mergeFontStyleWithDefault,
-} from '../../../../../modules/fontStyle'
-import getFormatter from '../getFormatter'
-import { getAxis } from '../../../../util/axes'
+} from '../../../../../modules/fontStyle.js'
+import {
+    VIS_TYPE_GAUGE,
+    VIS_TYPE_YEAR_OVER_YEAR_LINE,
+    VIS_TYPE_YEAR_OVER_YEAR_COLUMN,
+    VIS_TYPE_PIE,
+    VIS_TYPE_RADAR,
+    VIS_TYPE_SCATTER,
+    isTwoCategoryChartType,
+} from '../../../../../modules/visTypes.js'
+import { getAxis } from '../../../../util/axes.js'
+import getAxisTitle from '../getAxisTitle.js'
+import getCategories from '../getCategories.js'
+import getFormatter from '../getFormatter.js'
+import getRadar from './radar.js'
+import getScatter from './scatter.js'
+import getTwoCategory from './twoCategory.js'
+import getYearOnYear from './yearOnYear.js'
 
 const AXIS_TYPE = 'DOMAIN'
 const AXIS_INDEX = 0
@@ -34,7 +33,7 @@ function noAxis() {
     return null
 }
 
-export const getLabels = axis => {
+export const getLabels = (axis) => {
     const fontStyle = mergeFontStyleWithDefault(
         axis.label?.fontStyle,
         FONT_STYLE_AXIS_LABELS

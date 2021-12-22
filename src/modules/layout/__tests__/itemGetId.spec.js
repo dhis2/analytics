@@ -1,6 +1,6 @@
-import { itemGetId } from '../itemGetId'
-import { TEST_ITEM_1, TEST_ITEM_ID_1 } from '../testResources'
-import { ITEM_PROP_ID } from '../item'
+import { ITEM_PROP_ID } from '../item.js'
+import { itemGetId } from '../itemGetId.js'
+import { TEST_ITEM_1, TEST_ITEM_ID_1 } from '../testResources.js'
 
 describe('itemGetId', () => {
     it('should return the item id', () => {

@@ -1,6 +1,6 @@
-import React from 'react'
 import { shallow } from 'enzyme'
-import PeriodDimension from '../PeriodDimension'
+import React from 'react'
+import PeriodDimension from '../PeriodDimension.js'
 
 describe('The Period Dimension component', () => {
     let props

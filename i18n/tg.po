@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-03-09T11:13:51.855Z\n"
+"POT-Creation-Date: 2021-11-12T14:52:40.534Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: Viktor Varland <viktor@dhis2.org>, 2021\n"
 "Language-Team: Tajik (https://www.transifex.com/hisp-uio/teams/100509/tg/)\n"
@@ -15,6 +15,56 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: tg\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "view only"
+msgstr ""
+
+msgid "view and edit"
+msgstr ""
+
+msgid "all users ({{accessLevel}})"
+msgstr ""
+
+msgid "{{userOrGroup}} ({{accessLevel}})"
+msgstr ""
+
+msgid "Shared with {{commaSeparatedListOfUsersAndGroups}}"
+msgstr ""
+
+msgid "Not shared with any users or groups"
+msgstr ""
+
+msgid "About this visualization"
+msgstr ""
+
+msgid "No description"
+msgstr ""
+
+msgid "Last updated {{time}}"
+msgstr ""
+
+msgid "Created {{time}} by {{author}}"
+msgstr ""
+
+msgid "Viewed {{count}} times"
+msgid_plural "Viewed {{count}} times"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "Notifications"
+msgstr ""
+
+msgid "You're subscribed and getting updates about new interpretations."
+msgstr ""
+
+msgid "Unsubscribe"
+msgstr ""
+
+msgid "Subscribe to get updates about new interpretations."
+msgstr ""
+
+msgid "Subscribe"
+msgstr ""
 
 msgid "Data Type"
 msgstr ""
@@ -115,7 +165,21 @@ msgstr ""
 msgid "Dimension recommended with selected data"
 msgstr ""
 
-msgid "Nothing found in {{dimensionTitle}}"
+msgid "All items"
+msgstr ""
+
+msgid "Automatically include all items"
+msgstr ""
+
+msgid ""
+"Select all {{- dimensionTitle}} items. With this option, new items added in "
+"the future will be automatically included."
+msgstr ""
+
+msgid "Manually select items..."
+msgstr ""
+
+msgid "Nothing found in {{- dimensionTitle}}"
 msgstr ""
 
 msgid "Search"
@@ -127,7 +191,8 @@ msgstr ""
 msgid "Delete {{fileType}}"
 msgstr ""
 
-msgid "This {{fileType}} will be deleted. Continue?"
+msgid ""
+"This {{fileType}} and related interpretations will be deleted. Continue?"
 msgstr ""
 
 msgid "Cancel"
@@ -187,14 +252,183 @@ msgstr "Ивази ном"
 msgid "Save {{fileType}} as"
 msgstr ""
 
-msgid "Selected Data"
+msgid "Created by"
 msgstr ""
 
-msgid "Deselect All"
+msgid "Anyone"
 msgstr ""
 
-msgid "Select all"
-msgstr "Интихоб кардани ҳама"
+msgid "Only you"
+msgstr ""
+
+msgid "Others"
+msgstr "Дигарҳо"
+
+msgid "Filter by name"
+msgstr "Филтркунӣ аз рӯи ном"
+
+msgid "Created"
+msgstr ""
+
+msgid "Last updated"
+msgstr "Навсозии охирин"
+
+msgid "Type"
+msgstr "Навъ"
+
+msgid "Clear filters"
+msgstr ""
+
+msgid "{{firstItemIndex}}-{{lastItemIndex}} of {{totalNumberOfItems}}"
+msgstr ""
+
+msgid "All charts"
+msgstr ""
+
+msgid "Open"
+msgstr ""
+
+msgid "Couldn't load items"
+msgstr ""
+
+msgid ""
+"There was a problem loading items. Try again or contact your system "
+"administrator."
+msgstr ""
+
+msgid "No items found. Create a new to get started."
+msgstr ""
+
+msgid ""
+"No items found. Try adjusting your search or filter options to find what "
+"you're looking for."
+msgstr ""
+
+msgid "Create new"
+msgstr ""
+
+msgid "Open a visualization"
+msgstr ""
+
+msgid "Loading visualizations"
+msgstr ""
+
+msgid "Couldn't load visualizations"
+msgstr ""
+
+msgid ""
+"There was a problem loading visualizations. Try again or contact your system"
+" administrator."
+msgstr ""
+
+msgid "No visualizations found. Click New visualization to get started."
+msgstr ""
+
+msgid ""
+"No visualizations found. Try adjusting your search or filter options to find"
+" what you're looking for."
+msgstr ""
+
+msgid "New visualization"
+msgstr ""
+
+msgid "Open a map"
+msgstr ""
+
+msgid "Loading maps"
+msgstr ""
+
+msgid "Couldn't load maps"
+msgstr ""
+
+msgid ""
+"There was a problem loading maps. Try again or contact your system "
+"administrator."
+msgstr ""
+
+msgid "No maps found. Click New map to get started."
+msgstr ""
+
+msgid ""
+"No maps found. Try adjusting your search or filter options to find what "
+"you're looking for."
+msgstr ""
+
+msgid "New map"
+msgstr ""
+
+msgid "Open an event report"
+msgstr ""
+
+msgid "Loading event reports"
+msgstr ""
+
+msgid "Couldn't load event reports"
+msgstr ""
+
+msgid ""
+"There was a problem loading event reports. Try again or contact your system "
+"administrator."
+msgstr ""
+
+msgid "No event reports found. Click New event report to get started."
+msgstr ""
+
+msgid ""
+"No event reports found. Try adjusting your search or filter options to find "
+"what you're looking for."
+msgstr ""
+
+msgid "New event report"
+msgstr ""
+
+msgid "Options"
+msgstr "Имконот"
+
+msgid "Hide"
+msgstr "Пинҳон кардан"
+
+msgid "Update"
+msgstr "Навсозӣ"
+
+msgid "{{count}} org units"
+msgid_plural "{{count}} org units"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "{{count}} levels"
+msgid_plural "{{count}} levels"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "{{count}} groups"
+msgid_plural "{{count}} groups"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "Selected: {{commaSeparatedListOfOrganisationUnits}}"
+msgstr ""
+
+msgid "Nothing selected"
+msgstr ""
+
+msgid "User organisation unit"
+msgstr ""
+
+msgid "User sub-units"
+msgstr ""
+
+msgid "User sub-x2-units"
+msgstr ""
+
+msgid "Select a level"
+msgstr ""
+
+msgid "Select a group"
+msgstr ""
+
+msgid "Deselect all"
+msgstr ""
 
 msgid "Period type"
 msgstr "Навъи давара"
@@ -268,9 +502,6 @@ msgstr "Ҳаррӯза"
 msgid "Weekly"
 msgstr "Ҳафтаина"
 
-msgid "Bi-weekly"
-msgstr ""
-
 msgid "Weekly (Start Wednesday)"
 msgstr ""
 
@@ -281,6 +512,9 @@ msgid "Weekly (Start Saturday)"
 msgstr ""
 
 msgid "Weekly (Start Sunday)"
+msgstr ""
+
+msgid "Bi-weekly"
 msgstr ""
 
 msgid "Monthly"
@@ -435,6 +669,9 @@ msgstr "Соли гузашта"
 
 msgid "Last 5 years"
 msgstr "5 соли охир"
+
+msgid "Last 10 years"
+msgstr ""
 
 msgid "Days"
 msgstr ""
@@ -776,6 +1013,11 @@ msgstr "Замина"
 
 msgid "Axis {{axisId}}"
 msgstr ""
+
+msgid "{{count}} items"
+msgid_plural "{{count}} items"
+msgstr[0] ""
+msgstr[1] ""
 
 msgid "Reset zoom"
 msgstr ""

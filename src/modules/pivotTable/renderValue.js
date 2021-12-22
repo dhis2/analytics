@@ -2,9 +2,9 @@ import {
     NUMBER_TYPE_ROW_PERCENTAGE,
     NUMBER_TYPE_COLUMN_PERCENTAGE,
     VALUE_TYPE_NUMBER,
-} from './pivotTableConstants'
+} from './pivotTableConstants.js'
 
-const trimTrailingZeros = stringValue => stringValue.replace(/\.?0+$/, '')
+const trimTrailingZeros = (stringValue) => stringValue.replace(/\.?0+$/, '')
 
 const defaultDecimalSeparator = '.'
 
@@ -31,7 +31,7 @@ const separateDigitGroups = (stringValue, decimalSeparator) => {
     return groups
 }
 
-const getSeparator = visualization => {
+const getSeparator = (visualization) => {
     switch (visualization.digitGroupSeparator) {
         case 'SPACE':
             return ' '
@@ -59,7 +59,7 @@ const toFixedPrecisionString = (value, skipRounding) => {
 
 export const renderValue = (value, valueType, visualization) => {
     if (valueType !== VALUE_TYPE_NUMBER || value === undefined) {
-        return value
+        return String(value).replace(/[^\S\n]+/, ' ')
     }
 
     if (

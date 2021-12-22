@@ -1,8 +1,10 @@
-import i18n from '@dhis2/d2-i18n'
-import DataIcon from '../assets/DataIcon'
-import PeriodIcon from '../assets/PeriodIcon'
-import OrgUnitIcon from '../assets/OrgUnitIcon'
-import AssignedCategoriesIcon from '../assets/AssignedCategoriesIcon'
+import {
+    IconClock16,
+    IconDimensionData16,
+    IconDimensionOrgUnit16,
+} from '@dhis2/ui'
+import AssignedCategoriesIcon from '../assets/AssignedCategoriesIcon.js'
+import i18n from '../locales/index.js'
 
 export const DIMENSION_ID_DATA = 'dx'
 export const DIMENSION_ID_PERIOD = 'pe'
@@ -15,19 +17,19 @@ export const getFixedDimensions = () => ({
         id: DIMENSION_ID_DATA,
         name: i18n.t('Data'),
         iconName: 'DataIcon',
-        icon: DataIcon,
+        icon: IconDimensionData16,
     },
     [DIMENSION_ID_PERIOD]: {
         id: DIMENSION_ID_PERIOD,
         name: i18n.t('Period'),
         iconName: 'PeriodIcon',
-        icon: PeriodIcon,
+        icon: IconClock16,
     },
     [DIMENSION_ID_ORGUNIT]: {
         id: DIMENSION_ID_ORGUNIT,
         name: i18n.t('Organisation Unit'),
         iconName: 'OrgUnitIcon',
-        icon: OrgUnitIcon,
+        icon: IconDimensionOrgUnit16,
     },
 })
 
@@ -46,14 +48,14 @@ export const getPredefinedDimensions = () => ({
     ...getDynamicDimensions(),
 })
 
-export const filterOutPredefinedDimensions = dimensionIds =>
+export const filterOutPredefinedDimensions = (dimensionIds) =>
     dimensionIds.filter(
-        dimensionId =>
+        (dimensionId) =>
             !Object.keys(getPredefinedDimensions()).includes(dimensionId)
     )
 
 export const getPredefinedDimensionProp = (dimensionId, propName) =>
     (getPredefinedDimensions()[dimensionId] || {})[propName]
 
-export const getDimensionById = dimensionId =>
+export const getDimensionById = (dimensionId) =>
     getPredefinedDimensions()[dimensionId]

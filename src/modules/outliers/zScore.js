@@ -1,12 +1,12 @@
-import i18n from '@dhis2/d2-i18n'
 import { std, mean } from 'mathjs'
-import { PROP_THRESHOLD_FACTOR } from './index'
+import i18n from '../../locales/index.js'
+import { PROP_THRESHOLD_FACTOR } from './index.js'
 
 export const STANDARD_Z_SCORE = 'STANDARD_Z_SCORE'
 
-export const getStdDev = data => std(data, 'unbiased')
+export const getStdDev = (data) => std(data, 'unbiased')
 
-export const getMean = data => mean(data)
+export const getMean = (data) => mean(data)
 
 export const getZScoreHelper = (normalizationHelper, config, { xyStats }) => {
     const sortedNormalized = normalizationHelper.normalized
@@ -18,13 +18,11 @@ export const getZScoreHelper = (normalizationHelper, config, { xyStats }) => {
     const lowZScoreThreshold = mean - zScoreThreshold
     const highZScoreThreshold = mean + zScoreThreshold
 
-    const [
-        lowThresholdLine,
-        highThresholdLine,
-    ] = normalizationHelper.getThresholdLines(
-        lowZScoreThreshold,
-        highZScoreThreshold
-    )
+    const [lowThresholdLine, highThresholdLine] =
+        normalizationHelper.getThresholdLines(
+            lowZScoreThreshold,
+            highZScoreThreshold
+        )
 
     const outlierPoints = []
     const inlierPoints = []

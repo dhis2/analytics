@@ -6,7 +6,7 @@ export {
     getAxisMinNumberOfDimsByVisType as getAxisMinNumberOfDimensions,
     getAxisPerLockedDimByVisType as getAxisPerLockedDimension,
     getAllLockedDimIdsByVisType as getAllLockedDimensionIds,
-} from './rulesHelper'
+} from './rulesHelper.js'
 
 export {
     hasAxisTooManyItemsByVisType as hasAxisTooManyItems,
@@ -14,4 +14,4 @@ export {
     isAxisFullByVisType as isAxisFull,
     canDimensionBeAddedToAxisByVisType as canDimensionBeAddedToAxis,
     getTransferableDimensionPerAxisByVisType as getTransferableDimension,
-} from './rulesUtils'
+} from './rulesUtils.js'

@@ -1,23 +1,23 @@
-import i18n from '@dhis2/d2-i18n'
-// generate periods config object: { boolean offset, boolean filterFuturePeriods, boolean reversePeriods }
-
-export const DAILY = 'DAILY'
-export const WEEKLY = 'WEEKLY'
-export const BIWEEKLY = 'BIWEEKLY'
-export const WEEKLYWED = 'WEEKLYWED'
-export const WEEKLYTHU = 'WEEKLYTHU'
-export const WEEKLYSAT = 'WEEKLYSAT'
-export const WEEKLYSUN = 'WEEKLYSUN'
-export const MONTHLY = 'MONTHLY'
-export const BIMONTHLY = 'BIMONTHLY'
-export const QUARTERLY = 'QUARTERLY'
-export const SIXMONTHLY = 'SIXMONTHLY'
-export const SIXMONTHLYAPR = 'SIXMONTHLYAPR'
-export const YEARLY = 'YEARLY'
-export const FYNOV = 'FYNOV'
-export const FYOCT = 'FYOCT'
-export const FYJUL = 'FYJUL'
-export const FYAPR = 'FYAPR'
+import i18n from '../../../locales/index.js'
+import {
+    DAILY,
+    WEEKLY,
+    WEEKLYWED,
+    WEEKLYTHU,
+    WEEKLYSAT,
+    WEEKLYSUN,
+    BIWEEKLY,
+    MONTHLY,
+    BIMONTHLY,
+    QUARTERLY,
+    SIXMONTHLY,
+    SIXMONTHLYAPR,
+    YEARLY,
+    FYNOV,
+    FYOCT,
+    FYJUL,
+    FYAPR,
+} from './index.js'
 
 const PERIOD_TYPE_REGEX = {
     [DAILY]: /^([0-9]{4})([0-9]{2})([0-9]{2})$/, // YYYYMMDD
@@ -40,7 +40,7 @@ const PERIOD_TYPE_REGEX = {
     [FYAPR]: /^([0-9]{4})April$/, // YYYY"April"
 }
 
-const getMonthName = key => {
+const getMonthName = (key) => {
     const monthNames = [
         i18n.t('January'),
         i18n.t('February'),
@@ -60,7 +60,7 @@ const getMonthName = key => {
 }
 
 const getDailyPeriodType = (formatYyyyMmDd, fnFilter) => {
-    return config => {
+    return (config) => {
         let periods = []
         const offset = parseInt(config.offset, 10)
         const isFilter = config.filterFuturePeriods
@@ -104,7 +104,7 @@ const getWeeklyPeriodType = (formatYyyyMmDd, weekObj, fnFilter) => {
         return startDate
     }
 
-    return config => {
+    return (config) => {
         let periods = []
         const offset = parseInt(config.offset, 10)
         const isFilter = config.filterFuturePeriods
@@ -145,7 +145,7 @@ const getWeeklyPeriodType = (formatYyyyMmDd, weekObj, fnFilter) => {
 }
 
 const getBiWeeklyPeriodType = (formatYyyyMmDd, fnFilter) => {
-    return config => {
+    return (config) => {
         let periods = []
         const offset = parseInt(config.offset, 10)
         const isFilter = config.filterFuturePeriods
@@ -195,7 +195,7 @@ const getBiWeeklyPeriodType = (formatYyyyMmDd, fnFilter) => {
 }
 
 const getMonthlyPeriodType = (formatYyyyMmDd, fnFilter) => {
-    const formatIso = date => {
+    const formatIso = (date) => {
         const y = date.getFullYear()
         let m = String(date.getMonth() + 1)
 
@@ -204,7 +204,7 @@ const getMonthlyPeriodType = (formatYyyyMmDd, fnFilter) => {
         return y + m
     }
 
-    return config => {
+    return (config) => {
         let periods = []
 
         const offset = parseInt(config.offset, 10)
@@ -237,7 +237,7 @@ const getMonthlyPeriodType = (formatYyyyMmDd, fnFilter) => {
 }
 
 const getBiMonthlyPeriodType = (formatYyyyMmDd, fnFilter) => {
-    return config => {
+    return (config) => {
         let periods = []
         const offset = parseInt(config.offset, 10)
         const isFilter = config.filterFuturePeriods
@@ -274,7 +274,7 @@ const getBiMonthlyPeriodType = (formatYyyyMmDd, fnFilter) => {
 }
 
 const getQuarterlyPeriodType = (formatYyyyMmDd, fnFilter) => {
-    return config => {
+    return (config) => {
         let periods = []
         const offset = parseInt(config.offset, 10)
         const isFilter = config.filterFuturePeriods
@@ -309,8 +309,8 @@ const getQuarterlyPeriodType = (formatYyyyMmDd, fnFilter) => {
     }
 }
 
-const getSixMonthlyPeriodType = fnFilter => {
-    return config => {
+const getSixMonthlyPeriodType = (fnFilter) => {
+    return (config) => {
         let periods = []
         const offset = parseInt(config.offset, 10)
         const isFilter = config.filterFuturePeriods
@@ -340,8 +340,8 @@ const getSixMonthlyPeriodType = fnFilter => {
     }
 }
 
-const getSixMonthlyAprilPeriodType = fnFilter => {
-    return config => {
+const getSixMonthlyAprilPeriodType = (fnFilter) => {
+    return (config) => {
         let periods = []
         const offset = parseInt(config.offset, 10)
         const isFilter = config.filterFuturePeriods
@@ -374,7 +374,7 @@ const getSixMonthlyAprilPeriodType = fnFilter => {
 }
 
 const getYearlyPeriodType = (formatYyyyMmDd, fnFilter) => {
-    return config => {
+    return (config) => {
         let periods = []
         const offset = parseInt(config.offset, 10)
         const isFilter = config.filterFuturePeriods
@@ -404,7 +404,7 @@ const getYearlyPeriodType = (formatYyyyMmDd, fnFilter) => {
 }
 
 const getFinancialOctoberPeriodType = (formatYyyyMmDd, fnFilter) => {
-    return config => {
+    return (config) => {
         let periods = []
         const offset = parseInt(config.offset, 10)
         const isFilter = config.filterFuturePeriods
@@ -437,7 +437,7 @@ const getFinancialOctoberPeriodType = (formatYyyyMmDd, fnFilter) => {
 }
 
 const getFinancialNovemberPeriodType = (formatYyyyMmDd, fnFilter) => {
-    return config => {
+    return (config) => {
         let periods = []
         const offset = parseInt(config.offset, 10)
         const isFilter = config.filterFuturePeriods
@@ -470,7 +470,7 @@ const getFinancialNovemberPeriodType = (formatYyyyMmDd, fnFilter) => {
 }
 
 const getFinancialJulyPeriodType = (formatYyyyMmDd, fnFilter) => {
-    return config => {
+    return (config) => {
         let periods = []
         const offset = parseInt(config.offset, 10)
         const isFilter = config.filterFuturePeriods
@@ -503,7 +503,7 @@ const getFinancialJulyPeriodType = (formatYyyyMmDd, fnFilter) => {
 }
 
 const getFinancialAprilPeriodType = (formatYyyyMmDd, fnFilter) => {
-    return config => {
+    return (config) => {
         let periods = []
         const offset = parseInt(config.offset, 10)
         const isFilter = config.filterFuturePeriods
@@ -535,7 +535,7 @@ const getFinancialAprilPeriodType = (formatYyyyMmDd, fnFilter) => {
     }
 }
 
-const formatYyyyMmDd = date => {
+const formatYyyyMmDd = (date) => {
     const y = date.getFullYear()
     let m = String(date.getMonth() + 1)
     let d = String(date.getDate())
@@ -546,7 +546,7 @@ const formatYyyyMmDd = date => {
     return `${y}-${m}-${d}`
 }
 
-const filterFuturePeriods = periods => {
+const filterFuturePeriods = (periods) => {
     const array = []
     const now = new Date(Date.now())
 
@@ -573,11 +573,6 @@ const getOptions = () => [
             filterFuturePeriods
         ),
         name: i18n.t('Weekly'),
-    },
-    {
-        id: BIWEEKLY,
-        getPeriods: getBiWeeklyPeriodType(formatYyyyMmDd, filterFuturePeriods),
-        name: i18n.t('Bi-weekly'),
     },
     {
         id: WEEKLYWED,
@@ -614,6 +609,11 @@ const getOptions = () => [
             filterFuturePeriods
         ),
         name: i18n.t('Weekly (Start Sunday)'),
+    },
+    {
+        id: BIWEEKLY,
+        getPeriods: getBiWeeklyPeriodType(formatYyyyMmDd, filterFuturePeriods),
+        name: i18n.t('Bi-weekly'),
     },
     {
         id: MONTHLY,
@@ -679,12 +679,12 @@ const getOptions = () => [
     },
 ]
 
-export const getFixedPeriodsOptionsById = id =>
-    getOptions().find(option => option.id === id)
+export const getFixedPeriodsOptionsById = (id) =>
+    getOptions().find((option) => option.id === id)
 
 export const getFixedPeriodsOptions = () => getOptions()
 
-export const getYearOffsetFromNow = yearStr =>
+export const getYearOffsetFromNow = (yearStr) =>
     parseInt(yearStr) - new Date(Date.now()).getFullYear()
 
 export const parsePeriodCode = (code, allowedTypes) => {
@@ -701,7 +701,7 @@ export const parsePeriodCode = (code, allowedTypes) => {
 
     if (
         !match ||
-        (Array.isArray(allowedTypes) && !allowedTypes.some(t => t === type))
+        (Array.isArray(allowedTypes) && !allowedTypes.some((t) => t === type))
     ) {
         return undefined
     }

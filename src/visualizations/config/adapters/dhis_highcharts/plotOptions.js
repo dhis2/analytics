@@ -1,10 +1,22 @@
-import i18n from '@dhis2/d2-i18n'
-
-import { VIS_TYPE_SCATTER } from '../../../../modules/visTypes'
+import i18n from '../../../../locales/index.js'
+import {
+    VIS_TYPE_COLUMN,
+    VIS_TYPE_SCATTER,
+    VIS_TYPE_STACKED_COLUMN,
+    VIS_TYPE_BAR,
+    VIS_TYPE_STACKED_BAR,
+} from '../../../../modules/visTypes.js'
 
 const MAX_LABELS = 10
 
-export default ({ visType, xAxisName, yAxisName, showLabels, tooltipData }) => {
+export default ({
+    visType,
+    xAxisName,
+    yAxisName,
+    showLabels,
+    tooltipData,
+    onClick,
+}) => {
     const series = {
         dataLabels: {
             enabled: showLabels,
@@ -13,8 +25,8 @@ export default ({ visType, xAxisName, yAxisName, showLabels, tooltipData }) => {
     }
     const getLabels = (x, y) =>
         tooltipData
-            .filter(item => item.x === x && item.y === y)
-            .map(item => item.name)
+            .filter((item) => item.x === x && item.y === y)
+            .map((item) => item.name)
     const getTooltip = (x, y) => {
         let labels = getLabels(x, y)
         const length = labels.length
@@ -27,7 +39,7 @@ export default ({ visType, xAxisName, yAxisName, showLabels, tooltipData }) => {
             )
         }
         return `${labels
-            .map(label => `<b>${label}</b><br>`)
+            .map((label) => `<b>${label}</b><br>`)
             .join('')}${yAxisName}: ${y}<br>${xAxisName}: ${x}`
     }
     switch (visType) {
@@ -45,6 +57,27 @@ export default ({ visType, xAxisName, yAxisName, showLabels, tooltipData }) => {
                     boostThreshold: 1,
                 },
             }
+        case VIS_TYPE_COLUMN:
+        case VIS_TYPE_STACKED_COLUMN:
+        case VIS_TYPE_BAR:
+        case VIS_TYPE_STACKED_BAR:
+            return onClick
+                ? {
+                      series: {
+                          cursor: 'pointer',
+                          point: {
+                              events: {
+                                  click: function () {
+                                      onClick(this.graphic?.element, {
+                                          category: this.category,
+                                          series: this.series.name,
+                                      })
+                                  },
+                              },
+                          },
+                      },
+                  }
+                : {}
         default:
             return {}
     }

@@ -1,18 +1,17 @@
 import isNumeric from 'd2-utilizr/lib/isNumeric'
-import i18n from '@dhis2/d2-i18n'
-
-import { getLegendByValueFromLegendSet } from '../../../../modules/legends'
+import i18n from '../../../../locales/index.js'
+import { getLegendByValueFromLegendSet } from '../../../../modules/legends.js'
 
 const OUT_OF_BOUNDS_COLOR = '#CCCCCC'
 
 const getLegend = (value, legendSet) =>
     value && legendSet ? getLegendByValueFromLegendSet(legendSet, value) : {}
 
-export const applyLegendSet = (seriesObj, legendSet) =>
+export const applyLegendSet = (seriesObj = {}, legendSet) =>
     !seriesObj.type
         ? {
               ...seriesObj,
-              data: seriesObj.data.map(value =>
+              data: seriesObj.data.map((value) =>
                   isNumeric(value) // Single category pass data as [value1, value2]
                       ? {
                             y: value,

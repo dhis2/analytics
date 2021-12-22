@@ -1,5 +1,5 @@
-import getGauge from './gauge'
-import { VIS_TYPE_GAUGE } from '../../../../../modules/visTypes'
+import { VIS_TYPE_GAUGE } from '../../../../../modules/visTypes.js'
+import getGauge from './gauge.js'
 
 export default function (type) {
     switch (type) {

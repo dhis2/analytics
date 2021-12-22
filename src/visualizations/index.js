@@ -1,13 +1,12 @@
 import isArray from 'd2-utilizr/lib/isArray'
+import Config from './config/index.js'
+import Store from './store/index.js'
 
-import Store from './store'
-import Config from './config'
-
-const defaultError = error => {
+const defaultError = (error) => {
     throw new Error(error)
 }
 
-const defaultWarning = warning => {
+const defaultWarning = (warning) => {
     console.log(warning)
 }
 

@@ -1,11 +1,7 @@
 import arrayClean from 'd2-utilizr/lib/arrayClean'
 import isNumber from 'd2-utilizr/lib/isNumber'
 import objectClean from 'd2-utilizr/lib/objectClean'
-import i18n from '@dhis2/d2-i18n'
-import {
-    getColorByValueFromLegendSet,
-    LEGEND_DISPLAY_STYLE_FILL,
-} from '../../../../../modules/legends'
+import i18n from '../../../../../locales/index.js'
 import {
     FONT_STYLE_OPTION_TEXT_COLOR,
     FONT_STYLE_OPTION_FONT_SIZE,
@@ -18,10 +14,17 @@ import {
     FONT_STYLE_OPTION_TEXT_ALIGN,
     FONT_STYLE_AXIS_LABELS,
     mergeFontStyleWithDefault,
-} from '../../../../../modules/fontStyle'
-import { isVerticalType, VIS_TYPE_GAUGE } from '../../../../../modules/visTypes'
-import { getTextAlignOption } from '../getTextAlignOption'
-import { getAxis } from '../../../../util/axes'
+} from '../../../../../modules/fontStyle.js'
+import {
+    getColorByValueFromLegendSet,
+    LEGEND_DISPLAY_STYLE_FILL,
+} from '../../../../../modules/legends.js'
+import {
+    isVerticalType,
+    VIS_TYPE_GAUGE,
+} from '../../../../../modules/visTypes.js'
+import { getAxis } from '../../../../util/axes.js'
+import { getTextAlignOption } from '../getTextAlignOption.js'
 
 const DEFAULT_MAX_VALUE = 100
 const DEFAULT_TARGET_LINE_LABEL = i18n.t('Target')
@@ -29,7 +32,7 @@ const DEFAULT_BASE_LINE_LABEL = i18n.t('Base')
 const AXIS_TYPE = 'RANGE'
 const AXIS_INDEX = 0
 
-const getLabelOffsetFromTextAlign = textAlign => {
+const getLabelOffsetFromTextAlign = (textAlign) => {
     switch (textAlign) {
         case TEXT_ALIGN_LEFT:
             return -10
@@ -85,7 +88,7 @@ function getPlotLine(regressionLine = {}, defaultLabel) {
     }
 }
 
-const getLabels = axis => {
+const getLabels = (axis) => {
     const fontStyle = mergeFontStyleWithDefault(
         axis.label?.fontStyle,
         FONT_STYLE_AXIS_LABELS
@@ -114,7 +117,7 @@ export default function (layout, series, legendSet) {
         getPlotLine(axis.targetLine, DEFAULT_TARGET_LINE_LABEL),
     ])
     const fillColor =
-        layout.legendDisplayStyle === LEGEND_DISPLAY_STYLE_FILL && legendSet
+        layout.legend?.style === LEGEND_DISPLAY_STYLE_FILL && legendSet
             ? getColorByValueFromLegendSet(legendSet, series[0].data)
             : undefined
     return objectClean({

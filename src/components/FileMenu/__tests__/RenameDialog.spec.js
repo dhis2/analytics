@@ -1,9 +1,7 @@
-import React from 'react'
-import { shallow } from 'enzyme'
-
 import { Button, Modal, ModalTitle } from '@dhis2/ui'
-
-import { RenameDialog } from '../RenameDialog'
+import { shallow } from 'enzyme'
+import React from 'react'
+import { RenameDialog } from '../RenameDialog.js'
 
 describe('The FileMenu - RenameDialog component', () => {
     let shallowRenameDialog
@@ -11,7 +9,7 @@ describe('The FileMenu - RenameDialog component', () => {
 
     const onClose = jest.fn()
 
-    const getRenameDialogComponent = props => {
+    const getRenameDialogComponent = (props) => {
         if (!shallowRenameDialog) {
             shallowRenameDialog = shallow(<RenameDialog {...props} />)
         }
@@ -42,7 +40,7 @@ describe('The FileMenu - RenameDialog component', () => {
     it('renders a InputField for name', () => {
         expect(
             getRenameDialogComponent(props).findWhere(
-                n => n.prop('label') === 'Name'
+                (n) => n.prop('label') === 'Name'
             )
         ).toHaveLength(1)
     })
@@ -51,7 +49,7 @@ describe('The FileMenu - RenameDialog component', () => {
         props.object.name = 'Name test'
 
         const nameInputField = getRenameDialogComponent(props).findWhere(
-            n => n.prop('label') === 'Name'
+            (n) => n.prop('label') === 'Name'
         )
 
         expect(nameInputField.prop('value')).toEqual(props.object.name)
@@ -60,7 +58,7 @@ describe('The FileMenu - RenameDialog component', () => {
     it('renders a TextAreaField for description', () => {
         expect(
             getRenameDialogComponent(props).findWhere(
-                n => n.prop('label') === 'Description'
+                (n) => n.prop('label') === 'Description'
             )
         ).toHaveLength(1)
     })
@@ -69,7 +67,7 @@ describe('The FileMenu - RenameDialog component', () => {
         props.object.description = 'Description test'
 
         const descriptionInputField = getRenameDialogComponent(props).findWhere(
-            n => n.prop('label') === 'Description'
+            (n) => n.prop('label') === 'Description'
         )
 
         expect(descriptionInputField.prop('value')).toEqual(

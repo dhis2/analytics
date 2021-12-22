@@ -1,89 +1,98 @@
-import i18n from '@dhis2/d2-i18n'
 import arrayClean from 'd2-utilizr/lib/arrayClean'
 import objectClean from 'd2-utilizr/lib/objectClean'
-
-import getAxisTitle from '../getAxisTitle'
-import getGauge from './gauge'
-import {
-    isStacked,
-    VIS_TYPE_GAUGE,
-    isDualAxisType,
-    VIS_TYPE_SCATTER,
-} from '../../../../../modules/visTypes'
-import { hasCustomAxes } from '../../../../../modules/axis'
-import { getAxisIdsMap } from '../customAxes'
-import { getAxisStringFromId } from '../../../../util/axisId'
+import i18n from '../../../../../locales/index.js'
 import {
     FONT_STYLE_VERTICAL_AXIS_TITLE,
     mergeFontStyleWithDefault,
     TEXT_ALIGN_RIGHT,
-} from '../../../../../modules/fontStyle'
-import { axisHasRelativeItems } from '../../../../../modules/layout/axisHasRelativeItems'
-import getSteps from '../getSteps'
-import { getAxis } from '../../../../util/axes'
+} from '../../../../../modules/fontStyle.js'
+import {
+    isDualAxisType,
+    isStacked,
+    VIS_TYPE_GAUGE,
+    VIS_TYPE_SCATTER,
+} from '../../../../../modules/visTypes.js'
+import { getAxis } from '../../../../util/axes.js'
+import { getAxisStringFromId } from '../../../../util/axisId.js'
 import {
     getGridLineColor,
     getLabels,
     getMaxValue,
     getMinValue,
     getRegressionLine,
-} from '../axis'
+} from '../axis.js'
+import { getAxisIdsMap } from '../customAxes.js'
+import getAxisTitle from '../getAxisTitle.js'
+import getSteps from '../getSteps.js'
+import getGauge from './gauge.js'
 
-const AXIS_TYPE = 'RANGE'
-const AXIS_INDEX = 0
-
-function getMultipleAxes(theme, axes) {
-    const axisObjects = []
-    axes.forEach(axisId => {
-        const id = Number(axisId)
-        axisObjects.push({
-            title: {
-                text: i18n.t('Axis {{axisId}}', {
-                    axisId: id + 1,
-                }),
-                style: {
-                    color: theme[id].mainColor,
-                    'font-weight': 700,
-                },
-            },
-            id: getAxisStringFromId(id),
-            opposite: !!(id % 2),
-        })
-    })
-    return axisObjects
-}
+const AXIS_TYPE_RANGE = 'RANGE'
 
 function getDefault(layout, series, extraOptions) {
     const axes = []
-    const filteredSeries = layout.series?.filter(layoutSeriesItem =>
-        series.some(
-            seriesItem => seriesItem.id === layoutSeriesItem.dimensionItem
-        )
-    )
-    const dataValues = series?.map(item => item.data).flat()
-    if (
-        isDualAxisType(layout.type) &&
-        hasCustomAxes(filteredSeries) &&
-        !axisHasRelativeItems(layout.columns)
-    ) {
+    const dataValues = series?.map((item) => item.data).flat()
+    const layoutAxes = []
+    let useMultiAxisMode = false
+
+    if (isDualAxisType(layout.type)) {
         const axisIdsMap = getAxisIdsMap(layout.series, series)
-        axes.push(
-            ...getMultipleAxes(
-                extraOptions.multiAxisTheme,
-                [...new Set(Object.keys(axisIdsMap))].sort((a, b) => a - b)
-            )
+        const axisIds = [...new Set(Object.keys(axisIdsMap))].sort(
+            (a, b) => a - b
         )
+        axisIds.forEach((id) =>
+            layoutAxes.push(getAxis(layout.axes, AXIS_TYPE_RANGE, Number(id)))
+        )
+        useMultiAxisMode = axisIds.length > 1 || axisIds.some((id) => id > 0)
     } else {
-        const axis = getAxis(layout.axes, AXIS_TYPE, AXIS_INDEX)
-        let extremeObj
+        layoutAxes.push(getAxis(layout.axes, AXIS_TYPE_RANGE, 0))
+    }
 
-        if (
-            layout.type === VIS_TYPE_SCATTER &&
-            extraOptions.outlierHelper?.extremeLines
-        ) {
-            extremeObj = extraOptions.outlierHelper.extremeLines[1]
+    let extremeObj
+
+    if (
+        layout.type === VIS_TYPE_SCATTER &&
+        extraOptions.outlierHelper?.extremeLines
+    ) {
+        extremeObj = extraOptions.outlierHelper.extremeLines[1]
+    }
+
+    layoutAxes.forEach((axis) => {
+        const targetLine = { ...axis.targetLine }
+        const baseLine = { ...axis.baseLine }
+        if (useMultiAxisMode) {
+            const regressionLines = [targetLine, baseLine]
+            regressionLines.forEach((rl) => {
+                if (rl.title?.text) {
+                    rl.title = {
+                        ...rl.title,
+                        text: `${rl.title.text} - ${
+                            axis.title?.text ||
+                            i18n.t('Axis {{axisId}}', {
+                                axisId: axis.index + 1,
+                            })
+                        }`,
+                    }
+                }
+            })
         }
-
+        let titleText = axis.title?.text
+        if (axis.title?.textMode === 'AUTO') {
+            if (layout.type === VIS_TYPE_SCATTER || series.length === 1) {
+                if (series[0]?.name) {
+                    titleText = series[0].name
+                }
+            } else if (useMultiAxisMode) {
+                titleText = i18n.t('Axis {{axisId}}', {
+                    axisId: axis.index + 1,
+                })
+            } else if (series.length > 1) {
+                titleText = i18n.t('{{count}} items', {
+                    count: series.length,
+                    defaultValue: '{{count}} item',
+                    defaultValue_plural: '{{count}} items',
+                })
+            }
+        }
         axes.push(
             objectClean({
                 min: getMinValue(
@@ -98,7 +107,7 @@ function getDefault(layout, series, extraOptions) {
                 ),
                 tickAmount: getSteps(axis),
                 title: getAxisTitle(
-                    axis.title?.text,
+                    titleText,
                     mergeFontStyleWithDefault(
                         axis.title?.fontStyle,
                         FONT_STYLE_VERTICAL_AXIS_TITLE
@@ -107,8 +116,8 @@ function getDefault(layout, series, extraOptions) {
                     layout.type
                 ),
                 plotLines: arrayClean([
-                    getRegressionLine(axis.targetLine, layout.type),
-                    getRegressionLine(axis.baseLine, layout.type),
+                    getRegressionLine(targetLine, layout.type),
+                    getRegressionLine(baseLine, layout.type),
                     extremeObj &&
                         getRegressionLine({
                             value: extremeObj.value,
@@ -125,14 +134,15 @@ function getDefault(layout, series, extraOptions) {
                 ]),
                 gridLineColor: getGridLineColor(),
                 labels: getLabels(axis),
-                id: getAxisStringFromId(0),
+                id: getAxisStringFromId(axis.index),
 
                 // DHIS2-649: put first serie at the bottom of the stack
                 // in this way the legend sequence matches the serie sequence
                 reversedStacks: isStacked(layout.type) ? false : true,
+                opposite: !!(axis.index % 2),
             })
         )
-    }
+    })
 
     return axes
 }

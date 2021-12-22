@@ -1,4 +1,4 @@
-import { getQuartilePosition, getQuartileValue } from '../iqr'
+import { getQuartilePosition, getQuartileValue } from '../iqr.js'
 
 const a3 = [2, 4, 5]
 const a4 = [2, 4, 5, 7]

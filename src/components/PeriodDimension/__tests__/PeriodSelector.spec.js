@@ -1,6 +1,6 @@
-import React from 'react'
 import { shallow } from 'enzyme'
-import PeriodTransfer from '../PeriodTransfer'
+import React from 'react'
+import PeriodTransfer from '../PeriodTransfer.js'
 
 describe('The Period Selector component', () => {
     let props
@@ -18,6 +18,7 @@ describe('The Period Selector component', () => {
             initialSelectedPeriods: [],
             onSelect: jest.fn(),
             rightFooter: <></>,
+            dataTest: 'period-dimension',
         }
         shallowPeriodTransfer = undefined
     })

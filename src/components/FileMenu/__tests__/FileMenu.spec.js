@@ -1,16 +1,13 @@
-import React from 'react'
-import { shallow } from 'enzyme'
-
-import FavoritesDialog from '@dhis2/d2-ui-favorites-dialog'
 import TranslationDialog from '@dhis2/d2-ui-translation-dialog'
-import SharingDialog from '@dhis2/d2-ui-sharing-dialog'
-import { Popper } from '@dhis2/ui'
-
-import { FileMenu } from '../FileMenu'
-import { RenameDialog } from '../RenameDialog'
-import { DeleteDialog } from '../DeleteDialog'
-import { GetLinkDialog } from '../GetLinkDialog'
-import { SaveAsDialog } from '../SaveAsDialog'
+import { SharingDialog } from '@dhis2/ui'
+import { shallow } from 'enzyme'
+import React from 'react'
+import { OpenFileDialog } from '../../OpenFileDialog/OpenFileDialog.js'
+import { DeleteDialog } from '../DeleteDialog.js'
+import { FileMenu } from '../FileMenu.js'
+import { GetLinkDialog } from '../GetLinkDialog.js'
+import { RenameDialog } from '../RenameDialog.js'
+import { SaveAsDialog } from '../SaveAsDialog.js'
 
 describe('The FileMenu component ', () => {
     let shallowFileMenu
@@ -26,7 +23,7 @@ describe('The FileMenu component ', () => {
     const onShare = jest.fn()
     const onTranslate = jest.fn()
 
-    const getFileMenuComponent = props => {
+    const getFileMenuComponent = (props) => {
         if (!shallowFileMenu) {
             shallowFileMenu = shallow(<FileMenu {...props} />)
         }
@@ -36,7 +33,7 @@ describe('The FileMenu component ', () => {
     beforeEach(() => {
         shallowFileMenu = undefined
         props = {
-            d2: {},
+            d2: { currentUser: { id: 'u1', displayName: 'Test user' } },
             fileType: 'visualization',
             fileObject: undefined,
             onDelete,
@@ -55,23 +52,16 @@ describe('The FileMenu component ', () => {
         expect(getFileMenuComponent(props).find('button')).toHaveLength(1)
     })
 
-    it('renders a Popper when the button is clicked', () => {
-        const fileMenuComponent = getFileMenuComponent(props)
-        fileMenuComponent.find('button').simulate('click')
-
-        expect(fileMenuComponent.find(Popper)).toHaveLength(1)
-    })
-
     it('renders some enabled buttons regardless of the access settings', () => {
         const fileMenuComponent = getFileMenuComponent(props)
         fileMenuComponent.find('button').simulate('click')
 
         const buttonLabels = ['New', 'Open…']
 
-        buttonLabels.forEach(buttonLabel =>
+        buttonLabels.forEach((buttonLabel) =>
             expect(
                 fileMenuComponent
-                    .findWhere(n => n.prop('label') === buttonLabel)
+                    .findWhere((n) => n.prop('label') === buttonLabel)
                     .prop('disabled')
             ).toBe(undefined)
         )
@@ -90,10 +80,10 @@ describe('The FileMenu component ', () => {
             'Delete',
         ]
 
-        buttonLabels.forEach(buttonLabel =>
+        buttonLabels.forEach((buttonLabel) =>
             expect(
                 fileMenuComponent
-                    .findWhere(n => n.prop('label') === buttonLabel)
+                    .findWhere((n) => n.prop('label') === buttonLabel)
                     .prop('disabled')
             ).toBe(true)
         )
@@ -114,10 +104,10 @@ describe('The FileMenu component ', () => {
 
         const buttonLabels = ['Save', 'Rename…', 'Translate…']
 
-        buttonLabels.forEach(buttonLabel =>
+        buttonLabels.forEach((buttonLabel) =>
             expect(
                 fileMenuComponent
-                    .findWhere(n => n.prop('label') === buttonLabel)
+                    .findWhere((n) => n.prop('label') === buttonLabel)
                     .prop('disabled')
             ).toBe(false)
         )
@@ -138,7 +128,7 @@ describe('The FileMenu component ', () => {
 
         expect(
             fileMenuComponent
-                .findWhere(n => n.prop('label') === 'Delete')
+                .findWhere((n) => n.prop('label') === 'Delete')
                 .prop('disabled')
         ).toBe(false)
     })
@@ -158,20 +148,20 @@ describe('The FileMenu component ', () => {
 
         expect(
             fileMenuComponent
-                .findWhere(n => n.prop('label') === 'Share…')
+                .findWhere((n) => n.prop('label') === 'Share…')
                 .prop('disabled')
         ).toBe(false)
     })
 
-    it('renders the FavoritesDialog component when the Open button is clicked', () => {
+    it('renders the OpenFileDialog component when the Open button is clicked', () => {
         const fileMenuComponent = getFileMenuComponent(props)
         fileMenuComponent.find('button').simulate('click')
 
         fileMenuComponent
-            .findWhere(n => n.prop('label') === 'Open…')
+            .findWhere((n) => n.prop('label') === 'Open…')
             .simulate('click')
 
-        expect(fileMenuComponent.find(FavoritesDialog)).toHaveLength(1)
+        expect(fileMenuComponent.find(OpenFileDialog)).toHaveLength(1)
     })
 
     it('renders the RenameDialog when the Rename button is clicked', () => {
@@ -188,7 +178,7 @@ describe('The FileMenu component ', () => {
         fileMenuComponent.find('button').simulate('click')
 
         fileMenuComponent
-            .findWhere(n => n.prop('label') === 'Rename…')
+            .findWhere((n) => n.prop('label') === 'Rename…')
             .simulate('click')
 
         expect(fileMenuComponent.find(RenameDialog)).toHaveLength(1)
@@ -208,7 +198,7 @@ describe('The FileMenu component ', () => {
         fileMenuComponent.find('button').simulate('click')
 
         fileMenuComponent
-            .findWhere(n => n.prop('label') === 'Translate…')
+            .findWhere((n) => n.prop('label') === 'Translate…')
             .simulate('click')
 
         expect(fileMenuComponent.find(TranslationDialog)).toHaveLength(1)
@@ -228,7 +218,7 @@ describe('The FileMenu component ', () => {
         fileMenuComponent.find('button').simulate('click')
 
         fileMenuComponent
-            .findWhere(n => n.prop('label') === 'Share…')
+            .findWhere((n) => n.prop('label') === 'Share…')
             .simulate('click')
 
         expect(fileMenuComponent.find(SharingDialog)).toHaveLength(1)
@@ -248,7 +238,7 @@ describe('The FileMenu component ', () => {
         fileMenuComponent.find('button').simulate('click')
 
         fileMenuComponent
-            .findWhere(n => n.prop('label') === 'Get link…')
+            .findWhere((n) => n.prop('label') === 'Get link…')
             .simulate('click')
 
         expect(fileMenuComponent.find(GetLinkDialog)).toHaveLength(1)
@@ -268,7 +258,7 @@ describe('The FileMenu component ', () => {
         fileMenuComponent.find('button').simulate('click')
 
         fileMenuComponent
-            .findWhere(n => n.prop('label') === 'Delete')
+            .findWhere((n) => n.prop('label') === 'Delete')
             .simulate('click')
 
         expect(fileMenuComponent.find(DeleteDialog)).toHaveLength(1)
@@ -288,7 +278,7 @@ describe('The FileMenu component ', () => {
         fileMenuComponent.find('button').simulate('click')
 
         fileMenuComponent
-            .findWhere(n => n.prop('label') === 'Save as…')
+            .findWhere((n) => n.prop('label') === 'Save as…')
             .simulate('click')
 
         expect(fileMenuComponent.find(SaveAsDialog)).toHaveLength(1)
@@ -299,7 +289,7 @@ describe('The FileMenu component ', () => {
         fileMenuComponent.find('button').simulate('click')
 
         fileMenuComponent
-            .findWhere(n => n.prop('label') === 'Save…')
+            .findWhere((n) => n.prop('label') === 'Save…')
             .simulate('click')
 
         expect(fileMenuComponent.find(SaveAsDialog)).toHaveLength(1)
@@ -319,10 +309,10 @@ describe('The FileMenu component ', () => {
         fileMenuComponent.find('button').simulate('click')
 
         fileMenuComponent
-            .findWhere(n => n.prop('label') === 'Save')
+            .findWhere((n) => n.prop('label') === 'Save')
             .simulate('click')
 
-        expect(fileMenuComponent.find(Popper).exists()).toBe(false)
+        expect(fileMenuComponent.find(OpenFileDialog).prop('open')).toBe(false)
         expect(onSave).toHaveBeenCalled()
     })
 
@@ -331,10 +321,10 @@ describe('The FileMenu component ', () => {
         fileMenuComponent.find('button').simulate('click')
 
         fileMenuComponent
-            .findWhere(n => n.prop('label') === 'New')
+            .findWhere((n) => n.prop('label') === 'New')
             .simulate('click')
 
-        expect(fileMenuComponent.find(Popper).exists()).toBe(false)
+        expect(fileMenuComponent.find(OpenFileDialog).prop('open')).toBe(false)
         expect(onNew).toHaveBeenCalled()
     })
 })

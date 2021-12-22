@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-03-09T11:13:51.855Z\n"
+"POT-Creation-Date: 2021-11-12T14:52:40.534Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: Mai Nguyen <thanhmai.jica@gmail.com>, 2021\n"
 "Language-Team: Vietnamese (https://www.transifex.com/hisp-uio/teams/100509/vi/)\n"
@@ -16,6 +16,55 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: vi\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "view only"
+msgstr ""
+
+msgid "view and edit"
+msgstr ""
+
+msgid "all users ({{accessLevel}})"
+msgstr ""
+
+msgid "{{userOrGroup}} ({{accessLevel}})"
+msgstr ""
+
+msgid "Shared with {{commaSeparatedListOfUsersAndGroups}}"
+msgstr ""
+
+msgid "Not shared with any users or groups"
+msgstr ""
+
+msgid "About this visualization"
+msgstr ""
+
+msgid "No description"
+msgstr "Không mô tả"
+
+msgid "Last updated {{time}}"
+msgstr ""
+
+msgid "Created {{time}} by {{author}}"
+msgstr ""
+
+msgid "Viewed {{count}} times"
+msgid_plural "Viewed {{count}} times"
+msgstr[0] ""
+
+msgid "Notifications"
+msgstr ""
+
+msgid "You're subscribed and getting updates about new interpretations."
+msgstr ""
+
+msgid "Unsubscribe"
+msgstr ""
+
+msgid "Subscribe to get updates about new interpretations."
+msgstr ""
+
+msgid "Subscribe"
+msgstr ""
 
 msgid "Data Type"
 msgstr "Loại dữ liệu"
@@ -116,8 +165,22 @@ msgstr "Các chiều dữ liệu của bạn"
 msgid "Dimension recommended with selected data"
 msgstr "Chiều được đề xuất với dữ liệu đã chọn"
 
-msgid "Nothing found in {{dimensionTitle}}"
-msgstr "Không tìm thấy trong {{mensTitle}}"
+msgid "All items"
+msgstr ""
+
+msgid "Automatically include all items"
+msgstr ""
+
+msgid ""
+"Select all {{- dimensionTitle}} items. With this option, new items added in "
+"the future will be automatically included."
+msgstr ""
+
+msgid "Manually select items..."
+msgstr ""
+
+msgid "Nothing found in {{- dimensionTitle}}"
+msgstr ""
 
 msgid "Search"
 msgstr "Tìm kiếm"
@@ -128,7 +191,8 @@ msgstr "Không tìm thấy cho {{searchTerm}}"
 msgid "Delete {{fileType}}"
 msgstr ""
 
-msgid "This {{fileType}} will be deleted. Continue?"
+msgid ""
+"This {{fileType}} and related interpretations will be deleted. Continue?"
 msgstr ""
 
 msgid "Cancel"
@@ -188,14 +252,180 @@ msgstr "Đổi tên"
 msgid "Save {{fileType}} as"
 msgstr ""
 
-msgid "Selected Data"
-msgstr "Dữ liệu đã chọn"
+msgid "Created by"
+msgstr "Được tạo bởi"
 
-msgid "Deselect All"
+msgid "Anyone"
+msgstr "Bất kỳ ai"
+
+msgid "Only you"
+msgstr ""
+
+msgid "Others"
+msgstr "Khác"
+
+msgid "Filter by name"
+msgstr "Lọc bằng tên"
+
+msgid "Created"
+msgstr "Đã tạo"
+
+msgid "Last updated"
+msgstr "Lần cập nhật cuối"
+
+msgid "Type"
+msgstr "Loại"
+
+msgid "Clear filters"
+msgstr "Bỏ lọc"
+
+msgid "{{firstItemIndex}}-{{lastItemIndex}} of {{totalNumberOfItems}}"
+msgstr ""
+
+msgid "All charts"
+msgstr ""
+
+msgid "Open"
+msgstr "Mở"
+
+msgid "Couldn't load items"
+msgstr ""
+
+msgid ""
+"There was a problem loading items. Try again or contact your system "
+"administrator."
+msgstr ""
+
+msgid "No items found. Create a new to get started."
+msgstr ""
+
+msgid ""
+"No items found. Try adjusting your search or filter options to find what "
+"you're looking for."
+msgstr ""
+
+msgid "Create new"
+msgstr "Tạo mới"
+
+msgid "Open a visualization"
+msgstr ""
+
+msgid "Loading visualizations"
+msgstr ""
+
+msgid "Couldn't load visualizations"
+msgstr ""
+
+msgid ""
+"There was a problem loading visualizations. Try again or contact your system"
+" administrator."
+msgstr ""
+
+msgid "No visualizations found. Click New visualization to get started."
+msgstr ""
+
+msgid ""
+"No visualizations found. Try adjusting your search or filter options to find"
+" what you're looking for."
+msgstr ""
+
+msgid "New visualization"
+msgstr ""
+
+msgid "Open a map"
+msgstr ""
+
+msgid "Loading maps"
+msgstr ""
+
+msgid "Couldn't load maps"
+msgstr ""
+
+msgid ""
+"There was a problem loading maps. Try again or contact your system "
+"administrator."
+msgstr ""
+
+msgid "No maps found. Click New map to get started."
+msgstr ""
+
+msgid ""
+"No maps found. Try adjusting your search or filter options to find what "
+"you're looking for."
+msgstr ""
+
+msgid "New map"
+msgstr ""
+
+msgid "Open an event report"
+msgstr ""
+
+msgid "Loading event reports"
+msgstr ""
+
+msgid "Couldn't load event reports"
+msgstr ""
+
+msgid ""
+"There was a problem loading event reports. Try again or contact your system "
+"administrator."
+msgstr ""
+
+msgid "No event reports found. Click New event report to get started."
+msgstr ""
+
+msgid ""
+"No event reports found. Try adjusting your search or filter options to find "
+"what you're looking for."
+msgstr ""
+
+msgid "New event report"
+msgstr ""
+
+msgid "Options"
+msgstr "Tùy chọn"
+
+msgid "Hide"
+msgstr "Ẩn"
+
+msgid "Update"
+msgstr "Cập nhật"
+
+msgid "{{count}} org units"
+msgid_plural "{{count}} org units"
+msgstr[0] ""
+
+msgid "{{count}} levels"
+msgid_plural "{{count}} levels"
+msgstr[0] ""
+
+msgid "{{count}} groups"
+msgid_plural "{{count}} groups"
+msgstr[0] ""
+
+msgid "Selected: {{commaSeparatedListOfOrganisationUnits}}"
+msgstr ""
+
+msgid "Nothing selected"
+msgstr ""
+
+msgid "User organisation unit"
+msgstr "Đơn vị người dùng"
+
+msgid "User sub-units"
+msgstr "Đơn-vị-con người dùng"
+
+msgid "User sub-x2-units"
+msgstr "Đơn-vị-con-x2 người dùng"
+
+msgid "Select a level"
+msgstr "Chọn mức"
+
+msgid "Select a group"
+msgstr "Chọn nhóm"
+
+msgid "Deselect all"
 msgstr "Bỏ chọn tất cả"
-
-msgid "Select all"
-msgstr "Chọn tất cả"
 
 msgid "Period type"
 msgstr "Loại thời điểm"
@@ -269,9 +499,6 @@ msgstr "Hàng ngày"
 msgid "Weekly"
 msgstr "Hàng tuần"
 
-msgid "Bi-weekly"
-msgstr "Hai-tuần"
-
 msgid "Weekly (Start Wednesday)"
 msgstr "Hàng tuần (Bắt đầu từ Thứ Tư)"
 
@@ -283,6 +510,9 @@ msgstr "Hàng tuần (Bắt đầu từ Thứ Bảy)"
 
 msgid "Weekly (Start Sunday)"
 msgstr "Hàng tuần (Bắt đầu từ Chủ nhật)"
+
+msgid "Bi-weekly"
+msgstr "Hai-tuần"
 
 msgid "Monthly"
 msgstr "Hàng tháng"
@@ -436,6 +666,9 @@ msgstr "Năm ngoái"
 
 msgid "Last 5 years"
 msgstr "5 năm trước"
+
+msgid "Last 10 years"
+msgstr "10 năm trước"
 
 msgid "Days"
 msgstr "Ngày"
@@ -797,6 +1030,10 @@ msgstr "Đường đáy"
 
 msgid "Axis {{axisId}}"
 msgstr "Trục {{axisId}}"
+
+msgid "{{count}} items"
+msgid_plural "{{count}} items"
+msgstr[0] ""
 
 msgid "Reset zoom"
 msgstr "Đặt lại thu phóng"

@@ -1,17 +1,18 @@
 # 
 # Translators:
 # Carwoto Sa'an <carwoto@gmail.com>, 2021
-# Guardian Sanjaya <gysanjaya@ugm.ac.id>, 2021
-# Aprisa Chrysantina <aprisa.chrysantina@gmail.com>, 2021
 # phil_dhis2, 2021
+# Guardian Sanjaya <gysanjaya@ugm.ac.id>, 2021
 # Viktor Varland <viktor@dhis2.org>, 2021
+# Aprisa Chrysantina <aprisa.chrysantina@gmail.com>, 2021
+# Untoro Dwi Raharjo <untoro.dwi.raharjo@mail.ugm.ac.id>, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-03-09T11:13:51.855Z\n"
+"POT-Creation-Date: 2021-11-12T14:52:40.534Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2021\n"
+"Last-Translator: Untoro Dwi Raharjo <untoro.dwi.raharjo@mail.ugm.ac.id>, 2021\n"
 "Language-Team: Indonesian (https://www.transifex.com/hisp-uio/teams/100509/id/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -19,20 +20,69 @@ msgstr ""
 "Language: id\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
+msgid "view only"
+msgstr ""
+
+msgid "view and edit"
+msgstr ""
+
+msgid "all users ({{accessLevel}})"
+msgstr ""
+
+msgid "{{userOrGroup}} ({{accessLevel}})"
+msgstr ""
+
+msgid "Shared with {{commaSeparatedListOfUsersAndGroups}}"
+msgstr ""
+
+msgid "Not shared with any users or groups"
+msgstr ""
+
+msgid "About this visualization"
+msgstr ""
+
+msgid "No description"
+msgstr "Tidak ada deskripsi"
+
+msgid "Last updated {{time}}"
+msgstr ""
+
+msgid "Created {{time}} by {{author}}"
+msgstr ""
+
+msgid "Viewed {{count}} times"
+msgid_plural "Viewed {{count}} times"
+msgstr[0] ""
+
+msgid "Notifications"
+msgstr ""
+
+msgid "You're subscribed and getting updates about new interpretations."
+msgstr ""
+
+msgid "Unsubscribe"
+msgstr ""
+
+msgid "Subscribe to get updates about new interpretations."
+msgstr ""
+
+msgid "Subscribe"
+msgstr ""
+
 msgid "Data Type"
 msgstr "Tipe Data"
 
 msgid "All types"
-msgstr ""
+msgstr "Semua jenis"
 
 msgid "Totals only"
-msgstr ""
+msgstr "Total saja"
 
 msgid "Details only"
-msgstr ""
+msgstr "Detail saja"
 
 msgid "Disaggregation"
-msgstr ""
+msgstr "Disagregasi"
 
 msgid "No data"
 msgstr "Tidak ada data"
@@ -41,67 +91,67 @@ msgid "Loading"
 msgstr "Loading"
 
 msgid "Search by data item name"
-msgstr ""
+msgstr "Cari berdasarkan nama item data"
 
 msgid "No items selected"
-msgstr ""
+msgstr "Tidak ada item yang dipilih"
 
 msgid "Selected Items"
-msgstr ""
+msgstr "Item yang Dipilih"
 
 msgid "No indicators found"
-msgstr ""
+msgstr "Tidak ada indikator yang ditemukan"
 
 msgid "No data elements found"
-msgstr ""
+msgstr "Tidak ada elemen data yang ditemukan"
 
 msgid "No data sets found"
-msgstr ""
+msgstr "Tidak ada kumpulan data yang ditemukan"
 
 msgid "No event data items found"
-msgstr ""
+msgstr "Tidak ada item data acara yang ditemukan"
 
 msgid "No program indicators found"
-msgstr ""
+msgstr "Tidak ada indikator program yang ditemukan"
 
 msgid "No indicators found for \"{{- searchTerm}}\""
-msgstr ""
+msgstr "Tidak ada indikator yang ditemukan untuk \"{{- searchTerm}}\""
 
 msgid "No data elements found for \"{{- searchTerm}}\""
-msgstr ""
+msgstr "Tidak ada elemen data yang ditemukan untuk \"{{- searchTerm}}\""
 
 msgid "No data sets found for \"{{- searchTerm}}\""
-msgstr ""
+msgstr "Tidak ada kumpulan data yang ditemukan untuk \"{{- searchTerm}}\""
 
 msgid "No event data items found for \"{{- searchTerm}}\""
-msgstr ""
+msgstr "Tidak ditemukan item data peristiwa untuk \"{{- searchTerm}}\""
 
 msgid "No program indicators found for \"{{- searchTerm}}\""
-msgstr ""
+msgstr "Tidak ada indikator program yang ditemukan untuk \"{{- searchTerm}}\""
 
 msgid "Nothing found for \"{{- searchTerm}}\""
-msgstr ""
+msgstr "Tidak ada yang ditemukan untuk \"{{- searchTerm}}\""
 
 msgid "Metric type"
-msgstr ""
+msgstr "Jenis metrik"
 
 msgid "All metrics"
 msgstr "Semua metrik"
 
 msgid "Move to {{axisName}}"
-msgstr ""
+msgstr "Pindah ke {{axisName}}"
 
 msgid "Add to {{axisName}}"
 msgstr "Tambahkan ke {{axisName}}"
 
 msgid "Not available for {{visualizationType}}"
-msgstr ""
+msgstr "Tidak tersedia untuk {{visualizationType}}"
 
 msgid "Remove Assigned Categories"
-msgstr ""
+msgstr "Hapus Kategori yang Ditugaskan"
 
 msgid "Add Assigned Categories"
-msgstr ""
+msgstr "Tambahkan Kategori yang Ditugaskan"
 
 msgid "Remove"
 msgstr "Hapus"
@@ -118,20 +168,35 @@ msgstr "Dimensi Anda"
 msgid "Dimension recommended with selected data"
 msgstr "Dimensi yang direkomendasikan dengan data terpilih"
 
-msgid "Nothing found in {{dimensionTitle}}"
+msgid "All items"
+msgstr ""
+
+msgid "Automatically include all items"
+msgstr ""
+
+msgid ""
+"Select all {{- dimensionTitle}} items. With this option, new items added in "
+"the future will be automatically included."
+msgstr ""
+
+msgid "Manually select items..."
+msgstr ""
+
+msgid "Nothing found in {{- dimensionTitle}}"
 msgstr ""
 
 msgid "Search"
 msgstr "Pencarian"
 
 msgid "Nothing found for {{searchTerm}}"
-msgstr ""
+msgstr "Tidak ada yang ditemukan untuk {{searchTerm}}"
 
 msgid "Delete {{fileType}}"
-msgstr ""
+msgstr "Hapus {{fileType}}"
 
-msgid "This {{fileType}} will be deleted. Continue?"
-msgstr ""
+msgid ""
+"This {{fileType}} and related interpretations will be deleted. Continue?"
+msgstr "{{fileType}} ini dan interpretasi terkait akan dihapus. Terus?"
 
 msgid "Cancel"
 msgstr "Batal"
@@ -140,43 +205,43 @@ msgid "Delete"
 msgstr "Hapus"
 
 msgid "File"
-msgstr ""
+msgstr "Mengajukan"
 
 msgid "New"
 msgstr "Baru"
 
 msgid "Open…"
-msgstr ""
+msgstr "Buka…"
 
 msgid "Save"
 msgstr "Simpan"
 
 msgid "Save…"
-msgstr ""
+msgstr "Menyimpan…"
 
 msgid "Save as…"
-msgstr ""
+msgstr "Simpan sebagai…"
 
 msgid "Rename…"
-msgstr ""
+msgstr "Ganti nama…"
 
 msgid "Translate…"
-msgstr ""
+msgstr "Menterjemahkan…"
 
 msgid "Share…"
-msgstr ""
+msgstr "Bagikan…"
 
 msgid "Get link…"
-msgstr ""
+msgstr "Dapatkan tautan…"
 
 msgid "Open in this app"
-msgstr ""
+msgstr "Buka di aplikasi ini"
 
 msgid "Close"
 msgstr "Tutup"
 
 msgid "Rename {{fileType}}"
-msgstr ""
+msgstr "Ganti nama {{fileType}}"
 
 msgid "Name"
 msgstr "Nama"
@@ -188,25 +253,204 @@ msgid "Rename"
 msgstr "Ganti nama"
 
 msgid "Save {{fileType}} as"
+msgstr "Simpan {{fileType}} sebagai"
+
+msgid "Created by"
+msgstr "Dibuat oleh"
+
+msgid "Anyone"
+msgstr "Siapa saja"
+
+msgid "Only you"
+msgstr "Hanya kamu"
+
+msgid "Others"
+msgstr "Yang lain"
+
+msgid "Filter by name"
+msgstr "Filter menurut nama"
+
+msgid "Created"
+msgstr "Dibuat"
+
+msgid "Last updated"
+msgstr "Terakhir diperbarui"
+
+msgid "Type"
+msgstr "Tipe"
+
+msgid "Clear filters"
+msgstr "Hapus penyaring"
+
+msgid "{{firstItemIndex}}-{{lastItemIndex}} of {{totalNumberOfItems}}"
+msgstr "{{firstItemIndex}}-{{lastItemIndex}} dari {{totalNumberOfItems}}"
+
+msgid "All charts"
+msgstr "Semua grafik"
+
+msgid "Open"
+msgstr "Buka"
+
+msgid "Couldn't load items"
+msgstr "Tidak dapat memuat item"
+
+msgid ""
+"There was a problem loading items. Try again or contact your system "
+"administrator."
+msgstr ""
+"Terjadi masalah saat memuat item. Coba lagi atau hubungi administrator "
+"sistem Anda."
+
+msgid "No items found. Create a new to get started."
+msgstr "Tidak ada item yang ditemukan. Buat yang baru untuk memulai."
+
+msgid ""
+"No items found. Try adjusting your search or filter options to find what "
+"you're looking for."
+msgstr ""
+"Tidak ada item yang ditemukan. Coba sesuaikan opsi penelusuran atau filter "
+"untuk menemukan apa yang Anda cari."
+
+msgid "Create new"
+msgstr "Membuat baru"
+
+msgid "Open a visualization"
+msgstr "Buka visualisasi"
+
+msgid "Loading visualizations"
+msgstr "Memuat visualisasi"
+
+msgid "Couldn't load visualizations"
+msgstr "Tidak dapat memuat visualisasi"
+
+msgid ""
+"There was a problem loading visualizations. Try again or contact your system"
+" administrator."
+msgstr ""
+"Terjadi masalah saat memuat visualisasi. Coba lagi atau hubungi "
+"administrator sistem Anda."
+
+msgid "No visualizations found. Click New visualization to get started."
+msgstr ""
+"Tidak ada visualisasi yang ditemukan. Klik Visualisasi baru untuk memulai."
+
+msgid ""
+"No visualizations found. Try adjusting your search or filter options to find"
+" what you're looking for."
+msgstr ""
+"Tidak ada visualisasi yang ditemukan. Coba sesuaikan opsi penelusuran atau "
+"filter untuk menemukan apa yang Anda cari."
+
+msgid "New visualization"
+msgstr "Visualisasi baru"
+
+msgid "Open a map"
+msgstr "Buka peta"
+
+msgid "Loading maps"
+msgstr "Memuat peta"
+
+msgid "Couldn't load maps"
+msgstr "Tidak dapat memuat peta"
+
+msgid ""
+"There was a problem loading maps. Try again or contact your system "
+"administrator."
+msgstr ""
+"Terjadi masalah saat memuat peta. Coba lagi atau hubungi administrator "
+"sistem Anda."
+
+msgid "No maps found. Click New map to get started."
+msgstr "Tidak ada peta yang ditemukan. Klik Peta baru untuk memulai."
+
+msgid ""
+"No maps found. Try adjusting your search or filter options to find what "
+"you're looking for."
+msgstr ""
+"Tidak ada peta yang ditemukan. Coba sesuaikan opsi penelusuran atau filter "
+"untuk menemukan apa yang Anda cari."
+
+msgid "New map"
+msgstr "peta baru"
+
+msgid "Open an event report"
 msgstr ""
 
-msgid "Selected Data"
-msgstr "Data Terpilih"
-
-msgid "Deselect All"
+msgid "Loading event reports"
 msgstr ""
 
-msgid "Select all"
+msgid "Couldn't load event reports"
 msgstr ""
+
+msgid ""
+"There was a problem loading event reports. Try again or contact your system "
+"administrator."
+msgstr ""
+
+msgid "No event reports found. Click New event report to get started."
+msgstr ""
+
+msgid ""
+"No event reports found. Try adjusting your search or filter options to find "
+"what you're looking for."
+msgstr ""
+
+msgid "New event report"
+msgstr ""
+
+msgid "Options"
+msgstr "Opsi"
+
+msgid "Hide"
+msgstr "Sembunyikan"
+
+msgid "Update"
+msgstr "Perbarui"
+
+msgid "{{count}} org units"
+msgid_plural "{{count}} org units"
+msgstr[0] ""
+
+msgid "{{count}} levels"
+msgid_plural "{{count}} levels"
+msgstr[0] ""
+
+msgid "{{count}} groups"
+msgid_plural "{{count}} groups"
+msgstr[0] ""
+
+msgid "Selected: {{commaSeparatedListOfOrganisationUnits}}"
+msgstr ""
+
+msgid "Nothing selected"
+msgstr ""
+
+msgid "User organisation unit"
+msgstr ""
+
+msgid "User sub-units"
+msgstr "Subunit pengguna"
+
+msgid "User sub-x2-units"
+msgstr "Sub-x2-unit pengguna"
+
+msgid "Select a level"
+msgstr ""
+
+msgid "Select a group"
+msgstr ""
+
+msgid "Deselect all"
+msgstr "Batal pilih semua"
 
 msgid "Period type"
 msgstr "Tipe periode"
 
 msgid "Year"
-msgstr ""
+msgstr "Tahun"
 
 msgid "Select year"
-msgstr ""
+msgstr "Pilih tahun"
 
 msgid "Period"
 msgstr "Periode"
@@ -218,7 +462,7 @@ msgid "Fixed periods"
 msgstr "Periode tetap"
 
 msgid "Selected Periods"
-msgstr ""
+msgstr "Periode yang Dipilih"
 
 msgid "No periods selected"
 msgstr "Tidak ada periode yang dipilih"
@@ -260,10 +504,10 @@ msgid "December"
 msgstr "Desember"
 
 msgid "Week {{weekNumber}}"
-msgstr ""
+msgstr "Minggu {{weekNumber}}"
 
 msgid "Bi-Week {{biWeekNumber}}"
-msgstr ""
+msgstr "Dua Minggu {{biWeekNumber}}"
 
 msgid "Daily"
 msgstr "Harian"
@@ -271,20 +515,20 @@ msgstr "Harian"
 msgid "Weekly"
 msgstr "Mingguan"
 
-msgid "Bi-weekly"
-msgstr "Dwiwulanan"
-
 msgid "Weekly (Start Wednesday)"
-msgstr ""
+msgstr "Mingguan (Mulai Rabu)"
 
 msgid "Weekly (Start Thursday)"
-msgstr ""
+msgstr "Mingguan (Mulai Kamis)"
 
 msgid "Weekly (Start Saturday)"
-msgstr ""
+msgstr "Mingguan (Mulai Sabtu)"
 
 msgid "Weekly (Start Sunday)"
-msgstr ""
+msgstr "Mingguan (Mulai Minggu)"
+
+msgid "Bi-weekly"
+msgstr "Dwiwulanan"
 
 msgid "Monthly"
 msgstr "Bulanan"
@@ -305,7 +549,7 @@ msgid "Yearly"
 msgstr "Tahunan"
 
 msgid "Financial year (Start November)"
-msgstr ""
+msgstr "Keuangan tahunan (Mulai November)"
 
 msgid "Financial year (Start October)"
 msgstr "Financial October"
@@ -335,13 +579,13 @@ msgid "Last 30 days"
 msgstr "30 hari terakhir"
 
 msgid "Last 60 days"
-msgstr ""
+msgstr "60 hari terakhir"
 
 msgid "Last 90 days"
-msgstr ""
+msgstr "90 hari terakhir"
 
 msgid "Last 180 days"
-msgstr ""
+msgstr "180 hari terakhir"
 
 msgid "This week"
 msgstr "Minggu ini"
@@ -419,7 +663,7 @@ msgid "Last six-month"
 msgstr "Semester lalu"
 
 msgid "Last 2 six-month"
-msgstr ""
+msgstr "2 enam bulan terakhir"
 
 msgid "This financial year"
 msgstr "Tahun finansial ini"
@@ -438,6 +682,9 @@ msgstr "Tahun kemarin"
 
 msgid "Last 5 years"
 msgstr "5 tahun terakhir"
+
+msgid "Last 10 years"
+msgstr "10 tahun terakhir"
 
 msgid "Days"
 msgstr "Hari"
@@ -461,7 +708,7 @@ msgid "Six-months"
 msgstr "Semester"
 
 msgid "Financial Years"
-msgstr ""
+msgstr "Keuangan tahunan"
 
 msgid "Years"
 msgstr "Tahun"
@@ -476,13 +723,13 @@ msgid "Filter"
 msgstr "Saring"
 
 msgid "Columns"
-msgstr ""
+msgstr "kolom"
 
 msgid "Rows"
-msgstr ""
+msgstr "Baris"
 
 msgid "Points"
-msgstr ""
+msgstr "Poin"
 
 msgid "Reporting rate"
 msgstr "Tingkat pelaporan"
@@ -512,16 +759,16 @@ msgid "Indicator group"
 msgstr "grup indikator"
 
 msgid "All groups"
-msgstr ""
+msgstr "Semua grup"
 
 msgid "Indicator"
 msgstr "Indikator"
 
 msgid "No indicator groups found"
-msgstr ""
+msgstr "Tidak ada grup indikator yang ditemukan"
 
 msgid "Loading indicator groups"
-msgstr ""
+msgstr "Memuat grup indikator"
 
 msgid "Data elements"
 msgstr "Data elemen"
@@ -533,10 +780,10 @@ msgid "Data element"
 msgstr "Elemen data"
 
 msgid "No data element groups found"
-msgstr ""
+msgstr "Tidak ada grup elemen data yang ditemukan"
 
 msgid "Loading data element groups"
-msgstr ""
+msgstr "Memuat grup elemen data"
 
 msgid "Data sets"
 msgstr "Data set"
@@ -545,25 +792,25 @@ msgid "Data set"
 msgstr "Data set"
 
 msgid "All data sets"
-msgstr ""
+msgstr "Semua kumpulan data"
 
 msgid "Loading data sets"
-msgstr ""
+msgstr "Memuat kumpulan data"
 
 msgid "Event data items"
 msgstr "Item data event"
 
 msgid "All programs"
-msgstr ""
+msgstr "Semua program"
 
 msgid "Event data item"
 msgstr "Data item pada even"
 
 msgid "No programs found"
-msgstr ""
+msgstr "Tidak ada program yang ditemukan"
 
 msgid "Loading programs"
-msgstr ""
+msgstr "Memuat program"
 
 msgid "Program indicators"
 msgstr "Indikator program"
@@ -572,25 +819,25 @@ msgid "Program indicator"
 msgstr "Indikator program"
 
 msgid "Extra Small"
-msgstr ""
+msgstr "Ekstra kecil"
 
 msgid "Small"
 msgstr "Kecil"
 
 msgid "Regular"
-msgstr ""
+msgstr "Reguler"
 
 msgid "Large"
 msgstr "Besar"
 
 msgid "Extra Large"
-msgstr ""
+msgstr "Ekstra besar"
 
 msgid "Left"
 msgstr "Kiri"
 
 msgid "Center"
-msgstr ""
+msgstr "Pusat"
 
 msgid "Right"
 msgstr "Kanan"
@@ -599,10 +846,10 @@ msgid "Start"
 msgstr "Mulai"
 
 msgid "Middle"
-msgstr ""
+msgstr "Tengah"
 
 msgid "End"
-msgstr ""
+msgstr "Akhir"
 
 msgid "Top"
 msgstr "Atas"
@@ -611,43 +858,43 @@ msgid "Bottom"
 msgstr "Bawah"
 
 msgid "{{dynamicOuNames}} and {{lastOuName}}"
-msgstr ""
+msgstr "{{dynamicOuNames}} dan {{lastOuName}}"
 
 msgid "{{allDynamicOuNames}} levels"
-msgstr ""
+msgstr "{{allDynamicOuNames}} level"
 
 msgid "{{allDynamicOuNames}} groups"
-msgstr ""
+msgstr "{{allDynamicOuNames}} grup"
 
 msgid "{{allDynamicOuNames}} levels in {{staticOuNames}}"
-msgstr ""
+msgstr "{{allDynamicOuNames}} level di {{staticOuNames}}"
 
 msgid "{{allDynamicOuNames}} groups in {{staticOuNames}}"
-msgstr ""
+msgstr "{{allDynamicOuNames}} grup di {{staticOuNames}}"
 
 msgid "{{percentage}}% of total x values"
-msgstr ""
+msgstr "{{percentage}}% dari total nilai x"
 
 msgid "{{percentage}}% of total y values"
-msgstr ""
+msgstr "{{percentage}}% dari total nilai y"
 
 msgid "{{thresholdFactor}} × IQR Q1"
-msgstr ""
+msgstr "{{faktor ambang}} × IQR Q1"
 
 msgid "{{thresholdFactor}} × IQR Q3"
-msgstr ""
+msgstr "{{Faktor ambang}} × IQR Q3"
 
 msgid "{{thresholdFactor}} × Modified Z-score low"
-msgstr ""
+msgstr "{{thresholdFactor}} × Modifikasi Z-score rendah"
 
 msgid "{{thresholdFactor}} × Modified Z-score high"
-msgstr ""
+msgstr "{{thresholdFactor}} × Modifikasi Z-score tinggi"
 
 msgid "{{thresholdFactor}} × Z-score low"
-msgstr ""
+msgstr "{{thresholdFactor}} × Z-skor rendah"
 
 msgid "{{thresholdFactor}} × Z-score high"
-msgstr ""
+msgstr "{{ThresholdFactor}} × Z-skor tinggi"
 
 msgid "Data"
 msgstr "Data"
@@ -656,7 +903,7 @@ msgid "Organisation Unit"
 msgstr "Unit Organisasi"
 
 msgid "Assigned Categories"
-msgstr ""
+msgstr "Kategori yang Ditugaskan"
 
 msgid "Pivot table"
 msgstr "Tabel Pivot"
@@ -680,7 +927,7 @@ msgid "Area"
 msgstr "Area"
 
 msgid "Stacked area"
-msgstr ""
+msgstr "Area bertumpuk"
 
 msgid "Pie"
 msgstr "Pie"
@@ -701,84 +948,109 @@ msgid "Single value"
 msgstr "Nilai tunggal"
 
 msgid "Scatter"
-msgstr ""
+msgstr "Scatter"
 
 msgid "View data and indicators in a manipulatable table."
-msgstr ""
+msgstr "Lihat data dan indikator dalam tabel yang dapat dimanipulasi."
 
 msgid ""
 "Compare sizes of related elements vertically. Recommend period as filter."
 msgstr ""
+"Bandingkan ukuran elemen terkait secara vertikal. Merekomendasikan periode "
+"sebagai filter."
 
 msgid ""
 "Compare parts of a whole against related elements vertically. Recommend data"
 " or org. unit as series."
 msgstr ""
+"Bandingkan bagian dari keseluruhan terhadap elemen terkait secara vertikal. "
+"Merekomendasikan data atau org. satuan sebagai seri."
 
 msgid ""
 "Compare sizes of related elements horizontally. Recommend period as filter."
 msgstr ""
+"Bandingkan ukuran elemen terkait secara horizontal. Merekomendasikan periode"
+" sebagai filter."
 
 msgid ""
 "Compare parts of a whole against related elements horizontally. Recommend "
 "data or org. unit as series."
 msgstr ""
+"Bandingkan bagian dari keseluruhan terhadap elemen terkait secara "
+"horizontal. Merekomendasikan data atau org. satuan sebagai seri."
 
 msgid "Track or compare changes over time. Recommend period as category."
 msgstr ""
+"Lacak atau bandingkan perubahan dari waktu ke waktu. Merekomendasikan "
+"periode sebagai kategori."
 
 msgid ""
 "Track or compare parts of a whole over time. Recommend data as series and "
 "period as category."
 msgstr ""
+"Lacak atau bandingkan bagian dari keseluruhan dari waktu ke waktu. "
+"Merekomendasikan data sebagai seri dan periode sebagai kategori."
 
 msgid ""
 "Compare parts of a whole at a single point in time. Recommend period as "
 "filter."
 msgstr ""
+"Bandingkan bagian dari keseluruhan pada satu titik waktu. Merekomendasikan "
+"periode sebagai filter."
 
 msgid "Compare several items against multiple variables."
-msgstr ""
+msgstr "Bandingkan beberapa item dengan beberapa variabel."
 
 msgid ""
 "Compare a percentage indicator against a 100% scale. Recommend period as "
 "filter."
 msgstr ""
+"Bandingkan indikator persentase dengan skala 100%. Merekomendasikan periode "
+"sebagai filter."
 
 msgid "Compare changes over time between multiple time periods."
 msgstr ""
+"Bandingkan perubahan dari waktu ke waktu antara beberapa periode waktu."
 
 msgid "Display a single value. Recommend relative period to show latest data."
 msgstr ""
+"Menampilkan nilai tunggal. Merekomendasikan periode relatif untuk "
+"menampilkan data terbaru."
 
 msgid ""
 "View the relationship between two data items at a place or time. Recommended"
 " for finding outliers."
 msgstr ""
+"Melihat hubungan antara dua item data di suatu tempat atau waktu. "
+"Direkomendasikan untuk menemukan outlier."
 
 msgid "{{seriesName}} (trend)"
-msgstr ""
+msgstr "{{seriesName}} (tren)"
 
 msgid "Trend"
 msgstr "Tren"
 
 msgid "No legend for this series"
-msgstr ""
+msgstr "Tidak ada legenda untuk seri ini"
 
 msgid "and {{amount}} more..."
-msgstr ""
+msgstr "dan {{jumlah}} lainnya..."
 
 msgid "Linear Regression"
-msgstr ""
+msgstr "Regresi linier"
 
 msgid "Target"
-msgstr ""
+msgstr "Target"
 
 msgid "Base"
 msgstr "Dasar"
 
 msgid "Axis {{axisId}}"
-msgstr ""
+msgstr "Sumbu {{axisId}}"
+
+msgid "{{count}} items"
+msgid_plural "{{count}} items"
+msgstr[0] ""
 
 msgid "Reset zoom"
-msgstr ""
+msgstr "Setel ulang zoom"

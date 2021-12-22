@@ -3,13 +3,14 @@
 # Wanda <wanda@frontlineaids.org>, 2020
 # Yury Rogachev <yury@dhis2.org>, 2020
 # phil_dhis2, 2021
+# Valeriu Plesca <vplesca@gmail.com>, 2021
 # Viktor Varland <viktor@dhis2.org>, 2021
 # Ulanbek Abakirov <ulans@mail.ru>, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-03-09T11:13:51.855Z\n"
+"POT-Creation-Date: 2021-11-12T14:52:40.534Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: Ulanbek Abakirov <ulans@mail.ru>, 2021\n"
 "Language-Team: Russian (https://www.transifex.com/hisp-uio/teams/100509/ru/)\n"
@@ -18,6 +19,58 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: ru\n"
 "Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
+
+msgid "view only"
+msgstr ""
+
+msgid "view and edit"
+msgstr ""
+
+msgid "all users ({{accessLevel}})"
+msgstr ""
+
+msgid "{{userOrGroup}} ({{accessLevel}})"
+msgstr ""
+
+msgid "Shared with {{commaSeparatedListOfUsersAndGroups}}"
+msgstr ""
+
+msgid "Not shared with any users or groups"
+msgstr ""
+
+msgid "About this visualization"
+msgstr ""
+
+msgid "No description"
+msgstr "Нет описания"
+
+msgid "Last updated {{time}}"
+msgstr ""
+
+msgid "Created {{time}} by {{author}}"
+msgstr ""
+
+msgid "Viewed {{count}} times"
+msgid_plural "Viewed {{count}} times"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+msgid "Notifications"
+msgstr "Уведомления"
+
+msgid "You're subscribed and getting updates about new interpretations."
+msgstr ""
+
+msgid "Unsubscribe"
+msgstr ""
+
+msgid "Subscribe to get updates about new interpretations."
+msgstr ""
+
+msgid "Subscribe"
+msgstr ""
 
 msgid "Data Type"
 msgstr "Тип данных"
@@ -118,7 +171,21 @@ msgstr "Ваши Измерения"
 msgid "Dimension recommended with selected data"
 msgstr "Рекомендованное измерение с выбранными данными"
 
-msgid "Nothing found in {{dimensionTitle}}"
+msgid "All items"
+msgstr ""
+
+msgid "Automatically include all items"
+msgstr ""
+
+msgid ""
+"Select all {{- dimensionTitle}} items. With this option, new items added in "
+"the future will be automatically included."
+msgstr ""
+
+msgid "Manually select items..."
+msgstr ""
+
+msgid "Nothing found in {{- dimensionTitle}}"
 msgstr ""
 
 msgid "Search"
@@ -130,7 +197,8 @@ msgstr ""
 msgid "Delete {{fileType}}"
 msgstr ""
 
-msgid "This {{fileType}} will be deleted. Continue?"
+msgid ""
+"This {{fileType}} and related interpretations will be deleted. Continue?"
 msgstr ""
 
 msgid "Cancel"
@@ -190,14 +258,189 @@ msgstr "Переименовать"
 msgid "Save {{fileType}} as"
 msgstr ""
 
-msgid "Selected Data"
-msgstr "Избранные данные"
+msgid "Created by"
+msgstr "Создано"
 
-msgid "Deselect All"
-msgstr "Отменить выбор всех"
+msgid "Anyone"
+msgstr "Любой"
 
-msgid "Select all"
-msgstr "Выбрать все"
+msgid "Only you"
+msgstr ""
+
+msgid "Others"
+msgstr "Другие"
+
+msgid "Filter by name"
+msgstr "Фильтр по имени"
+
+msgid "Created"
+msgstr "Создано"
+
+msgid "Last updated"
+msgstr "Последнее обновление"
+
+msgid "Type"
+msgstr "Тип"
+
+msgid "Clear filters"
+msgstr ""
+
+msgid "{{firstItemIndex}}-{{lastItemIndex}} of {{totalNumberOfItems}}"
+msgstr ""
+
+msgid "All charts"
+msgstr ""
+
+msgid "Open"
+msgstr "Открыть"
+
+msgid "Couldn't load items"
+msgstr ""
+
+msgid ""
+"There was a problem loading items. Try again or contact your system "
+"administrator."
+msgstr ""
+
+msgid "No items found. Create a new to get started."
+msgstr ""
+
+msgid ""
+"No items found. Try adjusting your search or filter options to find what "
+"you're looking for."
+msgstr ""
+
+msgid "Create new"
+msgstr "Создать новый"
+
+msgid "Open a visualization"
+msgstr ""
+
+msgid "Loading visualizations"
+msgstr ""
+
+msgid "Couldn't load visualizations"
+msgstr ""
+
+msgid ""
+"There was a problem loading visualizations. Try again or contact your system"
+" administrator."
+msgstr ""
+
+msgid "No visualizations found. Click New visualization to get started."
+msgstr ""
+
+msgid ""
+"No visualizations found. Try adjusting your search or filter options to find"
+" what you're looking for."
+msgstr ""
+
+msgid "New visualization"
+msgstr ""
+
+msgid "Open a map"
+msgstr ""
+
+msgid "Loading maps"
+msgstr ""
+
+msgid "Couldn't load maps"
+msgstr ""
+
+msgid ""
+"There was a problem loading maps. Try again or contact your system "
+"administrator."
+msgstr ""
+
+msgid "No maps found. Click New map to get started."
+msgstr ""
+
+msgid ""
+"No maps found. Try adjusting your search or filter options to find what "
+"you're looking for."
+msgstr ""
+
+msgid "New map"
+msgstr ""
+
+msgid "Open an event report"
+msgstr ""
+
+msgid "Loading event reports"
+msgstr ""
+
+msgid "Couldn't load event reports"
+msgstr ""
+
+msgid ""
+"There was a problem loading event reports. Try again or contact your system "
+"administrator."
+msgstr ""
+
+msgid "No event reports found. Click New event report to get started."
+msgstr ""
+
+msgid ""
+"No event reports found. Try adjusting your search or filter options to find "
+"what you're looking for."
+msgstr ""
+
+msgid "New event report"
+msgstr ""
+
+msgid "Options"
+msgstr "Параметры"
+
+msgid "Hide"
+msgstr "Скрыть"
+
+msgid "Update"
+msgstr "Обновить"
+
+msgid "{{count}} org units"
+msgid_plural "{{count}} org units"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+msgid "{{count}} levels"
+msgid_plural "{{count}} levels"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+msgid "{{count}} groups"
+msgid_plural "{{count}} groups"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+msgid "Selected: {{commaSeparatedListOfOrganisationUnits}}"
+msgstr ""
+
+msgid "Nothing selected"
+msgstr ""
+
+msgid "User organisation unit"
+msgstr "Организационная единица пользователя"
+
+msgid "User sub-units"
+msgstr "Пользовательские подразделения"
+
+msgid "User sub-x2-units"
+msgstr "Пользовательские подразделения на два уровня ниже"
+
+msgid "Select a level"
+msgstr "Выбрать уровень"
+
+msgid "Select a group"
+msgstr "Выберите группу"
+
+msgid "Deselect all"
+msgstr "Отменить выбор всего"
 
 msgid "Period type"
 msgstr "Виды периода"
@@ -271,9 +514,6 @@ msgstr "Ежедневно"
 msgid "Weekly"
 msgstr "Еженедельно"
 
-msgid "Bi-weekly"
-msgstr "Каждые две недели"
-
 msgid "Weekly (Start Wednesday)"
 msgstr "Еженедельно(Начало Среда)"
 
@@ -285,6 +525,9 @@ msgstr "Еженедельно(Начало Суббота)"
 
 msgid "Weekly (Start Sunday)"
 msgstr "Еженедельно(Начало Воскресенье)"
+
+msgid "Bi-weekly"
+msgstr "Каждые две недели"
 
 msgid "Monthly"
 msgstr "Ежемесячно"
@@ -438,6 +681,9 @@ msgstr "Прошлый год"
 
 msgid "Last 5 years"
 msgstr "Прошлые 5 лет"
+
+msgid "Last 10 years"
+msgstr "Последние 10 лет"
 
 msgid "Days"
 msgstr "Дни"
@@ -781,6 +1027,13 @@ msgstr "Базовый"
 
 msgid "Axis {{axisId}}"
 msgstr "Ось {{axisId}}"
+
+msgid "{{count}} items"
+msgid_plural "{{count}} items"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
 
 msgid "Reset zoom"
 msgstr ""

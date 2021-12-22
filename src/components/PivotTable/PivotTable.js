@@ -1,14 +1,13 @@
-import React, { useRef, useMemo } from 'react'
 import PropTypes from 'prop-types'
-
-import { PivotTableEngine } from '../../modules/pivotTable/PivotTableEngine'
-import { useParentSize } from '../../modules/pivotTable/useParentSize'
-import { useTableClipping } from '../../modules/pivotTable/useTableClipping'
-import { Provider } from './PivotTableEngineContext'
-import { PivotTableContainer } from './PivotTableContainer'
-import { PivotTableHead } from './PivotTableHead'
-import { PivotTableBody } from './PivotTableBody'
-import { useSortableColumns } from '../../modules/pivotTable/useSortableColumns'
+import React, { useRef, useMemo } from 'react'
+import { PivotTableEngine } from '../../modules/pivotTable/PivotTableEngine.js'
+import { useParentSize } from '../../modules/pivotTable/useParentSize.js'
+import { useSortableColumns } from '../../modules/pivotTable/useSortableColumns.js'
+import { useTableClipping } from '../../modules/pivotTable/useTableClipping.js'
+import { PivotTableBody } from './PivotTableBody.js'
+import { PivotTableContainer } from './PivotTableContainer.js'
+import { Provider } from './PivotTableEngineContext.js'
+import { PivotTableHead } from './PivotTableHead.js'
 
 const PivotTable = ({
     visualization,
@@ -32,7 +31,6 @@ const PivotTable = ({
         width,
         height,
         engine,
-        visualization,
     })
 
     return (

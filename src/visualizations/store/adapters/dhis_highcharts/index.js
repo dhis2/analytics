@@ -1,18 +1,16 @@
 import arrayContains from 'd2-utilizr/lib/arrayContains'
 import arrayUnique from 'd2-utilizr/lib/arrayUnique'
-
-import getYearOnYear from './yearOnYear'
-import getPie from './pie'
-import getGauge from './gauge'
-import getTwoCategory from './twoCategory'
-
 import {
     VIS_TYPE_YEAR_OVER_YEAR_COLUMN,
     VIS_TYPE_YEAR_OVER_YEAR_LINE,
     VIS_TYPE_PIE,
     VIS_TYPE_GAUGE,
     isTwoCategoryChartType,
-} from '../../../../modules/visTypes'
+} from '../../../../modules/visTypes.js'
+import getGauge from './gauge.js'
+import getPie from './pie.js'
+import getTwoCategory from './twoCategory.js'
+import getYearOnYear from './yearOnYear.js'
 
 const VALUE_ID = 'value'
 
@@ -40,11 +38,11 @@ function getIdValueMap(rows, seriesHeader, categoryHeaders, valueIndex) {
     let key
     let value
 
-    rows.forEach(row => {
+    rows.forEach((row) => {
         key = [
             ...(seriesHeader ? [getPrefixedId(row, seriesHeader)] : []),
             ...(categoryHeaders
-                ? categoryHeaders.map(categoryHeader =>
+                ? categoryHeaders.map((categoryHeader) =>
                       getPrefixedId(row, categoryHeader)
                   )
                 : []),
@@ -60,10 +58,10 @@ function getIdValueMap(rows, seriesHeader, categoryHeaders, valueIndex) {
 
 // 1 series, 1 category
 function getDefault(acc, series, categories, idValueMap, metaData) {
-    series[0].forEach(serieItemId => {
+    series[0].forEach((serieItemId) => {
         const serieData = []
 
-        categories[0].forEach(categoryItemId => {
+        categories[0].forEach((categoryItemId) => {
             const value = idValueMap.get(`${serieItemId}-${categoryItemId}`)
 
             // DHIS2-1261: 0 is a valid value
@@ -120,7 +118,7 @@ export default function ({ type, data, seriesId, categoryIds, extraOptions }) {
 
         const seriesHeader = headers[headerIdIndexMap.get(seriesId)]
         const categoryHeaders = categoryIds.map(
-            categoryId => headers[headerIdIndexMap.get(categoryId)]
+            (categoryId) => headers[headerIdIndexMap.get(categoryId)]
         )
 
         const idValueMap = getIdValueMap(
@@ -131,7 +129,7 @@ export default function ({ type, data, seriesId, categoryIds, extraOptions }) {
         )
 
         const series = [metaData.dimensions[seriesId]]
-        const categories = categoryIds.map(id => metaData.dimensions[id])
+        const categories = categoryIds.map((id) => metaData.dimensions[id])
 
         seriesFunction(
             acc,

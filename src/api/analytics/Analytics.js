@@ -1,10 +1,10 @@
 /**
  * @module analytics
  */
-import AnalyticsAggregate from './AnalyticsAggregate'
-import AnalyticsEvents from './AnalyticsEvents'
-import AnalyticsRequest from './AnalyticsRequest'
-import AnalyticsResponse from './AnalyticsResponse'
+import AnalyticsAggregate from './AnalyticsAggregate.js'
+import AnalyticsEvents from './AnalyticsEvents.js'
+import AnalyticsRequest from './AnalyticsRequest.js'
+import AnalyticsResponse from './AnalyticsResponse.js'
 
 /**
  * @description

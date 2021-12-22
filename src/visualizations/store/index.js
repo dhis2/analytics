@@ -1,5 +1,5 @@
-import validators from './validators'
-import adapters from './adapters'
+import adapters from './adapters/index.js'
+import validators from './validators/index.js'
 
 export default function ({
     data,
@@ -35,7 +35,7 @@ export default function ({
     }) => {
         return _adapter({
             type,
-            data: data.map(d => _validator({ data: d, error, warning })),
+            data: data.map((d) => _validator({ data: d, error, warning })),
             seriesId,
             categoryIds,
             extraOptions,

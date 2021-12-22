@@ -1,6 +1,4 @@
 import objectClean from 'd2-utilizr/lib/objectClean'
-
-import { onError } from './index'
 import {
     ALL_ID,
     // CHART_AGGREGATE_AGGREGATABLE_TYPES,
@@ -12,7 +10,8 @@ import {
     PROGRAM_DATA_ELEMENT,
     PROGRAM_ATTRIBUTE,
     TOTALS,
-} from '../modules/dataTypes'
+} from '../modules/dataTypes.js'
+import { onError } from './index.js'
 
 // Query definitions
 export const dimensionsQuery = {
@@ -254,7 +253,7 @@ export const apiFetchRecommendedIds = async (dataEngine, dxIds, ouIds) => {
     )
 
     return recommendedDimensionsData.recommendedDimensions.dimensions.map(
-        item => item.id
+        (item) => item.id
     )
 }
 

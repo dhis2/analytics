@@ -1,13 +1,12 @@
-import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-
-import { styles } from './styles/DimensionLabel.style'
+import React, { Component } from 'react'
 import {
     getPredefinedDimensionProp,
     DIMENSION_PROP_NO_ITEMS,
-} from '../../../modules/predefinedDimensions'
+} from '../../../modules/predefinedDimensions.js'
+import { styles } from './styles/DimensionLabel.style.js'
 
-export class DimensionLabel extends Component {
+class DimensionLabel extends Component {
     static propTypes = {
         id: PropTypes.string.isRequired,
         isDeactivated: PropTypes.bool.isRequired,
@@ -25,7 +24,7 @@ export class DimensionLabel extends Component {
         }
     }
 
-    onKeyPress = event => {
+    onKeyPress = (event) => {
         if (event.key === 'Enter' && event.ctrlKey === false) {
             this.onLabelClick()
         }

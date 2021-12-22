@@ -1,9 +1,8 @@
-import React from 'react'
-import cx from 'classnames'
-import propTypes from '@dhis2/prop-types'
 import { Tooltip } from '@dhis2/ui'
-
-import styles from './styles/TransferOption.style'
+import cx from 'classnames'
+import PropTypes from 'prop-types'
+import React from 'react'
+import styles from './styles/TransferOption.style.js'
 
 export const TransferOption = ({
     disabled,
@@ -26,12 +25,16 @@ export const TransferOption = ({
                 selected,
                 inactive: active !== undefined && !active,
             })}
-            onClick={event => {
-                if (disabled) return
+            onClick={(event) => {
+                if (disabled) {
+                    return
+                }
                 onClick({ label, value }, event)
             }}
-            onDoubleClick={event => {
-                if (disabled) return
+            onDoubleClick={(event) => {
+                if (disabled) {
+                    return
+                }
                 onDoubleClick({ label, value }, event)
             }}
             data-test={`${dataTest}-content`}
@@ -62,15 +65,15 @@ export const TransferOption = ({
 }
 
 TransferOption.propTypes = {
-    label: propTypes.string.isRequired,
-    value: propTypes.string.isRequired,
-    active: propTypes.bool,
-    dataTest: propTypes.string,
-    disabled: propTypes.bool,
-    highlighted: propTypes.bool,
-    icon: propTypes.node,
-    selected: propTypes.bool,
-    tooltipText: propTypes.string,
-    onClick: propTypes.func,
-    onDoubleClick: propTypes.func,
+    label: PropTypes.string.isRequired,
+    value: PropTypes.string.isRequired,
+    active: PropTypes.bool,
+    dataTest: PropTypes.string,
+    disabled: PropTypes.bool,
+    highlighted: PropTypes.bool,
+    icon: PropTypes.node,
+    selected: PropTypes.bool,
+    tooltipText: PropTypes.string,
+    onClick: PropTypes.func,
+    onDoubleClick: PropTypes.func,
 }

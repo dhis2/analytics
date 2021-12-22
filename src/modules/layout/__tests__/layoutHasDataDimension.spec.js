@@ -1,6 +1,6 @@
-import { TEST_LAYOUT } from '../testResources'
-import { AXIS, AXIS_ID_COLUMNS } from '../axis'
-import { layoutHasDataDimension } from '../layoutHasDataDimension'
+import { AXIS, AXIS_ID_COLUMNS } from '../axis.js'
+import { layoutHasDataDimension } from '../layoutHasDataDimension.js'
+import { TEST_LAYOUT } from '../testResources.js'
 
 describe('layoutHasDataDimension', () => {
     it('should return true if the dx dimension is found in the layout, otherwise false', () => {

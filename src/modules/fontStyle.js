@@ -1,6 +1,6 @@
 /*eslint no-unused-vars: ["error", { "ignoreRestSiblings": true }]*/
-import i18n from '@dhis2/d2-i18n'
 import { colors } from '@dhis2/ui'
+import i18n from '../locales/index.js'
 
 // Font styles
 export const FONT_STYLE_VISUALIZATION_TITLE = 'visualizationTitle'
@@ -27,7 +27,7 @@ export const TEXT_ALIGN_RIGHT = 'RIGHT'
 const TIER1 = 'tier1'
 const TIER2 = 'tier2'
 
-export const getFontSizeOptions = fontStyleKey => {
+export const getFontSizeOptions = (fontStyleKey) => {
     const fontSizes = [
         {
             key: 'xSmall',
@@ -69,7 +69,7 @@ export const getFontSizeOptions = fontStyleKey => {
         : TIER2
 
     const result = {}
-    fontSizes.forEach(size => {
+    fontSizes.forEach((size) => {
         result[size.key] = {
             label: size.label,
             value: size[tier],
@@ -187,8 +187,8 @@ export const defaultFontStyle = {
     },
     [FONT_STYLE_LEGEND]: {
         [FONT_STYLE_OPTION_FONT]: defaultFont,
-        [FONT_STYLE_OPTION_FONT_SIZE]: getFontSizeOptions(FONT_STYLE_LEGEND)
-            .regular.value,
+        [FONT_STYLE_OPTION_FONT_SIZE]:
+            getFontSizeOptions(FONT_STYLE_LEGEND).regular.value,
         [FONT_STYLE_OPTION_BOLD]: false,
         [FONT_STYLE_OPTION_ITALIC]: false,
         [FONT_STYLE_OPTION_UNDERLINE]: false,

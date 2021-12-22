@@ -1,17 +1,17 @@
-import { ITEM_PROP_ID } from './item'
-import { DIMENSION_PROP_ID, DIMENSION_PROP_ITEMS } from './dimension'
+import { getRelativePeriodIds } from '../../components/PeriodDimension/utils/relativePeriods.js'
+import {
+    DIMENSION_ID_DATA,
+    DIMENSION_ID_PERIOD,
+    DIMENSION_ID_ORGUNIT,
+} from '../predefinedDimensions.js'
 import {
     AXIS_ID_ROWS,
     AXIS_ID_COLUMNS,
     AXIS_ID_FILTERS,
     DEFAULT_AXIS_IDS,
-} from './axis'
-import {
-    DIMENSION_ID_DATA,
-    DIMENSION_ID_PERIOD,
-    DIMENSION_ID_ORGUNIT,
-} from '../predefinedDimensions'
-import { getRelativePeriodIds } from '../../components/PeriodDimension/utils/relativePeriods'
+} from './axis.js'
+import { DIMENSION_PROP_ID, DIMENSION_PROP_ITEMS } from './dimension.js'
+import { ITEM_PROP_ID } from './item.js'
 
 // Items
 

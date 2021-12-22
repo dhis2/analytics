@@ -1,14 +1,13 @@
-import React, { useRef } from 'react'
 import PropTypes from 'prop-types'
-
-import { applyLegendSet } from '../../modules/pivotTable/applyLegendSet'
-import { PivotTableCell } from './PivotTableCell'
-import { usePivotTableEngine } from './PivotTableEngineContext'
+import React, { useRef } from 'react'
+import { applyLegendSet } from '../../modules/pivotTable/applyLegendSet.js'
 import {
     VALUE_TYPE_NUMBER,
     CELL_TYPE_VALUE,
-} from '../../modules/pivotTable/pivotTableConstants'
-import { PivotTableEmptyCell } from './PivotTableEmptyCell'
+} from '../../modules/pivotTable/pivotTableConstants.js'
+import { PivotTableCell } from './PivotTableCell.js'
+import { PivotTableEmptyCell } from './PivotTableEmptyCell.js'
+import { usePivotTableEngine } from './PivotTableEngineContext.js'
 
 export const PivotTableValueCell = ({
     row,
@@ -33,7 +32,7 @@ export const PivotTableValueCell = ({
         isClickable && 'clickable',
     ]
     const onClick = () => {
-        onToggleContextualMenu(cellRef, cellContent)
+        onToggleContextualMenu(cellRef.current, { ouId: cellContent.ouId })
     }
 
     if (!cellContent || cellContent.empty) {
@@ -57,12 +56,17 @@ export const PivotTableValueCell = ({
               )
             : undefined
 
-    const width = engine.columnWidths[engine.columnMap[column]].width
+    const width =
+        engine.adaptiveClippingController.columns.sizes[
+            engine.columnMap[column]
+        ].size
+    const height =
+        engine.adaptiveClippingController.rows.sizes[engine.rowMap[row]].size
     const style = {
         ...legendStyle,
         width,
-        minWidth: width,
-        maxWidth: width,
+        height,
+        whiteSpace: 'pre-line',
     }
 
     return (
@@ -73,6 +77,7 @@ export const PivotTableValueCell = ({
             style={style}
             onClick={isClickable ? onClick : undefined}
             ref={cellRef}
+            dataTest={'visualization-value-cell'}
         >
             {cellContent.renderedValue ?? null}
         </PivotTableCell>

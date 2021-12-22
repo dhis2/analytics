@@ -1,8 +1,8 @@
-import { layoutGetAllDimensions } from './layoutGetAllDimensions'
-import { dimensionGetItemIds } from './dimensionGetItemIds'
-import { dimensionGetId } from './dimensionGetId'
+import { dimensionGetId } from './dimensionGetId.js'
+import { dimensionGetItemIds } from './dimensionGetItemIds.js'
+import { layoutGetAllDimensions } from './layoutGetAllDimensions.js'
 
-export const layoutGetDimensionIdItemIdsObject = layout =>
+export const layoutGetDimensionIdItemIdsObject = (layout) =>
     layoutGetAllDimensions(layout).reduce((obj, dimension) => {
         obj[dimensionGetId(dimension)] = dimensionGetItemIds(dimension)
         return obj

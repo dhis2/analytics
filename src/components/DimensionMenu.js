@@ -1,27 +1,26 @@
-import React from 'react'
 import { MenuDivider, FlyoutMenu, MenuItem, Tooltip } from '@dhis2/ui'
-import i18n from '@dhis2/d2-i18n'
 import PropTypes from 'prop-types'
-
-import { getAvailableAxes } from '../modules/layoutUiRules'
-import { AXIS_ID_FILTERS } from '../modules/layout/axis'
+import React from 'react'
+import i18n from '../locales/index.js'
+import { getAxisNameByLayoutType } from '../modules/axis.js'
+import { AXIS_ID_FILTERS } from '../modules/layout/axis.js'
+import { getAvailableAxes } from '../modules/layoutUiRules/index.js'
 import {
     DIMENSION_ID_DATA,
     getPredefinedDimensionProp,
     DIMENSION_PROP_NO_ITEMS,
-} from '../modules/predefinedDimensions'
-import { getDisplayNameByVisType } from '../modules/visTypes'
-import { getAxisNameByLayoutType } from '../modules/axis'
-import { getLayoutTypeByVisType } from '../modules/visTypeToLayoutType'
+} from '../modules/predefinedDimensions.js'
+import { getDisplayNameByVisType } from '../modules/visTypes.js'
+import { getLayoutTypeByVisType } from '../modules/visTypeToLayoutType.js'
 
 const getAxisItemLabel = (axisName, isDimensionInLayout) =>
     isDimensionInLayout
         ? i18n.t('Move to {{axisName}}', { axisName })
         : i18n.t('Add to {{axisName}}', { axisName })
 
-const getDividerItem = key => <MenuDivider dense key={key} />
+const getDividerItem = (key) => <MenuDivider dense key={key} />
 
-const getUnavailableLabel = visType =>
+const getUnavailableLabel = (visType) =>
     i18n.t('Not available for {{visualizationType}}', {
         visualizationType: getDisplayNameByVisType(visType),
     })
@@ -47,18 +46,18 @@ const DimensionMenu = ({
     const availableAxisIds = getAvailableAxes(visType)
 
     const applicableAxisIds = availableAxisIds.filter(
-        axisId => axisId !== currentAxisId
+        (axisId) => axisId !== currentAxisId
     )
 
     const assignedCategoriesAvailableDestinations = getAvailableAxes(
         visType
-    ).filter(axis => axis !== AXIS_ID_FILTERS)
+    ).filter((axis) => axis !== AXIS_ID_FILTERS)
 
     const assignedCategoriesItemLabel = isAssignedCategoriesInLayout
         ? i18n.t('Remove Assigned Categories')
         : i18n.t('Add Assigned Categories')
 
-    const getRemoveMenuItem = onClick => (
+    const getRemoveMenuItem = (onClick) => (
         <MenuItem
             key="remove-menu-item"
             onClick={onClick}
@@ -78,7 +77,7 @@ const DimensionMenu = ({
                         dataTest={`${dataTest}-item-co-menu`}
                     >
                         {assignedCategoriesAvailableDestinations.map(
-                            destination => (
+                            (destination) => (
                                 <MenuItem
                                     key={destination}
                                     onClick={() => {
@@ -136,7 +135,7 @@ const DimensionMenu = ({
         menuItems.push(getDividerItem('assigned-categories-divider'))
 
     menuItems.push(
-        ...applicableAxisIds.map(axisId => (
+        ...applicableAxisIds.map((axisId) => (
             <MenuItem
                 key={`${dimensionId}-to-${axisId}`}
                 onClick={() => {

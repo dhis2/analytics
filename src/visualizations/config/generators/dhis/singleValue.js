@@ -1,6 +1,4 @@
 import { colors } from '@dhis2/ui'
-
-import { getColorByValueFromLegendSet } from '../../../../modules/legends'
 import {
     FONT_STYLE_VISUALIZATION_TITLE,
     FONT_STYLE_VISUALIZATION_SUBTITLE,
@@ -13,13 +11,20 @@ import {
     TEXT_ALIGN_RIGHT,
     TEXT_ALIGN_CENTER,
     mergeFontStyleWithDefault,
-} from '../../../../modules/fontStyle'
+} from '../../../../modules/fontStyle.js'
+import { getColorByValueFromLegendSet } from '../../../../modules/legends.js'
 
 const svgNS = 'http://www.w3.org/2000/svg'
 
-const generateValueSVG = (value, formattedValue, legendSet, y) => {
+const generateValueSVG = ({
+    value,
+    formattedValue,
+    subText,
+    legendSet,
+    noData,
+    y,
+}) => {
     const textSize = 300
-    const defaultFillColor = colors.grey900
 
     const svgValue = document.createElementNS(svgNS, 'svg')
     svgValue.setAttribute('xmlns', svgNS)
@@ -34,26 +39,55 @@ const generateValueSVG = (value, formattedValue, legendSet, y) => {
         svgValue.setAttribute('y', y)
     }
 
-    const fillColor = legendSet
-        ? getColorByValueFromLegendSet(legendSet, value)
-        : defaultFillColor
+    let fillColor = colors.grey900
 
-    const text = document.createElementNS(svgNS, 'text')
-    text.setAttribute('text-anchor', 'middle')
-    text.setAttribute('font-size', textSize)
-    text.setAttribute('font-weight', '300')
-    text.setAttribute('letter-spacing', '-5')
-    text.setAttribute('x', '50%')
-    text.setAttribute('fill', fillColor)
-    text.setAttribute('data-test', 'visualization-primary-value')
-    text.appendChild(document.createTextNode(formattedValue))
+    if (legendSet) {
+        fillColor = getColorByValueFromLegendSet(legendSet, value)
+    } else if (formattedValue === noData.text) {
+        fillColor = colors.grey600
+    }
 
-    svgValue.appendChild(text)
+    const textNode = document.createElementNS(svgNS, 'text')
+    textNode.setAttribute('text-anchor', 'middle')
+    textNode.setAttribute('font-size', textSize)
+    textNode.setAttribute('font-weight', '300')
+    textNode.setAttribute('letter-spacing', '-5')
+    textNode.setAttribute('x', '50%')
+    textNode.setAttribute('fill', fillColor)
+    textNode.setAttribute('data-test', 'visualization-primary-value')
+    textNode.appendChild(document.createTextNode(formattedValue))
+
+    svgValue.appendChild(textNode)
+
+    if (subText) {
+        const svgSubText = document.createElementNS(svgNS, 'svg')
+        const subTextSize = 40
+        svgSubText.setAttribute(
+            'viewBox',
+            `0 -50 ${textSize * 0.75 * formattedValue.length} ${textSize + 200}`
+        )
+
+        if (y) {
+            svgSubText.setAttribute('y', y)
+        }
+
+        const subTextNode = document.createElementNS(svgNS, 'text')
+        subTextNode.setAttribute('text-anchor', 'middle')
+        subTextNode.setAttribute('font-size', subTextSize)
+        subTextNode.setAttribute('x', '50%')
+        subTextNode.setAttribute('x', '50%')
+        subTextNode.setAttribute('fill', colors.grey600)
+        subTextNode.appendChild(document.createTextNode(subText))
+
+        svgSubText.appendChild(subTextNode)
+
+        svgValue.appendChild(svgSubText)
+    }
 
     return svgValue
 }
 
-const generateDashboardItem = (config, legendSet) => {
+const generateDashboardItem = (config, { legendSet, noData }) => {
     const container = document.createElement('div')
     container.setAttribute(
         'style',
@@ -79,13 +113,20 @@ const generateDashboardItem = (config, legendSet) => {
     }
 
     container.appendChild(
-        generateValueSVG(config.value, config.formattedValue, legendSet)
+        generateValueSVG({
+            value: config.value,
+            formattedValue: config.formattedValue,
+            subText: config.subText,
+            legendSet,
+            noData,
+            y: 40,
+        })
     )
 
     return container
 }
 
-const getTextAnchorFromTextAlign = textAlign => {
+const getTextAnchorFromTextAlign = (textAlign) => {
     switch (textAlign) {
         default:
         case TEXT_ALIGN_LEFT:
@@ -97,7 +138,7 @@ const getTextAnchorFromTextAlign = textAlign => {
     }
 }
 
-const getXFromTextAlign = textAlign => {
+const getXFromTextAlign = (textAlign) => {
     switch (textAlign) {
         default:
         case TEXT_ALIGN_LEFT:
@@ -109,7 +150,7 @@ const getXFromTextAlign = textAlign => {
     }
 }
 
-const generateDVItem = (config, legendSet, parentEl, fontStyle) => {
+const generateDVItem = (config, { legendSet, parentEl, fontStyle, noData }) => {
     const parentElBBox = parentEl.getBoundingClientRect()
 
     const width = parentElBBox.width
@@ -211,7 +252,14 @@ const generateDVItem = (config, legendSet, parentEl, fontStyle) => {
     }
 
     svg.appendChild(
-        generateValueSVG(config.value, config.formattedValue, legendSet, 20)
+        generateValueSVG({
+            value: config.value,
+            formattedValue: config.formattedValue,
+            subText: config.subText,
+            legendSet,
+            noData,
+            y: 20,
+        })
     )
 
     return svg
@@ -220,7 +268,7 @@ const generateDVItem = (config, legendSet, parentEl, fontStyle) => {
 export default function (
     config,
     parentEl,
-    { dashboard, legendSets, fontStyle }
+    { dashboard, legendSets, fontStyle, noData }
 ) {
     const legendSet = legendSets[0]
     parentEl.style.overflow = 'hidden'
@@ -228,6 +276,6 @@ export default function (
     parentEl.style.justifyContent = 'center'
 
     return dashboard
-        ? generateDashboardItem(config, legendSet)
-        : generateDVItem(config, legendSet, parentEl, fontStyle)
+        ? generateDashboardItem(config, { legendSet, noData })
+        : generateDVItem(config, { legendSet, parentEl, fontStyle, noData })
 }

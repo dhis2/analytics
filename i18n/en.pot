@@ -5,767 +5,1038 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2021-03-09T11:13:51.855Z\n"
-"PO-Revision-Date: 2021-03-09T11:13:51.855Z\n"
+"POT-Creation-Date: 2021-11-12T14:52:40.534Z\n"
+"PO-Revision-Date: 2021-11-12T14:52:40.534Z\n"
+
+msgid "view only"
+msgstr "view only"
+
+msgid "view and edit"
+msgstr "view and edit"
+
+msgid "all users ({{accessLevel}})"
+msgstr "all users ({{accessLevel}})"
+
+msgid "{{userOrGroup}} ({{accessLevel}})"
+msgstr "{{userOrGroup}} ({{accessLevel}})"
+
+msgid "Shared with {{commaSeparatedListOfUsersAndGroups}}"
+msgstr "Shared with {{commaSeparatedListOfUsersAndGroups}}"
+
+msgid "Not shared with any users or groups"
+msgstr "Not shared with any users or groups"
+
+msgid "About this visualization"
+msgstr "About this visualization"
+
+msgid "No description"
+msgstr "No description"
+
+msgid "Last updated {{time}}"
+msgstr "Last updated {{time}}"
+
+msgid "Created {{time}} by {{author}}"
+msgstr "Created {{time}} by {{author}}"
+
+msgid "Viewed {{count}} times"
+msgid_plural "Viewed {{count}} times"
+msgstr[0] "Viewed 1 time"
+msgstr[1] "Viewed {{count}} times"
+
+msgid "Notifications"
+msgstr "Notifications"
+
+msgid "You're subscribed and getting updates about new interpretations."
+msgstr "You're subscribed and getting updates about new interpretations."
+
+msgid "Unsubscribe"
+msgstr "Unsubscribe"
+
+msgid "Subscribe to get updates about new interpretations."
+msgstr "Subscribe to get updates about new interpretations."
+
+msgid "Subscribe"
+msgstr "Subscribe"
 
 msgid "Data Type"
-msgstr ""
+msgstr "Data Type"
 
 msgid "All types"
-msgstr ""
+msgstr "All types"
 
 msgid "Totals only"
-msgstr ""
+msgstr "Totals only"
 
 msgid "Details only"
-msgstr ""
+msgstr "Details only"
 
 msgid "Disaggregation"
-msgstr ""
+msgstr "Disaggregation"
 
 msgid "No data"
-msgstr ""
+msgstr "No data"
 
 msgid "Loading"
-msgstr ""
+msgstr "Loading"
 
 msgid "Search by data item name"
-msgstr ""
+msgstr "Search by data item name"
 
 msgid "No items selected"
-msgstr ""
+msgstr "No items selected"
 
 msgid "Selected Items"
-msgstr ""
+msgstr "Selected Items"
 
 msgid "No indicators found"
-msgstr ""
+msgstr "No indicators found"
 
 msgid "No data elements found"
-msgstr ""
+msgstr "No data elements found"
 
 msgid "No data sets found"
-msgstr ""
+msgstr "No data sets found"
 
 msgid "No event data items found"
-msgstr ""
+msgstr "No event data items found"
 
 msgid "No program indicators found"
-msgstr ""
+msgstr "No program indicators found"
 
 msgid "No indicators found for \"{{- searchTerm}}\""
-msgstr ""
+msgstr "No indicators found for \"{{- searchTerm}}\""
 
 msgid "No data elements found for \"{{- searchTerm}}\""
-msgstr ""
+msgstr "No data elements found for \"{{- searchTerm}}\""
 
 msgid "No data sets found for \"{{- searchTerm}}\""
-msgstr ""
+msgstr "No data sets found for \"{{- searchTerm}}\""
 
 msgid "No event data items found for \"{{- searchTerm}}\""
-msgstr ""
+msgstr "No event data items found for \"{{- searchTerm}}\""
 
 msgid "No program indicators found for \"{{- searchTerm}}\""
-msgstr ""
+msgstr "No program indicators found for \"{{- searchTerm}}\""
 
 msgid "Nothing found for \"{{- searchTerm}}\""
-msgstr ""
+msgstr "Nothing found for \"{{- searchTerm}}\""
 
 msgid "Metric type"
-msgstr ""
+msgstr "Metric type"
 
 msgid "All metrics"
-msgstr ""
+msgstr "All metrics"
 
 msgid "Move to {{axisName}}"
-msgstr ""
+msgstr "Move to {{axisName}}"
 
 msgid "Add to {{axisName}}"
-msgstr ""
+msgstr "Add to {{axisName}}"
 
 msgid "Not available for {{visualizationType}}"
-msgstr ""
+msgstr "Not available for {{visualizationType}}"
 
 msgid "Remove Assigned Categories"
-msgstr ""
+msgstr "Remove Assigned Categories"
 
 msgid "Add Assigned Categories"
-msgstr ""
+msgstr "Add Assigned Categories"
 
 msgid "Remove"
-msgstr ""
+msgstr "Remove"
 
 msgid "Filter dimensions"
-msgstr ""
+msgstr "Filter dimensions"
 
 msgid "Main dimensions"
-msgstr ""
+msgstr "Main dimensions"
 
 msgid "Your dimensions"
-msgstr ""
+msgstr "Your dimensions"
 
 msgid "Dimension recommended with selected data"
-msgstr ""
+msgstr "Dimension recommended with selected data"
 
-msgid "Nothing found in {{dimensionTitle}}"
+msgid "All items"
+msgstr "All items"
+
+msgid "Automatically include all items"
+msgstr "Automatically include all items"
+
+msgid ""
+"Select all {{- dimensionTitle}} items. With this option, new items added in "
+"the future will be automatically included."
 msgstr ""
+"Select all {{- dimensionTitle}} items. With this option, new items added in "
+"the future will be automatically included."
+
+msgid "Manually select items..."
+msgstr "Manually select items..."
+
+msgid "Nothing found in {{- dimensionTitle}}"
+msgstr "Nothing found in {{- dimensionTitle}}"
 
 msgid "Search"
-msgstr ""
+msgstr "Search"
 
 msgid "Nothing found for {{searchTerm}}"
-msgstr ""
+msgstr "Nothing found for {{searchTerm}}"
 
 msgid "Delete {{fileType}}"
-msgstr ""
+msgstr "Delete {{fileType}}"
 
-msgid "This {{fileType}} will be deleted. Continue?"
-msgstr ""
+msgid "This {{fileType}} and related interpretations will be deleted. Continue?"
+msgstr "This {{fileType}} and related interpretations will be deleted. Continue?"
 
 msgid "Cancel"
-msgstr ""
+msgstr "Cancel"
 
 msgid "Delete"
-msgstr ""
+msgstr "Delete"
 
 msgid "File"
-msgstr ""
+msgstr "File"
 
 msgid "New"
-msgstr ""
+msgstr "New"
 
 msgid "Open…"
-msgstr ""
+msgstr "Open…"
 
 msgid "Save"
-msgstr ""
+msgstr "Save"
 
 msgid "Save…"
-msgstr ""
+msgstr "Save…"
 
 msgid "Save as…"
-msgstr ""
+msgstr "Save as…"
 
 msgid "Rename…"
-msgstr ""
+msgstr "Rename…"
 
 msgid "Translate…"
-msgstr ""
+msgstr "Translate…"
 
 msgid "Share…"
-msgstr ""
+msgstr "Share…"
 
 msgid "Get link…"
-msgstr ""
+msgstr "Get link…"
 
 msgid "Open in this app"
-msgstr ""
+msgstr "Open in this app"
 
 msgid "Close"
-msgstr ""
+msgstr "Close"
 
 msgid "Rename {{fileType}}"
-msgstr ""
+msgstr "Rename {{fileType}}"
 
 msgid "Name"
-msgstr ""
+msgstr "Name"
 
 msgid "Description"
-msgstr ""
+msgstr "Description"
 
 msgid "Rename"
-msgstr ""
+msgstr "Rename"
 
 msgid "Save {{fileType}} as"
-msgstr ""
+msgstr "Save {{fileType}} as"
 
-msgid "Selected Data"
-msgstr ""
+msgid "Created by"
+msgstr "Created by"
 
-msgid "Deselect All"
-msgstr ""
+msgid "Anyone"
+msgstr "Anyone"
 
-msgid "Select all"
+msgid "Only you"
+msgstr "Only you"
+
+msgid "Others"
+msgstr "Others"
+
+msgid "Filter by name"
+msgstr "Filter by name"
+
+msgid "Created"
+msgstr "Created"
+
+msgid "Last updated"
+msgstr "Last updated"
+
+msgid "Type"
+msgstr "Type"
+
+msgid "Clear filters"
+msgstr "Clear filters"
+
+msgid "{{firstItemIndex}}-{{lastItemIndex}} of {{totalNumberOfItems}}"
+msgstr "{{firstItemIndex}}-{{lastItemIndex}} of {{totalNumberOfItems}}"
+
+msgid "All charts"
+msgstr "All charts"
+
+msgid "Open"
+msgstr "Open"
+
+msgid "Couldn't load items"
+msgstr "Couldn't load items"
+
+msgid ""
+"There was a problem loading items. Try again or contact your system "
+"administrator."
 msgstr ""
+"There was a problem loading items. Try again or contact your system "
+"administrator."
+
+msgid "No items found. Create a new to get started."
+msgstr "No items found. Create a new to get started."
+
+msgid ""
+"No items found. Try adjusting your search or filter options to find what "
+"you're looking for."
+msgstr ""
+"No items found. Try adjusting your search or filter options to find what "
+"you're looking for."
+
+msgid "Create new"
+msgstr "Create new"
+
+msgid "Open a visualization"
+msgstr "Open a visualization"
+
+msgid "Loading visualizations"
+msgstr "Loading visualizations"
+
+msgid "Couldn't load visualizations"
+msgstr "Couldn't load visualizations"
+
+msgid ""
+"There was a problem loading visualizations. Try again or contact your "
+"system administrator."
+msgstr ""
+"There was a problem loading visualizations. Try again or contact your "
+"system administrator."
+
+msgid "No visualizations found. Click New visualization to get started."
+msgstr "No visualizations found. Click New visualization to get started."
+
+msgid ""
+"No visualizations found. Try adjusting your search or filter options to "
+"find what you're looking for."
+msgstr ""
+"No visualizations found. Try adjusting your search or filter options to "
+"find what you're looking for."
+
+msgid "New visualization"
+msgstr "New visualization"
+
+msgid "Open a map"
+msgstr "Open a map"
+
+msgid "Loading maps"
+msgstr "Loading maps"
+
+msgid "Couldn't load maps"
+msgstr "Couldn't load maps"
+
+msgid ""
+"There was a problem loading maps. Try again or contact your system "
+"administrator."
+msgstr ""
+"There was a problem loading maps. Try again or contact your system "
+"administrator."
+
+msgid "No maps found. Click New map to get started."
+msgstr "No maps found. Click New map to get started."
+
+msgid ""
+"No maps found. Try adjusting your search or filter options to find what "
+"you're looking for."
+msgstr ""
+"No maps found. Try adjusting your search or filter options to find what "
+"you're looking for."
+
+msgid "New map"
+msgstr "New map"
+
+msgid "Open an event report"
+msgstr "Open an event report"
+
+msgid "Loading event reports"
+msgstr "Loading event reports"
+
+msgid "Couldn't load event reports"
+msgstr "Couldn't load event reports"
+
+msgid ""
+"There was a problem loading event reports. Try again or contact your system "
+"administrator."
+msgstr ""
+"There was a problem loading event reports. Try again or contact your system "
+"administrator."
+
+msgid "No event reports found. Click New event report to get started."
+msgstr "No event reports found. Click New event report to get started."
+
+msgid ""
+"No event reports found. Try adjusting your search or filter options to find "
+"what you're looking for."
+msgstr ""
+"No event reports found. Try adjusting your search or filter options to find "
+"what you're looking for."
+
+msgid "New event report"
+msgstr "New event report"
+
+msgid "Options"
+msgstr "Options"
+
+msgid "Hide"
+msgstr "Hide"
+
+msgid "Update"
+msgstr "Update"
+
+msgid "{{count}} org units"
+msgid_plural "{{count}} org units"
+msgstr[0] "{{count}} org unit"
+msgstr[1] "{{count}} org units"
+
+msgid "{{count}} levels"
+msgid_plural "{{count}} levels"
+msgstr[0] "{{count}} level"
+msgstr[1] "{{count}} levels"
+
+msgid "{{count}} groups"
+msgid_plural "{{count}} groups"
+msgstr[0] "{{count}} group"
+msgstr[1] "{{count}} groups"
+
+msgid "Selected: {{commaSeparatedListOfOrganisationUnits}}"
+msgstr "Selected: {{commaSeparatedListOfOrganisationUnits}}"
+
+msgid "Nothing selected"
+msgstr "Nothing selected"
+
+msgid "User organisation unit"
+msgstr "User organisation unit"
+
+msgid "User sub-units"
+msgstr "User sub-units"
+
+msgid "User sub-x2-units"
+msgstr "User sub-x2-units"
+
+msgid "Select a level"
+msgstr "Select a level"
+
+msgid "Select a group"
+msgstr "Select a group"
+
+msgid "Deselect all"
+msgstr "Deselect all"
 
 msgid "Period type"
-msgstr ""
+msgstr "Period type"
 
 msgid "Year"
-msgstr ""
+msgstr "Year"
 
 msgid "Select year"
-msgstr ""
+msgstr "Select year"
 
 msgid "Period"
-msgstr ""
+msgstr "Period"
 
 msgid "Relative periods"
-msgstr ""
+msgstr "Relative periods"
 
 msgid "Fixed periods"
-msgstr ""
+msgstr "Fixed periods"
 
 msgid "Selected Periods"
-msgstr ""
+msgstr "Selected Periods"
 
 msgid "No periods selected"
-msgstr ""
+msgstr "No periods selected"
 
 msgid "January"
-msgstr ""
+msgstr "January"
 
 msgid "February"
-msgstr ""
+msgstr "February"
 
 msgid "March"
-msgstr ""
+msgstr "March"
 
 msgid "April"
-msgstr ""
+msgstr "April"
 
 msgid "May"
-msgstr ""
+msgstr "May"
 
 msgid "June"
-msgstr ""
+msgstr "June"
 
 msgid "July"
-msgstr ""
+msgstr "July"
 
 msgid "August"
-msgstr ""
+msgstr "August"
 
 msgid "September"
-msgstr ""
+msgstr "September"
 
 msgid "October"
-msgstr ""
+msgstr "October"
 
 msgid "November"
-msgstr ""
+msgstr "November"
 
 msgid "December"
-msgstr ""
+msgstr "December"
 
 msgid "Week {{weekNumber}}"
-msgstr ""
+msgstr "Week {{weekNumber}}"
 
 msgid "Bi-Week {{biWeekNumber}}"
-msgstr ""
+msgstr "Bi-Week {{biWeekNumber}}"
 
 msgid "Daily"
-msgstr ""
+msgstr "Daily"
 
 msgid "Weekly"
-msgstr ""
-
-msgid "Bi-weekly"
-msgstr ""
+msgstr "Weekly"
 
 msgid "Weekly (Start Wednesday)"
-msgstr ""
+msgstr "Weekly (Start Wednesday)"
 
 msgid "Weekly (Start Thursday)"
-msgstr ""
+msgstr "Weekly (Start Thursday)"
 
 msgid "Weekly (Start Saturday)"
-msgstr ""
+msgstr "Weekly (Start Saturday)"
 
 msgid "Weekly (Start Sunday)"
-msgstr ""
+msgstr "Weekly (Start Sunday)"
+
+msgid "Bi-weekly"
+msgstr "Bi-weekly"
 
 msgid "Monthly"
-msgstr ""
+msgstr "Monthly"
 
 msgid "Bi-monthly"
-msgstr ""
+msgstr "Bi-monthly"
 
 msgid "Quarterly"
-msgstr ""
+msgstr "Quarterly"
 
 msgid "Six-monthly"
-msgstr ""
+msgstr "Six-monthly"
 
 msgid "Six-monthly April"
-msgstr ""
+msgstr "Six-monthly April"
 
 msgid "Yearly"
-msgstr ""
+msgstr "Yearly"
 
 msgid "Financial year (Start November)"
-msgstr ""
+msgstr "Financial year (Start November)"
 
 msgid "Financial year (Start October)"
-msgstr ""
+msgstr "Financial year (Start October)"
 
 msgid "Financial year (Start July)"
-msgstr ""
+msgstr "Financial year (Start July)"
 
 msgid "Financial year (Start April)"
-msgstr ""
+msgstr "Financial year (Start April)"
 
 msgid "Today"
-msgstr ""
+msgstr "Today"
 
 msgid "Yesterday"
-msgstr ""
+msgstr "Yesterday"
 
 msgid "Last 3 days"
-msgstr ""
+msgstr "Last 3 days"
 
 msgid "Last 7 days"
-msgstr ""
+msgstr "Last 7 days"
 
 msgid "Last 14 days"
-msgstr ""
+msgstr "Last 14 days"
 
 msgid "Last 30 days"
-msgstr ""
+msgstr "Last 30 days"
 
 msgid "Last 60 days"
-msgstr ""
+msgstr "Last 60 days"
 
 msgid "Last 90 days"
-msgstr ""
+msgstr "Last 90 days"
 
 msgid "Last 180 days"
-msgstr ""
+msgstr "Last 180 days"
 
 msgid "This week"
-msgstr ""
+msgstr "This week"
 
 msgid "Last week"
-msgstr ""
+msgstr "Last week"
 
 msgid "Last 4 weeks"
-msgstr ""
+msgstr "Last 4 weeks"
 
 msgid "Last 12 weeks"
-msgstr ""
+msgstr "Last 12 weeks"
 
 msgid "Last 52 weeks"
-msgstr ""
+msgstr "Last 52 weeks"
 
 msgid "Weeks this year"
-msgstr ""
+msgstr "Weeks this year"
 
 msgid "This bi-week"
-msgstr ""
+msgstr "This bi-week"
 
 msgid "Last bi-week"
-msgstr ""
+msgstr "Last bi-week"
 
 msgid "Last 4 bi-weeks"
-msgstr ""
+msgstr "Last 4 bi-weeks"
 
 msgid "This month"
-msgstr ""
+msgstr "This month"
 
 msgid "Last month"
-msgstr ""
+msgstr "Last month"
 
 msgid "Last 3 months"
-msgstr ""
+msgstr "Last 3 months"
 
 msgid "Last 6 months"
-msgstr ""
+msgstr "Last 6 months"
 
 msgid "Last 12 months"
-msgstr ""
+msgstr "Last 12 months"
 
 msgid "Months this year"
-msgstr ""
+msgstr "Months this year"
 
 msgid "This bi-month"
-msgstr ""
+msgstr "This bi-month"
 
 msgid "Last bi-month"
-msgstr ""
+msgstr "Last bi-month"
 
 msgid "Last 6 bi-months"
-msgstr ""
+msgstr "Last 6 bi-months"
 
 msgid "Bi-months this year"
-msgstr ""
+msgstr "Bi-months this year"
 
 msgid "This quarter"
-msgstr ""
+msgstr "This quarter"
 
 msgid "Last quarter"
-msgstr ""
+msgstr "Last quarter"
 
 msgid "Last 4 quarters"
-msgstr ""
+msgstr "Last 4 quarters"
 
 msgid "Quarters this year"
-msgstr ""
+msgstr "Quarters this year"
 
 msgid "This six-month"
-msgstr ""
+msgstr "This six-month"
 
 msgid "Last six-month"
-msgstr ""
+msgstr "Last six-month"
 
 msgid "Last 2 six-month"
-msgstr ""
+msgstr "Last 2 six-month"
 
 msgid "This financial year"
-msgstr ""
+msgstr "This financial year"
 
 msgid "Last financial year"
-msgstr ""
+msgstr "Last financial year"
 
 msgid "Last 5 financial years"
-msgstr ""
+msgstr "Last 5 financial years"
 
 msgid "This year"
-msgstr ""
+msgstr "This year"
 
 msgid "Last year"
-msgstr ""
+msgstr "Last year"
 
 msgid "Last 5 years"
-msgstr ""
+msgstr "Last 5 years"
+
+msgid "Last 10 years"
+msgstr "Last 10 years"
 
 msgid "Days"
-msgstr ""
+msgstr "Days"
 
 msgid "Weeks"
-msgstr ""
+msgstr "Weeks"
 
 msgid "Bi-weeks"
-msgstr ""
+msgstr "Bi-weeks"
 
 msgid "Months"
-msgstr ""
+msgstr "Months"
 
 msgid "Bi-months"
-msgstr ""
+msgstr "Bi-months"
 
 msgid "Quarters"
-msgstr ""
+msgstr "Quarters"
 
 msgid "Six-months"
-msgstr ""
+msgstr "Six-months"
 
 msgid "Financial Years"
-msgstr ""
+msgstr "Financial Years"
 
 msgid "Years"
-msgstr ""
+msgstr "Years"
 
 msgid "Series"
-msgstr ""
+msgstr "Series"
 
 msgid "Category"
-msgstr ""
+msgstr "Category"
 
 msgid "Filter"
-msgstr ""
+msgstr "Filter"
 
 msgid "Columns"
-msgstr ""
+msgstr "Columns"
 
 msgid "Rows"
-msgstr ""
+msgstr "Rows"
 
 msgid "Points"
-msgstr ""
+msgstr "Points"
 
 msgid "Reporting rate"
-msgstr ""
+msgstr "Reporting rate"
 
 msgid "Reporting rate on time"
-msgstr ""
+msgstr "Reporting rate on time"
 
 msgid "Actual reports"
-msgstr ""
+msgstr "Actual reports"
 
 msgid "Actual reports on time"
-msgstr ""
+msgstr "Actual reports on time"
 
 msgid "Expected reports"
-msgstr ""
+msgstr "Expected reports"
 
 msgid "Program"
-msgstr ""
+msgstr "Program"
 
 msgid "Select a program"
-msgstr ""
+msgstr "Select a program"
 
 msgid "Indicators"
-msgstr ""
+msgstr "Indicators"
 
 msgid "Indicator group"
-msgstr ""
+msgstr "Indicator group"
 
 msgid "All groups"
-msgstr ""
+msgstr "All groups"
 
 msgid "Indicator"
-msgstr ""
+msgstr "Indicator"
 
 msgid "No indicator groups found"
-msgstr ""
+msgstr "No indicator groups found"
 
 msgid "Loading indicator groups"
-msgstr ""
+msgstr "Loading indicator groups"
 
 msgid "Data elements"
-msgstr ""
+msgstr "Data elements"
 
 msgid "Data element group"
-msgstr ""
+msgstr "Data element group"
 
 msgid "Data element"
-msgstr ""
+msgstr "Data element"
 
 msgid "No data element groups found"
-msgstr ""
+msgstr "No data element groups found"
 
 msgid "Loading data element groups"
-msgstr ""
+msgstr "Loading data element groups"
 
 msgid "Data sets"
-msgstr ""
+msgstr "Data sets"
 
 msgid "Data set"
-msgstr ""
+msgstr "Data set"
 
 msgid "All data sets"
-msgstr ""
+msgstr "All data sets"
 
 msgid "Loading data sets"
-msgstr ""
+msgstr "Loading data sets"
 
 msgid "Event data items"
-msgstr ""
+msgstr "Event data items"
 
 msgid "All programs"
-msgstr ""
+msgstr "All programs"
 
 msgid "Event data item"
-msgstr ""
+msgstr "Event data item"
 
 msgid "No programs found"
-msgstr ""
+msgstr "No programs found"
 
 msgid "Loading programs"
-msgstr ""
+msgstr "Loading programs"
 
 msgid "Program indicators"
-msgstr ""
+msgstr "Program indicators"
 
 msgid "Program indicator"
-msgstr ""
+msgstr "Program indicator"
 
 msgid "Extra Small"
-msgstr ""
+msgstr "Extra Small"
 
 msgid "Small"
-msgstr ""
+msgstr "Small"
 
 msgid "Regular"
-msgstr ""
+msgstr "Regular"
 
 msgid "Large"
-msgstr ""
+msgstr "Large"
 
 msgid "Extra Large"
-msgstr ""
+msgstr "Extra Large"
 
 msgid "Left"
-msgstr ""
+msgstr "Left"
 
 msgid "Center"
-msgstr ""
+msgstr "Center"
 
 msgid "Right"
-msgstr ""
+msgstr "Right"
 
 msgid "Start"
-msgstr ""
+msgstr "Start"
 
 msgid "Middle"
-msgstr ""
+msgstr "Middle"
 
 msgid "End"
-msgstr ""
+msgstr "End"
 
 msgid "Top"
-msgstr ""
+msgstr "Top"
 
 msgid "Bottom"
-msgstr ""
+msgstr "Bottom"
 
 msgid "{{dynamicOuNames}} and {{lastOuName}}"
-msgstr ""
+msgstr "{{dynamicOuNames}} and {{lastOuName}}"
 
 msgid "{{allDynamicOuNames}} levels"
-msgstr ""
+msgstr "{{allDynamicOuNames}} levels"
 
 msgid "{{allDynamicOuNames}} groups"
-msgstr ""
+msgstr "{{allDynamicOuNames}} groups"
 
 msgid "{{allDynamicOuNames}} levels in {{staticOuNames}}"
-msgstr ""
+msgstr "{{allDynamicOuNames}} levels in {{staticOuNames}}"
 
 msgid "{{allDynamicOuNames}} groups in {{staticOuNames}}"
-msgstr ""
+msgstr "{{allDynamicOuNames}} groups in {{staticOuNames}}"
 
 msgid "{{percentage}}% of total x values"
-msgstr ""
+msgstr "{{percentage}}% of total x values"
 
 msgid "{{percentage}}% of total y values"
-msgstr ""
+msgstr "{{percentage}}% of total y values"
 
 msgid "{{thresholdFactor}} × IQR Q1"
-msgstr ""
+msgstr "{{thresholdFactor}} × IQR Q1"
 
 msgid "{{thresholdFactor}} × IQR Q3"
-msgstr ""
+msgstr "{{thresholdFactor}} × IQR Q3"
 
 msgid "{{thresholdFactor}} × Modified Z-score low"
-msgstr ""
+msgstr "{{thresholdFactor}} × Modified Z-score low"
 
 msgid "{{thresholdFactor}} × Modified Z-score high"
-msgstr ""
+msgstr "{{thresholdFactor}} × Modified Z-score high"
 
 msgid "{{thresholdFactor}} × Z-score low"
-msgstr ""
+msgstr "{{thresholdFactor}} × Z-score low"
 
 msgid "{{thresholdFactor}} × Z-score high"
-msgstr ""
+msgstr "{{thresholdFactor}} × Z-score high"
 
 msgid "Data"
-msgstr ""
+msgstr "Data"
 
 msgid "Organisation Unit"
-msgstr ""
+msgstr "Organisation Unit"
 
 msgid "Assigned Categories"
-msgstr ""
+msgstr "Assigned Categories"
 
 msgid "Pivot table"
-msgstr ""
+msgstr "Pivot table"
 
 msgid "Column"
-msgstr ""
+msgstr "Column"
 
 msgid "Stacked column"
-msgstr ""
+msgstr "Stacked column"
 
 msgid "Bar"
-msgstr ""
+msgstr "Bar"
 
 msgid "Stacked bar"
-msgstr ""
+msgstr "Stacked bar"
 
 msgid "Line"
-msgstr ""
+msgstr "Line"
 
 msgid "Area"
-msgstr ""
+msgstr "Area"
 
 msgid "Stacked area"
-msgstr ""
+msgstr "Stacked area"
 
 msgid "Pie"
-msgstr ""
+msgstr "Pie"
 
 msgid "Radar"
-msgstr ""
+msgstr "Radar"
 
 msgid "Gauge"
-msgstr ""
+msgstr "Gauge"
 
 msgid "Year over year (line)"
-msgstr ""
+msgstr "Year over year (line)"
 
 msgid "Year over year (column)"
-msgstr ""
+msgstr "Year over year (column)"
 
 msgid "Single value"
-msgstr ""
+msgstr "Single value"
 
 msgid "Scatter"
-msgstr ""
+msgstr "Scatter"
 
 msgid "View data and indicators in a manipulatable table."
-msgstr ""
+msgstr "View data and indicators in a manipulatable table."
 
 msgid "Compare sizes of related elements vertically. Recommend period as filter."
-msgstr ""
+msgstr "Compare sizes of related elements vertically. Recommend period as filter."
 
 msgid ""
 "Compare parts of a whole against related elements vertically. Recommend "
 "data or org. unit as series."
 msgstr ""
+"Compare parts of a whole against related elements vertically. Recommend "
+"data or org. unit as series."
 
 msgid "Compare sizes of related elements horizontally. Recommend period as filter."
-msgstr ""
+msgstr "Compare sizes of related elements horizontally. Recommend period as filter."
 
 msgid ""
 "Compare parts of a whole against related elements horizontally. Recommend "
 "data or org. unit as series."
 msgstr ""
+"Compare parts of a whole against related elements horizontally. Recommend "
+"data or org. unit as series."
 
 msgid "Track or compare changes over time. Recommend period as category."
-msgstr ""
+msgstr "Track or compare changes over time. Recommend period as category."
 
 msgid ""
 "Track or compare parts of a whole over time. Recommend data as series and "
 "period as category."
 msgstr ""
+"Track or compare parts of a whole over time. Recommend data as series and "
+"period as category."
 
 msgid ""
 "Compare parts of a whole at a single point in time. Recommend period as "
 "filter."
 msgstr ""
+"Compare parts of a whole at a single point in time. Recommend period as "
+"filter."
 
 msgid "Compare several items against multiple variables."
-msgstr ""
+msgstr "Compare several items against multiple variables."
 
 msgid ""
 "Compare a percentage indicator against a 100% scale. Recommend period as "
 "filter."
 msgstr ""
+"Compare a percentage indicator against a 100% scale. Recommend period as "
+"filter."
 
 msgid "Compare changes over time between multiple time periods."
-msgstr ""
+msgstr "Compare changes over time between multiple time periods."
 
 msgid "Display a single value. Recommend relative period to show latest data."
-msgstr ""
+msgstr "Display a single value. Recommend relative period to show latest data."
 
 msgid ""
 "View the relationship between two data items at a place or time. "
 "Recommended for finding outliers."
 msgstr ""
+"View the relationship between two data items at a place or time. "
+"Recommended for finding outliers."
 
 msgid "{{seriesName}} (trend)"
-msgstr ""
+msgstr "{{seriesName}} (trend)"
 
 msgid "Trend"
-msgstr ""
+msgstr "Trend"
 
 msgid "No legend for this series"
-msgstr ""
+msgstr "No legend for this series"
 
 msgid "and {{amount}} more..."
-msgstr ""
+msgstr "and {{amount}} more..."
 
 msgid "Linear Regression"
-msgstr ""
+msgstr "Linear Regression"
 
 msgid "Target"
-msgstr ""
+msgstr "Target"
 
 msgid "Base"
-msgstr ""
+msgstr "Base"
 
 msgid "Axis {{axisId}}"
-msgstr ""
+msgstr "Axis {{axisId}}"
+
+msgid "{{count}} items"
+msgid_plural "{{count}} items"
+msgstr[0] "{{count}} item"
+msgstr[1] "{{count}} items"
 
 msgid "Reset zoom"
-msgstr ""
+msgstr "Reset zoom"

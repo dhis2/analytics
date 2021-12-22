@@ -1,5 +1,5 @@
-import React from 'react'
 import { shallow } from 'enzyme'
+import React from 'react'
 import FixedPeriodSelect from '../FixedPeriodSelect.js'
 
 describe('The Fixed Period Single Select component', () => {

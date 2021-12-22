@@ -1,8 +1,6 @@
-import objectClean from 'd2-utilizr/lib/objectClean'
 import isNumeric from 'd2-utilizr/lib/isNumeric'
 import isString from 'd2-utilizr/lib/isString'
-
-import { isVerticalType } from '../../../../modules/visTypes'
+import objectClean from 'd2-utilizr/lib/objectClean'
 import {
     FONT_STYLE_AXIS_LABELS,
     FONT_STYLE_REGRESSION_LINE_LABEL,
@@ -15,20 +13,21 @@ import {
     TEXT_ALIGN_CENTER,
     TEXT_ALIGN_RIGHT,
     mergeFontStyleWithDefault,
-} from '../../../../modules/fontStyle'
-import { getTextAlignOption } from './getTextAlignOption'
-import getFormatter from './getFormatter'
+} from '../../../../modules/fontStyle.js'
+import { isVerticalType } from '../../../../modules/visTypes.js'
+import getFormatter from './getFormatter.js'
+import { getTextAlignOption } from './getTextAlignOption.js'
 
 const DEFAULT_MIN_VALUE = 0
 const DEFAULT_GRIDLINE_COLOR = '#F1F1F1'
 
-const getPlotLineStyle = fontStyle => ({
+const getPlotLineStyle = (fontStyle) => ({
     color: fontStyle[FONT_STYLE_OPTION_TEXT_COLOR] || '#000',
     width: 2,
     zIndex: 4,
 })
 
-const getPlotLineLabelStyle = fontStyle => ({
+const getPlotLineLabelStyle = (fontStyle) => ({
     y: -7,
     style: {
         color: fontStyle[FONT_STYLE_OPTION_TEXT_COLOR],
@@ -42,7 +41,7 @@ const getPlotLineLabelStyle = fontStyle => ({
     },
 })
 
-const getLabelOffsetFromTextAlign = textAlign => {
+const getLabelOffsetFromTextAlign = (textAlign) => {
     switch (textAlign) {
         case TEXT_ALIGN_LEFT:
             return 10
@@ -77,7 +76,7 @@ export const getMinValue = (minValue, dataValues, outlierLineMin) => {
         return outlierLineMin
     }
 
-    return dataValues?.some(value => value < DEFAULT_MIN_VALUE)
+    return dataValues?.some((value) => value < DEFAULT_MIN_VALUE)
         ? undefined
         : DEFAULT_MIN_VALUE
 }
@@ -92,7 +91,7 @@ export const getMaxValue = (maxValue, dataValues, outlierLineMax) => {
         return outlierLineMax
     }
 
-    return dataValues?.every(value => value < DEFAULT_MIN_VALUE)
+    return dataValues?.every((value) => value < DEFAULT_MIN_VALUE)
         ? DEFAULT_MIN_VALUE
         : undefined
 }
@@ -130,7 +129,7 @@ export const getRegressionLine = (regressionLine = {}, visType, isVertical) => {
         : undefined
 }
 
-export const getLabels = axis => {
+export const getLabels = (axis) => {
     const fontStyle = mergeFontStyleWithDefault(
         axis.label?.fontStyle,
         FONT_STYLE_AXIS_LABELS
