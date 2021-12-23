@@ -1,3 +1,10 @@
+# [21.2.0](https://github.com/dhis2/analytics/compare/v21.1.1...v21.2.0) (2021-12-23)
+
+
+### Features
+
+* use new translations dialog (TECH-873) ([#1105](https://github.com/dhis2/analytics/issues/1105)) ([1e1a984](https://github.com/dhis2/analytics/commit/1e1a98429663241487ad66c56d3aab3914b8cbc6))
+
 ## [21.1.1](https://github.com/dhis2/analytics/compare/v21.1.0...v21.1.1) (2021-12-22)
 
 
