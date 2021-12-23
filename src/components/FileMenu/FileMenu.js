@@ -28,7 +28,6 @@ import { SaveAsDialog } from './SaveAsDialog.js'
 import { supportedFileTypes } from './utils.js'
 
 export const FileMenu = ({
-    d2, // to be removed as soon as TranslateDialog and FavoritesDialog are rewritten
     currentUser,
     fileType,
     fileObject,
@@ -352,7 +351,6 @@ FileMenu.defaultProps = {
 
 FileMenu.propTypes = {
     currentUser: PropTypes.object,
-    d2: PropTypes.object,
     fileObject: PropTypes.object,
     fileType: PropTypes.oneOf(supportedFileTypes),
     onDelete: PropTypes.func,
