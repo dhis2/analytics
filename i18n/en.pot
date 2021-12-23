@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2021-11-12T14:52:40.534Z\n"
-"PO-Revision-Date: 2021-11-12T14:52:40.534Z\n"
+"POT-Creation-Date: 2021-12-10T13:58:09.736Z\n"
+"PO-Revision-Date: 2021-12-10T13:58:09.736Z\n"
 
 msgid "view only"
 msgstr "view only"
@@ -708,6 +708,27 @@ msgstr "Financial Years"
 
 msgid "Years"
 msgstr "Years"
+
+msgid "Translating to"
+msgstr "Translating to"
+
+msgid "Choose a locale"
+msgstr "Choose a locale"
+
+msgid "Base locale reference"
+msgstr "Base locale reference"
+
+msgid "Choose a locale to translate from the menu above"
+msgstr "Choose a locale to translate from the menu above"
+
+msgid "Translate: {{objectName}}"
+msgstr "Translate: {{objectName}}"
+
+msgid "Save translations"
+msgstr "Save translations"
+
+msgid "Retry"
+msgstr "Retry"
 
 msgid "Series"
 msgstr "Series"
