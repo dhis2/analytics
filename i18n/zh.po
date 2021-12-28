@@ -699,25 +699,25 @@ msgid "Years"
 msgstr "年"
 
 msgid "Translating to"
-msgstr ""
+msgstr "翻译成"
 
 msgid "Choose a locale"
-msgstr ""
+msgstr "选择语言环境"
 
 msgid "Base locale reference"
-msgstr ""
+msgstr "基本语言环境参考"
 
 msgid "Choose a locale to translate from the menu above"
-msgstr ""
+msgstr "从上面的菜单中选择要翻译的语言环境"
 
 msgid "Translate: {{objectName}}"
-msgstr ""
+msgstr "翻译：{{objectName}}"
 
 msgid "Save translations"
-msgstr ""
+msgstr "保存翻译"
 
 msgid "Retry"
-msgstr ""
+msgstr "重试"
 
 msgid "Series"
 msgstr "系列"
