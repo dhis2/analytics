@@ -29,18 +29,9 @@ export const TranslationForm = ({
 }) => {
     const [newTranslations, setNewTranslations] = useState()
     const [translationLocale, setTranslationLocale] = useState()
+    const [fieldsTranslations, setFieldsTranslations] = useState({})
 
     const { show: showError } = useAlert((error) => error, { critical: true })
-
-    const formatFieldLabel = (field) => {
-        field
-            .replace(/[a-z][A-Z]/g, (match) =>
-                [match.charAt(0), match.charAt(1)].join(' ')
-            )
-            .toLowerCase()
-
-        return field.charAt(0).toUpperCase() + field.slice(1)
-    }
 
     const camelCaseToUnderscores = (field) =>
         field
@@ -82,6 +73,18 @@ export const TranslationForm = ({
         )
     }
 
+    const [fetchFieldsTranslations] = useDataMutation(
+        {
+            resource: 'i18n',
+            type: 'create',
+            data: fieldsToTranslate.map(camelCaseToUnderscores),
+        },
+        {
+            onComplete: (res) => setFieldsTranslations(res),
+            onError: (error) => showError(error),
+        }
+    )
+
     const translationsMutationRef = useRef({
         resource: `${resource}/translations`,
         type: 'update',
@@ -95,9 +98,7 @@ export const TranslationForm = ({
                 onTranslationSaved()
                 onClose()
             },
-            onError: (error) => {
-                showError(error)
-            },
+            onError: (error) => showError(error),
         }
     )
 
@@ -122,6 +123,13 @@ export const TranslationForm = ({
         []
     )
 
+    useEffect(() => {
+        const fetchTranslations = () =>
+            fetchFieldsTranslations(fieldsToTranslate)
+
+        fetchTranslations()
+    }, [fieldsToTranslate])
+
     useEffect(() => setNewTranslations(translations), [translations])
 
     return (
@@ -145,30 +153,26 @@ export const TranslationForm = ({
                         {fieldsToTranslate.map((field, index) => (
                             <DataTableRow key={field}>
                                 <DataTableCell>
-                                    <div className="">
-                                        <InputField
-                                            label={formatFieldLabel(field)}
-                                            value={objectToTranslate[field]}
-                                            readOnly
-                                        />
-                                    </div>
+                                    <InputField
+                                        label={fieldsTranslations[field]}
+                                        value={objectToTranslate[field]}
+                                        readOnly
+                                    />
                                 </DataTableCell>
                                 {translationLocale && (
                                     <DataTableCell>
-                                        <div className="">
-                                            <InputField
-                                                label={formatFieldLabel(field)}
-                                                value={getTranslationForField(
-                                                    field
-                                                )}
-                                                onChange={({ value }) =>
-                                                    setTranslationForField(
-                                                        field,
-                                                        value
-                                                    )
-                                                }
-                                            />
-                                        </div>
+                                        <InputField
+                                            label={fieldsTranslations[field]}
+                                            value={getTranslationForField(
+                                                field
+                                            )}
+                                            onChange={({ value }) =>
+                                                setTranslationForField(
+                                                    field,
+                                                    value
+                                                )
+                                            }
+                                        />
                                     </DataTableCell>
                                 )}
                                 {!translationLocale && index === 0 && (
