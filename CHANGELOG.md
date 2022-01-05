@@ -1,3 +1,10 @@
+## [21.2.3](https://github.com/dhis2/analytics/compare/v21.2.2...v21.2.3) (2022-01-05)
+
+
+### Bug Fixes
+
+* fetch translations for field labels from api ([#1119](https://github.com/dhis2/analytics/issues/1119)) ([e2fcacc](https://github.com/dhis2/analytics/commit/e2fcaccbd058a8e85a99e032f6341e7f15a83b94))
+
 ## [21.2.2](https://github.com/dhis2/analytics/compare/v21.2.1...v21.2.2) (2021-12-28)
 
 
