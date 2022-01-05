@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-12-10T13:58:09.736Z\n"
+"POT-Creation-Date: 2022-01-03T11:09:02.270Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: phil_dhis2, 2021\n"
 "Language-Team: Burmese (https://www.transifex.com/hisp-uio/teams/100509/my/)\n"
@@ -713,6 +713,9 @@ msgid "Translate: {{objectName}}"
 msgstr ""
 
 msgid "Save translations"
+msgstr ""
+
+msgid "Could not load translations"
 msgstr ""
 
 msgid "Retry"
