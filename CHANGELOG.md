@@ -1,3 +1,10 @@
+## [2.4.46](https://github.com/dhis2/analytics/compare/v2.4.45...v2.4.46) (2022-01-07)
+
+
+### Bug Fixes
+
+* hide empty categories with non-available data DHIS2-8174 ([#1121](https://github.com/dhis2/analytics/issues/1121)) ([c80f3ba](https://github.com/dhis2/analytics/commit/c80f3ba6d833ea38f51d4e695832831ebcbc0c1e))
+
 ## [2.4.45](https://github.com/dhis2/analytics/compare/v2.4.44...v2.4.45) (2021-11-25)
 
 
