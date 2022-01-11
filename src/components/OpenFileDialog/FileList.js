@@ -4,14 +4,14 @@ import React from 'react'
 import { VisTypeIcon } from '../VisTypeIcon.js'
 import { DateField } from './DateField.js'
 
-export const FileList = ({ type, data, onSelect }) => (
+export const FileList = ({ data, onSelect, showVisTypeColumn }) => (
     <>
         {data.map((visualization) => (
             <DataTableRow key={visualization.id}>
                 <DataTableCell onClick={() => onSelect(visualization.id)}>
                     {visualization.displayName}
                 </DataTableCell>
-                {type === 'visualization' && (
+                {showVisTypeColumn && (
                     <DataTableCell align="center">
                         <VisTypeIcon
                             type={visualization.type}
@@ -41,8 +41,8 @@ FileList.propTypes = {
             type: PropTypes.string,
         })
     ).isRequired,
-    type: PropTypes.string.isRequired,
     onSelect: PropTypes.func.isRequired,
+    showVisTypeColumn: PropTypes.bool,
 }
 
 export default FileList

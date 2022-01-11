@@ -29,8 +29,10 @@ import { supportedFileTypes } from './utils.js'
 
 export const FileMenu = ({
     currentUser,
+    defaultFilterVisType,
     fileType,
     fileObject,
+    filterVisTypes,
     onNew,
     onOpen,
     onSave,
@@ -147,6 +149,8 @@ export const FileMenu = ({
             <OpenFileDialog
                 open={currentDialog === 'open'}
                 type={fileType}
+                filterVisTypes={filterVisTypes}
+                defaultFilterVisType={defaultFilterVisType}
                 onClose={onDialogClose}
                 onFileSelect={(id) => {
                     onOpen(id)
@@ -351,8 +355,10 @@ FileMenu.defaultProps = {
 
 FileMenu.propTypes = {
     currentUser: PropTypes.object,
+    defaultFilterVisType: PropTypes.string,
     fileObject: PropTypes.object,
     fileType: PropTypes.oneOf(supportedFileTypes),
+    filterVisTypes: PropTypes.array,
     onDelete: PropTypes.func,
     onError: PropTypes.func,
     onNew: PropTypes.func,

@@ -33,6 +33,8 @@ export const VIS_TYPE_SINGLE_VALUE = 'SINGLE_VALUE'
 export const VIS_TYPE_PIVOT_TABLE = 'PIVOT_TABLE'
 export const VIS_TYPE_SCATTER = 'SCATTER'
 export const VIS_TYPE_LINE_LIST = 'LINE_LIST'
+export const VIS_TYPE_ALL = 'ALL'
+export const VIS_TYPE_CHARTS = 'CHARTS'
 
 export const visTypeDisplayNames = {
     [VIS_TYPE_PIVOT_TABLE]: i18n.t('Pivot table'),
@@ -50,6 +52,9 @@ export const visTypeDisplayNames = {
     [VIS_TYPE_YEAR_OVER_YEAR_COLUMN]: i18n.t('Year over year (column)'),
     [VIS_TYPE_SINGLE_VALUE]: i18n.t('Single value'),
     [VIS_TYPE_SCATTER]: i18n.t('Scatter'),
+    [VIS_TYPE_LINE_LIST]: i18n.t('Line list'),
+    [VIS_TYPE_ALL]: i18n.t('All types'),
+    [VIS_TYPE_CHARTS]: i18n.t('All charts'),
 }
 
 export const visTypeDescriptions = {
@@ -98,6 +103,10 @@ export const visTypeDescriptions = {
     [VIS_TYPE_SCATTER]: i18n.t(
         'View the relationship between two data items at a place or time. Recommended for finding outliers.'
     ),
+    // TODO review this text @scott @joe
+    [VIS_TYPE_LINE_LIST]: i18n.t(
+        'TEXT View event and enrollment data in a line list.'
+    ),
 }
 
 export const visTypeIcons = {
@@ -116,6 +125,7 @@ export const visTypeIcons = {
     [VIS_TYPE_YEAR_OVER_YEAR_COLUMN]: IconVisualizationColumnMulti24,
     [VIS_TYPE_SINGLE_VALUE]: IconVisualizationSingleValue24,
     [VIS_TYPE_SCATTER]: IconVisualizationScatter24,
+    [VIS_TYPE_LINE_LIST]: IconTable24, // TODO different icon @joe
 }
 
 export const getDisplayNameByVisType = (visType) => {

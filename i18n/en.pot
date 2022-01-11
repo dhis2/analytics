@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2022-01-20T14:11:46.002Z\n"
-"PO-Revision-Date: 2022-01-20T14:11:46.002Z\n"
+"POT-Creation-Date: 2022-01-10T16:16:10.515Z\n"
+"PO-Revision-Date: 2022-01-10T16:16:10.515Z\n"
 
 msgid "view only"
 msgstr "view only"
@@ -263,6 +263,9 @@ msgstr "Only you"
 msgid "Others"
 msgstr "Others"
 
+msgid "Not supported in this app yet"
+msgstr "Not supported in this app yet"
+
 msgid "Filter by name"
 msgstr "Filter by name"
 
@@ -280,9 +283,6 @@ msgstr "Clear filters"
 
 msgid "{{firstItemIndex}}-{{lastItemIndex}} of {{totalNumberOfItems}}"
 msgstr "{{firstItemIndex}}-{{lastItemIndex}} of {{totalNumberOfItems}}"
-
-msgid "All charts"
-msgstr "All charts"
 
 msgid "Open"
 msgstr "Open"
@@ -1005,6 +1005,12 @@ msgstr "Single value"
 msgid "Scatter"
 msgstr "Scatter"
 
+msgid "Line list"
+msgstr "Line list"
+
+msgid "All charts"
+msgstr "All charts"
+
 msgid "View data and indicators in a manipulatable table."
 msgstr "View data and indicators in a manipulatable table."
 
@@ -1067,6 +1073,9 @@ msgid ""
 msgstr ""
 "View the relationship between two data items at a place or time. "
 "Recommended for finding outliers."
+
+msgid "TEXT View event and enrollment data in a line list."
+msgstr "TEXT View event and enrollment data in a line list."
 
 msgid "{{seriesName}} (trend)"
 msgstr "{{seriesName}} (trend)"
