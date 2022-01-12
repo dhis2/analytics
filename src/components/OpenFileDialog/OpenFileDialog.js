@@ -19,7 +19,11 @@ import {
 import isEqual from 'lodash/isEqual'
 import PropTypes from 'prop-types'
 import React, { useEffect, useMemo, useState } from 'react'
-import { VIS_TYPE_ALL, VIS_TYPE_CHARTS } from '../../modules/visTypes.js'
+import {
+    VIS_TYPE_ALL,
+    VIS_TYPE_CHARTS,
+    VIS_TYPE_LINE_LIST,
+} from '../../modules/visTypes.js'
 import {
     CreatedByFilter,
     CREATED_BY_ALL,
@@ -30,12 +34,7 @@ import { FileList } from './FileList.js'
 import { NameFilter } from './NameFilter.js'
 import { styles } from './OpenFileDialog.styles.js'
 import { PaginationControls } from './PaginationControls.js'
-import {
-    getTranslatedString,
-    AO_TYPE_EVENT_REPORT,
-    AO_TYPE_EVENT_VISUALIZATION,
-    AOTypeMap,
-} from './utils.js'
+import { getTranslatedString, AOTypeMap } from './utils.js'
 import { VisTypeFilter } from './VisTypeFilter.js'
 
 const getQuery = (type) => ({
@@ -114,6 +113,9 @@ export const OpenFileDialog = ({
                 case VIS_TYPE_CHARTS:
                     queryFilters.push('type:!in:[PIVOT_TABLE,LINE_LIST]')
                     break
+                case VIS_TYPE_LINE_LIST:
+                    queryFilters.push('dataType:eq:EVENTS')
+                    break
                 default:
                     queryFilters.push(`type:eq:${filters.visType}`)
                     break
@@ -122,14 +124,6 @@ export const OpenFileDialog = ({
 
         if (filters.searchTerm) {
             queryFilters.push(`name:ilike:${filters.searchTerm}`)
-        }
-
-        // for ER 2.38 only show line list ER types
-        if (
-            type === AO_TYPE_EVENT_REPORT ||
-            type === AO_TYPE_EVENT_VISUALIZATION
-        ) {
-            queryFilters.push('dataType:eq:EVENTS')
         }
 
         return queryFilters
