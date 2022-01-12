@@ -1,5 +1,5 @@
 import i18n from '@dhis2/d2-i18n'
-import { Divider, Tooltip } from '@dhis2/ui'
+import { MenuDivider, Tooltip } from '@dhis2/ui'
 import cx from 'classnames'
 import PropTypes from 'prop-types'
 import React from 'react'
@@ -25,7 +25,7 @@ const CustomSelectOptionItem = ({
             <span className={cx({ label: icon })}>{label}</span>
             <style jsx>{styles}</style>
         </div>
-        {insertDivider ? <Divider /> : null}
+        {insertDivider ? <MenuDivider dense /> : null}
     </>
 )
 
