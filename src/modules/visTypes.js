@@ -103,10 +103,6 @@ export const visTypeDescriptions = {
     [VIS_TYPE_SCATTER]: i18n.t(
         'View the relationship between two data items at a place or time. Recommended for finding outliers.'
     ),
-    // TODO review this text @scott @joe
-    [VIS_TYPE_LINE_LIST]: i18n.t(
-        'TEXT View event and enrollment data in a line list.'
-    ),
 }
 
 export const visTypeIcons = {

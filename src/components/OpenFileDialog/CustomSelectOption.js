@@ -31,7 +31,7 @@ const CustomSelectOptionItem = ({
 
 export const CustomSelectOption = (props) =>
     props.disabled ? (
-        <Tooltip content={i18n.t('Not supported in this app yet')}>
+        <Tooltip content={i18n.t('Not supported by this app yet')}>
             <CustomSelectOptionItem {...props} />
         </Tooltip>
     ) : (
