@@ -107,7 +107,7 @@ export const OpenFileDialog = ({
                 case VIS_TYPE_ALL:
                     break
                 case VIS_TYPE_CHARTS:
-                    queryFilters.push('type:!in:[PIVOT_TABLE,LINE_LIST]')
+                    queryFilters.push('type:!eq:PIVOT_TABLE')
                     break
                 default:
                     queryFilters.push(`type:eq:${filters.visType}`)
