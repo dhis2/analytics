@@ -165,7 +165,6 @@ export {
     VIS_TYPE_SCATTER,
     VIS_TYPE_LINE_LIST,
     visTypeDisplayNames,
-    visTypeDescriptions,
     visTypeIcons,
     getDisplayNameByVisType,
     defaultVisType,
