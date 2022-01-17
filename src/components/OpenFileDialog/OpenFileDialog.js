@@ -33,6 +33,7 @@ import {
     getTranslatedString,
     AO_TYPE_VISUALIZATION,
     AO_TYPE_EVENT_REPORT,
+    AO_TYPE_EVENT_VISUALIZATION,
     AOTypeMap,
 } from './utils.js'
 import {
@@ -124,7 +125,10 @@ export const OpenFileDialog = ({
         }
 
         // for ER 2.38 only show line list ER types
-        if (type === AO_TYPE_EVENT_REPORT) {
+        if (
+            type === AO_TYPE_EVENT_REPORT ||
+            type === AO_TYPE_EVENT_VISUALIZATION
+        ) {
             queryFilters.push('dataType:eq:EVENTS')
         }
 
