@@ -4,6 +4,7 @@ export const AO_TYPE_VISUALIZATION = 'visualization'
 export const AO_TYPE_MAP = 'map'
 export const AO_TYPE_EVENT_CHART = 'eventChart'
 export const AO_TYPE_EVENT_REPORT = 'eventReport'
+export const AO_TYPE_EVENT_VISUALIZATION = 'eventVisualization'
 
 export const AOTypeMap = {
     [AO_TYPE_VISUALIZATION]: {
@@ -17,6 +18,9 @@ export const AOTypeMap = {
     },
     [AO_TYPE_EVENT_REPORT]: {
         apiEndpoint: 'eventReports',
+    },
+    [AO_TYPE_EVENT_VISUALIZATION]: {
+        apiEndpoint: 'eventVisualization',
     },
 }
 
@@ -87,6 +91,24 @@ export const getTranslatedString = (type, key) => {
                     "No event reports found. Try adjusting your search or filter options to find what you're looking for."
                 ),
                 newButtonLabel: i18n.t('New event report'),
+            }
+            break
+        }
+        case 'eventVisualization': {
+            texts = {
+                modalTitle: i18n.t('Open an event visualization'),
+                loadingText: i18n.t('Loading event visualizations'),
+                errorTitle: i18n.t("Couldn't load event visualizations"),
+                errorText: i18n.t(
+                    'There was a problem loading event visualizations. Try again or contact your system administrator.'
+                ),
+                noDataText: i18n.t(
+                    'No event visualizations found. Click New event visualization to get started.'
+                ),
+                noFilteredDataText: i18n.t(
+                    "No event visualizations found. Try adjusting your search or filter options to find what you're looking for."
+                ),
+                newButtonLabel: i18n.t('New event visualization'),
             }
             break
         }
