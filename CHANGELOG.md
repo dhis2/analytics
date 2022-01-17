@@ -1,3 +1,10 @@
+# [21.3.0](https://github.com/dhis2/analytics/compare/v21.2.5...v21.3.0) (2022-01-17)
+
+
+### Features
+
+* add event visualization ao type ([#1130](https://github.com/dhis2/analytics/issues/1130)) ([61ea5b2](https://github.com/dhis2/analytics/commit/61ea5b275dba604a8479b8c9ca1cc71677aa13aa))
+
 ## [21.2.5](https://github.com/dhis2/analytics/compare/v21.2.4...v21.2.5) (2022-01-07)
 
 
