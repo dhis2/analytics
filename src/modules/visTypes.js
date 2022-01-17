@@ -33,8 +33,8 @@ export const VIS_TYPE_SINGLE_VALUE = 'SINGLE_VALUE'
 export const VIS_TYPE_PIVOT_TABLE = 'PIVOT_TABLE'
 export const VIS_TYPE_SCATTER = 'SCATTER'
 export const VIS_TYPE_LINE_LIST = 'LINE_LIST'
-export const VIS_TYPE_ALL = 'ALL'
-export const VIS_TYPE_CHARTS = 'CHARTS'
+export const VIS_TYPE_GROUP_ALL = 'ALL'
+export const VIS_TYPE_GROUP_CHARTS = 'CHARTS'
 
 export const visTypeDisplayNames = {
     [VIS_TYPE_PIVOT_TABLE]: i18n.t('Pivot table'),
@@ -53,8 +53,8 @@ export const visTypeDisplayNames = {
     [VIS_TYPE_SINGLE_VALUE]: i18n.t('Single value'),
     [VIS_TYPE_SCATTER]: i18n.t('Scatter'),
     [VIS_TYPE_LINE_LIST]: i18n.t('Line list'),
-    [VIS_TYPE_ALL]: i18n.t('All types'),
-    [VIS_TYPE_CHARTS]: i18n.t('All charts'),
+    [VIS_TYPE_GROUP_ALL]: i18n.t('All types'),
+    [VIS_TYPE_GROUP_CHARTS]: i18n.t('All charts'),
 }
 
 export const visTypeIcons = {

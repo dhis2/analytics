@@ -19,7 +19,10 @@ import {
 import isEqual from 'lodash/isEqual'
 import PropTypes from 'prop-types'
 import React, { useEffect, useMemo, useState } from 'react'
-import { VIS_TYPE_ALL, VIS_TYPE_CHARTS } from '../../modules/visTypes.js'
+import {
+    VIS_TYPE_GROUP_ALL,
+    VIS_TYPE_GROUP_CHARTS,
+} from '../../modules/visTypes.js'
 import {
     CreatedByFilter,
     CREATED_BY_ALL,
@@ -104,9 +107,9 @@ export const OpenFileDialog = ({
 
         if (filters.visType) {
             switch (filters.visType) {
-                case VIS_TYPE_ALL:
+                case VIS_TYPE_GROUP_ALL:
                     break
-                case VIS_TYPE_CHARTS:
+                case VIS_TYPE_GROUP_CHARTS:
                     queryFilters.push('type:!eq:PIVOT_TABLE')
                     break
                 default:
