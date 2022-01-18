@@ -16,7 +16,6 @@ const CachedDataQueryProvider = ({
     const { error, loading, fetching } = rest
     const data =
         rawData && dataTransformation ? dataTransformation(rawData) : rawData
-    const providerValue = { ...rest, data }
 
     /*
      * Apps might want to control what gets rendered, for example:
@@ -26,8 +25,8 @@ const CachedDataQueryProvider = ({
      */
     if (typeof children === 'function') {
         return (
-            <CachedDataQueryCtx.Provider value={providerValue}>
-                children(providerValue)
+            <CachedDataQueryCtx.Provider value={data}>
+                {children(data)}
             </CachedDataQueryCtx.Provider>
         )
     }
@@ -45,7 +44,7 @@ const CachedDataQueryProvider = ({
                     </CenteredContent>
                 </Layer>
                 {!loading && !disableSwr && (
-                    <CachedDataQueryCtx.Provider value={providerValue}>
+                    <CachedDataQueryCtx.Provider value={data}>
                         {children}
                     </CachedDataQueryCtx.Provider>
                 )}
@@ -64,14 +63,14 @@ const CachedDataQueryProvider = ({
     }
 
     return (
-        <CachedDataQueryCtx.Provider value={providerValue}>
+        <CachedDataQueryCtx.Provider value={data}>
             {children}
         </CachedDataQueryCtx.Provider>
     )
 }
 
 CachedDataQueryProvider.propTypes = {
-    children: PropTypes.node.isRequired,
+    children: PropTypes.oneOfType([PropTypes.node, PropTypes.func]).isRequired,
     query: PropTypes.object.isRequired,
     dataTransformation: PropTypes.func,
     disableSwr: PropTypes.bool,
