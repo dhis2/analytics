@@ -6,34 +6,14 @@ import React, { createContext, useContext } from 'react'
 
 const CachedDataQueryCtx = createContext({})
 
-const CachedDataQueryProvider = ({
-    query,
-    dataTransformation,
-    children,
-    disableSwr,
-}) => {
+const CachedDataQueryProvider = ({ query, dataTransformation, children }) => {
     const { data: rawData, ...rest } = useDataQuery(query)
     const { error, loading, fetching } = rest
     const data =
         rawData && dataTransformation ? dataTransformation(rawData) : rawData
 
     /*
-     * Apps might want to control what gets rendered, for example:
-     * - If there are nested providers and a single loader/error UI is preferred
-     * - Showing the default loader and error message is not suitable
-     * For these cases we support renderProps
-     */
-    if (typeof children === 'function') {
-        return (
-            <CachedDataQueryCtx.Provider value={data}>
-                {children(data)}
-            </CachedDataQueryCtx.Provider>
-        )
-    }
-
-    /*
      * Render loader only when data is unavailable
-     * Render loader over the top of the children when data is stale (SWR)
      */
     if (loading || fetching) {
         return (
@@ -43,7 +23,7 @@ const CachedDataQueryProvider = ({
                         <CircularLoader />
                     </CenteredContent>
                 </Layer>
-                {!loading && !disableSwr && (
+                {!loading && (
                     <CachedDataQueryCtx.Provider value={data}>
                         {children}
                     </CachedDataQueryCtx.Provider>
@@ -70,10 +50,9 @@ const CachedDataQueryProvider = ({
 }
 
 CachedDataQueryProvider.propTypes = {
-    children: PropTypes.oneOfType([PropTypes.node, PropTypes.func]).isRequired,
+    children: PropTypes.node.isRequired,
     query: PropTypes.object.isRequired,
     dataTransformation: PropTypes.func,
-    disableSwr: PropTypes.bool,
 }
 
 const useCachedDataQuery = () => useContext(CachedDataQueryCtx)
