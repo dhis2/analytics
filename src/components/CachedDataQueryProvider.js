@@ -36,7 +36,7 @@ const CachedDataQueryProvider = ({ query, dataTransformation, children }) => {
         const fallbackMsg = i18n.t('This app could not retrieve required data.')
 
         return (
-            <NoticeBox title={i18n.t('Network error')}>
+            <NoticeBox error title={i18n.t('Network error')}>
                 {error.message || fallbackMsg}
             </NoticeBox>
         )
