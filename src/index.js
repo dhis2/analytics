@@ -30,9 +30,9 @@ export { default as LegendKey } from './components/LegendKey/LegendKey.js'
 export { default as AboutAOUnit } from './components/AboutAOUnit/AboutAOUnit.js'
 
 export {
-    default as CurrentUserProvider,
-    useCurrentUser,
-} from './components/CurrentUserProvider'
+    CachedDataQueryProvider,
+    useCachedDataQuery,
+} from './components/CachedDataQueryProvider.js'
 
 // Api
 
