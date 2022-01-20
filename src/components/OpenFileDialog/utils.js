@@ -2,8 +2,6 @@ import i18n from '@dhis2/d2-i18n'
 
 export const AO_TYPE_VISUALIZATION = 'visualization'
 export const AO_TYPE_MAP = 'map'
-export const AO_TYPE_EVENT_CHART = 'eventChart'
-export const AO_TYPE_EVENT_REPORT = 'eventReport'
 export const AO_TYPE_EVENT_VISUALIZATION = 'eventVisualization'
 
 export const AOTypeMap = {
@@ -12,12 +10,6 @@ export const AOTypeMap = {
     },
     [AO_TYPE_MAP]: {
         apiEndpoint: 'maps',
-    },
-    [AO_TYPE_EVENT_CHART]: {
-        apiEndpoint: 'eventCharts',
-    },
-    [AO_TYPE_EVENT_REPORT]: {
-        apiEndpoint: 'eventReports',
     },
     [AO_TYPE_EVENT_VISUALIZATION]: {
         apiEndpoint: 'eventVisualizations',
@@ -73,24 +65,6 @@ export const getTranslatedString = (type, key) => {
                     "No maps found. Try adjusting your search or filter options to find what you're looking for."
                 ),
                 newButtonLabel: i18n.t('New map'),
-            }
-            break
-        }
-        case 'eventReport': {
-            texts = {
-                modalTitle: i18n.t('Open an event report'),
-                loadingText: i18n.t('Loading event reports'),
-                errorTitle: i18n.t("Couldn't load event reports"),
-                errorText: i18n.t(
-                    'There was a problem loading event reports. Try again or contact your system administrator.'
-                ),
-                noDataText: i18n.t(
-                    'No event reports found. Click New event report to get started.'
-                ),
-                noFilteredDataText: i18n.t(
-                    "No event reports found. Try adjusting your search or filter options to find what you're looking for."
-                ),
-                newButtonLabel: i18n.t('New event report'),
             }
             break
         }
