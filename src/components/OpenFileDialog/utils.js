@@ -20,7 +20,7 @@ export const AOTypeMap = {
         apiEndpoint: 'eventReports',
     },
     [AO_TYPE_EVENT_VISUALIZATION]: {
-        apiEndpoint: 'eventVisualization',
+        apiEndpoint: 'eventVisualizations',
     },
 }
 
