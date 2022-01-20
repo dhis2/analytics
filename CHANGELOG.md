@@ -1,3 +1,10 @@
+# [21.4.0](https://github.com/dhis2/analytics/compare/v21.3.2...v21.4.0) (2022-01-20)
+
+
+### Features
+
+* add support for enrollments/query API request (TECH-697) ([#1074](https://github.com/dhis2/analytics/issues/1074)) ([0e48d42](https://github.com/dhis2/analytics/commit/0e48d42763b0c773d3f0093e778627e1afc7aeb6))
+
 ## [21.3.2](https://github.com/dhis2/analytics/compare/v21.3.1...v21.3.2) (2022-01-20)
 
 
