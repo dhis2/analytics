@@ -1,4 +1,3 @@
-import TranslationDialog from '@dhis2/d2-ui-translation-dialog'
 import {
     IconAdd24,
     IconLaunch24,
@@ -20,6 +19,7 @@ import PropTypes from 'prop-types'
 import React, { createRef, useState } from 'react'
 import i18n from '../../locales/index.js'
 import { OpenFileDialog } from '../OpenFileDialog/OpenFileDialog.js'
+import { TranslationDialog } from '../TranslationDialog/index.js'
 import { DeleteDialog } from './DeleteDialog.js'
 import { fileMenuStyles } from './FileMenu.styles.js'
 import { GetLinkDialog } from './GetLinkDialog.js'
@@ -82,19 +82,10 @@ export const FileMenu = ({
             case 'translate':
                 return (
                     <TranslationDialog
-                        open={true}
-                        d2={d2}
-                        objectToTranslate={{
-                            ...fileObject,
-                            // mock modelDefinition to avoid an error
-                            // in the TranslationDialog component
-                            modelDefinition: { name: fileType },
-                        }}
+                        objectToTranslate={fileObject}
                         fieldsToTranslate={['name', 'description']}
-                        onRequestClose={onDialogClose}
+                        onClose={onDialogClose}
                         onTranslationSaved={onTranslate}
-                        onTranslationError={onError}
-                        insertTheme={true}
                     />
                 )
             case 'sharing':

@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-11-12T14:52:40.534Z\n"
+"POT-Creation-Date: 2022-01-03T11:09:02.270Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: easylin <lin_xd@126.com>, 2021\n"
 "Language-Team: Chinese (https://www.transifex.com/hisp-uio/teams/100509/zh/)\n"
@@ -697,6 +697,30 @@ msgstr "Financial Years"
 
 msgid "Years"
 msgstr "年"
+
+msgid "Translating to"
+msgstr "翻译成"
+
+msgid "Choose a locale"
+msgstr "选择语言环境"
+
+msgid "Base locale reference"
+msgstr "基本语言环境参考"
+
+msgid "Choose a locale to translate from the menu above"
+msgstr "从上面的菜单中选择要翻译的语言环境"
+
+msgid "Translate: {{objectName}}"
+msgstr "翻译：{{objectName}}"
+
+msgid "Save translations"
+msgstr "保存翻译"
+
+msgid "Could not load translations"
+msgstr ""
+
+msgid "Retry"
+msgstr "重试"
 
 msgid "Series"
 msgstr "系列"

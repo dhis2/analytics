@@ -1,3 +1,80 @@
+## [21.3.2](https://github.com/dhis2/analytics/compare/v21.3.1...v21.3.2) (2022-01-20)
+
+
+### Bug Fixes
+
+* event visualization endpoint ([#1133](https://github.com/dhis2/analytics/issues/1133)) ([cefd746](https://github.com/dhis2/analytics/commit/cefd746989f37d1ec8686731c7a7300c5f10624a))
+
+## [21.3.1](https://github.com/dhis2/analytics/compare/v21.3.0...v21.3.1) (2022-01-20)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([0fd64dc](https://github.com/dhis2/analytics/commit/0fd64dcec04bb484291c1ba33cb90604970d360c))
+
+# [21.3.0](https://github.com/dhis2/analytics/compare/v21.2.5...v21.3.0) (2022-01-17)
+
+
+### Features
+
+* add event visualization ao type ([#1130](https://github.com/dhis2/analytics/issues/1130)) ([61ea5b2](https://github.com/dhis2/analytics/commit/61ea5b275dba604a8479b8c9ca1cc71677aa13aa))
+
+## [21.2.5](https://github.com/dhis2/analytics/compare/v21.2.4...v21.2.5) (2022-01-07)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([43ad8ce](https://github.com/dhis2/analytics/commit/43ad8cee13542f0fe634ebaca4c614b232069d6e))
+
+## [21.2.4](https://github.com/dhis2/analytics/compare/v21.2.3...v21.2.4) (2022-01-06)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([271c764](https://github.com/dhis2/analytics/commit/271c76485718b71bd3d046be2cd8baa130dac01f))
+
+## [21.2.3](https://github.com/dhis2/analytics/compare/v21.2.2...v21.2.3) (2022-01-05)
+
+
+### Bug Fixes
+
+* fetch translations for field labels from api ([#1119](https://github.com/dhis2/analytics/issues/1119)) ([e2fcacc](https://github.com/dhis2/analytics/commit/e2fcaccbd058a8e85a99e032f6341e7f15a83b94))
+
+## [21.2.2](https://github.com/dhis2/analytics/compare/v21.2.1...v21.2.2) (2021-12-28)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([2657706](https://github.com/dhis2/analytics/commit/2657706a6033413cc0d405933b6d6ed180bd509c))
+
+## [21.2.1](https://github.com/dhis2/analytics/compare/v21.2.0...v21.2.1) (2021-12-24)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([83f9fe4](https://github.com/dhis2/analytics/commit/83f9fe42eb3e5efa115298a7561f5ddc5a627cc5))
+
+# [21.2.0](https://github.com/dhis2/analytics/compare/v21.1.1...v21.2.0) (2021-12-23)
+
+
+### Features
+
+* use new translations dialog (TECH-873) ([#1105](https://github.com/dhis2/analytics/issues/1105)) ([1e1a984](https://github.com/dhis2/analytics/commit/1e1a98429663241487ad66c56d3aab3914b8cbc6))
+
+## [21.1.1](https://github.com/dhis2/analytics/compare/v21.1.0...v21.1.1) (2021-12-22)
+
+
+### Bug Fixes
+
+* do not fix headers if no dimension items are selected ([#1057](https://github.com/dhis2/analytics/issues/1057)) ([ae51967](https://github.com/dhis2/analytics/commit/ae51967ff35a17b8589f4959015b06c4913b7dae))
+
+# [21.1.0](https://github.com/dhis2/analytics/compare/v21.0.12...v21.1.0) (2021-12-20)
+
+
+### Features
+
+* export formatValue function ([#1080](https://github.com/dhis2/analytics/issues/1080)) ([20d0f5a](https://github.com/dhis2/analytics/commit/20d0f5a1b2eda14879f03a4c6d37337c80bb15ff))
+
 ## [21.0.12](https://github.com/dhis2/analytics/compare/v21.0.11...v21.0.12) (2021-12-11)
 
 

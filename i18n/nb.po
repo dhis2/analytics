@@ -1,14 +1,14 @@
 # 
 # Translators:
-# Karoline Tufte Lien <karoline@dhis2.org>, 2021
 # Caroline Hesthagen Holen <caroline@devotta.no>, 2021
+# Karoline Tufte Lien <karoline@dhis2.org>, 2022
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-11-12T14:52:40.534Z\n"
+"POT-Creation-Date: 2022-01-03T11:09:02.270Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Caroline Hesthagen Holen <caroline@devotta.no>, 2021\n"
+"Last-Translator: Karoline Tufte Lien <karoline@dhis2.org>, 2022\n"
 "Language-Team: Norwegian Bokmål (https://www.transifex.com/hisp-uio/teams/100509/nb/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -17,54 +17,54 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "view only"
-msgstr ""
+msgstr "kun visning"
 
 msgid "view and edit"
-msgstr ""
+msgstr "vis og endre"
 
 msgid "all users ({{accessLevel}})"
-msgstr ""
+msgstr "alle brukere ({{accessLevel}})"
 
 msgid "{{userOrGroup}} ({{accessLevel}})"
-msgstr ""
+msgstr "{{userOrGroup}} ({{accessLevel}})"
 
 msgid "Shared with {{commaSeparatedListOfUsersAndGroups}}"
-msgstr ""
+msgstr "Delt med {{commaSeparatedListOfUsersAndGroups}}"
 
 msgid "Not shared with any users or groups"
-msgstr ""
+msgstr "Ikke delt med noen brukere eller grupper"
 
 msgid "About this visualization"
-msgstr ""
+msgstr "Om denne visualiseringen"
 
 msgid "No description"
 msgstr "Ingen beskrivelse"
 
 msgid "Last updated {{time}}"
-msgstr ""
+msgstr "Sist oppdatert {{time}}"
 
 msgid "Created {{time}} by {{author}}"
-msgstr ""
+msgstr "Opprettet {{time}} av {{author}}"
 
 msgid "Viewed {{count}} times"
 msgid_plural "Viewed {{count}} times"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Vist 1 gang"
+msgstr[1] "Vist {{count}} ganger"
 
 msgid "Notifications"
 msgstr "Varsler"
 
 msgid "You're subscribed and getting updates about new interpretations."
-msgstr ""
+msgstr "Du abonnerer og får oppdateringer om nye tolkninger."
 
 msgid "Unsubscribe"
-msgstr ""
+msgstr "Avslutt abonnementet"
 
 msgid "Subscribe to get updates about new interpretations."
-msgstr ""
+msgstr "Abonner for å få oppdateringer om nye tolkninger."
 
 msgid "Subscribe"
-msgstr ""
+msgstr "Abonner"
 
 msgid "Data Type"
 msgstr "Datatype"
@@ -73,10 +73,10 @@ msgid "All types"
 msgstr "Alle typer"
 
 msgid "Totals only"
-msgstr ""
+msgstr "Kun totaler"
 
 msgid "Details only"
-msgstr ""
+msgstr "Kun detaljer"
 
 msgid "Disaggregation"
 msgstr "Disaggregering"
@@ -88,7 +88,7 @@ msgid "Loading"
 msgstr "Laster"
 
 msgid "Search by data item name"
-msgstr ""
+msgstr "Søk etter datapunktnavn"
 
 msgid "No items selected"
 msgstr "Ingen elementer er valgt"
@@ -97,40 +97,40 @@ msgid "Selected Items"
 msgstr "Valgte elementer"
 
 msgid "No indicators found"
-msgstr ""
+msgstr "Ingen indikatorer funnet"
 
 msgid "No data elements found"
-msgstr ""
+msgstr "Ingen dataelementer funnet"
 
 msgid "No data sets found"
-msgstr ""
+msgstr "Ingen datasett funnet"
 
 msgid "No event data items found"
-msgstr ""
+msgstr "Ingen hendelsesdataelementer funnet"
 
 msgid "No program indicators found"
-msgstr ""
+msgstr "Ingen programindikatorer funnet"
 
 msgid "No indicators found for \"{{- searchTerm}}\""
-msgstr ""
+msgstr "Ingen indikatorer funnet for \"{{- searchTerm}}\""
 
 msgid "No data elements found for \"{{- searchTerm}}\""
-msgstr ""
+msgstr "Ingen dataelementer funnet for \"{{- searchTerm}}\""
 
 msgid "No data sets found for \"{{- searchTerm}}\""
-msgstr ""
+msgstr "Ingen datasett funnet for \"{{- searchTerm}}\""
 
 msgid "No event data items found for \"{{- searchTerm}}\""
-msgstr ""
+msgstr "Ingen hendelsesdataelementer funnet for \"{{- searchTerm}}\""
 
 msgid "No program indicators found for \"{{- searchTerm}}\""
-msgstr ""
+msgstr "Ingen programindikatorer funnet for \"{{- searchTerm}}\""
 
 msgid "Nothing found for \"{{- searchTerm}}\""
-msgstr ""
+msgstr "Ingenting funnet for \"{{- searchTerm}}\""
 
 msgid "Metric type"
-msgstr ""
+msgstr "Metrisk type"
 
 msgid "All metrics"
 msgstr "Alle beregninger"
@@ -166,34 +166,37 @@ msgid "Dimension recommended with selected data"
 msgstr "Dimensjon anbefalt med valgte data"
 
 msgid "All items"
-msgstr ""
+msgstr "Alle elementer"
 
 msgid "Automatically include all items"
-msgstr ""
+msgstr "Inkluder automatisk alle elementer"
 
 msgid ""
 "Select all {{- dimensionTitle}} items. With this option, new items added in "
 "the future will be automatically included."
 msgstr ""
+"Velg alle {{- dimensionTitle}} elementer. Med dette alternativet vil nye "
+"elementer som legges til i fremtiden automatisk inkluderes."
 
 msgid "Manually select items..."
-msgstr ""
+msgstr "Velg elementer manuelt..."
 
 msgid "Nothing found in {{- dimensionTitle}}"
-msgstr ""
+msgstr "Ingenting funnet i {{- dimensionTitle}}"
 
 msgid "Search"
 msgstr "Søk"
 
 msgid "Nothing found for {{searchTerm}}"
-msgstr ""
+msgstr "Ingenting funnet for {{searchTerm}}"
 
 msgid "Delete {{fileType}}"
-msgstr ""
+msgstr "Slett {{fileType}}"
 
 msgid ""
 "This {{fileType}} and related interpretations will be deleted. Continue?"
 msgstr ""
+"Denne {{fileType}} og relaterte tolkninger vil bli slettet. Fortsette?"
 
 msgid "Cancel"
 msgstr "Avbryt"
@@ -208,28 +211,28 @@ msgid "New"
 msgstr "Ny"
 
 msgid "Open…"
-msgstr ""
+msgstr "Åpne..."
 
 msgid "Save"
 msgstr "Lagre"
 
 msgid "Save…"
-msgstr ""
+msgstr "Lagre..."
 
 msgid "Save as…"
-msgstr ""
+msgstr "Lagre som..."
 
 msgid "Rename…"
-msgstr ""
+msgstr "Gi nytt navn..."
 
 msgid "Translate…"
-msgstr ""
+msgstr "Oversette..."
 
 msgid "Share…"
-msgstr ""
+msgstr "Dele..."
 
 msgid "Get link…"
-msgstr ""
+msgstr "Få lenke…"
 
 msgid "Open in this app"
 msgstr "Åpne i denne appen"
@@ -238,7 +241,7 @@ msgid "Close"
 msgstr "Lukk"
 
 msgid "Rename {{fileType}}"
-msgstr ""
+msgstr "Gi nytt navn til {{fileType}}"
 
 msgid "Name"
 msgstr "Navn"
@@ -250,7 +253,7 @@ msgid "Rename"
 msgstr "Gi nytt navn"
 
 msgid "Save {{fileType}} as"
-msgstr ""
+msgstr "Lagre {{fileType}} som"
 
 msgid "Created by"
 msgstr "Opprettet av"
@@ -259,7 +262,7 @@ msgid "Anyone"
 msgstr "Hvem som helst"
 
 msgid "Only you"
-msgstr ""
+msgstr "Bare deg"
 
 msgid "Others"
 msgstr "Andre"
@@ -280,24 +283,26 @@ msgid "Clear filters"
 msgstr "Tøm filtre"
 
 msgid "{{firstItemIndex}}-{{lastItemIndex}} of {{totalNumberOfItems}}"
-msgstr ""
+msgstr "{{firstItemIndex}}-{{lastItemIndex}} av {{totalNumberOfItems}}"
 
 msgid "All charts"
-msgstr ""
+msgstr "Alle diagrammer"
 
 msgid "Open"
 msgstr "Åpne"
 
 msgid "Couldn't load items"
-msgstr ""
+msgstr "Kunne ikke laste inn elementer"
 
 msgid ""
 "There was a problem loading items. Try again or contact your system "
 "administrator."
 msgstr ""
+"Det oppsto et problem med å laste elementer. Prøv igjen eller kontakt "
+"systemadministratoren."
 
 msgid "No items found. Create a new to get started."
-msgstr ""
+msgstr "Ingen elementer funnet. Opprett en ny for å komme i gang."
 
 msgid ""
 "No items found. Try adjusting your search or filter options to find what "
@@ -699,6 +704,30 @@ msgstr "Regnskapsår"
 
 msgid "Years"
 msgstr "År"
+
+msgid "Translating to"
+msgstr ""
+
+msgid "Choose a locale"
+msgstr ""
+
+msgid "Base locale reference"
+msgstr ""
+
+msgid "Choose a locale to translate from the menu above"
+msgstr ""
+
+msgid "Translate: {{objectName}}"
+msgstr ""
+
+msgid "Save translations"
+msgstr ""
+
+msgid "Could not load translations"
+msgstr ""
+
+msgid "Retry"
+msgstr ""
 
 msgid "Series"
 msgstr "Serie"

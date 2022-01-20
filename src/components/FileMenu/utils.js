@@ -1,4 +1,9 @@
-export const supportedFileTypes = ['eventReport', 'visualization', 'map']
+export const supportedFileTypes = [
+    'eventReport',
+    'visualization',
+    'map',
+    'eventVisualization',
+]
 
 export const endpointFromFileType = (fileType) => {
     switch (fileType) {

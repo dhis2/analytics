@@ -1,13 +1,13 @@
 # 
 # Translators:
-# trendspotter <jirka.p@volny.cz>, 2021
+# trendspotter <jirka.p@volny.cz>, 2022
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-11-12T14:52:40.534Z\n"
+"POT-Creation-Date: 2022-01-03T11:09:02.270Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: trendspotter <jirka.p@volny.cz>, 2021\n"
+"Last-Translator: trendspotter <jirka.p@volny.cz>, 2022\n"
 "Language-Team: Czech (https://www.transifex.com/hisp-uio/teams/100509/cs/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -729,6 +729,30 @@ msgstr "Finanční roky"
 
 msgid "Years"
 msgstr "Let"
+
+msgid "Translating to"
+msgstr "Překlad do"
+
+msgid "Choose a locale"
+msgstr "Vyberte národní prostředí"
+
+msgid "Base locale reference"
+msgstr "Odkaz na základní národní prostředí"
+
+msgid "Choose a locale to translate from the menu above"
+msgstr "Z nabídky výše vyberte národní prostředí, které chcete přeložit"
+
+msgid "Translate: {{objectName}}"
+msgstr "Přeložit: {{objectName}}"
+
+msgid "Save translations"
+msgstr "Uložit překlady"
+
+msgid "Could not load translations"
+msgstr "Nelze načíst překlady"
+
+msgid "Retry"
+msgstr "Opakovat"
 
 msgid "Series"
 msgstr "Série"
