@@ -1,0 +1,206 @@
+{
+  "headers": [
+    {
+      "name": "pi",
+      "column": "Enrollment",
+      "valueType": "TEXT",
+      "type": "java.lang.String",
+      "hidden": false,
+      "meta": true
+    },
+    {
+      "name": "tei",
+      "column": "Tracked entity instance",
+      "valueType": "TEXT",
+      "type": "java.lang.String",
+      "hidden": false,
+      "meta": true
+    },
+    {
+      "name": "enrollmentdate",
+      "column": "Enrollment date",
+      "valueType": "DATE",
+      "type": "java.util.Date",
+      "hidden": false,
+      "meta": true
+    },
+    {
+      "name": "incidentdate",
+      "column": "Incident date",
+      "valueType": "DATE",
+      "type": "java.util.Date",
+      "hidden": false,
+      "meta": true
+    },
+    {
+      "name": "geometry",
+      "column": "Geometry",
+      "valueType": "TEXT",
+      "type": "java.lang.String",
+      "hidden": false,
+      "meta": true
+    },
+    {
+      "name": "longitude",
+      "column": "Longitude",
+      "valueType": "NUMBER",
+      "type": "java.lang.Double",
+      "hidden": false,
+      "meta": true
+    },
+    {
+      "name": "latitude",
+      "column": "Latitude",
+      "valueType": "NUMBER",
+      "type": "java.lang.Double",
+      "hidden": false,
+      "meta": true
+    },
+    {
+      "name": "ouname",
+      "column": "Organisation unit name",
+      "valueType": "TEXT",
+      "type": "java.lang.String",
+      "hidden": false,
+      "meta": true
+    },
+    {
+      "name": "oucode",
+      "column": "Organisation unit code",
+      "valueType": "TEXT",
+      "type": "java.lang.String",
+      "hidden": false,
+      "meta": true
+    },
+    {
+      "name": "ou",
+      "column": "Organisation unit",
+      "valueType": "TEXT",
+      "type": "java.lang.String",
+      "hidden": false,
+      "meta": true
+    },
+    {
+      "name": "de0FEHSIoxh",
+      "column": "WHOMCH Chronic conditions",
+      "valueType": "BOOLEAN",
+      "type": "java.lang.Boolean",
+      "hidden": false,
+      "meta": true
+    },
+    {
+      "name": "sWoqcoByYmD",
+      "column": "WHOMCH Smoking",
+      "valueType": "BOOLEAN",
+      "type": "java.lang.Boolean",
+      "hidden": false,
+      "meta": true
+    }
+  ],
+  "metaData": {
+    "pager": {
+      "page": 2,
+      "total": 163,
+      "pageSize": 4,
+      "pageCount": 41
+    },
+    "items": {
+      "ImspTQPwCqd": {
+        "name": "Sierra Leone"
+      },
+      "PFDfvmGpsR3": {
+        "name": "Care at birth"
+      },
+      "bbKtnxRZKEP": {
+        "name": "Postpartum care visit"
+      },
+      "ou": {
+        "name": "Organisation unit"
+      },
+      "PUZaKR0Jh2k": {
+        "name": "Previous deliveries"
+      },
+      "edqlbukwRfQ": {
+        "name": "Antenatal care visit"
+      },
+      "WZbXY0S00lP": {
+        "name": "First antenatal care visit"
+      },
+      "sWoqcoByYmD": {
+        "name": "WHOMCH Smoking"
+      },
+      "WSGAb5XwJ3Y": {
+        "name": "WHO RMNCH Tracker"
+      },
+      "de0FEHSIoxh": {
+        "name": "WHOMCH Chronic conditions"
+      }
+    },
+    "dimensions": {
+      "pe": [],
+      "ou": ["ImspTQPwCqd"],
+      "sWoqcoByYmD": [],
+      "de0FEHSIoxh": []
+    }
+  },
+  "width": 12,
+  "rows": [
+    [
+      "A0cP533hIQv",
+      "to8G9jAprnx",
+      "2019-02-02 12:05:00.0",
+      "2019-02-02 12:05:00.0",
+      "",
+      "0.0",
+      "0.0",
+      "Tonkomba MCHP",
+      "OU_193264",
+      "xIMxph4NMP1",
+      "0",
+      "1"
+    ],
+    [
+      "ZqiUn2uXmBi",
+      "SJtv0WzoYki",
+      "2019-02-02 12:05:00.0",
+      "2019-02-02 12:05:00.0",
+      "",
+      "0.0",
+      "0.0",
+      "Mawoma MCHP",
+      "OU_254973",
+      "Srnpwq8jKbp",
+      "0",
+      "0"
+    ],
+    [
+      "lE747mUAtbz",
+      "PGzTv2A1xzn",
+      "2019-02-02 12:05:00.0",
+      "2019-02-02 12:05:00.0",
+      "",
+      "0.0",
+      "0.0",
+      "Kunsho CHP",
+      "OU_193254",
+      "tdhB1JXYBx2",
+      "",
+      "0"
+    ],
+    [
+      "nmcqu9QF8ow",
+      "pav3tGLjYuq",
+      "2019-02-03 12:05:00.0",
+      "2019-02-03 12:05:00.0",
+      "",
+      "0.0",
+      "0.0",
+      "Korbu MCHP",
+      "OU_678893",
+      "m73lWmo5BDG",
+      "",
+      "1"
+    ]
+  ],
+  "height": 4
+}
