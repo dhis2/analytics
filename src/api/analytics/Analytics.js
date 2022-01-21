@@ -2,6 +2,7 @@
  * @module analytics
  */
 import AnalyticsAggregate from './AnalyticsAggregate.js'
+import AnalyticsEnrollments from './AnalyticsEnrollments.js'
 import AnalyticsEvents from './AnalyticsEvents.js'
 import AnalyticsRequest from './AnalyticsRequest.js'
 import AnalyticsResponse from './AnalyticsResponse.js'
@@ -30,12 +31,14 @@ import AnalyticsResponse from './AnalyticsResponse.js'
 class Analytics {
     /**
      * @param {!module:analytics.AnalyticsAggregate} analyticsAggregate The AnalyticsAggregate instance
+     * @param {!module:analytics.AnalyticsEnrollments} analyticsEnrollments The AnalyticsEnrollments instance
      * @param {!module:analytics.AnalyticsEvents} analyticsEvents The AnalyticsEvents instance
      * @param {!module:analytics.AnalyticsRequest} analyticsRequest The AnalyticsRequest class
      * @param {!module:analytics.AnalyticsResponse} analyticsResponse The AnalyticsResponse class
      */
-    constructor({ aggregate, events, request, response }) {
+    constructor({ aggregate, enrollments, events, request, response }) {
         this.aggregate = aggregate
+        this.enrollments = enrollments
         this.events = events
         this.request = request
         this.response = response
@@ -57,6 +60,7 @@ class Analytics {
         if (!Analytics.getAnalytics.analytics) {
             Analytics.getAnalytics.analytics = new Analytics({
                 aggregate: new AnalyticsAggregate(dataEngine),
+                enrollments: new AnalyticsEnrollments(dataEngine),
                 events: new AnalyticsEvents(dataEngine),
                 request: AnalyticsRequest,
                 response: AnalyticsResponse,
