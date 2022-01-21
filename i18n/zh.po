@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-01-03T11:09:02.270Z\n"
+"POT-Creation-Date: 2022-01-20T14:11:46.002Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: easylin <lin_xd@126.com>, 2021\n"
 "Language-Team: Chinese (https://www.transifex.com/hisp-uio/teams/100509/zh/)\n"
@@ -382,6 +382,32 @@ msgstr "未找到事件报告。尝试调整您的搜索或过滤选项以找到
 
 msgid "New event report"
 msgstr "新建事件报告"
+
+msgid "Open an event visualization"
+msgstr ""
+
+msgid "Loading event visualizations"
+msgstr ""
+
+msgid "Couldn't load event visualizations"
+msgstr ""
+
+msgid ""
+"There was a problem loading event visualizations. Try again or contact your "
+"system administrator."
+msgstr ""
+
+msgid ""
+"No event visualizations found. Click New event visualization to get started."
+msgstr ""
+
+msgid ""
+"No event visualizations found. Try adjusting your search or filter options "
+"to find what you're looking for."
+msgstr ""
+
+msgid "New event visualization"
+msgstr ""
 
 msgid "Options"
 msgstr "选项"
