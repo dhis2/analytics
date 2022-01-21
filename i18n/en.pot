@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2022-01-03T11:09:02.270Z\n"
-"PO-Revision-Date: 2022-01-03T11:09:02.270Z\n"
+"POT-Creation-Date: 2022-01-20T14:11:46.002Z\n"
+"PO-Revision-Date: 2022-01-20T14:11:46.002Z\n"
 
 msgid "view only"
 msgstr "view only"
@@ -390,6 +390,35 @@ msgstr ""
 
 msgid "New event report"
 msgstr "New event report"
+
+msgid "Open an event visualization"
+msgstr "Open an event visualization"
+
+msgid "Loading event visualizations"
+msgstr "Loading event visualizations"
+
+msgid "Couldn't load event visualizations"
+msgstr "Couldn't load event visualizations"
+
+msgid ""
+"There was a problem loading event visualizations. Try again or contact your "
+"system administrator."
+msgstr ""
+"There was a problem loading event visualizations. Try again or contact your "
+"system administrator."
+
+msgid "No event visualizations found. Click New event visualization to get started."
+msgstr "No event visualizations found. Click New event visualization to get started."
+
+msgid ""
+"No event visualizations found. Try adjusting your search or filter options "
+"to find what you're looking for."
+msgstr ""
+"No event visualizations found. Try adjusting your search or filter options "
+"to find what you're looking for."
+
+msgid "New event visualization"
+msgstr "New event visualization"
 
 msgid "Options"
 msgstr "Options"
