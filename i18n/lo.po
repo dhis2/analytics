@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-01-03T11:09:02.270Z\n"
+"POT-Creation-Date: 2022-01-20T14:11:46.002Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: Viktor Varland <viktor@dhis2.org>, 2021\n"
 "Language-Team: Lao (https://www.transifex.com/hisp-uio/teams/100509/lo/)\n"
@@ -379,6 +379,32 @@ msgid ""
 msgstr ""
 
 msgid "New event report"
+msgstr ""
+
+msgid "Open an event visualization"
+msgstr ""
+
+msgid "Loading event visualizations"
+msgstr ""
+
+msgid "Couldn't load event visualizations"
+msgstr ""
+
+msgid ""
+"There was a problem loading event visualizations. Try again or contact your "
+"system administrator."
+msgstr ""
+
+msgid ""
+"No event visualizations found. Click New event visualization to get started."
+msgstr ""
+
+msgid ""
+"No event visualizations found. Try adjusting your search or filter options "
+"to find what you're looking for."
+msgstr ""
+
+msgid "New event visualization"
 msgstr ""
 
 msgid "Options"
