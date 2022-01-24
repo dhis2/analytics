@@ -1,3 +1,17 @@
+## [21.4.2](https://github.com/dhis2/analytics/compare/v21.4.1...v21.4.2) (2022-01-22)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([c977170](https://github.com/dhis2/analytics/commit/c9771709c49e7ff6d239ca9e133c10f8dc3bc06c))
+
+## [21.4.1](https://github.com/dhis2/analytics/compare/v21.4.0...v21.4.1) (2022-01-21)
+
+
+### Bug Fixes
+
+* enable enrollments endpoint ([#1134](https://github.com/dhis2/analytics/issues/1134)) ([e4d5d7f](https://github.com/dhis2/analytics/commit/e4d5d7f453064215d013930dea61da7c95941946))
+
 # [21.4.0](https://github.com/dhis2/analytics/compare/v21.3.2...v21.4.0) (2022-01-20)
 
 
