@@ -30,7 +30,8 @@ const DYNAMIC_ORG_UNITS = [
     USER_ORG_UNIT_GRANDCHILDREN,
 ]
 
-const OrgUnitDimension = ({ roots, selected, onSelect }) => {
+const OrgUnitDimension = ({ roots, selected, showUserOrgUnits, onSelect }) => {
+    console.log('OrgUnitDimension showUserOrgUnits', showUserOrgUnits)
     const [ouLevels, setOuLevels] = useState([])
     const [ouGroups, setOuGroups] = useState([])
     const dataEngine = useDataEngine()
@@ -176,48 +177,52 @@ const OrgUnitDimension = ({ roots, selected, onSelect }) => {
 
     return (
         <div className="container">
-            <div className="userOrgUnitsWrapper">
-                <Checkbox
-                    label={i18n.t('User organisation unit')}
-                    checked={selected.some((item) => item.id === USER_ORG_UNIT)}
-                    onChange={({ checked }) =>
-                        onSelectItems({
-                            id: USER_ORG_UNIT,
-                            checked,
-                            displayName: i18n.t('User organisation unit'),
-                        })
-                    }
-                    dense
-                />
-                <Checkbox
-                    label={i18n.t('User sub-units')}
-                    checked={selected.some(
-                        (item) => item.id === USER_ORG_UNIT_CHILDREN
-                    )}
-                    onChange={({ checked }) =>
-                        onSelectItems({
-                            id: USER_ORG_UNIT_CHILDREN,
-                            checked,
-                            displayName: i18n.t('User sub-units'),
-                        })
-                    }
-                    dense
-                />
-                <Checkbox
-                    label={i18n.t('User sub-x2-units')}
-                    checked={selected.some(
-                        (item) => item.id === USER_ORG_UNIT_GRANDCHILDREN
-                    )}
-                    onChange={({ checked }) =>
-                        onSelectItems({
-                            id: USER_ORG_UNIT_GRANDCHILDREN,
-                            checked,
-                            displayName: i18n.t('User sub-x2-units'),
-                        })
-                    }
-                    dense
-                />
-            </div>
+            {showUserOrgUnits && (
+                <div className="userOrgUnitsWrapper">
+                    <Checkbox
+                        label={i18n.t('User organisation unit')}
+                        checked={selected.some(
+                            (item) => item.id === USER_ORG_UNIT
+                        )}
+                        onChange={({ checked }) =>
+                            onSelectItems({
+                                id: USER_ORG_UNIT,
+                                checked,
+                                displayName: i18n.t('User organisation unit'),
+                            })
+                        }
+                        dense
+                    />
+                    <Checkbox
+                        label={i18n.t('User sub-units')}
+                        checked={selected.some(
+                            (item) => item.id === USER_ORG_UNIT_CHILDREN
+                        )}
+                        onChange={({ checked }) =>
+                            onSelectItems({
+                                id: USER_ORG_UNIT_CHILDREN,
+                                checked,
+                                displayName: i18n.t('User sub-units'),
+                            })
+                        }
+                        dense
+                    />
+                    <Checkbox
+                        label={i18n.t('User sub-x2-units')}
+                        checked={selected.some(
+                            (item) => item.id === USER_ORG_UNIT_GRANDCHILDREN
+                        )}
+                        onChange={({ checked }) =>
+                            onSelectItems({
+                                id: USER_ORG_UNIT_GRANDCHILDREN,
+                                checked,
+                                displayName: i18n.t('User sub-x2-units'),
+                            })
+                        }
+                        dense
+                    />
+                </div>
+            )}
             <div
                 className={cx('orgUnitTreeWrapper', {
                     disabled: selected.some((item) =>
@@ -344,7 +349,12 @@ OrgUnitDimension.propTypes = {
             path: PropTypes.string,
         })
     ),
+    showUserOrgUnits: PropTypes.bool,
     onSelect: PropTypes.func,
+}
+
+OrgUnitDimension.defaultProps = {
+    showUserOrgUnits: true,
 }
 
 export default OrgUnitDimension
