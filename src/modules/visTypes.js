@@ -32,6 +32,7 @@ export const VIS_TYPE_YEAR_OVER_YEAR_COLUMN = 'YEAR_OVER_YEAR_COLUMN'
 export const VIS_TYPE_SINGLE_VALUE = 'SINGLE_VALUE'
 export const VIS_TYPE_PIVOT_TABLE = 'PIVOT_TABLE'
 export const VIS_TYPE_SCATTER = 'SCATTER'
+export const VIS_TYPE_LINE_LIST = 'LINE_LIST'
 
 export const visTypeDisplayNames = {
     [VIS_TYPE_PIVOT_TABLE]: i18n.t('Pivot table'),
