@@ -1,3 +1,10 @@
+# [21.5.0](https://github.com/dhis2/analytics/compare/v21.4.2...v21.5.0) (2022-01-25)
+
+
+### Features
+
+* add line list rules ([f0b13c0](https://github.com/dhis2/analytics/commit/f0b13c034d2fa4dca63aeeeb6bf067642a5848b3))
+
 ## [21.4.2](https://github.com/dhis2/analytics/compare/v21.4.1...v21.4.2) (2022-01-22)
 
 
