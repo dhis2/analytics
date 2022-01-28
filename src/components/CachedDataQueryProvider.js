@@ -8,27 +8,17 @@ const CachedDataQueryCtx = createContext({})
 
 const CachedDataQueryProvider = ({ query, dataTransformation, children }) => {
     const { data: rawData, ...rest } = useDataQuery(query)
-    const { error, loading, fetching } = rest
+    const { error, loading } = rest
     const data =
         rawData && dataTransformation ? dataTransformation(rawData) : rawData
 
-    /*
-     * Render loader only when data is unavailable
-     */
-    if (loading || fetching) {
+    if (loading) {
         return (
-            <>
-                <Layer translucent>
-                    <CenteredContent>
-                        <CircularLoader />
-                    </CenteredContent>
-                </Layer>
-                {!loading && (
-                    <CachedDataQueryCtx.Provider value={data}>
-                        {children}
-                    </CachedDataQueryCtx.Provider>
-                )}
-            </>
+            <Layer translucent>
+                <CenteredContent>
+                    <CircularLoader />
+                </CenteredContent>
+            </Layer>
         )
     }
 
