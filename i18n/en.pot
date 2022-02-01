@@ -58,6 +58,12 @@ msgstr "Subscribe to get updates about new interpretations."
 msgid "Subscribe"
 msgstr "Subscribe"
 
+msgid "This app could not retrieve required data."
+msgstr "This app could not retrieve required data."
+
+msgid "Network error"
+msgstr "Network error"
+
 msgid "Data Type"
 msgstr "Data Type"
 

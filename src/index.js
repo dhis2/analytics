@@ -29,6 +29,11 @@ export { default as LegendKey } from './components/LegendKey/LegendKey.js'
 
 export { default as AboutAOUnit } from './components/AboutAOUnit/AboutAOUnit.js'
 
+export {
+    CachedDataQueryProvider,
+    useCachedDataQuery,
+} from './components/CachedDataQueryProvider.js'
+
 // Api
 
 export { default as Analytics } from './api/analytics/Analytics.js'
