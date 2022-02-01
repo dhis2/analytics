@@ -1,3 +1,15 @@
+# [22.0.0](https://github.com/dhis2/analytics/compare/v21.5.1...v22.0.0) (2022-02-01)
+
+
+### Features
+
+* remove d2 and implement a generic provider component and hook ([#1114](https://github.com/dhis2/analytics/issues/1114)) ([f76233b](https://github.com/dhis2/analytics/commit/f76233bf961d1bea5586e2cffeba8e4c5a8ee254))
+
+
+### BREAKING CHANGES
+
+* currentUser is a new prop required in FileMenu in place of d2.
+
 ## [21.5.1](https://github.com/dhis2/analytics/compare/v21.5.0...v21.5.1) (2022-01-27)
 
 
