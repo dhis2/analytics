@@ -25,7 +25,7 @@ const CustomSelectOptionItem = ({
             <span className={cx({ label: icon })}>{label}</span>
             <style jsx>{styles}</style>
         </div>
-        {insertDivider ? <MenuDivider dense /> : null}
+        {insertDivider && <MenuDivider dense />}
     </>
 )
 
