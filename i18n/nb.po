@@ -66,6 +66,12 @@ msgstr "Abonner for å få oppdateringer om nye tolkninger."
 msgid "Subscribe"
 msgstr "Abonner"
 
+msgid "This app could not retrieve required data."
+msgstr ""
+
+msgid "Network error"
+msgstr ""
+
 msgid "Data Type"
 msgstr "Datatype"
 
