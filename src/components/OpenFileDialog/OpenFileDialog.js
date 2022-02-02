@@ -141,6 +141,7 @@ export const OpenFileDialog = ({
                 page,
                 sortField,
                 sortDirection,
+                filters: formatFilters(),
             })
         }
     }, [open, page, sortField, sortDirection])
