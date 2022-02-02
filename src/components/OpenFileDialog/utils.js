@@ -16,8 +16,10 @@ export const AOTypeMap = {
     },
 }
 
-export const getTranslatedString = (type, key) => {
-    let texts = {
+const NO_TYPE = 'NO_TYPE'
+
+const texts = {
+    [NO_TYPE]: {
         modalTitle: i18n.t('Open'),
         loadingText: i18n.t('Loading'),
         errorTitle: i18n.t("Couldn't load items"),
@@ -29,64 +31,52 @@ export const getTranslatedString = (type, key) => {
             "No items found. Try adjusting your search or filter options to find what you're looking for."
         ),
         newButtonLabel: i18n.t('Create new'),
-    }
+    },
 
-    switch (type) {
-        case AO_TYPE_VISUALIZATION: {
-            texts = {
-                modalTitle: i18n.t('Open a visualization'),
-                loadingText: i18n.t('Loading visualizations'),
-                errorTitle: i18n.t("Couldn't load visualizations"),
-                errorText: i18n.t(
-                    'There was a problem loading visualizations. Try again or contact your system administrator.'
-                ),
-                noDataText: i18n.t(
-                    'No visualizations found. Click New visualization to get started.'
-                ),
-                noFilteredDataText: i18n.t(
-                    "No visualizations found. Try adjusting your search or filter options to find what you're looking for."
-                ),
-                newButtonLabel: i18n.t('New visualization'),
-            }
-            break
-        }
-        case AO_TYPE_MAP: {
-            texts = {
-                modalTitle: i18n.t('Open a map'),
-                loadingText: i18n.t('Loading maps'),
-                errorTitle: i18n.t("Couldn't load maps"),
-                errorText: i18n.t(
-                    'There was a problem loading maps. Try again or contact your system administrator.'
-                ),
-                noDataText: i18n.t(
-                    'No maps found. Click New map to get started.'
-                ),
-                noFilteredDataText: i18n.t(
-                    "No maps found. Try adjusting your search or filter options to find what you're looking for."
-                ),
-                newButtonLabel: i18n.t('New map'),
-            }
-            break
-        }
-        case AO_TYPE_EVENT_VISUALIZATION: {
-            texts = {
-                modalTitle: i18n.t('Open an event visualization'),
-                loadingText: i18n.t('Loading event visualizations'),
-                errorTitle: i18n.t("Couldn't load event visualizations"),
-                errorText: i18n.t(
-                    'There was a problem loading event visualizations. Try again or contact your system administrator.'
-                ),
-                noDataText: i18n.t(
-                    'No event visualizations found. Click New event visualization to get started.'
-                ),
-                noFilteredDataText: i18n.t(
-                    "No event visualizations found. Try adjusting your search or filter options to find what you're looking for."
-                ),
-                newButtonLabel: i18n.t('New event visualization'),
-            }
-            break
-        }
-    }
-
-    return texts[key]
+    [AO_TYPE_VISUALIZATION]: {
+        modalTitle: i18n.t('Open a visualization'),
+        loadingText: i18n.t('Loading visualizations'),
+        errorTitle: i18n.t("Couldn't load visualizations"),
+        errorText: i18n.t(
+            'There was a problem loading visualizations. Try again or contact your system administrator.'
+        ),
+        noDataText: i18n.t(
+            'No visualizations found. Click New visualization to get started.'
+        ),
+        noFilteredDataText: i18n.t(
+            "No visualizations found. Try adjusting your search or filter options to find what you're looking for."
+        ),
+        newButtonLabel: i18n.t('New visualization'),
+    },
+    [AO_TYPE_MAP]: {
+        modalTitle: i18n.t('Open a map'),
+        loadingText: i18n.t('Loading maps'),
+        errorTitle: i18n.t("Couldn't load maps"),
+        errorText: i18n.t(
+            'There was a problem loading maps. Try again or contact your system administrator.'
+        ),
+        noDataText: i18n.t('No maps found. Click New map to get started.'),
+        noFilteredDataText: i18n.t(
+            "No maps found. Try adjusting your search or filter options to find what you're looking for."
+        ),
+        newButtonLabel: i18n.t('New map'),
+    },
+    [AO_TYPE_EVENT_VISUALIZATION]: {
+        modalTitle: i18n.t('Open an event visualization'),
+        loadingText: i18n.t('Loading event visualizations'),
+        errorTitle: i18n.t("Couldn't load event visualizations"),
+        errorText: i18n.t(
+            'There was a problem loading event visualizations. Try again or contact your system administrator.'
+        ),
+        noDataText: i18n.t(
+            'No event visualizations found. Click New event visualization to get started.'
+        ),
+        noFilteredDataText: i18n.t(
+            "No event visualizations found. Try adjusting your search or filter options to find what you're looking for."
+        ),
+        newButtonLabel: i18n.t('New event visualization'),
+    },
 }
+
+export const getTranslatedString = (type, key) =>
+    Object.keys(texts).includes(type) ? texts[type][key] : texts[NO_TYPE][key]
