@@ -7,20 +7,8 @@ import {
     VIS_TYPE_GROUP_CHARTS,
     VIS_TYPE_PIVOT_TABLE,
     VIS_TYPE_COLUMN,
-    VIS_TYPE_STACKED_COLUMN,
     VIS_TYPE_BAR,
-    VIS_TYPE_STACKED_BAR,
-    VIS_TYPE_LINE,
     VIS_TYPE_LINE_LIST,
-    VIS_TYPE_AREA,
-    VIS_TYPE_STACKED_AREA,
-    VIS_TYPE_PIE,
-    VIS_TYPE_RADAR,
-    VIS_TYPE_GAUGE,
-    VIS_TYPE_YEAR_OVER_YEAR_LINE,
-    VIS_TYPE_YEAR_OVER_YEAR_COLUMN,
-    VIS_TYPE_SINGLE_VALUE,
-    VIS_TYPE_SCATTER,
 } from '../modules/visTypes.js'
 
 const configMock = {
@@ -41,23 +29,11 @@ const DVfilterVisTypes = [
     { type: VIS_TYPE_GROUP_CHARTS, insertDivider: true },
     { type: VIS_TYPE_PIVOT_TABLE },
     { type: VIS_TYPE_COLUMN },
-    { type: VIS_TYPE_STACKED_COLUMN },
     { type: VIS_TYPE_BAR },
-    { type: VIS_TYPE_STACKED_BAR },
-    { type: VIS_TYPE_LINE },
-    { type: VIS_TYPE_AREA },
-    { type: VIS_TYPE_STACKED_AREA },
-    { type: VIS_TYPE_PIE },
-    { type: VIS_TYPE_RADAR },
-    { type: VIS_TYPE_GAUGE },
-    { type: VIS_TYPE_YEAR_OVER_YEAR_LINE },
-    { type: VIS_TYPE_YEAR_OVER_YEAR_COLUMN },
-    { type: VIS_TYPE_SINGLE_VALUE },
-    { type: VIS_TYPE_SCATTER },
 ]
 
 storiesOf('OpenFileDialog', module).add(
-    'List of visualizations with vis type filter and divider',
+    'List of visualizations with vis type filter and divider (no default vis type)',
     () => (
         <Provider config={configMock}>
             <OpenFileDialog
@@ -94,7 +70,7 @@ const EVfilterVisTypes = [
 ]
 
 storiesOf('OpenFileDialog', module).add(
-    'List of event visualizations with vis type filter and disabled type',
+    'List of event visualizations with vis type filter, disabled type and default vis type',
     () => (
         <Provider config={configMock}>
             <OpenFileDialog
@@ -110,6 +86,30 @@ storiesOf('OpenFileDialog', module).add(
         </Provider>
     )
 )
+
+const filterVisTypesTestCase1 = [
+    { type: VIS_TYPE_GROUP_ALL },
+    { type: VIS_TYPE_BAR, insertDivider: true },
+    { type: VIS_TYPE_COLUMN, disabled: true },
+]
+
+storiesOf('OpenFileDialog', module).add(
+    'List of visualizations with vis type filter with group type, divider and disabled option (no default vis type)',
+    () => (
+        <Provider config={configMock}>
+            <OpenFileDialog
+                type="visualization"
+                filterVisTypes={filterVisTypesTestCase1}
+                onClose={Function.prototype}
+                onFileSelect={onFileSelect}
+                onNew={Function.prototype}
+                open={true}
+                currentUser={user}
+            />
+        </Provider>
+    )
+)
+
 storiesOf('OpenFileDialog', module).add('No connection', () => (
     <OpenFileDialog
         type="map"
