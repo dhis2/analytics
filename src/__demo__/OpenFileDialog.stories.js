@@ -24,7 +24,7 @@ const user = {
 
 const onFileSelect = (id) => alert(`Opening ${id}`)
 
-const DVfilterVisTypes = [
+const filterVisTypesWithGroupsAndDivider = [
     { type: VIS_TYPE_GROUP_ALL },
     { type: VIS_TYPE_GROUP_CHARTS, insertDivider: true },
     { type: VIS_TYPE_PIVOT_TABLE },
@@ -38,7 +38,7 @@ storiesOf('OpenFileDialog', module).add(
         <Provider config={configMock}>
             <OpenFileDialog
                 type="visualization"
-                filterVisTypes={DVfilterVisTypes}
+                filterVisTypes={filterVisTypesWithGroupsAndDivider}
                 onClose={Function.prototype}
                 onFileSelect={onFileSelect}
                 onNew={Function.prototype}
@@ -64,7 +64,7 @@ storiesOf('OpenFileDialog', module).add(
     )
 )
 
-const EVfilterVisTypes = [
+const filterVisTypesWithDisabled = [
     { type: VIS_TYPE_PIVOT_TABLE, disabled: true },
     { type: VIS_TYPE_LINE_LIST },
 ]
@@ -75,7 +75,7 @@ storiesOf('OpenFileDialog', module).add(
         <Provider config={configMock}>
             <OpenFileDialog
                 type="eventVisualization"
-                filterVisTypes={EVfilterVisTypes}
+                filterVisTypes={filterVisTypesWithDisabled}
                 defaultFilterVisType={VIS_TYPE_LINE_LIST}
                 onClose={Function.prototype}
                 onFileSelect={onFileSelect}
@@ -87,7 +87,7 @@ storiesOf('OpenFileDialog', module).add(
     )
 )
 
-const filterVisTypesTestCase1 = [
+const filterVisTypesWithGroupDividerAndDisabled = [
     { type: VIS_TYPE_GROUP_ALL },
     { type: VIS_TYPE_BAR, insertDivider: true },
     { type: VIS_TYPE_COLUMN, disabled: true },
@@ -99,7 +99,7 @@ storiesOf('OpenFileDialog', module).add(
         <Provider config={configMock}>
             <OpenFileDialog
                 type="visualization"
-                filterVisTypes={filterVisTypesTestCase1}
+                filterVisTypes={filterVisTypesWithGroupDividerAndDisabled}
                 onClose={Function.prototype}
                 onFileSelect={onFileSelect}
                 onNew={Function.prototype}

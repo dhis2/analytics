@@ -79,4 +79,4 @@ const texts = {
 }
 
 export const getTranslatedString = (type, key) =>
-    Object.keys(texts).includes(type) ? texts[type][key] : texts[NO_TYPE][key]
+    (texts[type] || texts[NO_TYPE])[key]
