@@ -32,7 +32,7 @@ export const getTranslatedString = (type, key) => {
     }
 
     switch (type) {
-        case 'visualization': {
+        case AO_TYPE_VISUALIZATION: {
             texts = {
                 modalTitle: i18n.t('Open a visualization'),
                 loadingText: i18n.t('Loading visualizations'),
@@ -50,7 +50,7 @@ export const getTranslatedString = (type, key) => {
             }
             break
         }
-        case 'map': {
+        case AO_TYPE_MAP: {
             texts = {
                 modalTitle: i18n.t('Open a map'),
                 loadingText: i18n.t('Loading maps'),
@@ -68,7 +68,7 @@ export const getTranslatedString = (type, key) => {
             }
             break
         }
-        case 'eventVisualization': {
+        case AO_TYPE_EVENT_VISUALIZATION: {
             texts = {
                 modalTitle: i18n.t('Open an event visualization'),
                 loadingText: i18n.t('Loading event visualizations'),
