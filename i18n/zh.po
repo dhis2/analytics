@@ -67,6 +67,12 @@ msgstr "订阅以获取有关新解释的更新。"
 msgid "Subscribe"
 msgstr "订阅"
 
+msgid "This app could not retrieve required data."
+msgstr ""
+
+msgid "Network error"
+msgstr ""
+
 msgid "Data Type"
 msgstr "数据类型"
 

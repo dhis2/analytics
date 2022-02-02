@@ -72,6 +72,12 @@ msgstr ""
 msgid "Subscribe"
 msgstr ""
 
+msgid "This app could not retrieve required data."
+msgstr ""
+
+msgid "Network error"
+msgstr ""
+
 msgid "Data Type"
 msgstr "Тип данных"
 
