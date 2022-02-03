@@ -1,3 +1,15 @@
+# [23.0.0](https://github.com/dhis2/analytics/compare/v22.0.1...v23.0.0) (2022-02-03)
+
+
+### Features
+
+* reworked the vis type filter in OpenFileDialog ([#1126](https://github.com/dhis2/analytics/issues/1126)) ([f63aed3](https://github.com/dhis2/analytics/commit/f63aed35bca69b94c8c73356e140a88f34a947e7))
+
+
+### BREAKING CHANGES
+
+* Apps that want the vis type filter enabled in the OpenFileDialog need to pass new props: filterVisTypes and defaultFilterVisType.
+
 ## [22.0.1](https://github.com/dhis2/analytics/compare/v22.0.0...v22.0.1) (2022-02-02)
 
 
