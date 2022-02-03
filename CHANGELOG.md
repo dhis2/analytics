@@ -1,3 +1,10 @@
+# [23.1.0](https://github.com/dhis2/analytics/compare/v23.0.0...v23.1.0) (2022-02-03)
+
+
+### Features
+
+* export apiFetchItemsByDimension ([#1145](https://github.com/dhis2/analytics/issues/1145)) ([3e5957d](https://github.com/dhis2/analytics/commit/3e5957d20ceb5f997fcda8fca1663a6723fcfe0c))
+
 # [23.0.0](https://github.com/dhis2/analytics/compare/v22.0.1...v23.0.0) (2022-02-03)
 
 
