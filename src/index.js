@@ -37,7 +37,11 @@ export {
 // Api
 
 export { default as Analytics } from './api/analytics/Analytics.js'
-export { apiFetchDimensions, apiFetchRecommendedIds } from './api/dimensions.js'
+export {
+    apiFetchDimensions,
+    apiFetchRecommendedIds,
+    apiFetchItemsByDimension,
+} from './api/dimensions.js'
 export {
     apiFetchOrganisationUnitLevels,
     apiFetchOrganisationUnitRoots,
