@@ -145,6 +145,8 @@ export { getLayoutTypeByVisType } from './modules/visTypeToLayoutType.js'
 // Modules: visTypes
 
 export {
+    VIS_TYPE_GROUP_ALL,
+    VIS_TYPE_GROUP_CHARTS,
     VIS_TYPE_COLUMN,
     VIS_TYPE_STACKED_COLUMN,
     VIS_TYPE_BAR,
@@ -161,8 +163,8 @@ export {
     VIS_TYPE_SINGLE_VALUE,
     VIS_TYPE_PIVOT_TABLE,
     VIS_TYPE_SCATTER,
+    VIS_TYPE_LINE_LIST,
     visTypeDisplayNames,
-    visTypeDescriptions,
     visTypeIcons,
     getDisplayNameByVisType,
     defaultVisType,
