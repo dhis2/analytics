@@ -69,10 +69,10 @@ msgid "Subscribe"
 msgstr "Odebírat"
 
 msgid "This app could not retrieve required data."
-msgstr ""
+msgstr "Tato aplikace nemohla načíst požadovaná data."
 
 msgid "Network error"
-msgstr ""
+msgstr "Chyba sítě"
 
 msgid "Data Type"
 msgstr "Typ dat"
@@ -413,30 +413,36 @@ msgid "New event report"
 msgstr "Nová zpráva o události"
 
 msgid "Open an event visualization"
-msgstr ""
+msgstr "Otevřete vizualizaci události"
 
 msgid "Loading event visualizations"
-msgstr ""
+msgstr "Načítání vizualizací událostí"
 
 msgid "Couldn't load event visualizations"
-msgstr ""
+msgstr "Vizualizace událostí se nepodařilo načíst"
 
 msgid ""
 "There was a problem loading event visualizations. Try again or contact your "
 "system administrator."
 msgstr ""
+"Při načítání vizualizací událostí došlo k problému. Zkuste to znovu nebo se "
+"obraťte na správce systému."
 
 msgid ""
 "No event visualizations found. Click New event visualization to get started."
 msgstr ""
+"Nebyly nalezeny žádné vizualizace událostí. Začněte kliknutím na Nová "
+"vizualizace události."
 
 msgid ""
 "No event visualizations found. Try adjusting your search or filter options "
 "to find what you're looking for."
 msgstr ""
+"Nebyly nalezeny žádné vizualizace událostí. Zkuste upravit možnosti "
+"vyhledávání nebo filtru, abyste našli to, co hledáte."
 
 msgid "New event visualization"
-msgstr ""
+msgstr "Nová vizualizace události"
 
 msgid "Options"
 msgstr "Možnosti"
