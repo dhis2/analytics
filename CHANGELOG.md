@@ -1,3 +1,10 @@
+# [23.2.0](https://github.com/dhis2/analytics/compare/v23.1.1...v23.2.0) (2022-02-08)
+
+
+### Features
+
+* add line list icon (TECH-970) ([#1147](https://github.com/dhis2/analytics/issues/1147)) ([7f730f4](https://github.com/dhis2/analytics/commit/7f730f4753d454bbee5c20d8e610cfb7c577a17a))
+
 ## [23.1.1](https://github.com/dhis2/analytics/compare/v23.1.0...v23.1.1) (2022-02-06)
 
 
