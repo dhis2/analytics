@@ -1,3 +1,10 @@
+## [23.2.1](https://github.com/dhis2/analytics/compare/v23.2.0...v23.2.1) (2022-02-09)
+
+
+### Bug Fixes
+
+* export line list icon ([#1149](https://github.com/dhis2/analytics/issues/1149)) ([d65517a](https://github.com/dhis2/analytics/commit/d65517a8665efa389dc46da01abb086a0fb6a62a))
+
 # [23.2.0](https://github.com/dhis2/analytics/compare/v23.1.1...v23.2.0) (2022-02-08)
 
 
