@@ -1,3 +1,10 @@
+## [23.2.2](https://github.com/dhis2/analytics/compare/v23.2.1...v23.2.2) (2022-02-11)
+
+
+### Bug Fixes
+
+* use stage id as prefix for dimensions in analytics request ([#1150](https://github.com/dhis2/analytics/issues/1150)) ([0a9253e](https://github.com/dhis2/analytics/commit/0a9253e0200a6bc93aa8499ad2c70e20dc09203d))
+
 ## [23.2.1](https://github.com/dhis2/analytics/compare/v23.2.0...v23.2.1) (2022-02-09)
 
 
