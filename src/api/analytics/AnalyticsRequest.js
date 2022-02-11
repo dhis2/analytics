@@ -55,6 +55,11 @@ class AnalyticsRequest extends AnalyticsRequestDimensionsMixin(
                 dimension += `-${d.legendSet.id}`
             }
 
+            // needed for ER ENROLLMENT
+            if (d.programStage?.id) {
+                dimension = `${d.programStage.id}.${dimension}`
+            }
+
             if (d.filter) {
                 dimension += `:${d.filter}`
             }
