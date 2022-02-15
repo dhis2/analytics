@@ -1,3 +1,10 @@
+## [23.2.3](https://github.com/dhis2/analytics/compare/v23.2.2...v23.2.3) (2022-02-15)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([d6ec5a8](https://github.com/dhis2/analytics/commit/d6ec5a8ee359fd3c21c887ca3ca175e509280a01))
+
 ## [23.2.2](https://github.com/dhis2/analytics/compare/v23.2.1...v23.2.2) (2022-02-11)
 
 
