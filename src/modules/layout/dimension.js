@@ -37,6 +37,13 @@ export const DIMENSION_PROP_LEGEND_SET = {
     isValid: (prop) => isString(prop),
 }
 
+export const DIMENSION_PROP_PROGRAM_STAGE = {
+    name: 'programStage',
+    defaultValue: {},
+    required: false,
+    isValid: (prop) => isObject(prop),
+}
+
 export const DIMENSION_PROP_REPETITION = {
     name: 'repetition',
     defaultValue: [],
@@ -49,5 +56,6 @@ export const DIMENSION_PROPS = [
     DIMENSION_PROP_ITEMS,
     DIMENSION_PROP_FILTER,
     DIMENSION_PROP_LEGEND_SET,
+    DIMENSION_PROP_PROGRAM_STAGE,
     DIMENSION_PROP_REPETITION,
 ]
