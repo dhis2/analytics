@@ -23,7 +23,6 @@ export const dimensionCreate = (dimensionId, itemIds = [], args = {}) => {
         ...(args.repetition && {
             [DIMENSION_PROP_REPETITION.name]: args.repetition,
         }),
-
     }
     return dimension
 }
