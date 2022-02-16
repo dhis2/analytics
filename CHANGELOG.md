@@ -1,3 +1,10 @@
+# [23.3.0](https://github.com/dhis2/analytics/compare/v23.2.3...v23.3.0) (2022-02-16)
+
+
+### Features
+
+* support programStage in dimension create ([#1158](https://github.com/dhis2/analytics/issues/1158)) ([304b822](https://github.com/dhis2/analytics/commit/304b8222ff0ec6ef55305348317b265cbc543449))
+
 ## [23.2.3](https://github.com/dhis2/analytics/compare/v23.2.2...v23.2.3) (2022-02-15)
 
 
