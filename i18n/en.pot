@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2022-01-20T10:46:04.306Z\n"
-"PO-Revision-Date: 2022-01-20T10:46:04.306Z\n"
+"POT-Creation-Date: 2022-02-17T07:42:12.523Z\n"
+"PO-Revision-Date: 2022-02-17T07:42:12.523Z\n"
 
 msgid "view only"
 msgstr "view only"
@@ -367,35 +367,6 @@ msgstr ""
 
 msgid "New map"
 msgstr "New map"
-
-msgid "Open an event visualization"
-msgstr "Open an event visualization"
-
-msgid "Loading event visualizations"
-msgstr "Loading event visualizations"
-
-msgid "Couldn't load event visualizations"
-msgstr "Couldn't load event visualizations"
-
-msgid ""
-"There was a problem loading event visualizations. Try again or contact your "
-"system administrator."
-msgstr ""
-"There was a problem loading event visualizations. Try again or contact your "
-"system administrator."
-
-msgid "No event visualizations found. Click New event visualization to get started."
-msgstr "No event visualizations found. Click New event visualization to get started."
-
-msgid ""
-"No event visualizations found. Try adjusting your search or filter options "
-"to find what you're looking for."
-msgstr ""
-"No event visualizations found. Try adjusting your search or filter options "
-"to find what you're looking for."
-
-msgid "New event visualization"
-msgstr "New event visualization"
 
 msgid "Open an event visualization"
 msgstr "Open an event visualization"
@@ -963,11 +934,11 @@ msgstr "Assigned Categories"
 msgid "Pivot table"
 msgstr "Pivot table"
 
-msgid "Column"
-msgstr "Column"
+msgid "Area"
+msgstr "Area"
 
-msgid "Stacked column"
-msgstr "Stacked column"
+msgid "Stacked area"
+msgstr "Stacked area"
 
 msgid "Bar"
 msgstr "Bar"
@@ -975,14 +946,26 @@ msgstr "Bar"
 msgid "Stacked bar"
 msgstr "Stacked bar"
 
+msgid "Column"
+msgstr "Column"
+
+msgid "Year over year (column)"
+msgstr "Year over year (column)"
+
+msgid "Stacked column"
+msgstr "Stacked column"
+
+msgid "Gauge"
+msgstr "Gauge"
+
 msgid "Line"
 msgstr "Line"
 
-msgid "Area"
-msgstr "Area"
+msgid "Line list"
+msgstr "Line list"
 
-msgid "Stacked area"
-msgstr "Stacked area"
+msgid "Year over year (line)"
+msgstr "Year over year (line)"
 
 msgid "Pie"
 msgstr "Pie"
@@ -990,23 +973,11 @@ msgstr "Pie"
 msgid "Radar"
 msgstr "Radar"
 
-msgid "Gauge"
-msgstr "Gauge"
-
-msgid "Year over year (line)"
-msgstr "Year over year (line)"
-
-msgid "Year over year (column)"
-msgstr "Year over year (column)"
-
-msgid "Single value"
-msgstr "Single value"
-
 msgid "Scatter"
 msgstr "Scatter"
 
-msgid "Line list"
-msgstr "Line list"
+msgid "Single value"
+msgstr "Single value"
 
 msgid "All charts"
 msgstr "All charts"
