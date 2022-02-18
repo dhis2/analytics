@@ -2,15 +2,15 @@
 # Translators:
 # phil_dhis2, 2021
 # Viktor Varland <viktor@dhis2.org>, 2021
-# 晓东 林 <13981924470@126.com>, 2021
 # easylin <lin_xd@126.com>, 2022
+# 晓东 林 <13981924470@126.com>, 2022
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-01-20T14:11:46.002Z\n"
+"POT-Creation-Date: 2022-02-17T07:42:12.523Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: easylin <lin_xd@126.com>, 2022\n"
+"Last-Translator: 晓东 林 <13981924470@126.com>, 2022\n"
 "Language-Team: Chinese (https://www.transifex.com/hisp-uio/teams/100509/zh/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -68,10 +68,10 @@ msgid "Subscribe"
 msgstr "订阅"
 
 msgid "This app could not retrieve required data."
-msgstr ""
+msgstr "此应用无法检索所需数据。"
 
 msgid "Network error"
-msgstr ""
+msgstr "网络错误"
 
 msgid "Data Type"
 msgstr "数据类型"
@@ -271,6 +271,9 @@ msgstr "只有你"
 msgid "Others"
 msgstr "其它"
 
+msgid "Not supported by this app yet"
+msgstr ""
+
 msgid "Filter by name"
 msgstr "按名称过滤"
 
@@ -288,9 +291,6 @@ msgstr "清除过滤器"
 
 msgid "{{firstItemIndex}}-{{lastItemIndex}} of {{totalNumberOfItems}}"
 msgstr "{{firstItemIndex}}-{{lastItemIndex}} 的 {{totalNumberOfItems}}"
-
-msgid "All charts"
-msgstr "所有图表"
 
 msgid "Open"
 msgstr "开放"
@@ -363,31 +363,6 @@ msgstr "未找到地图。尝试调整您的搜索或过滤选项以找到您要
 
 msgid "New map"
 msgstr "新地图"
-
-msgid "Open an event report"
-msgstr "打开事件报告"
-
-msgid "Loading event reports"
-msgstr "加载事件报告"
-
-msgid "Couldn't load event reports"
-msgstr "无法加载事件报告"
-
-msgid ""
-"There was a problem loading event reports. Try again or contact your system "
-"administrator."
-msgstr "加载事件报告时出现问题。重试或联系您的系统管理员。"
-
-msgid "No event reports found. Click New event report to get started."
-msgstr "未找到事件报告。单击新建事件报告开始。"
-
-msgid ""
-"No event reports found. Try adjusting your search or filter options to find "
-"what you're looking for."
-msgstr "未找到事件报告。尝试调整您的搜索或过滤选项以找到您要查找的内容。"
-
-msgid "New event report"
-msgstr "新建事件报告"
 
 msgid "Open an event visualization"
 msgstr "打开事件可视化"
@@ -949,11 +924,11 @@ msgstr "指定的分类"
 msgid "Pivot table"
 msgstr "透视表"
 
-msgid "Column"
-msgstr "列"
+msgid "Area"
+msgstr "面积"
 
-msgid "Stacked column"
-msgstr "叠列"
+msgid "Stacked area"
+msgstr "堆积面积"
 
 msgid "Bar"
 msgstr "柱状图"
@@ -961,14 +936,26 @@ msgstr "柱状图"
 msgid "Stacked bar"
 msgstr "叠柱图"
 
+msgid "Column"
+msgstr "列"
+
+msgid "Year over year (column)"
+msgstr "逐年（列图）"
+
+msgid "Stacked column"
+msgstr "叠列"
+
+msgid "Gauge"
+msgstr "表盘图"
+
 msgid "Line"
 msgstr "折线图"
 
-msgid "Area"
-msgstr "面积"
+msgid "Line list"
+msgstr "行列表"
 
-msgid "Stacked area"
-msgstr "堆积面积"
+msgid "Year over year (line)"
+msgstr "逐年（折线图）"
 
 msgid "Pie"
 msgstr "饼图"
@@ -976,73 +963,14 @@ msgstr "饼图"
 msgid "Radar"
 msgstr "雷达图"
 
-msgid "Gauge"
-msgstr "表盘图"
-
-msgid "Year over year (line)"
-msgstr "逐年（折线图）"
-
-msgid "Year over year (column)"
-msgstr "逐年（列图）"
+msgid "Scatter"
+msgstr "分散"
 
 msgid "Single value"
 msgstr "单个值"
 
-msgid "Scatter"
-msgstr "分散"
-
-msgid "View data and indicators in a manipulatable table."
-msgstr "在可操作的表格中查看数据和指标。"
-
-msgid ""
-"Compare sizes of related elements vertically. Recommend period as filter."
-msgstr "垂直比较相关元素的大小。推荐时段为过滤条件。"
-
-msgid ""
-"Compare parts of a whole against related elements vertically. Recommend data"
-" or org. unit as series."
-msgstr "垂直比较整个部分和相关元素。推荐数据或组织机构为系列。"
-
-msgid ""
-"Compare sizes of related elements horizontally. Recommend period as filter."
-msgstr "水平比较相关元素的大小。推荐时段为过滤条件。"
-
-msgid ""
-"Compare parts of a whole against related elements horizontally. Recommend "
-"data or org. unit as series."
-msgstr "水平比较整个部分和相关元素。推荐数据或组织机构为系列。"
-
-msgid "Track or compare changes over time. Recommend period as category."
-msgstr "跟踪或比较随时间的变化规律。推荐时期为分类。"
-
-msgid ""
-"Track or compare parts of a whole over time. Recommend data as series and "
-"period as category."
-msgstr "随着时间的推移跟踪或比较整个部分。建议将数据作为系列，将周期作为类别。"
-
-msgid ""
-"Compare parts of a whole at a single point in time. Recommend period as "
-"filter."
-msgstr "在单个时间点比较整个的一部分。推荐时段为过滤条件。"
-
-msgid "Compare several items against multiple variables."
-msgstr "将多个变量与多个条目进行比较。"
-
-msgid ""
-"Compare a percentage indicator against a 100% scale. Recommend period as "
-"filter."
-msgstr "将百分比指标与100％比例进行比较。推荐时段为过滤条件。"
-
-msgid "Compare changes over time between multiple time periods."
-msgstr "比较多个时间段之间随时间的变化。"
-
-msgid "Display a single value. Recommend relative period to show latest data."
-msgstr "显示单个值。推荐相对时期以显示最新数据。"
-
-msgid ""
-"View the relationship between two data items at a place or time. Recommended"
-" for finding outliers."
-msgstr "查看某个地点或时间的两个数据项之间的关系。推荐用于发现异常值。"
+msgid "All charts"
+msgstr "所有图表"
 
 msgid "{{seriesName}} (trend)"
 msgstr "{{seriesName}}（趋势）"
