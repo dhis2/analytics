@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-01-20T14:11:46.002Z\n"
+"POT-Creation-Date: 2022-02-17T07:42:12.523Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: Viktor Varland <viktor@dhis2.org>, 2021\n"
 "Language-Team: Pashto (https://www.transifex.com/hisp-uio/teams/100509/ps/)\n"
@@ -270,6 +270,9 @@ msgstr ""
 msgid "Others"
 msgstr ""
 
+msgid "Not supported by this app yet"
+msgstr ""
+
 msgid "Filter by name"
 msgstr "د نوم له مخې یې فیلټر کړئ"
 
@@ -286,9 +289,6 @@ msgid "Clear filters"
 msgstr ""
 
 msgid "{{firstItemIndex}}-{{lastItemIndex}} of {{totalNumberOfItems}}"
-msgstr ""
-
-msgid "All charts"
 msgstr ""
 
 msgid "Open"
@@ -361,31 +361,6 @@ msgid ""
 msgstr ""
 
 msgid "New map"
-msgstr ""
-
-msgid "Open an event report"
-msgstr ""
-
-msgid "Loading event reports"
-msgstr ""
-
-msgid "Couldn't load event reports"
-msgstr ""
-
-msgid ""
-"There was a problem loading event reports. Try again or contact your system "
-"administrator."
-msgstr ""
-
-msgid "No event reports found. Click New event report to get started."
-msgstr ""
-
-msgid ""
-"No event reports found. Try adjusting your search or filter options to find "
-"what you're looking for."
-msgstr ""
-
-msgid "New event report"
 msgstr ""
 
 msgid "Open an event visualization"
@@ -951,10 +926,10 @@ msgstr ""
 msgid "Pivot table"
 msgstr ""
 
-msgid "Column"
-msgstr "ستون"
+msgid "Area"
+msgstr ""
 
-msgid "Stacked column"
+msgid "Stacked area"
 msgstr ""
 
 msgid "Bar"
@@ -963,13 +938,25 @@ msgstr ""
 msgid "Stacked bar"
 msgstr ""
 
+msgid "Column"
+msgstr "ستون"
+
+msgid "Year over year (column)"
+msgstr ""
+
+msgid "Stacked column"
+msgstr ""
+
+msgid "Gauge"
+msgstr ""
+
 msgid "Line"
 msgstr ""
 
-msgid "Area"
+msgid "Line list"
 msgstr ""
 
-msgid "Stacked area"
+msgid "Year over year (line)"
 msgstr ""
 
 msgid "Pie"
@@ -978,72 +965,13 @@ msgstr ""
 msgid "Radar"
 msgstr ""
 
-msgid "Gauge"
-msgstr ""
-
-msgid "Year over year (line)"
-msgstr ""
-
-msgid "Year over year (column)"
+msgid "Scatter"
 msgstr ""
 
 msgid "Single value"
 msgstr ""
 
-msgid "Scatter"
-msgstr ""
-
-msgid "View data and indicators in a manipulatable table."
-msgstr ""
-
-msgid ""
-"Compare sizes of related elements vertically. Recommend period as filter."
-msgstr ""
-
-msgid ""
-"Compare parts of a whole against related elements vertically. Recommend data"
-" or org. unit as series."
-msgstr ""
-
-msgid ""
-"Compare sizes of related elements horizontally. Recommend period as filter."
-msgstr ""
-
-msgid ""
-"Compare parts of a whole against related elements horizontally. Recommend "
-"data or org. unit as series."
-msgstr ""
-
-msgid "Track or compare changes over time. Recommend period as category."
-msgstr ""
-
-msgid ""
-"Track or compare parts of a whole over time. Recommend data as series and "
-"period as category."
-msgstr ""
-
-msgid ""
-"Compare parts of a whole at a single point in time. Recommend period as "
-"filter."
-msgstr ""
-
-msgid "Compare several items against multiple variables."
-msgstr ""
-
-msgid ""
-"Compare a percentage indicator against a 100% scale. Recommend period as "
-"filter."
-msgstr ""
-
-msgid "Compare changes over time between multiple time periods."
-msgstr ""
-
-msgid "Display a single value. Recommend relative period to show latest data."
-msgstr ""
-
-msgid ""
-"View the relationship between two data items at a place or time. Recommended"
-" for finding outliers."
+msgid "All charts"
 msgstr ""
 
 msgid "{{seriesName}} (trend)"

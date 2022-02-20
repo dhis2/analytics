@@ -1,3 +1,17 @@
+## [23.4.1](https://github.com/dhis2/analytics/compare/v23.4.0...v23.4.1) (2022-02-18)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([a7050f0](https://github.com/dhis2/analytics/commit/a7050f0fbbe71a7a292cd20ad8c8f185038bb214))
+
+# [23.4.0](https://github.com/dhis2/analytics/compare/v23.3.0...v23.4.0) (2022-02-17)
+
+
+### Features
+
+* program stage prefix in layout ([#1159](https://github.com/dhis2/analytics/issues/1159)) ([665b251](https://github.com/dhis2/analytics/commit/665b25180a3d718f03fa1bbca9f429bdfa3f728d))
+
 # [23.3.0](https://github.com/dhis2/analytics/compare/v23.2.3...v23.3.0) (2022-02-16)
 
 
