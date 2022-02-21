@@ -1,3 +1,10 @@
+# [23.5.0](https://github.com/dhis2/analytics/compare/v23.4.1...v23.5.0) (2022-02-21)
+
+
+### Features
+
+* repeatable events (TECH-894) ([#1152](https://github.com/dhis2/analytics/issues/1152)) ([4c35dbb](https://github.com/dhis2/analytics/commit/4c35dbb16d426afaf70913d41f7640376a4ecbc9))
+
 ## [23.4.1](https://github.com/dhis2/analytics/compare/v23.4.0...v23.4.1) (2022-02-18)
 
 
