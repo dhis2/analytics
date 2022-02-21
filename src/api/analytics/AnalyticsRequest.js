@@ -63,10 +63,18 @@ class AnalyticsRequest extends AnalyticsRequestDimensionsMixin(
                 dimension += `:${d.filter}`
             }
 
-            request = request.addDimension(
-                dimension,
-                d.items?.map((item) => item.id)
-            )
+            if (d.repetition?.indexes?.length) {
+                d.repetition.indexes.forEach((index) => {
+                    request = request.addDimension(
+                        dimension.replace(/\./, `[${index}].`)
+                    )
+                })
+            } else {
+                request = request.addDimension(
+                    dimension,
+                    d.items?.map((item) => item.id)
+                )
+            }
         })
 
         // extract filters from visualization

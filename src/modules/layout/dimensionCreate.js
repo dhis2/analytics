@@ -4,6 +4,7 @@ import {
     DIMENSION_PROP_FILTER,
     DIMENSION_PROP_LEGEND_SET,
     DIMENSION_PROP_PROGRAM_STAGE,
+    DIMENSION_PROP_REPETITION,
 } from './dimension.js'
 
 export const dimensionCreate = (dimensionId, itemIds = [], args = {}) => {
@@ -18,6 +19,9 @@ export const dimensionCreate = (dimensionId, itemIds = [], args = {}) => {
         }),
         ...(args.programStage && {
             [DIMENSION_PROP_PROGRAM_STAGE.name]: args.programStage,
+        }),
+        ...(args.repetition && {
+            [DIMENSION_PROP_REPETITION.name]: args.repetition,
         }),
     }
     return dimension

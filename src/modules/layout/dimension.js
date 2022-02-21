@@ -44,10 +44,18 @@ export const DIMENSION_PROP_PROGRAM_STAGE = {
     isValid: (prop) => isObject(prop),
 }
 
+export const DIMENSION_PROP_REPETITION = {
+    name: 'repetition',
+    defaultValue: [],
+    required: false,
+    isValid: (prop) => Array.isArray(prop),
+}
+
 export const DIMENSION_PROPS = [
     DIMENSION_PROP_ID,
     DIMENSION_PROP_ITEMS,
     DIMENSION_PROP_FILTER,
     DIMENSION_PROP_LEGEND_SET,
     DIMENSION_PROP_PROGRAM_STAGE,
+    DIMENSION_PROP_REPETITION,
 ]
