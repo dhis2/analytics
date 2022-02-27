@@ -276,7 +276,7 @@ msgid "Others"
 msgstr "Ostatní"
 
 msgid "Not supported by this app yet"
-msgstr ""
+msgstr "Tato aplikace zatím nepodporuje"
 
 msgid "Filter by name"
 msgstr "Filtrovat podle názvu"
