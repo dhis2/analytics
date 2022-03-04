@@ -1,3 +1,17 @@
+# [23.6.0](https://github.com/dhis2/analytics/compare/v23.5.2...v23.6.0) (2022-03-02)
+
+
+### Features
+
+* disable Save button when onSave not passed (TECH-1013) ([#1167](https://github.com/dhis2/analytics/issues/1167)) ([fa87c8b](https://github.com/dhis2/analytics/commit/fa87c8b9ef3fe8e237e7d21423c81daf0ff6c817))
+
+## [23.5.2](https://github.com/dhis2/analytics/compare/v23.5.1...v23.5.2) (2022-02-28)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([a4a1ecc](https://github.com/dhis2/analytics/commit/a4a1eccd9eb8a5ad317790d4899f6c769789fed5))
+
 ## [23.5.1](https://github.com/dhis2/analytics/compare/v23.5.0...v23.5.1) (2022-02-22)
 
 
