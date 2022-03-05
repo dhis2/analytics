@@ -1,3 +1,10 @@
+## [23.6.1](https://github.com/dhis2/analytics/compare/v23.6.0...v23.6.1) (2022-03-05)
+
+
+### Bug Fixes
+
+* add to layout button for line list (TECH-1021) ([#1168](https://github.com/dhis2/analytics/issues/1168)) ([036072c](https://github.com/dhis2/analytics/commit/036072c90933683b4eaef9ce2e358a5e0b284a1e))
+
 # [23.6.0](https://github.com/dhis2/analytics/compare/v23.5.2...v23.6.0) (2022-03-02)
 
 
