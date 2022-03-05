@@ -192,6 +192,7 @@ export {
     LAYOUT_TYPE_YEAR_OVER_YEAR,
     LAYOUT_TYPE_PIVOT_TABLE,
     LAYOUT_TYPE_SCATTER,
+    LAYOUT_TYPE_LINE_LIST,
 } from './modules/layoutTypes.js'
 
 // Modules: layoutUiRules
