@@ -1,3 +1,5 @@
+import i18n from '@dhis2/d2-i18n'
+
 export const FILE_TYPE_EVENT_REPORT = 'eventReport'
 export const FILE_TYPE_VISUALIZATION = 'visualization'
 export const FILE_TYPE_MAP = 'map'
@@ -14,10 +16,14 @@ export const endpointFromFileType = (fileType) => `${fileType}s`
 
 export const labelForFileType = (fileType) => {
     switch (fileType) {
-        case FILE_TYPE_EVENT_VISUALIZATION:
-            return 'line list'
         case FILE_TYPE_EVENT_REPORT:
-            return 'event report'
+            return i18n.t('event report')
+        case FILE_TYPE_EVENT_VISUALIZATION:
+            return i18n.t('line list')
+        case FILE_TYPE_MAP:
+            return i18n.t('map')
+        case FILE_TYPE_VISUALIZATION:
+            return i18n.t('visualization')
         default:
             return fileType
     }
