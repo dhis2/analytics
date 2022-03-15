@@ -251,6 +251,18 @@ msgstr "Rename"
 msgid "Save {{fileType}} as"
 msgstr "Save {{fileType}} as"
 
+msgid "event report"
+msgstr "event report"
+
+msgid "line list"
+msgstr "line list"
+
+msgid "map"
+msgstr "map"
+
+msgid "visualization"
+msgstr "visualization"
+
 msgid "Created by"
 msgstr "Created by"
 
