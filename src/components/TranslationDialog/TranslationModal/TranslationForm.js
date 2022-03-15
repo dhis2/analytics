@@ -73,17 +73,16 @@ export const TranslationForm = ({
         )
     }
 
-    const [fetchFieldsTranslations] = useDataMutation(
-        {
-            resource: 'i18n',
-            type: 'create',
-            data: fieldsToTranslate.map(camelCaseToUnderscores),
-        },
-        {
-            onComplete: (res) => setFieldsTranslations(res),
-            onError: (error) => showError(error),
-        }
-    )
+    const i18nMutationRef = useRef({
+        resource: 'i18n',
+        type: 'create',
+        data: fieldsToTranslate.map(camelCaseToUnderscores),
+    })
+
+    const [fetchFieldsTranslations] = useDataMutation(i18nMutationRef.current, {
+        onComplete: (res) => setFieldsTranslations(res),
+        onError: (error) => showError(error),
+    })
 
     const translationsMutationRef = useRef({
         resource: `${resource}/translations`,
