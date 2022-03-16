@@ -1,3 +1,10 @@
+## [23.6.3](https://github.com/dhis2/analytics/compare/v23.6.2...v23.6.3) (2022-03-16)
+
+
+### Bug Fixes
+
+* rename event visualization to line list ([#1176](https://github.com/dhis2/analytics/issues/1176)) ([057bdd0](https://github.com/dhis2/analytics/commit/057bdd0a27923de54e2a7294bef60f3613cdef50))
+
 ## [23.6.2](https://github.com/dhis2/analytics/compare/v23.6.1...v23.6.2) (2022-03-06)
 
 
