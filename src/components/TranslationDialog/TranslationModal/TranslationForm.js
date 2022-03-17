@@ -19,6 +19,13 @@ import { TranslationModalActions } from './TranslationModalActions.js'
 const SESSION_STORAGE_TRANSLATION_LOCALE_KEY =
     'translation-dialog-selected-locale'
 
+const camelCaseToUnderscores = (field) =>
+    field
+        .replace(/[a-z][A-Z]/g, (match) =>
+            [match.charAt(0), match.charAt(1)].join('_')
+        )
+        .toLowerCase()
+
 export const TranslationForm = ({
     fieldsToTranslate,
     objectToTranslate,
@@ -32,13 +39,6 @@ export const TranslationForm = ({
     const [fieldsTranslations, setFieldsTranslations] = useState({})
 
     const { show: showError } = useAlert((error) => error, { critical: true })
-
-    const camelCaseToUnderscores = (field) =>
-        field
-            .replace(/[a-z][A-Z]/g, (match) =>
-                [match.charAt(0), match.charAt(1)].join('_')
-            )
-            .toLowerCase()
 
     const getTranslationIndexForField = (field) =>
         newTranslations.findIndex(
