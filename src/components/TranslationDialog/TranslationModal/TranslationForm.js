@@ -19,6 +19,13 @@ import { TranslationModalActions } from './TranslationModalActions.js'
 const SESSION_STORAGE_TRANSLATION_LOCALE_KEY =
     'translation-dialog-selected-locale'
 
+const camelCaseToUnderscores = (field) =>
+    field
+        .replace(/[a-z][A-Z]/g, (match) =>
+            [match.charAt(0), match.charAt(1)].join('_')
+        )
+        .toLowerCase()
+
 export const TranslationForm = ({
     fieldsToTranslate,
     objectToTranslate,
@@ -32,13 +39,6 @@ export const TranslationForm = ({
     const [fieldsTranslations, setFieldsTranslations] = useState({})
 
     const { show: showError } = useAlert((error) => error, { critical: true })
-
-    const camelCaseToUnderscores = (field) =>
-        field
-            .replace(/[a-z][A-Z]/g, (match) =>
-                [match.charAt(0), match.charAt(1)].join('_')
-            )
-            .toLowerCase()
 
     const getTranslationIndexForField = (field) =>
         newTranslations.findIndex(
@@ -73,17 +73,16 @@ export const TranslationForm = ({
         )
     }
 
-    const [fetchFieldsTranslations] = useDataMutation(
-        {
-            resource: 'i18n',
-            type: 'create',
-            data: fieldsToTranslate.map(camelCaseToUnderscores),
-        },
-        {
-            onComplete: (res) => setFieldsTranslations(res),
-            onError: (error) => showError(error),
-        }
-    )
+    const i18nMutationRef = useRef({
+        resource: 'i18n',
+        type: 'create',
+        data: fieldsToTranslate.map(camelCaseToUnderscores),
+    })
+
+    const [fetchFieldsTranslations] = useDataMutation(i18nMutationRef.current, {
+        onComplete: (res) => setFieldsTranslations(res),
+        onError: (error) => showError(error),
+    })
 
     const translationsMutationRef = useRef({
         resource: `${resource}/translations`,
