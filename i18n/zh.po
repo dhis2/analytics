@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-02-10T17:39:46.718Z\n"
+"POT-Creation-Date: 2022-03-17T10:18:53.422Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: easylin <lin_xd@126.com>, 2022\n"
 "Language-Team: Chinese (https://www.transifex.com/hisp-uio/teams/100509/zh/)\n"
@@ -364,31 +364,30 @@ msgstr "未找到地图。尝试调整您的搜索或过滤选项以找到您要
 msgid "New map"
 msgstr "新地图"
 
-msgid "Open an event visualization"
-msgstr "打开事件可视化"
+msgid "Open a line list"
+msgstr ""
 
-msgid "Loading event visualizations"
-msgstr "加载事件可视化"
+msgid "Loading line lists"
+msgstr ""
 
-msgid "Couldn't load event visualizations"
-msgstr "无法加载事件可视化应用"
-
-msgid ""
-"There was a problem loading event visualizations. Try again or contact your "
-"system administrator."
-msgstr "加载事件可视化时出现问题。重试或联系您的系统管理员。"
+msgid "Couldn't load line lists"
+msgstr ""
 
 msgid ""
-"No event visualizations found. Click New event visualization to get started."
-msgstr "未找到事件可视化。单击新建事件可视化开始。"
+"There was a problem loading line lists. Try again or contact your system "
+"administrator."
+msgstr ""
+
+msgid "No line lists found. Click New line list to get started."
+msgstr ""
 
 msgid ""
-"No event visualizations found. Try adjusting your search or filter options "
-"to find what you're looking for."
-msgstr "未找到事件可视化。尝试调整您的搜索或过滤选项以找到您要查找的内容。"
+"No line lists found. Try adjusting your search or filter options to find "
+"what you're looking for."
+msgstr ""
 
-msgid "New event visualization"
-msgstr "新的事件可视化"
+msgid "New line list"
+msgstr ""
 
 msgid "Options"
 msgstr "选项"
