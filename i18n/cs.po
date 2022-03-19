@@ -382,29 +382,35 @@ msgid "New map"
 msgstr "Nová mapa"
 
 msgid "Open a line list"
-msgstr ""
+msgstr "Otevřít řádkový seznam"
 
 msgid "Loading line lists"
-msgstr ""
+msgstr "Načítání řádkových seznamů"
 
 msgid "Couldn't load line lists"
-msgstr ""
+msgstr "Řádkové seznamy se nepodařilo načíst"
 
 msgid ""
 "There was a problem loading line lists. Try again or contact your system "
 "administrator."
 msgstr ""
+"Při načítání řádkových seznamů došlo k problému. Zkuste to znovu nebo se "
+"obraťte na správce systému."
 
 msgid "No line lists found. Click New line list to get started."
 msgstr ""
+"Nebyly nalezeny žádné řádkové seznamy. Začněte kliknutím na Nový řádkový "
+"seznam."
 
 msgid ""
 "No line lists found. Try adjusting your search or filter options to find "
 "what you're looking for."
 msgstr ""
+"Nebyly nalezeny žádné řádkové seznamy. Zkuste upravit možnosti vyhledávání "
+"nebo filtru, abyste našli to, co hledáte."
 
 msgid "New line list"
-msgstr ""
+msgstr "Nový řádkový seznam"
 
 msgid "Options"
 msgstr "Možnosti"
