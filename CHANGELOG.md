@@ -1,3 +1,31 @@
+## [23.6.6](https://github.com/dhis2/analytics/compare/v23.6.5...v23.6.6) (2022-03-19)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([5568e55](https://github.com/dhis2/analytics/commit/5568e55b1f8d6e2bd0ff0e1b748bbd3ef84d8b71))
+
+## [23.6.5](https://github.com/dhis2/analytics/compare/v23.6.4...v23.6.5) (2022-03-18)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([5ece76b](https://github.com/dhis2/analytics/commit/5ece76b4394c69f7a3e5108cfbf93b9521c43a93))
+
+## [23.6.4](https://github.com/dhis2/analytics/compare/v23.6.3...v23.6.4) (2022-03-17)
+
+
+### Bug Fixes
+
+* **TranslationDialog:** remove warnings ([#1174](https://github.com/dhis2/analytics/issues/1174)) ([c7e778d](https://github.com/dhis2/analytics/commit/c7e778da4b9aa6f950b874bd6f61a4018a5c8f3f))
+
+## [23.6.3](https://github.com/dhis2/analytics/compare/v23.6.2...v23.6.3) (2022-03-16)
+
+
+### Bug Fixes
+
+* rename event visualization to line list ([#1176](https://github.com/dhis2/analytics/issues/1176)) ([057bdd0](https://github.com/dhis2/analytics/commit/057bdd0a27923de54e2a7294bef60f3613cdef50))
+
 ## [23.6.2](https://github.com/dhis2/analytics/compare/v23.6.1...v23.6.2) (2022-03-06)
 
 
