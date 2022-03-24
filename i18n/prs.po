@@ -257,6 +257,18 @@ msgstr "تغییر نام"
 msgid "Save {{fileType}} as"
 msgstr ""
 
+msgid "event report"
+msgstr ""
+
+msgid "line list"
+msgstr ""
+
+msgid "map"
+msgstr ""
+
+msgid "visualization"
+msgstr ""
+
 msgid "Created by"
 msgstr "ایجاد شده توسط"
 

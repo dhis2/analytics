@@ -256,6 +256,18 @@ msgstr "Қайта номлашч"
 msgid "Save {{fileType}} as"
 msgstr ""
 
+msgid "event report"
+msgstr "ҳодиса/тадбир ҳисоботи"
+
+msgid "line list"
+msgstr ""
+
+msgid "map"
+msgstr "харита"
+
+msgid "visualization"
+msgstr ""
+
 msgid "Created by"
 msgstr "Томонидан яратилган"
 

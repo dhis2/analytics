@@ -261,6 +261,18 @@ msgstr "Ganti nama"
 msgid "Save {{fileType}} as"
 msgstr "Simpan {{fileType}} sebagai"
 
+msgid "event report"
+msgstr ""
+
+msgid "line list"
+msgstr ""
+
+msgid "map"
+msgstr ""
+
+msgid "visualization"
+msgstr ""
+
 msgid "Created by"
 msgstr "Dibuat oleh"
 
