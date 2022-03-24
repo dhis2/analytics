@@ -1,3 +1,10 @@
+## [23.6.7](https://github.com/dhis2/analytics/compare/v23.6.6...v23.6.7) (2022-03-24)
+
+
+### Bug Fixes
+
+* return the URL portion after origin as default TECH-1036 ([#1175](https://github.com/dhis2/analytics/issues/1175)) ([38607d9](https://github.com/dhis2/analytics/commit/38607d9716f45a8f47ae6003a2e9f90dd4d170a2))
+
 ## [23.6.6](https://github.com/dhis2/analytics/compare/v23.6.5...v23.6.6) (2022-03-19)
 
 
