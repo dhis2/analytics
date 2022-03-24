@@ -1,3 +1,10 @@
+# [23.7.0](https://github.com/dhis2/analytics/compare/v23.6.7...v23.7.0) (2022-03-24)
+
+
+### Features
+
+* **FileMenu:** use custom labels in dialog titles TECH-1035 ([#1173](https://github.com/dhis2/analytics/issues/1173)) ([4f02fdf](https://github.com/dhis2/analytics/commit/4f02fdf9d314f0705416442d39f50324d10552e4))
+
 ## [23.6.7](https://github.com/dhis2/analytics/compare/v23.6.6...v23.6.7) (2022-03-24)
 
 
