@@ -263,6 +263,18 @@ msgstr "إعادة التسمية"
 msgid "Save {{fileType}} as"
 msgstr ""
 
+msgid "event report"
+msgstr "تقارير عن الأحداث"
+
+msgid "line list"
+msgstr ""
+
+msgid "map"
+msgstr "خريطة"
+
+msgid "visualization"
+msgstr ""
+
 msgid "Created by"
 msgstr "تم الإنشاء بواسطة"
 
