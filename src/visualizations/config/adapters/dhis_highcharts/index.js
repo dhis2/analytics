@@ -139,6 +139,7 @@ export default function ({ store, layout, el, extraConfig, extraOptions }) {
         exporting: {
             // disable exporting context menu
             enabled: false,
+            allowHTML: true,
         },
     }
 
