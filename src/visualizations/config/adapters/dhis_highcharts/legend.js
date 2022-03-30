@@ -117,11 +117,17 @@ const formatLabel = ({
     ) {
         // trendline
         result.push(
-            `<span style="height: ${
-                fontStyle[FONT_STYLE_OPTION_FONT_SIZE] / 6.5
-            }px; width: ${
+            `<svg xmlns="http://www.w3.org/2000/svg" width="${
                 fontStyle[FONT_STYLE_OPTION_FONT_SIZE]
-            }px; background-color: ${seriesColor}; display: inline-block;"></span>`
+            }" height="${
+                fontStyle[FONT_STYLE_OPTION_FONT_SIZE] / 6.5
+            }" version="1.1">
+                <rect height="${
+                    fontStyle[FONT_STYLE_OPTION_FONT_SIZE] / 6.5
+                }" width="${
+                fontStyle[FONT_STYLE_OPTION_FONT_SIZE]
+            }" fill="${seriesColor}"/>
+            </svg>`
         )
         result.push(
             `<span style="margin-left: 8px" class="data-test-series-key-item-name">${seriesName}</span>`
@@ -147,7 +153,7 @@ const formatLabel = ({
                         fontStyle[FONT_STYLE_OPTION_FONT_SIZE] / 2
                     }" cy="${fontStyle[FONT_STYLE_OPTION_FONT_SIZE] / 2}" r="${
                         fontStyle[FONT_STYLE_OPTION_FONT_SIZE] / 2
-                    }" fill="${legend.color}"></circle>
+                    }" fill="${legend.color}"/>
                     </svg>`
                 )
             )
@@ -192,7 +198,7 @@ const formatLabel = ({
                         fontStyle[FONT_STYLE_OPTION_FONT_SIZE] / 2
                     }" cy="${fontStyle[FONT_STYLE_OPTION_FONT_SIZE] / 2}" r="${
                     fontStyle[FONT_STYLE_OPTION_FONT_SIZE] / 2
-                }" fill="${seriesColor}"></circle>
+                }" fill="${seriesColor}"/>
                     </svg>`
             )
         }
