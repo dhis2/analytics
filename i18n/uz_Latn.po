@@ -1,19 +1,74 @@
 # 
 # Translators:
-# Yury Rogachev <yury@dhis2.org>, 2021
+# Yury Rogachev <yury@dhis2.org>, 2022
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-08-20T13:36:17.268Z\n"
+"POT-Creation-Date: 2022-03-17T10:18:53.422Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Yury Rogachev <yury@dhis2.org>, 2021\n"
+"Last-Translator: Yury Rogachev <yury@dhis2.org>, 2022\n"
 "Language-Team: Uzbek (Latin) (https://www.transifex.com/hisp-uio/teams/100509/uz@Latn/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: uz@Latn\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "view only"
+msgstr ""
+
+msgid "view and edit"
+msgstr ""
+
+msgid "all users ({{accessLevel}})"
+msgstr ""
+
+msgid "{{userOrGroup}} ({{accessLevel}})"
+msgstr ""
+
+msgid "Shared with {{commaSeparatedListOfUsersAndGroups}}"
+msgstr ""
+
+msgid "Not shared with any users or groups"
+msgstr ""
+
+msgid "About this visualization"
+msgstr ""
+
+msgid "No description"
+msgstr "Tavsif yoʼq"
+
+msgid "Last updated {{time}}"
+msgstr ""
+
+msgid "Created {{time}} by {{author}}"
+msgstr ""
+
+msgid "Viewed {{count}} times"
+msgid_plural "Viewed {{count}} times"
+msgstr[0] ""
+
+msgid "Notifications"
+msgstr ""
+
+msgid "You're subscribed and getting updates about new interpretations."
+msgstr ""
+
+msgid "Unsubscribe"
+msgstr ""
+
+msgid "Subscribe to get updates about new interpretations."
+msgstr ""
+
+msgid "Subscribe"
+msgstr ""
+
+msgid "This app could not retrieve required data."
+msgstr ""
+
+msgid "Network error"
+msgstr ""
 
 msgid "Data Type"
 msgstr "Maʼlumot turi"
@@ -201,6 +256,18 @@ msgstr "Қайта номлаш"
 msgid "Save {{fileType}} as"
 msgstr ""
 
+msgid "event report"
+msgstr "hodisa/tadbir hisoboti"
+
+msgid "line list"
+msgstr ""
+
+msgid "map"
+msgstr "xarita"
+
+msgid "visualization"
+msgstr ""
+
 msgid "Created by"
 msgstr "Томонидан яратилган"
 
@@ -211,6 +278,9 @@ msgid "Only you"
 msgstr ""
 
 msgid "Others"
+msgstr ""
+
+msgid "Not supported by this app yet"
 msgstr ""
 
 msgid "Filter by name"
@@ -229,9 +299,6 @@ msgid "Clear filters"
 msgstr "Filtrlarni tozalash"
 
 msgid "{{firstItemIndex}}-{{lastItemIndex}} of {{totalNumberOfItems}}"
-msgstr ""
-
-msgid "All charts"
 msgstr ""
 
 msgid "Open"
@@ -305,6 +372,76 @@ msgstr ""
 
 msgid "New map"
 msgstr ""
+
+msgid "Open a line list"
+msgstr ""
+
+msgid "Loading line lists"
+msgstr ""
+
+msgid "Couldn't load line lists"
+msgstr ""
+
+msgid ""
+"There was a problem loading line lists. Try again or contact your system "
+"administrator."
+msgstr ""
+
+msgid "No line lists found. Click New line list to get started."
+msgstr ""
+
+msgid ""
+"No line lists found. Try adjusting your search or filter options to find "
+"what you're looking for."
+msgstr ""
+
+msgid "New line list"
+msgstr ""
+
+msgid "Options"
+msgstr "Вариант"
+
+msgid "Hide"
+msgstr "Berkitish"
+
+msgid "Update"
+msgstr "Янгилаш"
+
+msgid "{{count}} org units"
+msgid_plural "{{count}} org units"
+msgstr[0] ""
+
+msgid "{{count}} levels"
+msgid_plural "{{count}} levels"
+msgstr[0] ""
+
+msgid "{{count}} groups"
+msgid_plural "{{count}} groups"
+msgstr[0] ""
+
+msgid "Selected: {{commaSeparatedListOfOrganisationUnits}}"
+msgstr ""
+
+msgid "Nothing selected"
+msgstr ""
+
+msgid "User organisation unit"
+msgstr "Ташкилий бўлим фойдаланувчиси"
+
+msgid "User sub-units"
+msgstr "Фойдаланувчига бўйсунувчи бирликлар"
+
+msgid "User sub-x2-units"
+msgstr "Фойдаланувчига бўйсунувчи 2 даражали бирликлар"
+
+msgid "Select a level"
+msgstr "Pogʼonani tanlang"
+
+msgid "Select a group"
+msgstr "Guruhni tanlang"
+
+msgid "Deselect all"
+msgstr "Barcha tanlanganni bekor qilish"
 
 msgid "Period type"
 msgstr "Davr turi"
@@ -576,6 +713,30 @@ msgstr "Moliyaviy yillar"
 msgid "Years"
 msgstr "Yillar"
 
+msgid "Translating to"
+msgstr ""
+
+msgid "Choose a locale"
+msgstr ""
+
+msgid "Base locale reference"
+msgstr ""
+
+msgid "Choose a locale to translate from the menu above"
+msgstr ""
+
+msgid "Translate: {{objectName}}"
+msgstr ""
+
+msgid "Save translations"
+msgstr ""
+
+msgid "Could not load translations"
+msgstr ""
+
+msgid "Retry"
+msgstr ""
+
 msgid "Series"
 msgstr "Ketma-ketliklar"
 
@@ -771,11 +932,11 @@ msgstr "Belgilangan Kategoriyalar"
 msgid "Pivot table"
 msgstr "Solishtirma jadval"
 
-msgid "Column"
-msgstr "Ustun"
+msgid "Area"
+msgstr "Maydon"
 
-msgid "Stacked column"
-msgstr "Yigʼilgan ustun"
+msgid "Stacked area"
+msgstr "Yigʼilgan maydon"
 
 msgid "Bar"
 msgstr "Tizimcha"
@@ -783,14 +944,26 @@ msgstr "Tizimcha"
 msgid "Stacked bar"
 msgstr "Yigʼilgan tizimcha"
 
+msgid "Column"
+msgstr "Ustun"
+
+msgid "Year over year (column)"
+msgstr "Yildan yilga (ustun)"
+
+msgid "Stacked column"
+msgstr "Yigʼilgan ustun"
+
+msgid "Gauge"
+msgstr "Hisoblagich"
+
 msgid "Line"
 msgstr "Qator"
 
-msgid "Area"
-msgstr "Maydon"
+msgid "Line list"
+msgstr "Qatorlar roʼyxati"
 
-msgid "Stacked area"
-msgstr "Yigʼilgan maydon"
+msgid "Year over year (line)"
+msgstr "Yildan yilga (qator)"
 
 msgid "Pie"
 msgstr "Butun aylana"
@@ -798,80 +971,14 @@ msgstr "Butun aylana"
 msgid "Radar"
 msgstr "Radar"
 
-msgid "Gauge"
-msgstr "Hisoblagich"
-
-msgid "Year over year (line)"
-msgstr "Yildan yilga (qator)"
-
-msgid "Year over year (column)"
-msgstr "Yildan yilga (ustun)"
+msgid "Scatter"
+msgstr "Tarqoqlik"
 
 msgid "Single value"
 msgstr "Yagona qiymat"
 
-msgid "Scatter"
-msgstr "Tarqoqlik"
-
-msgid "View data and indicators in a manipulatable table."
+msgid "All charts"
 msgstr ""
-"Boshqariladigan jadvalda indikatorlar va maʼlumotlarni koʼzdan kechiring"
-
-msgid ""
-"Compare sizes of related elements vertically. Recommend period as filter."
-msgstr ""
-
-msgid ""
-"Compare parts of a whole against related elements vertically. Recommend data"
-" or org. unit as series."
-msgstr ""
-
-msgid ""
-"Compare sizes of related elements horizontally. Recommend period as filter."
-msgstr ""
-
-msgid ""
-"Compare parts of a whole against related elements horizontally. Recommend "
-"data or org. unit as series."
-msgstr ""
-
-msgid "Track or compare changes over time. Recommend period as category."
-msgstr ""
-
-msgid ""
-"Track or compare parts of a whole over time. Recommend data as series and "
-"period as category."
-msgstr ""
-
-msgid ""
-"Compare parts of a whole at a single point in time. Recommend period as "
-"filter."
-msgstr ""
-
-msgid "Compare several items against multiple variables."
-msgstr ""
-"Bir necha elementlar va bir necha oʼzgaruvchilarga nisbatan taqqoslang."
-
-msgid ""
-"Compare a percentage indicator against a 100% scale. Recommend period as "
-"filter."
-msgstr ""
-
-msgid "Compare changes over time between multiple time periods."
-msgstr ""
-"Vaqt oʼtishi bilan bir necha vaqt oraligʼidagi oʼzgarishlarni taqqoslang."
-
-msgid "Display a single value. Recommend relative period to show latest data."
-msgstr ""
-"Bitta qiymatni koʼrsatish. Oxirgi maʼlumotlarni koʼrsatish uchun bogʼliq "
-"davrni taqqoslang."
-
-msgid ""
-"View the relationship between two data items at a place or time. Recommended"
-" for finding outliers."
-msgstr ""
-"Joy va vaqt sifatidagi ikki maʼlumotlar orasidagi oʼzaro munosabatlarni "
-"koʼrish. ortiqcha natijalarni topish uchun tavsiya etiladi."
 
 msgid "{{seriesName}} (trend)"
 msgstr ""

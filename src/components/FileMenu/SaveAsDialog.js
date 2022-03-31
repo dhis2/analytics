@@ -1,4 +1,3 @@
-import PropTypes from '@dhis2/prop-types'
 import {
     Modal,
     ModalTitle,
@@ -9,9 +8,10 @@ import {
     InputField,
     TextAreaField,
 } from '@dhis2/ui'
+import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 import i18n from '../../locales/index.js'
-import { supportedFileTypes } from './utils'
+import { supportedFileTypes, labelForFileType } from './utils.js'
 
 export const SaveAsDialog = ({ type, object, onClose, onSaveAs }) => {
     const [name, setName] = useState(object?.name)
@@ -30,7 +30,9 @@ export const SaveAsDialog = ({ type, object, onClose, onSaveAs }) => {
     return (
         <Modal onClose={onClose} dataTest="file-menu-saveas-modal">
             <ModalTitle>
-                {i18n.t('Save {{fileType}} as', { fileType: type })}
+                {i18n.t('Save {{fileType}} as', {
+                    fileType: labelForFileType(type),
+                })}
             </ModalTitle>
             <ModalContent>
                 <InputField

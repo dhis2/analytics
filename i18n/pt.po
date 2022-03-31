@@ -1,23 +1,80 @@
 # 
 # Translators:
 # Sheila André <sandre@saudigitus.org>, 2020
-# Ge Joao <gsimango@saudigitus.org>, 2021
 # phil_dhis2, 2021
 # Viktor Varland <viktor@dhis2.org>, 2021
-# Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2021
+# Fernando Jorge Bade, 2021
+# Ge Joao <gsimango@saudigitus.org>, 2022
+# Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2022
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-08-20T13:36:17.268Z\n"
+"POT-Creation-Date: 2022-03-17T10:18:53.422Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2021\n"
+"Last-Translator: Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2022\n"
 "Language-Team: Portuguese (https://www.transifex.com/hisp-uio/teams/100509/pt/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: pt\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "view only"
+msgstr ""
+
+msgid "view and edit"
+msgstr ""
+
+msgid "all users ({{accessLevel}})"
+msgstr ""
+
+msgid "{{userOrGroup}} ({{accessLevel}})"
+msgstr ""
+
+msgid "Shared with {{commaSeparatedListOfUsersAndGroups}}"
+msgstr ""
+
+msgid "Not shared with any users or groups"
+msgstr ""
+
+msgid "About this visualization"
+msgstr ""
+
+msgid "No description"
+msgstr "Sem descrição"
+
+msgid "Last updated {{time}}"
+msgstr ""
+
+msgid "Created {{time}} by {{author}}"
+msgstr ""
+
+msgid "Viewed {{count}} times"
+msgid_plural "Viewed {{count}} times"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "Notifications"
+msgstr "Notificação"
+
+msgid "You're subscribed and getting updates about new interpretations."
+msgstr ""
+
+msgid "Unsubscribe"
+msgstr ""
+
+msgid "Subscribe to get updates about new interpretations."
+msgstr ""
+
+msgid "Subscribe"
+msgstr ""
+
+msgid "This app could not retrieve required data."
+msgstr ""
+
+msgid "Network error"
+msgstr ""
 
 msgid "Data Type"
 msgstr "Tipo de dados"
@@ -119,7 +176,7 @@ msgid "Dimension recommended with selected data"
 msgstr "Dimensão recomendada com dados selecionados"
 
 msgid "All items"
-msgstr ""
+msgstr "Todos Itens"
 
 msgid "Automatically include all items"
 msgstr ""
@@ -205,6 +262,18 @@ msgstr "Renomear"
 msgid "Save {{fileType}} as"
 msgstr ""
 
+msgid "event report"
+msgstr "relatório de evento"
+
+msgid "line list"
+msgstr ""
+
+msgid "map"
+msgstr "mapa"
+
+msgid "visualization"
+msgstr ""
+
 msgid "Created by"
 msgstr "Criado por"
 
@@ -216,6 +285,9 @@ msgstr ""
 
 msgid "Others"
 msgstr "Outros"
+
+msgid "Not supported by this app yet"
+msgstr ""
 
 msgid "Filter by name"
 msgstr "Filtrar por nome"
@@ -233,9 +305,6 @@ msgid "Clear filters"
 msgstr "Limpar filtros"
 
 msgid "{{firstItemIndex}}-{{lastItemIndex}} of {{totalNumberOfItems}}"
-msgstr ""
-
-msgid "All charts"
 msgstr ""
 
 msgid "Open"
@@ -309,6 +378,79 @@ msgstr ""
 
 msgid "New map"
 msgstr ""
+
+msgid "Open a line list"
+msgstr ""
+
+msgid "Loading line lists"
+msgstr ""
+
+msgid "Couldn't load line lists"
+msgstr ""
+
+msgid ""
+"There was a problem loading line lists. Try again or contact your system "
+"administrator."
+msgstr ""
+
+msgid "No line lists found. Click New line list to get started."
+msgstr ""
+
+msgid ""
+"No line lists found. Try adjusting your search or filter options to find "
+"what you're looking for."
+msgstr ""
+
+msgid "New line list"
+msgstr ""
+
+msgid "Options"
+msgstr "Opções"
+
+msgid "Hide"
+msgstr "Esconder"
+
+msgid "Update"
+msgstr "Actualizar"
+
+msgid "{{count}} org units"
+msgid_plural "{{count}} org units"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "{{count}} levels"
+msgid_plural "{{count}} levels"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "{{count}} groups"
+msgid_plural "{{count}} groups"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "Selected: {{commaSeparatedListOfOrganisationUnits}}"
+msgstr ""
+
+msgid "Nothing selected"
+msgstr ""
+
+msgid "User organisation unit"
+msgstr "Unidade organizacional do utilizador"
+
+msgid "User sub-units"
+msgstr "Dois níveis abaixo"
+
+msgid "User sub-x2-units"
+msgstr "Dois níveis abaixo"
+
+msgid "Select a level"
+msgstr "Selecione um nível"
+
+msgid "Select a group"
+msgstr "Selecione um grupo"
+
+msgid "Deselect all"
+msgstr "Desmarcar todos"
 
 msgid "Period type"
 msgstr "Tipo de periodo"
@@ -580,6 +722,30 @@ msgstr "Ano financeiro "
 msgid "Years"
 msgstr "Anos"
 
+msgid "Translating to"
+msgstr ""
+
+msgid "Choose a locale"
+msgstr ""
+
+msgid "Base locale reference"
+msgstr ""
+
+msgid "Choose a locale to translate from the menu above"
+msgstr ""
+
+msgid "Translate: {{objectName}}"
+msgstr ""
+
+msgid "Save translations"
+msgstr ""
+
+msgid "Could not load translations"
+msgstr ""
+
+msgid "Retry"
+msgstr ""
+
 msgid "Series"
 msgstr "Série"
 
@@ -775,11 +941,11 @@ msgstr "Categorias atribuídas"
 msgid "Pivot table"
 msgstr "Tabela Dinâmica"
 
-msgid "Column"
-msgstr "Coluna"
+msgid "Area"
+msgstr "Área"
 
-msgid "Stacked column"
-msgstr "Coluna empilhada"
+msgid "Stacked area"
+msgstr ""
 
 msgid "Bar"
 msgstr "Barra"
@@ -787,14 +953,26 @@ msgstr "Barra"
 msgid "Stacked bar"
 msgstr "Barra empilhada"
 
+msgid "Column"
+msgstr "Coluna"
+
+msgid "Year over year (column)"
+msgstr "Ano após ano (coluna)"
+
+msgid "Stacked column"
+msgstr "Coluna empilhada"
+
+msgid "Gauge"
+msgstr "Calibre"
+
 msgid "Line"
 msgstr "Linha"
 
-msgid "Area"
-msgstr "Área"
+msgid "Line list"
+msgstr "lista de linhas "
 
-msgid "Stacked area"
-msgstr ""
+msgid "Year over year (line)"
+msgstr "Ano após ano (linha)"
 
 msgid "Pie"
 msgstr "Torta"
@@ -802,72 +980,13 @@ msgstr "Torta"
 msgid "Radar"
 msgstr "Radar"
 
-msgid "Gauge"
-msgstr "Calibre"
-
-msgid "Year over year (line)"
-msgstr "Ano após ano (linha)"
-
-msgid "Year over year (column)"
-msgstr "Ano após ano (coluna)"
+msgid "Scatter"
+msgstr ""
 
 msgid "Single value"
 msgstr "Valor unico"
 
-msgid "Scatter"
-msgstr ""
-
-msgid "View data and indicators in a manipulatable table."
-msgstr ""
-
-msgid ""
-"Compare sizes of related elements vertically. Recommend period as filter."
-msgstr ""
-
-msgid ""
-"Compare parts of a whole against related elements vertically. Recommend data"
-" or org. unit as series."
-msgstr ""
-
-msgid ""
-"Compare sizes of related elements horizontally. Recommend period as filter."
-msgstr ""
-
-msgid ""
-"Compare parts of a whole against related elements horizontally. Recommend "
-"data or org. unit as series."
-msgstr ""
-
-msgid "Track or compare changes over time. Recommend period as category."
-msgstr ""
-
-msgid ""
-"Track or compare parts of a whole over time. Recommend data as series and "
-"period as category."
-msgstr ""
-
-msgid ""
-"Compare parts of a whole at a single point in time. Recommend period as "
-"filter."
-msgstr ""
-
-msgid "Compare several items against multiple variables."
-msgstr ""
-
-msgid ""
-"Compare a percentage indicator against a 100% scale. Recommend period as "
-"filter."
-msgstr ""
-
-msgid "Compare changes over time between multiple time periods."
-msgstr ""
-
-msgid "Display a single value. Recommend relative period to show latest data."
-msgstr ""
-
-msgid ""
-"View the relationship between two data items at a place or time. Recommended"
-" for finding outliers."
+msgid "All charts"
 msgstr ""
 
 msgid "{{seriesName}} (trend)"
@@ -892,7 +1011,7 @@ msgid "Base"
 msgstr "Base"
 
 msgid "Axis {{axisId}}"
-msgstr ""
+msgstr "Eixo {{eixoId}}"
 
 msgid "{{count}} items"
 msgid_plural "{{count}} items"

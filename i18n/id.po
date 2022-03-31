@@ -1,24 +1,79 @@
 # 
 # Translators:
-# Carwoto Sa'an <carwoto@gmail.com>, 2021
 # phil_dhis2, 2021
 # Guardian Sanjaya <gysanjaya@ugm.ac.id>, 2021
-# Aprisa Chrysantina <aprisa.chrysantina@gmail.com>, 2021
 # Viktor Varland <viktor@dhis2.org>, 2021
+# Aprisa Chrysantina <aprisa.chrysantina@gmail.com>, 2021
 # Untoro Dwi Raharjo <untoro.dwi.raharjo@mail.ugm.ac.id>, 2021
+# Carwoto Sa'an <carwoto@gmail.com>, 2022
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-08-20T13:36:17.268Z\n"
+"POT-Creation-Date: 2022-03-17T10:18:53.422Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Untoro Dwi Raharjo <untoro.dwi.raharjo@mail.ugm.ac.id>, 2021\n"
+"Last-Translator: Carwoto Sa'an <carwoto@gmail.com>, 2022\n"
 "Language-Team: Indonesian (https://www.transifex.com/hisp-uio/teams/100509/id/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: id\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "view only"
+msgstr ""
+
+msgid "view and edit"
+msgstr ""
+
+msgid "all users ({{accessLevel}})"
+msgstr ""
+
+msgid "{{userOrGroup}} ({{accessLevel}})"
+msgstr ""
+
+msgid "Shared with {{commaSeparatedListOfUsersAndGroups}}"
+msgstr ""
+
+msgid "Not shared with any users or groups"
+msgstr ""
+
+msgid "About this visualization"
+msgstr ""
+
+msgid "No description"
+msgstr "Tidak ada deskripsi"
+
+msgid "Last updated {{time}}"
+msgstr ""
+
+msgid "Created {{time}} by {{author}}"
+msgstr ""
+
+msgid "Viewed {{count}} times"
+msgid_plural "Viewed {{count}} times"
+msgstr[0] ""
+
+msgid "Notifications"
+msgstr ""
+
+msgid "You're subscribed and getting updates about new interpretations."
+msgstr ""
+
+msgid "Unsubscribe"
+msgstr ""
+
+msgid "Subscribe to get updates about new interpretations."
+msgstr ""
+
+msgid "Subscribe"
+msgstr ""
+
+msgid "This app could not retrieve required data."
+msgstr ""
+
+msgid "Network error"
+msgstr ""
 
 msgid "Data Type"
 msgstr "Tipe Data"
@@ -206,6 +261,18 @@ msgstr "Ganti nama"
 msgid "Save {{fileType}} as"
 msgstr "Simpan {{fileType}} sebagai"
 
+msgid "event report"
+msgstr ""
+
+msgid "line list"
+msgstr ""
+
+msgid "map"
+msgstr ""
+
+msgid "visualization"
+msgstr ""
+
 msgid "Created by"
 msgstr "Dibuat oleh"
 
@@ -217,6 +284,9 @@ msgstr "Hanya kamu"
 
 msgid "Others"
 msgstr "Yang lain"
+
+msgid "Not supported by this app yet"
+msgstr ""
 
 msgid "Filter by name"
 msgstr "Filter menurut nama"
@@ -235,9 +305,6 @@ msgstr "Hapus penyaring"
 
 msgid "{{firstItemIndex}}-{{lastItemIndex}} of {{totalNumberOfItems}}"
 msgstr "{{firstItemIndex}}-{{lastItemIndex}} dari {{totalNumberOfItems}}"
-
-msgid "All charts"
-msgstr "Semua grafik"
 
 msgid "Open"
 msgstr "Buka"
@@ -323,6 +390,76 @@ msgstr ""
 
 msgid "New map"
 msgstr "peta baru"
+
+msgid "Open a line list"
+msgstr ""
+
+msgid "Loading line lists"
+msgstr ""
+
+msgid "Couldn't load line lists"
+msgstr ""
+
+msgid ""
+"There was a problem loading line lists. Try again or contact your system "
+"administrator."
+msgstr ""
+
+msgid "No line lists found. Click New line list to get started."
+msgstr ""
+
+msgid ""
+"No line lists found. Try adjusting your search or filter options to find "
+"what you're looking for."
+msgstr ""
+
+msgid "New line list"
+msgstr ""
+
+msgid "Options"
+msgstr "Opsi"
+
+msgid "Hide"
+msgstr "Sembunyikan"
+
+msgid "Update"
+msgstr "Perbarui"
+
+msgid "{{count}} org units"
+msgid_plural "{{count}} org units"
+msgstr[0] ""
+
+msgid "{{count}} levels"
+msgid_plural "{{count}} levels"
+msgstr[0] ""
+
+msgid "{{count}} groups"
+msgid_plural "{{count}} groups"
+msgstr[0] ""
+
+msgid "Selected: {{commaSeparatedListOfOrganisationUnits}}"
+msgstr ""
+
+msgid "Nothing selected"
+msgstr ""
+
+msgid "User organisation unit"
+msgstr ""
+
+msgid "User sub-units"
+msgstr "Subunit pengguna"
+
+msgid "User sub-x2-units"
+msgstr "Sub-x2-unit pengguna"
+
+msgid "Select a level"
+msgstr ""
+
+msgid "Select a group"
+msgstr ""
+
+msgid "Deselect all"
+msgstr "Batal pilih semua"
 
 msgid "Period type"
 msgstr "Tipe periode"
@@ -594,6 +731,30 @@ msgstr "Keuangan tahunan"
 msgid "Years"
 msgstr "Tahun"
 
+msgid "Translating to"
+msgstr ""
+
+msgid "Choose a locale"
+msgstr ""
+
+msgid "Base locale reference"
+msgstr ""
+
+msgid "Choose a locale to translate from the menu above"
+msgstr ""
+
+msgid "Translate: {{objectName}}"
+msgstr ""
+
+msgid "Save translations"
+msgstr ""
+
+msgid "Could not load translations"
+msgstr ""
+
+msgid "Retry"
+msgstr ""
+
 msgid "Series"
 msgstr "Seri"
 
@@ -789,11 +950,11 @@ msgstr "Kategori yang Ditugaskan"
 msgid "Pivot table"
 msgstr "Tabel Pivot"
 
-msgid "Column"
-msgstr "Kolom"
+msgid "Area"
+msgstr "Area"
 
-msgid "Stacked column"
-msgstr "Kolom tumpuk"
+msgid "Stacked area"
+msgstr "Area bertumpuk"
 
 msgid "Bar"
 msgstr "Bar"
@@ -801,14 +962,26 @@ msgstr "Bar"
 msgid "Stacked bar"
 msgstr "Bar tumpuk"
 
+msgid "Column"
+msgstr "Kolom"
+
+msgid "Year over year (column)"
+msgstr "Tahun ke tahun (kolom)"
+
+msgid "Stacked column"
+msgstr "Kolom tumpuk"
+
+msgid "Gauge"
+msgstr "Meteran"
+
 msgid "Line"
 msgstr "Garis"
 
-msgid "Area"
-msgstr "Area"
+msgid "Line list"
+msgstr "Daftar garis"
 
-msgid "Stacked area"
-msgstr "Area bertumpuk"
+msgid "Year over year (line)"
+msgstr "Tahun ke tahun (garis)"
 
 msgid "Pie"
 msgstr "Pie"
@@ -816,94 +989,14 @@ msgstr "Pie"
 msgid "Radar"
 msgstr "Radar"
 
-msgid "Gauge"
-msgstr "Meteran"
-
-msgid "Year over year (line)"
-msgstr "Tahun ke tahun (garis)"
-
-msgid "Year over year (column)"
-msgstr "Tahun ke tahun (kolom)"
+msgid "Scatter"
+msgstr "Scatter"
 
 msgid "Single value"
 msgstr "Nilai tunggal"
 
-msgid "Scatter"
-msgstr "Scatter"
-
-msgid "View data and indicators in a manipulatable table."
-msgstr "Lihat data dan indikator dalam tabel yang dapat dimanipulasi."
-
-msgid ""
-"Compare sizes of related elements vertically. Recommend period as filter."
-msgstr ""
-"Bandingkan ukuran elemen terkait secara vertikal. Merekomendasikan periode "
-"sebagai filter."
-
-msgid ""
-"Compare parts of a whole against related elements vertically. Recommend data"
-" or org. unit as series."
-msgstr ""
-"Bandingkan bagian dari keseluruhan terhadap elemen terkait secara vertikal. "
-"Merekomendasikan data atau org. satuan sebagai seri."
-
-msgid ""
-"Compare sizes of related elements horizontally. Recommend period as filter."
-msgstr ""
-"Bandingkan ukuran elemen terkait secara horizontal. Merekomendasikan periode"
-" sebagai filter."
-
-msgid ""
-"Compare parts of a whole against related elements horizontally. Recommend "
-"data or org. unit as series."
-msgstr ""
-"Bandingkan bagian dari keseluruhan terhadap elemen terkait secara "
-"horizontal. Merekomendasikan data atau org. satuan sebagai seri."
-
-msgid "Track or compare changes over time. Recommend period as category."
-msgstr ""
-"Lacak atau bandingkan perubahan dari waktu ke waktu. Merekomendasikan "
-"periode sebagai kategori."
-
-msgid ""
-"Track or compare parts of a whole over time. Recommend data as series and "
-"period as category."
-msgstr ""
-"Lacak atau bandingkan bagian dari keseluruhan dari waktu ke waktu. "
-"Merekomendasikan data sebagai seri dan periode sebagai kategori."
-
-msgid ""
-"Compare parts of a whole at a single point in time. Recommend period as "
-"filter."
-msgstr ""
-"Bandingkan bagian dari keseluruhan pada satu titik waktu. Merekomendasikan "
-"periode sebagai filter."
-
-msgid "Compare several items against multiple variables."
-msgstr "Bandingkan beberapa item dengan beberapa variabel."
-
-msgid ""
-"Compare a percentage indicator against a 100% scale. Recommend period as "
-"filter."
-msgstr ""
-"Bandingkan indikator persentase dengan skala 100%. Merekomendasikan periode "
-"sebagai filter."
-
-msgid "Compare changes over time between multiple time periods."
-msgstr ""
-"Bandingkan perubahan dari waktu ke waktu antara beberapa periode waktu."
-
-msgid "Display a single value. Recommend relative period to show latest data."
-msgstr ""
-"Menampilkan nilai tunggal. Merekomendasikan periode relatif untuk "
-"menampilkan data terbaru."
-
-msgid ""
-"View the relationship between two data items at a place or time. Recommended"
-" for finding outliers."
-msgstr ""
-"Melihat hubungan antara dua item data di suatu tempat atau waktu. "
-"Direkomendasikan untuk menemukan outlier."
+msgid "All charts"
+msgstr "Semua grafik"
 
 msgid "{{seriesName}} (trend)"
 msgstr "{{seriesName}} (tren)"

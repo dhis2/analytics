@@ -2,10 +2,10 @@ import objectClean from 'd2-utilizr/lib/objectClean'
 import {
     FONT_STYLE_HORIZONTAL_AXIS_TITLE,
     mergeFontStyleWithDefault,
-} from '../../../../../modules/fontStyle'
-import { getAxis } from '../../../../util/axes'
-import getAxisTitle from '../getAxisTitle'
-import { getLabels } from '.'
+} from '../../../../../modules/fontStyle.js'
+import { getAxis } from '../../../../util/axes.js'
+import getAxisTitle from '../getAxisTitle.js'
+import { getLabels } from './index.js'
 
 export default function (store, layout, extraOptions) {
     let categories

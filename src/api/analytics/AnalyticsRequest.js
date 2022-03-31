@@ -1,8 +1,8 @@
-import { getFixedDimensions } from '../../modules/predefinedDimensions'
-import AnalyticsRequestBase from './AnalyticsRequestBase'
-import AnalyticsRequestDimensionsMixin from './AnalyticsRequestDimensionsMixin'
-import AnalyticsRequestFiltersMixin from './AnalyticsRequestFiltersMixin'
-import AnalyticsRequestPropertiesMixin from './AnalyticsRequestPropertiesMixin'
+import { getFixedDimensions } from '../../modules/predefinedDimensions.js'
+import AnalyticsRequestBase from './AnalyticsRequestBase.js'
+import AnalyticsRequestDimensionsMixin from './AnalyticsRequestDimensionsMixin.js'
+import AnalyticsRequestFiltersMixin from './AnalyticsRequestFiltersMixin.js'
+import AnalyticsRequestPropertiesMixin from './AnalyticsRequestPropertiesMixin.js'
 
 /**
  * @description
@@ -48,17 +48,33 @@ class AnalyticsRequest extends AnalyticsRequestDimensionsMixin(
         const columns = visualization.columns || []
         const rows = visualization.rows || []
 
-        columns.concat(rows).forEach(d => {
+        columns.concat(rows).forEach((d) => {
             let dimension = d.dimension
+
+            if (d.legendSet?.id) {
+                dimension += `-${d.legendSet.id}`
+            }
+
+            if (d.programStage?.id) {
+                dimension = `${d.programStage.id}.${dimension}`
+            }
 
             if (d.filter) {
                 dimension += `:${d.filter}`
             }
 
-            request = request.addDimension(
-                dimension,
-                d.items.map(item => item.id)
-            )
+            if (d.repetition?.indexes?.length) {
+                d.repetition.indexes.forEach((index) => {
+                    request = request.addDimension(
+                        dimension.replace(/\./, `[${index}].`)
+                    )
+                })
+            } else {
+                request = request.addDimension(
+                    dimension,
+                    d.items?.map((item) => item.id)
+                )
+            }
         })
 
         // extract filters from visualization
@@ -67,17 +83,26 @@ class AnalyticsRequest extends AnalyticsRequestDimensionsMixin(
         // only pass dx/pe/ou as dimension
         const fixedIds = Object.keys(getFixedDimensions())
 
-        filters.forEach(f => {
-            request =
-                passFilterAsDimension && fixedIds.includes(f.dimension)
-                    ? request.addDimension(
-                          f.dimension,
-                          f.items.map(item => item.id)
-                      )
-                    : request.addFilter(
-                          f.dimension,
-                          f.items.map(item => item.id)
-                      )
+        filters.forEach((f) => {
+            if (passFilterAsDimension && fixedIds.includes(f.dimension)) {
+                request = request.addDimension(
+                    f.dimension,
+                    f.items?.map((item) => item.id)
+                )
+            } else {
+                let filterString = f.programStage?.id
+                    ? `${f.programStage.id}.${f.dimension}`
+                    : f.dimension
+
+                if (f.filter) {
+                    filterString += `:${f.filter}`
+                }
+
+                request = request.addFilter(
+                    filterString,
+                    f.items?.map((item) => item.id)
+                )
+            }
         })
 
         return request

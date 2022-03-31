@@ -20,19 +20,23 @@ import isEqual from 'lodash/isEqual'
 import PropTypes from 'prop-types'
 import React, { useEffect, useMemo, useState } from 'react'
 import {
+    VIS_TYPE_GROUP_ALL,
+    VIS_TYPE_GROUP_CHARTS,
+} from '../../modules/visTypes.js'
+import {
     CreatedByFilter,
     CREATED_BY_ALL,
     CREATED_BY_ALL_BUT_CURRENT_USER,
     CREATED_BY_CURRENT_USER,
-} from './CreatedByFilter'
-import { FileList } from './FileList'
-import { NameFilter } from './NameFilter'
-import { styles } from './OpenFileDialog.styles'
-import { PaginationControls } from './PaginationControls'
-import { getTranslatedString, AO_TYPE_VISUALIZATION, AOTypeMap } from './utils'
-import { VisTypeFilter, VIS_TYPE_ALL, VIS_TYPE_CHARTS } from './VisTypeFilter'
+} from './CreatedByFilter.js'
+import { FileList } from './FileList.js'
+import { NameFilter } from './NameFilter.js'
+import { styles } from './OpenFileDialog.styles.js'
+import { PaginationControls } from './PaginationControls.js'
+import { getTranslatedString, AOTypeMap } from './utils.js'
+import { VisTypeFilter } from './VisTypeFilter.js'
 
-const getQuery = type => ({
+const getQuery = (type) => ({
     files: {
         resource: AOTypeMap[type].apiEndpoint,
         params: ({
@@ -61,6 +65,8 @@ const getQuery = type => ({
 export const OpenFileDialog = ({
     type,
     open,
+    filterVisTypes,
+    defaultFilterVisType,
     onClose,
     onFileSelect,
     onNew,
@@ -70,7 +76,7 @@ export const OpenFileDialog = ({
     const defaultFilters = {
         searchTerm: '',
         createdBy: CREATED_BY_ALL,
-        visType: VIS_TYPE_ALL,
+        visType: defaultFilterVisType,
     }
 
     const [{ sortField, sortDirection }, setSorting] = useState({
@@ -99,15 +105,17 @@ export const OpenFileDialog = ({
                 break
         }
 
-        switch (filters.visType) {
-            case VIS_TYPE_ALL:
-                break
-            case VIS_TYPE_CHARTS:
-                queryFilters.push('type:!eq:PIVOT_TABLE')
-                break
-            default:
-                queryFilters.push(`type:eq:${filters.visType}`)
-                break
+        if (filters.visType) {
+            switch (filters.visType) {
+                case VIS_TYPE_GROUP_ALL:
+                    break
+                case VIS_TYPE_GROUP_CHARTS:
+                    queryFilters.push('type:!eq:PIVOT_TABLE')
+                    break
+                default:
+                    queryFilters.push(`type:eq:${filters.visType}`)
+                    break
+            }
         }
 
         if (filters.searchTerm) {
@@ -133,19 +141,23 @@ export const OpenFileDialog = ({
                 page,
                 sortField,
                 sortDirection,
+                filters: formatFilters(),
             })
         }
     }, [open, page, sortField, sortDirection])
 
     useEffect(() => {
-        // reset pagination when filters are applied/changed
-        setPage(1)
+        // avoid fetching data when the dialog is first rendered (hidden)
+        if (open) {
+            // reset pagination when filters are applied/changed
+            setPage(1)
 
-        refetch({
-            sortField,
-            sortDirection,
-            filters: formatFilters(),
-        })
+            refetch({
+                sortField,
+                sortDirection,
+                filters: formatFilters(),
+            })
+        }
     }, [filters])
 
     const headers = [
@@ -166,7 +178,7 @@ export const OpenFileDialog = ({
         },
     ]
 
-    if (type === AO_TYPE_VISUALIZATION) {
+    if (filterVisTypes?.length) {
         headers.splice(1, 0, {
             field: 'type',
             label: i18n.t('Type'),
@@ -174,7 +186,7 @@ export const OpenFileDialog = ({
         })
     }
 
-    const getSortDirection = fieldName =>
+    const getSortDirection = (fieldName) =>
         fieldName === sortField ? sortDirection : 'default'
 
     const cypressSelector = 'open-file-dialog-modal'
@@ -195,7 +207,7 @@ export const OpenFileDialog = ({
                             <NameFilter
                                 dataTest={`${cypressSelector}-name-filter`}
                                 value={nameFilterValue}
-                                onChange={value => {
+                                onChange={(value) => {
                                     setNameFilterValue(value)
 
                                     clearTimeout(searchTimeout)
@@ -212,11 +224,12 @@ export const OpenFileDialog = ({
                                 }}
                             />
                         </div>
-                        {type === AO_TYPE_VISUALIZATION && (
+                        {filterVisTypes?.length && (
                             <div className="type-field-container">
                                 <VisTypeFilter
+                                    visTypes={filterVisTypes}
                                     selected={filters.visType}
-                                    onChange={value =>
+                                    onChange={(value) =>
                                         setFilters({
                                             ...filters,
                                             visType: value,
@@ -228,7 +241,7 @@ export const OpenFileDialog = ({
                         <div className="created-by-field-container">
                             <CreatedByFilter
                                 selected={filters.createdBy}
-                                onChange={value =>
+                                onChange={(value) =>
                                     setFilters({
                                         ...filters,
                                         createdBy: value,
@@ -355,13 +368,15 @@ export const OpenFileDialog = ({
                                     {data?.files[AOTypeMap[type].apiEndpoint]
                                         .length > 0 && (
                                         <FileList
-                                            type={type}
                                             data={
                                                 data.files[
                                                     AOTypeMap[type].apiEndpoint
                                                 ]
                                             }
                                             onSelect={onFileSelect}
+                                            showVisTypeColumn={Boolean(
+                                                filterVisTypes?.length
+                                            )}
                                         />
                                     )}
                                 </DataTableBody>
@@ -394,6 +409,8 @@ OpenFileDialog.propTypes = {
     onClose: PropTypes.func.isRequired,
     onFileSelect: PropTypes.func.isRequired,
     onNew: PropTypes.func.isRequired,
+    defaultFilterVisType: PropTypes.string,
+    filterVisTypes: PropTypes.array,
 }
 
 export default OpenFileDialog

@@ -6,7 +6,7 @@ export const LEGEND_DISPLAY_STYLE_TEXT = 'TEXT'
 
 export const getLegendByValueFromLegendSet = (legendSet, value) =>
     legendSet.legends.find(
-        legend => value >= legend.startValue && value < legend.endValue // TODO: Confirm inclusive/exclusive bounds
+        (legend) => value >= legend.startValue && value < legend.endValue // TODO: Confirm inclusive/exclusive bounds
     )
 
 export const getColorByValueFromLegendSet = (legendSet, value) => {

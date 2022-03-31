@@ -1,5 +1,3 @@
-import TranslationDialog from '@dhis2/d2-ui-translation-dialog'
-import PropTypes from '@dhis2/prop-types'
 import {
     IconAdd24,
     IconLaunch24,
@@ -10,29 +8,31 @@ import {
     IconLink24,
     IconDelete24,
     SharingDialog,
-} from '@dhis2/ui'
-import { colors } from '@dhis2/ui-constants'
-import {
+    colors,
     FlyoutMenu,
     Layer,
     MenuItem,
     MenuDivider,
     Popper,
-} from '@dhis2/ui-core'
+} from '@dhis2/ui'
+import PropTypes from 'prop-types'
 import React, { createRef, useState } from 'react'
 import i18n from '../../locales/index.js'
-import { OpenFileDialog } from '../OpenFileDialog/OpenFileDialog'
-import { DeleteDialog } from './DeleteDialog'
-import { fileMenuStyles } from './FileMenu.styles'
-import { GetLinkDialog } from './GetLinkDialog'
-import { RenameDialog } from './RenameDialog'
-import { SaveAsDialog } from './SaveAsDialog'
-import { supportedFileTypes } from './utils'
+import { OpenFileDialog } from '../OpenFileDialog/OpenFileDialog.js'
+import { TranslationDialog } from '../TranslationDialog/index.js'
+import { DeleteDialog } from './DeleteDialog.js'
+import { fileMenuStyles } from './FileMenu.styles.js'
+import { GetLinkDialog } from './GetLinkDialog.js'
+import { RenameDialog } from './RenameDialog.js'
+import { SaveAsDialog } from './SaveAsDialog.js'
+import { supportedFileTypes } from './utils.js'
 
 export const FileMenu = ({
-    d2, // to be removed as soon as TranslateDialog and FavoritesDialog are rewritten
+    currentUser,
+    defaultFilterVisType,
     fileType,
     fileObject,
+    filterVisTypes,
     onNew,
     onOpen,
     onSave,
@@ -47,12 +47,12 @@ export const FileMenu = ({
     const [currentDialog, setCurrentDialog] = useState(null)
 
     // Escape key press closes the menu
-    const onKeyDown = e => {
+    const onKeyDown = (e) => {
         if (e?.keyCode === 27) {
             setMenuIsOpen(false)
         }
     }
-    const onMenuItemClick = dialogToOpen => () => {
+    const onMenuItemClick = (dialogToOpen) => () => {
         setMenuIsOpen(false)
         setCurrentDialog(dialogToOpen)
     }
@@ -84,19 +84,10 @@ export const FileMenu = ({
             case 'translate':
                 return (
                     <TranslationDialog
-                        open={true}
-                        d2={d2}
-                        objectToTranslate={{
-                            ...fileObject,
-                            // mock modelDefinition to avoid an error
-                            // in the TranslationDialog component
-                            modelDefinition: { name: fileType },
-                        }}
+                        objectToTranslate={fileObject}
                         fieldsToTranslate={['name', 'description']}
-                        onRequestClose={onDialogClose}
+                        onClose={onDialogClose}
                         onTranslationSaved={onTranslate}
-                        onTranslationError={onError}
-                        insertTheme={true}
                     />
                 )
             case 'sharing':
@@ -158,13 +149,15 @@ export const FileMenu = ({
             <OpenFileDialog
                 open={currentDialog === 'open'}
                 type={fileType}
+                filterVisTypes={filterVisTypes}
+                defaultFilterVisType={defaultFilterVisType}
                 onClose={onDialogClose}
-                onFileSelect={id => {
+                onFileSelect={(id) => {
                     onOpen(id)
                     onDialogClose()
                 }}
                 onNew={onNew}
-                currentUser={d2.currentUser}
+                currentUser={currentUser}
             />
             {menuIsOpen && (
                 <Layer
@@ -200,14 +193,18 @@ export const FileMenu = ({
                                 icon={
                                     <IconSave24
                                         color={
-                                            !fileObject?.id ||
-                                            fileObject?.access?.update
-                                                ? iconActiveColor
-                                                : iconInactiveColor
+                                            !onSave ||
+                                            !(
+                                                !fileObject?.id ||
+                                                fileObject?.access?.update
+                                            )
+                                                ? iconInactiveColor
+                                                : iconActiveColor
                                         }
                                     />
                                 }
                                 disabled={
+                                    !onSave ||
                                     !(
                                         !fileObject?.id ||
                                         fileObject?.access?.update
@@ -355,15 +352,16 @@ FileMenu.defaultProps = {
     onNew: Function.prototype,
     onOpen: Function.prototype,
     onRename: Function.prototype,
-    onSave: Function.prototype,
     onSaveAs: Function.prototype,
     onTranslate: Function.prototype,
 }
 
 FileMenu.propTypes = {
-    d2: PropTypes.object,
+    currentUser: PropTypes.object,
+    defaultFilterVisType: PropTypes.string,
     fileObject: PropTypes.object,
     fileType: PropTypes.oneOf(supportedFileTypes),
+    filterVisTypes: PropTypes.array,
     onDelete: PropTypes.func,
     onError: PropTypes.func,
     onNew: PropTypes.func,
