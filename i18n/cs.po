@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-01-03T11:09:02.270Z\n"
+"POT-Creation-Date: 2022-03-17T10:18:53.422Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: trendspotter <jirka.p@volny.cz>, 2022\n"
 "Language-Team: Czech (https://www.transifex.com/hisp-uio/teams/100509/cs/)\n"
@@ -67,6 +67,12 @@ msgstr "Přihlaste se k odběru novinek o nových interpretacích."
 
 msgid "Subscribe"
 msgstr "Odebírat"
+
+msgid "This app could not retrieve required data."
+msgstr "Tato aplikace nemohla načíst požadovaná data."
+
+msgid "Network error"
+msgstr "Chyba sítě"
 
 msgid "Data Type"
 msgstr "Typ dat"
@@ -257,6 +263,18 @@ msgstr "Přejmenovat"
 msgid "Save {{fileType}} as"
 msgstr "Uložit {{fileType}} jako"
 
+msgid "event report"
+msgstr "zpráva o události"
+
+msgid "line list"
+msgstr ""
+
+msgid "map"
+msgstr "mapa"
+
+msgid "visualization"
+msgstr ""
+
 msgid "Created by"
 msgstr "Vytvořil"
 
@@ -268,6 +286,9 @@ msgstr "Jen vy"
 
 msgid "Others"
 msgstr "Ostatní"
+
+msgid "Not supported by this app yet"
+msgstr "Tato aplikace zatím nepodporuje"
 
 msgid "Filter by name"
 msgstr "Filtrovat podle názvu"
@@ -286,9 +307,6 @@ msgstr "Vymazat filtry"
 
 msgid "{{firstItemIndex}}-{{lastItemIndex}} of {{totalNumberOfItems}}"
 msgstr "{{firstItemIndex}}-{{lastItemIndex}} z {{totalNumberOfItems}}"
-
-msgid "All charts"
-msgstr "Všechny grafy"
 
 msgid "Open"
 msgstr "Otevřít"
@@ -375,36 +393,36 @@ msgstr ""
 msgid "New map"
 msgstr "Nová mapa"
 
-msgid "Open an event report"
-msgstr "Otevřít zprávu o události"
+msgid "Open a line list"
+msgstr "Otevřít řádkový seznam"
 
-msgid "Loading event reports"
-msgstr "Načítání zpráv o událostech"
+msgid "Loading line lists"
+msgstr "Načítání řádkových seznamů"
 
-msgid "Couldn't load event reports"
-msgstr "Nelze načíst zprávy o událostech"
+msgid "Couldn't load line lists"
+msgstr "Řádkové seznamy se nepodařilo načíst"
 
 msgid ""
-"There was a problem loading event reports. Try again or contact your system "
+"There was a problem loading line lists. Try again or contact your system "
 "administrator."
 msgstr ""
-"Při načítání zpráv o událostech došlo k problému. Zkuste to znovu nebo se "
+"Při načítání řádkových seznamů došlo k problému. Zkuste to znovu nebo se "
 "obraťte na správce systému."
 
-msgid "No event reports found. Click New event report to get started."
+msgid "No line lists found. Click New line list to get started."
 msgstr ""
-"Nebyly nalezeny žádné zprávy o událostech. Začněte kliknutím na Nový přehled"
-" událostí."
+"Nebyly nalezeny žádné řádkové seznamy. Začněte kliknutím na Nový řádkový "
+"seznam."
 
 msgid ""
-"No event reports found. Try adjusting your search or filter options to find "
+"No line lists found. Try adjusting your search or filter options to find "
 "what you're looking for."
 msgstr ""
-"Nebyly nalezeny žádné zprávy o událostech. Zkuste upravit možnosti "
-"vyhledávání nebo filtrování, abyste našli to, co hledáte."
+"Nebyly nalezeny žádné řádkové seznamy. Zkuste upravit možnosti vyhledávání "
+"nebo filtru, abyste našli to, co hledáte."
 
-msgid "New event report"
-msgstr "Nová zpráva o události"
+msgid "New line list"
+msgstr "Nový řádkový seznam"
 
 msgid "Options"
 msgstr "Možnosti"
@@ -949,11 +967,11 @@ msgstr "Přiřazené kategorie"
 msgid "Pivot table"
 msgstr "Kontingenční tabulka"
 
-msgid "Column"
-msgstr "Sloupec"
+msgid "Area"
+msgstr "Oblast"
 
-msgid "Stacked column"
-msgstr "Skládaný sloupec"
+msgid "Stacked area"
+msgstr "Skládaná plocha"
 
 msgid "Bar"
 msgstr "LIšta"
@@ -961,14 +979,26 @@ msgstr "LIšta"
 msgid "Stacked bar"
 msgstr "Skládaný lištový graf"
 
+msgid "Column"
+msgstr "Sloupec"
+
+msgid "Year over year (column)"
+msgstr "Rok po roce (sloupce)"
+
+msgid "Stacked column"
+msgstr "Skládaný sloupec"
+
+msgid "Gauge"
+msgstr "Gauge"
+
 msgid "Line"
 msgstr "Linie"
 
-msgid "Area"
-msgstr "Oblast"
+msgid "Line list"
+msgstr "Seznam řádků"
 
-msgid "Stacked area"
-msgstr "Skládaná plocha"
+msgid "Year over year (line)"
+msgstr "Rok po roce (řádek)"
 
 msgid "Pie"
 msgstr "Výseč"
@@ -976,93 +1006,14 @@ msgstr "Výseč"
 msgid "Radar"
 msgstr "Radar"
 
-msgid "Gauge"
-msgstr "Gauge"
-
-msgid "Year over year (line)"
-msgstr "Rok po roce (řádek)"
-
-msgid "Year over year (column)"
-msgstr "Rok po roce (sloupce)"
+msgid "Scatter"
+msgstr "Rozptyl"
 
 msgid "Single value"
 msgstr "Jedna hodnota"
 
-msgid "Scatter"
-msgstr "Rozptyl"
-
-msgid "View data and indicators in a manipulatable table."
-msgstr "Zobrazit data a indikátory v manipulovatelné tabulce."
-
-msgid ""
-"Compare sizes of related elements vertically. Recommend period as filter."
-msgstr ""
-"Porovnejte velikosti souvisejících prvků svisle. Doporučte období jako "
-"filtr."
-
-msgid ""
-"Compare parts of a whole against related elements vertically. Recommend data"
-" or org. unit as series."
-msgstr ""
-"Porovnejte části celku se souvisejícími prvky svisle. Doporučit data nebo "
-"org. jednotku jako série."
-
-msgid ""
-"Compare sizes of related elements horizontally. Recommend period as filter."
-msgstr ""
-"Porovnejte velikosti souvisejících prvků vodorovně. Doporučte období jako "
-"filtr."
-
-msgid ""
-"Compare parts of a whole against related elements horizontally. Recommend "
-"data or org. unit as series."
-msgstr ""
-"Porovnávejte části celku proti souvisejícím prvkům vodorovně. Doporučte data"
-" nebo org. jednotku jako série."
-
-msgid "Track or compare changes over time. Recommend period as category."
-msgstr ""
-"Sledujte nebo porovnávejte změny v průběhu času. Doporučte období jako "
-"kategorii."
-
-msgid ""
-"Track or compare parts of a whole over time. Recommend data as series and "
-"period as category."
-msgstr ""
-"Sledujte nebo porovnávejte části celku v průběhu času. Doporučte data jako "
-"série a období jako kategorii."
-
-msgid ""
-"Compare parts of a whole at a single point in time. Recommend period as "
-"filter."
-msgstr ""
-"Porovnejte části celku v jednom časovém okamžiku. Doporučte období jako "
-"filtr."
-
-msgid "Compare several items against multiple variables."
-msgstr "Porovnat několik položek s více proměnnými."
-
-msgid ""
-"Compare a percentage indicator against a 100% scale. Recommend period as "
-"filter."
-msgstr ""
-"Porovnejte procentní indikátor se 100% stupnicí. Doporučte období jako "
-"filtr."
-
-msgid "Compare changes over time between multiple time periods."
-msgstr "Porovnat změny v čase mezi více časovými obdobími."
-
-msgid "Display a single value. Recommend relative period to show latest data."
-msgstr ""
-"Zobrazit jednu hodnotu. Doporučit relativní období pro zobrazení "
-"nejnovějších údajů."
-
-msgid ""
-"View the relationship between two data items at a place or time. Recommended"
-" for finding outliers."
-msgstr ""
-"Zobrazte vztah mezi dvěma datovými položkami v určitém místě nebo čase. "
-"Doporučeno pro hledání odlehlých hodnot."
+msgid "All charts"
+msgstr "Všechny grafy"
 
 msgid "{{seriesName}} (trend)"
 msgstr "{{seriesName}} (trend)"

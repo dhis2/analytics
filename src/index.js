@@ -29,10 +29,19 @@ export { default as LegendKey } from './components/LegendKey/LegendKey.js'
 
 export { default as AboutAOUnit } from './components/AboutAOUnit/AboutAOUnit.js'
 
+export {
+    CachedDataQueryProvider,
+    useCachedDataQuery,
+} from './components/CachedDataQueryProvider.js'
+
 // Api
 
 export { default as Analytics } from './api/analytics/Analytics.js'
-export { apiFetchDimensions, apiFetchRecommendedIds } from './api/dimensions.js'
+export {
+    apiFetchDimensions,
+    apiFetchRecommendedIds,
+    apiFetchItemsByDimension,
+} from './api/dimensions.js'
 export {
     apiFetchOrganisationUnitLevels,
     apiFetchOrganisationUnitRoots,
@@ -140,6 +149,8 @@ export { getLayoutTypeByVisType } from './modules/visTypeToLayoutType.js'
 // Modules: visTypes
 
 export {
+    VIS_TYPE_GROUP_ALL,
+    VIS_TYPE_GROUP_CHARTS,
     VIS_TYPE_COLUMN,
     VIS_TYPE_STACKED_COLUMN,
     VIS_TYPE_BAR,
@@ -156,8 +167,8 @@ export {
     VIS_TYPE_SINGLE_VALUE,
     VIS_TYPE_PIVOT_TABLE,
     VIS_TYPE_SCATTER,
+    VIS_TYPE_LINE_LIST,
     visTypeDisplayNames,
-    visTypeDescriptions,
     visTypeIcons,
     getDisplayNameByVisType,
     defaultVisType,
@@ -181,6 +192,7 @@ export {
     LAYOUT_TYPE_YEAR_OVER_YEAR,
     LAYOUT_TYPE_PIVOT_TABLE,
     LAYOUT_TYPE_SCATTER,
+    LAYOUT_TYPE_LINE_LIST,
 } from './modules/layoutTypes.js'
 
 // Modules: layoutUiRules
