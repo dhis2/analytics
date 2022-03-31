@@ -1,4 +1,4 @@
-import { dimensionsQuery, apiFetchDimensions } from '../dimensions'
+import { dimensionsQuery, apiFetchDimensions } from '../dimensions.js'
 
 let mockDataEngine
 let mockQueryFn
@@ -27,7 +27,7 @@ describe('api: dimensions', () => {
     })
 
     describe('apiFetchDimensions', () => {
-        it('has correct entity and name property', done => {
+        it('has correct entity and name property', (done) => {
             apiFetchDimensions(mockDataEngine, 'entireName')
 
             asyncCheckMatches(

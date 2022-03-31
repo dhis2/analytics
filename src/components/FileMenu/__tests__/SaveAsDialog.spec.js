@@ -1,7 +1,7 @@
 import { Button, Modal, ModalTitle } from '@dhis2/ui'
 import { shallow } from 'enzyme'
 import React from 'react'
-import { SaveAsDialog } from '../SaveAsDialog'
+import { SaveAsDialog } from '../SaveAsDialog.js'
 
 describe('The FileMenu - SaveAsDialog component', () => {
     let shallowSaveAsDialog
@@ -10,7 +10,7 @@ describe('The FileMenu - SaveAsDialog component', () => {
     const onClose = jest.fn()
     const onSaveAs = jest.fn()
 
-    const getSaveAsDialogComponent = props => {
+    const getSaveAsDialogComponent = (props) => {
         if (!shallowSaveAsDialog) {
             shallowSaveAsDialog = shallow(<SaveAsDialog {...props} />)
         }
@@ -42,7 +42,7 @@ describe('The FileMenu - SaveAsDialog component', () => {
 
     it('renders a InputField for name with prefilled value from the object prop', () => {
         const nameInputField = getSaveAsDialogComponent(props).findWhere(
-            n => n.prop('label') === 'Name'
+            (n) => n.prop('label') === 'Name'
         )
 
         expect(nameInputField.prop('value')).toEqual(props.object.name)
@@ -50,7 +50,7 @@ describe('The FileMenu - SaveAsDialog component', () => {
 
     it('renders a TextAreaField for description with prefilled value from the object prop', () => {
         const descriptionInputField = getSaveAsDialogComponent(props).findWhere(
-            n => n.prop('label') === 'Description'
+            (n) => n.prop('label') === 'Description'
         )
 
         expect(descriptionInputField.prop('value')).toEqual(

@@ -3,8 +3,8 @@ import React, { Component } from 'react'
 import {
     getPredefinedDimensionProp,
     DIMENSION_PROP_NO_ITEMS,
-} from '../../../modules/predefinedDimensions'
-import { styles } from './styles/DimensionLabel.style'
+} from '../../../modules/predefinedDimensions.js'
+import { styles } from './styles/DimensionLabel.style.js'
 
 class DimensionLabel extends Component {
     static propTypes = {
@@ -24,7 +24,7 @@ class DimensionLabel extends Component {
         }
     }
 
-    onKeyPress = event => {
+    onKeyPress = (event) => {
         if (event.key === 'Enter' && event.ctrlKey === false) {
             this.onLabelClick()
         }

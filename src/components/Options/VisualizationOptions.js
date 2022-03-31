@@ -33,7 +33,7 @@ import {
 const VisualizationOptions = ({ optionsConfig, onClose, onUpdate }) => {
     const [activeTabKey, setActiveTabKey] = useState()
 
-    const generateTabContent = sections =>
+    const generateTabContent = (sections) =>
         sections.map(({ key, label, content, helpText }) => (
             <div key={key} className={tabSection.className}>
                 <FieldSet>
@@ -54,7 +54,7 @@ const VisualizationOptions = ({ optionsConfig, onClose, onUpdate }) => {
             </div>
         ))
 
-    const generateTabs = tabs =>
+    const generateTabs = (tabs) =>
         tabs.map(({ key, label, content }) => ({
             key,
             label,
@@ -64,7 +64,7 @@ const VisualizationOptions = ({ optionsConfig, onClose, onUpdate }) => {
     const getModalContent = () => {
         const tabs = generateTabs(optionsConfig)
 
-        let activeTabIndex = tabs.findIndex(tab => tab.key === activeTabKey)
+        let activeTabIndex = tabs.findIndex((tab) => tab.key === activeTabKey)
 
         if (activeTabIndex < 0) {
             activeTabIndex = 0

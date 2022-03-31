@@ -10,9 +10,13 @@ import {
 import PropTypes from 'prop-types'
 import React, { useMemo } from 'react'
 import i18n from '../../locales/index.js'
-import { supportedFileTypes, endpointFromFileType } from './utils'
+import {
+    supportedFileTypes,
+    endpointFromFileType,
+    labelForFileType,
+} from './utils.js'
 
-const getMutation = type => ({
+const getMutation = (type) => ({
     resource: endpointFromFileType(type),
     id: ({ id }) => id,
     type: 'delete',
@@ -22,7 +26,7 @@ export const DeleteDialog = ({ type, id, onClose, onDelete, onError }) => {
     const mutation = useMemo(() => getMutation(type), [])
     const [mutate] = useDataMutation(mutation, {
         variables: { id },
-        onError: error => {
+        onError: (error) => {
             onError(error)
             onClose()
         },
@@ -34,13 +38,15 @@ export const DeleteDialog = ({ type, id, onClose, onDelete, onError }) => {
     return (
         <Modal onClose={onClose} dataTest="file-menu-delete-modal">
             <ModalTitle>
-                {i18n.t('Delete {{fileType}}', { fileType: type })}
+                {i18n.t('Delete {{fileType}}', {
+                    fileType: labelForFileType(type),
+                })}
             </ModalTitle>
             <ModalContent>
                 {i18n.t(
                     'This {{fileType}} and related interpretations will be deleted. Continue?',
                     {
-                        fileType: type,
+                        fileType: labelForFileType(type),
                     }
                 )}
             </ModalContent>

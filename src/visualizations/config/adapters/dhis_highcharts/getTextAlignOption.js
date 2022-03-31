@@ -8,7 +8,7 @@ import {
     FONT_STYLE_VISUALIZATION_TITLE,
     FONT_STYLE_VISUALIZATION_SUBTITLE,
     FONT_STYLE_LEGEND,
-} from '../../../../modules/fontStyle'
+} from '../../../../modules/fontStyle.js'
 
 const defaultAlignOptions = {
     [TEXT_ALIGN_LEFT]: 'left',

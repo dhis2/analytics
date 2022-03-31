@@ -2,8 +2,8 @@ import { SingleSelectField, SingleSelectOption } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
 import i18n from '../../locales/index.js'
-import { TOTALS, DETAIL } from '../../modules/dataTypes'
-import styles from './styles/DetailSelector.style'
+import { TOTALS, DETAIL } from '../../modules/dataTypes.js'
+import styles from './styles/DetailSelector.style.js'
 
 const getOptions = () => ({
     [TOTALS]: i18n.t('Totals only'),
@@ -18,10 +18,10 @@ export const DetailSelector = ({ currentValue, onChange, dataTest }) => {
                 dataTest={dataTest}
                 label={i18n.t('Disaggregation')}
                 selected={currentValue}
-                onChange={ref => onChange(ref.selected)}
+                onChange={(ref) => onChange(ref.selected)}
                 dense
             >
-                {Object.entries(options).map(option => (
+                {Object.entries(options).map((option) => (
                     <SingleSelectOption
                         value={option[0]}
                         key={option[0]}

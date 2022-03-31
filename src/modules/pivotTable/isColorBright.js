@@ -7,11 +7,11 @@ const calculateColorBrightness = function (rgb) {
     )
 }
 
-const isHex = color => {
+const isHex = (color) => {
     return typeof color === 'string' && color.charAt(0) === '#'
 }
 
-const hexToRgb = hex => {
+const hexToRgb = (hex) => {
     const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex)
 
     return result
@@ -23,7 +23,7 @@ const hexToRgb = hex => {
         : null
 }
 
-export const isColorBright = color => {
+export const isColorBright = (color) => {
     if (isHex(color)) {
         color = hexToRgb(color)
     }

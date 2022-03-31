@@ -1,8 +1,8 @@
-import { measureTextWithWrapping } from './measureText'
+import { measureTextWithWrapping } from './measureText.js'
 import {
     CLIPPED_AXIS_PARTITION_SIZE_PX,
     CLIPPED_CELL_MIN_SIZE,
-} from './pivotTableConstants'
+} from './pivotTableConstants.js'
 
 export class AdaptiveClippingController {
     columns
@@ -69,7 +69,7 @@ export class AdaptiveClippingController {
         const isColumn = axis.orientation === 'column'
 
         const map = isColumn ? this.engine.columnMap : this.engine.rowMap
-        const getHeader = index =>
+        const getHeader = (index) =>
             isColumn
                 ? this.engine.getRawColumnHeader(index)
                 : this.engine.getRawRowHeader(index)
@@ -182,14 +182,14 @@ export class AdaptiveClippingController {
         this.finalizeAxis(this.rows)
 
         this.columns.headerSize = 0
-        this.columns.headerSizes = this.columns.headerSizes.map(size => {
+        this.columns.headerSizes = this.columns.headerSizes.map((size) => {
             const paddedSize = this.getCellSize(size)
             this.columns.headerSize += paddedSize
             return paddedSize
         })
 
         this.rows.headerSize = 0
-        this.rows.headerSizes = this.rows.headerSizes.map(size => {
+        this.rows.headerSizes = this.rows.headerSizes.map((size) => {
             const paddedSize = this.getCellSize(size)
             this.rows.headerSize += paddedSize
             return paddedSize
