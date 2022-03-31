@@ -2,20 +2,20 @@
 # Translators:
 # Bram Piot <bram.piot@gmail.com>, 2021
 # Yayra Gomado <ygomado@hispwca.org>, 2021
-# Yao Selom Saka <ysaka@hispwca.org>, 2021
 # phil_dhis2, 2021
-# Edem Kossi <ekossi@hispwca.org>, 2021
 # Viktor Varland <viktor@dhis2.org>, 2021
-# Karoline Tufte Lien <karoline@dhis2.org>, 2021
 # Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2021
 # tx_e2f_fr r25 <tx_e2f_fr_r25@ate2f.com>, 2021
+# Yao Selom Saka <ysaka@hispwca.org>, 2022
+# Edem Kossi <ekossi@hispwca.org>, 2022
+# Karoline Tufte Lien <karoline@dhis2.org>, 2022
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-01-20T14:11:46.002Z\n"
+"POT-Creation-Date: 2022-03-17T10:18:53.422Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: tx_e2f_fr r25 <tx_e2f_fr_r25@ate2f.com>, 2021\n"
+"Last-Translator: Karoline Tufte Lien <karoline@dhis2.org>, 2022\n"
 "Language-Team: French (https://www.transifex.com/hisp-uio/teams/100509/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -265,6 +265,18 @@ msgstr "Renommer"
 msgid "Save {{fileType}} as"
 msgstr "Enregistrer {{fileType}} comme"
 
+msgid "event report"
+msgstr "Rapport d'évènements"
+
+msgid "line list"
+msgstr ""
+
+msgid "map"
+msgstr "carte"
+
+msgid "visualization"
+msgstr ""
+
 msgid "Created by"
 msgstr "Créé par"
 
@@ -276,6 +288,9 @@ msgstr ""
 
 msgid "Others"
 msgstr "Autres"
+
+msgid "Not supported by this app yet"
+msgstr ""
 
 msgid "Filter by name"
 msgstr "Filtrer par nom"
@@ -293,9 +308,6 @@ msgid "Clear filters"
 msgstr "Effacer les filtres"
 
 msgid "{{firstItemIndex}}-{{lastItemIndex}} of {{totalNumberOfItems}}"
-msgstr ""
-
-msgid "All charts"
 msgstr ""
 
 msgid "Open"
@@ -370,55 +382,29 @@ msgstr ""
 msgid "New map"
 msgstr ""
 
-msgid "Open an event report"
+msgid "Open a line list"
 msgstr ""
 
-msgid "Loading event reports"
+msgid "Loading line lists"
 msgstr ""
 
-msgid "Couldn't load event reports"
+msgid "Couldn't load line lists"
 msgstr ""
 
 msgid ""
-"There was a problem loading event reports. Try again or contact your system "
+"There was a problem loading line lists. Try again or contact your system "
 "administrator."
 msgstr ""
 
-msgid "No event reports found. Click New event report to get started."
+msgid "No line lists found. Click New line list to get started."
 msgstr ""
 
 msgid ""
-"No event reports found. Try adjusting your search or filter options to find "
+"No line lists found. Try adjusting your search or filter options to find "
 "what you're looking for."
 msgstr ""
 
-msgid "New event report"
-msgstr ""
-
-msgid "Open an event visualization"
-msgstr ""
-
-msgid "Loading event visualizations"
-msgstr ""
-
-msgid "Couldn't load event visualizations"
-msgstr ""
-
-msgid ""
-"There was a problem loading event visualizations. Try again or contact your "
-"system administrator."
-msgstr ""
-
-msgid ""
-"No event visualizations found. Click New event visualization to get started."
-msgstr ""
-
-msgid ""
-"No event visualizations found. Try adjusting your search or filter options "
-"to find what you're looking for."
-msgstr ""
-
-msgid "New event visualization"
+msgid "New line list"
 msgstr ""
 
 msgid "Options"
@@ -958,11 +944,11 @@ msgstr "Catégories attribuées"
 msgid "Pivot table"
 msgstr "Tableau croisé dynamique"
 
-msgid "Column"
-msgstr "Colonne"
+msgid "Area"
+msgstr "Aire"
 
-msgid "Stacked column"
-msgstr "Colonne empilée"
+msgid "Stacked area"
+msgstr "Zone empilée"
 
 msgid "Bar"
 msgstr "Bar"
@@ -970,14 +956,26 @@ msgstr "Bar"
 msgid "Stacked bar"
 msgstr "Bar empilé"
 
+msgid "Column"
+msgstr "Colonne"
+
+msgid "Year over year (column)"
+msgstr "Année après année (colonne)"
+
+msgid "Stacked column"
+msgstr "Colonne empilée"
+
+msgid "Gauge"
+msgstr "Jauge"
+
 msgid "Line"
 msgstr "Ligne"
 
-msgid "Area"
-msgstr "Aire"
+msgid "Line list"
+msgstr "Liste des lignes"
 
-msgid "Stacked area"
-msgstr "Zone empilée"
+msgid "Year over year (line)"
+msgstr "Année après année (ligne)"
 
 msgid "Pie"
 msgstr "Tarte"
@@ -985,93 +983,14 @@ msgstr "Tarte"
 msgid "Radar"
 msgstr "Radar"
 
-msgid "Gauge"
-msgstr "Jauge"
-
-msgid "Year over year (line)"
-msgstr "Année après année (ligne)"
-
-msgid "Year over year (column)"
-msgstr "Année après année (colonne)"
+msgid "Scatter"
+msgstr "Dispersion"
 
 msgid "Single value"
 msgstr "Valeur unique"
 
-msgid "Scatter"
-msgstr "Dispersion"
-
-msgid "View data and indicators in a manipulatable table."
-msgstr "Affichez les données et les indicateurs dans un tableau manipulable."
-
-msgid ""
-"Compare sizes of related elements vertically. Recommend period as filter."
+msgid "All charts"
 msgstr ""
-"Comparez les tailles des éléments connexes verticalement. Recommander la "
-"période comme filtre."
-
-msgid ""
-"Compare parts of a whole against related elements vertically. Recommend data"
-" or org. unit as series."
-msgstr ""
-"Comparez les parties d'un tout avec des éléments connexes verticalement. "
-"Recommander des données ou une unité d'organisation en série."
-
-msgid ""
-"Compare sizes of related elements horizontally. Recommend period as filter."
-msgstr ""
-"Comparez les tailles des éléments connexes horizontalement. Recommander la "
-"période comme filtre."
-
-msgid ""
-"Compare parts of a whole against related elements horizontally. Recommend "
-"data or org. unit as series."
-msgstr ""
-"Comparez les parties d'un tout avec des éléments connexes horizontalement. "
-"Recommander des données ou une unité d'organisation en série."
-
-msgid "Track or compare changes over time. Recommend period as category."
-msgstr ""
-"Suivez ou comparez les changements au fil du temps. Recommander la période "
-"comme catégorie."
-
-msgid ""
-"Track or compare parts of a whole over time. Recommend data as series and "
-"period as category."
-msgstr ""
-"Suivez ou comparez des parties d'un tout au fil du temps. Recommander les "
-"données comme séries et la période comme catégorie."
-
-msgid ""
-"Compare parts of a whole at a single point in time. Recommend period as "
-"filter."
-msgstr ""
-"Comparez des parties d'un tout à un moment ponctuel. Recommander la période "
-"comme filtre."
-
-msgid "Compare several items against multiple variables."
-msgstr "Comparez plusieurs éléments à plusieurs variables."
-
-msgid ""
-"Compare a percentage indicator against a 100% scale. Recommend period as "
-"filter."
-msgstr ""
-"Comparez un indicateur de pourcentage à une échelle de 100%. Recommander la "
-"période comme filtre."
-
-msgid "Compare changes over time between multiple time periods."
-msgstr "Comparez les changements au fil du temps entre plusieurs périodes."
-
-msgid "Display a single value. Recommend relative period to show latest data."
-msgstr ""
-"Afficher une valeur unique. Recommander la période relative pour afficher "
-"les dernières données."
-
-msgid ""
-"View the relationship between two data items at a place or time. Recommended"
-" for finding outliers."
-msgstr ""
-"Affichez la relation entre deux éléments de données à un endroit ou à un "
-"temps. Recommandé pour trouver des valeurs atypiques"
 
 msgid "{{seriesName}} (trend)"
 msgstr "{{seriesName}} (tendance)"

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-01-20T14:11:46.002Z\n"
+"POT-Creation-Date: 2022-03-17T10:18:53.422Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: phil_dhis2, 2021\n"
 "Language-Team: Danish (https://www.transifex.com/hisp-uio/teams/100509/da/)\n"
@@ -257,6 +257,18 @@ msgstr ""
 msgid "Save {{fileType}} as"
 msgstr ""
 
+msgid "event report"
+msgstr ""
+
+msgid "line list"
+msgstr ""
+
+msgid "map"
+msgstr ""
+
+msgid "visualization"
+msgstr ""
+
 msgid "Created by"
 msgstr "Created by"
 
@@ -267,6 +279,9 @@ msgid "Only you"
 msgstr ""
 
 msgid "Others"
+msgstr ""
+
+msgid "Not supported by this app yet"
 msgstr ""
 
 msgid "Filter by name"
@@ -285,9 +300,6 @@ msgid "Clear filters"
 msgstr ""
 
 msgid "{{firstItemIndex}}-{{lastItemIndex}} of {{totalNumberOfItems}}"
-msgstr ""
-
-msgid "All charts"
 msgstr ""
 
 msgid "Open"
@@ -362,55 +374,29 @@ msgstr ""
 msgid "New map"
 msgstr ""
 
-msgid "Open an event report"
+msgid "Open a line list"
 msgstr ""
 
-msgid "Loading event reports"
+msgid "Loading line lists"
 msgstr ""
 
-msgid "Couldn't load event reports"
+msgid "Couldn't load line lists"
 msgstr ""
 
 msgid ""
-"There was a problem loading event reports. Try again or contact your system "
+"There was a problem loading line lists. Try again or contact your system "
 "administrator."
 msgstr ""
 
-msgid "No event reports found. Click New event report to get started."
+msgid "No line lists found. Click New line list to get started."
 msgstr ""
 
 msgid ""
-"No event reports found. Try adjusting your search or filter options to find "
+"No line lists found. Try adjusting your search or filter options to find "
 "what you're looking for."
 msgstr ""
 
-msgid "New event report"
-msgstr ""
-
-msgid "Open an event visualization"
-msgstr ""
-
-msgid "Loading event visualizations"
-msgstr ""
-
-msgid "Couldn't load event visualizations"
-msgstr ""
-
-msgid ""
-"There was a problem loading event visualizations. Try again or contact your "
-"system administrator."
-msgstr ""
-
-msgid ""
-"No event visualizations found. Click New event visualization to get started."
-msgstr ""
-
-msgid ""
-"No event visualizations found. Try adjusting your search or filter options "
-"to find what you're looking for."
-msgstr ""
-
-msgid "New event visualization"
+msgid "New line list"
 msgstr ""
 
 msgid "Options"
@@ -950,10 +936,10 @@ msgstr ""
 msgid "Pivot table"
 msgstr ""
 
-msgid "Column"
+msgid "Area"
 msgstr ""
 
-msgid "Stacked column"
+msgid "Stacked area"
 msgstr ""
 
 msgid "Bar"
@@ -962,13 +948,25 @@ msgstr ""
 msgid "Stacked bar"
 msgstr ""
 
+msgid "Column"
+msgstr ""
+
+msgid "Year over year (column)"
+msgstr ""
+
+msgid "Stacked column"
+msgstr ""
+
+msgid "Gauge"
+msgstr ""
+
 msgid "Line"
 msgstr ""
 
-msgid "Area"
+msgid "Line list"
 msgstr ""
 
-msgid "Stacked area"
+msgid "Year over year (line)"
 msgstr ""
 
 msgid "Pie"
@@ -977,72 +975,13 @@ msgstr ""
 msgid "Radar"
 msgstr ""
 
-msgid "Gauge"
-msgstr ""
-
-msgid "Year over year (line)"
-msgstr ""
-
-msgid "Year over year (column)"
+msgid "Scatter"
 msgstr ""
 
 msgid "Single value"
 msgstr ""
 
-msgid "Scatter"
-msgstr ""
-
-msgid "View data and indicators in a manipulatable table."
-msgstr ""
-
-msgid ""
-"Compare sizes of related elements vertically. Recommend period as filter."
-msgstr ""
-
-msgid ""
-"Compare parts of a whole against related elements vertically. Recommend data"
-" or org. unit as series."
-msgstr ""
-
-msgid ""
-"Compare sizes of related elements horizontally. Recommend period as filter."
-msgstr ""
-
-msgid ""
-"Compare parts of a whole against related elements horizontally. Recommend "
-"data or org. unit as series."
-msgstr ""
-
-msgid "Track or compare changes over time. Recommend period as category."
-msgstr ""
-
-msgid ""
-"Track or compare parts of a whole over time. Recommend data as series and "
-"period as category."
-msgstr ""
-
-msgid ""
-"Compare parts of a whole at a single point in time. Recommend period as "
-"filter."
-msgstr ""
-
-msgid "Compare several items against multiple variables."
-msgstr ""
-
-msgid ""
-"Compare a percentage indicator against a 100% scale. Recommend period as "
-"filter."
-msgstr ""
-
-msgid "Compare changes over time between multiple time periods."
-msgstr ""
-
-msgid "Display a single value. Recommend relative period to show latest data."
-msgstr ""
-
-msgid ""
-"View the relationship between two data items at a place or time. Recommended"
-" for finding outliers."
+msgid "All charts"
 msgstr ""
 
 msgid "{{seriesName}} (trend)"

@@ -20,7 +20,7 @@ export const LocalesSelect = ({ onChange, selected }) => {
             }
             onChange={({ selected }) => onChange(selected)}
             loading={fetching}
-            selected={data ? selected : undefined}
+            selected={data && selected ? selected : ''}
             dense
         >
             {data &&

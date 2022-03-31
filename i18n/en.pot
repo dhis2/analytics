@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2022-01-20T10:46:04.306Z\n"
-"PO-Revision-Date: 2022-01-20T10:46:04.306Z\n"
+"POT-Creation-Date: 2022-03-17T10:18:53.422Z\n"
+"PO-Revision-Date: 2022-03-17T10:18:53.422Z\n"
 
 msgid "view only"
 msgstr "view only"
@@ -251,6 +251,18 @@ msgstr "Rename"
 msgid "Save {{fileType}} as"
 msgstr "Save {{fileType}} as"
 
+msgid "event report"
+msgstr "event report"
+
+msgid "line list"
+msgstr "line list"
+
+msgid "map"
+msgstr "map"
+
+msgid "visualization"
+msgstr "visualization"
+
 msgid "Created by"
 msgstr "Created by"
 
@@ -368,63 +380,34 @@ msgstr ""
 msgid "New map"
 msgstr "New map"
 
-msgid "Open an event visualization"
-msgstr "Open an event visualization"
+msgid "Open a line list"
+msgstr "Open a line list"
 
-msgid "Loading event visualizations"
-msgstr "Loading event visualizations"
+msgid "Loading line lists"
+msgstr "Loading line lists"
 
-msgid "Couldn't load event visualizations"
-msgstr "Couldn't load event visualizations"
-
-msgid ""
-"There was a problem loading event visualizations. Try again or contact your "
-"system administrator."
-msgstr ""
-"There was a problem loading event visualizations. Try again or contact your "
-"system administrator."
-
-msgid "No event visualizations found. Click New event visualization to get started."
-msgstr "No event visualizations found. Click New event visualization to get started."
+msgid "Couldn't load line lists"
+msgstr "Couldn't load line lists"
 
 msgid ""
-"No event visualizations found. Try adjusting your search or filter options "
-"to find what you're looking for."
+"There was a problem loading line lists. Try again or contact your system "
+"administrator."
 msgstr ""
-"No event visualizations found. Try adjusting your search or filter options "
-"to find what you're looking for."
+"There was a problem loading line lists. Try again or contact your system "
+"administrator."
 
-msgid "New event visualization"
-msgstr "New event visualization"
-
-msgid "Open an event visualization"
-msgstr "Open an event visualization"
-
-msgid "Loading event visualizations"
-msgstr "Loading event visualizations"
-
-msgid "Couldn't load event visualizations"
-msgstr "Couldn't load event visualizations"
+msgid "No line lists found. Click New line list to get started."
+msgstr "No line lists found. Click New line list to get started."
 
 msgid ""
-"There was a problem loading event visualizations. Try again or contact your "
-"system administrator."
+"No line lists found. Try adjusting your search or filter options to find "
+"what you're looking for."
 msgstr ""
-"There was a problem loading event visualizations. Try again or contact your "
-"system administrator."
+"No line lists found. Try adjusting your search or filter options to find "
+"what you're looking for."
 
-msgid "No event visualizations found. Click New event visualization to get started."
-msgstr "No event visualizations found. Click New event visualization to get started."
-
-msgid ""
-"No event visualizations found. Try adjusting your search or filter options "
-"to find what you're looking for."
-msgstr ""
-"No event visualizations found. Try adjusting your search or filter options "
-"to find what you're looking for."
-
-msgid "New event visualization"
-msgstr "New event visualization"
+msgid "New line list"
+msgstr "New line list"
 
 msgid "Options"
 msgstr "Options"
@@ -963,11 +946,11 @@ msgstr "Assigned Categories"
 msgid "Pivot table"
 msgstr "Pivot table"
 
-msgid "Column"
-msgstr "Column"
+msgid "Area"
+msgstr "Area"
 
-msgid "Stacked column"
-msgstr "Stacked column"
+msgid "Stacked area"
+msgstr "Stacked area"
 
 msgid "Bar"
 msgstr "Bar"
@@ -975,14 +958,26 @@ msgstr "Bar"
 msgid "Stacked bar"
 msgstr "Stacked bar"
 
+msgid "Column"
+msgstr "Column"
+
+msgid "Year over year (column)"
+msgstr "Year over year (column)"
+
+msgid "Stacked column"
+msgstr "Stacked column"
+
+msgid "Gauge"
+msgstr "Gauge"
+
 msgid "Line"
 msgstr "Line"
 
-msgid "Area"
-msgstr "Area"
+msgid "Line list"
+msgstr "Line list"
 
-msgid "Stacked area"
-msgstr "Stacked area"
+msgid "Year over year (line)"
+msgstr "Year over year (line)"
 
 msgid "Pie"
 msgstr "Pie"
@@ -990,23 +985,11 @@ msgstr "Pie"
 msgid "Radar"
 msgstr "Radar"
 
-msgid "Gauge"
-msgstr "Gauge"
-
-msgid "Year over year (line)"
-msgstr "Year over year (line)"
-
-msgid "Year over year (column)"
-msgstr "Year over year (column)"
-
-msgid "Single value"
-msgstr "Single value"
-
 msgid "Scatter"
 msgstr "Scatter"
 
-msgid "Line list"
-msgstr "Line list"
+msgid "Single value"
+msgstr "Single value"
 
 msgid "All charts"
 msgstr "All charts"

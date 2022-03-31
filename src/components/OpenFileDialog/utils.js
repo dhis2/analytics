@@ -62,19 +62,19 @@ const texts = {
         newButtonLabel: i18n.t('New map'),
     },
     [AO_TYPE_EVENT_VISUALIZATION]: {
-        modalTitle: i18n.t('Open an event visualization'),
-        loadingText: i18n.t('Loading event visualizations'),
-        errorTitle: i18n.t("Couldn't load event visualizations"),
+        modalTitle: i18n.t('Open a line list'),
+        loadingText: i18n.t('Loading line lists'),
+        errorTitle: i18n.t("Couldn't load line lists"),
         errorText: i18n.t(
-            'There was a problem loading event visualizations. Try again or contact your system administrator.'
+            'There was a problem loading line lists. Try again or contact your system administrator.'
         ),
         noDataText: i18n.t(
-            'No event visualizations found. Click New event visualization to get started.'
+            'No line lists found. Click New line list to get started.'
         ),
         noFilteredDataText: i18n.t(
-            "No event visualizations found. Try adjusting your search or filter options to find what you're looking for."
+            "No line lists found. Try adjusting your search or filter options to find what you're looking for."
         ),
-        newButtonLabel: i18n.t('New event visualization'),
+        newButtonLabel: i18n.t('New line list'),
     },
 }
 

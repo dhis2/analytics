@@ -10,6 +10,7 @@ import {
     LAYOUT_TYPE_YEAR_OVER_YEAR,
     LAYOUT_TYPE_PIVOT_TABLE,
     LAYOUT_TYPE_SCATTER,
+    LAYOUT_TYPE_LINE_LIST,
 } from './layoutTypes.js'
 
 const getAxisNamesByLayoutType = (layoutType) => {
@@ -27,6 +28,11 @@ const getAxisNamesByLayoutType = (layoutType) => {
             return {
                 [AXIS_ID_COLUMNS]: i18n.t('Columns'),
                 [AXIS_ID_ROWS]: i18n.t('Rows'),
+                [AXIS_ID_FILTERS]: i18n.t('Filter'),
+            }
+        case LAYOUT_TYPE_LINE_LIST:
+            return {
+                [AXIS_ID_COLUMNS]: i18n.t('Columns'),
                 [AXIS_ID_FILTERS]: i18n.t('Filter'),
             }
         case LAYOUT_TYPE_SCATTER:
