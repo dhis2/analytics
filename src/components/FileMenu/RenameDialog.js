@@ -12,7 +12,11 @@ import {
 import PropTypes from 'prop-types'
 import React, { useMemo, useState } from 'react'
 import i18n from '../../locales/index.js'
-import { supportedFileTypes, endpointFromFileType } from './utils.js'
+import {
+    supportedFileTypes,
+    endpointFromFileType,
+    labelForFileType,
+} from './utils.js'
 
 const getMutation = (type) => ({
     resource: endpointFromFileType(type),
@@ -49,7 +53,9 @@ export const RenameDialog = ({ type, object, onClose, onRename, onError }) => {
     return (
         <Modal onClose={onClose}>
             <ModalTitle>
-                {i18n.t('Rename {{fileType}}', { fileType: type })}
+                {i18n.t('Rename {{fileType}}', {
+                    fileType: labelForFileType(type),
+                })}
             </ModalTitle>
             <ModalContent>
                 <InputField

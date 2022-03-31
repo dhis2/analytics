@@ -258,6 +258,18 @@ msgstr "Đổi tên"
 msgid "Save {{fileType}} as"
 msgstr ""
 
+msgid "event report"
+msgstr "báo cáo sự kiện"
+
+msgid "line list"
+msgstr ""
+
+msgid "map"
+msgstr "bản đồ"
+
+msgid "visualization"
+msgstr ""
+
 msgid "Created by"
 msgstr "Được tạo bởi"
 

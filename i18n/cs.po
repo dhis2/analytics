@@ -263,6 +263,18 @@ msgstr "Přejmenovat"
 msgid "Save {{fileType}} as"
 msgstr "Uložit {{fileType}} jako"
 
+msgid "event report"
+msgstr "zpráva o události"
+
+msgid "line list"
+msgstr ""
+
+msgid "map"
+msgstr "mapa"
+
+msgid "visualization"
+msgstr ""
+
 msgid "Created by"
 msgstr "Vytvořil"
 

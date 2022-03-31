@@ -261,6 +261,18 @@ msgstr "Gi nytt navn"
 msgid "Save {{fileType}} as"
 msgstr "Lagre {{fileType}} som"
 
+msgid "event report"
+msgstr "hendelsesrapport"
+
+msgid "line list"
+msgstr ""
+
+msgid "map"
+msgstr "kart"
+
+msgid "visualization"
+msgstr ""
+
 msgid "Created by"
 msgstr "Opprettet av"
 

@@ -19,7 +19,7 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 msgid "view only"
-msgstr "只读"
+msgstr "只查看"
 
 msgid "view and edit"
 msgstr "查看和编辑"
@@ -259,6 +259,18 @@ msgstr "改名"
 msgid "Save {{fileType}} as"
 msgstr "将{{fileType}}另存为"
 
+msgid "event report"
+msgstr "事件报表"
+
+msgid "line list"
+msgstr "行列表"
+
+msgid "map"
+msgstr "地图"
+
+msgid "visualization"
+msgstr "可视化"
+
 msgid "Created by"
 msgstr "创建人"
 
@@ -365,29 +377,29 @@ msgid "New map"
 msgstr "新地图"
 
 msgid "Open a line list"
-msgstr ""
+msgstr "打开一个行列表"
 
 msgid "Loading line lists"
-msgstr ""
+msgstr "加载行列表"
 
 msgid "Couldn't load line lists"
-msgstr ""
+msgstr "无法加载行列表"
 
 msgid ""
 "There was a problem loading line lists. Try again or contact your system "
 "administrator."
-msgstr ""
+msgstr "加载行列表时出现问题。重试或联系您的系统管理员。"
 
 msgid "No line lists found. Click New line list to get started."
-msgstr ""
+msgstr "未找到行列表。单击新行列表开始。"
 
 msgid ""
 "No line lists found. Try adjusting your search or filter options to find "
 "what you're looking for."
-msgstr ""
+msgstr "未找到行列表。尝试调整您的搜索或过滤选项以找到您要查找的内容。"
 
 msgid "New line list"
-msgstr ""
+msgstr "新行列表"
 
 msgid "Options"
 msgstr "选项"
