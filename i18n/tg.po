@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-02-10T17:39:46.718Z\n"
+"POT-Creation-Date: 2022-03-17T10:18:53.422Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: Viktor Varland <viktor@dhis2.org>, 2021\n"
 "Language-Team: Tajik (https://www.transifex.com/hisp-uio/teams/100509/tg/)\n"
@@ -258,6 +258,18 @@ msgstr "Ивази ном"
 msgid "Save {{fileType}} as"
 msgstr ""
 
+msgid "event report"
+msgstr ""
+
+msgid "line list"
+msgstr ""
+
+msgid "map"
+msgstr ""
+
+msgid "visualization"
+msgstr ""
+
 msgid "Created by"
 msgstr ""
 
@@ -363,30 +375,29 @@ msgstr ""
 msgid "New map"
 msgstr ""
 
-msgid "Open an event visualization"
+msgid "Open a line list"
 msgstr ""
 
-msgid "Loading event visualizations"
+msgid "Loading line lists"
 msgstr ""
 
-msgid "Couldn't load event visualizations"
-msgstr ""
-
-msgid ""
-"There was a problem loading event visualizations. Try again or contact your "
-"system administrator."
+msgid "Couldn't load line lists"
 msgstr ""
 
 msgid ""
-"No event visualizations found. Click New event visualization to get started."
+"There was a problem loading line lists. Try again or contact your system "
+"administrator."
+msgstr ""
+
+msgid "No line lists found. Click New line list to get started."
 msgstr ""
 
 msgid ""
-"No event visualizations found. Try adjusting your search or filter options "
-"to find what you're looking for."
+"No line lists found. Try adjusting your search or filter options to find "
+"what you're looking for."
 msgstr ""
 
-msgid "New event visualization"
+msgid "New line list"
 msgstr ""
 
 msgid "Options"

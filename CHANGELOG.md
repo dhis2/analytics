@@ -1,3 +1,59 @@
+## [23.7.3](https://github.com/dhis2/analytics/compare/v23.7.2...v23.7.3) (2022-03-31)
+
+
+### Bug Fixes
+
+* get stage id and filter string for filters just like for columns and rows([#1191](https://github.com/dhis2/analytics/issues/1191)) ([4550517](https://github.com/dhis2/analytics/commit/45505179f9c1bf359d900d05d22f267c356d72cf))
+
+## [23.7.2](https://github.com/dhis2/analytics/compare/v23.7.1...v23.7.2) (2022-03-26)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([8b90433](https://github.com/dhis2/analytics/commit/8b90433d65124a1e79396bc15e399648e1a6edf9))
+
+## [23.7.1](https://github.com/dhis2/analytics/compare/v23.7.0...v23.7.1) (2022-03-25)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([0e19350](https://github.com/dhis2/analytics/commit/0e19350932d76ae76e2c1c7d06931786ae8d6bbe))
+
+# [23.7.0](https://github.com/dhis2/analytics/compare/v23.6.7...v23.7.0) (2022-03-24)
+
+
+### Features
+
+* **FileMenu:** use custom labels in dialog titles TECH-1035 ([#1173](https://github.com/dhis2/analytics/issues/1173)) ([4f02fdf](https://github.com/dhis2/analytics/commit/4f02fdf9d314f0705416442d39f50324d10552e4))
+
+## [23.6.7](https://github.com/dhis2/analytics/compare/v23.6.6...v23.6.7) (2022-03-24)
+
+
+### Bug Fixes
+
+* return the URL portion after origin as default TECH-1036 ([#1175](https://github.com/dhis2/analytics/issues/1175)) ([38607d9](https://github.com/dhis2/analytics/commit/38607d9716f45a8f47ae6003a2e9f90dd4d170a2))
+
+## [23.6.6](https://github.com/dhis2/analytics/compare/v23.6.5...v23.6.6) (2022-03-19)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([5568e55](https://github.com/dhis2/analytics/commit/5568e55b1f8d6e2bd0ff0e1b748bbd3ef84d8b71))
+
+## [23.6.5](https://github.com/dhis2/analytics/compare/v23.6.4...v23.6.5) (2022-03-18)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([5ece76b](https://github.com/dhis2/analytics/commit/5ece76b4394c69f7a3e5108cfbf93b9521c43a93))
+
+## [23.6.4](https://github.com/dhis2/analytics/compare/v23.6.3...v23.6.4) (2022-03-17)
+
+
+### Bug Fixes
+
+* **TranslationDialog:** remove warnings ([#1174](https://github.com/dhis2/analytics/issues/1174)) ([c7e778d](https://github.com/dhis2/analytics/commit/c7e778da4b9aa6f950b874bd6f61a4018a5c8f3f))
+
 ## [23.6.3](https://github.com/dhis2/analytics/compare/v23.6.2...v23.6.3) (2022-03-16)
 
 
