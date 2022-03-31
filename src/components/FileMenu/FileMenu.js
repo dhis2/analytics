@@ -28,9 +28,11 @@ import { SaveAsDialog } from './SaveAsDialog.js'
 import { supportedFileTypes } from './utils.js'
 
 export const FileMenu = ({
-    d2, // to be removed as soon as TranslateDialog and FavoritesDialog are rewritten
+    currentUser,
+    defaultFilterVisType,
     fileType,
     fileObject,
+    filterVisTypes,
     onNew,
     onOpen,
     onSave,
@@ -147,13 +149,15 @@ export const FileMenu = ({
             <OpenFileDialog
                 open={currentDialog === 'open'}
                 type={fileType}
+                filterVisTypes={filterVisTypes}
+                defaultFilterVisType={defaultFilterVisType}
                 onClose={onDialogClose}
                 onFileSelect={(id) => {
                     onOpen(id)
                     onDialogClose()
                 }}
                 onNew={onNew}
-                currentUser={d2.currentUser}
+                currentUser={currentUser}
             />
             {menuIsOpen && (
                 <Layer
@@ -189,14 +193,18 @@ export const FileMenu = ({
                                 icon={
                                     <IconSave24
                                         color={
-                                            !fileObject?.id ||
-                                            fileObject?.access?.update
-                                                ? iconActiveColor
-                                                : iconInactiveColor
+                                            !onSave ||
+                                            !(
+                                                !fileObject?.id ||
+                                                fileObject?.access?.update
+                                            )
+                                                ? iconInactiveColor
+                                                : iconActiveColor
                                         }
                                     />
                                 }
                                 disabled={
+                                    !onSave ||
                                     !(
                                         !fileObject?.id ||
                                         fileObject?.access?.update
@@ -344,15 +352,16 @@ FileMenu.defaultProps = {
     onNew: Function.prototype,
     onOpen: Function.prototype,
     onRename: Function.prototype,
-    onSave: Function.prototype,
     onSaveAs: Function.prototype,
     onTranslate: Function.prototype,
 }
 
 FileMenu.propTypes = {
-    d2: PropTypes.object,
+    currentUser: PropTypes.object,
+    defaultFilterVisType: PropTypes.string,
     fileObject: PropTypes.object,
     fileType: PropTypes.oneOf(supportedFileTypes),
+    filterVisTypes: PropTypes.array,
     onDelete: PropTypes.func,
     onError: PropTypes.func,
     onNew: PropTypes.func,

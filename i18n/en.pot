@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2022-01-03T11:09:02.270Z\n"
-"PO-Revision-Date: 2022-01-03T11:09:02.270Z\n"
+"POT-Creation-Date: 2022-03-17T10:18:53.422Z\n"
+"PO-Revision-Date: 2022-03-17T10:18:53.422Z\n"
 
 msgid "view only"
 msgstr "view only"
@@ -57,6 +57,12 @@ msgstr "Subscribe to get updates about new interpretations."
 
 msgid "Subscribe"
 msgstr "Subscribe"
+
+msgid "This app could not retrieve required data."
+msgstr "This app could not retrieve required data."
+
+msgid "Network error"
+msgstr "Network error"
 
 msgid "Data Type"
 msgstr "Data Type"
@@ -245,6 +251,18 @@ msgstr "Rename"
 msgid "Save {{fileType}} as"
 msgstr "Save {{fileType}} as"
 
+msgid "event report"
+msgstr "event report"
+
+msgid "line list"
+msgstr "line list"
+
+msgid "map"
+msgstr "map"
+
+msgid "visualization"
+msgstr "visualization"
+
 msgid "Created by"
 msgstr "Created by"
 
@@ -256,6 +274,9 @@ msgstr "Only you"
 
 msgid "Others"
 msgstr "Others"
+
+msgid "Not supported by this app yet"
+msgstr "Not supported by this app yet"
 
 msgid "Filter by name"
 msgstr "Filter by name"
@@ -274,9 +295,6 @@ msgstr "Clear filters"
 
 msgid "{{firstItemIndex}}-{{lastItemIndex}} of {{totalNumberOfItems}}"
 msgstr "{{firstItemIndex}}-{{lastItemIndex}} of {{totalNumberOfItems}}"
-
-msgid "All charts"
-msgstr "All charts"
 
 msgid "Open"
 msgstr "Open"
@@ -362,34 +380,34 @@ msgstr ""
 msgid "New map"
 msgstr "New map"
 
-msgid "Open an event report"
-msgstr "Open an event report"
+msgid "Open a line list"
+msgstr "Open a line list"
 
-msgid "Loading event reports"
-msgstr "Loading event reports"
+msgid "Loading line lists"
+msgstr "Loading line lists"
 
-msgid "Couldn't load event reports"
-msgstr "Couldn't load event reports"
-
-msgid ""
-"There was a problem loading event reports. Try again or contact your system "
-"administrator."
-msgstr ""
-"There was a problem loading event reports. Try again or contact your system "
-"administrator."
-
-msgid "No event reports found. Click New event report to get started."
-msgstr "No event reports found. Click New event report to get started."
+msgid "Couldn't load line lists"
+msgstr "Couldn't load line lists"
 
 msgid ""
-"No event reports found. Try adjusting your search or filter options to find "
+"There was a problem loading line lists. Try again or contact your system "
+"administrator."
+msgstr ""
+"There was a problem loading line lists. Try again or contact your system "
+"administrator."
+
+msgid "No line lists found. Click New line list to get started."
+msgstr "No line lists found. Click New line list to get started."
+
+msgid ""
+"No line lists found. Try adjusting your search or filter options to find "
 "what you're looking for."
 msgstr ""
-"No event reports found. Try adjusting your search or filter options to find "
+"No line lists found. Try adjusting your search or filter options to find "
 "what you're looking for."
 
-msgid "New event report"
-msgstr "New event report"
+msgid "New line list"
+msgstr "New line list"
 
 msgid "Options"
 msgstr "Options"
@@ -928,11 +946,11 @@ msgstr "Assigned Categories"
 msgid "Pivot table"
 msgstr "Pivot table"
 
-msgid "Column"
-msgstr "Column"
+msgid "Area"
+msgstr "Area"
 
-msgid "Stacked column"
-msgstr "Stacked column"
+msgid "Stacked area"
+msgstr "Stacked area"
 
 msgid "Bar"
 msgstr "Bar"
@@ -940,14 +958,26 @@ msgstr "Bar"
 msgid "Stacked bar"
 msgstr "Stacked bar"
 
+msgid "Column"
+msgstr "Column"
+
+msgid "Year over year (column)"
+msgstr "Year over year (column)"
+
+msgid "Stacked column"
+msgstr "Stacked column"
+
+msgid "Gauge"
+msgstr "Gauge"
+
 msgid "Line"
 msgstr "Line"
 
-msgid "Area"
-msgstr "Area"
+msgid "Line list"
+msgstr "Line list"
 
-msgid "Stacked area"
-msgstr "Stacked area"
+msgid "Year over year (line)"
+msgstr "Year over year (line)"
 
 msgid "Pie"
 msgstr "Pie"
@@ -955,83 +985,14 @@ msgstr "Pie"
 msgid "Radar"
 msgstr "Radar"
 
-msgid "Gauge"
-msgstr "Gauge"
-
-msgid "Year over year (line)"
-msgstr "Year over year (line)"
-
-msgid "Year over year (column)"
-msgstr "Year over year (column)"
+msgid "Scatter"
+msgstr "Scatter"
 
 msgid "Single value"
 msgstr "Single value"
 
-msgid "Scatter"
-msgstr "Scatter"
-
-msgid "View data and indicators in a manipulatable table."
-msgstr "View data and indicators in a manipulatable table."
-
-msgid "Compare sizes of related elements vertically. Recommend period as filter."
-msgstr "Compare sizes of related elements vertically. Recommend period as filter."
-
-msgid ""
-"Compare parts of a whole against related elements vertically. Recommend "
-"data or org. unit as series."
-msgstr ""
-"Compare parts of a whole against related elements vertically. Recommend "
-"data or org. unit as series."
-
-msgid "Compare sizes of related elements horizontally. Recommend period as filter."
-msgstr "Compare sizes of related elements horizontally. Recommend period as filter."
-
-msgid ""
-"Compare parts of a whole against related elements horizontally. Recommend "
-"data or org. unit as series."
-msgstr ""
-"Compare parts of a whole against related elements horizontally. Recommend "
-"data or org. unit as series."
-
-msgid "Track or compare changes over time. Recommend period as category."
-msgstr "Track or compare changes over time. Recommend period as category."
-
-msgid ""
-"Track or compare parts of a whole over time. Recommend data as series and "
-"period as category."
-msgstr ""
-"Track or compare parts of a whole over time. Recommend data as series and "
-"period as category."
-
-msgid ""
-"Compare parts of a whole at a single point in time. Recommend period as "
-"filter."
-msgstr ""
-"Compare parts of a whole at a single point in time. Recommend period as "
-"filter."
-
-msgid "Compare several items against multiple variables."
-msgstr "Compare several items against multiple variables."
-
-msgid ""
-"Compare a percentage indicator against a 100% scale. Recommend period as "
-"filter."
-msgstr ""
-"Compare a percentage indicator against a 100% scale. Recommend period as "
-"filter."
-
-msgid "Compare changes over time between multiple time periods."
-msgstr "Compare changes over time between multiple time periods."
-
-msgid "Display a single value. Recommend relative period to show latest data."
-msgstr "Display a single value. Recommend relative period to show latest data."
-
-msgid ""
-"View the relationship between two data items at a place or time. "
-"Recommended for finding outliers."
-msgstr ""
-"View the relationship between two data items at a place or time. "
-"Recommended for finding outliers."
+msgid "All charts"
+msgstr "All charts"
 
 msgid "{{seriesName}} (trend)"
 msgstr "{{seriesName}} (trend)"

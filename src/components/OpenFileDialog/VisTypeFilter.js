@@ -1,15 +1,15 @@
 import i18n from '@dhis2/d2-i18n'
-import { Divider, SingleSelect, SingleSelectOption, colors } from '@dhis2/ui'
+import { SingleSelect, colors } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
-import { visTypeDisplayNames } from '../../modules/visTypes.js'
+import {
+    getDisplayNameByVisType,
+    visTypeIcons,
+} from '../../modules/visTypes.js'
 import { VisTypeIcon } from '../VisTypeIcon.js'
 import { CustomSelectOption } from './CustomSelectOption.js'
 
-export const VIS_TYPE_ALL = 'all'
-export const VIS_TYPE_CHARTS = 'charts'
-
-export const VisTypeFilter = ({ selected, onChange }) => (
+export const VisTypeFilter = ({ visTypes, selected, onChange }) => (
     <SingleSelect
         selected={selected}
         onChange={({ selected }) => onChange(selected)}
@@ -17,20 +17,21 @@ export const VisTypeFilter = ({ selected, onChange }) => (
         dense
         maxHeight="400px"
     >
-        {/* TODO figure out if this distinction still make sense since we have SV and potentially other new types in the future which might not fall into the chart/PT categories */}
-        <SingleSelectOption label={i18n.t('All types')} value={VIS_TYPE_ALL} />
-        <SingleSelectOption
-            label={i18n.t('All charts')}
-            value={VIS_TYPE_CHARTS}
-        />
-        <Divider />
-        {Object.entries(visTypeDisplayNames).map(([type, label]) => (
+        {visTypes?.map(({ type, disabled, insertDivider }) => (
             <CustomSelectOption
                 key={type}
-                label={label}
+                disabled={disabled}
+                label={getDisplayNameByVisType(type)}
+                insertDivider={insertDivider}
                 value={type}
                 icon={
-                    <VisTypeIcon type={type} useSmall color={colors.grey600} />
+                    visTypeIcons[type] ? (
+                        <VisTypeIcon
+                            type={type}
+                            useSmall
+                            color={colors.grey600}
+                        />
+                    ) : undefined
                 }
             />
         ))}
@@ -39,6 +40,13 @@ export const VisTypeFilter = ({ selected, onChange }) => (
 
 VisTypeFilter.propTypes = {
     selected: PropTypes.string,
+    visTypes: PropTypes.arrayOf(
+        PropTypes.shape({
+            disabled: PropTypes.bool,
+            insertDivider: PropTypes.bool,
+            type: PropTypes.string,
+        })
+    ),
     onChange: PropTypes.func,
 }
 

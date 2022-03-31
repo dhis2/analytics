@@ -24,6 +24,7 @@ import {
     VIS_TYPE_YEAR_OVER_YEAR_COLUMN,
     VIS_TYPE_PIVOT_TABLE,
     VIS_TYPE_SCATTER,
+    VIS_TYPE_LINE_LIST,
 } from '../visTypes.js'
 
 const RULE_PROP_AVAILABLE_AXES = 'availableAxes',
@@ -124,6 +125,10 @@ const scatterRules = {
     },
 }
 
+const lineListRules = {
+    [RULE_PROP_AVAILABLE_AXES]: [AXIS_ID_COLUMNS, AXIS_ID_FILTERS],
+}
+
 const visTypeToRules = {
     [VIS_TYPE_COLUMN]: defaultRules,
     [VIS_TYPE_STACKED_COLUMN]: defaultRules,
@@ -140,6 +145,7 @@ const visTypeToRules = {
     [VIS_TYPE_YEAR_OVER_YEAR_COLUMN]: yearOverYearRules,
     [VIS_TYPE_PIVOT_TABLE]: pivotTableRules,
     [VIS_TYPE_SCATTER]: scatterRules,
+    [VIS_TYPE_LINE_LIST]: lineListRules,
 }
 
 const getRulesByVisType = (visType) => {
