@@ -1,9 +1,9 @@
-import { itemIsValid } from '../itemIsValid'
+import { itemIsValid } from '../itemIsValid.js'
 import {
     TEST_ITEM_1,
     TEST_ITEM_INVALID_1,
     TEST_ITEM_INVALID_2,
-} from '../testResources'
+} from '../testResources.js'
 
 describe('itemIsValid', () => {
     it('should return true if valid, otherwise false', () => {

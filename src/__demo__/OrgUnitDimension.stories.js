@@ -1,9 +1,9 @@
 import { DataProvider } from '@dhis2/app-runtime'
 import { storiesOf } from '@storybook/react'
 import React, { useState } from 'react'
-import OrgUnitDimension from '../components/OrgUnitDimension/OrgUnitDimension'
+import OrgUnitDimension from '../components/OrgUnitDimension/OrgUnitDimension.js'
 
-const Wrapper = story => (
+const Wrapper = (story) => (
     <DataProvider baseUrl="http://localhost:8080/" apiVersion="">
         {story()}
     </DataProvider>
@@ -19,7 +19,7 @@ storiesOf('OrgUnitDimension', module)
         return (
             <OrgUnitDimension
                 selected={selected}
-                onSelect={response => setSelected(response.items)}
+                onSelect={(response) => setSelected(response.items)}
                 roots={defaultRootOrgUnits}
             />
         )
@@ -39,7 +39,7 @@ storiesOf('OrgUnitDimension', module)
         return (
             <OrgUnitDimension
                 selected={selected}
-                onSelect={response => setSelected(response.items)}
+                onSelect={(response) => setSelected(response.items)}
                 roots={defaultRootOrgUnits}
             />
         )
@@ -59,7 +59,7 @@ storiesOf('OrgUnitDimension', module)
         return (
             <OrgUnitDimension
                 selected={selected}
-                onSelect={response => setSelected(response.items)}
+                onSelect={(response) => setSelected(response.items)}
                 roots={defaultRootOrgUnits}
             />
         )
@@ -85,7 +85,7 @@ storiesOf('OrgUnitDimension', module)
         return (
             <OrgUnitDimension
                 selected={selected}
-                onSelect={response => setSelected(response.items)}
+                onSelect={(response) => setSelected(response.items)}
                 roots={defaultRootOrgUnits}
             />
         )
@@ -115,7 +115,7 @@ storiesOf('OrgUnitDimension', module)
         return (
             <OrgUnitDimension
                 selected={selected}
-                onSelect={response => setSelected(response.items)}
+                onSelect={(response) => setSelected(response.items)}
                 roots={defaultRootOrgUnits}
             />
         )
@@ -129,7 +129,7 @@ storiesOf('OrgUnitDimension', module)
         return (
             <OrgUnitDimension
                 selected={selected}
-                onSelect={response => setSelected(response.items)}
+                onSelect={(response) => setSelected(response.items)}
                 roots={['O6uvpzGd5pu', 'fdc6uOvgoji']} // Bo + Bombali
             />
         )

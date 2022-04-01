@@ -11,8 +11,8 @@ import {
     TEXT_ALIGN_RIGHT,
     TEXT_ALIGN_CENTER,
     mergeFontStyleWithDefault,
-} from '../../../../modules/fontStyle'
-import { getColorByValueFromLegendSet } from '../../../../modules/legends'
+} from '../../../../modules/fontStyle.js'
+import { getColorByValueFromLegendSet } from '../../../../modules/legends.js'
 
 const svgNS = 'http://www.w3.org/2000/svg'
 
@@ -126,7 +126,7 @@ const generateDashboardItem = (config, { legendSet, noData }) => {
     return container
 }
 
-const getTextAnchorFromTextAlign = textAlign => {
+const getTextAnchorFromTextAlign = (textAlign) => {
     switch (textAlign) {
         default:
         case TEXT_ALIGN_LEFT:
@@ -138,7 +138,7 @@ const getTextAnchorFromTextAlign = textAlign => {
     }
 }
 
-const getXFromTextAlign = textAlign => {
+const getXFromTextAlign = (textAlign) => {
     switch (textAlign) {
         default:
         case TEXT_ALIGN_LEFT:

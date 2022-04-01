@@ -1,6 +1,6 @@
 import { colors } from '@dhis2/ui'
-import { hasCustomAxes } from '../../../../../modules/axis'
-import { axisHasRelativeItems } from '../../../../../modules/layout/axisHasRelativeItems'
+import { hasCustomAxes } from '../../../../../modules/axis.js'
+import { axisHasRelativeItems } from '../../../../../modules/layout/axisHasRelativeItems.js'
 import {
     VIS_TYPE_PIE,
     VIS_TYPE_GAUGE,
@@ -8,19 +8,19 @@ import {
     isYearOverYear,
     VIS_TYPE_LINE,
     VIS_TYPE_SCATTER,
-} from '../../../../../modules/visTypes'
-import { getAxisStringFromId } from '../../../../util/axisId'
+} from '../../../../../modules/visTypes.js'
+import { getAxisStringFromId } from '../../../../util/axisId.js'
 import {
     colorSets,
     COLOR_SET_PATTERNS,
-} from '../../../../util/colors/colorSets'
-import { generateColors } from '../../../../util/colors/gradientColorGenerator'
-import { getFullIdAxisMap, getAxisIdsMap } from '../customAxes'
-import getCumulativeData from '../getCumulativeData'
-import getType from '../type'
-import getGauge from './gauge'
-import getPie from './pie'
-import getScatter from './scatter'
+} from '../../../../util/colors/colorSets.js'
+import { generateColors } from '../../../../util/colors/gradientColorGenerator.js'
+import { getFullIdAxisMap, getAxisIdsMap } from '../customAxes.js'
+import getCumulativeData from '../getCumulativeData.js'
+import getType from '../type.js'
+import getGauge from './gauge.js'
+import getPie from './pie.js'
+import getScatter from './scatter.js'
 
 const DEFAULT_ANIMATION_DURATION = 200
 
@@ -58,9 +58,9 @@ function getIndexColorPatternMap(series, layout, extraOptions) {
 }
 
 function getIdColorMap(series, layout, extraOptions) {
-    const filteredSeries = layout.series?.filter(layoutSeriesItem =>
+    const filteredSeries = layout.series?.filter((layoutSeriesItem) =>
         series.some(
-            seriesItem => seriesItem.id === layoutSeriesItem.dimensionItem
+            (seriesItem) => seriesItem.id === layoutSeriesItem.dimensionItem
         )
     )
 
@@ -139,7 +139,7 @@ function getDefault(series, metaData, layout, isStacked, extraOptions) {
         }
 
         const matchedObject = layout.series?.find(
-            item => item.dimensionItem === seriesObj.id
+            (item) => item.dimensionItem === seriesObj.id
         )
 
         if (matchedObject && !axisHasRelativeItems(layout.columns)) {
@@ -220,7 +220,7 @@ export default function (series, metaData, layout, isStacked, extraOptions) {
             )
     }
 
-    series.forEach(seriesObj => {
+    series.forEach((seriesObj) => {
         // animation
         seriesObj.animation = {
             duration: getAnimation(

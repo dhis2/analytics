@@ -1,4 +1,4 @@
-import { getXYStats } from '../xyStats'
+import { getXYStats } from '../xyStats.js'
 
 const a = [
     [2, 3],

@@ -1,5 +1,5 @@
-import { axisHasDataDimension } from './axisHasDataDimension'
-import { layoutGetAllAxes } from './layoutGetAllAxes'
+import { axisHasDataDimension } from './axisHasDataDimension.js'
+import { layoutGetAllAxes } from './layoutGetAllAxes.js'
 
-export const layoutHasDataDimension = layout =>
-    Boolean(layoutGetAllAxes(layout).find(axis => axisHasDataDimension(axis)))
+export const layoutHasDataDimension = (layout) =>
+    Boolean(layoutGetAllAxes(layout).find((axis) => axisHasDataDimension(axis)))

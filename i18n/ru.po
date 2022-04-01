@@ -1,24 +1,82 @@
 # 
 # Translators:
-# Wanda <wanda@frontlineaids.org>, 2020
 # Yury Rogachev <yury@dhis2.org>, 2020
-# Ulanbek Abakirov <ulans@mail.ru>, 2021
 # phil_dhis2, 2021
-# Viktor Varland <viktor@dhis2.org>, 2021
 # Valeriu Plesca <vplesca@gmail.com>, 2021
+# Viktor Varland <viktor@dhis2.org>, 2021
+# Wanda <wanda@frontlineaids.org>, 2022
+# Ulanbek Abakirov <ulans@mail.ru>, 2022
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-10-04T08:35:00.972Z\n"
+"POT-Creation-Date: 2022-03-17T10:18:53.422Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Valeriu Plesca <vplesca@gmail.com>, 2021\n"
+"Last-Translator: Ulanbek Abakirov <ulans@mail.ru>, 2022\n"
 "Language-Team: Russian (https://www.transifex.com/hisp-uio/teams/100509/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: ru\n"
 "Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
+
+msgid "view only"
+msgstr ""
+
+msgid "view and edit"
+msgstr ""
+
+msgid "all users ({{accessLevel}})"
+msgstr ""
+
+msgid "{{userOrGroup}} ({{accessLevel}})"
+msgstr ""
+
+msgid "Shared with {{commaSeparatedListOfUsersAndGroups}}"
+msgstr ""
+
+msgid "Not shared with any users or groups"
+msgstr ""
+
+msgid "About this visualization"
+msgstr ""
+
+msgid "No description"
+msgstr "Нет описания"
+
+msgid "Last updated {{time}}"
+msgstr ""
+
+msgid "Created {{time}} by {{author}}"
+msgstr ""
+
+msgid "Viewed {{count}} times"
+msgid_plural "Viewed {{count}} times"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+msgid "Notifications"
+msgstr "Уведомления"
+
+msgid "You're subscribed and getting updates about new interpretations."
+msgstr ""
+
+msgid "Unsubscribe"
+msgstr ""
+
+msgid "Subscribe to get updates about new interpretations."
+msgstr ""
+
+msgid "Subscribe"
+msgstr ""
+
+msgid "This app could not retrieve required data."
+msgstr ""
+
+msgid "Network error"
+msgstr ""
 
 msgid "Data Type"
 msgstr "Тип данных"
@@ -206,6 +264,18 @@ msgstr "Переименовать"
 msgid "Save {{fileType}} as"
 msgstr ""
 
+msgid "event report"
+msgstr "Отчет случаев"
+
+msgid "line list"
+msgstr ""
+
+msgid "map"
+msgstr "Карта"
+
+msgid "visualization"
+msgstr ""
+
 msgid "Created by"
 msgstr "Создано"
 
@@ -217,6 +287,9 @@ msgstr ""
 
 msgid "Others"
 msgstr "Другие"
+
+msgid "Not supported by this app yet"
+msgstr ""
 
 msgid "Filter by name"
 msgstr "Фильтр по имени"
@@ -234,9 +307,6 @@ msgid "Clear filters"
 msgstr ""
 
 msgid "{{firstItemIndex}}-{{lastItemIndex}} of {{totalNumberOfItems}}"
-msgstr ""
-
-msgid "All charts"
 msgstr ""
 
 msgid "Open"
@@ -311,29 +381,29 @@ msgstr ""
 msgid "New map"
 msgstr ""
 
-msgid "Open an event report"
+msgid "Open a line list"
 msgstr ""
 
-msgid "Loading event reports"
+msgid "Loading line lists"
 msgstr ""
 
-msgid "Couldn't load event reports"
+msgid "Couldn't load line lists"
 msgstr ""
 
 msgid ""
-"There was a problem loading event reports. Try again or contact your system "
+"There was a problem loading line lists. Try again or contact your system "
 "administrator."
 msgstr ""
 
-msgid "No event reports found. Click New event report to get started."
+msgid "No line lists found. Click New line list to get started."
 msgstr ""
 
 msgid ""
-"No event reports found. Try adjusting your search or filter options to find "
+"No line lists found. Try adjusting your search or filter options to find "
 "what you're looking for."
 msgstr ""
 
-msgid "New event report"
+msgid "New line list"
 msgstr ""
 
 msgid "Options"
@@ -344,6 +414,51 @@ msgstr "Скрыть"
 
 msgid "Update"
 msgstr "Обновить"
+
+msgid "{{count}} org units"
+msgid_plural "{{count}} org units"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+msgid "{{count}} levels"
+msgid_plural "{{count}} levels"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+msgid "{{count}} groups"
+msgid_plural "{{count}} groups"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+msgid "Selected: {{commaSeparatedListOfOrganisationUnits}}"
+msgstr ""
+
+msgid "Nothing selected"
+msgstr ""
+
+msgid "User organisation unit"
+msgstr "Организационная единица пользователя"
+
+msgid "User sub-units"
+msgstr "Пользовательские подразделения"
+
+msgid "User sub-x2-units"
+msgstr "Пользовательские подразделения на два уровня ниже"
+
+msgid "Select a level"
+msgstr "Выбрать уровень"
+
+msgid "Select a group"
+msgstr "Выберите группу"
+
+msgid "Deselect all"
+msgstr "Отменить выбор всего"
 
 msgid "Period type"
 msgstr "Виды периода"
@@ -615,6 +730,30 @@ msgstr "Финансовые годы"
 msgid "Years"
 msgstr "Годы"
 
+msgid "Translating to"
+msgstr ""
+
+msgid "Choose a locale"
+msgstr ""
+
+msgid "Base locale reference"
+msgstr ""
+
+msgid "Choose a locale to translate from the menu above"
+msgstr ""
+
+msgid "Translate: {{objectName}}"
+msgstr ""
+
+msgid "Save translations"
+msgstr ""
+
+msgid "Could not load translations"
+msgstr ""
+
+msgid "Retry"
+msgstr ""
+
 msgid "Series"
 msgstr "Ряды"
 
@@ -810,11 +949,11 @@ msgstr "Назначенные категории"
 msgid "Pivot table"
 msgstr "Сводная таблица"
 
-msgid "Column"
-msgstr "Столбчатая"
+msgid "Area"
+msgstr "Диаграмма-области"
 
-msgid "Stacked column"
-msgstr "Столбчатая с накоплением"
+msgid "Stacked area"
+msgstr "Линейчатая с накоплениями"
 
 msgid "Bar"
 msgstr "Гистограмма"
@@ -822,14 +961,26 @@ msgstr "Гистограмма"
 msgid "Stacked bar"
 msgstr "Гистограмма с накоплением"
 
+msgid "Column"
+msgstr "Столбчатая"
+
+msgid "Year over year (column)"
+msgstr "Год за годом (столбец)"
+
+msgid "Stacked column"
+msgstr "Столбчатая с накоплением"
+
+msgid "Gauge"
+msgstr "Спидометр"
+
 msgid "Line"
 msgstr "Линейная"
 
-msgid "Area"
-msgstr "Диаграмма-области"
+msgid "Line list"
+msgstr "Перечень линий"
 
-msgid "Stacked area"
-msgstr "Линейчатая с накоплениями"
+msgid "Year over year (line)"
+msgstr "Год за годом (линия)"
 
 msgid "Pie"
 msgstr "Круговая"
@@ -837,74 +988,13 @@ msgstr "Круговая"
 msgid "Radar"
 msgstr "Радиальная"
 
-msgid "Gauge"
-msgstr "Спидометр"
-
-msgid "Year over year (line)"
-msgstr "Год за годом (линия)"
-
-msgid "Year over year (column)"
-msgstr "Год за годом (столбец)"
+msgid "Scatter"
+msgstr ""
 
 msgid "Single value"
 msgstr "Одиночное значение"
 
-msgid "Scatter"
-msgstr ""
-
-msgid "View data and indicators in a manipulatable table."
-msgstr ""
-
-msgid ""
-"Compare sizes of related elements vertically. Recommend period as filter."
-msgstr ""
-
-msgid ""
-"Compare parts of a whole against related elements vertically. Recommend data"
-" or org. unit as series."
-msgstr ""
-
-msgid ""
-"Compare sizes of related elements horizontally. Recommend period as filter."
-msgstr ""
-
-msgid ""
-"Compare parts of a whole against related elements horizontally. Recommend "
-"data or org. unit as series."
-msgstr ""
-
-msgid "Track or compare changes over time. Recommend period as category."
-msgstr ""
-
-msgid ""
-"Track or compare parts of a whole over time. Recommend data as series and "
-"period as category."
-msgstr ""
-
-msgid ""
-"Compare parts of a whole at a single point in time. Recommend period as "
-"filter."
-msgstr ""
-
-msgid "Compare several items against multiple variables."
-msgstr "Сравнить несколько элементов с множеством переменных"
-
-msgid ""
-"Compare a percentage indicator against a 100% scale. Recommend period as "
-"filter."
-msgstr ""
-
-msgid "Compare changes over time between multiple time periods."
-msgstr "Сравнить изменения во времени в различные временные периоды"
-
-msgid "Display a single value. Recommend relative period to show latest data."
-msgstr ""
-"Показать единичное значение. Рекомендуется использовать относительную дату "
-"для отображения последних данных"
-
-msgid ""
-"View the relationship between two data items at a place or time. Recommended"
-" for finding outliers."
+msgid "All charts"
 msgstr ""
 
 msgid "{{seriesName}} (trend)"

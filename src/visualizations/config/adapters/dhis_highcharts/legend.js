@@ -6,20 +6,23 @@ import {
     FONT_STYLE_OPTION_TEXT_ALIGN,
     FONT_STYLE_LEGEND,
     mergeFontStyleWithDefault,
-} from '../../../../modules/fontStyle'
+} from '../../../../modules/fontStyle.js'
 import {
     LEGEND_DISPLAY_STRATEGY_BY_DATA_ITEM,
     LEGEND_DISPLAY_STRATEGY_FIXED,
-} from '../../../../modules/legends'
+} from '../../../../modules/legends.js'
 import {
     isLegendSetType,
     isVerticalType,
     VIS_TYPE_LINE,
     VIS_TYPE_SCATTER,
-} from '../../../../modules/visTypes'
-import { colorSets, COLOR_SET_PATTERNS } from '../../../util/colors/colorSets'
-import { getTextAlignOption } from './getTextAlignOption'
-import getType from './type'
+} from '../../../../modules/visTypes.js'
+import {
+    colorSets,
+    COLOR_SET_PATTERNS,
+} from '../../../util/colors/colorSets.js'
+import { getTextAlignOption } from './getTextAlignOption.js'
+import getType from './type.js'
 
 const DASHBOARD_ITEM_STYLE = {
     fontSize: '11px',
@@ -81,7 +84,7 @@ const getLegendSetByDisplayStrategy = ({
     ) {
         return legendSets[0]
     } else if (displayStrategy === LEGEND_DISPLAY_STRATEGY_BY_DATA_ITEM) {
-        return legendSets.find(legendSet => legendSet.id === legendSetId)
+        return legendSets.find((legendSet) => legendSet.id === legendSetId)
     } else {
         return null
     }

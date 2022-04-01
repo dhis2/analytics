@@ -1,5 +1,7 @@
-import { axisHasPeriodDimension } from './axisHasPeriodDimension'
-import { layoutGetAllAxes } from './layoutGetAllAxes'
+import { axisHasPeriodDimension } from './axisHasPeriodDimension.js'
+import { layoutGetAllAxes } from './layoutGetAllAxes.js'
 
-export const layoutHasPeriodDimension = layout =>
-    Boolean(layoutGetAllAxes(layout).find(axis => axisHasPeriodDimension(axis)))
+export const layoutHasPeriodDimension = (layout) =>
+    Boolean(
+        layoutGetAllAxes(layout).find((axis) => axisHasPeriodDimension(axis))
+    )
