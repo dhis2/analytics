@@ -11,7 +11,6 @@ import {
     DataTableRow,
     DataTableCell,
     DataTableColumnHeader,
-    DataTableToolbar,
     NoticeBox,
     CircularLoader,
     Button,
