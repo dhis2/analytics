@@ -1,19 +1,78 @@
 # 
 # Translators:
-# trendspotter, 2021
+# trendspotter <jirka.p@volny.cz>, 2022
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-06-16T13:08:18.884Z\n"
+"POT-Creation-Date: 2022-03-17T10:18:53.422Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: trendspotter, 2021\n"
+"Last-Translator: trendspotter <jirka.p@volny.cz>, 2022\n"
 "Language-Team: Czech (https://www.transifex.com/hisp-uio/teams/100509/cs/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: cs\n"
 "Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n <= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;\n"
+
+msgid "view only"
+msgstr "pouze zobrazit"
+
+msgid "view and edit"
+msgstr "zobrazit a upravit"
+
+msgid "all users ({{accessLevel}})"
+msgstr "všichni uživatelé ({{accessLevel}})"
+
+msgid "{{userOrGroup}} ({{accessLevel}})"
+msgstr "{{userOrGroup}} ({{accessLevel}})"
+
+msgid "Shared with {{commaSeparatedListOfUsersAndGroups}}"
+msgstr "Sdíleno s {{commaSeparatedListOfUsersAndGroups}}"
+
+msgid "Not shared with any users or groups"
+msgstr "Nesdíleno s žádnými uživateli ani skupinami"
+
+msgid "About this visualization"
+msgstr "O této vizualizaci"
+
+msgid "No description"
+msgstr "Bez popisu"
+
+msgid "Last updated {{time}}"
+msgstr "Poslední aktualizace {{time}}"
+
+msgid "Created {{time}} by {{author}}"
+msgstr "Vytvořeno {{time}} uživatelem {{author}}"
+
+msgid "Viewed {{count}} times"
+msgid_plural "Viewed {{count}} times"
+msgstr[0] "Zobrazeno 1 krát"
+msgstr[1] "Zobrazeno {{count}}krát"
+msgstr[2] "Zobrazeno {{count}}krát"
+msgstr[3] "Zobrazeno {{count}}krát"
+
+msgid "Notifications"
+msgstr "Oznámení"
+
+msgid "You're subscribed and getting updates about new interpretations."
+msgstr ""
+"Jste přihlášeni k odběru a dostáváte aktualizace o nových interpretacích."
+
+msgid "Unsubscribe"
+msgstr "Odhlásit odběr"
+
+msgid "Subscribe to get updates about new interpretations."
+msgstr "Přihlaste se k odběru novinek o nových interpretacích."
+
+msgid "Subscribe"
+msgstr "Odebírat"
+
+msgid "This app could not retrieve required data."
+msgstr "Tato aplikace nemohla načíst požadovaná data."
+
+msgid "Network error"
+msgstr "Chyba sítě"
 
 msgid "Data Type"
 msgstr "Typ dat"
@@ -114,8 +173,24 @@ msgstr "Vaše rozměry"
 msgid "Dimension recommended with selected data"
 msgstr "U vybraných dat je doporučen rozsah"
 
-msgid "Nothing found in {{dimensionTitle}}"
-msgstr "Nic nebylo nalezeno v {{dimensionTitle}}"
+msgid "All items"
+msgstr "Všechny položky"
+
+msgid "Automatically include all items"
+msgstr "Automaticky zahrnout všechny položky"
+
+msgid ""
+"Select all {{- dimensionTitle}} items. With this option, new items added in "
+"the future will be automatically included."
+msgstr ""
+"Vyberte všechny položky {{- dimensionTitle}}. Díky této možnosti budou "
+"automaticky přidány nové položky přidané v budoucnosti."
+
+msgid "Manually select items..."
+msgstr "Ručně vybrat položky ..."
+
+msgid "Nothing found in {{- dimensionTitle}}"
+msgstr "V {{- dimensionTitle}} nebylo nic nalezeno"
 
 msgid "Search"
 msgstr "Hledat"
@@ -188,6 +263,18 @@ msgstr "Přejmenovat"
 msgid "Save {{fileType}} as"
 msgstr "Uložit {{fileType}} jako"
 
+msgid "event report"
+msgstr "zpráva o události"
+
+msgid "line list"
+msgstr ""
+
+msgid "map"
+msgstr "mapa"
+
+msgid "visualization"
+msgstr ""
+
 msgid "Created by"
 msgstr "Vytvořil"
 
@@ -195,10 +282,13 @@ msgid "Anyone"
 msgstr "Kdokoliv"
 
 msgid "Only you"
-msgstr ""
+msgstr "Jen vy"
 
 msgid "Others"
 msgstr "Ostatní"
+
+msgid "Not supported by this app yet"
+msgstr "Tato aplikace zatím nepodporuje"
 
 msgid "Filter by name"
 msgstr "Filtrovat podle názvu"
@@ -216,82 +306,177 @@ msgid "Clear filters"
 msgstr "Vymazat filtry"
 
 msgid "{{firstItemIndex}}-{{lastItemIndex}} of {{totalNumberOfItems}}"
-msgstr ""
-
-msgid "All charts"
-msgstr ""
+msgstr "{{firstItemIndex}}-{{lastItemIndex}} z {{totalNumberOfItems}}"
 
 msgid "Open"
 msgstr "Otevřít"
 
 msgid "Couldn't load items"
-msgstr ""
+msgstr "Položky nelze načíst"
 
 msgid ""
 "There was a problem loading items. Try again or contact your system "
 "administrator."
 msgstr ""
+"Při načítání položek došlo k problému. Zkuste to znovu nebo se obraťte na "
+"správce systému."
 
 msgid "No items found. Create a new to get started."
-msgstr ""
+msgstr "Žádné položky nenalezeny. Začněte vytvořením nové."
 
 msgid ""
 "No items found. Try adjusting your search or filter options to find what "
 "you're looking for."
 msgstr ""
+"Žádné položky nenalezeny. Zkuste upravit možnosti vyhledávání nebo "
+"filtrování, abyste našli to, co hledáte."
 
 msgid "Create new"
 msgstr "Vytvořit nový"
 
 msgid "Open a visualization"
-msgstr ""
+msgstr "Otevřít vizualizaci"
 
 msgid "Loading visualizations"
-msgstr ""
+msgstr "Načítání vizualizací"
 
 msgid "Couldn't load visualizations"
-msgstr ""
+msgstr "Nelze načíst vizualizace"
 
 msgid ""
 "There was a problem loading visualizations. Try again or contact your system"
 " administrator."
 msgstr ""
+"Při načítání vizualizací došlo k problému. Zkuste to znovu nebo se obraťte "
+"na správce systému."
 
 msgid "No visualizations found. Click New visualization to get started."
 msgstr ""
+"Nebyly nalezeny žádné vizualizace. Začněte kliknutím na Nová vizualizace."
 
 msgid ""
 "No visualizations found. Try adjusting your search or filter options to find"
 " what you're looking for."
 msgstr ""
+"Nenalezeny žádné vizualizace. Zkuste upravit možnosti vyhledávání nebo "
+"filtrování, abyste našli to, co hledáte."
 
 msgid "New visualization"
-msgstr ""
+msgstr "Nová vizualizace"
 
 msgid "Open a map"
-msgstr ""
+msgstr "Otevřít mapu"
 
 msgid "Loading maps"
-msgstr ""
+msgstr "Načítání map"
 
 msgid "Couldn't load maps"
-msgstr ""
+msgstr "Mapy se nepodařilo načíst"
 
 msgid ""
 "There was a problem loading maps. Try again or contact your system "
 "administrator."
 msgstr ""
+"Při načítání map došlo k problému. Zkuste to znovu nebo se obraťte na "
+"správce systému."
 
 msgid "No maps found. Click New map to get started."
-msgstr ""
+msgstr "Nenalezeny žádné mapy. Začněte kliknutím na Nová mapa."
 
 msgid ""
 "No maps found. Try adjusting your search or filter options to find what "
 "you're looking for."
 msgstr ""
+"Nenalezeny žádné mapy. Zkuste upravit možnosti vyhledávání nebo filtrování, "
+"abyste našli to, co hledáte."
 
 msgid "New map"
+msgstr "Nová mapa"
+
+msgid "Open a line list"
+msgstr "Otevřít řádkový seznam"
+
+msgid "Loading line lists"
+msgstr "Načítání řádkových seznamů"
+
+msgid "Couldn't load line lists"
+msgstr "Řádkové seznamy se nepodařilo načíst"
+
+msgid ""
+"There was a problem loading line lists. Try again or contact your system "
+"administrator."
 msgstr ""
+"Při načítání řádkových seznamů došlo k problému. Zkuste to znovu nebo se "
+"obraťte na správce systému."
+
+msgid "No line lists found. Click New line list to get started."
+msgstr ""
+"Nebyly nalezeny žádné řádkové seznamy. Začněte kliknutím na Nový řádkový "
+"seznam."
+
+msgid ""
+"No line lists found. Try adjusting your search or filter options to find "
+"what you're looking for."
+msgstr ""
+"Nebyly nalezeny žádné řádkové seznamy. Zkuste upravit možnosti vyhledávání "
+"nebo filtru, abyste našli to, co hledáte."
+
+msgid "New line list"
+msgstr "Nový řádkový seznam"
+
+msgid "Options"
+msgstr "Možnosti"
+
+msgid "Hide"
+msgstr "Skrýt"
+
+msgid "Update"
+msgstr "Aktualizovat"
+
+msgid "{{count}} org units"
+msgid_plural "{{count}} org units"
+msgstr[0] "{{count}} organizační jednotka"
+msgstr[1] "{{count}} organizační jednotky"
+msgstr[2] "{{count}} organizačních jednotek"
+msgstr[3] "{{count}} organizačních jednotek"
+
+msgid "{{count}} levels"
+msgid_plural "{{count}} levels"
+msgstr[0] "{{count}} úroveň"
+msgstr[1] "{{count}} úrovně"
+msgstr[2] "{{count}} úrovní"
+msgstr[3] "{{count}} úrovní"
+
+msgid "{{count}} groups"
+msgid_plural "{{count}} groups"
+msgstr[0] "{{count}} skupina"
+msgstr[1] "{{count}} skupiny"
+msgstr[2] "{{count}} skupin"
+msgstr[3] "{{count}} skupin"
+
+msgid "Selected: {{commaSeparatedListOfOrganisationUnits}}"
+msgstr "Vybráno: {{commaSeparatedListOfOfOrganisationUnits}}"
+
+msgid "Nothing selected"
+msgstr "Není vybráno nic"
+
+msgid "User organisation unit"
+msgstr "Organizační jednotka uživatele"
+
+msgid "User sub-units"
+msgstr "Podjednotky uživatele"
+
+msgid "User sub-x2-units"
+msgstr "Jednotky 2. řádu uživatele"
+
+msgid "Select a level"
+msgstr "Vybrat úroveň"
+
+msgid "Select a group"
+msgstr "Vybrat skupinu"
+
+msgid "Deselect all"
+msgstr "Odznačit vše"
 
 msgid "Period type"
 msgstr "Typ období"
@@ -563,6 +748,30 @@ msgstr "Finanční roky"
 msgid "Years"
 msgstr "Let"
 
+msgid "Translating to"
+msgstr "Překlad do"
+
+msgid "Choose a locale"
+msgstr "Vyberte národní prostředí"
+
+msgid "Base locale reference"
+msgstr "Odkaz na základní národní prostředí"
+
+msgid "Choose a locale to translate from the menu above"
+msgstr "Z nabídky výše vyberte národní prostředí, které chcete přeložit"
+
+msgid "Translate: {{objectName}}"
+msgstr "Přeložit: {{objectName}}"
+
+msgid "Save translations"
+msgstr "Uložit překlady"
+
+msgid "Could not load translations"
+msgstr "Nelze načíst překlady"
+
+msgid "Retry"
+msgstr "Opakovat"
+
 msgid "Series"
 msgstr "Série"
 
@@ -758,11 +967,11 @@ msgstr "Přiřazené kategorie"
 msgid "Pivot table"
 msgstr "Kontingenční tabulka"
 
-msgid "Column"
-msgstr "Sloupec"
+msgid "Area"
+msgstr "Oblast"
 
-msgid "Stacked column"
-msgstr "Skládaný sloupec"
+msgid "Stacked area"
+msgstr "Skládaná plocha"
 
 msgid "Bar"
 msgstr "LIšta"
@@ -770,14 +979,26 @@ msgstr "LIšta"
 msgid "Stacked bar"
 msgstr "Skládaný lištový graf"
 
+msgid "Column"
+msgstr "Sloupec"
+
+msgid "Year over year (column)"
+msgstr "Rok po roce (sloupce)"
+
+msgid "Stacked column"
+msgstr "Skládaný sloupec"
+
+msgid "Gauge"
+msgstr "Gauge"
+
 msgid "Line"
 msgstr "Linie"
 
-msgid "Area"
-msgstr "Oblast"
+msgid "Line list"
+msgstr "Seznam řádků"
 
-msgid "Stacked area"
-msgstr "Skládaná plocha"
+msgid "Year over year (line)"
+msgstr "Rok po roce (řádek)"
 
 msgid "Pie"
 msgstr "Výseč"
@@ -785,93 +1006,14 @@ msgstr "Výseč"
 msgid "Radar"
 msgstr "Radar"
 
-msgid "Gauge"
-msgstr "Gauge"
-
-msgid "Year over year (line)"
-msgstr "Rok po roce (řádek)"
-
-msgid "Year over year (column)"
-msgstr "Rok po roce (sloupce)"
+msgid "Scatter"
+msgstr "Rozptyl"
 
 msgid "Single value"
 msgstr "Jedna hodnota"
 
-msgid "Scatter"
-msgstr "Rozptyl"
-
-msgid "View data and indicators in a manipulatable table."
-msgstr "Zobrazit data a indikátory v manipulovatelné tabulce."
-
-msgid ""
-"Compare sizes of related elements vertically. Recommend period as filter."
-msgstr ""
-"Porovnejte velikosti souvisejících prvků svisle. Doporučte období jako "
-"filtr."
-
-msgid ""
-"Compare parts of a whole against related elements vertically. Recommend data"
-" or org. unit as series."
-msgstr ""
-"Porovnejte části celku se souvisejícími prvky svisle. Doporučit data nebo "
-"org. jednotku jako série."
-
-msgid ""
-"Compare sizes of related elements horizontally. Recommend period as filter."
-msgstr ""
-"Porovnejte velikosti souvisejících prvků vodorovně. Doporučte období jako "
-"filtr."
-
-msgid ""
-"Compare parts of a whole against related elements horizontally. Recommend "
-"data or org. unit as series."
-msgstr ""
-"Porovnávejte části celku proti souvisejícím prvkům vodorovně. Doporučte data"
-" nebo org. jednotku jako série."
-
-msgid "Track or compare changes over time. Recommend period as category."
-msgstr ""
-"Sledujte nebo porovnávejte změny v průběhu času. Doporučte období jako "
-"kategorii."
-
-msgid ""
-"Track or compare parts of a whole over time. Recommend data as series and "
-"period as category."
-msgstr ""
-"Sledujte nebo porovnávejte části celku v průběhu času. Doporučte data jako "
-"série a období jako kategorii."
-
-msgid ""
-"Compare parts of a whole at a single point in time. Recommend period as "
-"filter."
-msgstr ""
-"Porovnejte části celku v jednom časovém okamžiku. Doporučte období jako "
-"filtr."
-
-msgid "Compare several items against multiple variables."
-msgstr "Porovnat několik položek s více proměnnými."
-
-msgid ""
-"Compare a percentage indicator against a 100% scale. Recommend period as "
-"filter."
-msgstr ""
-"Porovnejte procentní indikátor se 100% stupnicí. Doporučte období jako "
-"filtr."
-
-msgid "Compare changes over time between multiple time periods."
-msgstr "Porovnat změny v čase mezi více časovými obdobími."
-
-msgid "Display a single value. Recommend relative period to show latest data."
-msgstr ""
-"Zobrazit jednu hodnotu. Doporučit relativní období pro zobrazení "
-"nejnovějších údajů."
-
-msgid ""
-"View the relationship between two data items at a place or time. Recommended"
-" for finding outliers."
-msgstr ""
-"Zobrazte vztah mezi dvěma datovými položkami v určitém místě nebo čase. "
-"Doporučeno pro hledání odlehlých hodnot."
+msgid "All charts"
+msgstr "Všechny grafy"
 
 msgid "{{seriesName}} (trend)"
 msgstr "{{seriesName}} (trend)"
@@ -899,10 +1041,10 @@ msgstr "Osa {{axisId}}"
 
 msgid "{{count}} items"
 msgid_plural "{{count}} items"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "{{count}} položka"
+msgstr[1] " {{count}} položky"
+msgstr[2] " {{count}} položek"
+msgstr[3] "{{count}} položek"
 
 msgid "Reset zoom"
 msgstr "Obnovit přiblížení"

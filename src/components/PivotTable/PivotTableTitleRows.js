@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types'
 import React from 'react'
-import getFilterText from '../../visualizations/util/getFilterText'
-import { usePivotTableEngine } from './PivotTableEngineContext'
-import { PivotTableTitleRow } from './PivotTableTitleRow'
+import getFilterText from '../../visualizations/util/getFilterText.js'
+import { usePivotTableEngine } from './PivotTableEngineContext.js'
+import { PivotTableTitleRow } from './PivotTableTitleRow.js'
 
 export const PivotTableTitleRows = ({ clippingResult, width }) => {
     const engine = usePivotTableEngine()
@@ -14,7 +14,8 @@ export const PivotTableTitleRows = ({ clippingResult, width }) => {
                     scrollPosition={clippingResult.scrollPosition}
                     containerWidth={width}
                     totalWidth={
-                        engine.dataPixelWidth + engine.rowHeaderPixelWidth
+                        engine.adaptiveClippingController.columns.totalSize +
+                        engine.adaptiveClippingController.columns.headerSize
                     }
                 />
             ) : null}
@@ -24,7 +25,8 @@ export const PivotTableTitleRows = ({ clippingResult, width }) => {
                     scrollPosition={clippingResult.scrollPosition}
                     containerWidth={width}
                     totalWidth={
-                        engine.dataPixelWidth + engine.rowHeaderPixelWidth
+                        engine.adaptiveClippingController.columns.totalSize +
+                        engine.adaptiveClippingController.columns.headerSize
                     }
                 />
             ) : null}
@@ -37,7 +39,8 @@ export const PivotTableTitleRows = ({ clippingResult, width }) => {
                     scrollPosition={clippingResult.scrollPosition}
                     containerWidth={width}
                     totalWidth={
-                        engine.dataPixelWidth + engine.rowHeaderPixelWidth
+                        engine.adaptiveClippingController.columns.totalSize +
+                        engine.adaptiveClippingController.columns.headerSize
                     }
                 />
             ) : null}

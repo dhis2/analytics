@@ -6,20 +6,23 @@ import {
     FONT_STYLE_OPTION_TEXT_ALIGN,
     FONT_STYLE_LEGEND,
     mergeFontStyleWithDefault,
-} from '../../../../modules/fontStyle'
+} from '../../../../modules/fontStyle.js'
 import {
     LEGEND_DISPLAY_STRATEGY_BY_DATA_ITEM,
     LEGEND_DISPLAY_STRATEGY_FIXED,
-} from '../../../../modules/legends'
+} from '../../../../modules/legends.js'
 import {
     isLegendSetType,
     isVerticalType,
     VIS_TYPE_LINE,
     VIS_TYPE_SCATTER,
-} from '../../../../modules/visTypes'
-import { colorSets, COLOR_SET_PATTERNS } from '../../../util/colors/colorSets'
-import { getTextAlignOption } from './getTextAlignOption'
-import getType from './type'
+} from '../../../../modules/visTypes.js'
+import {
+    colorSets,
+    COLOR_SET_PATTERNS,
+} from '../../../util/colors/colorSets.js'
+import { getTextAlignOption } from './getTextAlignOption.js'
+import getType from './type.js'
 
 const DASHBOARD_ITEM_STYLE = {
     fontSize: '11px',
@@ -81,14 +84,11 @@ const getLegendSetByDisplayStrategy = ({
     ) {
         return legendSets[0]
     } else if (displayStrategy === LEGEND_DISPLAY_STRATEGY_BY_DATA_ITEM) {
-        return legendSets.find(legendSet => legendSet.id === legendSetId)
+        return legendSets.find((legendSet) => legendSet.id === legendSetId)
     } else {
         return null
     }
 }
-
-const getBulletStyleByFontStyle = fontStyle =>
-    `display: inline-block; border-radius: 50%; width: ${fontStyle[FONT_STYLE_OPTION_FONT_SIZE]}px; height: ${fontStyle[FONT_STYLE_OPTION_FONT_SIZE]}px;`
 
 const formatLabel = ({
     seriesId,
@@ -136,13 +136,19 @@ const formatLabel = ({
             .sort((a, b) => a.startValue - b.startValue)
             .forEach((legend, index) =>
                 result.push(
-                    `<span style="${getBulletStyleByFontStyle(
-                        fontStyle
-                    )} background-color: ${
-                        legend.color
-                    }; margin-right:-5px; z-index: ${
+                    `<svg xmlns="http://www.w3.org/2000/svg" width="${
+                        fontStyle[FONT_STYLE_OPTION_FONT_SIZE]
+                    }" height="${
+                        fontStyle[FONT_STYLE_OPTION_FONT_SIZE]
+                    }" version="1.1"  style="margin-right:-5px; z-index: ${
                         legendSet.legends.length - index
-                    }" class="data-test-series-key-item-bullet"></span>`
+                    }" class="data-test-series-key-item-bullet">
+                    <circle cx="${
+                        fontStyle[FONT_STYLE_OPTION_FONT_SIZE] / 2
+                    }" cy="${fontStyle[FONT_STYLE_OPTION_FONT_SIZE] / 2}" r="${
+                        fontStyle[FONT_STYLE_OPTION_FONT_SIZE] / 2
+                    }" fill="${legend.color}"></circle>
+                    </svg>`
                 )
             )
         result.push(
@@ -177,9 +183,17 @@ const formatLabel = ({
             )
         } else {
             result.push(
-                `<span style="${getBulletStyleByFontStyle(
-                    fontStyle
-                )} background-color: ${seriesColor}; margin-right:5px" class="data-test-series-key-item-bullet"></span>`
+                `<svg xmlns="http://www.w3.org/2000/svg" width="${
+                    fontStyle[FONT_STYLE_OPTION_FONT_SIZE]
+                }" height="${
+                    fontStyle[FONT_STYLE_OPTION_FONT_SIZE]
+                }" version="1.1"  style="margin-right:5px" class="data-test-series-key-item-bullet">
+                    <circle cx="${
+                        fontStyle[FONT_STYLE_OPTION_FONT_SIZE] / 2
+                    }" cy="${fontStyle[FONT_STYLE_OPTION_FONT_SIZE] / 2}" r="${
+                    fontStyle[FONT_STYLE_OPTION_FONT_SIZE] / 2
+                }" fill="${seriesColor}"></circle>
+                    </svg>`
             )
         }
 

@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 import i18n from '../../locales/index.js'
-import Filter from '../Filter/Filter'
-import DimensionList from './List/DimensionList'
-import { styles } from './styles/DimensionsPanel.style'
+import Filter from '../Filter/Filter.js'
+import DimensionList from './List/DimensionList.js'
+import { styles } from './styles/DimensionsPanel.style.js'
 
 class DimensionsPanel extends Component {
     state = { filterText: '' }
@@ -12,7 +12,7 @@ class DimensionsPanel extends Component {
         this.setState({ filterText: '' })
     }
 
-    onFilterTextChange = filterText => {
+    onFilterTextChange = (filterText) => {
         this.setState({ filterText })
     }
 

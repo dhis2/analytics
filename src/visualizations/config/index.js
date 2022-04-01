@@ -1,8 +1,8 @@
 import i18n from '../../locales/index.js'
-import { theme1 } from '../util/colors'
-import adapters from './adapters'
-import generators from './generators'
-import validators from './validators'
+import { theme1 } from '../util/colors/index.js'
+import adapters from './adapters/index.js'
+import generators from './generators/index.js'
+import validators from './validators/index.js'
 
 export default function ({
     store,
@@ -34,17 +34,18 @@ export default function ({
     if (!_generator) {
         onError(`No visualization implementation for format ${outputFormat}`)
     }
-    this.getConfig = () => {
-        const DEFAULT_EXTRA_OPTIONS = {
-            colors: theme1,
-            noData: {
-                text: i18n.t('No data'),
-            },
-            resetZoom: {
-                text: i18n.t('Reset zoom'),
-            },
-        }
 
+    const DEFAULT_EXTRA_OPTIONS = {
+        colors: theme1,
+        noData: {
+            text: i18n.t('No data'),
+        },
+        resetZoom: {
+            text: i18n.t('Reset zoom'),
+        },
+    }
+
+    this.getConfig = () => {
         const config = _adapter({
             layout: _validator({ layout, onError, onWarning }),
             extraOptions: Object.assign(
@@ -66,6 +67,7 @@ export default function ({
     this.createVisualization = () =>
         _generator(this.getConfig(), el, {
             ...extraOptions,
+            noData: DEFAULT_EXTRA_OPTIONS.noData,
             fontStyle: layout.fontStyle,
         })
 }

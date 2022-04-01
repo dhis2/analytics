@@ -109,6 +109,10 @@ export default (function x() {
         '/api/analytics/response',
         require('./json/api/analytics/response.json')
     )
+    addFixture(
+        '/api/analytics/enrollments',
+        require('./json/api/analytics/enrollments.json')
+    )
 
     return {
         get: getFixture,

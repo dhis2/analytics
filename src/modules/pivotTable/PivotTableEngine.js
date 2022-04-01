@@ -1,7 +1,7 @@
 import times from 'lodash/times'
-import { DIMENSION_ID_ORGUNIT } from '../predefinedDimensions'
-import { measureText } from './measureText'
-import { parseValue } from './parseValue'
+import { DIMENSION_ID_ORGUNIT } from '../predefinedDimensions.js'
+import { AdaptiveClippingController } from './AdaptiveClippingController.js'
+import { parseValue } from './parseValue.js'
 import {
     AGGREGATE_TYPE_NA,
     AGGREGATE_TYPE_AVERAGE,
@@ -23,8 +23,6 @@ import {
     FONT_SIZE_LARGE,
     FONT_SIZE_OPTION_NORMAL,
     FONT_SIZE_NORMAL,
-    COLUMN_PARTITION_SIZE_PX,
-    CLIPPED_CELL_MAX_WIDTH,
     VALUE_TYPE_NUMBER,
     NUMBER_TYPE_COLUMN_PERCENTAGE,
     NUMBER_TYPE_ROW_PERCENTAGE,
@@ -34,8 +32,8 @@ import {
     DIMENSION_TYPE_PERIOD,
     VALUE_TYPE_TEXT,
     NUMBER_TYPE_VALUE,
-} from './pivotTableConstants'
-import { renderValue } from './renderValue'
+} from './pivotTableConstants.js'
+import { renderValue } from './renderValue.js'
 
 const dataFields = [
     'value',
@@ -52,6 +50,8 @@ const defaultOptions = {
     showColumnTotals: false,
     showRowSubtotals: false,
     showColumnSubtotals: false,
+    fixColumnHeaders: false,
+    fixRowHeaders: false,
 }
 
 const defaultVisualizationProps = {
@@ -59,20 +59,20 @@ const defaultVisualizationProps = {
     displayDensity: DISPLAY_DENSITY_OPTION_NORMAL,
 }
 
-const isDxDimension = dimensionItem =>
+const isDxDimension = (dimensionItem) =>
     [DIMENSION_TYPE_DATA, DIMENSION_TYPE_DATA_ELEMENT_GROUP_SET].includes(
         dimensionItem.dimensionType
     )
 
-const countFromDisaggregates = list => {
+const countFromDisaggregates = (list) => {
     let count = 1
-    list.forEach(x => {
+    list.forEach((x) => {
         count *= x.items.length
     })
     return count
 }
 
-const addSize = list => {
+const addSize = (list) => {
     const reversedList = list.slice().reverse()
     reversedList.forEach((level, idx) => {
         // Start at the "leaf" disaggregate
@@ -81,13 +81,13 @@ const addSize = list => {
     })
 }
 
-const listByDimension = list =>
+const listByDimension = (list) =>
     list.reduce((all, item) => {
         all[item.dimension] = item
         return all
     }, {})
 
-const sortByHierarchy = items => {
+const sortByHierarchy = (items) => {
     items.sort((a, b) => {
         if (!a.hierarchy || !b.hierarchy) {
             return 0
@@ -97,24 +97,24 @@ const sortByHierarchy = items => {
 }
 
 const buildDimensionLookup = (visualization, metadata, headers) => {
-    const rows = visualization.rows.map(row => ({
+    const rows = visualization.rows.map((row) => ({
         dimension: row.dimension,
         meta: metadata.items[row.dimension],
         count: metadata.dimensions[row.dimension].length,
         itemIds: metadata.dimensions[row.dimension],
         items: metadata.dimensions[row.dimension].map(
-            item => metadata.items[item]
+            (item) => metadata.items[item]
         ),
         isDxDimension: isDxDimension(metadata.items[row.dimension]),
         position: 'row',
     }))
-    const columns = visualization.columns.map(column => ({
+    const columns = visualization.columns.map((column) => ({
         dimension: column.dimension,
         meta: metadata.items[column.dimension],
         count: metadata.dimensions[column.dimension].length,
         itemIds: metadata.dimensions[column.dimension],
         items: metadata.dimensions[column.dimension].map(
-            item => metadata.items[item]
+            (item) => metadata.items[item]
         ),
         isDxDimension: isDxDimension(metadata.items[column.dimension]),
         position: 'column',
@@ -128,25 +128,27 @@ const buildDimensionLookup = (visualization, metadata, headers) => {
         ...listByDimension(columns),
     }
 
-    const headerDimensions = headers.map(header => allByDimension[header.name])
+    const headerDimensions = headers.map(
+        (header) => allByDimension[header.name]
+    )
 
     const rowHeaders = headerDimensions
         .map((_, idx) => idx)
         .filter(
-            idx =>
+            (idx) =>
                 headerDimensions[idx] &&
                 headerDimensions[idx].position === 'row'
         )
     const columnHeaders = headerDimensions
         .map((_, idx) => idx)
         .filter(
-            idx =>
+            (idx) =>
                 headerDimensions[idx] &&
                 headerDimensions[idx].position === 'column'
         )
 
     const dataHeaders = dataFields.reduce((out, field) => {
-        out[field] = headers.findIndex(header => header.name === field)
+        out[field] = headers.findIndex((header) => header.name === field)
         return out
     }, {})
 
@@ -157,14 +159,14 @@ const buildDimensionLookup = (visualization, metadata, headers) => {
         metadata.ouNameHierarchy &&
         ouDimension
     ) {
-        ouDimension.items.forEach(ou => {
+        ouDimension.items.forEach((ou) => {
             const hierarchy = metadata.ouNameHierarchy[ou.uid]
             if (hierarchy) {
-                ou.hierarchy = hierarchy.split('/').filter(x => x.length)
+                ou.hierarchy = hierarchy.split('/').filter((x) => x.length)
             }
         })
         sortByHierarchy(ouDimension.items)
-        ouDimension.itemIds = ouDimension.items.map(item => item.uid)
+        ouDimension.itemIds = ouDimension.items.map((item) => item.uid)
     }
 
     return {
@@ -253,6 +255,7 @@ export class PivotTableEngine {
     legendSets
 
     dimensionLookup
+    adaptiveClippingController
 
     columnDepth = 0
     rowDepth = 0
@@ -260,7 +263,6 @@ export class PivotTableEngine {
     height = 0
     width = 0
     data = []
-    columnWidths = []
     rowMap = []
     columnMap = []
 
@@ -275,6 +277,13 @@ export class PivotTableEngine {
             return sets
         }, {})
         this.rawData = data
+
+        this.dimensionLookup = buildDimensionLookup(
+            this.visualization,
+            this.rawData.metaData,
+            this.rawData.headers
+        )
+
         this.options = {
             ...defaultOptions,
             showColumnTotals: visualization.colTotals,
@@ -287,13 +296,16 @@ export class PivotTableEngine {
             subtitle: visualization.hideSubtitle
                 ? undefined
                 : visualization.subtitle,
+            // turn on fixed headers only when there are dimensions
+            fixColumnHeaders: this.dimensionLookup.columns.length
+                ? visualization.fixColumnHeaders
+                : false,
+            fixRowHeaders: this.dimensionLookup.rows.length
+                ? visualization.fixRowHeaders
+                : false,
         }
 
-        this.dimensionLookup = buildDimensionLookup(
-            this.visualization,
-            this.rawData.metaData,
-            this.rawData.headers
-        )
+        this.adaptiveClippingController = new AdaptiveClippingController(this)
 
         const doColumnSubtotals =
             this.options.showColumnSubtotals &&
@@ -324,10 +336,10 @@ export class PivotTableEngine {
             ...this.getRawColumnHeader(column),
         ]
         const peId = headers.find(
-            header => header?.dimensionItemType === DIMENSION_TYPE_PERIOD
+            (header) => header?.dimensionItemType === DIMENSION_TYPE_PERIOD
         )?.uid
         const ouId = headers.find(
-            header => header?.dimensionItemType === DIMENSION_TYPE_ORGUNIT
+            (header) => header?.dimensionItemType === DIMENSION_TYPE_ORGUNIT
         )?.uid
 
         if (!this.data[row] || !this.data[row][column]) {
@@ -484,7 +496,7 @@ export class PivotTableEngine {
         const columnHeaders = this.getRawColumnHeader(column)
 
         const dxRowIndex = this.dimensionLookup.rows.findIndex(
-            dim => dim.isDxDimension
+            (dim) => dim.isDxDimension
         )
         if (rowHeaders.length && dxRowIndex !== -1) {
             return {
@@ -496,7 +508,7 @@ export class PivotTableEngine {
         }
 
         const dxColumnIndex = this.dimensionLookup.columns.findIndex(
-            dim => dim.isDxDimension
+            (dim) => dim.isDxDimension
         )
         if (columnHeaders.length && dxColumnIndex !== -1) {
             return {
@@ -519,7 +531,7 @@ export class PivotTableEngine {
         return !this.data[row] || this.data[row].length === 0
     }
     columnIsEmpty(column) {
-        return !this.columnWidths[column]
+        return !this.adaptiveClippingController.columns.sizes[column]
     }
 
     getRawColumnHeader(column) {
@@ -541,7 +553,7 @@ export class PivotTableEngine {
                 column / (this.dimensionLookup.columns[0].size + 1)
             )
         }
-        return this.dimensionLookup.columns.map(dimension => {
+        return this.dimensionLookup.columns.map((dimension) => {
             const itemIndex =
                 Math.floor(column / dimension.size) % dimension.count
             return dimension.items[itemIndex]
@@ -566,7 +578,7 @@ export class PivotTableEngine {
             row -= Math.floor(row / (this.dimensionLookup.rows[0].size + 1))
         }
 
-        return this.dimensionLookup.rows.map(dimension => {
+        return this.dimensionLookup.rows.map((dimension) => {
             const itemIndex = Math.floor(row / dimension.size) % dimension.count
             return dimension.items[itemIndex]
         })
@@ -655,8 +667,10 @@ export class PivotTableEngine {
         const totals = this.getDependantTotalCells(pos)
         const dxDimension = this.getRawCellDxDimension(pos)
 
-        Object.values(totals).forEach(totalItem => {
-            if (!totalItem) return
+        Object.values(totals).forEach((totalItem) => {
+            if (!totalItem) {
+                return
+            }
 
             this.data[totalItem.row] = this.data[totalItem.row] || []
 
@@ -686,7 +700,7 @@ export class PivotTableEngine {
             }
 
             if (dxDimension?.valueType === VALUE_TYPE_NUMBER) {
-                dataFields.forEach(field => {
+                dataFields.forEach((field) => {
                     const headerIndex = this.dimensionLookup.dataHeaders[field]
                     const value = parseValue(dataRow[headerIndex])
                     if (value && !isNaN(value)) {
@@ -705,7 +719,7 @@ export class PivotTableEngine {
                 }
             }
             const percentageTotal = this.percentageTotals[pos.row]
-            dataFields.forEach(field => {
+            dataFields.forEach((field) => {
                 const headerIndex = this.dimensionLookup.dataHeaders[field]
                 const value = parseValue(dataRow[headerIndex])
                 if (value && !isNaN(value)) {
@@ -723,7 +737,7 @@ export class PivotTableEngine {
                 }
                 const percentageTotal =
                     this.percentageTotals[totals.columnSubtotal.row]
-                dataFields.forEach(field => {
+                dataFields.forEach((field) => {
                     const headerIndex = this.dimensionLookup.dataHeaders[field]
                     const value = parseValue(dataRow[headerIndex])
                     if (value && !isNaN(value)) {
@@ -742,7 +756,7 @@ export class PivotTableEngine {
                 }
                 const percentageTotal =
                     this.percentageTotals[totals.columnTotal.row]
-                dataFields.forEach(field => {
+                dataFields.forEach((field) => {
                     const headerIndex = this.dimensionLookup.dataHeaders[field]
                     const value = parseValue(dataRow[headerIndex])
                     if (value && !isNaN(value)) {
@@ -761,7 +775,7 @@ export class PivotTableEngine {
                 }
             }
             const percentageTotal = this.percentageTotals[pos.column]
-            dataFields.forEach(field => {
+            dataFields.forEach((field) => {
                 const headerIndex = this.dimensionLookup.dataHeaders[field]
                 const value = parseValue(dataRow[headerIndex])
                 if (value && !isNaN(value)) {
@@ -779,7 +793,7 @@ export class PivotTableEngine {
                 }
                 const percentageTotal =
                     this.percentageTotals[totals.rowSubtotal.column]
-                dataFields.forEach(field => {
+                dataFields.forEach((field) => {
                     const headerIndex = this.dimensionLookup.dataHeaders[field]
                     const value = parseValue(dataRow[headerIndex])
                     if (value && !isNaN(value)) {
@@ -798,7 +812,7 @@ export class PivotTableEngine {
                 }
                 const percentageTotal =
                     this.percentageTotals[totals.rowTotal.column]
-                dataFields.forEach(field => {
+                dataFields.forEach((field) => {
                     const headerIndex = this.dimensionLookup.dataHeaders[field]
                     const value = parseValue(dataRow[headerIndex])
                     if (value && !isNaN(value)) {
@@ -820,7 +834,7 @@ export class PivotTableEngine {
                 this.visualization.numberType !== NUMBER_TYPE_VALUE &&
                     AGGREGATE_TYPE_SUM
             )
-            this.addCellForAdaptiveClipping(
+            this.adaptiveClippingController.add(
                 { row, column },
                 renderValue(
                     totalCell.value,
@@ -838,12 +852,12 @@ export class PivotTableEngine {
         if (this.doRowSubtotals && rowSubtotalSize) {
             times(
                 this.dimensionLookup.columns[0].count,
-                n => (n + 1) * rowSubtotalSize - 1
-            ).forEach(column => {
+                (n) => (n + 1) * rowSubtotalSize - 1
+            ).forEach((column) => {
                 times(
                     this.dataHeight - (this.doColumnTotals ? 1 : 0),
-                    n => n
-                ).forEach(row => {
+                    (n) => n
+                ).forEach((row) => {
                     // skip combined subtotal cells
                     if (
                         !this.doColumnSubtotals ||
@@ -857,12 +871,12 @@ export class PivotTableEngine {
         if (this.doColumnSubtotals && columnSubtotalSize) {
             times(
                 this.dimensionLookup.rows[0].count,
-                n => (n + 1) * columnSubtotalSize - 1
-            ).forEach(row => {
+                (n) => (n + 1) * columnSubtotalSize - 1
+            ).forEach((row) => {
                 times(
                     this.dataWidth - (this.doRowTotals ? 1 : 0),
-                    n => n
-                ).forEach(column => {
+                    (n) => n
+                ).forEach((column) => {
                     // skip combined subtotal cells
                     if (
                         !this.doRowSubtotals ||
@@ -883,12 +897,12 @@ export class PivotTableEngine {
         ) {
             times(
                 this.dimensionLookup.rows[0].count,
-                n => (n + 1) * columnSubtotalSize - 1
-            ).forEach(row => {
+                (n) => (n + 1) * columnSubtotalSize - 1
+            ).forEach((row) => {
                 times(
                     this.dimensionLookup.columns[0].count,
-                    n => (n + 1) * rowSubtotalSize - 1
-                ).forEach(column => {
+                    (n) => (n + 1) * rowSubtotalSize - 1
+                ).forEach((column) => {
                     this.finalizeTotal({ row, column })
                 })
             })
@@ -898,7 +912,7 @@ export class PivotTableEngine {
             const rowCount = this.doColumnTotals
                 ? this.dataHeight - 1
                 : this.dataHeight
-            times(rowCount, n => n).forEach(row => {
+            times(rowCount, (n) => n).forEach((row) => {
                 this.finalizeTotal({ row, column })
             })
         }
@@ -908,7 +922,7 @@ export class PivotTableEngine {
             const colCount = this.doRowTotals
                 ? this.dataWidth - 1
                 : this.dataWidth
-            times(colCount, n => n).forEach(column => {
+            times(colCount, (n) => n).forEach((column) => {
                 this.finalizeTotal({ row, column })
             })
         }
@@ -921,119 +935,24 @@ export class PivotTableEngine {
         }
 
         if (this.percentageTotals) {
-            this.percentageTotals.forEach(item => {
+            this.percentageTotals.forEach((item) => {
                 item.value = applyTotalAggregationType(item)
             })
         }
     }
 
-    addCellForAdaptiveClipping({ column }, renderedValue) {
-        this.columnWidths[column] = Math.max(
-            this.columnWidths[column] || 0,
-            measureText(renderedValue, this.fontSize)
-        )
-    }
-
-    finalizeAdaptiveClipping() {
-        this.dataPixelWidth = 0
-        this.rowHeaderPixelWidth = 0
-
-        let nextPartitionPx = 0
-        this.columnPartitions = []
-
-        const getColumnWidth = contentWidth =>
-            Math.min(CLIPPED_CELL_MAX_WIDTH, Math.ceil(contentWidth)) +
-            this.cellPadding * 2 +
-            /*border*/ 2
-
-        this.columnMap.forEach(column => {
-            const header = this.getRawColumnHeader(column)[this.columnDepth - 1]
-            const label =
-                this.visualization.showHierarchy && header?.hierarchy
-                    ? header.hierarchy.join(' / ')
-                    : header?.name
-
-            if (label) {
-                const headerSize = measureText(label, this.fontSize)
-                this.columnWidths[column] = Math.max(
-                    this.columnWidths[column] || 0,
-                    headerSize +
-                        (this.isSortable(column) ? this.scrollIconBuffer : 0)
-                )
-            }
-
-            const colWidth = getColumnWidth(this.columnWidths[column])
-            this.columnWidths[column] = {
-                pre: this.dataPixelWidth,
-                width: colWidth,
-            }
-
-            if (this.dataPixelWidth >= nextPartitionPx) {
-                this.columnPartitions.push(column)
-                nextPartitionPx += COLUMN_PARTITION_SIZE_PX
-            }
-            this.dataPixelWidth += colWidth
-        })
-
-        if (
-            !this.dimensionLookup.rows.length &&
-            this.visualization.showDimensionLabels
-        ) {
-            let maxWidth = 0
-            this.dimensionLookup.columns.forEach((_, columnLevel) => {
-                const label = this.getDimensionLabel(0, columnLevel)
-                if (label) {
-                    const headerSize = measureText(label, this.fontSize)
-                    maxWidth = Math.max(maxWidth, headerSize)
-                }
-            })
-
-            const columnWidth = getColumnWidth(maxWidth)
-            this.rowHeaderPixelWidth = columnWidth
-            this.rowHeaderWidths = [columnWidth]
-        }
-
-        this.rowHeaderWidths = this.dimensionLookup.rows.map((_, rowLevel) => {
-            let maxWidth = 0
-            this.rowMap.forEach(rawColumn => {
-                const header = this.getRawRowHeader(rawColumn)[rowLevel]
-                const label =
-                    this.visualization.showHierarchy && header?.hierarchy
-                        ? header.hierarchy.join(' / ')
-                        : header?.name
-                if (label) {
-                    const headerSize = measureText(label, this.fontSize)
-                    maxWidth = Math.max(maxWidth, headerSize)
-                }
-            }, 0)
-
-            if (this.visualization.showDimensionLabels) {
-                this.dimensionLookup.columns.forEach((_, columnLevel) => {
-                    const label = this.getDimensionLabel(rowLevel, columnLevel)
-                    if (label) {
-                        const headerSize = measureText(label, this.fontSize)
-                        maxWidth = Math.max(maxWidth, headerSize)
-                    }
-                })
-            }
-            const columnWidth = getColumnWidth(maxWidth)
-            this.rowHeaderPixelWidth += columnWidth
-            return columnWidth
-        })
-    }
-
     resetRowMap() {
         this.rowMap = this.options.hideEmptyRows
-            ? times(this.dataHeight, n => n).filter(idx => !!this.data[idx])
-            : times(this.dataHeight, n => n)
+            ? times(this.dataHeight, (n) => n).filter((idx) => !!this.data[idx])
+            : times(this.dataHeight, (n) => n)
     }
 
     resetColumnMap() {
         this.columnMap = this.options.hideEmptyColumns
-            ? times(this.dataWidth, n => n).filter(
-                  idx => !!this.columnWidths[idx]
+            ? times(this.dataWidth, (n) => n).filter(
+                  (idx) => !this.columnIsEmpty(idx)
               )
-            : times(this.dataWidth, n => n)
+            : times(this.dataWidth, (n) => n)
     }
 
     get cellPadding() {
@@ -1074,7 +993,7 @@ export class PivotTableEngine {
 
     buildMatrix() {
         this.data = []
-        this.columnWidths = []
+        this.adaptiveClippingController.reset()
 
         this.dataHeight = this.rawDataHeight = countFromDisaggregates(
             this.dimensionLookup.rows
@@ -1115,7 +1034,7 @@ export class PivotTableEngine {
             this.percentageTotals = []
         }
 
-        this.rawData.rows.forEach(dataRow => {
+        this.rawData.rows.forEach((dataRow) => {
             const pos = lookup(dataRow, this.dimensionLookup, this)
 
             if (pos) {
@@ -1128,10 +1047,10 @@ export class PivotTableEngine {
 
         this.finalizeTotals()
 
-        this.rawData.rows.forEach(dataRow => {
+        this.rawData.rows.forEach((dataRow) => {
             const pos = lookup(dataRow, this.dimensionLookup, this)
             if (pos) {
-                this.addCellForAdaptiveClipping(
+                this.adaptiveClippingController.add(
                     pos,
                     this.getRaw(pos).renderedValue
                 )
@@ -1144,7 +1063,7 @@ export class PivotTableEngine {
         this.height = this.rowMap.length
         this.width = this.columnMap.length
 
-        this.finalizeAdaptiveClipping()
+        this.adaptiveClippingController.finalize()
     }
 
     getColumnType(column) {
@@ -1214,9 +1133,12 @@ export class PivotTableEngine {
                 valueA.renderedValue.localeCompare(valueB.renderedValue) * order
             )
         })
+
+        this.adaptiveClippingController.resetRowPartitions()
     }
 
     clearSort() {
         this.resetRowMap()
+        this.adaptiveClippingController.resetRowPartitions()
     }
 }

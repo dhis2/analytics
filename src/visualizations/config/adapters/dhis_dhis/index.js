@@ -1,6 +1,8 @@
-import getSubtitle from './subtitle'
-import getTitle from './title'
-import getValue from './value'
+import getSubtitle from './subtitle/index.js'
+import getTitle from './title/index.js'
+import getValue from './value/index.js'
+
+export const INDICATOR_FACTOR_100 = 100
 
 export default function ({ store, layout, extraOptions }) {
     const data = store.generateData({
@@ -12,21 +14,24 @@ export default function ({ store, layout, extraOptions }) {
         categoryId:
             layout.rows && layout.rows.length ? layout.rows[0].dimension : null,
     })
+    const metaData = store.data[0].metaData
 
     const config = {
-        value: data[0] === undefined ? extraOptions.noData.text : data[0],
-        formattedValue: getValue(
-            data[0],
-            layout,
-            store.data[0].metaData,
-            extraOptions
-        ),
-        title: getTitle(layout, store.data[0].metaData, extraOptions.dashboard),
-        subtitle: getSubtitle(
-            layout,
-            store.data[0].metaData,
-            extraOptions.dashboard
-        ),
+        value: data[0],
+        formattedValue:
+            data[0] === undefined
+                ? extraOptions.noData.text
+                : getValue(data[0], layout, metaData),
+        title: getTitle(layout, metaData, extraOptions.dashboard),
+        subtitle: getSubtitle(layout, metaData, extraOptions.dashboard),
+    }
+
+    const indicatorType =
+        metaData.items[metaData.dimensions.dx[0]].indicatorType
+
+    // Use % symbol for factor 100 and the full string for others
+    if (indicatorType?.factor !== INDICATOR_FACTOR_100) {
+        config.subText = indicatorType?.displayName
     }
 
     return config

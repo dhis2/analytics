@@ -2,9 +2,9 @@ import { SingleSelectField, SingleSelectOption } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
 import i18n from '../../locales/index.js'
-import { DATA_SETS_CONSTANTS } from '../../modules/dataSets'
-import { ALL_ID } from '../../modules/dataTypes'
-import styles from './styles/MetricSelector.style'
+import { DATA_SETS_CONSTANTS } from '../../modules/dataSets.js'
+import { ALL_ID } from '../../modules/dataTypes.js'
+import styles from './styles/MetricSelector.style.js'
 
 export const MetricSelector = ({ currentValue, onChange, dataTest }) => {
     return (
@@ -12,7 +12,7 @@ export const MetricSelector = ({ currentValue, onChange, dataTest }) => {
             <SingleSelectField
                 label={i18n.t('Metric type')}
                 selected={currentValue || ALL_ID}
-                onChange={ref => onChange(ref.selected)}
+                onChange={(ref) => onChange(ref.selected)}
                 dense
                 dataTest={dataTest}
             >
@@ -22,7 +22,7 @@ export const MetricSelector = ({ currentValue, onChange, dataTest }) => {
                     label={i18n.t('All metrics')}
                     dataTest={`${dataTest}-option-${ALL_ID}`}
                 />
-                {DATA_SETS_CONSTANTS.map(option => (
+                {DATA_SETS_CONSTANTS.map((option) => (
                     <SingleSelectOption
                         value={option.id}
                         key={option.id}

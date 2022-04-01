@@ -1,17 +1,17 @@
 import { IconLock16 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { Component, createRef } from 'react'
-import DynamicDimensionIcon from '../../../assets/DynamicDimensionIcon'
-import { getPredefinedDimensionProp } from '../../../modules/predefinedDimensions'
-import DimensionLabel from './DimensionLabel'
-import OptionsButton from './OptionsButton'
-import RecommendedIcon from './RecommendedIcon'
-import { styles } from './styles/DimensionItem.style'
+import DynamicDimensionIcon from '../../../assets/DynamicDimensionIcon.js'
+import { getPredefinedDimensionProp } from '../../../modules/predefinedDimensions.js'
+import DimensionLabel from './DimensionLabel.js'
+import OptionsButton from './OptionsButton.js'
+import RecommendedIcon from './RecommendedIcon.js'
+import { styles } from './styles/DimensionItem.style.js'
 
 class DimensionItem extends Component {
     state = { mouseOver: false }
 
-    onOptionsClick = (id, ref) => event =>
+    onOptionsClick = (id, ref) => (event) =>
         this.props.onOptionsClick(event, id, ref)
 
     onMouseOver = () => {

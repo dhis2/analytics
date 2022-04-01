@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types'
 import React from 'react'
-import { PivotTableCell } from './PivotTableCell'
-import { usePivotTableEngine } from './PivotTableEngineContext'
-import { PivotTableHeaderCell } from './PivotTableHeaderCell'
-import { PivotTableSortIcon } from './PivotTableSortIcon'
-import { cell as cellStyle } from './styles/PivotTable.style'
+import { PivotTableCell } from './PivotTableCell.js'
+import { usePivotTableEngine } from './PivotTableEngineContext.js'
+import { PivotTableHeaderCell } from './PivotTableHeaderCell.js'
+import { PivotTableSortIcon } from './PivotTableSortIcon.js'
+import { cell as cellStyle } from './styles/PivotTable.style.js'
 
 export const PivotTableColumnHeaderCell = ({
     clippingResult,
@@ -15,39 +15,59 @@ export const PivotTableColumnHeaderCell = ({
 }) => {
     const engine = usePivotTableEngine()
 
-    const width = engine.columnWidths[index]?.width
+    const width =
+        engine.adaptiveClippingController.columns.sizes[engine.columnMap[index]]
+            ?.size
+    const height = engine.adaptiveClippingController.rows.headerSizes[level]
 
     return (
         <PivotTableHeaderCell
             axisClippingResult={clippingResult.columns}
             index={index}
             level={level}
-            getHeader={idx => engine.getColumnHeader(idx)}
+            getHeader={(idx) => engine.getColumnHeader(idx)}
             showHierarchy={engine.visualization.showHierarchy}
-            render={header => {
+            render={(header) => {
                 const isSortable =
                     level === engine.columnDepth - 1 &&
                     header.span === 1 &&
                     engine.isSortable(index)
 
+                const style = {
+                    cursor: isSortable ? 'pointer' : 'default',
+                    width,
+                    height,
+                    whiteSpace:
+                        level === engine.columnDepth - 1
+                            ? 'pre-line'
+                            : 'nowrap',
+                }
+
+                if (engine.options.fixColumnHeaders) {
+                    style.top =
+                        level * (engine.fontSize + engine.cellPadding * 2 + 2)
+                    // left value for the column header cells should be sum of row headers' width when engine.options.fixRowHeaders is true
+                    style.left = engine.options.fixRowHeaders
+                        ? engine.rowHeaderPixelWidth
+                        : 0
+                }
+
                 return (
                     <PivotTableCell
-                        isColumnHeader
-                        classes={
+                        isHeader
+                        classes={[
                             header.label &&
                             header.label !== 'Total' &&
                             header.label !== 'Subtotal' // TODO: Actually look up the column type!
                                 ? 'column-header'
-                                : 'empty-header'
-                        }
+                                : 'empty-header',
+                            {
+                                'fixed-header': engine.options.fixColumnHeaders,
+                            },
+                        ]}
                         colSpan={header.span}
                         title={header.label}
-                        style={{
-                            cursor: isSortable ? 'pointer' : 'default',
-                            width,
-                            maxWidth: width,
-                            minWidth: width,
-                        }}
+                        style={style}
                         onClick={
                             isSortable ? () => onSortByColumn(index) : undefined
                         }
@@ -75,8 +95,9 @@ export const PivotTableColumnHeaderCell = ({
 }
 
 PivotTableColumnHeaderCell.propTypes = {
-    clippingResult: PropTypes.shape({ columns: PropTypes.object.isRequired })
-        .isRequired,
+    clippingResult: PropTypes.shape({
+        columns: PropTypes.object.isRequired,
+    }).isRequired,
     index: PropTypes.number.isRequired,
     level: PropTypes.number.isRequired,
     onSortByColumn: PropTypes.func.isRequired,

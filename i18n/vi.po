@@ -2,20 +2,75 @@
 # Translators:
 # phil_dhis2, 2021
 # Viktor Varland <viktor@dhis2.org>, 2021
-# Mai Nguyen <thanhmai.jica@gmail.com>, 2021
+# Mai Nguyen <thanhmai.jica@gmail.com>, 2022
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-06-16T13:08:18.884Z\n"
+"POT-Creation-Date: 2022-03-17T10:18:53.422Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Mai Nguyen <thanhmai.jica@gmail.com>, 2021\n"
+"Last-Translator: Mai Nguyen <thanhmai.jica@gmail.com>, 2022\n"
 "Language-Team: Vietnamese (https://www.transifex.com/hisp-uio/teams/100509/vi/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: vi\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "view only"
+msgstr ""
+
+msgid "view and edit"
+msgstr ""
+
+msgid "all users ({{accessLevel}})"
+msgstr ""
+
+msgid "{{userOrGroup}} ({{accessLevel}})"
+msgstr ""
+
+msgid "Shared with {{commaSeparatedListOfUsersAndGroups}}"
+msgstr ""
+
+msgid "Not shared with any users or groups"
+msgstr ""
+
+msgid "About this visualization"
+msgstr ""
+
+msgid "No description"
+msgstr "Không mô tả"
+
+msgid "Last updated {{time}}"
+msgstr ""
+
+msgid "Created {{time}} by {{author}}"
+msgstr ""
+
+msgid "Viewed {{count}} times"
+msgid_plural "Viewed {{count}} times"
+msgstr[0] ""
+
+msgid "Notifications"
+msgstr ""
+
+msgid "You're subscribed and getting updates about new interpretations."
+msgstr ""
+
+msgid "Unsubscribe"
+msgstr ""
+
+msgid "Subscribe to get updates about new interpretations."
+msgstr ""
+
+msgid "Subscribe"
+msgstr ""
+
+msgid "This app could not retrieve required data."
+msgstr ""
+
+msgid "Network error"
+msgstr ""
 
 msgid "Data Type"
 msgstr "Loại dữ liệu"
@@ -116,8 +171,22 @@ msgstr "Các chiều dữ liệu của bạn"
 msgid "Dimension recommended with selected data"
 msgstr "Chiều được đề xuất với dữ liệu đã chọn"
 
-msgid "Nothing found in {{dimensionTitle}}"
-msgstr "Không tìm thấy trong {{mensTitle}}"
+msgid "All items"
+msgstr ""
+
+msgid "Automatically include all items"
+msgstr ""
+
+msgid ""
+"Select all {{- dimensionTitle}} items. With this option, new items added in "
+"the future will be automatically included."
+msgstr ""
+
+msgid "Manually select items..."
+msgstr ""
+
+msgid "Nothing found in {{- dimensionTitle}}"
+msgstr ""
 
 msgid "Search"
 msgstr "Tìm kiếm"
@@ -189,6 +258,18 @@ msgstr "Đổi tên"
 msgid "Save {{fileType}} as"
 msgstr ""
 
+msgid "event report"
+msgstr "báo cáo sự kiện"
+
+msgid "line list"
+msgstr ""
+
+msgid "map"
+msgstr "bản đồ"
+
+msgid "visualization"
+msgstr ""
+
 msgid "Created by"
 msgstr "Được tạo bởi"
 
@@ -200,6 +281,9 @@ msgstr ""
 
 msgid "Others"
 msgstr "Khác"
+
+msgid "Not supported by this app yet"
+msgstr ""
 
 msgid "Filter by name"
 msgstr "Lọc bằng tên"
@@ -217,9 +301,6 @@ msgid "Clear filters"
 msgstr "Bỏ lọc"
 
 msgid "{{firstItemIndex}}-{{lastItemIndex}} of {{totalNumberOfItems}}"
-msgstr ""
-
-msgid "All charts"
 msgstr ""
 
 msgid "Open"
@@ -293,6 +374,76 @@ msgstr ""
 
 msgid "New map"
 msgstr ""
+
+msgid "Open a line list"
+msgstr ""
+
+msgid "Loading line lists"
+msgstr ""
+
+msgid "Couldn't load line lists"
+msgstr ""
+
+msgid ""
+"There was a problem loading line lists. Try again or contact your system "
+"administrator."
+msgstr ""
+
+msgid "No line lists found. Click New line list to get started."
+msgstr ""
+
+msgid ""
+"No line lists found. Try adjusting your search or filter options to find "
+"what you're looking for."
+msgstr ""
+
+msgid "New line list"
+msgstr ""
+
+msgid "Options"
+msgstr "Tùy chọn"
+
+msgid "Hide"
+msgstr "Ẩn"
+
+msgid "Update"
+msgstr "Cập nhật"
+
+msgid "{{count}} org units"
+msgid_plural "{{count}} org units"
+msgstr[0] ""
+
+msgid "{{count}} levels"
+msgid_plural "{{count}} levels"
+msgstr[0] ""
+
+msgid "{{count}} groups"
+msgid_plural "{{count}} groups"
+msgstr[0] ""
+
+msgid "Selected: {{commaSeparatedListOfOrganisationUnits}}"
+msgstr ""
+
+msgid "Nothing selected"
+msgstr ""
+
+msgid "User organisation unit"
+msgstr "Đơn vị người dùng"
+
+msgid "User sub-units"
+msgstr "Đơn-vị-con người dùng"
+
+msgid "User sub-x2-units"
+msgstr "Đơn-vị-con-x2 người dùng"
+
+msgid "Select a level"
+msgstr "Chọn mức"
+
+msgid "Select a group"
+msgstr "Chọn nhóm"
+
+msgid "Deselect all"
+msgstr "Bỏ chọn tất cả"
 
 msgid "Period type"
 msgstr "Loại thời điểm"
@@ -564,6 +715,30 @@ msgstr "Năm tài chính"
 msgid "Years"
 msgstr "Năm"
 
+msgid "Translating to"
+msgstr ""
+
+msgid "Choose a locale"
+msgstr ""
+
+msgid "Base locale reference"
+msgstr ""
+
+msgid "Choose a locale to translate from the menu above"
+msgstr ""
+
+msgid "Translate: {{objectName}}"
+msgstr ""
+
+msgid "Save translations"
+msgstr ""
+
+msgid "Could not load translations"
+msgstr ""
+
+msgid "Retry"
+msgstr ""
+
 msgid "Series"
 msgstr "Chuỗi Dữ Liệu"
 
@@ -759,11 +934,11 @@ msgstr "Phân loại được chỉ định"
 msgid "Pivot table"
 msgstr "Bảng xoay"
 
-msgid "Column"
-msgstr "Cột"
+msgid "Area"
+msgstr "Khu vực"
 
-msgid "Stacked column"
-msgstr "Cột chồng"
+msgid "Stacked area"
+msgstr "Khu vực xếp chồng "
 
 msgid "Bar"
 msgstr "Cột"
@@ -771,14 +946,26 @@ msgstr "Cột"
 msgid "Stacked bar"
 msgstr "Cột chồng"
 
+msgid "Column"
+msgstr "Cột"
+
+msgid "Year over year (column)"
+msgstr "Năm qua năm (cột)"
+
+msgid "Stacked column"
+msgstr "Cột chồng"
+
+msgid "Gauge"
+msgstr "Biểu đồ đo lường"
+
 msgid "Line"
 msgstr "Đường"
 
-msgid "Area"
-msgstr "Khu vực"
+msgid "Line list"
+msgstr "Danh sách dòng"
 
-msgid "Stacked area"
-msgstr "Khu vực xếp chồng "
+msgid "Year over year (line)"
+msgstr "Năm qua năm (dòng)"
 
 msgid "Pie"
 msgstr "Bánh"
@@ -786,93 +973,14 @@ msgstr "Bánh"
 msgid "Radar"
 msgstr "Radar"
 
-msgid "Gauge"
-msgstr "Biểu đồ đo lường"
-
-msgid "Year over year (line)"
-msgstr "Năm qua năm (dòng)"
-
-msgid "Year over year (column)"
-msgstr "Năm qua năm (cột)"
+msgid "Scatter"
+msgstr "phân tán"
 
 msgid "Single value"
 msgstr "Giá trị đơn"
 
-msgid "Scatter"
-msgstr "phân tán"
-
-msgid "View data and indicators in a manipulatable table."
-msgstr "Xem dữ liệu và chỉ số trong một bảng."
-
-msgid ""
-"Compare sizes of related elements vertically. Recommend period as filter."
+msgid "All charts"
 msgstr ""
-"So sánh kích thước của các yếu tố liên quan theo chiều dọc. Đề xuất khoảng "
-"thời gian làm bộ lọc."
-
-msgid ""
-"Compare parts of a whole against related elements vertically. Recommend data"
-" or org. unit as series."
-msgstr ""
-"So sánh các phần của tổng thể với các phần tử liên quan theo chiều dọc. Đề "
-"xuất dữ liệu hoặc đơn vị làm chiều phân loại."
-
-msgid ""
-"Compare sizes of related elements horizontally. Recommend period as filter."
-msgstr ""
-"So sánh kích thước của các yếu tố liên quan theo chiều ngang. Đề xuất khoảng"
-" thời gian làm bộ lọc."
-
-msgid ""
-"Compare parts of a whole against related elements horizontally. Recommend "
-"data or org. unit as series."
-msgstr ""
-"So sánh các phần của tổng thể với các phần tử liên quan theo chiều ngang. Đề"
-" xuất dữ liệu hoặc đơn vị làm chiều phân loại."
-
-msgid "Track or compare changes over time. Recommend period as category."
-msgstr ""
-"Theo dõi hoặc so sánh các thay đổi theo thời gian. Đề xuất khoảng thời gian "
-"dưới dạng danh mục."
-
-msgid ""
-"Track or compare parts of a whole over time. Recommend data as series and "
-"period as category."
-msgstr ""
-"Theo dõi hoặc so sánh các phần của tổng thể theo thời gian. Đề xuất dữ liệu "
-"dưới dạng chuỗi và khoảng thời gian dưới dạng phân loại."
-
-msgid ""
-"Compare parts of a whole at a single point in time. Recommend period as "
-"filter."
-msgstr ""
-"So sánh các phần của tổng thể tại một thời điểm. Đề xuất khoảng thời gian "
-"làm bộ lọc."
-
-msgid "Compare several items against multiple variables."
-msgstr "So sánh một số mục với nhiều biến."
-
-msgid ""
-"Compare a percentage indicator against a 100% scale. Recommend period as "
-"filter."
-msgstr ""
-"So sánh chỉ số phần trăm với thang điểm 100%. Đề xuất khoảng thời gian làm "
-"bộ lọc."
-
-msgid "Compare changes over time between multiple time periods."
-msgstr "So sánh các thay đổi theo thời gian giữa nhiều khoảng thời gian."
-
-msgid "Display a single value. Recommend relative period to show latest data."
-msgstr ""
-"Hiển thị một giá trị duy nhất. Đề xuất thời điểm liên quan để hiển thị dữ "
-"liệu mới nhất."
-
-msgid ""
-"View the relationship between two data items at a place or time. Recommended"
-" for finding outliers."
-msgstr ""
-"Xem mối quan hệ giữa hai mục dữ liệu tại một địa điểm hoặc thời gian. Đề "
-"xuất để tìm ra những điểm khác biệt."
 
 msgid "{{seriesName}} (trend)"
 msgstr ""
