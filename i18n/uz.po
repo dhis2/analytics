@@ -1,19 +1,74 @@
 # 
 # Translators:
-# Ibatov <ibatovk@who.int>, 2021
+# Ibatov <ibatovk@who.int>, 2022
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-10-04T08:35:00.972Z\n"
+"POT-Creation-Date: 2022-03-17T10:18:53.422Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Ibatov <ibatovk@who.int>, 2021\n"
+"Last-Translator: Ibatov <ibatovk@who.int>, 2022\n"
 "Language-Team: Uzbek (Cyrillic) (https://www.transifex.com/hisp-uio/teams/100509/uz@Cyrl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: uz@Cyrl\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "view only"
+msgstr ""
+
+msgid "view and edit"
+msgstr ""
+
+msgid "all users ({{accessLevel}})"
+msgstr ""
+
+msgid "{{userOrGroup}} ({{accessLevel}})"
+msgstr ""
+
+msgid "Shared with {{commaSeparatedListOfUsersAndGroups}}"
+msgstr ""
+
+msgid "Not shared with any users or groups"
+msgstr ""
+
+msgid "About this visualization"
+msgstr ""
+
+msgid "No description"
+msgstr "Тавсиф йўқ"
+
+msgid "Last updated {{time}}"
+msgstr ""
+
+msgid "Created {{time}} by {{author}}"
+msgstr ""
+
+msgid "Viewed {{count}} times"
+msgid_plural "Viewed {{count}} times"
+msgstr[0] ""
+
+msgid "Notifications"
+msgstr "Билдиришномалар"
+
+msgid "You're subscribed and getting updates about new interpretations."
+msgstr ""
+
+msgid "Unsubscribe"
+msgstr ""
+
+msgid "Subscribe to get updates about new interpretations."
+msgstr ""
+
+msgid "Subscribe"
+msgstr ""
+
+msgid "This app could not retrieve required data."
+msgstr ""
+
+msgid "Network error"
+msgstr ""
 
 msgid "Data Type"
 msgstr "Маълумот тури"
@@ -201,6 +256,18 @@ msgstr "Қайта номлашч"
 msgid "Save {{fileType}} as"
 msgstr ""
 
+msgid "event report"
+msgstr "ҳодиса/тадбир ҳисоботи"
+
+msgid "line list"
+msgstr ""
+
+msgid "map"
+msgstr "харита"
+
+msgid "visualization"
+msgstr ""
+
 msgid "Created by"
 msgstr "Томонидан яратилган"
 
@@ -212,6 +279,9 @@ msgstr ""
 
 msgid "Others"
 msgstr "Бошқалар"
+
+msgid "Not supported by this app yet"
+msgstr ""
 
 msgid "Filter by name"
 msgstr "Номи бўйича фильтрлаш"
@@ -229,9 +299,6 @@ msgid "Clear filters"
 msgstr "Фильтрларни тозалаш"
 
 msgid "{{firstItemIndex}}-{{lastItemIndex}} of {{totalNumberOfItems}}"
-msgstr ""
-
-msgid "All charts"
 msgstr ""
 
 msgid "Open"
@@ -306,29 +373,29 @@ msgstr ""
 msgid "New map"
 msgstr ""
 
-msgid "Open an event report"
+msgid "Open a line list"
 msgstr ""
 
-msgid "Loading event reports"
+msgid "Loading line lists"
 msgstr ""
 
-msgid "Couldn't load event reports"
+msgid "Couldn't load line lists"
 msgstr ""
 
 msgid ""
-"There was a problem loading event reports. Try again or contact your system "
+"There was a problem loading line lists. Try again or contact your system "
 "administrator."
 msgstr ""
 
-msgid "No event reports found. Click New event report to get started."
+msgid "No line lists found. Click New line list to get started."
 msgstr ""
 
 msgid ""
-"No event reports found. Try adjusting your search or filter options to find "
+"No line lists found. Try adjusting your search or filter options to find "
 "what you're looking for."
 msgstr ""
 
-msgid "New event report"
+msgid "New line list"
 msgstr ""
 
 msgid "Options"
@@ -339,6 +406,42 @@ msgstr "Беркитиш"
 
 msgid "Update"
 msgstr "Янгилаш"
+
+msgid "{{count}} org units"
+msgid_plural "{{count}} org units"
+msgstr[0] ""
+
+msgid "{{count}} levels"
+msgid_plural "{{count}} levels"
+msgstr[0] ""
+
+msgid "{{count}} groups"
+msgid_plural "{{count}} groups"
+msgstr[0] ""
+
+msgid "Selected: {{commaSeparatedListOfOrganisationUnits}}"
+msgstr ""
+
+msgid "Nothing selected"
+msgstr ""
+
+msgid "User organisation unit"
+msgstr "Ташкилий бўлим фойдаланувчиси"
+
+msgid "User sub-units"
+msgstr "Фойдаланувчига бўйсунувчи бирликлар"
+
+msgid "User sub-x2-units"
+msgstr "Фойдаланувчига бўйсунувчи 2 поғонадаги бўлимлар"
+
+msgid "Select a level"
+msgstr "Поғонани танланг"
+
+msgid "Select a group"
+msgstr "Гуруҳни танланг"
+
+msgid "Deselect all"
+msgstr "Барча танланганни бекор қилиш"
 
 msgid "Period type"
 msgstr "Давр тури"
@@ -610,6 +713,30 @@ msgstr "Молиявий йиллар"
 msgid "Years"
 msgstr "Йиллар"
 
+msgid "Translating to"
+msgstr ""
+
+msgid "Choose a locale"
+msgstr ""
+
+msgid "Base locale reference"
+msgstr ""
+
+msgid "Choose a locale to translate from the menu above"
+msgstr ""
+
+msgid "Translate: {{objectName}}"
+msgstr ""
+
+msgid "Save translations"
+msgstr ""
+
+msgid "Could not load translations"
+msgstr ""
+
+msgid "Retry"
+msgstr ""
+
 msgid "Series"
 msgstr "Кетма-кетликлар"
 
@@ -805,11 +932,11 @@ msgstr "Белгиланган Категориялар"
 msgid "Pivot table"
 msgstr "Солиштирма жадвал"
 
-msgid "Column"
-msgstr "Устун"
+msgid "Area"
+msgstr "Майдон"
 
-msgid "Stacked column"
-msgstr "Йиғилган устун"
+msgid "Stacked area"
+msgstr "Йиғилган майдон"
 
 msgid "Bar"
 msgstr "Тизимча"
@@ -817,14 +944,26 @@ msgstr "Тизимча"
 msgid "Stacked bar"
 msgstr "Йиғилган тизимча"
 
+msgid "Column"
+msgstr "Устун"
+
+msgid "Year over year (column)"
+msgstr "Йилдан йилга (устун)"
+
+msgid "Stacked column"
+msgstr "Йиғилган устун"
+
+msgid "Gauge"
+msgstr "Ҳисоблагич"
+
 msgid "Line"
 msgstr "Қатор"
 
-msgid "Area"
-msgstr "Майдон"
+msgid "Line list"
+msgstr "Қаторлар рўйхати"
 
-msgid "Stacked area"
-msgstr "Йиғилган майдон"
+msgid "Year over year (line)"
+msgstr "Йилдан йилга (қатор)"
 
 msgid "Pie"
 msgstr "Бутун айлана"
@@ -832,77 +971,14 @@ msgstr "Бутун айлана"
 msgid "Radar"
 msgstr "Радар"
 
-msgid "Gauge"
-msgstr "Ҳисоблагич"
-
-msgid "Year over year (line)"
-msgstr "Йилдан йилга (қатор)"
-
-msgid "Year over year (column)"
-msgstr "Йилдан йилга (устун)"
+msgid "Scatter"
+msgstr "Тарқоқлик"
 
 msgid "Single value"
 msgstr "Ягона қиймат"
 
-msgid "Scatter"
-msgstr "Тарқоқлик"
-
-msgid "View data and indicators in a manipulatable table."
-msgstr "Бошқариладиган жадвалда индикаторлар ва маълумотларни кўздан кечиринг"
-
-msgid ""
-"Compare sizes of related elements vertically. Recommend period as filter."
+msgid "All charts"
 msgstr ""
-
-msgid ""
-"Compare parts of a whole against related elements vertically. Recommend data"
-" or org. unit as series."
-msgstr ""
-
-msgid ""
-"Compare sizes of related elements horizontally. Recommend period as filter."
-msgstr ""
-
-msgid ""
-"Compare parts of a whole against related elements horizontally. Recommend "
-"data or org. unit as series."
-msgstr ""
-
-msgid "Track or compare changes over time. Recommend period as category."
-msgstr ""
-
-msgid ""
-"Track or compare parts of a whole over time. Recommend data as series and "
-"period as category."
-msgstr ""
-
-msgid ""
-"Compare parts of a whole at a single point in time. Recommend period as "
-"filter."
-msgstr ""
-
-msgid "Compare several items against multiple variables."
-msgstr "Бир неча элементлар ва бир неча ўзгарувчиларга нисбатан таққосланг."
-
-msgid ""
-"Compare a percentage indicator against a 100% scale. Recommend period as "
-"filter."
-msgstr ""
-
-msgid "Compare changes over time between multiple time periods."
-msgstr "Вақт ўтиши билан бир неча вақт оралиғидаги ўзгаришларни таққосланг."
-
-msgid "Display a single value. Recommend relative period to show latest data."
-msgstr ""
-"Битта қийматни кўрсатиш. Охирги маълумотларни кўрсатиш учун боғлиқ даврни "
-"таққосланг."
-
-msgid ""
-"View the relationship between two data items at a place or time. Recommended"
-" for finding outliers."
-msgstr ""
-"Жой ва вақт сифатидаги икки маълумотлар орасидаги ўзаро муносабатларни "
-"кўриш. ортиқча натижаларни топиш учун тавсия этилади."
 
 msgid "{{seriesName}} (trend)"
 msgstr ""

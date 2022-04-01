@@ -1,9 +1,9 @@
-import { axisGetAllItems } from '../axisGetAllItems'
+import { axisGetAllItems } from '../axisGetAllItems.js'
 import {
     TEST_AXIS_COLUMNS,
     TEST_ITEMS_IN_AXIS_1,
     TEST_ITEMS_IN_AXIS_2,
-} from '../testResources'
+} from '../testResources.js'
 
 describe('axisGetAllItems', () => {
     it('should return all items in all dimensions in the axis', () => {

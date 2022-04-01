@@ -9,6 +9,7 @@ import {
     IconVisualizationColumnStacked16,
     IconVisualizationGauge16,
     IconVisualizationLine16,
+    IconVisualizationLinelist16,
     IconVisualizationLineMulti16,
     IconVisualizationPie16,
     IconVisualizationRadar16,
@@ -20,6 +21,7 @@ import {
     IconVisualizationBar24,
     IconVisualizationBarStacked24,
     IconVisualizationColumn24,
+    IconVisualizationLinelist24,
     IconVisualizationColumnMulti24,
     IconVisualizationColumnStacked24,
     IconVisualizationGauge24,
@@ -33,6 +35,7 @@ import {
 import PropTypes from 'prop-types'
 import React from 'react'
 import {
+    VIS_TYPE_LINE_LIST,
     VIS_TYPE_PIVOT_TABLE,
     VIS_TYPE_COLUMN,
     VIS_TYPE_STACKED_COLUMN,
@@ -48,12 +51,18 @@ import {
     VIS_TYPE_YEAR_OVER_YEAR_COLUMN,
     VIS_TYPE_SINGLE_VALUE,
     VIS_TYPE_SCATTER,
-} from '../modules/visTypes'
+} from '../modules/visTypes.js'
 
 export const VisTypeIcon = ({ type, useSmall = false, ...props }) => {
     let VisIcon
 
     switch (type) {
+        case VIS_TYPE_LINE_LIST: {
+            VisIcon = useSmall
+                ? IconVisualizationLinelist16
+                : IconVisualizationLinelist24
+            break
+        }
         case VIS_TYPE_PIVOT_TABLE: {
             VisIcon = useSmall ? IconTable16 : IconTable24
             break

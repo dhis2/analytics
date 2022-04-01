@@ -1,20 +1,20 @@
 import { TabBar, Tab, Transfer } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
-import PeriodIcon from '../../assets/DimensionItemIcons/PeriodIcon' //TODO: Reimplement the icon
+import PeriodIcon from '../../assets/DimensionItemIcons/PeriodIcon.js' //TODO: Reimplement the icon.js
 import i18n from '../../locales/index.js'
 import {
     TRANSFER_HEIGHT,
     TRANSFER_OPTIONS_WIDTH,
     TRANSFER_SELECTED_WIDTH,
-} from '../../modules/dimensionSelectorHelper'
-import styles from '../styles/DimensionSelector.style'
-import { TransferOption } from '../TransferOption'
-import FixedPeriodFilter from './FixedPeriodFilter'
-import RelativePeriodFilter from './RelativePeriodFilter'
-import { getFixedPeriodsOptionsById } from './utils/fixedPeriods'
+} from '../../modules/dimensionSelectorHelper.js'
+import styles from '../styles/DimensionSelector.style.js'
+import { TransferOption } from '../TransferOption.js'
+import FixedPeriodFilter from './FixedPeriodFilter.js'
+import RelativePeriodFilter from './RelativePeriodFilter.js'
+import { getFixedPeriodsOptionsById } from './utils/fixedPeriods.js'
 import { MONTHLY, QUARTERLY } from './utils/index.js'
-import { getRelativePeriodsOptionsById } from './utils/relativePeriods'
+import { getRelativePeriodsOptionsById } from './utils/relativePeriods.js'
 
 const PeriodTransfer = ({
     onSelect,
@@ -30,7 +30,7 @@ const PeriodTransfer = ({
         ? getFixedPeriodsOptionsById(QUARTERLY)
         : getFixedPeriodsOptionsById(MONTHLY)
     const defaultFixedPeriodYear = new Date().getFullYear()
-    const fixedPeriodConfig = year => ({
+    const fixedPeriodConfig = (year) => ({
         offset: year - defaultFixedPeriodYear,
         filterFuturePeriods: false,
         reversePeriods: false,
@@ -51,7 +51,7 @@ const PeriodTransfer = ({
         year: defaultFixedPeriodYear.toString(),
     })
 
-    const onIsRelativeClick = state => {
+    const onIsRelativeClick = (state) => {
         if (state !== isRelative) {
             setIsRelative(state)
             setAllPeriods(
@@ -88,7 +88,7 @@ const PeriodTransfer = ({
                 {isRelative ? (
                     <RelativePeriodFilter
                         currentFilter={relativeFilter.periodType}
-                        onSelectFilter={filter => {
+                        onSelectFilter={(filter) => {
                             setRelativeFilter({ periodType: filter })
                             setAllPeriods(
                                 getRelativePeriodsOptionsById(
@@ -103,13 +103,13 @@ const PeriodTransfer = ({
                     <FixedPeriodFilter
                         currentPeriodType={fixedFilter.periodType}
                         currentYear={fixedFilter.year}
-                        onSelectPeriodType={periodType => {
+                        onSelectPeriodType={(periodType) => {
                             onSelectFixedPeriods({
                                 periodType,
                                 year: fixedFilter.year,
                             })
                         }}
-                        onSelectYear={year => {
+                        onSelectYear={(year) => {
                             onSelectFixedPeriods({
                                 periodType: fixedFilter.periodType,
                                 year,
@@ -131,7 +131,7 @@ const PeriodTransfer = ({
         </>
     )
 
-    const onSelectFixedPeriods = filter => {
+    const onSelectFixedPeriods = (filter) => {
         setFixedFilter(filter)
         setAllPeriods(
             getFixedPeriodsOptionsById(filter.periodType).getPeriods(
@@ -150,16 +150,16 @@ const PeriodTransfer = ({
     return (
         <Transfer
             onChange={({ selected }) => {
-                const formattedItems = selected.map(id => ({
+                const formattedItems = selected.map((id) => ({
                     id,
                     name: [...allPeriods, ...selectedPeriods].find(
-                        item => item.id === id
+                        (item) => item.id === id
                     ).name,
                 }))
                 setSelectedPeriods(formattedItems)
                 onSelect(formattedItems)
             }}
-            selected={selectedPeriods.map(period => period.id)}
+            selected={selectedPeriods.map((period) => period.id)}
             leftHeader={renderLeftHeader()}
             enableOrderChange
             height={TRANSFER_HEIGHT}
@@ -174,7 +174,7 @@ const PeriodTransfer = ({
                     value: id,
                 })
             )}
-            renderOption={props => (
+            renderOption={(props) => (
                 <TransferOption
                     {...props}
                     icon={PeriodIcon}

@@ -1,43 +1,52 @@
-import './locales'
+import './locales/index.js'
 // Components
 
-export { default as DataDimension } from './components/DataDimension/DataDimension'
+export { default as DataDimension } from './components/DataDimension/DataDimension.js'
 
-export { default as PeriodDimension } from './components/PeriodDimension/PeriodDimension'
-export { default as FixedPeriodSelect } from './components/PeriodDimension/FixedPeriodSelect'
+export { default as PeriodDimension } from './components/PeriodDimension/PeriodDimension.js'
+export { default as FixedPeriodSelect } from './components/PeriodDimension/FixedPeriodSelect.js'
 
-export { default as OrgUnitDimension } from './components/OrgUnitDimension/OrgUnitDimension'
+export { default as OrgUnitDimension } from './components/OrgUnitDimension/OrgUnitDimension.js'
 
 export {
     default as DynamicDimension,
     ALL_DYNAMIC_DIMENSION_ITEMS,
-} from './components/DynamicDimension/DynamicDimension'
+} from './components/DynamicDimension/DynamicDimension.js'
 
-export { default as DimensionsPanel } from './components/DimensionsPanel/DimensionsPanel'
-export { default as DimensionItem } from './components/DimensionsPanel/List/DimensionItem'
-export { default as DimensionFilter } from './components/Filter/Filter'
+export { default as DimensionsPanel } from './components/DimensionsPanel/DimensionsPanel.js'
+export { default as DimensionItem } from './components/DimensionsPanel/List/DimensionItem.js'
+export { default as DimensionFilter } from './components/Filter/Filter.js'
 
-export { default as DimensionMenu } from './components/DimensionMenu'
+export { default as DimensionMenu } from './components/DimensionMenu.js'
 
-export { default as PivotTable } from './components/PivotTable/PivotTable'
+export { default as PivotTable } from './components/PivotTable/PivotTable.js'
 
-export { default as FileMenu } from './components/FileMenu/FileMenu'
+export { default as FileMenu } from './components/FileMenu/FileMenu.js'
 
-export { default as VisTypeIcon } from './components/VisTypeIcon'
+export { default as VisTypeIcon } from './components/VisTypeIcon.js'
 
-export { default as LegendKey } from './components/LegendKey/LegendKey'
+export { default as LegendKey } from './components/LegendKey/LegendKey.js'
 
-export { default as AboutAOUnit } from './components/AboutAOUnit/AboutAOUnit'
+export { default as AboutAOUnit } from './components/AboutAOUnit/AboutAOUnit.js'
+
+export {
+    CachedDataQueryProvider,
+    useCachedDataQuery,
+} from './components/CachedDataQueryProvider.js'
 
 // Api
 
-export { default as Analytics } from './api/analytics/Analytics'
-export { apiFetchDimensions, apiFetchRecommendedIds } from './api/dimensions'
+export { default as Analytics } from './api/analytics/Analytics.js'
+export {
+    apiFetchDimensions,
+    apiFetchRecommendedIds,
+    apiFetchItemsByDimension,
+} from './api/dimensions.js'
 export {
     apiFetchOrganisationUnitLevels,
     apiFetchOrganisationUnitRoots,
     apiFetchOrganisationUnit,
-} from './api/organisationUnits'
+} from './api/organisationUnits.js'
 
 // Modules: axis
 
@@ -45,7 +54,7 @@ export {
     getAxisName,
     getAxisNameByLayoutType,
     hasCustomAxes,
-} from './modules/axis'
+} from './modules/axis.js'
 
 // Modules: predefined dimensions
 
@@ -61,7 +70,7 @@ export {
     getPredefinedDimensions,
     getFixedDimensions,
     getDynamicDimensions,
-} from './modules/predefinedDimensions'
+} from './modules/predefinedDimensions.js'
 
 // Modules: ou utils
 
@@ -70,34 +79,34 @@ export {
     USER_ORG_UNIT,
     USER_ORG_UNIT_CHILDREN,
     USER_ORG_UNIT_GRANDCHILDREN,
-} from './modules/ouIdHelper'
-export { convertOuLevelsToUids } from './modules/ouLevelUtils'
+} from './modules/ouIdHelper/index.js'
+export { convertOuLevelsToUids } from './modules/ouLevelUtils/index.js'
 
 // Modules: adapted ui layout
 
-export { getAdaptedUiLayoutByType } from './modules/getAdaptedUiLayoutByType'
+export { getAdaptedUiLayoutByType } from './modules/getAdaptedUiLayoutByType.js'
 
 // Modules: relativeItems
 
-export { hasRelativeItems } from './modules/relativeItems'
+export { hasRelativeItems } from './modules/relativeItems/index.js'
 
 // Modules: layout
 
-export { LAYOUT } from './modules/layout/layout'
-export { layoutFilterDimensions } from './modules/layout/layoutFilterDimensions'
-export { layoutGetAllAxes } from './modules/layout/layoutGetAllAxes'
-export { layoutGetAllDimensions } from './modules/layout/layoutGetAllDimensions'
-export { layoutGetAllItemIds } from './modules/layout/layoutGetAllItemIds'
-export { layoutGetAllItems } from './modules/layout/layoutGetAllItems'
-export { layoutGetAxisIdDimensionIdsObject } from './modules/layout/layoutGetAxisIdDimensionIdsObject'
-export { layoutGetDimension } from './modules/layout/layoutGetDimension'
-export { layoutGetDimensionItems } from './modules/layout/layoutGetDimensionItems'
-export { layoutReplaceDimension } from './modules/layout/layoutReplaceDimension'
-export { layoutGetDimensionIdItemIdsObject } from './modules/layout/layoutGetDimensionIdItemIdsObject'
-export { layoutHasDataDimension } from './modules/layout/layoutHasDataDimension'
-export { layoutHasDimension } from './modules/layout/layoutHasDimension'
-export { layoutHasDynamicDimension } from './modules/layout/layoutHasDynamicDimension'
-export { layoutHasPeriodDimension } from './modules/layout/layoutHasPeriodDimension'
+export { LAYOUT } from './modules/layout/layout.js'
+export { layoutFilterDimensions } from './modules/layout/layoutFilterDimensions.js'
+export { layoutGetAllAxes } from './modules/layout/layoutGetAllAxes.js'
+export { layoutGetAllDimensions } from './modules/layout/layoutGetAllDimensions.js'
+export { layoutGetAllItemIds } from './modules/layout/layoutGetAllItemIds.js'
+export { layoutGetAllItems } from './modules/layout/layoutGetAllItems.js'
+export { layoutGetAxisIdDimensionIdsObject } from './modules/layout/layoutGetAxisIdDimensionIdsObject.js'
+export { layoutGetDimension } from './modules/layout/layoutGetDimension.js'
+export { layoutGetDimensionItems } from './modules/layout/layoutGetDimensionItems.js'
+export { layoutReplaceDimension } from './modules/layout/layoutReplaceDimension.js'
+export { layoutGetDimensionIdItemIdsObject } from './modules/layout/layoutGetDimensionIdItemIdsObject.js'
+export { layoutHasDataDimension } from './modules/layout/layoutHasDataDimension.js'
+export { layoutHasDimension } from './modules/layout/layoutHasDimension.js'
+export { layoutHasDynamicDimension } from './modules/layout/layoutHasDynamicDimension.js'
+export { layoutHasPeriodDimension } from './modules/layout/layoutHasPeriodDimension.js'
 
 export {
     AXIS,
@@ -105,41 +114,43 @@ export {
     AXIS_ID_ROWS,
     AXIS_ID_FILTERS,
     DEFAULT_AXIS_IDS,
-} from './modules/layout/axis'
-export { axisGetAllItems } from './modules/layout/axisGetAllItems'
-export { axisGetDimension } from './modules/layout/axisGetDimension'
-export { axisGetDimensionIds } from './modules/layout/axisGetDimensionIds'
-export { axisHasDataDimension } from './modules/layout/axisHasDataDimension'
-export { axisHasDimension } from './modules/layout/axisHasDimension'
-export { axisHasPeriodDimension } from './modules/layout/axisHasPeriodDimension'
-export { axisHasOuDimension } from './modules/layout/axisHasOuDimension'
-export { axisIsEmpty } from './modules/layout/axisIsEmpty'
+} from './modules/layout/axis.js'
+export { axisGetAllItems } from './modules/layout/axisGetAllItems.js'
+export { axisGetDimension } from './modules/layout/axisGetDimension.js'
+export { axisGetDimensionIds } from './modules/layout/axisGetDimensionIds.js'
+export { axisHasDataDimension } from './modules/layout/axisHasDataDimension.js'
+export { axisHasDimension } from './modules/layout/axisHasDimension.js'
+export { axisHasPeriodDimension } from './modules/layout/axisHasPeriodDimension.js'
+export { axisHasOuDimension } from './modules/layout/axisHasOuDimension.js'
+export { axisIsEmpty } from './modules/layout/axisIsEmpty.js'
 
 export {
     DIMENSION,
     DIMENSION_PROP_ID,
     DIMENSION_PROP_ITEMS,
     DIMENSION_PROPS,
-} from './modules/layout/dimension'
-export { dimensionCreate } from './modules/layout/dimensionCreate'
-export { dimensionGetId } from './modules/layout/dimensionGetId'
-export { dimensionGetItemIds } from './modules/layout/dimensionGetItemIds'
-export { dimensionGetItems } from './modules/layout/dimensionGetItems'
-export { dimensionIs } from './modules/layout/dimensionIs'
-export { dimensionIsEmpty } from './modules/layout/dimensionIsEmpty'
-export { dimensionIsValid } from './modules/layout/dimensionIsValid'
+} from './modules/layout/dimension.js'
+export { dimensionCreate } from './modules/layout/dimensionCreate.js'
+export { dimensionGetId } from './modules/layout/dimensionGetId.js'
+export { dimensionGetItemIds } from './modules/layout/dimensionGetItemIds.js'
+export { dimensionGetItems } from './modules/layout/dimensionGetItems.js'
+export { dimensionIs } from './modules/layout/dimensionIs.js'
+export { dimensionIsEmpty } from './modules/layout/dimensionIsEmpty.js'
+export { dimensionIsValid } from './modules/layout/dimensionIsValid.js'
 
-export { ITEM, ITEM_PROP_ID, ITEM_PROPS } from './modules/layout/item'
-export { itemGetId } from './modules/layout/itemGetId'
-export { itemIsValid } from './modules/layout/itemIsValid'
+export { ITEM, ITEM_PROP_ID, ITEM_PROPS } from './modules/layout/item.js'
+export { itemGetId } from './modules/layout/itemGetId.js'
+export { itemIsValid } from './modules/layout/itemIsValid.js'
 
 // Modules: visTypeToLayoutType
 
-export { getLayoutTypeByVisType } from './modules/visTypeToLayoutType'
+export { getLayoutTypeByVisType } from './modules/visTypeToLayoutType.js'
 
 // Modules: visTypes
 
 export {
+    VIS_TYPE_GROUP_ALL,
+    VIS_TYPE_GROUP_CHARTS,
     VIS_TYPE_COLUMN,
     VIS_TYPE_STACKED_COLUMN,
     VIS_TYPE_BAR,
@@ -156,8 +167,8 @@ export {
     VIS_TYPE_SINGLE_VALUE,
     VIS_TYPE_PIVOT_TABLE,
     VIS_TYPE_SCATTER,
+    VIS_TYPE_LINE_LIST,
     visTypeDisplayNames,
-    visTypeDescriptions,
     visTypeIcons,
     getDisplayNameByVisType,
     defaultVisType,
@@ -170,7 +181,7 @@ export {
     isLegendSetType,
     isColumnBasedType,
     isVerticalType,
-} from './modules/visTypes'
+} from './modules/visTypes.js'
 
 // Modules: layoutTypes
 
@@ -181,7 +192,8 @@ export {
     LAYOUT_TYPE_YEAR_OVER_YEAR,
     LAYOUT_TYPE_PIVOT_TABLE,
     LAYOUT_TYPE_SCATTER,
-} from './modules/layoutTypes'
+    LAYOUT_TYPE_LINE_LIST,
+} from './modules/layoutTypes.js'
 
 // Modules: layoutUiRules
 
@@ -198,11 +210,11 @@ export {
     isDimensionLocked,
     isAxisFull,
     getTransferableDimension,
-} from './modules/layoutUiRules'
+} from './modules/layoutUiRules/index.js'
 
 // Visualizations
 
-export { createVisualization } from './visualizations'
+export { createVisualization } from './visualizations/index.js'
 
 // Modules: fontStyle
 
@@ -228,7 +240,7 @@ export {
     getFontSizeOptions,
     getTextAlignOptions,
     deleteFontStyleOption,
-} from './modules/fontStyle'
+} from './modules/fontStyle.js'
 
 // Modules: legend
 
@@ -237,7 +249,11 @@ export {
     LEGEND_DISPLAY_STRATEGY_FIXED,
     LEGEND_DISPLAY_STYLE_FILL,
     LEGEND_DISPLAY_STYLE_TEXT,
-} from './modules/legends'
+} from './modules/legends.js'
+
+// Modules: pivotTable
+
+export { renderValue as formatValue } from './modules/pivotTable/renderValue.js'
 
 // Utils: colorSets
 export {
@@ -248,7 +264,7 @@ export {
     COLOR_SET_COLOR_BLIND,
     COLOR_SET_PATTERNS,
     colorSets,
-} from './visualizations/util/colors/colorSets'
+} from './visualizations/util/colors/colorSets.js'
 
 // Utils: periods
 export {
@@ -270,8 +286,8 @@ export {
     FYOCT,
     FYJUL,
     FYAPR,
-} from './components/PeriodDimension/utils'
-export { getRelativePeriodsOptionsById } from './components/PeriodDimension/utils/relativePeriods'
-export { getFixedPeriodsOptionsById } from './components/PeriodDimension/utils/fixedPeriods'
+} from './components/PeriodDimension/utils/index.js'
+export { getRelativePeriodsOptionsById } from './components/PeriodDimension/utils/relativePeriods.js'
+export { getFixedPeriodsOptionsById } from './components/PeriodDimension/utils/fixedPeriods.js'
 
-export { default as VisualizationOptions } from './components/Options/VisualizationOptions'
+export { default as VisualizationOptions } from './components/Options/VisualizationOptions.js'

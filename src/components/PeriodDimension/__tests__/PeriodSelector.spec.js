@@ -1,6 +1,6 @@
 import { shallow } from 'enzyme'
 import React from 'react'
-import PeriodTransfer from '../PeriodTransfer'
+import PeriodTransfer from '../PeriodTransfer.js'
 
 describe('The Period Selector component', () => {
     let props

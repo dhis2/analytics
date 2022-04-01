@@ -17,12 +17,13 @@ import cx from 'classnames'
 import moment from 'moment'
 import PropTypes from 'prop-types'
 import React, { useEffect, useMemo, useState } from 'react'
-import styles from './styles/AboutAOUnit.style'
+import { formatList } from '../../modules/list.js'
+import styles from './styles/AboutAOUnit.style.js'
 
 const READ_ONLY = 'r'
 const READ_AND_WRITE = 'rw'
 
-const getQueries = type => ({
+const getQueries = (type) => ({
     ao: {
         resource: type,
         id: ({ id }) => id,
@@ -69,7 +70,7 @@ const AboutAOUnit = ({ type, id }) => {
     const [subscribe, { loading: subscribeIsLoading }] = useDataMutation(
         subscribeMutation,
         {
-            onComplete: res => {
+            onComplete: (res) => {
                 if (res.status === 'OK') {
                     refetch({ id })
                 }
@@ -80,7 +81,7 @@ const AboutAOUnit = ({ type, id }) => {
     const [unsubscribe, { loading: unsubscribeIsLoading }] = useDataMutation(
         unsubscribeMutation,
         {
-            onComplete: res => {
+            onComplete: (res) => {
                 if (res.status === 'OK') {
                     refetch({ id })
                 }
@@ -94,7 +95,7 @@ const AboutAOUnit = ({ type, id }) => {
         }
     }, [type, id])
 
-    const getAccessLevelString = access => {
+    const getAccessLevelString = (access) => {
         const re = new RegExp(`(?<accessLevel>${READ_AND_WRITE}?)`)
         const accessMatch = re.exec(access)
 
@@ -106,13 +107,13 @@ const AboutAOUnit = ({ type, id }) => {
         }
     }
 
-    const getSharingSummary = ao => {
-        const sharingText = []
+    const getSharingSummary = (ao) => {
+        const sharingTextParts = []
 
         const re = new RegExp(`^${READ_AND_WRITE}?`)
 
         if (re.test(ao.publicAccess)) {
-            sharingText.push(
+            sharingTextParts.push(
                 i18n.t('all users ({{accessLevel}})', {
                     accessLevel: getAccessLevelString(ao.publicAccess),
                 })
@@ -122,8 +123,8 @@ const AboutAOUnit = ({ type, id }) => {
         const userAccesses = ao.userAccesses
         const groupAccesses = ao.userGroupAccesses
 
-        userAccesses.concat(groupAccesses).forEach(accessRule => {
-            sharingText.push(
+        userAccesses.concat(groupAccesses).forEach((accessRule) => {
+            sharingTextParts.push(
                 i18n.t('{{userOrGroup}} ({{accessLevel}})', {
                     userOrGroup: accessRule.displayName,
                     accessLevel: getAccessLevelString(accessRule.access),
@@ -131,9 +132,10 @@ const AboutAOUnit = ({ type, id }) => {
             )
         })
 
-        return sharingText.length
+        return sharingTextParts.length
             ? i18n.t('Shared with {{commaSeparatedListOfUsersAndGroups}}', {
-                  commaSeparatedListOfUsersAndGroups: sharingText.join(', '),
+                  commaSeparatedListOfUsersAndGroups:
+                      formatList(sharingTextParts),
               })
             : i18n.t('Not shared with any users or groups')
     }
@@ -219,7 +221,7 @@ const AboutAOUnit = ({ type, id }) => {
                                             }
                                             secondary
                                             small
-                                            disabled={unsubscribeIsLoading}
+                                            loading={unsubscribeIsLoading}
                                             onClick={unsubscribe}
                                         >
                                             {i18n.t('Unsubscribe')}
@@ -240,7 +242,7 @@ const AboutAOUnit = ({ type, id }) => {
                                             }
                                             secondary
                                             small
-                                            disabled={subscribeIsLoading}
+                                            loading={subscribeIsLoading}
                                             onClick={subscribe}
                                         >
                                             {i18n.t('Subscribe')}

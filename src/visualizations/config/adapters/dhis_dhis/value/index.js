@@ -1,6 +1,6 @@
-import { INDICATOR_FACTOR_100 } from '../'
-import { VALUE_TYPE_TEXT } from '../../../../../modules/pivotTable/pivotTableConstants'
-import { renderValue } from '../../../../../modules/pivotTable/renderValue'
+import { VALUE_TYPE_TEXT } from '../../../../../modules/pivotTable/pivotTableConstants.js'
+import { renderValue } from '../../../../../modules/pivotTable/renderValue.js'
+import { INDICATOR_FACTOR_100 } from '../index.js'
 
 export default function (value, layout, metaData) {
     const valueType = metaData.items[metaData.dimensions.dx[0]].valueType

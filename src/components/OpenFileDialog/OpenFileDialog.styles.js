@@ -14,6 +14,7 @@ export const styles = css`
 
     .search-and-filter-bar {
         display: flex;
+        gap: ${spacers.dp4};
         align-items: center;
         margin-bottom: ${spacers.dp8};
     }

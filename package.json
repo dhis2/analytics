@@ -1,6 +1,6 @@
 {
     "name": "@dhis2/analytics",
-    "version": "21.0.0-alpha.4",
+    "version": "23.7.3",
     "main": "./build/cjs/index.js",
     "module": "./build/es/index.js",
     "exports": {
@@ -33,9 +33,9 @@
     "devDependencies": {
         "@dhis2/app-runtime": "^2.11.0",
         "@dhis2/cli-app-scripts": "^6.2.0",
-        "@dhis2/cli-style": "^9.0.1",
+        "@dhis2/cli-style": "^10.1.1",
         "@dhis2/d2-i18n": "^1.1.0",
-        "@dhis2/ui": "^7.7.3",
+        "@dhis2/ui": "^7.16.1",
         "@sambego/storybook-state": "^2.0.1",
         "@storybook/addons": "^6.1.14",
         "@storybook/preset-create-react-app": "^3.1.7",
@@ -58,7 +58,7 @@
         "styled-jsx": "^3.3.2"
     },
     "dependencies": {
-        "@dhis2/d2-ui-translation-dialog": "^7.3.1",
+        "@dhis2/d2-ui-translation-dialog": "^7.3.3",
         "classnames": "^2.3.1",
         "d2-utilizr": "^0.2.16",
         "d3-color": "^1.2.3",

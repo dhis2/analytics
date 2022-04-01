@@ -10,8 +10,8 @@ import {
     PROGRAM_DATA_ELEMENT,
     PROGRAM_ATTRIBUTE,
     TOTALS,
-} from '../modules/dataTypes'
-import { onError } from './index'
+} from '../modules/dataTypes.js'
+import { onError } from './index.js'
 
 // Query definitions
 export const dimensionsQuery = {
@@ -253,7 +253,7 @@ export const apiFetchRecommendedIds = async (dataEngine, dxIds, ouIds) => {
     )
 
     return recommendedDimensionsData.recommendedDimensions.dimensions.map(
-        item => item.id
+        (item) => item.id
     )
 }
 
