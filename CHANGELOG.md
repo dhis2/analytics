@@ -1,3 +1,10 @@
+## [20.7.1](https://github.com/dhis2/analytics/compare/v20.7.0...v20.7.1) (2022-04-06)
+
+
+### Bug Fixes
+
+* filter on displayName to get objects in current language DHIS2-13015 ([#1198](https://github.com/dhis2/analytics/issues/1198)) ([bba6bf7](https://github.com/dhis2/analytics/commit/bba6bf7ac063ad42a30cdd5a8eece145b3ff26fb))
+
 # [20.7.0](https://github.com/dhis2/analytics/compare/v20.6.5...v20.7.0) (2021-11-11)
 
 
