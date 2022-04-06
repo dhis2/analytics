@@ -1,3 +1,10 @@
+## [23.7.4](https://github.com/dhis2/analytics/compare/v23.7.3...v23.7.4) (2022-04-06)
+
+
+### Bug Fixes
+
+* avoid dialog jumping when searching/paging TECH-1064 ([#1193](https://github.com/dhis2/analytics/issues/1193)) ([f06faa0](https://github.com/dhis2/analytics/commit/f06faa0d1fd8a7284d2a70cc6e17801ca303f300))
+
 ## [23.7.3](https://github.com/dhis2/analytics/compare/v23.7.2...v23.7.3) (2022-03-31)
 
 
