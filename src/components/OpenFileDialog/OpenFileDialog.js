@@ -116,7 +116,7 @@ export const OpenFileDialog = ({
         }
 
         if (filters.searchTerm) {
-            queryFilters.push(`name:ilike:${filters.searchTerm}`)
+            queryFilters.push(`displayName:ilike:${filters.searchTerm}`)
         }
 
         // for ER 2.38 only show line list ER types
