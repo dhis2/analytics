@@ -41,6 +41,7 @@ export const SaveAsDialog = ({ type, object, onClose, onSaveAs }) => {
                     value={name}
                     onChange={({ value }) => setName(value)}
                     dataTest="file-menu-saveas-modal-name"
+                    max="230"
                 />
                 <TextAreaField
                     label={i18n.t('Description')}
