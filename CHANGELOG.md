@@ -1,3 +1,10 @@
+## [23.7.6](https://github.com/dhis2/analytics/compare/v23.7.5...v23.7.6) (2022-04-12)
+
+
+### Bug Fixes
+
+* **FileMenu:** max size on name field TECH-1079 ([#1202](https://github.com/dhis2/analytics/issues/1202)) ([0fb535f](https://github.com/dhis2/analytics/commit/0fb535f5da3bc5d63394d5c877dcda6117b20284))
+
 ## [23.7.5](https://github.com/dhis2/analytics/compare/v23.7.4...v23.7.5) (2022-04-06)
 
 
