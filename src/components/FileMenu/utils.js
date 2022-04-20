@@ -36,6 +36,6 @@ export const appPathFor = (fileType, id) => {
         case FILE_TYPE_MAP:
             return `dhis-web-maps/index.html?id=${id}`
         default:
-            return window.location.href
+            return `${window.location.search}${window.location.hash}`
     }
 }
