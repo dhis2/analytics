@@ -2,13 +2,14 @@
 # Translators:
 # Cherise Beek <cherise.beek@gmail.com>, 2021
 # Yury Rogachev <yury@dhis2.org>, 2021
+# Rica Zamora Duchateau, 2022
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2020-05-20T21:46:25.914Z\n"
 "PO-Revision-Date: 2020-05-18 10:55+0000\n"
-"Last-Translator: Yury Rogachev <yury@dhis2.org>, 2021\n"
+"Last-Translator: Rica Zamora Duchateau, 2022\n"
 "Language-Team: Dutch (https://www.transifex.com/hisp-uio/teams/100509/nl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -17,16 +18,16 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "Data"
-msgstr ""
+msgstr "Gegevens"
 
 msgid "Data Type"
 msgstr ""
 
 msgid "Totals"
-msgstr ""
+msgstr "Totalen"
 
 msgid "Details"
-msgstr ""
+msgstr "Details"
 
 msgid "Detail"
 msgstr ""
@@ -83,13 +84,13 @@ msgid "Select all"
 msgstr ""
 
 msgid "Organisation units"
-msgstr ""
+msgstr "Organisatieëenheden"
 
 msgid "Period"
 msgstr "Periode"
 
 msgid "Year"
-msgstr ""
+msgstr "Jaar"
 
 msgid "Relative periods"
 msgstr ""
@@ -98,7 +99,7 @@ msgid "Fixed periods"
 msgstr ""
 
 msgid "Period type"
-msgstr ""
+msgstr "Soort periode"
 
 msgid "January"
 msgstr ""
@@ -338,7 +339,7 @@ msgid "Category"
 msgstr ""
 
 msgid "Filter"
-msgstr ""
+msgstr "Filter"
 
 msgid "Columns"
 msgstr ""
@@ -362,7 +363,7 @@ msgid "Expected reports"
 msgstr ""
 
 msgid "Program"
-msgstr ""
+msgstr "Programma"
 
 msgid "Indicators"
 msgstr ""
@@ -392,13 +393,13 @@ msgid "[ All metrics ]"
 msgstr ""
 
 msgid "Event data items"
-msgstr ""
+msgstr "Gebeurtenisgegevensitems"
 
 msgid "Select a program"
 msgstr ""
 
 msgid "Program indicators"
-msgstr ""
+msgstr "Programmaindicators"
 
 msgid "{{dynamicOuNames}} and {{lastOuName}}"
 msgstr ""
@@ -467,4 +468,4 @@ msgid "Base"
 msgstr ""
 
 msgid "No data"
-msgstr ""
+msgstr "Geen gegevens"
