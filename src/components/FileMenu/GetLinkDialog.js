@@ -1,4 +1,3 @@
-import { useConfig } from '@dhis2/app-runtime'
 import {
     Modal,
     ModalContent,
@@ -12,11 +11,9 @@ import i18n from '../../locales/index.js'
 import { supportedFileTypes, appPathFor } from './utils.js'
 
 export const GetLinkDialog = ({ type, id, onClose }) => {
-    const { baseUrl } = useConfig()
-
     // TODO simply use href from the visualization object?
     const appUrl = new URL(
-        `${baseUrl}/${appPathFor(type, id)}`,
+        appPathFor(type, id),
         `${window.location.origin}${window.location.pathname}`
     )
 
