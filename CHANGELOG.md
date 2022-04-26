@@ -1,3 +1,10 @@
+## [23.7.9](https://github.com/dhis2/analytics/compare/v23.7.8...v23.7.9) (2022-04-26)
+
+
+### Bug Fixes
+
+* simplify code and fix double path issue DHIS2-12940 ([#1206](https://github.com/dhis2/analytics/issues/1206)) ([2097119](https://github.com/dhis2/analytics/commit/2097119c858790cb6f40e43abaeab1c2867ad578))
+
 ## [23.7.8](https://github.com/dhis2/analytics/compare/v23.7.7...v23.7.8) (2022-04-22)
 
 
