@@ -1,6 +1,6 @@
 {
     "name": "@dhis2/analytics",
-    "version": "23.7.9",
+    "version": "23.7.10",
     "main": "./build/cjs/index.js",
     "module": "./build/es/index.js",
     "exports": {

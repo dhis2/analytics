@@ -1,3 +1,10 @@
+## [23.7.10](https://github.com/dhis2/analytics/compare/v23.7.9...v23.7.10) (2022-04-28)
+
+
+### Bug Fixes
+
+* set repetition in filter ([#1212](https://github.com/dhis2/analytics/issues/1212)) ([8510cba](https://github.com/dhis2/analytics/commit/8510cbaa68eac3902215d6db8508478b046d59b2))
+
 ## [23.7.9](https://github.com/dhis2/analytics/compare/v23.7.8...v23.7.9) (2022-04-26)
 
 
