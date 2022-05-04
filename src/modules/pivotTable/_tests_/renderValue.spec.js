@@ -143,8 +143,8 @@ const tests = [
         dgs: DGS_SPACE,
     },
     {
-        value: 0.454321,
-        expected: '45.4321%',
+        value: 0.450048675309,
+        expected: '45.0048675309%',
         valueType: VALUE_TYPE_NUMBER,
         numberType: NUMBER_TYPE_ROW_PERCENTAGE,
         round: false,
