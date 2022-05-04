@@ -11,14 +11,37 @@ const VALUE_TYPE_INTEGER = 'INTEGER'
 
 const DGS_COMMA = 'COMMA'
 const DGS_SPACE = 'SPACE'
+const DGS_NONE = 'NONE'
 
 const tests = [
+    // Numbers
     {
         value: 1000.5,
         expected: '1 000.5',
         valueType: VALUE_TYPE_NUMBER,
         round: true,
         dgs: DGS_SPACE,
+    },
+    {
+        value: 33777889.55,
+        expected: '33,777,889.5',
+        valueType: VALUE_TYPE_NUMBER,
+        round: true,
+        dgs: DGS_COMMA,
+    },
+    {
+        value: 33777889.556,
+        expected: '33 777 889.6',
+        valueType: VALUE_TYPE_NUMBER,
+        round: true,
+        dgs: DGS_SPACE,
+    },
+    {
+        value: 33777889.56,
+        expected: '33777889.6',
+        valueType: VALUE_TYPE_NUMBER,
+        round: true,
+        dgs: DGS_NONE,
     },
     {
         value: 0.0005,
@@ -28,8 +51,8 @@ const tests = [
         dgs: DGS_SPACE,
     },
     {
-        value: 0.101,
-        expected: '0.10',
+        value: 0.109,
+        expected: '0.11',
         valueType: VALUE_TYPE_NUMBER,
         round: true,
         dgs: DGS_SPACE,
@@ -42,10 +65,26 @@ const tests = [
         dgs: DGS_SPACE,
     },
     {
+        value: 1.101,
+        expected: '1.1010000000',
+        valueType: VALUE_TYPE_NUMBER,
+        round: false,
+        dgs: DGS_SPACE,
+    },
+    {
         value: 0.0005,
         expected: '0.0005000000',
         valueType: VALUE_TYPE_NUMBER,
         round: false,
+        dgs: DGS_SPACE,
+    },
+    // Percentages
+    {
+        value: 0.234,
+        expected: '23.4%',
+        valueType: VALUE_TYPE_NUMBER,
+        numberType: NUMBER_TYPE_ROW_PERCENTAGE,
+        round: true,
         dgs: DGS_SPACE,
     },
     {
@@ -53,7 +92,7 @@ const tests = [
         expected: '23.4%',
         valueType: VALUE_TYPE_NUMBER,
         numberType: NUMBER_TYPE_ROW_PERCENTAGE,
-        round: true,
+        round: false,
         dgs: DGS_SPACE,
     },
     {
@@ -89,6 +128,14 @@ const tests = [
         dgs: DGS_SPACE,
     },
     {
+        value: -0.0234,
+        expected: '-2.34%',
+        valueType: VALUE_TYPE_NUMBER,
+        numberType: NUMBER_TYPE_ROW_PERCENTAGE,
+        round: false,
+        dgs: DGS_SPACE,
+    },
+    {
         value: 0.454321,
         expected: '45.4321%',
         valueType: VALUE_TYPE_NUMBER,
@@ -105,6 +152,15 @@ const tests = [
         dgs: DGS_SPACE,
     },
     {
+        value: 77.89,
+        expected: '7789%',
+        valueType: VALUE_TYPE_NUMBER,
+        numberType: NUMBER_TYPE_COLUMN_PERCENTAGE,
+        round: true,
+        dgs: DGS_COMMA,
+    },
+    // Integers
+    {
         value: 99777888,
         expected: '99777888',
         valueType: VALUE_TYPE_INTEGER,
@@ -118,6 +174,14 @@ const tests = [
         round: true,
         dgs: DGS_COMMA,
     },
+    {
+        value: 334445577,
+        expected: '334445577',
+        valueType: VALUE_TYPE_INTEGER_POSITIVE,
+        round: false,
+        dgs: DGS_COMMA,
+    },
+    // Texts
     {
         value: 'This    string has multiple whitespace     characters',
         expected: 'This string has multiple whitespace     characters',
@@ -133,6 +197,7 @@ const tests = [
         expected: 'Characters \nmorecharacters   here',
         valueType: VALUE_TYPE_TEXT,
     },
+    // Undefined values
     {
         value: undefined,
         expected: 'undefined',
