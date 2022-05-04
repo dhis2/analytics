@@ -2,10 +2,10 @@ import { SingleSelectField, SingleSelectOption } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
 import i18n from '../../locales/index.js'
-import { ALL_ID, dataTypes } from '../../modules/dataTypes.js'
-import styles from './styles/DataTypesSelector.style.js'
+import { ALL_ID, dataTypeMap as dataTypes } from '../../modules/dataTypes.js'
+import styles from './styles/DataTypeSelector.style.js'
 
-const DataTypes = ({ currentDataType, onChange, dataTest }) => (
+const DataTypeSelector = ({ currentDataType, onChange, dataTest }) => (
     <div className="container">
         <SingleSelectField
             label={i18n.t('Data Type')}
@@ -33,10 +33,10 @@ const DataTypes = ({ currentDataType, onChange, dataTest }) => (
     </div>
 )
 
-DataTypes.propTypes = {
+DataTypeSelector.propTypes = {
     currentDataType: PropTypes.string.isRequired,
     onChange: PropTypes.func.isRequired,
     dataTest: PropTypes.string,
 }
 
-export default DataTypes
+export default DataTypeSelector
