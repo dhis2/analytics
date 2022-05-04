@@ -2,11 +2,11 @@ import objectClean from 'd2-utilizr/lib/objectClean'
 import {
     ALL_ID,
     // CHART_AGGREGATE_AGGREGATABLE_TYPES,
-    INDICATORS,
-    DATA_ELEMENTS,
+    INDICATOR,
+    DATA_ELEMENT,
     DATA_SETS,
-    PROGRAM_INDICATORS,
-    EVENT_DATA_ITEMS,
+    PROGRAM_INDICATOR,
+    EVENT_DATA_ITEM,
     PROGRAM_DATA_ELEMENT,
     PROGRAM_ATTRIBUTE,
     TOTALS,
@@ -49,7 +49,7 @@ export const dataItemsQuery = {
         const filters = []
 
         // TODO: Extract all of this logic out of the query?
-        if (filter?.dataType === EVENT_DATA_ITEMS) {
+        if (filter?.dataType === EVENT_DATA_ITEM) {
             filters.push(
                 `dimensionItemType:in:[${PROGRAM_DATA_ELEMENT},${PROGRAM_ATTRIBUTE}]`
             )
@@ -59,7 +59,7 @@ export const dataItemsQuery = {
         if (
             filter?.group &&
             filter.group !== ALL_ID &&
-            [EVENT_DATA_ITEMS, PROGRAM_INDICATORS].includes(filter.dataType)
+            [EVENT_DATA_ITEM, PROGRAM_INDICATOR].includes(filter.dataType)
         ) {
             filters.push(`programId:eq:${filter.group}`)
         }
@@ -265,7 +265,7 @@ export const apiFetchOptions = ({
     page,
 }) => {
     switch (filter?.dataType) {
-        case INDICATORS: {
+        case INDICATOR: {
             return fetchIndicators({
                 dataEngine,
                 nameProp,
@@ -274,7 +274,7 @@ export const apiFetchOptions = ({
                 page,
             })
         }
-        case DATA_ELEMENTS: {
+        case DATA_ELEMENT: {
             if (filter.subGroup === TOTALS) {
                 return fetchDataElements({
                     dataEngine,
@@ -315,10 +315,10 @@ export const apiFetchOptions = ({
 
 export const apiFetchGroups = async (dataEngine, dataType, nameProp) => {
     // indicatorGroups does not support shortName
-    const name = dataType === INDICATORS ? 'displayName' : nameProp
+    const name = dataType === INDICATOR ? 'displayName' : nameProp
 
     switch (dataType) {
-        case INDICATORS: {
+        case INDICATOR: {
             const indicatorGroupsData = await dataEngine.query(
                 { indicatorGroups: indicatorGroupsQuery },
                 {
@@ -331,7 +331,7 @@ export const apiFetchGroups = async (dataEngine, dataType, nameProp) => {
 
             return indicatorGroupsData.indicatorGroups.indicatorGroups
         }
-        case DATA_ELEMENTS: {
+        case DATA_ELEMENT: {
             const dataElementGroupsData = await dataEngine.query(
                 { dataElementGroups: dataElementGroupsQuery },
                 {
@@ -356,8 +356,8 @@ export const apiFetchGroups = async (dataEngine, dataType, nameProp) => {
             )
             return response.data.dataSets
         }
-        case EVENT_DATA_ITEMS:
-        case PROGRAM_INDICATORS: {
+        case EVENT_DATA_ITEM:
+        case PROGRAM_INDICATOR: {
             const programsData = await dataEngine.query(
                 { programs: programsQuery },
                 {

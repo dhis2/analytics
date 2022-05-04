@@ -14,14 +14,16 @@ export const CHART_AGGREGATE_AGGREGATABLE_TYPES = [
 
 export const ALL_ID = 'ALL'
 
-export const INDICATORS = 'INDICATOR'
-export const DATA_ELEMENTS = 'DATA_ELEMENT'
+export const INDICATOR = 'INDICATOR'
+export const DATA_ELEMENT = 'DATA_ELEMENT'
 export const DATA_SETS = 'DATA_SET'
-export const EVENT_DATA_ITEMS = 'EVENT_DATA_ITEM'
-export const PROGRAM_INDICATORS = 'PROGRAM_INDICATOR'
+export const EVENT_DATA_ITEM = 'EVENT_DATA_ITEM'
+export const PROGRAM_INDICATOR = 'PROGRAM_INDICATOR'
 export const PROGRAM_DATA_ELEMENT = 'PROGRAM_DATA_ELEMENT'
 export const PROGRAM_ATTRIBUTE = 'PROGRAM_ATTRIBUTE'
 export const DATA_ELEMENT_OPERAND = 'DATA_ELEMENT_OPERAND'
+export const CATEGORY = 'CATEGORY'
+export const CATEGORY_OPTION_GROUP_SET = 'CATEGORY_OPTION_GROUP_SET'
 
 export const TOTALS = 'totals'
 export const DETAIL = 'detail'
@@ -32,9 +34,9 @@ export const SUB_GROUP_METRIC = 'METRIC'
 const getProgramText = () => i18n.t('Program')
 const getSelectProgramText = () => i18n.t('Select a program')
 
-export const dataTypes = {
-    [INDICATORS]: {
-        id: INDICATORS,
+export const dataTypeMap = {
+    [INDICATOR]: {
+        id: INDICATOR,
         getName: () => i18n.t('Indicators'),
         getGroupLabel: () => i18n.t('Indicator group'),
         defaultGroup: { id: ALL_ID, getName: () => i18n.t('All groups') },
@@ -42,8 +44,8 @@ export const dataTypes = {
         getGroupEmptyLabel: () => i18n.t('No indicator groups found'),
         getGroupLoadingLabel: () => i18n.t('Loading indicator groups'),
     },
-    [DATA_ELEMENTS]: {
-        id: DATA_ELEMENTS,
+    [DATA_ELEMENT]: {
+        id: DATA_ELEMENT,
         getName: () => i18n.t('Data elements'),
         getGroupLabel: () => i18n.t('Data element group'),
         defaultGroup: {
@@ -65,8 +67,8 @@ export const dataTypes = {
         getGroupEmptyLabel: () => i18n.t('No data sets found'),
         getGroupLoadingLabel: () => i18n.t('Loading data sets'),
     },
-    [EVENT_DATA_ITEMS]: {
-        id: EVENT_DATA_ITEMS,
+    [EVENT_DATA_ITEM]: {
+        id: EVENT_DATA_ITEM,
         getName: () => i18n.t('Event data items'),
         getGroupLabel: getProgramText,
         getPlaceholder: getSelectProgramText,
@@ -75,8 +77,8 @@ export const dataTypes = {
         getGroupEmptyLabel: () => i18n.t('No programs found'),
         getGroupLoadingLabel: () => i18n.t('Loading programs'),
     },
-    [PROGRAM_INDICATORS]: {
-        id: PROGRAM_INDICATORS,
+    [PROGRAM_INDICATOR]: {
+        id: PROGRAM_INDICATOR,
         getName: () => i18n.t('Program indicators'),
         getGroupLabel: getProgramText,
         getPlaceholder: getSelectProgramText,
@@ -88,15 +90,15 @@ export const dataTypes = {
 }
 
 export function defaultGroupId(dataType) {
-    return dataTypes[dataType].defaultGroup
-        ? dataTypes[dataType].defaultGroup.id
+    return dataTypeMap[dataType].defaultGroup
+        ? dataTypeMap[dataType].defaultGroup.id
         : ''
 }
 
 export function defaultGroupDetail(dataType) {
-    return dataTypes[dataType].groupDetail
-        ? dataTypes[dataType].groupDetail.default
+    return dataTypeMap[dataType].groupDetail
+        ? dataTypeMap[dataType].groupDetail.default
         : ''
 }
 
-export const DEFAULT_DATATYPE_ID = INDICATORS
+export const DEFAULT_DATATYPE_ID = INDICATOR

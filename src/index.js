@@ -291,3 +291,17 @@ export { getRelativePeriodsOptionsById } from './components/PeriodDimension/util
 export { getFixedPeriodsOptionsById } from './components/PeriodDimension/utils/fixedPeriods.js'
 
 export { default as VisualizationOptions } from './components/Options/VisualizationOptions.js'
+
+export {
+    INDICATOR,
+    DATA_ELEMENT,
+    DATA_SETS,
+    EVENT_DATA_ITEM,
+    PROGRAM_INDICATOR,
+    PROGRAM_DATA_ELEMENT,
+    PROGRAM_ATTRIBUTE,
+    DATA_ELEMENT_OPERAND,
+    CATEGORY,
+    CATEGORY_OPTION_GROUP_SET,
+    ALL_ID,
+} from './modules/dataTypes.js'
