@@ -2,7 +2,7 @@ import times from 'lodash/times'
 import {
     DIMENSION_TYPE_DATA,
     DIMENSION_TYPE_DATA_ELEMENT_GROUP_SET,
-    DIMENSION_TYPE_ORGUNIT,
+    DIMENSION_TYPE_ORGANISATION_UNIT,
     DIMENSION_TYPE_PERIOD,
 } from '../dataTypes.js'
 import { DIMENSION_ID_ORGUNIT } from '../predefinedDimensions.js'
@@ -341,7 +341,8 @@ export class PivotTableEngine {
             (header) => header?.dimensionItemType === DIMENSION_TYPE_PERIOD
         )?.uid
         const ouId = headers.find(
-            (header) => header?.dimensionItemType === DIMENSION_TYPE_ORGUNIT
+            (header) =>
+                header?.dimensionItemType === DIMENSION_TYPE_ORGANISATION_UNIT
         )?.uid
 
         if (!this.data[row] || !this.data[row][column]) {
