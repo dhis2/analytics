@@ -9,135 +9,131 @@ const VALUE_TYPE_INTEGER_POSITIVE = 'INTEGER_POSITIVE'
 const VALUE_TYPE_TEXT = 'TEXT'
 const VALUE_TYPE_INTEGER = 'INTEGER'
 
+const DGS_COMMA = 'COMMA'
+const DGS_SPACE = 'SPACE'
+
 const tests = [
     {
         value: 1000.5,
         expected: '1 000.5',
         valueType: VALUE_TYPE_NUMBER,
-        visualization: {
-            skipRounding: false,
-            digitGroupSeparator: 'SPACE',
-        },
+        round: true,
+        dgs: DGS_SPACE,
     },
     {
         value: 0.0005,
         expected: '0',
         valueType: VALUE_TYPE_NUMBER,
-        visualization: {
-            skipRounding: false,
-            digitGroupSeparator: 'SPACE',
-        },
+        round: true,
+        dgs: DGS_SPACE,
+    },
+    {
+        value: 0.101,
+        expected: '0.10',
+        valueType: VALUE_TYPE_NUMBER,
+        round: true, //should round to 2 decimals
+        dgs: DGS_SPACE,
+    },
+    {
+        value: 1.101,
+        expected: '1.1',
+        valueType: VALUE_TYPE_NUMBER,
+        round: true, //should round to 1 decimal
+        dgs: DGS_SPACE,
     },
     {
         value: 0.0005,
         expected: '0.0005000000',
         valueType: VALUE_TYPE_NUMBER,
-        visualization: {
-            skipRounding: true,
-            digitGroupSeparator: 'SPACE',
-        },
-    },
-    {
-        value: undefined,
-        expected: 'undefined',
-        valueType: VALUE_TYPE_NUMBER,
-        visualization: {},
+        round: false,
+        dgs: DGS_SPACE,
     },
     {
         value: 0.234,
         expected: '23.4%',
         valueType: VALUE_TYPE_NUMBER,
-        visualization: {
-            skipRounding: false,
-            digitGroupSeparator: 'SPACE',
-            numberType: NUMBER_TYPE_ROW_PERCENTAGE,
-        },
+        numberType: NUMBER_TYPE_ROW_PERCENTAGE,
+        round: true,
+        dgs: DGS_SPACE,
     },
     {
         value: 0.000234,
         expected: '0.02%',
         valueType: VALUE_TYPE_NUMBER,
-        visualization: {
-            skipRounding: false,
-            digitGroupSeparator: 'SPACE',
-            numberType: NUMBER_TYPE_ROW_PERCENTAGE,
-        },
+        numberType: NUMBER_TYPE_ROW_PERCENTAGE,
+        round: true,
+        dgs: DGS_SPACE,
     },
     {
         value: 0.000234,
         expected: '0.0234%',
         valueType: VALUE_TYPE_NUMBER,
-        visualization: {
-            skipRounding: true,
-            digitGroupSeparator: 'SPACE',
-            numberType: NUMBER_TYPE_ROW_PERCENTAGE,
-        },
+        numberType: NUMBER_TYPE_ROW_PERCENTAGE,
+        round: false,
+        dgs: DGS_SPACE,
     },
     {
         value: -0.0234,
         expected: '-2.3%',
         valueType: VALUE_TYPE_NUMBER,
-        visualization: {
-            skipRounding: false,
-            digitGroupSeparator: 'SPACE',
-            numberType: NUMBER_TYPE_ROW_PERCENTAGE,
-        },
+        numberType: NUMBER_TYPE_ROW_PERCENTAGE,
+        round: true,
+        dgs: DGS_SPACE,
     },
     {
         value: 0.454321,
         expected: '45.4321%',
         valueType: VALUE_TYPE_NUMBER,
-        visualization: {
-            skipRounding: true,
-            digitGroupSeparator: 'SPACE',
-            numberType: NUMBER_TYPE_ROW_PERCENTAGE,
-        },
+        numberType: NUMBER_TYPE_ROW_PERCENTAGE,
+        round: false,
+        dgs: DGS_SPACE,
     },
     {
         value: 77.89,
         expected: '7789%',
         valueType: VALUE_TYPE_NUMBER,
-        visualization: {
-            skipRounding: false,
-            digitGroupSeparator: 'SPACE',
-            numberType: NUMBER_TYPE_COLUMN_PERCENTAGE,
-        },
+        numberType: NUMBER_TYPE_COLUMN_PERCENTAGE,
+        round: true,
+        dgs: DGS_SPACE,
     },
     {
         value: 99777888,
         expected: '99777888',
         valueType: VALUE_TYPE_INTEGER,
-        visualization: {
-            skipRounding: false,
-            digitGroupSeparator: 'SPACE',
-        },
+        round: true,
+        dgs: DGS_SPACE,
     },
     {
         value: 33444555777,
         expected: '33444555777',
         valueType: VALUE_TYPE_INTEGER_POSITIVE,
-        visualization: {
-            skipRounding: false,
-            digitGroupSeparator: 'COMMA',
-        },
+        round: true,
+        dgs: DGS_COMMA,
     },
     {
         value: 'This    string has multiple whitespace     characters',
         expected: 'This string has multiple whitespace     characters',
         valueType: VALUE_TYPE_TEXT,
-        visualization: {},
     },
     {
         value: 'Characters          \n',
         expected: 'Characters \n',
         valueType: VALUE_TYPE_TEXT,
-        visualization: {},
     },
     {
         value: 'Characters          \nmorecharacters   here',
         expected: 'Characters \nmorecharacters   here',
         valueType: VALUE_TYPE_TEXT,
-        visualization: {},
+    },
+    {
+        value: undefined,
+        expected: 'undefined',
+        valueType: VALUE_TYPE_NUMBER,
+    },
+    {
+        value: undefined,
+        expected: 'undefined',
+        valueType: VALUE_TYPE_TEXT,
     },
 ]
 
@@ -145,14 +141,17 @@ describe('renderValue', () => {
     tests.forEach((t) => {
         const testname = `valueType: ${t.valueType}, value: ${
             t.value
-        }, dgs: ${!t.visualization.digitGroupSeparator}, round: ${!t
-            .visualization.skipRounding}, isPercent: ${[
+        }, dgs: ${!t.dgs}, round: ${t.round}, isPercent: ${[
             NUMBER_TYPE_ROW_PERCENTAGE,
             NUMBER_TYPE_COLUMN_PERCENTAGE,
-        ].includes(t.visualization.numberType)}`
+        ].includes(t.numberType)}`
 
         it(testname, () => {
-            const actual = renderValue(t.value, t.valueType, t.visualization)
+            const actual = renderValue(t.value, t.valueType, {
+                skipRounding: !t.round,
+                digitGroupSeparator: t.dgs,
+                numberType: t.numberType,
+            })
             expect(actual).toEqual(t.expected)
         })
     })
