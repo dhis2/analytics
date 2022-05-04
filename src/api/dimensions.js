@@ -1,7 +1,6 @@
 import objectClean from 'd2-utilizr/lib/objectClean'
 import {
     ALL_ID,
-    // CHART_AGGREGATE_AGGREGATABLE_TYPES,
     INDICATORS,
     DATA_ELEMENTS,
     DATA_SETS,
