@@ -2,7 +2,10 @@ import { SingleSelectField, SingleSelectOption } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
 import i18n from '../../locales/index.js'
-import { ALL_ID, dataTypeMap as dataTypes } from '../../modules/dataTypes.js'
+import {
+    DIMENSION_TYPE_ALL,
+    dataTypeMap as dataTypes,
+} from '../../modules/dataTypes.js'
 import styles from './styles/DataTypeSelector.style.js'
 
 const DataTypeSelector = ({ currentDataType, onChange, dataTest }) => (
@@ -10,13 +13,13 @@ const DataTypeSelector = ({ currentDataType, onChange, dataTest }) => (
         <SingleSelectField
             label={i18n.t('Data Type')}
             dataTest={dataTest}
-            selected={dataTypes[currentDataType]?.id || ALL_ID}
+            selected={dataTypes[currentDataType]?.id || DIMENSION_TYPE_ALL}
             onChange={(ref) => onChange(ref.selected)}
             dense
         >
             <SingleSelectOption
-                value={ALL_ID}
-                key={ALL_ID}
+                value={DIMENSION_TYPE_ALL}
+                key={DIMENSION_TYPE_ALL}
                 label={i18n.t('All types')}
                 dataTest={`${dataTest}-option-all`}
             />

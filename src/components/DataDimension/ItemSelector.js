@@ -17,16 +17,16 @@ import i18n from '../../locales/index.js'
 import { DATA_SETS_CONSTANTS, REPORTING_RATE } from '../../modules/dataSets.js'
 import {
     dataTypeMap as dataTypes,
-    ALL_ID,
-    DATA_ELEMENT,
-    DATA_ELEMENT_OPERAND,
-    DATA_SETS,
-    EVENT_DATA_ITEM,
-    PROGRAM_INDICATOR,
-    INDICATOR,
+    DIMENSION_TYPE_ALL,
+    DIMENSION_TYPE_DATA_ELEMENT,
+    DIMENSION_TYPE_DATA_ELEMENT_OPERAND,
+    DIMENSION_TYPE_DATA_SETS,
+    DIMENSION_TYPE_EVENT_DATA_ITEM,
+    DIMENSION_TYPE_PROGRAM_INDICATOR,
+    DIMENSION_TYPE_INDICATOR,
     TOTALS,
-    PROGRAM_DATA_ELEMENT,
-    PROGRAM_ATTRIBUTE,
+    DIMENSION_TYPE_PROGRAM_DATA_ELEMENT,
+    DIMENSION_TYPE_PROGRAM_ATTRIBUTE,
 } from '../../modules/dataTypes.js'
 import {
     TRANSFER_HEIGHT,
@@ -133,19 +133,19 @@ const SourceEmptyPlaceholder = ({
             message = noItemsMessage
         } else {
             switch (dataType) {
-                case INDICATOR:
+                case DIMENSION_TYPE_INDICATOR:
                     message = i18n.t('No indicators found')
                     break
-                case DATA_ELEMENT:
+                case DIMENSION_TYPE_DATA_ELEMENT:
                     message = i18n.t('No data elements found')
                     break
-                case DATA_SETS:
+                case DIMENSION_TYPE_DATA_SETS:
                     message = i18n.t('No data sets found')
                     break
-                case EVENT_DATA_ITEM:
+                case DIMENSION_TYPE_EVENT_DATA_ITEM:
                     message = i18n.t('No event data items found')
                     break
-                case PROGRAM_INDICATOR:
+                case DIMENSION_TYPE_PROGRAM_INDICATOR:
                     message = i18n.t('No program indicators found')
                     break
                 default:
@@ -155,12 +155,12 @@ const SourceEmptyPlaceholder = ({
         }
     } else if (!loading && !options.length && searchTerm) {
         switch (dataType) {
-            case INDICATOR:
+            case DIMENSION_TYPE_INDICATOR:
                 message = i18n.t('No indicators found for "{{- searchTerm}}"', {
                     searchTerm: searchTerm,
                 })
                 break
-            case DATA_ELEMENT:
+            case DIMENSION_TYPE_DATA_ELEMENT:
                 message = i18n.t(
                     'No data elements found for "{{- searchTerm}}"',
                     {
@@ -168,12 +168,12 @@ const SourceEmptyPlaceholder = ({
                     }
                 )
                 break
-            case DATA_SETS:
+            case DIMENSION_TYPE_DATA_SETS:
                 message = i18n.t('No data sets found for "{{- searchTerm}}"', {
                     searchTerm: searchTerm,
                 })
                 break
-            case EVENT_DATA_ITEM:
+            case DIMENSION_TYPE_EVENT_DATA_ITEM:
                 message = i18n.t(
                     'No event data items found for "{{- searchTerm}}"',
                     {
@@ -181,7 +181,7 @@ const SourceEmptyPlaceholder = ({
                     }
                 )
                 break
-            case PROGRAM_INDICATOR:
+            case DIMENSION_TYPE_PROGRAM_INDICATOR:
                 message = i18n.t(
                     'No program indicators found for "{{- searchTerm}}"',
                     {
@@ -229,7 +229,7 @@ const ItemSelector = ({
     const [state, setState] = useState({
         searchTerm: '',
         filter: {
-            dataType: ALL_ID,
+            dataType: DIMENSION_TYPE_ALL,
         },
         options: [],
         loading: true,
@@ -252,7 +252,10 @@ const ItemSelector = ({
         const newOptions = []
         result.dimensionItems?.forEach((item) => {
             if (item.dimensionItemType === REPORTING_RATE) {
-                if (state.filter.subGroup && state.filter.subGroup !== ALL_ID) {
+                if (
+                    state.filter.subGroup &&
+                    state.filter.subGroup !== DIMENSION_TYPE_ALL
+                ) {
                     const metric = DATA_SETS_CONSTANTS.find(
                         (item) => item.id === state.filter.subGroup
                     )
@@ -347,31 +350,31 @@ const ItemSelector = ({
         )?.type
     const getTooltipText = (itemType) => {
         switch (itemType) {
-            case DATA_ELEMENT_OPERAND:
-                return dataTypes[DATA_ELEMENT].getItemName()
+            case DIMENSION_TYPE_DATA_ELEMENT_OPERAND:
+                return dataTypes[DIMENSION_TYPE_DATA_ELEMENT].getItemName()
             case REPORTING_RATE:
-                return dataTypes[DATA_SETS].getItemName()
-            case PROGRAM_DATA_ELEMENT:
-            case PROGRAM_ATTRIBUTE:
-                return dataTypes[EVENT_DATA_ITEM].getItemName()
+                return dataTypes[DIMENSION_TYPE_DATA_SETS].getItemName()
+            case DIMENSION_TYPE_PROGRAM_DATA_ELEMENT:
+            case DIMENSION_TYPE_PROGRAM_ATTRIBUTE:
+                return dataTypes[DIMENSION_TYPE_EVENT_DATA_ITEM].getItemName()
             default:
                 return dataTypes[itemType]?.getItemName()
         }
     }
     const getIcon = (itemType) => {
         switch (itemType) {
-            case INDICATOR:
+            case DIMENSION_TYPE_INDICATOR:
                 return <IconDimensionIndicator16 />
-            case DATA_ELEMENT_OPERAND:
-            case DATA_ELEMENT:
+            case DIMENSION_TYPE_DATA_ELEMENT_OPERAND:
+            case DIMENSION_TYPE_DATA_ELEMENT:
                 return DataElementIcon
             case REPORTING_RATE:
                 return <IconDimensionDataSet16 />
-            case EVENT_DATA_ITEM:
-            case PROGRAM_DATA_ELEMENT:
-            case PROGRAM_ATTRIBUTE:
+            case DIMENSION_TYPE_EVENT_DATA_ITEM:
+            case DIMENSION_TYPE_PROGRAM_DATA_ELEMENT:
+            case DIMENSION_TYPE_PROGRAM_ATTRIBUTE:
                 return <IconDimensionEventDataItem16 />
-            case PROGRAM_INDICATOR:
+            case DIMENSION_TYPE_PROGRAM_INDICATOR:
                 return <IconDimensionProgramIndicator16 />
             default:
                 return GenericIcon
@@ -403,7 +406,10 @@ const ItemSelector = ({
                             ...state.filter,
                             dataType,
                             group: null,
-                            subGroup: dataType === DATA_ELEMENT ? TOTALS : null,
+                            subGroup:
+                                dataType === DIMENSION_TYPE_DATA_ELEMENT
+                                    ? TOTALS
+                                    : null,
                         })
                     }}
                     group={state.filter.group}
@@ -439,7 +445,7 @@ const ItemSelector = ({
                         )
                     )}
                     tooltipText={
-                        state.filter.dataType === ALL_ID
+                        state.filter.dataType === DIMENSION_TYPE_ALL
                             ? getTooltipText(
                                   getItemType(
                                       props.value /* eslint-disable-line react/prop-types */
