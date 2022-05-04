@@ -31,14 +31,14 @@ const tests = [
         value: 0.101,
         expected: '0.10',
         valueType: VALUE_TYPE_NUMBER,
-        round: true, //should round to 2 decimals
+        round: true,
         dgs: DGS_SPACE,
     },
     {
         value: 1.101,
         expected: '1.1',
         valueType: VALUE_TYPE_NUMBER,
-        round: true, //should round to 1 decimal
+        round: true,
         dgs: DGS_SPACE,
     },
     {
