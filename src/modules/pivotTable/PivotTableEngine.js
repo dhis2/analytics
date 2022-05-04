@@ -1,4 +1,10 @@
 import times from 'lodash/times'
+import {
+    DIMENSION_TYPE_DATA,
+    DIMENSION_TYPE_DATA_ELEMENT_GROUP_SET,
+    DIMENSION_TYPE_ORGUNIT,
+    DIMENSION_TYPE_PERIOD,
+} from '../dataTypes.js'
 import { DIMENSION_ID_ORGUNIT } from '../predefinedDimensions.js'
 import { AdaptiveClippingController } from './AdaptiveClippingController.js'
 import { parseValue } from './parseValue.js'
@@ -26,10 +32,6 @@ import {
     VALUE_TYPE_NUMBER,
     NUMBER_TYPE_COLUMN_PERCENTAGE,
     NUMBER_TYPE_ROW_PERCENTAGE,
-    DIMENSION_TYPE_DATA,
-    DIMENSION_TYPE_DATA_ELEMENT_GROUP_SET,
-    DIMENSION_TYPE_ORGUNIT,
-    DIMENSION_TYPE_PERIOD,
     VALUE_TYPE_TEXT,
     NUMBER_TYPE_VALUE,
 } from './pivotTableConstants.js'
