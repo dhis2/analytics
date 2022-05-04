@@ -108,6 +108,30 @@ export { layoutHasDimension } from './modules/layout/layoutHasDimension.js'
 export { layoutHasDynamicDimension } from './modules/layout/layoutHasDynamicDimension.js'
 export { layoutHasPeriodDimension } from './modules/layout/layoutHasPeriodDimension.js'
 
+// Modules: valueTypes
+export {
+    VALUE_TYPE_NUMBER,
+    VALUE_TYPE_UNIT_INTERVAL,
+    VALUE_TYPE_PERCENTAGE,
+    VALUE_TYPE_INTEGER,
+    VALUE_TYPE_INTEGER_POSITIVE,
+    VALUE_TYPE_INTEGER_NEGATIVE,
+    VALUE_TYPE_INTEGER_ZERO_OR_POSITIVE,
+    VALUE_TYPE_TEXT,
+    VALUE_TYPE_LONG_TEXT,
+    VALUE_TYPE_LETTER,
+    VALUE_TYPE_PHONE_NUMBER,
+    VALUE_TYPE_EMAIL,
+    VALUE_TYPE_USERNAME,
+    VALUE_TYPE_URL,
+    VALUE_TYPE_BOOLEAN,
+    VALUE_TYPE_TRUE_ONLY,
+    VALUE_TYPE_DATE,
+    VALUE_TYPE_TIME,
+    VALUE_TYPE_DATETIME,
+    VALUE_TYPE_ORGANISATION_UNIT,
+} from './modules/valueTypes.js'
+
 export {
     AXIS,
     AXIS_ID_COLUMNS,
