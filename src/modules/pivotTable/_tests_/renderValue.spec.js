@@ -65,6 +65,14 @@ const tests = [
         dgs: DGS_SPACE,
     },
     {
+        value: 0.0000432,
+        expected: '0%',
+        valueType: VALUE_TYPE_NUMBER,
+        numberType: NUMBER_TYPE_ROW_PERCENTAGE,
+        round: true,
+        dgs: DGS_SPACE,
+    },
+    {
         value: 0.000234,
         expected: '0.0234%',
         valueType: VALUE_TYPE_NUMBER,
