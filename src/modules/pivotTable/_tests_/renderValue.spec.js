@@ -37,6 +37,13 @@ const tests = [
         dgs: DGS_SPACE,
     },
     {
+        value: 33777889.556,
+        expected: '33 777 889.5560000017', // float issue?
+        valueType: VALUE_TYPE_NUMBER,
+        round: false,
+        dgs: DGS_SPACE,
+    },
+    {
         value: 33777889.56,
         expected: '33777889.6',
         valueType: VALUE_TYPE_NUMBER,
