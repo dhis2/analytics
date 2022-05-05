@@ -1,17 +1,5 @@
 import i18n from '../locales/index.js'
 
-export const CHART_AGGREGATE_AGGREGATABLE_TYPES = [
-    'BOOLEAN',
-    'TRUE_ONLY',
-    'INTEGER',
-    'INTEGER_POSITIVE',
-    'INTEGER_NEGATIVE',
-    'INTEGER_ZERO_OR_POSITIVE',
-    'NUMBER',
-    'UNIT_INTERVAL',
-    'PERCENTAGE',
-]
-
 export const ALL_ID = 'ALL'
 
 export const INDICATORS = 'INDICATOR'
