@@ -1,3 +1,10 @@
+# [23.8.0](https://github.com/dhis2/analytics/compare/v23.7.10...v23.8.0) (2022-05-04)
+
+
+### Features
+
+* export constants for all value types ([#1216](https://github.com/dhis2/analytics/issues/1216)) ([d637002](https://github.com/dhis2/analytics/commit/d6370026ba653096f0781478c255b931925823c8))
+
 ## [23.7.10](https://github.com/dhis2/analytics/compare/v23.7.9...v23.7.10) (2022-04-28)
 
 
