@@ -1,9 +1,9 @@
-import { renderValue } from '../../renderValue.js'
-import { VALUE_TYPE_NUMBER } from '../../valueTypes.js'
 import {
     NUMBER_TYPE_ROW_PERCENTAGE,
     NUMBER_TYPE_COLUMN_PERCENTAGE,
-} from '../pivotTableConstants.js'
+} from '../pivotTable/pivotTableConstants.js'
+import { renderValue } from '../renderValue.js'
+import { VALUE_TYPE_NUMBER } from '../valueTypes.js'
 
 const VALUE_TYPE_INTEGER_POSITIVE = 'INTEGER_POSITIVE'
 const VALUE_TYPE_TEXT = 'TEXT'
