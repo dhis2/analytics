@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import i18n from '../../locales/index.js'
 import { DATA_SETS_CONSTANTS } from '../../modules/dataSets.js'
-import { ALL_ID } from '../../modules/dataTypes.js'
+import { DIMENSION_TYPE_ALL } from '../../modules/dataTypes.js'
 import styles from './styles/MetricSelector.style.js'
 
 export const MetricSelector = ({ currentValue, onChange, dataTest }) => {
@@ -11,16 +11,16 @@ export const MetricSelector = ({ currentValue, onChange, dataTest }) => {
         <div className="metric-container">
             <SingleSelectField
                 label={i18n.t('Metric type')}
-                selected={currentValue || ALL_ID}
+                selected={currentValue || DIMENSION_TYPE_ALL}
                 onChange={(ref) => onChange(ref.selected)}
                 dense
                 dataTest={dataTest}
             >
                 <SingleSelectOption
-                    value={ALL_ID}
-                    key={ALL_ID}
+                    value={DIMENSION_TYPE_ALL}
+                    key={DIMENSION_TYPE_ALL}
                     label={i18n.t('All metrics')}
-                    dataTest={`${dataTest}-option-${ALL_ID}`}
+                    dataTest={`${dataTest}-option-${DIMENSION_TYPE_ALL}`}
                 />
                 {DATA_SETS_CONSTANTS.map((option) => (
                     <SingleSelectOption
