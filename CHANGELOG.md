@@ -1,3 +1,10 @@
+## [23.8.2](https://github.com/dhis2/analytics/compare/v23.8.1...v23.8.2) (2022-05-05)
+
+
+### Bug Fixes
+
+* remove min-width on File button TECH-1145 ([#1215](https://github.com/dhis2/analytics/issues/1215)) ([3a8f427](https://github.com/dhis2/analytics/commit/3a8f42777cdad2f6ec3c7c48a3b9290989869467))
+
 ## [23.8.1](https://github.com/dhis2/analytics/compare/v23.8.0...v23.8.1) (2022-05-05)
 
 
