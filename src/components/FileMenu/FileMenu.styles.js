@@ -13,7 +13,6 @@ export const fileMenuStyles = css`
         padding: 6px 8px;
         border-radius: 3px;
         color: ${colors.grey900};
-        min-width: 64px;
         box-sizing: border-box;
         line-height: 1.75;
         background: none;
