@@ -3,7 +3,7 @@ import i18n from '../locales/index.js'
 export const DIMENSION_TYPE_ALL = 'ALL'
 export const DIMENSION_TYPE_INDICATOR = 'INDICATOR'
 export const DIMENSION_TYPE_DATA_ELEMENT = 'DATA_ELEMENT'
-export const DIMENSION_TYPE_DATA_SETS = 'DATA_SET'
+export const DIMENSION_TYPE_DATA_SET = 'DATA_SET'
 export const DIMENSION_TYPE_EVENT_DATA_ITEM = 'EVENT_DATA_ITEM'
 export const DIMENSION_TYPE_PROGRAM_INDICATOR = 'PROGRAM_INDICATOR'
 export const DIMENSION_TYPE_PROGRAM_DATA_ELEMENT = 'PROGRAM_DATA_ELEMENT'
@@ -54,8 +54,8 @@ export const dataTypeMap = {
         getGroupEmptyLabel: () => i18n.t('No data element groups found'),
         getGroupLoadingLabel: () => i18n.t('Loading data element groups'),
     },
-    [DIMENSION_TYPE_DATA_SETS]: {
-        id: DIMENSION_TYPE_DATA_SETS,
+    [DIMENSION_TYPE_DATA_SET]: {
+        id: DIMENSION_TYPE_DATA_SET,
         getName: () => i18n.t('Data sets'),
         getGroupLabel: () => i18n.t('Data set'),
         defaultGroup: {

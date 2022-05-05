@@ -3,7 +3,7 @@ import {
     DIMENSION_TYPE_ALL,
     DIMENSION_TYPE_INDICATOR,
     DIMENSION_TYPE_DATA_ELEMENT,
-    DIMENSION_TYPE_DATA_SETS,
+    DIMENSION_TYPE_DATA_SET,
     DIMENSION_TYPE_PROGRAM_INDICATOR,
     DIMENSION_TYPE_EVENT_DATA_ITEM,
     DIMENSION_TYPE_PROGRAM_DATA_ELEMENT,
@@ -299,7 +299,7 @@ export const apiFetchOptions = ({
                 })
             }
         }
-        case DIMENSION_TYPE_DATA_SETS: {
+        case DIMENSION_TYPE_DATA_SET: {
             return fetchDataSets({
                 dataEngine,
                 nameProp,
@@ -351,7 +351,7 @@ export const apiFetchGroups = async (dataEngine, dataType, nameProp) => {
 
             return dataElementGroupsData.dataElementGroups.dataElementGroups
         }
-        case DIMENSION_TYPE_DATA_SETS: {
+        case DIMENSION_TYPE_DATA_SET: {
             const response = await dataEngine.query(
                 { data: dataSetsQuery },
                 {

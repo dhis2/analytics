@@ -20,7 +20,7 @@ import {
     DIMENSION_TYPE_ALL,
     DIMENSION_TYPE_DATA_ELEMENT,
     DIMENSION_TYPE_DATA_ELEMENT_OPERAND,
-    DIMENSION_TYPE_DATA_SETS,
+    DIMENSION_TYPE_DATA_SET,
     DIMENSION_TYPE_EVENT_DATA_ITEM,
     DIMENSION_TYPE_PROGRAM_INDICATOR,
     DIMENSION_TYPE_INDICATOR,
@@ -139,7 +139,7 @@ const SourceEmptyPlaceholder = ({
                 case DIMENSION_TYPE_DATA_ELEMENT:
                     message = i18n.t('No data elements found')
                     break
-                case DIMENSION_TYPE_DATA_SETS:
+                case DIMENSION_TYPE_DATA_SET:
                     message = i18n.t('No data sets found')
                     break
                 case DIMENSION_TYPE_EVENT_DATA_ITEM:
@@ -168,7 +168,7 @@ const SourceEmptyPlaceholder = ({
                     }
                 )
                 break
-            case DIMENSION_TYPE_DATA_SETS:
+            case DIMENSION_TYPE_DATA_SET:
                 message = i18n.t('No data sets found for "{{- searchTerm}}"', {
                     searchTerm: searchTerm,
                 })
@@ -353,7 +353,7 @@ const ItemSelector = ({
             case DIMENSION_TYPE_DATA_ELEMENT_OPERAND:
                 return dataTypes[DIMENSION_TYPE_DATA_ELEMENT].getItemName()
             case REPORTING_RATE:
-                return dataTypes[DIMENSION_TYPE_DATA_SETS].getItemName()
+                return dataTypes[DIMENSION_TYPE_DATA_SET].getItemName()
             case DIMENSION_TYPE_PROGRAM_DATA_ELEMENT:
             case DIMENSION_TYPE_PROGRAM_ATTRIBUTE:
                 return dataTypes[DIMENSION_TYPE_EVENT_DATA_ITEM].getItemName()
