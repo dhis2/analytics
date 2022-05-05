@@ -5,7 +5,7 @@ import React, { useEffect, useState } from 'react'
 import { apiFetchGroups } from '../../api/dimensions.js'
 import i18n from '../../locales/index.js'
 import {
-    dataTypes,
+    dataTypeMap as dataTypes,
     SUB_GROUP_DETAIL,
     SUB_GROUP_METRIC,
 } from '../../modules/dataTypes.js'
@@ -13,7 +13,7 @@ import { DetailSelector } from './DetailSelector.js'
 import { MetricSelector } from './MetricSelector.js'
 import styles from './styles/GroupSelector.style.js'
 
-const GroupsSelector = ({
+const GroupSelector = ({
     dataType,
     currentGroup,
     onGroupChange,
@@ -106,7 +106,7 @@ const GroupsSelector = ({
     )
 }
 
-GroupsSelector.propTypes = {
+GroupSelector.propTypes = {
     dataType: PropTypes.string.isRequired,
     displayNameProp: PropTypes.string.isRequired,
     onGroupChange: PropTypes.func.isRequired,
@@ -116,4 +116,4 @@ GroupsSelector.propTypes = {
     dataTest: PropTypes.string,
 }
 
-export default GroupsSelector
+export default GroupSelector

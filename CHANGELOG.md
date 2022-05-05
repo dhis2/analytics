@@ -1,3 +1,10 @@
+## [23.8.1](https://github.com/dhis2/analytics/compare/v23.8.0...v23.8.1) (2022-05-05)
+
+
+### Bug Fixes
+
+* dimension types ([#1217](https://github.com/dhis2/analytics/issues/1217)) ([96231fc](https://github.com/dhis2/analytics/commit/96231fcfe348117b39d2f084c35731b05038da98))
+
 # [23.8.0](https://github.com/dhis2/analytics/compare/v23.7.10...v23.8.0) (2022-05-04)
 
 
