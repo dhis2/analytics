@@ -1,4 +1,10 @@
 import times from 'lodash/times'
+import {
+    DIMENSION_TYPE_DATA,
+    DIMENSION_TYPE_DATA_ELEMENT_GROUP_SET,
+    DIMENSION_TYPE_ORGANISATION_UNIT,
+    DIMENSION_TYPE_PERIOD,
+} from '../dataTypes.js'
 import { DIMENSION_ID_ORGUNIT } from '../predefinedDimensions.js'
 import { renderValue } from '../renderValue.js'
 import { VALUE_TYPE_NUMBER, VALUE_TYPE_TEXT } from '../valueTypes.js'
@@ -27,10 +33,6 @@ import {
     FONT_SIZE_NORMAL,
     NUMBER_TYPE_COLUMN_PERCENTAGE,
     NUMBER_TYPE_ROW_PERCENTAGE,
-    DIMENSION_TYPE_DATA,
-    DIMENSION_TYPE_DATA_ELEMENT_GROUP_SET,
-    DIMENSION_TYPE_ORGUNIT,
-    DIMENSION_TYPE_PERIOD,
     NUMBER_TYPE_VALUE,
 } from './pivotTableConstants.js'
 
@@ -338,7 +340,8 @@ export class PivotTableEngine {
             (header) => header?.dimensionItemType === DIMENSION_TYPE_PERIOD
         )?.uid
         const ouId = headers.find(
-            (header) => header?.dimensionItemType === DIMENSION_TYPE_ORGUNIT
+            (header) =>
+                header?.dimensionItemType === DIMENSION_TYPE_ORGANISATION_UNIT
         )?.uid
 
         if (!this.data[row] || !this.data[row][column]) {
