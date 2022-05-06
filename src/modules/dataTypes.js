@@ -1,15 +1,23 @@
 import i18n from '../locales/index.js'
 
-export const ALL_ID = 'ALL'
-
-export const INDICATORS = 'INDICATOR'
-export const DATA_ELEMENTS = 'DATA_ELEMENT'
-export const DATA_SETS = 'DATA_SET'
-export const EVENT_DATA_ITEMS = 'EVENT_DATA_ITEM'
-export const PROGRAM_INDICATORS = 'PROGRAM_INDICATOR'
-export const PROGRAM_DATA_ELEMENT = 'PROGRAM_DATA_ELEMENT'
-export const PROGRAM_ATTRIBUTE = 'PROGRAM_ATTRIBUTE'
-export const DATA_ELEMENT_OPERAND = 'DATA_ELEMENT_OPERAND'
+export const DIMENSION_TYPE_ALL = 'ALL'
+export const DIMENSION_TYPE_INDICATOR = 'INDICATOR'
+export const DIMENSION_TYPE_DATA_ELEMENT = 'DATA_ELEMENT'
+export const DIMENSION_TYPE_DATA_SET = 'DATA_SET'
+export const DIMENSION_TYPE_EVENT_DATA_ITEM = 'EVENT_DATA_ITEM'
+export const DIMENSION_TYPE_PROGRAM_INDICATOR = 'PROGRAM_INDICATOR'
+export const DIMENSION_TYPE_PROGRAM_DATA_ELEMENT = 'PROGRAM_DATA_ELEMENT'
+export const DIMENSION_TYPE_PROGRAM_ATTRIBUTE = 'PROGRAM_ATTRIBUTE'
+export const DIMENSION_TYPE_DATA_ELEMENT_OPERAND = 'DATA_ELEMENT_OPERAND'
+export const DIMENSION_TYPE_CATEGORY = 'CATEGORY'
+export const DIMENSION_TYPE_CATEGORY_OPTION_GROUP_SET =
+    'CATEGORY_OPTION_GROUP_SET'
+export const DIMENSION_TYPE_DATA_ELEMENT_GROUP_SET = 'DATA_ELEMENT_GROUP_SET'
+export const DIMENSION_TYPE_DATA = 'DATA_X'
+export const DIMENSION_TYPE_PERIOD = 'PERIOD'
+export const DIMENSION_TYPE_ORGANISATION_UNIT = 'ORGANISATION_UNIT'
+export const DIMENSION_TYPE_ORGANISATION_UNIT_GROUP_SET =
+    'ORGANISATION_UNIT_GROUP_SET'
 
 export const TOTALS = 'totals'
 export const DETAIL = 'detail'
@@ -20,22 +28,25 @@ export const SUB_GROUP_METRIC = 'METRIC'
 const getProgramText = () => i18n.t('Program')
 const getSelectProgramText = () => i18n.t('Select a program')
 
-export const dataTypes = {
-    [INDICATORS]: {
-        id: INDICATORS,
+export const dataTypeMap = {
+    [DIMENSION_TYPE_INDICATOR]: {
+        id: DIMENSION_TYPE_INDICATOR,
         getName: () => i18n.t('Indicators'),
         getGroupLabel: () => i18n.t('Indicator group'),
-        defaultGroup: { id: ALL_ID, getName: () => i18n.t('All groups') },
+        defaultGroup: {
+            id: DIMENSION_TYPE_ALL,
+            getName: () => i18n.t('All groups'),
+        },
         getItemName: () => i18n.t('Indicator'),
         getGroupEmptyLabel: () => i18n.t('No indicator groups found'),
         getGroupLoadingLabel: () => i18n.t('Loading indicator groups'),
     },
-    [DATA_ELEMENTS]: {
-        id: DATA_ELEMENTS,
+    [DIMENSION_TYPE_DATA_ELEMENT]: {
+        id: DIMENSION_TYPE_DATA_ELEMENT,
         getName: () => i18n.t('Data elements'),
         getGroupLabel: () => i18n.t('Data element group'),
         defaultGroup: {
-            id: ALL_ID,
+            id: DIMENSION_TYPE_ALL,
             getName: () => i18n.t('All groups'),
         },
         subGroup: SUB_GROUP_DETAIL,
@@ -43,32 +54,41 @@ export const dataTypes = {
         getGroupEmptyLabel: () => i18n.t('No data element groups found'),
         getGroupLoadingLabel: () => i18n.t('Loading data element groups'),
     },
-    [DATA_SETS]: {
-        id: DATA_SETS,
+    [DIMENSION_TYPE_DATA_SET]: {
+        id: DIMENSION_TYPE_DATA_SET,
         getName: () => i18n.t('Data sets'),
         getGroupLabel: () => i18n.t('Data set'),
-        defaultGroup: { id: ALL_ID, getName: () => i18n.t('All data sets') },
+        defaultGroup: {
+            id: DIMENSION_TYPE_ALL,
+            getName: () => i18n.t('All data sets'),
+        },
         subGroup: SUB_GROUP_METRIC,
         getItemName: () => i18n.t('Data set'),
         getGroupEmptyLabel: () => i18n.t('No data sets found'),
         getGroupLoadingLabel: () => i18n.t('Loading data sets'),
     },
-    [EVENT_DATA_ITEMS]: {
-        id: EVENT_DATA_ITEMS,
+    [DIMENSION_TYPE_EVENT_DATA_ITEM]: {
+        id: DIMENSION_TYPE_EVENT_DATA_ITEM,
         getName: () => i18n.t('Event data items'),
         getGroupLabel: getProgramText,
         getPlaceholder: getSelectProgramText,
-        defaultGroup: { id: ALL_ID, getName: () => i18n.t('All programs') },
+        defaultGroup: {
+            id: DIMENSION_TYPE_ALL,
+            getName: () => i18n.t('All programs'),
+        },
         getItemName: () => i18n.t('Event data item'),
         getGroupEmptyLabel: () => i18n.t('No programs found'),
         getGroupLoadingLabel: () => i18n.t('Loading programs'),
     },
-    [PROGRAM_INDICATORS]: {
-        id: PROGRAM_INDICATORS,
+    [DIMENSION_TYPE_PROGRAM_INDICATOR]: {
+        id: DIMENSION_TYPE_PROGRAM_INDICATOR,
         getName: () => i18n.t('Program indicators'),
         getGroupLabel: getProgramText,
         getPlaceholder: getSelectProgramText,
-        defaultGroup: { id: ALL_ID, getName: () => i18n.t('All programs') },
+        defaultGroup: {
+            id: DIMENSION_TYPE_ALL,
+            getName: () => i18n.t('All programs'),
+        },
         getItemName: () => i18n.t('Program indicator'),
         getGroupEmptyLabel: () => i18n.t('No programs found'),
         getGroupLoadingLabel: () => i18n.t('Loading programs'),
@@ -76,15 +96,15 @@ export const dataTypes = {
 }
 
 export function defaultGroupId(dataType) {
-    return dataTypes[dataType].defaultGroup
-        ? dataTypes[dataType].defaultGroup.id
+    return dataTypeMap[dataType].defaultGroup
+        ? dataTypeMap[dataType].defaultGroup.id
         : ''
 }
 
 export function defaultGroupDetail(dataType) {
-    return dataTypes[dataType].groupDetail
-        ? dataTypes[dataType].groupDetail.default
+    return dataTypeMap[dataType].groupDetail
+        ? dataTypeMap[dataType].groupDetail.default
         : ''
 }
 
-export const DEFAULT_DATATYPE_ID = INDICATORS
+export const DEFAULT_DATATYPE_ID = DIMENSION_TYPE_INDICATOR
