@@ -21,6 +21,7 @@ export default css`
         display: flex;
         justify-content: space-between;
         font-size: ${spacers.dp16};
+        cursor: pointer;
         font-weight: 500;
         line-height: 21px;
         color: ${colors.grey900};
