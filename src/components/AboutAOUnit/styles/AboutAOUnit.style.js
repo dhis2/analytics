@@ -3,6 +3,7 @@ import css from 'styled-jsx/css'
 
 export default css`
     .container {
+        position: relative;
         padding: ${spacers.dp16};
         border-bottom: 1px solid ${colors.grey400};
         background-color: ${colors.white};
@@ -20,8 +21,11 @@ export default css`
     .header {
         display: flex;
         justify-content: space-between;
-        font-size: ${spacers.dp16};
         cursor: pointer;
+    }
+
+    .title {
+        font-size: 16px;
         font-weight: 500;
         line-height: 21px;
         color: ${colors.grey900};
