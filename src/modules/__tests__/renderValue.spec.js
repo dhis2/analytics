@@ -175,13 +175,6 @@ const tests = [
         dgs: DGS_SPACE,
     },
     {
-        value: -99777888,
-        expected: '-99777888',
-        valueType: VALUE_TYPE_INTEGER,
-        round: true,
-        dgs: DGS_SPACE,
-    },
-    {
         value: 33444555777,
         expected: '33444555777',
         valueType: VALUE_TYPE_INTEGER_POSITIVE,
@@ -198,7 +191,7 @@ const tests = [
     // Texts
     {
         value: 'This    string has multiple whitespace     characters',
-        expected: 'This string has multiple whitespace characters',
+        expected: 'This string has multiple whitespace     characters',
         valueType: VALUE_TYPE_TEXT,
     },
     {
@@ -207,8 +200,8 @@ const tests = [
         valueType: VALUE_TYPE_TEXT,
     },
     {
-        value: 'Characters          \nmorecharacters  \n  here',
-        expected: 'Characters \nmorecharacters \n here',
+        value: 'Characters          \nmorecharacters   here',
+        expected: 'Characters \nmorecharacters   here',
         valueType: VALUE_TYPE_TEXT,
     },
     // Undefined values
