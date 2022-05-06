@@ -194,8 +194,8 @@ const tests = [
         dgs: DGS_NONE,
     },
     {
-        value: 33444555777,
-        expected: '33,444,555,777',
+        value: 345,
+        expected: '345',
         valueType: VALUE_TYPE_INTEGER_POSITIVE,
         round: true,
         dgs: DGS_COMMA,
