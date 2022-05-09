@@ -1,3 +1,10 @@
+## [23.8.5](https://github.com/dhis2/analytics/compare/v23.8.4...v23.8.5) (2022-05-09)
+
+
+### Bug Fixes
+
+* fix cursor in AboutUnit component's header TECH-1172 ([#1218](https://github.com/dhis2/analytics/issues/1218)) ([e8bd409](https://github.com/dhis2/analytics/commit/e8bd40970b3ae64a9518ab6f6b6d6e932f02eb24))
+
 ## [23.8.4](https://github.com/dhis2/analytics/compare/v23.8.3...v23.8.4) (2022-05-09)
 
 
