@@ -1,3 +1,10 @@
+## [23.8.4](https://github.com/dhis2/analytics/compare/v23.8.3...v23.8.4) (2022-05-09)
+
+
+### Bug Fixes
+
+* **FileMenu:** use larger lateral padding for File button TECH-1145 ([#1220](https://github.com/dhis2/analytics/issues/1220)) ([e853d62](https://github.com/dhis2/analytics/commit/e853d627244766153d8955a1e9711379afde6015))
+
 ## [23.8.3](https://github.com/dhis2/analytics/compare/v23.8.2...v23.8.3) (2022-05-09)
 
 
