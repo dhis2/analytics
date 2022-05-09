@@ -1,3 +1,10 @@
+## [23.8.3](https://github.com/dhis2/analytics/compare/v23.8.2...v23.8.3) (2022-05-09)
+
+
+### Bug Fixes
+
+* add digit group separator to all numeric types in table cells ([#1219](https://github.com/dhis2/analytics/issues/1219)) ([6b8ec2a](https://github.com/dhis2/analytics/commit/6b8ec2a1ae72fdca18c7df5615e206de1fdf9666))
+
 ## [23.8.2](https://github.com/dhis2/analytics/compare/v23.8.1...v23.8.2) (2022-05-05)
 
 
