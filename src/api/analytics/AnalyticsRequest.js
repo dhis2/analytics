@@ -98,10 +98,18 @@ class AnalyticsRequest extends AnalyticsRequestDimensionsMixin(
                     filterString += `:${f.filter}`
                 }
 
-                request = request.addFilter(
-                    filterString,
-                    f.items?.map((item) => item.id)
-                )
+                if (f.repetition?.indexes?.length) {
+                    f.repetition.indexes.forEach((index) => {
+                        request = request.addFilter(
+                            filterString.replace(/\./, `[${index}].`)
+                        )
+                    })
+                } else {
+                    request = request.addFilter(
+                        filterString,
+                        f.items?.map((item) => item.id)
+                    )
+                }
             }
         })
 
