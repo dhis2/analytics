@@ -31,8 +31,8 @@
         "validate-push": "yarn test"
     },
     "devDependencies": {
-        "@dhis2/app-runtime": "^2.11.0",
-        "@dhis2/cli-app-scripts": "^6.2.0",
+        "@dhis2/app-runtime": "^3.4.3",
+        "@dhis2/cli-app-scripts": "^9.0.0",
         "@dhis2/cli-style": "^10.4.1",
         "@dhis2/d2-i18n": "^1.1.0",
         "@dhis2/ui": "^7.16.1",
@@ -49,7 +49,7 @@
         "typeface-roboto": "^0.0.75"
     },
     "peerDependencies": {
-        "@dhis2/app-runtime": "^2",
+        "@dhis2/app-runtime": "^3",
         "@dhis2/d2-i18n": "^1.1",
         "@dhis2/ui": "^7.7.3",
         "prop-types": "^15",
