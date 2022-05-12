@@ -147,7 +147,9 @@ const AboutAOUnit = ({ type, id }) => {
             })}
         >
             <div className="header" onClick={() => setIsExpanded(!isExpanded)}>
-                {i18n.t('About this visualization')}
+                <span className="title">
+                    {i18n.t('About this visualization')}
+                </span>
                 {isExpanded ? (
                     <IconChevronUp24 color={colors.grey700} />
                 ) : (

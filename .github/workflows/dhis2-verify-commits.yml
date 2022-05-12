@@ -1,11 +1,11 @@
-name: 'dhis2: check pr title'
+name: 'dhis2: verify (commits)'
 
 on:
     pull_request:
         types: ['opened', 'edited', 'reopened', 'synchronize']
 
 jobs:
-    commitlint:
+    lint-pr-title:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v2
