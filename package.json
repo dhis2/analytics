@@ -49,7 +49,7 @@
         "typeface-roboto": "^0.0.75"
     },
     "peerDependencies": {
-        "@dhis2/app-runtime": "^2",
+        "@dhis2/app-runtime": "^3",
         "@dhis2/d2-i18n": "^1.1",
         "@dhis2/ui": "^7.7.3",
         "prop-types": "^15",
