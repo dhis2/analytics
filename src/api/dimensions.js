@@ -1,14 +1,13 @@
 import objectClean from 'd2-utilizr/lib/objectClean'
 import {
-    ALL_ID,
-    // CHART_AGGREGATE_AGGREGATABLE_TYPES,
-    INDICATORS,
-    DATA_ELEMENTS,
-    DATA_SETS,
-    PROGRAM_INDICATORS,
-    EVENT_DATA_ITEMS,
-    PROGRAM_DATA_ELEMENT,
-    PROGRAM_ATTRIBUTE,
+    DIMENSION_TYPE_ALL,
+    DIMENSION_TYPE_INDICATOR,
+    DIMENSION_TYPE_DATA_ELEMENT,
+    DIMENSION_TYPE_DATA_SET,
+    DIMENSION_TYPE_PROGRAM_INDICATOR,
+    DIMENSION_TYPE_EVENT_DATA_ITEM,
+    DIMENSION_TYPE_PROGRAM_DATA_ELEMENT,
+    DIMENSION_TYPE_PROGRAM_ATTRIBUTE,
     TOTALS,
 } from '../modules/dataTypes.js'
 import { onError } from './index.js'
@@ -49,17 +48,20 @@ export const dataItemsQuery = {
         const filters = []
 
         // TODO: Extract all of this logic out of the query?
-        if (filter?.dataType === EVENT_DATA_ITEMS) {
+        if (filter?.dataType === DIMENSION_TYPE_EVENT_DATA_ITEM) {
             filters.push(
-                `dimensionItemType:in:[${PROGRAM_DATA_ELEMENT},${PROGRAM_ATTRIBUTE}]`
+                `dimensionItemType:in:[${DIMENSION_TYPE_PROGRAM_DATA_ELEMENT},${DIMENSION_TYPE_PROGRAM_ATTRIBUTE}]`
             )
-        } else if (filter?.dataType && filter.dataType !== ALL_ID) {
+        } else if (filter?.dataType && filter.dataType !== DIMENSION_TYPE_ALL) {
             filters.push(`dimensionItemType:eq:${filter.dataType}`)
         }
         if (
             filter?.group &&
-            filter.group !== ALL_ID &&
-            [EVENT_DATA_ITEMS, PROGRAM_INDICATORS].includes(filter.dataType)
+            filter.group !== DIMENSION_TYPE_ALL &&
+            [
+                DIMENSION_TYPE_EVENT_DATA_ITEM,
+                DIMENSION_TYPE_PROGRAM_INDICATOR,
+            ].includes(filter.dataType)
         ) {
             filters.push(`programId:eq:${filter.group}`)
         }
@@ -83,7 +85,7 @@ export const indicatorsQuery = {
     params: ({ nameProp, filter, searchTerm, page }) => {
         const filters = []
 
-        if (filter?.group && filter.group !== ALL_ID) {
+        if (filter?.group && filter.group !== DIMENSION_TYPE_ALL) {
             filters.push(`indicatorGroups.id:eq:${filter.group}`)
         }
 
@@ -114,10 +116,12 @@ export const dataElementsQuery = {
     resource: 'dataElements',
     params: ({ nameProp, filter, searchTerm, page }) => {
         const idField =
-            filter?.group === ALL_ID ? 'id' : 'dimensionItem~rename(id)'
+            filter?.group === DIMENSION_TYPE_ALL
+                ? 'id'
+                : 'dimensionItem~rename(id)'
         const filters = ['domainType:eq:AGGREGATE']
 
-        if (filter?.group && filter.group !== ALL_ID) {
+        if (filter?.group && filter.group !== DIMENSION_TYPE_ALL) {
             filters.push(`dataElementGroups.id:eq:${filter.group}`)
         }
 
@@ -168,10 +172,12 @@ export const dataElementOperandsQuery = {
     resource: 'dataElementOperands',
     params: ({ nameProp, filter, searchTerm, page }) => {
         const idField =
-            filter?.group === ALL_ID ? 'id' : 'dimensionItem~rename(id)'
+            filter?.group === DIMENSION_TYPE_ALL
+                ? 'id'
+                : 'dimensionItem~rename(id)'
         const filters = []
 
-        if (filter?.group && filter.group !== ALL_ID) {
+        if (filter?.group && filter.group !== DIMENSION_TYPE_ALL) {
             filters.push(`dataElement.dataElementGroups.id:eq:${filter.group}`)
         }
 
@@ -198,7 +204,7 @@ export const dataSetsQuery = {
             filters.push(`${nameProp}:ilike:${searchTerm}`)
         }
 
-        if (filter?.group && filter.group !== ALL_ID) {
+        if (filter?.group && filter.group !== DIMENSION_TYPE_ALL) {
             filters.push(`id:eq:${filter.group}`)
         }
 
@@ -265,7 +271,7 @@ export const apiFetchOptions = ({
     page,
 }) => {
     switch (filter?.dataType) {
-        case INDICATORS: {
+        case DIMENSION_TYPE_INDICATOR: {
             return fetchIndicators({
                 dataEngine,
                 nameProp,
@@ -274,7 +280,7 @@ export const apiFetchOptions = ({
                 page,
             })
         }
-        case DATA_ELEMENTS: {
+        case DIMENSION_TYPE_DATA_ELEMENT: {
             if (filter.subGroup === TOTALS) {
                 return fetchDataElements({
                     dataEngine,
@@ -293,7 +299,7 @@ export const apiFetchOptions = ({
                 })
             }
         }
-        case DATA_SETS: {
+        case DIMENSION_TYPE_DATA_SET: {
             return fetchDataSets({
                 dataEngine,
                 nameProp,
@@ -315,10 +321,11 @@ export const apiFetchOptions = ({
 
 export const apiFetchGroups = async (dataEngine, dataType, nameProp) => {
     // indicatorGroups does not support shortName
-    const name = dataType === INDICATORS ? 'displayName' : nameProp
+    const name =
+        dataType === DIMENSION_TYPE_INDICATOR ? 'displayName' : nameProp
 
     switch (dataType) {
-        case INDICATORS: {
+        case DIMENSION_TYPE_INDICATOR: {
             const indicatorGroupsData = await dataEngine.query(
                 { indicatorGroups: indicatorGroupsQuery },
                 {
@@ -331,7 +338,7 @@ export const apiFetchGroups = async (dataEngine, dataType, nameProp) => {
 
             return indicatorGroupsData.indicatorGroups.indicatorGroups
         }
-        case DATA_ELEMENTS: {
+        case DIMENSION_TYPE_DATA_ELEMENT: {
             const dataElementGroupsData = await dataEngine.query(
                 { dataElementGroups: dataElementGroupsQuery },
                 {
@@ -344,7 +351,7 @@ export const apiFetchGroups = async (dataEngine, dataType, nameProp) => {
 
             return dataElementGroupsData.dataElementGroups.dataElementGroups
         }
-        case DATA_SETS: {
+        case DIMENSION_TYPE_DATA_SET: {
             const response = await dataEngine.query(
                 { data: dataSetsQuery },
                 {
@@ -356,8 +363,8 @@ export const apiFetchGroups = async (dataEngine, dataType, nameProp) => {
             )
             return response.data.dataSets
         }
-        case EVENT_DATA_ITEMS:
-        case PROGRAM_INDICATORS: {
+        case DIMENSION_TYPE_EVENT_DATA_ITEM:
+        case DIMENSION_TYPE_PROGRAM_INDICATOR: {
             const programsData = await dataEngine.query(
                 { programs: programsQuery },
                 {

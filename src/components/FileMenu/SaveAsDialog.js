@@ -13,6 +13,8 @@ import React, { useState } from 'react'
 import i18n from '../../locales/index.js'
 import { supportedFileTypes, labelForFileType } from './utils.js'
 
+const NAME_MAXLENGTH = 230
+
 export const SaveAsDialog = ({ type, object, onClose, onSaveAs }) => {
     const [name, setName] = useState(object?.name)
     const [description, setDescription] = useState(object?.description)
@@ -39,7 +41,9 @@ export const SaveAsDialog = ({ type, object, onClose, onSaveAs }) => {
                     label={i18n.t('Name')}
                     required
                     value={name}
-                    onChange={({ value }) => setName(value)}
+                    onChange={({ value }) =>
+                        setName(value.substring(0, NAME_MAXLENGTH))
+                    }
                     dataTest="file-menu-saveas-modal-name"
                 />
                 <TextAreaField
