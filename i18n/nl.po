@@ -39,7 +39,7 @@ msgid "Add to {{axisName}}"
 msgstr ""
 
 msgid "Remove"
-msgstr ""
+msgstr "Verwijderen"
 
 msgid "Not available for {{visualizationType}}"
 msgstr ""
@@ -144,31 +144,31 @@ msgid "Bi-Week {{biWeekNumber}}"
 msgstr ""
 
 msgid "Daily"
-msgstr ""
+msgstr "Dagelijks"
 
 msgid "Weekly"
-msgstr ""
+msgstr "Wekelijks"
 
 msgid "Bi-weekly"
-msgstr ""
+msgstr "Tweewekelijks"
 
 msgid "Weekly (Start Wednesday)"
-msgstr ""
+msgstr "Wekelijks (Start op woensdag)"
 
 msgid "Weekly (Start Thursday)"
-msgstr ""
+msgstr "Wekelijks (Start op donderdag)"
 
 msgid "Weekly (Start Saturday)"
-msgstr ""
+msgstr "Wekelijks (Start op zaterdag)"
 
 msgid "Weekly (Start Sunday)"
-msgstr ""
+msgstr "Wekelijks (Start op zondag)"
 
 msgid "Monthly"
-msgstr ""
+msgstr "Maandelijks"
 
 msgid "Bi-monthly"
-msgstr ""
+msgstr "Tweemaandelijks"
 
 msgid "Quarterly"
 msgstr ""
@@ -180,25 +180,25 @@ msgid "Six-monthly April"
 msgstr ""
 
 msgid "Yearly"
-msgstr ""
+msgstr "Jaarlijks"
 
 msgid "Financial year (Start November)"
-msgstr ""
+msgstr "Financieel jaar (Start november)"
 
 msgid "Financial year (Start October)"
-msgstr ""
+msgstr "Financieel jaar (Start oktober)"
 
 msgid "Financial year (Start July)"
-msgstr ""
+msgstr "Financieel jaar (Start juli)"
 
 msgid "Financial year (Start April)"
-msgstr ""
+msgstr "Financieel jaar (Start april)"
 
 msgid "Today"
-msgstr ""
+msgstr "Vandaag"
 
 msgid "Yesterday"
-msgstr ""
+msgstr "Gisteren"
 
 msgid "Last 3 days"
 msgstr ""
@@ -333,10 +333,10 @@ msgid "Years"
 msgstr ""
 
 msgid "Series"
-msgstr ""
+msgstr "Reeks"
 
 msgid "Category"
-msgstr ""
+msgstr "Categorie"
 
 msgid "Filter"
 msgstr "Filter"
@@ -417,37 +417,37 @@ msgid "{{allDynamicOuNames}} groups in {{staticOuNames}}"
 msgstr ""
 
 msgid "Organisation Unit"
-msgstr ""
+msgstr "Organisatieëenheid"
 
 msgid "Assigned Categories"
 msgstr ""
 
 msgid "Column"
-msgstr ""
+msgstr "Kolom"
 
 msgid "Stacked column"
-msgstr ""
+msgstr "Gestapelde kolom"
 
 msgid "Bar"
-msgstr ""
+msgstr "Staaf"
 
 msgid "Stacked bar"
-msgstr ""
+msgstr "Gestapelde staaf"
 
 msgid "Line"
-msgstr ""
+msgstr "Lijn"
 
 msgid "Area"
-msgstr ""
+msgstr "Oppervlakte"
 
 msgid "Pie"
-msgstr ""
+msgstr "Taart"
 
 msgid "Radar"
-msgstr ""
+msgstr "Radar"
 
 msgid "Gauge"
-msgstr ""
+msgstr "Graadmeter"
 
 msgid "Year over year (line)"
 msgstr ""
