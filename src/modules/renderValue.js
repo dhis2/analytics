@@ -1,12 +1,12 @@
 import {
     NUMBER_TYPE_ROW_PERCENTAGE,
     NUMBER_TYPE_COLUMN_PERCENTAGE,
-    VALUE_TYPE_NUMBER,
-} from './pivotTableConstants.js'
+} from './pivotTable/pivotTableConstants.js'
+import { isNumericValueType } from './valueTypes.js'
 
 const trimTrailingZeros = (stringValue) => stringValue.replace(/\.?0+$/, '')
 
-const defaultDecimalSeparator = '.'
+const decimalSeparator = '.'
 
 const separateDigitGroups = (stringValue, decimalSeparator) => {
     const isNegative = stringValue[0] === '-'
@@ -58,7 +58,7 @@ const toFixedPrecisionString = (value, skipRounding) => {
 }
 
 export const renderValue = (value, valueType, visualization) => {
-    if (valueType !== VALUE_TYPE_NUMBER || value === undefined) {
+    if (!isNumericValueType(valueType) || value === undefined) {
         return String(value).replace(/[^\S\n]+/, ' ')
     }
 
@@ -66,21 +66,23 @@ export const renderValue = (value, valueType, visualization) => {
         visualization.numberType === NUMBER_TYPE_ROW_PERCENTAGE ||
         visualization.numberType === NUMBER_TYPE_COLUMN_PERCENTAGE
     ) {
+        const stringValue = trimTrailingZeros(
+            toFixedPrecisionString(value * 100, visualization.skipRounding)
+        )
+
         return (
-            trimTrailingZeros(
-                toFixedPrecisionString(value * 100, visualization.skipRounding)
+            separateDigitGroups(stringValue, decimalSeparator).join(
+                getSeparator(visualization)
             ) + '%'
         )
+    } else {
+        const stringValue = toFixedPrecisionString(
+            value,
+            visualization.skipRounding
+        )
+
+        return separateDigitGroups(stringValue, decimalSeparator).join(
+            getSeparator(visualization)
+        )
     }
-
-    const stringValue = toFixedPrecisionString(
-        value,
-        visualization.skipRounding
-    )
-
-    const digitGroups = separateDigitGroups(
-        stringValue,
-        defaultDecimalSeparator
-    )
-    return digitGroups.join(getSeparator(visualization))
 }

@@ -1,5 +1,5 @@
-import { VALUE_TYPE_TEXT } from '../../../../../modules/pivotTable/pivotTableConstants.js'
-import { renderValue } from '../../../../../modules/pivotTable/renderValue.js'
+import { renderValue } from '../../../../../modules/renderValue.js'
+import { VALUE_TYPE_TEXT } from '../../../../../modules/valueTypes.js'
 import { INDICATOR_FACTOR_100 } from '../index.js'
 
 export default function (value, layout, metaData) {
