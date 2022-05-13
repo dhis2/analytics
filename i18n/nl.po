@@ -2,13 +2,14 @@
 # Translators:
 # Cherise Beek <cherise.beek@gmail.com>, 2021
 # Yury Rogachev <yury@dhis2.org>, 2021
+# Rica Zamora Duchateau, 2022
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2022-03-17T10:18:53.422Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Yury Rogachev <yury@dhis2.org>, 2021\n"
+"Last-Translator: Rica Zamora Duchateau, 2022\n"
 "Language-Team: Dutch (https://www.transifex.com/hisp-uio/teams/100509/nl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -88,7 +89,7 @@ msgid "Disaggregation"
 msgstr ""
 
 msgid "No data"
-msgstr ""
+msgstr "Geen gegevens"
 
 msgid "Loading"
 msgstr ""
@@ -157,7 +158,7 @@ msgid "Add Assigned Categories"
 msgstr ""
 
 msgid "Remove"
-msgstr ""
+msgstr "Verwijderen"
 
 msgid "Filter dimensions"
 msgstr ""
@@ -202,7 +203,7 @@ msgid ""
 msgstr ""
 
 msgid "Cancel"
-msgstr ""
+msgstr "Annuleer"
 
 msgid "Delete"
 msgstr "Verwijderen"
@@ -217,7 +218,7 @@ msgid "Open…"
 msgstr ""
 
 msgid "Save"
-msgstr ""
+msgstr "Sla op"
 
 msgid "Save…"
 msgstr ""
@@ -241,16 +242,16 @@ msgid "Open in this app"
 msgstr ""
 
 msgid "Close"
-msgstr ""
+msgstr "Sluit"
 
 msgid "Rename {{fileType}}"
 msgstr ""
 
 msgid "Name"
-msgstr ""
+msgstr "Naam"
 
 msgid "Description"
-msgstr ""
+msgstr "Beschrijving"
 
 msgid "Rename"
 msgstr ""
@@ -271,7 +272,7 @@ msgid "visualization"
 msgstr ""
 
 msgid "Created by"
-msgstr ""
+msgstr "Gecreëerd door"
 
 msgid "Anyone"
 msgstr ""
@@ -295,7 +296,7 @@ msgid "Last updated"
 msgstr "Laatst bijgewerkt"
 
 msgid "Type"
-msgstr ""
+msgstr "Soort"
 
 msgid "Clear filters"
 msgstr ""
@@ -401,10 +402,10 @@ msgid "New line list"
 msgstr ""
 
 msgid "Options"
-msgstr ""
+msgstr "Opties"
 
 msgid "Hide"
-msgstr ""
+msgstr "Verbergen"
 
 msgid "Update"
 msgstr "Bijwerken"
@@ -449,10 +450,10 @@ msgid "Deselect all"
 msgstr ""
 
 msgid "Period type"
-msgstr ""
+msgstr "Soort periode"
 
 msgid "Year"
-msgstr ""
+msgstr "Jaar"
 
 msgid "Select year"
 msgstr ""
@@ -515,31 +516,31 @@ msgid "Bi-Week {{biWeekNumber}}"
 msgstr ""
 
 msgid "Daily"
-msgstr ""
+msgstr "Dagelijks"
 
 msgid "Weekly"
-msgstr ""
+msgstr "Wekelijks"
 
 msgid "Weekly (Start Wednesday)"
-msgstr ""
+msgstr "Wekelijks (Start op woensdag)"
 
 msgid "Weekly (Start Thursday)"
-msgstr ""
+msgstr "Wekelijks (Start op donderdag)"
 
 msgid "Weekly (Start Saturday)"
-msgstr ""
+msgstr "Wekelijks (Start op zaterdag)"
 
 msgid "Weekly (Start Sunday)"
-msgstr ""
+msgstr "Wekelijks (Start op zondag)"
 
 msgid "Bi-weekly"
-msgstr ""
+msgstr "Tweewekelijks"
 
 msgid "Monthly"
-msgstr ""
+msgstr "Maandelijks"
 
 msgid "Bi-monthly"
-msgstr ""
+msgstr "Tweemaandelijks"
 
 msgid "Quarterly"
 msgstr ""
@@ -551,25 +552,25 @@ msgid "Six-monthly April"
 msgstr ""
 
 msgid "Yearly"
-msgstr ""
+msgstr "Jaarlijks"
 
 msgid "Financial year (Start November)"
-msgstr ""
+msgstr "Financieel jaar (Start november)"
 
 msgid "Financial year (Start October)"
-msgstr ""
+msgstr "Financieel jaar (Start oktober)"
 
 msgid "Financial year (Start July)"
-msgstr ""
+msgstr "Financieel jaar (Start juli)"
 
 msgid "Financial year (Start April)"
-msgstr ""
+msgstr "Financieel jaar (Start april)"
 
 msgid "Today"
-msgstr ""
+msgstr "Vandaag"
 
 msgid "Yesterday"
-msgstr ""
+msgstr "Gisteren"
 
 msgid "Last 3 days"
 msgstr ""
@@ -743,13 +744,13 @@ msgid "Retry"
 msgstr ""
 
 msgid "Series"
-msgstr ""
+msgstr "Reeks"
 
 msgid "Category"
-msgstr ""
+msgstr "Categorie"
 
 msgid "Filter"
-msgstr ""
+msgstr "Filter"
 
 msgid "Columns"
 msgstr ""
@@ -776,7 +777,7 @@ msgid "Expected reports"
 msgstr ""
 
 msgid "Program"
-msgstr ""
+msgstr "Programma"
 
 msgid "Select a program"
 msgstr ""
@@ -785,13 +786,13 @@ msgid "Indicators"
 msgstr ""
 
 msgid "Indicator group"
-msgstr ""
+msgstr "Indicatorgroep"
 
 msgid "All groups"
 msgstr ""
 
 msgid "Indicator"
-msgstr ""
+msgstr "Indicator"
 
 msgid "No indicator groups found"
 msgstr ""
@@ -803,7 +804,7 @@ msgid "Data elements"
 msgstr "Gegevenselementen"
 
 msgid "Data element group"
-msgstr ""
+msgstr "Gegevenselementengroep"
 
 msgid "Data element"
 msgstr "informatie onderdeel"
@@ -818,7 +819,7 @@ msgid "Data sets"
 msgstr ""
 
 msgid "Data set"
-msgstr ""
+msgstr "Gegevensreeks"
 
 msgid "All data sets"
 msgstr ""
@@ -827,13 +828,13 @@ msgid "Loading data sets"
 msgstr ""
 
 msgid "Event data items"
-msgstr ""
+msgstr "Gebeurtenisgegevensitems"
 
 msgid "All programs"
 msgstr ""
 
 msgid "Event data item"
-msgstr ""
+msgstr "Gebeurtenisgegevensitem"
 
 msgid "No programs found"
 msgstr ""
@@ -842,10 +843,10 @@ msgid "Loading programs"
 msgstr ""
 
 msgid "Program indicators"
-msgstr ""
+msgstr "Programmaindicators"
 
 msgid "Program indicator"
-msgstr ""
+msgstr "Programmaindicator"
 
 msgid "Extra Small"
 msgstr ""
@@ -926,10 +927,10 @@ msgid "{{thresholdFactor}} × Z-score high"
 msgstr ""
 
 msgid "Data"
-msgstr ""
+msgstr "Gegevens"
 
 msgid "Organisation Unit"
-msgstr ""
+msgstr "Organisatieëenheid"
 
 msgid "Assigned Categories"
 msgstr ""
@@ -938,31 +939,31 @@ msgid "Pivot table"
 msgstr ""
 
 msgid "Area"
-msgstr ""
+msgstr "Oppervlakte"
 
 msgid "Stacked area"
 msgstr ""
 
 msgid "Bar"
-msgstr ""
+msgstr "Staaf"
 
 msgid "Stacked bar"
-msgstr ""
+msgstr "Gestapelde staaf"
 
 msgid "Column"
-msgstr ""
+msgstr "Kolom"
 
 msgid "Year over year (column)"
 msgstr ""
 
 msgid "Stacked column"
-msgstr ""
+msgstr "Gestapelde kolom"
 
 msgid "Gauge"
-msgstr ""
+msgstr "Graadmeter"
 
 msgid "Line"
-msgstr ""
+msgstr "Lijn"
 
 msgid "Line list"
 msgstr ""
@@ -971,10 +972,10 @@ msgid "Year over year (line)"
 msgstr ""
 
 msgid "Pie"
-msgstr ""
+msgstr "Taart"
 
 msgid "Radar"
-msgstr ""
+msgstr "Radar"
 
 msgid "Scatter"
 msgstr ""

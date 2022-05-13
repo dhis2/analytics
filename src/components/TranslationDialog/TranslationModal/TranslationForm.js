@@ -8,8 +8,8 @@ import {
     DataTableColumnHeader,
     DataTableHead,
     DataTableRow,
-    InputField,
     ModalContent,
+    TextAreaField,
 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useEffect, useRef, useState } from 'react'
@@ -152,15 +152,16 @@ export const TranslationForm = ({
                         {fieldsToTranslate.map((field, index) => (
                             <DataTableRow key={field}>
                                 <DataTableCell>
-                                    <InputField
+                                    <TextAreaField
                                         label={fieldsTranslations[field]}
                                         value={objectToTranslate[field]}
                                         readOnly
+                                        rows={3}
                                     />
                                 </DataTableCell>
                                 {translationLocale && (
                                     <DataTableCell>
-                                        <InputField
+                                        <TextAreaField
                                             label={fieldsTranslations[field]}
                                             value={getTranslationForField(
                                                 field
@@ -171,6 +172,7 @@ export const TranslationForm = ({
                                                     value
                                                 )
                                             }
+                                            rows={3}
                                         />
                                     </DataTableCell>
                                 )}

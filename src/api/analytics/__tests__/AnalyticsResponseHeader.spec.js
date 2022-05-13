@@ -1,3 +1,4 @@
+import { VALUE_TYPE_TEXT } from '../../../modules/valueTypes.js'
 import AnalyticsResponseHeader from '../AnalyticsResponseHeader.js'
 
 let responseHeader
@@ -32,7 +33,7 @@ describe('AnalyticsResponseHeader', () => {
             const header = {
                 name: 'cejWyOfXge6',
                 column: 'Gender',
-                valueType: 'TEXT',
+                valueType: VALUE_TYPE_TEXT,
                 type: 'java.lang.String',
                 hidden: false,
                 meta: true,

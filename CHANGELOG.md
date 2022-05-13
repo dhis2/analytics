@@ -1,3 +1,101 @@
+## [23.8.5](https://github.com/dhis2/analytics/compare/v23.8.4...v23.8.5) (2022-05-09)
+
+
+### Bug Fixes
+
+* fix cursor in AboutUnit component's header TECH-1172 ([#1218](https://github.com/dhis2/analytics/issues/1218)) ([e8bd409](https://github.com/dhis2/analytics/commit/e8bd40970b3ae64a9518ab6f6b6d6e932f02eb24))
+
+## [23.8.4](https://github.com/dhis2/analytics/compare/v23.8.3...v23.8.4) (2022-05-09)
+
+
+### Bug Fixes
+
+* **FileMenu:** use larger lateral padding for File button TECH-1145 ([#1220](https://github.com/dhis2/analytics/issues/1220)) ([e853d62](https://github.com/dhis2/analytics/commit/e853d627244766153d8955a1e9711379afde6015))
+
+## [23.8.3](https://github.com/dhis2/analytics/compare/v23.8.2...v23.8.3) (2022-05-09)
+
+
+### Bug Fixes
+
+* add digit group separator to all numeric types in table cells ([#1219](https://github.com/dhis2/analytics/issues/1219)) ([6b8ec2a](https://github.com/dhis2/analytics/commit/6b8ec2a1ae72fdca18c7df5615e206de1fdf9666))
+
+## [23.8.2](https://github.com/dhis2/analytics/compare/v23.8.1...v23.8.2) (2022-05-05)
+
+
+### Bug Fixes
+
+* remove min-width on File button TECH-1145 ([#1215](https://github.com/dhis2/analytics/issues/1215)) ([3a8f427](https://github.com/dhis2/analytics/commit/3a8f42777cdad2f6ec3c7c48a3b9290989869467))
+
+## [23.8.1](https://github.com/dhis2/analytics/compare/v23.8.0...v23.8.1) (2022-05-05)
+
+
+### Bug Fixes
+
+* dimension types ([#1217](https://github.com/dhis2/analytics/issues/1217)) ([96231fc](https://github.com/dhis2/analytics/commit/96231fcfe348117b39d2f084c35731b05038da98))
+
+# [23.8.0](https://github.com/dhis2/analytics/compare/v23.7.10...v23.8.0) (2022-05-04)
+
+
+### Features
+
+* export constants for all value types ([#1216](https://github.com/dhis2/analytics/issues/1216)) ([d637002](https://github.com/dhis2/analytics/commit/d6370026ba653096f0781478c255b931925823c8))
+
+## [23.7.10](https://github.com/dhis2/analytics/compare/v23.7.9...v23.7.10) (2022-04-28)
+
+
+### Bug Fixes
+
+* set repetition in filter ([#1212](https://github.com/dhis2/analytics/issues/1212)) ([8510cba](https://github.com/dhis2/analytics/commit/8510cbaa68eac3902215d6db8508478b046d59b2))
+
+## [23.7.9](https://github.com/dhis2/analytics/compare/v23.7.8...v23.7.9) (2022-04-26)
+
+
+### Bug Fixes
+
+* simplify code and fix double path issue DHIS2-12940 ([#1206](https://github.com/dhis2/analytics/issues/1206)) ([2097119](https://github.com/dhis2/analytics/commit/2097119c858790cb6f40e43abaeab1c2867ad578))
+
+## [23.7.8](https://github.com/dhis2/analytics/compare/v23.7.7...v23.7.8) (2022-04-22)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([f399dd7](https://github.com/dhis2/analytics/commit/f399dd7e484acf18f83317770a9dce2ca88046e3))
+
+## [23.7.7](https://github.com/dhis2/analytics/compare/v23.7.6...v23.7.7) (2022-04-19)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([6ac9b11](https://github.com/dhis2/analytics/commit/6ac9b11e14bd8c2c597412e9d40f59ab053111cd))
+
+## [23.7.6](https://github.com/dhis2/analytics/compare/v23.7.5...v23.7.6) (2022-04-12)
+
+
+### Bug Fixes
+
+* **FileMenu:** max size on name field TECH-1079 ([#1202](https://github.com/dhis2/analytics/issues/1202)) ([0fb535f](https://github.com/dhis2/analytics/commit/0fb535f5da3bc5d63394d5c877dcda6117b20284))
+
+## [23.7.5](https://github.com/dhis2/analytics/compare/v23.7.4...v23.7.5) (2022-04-06)
+
+
+### Bug Fixes
+
+* filter on displayName to get objects in current language DHIS2-13015 ([#1199](https://github.com/dhis2/analytics/issues/1199)) ([00c9d77](https://github.com/dhis2/analytics/commit/00c9d77793e6c92b84c0859873b599153b2a17cc))
+
+## [23.7.4](https://github.com/dhis2/analytics/compare/v23.7.3...v23.7.4) (2022-04-06)
+
+
+### Bug Fixes
+
+* avoid dialog jumping when searching/paging TECH-1064 ([#1193](https://github.com/dhis2/analytics/issues/1193)) ([f06faa0](https://github.com/dhis2/analytics/commit/f06faa0d1fd8a7284d2a70cc6e17801ca303f300))
+
+## [23.7.3](https://github.com/dhis2/analytics/compare/v23.7.2...v23.7.3) (2022-03-31)
+
+
+### Bug Fixes
+
+* get stage id and filter string for filters just like for columns and rows([#1191](https://github.com/dhis2/analytics/issues/1191)) ([4550517](https://github.com/dhis2/analytics/commit/45505179f9c1bf359d900d05d22f267c356d72cf))
+
 ## [23.7.2](https://github.com/dhis2/analytics/compare/v23.7.1...v23.7.2) (2022-03-26)
 
 

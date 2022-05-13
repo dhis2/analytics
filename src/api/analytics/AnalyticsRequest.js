@@ -84,16 +84,33 @@ class AnalyticsRequest extends AnalyticsRequestDimensionsMixin(
         const fixedIds = Object.keys(getFixedDimensions())
 
         filters.forEach((f) => {
-            request =
-                passFilterAsDimension && fixedIds.includes(f.dimension)
-                    ? request.addDimension(
-                          f.dimension,
-                          f.items?.map((item) => item.id)
-                      )
-                    : request.addFilter(
-                          f.dimension,
-                          f.items?.map((item) => item.id)
-                      )
+            if (passFilterAsDimension && fixedIds.includes(f.dimension)) {
+                request = request.addDimension(
+                    f.dimension,
+                    f.items?.map((item) => item.id)
+                )
+            } else {
+                let filterString = f.programStage?.id
+                    ? `${f.programStage.id}.${f.dimension}`
+                    : f.dimension
+
+                if (f.filter) {
+                    filterString += `:${f.filter}`
+                }
+
+                if (f.repetition?.indexes?.length) {
+                    f.repetition.indexes.forEach((index) => {
+                        request = request.addFilter(
+                            filterString.replace(/\./, `[${index}].`)
+                        )
+                    })
+                } else {
+                    request = request.addFilter(
+                        filterString,
+                        f.items?.map((item) => item.id)
+                    )
+                }
+            }
         })
 
         return request
