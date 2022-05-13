@@ -111,31 +111,31 @@ msgid "Bi-Week {{biWeekNumber}}"
 msgstr ""
 
 msgid "Daily"
-msgstr ""
+msgstr "Dagelijks"
 
 msgid "Weekly"
-msgstr ""
+msgstr "Wekelijks"
 
 msgid "Bi-weekly"
-msgstr ""
+msgstr "Tweewekelijks"
 
 msgid "Weekly (Start Wednesday)"
-msgstr ""
+msgstr "Wekelijks (Start op woensdag)"
 
 msgid "Weekly (Start Thursday)"
-msgstr ""
+msgstr "Wekelijks (Start op donderdag)"
 
 msgid "Weekly (Start Saturday)"
-msgstr ""
+msgstr "Wekelijks (Start op zaterdag)"
 
 msgid "Weekly (Start Sunday)"
-msgstr ""
+msgstr "Wekelijks (Start op zondag)"
 
 msgid "Monthly"
-msgstr ""
+msgstr "Maandelijks"
 
 msgid "Bi-monthly"
-msgstr ""
+msgstr "Tweemaandelijks"
 
 msgid "Quarterly"
 msgstr ""
@@ -147,25 +147,25 @@ msgid "Six-monthly April"
 msgstr ""
 
 msgid "Yearly"
-msgstr ""
+msgstr "Jaarlijks"
 
 msgid "Financial year (Start November)"
-msgstr ""
+msgstr "Financieel jaar (Start november)"
 
 msgid "Financial year (Start October)"
-msgstr ""
+msgstr "Financieel jaar (Start oktober)"
 
 msgid "Financial year (Start July)"
-msgstr ""
+msgstr "Financieel jaar (Start juli)"
 
 msgid "Financial year (Start April)"
-msgstr ""
+msgstr "Financieel jaar (Start april)"
 
 msgid "Today"
-msgstr ""
+msgstr "Vandaag"
 
 msgid "Yesterday"
-msgstr ""
+msgstr "Gisteren"
 
 msgid "Last 3 days"
 msgstr ""
@@ -354,7 +354,7 @@ msgid "Program indicators"
 msgstr "Programmaindicators"
 
 msgid "Organisation Unit"
-msgstr ""
+msgstr "Organisatieëenheid"
 
 msgid "{{dynamicOuNames}} and {{lastOuName}}"
 msgstr ""
