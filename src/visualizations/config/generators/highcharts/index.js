@@ -18,6 +18,9 @@ export default function (config, el) {
     if (config) {
         config.chart.renderTo = el || config.chart.renderTo
 
+        // silence warning about accessibility
+        config.accessibility = { enabled: false }
+
         if (config.lang) {
             H.setOptions({
                 lang: config.lang,
