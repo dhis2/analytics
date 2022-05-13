@@ -45,7 +45,7 @@
         "fs-extra": "^10.1.0",
         "jest-enzyme": "^7.0.2",
         "prop-types": "^15",
-        "styled-jsx": "3.3.2",
+        "styled-jsx": "5.0.2",
         "typeface-roboto": "^0.0.75"
     },
     "peerDependencies": {
