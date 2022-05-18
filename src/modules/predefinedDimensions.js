@@ -27,7 +27,7 @@ export const getFixedDimensions = () => ({
     },
     [DIMENSION_ID_ORGUNIT]: {
         id: DIMENSION_ID_ORGUNIT,
-        name: i18n.t('Organisation Unit'),
+        name: i18n.t('Organisation unit'),
         iconName: 'OrgUnitIcon',
         icon: IconDimensionOrgUnit16,
     },

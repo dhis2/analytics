@@ -1,3 +1,19 @@
+## [23.8.7](https://github.com/dhis2/analytics/compare/v23.8.6...v23.8.7) (2022-05-17)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([cfd547f](https://github.com/dhis2/analytics/commit/cfd547f1f08683a88b189c2f894f359d7df4c4a3))
+
+## [23.8.6](https://github.com/dhis2/analytics/compare/v23.8.5...v23.8.6) (2022-05-16)
+
+
+### Bug Fixes
+
+* bump ui and styled-jsx ([#1231](https://github.com/dhis2/analytics/issues/1231)) ([71095af](https://github.com/dhis2/analytics/commit/71095af53cc0d297489c66d365bee5fb7e00d6f8))
+* org unit name with lower case u ([#1230](https://github.com/dhis2/analytics/issues/1230)) (TECH-1182) ([8d76db4](https://github.com/dhis2/analytics/commit/8d76db46756cf1e9223d3dcd2901a19fe9ffb50d))
+* **translations:** sync translations from transifex (master) ([37eb848](https://github.com/dhis2/analytics/commit/37eb84883add04ae98381f98582410de4cd83816))
+
 ## [23.8.5](https://github.com/dhis2/analytics/compare/v23.8.4...v23.8.5) (2022-05-09)
 
 
