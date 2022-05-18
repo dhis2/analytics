@@ -146,7 +146,7 @@ msgid "Move to {{axisName}}"
 msgstr ""
 
 msgid "Add to {{axisName}}"
-msgstr ""
+msgstr "Voeg toe aan {{axisName}}"
 
 msgid "Not available for {{visualizationType}}"
 msgstr ""
@@ -155,25 +155,25 @@ msgid "Remove Assigned Categories"
 msgstr ""
 
 msgid "Add Assigned Categories"
-msgstr ""
+msgstr "Voeg Toegewezen Categorieën toe"
 
 msgid "Remove"
 msgstr "Verwijderen"
 
 msgid "Filter dimensions"
-msgstr ""
+msgstr "Filter dimensies"
 
 msgid "Main dimensions"
-msgstr ""
+msgstr "Hoofddimensies"
 
 msgid "Your dimensions"
-msgstr ""
+msgstr "Uw dimensies"
 
 msgid "Dimension recommended with selected data"
 msgstr ""
 
 msgid "All items"
-msgstr ""
+msgstr "Alle items"
 
 msgid "Automatically include all items"
 msgstr ""
@@ -573,13 +573,13 @@ msgid "Yesterday"
 msgstr "Gisteren"
 
 msgid "Last 3 days"
-msgstr ""
+msgstr "Laatste 3 dagen"
 
 msgid "Last 7 days"
-msgstr ""
+msgstr "Laatste 7 dagen"
 
 msgid "Last 14 days"
-msgstr ""
+msgstr "Laatste 14 dagen"
 
 msgid "Last 30 days"
 msgstr ""
@@ -594,22 +594,22 @@ msgid "Last 180 days"
 msgstr ""
 
 msgid "This week"
-msgstr ""
+msgstr "Deze week"
 
 msgid "Last week"
-msgstr ""
+msgstr "Laatste week"
 
 msgid "Last 4 weeks"
-msgstr ""
+msgstr "Laatste 4 weken"
 
 msgid "Last 12 weeks"
-msgstr ""
+msgstr "Laatste 12 weken"
 
 msgid "Last 52 weeks"
-msgstr ""
+msgstr "Laatste 52 weken"
 
 msgid "Weeks this year"
-msgstr ""
+msgstr "Weken dit jaar"
 
 msgid "This bi-week"
 msgstr ""
@@ -621,22 +621,22 @@ msgid "Last 4 bi-weeks"
 msgstr ""
 
 msgid "This month"
-msgstr ""
+msgstr "Deze maand"
 
 msgid "Last month"
-msgstr ""
+msgstr "Laatste maand"
 
 msgid "Last 3 months"
-msgstr ""
+msgstr "Laatste 3 maanden"
 
 msgid "Last 6 months"
-msgstr ""
+msgstr "Laatste 6 maanden"
 
 msgid "Last 12 months"
-msgstr ""
+msgstr "Laatste 12 maanden"
 
 msgid "Months this year"
-msgstr ""
+msgstr "Maanden dit jaar"
 
 msgid "This bi-month"
 msgstr ""
@@ -651,43 +651,43 @@ msgid "Bi-months this year"
 msgstr ""
 
 msgid "This quarter"
-msgstr ""
+msgstr "Dit kwartier"
 
 msgid "Last quarter"
-msgstr ""
+msgstr "Laatste kwartier"
 
 msgid "Last 4 quarters"
-msgstr ""
+msgstr "Laatste 4 kwartieren"
 
 msgid "Quarters this year"
-msgstr ""
+msgstr "Kwartieren dit jaar"
 
 msgid "This six-month"
-msgstr ""
+msgstr "Dit halfjaar"
 
 msgid "Last six-month"
-msgstr ""
+msgstr "Laatste halfjaar"
 
 msgid "Last 2 six-month"
 msgstr ""
 
 msgid "This financial year"
-msgstr ""
+msgstr "Dit financieel jaar"
 
 msgid "Last financial year"
-msgstr ""
+msgstr "Laatste financieel jaar"
 
 msgid "Last 5 financial years"
-msgstr ""
+msgstr "Laatste 5 financiële jaren"
 
 msgid "This year"
-msgstr ""
+msgstr "Dit jaar"
 
 msgid "Last year"
-msgstr ""
+msgstr "Laatste jaar"
 
 msgid "Last 5 years"
-msgstr ""
+msgstr "Laatste 5 jaren"
 
 msgid "Last 10 years"
 msgstr ""
@@ -954,7 +954,7 @@ msgid "Column"
 msgstr "Kolom"
 
 msgid "Year over year (column)"
-msgstr ""
+msgstr "Jaar over jaar (kolom)"
 
 msgid "Stacked column"
 msgstr "Gestapelde kolom"
@@ -969,7 +969,7 @@ msgid "Line list"
 msgstr ""
 
 msgid "Year over year (line)"
-msgstr ""
+msgstr "Jaar over jaar (lijn)"
 
 msgid "Pie"
 msgstr "Taart"
