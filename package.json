@@ -1,6 +1,6 @@
 {
     "name": "@dhis2/analytics",
-    "version": "4.5.46",
+    "version": "4.5.47",
     "main": "./build/index.js",
     "sideEffects": [
         "./src/locales/index.js"
