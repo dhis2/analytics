@@ -1,6 +1,6 @@
 {
     "name": "@dhis2/analytics",
-    "version": "23.8.7",
+    "version": "23.8.8",
     "main": "./build/cjs/index.js",
     "module": "./build/es/index.js",
     "exports": {
@@ -37,7 +37,7 @@
         "@dhis2/d2-i18n": "^1.1.0",
         "@dhis2/ui": "^8.2.5",
         "@sambego/storybook-state": "^2.0.1",
-        "@storybook/addons": "^6.1.14",
+        "@storybook/addons": "^6.5.0",
         "@storybook/preset-create-react-app": "^3.1.7",
         "@storybook/react": "^6.1.14",
         "enzyme": "^3.9.0",
