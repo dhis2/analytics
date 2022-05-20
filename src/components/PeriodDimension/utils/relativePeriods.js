@@ -3,6 +3,7 @@ import {
     DAILY,
     WEEKLY,
     BIWEEKLY,
+    WEEKS_THIS_YEAR,
     MONTHLY,
     BIMONTHLY,
     QUARTERLY,
@@ -29,7 +30,7 @@ const getWeeksPeriodType = () => [
     { id: 'LAST_4_WEEKS', name: i18n.t('Last 4 weeks') },
     { id: 'LAST_12_WEEKS', name: i18n.t('Last 12 weeks') },
     { id: 'LAST_52_WEEKS', name: i18n.t('Last 52 weeks') },
-    { id: 'WEEKS_THIS_YEAR', name: i18n.t('Weeks this year') },
+    { id: WEEKS_THIS_YEAR, name: i18n.t('Weeks this year') },
 ]
 
 const getBiWeeksPeriodType = () => [
