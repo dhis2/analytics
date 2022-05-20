@@ -262,6 +262,7 @@ export {
     WEEKLYTHU,
     WEEKLYSAT,
     WEEKLYSUN,
+    WEEKS_THIS_YEAR,
     BIWEEKLY,
     MONTHLY,
     BIMONTHLY,
