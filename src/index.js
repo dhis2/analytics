@@ -246,6 +246,8 @@ export { renderValue as formatValue } from './modules/pivotTable/renderValue.js'
 // Utils: colorSets
 export {
     COLOR_SET_DEFAULT,
+    COLOR_SET_BASIC,
+    COLOR_SET_EXTENDED,
     COLOR_SET_BRIGHT,
     COLOR_SET_DARK,
     COLOR_SET_GRAY,
