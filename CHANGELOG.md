@@ -1,3 +1,10 @@
+# [23.10.0](https://github.com/dhis2/analytics/compare/v23.9.1...v23.10.0) (2022-05-24)
+
+
+### Features
+
+* add basic and extended color sets ([#1242](https://github.com/dhis2/analytics/issues/1242)) ([a856a11](https://github.com/dhis2/analytics/commit/a856a115aeaedc8da0a0fc137ca11e4b7cd8af4a))
+
 ## [23.9.1](https://github.com/dhis2/analytics/compare/v23.9.0...v23.9.1) (2022-05-24)
 
 
