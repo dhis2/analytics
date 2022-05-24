@@ -273,6 +273,7 @@ export {
     LEGEND_DISPLAY_STRATEGY_FIXED,
     LEGEND_DISPLAY_STYLE_FILL,
     LEGEND_DISPLAY_STYLE_TEXT,
+    getColorByValueFromLegendSet,
 } from './modules/legends.js'
 
 // Modules: general
