@@ -1,3 +1,10 @@
+## [23.10.1](https://github.com/dhis2/analytics/compare/v23.10.0...v23.10.1) (2022-05-24)
+
+
+### Bug Fixes
+
+* export color set consts ([#1248](https://github.com/dhis2/analytics/issues/1248)) ([2f9b920](https://github.com/dhis2/analytics/commit/2f9b9205dcc8e36788fcf22e7356b5d1eb360f06))
+
 # [23.10.0](https://github.com/dhis2/analytics/compare/v23.9.1...v23.10.0) (2022-05-24)
 
 
