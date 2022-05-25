@@ -16,7 +16,6 @@ import cx from 'classnames'
 import PropTypes from 'prop-types'
 import React, { useEffect, useState } from 'react'
 import css from 'styled-jsx/css'
-import { Visualization } from '../../Visualization/Visualization.js'
 import { InterpretationThread } from './InterpretationThread.js'
 import { useModalContentWidth } from './useModalContentWidth.js'
 
@@ -73,6 +72,7 @@ const InterpretationModal = ({
     onInterpretationUpdate,
     interpretationId,
     initialFocus,
+    pluginComponent: VisualizationPlugin,
 }) => {
     const modalContentWidth = useModalContentWidth()
     const modalContentCSS = getModalContentCSS(modalContentWidth)
@@ -151,7 +151,7 @@ const InterpretationModal = ({
                         {shouldRenderModalContent && (
                             <div className="row">
                                 <div className="visualisation-wrap">
-                                    <Visualization
+                                    <VisualizationPlugin
                                         relativePeriodDate={
                                             interpretation.created
                                         }
@@ -238,6 +238,8 @@ InterpretationModal.propTypes = {
     ]).isRequired,
     interpretationId: PropTypes.string.isRequired,
     isVisualizationLoading: PropTypes.bool.isRequired,
+    pluginComponent: PropTypes.oneOfType([PropTypes.object, PropTypes.func])
+        .isRequired,
     visualization: PropTypes.object.isRequired,
     onClose: PropTypes.func.isRequired,
     onResponseReceived: PropTypes.func.isRequired,
