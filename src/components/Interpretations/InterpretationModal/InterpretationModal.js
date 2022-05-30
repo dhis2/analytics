@@ -66,7 +66,7 @@ const InterpretationModal = ({
     currentUser,
     isVisualizationLoading,
     visualization,
-    onResponseReceived,
+    onResponsesReceived,
     downloadMenuComponent,
     onClose,
     onInterpretationUpdate,
@@ -156,7 +156,9 @@ const InterpretationModal = ({
                                             interpretation.created
                                         }
                                         visualization={visualization}
-                                        onResponseReceived={onResponseReceived}
+                                        onResponsesReceived={
+                                            onResponsesReceived
+                                        }
                                     />
                                 </div>
                                 <div className="thread-wrap">
@@ -242,7 +244,7 @@ InterpretationModal.propTypes = {
         .isRequired,
     visualization: PropTypes.object.isRequired,
     onClose: PropTypes.func.isRequired,
-    onResponseReceived: PropTypes.func.isRequired,
+    onResponsesReceived: PropTypes.func.isRequired,
     initialFocus: PropTypes.bool,
     onInterpretationUpdate: PropTypes.func,
 }
