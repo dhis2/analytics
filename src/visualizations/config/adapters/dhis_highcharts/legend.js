@@ -230,19 +230,19 @@ export default function ({
                   useHTML: true,
                   symbolWidth: 0.001,
                   symbolHeight: 0.001,
-                  labelFormatter: function () {
-                      return formatLabel({
-                          seriesId: this.userOptions?.id,
-                          seriesColor: this.color,
-                          seriesName: this.name,
-                          seriesType: this.userOptions?.type,
-                          metaData,
-                          displayStrategy,
-                          legendSets,
-                          fontStyle: mergedFontStyle,
-                          visType,
-                      })
-                  },
+                  //   labelFormatter: function () {
+                  //       return formatLabel({
+                  //           seriesId: this.userOptions?.id,
+                  //           seriesColor: this.color,
+                  //           seriesName: this.name,
+                  //           seriesType: this.userOptions?.type,
+                  //           metaData,
+                  //           displayStrategy,
+                  //           legendSets,
+                  //           fontStyle: mergedFontStyle,
+                  //           visType,
+                  //       })
+                  //   },
               }
           )
 }

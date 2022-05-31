@@ -186,6 +186,14 @@ function getDefault(series, metaData, layout, isStacked, extraOptions) {
         if (extraOptions.yearlySeries) {
             seriesObj.name = extraOptions.yearlySeries[index]
         }
+
+        seriesObj.color = 'red'
+        seriesObj.circle1color = 'lightblue'
+        seriesObj.circle2color = 'red'
+        seriesObj.circle3color = 'pink'
+        seriesObj.marker = {
+            enabled: false,
+        }
     })
 
     // DHIS2-701: use cumulative values
