@@ -1,3 +1,15 @@
+# [21.6.0](https://github.com/dhis2/analytics/compare/v21.5.2...v21.6.0) (2022-06-01)
+
+
+### Bug Fixes
+
+* export color set consts ([#1248](https://github.com/dhis2/analytics/issues/1248)) ([7b384c0](https://github.com/dhis2/analytics/commit/7b384c0f8119a1dac2c3e006c7d5d4c74afe23ad))
+
+
+### Features
+
+* add basic and extended color sets ([#1242](https://github.com/dhis2/analytics/issues/1242)) ([58bdb21](https://github.com/dhis2/analytics/commit/58bdb211704523b59825d2585e01ad516ba88d7b))
+
 ## [21.5.2](https://github.com/dhis2/analytics/compare/v21.5.1...v21.5.2) (2022-04-04)
 
 
