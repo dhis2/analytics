@@ -227,9 +227,9 @@ export default function ({
               getLegend(mergedFontStyle, dashboard, visType),
               getItemStyle(mergedFontStyle, dashboard),
               {
-                  useHTML: true,
-                  symbolWidth: 0.001,
-                  symbolHeight: 0.001,
+                  //useHTML: true,
+                  //symbolWidth: 0.001,
+                  //symbolHeight: 0.001,
                   //   labelFormatter: function () {
                   //       return formatLabel({
                   //           seriesId: this.userOptions?.id,
