@@ -1,3 +1,10 @@
+# [21.7.0](https://github.com/dhis2/analytics/compare/v21.6.0...v21.7.0) (2022-06-02)
+
+
+### Features
+
+* export WEEKS_THIS_YEAR constant DHIS2-12580 ([#1247](https://github.com/dhis2/analytics/issues/1247)) ([8ee0a0c](https://github.com/dhis2/analytics/commit/8ee0a0c7eeb15f6f91a29a9e49c72c948c536869))
+
 # [21.6.0](https://github.com/dhis2/analytics/compare/v21.5.2...v21.6.0) (2022-06-01)
 
 
