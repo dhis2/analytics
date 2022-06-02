@@ -1,3 +1,10 @@
+# [20.8.0](https://github.com/dhis2/analytics/compare/v20.7.1...v20.8.0) (2022-06-02)
+
+
+### Features
+
+* add basic and extended color sets ([#1264](https://github.com/dhis2/analytics/issues/1264)) ([95f4926](https://github.com/dhis2/analytics/commit/95f49263bc559157c1de1db8b3648fb37bdd165a)), closes [#1242](https://github.com/dhis2/analytics/issues/1242) [#1248](https://github.com/dhis2/analytics/issues/1248)
+
 ## [20.7.1](https://github.com/dhis2/analytics/compare/v20.7.0...v20.7.1) (2022-04-06)
 
 
