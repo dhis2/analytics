@@ -1,3 +1,10 @@
+# [23.11.0](https://github.com/dhis2/analytics/compare/v23.10.4...v23.11.0) (2022-06-03)
+
+
+### Features
+
+* export getColorByValueFromLegendSet ([#1249](https://github.com/dhis2/analytics/issues/1249)) ([6ce534d](https://github.com/dhis2/analytics/commit/6ce534d1d63d8aeac6ea44e7742681c10f57d709))
+
 ## [23.10.4](https://github.com/dhis2/analytics/compare/v23.10.3...v23.10.4) (2022-05-31)
 
 
