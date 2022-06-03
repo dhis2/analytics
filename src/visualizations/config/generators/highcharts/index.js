@@ -15,10 +15,7 @@ HPF(H)
 HB(H)
 
 function drawLegendSymbolWrap() {
-    H.wrap(H.Series.prototype, 'drawLegendSymbol', function (proceed, legend) {
-        proceed.call(this, legend)
-
-        // First circle
+    H.seriesTypes.column.prototype.drawLegendSymbol = function () {
         this.customCircle1 = this.chart.renderer
             .circle(-10, 10, 8)
             .attr({
@@ -41,7 +38,7 @@ function drawLegendSymbolWrap() {
                 fill: this.options.circle3color,
             })
             .add(this.legendGroup)
-    })
+    }
 }
 
 export default function (config, el) {
