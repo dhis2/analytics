@@ -1,6 +1,10 @@
 import isString from 'd2-utilizr/lib/isString'
 import objectClean from 'd2-utilizr/lib/objectClean'
 import {
+    defaultFontStyle,
+    FONT_STYLE_OPTION_FONT_SIZE,
+} from '../../../../modules/fontStyle.js'
+import {
     LEGEND_DISPLAY_STRATEGY_BY_DATA_ITEM,
     LEGEND_DISPLAY_STRATEGY_FIXED,
 } from '../../../../modules/legends.js'
@@ -101,13 +105,19 @@ export default function ({ store, layout, el, extraConfig, extraOptions }) {
         yAxis: getYAxis(_layout, series, _extraOptions),
 
         // series
-        series: getSeries(
-            series.slice(),
-            store.data[0].metaData,
-            _layout,
-            stacked,
-            _extraOptions
-        ),
+        series: getSeries({
+            series: series.slice(),
+            metaData: store.data[0].metaData.items,
+            layout: _layout,
+            isStacked: stacked,
+            extraOptions: _extraOptions,
+            legendSets,
+            displayStrategy: _layout.legend?.strategy,
+            fontSize:
+                _layout.seriesKey?.label?.fontStyle?.[
+                    FONT_STYLE_OPTION_FONT_SIZE
+                ] || defaultFontStyle.legend[FONT_STYLE_OPTION_FONT_SIZE],
+        }),
 
         // legend
         legend: getLegend({
@@ -115,9 +125,9 @@ export default function ({ store, layout, el, extraConfig, extraOptions }) {
             fontStyle: _layout.seriesKey?.label?.fontStyle,
             visType: _layout.type,
             dashboard: _extraOptions.dashboard,
-            legendSets,
-            metaData: store.data[0].metaData.items,
-            displayStrategy: _layout.legend?.strategy,
+            // legendSets,
+            // metaData: store.data[0].metaData.items,
+            // displayStrategy: _layout.legend?.strategy,
         }),
 
         // pane

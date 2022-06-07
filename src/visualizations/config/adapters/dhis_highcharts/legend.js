@@ -7,10 +7,7 @@ import {
     FONT_STYLE_LEGEND,
     mergeFontStyleWithDefault,
 } from '../../../../modules/fontStyle.js'
-import {
-    LEGEND_DISPLAY_STRATEGY_BY_DATA_ITEM,
-    LEGEND_DISPLAY_STRATEGY_FIXED,
-} from '../../../../modules/legends.js'
+import { getLegendSetByDisplayStrategy } from '../../../../modules/legends.js'
 import {
     isLegendSetType,
     isVerticalType,
@@ -71,23 +68,6 @@ function getLegend(fontStyle, dashboard, visType) {
                   ),
               }
     )
-}
-
-const getLegendSetByDisplayStrategy = ({
-    displayStrategy,
-    legendSets,
-    legendSetId,
-}) => {
-    if (
-        displayStrategy === LEGEND_DISPLAY_STRATEGY_FIXED &&
-        legendSets.length
-    ) {
-        return legendSets[0]
-    } else if (displayStrategy === LEGEND_DISPLAY_STRATEGY_BY_DATA_ITEM) {
-        return legendSets.find((legendSet) => legendSet.id === legendSetId)
-    } else {
-        return null
-    }
 }
 
 const formatLabel = ({
@@ -210,9 +190,9 @@ export default function ({
     fontStyle,
     visType,
     dashboard,
-    legendSets = [],
-    metaData,
-    displayStrategy,
+    // legendSets = [],
+    // metaData,
+    // displayStrategy,
 }) {
     const mergedFontStyle = mergeFontStyleWithDefault(
         fontStyle,

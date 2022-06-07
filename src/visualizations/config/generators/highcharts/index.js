@@ -16,28 +16,31 @@ HB(H)
 
 function drawLegendSymbolWrap() {
     H.seriesTypes.column.prototype.drawLegendSymbol = function () {
-        this.customCircle1 = this.chart.renderer
-            .circle(-10, 10, 8)
-            .attr({
-                fill: this.options.circle1color,
-            })
-            .add(this.legendGroup)
-
-        // Second circle
-        this.customCircle2 = this.chart.renderer
-            .circle(0, 10, 8)
-            .attr({
-                fill: this.options.circle2color,
-            })
-            .add(this.legendGroup)
-
-        // Third circle
-        this.customCircle3 = this.chart.renderer
-            .circle(10, 10, 8)
-            .attr({
-                fill: this.options.circle3color,
-            })
-            .add(this.legendGroup)
+        if (this.options.legendSet?.legends?.length) {
+            this.options.legendSet.legends
+                .sort((a, b) => b.startValue - a.startValue)
+                .forEach((legend, index) => {
+                    this.chart.renderer
+                        .circle(
+                            10 + index * -(this.options.fontSize - 5),
+                            Math.round(this.options.fontSize * 0.615 * 10) /
+                                10 +
+                                3,
+                            this.options.fontSize / 2
+                        )
+                        .attr({
+                            fill: legend.color,
+                        })
+                        .add(this.legendGroup)
+                })
+        } else {
+            this.chart.renderer
+                .circle(-10, 10, 8)
+                .attr({
+                    fill: 'pink',
+                })
+                .add(this.legendGroup)
+        }
     }
 }
 
