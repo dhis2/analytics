@@ -35,9 +35,13 @@ function drawLegendSymbolWrap() {
                 })
         } else {
             this.chart.renderer
-                .circle(-10, 10, 8)
+                .circle(
+                    10,
+                    Math.round(this.options.fontSize * 0.615 * 10) / 10 + 3,
+                    this.options.fontSize / 2
+                )
                 .attr({
-                    fill: 'pink',
+                    fill: this.options.color,
                 })
                 .add(this.legendGroup)
         }
