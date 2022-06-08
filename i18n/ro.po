@@ -82,7 +82,7 @@ msgid "Select all"
 msgstr ""
 
 msgid "Organisation units"
-msgstr ""
+msgstr "Unități organizaționale"
 
 msgid "Period"
 msgstr ""
@@ -217,7 +217,7 @@ msgid "Last 4 weeks"
 msgstr "Ultimele 4 săptămâni"
 
 msgid "Last 12 weeks"
-msgstr ""
+msgstr "Ultimele 12 săptămâni"
 
 msgid "Last 52 weeks"
 msgstr "Ultimele 52 de săptămâni"
@@ -361,7 +361,7 @@ msgid "Expected reports"
 msgstr ""
 
 msgid "Program"
-msgstr ""
+msgstr "Program"
 
 msgid "Indicators"
 msgstr "Indicatori"
@@ -373,7 +373,7 @@ msgid "[ All groups ]"
 msgstr ""
 
 msgid "Data elements"
-msgstr ""
+msgstr "Elemente de date"
 
 msgid "Select data element group"
 msgstr ""
@@ -415,7 +415,7 @@ msgid "{{allDynamicOuNames}} groups in {{staticOuNames}}"
 msgstr ""
 
 msgid "Organisation Unit"
-msgstr ""
+msgstr "Unitate Organizațională"
 
 msgid "Assigned Categories"
 msgstr ""
