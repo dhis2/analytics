@@ -202,7 +202,7 @@ msgid ""
 msgstr ""
 
 msgid "Cancel"
-msgstr ""
+msgstr "Anulare"
 
 msgid "Delete"
 msgstr "Lichidare"
@@ -605,7 +605,7 @@ msgid "Last 4 weeks"
 msgstr "Ultimele 4 săptămâni"
 
 msgid "Last 12 weeks"
-msgstr ""
+msgstr "Ultimele 12 săptămâni"
 
 msgid "Last 52 weeks"
 msgstr "Ultimele 52 de săptămâni"
@@ -779,7 +779,7 @@ msgid "Expected reports"
 msgstr ""
 
 msgid "Program"
-msgstr ""
+msgstr "Program"
 
 msgid "Select a program"
 msgstr ""
@@ -788,7 +788,7 @@ msgid "Indicators"
 msgstr "Indicatori"
 
 msgid "Indicator group"
-msgstr ""
+msgstr "Grup de indicatori"
 
 msgid "All groups"
 msgstr ""
@@ -803,7 +803,7 @@ msgid "Loading indicator groups"
 msgstr ""
 
 msgid "Data elements"
-msgstr ""
+msgstr "Elemente de date"
 
 msgid "Data element group"
 msgstr ""
@@ -821,7 +821,7 @@ msgid "Data sets"
 msgstr ""
 
 msgid "Data set"
-msgstr ""
+msgstr "Set de date"
 
 msgid "All data sets"
 msgstr ""
