@@ -137,9 +137,9 @@ export default function ({ store, layout, el, extraConfig, extraOptions }) {
 
         // exporting
         exporting: {
-            // disable exporting context menu
-            enabled: false,
+            enabled: true,
             allowHTML: true,
+            fallbackToExportServer: false,
         },
     }
 
