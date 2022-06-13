@@ -273,6 +273,7 @@ export {
     LEGEND_DISPLAY_STRATEGY_FIXED,
     LEGEND_DISPLAY_STYLE_FILL,
     LEGEND_DISPLAY_STYLE_TEXT,
+    getColorByValueFromLegendSet,
 } from './modules/legends.js'
 
 // Modules: general
@@ -282,6 +283,8 @@ export { renderValue as formatValue } from './modules/renderValue.js'
 // Utils: colorSets
 export {
     COLOR_SET_DEFAULT,
+    COLOR_SET_BASIC,
+    COLOR_SET_EXTENDED,
     COLOR_SET_BRIGHT,
     COLOR_SET_DARK,
     COLOR_SET_GRAY,
@@ -298,6 +301,7 @@ export {
     WEEKLYTHU,
     WEEKLYSAT,
     WEEKLYSUN,
+    WEEKS_THIS_YEAR,
     BIWEEKLY,
     MONTHLY,
     BIMONTHLY,
