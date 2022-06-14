@@ -153,7 +153,8 @@ const InterpretationModal = ({
                                 <div className="visualisation-wrap">
                                     <VisualizationPlugin
                                         filters={{
-                                            relativePeriodDate: interpretation.created
+                                            relativePeriodDate:
+                                                interpretation.created,
                                         }}
                                         visualization={visualization}
                                         onResponsesReceived={
