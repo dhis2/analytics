@@ -1,3 +1,10 @@
+# [23.12.0](https://github.com/dhis2/analytics/compare/v23.11.1...v23.12.0) (2022-06-15)
+
+
+### Features
+
+* implement new interpretations components ([#1250](https://github.com/dhis2/analytics/issues/1250)) ([76b223b](https://github.com/dhis2/analytics/commit/76b223b9a3514e0e110cd090bc3ede42056634e8))
+
 ## [23.11.1](https://github.com/dhis2/analytics/compare/v23.11.0...v23.11.1) (2022-06-09)
 
 
