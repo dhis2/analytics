@@ -11,7 +11,9 @@ import {
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 import i18n from '../../locales/index.js'
-import { supportedFileTypes } from './utils.js'
+import { supportedFileTypes, labelForFileType } from './utils.js'
+
+const NAME_MAXLENGTH = 230
 
 export const SaveAsDialog = ({ type, object, onClose, onSaveAs }) => {
     const [name, setName] = useState(object?.name)
@@ -30,14 +32,18 @@ export const SaveAsDialog = ({ type, object, onClose, onSaveAs }) => {
     return (
         <Modal onClose={onClose} dataTest="file-menu-saveas-modal">
             <ModalTitle>
-                {i18n.t('Save {{fileType}} as', { fileType: type })}
+                {i18n.t('Save {{fileType}} as', {
+                    fileType: labelForFileType(type),
+                })}
             </ModalTitle>
             <ModalContent>
                 <InputField
                     label={i18n.t('Name')}
                     required
                     value={name}
-                    onChange={({ value }) => setName(value)}
+                    onChange={({ value }) =>
+                        setName(value.substring(0, NAME_MAXLENGTH))
+                    }
                     dataTest="file-menu-saveas-modal-name"
                 />
                 <TextAreaField

@@ -1,3 +1,9 @@
+import {
+    VALUE_TYPE_BOOLEAN,
+    VALUE_TYPE_INTEGER,
+    VALUE_TYPE_NUMBER,
+    VALUE_TYPE_TEXT,
+} from '../../modules/valueTypes.js'
 import AnalyticsResponseHeader from './AnalyticsResponseHeader.js'
 
 const booleanMap = {
@@ -25,10 +31,10 @@ const DEFAULT_PREFIX_IGNORE_HEADERS = ['dy', ...DEFAULT_COLLECT_IGNORE_HEADERS]
 const getParseMiddleware = (type) => {
     switch (type) {
         case 'STRING':
-        case 'TEXT':
+        case VALUE_TYPE_TEXT:
             return (value) => `${value}`
-        case 'INTEGER':
-        case 'NUMBER':
+        case VALUE_TYPE_INTEGER:
+        case VALUE_TYPE_NUMBER:
             return (value) =>
                 !Number.isNaN(+value) && Number.isFinite(+value)
                     ? parseFloat(+value)
@@ -57,7 +63,7 @@ const isCollectHeader = (header, dimensions) => {
 const getPrefixedId = (id, prefix) => `${prefix || ''} ${id}`
 
 const getNameByIdsByValueType = (id, valueType) => {
-    if (valueType === 'BOOLEAN') {
+    if (valueType === VALUE_TYPE_BOOLEAN) {
         return booleanMap[id]
     }
 

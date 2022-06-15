@@ -8,8 +8,8 @@ import {
     DataTableColumnHeader,
     DataTableHead,
     DataTableRow,
-    InputField,
     ModalContent,
+    TextAreaField,
 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useEffect, useRef, useState } from 'react'
@@ -18,6 +18,13 @@ import { TranslationModalActions } from './TranslationModalActions.js'
 
 const SESSION_STORAGE_TRANSLATION_LOCALE_KEY =
     'translation-dialog-selected-locale'
+
+const camelCaseToUnderscores = (field) =>
+    field
+        .replace(/[a-z][A-Z]/g, (match) =>
+            [match.charAt(0), match.charAt(1)].join('_')
+        )
+        .toLowerCase()
 
 export const TranslationForm = ({
     fieldsToTranslate,
@@ -32,13 +39,6 @@ export const TranslationForm = ({
     const [fieldsTranslations, setFieldsTranslations] = useState({})
 
     const { show: showError } = useAlert((error) => error, { critical: true })
-
-    const camelCaseToUnderscores = (field) =>
-        field
-            .replace(/[a-z][A-Z]/g, (match) =>
-                [match.charAt(0), match.charAt(1)].join('_')
-            )
-            .toLowerCase()
 
     const getTranslationIndexForField = (field) =>
         newTranslations.findIndex(
@@ -73,17 +73,16 @@ export const TranslationForm = ({
         )
     }
 
-    const [fetchFieldsTranslations] = useDataMutation(
-        {
-            resource: 'i18n',
-            type: 'create',
-            data: fieldsToTranslate.map(camelCaseToUnderscores),
-        },
-        {
-            onComplete: (res) => setFieldsTranslations(res),
-            onError: (error) => showError(error),
-        }
-    )
+    const i18nMutationRef = useRef({
+        resource: 'i18n',
+        type: 'create',
+        data: fieldsToTranslate.map(camelCaseToUnderscores),
+    })
+
+    const [fetchFieldsTranslations] = useDataMutation(i18nMutationRef.current, {
+        onComplete: (res) => setFieldsTranslations(res),
+        onError: (error) => showError(error),
+    })
 
     const translationsMutationRef = useRef({
         resource: `${resource}/translations`,
@@ -153,15 +152,16 @@ export const TranslationForm = ({
                         {fieldsToTranslate.map((field, index) => (
                             <DataTableRow key={field}>
                                 <DataTableCell>
-                                    <InputField
+                                    <TextAreaField
                                         label={fieldsTranslations[field]}
                                         value={objectToTranslate[field]}
                                         readOnly
+                                        rows={3}
                                     />
                                 </DataTableCell>
                                 {translationLocale && (
                                     <DataTableCell>
-                                        <InputField
+                                        <TextAreaField
                                             label={fieldsTranslations[field]}
                                             value={getTranslationForField(
                                                 field
@@ -172,6 +172,7 @@ export const TranslationForm = ({
                                                     value
                                                 )
                                             }
+                                            rows={3}
                                         />
                                     </DataTableCell>
                                 )}

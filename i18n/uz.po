@@ -1,13 +1,13 @@
 # 
 # Translators:
-# Ibatov <ibatovk@who.int>, 2021
+# Ibatov <ibatovk@who.int>, 2022
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-01-03T11:09:02.270Z\n"
+"POT-Creation-Date: 2022-05-16T10:08:17.176Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Ibatov <ibatovk@who.int>, 2021\n"
+"Last-Translator: Ibatov <ibatovk@who.int>, 2022\n"
 "Language-Team: Uzbek (Cyrillic) (https://www.transifex.com/hisp-uio/teams/100509/uz@Cyrl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -62,6 +62,12 @@ msgid "Subscribe to get updates about new interpretations."
 msgstr ""
 
 msgid "Subscribe"
+msgstr ""
+
+msgid "This app could not retrieve required data."
+msgstr ""
+
+msgid "Network error"
 msgstr ""
 
 msgid "Data Type"
@@ -250,6 +256,18 @@ msgstr "Қайта номлашч"
 msgid "Save {{fileType}} as"
 msgstr ""
 
+msgid "event report"
+msgstr "ҳодиса/тадбир ҳисоботи"
+
+msgid "line list"
+msgstr ""
+
+msgid "map"
+msgstr "харита"
+
+msgid "visualization"
+msgstr ""
+
 msgid "Created by"
 msgstr "Томонидан яратилган"
 
@@ -261,6 +279,9 @@ msgstr ""
 
 msgid "Others"
 msgstr "Бошқалар"
+
+msgid "Not supported by this app yet"
+msgstr ""
 
 msgid "Filter by name"
 msgstr "Номи бўйича фильтрлаш"
@@ -278,9 +299,6 @@ msgid "Clear filters"
 msgstr "Фильтрларни тозалаш"
 
 msgid "{{firstItemIndex}}-{{lastItemIndex}} of {{totalNumberOfItems}}"
-msgstr ""
-
-msgid "All charts"
 msgstr ""
 
 msgid "Open"
@@ -355,29 +373,29 @@ msgstr ""
 msgid "New map"
 msgstr ""
 
-msgid "Open an event report"
+msgid "Open a line list"
 msgstr ""
 
-msgid "Loading event reports"
+msgid "Loading line lists"
 msgstr ""
 
-msgid "Couldn't load event reports"
+msgid "Couldn't load line lists"
 msgstr ""
 
 msgid ""
-"There was a problem loading event reports. Try again or contact your system "
+"There was a problem loading line lists. Try again or contact your system "
 "administrator."
 msgstr ""
 
-msgid "No event reports found. Click New event report to get started."
+msgid "No line lists found. Click New line list to get started."
 msgstr ""
 
 msgid ""
-"No event reports found. Try adjusting your search or filter options to find "
+"No line lists found. Try adjusting your search or filter options to find "
 "what you're looking for."
 msgstr ""
 
-msgid "New event report"
+msgid "New line list"
 msgstr ""
 
 msgid "Options"
@@ -905,8 +923,8 @@ msgstr ""
 msgid "Data"
 msgstr "Маълумот"
 
-msgid "Organisation Unit"
-msgstr "Ташкилий Бўлим"
+msgid "Organisation unit"
+msgstr "Ташкилий бўлим"
 
 msgid "Assigned Categories"
 msgstr "Белгиланган Категориялар"
@@ -914,11 +932,11 @@ msgstr "Белгиланган Категориялар"
 msgid "Pivot table"
 msgstr "Солиштирма жадвал"
 
-msgid "Column"
-msgstr "Устун"
+msgid "Area"
+msgstr "Майдон"
 
-msgid "Stacked column"
-msgstr "Йиғилган устун"
+msgid "Stacked area"
+msgstr "Йиғилган майдон"
 
 msgid "Bar"
 msgstr "Тизимча"
@@ -926,14 +944,26 @@ msgstr "Тизимча"
 msgid "Stacked bar"
 msgstr "Йиғилган тизимча"
 
+msgid "Column"
+msgstr "Устун"
+
+msgid "Year over year (column)"
+msgstr "Йилдан йилга (устун)"
+
+msgid "Stacked column"
+msgstr "Йиғилган устун"
+
+msgid "Gauge"
+msgstr "Ҳисоблагич"
+
 msgid "Line"
 msgstr "Қатор"
 
-msgid "Area"
-msgstr "Майдон"
+msgid "Line list"
+msgstr "Қаторлар рўйхати"
 
-msgid "Stacked area"
-msgstr "Йиғилган майдон"
+msgid "Year over year (line)"
+msgstr "Йилдан йилга (қатор)"
 
 msgid "Pie"
 msgstr "Бутун айлана"
@@ -941,77 +971,14 @@ msgstr "Бутун айлана"
 msgid "Radar"
 msgstr "Радар"
 
-msgid "Gauge"
-msgstr "Ҳисоблагич"
-
-msgid "Year over year (line)"
-msgstr "Йилдан йилга (қатор)"
-
-msgid "Year over year (column)"
-msgstr "Йилдан йилга (устун)"
+msgid "Scatter"
+msgstr "Тарқоқлик"
 
 msgid "Single value"
 msgstr "Ягона қиймат"
 
-msgid "Scatter"
-msgstr "Тарқоқлик"
-
-msgid "View data and indicators in a manipulatable table."
-msgstr "Бошқариладиган жадвалда индикаторлар ва маълумотларни кўздан кечиринг"
-
-msgid ""
-"Compare sizes of related elements vertically. Recommend period as filter."
+msgid "All charts"
 msgstr ""
-
-msgid ""
-"Compare parts of a whole against related elements vertically. Recommend data"
-" or org. unit as series."
-msgstr ""
-
-msgid ""
-"Compare sizes of related elements horizontally. Recommend period as filter."
-msgstr ""
-
-msgid ""
-"Compare parts of a whole against related elements horizontally. Recommend "
-"data or org. unit as series."
-msgstr ""
-
-msgid "Track or compare changes over time. Recommend period as category."
-msgstr ""
-
-msgid ""
-"Track or compare parts of a whole over time. Recommend data as series and "
-"period as category."
-msgstr ""
-
-msgid ""
-"Compare parts of a whole at a single point in time. Recommend period as "
-"filter."
-msgstr ""
-
-msgid "Compare several items against multiple variables."
-msgstr "Бир неча элементлар ва бир неча ўзгарувчиларга нисбатан таққосланг."
-
-msgid ""
-"Compare a percentage indicator against a 100% scale. Recommend period as "
-"filter."
-msgstr ""
-
-msgid "Compare changes over time between multiple time periods."
-msgstr "Вақт ўтиши билан бир неча вақт оралиғидаги ўзгаришларни таққосланг."
-
-msgid "Display a single value. Recommend relative period to show latest data."
-msgstr ""
-"Битта қийматни кўрсатиш. Охирги маълумотларни кўрсатиш учун боғлиқ даврни "
-"таққосланг."
-
-msgid ""
-"View the relationship between two data items at a place or time. Recommended"
-" for finding outliers."
-msgstr ""
-"Жой ва вақт сифатидаги икки маълумотлар орасидаги ўзаро муносабатларни "
-"кўриш. ортиқча натижаларни топиш учун тавсия этилади."
 
 msgid "{{seriesName}} (trend)"
 msgstr ""

@@ -6,21 +6,22 @@
 # Juan M Alcantara Acosta <jmalcantara1@gmail.com>, 2021
 # phil_dhis2, 2021
 # Prabhjot Singh, 2021
-# Viktor Varland <viktor@dhis2.org>, 2021
-# Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2021
+# Janeth Cruz, 2022
+# Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2022
+# Viktor Varland <viktor@dhis2.org>, 2022
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-01-03T11:09:02.270Z\n"
+"POT-Creation-Date: 2022-05-16T10:08:17.176Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2021\n"
+"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2022\n"
 "Language-Team: Spanish (https://www.transifex.com/hisp-uio/teams/100509/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: es\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
 msgid "view only"
 msgstr ""
@@ -56,6 +57,7 @@ msgid "Viewed {{count}} times"
 msgid_plural "Viewed {{count}} times"
 msgstr[0] ""
 msgstr[1] ""
+msgstr[2] ""
 
 msgid "Notifications"
 msgstr ""
@@ -70,6 +72,12 @@ msgid "Subscribe to get updates about new interpretations."
 msgstr ""
 
 msgid "Subscribe"
+msgstr ""
+
+msgid "This app could not retrieve required data."
+msgstr ""
+
+msgid "Network error"
 msgstr ""
 
 msgid "Data Type"
@@ -258,6 +266,18 @@ msgstr "Renombrar"
 msgid "Save {{fileType}} as"
 msgstr ""
 
+msgid "event report"
+msgstr "informe de evento"
+
+msgid "line list"
+msgstr ""
+
+msgid "map"
+msgstr "mapa"
+
+msgid "visualization"
+msgstr ""
+
 msgid "Created by"
 msgstr "Creado por"
 
@@ -269,6 +289,9 @@ msgstr ""
 
 msgid "Others"
 msgstr "Otros"
+
+msgid "Not supported by this app yet"
+msgstr ""
 
 msgid "Filter by name"
 msgstr "Filtrar por nombre"
@@ -286,9 +309,6 @@ msgid "Clear filters"
 msgstr "Limpiar filtros"
 
 msgid "{{firstItemIndex}}-{{lastItemIndex}} of {{totalNumberOfItems}}"
-msgstr ""
-
-msgid "All charts"
 msgstr ""
 
 msgid "Open"
@@ -363,29 +383,29 @@ msgstr ""
 msgid "New map"
 msgstr ""
 
-msgid "Open an event report"
+msgid "Open a line list"
 msgstr ""
 
-msgid "Loading event reports"
+msgid "Loading line lists"
 msgstr ""
 
-msgid "Couldn't load event reports"
+msgid "Couldn't load line lists"
 msgstr ""
 
 msgid ""
-"There was a problem loading event reports. Try again or contact your system "
+"There was a problem loading line lists. Try again or contact your system "
 "administrator."
 msgstr ""
 
-msgid "No event reports found. Click New event report to get started."
+msgid "No line lists found. Click New line list to get started."
 msgstr ""
 
 msgid ""
-"No event reports found. Try adjusting your search or filter options to find "
+"No line lists found. Try adjusting your search or filter options to find "
 "what you're looking for."
 msgstr ""
 
-msgid "New event report"
+msgid "New line list"
 msgstr ""
 
 msgid "Options"
@@ -401,16 +421,19 @@ msgid "{{count}} org units"
 msgid_plural "{{count}} org units"
 msgstr[0] ""
 msgstr[1] ""
+msgstr[2] ""
 
 msgid "{{count}} levels"
 msgid_plural "{{count}} levels"
 msgstr[0] ""
 msgstr[1] ""
+msgstr[2] ""
 
 msgid "{{count}} groups"
 msgid_plural "{{count}} groups"
 msgstr[0] ""
 msgstr[1] ""
+msgstr[2] ""
 
 msgid "Selected: {{commaSeparatedListOfOrganisationUnits}}"
 msgstr ""
@@ -701,7 +724,7 @@ msgid "Six-months"
 msgstr "Semestres"
 
 msgid "Financial Years"
-msgstr ""
+msgstr "Años fiscales"
 
 msgid "Years"
 msgstr "Años"
@@ -916,8 +939,8 @@ msgstr ""
 msgid "Data"
 msgstr "Datos"
 
-msgid "Organisation Unit"
-msgstr "Unidad Organizativa"
+msgid "Organisation unit"
+msgstr "Unidad organizativa"
 
 msgid "Assigned Categories"
 msgstr ""
@@ -925,11 +948,11 @@ msgstr ""
 msgid "Pivot table"
 msgstr "Tabla dinámica"
 
-msgid "Column"
-msgstr "Columna"
+msgid "Area"
+msgstr "Área"
 
-msgid "Stacked column"
-msgstr "Columna apilada"
+msgid "Stacked area"
+msgstr ""
 
 msgid "Bar"
 msgstr "Barra"
@@ -937,14 +960,26 @@ msgstr "Barra"
 msgid "Stacked bar"
 msgstr "Barra apilada"
 
+msgid "Column"
+msgstr "Columna"
+
+msgid "Year over year (column)"
+msgstr "Año tras año (columna)"
+
+msgid "Stacked column"
+msgstr "Columna apilada"
+
+msgid "Gauge"
+msgstr "Calibre"
+
 msgid "Line"
 msgstr "Línea"
 
-msgid "Area"
-msgstr "Área"
-
-msgid "Stacked area"
+msgid "Line list"
 msgstr ""
+
+msgid "Year over year (line)"
+msgstr "Año tras año (línea)"
 
 msgid "Pie"
 msgstr "Pastel"
@@ -952,72 +987,13 @@ msgstr "Pastel"
 msgid "Radar"
 msgstr "Radar"
 
-msgid "Gauge"
-msgstr "Calibre"
-
-msgid "Year over year (line)"
-msgstr "Año tras año (línea)"
-
-msgid "Year over year (column)"
-msgstr "Año tras año (columna)"
+msgid "Scatter"
+msgstr ""
 
 msgid "Single value"
 msgstr "Valor único"
 
-msgid "Scatter"
-msgstr ""
-
-msgid "View data and indicators in a manipulatable table."
-msgstr ""
-
-msgid ""
-"Compare sizes of related elements vertically. Recommend period as filter."
-msgstr ""
-
-msgid ""
-"Compare parts of a whole against related elements vertically. Recommend data"
-" or org. unit as series."
-msgstr ""
-
-msgid ""
-"Compare sizes of related elements horizontally. Recommend period as filter."
-msgstr ""
-
-msgid ""
-"Compare parts of a whole against related elements horizontally. Recommend "
-"data or org. unit as series."
-msgstr ""
-
-msgid "Track or compare changes over time. Recommend period as category."
-msgstr ""
-
-msgid ""
-"Track or compare parts of a whole over time. Recommend data as series and "
-"period as category."
-msgstr ""
-
-msgid ""
-"Compare parts of a whole at a single point in time. Recommend period as "
-"filter."
-msgstr ""
-
-msgid "Compare several items against multiple variables."
-msgstr ""
-
-msgid ""
-"Compare a percentage indicator against a 100% scale. Recommend period as "
-"filter."
-msgstr ""
-
-msgid "Compare changes over time between multiple time periods."
-msgstr ""
-
-msgid "Display a single value. Recommend relative period to show latest data."
-msgstr ""
-
-msgid ""
-"View the relationship between two data items at a place or time. Recommended"
-" for finding outliers."
+msgid "All charts"
 msgstr ""
 
 msgid "{{seriesName}} (trend)"
@@ -1048,6 +1024,7 @@ msgid "{{count}} items"
 msgid_plural "{{count}} items"
 msgstr[0] ""
 msgstr[1] ""
+msgstr[2] ""
 
 msgid "Reset zoom"
 msgstr ""

@@ -1,4 +1,4 @@
-Implements [DHIS2-XXXX](https://jira.dhis2.org/browse/DHIS2-XXXX)
+Implements [DHIS2-XXXX](https://dhis2.atlassian.net/browse/DHIS2-XXXX)
 
 **Relates to https://github.com/dhis2/data-visualizer-app/pull/XXX**
 

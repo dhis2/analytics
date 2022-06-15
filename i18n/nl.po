@@ -2,13 +2,14 @@
 # Translators:
 # Cherise Beek <cherise.beek@gmail.com>, 2021
 # Yury Rogachev <yury@dhis2.org>, 2021
+# Rica Zamora Duchateau, 2022
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-01-03T11:09:02.270Z\n"
+"POT-Creation-Date: 2022-05-16T10:08:17.176Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Yury Rogachev <yury@dhis2.org>, 2021\n"
+"Last-Translator: Rica Zamora Duchateau, 2022\n"
 "Language-Team: Dutch (https://www.transifex.com/hisp-uio/teams/100509/nl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -66,6 +67,12 @@ msgstr ""
 msgid "Subscribe"
 msgstr ""
 
+msgid "This app could not retrieve required data."
+msgstr ""
+
+msgid "Network error"
+msgstr ""
+
 msgid "Data Type"
 msgstr ""
 
@@ -82,7 +89,7 @@ msgid "Disaggregation"
 msgstr ""
 
 msgid "No data"
-msgstr ""
+msgstr "Geen gegevens"
 
 msgid "Loading"
 msgstr ""
@@ -139,7 +146,7 @@ msgid "Move to {{axisName}}"
 msgstr ""
 
 msgid "Add to {{axisName}}"
-msgstr ""
+msgstr "Voeg toe aan {{axisName}}"
 
 msgid "Not available for {{visualizationType}}"
 msgstr ""
@@ -148,25 +155,25 @@ msgid "Remove Assigned Categories"
 msgstr ""
 
 msgid "Add Assigned Categories"
-msgstr ""
+msgstr "Voeg Toegewezen Categorieën toe"
 
 msgid "Remove"
-msgstr ""
+msgstr "Verwijderen"
 
 msgid "Filter dimensions"
-msgstr ""
+msgstr "Filter dimensies"
 
 msgid "Main dimensions"
-msgstr ""
+msgstr "Hoofddimensies"
 
 msgid "Your dimensions"
-msgstr ""
+msgstr "Uw dimensies"
 
 msgid "Dimension recommended with selected data"
 msgstr ""
 
 msgid "All items"
-msgstr ""
+msgstr "Alle items"
 
 msgid "Automatically include all items"
 msgstr ""
@@ -196,7 +203,7 @@ msgid ""
 msgstr ""
 
 msgid "Cancel"
-msgstr ""
+msgstr "Annuleer"
 
 msgid "Delete"
 msgstr "Verwijderen"
@@ -211,7 +218,7 @@ msgid "Open…"
 msgstr ""
 
 msgid "Save"
-msgstr ""
+msgstr "Sla op"
 
 msgid "Save…"
 msgstr ""
@@ -235,16 +242,16 @@ msgid "Open in this app"
 msgstr ""
 
 msgid "Close"
-msgstr ""
+msgstr "Sluit"
 
 msgid "Rename {{fileType}}"
 msgstr ""
 
 msgid "Name"
-msgstr ""
+msgstr "Naam"
 
 msgid "Description"
-msgstr ""
+msgstr "Beschrijving"
 
 msgid "Rename"
 msgstr ""
@@ -252,8 +259,20 @@ msgstr ""
 msgid "Save {{fileType}} as"
 msgstr ""
 
-msgid "Created by"
+msgid "event report"
 msgstr ""
+
+msgid "line list"
+msgstr ""
+
+msgid "map"
+msgstr ""
+
+msgid "visualization"
+msgstr ""
+
+msgid "Created by"
+msgstr "Gecreëerd door"
 
 msgid "Anyone"
 msgstr ""
@@ -262,6 +281,9 @@ msgid "Only you"
 msgstr ""
 
 msgid "Others"
+msgstr ""
+
+msgid "Not supported by this app yet"
 msgstr ""
 
 msgid "Filter by name"
@@ -274,15 +296,12 @@ msgid "Last updated"
 msgstr "Laatst bijgewerkt"
 
 msgid "Type"
-msgstr ""
+msgstr "Soort"
 
 msgid "Clear filters"
 msgstr ""
 
 msgid "{{firstItemIndex}}-{{lastItemIndex}} of {{totalNumberOfItems}}"
-msgstr ""
-
-msgid "All charts"
 msgstr ""
 
 msgid "Open"
@@ -357,36 +376,36 @@ msgstr ""
 msgid "New map"
 msgstr ""
 
-msgid "Open an event report"
+msgid "Open a line list"
 msgstr ""
 
-msgid "Loading event reports"
+msgid "Loading line lists"
 msgstr ""
 
-msgid "Couldn't load event reports"
+msgid "Couldn't load line lists"
 msgstr ""
 
 msgid ""
-"There was a problem loading event reports. Try again or contact your system "
+"There was a problem loading line lists. Try again or contact your system "
 "administrator."
 msgstr ""
 
-msgid "No event reports found. Click New event report to get started."
+msgid "No line lists found. Click New line list to get started."
 msgstr ""
 
 msgid ""
-"No event reports found. Try adjusting your search or filter options to find "
+"No line lists found. Try adjusting your search or filter options to find "
 "what you're looking for."
 msgstr ""
 
-msgid "New event report"
+msgid "New line list"
 msgstr ""
 
 msgid "Options"
-msgstr ""
+msgstr "Opties"
 
 msgid "Hide"
-msgstr ""
+msgstr "Verbergen"
 
 msgid "Update"
 msgstr "Bijwerken"
@@ -431,10 +450,10 @@ msgid "Deselect all"
 msgstr ""
 
 msgid "Period type"
-msgstr ""
+msgstr "Soort periode"
 
 msgid "Year"
-msgstr ""
+msgstr "Jaar"
 
 msgid "Select year"
 msgstr ""
@@ -497,31 +516,31 @@ msgid "Bi-Week {{biWeekNumber}}"
 msgstr ""
 
 msgid "Daily"
-msgstr ""
+msgstr "Dagelijks"
 
 msgid "Weekly"
-msgstr ""
+msgstr "Wekelijks"
 
 msgid "Weekly (Start Wednesday)"
-msgstr ""
+msgstr "Wekelijks (Start op woensdag)"
 
 msgid "Weekly (Start Thursday)"
-msgstr ""
+msgstr "Wekelijks (Start op donderdag)"
 
 msgid "Weekly (Start Saturday)"
-msgstr ""
+msgstr "Wekelijks (Start op zaterdag)"
 
 msgid "Weekly (Start Sunday)"
-msgstr ""
+msgstr "Wekelijks (Start op zondag)"
 
 msgid "Bi-weekly"
-msgstr ""
+msgstr "Tweewekelijks"
 
 msgid "Monthly"
-msgstr ""
+msgstr "Maandelijks"
 
 msgid "Bi-monthly"
-msgstr ""
+msgstr "Tweemaandelijks"
 
 msgid "Quarterly"
 msgstr ""
@@ -533,34 +552,34 @@ msgid "Six-monthly April"
 msgstr ""
 
 msgid "Yearly"
-msgstr ""
+msgstr "Jaarlijks"
 
 msgid "Financial year (Start November)"
-msgstr ""
+msgstr "Financieel jaar (Start november)"
 
 msgid "Financial year (Start October)"
-msgstr ""
+msgstr "Financieel jaar (Start oktober)"
 
 msgid "Financial year (Start July)"
-msgstr ""
+msgstr "Financieel jaar (Start juli)"
 
 msgid "Financial year (Start April)"
-msgstr ""
+msgstr "Financieel jaar (Start april)"
 
 msgid "Today"
-msgstr ""
+msgstr "Vandaag"
 
 msgid "Yesterday"
-msgstr ""
+msgstr "Gisteren"
 
 msgid "Last 3 days"
-msgstr ""
+msgstr "Laatste 3 dagen"
 
 msgid "Last 7 days"
-msgstr ""
+msgstr "Laatste 7 dagen"
 
 msgid "Last 14 days"
-msgstr ""
+msgstr "Laatste 14 dagen"
 
 msgid "Last 30 days"
 msgstr ""
@@ -575,22 +594,22 @@ msgid "Last 180 days"
 msgstr ""
 
 msgid "This week"
-msgstr ""
+msgstr "Deze week"
 
 msgid "Last week"
-msgstr ""
+msgstr "Laatste week"
 
 msgid "Last 4 weeks"
-msgstr ""
+msgstr "Laatste 4 weken"
 
 msgid "Last 12 weeks"
-msgstr ""
+msgstr "Laatste 12 weken"
 
 msgid "Last 52 weeks"
-msgstr ""
+msgstr "Laatste 52 weken"
 
 msgid "Weeks this year"
-msgstr ""
+msgstr "Weken dit jaar"
 
 msgid "This bi-week"
 msgstr ""
@@ -602,22 +621,22 @@ msgid "Last 4 bi-weeks"
 msgstr ""
 
 msgid "This month"
-msgstr ""
+msgstr "Deze maand"
 
 msgid "Last month"
-msgstr ""
+msgstr "Laatste maand"
 
 msgid "Last 3 months"
-msgstr ""
+msgstr "Laatste 3 maanden"
 
 msgid "Last 6 months"
-msgstr ""
+msgstr "Laatste 6 maanden"
 
 msgid "Last 12 months"
-msgstr ""
+msgstr "Laatste 12 maanden"
 
 msgid "Months this year"
-msgstr ""
+msgstr "Maanden dit jaar"
 
 msgid "This bi-month"
 msgstr ""
@@ -632,43 +651,43 @@ msgid "Bi-months this year"
 msgstr ""
 
 msgid "This quarter"
-msgstr ""
+msgstr "Dit kwartier"
 
 msgid "Last quarter"
-msgstr ""
+msgstr "Laatste kwartier"
 
 msgid "Last 4 quarters"
-msgstr ""
+msgstr "Laatste 4 kwartieren"
 
 msgid "Quarters this year"
-msgstr ""
+msgstr "Kwartieren dit jaar"
 
 msgid "This six-month"
-msgstr ""
+msgstr "Dit halfjaar"
 
 msgid "Last six-month"
-msgstr ""
+msgstr "Laatste halfjaar"
 
 msgid "Last 2 six-month"
 msgstr ""
 
 msgid "This financial year"
-msgstr ""
+msgstr "Dit financieel jaar"
 
 msgid "Last financial year"
-msgstr ""
+msgstr "Laatste financieel jaar"
 
 msgid "Last 5 financial years"
-msgstr ""
+msgstr "Laatste 5 financiële jaren"
 
 msgid "This year"
-msgstr ""
+msgstr "Dit jaar"
 
 msgid "Last year"
-msgstr ""
+msgstr "Laatste jaar"
 
 msgid "Last 5 years"
-msgstr ""
+msgstr "Laatste 5 jaren"
 
 msgid "Last 10 years"
 msgstr ""
@@ -725,13 +744,13 @@ msgid "Retry"
 msgstr ""
 
 msgid "Series"
-msgstr ""
+msgstr "Reeks"
 
 msgid "Category"
-msgstr ""
+msgstr "Categorie"
 
 msgid "Filter"
-msgstr ""
+msgstr "Filter"
 
 msgid "Columns"
 msgstr ""
@@ -758,7 +777,7 @@ msgid "Expected reports"
 msgstr ""
 
 msgid "Program"
-msgstr ""
+msgstr "Programma"
 
 msgid "Select a program"
 msgstr ""
@@ -767,13 +786,13 @@ msgid "Indicators"
 msgstr ""
 
 msgid "Indicator group"
-msgstr ""
+msgstr "Indicatorgroep"
 
 msgid "All groups"
 msgstr ""
 
 msgid "Indicator"
-msgstr ""
+msgstr "Indicator"
 
 msgid "No indicator groups found"
 msgstr ""
@@ -785,7 +804,7 @@ msgid "Data elements"
 msgstr "Gegevenselementen"
 
 msgid "Data element group"
-msgstr ""
+msgstr "Gegevenselementengroep"
 
 msgid "Data element"
 msgstr "informatie onderdeel"
@@ -800,7 +819,7 @@ msgid "Data sets"
 msgstr ""
 
 msgid "Data set"
-msgstr ""
+msgstr "Gegevensreeks"
 
 msgid "All data sets"
 msgstr ""
@@ -809,13 +828,13 @@ msgid "Loading data sets"
 msgstr ""
 
 msgid "Event data items"
-msgstr ""
+msgstr "Gebeurtenisgegevensitems"
 
 msgid "All programs"
 msgstr ""
 
 msgid "Event data item"
-msgstr ""
+msgstr "Gebeurtenisgegevensitem"
 
 msgid "No programs found"
 msgstr ""
@@ -824,10 +843,10 @@ msgid "Loading programs"
 msgstr ""
 
 msgid "Program indicators"
-msgstr ""
+msgstr "Programmaindicators"
 
 msgid "Program indicator"
-msgstr ""
+msgstr "Programmaindicator"
 
 msgid "Extra Small"
 msgstr ""
@@ -908,10 +927,10 @@ msgid "{{thresholdFactor}} × Z-score high"
 msgstr ""
 
 msgid "Data"
-msgstr ""
+msgstr "Gegevens"
 
-msgid "Organisation Unit"
-msgstr ""
+msgid "Organisation unit"
+msgstr "Organisatieëenheid"
 
 msgid "Assigned Categories"
 msgstr ""
@@ -919,99 +938,52 @@ msgstr ""
 msgid "Pivot table"
 msgstr ""
 
-msgid "Column"
-msgstr ""
-
-msgid "Stacked column"
-msgstr ""
-
-msgid "Bar"
-msgstr ""
-
-msgid "Stacked bar"
-msgstr ""
-
-msgid "Line"
-msgstr ""
-
 msgid "Area"
-msgstr ""
+msgstr "Oppervlakte"
 
 msgid "Stacked area"
 msgstr ""
 
-msgid "Pie"
-msgstr ""
+msgid "Bar"
+msgstr "Staaf"
 
-msgid "Radar"
-msgstr ""
+msgid "Stacked bar"
+msgstr "Gestapelde staaf"
+
+msgid "Column"
+msgstr "Kolom"
+
+msgid "Year over year (column)"
+msgstr "Jaar over jaar (kolom)"
+
+msgid "Stacked column"
+msgstr "Gestapelde kolom"
 
 msgid "Gauge"
+msgstr "Graadmeter"
+
+msgid "Line"
+msgstr "Lijn"
+
+msgid "Line list"
 msgstr ""
 
 msgid "Year over year (line)"
-msgstr ""
+msgstr "Jaar over jaar (lijn)"
 
-msgid "Year over year (column)"
+msgid "Pie"
+msgstr "Taart"
+
+msgid "Radar"
+msgstr "Radar"
+
+msgid "Scatter"
 msgstr ""
 
 msgid "Single value"
 msgstr ""
 
-msgid "Scatter"
-msgstr ""
-
-msgid "View data and indicators in a manipulatable table."
-msgstr ""
-
-msgid ""
-"Compare sizes of related elements vertically. Recommend period as filter."
-msgstr ""
-
-msgid ""
-"Compare parts of a whole against related elements vertically. Recommend data"
-" or org. unit as series."
-msgstr ""
-
-msgid ""
-"Compare sizes of related elements horizontally. Recommend period as filter."
-msgstr ""
-
-msgid ""
-"Compare parts of a whole against related elements horizontally. Recommend "
-"data or org. unit as series."
-msgstr ""
-
-msgid "Track or compare changes over time. Recommend period as category."
-msgstr ""
-
-msgid ""
-"Track or compare parts of a whole over time. Recommend data as series and "
-"period as category."
-msgstr ""
-
-msgid ""
-"Compare parts of a whole at a single point in time. Recommend period as "
-"filter."
-msgstr ""
-
-msgid "Compare several items against multiple variables."
-msgstr ""
-
-msgid ""
-"Compare a percentage indicator against a 100% scale. Recommend period as "
-"filter."
-msgstr ""
-
-msgid "Compare changes over time between multiple time periods."
-msgstr ""
-
-msgid "Display a single value. Recommend relative period to show latest data."
-msgstr ""
-
-msgid ""
-"View the relationship between two data items at a place or time. Recommended"
-" for finding outliers."
+msgid "All charts"
 msgstr ""
 
 msgid "{{seriesName}} (trend)"

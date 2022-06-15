@@ -1,6 +1,6 @@
 {
     "name": "@dhis2/analytics",
-    "version": "21.3.0",
+    "version": "23.12.0",
     "main": "./build/cjs/index.js",
     "module": "./build/es/index.js",
     "exports": {
@@ -31,18 +31,18 @@
         "validate-push": "yarn test"
     },
     "devDependencies": {
-        "@dhis2/app-runtime": "^3.2.7",
-        "@dhis2/cli-app-scripts": "^8.3.2",
-        "@dhis2/cli-style": "^10.1.1",
+        "@dhis2/app-runtime": "^3.4.3",
+        "@dhis2/cli-app-scripts": "^9.0.0",
+        "@dhis2/cli-style": "^10.4.1",
         "@dhis2/d2-i18n": "^1.1.0",
-        "@dhis2/ui": "^7.14.0",
+        "@dhis2/ui": "^8.3.1",
         "@sambego/storybook-state": "^2.0.1",
         "@storybook/addons": "^6.1.14",
         "@storybook/preset-create-react-app": "^3.1.7",
         "@storybook/react": "^6.1.14",
         "enzyme": "^3.9.0",
         "enzyme-adapter-react-16": "^1.15.6",
-        "fs-extra": "^10.0.0",
+        "fs-extra": "^10.1.0",
         "jest-enzyme": "^7.0.2",
         "prop-types": "^15",
         "styled-jsx": "^4.0.1",
@@ -51,18 +51,18 @@
     "peerDependencies": {
         "@dhis2/app-runtime": "^3",
         "@dhis2/d2-i18n": "^1.1",
-        "@dhis2/ui": "^7.14.0",
+        "@dhis2/ui": "^8.2.5",
         "prop-types": "^15",
         "react": "^16.3",
         "react-dom": "^16.3",
         "styled-jsx": "^4.0.1"
     },
     "dependencies": {
-        "@dhis2/d2-ui-translation-dialog": "^7.3.1",
+        "@dhis2/d2-ui-rich-text": "^7.4.0",
         "classnames": "^2.3.1",
         "d2-utilizr": "^0.2.16",
         "d3-color": "^1.2.3",
-        "highcharts": "^9.1.2",
+        "highcharts": "^10.1.0",
         "lodash": "^4.17.21",
         "mathjs": "^9.4.2",
         "react-beautiful-dnd": "^10.1.1",

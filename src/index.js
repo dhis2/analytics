@@ -29,10 +29,22 @@ export { default as LegendKey } from './components/LegendKey/LegendKey.js'
 
 export { default as AboutAOUnit } from './components/AboutAOUnit/AboutAOUnit.js'
 
+export { InterpretationsUnit } from './components/Interpretations/InterpretationsUnit/InterpretationsUnit.js'
+export { InterpretationModal } from './components/Interpretations/InterpretationModal/InterpretationModal.js'
+
+export {
+    CachedDataQueryProvider,
+    useCachedDataQuery,
+} from './components/CachedDataQueryProvider.js'
+
 // Api
 
 export { default as Analytics } from './api/analytics/Analytics.js'
-export { apiFetchDimensions, apiFetchRecommendedIds } from './api/dimensions.js'
+export {
+    apiFetchDimensions,
+    apiFetchRecommendedIds,
+    apiFetchItemsByDimension,
+} from './api/dimensions.js'
 export {
     apiFetchOrganisationUnitLevels,
     apiFetchOrganisationUnitRoots,
@@ -99,6 +111,30 @@ export { layoutHasDimension } from './modules/layout/layoutHasDimension.js'
 export { layoutHasDynamicDimension } from './modules/layout/layoutHasDynamicDimension.js'
 export { layoutHasPeriodDimension } from './modules/layout/layoutHasPeriodDimension.js'
 
+// Modules: valueTypes
+export {
+    VALUE_TYPE_NUMBER,
+    VALUE_TYPE_UNIT_INTERVAL,
+    VALUE_TYPE_PERCENTAGE,
+    VALUE_TYPE_INTEGER,
+    VALUE_TYPE_INTEGER_POSITIVE,
+    VALUE_TYPE_INTEGER_NEGATIVE,
+    VALUE_TYPE_INTEGER_ZERO_OR_POSITIVE,
+    VALUE_TYPE_TEXT,
+    VALUE_TYPE_LONG_TEXT,
+    VALUE_TYPE_LETTER,
+    VALUE_TYPE_PHONE_NUMBER,
+    VALUE_TYPE_EMAIL,
+    VALUE_TYPE_USERNAME,
+    VALUE_TYPE_URL,
+    VALUE_TYPE_BOOLEAN,
+    VALUE_TYPE_TRUE_ONLY,
+    VALUE_TYPE_DATE,
+    VALUE_TYPE_TIME,
+    VALUE_TYPE_DATETIME,
+    VALUE_TYPE_ORGANISATION_UNIT,
+} from './modules/valueTypes.js'
+
 export {
     AXIS,
     AXIS_ID_COLUMNS,
@@ -140,6 +176,8 @@ export { getLayoutTypeByVisType } from './modules/visTypeToLayoutType.js'
 // Modules: visTypes
 
 export {
+    VIS_TYPE_GROUP_ALL,
+    VIS_TYPE_GROUP_CHARTS,
     VIS_TYPE_COLUMN,
     VIS_TYPE_STACKED_COLUMN,
     VIS_TYPE_BAR,
@@ -156,8 +194,8 @@ export {
     VIS_TYPE_SINGLE_VALUE,
     VIS_TYPE_PIVOT_TABLE,
     VIS_TYPE_SCATTER,
+    VIS_TYPE_LINE_LIST,
     visTypeDisplayNames,
-    visTypeDescriptions,
     visTypeIcons,
     getDisplayNameByVisType,
     defaultVisType,
@@ -181,6 +219,7 @@ export {
     LAYOUT_TYPE_YEAR_OVER_YEAR,
     LAYOUT_TYPE_PIVOT_TABLE,
     LAYOUT_TYPE_SCATTER,
+    LAYOUT_TYPE_LINE_LIST,
 } from './modules/layoutTypes.js'
 
 // Modules: layoutUiRules
@@ -237,15 +276,18 @@ export {
     LEGEND_DISPLAY_STRATEGY_FIXED,
     LEGEND_DISPLAY_STYLE_FILL,
     LEGEND_DISPLAY_STYLE_TEXT,
+    getColorByValueFromLegendSet,
 } from './modules/legends.js'
 
-// Modules: pivotTable
+// Modules: general
 
-export { renderValue as formatValue } from './modules/pivotTable/renderValue.js'
+export { renderValue as formatValue } from './modules/renderValue.js'
 
 // Utils: colorSets
 export {
     COLOR_SET_DEFAULT,
+    COLOR_SET_BASIC,
+    COLOR_SET_EXTENDED,
     COLOR_SET_BRIGHT,
     COLOR_SET_DARK,
     COLOR_SET_GRAY,
@@ -262,6 +304,7 @@ export {
     WEEKLYTHU,
     WEEKLYSAT,
     WEEKLYSUN,
+    WEEKS_THIS_YEAR,
     BIWEEKLY,
     MONTHLY,
     BIMONTHLY,
@@ -279,3 +322,22 @@ export { getRelativePeriodsOptionsById } from './components/PeriodDimension/util
 export { getFixedPeriodsOptionsById } from './components/PeriodDimension/utils/fixedPeriods.js'
 
 export { default as VisualizationOptions } from './components/Options/VisualizationOptions.js'
+
+export {
+    DIMENSION_TYPE_INDICATOR,
+    DIMENSION_TYPE_DATA_ELEMENT,
+    DIMENSION_TYPE_DATA_SET,
+    DIMENSION_TYPE_EVENT_DATA_ITEM,
+    DIMENSION_TYPE_PROGRAM_INDICATOR,
+    DIMENSION_TYPE_PROGRAM_DATA_ELEMENT,
+    DIMENSION_TYPE_PROGRAM_ATTRIBUTE,
+    DIMENSION_TYPE_DATA_ELEMENT_OPERAND,
+    DIMENSION_TYPE_CATEGORY,
+    DIMENSION_TYPE_CATEGORY_OPTION_GROUP_SET,
+    DIMENSION_TYPE_ALL,
+    DIMENSION_TYPE_DATA,
+    DIMENSION_TYPE_DATA_ELEMENT_GROUP_SET,
+    DIMENSION_TYPE_ORGANISATION_UNIT,
+    DIMENSION_TYPE_PERIOD,
+    DIMENSION_TYPE_ORGANISATION_UNIT_GROUP_SET,
+} from './modules/dataTypes.js'
