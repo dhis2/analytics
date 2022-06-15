@@ -35,7 +35,7 @@
         "@dhis2/cli-app-scripts": "^9.0.0",
         "@dhis2/cli-style": "^10.4.1",
         "@dhis2/d2-i18n": "^1.1.0",
-        "@dhis2/ui": "^8.3.1",
+        "@dhis2/ui": "^8.4.2",
         "@sambego/storybook-state": "^2.0.1",
         "@storybook/addons": "^6.1.14",
         "@storybook/preset-create-react-app": "^3.1.7",
@@ -58,6 +58,7 @@
         "styled-jsx": "^4.0.1"
     },
     "dependencies": {
+        "@dhis2/d2-ui-rich-text": "^7.4.0",
         "classnames": "^2.3.1",
         "d2-utilizr": "^0.2.16",
         "d3-color": "^1.2.3",
