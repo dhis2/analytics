@@ -37,7 +37,7 @@
         "@dhis2/d2-i18n": "^1.1.0",
         "@dhis2/ui": "^8.3.1",
         "@sambego/storybook-state": "^2.0.1",
-        "@storybook/addons": "^6.1.14",
+        "@storybook/addons": "^6.5.9",
         "@storybook/preset-create-react-app": "^3.1.7",
         "@storybook/react": "^6.1.14",
         "enzyme": "^3.9.0",
@@ -58,6 +58,7 @@
         "styled-jsx": "^4.0.1"
     },
     "dependencies": {
+        "@dhis2/d2-ui-rich-text": "^7.4.0",
         "classnames": "^2.3.1",
         "d2-utilizr": "^0.2.16",
         "d3-color": "^1.2.3",
