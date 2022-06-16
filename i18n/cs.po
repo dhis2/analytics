@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-05-16T10:08:17.176Z\n"
+"POT-Creation-Date: 2022-05-23T11:59:44.384Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: trendspotter <jirka.p@volny.cz>, 2022\n"
 "Language-Team: Czech (https://www.transifex.com/hisp-uio/teams/100509/cs/)\n"
@@ -275,6 +275,104 @@ msgstr "mapa"
 msgid "visualization"
 msgstr ""
 
+msgid "Edit"
+msgstr "Upravit"
+
+msgid "Write a reply"
+msgstr "Napsat odpověď"
+
+msgid "Post reply"
+msgstr ""
+
+msgid "Could not update comment"
+msgstr ""
+
+msgid "Enter comment text"
+msgstr ""
+
+msgid "Update"
+msgstr "Aktualizovat"
+
+msgid "Viewing interpretation: {{visualisationName}}"
+msgstr ""
+
+msgid "Could not load interpretation"
+msgstr ""
+
+msgid ""
+"The interpretation couldn’t be displayed. Try again or contact your system "
+"administrator."
+msgstr ""
+
+msgid "Hide interpretation"
+msgstr ""
+
+msgid "Write an interpretation"
+msgstr "Napsat interpretaci"
+
+msgid "Post interpretation"
+msgstr ""
+
+msgid "Interpretations"
+msgstr "Interpretace"
+
+msgid "Unlike"
+msgstr "Na rozdíl od"
+
+msgid "Like"
+msgstr "Jako"
+
+msgid "Reply"
+msgstr "Odpovědět"
+
+msgid "Share"
+msgstr "Sdílet"
+
+msgid "See interpretation"
+msgstr ""
+
+msgid "Manage sharing"
+msgstr "Spravovat sdílení"
+
+msgid "Could not update interpretation"
+msgstr ""
+
+msgid "Enter interpretation text"
+msgstr ""
+
+msgid "Bold text"
+msgstr ""
+
+msgid "Italic text"
+msgstr ""
+
+msgid "Link to a URL"
+msgstr ""
+
+msgid "Mention a user"
+msgstr ""
+
+msgid "Add emoji"
+msgstr ""
+
+msgid "Preview"
+msgstr "Náhled"
+
+msgid "Back to write mode"
+msgstr ""
+
+msgid "Too many results. Try refining the search."
+msgstr ""
+
+msgid "Search for a user"
+msgstr ""
+
+msgid "Searching for \"{{searchText}}\""
+msgstr ""
+
+msgid "No results found"
+msgstr "Nenalezeny žádné výsledky"
+
 msgid "Created by"
 msgstr "Vytvořil"
 
@@ -429,9 +527,6 @@ msgstr "Možnosti"
 
 msgid "Hide"
 msgstr "Skrýt"
-
-msgid "Update"
-msgstr "Aktualizovat"
 
 msgid "{{count}} org units"
 msgid_plural "{{count}} org units"
