@@ -118,7 +118,6 @@ function getDefault({
     extraOptions,
     legendSets,
     displayStrategy,
-    fontSize,
 }) {
     const fullIdAxisMap = getFullIdAxisMap(layout.series, series)
     const idColorMap = getIdColorMap(series, layout, extraOptions)
@@ -203,7 +202,6 @@ function getDefault({
             legendSetId: metaData[seriesObj.id]?.legendSet,
         })
 
-        seriesObj.fontSize = fontSize
         // displayStrategy
         seriesObj.marker = {
             enabled: false,
@@ -226,7 +224,6 @@ export default function ({
     extraOptions,
     legendSets,
     displayStrategy,
-    fontSize,
 }) {
     switch (layout.type) {
         case VIS_TYPE_PIE:
@@ -250,7 +247,6 @@ export default function ({
                 extraOptions,
                 legendSets,
                 displayStrategy,
-                fontSize,
             })
     }
 

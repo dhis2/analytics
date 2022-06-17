@@ -15,37 +15,51 @@ HPF(H)
 HB(H)
 
 function drawLegendSymbolWrap() {
-    H.seriesTypes.column.prototype.drawLegendSymbol = function () {
-        if (this.options.legendSet?.legends?.length) {
-            this.options.legendSet.legends
-                .sort((a, b) => b.startValue - a.startValue)
-                .forEach((legend, index) => {
-                    this.chart.renderer
-                        .circle(
-                            10 + index * -(this.options.fontSize - 5),
-                            Math.round(this.options.fontSize * 0.615 * 10) /
-                                10 +
-                                3,
-                            this.options.fontSize / 2
-                        )
-                        .attr({
-                            fill: legend.color,
-                        })
-                        .add(this.legendGroup)
-                })
-        } else {
-            this.chart.renderer
-                .circle(
-                    10,
-                    Math.round(this.options.fontSize * 0.615 * 10) / 10 + 3,
-                    this.options.fontSize / 2
+    const pick = H.pick
+    H.wrap(
+        H.seriesTypes.column.prototype,
+        'drawLegendSymbol',
+        function (proceed, legend, item) {
+            if (this.options.legendSet?.legends?.length) {
+                const ys = legend.baseline - legend.symbolHeight + 1, // y start
+                    x = legend.symbolWidth / 2 > 8 ? legend.symbolWidth / 2 : 8, // x start
+                    ye = legend.symbolHeight + ys // y end
+                const legends = this.options.legendSet.legends.sort(
+                    (a, b) => a.startValue - b.startValue
                 )
-                .attr({
-                    fill: this.options.color,
-                })
-                .add(this.legendGroup)
+                this.chart.renderer
+                    .path(['M', x, ys, 'A', 1, 1, 0, 0, 0, x, ye, 'V', ys])
+                    .attr({
+                        fill: legends.at(legends.length >= 5 ? 1 : 0).color,
+                    })
+                    .add(this.legendGroup)
+                this.chart.renderer
+                    .path(['M', x, ye, 'A', 1, 1, 0, 0, 0, x, ys, 'V', ye])
+                    .attr({
+                        fill: legends.at(legends.length >= 5 ? -2 : -1).color,
+                    })
+                    .add(this.legendGroup)
+            } else {
+                var options = legend.options,
+                    symbolHeight = legend.symbolHeight,
+                    square = options.squareSymbol,
+                    symbolWidth = square ? symbolHeight : legend.symbolWidth
+                item.legendSymbol = this.chart.renderer
+                    .rect(
+                        square ? (legend.symbolWidth - symbolHeight) / 2 : 0,
+                        legend.baseline - symbolHeight + 1,
+                        symbolWidth,
+                        symbolHeight,
+                        pick(legend.options.symbolRadius, symbolHeight / 2)
+                    )
+                    .addClass('highcharts-point')
+                    .attr({
+                        zIndex: 3,
+                    })
+                    .add(item.legendGroup)
+            }
         }
-    }
+    )
 }
 
 export default function (config, el) {
