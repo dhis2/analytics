@@ -321,7 +321,7 @@ msgid "Reply"
 msgstr "Svar"
 
 msgid "Share"
-msgstr ""
+msgstr "Dela med sig"
 
 msgid "See interpretation"
 msgstr ""

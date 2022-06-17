@@ -1,16 +1,16 @@
 # 
 # Translators:
 # Nadiia <semchuk@aph.org.ua>, 2021
+# Wanda <wanda@frontlineaids.org>, 2022
 # phil_dhis2, 2022
 # Viktor Varland <viktor@dhis2.org>, 2022
-# Wanda <wanda@frontlineaids.org>, 2022
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2022-05-23T11:59:44.384Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Wanda <wanda@frontlineaids.org>, 2022\n"
+"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2022\n"
 "Language-Team: Ukrainian (https://www.transifex.com/hisp-uio/teams/100509/uk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -275,7 +275,7 @@ msgid "visualization"
 msgstr ""
 
 msgid "Edit"
-msgstr ""
+msgstr "Редагувати"
 
 msgid "Write a reply"
 msgstr ""
@@ -313,10 +313,10 @@ msgid "Post interpretation"
 msgstr ""
 
 msgid "Interpretations"
-msgstr ""
+msgstr "Інтерпретації"
 
 msgid "Unlike"
-msgstr ""
+msgstr "Прибрати вподобання"
 
 msgid "Like"
 msgstr "Вподобати"
@@ -325,7 +325,7 @@ msgid "Reply"
 msgstr "Відповісти"
 
 msgid "Share"
-msgstr ""
+msgstr "Поділитися"
 
 msgid "See interpretation"
 msgstr ""
@@ -370,7 +370,7 @@ msgid "Searching for \"{{searchText}}\""
 msgstr ""
 
 msgid "No results found"
-msgstr ""
+msgstr "Результатів не знайдено"
 
 msgid "Created by"
 msgstr "Створено"
