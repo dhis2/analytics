@@ -202,7 +202,6 @@ function getDefault({
             legendSetId: metaData[seriesObj.id]?.legendSet,
         })
 
-        // displayStrategy
         seriesObj.marker = {
             enabled: false,
         }

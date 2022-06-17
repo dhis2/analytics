@@ -117,9 +117,6 @@ export default function ({ store, layout, el, extraConfig, extraOptions }) {
             fontStyle: _layout.seriesKey?.label?.fontStyle,
             visType: _layout.type,
             dashboard: _extraOptions.dashboard,
-            // legendSets,
-            // metaData: store.data[0].metaData.items,
-            // displayStrategy: _layout.legend?.strategy,
         }),
 
         // pane
