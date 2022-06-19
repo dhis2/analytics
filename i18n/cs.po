@@ -267,13 +267,13 @@ msgid "event report"
 msgstr "zpráva o události"
 
 msgid "line list"
-msgstr ""
+msgstr "seznam řádků"
 
 msgid "map"
 msgstr "mapa"
 
 msgid "visualization"
-msgstr ""
+msgstr "vizualizace"
 
 msgid "Edit"
 msgstr "Upravit"
@@ -282,36 +282,38 @@ msgid "Write a reply"
 msgstr "Napsat odpověď"
 
 msgid "Post reply"
-msgstr ""
+msgstr "Odpovědět"
 
 msgid "Could not update comment"
-msgstr ""
+msgstr "Komentář se nepodařilo aktualizovat"
 
 msgid "Enter comment text"
-msgstr ""
+msgstr "Zadejte text komentáře"
 
 msgid "Update"
 msgstr "Aktualizovat"
 
 msgid "Viewing interpretation: {{visualisationName}}"
-msgstr ""
+msgstr "Zobrazení interpretace: {{visualisationName}}"
 
 msgid "Could not load interpretation"
-msgstr ""
+msgstr "Interpretaci nelze načíst"
 
 msgid ""
 "The interpretation couldn’t be displayed. Try again or contact your system "
 "administrator."
 msgstr ""
+"Interpretaci se nepodařilo zobrazit. Zkuste to znovu nebo se obraťte na "
+"správce systému."
 
 msgid "Hide interpretation"
-msgstr ""
+msgstr "Skrýt interpretaci"
 
 msgid "Write an interpretation"
 msgstr "Napsat interpretaci"
 
 msgid "Post interpretation"
-msgstr ""
+msgstr "Vložit interpretaci"
 
 msgid "Interpretations"
 msgstr "Interpretace"
@@ -329,46 +331,46 @@ msgid "Share"
 msgstr "Sdílet"
 
 msgid "See interpretation"
-msgstr ""
+msgstr "Zobrazit interpretaci"
 
 msgid "Manage sharing"
 msgstr "Spravovat sdílení"
 
 msgid "Could not update interpretation"
-msgstr ""
+msgstr "Interpretaci nelze aktualizovat"
 
 msgid "Enter interpretation text"
-msgstr ""
+msgstr "Zadejte text interpretace"
 
 msgid "Bold text"
-msgstr ""
+msgstr "Tučné písmo"
 
 msgid "Italic text"
-msgstr ""
+msgstr "Text kurzívou"
 
 msgid "Link to a URL"
-msgstr ""
+msgstr "Odkaz na URL"
 
 msgid "Mention a user"
-msgstr ""
+msgstr "Zmínit uživatele"
 
 msgid "Add emoji"
-msgstr ""
+msgstr "Přidat emotikony"
 
 msgid "Preview"
 msgstr "Náhled"
 
 msgid "Back to write mode"
-msgstr ""
+msgstr "Zpět do režimu zápisu"
 
 msgid "Too many results. Try refining the search."
-msgstr ""
+msgstr "Příliš mnoho výsledků. Zkuste upřesnit vyhledávání."
 
 msgid "Search for a user"
-msgstr ""
+msgstr "Vyhledat uživatele"
 
 msgid "Searching for \"{{searchText}}\""
-msgstr ""
+msgstr "Hledání \"{{searchText}}\""
 
 msgid "No results found"
 msgstr "Nenalezeny žádné výsledky"
