@@ -1,16 +1,16 @@
 # 
 # Translators:
 # Viktor Varland <viktor@dhis2.org>, 2021
-# easylin <lin_xd@126.com>, 2022
 # 晓东 林 <13981924470@126.com>, 2022
 # phil_dhis2, 2022
+# easylin <lin_xd@126.com>, 2022
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2022-05-23T11:59:44.384Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: phil_dhis2, 2022\n"
+"Last-Translator: easylin <lin_xd@126.com>, 2022\n"
 "Language-Team: Chinese (https://www.transifex.com/hisp-uio/teams/100509/zh/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -278,36 +278,36 @@ msgid "Write a reply"
 msgstr "书写应答"
 
 msgid "Post reply"
-msgstr ""
+msgstr "发表回复"
 
 msgid "Could not update comment"
-msgstr ""
+msgstr "无法更新评论"
 
 msgid "Enter comment text"
-msgstr ""
+msgstr "输入评论文本"
 
 msgid "Update"
 msgstr "更新"
 
 msgid "Viewing interpretation: {{visualisationName}}"
-msgstr ""
+msgstr "查看解释：{{visualisationName}}"
 
 msgid "Could not load interpretation"
-msgstr ""
+msgstr "无法加载解释"
 
 msgid ""
 "The interpretation couldn’t be displayed. Try again or contact your system "
 "administrator."
-msgstr ""
+msgstr "无法显示解释。重试或联系您的系统管理员。"
 
 msgid "Hide interpretation"
-msgstr ""
+msgstr "隐藏解释"
 
 msgid "Write an interpretation"
 msgstr "书写注释"
 
 msgid "Post interpretation"
-msgstr ""
+msgstr "后解释"
 
 msgid "Interpretations"
 msgstr "解释"
@@ -325,46 +325,46 @@ msgid "Share"
 msgstr "分享"
 
 msgid "See interpretation"
-msgstr ""
+msgstr "见解释"
 
 msgid "Manage sharing"
 msgstr "管理共享"
 
 msgid "Could not update interpretation"
-msgstr ""
+msgstr "无法更新解释"
 
 msgid "Enter interpretation text"
-msgstr ""
+msgstr "输入解释文本"
 
 msgid "Bold text"
-msgstr ""
+msgstr "粗体文字"
 
 msgid "Italic text"
-msgstr ""
+msgstr "斜体文字"
 
 msgid "Link to a URL"
-msgstr ""
+msgstr "链接到 URL"
 
 msgid "Mention a user"
-msgstr ""
+msgstr "提及用户"
 
 msgid "Add emoji"
-msgstr ""
+msgstr "添加表情符号"
 
 msgid "Preview"
 msgstr "预览"
 
 msgid "Back to write mode"
-msgstr ""
+msgstr "返回写入模式"
 
 msgid "Too many results. Try refining the search."
-msgstr ""
+msgstr "结果太多。尝试优化搜索。"
 
 msgid "Search for a user"
-msgstr ""
+msgstr "搜索用户"
 
 msgid "Searching for \"{{searchText}}\""
-msgstr ""
+msgstr "正在搜索“{{searchText}}”"
 
 msgid "No results found"
 msgstr "没有结果"
