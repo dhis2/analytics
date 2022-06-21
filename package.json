@@ -46,7 +46,7 @@
         "jest-enzyme": "^7.0.2",
         "prop-types": "^15",
         "styled-jsx": "^4.0.1",
-        "typeface-roboto": "^0.0.75"
+        "typeface-roboto": "^1.1.13"
     },
     "peerDependencies": {
         "@dhis2/app-runtime": "^3",
