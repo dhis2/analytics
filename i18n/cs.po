@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-03-17T10:18:53.422Z\n"
+"POT-Creation-Date: 2022-05-23T11:59:44.384Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: trendspotter <jirka.p@volny.cz>, 2022\n"
 "Language-Team: Czech (https://www.transifex.com/hisp-uio/teams/100509/cs/)\n"
@@ -267,13 +267,113 @@ msgid "event report"
 msgstr "zpráva o události"
 
 msgid "line list"
-msgstr ""
+msgstr "seznam řádků"
 
 msgid "map"
 msgstr "mapa"
 
 msgid "visualization"
+msgstr "vizualizace"
+
+msgid "Edit"
+msgstr "Upravit"
+
+msgid "Write a reply"
+msgstr "Napsat odpověď"
+
+msgid "Post reply"
+msgstr "Odpovědět"
+
+msgid "Could not update comment"
+msgstr "Komentář se nepodařilo aktualizovat"
+
+msgid "Enter comment text"
+msgstr "Zadejte text komentáře"
+
+msgid "Update"
+msgstr "Aktualizovat"
+
+msgid "Viewing interpretation: {{visualisationName}}"
+msgstr "Zobrazení interpretace: {{visualisationName}}"
+
+msgid "Could not load interpretation"
+msgstr "Interpretaci nelze načíst"
+
+msgid ""
+"The interpretation couldn’t be displayed. Try again or contact your system "
+"administrator."
 msgstr ""
+"Interpretaci se nepodařilo zobrazit. Zkuste to znovu nebo se obraťte na "
+"správce systému."
+
+msgid "Hide interpretation"
+msgstr "Skrýt interpretaci"
+
+msgid "Write an interpretation"
+msgstr "Napsat interpretaci"
+
+msgid "Post interpretation"
+msgstr "Vložit interpretaci"
+
+msgid "Interpretations"
+msgstr "Interpretace"
+
+msgid "Unlike"
+msgstr "Na rozdíl od"
+
+msgid "Like"
+msgstr "Jako"
+
+msgid "Reply"
+msgstr "Odpovědět"
+
+msgid "Share"
+msgstr "Sdílet"
+
+msgid "See interpretation"
+msgstr "Zobrazit interpretaci"
+
+msgid "Manage sharing"
+msgstr "Spravovat sdílení"
+
+msgid "Could not update interpretation"
+msgstr "Interpretaci nelze aktualizovat"
+
+msgid "Enter interpretation text"
+msgstr "Zadejte text interpretace"
+
+msgid "Bold text"
+msgstr "Tučné písmo"
+
+msgid "Italic text"
+msgstr "Text kurzívou"
+
+msgid "Link to a URL"
+msgstr "Odkaz na URL"
+
+msgid "Mention a user"
+msgstr "Zmínit uživatele"
+
+msgid "Add emoji"
+msgstr "Přidat emotikony"
+
+msgid "Preview"
+msgstr "Náhled"
+
+msgid "Back to write mode"
+msgstr "Zpět do režimu zápisu"
+
+msgid "Too many results. Try refining the search."
+msgstr "Příliš mnoho výsledků. Zkuste upřesnit vyhledávání."
+
+msgid "Search for a user"
+msgstr "Vyhledat uživatele"
+
+msgid "Searching for \"{{searchText}}\""
+msgstr "Hledání \"{{searchText}}\""
+
+msgid "No results found"
+msgstr "Nenalezeny žádné výsledky"
 
 msgid "Created by"
 msgstr "Vytvořil"
@@ -429,9 +529,6 @@ msgstr "Možnosti"
 
 msgid "Hide"
 msgstr "Skrýt"
-
-msgid "Update"
-msgstr "Aktualizovat"
 
 msgid "{{count}} org units"
 msgid_plural "{{count}} org units"
@@ -958,7 +1055,7 @@ msgstr "{{thresholdFactor}} × Z-skóre vysoké"
 msgid "Data"
 msgstr "Data"
 
-msgid "Organisation Unit"
+msgid "Organisation unit"
 msgstr "Organizační jednotka"
 
 msgid "Assigned Categories"

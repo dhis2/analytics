@@ -136,11 +136,11 @@ const formatLabel = ({
             .sort((a, b) => a.startValue - b.startValue)
             .forEach((legend, index) =>
                 result.push(
-                    `<svg xmlns="http://www.w3.org/2000/svg" width="${
+                    `<svg width="${
                         fontStyle[FONT_STYLE_OPTION_FONT_SIZE]
                     }" height="${
                         fontStyle[FONT_STYLE_OPTION_FONT_SIZE]
-                    }" version="1.1"  style="margin-right:-5px; z-index: ${
+                    }" style="margin-right:-5px; z-index: ${
                         legendSet.legends.length - index
                     }" class="data-test-series-key-item-bullet">
                     <circle cx="${
@@ -160,7 +160,7 @@ const formatLabel = ({
             const pattern =
                 colorSets[COLOR_SET_PATTERNS].patterns[seriesColor.patternIndex]
             result.push(
-                `<svg xmlns="http://www.w3.org/2000/svg" style="height: ${
+                `<svg style="height: ${
                     fontStyle[FONT_STYLE_OPTION_FONT_SIZE]
                 }px; width: ${
                     fontStyle[FONT_STYLE_OPTION_FONT_SIZE]
@@ -183,11 +183,11 @@ const formatLabel = ({
             )
         } else {
             result.push(
-                `<svg xmlns="http://www.w3.org/2000/svg" width="${
+                `<svg width="${
                     fontStyle[FONT_STYLE_OPTION_FONT_SIZE]
                 }" height="${
                     fontStyle[FONT_STYLE_OPTION_FONT_SIZE]
-                }" version="1.1"  style="margin-right:5px" class="data-test-series-key-item-bullet">
+                }" style="margin-right:5px" class="data-test-series-key-item-bullet">
                     <circle cx="${
                         fontStyle[FONT_STYLE_OPTION_FONT_SIZE] / 2
                     }" cy="${fontStyle[FONT_STYLE_OPTION_FONT_SIZE] / 2}" r="${

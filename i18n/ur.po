@@ -1,14 +1,14 @@
 # 
 # Translators:
-# phil_dhis2, 2021
-# Viktor Varland <viktor@dhis2.org>, 2021
+# phil_dhis2, 2022
+# Viktor Varland <viktor@dhis2.org>, 2022
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-03-17T10:18:53.422Z\n"
+"POT-Creation-Date: 2022-05-23T11:59:44.384Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2021\n"
+"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2022\n"
 "Language-Team: Urdu (https://www.transifex.com/hisp-uio/teams/100509/ur/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -270,6 +270,104 @@ msgstr ""
 msgid "visualization"
 msgstr ""
 
+msgid "Edit"
+msgstr "ترمیم"
+
+msgid "Write a reply"
+msgstr ""
+
+msgid "Post reply"
+msgstr ""
+
+msgid "Could not update comment"
+msgstr ""
+
+msgid "Enter comment text"
+msgstr ""
+
+msgid "Update"
+msgstr "اپڈیٹ"
+
+msgid "Viewing interpretation: {{visualisationName}}"
+msgstr ""
+
+msgid "Could not load interpretation"
+msgstr ""
+
+msgid ""
+"The interpretation couldn’t be displayed. Try again or contact your system "
+"administrator."
+msgstr ""
+
+msgid "Hide interpretation"
+msgstr ""
+
+msgid "Write an interpretation"
+msgstr ""
+
+msgid "Post interpretation"
+msgstr ""
+
+msgid "Interpretations"
+msgstr "تشریحات"
+
+msgid "Unlike"
+msgstr "برعکس"
+
+msgid "Like"
+msgstr "کی طرح"
+
+msgid "Reply"
+msgstr "جواب"
+
+msgid "Share"
+msgstr "بانٹیں"
+
+msgid "See interpretation"
+msgstr ""
+
+msgid "Manage sharing"
+msgstr ""
+
+msgid "Could not update interpretation"
+msgstr ""
+
+msgid "Enter interpretation text"
+msgstr ""
+
+msgid "Bold text"
+msgstr ""
+
+msgid "Italic text"
+msgstr ""
+
+msgid "Link to a URL"
+msgstr ""
+
+msgid "Mention a user"
+msgstr ""
+
+msgid "Add emoji"
+msgstr ""
+
+msgid "Preview"
+msgstr "پیش نظارہ"
+
+msgid "Back to write mode"
+msgstr ""
+
+msgid "Too many results. Try refining the search."
+msgstr ""
+
+msgid "Search for a user"
+msgstr ""
+
+msgid "Searching for \"{{searchText}}\""
+msgstr ""
+
+msgid "No results found"
+msgstr "کوئی نتیجہ نہیں ملا"
+
 msgid "Created by"
 msgstr "تخلیق کیا"
 
@@ -405,9 +503,6 @@ msgstr "اختیارات"
 
 msgid "Hide"
 msgstr "چھپائیں"
-
-msgid "Update"
-msgstr "اپڈیٹ"
 
 msgid "{{count}} org units"
 msgid_plural "{{count}} org units"
@@ -928,8 +1023,8 @@ msgstr ""
 msgid "Data"
 msgstr "ڈیٹا"
 
-msgid "Organisation Unit"
-msgstr ""
+msgid "Organisation unit"
+msgstr "تنظیم یونٹ"
 
 msgid "Assigned Categories"
 msgstr ""
