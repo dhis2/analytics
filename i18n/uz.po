@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-05-16T10:08:17.176Z\n"
+"POT-Creation-Date: 2022-05-23T11:59:44.384Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: Ibatov <ibatovk@who.int>, 2022\n"
 "Language-Team: Uzbek (Cyrillic) (https://www.transifex.com/hisp-uio/teams/100509/uz@Cyrl/)\n"
@@ -268,6 +268,104 @@ msgstr "харита"
 msgid "visualization"
 msgstr ""
 
+msgid "Edit"
+msgstr "Таҳрирлаш"
+
+msgid "Write a reply"
+msgstr "Изоҳ ёзинг"
+
+msgid "Post reply"
+msgstr ""
+
+msgid "Could not update comment"
+msgstr ""
+
+msgid "Enter comment text"
+msgstr ""
+
+msgid "Update"
+msgstr "Янгилаш"
+
+msgid "Viewing interpretation: {{visualisationName}}"
+msgstr ""
+
+msgid "Could not load interpretation"
+msgstr ""
+
+msgid ""
+"The interpretation couldn’t be displayed. Try again or contact your system "
+"administrator."
+msgstr ""
+
+msgid "Hide interpretation"
+msgstr ""
+
+msgid "Write an interpretation"
+msgstr "Талқин ёзиш"
+
+msgid "Post interpretation"
+msgstr ""
+
+msgid "Interpretations"
+msgstr "Талқинлар"
+
+msgid "Unlike"
+msgstr "Аксинча"
+
+msgid "Like"
+msgstr "Каби, ўхшаш"
+
+msgid "Reply"
+msgstr "Изоҳ"
+
+msgid "Share"
+msgstr "Улашиш"
+
+msgid "See interpretation"
+msgstr ""
+
+msgid "Manage sharing"
+msgstr "Улашишни бошқариш"
+
+msgid "Could not update interpretation"
+msgstr ""
+
+msgid "Enter interpretation text"
+msgstr ""
+
+msgid "Bold text"
+msgstr ""
+
+msgid "Italic text"
+msgstr ""
+
+msgid "Link to a URL"
+msgstr ""
+
+msgid "Mention a user"
+msgstr ""
+
+msgid "Add emoji"
+msgstr ""
+
+msgid "Preview"
+msgstr "Олдиндан кўриш"
+
+msgid "Back to write mode"
+msgstr ""
+
+msgid "Too many results. Try refining the search."
+msgstr ""
+
+msgid "Search for a user"
+msgstr ""
+
+msgid "Searching for \"{{searchText}}\""
+msgstr ""
+
+msgid "No results found"
+msgstr "Ҳеч қандай натижа топилмади"
+
 msgid "Created by"
 msgstr "Томонидан яратилган"
 
@@ -403,9 +501,6 @@ msgstr "Вариант"
 
 msgid "Hide"
 msgstr "Беркитиш"
-
-msgid "Update"
-msgstr "Янгилаш"
 
 msgid "{{count}} org units"
 msgid_plural "{{count}} org units"
