@@ -1,18 +1,18 @@
 # 
 # Translators:
 # Yury Rogachev <yury@dhis2.org>, 2020
-# phil_dhis2, 2021
 # Valeriu Plesca <vplesca@gmail.com>, 2021
-# Viktor Varland <viktor@dhis2.org>, 2021
 # Wanda <wanda@frontlineaids.org>, 2022
+# Viktor Varland <viktor@dhis2.org>, 2022
 # Ulanbek Abakirov <ulans@mail.ru>, 2022
+# phil_dhis2, 2022
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-03-17T10:18:53.422Z\n"
+"POT-Creation-Date: 2022-05-23T11:59:44.384Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Ulanbek Abakirov <ulans@mail.ru>, 2022\n"
+"Last-Translator: phil_dhis2, 2022\n"
 "Language-Team: Russian (https://www.transifex.com/hisp-uio/teams/100509/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -276,6 +276,104 @@ msgstr "Карта"
 msgid "visualization"
 msgstr ""
 
+msgid "Edit"
+msgstr "Редактировать"
+
+msgid "Write a reply"
+msgstr "Написать ответ"
+
+msgid "Post reply"
+msgstr ""
+
+msgid "Could not update comment"
+msgstr ""
+
+msgid "Enter comment text"
+msgstr ""
+
+msgid "Update"
+msgstr "Обновить"
+
+msgid "Viewing interpretation: {{visualisationName}}"
+msgstr ""
+
+msgid "Could not load interpretation"
+msgstr ""
+
+msgid ""
+"The interpretation couldn’t be displayed. Try again or contact your system "
+"administrator."
+msgstr ""
+
+msgid "Hide interpretation"
+msgstr ""
+
+msgid "Write an interpretation"
+msgstr "Написать перевод"
+
+msgid "Post interpretation"
+msgstr ""
+
+msgid "Interpretations"
+msgstr "Interpretations"
+
+msgid "Unlike"
+msgstr "Не нравится"
+
+msgid "Like"
+msgstr "Нравится"
+
+msgid "Reply"
+msgstr "Ответить"
+
+msgid "Share"
+msgstr "Поделиться"
+
+msgid "See interpretation"
+msgstr ""
+
+msgid "Manage sharing"
+msgstr "Управление совместным доступом"
+
+msgid "Could not update interpretation"
+msgstr ""
+
+msgid "Enter interpretation text"
+msgstr ""
+
+msgid "Bold text"
+msgstr ""
+
+msgid "Italic text"
+msgstr ""
+
+msgid "Link to a URL"
+msgstr ""
+
+msgid "Mention a user"
+msgstr ""
+
+msgid "Add emoji"
+msgstr ""
+
+msgid "Preview"
+msgstr "Предварительный просмотр"
+
+msgid "Back to write mode"
+msgstr ""
+
+msgid "Too many results. Try refining the search."
+msgstr ""
+
+msgid "Search for a user"
+msgstr ""
+
+msgid "Searching for \"{{searchText}}\""
+msgstr ""
+
+msgid "No results found"
+msgstr "Результаты не найдены"
+
 msgid "Created by"
 msgstr "Создано"
 
@@ -411,9 +509,6 @@ msgstr "Параметры"
 
 msgid "Hide"
 msgstr "Скрыть"
-
-msgid "Update"
-msgstr "Обновить"
 
 msgid "{{count}} org units"
 msgid_plural "{{count}} org units"
@@ -940,8 +1035,8 @@ msgstr ""
 msgid "Data"
 msgstr "Данные"
 
-msgid "Organisation Unit"
-msgstr "Организация"
+msgid "Organisation unit"
+msgstr "Организационная единица"
 
 msgid "Assigned Categories"
 msgstr "Назначенные категории"

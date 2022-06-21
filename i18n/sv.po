@@ -1,14 +1,14 @@
 # 
 # Translators:
-# phil_dhis2, 2021
-# Viktor Varland <viktor@dhis2.org>, 2021
+# phil_dhis2, 2022
+# Viktor Varland <viktor@dhis2.org>, 2022
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-03-17T10:18:53.422Z\n"
+"POT-Creation-Date: 2022-05-23T11:59:44.384Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2021\n"
+"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2022\n"
 "Language-Team: Swedish (https://www.transifex.com/hisp-uio/teams/100509/sv/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -270,6 +270,104 @@ msgstr ""
 msgid "visualization"
 msgstr ""
 
+msgid "Edit"
+msgstr "Redigera"
+
+msgid "Write a reply"
+msgstr ""
+
+msgid "Post reply"
+msgstr ""
+
+msgid "Could not update comment"
+msgstr ""
+
+msgid "Enter comment text"
+msgstr ""
+
+msgid "Update"
+msgstr "Uppdatera"
+
+msgid "Viewing interpretation: {{visualisationName}}"
+msgstr ""
+
+msgid "Could not load interpretation"
+msgstr ""
+
+msgid ""
+"The interpretation couldn’t be displayed. Try again or contact your system "
+"administrator."
+msgstr ""
+
+msgid "Hide interpretation"
+msgstr ""
+
+msgid "Write an interpretation"
+msgstr ""
+
+msgid "Post interpretation"
+msgstr ""
+
+msgid "Interpretations"
+msgstr "tolkningar"
+
+msgid "Unlike"
+msgstr ""
+
+msgid "Like"
+msgstr ""
+
+msgid "Reply"
+msgstr "Svar"
+
+msgid "Share"
+msgstr "Dela med sig"
+
+msgid "See interpretation"
+msgstr ""
+
+msgid "Manage sharing"
+msgstr ""
+
+msgid "Could not update interpretation"
+msgstr ""
+
+msgid "Enter interpretation text"
+msgstr ""
+
+msgid "Bold text"
+msgstr ""
+
+msgid "Italic text"
+msgstr ""
+
+msgid "Link to a URL"
+msgstr ""
+
+msgid "Mention a user"
+msgstr ""
+
+msgid "Add emoji"
+msgstr ""
+
+msgid "Preview"
+msgstr ""
+
+msgid "Back to write mode"
+msgstr ""
+
+msgid "Too many results. Try refining the search."
+msgstr ""
+
+msgid "Search for a user"
+msgstr ""
+
+msgid "Searching for \"{{searchText}}\""
+msgstr ""
+
+msgid "No results found"
+msgstr "Inga resultat hittades"
+
 msgid "Created by"
 msgstr "Skapad av"
 
@@ -405,9 +503,6 @@ msgstr "Alternativ"
 
 msgid "Hide"
 msgstr ""
-
-msgid "Update"
-msgstr "Uppdatera"
 
 msgid "{{count}} org units"
 msgid_plural "{{count}} org units"
@@ -928,7 +1023,7 @@ msgstr ""
 msgid "Data"
 msgstr "Data"
 
-msgid "Organisation Unit"
+msgid "Organisation unit"
 msgstr "Organisationsenhet"
 
 msgid "Assigned Categories"

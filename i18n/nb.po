@@ -1,12 +1,12 @@
 # 
 # Translators:
-# Caroline Hesthagen Holen <caroline@devotta.no>, 2021
+# Caroline Hesthagen Holen <caroline@devotta.no>, 2022
 # Karoline Tufte Lien <karoline@dhis2.org>, 2022
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-03-17T10:18:53.422Z\n"
+"POT-Creation-Date: 2022-05-23T11:59:44.384Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: Karoline Tufte Lien <karoline@dhis2.org>, 2022\n"
 "Language-Team: Norwegian Bokmål (https://www.transifex.com/hisp-uio/teams/100509/nb/)\n"
@@ -273,6 +273,104 @@ msgstr "kart"
 msgid "visualization"
 msgstr ""
 
+msgid "Edit"
+msgstr "Rediger"
+
+msgid "Write a reply"
+msgstr "Skriv et svar"
+
+msgid "Post reply"
+msgstr ""
+
+msgid "Could not update comment"
+msgstr ""
+
+msgid "Enter comment text"
+msgstr ""
+
+msgid "Update"
+msgstr "Oppdater"
+
+msgid "Viewing interpretation: {{visualisationName}}"
+msgstr ""
+
+msgid "Could not load interpretation"
+msgstr ""
+
+msgid ""
+"The interpretation couldn’t be displayed. Try again or contact your system "
+"administrator."
+msgstr ""
+
+msgid "Hide interpretation"
+msgstr ""
+
+msgid "Write an interpretation"
+msgstr "Skriv en tolkning"
+
+msgid "Post interpretation"
+msgstr ""
+
+msgid "Interpretations"
+msgstr "Tolkninger"
+
+msgid "Unlike"
+msgstr "Fjern like"
+
+msgid "Like"
+msgstr "Like"
+
+msgid "Reply"
+msgstr "Svar"
+
+msgid "Share"
+msgstr "Del"
+
+msgid "See interpretation"
+msgstr ""
+
+msgid "Manage sharing"
+msgstr "Administrer deling"
+
+msgid "Could not update interpretation"
+msgstr ""
+
+msgid "Enter interpretation text"
+msgstr ""
+
+msgid "Bold text"
+msgstr ""
+
+msgid "Italic text"
+msgstr ""
+
+msgid "Link to a URL"
+msgstr ""
+
+msgid "Mention a user"
+msgstr ""
+
+msgid "Add emoji"
+msgstr ""
+
+msgid "Preview"
+msgstr "Forhåndsvisning"
+
+msgid "Back to write mode"
+msgstr ""
+
+msgid "Too many results. Try refining the search."
+msgstr ""
+
+msgid "Search for a user"
+msgstr ""
+
+msgid "Searching for \"{{searchText}}\""
+msgstr ""
+
+msgid "No results found"
+msgstr "Ingen resultater funnet"
+
 msgid "Created by"
 msgstr "Opprettet av"
 
@@ -410,9 +508,6 @@ msgstr "Alternativ"
 
 msgid "Hide"
 msgstr "Skjul"
-
-msgid "Update"
-msgstr "Oppdater"
 
 msgid "{{count}} org units"
 msgid_plural "{{count}} org units"
@@ -933,7 +1028,7 @@ msgstr ""
 msgid "Data"
 msgstr "Data"
 
-msgid "Organisation Unit"
+msgid "Organisation unit"
 msgstr "Organisasjonsenhet"
 
 msgid "Assigned Categories"
