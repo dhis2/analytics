@@ -1,3 +1,38 @@
+## [23.12.4](https://github.com/dhis2/analytics/compare/v23.12.3...v23.12.4) (2022-06-20)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([80b79f5](https://github.com/dhis2/analytics/commit/80b79f5737cfffb61d5c9a4758d8aaa3ab2f93e1))
+
+## [23.12.3](https://github.com/dhis2/analytics/compare/v23.12.2...v23.12.3) (2022-06-19)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([6b6092b](https://github.com/dhis2/analytics/commit/6b6092ba16357a64d3fb33471a650525b9c06d08))
+
+## [23.12.2](https://github.com/dhis2/analytics/compare/v23.12.1...v23.12.2) (2022-06-17)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([5ff4451](https://github.com/dhis2/analytics/commit/5ff44512a873a342dad6cea3418c4f2758cbc3d8))
+
+## [23.12.1](https://github.com/dhis2/analytics/compare/v23.12.0...v23.12.1) (2022-06-16)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([919196f](https://github.com/dhis2/analytics/commit/919196f882e6b178c1eb654280a721992f822b19))
+
+# [23.12.0](https://github.com/dhis2/analytics/compare/v23.11.1...v23.12.0) (2022-06-15)
+
+
+### Features
+
+* implement new interpretations components ([#1250](https://github.com/dhis2/analytics/issues/1250)) ([76b223b](https://github.com/dhis2/analytics/commit/76b223b9a3514e0e110cd090bc3ede42056634e8))
+
 ## [23.11.1](https://github.com/dhis2/analytics/compare/v23.11.0...v23.11.1) (2022-06-09)
 
 
