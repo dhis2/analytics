@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2022-05-16T10:08:17.176Z\n"
-"PO-Revision-Date: 2022-05-16T10:08:17.176Z\n"
+"POT-Creation-Date: 2022-05-23T11:59:44.384Z\n"
+"PO-Revision-Date: 2022-05-23T11:59:44.384Z\n"
 
 msgid "view only"
 msgstr "view only"
@@ -263,6 +263,106 @@ msgstr "map"
 msgid "visualization"
 msgstr "visualization"
 
+msgid "Edit"
+msgstr "Edit"
+
+msgid "Write a reply"
+msgstr "Write a reply"
+
+msgid "Post reply"
+msgstr "Post reply"
+
+msgid "Could not update comment"
+msgstr "Could not update comment"
+
+msgid "Enter comment text"
+msgstr "Enter comment text"
+
+msgid "Update"
+msgstr "Update"
+
+msgid "Viewing interpretation: {{visualisationName}}"
+msgstr "Viewing interpretation: {{visualisationName}}"
+
+msgid "Could not load interpretation"
+msgstr "Could not load interpretation"
+
+msgid ""
+"The interpretation couldn’t be displayed. Try again or contact your system "
+"administrator."
+msgstr ""
+"The interpretation couldn’t be displayed. Try again or contact your system "
+"administrator."
+
+msgid "Hide interpretation"
+msgstr "Hide interpretation"
+
+msgid "Write an interpretation"
+msgstr "Write an interpretation"
+
+msgid "Post interpretation"
+msgstr "Post interpretation"
+
+msgid "Interpretations"
+msgstr "Interpretations"
+
+msgid "Unlike"
+msgstr "Unlike"
+
+msgid "Like"
+msgstr "Like"
+
+msgid "Reply"
+msgstr "Reply"
+
+msgid "Share"
+msgstr "Share"
+
+msgid "See interpretation"
+msgstr "See interpretation"
+
+msgid "Manage sharing"
+msgstr "Manage sharing"
+
+msgid "Could not update interpretation"
+msgstr "Could not update interpretation"
+
+msgid "Enter interpretation text"
+msgstr "Enter interpretation text"
+
+msgid "Bold text"
+msgstr "Bold text"
+
+msgid "Italic text"
+msgstr "Italic text"
+
+msgid "Link to a URL"
+msgstr "Link to a URL"
+
+msgid "Mention a user"
+msgstr "Mention a user"
+
+msgid "Add emoji"
+msgstr "Add emoji"
+
+msgid "Preview"
+msgstr "Preview"
+
+msgid "Back to write mode"
+msgstr "Back to write mode"
+
+msgid "Too many results. Try refining the search."
+msgstr "Too many results. Try refining the search."
+
+msgid "Search for a user"
+msgstr "Search for a user"
+
+msgid "Searching for \"{{searchText}}\""
+msgstr "Searching for \"{{searchText}}\""
+
+msgid "No results found"
+msgstr "No results found"
+
 msgid "Created by"
 msgstr "Created by"
 
@@ -414,9 +514,6 @@ msgstr "Options"
 
 msgid "Hide"
 msgstr "Hide"
-
-msgid "Update"
-msgstr "Update"
 
 msgid "{{count}} org units"
 msgid_plural "{{count}} org units"

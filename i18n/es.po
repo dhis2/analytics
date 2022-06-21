@@ -4,16 +4,16 @@
 # Marta Vila <marta@dhis2.org>, 2021
 # Alison Andrade <aandrade@ippfwhr.org>, 2021
 # Juan M Alcantara Acosta <jmalcantara1@gmail.com>, 2021
-# phil_dhis2, 2021
 # Prabhjot Singh, 2021
 # Janeth Cruz, 2022
 # Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2022
+# phil_dhis2, 2022
 # Viktor Varland <viktor@dhis2.org>, 2022
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-05-16T10:08:17.176Z\n"
+"POT-Creation-Date: 2022-05-23T11:59:44.384Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: Viktor Varland <viktor@dhis2.org>, 2022\n"
 "Language-Team: Spanish (https://www.transifex.com/hisp-uio/teams/100509/es/)\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: es\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
 msgid "view only"
 msgstr ""
@@ -57,6 +57,7 @@ msgid "Viewed {{count}} times"
 msgid_plural "Viewed {{count}} times"
 msgstr[0] ""
 msgstr[1] ""
+msgstr[2] ""
 
 msgid "Notifications"
 msgstr ""
@@ -277,6 +278,104 @@ msgstr "mapa"
 msgid "visualization"
 msgstr ""
 
+msgid "Edit"
+msgstr "Editar"
+
+msgid "Write a reply"
+msgstr "Escribe una respuesta"
+
+msgid "Post reply"
+msgstr ""
+
+msgid "Could not update comment"
+msgstr ""
+
+msgid "Enter comment text"
+msgstr ""
+
+msgid "Update"
+msgstr "Actualizar"
+
+msgid "Viewing interpretation: {{visualisationName}}"
+msgstr ""
+
+msgid "Could not load interpretation"
+msgstr ""
+
+msgid ""
+"The interpretation couldn’t be displayed. Try again or contact your system "
+"administrator."
+msgstr ""
+
+msgid "Hide interpretation"
+msgstr ""
+
+msgid "Write an interpretation"
+msgstr "Escribir una interpretación"
+
+msgid "Post interpretation"
+msgstr ""
+
+msgid "Interpretations"
+msgstr "Interpretaciones"
+
+msgid "Unlike"
+msgstr "diferente a"
+
+msgid "Like"
+msgstr "como"
+
+msgid "Reply"
+msgstr "Responder"
+
+msgid "Share"
+msgstr "Compartir"
+
+msgid "See interpretation"
+msgstr ""
+
+msgid "Manage sharing"
+msgstr "Administrar compartir"
+
+msgid "Could not update interpretation"
+msgstr ""
+
+msgid "Enter interpretation text"
+msgstr ""
+
+msgid "Bold text"
+msgstr ""
+
+msgid "Italic text"
+msgstr ""
+
+msgid "Link to a URL"
+msgstr ""
+
+msgid "Mention a user"
+msgstr ""
+
+msgid "Add emoji"
+msgstr ""
+
+msgid "Preview"
+msgstr ""
+
+msgid "Back to write mode"
+msgstr ""
+
+msgid "Too many results. Try refining the search."
+msgstr ""
+
+msgid "Search for a user"
+msgstr ""
+
+msgid "Searching for \"{{searchText}}\""
+msgstr ""
+
+msgid "No results found"
+msgstr "No results found"
+
 msgid "Created by"
 msgstr "Creado por"
 
@@ -413,23 +512,23 @@ msgstr "Opciones"
 msgid "Hide"
 msgstr "Ocultar"
 
-msgid "Update"
-msgstr "Actualizar"
-
 msgid "{{count}} org units"
 msgid_plural "{{count}} org units"
 msgstr[0] ""
 msgstr[1] ""
+msgstr[2] ""
 
 msgid "{{count}} levels"
 msgid_plural "{{count}} levels"
 msgstr[0] ""
 msgstr[1] ""
+msgstr[2] ""
 
 msgid "{{count}} groups"
 msgid_plural "{{count}} groups"
 msgstr[0] ""
 msgstr[1] ""
+msgstr[2] ""
 
 msgid "Selected: {{commaSeparatedListOfOrganisationUnits}}"
 msgstr ""
@@ -1020,6 +1119,7 @@ msgid "{{count}} items"
 msgid_plural "{{count}} items"
 msgstr[0] ""
 msgstr[1] ""
+msgstr[2] ""
 
 msgid "Reset zoom"
 msgstr ""
