@@ -219,6 +219,7 @@ const InterpretationModal = ({
 
                     .visualisation-wrap {
                         flex-grow: 1;
+                        min-width: 0;
                     }
 
                     .thread-wrap {
