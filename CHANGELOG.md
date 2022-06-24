@@ -1,3 +1,10 @@
+## [23.12.5](https://github.com/dhis2/analytics/compare/v23.12.4...v23.12.5) (2022-06-24)
+
+
+### Bug Fixes
+
+* force the modal content flex item to shrink past its content's width ([#1282](https://github.com/dhis2/analytics/issues/1282)) ([88d6934](https://github.com/dhis2/analytics/commit/88d69342677732206fdc17684ba3f5bd119d85dd))
+
 ## [23.12.4](https://github.com/dhis2/analytics/compare/v23.12.3...v23.12.4) (2022-06-20)
 
 
