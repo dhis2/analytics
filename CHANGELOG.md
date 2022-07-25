@@ -1,3 +1,11 @@
+# [23.13.0](https://github.com/dhis2/analytics/compare/v23.12.5...v23.13.0) (2022-07-25)
+
+
+### Features
+
+* search by tokens across identifiable properties (DHIS2-13475) ([c94c427](https://github.com/dhis2/analytics/commit/c94c4271492d390cd76cfb8c8d8104cbfab83e1d))
+* search by tokens across identifiable properties [DHIS2-13475] ([87db2f9](https://github.com/dhis2/analytics/commit/87db2f91f7aa5b2665038324d5b779e2f8267812))
+
 ## [23.12.5](https://github.com/dhis2/analytics/compare/v23.12.4...v23.12.5) (2022-06-24)
 
 
