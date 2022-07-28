@@ -138,13 +138,13 @@ msgid "Bi-monthly"
 msgstr "Tweemaandelijks"
 
 msgid "Quarterly"
-msgstr ""
+msgstr "Driemaandelijks"
 
 msgid "Six-monthly"
-msgstr ""
+msgstr "Zesmaandelijks"
 
 msgid "Six-monthly April"
-msgstr ""
+msgstr "Zesmaandelijks april"
 
 msgid "Yearly"
 msgstr "Jaarlijks"
