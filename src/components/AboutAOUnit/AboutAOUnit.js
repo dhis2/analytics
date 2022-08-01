@@ -123,14 +123,16 @@ const AboutAOUnit = ({ type, id }) => {
         const userAccesses = ao.sharing.users
         const groupAccesses = ao.sharing.userGroups
 
-        Object.values(userAccesses).concat(Object.values(groupAccesses)).forEach((accessRule) => {
-            sharingTextParts.push(
-                i18n.t('{{userOrGroup}} ({{accessLevel}})', {
-                    userOrGroup: accessRule.displayName,
-                    accessLevel: getAccessLevelString(accessRule.access),
-                })
-            )
-        })
+        Object.values(userAccesses)
+            .concat(Object.values(groupAccesses))
+            .forEach((accessRule) => {
+                sharingTextParts.push(
+                    i18n.t('{{userOrGroup}} ({{accessLevel}})', {
+                        userOrGroup: accessRule.displayName,
+                        accessLevel: getAccessLevelString(accessRule.access),
+                    })
+                )
+            })
 
         return sharingTextParts.length
             ? i18n.t('Shared with {{commaSeparatedListOfUsersAndGroups}}', {
