@@ -28,7 +28,7 @@ const getQueries = (type) => ({
         resource: type,
         id: ({ id }) => id,
         params: {
-            fields: 'id,displayDescription,created,createdBy[displayName],lastUpdated,subscribed,publicAccess,userAccesses[displayName,access],userGroupAccesses[displayName,access]',
+            fields: 'id,displayDescription,created,createdBy[displayName],lastUpdated,subscribed,sharing',
         },
     },
     dataStatistics: {
@@ -93,7 +93,7 @@ const AboutAOUnit = ({ type, id }) => {
         if (id) {
             refetch({ id })
         }
-    }, [type, id])
+    }, [type, id, refetch])
 
     const getAccessLevelString = (access) => {
         const re = new RegExp(`(?<accessLevel>${READ_AND_WRITE}?)`)
@@ -112,18 +112,18 @@ const AboutAOUnit = ({ type, id }) => {
 
         const re = new RegExp(`^${READ_AND_WRITE}?`)
 
-        if (re.test(ao.publicAccess)) {
+        if (re.test(ao.sharing.public)) {
             sharingTextParts.push(
                 i18n.t('all users ({{accessLevel}})', {
-                    accessLevel: getAccessLevelString(ao.publicAccess),
+                    accessLevel: getAccessLevelString(ao.sharing.public),
                 })
             )
         }
 
-        const userAccesses = ao.userAccesses
-        const groupAccesses = ao.userGroupAccesses
+        const userAccesses = ao.sharing.users
+        const groupAccesses = ao.sharing.userGroups
 
-        userAccesses.concat(groupAccesses).forEach((accessRule) => {
+        Object.values(userAccesses).concat(Object.values(groupAccesses)).forEach((accessRule) => {
             sharingTextParts.push(
                 i18n.t('{{userOrGroup}} ({{accessLevel}})', {
                     userOrGroup: accessRule.displayName,
