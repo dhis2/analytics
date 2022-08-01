@@ -1,3 +1,10 @@
+## [23.13.2](https://github.com/dhis2/analytics/compare/v23.13.1...v23.13.2) (2022-08-01)
+
+
+### Bug Fixes
+
+* highcharts legend when exporting (DHIS2-12719) ([#1279](https://github.com/dhis2/analytics/issues/1279)) ([5f62e20](https://github.com/dhis2/analytics/commit/5f62e2050a1ff7411308a32f87f3e427cdbb4bb4))
+
 ## [23.13.1](https://github.com/dhis2/analytics/compare/v23.13.0...v23.13.1) (2022-07-28)
 
 
