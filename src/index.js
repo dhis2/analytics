@@ -29,6 +29,9 @@ export { default as LegendKey } from './components/LegendKey/LegendKey.js'
 
 export { default as AboutAOUnit } from './components/AboutAOUnit/AboutAOUnit.js'
 
+export { InterpretationsUnit } from './components/Interpretations/InterpretationsUnit/InterpretationsUnit.js'
+export { InterpretationModal } from './components/Interpretations/InterpretationModal/InterpretationModal.js'
+
 export {
     CachedDataQueryProvider,
     useCachedDataQuery,
@@ -273,6 +276,7 @@ export {
     LEGEND_DISPLAY_STRATEGY_FIXED,
     LEGEND_DISPLAY_STYLE_FILL,
     LEGEND_DISPLAY_STYLE_TEXT,
+    getColorByValueFromLegendSet,
 } from './modules/legends.js'
 
 // Modules: general

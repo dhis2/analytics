@@ -118,7 +118,7 @@ export const OpenFileDialog = ({
         }
 
         if (filters.searchTerm) {
-            queryFilters.push(`displayName:ilike:${filters.searchTerm}`)
+            queryFilters.push(`identifiable:token:${filters.searchTerm}`)
         }
 
         return queryFilters

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-05-16T10:08:17.176Z\n"
+"POT-Creation-Date: 2022-05-23T11:59:44.384Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: Valeriu Plesca <vplesca@gmail.com>, 2022\n"
 "Language-Team: Romanian (https://www.transifex.com/hisp-uio/teams/100509/ro/)\n"
@@ -202,7 +202,7 @@ msgid ""
 msgstr ""
 
 msgid "Cancel"
-msgstr ""
+msgstr "Anulare"
 
 msgid "Delete"
 msgstr "Lichidare"
@@ -269,6 +269,104 @@ msgstr ""
 
 msgid "visualization"
 msgstr ""
+
+msgid "Edit"
+msgstr "Editare"
+
+msgid "Write a reply"
+msgstr ""
+
+msgid "Post reply"
+msgstr ""
+
+msgid "Could not update comment"
+msgstr ""
+
+msgid "Enter comment text"
+msgstr ""
+
+msgid "Update"
+msgstr "Actualizare"
+
+msgid "Viewing interpretation: {{visualisationName}}"
+msgstr ""
+
+msgid "Could not load interpretation"
+msgstr ""
+
+msgid ""
+"The interpretation couldn’t be displayed. Try again or contact your system "
+"administrator."
+msgstr ""
+
+msgid "Hide interpretation"
+msgstr ""
+
+msgid "Write an interpretation"
+msgstr ""
+
+msgid "Post interpretation"
+msgstr ""
+
+msgid "Interpretations"
+msgstr ""
+
+msgid "Unlike"
+msgstr ""
+
+msgid "Like"
+msgstr ""
+
+msgid "Reply"
+msgstr ""
+
+msgid "Share"
+msgstr "Partajare"
+
+msgid "See interpretation"
+msgstr ""
+
+msgid "Manage sharing"
+msgstr ""
+
+msgid "Could not update interpretation"
+msgstr ""
+
+msgid "Enter interpretation text"
+msgstr ""
+
+msgid "Bold text"
+msgstr ""
+
+msgid "Italic text"
+msgstr ""
+
+msgid "Link to a URL"
+msgstr ""
+
+msgid "Mention a user"
+msgstr ""
+
+msgid "Add emoji"
+msgstr ""
+
+msgid "Preview"
+msgstr ""
+
+msgid "Back to write mode"
+msgstr ""
+
+msgid "Too many results. Try refining the search."
+msgstr ""
+
+msgid "Search for a user"
+msgstr ""
+
+msgid "Searching for \"{{searchText}}\""
+msgstr ""
+
+msgid "No results found"
+msgstr "Nu au fost găsite rezultate"
 
 msgid "Created by"
 msgstr ""
@@ -405,9 +503,6 @@ msgstr ""
 
 msgid "Hide"
 msgstr ""
-
-msgid "Update"
-msgstr "Actualizare"
 
 msgid "{{count}} org units"
 msgid_plural "{{count}} org units"
@@ -605,7 +700,7 @@ msgid "Last 4 weeks"
 msgstr "Ultimele 4 săptămâni"
 
 msgid "Last 12 weeks"
-msgstr ""
+msgstr "Ultimele 12 săptămâni"
 
 msgid "Last 52 weeks"
 msgstr "Ultimele 52 de săptămâni"
@@ -779,7 +874,7 @@ msgid "Expected reports"
 msgstr ""
 
 msgid "Program"
-msgstr ""
+msgstr "Program"
 
 msgid "Select a program"
 msgstr ""
@@ -788,7 +883,7 @@ msgid "Indicators"
 msgstr "Indicatori"
 
 msgid "Indicator group"
-msgstr ""
+msgstr "Grup de indicatori"
 
 msgid "All groups"
 msgstr ""
@@ -803,7 +898,7 @@ msgid "Loading indicator groups"
 msgstr ""
 
 msgid "Data elements"
-msgstr ""
+msgstr "Elemente de date"
 
 msgid "Data element group"
 msgstr ""
@@ -821,7 +916,7 @@ msgid "Data sets"
 msgstr ""
 
 msgid "Data set"
-msgstr ""
+msgstr "Set de date"
 
 msgid "All data sets"
 msgstr ""

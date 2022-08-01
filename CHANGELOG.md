@@ -1,3 +1,74 @@
+## [23.13.1](https://github.com/dhis2/analytics/compare/v23.13.0...v23.13.1) (2022-07-28)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([d3a1f4e](https://github.com/dhis2/analytics/commit/d3a1f4e861cf29e95f9615f3585e814d52aa837f))
+
+# [23.13.0](https://github.com/dhis2/analytics/compare/v23.12.5...v23.13.0) (2022-07-25)
+
+
+### Features
+
+* search by tokens across identifiable properties (DHIS2-13475) ([c94c427](https://github.com/dhis2/analytics/commit/c94c4271492d390cd76cfb8c8d8104cbfab83e1d))
+* search by tokens across identifiable properties [DHIS2-13475] ([87db2f9](https://github.com/dhis2/analytics/commit/87db2f91f7aa5b2665038324d5b779e2f8267812))
+
+## [23.12.5](https://github.com/dhis2/analytics/compare/v23.12.4...v23.12.5) (2022-06-24)
+
+
+### Bug Fixes
+
+* force the modal content flex item to shrink past its content's width ([#1282](https://github.com/dhis2/analytics/issues/1282)) ([88d6934](https://github.com/dhis2/analytics/commit/88d69342677732206fdc17684ba3f5bd119d85dd))
+
+## [23.12.4](https://github.com/dhis2/analytics/compare/v23.12.3...v23.12.4) (2022-06-20)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([80b79f5](https://github.com/dhis2/analytics/commit/80b79f5737cfffb61d5c9a4758d8aaa3ab2f93e1))
+
+## [23.12.3](https://github.com/dhis2/analytics/compare/v23.12.2...v23.12.3) (2022-06-19)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([6b6092b](https://github.com/dhis2/analytics/commit/6b6092ba16357a64d3fb33471a650525b9c06d08))
+
+## [23.12.2](https://github.com/dhis2/analytics/compare/v23.12.1...v23.12.2) (2022-06-17)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([5ff4451](https://github.com/dhis2/analytics/commit/5ff44512a873a342dad6cea3418c4f2758cbc3d8))
+
+## [23.12.1](https://github.com/dhis2/analytics/compare/v23.12.0...v23.12.1) (2022-06-16)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([919196f](https://github.com/dhis2/analytics/commit/919196f882e6b178c1eb654280a721992f822b19))
+
+# [23.12.0](https://github.com/dhis2/analytics/compare/v23.11.1...v23.12.0) (2022-06-15)
+
+
+### Features
+
+* implement new interpretations components ([#1250](https://github.com/dhis2/analytics/issues/1250)) ([76b223b](https://github.com/dhis2/analytics/commit/76b223b9a3514e0e110cd090bc3ede42056634e8))
+
+## [23.11.1](https://github.com/dhis2/analytics/compare/v23.11.0...v23.11.1) (2022-06-09)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([f5e770a](https://github.com/dhis2/analytics/commit/f5e770a9757d775c886d9d8a8ab51ebc7c206e7d))
+
+# [23.11.0](https://github.com/dhis2/analytics/compare/v23.10.4...v23.11.0) (2022-06-03)
+
+
+### Features
+
+* export getColorByValueFromLegendSet ([#1249](https://github.com/dhis2/analytics/issues/1249)) ([6ce534d](https://github.com/dhis2/analytics/commit/6ce534d1d63d8aeac6ea44e7742681c10f57d709))
+
 ## [23.10.4](https://github.com/dhis2/analytics/compare/v23.10.3...v23.10.4) (2022-05-31)
 
 
