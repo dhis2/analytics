@@ -30,13 +30,17 @@ function drawLegendSymbolWrap() {
                 this.chart.renderer
                     .path(['M', x, ys, 'A', 1, 1, 0, 0, 0, x, ye, 'V', ys])
                     .attr({
-                        fill: legends.at(legends.length >= 5 ? 1 : 0).color,
+                        fill: legends[legends.length >= 5 ? 1 : 0].color,
                     })
                     .add(this.legendGroup)
                 this.chart.renderer
                     .path(['M', x, ye, 'A', 1, 1, 0, 0, 0, x, ys, 'V', ye])
                     .attr({
-                        fill: legends.at(legends.length >= 5 ? -2 : -1).color,
+                        fill: legends[
+                            legends.length >= 5
+                                ? legends.length - 2
+                                : legends.length - 1
+                        ].color,
                     })
                     .add(this.legendGroup)
             } else {
