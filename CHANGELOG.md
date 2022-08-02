@@ -1,3 +1,10 @@
+## [23.13.3](https://github.com/dhis2/analytics/compare/v23.13.2...v23.13.3) (2022-08-02)
+
+
+### Bug Fixes
+
+* avoid ES2022 functions ([#1300](https://github.com/dhis2/analytics/issues/1300)) ([93ab848](https://github.com/dhis2/analytics/commit/93ab848e89e4c22a2d9ca20625287af892ef8d89))
+
 ## [23.13.2](https://github.com/dhis2/analytics/compare/v23.13.1...v23.13.2) (2022-08-01)
 
 
