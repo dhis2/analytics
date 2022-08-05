@@ -1,3 +1,10 @@
+## [23.13.4](https://github.com/dhis2/analytics/compare/v23.13.3...v23.13.4) (2022-08-05)
+
+
+### Bug Fixes
+
+* request first page when sorting/filtering ([#1301](https://github.com/dhis2/analytics/issues/1301)) ([125e2af](https://github.com/dhis2/analytics/commit/125e2af84c19c81a9f8665d3e0cf2a88aaffdbda))
+
 ## [23.13.3](https://github.com/dhis2/analytics/compare/v23.13.2...v23.13.3) (2022-08-02)
 
 
