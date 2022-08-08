@@ -186,7 +186,7 @@ export const UserMentionWrapper = ({
                                             capturedText === ''
                                                 ? i18n.t('Search for a user')
                                                 : i18n.t(
-                                                      'Searching for "{{searchText}}"',
+                                                      'Searching for "{{- searchText}}"',
                                                       {
                                                           searchText:
                                                               capturedText,
