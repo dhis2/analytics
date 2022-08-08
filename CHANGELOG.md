@@ -1,3 +1,10 @@
+## [23.13.5](https://github.com/dhis2/analytics/compare/v23.13.4...v23.13.5) (2022-08-08)
+
+
+### Bug Fixes
+
+* avoid encoding when interpolating certain variables in i18n.t ([#1304](https://github.com/dhis2/analytics/issues/1304)) ([db83318](https://github.com/dhis2/analytics/commit/db8331800a5132dfe266b2f9a42c5c68bb7e9b6e))
+
 ## [23.13.4](https://github.com/dhis2/analytics/compare/v23.13.3...v23.13.4) (2022-08-05)
 
 
