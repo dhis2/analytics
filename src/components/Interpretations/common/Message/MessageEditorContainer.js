@@ -2,8 +2,8 @@ import { UserAvatar, spacers } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
 
-const MessageEditorContainer = ({ children, currentUser }) => (
-    <div className="container">
+const MessageEditorContainer = ({ children, currentUser, dataTest }) => (
+    <div className="container" data-test={dataTest}>
         <div className="avatar">
             <UserAvatar name={currentUser.name} medium />
         </div>
@@ -27,6 +27,7 @@ const MessageEditorContainer = ({ children, currentUser }) => (
 MessageEditorContainer.propTypes = {
     currentUser: PropTypes.object.isRequired,
     children: PropTypes.node,
+    dataTest: PropTypes.string,
 }
 
 export { MessageEditorContainer }
