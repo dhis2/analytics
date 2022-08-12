@@ -1,3 +1,10 @@
+# [21.8.0](https://github.com/dhis2/analytics/compare/v21.7.0...v21.8.0) (2022-08-12)
+
+
+### Features
+
+* search by tokens across identifiable properties (DHIS2-13475) ([#1293](https://github.com/dhis2/analytics/issues/1293)) ([58cf534](https://github.com/dhis2/analytics/commit/58cf534a0836d41093cdd0777e4efbd38871d7fd))
+
 # [21.7.0](https://github.com/dhis2/analytics/compare/v21.6.0...v21.7.0) (2022-06-02)
 
 
