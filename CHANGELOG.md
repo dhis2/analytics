@@ -1,3 +1,10 @@
+## [23.13.7](https://github.com/dhis2/analytics/compare/v23.13.6...v23.13.7) (2022-08-12)
+
+
+### Bug Fixes
+
+* always display legend set name in legend key (DHIS2-75) ([#1306](https://github.com/dhis2/analytics/issues/1306)) ([57502ee](https://github.com/dhis2/analytics/commit/57502eebce5ccb52aca62c080708587c008da822))
+
 ## [23.13.6](https://github.com/dhis2/analytics/compare/v23.13.5...v23.13.6) (2022-08-12)
 
 
