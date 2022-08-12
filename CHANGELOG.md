@@ -1,3 +1,10 @@
+## [23.13.6](https://github.com/dhis2/analytics/compare/v23.13.5...v23.13.6) (2022-08-12)
+
+
+### Bug Fixes
+
+* **AboutUnit:** read sharing info from sharing object in AO ([#1299](https://github.com/dhis2/analytics/issues/1299)) ([d73a34f](https://github.com/dhis2/analytics/commit/d73a34f8f4b5498c9106cab7fb6f2a373be073b6))
+
 ## [23.13.5](https://github.com/dhis2/analytics/compare/v23.13.4...v23.13.5) (2022-08-08)
 
 
