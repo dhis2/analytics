@@ -40,7 +40,10 @@ export const InterpretationForm = ({
     const inputPlaceholder = i18n.t('Write an interpretation')
 
     return (
-        <MessageEditorContainer currentUser={currentUser} dataTest="interpretation-form">
+        <MessageEditorContainer
+            currentUser={currentUser}
+            dataTest="interpretation-form"
+        >
             {showRichTextEditor ? (
                 <div>
                     <RichTextEditor
