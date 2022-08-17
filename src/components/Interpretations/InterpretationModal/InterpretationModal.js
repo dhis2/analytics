@@ -123,6 +123,7 @@ const InterpretationModal = ({
                 className={cx(modalCSS.className, {
                     hidden: shouldCssHideModal,
                 })}
+                dataTest="interpretation-modal"
             >
                 <h1 className="title">
                     <span className="ellipsis">
