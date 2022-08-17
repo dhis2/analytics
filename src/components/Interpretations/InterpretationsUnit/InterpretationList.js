@@ -41,7 +41,7 @@ export const InterpretationList = ({
     )
 
     return (
-        <ol className="interpretation-groups">
+        <ol className="interpretation-groups" data-test="interpretations-list">
             {Object.keys(interpretationsByDate)
                 .sort()
                 .reverse()
