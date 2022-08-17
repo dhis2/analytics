@@ -1,3 +1,10 @@
+## [23.13.9](https://github.com/dhis2/analytics/compare/v23.13.8...v23.13.9) (2022-08-17)
+
+
+### Bug Fixes
+
+* prepare interpretation components for Cypress testing ([#1305](https://github.com/dhis2/analytics/issues/1305)) ([538c7bc](https://github.com/dhis2/analytics/commit/538c7bc686725122634f1b5152661d43cd54cf3b))
+
 ## [23.13.8](https://github.com/dhis2/analytics/compare/v23.13.7...v23.13.8) (2022-08-17)
 
 
