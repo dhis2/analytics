@@ -1,6 +1,7 @@
 import { colors } from '@dhis2/ui'
-import { hasCustomAxes } from '../../../../../modules/axis'
-import { axisHasRelativeItems } from '../../../../../modules/layout/axisHasRelativeItems'
+import { hasCustomAxes } from '../../../../../modules/axis.js'
+import { axisHasRelativeItems } from '../../../../../modules/layout/axisHasRelativeItems.js'
+import { getLegendSetByDisplayStrategy } from '../../../../../modules/legends.js'
 import {
     VIS_TYPE_PIE,
     VIS_TYPE_GAUGE,
@@ -109,7 +110,15 @@ function getIdColorMap(series, layout, extraOptions) {
     }
 }
 
-function getDefault(series, metaData, layout, isStacked, extraOptions) {
+function getDefault({
+    series,
+    metaData,
+    layout,
+    isStacked,
+    extraOptions,
+    legendSets,
+    displayStrategy,
+}) {
     const fullIdAxisMap = getFullIdAxisMap(layout.series, series)
     const idColorMap = getIdColorMap(series, layout, extraOptions)
     const indexColorPatternMap = getIndexColorPatternMap(
@@ -186,6 +195,16 @@ function getDefault(series, metaData, layout, isStacked, extraOptions) {
         if (extraOptions.yearlySeries) {
             seriesObj.name = extraOptions.yearlySeries[index]
         }
+
+        seriesObj.legendSet = getLegendSetByDisplayStrategy({
+            displayStrategy,
+            legendSets,
+            legendSetId: metaData[seriesObj.id]?.legendSet,
+        })
+
+        seriesObj.marker = {
+            enabled: false,
+        }
     })
 
     // DHIS2-701: use cumulative values
@@ -196,7 +215,15 @@ function getDefault(series, metaData, layout, isStacked, extraOptions) {
     return series
 }
 
-export default function (series, metaData, layout, isStacked, extraOptions) {
+export default function ({
+    series,
+    metaData,
+    layout,
+    isStacked,
+    extraOptions,
+    legendSets,
+    displayStrategy,
+}) {
     switch (layout.type) {
         case VIS_TYPE_PIE:
             series = getPie(
@@ -211,13 +238,15 @@ export default function (series, metaData, layout, isStacked, extraOptions) {
             series = getScatter(extraOptions)
             break
         default:
-            series = getDefault(
+            series = getDefault({
                 series,
                 metaData,
                 layout,
                 isStacked,
-                extraOptions
-            )
+                extraOptions,
+                legendSets,
+                displayStrategy,
+            })
     }
 
     series.forEach(seriesObj => {
