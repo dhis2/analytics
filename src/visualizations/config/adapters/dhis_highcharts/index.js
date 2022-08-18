@@ -101,13 +101,15 @@ export default function ({ store, layout, el, extraConfig, extraOptions }) {
         yAxis: getYAxis(_layout, series, _extraOptions),
 
         // series
-        series: getSeries(
-            series.slice(),
-            store.data[0].metaData,
-            _layout,
-            stacked,
-            _extraOptions
-        ),
+        series: getSeries({
+            series: series.slice(),
+            metaData: store.data[0].metaData.items,
+            layout: _layout,
+            isStacked: stacked,
+            extraOptions: _extraOptions,
+            legendSets,
+            displayStrategy: _layout.legend?.strategy,
+        }),
 
         // legend
         legend: getLegend({
@@ -115,9 +117,6 @@ export default function ({ store, layout, el, extraConfig, extraOptions }) {
             fontStyle: _layout.seriesKey?.label?.fontStyle,
             visType: _layout.type,
             dashboard: _extraOptions.dashboard,
-            legendSets,
-            metaData: store.data[0].metaData.items,
-            displayStrategy: _layout.legend?.strategy,
         }),
 
         // pane
