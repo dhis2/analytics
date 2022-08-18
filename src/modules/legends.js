@@ -13,3 +13,20 @@ export const getColorByValueFromLegendSet = (legendSet, value) => {
     const legend = getLegendByValueFromLegendSet(legendSet, value)
     return legend && legend.color
 }
+
+export const getLegendSetByDisplayStrategy = ({
+    displayStrategy,
+    legendSets,
+    legendSetId,
+}) => {
+    if (
+        displayStrategy === LEGEND_DISPLAY_STRATEGY_FIXED &&
+        legendSets.length
+    ) {
+        return legendSets[0]
+    } else if (displayStrategy === LEGEND_DISPLAY_STRATEGY_BY_DATA_ITEM) {
+        return legendSets.find((legendSet) => legendSet.id === legendSetId)
+    } else {
+        return null
+    }
+}
