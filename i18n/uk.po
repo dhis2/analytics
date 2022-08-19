@@ -81,7 +81,7 @@ msgid "Data Type"
 msgstr ""
 
 msgid "All types"
-msgstr ""
+msgstr "Всі типи"
 
 msgid "Totals only"
 msgstr ""
@@ -243,7 +243,7 @@ msgid "Get link…"
 msgstr ""
 
 msgid "Open in this app"
-msgstr ""
+msgstr "Відкрити в цьому додатку"
 
 msgid "Close"
 msgstr "Закрити"
@@ -264,13 +264,13 @@ msgid "Save {{fileType}} as"
 msgstr ""
 
 msgid "event report"
-msgstr ""
+msgstr "звіт про подію"
 
 msgid "line list"
 msgstr ""
 
 msgid "map"
-msgstr ""
+msgstr "мапа"
 
 msgid "visualization"
 msgstr ""
@@ -279,7 +279,7 @@ msgid "Edit"
 msgstr "Редагувати"
 
 msgid "Write a reply"
-msgstr ""
+msgstr "Написати відповідь"
 
 msgid "Post reply"
 msgstr ""
@@ -308,7 +308,7 @@ msgid "Hide interpretation"
 msgstr ""
 
 msgid "Write an interpretation"
-msgstr ""
+msgstr "Написати інтерпретацію"
 
 msgid "Post interpretation"
 msgstr ""
@@ -332,7 +332,7 @@ msgid "See interpretation"
 msgstr ""
 
 msgid "Manage sharing"
-msgstr ""
+msgstr "Керування спільним доступом"
 
 msgid "Could not update interpretation"
 msgstr ""
@@ -537,7 +537,7 @@ msgid "Nothing selected"
 msgstr ""
 
 msgid "User organisation unit"
-msgstr ""
+msgstr "Організаційний підрозділ користувачів"
 
 msgid "User sub-units"
 msgstr "Одиниці підрозділів користувачів"
@@ -546,10 +546,10 @@ msgid "User sub-x2-units"
 msgstr "Підрозділи користувачів 2-го рівня"
 
 msgid "Select a level"
-msgstr ""
+msgstr "Вибрати рівень"
 
 msgid "Select a group"
-msgstr ""
+msgstr "Вибрати групу"
 
 msgid "Deselect all"
 msgstr "Скасувати вибір усіх"
@@ -1044,49 +1044,49 @@ msgid "Pivot table"
 msgstr "Зведена таблиця"
 
 msgid "Area"
-msgstr ""
+msgstr "З областями"
 
 msgid "Stacked area"
-msgstr ""
+msgstr "З областями з накопиченням"
 
 msgid "Bar"
-msgstr ""
+msgstr "Гістограма"
 
 msgid "Stacked bar"
-msgstr ""
+msgstr "Гістограма з накопиченням"
 
 msgid "Column"
 msgstr "Стовпчик"
 
 msgid "Year over year (column)"
-msgstr ""
+msgstr "Рік за роком (стовпчик)"
 
 msgid "Stacked column"
-msgstr ""
+msgstr "Стовпчаста з накопиченням"
 
 msgid "Gauge"
-msgstr ""
+msgstr "Індикатор"
 
 msgid "Line"
-msgstr ""
+msgstr "Лінійна"
 
 msgid "Line list"
 msgstr "Перелік рядків"
 
 msgid "Year over year (line)"
-msgstr ""
+msgstr "Рік за роком (лінія)"
 
 msgid "Pie"
-msgstr ""
+msgstr "Секторна"
 
 msgid "Radar"
-msgstr ""
+msgstr "Пелюсткова"
 
 msgid "Scatter"
-msgstr ""
+msgstr "Точкова"
 
 msgid "Single value"
-msgstr ""
+msgstr "Одне значення"
 
 msgid "All charts"
 msgstr ""
