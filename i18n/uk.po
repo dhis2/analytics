@@ -3,13 +3,14 @@
 # phil_dhis2, 2020
 # Viktor Varland <viktor@dhis2.org>, 2020
 # Wanda <wanda@frontlineaids.org>, 2020
+# Éva Tamási, 2022
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2020-05-20T21:46:25.914Z\n"
 "PO-Revision-Date: 2020-05-18 10:55+0000\n"
-"Last-Translator: Wanda <wanda@frontlineaids.org>, 2020\n"
+"Last-Translator: Éva Tamási, 2022\n"
 "Language-Team: Ukrainian (https://www.transifex.com/hisp-uio/teams/100509/uk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -426,37 +427,37 @@ msgid "Column"
 msgstr "Стовпчик"
 
 msgid "Stacked column"
-msgstr ""
+msgstr "Стовпчаста з накопиченням"
 
 msgid "Bar"
-msgstr ""
+msgstr "Гістограма"
 
 msgid "Stacked bar"
-msgstr ""
+msgstr "Гістограма з накопиченням"
 
 msgid "Line"
-msgstr ""
+msgstr "Лінійна"
 
 msgid "Area"
-msgstr ""
+msgstr "З областями"
 
 msgid "Pie"
-msgstr ""
+msgstr "Секторна"
 
 msgid "Radar"
-msgstr ""
+msgstr "Пелюсткова"
 
 msgid "Gauge"
-msgstr ""
+msgstr "Індикатор"
 
 msgid "Year over year (line)"
-msgstr ""
+msgstr "Рік за роком (лінія)"
 
 msgid "Year over year (column)"
-msgstr ""
+msgstr "Рік за роком (стовпчик)"
 
 msgid "Single value"
-msgstr ""
+msgstr "Одне значення"
 
 msgid "Pivot table"
 msgstr "Зведена таблиця"
