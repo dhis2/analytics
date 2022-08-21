@@ -37,7 +37,7 @@ msgid "Move to {{axisName}}"
 msgstr ""
 
 msgid "Add to {{axisName}}"
-msgstr ""
+msgstr "Додати до {{axisName}}"
 
 msgid "Remove"
 msgstr "Прибрати"
@@ -55,19 +55,19 @@ msgid "Remove Assigned Categories"
 msgstr ""
 
 msgid "Add Assigned Categories"
-msgstr ""
+msgstr "Додати призначені категорії"
 
 msgid "Manage chart axes"
 msgstr ""
 
 msgid "Filter dimensions"
-msgstr ""
+msgstr "Виміри фільтра"
 
 msgid "Main dimensions"
-msgstr ""
+msgstr "Основні виміри"
 
 msgid "Your dimensions"
-msgstr ""
+msgstr "Ваші виміри"
 
 msgid "Dimension recommended with selected data"
 msgstr ""
@@ -334,7 +334,7 @@ msgid "Years"
 msgstr "Роки"
 
 msgid "Series"
-msgstr ""
+msgstr "Серія"
 
 msgid "Category"
 msgstr "Категорія"
@@ -349,19 +349,19 @@ msgid "Rows"
 msgstr ""
 
 msgid "Reporting rate"
-msgstr ""
+msgstr "Частота повідомлень"
 
 msgid "Reporting rate on time"
-msgstr ""
+msgstr "Частота повідомлень у часі"
 
 msgid "Actual reports"
-msgstr ""
+msgstr "Фактичні звіти"
 
 msgid "Actual reports on time"
-msgstr ""
+msgstr "Фактичні звіти за часом"
 
 msgid "Expected reports"
-msgstr ""
+msgstr "Очікувані звіти"
 
 msgid "Program"
 msgstr "Програма"
