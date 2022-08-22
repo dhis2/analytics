@@ -14,9 +14,7 @@ const LegendKey = ({ legendSets }) => {
                     })}
                     data-test={`legend-key-item-${legendSet.id}`}
                 >
-                    {legendSets.length > 1 && (
-                        <span className="legendSetName">{legendSet.name}</span>
-                    )}
+                    <span className="legendSetName">{legendSet.name}</span>
                     {legendSet.legends
                         .sort((a, b) => a.startValue - b.startValue)
                         .map((legend) => (

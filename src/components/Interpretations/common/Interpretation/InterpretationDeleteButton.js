@@ -22,6 +22,7 @@ const InterpretationDeleteButton = ({ id, onComplete }) => {
             iconComponent={IconDelete16}
             onClick={remove}
             disabled={loading}
+            dataTest="interpretation-delete-button"
         />
     )
 }

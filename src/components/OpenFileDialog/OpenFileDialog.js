@@ -17,7 +17,13 @@ import {
 } from '@dhis2/ui'
 import isEqual from 'lodash/isEqual'
 import PropTypes from 'prop-types'
-import React, { useEffect, useMemo, useState } from 'react'
+import React, {
+    useCallback,
+    useEffect,
+    useMemo,
+    useReducer,
+    useState,
+} from 'react'
 import {
     VIS_TYPE_GROUP_ALL,
     VIS_TYPE_GROUP_CHARTS,
@@ -71,25 +77,29 @@ export const OpenFileDialog = ({
     onNew,
     currentUser,
 }) => {
-    const filesQuery = useMemo(() => getQuery(type), [])
+    const filesQuery = useMemo(() => getQuery(type), [type])
     const defaultFilters = {
         searchTerm: '',
         createdBy: CREATED_BY_ALL,
         visType: defaultFilterVisType,
     }
 
-    const [{ sortField, sortDirection }, setSorting] = useState({
-        sortField: 'displayName',
-        sortDirection: 'asc',
-    })
-    const [page, setPage] = useState(1)
+    const [{ page, sortField, sortDirection, filters }, setState] = useReducer(
+        (state, newState) => ({ ...state, ...newState }),
+        {
+            page: 1,
+            sortField: 'displayName',
+            sortDirection: 'asc',
+            filters: defaultFilters,
+        }
+    )
+
     const [nameFilterValue, setNameFilterValue] = useState(
         defaultFilters.searchTerm
     )
     const [searchTimeout, setSearchTimeout] = useState(null)
-    const [filters, setFilters] = useState(defaultFilters)
 
-    const formatFilters = () => {
+    const formatFilters = useCallback(() => {
         const queryFilters = []
 
         switch (filters.createdBy) {
@@ -118,20 +128,32 @@ export const OpenFileDialog = ({
         }
 
         if (filters.searchTerm) {
-            queryFilters.push(`displayName:ilike:${filters.searchTerm}`)
+            queryFilters.push(`identifiable:token:${filters.searchTerm}`)
         }
 
         return queryFilters
-    }
+    }, [currentUser, filters])
 
     const { loading, error, data, refetch } = useDataQuery(filesQuery, {
         lazy: true,
     })
 
     const resetFilters = () => {
-        setFilters(defaultFilters)
+        setState({ filters: defaultFilters, page: 1 })
         setNameFilterValue(defaultFilters.searchTerm)
     }
+
+    const setPage = (pageNum) =>
+        setState({
+            page: pageNum,
+        })
+
+    const sortData = ({ name, direction }) =>
+        setState({
+            sortField: name,
+            sortDirection: direction,
+            page: 1,
+        })
 
     useEffect(() => {
         // only fetch data when the dialog is open
@@ -143,21 +165,7 @@ export const OpenFileDialog = ({
                 filters: formatFilters(),
             })
         }
-    }, [open, page, sortField, sortDirection])
-
-    useEffect(() => {
-        // avoid fetching data when the dialog is first rendered (hidden)
-        if (open) {
-            // reset pagination when filters are applied/changed
-            setPage(1)
-
-            refetch({
-                sortField,
-                sortDirection,
-                filters: formatFilters(),
-            })
-        }
-    }, [filters])
+    }, [open, page, sortField, sortDirection, filters, refetch, formatFilters])
 
     const headers = [
         {
@@ -213,9 +221,12 @@ export const OpenFileDialog = ({
                                     setSearchTimeout(
                                         setTimeout(
                                             () =>
-                                                setFilters({
-                                                    ...filters,
-                                                    searchTerm: value,
+                                                setState({
+                                                    page: 1,
+                                                    filters: {
+                                                        ...filters,
+                                                        searchTerm: value,
+                                                    },
                                                 }),
                                             200
                                         )
@@ -229,9 +240,12 @@ export const OpenFileDialog = ({
                                     visTypes={filterVisTypes}
                                     selected={filters.visType}
                                     onChange={(value) =>
-                                        setFilters({
-                                            ...filters,
-                                            visType: value,
+                                        setState({
+                                            page: 1,
+                                            filters: {
+                                                ...filters,
+                                                visType: value,
+                                            },
                                         })
                                     }
                                 />
@@ -241,9 +255,12 @@ export const OpenFileDialog = ({
                             <CreatedByFilter
                                 selected={filters.createdBy}
                                 onChange={(value) =>
-                                    setFilters({
-                                        ...filters,
-                                        createdBy: value,
+                                    setState({
+                                        page: 1,
+                                        filters: {
+                                            ...filters,
+                                            createdBy: value,
+                                        },
                                     })
                                 }
                             />
@@ -280,16 +297,8 @@ export const OpenFileDialog = ({
                                                             width={width}
                                                             key={field}
                                                             name={field}
-                                                            onSortIconClick={({
-                                                                name,
-                                                                direction,
-                                                            }) =>
-                                                                setSorting({
-                                                                    sortField:
-                                                                        name,
-                                                                    sortDirection:
-                                                                        direction,
-                                                                })
+                                                            onSortIconClick={
+                                                                sortData
                                                             }
                                                             sortDirection={getSortDirection(
                                                                 field

@@ -54,7 +54,7 @@ const SourceEmptyPlaceholder = ({
     if (!loading && !options.length && !filter) {
         message = noItemsMessage || i18n.t('No data')
     } else if (!loading && !options.length && filter) {
-        message = i18n.t('Nothing found for {{searchTerm}}', {
+        message = i18n.t('Nothing found for {{- searchTerm}}', {
             searchTerm: filter,
         })
     }
