@@ -10,6 +10,7 @@ const MessageIconButton = ({
     selected,
     count,
     iconComponent: Icon,
+    dataTest,
 }) => (
     <Tooltip closeDelay={200} content={tooltipContent}>
         {({ ref, onMouseOver, onMouseOut }) => (
@@ -26,6 +27,7 @@ const MessageIconButton = ({
                     }}
                     className={cx('button', { selected })}
                     disabled={disabled}
+                    data-test={dataTest}
                 >
                     {count && count}
                     <Icon />
@@ -78,6 +80,7 @@ MessageIconButton.propTypes = {
         .isRequired,
     tooltipContent: PropTypes.string.isRequired,
     count: PropTypes.number,
+    dataTest: PropTypes.string,
     disabled: PropTypes.bool,
     selected: PropTypes.bool,
     onClick: PropTypes.func,

@@ -60,18 +60,21 @@ export const Interpretation = ({
                         selected={isLikedByCurrentUser}
                         count={interpretation.likes}
                         disabled={toggleLikeInProgress}
+                        dataTest="interpretation-like-unlike-button"
                     />
                     <MessageIconButton
                         tooltipContent={i18n.t('Reply')}
                         iconComponent={IconReply16}
                         onClick={() => onReplyIconClick(interpretation.id)}
                         count={interpretation.comments.length}
+                        dataTest="interpretation-reply-button"
                     />
                     {interpretation.access.manage && (
                         <MessageIconButton
                             iconComponent={IconShare16}
                             tooltipContent={i18n.t('Share')}
                             onClick={() => setShowSharingDialog(true)}
+                            dataTest="interpretation-share-button"
                         />
                     )}
                     {showSharingDialog && (
@@ -87,6 +90,7 @@ export const Interpretation = ({
                             iconComponent={IconEdit16}
                             tooltipContent={i18n.t('Edit')}
                             onClick={() => setIsUpdateMode(true)}
+                            dataTest="interpretation-edit-button"
                         />
                     )}
                     {interpretation.access.delete && (
