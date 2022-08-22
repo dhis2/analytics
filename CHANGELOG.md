@@ -1,3 +1,15 @@
+# [24.0.0](https://github.com/dhis2/analytics/compare/v23.13.13...v24.0.0) (2022-08-22)
+
+
+### Bug Fixes
+
+* add support for Maps app (LIBS-339) ([#1322](https://github.com/dhis2/analytics/issues/1322)) ([b92717d](https://github.com/dhis2/analytics/commit/b92717d941d7bdb15394cecd663fa7fa9b1a57f2))
+
+
+### BREAKING CHANGES
+
+* the type prop changed from the plural version to the singular, this requires updating the apps that use the AboutAOUnit component.
+
 ## [23.13.13](https://github.com/dhis2/analytics/compare/v23.13.12...v23.13.13) (2022-08-22)
 
 
