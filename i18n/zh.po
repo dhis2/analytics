@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-08-10T13:11:21.079Z\n"
+"POT-Creation-Date: 2022-08-22T09:12:05.760Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: easylin <lin_xd@126.com>, 2022\n"
 "Language-Team: Chinese (https://www.transifex.com/hisp-uio/teams/100509/zh/)\n"
@@ -36,9 +36,6 @@ msgstr "与 {{commaSeparatedListOfUsersAndGroups}} 共享"
 msgid "Not shared with any users or groups"
 msgstr "不与任何用户或组共享"
 
-msgid "About this visualization"
-msgstr "关于此可视化"
-
 msgid "No description"
 msgstr "无描述"
 
@@ -47,6 +44,9 @@ msgstr "最后更新 {{time}}"
 
 msgid "Created {{time}} by {{author}}"
 msgstr "由 {{author}} 在 {{time}} 创建"
+
+msgid "Created {{time}}"
+msgstr ""
 
 msgid "Viewed {{count}} times"
 msgid_plural "Viewed {{count}} times"
@@ -66,6 +66,15 @@ msgstr "订阅以获取有关新解释的更新。"
 
 msgid "Subscribe"
 msgstr "订阅"
+
+msgid "About this map"
+msgstr ""
+
+msgid "About this line list"
+msgstr ""
+
+msgid "About this visualization"
+msgstr "关于此可视化"
 
 msgid "This app could not retrieve required data."
 msgstr "此应用无法检索所需数据。"
