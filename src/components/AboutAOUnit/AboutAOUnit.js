@@ -19,13 +19,14 @@ import PropTypes from 'prop-types'
 import React, { useEffect, useMemo, useState } from 'react'
 import { formatList } from '../../modules/list.js'
 import styles from './styles/AboutAOUnit.style.js'
+import { getTranslatedString, AOTypeMap } from './utils.js'
 
 const READ_ONLY = 'r'
 const READ_AND_WRITE = 'rw'
 
 const getQueries = (type) => ({
     ao: {
-        resource: type,
+        resource: AOTypeMap[type].apiEndpoint,
         id: ({ id }) => id,
         params: {
             fields: 'id,displayDescription,created,createdBy[displayName],lastUpdated,subscribed,sharing',
@@ -38,19 +39,19 @@ const getQueries = (type) => ({
 })
 
 const getSubscribeMutation = (type, id) => ({
-    resource: `${type}/${id}/subscriber`,
+    resource: `${AOTypeMap[type].apiEndpoint}/${id}/subscriber`,
     type: 'create',
 })
 
 const getUnsubscribeMutation = (type, id) => ({
-    resource: `${type}/${id}/subscriber`,
+    resource: `${AOTypeMap[type].apiEndpoint}/${id}/subscriber`,
     type: 'delete',
 })
 
 const AboutAOUnit = ({ type, id }) => {
     const [isExpanded, setIsExpanded] = useState(true)
 
-    const queries = useMemo(() => getQueries(type), [])
+    const queries = useMemo(() => getQueries(type), [type])
 
     const {
         data,
@@ -60,11 +61,14 @@ const AboutAOUnit = ({ type, id }) => {
         lazy: true,
     })
 
-    const subscribeMutation = useMemo(() => getSubscribeMutation(type, id), [])
+    const subscribeMutation = useMemo(
+        () => getSubscribeMutation(type, id),
+        [type, id]
+    )
 
     const unsubscribeMutation = useMemo(
         () => getUnsubscribeMutation(type, id),
-        []
+        [type, id]
     )
 
     const [subscribe, { loading: subscribeIsLoading }] = useDataMutation(
@@ -93,7 +97,7 @@ const AboutAOUnit = ({ type, id }) => {
         if (id) {
             refetch({ id })
         }
-    }, [type, id, refetch])
+    }, [id, refetch])
 
     const getAccessLevelString = (access) => {
         const re = new RegExp(`(?<accessLevel>${READ_AND_WRITE}?)`)
@@ -150,7 +154,7 @@ const AboutAOUnit = ({ type, id }) => {
         >
             <div className="header" onClick={() => setIsExpanded(!isExpanded)}>
                 <span className="title">
-                    {i18n.t('About this visualization')}
+                    {getTranslatedString(type, 'unitTitle')}
                 </span>
                 {isExpanded ? (
                     <IconChevronUp24 color={colors.grey700} />
@@ -191,10 +195,21 @@ const AboutAOUnit = ({ type, id }) => {
                                 </p>
                                 <p className="detailLine">
                                     <IconUser16 color={colors.grey700} />
-                                    {i18n.t('Created {{time}} by {{author}}', {
-                                        time: moment(data.ao.created).fromNow(),
-                                        author: data.ao.createdBy.displayName,
-                                    })}
+                                    {data.ao.createdBy?.displayName
+                                        ? i18n.t(
+                                              'Created {{time}} by {{author}}',
+                                              {
+                                                  time: moment(
+                                                      data.ao.created
+                                                  ).fromNow(),
+                                                  author: data.ao.createdBy.displayName,
+                                              }
+                                          )
+                                        : i18n.t('Created {{time}}', {
+                                              time: moment(
+                                                  data.ao.created
+                                              ).fromNow(),
+                                          })}
                                 </p>
                                 <p className="detailLine">
                                     <IconView16 color={colors.grey700} />
