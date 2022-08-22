@@ -30,7 +30,7 @@ const texts = {
     },
     [NO_TYPE]: {
         unitTitle: i18n.t('About this visualization'),
-    }
+    },
 }
 
 export const getTranslatedString = (type, key) =>

@@ -202,7 +202,8 @@ const AboutAOUnit = ({ type, id }) => {
                                                   time: moment(
                                                       data.ao.created
                                                   ).fromNow(),
-                                                  author: data.ao.createdBy.displayName,
+                                                  author: data.ao.createdBy
+                                                      .displayName,
                                               }
                                           )
                                         : i18n.t('Created {{time}}', {
