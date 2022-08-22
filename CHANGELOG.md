@@ -1,3 +1,102 @@
+## [23.13.13](https://github.com/dhis2/analytics/compare/v23.13.12...v23.13.13) (2022-08-22)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([ec34ef7](https://github.com/dhis2/analytics/commit/ec34ef755b02dead5661fa1997db4271812c8134))
+
+## [23.13.12](https://github.com/dhis2/analytics/compare/v23.13.11...v23.13.12) (2022-08-20)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([2e23732](https://github.com/dhis2/analytics/commit/2e237327df8ab7d3aa2b1414329260fb55e07500))
+
+## [23.13.11](https://github.com/dhis2/analytics/compare/v23.13.10...v23.13.11) (2022-08-19)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([fc4707b](https://github.com/dhis2/analytics/commit/fc4707b044dd9e8402a868e8b41cffe0c5a0c408))
+
+## [23.13.10](https://github.com/dhis2/analytics/compare/v23.13.9...v23.13.10) (2022-08-18)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([6edaef1](https://github.com/dhis2/analytics/commit/6edaef1f71f851e09c4f143e4fef3c7ca0a03b91))
+
+## [23.13.9](https://github.com/dhis2/analytics/compare/v23.13.8...v23.13.9) (2022-08-17)
+
+
+### Bug Fixes
+
+* prepare interpretation components for Cypress testing ([#1305](https://github.com/dhis2/analytics/issues/1305)) ([538c7bc](https://github.com/dhis2/analytics/commit/538c7bc686725122634f1b5152661d43cd54cf3b))
+
+## [23.13.8](https://github.com/dhis2/analytics/compare/v23.13.7...v23.13.8) (2022-08-17)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([aef4238](https://github.com/dhis2/analytics/commit/aef4238813779447374e67354d716b51fb01102b))
+
+## [23.13.7](https://github.com/dhis2/analytics/compare/v23.13.6...v23.13.7) (2022-08-12)
+
+
+### Bug Fixes
+
+* always display legend set name in legend key (DHIS2-75) ([#1306](https://github.com/dhis2/analytics/issues/1306)) ([57502ee](https://github.com/dhis2/analytics/commit/57502eebce5ccb52aca62c080708587c008da822))
+
+## [23.13.6](https://github.com/dhis2/analytics/compare/v23.13.5...v23.13.6) (2022-08-12)
+
+
+### Bug Fixes
+
+* **AboutUnit:** read sharing info from sharing object in AO ([#1299](https://github.com/dhis2/analytics/issues/1299)) ([d73a34f](https://github.com/dhis2/analytics/commit/d73a34f8f4b5498c9106cab7fb6f2a373be073b6))
+
+## [23.13.5](https://github.com/dhis2/analytics/compare/v23.13.4...v23.13.5) (2022-08-08)
+
+
+### Bug Fixes
+
+* avoid encoding when interpolating certain variables in i18n.t ([#1304](https://github.com/dhis2/analytics/issues/1304)) ([db83318](https://github.com/dhis2/analytics/commit/db8331800a5132dfe266b2f9a42c5c68bb7e9b6e))
+
+## [23.13.4](https://github.com/dhis2/analytics/compare/v23.13.3...v23.13.4) (2022-08-05)
+
+
+### Bug Fixes
+
+* request first page when sorting/filtering ([#1301](https://github.com/dhis2/analytics/issues/1301)) ([125e2af](https://github.com/dhis2/analytics/commit/125e2af84c19c81a9f8665d3e0cf2a88aaffdbda))
+
+## [23.13.3](https://github.com/dhis2/analytics/compare/v23.13.2...v23.13.3) (2022-08-02)
+
+
+### Bug Fixes
+
+* avoid ES2022 functions ([#1300](https://github.com/dhis2/analytics/issues/1300)) ([93ab848](https://github.com/dhis2/analytics/commit/93ab848e89e4c22a2d9ca20625287af892ef8d89))
+
+## [23.13.2](https://github.com/dhis2/analytics/compare/v23.13.1...v23.13.2) (2022-08-01)
+
+
+### Bug Fixes
+
+* highcharts legend when exporting (DHIS2-12719) ([#1279](https://github.com/dhis2/analytics/issues/1279)) ([5f62e20](https://github.com/dhis2/analytics/commit/5f62e2050a1ff7411308a32f87f3e427cdbb4bb4))
+
+## [23.13.1](https://github.com/dhis2/analytics/compare/v23.13.0...v23.13.1) (2022-07-28)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([d3a1f4e](https://github.com/dhis2/analytics/commit/d3a1f4e861cf29e95f9615f3585e814d52aa837f))
+
+# [23.13.0](https://github.com/dhis2/analytics/compare/v23.12.5...v23.13.0) (2022-07-25)
+
+
+### Features
+
+* search by tokens across identifiable properties (DHIS2-13475) ([c94c427](https://github.com/dhis2/analytics/commit/c94c4271492d390cd76cfb8c8d8104cbfab83e1d))
+* search by tokens across identifiable properties [DHIS2-13475] ([87db2f9](https://github.com/dhis2/analytics/commit/87db2f91f7aa5b2665038324d5b779e2f8267812))
+
 ## [23.12.5](https://github.com/dhis2/analytics/compare/v23.12.4...v23.12.5) (2022-06-24)
 
 

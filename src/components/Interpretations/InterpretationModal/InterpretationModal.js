@@ -123,11 +123,12 @@ const InterpretationModal = ({
                 className={cx(modalCSS.className, {
                     hidden: shouldCssHideModal,
                 })}
+                dataTest="interpretation-modal"
             >
                 <h1 className="title">
                     <span className="ellipsis">
                         {i18n.t(
-                            'Viewing interpretation: {{visualisationName}}',
+                            'Viewing interpretation: {{- visualisationName}}',
                             {
                                 visualisationName: visualization.displayName,
                                 nsSeparator: '^^',

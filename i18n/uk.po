@@ -4,13 +4,14 @@
 # Wanda <wanda@frontlineaids.org>, 2022
 # phil_dhis2, 2022
 # Viktor Varland <viktor@dhis2.org>, 2022
+# Éva Tamási, 2022
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-05-23T11:59:44.384Z\n"
+"POT-Creation-Date: 2022-08-10T13:11:21.079Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2022\n"
+"Last-Translator: Éva Tamási, 2022\n"
 "Language-Team: Ukrainian (https://www.transifex.com/hisp-uio/teams/100509/uk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -80,7 +81,7 @@ msgid "Data Type"
 msgstr ""
 
 msgid "All types"
-msgstr ""
+msgstr "Всі типи"
 
 msgid "Totals only"
 msgstr ""
@@ -149,7 +150,7 @@ msgid "Move to {{axisName}}"
 msgstr ""
 
 msgid "Add to {{axisName}}"
-msgstr ""
+msgstr "Додати до {{axisName}}"
 
 msgid "Not available for {{visualizationType}}"
 msgstr ""
@@ -158,25 +159,25 @@ msgid "Remove Assigned Categories"
 msgstr ""
 
 msgid "Add Assigned Categories"
-msgstr ""
+msgstr "Додати призначені категорії"
 
 msgid "Remove"
 msgstr "Прибрати"
 
 msgid "Filter dimensions"
-msgstr ""
+msgstr "Виміри фільтра"
 
 msgid "Main dimensions"
-msgstr ""
+msgstr "Основні виміри"
 
 msgid "Your dimensions"
-msgstr ""
+msgstr "Ваші виміри"
 
 msgid "Dimension recommended with selected data"
 msgstr ""
 
 msgid "All items"
-msgstr ""
+msgstr "Всі елементи"
 
 msgid "Automatically include all items"
 msgstr ""
@@ -195,7 +196,7 @@ msgstr ""
 msgid "Search"
 msgstr "Пошук"
 
-msgid "Nothing found for {{searchTerm}}"
+msgid "Nothing found for {{- searchTerm}}"
 msgstr ""
 
 msgid "Delete {{fileType}}"
@@ -242,7 +243,7 @@ msgid "Get link…"
 msgstr ""
 
 msgid "Open in this app"
-msgstr ""
+msgstr "Відкрити в цьому додатку"
 
 msgid "Close"
 msgstr "Закрити"
@@ -263,13 +264,13 @@ msgid "Save {{fileType}} as"
 msgstr ""
 
 msgid "event report"
-msgstr ""
+msgstr "звіт про подію"
 
 msgid "line list"
 msgstr ""
 
 msgid "map"
-msgstr ""
+msgstr "мапа"
 
 msgid "visualization"
 msgstr ""
@@ -278,7 +279,7 @@ msgid "Edit"
 msgstr "Редагувати"
 
 msgid "Write a reply"
-msgstr ""
+msgstr "Написати відповідь"
 
 msgid "Post reply"
 msgstr ""
@@ -292,7 +293,7 @@ msgstr ""
 msgid "Update"
 msgstr "Оновити"
 
-msgid "Viewing interpretation: {{visualisationName}}"
+msgid "Viewing interpretation: {{- visualisationName}}"
 msgstr ""
 
 msgid "Could not load interpretation"
@@ -307,7 +308,7 @@ msgid "Hide interpretation"
 msgstr ""
 
 msgid "Write an interpretation"
-msgstr ""
+msgstr "Написати інтерпретацію"
 
 msgid "Post interpretation"
 msgstr ""
@@ -331,7 +332,7 @@ msgid "See interpretation"
 msgstr ""
 
 msgid "Manage sharing"
-msgstr ""
+msgstr "Керування спільним доступом"
 
 msgid "Could not update interpretation"
 msgstr ""
@@ -366,7 +367,7 @@ msgstr ""
 msgid "Search for a user"
 msgstr ""
 
-msgid "Searching for \"{{searchText}}\""
+msgid "Searching for \"{{- searchText}}\""
 msgstr ""
 
 msgid "No results found"
@@ -536,7 +537,7 @@ msgid "Nothing selected"
 msgstr ""
 
 msgid "User organisation unit"
-msgstr ""
+msgstr "Організаційний підрозділ користувачів"
 
 msgid "User sub-units"
 msgstr "Одиниці підрозділів користувачів"
@@ -545,10 +546,10 @@ msgid "User sub-x2-units"
 msgstr "Підрозділи користувачів 2-го рівня"
 
 msgid "Select a level"
-msgstr ""
+msgstr "Вибрати рівень"
 
 msgid "Select a group"
-msgstr ""
+msgstr "Вибрати групу"
 
 msgid "Deselect all"
 msgstr "Скасувати вибір усіх"
@@ -686,16 +687,16 @@ msgid "Last 14 days"
 msgstr "Минулі 14 днів"
 
 msgid "Last 30 days"
-msgstr ""
+msgstr "Останні 30 днів"
 
 msgid "Last 60 days"
-msgstr ""
+msgstr "Останні 60 днів"
 
 msgid "Last 90 days"
-msgstr ""
+msgstr "Останні 90 днів"
 
 msgid "Last 180 days"
-msgstr ""
+msgstr "Останні 180 днів"
 
 msgid "This week"
 msgstr "Поточний тиждень"
@@ -848,7 +849,7 @@ msgid "Retry"
 msgstr ""
 
 msgid "Series"
-msgstr ""
+msgstr "Серія"
 
 msgid "Category"
 msgstr "Категорія"
@@ -866,19 +867,19 @@ msgid "Points"
 msgstr ""
 
 msgid "Reporting rate"
-msgstr ""
+msgstr "Частота повідомлень"
 
 msgid "Reporting rate on time"
-msgstr ""
+msgstr "Частота повідомлень у часі"
 
 msgid "Actual reports"
-msgstr ""
+msgstr "Фактичні звіти"
 
 msgid "Actual reports on time"
-msgstr ""
+msgstr "Фактичні звіти за часом"
 
 msgid "Expected reports"
-msgstr ""
+msgstr "Очікувані звіти"
 
 msgid "Program"
 msgstr "Програма"
@@ -1043,49 +1044,49 @@ msgid "Pivot table"
 msgstr "Зведена таблиця"
 
 msgid "Area"
-msgstr ""
+msgstr "З областями"
 
 msgid "Stacked area"
-msgstr ""
+msgstr "З областями з накопиченням"
 
 msgid "Bar"
-msgstr ""
+msgstr "Гістограма"
 
 msgid "Stacked bar"
-msgstr ""
+msgstr "Гістограма з накопиченням"
 
 msgid "Column"
 msgstr "Стовпчик"
 
 msgid "Year over year (column)"
-msgstr ""
+msgstr "Рік за роком (стовпчик)"
 
 msgid "Stacked column"
-msgstr ""
+msgstr "Стовпчаста з накопиченням"
 
 msgid "Gauge"
-msgstr ""
+msgstr "Індикатор"
 
 msgid "Line"
-msgstr ""
+msgstr "Лінійна"
 
 msgid "Line list"
 msgstr "Перелік рядків"
 
 msgid "Year over year (line)"
-msgstr ""
+msgstr "Рік за роком (лінія)"
 
 msgid "Pie"
-msgstr ""
+msgstr "Секторна"
 
 msgid "Radar"
-msgstr ""
+msgstr "Пелюсткова"
 
 msgid "Scatter"
-msgstr ""
+msgstr "Точкова"
 
 msgid "Single value"
-msgstr ""
+msgstr "Одне значення"
 
 msgid "All charts"
 msgstr ""
@@ -1112,7 +1113,7 @@ msgid "Base"
 msgstr ""
 
 msgid "Axis {{axisId}}"
-msgstr ""
+msgstr "Вісь {{axisId}}"
 
 msgid "{{count}} items"
 msgid_plural "{{count}} items"

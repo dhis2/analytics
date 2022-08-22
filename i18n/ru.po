@@ -10,7 +10,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-05-23T11:59:44.384Z\n"
+"POT-Creation-Date: 2022-08-10T13:11:21.079Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: phil_dhis2, 2022\n"
 "Language-Team: Russian (https://www.transifex.com/hisp-uio/teams/100509/ru/)\n"
@@ -197,7 +197,7 @@ msgstr ""
 msgid "Search"
 msgstr "Поиск"
 
-msgid "Nothing found for {{searchTerm}}"
+msgid "Nothing found for {{- searchTerm}}"
 msgstr ""
 
 msgid "Delete {{fileType}}"
@@ -294,7 +294,7 @@ msgstr ""
 msgid "Update"
 msgstr "Обновить"
 
-msgid "Viewing interpretation: {{visualisationName}}"
+msgid "Viewing interpretation: {{- visualisationName}}"
 msgstr ""
 
 msgid "Could not load interpretation"
@@ -368,7 +368,7 @@ msgstr ""
 msgid "Search for a user"
 msgstr ""
 
-msgid "Searching for \"{{searchText}}\""
+msgid "Searching for \"{{- searchText}}\""
 msgstr ""
 
 msgid "No results found"
