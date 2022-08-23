@@ -24,7 +24,7 @@ const InterpretationThread = ({
                 focusRef.current.focus()
             })
         }
-    }, [initialFocus, focusRef.current])
+    }, [initialFocus])
 
     return (
         <div className={cx('container', { fetching })}>
