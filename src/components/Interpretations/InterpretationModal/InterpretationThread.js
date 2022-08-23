@@ -33,7 +33,9 @@ const InterpretationThread = ({
                     <IconClock16 color={colors.grey700} />
                     {moment(interpretation.created).format('LLL')}
                 </div>
-                <DownloadMenu relativePeriodDate={interpretation.created} />
+                {DownloadMenu && (
+                    <DownloadMenu relativePeriodDate={interpretation.created} />
+                )}
                 <Interpretation
                     currentUser={currentUser}
                     interpretation={interpretation}
@@ -130,13 +132,13 @@ const InterpretationThread = ({
 
 InterpretationThread.propTypes = {
     currentUser: PropTypes.object.isRequired,
-    downloadMenuComponent: PropTypes.oneOfType([
-        PropTypes.object,
-        PropTypes.func,
-    ]).isRequired,
     fetching: PropTypes.bool.isRequired,
     interpretation: PropTypes.object.isRequired,
     onInterpretationDeleted: PropTypes.func.isRequired,
+    downloadMenuComponent: PropTypes.oneOfType([
+        PropTypes.object,
+        PropTypes.func,
+    ]),
     initialFocus: PropTypes.bool,
     onThreadUpdated: PropTypes.func,
 }
