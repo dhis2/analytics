@@ -106,7 +106,7 @@ const InterpretationModal = ({
         if (interpretationId) {
             refetch({ id: interpretationId })
         }
-    }, [interpretationId])
+    }, [interpretationId, refetch])
 
     return (
         <>
