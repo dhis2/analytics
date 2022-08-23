@@ -16,7 +16,13 @@ import { supportedFileTypes, labelForFileType } from './utils.js'
 const NAME_MAXLENGTH = 230
 
 export const SaveAsDialog = ({ type, object, onClose, onSaveAs }) => {
-    const [name, setName] = useState(object?.name)
+    const [name, setName] = useState(
+        object?.name
+            ? i18n.t('{{objectName}} (copy)', {
+                  objectName: object.name,
+              })
+            : ''
+    )
     const [description, setDescription] = useState(object?.description)
 
     // the actual API request is done in the app
