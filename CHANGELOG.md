@@ -1,3 +1,10 @@
+## [24.0.2](https://github.com/dhis2/analytics/compare/v24.0.1...v24.0.2) (2022-08-23)
+
+
+### Bug Fixes
+
+* various fixes in InterpretationModal for maps LIBS-341 ([#1324](https://github.com/dhis2/analytics/issues/1324)) ([be1f462](https://github.com/dhis2/analytics/commit/be1f46297f055978de6cf3d7acae21c8f1fe1491))
+
 ## [24.0.1](https://github.com/dhis2/analytics/compare/v24.0.0...v24.0.1) (2022-08-23)
 
 
