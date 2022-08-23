@@ -56,8 +56,10 @@ export const toolbarClasses = css`
 
     .actionsWrapper {
         display: flex;
+        flex-wrap: wrap;
         gap: ${spacers.dp4};
         align-items: center;
+        justify-content: space-between;
         padding: ${spacers.dp4};
     }
 
@@ -69,7 +71,6 @@ export const toolbarClasses = css`
 
     .sideActions {
         flex-shrink: 0;
-        margin-left: auto;
     }
 
     .previewWrapper {
