@@ -36,32 +36,38 @@ const InterpretationThread = ({
                 {DownloadMenu && (
                     <DownloadMenu relativePeriodDate={interpretation.created} />
                 )}
-                <Interpretation
-                    currentUser={currentUser}
-                    interpretation={interpretation}
-                    onReplyIconClick={() => focusRef.current?.focus()}
-                    onUpdated={() => onThreadUpdated(true)}
-                    onDeleted={onInterpretationDeleted}
-                />
-                <div className={'comments'}>
-                    {interpretation.comments.map((comment) => (
-                        <Comment
-                            key={comment.id}
-                            comment={comment}
-                            currentUser={currentUser}
-                            interpretationId={interpretation.id}
-                            onThreadUpdated={onThreadUpdated}
-                        />
-                    ))}
+                <div className={'thread'}>
+                    <Interpretation
+                        currentUser={currentUser}
+                        interpretation={interpretation}
+                        onReplyIconClick={() => focusRef.current?.focus()}
+                        onUpdated={() => onThreadUpdated(true)}
+                        onDeleted={onInterpretationDeleted}
+                    />
+                    <div className={'comments'}>
+                        {interpretation.comments.map((comment) => (
+                            <Comment
+                                key={comment.id}
+                                comment={comment}
+                                currentUser={currentUser}
+                                interpretationId={interpretation.id}
+                                onThreadUpdated={onThreadUpdated}
+                            />
+                        ))}
+                    </div>
+                    <CommentAddForm
+                        currentUser={currentUser}
+                        interpretationId={interpretation.id}
+                        onSave={() => onThreadUpdated(true)}
+                        focusRef={focusRef}
+                    />
                 </div>
-                <CommentAddForm
-                    currentUser={currentUser}
-                    interpretationId={interpretation.id}
-                    onSave={() => onThreadUpdated(true)}
-                    focusRef={focusRef}
-                />
             </div>
             <style jsx>{`
+                .thread {
+                    margin-top: var(--spacers-dp16);
+                }
+
                 .container {
                     position: relative;
                     overflow: hidden;
