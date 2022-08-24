@@ -804,7 +804,7 @@ msgid "Last 5 years"
 msgstr "Останні 5 років"
 
 msgid "Last 10 years"
-msgstr ""
+msgstr "Останні 10 років"
 
 msgid "Days"
 msgstr "Дні"
