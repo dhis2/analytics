@@ -1,3 +1,10 @@
+## [24.0.4](https://github.com/dhis2/analytics/compare/v24.0.3...v24.0.4) (2022-08-25)
+
+
+### Bug Fixes
+
+* bump ui to latest ([#1327](https://github.com/dhis2/analytics/issues/1327)) ([ae41b8e](https://github.com/dhis2/analytics/commit/ae41b8e38426e5cd6399bb2c2eab72cfd22dbab5))
+
 ## [24.0.3](https://github.com/dhis2/analytics/compare/v24.0.2...v24.0.3) (2022-08-24)
 
 
