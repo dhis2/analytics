@@ -9,7 +9,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-08-22T09:12:05.760Z\n"
+"POT-Creation-Date: 2022-08-23T12:46:15.410Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: Éva Tamási, 2022\n"
 "Language-Team: Ukrainian (https://www.transifex.com/hisp-uio/teams/100509/uk/)\n"
@@ -269,6 +269,9 @@ msgstr "Змалювання"
 msgid "Rename"
 msgstr "Перейменувати"
 
+msgid "{{objectName}} (copy)"
+msgstr ""
+
 msgid "Save {{fileType}} as"
 msgstr ""
 
@@ -410,7 +413,7 @@ msgid "Type"
 msgstr "Тип"
 
 msgid "Clear filters"
-msgstr ""
+msgstr "Очистити фільтри"
 
 msgid "{{firstItemIndex}}-{{lastItemIndex}} of {{totalNumberOfItems}}"
 msgstr ""
@@ -435,7 +438,7 @@ msgid ""
 msgstr ""
 
 msgid "Create new"
-msgstr ""
+msgstr "Створити новий"
 
 msgid "Open a visualization"
 msgstr ""
