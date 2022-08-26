@@ -17,7 +17,7 @@ const NAME_MAXLENGTH = 230
 
 export const SaveAsDialog = ({ type, object, onClose, onSaveAs }) => {
     const [name, setName] = useState(
-        object?.name
+        object?.displayName || object?.name
             ? i18n.t('{{objectName}} (copy)', {
                   objectName: object.name,
               })
@@ -85,6 +85,7 @@ export const SaveAsDialog = ({ type, object, onClose, onSaveAs }) => {
 SaveAsDialog.propTypes = {
     object: PropTypes.shape({
         description: PropTypes.string,
+        displayName: PropTypes.string,
         name: PropTypes.string,
     }),
     type: PropTypes.oneOf(supportedFileTypes),
