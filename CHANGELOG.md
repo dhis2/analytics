@@ -1,3 +1,10 @@
+## [24.0.6](https://github.com/dhis2/analytics/compare/v24.0.5...v24.0.6) (2022-08-26)
+
+
+### Bug Fixes
+
+* change default value for Save as (DHIS2-13328) ([#1325](https://github.com/dhis2/analytics/issues/1325)) ([1957c51](https://github.com/dhis2/analytics/commit/1957c519a47998f3ae637836861a88dac0ec5110))
+
 ## [24.0.5](https://github.com/dhis2/analytics/compare/v24.0.4...v24.0.5) (2022-08-26)
 
 
