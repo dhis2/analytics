@@ -46,7 +46,7 @@ msgid "Created {{time}} by {{author}}"
 msgstr "由 {{author}} 在 {{time}} 创建"
 
 msgid "Created {{time}}"
-msgstr ""
+msgstr "已创建 {{time}}"
 
 msgid "Viewed {{count}} times"
 msgid_plural "Viewed {{count}} times"
@@ -68,10 +68,10 @@ msgid "Subscribe"
 msgstr "订阅"
 
 msgid "About this map"
-msgstr ""
+msgstr "关于该地图"
 
 msgid "About this line list"
-msgstr ""
+msgstr "关于此行列表"
 
 msgid "About this visualization"
 msgstr "关于此可视化"
@@ -202,7 +202,7 @@ msgid "Search"
 msgstr "搜索"
 
 msgid "Nothing found for {{- searchTerm}}"
-msgstr ""
+msgstr "没有找到 {{- searchTerm}}"
 
 msgid "Delete {{fileType}}"
 msgstr "删除{{fileType}}"
@@ -299,7 +299,7 @@ msgid "Update"
 msgstr "更新"
 
 msgid "Viewing interpretation: {{- visualisationName}}"
-msgstr ""
+msgstr "查看注释：{{-visualisationName}}"
 
 msgid "Could not load interpretation"
 msgstr "无法加载解释"
@@ -373,7 +373,7 @@ msgid "Search for a user"
 msgstr "搜索用户"
 
 msgid "Searching for \"{{- searchText}}\""
-msgstr ""
+msgstr "搜索“{{- searchText}}”"
 
 msgid "No results found"
 msgstr "没有结果"

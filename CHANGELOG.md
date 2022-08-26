@@ -1,3 +1,24 @@
+## [24.0.5](https://github.com/dhis2/analytics/compare/v24.0.4...v24.0.5) (2022-08-26)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([fd8b5e3](https://github.com/dhis2/analytics/commit/fd8b5e3fd9f055abca80d4ccd92993ef87294d8b))
+
+## [24.0.4](https://github.com/dhis2/analytics/compare/v24.0.3...v24.0.4) (2022-08-25)
+
+
+### Bug Fixes
+
+* bump ui to latest ([#1327](https://github.com/dhis2/analytics/issues/1327)) ([ae41b8e](https://github.com/dhis2/analytics/commit/ae41b8e38426e5cd6399bb2c2eab72cfd22dbab5))
+
+## [24.0.3](https://github.com/dhis2/analytics/compare/v24.0.2...v24.0.3) (2022-08-24)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([ed55dcc](https://github.com/dhis2/analytics/commit/ed55dccf8332d3e9400b766719233a8345a19548))
+
 ## [24.0.2](https://github.com/dhis2/analytics/compare/v24.0.1...v24.0.2) (2022-08-23)
 
 
