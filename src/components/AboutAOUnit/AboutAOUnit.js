@@ -16,7 +16,13 @@ import {
 import cx from 'classnames'
 import moment from 'moment'
 import PropTypes from 'prop-types'
-import React, { useEffect, useMemo, useState } from 'react'
+import React, {
+    useEffect,
+    useMemo,
+    useState,
+    forwardRef,
+    useImperativeHandle,
+} from 'react'
 import { formatList } from '../../modules/list.js'
 import styles from './styles/AboutAOUnit.style.js'
 import { getTranslatedString, AOTypeMap } from './utils.js'
@@ -48,7 +54,7 @@ const getUnsubscribeMutation = (type, id) => ({
     type: 'delete',
 })
 
-const AboutAOUnit = ({ type, id }) => {
+const AboutAOUnit = forwardRef(({ type, id }, ref) => {
     const [isExpanded, setIsExpanded] = useState(true)
 
     const queries = useMemo(() => getQueries(type), [type])
@@ -98,6 +104,14 @@ const AboutAOUnit = ({ type, id }) => {
             refetch({ id })
         }
     }, [id, refetch])
+
+    useImperativeHandle(
+        ref,
+        () => ({
+            refresh: refetch,
+        }),
+        [refetch]
+    )
 
     const getAccessLevelString = (access) => {
         const re = new RegExp(`(?<accessLevel>${READ_AND_WRITE}?)`)
@@ -277,7 +291,9 @@ const AboutAOUnit = ({ type, id }) => {
             <style jsx>{styles}</style>
         </div>
     )
-}
+})
+
+AboutAOUnit.displayName = 'AboutUnit'
 
 AboutAOUnit.propTypes = {
     id: PropTypes.string.isRequired,
