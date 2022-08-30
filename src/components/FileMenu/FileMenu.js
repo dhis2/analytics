@@ -38,7 +38,7 @@ export const FileMenu = ({
     onSave,
     onSaveAs,
     onRename,
-    //    onShare,
+    onShare,
     onDelete,
     onError,
     onTranslate,
@@ -93,10 +93,10 @@ export const FileMenu = ({
             case 'sharing':
                 return (
                     <SharingDialog
-                        open={true}
                         type={fileType}
                         id={fileObject.id}
                         onClose={onDialogClose}
+                        onSave={onShare}
                     />
                 )
             case 'getlink':
@@ -353,6 +353,7 @@ FileMenu.defaultProps = {
     onOpen: Function.prototype,
     onRename: Function.prototype,
     onSaveAs: Function.prototype,
+    onShare: Function.prototype,
     onTranslate: Function.prototype,
 }
 
@@ -369,7 +370,7 @@ FileMenu.propTypes = {
     onRename: PropTypes.func,
     onSave: PropTypes.func,
     onSaveAs: PropTypes.func,
-    //    onShare: PropTypes.func,
+    onShare: PropTypes.func,
     onTranslate: PropTypes.func,
 }
 
