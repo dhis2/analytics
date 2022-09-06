@@ -139,6 +139,11 @@ const tests = [
     },
     {
         legendSet: positiveLegendSet,
+        value: '60.0',
+        expected: '#4292c6',
+    },
+    {
+        legendSet: positiveLegendSet,
         value: 0,
         expected: '#FFFFFF',
     },
@@ -164,18 +169,27 @@ const tests = [
     },
     {
         legendSet: negativeLegendSet,
+        value: '-50.0',
+        expected: '#ffffb2',
+    },
+    {
+        legendSet: negativeLegendSet,
+        value: 0,
+        expected: '#A3A3A3',
+    },
+    {
+        legendSet: negativeLegendSet,
         value: '',
         expected: null,
     },
 ]
 
-describe('renderValue', () => {
+describe('getColorByValueFromLegendSet', () => {
     tests.forEach((t) => {
-        const testname = `Legend set: ${t.legendSet.name}, value: ${t.value}, expected: ${t.expected} `
-
-        it(testname, () => {
-            const actual = getColorByValueFromLegendSet(t.legendSet, t.value)
-            expect(actual).toEqual(t.expected)
+        it(`Legend set: ${t.legendSet.name}, value: ${t.value}, expected: ${t.expected}`, () => {
+            expect(getColorByValueFromLegendSet(t.legendSet, t.value)).toEqual(
+                t.expected
+            )
         })
     })
 })
