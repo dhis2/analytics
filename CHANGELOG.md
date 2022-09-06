@@ -1,3 +1,10 @@
+## [24.0.8](https://github.com/dhis2/analytics/compare/v24.0.7...v24.0.8) (2022-09-06)
+
+
+### Bug Fixes
+
+* prevent empty values from displaying a legend color ([#1335](https://github.com/dhis2/analytics/issues/1335)) ([5b6567e](https://github.com/dhis2/analytics/commit/5b6567e75ea1d5252f314108998ff24f181f182b))
+
 ## [24.0.7](https://github.com/dhis2/analytics/compare/v24.0.6...v24.0.7) (2022-08-27)
 
 
