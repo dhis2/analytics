@@ -1,3 +1,10 @@
+## [24.0.9](https://github.com/dhis2/analytics/compare/v24.0.8...v24.0.9) (2022-09-08)
+
+
+### Bug Fixes
+
+* enable onShare callback and allow refresh AboutAOUnit (DHIS2-13667) ([#1332](https://github.com/dhis2/analytics/issues/1332)) ([80c2819](https://github.com/dhis2/analytics/commit/80c2819c62773947d7a3a2c3daa643f563e75880))
+
 ## [24.0.8](https://github.com/dhis2/analytics/compare/v24.0.7...v24.0.8) (2022-09-06)
 
 
