@@ -47,6 +47,7 @@ export const InterpretationsUnit = forwardRef(
             onInterpretationClick,
             onReplyIconClick,
             disabled,
+            renderId,
         },
         ref
     ) => {
@@ -75,7 +76,7 @@ export const InterpretationsUnit = forwardRef(
             if (id) {
                 refetch({ type, id })
             }
-        }, [type, id, refetch])
+        }, [type, id, renderId, refetch])
 
         return (
             <div
@@ -187,6 +188,7 @@ InterpretationsUnit.propTypes = {
     id: PropTypes.string.isRequired,
     type: PropTypes.string.isRequired,
     disabled: PropTypes.bool,
+    renderId: PropTypes.number,
     onInterpretationClick: PropTypes.func,
     onReplyIconClick: PropTypes.func,
 }

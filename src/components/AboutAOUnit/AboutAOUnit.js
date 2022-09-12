@@ -54,7 +54,7 @@ const getUnsubscribeMutation = (type, id) => ({
     type: 'delete',
 })
 
-const AboutAOUnit = forwardRef(({ type, id }, ref) => {
+const AboutAOUnit = forwardRef(({ type, id, renderId }, ref) => {
     const [isExpanded, setIsExpanded] = useState(true)
 
     const queries = useMemo(() => getQueries(type), [type])
@@ -103,7 +103,7 @@ const AboutAOUnit = forwardRef(({ type, id }, ref) => {
         if (id) {
             refetch({ id })
         }
-    }, [id, refetch])
+    }, [id, renderId, refetch])
 
     useImperativeHandle(
         ref,
@@ -298,6 +298,7 @@ AboutAOUnit.displayName = 'AboutUnit'
 AboutAOUnit.propTypes = {
     id: PropTypes.string.isRequired,
     type: PropTypes.string.isRequired,
+    renderId: PropTypes.number,
 }
 
 export default AboutAOUnit
