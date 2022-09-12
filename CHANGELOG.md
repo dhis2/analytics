@@ -1,3 +1,10 @@
+# [24.1.0](https://github.com/dhis2/analytics/compare/v24.0.9...v24.1.0) (2022-09-12)
+
+
+### Features
+
+* add renderId prop in AboutAO and Interpretation units ([#1337](https://github.com/dhis2/analytics/issues/1337)) ([91618c3](https://github.com/dhis2/analytics/commit/91618c35d56d33a080aea44169e48d71176ee739))
+
 ## [24.0.9](https://github.com/dhis2/analytics/compare/v24.0.8...v24.0.9) (2022-09-08)
 
 
