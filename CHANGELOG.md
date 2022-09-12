@@ -1,3 +1,66 @@
+## [24.0.9](https://github.com/dhis2/analytics/compare/v24.0.8...v24.0.9) (2022-09-08)
+
+
+### Bug Fixes
+
+* enable onShare callback and allow refresh AboutAOUnit (DHIS2-13667) ([#1332](https://github.com/dhis2/analytics/issues/1332)) ([80c2819](https://github.com/dhis2/analytics/commit/80c2819c62773947d7a3a2c3daa643f563e75880))
+
+## [24.0.8](https://github.com/dhis2/analytics/compare/v24.0.7...v24.0.8) (2022-09-06)
+
+
+### Bug Fixes
+
+* prevent empty values from displaying a legend color ([#1335](https://github.com/dhis2/analytics/issues/1335)) ([5b6567e](https://github.com/dhis2/analytics/commit/5b6567e75ea1d5252f314108998ff24f181f182b))
+
+## [24.0.7](https://github.com/dhis2/analytics/compare/v24.0.6...v24.0.7) (2022-08-27)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([3246bf2](https://github.com/dhis2/analytics/commit/3246bf2b5eba3ea94b43fcd0dc6d6de4e7b60e46))
+
+## [24.0.6](https://github.com/dhis2/analytics/compare/v24.0.5...v24.0.6) (2022-08-26)
+
+
+### Bug Fixes
+
+* change default value for Save as (DHIS2-13328) ([#1325](https://github.com/dhis2/analytics/issues/1325)) ([1957c51](https://github.com/dhis2/analytics/commit/1957c519a47998f3ae637836861a88dac0ec5110))
+
+## [24.0.5](https://github.com/dhis2/analytics/compare/v24.0.4...v24.0.5) (2022-08-26)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([fd8b5e3](https://github.com/dhis2/analytics/commit/fd8b5e3fd9f055abca80d4ccd92993ef87294d8b))
+
+## [24.0.4](https://github.com/dhis2/analytics/compare/v24.0.3...v24.0.4) (2022-08-25)
+
+
+### Bug Fixes
+
+* bump ui to latest ([#1327](https://github.com/dhis2/analytics/issues/1327)) ([ae41b8e](https://github.com/dhis2/analytics/commit/ae41b8e38426e5cd6399bb2c2eab72cfd22dbab5))
+
+## [24.0.3](https://github.com/dhis2/analytics/compare/v24.0.2...v24.0.3) (2022-08-24)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([ed55dcc](https://github.com/dhis2/analytics/commit/ed55dccf8332d3e9400b766719233a8345a19548))
+
+## [24.0.2](https://github.com/dhis2/analytics/compare/v24.0.1...v24.0.2) (2022-08-23)
+
+
+### Bug Fixes
+
+* various fixes in InterpretationModal for maps LIBS-341 ([#1324](https://github.com/dhis2/analytics/issues/1324)) ([be1f462](https://github.com/dhis2/analytics/commit/be1f46297f055978de6cf3d7acae21c8f1fe1491))
+
+## [24.0.1](https://github.com/dhis2/analytics/compare/v24.0.0...v24.0.1) (2022-08-23)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([f7ec5e7](https://github.com/dhis2/analytics/commit/f7ec5e76f6448fdb241afbd876e8b6369c2bdf8f))
+
 # [24.0.0](https://github.com/dhis2/analytics/compare/v23.13.13...v24.0.0) (2022-08-22)
 
 

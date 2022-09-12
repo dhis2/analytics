@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-08-10T13:11:21.079Z\n"
+"POT-Creation-Date: 2022-08-22T09:12:05.760Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: trendspotter <jirka.p@volny.cz>, 2022\n"
 "Language-Team: Czech (https://www.transifex.com/hisp-uio/teams/100509/cs/)\n"
@@ -33,9 +33,6 @@ msgstr "Sdíleno s {{commaSeparatedListOfUsersAndGroups}}"
 msgid "Not shared with any users or groups"
 msgstr "Nesdíleno s žádnými uživateli ani skupinami"
 
-msgid "About this visualization"
-msgstr "O této vizualizaci"
-
 msgid "No description"
 msgstr "Bez popisu"
 
@@ -44,6 +41,9 @@ msgstr "Poslední aktualizace {{time}}"
 
 msgid "Created {{time}} by {{author}}"
 msgstr "Vytvořeno {{time}} uživatelem {{author}}"
+
+msgid "Created {{time}}"
+msgstr ""
 
 msgid "Viewed {{count}} times"
 msgid_plural "Viewed {{count}} times"
@@ -67,6 +67,15 @@ msgstr "Přihlaste se k odběru novinek o nových interpretacích."
 
 msgid "Subscribe"
 msgstr "Odebírat"
+
+msgid "About this map"
+msgstr ""
+
+msgid "About this line list"
+msgstr ""
+
+msgid "About this visualization"
+msgstr "O této vizualizaci"
 
 msgid "This app could not retrieve required data."
 msgstr "Tato aplikace nemohla načíst požadovaná data."

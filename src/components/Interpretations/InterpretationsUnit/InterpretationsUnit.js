@@ -10,6 +10,7 @@ import {
 import cx from 'classnames'
 import PropTypes from 'prop-types'
 import React, {
+    useCallback,
     useEffect,
     useState,
     useImperativeHandle,
@@ -58,23 +59,23 @@ export const InterpretationsUnit = forwardRef(
             }
         )
 
-        const onCompleteAction = () => {
+        const onCompleteAction = useCallback(() => {
             refetch({ type, id })
-        }
+        }, [type, id, refetch])
 
         useImperativeHandle(
             ref,
             () => ({
                 refresh: onCompleteAction,
             }),
-            []
+            [onCompleteAction]
         )
 
         useEffect(() => {
             if (id) {
                 refetch({ type, id })
             }
-        }, [type, id])
+        }, [type, id, refetch])
 
         return (
             <div

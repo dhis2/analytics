@@ -19,10 +19,10 @@ const visObject = {
     href: 'http://localhost:8080/api/32/visualizations/a8LrqsBQlHP',
     id: 'a8LrqsBQlHP',
     created: '2012-11-05T09:17:23.388',
-    name: 'ANC: 1-3 dropout rate Yearly copy1',
+    name: 'ANC: 1-3 dropout rate Yearly',
     publicAccess: '--------',
     displayDescription: 'some _italic (10%)_ and some *bold (10%)*',
-    displayName: 'ANC: 1-3 dropout rate Yearly copy1',
+    displayName: 'ANC: 1-3 dropout rate Yearly',
     description: 'some _italic (10%)_ and some *bold (10%)*',
     externalAccess: false,
     access: {

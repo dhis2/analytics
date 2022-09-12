@@ -5,9 +5,11 @@ export const LEGEND_DISPLAY_STYLE_FILL = 'FILL'
 export const LEGEND_DISPLAY_STYLE_TEXT = 'TEXT'
 
 export const getLegendByValueFromLegendSet = (legendSet, value) =>
-    legendSet?.legends?.find(
-        (legend) => value >= legend.startValue && value < legend.endValue // TODO: Confirm inclusive/exclusive bounds
-    )
+    Number.isInteger(parseInt(value))
+        ? legendSet?.legends?.find(
+              (legend) => value >= legend.startValue && value < legend.endValue // TODO: Confirm inclusive/exclusive bounds
+          )
+        : null
 
 export const getColorByValueFromLegendSet = (legendSet, value) => {
     const legend = getLegendByValueFromLegendSet(legendSet, value)

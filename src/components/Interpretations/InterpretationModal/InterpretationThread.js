@@ -24,7 +24,7 @@ const InterpretationThread = ({
                 focusRef.current.focus()
             })
         }
-    }, [initialFocus, focusRef.current])
+    }, [initialFocus])
 
     return (
         <div className={cx('container', { fetching })}>
@@ -33,33 +33,41 @@ const InterpretationThread = ({
                     <IconClock16 color={colors.grey700} />
                     {moment(interpretation.created).format('LLL')}
                 </div>
-                <DownloadMenu relativePeriodDate={interpretation.created} />
-                <Interpretation
-                    currentUser={currentUser}
-                    interpretation={interpretation}
-                    onReplyIconClick={() => focusRef.current?.focus()}
-                    onUpdated={() => onThreadUpdated(true)}
-                    onDeleted={onInterpretationDeleted}
-                />
-                <div className={'comments'}>
-                    {interpretation.comments.map((comment) => (
-                        <Comment
-                            key={comment.id}
-                            comment={comment}
-                            currentUser={currentUser}
-                            interpretationId={interpretation.id}
-                            onThreadUpdated={onThreadUpdated}
-                        />
-                    ))}
+                {DownloadMenu && (
+                    <DownloadMenu relativePeriodDate={interpretation.created} />
+                )}
+                <div className={'thread'}>
+                    <Interpretation
+                        currentUser={currentUser}
+                        interpretation={interpretation}
+                        onReplyIconClick={() => focusRef.current?.focus()}
+                        onUpdated={() => onThreadUpdated(true)}
+                        onDeleted={onInterpretationDeleted}
+                    />
+                    <div className={'comments'}>
+                        {interpretation.comments.map((comment) => (
+                            <Comment
+                                key={comment.id}
+                                comment={comment}
+                                currentUser={currentUser}
+                                interpretationId={interpretation.id}
+                                onThreadUpdated={onThreadUpdated}
+                            />
+                        ))}
+                    </div>
+                    <CommentAddForm
+                        currentUser={currentUser}
+                        interpretationId={interpretation.id}
+                        onSave={() => onThreadUpdated(true)}
+                        focusRef={focusRef}
+                    />
                 </div>
-                <CommentAddForm
-                    currentUser={currentUser}
-                    interpretationId={interpretation.id}
-                    onSave={() => onThreadUpdated(true)}
-                    focusRef={focusRef}
-                />
             </div>
             <style jsx>{`
+                .thread {
+                    margin-top: var(--spacers-dp16);
+                }
+
                 .container {
                     position: relative;
                     overflow: hidden;
@@ -130,13 +138,13 @@ const InterpretationThread = ({
 
 InterpretationThread.propTypes = {
     currentUser: PropTypes.object.isRequired,
-    downloadMenuComponent: PropTypes.oneOfType([
-        PropTypes.object,
-        PropTypes.func,
-    ]).isRequired,
     fetching: PropTypes.bool.isRequired,
     interpretation: PropTypes.object.isRequired,
     onInterpretationDeleted: PropTypes.func.isRequired,
+    downloadMenuComponent: PropTypes.oneOfType([
+        PropTypes.object,
+        PropTypes.func,
+    ]),
     initialFocus: PropTypes.bool,
     onThreadUpdated: PropTypes.func,
 }

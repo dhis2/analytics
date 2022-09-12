@@ -9,7 +9,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-08-10T13:11:21.079Z\n"
+"POT-Creation-Date: 2022-08-23T12:46:15.410Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: Éva Tamási, 2022\n"
 "Language-Team: Ukrainian (https://www.transifex.com/hisp-uio/teams/100509/uk/)\n"
@@ -37,9 +37,6 @@ msgstr ""
 msgid "Not shared with any users or groups"
 msgstr ""
 
-msgid "About this visualization"
-msgstr ""
-
 msgid "No description"
 msgstr "Немає змалювання"
 
@@ -47,6 +44,9 @@ msgid "Last updated {{time}}"
 msgstr ""
 
 msgid "Created {{time}} by {{author}}"
+msgstr ""
+
+msgid "Created {{time}}"
 msgstr ""
 
 msgid "Viewed {{count}} times"
@@ -69,6 +69,15 @@ msgid "Subscribe to get updates about new interpretations."
 msgstr ""
 
 msgid "Subscribe"
+msgstr ""
+
+msgid "About this map"
+msgstr ""
+
+msgid "About this line list"
+msgstr ""
+
+msgid "About this visualization"
 msgstr ""
 
 msgid "This app could not retrieve required data."
@@ -260,6 +269,9 @@ msgstr "Змалювання"
 msgid "Rename"
 msgstr "Перейменувати"
 
+msgid "{{objectName}} (copy)"
+msgstr ""
+
 msgid "Save {{fileType}} as"
 msgstr ""
 
@@ -401,7 +413,7 @@ msgid "Type"
 msgstr "Тип"
 
 msgid "Clear filters"
-msgstr ""
+msgstr "Очистити фільтри"
 
 msgid "{{firstItemIndex}}-{{lastItemIndex}} of {{totalNumberOfItems}}"
 msgstr ""
@@ -426,7 +438,7 @@ msgid ""
 msgstr ""
 
 msgid "Create new"
-msgstr ""
+msgstr "Створити новий"
 
 msgid "Open a visualization"
 msgstr ""
@@ -795,7 +807,7 @@ msgid "Last 5 years"
 msgstr "Останні 5 років"
 
 msgid "Last 10 years"
-msgstr ""
+msgstr "Останні 10 років"
 
 msgid "Days"
 msgstr "Дні"

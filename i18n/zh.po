@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-08-10T13:11:21.079Z\n"
+"POT-Creation-Date: 2022-08-22T09:12:05.760Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: easylin <lin_xd@126.com>, 2022\n"
 "Language-Team: Chinese (https://www.transifex.com/hisp-uio/teams/100509/zh/)\n"
@@ -36,9 +36,6 @@ msgstr "与 {{commaSeparatedListOfUsersAndGroups}} 共享"
 msgid "Not shared with any users or groups"
 msgstr "不与任何用户或组共享"
 
-msgid "About this visualization"
-msgstr "关于此可视化"
-
 msgid "No description"
 msgstr "无描述"
 
@@ -47,6 +44,9 @@ msgstr "最后更新 {{time}}"
 
 msgid "Created {{time}} by {{author}}"
 msgstr "由 {{author}} 在 {{time}} 创建"
+
+msgid "Created {{time}}"
+msgstr "已创建 {{time}}"
 
 msgid "Viewed {{count}} times"
 msgid_plural "Viewed {{count}} times"
@@ -66,6 +66,15 @@ msgstr "订阅以获取有关新解释的更新。"
 
 msgid "Subscribe"
 msgstr "订阅"
+
+msgid "About this map"
+msgstr "关于该地图"
+
+msgid "About this line list"
+msgstr "关于此行列表"
+
+msgid "About this visualization"
+msgstr "关于此可视化"
 
 msgid "This app could not retrieve required data."
 msgstr "此应用无法检索所需数据。"
@@ -193,7 +202,7 @@ msgid "Search"
 msgstr "搜索"
 
 msgid "Nothing found for {{- searchTerm}}"
-msgstr ""
+msgstr "没有找到 {{- searchTerm}}"
 
 msgid "Delete {{fileType}}"
 msgstr "删除{{fileType}}"
@@ -290,7 +299,7 @@ msgid "Update"
 msgstr "更新"
 
 msgid "Viewing interpretation: {{- visualisationName}}"
-msgstr ""
+msgstr "查看注释：{{-visualisationName}}"
 
 msgid "Could not load interpretation"
 msgstr "无法加载解释"
@@ -364,7 +373,7 @@ msgid "Search for a user"
 msgstr "搜索用户"
 
 msgid "Searching for \"{{- searchText}}\""
-msgstr ""
+msgstr "搜索“{{- searchText}}”"
 
 msgid "No results found"
 msgstr "没有结果"
