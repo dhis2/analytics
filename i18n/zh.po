@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-08-22T09:12:05.760Z\n"
+"POT-Creation-Date: 2022-08-23T12:46:15.410Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: easylin <lin_xd@126.com>, 2022\n"
 "Language-Team: Chinese (https://www.transifex.com/hisp-uio/teams/100509/zh/)\n"
@@ -264,6 +264,9 @@ msgstr "描述"
 
 msgid "Rename"
 msgstr "改名"
+
+msgid "{{objectName}} (copy)"
+msgstr "{{objectName}}（副本）"
 
 msgid "Save {{fileType}} as"
 msgstr "将{{fileType}}另存为"
