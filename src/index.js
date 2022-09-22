@@ -32,6 +32,8 @@ export { default as AboutAOUnit } from './components/AboutAOUnit/AboutAOUnit.js'
 export { InterpretationsUnit } from './components/Interpretations/InterpretationsUnit/InterpretationsUnit.js'
 export { InterpretationModal } from './components/Interpretations/InterpretationModal/InterpretationModal.js'
 
+export { TranslationDialog } from './components/TranslationDialog/index.js'
+
 export {
     CachedDataQueryProvider,
     useCachedDataQuery,
