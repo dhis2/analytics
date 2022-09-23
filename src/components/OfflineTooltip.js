@@ -6,7 +6,12 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import classes from './styles/OfflineTooltip.module.css'
 
-const OfflineTooltip = ({ disabledWhenOffline, disabled, content, children }) => {
+const OfflineTooltip = ({
+    disabledWhenOffline,
+    disabled,
+    content,
+    children,
+}) => {
     const { offline } = useOnlineStatus()
 
     const notAllowed = disabled || (disabledWhenOffline && offline)

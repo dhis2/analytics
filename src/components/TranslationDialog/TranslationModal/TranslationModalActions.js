@@ -41,9 +41,7 @@ export const TranslationModalActions = ({
                     <OfflineTooltip
                         content={i18n.t('Cannot save while offline')}
                     >
-                        <SaveButton
-                            disabled={true}
-                        />
+                        <SaveButton disabled={true} />
                     </OfflineTooltip>
                 ) : (
                     <SaveButton
