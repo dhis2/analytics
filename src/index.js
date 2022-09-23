@@ -34,6 +34,8 @@ export { InterpretationModal } from './components/Interpretations/Interpretation
 
 export { TranslationDialog } from './components/TranslationDialog/index.js'
 
+export { OfflineTooltip } from './components/OfflineTooltip.js'
+
 export {
     CachedDataQueryProvider,
     useCachedDataQuery,
