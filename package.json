@@ -35,7 +35,7 @@
         "@dhis2/cli-app-scripts": "^9.0.1",
         "@dhis2/cli-style": "^10.4.1",
         "@dhis2/d2-i18n": "^1.1.0",
-        "@dhis2/ui": "^8.4.11",
+        "@dhis2/ui": "^8.4.16",
         "@sambego/storybook-state": "^2.0.1",
         "@storybook/addons": "^6.5.9",
         "@storybook/preset-create-react-app": "^3.1.7",
