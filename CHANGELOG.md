@@ -1,3 +1,10 @@
+# [24.2.0](https://github.com/dhis2/analytics/compare/v24.1.1...v24.2.0) (2022-09-29)
+
+
+### Features
+
+* export TranslationDialog component ([#1342](https://github.com/dhis2/analytics/issues/1342)) ([4cf833f](https://github.com/dhis2/analytics/commit/4cf833f49284ad9ddfcd966ee79760aacb5a3d3e))
+
 ## [24.1.1](https://github.com/dhis2/analytics/compare/v24.1.0...v24.1.1) (2022-09-15)
 
 
