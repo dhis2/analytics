@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2022-08-23T12:46:15.410Z\n"
-"PO-Revision-Date: 2022-08-23T12:46:15.410Z\n"
+"POT-Creation-Date: 2022-09-22T13:25:32.620Z\n"
+"PO-Revision-Date: 2022-09-22T13:25:32.620Z\n"
 
 msgid "view only"
 msgstr "view only"
@@ -374,6 +374,9 @@ msgstr "Searching for \"{{- searchText}}\""
 
 msgid "No results found"
 msgstr "No results found"
+
+msgid "Not available offline"
+msgstr "Not available offline"
 
 msgid "Created by"
 msgstr "Created by"
@@ -853,6 +856,9 @@ msgstr "Translate: {{objectName}}"
 
 msgid "Save translations"
 msgstr "Save translations"
+
+msgid "Cannot save while offline"
+msgstr "Cannot save while offline"
 
 msgid "Could not load translations"
 msgstr "Could not load translations"
