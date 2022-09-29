@@ -1,3 +1,10 @@
+## [20.9.2](https://github.com/dhis2/analytics/compare/v20.9.1...v20.9.2) (2022-09-29)
+
+
+### Bug Fixes
+
+* avoid ES2022 functions ([#1300](https://github.com/dhis2/analytics/issues/1300)) ([#1344](https://github.com/dhis2/analytics/issues/1344)) ([56951b4](https://github.com/dhis2/analytics/commit/56951b4eb11001fabafbc91eb7950a5f120b67ae))
+
 ## [20.9.1](https://github.com/dhis2/analytics/compare/v20.9.0...v20.9.1) (2022-08-19)
 
 
