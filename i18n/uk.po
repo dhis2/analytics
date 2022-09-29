@@ -9,7 +9,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-08-23T12:46:15.410Z\n"
+"POT-Creation-Date: 2022-09-22T13:25:32.620Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: Éva Tamási, 2022\n"
 "Language-Team: Ukrainian (https://www.transifex.com/hisp-uio/teams/100509/uk/)\n"
@@ -384,6 +384,9 @@ msgstr ""
 
 msgid "No results found"
 msgstr "Результатів не знайдено"
+
+msgid "Not available offline"
+msgstr "Недоступно в автономному режимі"
 
 msgid "Created by"
 msgstr "Створено"
@@ -852,6 +855,9 @@ msgid "Translate: {{objectName}}"
 msgstr ""
 
 msgid "Save translations"
+msgstr ""
+
+msgid "Cannot save while offline"
 msgstr ""
 
 msgid "Could not load translations"
