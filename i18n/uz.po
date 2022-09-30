@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-08-22T09:12:05.760Z\n"
+"POT-Creation-Date: 2022-09-22T13:25:32.620Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: Ibatov <ibatovk@who.int>, 2022\n"
 "Language-Team: Uzbek (Cyrillic) (https://www.transifex.com/hisp-uio/teams/100509/uz@Cyrl/)\n"
@@ -262,6 +262,9 @@ msgstr "Тавсиф"
 msgid "Rename"
 msgstr "Қайта номлашч"
 
+msgid "{{objectName}} (copy)"
+msgstr ""
+
 msgid "Save {{fileType}} as"
 msgstr ""
 
@@ -374,6 +377,9 @@ msgstr ""
 
 msgid "No results found"
 msgstr "Ҳеч қандай натижа топилмади"
+
+msgid "Not available offline"
+msgstr "Оффлайн режимда мавжуд эмас"
 
 msgid "Created by"
 msgstr "Томонидан яратилган"
@@ -833,6 +839,9 @@ msgid "Translate: {{objectName}}"
 msgstr ""
 
 msgid "Save translations"
+msgstr ""
+
+msgid "Cannot save while offline"
 msgstr ""
 
 msgid "Could not load translations"
