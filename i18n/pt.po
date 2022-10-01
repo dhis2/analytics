@@ -1,18 +1,18 @@
 # 
 # Translators:
 # Sheila André <sandre@saudigitus.org>, 2020
-# Fernando Jorge Bade, 2021
 # phil_dhis2, 2022
 # Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2022
 # Ge Joao <gsimango@saudigitus.org>, 2022
 # Viktor Varland <viktor@dhis2.org>, 2022
+# Fernando Jorge Bade, 2022
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-08-22T09:12:05.760Z\n"
+"POT-Creation-Date: 2022-09-22T13:25:32.620Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2022\n"
+"Last-Translator: Fernando Jorge Bade, 2022\n"
 "Language-Team: Portuguese (https://www.transifex.com/hisp-uio/teams/100509/pt/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -269,6 +269,9 @@ msgstr "Descrição"
 msgid "Rename"
 msgstr "Renomear"
 
+msgid "{{objectName}} (copy)"
+msgstr ""
+
 msgid "Save {{fileType}} as"
 msgstr ""
 
@@ -381,6 +384,9 @@ msgstr ""
 
 msgid "No results found"
 msgstr "Nenhum resultado encontrado"
+
+msgid "Not available offline"
+msgstr "Não disponível offline"
 
 msgid "Created by"
 msgstr "Criado por"
@@ -846,6 +852,9 @@ msgid "Translate: {{objectName}}"
 msgstr ""
 
 msgid "Save translations"
+msgstr ""
+
+msgid "Cannot save while offline"
 msgstr ""
 
 msgid "Could not load translations"

@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-08-22T09:12:05.760Z\n"
+"POT-Creation-Date: 2022-09-22T13:25:32.620Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: Rica Zamora Duchateau, 2022\n"
 "Language-Team: Dutch (https://www.transifex.com/hisp-uio/teams/100509/nl/)\n"
@@ -265,6 +265,9 @@ msgstr "Beschrijving"
 msgid "Rename"
 msgstr ""
 
+msgid "{{objectName}} (copy)"
+msgstr ""
+
 msgid "Save {{fileType}} as"
 msgstr ""
 
@@ -377,6 +380,9 @@ msgstr ""
 
 msgid "No results found"
 msgstr "Geen resultaten gevonden"
+
+msgid "Not available offline"
+msgstr "Niet beschikbaar offline"
 
 msgid "Created by"
 msgstr "Gecreëerd door"
@@ -839,6 +845,9 @@ msgid "Translate: {{objectName}}"
 msgstr ""
 
 msgid "Save translations"
+msgstr ""
+
+msgid "Cannot save while offline"
 msgstr ""
 
 msgid "Could not load translations"

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-08-22T09:12:05.760Z\n"
+"POT-Creation-Date: 2022-09-22T13:25:32.620Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: trendspotter <jirka.p@volny.cz>, 2022\n"
 "Language-Team: Czech (https://www.transifex.com/hisp-uio/teams/100509/cs/)\n"
@@ -269,6 +269,9 @@ msgstr "Popis"
 msgid "Rename"
 msgstr "Přejmenovat"
 
+msgid "{{objectName}} (copy)"
+msgstr ""
+
 msgid "Save {{fileType}} as"
 msgstr "Uložit {{fileType}} jako"
 
@@ -383,6 +386,9 @@ msgstr ""
 
 msgid "No results found"
 msgstr "Nenalezeny žádné výsledky"
+
+msgid "Not available offline"
+msgstr "Není k dispozici offline"
 
 msgid "Created by"
 msgstr "Vytvořil"
@@ -871,6 +877,9 @@ msgstr "Přeložit: {{objectName}}"
 
 msgid "Save translations"
 msgstr "Uložit překlady"
+
+msgid "Cannot save while offline"
+msgstr ""
 
 msgid "Could not load translations"
 msgstr "Nelze načíst překlady"

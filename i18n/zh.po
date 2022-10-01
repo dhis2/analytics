@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-08-23T12:46:15.410Z\n"
+"POT-Creation-Date: 2022-09-22T13:25:32.620Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: easylin <lin_xd@126.com>, 2022\n"
 "Language-Team: Chinese (https://www.transifex.com/hisp-uio/teams/100509/zh/)\n"
@@ -380,6 +380,9 @@ msgstr "搜索“{{- searchText}}”"
 
 msgid "No results found"
 msgstr "没有结果"
+
+msgid "Not available offline"
+msgstr "离线不可用"
 
 msgid "Created by"
 msgstr "创建人"
@@ -840,6 +843,9 @@ msgstr "翻译：{{objectName}}"
 
 msgid "Save translations"
 msgstr "保存翻译"
+
+msgid "Cannot save while offline"
+msgstr ""
 
 msgid "Could not load translations"
 msgstr "无法加载翻译"
