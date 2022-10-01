@@ -845,7 +845,7 @@ msgid "Save translations"
 msgstr "保存翻译"
 
 msgid "Cannot save while offline"
-msgstr ""
+msgstr "离线时无法保存"
 
 msgid "Could not load translations"
 msgstr "无法加载翻译"
