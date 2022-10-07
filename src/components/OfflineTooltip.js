@@ -25,7 +25,7 @@ const OfflineTooltip = ({
             >
                 {({ onMouseOver, onMouseOut, ref }) => (
                     <span
-                        className={cx('tooltip', notAllowed && 'notAllowed')}
+                        className={cx('tooltip', { notAllowed })}
                         onMouseOver={() => notAllowed && onMouseOver()}
                         onMouseOut={() => notAllowed && onMouseOut()}
                         ref={ref}
