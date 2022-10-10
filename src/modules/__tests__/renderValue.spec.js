@@ -11,7 +11,10 @@ import {
     VALUE_TYPE_INTEGER_ZERO_OR_POSITIVE,
     VALUE_TYPE_PERCENTAGE,
     VALUE_TYPE_UNIT_INTERVAL,
+    VALUE_TYPE_PHONE_NUMBER,
     VALUE_TYPE_TEXT,
+    VALUE_TYPE_DATE,
+    VALUE_TYPE_DATETIME,
 } from '../valueTypes.js'
 
 const DGS_COMMA = 'COMMA'
@@ -248,6 +251,57 @@ const tests = [
         expected: '55700%',
         valueType: VALUE_TYPE_INTEGER_ZERO_OR_POSITIVE,
         numberType: NUMBER_TYPE_COLUMN_PERCENTAGE,
+        round: true,
+        dgs: DGS_NONE,
+    },
+    // Phone number
+    {
+        value: '99777888',
+        expected: '99777888',
+        valueType: VALUE_TYPE_PHONE_NUMBER,
+        round: true,
+        dgs: DGS_SPACE,
+    },
+    {
+        value: '(303)9977888',
+        expected: '(303)9977888',
+        valueType: VALUE_TYPE_PHONE_NUMBER,
+        round: true,
+        dgs: DGS_NONE,
+    },
+    {
+        value: '303-8485-9922',
+        expected: '303-8485-9922',
+        valueType: VALUE_TYPE_PHONE_NUMBER,
+        round: true,
+        dgs: DGS_COMMA,
+    },
+    {
+        value: '303  848  9922',
+        expected: '303 848  9922',
+        valueType: VALUE_TYPE_PHONE_NUMBER,
+        round: false,
+        dgs: DGS_COMMA,
+    },
+    // Date
+    {
+        value: '05/04/2022',
+        expected: '05/04/2022',
+        valueType: VALUE_TYPE_DATE,
+        round: true,
+        dgs: DGS_SPACE,
+    },
+    {
+        value: '2022-05-04 00:00:000',
+        expected: '2022-05-04 00:00:000',
+        valueType: VALUE_TYPE_DATETIME,
+        round: true,
+        dgs: DGS_COMMA,
+    },
+    {
+        value: '2022-05-04 00:00:000',
+        expected: '2022-05-04 00:00:000',
+        valueType: VALUE_TYPE_DATETIME,
         round: true,
         dgs: DGS_NONE,
     },
