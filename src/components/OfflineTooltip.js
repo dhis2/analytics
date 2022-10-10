@@ -4,7 +4,7 @@ import { Tooltip } from '@dhis2/ui'
 import cx from 'classnames'
 import PropTypes from 'prop-types'
 import React from 'react'
-import classes from './styles/OfflineTooltip.module.css'
+import { styles } from './styles/OfflineTooltip.style.js'
 
 const OfflineTooltip = ({
     disabledWhenOffline,
@@ -17,25 +17,25 @@ const OfflineTooltip = ({
     const notAllowed = disabled || (disabledWhenOffline && offline)
 
     return (
-        <Tooltip
-            content={content || i18n.t('Not available offline')}
-            openDelay={200}
-            closeDelay={100}
-        >
-            {({ onMouseOver, onMouseOut, ref }) => (
-                <span
-                    className={cx(
-                        classes.span,
-                        notAllowed && classes.notAllowed
-                    )}
-                    onMouseOver={() => notAllowed && onMouseOver()}
-                    onMouseOut={() => notAllowed && onMouseOut()}
-                    ref={ref}
-                >
-                    {children}
-                </span>
-            )}
-        </Tooltip>
+        <>
+            <Tooltip
+                content={content || i18n.t('Not available offline')}
+                openDelay={200}
+                closeDelay={100}
+            >
+                {({ onMouseOver, onMouseOut, ref }) => (
+                    <span
+                        className={cx('tooltip', { notAllowed })}
+                        onMouseOver={() => notAllowed && onMouseOver()}
+                        onMouseOut={() => notAllowed && onMouseOut()}
+                        ref={ref}
+                    >
+                        {children}
+                    </span>
+                )}
+            </Tooltip>
+            <style jsx>{styles}</style>
+        </>
     )
 }
 

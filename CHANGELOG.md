@@ -1,3 +1,10 @@
+## [24.2.5](https://github.com/dhis2/analytics/compare/v24.2.4...v24.2.5) (2022-10-10)
+
+
+### Bug Fixes
+
+* use styled-jsx instead of css module ([#1352](https://github.com/dhis2/analytics/issues/1352)) ([df8ad6c](https://github.com/dhis2/analytics/commit/df8ad6c78129f9dc4249472912cf5a235c26346c))
+
 ## [24.2.4](https://github.com/dhis2/analytics/compare/v24.2.3...v24.2.4) (2022-10-07)
 
 
