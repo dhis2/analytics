@@ -43,7 +43,7 @@ msgid "Created {{time}} by {{author}}"
 msgstr "Vytvořeno {{time}} uživatelem {{author}}"
 
 msgid "Created {{time}}"
-msgstr ""
+msgstr "Vytvořeno {{time}}"
 
 msgid "Viewed {{count}} times"
 msgid_plural "Viewed {{count}} times"
@@ -69,10 +69,10 @@ msgid "Subscribe"
 msgstr "Odebírat"
 
 msgid "About this map"
-msgstr ""
+msgstr "O této mapě"
 
 msgid "About this line list"
-msgstr ""
+msgstr "O seznamu řádků"
 
 msgid "About this visualization"
 msgstr "O této vizualizaci"
@@ -205,7 +205,7 @@ msgid "Search"
 msgstr "Hledat"
 
 msgid "Nothing found for {{- searchTerm}}"
-msgstr ""
+msgstr "Pro {{- searchTerm}} nebylo nic nalezeno."
 
 msgid "Delete {{fileType}}"
 msgstr "Smazat {{fileType}}"
@@ -270,7 +270,7 @@ msgid "Rename"
 msgstr "Přejmenovat"
 
 msgid "{{objectName}} (copy)"
-msgstr ""
+msgstr "{{objectName}} (kopie)"
 
 msgid "Save {{fileType}} as"
 msgstr "Uložit {{fileType}} jako"
@@ -306,7 +306,7 @@ msgid "Update"
 msgstr "Aktualizovat"
 
 msgid "Viewing interpretation: {{- visualisationName}}"
-msgstr ""
+msgstr "Zobrazení interpretace: {{- visualisationName}}"
 
 msgid "Could not load interpretation"
 msgstr "Interpretaci nelze načíst"
@@ -382,7 +382,7 @@ msgid "Search for a user"
 msgstr "Vyhledat uživatele"
 
 msgid "Searching for \"{{- searchText}}\""
-msgstr ""
+msgstr "Hledání \"{{- searchText}}\""
 
 msgid "No results found"
 msgstr "Nenalezeny žádné výsledky"
@@ -879,7 +879,7 @@ msgid "Save translations"
 msgstr "Uložit překlady"
 
 msgid "Cannot save while offline"
-msgstr ""
+msgstr "Nelze ukládat v režimu offline"
 
 msgid "Could not load translations"
 msgstr "Nelze načíst překlady"
