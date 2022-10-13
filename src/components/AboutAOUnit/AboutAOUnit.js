@@ -1,5 +1,6 @@
 import { useDataQuery, useDataMutation } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
+import { Parser as RichTextParser } from '@dhis2/d2-ui-rich-text'
 import {
     Button,
     CircularLoader,
@@ -190,9 +191,13 @@ const AboutAOUnit = forwardRef(({ type, id, renderId }, ref) => {
                                     noDescription: !data.ao.displayDescription,
                                 })}
                             >
-                                {data.ao.displayDescription
-                                    ? data.ao.displayDescription
-                                    : i18n.t('No description')}
+                                {data.ao.displayDescription ? (
+                                    <RichTextParser>
+                                        {data.ao.displayDescription}
+                                    </RichTextParser>
+                                ) : (
+                                    i18n.t('No description')
+                                )}
                             </p>
                             <div>
                                 <p className="detailLine">
