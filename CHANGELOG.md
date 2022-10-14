@@ -1,3 +1,10 @@
+## [24.2.7](https://github.com/dhis2/analytics/compare/v24.2.6...v24.2.7) (2022-10-14)
+
+
+### Bug Fixes
+
+* parse markdown in description DHIS2-13911 ([#1358](https://github.com/dhis2/analytics/issues/1358)) ([1606319](https://github.com/dhis2/analytics/commit/16063192c747fbf67e6b5f9fadcd3b1d19f00ef0))
+
 ## [24.2.6](https://github.com/dhis2/analytics/compare/v24.2.5...v24.2.6) (2022-10-11)
 
 
