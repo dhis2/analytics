@@ -137,6 +137,7 @@ export {
     VALUE_TYPE_TIME,
     VALUE_TYPE_DATETIME,
     VALUE_TYPE_ORGANISATION_UNIT,
+    VALUE_TYPE_AGE,
 } from './modules/valueTypes.js'
 
 export {
