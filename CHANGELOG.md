@@ -1,3 +1,10 @@
+# [24.3.0](https://github.com/dhis2/analytics/compare/v24.2.7...v24.3.0) (2022-10-17)
+
+
+### Features
+
+* export VALUE_TYPE_AGE ([#1360](https://github.com/dhis2/analytics/issues/1360)) ([200cc0b](https://github.com/dhis2/analytics/commit/200cc0b9736cdebfec95e1701fd5f23d7fe312a6))
+
 ## [24.2.7](https://github.com/dhis2/analytics/compare/v24.2.6...v24.2.7) (2022-10-14)
 
 
