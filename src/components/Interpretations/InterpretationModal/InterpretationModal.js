@@ -165,7 +165,7 @@ const InterpretationModal = ({
                                         }
                                         displayProperty={
                                             currentUser.settings
-                                                .keyAnalysisDisplayProperty
+                                                ?.keyAnalysisDisplayProperty
                                         }
                                     />
                                 </div>
