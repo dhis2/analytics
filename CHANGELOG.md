@@ -1,3 +1,10 @@
+## [24.3.2](https://github.com/dhis2/analytics/compare/v24.3.1...v24.3.2) (2022-11-01)
+
+
+### Bug Fixes
+
+* pass required prop to plugin used in interpretation modal ([#1361](https://github.com/dhis2/analytics/issues/1361)) ([82d6c38](https://github.com/dhis2/analytics/commit/82d6c3877bbb3497ea22e3b01d2f1ac37ed67742))
+
 ## [24.3.1](https://github.com/dhis2/analytics/compare/v24.3.0...v24.3.1) (2022-10-28)
 
 
