@@ -163,6 +163,10 @@ const InterpretationModal = ({
                                         onResponsesReceived={
                                             onResponsesReceived
                                         }
+                                        displayProperty={
+                                            currentUser.settings
+                                                ?.keyAnalysisDisplayProperty
+                                        }
                                     />
                                 </div>
                                 <div className="thread-wrap">
