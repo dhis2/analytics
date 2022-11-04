@@ -1,4 +1,4 @@
-import { Tooltip } from '@dhis2/ui'
+import { Tooltip, IconEdit16 } from '@dhis2/ui'
 import cx from 'classnames'
 import PropTypes from 'prop-types'
 import React from 'react'
@@ -16,6 +16,7 @@ export const TransferOption = ({
     active,
     tooltipText,
     dataTest,
+    onEditClick,
 }) => {
     const renderContent = () => (
         <div
@@ -25,6 +26,7 @@ export const TransferOption = ({
                 selected,
                 inactive: active !== undefined && !active,
             })}
+            data-test={`${dataTest}-content`}
             onClick={(event) => {
                 if (disabled) {
                     return
@@ -37,10 +39,21 @@ export const TransferOption = ({
                 }
                 onDoubleClick({ label, value }, event)
             }}
-            data-test={`${dataTest}-content`}
         >
             <span className="icon">{icon}</span>
             <span className="label">{label}</span>
+            {onEditClick && (
+                <span
+                    className="edit"
+                    onClick={(e) => {
+                        e.stopPropagation()
+                        onEditClick()
+                    }}
+                >
+                    <IconEdit16 />
+                </span>
+            )}
+
             <style jsx>{styles}</style>
         </div>
     )
@@ -76,4 +89,5 @@ TransferOption.propTypes = {
     tooltipText: PropTypes.string,
     onClick: PropTypes.func,
     onDoubleClick: PropTypes.func,
+    onEditClick: PropTypes.func,
 }

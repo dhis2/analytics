@@ -67,4 +67,8 @@ export default css`
     .label {
         font-size: 14px;
     }
+
+    .edit {
+        margin-left: ${spacers.dp8};
+    }
 `

@@ -7,6 +7,8 @@ import {
     IconDimensionIndicator16,
     IconDimensionEventDataItem16,
     IconDimensionProgramIndicator16,
+    Button,
+    IconAdd24,
 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
@@ -426,6 +428,9 @@ const ItemSelector = ({
                     dataTest={`${dataTest}-left-header`}
                 />
             }
+            leftFooter={
+                <Button icon={<IconAdd24 />}>{i18n.t('Calculation')}</Button>
+            }
             enableOrderChange
             height={TRANSFER_HEIGHT}
             optionsWidth={TRANSFER_OPTIONS_WIDTH}
@@ -454,6 +459,13 @@ const ItemSelector = ({
                             : undefined
                     }
                     dataTest={`${dataTest}-transfer-option`}
+                    onEditClick={
+                        getItemType(
+                            props.value /* eslint-disable-line react/prop-types */
+                        ) === DIMENSION_TYPE_PROGRAM_INDICATOR
+                            ? () => alert('click!')
+                            : undefined
+                    }
                 />
             )}
             dataTest={`${dataTest}-transfer`}
