@@ -34,4 +34,7 @@ export default css`
         font-size: 12px;
         line-height: 16px;
     }
+    .calculation-button {
+        margin: ${spacers.dp8} 0;
+    }
 `

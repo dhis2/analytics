@@ -18,4 +18,18 @@ export default css`
         margin-top: ${spacers.dp16};
         margin-bottom: ${spacers.dp16};
     }
+
+    .content {
+        display: flex;
+        gap: ${spacers.dp16};
+    }
+
+    .left-section {
+        flex-basis: 70%;
+    }
+
+    .right-section {
+        font-size: 14px;
+        line-height: 24px;
+    }
 `

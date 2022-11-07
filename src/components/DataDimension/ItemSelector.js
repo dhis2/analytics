@@ -9,6 +9,11 @@ import {
     IconDimensionProgramIndicator16,
     Button,
     IconAdd24,
+    Modal,
+    ModalTitle,
+    ModalContent,
+    ModalActions,
+    ButtonStrip,
 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
@@ -39,6 +44,7 @@ import { useDebounce, useDidUpdateEffect } from '../../modules/utils.js'
 import styles from '../styles/DimensionSelector.style.js'
 import { TransferOption } from '../TransferOption.js'
 import DataTypeSelector from './DataTypeSelector.js'
+import EditCalculation from './EditCalculation.js'
 import GroupSelector from './GroupSelector.js'
 
 const LeftHeader = ({
@@ -237,6 +243,7 @@ const ItemSelector = ({
         loading: true,
         nextPage: 1,
     })
+    const [calculationModalIsOpen, setCalculationModalIsOpen] = useState(false)
     const dataEngine = useDataEngine()
     const setSearchTerm = (searchTerm) =>
         setState((state) => ({ ...state, searchTerm }))
@@ -383,93 +390,129 @@ const ItemSelector = ({
         }
     }
     return (
-        <Transfer
-            onChange={({ selected }) => onChange(selected)}
-            selected={selectedItems.map((item) => item.value)}
-            options={[...state.options, ...selectedItems]}
-            loading={state.loading}
-            loadingPicked={state.loading}
-            sourceEmptyPlaceholder={
-                <SourceEmptyPlaceholder
-                    loading={state.loading}
-                    searchTerm={debouncedSearchTerm}
-                    options={state.options}
-                    noItemsMessage={noItemsMessage}
-                    dataType={state.filter.dataType}
-                    dataTest={`${dataTest}-empty-source`}
-                />
-            }
-            onEndReached={onEndReached}
-            leftHeader={
-                <LeftHeader
-                    dataType={state.filter.dataType}
-                    setDataType={(dataType) => {
-                        setFilter({
-                            ...state.filter,
-                            dataType,
-                            group: null,
-                            subGroup:
-                                dataType === DIMENSION_TYPE_DATA_ELEMENT
-                                    ? TOTALS
-                                    : null,
-                        })
-                    }}
-                    group={state.filter.group}
-                    setGroup={(group) => {
-                        setFilter({ ...state.filter, group })
-                    }}
-                    subGroup={state.filter.subGroup}
-                    setSubGroup={(subGroup) => {
-                        setFilter({ ...state.filter, subGroup })
-                    }}
-                    searchTerm={state.searchTerm}
-                    setSearchTerm={setSearchTerm}
-                    displayNameProp={displayNameProp}
-                    dataTest={`${dataTest}-left-header`}
-                />
-            }
-            leftFooter={
-                <Button icon={<IconAdd24 />}>{i18n.t('Calculation')}</Button>
-            }
-            enableOrderChange
-            height={TRANSFER_HEIGHT}
-            optionsWidth={TRANSFER_OPTIONS_WIDTH}
-            selectedWidth={TRANSFER_SELECTED_WIDTH}
-            selectedEmptyComponent={<EmptySelection />}
-            rightHeader={<RightHeader infoText={infoBoxMessage} />}
-            rightFooter={rightFooter}
-            renderOption={(props) => (
-                <TransferOption
-                    {...props}
-                    active={isActive(
-                        props.value /* eslint-disable-line react/prop-types */
-                    )}
-                    icon={getIcon(
-                        getItemType(
+        <>
+            <Transfer
+                onChange={({ selected }) => onChange(selected)}
+                selected={selectedItems.map((item) => item.value)}
+                options={[...state.options, ...selectedItems]}
+                loading={state.loading}
+                loadingPicked={state.loading}
+                sourceEmptyPlaceholder={
+                    <SourceEmptyPlaceholder
+                        loading={state.loading}
+                        searchTerm={debouncedSearchTerm}
+                        options={state.options}
+                        noItemsMessage={noItemsMessage}
+                        dataType={state.filter.dataType}
+                        dataTest={`${dataTest}-empty-source`}
+                    />
+                }
+                onEndReached={onEndReached}
+                leftHeader={
+                    <LeftHeader
+                        dataType={state.filter.dataType}
+                        setDataType={(dataType) => {
+                            setFilter({
+                                ...state.filter,
+                                dataType,
+                                group: null,
+                                subGroup:
+                                    dataType === DIMENSION_TYPE_DATA_ELEMENT
+                                        ? TOTALS
+                                        : null,
+                            })
+                        }}
+                        group={state.filter.group}
+                        setGroup={(group) => {
+                            setFilter({ ...state.filter, group })
+                        }}
+                        subGroup={state.filter.subGroup}
+                        setSubGroup={(subGroup) => {
+                            setFilter({ ...state.filter, subGroup })
+                        }}
+                        searchTerm={state.searchTerm}
+                        setSearchTerm={setSearchTerm}
+                        displayNameProp={displayNameProp}
+                        dataTest={`${dataTest}-left-header`}
+                    />
+                }
+                leftFooter={
+                    <div className="calculation-button">
+                        <Button
+                            icon={<IconAdd24 />}
+                            onClick={() => setCalculationModalIsOpen(true)}
+                            small
+                        >
+                            {i18n.t('Calculation')}
+                        </Button>
+                    </div>
+                }
+                enableOrderChange
+                height={TRANSFER_HEIGHT}
+                optionsWidth={TRANSFER_OPTIONS_WIDTH}
+                selectedWidth={TRANSFER_SELECTED_WIDTH}
+                selectedEmptyComponent={<EmptySelection />}
+                rightHeader={<RightHeader infoText={infoBoxMessage} />}
+                rightFooter={rightFooter}
+                renderOption={(props) => (
+                    <TransferOption
+                        {...props}
+                        active={isActive(
                             props.value /* eslint-disable-line react/prop-types */
-                        )
-                    )}
-                    tooltipText={
-                        state.filter.dataType === DIMENSION_TYPE_ALL
-                            ? getTooltipText(
-                                  getItemType(
-                                      props.value /* eslint-disable-line react/prop-types */
+                        )}
+                        icon={getIcon(
+                            getItemType(
+                                props.value /* eslint-disable-line react/prop-types */
+                            )
+                        )}
+                        tooltipText={
+                            state.filter.dataType === DIMENSION_TYPE_ALL
+                                ? getTooltipText(
+                                      getItemType(
+                                          props.value /* eslint-disable-line react/prop-types */
+                                      )
                                   )
-                              )
-                            : undefined
-                    }
-                    dataTest={`${dataTest}-transfer-option`}
-                    onEditClick={
-                        getItemType(
-                            props.value /* eslint-disable-line react/prop-types */
-                        ) === DIMENSION_TYPE_PROGRAM_INDICATOR
-                            ? () => alert('click!')
-                            : undefined
-                    }
-                />
+                                : undefined
+                        }
+                        dataTest={`${dataTest}-transfer-option`}
+                        onEditClick={
+                            getItemType(
+                                props.value /* eslint-disable-line react/prop-types */
+                            ) === DIMENSION_TYPE_PROGRAM_INDICATOR
+                                ? () => alert('click!')
+                                : undefined
+                        }
+                    />
+                )}
+                dataTest={`${dataTest}-transfer`}
+            />
+            {calculationModalIsOpen && (
+                <Modal dataTest={`calculation-modal`} position="top" large>
+                    <ModalTitle dataTest={'calculation-modal-title'}>
+                        {i18n.t('Data')}
+                    </ModalTitle>
+                    <ModalContent dataTest={'calculation-modal-content'}>
+                        <EditCalculation />
+                    </ModalContent>
+                    <ModalActions dataTest={'calculation-modal-actions'}>
+                        <ButtonStrip>
+                            <Button
+                                onClick={() => setCalculationModalIsOpen(false)}
+                            >
+                                {i18n.t('Cancel')}
+                            </Button>
+                            <Button
+                                primary
+                                onClick={() => setCalculationModalIsOpen(false)}
+                            >
+                                {i18n.t('Save calculation')}
+                            </Button>
+                        </ButtonStrip>
+                    </ModalActions>
+                </Modal>
             )}
-            dataTest={`${dataTest}-transfer`}
-        />
+            <style jsx>{styles}</style>
+        </>
     )
 }
 

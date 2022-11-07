@@ -18,22 +18,43 @@ const EditCalculation = () => {
                 </span>
                 {i18n.t('New calculation')}
             </h4>
-            <div className="left-section">
-                <TextAreaField
-                    label={i18n.t('Formula')}
-                    rows={5}
-                    className="formula-input"
-                />
-                <div className="check-button">
-                    <Button>{i18n.t('Check formula')}</Button>
+            <div className="content">
+                <div className="left-section">
+                    <TextAreaField
+                        label={i18n.t('Formula')}
+                        rows={5}
+                        className="formula-input"
+                    />
+                    <div className="check-button">
+                        <Button small>{i18n.t('Check formula')}</Button>
+                    </div>
+                    <InputField
+                        label={i18n.t('Name')}
+                        helpText={i18n.t('Shown in column/row headers')}
+                        className="name-input"
+                    />
                 </div>
-                <InputField
-                    label={i18n.t('Name')}
-                    helpText={i18n.t('Shown in column/row headers')}
-                    className="name-input"
-                />
+                <div className="right-section">
+                    <span>{i18n.t('About calculations')}</span>
+                    <ul>
+                        <li>
+                            {i18n.t(
+                                'Type # in the formula input to search for data elements.'
+                            )}
+                        </li>
+                        <li>
+                            {i18n.t(
+                                'Operators +, -, *, / and ( ) can be used.'
+                            )}
+                        </li>
+                        <li>
+                            {i18n.t(
+                                'Calculations you save are only visible to you.'
+                            )}
+                        </li>
+                    </ul>
+                </div>
             </div>
-            <div className="right-section"></div>
             <style jsx>{styles}</style>
         </>
     )
