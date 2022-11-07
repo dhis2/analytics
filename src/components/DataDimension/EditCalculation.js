@@ -1,19 +1,40 @@
-import { Button, InputField, TextAreaField } from '@dhis2/ui'
+import {
+    Button,
+    InputField,
+    TextAreaField,
+    IconChevronRight16,
+} from '@dhis2/ui'
 import React from 'react'
 import i18n from '../../locales/index.js'
+import styles from './styles/EditCalculation.style.js'
 
 const EditCalculation = () => {
     return (
         <>
-            <h4>{i18n.t('Data > New calculation')}</h4>
-            <div>
-                <TextAreaField label={i18n.t('Formula')} rows={5} />
-                <Button>{i18n.t('Check formula')}</Button>
+            <h4 className="header">
+                {i18n.t('Data')}
+                <span className="header-icon">
+                    <IconChevronRight16 />
+                </span>
+                {i18n.t('New calculation')}
+            </h4>
+            <div className="left-section">
+                <TextAreaField
+                    label={i18n.t('Formula')}
+                    rows={5}
+                    className="formula-input"
+                />
+                <div className="check-button">
+                    <Button>{i18n.t('Check formula')}</Button>
+                </div>
                 <InputField
                     label={i18n.t('Name')}
                     helpText={i18n.t('Shown in column/row headers')}
+                    className="name-input"
                 />
             </div>
+            <div className="right-section"></div>
+            <style jsx>{styles}</style>
         </>
     )
 }
