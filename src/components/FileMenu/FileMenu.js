@@ -122,7 +122,7 @@ export const FileMenu = ({
                     <SaveAsDialog
                         type={fileType}
                         object={fileObject}
-                        onSaveAs={onSaveAs}
+                        onSaveAs={onSaveAs || Function.prototype}
                         onClose={onDialogClose}
                     />
                 )
@@ -225,9 +225,9 @@ export const FileMenu = ({
                                 icon={
                                     <IconSave24
                                         color={
-                                            fileObject?.id
-                                                ? iconActiveColor
-                                                : iconInactiveColor
+                                            !(onSaveAs && fileObject?.id)
+                                                ? iconInactiveColor
+                                                : iconActiveColor
                                         }
                                     />
                                 }
@@ -352,7 +352,6 @@ FileMenu.defaultProps = {
     onNew: Function.prototype,
     onOpen: Function.prototype,
     onRename: Function.prototype,
-    onSaveAs: Function.prototype,
     onShare: Function.prototype,
     onTranslate: Function.prototype,
 }
