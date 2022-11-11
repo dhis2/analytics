@@ -231,7 +231,7 @@ export const FileMenu = ({
                                         }
                                     />
                                 }
-                                disabled={!fileObject?.id}
+                                disabled={!(onSaveAs && fileObject?.id)}
                                 onClick={onMenuItemClick('saveas')}
                                 dataTest="file-menu-saveas"
                             />
