@@ -34,6 +34,7 @@ import {
     TOTALS,
     DIMENSION_TYPE_PROGRAM_DATA_ELEMENT,
     DIMENSION_TYPE_PROGRAM_ATTRIBUTE,
+    DIMENSION_TYPE_CALCULATION,
 } from '../../modules/dataTypes.js'
 import {
     TRANSFER_HEIGHT,
@@ -43,6 +44,7 @@ import {
 import { useDebounce, useDidUpdateEffect } from '../../modules/utils.js'
 import styles from '../styles/DimensionSelector.style.js'
 import { TransferOption } from '../TransferOption.js'
+import CalculationIcon from './../../assets/DimensionItemIcons/CalculationIcon.js'
 import DataTypeSelector from './DataTypeSelector.js'
 import EditCalculation from './EditCalculation.js'
 import GroupSelector from './GroupSelector.js'
@@ -75,7 +77,7 @@ const LeftHeader = ({
                 onChange={setDataType}
                 dataTest={`${dataTest}-data-types-select-field`}
             />
-            {dataTypes[dataType] && (
+            {dataTypes[dataType] && dataType !== DIMENSION_TYPE_CALCULATION && (
                 <GroupSelector
                     dataType={dataType}
                     displayNameProp={displayNameProp}
@@ -385,6 +387,8 @@ const ItemSelector = ({
                 return <IconDimensionEventDataItem16 />
             case DIMENSION_TYPE_PROGRAM_INDICATOR:
                 return <IconDimensionProgramIndicator16 />
+            case DIMENSION_TYPE_CALCULATION:
+                return CalculationIcon
             default:
                 return GenericIcon
         }
@@ -478,7 +482,7 @@ const ItemSelector = ({
                         onEditClick={
                             getItemType(
                                 props.value /* eslint-disable-line react/prop-types */
-                            ) === DIMENSION_TYPE_PROGRAM_INDICATOR
+                            ) === DIMENSION_TYPE_CALCULATION
                                 ? () => alert('click!')
                                 : undefined
                         }
