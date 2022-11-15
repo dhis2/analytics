@@ -1,3 +1,10 @@
+## [24.3.3](https://github.com/dhis2/analytics/compare/v24.3.2...v24.3.3) (2022-11-11)
+
+
+### Bug Fixes
+
+* require onSaveAs function to enable save as in file menu (DHIS2-14087) ([#1372](https://github.com/dhis2/analytics/issues/1372)) ([11c9dca](https://github.com/dhis2/analytics/commit/11c9dca19d8e605cec7f9fa40268e2d324506a93))
+
 ## [24.3.2](https://github.com/dhis2/analytics/compare/v24.3.1...v24.3.2) (2022-11-01)
 
 
