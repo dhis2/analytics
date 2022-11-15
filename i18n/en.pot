@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2022-11-07T15:48:28.958Z\n"
-"PO-Revision-Date: 2022-11-07T15:48:28.958Z\n"
+"POT-Creation-Date: 2022-11-15T12:11:41.682Z\n"
+"PO-Revision-Date: 2022-11-15T12:11:41.682Z\n"
 
 msgid "view only"
 msgstr "view only"
@@ -1003,6 +1003,9 @@ msgstr "Program indicators"
 
 msgid "Program indicator"
 msgstr "Program indicator"
+
+msgid "Calculations"
+msgstr "Calculations"
 
 msgid "Extra Small"
 msgstr "Extra Small"

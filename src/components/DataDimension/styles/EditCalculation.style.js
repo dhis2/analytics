@@ -32,4 +32,16 @@ export default css`
         font-size: 14px;
         line-height: 24px;
     }
+
+    .validation-message {
+        margin-left: ${spacers.dp8};
+    }
+
+    .validation-error {
+        color: ${colors.red500};
+    }
+
+    .validation-success {
+        color: ${colors.green500};
+    }
 `

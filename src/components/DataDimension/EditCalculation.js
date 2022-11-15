@@ -1,14 +1,27 @@
+import { useDataEngine } from '@dhis2/app-runtime'
 import {
     Button,
     InputField,
     TextAreaField,
     IconChevronRight16,
 } from '@dhis2/ui'
+import cx from 'classnames'
 import React from 'react'
+import { useState } from 'react'
+import { apiValidateIndicatorExpression } from '../../api/expression.js'
 import i18n from '../../locales/index.js'
 import styles from './styles/EditCalculation.style.js'
 
 const EditCalculation = () => {
+    const engine = useDataEngine()
+    const [validationOutput, setValidationOutput] = useState()
+    const [forumla, setFormula] = useState()
+
+    const validateExpression = async () => {
+        const response = await apiValidateIndicatorExpression(engine, forumla)
+        setValidationOutput(response)
+    }
+
     return (
         <>
             <h4 className="header">
@@ -24,9 +37,23 @@ const EditCalculation = () => {
                         label={i18n.t('Formula')}
                         rows={5}
                         className="formula-input"
+                        onChange={({ value }) => setFormula(value)}
+                        value={forumla}
                     />
                     <div className="check-button">
-                        <Button small>{i18n.t('Check formula')}</Button>
+                        <Button small onClick={() => validateExpression()}>
+                            {i18n.t('Check formula')}
+                        </Button>
+                        <span
+                            className={cx('validation-message', {
+                                'validation-error':
+                                    validationOutput?.status === 'ERROR',
+                                'validation-success':
+                                    validationOutput?.status === 'OK',
+                            })}
+                        >
+                            {validationOutput?.message}
+                        </span>
                     </div>
                     <InputField
                         label={i18n.t('Name')}
