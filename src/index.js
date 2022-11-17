@@ -3,8 +3,6 @@ import './locales/index.js'
 
 export { default as DataDimension } from './components/DataDimension/DataDimension.js'
 
-export { default as EditCalculation } from './components/DataDimension/EditCalculation.js'
-
 export { default as PeriodDimension } from './components/PeriodDimension/PeriodDimension.js'
 export { default as FixedPeriodSelect } from './components/PeriodDimension/FixedPeriodSelect.js'
 

@@ -9,11 +9,6 @@ import {
     IconDimensionProgramIndicator16,
     Button,
     IconAdd24,
-    Modal,
-    ModalTitle,
-    ModalContent,
-    ModalActions,
-    ButtonStrip,
 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
@@ -45,8 +40,8 @@ import { useDebounce, useDidUpdateEffect } from '../../modules/utils.js'
 import styles from '../styles/DimensionSelector.style.js'
 import { TransferOption } from '../TransferOption.js'
 import CalculationIcon from './../../assets/DimensionItemIcons/CalculationIcon.js'
+import CalculationModal from './CalculationModal.js'
 import DataTypeSelector from './DataTypeSelector.js'
-import EditCalculation from './EditCalculation.js'
 import GroupSelector from './GroupSelector.js'
 
 const LeftHeader = ({
@@ -245,7 +240,7 @@ const ItemSelector = ({
         loading: true,
         nextPage: 1,
     })
-    const [calculationModalIsOpen, setCalculationModalIsOpen] = useState(false)
+    const [editCalculation, setEditCalculation] = useState()
     const dataEngine = useDataEngine()
     const setSearchTerm = (searchTerm) =>
         setState((state) => ({ ...state, searchTerm }))
@@ -393,6 +388,14 @@ const ItemSelector = ({
                 return GenericIcon
         }
     }
+
+    const saveCalculation = (calc) => {
+        // TODO: implement api endpoint to save formula
+        // TODO: move this to within CalculationModal.js instead? unless there's a reason to keep it in the item selector..
+        console.log(calc)
+        setEditCalculation()
+    }
+
     return (
         <>
             <Transfer
@@ -444,7 +447,7 @@ const ItemSelector = ({
                     <div className="calculation-button">
                         <Button
                             icon={<IconAdd24 />}
-                            onClick={() => setCalculationModalIsOpen(true)}
+                            onClick={() => setEditCalculation({})}
                             small
                         >
                             {i18n.t('Calculation')}
@@ -483,37 +486,24 @@ const ItemSelector = ({
                             getItemType(
                                 props.value /* eslint-disable-line react/prop-types */
                             ) === DIMENSION_TYPE_CALCULATION
-                                ? () => alert('click!')
+                                ? () =>
+                                      setEditCalculation({
+                                          id: '1',
+                                          name: 'hello',
+                                          formula: '1 + 2',
+                                      })
                                 : undefined
                         }
                     />
                 )}
                 dataTest={`${dataTest}-transfer`}
             />
-            {calculationModalIsOpen && (
-                <Modal dataTest={`calculation-modal`} position="top" large>
-                    <ModalTitle dataTest={'calculation-modal-title'}>
-                        {i18n.t('Data')}
-                    </ModalTitle>
-                    <ModalContent dataTest={'calculation-modal-content'}>
-                        <EditCalculation />
-                    </ModalContent>
-                    <ModalActions dataTest={'calculation-modal-actions'}>
-                        <ButtonStrip>
-                            <Button
-                                onClick={() => setCalculationModalIsOpen(false)}
-                            >
-                                {i18n.t('Cancel')}
-                            </Button>
-                            <Button
-                                primary
-                                onClick={() => setCalculationModalIsOpen(false)}
-                            >
-                                {i18n.t('Save calculation')}
-                            </Button>
-                        </ButtonStrip>
-                    </ModalActions>
-                </Modal>
+            {editCalculation && (
+                <CalculationModal
+                    calculation={editCalculation}
+                    onSave={saveCalculation}
+                    onClose={() => setEditCalculation()}
+                />
             )}
             <style jsx>{styles}</style>
         </>
