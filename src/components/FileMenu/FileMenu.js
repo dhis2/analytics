@@ -87,7 +87,10 @@ export const FileMenu = ({
                         objectToTranslate={fileObject}
                         fieldsToTranslate={['name', 'description']}
                         onClose={onDialogClose}
-                        onTranslationSaved={onTranslate}
+                        onTranslationSaved={() => {
+                            onDialogClose()
+                            onTranslate()
+                        }}
                     />
                 )
             case 'sharing':
