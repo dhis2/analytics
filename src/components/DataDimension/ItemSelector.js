@@ -270,6 +270,7 @@ const ItemSelector = ({
                         value: `${item.id}.${metric.id}`,
                         disabled: item.disabled,
                         type: item.dimensionItemType,
+                        formula: item.formula,
                     })
                 } else {
                     DATA_SETS_CONSTANTS.forEach((metric) => {
@@ -278,6 +279,7 @@ const ItemSelector = ({
                             value: `${item.id}.${metric.id}`,
                             disabled: item.disabled,
                             type: item.dimensionItemType,
+                            formula: item.formula,
                         })
                     })
                 }
@@ -287,6 +289,7 @@ const ItemSelector = ({
                     value: item.id,
                     disabled: item.disabled,
                     type: item.dimensionItemType,
+                    formula: item.formula,
                 })
             }
         })
@@ -463,37 +466,28 @@ const ItemSelector = ({
                 rightFooter={rightFooter}
                 renderOption={(props) => (
                     <TransferOption
+                        /* eslint-disable react/prop-types */
                         {...props}
-                        active={isActive(
-                            props.value /* eslint-disable-line react/prop-types */
-                        )}
-                        icon={getIcon(
-                            getItemType(
-                                props.value /* eslint-disable-line react/prop-types */
-                            )
-                        )}
+                        active={isActive(props.value)}
+                        icon={getIcon(getItemType(props.value))}
                         tooltipText={
                             state.filter.dataType === DIMENSION_TYPE_ALL
-                                ? getTooltipText(
-                                      getItemType(
-                                          props.value /* eslint-disable-line react/prop-types */
-                                      )
-                                  )
+                                ? getTooltipText(getItemType(props.value))
                                 : undefined
                         }
                         dataTest={`${dataTest}-transfer-option`}
                         onEditClick={
-                            getItemType(
-                                props.value /* eslint-disable-line react/prop-types */
-                            ) === DIMENSION_TYPE_CALCULATION
+                            getItemType(props.value) ===
+                            DIMENSION_TYPE_CALCULATION
                                 ? () =>
                                       setEditCalculation({
-                                          id: '1',
-                                          name: 'hello',
-                                          formula: '1 + 2',
+                                          id: props.value,
+                                          name: props.label,
+                                          formula: props.formula,
                                       })
                                 : undefined
                         }
+                        /* eslint-enable react/prop-types */
                     />
                 )}
                 dataTest={`${dataTest}-transfer`}
