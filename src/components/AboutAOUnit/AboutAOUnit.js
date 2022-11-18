@@ -1,5 +1,4 @@
 import { useDataQuery, useDataMutation } from '@dhis2/app-runtime'
-import i18n from '@dhis2/d2-i18n'
 import { Parser as RichTextParser } from '@dhis2/d2-ui-rich-text'
 import {
     Button,
@@ -24,6 +23,7 @@ import React, {
     forwardRef,
     useImperativeHandle,
 } from 'react'
+import i18n from '../../locales/index.js'
 import { formatList } from '../../modules/list.js'
 import styles from './styles/AboutAOUnit.style.js'
 import { getTranslatedString, AOTypeMap } from './utils.js'

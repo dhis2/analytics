@@ -1,7 +1,7 @@
-import i18n from '@dhis2/d2-i18n'
 import { SingleSelect, SingleSelectOption } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
+import i18n from '../../locales/index.js'
 
 // TODO change the "Created by" prefix to "Creator" or something that does not require a context for the translators
 

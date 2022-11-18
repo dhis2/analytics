@@ -1,4 +1,3 @@
-import i18n from '@dhis2/d2-i18n'
 import { Parser as RichTextParser } from '@dhis2/d2-ui-rich-text'
 import {
     Button,
@@ -14,6 +13,7 @@ import {
 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { forwardRef, useRef, useEffect, useState } from 'react'
+import i18n from '../../../../locales/index.js'
 import { UserMentionWrapper } from '../UserMention/UserMentionWrapper.js'
 import {
     convertCtrlKey,
