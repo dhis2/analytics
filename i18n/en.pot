@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2022-11-15T12:11:41.682Z\n"
-"PO-Revision-Date: 2022-11-15T12:11:41.682Z\n"
+"POT-Creation-Date: 2022-11-18T14:53:04.535Z\n"
+"PO-Revision-Date: 2022-11-18T14:53:04.535Z\n"
 
 msgid "view only"
 msgstr "view only"
@@ -73,21 +73,6 @@ msgstr "This app could not retrieve required data."
 msgid "Network error"
 msgstr "Network error"
 
-msgid "Data Type"
-msgstr "Data Type"
-
-msgid "All types"
-msgstr "All types"
-
-msgid "Totals only"
-msgstr "Totals only"
-
-msgid "Details only"
-msgstr "Details only"
-
-msgid "Disaggregation"
-msgstr "Disaggregation"
-
 msgid "Data"
 msgstr "Data"
 
@@ -117,6 +102,30 @@ msgstr "Operators +, -, *, / and ( ) can be used."
 
 msgid "Calculations you save are only visible to you."
 msgstr "Calculations you save are only visible to you."
+
+msgid "Cancel"
+msgstr "Cancel"
+
+msgid "The calculation can only be saved with a valid formula"
+msgstr "The calculation can only be saved with a valid formula"
+
+msgid "Save calculation"
+msgstr "Save calculation"
+
+msgid "Data Type"
+msgstr "Data Type"
+
+msgid "All types"
+msgstr "All types"
+
+msgid "Totals only"
+msgstr "Totals only"
+
+msgid "Details only"
+msgstr "Details only"
+
+msgid "Disaggregation"
+msgstr "Disaggregation"
 
 msgid "No data"
 msgstr "No data"
@@ -168,12 +177,6 @@ msgstr "Nothing found for \"{{- searchTerm}}\""
 
 msgid "Calculation"
 msgstr "Calculation"
-
-msgid "Cancel"
-msgstr "Cancel"
-
-msgid "Save calculation"
-msgstr "Save calculation"
 
 msgid "Metric type"
 msgstr "Metric type"

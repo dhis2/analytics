@@ -9,6 +9,7 @@ import {
     InputField,
     TextAreaField,
     IconChevronRight16,
+    Tooltip,
 } from '@dhis2/ui'
 import cx from 'classnames'
 import PropTypes from 'prop-types'
@@ -17,11 +18,16 @@ import { apiValidateIndicatorExpression } from '../../api/expression.js'
 import i18n from '../../locales/index.js'
 import styles from './styles/CalculationModal.style.js'
 
+const VALID_FORMULA = 'OK'
+const INVALID_FORMULA = 'ERROR'
+
 const CalculationModal = ({ calculation = {}, onSave, onClose }) => {
     const engine = useDataEngine()
     const [validationOutput, setValidationOutput] = useState()
     const [formula, setFormula] = useState(calculation.formula)
     const [name, setName] = useState(calculation.name)
+
+    const getFormulaStatus = () => validationOutput?.status
 
     const validateExpression = async () => {
         const response = await apiValidateIndicatorExpression(engine, formula)
@@ -61,10 +67,11 @@ const CalculationModal = ({ calculation = {}, onSave, onClose }) => {
                                 <span
                                     className={cx('validation-message', {
                                         'validation-error':
-                                            validationOutput?.status ===
-                                            'ERROR',
+                                            getFormulaStatus() ===
+                                            INVALID_FORMULA,
                                         'validation-success':
-                                            validationOutput?.status === 'OK',
+                                            getFormulaStatus() ===
+                                            VALID_FORMULA,
                                     })}
                                 >
                                     {validationOutput?.message}
@@ -105,14 +112,45 @@ const CalculationModal = ({ calculation = {}, onSave, onClose }) => {
             <ModalActions dataTest={'calculation-modal-actions'}>
                 <ButtonStrip>
                     <Button onClick={onClose}>{i18n.t('Cancel')}</Button>
-                    <Button
-                        primary
-                        onClick={() =>
-                            onSave({ id: calculation.id, formula, name })
-                        }
+                    <Tooltip
+                        content={i18n.t(
+                            'The calculation can only be saved with a valid formula'
+                        )}
+                        placement="top"
+                        closeDelay={200}
                     >
-                        {i18n.t('Save calculation')}
-                    </Button>
+                        {({ ref, onMouseOver, onMouseOut }) => (
+                            <span
+                                ref={ref}
+                                onMouseOver={
+                                    getFormulaStatus() !== VALID_FORMULA &&
+                                    onMouseOver
+                                }
+                                onMouseOut={
+                                    getFormulaStatus() !== VALID_FORMULA &&
+                                    onMouseOut
+                                }
+                                className="tooltip"
+                            >
+                                <p>hello</p>
+                                <Button
+                                    primary
+                                    onClick={() =>
+                                        onSave({
+                                            id: calculation.id,
+                                            formula,
+                                            name,
+                                        })
+                                    }
+                                    disabled={
+                                        getFormulaStatus() !== VALID_FORMULA
+                                    }
+                                >
+                                    {i18n.t('Save calculation')}
+                                </Button>
+                            </span>
+                        )}
+                    </Tooltip>
                 </ButtonStrip>
             </ModalActions>
         </Modal>
