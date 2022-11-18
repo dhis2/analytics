@@ -95,7 +95,6 @@ export const TranslationForm = ({
         {
             onComplete: () => {
                 onTranslationSaved()
-                onClose()
             },
             onError: (error) => showError(error),
         }

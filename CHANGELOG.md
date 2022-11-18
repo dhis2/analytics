@@ -1,3 +1,17 @@
+## [24.3.5](https://github.com/dhis2/analytics/compare/v24.3.4...v24.3.5) (2022-11-17)
+
+
+### Bug Fixes
+
+* avoid canceled request error ([#1379](https://github.com/dhis2/analytics/issues/1379)) ([6cbe4f4](https://github.com/dhis2/analytics/commit/6cbe4f4a1bae190a18c27a16d00b0a7e84ab95e9))
+
+## [24.3.4](https://github.com/dhis2/analytics/compare/v24.3.3...v24.3.4) (2022-11-16)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([f09cc94](https://github.com/dhis2/analytics/commit/f09cc94f6e04ce04ac0192de402da42960c13af5))
+
 ## [24.3.3](https://github.com/dhis2/analytics/compare/v24.3.2...v24.3.3) (2022-11-11)
 
 
