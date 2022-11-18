@@ -132,7 +132,6 @@ const CalculationModal = ({ calculation = {}, onSave, onClose }) => {
                                 }
                                 className="tooltip"
                             >
-                                <p>hello</p>
                                 <Button
                                     primary
                                     onClick={() =>
