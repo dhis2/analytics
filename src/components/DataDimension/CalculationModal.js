@@ -113,9 +113,13 @@ const CalculationModal = ({ calculation = {}, onSave, onClose }) => {
                 <ButtonStrip>
                     <Button onClick={onClose}>{i18n.t('Cancel')}</Button>
                     <Tooltip
-                        content={i18n.t(
-                            'The calculation can only be saved with a valid formula'
-                        )}
+                        content={
+                            getFormulaStatus() !== VALID_FORMULA
+                                ? i18n.t(
+                                      'The calculation can only be saved with a valid formula'
+                                  )
+                                : i18n.t('Add a name to save this calculation')
+                        }
                         placement="top"
                         closeDelay={200}
                     >
@@ -123,12 +127,16 @@ const CalculationModal = ({ calculation = {}, onSave, onClose }) => {
                             <span
                                 ref={ref}
                                 onMouseOver={
-                                    getFormulaStatus() !== VALID_FORMULA &&
-                                    onMouseOver
+                                    getFormulaStatus() !== VALID_FORMULA ||
+                                    !name
+                                        ? onMouseOver
+                                        : undefined
                                 }
                                 onMouseOut={
-                                    getFormulaStatus() !== VALID_FORMULA &&
-                                    onMouseOut
+                                    getFormulaStatus() !== VALID_FORMULA ||
+                                    !name
+                                        ? onMouseOut
+                                        : undefined
                                 }
                                 className="tooltip"
                             >
@@ -142,7 +150,8 @@ const CalculationModal = ({ calculation = {}, onSave, onClose }) => {
                                         })
                                     }
                                     disabled={
-                                        getFormulaStatus() !== VALID_FORMULA
+                                        getFormulaStatus() !== VALID_FORMULA ||
+                                        !name
                                     }
                                 >
                                     {i18n.t('Save calculation')}
