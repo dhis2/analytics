@@ -46,7 +46,7 @@ const getQuery = (type) => ({
         resource: AOTypeMap[type].apiEndpoint,
         params: ({
             sortField = 'displayName',
-            sortDirection = 'asc',
+            sortDirection = 'iasc',
             page = 1,
             filters,
         }) => {
@@ -134,6 +134,16 @@ export const OpenFileDialog = ({
         return queryFilters
     }, [currentUser, filters])
 
+    const formatSortDirection = useCallback(() => {
+        if (sortField === 'displayName') {
+            if (sortDirection !== 'default') {
+                return `i${sortDirection}`
+            }
+        }
+
+        return sortDirection
+    }, [sortField, sortDirection])
+
     const { loading, error, data, refetch } = useDataQuery(filesQuery, {
         lazy: true,
     })
@@ -161,11 +171,19 @@ export const OpenFileDialog = ({
             refetch({
                 page,
                 sortField,
-                sortDirection,
+                sortDirection: formatSortDirection(),
                 filters: formatFilters(),
             })
         }
-    }, [open, page, sortField, sortDirection, filters, refetch, formatFilters])
+    }, [
+        open,
+        page,
+        sortField,
+        filters,
+        refetch,
+        formatFilters,
+        formatSortDirection,
+    ])
 
     const headers = [
         {
