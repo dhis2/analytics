@@ -135,10 +135,8 @@ export const OpenFileDialog = ({
     }, [currentUser, filters])
 
     const formatSortDirection = useCallback(() => {
-        if (sortField === 'displayName') {
-            if (sortDirection !== 'default') {
-                return `i${sortDirection}`
-            }
+        if (sortField === 'displayName' && sortDirection !== 'default') {
+            return `i${sortDirection}`
         }
 
         return sortDirection
