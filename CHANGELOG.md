@@ -1,3 +1,10 @@
+## [24.3.6](https://github.com/dhis2/analytics/compare/v24.3.5...v24.3.6) (2022-11-22)
+
+
+### Bug Fixes
+
+* **OpenFileDialog:** use case insensitive sorting on displayName (DHIS2-13554) ([#1384](https://github.com/dhis2/analytics/issues/1384)) ([e8348f7](https://github.com/dhis2/analytics/commit/e8348f7fe4b9a9d6349eddf9c86b11b5939564a2))
+
 ## [24.3.5](https://github.com/dhis2/analytics/compare/v24.3.4...v24.3.5) (2022-11-17)
 
 
