@@ -395,8 +395,27 @@ const ItemSelector = ({
     const saveCalculation = (calc) => {
         // TODO: implement api endpoint to save formula
         // TODO: move this to within CalculationModal.js instead? unless there's a reason to keep it in the item selector..
+        if (!calc.id) {
+            // TODO: remove when the save endpoint has been implemented
+            calc.id = '987654321'
+        }
         console.log(calc)
+
         setEditCalculation()
+        if (!state.options.some((option) => option.value === calc.id)) {
+            const newItem = {
+                value: calc.id,
+                label: calc.name,
+                formula: calc.formula,
+                type: DIMENSION_TYPE_CALCULATION,
+            }
+            console.log(newItem)
+            setState((state) => ({
+                ...state,
+                options: [...state.options, newItem],
+            }))
+        }
+        onChange([...selectedItems.map((item) => item.value), calc.id])
     }
 
     return (
