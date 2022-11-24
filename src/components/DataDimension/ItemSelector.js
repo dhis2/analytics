@@ -401,21 +401,22 @@ const ItemSelector = ({
         }
         console.log(calc)
 
+        // close the modal
         setEditCalculation()
-        if (!state.options.some((option) => option.value === calc.id)) {
-            const newItem = {
+
+        // reload the list of options
+        fetchItems(1)
+
+        // select the new calculation
+        onSelect([
+            ...selectedItems,
+            {
                 value: calc.id,
                 label: calc.name,
                 formula: calc.formula,
                 type: DIMENSION_TYPE_CALCULATION,
-            }
-            console.log(newItem)
-            setState((state) => ({
-                ...state,
-                options: [...state.options, newItem],
-            }))
-        }
-        onChange([...selectedItems.map((item) => item.value), calc.id])
+            },
+        ])
     }
 
     return (
