@@ -398,6 +398,7 @@ const ItemSelector = ({
 
     const saveCalculation = (calc) => {
         // TODO: implement api endpoint to save formula
+        // FIXME: the formula is lost when saving a calc now that there's no proper endpoint for it. hopefully this is resolved when the real endpoint is used
         // TODO: move this to within CalculationModal.js instead? unless there's a reason to keep it in the item selector..
         if (!calc.id) {
             // TODO: remove when the save endpoint has been implemented

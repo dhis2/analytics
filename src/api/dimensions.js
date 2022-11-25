@@ -429,6 +429,15 @@ const fetchDataItems = async ({
 
     const response = dataItemsData.dataItems
 
+    // TODO: TEST ONLY! Remove before merge!
+    const id = (Math.floor(Math.random() * 1000000) + 1000000).toString()
+    response.dataItems.unshift({
+        dimensionItemType: 'CALCULATION',
+        id,
+        name: 'My calculation ' + id,
+        formula: '1 / 2',
+    })
+
     return formatResponse(response.dataItems, response.pager)
 }
 
