@@ -16,6 +16,7 @@ const DataDimension = ({
                 id: item.value,
                 name: item.label,
                 type: item.type,
+                formula: item.formula,
             })),
         })
 
@@ -26,6 +27,7 @@ const DataDimension = ({
                 label: item.name,
                 isActive: item.isActive,
                 type: item.type,
+                formula: item.formula,
             }))}
             onSelect={onSelectItems}
             displayNameProp={displayNameProp}

@@ -357,7 +357,11 @@ const ItemSelector = ({
         [...state.options, ...selectedItems].find(
             (item) => item.value === value
         )?.type
-    const getTooltipText = (itemType) => {
+    const getTooltipText = (item) => {
+        const itemType = getItemType(item.value)
+        if (itemType === DIMENSION_TYPE_CALCULATION && item.formula) {
+            return item.formula
+        }
         switch (itemType) {
             case DIMENSION_TYPE_DATA_ELEMENT_OPERAND:
                 return dataTypes[DIMENSION_TYPE_DATA_ELEMENT].getItemName()
@@ -397,7 +401,7 @@ const ItemSelector = ({
         // TODO: move this to within CalculationModal.js instead? unless there's a reason to keep it in the item selector..
         if (!calc.id) {
             // TODO: remove when the save endpoint has been implemented
-            calc.id = '987654321'
+            calc.id = (Math.floor(Math.random() * 1000000) + 1000000).toString()
         }
         console.log(calc)
 
@@ -490,11 +494,7 @@ const ItemSelector = ({
                         {...props}
                         active={isActive(props.value)}
                         icon={getIcon(getItemType(props.value))}
-                        tooltipText={
-                            state.filter.dataType === DIMENSION_TYPE_ALL
-                                ? getTooltipText(getItemType(props.value))
-                                : undefined
-                        }
+                        tooltipText={getTooltipText(props)}
                         dataTest={`${dataTest}-transfer-option`}
                         onEditClick={
                             getItemType(props.value) ===
