@@ -389,7 +389,7 @@ msgid "No results found"
 msgstr "Aucun résultat trouvé"
 
 msgid "Not available offline"
-msgstr ""
+msgstr "Non disponible hors ligne"
 
 msgid "Created by"
 msgstr "Créé par"
