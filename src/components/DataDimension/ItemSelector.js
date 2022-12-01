@@ -1,4 +1,4 @@
-import { useDataEngine } from '@dhis2/app-runtime'
+import { useDataEngine, useDataMutation } from '@dhis2/app-runtime'
 import {
     Transfer,
     InputField,
@@ -13,6 +13,10 @@ import {
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 import { apiFetchOptions } from '../../api/dimensions.js'
+import {
+    createCalculationMutation,
+    updateCalculationMutation,
+} from '../../api/expression.js'
 import DataElementIcon from '../../assets/DimensionItemIcons/DataElementIcon.js'
 import GenericIcon from '../../assets/DimensionItemIcons/GenericIcon.js'
 import i18n from '../../locales/index.js'
@@ -29,7 +33,7 @@ import {
     TOTALS,
     DIMENSION_TYPE_PROGRAM_DATA_ELEMENT,
     DIMENSION_TYPE_PROGRAM_ATTRIBUTE,
-    DIMENSION_TYPE_CALCULATION,
+    DIMENSION_TYPE_EXPRESSION_DIMENSION_ITEM,
 } from '../../modules/dataTypes.js'
 import {
     TRANSFER_HEIGHT,
@@ -72,17 +76,18 @@ const LeftHeader = ({
                 onChange={setDataType}
                 dataTest={`${dataTest}-data-types-select-field`}
             />
-            {dataTypes[dataType] && dataType !== DIMENSION_TYPE_CALCULATION && (
-                <GroupSelector
-                    dataType={dataType}
-                    displayNameProp={displayNameProp}
-                    currentGroup={group}
-                    onGroupChange={setGroup}
-                    currentSubGroup={subGroup}
-                    onSubGroupChange={setSubGroup}
-                    dataTest={dataTest}
-                />
-            )}
+            {dataTypes[dataType] &&
+                dataType !== DIMENSION_TYPE_EXPRESSION_DIMENSION_ITEM && (
+                    <GroupSelector
+                        dataType={dataType}
+                        displayNameProp={displayNameProp}
+                        currentGroup={group}
+                        onGroupChange={setGroup}
+                        currentSubGroup={subGroup}
+                        onSubGroupChange={setSubGroup}
+                        dataTest={dataTest}
+                    />
+                )}
         </div>
         <style jsx>{styles}</style>
     </>
@@ -359,7 +364,10 @@ const ItemSelector = ({
         )?.type
     const getTooltipText = (item) => {
         const itemType = getItemType(item.value)
-        if (itemType === DIMENSION_TYPE_CALCULATION && item.formula) {
+        if (
+            itemType === DIMENSION_TYPE_EXPRESSION_DIMENSION_ITEM &&
+            item.formula
+        ) {
             return item.formula
         }
         switch (itemType) {
@@ -389,22 +397,31 @@ const ItemSelector = ({
                 return <IconDimensionEventDataItem16 />
             case DIMENSION_TYPE_PROGRAM_INDICATOR:
                 return <IconDimensionProgramIndicator16 />
-            case DIMENSION_TYPE_CALCULATION:
+            case DIMENSION_TYPE_EXPRESSION_DIMENSION_ITEM:
                 return CalculationIcon
             default:
                 return GenericIcon
         }
     }
 
-    const saveCalculation = (calc) => {
-        // TODO: implement api endpoint to save formula
-        // FIXME: the formula is lost when saving a calc now that there's no proper endpoint for it. hopefully this is resolved when the real endpoint is used
+    const [createCalculation] = useDataMutation(createCalculationMutation)
+    const [updateCalculation] = useDataMutation(updateCalculationMutation)
+
+    const saveCalculation = ({ id, name, formula }) => {
         // TODO: move this to within CalculationModal.js instead? unless there's a reason to keep it in the item selector..
-        if (!calc.id) {
-            // TODO: remove when the save endpoint has been implemented
-            calc.id = (Math.floor(Math.random() * 1000000) + 1000000).toString()
+
+        if (id) {
+            updateCalculation({
+                id,
+                name,
+                expression: formula,
+            })
+        } else {
+            createCalculation({
+                name,
+                expression: formula,
+            })
         }
-        console.log(calc)
 
         // close the modal
         setEditCalculation()
@@ -416,10 +433,10 @@ const ItemSelector = ({
         onSelect([
             ...selectedItems,
             {
-                value: calc.id,
-                label: calc.name,
-                formula: calc.formula,
-                type: DIMENSION_TYPE_CALCULATION,
+                value: id,
+                label: name,
+                formula,
+                type: DIMENSION_TYPE_EXPRESSION_DIMENSION_ITEM,
             },
         ])
     }
@@ -499,7 +516,7 @@ const ItemSelector = ({
                         dataTest={`${dataTest}-transfer-option`}
                         onEditClick={
                             getItemType(props.value) ===
-                            DIMENSION_TYPE_CALCULATION
+                            DIMENSION_TYPE_EXPRESSION_DIMENSION_ITEM
                                 ? () =>
                                       setEditCalculation({
                                           id: props.value,

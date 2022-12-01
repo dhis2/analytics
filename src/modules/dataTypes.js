@@ -18,7 +18,8 @@ export const DIMENSION_TYPE_PERIOD = 'PERIOD'
 export const DIMENSION_TYPE_ORGANISATION_UNIT = 'ORGANISATION_UNIT'
 export const DIMENSION_TYPE_ORGANISATION_UNIT_GROUP_SET =
     'ORGANISATION_UNIT_GROUP_SET'
-export const DIMENSION_TYPE_CALCULATION = 'CALCULATION'
+export const DIMENSION_TYPE_EXPRESSION_DIMENSION_ITEM =
+    'EXPRESSION_DIMENSION_ITEM'
 
 export const TOTALS = 'totals'
 export const DETAIL = 'detail'
@@ -94,8 +95,8 @@ export const dataTypeMap = {
         getGroupEmptyLabel: () => i18n.t('No programs found'),
         getGroupLoadingLabel: () => i18n.t('Loading programs'),
     },
-    [DIMENSION_TYPE_CALCULATION]: {
-        id: DIMENSION_TYPE_CALCULATION,
+    [DIMENSION_TYPE_EXPRESSION_DIMENSION_ITEM]: {
+        id: DIMENSION_TYPE_EXPRESSION_DIMENSION_ITEM,
         getName: () => i18n.t('Calculations'),
         getItemName: () => i18n.t('Calculation'),
     },

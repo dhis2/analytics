@@ -14,7 +14,7 @@ import {
 import cx from 'classnames'
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
-import { apiValidateIndicatorExpression } from '../../api/expression.js'
+import { apiValidateExpression } from '../../api/expression.js'
 import i18n from '../../locales/index.js'
 import styles from './styles/CalculationModal.style.js'
 
@@ -24,13 +24,13 @@ const INVALID_FORMULA = 'ERROR'
 const CalculationModal = ({ calculation = {}, onSave, onClose }) => {
     const engine = useDataEngine()
     const [validationOutput, setValidationOutput] = useState()
-    const [formula, setFormula] = useState(calculation.formula)
+    const [formula, setFormula] = useState(calculation.expression)
     const [name, setName] = useState(calculation.name)
 
     const getFormulaStatus = () => validationOutput?.status
 
     const validateExpression = async () => {
-        const response = await apiValidateIndicatorExpression(engine, formula)
+        const response = await apiValidateExpression(engine, formula)
         setValidationOutput(response)
     }
 
