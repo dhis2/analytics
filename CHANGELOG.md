@@ -1,3 +1,31 @@
+## [24.3.9](https://github.com/dhis2/analytics/compare/v24.3.8...v24.3.9) (2022-12-01)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([a6d4648](https://github.com/dhis2/analytics/commit/a6d4648267a7ca69a7b4702c0fa07cf9f7ff8c2a))
+
+## [24.3.8](https://github.com/dhis2/analytics/compare/v24.3.7...v24.3.8) (2022-11-29)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([ade41a1](https://github.com/dhis2/analytics/commit/ade41a150e728f9ac80b74d90123a5dfed29b088))
+
+## [24.3.7](https://github.com/dhis2/analytics/compare/v24.3.6...v24.3.7) (2022-11-24)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([4838a17](https://github.com/dhis2/analytics/commit/4838a1714a33a7fd06d12681b578701d6a735fd3))
+
+## [24.3.6](https://github.com/dhis2/analytics/compare/v24.3.5...v24.3.6) (2022-11-22)
+
+
+### Bug Fixes
+
+* **OpenFileDialog:** use case insensitive sorting on displayName (DHIS2-13554) ([#1384](https://github.com/dhis2/analytics/issues/1384)) ([e8348f7](https://github.com/dhis2/analytics/commit/e8348f7fe4b9a9d6349eddf9c86b11b5939564a2))
+
 ## [24.3.5](https://github.com/dhis2/analytics/compare/v24.3.4...v24.3.5) (2022-11-17)
 
 

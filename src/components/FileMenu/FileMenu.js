@@ -164,7 +164,7 @@ export const FileMenu = ({
             />
             {menuIsOpen && (
                 <Layer
-                    onClick={toggleMenu}
+                    onBackdropClick={toggleMenu}
                     position="fixed"
                     level={2000}
                     dataTest="file-menu-toggle-layer"
