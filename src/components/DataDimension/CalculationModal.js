@@ -21,7 +21,7 @@ import styles from './styles/CalculationModal.style.js'
 const VALID_FORMULA = 'OK'
 const INVALID_FORMULA = 'ERROR'
 
-const CalculationModal = ({ calculation = {}, onSave, onClose }) => {
+const CalculationModal = ({ calculation = {}, onSave, onClose, onDelete }) => {
     const engine = useDataEngine()
     const [validationOutput, setValidationOutput] = useState()
     const [formula, setFormula] = useState(calculation.expression)
@@ -46,7 +46,9 @@ const CalculationModal = ({ calculation = {}, onSave, onClose }) => {
                         <span className="header-icon">
                             <IconChevronRight16 />
                         </span>
-                        {i18n.t('New calculation')}
+                        {calculation.id
+                            ? i18n.t('Edit calculation')
+                            : i18n.t('New calculation')}
                     </h4>
                     <div className="content">
                         <div className="left-section">
@@ -84,6 +86,20 @@ const CalculationModal = ({ calculation = {}, onSave, onClose }) => {
                                 onChange={({ value }) => setName(value)}
                                 value={name}
                             />
+                            {calculation.id && (
+                                <div className="delete-button">
+                                    <Button
+                                        small
+                                        onClick={() =>
+                                            onDelete({
+                                                id: calculation.id,
+                                            })
+                                        }
+                                    >
+                                        {i18n.t('Delete calculation')}
+                                    </Button>
+                                </div>
+                            )}
                         </div>
                         <div className="right-section">
                             <span>{i18n.t('About calculations')}</span>
@@ -167,6 +183,7 @@ const CalculationModal = ({ calculation = {}, onSave, onClose }) => {
 
 CalculationModal.propTypes = {
     onClose: PropTypes.func.isRequired,
+    onDelete: PropTypes.func.isRequired,
     onSave: PropTypes.func.isRequired,
     calculation: PropTypes.shape({
         formula: PropTypes.string,

@@ -19,6 +19,10 @@ export default css`
         margin-bottom: ${spacers.dp16};
     }
 
+    .delete-button {
+        margin-top: ${spacers.dp32};
+    }
+
     .content {
         display: flex;
         gap: ${spacers.dp16};

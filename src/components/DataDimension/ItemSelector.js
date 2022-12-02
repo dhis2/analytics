@@ -15,6 +15,7 @@ import React, { useState } from 'react'
 import { apiFetchOptions } from '../../api/dimensions.js'
 import {
     createCalculationMutation,
+    deleteCalculationMutation,
     updateCalculationMutation,
 } from '../../api/expression.js'
 import DataElementIcon from '../../assets/DimensionItemIcons/DataElementIcon.js'
@@ -406,18 +407,21 @@ const ItemSelector = ({
 
     const [createCalculation] = useDataMutation(createCalculationMutation)
     const [updateCalculation] = useDataMutation(updateCalculationMutation)
+    const [deleteCalculation] = useDataMutation(deleteCalculationMutation)
 
-    const saveCalculation = ({ id, name, formula }) => {
+    const onSaveCalculation = async ({ id, name, formula }) => {
         // TODO: move this to within CalculationModal.js instead? unless there's a reason to keep it in the item selector..
 
+        let response
+
         if (id) {
-            updateCalculation({
+            response = await updateCalculation({
                 id,
                 name,
                 expression: formula,
             })
         } else {
-            createCalculation({
+            response = await createCalculation({
                 name,
                 expression: formula,
             })
@@ -433,12 +437,27 @@ const ItemSelector = ({
         onSelect([
             ...selectedItems,
             {
-                value: id,
+                value: response?.response.uid,
                 label: name,
                 formula,
                 type: DIMENSION_TYPE_EXPRESSION_DIMENSION_ITEM,
             },
         ])
+    }
+
+    const onDeleteCalculation = async ({ id }) => {
+        await deleteCalculation({
+            id,
+        })
+
+        // close the modal
+        setEditCalculation()
+
+        // reload the list of options
+        fetchItems(1)
+
+        // unselect the deleted calculation
+        onSelect([...selectedItems.filter((item) => item.value !== id)])
     }
 
     return (
@@ -533,8 +552,9 @@ const ItemSelector = ({
             {editCalculation && (
                 <CalculationModal
                     calculation={editCalculation}
-                    onSave={saveCalculation}
+                    onSave={onSaveCalculation}
                     onClose={() => setEditCalculation()}
+                    onDelete={onDeleteCalculation}
                 />
             )}
             <style jsx>{styles}</style>

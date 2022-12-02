@@ -20,6 +20,12 @@ export const updateCalculationMutation = {
     data: ({ name, expression }) => ({ name, expression }),
 }
 
+export const deleteCalculationMutation = {
+    type: 'delete',
+    resource: 'expressionDimensionItems',
+    id: ({ id }) => id,
+}
+
 export const apiValidateExpression = async (dataEngine, expression) => {
     const validationData = dataEngine.mutate(expressionValidationMutation, {
         variables: { expression },

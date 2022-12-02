@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2022-11-21T13:27:24.667Z\n"
-"PO-Revision-Date: 2022-11-21T13:27:24.667Z\n"
+"POT-Creation-Date: 2022-12-02T09:27:43.705Z\n"
+"PO-Revision-Date: 2022-12-02T09:27:43.705Z\n"
 
 msgid "view only"
 msgstr "view only"
@@ -76,6 +76,9 @@ msgstr "Network error"
 msgid "Data"
 msgstr "Data"
 
+msgid "Edit calculation"
+msgstr "Edit calculation"
+
 msgid "New calculation"
 msgstr "New calculation"
 
@@ -90,6 +93,9 @@ msgstr "Name"
 
 msgid "Shown in column/row headers"
 msgstr "Shown in column/row headers"
+
+msgid "Delete calculation"
+msgstr "Delete calculation"
 
 msgid "About calculations"
 msgstr "About calculations"
