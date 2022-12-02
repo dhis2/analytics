@@ -246,7 +246,7 @@ const ItemSelector = ({
         loading: true,
         nextPage: 1,
     })
-    const [editCalculation, setEditCalculation] = useState()
+    const [currentCalculation, setCurrentCalculation] = useState()
     const dataEngine = useDataEngine()
     const setSearchTerm = (searchTerm) =>
         setState((state) => ({ ...state, searchTerm }))
@@ -428,7 +428,7 @@ const ItemSelector = ({
         }
 
         // close the modal
-        setEditCalculation()
+        setCurrentCalculation()
 
         // reload the list of options
         fetchItems(1)
@@ -451,7 +451,7 @@ const ItemSelector = ({
         })
 
         // close the modal
-        setEditCalculation()
+        setCurrentCalculation()
 
         // reload the list of options
         fetchItems(1)
@@ -511,7 +511,7 @@ const ItemSelector = ({
                     <div className="calculation-button">
                         <Button
                             icon={<IconAdd24 />}
-                            onClick={() => setEditCalculation({})}
+                            onClick={() => setCurrentCalculation({})}
                             small
                         >
                             {i18n.t('Calculation')}
@@ -537,7 +537,7 @@ const ItemSelector = ({
                             getItemType(props.value) ===
                             DIMENSION_TYPE_EXPRESSION_DIMENSION_ITEM
                                 ? () =>
-                                      setEditCalculation({
+                                      setCurrentCalculation({
                                           id: props.value,
                                           name: props.label,
                                           formula: props.formula,
@@ -549,11 +549,11 @@ const ItemSelector = ({
                 )}
                 dataTest={`${dataTest}-transfer`}
             />
-            {editCalculation && (
+            {currentCalculation && (
                 <CalculationModal
-                    calculation={editCalculation}
+                    calculation={currentCalculation}
                     onSave={onSaveCalculation}
-                    onClose={() => setEditCalculation()}
+                    onClose={() => setCurrentCalculation()}
                     onDelete={onDeleteCalculation}
                 />
             )}
