@@ -1,4 +1,4 @@
-import { useDataEngine } from '@dhis2/app-runtime'
+import { useDataMutation } from '@dhis2/app-runtime'
 import {
     Button,
     Modal,
@@ -14,7 +14,7 @@ import {
 import cx from 'classnames'
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
-import { apiValidateExpression } from '../../api/expression.js'
+import { validateExpressionMutation } from '../../api/expression.js'
 import i18n from '../../locales/index.js'
 import styles from './styles/CalculationModal.style.js'
 
@@ -22,17 +22,17 @@ const VALID_FORMULA = 'OK'
 const INVALID_FORMULA = 'ERROR'
 
 const CalculationModal = ({ calculation = {}, onSave, onClose, onDelete }) => {
-    const engine = useDataEngine()
     const [validationOutput, setValidationOutput] = useState()
     const [formula, setFormula] = useState(calculation.expression)
     const [name, setName] = useState(calculation.name)
+    const [validateExpression] = useDataMutation(validateExpressionMutation)
 
-    const getFormulaStatus = () => validationOutput?.status
-
-    const validateExpression = async () => {
-        const response = await apiValidateExpression(engine, formula)
+    const doValidateFormula = async () => {
+        const response = await validateExpression({ expression: formula })
         setValidationOutput(response)
     }
+
+    const getFormulaStatus = () => validationOutput?.status
 
     const clearValidation = () => setValidationOutput()
 
@@ -65,10 +65,7 @@ const CalculationModal = ({ calculation = {}, onSave, onClose, onDelete }) => {
                                 value={formula}
                             />
                             <div className="check-button">
-                                <Button
-                                    small
-                                    onClick={() => validateExpression()}
-                                >
+                                <Button small onClick={doValidateFormula}>
                                     {i18n.t('Check formula')}
                                 </Button>
                                 <span

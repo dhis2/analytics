@@ -1,9 +1,7 @@
-import { onError } from './index.js'
-
-const expressionValidationMutation = {
+export const validateExpressionMutation = {
+    type: 'create',
     resource: 'indicators/expression/description',
     data: ({ expression }) => expression,
-    type: 'create',
 }
 
 export const createCalculationMutation = {
@@ -14,8 +12,8 @@ export const createCalculationMutation = {
 
 export const updateCalculationMutation = {
     type: 'update',
-    partial: true,
     resource: 'expressionDimensionItems',
+    partial: true,
     id: ({ id }) => id,
     data: ({ name, expression }) => ({ name, expression }),
 }
@@ -24,31 +22,4 @@ export const deleteCalculationMutation = {
     type: 'delete',
     resource: 'expressionDimensionItems',
     id: ({ id }) => id,
-}
-
-export const apiValidateExpression = async (dataEngine, expression) => {
-    const validationData = dataEngine.mutate(expressionValidationMutation, {
-        variables: { expression },
-        onError,
-    })
-
-    return validationData
-}
-
-export const apiSaveExpressionDimensionItem = (
-    dataEngine,
-    expressionDimensionItem
-) => {
-    const mutation = {
-        type: 'create',
-        resource: 'expressionDimensionItems',
-        data: expressionDimensionItem,
-    }
-
-    if (expressionDimensionItem.id) {
-        mutation.type = 'update'
-        mutation.id = expressionDimensionItem.id
-    }
-
-    return dataEngine.mutate(mutation)
 }
