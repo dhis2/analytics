@@ -276,7 +276,7 @@ const ItemSelector = ({
                         value: `${item.id}.${metric.id}`,
                         disabled: item.disabled,
                         type: item.dimensionItemType,
-                        formula: item.formula,
+                        expression: item.expression,
                     })
                 } else {
                     DATA_SETS_CONSTANTS.forEach((metric) => {
@@ -285,7 +285,7 @@ const ItemSelector = ({
                             value: `${item.id}.${metric.id}`,
                             disabled: item.disabled,
                             type: item.dimensionItemType,
-                            formula: item.formula,
+                            expression: item.expression,
                         })
                     })
                 }
@@ -295,7 +295,7 @@ const ItemSelector = ({
                     value: item.id,
                     disabled: item.disabled,
                     type: item.dimensionItemType,
-                    formula: item.formula,
+                    expression: item.expression,
                 })
             }
         })
@@ -367,9 +367,9 @@ const ItemSelector = ({
         const itemType = getItemType(item.value)
         if (
             itemType === DIMENSION_TYPE_EXPRESSION_DIMENSION_ITEM &&
-            item.formula
+            item.expression
         ) {
-            return item.formula
+            return item.expression
         }
         switch (itemType) {
             case DIMENSION_TYPE_DATA_ELEMENT_OPERAND:
@@ -409,7 +409,7 @@ const ItemSelector = ({
     const [updateCalculation] = useDataMutation(updateCalculationMutation)
     const [deleteCalculation] = useDataMutation(deleteCalculationMutation)
 
-    const onSaveCalculation = async ({ id, name, formula }) => {
+    const onSaveCalculation = async ({ id, name, expression }) => {
         // TODO: move this to within CalculationModal.js instead? unless there's a reason to keep it in the item selector..
 
         let response
@@ -418,12 +418,12 @@ const ItemSelector = ({
             response = await updateCalculation({
                 id,
                 name,
-                expression: formula,
+                expression,
             })
         } else {
             response = await createCalculation({
                 name,
-                expression: formula,
+                expression,
             })
         }
 
@@ -439,7 +439,7 @@ const ItemSelector = ({
             {
                 value: response?.response.uid,
                 label: name,
-                formula,
+                expression,
                 type: DIMENSION_TYPE_EXPRESSION_DIMENSION_ITEM,
             },
         ])
@@ -540,7 +540,7 @@ const ItemSelector = ({
                                       setCurrentCalculation({
                                           id: props.value,
                                           name: props.label,
-                                          formula: props.formula,
+                                          expression: props.expression,
                                       })
                                 : undefined
                         }

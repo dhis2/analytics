@@ -18,21 +18,21 @@ import { validateExpressionMutation } from '../../api/expression.js'
 import i18n from '../../locales/index.js'
 import styles from './styles/CalculationModal.style.js'
 
-const VALID_FORMULA = 'OK'
-const INVALID_FORMULA = 'ERROR'
+const VALID_EXPRESSION = 'OK'
+const INVALID_EXPRESSION = 'ERROR'
 
 const CalculationModal = ({ calculation = {}, onSave, onClose, onDelete }) => {
     const [validationOutput, setValidationOutput] = useState()
-    const [formula, setFormula] = useState(calculation.expression)
+    const [expression, setExpression] = useState(calculation.expression)
     const [name, setName] = useState(calculation.name)
     const [validateExpression] = useDataMutation(validateExpressionMutation)
 
-    const doValidateFormula = async () => {
-        const response = await validateExpression({ expression: formula })
+    const doValidateExpression = async () => {
+        const response = await validateExpression({ expression })
         setValidationOutput(response)
     }
 
-    const getFormulaStatus = () => validationOutput?.status
+    const getExpressionStatus = () => validationOutput?.status
 
     const clearValidation = () => setValidationOutput()
 
@@ -57,25 +57,24 @@ const CalculationModal = ({ calculation = {}, onSave, onClose, onDelete }) => {
                             <TextAreaField
                                 label={i18n.t('Formula')}
                                 rows={5}
-                                className="formula-input"
                                 onChange={({ value }) => {
                                     clearValidation()
-                                    setFormula(value)
+                                    setExpression(value)
                                 }}
-                                value={formula}
+                                value={expression}
                             />
                             <div className="check-button">
-                                <Button small onClick={doValidateFormula}>
+                                <Button small onClick={doValidateExpression}>
                                     {i18n.t('Check formula')}
                                 </Button>
                                 <span
                                     className={cx('validation-message', {
                                         'validation-error':
-                                            getFormulaStatus() ===
-                                            INVALID_FORMULA,
+                                            getExpressionStatus() ===
+                                            INVALID_EXPRESSION,
                                         'validation-success':
-                                            getFormulaStatus() ===
-                                            VALID_FORMULA,
+                                            getExpressionStatus() ===
+                                            VALID_EXPRESSION,
                                     })}
                                 >
                                     {validationOutput?.message}
@@ -132,7 +131,7 @@ const CalculationModal = ({ calculation = {}, onSave, onClose, onDelete }) => {
                     <Button onClick={onClose}>{i18n.t('Cancel')}</Button>
                     <Tooltip
                         content={
-                            getFormulaStatus() !== VALID_FORMULA
+                            getExpressionStatus() !== VALID_EXPRESSION
                                 ? i18n.t(
                                       'The calculation can only be saved with a valid formula'
                                   )
@@ -145,14 +144,14 @@ const CalculationModal = ({ calculation = {}, onSave, onClose, onDelete }) => {
                             <span
                                 ref={ref}
                                 onMouseOver={
-                                    getFormulaStatus() !== VALID_FORMULA ||
-                                    !name
+                                    getExpressionStatus() !==
+                                        VALID_EXPRESSION || !name
                                         ? onMouseOver
                                         : undefined
                                 }
                                 onMouseOut={
-                                    getFormulaStatus() !== VALID_FORMULA ||
-                                    !name
+                                    getExpressionStatus() !==
+                                        VALID_EXPRESSION || !name
                                         ? onMouseOut
                                         : undefined
                                 }
@@ -163,13 +162,13 @@ const CalculationModal = ({ calculation = {}, onSave, onClose, onDelete }) => {
                                     onClick={() =>
                                         onSave({
                                             id: calculation.id,
-                                            formula,
+                                            expression,
                                             name,
                                         })
                                     }
                                     disabled={
-                                        getFormulaStatus() !== VALID_FORMULA ||
-                                        !name
+                                        getExpressionStatus() !==
+                                            VALID_EXPRESSION || !name
                                     }
                                 >
                                     {i18n.t('Save calculation')}
@@ -188,7 +187,7 @@ CalculationModal.propTypes = {
     onDelete: PropTypes.func.isRequired,
     onSave: PropTypes.func.isRequired,
     calculation: PropTypes.shape({
-        formula: PropTypes.string,
+        expression: PropTypes.string,
         id: PropTypes.string,
         name: PropTypes.string,
     }),
