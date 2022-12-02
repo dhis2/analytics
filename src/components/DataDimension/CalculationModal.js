@@ -27,11 +27,6 @@ const CalculationModal = ({ calculation = {}, onSave, onClose, onDelete }) => {
     const [name, setName] = useState(calculation.name)
     const [validateExpression] = useDataMutation(validateExpressionMutation)
 
-    const doValidateExpression = async () => {
-        const response = await validateExpression({ expression })
-        setValidationOutput(response)
-    }
-
     const getExpressionStatus = () => validationOutput?.status
 
     const clearValidation = () => setValidationOutput()
@@ -64,7 +59,16 @@ const CalculationModal = ({ calculation = {}, onSave, onClose, onDelete }) => {
                                 value={expression}
                             />
                             <div className="check-button">
-                                <Button small onClick={doValidateExpression}>
+                                <Button
+                                    small
+                                    onClick={async () =>
+                                        setValidationOutput(
+                                            await validateExpression({
+                                                expression,
+                                            })
+                                        )
+                                    }
+                                >
                                     {i18n.t('Check formula')}
                                 </Button>
                                 <span
