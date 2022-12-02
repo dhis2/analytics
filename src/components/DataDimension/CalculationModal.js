@@ -34,6 +34,8 @@ const CalculationModal = ({ calculation = {}, onSave, onClose, onDelete }) => {
         setValidationOutput(response)
     }
 
+    const clearValidation = () => setValidationOutput()
+
     return (
         <Modal dataTest={`calculation-modal`} position="top" large>
             <ModalTitle dataTest={'calculation-modal-title'}>
@@ -56,7 +58,10 @@ const CalculationModal = ({ calculation = {}, onSave, onClose, onDelete }) => {
                                 label={i18n.t('Formula')}
                                 rows={5}
                                 className="formula-input"
-                                onChange={({ value }) => setFormula(value)}
+                                onChange={({ value }) => {
+                                    clearValidation()
+                                    setFormula(value)
+                                }}
                                 value={formula}
                             />
                             <div className="check-button">
