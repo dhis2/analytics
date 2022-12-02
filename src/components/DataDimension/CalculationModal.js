@@ -22,14 +22,11 @@ const VALID_EXPRESSION = 'OK'
 const INVALID_EXPRESSION = 'ERROR'
 
 const CalculationModal = ({ calculation = {}, onSave, onClose, onDelete }) => {
+    const [validateExpression] = useDataMutation(validateExpressionMutation)
     const [validationOutput, setValidationOutput] = useState()
     const [expression, setExpression] = useState(calculation.expression)
     const [name, setName] = useState(calculation.name)
-    const [validateExpression] = useDataMutation(validateExpressionMutation)
-
-    const getExpressionStatus = () => validationOutput?.status
-
-    const clearValidation = () => setValidationOutput()
+    const expressionStatus = validationOutput?.status
 
     return (
         <Modal dataTest={`calculation-modal`} position="top" large>
@@ -53,7 +50,7 @@ const CalculationModal = ({ calculation = {}, onSave, onClose, onDelete }) => {
                                 label={i18n.t('Formula')}
                                 rows={5}
                                 onChange={({ value }) => {
-                                    clearValidation()
+                                    setValidationOutput()
                                     setExpression(value)
                                 }}
                                 value={expression}
@@ -74,10 +71,10 @@ const CalculationModal = ({ calculation = {}, onSave, onClose, onDelete }) => {
                                 <span
                                     className={cx('validation-message', {
                                         'validation-error':
-                                            getExpressionStatus() ===
+                                            expressionStatus ===
                                             INVALID_EXPRESSION,
                                         'validation-success':
-                                            getExpressionStatus() ===
+                                            expressionStatus ===
                                             VALID_EXPRESSION,
                                     })}
                                 >
@@ -135,7 +132,7 @@ const CalculationModal = ({ calculation = {}, onSave, onClose, onDelete }) => {
                     <Button onClick={onClose}>{i18n.t('Cancel')}</Button>
                     <Tooltip
                         content={
-                            getExpressionStatus() !== VALID_EXPRESSION
+                            expressionStatus !== VALID_EXPRESSION
                                 ? i18n.t(
                                       'The calculation can only be saved with a valid formula'
                                   )
@@ -148,14 +145,14 @@ const CalculationModal = ({ calculation = {}, onSave, onClose, onDelete }) => {
                             <span
                                 ref={ref}
                                 onMouseOver={
-                                    getExpressionStatus() !==
-                                        VALID_EXPRESSION || !name
+                                    expressionStatus !== VALID_EXPRESSION ||
+                                    !name
                                         ? onMouseOver
                                         : undefined
                                 }
                                 onMouseOut={
-                                    getExpressionStatus() !==
-                                        VALID_EXPRESSION || !name
+                                    expressionStatus !== VALID_EXPRESSION ||
+                                    !name
                                         ? onMouseOut
                                         : undefined
                                 }
@@ -171,8 +168,8 @@ const CalculationModal = ({ calculation = {}, onSave, onClose, onDelete }) => {
                                         })
                                     }
                                     disabled={
-                                        getExpressionStatus() !==
-                                            VALID_EXPRESSION || !name
+                                        expressionStatus !== VALID_EXPRESSION ||
+                                        !name
                                     }
                                 >
                                     {i18n.t('Save calculation')}
