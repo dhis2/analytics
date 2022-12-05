@@ -3,12 +3,14 @@
 exports[`DimensionItem matches the snapshot 1`] = `
 <li
   name="Period"
+  onClick={[Function]}
   onMouseLeave={[Function]}
   onMouseOver={[Function]}
   style={
     Object {
       "alignItems": "center",
       "borderRadius": "2px",
+      "cursor": "pointer",
       "display": "flex",
       "marginBottom": 3,
       "marginTop": 3,
@@ -16,11 +18,16 @@ exports[`DimensionItem matches the snapshot 1`] = `
     }
   }
 >
-  <DimensionLabel
+  <div
+    className="label"
     dataTest="undefined-button-pe"
-    id="pe"
-    isDeactivated={false}
-    onClick={[Function]}
+    style={
+      Object {
+        "display": "flex",
+        "outline": "none",
+      }
+    }
+    tabIndex={0}
   >
     <div
       style={
@@ -52,7 +59,6 @@ exports[`DimensionItem matches the snapshot 1`] = `
         style={
           Object {
             "color": "#212934",
-            "cursor": "pointer",
             "fontSize": "14px",
             "userSelect": "none",
             "wordBreak": "break-word",
@@ -66,19 +72,21 @@ exports[`DimensionItem matches the snapshot 1`] = `
         isRecommended={false}
       />
     </div>
-  </DimensionLabel>
+  </div>
 </li>
 `;
 
 exports[`DimensionItem matches the snapshot with locked 1`] = `
 <li
   name="Period"
+  onClick={[Function]}
   onMouseLeave={[Function]}
   onMouseOver={[Function]}
   style={
     Object {
       "alignItems": "center",
       "borderRadius": "2px",
+      "cursor": "pointer",
       "display": "flex",
       "marginBottom": 3,
       "marginTop": 3,
@@ -86,11 +94,16 @@ exports[`DimensionItem matches the snapshot with locked 1`] = `
     }
   }
 >
-  <DimensionLabel
+  <div
+    className="label"
     dataTest="undefined-button-pe"
-    id="pe"
-    isDeactivated={false}
-    onClick={[Function]}
+    style={
+      Object {
+        "display": "flex",
+        "outline": "none",
+      }
+    }
+    tabIndex={0}
   >
     <div
       style={
@@ -122,7 +135,6 @@ exports[`DimensionItem matches the snapshot with locked 1`] = `
         style={
           Object {
             "color": "#212934",
-            "cursor": "pointer",
             "fontSize": "14px",
             "userSelect": "none",
             "wordBreak": "break-word",
@@ -147,19 +159,21 @@ exports[`DimensionItem matches the snapshot with locked 1`] = `
     >
       <SvgLock16 />
     </div>
-  </DimensionLabel>
+  </div>
 </li>
 `;
 
 exports[`DimensionItem matches the snapshot with onOptionsClick 1`] = `
 <li
   name="Period"
+  onClick={[Function]}
   onMouseLeave={[Function]}
   onMouseOver={[Function]}
   style={
     Object {
       "alignItems": "center",
       "borderRadius": "2px",
+      "cursor": "pointer",
       "display": "flex",
       "marginBottom": 3,
       "marginTop": 3,
@@ -167,11 +181,16 @@ exports[`DimensionItem matches the snapshot with onOptionsClick 1`] = `
     }
   }
 >
-  <DimensionLabel
+  <div
+    className="label"
     dataTest="undefined-button-pe"
-    id="pe"
-    isDeactivated={false}
-    onClick={[Function]}
+    style={
+      Object {
+        "display": "flex",
+        "outline": "none",
+      }
+    }
+    tabIndex={0}
   >
     <div
       style={
@@ -203,7 +222,6 @@ exports[`DimensionItem matches the snapshot with onOptionsClick 1`] = `
         style={
           Object {
             "color": "#212934",
-            "cursor": "pointer",
             "fontSize": "14px",
             "userSelect": "none",
             "wordBreak": "break-word",
@@ -217,7 +235,7 @@ exports[`DimensionItem matches the snapshot with onOptionsClick 1`] = `
         isRecommended={false}
       />
     </div>
-  </DimensionLabel>
+  </div>
   <div
     data-test="undefined-menu-pe"
     style={
@@ -235,12 +253,14 @@ exports[`DimensionItem matches the snapshot with onOptionsClick 1`] = `
 exports[`DimensionItem matches the snapshot with recommended 1`] = `
 <li
   name="Period"
+  onClick={[Function]}
   onMouseLeave={[Function]}
   onMouseOver={[Function]}
   style={
     Object {
       "alignItems": "center",
       "borderRadius": "2px",
+      "cursor": "pointer",
       "display": "flex",
       "marginBottom": 3,
       "marginTop": 3,
@@ -248,11 +268,16 @@ exports[`DimensionItem matches the snapshot with recommended 1`] = `
     }
   }
 >
-  <DimensionLabel
+  <div
+    className="label"
     dataTest="undefined-button-pe"
-    id="pe"
-    isDeactivated={false}
-    onClick={[Function]}
+    style={
+      Object {
+        "display": "flex",
+        "outline": "none",
+      }
+    }
+    tabIndex={0}
   >
     <div
       style={
@@ -284,7 +309,6 @@ exports[`DimensionItem matches the snapshot with recommended 1`] = `
         style={
           Object {
             "color": "#212934",
-            "cursor": "pointer",
             "fontSize": "14px",
             "userSelect": "none",
             "wordBreak": "break-word",
@@ -298,13 +322,14 @@ exports[`DimensionItem matches the snapshot with recommended 1`] = `
         isRecommended={true}
       />
     </div>
-  </DimensionLabel>
+  </div>
 </li>
 `;
 
 exports[`DimensionItem matches the snapshot with selected 1`] = `
 <li
   name="Period"
+  onClick={[Function]}
   onMouseLeave={[Function]}
   onMouseOver={[Function]}
   style={
@@ -312,6 +337,7 @@ exports[`DimensionItem matches the snapshot with selected 1`] = `
       "alignItems": "center",
       "backgroundColor": "#e0f2f1",
       "borderRadius": "2px",
+      "cursor": "pointer",
       "display": "flex",
       "fontWeight": 500,
       "marginBottom": 3,
@@ -320,11 +346,16 @@ exports[`DimensionItem matches the snapshot with selected 1`] = `
     }
   }
 >
-  <DimensionLabel
+  <div
+    className="label"
     dataTest="undefined-button-pe"
-    id="pe"
-    isDeactivated={false}
-    onClick={[Function]}
+    style={
+      Object {
+        "display": "flex",
+        "outline": "none",
+      }
+    }
+    tabIndex={0}
   >
     <div
       style={
@@ -356,7 +387,6 @@ exports[`DimensionItem matches the snapshot with selected 1`] = `
         style={
           Object {
             "color": "#212934",
-            "cursor": "pointer",
             "fontSize": "14px",
             "userSelect": "none",
             "wordBreak": "break-word",
@@ -370,6 +400,6 @@ exports[`DimensionItem matches the snapshot with selected 1`] = `
         isRecommended={false}
       />
     </div>
-  </DimensionLabel>
+  </div>
 </li>
 `;

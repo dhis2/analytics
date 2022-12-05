@@ -1,3 +1,10 @@
+## [24.3.10](https://github.com/dhis2/analytics/compare/v24.3.9...v24.3.10) (2022-12-02)
+
+
+### Bug Fixes
+
+* items in sidebar not clickable full width (DHIS2-6626) ([#1390](https://github.com/dhis2/analytics/issues/1390)) ([4b7cff4](https://github.com/dhis2/analytics/commit/4b7cff4a182ae3f44fada600337ba477a2656ed5))
+
 ## [24.3.9](https://github.com/dhis2/analytics/compare/v24.3.8...v24.3.9) (2022-12-01)
 
 
