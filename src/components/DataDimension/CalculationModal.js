@@ -1,4 +1,4 @@
-import { useDataMutation } from '@dhis2/app-runtime'
+import { useAlert, useDataMutation } from '@dhis2/app-runtime'
 import {
     Button,
     Modal,
@@ -22,7 +22,10 @@ const VALID_EXPRESSION = 'OK'
 const INVALID_EXPRESSION = 'ERROR'
 
 const CalculationModal = ({ calculation = {}, onSave, onClose, onDelete }) => {
-    const [validateExpression] = useDataMutation(validateExpressionMutation)
+    const { show: showError } = useAlert((error) => error, { critical: true })
+    const [validateExpression] = useDataMutation(validateExpressionMutation, {
+        onError: (error) => showError(error),
+    })
     const [validationOutput, setValidationOutput] = useState()
     const [expression, setExpression] = useState(calculation.expression)
     const [name, setName] = useState(calculation.name)

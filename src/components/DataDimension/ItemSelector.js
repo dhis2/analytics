@@ -1,4 +1,4 @@
-import { useDataEngine, useDataMutation } from '@dhis2/app-runtime'
+import { useAlert, useDataEngine, useDataMutation } from '@dhis2/app-runtime'
 import {
     Transfer,
     InputField,
@@ -405,9 +405,20 @@ const ItemSelector = ({
         }
     }
 
-    const [createCalculation] = useDataMutation(createCalculationMutation)
-    const [updateCalculation] = useDataMutation(updateCalculationMutation)
-    const [deleteCalculation] = useDataMutation(deleteCalculationMutation)
+    const { show: showError } = useAlert((error) => error, { critical: true })
+    const mutationParams = { onError: (error) => showError(error) }
+    const [createCalculation] = useDataMutation(
+        createCalculationMutation,
+        mutationParams
+    )
+    const [updateCalculation] = useDataMutation(
+        updateCalculationMutation,
+        mutationParams
+    )
+    const [deleteCalculation] = useDataMutation(
+        deleteCalculationMutation,
+        mutationParams
+    )
 
     const onSaveCalculation = async ({ id, name, expression }) => {
         // TODO: move this to within CalculationModal.js instead? unless there's a reason to keep it in the item selector..
