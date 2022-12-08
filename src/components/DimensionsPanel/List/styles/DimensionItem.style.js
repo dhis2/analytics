@@ -7,7 +7,6 @@ export const styles = {
     text: {
         color: colors.grey900,
         userSelect: 'none',
-        cursor: 'pointer',
         wordBreak: 'break-word',
         fontSize: '14px',
     },
@@ -22,6 +21,9 @@ export const styles = {
         marginBottom: 3,
         alignItems: 'center',
         borderRadius: '2px',
+    },
+    clickable: {
+        cursor: 'pointer',
     },
     selected: {
         backgroundColor: theme.secondary100,
@@ -57,5 +59,9 @@ export const styles = {
         background: 'none',
         outline: 'none',
         cursor: 'pointer',
+    },
+    label: {
+        display: 'flex',
+        outline: 'none',
     },
 }
