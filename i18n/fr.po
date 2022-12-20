@@ -87,7 +87,7 @@ msgid "This app could not retrieve required data."
 msgstr ""
 
 msgid "Network error"
-msgstr ""
+msgstr "Erreur réseau"
 
 msgid "Data Type"
 msgstr "Type de données"
@@ -546,10 +546,10 @@ msgstr[1] ""
 msgstr[2] ""
 
 msgid "Selected: {{commaSeparatedListOfOrganisationUnits}}"
-msgstr ""
+msgstr "Sélectionné : {{commaSeparatedListOfOrganisationUnits}}"
 
 msgid "Nothing selected"
-msgstr ""
+msgstr "Rien n'a été sélectionné"
 
 msgid "User organisation unit"
 msgstr "Unités d'organisation de l'utilisateur"
