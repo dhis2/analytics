@@ -12,15 +12,17 @@ import {
     TEXT_ALIGN_CENTER,
     mergeFontStyleWithDefault,
 } from '../../../../modules/fontStyle.js'
-import { getColorByValueFromLegendSet } from '../../../../modules/legends.js'
+import {
+    getColorByValueFromLegendSet,
+    LEGEND_DISPLAY_STYLE_FILL,
+} from '../../../../modules/legends.js'
 
 const svgNS = 'http://www.w3.org/2000/svg'
 
 const generateValueSVG = ({
-    value,
     formattedValue,
     subText,
-    legendSet,
+    textColor,
     noData,
     y,
 }) => {
@@ -41,8 +43,8 @@ const generateValueSVG = ({
 
     let fillColor = colors.grey900
 
-    if (legendSet) {
-        fillColor = getColorByValueFromLegendSet(legendSet, value)
+    if (textColor) {
+        fillColor = textColor
     } else if (formattedValue === noData.text) {
         fillColor = colors.grey600
     }
@@ -87,7 +89,7 @@ const generateValueSVG = ({
     return svgValue
 }
 
-const generateDashboardItem = (config, { legendSet, noData }) => {
+const generateDashboardItem = (config, { textColor, noData }) => {
     const container = document.createElement('div')
     container.setAttribute(
         'style',
@@ -114,10 +116,9 @@ const generateDashboardItem = (config, { legendSet, noData }) => {
 
     container.appendChild(
         generateValueSVG({
-            value: config.value,
             formattedValue: config.formattedValue,
             subText: config.subText,
-            legendSet,
+            textColor,
             noData,
             y: 40,
         })
@@ -150,7 +151,7 @@ const getXFromTextAlign = (textAlign) => {
     }
 }
 
-const generateDVItem = (config, { legendSet, parentEl, fontStyle, noData }) => {
+const generateDVItem = (config, { textColor, parentEl, fontStyle, noData }) => {
     const parentElBBox = parentEl.getBoundingClientRect()
 
     const width = parentElBBox.width
@@ -253,10 +254,9 @@ const generateDVItem = (config, { legendSet, parentEl, fontStyle, noData }) => {
 
     svg.appendChild(
         generateValueSVG({
-            value: config.value,
             formattedValue: config.formattedValue,
             subText: config.subText,
-            legendSet,
+            textColor,
             noData,
             y: 20,
         })
@@ -265,17 +265,56 @@ const generateDVItem = (config, { legendSet, parentEl, fontStyle, noData }) => {
     return svg
 }
 
+const getContrastColor = (inputColor) => {
+    // based on https://stackoverflow.com/questions/3942878/how-to-decide-font-color-in-white-or-black-depending-on-background-color
+    var color =
+        inputColor.charAt(0) === '#' ? inputColor.substring(1, 7) : inputColor
+    var r = parseInt(color.substring(0, 2), 16) // hexToR
+    var g = parseInt(color.substring(2, 4), 16) // hexToG
+    var b = parseInt(color.substring(4, 6), 16) // hexToB
+    var uicolors = [r / 255, g / 255, b / 255]
+    var c = uicolors.map((col) => {
+        if (col <= 0.03928) {
+            return col / 12.92
+        }
+        return Math.pow((col + 0.055) / 1.055, 2.4)
+    })
+    var L = 0.2126 * c[0] + 0.7152 * c[1] + 0.0722 * c[2]
+    return L > 0.179 ? colors.grey900 : colors.white
+}
+
 export default function (
     config,
     parentEl,
-    { dashboard, legendSets, fontStyle, noData }
+    { dashboard, legendSets, fontStyle, noData, legendOptions }
 ) {
-    const legendSet = legendSets[0]
+    const legendSet = legendOptions && legendSets[0]
+    const legendColor =
+        legendSet && getColorByValueFromLegendSet(legendSet, config.value)
+    let textColor
+    if (legendColor) {
+        if (legendOptions.style === LEGEND_DISPLAY_STYLE_FILL) {
+            parentEl.style.background = legendColor
+            textColor = getContrastColor(legendColor)
+        } else {
+            textColor = legendColor
+        }
+    }
+
     parentEl.style.overflow = 'hidden'
     parentEl.style.display = 'flex'
     parentEl.style.justifyContent = 'center'
 
-    return dashboard
-        ? generateDashboardItem(config, { legendSet, noData })
-        : generateDVItem(config, { legendSet, parentEl, fontStyle, noData })
+    if (dashboard) {
+        return generateDashboardItem(config, { textColor, noData })
+    } else {
+        parentEl.style.margin = '10px'
+        parentEl.style.borderRadius = '10px'
+        return generateDVItem(config, {
+            textColor,
+            parentEl,
+            fontStyle,
+            noData,
+        })
+    }
 }
