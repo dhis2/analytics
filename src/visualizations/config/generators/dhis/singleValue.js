@@ -11,6 +11,7 @@ import {
     TEXT_ALIGN_RIGHT,
     TEXT_ALIGN_CENTER,
     mergeFontStyleWithDefault,
+    defaultFontStyle,
 } from '../../../../modules/fontStyle.js'
 import {
     getColorByValueFromLegendSet,
@@ -22,7 +23,7 @@ const svgNS = 'http://www.w3.org/2000/svg'
 const generateValueSVG = ({
     formattedValue,
     subText,
-    textColor,
+    valueColor,
     noData,
     y,
 }) => {
@@ -43,8 +44,8 @@ const generateValueSVG = ({
 
     let fillColor = colors.grey900
 
-    if (textColor) {
-        fillColor = textColor
+    if (valueColor) {
+        fillColor = valueColor
     } else if (formattedValue === noData.text) {
         fillColor = colors.grey600
     }
@@ -89,7 +90,7 @@ const generateValueSVG = ({
     return svgValue
 }
 
-const generateDashboardItem = (config, { textColor, noData }) => {
+const generateDashboardItem = (config, { valueColor, noData }) => {
     const container = document.createElement('div')
     container.setAttribute(
         'style',
@@ -118,7 +119,7 @@ const generateDashboardItem = (config, { textColor, noData }) => {
         generateValueSVG({
             formattedValue: config.formattedValue,
             subText: config.subText,
-            textColor,
+            valueColor,
             noData,
             y: 40,
         })
@@ -151,7 +152,10 @@ const getXFromTextAlign = (textAlign) => {
     }
 }
 
-const generateDVItem = (config, { textColor, parentEl, fontStyle, noData }) => {
+const generateDVItem = (
+    config,
+    { valueColor, titleColor, parentEl, fontStyle, noData }
+) => {
     const parentElBBox = parentEl.getBoundingClientRect()
 
     const width = parentElBBox.width
@@ -196,7 +200,17 @@ const generateDVItem = (config, { textColor, parentEl, fontStyle, noData }) => {
             ? FONT_STYLE_OPTION_ITALIC
             : 'normal'
     )
-    title.setAttribute('fill', titleFontStyle[FONT_STYLE_OPTION_TEXT_COLOR])
+    if (
+        titleColor &&
+        titleFontStyle[FONT_STYLE_OPTION_TEXT_COLOR] ===
+            defaultFontStyle[FONT_STYLE_VISUALIZATION_TITLE][
+                FONT_STYLE_OPTION_TEXT_COLOR
+            ]
+    ) {
+        title.setAttribute('fill', titleColor)
+    } else {
+        title.setAttribute('fill', titleFontStyle[FONT_STYLE_OPTION_TEXT_COLOR])
+    }
 
     title.setAttribute('data-test', 'visualization-title')
 
@@ -239,10 +253,21 @@ const generateDVItem = (config, { textColor, parentEl, fontStyle, noData }) => {
             ? FONT_STYLE_OPTION_ITALIC
             : 'normal'
     )
-    subtitle.setAttribute(
-        'fill',
-        subtitleFontStyle[FONT_STYLE_OPTION_TEXT_COLOR]
-    )
+
+    if (
+        titleColor &&
+        subtitleFontStyle[FONT_STYLE_OPTION_TEXT_COLOR] ===
+            defaultFontStyle[FONT_STYLE_VISUALIZATION_SUBTITLE][
+                FONT_STYLE_OPTION_TEXT_COLOR
+            ]
+    ) {
+        subtitle.setAttribute('fill', titleColor)
+    } else {
+        subtitle.setAttribute(
+            'fill',
+            subtitleFontStyle[FONT_STYLE_OPTION_TEXT_COLOR]
+        )
+    }
 
     subtitle.setAttribute('data-test', 'visualization-subtitle')
 
@@ -256,7 +281,7 @@ const generateDVItem = (config, { textColor, parentEl, fontStyle, noData }) => {
         generateValueSVG({
             formattedValue: config.formattedValue,
             subText: config.subText,
-            textColor,
+            valueColor,
             noData,
             y: 20,
         })
@@ -265,7 +290,7 @@ const generateDVItem = (config, { textColor, parentEl, fontStyle, noData }) => {
     return svg
 }
 
-const getContrastColor = (inputColor) => {
+const shouldUseContrastColor = (inputColor) => {
     // based on https://stackoverflow.com/questions/3942878/how-to-decide-font-color-in-white-or-black-depending-on-background-color
     var color =
         inputColor.charAt(0) === '#' ? inputColor.substring(1, 7) : inputColor
@@ -280,7 +305,7 @@ const getContrastColor = (inputColor) => {
         return Math.pow((col + 0.055) / 1.055, 2.4)
     })
     var L = 0.2126 * c[0] + 0.7152 * c[1] + 0.0722 * c[2]
-    return L > 0.179 ? colors.grey900 : colors.white
+    return L <= 0.179
 }
 
 export default function (
@@ -291,13 +316,14 @@ export default function (
     const legendSet = legendOptions && legendSets[0]
     const legendColor =
         legendSet && getColorByValueFromLegendSet(legendSet, config.value)
-    let textColor
+    let valueColor, titleColor
     if (legendColor) {
         if (legendOptions.style === LEGEND_DISPLAY_STYLE_FILL) {
             parentEl.style.background = legendColor
-            textColor = getContrastColor(legendColor)
+            valueColor = titleColor =
+                shouldUseContrastColor(legendColor) && colors.white
         } else {
-            textColor = legendColor
+            valueColor = legendColor
         }
     }
 
@@ -306,12 +332,14 @@ export default function (
     parentEl.style.justifyContent = 'center'
 
     if (dashboard) {
-        return generateDashboardItem(config, { textColor, noData })
+        return generateDashboardItem(config, { valueColor, noData })
     } else {
         parentEl.style.margin = '10px'
         parentEl.style.borderRadius = '10px'
+        parentEl.style.height = 'calc(100% - 20px)'
         return generateDVItem(config, {
-            textColor,
+            valueColor,
+            titleColor,
             parentEl,
             fontStyle,
             noData,
