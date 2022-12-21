@@ -1,4 +1,4 @@
-import { colors } from '@dhis2/ui'
+import { colors, spacers } from '@dhis2/ui'
 import {
     FONT_STYLE_VISUALIZATION_TITLE,
     FONT_STYLE_VISUALIZATION_SUBTITLE,
@@ -334,9 +334,9 @@ export default function (
     if (dashboard) {
         return generateDashboardItem(config, { valueColor, noData })
     } else {
-        parentEl.style.margin = '10px'
-        parentEl.style.borderRadius = '10px'
-        parentEl.style.height = 'calc(100% - 20px)'
+        parentEl.style.margin = spacers.dp8
+        parentEl.style.borderRadius = spacers.dp8
+        parentEl.style.height = `calc(100% - (${spacers.dp8} * 2))`
         return generateDVItem(config, {
             valueColor,
             titleColor,
