@@ -20,7 +20,7 @@ exports[`DimensionItem matches the snapshot 1`] = `
 >
   <div
     className="label"
-    dataTest="undefined-button-pe"
+    data-test="undefined-button-pe"
     style={
       Object {
         "display": "flex",
@@ -96,7 +96,7 @@ exports[`DimensionItem matches the snapshot with locked 1`] = `
 >
   <div
     className="label"
-    dataTest="undefined-button-pe"
+    data-test="undefined-button-pe"
     style={
       Object {
         "display": "flex",
@@ -183,7 +183,7 @@ exports[`DimensionItem matches the snapshot with onOptionsClick 1`] = `
 >
   <div
     className="label"
-    dataTest="undefined-button-pe"
+    data-test="undefined-button-pe"
     style={
       Object {
         "display": "flex",
@@ -270,7 +270,7 @@ exports[`DimensionItem matches the snapshot with recommended 1`] = `
 >
   <div
     className="label"
-    dataTest="undefined-button-pe"
+    data-test="undefined-button-pe"
     style={
       Object {
         "display": "flex",
@@ -348,7 +348,7 @@ exports[`DimensionItem matches the snapshot with selected 1`] = `
 >
   <div
     className="label"
-    dataTest="undefined-button-pe"
+    data-test="undefined-button-pe"
     style={
       Object {
         "display": "flex",
