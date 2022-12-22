@@ -1,3 +1,10 @@
+## [24.3.11](https://github.com/dhis2/analytics/compare/v24.3.10...v24.3.11) (2022-12-21)
+
+
+### Bug Fixes
+
+* do not pass translation object when value is empty ([#1401](https://github.com/dhis2/analytics/issues/1401)) ([03c6a2e](https://github.com/dhis2/analytics/commit/03c6a2ee98b437fed2a44233e4a750d17bd3c5af))
+
 ## [24.3.10](https://github.com/dhis2/analytics/compare/v24.3.9...v24.3.10) (2022-12-02)
 
 

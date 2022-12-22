@@ -101,7 +101,7 @@ class DimensionItem extends Component {
                     className="label"
                     tabIndex={0}
                     style={styles.label}
-                    dataTest={`${dataTest}-button-${id}`}
+                    data-test={`${dataTest}-button-${id}`}
                 >
                     <div style={styles.iconWrapper}>{Icon}</div>
                     <div style={styles.labelWrapper}>
