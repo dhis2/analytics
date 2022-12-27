@@ -92,38 +92,55 @@ const generateValueSVG = ({
 
 const generateDashboardItem = (config, { valueColor, noData }) => {
     const container = document.createElement('div')
+
+    const hasTitles = config.title || config.subtitle
+
     container.setAttribute(
         'style',
-        'display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; height: 100%'
+        `display: grid; width: 100%; height: 100%; grid-template-rows: ${
+            hasTitles ? 'repeat(3, 1fr)' : '1'
+        };`
     )
 
-    const titleStyle = `font-size: 12px; color: #666; position: absolute; top: ${spacers.dp8};`
+    const value = generateValueSVG({
+        formattedValue: config.formattedValue,
+        subText: config.subText,
+        valueColor,
+        noData,
+        y: 40,
+    })
 
-    const title = document.createElement('span')
-    title.setAttribute('style', titleStyle)
-    if (config.title) {
-        title.appendChild(document.createTextNode(config.title))
+    if (hasTitles) {
+        const titleWrapper = document.createElement('div')
+        titleWrapper.setAttribute(
+            'style',
+            `display: flex; flex-direction: column; margin-top: ${spacers.dp8}; justify-content: flex-start; align-items: center; text-align: center;`
+        )
 
-        container.appendChild(title)
+        const titleStyle = `font-size: 12px; color: #666; position: absolute; top: ${spacers.dp8};`
+        const title = document.createElement('span')
+        title.setAttribute('style', titleStyle)
+        if (config.title) {
+            title.appendChild(document.createTextNode(config.title))
+
+            titleWrapper.appendChild(title)
+        }
+
+        const subtitle = document.createElement('span')
+        subtitle.setAttribute('style', `${titleStyle} margin-top: 18px;`)
+        if (config.subtitle) {
+            subtitle.appendChild(document.createTextNode(config.subtitle))
+
+            titleWrapper.appendChild(subtitle)
+        }
+
+        container.appendChild(titleWrapper)
+        value.setAttribute('style', 'align-self: center;')
+        container.appendChild(value)
+        container.appendChild(document.createElement('div'))
+    } else {
+        container.appendChild(value)
     }
-
-    const subtitle = document.createElement('span')
-    subtitle.setAttribute('style', titleStyle + ' margin-top: 18px;')
-    if (config.subtitle) {
-        subtitle.appendChild(document.createTextNode(config.subtitle))
-
-        container.appendChild(subtitle)
-    }
-
-    container.appendChild(
-        generateValueSVG({
-            formattedValue: config.formattedValue,
-            subText: config.subText,
-            valueColor,
-            noData,
-            y: 40,
-        })
-    )
 
     return container
 }
