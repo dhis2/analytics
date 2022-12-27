@@ -330,12 +330,12 @@ export default function (
     parentEl.style.overflow = 'hidden'
     parentEl.style.display = 'flex'
     parentEl.style.justifyContent = 'center'
+    parentEl.style.borderRadius = spacers.dp8
 
     if (dashboard) {
         return generateDashboardItem(config, { valueColor, noData })
     } else {
         parentEl.style.margin = spacers.dp8
-        parentEl.style.borderRadius = spacers.dp8
         parentEl.style.height = `calc(100% - (${spacers.dp8} * 2))`
         return generateDVItem(config, {
             valueColor,
