@@ -97,7 +97,7 @@ const generateDashboardItem = (config, { valueColor, noData }) => {
         'display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; height: 100%'
     )
 
-    const titleStyle = 'font-size: 12px; color: #666;'
+    const titleStyle = `font-size: 12px; color: #666; position: absolute; top: ${spacers.dp8};`
 
     const title = document.createElement('span')
     title.setAttribute('style', titleStyle)
@@ -108,7 +108,7 @@ const generateDashboardItem = (config, { valueColor, noData }) => {
     }
 
     const subtitle = document.createElement('span')
-    subtitle.setAttribute('style', titleStyle + ' margin-top: 4px')
+    subtitle.setAttribute('style', titleStyle + ' margin-top: 18px;')
     if (config.subtitle) {
         subtitle.appendChild(document.createTextNode(config.subtitle))
 
