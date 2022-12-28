@@ -1,3 +1,10 @@
+## [24.3.12](https://github.com/dhis2/analytics/compare/v24.3.11...v24.3.12) (2022-12-22)
+
+
+### Bug Fixes
+
+* typo in dataTest ([#1404](https://github.com/dhis2/analytics/issues/1404)) ([55a94ca](https://github.com/dhis2/analytics/commit/55a94cabbb11e5ed91f59c55ebee3053f83e7fa7))
+
 ## [24.3.11](https://github.com/dhis2/analytics/compare/v24.3.10...v24.3.11) (2022-12-21)
 
 
