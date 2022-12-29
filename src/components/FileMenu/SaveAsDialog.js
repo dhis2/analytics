@@ -18,7 +18,7 @@ const NAME_MAXLENGTH = 230
 export const SaveAsDialog = ({ type, object, onClose, onSaveAs }) => {
     const [name, setName] = useState(
         object?.displayName || object?.name
-            ? i18n.t('{{objectName}} (copy)', {
+            ? i18n.t('{{- objectName}} (copy)', {
                   objectName: object.name,
               })
             : ''
