@@ -45,7 +45,6 @@ export const SaveAsDialog = ({ type, object, onClose, onSaveAs }) => {
             <ModalContent>
                 <InputField
                     label={i18n.t('Name')}
-                    required
                     value={name}
                     onChange={({ value }) =>
                         setName(value.substring(0, NAME_MAXLENGTH))
