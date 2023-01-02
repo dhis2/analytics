@@ -1,3 +1,10 @@
+## [24.3.13](https://github.com/dhis2/analytics/compare/v24.3.12...v24.3.13) (2022-12-29)
+
+
+### Bug Fixes
+
+* prevent escaping old name on save as ([#1405](https://github.com/dhis2/analytics/issues/1405)) ([639dc45](https://github.com/dhis2/analytics/commit/639dc45001d0d8b9a0784ffefc96bdbc45271ae3))
+
 ## [24.3.12](https://github.com/dhis2/analytics/compare/v24.3.11...v24.3.12) (2022-12-22)
 
 
