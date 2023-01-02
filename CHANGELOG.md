@@ -1,3 +1,10 @@
+## [24.3.14](https://github.com/dhis2/analytics/compare/v24.3.13...v24.3.14) (2023-01-02)
+
+
+### Bug Fixes
+
+* remove required prop from save as dialog ([#1406](https://github.com/dhis2/analytics/issues/1406)) ([f7972b5](https://github.com/dhis2/analytics/commit/f7972b5b3f56fd02a5baa3f32070b4938b81d0cc))
+
 ## [24.3.13](https://github.com/dhis2/analytics/compare/v24.3.12...v24.3.13) (2022-12-29)
 
 
