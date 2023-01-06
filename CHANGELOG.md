@@ -1,3 +1,10 @@
+# [24.4.0](https://github.com/dhis2/analytics/compare/v24.3.14...v24.4.0) (2023-01-03)
+
+
+### Features
+
+* enable legends for stacked column/bar ([#1388](https://github.com/dhis2/analytics/issues/1388)) ([667db6a](https://github.com/dhis2/analytics/commit/667db6a04072911f8c3923dbfc33b7baecb955e2))
+
 ## [24.3.14](https://github.com/dhis2/analytics/compare/v24.3.13...v24.3.14) (2023-01-02)
 
 
