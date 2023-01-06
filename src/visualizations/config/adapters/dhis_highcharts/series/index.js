@@ -228,7 +228,8 @@ export default function ({
         case VIS_TYPE_PIE:
             series = getPie(
                 series,
-                Object.values(getIdColorMap(series, layout, extraOptions))
+                Object.values(getIdColorMap(series, layout, extraOptions)),
+                extraOptions.legendSets[0]
             )
             break
         case VIS_TYPE_GAUGE:

@@ -1,11 +1,18 @@
-export default function (series, colors) {
+import { getColorByValueFromLegendSet } from '../../../../../modules/legends.js'
+
+export default function (series, colors, legendSet) {
     return [
         {
             colorByPoint: true,
             allowPointSelect: true,
             cursor: 'pointer',
-            data: series,
-            colors: colors,
+            data: legendSet
+                ? series.map((item) => ({
+                      ...item,
+                      color: getColorByValueFromLegendSet(legendSet, item.y),
+                  }))
+                : series,
+            ...(!legendSet ? { colors: colors } : {}),
             dataLabels: {
                 enabled: true,
                 formatter: function () {
