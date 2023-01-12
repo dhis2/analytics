@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2022-12-02T09:27:43.705Z\n"
-"PO-Revision-Date: 2022-12-02T09:27:43.705Z\n"
+"POT-Creation-Date: 2023-01-10T14:12:14.952Z\n"
+"PO-Revision-Date: 2023-01-10T14:12:14.952Z\n"
 
 msgid "view only"
 msgstr "view only"
@@ -82,32 +82,17 @@ msgstr "Edit calculation"
 msgid "New calculation"
 msgstr "New calculation"
 
-msgid "Formula"
-msgstr "Formula"
-
-msgid "Check formula"
-msgstr "Check formula"
-
 msgid "Name"
 msgstr "Name"
 
 msgid "Shown in column/row headers"
 msgstr "Shown in column/row headers"
 
+msgid "Check formula"
+msgstr "Check formula"
+
 msgid "Delete calculation"
 msgstr "Delete calculation"
-
-msgid "About calculations"
-msgstr "About calculations"
-
-msgid "Type # in the formula input to search for data elements."
-msgstr "Type # in the formula input to search for data elements."
-
-msgid "Operators +, -, *, / and ( ) can be used."
-msgstr "Operators +, -, *, / and ( ) can be used."
-
-msgid "Calculations you save are only visible to you."
-msgstr "Calculations you save are only visible to you."
 
 msgid "Cancel"
 msgstr "Cancel"
@@ -121,11 +106,15 @@ msgstr "Add a name to save this calculation"
 msgid "Save calculation"
 msgstr "Save calculation"
 
-msgid "Data Type"
-msgstr "Data Type"
+msgid ""
+"Are you sure you want to delete this calculation? It may be used by other "
+"visualizations."
+msgstr ""
+"Are you sure you want to delete this calculation? It may be used by other "
+"visualizations."
 
-msgid "All types"
-msgstr "All types"
+msgid "Yes, delete"
+msgstr "Yes, delete"
 
 msgid "Totals only"
 msgstr "Totals only"
@@ -135,6 +124,15 @@ msgstr "Details only"
 
 msgid "Disaggregation"
 msgstr "Disaggregation"
+
+msgid "Search by data element name"
+msgstr "Search by data element name"
+
+msgid "Data Type"
+msgstr "Data Type"
+
+msgid "All types"
+msgstr "All types"
 
 msgid "No data"
 msgstr "No data"

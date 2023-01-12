@@ -7,7 +7,6 @@ import {
     ModalActions,
     ButtonStrip,
     InputField,
-    TextAreaField,
     IconChevronRight16,
     Tooltip,
 } from '@dhis2/ui'
@@ -16,12 +15,19 @@ import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 import { validateExpressionMutation } from '../../api/expression.js'
 import i18n from '../../locales/index.js'
+import DataElementSelector from './DataElementSelector.js'
 import styles from './styles/CalculationModal.style.js'
 
 const VALID_EXPRESSION = 'OK'
 const INVALID_EXPRESSION = 'ERROR'
 
-const CalculationModal = ({ calculation = {}, onSave, onClose, onDelete }) => {
+const CalculationModal = ({
+    calculation = {},
+    onSave,
+    onClose,
+    onDelete,
+    displayNameProp,
+}) => {
     const { show: showError } = useAlert((error) => error, { critical: true })
     const [validateExpression] = useDataMutation(validateExpressionMutation, {
         onError: (error) => showError(error),
@@ -49,17 +55,20 @@ const CalculationModal = ({ calculation = {}, onSave, onClose, onDelete }) => {
                                 ? i18n.t('Edit calculation')
                                 : i18n.t('New calculation')}
                         </h4>
+                        <InputField
+                            label={i18n.t('Name')}
+                            helpText={i18n.t('Shown in column/row headers')}
+                            className="name-input"
+                            onChange={({ value }) => setName(value)}
+                            value={name}
+                        />
                         <div className="content">
                             <div className="left-section">
-                                <TextAreaField
-                                    label={i18n.t('Formula')}
-                                    rows={5}
-                                    onChange={({ value }) => {
-                                        setValidationOutput()
-                                        setExpression(value)
-                                    }}
-                                    value={expression}
+                                <DataElementSelector
+                                    displayNameProp={displayNameProp}
                                 />
+                            </div>
+                            <div className="right-section">
                                 <div className="check-button">
                                     <Button
                                         small
@@ -86,15 +95,6 @@ const CalculationModal = ({ calculation = {}, onSave, onClose, onDelete }) => {
                                         {validationOutput?.message}
                                     </span>
                                 </div>
-                                <InputField
-                                    label={i18n.t('Name')}
-                                    helpText={i18n.t(
-                                        'Shown in column/row headers'
-                                    )}
-                                    className="name-input"
-                                    onChange={({ value }) => setName(value)}
-                                    value={name}
-                                />
                                 {calculation.id && (
                                     <div className="delete-button">
                                         <Button
@@ -107,26 +107,6 @@ const CalculationModal = ({ calculation = {}, onSave, onClose, onDelete }) => {
                                         </Button>
                                     </div>
                                 )}
-                            </div>
-                            <div className="right-section">
-                                <span>{i18n.t('About calculations')}</span>
-                                <ul>
-                                    <li>
-                                        {i18n.t(
-                                            'Type # in the formula input to search for data elements.'
-                                        )}
-                                    </li>
-                                    <li>
-                                        {i18n.t(
-                                            'Operators +, -, *, / and ( ) can be used.'
-                                        )}
-                                    </li>
-                                    <li>
-                                        {i18n.t(
-                                            'Calculations you save are only visible to you.'
-                                        )}
-                                    </li>
-                                </ul>
                             </div>
                         </div>
                         <style jsx>{styles}</style>
@@ -224,6 +204,7 @@ const CalculationModal = ({ calculation = {}, onSave, onClose, onDelete }) => {
 }
 
 CalculationModal.propTypes = {
+    displayNameProp: PropTypes.string.isRequired,
     onClose: PropTypes.func.isRequired,
     onDelete: PropTypes.func.isRequired,
     onSave: PropTypes.func.isRequired,

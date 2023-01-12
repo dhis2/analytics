@@ -566,6 +566,7 @@ const ItemSelector = ({
                     onSave={onSaveCalculation}
                     onClose={() => setCurrentCalculation()}
                     onDelete={onDeleteCalculation}
+                    displayNameProp={displayNameProp}
                 />
             )}
             <style jsx>{styles}</style>
