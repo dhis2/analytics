@@ -1,3 +1,10 @@
+## [24.4.1](https://github.com/dhis2/analytics/compare/v24.4.0...v24.4.1) (2023-01-13)
+
+
+### Bug Fixes
+
+* make icon prop not required ([#1410](https://github.com/dhis2/analytics/issues/1410)) ([169976c](https://github.com/dhis2/analytics/commit/169976cdde28880785ff836f2e0acba263e7bb53))
+
 # [24.4.0](https://github.com/dhis2/analytics/compare/v24.3.14...v24.4.0) (2023-01-03)
 
 
