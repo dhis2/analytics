@@ -6,7 +6,7 @@ import {
     SingleSelectOption,
 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
-import React, { useRef, useState } from 'react'
+import React, { useCallback, useEffect, useRef, useState } from 'react'
 import { apiFetchOptions } from '../../api/dimensions.js'
 import i18n from '../../locales/index.js'
 import {
@@ -14,7 +14,7 @@ import {
     DETAIL,
     DIMENSION_TYPE_DATA_ELEMENT,
 } from '../../modules/dataTypes.js'
-// import { useDebounce, useDidUpdateEffect } from '../../modules/utils.js'
+import { useDebounce } from '../../modules/utils.js'
 import styles from './styles/DataElementSelector.style.js'
 
 const getOptions = () => ({
@@ -53,54 +53,50 @@ DisaggregationSelector.propTypes = {
 const DataElementSelector = ({ displayNameProp, selectedItems = [] }) => {
     const dataEngine = useDataEngine()
     const rootRef = useRef()
-    const [state, setState] = useState({
-        searchTerm: '',
-        filter: {
-            dataType: DIMENSION_TYPE_DATA_ELEMENT,
-            subGroup: TOTALS,
-        },
-        options: [],
-        loading: true,
-        nextPage: 1,
-        version: 'original',
+    const didMountRef = useRef(false)
+    const [searchInput, setSearchInput] = useState()
+    const [filter, setFilter] = useState({
+        dataType: DIMENSION_TYPE_DATA_ELEMENT,
+        subGroup: TOTALS,
     })
-    // const setSearchTerm = (searchTerm) =>
-    //     setState((prevState) => ({ ...prevState, searchTerm }))
-    // const setFilter = (filter) =>
-    //     setState((prevState) => ({ ...prevState, filter }))
-    // const debouncedSearchTerm = useDebounce(state.searchTerm, 200)
-    const fetchItems = async (page) => {
-        setState((prevState) => ({
-            ...prevState,
-            loading: true,
-            version: 'whenLoading',
-        }))
-        const result = await apiFetchOptions({
-            dataEngine,
-            nameProp: displayNameProp,
-            page,
-            filter: state.filter,
-            searchTerm: state.searchTerm,
-        })
-        const newOptions = []
-        result.dimensionItems?.forEach((item) => {
-            newOptions.push({
-                label: item.name,
-                value: item.id,
-                disabled: item.disabled,
-                type: item.dimensionItemType,
-                expression: item.expression,
+    const [options, setOptions] = useState([])
+    const [loading, setLoading] = useState(true)
+    const [page, setPage] = useState(0)
+    const [hasNextPage, setHasNextPage] = useState(true)
+    const debouncedSearchTerm = useDebounce(searchInput, 200)
+
+    if (selectedItems) {
+        // FIXME: temporarily removes lint errors
+        console.log(loading + setFilter() + selectedItems)
+    }
+
+    const fetchItems = useCallback(
+        async (searchTerm) => {
+            setLoading(true)
+            const result = await apiFetchOptions({
+                dataEngine,
+                nameProp: displayNameProp,
+                page,
+                filter,
+                searchTerm,
             })
-        })
-        setState((prevState) => ({
-            ...prevState,
-            loading: false,
-            options:
-                page > 1 ? [...prevState.options, ...newOptions] : newOptions,
-            nextPage: result.nextPage,
-            version: 'whenSavingOptions',
-        }))
-        /*  The following handles a very specific edge-case where the user can select all items from a 
+            const newOptions = []
+            result.dimensionItems?.forEach((item) => {
+                newOptions.push({
+                    label: item.name,
+                    value: item.id,
+                    disabled: item.disabled,
+                    type: item.dimensionItemType,
+                    expression: item.expression,
+                })
+            })
+            setLoading(false)
+            setOptions((prevOptions) =>
+                page > 1 ? [...prevOptions, ...newOptions] : newOptions
+            )
+
+            setHasNextPage(result.nextPage)
+            /*  The following handles a very specific edge-case where the user can select all items from a 
             page and then reopen the modal. Usually Transfer triggers the onEndReached when the end of 
             the page is reached (scrolling down) or if too few items are on the left side (e.g. selecting 
             49 items from page 1, leaving only 1 item on the left side). However, due to the way Transfer 
@@ -109,19 +105,39 @@ const DataElementSelector = ({ displayNameProp, selectedItems = [] }) => {
             IF there is a next page AND some options were just fetched AND you have the same or more
             selected items than fetched items AND all fetched items are already selected -> fetch more!
         */
-        // if (
-        //     result.nextPage &&
-        //     newOptions.length &&
-        //     selectedItems.length >= newOptions.length &&
-        //     newOptions.every((newOption) =>
-        //         selectedItems.find(
-        //             (selectedItem) => selectedItem.value === newOption.value
-        //         )
-        //     )
-        // ) {
-        //     fetchItems(result.nextPage)
-        // }
-    }
+            // if (
+            //     result.nextPage &&
+            //     newOptions.length &&
+            //     selectedItems.length >= newOptions.length &&
+            //     newOptions.every((newOption) =>
+            //         selectedItems.find(
+            //             (selectedItem) => selectedItem.value === newOption.value
+            //         )
+            //     )
+            // ) {
+            //     fetchItems(result.nextPage)
+            // }
+        },
+        [page, dataEngine, displayNameProp, filter]
+    )
+
+    useEffect(() => {
+        console.log('page useEffect')
+        if (page !== 0) {
+            fetchItems(debouncedSearchTerm)
+        }
+    }, [page, fetchItems, debouncedSearchTerm])
+
+    useEffect(() => {
+        console.log('searchTerm useEffect')
+        if (didMountRef.current) {
+            setPage(1)
+            rootRef.current.scrollTo({
+                top: 0,
+            })
+        }
+        didMountRef.current = true
+    }, [debouncedSearchTerm])
 
     // useDidUpdateEffect(() => {
     //     setState((prevState) => ({
@@ -133,37 +149,32 @@ const DataElementSelector = ({ displayNameProp, selectedItems = [] }) => {
     // }, [debouncedSearchTerm, state.filter])
 
     const onEndReached = ({ isIntersecting }) => {
-        if (isIntersecting) {
-            if (state.nextPage) {
-                console.log(`NEXT PAGE: ${state.nextPage}`)
-                fetchItems(state.nextPage)
-            }
+        console.log(`onEndReached, ${isIntersecting}, ${hasNextPage}`)
+        if (isIntersecting && hasNextPage) {
+            setPage((prevPage) => prevPage + 1)
         }
     }
 
     return (
         <>
             <InputField
-                value={state.searchTerm}
-                // onChange={({ value }) => setSearchTerm(value)}
+                value={searchInput}
+                onChange={({ value }) => setSearchInput(value)}
                 placeholder={i18n.t('Search by data element name')}
                 dense
                 type={'search'}
             />
             <DisaggregationSelector
-                currentValue={state.filter.subGroup}
+                currentValue={filter.subGroup}
                 // onChange={(subGroup) => {
-                //     setFilter({ ...state.filter, subGroup })
+                //     setFilter({ ...filter, subGroup })
                 // }}
             />
-            <h2>LENGTH: {state.options.length}</h2>
-            <h2>NEXT PAGE: {state.nextPage}</h2>
-            <h2>VERSION: {state.version}</h2>
 
             <div className="scrollContainer" ref={rootRef}>
                 <div className="contentContainer">
                     <p>test</p>
-                    {state.options.map((option) => (
+                    {options.map((option) => (
                         <p key={option.value}>{option.label}</p>
                     ))}
 

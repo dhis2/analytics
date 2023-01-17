@@ -7,7 +7,6 @@ import {
     ModalActions,
     ButtonStrip,
     InputField,
-    IconChevronRight16,
     Tooltip,
 } from '@dhis2/ui'
 import cx from 'classnames'
@@ -42,22 +41,14 @@ const CalculationModal = ({
         <>
             <Modal dataTest={`calculation-modal`} position="top" large>
                 <ModalTitle dataTest={'calculation-modal-title'}>
-                    {i18n.t('Data')}
+                    {calculation.id
+                        ? i18n.t('Data / Edit calculation')
+                        : i18n.t('Data / New calculation')}
                 </ModalTitle>
                 <ModalContent dataTest={'calculation-modal-content'}>
                     <>
-                        <h4 className="header">
-                            {i18n.t('Data')}
-                            <span className="header-icon">
-                                <IconChevronRight16 />
-                            </span>
-                            {calculation.id
-                                ? i18n.t('Edit calculation')
-                                : i18n.t('New calculation')}
-                        </h4>
                         <InputField
-                            label={i18n.t('Name')}
-                            helpText={i18n.t('Shown in column/row headers')}
+                            label={i18n.t('Label shown in column/row headers')}
                             className="name-input"
                             onChange={({ value }) => setName(value)}
                             value={name}

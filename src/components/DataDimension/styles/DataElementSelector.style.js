@@ -2,7 +2,7 @@ import css from 'styled-jsx/css'
 
 export default css`
     .scrollContainer {
-        width: 200px;
+        width: 350px;
         height: 300px;
         overflow: hidden;
         overflow-y: auto;
