@@ -65,7 +65,7 @@ const DataElementSelector = ({ displayNameProp, selectedItems = [] }) => {
     const [hasNextPage, setHasNextPage] = useState(true)
     const debouncedSearchTerm = useDebounce(searchInput, 200)
 
-    if (selectedItems) {
+    if (selectedItems.length) {
         // FIXME: temporarily removes lint errors
         console.log(loading + setFilter() + selectedItems)
     }
