@@ -173,7 +173,6 @@ const DataElementSelector = ({ displayNameProp, selectedItems = [] }) => {
 
             <div className="scrollContainer" ref={rootRef}>
                 <div className="contentContainer">
-                    <p>test</p>
                     {options.map((option) => (
                         <p key={option.value}>{option.label}</p>
                     ))}

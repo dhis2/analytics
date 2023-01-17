@@ -10,6 +10,7 @@ export default css`
 
     .contentContainer {
         position: relative;
+        min-height: 1px;
     }
 
     .container {
