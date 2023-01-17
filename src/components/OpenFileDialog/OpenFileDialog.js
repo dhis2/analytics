@@ -144,6 +144,11 @@ export const OpenFileDialog = ({
 
     const { loading, error, data, refetch } = useDataQuery(filesQuery, {
         lazy: true,
+        onComplete: (response) => {
+            if (page !== response.files.pager.page) {
+                setPage(response.files.pager.page)
+            }
+        },
     })
 
     const resetFilters = () => {
@@ -420,7 +425,7 @@ export const OpenFileDialog = ({
                                 0 && (
                                 <div className="pagination-controls">
                                     <PaginationControls
-                                        page={page}
+                                        page={data.files.pager.page}
                                         pager={data.files.pager}
                                         onPageChange={setPage}
                                     />
