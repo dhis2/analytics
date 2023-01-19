@@ -48,12 +48,15 @@ const CalculationModal = ({
                 </ModalTitle>
                 <ModalContent dataTest={'calculation-modal-content'}>
                     <>
-                        <InputField
-                            label={i18n.t('Label shown in column/row headers')}
-                            className="name-input"
-                            onChange={({ value }) => setName(value)}
-                            value={name}
-                        />
+                        <div className="name-input">
+                            <InputField
+                                label={i18n.t(
+                                    'Label shown in column/row headers'
+                                )}
+                                onChange={({ value }) => setName(value)}
+                                value={name}
+                            />
+                        </div>
                         <div className="content">
                             <div className="left-section">
                                 <DataElementSelector

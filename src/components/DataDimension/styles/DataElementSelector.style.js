@@ -2,14 +2,14 @@ import { colors, spacers } from '@dhis2/ui'
 import css from 'styled-jsx/css'
 
 export default css`
-    .scrollContainer {
+    .scroll-container {
         width: 350px;
         height: 300px;
         overflow: hidden;
         overflow-y: auto;
     }
 
-    .contentContainer {
+    .content-container {
         position: relative;
         min-height: 1px;
     }
@@ -28,8 +28,18 @@ export default css`
         left: 0;
     }
 
-    .filterWrapper {
+    .filter-wrapper {
         padding: ${spacers.dp8};
         border: 1px solid ${colors.grey400};
+    }
+
+    .sub-header {
+        font-size: 14px;
+        font-weight: normal;
+        margin: 0 0 ${spacers.dp4};
+    }
+
+    .group-select {
+        margin-top: ${spacers.dp4};
     }
 `

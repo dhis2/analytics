@@ -48,4 +48,9 @@ export default css`
     .validation-success {
         color: ${colors.green500};
     }
+
+    .name-input {
+        margin-bottom: ${spacers.dp8};
+        max-width: 75%;
+    }
 `

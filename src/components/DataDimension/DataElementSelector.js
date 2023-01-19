@@ -22,10 +22,38 @@ const getOptions = () => ({
     [DETAIL]: i18n.t('Details only'),
 })
 
+const GroupSelector = ({ currentValue, onChange }) => {
+    // const options = getOptions()
+    return (
+        <div className="group-select">
+            <SingleSelectField
+                prefix={i18n.t('Group')}
+                selected={currentValue}
+                onChange={(ref) => onChange(ref.selected)}
+                dense
+            >
+                {/* {Object.entries(options).map((option) => (
+                    <SingleSelectOption
+                        value={option[0]}
+                        key={option[0]}
+                        label={option[1]}
+                    />
+                ))} */}
+            </SingleSelectField>
+            <style jsx>{styles}</style>
+        </div>
+    )
+}
+
+GroupSelector.propTypes = {
+    currentValue: PropTypes.string.isRequired,
+    onChange: PropTypes.func.isRequired,
+}
+
 const DisaggregationSelector = ({ currentValue, onChange }) => {
     const options = getOptions()
     return (
-        <>
+        <div className="group-select">
             <SingleSelectField
                 prefix={i18n.t('Disaggregation')}
                 selected={currentValue}
@@ -41,7 +69,7 @@ const DisaggregationSelector = ({ currentValue, onChange }) => {
                 ))}
             </SingleSelectField>
             <style jsx>{styles}</style>
-        </>
+        </div>
     )
 }
 
@@ -157,7 +185,8 @@ const DataElementSelector = ({ displayNameProp, selectedItems = [] }) => {
 
     return (
         <>
-            <div className="filterWrapper">
+            <div className="filter-wrapper">
+                <h4 className="sub-header">{i18n.t('Data elements')}</h4>
                 <InputField
                     value={searchInput}
                     onChange={({ value }) => setSearchInput(value)}
@@ -165,6 +194,13 @@ const DataElementSelector = ({ displayNameProp, selectedItems = [] }) => {
                     dense
                     type={'search'}
                 />
+                <GroupSelector
+                    currentValue={filter.group}
+                    // onChange={(group) => {
+                    //     setFilter({ ...filter, group })
+                    // }}
+                />
+
                 <DisaggregationSelector
                     currentValue={filter.subGroup}
                     // onChange={(subGroup) => {
@@ -172,8 +208,8 @@ const DataElementSelector = ({ displayNameProp, selectedItems = [] }) => {
                     // }}
                 />
             </div>
-            <div className="scrollContainer" ref={rootRef}>
-                <div className="contentContainer">
+            <div className="scroll-container" ref={rootRef}>
+                <div className="content-container">
                     {options.map((option) => (
                         <p key={option.value}>{option.label}</p>
                     ))}
