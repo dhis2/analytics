@@ -8,6 +8,7 @@ import {
     ButtonStrip,
     InputField,
     Tooltip,
+    TextAreaField,
 } from '@dhis2/ui'
 import cx from 'classnames'
 import PropTypes from 'prop-types'
@@ -60,6 +61,15 @@ const CalculationModal = ({
                                 />
                             </div>
                             <div className="right-section">
+                                <TextAreaField
+                                    label={i18n.t('Formula')}
+                                    rows={5}
+                                    onChange={({ value }) => {
+                                        setValidationOutput()
+                                        setExpression(value)
+                                    }}
+                                    value={expression}
+                                />
                                 <div className="check-button">
                                     <Button
                                         small

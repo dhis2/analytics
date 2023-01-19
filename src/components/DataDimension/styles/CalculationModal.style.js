@@ -29,7 +29,7 @@ export default css`
     }
 
     .left-section {
-        flex-basis: 70%;
+        flex-basis: 40%;
     }
 
     .right-section {

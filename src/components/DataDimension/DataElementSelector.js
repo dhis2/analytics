@@ -157,20 +157,21 @@ const DataElementSelector = ({ displayNameProp, selectedItems = [] }) => {
 
     return (
         <>
-            <InputField
-                value={searchInput}
-                onChange={({ value }) => setSearchInput(value)}
-                placeholder={i18n.t('Search by data element name')}
-                dense
-                type={'search'}
-            />
-            <DisaggregationSelector
-                currentValue={filter.subGroup}
-                // onChange={(subGroup) => {
-                //     setFilter({ ...filter, subGroup })
-                // }}
-            />
-
+            <div className="filterWrapper">
+                <InputField
+                    value={searchInput}
+                    onChange={({ value }) => setSearchInput(value)}
+                    placeholder={i18n.t('Search by data element name')}
+                    dense
+                    type={'search'}
+                />
+                <DisaggregationSelector
+                    currentValue={filter.subGroup}
+                    // onChange={(subGroup) => {
+                    //     setFilter({ ...filter, subGroup })
+                    // }}
+                />
+            </div>
             <div className="scrollContainer" ref={rootRef}>
                 <div className="contentContainer">
                     {options.map((option) => (

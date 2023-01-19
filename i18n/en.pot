@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2023-01-10T14:12:14.952Z\n"
-"PO-Revision-Date: 2023-01-10T14:12:14.952Z\n"
+"POT-Creation-Date: 2023-01-19T08:25:02.031Z\n"
+"PO-Revision-Date: 2023-01-19T08:25:02.031Z\n"
 
 msgid "view only"
 msgstr "view only"
@@ -73,20 +73,14 @@ msgstr "This app could not retrieve required data."
 msgid "Network error"
 msgstr "Network error"
 
-msgid "Data"
-msgstr "Data"
+msgid "Data / Edit calculation"
+msgstr "Data / Edit calculation"
 
-msgid "Edit calculation"
-msgstr "Edit calculation"
+msgid "Data / New calculation"
+msgstr "Data / New calculation"
 
-msgid "New calculation"
-msgstr "New calculation"
-
-msgid "Name"
-msgstr "Name"
-
-msgid "Shown in column/row headers"
-msgstr "Shown in column/row headers"
+msgid "Label shown in column/row headers"
+msgstr "Label shown in column/row headers"
 
 msgid "Check formula"
 msgstr "Check formula"
@@ -293,6 +287,9 @@ msgstr "Close"
 
 msgid "Rename {{fileType}}"
 msgstr "Rename {{fileType}}"
+
+msgid "Name"
+msgstr "Name"
 
 msgid "Description"
 msgstr "Description"
@@ -1094,6 +1091,9 @@ msgstr "{{thresholdFactor}} × Z-score low"
 
 msgid "{{thresholdFactor}} × Z-score high"
 msgstr "{{thresholdFactor}} × Z-score high"
+
+msgid "Data"
+msgstr "Data"
 
 msgid "Organisation unit"
 msgstr "Organisation unit"
