@@ -7,7 +7,7 @@ export const validateExpressionMutation = {
 export const createCalculationMutation = {
     type: 'create',
     resource: 'expressionDimensionItems',
-    data: ({ name, expression }) => ({ name, expression }),
+    data: ({ name, expression }) => ({ name, shortName: name, expression }),
 }
 
 export const updateCalculationMutation = {
@@ -15,7 +15,7 @@ export const updateCalculationMutation = {
     resource: 'expressionDimensionItems',
     partial: true,
     id: ({ id }) => id,
-    data: ({ name, expression }) => ({ name, expression }),
+    data: ({ name, expression }) => ({ name, shortName: name, expression }),
 }
 
 export const deleteCalculationMutation = {
