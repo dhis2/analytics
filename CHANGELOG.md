@@ -1,3 +1,45 @@
+## [24.4.1](https://github.com/dhis2/analytics/compare/v24.4.0...v24.4.1) (2023-01-13)
+
+
+### Bug Fixes
+
+* make icon prop not required ([#1410](https://github.com/dhis2/analytics/issues/1410)) ([169976c](https://github.com/dhis2/analytics/commit/169976cdde28880785ff836f2e0acba263e7bb53))
+
+# [24.4.0](https://github.com/dhis2/analytics/compare/v24.3.14...v24.4.0) (2023-01-03)
+
+
+### Features
+
+* enable legends for stacked column/bar ([#1388](https://github.com/dhis2/analytics/issues/1388)) ([667db6a](https://github.com/dhis2/analytics/commit/667db6a04072911f8c3923dbfc33b7baecb955e2))
+
+## [24.3.14](https://github.com/dhis2/analytics/compare/v24.3.13...v24.3.14) (2023-01-02)
+
+
+### Bug Fixes
+
+* remove required prop from save as dialog ([#1406](https://github.com/dhis2/analytics/issues/1406)) ([f7972b5](https://github.com/dhis2/analytics/commit/f7972b5b3f56fd02a5baa3f32070b4938b81d0cc))
+
+## [24.3.13](https://github.com/dhis2/analytics/compare/v24.3.12...v24.3.13) (2022-12-29)
+
+
+### Bug Fixes
+
+* prevent escaping old name on save as ([#1405](https://github.com/dhis2/analytics/issues/1405)) ([639dc45](https://github.com/dhis2/analytics/commit/639dc45001d0d8b9a0784ffefc96bdbc45271ae3))
+
+## [24.3.12](https://github.com/dhis2/analytics/compare/v24.3.11...v24.3.12) (2022-12-22)
+
+
+### Bug Fixes
+
+* typo in dataTest ([#1404](https://github.com/dhis2/analytics/issues/1404)) ([55a94ca](https://github.com/dhis2/analytics/commit/55a94cabbb11e5ed91f59c55ebee3053f83e7fa7))
+
+## [24.3.11](https://github.com/dhis2/analytics/compare/v24.3.10...v24.3.11) (2022-12-21)
+
+
+### Bug Fixes
+
+* do not pass translation object when value is empty ([#1401](https://github.com/dhis2/analytics/issues/1401)) ([03c6a2e](https://github.com/dhis2/analytics/commit/03c6a2ee98b437fed2a44233e4a750d17bd3c5af))
+
 ## [24.3.10](https://github.com/dhis2/analytics/compare/v24.3.9...v24.3.10) (2022-12-02)
 
 

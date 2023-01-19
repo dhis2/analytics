@@ -297,8 +297,8 @@ msgstr "Description"
 msgid "Rename"
 msgstr "Rename"
 
-msgid "{{objectName}} (copy)"
-msgstr "{{objectName}} (copy)"
+msgid "{{- objectName}} (copy)"
+msgstr "{{- objectName}} (copy)"
 
 msgid "Save {{fileType}} as"
 msgstr "Save {{fileType}} as"
