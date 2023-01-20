@@ -16,6 +16,7 @@ import React, { useState } from 'react'
 import { validateExpressionMutation } from '../../api/expression.js'
 import i18n from '../../locales/index.js'
 import DataElementSelector from './DataElementSelector.js'
+import MathOperatorSelector from './MathOperatorSelector.js'
 import styles from './styles/CalculationModal.style.js'
 
 const VALID_EXPRESSION = 'OK'
@@ -62,10 +63,10 @@ const CalculationModal = ({
                                 <DataElementSelector
                                     displayNameProp={displayNameProp}
                                 />
+                                <MathOperatorSelector />
                             </div>
                             <div className="right-section">
                                 <TextAreaField
-                                    label={i18n.t('Formula')}
                                     rows={5}
                                     onChange={({ value }) => {
                                         setValidationOutput()
