@@ -493,7 +493,9 @@ const ItemSelector = ({
                         dataTest={`${dataTest}-transfer-option`}
                         onEditClick={
                             getItemType(props.value) ===
-                            DIMENSION_TYPE_EXPRESSION_DIMENSION_ITEM
+                                DIMENSION_TYPE_EXPRESSION_DIMENSION_ITEM ||
+                            // FIXME: temporary fix as EDIs don't return a type from the backend right now (backend bug)
+                            !getItemType(props.value)
                                 ? () =>
                                       setCurrentCalculation({
                                           id: props.value,

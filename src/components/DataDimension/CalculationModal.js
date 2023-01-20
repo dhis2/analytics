@@ -16,6 +16,7 @@ import React, { useState } from 'react'
 import { validateExpressionMutation } from '../../api/expression.js'
 import i18n from '../../locales/index.js'
 import DataElementSelector from './DataElementSelector.js'
+import FormulaField from './FormulaField.js'
 import MathOperatorSelector from './MathOperatorSelector.js'
 import styles from './styles/CalculationModal.style.js'
 
@@ -34,7 +35,7 @@ const CalculationModal = ({
         onError: (error) => showError(error),
     })
     const [validationOutput, setValidationOutput] = useState()
-    const [expression, setExpression] = useState(calculation.expression)
+    const [expression, setExpression] = useState(calculation.expression || '')
     const [name, setName] = useState(calculation.name)
     const [showDeletePrompt, setShowDeletePrompt] = useState()
     const expressionStatus = validationOutput?.status
@@ -62,10 +63,24 @@ const CalculationModal = ({
                             <div className="left-section">
                                 <DataElementSelector
                                     displayNameProp={displayNameProp}
+                                    onSelect={({ value }) =>
+                                        setExpression(
+                                            (prevExpression) =>
+                                                prevExpression + `#{${value}}`
+                                        )
+                                    }
                                 />
-                                <MathOperatorSelector />
+                                <MathOperatorSelector
+                                    onSelect={({ value }) =>
+                                        setExpression(
+                                            (prevExpression) =>
+                                                prevExpression + value
+                                        )
+                                    }
+                                />
                             </div>
                             <div className="right-section">
+                                <FormulaField />
                                 <TextAreaField
                                     rows={5}
                                     onChange={({ value }) => {
