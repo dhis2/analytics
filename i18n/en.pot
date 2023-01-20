@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2023-01-19T08:25:02.031Z\n"
-"PO-Revision-Date: 2023-01-19T08:25:02.031Z\n"
+"POT-Creation-Date: 2023-01-20T08:13:38.176Z\n"
+"PO-Revision-Date: 2023-01-20T08:13:38.176Z\n"
 
 msgid "view only"
 msgstr "view only"
@@ -82,6 +82,9 @@ msgstr "Data / New calculation"
 msgid "Label shown in column/row headers"
 msgstr "Label shown in column/row headers"
 
+msgid "Formula"
+msgstr "Formula"
+
 msgid "Check formula"
 msgstr "Check formula"
 
@@ -116,8 +119,14 @@ msgstr "Totals only"
 msgid "Details only"
 msgstr "Details only"
 
+msgid "Group"
+msgstr "Group"
+
 msgid "Disaggregation"
 msgstr "Disaggregation"
+
+msgid "Data elements"
+msgstr "Data elements"
 
 msgid "Search by data element name"
 msgstr "Search by data element name"
@@ -962,9 +971,6 @@ msgstr "No indicator groups found"
 
 msgid "Loading indicator groups"
 msgstr "Loading indicator groups"
-
-msgid "Data elements"
-msgstr "Data elements"
 
 msgid "Data element group"
 msgstr "Data element group"

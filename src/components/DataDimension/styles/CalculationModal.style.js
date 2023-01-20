@@ -25,14 +25,15 @@ export default css`
 
     .content {
         display: flex;
-        gap: ${spacers.dp16};
     }
 
     .left-section {
-        flex-basis: 40%;
+        width: 45%;
     }
 
     .right-section {
+        width: 55%;
+        padding-left: ${spacers.dp8};
         font-size: 14px;
         line-height: 24px;
     }

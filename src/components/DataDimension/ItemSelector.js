@@ -1,15 +1,5 @@
 import { useAlert, useDataEngine, useDataMutation } from '@dhis2/app-runtime'
-import {
-    Transfer,
-    InputField,
-    IconInfo16,
-    IconDimensionDataSet16,
-    IconDimensionIndicator16,
-    IconDimensionEventDataItem16,
-    IconDimensionProgramIndicator16,
-    Button,
-    IconAdd24,
-} from '@dhis2/ui'
+import { Transfer, InputField, IconInfo16, Button, IconAdd24 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 import { apiFetchOptions } from '../../api/dimensions.js'
@@ -18,24 +8,20 @@ import {
     deleteCalculationMutation,
     updateCalculationMutation,
 } from '../../api/expression.js'
-import DataElementIcon from '../../assets/DimensionItemIcons/DataElementIcon.js'
-import GenericIcon from '../../assets/DimensionItemIcons/GenericIcon.js'
 import i18n from '../../locales/index.js'
 import { DATA_SETS_CONSTANTS, REPORTING_RATE } from '../../modules/dataSets.js'
 import {
     dataTypeMap as dataTypes,
     DIMENSION_TYPE_ALL,
     DIMENSION_TYPE_DATA_ELEMENT,
-    DIMENSION_TYPE_DATA_ELEMENT_OPERAND,
     DIMENSION_TYPE_DATA_SET,
     DIMENSION_TYPE_EVENT_DATA_ITEM,
     DIMENSION_TYPE_PROGRAM_INDICATOR,
     DIMENSION_TYPE_INDICATOR,
     TOTALS,
-    DIMENSION_TYPE_PROGRAM_DATA_ELEMENT,
-    DIMENSION_TYPE_PROGRAM_ATTRIBUTE,
     DIMENSION_TYPE_EXPRESSION_DIMENSION_ITEM,
 } from '../../modules/dataTypes.js'
+import { getIcon, getTooltipText } from '../../modules/dimensionListItem.js'
 import {
     TRANSFER_HEIGHT,
     TRANSFER_OPTIONS_WIDTH,
@@ -44,7 +30,6 @@ import {
 import { useDebounce, useDidUpdateEffect } from '../../modules/utils.js'
 import styles from '../styles/DimensionSelector.style.js'
 import { TransferOption } from '../TransferOption.js'
-import CalculationIcon from './../../assets/DimensionItemIcons/CalculationIcon.js'
 import CalculationModal from './CalculationModal.js'
 import DataTypeSelector from './DataTypeSelector.js'
 import GroupSelector from './GroupSelector.js'
@@ -363,47 +348,6 @@ const ItemSelector = ({
         [...state.options, ...selectedItems].find(
             (item) => item.value === value
         )?.type
-    const getTooltipText = (item) => {
-        const itemType = getItemType(item.value)
-        if (
-            itemType === DIMENSION_TYPE_EXPRESSION_DIMENSION_ITEM &&
-            item.expression
-        ) {
-            return item.expression
-        }
-        switch (itemType) {
-            case DIMENSION_TYPE_DATA_ELEMENT_OPERAND:
-                return dataTypes[DIMENSION_TYPE_DATA_ELEMENT].getItemName()
-            case REPORTING_RATE:
-                return dataTypes[DIMENSION_TYPE_DATA_SET].getItemName()
-            case DIMENSION_TYPE_PROGRAM_DATA_ELEMENT:
-            case DIMENSION_TYPE_PROGRAM_ATTRIBUTE:
-                return dataTypes[DIMENSION_TYPE_EVENT_DATA_ITEM].getItemName()
-            default:
-                return dataTypes[itemType]?.getItemName()
-        }
-    }
-    const getIcon = (itemType) => {
-        switch (itemType) {
-            case DIMENSION_TYPE_INDICATOR:
-                return <IconDimensionIndicator16 />
-            case DIMENSION_TYPE_DATA_ELEMENT_OPERAND:
-            case DIMENSION_TYPE_DATA_ELEMENT:
-                return DataElementIcon
-            case REPORTING_RATE:
-                return <IconDimensionDataSet16 />
-            case DIMENSION_TYPE_EVENT_DATA_ITEM:
-            case DIMENSION_TYPE_PROGRAM_DATA_ELEMENT:
-            case DIMENSION_TYPE_PROGRAM_ATTRIBUTE:
-                return <IconDimensionEventDataItem16 />
-            case DIMENSION_TYPE_PROGRAM_INDICATOR:
-                return <IconDimensionProgramIndicator16 />
-            case DIMENSION_TYPE_EXPRESSION_DIMENSION_ITEM:
-                return CalculationIcon
-            default:
-                return GenericIcon
-        }
-    }
 
     const { show: showError } = useAlert((error) => error, { critical: true })
     const mutationParams = { onError: (error) => showError(error) }
@@ -542,7 +486,10 @@ const ItemSelector = ({
                         {...props}
                         active={isActive(props.value)}
                         icon={getIcon(getItemType(props.value))}
-                        tooltipText={getTooltipText(props)}
+                        tooltipText={getTooltipText({
+                            type: getItemType(props.value),
+                            expression: props.expression,
+                        })}
                         dataTest={`${dataTest}-transfer-option`}
                         onEditClick={
                             getItemType(props.value) ===

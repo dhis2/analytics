@@ -2,19 +2,20 @@ import { colors, spacers } from '@dhis2/ui'
 import css from 'styled-jsx/css'
 
 export default css`
-    .scroll-container {
-        width: 350px;
+    .dimension-list-wrapper {
         height: 300px;
         overflow: hidden;
         overflow-y: auto;
+        padding: ${spacers.dp4};
+        border: 1px solid ${colors.grey400};
     }
 
-    .content-container {
+    .dimension-list {
         position: relative;
         min-height: 1px;
     }
 
-    .container {
+    .scroll-detector {
         boxsizing: border-box;
         ${
             '' /* FIXME: the colored border and background are just for testing! Remove before merge  */

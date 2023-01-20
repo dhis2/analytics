@@ -14,7 +14,9 @@ import {
     DETAIL,
     DIMENSION_TYPE_DATA_ELEMENT,
 } from '../../modules/dataTypes.js'
+import { getIcon, getTooltipText } from '../../modules/dimensionListItem.js'
 import { useDebounce } from '../../modules/utils.js'
+import { TransferOption } from '../TransferOption.js'
 import styles from './styles/DataElementSelector.style.js'
 
 const getOptions = () => ({
@@ -208,13 +210,22 @@ const DataElementSelector = ({ displayNameProp, selectedItems = [] }) => {
                     // }}
                 />
             </div>
-            <div className="scroll-container" ref={rootRef}>
-                <div className="content-container">
-                    {options.map((option) => (
-                        <p key={option.value}>{option.label}</p>
+            <div className="dimension-list-wrapper" ref={rootRef}>
+                <div className="dimension-list">
+                    {options.map(({ label, value, type, disabled }) => (
+                        <TransferOption
+                            label={label}
+                            key={value}
+                            value={value}
+                            icon={getIcon(type)}
+                            tooltipText={getTooltipText({
+                                type,
+                            })}
+                            disabled={disabled}
+                        />
                     ))}
 
-                    <div className="container">
+                    <div className="scroll-detector">
                         <IntersectionDetector
                             onChange={onEndReached}
                             rootRef={rootRef}
