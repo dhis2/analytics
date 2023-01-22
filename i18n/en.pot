@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2023-01-20T08:13:38.176Z\n"
-"PO-Revision-Date: 2023-01-20T08:13:38.176Z\n"
+"POT-Creation-Date: 2023-01-22T08:46:31.047Z\n"
+"PO-Revision-Date: 2023-01-22T08:46:31.047Z\n"
 
 msgid "view only"
 msgstr "view only"
@@ -81,9 +81,6 @@ msgstr "Data / New calculation"
 
 msgid "Label shown in column/row headers"
 msgstr "Label shown in column/row headers"
-
-msgid "Formula"
-msgstr "Formula"
 
 msgid "Check formula"
 msgstr "Check formula"
@@ -187,6 +184,12 @@ msgstr "Nothing found for \"{{- searchTerm}}\""
 
 msgid "Calculation"
 msgstr "Calculation"
+
+msgid "Math operators"
+msgstr "Math operators"
+
+msgid "<number>"
+msgstr "<number>"
 
 msgid "Metric type"
 msgstr "Metric type"

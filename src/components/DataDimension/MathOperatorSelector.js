@@ -29,7 +29,16 @@ const MathOperatorSelector = ({ onSelect }) => {
                             {label}
                         </span>
                     ))}
-                    <span className={'operator'}>{i18n.t('<number>')}</span>
+                    <span
+                        className={'operator'}
+                        onDoubleClick={() => {
+                            onSelect({
+                                value: prompt('Please enter a number', 5),
+                            })
+                        }}
+                    >
+                        {i18n.t('<number>')}
+                    </span>
                 </div>
             </div>
             <style jsx>{styles}</style>
