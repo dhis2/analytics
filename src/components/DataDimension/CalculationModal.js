@@ -80,7 +80,7 @@ const CalculationModal = ({
                                 />
                             </div>
                             <div className="right-section">
-                                <FormulaField />
+                                <FormulaField expression={expression} />
                                 <TextAreaField
                                     rows={5}
                                     onChange={({ value }) => {

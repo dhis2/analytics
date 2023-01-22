@@ -24,4 +24,15 @@ export default css`
         font-size: 14px;
         line-height: 16px;
     }
+
+    .part {
+        display: inline-block;
+        background: ${colors.grey200};
+        font-size: 14px;
+        line-height: 16px;
+        padding: 2px ${spacers.dp4};
+        margin: ${spacers.dp4} ${spacers.dp4} 0 0;
+        border-radius: 3px;
+        user-select: none;
+    }
 `
