@@ -1,5 +1,8 @@
+import cx from 'classnames'
 import PropTypes from 'prop-types'
 import React from 'react'
+import { DIMENSION_TYPE_DATA_ELEMENT } from '../../modules/dataTypes.js'
+import { getIcon } from '../../modules/dimensionListItem.js'
 import { parseExpression } from '../../modules/expressions.js'
 import styles from './styles/FormulaField.style.js'
 
@@ -10,19 +13,34 @@ const tempMetadata = {
     Jtf34kNZhzP: 'ANC 3rd visit',
 }
 
+const partIsDimension = (part) => part.startsWith('#{') && part.endsWith('}')
+
 const FormulaField = ({ expression, metadata = tempMetadata }) => {
     const renderParts = () => {
         const parseResult = parseExpression(expression).map((part) => {
-            if (part.startsWith('#{') && part.endsWith('}')) {
+            if (partIsDimension(part)) {
                 const id = part.slice(2, -1)
                 return { value: part, label: metadata[id] }
             }
             return { value: part, label: part }
         })
         return parseResult.map((part, index) => (
-            <span className="part" key={index}>
-                {part.label}
-            </span>
+            <>
+                <span
+                    className={cx('part', {
+                        dimension: partIsDimension(part.value),
+                    })}
+                    key={index}
+                >
+                    {partIsDimension(part.value) && (
+                        <span className="icon">
+                            {getIcon(DIMENSION_TYPE_DATA_ELEMENT)}
+                        </span>
+                    )}
+                    {part.label}
+                </span>
+                <style jsx>{styles}</style>
+            </>
         ))
     }
     return (

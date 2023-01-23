@@ -93,6 +93,7 @@ const CalculationModal = ({
                                     <Button
                                         small
                                         onClick={async () =>
+                                            // TODO: add loading state to button?
                                             setValidationOutput(
                                                 await validateExpression({
                                                     expression,
