@@ -59,6 +59,9 @@
     },
     "dependencies": {
         "@dhis2/d2-ui-rich-text": "^7.4.0",
+        "@dnd-kit/core": "^6.0.7",
+        "@dnd-kit/sortable": "^7.0.2",
+        "@dnd-kit/utilities": "^3.2.1",
         "classnames": "^2.3.1",
         "d2-utilizr": "^0.2.16",
         "d3-color": "^1.2.3",
