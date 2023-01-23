@@ -7,6 +7,7 @@ import styles from './styles/FormulaField.style.js'
 
 const partIsDimension = (part) => part.startsWith('#{') && part.endsWith('}')
 
+// TODO: Add fn for double-clicking on a part to remove it from the formula
 const FormulaField = ({ expression }) => {
     const renderParts = () =>
         expression.map((part, index) => (
