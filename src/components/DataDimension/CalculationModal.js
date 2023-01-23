@@ -8,13 +8,16 @@ import {
     ButtonStrip,
     InputField,
     Tooltip,
-    TextAreaField,
 } from '@dhis2/ui'
 import cx from 'classnames'
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 import { validateExpressionMutation } from '../../api/expression.js'
 import i18n from '../../locales/index.js'
+import {
+    parseExpressionToArray,
+    parseArrayToExpression,
+} from '../../modules/expressions.js'
 import DataElementSelector from './DataElementSelector.js'
 import FormulaField from './FormulaField.js'
 import MathOperatorSelector from './MathOperatorSelector.js'
@@ -35,7 +38,9 @@ const CalculationModal = ({
         onError: (error) => showError(error),
     })
     const [validationOutput, setValidationOutput] = useState()
-    const [expression, setExpression] = useState(calculation.expression || '')
+    const [expressionArray, setExpressionArray] = useState(
+        parseExpressionToArray(calculation.expression)
+    )
     const [name, setName] = useState(calculation.name)
     const [showDeletePrompt, setShowDeletePrompt] = useState()
     const expressionStatus = validationOutput?.status
@@ -63,32 +68,38 @@ const CalculationModal = ({
                             <div className="left-section">
                                 <DataElementSelector
                                     displayNameProp={displayNameProp}
-                                    onSelect={({ value }) =>
-                                        setExpression(
-                                            (prevExpression) =>
-                                                prevExpression + `#{${value}}`
+                                    onSelect={({ value }) => {
+                                        setValidationOutput()
+                                        setExpressionArray((prevExpression) =>
+                                            prevExpression.concat([
+                                                {
+                                                    label: value,
+                                                    value: `#{${value}}`,
+                                                },
+                                            ])
                                         )
-                                    }
+                                    }}
                                 />
                                 <MathOperatorSelector
-                                    onSelect={({ value }) =>
-                                        setExpression(
-                                            (prevExpression) =>
-                                                prevExpression + value
+                                    onSelect={({ value }) => {
+                                        setValidationOutput()
+                                        setExpressionArray((prevExpression) =>
+                                            prevExpression.concat([
+                                                {
+                                                    label: value,
+                                                    value,
+                                                },
+                                            ])
                                         )
-                                    }
+                                    }}
                                 />
                             </div>
                             <div className="right-section">
-                                <FormulaField expression={expression} />
-                                <TextAreaField
-                                    rows={5}
-                                    onChange={({ value }) => {
-                                        setValidationOutput()
-                                        setExpression(value)
-                                    }}
-                                    value={expression}
-                                />
+                                <FormulaField expression={expressionArray} />
+                                <p>
+                                    {/* TODO: Remove, for testing only */}
+                                    {parseArrayToExpression(expressionArray)}
+                                </p>
                                 <div className="check-button">
                                     <Button
                                         small
@@ -96,7 +107,10 @@ const CalculationModal = ({
                                             // TODO: add loading state to button?
                                             setValidationOutput(
                                                 await validateExpression({
-                                                    expression,
+                                                    expression:
+                                                        parseArrayToExpression(
+                                                            expressionArray
+                                                        ),
                                                 })
                                             )
                                         }
@@ -171,7 +185,10 @@ const CalculationModal = ({
                                         onClick={() =>
                                             onSave({
                                                 id: calculation.id,
-                                                expression,
+                                                expression:
+                                                    parseArrayToExpression(
+                                                        expressionArray
+                                                    ),
                                                 name,
                                             })
                                         }
