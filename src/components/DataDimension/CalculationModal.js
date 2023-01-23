@@ -9,6 +9,13 @@ import {
     InputField,
     Tooltip,
 } from '@dhis2/ui'
+import {
+    DndContext,
+    DragOverlay,
+    useSensor,
+    useSensors,
+    PointerSensor,
+} from '@dnd-kit/core'
 import cx from 'classnames'
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
@@ -20,11 +27,28 @@ import {
 } from '../../modules/expressions.js'
 import DataElementSelector from './DataElementSelector.js'
 import FormulaField from './FormulaField.js'
-import MathOperatorSelector from './MathOperatorSelector.js'
+import MathOperatorSelector, { getOperators } from './MathOperatorSelector.js'
 import styles from './styles/CalculationModal.style.js'
 
 const VALID_EXPRESSION = 'OK'
 const INVALID_EXPRESSION = 'ERROR'
+
+const activateAt15pixels = {
+    activationConstraint: {
+        distance: 15,
+    },
+}
+
+const FIRST_POSITION = 0
+// const LAST_POSITION = -1;
+export const FIRST = 'first'
+export const LAST = 'last'
+
+const OPTIONS_PANEL = 'Sortable'
+
+export const FIRST_DROPZONE_ID = 'firstdropzone'
+export const LAST_DROPZONE_ID = 'lastdropzone'
+export const FORMULA_BOX_ID = 'formulabox'
 
 const CalculationModal = ({
     calculation = {},
@@ -43,6 +67,12 @@ const CalculationModal = ({
     )
     const [name, setName] = useState(calculation.name)
     const [showDeletePrompt, setShowDeletePrompt] = useState()
+
+    const sensor = useSensor(PointerSensor, activateAt15pixels)
+    const sensors = useSensors(sensor)
+    const [draggingId, setDraggingId] = useState(null)
+    const [idCounter, setIdCounter] = useState(0)
+
     const expressionStatus = validationOutput?.status
 
     return (
@@ -54,7 +84,11 @@ const CalculationModal = ({
                         : i18n.t('Data / New calculation')}
                 </ModalTitle>
                 <ModalContent dataTest={'calculation-modal-content'}>
-                    <>
+                    <DndContext
+                        onDragStart={handleDragStart}
+                        onDragEnd={handleDragEnd}
+                        sensors={sensors}
+                    >
                         <div className="name-input">
                             <InputField
                                 label={i18n.t(
@@ -95,7 +129,12 @@ const CalculationModal = ({
                                 />
                             </div>
                             <div className="right-section">
-                                <FormulaField expression={expressionArray} />
+                                <FormulaField
+                                    expressionArray={expressionArray}
+                                    setExpressionItemValue={
+                                        setExpressionItemValue
+                                    }
+                                />
                                 <p>
                                     {/* TODO: Remove, for testing only */}
                                     {parseArrayToExpression(expressionArray)}
@@ -145,7 +184,14 @@ const CalculationModal = ({
                             </div>
                         </div>
                         <style jsx>{styles}</style>
-                    </>
+                        <DragOverlay dropAnimation={null}>
+                            {draggingId ? (
+                                <span className={styles.dragOverlay}>
+                                    {draggingId}
+                                </span>
+                            ) : null}
+                        </DragOverlay>
+                    </DndContext>
                 </ModalContent>
                 <ModalActions dataTest={'calculation-modal-actions'}>
                     <ButtonStrip>
@@ -239,6 +285,82 @@ const CalculationModal = ({
             )}
         </>
     )
+
+    function handleDragEnd({ active, over }) {
+        if (
+            !over?.id ||
+            over?.data?.current?.sortable?.containerId === OPTIONS_PANEL
+        ) {
+            // dropped over non-droppable or over options panel
+            handleDragCancel()
+            return
+        }
+
+        const sourceAxisId = active.data.current?.sortable?.containerId
+        const destAxisId = over.data.current?.sortable?.containerId || over.id
+
+        if (sourceAxisId === OPTIONS_PANEL) {
+            // adding an item to the formula
+            const newItem = getNewItem(active.id)
+            if (destAxisId === LAST_DROPZONE_ID) {
+                setExpressionArray([...expressionArray, newItem])
+            } else if (destAxisId === FORMULA_BOX_ID) {
+                const destIndex = over.data.current.sortable.index
+                const sourceList = Array.from(expressionArray)
+
+                const newFormulaItems = [
+                    ...sourceList.slice(0, destIndex),
+                    newItem,
+                    ...sourceList.slice(destIndex),
+                ]
+                setExpressionArray(newFormulaItems)
+            } else {
+                setExpressionArray([newItem, ...expressionArray])
+            }
+        } else {
+            // move an item in the formula
+            const sourceIndex = active.data.current.sortable.index
+            let destIndex
+            if (destAxisId === LAST_DROPZONE_ID) {
+                destIndex = expressionArray.length
+            } else if (destAxisId === FORMULA_BOX_ID) {
+                destIndex = over.data.current.sortable.index
+            } else {
+                destIndex = FIRST_POSITION
+            }
+            const sourceList = Array.from(expressionArray)
+            const [moved] = sourceList.splice(sourceIndex, 1)
+            sourceList.splice(destIndex, 0, moved)
+            setExpressionArray(sourceList)
+        }
+        setDraggingId(null)
+    }
+    function handleDragStart({ active }) {
+        setDraggingId(active.id)
+    }
+
+    function handleDragCancel() {
+        setDraggingId(null)
+    }
+
+    function setExpressionItemValue({ index, value }) {
+        const updatedFormulaItems = expressionArray.map((expression, i) =>
+            i === index ? Object.assign({}, expression, { value }) : expression
+        )
+        setExpressionArray(updatedFormulaItems)
+    }
+
+    function getNewItem(activeId) {
+        const itemToCopy = getOperators().find(
+            (operator) => operator.id === activeId
+        )
+        const newItem = Object.assign({}, itemToCopy, {
+            id: `${activeId}-${idCounter}`,
+        })
+
+        setIdCounter(idCounter + 1)
+        return newItem
+    }
 }
 
 CalculationModal.propTypes = {

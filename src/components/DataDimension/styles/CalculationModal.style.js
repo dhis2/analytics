@@ -54,4 +54,9 @@ export default css`
         margin-bottom: ${spacers.dp8};
         max-width: 75%;
     }
+
+    .dragOverlay {
+        background-color: #a0adba;
+        padding: 4px;
+    }
 `
