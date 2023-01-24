@@ -14,16 +14,18 @@ export default css`
         line-height: 14px;
     }
 
-    .check-button {
+    .actions-wrapper {
         margin-top: ${spacers.dp16};
         margin-bottom: ${spacers.dp16};
     }
 
     .remove-button {
+        display: inline-block;
+        margin-left: ${spacers.dp8};
     }
 
     .delete-button {
-        margin-top: ${spacers.dp32};
+        margin-top: ${spacers.dp8};
     }
 
     .content {
