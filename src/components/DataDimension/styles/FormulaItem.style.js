@@ -2,34 +2,6 @@ import { colors, spacers, elevations, theme } from '@dhis2/ui'
 import css from 'styled-jsx/css'
 
 export default css`
-    .wrapper {
-        display: flex;
-        align-items: flex-start;
-        align-content: flex-start;
-        flex-wrap: wrap;
-        gap: ${spacers.dp4} ${spacers.dp8};
-        height: 120px;
-        border: 2px solid ${colors.grey200};
-        padding: ${spacers.dp4};
-    }
-
-    .operators {
-        display: flex;
-        flex-wrap: wrap;
-        gap: ${spacers.dp4};
-        padding: ${spacers.dp4};
-        border-top: 1px solid ${colors.grey400};
-    }
-
-    .operator {
-        display: inline-block;
-        background: ${colors.grey200};
-        padding: ${spacers.dp4} ${spacers.dp8};
-        border-radius: 3px;
-        font-size: 14px;
-        line-height: 16px;
-    }
-
     .part {
         display: inline-block;
         height: 21px;
@@ -61,5 +33,45 @@ export default css`
 
     .highlighted :global(.icon path) {
         fill: ${colors.white};
+    }
+
+    .isLast {
+        flex: 1;
+    }
+
+    .isOver {
+        z-index: 100;
+    }
+
+    .isEmpty {
+        position: relative;
+        flex-grow: 1;
+        z-index: 100;
+    }
+
+    .isOver::before,
+    .isOver::after {
+        content: '';
+        position: absolute;
+    }
+
+    /* the vertical line */
+    .isOver::before {
+        top: 8px;
+        width: 4px;
+        left: -6px;
+        height: 18px;
+        background-color: #4c9ffe;
+    }
+
+    /* the circle */
+    .isOver::after {
+        top: -4px;
+        left: -10px;
+        width: 12px;
+        height: 12px;
+        border: 4px solid #4c9ffe;
+        background: transparent;
+        border-radius: 12px;
     }
 `

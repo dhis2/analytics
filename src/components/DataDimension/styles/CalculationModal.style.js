@@ -61,7 +61,6 @@ export default css`
     }
 
     .dragOverlay {
-        background-color: #a0adba;
         padding: 4px;
     }
 `

@@ -5,6 +5,7 @@ import {
     SingleSelectField,
     SingleSelectOption,
 } from '@dhis2/ui'
+import { useSortable } from '@dnd-kit/sortable'
 import PropTypes from 'prop-types'
 import React, { useCallback, useEffect, useRef, useState } from 'react'
 import { apiFetchOptions } from '../../api/dimensions.js'
@@ -14,10 +15,8 @@ import {
     DETAIL,
     DIMENSION_TYPE_DATA_ELEMENT,
 } from '../../modules/dataTypes.js'
-import { getIcon, getTooltipText } from '../../modules/dimensionListItem.js'
 import { useDebounce } from '../../modules/utils.js'
-import { TransferOption } from '../TransferOption.js'
-import { TYPE_DATAITEM } from './MathOperatorSelector.js'
+import DraggableTransferOption from './DraggableTransferOption.js'
 import styles from './styles/DataElementSelector.style.js'
 
 const getOptions = () => ({
@@ -99,6 +98,13 @@ const DataElementSelector = ({
     const [page, setPage] = useState(0)
     const [hasNextPage, setHasNextPage] = useState(true)
     const debouncedSearchTerm = useDebounce(searchInput, 200)
+
+    const { isOver, setNodeRef } = useSortable({
+        id: 'dataitems',
+    })
+    const style = {
+        opacity: isOver ? 1 : 0.5,
+    }
 
     if (selectedItems.length) {
         // FIXME: temporarily removes lint errors
@@ -202,14 +208,15 @@ const DataElementSelector = ({
                     type={'search'}
                 />
                 <GroupSelector
-                    currentValue={filter.group}
+                    currentValue={filter.group || ''}
+                    onChange={Function.prototype}
                     // onChange={(group) => {
                     //     setFilter({ ...filter, group })
                     // }}
                 />
-
                 <DisaggregationSelector
-                    currentValue={filter.subGroup}
+                    currentValue={filter.subGroup || ''}
+                    onChange={Function.prototype}
                     // onChange={(subGroup) => {
                     //     setFilter({ ...filter, subGroup })
                     // }}
@@ -217,19 +224,22 @@ const DataElementSelector = ({
             </div>
             <div className="dimension-list-wrapper" ref={rootRef}>
                 <div className="dimension-list">
-                    {options.map(({ label, value, type, disabled }) => (
-                        <TransferOption
-                            label={label}
-                            key={value}
-                            value={value}
-                            icon={getIcon(type)}
-                            tooltipText={getTooltipText({
-                                type,
-                            })}
-                            disabled={disabled}
-                            onDoubleClick={onSelect}
-                        />
-                    ))}
+                    <div
+                        className="draggable-items"
+                        ref={setNodeRef}
+                        style={style}
+                    >
+                        {options.map(({ label, value, type, disabled }) => (
+                            <DraggableTransferOption
+                                label={label}
+                                key={value}
+                                value={value}
+                                type={type}
+                                disabled={disabled}
+                                onSelect={onSelect}
+                            />
+                        ))}
+                    </div>
 
                     <div className="scroll-detector">
                         <IntersectionDetector

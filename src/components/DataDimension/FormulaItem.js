@@ -3,13 +3,45 @@ import { CSS } from '@dnd-kit/utilities'
 import cx from 'classnames'
 import PropTypes from 'prop-types'
 import React, { useState, useRef } from 'react'
+import { DIMENSION_TYPE_DATA_ELEMENT } from '../../modules/dataTypes.js'
+import { getIcon } from '../../modules/dimensionListItem.js'
 import { LAST_DROPZONE_ID } from './CalculationModal.js'
+import { TYPE_INPUT } from './MathOperatorSelector.js'
 import styles from './styles/FormulaItem.style.js'
 
 const BEFORE = 'BEFORE'
 const AFTER = 'AFTER'
 
-const FormulaItem = ({
+const itemIsDimension = (item) => item.startsWith('#{') && item.endsWith('}')
+
+const FormulaItem = ({ value, children }) => {
+    return (
+        <>
+            <div
+                className={cx('part', {
+                    dimension: itemIsDimension(value),
+                })}
+            >
+                {itemIsDimension(value) && (
+                    <span className="icon">
+                        {getIcon(DIMENSION_TYPE_DATA_ELEMENT)}
+                    </span>
+                )}
+                {children}
+            </div>
+            <style jsx>{styles}</style>
+        </>
+    )
+}
+
+FormulaItem.propTypes = {
+    children: PropTypes.node,
+    value: PropTypes.string,
+}
+
+export { FormulaItem }
+
+const DraggableFormulaItem = ({
     id,
     label,
     type,
@@ -17,7 +49,7 @@ const FormulaItem = ({
     onChange,
     isLast,
     highlighted,
-    onClickItem,
+    // onClickItem,
 }) => {
     const [isEditing, setIsEditing] = useState(false)
     const inputRef = useRef(null)
@@ -33,9 +65,15 @@ const FormulaItem = ({
         setNodeRef,
         transform,
         transition,
+        isOver,
     } = useSortable({
         id,
+        data: { id, label, type, value },
     })
+
+    if (isOver) {
+        console.log(active?.id, 'is over', over?.id)
+    }
 
     // console.log("item:", name, "isDragging", isDragging, "over:", over);
     // console.log("active", active);
@@ -62,7 +100,7 @@ const FormulaItem = ({
 
     let insertPosition = undefined
     if (over?.id === id) {
-        console.log('index, activeIndex', index, activeIndex)
+        // console.log('index, activeIndex', index, activeIndex)
         // This item is being hovered over by a dragged item
         if (activeIndex === -1) {
             //This item came from the expression options
@@ -70,15 +108,15 @@ const FormulaItem = ({
         } else {
             insertPosition = index > activeIndex ? AFTER : BEFORE
         }
-        console.log('insertPosition', insertPosition)
     }
 
     if (isLast && overLastDropZone) {
         insertPosition = AFTER
     }
+    // console.log('insertPosition', insertPosition)
 
     const getContent = () => {
-        if (type === 'input') {
+        if (type === TYPE_INPUT) {
             return (
                 <>
                     <input
@@ -107,23 +145,29 @@ const FormulaItem = ({
         insertAfter: insertPosition === AFTER,
     })
 
+    // console.log('contentClassName', contentClassName)
+
     return (
-        <div
-            ref={setNodeRef}
-            {...attributes}
-            {...listeners}
-            className={cx('container', { isLast, highlighted })}
-            style={style}
-        >
-            <div className="part">
-                <div className={contentClassName}>{getContent()}</div>
+        <>
+            <div
+                ref={setNodeRef}
+                {...attributes}
+                {...listeners}
+                className={cx('container', { isLast, highlighted })}
+                style={style}
+            >
+                <div className={contentClassName}>
+                    <FormulaItem label={label} value={value}>
+                        {getContent()}
+                    </FormulaItem>
+                </div>
             </div>
             <style jsx>{styles}</style>
-        </div>
+        </>
     )
 
     function onClick() {
-        if (type === 'input' && !isEditing) {
+        if (type === TYPE_INPUT && !isEditing) {
             inputRef.current.style.display = 'inline'
             inputRef.current.focus()
             spanRef.current.style.display = 'none'
@@ -142,9 +186,7 @@ const FormulaItem = ({
     }
 }
 
-export default FormulaItem
-
-FormulaItem.propTypes = {
+DraggableFormulaItem.propTypes = {
     highlighted: PropTypes.bool,
     id: PropTypes.string,
     isLast: PropTypes.bool,
@@ -155,19 +197,4 @@ FormulaItem.propTypes = {
     onClickItem: PropTypes.func,
 }
 
-//<>
-//             <span
-//                 className={cx('part', {
-//                     dimension: partIsDimension(part.value),
-//                 })}
-//                 key={index}
-//             >
-//                 {partIsDimension(part.value) && (
-//                     <span className="icon">
-//                         {getIcon(DIMENSION_TYPE_DATA_ELEMENT)}
-//                     </span>
-//                 )}
-//                 {part.label}
-//             </span>
-//             <style jsx>{styles}</style>
-//         </>
+export default DraggableFormulaItem

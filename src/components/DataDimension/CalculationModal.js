@@ -25,9 +25,17 @@ import {
     parseExpressionToArray,
     parseArrayToExpression,
 } from '../../modules/expressions.js'
+import { TransferOption } from '../TransferOption.js'
 import DataElementSelector from './DataElementSelector.js'
 import FormulaField from './FormulaField.js'
-import MathOperatorSelector, { getOperators } from './MathOperatorSelector.js'
+import { FormulaItem } from './FormulaItem.js'
+import MathOperatorSelector, {
+    getOperators,
+    TYPE_DATAITEM,
+    TYPE_OPERATOR,
+    TYPE_INPUT,
+} from './MathOperatorSelector.js'
+import { Operator } from './Operator.js'
 import styles from './styles/CalculationModal.style.js'
 
 const VALID_EXPRESSION = 'OK'
@@ -70,7 +78,7 @@ const CalculationModal = ({
 
     const sensor = useSensor(PointerSensor, activateAt15pixels)
     const sensors = useSensors(sensor)
-    const [draggingId, setDraggingId] = useState(null)
+    const [draggingItem, setDraggingItem] = useState(null)
     const [idCounter, setIdCounter] = useState(0)
 
     const expressionStatus = validationOutput?.status
@@ -129,6 +137,8 @@ const CalculationModal = ({
         setValidationOutput(result)
     }
 
+    console.log('expressionArray', expressionArray)
+
     return (
         <>
             <Modal dataTest={`calculation-modal`} position="top" large>
@@ -156,27 +166,21 @@ const CalculationModal = ({
                             <div className="left-section">
                                 <DataElementSelector
                                     displayNameProp={displayNameProp}
-                                    onSelect={({ value }) => {
+                                    onSelect={({ label, value }) => {
                                         setValidationOutput()
                                         setExpressionArray((prevArray) =>
                                             prevArray.concat([
-                                                {
-                                                    label: value,
-                                                    value: `#{${value}}`,
-                                                },
+                                                getNewDataItem(value, label),
                                             ])
                                         )
                                     }}
                                 />
                                 <MathOperatorSelector
-                                    onSelect={({ value }) => {
+                                    onSelect={({ id }) => {
                                         setValidationOutput()
                                         setExpressionArray((prevArray) =>
                                             prevArray.concat([
-                                                {
-                                                    label: value,
-                                                    value,
-                                                },
+                                                getNewOperatorItem(id),
                                             ])
                                         )
                                     }}
@@ -250,9 +254,9 @@ const CalculationModal = ({
                         </div>
                         <style jsx>{styles}</style>
                         <DragOverlay dropAnimation={null}>
-                            {draggingId ? (
-                                <span className={styles.dragOverlay}>
-                                    {draggingId}
+                            {draggingItem ? (
+                                <span className="dragOverlay">
+                                    {getDraggingItem()}
                                 </span>
                             ) : null}
                         </DragOverlay>
@@ -365,8 +369,17 @@ const CalculationModal = ({
         const destAxisId = over.data.current?.sortable?.containerId || over.id
 
         if (sourceAxisId === OPTIONS_PANEL) {
-            // adding an item to the formula
-            const newItem = getNewItem(active.id)
+            let newItem
+            if (active.data.current.type === 'DATA_ELEMENT') {
+                newItem = getNewDataItem(
+                    active.data.current.id,
+                    active.data.current.label
+                )
+            } else {
+                // adding an item to the formula
+                newItem = getNewOperatorItem(active.id)
+            }
+
             if (destAxisId === LAST_DROPZONE_ID) {
                 setExpressionArray([...expressionArray, newItem])
             } else if (destAxisId === FORMULA_BOX_ID) {
@@ -398,14 +411,38 @@ const CalculationModal = ({
             sourceList.splice(destIndex, 0, moved)
             setExpressionArray(sourceList)
         }
-        setDraggingId(null)
+        setDraggingItem(null)
     }
     function handleDragStart({ active }) {
-        setDraggingId(active.id)
+        console.log('drag started', active.data.current)
+        setDraggingItem(active.data.current)
     }
 
     function handleDragCancel() {
-        setDraggingId(null)
+        setDraggingItem(null)
+    }
+
+    function getDraggingItem() {
+        const label = draggingItem.value || draggingItem.label
+        if (draggingItem.sortable.containerId === FORMULA_BOX_ID) {
+            // dragging item looks like a formula item
+            return (
+                <FormulaItem value={draggingItem.value}>
+                    <span>{draggingItem.value}</span>
+                </FormulaItem>
+            )
+        } else {
+            if ([TYPE_OPERATOR, TYPE_INPUT].includes(draggingItem.type)) {
+                return <Operator label={label} />
+            } else {
+                return (
+                    <TransferOption
+                        label={draggingItem.label}
+                        value={draggingItem.value}
+                    />
+                )
+            }
+        }
     }
 
     function setExpressionItemValue({ index, value }) {
@@ -415,12 +452,21 @@ const CalculationModal = ({
         setExpressionArray(updatedFormulaItems)
     }
 
-    function getNewItem(activeId) {
-        const itemToCopy = getOperators().find(
-            (operator) => operator.id === activeId
-        )
+    function getNewDataItem(id, label) {
+        const newItem = {
+            id: `${id}-${idCounter}`,
+            value: `#{${id}}`,
+            label: label,
+            type: TYPE_DATAITEM,
+        }
+        setIdCounter(idCounter + 1)
+        return newItem
+    }
+
+    function getNewOperatorItem(id) {
+        const itemToCopy = getOperators().find((operator) => operator.id === id)
         const newItem = Object.assign({}, itemToCopy, {
-            id: `${activeId}-${idCounter}`,
+            id: `${id}-${idCounter}`,
         })
 
         setIdCounter(idCounter + 1)

@@ -2,7 +2,7 @@ import { useSortable } from '@dnd-kit/sortable'
 import PropTypes from 'prop-types'
 import React from 'react'
 import i18n from '../../locales/index.js'
-import Operator from './Operator.js'
+import DraggableOperator from './Operator.js'
 import styles from './styles/MathOperatorSelector.style.js'
 
 export const TYPE_INPUT = 'input'
@@ -34,23 +34,19 @@ const MathOperatorSelector = ({ onSelect }) => {
         opacity: isOver ? 1 : 0.5,
     }
 
-    const internalOnSelect = (val) => {
-        console.log('selected', val)
-        // onSelect()
-    }
-
     return (
         <>
             <div className="wrapper">
                 <h4 className="sub-header">{i18n.t('Math operators')}</h4>
                 <div className="operators" ref={setNodeRef} style={style}>
-                    {getOperators().map(({ id, value, label }) => (
-                        <Operator
+                    {getOperators().map(({ id, value, type, label }) => (
+                        <DraggableOperator
                             key={id}
                             id={id}
                             label={label}
+                            type={type}
                             value={value}
-                            onDblClick={internalOnSelect}
+                            onClick={onSelect}
                         />
                     ))}
                 </div>

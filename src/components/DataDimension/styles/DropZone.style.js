@@ -2,7 +2,7 @@
 import css from 'styled-jsx/css'
 
 export default css`
-    .dropZone {
+    .firstDropZone {
         position: absolute;
         top: 0;
         left: 0;

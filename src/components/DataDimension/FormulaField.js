@@ -1,16 +1,11 @@
 import { useDroppable } from '@dnd-kit/core'
 import { SortableContext } from '@dnd-kit/sortable'
-import cx from 'classnames'
 import PropTypes from 'prop-types'
 import React from 'react'
-import { DIMENSION_TYPE_DATA_ELEMENT } from '../../modules/dataTypes.js'
-import { getIcon } from '../../modules/dimensionListItem.js'
 import { LAST_DROPZONE_ID, FORMULA_BOX_ID } from './CalculationModal.js'
 import DropZone from './DropZone.js'
-import FormulaItem from './FormulaItem.js'
+import DraggableFormulaItem from './FormulaItem.js'
 import styles from './styles/FormulaField.style.js'
-
-const partIsDimension = (part) => part.startsWith('#{') && part.endsWith('}')
 
 // TODO: Add fn for double-clicking on a part to remove it from the formula
 const FormulaField = ({
@@ -33,13 +28,10 @@ const FormulaField = ({
 
     function getFormulaItems() {
         return expressionArray.map((item, i) => (
-            <FormulaItem
+            <DraggableFormulaItem
                 key={`${item.label}-${i}`}
                 id={item.id}
                 index={i}
-                className={cx('part', {
-                    dimension: partIsDimension(item.value),
-                })}
                 label={item.label}
                 type={item.type}
                 value={item.value}
@@ -52,7 +44,7 @@ const FormulaField = ({
     }
 
     return (
-        <div className="wrapper" ref={setNodeRef} style={style}>
+        <div className="wrapper lastDropZone" ref={setNodeRef} style={style}>
             <SortableContext id={FORMULA_BOX_ID} items={itemIds}>
                 <>
                     <DropZone
