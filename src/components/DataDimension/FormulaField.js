@@ -13,7 +13,12 @@ import styles from './styles/FormulaField.style.js'
 const partIsDimension = (part) => part.startsWith('#{') && part.endsWith('}')
 
 // TODO: Add fn for double-clicking on a part to remove it from the formula
-const FormulaField = ({ expressionArray, setExpressionItemValue }) => {
+const FormulaField = ({
+    expressionArray,
+    selectedPart,
+    onPartSelection,
+    setExpressionItemValue,
+}) => {
     const { over, isOver, setNodeRef } = useDroppable({
         id: LAST_DROPZONE_ID,
     })
@@ -40,6 +45,8 @@ const FormulaField = ({ expressionArray, setExpressionItemValue }) => {
                 value={item.value}
                 onChange={setExpressionItemValue}
                 isLast={i === expressionArray.length - 1}
+                highlighted={i === selectedPart}
+                onClickItem={() => onPartSelection(i)}
             />
         ))
     }
@@ -70,6 +77,8 @@ FormulaField.propTypes = {
             value: PropTypes.string,
         })
     ),
+    selectedPart: PropTypes.number,
+    onPartSelection: PropTypes.func,
 }
 
 export default FormulaField

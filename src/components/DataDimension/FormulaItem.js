@@ -9,7 +9,16 @@ import styles from './styles/FormulaItem.style.js'
 const BEFORE = 'BEFORE'
 const AFTER = 'AFTER'
 
-const FormulaItem = ({ id, label, type, value = '', onChange, isLast }) => {
+const FormulaItem = ({
+    id,
+    label,
+    type,
+    value = '',
+    onChange,
+    isLast,
+    highlighted,
+    onClickItem,
+}) => {
     const [isEditing, setIsEditing] = useState(false)
     const inputRef = useRef(null)
     const spanRef = useRef(null)
@@ -68,7 +77,7 @@ const FormulaItem = ({ id, label, type, value = '', onChange, isLast }) => {
         insertPosition = AFTER
     }
 
-    const onClick = () => {
+    function onClick() {
         if (type === 'input' && !isEditing) {
             inputRef.current.style.display = 'inline'
             inputRef.current.focus()
@@ -77,13 +86,13 @@ const FormulaItem = ({ id, label, type, value = '', onChange, isLast }) => {
         }
     }
 
-    const onInputBlur = () => {
+    function onInputBlur() {
         inputRef.current.style.display = 'none'
         spanRef.current.style.display = 'inline'
         setIsEditing(false)
     }
 
-    const onInputChange = (e) => {
+    function onInputChange(e) {
         onChange({ index, value: e.target.value })
     }
 

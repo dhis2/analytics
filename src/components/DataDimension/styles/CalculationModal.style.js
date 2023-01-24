@@ -19,6 +19,9 @@ export default css`
         margin-bottom: ${spacers.dp16};
     }
 
+    .remove-button {
+    }
+
     .delete-button {
         margin-top: ${spacers.dp32};
     }

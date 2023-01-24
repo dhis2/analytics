@@ -75,6 +75,13 @@ const CalculationModal = ({
 
     const expressionStatus = validationOutput?.status
 
+    const [selectedPart, setSelectedPart] = useState()
+    const onPartSelection = (index) => {
+        setSelectedPart((prevSelected) =>
+            prevSelected !== index ? index : null
+        )
+    }
+
     return (
         <>
             <Modal dataTest={`calculation-modal`} position="top" large>
@@ -104,8 +111,8 @@ const CalculationModal = ({
                                     displayNameProp={displayNameProp}
                                     onSelect={({ value }) => {
                                         setValidationOutput()
-                                        setExpressionArray((prevExpression) =>
-                                            prevExpression.concat([
+                                        setExpressionArray((prevArray) =>
+                                            prevArray.concat([
                                                 {
                                                     label: value,
                                                     value: `#{${value}}`,
@@ -117,8 +124,8 @@ const CalculationModal = ({
                                 <MathOperatorSelector
                                     onSelect={({ value }) => {
                                         setValidationOutput()
-                                        setExpressionArray((prevExpression) =>
-                                            prevExpression.concat([
+                                        setExpressionArray((prevArray) =>
+                                            prevArray.concat([
                                                 {
                                                     label: value,
                                                     value,
@@ -134,6 +141,8 @@ const CalculationModal = ({
                                     setExpressionItemValue={
                                         setExpressionItemValue
                                     }
+                                    onPartSelection={onPartSelection}
+                                    selectedPart={selectedPart}
                                 />
                                 <p>
                                     {/* TODO: Remove, for testing only */}
@@ -169,6 +178,27 @@ const CalculationModal = ({
                                         {validationOutput?.message}
                                     </span>
                                 </div>
+                                {(selectedPart || selectedPart === 0) && (
+                                    <div className={'remove-button'}>
+                                        <Button
+                                            small
+                                            onClick={() => {
+                                                setValidationOutput()
+                                                setExpressionArray(
+                                                    (prevArray) =>
+                                                        prevArray.filter(
+                                                            (_, index) =>
+                                                                index !=
+                                                                selectedPart
+                                                        )
+                                                )
+                                                setSelectedPart()
+                                            }}
+                                        >
+                                            {i18n.t('Remove item')}
+                                        </Button>
+                                    </div>
+                                )}
                                 {calculation.id && (
                                     <div className="delete-button">
                                         <Button
