@@ -34,7 +34,7 @@ const CalculationModal = ({
     displayNameProp,
 }) => {
     const { show: showError } = useAlert((error) => error, { critical: true })
-    const [validateExpression] = useDataMutation(validateExpressionMutation, {
+    const [doBackendValidation] = useDataMutation(validateExpressionMutation, {
         onError: (error) => showError(error),
     })
     const [validationOutput, setValidationOutput] = useState()
@@ -50,6 +50,53 @@ const CalculationModal = ({
         setSelectedPart((prevSelected) =>
             prevSelected !== index ? index : null
         )
+    }
+
+    const validateExpression = async () => {
+        const expression = parseArrayToExpression(expressionArray)
+        let result = ''
+        // TODO: two numbers next to each other
+
+        const leftParenthesisCount = expression.split('(').length - 1
+        const rightParenthesisCount = expression.split(')').length - 1
+
+        if (/[-+/*]{2,}/.test(expression)) {
+            // two math operators next to each other
+            result = {
+                status: INVALID_EXPRESSION,
+                message: i18n.t('Consecutive math operators'),
+            }
+        } else if (/}#/.test(expression)) {
+            // two data elements next to each other
+            result = {
+                status: INVALID_EXPRESSION,
+                message: i18n.t('Consecutive data elements'),
+            }
+        } else if (/^[+\-*/]|[+\-*/]$/.test(expression)) {
+            // starting or ending with a math operator
+            result = {
+                status: INVALID_EXPRESSION,
+                message: i18n.t('Starts or ends with a math operator'),
+            }
+        } else if (leftParenthesisCount > rightParenthesisCount) {
+            // ( but no )
+            result = {
+                status: INVALID_EXPRESSION,
+                message: i18n.t('Missing right parenthesis )'),
+            }
+        } else if (rightParenthesisCount > leftParenthesisCount) {
+            // ) but no (
+            result = {
+                status: INVALID_EXPRESSION,
+                message: i18n.t('Missing left parenthesis ('),
+            }
+        } else {
+            result = await doBackendValidation({
+                expression,
+            })
+        }
+
+        setValidationOutput(result)
     }
 
     return (
@@ -112,20 +159,8 @@ const CalculationModal = ({
                                     {parseArrayToExpression(expressionArray)}
                                 </p>
                                 <div className="actions-wrapper">
-                                    <Button
-                                        small
-                                        onClick={async () =>
-                                            // TODO: add loading state to button?
-                                            setValidationOutput(
-                                                await validateExpression({
-                                                    expression:
-                                                        parseArrayToExpression(
-                                                            expressionArray
-                                                        ),
-                                                })
-                                            )
-                                        }
-                                    >
+                                    <Button small onClick={validateExpression}>
+                                        {/* TODO: add loading state to button? */}
                                         {i18n.t('Check formula')}
                                     </Button>
                                     {(selectedPart || selectedPart === 0) && (
