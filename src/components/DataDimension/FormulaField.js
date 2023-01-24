@@ -7,16 +7,17 @@ import styles from './styles/FormulaField.style.js'
 
 const partIsDimension = (part) => part.startsWith('#{') && part.endsWith('}')
 
-// TODO: Add fn for double-clicking on a part to remove it from the formula
-const FormulaField = ({ expression }) => {
+const FormulaField = ({ expression, selectedPart, onPartSelection }) => {
     const renderParts = () =>
         expression.map((part, index) => (
             <>
                 <span
                     className={cx('part', {
                         dimension: partIsDimension(part.value),
+                        highlighted: index === selectedPart,
                     })}
                     key={index}
+                    onClick={() => onPartSelection(index)}
                 >
                     {partIsDimension(part.value) && (
                         <span className="icon">
@@ -43,6 +44,8 @@ FormulaField.propTypes = {
             value: PropTypes.string,
         })
     ),
+    selectedPart: PropTypes.number,
+    onPartSelection: PropTypes.func,
 }
 
 export default FormulaField

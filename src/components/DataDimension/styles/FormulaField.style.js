@@ -1,4 +1,4 @@
-import { colors, spacers, elevations } from '@dhis2/ui'
+import { colors, spacers, elevations, theme } from '@dhis2/ui'
 import css from 'styled-jsx/css'
 
 export default css`
@@ -52,5 +52,14 @@ export default css`
         display: inline-flex;
         vertical-align: text-bottom;
         padding-top: 1px;
+    }
+
+    .highlighted {
+        background: ${theme.secondary800};
+        color: ${colors.white};
+    }
+
+    .highlighted :global(.icon path) {
+        fill: ${colors.white};
     }
 `
