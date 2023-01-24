@@ -63,9 +63,9 @@ const FormulaItem = ({
     let insertPosition = undefined
     if (over?.id === id) {
         console.log('index, activeIndex', index, activeIndex)
-        // This formulaItem is being hovered over by a dragged item
+        // This item is being hovered over by a dragged item
         if (activeIndex === -1) {
-            //This item came from the dimensions panel
+            //This item came from the expression options
             insertPosition = AFTER
         } else {
             insertPosition = index > activeIndex ? AFTER : BEFORE
@@ -75,25 +75,6 @@ const FormulaItem = ({
 
     if (isLast && overLastDropZone) {
         insertPosition = AFTER
-    }
-
-    function onClick() {
-        if (type === 'input' && !isEditing) {
-            inputRef.current.style.display = 'inline'
-            inputRef.current.focus()
-            spanRef.current.style.display = 'none'
-            setIsEditing(true)
-        }
-    }
-
-    function onInputBlur() {
-        inputRef.current.style.display = 'none'
-        spanRef.current.style.display = 'inline'
-        setIsEditing(false)
-    }
-
-    function onInputChange(e) {
-        onChange({ index, value: e.target.value })
     }
 
     const getContent = () => {
@@ -120,10 +101,10 @@ const FormulaItem = ({
         }
     }
 
-    const contentClassName = cx(styles.content, {
-        [styles.active]: isDragging,
-        [styles.insertBefore]: insertPosition === BEFORE,
-        [styles.insertAfter]: insertPosition === AFTER,
+    const contentClassName = cx('content', {
+        active: isDragging,
+        insertBefore: insertPosition === BEFORE,
+        insertAfter: insertPosition === AFTER,
     })
 
     return (
@@ -131,7 +112,7 @@ const FormulaItem = ({
             ref={setNodeRef}
             {...attributes}
             {...listeners}
-            className={isLast ? styles.isLast : null}
+            className={cx('container', { isLast, highlighted })}
             style={style}
         >
             <div className="part">
@@ -140,17 +121,38 @@ const FormulaItem = ({
             <style jsx>{styles}</style>
         </div>
     )
+
+    function onClick() {
+        if (type === 'input' && !isEditing) {
+            inputRef.current.style.display = 'inline'
+            inputRef.current.focus()
+            spanRef.current.style.display = 'none'
+            setIsEditing(true)
+        }
+    }
+
+    function onInputBlur() {
+        inputRef.current.style.display = 'none'
+        spanRef.current.style.display = 'inline'
+        setIsEditing(false)
+    }
+
+    function onInputChange(e) {
+        onChange({ index, value: e.target.value })
+    }
 }
 
 export default FormulaItem
 
 FormulaItem.propTypes = {
+    highlighted: PropTypes.bool,
     id: PropTypes.string,
-    label: PropTypes.string,
-    value: PropTypes.string,
-    type: PropTypes.string,
-    onChange: PropTypes.func,
     isLast: PropTypes.bool,
+    label: PropTypes.string,
+    type: PropTypes.string,
+    value: PropTypes.string,
+    onChange: PropTypes.func,
+    onClickItem: PropTypes.func,
 }
 
 //<>

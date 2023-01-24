@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2023-01-23T12:59:06.030Z\n"
-"PO-Revision-Date: 2023-01-23T12:59:06.030Z\n"
+"POT-Creation-Date: 2023-01-24T08:15:45.439Z\n"
+"PO-Revision-Date: 2023-01-24T08:15:45.439Z\n"
 
 msgid "view only"
 msgstr "view only"
@@ -84,6 +84,9 @@ msgstr "Label shown in column/row headers"
 
 msgid "Check formula"
 msgstr "Check formula"
+
+msgid "Remove item"
+msgstr "Remove item"
 
 msgid "Delete calculation"
 msgstr "Delete calculation"

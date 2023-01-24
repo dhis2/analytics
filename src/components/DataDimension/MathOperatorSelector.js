@@ -5,18 +5,9 @@ import i18n from '../../locales/index.js'
 import Operator from './Operator.js'
 import styles from './styles/MathOperatorSelector.style.js'
 
-const TYPE_INPUT = 'input'
-const TYPE_OPERATOR = 'operator'
-
-// const itemTypes = [
-//     { id: 'plus', class: 'plus', name: '+', type: TYPE_OPERATOR },
-//     { id: 'minus', class: 'minus', name: '-', type: TYPE_OPERATOR },
-//     { id: 'div', class: 'div', name: '/', type: TYPE_OPERATOR },
-//     { id: 'mult', class: 'mult', name: '*', type: TYPE_OPERATOR },
-//     { id: 'openpar', class: 'openpar', name: '(', type: TYPE_OPERATOR },
-//     { id: 'closepar', class: 'closepar', name: ')', type: TYPE_OPERATOR },
-//     { id: 'num', class: 'num', name: '<number>', type: TYPE_INPUT },
-// ]
+export const TYPE_INPUT = 'input'
+export const TYPE_OPERATOR = 'operator'
+export const TYPE_DATAITEM = 'dataitem'
 
 export const getOperators = () => {
     return [

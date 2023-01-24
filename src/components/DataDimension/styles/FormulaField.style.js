@@ -53,13 +53,4 @@ export default css`
         vertical-align: text-bottom;
         padding-top: 1px;
     }
-
-    .highlighted {
-        background: ${theme.secondary800};
-        color: ${colors.white};
-    }
-
-    .highlighted :global(.icon path) {
-        fill: ${colors.white};
-    }
 `

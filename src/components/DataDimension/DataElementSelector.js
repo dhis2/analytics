@@ -17,6 +17,7 @@ import {
 import { getIcon, getTooltipText } from '../../modules/dimensionListItem.js'
 import { useDebounce } from '../../modules/utils.js'
 import { TransferOption } from '../TransferOption.js'
+import { TYPE_DATAITEM } from './MathOperatorSelector.js'
 import styles from './styles/DataElementSelector.style.js'
 
 const getOptions = () => ({
