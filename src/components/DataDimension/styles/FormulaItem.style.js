@@ -2,7 +2,8 @@ import { colors, spacers, elevations, theme } from '@dhis2/ui'
 import css from 'styled-jsx/css'
 
 export default css`
-    .part {
+    .chip {
+        position: relative;
         display: inline-block;
         height: 21px;
         background: ${colors.grey200};
@@ -35,43 +36,58 @@ export default css`
         fill: ${colors.white};
     }
 
-    .isLast {
-        flex: 1;
+    .content {
+        display: inline-flex;
+        cursor: pointer;
+        min-height: 24px;
+        user-select: none;
+        width: fit-content;
+        align-items: center;
+        padding-right: 2px;
     }
 
-    .isOver {
-        z-index: 100;
-    }
-
-    .isEmpty {
-        position: relative;
-        flex-grow: 1;
-        z-index: 100;
-    }
-
-    .isOver::before,
-    .isOver::after {
+    .inactive.insertBefore .content::before,
+    .inactive.insertAfter .content::before,
+    .inactive.insertBefore .content::after,
+    .inactive.insertAfter .content::after {
         content: '';
         position: absolute;
+        z-index: 100;
     }
 
     /* the vertical line */
-    .isOver::before {
-        top: 8px;
+    .content::before {
+        top: 6px;
+        bottom: 0;
         width: 4px;
-        left: -6px;
-        height: 18px;
         background-color: #4c9ffe;
     }
 
     /* the circle */
-    .isOver::after {
+    .content::after {
         top: -4px;
-        left: -10px;
         width: 12px;
         height: 12px;
         border: 4px solid #4c9ffe;
         background: transparent;
         border-radius: 12px;
+    }
+
+    .isLast {
+        flex: 1;
+    }
+
+    .insertBefore .content::before {
+        left: -6px;
+    }
+    .insertBefore .content::after {
+        left: -10px;
+    }
+
+    .insertAfter .content::before {
+        right: -6px;
+    }
+    .insertAfter .content::after {
+        right: -10px;
     }
 `

@@ -137,7 +137,7 @@ const CalculationModal = ({
         setValidationOutput(result)
     }
 
-    console.log('expressionArray', expressionArray)
+    // console.log('expressionArray', expressionArray)
 
     return (
         <>
@@ -414,7 +414,6 @@ const CalculationModal = ({
         setDraggingItem(null)
     }
     function handleDragStart({ active }) {
-        console.log('drag started', active.data.current)
         setDraggingItem(active.data.current)
     }
 
@@ -428,7 +427,7 @@ const CalculationModal = ({
             // dragging item looks like a formula item
             return (
                 <FormulaItem value={draggingItem.value}>
-                    <span>{draggingItem.value}</span>
+                    <span>{label}</span>
                 </FormulaItem>
             )
         } else {
@@ -436,10 +435,7 @@ const CalculationModal = ({
                 return <Operator label={label} />
             } else {
                 return (
-                    <TransferOption
-                        label={draggingItem.label}
-                        value={draggingItem.value}
-                    />
+                    <TransferOption label={draggingItem.label} value={label} />
                 )
             }
         }

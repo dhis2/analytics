@@ -6,7 +6,7 @@ import React, { useState, useRef } from 'react'
 import { DIMENSION_TYPE_DATA_ELEMENT } from '../../modules/dataTypes.js'
 import { getIcon } from '../../modules/dimensionListItem.js'
 import { LAST_DROPZONE_ID } from './CalculationModal.js'
-import { TYPE_INPUT } from './MathOperatorSelector.js'
+import { TYPE_INPUT, TYPE_DATAITEM } from './MathOperatorSelector.js'
 import styles from './styles/FormulaItem.style.js'
 
 const BEFORE = 'BEFORE'
@@ -18,7 +18,7 @@ const FormulaItem = ({ value, children }) => {
     return (
         <>
             <div
-                className={cx('part', {
+                className={cx('chip', {
                     dimension: itemIsDimension(value),
                 })}
             >
@@ -65,24 +65,14 @@ const DraggableFormulaItem = ({
         setNodeRef,
         transform,
         transition,
-        isOver,
     } = useSortable({
         id,
         data: { id, label, type, value },
     })
 
-    if (isOver) {
-        console.log(active?.id, 'is over', over?.id)
-    }
-
-    // console.log("item:", name, "isDragging", isDragging, "over:", over);
-    // console.log("active", active);
-    // console.log("forumulaItemIndex", formulaItemIndex, "index", index);
-
     const activeIndex = active?.data.current.sortable.index || -1
 
     const overLastDropZone = over?.id === LAST_DROPZONE_ID
-    // console.log("overLastDropZone", overLastDropZone);
 
     const style = transform
         ? {
@@ -100,7 +90,6 @@ const DraggableFormulaItem = ({
 
     let insertPosition = undefined
     if (over?.id === id) {
-        // console.log('index, activeIndex', index, activeIndex)
         // This item is being hovered over by a dragged item
         if (activeIndex === -1) {
             //This item came from the expression options
@@ -113,7 +102,6 @@ const DraggableFormulaItem = ({
     if (isLast && overLastDropZone) {
         insertPosition = AFTER
     }
-    // console.log('insertPosition', insertPosition)
 
     const getContent = () => {
         if (type === TYPE_INPUT) {
@@ -134,18 +122,19 @@ const DraggableFormulaItem = ({
                     </span>
                 </>
             )
+        } else if (type === TYPE_DATAITEM) {
+            return (
+                <>
+                    <span className="icon">
+                        {getIcon(DIMENSION_TYPE_DATA_ELEMENT)}
+                    </span>
+                    <span onClick={onClick}>{value || label}</span>
+                </>
+            )
         } else {
             return <span onClick={onClick}>{value || label}</span>
         }
     }
-
-    const contentClassName = cx('content', {
-        active: isDragging,
-        insertBefore: insertPosition === BEFORE,
-        insertAfter: insertPosition === AFTER,
-    })
-
-    // console.log('contentClassName', contentClassName)
 
     return (
         <>
@@ -153,13 +142,24 @@ const DraggableFormulaItem = ({
                 ref={setNodeRef}
                 {...attributes}
                 {...listeners}
-                className={cx('container', { isLast, highlighted })}
+                className={cx('dnd', { isLast })}
                 style={style}
             >
-                <div className={contentClassName}>
-                    <FormulaItem label={label} value={value}>
+                <div
+                    className={cx('chip', {
+                        inactive: !isDragging,
+                        insertBefore: insertPosition === BEFORE,
+                        insertAfter: insertPosition === AFTER,
+                        highlighted,
+                    })}
+                >
+                    <div
+                        className={cx('content', {
+                            dimension: itemIsDimension(value),
+                        })}
+                    >
                         {getContent()}
-                    </FormulaItem>
+                    </div>
                 </div>
             </div>
             <style jsx>{styles}</style>
