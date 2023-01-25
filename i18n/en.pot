@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2023-01-24T06:51:15.595Z\n"
-"PO-Revision-Date: 2023-01-24T06:51:15.595Z\n"
+"POT-Creation-Date: 2023-01-25T09:24:22.892Z\n"
+"PO-Revision-Date: 2023-01-25T09:24:22.892Z\n"
 
 msgid "view only"
 msgstr "view only"
@@ -72,6 +72,24 @@ msgstr "This app could not retrieve required data."
 
 msgid "Network error"
 msgstr "Network error"
+
+msgid "Empty formula"
+msgstr "Empty formula"
+
+msgid "Consecutive math operators"
+msgstr "Consecutive math operators"
+
+msgid "Consecutive data elements"
+msgstr "Consecutive data elements"
+
+msgid "Starts or ends with a math operator"
+msgstr "Starts or ends with a math operator"
+
+msgid "Missing right parenthesis )"
+msgstr "Missing right parenthesis )"
+
+msgid "Missing left parenthesis ("
+msgstr "Missing left parenthesis ("
 
 msgid "Data / Edit calculation"
 msgstr "Data / Edit calculation"

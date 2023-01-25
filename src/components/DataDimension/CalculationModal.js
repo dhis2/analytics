@@ -60,7 +60,13 @@ const CalculationModal = ({
         const leftParenthesisCount = expression.split('(').length - 1
         const rightParenthesisCount = expression.split(')').length - 1
 
-        if (/[-+/*]{2,}/.test(expression)) {
+        if (!expression) {
+            // empty formula
+            result = {
+                status: INVALID_EXPRESSION,
+                message: i18n.t('Empty formula'),
+            }
+        } else if (/[-+/*]{2,}/.test(expression)) {
             // two math operators next to each other
             result = {
                 status: INVALID_EXPRESSION,
