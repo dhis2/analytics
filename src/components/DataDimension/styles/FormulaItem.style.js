@@ -4,20 +4,24 @@ import css from 'styled-jsx/css'
 export default css`
     .chip {
         position: relative;
-        display: inline-block;
-        height: 21px;
-        background: ${colors.grey200};
+        display: flex;
+        width: fit-content;
+        background: ${colors.grey500};
         font-size: 14px;
         line-height: 16px;
-        padding: 2px ${spacers.dp4};
-        margin: ${spacers.dp4} 0 0 0;
         border-radius: 3px;
         user-select: none;
         box-shadow: ${elevations.e100};
     }
 
-    .dimension {
-        padding: 2px ${spacers.dp8} 2px ${spacers.dp4};
+    .content {
+        display: inline-flex;
+        cursor: pointer;
+        min-height: 24px;
+        user-select: none;
+        width: fit-content;
+        align-items: center;
+        padding: 4px;
     }
 
     .icon {
@@ -34,16 +38,6 @@ export default css`
 
     .highlighted :global(.icon path) {
         fill: ${colors.white};
-    }
-
-    .content {
-        display: inline-flex;
-        cursor: pointer;
-        min-height: 24px;
-        user-select: none;
-        width: fit-content;
-        align-items: center;
-        padding-right: 2px;
     }
 
     .inactive.insertBefore .content::before,

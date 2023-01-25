@@ -117,22 +117,37 @@ const DraggableFormulaItem = ({
                         name={label}
                         value={value}
                     />
-                    <span ref={spanRef} onClick={onClick}>
+                    <span
+                        className="label input"
+                        ref={spanRef}
+                        onClick={onClick}
+                    >
                         {value || label}
                     </span>
+                    <style jsx>{styles}</style>
                 </>
             )
         } else if (type === TYPE_DATAITEM) {
             return (
                 <>
-                    <span className="icon">
+                    <span className="icon dataitem">
                         {getIcon(DIMENSION_TYPE_DATA_ELEMENT)}
                     </span>
-                    <span onClick={onClick}>{value || label}</span>
+                    <span className="label dataitem" onClick={onClick}>
+                        {value || label}
+                    </span>
+                    <style jsx>{styles}</style>
                 </>
             )
         } else {
-            return <span onClick={onClick}>{value || label}</span>
+            return (
+                <>
+                    <span className="label operator" onClick={onClick}>
+                        {value || label}
+                    </span>
+                    <style jsx>{styles}</style>
+                </>
+            )
         }
     }
 
