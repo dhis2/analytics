@@ -3,6 +3,7 @@ import css from 'styled-jsx/css'
 
 export default css`
     .wrapper {
+        position: relative;
         display: flex;
         align-items: flex-start;
         align-content: flex-start;

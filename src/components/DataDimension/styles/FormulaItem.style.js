@@ -6,7 +6,7 @@ export default css`
         position: relative;
         display: flex;
         width: fit-content;
-        background: ${colors.grey500};
+        background: ${colors.grey200};
         font-size: 14px;
         line-height: 16px;
         border-radius: 3px;
@@ -21,7 +21,7 @@ export default css`
         user-select: none;
         width: fit-content;
         align-items: center;
-        padding: 4px;
+        padding: 2px;
     }
 
     .icon {
@@ -31,6 +31,48 @@ export default css`
         padding-top: 1px;
     }
 
+    .inputwrapper input {
+        background-color: transparent;
+        border: 1px dashed #a0adba;
+        padding: 0 0 0 2px;
+    }
+
+    .inputwrapper input:hover,
+    .inputwrapper input:focus {
+        background: white;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+    }
+
+    .inputWrap {
+        position: relative;
+    }
+    .inputWrap .input {
+        position: absolute;
+        width: 100%;
+        left: 0;
+    }
+    .widthMachine {
+        /* Add extra space for number spinner */
+        padding: 0 1rem;
+        visibility: hidden;
+    }
+
+    .dndHandle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: none;
+        border: none;
+        padding: 0;
+        vertical-align: middle;
+        width: 20px;
+        height: 20px;
+    }
+
+    .dndHandle:hover {
+        cursor: grab;
+    }
+
     .highlighted {
         background: ${theme.secondary800};
         color: ${colors.white};
@@ -38,6 +80,14 @@ export default css`
 
     .highlighted :global(.icon path) {
         fill: ${colors.white};
+    }
+
+    .operator .label {
+        padding: 0 6px;
+    }
+
+    .content.operator {
+        cursor: grab;
     }
 
     .inactive.insertBefore .content::before,

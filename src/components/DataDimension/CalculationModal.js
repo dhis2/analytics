@@ -137,8 +137,6 @@ const CalculationModal = ({
         setValidationOutput(result)
     }
 
-    // console.log('expressionArray', expressionArray)
-
     return (
         <>
             <Modal dataTest={`calculation-modal`} position="top" large>
@@ -383,7 +381,7 @@ const CalculationModal = ({
             if (destAxisId === LAST_DROPZONE_ID) {
                 setExpressionArray([...expressionArray, newItem])
             } else if (destAxisId === FORMULA_BOX_ID) {
-                const destIndex = over.data.current.sortable.index
+                const destIndex = over.data.current.sortable.index + 1
                 const sourceList = Array.from(expressionArray)
 
                 const newFormulaItems = [
@@ -422,22 +420,22 @@ const CalculationModal = ({
     }
 
     function getDraggingItem() {
-        const label = draggingItem.value || draggingItem.label
+        const displayLabel = draggingItem.value || draggingItem.label
         if (draggingItem.sortable.containerId === FORMULA_BOX_ID) {
-            // dragging item looks like a formula item
             return (
-                <FormulaItem value={draggingItem.value}>
-                    <span>{label}</span>
+                <FormulaItem type={draggingItem.type}>
+                    <span>{displayLabel}</span>
                 </FormulaItem>
             )
+        } else if ([TYPE_OPERATOR, TYPE_INPUT].includes(draggingItem.type)) {
+            return <Operator label={displayLabel} />
         } else {
-            if ([TYPE_OPERATOR, TYPE_INPUT].includes(draggingItem.type)) {
-                return <Operator label={label} />
-            } else {
-                return (
-                    <TransferOption label={draggingItem.label} value={label} />
-                )
-            }
+            return (
+                <TransferOption
+                    label={draggingItem.label}
+                    value={displayLabel}
+                />
+            )
         }
     }
 
