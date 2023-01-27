@@ -45,6 +45,7 @@ const LeftHeader = ({
     setSubGroup,
     displayNameProp,
     dataTest,
+    supportsEDI,
 }) => (
     <>
         <div className="leftHeader">
@@ -61,6 +62,7 @@ const LeftHeader = ({
                 currentDataType={dataType}
                 onChange={setDataType}
                 dataTest={`${dataTest}-data-types-select-field`}
+                includeCalculations={supportsEDI}
             />
             {dataTypes[dataType] &&
                 dataType !== DIMENSION_TYPE_EXPRESSION_DIMENSION_ITEM && (
@@ -90,6 +92,7 @@ LeftHeader.propTypes = {
     setSearchTerm: PropTypes.func,
     setSubGroup: PropTypes.func,
     subGroup: PropTypes.string,
+    supportsEDI: PropTypes.bool,
 }
 
 const EmptySelection = () => (
@@ -221,6 +224,7 @@ const ItemSelector = ({
     displayNameProp,
     infoBoxMessage,
     dataTest,
+    supportsEDI,
 }) => {
     const [state, setState] = useState({
         searchTerm: '',
@@ -460,18 +464,21 @@ const ItemSelector = ({
                         setSearchTerm={setSearchTerm}
                         displayNameProp={displayNameProp}
                         dataTest={`${dataTest}-left-header`}
+                        supportsEDI={supportsEDI}
                     />
                 }
                 leftFooter={
-                    <div className="calculation-button">
-                        <Button
-                            icon={<IconAdd24 />}
-                            onClick={() => setCurrentCalculation({})}
-                            small
-                        >
-                            {i18n.t('Calculation')}
-                        </Button>
-                    </div>
+                    supportsEDI ? (
+                        <div className="calculation-button">
+                            <Button
+                                icon={<IconAdd24 />}
+                                onClick={() => setCurrentCalculation({})}
+                                small
+                            >
+                                {i18n.t('Calculation')}
+                            </Button>
+                        </div>
+                    ) : undefined
                 }
                 enableOrderChange
                 height={TRANSFER_HEIGHT}
@@ -493,7 +500,8 @@ const ItemSelector = ({
                         dataTest={`${dataTest}-transfer-option`}
                         onEditClick={
                             getItemType(props.value) ===
-                            DIMENSION_TYPE_EXPRESSION_DIMENSION_ITEM
+                                DIMENSION_TYPE_EXPRESSION_DIMENSION_ITEM &&
+                            supportsEDI
                                 ? () =>
                                       setCurrentCalculation({
                                           id: props.value,
@@ -507,7 +515,7 @@ const ItemSelector = ({
                 )}
                 dataTest={`${dataTest}-transfer`}
             />
-            {currentCalculation && (
+            {currentCalculation && supportsEDI && (
                 <CalculationModal
                     calculation={currentCalculation}
                     onSave={onSaveCalculation}
@@ -536,6 +544,7 @@ ItemSelector.propTypes = {
             type: PropTypes.string,
         })
     ),
+    supportsEDI: PropTypes.bool,
 }
 
 ItemSelector.defaultProps = {
