@@ -12,30 +12,7 @@ import styles from './styles/FormulaItem.style.js'
 const BEFORE = 'BEFORE'
 const AFTER = 'AFTER'
 
-const FormulaItem = ({ type, children }) => {
-    return (
-        <>
-            <div className="chip">
-                {type === TYPE_DATAITEM && (
-                    <span className="icon">
-                        {getIcon(DIMENSION_TYPE_DATA_ELEMENT)}
-                    </span>
-                )}
-                {children}
-            </div>
-            <style jsx>{styles}</style>
-        </>
-    )
-}
-
-FormulaItem.propTypes = {
-    children: PropTypes.node,
-    type: PropTypes.string,
-}
-
-export { FormulaItem }
-
-const DraggableFormulaItem = ({
+const FormulaItem = ({
     id,
     label,
     type,
@@ -58,8 +35,11 @@ const DraggableFormulaItem = ({
         transition,
     } = useSortable({
         id,
+        attributes: { tabIndex: isLast ? -1 : 0 },
         data: { id, label, type, value },
     })
+
+    console.log('attributes', attributes)
 
     const activeIndex = active?.data.current.sortable.index || -1
 
@@ -108,17 +88,15 @@ const DraggableFormulaItem = ({
     if (type === TYPE_INPUT) {
         return (
             <>
-                <div className={cx('inputwrapper', { isLast })}>
-                    <div className={chipClasses}>
+                <div
+                    ref={setNodeRef}
+                    {...attributes}
+                    {...listeners}
+                    className={cx('inputwrapper', { isLast })}
+                >
+                    <div className={chipClasses} tabIndex={isLast ? 0 : -1}>
                         <div className="content">
-                            <div
-                                ref={setNodeRef}
-                                {...attributes}
-                                {...listeners}
-                                className="dndHandle"
-                            >
-                                {DragHandleIcon}
-                            </div>
+                            <div className="dndHandle">{DragHandleIcon}</div>
                             <span className="inputWrap">
                                 <span
                                     className="widthMachine"
@@ -148,10 +126,10 @@ const DraggableFormulaItem = ({
                     ref={setNodeRef}
                     {...attributes}
                     {...listeners}
-                    className="dnd"
+                    className={cx('dnd', { isLast })}
                     style={style}
                 >
-                    <div className={chipClasses}>
+                    <div className={chipClasses} tabIndex={isLast ? 0 : -1}>
                         <div className="content dataitem">
                             <span className="icon">
                                 {getIcon(DIMENSION_TYPE_DATA_ELEMENT)}
@@ -173,7 +151,7 @@ const DraggableFormulaItem = ({
                     className={cx('dnd', { isLast })}
                     style={style}
                 >
-                    <div className={chipClasses}>
+                    <div className={chipClasses} tabIndex={isLast ? 0 : -1}>
                         <div className="content operator">
                             <span className="label">{value || label}</span>
                         </div>
@@ -189,7 +167,7 @@ const DraggableFormulaItem = ({
     }
 }
 
-DraggableFormulaItem.propTypes = {
+FormulaItem.propTypes = {
     highlighted: PropTypes.bool,
     id: PropTypes.string,
     isLast: PropTypes.bool,
@@ -200,4 +178,4 @@ DraggableFormulaItem.propTypes = {
     onClickItem: PropTypes.func,
 }
 
-export default DraggableFormulaItem
+export default FormulaItem

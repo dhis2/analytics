@@ -2,13 +2,12 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import { DIMENSION_TYPE_DATA_ELEMENT } from '../../modules/dataTypes.js'
 import { getIcon } from '../../modules/dimensionListItem.js'
-import { TYPE_DATAITEM } from './constants.js'
+import { TYPE_DATAITEM, TYPE_INPUT } from './constants.js'
 import styles from './styles/DraggingItem.style.js'
 
 const DraggingItem = ({ item }) => {
-    const displayLabel = item.value || item.label
-
-    console.log('item', item)
+    const displayLabel =
+        item.type === TYPE_INPUT ? item.value || item.label : item.label
 
     return (
         <>

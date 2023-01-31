@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import { LAST_DROPZONE_ID, FORMULA_BOX_ID } from './constants.js'
 import DropZone from './DropZone.js'
-import DraggableFormulaItem from './FormulaItem.js'
+import FormulaItem from './FormulaItem.js'
 import styles from './styles/FormulaField.style.js'
 
 // TODO: Add fn for double-clicking on a part to remove it from the formula
@@ -24,7 +24,7 @@ const FormulaField = ({
 
     function getFormulaItems() {
         return expressionArray.map((item, i) => (
-            <DraggableFormulaItem
+            <FormulaItem
                 key={`${item.label}-${i}`}
                 id={item.id}
                 index={i}
