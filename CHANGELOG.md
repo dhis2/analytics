@@ -1,3 +1,10 @@
+## [24.4.2](https://github.com/dhis2/analytics/compare/v24.4.1...v24.4.2) (2023-01-25)
+
+
+### Bug Fixes
+
+* use page number from response ([#1413](https://github.com/dhis2/analytics/issues/1413)) ([b5523bf](https://github.com/dhis2/analytics/commit/b5523bf9701198645a7029ea48e568ab7d4859c5))
+
 ## [24.4.1](https://github.com/dhis2/analytics/compare/v24.4.0...v24.4.1) (2023-01-13)
 
 
