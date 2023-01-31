@@ -9,6 +9,7 @@ const DataDimension = ({
     selectedDimensions,
     displayNameProp,
     infoBoxMessage,
+    onCalculationSave,
 }) => {
     const { serverVersion } = useConfig()
     const supportsEDI =
@@ -41,6 +42,7 @@ const DataDimension = ({
             infoBoxMessage={infoBoxMessage}
             dataTest={'data-dimension'}
             supportsEDI={supportsEDI}
+            onEDISave={onCalculationSave}
         />
     )
 }
@@ -55,6 +57,7 @@ DataDimension.propTypes = {
     ).isRequired,
     onSelect: PropTypes.func.isRequired,
     infoBoxMessage: PropTypes.string,
+    onCalculationSave: PropTypes.func,
 }
 
 DataDimension.defaultProps = {

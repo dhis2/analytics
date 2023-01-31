@@ -225,6 +225,7 @@ const ItemSelector = ({
     infoBoxMessage,
     dataTest,
     supportsEDI,
+    onEDISave,
 }) => {
     const [state, setState] = useState({
         searchTerm: '',
@@ -386,6 +387,13 @@ const ItemSelector = ({
             })
         }
 
+        onEDISave({
+            id,
+            name,
+            expression,
+            type: DIMENSION_TYPE_EXPRESSION_DIMENSION_ITEM,
+        })
+
         // close the modal
         setCurrentCalculation()
 
@@ -545,6 +553,7 @@ ItemSelector.propTypes = {
         })
     ),
     supportsEDI: PropTypes.bool,
+    onEDISave: PropTypes.func,
 }
 
 ItemSelector.defaultProps = {
