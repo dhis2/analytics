@@ -20,7 +20,7 @@ const FormulaItem = ({
     onChange,
     isLast,
     highlighted,
-    // onClickItem,
+    onClickItem,
 }) => {
     const {
         attributes,
@@ -38,8 +38,6 @@ const FormulaItem = ({
         attributes: { tabIndex: isLast ? -1 : 0 },
         data: { id, label, type, value },
     })
-
-    console.log('attributes', attributes)
 
     const activeIndex = active?.data.current.sortable.index || -1
 
@@ -85,6 +83,12 @@ const FormulaItem = ({
         highlighted,
     })
 
+    const onClick = (e) => {
+        if (e.target.tagName !== 'INPUT') {
+            onClickItem()
+        }
+    }
+
     if (type === TYPE_INPUT) {
         return (
             <>
@@ -94,7 +98,11 @@ const FormulaItem = ({
                     {...listeners}
                     className={cx('inputwrapper', { isLast })}
                 >
-                    <div className={chipClasses} tabIndex={isLast ? 0 : -1}>
+                    <div
+                        className={chipClasses}
+                        tabIndex={isLast ? 0 : -1}
+                        onClick={onClick}
+                    >
                         <div className="content">
                             <div className="dndHandle">{DragHandleIcon}</div>
                             <span className="inputWrap">
@@ -119,28 +127,6 @@ const FormulaItem = ({
                 <style jsx>{styles}</style>
             </>
         )
-    } else if (type === TYPE_DATAITEM) {
-        return (
-            <>
-                <div
-                    ref={setNodeRef}
-                    {...attributes}
-                    {...listeners}
-                    className={cx('dnd', { isLast })}
-                    style={style}
-                >
-                    <div className={chipClasses} tabIndex={isLast ? 0 : -1}>
-                        <div className="content dataitem">
-                            <span className="icon">
-                                {getIcon(DIMENSION_TYPE_DATA_ELEMENT)}
-                            </span>
-                            <span className="label">{label || value}</span>
-                        </div>
-                    </div>
-                    <style jsx>{styles}</style>
-                </div>
-            </>
-        )
     } else {
         return (
             <>
@@ -151,13 +137,22 @@ const FormulaItem = ({
                     className={cx('dnd', { isLast })}
                     style={style}
                 >
-                    <div className={chipClasses} tabIndex={isLast ? 0 : -1}>
-                        <div className="content operator">
-                            <span className="label">{value || label}</span>
+                    <div
+                        className={chipClasses}
+                        tabIndex={isLast ? 0 : -1}
+                        onClick={onClick}
+                    >
+                        <div className="content dataitem">
+                            {type === TYPE_DATAITEM && (
+                                <span className="icon">
+                                    {getIcon(DIMENSION_TYPE_DATA_ELEMENT)}
+                                </span>
+                            )}
+                            <span className="label">{label || value}</span>
                         </div>
                     </div>
+                    <style jsx>{styles}</style>
                 </div>
-                <style jsx>{styles}</style>
             </>
         )
     }

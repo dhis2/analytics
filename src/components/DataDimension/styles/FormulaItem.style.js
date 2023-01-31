@@ -78,7 +78,8 @@ export default css`
         fill: ${colors.white};
     }
 
-    .operator .label {
+    .operator .label,
+    .dataitem .label {
         padding: 0 6px;
     }
 
