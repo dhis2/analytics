@@ -69,10 +69,6 @@ export default css`
         height: 20px;
     }
 
-    .dndHandle:hover {
-        cursor: grab;
-    }
-
     .highlighted {
         background: ${theme.secondary800};
         color: ${colors.white};
@@ -84,10 +80,6 @@ export default css`
 
     .operator .label {
         padding: 0 6px;
-    }
-
-    .content.operator {
-        cursor: grab;
     }
 
     .inactive.insertBefore .content::before,

@@ -2,7 +2,7 @@ import { useDroppable } from '@dnd-kit/core'
 import cx from 'classnames'
 import PropTypes from 'prop-types'
 import React from 'react'
-import { FIRST_DROPZONE_ID } from './CalculationModal.js'
+import { FIRST_DROPZONE_ID } from './constants.js'
 import styles from './styles/DropZone.style.js'
 
 const DropZone = ({ firstElementId, overLastDropZone }) => {

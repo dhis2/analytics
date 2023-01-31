@@ -2,7 +2,7 @@ import { useDroppable } from '@dnd-kit/core'
 import { SortableContext } from '@dnd-kit/sortable'
 import PropTypes from 'prop-types'
 import React from 'react'
-import { LAST_DROPZONE_ID, FORMULA_BOX_ID } from './CalculationModal.js'
+import { LAST_DROPZONE_ID, FORMULA_BOX_ID } from './constants.js'
 import DropZone from './DropZone.js'
 import DraggableFormulaItem from './FormulaItem.js'
 import styles from './styles/FormulaField.style.js'
@@ -14,13 +14,9 @@ const FormulaField = ({
     onPartSelection,
     setExpressionItemValue,
 }) => {
-    const { over, isOver, setNodeRef } = useDroppable({
+    const { over, setNodeRef } = useDroppable({
         id: LAST_DROPZONE_ID,
     })
-
-    const style = {
-        opacity: isOver ? 1 : 0.5,
-    }
 
     const overLastDropZone = over?.id === LAST_DROPZONE_ID
 
@@ -44,7 +40,7 @@ const FormulaField = ({
     }
 
     return (
-        <div className="wrapper lastDropZone" ref={setNodeRef} style={style}>
+        <div className="wrapper lastDropZone" ref={setNodeRef}>
             <SortableContext id={FORMULA_BOX_ID} items={itemIds}>
                 <>
                     <DropZone

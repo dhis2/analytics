@@ -99,12 +99,9 @@ const DataElementSelector = ({
     const [hasNextPage, setHasNextPage] = useState(true)
     const debouncedSearchTerm = useDebounce(searchInput, 200)
 
-    const { isOver, setNodeRef } = useSortable({
+    const { setNodeRef } = useSortable({
         id: 'dataitems',
     })
-    const style = {
-        opacity: isOver ? 1 : 0.5,
-    }
 
     if (selectedItems.length) {
         // FIXME: temporarily removes lint errors
@@ -224,11 +221,7 @@ const DataElementSelector = ({
             </div>
             <div className="dimension-list-wrapper" ref={rootRef}>
                 <div className="dimension-list">
-                    <div
-                        className="draggable-items"
-                        ref={setNodeRef}
-                        style={style}
-                    >
+                    <div className="draggable-items" ref={setNodeRef}>
                         {options.map(({ label, value, type, disabled }) => (
                             <DraggableTransferOption
                                 label={label}

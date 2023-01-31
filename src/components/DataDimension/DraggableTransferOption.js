@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import { getIcon, getTooltipText } from '../../modules/dimensionListItem.js'
 import { TransferOption } from '../TransferOption.js'
-import styles from './styles/Operator.style.js'
+import styles from './styles/DraggableTransferOption.style.js'
 
 const DraggableTransferOption = ({
     label,
@@ -20,6 +20,10 @@ const DraggableTransferOption = ({
     const style = {
         // Outputs `translate3d(x, y, 0)`
         transform: CSS.Translate.toString(transform),
+    }
+
+    if (transform) {
+        console.log('dataitem transform', transform)
     }
 
     return (

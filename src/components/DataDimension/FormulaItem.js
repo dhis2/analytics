@@ -2,12 +2,11 @@ import { useSortable } from '@dnd-kit/sortable'
 import { CSS } from '@dnd-kit/utilities'
 import cx from 'classnames'
 import PropTypes from 'prop-types'
-import React, { useState, useEffect, useRef } from 'react'
+import React from 'react'
 import { DIMENSION_TYPE_DATA_ELEMENT } from '../../modules/dataTypes.js'
 import { getIcon } from '../../modules/dimensionListItem.js'
-import { LAST_DROPZONE_ID } from './CalculationModal.js'
+import { TYPE_INPUT, TYPE_DATAITEM, LAST_DROPZONE_ID } from './constants.js'
 import DragHandleIcon from './DragHandleIcon.js'
-import { TYPE_INPUT, TYPE_DATAITEM } from './MathOperatorSelector.js'
 import styles from './styles/FormulaItem.style.js'
 
 const BEFORE = 'BEFORE'
@@ -157,7 +156,7 @@ const DraggableFormulaItem = ({
                             <span className="icon">
                                 {getIcon(DIMENSION_TYPE_DATA_ELEMENT)}
                             </span>
-                            <span className="label">{value || label}</span>
+                            <span className="label">{label || value}</span>
                         </div>
                     </div>
                     <style jsx>{styles}</style>

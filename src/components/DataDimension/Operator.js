@@ -36,6 +36,10 @@ const DraggableOperator = ({ id, label, type, onClick }) => {
         transform: CSS.Translate.toString(transform),
     }
 
+    if (transform) {
+        console.log('operator transform', transform)
+    }
+
     return (
         <div {...attributes} {...listeners} ref={setNodeRef} style={style}>
             <Operator label={label} onClick={() => onClick({ id, label })} />

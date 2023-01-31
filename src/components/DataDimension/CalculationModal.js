@@ -25,17 +25,11 @@ import {
     parseExpressionToArray,
     parseArrayToExpression,
 } from '../../modules/expressions.js'
-import { TransferOption } from '../TransferOption.js'
+import { TYPE_DATAITEM, LAST_DROPZONE_ID, FORMULA_BOX_ID } from './constants.js'
 import DataElementSelector from './DataElementSelector.js'
+import DraggingItem from './DraggingItem.js'
 import FormulaField from './FormulaField.js'
-import { FormulaItem } from './FormulaItem.js'
-import MathOperatorSelector, {
-    getOperators,
-    TYPE_DATAITEM,
-    TYPE_OPERATOR,
-    TYPE_INPUT,
-} from './MathOperatorSelector.js'
-import { Operator } from './Operator.js'
+import MathOperatorSelector, { getOperators } from './MathOperatorSelector.js'
 import styles from './styles/CalculationModal.style.js'
 
 const VALID_EXPRESSION = 'OK'
@@ -48,15 +42,8 @@ const activateAt15pixels = {
 }
 
 const FIRST_POSITION = 0
-// const LAST_POSITION = -1;
-export const FIRST = 'first'
-export const LAST = 'last'
 
 const OPTIONS_PANEL = 'Sortable'
-
-export const FIRST_DROPZONE_ID = 'firstdropzone'
-export const LAST_DROPZONE_ID = 'lastdropzone'
-export const FORMULA_BOX_ID = 'formulabox'
 
 const CalculationModal = ({
     calculation = {},
@@ -254,7 +241,7 @@ const CalculationModal = ({
                         <DragOverlay dropAnimation={null}>
                             {draggingItem ? (
                                 <span className="dragOverlay">
-                                    {getDraggingItem()}
+                                    <DraggingItem item={draggingItem} />
                                 </span>
                             ) : null}
                         </DragOverlay>
@@ -368,7 +355,7 @@ const CalculationModal = ({
 
         if (sourceAxisId === OPTIONS_PANEL) {
             let newItem
-            if (active.data.current.type === 'DATA_ELEMENT') {
+            if (active.data.current.type === TYPE_DATAITEM) {
                 newItem = getNewDataItem(
                     active.data.current.id,
                     active.data.current.label
@@ -412,31 +399,12 @@ const CalculationModal = ({
         setDraggingItem(null)
     }
     function handleDragStart({ active }) {
+        console.log('setDraggingitem', active.data.current)
         setDraggingItem(active.data.current)
     }
 
     function handleDragCancel() {
         setDraggingItem(null)
-    }
-
-    function getDraggingItem() {
-        const displayLabel = draggingItem.value || draggingItem.label
-        if (draggingItem.sortable.containerId === FORMULA_BOX_ID) {
-            return (
-                <FormulaItem type={draggingItem.type}>
-                    <span>{displayLabel}</span>
-                </FormulaItem>
-            )
-        } else if ([TYPE_OPERATOR, TYPE_INPUT].includes(draggingItem.type)) {
-            return <Operator label={displayLabel} />
-        } else {
-            return (
-                <TransferOption
-                    label={draggingItem.label}
-                    value={displayLabel}
-                />
-            )
-        }
     }
 
     function setExpressionItemValue({ index, value }) {
