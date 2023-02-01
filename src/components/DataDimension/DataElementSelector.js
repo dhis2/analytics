@@ -7,13 +7,14 @@ import {
 } from '@dhis2/ui'
 import { useDebounceCallback } from '@react-hook/debounce'
 import PropTypes from 'prop-types'
-import React, { useRef, useState } from 'react'
-import { apiFetchOptions } from '../../api/dimensions.js'
+import React, { useEffect, useRef, useState } from 'react'
+import { apiFetchOptions, apiFetchGroups } from '../../api/dimensions.js'
 import i18n from '../../locales/index.js'
 import {
     TOTALS,
     DETAIL,
     DIMENSION_TYPE_DATA_ELEMENT,
+    dataTypeMap as dataTypes,
 } from '../../modules/dataTypes.js'
 import { getIcon, getTooltipText } from '../../modules/dimensionListItem.js'
 import { TransferOption } from '../TransferOption.js'
@@ -24,8 +25,32 @@ const getOptions = () => ({
     [DETAIL]: i18n.t('Details only'),
 })
 
-const GroupSelector = ({ currentValue, onChange }) => {
-    // const options = getOptions()
+const GroupSelector = ({ currentValue, onChange, displayNameProp }) => {
+    const dataEngine = useDataEngine()
+
+    const [loading, setLoading] = useState(true)
+    const [groups, setGroups] = useState([])
+
+    const defaultGroup = dataTypes[DIMENSION_TYPE_DATA_ELEMENT]?.defaultGroup
+
+    useEffect(() => {
+        const fetchGroups = async () => {
+            setLoading(true)
+
+            const result = await apiFetchGroups(
+                dataEngine,
+                DIMENSION_TYPE_DATA_ELEMENT,
+                displayNameProp
+            )
+
+            setGroups(result)
+
+            setLoading(false)
+        }
+
+        fetchGroups()
+    }, [dataEngine, displayNameProp])
+
     return (
         <div className="group-select">
             <SingleSelectField
@@ -33,14 +58,25 @@ const GroupSelector = ({ currentValue, onChange }) => {
                 selected={currentValue}
                 onChange={(ref) => onChange(ref.selected)}
                 dense
+                loading={loading}
+                loadingText={i18n.t('Loading')}
             >
-                {/* {Object.entries(options).map((option) => (
+                {defaultGroup ? (
                     <SingleSelectOption
-                        value={option[0]}
-                        key={option[0]}
-                        label={option[1]}
+                        value={defaultGroup.id}
+                        key={defaultGroup.id}
+                        label={defaultGroup.getName()}
                     />
-                ))} */}
+                ) : null}
+                {!loading
+                    ? groups.map((group) => (
+                          <SingleSelectOption
+                              value={group.id}
+                              key={group.id}
+                              label={group.name}
+                          />
+                      ))
+                    : null}
             </SingleSelectField>
             <style jsx>{styles}</style>
         </div>
@@ -49,6 +85,7 @@ const GroupSelector = ({ currentValue, onChange }) => {
 
 GroupSelector.propTypes = {
     currentValue: PropTypes.string.isRequired,
+    displayNameProp: PropTypes.string.isRequired,
     onChange: PropTypes.func.isRequired,
 }
 
@@ -244,6 +281,7 @@ const DataElementSelector = ({
                 <GroupSelector
                     currentValue={group}
                     onChange={(group) => onFilterChange({ group })}
+                    displayNameProp={displayNameProp}
                 />
 
                 <DisaggregationSelector
