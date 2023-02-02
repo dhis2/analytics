@@ -40,7 +40,7 @@ const MathOperatorSelector = ({ onSelect }) => {
                             label={label}
                             type={type}
                             value={value}
-                            onClick={onSelect}
+                            onDoubleClick={onSelect}
                         />
                     ))}
                 </div>

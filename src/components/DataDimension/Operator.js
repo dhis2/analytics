@@ -4,10 +4,10 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import styles from './styles/Operator.style.js'
 
-const Operator = ({ label, onClick }) => {
+const Operator = ({ label, onDoubleClick }) => {
     return (
         <>
-            <div className="operator" onClick={onClick}>
+            <div className="operator" onDoubleClick={onDoubleClick}>
                 <span>{label}</span>
             </div>
             <style jsx>{styles}</style>
@@ -17,16 +17,16 @@ const Operator = ({ label, onClick }) => {
 
 Operator.propTypes = {
     label: PropTypes.string,
-    onClick: PropTypes.func,
+    onDoubleClick: PropTypes.func,
 }
 
-Operator.defaultProps = {
-    onClick: Function.prototype,
+Operator.defaultValues = {
+    onDoubleClick: Function.prototype,
 }
 
 export { Operator }
 
-const DraggableOperator = ({ id, label, type, onClick }) => {
+const DraggableOperator = ({ id, label, type, onDoubleClick }) => {
     const { attributes, listeners, setNodeRef, transform } = useSortable({
         id,
         data: { id, label, type },
@@ -42,16 +42,20 @@ const DraggableOperator = ({ id, label, type, onClick }) => {
 
     return (
         <div {...attributes} {...listeners} ref={setNodeRef} style={style}>
-            <Operator label={label} onClick={() => onClick({ id, label })} />
+            <Operator
+                label={label}
+                id={id}
+                onDoubleClick={() => onDoubleClick({ id })}
+            />
         </div>
     )
 }
 
 DraggableOperator.propTypes = {
+    onDoubleClick: PropTypes.func.isRequired,
     id: PropTypes.string,
     label: PropTypes.string,
     type: PropTypes.string,
-    onClick: PropTypes.func,
 }
 
 export default DraggableOperator

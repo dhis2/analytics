@@ -45,6 +45,7 @@ const DraggableTransferOption = ({
                         type,
                     })}
                     disabled={disabled}
+                    onClick={Function.prototype}
                     onDoubleClick={onSelect}
                 />
             </div>
