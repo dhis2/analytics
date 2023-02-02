@@ -25,7 +25,13 @@ import {
     parseExpressionToArray,
     parseArrayToExpression,
 } from '../../modules/expressions.js'
-import { TYPE_DATAITEM, LAST_DROPZONE_ID, FORMULA_BOX_ID } from './constants.js'
+import {
+    TYPE_DATAITEM,
+    TYPE_INPUT,
+    TYPE_OPERATOR,
+    LAST_DROPZONE_ID,
+    FORMULA_BOX_ID,
+} from './constants.js'
 import DataElementSelector from './DataElementSelector.js'
 import DraggingItem from './DraggingItem.js'
 import FormulaField from './FormulaField.js'
@@ -184,6 +190,47 @@ const CalculationModal = ({
                                 <p>
                                     {/* TODO: Remove, for testing only */}
                                     {parseArrayToExpression(expressionArray)}
+                                </p>
+                                <p>
+                                    <span>Data element dragging item: </span>
+                                    <DraggingItem
+                                        item={{
+                                            type: TYPE_DATAITEM,
+                                            label: 'ANC 4th or more visits',
+                                        }}
+                                    />
+                                </p>
+                                <p>
+                                    <span>Number dragging item: </span>
+                                    <DraggingItem
+                                        item={{
+                                            type: TYPE_INPUT,
+                                            label: '<number>+',
+                                            value: '55',
+                                        }}
+                                    />
+                                </p>
+                                <p>
+                                    <span>
+                                        Number dragging item w/o value:{' '}
+                                    </span>
+                                    <DraggingItem
+                                        item={{
+                                            type: TYPE_INPUT,
+                                            label: '<number>+',
+                                            value: '',
+                                        }}
+                                    />
+                                </p>
+                                <p>
+                                    <span>Operator dragging item: </span>
+                                    <DraggingItem
+                                        item={{
+                                            type: TYPE_OPERATOR,
+                                            label: '+',
+                                            value: '+',
+                                        }}
+                                    />
                                 </p>
                                 <div className="actions-wrapper">
                                     <Button small onClick={validateExpression}>
