@@ -226,6 +226,7 @@ const DataElementSelector = ({
                                 type,
                             })}
                             disabled={disabled}
+                            onClick={Function.prototype}
                             onDoubleClick={onSelect}
                         />
                     ))}
