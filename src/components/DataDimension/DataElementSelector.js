@@ -1,5 +1,8 @@
 import { useDataEngine } from '@dhis2/app-runtime'
 import {
+    Center,
+    CircularLoader,
+    Cover,
     InputField,
     IntersectionDetector,
     SingleSelectField,
@@ -13,6 +16,7 @@ import i18n from '../../locales/index.js'
 import {
     TOTALS,
     DETAIL,
+    DIMENSION_TYPE_ALL,
     DIMENSION_TYPE_DATA_ELEMENT,
     dataTypeMap as dataTypes,
 } from '../../modules/dataTypes.js'
@@ -117,17 +121,14 @@ DisaggregationSelector.propTypes = {
     onChange: PropTypes.func.isRequired,
 }
 
-const DataElementSelector = ({
-    displayNameProp,
-    selectedItems = [],
-    onSelect,
-}) => {
+const DataElementSelector = ({ displayNameProp, onSelect }) => {
     const dataEngine = useDataEngine()
 
     const [searchTerm, setSearchTerm] = useState('')
-    const [group, setGroup] = useState()
+    const [group, setGroup] = useState(DIMENSION_TYPE_ALL)
     const [subGroup, setSubGroup] = useState(TOTALS)
     const [options, setOptions] = useState([])
+    const [loading, setLoading] = useState(true)
 
     const rootRef = useRef()
     const hasNextPageRef = useRef(false)
@@ -139,8 +140,10 @@ const DataElementSelector = ({
         subGroup,
     })
 
-    const fetchData = async () => {
+    const fetchData = async (scrollToTop) => {
         try {
+            setLoading(true)
+
             const result = await apiFetchOptions({
                 dataEngine,
                 nameProp: displayNameProp,
@@ -167,49 +170,24 @@ const DataElementSelector = ({
             }
 
             hasNextPageRef.current = result?.nextPage ? true : false
-
-            // XXX the following cannot be in here I believe, if it's still needed it should be triggered somewhere else, perhaps in a useEffect that listens to options
-            // but it's not possible to call fetchData() within the effect
-
-            /*  The following handles a very specific edge-case where the user can select all items from a
-            page and then reopen the modal. Usually Transfer triggers the onEndReached when the end of
-            the page is reached (scrolling down) or if too few items are on the left side (e.g. selecting
-            49 items from page 1, leaving only 1 item on the left side). However, due to the way Transfer
-            works, if 0 items are available, more items are fetched, but all items are already selected
-            (leaving 0 items on the left side still), the onReachedEnd won't trigger. Hence the code below:
-            IF there is a next page AND some options were just fetched AND you have the same or more
-            selected items than fetched items AND all fetched items are already selected -> fetch more!
-            */
-            // if (
-            //     result.nextPage &&
-            //     newOptions.length &&
-            //     selectedItems.length >= newOptions.length &&
-            //     newOptions.every((newOption) =>
-            //         selectedItems.find(
-            //             (selectedItem) => selectedItem.value === newOption.value
-            //         )
-            //     )
-            // ) {
-            //     fetchItems(result.nextPage)
-            // }
         } catch (error) {
             // TODO handle errors
             // setError(error)
-            // XXX remove this log, just to silence the linter and allow building
-            console.log('selectedItems', selectedItems)
         } finally {
-            // setLoading(false)
+            setLoading(false)
+
+            if (scrollToTop) {
+                rootRef.current.scrollTo({
+                    top: 0,
+                })
+            }
         }
     }
 
     const debouncedFetchData = useDebounceCallback(() => {
         pageRef.current = 1
 
-        rootRef.current.scrollTo({
-            top: 0,
-        })
-
-        fetchData()
+        fetchData(true)
     }, 200)
 
     const onSearchChange = ({ value }) => {
@@ -237,11 +215,7 @@ const DataElementSelector = ({
 
         pageRef.current = 1
 
-        rootRef.current.scrollTo({
-            top: 0,
-        })
-
-        fetchData()
+        fetchData(true)
     }
 
     const onEndReached = ({ isIntersecting }) => {
@@ -290,6 +264,13 @@ const DataElementSelector = ({
                 />
             </div>
             <div className="dimension-list-wrapper" ref={rootRef}>
+                {loading && (
+                    <Cover translucent>
+                        <Center>
+                            <CircularLoader />
+                        </Center>
+                    </Cover>
+                )}
                 <div className="dimension-list">
                     {options.map(({ label, value, type, disabled }) => (
                         <TransferOption
@@ -322,7 +303,6 @@ const DataElementSelector = ({
 DataElementSelector.propTypes = {
     displayNameProp: PropTypes.string.isRequired,
     onSelect: PropTypes.func.isRequired,
-    selectedItems: PropTypes.array,
 }
 
 export default DataElementSelector
