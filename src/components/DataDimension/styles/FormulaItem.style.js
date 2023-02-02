@@ -78,9 +78,16 @@ export default css`
         fill: ${colors.white};
     }
 
-    .operator .label,
-    .dataitem .label {
+    .operator .label {
         padding: 0 6px;
+    }
+
+    .dataitem .label {
+        padding-right: 6px;
+        max-width: 280px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
     }
 
     .inactive.insertBefore .content::before,

@@ -5,7 +5,12 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import { DIMENSION_TYPE_DATA_ELEMENT } from '../../modules/dataTypes.js'
 import { getIcon } from '../../modules/dimensionListItem.js'
-import { TYPE_INPUT, TYPE_DATAITEM, LAST_DROPZONE_ID } from './constants.js'
+import {
+    TYPE_INPUT,
+    TYPE_DATAITEM,
+    TYPE_OPERATOR,
+    LAST_DROPZONE_ID,
+} from './constants.js'
 import DragHandleIcon from './DragHandleIcon.js'
 import styles from './styles/FormulaItem.style.js'
 
@@ -142,7 +147,12 @@ const FormulaItem = ({
                         tabIndex={isLast ? 0 : -1}
                         onClick={onClick}
                     >
-                        <div className="content dataitem">
+                        <div
+                            className={cx('content', {
+                                dataitem: type === TYPE_DATAITEM,
+                                operator: type === TYPE_OPERATOR,
+                            })}
+                        >
                             {type === TYPE_DATAITEM && (
                                 <span className="icon">
                                     {getIcon(DIMENSION_TYPE_DATA_ELEMENT)}

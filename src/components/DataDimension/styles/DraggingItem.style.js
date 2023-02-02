@@ -5,7 +5,7 @@ export default css`
     .draggingItem {
         display: inline-block;
         background: ${colors.grey200};
-        padding: ${spacers.dp4} ${spacers.dp8};
+        padding: ${spacers.dp4};
         border-radius: 3px;
         font-size: 14px;
         line-height: 16px;
@@ -14,7 +14,7 @@ export default css`
     }
 
     .iconAndLabelWrapper {
-        display: flex;
+        display: inline-flex;
         align-items: center;
     }
 
@@ -22,7 +22,7 @@ export default css`
         flex: 0 0 auto;
         width: 16px;
         height: 16px;
-        margin-right: 6px;
+        margin-right: 4px;
     }
 
     .label {
