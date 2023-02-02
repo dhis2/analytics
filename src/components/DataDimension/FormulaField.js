@@ -7,7 +7,6 @@ import DropZone from './DropZone.js'
 import FormulaItem from './FormulaItem.js'
 import styles from './styles/FormulaField.style.js'
 
-// TODO: Add fn for double-clicking on a part to remove it from the formula
 const FormulaField = ({
     expressionArray,
     selectedPart,
@@ -22,32 +21,28 @@ const FormulaField = ({
 
     const itemIds = expressionArray.map((item) => item.id)
 
-    function getFormulaItems() {
-        return expressionArray.map((item, i) => (
-            <FormulaItem
-                key={`${item.label}-${i}`}
-                id={item.id}
-                index={i}
-                label={item.label}
-                type={item.type}
-                value={item.value}
-                onChange={setExpressionItemValue}
-                isLast={i === expressionArray.length - 1}
-                highlighted={i === selectedPart}
-                onClickItem={() => onPartSelection(i)}
-            />
-        ))
-    }
-
     return (
-        <div className="wrapper lastDropZone" ref={setNodeRef}>
+        <div className="formulaField lastDropZone" ref={setNodeRef}>
             <SortableContext id={FORMULA_BOX_ID} items={itemIds}>
                 <>
                     <DropZone
                         firstElementId={itemIds[0]}
                         overLastDropZone={overLastDropZone}
                     />
-                    {getFormulaItems()}
+                    {expressionArray.map((item, i) => (
+                        <FormulaItem
+                            key={`${item.label}-${i}`}
+                            id={item.id}
+                            index={i}
+                            label={item.label}
+                            type={item.type}
+                            value={item.value}
+                            onChange={setExpressionItemValue}
+                            isLast={i === expressionArray.length - 1}
+                            highlighted={i === selectedPart}
+                            onClickItem={() => onPartSelection(i)}
+                        />
+                    ))}
                 </>
             </SortableContext>
             <style jsx>{styles}</style>
