@@ -1,3 +1,4 @@
+import { useConfig } from '@dhis2/app-runtime'
 import PropTypes from 'prop-types'
 import React from 'react'
 import { DIMENSION_ID_DATA } from '../../modules/predefinedDimensions.js'
@@ -8,7 +9,14 @@ const DataDimension = ({
     selectedDimensions,
     displayNameProp,
     infoBoxMessage,
+    onCalculationSave,
 }) => {
+    const { serverVersion } = useConfig()
+    const supportsEDI =
+        `${serverVersion.major}.${serverVersion.minor}.${
+            serverVersion.patch || 0
+        }` >= '2.40.0'
+
     const onSelectItems = (selectedItem) =>
         onSelect({
             dimensionId: DIMENSION_ID_DATA,
@@ -33,6 +41,8 @@ const DataDimension = ({
             displayNameProp={displayNameProp}
             infoBoxMessage={infoBoxMessage}
             dataTest={'data-dimension'}
+            supportsEDI={supportsEDI}
+            onEDISave={onCalculationSave}
         />
     )
 }
@@ -47,6 +57,7 @@ DataDimension.propTypes = {
     ).isRequired,
     onSelect: PropTypes.func.isRequired,
     infoBoxMessage: PropTypes.string,
+    onCalculationSave: PropTypes.func,
 }
 
 DataDimension.defaultProps = {

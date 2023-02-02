@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2023-01-24T08:45:34.342Z\n"
-"PO-Revision-Date: 2023-01-24T08:45:34.342Z\n"
+"POT-Creation-Date: 2023-01-25T09:24:22.892Z\n"
+"PO-Revision-Date: 2023-01-25T09:24:22.892Z\n"
 
 msgid "view only"
 msgstr "view only"
@@ -72,6 +72,9 @@ msgstr "This app could not retrieve required data."
 
 msgid "Network error"
 msgstr "Network error"
+
+msgid "Empty formula"
+msgstr "Empty formula"
 
 msgid "Consecutive math operators"
 msgstr "Consecutive math operators"

@@ -105,7 +105,7 @@ const DataElementSelector = ({
 
     if (selectedItems.length) {
         // FIXME: temporarily removes lint errors
-        console.log(loading + setFilter() + selectedItems)
+        console.log(loading + setFilter())
     }
 
     const fetchItems = useCallback(
