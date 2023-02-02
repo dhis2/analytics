@@ -3,6 +3,8 @@ import css from 'styled-jsx/css'
 
 export default css`
     .dimension-list-wrapper {
+        position: relative;
+        width: 100%;
         height: 300px;
         overflow: hidden;
         overflow-y: auto;
