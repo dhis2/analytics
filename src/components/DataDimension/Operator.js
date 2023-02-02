@@ -20,7 +20,7 @@ Operator.propTypes = {
     onDoubleClick: PropTypes.func,
 }
 
-Operator.defaultValues = {
+Operator.defaultProps = {
     onDoubleClick: Function.prototype,
 }
 
@@ -32,12 +32,7 @@ const DraggableOperator = ({ id, label, type, onDoubleClick }) => {
         data: { id, label, type },
     })
     const style = {
-        // Outputs `translate3d(x, y, 0)`
         transform: CSS.Translate.toString(transform),
-    }
-
-    if (transform) {
-        console.log('operator transform', transform)
     }
 
     return (

@@ -250,7 +250,7 @@ const CalculationModal = ({
                                     <DraggingItem
                                         item={{
                                             type: TYPE_INPUT,
-                                            label: '<number>+',
+                                            label: '<number>',
                                             value: '55',
                                         }}
                                     />
@@ -262,7 +262,7 @@ const CalculationModal = ({
                                     <DraggingItem
                                         item={{
                                             type: TYPE_INPUT,
-                                            label: '<number>+',
+                                            label: '<number>',
                                             value: '',
                                         }}
                                     />

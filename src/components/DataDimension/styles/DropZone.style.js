@@ -5,7 +5,7 @@ export default css`
     .firstDropZone {
         position: absolute;
         top: 0;
-        left: 0;
+        left: 4px;
         z-index: -1;
         width: 32px;
         height: 26px;

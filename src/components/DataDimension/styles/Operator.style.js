@@ -3,7 +3,7 @@ import css from 'styled-jsx/css'
 
 export default css`
     .operator {
-        display: inline-block;
+        display: inline-flex;
         background: ${colors.grey200};
         padding: ${spacers.dp4} ${spacers.dp8};
         border-radius: 3px;
@@ -11,5 +11,6 @@ export default css`
         line-height: 16px;
         cursor: pointer;
         user-select: none;
+        align-items: center;
     }
 `
