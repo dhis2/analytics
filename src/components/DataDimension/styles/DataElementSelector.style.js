@@ -2,7 +2,11 @@ import { colors, spacers } from '@dhis2/ui'
 import css from 'styled-jsx/css'
 
 export default css`
-    .dimension-list-wrapper {
+    .dimension-list-container {
+        position: relative;
+    }
+
+    .dimension-list-scrollbox {
         position: relative;
         width: 100%;
         height: 300px;
@@ -12,7 +16,7 @@ export default css`
         border: 1px solid ${colors.grey400};
     }
 
-    .dimension-list {
+    .dimension-list-scroller {
         position: relative;
         min-height: 1px;
     }
@@ -29,6 +33,11 @@ export default css`
         position: absolute;
         bottom: 0;
         left: 0;
+    }
+
+    .dimension-list-overlay {
+        width: 100%;
+        height: 100%;
     }
 
     .filter-wrapper {

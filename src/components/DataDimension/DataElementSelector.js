@@ -263,37 +263,39 @@ const DataElementSelector = ({ displayNameProp, onSelect }) => {
                     onChange={(subGroup) => onFilterChange({ subGroup })}
                 />
             </div>
-            <div className="dimension-list-wrapper" ref={rootRef}>
-                {loading && (
-                    <Cover translucent>
-                        <Center>
-                            <CircularLoader />
-                        </Center>
-                    </Cover>
-                )}
-                <div className="dimension-list">
-                    {options.map(({ label, value, type, disabled }) => (
-                        <TransferOption
-                            label={label}
-                            key={value}
-                            value={value}
-                            icon={getIcon(type)}
-                            tooltipText={getTooltipText({
-                                type,
-                            })}
-                            disabled={disabled}
-                            onClick={Function.prototype}
-                            onDoubleClick={onSelect}
-                        />
-                    ))}
-
-                    <div className="scroll-detector">
-                        <IntersectionDetector
-                            onChange={onEndReached}
-                            rootRef={rootRef}
-                        />
+            <div className="dimension-list-container">
+                <div className="dimension-list-scrollbox" ref={rootRef}>
+                    <div className="dimension-list-scroller">
+                        {options.map(({ label, value, type, disabled }) => (
+                            <TransferOption
+                                label={label}
+                                key={value}
+                                value={value}
+                                icon={getIcon(type)}
+                                tooltipText={getTooltipText({
+                                    type,
+                                })}
+                                disabled={disabled}
+                                onDoubleClick={onSelect}
+                            />
+                        ))}
+                        <div className="scroll-detector">
+                            <IntersectionDetector
+                                onChange={onEndReached}
+                                rootRef={rootRef}
+                            />
+                        </div>
                     </div>
                 </div>
+                {loading && (
+                    <div className="dimension-list-overlay">
+                        <Cover>
+                            <Center>
+                                <CircularLoader />
+                            </Center>
+                        </Cover>
+                    </div>
+                )}
             </div>
             <style jsx>{styles}</style>
         </>
