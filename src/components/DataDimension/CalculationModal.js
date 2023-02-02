@@ -134,6 +134,7 @@ const CalculationModal = ({
                 </ModalTitle>
                 <ModalContent dataTest={'calculation-modal-content'}>
                     <DndContext
+                        collisionDetection={rectIntersectionCustom}
                         onDragStart={handleDragStart}
                         onDragEnd={handleDragEnd}
                         sensors={sensors}
@@ -433,6 +434,80 @@ const CalculationModal = ({
 
         setIdCounter(idCounter + 1)
         return newItem
+    }
+
+    function getIntersectionRatio(entry, target) {
+        const top = Math.max(target.top, entry.top)
+        const left = Math.max(target.left, entry.left)
+        const right = Math.min(
+            target.left + target.width,
+            entry.left + entry.width
+        )
+        const bottom = Math.min(
+            target.top + target.height,
+            entry.top + entry.height
+        )
+        const width = right - left
+        const height = bottom - top
+
+        if (left < right && top < bottom) {
+            const targetArea = target.width * target.height
+            const entryArea = entry.width * entry.height
+            const intersectionArea = width * height
+            const intersectionRatio =
+                intersectionArea / (targetArea + entryArea - intersectionArea)
+            return Number(intersectionRatio.toFixed(4))
+        } // Rectangles do not overlap, or overlap has an area of zero (edge/corner overlap)
+
+        return 0
+    }
+    function sortCollisionsDesc(
+        { data: { value: a } },
+        { data: { value: b } }
+    ) {
+        return b - a
+    }
+
+    function rectIntersectionCustom({
+        pointerCoordinates,
+        droppableContainers,
+    }) {
+        // create a rect around the pointerCoords for calculating the intersection
+        const pointerRect = {
+            width: 80,
+            height: 40,
+            top: pointerCoordinates.y - 20,
+            bottom: pointerCoordinates.y + 20,
+            left: pointerCoordinates.x - 40,
+            right: pointerCoordinates.x + 40,
+        }
+        const collisions = []
+
+        for (const droppableContainer of droppableContainers) {
+            const {
+                id,
+                rect: { current: rect },
+            } = droppableContainer
+
+            if (rect) {
+                const intersectionRatio = getIntersectionRatio(
+                    rect,
+                    pointerRect
+                )
+
+                if (intersectionRatio > 0) {
+                    collisions.push({
+                        id,
+                        data: {
+                            droppableContainer,
+                            value: intersectionRatio,
+                        },
+                    })
+                }
+            }
+        }
+
+        return collisions.sort(sortCollisionsDesc)
     }
 }
 
