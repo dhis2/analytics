@@ -53,7 +53,7 @@ export default css`
     }
     .widthMachine {
         /* Add extra space for number spinner */
-        padding: 0 0.8rem;
+        padding: 0 1rem;
         visibility: hidden;
     }
 
@@ -74,7 +74,7 @@ export default css`
         color: ${colors.white};
     }
 
-    .highlighted input {
+    .highlighted input:not(:focus) {
         color: ${colors.white};
     }
 
