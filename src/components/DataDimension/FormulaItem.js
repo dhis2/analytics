@@ -101,7 +101,7 @@ const FormulaItem = ({
                     ref={setNodeRef}
                     {...attributes}
                     {...listeners}
-                    className={cx('inputwrapper', { isLast })}
+                    className={isLast && 'isLast'}
                 >
                     <div
                         className={chipClasses}
@@ -110,7 +110,7 @@ const FormulaItem = ({
                     >
                         <div className="content">
                             <div className="dndHandle">{DragHandleIcon}</div>
-                            <span className="inputWrap">
+                            <span className="inputWidth">
                                 <span
                                     className="widthMachine"
                                     aria-hidden="true"
@@ -138,7 +138,7 @@ const FormulaItem = ({
                     ref={setNodeRef}
                     {...attributes}
                     {...listeners}
-                    className={cx('dnd', { isLast })}
+                    className={isLast && 'isLast'}
                     style={style}
                 >
                     <div

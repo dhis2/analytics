@@ -31,22 +31,22 @@ export default css`
         padding-top: 1px;
     }
 
-    .inputwrapper input {
+    .chip input {
         background-color: transparent;
         border: 1px dashed #a0adba;
         padding: 0 0 0 2px;
     }
 
-    .inputwrapper input:hover,
-    .inputwrapper input:focus {
+    .chip input:hover,
+    .chip input:focus {
         background: white;
         border: 1px solid rgba(0, 0, 0, 0.2);
     }
 
-    .inputWrap {
+    .inputWidth {
         position: relative;
     }
-    .inputWrap input {
+    .inputWidth input {
         position: absolute;
         width: 100%;
         left: 0;
