@@ -10,7 +10,7 @@ export const getOperators = () => {
     return [
         { id: 'plus', value: '+', label: '+', type: TYPE_OPERATOR },
         { id: 'minus', value: '-', label: '-', type: TYPE_OPERATOR },
-        { id: 'multiply', value: 'x', label: 'x', type: TYPE_OPERATOR },
+        { id: 'multiply', value: '×', label: '×', type: TYPE_OPERATOR },
         { id: 'divide', value: '/', label: '/', type: TYPE_OPERATOR },
         { id: 'openpar', value: '(', label: '(', type: TYPE_OPERATOR },
         { id: 'closepar', value: ')', label: ')', type: TYPE_OPERATOR },
