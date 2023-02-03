@@ -53,7 +53,7 @@ export default css`
     }
     .widthMachine {
         /* Add extra space for number spinner */
-        padding: 0 1rem;
+        padding: 0 0.8rem;
         visibility: hidden;
     }
 
