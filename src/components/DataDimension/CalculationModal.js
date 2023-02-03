@@ -420,7 +420,6 @@ const CalculationModal = ({
         setDraggingItem(null)
     }
     function handleDragStart({ active }) {
-        console.log('setDraggingitem', active.data.current)
         setDraggingItem(active.data.current)
     }
 
@@ -493,13 +492,16 @@ const CalculationModal = ({
         droppableContainers,
     }) {
         // create a rect around the pointerCoords for calculating the intersection
+
+        const pointerRectWidth = 40
+        const pointerRectHeight = 40
         const pointerRect = {
-            width: 80,
-            height: 40,
-            top: pointerCoordinates.y - 20,
-            bottom: pointerCoordinates.y + 20,
-            left: pointerCoordinates.x - 40,
-            right: pointerCoordinates.x + 40,
+            width: pointerRectWidth,
+            height: pointerRectHeight,
+            top: pointerCoordinates.y - pointerRectHeight / 2,
+            bottom: pointerCoordinates.y + pointerRectHeight / 2,
+            left: pointerCoordinates.x - pointerRectWidth / 2,
+            right: pointerCoordinates.x + pointerRectWidth / 2,
         }
         const collisions = []
 

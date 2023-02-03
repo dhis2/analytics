@@ -11,6 +11,7 @@ export default css`
         cursor: default;
         user-select: none;
         align-items: center;
+        opacity: 0.7;
     }
 
     .operator,
