@@ -46,7 +46,7 @@ export default css`
     .inputWrap {
         position: relative;
     }
-    .inputWrap .input {
+    .inputWrap input {
         position: absolute;
         width: 100%;
         left: 0;

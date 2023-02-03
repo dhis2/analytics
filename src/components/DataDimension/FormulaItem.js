@@ -121,7 +121,6 @@ const FormulaItem = ({
                                     id={id}
                                     name={label}
                                     onChange={onInputChange}
-                                    className="input"
                                     value={value}
                                     type="number"
                                 />

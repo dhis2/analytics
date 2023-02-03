@@ -30,6 +30,7 @@ export default css`
 
     .content {
         display: flex;
+        justify-content: space-between;
     }
 
     .left-section {
@@ -37,10 +38,13 @@ export default css`
     }
 
     .right-section {
-        width: 55%;
-        padding-left: ${spacers.dp8};
+        width: 53%;
         font-size: 14px;
         line-height: 24px;
+    }
+
+    .leftpad {
+        padding-left: ${spacers.dp4};
     }
 
     .validation-message {

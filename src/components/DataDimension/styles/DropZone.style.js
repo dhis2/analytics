@@ -5,10 +5,10 @@ export default css`
     .firstDropZone {
         position: absolute;
         top: 0;
-        left: 4px;
+        left: 0;
         z-index: -1;
-        width: 32px;
-        height: 26px;
+        width: 24px;
+        height: 28px;
         margin: var(--spacers-dp4);
         background-color: transparent;
     }
@@ -21,6 +21,8 @@ export default css`
         position: relative;
         flex-grow: 1;
         z-index: 100;
+        margin-left: -10px;
+        margin-top: -4px;
     }
 
     .isOver::before,
@@ -31,17 +33,17 @@ export default css`
 
     /* the vertical line */
     .isOver::before {
-        top: 8px;
+        top: 10px;
         width: 4px;
-        left: -6px;
+        left: 4px;
         height: 18px;
         background-color: #4c9ffe;
     }
 
     /* the circle */
     .isOver::after {
-        top: -4px;
-        left: -10px;
+        top: 0;
+        left: 0;
         width: 12px;
         height: 12px;
         border: 4px solid #4c9ffe;

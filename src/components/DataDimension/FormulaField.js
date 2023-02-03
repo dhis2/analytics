@@ -22,9 +22,10 @@ const FormulaField = ({
     const itemIds = expressionArray.map((item) => item.id)
 
     return (
-        <div className="formulaField lastDropZone" ref={setNodeRef}>
-            <SortableContext id={FORMULA_BOX_ID} items={itemIds}>
-                <>
+        <div className="container">
+            <div className="border"></div>
+            <div className="formulaField lastDropZone" ref={setNodeRef}>
+                <SortableContext id={FORMULA_BOX_ID} items={itemIds}>
                     <DropZone
                         firstElementId={itemIds[0]}
                         overLastDropZone={overLastDropZone}
@@ -43,8 +44,8 @@ const FormulaField = ({
                             onClickItem={() => onPartSelection(i)}
                         />
                     ))}
-                </>
-            </SortableContext>
+                </SortableContext>
+            </div>
             <style jsx>{styles}</style>
         </div>
     )

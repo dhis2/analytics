@@ -25,13 +25,7 @@ import {
     parseExpressionToArray,
     parseArrayToExpression,
 } from '../../modules/expressions.js'
-import {
-    TYPE_DATAITEM,
-    TYPE_INPUT,
-    TYPE_OPERATOR,
-    LAST_DROPZONE_ID,
-    FORMULA_BOX_ID,
-} from './constants.js'
+import { TYPE_DATAITEM, LAST_DROPZONE_ID, FORMULA_BOX_ID } from './constants.js'
 import DataElementSelector from './DataElementSelector.js'
 import DraggingItem from './DraggingItem.js'
 import FormulaField from './FormulaField.js'
@@ -193,102 +187,75 @@ const CalculationModal = ({
                                     onPartSelection={onPartSelection}
                                     selectedPart={selectedPart}
                                 />
-                                <p>
-                                    {/* TODO: Remove, for testing only */}
-                                    {parseArrayToExpression(expressionArray)}
-                                </p>
-                                <div className="actions-wrapper">
-                                    <Button small onClick={validateExpression}>
-                                        {/* TODO: add loading state to button? */}
-                                        {i18n.t('Check formula')}
-                                    </Button>
-                                    {(selectedPart || selectedPart === 0) && (
-                                        <div className={'remove-button'}>
+                                <div className="leftpad">
+                                    <p>
+                                        {/* TODO: Remove, for testing only */}
+                                        {parseArrayToExpression(
+                                            expressionArray
+                                        )}
+                                    </p>
+                                    <div className="actions-wrapper">
+                                        <Button
+                                            small
+                                            onClick={validateExpression}
+                                        >
+                                            {/* TODO: add loading state to button? */}
+                                            {i18n.t('Check formula')}
+                                        </Button>
+                                        {(selectedPart ||
+                                            selectedPart === 0) && (
+                                            <div className={'remove-button'}>
+                                                <Button
+                                                    small
+                                                    onClick={() => {
+                                                        setValidationOutput()
+                                                        setExpressionArray(
+                                                            (prevArray) =>
+                                                                prevArray.filter(
+                                                                    (
+                                                                        _,
+                                                                        index
+                                                                    ) =>
+                                                                        index !=
+                                                                        selectedPart
+                                                                )
+                                                        )
+                                                        setSelectedPart()
+                                                    }}
+                                                >
+                                                    {i18n.t('Remove item')}
+                                                </Button>
+                                            </div>
+                                        )}
+                                        <span
+                                            className={cx(
+                                                'validation-message',
+                                                {
+                                                    'validation-error':
+                                                        expressionStatus ===
+                                                        INVALID_EXPRESSION,
+                                                    'validation-success':
+                                                        expressionStatus ===
+                                                        VALID_EXPRESSION,
+                                                }
+                                            )}
+                                        >
+                                            {validationOutput?.message}
+                                        </span>
+                                    </div>
+                                    {calculation.id && (
+                                        <div className="delete-button">
                                             <Button
                                                 small
-                                                onClick={() => {
-                                                    setValidationOutput()
-                                                    setExpressionArray(
-                                                        (prevArray) =>
-                                                            prevArray.filter(
-                                                                (_, index) =>
-                                                                    index !=
-                                                                    selectedPart
-                                                            )
-                                                    )
-                                                    setSelectedPart()
-                                                }}
+                                                onClick={() =>
+                                                    setShowDeletePrompt(true)
+                                                }
                                             >
-                                                {i18n.t('Remove item')}
+                                                {i18n.t('Delete calculation')}
                                             </Button>
                                         </div>
                                     )}
-                                    <span
-                                        className={cx('validation-message', {
-                                            'validation-error':
-                                                expressionStatus ===
-                                                INVALID_EXPRESSION,
-                                            'validation-success':
-                                                expressionStatus ===
-                                                VALID_EXPRESSION,
-                                        })}
-                                    >
-                                        {validationOutput?.message}
-                                    </span>
                                 </div>
-                                <p>
-                                    <span>Data element dragging item: </span>
-                                    <DraggingItem
-                                        item={{
-                                            type: TYPE_DATAITEM,
-                                            label: 'ANC 4th or more visits',
-                                        }}
-                                    />
-                                </p>
-                                <p>
-                                    <span>Number dragging item: </span>
-                                    <DraggingItem
-                                        item={{
-                                            type: TYPE_INPUT,
-                                            label: '<number>',
-                                            value: '55',
-                                        }}
-                                    />
-                                </p>
-                                <p>
-                                    <span>
-                                        Number dragging item w/o value:{' '}
-                                    </span>
-                                    <DraggingItem
-                                        item={{
-                                            type: TYPE_INPUT,
-                                            label: '<number>',
-                                            value: '',
-                                        }}
-                                    />
-                                </p>
-                                <p>
-                                    <span>Operator dragging item: </span>
-                                    <DraggingItem
-                                        item={{
-                                            type: TYPE_OPERATOR,
-                                            label: '+',
-                                            value: '+',
-                                        }}
-                                    />
-                                </p>
-                                {calculation.id && (
-                                    <div className="delete-button">
-                                        <Button
-                                            small
-                                            onClick={() =>
-                                                setShowDeletePrompt(true)
-                                            }
-                                        >
-                                            {i18n.t('Delete calculation')}
-                                        </Button>
-                                    </div>
-                                )}
                             </div>
                         </div>
                         <style jsx>{styles}</style>
