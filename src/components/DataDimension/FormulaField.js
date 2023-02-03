@@ -11,6 +11,7 @@ const FormulaField = ({
     expressionArray,
     selectedPart,
     onPartSelection,
+    removeItem,
     setExpressionItemValue,
 }) => {
     const { over, setNodeRef } = useDroppable({
@@ -42,6 +43,7 @@ const FormulaField = ({
                             isLast={i === expressionArray.length - 1}
                             highlighted={i === selectedPart}
                             onClickItem={() => onPartSelection(i)}
+                            onDblClick={removeItem}
                         />
                     ))}
                 </SortableContext>
@@ -52,6 +54,7 @@ const FormulaField = ({
 }
 
 FormulaField.propTypes = {
+    removeItem: PropTypes.func.isRequired,
     setExpressionItemValue: PropTypes.func.isRequired,
     expressionArray: PropTypes.arrayOf(
         PropTypes.shape({

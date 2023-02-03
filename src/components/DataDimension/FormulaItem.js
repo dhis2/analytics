@@ -2,7 +2,7 @@ import { useSortable } from '@dnd-kit/sortable'
 import { CSS } from '@dnd-kit/utilities'
 import cx from 'classnames'
 import PropTypes from 'prop-types'
-import React from 'react'
+import React, { useState, useRef } from 'react'
 import { DIMENSION_TYPE_DATA_ELEMENT } from '../../modules/dataTypes.js'
 import { getIcon } from '../../modules/dimensionListItem.js'
 import {
@@ -17,6 +17,8 @@ import styles from './styles/FormulaItem.style.js'
 const BEFORE = 'BEFORE'
 const AFTER = 'AFTER'
 
+const maxMsBetweenClicks = 300
+
 const FormulaItem = ({
     id,
     label,
@@ -26,6 +28,7 @@ const FormulaItem = ({
     isLast,
     highlighted,
     onClickItem,
+    onDblClick,
 }) => {
     const {
         attributes,
@@ -43,6 +46,10 @@ const FormulaItem = ({
         attributes: { tabIndex: isLast ? -1 : 0 },
         data: { id, label, type, value },
     })
+
+    const inputRef = useRef(null)
+
+    const [clickTimeoutId, setClickTimeoutId] = useState(null)
 
     const activeIndex = active?.data.current.sortable.index || -1
 
@@ -81,18 +88,39 @@ const FormulaItem = ({
         insertPosition = AFTER
     }
 
+    const onClick = (tagname) => {
+        if (tagname !== 'INPUT') {
+            onClickItem()
+        } else {
+            inputRef.current && inputRef.current.focus()
+        }
+    }
+
+    const onDoubleClick = () => {
+        onDblClick({ index })
+    }
+
+    function handleSingleClick(e) {
+        const tagname = e.target.tagName
+        clearTimeout(clickTimeoutId)
+        const to = setTimeout(function () {
+            onClick(tagname)
+        }, maxMsBetweenClicks)
+        setClickTimeoutId(to)
+    }
+
+    function handleDoubleClick(e) {
+        clearTimeout(clickTimeoutId)
+        setClickTimeoutId(null)
+        onDoubleClick(e)
+    }
+
     const chipClasses = cx('chip', {
         inactive: !isDragging,
         insertBefore: insertPosition === BEFORE,
         insertAfter: insertPosition === AFTER,
         highlighted,
     })
-
-    const onClick = (e) => {
-        if (e.target.tagName !== 'INPUT') {
-            onClickItem()
-        }
-    }
 
     if (type === TYPE_INPUT) {
         return (
@@ -106,7 +134,8 @@ const FormulaItem = ({
                     <div
                         className={chipClasses}
                         tabIndex={isLast ? 0 : -1}
-                        onClick={onClick}
+                        onClick={handleSingleClick}
+                        onDoubleClick={handleDoubleClick}
                     >
                         <div className="content">
                             <div className="dndHandle">{DragHandleIcon}</div>
@@ -123,6 +152,7 @@ const FormulaItem = ({
                                     onChange={onInputChange}
                                     value={value}
                                     type="number"
+                                    ref={inputRef}
                                 />
                             </span>
                         </div>
@@ -144,7 +174,8 @@ const FormulaItem = ({
                     <div
                         className={chipClasses}
                         tabIndex={isLast ? 0 : -1}
-                        onClick={onClick}
+                        onClick={handleSingleClick}
+                        onDoubleClick={handleDoubleClick}
                     >
                         <div
                             className={cx('content', {
@@ -180,6 +211,7 @@ FormulaItem.propTypes = {
     value: PropTypes.string,
     onChange: PropTypes.func,
     onClickItem: PropTypes.func,
+    onDblClick: PropTypes.func,
 }
 
 export default FormulaItem

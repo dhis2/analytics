@@ -130,6 +130,13 @@ const CalculationModal = ({
         setValidationOutput(result)
     }
 
+    const removeItem = ({ index }) => {
+        setValidationOutput()
+        const sourceList = Array.from(expressionArray)
+        sourceList.splice(index, 1)
+        setExpressionArray(sourceList)
+    }
+
     return (
         <>
             <Modal dataTest={`calculation-modal`} position="top" large>
@@ -185,6 +192,7 @@ const CalculationModal = ({
                                         setExpressionItemValue
                                     }
                                     onPartSelection={onPartSelection}
+                                    removeItem={removeItem}
                                     selectedPart={selectedPart}
                                 />
                                 <div className="leftpad">
