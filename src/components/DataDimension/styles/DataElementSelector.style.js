@@ -16,6 +16,10 @@ export default css`
         border: 1px solid ${colors.grey400};
     }
 
+    .dimension-list-scrollbox.loading {
+        filter: blur(2px);
+    }
+
     .dimension-list-scroller {
         position: relative;
         min-height: 1px;

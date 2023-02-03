@@ -9,6 +9,7 @@ import {
     SingleSelectOption,
 } from '@dhis2/ui'
 import { useDebounceCallback } from '@react-hook/debounce'
+import cx from 'classnames'
 import PropTypes from 'prop-types'
 import React, { useEffect, useRef, useState } from 'react'
 import { apiFetchOptions, apiFetchGroups } from '../../api/dimensions.js'
@@ -264,7 +265,10 @@ const DataElementSelector = ({ displayNameProp, onSelect }) => {
                 />
             </div>
             <div className="dimension-list-container">
-                <div className="dimension-list-scrollbox" ref={rootRef}>
+                <div
+                    className={cx('dimension-list-scrollbox', { loading })}
+                    ref={rootRef}
+                >
                     <div className="dimension-list-scroller">
                         {options.map(({ label, value, type, disabled }) => (
                             <TransferOption
