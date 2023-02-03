@@ -74,6 +74,10 @@ export default css`
         color: ${colors.white};
     }
 
+    .highlighted input {
+        color: ${colors.white};
+    }
+
     .highlighted :global(.icon path) {
         fill: ${colors.white};
     }
