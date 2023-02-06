@@ -40,26 +40,6 @@ const DATA_ELEMENTS = {
         },
         {
             dimensionItemType: 'DATA_ELEMENT',
-            id: 'iKGjnOOaPlE',
-            name: 'ARI treated with antibiotics (pneumonia) new',
-        },
-        {
-            dimensionItemType: 'DATA_ELEMENT',
-            id: 'XTqOHygxDj5',
-            name: 'ARI treated with antibiotics (pneumonia) referrals',
-        },
-        {
-            dimensionItemType: 'DATA_ELEMENT',
-            id: 'RF4VFVGdFRO',
-            name: 'ARI treated without antibiotics (cough) follow-up',
-        },
-        {
-            dimensionItemType: 'DATA_ELEMENT',
-            id: 'Cm4XUw6VAxv',
-            name: 'ARI treated without antibiotics (cough) new',
-        },
-        {
-            dimensionItemType: 'DATA_ELEMENT',
             id: 'oLfWYAJhZb2',
             name: 'ARI treated without antibiotics (cough) referrals',
         },
@@ -72,26 +52,6 @@ const DATA_ELEMENTS = {
             dimensionItemType: 'DATA_ELEMENT',
             id: 'wfKKFhBn0Q0',
             name: 'ART No clients who stopped TRT due to adverse clinical status/event',
-        },
-        {
-            dimensionItemType: 'DATA_ELEMENT',
-            id: 'F53rTVTmSuF',
-            name: 'ART No clients with change of regimen due to drug toxicity',
-        },
-        {
-            dimensionItemType: 'DATA_ELEMENT',
-            id: 'rNEpbBxSyu7',
-            name: 'ART No clients with new adverse drug reaction',
-        },
-        {
-            dimensionItemType: 'DATA_ELEMENT',
-            id: 'CxlYcbqio4v',
-            name: 'ART No started Opportunist Infection prophylaxis',
-        },
-        {
-            dimensionItemType: 'DATA_ELEMENT',
-            id: 'NJnhOzjaLYk',
-            name: 'ART clients with new adverse clinical event',
         },
         {
             dimensionItemType: 'DATA_ELEMENT',
@@ -110,83 +70,8 @@ const DATA_ELEMENTS = {
         },
         {
             dimensionItemType: 'DATA_ELEMENT',
-            id: 'eRwOwCpMzyP',
-            name: 'ART enrollment stage 3',
-        },
-        {
-            dimensionItemType: 'DATA_ELEMENT',
-            id: 'zYkwbCBALhn',
-            name: 'ART enrollment stage 4',
-        },
-        {
-            dimensionItemType: 'DATA_ELEMENT',
-            id: 'kVOiLDV4OC6',
-            name: 'ART entry point: No PMTCT',
-        },
-        {
-            dimensionItemType: 'DATA_ELEMENT',
-            id: 'I5MLuG16arn',
-            name: 'ART entry point: No diagnostic testing',
-        },
-        {
-            dimensionItemType: 'DATA_ELEMENT',
             id: 'LVaUdM3CERi',
             name: 'ART entry point: No old patients',
-        },
-        {
-            dimensionItemType: 'DATA_ELEMENT',
-            id: 'vJSPn2R6gVe',
-            name: 'ART entry point: No other',
-        },
-        {
-            dimensionItemType: 'DATA_ELEMENT',
-            id: 'HDZOFvdXsqE',
-            name: 'ART entry point: No transfer in',
-        },
-        {
-            dimensionItemType: 'DATA_ELEMENT',
-            id: 'soACnRV9gOI',
-            name: 'ART entry point: No transfer out',
-        },
-        {
-            dimensionItemType: 'DATA_ELEMENT',
-            id: 'FTy5pcJZ3yX',
-            name: 'ART entry point: No walk in',
-        },
-        {
-            dimensionItemType: 'DATA_ELEMENT',
-            id: 'Yf4u4QOIdsi',
-            name: 'ART entry point: TB',
-        },
-        {
-            dimensionItemType: 'DATA_ELEMENT',
-            id: 'QrhlrvV6Xs8',
-            name: 'ART new clients started on ARV',
-        },
-        {
-            dimensionItemType: 'DATA_ELEMENT',
-            id: 'ibL7BD2vn2C',
-            name: 'ART treatment stopped due to death',
-        },
-        {
-            dimensionItemType: 'DATA_ELEMENT',
-            id: 'TyQ1vOHM6JO',
-            name: 'ART treatment stopped due to loss to follow-up',
-        },
-        {
-            dimensionItemType: 'DATA_ELEMENT',
-            id: 'FTRrcoaog83',
-            name: 'Accute Flaccid Paralysis (Deaths < 5 yrs)',
-        },
-        {
-            dimensionItemType: 'DATA_ELEMENT',
-            id: 'P3jJH5Tu5VC',
-            name: 'Acute Flaccid Paralysis (AFP) follow-up',
-        },
-        {
-            dimensionItemType: 'DATA_ELEMENT',
-            id: 'FQ2o8UBlcrS',
-            name: 'Acute Flaccid Paralysis (AFP) new',
         },
         {
             dimensionItemType: 'DATA_ELEMENT',
@@ -198,41 +83,7 @@ const DATA_ELEMENTS = {
             id: 'uF1DLnZNlWe',
             name: 'Additional notes related to facility',
         },
-        {
-            dimensionItemType: 'DATA_ELEMENT',
-            id: 'hCVSHjcml9g',
-            name: 'Albendazole given at ANC (2nd trimester)',
-        },
-        {
-            dimensionItemType: 'DATA_ELEMENT',
-            id: 'rxt7nvPyRUi',
-            name: 'All access routes are clearly marked and safe',
-        },
-        {
-            dimensionItemType: 'DATA_ELEMENT',
-            id: 'RUv0hqER0zV',
-            name: 'All other follow-ups',
-        },
-        {
-            dimensionItemType: 'DATA_ELEMENT',
-            id: 'A2VfEfPflHV',
-            name: 'All other new',
-        },
-        {
-            dimensionItemType: 'DATA_ELEMENT',
-            id: 'laZLQdnucV1',
-            name: 'All other referrals',
-        },
-        {
-            dimensionItemType: 'DATA_ELEMENT',
-            id: 'U7v0q0amJqi',
-            name: 'All sterilisation equipment is validated / licensed',
-        },
-        {
-            dimensionItemType: 'DATA_ELEMENT',
-            id: 'sPQgYGhXnXI',
-            name: 'An alternative to communicate if telephone line is off is always available',
-        },
+
         {
             dimensionItemType: 'DATA_ELEMENT',
             id: 'jmWyJFtE7Af',
@@ -243,32 +94,106 @@ const DATA_ELEMENTS = {
             id: 'HLPuaFB7Frw',
             name: 'Anaemia new',
         },
-        {
-            dimensionItemType: 'DATA_ELEMENT',
-            id: 'yqBkn9CWKih',
-            name: 'Anaemia referrals',
-        },
-        {
-            dimensionItemType: 'DATA_ELEMENT',
-            id: 'LjNlMTl9Nq9',
-            name: 'Animal Bites - Rabid (Deaths < 5 yrs)',
-        },
-        {
-            dimensionItemType: 'DATA_ELEMENT',
-            id: 'a57FmdPj3Zl',
-            name: 'Appropriate hand washing facilities are available',
-        },
-        {
-            dimensionItemType: 'DATA_ELEMENT',
-            id: 's46m5MS0hxu',
-            name: 'BCG doses given',
-        },
+    ],
+}
+
+const DATA_ELEMENT_GROUPS = {
+    dataElementGroups: [
+        { id: 'qfxEYY9xAl6', name: 'ANC' },
+        { id: 'yhg8oYU9ekY', name: 'ARI Treated Without Antibiotics (Cough)' },
+        { id: 'M2cth8EmrlT', name: 'ARI treated with antibiotics (Pneumonia)' },
+        { id: 'k1M0nuodfhN', name: 'ART' },
+        { id: 'bdiyMm9qZl5', name: 'ART enrollment' },
+        { id: 's8FiXqB2DhB', name: 'ART entry points' },
+        { id: 'TcxHxMlYzpv', name: 'ART pediatric 1st line' },
+        { id: 'vxIWSNeEcf7', name: 'ART staging' },
+        { id: 'zz1lNBgRKWU', name: 'ART treatment' },
+        { id: 'oDkJh5Ddh7d', name: 'Acute Flaccid Paralysis (AFP) ' },
+        { id: 'GBHN1a1Jddh', name: 'All Others' },
+        { id: 'KmwPVkjp7yl', name: 'Anaemia' },
+        { id: 'oGktdmYkRNo', name: 'Burns' },
+        { id: 'KUSvwZQsMSN', name: 'Cholera' },
+        { id: 'Euvh58hLl61', name: 'Clinical Malnutrition' },
+        { id: 'Svac1cNQhRS', name: 'Commodities' },
+        { id: 'KJKWrWBcJdf', name: 'Commodities Child Health' },
+        { id: 'idD1wcvBISQ', name: 'Commodities Maternal Health' },
+        { id: 'rioWDAi1S7z', name: 'Commodities Newborn Health' },
+        { id: 'IyIa0h8CbCZ', name: 'Commodities Reproductive Health' },
+        { id: 'PfJGQacYpjn', name: 'Deaths' },
+        { id: 't5W0AAqvK5b', name: 'Delivery' },
+        { id: 'mcjC3qZgIkO', name: 'Diarrhoea With Blood (Dysentery)' },
+        { id: 'RSFc8ADyKTw', name: 'Diarrhoea With Severe Dehydration' },
+        { id: 'kE8lP5t0b5R', name: 'Diarrhoea Without Severe Dehydration' },
+        { id: 'qiF051Ue9Ei', name: 'Emergency Response' },
+        { id: 'GbSz3TobZcc', name: 'Expenditures' },
+        { id: 'lLKpwhjd1dM', name: 'Eye Infection' },
+        { id: 'Sp1jJqzsiOi', name: 'Facility infrastructure' },
+        { id: 'g50BzGAsrvu', name: 'Follow-up' },
+        { id: 'URmi41e0SFH', name: 'HIV Care' },
+        { id: 'ID4BbhF7Eli', name: 'HIV Peadriatics' },
+        { id: 'HKU7L73im5r', name: 'HIV/AIDS' },
+        { id: 'jWgEsdH87Jk', name: 'Hypertension' },
+        { id: 'nb3rBNvVHtp', name: 'ICS Children' },
+        { id: 'dMyLpSQn6hu', name: 'ICS mother' },
+        { id: 'b3gDdvmrSFc', name: 'IDSR' },
+        { id: 'h9cuJOkOwY2', name: 'Immunization' },
+        { id: 'OP4dLqk0JTH', name: 'Inpatient morbidity/mortality aggregates' },
+        { id: 'SriP0jBXMr6', name: 'Lassa Fever' },
+        { id: 'U0uJG4kydwE', name: 'Leprosy' },
+        { id: 'eeQCyjnMyGY', name: 'Low birth' },
+        { id: 'LEet4tb49IP', name: 'MNCH Aggregates' },
+        { id: 'TzwKbcw1nUK', name: 'Malaria' },
+        { id: 'qk2KOBMX4Mf', name: 'Measles' },
+        { id: 'lnLbEej0gwe', name: 'Meningitis / Severe Bacterial Infection' },
+        { id: 'SLsJy3zqUbD', name: 'Morbidity' },
+        { id: 'QAc5FhbeFwl', name: 'Mortality' },
+        { id: 'rPGfUFYbcfJ', name: 'Mortality < 5 years' },
+        { id: 'KU0wDurtWDM', name: 'Mortality Narrative' },
+        { id: 'UAEhIWpoQFN', name: 'Neonatal Tetanus' },
+        { id: 'weRMUzBs8T7', name: 'New cases' },
+        { id: 'XGSHYf5uOlJ', name: 'New on ART' },
+        { id: 'u1ilfnoYafG', name: 'Nutrition' },
+        { id: 'HDdnX6XqxIn', name: 'Onchocerciasis' },
+        { id: 'JZ3usxLEcc9', name: 'Otitis Media' },
+        { id: 'WS3MniopkOQ', name: 'PMTCT' },
+        { id: 'e5NGCRQR8Yo', name: 'PMTCT ANC' },
+        { id: 'bXpe2ByvlFR', name: 'PMTCT Maternity/Delivery' },
+        { id: 'sGLusXgmaOT', name: 'PMTCT Postnatal' },
+        { id: 'sP7jTt3YGBb', name: 'Population Estimates' },
+        { id: 'ubJrVb4v5xy', name: 'Postnatal' },
+        { id: 'qkrZMU4Y2h5', name: 'Pregnancy complications and deaths' },
+        { id: 'ZPtRFVLY40u', name: 'Pregnancy-related (PHUF5)' },
+        { id: 'AiytigJkHP6', name: 'Prev month on ART' },
+        { id: 'UWaMbg9h7vF', name: 'Referrals' },
+        { id: 'OJxi4vkcTBS', name: 'Reproductive health' },
+        { id: 'xNrDrDbJgnm', name: 'STI - Genital Discharge' },
+        { id: 'UmyRWILcoed', name: 'STI - Genital Ulcer' },
+        { id: 'LqG1FnAUhyb', name: 'Schistosomiasis' },
+        { id: 'rwG73cCi66Z', name: 'Shift from ART reg.' },
+        { id: 'rgTZ4mKjZza', name: 'Shift to ART reg.' },
+        { id: 'VCoSeRRVS1n', name: 'Skin Infection' },
+        { id: 'rVEe5QNBgDX', name: 'Staffing' },
+        { id: 'pxWhf42tCIs', name: 'Stock PHU' },
+        { id: 'OnAQ2lsilN9', name: 'TB' },
+        { id: 'LgtuBcNaMB3', name: 'Tetanus' },
+        { id: 'yHtsPZqpAxm', name: 'Tuberculosis' },
+        { id: 'dUK38PhdUdV', name: 'Typhoid Fever' },
+        { id: 'U9wcARyKSzx', name: 'VCCT' },
+        { id: 'LzDaTmQYWcj', name: 'Worm Infestation' },
+        { id: 'IUZ0GidX0jh', name: 'Wounds/Trauma' },
+        { id: 'zmWJAEjfv59', name: 'Yaws' },
+        { id: 'HAraPb0v7ex', name: 'Yellow Fever' },
     ],
 }
 
 storiesOf('CalculationModal', module).add('Default', () => {
     return (
-        <CustomDataProvider data={{ dataElements: DATA_ELEMENTS }}>
+        <CustomDataProvider
+            data={{
+                dataElements: DATA_ELEMENTS,
+                dataElementGroups: DATA_ELEMENT_GROUPS,
+            }}
+        >
             <CalculationModal
                 displayNameProp="name"
                 onClose={Function.prototype}
