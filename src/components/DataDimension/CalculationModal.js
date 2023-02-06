@@ -46,7 +46,6 @@ const CalculationModal = ({
     const [doBackendValidation] = useDataMutation(validateExpressionMutation, {
         onError: (error) => showError(error),
     })
-    const [focusId, setFocusId] = useState(null)
     const [validationOutput, setValidationOutput] = useState(null)
     const [expressionArray, setExpressionArray] = useState(
         parseExpressionToArray(calculation.expression)
@@ -54,27 +53,28 @@ const CalculationModal = ({
     const [name, setName] = useState(calculation.name)
     const [showDeletePrompt, setShowDeletePrompt] = useState(false)
 
+    const [focusId, setFocusId] = useState(null)
     const [selectedId, setSelectedId] = useState(null)
     const [idCounter, setIdCounter] = useState(0)
 
     const expressionStatus = validationOutput?.status
 
-    const selectItem = (id) => {
+    const selectItem = (id) =>
         setSelectedId((prevSelected) => (prevSelected !== id ? id : null))
-    }
 
-    const removeItem = ({ index }) => {
+    const removeItem = (id) => {
         setValidationOutput()
         const sourceList = Array.from(expressionArray)
+        const index = sourceList.findIndex((item) => item.id === id)
         sourceList.splice(index, 1)
         setExpressionArray(sourceList)
     }
 
     const setItemValue = ({ index, value }) => {
-        const updatedFormulaItems = expressionArray.map((expression, i) =>
+        const updatedItems = expressionArray.map((expression, i) =>
             i === index ? Object.assign({}, expression, { value }) : expression
         )
-        setExpressionArray(updatedFormulaItems)
+        setExpressionArray(updatedItems)
     }
 
     const validate = async () => {
@@ -158,21 +158,9 @@ const CalculationModal = ({
                                             <div className={'remove-button'}>
                                                 <Button
                                                     small
-                                                    onClick={() => {
-                                                        setValidationOutput()
-                                                        setExpressionArray(
-                                                            (prevArray) =>
-                                                                prevArray.filter(
-                                                                    (
-                                                                        _,
-                                                                        index
-                                                                    ) =>
-                                                                        index !=
-                                                                        selectedId
-                                                                )
-                                                        )
-                                                        setSelectedId(null)
-                                                    }}
+                                                    onClick={() =>
+                                                        removeItem(selectedId)
+                                                    }
                                                 >
                                                     {i18n.t('Remove item')}
                                                 </Button>

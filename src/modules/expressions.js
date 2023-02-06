@@ -27,7 +27,7 @@ export const parseExpressionToArray = (input = '') => {
 export const parseArrayToExpression = (input = []) =>
     input.map((item) => item.value).join('')
 
-export const validateExpression = async (expression) => {
+export const validateExpression = (expression) => {
     let result = ''
     // TODO: two numbers next to each other
 

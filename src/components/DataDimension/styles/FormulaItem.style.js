@@ -24,33 +24,25 @@ export default css`
         padding: 2px;
     }
 
-    .icon {
-        margin-right: ${spacers.dp4};
-        display: inline-flex;
-        vertical-align: text-bottom;
-        padding-top: 1px;
+    .inputWidth {
+        position: relative;
     }
 
-    .formulaItem input {
+    input {
+        position: absolute;
+        width: 100%;
+        left: 0;
         background-color: transparent;
         border: 1px dashed #a0adba;
         padding: 0 0 0 2px;
     }
 
-    .formulaItem input:hover,
-    .formulaItem input:focus {
+    input:hover,
+    input:focus {
         background: white;
         border: 1px solid rgba(0, 0, 0, 0.2);
     }
 
-    .inputWidth {
-        position: relative;
-    }
-    .inputWidth input {
-        position: absolute;
-        width: 100%;
-        left: 0;
-    }
     .widthMachine {
         /* Add extra space for number spinner */
         padding: 0 1rem;
@@ -82,17 +74,26 @@ export default css`
         fill: ${colors.white};
     }
 
-    .operator .label {
+    .operatorLabel {
         padding: 0 6px;
     }
 
-    .dataitem .label {
+    .icon {
+        margin-right: ${spacers.dp4};
+        display: inline-flex;
+        vertical-align: text-bottom;
+        padding-top: 1px;
+    }
+
+    .dataitemLabel {
         padding-right: 6px;
         max-width: 280px;
         text-overflow: ellipsis;
         overflow: hidden;
         white-space: nowrap;
     }
+
+    /* DND markers */
 
     .inactive.insertBefore .content::before,
     .inactive.insertAfter .content::before,
