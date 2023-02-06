@@ -2,7 +2,7 @@ import { useSortable } from '@dnd-kit/sortable'
 import { CSS } from '@dnd-kit/utilities'
 import cx from 'classnames'
 import PropTypes from 'prop-types'
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import { DIMENSION_TYPE_DATA_ELEMENT } from '../../modules/dataTypes.js'
 import { getIcon } from '../../modules/dimensionListItem.js'
 import {
@@ -27,8 +27,9 @@ const FormulaItem = ({
     onChange,
     isLast,
     highlighted,
-    onClickItem,
+    onClick,
     onDblClick,
+    hasFocus,
 }) => {
     const {
         attributes,
@@ -51,9 +52,18 @@ const FormulaItem = ({
 
     const [clickTimeoutId, setClickTimeoutId] = useState(null)
 
-    const activeIndex = active?.data.current.sortable.index || -1
+    useEffect(() => {
+        if (hasFocus && inputRef.current) {
+            // setTimeout seems to be needed in order for the cursor
+            // to remain in the input. Without it, the cursor disappears
+            // even though the input still has the focus. Not sure why.
+            setTimeout(() => {
+                inputRef.current.focus()
+            }, 0)
+        }
+    }, [inputRef, hasFocus, id])
 
-    const overLastDropZone = over?.id === LAST_DROPZONE_ID
+    const activeIndex = active?.data.current.sortable.index || -1
 
     const style = transform
         ? {
@@ -77,42 +87,36 @@ const FormulaItem = ({
             // so we will insert after
             insertPosition = AFTER
         } else {
-            // The item being dragged is being moved from the formula
+            // The item being dragged is being moved in the formula
             // so if the item is before the item being dragged, use the
             // BEFORE position. Otherwise use the AFTER position
             insertPosition = index > activeIndex ? AFTER : BEFORE
         }
-    }
-
-    if (isLast && overLastDropZone) {
+    } else if (isLast && over?.id === LAST_DROPZONE_ID) {
         insertPosition = AFTER
     }
 
-    const onClick = (tagname) => {
-        if (tagname !== 'INPUT') {
-            onClickItem()
-        } else {
-            inputRef.current && inputRef.current.focus()
-        }
-    }
-
-    const onDoubleClick = () => {
-        onDblClick({ index })
-    }
-
-    function handleSingleClick(e) {
+    const handleSingleClick = (e) => {
         const tagname = e.target.tagName
         clearTimeout(clickTimeoutId)
         const to = setTimeout(function () {
-            onClick(tagname)
+            if (tagname !== 'INPUT') {
+                onClick(index)
+            } else {
+                inputRef.current && inputRef.current.focus()
+            }
         }, maxMsBetweenClicks)
         setClickTimeoutId(to)
     }
 
-    function handleDoubleClick(e) {
+    const handleDoubleClick = () => {
         clearTimeout(clickTimeoutId)
         setClickTimeoutId(null)
-        onDoubleClick(e)
+        onDblClick({ index })
+    }
+
+    const handleChange = (e) => {
+        onChange({ index, value: e.target.value })
     }
 
     const chipClasses = cx('chip', {
@@ -149,8 +153,8 @@ const FormulaItem = ({
                                 <input
                                     id={id}
                                     name={label}
-                                    onChange={onInputChange}
-                                    value={value}
+                                    onChange={handleChange}
+                                    value={value || ''}
                                     type="number"
                                     ref={inputRef}
                                 />
@@ -196,13 +200,10 @@ const FormulaItem = ({
             </>
         )
     }
-
-    function onInputChange(e) {
-        onChange({ index, value: e.target.value })
-    }
 }
 
 FormulaItem.propTypes = {
+    hasFocus: PropTypes.bool,
     highlighted: PropTypes.bool,
     id: PropTypes.string,
     isLast: PropTypes.bool,
@@ -210,7 +211,7 @@ FormulaItem.propTypes = {
     type: PropTypes.string,
     value: PropTypes.string,
     onChange: PropTypes.func,
-    onClickItem: PropTypes.func,
+    onClick: PropTypes.func,
     onDblClick: PropTypes.func,
 }
 

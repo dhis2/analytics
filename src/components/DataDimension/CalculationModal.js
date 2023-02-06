@@ -24,16 +24,21 @@ import i18n from '../../locales/index.js'
 import {
     parseExpressionToArray,
     parseArrayToExpression,
+    validateExpression,
+    INVALID_EXPRESSION,
+    VALID_EXPRESSION,
 } from '../../modules/expressions.js'
-import { TYPE_DATAITEM, LAST_DROPZONE_ID, FORMULA_BOX_ID } from './constants.js'
+import {
+    TYPE_DATAITEM,
+    TYPE_INPUT,
+    LAST_DROPZONE_ID,
+    FORMULA_BOX_ID,
+} from './constants.js'
 import DataElementSelector from './DataElementSelector.js'
 import DraggingItem from './DraggingItem.js'
 import FormulaField from './FormulaField.js'
 import MathOperatorSelector, { getOperators } from './MathOperatorSelector.js'
 import styles from './styles/CalculationModal.style.js'
-
-const VALID_EXPRESSION = 'OK'
-const INVALID_EXPRESSION = 'ERROR'
 
 const activateAt15pixels = {
     activationConstraint: {
@@ -56,6 +61,7 @@ const CalculationModal = ({
     const [doBackendValidation] = useDataMutation(validateExpressionMutation, {
         onError: (error) => showError(error),
     })
+    const [focusId, setFocusId] = useState(null)
     const [validationOutput, setValidationOutput] = useState()
     const [expressionArray, setExpressionArray] = useState(
         parseExpressionToArray(calculation.expression)
@@ -67,67 +73,14 @@ const CalculationModal = ({
     const sensors = useSensors(sensor)
     const [draggingItem, setDraggingItem] = useState(null)
     const [idCounter, setIdCounter] = useState(0)
+    const [selectedPart, setSelectedPart] = useState()
 
     const expressionStatus = validationOutput?.status
 
-    const [selectedPart, setSelectedPart] = useState()
     const onPartSelection = (index) => {
         setSelectedPart((prevSelected) =>
             prevSelected !== index ? index : null
         )
-    }
-
-    const validateExpression = async () => {
-        const expression = parseArrayToExpression(expressionArray)
-        let result = ''
-        // TODO: two numbers next to each other
-
-        const leftParenthesisCount = expression.split('(').length - 1
-        const rightParenthesisCount = expression.split(')').length - 1
-
-        if (!expression) {
-            // empty formula
-            result = {
-                status: INVALID_EXPRESSION,
-                message: i18n.t('Empty formula'),
-            }
-        } else if (/[-+/*]{2,}/.test(expression)) {
-            // two math operators next to each other
-            result = {
-                status: INVALID_EXPRESSION,
-                message: i18n.t('Consecutive math operators'),
-            }
-        } else if (/}#/.test(expression)) {
-            // two data elements next to each other
-            result = {
-                status: INVALID_EXPRESSION,
-                message: i18n.t('Consecutive data elements'),
-            }
-        } else if (/^[+\-*/]|[+\-*/]$/.test(expression)) {
-            // starting or ending with a math operator
-            result = {
-                status: INVALID_EXPRESSION,
-                message: i18n.t('Starts or ends with a math operator'),
-            }
-        } else if (leftParenthesisCount > rightParenthesisCount) {
-            // ( but no )
-            result = {
-                status: INVALID_EXPRESSION,
-                message: i18n.t('Missing right parenthesis )'),
-            }
-        } else if (rightParenthesisCount > leftParenthesisCount) {
-            // ) but no (
-            result = {
-                status: INVALID_EXPRESSION,
-                message: i18n.t('Missing left parenthesis ('),
-            }
-        } else {
-            result = await doBackendValidation({
-                expression,
-            })
-        }
-
-        setValidationOutput(result)
     }
 
     const removeItem = ({ index }) => {
@@ -135,6 +88,17 @@ const CalculationModal = ({
         const sourceList = Array.from(expressionArray)
         sourceList.splice(index, 1)
         setExpressionArray(sourceList)
+    }
+
+    const validate = async () => {
+        const expression = parseArrayToExpression(expressionArray)
+        let result = validateExpression(expression)
+        if (!result.length) {
+            result = await doBackendValidation({
+                expression,
+            })
+        }
+        setValidationOutput(result)
     }
 
     return (
@@ -177,10 +141,12 @@ const CalculationModal = ({
                                 <MathOperatorSelector
                                     onSelect={({ id }) => {
                                         setValidationOutput()
+                                        const newItem = getNewOperatorItem(id)
+                                        if (newItem.type === TYPE_INPUT) {
+                                            setFocusId(newItem.id)
+                                        }
                                         setExpressionArray((prevArray) =>
-                                            prevArray.concat([
-                                                getNewOperatorItem(id),
-                                            ])
+                                            prevArray.concat([newItem])
                                         )
                                     }}
                                 />
@@ -191,9 +157,10 @@ const CalculationModal = ({
                                     setExpressionItemValue={
                                         setExpressionItemValue
                                     }
-                                    onPartSelection={onPartSelection}
+                                    highlightItem={onPartSelection}
                                     removeItem={removeItem}
                                     selectedPart={selectedPart}
+                                    focusId={focusId}
                                 />
                                 <div className="leftpad">
                                     <p>
@@ -203,10 +170,7 @@ const CalculationModal = ({
                                         )}
                                     </p>
                                     <div className="actions-wrapper">
-                                        <Button
-                                            small
-                                            onClick={validateExpression}
-                                        >
+                                        <Button small onClick={validate}>
                                             {/* TODO: add loading state to button? */}
                                             {i18n.t('Check formula')}
                                         </Button>
@@ -405,9 +369,13 @@ const CalculationModal = ({
                     newItem,
                     ...sourceList.slice(destIndex),
                 ]
+
                 setExpressionArray(newFormulaItems)
             } else {
                 setExpressionArray([newItem, ...expressionArray])
+            }
+            if (newItem.type === TYPE_INPUT) {
+                setFocusId(newItem.id)
             }
         } else {
             // move an item in the formula
@@ -427,6 +395,7 @@ const CalculationModal = ({
         }
         setDraggingItem(null)
     }
+
     function handleDragStart({ active }) {
         setDraggingItem(active.data.current)
     }
@@ -454,7 +423,7 @@ const CalculationModal = ({
     }
 
     function getNewOperatorItem(id) {
-        const itemToCopy = getOperators().find((operator) => operator.id === id)
+        const itemToCopy = getOperators().find((op) => op.id === id)
         const newItem = Object.assign({}, itemToCopy, {
             id: `${id}-${idCounter}`,
         })

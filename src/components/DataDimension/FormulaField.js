@@ -10,15 +10,14 @@ import styles from './styles/FormulaField.style.js'
 const FormulaField = ({
     expressionArray,
     selectedPart,
-    onPartSelection,
+    highlightItem,
     removeItem,
     setExpressionItemValue,
+    focusId,
 }) => {
     const { over, setNodeRef } = useDroppable({
         id: LAST_DROPZONE_ID,
     })
-
-    const overLastDropZone = over?.id === LAST_DROPZONE_ID
 
     const itemIds = expressionArray.map((item) => item.id)
 
@@ -29,7 +28,7 @@ const FormulaField = ({
                 <SortableContext id={FORMULA_BOX_ID} items={itemIds}>
                     <DropZone
                         firstElementId={itemIds[0]}
-                        overLastDropZone={overLastDropZone}
+                        overLastDropZone={over?.id === LAST_DROPZONE_ID}
                     />
                     {expressionArray.map((item, i) => (
                         <FormulaItem
@@ -39,10 +38,11 @@ const FormulaField = ({
                             label={item.label}
                             type={item.type}
                             value={item.value}
-                            onChange={setExpressionItemValue}
                             isLast={i === expressionArray.length - 1}
+                            hasFocus={focusId === item.id}
                             highlighted={i === selectedPart}
-                            onClickItem={() => onPartSelection(i)}
+                            onChange={setExpressionItemValue}
+                            onClick={highlightItem}
                             onDblClick={removeItem}
                         />
                     ))}
@@ -54,6 +54,7 @@ const FormulaField = ({
 }
 
 FormulaField.propTypes = {
+    highlightItem: PropTypes.func.isRequired,
     removeItem: PropTypes.func.isRequired,
     setExpressionItemValue: PropTypes.func.isRequired,
     expressionArray: PropTypes.arrayOf(
@@ -64,8 +65,8 @@ FormulaField.propTypes = {
             value: PropTypes.string,
         })
     ),
+    focusId: PropTypes.string,
     selectedPart: PropTypes.number,
-    onPartSelection: PropTypes.func,
 }
 
 export default FormulaField
