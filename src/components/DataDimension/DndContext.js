@@ -58,7 +58,22 @@ const OuterDndContext = ({ children, onDragEnd }) => {
             handleDragCancel()
             return
         }
-        onDragEnd({ active, over })
+
+        const activeItem = {
+            id: active.id,
+            sourceAxisId: active.data.current?.sortable?.containerId,
+            sourceIndex: active.data.current?.sortable?.index,
+            data: {
+                id: active.data.current.id,
+                type: active.data.current.type,
+                label: active.data.current.label,
+            },
+        }
+        const overItem = {
+            axisId: over.data.current?.sortable?.containerId || over.id,
+            index: over.data.current?.sortable?.index,
+        }
+        onDragEnd({ activeItem, over: overItem })
         setDraggingItem(null)
     }
 

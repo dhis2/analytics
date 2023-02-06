@@ -97,7 +97,7 @@ const CalculationModal = ({
                         : i18n.t('Data / New calculation')}
                 </ModalTitle>
                 <ModalContent dataTest={'calculation-modal-content'}>
-                    <DndContext onDragEnd={addOrMoveItem}>
+                    <DndContext onDragEnd={addOrMoveDraggedItem}>
                         <div className="name-input">
                             <InputField
                                 label={i18n.t(
@@ -293,26 +293,26 @@ const CalculationModal = ({
         </>
     )
 
-    function addOrMoveItem({ active, over }) {
-        const sourceAxisId = active.data.current?.sortable?.containerId
-        const destAxisId = over.data.current?.sortable?.containerId || over.id
+    function addOrMoveDraggedItem({ activeItem, over }) {
+        const sourceAxisId = activeItem.sourceAxisId
+        const destAxisId = over.axisId
 
         if (sourceAxisId === OPTIONS_PANEL) {
             let newItem
-            if (active.data.current.type === TYPE_DATAELEMENT) {
+            if (activeItem.data.type === TYPE_DATAELEMENT) {
                 newItem = getNewDataItem(
-                    active.data.current.id,
-                    active.data.current.label
+                    activeItem.data.id,
+                    activeItem.data.label
                 )
             } else {
                 // adding an item to the formula
-                newItem = getNewOperatorItem(active.id)
+                newItem = getNewOperatorItem(activeItem.id)
             }
 
             if (destAxisId === LAST_DROPZONE_ID) {
                 setExpressionArray([...expressionArray, newItem])
             } else if (destAxisId === FORMULA_BOX_ID) {
-                const destIndex = over.data.current.sortable.index + 1
+                const destIndex = over.index + 1
                 const sourceList = Array.from(expressionArray)
 
                 const newFormulaItems = [
@@ -330,12 +330,12 @@ const CalculationModal = ({
             }
         } else {
             // move an item in the formula
-            const sourceIndex = active.data.current.sortable.index
+            const sourceIndex = activeItem.sourceIndex
             let destIndex
             if (destAxisId === LAST_DROPZONE_ID) {
                 destIndex = expressionArray.length
             } else if (destAxisId === FORMULA_BOX_ID) {
-                destIndex = over.data.current.sortable.index
+                destIndex = over.index
             } else {
                 destIndex = FIRST_POSITION
             }
