@@ -47,22 +47,20 @@ const CalculationModal = ({
         onError: (error) => showError(error),
     })
     const [focusId, setFocusId] = useState(null)
-    const [validationOutput, setValidationOutput] = useState()
+    const [validationOutput, setValidationOutput] = useState(null)
     const [expressionArray, setExpressionArray] = useState(
         parseExpressionToArray(calculation.expression)
     )
     const [name, setName] = useState(calculation.name)
-    const [showDeletePrompt, setShowDeletePrompt] = useState()
+    const [showDeletePrompt, setShowDeletePrompt] = useState(false)
 
-    const [selectedPart, setSelectedPart] = useState()
+    const [selectedId, setSelectedId] = useState(null)
     const [idCounter, setIdCounter] = useState(0)
 
     const expressionStatus = validationOutput?.status
 
-    const selectItem = (index) => {
-        setSelectedPart((prevSelected) =>
-            prevSelected !== index ? index : null
-        )
+    const selectItem = (id) => {
+        setSelectedId((prevSelected) => (prevSelected !== id ? id : null))
     }
 
     const removeItem = ({ index }) => {
@@ -137,12 +135,12 @@ const CalculationModal = ({
                             </div>
                             <div className="right-section">
                                 <FormulaField
-                                    expressionArray={expressionArray}
-                                    setItemValue={setItemValue}
-                                    highlightItem={selectItem}
-                                    removeItem={removeItem}
-                                    selectedPart={selectedPart}
+                                    items={expressionArray}
+                                    selectedId={selectedId}
                                     focusId={focusId}
+                                    onChange={setItemValue}
+                                    onClick={selectItem}
+                                    onDoubleClick={removeItem}
                                 />
                                 <div className="leftpad">
                                     <p>
@@ -156,8 +154,7 @@ const CalculationModal = ({
                                             {/* TODO: add loading state to button? */}
                                             {i18n.t('Check formula')}
                                         </Button>
-                                        {(selectedPart ||
-                                            selectedPart === 0) && (
+                                        {(selectedId || selectedId === 0) && (
                                             <div className={'remove-button'}>
                                                 <Button
                                                     small
@@ -171,10 +168,10 @@ const CalculationModal = ({
                                                                         index
                                                                     ) =>
                                                                         index !=
-                                                                        selectedPart
+                                                                        selectedId
                                                                 )
                                                         )
-                                                        setSelectedPart()
+                                                        setSelectedId(null)
                                                     }}
                                                 >
                                                     {i18n.t('Remove item')}

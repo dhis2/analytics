@@ -2,7 +2,7 @@ import { colors, spacers, elevations, theme } from '@dhis2/ui'
 import css from 'styled-jsx/css'
 
 export default css`
-    .chip {
+    .formulaItem {
         position: relative;
         display: flex;
         width: fit-content;
@@ -31,14 +31,14 @@ export default css`
         padding-top: 1px;
     }
 
-    .chip input {
+    .formulaItem input {
         background-color: transparent;
         border: 1px dashed #a0adba;
         padding: 0 0 0 2px;
     }
 
-    .chip input:hover,
-    .chip input:focus {
+    .formulaItem input:hover,
+    .formulaItem input:focus {
         background: white;
         border: 1px solid rgba(0, 0, 0, 0.2);
     }

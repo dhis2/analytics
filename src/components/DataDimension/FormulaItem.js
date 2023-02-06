@@ -26,9 +26,9 @@ const FormulaItem = ({
     value = '',
     onChange,
     isLast,
-    highlighted,
+    isHighlighted,
     onClick,
-    onDblClick,
+    onDoubleClick,
     hasFocus,
 }) => {
     const {
@@ -96,12 +96,12 @@ const FormulaItem = ({
         insertPosition = AFTER
     }
 
-    const handleSingleClick = (e) => {
+    const handleClick = (e) => {
         const tagname = e.target.tagName
         clearTimeout(clickTimeoutId)
         const to = setTimeout(function () {
             if (tagname !== 'INPUT') {
-                onClick(index)
+                onClick(id)
             } else {
                 inputRef.current && inputRef.current.focus()
             }
@@ -112,18 +112,16 @@ const FormulaItem = ({
     const handleDoubleClick = () => {
         clearTimeout(clickTimeoutId)
         setClickTimeoutId(null)
-        onDblClick({ index })
+        onDoubleClick({ index })
     }
 
-    const handleChange = (e) => {
-        onChange({ index, value: e.target.value })
-    }
+    const handleChange = (e) => onChange({ index, value: e.target.value })
 
-    const chipClasses = cx('chip', {
+    const itemClasses = cx('formulaItem', {
         inactive: !isDragging,
         insertBefore: insertPosition === BEFORE,
         insertAfter: insertPosition === AFTER,
-        highlighted,
+        highlighted: isHighlighted,
     })
 
     if (type === TYPE_INPUT) {
@@ -136,9 +134,9 @@ const FormulaItem = ({
                     className={isLast && 'isLast'}
                 >
                     <div
-                        className={chipClasses}
+                        className={itemClasses}
                         tabIndex={isLast ? 0 : -1}
-                        onClick={handleSingleClick}
+                        onClick={handleClick}
                         onDoubleClick={handleDoubleClick}
                     >
                         <div className="content">
@@ -154,7 +152,7 @@ const FormulaItem = ({
                                     id={id}
                                     name={label}
                                     onChange={handleChange}
-                                    value={value || ''}
+                                    value={value}
                                     type="number"
                                     ref={inputRef}
                                 />
@@ -176,9 +174,9 @@ const FormulaItem = ({
                     style={style}
                 >
                     <div
-                        className={chipClasses}
+                        className={itemClasses}
                         tabIndex={isLast ? 0 : -1}
-                        onClick={handleSingleClick}
+                        onClick={handleClick}
                         onDoubleClick={handleDoubleClick}
                     >
                         <div
@@ -203,16 +201,16 @@ const FormulaItem = ({
 }
 
 FormulaItem.propTypes = {
+    onChange: PropTypes.func.isRequired,
+    onClick: PropTypes.func.isRequired,
+    onDoubleClick: PropTypes.func.isRequired,
     hasFocus: PropTypes.bool,
-    highlighted: PropTypes.bool,
     id: PropTypes.string,
+    isHighlighted: PropTypes.bool,
     isLast: PropTypes.bool,
     label: PropTypes.string,
     type: PropTypes.string,
     value: PropTypes.string,
-    onChange: PropTypes.func,
-    onClick: PropTypes.func,
-    onDblClick: PropTypes.func,
 }
 
 export default FormulaItem

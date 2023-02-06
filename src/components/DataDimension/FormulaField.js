@@ -8,18 +8,18 @@ import FormulaItem from './FormulaItem.js'
 import styles from './styles/FormulaField.style.js'
 
 const FormulaField = ({
-    expressionArray,
-    selectedPart,
-    highlightItem,
-    removeItem,
-    setItemValue,
+    items,
+    selectedId,
     focusId,
+    onChange,
+    onClick,
+    onDoubleClick,
 }) => {
     const { over, setNodeRef } = useDroppable({
         id: LAST_DROPZONE_ID,
     })
 
-    const itemIds = expressionArray.map((item) => item.id)
+    const itemIds = items.map((item) => item.id)
 
     return (
         <div className="container">
@@ -30,20 +30,20 @@ const FormulaField = ({
                         firstElementId={itemIds[0]}
                         overLastDropZone={over?.id === LAST_DROPZONE_ID}
                     />
-                    {expressionArray.map((item, i) => (
+                    {items.map(({ id, label, type, value }, index) => (
                         <FormulaItem
-                            key={`${item.label}-${i}`}
-                            id={item.id}
-                            index={i}
-                            label={item.label}
-                            type={item.type}
-                            value={item.value}
-                            isLast={i === expressionArray.length - 1}
-                            hasFocus={focusId === item.id}
-                            highlighted={i === selectedPart}
-                            onChange={setItemValue}
-                            onClick={highlightItem}
-                            onDblClick={removeItem}
+                            key={`${label}-${index}`}
+                            id={id}
+                            index={index}
+                            label={label}
+                            type={type}
+                            value={value}
+                            hasFocus={focusId === id}
+                            isHighlighted={selectedId === id}
+                            isLast={index === items.length - 1}
+                            onChange={onChange}
+                            onClick={onClick}
+                            onDoubleClick={onDoubleClick}
                         />
                     ))}
                 </SortableContext>
@@ -54,10 +54,11 @@ const FormulaField = ({
 }
 
 FormulaField.propTypes = {
-    highlightItem: PropTypes.func.isRequired,
-    removeItem: PropTypes.func.isRequired,
-    setItemValue: PropTypes.func.isRequired,
-    expressionArray: PropTypes.arrayOf(
+    onChange: PropTypes.func.isRequired,
+    onClick: PropTypes.func.isRequired,
+    onDoubleClick: PropTypes.func.isRequired,
+    focusId: PropTypes.string,
+    items: PropTypes.arrayOf(
         PropTypes.shape({
             id: PropTypes.string,
             label: PropTypes.string,
@@ -65,8 +66,7 @@ FormulaField.propTypes = {
             value: PropTypes.string,
         })
     ),
-    focusId: PropTypes.string,
-    selectedPart: PropTypes.number,
+    selectedId: PropTypes.number,
 }
 
 export default FormulaField
