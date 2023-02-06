@@ -153,7 +153,6 @@ const DataElementSelector = ({ displayNameProp, onSelect }) => {
                 page: pageRef.current,
             })
 
-            // XXX also check for length?
             if (result?.dimensionItems) {
                 const newOptions = result.dimensionItems.map((item) => ({
                     label: item.name,
@@ -173,7 +172,7 @@ const DataElementSelector = ({ displayNameProp, onSelect }) => {
             hasNextPageRef.current = result?.nextPage ? true : false
         } catch (error) {
             // TODO handle errors
-            // setError(error)
+            console.log('apiFetchOptions error: ', error)
         } finally {
             setLoading(false)
 
