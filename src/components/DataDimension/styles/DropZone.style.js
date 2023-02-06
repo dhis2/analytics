@@ -1,4 +1,3 @@
-// import { colors, spacers } from '@dhis2/ui'
 import css from 'styled-jsx/css'
 
 export default css`
@@ -9,7 +8,6 @@ export default css`
         z-index: -1;
         width: 24px;
         height: 28px;
-        margin: var(--spacers-dp4);
         background-color: transparent;
     }
 
