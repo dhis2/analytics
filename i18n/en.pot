@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2023-01-25T09:24:22.892Z\n"
-"PO-Revision-Date: 2023-01-25T09:24:22.892Z\n"
+"POT-Creation-Date: 2023-02-01T09:02:27.240Z\n"
+"PO-Revision-Date: 2023-02-01T09:02:27.240Z\n"
 
 msgid "view only"
 msgstr "view only"
@@ -140,6 +140,9 @@ msgstr "Details only"
 msgid "Group"
 msgstr "Group"
 
+msgid "Loading"
+msgstr "Loading"
+
 msgid "Disaggregation"
 msgstr "Disaggregation"
 
@@ -157,9 +160,6 @@ msgstr "All types"
 
 msgid "No data"
 msgstr "No data"
-
-msgid "Loading"
-msgstr "Loading"
 
 msgid "Search by data item name"
 msgstr "Search by data item name"
