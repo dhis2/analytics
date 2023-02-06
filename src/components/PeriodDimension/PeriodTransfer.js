@@ -35,9 +35,10 @@ const PeriodTransfer = ({
         ? getFixedPeriodsOptionsById(QUARTERLY, calendar)
         : getFixedPeriodsOptionsById(MONTHLY, calendar)
 
+    const now = getNowInCalendar(calendar)
     // use ".eraYear" rather than ".year" because in Ethiopian calendar, eraYear is what our users expect to see (for other calendars, it doesn't matter)
     // there is still a pending decision in Temporal regarding which era to use by default: https://github.com/js-temporal/temporal-polyfill/blob/9350ee7dd0d29f329fc097debf923a517c32f813/lib/calendar.ts#L1964
-    const defaultFixedPeriodYear = getNowInCalendar(calendar).eraYear
+    const defaultFixedPeriodYear = now.eraYear || now.year
 
     const fixedPeriodConfig = (year) => ({
         offset: year - defaultFixedPeriodYear,

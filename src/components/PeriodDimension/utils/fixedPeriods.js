@@ -50,7 +50,9 @@ const getPeriods = ({ periodType, config, fnFilter, calendar }) => {
     const isReverse = periodType.match(/^FY|YEARLY/)
         ? true
         : config.reversePeriods
-    const year = getNowInCalendar(calendar).eraYear + offset
+
+    const now = getNowInCalendar(calendar)
+    const year = (now.eraYear || now.year) + offset
 
     const params = {
         periodType,
