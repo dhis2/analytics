@@ -2,7 +2,7 @@ import { colors, spacers, elevations, theme } from '@dhis2/ui'
 import css from 'styled-jsx/css'
 
 export default css`
-    .formulaItem {
+    .formula-item {
         position: relative;
         display: flex;
         width: fit-content;
@@ -24,7 +24,7 @@ export default css`
         padding: 2px;
     }
 
-    .inputWidth {
+    .input-width {
         position: relative;
     }
 
@@ -43,13 +43,13 @@ export default css`
         border: 1px solid rgba(0, 0, 0, 0.2);
     }
 
-    .widthMachine {
+    .width-machine {
         /* Add extra space for number spinner */
         padding: 0 1rem;
         visibility: hidden;
     }
 
-    .dndHandle {
+    .dnd-handle {
         display: inline-flex;
         align-items: center;
         justify-content: center;
@@ -74,7 +74,7 @@ export default css`
         fill: ${colors.white};
     }
 
-    .operatorLabel {
+    .operator-label {
         padding: 0 6px;
     }
 
@@ -85,7 +85,7 @@ export default css`
         padding-top: 1px;
     }
 
-    .dataitemLabel {
+    .data-element-label {
         padding-right: 6px;
         max-width: 280px;
         text-overflow: ellipsis;
@@ -122,7 +122,7 @@ export default css`
         border-radius: 12px;
     }
 
-    .isLast {
+    .last-item {
         flex: 1;
     }
 

@@ -2,7 +2,7 @@
 import css from 'styled-jsx/css'
 
 export default css`
-    .firstDropZone {
+    .first-dropzone {
         position: absolute;
         top: 0;
         left: 0;
@@ -13,11 +13,11 @@ export default css`
         background-color: transparent;
     }
 
-    .isOver {
+    .over {
         z-index: 100;
     }
 
-    .isEmpty {
+    .empty {
         position: relative;
         flex-grow: 1;
         z-index: 100;
@@ -25,14 +25,14 @@ export default css`
         margin-top: -4px;
     }
 
-    .isOver::before,
-    .isOver::after {
+    .over::before,
+    .over::after {
         content: '';
         position: absolute;
     }
 
     /* the vertical line */
-    .isOver::before {
+    .over::before {
         top: 10px;
         width: 4px;
         left: 4px;
@@ -41,7 +41,7 @@ export default css`
     }
 
     /* the circle */
-    .isOver::after {
+    .over::after {
         top: 0;
         left: 0;
         width: 12px;

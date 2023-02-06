@@ -15,7 +15,7 @@ const FormulaField = ({
     onClick,
     onDoubleClick,
 }) => {
-    const { over, setNodeRef } = useDroppable({
+    const { over, setNodeRef: setLastDropzoneRef } = useDroppable({
         id: LAST_DROPZONE_ID,
     })
 
@@ -24,7 +24,7 @@ const FormulaField = ({
     return (
         <div className="container">
             <div className="border"></div>
-            <div className="formulaField lastDropZone" ref={setNodeRef}>
+            <div className="formula-field" ref={setLastDropzoneRef}>
                 <SortableContext id={FORMULA_BOX_ID} items={itemIds}>
                     <DropZone
                         firstElementId={itemIds[0]}
@@ -66,7 +66,7 @@ FormulaField.propTypes = {
             value: PropTypes.string,
         })
     ),
-    selectedId: PropTypes.number,
+    selectedId: PropTypes.string,
 }
 
 export default FormulaField

@@ -18,18 +18,13 @@ const DraggableTransferOption = ({
         data: { id: value, label, type },
     })
     const style = {
-        // Outputs `translate3d(x, y, 0)`
         transform: CSS.Translate.toString(transform),
-    }
-
-    if (transform) {
-        console.log('dataitem transform', transform)
     }
 
     return (
         <>
             <div
-                className="draggabledataitem"
+                className="draggable-item"
                 {...attributes}
                 {...listeners}
                 ref={setNodeRef}

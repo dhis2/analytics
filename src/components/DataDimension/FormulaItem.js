@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 import React, { useState, useRef, useEffect } from 'react'
 import { DIMENSION_TYPE_DATA_ELEMENT } from '../../modules/dataTypes.js'
 import { getIcon } from '../../modules/dimensionListItem.js'
-import { TYPE_INPUT, TYPE_DATAITEM, LAST_DROPZONE_ID } from './constants.js'
+import { TYPE_INPUT, TYPE_DATAELEMENT, LAST_DROPZONE_ID } from './constants.js'
 import DragHandleIcon from './DragHandleIcon.js'
 import styles from './styles/FormulaItem.style.js'
 
@@ -116,9 +116,9 @@ const FormulaItem = ({
         if (type === TYPE_INPUT) {
             return (
                 <>
-                    <div className="dndHandle">{DragHandleIcon}</div>
-                    <span className="inputWidth">
-                        <span className="widthMachine" aria-hidden="true">
+                    <div className="dnd-handle">{DragHandleIcon}</div>
+                    <span className="input-width">
+                        <span className="width-machine" aria-hidden="true">
                             {value}
                         </span>
                         <input
@@ -135,13 +135,13 @@ const FormulaItem = ({
             )
         }
 
-        if (type === TYPE_DATAITEM) {
+        if (type === TYPE_DATAELEMENT) {
             return (
                 <>
                     <span className="icon">
                         {getIcon(DIMENSION_TYPE_DATA_ELEMENT)}
                     </span>
-                    <span className="dataitemLabel">{label}</span>
+                    <span className="data-element-label">{label}</span>
                     <style jsx>{styles}</style>
                 </>
             )
@@ -149,7 +149,7 @@ const FormulaItem = ({
 
         return (
             <>
-                <span className="operatorLabel">{label}</span>
+                <span className="operator-label">{label}</span>
                 <style jsx>{styles}</style>
             </>
         )
@@ -161,11 +161,11 @@ const FormulaItem = ({
                 ref={setNodeRef}
                 {...attributes}
                 {...listeners}
-                className={isLast && 'isLast'}
+                className={isLast && 'last-item'}
                 style={style}
             >
                 <div
-                    className={cx('formulaItem', {
+                    className={cx('formula-item', {
                         inactive: !isDragging,
                         insertBefore: insertPosition === BEFORE,
                         insertAfter: insertPosition === AFTER,

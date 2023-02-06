@@ -22,7 +22,7 @@ import {
     VALID_EXPRESSION,
 } from '../../modules/expressions.js'
 import {
-    TYPE_DATAITEM,
+    TYPE_DATAELEMENT,
     TYPE_INPUT,
     LAST_DROPZONE_ID,
     FORMULA_BOX_ID,
@@ -299,7 +299,7 @@ const CalculationModal = ({
 
         if (sourceAxisId === OPTIONS_PANEL) {
             let newItem
-            if (active.data.current.type === TYPE_DATAITEM) {
+            if (active.data.current.type === TYPE_DATAELEMENT) {
                 newItem = getNewDataItem(
                     active.data.current.id,
                     active.data.current.label
@@ -351,7 +351,7 @@ const CalculationModal = ({
             id: `${id}-${idCounter}`,
             value: `#{${id}}`,
             label: label,
-            type: TYPE_DATAITEM,
+            type: TYPE_DATAELEMENT,
         }
         setIdCounter(idCounter + 1)
         return newItem

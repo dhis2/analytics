@@ -21,9 +21,9 @@ const DropZone = ({ firstElementId, overLastDropZone }) => {
         <>
             <div
                 ref={setNodeRef}
-                className={cx('firstDropZone', {
-                    isOver: draggingOver,
-                    isEmpty: !firstElementId,
+                className={cx('first-dropzone', {
+                    over: draggingOver,
+                    empty: !firstElementId,
                 })}
             ></div>
             <style jsx>{styles}</style>

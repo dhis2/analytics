@@ -2,13 +2,13 @@ import { colors, spacers } from '@dhis2/ui'
 import css from 'styled-jsx/css'
 
 export default css`
-    .draggingItem {
+    .dragging-item {
         display: inline-flex;
         background: ${colors.grey200};
         border-radius: 3px;
         font-size: 14px;
         line-height: 16px;
-        cursor: default;
+        cursor: pointer;
         user-select: none;
         align-items: center;
         opacity: 0.7;

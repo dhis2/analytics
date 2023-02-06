@@ -131,8 +131,8 @@ const DataElementSelector = ({ displayNameProp, onSelect }) => {
     const [options, setOptions] = useState([])
     const [loading, setLoading] = useState(true)
 
-    const { setNodeRef } = useSortable({
-        id: 'dataitems',
+    const { setNodeRef: setDraggableNodeRef } = useSortable({
+        id: 'dataelements',
     })
 
     const rootRef = useRef()
@@ -272,7 +272,7 @@ const DataElementSelector = ({ displayNameProp, onSelect }) => {
                     ref={rootRef}
                 >
                     <div className="dimension-list-scroller">
-                        <div className="draggable-items" ref={setNodeRef}>
+                        <div ref={setDraggableNodeRef}>
                             {options.map(({ label, value, type, disabled }) => (
                                 <DraggableTransferOption
                                     label={label}

@@ -2,7 +2,7 @@ import { colors, spacers } from '@dhis2/ui'
 import css from 'styled-jsx/css'
 
 export default css`
-    .formulaField {
+    .formula-field {
         border-right: 2px solid ${colors.grey200};
         height: 200px;
         overflow: auto;

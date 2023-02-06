@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import { DIMENSION_TYPE_DATA_ELEMENT } from '../../modules/dataTypes.js'
 import { getIcon } from '../../modules/dimensionListItem.js'
-import { TYPE_DATAITEM, TYPE_INPUT, TYPE_OPERATOR } from './constants.js'
+import { TYPE_DATAELEMENT, TYPE_INPUT, TYPE_OPERATOR } from './constants.js'
 import styles from './styles/DraggingItem.style.js'
 
 const DraggingItem = ({ item }) => {
@@ -13,13 +13,13 @@ const DraggingItem = ({ item }) => {
     return (
         <>
             <div
-                className={cx('draggingItem', {
+                className={cx('dragging-item', {
                     operator: item.type === TYPE_OPERATOR,
                     number: item.type === TYPE_INPUT,
-                    dataelement: item.type === TYPE_DATAITEM,
+                    dataelement: item.type === TYPE_DATAELEMENT,
                 })}
             >
-                {item.type === TYPE_DATAITEM && (
+                {item.type === TYPE_DATAELEMENT && (
                     <span className="icon">
                         {getIcon(DIMENSION_TYPE_DATA_ELEMENT)}
                     </span>
