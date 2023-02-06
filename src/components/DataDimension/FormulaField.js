@@ -12,7 +12,7 @@ const FormulaField = ({
     selectedPart,
     highlightItem,
     removeItem,
-    setExpressionItemValue,
+    setItemValue,
     focusId,
 }) => {
     const { over, setNodeRef } = useDroppable({
@@ -41,7 +41,7 @@ const FormulaField = ({
                             isLast={i === expressionArray.length - 1}
                             hasFocus={focusId === item.id}
                             highlighted={i === selectedPart}
-                            onChange={setExpressionItemValue}
+                            onChange={setItemValue}
                             onClick={highlightItem}
                             onDblClick={removeItem}
                         />
@@ -56,7 +56,7 @@ const FormulaField = ({
 FormulaField.propTypes = {
     highlightItem: PropTypes.func.isRequired,
     removeItem: PropTypes.func.isRequired,
-    setExpressionItemValue: PropTypes.func.isRequired,
+    setItemValue: PropTypes.func.isRequired,
     expressionArray: PropTypes.arrayOf(
         PropTypes.shape({
             id: PropTypes.string,

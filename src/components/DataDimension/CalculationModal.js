@@ -9,13 +9,6 @@ import {
     InputField,
     Tooltip,
 } from '@dhis2/ui'
-import {
-    DndContext,
-    DragOverlay,
-    useSensor,
-    useSensors,
-    PointerSensor,
-} from '@dnd-kit/core'
 import cx from 'classnames'
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
@@ -35,20 +28,12 @@ import {
     FORMULA_BOX_ID,
 } from './constants.js'
 import DataElementSelector from './DataElementSelector.js'
-import DraggingItem from './DraggingItem.js'
+import DndContext, { OPTIONS_PANEL } from './DndContext.js'
 import FormulaField from './FormulaField.js'
 import MathOperatorSelector, { getOperators } from './MathOperatorSelector.js'
 import styles from './styles/CalculationModal.style.js'
 
-const activateAt15pixels = {
-    activationConstraint: {
-        distance: 15,
-    },
-}
-
 const FIRST_POSITION = 0
-
-const OPTIONS_PANEL = 'Sortable'
 
 const CalculationModal = ({
     calculation = {},
@@ -69,15 +54,12 @@ const CalculationModal = ({
     const [name, setName] = useState(calculation.name)
     const [showDeletePrompt, setShowDeletePrompt] = useState()
 
-    const sensor = useSensor(PointerSensor, activateAt15pixels)
-    const sensors = useSensors(sensor)
-    const [draggingItem, setDraggingItem] = useState(null)
-    const [idCounter, setIdCounter] = useState(0)
     const [selectedPart, setSelectedPart] = useState()
+    const [idCounter, setIdCounter] = useState(0)
 
     const expressionStatus = validationOutput?.status
 
-    const onPartSelection = (index) => {
+    const selectItem = (index) => {
         setSelectedPart((prevSelected) =>
             prevSelected !== index ? index : null
         )
@@ -88,6 +70,13 @@ const CalculationModal = ({
         const sourceList = Array.from(expressionArray)
         sourceList.splice(index, 1)
         setExpressionArray(sourceList)
+    }
+
+    const setItemValue = ({ index, value }) => {
+        const updatedFormulaItems = expressionArray.map((expression, i) =>
+            i === index ? Object.assign({}, expression, { value }) : expression
+        )
+        setExpressionArray(updatedFormulaItems)
     }
 
     const validate = async () => {
@@ -110,12 +99,7 @@ const CalculationModal = ({
                         : i18n.t('Data / New calculation')}
                 </ModalTitle>
                 <ModalContent dataTest={'calculation-modal-content'}>
-                    <DndContext
-                        collisionDetection={rectIntersectionCustom}
-                        onDragStart={handleDragStart}
-                        onDragEnd={handleDragEnd}
-                        sensors={sensors}
-                    >
+                    <DndContext onDragEnd={addOrMoveItem}>
                         <div className="name-input">
                             <InputField
                                 label={i18n.t(
@@ -154,10 +138,8 @@ const CalculationModal = ({
                             <div className="right-section">
                                 <FormulaField
                                     expressionArray={expressionArray}
-                                    setExpressionItemValue={
-                                        setExpressionItemValue
-                                    }
-                                    highlightItem={onPartSelection}
+                                    setItemValue={setItemValue}
+                                    highlightItem={selectItem}
                                     removeItem={removeItem}
                                     selectedPart={selectedPart}
                                     focusId={focusId}
@@ -231,13 +213,6 @@ const CalculationModal = ({
                             </div>
                         </div>
                         <style jsx>{styles}</style>
-                        <DragOverlay dropAnimation={null}>
-                            {draggingItem ? (
-                                <span className="dragOverlay">
-                                    <DraggingItem item={draggingItem} />
-                                </span>
-                            ) : null}
-                        </DragOverlay>
                     </DndContext>
                 </ModalContent>
                 <ModalActions dataTest={'calculation-modal-actions'}>
@@ -333,16 +308,7 @@ const CalculationModal = ({
         </>
     )
 
-    function handleDragEnd({ active, over }) {
-        if (
-            !over?.id ||
-            over?.data?.current?.sortable?.containerId === OPTIONS_PANEL
-        ) {
-            // dropped over non-droppable or over options panel
-            handleDragCancel()
-            return
-        }
-
+    function addOrMoveItem({ active, over }) {
         const sourceAxisId = active.data.current?.sortable?.containerId
         const destAxisId = over.data.current?.sortable?.containerId || over.id
 
@@ -393,22 +359,6 @@ const CalculationModal = ({
             sourceList.splice(destIndex, 0, moved)
             setExpressionArray(sourceList)
         }
-        setDraggingItem(null)
-    }
-
-    function handleDragStart({ active }) {
-        setDraggingItem(active.data.current)
-    }
-
-    function handleDragCancel() {
-        setDraggingItem(null)
-    }
-
-    function setExpressionItemValue({ index, value }) {
-        const updatedFormulaItems = expressionArray.map((expression, i) =>
-            i === index ? Object.assign({}, expression, { value }) : expression
-        )
-        setExpressionArray(updatedFormulaItems)
     }
 
     function getNewDataItem(id, label) {
@@ -430,83 +380,6 @@ const CalculationModal = ({
 
         setIdCounter(idCounter + 1)
         return newItem
-    }
-
-    function getIntersectionRatio(entry, target) {
-        const top = Math.max(target.top, entry.top)
-        const left = Math.max(target.left, entry.left)
-        const right = Math.min(
-            target.left + target.width,
-            entry.left + entry.width
-        )
-        const bottom = Math.min(
-            target.top + target.height,
-            entry.top + entry.height
-        )
-        const width = right - left
-        const height = bottom - top
-
-        if (left < right && top < bottom) {
-            const targetArea = target.width * target.height
-            const entryArea = entry.width * entry.height
-            const intersectionArea = width * height
-            const intersectionRatio =
-                intersectionArea / (targetArea + entryArea - intersectionArea)
-            return Number(intersectionRatio.toFixed(4))
-        } // Rectangles do not overlap, or overlap has an area of zero (edge/corner overlap)
-
-        return 0
-    }
-    function sortCollisionsDesc(
-        { data: { value: a } },
-        { data: { value: b } }
-    ) {
-        return b - a
-    }
-
-    function rectIntersectionCustom({
-        pointerCoordinates,
-        droppableContainers,
-    }) {
-        // create a rect around the pointerCoords for calculating the intersection
-
-        const pointerRectWidth = 40
-        const pointerRectHeight = 40
-        const pointerRect = {
-            width: pointerRectWidth,
-            height: pointerRectHeight,
-            top: pointerCoordinates.y - pointerRectHeight / 2,
-            bottom: pointerCoordinates.y + pointerRectHeight / 2,
-            left: pointerCoordinates.x - pointerRectWidth / 2,
-            right: pointerCoordinates.x + pointerRectWidth / 2,
-        }
-        const collisions = []
-
-        for (const droppableContainer of droppableContainers) {
-            const {
-                id,
-                rect: { current: rect },
-            } = droppableContainer
-
-            if (rect) {
-                const intersectionRatio = getIntersectionRatio(
-                    rect,
-                    pointerRect
-                )
-
-                if (intersectionRatio > 0) {
-                    collisions.push({
-                        id,
-                        data: {
-                            droppableContainer,
-                            value: intersectionRatio,
-                        },
-                    })
-                }
-            }
-        }
-
-        return collisions.sort(sortCollisionsDesc)
     }
 }
 
