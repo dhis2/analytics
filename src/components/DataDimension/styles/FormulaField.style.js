@@ -6,7 +6,7 @@ export default css`
         border-right: 2px solid ${colors.grey200};
         height: 200px;
         overflow: auto;
-        padding: 4px 4px 4px 10px;
+        padding: 4px 10px;
         position: relative;
         display: flex;
         align-items: flex-start;
