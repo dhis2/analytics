@@ -14,14 +14,17 @@ import {
     FONT_STYLE_OPTION_TEXT_ALIGN,
     FONT_STYLE_AXIS_LABELS,
     mergeFontStyleWithDefault,
-} from '../../../../../modules/fontStyle'
+} from '../../../../../modules/fontStyle.js'
 import {
     getColorByValueFromLegendSet,
     LEGEND_DISPLAY_STYLE_FILL,
-} from '../../../../../modules/legends'
-import { isVerticalType, VIS_TYPE_GAUGE } from '../../../../../modules/visTypes'
-import { getAxis } from '../../../../util/axes'
-import { getTextAlignOption } from '../getTextAlignOption'
+} from '../../../../../modules/legends.js'
+import {
+    isVerticalType,
+    VIS_TYPE_GAUGE,
+} from '../../../../../modules/visTypes.js'
+import { getAxis } from '../../../../util/axes.js'
+import { getTextAlignOption } from '../getTextAlignOption.js'
 
 const DEFAULT_MAX_VALUE = 100
 const DEFAULT_TARGET_LINE_LABEL = i18n.t('Target')
@@ -29,7 +32,7 @@ const DEFAULT_BASE_LINE_LABEL = i18n.t('Base')
 const AXIS_TYPE = 'RANGE'
 const AXIS_INDEX = 0
 
-const getLabelOffsetFromTextAlign = textAlign => {
+const getLabelOffsetFromTextAlign = (textAlign) => {
     switch (textAlign) {
         case TEXT_ALIGN_LEFT:
             return -10
@@ -85,7 +88,7 @@ function getPlotLine(regressionLine = {}, defaultLabel) {
     }
 }
 
-const getLabels = axis => {
+const getLabels = (axis) => {
     const fontStyle = mergeFontStyleWithDefault(
         axis.label?.fontStyle,
         FONT_STYLE_AXIS_LABELS

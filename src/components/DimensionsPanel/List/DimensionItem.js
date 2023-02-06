@@ -1,17 +1,19 @@
 import { IconLock16 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { Component, createRef } from 'react'
-import DynamicDimensionIcon from '../../../assets/DynamicDimensionIcon'
-import { getPredefinedDimensionProp } from '../../../modules/predefinedDimensions'
-import DimensionLabel from './DimensionLabel'
-import OptionsButton from './OptionsButton'
-import RecommendedIcon from './RecommendedIcon'
-import { styles } from './styles/DimensionItem.style'
+import DynamicDimensionIcon from '../../../assets/DynamicDimensionIcon.js'
+import {
+    DIMENSION_PROP_NO_ITEMS,
+    getPredefinedDimensionProp,
+} from '../../../modules/predefinedDimensions.js'
+import OptionsButton from './OptionsButton.js'
+import RecommendedIcon from './RecommendedIcon.js'
+import { styles } from './styles/DimensionItem.style.js'
 
 class DimensionItem extends Component {
     state = { mouseOver: false }
 
-    onOptionsClick = (id, ref) => event =>
+    onOptionsClick = (id, ref) => (event) =>
         this.props.onOptionsClick(event, id, ref)
 
     onMouseOver = () => {
@@ -71,20 +73,35 @@ class DimensionItem extends Component {
 
         const optionsRef = createRef()
 
+        const onLabelClick = () => {
+            if (
+                !isDeactivated &&
+                !getPredefinedDimensionProp(id, DIMENSION_PROP_NO_ITEMS)
+            ) {
+                onClick(id)
+            }
+        }
+
         return (
             <li
                 onMouseOver={this.onMouseOver}
                 onMouseLeave={this.onMouseExit}
                 ref={innerRef}
-                style={Object.assign({}, itemStyle, style)}
+                style={Object.assign(
+                    {},
+                    itemStyle,
+                    style,
+                    !isDeactivated && styles.clickable
+                )}
                 data-test={dataTest}
+                onClick={onLabelClick}
                 {...rest}
             >
-                <DimensionLabel
-                    id={id}
-                    isDeactivated={isDeactivated}
-                    onClick={onClick}
-                    dataTest={`${dataTest}-button-${id}`}
+                <div
+                    className="label"
+                    tabIndex={0}
+                    style={styles.label}
+                    data-test={`${dataTest}-button-${id}`}
                 >
                     <div style={styles.iconWrapper}>{Icon}</div>
                     <div style={styles.labelWrapper}>
@@ -99,7 +116,7 @@ class DimensionItem extends Component {
                             <IconLock16 />
                         </div>
                     )}
-                </DimensionLabel>
+                </div>
                 {onOptionsClick ? (
                     <div
                         style={styles.optionsWrapper}

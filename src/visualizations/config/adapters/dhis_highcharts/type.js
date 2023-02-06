@@ -12,7 +12,7 @@ import {
     VIS_TYPE_STACKED_COLUMN,
     VIS_TYPE_YEAR_OVER_YEAR_COLUMN,
     VIS_TYPE_SCATTER,
-} from '../../../../modules/visTypes'
+} from '../../../../modules/visTypes.js'
 
 export default function (type) {
     switch (type) {

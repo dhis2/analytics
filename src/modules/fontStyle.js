@@ -27,7 +27,7 @@ export const TEXT_ALIGN_RIGHT = 'RIGHT'
 const TIER1 = 'tier1'
 const TIER2 = 'tier2'
 
-export const getFontSizeOptions = fontStyleKey => {
+export const getFontSizeOptions = (fontStyleKey) => {
     const fontSizes = [
         {
             key: 'xSmall',
@@ -69,7 +69,7 @@ export const getFontSizeOptions = fontStyleKey => {
         : TIER2
 
     const result = {}
-    fontSizes.forEach(size => {
+    fontSizes.forEach((size) => {
         result[size.key] = {
             label: size.label,
             value: size[tier],

@@ -1,4 +1,4 @@
-import getSingleValueTitle from '../singleValue'
+import getSingleValueTitle from '../singleValue.js'
 
 jest.mock('../../../../../util/getFilterText', () => () => 'The filter text')
 

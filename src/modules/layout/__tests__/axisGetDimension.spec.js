@@ -1,6 +1,6 @@
-import { axisGetDimension } from '../axisGetDimension'
-import { dimensionGetId } from '../dimensionGetId'
-import { TEST_AXIS_COLUMNS, TEST_AXIS_ROWS } from '../testResources'
+import { axisGetDimension } from '../axisGetDimension.js'
+import { dimensionGetId } from '../dimensionGetId.js'
+import { TEST_AXIS_COLUMNS, TEST_AXIS_ROWS } from '../testResources.js'
 
 describe('axisGetDimension', () => {
     it('should return the dimension specified by id', () => {

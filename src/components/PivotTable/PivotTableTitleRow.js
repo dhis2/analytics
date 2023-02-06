@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types'
 import React, { useState, useEffect } from 'react'
-import { PivotTableCell } from './PivotTableCell'
-import { usePivotTableEngine } from './PivotTableEngineContext'
-import { cell as cellStyle } from './styles/PivotTable.style'
+import { PivotTableCell } from './PivotTableCell.js'
+import { usePivotTableEngine } from './PivotTableEngineContext.js'
+import { cell as cellStyle } from './styles/PivotTable.style.js'
 
 export const PivotTableTitleRow = ({
     title,

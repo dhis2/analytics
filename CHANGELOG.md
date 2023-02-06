@@ -1,3 +1,1013 @@
+## [24.4.2](https://github.com/dhis2/analytics/compare/v24.4.1...v24.4.2) (2023-01-25)
+
+
+### Bug Fixes
+
+* use page number from response ([#1413](https://github.com/dhis2/analytics/issues/1413)) ([b5523bf](https://github.com/dhis2/analytics/commit/b5523bf9701198645a7029ea48e568ab7d4859c5))
+
+## [24.4.1](https://github.com/dhis2/analytics/compare/v24.4.0...v24.4.1) (2023-01-13)
+
+
+### Bug Fixes
+
+* make icon prop not required ([#1410](https://github.com/dhis2/analytics/issues/1410)) ([169976c](https://github.com/dhis2/analytics/commit/169976cdde28880785ff836f2e0acba263e7bb53))
+
+# [24.4.0](https://github.com/dhis2/analytics/compare/v24.3.14...v24.4.0) (2023-01-03)
+
+
+### Features
+
+* enable legends for stacked column/bar ([#1388](https://github.com/dhis2/analytics/issues/1388)) ([667db6a](https://github.com/dhis2/analytics/commit/667db6a04072911f8c3923dbfc33b7baecb955e2))
+
+## [24.3.14](https://github.com/dhis2/analytics/compare/v24.3.13...v24.3.14) (2023-01-02)
+
+
+### Bug Fixes
+
+* remove required prop from save as dialog ([#1406](https://github.com/dhis2/analytics/issues/1406)) ([f7972b5](https://github.com/dhis2/analytics/commit/f7972b5b3f56fd02a5baa3f32070b4938b81d0cc))
+
+## [24.3.13](https://github.com/dhis2/analytics/compare/v24.3.12...v24.3.13) (2022-12-29)
+
+
+### Bug Fixes
+
+* prevent escaping old name on save as ([#1405](https://github.com/dhis2/analytics/issues/1405)) ([639dc45](https://github.com/dhis2/analytics/commit/639dc45001d0d8b9a0784ffefc96bdbc45271ae3))
+
+## [24.3.12](https://github.com/dhis2/analytics/compare/v24.3.11...v24.3.12) (2022-12-22)
+
+
+### Bug Fixes
+
+* typo in dataTest ([#1404](https://github.com/dhis2/analytics/issues/1404)) ([55a94ca](https://github.com/dhis2/analytics/commit/55a94cabbb11e5ed91f59c55ebee3053f83e7fa7))
+
+## [24.3.11](https://github.com/dhis2/analytics/compare/v24.3.10...v24.3.11) (2022-12-21)
+
+
+### Bug Fixes
+
+* do not pass translation object when value is empty ([#1401](https://github.com/dhis2/analytics/issues/1401)) ([03c6a2e](https://github.com/dhis2/analytics/commit/03c6a2ee98b437fed2a44233e4a750d17bd3c5af))
+
+## [24.3.10](https://github.com/dhis2/analytics/compare/v24.3.9...v24.3.10) (2022-12-02)
+
+
+### Bug Fixes
+
+* items in sidebar not clickable full width (DHIS2-6626) ([#1390](https://github.com/dhis2/analytics/issues/1390)) ([4b7cff4](https://github.com/dhis2/analytics/commit/4b7cff4a182ae3f44fada600337ba477a2656ed5))
+
+## [24.3.9](https://github.com/dhis2/analytics/compare/v24.3.8...v24.3.9) (2022-12-01)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([a6d4648](https://github.com/dhis2/analytics/commit/a6d4648267a7ca69a7b4702c0fa07cf9f7ff8c2a))
+
+## [24.3.8](https://github.com/dhis2/analytics/compare/v24.3.7...v24.3.8) (2022-11-29)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([ade41a1](https://github.com/dhis2/analytics/commit/ade41a150e728f9ac80b74d90123a5dfed29b088))
+
+## [24.3.7](https://github.com/dhis2/analytics/compare/v24.3.6...v24.3.7) (2022-11-24)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([4838a17](https://github.com/dhis2/analytics/commit/4838a1714a33a7fd06d12681b578701d6a735fd3))
+
+## [24.3.6](https://github.com/dhis2/analytics/compare/v24.3.5...v24.3.6) (2022-11-22)
+
+
+### Bug Fixes
+
+* **OpenFileDialog:** use case insensitive sorting on displayName (DHIS2-13554) ([#1384](https://github.com/dhis2/analytics/issues/1384)) ([e8348f7](https://github.com/dhis2/analytics/commit/e8348f7fe4b9a9d6349eddf9c86b11b5939564a2))
+
+## [24.3.5](https://github.com/dhis2/analytics/compare/v24.3.4...v24.3.5) (2022-11-17)
+
+
+### Bug Fixes
+
+* avoid canceled request error ([#1379](https://github.com/dhis2/analytics/issues/1379)) ([6cbe4f4](https://github.com/dhis2/analytics/commit/6cbe4f4a1bae190a18c27a16d00b0a7e84ab95e9))
+
+## [24.3.4](https://github.com/dhis2/analytics/compare/v24.3.3...v24.3.4) (2022-11-16)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([f09cc94](https://github.com/dhis2/analytics/commit/f09cc94f6e04ce04ac0192de402da42960c13af5))
+
+## [24.3.3](https://github.com/dhis2/analytics/compare/v24.3.2...v24.3.3) (2022-11-11)
+
+
+### Bug Fixes
+
+* require onSaveAs function to enable save as in file menu (DHIS2-14087) ([#1372](https://github.com/dhis2/analytics/issues/1372)) ([11c9dca](https://github.com/dhis2/analytics/commit/11c9dca19d8e605cec7f9fa40268e2d324506a93))
+
+## [24.3.2](https://github.com/dhis2/analytics/compare/v24.3.1...v24.3.2) (2022-11-01)
+
+
+### Bug Fixes
+
+* pass required prop to plugin used in interpretation modal ([#1361](https://github.com/dhis2/analytics/issues/1361)) ([82d6c38](https://github.com/dhis2/analytics/commit/82d6c3877bbb3497ea22e3b01d2f1ac37ed67742))
+
+## [24.3.1](https://github.com/dhis2/analytics/compare/v24.3.0...v24.3.1) (2022-10-28)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([d2ac67c](https://github.com/dhis2/analytics/commit/d2ac67c332fcd21e66425a77ae8bd7bd859f2f1a))
+
+# [24.3.0](https://github.com/dhis2/analytics/compare/v24.2.7...v24.3.0) (2022-10-17)
+
+
+### Features
+
+* export VALUE_TYPE_AGE ([#1360](https://github.com/dhis2/analytics/issues/1360)) ([200cc0b](https://github.com/dhis2/analytics/commit/200cc0b9736cdebfec95e1701fd5f23d7fe312a6))
+
+## [24.2.7](https://github.com/dhis2/analytics/compare/v24.2.6...v24.2.7) (2022-10-14)
+
+
+### Bug Fixes
+
+* parse markdown in description DHIS2-13911 ([#1358](https://github.com/dhis2/analytics/issues/1358)) ([1606319](https://github.com/dhis2/analytics/commit/16063192c747fbf67e6b5f9fadcd3b1d19f00ef0))
+
+## [24.2.6](https://github.com/dhis2/analytics/compare/v24.2.5...v24.2.6) (2022-10-11)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([244b7c0](https://github.com/dhis2/analytics/commit/244b7c0ff907f58f8145f5d9c24297d59d334841))
+
+## [24.2.5](https://github.com/dhis2/analytics/compare/v24.2.4...v24.2.5) (2022-10-10)
+
+
+### Bug Fixes
+
+* use styled-jsx instead of css module ([#1352](https://github.com/dhis2/analytics/issues/1352)) ([df8ad6c](https://github.com/dhis2/analytics/commit/df8ad6c78129f9dc4249472912cf5a235c26346c))
+
+## [24.2.4](https://github.com/dhis2/analytics/compare/v24.2.3...v24.2.4) (2022-10-07)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([f01855f](https://github.com/dhis2/analytics/commit/f01855fec8d91bbb59af90bbd0ac49b604e2d449))
+
+## [24.2.3](https://github.com/dhis2/analytics/compare/v24.2.2...v24.2.3) (2022-10-02)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([d25d409](https://github.com/dhis2/analytics/commit/d25d4095023aa142f0099a02e0aeb09f8abb1c6c))
+
+## [24.2.2](https://github.com/dhis2/analytics/compare/v24.2.1...v24.2.2) (2022-10-01)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([c120dab](https://github.com/dhis2/analytics/commit/c120dabc143605be09f8225b9a43708b670c3bd6))
+
+## [24.2.1](https://github.com/dhis2/analytics/compare/v24.2.0...v24.2.1) (2022-09-30)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([aa49d9f](https://github.com/dhis2/analytics/commit/aa49d9fff115b2676f09cc61396a12d5265952a0))
+
+# [24.2.0](https://github.com/dhis2/analytics/compare/v24.1.1...v24.2.0) (2022-09-29)
+
+
+### Features
+
+* export TranslationDialog component ([#1342](https://github.com/dhis2/analytics/issues/1342)) ([4cf833f](https://github.com/dhis2/analytics/commit/4cf833f49284ad9ddfcd966ee79760aacb5a3d3e))
+
+## [24.1.1](https://github.com/dhis2/analytics/compare/v24.1.0...v24.1.1) (2022-09-15)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([0425bed](https://github.com/dhis2/analytics/commit/0425bedd5bc9022341eb36e5fd347f10c7f5fe7f))
+
+# [24.1.0](https://github.com/dhis2/analytics/compare/v24.0.9...v24.1.0) (2022-09-12)
+
+
+### Features
+
+* add renderId prop in AboutAO and Interpretation units ([#1337](https://github.com/dhis2/analytics/issues/1337)) ([91618c3](https://github.com/dhis2/analytics/commit/91618c35d56d33a080aea44169e48d71176ee739))
+
+## [24.0.9](https://github.com/dhis2/analytics/compare/v24.0.8...v24.0.9) (2022-09-08)
+
+
+### Bug Fixes
+
+* enable onShare callback and allow refresh AboutAOUnit (DHIS2-13667) ([#1332](https://github.com/dhis2/analytics/issues/1332)) ([80c2819](https://github.com/dhis2/analytics/commit/80c2819c62773947d7a3a2c3daa643f563e75880))
+
+## [24.0.8](https://github.com/dhis2/analytics/compare/v24.0.7...v24.0.8) (2022-09-06)
+
+
+### Bug Fixes
+
+* prevent empty values from displaying a legend color ([#1335](https://github.com/dhis2/analytics/issues/1335)) ([5b6567e](https://github.com/dhis2/analytics/commit/5b6567e75ea1d5252f314108998ff24f181f182b))
+
+## [24.0.7](https://github.com/dhis2/analytics/compare/v24.0.6...v24.0.7) (2022-08-27)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([3246bf2](https://github.com/dhis2/analytics/commit/3246bf2b5eba3ea94b43fcd0dc6d6de4e7b60e46))
+
+## [24.0.6](https://github.com/dhis2/analytics/compare/v24.0.5...v24.0.6) (2022-08-26)
+
+
+### Bug Fixes
+
+* change default value for Save as (DHIS2-13328) ([#1325](https://github.com/dhis2/analytics/issues/1325)) ([1957c51](https://github.com/dhis2/analytics/commit/1957c519a47998f3ae637836861a88dac0ec5110))
+
+## [24.0.5](https://github.com/dhis2/analytics/compare/v24.0.4...v24.0.5) (2022-08-26)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([fd8b5e3](https://github.com/dhis2/analytics/commit/fd8b5e3fd9f055abca80d4ccd92993ef87294d8b))
+
+## [24.0.4](https://github.com/dhis2/analytics/compare/v24.0.3...v24.0.4) (2022-08-25)
+
+
+### Bug Fixes
+
+* bump ui to latest ([#1327](https://github.com/dhis2/analytics/issues/1327)) ([ae41b8e](https://github.com/dhis2/analytics/commit/ae41b8e38426e5cd6399bb2c2eab72cfd22dbab5))
+
+## [24.0.3](https://github.com/dhis2/analytics/compare/v24.0.2...v24.0.3) (2022-08-24)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([ed55dcc](https://github.com/dhis2/analytics/commit/ed55dccf8332d3e9400b766719233a8345a19548))
+
+## [24.0.2](https://github.com/dhis2/analytics/compare/v24.0.1...v24.0.2) (2022-08-23)
+
+
+### Bug Fixes
+
+* various fixes in InterpretationModal for maps LIBS-341 ([#1324](https://github.com/dhis2/analytics/issues/1324)) ([be1f462](https://github.com/dhis2/analytics/commit/be1f46297f055978de6cf3d7acae21c8f1fe1491))
+
+## [24.0.1](https://github.com/dhis2/analytics/compare/v24.0.0...v24.0.1) (2022-08-23)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([f7ec5e7](https://github.com/dhis2/analytics/commit/f7ec5e76f6448fdb241afbd876e8b6369c2bdf8f))
+
+# [24.0.0](https://github.com/dhis2/analytics/compare/v23.13.13...v24.0.0) (2022-08-22)
+
+
+### Bug Fixes
+
+* add support for Maps app (LIBS-339) ([#1322](https://github.com/dhis2/analytics/issues/1322)) ([b92717d](https://github.com/dhis2/analytics/commit/b92717d941d7bdb15394cecd663fa7fa9b1a57f2))
+
+
+### BREAKING CHANGES
+
+* the type prop changed from the plural version to the singular, this requires updating the apps that use the AboutAOUnit component.
+
+## [23.13.13](https://github.com/dhis2/analytics/compare/v23.13.12...v23.13.13) (2022-08-22)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([ec34ef7](https://github.com/dhis2/analytics/commit/ec34ef755b02dead5661fa1997db4271812c8134))
+
+## [23.13.12](https://github.com/dhis2/analytics/compare/v23.13.11...v23.13.12) (2022-08-20)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([2e23732](https://github.com/dhis2/analytics/commit/2e237327df8ab7d3aa2b1414329260fb55e07500))
+
+## [23.13.11](https://github.com/dhis2/analytics/compare/v23.13.10...v23.13.11) (2022-08-19)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([fc4707b](https://github.com/dhis2/analytics/commit/fc4707b044dd9e8402a868e8b41cffe0c5a0c408))
+
+## [23.13.10](https://github.com/dhis2/analytics/compare/v23.13.9...v23.13.10) (2022-08-18)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([6edaef1](https://github.com/dhis2/analytics/commit/6edaef1f71f851e09c4f143e4fef3c7ca0a03b91))
+
+## [23.13.9](https://github.com/dhis2/analytics/compare/v23.13.8...v23.13.9) (2022-08-17)
+
+
+### Bug Fixes
+
+* prepare interpretation components for Cypress testing ([#1305](https://github.com/dhis2/analytics/issues/1305)) ([538c7bc](https://github.com/dhis2/analytics/commit/538c7bc686725122634f1b5152661d43cd54cf3b))
+
+## [23.13.8](https://github.com/dhis2/analytics/compare/v23.13.7...v23.13.8) (2022-08-17)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([aef4238](https://github.com/dhis2/analytics/commit/aef4238813779447374e67354d716b51fb01102b))
+
+## [23.13.7](https://github.com/dhis2/analytics/compare/v23.13.6...v23.13.7) (2022-08-12)
+
+
+### Bug Fixes
+
+* always display legend set name in legend key (DHIS2-75) ([#1306](https://github.com/dhis2/analytics/issues/1306)) ([57502ee](https://github.com/dhis2/analytics/commit/57502eebce5ccb52aca62c080708587c008da822))
+
+## [23.13.6](https://github.com/dhis2/analytics/compare/v23.13.5...v23.13.6) (2022-08-12)
+
+
+### Bug Fixes
+
+* **AboutUnit:** read sharing info from sharing object in AO ([#1299](https://github.com/dhis2/analytics/issues/1299)) ([d73a34f](https://github.com/dhis2/analytics/commit/d73a34f8f4b5498c9106cab7fb6f2a373be073b6))
+
+## [23.13.5](https://github.com/dhis2/analytics/compare/v23.13.4...v23.13.5) (2022-08-08)
+
+
+### Bug Fixes
+
+* avoid encoding when interpolating certain variables in i18n.t ([#1304](https://github.com/dhis2/analytics/issues/1304)) ([db83318](https://github.com/dhis2/analytics/commit/db8331800a5132dfe266b2f9a42c5c68bb7e9b6e))
+
+## [23.13.4](https://github.com/dhis2/analytics/compare/v23.13.3...v23.13.4) (2022-08-05)
+
+
+### Bug Fixes
+
+* request first page when sorting/filtering ([#1301](https://github.com/dhis2/analytics/issues/1301)) ([125e2af](https://github.com/dhis2/analytics/commit/125e2af84c19c81a9f8665d3e0cf2a88aaffdbda))
+
+## [23.13.3](https://github.com/dhis2/analytics/compare/v23.13.2...v23.13.3) (2022-08-02)
+
+
+### Bug Fixes
+
+* avoid ES2022 functions ([#1300](https://github.com/dhis2/analytics/issues/1300)) ([93ab848](https://github.com/dhis2/analytics/commit/93ab848e89e4c22a2d9ca20625287af892ef8d89))
+
+## [23.13.2](https://github.com/dhis2/analytics/compare/v23.13.1...v23.13.2) (2022-08-01)
+
+
+### Bug Fixes
+
+* highcharts legend when exporting (DHIS2-12719) ([#1279](https://github.com/dhis2/analytics/issues/1279)) ([5f62e20](https://github.com/dhis2/analytics/commit/5f62e2050a1ff7411308a32f87f3e427cdbb4bb4))
+
+## [23.13.1](https://github.com/dhis2/analytics/compare/v23.13.0...v23.13.1) (2022-07-28)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([d3a1f4e](https://github.com/dhis2/analytics/commit/d3a1f4e861cf29e95f9615f3585e814d52aa837f))
+
+# [23.13.0](https://github.com/dhis2/analytics/compare/v23.12.5...v23.13.0) (2022-07-25)
+
+
+### Features
+
+* search by tokens across identifiable properties (DHIS2-13475) ([c94c427](https://github.com/dhis2/analytics/commit/c94c4271492d390cd76cfb8c8d8104cbfab83e1d))
+* search by tokens across identifiable properties [DHIS2-13475] ([87db2f9](https://github.com/dhis2/analytics/commit/87db2f91f7aa5b2665038324d5b779e2f8267812))
+
+## [23.12.5](https://github.com/dhis2/analytics/compare/v23.12.4...v23.12.5) (2022-06-24)
+
+
+### Bug Fixes
+
+* force the modal content flex item to shrink past its content's width ([#1282](https://github.com/dhis2/analytics/issues/1282)) ([88d6934](https://github.com/dhis2/analytics/commit/88d69342677732206fdc17684ba3f5bd119d85dd))
+
+## [23.12.4](https://github.com/dhis2/analytics/compare/v23.12.3...v23.12.4) (2022-06-20)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([80b79f5](https://github.com/dhis2/analytics/commit/80b79f5737cfffb61d5c9a4758d8aaa3ab2f93e1))
+
+## [23.12.3](https://github.com/dhis2/analytics/compare/v23.12.2...v23.12.3) (2022-06-19)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([6b6092b](https://github.com/dhis2/analytics/commit/6b6092ba16357a64d3fb33471a650525b9c06d08))
+
+## [23.12.2](https://github.com/dhis2/analytics/compare/v23.12.1...v23.12.2) (2022-06-17)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([5ff4451](https://github.com/dhis2/analytics/commit/5ff44512a873a342dad6cea3418c4f2758cbc3d8))
+
+## [23.12.1](https://github.com/dhis2/analytics/compare/v23.12.0...v23.12.1) (2022-06-16)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([919196f](https://github.com/dhis2/analytics/commit/919196f882e6b178c1eb654280a721992f822b19))
+
+# [23.12.0](https://github.com/dhis2/analytics/compare/v23.11.1...v23.12.0) (2022-06-15)
+
+
+### Features
+
+* implement new interpretations components ([#1250](https://github.com/dhis2/analytics/issues/1250)) ([76b223b](https://github.com/dhis2/analytics/commit/76b223b9a3514e0e110cd090bc3ede42056634e8))
+
+## [23.11.1](https://github.com/dhis2/analytics/compare/v23.11.0...v23.11.1) (2022-06-09)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([f5e770a](https://github.com/dhis2/analytics/commit/f5e770a9757d775c886d9d8a8ab51ebc7c206e7d))
+
+# [23.11.0](https://github.com/dhis2/analytics/compare/v23.10.4...v23.11.0) (2022-06-03)
+
+
+### Features
+
+* export getColorByValueFromLegendSet ([#1249](https://github.com/dhis2/analytics/issues/1249)) ([6ce534d](https://github.com/dhis2/analytics/commit/6ce534d1d63d8aeac6ea44e7742681c10f57d709))
+
+## [23.10.4](https://github.com/dhis2/analytics/compare/v23.10.3...v23.10.4) (2022-05-31)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([d09d69d](https://github.com/dhis2/analytics/commit/d09d69dd22984f3bbb4a2de4390eb61e4f867f35))
+
+## [23.10.3](https://github.com/dhis2/analytics/compare/v23.10.2...v23.10.3) (2022-05-27)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([21c1d9f](https://github.com/dhis2/analytics/commit/21c1d9f788e2110a228ac04dbe755519c6f10fb1))
+
+## [23.10.2](https://github.com/dhis2/analytics/compare/v23.10.1...v23.10.2) (2022-05-26)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([b052fd0](https://github.com/dhis2/analytics/commit/b052fd09baa5ee71fa250a8044999bcb565c2730))
+
+## [23.10.1](https://github.com/dhis2/analytics/compare/v23.10.0...v23.10.1) (2022-05-24)
+
+
+### Bug Fixes
+
+* export color set consts ([#1248](https://github.com/dhis2/analytics/issues/1248)) ([2f9b920](https://github.com/dhis2/analytics/commit/2f9b9205dcc8e36788fcf22e7356b5d1eb360f06))
+
+# [23.10.0](https://github.com/dhis2/analytics/compare/v23.9.1...v23.10.0) (2022-05-24)
+
+
+### Features
+
+* add basic and extended color sets ([#1242](https://github.com/dhis2/analytics/issues/1242)) ([a856a11](https://github.com/dhis2/analytics/commit/a856a115aeaedc8da0a0fc137ca11e4b7cd8af4a))
+
+## [23.9.1](https://github.com/dhis2/analytics/compare/v23.9.0...v23.9.1) (2022-05-24)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([5c25b7d](https://github.com/dhis2/analytics/commit/5c25b7d6f9431bdf578cb896864183a722ca17df))
+
+# [23.9.0](https://github.com/dhis2/analytics/compare/v23.8.8...v23.9.0) (2022-05-20)
+
+
+### Features
+
+* export WEEKS_THIS_YEAR constant DHIS2-12580 ([#1238](https://github.com/dhis2/analytics/issues/1238)) ([2896cdb](https://github.com/dhis2/analytics/commit/2896cdb908252f3276dfa893e71c20fac1ad1ae4))
+
+## [23.8.8](https://github.com/dhis2/analytics/compare/v23.8.7...v23.8.8) (2022-05-19)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([7aab336](https://github.com/dhis2/analytics/commit/7aab3369a4518f211fb140b4d32f1b5d422536dc))
+
+## [23.8.7](https://github.com/dhis2/analytics/compare/v23.8.6...v23.8.7) (2022-05-17)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([cfd547f](https://github.com/dhis2/analytics/commit/cfd547f1f08683a88b189c2f894f359d7df4c4a3))
+
+## [23.8.6](https://github.com/dhis2/analytics/compare/v23.8.5...v23.8.6) (2022-05-16)
+
+
+### Bug Fixes
+
+* bump ui and styled-jsx ([#1231](https://github.com/dhis2/analytics/issues/1231)) ([71095af](https://github.com/dhis2/analytics/commit/71095af53cc0d297489c66d365bee5fb7e00d6f8))
+* org unit name with lower case u ([#1230](https://github.com/dhis2/analytics/issues/1230)) (TECH-1182) ([8d76db4](https://github.com/dhis2/analytics/commit/8d76db46756cf1e9223d3dcd2901a19fe9ffb50d))
+* **translations:** sync translations from transifex (master) ([37eb848](https://github.com/dhis2/analytics/commit/37eb84883add04ae98381f98582410de4cd83816))
+
+## [23.8.5](https://github.com/dhis2/analytics/compare/v23.8.4...v23.8.5) (2022-05-09)
+
+
+### Bug Fixes
+
+* fix cursor in AboutUnit component's header TECH-1172 ([#1218](https://github.com/dhis2/analytics/issues/1218)) ([e8bd409](https://github.com/dhis2/analytics/commit/e8bd40970b3ae64a9518ab6f6b6d6e932f02eb24))
+
+## [23.8.4](https://github.com/dhis2/analytics/compare/v23.8.3...v23.8.4) (2022-05-09)
+
+
+### Bug Fixes
+
+* **FileMenu:** use larger lateral padding for File button TECH-1145 ([#1220](https://github.com/dhis2/analytics/issues/1220)) ([e853d62](https://github.com/dhis2/analytics/commit/e853d627244766153d8955a1e9711379afde6015))
+
+## [23.8.3](https://github.com/dhis2/analytics/compare/v23.8.2...v23.8.3) (2022-05-09)
+
+
+### Bug Fixes
+
+* add digit group separator to all numeric types in table cells ([#1219](https://github.com/dhis2/analytics/issues/1219)) ([6b8ec2a](https://github.com/dhis2/analytics/commit/6b8ec2a1ae72fdca18c7df5615e206de1fdf9666))
+
+## [23.8.2](https://github.com/dhis2/analytics/compare/v23.8.1...v23.8.2) (2022-05-05)
+
+
+### Bug Fixes
+
+* remove min-width on File button TECH-1145 ([#1215](https://github.com/dhis2/analytics/issues/1215)) ([3a8f427](https://github.com/dhis2/analytics/commit/3a8f42777cdad2f6ec3c7c48a3b9290989869467))
+
+## [23.8.1](https://github.com/dhis2/analytics/compare/v23.8.0...v23.8.1) (2022-05-05)
+
+
+### Bug Fixes
+
+* dimension types ([#1217](https://github.com/dhis2/analytics/issues/1217)) ([96231fc](https://github.com/dhis2/analytics/commit/96231fcfe348117b39d2f084c35731b05038da98))
+
+# [23.8.0](https://github.com/dhis2/analytics/compare/v23.7.10...v23.8.0) (2022-05-04)
+
+
+### Features
+
+* export constants for all value types ([#1216](https://github.com/dhis2/analytics/issues/1216)) ([d637002](https://github.com/dhis2/analytics/commit/d6370026ba653096f0781478c255b931925823c8))
+
+## [23.7.10](https://github.com/dhis2/analytics/compare/v23.7.9...v23.7.10) (2022-04-28)
+
+
+### Bug Fixes
+
+* set repetition in filter ([#1212](https://github.com/dhis2/analytics/issues/1212)) ([8510cba](https://github.com/dhis2/analytics/commit/8510cbaa68eac3902215d6db8508478b046d59b2))
+
+## [23.7.9](https://github.com/dhis2/analytics/compare/v23.7.8...v23.7.9) (2022-04-26)
+
+
+### Bug Fixes
+
+* simplify code and fix double path issue DHIS2-12940 ([#1206](https://github.com/dhis2/analytics/issues/1206)) ([2097119](https://github.com/dhis2/analytics/commit/2097119c858790cb6f40e43abaeab1c2867ad578))
+
+## [23.7.8](https://github.com/dhis2/analytics/compare/v23.7.7...v23.7.8) (2022-04-22)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([f399dd7](https://github.com/dhis2/analytics/commit/f399dd7e484acf18f83317770a9dce2ca88046e3))
+
+## [23.7.7](https://github.com/dhis2/analytics/compare/v23.7.6...v23.7.7) (2022-04-19)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([6ac9b11](https://github.com/dhis2/analytics/commit/6ac9b11e14bd8c2c597412e9d40f59ab053111cd))
+
+## [23.7.6](https://github.com/dhis2/analytics/compare/v23.7.5...v23.7.6) (2022-04-12)
+
+
+### Bug Fixes
+
+* **FileMenu:** max size on name field TECH-1079 ([#1202](https://github.com/dhis2/analytics/issues/1202)) ([0fb535f](https://github.com/dhis2/analytics/commit/0fb535f5da3bc5d63394d5c877dcda6117b20284))
+
+## [23.7.5](https://github.com/dhis2/analytics/compare/v23.7.4...v23.7.5) (2022-04-06)
+
+
+### Bug Fixes
+
+* filter on displayName to get objects in current language DHIS2-13015 ([#1199](https://github.com/dhis2/analytics/issues/1199)) ([00c9d77](https://github.com/dhis2/analytics/commit/00c9d77793e6c92b84c0859873b599153b2a17cc))
+
+## [23.7.4](https://github.com/dhis2/analytics/compare/v23.7.3...v23.7.4) (2022-04-06)
+
+
+### Bug Fixes
+
+* avoid dialog jumping when searching/paging TECH-1064 ([#1193](https://github.com/dhis2/analytics/issues/1193)) ([f06faa0](https://github.com/dhis2/analytics/commit/f06faa0d1fd8a7284d2a70cc6e17801ca303f300))
+
+## [23.7.3](https://github.com/dhis2/analytics/compare/v23.7.2...v23.7.3) (2022-03-31)
+
+
+### Bug Fixes
+
+* get stage id and filter string for filters just like for columns and rows([#1191](https://github.com/dhis2/analytics/issues/1191)) ([4550517](https://github.com/dhis2/analytics/commit/45505179f9c1bf359d900d05d22f267c356d72cf))
+
+## [23.7.2](https://github.com/dhis2/analytics/compare/v23.7.1...v23.7.2) (2022-03-26)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([8b90433](https://github.com/dhis2/analytics/commit/8b90433d65124a1e79396bc15e399648e1a6edf9))
+
+## [23.7.1](https://github.com/dhis2/analytics/compare/v23.7.0...v23.7.1) (2022-03-25)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([0e19350](https://github.com/dhis2/analytics/commit/0e19350932d76ae76e2c1c7d06931786ae8d6bbe))
+
+# [23.7.0](https://github.com/dhis2/analytics/compare/v23.6.7...v23.7.0) (2022-03-24)
+
+
+### Features
+
+* **FileMenu:** use custom labels in dialog titles TECH-1035 ([#1173](https://github.com/dhis2/analytics/issues/1173)) ([4f02fdf](https://github.com/dhis2/analytics/commit/4f02fdf9d314f0705416442d39f50324d10552e4))
+
+## [23.6.7](https://github.com/dhis2/analytics/compare/v23.6.6...v23.6.7) (2022-03-24)
+
+
+### Bug Fixes
+
+* return the URL portion after origin as default TECH-1036 ([#1175](https://github.com/dhis2/analytics/issues/1175)) ([38607d9](https://github.com/dhis2/analytics/commit/38607d9716f45a8f47ae6003a2e9f90dd4d170a2))
+
+## [23.6.6](https://github.com/dhis2/analytics/compare/v23.6.5...v23.6.6) (2022-03-19)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([5568e55](https://github.com/dhis2/analytics/commit/5568e55b1f8d6e2bd0ff0e1b748bbd3ef84d8b71))
+
+## [23.6.5](https://github.com/dhis2/analytics/compare/v23.6.4...v23.6.5) (2022-03-18)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([5ece76b](https://github.com/dhis2/analytics/commit/5ece76b4394c69f7a3e5108cfbf93b9521c43a93))
+
+## [23.6.4](https://github.com/dhis2/analytics/compare/v23.6.3...v23.6.4) (2022-03-17)
+
+
+### Bug Fixes
+
+* **TranslationDialog:** remove warnings ([#1174](https://github.com/dhis2/analytics/issues/1174)) ([c7e778d](https://github.com/dhis2/analytics/commit/c7e778da4b9aa6f950b874bd6f61a4018a5c8f3f))
+
+## [23.6.3](https://github.com/dhis2/analytics/compare/v23.6.2...v23.6.3) (2022-03-16)
+
+
+### Bug Fixes
+
+* rename event visualization to line list ([#1176](https://github.com/dhis2/analytics/issues/1176)) ([057bdd0](https://github.com/dhis2/analytics/commit/057bdd0a27923de54e2a7294bef60f3613cdef50))
+
+## [23.6.2](https://github.com/dhis2/analytics/compare/v23.6.1...v23.6.2) (2022-03-06)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([2bb2866](https://github.com/dhis2/analytics/commit/2bb2866b1c1a9a59a415f083319e35cbcc1b29ac))
+
+## [23.6.1](https://github.com/dhis2/analytics/compare/v23.6.0...v23.6.1) (2022-03-05)
+
+
+### Bug Fixes
+
+* add to layout button for line list (TECH-1021) ([#1168](https://github.com/dhis2/analytics/issues/1168)) ([036072c](https://github.com/dhis2/analytics/commit/036072c90933683b4eaef9ce2e358a5e0b284a1e))
+
+# [23.6.0](https://github.com/dhis2/analytics/compare/v23.5.2...v23.6.0) (2022-03-02)
+
+
+### Features
+
+* disable Save button when onSave not passed (TECH-1013) ([#1167](https://github.com/dhis2/analytics/issues/1167)) ([fa87c8b](https://github.com/dhis2/analytics/commit/fa87c8b9ef3fe8e237e7d21423c81daf0ff6c817))
+
+## [23.5.2](https://github.com/dhis2/analytics/compare/v23.5.1...v23.5.2) (2022-02-28)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([a4a1ecc](https://github.com/dhis2/analytics/commit/a4a1eccd9eb8a5ad317790d4899f6c769789fed5))
+
+## [23.5.1](https://github.com/dhis2/analytics/compare/v23.5.0...v23.5.1) (2022-02-22)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([478c083](https://github.com/dhis2/analytics/commit/478c0839702cb144d2dc8c9e5f08499235aa87c4))
+
+# [23.5.0](https://github.com/dhis2/analytics/compare/v23.4.1...v23.5.0) (2022-02-21)
+
+
+### Features
+
+* repeatable events (TECH-894) ([#1152](https://github.com/dhis2/analytics/issues/1152)) ([4c35dbb](https://github.com/dhis2/analytics/commit/4c35dbb16d426afaf70913d41f7640376a4ecbc9))
+
+## [23.4.1](https://github.com/dhis2/analytics/compare/v23.4.0...v23.4.1) (2022-02-18)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([a7050f0](https://github.com/dhis2/analytics/commit/a7050f0fbbe71a7a292cd20ad8c8f185038bb214))
+
+# [23.4.0](https://github.com/dhis2/analytics/compare/v23.3.0...v23.4.0) (2022-02-17)
+
+
+### Features
+
+* program stage prefix in layout ([#1159](https://github.com/dhis2/analytics/issues/1159)) ([665b251](https://github.com/dhis2/analytics/commit/665b25180a3d718f03fa1bbca9f429bdfa3f728d))
+
+# [23.3.0](https://github.com/dhis2/analytics/compare/v23.2.3...v23.3.0) (2022-02-16)
+
+
+### Features
+
+* support programStage in dimension create ([#1158](https://github.com/dhis2/analytics/issues/1158)) ([304b822](https://github.com/dhis2/analytics/commit/304b8222ff0ec6ef55305348317b265cbc543449))
+
+## [23.2.3](https://github.com/dhis2/analytics/compare/v23.2.2...v23.2.3) (2022-02-15)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([d6ec5a8](https://github.com/dhis2/analytics/commit/d6ec5a8ee359fd3c21c887ca3ca175e509280a01))
+
+## [23.2.2](https://github.com/dhis2/analytics/compare/v23.2.1...v23.2.2) (2022-02-11)
+
+
+### Bug Fixes
+
+* use stage id as prefix for dimensions in analytics request ([#1150](https://github.com/dhis2/analytics/issues/1150)) ([0a9253e](https://github.com/dhis2/analytics/commit/0a9253e0200a6bc93aa8499ad2c70e20dc09203d))
+
+## [23.2.1](https://github.com/dhis2/analytics/compare/v23.2.0...v23.2.1) (2022-02-09)
+
+
+### Bug Fixes
+
+* export line list icon ([#1149](https://github.com/dhis2/analytics/issues/1149)) ([d65517a](https://github.com/dhis2/analytics/commit/d65517a8665efa389dc46da01abb086a0fb6a62a))
+
+# [23.2.0](https://github.com/dhis2/analytics/compare/v23.1.1...v23.2.0) (2022-02-08)
+
+
+### Features
+
+* add line list icon (TECH-970) ([#1147](https://github.com/dhis2/analytics/issues/1147)) ([7f730f4](https://github.com/dhis2/analytics/commit/7f730f4753d454bbee5c20d8e610cfb7c577a17a))
+
+## [23.1.1](https://github.com/dhis2/analytics/compare/v23.1.0...v23.1.1) (2022-02-06)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([92f1a2d](https://github.com/dhis2/analytics/commit/92f1a2d91f5552d3c9ffb9b3ee627cda5fc56570))
+
+# [23.1.0](https://github.com/dhis2/analytics/compare/v23.0.0...v23.1.0) (2022-02-03)
+
+
+### Features
+
+* export apiFetchItemsByDimension ([#1145](https://github.com/dhis2/analytics/issues/1145)) ([3e5957d](https://github.com/dhis2/analytics/commit/3e5957d20ceb5f997fcda8fca1663a6723fcfe0c))
+
+# [23.0.0](https://github.com/dhis2/analytics/compare/v22.0.1...v23.0.0) (2022-02-03)
+
+
+### Features
+
+* reworked the vis type filter in OpenFileDialog ([#1126](https://github.com/dhis2/analytics/issues/1126)) ([f63aed3](https://github.com/dhis2/analytics/commit/f63aed35bca69b94c8c73356e140a88f34a947e7))
+
+
+### BREAKING CHANGES
+
+* Apps that want the vis type filter enabled in the OpenFileDialog need to pass new props: filterVisTypes and defaultFilterVisType.
+
+## [22.0.1](https://github.com/dhis2/analytics/compare/v22.0.0...v22.0.1) (2022-02-02)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([7dae0e7](https://github.com/dhis2/analytics/commit/7dae0e75a5e0156f6a4fa58b99a7e134283a5816))
+
+# [22.0.0](https://github.com/dhis2/analytics/compare/v21.5.1...v22.0.0) (2022-02-01)
+
+
+### Features
+
+* remove d2 and implement a generic provider component and hook ([#1114](https://github.com/dhis2/analytics/issues/1114)) ([f76233b](https://github.com/dhis2/analytics/commit/f76233bf961d1bea5586e2cffeba8e4c5a8ee254))
+
+
+### BREAKING CHANGES
+
+* currentUser is a new prop required in FileMenu in place of d2.
+
+## [21.5.1](https://github.com/dhis2/analytics/compare/v21.5.0...v21.5.1) (2022-01-27)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([bf92db5](https://github.com/dhis2/analytics/commit/bf92db54fd0e36e93f11e5249be61531fdbb8eef))
+
+# [21.5.0](https://github.com/dhis2/analytics/compare/v21.4.2...v21.5.0) (2022-01-25)
+
+
+### Features
+
+* add line list rules ([f0b13c0](https://github.com/dhis2/analytics/commit/f0b13c034d2fa4dca63aeeeb6bf067642a5848b3))
+
+## [21.4.2](https://github.com/dhis2/analytics/compare/v21.4.1...v21.4.2) (2022-01-22)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([c977170](https://github.com/dhis2/analytics/commit/c9771709c49e7ff6d239ca9e133c10f8dc3bc06c))
+
+## [21.4.1](https://github.com/dhis2/analytics/compare/v21.4.0...v21.4.1) (2022-01-21)
+
+
+### Bug Fixes
+
+* enable enrollments endpoint ([#1134](https://github.com/dhis2/analytics/issues/1134)) ([e4d5d7f](https://github.com/dhis2/analytics/commit/e4d5d7f453064215d013930dea61da7c95941946))
+
+# [21.4.0](https://github.com/dhis2/analytics/compare/v21.3.2...v21.4.0) (2022-01-20)
+
+
+### Features
+
+* add support for enrollments/query API request (TECH-697) ([#1074](https://github.com/dhis2/analytics/issues/1074)) ([0e48d42](https://github.com/dhis2/analytics/commit/0e48d42763b0c773d3f0093e778627e1afc7aeb6))
+
+## [21.3.2](https://github.com/dhis2/analytics/compare/v21.3.1...v21.3.2) (2022-01-20)
+
+
+### Bug Fixes
+
+* event visualization endpoint ([#1133](https://github.com/dhis2/analytics/issues/1133)) ([cefd746](https://github.com/dhis2/analytics/commit/cefd746989f37d1ec8686731c7a7300c5f10624a))
+
+## [21.3.1](https://github.com/dhis2/analytics/compare/v21.3.0...v21.3.1) (2022-01-20)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([0fd64dc](https://github.com/dhis2/analytics/commit/0fd64dcec04bb484291c1ba33cb90604970d360c))
+
+# [21.3.0](https://github.com/dhis2/analytics/compare/v21.2.5...v21.3.0) (2022-01-17)
+
+
+### Features
+
+* add event visualization ao type ([#1130](https://github.com/dhis2/analytics/issues/1130)) ([61ea5b2](https://github.com/dhis2/analytics/commit/61ea5b275dba604a8479b8c9ca1cc71677aa13aa))
+
+## [21.2.5](https://github.com/dhis2/analytics/compare/v21.2.4...v21.2.5) (2022-01-07)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([43ad8ce](https://github.com/dhis2/analytics/commit/43ad8cee13542f0fe634ebaca4c614b232069d6e))
+
+## [21.2.4](https://github.com/dhis2/analytics/compare/v21.2.3...v21.2.4) (2022-01-06)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([271c764](https://github.com/dhis2/analytics/commit/271c76485718b71bd3d046be2cd8baa130dac01f))
+
+## [21.2.3](https://github.com/dhis2/analytics/compare/v21.2.2...v21.2.3) (2022-01-05)
+
+
+### Bug Fixes
+
+* fetch translations for field labels from api ([#1119](https://github.com/dhis2/analytics/issues/1119)) ([e2fcacc](https://github.com/dhis2/analytics/commit/e2fcaccbd058a8e85a99e032f6341e7f15a83b94))
+
+## [21.2.2](https://github.com/dhis2/analytics/compare/v21.2.1...v21.2.2) (2021-12-28)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([2657706](https://github.com/dhis2/analytics/commit/2657706a6033413cc0d405933b6d6ed180bd509c))
+
+## [21.2.1](https://github.com/dhis2/analytics/compare/v21.2.0...v21.2.1) (2021-12-24)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([83f9fe4](https://github.com/dhis2/analytics/commit/83f9fe42eb3e5efa115298a7561f5ddc5a627cc5))
+
+# [21.2.0](https://github.com/dhis2/analytics/compare/v21.1.1...v21.2.0) (2021-12-23)
+
+
+### Features
+
+* use new translations dialog (TECH-873) ([#1105](https://github.com/dhis2/analytics/issues/1105)) ([1e1a984](https://github.com/dhis2/analytics/commit/1e1a98429663241487ad66c56d3aab3914b8cbc6))
+
+## [21.1.1](https://github.com/dhis2/analytics/compare/v21.1.0...v21.1.1) (2021-12-22)
+
+
+### Bug Fixes
+
+* do not fix headers if no dimension items are selected ([#1057](https://github.com/dhis2/analytics/issues/1057)) ([ae51967](https://github.com/dhis2/analytics/commit/ae51967ff35a17b8589f4959015b06c4913b7dae))
+
+# [21.1.0](https://github.com/dhis2/analytics/compare/v21.0.12...v21.1.0) (2021-12-20)
+
+
+### Features
+
+* export formatValue function ([#1080](https://github.com/dhis2/analytics/issues/1080)) ([20d0f5a](https://github.com/dhis2/analytics/commit/20d0f5a1b2eda14879f03a4c6d37337c80bb15ff))
+
+## [21.0.12](https://github.com/dhis2/analytics/compare/v21.0.11...v21.0.12) (2021-12-11)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([ac9ad8c](https://github.com/dhis2/analytics/commit/ac9ad8ca44fa56d976e11c554a894b6aafebb58c))
+
+## [21.0.11](https://github.com/dhis2/analytics/compare/v21.0.10...v21.0.11) (2021-12-10)
+
+
+### Bug Fixes
+
+* support legendset in dimension create ([#1107](https://github.com/dhis2/analytics/issues/1107)) ([4b4dbe7](https://github.com/dhis2/analytics/commit/4b4dbe74c0012419f12c6b2f9c297e1a3e256c05))
+
+## [21.0.10](https://github.com/dhis2/analytics/compare/v21.0.9...v21.0.10) (2021-12-09)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([19b3fc5](https://github.com/dhis2/analytics/commit/19b3fc50cb8ade5907d01348224c9108d50931a5))
+
+## [21.0.10](https://github.com/dhis2/analytics/compare/v21.0.9...v21.0.10) (2021-12-09)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([19b3fc5](https://github.com/dhis2/analytics/commit/19b3fc50cb8ade5907d01348224c9108d50931a5))
+
+## [21.0.9](https://github.com/dhis2/analytics/compare/v21.0.8...v21.0.9) (2021-12-03)
+
+
+### Bug Fixes
+
+* include legendset in the analytics request ([#1102](https://github.com/dhis2/analytics/issues/1102)) ([14d5261](https://github.com/dhis2/analytics/commit/14d52618c714cca1a2d7b3441a7aba5ea209efc2))
+
+## [21.0.8](https://github.com/dhis2/analytics/compare/v21.0.7...v21.0.8) (2021-12-02)
+
+
+### Bug Fixes
+
+* disable org unit filters and groups when user org units are used ([#1100](https://github.com/dhis2/analytics/issues/1100)) ([ce63e14](https://github.com/dhis2/analytics/commit/ce63e14517abfe5f7edc6f42b46c6e1dc07a3555))
+
+## [21.0.7](https://github.com/dhis2/analytics/compare/v21.0.6...v21.0.7) (2021-12-01)
+
+
+### Bug Fixes
+
+* dimension without items + filter (TECH-788) ([#1097](https://github.com/dhis2/analytics/issues/1097)) ([37369ce](https://github.com/dhis2/analytics/commit/37369ce74eb189724d0943d35492d377f0ff44f8))
+
+## [21.0.6](https://github.com/dhis2/analytics/compare/v21.0.5...v21.0.6) (2021-11-28)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([8c10c19](https://github.com/dhis2/analytics/commit/8c10c1909a77e4ae9c729e99bc41bc84b9a51860))
+
+## [21.0.5](https://github.com/dhis2/analytics/compare/v21.0.4...v21.0.5) (2021-11-26)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([1ce7694](https://github.com/dhis2/analytics/commit/1ce76945a25320a774c08fbc8d8a90b086c5ba1a))
+
+## [21.0.4](https://github.com/dhis2/analytics/compare/v21.0.3...v21.0.4) (2021-11-25)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([7e9b666](https://github.com/dhis2/analytics/commit/7e9b666f9a6dc3b93c5ef7cebb6699307bb032b6))
+
+## [21.0.3](https://github.com/dhis2/analytics/compare/v21.0.2...v21.0.3) (2021-11-22)
+
+
+### Bug Fixes
+
+* use loading state instead of disabling subscribe button ([#1088](https://github.com/dhis2/analytics/issues/1088)) ([10f407b](https://github.com/dhis2/analytics/commit/10f407bfaf4aa016668b5591e663ccabfbf9f9f1))
+
+## [21.0.2](https://github.com/dhis2/analytics/compare/v21.0.1...v21.0.2) (2021-11-18)
+
+
+### Bug Fixes
+
+* file button styles ([67213b1](https://github.com/dhis2/analytics/commit/67213b1d0897bb245d012410d9085a726d59f8f8))
+
+## [21.0.1](https://github.com/dhis2/analytics/compare/v21.0.0...v21.0.1) (2021-11-16)
+
+
+### Bug Fixes
+
+* use Intl.ListFormat for formatting the sharing list ([#1086](https://github.com/dhis2/analytics/issues/1086)) ([68e2889](https://github.com/dhis2/analytics/commit/68e288955185be0429206af88ca50bf70873ac81))
+
+# [21.0.0](https://github.com/dhis2/analytics/compare/v20.7.0...v21.0.0) (2021-11-16)
+
+
+### Features
+
+* new org unit dimension (TECH-707) ([#1081](https://github.com/dhis2/analytics/issues/1081)) ([14f72a7](https://github.com/dhis2/analytics/commit/14f72a78bc900af809a34a41055f27d98054ee2b))
+
+
+### BREAKING CHANGES
+
+* changed props for org the unit dimension. removed current, d2, displayNameProperty, ouItems, onDeselect. replaced by root, selected
+
+# [20.7.0](https://github.com/dhis2/analytics/compare/v20.6.5...v20.7.0) (2021-11-11)
+
+
+### Features
+
+* implement AboutAOUnit component ([#1082](https://github.com/dhis2/analytics/issues/1082)) ([8ab8e27](https://github.com/dhis2/analytics/commit/8ab8e271077ce24b9f032303dad8999ce65b47d3))
+
 ## [20.6.5](https://github.com/dhis2/analytics/compare/v20.6.4...v20.6.5) (2021-10-27)
 
 

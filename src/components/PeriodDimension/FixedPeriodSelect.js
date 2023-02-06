@@ -1,5 +1,5 @@
-import propTypes from '@dhis2/prop-types'
 import { SingleSelectField, SingleSelectOption } from '@dhis2/ui'
+import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 import i18n from '../../locales/index.js'
 import FixedPeriodFilter from './FixedPeriodFilter.js'
@@ -31,7 +31,7 @@ class FixedPeriodSelect extends Component {
         }
     }
 
-    onSelectPeriodType = periodType => {
+    onSelectPeriodType = (periodType) => {
         this.setState({
             periodType,
             options: this.getUpdatedOptions(periodType, this.state.year),
@@ -39,7 +39,7 @@ class FixedPeriodSelect extends Component {
         this.props.onChange()
     }
 
-    onSelectYear = year => {
+    onSelectYear = (year) => {
         this.setState({
             year,
             options: this.getUpdatedOptions(this.state.periodType, year),
@@ -80,7 +80,7 @@ class FixedPeriodSelect extends Component {
                         dense
                         selected={this.props.value}
                     >
-                        {this.state.options.map(option => (
+                        {this.state.options.map((option) => (
                             <SingleSelectOption
                                 key={option.id}
                                 value={option.id}
@@ -101,11 +101,11 @@ FixedPeriodSelect.defaultProps = {
 }
 
 FixedPeriodSelect.propTypes = {
-    onChange: propTypes.func.isRequired,
-    allowedPeriodTypes: propTypes.arrayOf(propTypes.string),
-    className: propTypes.string,
-    dataTest: propTypes.string,
-    value: propTypes.string,
+    onChange: PropTypes.func.isRequired,
+    allowedPeriodTypes: PropTypes.arrayOf(PropTypes.string),
+    className: PropTypes.string,
+    dataTest: PropTypes.string,
+    value: PropTypes.string,
 }
 
 export default FixedPeriodSelect

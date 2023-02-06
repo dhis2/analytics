@@ -10,34 +10,34 @@ import {
 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
-import { apiFetchOptions } from '../../api/dimensions'
-import DataElementIcon from '../../assets/DimensionItemIcons/DataElementIcon'
-import GenericIcon from '../../assets/DimensionItemIcons/GenericIcon'
+import { apiFetchOptions } from '../../api/dimensions.js'
+import DataElementIcon from '../../assets/DimensionItemIcons/DataElementIcon.js'
+import GenericIcon from '../../assets/DimensionItemIcons/GenericIcon.js'
 import i18n from '../../locales/index.js'
-import { DATA_SETS_CONSTANTS, REPORTING_RATE } from '../../modules/dataSets'
+import { DATA_SETS_CONSTANTS, REPORTING_RATE } from '../../modules/dataSets.js'
 import {
-    ALL_ID,
-    dataTypes,
-    DATA_ELEMENTS,
-    DATA_ELEMENT_OPERAND,
-    DATA_SETS,
-    EVENT_DATA_ITEMS,
-    PROGRAM_INDICATORS,
-    INDICATORS,
+    dataTypeMap as dataTypes,
+    DIMENSION_TYPE_ALL,
+    DIMENSION_TYPE_DATA_ELEMENT,
+    DIMENSION_TYPE_DATA_ELEMENT_OPERAND,
+    DIMENSION_TYPE_DATA_SET,
+    DIMENSION_TYPE_EVENT_DATA_ITEM,
+    DIMENSION_TYPE_PROGRAM_INDICATOR,
+    DIMENSION_TYPE_INDICATOR,
     TOTALS,
-    PROGRAM_DATA_ELEMENT,
-    PROGRAM_ATTRIBUTE,
-} from '../../modules/dataTypes'
+    DIMENSION_TYPE_PROGRAM_DATA_ELEMENT,
+    DIMENSION_TYPE_PROGRAM_ATTRIBUTE,
+} from '../../modules/dataTypes.js'
 import {
     TRANSFER_HEIGHT,
     TRANSFER_OPTIONS_WIDTH,
     TRANSFER_SELECTED_WIDTH,
-} from '../../modules/dimensionSelectorHelper'
-import { useDebounce, useDidUpdateEffect } from '../../modules/utils'
-import styles from '../styles/DimensionSelector.style'
-import { TransferOption } from '../TransferOption'
-import DataTypeSelector from './DataTypesSelector'
-import GroupSelector from './GroupSelector'
+} from '../../modules/dimensionSelectorHelper.js'
+import { useDebounce, useDidUpdateEffect } from '../../modules/utils.js'
+import styles from '../styles/DimensionSelector.style.js'
+import { TransferOption } from '../TransferOption.js'
+import DataTypeSelector from './DataTypeSelector.js'
+import GroupSelector from './GroupSelector.js'
 
 const LeftHeader = ({
     searchTerm,
@@ -133,19 +133,19 @@ const SourceEmptyPlaceholder = ({
             message = noItemsMessage
         } else {
             switch (dataType) {
-                case INDICATORS:
+                case DIMENSION_TYPE_INDICATOR:
                     message = i18n.t('No indicators found')
                     break
-                case DATA_ELEMENTS:
+                case DIMENSION_TYPE_DATA_ELEMENT:
                     message = i18n.t('No data elements found')
                     break
-                case DATA_SETS:
+                case DIMENSION_TYPE_DATA_SET:
                     message = i18n.t('No data sets found')
                     break
-                case EVENT_DATA_ITEMS:
+                case DIMENSION_TYPE_EVENT_DATA_ITEM:
                     message = i18n.t('No event data items found')
                     break
-                case PROGRAM_INDICATORS:
+                case DIMENSION_TYPE_PROGRAM_INDICATOR:
                     message = i18n.t('No program indicators found')
                     break
                 default:
@@ -155,12 +155,12 @@ const SourceEmptyPlaceholder = ({
         }
     } else if (!loading && !options.length && searchTerm) {
         switch (dataType) {
-            case INDICATORS:
+            case DIMENSION_TYPE_INDICATOR:
                 message = i18n.t('No indicators found for "{{- searchTerm}}"', {
                     searchTerm: searchTerm,
                 })
                 break
-            case DATA_ELEMENTS:
+            case DIMENSION_TYPE_DATA_ELEMENT:
                 message = i18n.t(
                     'No data elements found for "{{- searchTerm}}"',
                     {
@@ -168,12 +168,12 @@ const SourceEmptyPlaceholder = ({
                     }
                 )
                 break
-            case DATA_SETS:
+            case DIMENSION_TYPE_DATA_SET:
                 message = i18n.t('No data sets found for "{{- searchTerm}}"', {
                     searchTerm: searchTerm,
                 })
                 break
-            case EVENT_DATA_ITEMS:
+            case DIMENSION_TYPE_EVENT_DATA_ITEM:
                 message = i18n.t(
                     'No event data items found for "{{- searchTerm}}"',
                     {
@@ -181,7 +181,7 @@ const SourceEmptyPlaceholder = ({
                     }
                 )
                 break
-            case PROGRAM_INDICATORS:
+            case DIMENSION_TYPE_PROGRAM_INDICATOR:
                 message = i18n.t(
                     'No program indicators found for "{{- searchTerm}}"',
                     {
@@ -229,19 +229,19 @@ const ItemSelector = ({
     const [state, setState] = useState({
         searchTerm: '',
         filter: {
-            dataType: ALL_ID,
+            dataType: DIMENSION_TYPE_ALL,
         },
         options: [],
         loading: true,
         nextPage: 1,
     })
     const dataEngine = useDataEngine()
-    const setSearchTerm = searchTerm =>
-        setState(state => ({ ...state, searchTerm }))
-    const setFilter = filter => setState(state => ({ ...state, filter }))
+    const setSearchTerm = (searchTerm) =>
+        setState((state) => ({ ...state, searchTerm }))
+    const setFilter = (filter) => setState((state) => ({ ...state, filter }))
     const debouncedSearchTerm = useDebounce(state.searchTerm, 200)
-    const fetchItems = async page => {
-        setState(state => ({ ...state, loading: true }))
+    const fetchItems = async (page) => {
+        setState((state) => ({ ...state, loading: true }))
         const result = await apiFetchOptions({
             dataEngine,
             nameProp: displayNameProp,
@@ -250,11 +250,14 @@ const ItemSelector = ({
             searchTerm: state.searchTerm,
         })
         const newOptions = []
-        result.dimensionItems?.forEach(item => {
+        result.dimensionItems?.forEach((item) => {
             if (item.dimensionItemType === REPORTING_RATE) {
-                if (state.filter.subGroup && state.filter.subGroup !== ALL_ID) {
+                if (
+                    state.filter.subGroup &&
+                    state.filter.subGroup !== DIMENSION_TYPE_ALL
+                ) {
                     const metric = DATA_SETS_CONSTANTS.find(
-                        item => item.id === state.filter.subGroup
+                        (item) => item.id === state.filter.subGroup
                     )
                     newOptions.push({
                         label: `${item.name} - ${metric.getName()}`,
@@ -263,7 +266,7 @@ const ItemSelector = ({
                         type: item.dimensionItemType,
                     })
                 } else {
-                    DATA_SETS_CONSTANTS.forEach(metric => {
+                    DATA_SETS_CONSTANTS.forEach((metric) => {
                         newOptions.push({
                             label: `${item.name} - ${metric.getName()}`,
                             value: `${item.id}.${metric.id}`,
@@ -281,7 +284,7 @@ const ItemSelector = ({
                 })
             }
         })
-        setState(state => ({
+        setState((state) => ({
             ...state,
             loading: false,
             options: page > 1 ? [...state.options, ...newOptions] : newOptions,
@@ -300,9 +303,9 @@ const ItemSelector = ({
             result.nextPage &&
             newOptions.length &&
             selectedItems.length >= newOptions.length &&
-            newOptions.every(newOption =>
+            newOptions.every((newOption) =>
                 selectedItems.find(
-                    selectedItem => selectedItem.value === newOption.value
+                    (selectedItem) => selectedItem.value === newOption.value
                 )
             )
         ) {
@@ -311,18 +314,18 @@ const ItemSelector = ({
     }
 
     useDidUpdateEffect(() => {
-        setState(state => ({
+        setState((state) => ({
             ...state,
             loading: true,
             nextPage: 1,
         }))
         fetchItems(1)
     }, [debouncedSearchTerm, state.filter])
-    const onChange = newSelected => {
+    const onChange = (newSelected) => {
         onSelect(
-            newSelected.map(value => {
+            newSelected.map((value) => {
                 const matchingItem = [...state.options, ...selectedItems].find(
-                    item => item.value === value
+                    (item) => item.value === value
                 )
                 return {
                     value,
@@ -337,40 +340,41 @@ const ItemSelector = ({
             fetchItems(state.nextPage)
         }
     }
-    const isActive = value => {
-        const item = selectedItems.find(item => item.value === value)
+    const isActive = (value) => {
+        const item = selectedItems.find((item) => item.value === value)
         return !item || item.isActive
     }
-    const getItemType = value =>
-        [...state.options, ...selectedItems].find(item => item.value === value)
-            ?.type
-    const getTooltipText = itemType => {
+    const getItemType = (value) =>
+        [...state.options, ...selectedItems].find(
+            (item) => item.value === value
+        )?.type
+    const getTooltipText = (itemType) => {
         switch (itemType) {
-            case DATA_ELEMENT_OPERAND:
-                return dataTypes[DATA_ELEMENTS].getItemName()
+            case DIMENSION_TYPE_DATA_ELEMENT_OPERAND:
+                return dataTypes[DIMENSION_TYPE_DATA_ELEMENT].getItemName()
             case REPORTING_RATE:
-                return dataTypes[DATA_SETS].getItemName()
-            case PROGRAM_DATA_ELEMENT:
-            case PROGRAM_ATTRIBUTE:
-                return dataTypes[EVENT_DATA_ITEMS].getItemName()
+                return dataTypes[DIMENSION_TYPE_DATA_SET].getItemName()
+            case DIMENSION_TYPE_PROGRAM_DATA_ELEMENT:
+            case DIMENSION_TYPE_PROGRAM_ATTRIBUTE:
+                return dataTypes[DIMENSION_TYPE_EVENT_DATA_ITEM].getItemName()
             default:
                 return dataTypes[itemType]?.getItemName()
         }
     }
-    const getIcon = itemType => {
+    const getIcon = (itemType) => {
         switch (itemType) {
-            case INDICATORS:
+            case DIMENSION_TYPE_INDICATOR:
                 return <IconDimensionIndicator16 />
-            case DATA_ELEMENT_OPERAND:
-            case DATA_ELEMENTS:
+            case DIMENSION_TYPE_DATA_ELEMENT_OPERAND:
+            case DIMENSION_TYPE_DATA_ELEMENT:
                 return DataElementIcon
             case REPORTING_RATE:
                 return <IconDimensionDataSet16 />
-            case EVENT_DATA_ITEMS:
-            case PROGRAM_DATA_ELEMENT:
-            case PROGRAM_ATTRIBUTE:
+            case DIMENSION_TYPE_EVENT_DATA_ITEM:
+            case DIMENSION_TYPE_PROGRAM_DATA_ELEMENT:
+            case DIMENSION_TYPE_PROGRAM_ATTRIBUTE:
                 return <IconDimensionEventDataItem16 />
-            case PROGRAM_INDICATORS:
+            case DIMENSION_TYPE_PROGRAM_INDICATOR:
                 return <IconDimensionProgramIndicator16 />
             default:
                 return GenericIcon
@@ -379,7 +383,7 @@ const ItemSelector = ({
     return (
         <Transfer
             onChange={({ selected }) => onChange(selected)}
-            selected={selectedItems.map(item => item.value)}
+            selected={selectedItems.map((item) => item.value)}
             options={[...state.options, ...selectedItems]}
             loading={state.loading}
             loadingPicked={state.loading}
@@ -397,21 +401,23 @@ const ItemSelector = ({
             leftHeader={
                 <LeftHeader
                     dataType={state.filter.dataType}
-                    setDataType={dataType => {
+                    setDataType={(dataType) => {
                         setFilter({
                             ...state.filter,
                             dataType,
                             group: null,
                             subGroup:
-                                dataType === DATA_ELEMENTS ? TOTALS : null,
+                                dataType === DIMENSION_TYPE_DATA_ELEMENT
+                                    ? TOTALS
+                                    : null,
                         })
                     }}
                     group={state.filter.group}
-                    setGroup={group => {
+                    setGroup={(group) => {
                         setFilter({ ...state.filter, group })
                     }}
                     subGroup={state.filter.subGroup}
-                    setSubGroup={subGroup => {
+                    setSubGroup={(subGroup) => {
                         setFilter({ ...state.filter, subGroup })
                     }}
                     searchTerm={state.searchTerm}
@@ -427,7 +433,7 @@ const ItemSelector = ({
             selectedEmptyComponent={<EmptySelection />}
             rightHeader={<RightHeader infoText={infoBoxMessage} />}
             rightFooter={rightFooter}
-            renderOption={props => (
+            renderOption={(props) => (
                 <TransferOption
                     {...props}
                     active={isActive(
@@ -439,7 +445,7 @@ const ItemSelector = ({
                         )
                     )}
                     tooltipText={
-                        state.filter.dataType === ALL_ID
+                        state.filter.dataType === DIMENSION_TYPE_ALL
                             ? getTooltipText(
                                   getItemType(
                                       props.value /* eslint-disable-line react/prop-types */

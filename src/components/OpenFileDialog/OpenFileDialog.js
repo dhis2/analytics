@@ -11,38 +11,42 @@ import {
     DataTableRow,
     DataTableCell,
     DataTableColumnHeader,
-    DataTableToolbar,
     NoticeBox,
     CircularLoader,
     Button,
 } from '@dhis2/ui'
 import isEqual from 'lodash/isEqual'
 import PropTypes from 'prop-types'
-import React, { useEffect, useMemo, useState } from 'react'
+import React, {
+    useCallback,
+    useEffect,
+    useMemo,
+    useReducer,
+    useState,
+} from 'react'
+import {
+    VIS_TYPE_GROUP_ALL,
+    VIS_TYPE_GROUP_CHARTS,
+} from '../../modules/visTypes.js'
 import {
     CreatedByFilter,
     CREATED_BY_ALL,
     CREATED_BY_ALL_BUT_CURRENT_USER,
     CREATED_BY_CURRENT_USER,
-} from './CreatedByFilter'
-import { FileList } from './FileList'
-import { NameFilter } from './NameFilter'
-import { styles } from './OpenFileDialog.styles'
-import { PaginationControls } from './PaginationControls'
-import {
-    getTranslatedString,
-    AO_TYPE_VISUALIZATION,
-    AO_TYPE_EVENT_REPORT,
-    AOTypeMap,
-} from './utils'
-import { VisTypeFilter, VIS_TYPE_ALL, VIS_TYPE_CHARTS } from './VisTypeFilter'
+} from './CreatedByFilter.js'
+import { FileList } from './FileList.js'
+import { NameFilter } from './NameFilter.js'
+import { styles } from './OpenFileDialog.styles.js'
+import { PaginationControls } from './PaginationControls.js'
+import { getTranslatedString, AOTypeMap } from './utils.js'
+import { VisTypeFilter } from './VisTypeFilter.js'
 
-const getQuery = type => ({
+const getQuery = (type) => ({
     files: {
         resource: AOTypeMap[type].apiEndpoint,
         params: ({
             sortField = 'displayName',
-            sortDirection = 'asc',
+            sortDirection = 'iasc',
             page = 1,
             filters,
         }) => {
@@ -66,30 +70,36 @@ const getQuery = type => ({
 export const OpenFileDialog = ({
     type,
     open,
+    filterVisTypes,
+    defaultFilterVisType,
     onClose,
     onFileSelect,
     onNew,
     currentUser,
 }) => {
-    const filesQuery = useMemo(() => getQuery(type), [])
+    const filesQuery = useMemo(() => getQuery(type), [type])
     const defaultFilters = {
         searchTerm: '',
         createdBy: CREATED_BY_ALL,
-        visType: VIS_TYPE_ALL,
+        visType: defaultFilterVisType,
     }
 
-    const [{ sortField, sortDirection }, setSorting] = useState({
-        sortField: 'displayName',
-        sortDirection: 'asc',
-    })
-    const [page, setPage] = useState(1)
+    const [{ page, sortField, sortDirection, filters }, setState] = useReducer(
+        (state, newState) => ({ ...state, ...newState }),
+        {
+            page: 1,
+            sortField: 'displayName',
+            sortDirection: 'asc',
+            filters: defaultFilters,
+        }
+    )
+
     const [nameFilterValue, setNameFilterValue] = useState(
         defaultFilters.searchTerm
     )
     const [searchTimeout, setSearchTimeout] = useState(null)
-    const [filters, setFilters] = useState(defaultFilters)
 
-    const formatFilters = () => {
+    const formatFilters = useCallback(() => {
         const queryFilters = []
 
         switch (filters.createdBy) {
@@ -104,37 +114,59 @@ export const OpenFileDialog = ({
                 break
         }
 
-        switch (filters.visType) {
-            case VIS_TYPE_ALL:
-                break
-            case VIS_TYPE_CHARTS:
-                queryFilters.push('type:!eq:PIVOT_TABLE')
-                break
-            default:
-                queryFilters.push(`type:eq:${filters.visType}`)
-                break
+        if (filters.visType) {
+            switch (filters.visType) {
+                case VIS_TYPE_GROUP_ALL:
+                    break
+                case VIS_TYPE_GROUP_CHARTS:
+                    queryFilters.push('type:!eq:PIVOT_TABLE')
+                    break
+                default:
+                    queryFilters.push(`type:eq:${filters.visType}`)
+                    break
+            }
         }
 
         if (filters.searchTerm) {
-            queryFilters.push(`name:ilike:${filters.searchTerm}`)
-        }
-
-        // for ER 2.38 only show line list ER types
-        if (type === AO_TYPE_EVENT_REPORT) {
-            queryFilters.push('dataType:eq:EVENTS')
+            queryFilters.push(`identifiable:token:${filters.searchTerm}`)
         }
 
         return queryFilters
-    }
+    }, [currentUser, filters])
+
+    const formatSortDirection = useCallback(() => {
+        if (sortField === 'displayName' && sortDirection !== 'default') {
+            return `i${sortDirection}`
+        }
+
+        return sortDirection
+    }, [sortField, sortDirection])
 
     const { loading, error, data, refetch } = useDataQuery(filesQuery, {
         lazy: true,
+        onComplete: (response) => {
+            if (page !== response.files.pager.page) {
+                setPage(response.files.pager.page)
+            }
+        },
     })
 
     const resetFilters = () => {
-        setFilters(defaultFilters)
+        setState({ filters: defaultFilters, page: 1 })
         setNameFilterValue(defaultFilters.searchTerm)
     }
+
+    const setPage = (pageNum) =>
+        setState({
+            page: pageNum,
+        })
+
+    const sortData = ({ name, direction }) =>
+        setState({
+            sortField: name,
+            sortDirection: direction,
+            page: 1,
+        })
 
     useEffect(() => {
         // only fetch data when the dialog is open
@@ -142,21 +174,19 @@ export const OpenFileDialog = ({
             refetch({
                 page,
                 sortField,
-                sortDirection,
+                sortDirection: formatSortDirection(),
+                filters: formatFilters(),
             })
         }
-    }, [open, page, sortField, sortDirection])
-
-    useEffect(() => {
-        // reset pagination when filters are applied/changed
-        setPage(1)
-
-        refetch({
-            sortField,
-            sortDirection,
-            filters: formatFilters(),
-        })
-    }, [filters])
+    }, [
+        open,
+        page,
+        sortField,
+        filters,
+        refetch,
+        formatFilters,
+        formatSortDirection,
+    ])
 
     const headers = [
         {
@@ -176,7 +206,7 @@ export const OpenFileDialog = ({
         },
     ]
 
-    if (type === AO_TYPE_VISUALIZATION) {
+    if (filterVisTypes?.length) {
         headers.splice(1, 0, {
             field: 'type',
             label: i18n.t('Type'),
@@ -184,7 +214,7 @@ export const OpenFileDialog = ({
         })
     }
 
-    const getSortDirection = fieldName =>
+    const getSortDirection = (fieldName) =>
         fieldName === sortField ? sortDirection : 'default'
 
     const cypressSelector = 'open-file-dialog-modal'
@@ -192,7 +222,7 @@ export const OpenFileDialog = ({
     return (
         <Modal
             large
-            position="middle"
+            position="top"
             hide={!open}
             onClose={onClose}
             dataTest={cypressSelector}
@@ -205,16 +235,19 @@ export const OpenFileDialog = ({
                             <NameFilter
                                 dataTest={`${cypressSelector}-name-filter`}
                                 value={nameFilterValue}
-                                onChange={value => {
+                                onChange={(value) => {
                                     setNameFilterValue(value)
 
                                     clearTimeout(searchTimeout)
                                     setSearchTimeout(
                                         setTimeout(
                                             () =>
-                                                setFilters({
-                                                    ...filters,
-                                                    searchTerm: value,
+                                                setState({
+                                                    page: 1,
+                                                    filters: {
+                                                        ...filters,
+                                                        searchTerm: value,
+                                                    },
                                                 }),
                                             200
                                         )
@@ -222,14 +255,18 @@ export const OpenFileDialog = ({
                                 }}
                             />
                         </div>
-                        {type === AO_TYPE_VISUALIZATION && (
+                        {filterVisTypes?.length && (
                             <div className="type-field-container">
                                 <VisTypeFilter
+                                    visTypes={filterVisTypes}
                                     selected={filters.visType}
-                                    onChange={value =>
-                                        setFilters({
-                                            ...filters,
-                                            visType: value,
+                                    onChange={(value) =>
+                                        setState({
+                                            page: 1,
+                                            filters: {
+                                                ...filters,
+                                                visType: value,
+                                            },
                                         })
                                     }
                                 />
@@ -238,10 +275,13 @@ export const OpenFileDialog = ({
                         <div className="created-by-field-container">
                             <CreatedByFilter
                                 selected={filters.createdBy}
-                                onChange={value =>
-                                    setFilters({
-                                        ...filters,
-                                        createdBy: value,
+                                onChange={(value) =>
+                                    setState({
+                                        page: 1,
+                                        filters: {
+                                            ...filters,
+                                            createdBy: value,
+                                        },
                                     })
                                 }
                             />
@@ -261,132 +301,135 @@ export const OpenFileDialog = ({
                         </NoticeBox>
                     ) : (
                         <>
-                            <DataTable layout="fixed">
-                                <DataTableHead>
-                                    <DataTableRow>
-                                        {data?.files[
-                                            AOTypeMap[type].apiEndpoint
-                                        ].length ? (
-                                            headers.map(
-                                                ({ field, label, width }) => (
-                                                    <DataTableColumnHeader
-                                                        width={width}
-                                                        key={field}
-                                                        name={field}
-                                                        onSortIconClick={({
-                                                            name,
-                                                            direction,
-                                                        }) =>
-                                                            setSorting({
-                                                                sortField: name,
-                                                                sortDirection:
-                                                                    direction,
-                                                            })
-                                                        }
-                                                        sortDirection={getSortDirection(
-                                                            field
-                                                        )}
-                                                    >
-                                                        {label}
-                                                    </DataTableColumnHeader>
-                                                )
-                                            )
-                                        ) : (
-                                            <DataTableColumnHeader />
-                                        )}
-                                    </DataTableRow>
-                                </DataTableHead>
-                                <DataTableBody className="data-table-body">
-                                    {loading && (
+                            <div className="data-table-wrapper">
+                                <DataTable layout="fixed">
+                                    <DataTableHead>
                                         <DataTableRow>
-                                            <DataTableCell large>
-                                                <Box height="384px">
-                                                    <div className="info-cell">
-                                                        <CircularLoader small />
-                                                        <span className="info-text">
-                                                            {getTranslatedString(
-                                                                type,
-                                                                'loadingText'
+                                            {data?.files[
+                                                AOTypeMap[type].apiEndpoint
+                                            ].length ? (
+                                                headers.map(
+                                                    ({
+                                                        field,
+                                                        label,
+                                                        width,
+                                                    }) => (
+                                                        <DataTableColumnHeader
+                                                            width={width}
+                                                            key={field}
+                                                            name={field}
+                                                            onSortIconClick={
+                                                                sortData
+                                                            }
+                                                            sortDirection={getSortDirection(
+                                                                field
                                                             )}
-                                                        </span>
-                                                    </div>
-                                                </Box>
-                                            </DataTableCell>
+                                                        >
+                                                            {label}
+                                                        </DataTableColumnHeader>
+                                                    )
+                                                )
+                                            ) : (
+                                                <DataTableColumnHeader />
+                                            )}
                                         </DataTableRow>
-                                    )}
-                                    {!loading &&
-                                        !data?.files[
-                                            AOTypeMap[type].apiEndpoint
-                                        ].length > 0 && (
+                                    </DataTableHead>
+                                    <DataTableBody className="data-table-body">
+                                        {loading && (
                                             <DataTableRow>
                                                 <DataTableCell large>
-                                                    <Box minHeight="384px">
+                                                    <Box height="342px">
                                                         <div className="info-cell">
-                                                            <div className="info-container">
-                                                                {!isEqual(
-                                                                    filters,
-                                                                    defaultFilters
-                                                                ) ? (
-                                                                    <span className="info-text">
-                                                                        {getTranslatedString(
-                                                                            type,
-                                                                            'noFilteredDataText'
-                                                                        )}
-                                                                    </span>
-                                                                ) : (
-                                                                    <>
-                                                                        <div className="info-text">
-                                                                            {getTranslatedString(
-                                                                                type,
-                                                                                'noDataText'
-                                                                            )}
-                                                                        </div>
-                                                                        <div className="info-button">
-                                                                            <Button
-                                                                                onClick={() => {
-                                                                                    onNew()
-                                                                                    onClose()
-                                                                                }}
-                                                                            >
-                                                                                {getTranslatedString(
-                                                                                    type,
-                                                                                    'newButtonLabel'
-                                                                                )}
-                                                                            </Button>
-                                                                        </div>
-                                                                    </>
+                                                            <CircularLoader
+                                                                small
+                                                            />
+                                                            <span className="info-text">
+                                                                {getTranslatedString(
+                                                                    type,
+                                                                    'loadingText'
                                                                 )}
-                                                            </div>
+                                                            </span>
                                                         </div>
                                                     </Box>
                                                 </DataTableCell>
                                             </DataTableRow>
                                         )}
-                                    {data?.files[AOTypeMap[type].apiEndpoint]
-                                        .length > 0 && (
-                                        <FileList
-                                            type={type}
-                                            data={
-                                                data.files[
-                                                    AOTypeMap[type].apiEndpoint
-                                                ]
-                                            }
-                                            onSelect={onFileSelect}
-                                        />
-                                    )}
-                                </DataTableBody>
-                            </DataTable>
+                                        {!loading &&
+                                            !data?.files[
+                                                AOTypeMap[type].apiEndpoint
+                                            ].length > 0 && (
+                                                <DataTableRow>
+                                                    <DataTableCell large>
+                                                        <Box minHeight="342px">
+                                                            <div className="info-cell">
+                                                                <div className="info-container">
+                                                                    {!isEqual(
+                                                                        filters,
+                                                                        defaultFilters
+                                                                    ) ? (
+                                                                        <span className="info-text">
+                                                                            {getTranslatedString(
+                                                                                type,
+                                                                                'noFilteredDataText'
+                                                                            )}
+                                                                        </span>
+                                                                    ) : (
+                                                                        <>
+                                                                            <div className="info-text">
+                                                                                {getTranslatedString(
+                                                                                    type,
+                                                                                    'noDataText'
+                                                                                )}
+                                                                            </div>
+                                                                            <div className="info-button">
+                                                                                <Button
+                                                                                    onClick={() => {
+                                                                                        onNew()
+                                                                                        onClose()
+                                                                                    }}
+                                                                                >
+                                                                                    {getTranslatedString(
+                                                                                        type,
+                                                                                        'newButtonLabel'
+                                                                                    )}
+                                                                                </Button>
+                                                                            </div>
+                                                                        </>
+                                                                    )}
+                                                                </div>
+                                                            </div>
+                                                        </Box>
+                                                    </DataTableCell>
+                                                </DataTableRow>
+                                            )}
+                                        {data?.files[
+                                            AOTypeMap[type].apiEndpoint
+                                        ].length > 0 && (
+                                            <FileList
+                                                data={
+                                                    data.files[
+                                                        AOTypeMap[type]
+                                                            .apiEndpoint
+                                                    ]
+                                                }
+                                                onSelect={onFileSelect}
+                                                showVisTypeColumn={Boolean(
+                                                    filterVisTypes?.length
+                                                )}
+                                            />
+                                        )}
+                                    </DataTableBody>
+                                </DataTable>
+                            </div>
                             {data?.files[AOTypeMap[type].apiEndpoint].length >
                                 0 && (
-                                <DataTableToolbar position="bottom">
-                                    <div className="pagination-controls">
-                                        <PaginationControls
-                                            page={page}
-                                            pager={data.files.pager}
-                                            onPageChange={setPage}
-                                        />
-                                    </div>
-                                </DataTableToolbar>
+                                <div className="pagination-controls">
+                                    <PaginationControls
+                                        page={data.files.pager.page}
+                                        pager={data.files.pager}
+                                        onPageChange={setPage}
+                                    />
+                                </div>
                             )}
                         </>
                     )}
@@ -404,6 +447,8 @@ OpenFileDialog.propTypes = {
     onClose: PropTypes.func.isRequired,
     onFileSelect: PropTypes.func.isRequired,
     onNew: PropTypes.func.isRequired,
+    defaultFilterVisType: PropTypes.string,
+    filterVisTypes: PropTypes.array,
 }
 
 export default OpenFileDialog

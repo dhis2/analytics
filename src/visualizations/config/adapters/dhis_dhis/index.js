@@ -1,6 +1,6 @@
-import getSubtitle from './subtitle'
-import getTitle from './title'
-import getValue from './value'
+import getSubtitle from './subtitle/index.js'
+import getTitle from './title/index.js'
+import getValue from './value/index.js'
 
 export const INDICATOR_FACTOR_100 = 100
 

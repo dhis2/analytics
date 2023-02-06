@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import React from 'react'
-import { PivotTableCell } from './PivotTableCell'
-import { usePivotTableEngine } from './PivotTableEngineContext'
+import { PivotTableCell } from './PivotTableCell.js'
+import { usePivotTableEngine } from './PivotTableEngineContext.js'
 
 export const PivotTableEmptyRow = ({ height, columns }) => {
     const engine = usePivotTableEngine()
@@ -19,7 +19,7 @@ export const PivotTableEmptyRow = ({ height, columns }) => {
                     },
                 ]}
             />
-            {columns.map(i => (
+            {columns.map((i) => (
                 <PivotTableCell key={i} />
             ))}
         </tr>

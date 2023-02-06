@@ -3,11 +3,11 @@ import { storiesOf } from '@storybook/react'
 import cloneDeep from 'lodash/cloneDeep'
 import PropTypes from 'prop-types'
 import React, { useState, useEffect } from 'react'
-import { PivotTable } from '../index'
+import { PivotTable } from '../index.js'
 import {
     NUMBER_TYPE_COLUMN_PERCENTAGE,
     NUMBER_TYPE_ROW_PERCENTAGE,
-} from '../modules/pivotTable/pivotTableConstants'
+} from '../modules/pivotTable/pivotTableConstants.js'
 import avgDataResponse from './data/avgTotalAggregationType.data.json'
 import avgMetadataResponse from './data/avgTotalAggregationType.metadata.json'
 import avgVisualization from './data/avgTotalAggregationType.visualization.json'
@@ -97,7 +97,7 @@ const weeklyColumnsData = combineDataWithMetadata(
     weeklyColumnsMetadataResponse
 )
 
-const PivotTableOptionsWrapper = story => {
+const PivotTableOptionsWrapper = (story) => {
     const [pivotTableOptions, setPivotTableOptions] = useState({
         fixColumnHeaders: false,
         fixRowHeaders: false,

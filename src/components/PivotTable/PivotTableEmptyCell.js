@@ -1,6 +1,6 @@
 import React from 'react'
-import { PivotTableCell } from './PivotTableCell'
-import { cell as cellStyle } from './styles/PivotTable.style'
+import { PivotTableCell } from './PivotTableCell.js'
+import { cell as cellStyle } from './styles/PivotTable.style.js'
 
 export const PivotTableEmptyCell = React.forwardRef(({ ...props }, ref) => {
     return (

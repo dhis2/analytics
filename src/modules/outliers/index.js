@@ -1,11 +1,11 @@
 import isNumber from 'd2-utilizr/lib/isNumber'
 import isNumeric from 'd2-utilizr/lib/isNumeric'
 import i18n from '../../locales/index.js'
-import { getIQRHelper, IQR } from './iqr'
-import { getModZScoreHelper, MODIFIED_Z_SCORE } from './modZScore'
-import { getNormalizationHelper, Y_RESIDUALS_LINEAR } from './normalization'
-import { getXYStats } from './xyStats'
-import { getZScoreHelper, STANDARD_Z_SCORE } from './zScore'
+import { getIQRHelper, IQR } from './iqr.js'
+import { getModZScoreHelper, MODIFIED_Z_SCORE } from './modZScore.js'
+import { getNormalizationHelper, Y_RESIDUALS_LINEAR } from './normalization.js'
+import { getXYStats } from './xyStats.js'
+import { getZScoreHelper, STANDARD_Z_SCORE } from './zScore.js'
 
 export const PROP_ENABLED = 'enabled'
 export const PROP_THRESHOLD_FACTOR = 'thresholdFactor'
@@ -70,7 +70,7 @@ const getMinMaxValue = (outlierHelper, isVertical, isMax) => {
             : extremeValue - Math.abs(extremeValue) * 0.1
     return [
         ...outlierHelper.thresholds.map(
-            t => getXYStats([t.line[0], t.line[t.line.length - 1]])[prop]
+            (t) => getXYStats([t.line[0], t.line[t.line.length - 1]])[prop]
         ),
         extremeFactor,
     ]

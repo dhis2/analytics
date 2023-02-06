@@ -2,9 +2,9 @@ import { SingleSelectField, SingleSelectOption } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
 import i18n from '../../locales/index.js'
-import styles from './styles/PeriodFilter.style'
+import styles from './styles/PeriodFilter.style.js'
 import { filterPeriodTypesById } from './utils/index.js'
-import { getRelativePeriodsOptions } from './utils/relativePeriods'
+import { getRelativePeriodsOptions } from './utils/relativePeriods.js'
 
 const RelativePeriodFilter = ({
     currentFilter,
@@ -24,7 +24,7 @@ const RelativePeriodFilter = ({
             {filterPeriodTypesById(
                 getRelativePeriodsOptions(),
                 excludedPeriodTypes
-            ).map(option => (
+            ).map((option) => (
                 <SingleSelectOption
                     key={option.id}
                     value={option.id}

@@ -1,4 +1,4 @@
-import { getOuLevelAndGroupText } from '../getOuLevelAndGroupText'
+import { getOuLevelAndGroupText } from '../getOuLevelAndGroupText.js'
 
 describe('getOuLevelAndGroupText', () => {
     let filter = {}

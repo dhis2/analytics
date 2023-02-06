@@ -1,5 +1,5 @@
 import sortBy from 'lodash/sortBy'
-import AnalyticsRequest from './AnalyticsRequest'
+import AnalyticsRequest from './AnalyticsRequest.js'
 
 const analyticsQuery = {
     resource: 'analytics',

@@ -1,4 +1,10 @@
-import AnalyticsResponseHeader from './AnalyticsResponseHeader'
+import {
+    VALUE_TYPE_BOOLEAN,
+    VALUE_TYPE_INTEGER,
+    VALUE_TYPE_NUMBER,
+    VALUE_TYPE_TEXT,
+} from '../../modules/valueTypes.js'
+import AnalyticsResponseHeader from './AnalyticsResponseHeader.js'
 
 const booleanMap = {
     0: 'No', // XXX i18n.no || 'No',
@@ -22,19 +28,19 @@ const DEFAULT_COLLECT_IGNORE_HEADERS = [
 
 const DEFAULT_PREFIX_IGNORE_HEADERS = ['dy', ...DEFAULT_COLLECT_IGNORE_HEADERS]
 
-const getParseMiddleware = type => {
+const getParseMiddleware = (type) => {
     switch (type) {
         case 'STRING':
-        case 'TEXT':
-            return value => `${value}`
-        case 'INTEGER':
-        case 'NUMBER':
-            return value =>
+        case VALUE_TYPE_TEXT:
+            return (value) => `${value}`
+        case VALUE_TYPE_INTEGER:
+        case VALUE_TYPE_NUMBER:
+            return (value) =>
                 !Number.isNaN(+value) && Number.isFinite(+value)
                     ? parseFloat(+value)
                     : value
         default:
-            return value => value
+            return (value) => value
     }
 }
 
@@ -57,7 +63,7 @@ const isCollectHeader = (header, dimensions) => {
 const getPrefixedId = (id, prefix) => `${prefix || ''} ${id}`
 
 const getNameByIdsByValueType = (id, valueType) => {
-    if (valueType === 'BOOLEAN') {
+    if (valueType === VALUE_TYPE_BOOLEAN) {
         return booleanMap[id]
     }
 
@@ -90,7 +96,7 @@ class AnalyticsResponse {
 
     extractRows() {
         const headersWithOptionSet = this.headers.filter(
-            header => header.optionSet
+            (header) => header.optionSet
         )
         let rows = this.response.rows
 
@@ -100,7 +106,7 @@ class AnalyticsResponse {
             const optionCodeIdMap = this.optionCodeIdMap()
 
             // replace option code with option uid
-            headersWithOptionSet.forEach(header => {
+            headersWithOptionSet.forEach((header) => {
                 rows.forEach((row, index) => {
                     const id = optionCodeIdMap[header.name][row[header.index]]
 
@@ -122,9 +128,10 @@ class AnalyticsResponse {
         // populate metaData dimensions and items
         this.headers
             .filter(
-                header => !DEFAULT_COLLECT_IGNORE_HEADERS.includes(header.name)
+                (header) =>
+                    !DEFAULT_COLLECT_IGNORE_HEADERS.includes(header.name)
             )
-            .forEach(header => {
+            .forEach((header) => {
                 let ids
 
                 // collect row values
@@ -137,7 +144,7 @@ class AnalyticsResponse {
 
                 if (header.isPrefix) {
                     // create prefixed dimensions array
-                    dimensions[header.name] = ids.map(id =>
+                    dimensions[header.name] = ids.map((id) =>
                         getPrefixedId(id, header.name)
                     )
 
@@ -160,7 +167,7 @@ class AnalyticsResponse {
             let ouId
             let ouName
 
-            this.rows.forEach(row => {
+            this.rows.forEach((row) => {
                 ouId = row[ouHeaderIndex]
 
                 if (items[ouId] === undefined) {
@@ -177,7 +184,7 @@ class AnalyticsResponse {
     }
 
     getHeader(name) {
-        return this.headers.find(header => header.name === name)
+        return this.headers.find((header) => header.name === name)
     }
 
     hasHeader(name) {
@@ -191,14 +198,14 @@ class AnalyticsResponse {
         const rowIds = Array.from(
             // unique values
             new Set(
-                this.rows.map(responseRow =>
+                this.rows.map((responseRow) =>
                     parseByType(responseRow[header.index])
                 )
             )
             // remove empty values
-        ).filter(id => id !== '')
+        ).filter((id) => id !== '')
 
-        return rowIds.sort().map(id => parseString(id))
+        return rowIds.sort().map((id) => parseString(id))
     }
 
     optionCodeIdMap() {
@@ -206,12 +213,12 @@ class AnalyticsResponse {
         const map = {}
 
         this.headers
-            .filter(header => typeof header.optionSet === 'string')
-            .forEach(header => {
+            .filter((header) => typeof header.optionSet === 'string')
+            .forEach((header) => {
                 const optionIds = dimensions[header.name]
 
                 map[header.name] = optionIds
-                    .map(id => ({
+                    .map((id) => ({
                         [items[id].code]: id,
                     }))
                     .reduce((acc, obj) => Object.assign(acc, obj), {})
@@ -231,11 +238,11 @@ class AnalyticsResponse {
             hierarchyPrefix
                 .split('/')
                 .reverse()
-                .forEach(ouId => {
+                .forEach((ouId) => {
                     hierarchyIds.unshift(ouId)
                 })
 
-            hierarchyIds.forEach(ouId => {
+            hierarchyIds.forEach((ouId) => {
                 if (this.metaData.items[ouId]) {
                     hierarchyNames.push(this.metaData.items[ouId].name)
                 }
@@ -259,7 +266,7 @@ class AnalyticsResponse {
             return aFullName > bFullName ? 1 : 0
         })
 
-        this.metaData.dimensions.ou = organisationUnits.map(ou => ou.id)
+        this.metaData.dimensions.ou = organisationUnits.map((ou) => ou.id)
     }
 }
 

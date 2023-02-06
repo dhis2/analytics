@@ -1,10 +1,10 @@
 import arrayContains from 'd2-utilizr/lib/arrayContains'
 import arrayUnique from 'd2-utilizr/lib/arrayUnique'
-import { isTwoCategoryChartType } from '../../../../modules/visTypes'
-import getTwoCategorySplitSerieData from './getTwoCategorySplitSerieData'
+import { isTwoCategoryChartType } from '../../../../modules/visTypes.js'
+import getTwoCategorySplitSerieData from './getTwoCategorySplitSerieData.js'
 
 function arrayCleanUndefined(array) {
-    return array.filter(item => item !== undefined)
+    return array.filter((item) => item !== undefined)
 }
 
 function arrayNullsOnly(array) {
@@ -38,12 +38,12 @@ function getFirstLastValueIndexes(series) {
     let data
     let i
 
-    series.forEach(seriesObj => {
+    series.forEach((seriesObj) => {
         // make a copy of the array so we can reverse it
         // without affecting the original
         data = seriesObj.data.slice()
 
-        i = data.findIndex(value => value !== undefined && value !== null)
+        i = data.findIndex((value) => value !== undefined && value !== null)
 
         if (i > -1) {
             firstValueIndex =
@@ -52,7 +52,7 @@ function getFirstLastValueIndexes(series) {
 
         i = data
             .reverse()
-            .findIndex(value => value !== undefined && value !== null)
+            .findIndex((value) => value !== undefined && value !== null)
 
         if (i > -1) {
             lastValueIndex = Math.max(lastValueIndex, data.length - 1 - i)
@@ -110,7 +110,7 @@ function getEmptySeriesGroupIndexes(series) {
         const seriesGroupValues = []
 
         groupObj.forEach((_, index) =>
-            series.forEach(seriesObj =>
+            series.forEach((seriesObj) =>
                 seriesGroupValues.push(seriesObj.custom.data[groupIndex][index])
             )
         )
@@ -127,13 +127,15 @@ function getFirstLastGroupWithValuesIndexes(series) {
     let firstGroupWithValuesIndex = undefined
     let lastGroupWithValuesIndex = 0
 
-    series.forEach(seriesObj => {
+    series.forEach((seriesObj) => {
         // make a copy of the groups array so we can reverse it
         // without affecting the original
         const groups = seriesObj.custom.data.slice()
 
         groups.forEach((groupObj, groupIndex) => {
-            if (groupObj.some(value => value !== undefined && value !== null)) {
+            if (
+                groupObj.some((value) => value !== undefined && value !== null)
+            ) {
                 firstGroupWithValuesIndex =
                     firstGroupWithValuesIndex !== undefined
                         ? Math.min(firstGroupWithValuesIndex, groupIndex)
@@ -142,7 +144,9 @@ function getFirstLastGroupWithValuesIndexes(series) {
         })
 
         groups.reverse().forEach((groupObj, groupIndex) => {
-            if (groupObj.some(value => value !== undefined && value !== null)) {
+            if (
+                groupObj.some((value) => value !== undefined && value !== null)
+            ) {
                 lastGroupWithValuesIndex = Math.max(
                     lastGroupWithValuesIndex,
                     groups.length - 1 - groupIndex
@@ -156,7 +160,7 @@ function getFirstLastGroupWithValuesIndexes(series) {
 
 function getTwoCategoryTrimmedConfig(config, layout) {
     const filteredSeries = config.series.filter(
-        serieObj => !serieObj.custom.isTwoCategoryFakeSerie
+        (serieObj) => !serieObj.custom.isTwoCategoryFakeSerie
     )
     const emptyGroupIndexes = getEmptySeriesGroupIndexes(filteredSeries)
 
@@ -164,7 +168,7 @@ function getTwoCategoryTrimmedConfig(config, layout) {
         const { firstGroupWithValuesIndex, lastGroupWithValuesIndex } =
             getFirstLastGroupWithValuesIndexes(filteredSeries)
 
-        const trimmedSeries = config.series.map(seriesObj => {
+        const trimmedSeries = config.series.map((seriesObj) => {
             if (seriesObj.custom.isTwoCategoryFakeSerie) {
                 seriesObj.data = cleanData(
                     seriesObj.data,
@@ -190,7 +194,7 @@ function getTwoCategoryTrimmedConfig(config, layout) {
             return seriesObj
         })
 
-        const trimmedXAxis = config.xAxis.map(xAxis => {
+        const trimmedXAxis = config.xAxis.map((xAxis) => {
             xAxis.categories = cleanData(
                 xAxis.categories,
                 emptyGroupIndexes,
@@ -218,7 +222,7 @@ function getDefaultTrimmedConfig(config, layout) {
         const { firstValueIndex, lastValueIndex } = getFirstLastValueIndexes(
             config.series
         )
-        const trimmedSeries = config.series.map(seriesObj => ({
+        const trimmedSeries = config.series.map((seriesObj) => ({
             ...seriesObj,
             data: cleanData(
                 seriesObj.data,

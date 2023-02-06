@@ -1,7 +1,7 @@
-import { DIMENSION_ID_ORGUNIT } from '../../predefinedDimensions'
-import { AXIS, AXIS_ID_FILTERS } from '../axis'
-import { layoutHasDimension } from '../layoutHasDimension'
-import { TEST_LAYOUT } from '../testResources'
+import { DIMENSION_ID_ORGUNIT } from '../../predefinedDimensions.js'
+import { AXIS, AXIS_ID_FILTERS } from '../axis.js'
+import { layoutHasDimension } from '../layoutHasDimension.js'
+import { TEST_LAYOUT } from '../testResources.js'
 
 describe('layoutHasDimension', () => {
     it('should return true if the dimension id is found in the layout, otherwise false', () => {

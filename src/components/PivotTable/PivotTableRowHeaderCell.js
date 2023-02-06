@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types'
 import React from 'react'
-import { PivotTableCell } from './PivotTableCell'
-import { usePivotTableEngine } from './PivotTableEngineContext'
-import { PivotTableHeaderCell } from './PivotTableHeaderCell'
+import { PivotTableCell } from './PivotTableCell.js'
+import { usePivotTableEngine } from './PivotTableEngineContext.js'
+import { PivotTableHeaderCell } from './PivotTableHeaderCell.js'
 
 export const PivotTableRowHeaderCell = ({
     clippingResult,
@@ -21,9 +21,9 @@ export const PivotTableRowHeaderCell = ({
             axisClippingResult={clippingResult.rows}
             index={rowIndex}
             level={rowLevel}
-            getHeader={idx => engine.getRowHeader(idx)}
+            getHeader={(idx) => engine.getRowHeader(idx)}
             showHierarchy={engine.visualization.showHierarchy}
-            render={header => (
+            render={(header) => (
                 <PivotTableCell
                     isHeader
                     classes={[

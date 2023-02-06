@@ -15,13 +15,15 @@ export function getIdAxisMap(customAxes) {
 
 export function getFullIdAxisMap(customAxes = [], series = []) {
     const idAxisMap = getIdAxisMap(
-        customAxes.filter(axisItem =>
-            series.find(seriesItem => seriesItem.id === axisItem.dimensionItem)
+        customAxes.filter((axisItem) =>
+            series.find(
+                (seriesItem) => seriesItem.id === axisItem.dimensionItem
+            )
         )
     )
 
     // adds first axis ids to seriesAxisMap
-    series.forEach(s => {
+    series.forEach((s) => {
         if (!(s.id in idAxisMap)) {
             idAxisMap[s.id] = 0
         }

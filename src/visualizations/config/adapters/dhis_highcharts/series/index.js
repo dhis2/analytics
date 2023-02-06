@@ -1,6 +1,7 @@
 import { colors } from '@dhis2/ui'
-import { hasCustomAxes } from '../../../../../modules/axis'
-import { axisHasRelativeItems } from '../../../../../modules/layout/axisHasRelativeItems'
+import { hasCustomAxes } from '../../../../../modules/axis.js'
+import { axisHasRelativeItems } from '../../../../../modules/layout/axisHasRelativeItems.js'
+import { getLegendSetByDisplayStrategy } from '../../../../../modules/legends.js'
 import {
     VIS_TYPE_PIE,
     VIS_TYPE_GAUGE,
@@ -8,19 +9,19 @@ import {
     isYearOverYear,
     VIS_TYPE_LINE,
     VIS_TYPE_SCATTER,
-} from '../../../../../modules/visTypes'
-import { getAxisStringFromId } from '../../../../util/axisId'
+} from '../../../../../modules/visTypes.js'
+import { getAxisStringFromId } from '../../../../util/axisId.js'
 import {
     colorSets,
     COLOR_SET_PATTERNS,
-} from '../../../../util/colors/colorSets'
-import { generateColors } from '../../../../util/colors/gradientColorGenerator'
-import { getFullIdAxisMap, getAxisIdsMap } from '../customAxes'
-import getCumulativeData from '../getCumulativeData'
-import getType from '../type'
-import getGauge from './gauge'
-import getPie from './pie'
-import getScatter from './scatter'
+} from '../../../../util/colors/colorSets.js'
+import { generateColors } from '../../../../util/colors/gradientColorGenerator.js'
+import { getFullIdAxisMap, getAxisIdsMap } from '../customAxes.js'
+import getCumulativeData from '../getCumulativeData.js'
+import getType from '../type.js'
+import getGauge from './gauge.js'
+import getPie from './pie.js'
+import getScatter from './scatter.js'
 
 const DEFAULT_ANIMATION_DURATION = 200
 
@@ -58,9 +59,9 @@ function getIndexColorPatternMap(series, layout, extraOptions) {
 }
 
 function getIdColorMap(series, layout, extraOptions) {
-    const filteredSeries = layout.series?.filter(layoutSeriesItem =>
+    const filteredSeries = layout.series?.filter((layoutSeriesItem) =>
         series.some(
-            seriesItem => seriesItem.id === layoutSeriesItem.dimensionItem
+            (seriesItem) => seriesItem.id === layoutSeriesItem.dimensionItem
         )
     )
 
@@ -109,7 +110,15 @@ function getIdColorMap(series, layout, extraOptions) {
     }
 }
 
-function getDefault(series, metaData, layout, isStacked, extraOptions) {
+function getDefault({
+    series,
+    metaData,
+    layout,
+    isStacked,
+    extraOptions,
+    legendSets,
+    displayStrategy,
+}) {
     const fullIdAxisMap = getFullIdAxisMap(layout.series, series)
     const idColorMap = getIdColorMap(series, layout, extraOptions)
     const indexColorPatternMap = getIndexColorPatternMap(
@@ -139,7 +148,7 @@ function getDefault(series, metaData, layout, isStacked, extraOptions) {
         }
 
         const matchedObject = layout.series?.find(
-            item => item.dimensionItem === seriesObj.id
+            (item) => item.dimensionItem === seriesObj.id
         )
 
         if (matchedObject && !axisHasRelativeItems(layout.columns)) {
@@ -186,6 +195,16 @@ function getDefault(series, metaData, layout, isStacked, extraOptions) {
         if (extraOptions.yearlySeries) {
             seriesObj.name = extraOptions.yearlySeries[index]
         }
+
+        seriesObj.legendSet = getLegendSetByDisplayStrategy({
+            displayStrategy,
+            legendSets,
+            legendSetId: metaData[seriesObj.id]?.legendSet,
+        })
+
+        seriesObj.marker = {
+            enabled: false,
+        }
     })
 
     // DHIS2-701: use cumulative values
@@ -196,7 +215,15 @@ function getDefault(series, metaData, layout, isStacked, extraOptions) {
     return series
 }
 
-export default function (series, metaData, layout, isStacked, extraOptions) {
+export default function ({
+    series,
+    metaData,
+    layout,
+    isStacked,
+    extraOptions,
+    legendSets,
+    displayStrategy,
+}) {
     switch (layout.type) {
         case VIS_TYPE_PIE:
             series = getPie(
@@ -211,16 +238,18 @@ export default function (series, metaData, layout, isStacked, extraOptions) {
             series = getScatter(extraOptions)
             break
         default:
-            series = getDefault(
+            series = getDefault({
                 series,
                 metaData,
                 layout,
                 isStacked,
-                extraOptions
-            )
+                extraOptions,
+                legendSets,
+                displayStrategy,
+            })
     }
 
-    series.forEach(seriesObj => {
+    series.forEach((seriesObj) => {
         // animation
         seriesObj.animation = {
             duration: getAnimation(

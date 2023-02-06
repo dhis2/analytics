@@ -4,6 +4,7 @@ export const WEEKLYWED = 'WEEKLYWED'
 export const WEEKLYTHU = 'WEEKLYTHU'
 export const WEEKLYSAT = 'WEEKLYSAT'
 export const WEEKLYSUN = 'WEEKLYSUN'
+export const WEEKS_THIS_YEAR = 'WEEKS_THIS_YEAR'
 export const BIWEEKLY = 'BIWEEKLY'
 export const MONTHLY = 'MONTHLY'
 export const BIMONTHLY = 'BIMONTHLY'
@@ -20,4 +21,4 @@ export const FYAPR = 'FYAPR'
 export const filterPeriodTypesById = (
     allPeriodTypes = [],
     excludedPeriodTypes = []
-) => allPeriodTypes.filter(period => !excludedPeriodTypes.includes(period.id))
+) => allPeriodTypes.filter((period) => !excludedPeriodTypes.includes(period.id))

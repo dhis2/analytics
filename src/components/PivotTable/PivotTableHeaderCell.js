@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import { getHeaderForDisplay } from '../../modules/pivotTable/getHeaderForDisplay'
+import { getHeaderForDisplay } from '../../modules/pivotTable/getHeaderForDisplay.js'
 
 export const PivotTableHeaderCell = ({
     axisClippingResult,

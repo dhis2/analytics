@@ -1,4 +1,4 @@
-import AnalyticsRequest from './AnalyticsRequest'
+import AnalyticsRequest from './AnalyticsRequest.js'
 
 /**
  * @private
@@ -8,7 +8,7 @@ import AnalyticsRequest from './AnalyticsRequest'
  * @param {*} base The base class to mix onto
  * @return {module:analytics.AnalyticsRequestDimensionsMixin} The mixin class
  */
-const AnalyticsRequestDimensionsMixin = base =>
+const AnalyticsRequestDimensionsMixin = (base) =>
     /**
      * @private
      * @description
@@ -116,10 +116,13 @@ const AnalyticsRequestDimensionsMixin = base =>
             if (existingDimension) {
                 this.dimensions.splice(dimensionIndex, 1, {
                     dimension,
-                    items: updatedItems,
+                    ...(items && { items: updatedItems }),
                 })
             } else {
-                this.dimensions.push({ dimension, items: updatedItems })
+                this.dimensions.push({
+                    dimension,
+                    ...(items && { items: updatedItems }),
+                })
             }
 
             return new AnalyticsRequest(this)

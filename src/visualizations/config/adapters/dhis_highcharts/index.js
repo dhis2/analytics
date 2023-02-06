@@ -3,40 +3,40 @@ import objectClean from 'd2-utilizr/lib/objectClean'
 import {
     LEGEND_DISPLAY_STRATEGY_BY_DATA_ITEM,
     LEGEND_DISPLAY_STRATEGY_FIXED,
-} from '../../../../modules/legends'
-import { getOutlierHelper } from '../../../../modules/outliers'
+} from '../../../../modules/legends.js'
+import { getOutlierHelper } from '../../../../modules/outliers/index.js'
 import {
     isStacked,
     isLegendSetType,
     VIS_TYPE_SCATTER,
     VIS_TYPE_GAUGE,
     VIS_TYPE_LINE,
-} from '../../../../modules/visTypes'
-import { defaultMultiAxisTheme1 } from '../../../util/colors/themes'
-import addTrendLines, { isRegressionIneligible } from './addTrendLines'
-import getChart from './chart'
-import getScatterData from './getScatterData'
-import getSortedConfig from './getSortedConfig'
-import getTrimmedConfig from './getTrimmedConfig'
-import getLegend from './legend'
-import { applyLegendSet, getLegendSetTooltip } from './legendSet'
-import getNoData from './noData'
-import getPane from './pane'
-import getPlotOptions from './plotOptions'
-import getSeries from './series'
-import getSubtitle from './subtitle'
-import getTitle from './title'
-import getXAxis from './xAxis'
-import getYAxis from './yAxis'
+} from '../../../../modules/visTypes.js'
+import { defaultMultiAxisTheme1 } from '../../../util/colors/themes.js'
+import addTrendLines, { isRegressionIneligible } from './addTrendLines.js'
+import getChart from './chart.js'
+import getScatterData from './getScatterData.js'
+import getSortedConfig from './getSortedConfig.js'
+import getTrimmedConfig from './getTrimmedConfig.js'
+import getLegend from './legend.js'
+import { applyLegendSet, getLegendSetTooltip } from './legendSet.js'
+import getNoData from './noData.js'
+import getPane from './pane/index.js'
+import getPlotOptions from './plotOptions.js'
+import getSeries from './series/index.js'
+import getSubtitle from './subtitle/index.js'
+import getTitle from './title/index.js'
+import getXAxis from './xAxis/index.js'
+import getYAxis from './yAxis/index.js'
 
-const getTransformedLayout = layout => ({
+const getTransformedLayout = (layout) => ({
     ...layout,
     type: String(layout.type).toUpperCase(),
     targetLineLabel: layout.targetLineLabel || layout.targetLineTitle,
     baseLineLabel: layout.baseLineLabel || layout.baseLineTitle,
 })
 
-const getTransformedExtraOptions = extraOptions => ({
+const getTransformedExtraOptions = (extraOptions) => ({
     ...extraOptions,
     multiAxisTheme: extraOptions.multiAxisTheme || defaultMultiAxisTheme1,
 })
@@ -55,14 +55,14 @@ export default function ({ store, layout, el, extraConfig, extraOptions }) {
                 : null,
         categoryIds:
             _layout.rows && _layout.rows.length
-                ? _layout.rows.map(row => row.dimension)
+                ? _layout.rows.map((row) => row.dimension)
                 : null,
         extraOptions: _extraOptions,
     })
 
     if (_layout.type === VIS_TYPE_SCATTER) {
         _extraOptions.scatterData = getScatterData(series, store)
-        _extraOptions.scatterPoints = _extraOptions.scatterData.map(item => [
+        _extraOptions.scatterPoints = _extraOptions.scatterData.map((item) => [
             item.x,
             item.y,
         ])
@@ -101,13 +101,15 @@ export default function ({ store, layout, el, extraConfig, extraOptions }) {
         yAxis: getYAxis(_layout, series, _extraOptions),
 
         // series
-        series: getSeries(
-            series.slice(),
-            store.data[0].metaData,
-            _layout,
-            stacked,
-            _extraOptions
-        ),
+        series: getSeries({
+            series: series.slice(),
+            metaData: store.data[0].metaData.items,
+            layout: _layout,
+            isStacked: stacked,
+            extraOptions: _extraOptions,
+            legendSets,
+            displayStrategy: _layout.legend?.strategy,
+        }),
 
         // legend
         legend: getLegend({
@@ -115,9 +117,6 @@ export default function ({ store, layout, el, extraConfig, extraOptions }) {
             fontStyle: _layout.seriesKey?.label?.fontStyle,
             visType: _layout.type,
             dashboard: _extraOptions.dashboard,
-            legendSets,
-            metaData: store.data[0].metaData.items,
-            displayStrategy: _layout.legend?.strategy,
         }),
 
         // pane
@@ -197,12 +196,12 @@ export default function ({ store, layout, el, extraConfig, extraOptions }) {
         layout.type !== VIS_TYPE_GAUGE
     ) {
         if (_layout.legend?.strategy === LEGEND_DISPLAY_STRATEGY_BY_DATA_ITEM) {
-            config.series = config.series.map(seriesObj => {
+            config.series = config.series.map((seriesObj) => {
                 if (seriesObj.type === VIS_TYPE_LINE) {
                     return seriesObj
                 }
                 const legendSet = legendSets.find(
-                    legendSet =>
+                    (legendSet) =>
                         legendSet.id ===
                         store.data[0].metaData.items[seriesObj.id]?.legendSet
                 )
@@ -211,7 +210,7 @@ export default function ({ store, layout, el, extraConfig, extraOptions }) {
                     : seriesObj
             })
         } else if (_layout.legend?.strategy === LEGEND_DISPLAY_STRATEGY_FIXED) {
-            config.series = config.series.map(seriesObj =>
+            config.series = config.series.map((seriesObj) =>
                 seriesObj.type === VIS_TYPE_LINE
                     ? seriesObj
                     : applyLegendSet(seriesObj, legendSets[0])
@@ -222,7 +221,7 @@ export default function ({ store, layout, el, extraConfig, extraOptions }) {
 
     // flatten category groups
     if (config.xAxis?.length) {
-        config.xAxis = config.xAxis.map(xAxis =>
+        config.xAxis = config.xAxis.map((xAxis) =>
             xAxis.categories
                 ? {
                       ...xAxis,

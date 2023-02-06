@@ -1,9 +1,9 @@
-import { hasRelativeItems } from '..'
 import {
     DIMENSION_ID_ASSIGNED_CATEGORIES,
     DIMENSION_ID_ORGUNIT,
     DIMENSION_ID_PERIOD,
-} from '../../predefinedDimensions'
+} from '../../predefinedDimensions.js'
+import { hasRelativeItems } from '../index.js'
 
 describe('relativeItems', () => {
     describe('hasRelativeItems', () => {

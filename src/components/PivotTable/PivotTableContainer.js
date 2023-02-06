@@ -1,8 +1,8 @@
 import classnames from 'classnames'
 import PropTypes from 'prop-types'
 import React from 'react'
-import { usePivotTableEngine } from './PivotTableEngineContext'
-import { table as tableStyle } from './styles/PivotTable.style'
+import { usePivotTableEngine } from './PivotTableEngineContext.js'
+import { table as tableStyle } from './styles/PivotTable.style.js'
 
 export const PivotTableContainer = React.forwardRef(
     ({ width, height, children }, ref) => {

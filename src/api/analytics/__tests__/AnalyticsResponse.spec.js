@@ -1,5 +1,5 @@
-import fixtures from '../../../__fixtures__/fixtures'
-import AnalyticsResponse from '../AnalyticsResponse'
+import fixtures from '../../../__fixtures__/fixtures.js'
+import AnalyticsResponse from '../AnalyticsResponse.js'
 
 const fixture = fixtures.get('/api/analytics/response')
 

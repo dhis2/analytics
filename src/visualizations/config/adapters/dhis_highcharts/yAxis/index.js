@@ -1,36 +1,36 @@
 import arrayClean from 'd2-utilizr/lib/arrayClean'
 import objectClean from 'd2-utilizr/lib/objectClean'
-import i18n from '../../../../../locales'
+import i18n from '../../../../../locales/index.js'
 import {
     FONT_STYLE_VERTICAL_AXIS_TITLE,
     mergeFontStyleWithDefault,
     TEXT_ALIGN_RIGHT,
-} from '../../../../../modules/fontStyle'
+} from '../../../../../modules/fontStyle.js'
 import {
     isDualAxisType,
     isStacked,
     VIS_TYPE_GAUGE,
     VIS_TYPE_SCATTER,
-} from '../../../../../modules/visTypes'
-import { getAxis } from '../../../../util/axes'
-import { getAxisStringFromId } from '../../../../util/axisId'
+} from '../../../../../modules/visTypes.js'
+import { getAxis } from '../../../../util/axes.js'
+import { getAxisStringFromId } from '../../../../util/axisId.js'
 import {
     getGridLineColor,
     getLabels,
     getMaxValue,
     getMinValue,
     getRegressionLine,
-} from '../axis'
-import { getAxisIdsMap } from '../customAxes'
-import getAxisTitle from '../getAxisTitle'
-import getSteps from '../getSteps'
-import getGauge from './gauge'
+} from '../axis.js'
+import { getAxisIdsMap } from '../customAxes.js'
+import getAxisTitle from '../getAxisTitle.js'
+import getSteps from '../getSteps.js'
+import getGauge from './gauge.js'
 
 const AXIS_TYPE_RANGE = 'RANGE'
 
 function getDefault(layout, series, extraOptions) {
     const axes = []
-    const dataValues = series?.map(item => item.data).flat()
+    const dataValues = series?.map((item) => item.data).flat()
     const layoutAxes = []
     let useMultiAxisMode = false
 
@@ -39,10 +39,10 @@ function getDefault(layout, series, extraOptions) {
         const axisIds = [...new Set(Object.keys(axisIdsMap))].sort(
             (a, b) => a - b
         )
-        axisIds.forEach(id =>
+        axisIds.forEach((id) =>
             layoutAxes.push(getAxis(layout.axes, AXIS_TYPE_RANGE, Number(id)))
         )
-        useMultiAxisMode = axisIds.length > 1 || axisIds.some(id => id > 0)
+        useMultiAxisMode = axisIds.length > 1 || axisIds.some((id) => id > 0)
     } else {
         layoutAxes.push(getAxis(layout.axes, AXIS_TYPE_RANGE, 0))
     }
@@ -56,12 +56,12 @@ function getDefault(layout, series, extraOptions) {
         extremeObj = extraOptions.outlierHelper.extremeLines[1]
     }
 
-    layoutAxes.forEach(axis => {
+    layoutAxes.forEach((axis) => {
         const targetLine = { ...axis.targetLine }
         const baseLine = { ...axis.baseLine }
         if (useMultiAxisMode) {
             const regressionLines = [targetLine, baseLine]
-            regressionLines.forEach(rl => {
+            regressionLines.forEach((rl) => {
                 if (rl.title?.text) {
                     rl.title = {
                         ...rl.title,

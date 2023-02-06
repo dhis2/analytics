@@ -1,7 +1,7 @@
 import cx from 'classnames'
 import PropTypes from 'prop-types'
 import React from 'react'
-import styles from './styles/LegendKey.style'
+import styles from './styles/LegendKey.style.js'
 
 const LegendKey = ({ legendSets }) => {
     return legendSets.length ? (
@@ -14,12 +14,10 @@ const LegendKey = ({ legendSets }) => {
                     })}
                     data-test={`legend-key-item-${legendSet.id}`}
                 >
-                    {legendSets.length > 1 && (
-                        <span className="legendSetName">{legendSet.name}</span>
-                    )}
+                    <span className="legendSetName">{legendSet.name}</span>
                     {legendSet.legends
                         .sort((a, b) => a.startValue - b.startValue)
-                        .map(legend => (
+                        .map((legend) => (
                             <div
                                 key={legend.startValue}
                                 className="legend"

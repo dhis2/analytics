@@ -2,7 +2,7 @@ import { CssReset } from '@dhis2/ui'
 import React from 'react'
 
 export const decorators = [
-    Story => (
+    (Story) => (
         <div>
             <CssReset />
             <Story />

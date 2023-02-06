@@ -2,7 +2,7 @@ import { colors } from '@dhis2/ui'
 import {
     getColorByValueFromLegendSet,
     LEGEND_DISPLAY_STYLE_TEXT,
-} from '../../../../../modules/legends'
+} from '../../../../../modules/legends.js'
 
 const DEFAULT_FONT_SIZE = '28px'
 

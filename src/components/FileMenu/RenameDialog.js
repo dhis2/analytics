@@ -1,5 +1,4 @@
 import { useDataMutation } from '@dhis2/app-runtime'
-import PropTypes from '@dhis2/prop-types'
 import {
     Modal,
     ModalTitle,
@@ -10,11 +9,16 @@ import {
     InputField,
     TextAreaField,
 } from '@dhis2/ui'
+import PropTypes from 'prop-types'
 import React, { useMemo, useState } from 'react'
 import i18n from '../../locales/index.js'
-import { supportedFileTypes, endpointFromFileType } from './utils'
+import {
+    supportedFileTypes,
+    endpointFromFileType,
+    labelForFileType,
+} from './utils.js'
 
-const getMutation = type => ({
+const getMutation = (type) => ({
     resource: endpointFromFileType(type),
     id: ({ id }) => id,
     type: 'update',
@@ -28,7 +32,7 @@ export const RenameDialog = ({ type, object, onClose, onRename, onError }) => {
 
     const mutation = useMemo(() => getMutation(type), [])
     const [mutate, { loading }] = useDataMutation(mutation, {
-        onError: error => {
+        onError: (error) => {
             onError(error)
             onClose()
         },
@@ -49,7 +53,9 @@ export const RenameDialog = ({ type, object, onClose, onRename, onError }) => {
     return (
         <Modal onClose={onClose}>
             <ModalTitle>
-                {i18n.t('Rename {{fileType}}', { fileType: type })}
+                {i18n.t('Rename {{fileType}}', {
+                    fileType: labelForFileType(type),
+                })}
             </ModalTitle>
             <ModalContent>
                 <InputField

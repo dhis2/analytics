@@ -1,4 +1,4 @@
-import { ouIdHelper } from '..'
+import { ouIdHelper } from '../index.js'
 
 describe('ouIdHelper', () => {
     describe('addGroupPrefix', () => {

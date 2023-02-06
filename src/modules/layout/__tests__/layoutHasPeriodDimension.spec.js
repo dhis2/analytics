@@ -1,6 +1,6 @@
-import { AXIS, AXIS_ID_ROWS } from '../axis'
-import { layoutHasPeriodDimension } from '../layoutHasPeriodDimension'
-import { TEST_LAYOUT } from '../testResources'
+import { AXIS, AXIS_ID_ROWS } from '../axis.js'
+import { layoutHasPeriodDimension } from '../layoutHasPeriodDimension.js'
+import { TEST_LAYOUT } from '../testResources.js'
 
 describe('layoutHasPeriodDimension', () => {
     it('should return true if the pe dimension is found in the layout, otherwise false', () => {

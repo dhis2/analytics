@@ -1,4 +1,4 @@
-import AnalyticsBase from './AnalyticsBase'
+import AnalyticsBase from './AnalyticsBase.js'
 
 /**
  * @extends module:analytics.AnalyticsBase

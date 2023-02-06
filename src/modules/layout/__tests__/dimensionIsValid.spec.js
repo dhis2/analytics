@@ -1,10 +1,10 @@
-import { dimensionIsValid } from '../dimensionIsValid'
+import { dimensionIsValid } from '../dimensionIsValid.js'
 import {
     TEST_DIMENSION_1,
     TEST_DIMENSION_INVALID_ID_1,
     TEST_DIMENSION_INVALID_ID_2,
     TEST_DIMENSION_INVALID_ITEMS_1,
-} from '../testResources'
+} from '../testResources.js'
 
 describe('dimensionIsValid', () => {
     it('should return true if required props are valid, otherwise false', () => {

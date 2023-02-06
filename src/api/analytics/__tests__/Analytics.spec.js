@@ -1,7 +1,7 @@
-import Analytics from '../Analytics'
-import AnalyticsAggregate from '../AnalyticsAggregate'
-import AnalyticsEvents from '../AnalyticsEvents'
-import AnalyticsRequest from '../AnalyticsRequest'
+import Analytics from '../Analytics.js'
+import AnalyticsAggregate from '../AnalyticsAggregate.js'
+import AnalyticsEvents from '../AnalyticsEvents.js'
+import AnalyticsRequest from '../AnalyticsRequest.js'
 
 describe('Analytics', () => {
     let analytics

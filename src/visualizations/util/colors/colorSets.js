@@ -4,6 +4,8 @@ import HPF from 'highcharts/modules/pattern-fill'
 HPF(H)
 
 export const COLOR_SET_DEFAULT = 'DEFAULT'
+export const COLOR_SET_BASIC = 'BASIC'
+export const COLOR_SET_EXTENDED = 'EXTENDED'
 export const COLOR_SET_BRIGHT = 'BRIGHT'
 export const COLOR_SET_DARK = 'DARK'
 export const COLOR_SET_GRAY = 'GRAY'
@@ -32,6 +34,25 @@ export const colorSets = {
             '#817c00',
             '#bdf023',
             '#fffac4',
+        ],
+    },
+    [COLOR_SET_BASIC]: {
+        colors: ['#348F41', '#9F2241', '#DDDDDD', '#B4A269'],
+    },
+    [COLOR_SET_EXTENDED]: {
+        colors: [
+            '#194F90',
+            '#AE1857',
+            '#5B7E96',
+            '#FFB71B',
+            '#1DCAD3',
+            '#FF5C35',
+            '#8F4899',
+            '#DAE343',
+            '#385CAD',
+            '#E81F76',
+            '#009383',
+            '#522B39',
         ],
     },
     [COLOR_SET_BRIGHT]: {

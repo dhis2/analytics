@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import React from 'react'
-import { DIMENSION_ID_DATA } from '../../modules/predefinedDimensions'
-import ItemSelector from './ItemSelector'
+import { DIMENSION_ID_DATA } from '../../modules/predefinedDimensions.js'
+import ItemSelector from './ItemSelector.js'
 
 const DataDimension = ({
     onSelect,
@@ -9,10 +9,10 @@ const DataDimension = ({
     displayNameProp,
     infoBoxMessage,
 }) => {
-    const onSelectItems = selectedItem =>
+    const onSelectItems = (selectedItem) =>
         onSelect({
             dimensionId: DIMENSION_ID_DATA,
-            items: selectedItem.map(item => ({
+            items: selectedItem.map((item) => ({
                 id: item.value,
                 name: item.label,
                 type: item.type,
@@ -21,7 +21,7 @@ const DataDimension = ({
 
     return (
         <ItemSelector
-            selectedItems={selectedDimensions.map(item => ({
+            selectedItems={selectedDimensions.map((item) => ({
                 value: item.id,
                 label: item.name,
                 isActive: item.isActive,

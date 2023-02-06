@@ -2,18 +2,24 @@ import { colors, spacers } from '@dhis2/ui'
 import css from 'styled-jsx/css'
 
 export const styles = css`
+    .data-table-wrapper {
+        min-height: 405px;
+    }
+
     .data-table-body {
         min-height: 465px;
     }
 
     .pagination-controls {
         width: 100%;
+        margin-top: ${spacers.dp12};
         display: flex;
         justify-content: flex-end;
     }
 
     .search-and-filter-bar {
         display: flex;
+        gap: ${spacers.dp4};
         align-items: center;
         margin-bottom: ${spacers.dp8};
     }
@@ -31,6 +37,7 @@ export const styles = css`
         display: flex;
         align-items: center;
         justify-content: center;
+        gap: ${spacers.dp8};
         margin: ${spacers.dp32} 0;
     }
 

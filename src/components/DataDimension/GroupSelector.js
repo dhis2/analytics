@@ -2,18 +2,18 @@ import { useDataEngine } from '@dhis2/app-runtime'
 import { SingleSelectField, SingleSelectOption } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useEffect, useState } from 'react'
-import { apiFetchGroups } from '../../api/dimensions'
+import { apiFetchGroups } from '../../api/dimensions.js'
 import i18n from '../../locales/index.js'
 import {
-    dataTypes,
+    dataTypeMap as dataTypes,
     SUB_GROUP_DETAIL,
     SUB_GROUP_METRIC,
-} from '../../modules/dataTypes'
-import { DetailSelector } from './DetailSelector'
-import { MetricSelector } from './MetricSelector'
-import styles from './styles/GroupSelector.style'
+} from '../../modules/dataTypes.js'
+import { DetailSelector } from './DetailSelector.js'
+import { MetricSelector } from './MetricSelector.js'
+import styles from './styles/GroupSelector.style.js'
 
-const GroupsSelector = ({
+const GroupSelector = ({
     dataType,
     currentGroup,
     onGroupChange,
@@ -56,7 +56,7 @@ const GroupsSelector = ({
                             ? dataTypes[dataType].getPlaceholder()
                             : null
                     }
-                    onChange={ref => onGroupChange(ref.selected)}
+                    onChange={(ref) => onGroupChange(ref.selected)}
                     dense
                     empty={
                         dataTypes[dataType]?.getGroupEmptyLabel() ||
@@ -77,7 +77,7 @@ const GroupsSelector = ({
                         />
                     ) : null}
                     {!isLoading
-                        ? groups.map(item => (
+                        ? groups.map((item) => (
                               <SingleSelectOption
                                   value={item.id}
                                   key={item.id}
@@ -106,7 +106,7 @@ const GroupsSelector = ({
     )
 }
 
-GroupsSelector.propTypes = {
+GroupSelector.propTypes = {
     dataType: PropTypes.string.isRequired,
     displayNameProp: PropTypes.string.isRequired,
     onGroupChange: PropTypes.func.isRequired,
@@ -116,4 +116,4 @@ GroupsSelector.propTypes = {
     dataTest: PropTypes.string,
 }
 
-export default GroupsSelector
+export default GroupSelector

@@ -1,4 +1,5 @@
-import AnalyticsResponseHeader from '../AnalyticsResponseHeader'
+import { VALUE_TYPE_TEXT } from '../../../modules/valueTypes.js'
+import AnalyticsResponseHeader from '../AnalyticsResponseHeader.js'
 
 let responseHeader
 let expectedResponseHeader
@@ -32,7 +33,7 @@ describe('AnalyticsResponseHeader', () => {
             const header = {
                 name: 'cejWyOfXge6',
                 column: 'Gender',
-                valueType: 'TEXT',
+                valueType: VALUE_TYPE_TEXT,
                 type: 'java.lang.String',
                 hidden: false,
                 meta: true,
@@ -43,7 +44,7 @@ describe('AnalyticsResponseHeader', () => {
 
             expectedResponseHeader = { ...header, ...flags }
 
-            Object.keys(expectedResponseHeader).forEach(key => {
+            Object.keys(expectedResponseHeader).forEach((key) => {
                 expect(responseHeader[key]).toEqual(expectedResponseHeader[key])
             })
         })

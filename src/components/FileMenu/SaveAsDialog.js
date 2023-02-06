@@ -1,4 +1,3 @@
-import PropTypes from '@dhis2/prop-types'
 import {
     Modal,
     ModalTitle,
@@ -9,12 +8,21 @@ import {
     InputField,
     TextAreaField,
 } from '@dhis2/ui'
+import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 import i18n from '../../locales/index.js'
-import { supportedFileTypes } from './utils'
+import { supportedFileTypes, labelForFileType } from './utils.js'
+
+const NAME_MAXLENGTH = 230
 
 export const SaveAsDialog = ({ type, object, onClose, onSaveAs }) => {
-    const [name, setName] = useState(object?.name)
+    const [name, setName] = useState(
+        object?.displayName || object?.name
+            ? i18n.t('{{- objectName}} (copy)', {
+                  objectName: object.name,
+              })
+            : ''
+    )
     const [description, setDescription] = useState(object?.description)
 
     // the actual API request is done in the app
@@ -30,14 +38,17 @@ export const SaveAsDialog = ({ type, object, onClose, onSaveAs }) => {
     return (
         <Modal onClose={onClose} dataTest="file-menu-saveas-modal">
             <ModalTitle>
-                {i18n.t('Save {{fileType}} as', { fileType: type })}
+                {i18n.t('Save {{fileType}} as', {
+                    fileType: labelForFileType(type),
+                })}
             </ModalTitle>
             <ModalContent>
                 <InputField
                     label={i18n.t('Name')}
-                    required
                     value={name}
-                    onChange={({ value }) => setName(value)}
+                    onChange={({ value }) =>
+                        setName(value.substring(0, NAME_MAXLENGTH))
+                    }
                     dataTest="file-menu-saveas-modal-name"
                 />
                 <TextAreaField
@@ -73,6 +84,7 @@ export const SaveAsDialog = ({ type, object, onClose, onSaveAs }) => {
 SaveAsDialog.propTypes = {
     object: PropTypes.shape({
         description: PropTypes.string,
+        displayName: PropTypes.string,
         name: PropTypes.string,
     }),
     type: PropTypes.oneOf(supportedFileTypes),

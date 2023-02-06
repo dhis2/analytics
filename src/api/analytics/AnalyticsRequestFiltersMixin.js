@@ -1,4 +1,4 @@
-import AnalyticsRequest from './AnalyticsRequest'
+import AnalyticsRequest from './AnalyticsRequest.js'
 
 /**
  * @private
@@ -9,7 +9,7 @@ import AnalyticsRequest from './AnalyticsRequest'
  * @return {module:analytics.AnalyticsRequestFiltersMixin} The mixin class
  * @mixin
  */
-const AnalyticsRequestFiltersMixin = base =>
+const AnalyticsRequestFiltersMixin = (base) =>
     /**
      * @private
      * @description

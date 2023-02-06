@@ -6,7 +6,6 @@ export default css`
         width: 180px;
         background: ${colors.white};
         padding: ${spacers.dp8};
-        border: 1px solid ${colors.grey400};
     }
     .legendSet {
         display: flex;

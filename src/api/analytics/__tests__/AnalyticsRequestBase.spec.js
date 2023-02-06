@@ -1,8 +1,8 @@
-import AnalyticsRequestBase from '../AnalyticsRequestBase'
-import { customEncodeURIComponent } from '../utils'
+import AnalyticsRequestBase from '../AnalyticsRequestBase.js'
+import { customEncodeURIComponent } from '../utils.js'
 
 jest.mock('../utils', () => ({
-    customEncodeURIComponent: jest.fn(x => `<${x}>`),
+    customEncodeURIComponent: jest.fn((x) => `<${x}>`),
 }))
 
 const endPoint = 'foo'
@@ -17,7 +17,7 @@ const dimensions = [
     { dimension: 'question' },
     { dimension: 'answer', items: ['42'] },
 ]
-const buildRequest = overrides => {
+const buildRequest = (overrides) => {
     return new AnalyticsRequestBase({
         endPoint,
         path,

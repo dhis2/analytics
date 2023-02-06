@@ -15,7 +15,9 @@ export const useParentSize = (
 
     useEffect(() => {
         const el = elementRef.current && elementRef.current.parentElement
-        if (!el) return
+        if (!el) {
+            return
+        }
 
         const onResize = () => {
             setSize({
