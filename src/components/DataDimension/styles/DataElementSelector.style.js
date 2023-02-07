@@ -27,16 +27,12 @@ export default css`
 
     .scroll-detector {
         boxsizing: border-box;
-        ${
-            '' /* FIXME: the colored border and background are just for testing! Remove before merge  */
-        }
-        border: 1px solid #f76a8c;
-        background: rgba(246, 172, 200, 0.4);
         width: 100%;
         height: 100px;
         position: absolute;
         bottom: 0;
         left: 0;
+        z-index: -1;
     }
 
     .dimension-list-overlay {
