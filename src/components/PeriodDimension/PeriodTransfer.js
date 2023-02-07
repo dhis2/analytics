@@ -25,7 +25,7 @@ const PeriodTransfer = ({
     rightFooter,
     excludedPeriodTypes,
 }) => {
-    const { systemInfo = {} } = useConfig()
+    const { systemInfo } = useConfig()
     const { calendar = 'gregory' } = systemInfo
 
     const defaultRelativePeriodType = excludedPeriodTypes.includes(MONTHLY)
