@@ -1,3 +1,15 @@
+# [24.5.0-alpha.1](https://github.com/dhis2/analytics/compare/v24.4.2...v24.5.0-alpha.1) (2023-02-07)
+
+
+### Bug Fixes
+
+* ensure date falls back to year if no eraYear present ([2a197d5](https://github.com/dhis2/analytics/commit/2a197d57be8ac2af6dbe331dd8f11ab9069afa5d))
+
+
+### Features
+
+* use multi-calendar-dates library to generate fixed periods ([acc3801](https://github.com/dhis2/analytics/commit/acc380156092f888cfa55f70b4bade1c6516d034))
+
 ## [24.4.2](https://github.com/dhis2/analytics/compare/v24.4.1...v24.4.2) (2023-01-25)
 
 
