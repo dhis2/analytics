@@ -11,7 +11,7 @@ const DraggableTransferOption = ({
     value,
     type,
     disabled,
-    onSelect,
+    onDoubleClick,
 }) => {
     const { attributes, listeners, setNodeRef, transform } = useSortable({
         id: value,
@@ -41,7 +41,7 @@ const DraggableTransferOption = ({
                     })}
                     disabled={disabled}
                     onClick={Function.prototype}
-                    onDoubleClick={onSelect}
+                    onDoubleClick={onDoubleClick}
                 />
             </div>
             <style jsx>{styles}</style>
@@ -55,8 +55,7 @@ DraggableTransferOption.propTypes = {
     label: PropTypes.string,
     type: PropTypes.string,
     value: PropTypes.string,
-    onDblClick: PropTypes.func,
-    onSelect: PropTypes.func,
+    onDoubleClick: PropTypes.func,
 }
 
 export default DraggableTransferOption

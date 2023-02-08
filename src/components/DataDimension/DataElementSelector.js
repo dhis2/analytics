@@ -274,7 +274,7 @@ const DataElementSelector = ({ displayNameProp, onSelect }) => {
                                     value={value}
                                     type={type}
                                     disabled={disabled}
-                                    onSelect={onSelect}
+                                    onDoubleClick={onSelect}
                                 />
                             ))}
                         </div>
