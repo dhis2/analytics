@@ -17,7 +17,7 @@ const activateAt15pixels = {
 
 export const OPTIONS_PANEL = 'Sortable'
 
-const OuterDndContext = ({ children, onDragEnd }) => {
+const OuterDndContext = ({ children, onDragEnd, onDragStart }) => {
     const [draggingItem, setDraggingItem] = useState(null)
     const sensor = useSensor(PointerSensor, activateAt15pixels)
     const sensors = useSensors(sensor)
@@ -43,6 +43,7 @@ const OuterDndContext = ({ children, onDragEnd }) => {
 
     function handleDragStart({ active }) {
         setDraggingItem(active.data.current)
+        onDragStart && onDragStart()
     }
 
     function handleDragCancel() {
@@ -158,6 +159,7 @@ const OuterDndContext = ({ children, onDragEnd }) => {
 OuterDndContext.propTypes = {
     onDragEnd: PropTypes.func.isRequired,
     children: PropTypes.node,
+    onDragStart: PropTypes.func,
 }
 
 export default OuterDndContext

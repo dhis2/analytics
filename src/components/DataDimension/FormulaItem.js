@@ -54,7 +54,7 @@ const FormulaItem = ({
             // even though the input still has the focus. Not sure why.
             setTimeout(() => {
                 inputRef.current.focus()
-            }, 0)
+            }, 50)
         }
     }, [inputRef, hasFocus, id])
 

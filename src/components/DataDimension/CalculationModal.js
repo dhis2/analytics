@@ -97,7 +97,10 @@ const CalculationModal = ({
                         : i18n.t('Data / New calculation')}
                 </ModalTitle>
                 <ModalContent dataTest={'calculation-modal-content'}>
-                    <DndContext onDragEnd={addOrMoveDraggedItem}>
+                    <DndContext
+                        onDragStart={() => setFocusId(null)}
+                        onDragEnd={addOrMoveDraggedItem}
+                    >
                         <div className="name-input">
                             <InputField
                                 label={i18n.t(
