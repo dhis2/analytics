@@ -7,17 +7,17 @@ import styles from './styles/FormulaField.style.js'
 
 const partIsDimension = (part) => part.startsWith('#{') && part.endsWith('}')
 
-const FormulaField = ({ expression, selectedPart, onPartSelection }) => {
-    const renderParts = () =>
-        expression.map((part, index) => (
-            <>
+const FormulaField = ({ expression, selectedPart, onPartSelection }) => (
+    <>
+        <div className="wrapper">
+            {expression.map((part, index) => (
                 <span
                     className={cx('part', {
                         dimension: partIsDimension(part.value),
                         highlighted: index === selectedPart,
                     })}
-                    key={index}
                     onClick={() => onPartSelection(index)}
+                    key={index}
                 >
                     {partIsDimension(part.value) && (
                         <span className="icon">
@@ -26,16 +26,11 @@ const FormulaField = ({ expression, selectedPart, onPartSelection }) => {
                     )}
                     {part.label}
                 </span>
-                <style jsx>{styles}</style>
-            </>
-        ))
-    return (
-        <>
-            <div className="wrapper">{renderParts()}</div>
-            <style jsx>{styles}</style>
-        </>
-    )
-}
+            ))}
+        </div>
+        <style jsx>{styles}</style>
+    </>
+)
 
 FormulaField.propTypes = {
     expression: PropTypes.arrayOf(
