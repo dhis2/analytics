@@ -27,6 +27,6 @@ export default css`
         flex: 0 0 auto;
         width: 16px;
         height: 16px;
-        margin-right: 4px;
+        margin-right: ${spacers.dp4};
     }
 `

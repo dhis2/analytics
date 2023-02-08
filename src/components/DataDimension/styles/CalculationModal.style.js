@@ -30,7 +30,6 @@ export default css`
 
     .content {
         display: flex;
-        justify-content: space-between;
     }
 
     .left-section {
@@ -38,7 +37,8 @@ export default css`
     }
 
     .right-section {
-        width: 53%;
+        width: 55%;
+        padding-left: ${spacers.dp8};
         font-size: 14px;
         line-height: 24px;
     }
@@ -62,9 +62,5 @@ export default css`
     .name-input {
         margin-bottom: ${spacers.dp8};
         max-width: 75%;
-    }
-
-    .dragOverlay {
-        padding: 4px;
     }
 `

@@ -45,7 +45,7 @@ export default css`
 
     .width-machine {
         /* Add extra space for number spinner */
-        padding: 0 14px;
+        padding: 0 24px 0 0;
         visibility: hidden;
     }
 
