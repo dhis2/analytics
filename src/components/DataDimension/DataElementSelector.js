@@ -223,12 +223,6 @@ const DataElementSelector = ({ displayNameProp, onSelect }) => {
     }
 
     const onEndReached = ({ isIntersecting }) => {
-        console.log(
-            'onEndReached: ',
-            `intersecting (${isIntersecting})`,
-            `current page (${pageRef.current})`,
-            `has next page (${hasNextPageRef.current})`
-        )
         if (isIntersecting) {
             // if hasNextPage is set it means at least 1 request already happened and there is
             // another page, fetch the next page
