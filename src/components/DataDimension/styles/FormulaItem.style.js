@@ -45,7 +45,7 @@ export default css`
 
     .width-machine {
         /* Add extra space for number spinner */
-        padding: 0 1rem;
+        padding: 0 14px;
         visibility: hidden;
     }
 
@@ -63,11 +63,15 @@ export default css`
 
     .highlighted {
         background: ${theme.secondary800};
+    }
+
+    .highlighted input {
         color: ${colors.white};
     }
 
-    .highlighted input:not(:focus) {
-        color: ${colors.white};
+    .highlighted input:hover,
+    .highlighted input:active {
+        color: ${colors.grey900};
     }
 
     .highlighted :global(.icon path) {
