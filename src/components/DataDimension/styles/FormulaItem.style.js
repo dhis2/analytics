@@ -8,7 +8,7 @@ export default css`
         width: fit-content;
         background: ${colors.grey200};
         font-size: 14px;
-        line-height: 16px;
+        height: 24px;
         border-radius: 3px;
         user-select: none;
         box-shadow: ${elevations.e100};
@@ -17,15 +17,16 @@ export default css`
     .content {
         display: inline-flex;
         cursor: pointer;
-        min-height: 24px;
         user-select: none;
         width: fit-content;
         align-items: center;
         padding: 2px;
     }
 
-    .input-width {
+    .input-positioner {
         position: relative;
+        line-height: 18px;
+        margin-right: 1px;
     }
 
     input {
@@ -49,17 +50,25 @@ export default css`
         visibility: hidden;
     }
 
-    .dnd-handle {
+    .icon {
+        margin-right: ${spacers.dp4};
         display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        background: none;
-        border: none;
-        padding: 0;
-        vertical-align: middle;
-        width: 20px;
-        height: 20px;
+        vertical-align: text-bottom;
     }
+
+    .operator-label {
+        padding: 0 6px;
+    }
+
+    .data-element-label {
+        padding: 0 4px;
+        max-width: 280px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+    /* highlighted items */
 
     .highlighted {
         background: ${theme.secondary800};
@@ -76,25 +85,6 @@ export default css`
 
     .highlighted :global(.icon path) {
         fill: ${colors.white};
-    }
-
-    .operator-label {
-        padding: 0 6px;
-    }
-
-    .icon {
-        margin-right: ${spacers.dp4};
-        display: inline-flex;
-        vertical-align: text-bottom;
-        padding-top: 1px;
-    }
-
-    .data-element-label {
-        padding-right: 6px;
-        max-width: 280px;
-        text-overflow: ellipsis;
-        overflow: hidden;
-        white-space: nowrap;
     }
 
     /* DND markers */

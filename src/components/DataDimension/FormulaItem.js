@@ -116,8 +116,8 @@ const FormulaItem = ({
         if (type === TYPE_INPUT) {
             return (
                 <>
-                    <div className="dnd-handle">{DragHandleIcon}</div>
-                    <span className="input-width">
+                    {DragHandleIcon}
+                    <span className="input-positioner">
                         <span className="width-machine" aria-hidden="true">
                             {value}
                         </span>
@@ -138,9 +138,7 @@ const FormulaItem = ({
         if (type === TYPE_DATAELEMENT) {
             return (
                 <>
-                    <span className="icon">
-                        {getIcon(DIMENSION_TYPE_DATA_ELEMENT)}
-                    </span>
+                    {getIcon(DIMENSION_TYPE_DATA_ELEMENT)}
                     <span className="data-element-label">{label}</span>
                     <style jsx>{styles}</style>
                 </>
