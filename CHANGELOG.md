@@ -1,3 +1,17 @@
+# [24.5.0](https://github.com/dhis2/analytics/compare/v24.4.2...v24.5.0) (2023-02-06)
+
+
+### Features
+
+* [reverted] use multi-calendar-dates library to generate fixed periods ([acc3801](https://github.com/dhis2/analytics/commit/acc380156092f888cfa55f70b4bade1c6516d034)). This work was added to "next" release channel, but was reverted afterwards because of the restrictions "next" channel puts on what can be released from master afterwards. It will be added to "alpha" channel instead until it's ready for the main channel.
+
+## [24.4.2](https://github.com/dhis2/analytics/compare/v24.4.1...v24.4.2) (2023-01-25)
+
+
+### Bug Fixes
+
+* use page number from response ([#1413](https://github.com/dhis2/analytics/issues/1413)) ([b5523bf](https://github.com/dhis2/analytics/commit/b5523bf9701198645a7029ea48e568ab7d4859c5))
+
 ## [24.4.1](https://github.com/dhis2/analytics/compare/v24.4.0...v24.4.1) (2023-01-13)
 
 
