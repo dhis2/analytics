@@ -122,6 +122,7 @@ const CalculationModal = ({
                                 )}
                                 onChange={({ value }) => setName(value)}
                                 value={name}
+                                dataTest={'calculation-label'}
                             />
                         </div>
                         <div className="content">
@@ -165,7 +166,11 @@ const CalculationModal = ({
                                     {parseArrayToExpression(expressionArray)}
                                 </p>
                                 <div className="actions-wrapper">
-                                    <Button small onClick={validateExpression}>
+                                    <Button
+                                        small
+                                        onClick={validateExpression}
+                                        dataTest={'validate-button'}
+                                    >
                                         {/* TODO: add loading state to button? */}
                                         {i18n.t('Check formula')}
                                     </Button>
@@ -185,6 +190,7 @@ const CalculationModal = ({
                                                     )
                                                     setSelectedPart()
                                                 }}
+                                                dataTest={'remove-button'}
                                             >
                                                 {i18n.t('Remove item')}
                                             </Button>
@@ -199,6 +205,7 @@ const CalculationModal = ({
                                                 expressionStatus ===
                                                 VALID_EXPRESSION,
                                         })}
+                                        dataTest={'validation-message'}
                                     >
                                         {validationOutput?.message}
                                     </span>
@@ -210,6 +217,7 @@ const CalculationModal = ({
                                             onClick={() =>
                                                 setShowDeletePrompt(true)
                                             }
+                                            dataTest={'delete-button'}
                                         >
                                             {i18n.t('Delete calculation')}
                                         </Button>
@@ -222,7 +230,9 @@ const CalculationModal = ({
                 </ModalContent>
                 <ModalActions dataTest={'calculation-modal-actions'}>
                     <ButtonStrip>
-                        <Button onClick={onClose}>{i18n.t('Cancel')}</Button>
+                        <Button onClick={onClose} dataTest={'cancel-button'}>
+                            {i18n.t('Cancel')}
+                        </Button>
                         <Tooltip
                             content={
                                 expressionStatus !== VALID_EXPRESSION
@@ -269,6 +279,7 @@ const CalculationModal = ({
                                             expressionStatus !==
                                                 VALID_EXPRESSION || !name
                                         }
+                                        dataTest={'save-button'}
                                     >
                                         {i18n.t('Save calculation')}
                                     </Button>

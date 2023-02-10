@@ -65,6 +65,7 @@ const GroupSelector = ({ currentValue, onChange, displayNameProp }) => {
                 dense
                 loading={loading}
                 loadingText={i18n.t('Loading')}
+                dataTest={'data-element-group-select'}
             >
                 {defaultGroup ? (
                     <SingleSelectOption
@@ -103,6 +104,7 @@ const DisaggregationSelector = ({ currentValue, onChange }) => {
                 selected={currentValue}
                 onChange={(ref) => onChange(ref.selected)}
                 dense
+                dataTest={'data-element-disaggregation-select'}
             >
                 {Object.entries(options).map((option) => (
                     <SingleSelectOption
@@ -245,6 +247,7 @@ const DataElementSelector = ({ displayNameProp, onSelect }) => {
                     placeholder={i18n.t('Search by data element name')}
                     dense
                     type={'search'}
+                    dataTest={'data-element-search'}
                 />
                 <GroupSelector
                     currentValue={group}
@@ -262,7 +265,10 @@ const DataElementSelector = ({ displayNameProp, onSelect }) => {
                     className={cx('dimension-list-scrollbox', { loading })}
                     ref={rootRef}
                 >
-                    <div className="dimension-list-scroller">
+                    <div
+                        className="dimension-list-scroller"
+                        data-test="dimension-list"
+                    >
                         {options.map(({ label, value, type, disabled }) => (
                             <TransferOption
                                 label={label}
@@ -274,6 +280,7 @@ const DataElementSelector = ({ displayNameProp, onSelect }) => {
                                 })}
                                 disabled={disabled}
                                 onDoubleClick={onSelect}
+                                dataTest={'dimension-option'}
                             />
                         ))}
                         <div className="scroll-detector">

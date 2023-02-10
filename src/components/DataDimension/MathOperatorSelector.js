@@ -25,6 +25,7 @@ const MathOperatorSelector = ({ onSelect }) => {
                             onDoubleClick={() => {
                                 onSelect({ value })
                             }}
+                            dataTest={'operator'}
                         >
                             {label}
                         </span>
@@ -36,6 +37,7 @@ const MathOperatorSelector = ({ onSelect }) => {
                                 value: prompt('Please enter a number', 5),
                             })
                         }}
+                        dataTest={'operator'}
                     >
                         {i18n.t('<number>')}
                     </span>
