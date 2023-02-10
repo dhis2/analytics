@@ -9,17 +9,15 @@ import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 import DraggingItem from './DraggingItem.js'
 
-const activateAt15pixels = {
-    activationConstraint: {
-        distance: 15,
-    },
-}
-
 export const OPTIONS_PANEL = 'Sortable'
 
 const OuterDndContext = ({ children, onDragEnd, onDragStart }) => {
     const [draggingItem, setDraggingItem] = useState(null)
-    const sensor = useSensor(PointerSensor, activateAt15pixels)
+    const sensor = useSensor(PointerSensor, {
+        activationConstraint: {
+            distance: 15,
+        },
+    })
     const sensors = useSensors(sensor)
 
     return (

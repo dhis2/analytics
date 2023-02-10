@@ -158,7 +158,7 @@ const CalculationModal = ({
                                             {i18n.t('Check formula')}
                                         </Button>
                                         {(selectedId || selectedId === 0) && (
-                                            <div className={'remove-button'}>
+                                            <div className="remove-button">
                                                 <Button
                                                     small
                                                     onClick={() =>

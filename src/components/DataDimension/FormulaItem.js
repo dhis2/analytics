@@ -74,7 +74,7 @@ const FormulaItem = ({
           }
         : undefined
 
-    let insertPosition = undefined
+    let insertPosition
     if (over?.id === id) {
         // This item is being hovered over by the item being dragged
         if (activeIndex === -1) {

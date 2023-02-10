@@ -186,20 +186,45 @@ const DATA_ELEMENT_GROUPS = {
     ],
 }
 
-storiesOf('CalculationModal', module).add('Default', () => {
-    return (
-        <CustomDataProvider
-            data={{
-                dataElements: DATA_ELEMENTS,
-                dataElementGroups: DATA_ELEMENT_GROUPS,
-            }}
-        >
-            <CalculationModal
-                displayNameProp="name"
-                onClose={Function.prototype}
-                onDelete={Function.prototype}
-                onSave={Function.prototype}
-            />
-        </CustomDataProvider>
-    )
-})
+const calculation = {
+    id: 'calculationid',
+    name: 'My calculation',
+    expression: '#{fbfJHSPpUQD}/10',
+}
+
+storiesOf('CalculationModal', module)
+    .add('Default', () => {
+        return (
+            <CustomDataProvider
+                data={{
+                    dataElements: DATA_ELEMENTS,
+                    dataElementGroups: DATA_ELEMENT_GROUPS,
+                }}
+            >
+                <CalculationModal
+                    displayNameProp="name"
+                    onClose={Function.prototype}
+                    onDelete={Function.prototype}
+                    onSave={Function.prototype}
+                />
+            </CustomDataProvider>
+        )
+    })
+    .add('With calculation', () => {
+        return (
+            <CustomDataProvider
+                data={{
+                    dataElements: DATA_ELEMENTS,
+                    dataElementGroups: DATA_ELEMENT_GROUPS,
+                }}
+            >
+                <CalculationModal
+                    calculation={calculation}
+                    displayNameProp="name"
+                    onClose={Function.prototype}
+                    onDelete={Function.prototype}
+                    onSave={Function.prototype}
+                />
+            </CustomDataProvider>
+        )
+    })

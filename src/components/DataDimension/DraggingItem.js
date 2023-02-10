@@ -40,8 +40,4 @@ DraggingItem.propTypes = {
     }),
 }
 
-DraggingItem.defaultProps = {
-    onClick: Function.prototype,
-}
-
 export default DraggingItem
