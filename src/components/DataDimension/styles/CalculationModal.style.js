@@ -43,7 +43,7 @@ export default css`
         line-height: 24px;
     }
 
-    .leftpad {
+    .formula-actions {
         padding-left: ${spacers.dp4};
     }
 

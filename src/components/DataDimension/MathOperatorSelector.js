@@ -16,13 +16,13 @@ const MathOperatorSelector = ({ onDoubleClick }) => {
             <div className="wrapper">
                 <h4 className="sub-header">{i18n.t('Math operators')}</h4>
                 <div className="operators" ref={setNodeRef}>
-                    {getOperators().map(({ type, label, value }, index) => (
+                    {getOperators().map(({ label, value, type }, index) => (
                         <DraggableOperator
                             key={`${label}-${index}`}
-                            index={index}
                             label={label}
                             value={value}
                             type={type}
+                            index={index}
                             onDoubleClick={onDoubleClick}
                         />
                     ))}

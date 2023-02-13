@@ -99,7 +99,7 @@ const FormulaItem = ({
         clearTimeout(clickTimeoutId)
         const to = setTimeout(function () {
             if (tagname !== 'INPUT') {
-                onClick(index)
+                onClick(id)
             } else {
                 inputRef.current && inputRef.current.focus()
             }
@@ -110,10 +110,10 @@ const FormulaItem = ({
     const handleDoubleClick = () => {
         clearTimeout(clickTimeoutId)
         setClickTimeoutId(null)
-        onDoubleClick(index)
+        onDoubleClick(id)
     }
 
-    const handleChange = (e) => onChange({ index, value: e.target.value })
+    const handleChange = (e) => onChange({ itemId: id, value: e.target.value })
 
     const getContent = () => {
         if (type === TYPE_NUMBER) {

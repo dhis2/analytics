@@ -61,35 +61,36 @@ const CalculationModal = ({
     const [showDeletePrompt, setShowDeletePrompt] = useState(false)
 
     const [focusIndex, setFocusIndex] = useState(null)
-    const [selectedIndex, setSelectedIndex] = useState(null)
+    const [selectedItemId, setSelectedItemId] = useState(null)
 
     const expressionStatus = validationOutput?.status
 
-    const selectItem = (i) => {
-        setSelectedIndex((prevSelected) => (prevSelected !== i ? i : null))
-    }
+    const selectItem = (itemId) =>
+        setSelectedItemId((prevSelected) =>
+            prevSelected !== itemId ? itemId : null
+        )
 
-    const removeItem = (index) => {
-        if (index !== null) {
+    const removeItem = (itemId) => {
+        if (itemId !== null) {
             setValidationOutput()
+            const index = expressionArray.findIndex(
+                (item) => item.id === itemId
+            )
             const sourceList = Array.from(expressionArray)
             sourceList.splice(index, 1)
             setExpressionArray(sourceList)
-            setSelectedIndex(null)
+            setSelectedItemId(null)
         }
     }
 
-    const addItem = ({ data, destIndex }) => {
+    const addItem = ({ label, value, type, destIndex = LAST_POSITION }) => {
         setValidationOutput()
 
         const newItem = {
-            id: `${data.type}-${newIdCount}`,
-            value:
-                data.type === TYPE_DATA_ELEMENT
-                    ? `#{${data.value}}`
-                    : data.value,
-            label: data.label,
-            type: data.type,
+            id: `${type}-${newIdCount}`,
+            value: type === TYPE_DATA_ELEMENT ? `#{${value}}` : value,
+            label: label,
+            type: type,
         }
 
         setNewIdCount(newIdCount + 1)
@@ -99,17 +100,17 @@ const CalculationModal = ({
         } else if (destIndex === FIRST_POSITION) {
             setExpressionArray((prevArray) => [newItem].concat(prevArray))
         } else {
-            const formulaItems = Array.from(expressionArray)
+            const items = Array.from(expressionArray)
             const newFormulaItems = [
-                ...formulaItems.slice(0, destIndex),
+                ...items.slice(0, destIndex),
                 newItem,
-                ...formulaItems.slice(destIndex),
+                ...items.slice(destIndex),
             ]
             setExpressionArray(newFormulaItems)
         }
 
-        if (newItem.type === TYPE_NUMBER && data.index) {
-            setFocusIndex(data.index)
+        if (newItem.type === TYPE_NUMBER) {
+            setFocusIndex(newItem.id)
         }
     }
 
@@ -121,9 +122,9 @@ const CalculationModal = ({
         setExpressionArray(sourceList)
     }
 
-    const setItemValue = ({ index, value }) => {
-        const updatedItems = expressionArray.map((expression, i) =>
-            i === index ? Object.assign({}, expression, { value }) : expression
+    const setItemValue = ({ itemId, value }) => {
+        const updatedItems = expressionArray.map((item) =>
+            item.id === itemId ? Object.assign({}, item, { value }) : item
         )
         setExpressionArray(updatedItems)
     }
@@ -150,7 +151,7 @@ const CalculationModal = ({
                 destIndex = destination.index + 1
             }
 
-            addItem({ data: item.data, destIndex })
+            addItem({ ...item.data, destIndex })
         } else {
             if (destContainerId === LAST_DROPZONE_ID) {
                 destIndex = expressionArray.length
@@ -189,42 +190,20 @@ const CalculationModal = ({
                             <div className="left-section">
                                 <DataElementSelector
                                     displayNameProp={displayNameProp}
-                                    onDoubleClick={({ label, value, type }) => {
-                                        addItem({
-                                            data: {
-                                                label,
-                                                value,
-                                                type,
-                                                index: -1,
-                                            },
-                                            destIndex: LAST_POSITION,
-                                        })
-                                    }}
+                                    onDoubleClick={addItem}
                                 />
-                                <MathOperatorSelector
-                                    onDoubleClick={({
-                                        index,
-                                        type,
-                                        label,
-                                        value,
-                                    }) => {
-                                        addItem({
-                                            data: { index, type, label, value },
-                                            destIndex: LAST_POSITION,
-                                        })
-                                    }}
-                                />
+                                <MathOperatorSelector onDoubleClick={addItem} />
                             </div>
                             <div className="right-section">
                                 <FormulaField
                                     items={expressionArray}
-                                    selectedIndex={selectedIndex}
+                                    selectedItemId={selectedItemId}
                                     focusIndex={focusIndex}
                                     onChange={setItemValue}
                                     onClick={selectItem}
                                     onDoubleClick={removeItem}
                                 />
-                                <div className="leftpad">
+                                <div className="formula-actions">
                                     <p>
                                         {/* TODO: Remove, for testing only */}
                                         {parseArrayToExpression(
@@ -240,13 +219,13 @@ const CalculationModal = ({
                                             {/* TODO: add loading state to button? */}
                                             {i18n.t('Check formula')}
                                         </Button>
-                                        {selectedIndex !== null && (
+                                        {selectedItemId !== null && (
                                             <div className="remove-button">
                                                 <Button
                                                     small
                                                     onClick={() =>
                                                         removeItem(
-                                                            selectedIndex
+                                                            selectedItemId
                                                         )
                                                     }
                                                     dataTest={'remove-button'}

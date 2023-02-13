@@ -64,7 +64,6 @@ const OuterDndContext = ({ children, onDragEnd, onDragStart }) => {
             sourceContainerId: active.data.current.sortable.containerId,
             sourceIndex: active.data.current.sortable.index,
             data: {
-                index: active.data.current.index,
                 label: active.data.current.label,
                 value: active.data.current.value,
                 type: active.data.current.type,

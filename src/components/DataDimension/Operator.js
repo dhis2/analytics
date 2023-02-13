@@ -4,10 +4,10 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import styles from './styles/Operator.style.js'
 
-const Operator = ({ label, value, index, type, onDoubleClick }) => {
+const Operator = ({ label, value, type, onDoubleClick }) => {
     const { attributes, listeners, setNodeRef, transform } = useSortable({
-        id: `operator-${index}`,
-        data: { index, value, label, type },
+        id: `operator-${label}`,
+        data: { label, value, type },
     })
     const style = {
         transform: CSS.Translate.toString(transform),
@@ -18,9 +18,7 @@ const Operator = ({ label, value, index, type, onDoubleClick }) => {
             <div
                 className="operator"
                 data-test="operator"
-                onDoubleClick={() =>
-                    onDoubleClick({ index, value, label, type })
-                }
+                onDoubleClick={() => onDoubleClick({ label, value, type })}
             >
                 <span>{label}</span>
             </div>
@@ -30,7 +28,6 @@ const Operator = ({ label, value, index, type, onDoubleClick }) => {
 }
 
 Operator.propTypes = {
-    index: PropTypes.number.isRequired,
     label: PropTypes.string.isRequired,
     type: PropTypes.string.isRequired,
     value: PropTypes.string.isRequired,
