@@ -2,28 +2,27 @@ import { useSortable } from '@dnd-kit/sortable'
 import PropTypes from 'prop-types'
 import React from 'react'
 import i18n from '../../locales/index.js'
-import { TYPE_OPERATOR, TYPE_INPUT } from './constants.js'
+import { TYPE_OPERATOR, TYPE_NUMBER } from './constants.js'
 import DraggableOperator from './Operator.js'
 import styles from './styles/MathOperatorSelector.style.js'
 
 export const getOperators = () => {
     return [
-        { id: 'plus', value: '+', label: '+', type: TYPE_OPERATOR },
-        { id: 'minus', value: '-', label: '-', type: TYPE_OPERATOR },
-        { id: 'multiply', value: '*', label: '×', type: TYPE_OPERATOR },
-        { id: 'divide', value: '/', label: '/', type: TYPE_OPERATOR },
-        { id: 'openpar', value: '(', label: '(', type: TYPE_OPERATOR },
-        { id: 'closepar', value: ')', label: ')', type: TYPE_OPERATOR },
+        { value: '+', label: '+', type: TYPE_OPERATOR },
+        { value: '-', label: '-', type: TYPE_OPERATOR },
+        { value: '*', label: '×', type: TYPE_OPERATOR },
+        { value: '/', label: '/', type: TYPE_OPERATOR },
+        { value: '(', label: '(', type: TYPE_OPERATOR },
+        { value: ')', label: ')', type: TYPE_OPERATOR },
         {
-            id: 'number',
             value: '',
             label: i18n.t('<number>'),
-            type: TYPE_INPUT,
+            type: TYPE_NUMBER,
         },
     ]
 }
 
-const MathOperatorSelector = ({ onSelect }) => {
+const MathOperatorSelector = ({ onDoubleClick }) => {
     const { setNodeRef } = useSortable({
         id: 'operators',
     })
@@ -33,14 +32,14 @@ const MathOperatorSelector = ({ onSelect }) => {
             <div className="wrapper">
                 <h4 className="sub-header">{i18n.t('Math operators')}</h4>
                 <div className="operators" ref={setNodeRef}>
-                    {getOperators().map(({ id, value, type, label }) => (
+                    {getOperators().map(({ type, label, value }, index) => (
                         <DraggableOperator
-                            key={id}
-                            id={id}
+                            key={`${label}-${index}`}
+                            index={index}
                             label={label}
-                            type={type}
                             value={value}
-                            onDoubleClick={onSelect}
+                            type={type}
+                            onDoubleClick={onDoubleClick}
                         />
                     ))}
                 </div>
@@ -51,7 +50,7 @@ const MathOperatorSelector = ({ onSelect }) => {
 }
 
 MathOperatorSelector.propTypes = {
-    onSelect: PropTypes.func.isRequired,
+    onDoubleClick: PropTypes.func.isRequired,
 }
 
 export default MathOperatorSelector

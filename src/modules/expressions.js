@@ -1,21 +1,56 @@
+import {
+    TYPE_DATAELEMENT,
+    TYPE_NUMBER,
+    TYPE_OPERATOR,
+} from '../components/DataDimension/constants.js'
 import i18n from '../locales/index.js'
 
 export const VALID_EXPRESSION = 'OK'
 export const INVALID_EXPRESSION = 'ERROR'
+
+export const getOperators = () => {
+    return [
+        { value: '+', label: '+', type: TYPE_OPERATOR },
+        { value: '-', label: '-', type: TYPE_OPERATOR },
+        { value: '*', label: '×', type: TYPE_OPERATOR },
+        { value: '/', label: '/', type: TYPE_OPERATOR },
+        { value: '(', label: '(', type: TYPE_OPERATOR },
+        { value: ')', label: ')', type: TYPE_OPERATOR },
+        {
+            value: '',
+            label: i18n.t('<number>'),
+            type: TYPE_NUMBER,
+        },
+    ]
+}
 
 export const parseExpression = (input) => {
     const regex = /(#{[a-zA-Z0-9#]+.*?}|[+\-*/()])|(\d+)/g
     return input.match(regex) || []
 }
 
-export const parseExpressionToArray = (input = '') => {
+export const parseExpressionToArray = (expression = '') => {
     return (
-        parseExpression(input).map((part) => {
-            if (part.startsWith('#{') && part.endsWith('}')) {
-                const id = part.slice(2, -1)
-                return { value: part, label: id }
+        parseExpression(expression).map((value) => {
+            if (value.startsWith('#{') && value.endsWith('}')) {
+                const label = value.slice(2, -1)
+                return { value, label, type: TYPE_DATAELEMENT }
             }
-            return { value: part, label: part }
+
+            if (isNaN(value)) {
+                return {
+                    value,
+                    label: getOperators().find((op) => op.value === value)
+                        .label,
+                    type: TYPE_OPERATOR,
+                }
+            }
+
+            return {
+                value,
+                label: value,
+                type: TYPE_NUMBER,
+            }
         }) || []
     )
 }

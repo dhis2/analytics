@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 import React, { useState, useRef, useEffect } from 'react'
 import { DIMENSION_TYPE_DATA_ELEMENT } from '../../modules/dataTypes.js'
 import { getIcon } from '../../modules/dimensionListItem.js'
-import { TYPE_INPUT, TYPE_DATAELEMENT, LAST_DROPZONE_ID } from './constants.js'
+import { TYPE_NUMBER, TYPE_DATAELEMENT, LAST_DROPZONE_ID } from './constants.js'
 import DragHandleIcon from './DragHandleIcon.js'
 import styles from './styles/FormulaItem.style.js'
 
@@ -31,7 +31,6 @@ const FormulaItem = ({
         listeners,
         index,
         isDragging,
-        isSorting,
         over,
         active,
         setNodeRef,
@@ -40,7 +39,7 @@ const FormulaItem = ({
     } = useSortable({
         id,
         attributes: { tabIndex: isLast ? -1 : 0 },
-        data: { id, label, type, value },
+        data: { label, type, value, index },
     })
 
     const inputRef = useRef(null)
@@ -56,13 +55,13 @@ const FormulaItem = ({
                 inputRef.current.focus()
             }, 50)
         }
-    }, [inputRef, hasFocus, id])
+    }, [inputRef, hasFocus])
 
     const activeIndex = active?.data.current.sortable.index || -1
 
     const style = transform
         ? {
-              transform: isSorting
+              transform: active
                   ? undefined
                   : CSS.Translate.toString({
                         x: transform.x,
@@ -96,7 +95,7 @@ const FormulaItem = ({
         clearTimeout(clickTimeoutId)
         const to = setTimeout(function () {
             if (tagname !== 'INPUT') {
-                onClick(id)
+                onClick(index)
             } else {
                 inputRef.current && inputRef.current.focus()
             }
@@ -107,13 +106,13 @@ const FormulaItem = ({
     const handleDoubleClick = () => {
         clearTimeout(clickTimeoutId)
         setClickTimeoutId(null)
-        onDoubleClick(id)
+        onDoubleClick(index)
     }
 
     const handleChange = (e) => onChange({ index, value: e.target.value })
 
     const getContent = () => {
-        if (type === TYPE_INPUT) {
+        if (type === TYPE_NUMBER) {
             return (
                 <>
                     {DragHandleIcon}
@@ -122,6 +121,7 @@ const FormulaItem = ({
                             {value}
                         </span>
                         <input
+                            className="input"
                             id={id}
                             name={label}
                             onChange={handleChange}
@@ -138,7 +138,9 @@ const FormulaItem = ({
         if (type === TYPE_DATAELEMENT) {
             return (
                 <>
-                    {getIcon(DIMENSION_TYPE_DATA_ELEMENT)}
+                    <span className="icon">
+                        {getIcon(DIMENSION_TYPE_DATA_ELEMENT)}
+                    </span>
                     <span className="data-element-label">{label}</span>
                     <style jsx>{styles}</style>
                 </>
@@ -187,6 +189,7 @@ FormulaItem.propTypes = {
     onDoubleClick: PropTypes.func.isRequired,
     hasFocus: PropTypes.bool,
     id: PropTypes.string,
+    index: PropTypes.number,
     isHighlighted: PropTypes.bool,
     isLast: PropTypes.bool,
     label: PropTypes.string,

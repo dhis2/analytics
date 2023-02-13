@@ -58,21 +58,22 @@ const OuterDndContext = ({ children, onDragEnd, onDragStart }) => {
             return
         }
 
-        const activeItem = {
+        const item = {
             id: active.id,
-            sourceAxisId: active.data.current?.sortable?.containerId,
+            sourceContainerId: active.data.current?.sortable?.containerId,
             sourceIndex: active.data.current?.sortable?.index,
             data: {
-                id: active.data.current.id,
-                type: active.data.current.type,
+                index: active.data.current.index,
                 label: active.data.current.label,
+                value: active.data.current.value,
+                type: active.data.current.type,
             },
         }
-        const overItem = {
-            axisId: over.data.current?.sortable?.containerId || over.id,
+        const destination = {
+            containerId: over.data.current?.sortable?.containerId || over.id,
             index: over.data.current?.sortable?.index,
         }
-        onDragEnd({ activeItem, over: overItem })
+        onDragEnd({ item, destination })
         setDraggingItem(null)
     }
 

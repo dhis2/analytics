@@ -1,4 +1,4 @@
-export const TYPE_INPUT = 'input'
+export const TYPE_NUMBER = 'input'
 export const TYPE_OPERATOR = 'operator'
 export const TYPE_DATAELEMENT = 'DATA_ELEMENT'
 

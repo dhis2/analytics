@@ -15,7 +15,7 @@ const DraggableTransferOption = ({
 }) => {
     const { attributes, listeners, setNodeRef, transform } = useSortable({
         id: value,
-        data: { id: value, label, type },
+        data: { value, label, type, index: -1 },
     })
     const style = {
         transform: CSS.Translate.toString(transform),
@@ -41,7 +41,9 @@ const DraggableTransferOption = ({
                     })}
                     disabled={disabled}
                     onClick={Function.prototype}
-                    onDoubleClick={onDoubleClick}
+                    onDoubleClick={({ label, value }) =>
+                        onDoubleClick({ label, value, type })
+                    }
                 />
             </div>
             <style jsx>{styles}</style>

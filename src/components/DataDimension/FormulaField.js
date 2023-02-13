@@ -9,8 +9,8 @@ import styles from './styles/FormulaField.style.js'
 
 const FormulaField = ({
     items,
-    selectedId,
-    focusId,
+    selectedIndex,
+    focusIndex,
     onChange,
     onClick,
     onDoubleClick,
@@ -32,14 +32,13 @@ const FormulaField = ({
                     />
                     {items.map(({ id, label, type, value }, index) => (
                         <FormulaItem
-                            key={`${label}-${index}`}
+                            key={id}
                             id={id}
-                            index={index}
                             label={label}
                             type={type}
                             value={value}
-                            hasFocus={focusId === id}
-                            isHighlighted={selectedId === id}
+                            hasFocus={focusIndex === index}
+                            isHighlighted={selectedIndex === index}
                             isLast={index === items.length - 1}
                             onChange={onChange}
                             onClick={onClick}
@@ -57,7 +56,7 @@ FormulaField.propTypes = {
     onChange: PropTypes.func.isRequired,
     onClick: PropTypes.func.isRequired,
     onDoubleClick: PropTypes.func.isRequired,
-    focusId: PropTypes.string,
+    focusIndex: PropTypes.number,
     items: PropTypes.arrayOf(
         PropTypes.shape({
             id: PropTypes.string,
@@ -66,7 +65,7 @@ FormulaField.propTypes = {
             value: PropTypes.string,
         })
     ),
-    selectedId: PropTypes.string,
+    selectedIndex: PropTypes.number,
 }
 
 export default FormulaField

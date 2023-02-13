@@ -189,7 +189,7 @@ const DATA_ELEMENT_GROUPS = {
 const calculation = {
     id: 'calculationid',
     name: 'My calculation',
-    expression: '#{fbfJHSPpUQD}/10',
+    expression: '#{fbfJHSPpUQD}/10*#{hfdmMSPBgLG}',
 }
 
 storiesOf('CalculationModal', module)

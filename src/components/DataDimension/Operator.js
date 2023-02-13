@@ -4,10 +4,10 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import styles from './styles/Operator.style.js'
 
-const DraggableOperator = ({ id, label, type, onDoubleClick }) => {
+const DraggableOperator = ({ label, value, index, type, onDoubleClick }) => {
     const { attributes, listeners, setNodeRef, transform } = useSortable({
-        id,
-        data: { id, label, type },
+        id: `operator-${index}`,
+        data: { index, value, label, type },
     })
     const style = {
         transform: CSS.Translate.toString(transform),
@@ -17,7 +17,9 @@ const DraggableOperator = ({ id, label, type, onDoubleClick }) => {
         <div {...attributes} {...listeners} ref={setNodeRef} style={style}>
             <div
                 className="operator"
-                onDoubleClick={() => onDoubleClick({ id })}
+                onDoubleClick={() =>
+                    onDoubleClick({ index, value, label, type })
+                }
             >
                 <span>{label}</span>
             </div>
@@ -27,10 +29,11 @@ const DraggableOperator = ({ id, label, type, onDoubleClick }) => {
 }
 
 DraggableOperator.propTypes = {
+    index: PropTypes.number.isRequired,
     onDoubleClick: PropTypes.func.isRequired,
-    id: PropTypes.string,
     label: PropTypes.string,
     type: PropTypes.string,
+    value: PropTypes.string,
 }
 
 export default DraggableOperator

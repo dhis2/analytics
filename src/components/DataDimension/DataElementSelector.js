@@ -122,7 +122,7 @@ DisaggregationSelector.propTypes = {
     onChange: PropTypes.func.isRequired,
 }
 
-const DataElementSelector = ({ displayNameProp, onSelect }) => {
+const DataElementSelector = ({ displayNameProp, onDoubleClick }) => {
     const dataEngine = useDataEngine()
 
     const [searchTerm, setSearchTerm] = useState('')
@@ -274,7 +274,7 @@ const DataElementSelector = ({ displayNameProp, onSelect }) => {
                                     value={value}
                                     type={type}
                                     disabled={disabled}
-                                    onDoubleClick={onSelect}
+                                    onDoubleClick={onDoubleClick}
                                 />
                             ))}
                         </div>
@@ -303,7 +303,7 @@ const DataElementSelector = ({ displayNameProp, onSelect }) => {
 
 DataElementSelector.propTypes = {
     displayNameProp: PropTypes.string.isRequired,
-    onSelect: PropTypes.func.isRequired,
+    onDoubleClick: PropTypes.func.isRequired,
 }
 
 export default DataElementSelector

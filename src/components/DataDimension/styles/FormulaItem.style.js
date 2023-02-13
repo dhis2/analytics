@@ -1,4 +1,4 @@
-import { colors, spacers, elevations, theme } from '@dhis2/ui'
+import { colors, elevations, theme } from '@dhis2/ui'
 import css from 'styled-jsx/css'
 
 export default css`
@@ -51,9 +51,7 @@ export default css`
     }
 
     .icon {
-        margin-right: ${spacers.dp4};
         display: inline-flex;
-        vertical-align: text-bottom;
     }
 
     .operator-label {
@@ -72,14 +70,16 @@ export default css`
 
     .highlighted {
         background: ${theme.secondary800};
-    }
-
-    .highlighted input {
         color: ${colors.white};
     }
 
-    .highlighted input:hover,
-    .highlighted input:active {
+    .highlighted .input {
+        color: ${colors.white};
+    }
+
+    .highlighted .input:hover,
+    .highlighted .input:active,
+    .highlighted .input:focus {
         color: ${colors.grey900};
     }
 

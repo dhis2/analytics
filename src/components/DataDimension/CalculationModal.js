@@ -23,17 +23,18 @@ import {
 } from '../../modules/expressions.js'
 import {
     TYPE_DATAELEMENT,
-    TYPE_INPUT,
+    TYPE_NUMBER,
     LAST_DROPZONE_ID,
     FORMULA_BOX_ID,
 } from './constants.js'
 import DataElementSelector from './DataElementSelector.js'
 import DndContext, { OPTIONS_PANEL } from './DndContext.js'
 import FormulaField from './FormulaField.js'
-import MathOperatorSelector, { getOperators } from './MathOperatorSelector.js'
+import MathOperatorSelector from './MathOperatorSelector.js'
 import styles from './styles/CalculationModal.style.js'
 
 const FIRST_POSITION = 0
+const LAST_POSITION = -1
 
 const CalculationModal = ({
     calculation = {},
@@ -46,27 +47,77 @@ const CalculationModal = ({
     const [doBackendValidation] = useDataMutation(validateExpressionMutation, {
         onError: (error) => showError(error),
     })
+
+    const [newIdCount, setNewIdCount] = useState(1)
+
     const [validationOutput, setValidationOutput] = useState(null)
     const [expressionArray, setExpressionArray] = useState(
-        parseExpressionToArray(calculation.expression)
+        parseExpressionToArray(calculation.expression).map((item, i) => ({
+            ...item,
+            id: `${item.type}-${-i}`,
+        }))
     )
     const [name, setName] = useState(calculation.name)
     const [showDeletePrompt, setShowDeletePrompt] = useState(false)
 
-    const [focusId, setFocusId] = useState(null)
-    const [selectedId, setSelectedId] = useState(null)
-    const [idCounter, setIdCounter] = useState(0)
+    const [focusIndex, setFocusIndex] = useState(null)
+    const [selectedIndex, setSelectedIndex] = useState(null)
 
     const expressionStatus = validationOutput?.status
 
-    const selectItem = (id) =>
-        setSelectedId((prevSelected) => (prevSelected !== id ? id : null))
+    const selectItem = (i) => {
+        setSelectedIndex((prevSelected) => (prevSelected !== i ? i : null))
+    }
 
-    const removeItem = (id) => {
+    const removeItem = (index) => {
+        if (index !== null) {
+            setValidationOutput()
+            const sourceList = Array.from(expressionArray)
+            sourceList.splice(index, 1)
+            setExpressionArray(sourceList)
+            setSelectedIndex(null)
+        }
+    }
+
+    const addItem = ({ data, destIndex }) => {
+        setValidationOutput()
+
+        const newItem = {
+            id: `${data.type}-${newIdCount}`,
+            value:
+                data.type === TYPE_DATAELEMENT
+                    ? `#{${data.value}}`
+                    : data.value,
+            label: data.label,
+            type: data.type,
+        }
+
+        setNewIdCount(newIdCount + 1)
+
+        if (destIndex === LAST_POSITION) {
+            setExpressionArray((prevArray) => prevArray.concat([newItem]))
+        } else if (destIndex === FIRST_POSITION) {
+            setExpressionArray((prevArray) => [newItem].concat(prevArray))
+        } else {
+            const formulaItems = Array.from(expressionArray)
+            const newFormulaItems = [
+                ...formulaItems.slice(0, destIndex),
+                newItem,
+                ...formulaItems.slice(destIndex),
+            ]
+            setExpressionArray(newFormulaItems)
+        }
+
+        if (newItem.type === TYPE_NUMBER && data.index) {
+            setFocusIndex(data.index)
+        }
+    }
+
+    const moveItem = ({ sourceIndex, destIndex }) => {
         setValidationOutput()
         const sourceList = Array.from(expressionArray)
-        const index = sourceList.findIndex((item) => item.id === id)
-        sourceList.splice(index, 1)
+        const [moved] = sourceList.splice(sourceIndex, 1)
+        sourceList.splice(destIndex, 0, moved)
         setExpressionArray(sourceList)
     }
 
@@ -88,6 +139,31 @@ const CalculationModal = ({
         setValidationOutput(result)
     }
 
+    const addOrMoveDraggedItem = ({ item, destination }) => {
+        const destContainerId = destination.containerId
+
+        let destIndex = FIRST_POSITION
+        if (item.sourceContainerId === OPTIONS_PANEL) {
+            if (destContainerId === LAST_DROPZONE_ID) {
+                destIndex = LAST_POSITION
+            } else if (destContainerId === FORMULA_BOX_ID) {
+                destIndex = destination.index + 1
+            }
+
+            addItem({ data: item.data, destIndex })
+        } else {
+            if (destContainerId === LAST_DROPZONE_ID) {
+                destIndex = expressionArray.length
+            } else if (destContainerId === FORMULA_BOX_ID) {
+                destIndex = destination.index
+            }
+
+            moveItem({ sourceIndex: item.sourceIndex, destIndex })
+        }
+    }
+
+    console.log('exparr', expressionArray)
+
     return (
         <>
             <Modal dataTest={`calculation-modal`} position="top" large>
@@ -98,7 +174,7 @@ const CalculationModal = ({
                 </ModalTitle>
                 <ModalContent dataTest={'calculation-modal-content'}>
                     <DndContext
-                        onDragStart={() => setFocusId(null)}
+                        onDragStart={() => setFocusIndex(null)}
                         onDragEnd={addOrMoveDraggedItem}
                     >
                         <div className="name-input">
@@ -114,33 +190,37 @@ const CalculationModal = ({
                             <div className="left-section">
                                 <DataElementSelector
                                     displayNameProp={displayNameProp}
-                                    onSelect={({ label, value }) => {
-                                        setValidationOutput()
-                                        setExpressionArray((prevArray) =>
-                                            prevArray.concat([
-                                                getNewDataItem(value, label),
-                                            ])
-                                        )
+                                    onDoubleClick={({ label, value, type }) => {
+                                        addItem({
+                                            data: {
+                                                label,
+                                                value,
+                                                type,
+                                                index: -1,
+                                            },
+                                            destIndex: LAST_POSITION,
+                                        })
                                     }}
                                 />
                                 <MathOperatorSelector
-                                    onSelect={({ id }) => {
-                                        setValidationOutput()
-                                        const newItem = getNewOperatorItem(id)
-                                        if (newItem.type === TYPE_INPUT) {
-                                            setFocusId(newItem.id)
-                                        }
-                                        setExpressionArray((prevArray) =>
-                                            prevArray.concat([newItem])
-                                        )
+                                    onDoubleClick={({
+                                        index,
+                                        type,
+                                        label,
+                                        value,
+                                    }) => {
+                                        addItem({
+                                            data: { index, type, label, value },
+                                            destIndex: LAST_POSITION,
+                                        })
                                     }}
                                 />
                             </div>
                             <div className="right-section">
                                 <FormulaField
                                     items={expressionArray}
-                                    selectedId={selectedId}
-                                    focusId={focusId}
+                                    selectedIndex={selectedIndex}
+                                    focusIndex={focusIndex}
                                     onChange={setItemValue}
                                     onClick={selectItem}
                                     onDoubleClick={removeItem}
@@ -157,12 +237,14 @@ const CalculationModal = ({
                                             {/* TODO: add loading state to button? */}
                                             {i18n.t('Check formula')}
                                         </Button>
-                                        {(selectedId || selectedId === 0) && (
+                                        {selectedIndex !== null && (
                                             <div className="remove-button">
                                                 <Button
                                                     small
                                                     onClick={() =>
-                                                        removeItem(selectedId)
+                                                        removeItem(
+                                                            selectedIndex
+                                                        )
                                                     }
                                                 >
                                                     {i18n.t('Remove item')}
@@ -295,80 +377,6 @@ const CalculationModal = ({
             )}
         </>
     )
-
-    function addOrMoveDraggedItem({ activeItem, over }) {
-        const sourceAxisId = activeItem.sourceAxisId
-        const destAxisId = over.axisId
-
-        if (sourceAxisId === OPTIONS_PANEL) {
-            let newItem
-            if (activeItem.data.type === TYPE_DATAELEMENT) {
-                newItem = getNewDataItem(
-                    activeItem.data.id,
-                    activeItem.data.label
-                )
-            } else {
-                // adding an item to the formula
-                newItem = getNewOperatorItem(activeItem.id)
-            }
-
-            if (destAxisId === LAST_DROPZONE_ID) {
-                setExpressionArray([...expressionArray, newItem])
-            } else if (destAxisId === FORMULA_BOX_ID) {
-                const destIndex = over.index + 1
-                const sourceList = Array.from(expressionArray)
-
-                const newFormulaItems = [
-                    ...sourceList.slice(0, destIndex),
-                    newItem,
-                    ...sourceList.slice(destIndex),
-                ]
-
-                setExpressionArray(newFormulaItems)
-            } else {
-                setExpressionArray([newItem, ...expressionArray])
-            }
-            if (newItem.type === TYPE_INPUT) {
-                setFocusId(newItem.id)
-            }
-        } else {
-            // move an item in the formula
-            const sourceIndex = activeItem.sourceIndex
-            let destIndex
-            if (destAxisId === LAST_DROPZONE_ID) {
-                destIndex = expressionArray.length
-            } else if (destAxisId === FORMULA_BOX_ID) {
-                destIndex = over.index
-            } else {
-                destIndex = FIRST_POSITION
-            }
-            const sourceList = Array.from(expressionArray)
-            const [moved] = sourceList.splice(sourceIndex, 1)
-            sourceList.splice(destIndex, 0, moved)
-            setExpressionArray(sourceList)
-        }
-    }
-
-    function getNewDataItem(id, label) {
-        const newItem = {
-            id: `${id}-${idCounter}`,
-            value: `#{${id}}`,
-            label: label,
-            type: TYPE_DATAELEMENT,
-        }
-        setIdCounter(idCounter + 1)
-        return newItem
-    }
-
-    function getNewOperatorItem(id) {
-        const itemToCopy = getOperators().find((op) => op.id === id)
-        const newItem = Object.assign({}, itemToCopy, {
-            id: `${id}-${idCounter}`,
-        })
-
-        setIdCounter(idCounter + 1)
-        return newItem
-    }
 }
 
 CalculationModal.propTypes = {
