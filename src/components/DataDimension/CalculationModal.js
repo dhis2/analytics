@@ -88,8 +88,8 @@ const CalculationModal = ({
         const newItem = {
             id: `${type}-${newIdCount}`,
             value: type === TYPE_DATA_ELEMENT ? `#{${value}}` : value,
-            label: label,
-            type: type,
+            label,
+            type,
         }
 
         setNewIdCount(newIdCount + 1)
