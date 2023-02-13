@@ -51,7 +51,7 @@ describe('validateExpression', () => {
 
     validTestExpressions.forEach((exp) => {
         test(`Passes validation: ${exp}`, () => {
-            expect(validateExpression(exp)).toEqual('')
+            expect(validateExpression(exp)).toEqual(undefined)
         })
     })
 })

@@ -237,7 +237,7 @@ const CalculationModal = ({
                                                 expressionStatus ===
                                                 VALID_EXPRESSION,
                                         })}
-                                        data-test={'validation-message'}
+                                        data-test="validation-message"
                                     >
                                         {validationOutput?.message}
                                     </span>
