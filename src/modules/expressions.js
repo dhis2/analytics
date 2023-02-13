@@ -1,5 +1,5 @@
 import {
-    TYPE_DATAELEMENT,
+    TYPE_DATA_ELEMENT,
     TYPE_NUMBER,
     TYPE_OPERATOR,
 } from '../components/DataDimension/constants.js'
@@ -8,21 +8,19 @@ import i18n from '../locales/index.js'
 export const VALID_EXPRESSION = 'OK'
 export const INVALID_EXPRESSION = 'ERROR'
 
-export const getOperators = () => {
-    return [
-        { value: '+', label: '+', type: TYPE_OPERATOR },
-        { value: '-', label: '-', type: TYPE_OPERATOR },
-        { value: '*', label: '×', type: TYPE_OPERATOR },
-        { value: '/', label: '/', type: TYPE_OPERATOR },
-        { value: '(', label: '(', type: TYPE_OPERATOR },
-        { value: ')', label: ')', type: TYPE_OPERATOR },
-        {
-            value: '',
-            label: i18n.t('<number>'),
-            type: TYPE_NUMBER,
-        },
-    ]
-}
+export const getOperators = () => [
+    { value: '+', label: '+', type: TYPE_OPERATOR },
+    { value: '-', label: '-', type: TYPE_OPERATOR },
+    { value: '*', label: '×', type: TYPE_OPERATOR },
+    { value: '/', label: '/', type: TYPE_OPERATOR },
+    { value: '(', label: '(', type: TYPE_OPERATOR },
+    { value: ')', label: ')', type: TYPE_OPERATOR },
+    {
+        value: '',
+        label: i18n.t('<number>'),
+        type: TYPE_NUMBER,
+    },
+]
 
 export const parseExpression = (input) => {
     const regex = /(#{[a-zA-Z0-9#]+.*?}|[+\-*/()])|(\d+)/g
@@ -34,7 +32,7 @@ export const parseExpressionToArray = (expression = '') => {
         parseExpression(expression).map((value) => {
             if (value.startsWith('#{') && value.endsWith('}')) {
                 const label = value.slice(2, -1)
-                return { value, label, type: TYPE_DATAELEMENT }
+                return { value, label, type: TYPE_DATA_ELEMENT }
             }
 
             if (isNaN(value)) {

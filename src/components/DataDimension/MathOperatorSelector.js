@@ -2,25 +2,9 @@ import { useSortable } from '@dnd-kit/sortable'
 import PropTypes from 'prop-types'
 import React from 'react'
 import i18n from '../../locales/index.js'
-import { TYPE_OPERATOR, TYPE_NUMBER } from './constants.js'
+import { getOperators } from '../../modules/expressions.js'
 import DraggableOperator from './Operator.js'
 import styles from './styles/MathOperatorSelector.style.js'
-
-export const getOperators = () => {
-    return [
-        { value: '+', label: '+', type: TYPE_OPERATOR },
-        { value: '-', label: '-', type: TYPE_OPERATOR },
-        { value: '*', label: '×', type: TYPE_OPERATOR },
-        { value: '/', label: '/', type: TYPE_OPERATOR },
-        { value: '(', label: '(', type: TYPE_OPERATOR },
-        { value: ')', label: ')', type: TYPE_OPERATOR },
-        {
-            value: '',
-            label: i18n.t('<number>'),
-            type: TYPE_NUMBER,
-        },
-    ]
-}
 
 const MathOperatorSelector = ({ onDoubleClick }) => {
     const { setNodeRef } = useSortable({

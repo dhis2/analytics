@@ -19,7 +19,7 @@ export default css`
         padding: ${spacers.dp4} ${spacers.dp8};
     }
 
-    .dataelement {
+    .data-element {
         padding: ${spacers.dp4};
     }
 

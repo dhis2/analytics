@@ -22,7 +22,7 @@ import {
     VALID_EXPRESSION,
 } from '../../modules/expressions.js'
 import {
-    TYPE_DATAELEMENT,
+    TYPE_DATA_ELEMENT,
     TYPE_NUMBER,
     LAST_DROPZONE_ID,
     FORMULA_BOX_ID,
@@ -85,7 +85,7 @@ const CalculationModal = ({
         const newItem = {
             id: `${data.type}-${newIdCount}`,
             value:
-                data.type === TYPE_DATAELEMENT
+                data.type === TYPE_DATA_ELEMENT
                     ? `#{${data.value}}`
                     : data.value,
             label: data.label,
@@ -161,8 +161,6 @@ const CalculationModal = ({
             moveItem({ sourceIndex: item.sourceIndex, destIndex })
         }
     }
-
-    console.log('exparr', expressionArray)
 
     return (
         <>

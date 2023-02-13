@@ -3,23 +3,22 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import { DIMENSION_TYPE_DATA_ELEMENT } from '../../modules/dataTypes.js'
 import { getIcon } from '../../modules/dimensionListItem.js'
-import { TYPE_DATAELEMENT, TYPE_NUMBER, TYPE_OPERATOR } from './constants.js'
+import { TYPE_DATA_ELEMENT, TYPE_NUMBER, TYPE_OPERATOR } from './constants.js'
 import styles from './styles/DraggingItem.style.js'
 
-const DraggingItem = ({ item }) => {
-    const displayLabel =
-        item.type === TYPE_NUMBER ? item.value || item.label : item.label
+const DraggingItem = ({ label, type, value }) => {
+    const displayLabel = type === TYPE_NUMBER ? value || label : label
 
     return (
         <>
             <div
                 className={cx('dragging-item', {
-                    operator: item.type === TYPE_OPERATOR,
-                    number: item.type === TYPE_NUMBER,
-                    dataelement: item.type === TYPE_DATAELEMENT,
+                    operator: type === TYPE_OPERATOR,
+                    number: type === TYPE_NUMBER,
+                    'data-element': type === TYPE_DATA_ELEMENT,
                 })}
             >
-                {item.type === TYPE_DATAELEMENT && (
+                {type === TYPE_DATA_ELEMENT && (
                     <span className="icon">
                         {getIcon(DIMENSION_TYPE_DATA_ELEMENT)}
                     </span>
@@ -32,12 +31,9 @@ const DraggingItem = ({ item }) => {
 }
 
 DraggingItem.propTypes = {
-    item: PropTypes.shape({
-        label: PropTypes.string,
-        sortable: PropTypes.object,
-        type: PropTypes.string,
-        value: PropTypes.string,
-    }),
+    label: PropTypes.string,
+    type: PropTypes.string,
+    value: PropTypes.string,
 }
 
 export default DraggingItem

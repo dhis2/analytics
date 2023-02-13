@@ -5,7 +5,11 @@ import PropTypes from 'prop-types'
 import React, { useState, useRef, useEffect } from 'react'
 import { DIMENSION_TYPE_DATA_ELEMENT } from '../../modules/dataTypes.js'
 import { getIcon } from '../../modules/dimensionListItem.js'
-import { TYPE_NUMBER, TYPE_DATAELEMENT, LAST_DROPZONE_ID } from './constants.js'
+import {
+    TYPE_NUMBER,
+    TYPE_DATA_ELEMENT,
+    LAST_DROPZONE_ID,
+} from './constants.js'
 import DragHandleIcon from './DragHandleIcon.js'
 import styles from './styles/FormulaItem.style.js'
 
@@ -18,10 +22,10 @@ const FormulaItem = ({
     id,
     label,
     type,
-    value = '',
-    onChange,
     isLast,
     isHighlighted,
+    value = '',
+    onChange,
     onClick,
     onDoubleClick,
     hasFocus,
@@ -135,7 +139,7 @@ const FormulaItem = ({
             )
         }
 
-        if (type === TYPE_DATAELEMENT) {
+        if (type === TYPE_DATA_ELEMENT) {
             return (
                 <>
                     <span className="icon">
@@ -161,7 +165,7 @@ const FormulaItem = ({
                 ref={setNodeRef}
                 {...attributes}
                 {...listeners}
-                className={isLast && 'last-item'}
+                className={cx({ 'last-item': isLast })}
                 style={style}
             >
                 <div
@@ -184,16 +188,15 @@ const FormulaItem = ({
 }
 
 FormulaItem.propTypes = {
+    id: PropTypes.string.isRequired,
+    label: PropTypes.string.isRequired,
+    type: PropTypes.string.isRequired,
     onChange: PropTypes.func.isRequired,
     onClick: PropTypes.func.isRequired,
     onDoubleClick: PropTypes.func.isRequired,
     hasFocus: PropTypes.bool,
-    id: PropTypes.string,
-    index: PropTypes.number,
     isHighlighted: PropTypes.bool,
     isLast: PropTypes.bool,
-    label: PropTypes.string,
-    type: PropTypes.string,
     value: PropTypes.string,
 }
 

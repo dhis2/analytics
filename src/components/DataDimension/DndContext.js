@@ -32,7 +32,7 @@ const OuterDndContext = ({ children, onDragEnd, onDragStart }) => {
             <DragOverlay dropAnimation={null}>
                 {draggingItem ? (
                     <span className="dragOverlay">
-                        <DraggingItem item={draggingItem} />
+                        <DraggingItem {...draggingItem} />
                     </span>
                 ) : null}
             </DragOverlay>
@@ -51,7 +51,8 @@ const OuterDndContext = ({ children, onDragEnd, onDragStart }) => {
     function handleDragEnd({ active, over }) {
         if (
             !over?.id ||
-            over?.data?.current?.sortable?.containerId === OPTIONS_PANEL
+            over?.data?.current?.sortable?.containerId === OPTIONS_PANEL ||
+            !active.data.current
         ) {
             // dropped over non-droppable or over options panel
             handleDragCancel()
@@ -60,8 +61,8 @@ const OuterDndContext = ({ children, onDragEnd, onDragStart }) => {
 
         const item = {
             id: active.id,
-            sourceContainerId: active.data.current?.sortable?.containerId,
-            sourceIndex: active.data.current?.sortable?.index,
+            sourceContainerId: active.data.current.sortable.containerId,
+            sourceIndex: active.data.current.sortable.index,
             data: {
                 index: active.data.current.index,
                 label: active.data.current.label,
@@ -70,9 +71,10 @@ const OuterDndContext = ({ children, onDragEnd, onDragStart }) => {
             },
         }
         const destination = {
-            containerId: over.data.current?.sortable?.containerId || over.id,
-            index: over.data.current?.sortable?.index,
+            containerId: over.data.current?.sortable.containerId || over.id,
+            index: over.data.current?.sortable.index,
         }
+
         onDragEnd({ item, destination })
         setDraggingItem(null)
     }

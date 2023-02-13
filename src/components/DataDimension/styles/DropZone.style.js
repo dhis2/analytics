@@ -11,7 +11,7 @@ export default css`
         background-color: transparent;
     }
 
-    .over {
+    .dragging-over {
         z-index: 100;
     }
 
@@ -23,14 +23,14 @@ export default css`
         margin-top: -4px;
     }
 
-    .over::before,
-    .over::after {
+    .dragging-over::before,
+    .dragging-over::after {
         content: '';
         position: absolute;
     }
 
     /* the vertical line */
-    .over::before {
+    .dragging-over::before {
         top: 10px;
         width: 4px;
         left: 4px;
@@ -39,7 +39,7 @@ export default css`
     }
 
     /* the circle */
-    .over::after {
+    .dragging-over::after {
         top: 0;
         left: 0;
         width: 12px;
