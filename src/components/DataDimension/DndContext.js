@@ -11,6 +11,74 @@ import DraggingItem from './DraggingItem.js'
 
 export const OPTIONS_PANEL = 'Sortable'
 
+const getIntersectionRatio = (entry, target) => {
+    const top = Math.max(target.top, entry.top)
+    const left = Math.max(target.left, entry.left)
+    const right = Math.min(target.left + target.width, entry.left + entry.width)
+    const bottom = Math.min(
+        target.top + target.height,
+        entry.top + entry.height
+    )
+    const width = right - left
+    const height = bottom - top
+
+    if (left < right && top < bottom) {
+        const targetArea = target.width * target.height
+        const entryArea = entry.width * entry.height
+        const intersectionArea = width * height
+        const intersectionRatio =
+            intersectionArea / (targetArea + entryArea - intersectionArea)
+        return Number(intersectionRatio.toFixed(4))
+    } // Rectangles do not overlap, or overlap has an area of zero (edge/corner overlap)
+
+    return 0
+}
+const sortCollisionsDesc = ({ data: { value: a } }, { data: { value: b } }) => {
+    return b - a
+}
+
+const rectIntersectionCustom = ({
+    pointerCoordinates,
+    droppableContainers,
+}) => {
+    // create a rect around the pointerCoords for calculating the intersection
+
+    const pointerRectWidth = 40
+    const pointerRectHeight = 40
+    const pointerRect = {
+        width: pointerRectWidth,
+        height: pointerRectHeight,
+        top: pointerCoordinates.y - pointerRectHeight / 2,
+        bottom: pointerCoordinates.y + pointerRectHeight / 2,
+        left: pointerCoordinates.x - pointerRectWidth / 2,
+        right: pointerCoordinates.x + pointerRectWidth / 2,
+    }
+    const collisions = []
+
+    for (const droppableContainer of droppableContainers) {
+        const {
+            id,
+            rect: { current: rect },
+        } = droppableContainer
+
+        if (rect) {
+            const intersectionRatio = getIntersectionRatio(rect, pointerRect)
+
+            if (intersectionRatio > 0) {
+                collisions.push({
+                    id,
+                    data: {
+                        droppableContainer,
+                        value: intersectionRatio,
+                    },
+                })
+            }
+        }
+    }
+
+    return collisions.sort(sortCollisionsDesc)
+}
+
 const OuterDndContext = ({ children, onDragEnd, onDragStart }) => {
     const [draggingItem, setDraggingItem] = useState(null)
     const sensor = useSensor(PointerSensor, {
@@ -20,35 +88,16 @@ const OuterDndContext = ({ children, onDragEnd, onDragStart }) => {
     })
     const sensors = useSensors(sensor)
 
-    return (
-        <DndContext
-            collisionDetection={rectIntersectionCustom}
-            onDragStart={handleDragStart}
-            onDragEnd={handleDragEnd}
-            onDragCancel={handleDragCancel}
-            sensors={sensors}
-        >
-            {children}
-            <DragOverlay dropAnimation={null}>
-                {draggingItem ? (
-                    <span className="dragOverlay">
-                        <DraggingItem {...draggingItem} />
-                    </span>
-                ) : null}
-            </DragOverlay>
-        </DndContext>
-    )
-
-    function handleDragStart({ active }) {
+    const handleDragStart = ({ active }) => {
         setDraggingItem(active.data.current)
         onDragStart && onDragStart()
     }
 
-    function handleDragCancel() {
+    const handleDragCancel = () => {
         setDraggingItem(null)
     }
 
-    function handleDragEnd({ active, over }) {
+    const handleDragEnd = ({ active, over }) => {
         if (
             !over?.id ||
             over?.data?.current?.sortable?.containerId === OPTIONS_PANEL ||
@@ -78,82 +127,24 @@ const OuterDndContext = ({ children, onDragEnd, onDragStart }) => {
         setDraggingItem(null)
     }
 
-    function getIntersectionRatio(entry, target) {
-        const top = Math.max(target.top, entry.top)
-        const left = Math.max(target.left, entry.left)
-        const right = Math.min(
-            target.left + target.width,
-            entry.left + entry.width
-        )
-        const bottom = Math.min(
-            target.top + target.height,
-            entry.top + entry.height
-        )
-        const width = right - left
-        const height = bottom - top
-
-        if (left < right && top < bottom) {
-            const targetArea = target.width * target.height
-            const entryArea = entry.width * entry.height
-            const intersectionArea = width * height
-            const intersectionRatio =
-                intersectionArea / (targetArea + entryArea - intersectionArea)
-            return Number(intersectionRatio.toFixed(4))
-        } // Rectangles do not overlap, or overlap has an area of zero (edge/corner overlap)
-
-        return 0
-    }
-    function sortCollisionsDesc(
-        { data: { value: a } },
-        { data: { value: b } }
-    ) {
-        return b - a
-    }
-
-    function rectIntersectionCustom({
-        pointerCoordinates,
-        droppableContainers,
-    }) {
-        // create a rect around the pointerCoords for calculating the intersection
-
-        const pointerRectWidth = 40
-        const pointerRectHeight = 40
-        const pointerRect = {
-            width: pointerRectWidth,
-            height: pointerRectHeight,
-            top: pointerCoordinates.y - pointerRectHeight / 2,
-            bottom: pointerCoordinates.y + pointerRectHeight / 2,
-            left: pointerCoordinates.x - pointerRectWidth / 2,
-            right: pointerCoordinates.x + pointerRectWidth / 2,
-        }
-        const collisions = []
-
-        for (const droppableContainer of droppableContainers) {
-            const {
-                id,
-                rect: { current: rect },
-            } = droppableContainer
-
-            if (rect) {
-                const intersectionRatio = getIntersectionRatio(
-                    rect,
-                    pointerRect
-                )
-
-                if (intersectionRatio > 0) {
-                    collisions.push({
-                        id,
-                        data: {
-                            droppableContainer,
-                            value: intersectionRatio,
-                        },
-                    })
-                }
-            }
-        }
-
-        return collisions.sort(sortCollisionsDesc)
-    }
+    return (
+        <DndContext
+            collisionDetection={rectIntersectionCustom}
+            onDragStart={handleDragStart}
+            onDragEnd={handleDragEnd}
+            onDragCancel={handleDragCancel}
+            sensors={sensors}
+        >
+            {children}
+            <DragOverlay dropAnimation={null}>
+                {draggingItem ? (
+                    <span className="dragOverlay">
+                        <DraggingItem {...draggingItem} />
+                    </span>
+                ) : null}
+            </DragOverlay>
+        </DndContext>
+    )
 }
 
 OuterDndContext.propTypes = {
