@@ -1,12 +1,10 @@
 import {
-    TYPE_DATA_ELEMENT,
-    TYPE_NUMBER,
-    TYPE_OPERATOR,
-} from '../../components/DataDimension/constants.js'
-import {
     validateExpression,
     parseArrayToExpression,
     parseExpressionToArray,
+    TYPE_DATA_ELEMENT,
+    TYPE_NUMBER,
+    TYPE_OPERATOR,
     INVALID_EXPRESSION,
 } from '../expressions.js'
 

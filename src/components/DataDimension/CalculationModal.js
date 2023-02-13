@@ -18,18 +18,17 @@ import {
     parseExpressionToArray,
     parseArrayToExpression,
     validateExpression,
+    TYPE_DATA_ELEMENT,
+    TYPE_NUMBER,
     INVALID_EXPRESSION,
     VALID_EXPRESSION,
 } from '../../modules/expressions.js'
-import {
-    TYPE_DATA_ELEMENT,
-    TYPE_NUMBER,
-    LAST_DROPZONE_ID,
-    FORMULA_BOX_ID,
-} from './constants.js'
 import DataElementSelector from './DataElementSelector.js'
 import DndContext, { OPTIONS_PANEL } from './DndContext.js'
-import FormulaField from './FormulaField.js'
+import FormulaField, {
+    LAST_DROPZONE_ID,
+    FORMULA_BOX_ID,
+} from './FormulaField.js'
 import MathOperatorSelector from './MathOperatorSelector.js'
 import styles from './styles/CalculationModal.style.js'
 

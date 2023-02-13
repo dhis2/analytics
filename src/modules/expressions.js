@@ -1,9 +1,8 @@
-import {
-    TYPE_DATA_ELEMENT,
-    TYPE_NUMBER,
-    TYPE_OPERATOR,
-} from '../components/DataDimension/constants.js'
 import i18n from '../locales/index.js'
+
+export const TYPE_NUMBER = 'input'
+export const TYPE_OPERATOR = 'operator'
+export const TYPE_DATA_ELEMENT = 'DATA_ELEMENT'
 
 export const VALID_EXPRESSION = 'OK'
 export const INVALID_EXPRESSION = 'ERROR'

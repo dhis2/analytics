@@ -3,7 +3,11 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import { DIMENSION_TYPE_DATA_ELEMENT } from '../../modules/dataTypes.js'
 import { getIcon } from '../../modules/dimensionListItem.js'
-import { TYPE_DATA_ELEMENT, TYPE_NUMBER, TYPE_OPERATOR } from './constants.js'
+import {
+    TYPE_DATA_ELEMENT,
+    TYPE_NUMBER,
+    TYPE_OPERATOR,
+} from '../../modules/expressions.js'
 import styles from './styles/DraggingItem.style.js'
 
 const DraggingItem = ({ label, type, value }) => {

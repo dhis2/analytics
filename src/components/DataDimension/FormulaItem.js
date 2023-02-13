@@ -5,11 +5,7 @@ import PropTypes from 'prop-types'
 import React, { useState, useRef, useEffect } from 'react'
 import { DIMENSION_TYPE_DATA_ELEMENT } from '../../modules/dataTypes.js'
 import { getIcon } from '../../modules/dimensionListItem.js'
-import {
-    TYPE_NUMBER,
-    TYPE_DATA_ELEMENT,
-    LAST_DROPZONE_ID,
-} from './constants.js'
+import { TYPE_NUMBER, TYPE_DATA_ELEMENT } from '../../modules/expressions.js'
 import DragHandleIcon from './DragHandleIcon.js'
 import styles from './styles/FormulaItem.style.js'
 
@@ -21,10 +17,11 @@ const maxMsBetweenClicks = 300
 const FormulaItem = ({
     id,
     label,
+    value = '',
     type,
     isLast,
     isHighlighted,
-    value = '',
+    overLastDropZone,
     onChange,
     onClick,
     onDoubleClick,
@@ -90,7 +87,7 @@ const FormulaItem = ({
             // BEFORE position. Otherwise use the AFTER position
             insertPosition = index > activeIndex ? AFTER : BEFORE
         }
-    } else if (isLast && over?.id === LAST_DROPZONE_ID) {
+    } else if (isLast && overLastDropZone) {
         insertPosition = AFTER
     }
 
@@ -197,6 +194,7 @@ FormulaItem.propTypes = {
     hasFocus: PropTypes.bool,
     isHighlighted: PropTypes.bool,
     isLast: PropTypes.bool,
+    overLastDropZone: PropTypes.bool,
     value: PropTypes.string,
 }
 
