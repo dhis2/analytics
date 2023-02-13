@@ -59,7 +59,7 @@ const CalculationModal = ({
     const [name, setName] = useState(calculation.name)
     const [showDeletePrompt, setShowDeletePrompt] = useState(false)
 
-    const [focusIndex, setFocusIndex] = useState(null)
+    const [focusItemId, setFocusItemId] = useState(null)
     const [selectedItemId, setSelectedItemId] = useState(null)
 
     const expressionStatus = validationOutput?.status
@@ -109,7 +109,7 @@ const CalculationModal = ({
         }
 
         if (newItem.type === TYPE_NUMBER) {
-            setFocusIndex(newItem.id)
+            setFocusItemId(newItem.id)
         }
     }
 
@@ -172,7 +172,7 @@ const CalculationModal = ({
                 </ModalTitle>
                 <ModalContent dataTest={'calculation-modal-content'}>
                     <DndContext
-                        onDragStart={() => setFocusIndex(null)}
+                        onDragStart={() => setFocusItemId(null)}
                         onDragEnd={addOrMoveDraggedItem}
                     >
                         <div className="name-input">
@@ -197,7 +197,7 @@ const CalculationModal = ({
                                 <FormulaField
                                     items={expressionArray}
                                     selectedItemId={selectedItemId}
-                                    focusIndex={focusIndex}
+                                    focusItemId={focusItemId}
                                     onChange={setItemValue}
                                     onClick={selectItem}
                                     onDoubleClick={removeItem}
