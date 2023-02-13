@@ -1,4 +1,4 @@
-import { colors } from '@dhis2/ui'
+import { colors, spacers } from '@dhis2/ui'
 import {
     FONT_STYLE_VISUALIZATION_TITLE,
     FONT_STYLE_VISUALIZATION_SUBTITLE,
@@ -11,16 +11,19 @@ import {
     TEXT_ALIGN_RIGHT,
     TEXT_ALIGN_CENTER,
     mergeFontStyleWithDefault,
+    defaultFontStyle,
 } from '../../../../modules/fontStyle.js'
-import { getColorByValueFromLegendSet } from '../../../../modules/legends.js'
+import {
+    getColorByValueFromLegendSet,
+    LEGEND_DISPLAY_STYLE_FILL,
+} from '../../../../modules/legends.js'
 
 const svgNS = 'http://www.w3.org/2000/svg'
 
 const generateValueSVG = ({
-    value,
     formattedValue,
     subText,
-    legendSet,
+    valueColor,
     noData,
     y,
 }) => {
@@ -41,8 +44,8 @@ const generateValueSVG = ({
 
     let fillColor = colors.grey900
 
-    if (legendSet) {
-        fillColor = getColorByValueFromLegendSet(legendSet, value)
+    if (valueColor) {
+        fillColor = valueColor
     } else if (formattedValue === noData.text) {
         fillColor = colors.grey600
     }
@@ -87,7 +90,7 @@ const generateValueSVG = ({
     return svgValue
 }
 
-const generateDashboardItem = (config, { legendSet, noData }) => {
+const generateDashboardItem = (config, { valueColor, noData }) => {
     const container = document.createElement('div')
     container.setAttribute(
         'style',
@@ -114,10 +117,9 @@ const generateDashboardItem = (config, { legendSet, noData }) => {
 
     container.appendChild(
         generateValueSVG({
-            value: config.value,
             formattedValue: config.formattedValue,
             subText: config.subText,
-            legendSet,
+            valueColor,
             noData,
             y: 40,
         })
@@ -150,7 +152,10 @@ const getXFromTextAlign = (textAlign) => {
     }
 }
 
-const generateDVItem = (config, { legendSet, parentEl, fontStyle, noData }) => {
+const generateDVItem = (
+    config,
+    { valueColor, titleColor, parentEl, fontStyle, noData }
+) => {
     const parentElBBox = parentEl.getBoundingClientRect()
 
     const width = parentElBBox.width
@@ -195,7 +200,17 @@ const generateDVItem = (config, { legendSet, parentEl, fontStyle, noData }) => {
             ? FONT_STYLE_OPTION_ITALIC
             : 'normal'
     )
-    title.setAttribute('fill', titleFontStyle[FONT_STYLE_OPTION_TEXT_COLOR])
+    if (
+        titleColor &&
+        titleFontStyle[FONT_STYLE_OPTION_TEXT_COLOR] ===
+            defaultFontStyle[FONT_STYLE_VISUALIZATION_TITLE][
+                FONT_STYLE_OPTION_TEXT_COLOR
+            ]
+    ) {
+        title.setAttribute('fill', titleColor)
+    } else {
+        title.setAttribute('fill', titleFontStyle[FONT_STYLE_OPTION_TEXT_COLOR])
+    }
 
     title.setAttribute('data-test', 'visualization-title')
 
@@ -238,10 +253,21 @@ const generateDVItem = (config, { legendSet, parentEl, fontStyle, noData }) => {
             ? FONT_STYLE_OPTION_ITALIC
             : 'normal'
     )
-    subtitle.setAttribute(
-        'fill',
-        subtitleFontStyle[FONT_STYLE_OPTION_TEXT_COLOR]
-    )
+
+    if (
+        titleColor &&
+        subtitleFontStyle[FONT_STYLE_OPTION_TEXT_COLOR] ===
+            defaultFontStyle[FONT_STYLE_VISUALIZATION_SUBTITLE][
+                FONT_STYLE_OPTION_TEXT_COLOR
+            ]
+    ) {
+        subtitle.setAttribute('fill', titleColor)
+    } else {
+        subtitle.setAttribute(
+            'fill',
+            subtitleFontStyle[FONT_STYLE_OPTION_TEXT_COLOR]
+        )
+    }
 
     subtitle.setAttribute('data-test', 'visualization-subtitle')
 
@@ -253,10 +279,9 @@ const generateDVItem = (config, { legendSet, parentEl, fontStyle, noData }) => {
 
     svg.appendChild(
         generateValueSVG({
-            value: config.value,
             formattedValue: config.formattedValue,
             subText: config.subText,
-            legendSet,
+            valueColor,
             noData,
             y: 20,
         })
@@ -265,17 +290,59 @@ const generateDVItem = (config, { legendSet, parentEl, fontStyle, noData }) => {
     return svg
 }
 
+const shouldUseContrastColor = (inputColor) => {
+    // based on https://stackoverflow.com/questions/3942878/how-to-decide-font-color-in-white-or-black-depending-on-background-color
+    var color =
+        inputColor.charAt(0) === '#' ? inputColor.substring(1, 7) : inputColor
+    var r = parseInt(color.substring(0, 2), 16) // hexToR
+    var g = parseInt(color.substring(2, 4), 16) // hexToG
+    var b = parseInt(color.substring(4, 6), 16) // hexToB
+    var uicolors = [r / 255, g / 255, b / 255]
+    var c = uicolors.map((col) => {
+        if (col <= 0.03928) {
+            return col / 12.92
+        }
+        return Math.pow((col + 0.055) / 1.055, 2.4)
+    })
+    var L = 0.2126 * c[0] + 0.7152 * c[1] + 0.0722 * c[2]
+    return L <= 0.179
+}
+
 export default function (
     config,
     parentEl,
-    { dashboard, legendSets, fontStyle, noData }
+    { dashboard, legendSets, fontStyle, noData, legendOptions }
 ) {
-    const legendSet = legendSets[0]
+    const legendSet = legendOptions && legendSets[0]
+    const legendColor =
+        legendSet && getColorByValueFromLegendSet(legendSet, config.value)
+    let valueColor, titleColor
+    if (legendColor) {
+        if (legendOptions.style === LEGEND_DISPLAY_STYLE_FILL) {
+            parentEl.style.background = legendColor
+            valueColor = titleColor =
+                shouldUseContrastColor(legendColor) && colors.white
+        } else {
+            valueColor = legendColor
+        }
+    }
+
     parentEl.style.overflow = 'hidden'
     parentEl.style.display = 'flex'
     parentEl.style.justifyContent = 'center'
+    parentEl.style.borderRadius = spacers.dp8
 
-    return dashboard
-        ? generateDashboardItem(config, { legendSet, noData })
-        : generateDVItem(config, { legendSet, parentEl, fontStyle, noData })
+    if (dashboard) {
+        return generateDashboardItem(config, { valueColor, noData })
+    } else {
+        parentEl.style.margin = spacers.dp8
+        parentEl.style.height = `calc(100% - (${spacers.dp8} * 2))`
+        return generateDVItem(config, {
+            valueColor,
+            titleColor,
+            parentEl,
+            fontStyle,
+            noData,
+        })
+    }
 }
