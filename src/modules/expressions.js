@@ -56,7 +56,7 @@ export const parseArrayToExpression = (input = []) =>
     input.map((item) => item.value).join('')
 
 export const validateExpression = (expression) => {
-    let result = ''
+    let result
     // TODO: two numbers next to each other
 
     const leftParenthesisCount = expression.split('(').length - 1

@@ -131,7 +131,7 @@ const CalculationModal = ({
     const validate = async () => {
         const expression = parseArrayToExpression(expressionArray)
         let result = validateExpression(expression)
-        if (!result.length) {
+        if (!result) {
             result = await doBackendValidation({
                 expression,
             })
