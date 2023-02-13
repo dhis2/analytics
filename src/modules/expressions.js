@@ -1,7 +1,7 @@
 import i18n from '../locales/index.js'
 
-export const TYPE_NUMBER = 'input'
-export const TYPE_OPERATOR = 'operator'
+export const TYPE_NUMBER = 'NUMBER'
+export const TYPE_OPERATOR = 'OPERATOR'
 export const TYPE_DATA_ELEMENT = 'DATA_ELEMENT'
 
 export const VALID_EXPRESSION = 'OK'

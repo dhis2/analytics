@@ -164,13 +164,13 @@ const CalculationModal = ({
 
     return (
         <>
-            <Modal dataTest={`calculation-modal`} position="top" large>
-                <ModalTitle dataTest={'calculation-modal-title'}>
+            <Modal dataTest="calculation-modal" position="top" large>
+                <ModalTitle dataTest="calculation-modal-title">
                     {calculation.id
                         ? i18n.t('Data / Edit calculation')
                         : i18n.t('Data / New calculation')}
                 </ModalTitle>
-                <ModalContent dataTest={'calculation-modal-content'}>
+                <ModalContent dataTest="calculation-modal-content">
                     <DndContext
                         onDragStart={() => setFocusItemId(null)}
                         onDragEnd={addOrMoveDraggedItem}
@@ -182,7 +182,7 @@ const CalculationModal = ({
                                 )}
                                 onChange={({ value }) => setName(value)}
                                 value={name}
-                                dataTest={'calculation-label'}
+                                dataTest="calculation-label"
                             />
                         </div>
                         <div className="content">
@@ -213,7 +213,7 @@ const CalculationModal = ({
                                         <Button
                                             small
                                             onClick={validate}
-                                            dataTest={'validate-button'}
+                                            dataTest="validate-button"
                                         >
                                             {/* TODO: add loading state to button? */}
                                             {i18n.t('Check formula')}
@@ -227,7 +227,7 @@ const CalculationModal = ({
                                                             selectedItemId
                                                         )
                                                     }
-                                                    dataTest={'remove-button'}
+                                                    dataTest="remove-button"
                                                 >
                                                     {i18n.t('Remove item')}
                                                 </Button>
@@ -245,7 +245,7 @@ const CalculationModal = ({
                                                         VALID_EXPRESSION,
                                                 }
                                             )}
-                                            dataTest={'validation-message'}
+                                            data-test={'validation-message'}
                                         >
                                             {validationOutput?.message}
                                         </span>
@@ -257,7 +257,7 @@ const CalculationModal = ({
                                                 onClick={() =>
                                                     setShowDeletePrompt(true)
                                                 }
-                                                dataTest={'delete-button'}
+                                                dataTest="delete-button"
                                             >
                                                 {i18n.t('Delete calculation')}
                                             </Button>
@@ -269,9 +269,9 @@ const CalculationModal = ({
                         <style jsx>{styles}</style>
                     </DndContext>
                 </ModalContent>
-                <ModalActions dataTest={'calculation-modal-actions'}>
+                <ModalActions dataTest="calculation-modal-actions">
                     <ButtonStrip>
-                        <Button onClick={onClose} dataTest={'cancel-button'}>
+                        <Button onClick={onClose} dataTest="cancel-button">
                             {i18n.t('Cancel')}
                         </Button>
                         <Tooltip
@@ -320,7 +320,7 @@ const CalculationModal = ({
                                             expressionStatus !==
                                                 VALID_EXPRESSION || !name
                                         }
-                                        dataTest={'save-button'}
+                                        dataTest="save-button"
                                     >
                                         {i18n.t('Save calculation')}
                                     </Button>
