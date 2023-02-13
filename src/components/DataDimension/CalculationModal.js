@@ -202,54 +202,45 @@ const CalculationModal = ({
                                     onClick={selectItem}
                                     onDoubleClick={removeItem}
                                 />
-                                <div className="formula-actions">
-                                    <p>
-                                        {/* TODO: Remove, for testing only */}
-                                        {parseArrayToExpression(
-                                            expressionArray
-                                        )}
-                                    </p>
-                                    <div className="actions-wrapper">
-                                        <Button
-                                            small
-                                            onClick={validate}
-                                            dataTest="validate-button"
-                                        >
-                                            {/* TODO: add loading state to button? */}
-                                            {i18n.t('Check formula')}
-                                        </Button>
-                                        {selectedItemId !== null && (
-                                            <div className="remove-button">
-                                                <Button
-                                                    small
-                                                    onClick={() =>
-                                                        removeItem(
-                                                            selectedItemId
-                                                        )
-                                                    }
-                                                    dataTest="remove-button"
-                                                >
-                                                    {i18n.t('Remove item')}
-                                                </Button>
-                                            </div>
-                                        )}
-                                        <span
-                                            className={cx(
-                                                'validation-message',
-                                                {
-                                                    'validation-error':
-                                                        expressionStatus ===
-                                                        INVALID_EXPRESSION,
-                                                    'validation-success':
-                                                        expressionStatus ===
-                                                        VALID_EXPRESSION,
+                                <p>
+                                    {/* TODO: Remove, for testing only */}
+                                    {parseArrayToExpression(expressionArray)}
+                                </p>
+                                <div className="actions-wrapper">
+                                    <Button
+                                        small
+                                        onClick={validate}
+                                        dataTest="validate-button"
+                                    >
+                                        {/* TODO: add loading state to button? */}
+                                        {i18n.t('Check formula')}
+                                    </Button>
+                                    {selectedItemId !== null && (
+                                        <div className="remove-button">
+                                            <Button
+                                                small
+                                                onClick={() =>
+                                                    removeItem(selectedItemId)
                                                 }
-                                            )}
-                                            data-test={'validation-message'}
-                                        >
-                                            {validationOutput?.message}
-                                        </span>
-                                    </div>
+                                                dataTest="remove-button"
+                                            >
+                                                {i18n.t('Remove item')}
+                                            </Button>
+                                        </div>
+                                    )}
+                                    <span
+                                        className={cx('validation-message', {
+                                            'validation-error':
+                                                expressionStatus ===
+                                                INVALID_EXPRESSION,
+                                            'validation-success':
+                                                expressionStatus ===
+                                                VALID_EXPRESSION,
+                                        })}
+                                        data-test={'validation-message'}
+                                    >
+                                        {validationOutput?.message}
+                                    </span>
                                     {calculation.id && (
                                         <div className="delete-button">
                                             <Button
