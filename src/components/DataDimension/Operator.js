@@ -17,6 +17,7 @@ const Operator = ({ label, value, index, type, onDoubleClick }) => {
         <div {...attributes} {...listeners} ref={setNodeRef} style={style}>
             <div
                 className="operator"
+                data-test="operator"
                 onDoubleClick={() =>
                     onDoubleClick({ index, value, label, type })
                 }

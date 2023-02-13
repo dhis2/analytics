@@ -44,6 +44,7 @@ const DraggableTransferOption = ({
                     onDoubleClick={({ label, value }) =>
                         onDoubleClick({ label, value, type })
                     }
+                    dataTest="dimension-option"
                 />
             </div>
             <style jsx>{styles}</style>
