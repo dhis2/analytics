@@ -1,46 +1,76 @@
-import cx from 'classnames'
+import { useDroppable } from '@dnd-kit/core'
+import { SortableContext } from '@dnd-kit/sortable'
 import PropTypes from 'prop-types'
 import React from 'react'
-import { DIMENSION_TYPE_DATA_ELEMENT } from '../../modules/dataTypes.js'
-import { getIcon } from '../../modules/dimensionListItem.js'
+import DropZone from './DropZone.js'
+import FormulaItem from './FormulaItem.js'
 import styles from './styles/FormulaField.style.js'
 
-const partIsDimension = (part) => part.startsWith('#{') && part.endsWith('}')
+export const LAST_DROPZONE_ID = 'lastdropzone'
+export const FORMULA_BOX_ID = 'formulabox'
 
-const FormulaField = ({ expression, selectedPart, onPartSelection }) => (
-    <>
-        <div className="wrapper">
-            {expression.map((part, index) => (
-                <span
-                    className={cx('part', {
-                        dimension: partIsDimension(part.value),
-                        highlighted: index === selectedPart,
-                    })}
-                    onClick={() => onPartSelection(index)}
-                    key={index}
-                >
-                    {partIsDimension(part.value) && (
-                        <span className="icon">
-                            {getIcon(DIMENSION_TYPE_DATA_ELEMENT)}
-                        </span>
-                    )}
-                    {part.label}
-                </span>
-            ))}
+const FormulaField = ({
+    items,
+    selectedItemId,
+    focusItemId,
+    onChange,
+    onClick,
+    onDoubleClick,
+}) => {
+    const { over, setNodeRef: setLastDropzoneRef } = useDroppable({
+        id: LAST_DROPZONE_ID,
+    })
+
+    const itemIds = items.map((item) => item.id)
+
+    const overLastDropZone = over?.id === LAST_DROPZONE_ID
+
+    return (
+        <div className="container">
+            <div className="border"></div>
+            <div className="formula-field" ref={setLastDropzoneRef}>
+                <SortableContext id={FORMULA_BOX_ID} items={itemIds}>
+                    <DropZone
+                        firstElementId={itemIds[0]}
+                        overLastDropZone={overLastDropZone}
+                    />
+                    {items.map(({ id, label, type, value }, index) => (
+                        <FormulaItem
+                            key={id}
+                            id={id}
+                            label={label}
+                            type={type}
+                            value={value}
+                            hasFocus={focusItemId === id}
+                            isHighlighted={selectedItemId === id}
+                            isLast={index === items.length - 1}
+                            onChange={onChange}
+                            onClick={onClick}
+                            onDoubleClick={onDoubleClick}
+                            overLastDropZone={overLastDropZone}
+                        />
+                    ))}
+                </SortableContext>
+            </div>
+            <style jsx>{styles}</style>
         </div>
-        <style jsx>{styles}</style>
-    </>
-)
+    )
+}
 
 FormulaField.propTypes = {
-    expression: PropTypes.arrayOf(
+    onChange: PropTypes.func.isRequired,
+    onClick: PropTypes.func.isRequired,
+    onDoubleClick: PropTypes.func.isRequired,
+    focusItemId: PropTypes.string,
+    items: PropTypes.arrayOf(
         PropTypes.shape({
+            id: PropTypes.string,
             label: PropTypes.string,
+            type: PropTypes.string,
             value: PropTypes.string,
         })
     ),
-    selectedPart: PropTypes.number,
-    onPartSelection: PropTypes.func,
+    selectedItemId: PropTypes.string,
 }
 
 export default FormulaField

@@ -8,6 +8,7 @@ import {
     SingleSelectField,
     SingleSelectOption,
 } from '@dhis2/ui'
+import { useSortable } from '@dnd-kit/sortable'
 import { useDebounceCallback } from '@react-hook/debounce'
 import cx from 'classnames'
 import PropTypes from 'prop-types'
@@ -21,8 +22,7 @@ import {
     DIMENSION_TYPE_DATA_ELEMENT,
     dataTypeMap as dataTypes,
 } from '../../modules/dataTypes.js'
-import { getIcon, getTooltipText } from '../../modules/dimensionListItem.js'
-import { TransferOption } from '../TransferOption.js'
+import DraggableTransferOption from './DraggableTransferOption.js'
 import styles from './styles/DataElementSelector.style.js'
 
 const getOptions = () => ({
@@ -124,7 +124,7 @@ DisaggregationSelector.propTypes = {
     onChange: PropTypes.func.isRequired,
 }
 
-const DataElementSelector = ({ displayNameProp, onSelect }) => {
+const DataElementSelector = ({ displayNameProp, onDoubleClick }) => {
     const dataEngine = useDataEngine()
 
     const [searchTerm, setSearchTerm] = useState('')
@@ -132,6 +132,10 @@ const DataElementSelector = ({ displayNameProp, onSelect }) => {
     const [subGroup, setSubGroup] = useState(TOTALS)
     const [options, setOptions] = useState([])
     const [loading, setLoading] = useState(true)
+
+    const { setNodeRef: setDraggableNodeRef } = useSortable({
+        id: 'dataelements',
+    })
 
     const rootRef = useRef()
     const hasNextPageRef = useRef(false)
@@ -254,7 +258,6 @@ const DataElementSelector = ({ displayNameProp, onSelect }) => {
                     onChange={(group) => onFilterChange({ group })}
                     displayNameProp={displayNameProp}
                 />
-
                 <DisaggregationSelector
                     currentValue={subGroup}
                     onChange={(subGroup) => onFilterChange({ subGroup })}
@@ -269,20 +272,18 @@ const DataElementSelector = ({ displayNameProp, onSelect }) => {
                         className="dimension-list-scroller"
                         data-test="dimension-list"
                     >
-                        {options.map(({ label, value, type, disabled }) => (
-                            <TransferOption
-                                label={label}
-                                key={value}
-                                value={value}
-                                icon={getIcon(type)}
-                                tooltipText={getTooltipText({
-                                    type,
-                                })}
-                                disabled={disabled}
-                                onDoubleClick={onSelect}
-                                dataTest={'dimension-option'}
-                            />
-                        ))}
+                        <div ref={setDraggableNodeRef}>
+                            {options.map(({ label, value, type, disabled }) => (
+                                <DraggableTransferOption
+                                    label={label}
+                                    key={value}
+                                    value={value}
+                                    type={type}
+                                    disabled={disabled}
+                                    onDoubleClick={onDoubleClick}
+                                />
+                            ))}
+                        </div>
                         <div className="scroll-detector">
                             <IntersectionDetector
                                 onChange={onEndReached}
@@ -308,7 +309,7 @@ const DataElementSelector = ({ displayNameProp, onSelect }) => {
 
 DataElementSelector.propTypes = {
     displayNameProp: PropTypes.string.isRequired,
-    onSelect: PropTypes.func.isRequired,
+    onDoubleClick: PropTypes.func.isRequired,
 }
 
 export default DataElementSelector

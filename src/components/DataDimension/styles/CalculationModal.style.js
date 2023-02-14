@@ -17,6 +17,7 @@ export default css`
     .actions-wrapper {
         margin-top: ${spacers.dp16};
         margin-bottom: ${spacers.dp16};
+        margin-left: ${spacers.dp4};
     }
 
     .remove-button {
@@ -25,7 +26,7 @@ export default css`
     }
 
     .delete-button {
-        margin-top: ${spacers.dp8};
+        margin-top: ${spacers.dp16};
     }
 
     .content {

@@ -1,46 +1,31 @@
+import { useSortable } from '@dnd-kit/sortable'
 import PropTypes from 'prop-types'
 import React from 'react'
 import i18n from '../../locales/index.js'
+import { getOperators } from '../../modules/expressions.js'
+import DraggableOperator from './Operator.js'
 import styles from './styles/MathOperatorSelector.style.js'
 
-const MathOperatorSelector = ({ onSelect }) => {
-    const operators = [
-        { value: '+', label: '+' },
-        { value: '-', label: '-' },
-        { value: '*', label: '×' },
-        { value: '/', label: '/' },
-        { value: '(', label: '(' },
-        { value: ')', label: ')' },
-    ]
+const MathOperatorSelector = ({ onDoubleClick }) => {
+    const { setNodeRef } = useSortable({
+        id: 'operators',
+    })
 
     return (
         <>
             <div className="wrapper">
                 <h4 className="sub-header">{i18n.t('Math operators')}</h4>
-                <div className="operators">
-                    {operators.map(({ value, label }) => (
-                        <span
-                            key={value}
-                            className="operator"
-                            onDoubleClick={() => {
-                                onSelect({ value })
-                            }}
-                            dataTest={'operator'}
-                        >
-                            {label}
-                        </span>
+                <div className="operators" ref={setNodeRef}>
+                    {getOperators().map(({ label, value, type }, index) => (
+                        <DraggableOperator
+                            key={`${label}-${index}`}
+                            label={label}
+                            value={value}
+                            type={type}
+                            index={index}
+                            onDoubleClick={onDoubleClick}
+                        />
                     ))}
-                    <span
-                        className={'operator'}
-                        onDoubleClick={() => {
-                            onSelect({
-                                value: prompt('Please enter a number', 5),
-                            })
-                        }}
-                        dataTest={'operator'}
-                    >
-                        {i18n.t('<number>')}
-                    </span>
                 </div>
             </div>
             <style jsx>{styles}</style>
@@ -49,7 +34,7 @@ const MathOperatorSelector = ({ onSelect }) => {
 }
 
 MathOperatorSelector.propTypes = {
-    onSelect: PropTypes.func.isRequired,
+    onDoubleClick: PropTypes.func.isRequired,
 }
 
 export default MathOperatorSelector
