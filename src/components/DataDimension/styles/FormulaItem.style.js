@@ -103,7 +103,7 @@ export default css`
         top: 6px;
         bottom: 0;
         width: 4px;
-        background-color: #4c9ffe;
+        background-color: ${colors.blue500};
     }
 
     /* the circle */
@@ -111,7 +111,7 @@ export default css`
         top: -4px;
         width: 12px;
         height: 12px;
-        border: 4px solid #4c9ffe;
+        border: 4px solid ${colors.blue500};
         background: transparent;
         border-radius: 12px;
     }

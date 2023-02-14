@@ -1,3 +1,4 @@
+import { colors } from '@dhis2/ui'
 import css from 'styled-jsx/css'
 
 export default css`
@@ -35,7 +36,7 @@ export default css`
         width: 4px;
         left: 4px;
         height: 18px;
-        background-color: #4c9ffe;
+        background-color: ${colors.blue500};
     }
 
     /* the circle */
@@ -44,7 +45,7 @@ export default css`
         left: 0;
         width: 12px;
         height: 12px;
-        border: 4px solid #4c9ffe;
+        border: 4px solid ${colors.blue500};
         background: transparent;
         border-radius: 12px;
     }
