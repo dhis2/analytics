@@ -1,3 +1,10 @@
+# [24.5.0-alpha.2](https://github.com/dhis2/analytics/compare/v24.5.0-alpha.1...v24.5.0-alpha.2) (2023-02-14)
+
+
+### Bug Fixes
+
+* bump multi-calendar-dates to avoid jest config change ([3e5892a](https://github.com/dhis2/analytics/commit/3e5892aa88a087dde3405a518625f4c6e637d17e))
+
 # [24.5.0-alpha.1](https://github.com/dhis2/analytics/compare/v24.4.2...v24.5.0-alpha.1) (2023-02-07)
 
 
