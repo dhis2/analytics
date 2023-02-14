@@ -29,7 +29,7 @@ export default css`
         margin-right: 1px;
     }
 
-    input {
+    .input {
         position: absolute;
         width: 100%;
         left: 0;
@@ -38,8 +38,8 @@ export default css`
         padding: 0 0 0 2px;
     }
 
-    input:hover,
-    input:focus {
+    .input:hover,
+    .input:focus {
         background: white;
         border: 1px solid rgba(0, 0, 0, 0.2);
     }
