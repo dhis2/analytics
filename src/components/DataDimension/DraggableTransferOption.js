@@ -16,6 +16,7 @@ const DraggableTransferOption = ({
     const { attributes, listeners, setNodeRef, transform } = useSortable({
         id: value,
         data: { value, label, type, index: -1 },
+        disabled,
     })
     const style = {
         transform: CSS.Translate.toString(transform),
