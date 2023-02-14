@@ -4,25 +4,26 @@ import React from 'react'
 import { DIMENSION_TYPE_DATA_ELEMENT } from '../../modules/dataTypes.js'
 import { getIcon } from '../../modules/dimensionListItem.js'
 import {
-    TYPE_DATA_ELEMENT,
-    TYPE_NUMBER,
-    TYPE_OPERATOR,
+    EXPRESSION_TYPE_DATA_ELEMENT,
+    EXPRESSION_TYPE_NUMBER,
+    EXPRESSION_TYPE_OPERATOR,
 } from '../../modules/expressions.js'
 import styles from './styles/DraggingItem.style.js'
 
 const DraggingItem = ({ label, type, value }) => {
-    const displayLabel = type === TYPE_NUMBER ? value || label : label
+    const displayLabel =
+        type === EXPRESSION_TYPE_NUMBER ? value || label : label
 
     return (
         <>
             <div
                 className={cx('dragging-item', {
-                    operator: type === TYPE_OPERATOR,
-                    number: type === TYPE_NUMBER,
-                    'data-element': type === TYPE_DATA_ELEMENT,
+                    operator: type === EXPRESSION_TYPE_OPERATOR,
+                    number: type === EXPRESSION_TYPE_NUMBER,
+                    'data-element': type === EXPRESSION_TYPE_DATA_ELEMENT,
                 })}
             >
-                {type === TYPE_DATA_ELEMENT && (
+                {type === EXPRESSION_TYPE_DATA_ELEMENT && (
                     <span className="icon">
                         {getIcon(DIMENSION_TYPE_DATA_ELEMENT)}
                     </span>

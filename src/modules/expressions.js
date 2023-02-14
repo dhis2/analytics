@@ -1,24 +1,24 @@
 import i18n from '../locales/index.js'
 import { DIMENSION_TYPE_DATA_ELEMENT } from './dataTypes.js'
 
-export const TYPE_NUMBER = 'NUMBER'
-export const TYPE_OPERATOR = 'OPERATOR'
-export const TYPE_DATA_ELEMENT = DIMENSION_TYPE_DATA_ELEMENT
+export const EXPRESSION_TYPE_NUMBER = 'EXPRESSION_TYPE_NUMBER'
+export const EXPRESSION_TYPE_OPERATOR = 'EXPRESSION_TYPE_OPERATOR'
+export const EXPRESSION_TYPE_DATA_ELEMENT = DIMENSION_TYPE_DATA_ELEMENT
 
 export const VALID_EXPRESSION = 'OK'
 export const INVALID_EXPRESSION = 'ERROR'
 
 export const getOperators = () => [
-    { value: '+', label: '+', type: TYPE_OPERATOR },
-    { value: '-', label: '-', type: TYPE_OPERATOR },
-    { value: '*', label: '×', type: TYPE_OPERATOR },
-    { value: '/', label: '/', type: TYPE_OPERATOR },
-    { value: '(', label: '(', type: TYPE_OPERATOR },
-    { value: ')', label: ')', type: TYPE_OPERATOR },
+    { value: '+', label: '+', type: EXPRESSION_TYPE_OPERATOR },
+    { value: '-', label: '-', type: EXPRESSION_TYPE_OPERATOR },
+    { value: '*', label: '×', type: EXPRESSION_TYPE_OPERATOR },
+    { value: '/', label: '/', type: EXPRESSION_TYPE_OPERATOR },
+    { value: '(', label: '(', type: EXPRESSION_TYPE_OPERATOR },
+    { value: ')', label: ')', type: EXPRESSION_TYPE_OPERATOR },
     {
         value: '',
         label: i18n.t('<number>'),
-        type: TYPE_NUMBER,
+        type: EXPRESSION_TYPE_NUMBER,
     },
 ]
 
@@ -32,7 +32,7 @@ export const parseExpressionToArray = (expression = '') => {
         parseExpression(expression).map((value) => {
             if (value.startsWith('#{') && value.endsWith('}')) {
                 const label = value.slice(2, -1)
-                return { value, label, type: TYPE_DATA_ELEMENT }
+                return { value, label, type: EXPRESSION_TYPE_DATA_ELEMENT }
             }
 
             if (isNaN(value)) {
@@ -40,14 +40,14 @@ export const parseExpressionToArray = (expression = '') => {
                     value,
                     label: getOperators().find((op) => op.value === value)
                         .label,
-                    type: TYPE_OPERATOR,
+                    type: EXPRESSION_TYPE_OPERATOR,
                 }
             }
 
             return {
                 value,
                 label: value,
-                type: TYPE_NUMBER,
+                type: EXPRESSION_TYPE_NUMBER,
             }
         }) || []
     )

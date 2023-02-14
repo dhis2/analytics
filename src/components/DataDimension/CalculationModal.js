@@ -18,8 +18,8 @@ import {
     parseExpressionToArray,
     parseArrayToExpression,
     validateExpression,
-    TYPE_DATA_ELEMENT,
-    TYPE_NUMBER,
+    EXPRESSION_TYPE_DATA_ELEMENT,
+    EXPRESSION_TYPE_NUMBER,
     INVALID_EXPRESSION,
     VALID_EXPRESSION,
 } from '../../modules/expressions.js'
@@ -87,7 +87,8 @@ const CalculationModal = ({
 
         const newItem = {
             id: `${type}-${newIdCount}`,
-            value: type === TYPE_DATA_ELEMENT ? `#{${value}}` : value,
+            value:
+                type === EXPRESSION_TYPE_DATA_ELEMENT ? `#{${value}}` : value,
             label,
             type,
         }
@@ -108,7 +109,7 @@ const CalculationModal = ({
             setExpressionArray(newFormulaItems)
         }
 
-        if (newItem.type === TYPE_NUMBER) {
+        if (newItem.type === EXPRESSION_TYPE_NUMBER) {
             setFocusItemId(newItem.id)
         }
     }
