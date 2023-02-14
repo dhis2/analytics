@@ -43,7 +43,7 @@ const FormulaItem = ({
     } = useSortable({
         id,
         attributes: { tabIndex: isLast ? -1 : 0 },
-        data: { label, type, value, index },
+        data: { label, type, value },
     })
 
     const inputRef = useRef(null)

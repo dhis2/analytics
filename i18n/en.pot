@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2023-02-06T14:03:03.841Z\n"
-"PO-Revision-Date: 2023-02-06T14:03:03.841Z\n"
+"POT-Creation-Date: 2023-02-14T08:56:26.627Z\n"
+"PO-Revision-Date: 2023-02-14T08:56:26.627Z\n"
 
 msgid "view only"
 msgstr "view only"
@@ -187,9 +187,6 @@ msgstr "Nothing found for \"{{- searchTerm}}\""
 
 msgid "Calculation"
 msgstr "Calculation"
-
-msgid "<number>"
-msgstr "<number>"
 
 msgid "Math operators"
 msgstr "Math operators"
@@ -1025,6 +1022,9 @@ msgstr "Program indicator"
 
 msgid "Calculations"
 msgstr "Calculations"
+
+msgid "<number>"
+msgstr "<number>"
 
 msgid "Empty formula"
 msgstr "Empty formula"
