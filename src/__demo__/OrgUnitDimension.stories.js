@@ -4,7 +4,10 @@ import React, { useState } from 'react'
 import OrgUnitDimension from '../components/OrgUnitDimension/OrgUnitDimension.js'
 
 const Wrapper = (story) => (
-    <DataProvider baseUrl="http://localhost:8080/" apiVersion="">
+    <DataProvider
+        baseUrl="https://debug.dhis2.org/analytics-dev/"
+        apiVersion=""
+    >
         {story()}
     </DataProvider>
 )
@@ -131,6 +134,69 @@ storiesOf('OrgUnitDimension', module)
                 selected={selected}
                 onSelect={(response) => setSelected(response.items)}
                 roots={['O6uvpzGd5pu', 'fdc6uOvgoji']} // Bo + Bombali
+            />
+        )
+    })
+
+storiesOf('OrgUnitDimension', module)
+    .addDecorator(Wrapper)
+    .add('Without level selector', () => {
+        const [selected, setSelected] = useState([])
+
+        return (
+            <OrgUnitDimension
+                hideLevelSelect={true}
+                selected={selected}
+                onSelect={(response) => setSelected(response.items)}
+                roots={defaultRootOrgUnits}
+            />
+        )
+    })
+
+storiesOf('OrgUnitDimension', module)
+    .addDecorator(Wrapper)
+    .add('Without group selector', () => {
+        const [selected, setSelected] = useState([])
+
+        return (
+            <OrgUnitDimension
+                hideGroupSelect={true}
+                selected={selected}
+                onSelect={(response) => setSelected(response.items)}
+                roots={defaultRootOrgUnits}
+            />
+        )
+    })
+
+storiesOf('OrgUnitDimension', module)
+    .addDecorator(Wrapper)
+    .add('Without level and group selector', () => {
+        const [selected, setSelected] = useState([])
+
+        return (
+            <OrgUnitDimension
+                hideLevelSelect={true}
+                hideGroupSelect={true}
+                selected={selected}
+                onSelect={(response) => setSelected(response.items)}
+                roots={defaultRootOrgUnits}
+            />
+        )
+    })
+
+storiesOf('OrgUnitDimension', module)
+    .addDecorator(Wrapper)
+    .add('Without level and group selector, with warning text', () => {
+        const [selected, setSelected] = useState([])
+
+        return (
+            <OrgUnitDimension
+                hideLevelSelect={true}
+                hideGroupSelect={true}
+                selected={selected}
+                onSelect={(response) => setSelected(response.items)}
+                roots={defaultRootOrgUnits}
+                warning={'No org. units selected'}
             />
         )
     })
