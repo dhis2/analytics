@@ -1,3 +1,10 @@
+# [24.7.0](https://github.com/dhis2/analytics/compare/v24.6.0...v24.7.0) (2023-02-15)
+
+
+### Features
+
+* new props for customising OrgUnitDimension DHIS2-14744 ([#1427](https://github.com/dhis2/analytics/issues/1427)) ([ae2f886](https://github.com/dhis2/analytics/commit/ae2f886167a487271bf42c2f4c694e45ea4b25b3))
+
 # [24.6.0](https://github.com/dhis2/analytics/compare/v24.5.0...v24.6.0) (2023-02-13)
 
 
