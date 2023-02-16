@@ -38,6 +38,7 @@ const OrgUnitDimension = ({
     onSelect,
     hideGroupSelect,
     hideLevelSelect,
+    hideUserOrgUnits,
     warning,
 }) => {
     const [ouLevels, setOuLevels] = useState([])
@@ -185,48 +186,52 @@ const OrgUnitDimension = ({
 
     return (
         <div className="container">
-            <div className="userOrgUnitsWrapper">
-                <Checkbox
-                    label={i18n.t('User organisation unit')}
-                    checked={selected.some((item) => item.id === USER_ORG_UNIT)}
-                    onChange={({ checked }) =>
-                        onSelectItems({
-                            id: USER_ORG_UNIT,
-                            checked,
-                            displayName: i18n.t('User organisation unit'),
-                        })
-                    }
-                    dense
-                />
-                <Checkbox
-                    label={i18n.t('User sub-units')}
-                    checked={selected.some(
-                        (item) => item.id === USER_ORG_UNIT_CHILDREN
-                    )}
-                    onChange={({ checked }) =>
-                        onSelectItems({
-                            id: USER_ORG_UNIT_CHILDREN,
-                            checked,
-                            displayName: i18n.t('User sub-units'),
-                        })
-                    }
-                    dense
-                />
-                <Checkbox
-                    label={i18n.t('User sub-x2-units')}
-                    checked={selected.some(
-                        (item) => item.id === USER_ORG_UNIT_GRANDCHILDREN
-                    )}
-                    onChange={({ checked }) =>
-                        onSelectItems({
-                            id: USER_ORG_UNIT_GRANDCHILDREN,
-                            checked,
-                            displayName: i18n.t('User sub-x2-units'),
-                        })
-                    }
-                    dense
-                />
-            </div>
+            {!hideUserOrgUnits && (
+                <div className="userOrgUnitsWrapper">
+                    <Checkbox
+                        label={i18n.t('User organisation unit')}
+                        checked={selected.some(
+                            (item) => item.id === USER_ORG_UNIT
+                        )}
+                        onChange={({ checked }) =>
+                            onSelectItems({
+                                id: USER_ORG_UNIT,
+                                checked,
+                                displayName: i18n.t('User organisation unit'),
+                            })
+                        }
+                        dense
+                    />
+                    <Checkbox
+                        label={i18n.t('User sub-units')}
+                        checked={selected.some(
+                            (item) => item.id === USER_ORG_UNIT_CHILDREN
+                        )}
+                        onChange={({ checked }) =>
+                            onSelectItems({
+                                id: USER_ORG_UNIT_CHILDREN,
+                                checked,
+                                displayName: i18n.t('User sub-units'),
+                            })
+                        }
+                        dense
+                    />
+                    <Checkbox
+                        label={i18n.t('User sub-x2-units')}
+                        checked={selected.some(
+                            (item) => item.id === USER_ORG_UNIT_GRANDCHILDREN
+                        )}
+                        onChange={({ checked }) =>
+                            onSelectItems({
+                                id: USER_ORG_UNIT_GRANDCHILDREN,
+                                checked,
+                                displayName: i18n.t('User sub-x2-units'),
+                            })
+                        }
+                        dense
+                    />
+                </div>
+            )}
             <div
                 className={cx('orgUnitTreeWrapper', {
                     disabled: selected.some((item) =>
@@ -360,11 +365,13 @@ const OrgUnitDimension = ({
 OrgUnitDimension.defaultProps = {
     hideGroupSelect: false,
     hideLevelSelect: false,
+    hideUserOrgUnits: false,
 }
 
 OrgUnitDimension.propTypes = {
     hideGroupSelect: PropTypes.bool,
     hideLevelSelect: PropTypes.bool,
+    hideUserOrgUnits: PropTypes.bool,
     roots: PropTypes.arrayOf(PropTypes.string),
     selected: PropTypes.arrayOf(
         PropTypes.shape({
