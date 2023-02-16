@@ -140,6 +140,21 @@ storiesOf('OrgUnitDimension', module)
 
 storiesOf('OrgUnitDimension', module)
     .addDecorator(Wrapper)
+    .add('Without user org units selection', () => {
+        const [selected, setSelected] = useState([])
+
+        return (
+            <OrgUnitDimension
+                hideUserOrgUnits={true}
+                selected={selected}
+                onSelect={(response) => setSelected(response.items)}
+                roots={defaultRootOrgUnits}
+            />
+        )
+    })
+
+storiesOf('OrgUnitDimension', module)
+    .addDecorator(Wrapper)
     .add('Without level selector', () => {
         const [selected, setSelected] = useState([])
 
