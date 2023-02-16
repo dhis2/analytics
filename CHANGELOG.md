@@ -1,3 +1,10 @@
+# [24.8.0](https://github.com/dhis2/analytics/compare/v24.7.0...v24.8.0) (2023-02-16)
+
+
+### Features
+
+* add prop for controlling user org unit selector DHIS2-14744 ([#1430](https://github.com/dhis2/analytics/issues/1430)) ([02d3057](https://github.com/dhis2/analytics/commit/02d3057c7c090e293ba7c3057720f491e71457ec))
+
 # [24.7.0](https://github.com/dhis2/analytics/compare/v24.6.0...v24.7.0) (2023-02-15)
 
 
