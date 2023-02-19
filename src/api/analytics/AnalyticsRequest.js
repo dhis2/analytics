@@ -1,3 +1,4 @@
+import { getHashFromVisualization } from '../../modules/hash.js'
 import { getFixedDimensions } from '../../modules/predefinedDimensions.js'
 import AnalyticsRequestBase from './AnalyticsRequestBase.js'
 import AnalyticsRequestDimensionsMixin from './AnalyticsRequestDimensionsMixin.js'
@@ -112,6 +113,10 @@ class AnalyticsRequest extends AnalyticsRequestDimensionsMixin(
                 }
             }
         })
+
+        const hash = getHashFromVisualization(visualization)
+
+        console.log(hash)
 
         return request
     }
