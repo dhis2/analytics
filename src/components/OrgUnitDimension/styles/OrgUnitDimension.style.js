@@ -45,12 +45,30 @@ export default css`
         margin-top: ${spacers.dp12};
     }
 
+    .selectsWrapper.hidden {
+        display: none;
+    }
+
     .selectsWrapper > :global(*) {
         width: 50%;
     }
 
     .summaryWrapper {
+        display: inline-flex;
+        align-items: center;
         margin-top: ${spacers.dp8};
+    }
+
+    .warningWrapper {
+        display: inline-flex;
+        align-items: center;
+    }
+
+    .warningText {
+        margin-left: ${spacers.dp8};
+        font-size: 14px;
+        line-height: 18px;
+        color: ${colors.red600};
     }
 
     .summaryText {
