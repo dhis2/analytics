@@ -3,7 +3,7 @@ import { getHash } from '../hash.js'
 describe('getHash', () => {
     const textInput = 'Raymond Luxury Yacht'
 
-    it('returns a hash', () => {
+    it('accepts a string and returns a hash', () => {
         const hash = getHash(textInput)
 
         expect(typeof hash).toBe('string')
@@ -19,6 +19,14 @@ describe('getHash', () => {
     })
 
     it('accepts number', () => {
-        // expect(getHash(1)).toBe(getHash(['a', 'b', 'c']))
+        expect(typeof getHash(1)).toBe('string')
+    })
+
+    it('returns undefined for unsupported types', () => {
+        const unsupportedTypes = [undefined, null, true, false, {}]
+
+        unsupportedTypes.forEach((type) =>
+            expect(getHash(type)).toBe(undefined)
+        )
     })
 })

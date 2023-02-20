@@ -10,7 +10,7 @@ export const getHash = (value) => {
         hashInput = value.join('')
     }
 
-    return hashInput === undefined ? hashInput : window.btoa(value)
+    return hashInput === undefined ? hashInput : window.btoa(hashInput)
 }
 
 export const getHashFromVisualization = (visualization) => {
