@@ -1,4 +1,4 @@
-import { getHashFromVisualization } from '../../modules/hash.js'
+import { getExpressionHashFromVisualization } from '../../modules/hash.js'
 import { getFixedDimensions } from '../../modules/predefinedDimensions.js'
 import AnalyticsRequestBase from './AnalyticsRequestBase.js'
 import AnalyticsRequestDimensionsMixin from './AnalyticsRequestDimensionsMixin.js'
@@ -114,9 +114,11 @@ class AnalyticsRequest extends AnalyticsRequestDimensionsMixin(
             }
         })
 
-        const hash = getHashFromVisualization(visualization)
+        const expressionHash = getExpressionHashFromVisualization(visualization)
 
-        console.log(hash)
+        if (expressionHash) {
+            request.withParameters({ edi_cache: expressionHash })
+        }
 
         return request
     }
