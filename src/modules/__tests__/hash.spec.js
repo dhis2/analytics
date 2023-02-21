@@ -76,7 +76,7 @@ describe('getExpressionHashFromVisualization', () => {
         ).toBe('string')
     })
 
-    it('does not generate a hash', () => {
+    it('does not generate a hash when there are no dimensions', () => {
         expect(
             getExpressionHashFromVisualization({
                 columns: [],
@@ -86,7 +86,22 @@ describe('getExpressionHashFromVisualization', () => {
         ).toBe(undefined)
     })
 
-    it('sorts the edi objects by id to optimize caching', () => {
+    it('does not generate a hash when there are no EDI dimensions', () => {
+        expect(
+            getExpressionHashFromVisualization({
+                columns: [
+                    {
+                        id: 'OdiHJayrsKo',
+                        dimensionItemType: 'INDICATOR',
+                    },
+                ],
+                rows: [],
+                filters: [],
+            })
+        ).toBe(undefined)
+    })
+
+    it('sorts the edi objects by id before generating the hash to optimize caching', () => {
         expect(
             getExpressionHashFromVisualization({
                 columns: [
