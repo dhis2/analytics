@@ -114,6 +114,7 @@ class AnalyticsRequest extends AnalyticsRequestDimensionsMixin(
             }
         })
 
+        // add cache param for expression dimension items
         const expressionHash = getExpressionHashFromVisualization(visualization)
 
         if (expressionHash) {
