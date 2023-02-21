@@ -5,6 +5,8 @@ import {
     MultiSelect,
     MultiSelectOption,
     Button,
+    IconWarningFilled16,
+    colors,
 } from '@dhis2/ui'
 import cx from 'classnames'
 import PropTypes from 'prop-types'
@@ -30,7 +32,15 @@ const DYNAMIC_ORG_UNITS = [
     USER_ORG_UNIT_GRANDCHILDREN,
 ]
 
-const OrgUnitDimension = ({ roots, selected, onSelect }) => {
+const OrgUnitDimension = ({
+    roots,
+    selected,
+    onSelect,
+    hideGroupSelect,
+    hideLevelSelect,
+    hideUserOrgUnits,
+    warning,
+}) => {
     const [ouLevels, setOuLevels] = useState([])
     const [ouGroups, setOuGroups] = useState([])
     const dataEngine = useDataEngine()
@@ -73,9 +83,9 @@ const OrgUnitDimension = ({ roots, selected, onSelect }) => {
             setOuGroups(result)
         }
 
-        doFetchOuLevels()
-        doFetchOuGroups()
-    }, [dataEngine])
+        !hideLevelSelect && doFetchOuLevels()
+        !hideGroupSelect && doFetchOuGroups()
+    }, [dataEngine, hideLevelSelect, hideGroupSelect])
 
     const onLevelChange = (ids) => {
         const items = ids.map((id) => ({
@@ -176,48 +186,52 @@ const OrgUnitDimension = ({ roots, selected, onSelect }) => {
 
     return (
         <div className="container">
-            <div className="userOrgUnitsWrapper">
-                <Checkbox
-                    label={i18n.t('User organisation unit')}
-                    checked={selected.some((item) => item.id === USER_ORG_UNIT)}
-                    onChange={({ checked }) =>
-                        onSelectItems({
-                            id: USER_ORG_UNIT,
-                            checked,
-                            displayName: i18n.t('User organisation unit'),
-                        })
-                    }
-                    dense
-                />
-                <Checkbox
-                    label={i18n.t('User sub-units')}
-                    checked={selected.some(
-                        (item) => item.id === USER_ORG_UNIT_CHILDREN
-                    )}
-                    onChange={({ checked }) =>
-                        onSelectItems({
-                            id: USER_ORG_UNIT_CHILDREN,
-                            checked,
-                            displayName: i18n.t('User sub-units'),
-                        })
-                    }
-                    dense
-                />
-                <Checkbox
-                    label={i18n.t('User sub-x2-units')}
-                    checked={selected.some(
-                        (item) => item.id === USER_ORG_UNIT_GRANDCHILDREN
-                    )}
-                    onChange={({ checked }) =>
-                        onSelectItems({
-                            id: USER_ORG_UNIT_GRANDCHILDREN,
-                            checked,
-                            displayName: i18n.t('User sub-x2-units'),
-                        })
-                    }
-                    dense
-                />
-            </div>
+            {!hideUserOrgUnits && (
+                <div className="userOrgUnitsWrapper">
+                    <Checkbox
+                        label={i18n.t('User organisation unit')}
+                        checked={selected.some(
+                            (item) => item.id === USER_ORG_UNIT
+                        )}
+                        onChange={({ checked }) =>
+                            onSelectItems({
+                                id: USER_ORG_UNIT,
+                                checked,
+                                displayName: i18n.t('User organisation unit'),
+                            })
+                        }
+                        dense
+                    />
+                    <Checkbox
+                        label={i18n.t('User sub-units')}
+                        checked={selected.some(
+                            (item) => item.id === USER_ORG_UNIT_CHILDREN
+                        )}
+                        onChange={({ checked }) =>
+                            onSelectItems({
+                                id: USER_ORG_UNIT_CHILDREN,
+                                checked,
+                                displayName: i18n.t('User sub-units'),
+                            })
+                        }
+                        dense
+                    />
+                    <Checkbox
+                        label={i18n.t('User sub-x2-units')}
+                        checked={selected.some(
+                            (item) => item.id === USER_ORG_UNIT_GRANDCHILDREN
+                        )}
+                        onChange={({ checked }) =>
+                            onSelectItems({
+                                id: USER_ORG_UNIT_GRANDCHILDREN,
+                                checked,
+                                displayName: i18n.t('User sub-x2-units'),
+                            })
+                        }
+                        dense
+                    />
+                </div>
+            )}
             <div
                 className={cx('orgUnitTreeWrapper', {
                     disabled: selected.some((item) =>
@@ -261,65 +275,77 @@ const OrgUnitDimension = ({ roots, selected, onSelect }) => {
                     disabled: selected.some((item) =>
                         DYNAMIC_ORG_UNITS.includes(item.id)
                     ),
+                    hidden: hideLevelSelect && hideGroupSelect,
                 })}
             >
-                <MultiSelect
-                    selected={
-                        ouLevels.length
-                            ? selected
-                                  .filter((item) =>
-                                      ouIdHelper.hasLevelPrefix(item.id)
-                                  )
-                                  .map((item) =>
-                                      ouIdHelper.removePrefix(item.id)
-                                  )
-                            : []
-                    }
-                    onChange={({ selected }) => onLevelChange(selected)}
-                    placeholder={i18n.t('Select a level')}
-                    loading={!ouLevels.length}
-                    dense
-                    dataTest={'org-unit-level-select'}
-                >
-                    {ouLevels.map((level) => (
-                        <MultiSelectOption
-                            key={level.id}
-                            value={level.id}
-                            label={level.displayName}
-                            dataTest={`org-unit-level-select-option-${level.id}`}
-                        />
-                    ))}
-                </MultiSelect>
-                <MultiSelect
-                    selected={
-                        ouGroups.length
-                            ? selected
-                                  .filter((item) =>
-                                      ouIdHelper.hasGroupPrefix(item.id)
-                                  )
-                                  .map((item) =>
-                                      ouIdHelper.removePrefix(item.id)
-                                  )
-                            : []
-                    }
-                    onChange={({ selected }) => onGroupChange(selected)}
-                    placeholder={i18n.t('Select a group')}
-                    loading={!ouGroups.length}
-                    dense
-                    dataTest={'org-unit-group-select'}
-                >
-                    {ouGroups.map((group) => (
-                        <MultiSelectOption
-                            key={group.id}
-                            value={group.id}
-                            label={group.displayName}
-                            dataTest={`org-unit-group-select-option-${group.id}`}
-                        />
-                    ))}
-                </MultiSelect>
+                {!hideLevelSelect && (
+                    <MultiSelect
+                        selected={
+                            ouLevels.length
+                                ? selected
+                                      .filter((item) =>
+                                          ouIdHelper.hasLevelPrefix(item.id)
+                                      )
+                                      .map((item) =>
+                                          ouIdHelper.removePrefix(item.id)
+                                      )
+                                : []
+                        }
+                        onChange={({ selected }) => onLevelChange(selected)}
+                        placeholder={i18n.t('Select a level')}
+                        loading={!ouLevels.length}
+                        dense
+                        dataTest={'org-unit-level-select'}
+                    >
+                        {ouLevels.map((level) => (
+                            <MultiSelectOption
+                                key={level.id}
+                                value={level.id}
+                                label={level.displayName}
+                                dataTest={`org-unit-level-select-option-${level.id}`}
+                            />
+                        ))}
+                    </MultiSelect>
+                )}
+                {!hideGroupSelect && (
+                    <MultiSelect
+                        selected={
+                            ouGroups.length
+                                ? selected
+                                      .filter((item) =>
+                                          ouIdHelper.hasGroupPrefix(item.id)
+                                      )
+                                      .map((item) =>
+                                          ouIdHelper.removePrefix(item.id)
+                                      )
+                                : []
+                        }
+                        onChange={({ selected }) => onGroupChange(selected)}
+                        placeholder={i18n.t('Select a group')}
+                        loading={!ouGroups.length}
+                        dense
+                        dataTest={'org-unit-group-select'}
+                    >
+                        {ouGroups.map((group) => (
+                            <MultiSelectOption
+                                key={group.id}
+                                value={group.id}
+                                label={group.displayName}
+                                dataTest={`org-unit-group-select-option-${group.id}`}
+                            />
+                        ))}
+                    </MultiSelect>
+                )}
             </div>
             <div className="summaryWrapper">
-                <span className="summaryText">{getSummary()}</span>
+                {warning ? (
+                    <div className="warningWrapper">
+                        <IconWarningFilled16 color={colors.red500} />
+                        <span className="warningText">{warning}</span>
+                    </div>
+                ) : (
+                    <span className="summaryText">{getSummary()}</span>
+                )}
                 <div className="deselectButton">
                     <Button
                         secondary
@@ -335,7 +361,17 @@ const OrgUnitDimension = ({ roots, selected, onSelect }) => {
         </div>
     )
 }
+
+OrgUnitDimension.defaultProps = {
+    hideGroupSelect: false,
+    hideLevelSelect: false,
+    hideUserOrgUnits: false,
+}
+
 OrgUnitDimension.propTypes = {
+    hideGroupSelect: PropTypes.bool,
+    hideLevelSelect: PropTypes.bool,
+    hideUserOrgUnits: PropTypes.bool,
     roots: PropTypes.arrayOf(PropTypes.string),
     selected: PropTypes.arrayOf(
         PropTypes.shape({
@@ -344,6 +380,7 @@ OrgUnitDimension.propTypes = {
             path: PropTypes.string,
         })
     ),
+    warning: PropTypes.string,
     onSelect: PropTypes.func,
 }
 
