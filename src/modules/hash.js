@@ -19,18 +19,15 @@ export const getHash = (input) => {
     return hashInput ? window.btoa(hashInput) : undefined
 }
 
-export const getExpressionHashFromVisualization = (visualization) => {
-    const items = layoutGetAllItems(visualization)
-
-    const expressions = items
-        .filter(
-            (item) =>
-                item.dimensionItemType ===
-                    DIMENSION_TYPE_EXPRESSION_DIMENSION_ITEM &&
-                typeof item.expression === 'string'
-        )
-        .sort((i1, i2) => (i1.id < i2.id ? -1 : i1.id > i2.id ? 1 : 0))
-        .map((edi) => edi.expression)
-
-    return getHash(expressions)
-}
+export const getExpressionHashFromVisualization = (visualization) =>
+    getHash(
+        layoutGetAllItems(visualization)
+            ?.filter(
+                (item) =>
+                    item.dimensionItemType ===
+                        DIMENSION_TYPE_EXPRESSION_DIMENSION_ITEM &&
+                    typeof item.expression === 'string'
+            )
+            .sort((i1, i2) => (i1.id < i2.id ? -1 : i1.id > i2.id ? 1 : 0))
+            .map((edi) => edi.expression)
+    )
