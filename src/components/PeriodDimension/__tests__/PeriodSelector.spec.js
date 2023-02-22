@@ -4,7 +4,10 @@ import PeriodTransfer from '../PeriodTransfer.js'
 
 jest.mock('@dhis2/app-runtime', () => ({
     useConfig: () => ({ systemInfo: {} }),
+    useDataQuery: () => ({ data: { userSettings: { keyUiLocale: 'en' } } }),
 }))
+
+afterEach(jest.clearAllMocks)
 
 describe('The Period Selector component', () => {
     let props

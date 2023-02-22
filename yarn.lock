@@ -2202,10 +2202,10 @@
     markdown-it "^8.4.2"
     prop-types "^15.6.2"
 
-"@dhis2/multi-calendar-dates@1.0.0-alpha.18":
-  version "1.0.0-alpha.18"
-  resolved "https://registry.yarnpkg.com/@dhis2/multi-calendar-dates/-/multi-calendar-dates-1.0.0-alpha.18.tgz#341176f1ffb0a4663dd5b882e587403d6dc7fbda"
-  integrity sha512-0m8HcH3j7/FRXdZ+tgnnFjDdoC05JEKsm6XH7m+JZOJlfWshNTrYU5l1JzFumiNO3teFkBS/uFgSZHu7UbKeng==
+"@dhis2/multi-calendar-dates@1.0.0-beta.24":
+  version "1.0.0-beta.24"
+  resolved "https://registry.yarnpkg.com/@dhis2/multi-calendar-dates/-/multi-calendar-dates-1.0.0-beta.24.tgz#9a0edb059f8b2430f14aeb98a492f966c26aa548"
+  integrity sha512-PEy0DtIuMSpsdyZLy4QGiELpRgnz2GFJGd2UJXmpcvA/J3yAXEjmxaZID51buCA6xcAvb63MseoBpaNle2H/SQ==
   dependencies:
     "@js-temporal/polyfill" "^0.4.2"
     classnames "^2.3.2"
