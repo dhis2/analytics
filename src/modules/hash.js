@@ -2,7 +2,6 @@ import Crypto from 'crypto-js'
 import { DIMENSION_TYPE_EXPRESSION_DIMENSION_ITEM } from './dataTypes.js'
 import { layoutGetAllItems } from './layout/layoutGetAllItems.js'
 
-// TODO: use crypto-es?
 export const hash = (value) => Crypto.SHA1(value).toString()
 
 const testValue = (value) => typeof value === 'string' && value.length
