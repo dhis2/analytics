@@ -1,9 +1,15 @@
 import { DIMENSION_TYPE_EXPRESSION_DIMENSION_ITEM } from '../dataTypes.js'
-import { getExpressionHashFromVisualization, getHash } from '../hash.js'
+import { getExpressionHashFromVisualization, getHash, hash } from '../hash.js'
+
+const textInput = 'Raymond Luxury Yacht'
+
+describe('hash', () => {
+    it('returns a string', () => {
+        expect(typeof hash(textInput)).toBe('string')
+    })
+})
 
 describe('getHash', () => {
-    const textInput = 'Raymond Luxury Yacht'
-
     it('accepts a string and returns a hash', () => {
         const hash = getHash(textInput)
 
