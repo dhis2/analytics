@@ -388,7 +388,7 @@ const ItemSelector = ({
         }
 
         onEDISave({
-            id,
+            id: id || response?.response.uid,
             name,
             expression,
             type: DIMENSION_TYPE_EXPRESSION_DIMENSION_ITEM,
