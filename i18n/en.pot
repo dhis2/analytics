@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2023-02-14T08:56:26.627Z\n"
-"PO-Revision-Date: 2023-02-14T08:56:26.627Z\n"
+"POT-Creation-Date: 2023-02-23T14:08:32.341Z\n"
+"PO-Revision-Date: 2023-02-23T14:08:32.341Z\n"
 
 msgid "view only"
 msgstr "view only"
@@ -644,48 +644,6 @@ msgstr "Selected Periods"
 
 msgid "No periods selected"
 msgstr "No periods selected"
-
-msgid "January"
-msgstr "January"
-
-msgid "February"
-msgstr "February"
-
-msgid "March"
-msgstr "March"
-
-msgid "April"
-msgstr "April"
-
-msgid "May"
-msgstr "May"
-
-msgid "June"
-msgstr "June"
-
-msgid "July"
-msgstr "July"
-
-msgid "August"
-msgstr "August"
-
-msgid "September"
-msgstr "September"
-
-msgid "October"
-msgstr "October"
-
-msgid "November"
-msgstr "November"
-
-msgid "December"
-msgstr "December"
-
-msgid "Week {{weekNumber}}"
-msgstr "Week {{weekNumber}}"
-
-msgid "Bi-Week {{biWeekNumber}}"
-msgstr "Bi-Week {{biWeekNumber}}"
 
 msgid "Daily"
 msgstr "Daily"
