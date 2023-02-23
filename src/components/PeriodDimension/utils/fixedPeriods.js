@@ -44,13 +44,14 @@ const PERIOD_TYPE_REGEX = {
     [FYAPR]: /^([0-9]{4})April$/, // YYYY"April"
 }
 
-const getPeriods = ({ periodType, config, fnFilter, calendar }) => {
+const getPeriods = ({ periodType, config, fnFilter, periodSettings = {} }) => {
     const offset = parseInt(config.offset, 10)
     const isFilter = config.filterFuturePeriods
     const isReverse = periodType.match(/^FY|YEARLY/)
         ? true
         : config.reversePeriods
 
+    const { calendar = 'gregory', locale = 'en' } = periodSettings
     const now = getNowInCalendar(calendar)
     const year = (now.eraYear || now.year) + offset
 
@@ -58,7 +59,7 @@ const getPeriods = ({ periodType, config, fnFilter, calendar }) => {
         periodType,
         year,
         calendar,
-        locale: 'en',
+        locale,
         startingDay: config.startDay,
     }
 
@@ -70,18 +71,18 @@ const getPeriods = ({ periodType, config, fnFilter, calendar }) => {
     return periods
 }
 
-const getDailyPeriodType = (fnFilter, calendar) => {
+const getDailyPeriodType = (fnFilter, periodSettings) => {
     return (config) => {
         return getPeriods({
             periodType: 'DAILY',
             config,
             fnFilter,
-            calendar,
+            periodSettings,
         })
     }
 }
 
-const getWeeklyPeriodType = (weekObj, fnFilter, calendar) => {
+const getWeeklyPeriodType = (weekObj, fnFilter, periodSettings) => {
     return (config) => {
         return getPeriods({
             periodType: 'WEEKLY',
@@ -90,123 +91,128 @@ const getWeeklyPeriodType = (weekObj, fnFilter, calendar) => {
                 startDay: weekObj.startDay,
             },
             fnFilter,
-            calendar,
+            periodSettings,
         })
     }
 }
 
-const getBiWeeklyPeriodType = (fnFilter, calendar) => {
+const getBiWeeklyPeriodType = (fnFilter, periodSettings) => {
     return (config) => {
         return getPeriods({
             periodType: 'BIWEEKLY',
             config,
             fnFilter,
-            calendar,
+            periodSettings,
         })
     }
 }
 
-const getMonthlyPeriodType = (fnFilter, calendar) => {
+const getMonthlyPeriodType = (fnFilter, periodSettings) => {
     return (config) => {
-        return getPeriods({ periodType: 'MONTHLY', config, fnFilter, calendar })
+        return getPeriods({
+            periodType: 'MONTHLY',
+            config,
+            fnFilter,
+            periodSettings,
+        })
     }
 }
 
-const getBiMonthlyPeriodType = (fnFilter, calendar) => {
+const getBiMonthlyPeriodType = (fnFilter, periodSettings) => {
     return (config) => {
         return getPeriods({
             periodType: 'BIMONTHLY',
             config,
             fnFilter,
-            calendar,
+            periodSettings,
         })
     }
 }
 
-const getQuarterlyPeriodType = (fnFilter, calendar) => {
+const getQuarterlyPeriodType = (fnFilter, periodSettings) => {
     return (config) => {
         return getPeriods({
             periodType: 'QUARTERLY',
             config,
             fnFilter,
-            calendar,
+            periodSettings,
         })
     }
 }
 
-const getSixMonthlyPeriodType = (fnFilter, calendar) => {
+const getSixMonthlyPeriodType = (fnFilter, periodSettings) => {
     return (config) => {
         return getPeriods({
             periodType: 'SIXMONTHLY',
             config,
             fnFilter,
-            calendar,
+            periodSettings,
         })
     }
 }
 
-const getSixMonthlyAprilPeriodType = (fnFilter, calendar) => {
+const getSixMonthlyAprilPeriodType = (fnFilter, periodSettings) => {
     return (config) => {
         return getPeriods({
             periodType: 'SIXMONTHLYAPR',
             config,
             fnFilter,
-            calendar,
+            periodSettings,
         })
     }
 }
 
-const getYearlyPeriodType = (fnFilter, calendar) => {
+const getYearlyPeriodType = (fnFilter, periodSettings) => {
     return (config) => {
         return getPeriods({
             periodType: 'YEARLY',
             config,
             fnFilter,
-            calendar,
+            periodSettings,
         })
     }
 }
 
-const getFinancialOctoberPeriodType = (fnFilter, calendar) => {
+const getFinancialOctoberPeriodType = (fnFilter, periodSettings) => {
     return (config) => {
         return getPeriods({
             periodType: 'FYOCT',
             config,
             fnFilter,
-            calendar,
+            periodSettings,
         })
     }
 }
 
-const getFinancialNovemberPeriodType = (fnFilter, calendar) => {
+const getFinancialNovemberPeriodType = (fnFilter, periodSettings) => {
     return (config) => {
         return getPeriods({
             periodType: 'FYNOV',
             config,
             fnFilter,
-            calendar,
+            periodSettings,
         })
     }
 }
 
-const getFinancialJulyPeriodType = (fnFilter, calendar) => {
+const getFinancialJulyPeriodType = (fnFilter, periodSettings) => {
     return (config) => {
         return getPeriods({
             periodType: 'FYJUL',
             config,
             fnFilter,
-            calendar,
+            periodSettings,
         })
     }
 }
 
-const getFinancialAprilPeriodType = (fnFilter, calendar) => {
+const getFinancialAprilPeriodType = (fnFilter, periodSettings) => {
     return (config) => {
         return getPeriods({
             periodType: 'FYAPR',
             config,
             fnFilter,
-            calendar,
+            periodSettings,
         })
     }
 }
@@ -224,11 +230,11 @@ const filterFuturePeriods = (periods) => {
     return array
 }
 
-const getOptions = (calendar = 'gregory') => {
+const getOptions = (periodSettings) => {
     return [
         {
             id: DAILY,
-            getPeriods: getDailyPeriodType(filterFuturePeriods, calendar),
+            getPeriods: getDailyPeriodType(filterFuturePeriods, periodSettings),
             name: i18n.t('Daily'),
         },
         {
@@ -236,7 +242,7 @@ const getOptions = (calendar = 'gregory') => {
             getPeriods: getWeeklyPeriodType(
                 { startDay: 1 },
                 filterFuturePeriods,
-                calendar
+                periodSettings
             ),
             name: i18n.t('Weekly'),
         },
@@ -245,7 +251,7 @@ const getOptions = (calendar = 'gregory') => {
             getPeriods: getWeeklyPeriodType(
                 { startDay: 3 },
                 filterFuturePeriods,
-                calendar
+                periodSettings
             ),
             name: i18n.t('Weekly (Start Wednesday)'),
         },
@@ -254,7 +260,7 @@ const getOptions = (calendar = 'gregory') => {
             getPeriods: getWeeklyPeriodType(
                 { startDay: 4 },
                 filterFuturePeriods,
-                calendar
+                periodSettings
             ),
             name: i18n.t('Weekly (Start Thursday)'),
         },
@@ -263,7 +269,7 @@ const getOptions = (calendar = 'gregory') => {
             getPeriods: getWeeklyPeriodType(
                 { startDay: 6 },
                 filterFuturePeriods,
-                calendar
+                periodSettings
             ),
             name: i18n.t('Weekly (Start Saturday)'),
         },
@@ -272,53 +278,71 @@ const getOptions = (calendar = 'gregory') => {
             getPeriods: getWeeklyPeriodType(
                 { startDay: 7 },
                 filterFuturePeriods,
-                calendar
+                periodSettings
             ),
             name: i18n.t('Weekly (Start Sunday)'),
         },
         {
             id: BIWEEKLY,
-            getPeriods: getBiWeeklyPeriodType(filterFuturePeriods, calendar),
+            getPeriods: getBiWeeklyPeriodType(
+                filterFuturePeriods,
+                periodSettings
+            ),
             name: i18n.t('Bi-weekly'),
         },
         {
             id: MONTHLY,
-            getPeriods: getMonthlyPeriodType(filterFuturePeriods, calendar),
+            getPeriods: getMonthlyPeriodType(
+                filterFuturePeriods,
+                periodSettings
+            ),
             name: i18n.t('Monthly'),
         },
         {
             id: BIMONTHLY,
-            getPeriods: getBiMonthlyPeriodType(filterFuturePeriods, calendar),
+            getPeriods: getBiMonthlyPeriodType(
+                filterFuturePeriods,
+                periodSettings
+            ),
             name: i18n.t('Bi-monthly'),
         },
         {
             id: QUARTERLY,
-            getPeriods: getQuarterlyPeriodType(filterFuturePeriods, calendar),
+            getPeriods: getQuarterlyPeriodType(
+                filterFuturePeriods,
+                periodSettings
+            ),
             name: i18n.t('Quarterly'),
         },
         {
             id: SIXMONTHLY,
-            getPeriods: getSixMonthlyPeriodType(filterFuturePeriods, calendar),
+            getPeriods: getSixMonthlyPeriodType(
+                filterFuturePeriods,
+                periodSettings
+            ),
             name: i18n.t('Six-monthly'),
         },
         {
             id: SIXMONTHLYAPR,
             getPeriods: getSixMonthlyAprilPeriodType(
                 filterFuturePeriods,
-                calendar
+                periodSettings
             ),
             name: i18n.t('Six-monthly April'),
         },
         {
             id: YEARLY,
-            getPeriods: getYearlyPeriodType(filterFuturePeriods, calendar),
+            getPeriods: getYearlyPeriodType(
+                filterFuturePeriods,
+                periodSettings
+            ),
             name: i18n.t('Yearly'),
         },
         {
             id: FYNOV,
             getPeriods: getFinancialNovemberPeriodType(
                 filterFuturePeriods,
-                calendar
+                periodSettings
             ),
             name: i18n.t('Financial year (Start November)'),
         },
@@ -326,7 +350,7 @@ const getOptions = (calendar = 'gregory') => {
             id: FYOCT,
             getPeriods: getFinancialOctoberPeriodType(
                 filterFuturePeriods,
-                calendar
+                periodSettings
             ),
             name: i18n.t('Financial year (Start October)'),
         },
@@ -334,7 +358,7 @@ const getOptions = (calendar = 'gregory') => {
             id: FYJUL,
             getPeriods: getFinancialJulyPeriodType(
                 filterFuturePeriods,
-                calendar
+                periodSettings
             ),
             name: i18n.t('Financial year (Start July)'),
         },
@@ -342,15 +366,15 @@ const getOptions = (calendar = 'gregory') => {
             id: FYAPR,
             getPeriods: getFinancialAprilPeriodType(
                 filterFuturePeriods,
-                calendar
+                periodSettings
             ),
             name: i18n.t('Financial year (Start April)'),
         },
     ]
 }
 
-export const getFixedPeriodsOptionsById = (id, calendar = 'gregory') => {
-    return getOptions(calendar).find((option) => option.id === id)
+export const getFixedPeriodsOptionsById = (id, periodSettings) => {
+    return getOptions(periodSettings).find((option) => option.id === id)
 }
 
 export const getFixedPeriodsOptions = () => getOptions()
