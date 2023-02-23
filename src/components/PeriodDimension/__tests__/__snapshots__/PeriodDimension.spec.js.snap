@@ -6,6 +6,12 @@ exports[`The Period Dimension component matches the snapshot 1`] = `
   excludedPeriodTypes={Array []}
   initialSelectedPeriods={Array []}
   onSelect={[Function]}
+  periodsSettings={
+    Object {
+      "calendar": "gregory",
+      "locale": "en",
+    }
+  }
   rightFooter={<React.Fragment />}
 />
 `;
