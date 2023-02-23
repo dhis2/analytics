@@ -1,3 +1,17 @@
+# [24.9.0-alpha.1](https://github.com/dhis2/analytics/compare/v24.8.0...v24.9.0-alpha.1) (2023-02-23)
+
+
+### Bug Fixes
+
+* bump multi-calendar-dates to avoid jest config change ([3e5892a](https://github.com/dhis2/analytics/commit/3e5892aa88a087dde3405a518625f4c6e637d17e))
+* ensure date falls back to year if no eraYear present ([2a197d5](https://github.com/dhis2/analytics/commit/2a197d57be8ac2af6dbe331dd8f11ab9069afa5d))
+
+
+### Features
+
+* localise fixed periods according to user settings ([c640c90](https://github.com/dhis2/analytics/commit/c640c90ce2d1944a14706507284af43c7480fa2a))
+* use multi-calendar-dates library to generate fixed periods ([acc3801](https://github.com/dhis2/analytics/commit/acc380156092f888cfa55f70b4bade1c6516d034))
+
 # [24.5.0-alpha.3](https://github.com/dhis2/analytics/compare/v24.5.0-alpha.2...v24.5.0-alpha.3) (2023-02-23)
 
 
