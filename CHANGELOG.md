@@ -19,10 +19,31 @@
 
 * ensure date falls back to year if no eraYear present ([2a197d5](https://github.com/dhis2/analytics/commit/2a197d57be8ac2af6dbe331dd8f11ab9069afa5d))
 
+# [24.8.0](https://github.com/dhis2/analytics/compare/v24.7.0...v24.8.0) (2023-02-16)
+
+
+* add prop for controlling user org unit selector DHIS2-14744 ([#1430](https://github.com/dhis2/analytics/issues/1430)) ([02d3057](https://github.com/dhis2/analytics/commit/02d3057c7c090e293ba7c3057720f491e71457ec))
+
+# [24.7.0](https://github.com/dhis2/analytics/compare/v24.6.0...v24.7.0) (2023-02-15)
+
 
 ### Features
 
-* use multi-calendar-dates library to generate fixed periods ([acc3801](https://github.com/dhis2/analytics/commit/acc380156092f888cfa55f70b4bade1c6516d034))
+* new props for customising OrgUnitDimension DHIS2-14744 ([#1427](https://github.com/dhis2/analytics/issues/1427)) ([ae2f886](https://github.com/dhis2/analytics/commit/ae2f886167a487271bf42c2f4c694e45ea4b25b3))
+
+# [24.6.0](https://github.com/dhis2/analytics/compare/v24.5.0...v24.6.0) (2023-02-13)
+
+
+### Features
+
+* single value background color change based upon legend (DHIS2-13702) ([#1402](https://github.com/dhis2/analytics/issues/1402)) ([ad437c6](https://github.com/dhis2/analytics/commit/ad437c6a1fcbcb71cee7b6945c6bc83ed2bc3bb3))
+
+# [24.5.0](https://github.com/dhis2/analytics/compare/v24.4.2...v24.5.0) (2023-02-06)
+
+
+### Features
+
+* [reverted] use multi-calendar-dates library to generate fixed periods ([acc3801](https://github.com/dhis2/analytics/commit/acc380156092f888cfa55f70b4bade1c6516d034)). This work was added to "next" release channel, but was reverted afterwards because of the restrictions "next" channel puts on what can be released from master afterwards. It will be added to "alpha" channel instead until it's ready for the main channel.
 
 ## [24.4.2](https://github.com/dhis2/analytics/compare/v24.4.1...v24.4.2) (2023-01-25)
 
