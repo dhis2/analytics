@@ -2,24 +2,10 @@ import Crypto from 'crypto-js'
 import { DIMENSION_TYPE_EXPRESSION_DIMENSION_ITEM } from './dataTypes.js'
 import { layoutGetAllItems } from './layout/layoutGetAllItems.js'
 
-export const hash = (value) => Crypto.SHA1(value).toString()
+const isValid = (value) => typeof value === 'string' && value.length
 
-const testValue = (value) => typeof value === 'string' && value.length
-
-export const getHash = (input) => {
-    let hashInput
-
-    if (testValue(input)) {
-        hashInput = input
-    } else if (
-        Array.isArray(input) &&
-        input.every((value) => testValue(value))
-    ) {
-        hashInput = input.join('')
-    }
-
-    return hashInput ? hash(hashInput) : undefined
-}
+export const getHash = (value) =>
+    isValid(value) ? Crypto.SHA1(value).toString() : undefined
 
 export const getExpressionHashFromVisualization = (visualization) =>
     getHash(
@@ -28,8 +14,9 @@ export const getExpressionHashFromVisualization = (visualization) =>
                 (item) =>
                     item.dimensionItemType ===
                         DIMENSION_TYPE_EXPRESSION_DIMENSION_ITEM &&
-                    testValue(item.expression)
+                    isValid(item.expression)
             )
             .sort((i1, i2) => (i1.id < i2.id ? -1 : i1.id > i2.id ? 1 : 0))
             .map((edi) => edi.expression)
+            .join('')
     )

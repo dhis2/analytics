@@ -1,15 +1,9 @@
 import { DIMENSION_TYPE_EXPRESSION_DIMENSION_ITEM } from '../dataTypes.js'
-import { getExpressionHashFromVisualization, getHash, hash } from '../hash.js'
-
-const textInput = 'Raymond Luxury Yacht'
-
-describe('hash', () => {
-    it('returns a string', () => {
-        expect(typeof hash(textInput)).toBe('string')
-    })
-})
+import { getExpressionHashFromVisualization, getHash } from '../hash.js'
 
 describe('getHash', () => {
+    const textInput = 'Raymond Luxury Yacht'
+
     it('accepts a string and returns a hash', () => {
         const hash = getHash(textInput)
 
@@ -21,12 +15,8 @@ describe('getHash', () => {
         expect(getHash(textInput)).toBe(getHash(textInput))
     })
 
-    it('accepts array', () => {
-        expect(getHash('abc')).toBe(getHash(['a', 'b', 'c']))
-    })
-
-    it('returns undefined for unsupported types', () => {
-        const unsupportedTypes = [1, undefined, null, true, false, {}]
+    it('returns undefined for invalid input', () => {
+        const unsupportedTypes = ['', 1, true, null, undefined, {}, []]
 
         unsupportedTypes.forEach((type) =>
             expect(getHash(type)).toBe(undefined)
