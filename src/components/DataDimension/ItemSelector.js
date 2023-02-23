@@ -336,6 +336,9 @@ const ItemSelector = ({
                     value,
                     label: matchingItem.label,
                     type: matchingItem.type,
+                    ...(matchingItem.expression
+                        ? { expression: matchingItem.expression }
+                        : {}),
                 }
             })
         )
@@ -503,7 +506,7 @@ const ItemSelector = ({
                         icon={getIcon(getItemType(props.value))}
                         tooltipText={getTooltipText({
                             type: getItemType(props.value),
-                            expression: props.expression,
+                            expression: props.expression, // TODO: add metadata for the content of the expression, to not display raw ids
                         })}
                         dataTest={`${dataTest}-transfer-option`}
                         onEditClick={
