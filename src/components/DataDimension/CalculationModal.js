@@ -203,10 +203,6 @@ const CalculationModal = ({
                                     onClick={selectItem}
                                     onDoubleClick={removeItem}
                                 />
-                                <p>
-                                    {/* TODO: Remove, for testing only */}
-                                    {parseArrayToExpression(expressionArray)}
-                                </p>
                                 <div className="actions-wrapper">
                                     <Button
                                         small
@@ -255,6 +251,13 @@ const CalculationModal = ({
                                             </Button>
                                         </div>
                                     )}
+                                    <p style={{ color: 'blue' }}>
+                                        {/* TODO: Remove, for testing only */}
+                                        OUTPUT:{' '}
+                                        {parseArrayToExpression(
+                                            expressionArray
+                                        )}
+                                    </p>
                                 </div>
                             </div>
                         </div>
