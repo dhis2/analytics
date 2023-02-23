@@ -1,4 +1,3 @@
-import { useConfig, useDataQuery } from '@dhis2/app-runtime'
 import { getNowInCalendar } from '@dhis2/multi-calendar-dates'
 import { TabBar, Tab, Transfer } from '@dhis2/ui'
 import PropTypes from 'prop-types'
@@ -18,30 +17,14 @@ import { getFixedPeriodsOptionsById } from './utils/fixedPeriods.js'
 import { MONTHLY, QUARTERLY } from './utils/index.js'
 import { getRelativePeriodsOptionsById } from './utils/relativePeriods.js'
 
-const userSettingsQuery = {
-    userSettings: {
-        resource: 'userSettings',
-        params: {
-            key: ['keyUiLocale'],
-        },
-    },
-}
-
 const PeriodTransfer = ({
     onSelect,
     dataTest,
     initialSelectedPeriods,
     rightFooter,
     excludedPeriodTypes,
+    periodsSettings,
 }) => {
-    const { systemInfo } = useConfig()
-    const result = useDataQuery(userSettingsQuery)
-
-    const { calendar = 'gregory' } = systemInfo
-    const { data: { userSettings: { keyUiLocale: locale } = {} } = {} } = result
-
-    const periodsSettings = { calendar, locale }
-
     const defaultRelativePeriodType = excludedPeriodTypes.includes(MONTHLY)
         ? getRelativePeriodsOptionsById(QUARTERLY)
         : getRelativePeriodsOptionsById(MONTHLY)
@@ -49,7 +32,7 @@ const PeriodTransfer = ({
         ? getFixedPeriodsOptionsById(QUARTERLY, periodsSettings)
         : getFixedPeriodsOptionsById(MONTHLY, periodsSettings)
 
-    const now = getNowInCalendar(calendar)
+    const now = getNowInCalendar(periodsSettings.calendar)
     // use ".eraYear" rather than ".year" because in Ethiopian calendar, eraYear is what our users expect to see (for other calendars, it doesn't matter)
     // there is still a pending decision in Temporal regarding which era to use by default: https://github.com/js-temporal/temporal-polyfill/blob/9350ee7dd0d29f329fc097debf923a517c32f813/lib/calendar.ts#L1964
     const defaultFixedPeriodYear = now.eraYear || now.year
@@ -218,6 +201,10 @@ const PeriodTransfer = ({
 PeriodTransfer.defaultProps = {
     initialSelectedPeriods: [],
     excludedPeriodTypes: [],
+    periodsSettings: {
+        calendar: 'gregory',
+        locale: 'en',
+    },
 }
 
 PeriodTransfer.propTypes = {
@@ -230,6 +217,10 @@ PeriodTransfer.propTypes = {
             name: PropTypes.string,
         })
     ),
+    periodsSettings: PropTypes.shape({
+        calendar: PropTypes.string,
+        locale: PropTypes.string,
+    }),
     rightFooter: PropTypes.node,
 }
 
