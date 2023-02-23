@@ -1,3 +1,10 @@
+# [24.5.0-alpha.3](https://github.com/dhis2/analytics/compare/v24.5.0-alpha.2...v24.5.0-alpha.3) (2023-02-23)
+
+
+### Features
+
+* localise fixed periods according to user settings ([c640c90](https://github.com/dhis2/analytics/commit/c640c90ce2d1944a14706507284af43c7480fa2a))
+
 # [24.5.0-alpha.2](https://github.com/dhis2/analytics/compare/v24.5.0-alpha.1...v24.5.0-alpha.2) (2023-02-14)
 
 
