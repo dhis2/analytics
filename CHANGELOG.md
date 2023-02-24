@@ -1,3 +1,10 @@
+# [24.9.0](https://github.com/dhis2/analytics/compare/v24.8.0...v24.9.0) (2023-02-24)
+
+
+### Features
+
+* merge multi-calendar support from alpha to master ([#1434](https://github.com/dhis2/analytics/issues/1434)) ([3cdac8f](https://github.com/dhis2/analytics/commit/3cdac8fdefc7a15a3fef0940183ca92f03b0f57c))
+
 # [24.9.0-alpha.1](https://github.com/dhis2/analytics/compare/v24.8.0...v24.9.0-alpha.1) (2023-02-23)
 
 
