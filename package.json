@@ -65,6 +65,7 @@
         "@dnd-kit/utilities": "^3.2.1",
         "@react-hook/debounce": "^4.0.0",
         "classnames": "^2.3.1",
+        "crypto-js": "^4.1.1",
         "d2-utilizr": "^0.2.16",
         "d3-color": "^1.2.3",
         "highcharts": "^10.2.0",
