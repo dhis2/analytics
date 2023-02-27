@@ -2193,10 +2193,10 @@
     i18next "^10.3"
     moment "^2.24.0"
 
-"@dhis2/d2-ui-rich-text@^7.4.0":
-  version "7.4.0"
-  resolved "https://registry.yarnpkg.com/@dhis2/d2-ui-rich-text/-/d2-ui-rich-text-7.4.0.tgz#e1fb6eff7309ea80a6af3bee2a247c9f93ea721d"
-  integrity sha512-q8woPPyYHiqQfNtujuCQH8eq7zRcN0140XqrKHw1DXF/fnqmrcVDTNZkPSaWMuUsdPhcgTHcnuEySP0MRAXv6g==
+"@dhis2/d2-ui-rich-text@^7.4.1":
+  version "7.4.1"
+  resolved "https://registry.yarnpkg.com/@dhis2/d2-ui-rich-text/-/d2-ui-rich-text-7.4.1.tgz#8764208c59c6758bf34765b1dbe01762ce435d11"
+  integrity sha512-/n5nE0b4EDI/kX0/aN+vFDOswoWT5JQ3lwtHsUxailvnEHMu4/3l27Q38Z+5qhKwl+jYNB9GOFxWoSiymUgBbw==
   dependencies:
     babel-runtime "^6.26.0"
     markdown-it "^8.4.2"
