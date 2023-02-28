@@ -24,7 +24,7 @@ const invalidTestExpressions = [
     },
     {
         message: 'Missing left parenthesis (',
-        expressions: ['((#{cYeuwXTCPkU}*#{Jtf34kNZhzP})))'],
+        expressions: ['((#{cYeuwXTCPkU}*#{P3jJH5Tu5VC.S34ULMcHMca})))'],
     },
     {
         message: 'Missing right parenthesis )',
@@ -35,6 +35,7 @@ const invalidTestExpressions = [
 const validTestExpressions = [
     '5+9',
     '((#{cYeuwXTCPkU}*#{Jtf34kNZhzP}))#{iKGjnOOaPlE}',
+    '#{P3jJH5Tu5VC.S34ULMcHMca}*#{Jtf34kNZhzP}',
 ]
 
 describe('validateExpression', () => {
@@ -64,10 +65,16 @@ describe('parseArrayToExpression', () => {
                 value: '#{abc123}',
                 type: EXPRESSION_TYPE_DATA_ELEMENT,
             },
+            { label: '+', value: '+', type: EXPRESSION_TYPE_OPERATOR },
+            {
+                label: 'def456.xyz999',
+                value: '#{def456.xyz999}',
+                type: EXPRESSION_TYPE_DATA_ELEMENT,
+            },
             { label: '/', value: '/', type: EXPRESSION_TYPE_OPERATOR },
             { label: '10', value: '10', type: EXPRESSION_TYPE_NUMBER },
         ]
-        const expected = '#{abc123}/10'
+        const expected = '#{abc123}+#{def456.xyz999}/10'
 
         expect(parseArrayToExpression(expressionArray)).toEqual(expected)
     })

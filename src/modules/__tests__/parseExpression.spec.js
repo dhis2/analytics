@@ -100,6 +100,14 @@ test('matches multiple #{} with operators', () => {
     ])
 })
 
+test('matches multiple #{} containing dots with operators', () => {
+    expect(parseExpression('#{abc123.xyz999}+#{def456.xyz999}')).toEqual([
+        '#{abc123.xyz999}',
+        '+',
+        '#{def456.xyz999}',
+    ])
+})
+
 test('matches multiple #{} with operators with brackets', () => {
     expect(parseExpression('(#{abc123}/#{def456})*#{ghi789}')).toEqual([
         '(',

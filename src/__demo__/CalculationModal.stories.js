@@ -14,6 +14,16 @@ const DATA_ELEMENTS = {
     },
     dataElements: [
         {
+            dimensionItemType: 'DATA_ELEMENT_OPERAND',
+            id: 'fbfJHSPpUQD.pq2XI5kz2BY',
+            name: 'ANC 1st visit Fixed',
+        },
+        {
+            dimensionItemType: 'DATA_ELEMENT_OPERAND',
+            id: 'fbfJHSPpUQD.PT59n8BQbqM',
+            name: 'ANC 1st visit Outreach',
+        },
+        {
             dimensionItemType: 'DATA_ELEMENT',
             id: 'fbfJHSPpUQD',
             name: 'ANC 1st visit',
