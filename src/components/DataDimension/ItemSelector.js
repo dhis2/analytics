@@ -506,7 +506,8 @@ const ItemSelector = ({
                         icon={getIcon(getItemType(props.value))}
                         tooltipText={getTooltipText({
                             type: getItemType(props.value),
-                            expression: props.expression, // TODO: add metadata for the content of the expression, to not display raw ids
+                            expression: props.expression,
+                            metadata: props.metadata,
                         })}
                         dataTest={`${dataTest}-transfer-option`}
                         onEditClick={
@@ -518,6 +519,7 @@ const ItemSelector = ({
                                           id: props.value,
                                           name: props.label,
                                           expression: props.expression,
+                                          metadata: props.metadata,
                                       })
                                 : undefined
                         }
@@ -553,6 +555,16 @@ ItemSelector.propTypes = {
             value: PropTypes.string.isRequired,
             isActive: PropTypes.bool,
             type: PropTypes.string,
+            expression: PropTypes.string,
+            metadata: PropTypes.arrayOf(
+                PropTypes.exact({
+                    id: PropTypes.string.isRequired,
+                    dimensionItemType: PropTypes.string,
+                    displayName: PropTypes.string,
+                    displayShortName: PropTypes.string,
+                    name: PropTypes.string,
+                })
+            ),
         })
     ),
     supportsEDI: PropTypes.bool,

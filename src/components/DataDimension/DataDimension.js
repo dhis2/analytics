@@ -36,6 +36,7 @@ const DataDimension = ({
                 isActive: item.isActive,
                 type: item.type,
                 expression: item.expression,
+                metadata: item.metadata,
             }))}
             onSelect={onSelectItems}
             displayNameProp={displayNameProp}
@@ -51,8 +52,12 @@ DataDimension.propTypes = {
     displayNameProp: PropTypes.string.isRequired,
     selectedDimensions: PropTypes.arrayOf(
         PropTypes.shape({
+            expression: PropTypes.string,
             id: PropTypes.string,
+            isActive: PropTypes.bool,
+            metadata: PropTypes.array,
             name: PropTypes.string,
+            type: PropTypes.string,
         })
     ).isRequired,
     onSelect: PropTypes.func.isRequired,
