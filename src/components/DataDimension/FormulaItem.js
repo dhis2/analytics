@@ -107,10 +107,14 @@ const FormulaItem = ({
         setClickTimeoutId(to)
     }
 
-    const handleDoubleClick = () => {
+    const handleDoubleClick = (e) => {
         clearTimeout(clickTimeoutId)
         setClickTimeoutId(null)
-        onDoubleClick(id)
+        if (e.target.tagName !== 'INPUT') {
+            onDoubleClick(id)
+        } else {
+            inputRef.current && inputRef.current.focus()
+        }
     }
 
     const handleChange = (e) => onChange({ itemId: id, value: e.target.value })
