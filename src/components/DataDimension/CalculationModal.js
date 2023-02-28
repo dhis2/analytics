@@ -369,15 +369,6 @@ CalculationModal.propTypes = {
     calculation: PropTypes.shape({
         expression: PropTypes.string,
         id: PropTypes.string,
-        metadata: PropTypes.arrayOf(
-            PropTypes.exact({
-                id: PropTypes.string.isRequired,
-                dimensionItemType: PropTypes.string,
-                displayName: PropTypes.string,
-                displayShortName: PropTypes.string,
-                name: PropTypes.string,
-            })
-        ),
         name: PropTypes.string,
     }),
 }

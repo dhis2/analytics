@@ -371,6 +371,29 @@ const ItemSelector = ({
         deleteCalculationMutation,
         mutationParams
     )
+    // const [fetchExpressionMetadata] = useDataMutation(
+    //     someMutation,
+    //     mutationParams
+    // )
+
+    const openCalculation = async ({ id, name, expression }) => {
+        // const expressionIds = expression
+        //     .match(/#{([a-zA-Z0-9#]+.*?)}/g)
+        //     .map((match) => match.slice(2, -1))
+
+        // TODO: fetch metadata for data element operands as well!
+        // const metadata = await fetchExpressionMetadata({
+        //     expressionIds,
+        //     nameProp: displayNameProp,
+        // })
+
+        setCurrentCalculation({
+            id,
+            name,
+            expression,
+            //metadata,
+        })
+    }
 
     const onSaveCalculation = async ({ id, name, expression }) => {
         // TODO: move this to within CalculationModal.js instead? unless there's a reason to keep it in the item selector..
@@ -507,7 +530,6 @@ const ItemSelector = ({
                         tooltipText={getTooltipText({
                             type: getItemType(props.value),
                             expression: props.expression,
-                            metadata: props.metadata,
                         })}
                         dataTest={`${dataTest}-transfer-option`}
                         onEditClick={
@@ -515,11 +537,10 @@ const ItemSelector = ({
                                 DIMENSION_TYPE_EXPRESSION_DIMENSION_ITEM &&
                             supportsEDI
                                 ? () =>
-                                      setCurrentCalculation({
+                                      openCalculation({
                                           id: props.value,
                                           name: props.label,
                                           expression: props.expression,
-                                          metadata: props.metadata,
                                       })
                                 : undefined
                         }
@@ -556,15 +577,6 @@ ItemSelector.propTypes = {
             isActive: PropTypes.bool,
             type: PropTypes.string,
             expression: PropTypes.string,
-            metadata: PropTypes.arrayOf(
-                PropTypes.exact({
-                    id: PropTypes.string.isRequired,
-                    dimensionItemType: PropTypes.string,
-                    displayName: PropTypes.string,
-                    displayShortName: PropTypes.string,
-                    name: PropTypes.string,
-                })
-            ),
         })
     ),
     supportsEDI: PropTypes.bool,

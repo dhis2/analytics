@@ -36,7 +36,6 @@ const DataDimension = ({
                 isActive: item.isActive,
                 type: item.type,
                 expression: item.expression,
-                metadata: item.metadata,
             }))}
             onSelect={onSelectItems}
             displayNameProp={displayNameProp}
@@ -55,7 +54,6 @@ DataDimension.propTypes = {
             expression: PropTypes.string,
             id: PropTypes.string,
             isActive: PropTypes.bool,
-            metadata: PropTypes.array,
             name: PropTypes.string,
             type: PropTypes.string,
         })

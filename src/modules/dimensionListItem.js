@@ -22,11 +22,9 @@ import {
     DIMENSION_TYPE_PROGRAM_INDICATOR,
 } from './dataTypes.js'
 
-export const getTooltipText = ({ type, expression /*, metadata*/ }) => {
+export const getTooltipText = ({ type, expression }) => {
     if (type === DIMENSION_TYPE_EXPRESSION_DIMENSION_ITEM && expression) {
-        // TODO: replace expression id's with name from metadata
-        // OR change it back to simply dataTypes[DIMENSION_TYPE_EXPRESSION_DIMENSION_ITEM].getItemName()
-        return expression
+        return dataTypes[DIMENSION_TYPE_EXPRESSION_DIMENSION_ITEM].getItemName()
     }
     switch (type) {
         case DIMENSION_TYPE_DATA_ELEMENT_OPERAND:
