@@ -11,7 +11,7 @@ import {
 } from '@dhis2/ui'
 import cx from 'classnames'
 import PropTypes from 'prop-types'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { validateExpressionMutation } from '../../api/expression.js'
 import i18n from '../../locales/index.js'
 import {
@@ -69,10 +69,22 @@ const CalculationModal = ({
         variables: { ids: expressionIds },
     })
 
-    const metadata = [
-        ...(data?.dataElements?.dataElements || []),
-        ...(data?.dataElementOperands?.dataElementOperands || []),
-    ]
+    useEffect(() => {
+        if (data) {
+            const metadata = [
+                ...(data.dataElements?.dataElements || []),
+                ...(data.dataElementOperands?.dataElementOperands || []),
+            ]
+            setExpressionArray(
+                parseExpressionToArray(calculation.expression, metadata).map(
+                    (item, i) => ({
+                        ...item,
+                        id: `${item.type}-${-i}`,
+                    })
+                )
+            )
+        }
+    }, [data, calculation.expression])
 
     const { show: showError } = useAlert((error) => error, { critical: true })
     const [doBackendValidation] = useDataMutation(validateExpressionMutation, {
@@ -82,14 +94,7 @@ const CalculationModal = ({
     const [newIdCount, setNewIdCount] = useState(1)
 
     const [validationOutput, setValidationOutput] = useState(null)
-    const [expressionArray, setExpressionArray] = useState(
-        parseExpressionToArray(calculation.expression, metadata).map(
-            (item, i) => ({
-                ...item,
-                id: `${item.type}-${-i}`,
-            })
-        )
-    )
+    const [expressionArray, setExpressionArray] = useState()
     const [name, setName] = useState(calculation.name)
     const [showDeletePrompt, setShowDeletePrompt] = useState(false)
 
@@ -236,6 +241,7 @@ const CalculationModal = ({
                                     onChange={setItemValue}
                                     onClick={selectItem}
                                     onDoubleClick={removeItem}
+                                    loading={!expressionArray}
                                 />
                                 <div className="actions-wrapper">
                                     <Button

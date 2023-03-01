@@ -10,12 +10,13 @@ export const LAST_DROPZONE_ID = 'lastdropzone'
 export const FORMULA_BOX_ID = 'formulabox'
 
 const FormulaField = ({
-    items,
+    items = [],
     selectedItemId,
     focusItemId,
     onChange,
     onClick,
     onDoubleClick,
+    loading,
 }) => {
     const { over, setNodeRef: setLastDropzoneRef } = useDroppable({
         id: LAST_DROPZONE_ID,
@@ -29,28 +30,32 @@ const FormulaField = ({
         <div className="container">
             <div className="border"></div>
             <div className="formula-field" ref={setLastDropzoneRef}>
-                <SortableContext id={FORMULA_BOX_ID} items={itemIds}>
-                    <DropZone
-                        firstElementId={itemIds[0]}
-                        overLastDropZone={overLastDropZone}
-                    />
-                    {items.map(({ id, label, type, value }, index) => (
-                        <FormulaItem
-                            key={id}
-                            id={id}
-                            label={label}
-                            type={type}
-                            value={value}
-                            hasFocus={focusItemId === id}
-                            isHighlighted={selectedItemId === id}
-                            isLast={index === items.length - 1}
-                            onChange={onChange}
-                            onClick={onClick}
-                            onDoubleClick={onDoubleClick}
+                {loading && <p>Loading...</p>}
+                {/* TODO: add a proper loading spinner! */}
+                {!loading && itemIds && (
+                    <SortableContext id={FORMULA_BOX_ID} items={itemIds}>
+                        <DropZone
+                            firstElementId={itemIds[0]}
                             overLastDropZone={overLastDropZone}
                         />
-                    ))}
-                </SortableContext>
+                        {items.map(({ id, label, type, value }, index) => (
+                            <FormulaItem
+                                key={id}
+                                id={id}
+                                label={label}
+                                type={type}
+                                value={value}
+                                hasFocus={focusItemId === id}
+                                isHighlighted={selectedItemId === id}
+                                isLast={index === items.length - 1}
+                                onChange={onChange}
+                                onClick={onClick}
+                                onDoubleClick={onDoubleClick}
+                                overLastDropZone={overLastDropZone}
+                            />
+                        ))}
+                    </SortableContext>
+                )}
             </div>
             <style jsx>{styles}</style>
         </div>
@@ -70,6 +75,7 @@ FormulaField.propTypes = {
             value: PropTypes.string,
         })
     ),
+    loading: PropTypes.bool,
     selectedItemId: PropTypes.string,
 }
 
