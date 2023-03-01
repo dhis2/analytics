@@ -45,7 +45,7 @@ const CalculationModal = ({
     const query = {
         dataElements: {
             resource: 'dataElements',
-            params: ({ ids }) => ({
+            params: ({ ids = [] }) => ({
                 fields: `id,${displayNameProp}~rename(name)`,
                 filter: `id:in:[${ids.join(',')}]`,
                 paging: false,
@@ -53,7 +53,7 @@ const CalculationModal = ({
         },
         dataElementOperands: {
             resource: 'dataElementOperands',
-            params: ({ ids }) => ({
+            params: ({ ids = [] }) => ({
                 fields: `id,${displayNameProp}~rename(name)`,
                 filter: `id:in:[${ids.join(',')}]`,
                 paging: false,
@@ -61,9 +61,9 @@ const CalculationModal = ({
         },
     }
 
-    const expressionIds = calculation.expression
-        .match(/#{([a-zA-Z0-9#]+.*?)}/g)
-        .map((match) => match.slice(2, -1))
+    const expressionIds = calculation?.expression
+        ?.match(/#{([a-zA-Z0-9#]+.*?)}/g)
+        ?.map((match) => match.slice(2, -1))
 
     const { data } = useDataQuery(query, {
         variables: { ids: expressionIds },
