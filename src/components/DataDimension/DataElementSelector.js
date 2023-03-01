@@ -194,7 +194,7 @@ const DataElementSelector = ({ displayNameProp, onDoubleClick }) => {
         pageRef.current = 1
 
         fetchData(true)
-    }, 200)
+    }, 500)
 
     const onSearchChange = ({ value }) => {
         const newSearchTerm = value
