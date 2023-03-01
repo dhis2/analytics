@@ -1,3 +1,4 @@
+import { Center, CircularLoader } from '@dhis2/ui'
 import { useDroppable } from '@dnd-kit/core'
 import { SortableContext } from '@dnd-kit/sortable'
 import PropTypes from 'prop-types'
@@ -30,8 +31,11 @@ const FormulaField = ({
         <div className="container">
             <div className="border"></div>
             <div className="formula-field" ref={setLastDropzoneRef}>
-                {loading && <p>Loading...</p>}
-                {/* TODO: add a proper loading spinner! */}
+                {loading && (
+                    <Center>
+                        <CircularLoader small />
+                    </Center>
+                )}
                 {!loading && itemIds && (
                     <SortableContext id={FORMULA_BOX_ID} items={itemIds}>
                         <DropZone
