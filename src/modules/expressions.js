@@ -27,11 +27,13 @@ export const parseExpression = (input) => {
     return input.match(regex) || []
 }
 
-export const parseExpressionToArray = (expression = '') => {
+export const parseExpressionToArray = (expression = '', metadata = []) => {
     return (
         parseExpression(expression).map((value) => {
             if (value.startsWith('#{') && value.endsWith('}')) {
-                const label = value.slice(2, -1)
+                const id = value.slice(2, -1)
+                const label =
+                    metadata.find((item) => item.id === id)?.name || id
                 return { value, label, type: EXPRESSION_TYPE_DATA_ELEMENT }
             }
 

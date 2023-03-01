@@ -1,4 +1,4 @@
-import { useAlert, useDataMutation } from '@dhis2/app-runtime'
+import { useAlert, useDataMutation, useDataQuery } from '@dhis2/app-runtime'
 import {
     Button,
     Modal,
@@ -42,6 +42,38 @@ const CalculationModal = ({
     onDelete,
     displayNameProp,
 }) => {
+    const query = {
+        dataElements: {
+            resource: 'dataElements',
+            params: ({ ids }) => ({
+                fields: `id,${displayNameProp}~rename(name)`,
+                filter: `id:in:[${ids.join(',')}]`,
+                paging: false,
+            }),
+        },
+        dataElementOperands: {
+            resource: 'dataElementOperands',
+            params: ({ ids }) => ({
+                fields: `id,${displayNameProp}~rename(name)`,
+                filter: `id:in:[${ids.join(',')}]`,
+                paging: false,
+            }),
+        },
+    }
+
+    const expressionIds = calculation.expression
+        .match(/#{([a-zA-Z0-9#]+.*?)}/g)
+        .map((match) => match.slice(2, -1))
+
+    const { data } = useDataQuery(query, {
+        variables: { ids: expressionIds },
+    })
+
+    const metadata = [
+        ...(data?.dataElements?.dataElements || []),
+        ...(data?.dataElementOperands?.dataElementOperands || []),
+    ]
+
     const { show: showError } = useAlert((error) => error, { critical: true })
     const [doBackendValidation] = useDataMutation(validateExpressionMutation, {
         onError: (error) => showError(error),
@@ -51,10 +83,12 @@ const CalculationModal = ({
 
     const [validationOutput, setValidationOutput] = useState(null)
     const [expressionArray, setExpressionArray] = useState(
-        parseExpressionToArray(calculation.expression).map((item, i) => ({
-            ...item,
-            id: `${item.type}-${-i}`,
-        }))
+        parseExpressionToArray(calculation.expression, metadata).map(
+            (item, i) => ({
+                ...item,
+                id: `${item.type}-${-i}`,
+            })
+        )
     )
     const [name, setName] = useState(calculation.name)
     const [showDeletePrompt, setShowDeletePrompt] = useState(false)

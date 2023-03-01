@@ -371,29 +371,6 @@ const ItemSelector = ({
         deleteCalculationMutation,
         mutationParams
     )
-    // const [fetchExpressionMetadata] = useDataMutation(
-    //     someMutation,
-    //     mutationParams
-    // )
-
-    const openCalculation = async ({ id, name, expression }) => {
-        // const expressionIds = expression
-        //     .match(/#{([a-zA-Z0-9#]+.*?)}/g)
-        //     .map((match) => match.slice(2, -1))
-
-        // TODO: fetch metadata for data element operands as well!
-        // const metadata = await fetchExpressionMetadata({
-        //     expressionIds,
-        //     nameProp: displayNameProp,
-        // })
-
-        setCurrentCalculation({
-            id,
-            name,
-            expression,
-            //metadata,
-        })
-    }
 
     const onSaveCalculation = async ({ id, name, expression }) => {
         // TODO: move this to within CalculationModal.js instead? unless there's a reason to keep it in the item selector..
@@ -537,7 +514,7 @@ const ItemSelector = ({
                                 DIMENSION_TYPE_EXPRESSION_DIMENSION_ITEM &&
                             supportsEDI
                                 ? () =>
-                                      openCalculation({
+                                      setCurrentCalculation({
                                           id: props.value,
                                           name: props.label,
                                           expression: props.expression,
