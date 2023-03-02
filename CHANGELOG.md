@@ -1,3 +1,10 @@
+# [21.9.0](https://github.com/dhis2/analytics/compare/v21.8.2...v21.9.0) (2023-03-02)
+
+
+### Features
+
+* merge multi-calendar support from alpha to master ([#1434](https://github.com/dhis2/analytics/issues/1434)) ([9bacb7c](https://github.com/dhis2/analytics/commit/9bacb7c7d6592516bb64d735cfb1a7b2ef6a5e94))
+
 ## [21.8.2](https://github.com/dhis2/analytics/compare/v21.8.1...v21.8.2) (2022-09-29)
 
 
