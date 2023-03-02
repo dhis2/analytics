@@ -1,9 +1,8 @@
 import i18n from '../locales/index.js'
-import { DIMENSION_TYPE_DATA_ELEMENT } from './dataTypes.js'
 
 export const EXPRESSION_TYPE_NUMBER = 'EXPRESSION_TYPE_NUMBER'
 export const EXPRESSION_TYPE_OPERATOR = 'EXPRESSION_TYPE_OPERATOR'
-export const EXPRESSION_TYPE_DATA_ELEMENT = DIMENSION_TYPE_DATA_ELEMENT
+export const EXPRESSION_TYPE_DATA = 'EXPRESSION_TYPE_DATA'
 
 export const VALID_EXPRESSION = 'OK'
 export const INVALID_EXPRESSION = 'ERROR'
@@ -34,7 +33,7 @@ export const parseExpressionToArray = (expression = '', metadata = []) => {
                 const id = value.slice(2, -1)
                 const label =
                     metadata.find((item) => item.id === id)?.name || id
-                return { value, label, type: EXPRESSION_TYPE_DATA_ELEMENT }
+                return { value, label, type: EXPRESSION_TYPE_DATA }
             }
 
             if (isNaN(value)) {

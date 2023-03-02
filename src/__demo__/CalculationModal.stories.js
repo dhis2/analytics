@@ -14,16 +14,6 @@ const DATA_ELEMENTS = {
     },
     dataElements: [
         {
-            dimensionItemType: 'DATA_ELEMENT_OPERAND',
-            id: 'fbfJHSPpUQD.pq2XI5kz2BY',
-            name: 'ANC 1st visit Fixed',
-        },
-        {
-            dimensionItemType: 'DATA_ELEMENT_OPERAND',
-            id: 'fbfJHSPpUQD.PT59n8BQbqM',
-            name: 'ANC 1st visit Outreach',
-        },
-        {
             dimensionItemType: 'DATA_ELEMENT',
             id: 'fbfJHSPpUQD',
             name: 'ANC 1st visit',
@@ -103,6 +93,29 @@ const DATA_ELEMENTS = {
             dimensionItemType: 'DATA_ELEMENT',
             id: 'HLPuaFB7Frw',
             name: 'Anaemia new',
+        },
+    ],
+}
+
+const DATA_ELEMENT_OPERANDS = {
+    pager: {
+        page: 1,
+        pageCount: 43,
+        total: 2122,
+        pageSize: 50,
+        nextPage:
+            'https://debug.dhis2.org/dev/api/dataElementOperands.json?page=2',
+    },
+    dataElementOperands: [
+        {
+            dimensionItemType: 'DATA_ELEMENT_OPERAND',
+            id: 'fbfJHSPpUQD.pq2XI5kz2BY',
+            name: 'ANC 1st visit Fixed',
+        },
+        {
+            dimensionItemType: 'DATA_ELEMENT_OPERAND',
+            id: 'fbfJHSPpUQD.PT59n8BQbqM',
+            name: 'ANC 1st visit Outreach',
         },
     ],
 }
@@ -202,6 +215,12 @@ const calculation = {
     expression: '#{fbfJHSPpUQD}/10*#{hfdmMSPBgLG}',
 }
 
+const calculationWithOperand = {
+    id: 'calcid2',
+    name: 'Calculation with operand',
+    expression: '#{cYeuwXTCPkU}*10-#{fbfJHSPpUQD.pq2XI5kz2BY}',
+}
+
 storiesOf('CalculationModal', module)
     .add('Default', () => {
         return (
@@ -209,6 +228,7 @@ storiesOf('CalculationModal', module)
                 data={{
                     dataElements: DATA_ELEMENTS,
                     dataElementGroups: DATA_ELEMENT_GROUPS,
+                    dataElementOperands: DATA_ELEMENT_OPERANDS,
                 }}
             >
                 <CalculationModal
@@ -226,10 +246,30 @@ storiesOf('CalculationModal', module)
                 data={{
                     dataElements: DATA_ELEMENTS,
                     dataElementGroups: DATA_ELEMENT_GROUPS,
+                    dataElementOperands: DATA_ELEMENT_OPERANDS,
                 }}
             >
                 <CalculationModal
                     calculation={calculation}
+                    displayNameProp="name"
+                    onClose={Function.prototype}
+                    onDelete={Function.prototype}
+                    onSave={Function.prototype}
+                />
+            </CustomDataProvider>
+        )
+    })
+    .add('With calculation containing operand', () => {
+        return (
+            <CustomDataProvider
+                data={{
+                    dataElements: DATA_ELEMENTS,
+                    dataElementGroups: DATA_ELEMENT_GROUPS,
+                    dataElementOperands: DATA_ELEMENT_OPERANDS,
+                }}
+            >
+                <CalculationModal
+                    calculation={calculationWithOperand}
                     displayNameProp="name"
                     onClose={Function.prototype}
                     onDelete={Function.prototype}

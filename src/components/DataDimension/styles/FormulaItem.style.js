@@ -58,7 +58,7 @@ export default css`
         padding: 0 6px;
     }
 
-    .data-element-label {
+    .data-label {
         padding: 0 4px;
         max-width: 280px;
         text-overflow: ellipsis;

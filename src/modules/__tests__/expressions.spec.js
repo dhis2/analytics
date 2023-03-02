@@ -2,7 +2,7 @@ import {
     validateExpression,
     parseArrayToExpression,
     parseExpressionToArray,
-    EXPRESSION_TYPE_DATA_ELEMENT,
+    EXPRESSION_TYPE_DATA,
     EXPRESSION_TYPE_NUMBER,
     EXPRESSION_TYPE_OPERATOR,
     INVALID_EXPRESSION,
@@ -63,13 +63,13 @@ describe('parseArrayToExpression', () => {
             {
                 label: 'abc123',
                 value: '#{abc123}',
-                type: EXPRESSION_TYPE_DATA_ELEMENT,
+                type: EXPRESSION_TYPE_DATA,
             },
             { label: '+', value: '+', type: EXPRESSION_TYPE_OPERATOR },
             {
                 label: 'def456.xyz999',
                 value: '#{def456.xyz999}',
-                type: EXPRESSION_TYPE_DATA_ELEMENT,
+                type: EXPRESSION_TYPE_DATA,
             },
             { label: '/', value: '/', type: EXPRESSION_TYPE_OPERATOR },
             { label: '10', value: '10', type: EXPRESSION_TYPE_NUMBER },
@@ -87,7 +87,7 @@ describe('parseExpressionToArray', () => {
             {
                 label: 'abc123',
                 value: '#{abc123}',
-                type: EXPRESSION_TYPE_DATA_ELEMENT,
+                type: EXPRESSION_TYPE_DATA,
             },
             { label: '/', value: '/', type: EXPRESSION_TYPE_OPERATOR },
             { label: '10', value: '10', type: EXPRESSION_TYPE_NUMBER },
