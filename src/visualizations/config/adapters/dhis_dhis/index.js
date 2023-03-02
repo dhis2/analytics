@@ -34,5 +34,13 @@ export default function ({ store, layout, extraOptions }) {
         config.subText = indicatorType?.displayName
     }
 
+    // DHIS2-10496: show icon on the side of the value if an icon is assigned in Maintenance app and the option is set in DV options
+    const showIcon = Boolean(layout.icons?.length)
+    const icon = metaData.items[metaData.dimensions.dx[0]].style?.icon
+
+    if (showIcon && icon) {
+        config.icon = icon
+    }
+
     return config
 }
