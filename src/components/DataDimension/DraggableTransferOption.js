@@ -3,6 +3,7 @@ import { CSS } from '@dnd-kit/utilities'
 import PropTypes from 'prop-types'
 import React from 'react'
 import { getIcon, getTooltipText } from '../../modules/dimensionListItem.js'
+import { EXPRESSION_TYPE_DATA } from '../../modules/expressions.js'
 import { TransferOption } from '../TransferOption.js'
 import styles from './styles/DraggableTransferOption.style.js'
 
@@ -13,9 +14,10 @@ const DraggableTransferOption = ({
     disabled,
     onDoubleClick,
 }) => {
+    const data = { label, value, type: EXPRESSION_TYPE_DATA }
     const { attributes, listeners, setNodeRef, transform } = useSortable({
         id: value,
-        data: { value, label, type, index: -1 },
+        data,
         disabled,
     })
     const style = {
@@ -42,9 +44,7 @@ const DraggableTransferOption = ({
                     })}
                     disabled={disabled}
                     onClick={Function.prototype}
-                    onDoubleClick={({ label, value }) =>
-                        onDoubleClick({ label, value, type })
-                    }
+                    onDoubleClick={() => onDoubleClick(data)}
                     dataTest="dimension-option"
                 />
             </div>

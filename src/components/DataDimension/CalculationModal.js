@@ -18,7 +18,7 @@ import {
     parseExpressionToArray,
     parseArrayToExpression,
     validateExpression,
-    EXPRESSION_TYPE_DATA_ELEMENT,
+    EXPRESSION_TYPE_DATA,
     EXPRESSION_TYPE_NUMBER,
     INVALID_EXPRESSION,
     VALID_EXPRESSION,
@@ -75,6 +75,7 @@ const CalculationModal = ({
                 ...(data.dataElements?.dataElements || []),
                 ...(data.dataElementOperands?.dataElementOperands || []),
             ]
+
             setExpressionArray(
                 parseExpressionToArray(calculation.expression, metadata).map(
                     (item, i) => ({
@@ -126,8 +127,7 @@ const CalculationModal = ({
 
         const newItem = {
             id: `${type}-${newIdCount}`,
-            value:
-                type === EXPRESSION_TYPE_DATA_ELEMENT ? `#{${value}}` : value,
+            value: type === EXPRESSION_TYPE_DATA ? `#{${value}}` : value,
             label,
             type,
         }
