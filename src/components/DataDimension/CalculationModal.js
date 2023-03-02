@@ -202,8 +202,6 @@ const CalculationModal = ({
         }
     }
 
-    console.log('expressionArray', expressionArray)
-
     return (
         <>
             <Modal dataTest="calculation-modal" position="top" large>

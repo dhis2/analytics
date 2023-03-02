@@ -14,9 +14,10 @@ const DraggableTransferOption = ({
     disabled,
     onDoubleClick,
 }) => {
+    const data = { label, value, type: EXPRESSION_TYPE_DATA }
     const { attributes, listeners, setNodeRef, transform } = useSortable({
         id: value,
-        data: { value, label, type: EXPRESSION_TYPE_DATA, index: -1 },
+        data,
         disabled,
     })
     const style = {
@@ -43,9 +44,7 @@ const DraggableTransferOption = ({
                     })}
                     disabled={disabled}
                     onClick={Function.prototype}
-                    onDoubleClick={({ label, value }) =>
-                        onDoubleClick({ label, value, type })
-                    }
+                    onDoubleClick={() => onDoubleClick(data)}
                     dataTest="dimension-option"
                 />
             </div>
