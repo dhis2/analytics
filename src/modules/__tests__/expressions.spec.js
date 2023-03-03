@@ -9,7 +9,11 @@ import {
 } from '../expressions.js'
 
 const invalidTestExpressions = [
-    { message: 'Empty formula', expressions: [''] },
+    {
+        message:
+            'Formula is empty. Add items to the formula from the lists on the left.',
+        expressions: [''],
+    },
     {
         message: 'Consecutive math operators',
         expressions: ['5+-', '5+++', '4+9-*'],
