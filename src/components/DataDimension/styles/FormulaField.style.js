@@ -30,4 +30,19 @@ export default css`
         border-top: 2px solid ${colors.grey200};
         border-bottom: 2px solid ${colors.grey200};
     }
+
+    .placeholder {
+        display: flex;
+        flex-direction: column;
+        gap: ${spacers.dp8};
+        align-items: center;
+        padding: 0 ${spacers.dp32};
+    }
+
+    .help-text {
+        color: ${colors.grey600};
+        font-size: 14px;
+        line-height: 19px;
+        user-select: none;
+    }
 `

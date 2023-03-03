@@ -68,7 +68,9 @@ export const validateExpression = (expression) => {
         // empty formula
         result = {
             status: INVALID_EXPRESSION,
-            message: i18n.t('Empty formula'),
+            message: i18n.t(
+                'Formula is empty. Add items to the formula from the lists on the left.'
+            ),
         }
     } else if (/[-+/*]{2,}/.test(expression)) {
         // two math operators next to each other
