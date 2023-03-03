@@ -32,10 +32,13 @@ export default css`
     }
 
     .placeholder {
+        height: 100%;
         display: flex;
         flex-direction: column;
         gap: ${spacers.dp8};
         align-items: center;
+        justify-content: center;
+        margin-top: -28px;
         padding: 0 ${spacers.dp32};
     }
 
