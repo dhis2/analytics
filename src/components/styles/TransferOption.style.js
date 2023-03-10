@@ -69,6 +69,8 @@ export default css`
     }
 
     .edit {
+        height: 16px;
+        padding-top: 1px;
         margin-left: ${spacers.dp8};
         cursor: pointer;
     }
