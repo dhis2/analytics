@@ -1,8 +1,8 @@
 import { useOnlineStatus } from '@dhis2/app-runtime'
-import i18n from '@dhis2/d2-i18n'
 import { Button, ButtonStrip, ModalActions } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
+import i18n from '../../../locales/index.js'
 import { OfflineTooltip } from '../../OfflineTooltip.js'
 
 const SaveButton = ({ disabled, loading, onClick }) => (

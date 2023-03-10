@@ -1,8 +1,8 @@
 import { useDataMutation } from '@dhis2/app-runtime'
-import i18n from '@dhis2/d2-i18n'
 import { Button, Input } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useRef, useState } from 'react'
+import i18n from '../../../locales/index.js'
 import {
     RichTextEditor,
     MessageEditorContainer,

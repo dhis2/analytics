@@ -1,4 +1,3 @@
-import i18n from '@dhis2/d2-i18n'
 import {
     CenteredContent,
     CircularLoader,
@@ -8,6 +7,7 @@ import {
 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useEffect, useState } from 'react'
+import i18n from '../../../locales/index.js'
 import { TranslationForm } from './TranslationForm.js'
 import { TranslationModalActions } from './TranslationModalActions.js'
 import { useTranslationsResults } from './useTranslationsResults.js'
