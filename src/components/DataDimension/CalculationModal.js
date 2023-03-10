@@ -223,6 +223,7 @@ const CalculationModal = ({
                                 onChange={({ value }) => setName(value)}
                                 value={name}
                                 dataTest="calculation-label"
+                                dense
                             />
                         </div>
                         <div className="content">
