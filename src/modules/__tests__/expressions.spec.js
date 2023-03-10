@@ -16,7 +16,7 @@ const invalidTestExpressions = [
     },
     {
         message: 'Consecutive math operators',
-        expressions: ['5+-', '5+++', '4+9-*'],
+        expressions: ['5+-', '5+++', '4+9-*', '5++9'],
     },
     {
         message: 'Consecutive data elements',
@@ -24,15 +24,23 @@ const invalidTestExpressions = [
     },
     {
         message: 'Starts or ends with a math operator',
-        expressions: ['*((#{cYeuwXTCPkU}*#{Jtf34kNZhzP})))'],
+        expressions: ['+', '+1', '1-2/', '*((#{cYeuwXTCPkU}*#{Jtf34kNZhzP})))'],
+    },
+    {
+        message: 'Empty parentheses',
+        expressions: ['#{cYeuwXTCPkU}*()'],
     },
     {
         message: 'Missing left parenthesis (',
-        expressions: ['((#{cYeuwXTCPkU}*#{P3jJH5Tu5VC.S34ULMcHMca})))'],
+        expressions: [
+            ')',
+            '5)',
+            '((#{cYeuwXTCPkU}*#{P3jJH5Tu5VC.S34ULMcHMca})))',
+        ],
     },
     {
         message: 'Missing right parenthesis )',
-        expressions: ['((#{cYeuwXTCPkU}*#{Jtf34kNZhzP})'],
+        expressions: ['(', '(5', '((#{cYeuwXTCPkU}*#{Jtf34kNZhzP})'],
     },
 ]
 
@@ -40,6 +48,8 @@ const validTestExpressions = [
     '5+9',
     '((#{cYeuwXTCPkU}*#{Jtf34kNZhzP}))#{iKGjnOOaPlE}',
     '#{P3jJH5Tu5VC.S34ULMcHMca}*#{Jtf34kNZhzP}',
+    '(5)+9',
+    '(5+9)',
 ]
 
 describe('validateExpression', () => {

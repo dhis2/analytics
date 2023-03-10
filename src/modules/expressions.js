@@ -90,6 +90,12 @@ export const validateExpression = (expression) => {
             status: INVALID_EXPRESSION,
             message: i18n.t('Starts or ends with a math operator'),
         }
+    } else if (/\(\)/.test(expression)) {
+        // contains an empty set of parentheses
+        result = {
+            status: INVALID_EXPRESSION,
+            message: i18n.t('Empty parentheses'),
+        }
     } else if (leftParenthesisCount > rightParenthesisCount) {
         // ( but no )
         result = {
