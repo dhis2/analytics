@@ -16,7 +16,7 @@ export const getOperators = () => [
     { value: ')', label: ')', type: EXPRESSION_TYPE_OPERATOR },
     {
         value: '',
-        label: i18n.t('<number>'),
+        label: i18n.t('Number'),
         type: EXPRESSION_TYPE_NUMBER,
     },
 ]
