@@ -70,5 +70,6 @@ export default css`
 
     .edit {
         margin-left: ${spacers.dp8};
+        cursor: pointer;
     }
 `
