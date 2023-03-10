@@ -13,4 +13,7 @@ export default css`
         user-select: none;
         align-items: center;
     }
+    .operator:hover {
+        background: ${colors.grey300};
+    }
 `
