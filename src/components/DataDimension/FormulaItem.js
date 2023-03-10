@@ -1,3 +1,4 @@
+import { Tooltip } from '@dhis2/ui'
 import { useSortable } from '@dnd-kit/sortable'
 import { CSS } from '@dnd-kit/utilities'
 import cx from 'classnames'
@@ -122,7 +123,7 @@ const FormulaItem = ({
     const getContent = () => {
         if (type === EXPRESSION_TYPE_NUMBER) {
             return (
-                <>
+                <div className="content">
                     {DragHandleIcon}
                     <span className="input-positioner">
                         <span className="width-machine" aria-hidden="true">
@@ -139,27 +140,29 @@ const FormulaItem = ({
                         />
                     </span>
                     <style jsx>{styles}</style>
-                </>
+                </div>
             )
         }
 
         if (type === EXPRESSION_TYPE_DATA) {
             return (
-                <>
-                    <span className="icon">
-                        {getIcon(DIMENSION_TYPE_DATA_ELEMENT)}
-                    </span>
-                    <span className="data-label">{label}</span>
-                    <style jsx>{styles}</style>
-                </>
+                <Tooltip content={label} placement="bottom">
+                    <div className="content">
+                        <span className="icon">
+                            {getIcon(DIMENSION_TYPE_DATA_ELEMENT)}
+                        </span>
+                        <span className="data-label">{label}</span>
+                        <style jsx>{styles}</style>
+                    </div>
+                </Tooltip>
             )
         }
 
         return (
-            <>
+            <div className="content">
                 <span className="operator-label">{label}</span>
                 <style jsx>{styles}</style>
-            </>
+            </div>
         )
     }
 
@@ -183,7 +186,7 @@ const FormulaItem = ({
                     onClick={handleClick}
                     onDoubleClick={handleDoubleClick}
                 >
-                    <div className="content">{getContent()}</div>
+                    {getContent()}
                 </div>
             </div>
             <style jsx>{styles}</style>
