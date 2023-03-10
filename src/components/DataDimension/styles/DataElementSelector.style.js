@@ -43,6 +43,7 @@ export default css`
     .filter-wrapper {
         padding: ${spacers.dp8};
         border: 1px solid ${colors.grey400};
+        border-bottom: 0;
     }
 
     .sub-header {
