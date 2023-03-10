@@ -22,7 +22,7 @@ export const getOperators = () => [
 ]
 
 export const parseExpression = (input) => {
-    const regex = /(#{[a-zA-Z0-9#]+.*?}|[+\-*/()])|(\d+)/g
+    const regex = /(#{[a-zA-Z0-9#.]+}|[+\-*/()])|(\d+(\.\d+)?)/g
     return input.match(regex) || []
 }
 

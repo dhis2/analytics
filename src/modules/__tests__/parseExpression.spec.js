@@ -119,3 +119,21 @@ test('matches multiple #{} with operators with brackets', () => {
         '#{ghi789}',
     ])
 })
+
+test('matches on decimal numbers', () => {
+    expect(parseExpression('#{abc123}*1.2/#{def456}')).toEqual([
+        '#{abc123}',
+        '*',
+        '1.2',
+        '/',
+        '#{def456}',
+    ])
+})
+
+test('matches on decimal numbers with #{} containing dots', () => {
+    expect(parseExpression('1.2+#{abc123.xyz999}')).toEqual([
+        '1.2',
+        '+',
+        '#{abc123.xyz999}',
+    ])
+})
