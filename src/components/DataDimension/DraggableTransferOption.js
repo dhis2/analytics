@@ -2,7 +2,7 @@ import { useSortable } from '@dnd-kit/sortable'
 import { CSS } from '@dnd-kit/utilities'
 import PropTypes from 'prop-types'
 import React from 'react'
-import { getIcon, getTooltipText } from '../../modules/dimensionListItem.js'
+import { getIcon } from '../../modules/dimensionListItem.js'
 import { EXPRESSION_TYPE_DATA } from '../../modules/expressions.js'
 import { TransferOption } from '../TransferOption.js'
 import styles from './styles/DraggableTransferOption.style.js'
@@ -35,13 +35,8 @@ const DraggableTransferOption = ({
             >
                 <TransferOption
                     label={label}
-                    key={value}
                     value={value}
-                    type={type}
                     icon={getIcon(type)}
-                    tooltipText={getTooltipText({
-                        type,
-                    })}
                     disabled={disabled}
                     onClick={Function.prototype}
                     onDoubleClick={() => onDoubleClick(data)}
