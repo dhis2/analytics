@@ -14,7 +14,7 @@ export const GetLinkDialog = ({ type, id, onClose }) => {
     // TODO simply use href from the visualization object?
     const appUrl = new URL(
         appPathFor(type, id),
-        `${window.location.origin}${window.location.pathname}`
+        `${window.location.origin}`
     )
 
     return (
