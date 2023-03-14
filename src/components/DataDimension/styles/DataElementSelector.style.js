@@ -46,6 +46,11 @@ export default css`
         border-bottom: 0;
     }
 
+    .selector-wrapper {
+        display: flex;
+        gap: ${spacers.dp4};
+    }
+
     .sub-header {
         font-size: 14px;
         font-weight: normal;
@@ -53,6 +58,7 @@ export default css`
     }
 
     .group-select {
+        width: 50%;
         margin-top: ${spacers.dp4};
     }
 `

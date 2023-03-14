@@ -59,7 +59,6 @@ const GroupSelector = ({ currentValue, onChange, displayNameProp }) => {
     return (
         <div className="group-select">
             <SingleSelectField
-                prefix={i18n.t('Group')}
                 selected={currentValue}
                 onChange={(ref) => onChange(ref.selected)}
                 dense
@@ -100,7 +99,6 @@ const DisaggregationSelector = ({ currentValue, onChange }) => {
     return (
         <div className="group-select">
             <SingleSelectField
-                prefix={i18n.t('Disaggregation')}
                 selected={currentValue}
                 onChange={(ref) => onChange(ref.selected)}
                 dense
@@ -253,15 +251,17 @@ const DataElementSelector = ({ displayNameProp, onDoubleClick }) => {
                     type={'search'}
                     dataTest={'data-element-search'}
                 />
-                <GroupSelector
-                    currentValue={group}
-                    onChange={(group) => onFilterChange({ group })}
-                    displayNameProp={displayNameProp}
-                />
-                <DisaggregationSelector
-                    currentValue={subGroup}
-                    onChange={(subGroup) => onFilterChange({ subGroup })}
-                />
+                <div className="selector-wrapper">
+                    <GroupSelector
+                        currentValue={group}
+                        onChange={(group) => onFilterChange({ group })}
+                        displayNameProp={displayNameProp}
+                    />
+                    <DisaggregationSelector
+                        currentValue={subGroup}
+                        onChange={(subGroup) => onFilterChange({ subGroup })}
+                    />
+                </div>
             </div>
             <div className="dimension-list-container">
                 <div
