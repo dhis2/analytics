@@ -474,40 +474,99 @@ describe('fixedPeriods utils', () => {
     })
 
     describe('Yearly period generator', () => {
-        let periods
+        const tests = [
+            {
+                config: {
+                    offset: 10,
+                    filterFuturePeriods: false,
+                    reversePeriods: false,
+                },
+                expectedPeriodCount: 10,
+                expectedFirstYear: '2020',
+                expectedLastYear: '2029',
+            },
+            {
+                config: {
+                    offset: 10,
+                    filterFuturePeriods: false,
+                    reversePeriods: true,
+                },
+                expectedPeriodCount: 10,
+                expectedFirstYear: '2029',
+                expectedLastYear: '2020',
+            },
+            {
+                config: {
+                    offset: 10,
+                    filterFuturePeriods: true,
+                    reversePeriods: true,
+                },
+                expectedPeriodCount: 0,
+            },
+            {
+                config: {
+                    offset: -5,
+                    filterFuturePeriods: true,
+                    reversePeriods: true,
+                },
+                expectedPeriodCount: 10,
+                expectedFirstYear: '2014',
+                expectedLastYear: '2005',
+            },
+            {
+                config: {
+                    offset: -5,
+                    filterFuturePeriods: true,
+                    reversePeriods: false,
+                },
+                expectedPeriodCount: 10,
+                expectedFirstYear: '2005',
+                expectedLastYear: '2014',
+            },
+            {
+                config: {
+                    offset: 3,
+                    filterFuturePeriods: true,
+                    reversePeriods: true,
+                },
+                expectedPeriodCount: 7,
+                expectedFirstYear: '2019',
+                expectedLastYear: '2013',
+            },
+        ]
 
-        beforeAll(() => {
-            const option = getFixedPeriodsOptionsById('YEARLY')
+        tests.forEach((t) => {
+            jest.spyOn(Date, 'now').mockImplementation(() => 1560765600000)
 
-            periods = option.getPeriods({
-                offset: 10, // 2020 - 2029
-                filterFuturePeriods: false,
-                reversePeriods: false,
+            const testName = `Yearly period generator: offset ${t.config.offset}, filter ${t.config.filterFuturePeriods}, reverse ${t.config.reversePeriods}`
+
+            const periods = getFixedPeriodsOptionsById('YEARLY').getPeriods({
+                offset: t.config.offset,
+                filterFuturePeriods: t.config.filterFuturePeriods,
+                reversePeriods: t.config.reversePeriods,
             })
-        })
 
-        it('should return the correct number of yearly periods', () => {
-            expect(periods.length).toEqual(10)
-        })
+            // console.log('periods', periods)
 
-        it('should return the correct object for yearly period 1', () => {
-            expect(periods[0]).toMatchObject({
-                startDate: '2020-01-01',
-                endDate: '2020-12-31',
-                iso: '2020',
-                id: '2020',
+            it(testName, () => {
+                expect(periods.length).toEqual(t.expectedPeriodCount)
+                if (t.expectedPeriodCount > 0) {
+                    expect(periods[0]).toMatchObject({
+                        startDate: `${t.expectedFirstYear}-01-01`,
+                        endDate: `${t.expectedFirstYear}-12-31`,
+                        iso: `${t.expectedFirstYear}`,
+                        id: `${t.expectedFirstYear}`,
+                        name: t.expectedFirstYear,
+                    })
+                    expect(periods[periods.length - 1]).toMatchObject({
+                        startDate: `${t.expectedLastYear}-01-01`,
+                        endDate: `${t.expectedLastYear}-12-31`,
+                        iso: `${t.expectedLastYear}`,
+                        id: `${t.expectedLastYear}`,
+                        name: t.expectedLastYear,
+                    })
+                }
             })
-            expect(periods[0].name).toEqual('2020')
-        })
-
-        it('should return the correct object for yearly period 10', () => {
-            expect(periods[9]).toMatchObject({
-                startDate: '2029-01-01',
-                endDate: '2029-12-31',
-                iso: '2029',
-                id: '2029',
-            })
-            expect(periods[9].name).toEqual('2029')
         })
     })
 
