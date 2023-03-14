@@ -42,3 +42,11 @@ export const fileMenuStyles = css`
         outline: none;
     }
 `
+
+export const modalStyles = css`
+    .modal-content {
+        display: flex;
+        flex-direction: column;
+        gap: ${spacers.dp12};
+    }
+`

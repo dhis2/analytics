@@ -1,3 +1,10 @@
+## [24.9.1](https://github.com/dhis2/analytics/compare/v24.9.0...v24.9.1) (2023-03-10)
+
+
+### Bug Fixes
+
+* spacing in Rename and SaveAs dialogs ([#1447](https://github.com/dhis2/analytics/issues/1447)) ([35e1872](https://github.com/dhis2/analytics/commit/35e18724ff88a09d13deedb54e897ad2506c4f08))
+
 # [24.9.0](https://github.com/dhis2/analytics/compare/v24.8.0...v24.9.0) (2023-02-24)
 
 
