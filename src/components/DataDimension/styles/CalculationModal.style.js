@@ -57,7 +57,6 @@ export default css`
     }
 
     .name-input {
-        margin-bottom: ${spacers.dp8};
-        max-width: 75%;
+        margin-top: ${spacers.dp16};
     }
 `

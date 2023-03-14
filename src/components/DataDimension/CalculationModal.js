@@ -215,17 +215,6 @@ const CalculationModal = ({
                         onDragStart={() => setFocusItemId(null)}
                         onDragEnd={addOrMoveDraggedItem}
                     >
-                        <div className="name-input">
-                            <InputField
-                                label={i18n.t(
-                                    'Label shown in column/row headers'
-                                )}
-                                onChange={({ value }) => setName(value)}
-                                value={name}
-                                dataTest="calculation-label"
-                                dense
-                            />
-                        </div>
                         <div className="content">
                             <div className="left-section">
                                 <DataElementSelector
@@ -299,6 +288,19 @@ const CalculationModal = ({
                                             expressionArray
                                         )}
                                     </p>
+                                    <div className="name-input">
+                                        <InputField
+                                            label={i18n.t(
+                                                'Label shown in column/row headers'
+                                            )}
+                                            onChange={({ value }) =>
+                                                setName(value)
+                                            }
+                                            value={name}
+                                            dataTest="calculation-label"
+                                            dense
+                                        />
+                                    </div>
                                 </div>
                             </div>
                         </div>
