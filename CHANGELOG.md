@@ -1,3 +1,12 @@
+## [24.9.2](https://github.com/dhis2/analytics/compare/v24.9.1...v24.9.2) (2023-03-14)
+
+
+### Bug Fixes
+
+* deduplicate yarn.lock ([#1450](https://github.com/dhis2/analytics/issues/1450)) ([85781ef](https://github.com/dhis2/analytics/commit/85781efeb3f347eabb70ff0db327f888dfcb3da3))
+* prevent wrong URL with duplicated path parts DHIS2-14789 ([#1449](https://github.com/dhis2/analytics/issues/1449)) ([7c5c2a6](https://github.com/dhis2/analytics/commit/7c5c2a6870f14f9a18c155ee7f7817a3055b6205))
+* use connection status to handle local offline conditions ([#1443](https://github.com/dhis2/analytics/issues/1443)) ([df4bb97](https://github.com/dhis2/analytics/commit/df4bb97f52d9bc03555621beadfe929721500e31))
+
 ## [24.9.1](https://github.com/dhis2/analytics/compare/v24.9.0...v24.9.1) (2023-03-10)
 
 
