@@ -17,7 +17,9 @@ export const GetLinkDialog = ({ type, id, onClose }) => {
     const { baseUrl } = useConfig()
 
     // TODO simply use href from the visualization object?
-    const appUrl = new URL(appPathFor(type, id), baseUrl)
+    const appBaseUrl = new URL(baseUrl, self.location.href)
+
+    const appUrl = new URL(appPathFor(type, id), appBaseUrl)
 
     return (
         <Modal onClose={onClose}>
