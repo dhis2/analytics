@@ -1,3 +1,10 @@
+## [24.9.3](https://github.com/dhis2/analytics/compare/v24.9.2...v24.9.3) (2023-03-15)
+
+
+### Bug Fixes
+
+* ensure the base passed to URL is absolute ([#1452](https://github.com/dhis2/analytics/issues/1452)) ([4d45abb](https://github.com/dhis2/analytics/commit/4d45abb72b9b6c3e2d82e54a3a05abe0fd8b87b7))
+
 ## [24.9.2](https://github.com/dhis2/analytics/compare/v24.9.1...v24.9.2) (2023-03-14)
 
 
