@@ -281,6 +281,19 @@ const CalculationModal = ({
                                             </Button>
                                         </div>
                                     )}
+                                    <div className="name-input">
+                                        <InputField
+                                            label={i18n.t(
+                                                'Label shown in column/row headers'
+                                            )}
+                                            onChange={({ value }) =>
+                                                setName(value.substr(0, 50))
+                                            }
+                                            value={name}
+                                            dataTest="calculation-label"
+                                            dense
+                                        />
+                                    </div>
                                     <p style={{ color: 'blue' }}>
                                         {/* TODO: Remove, for testing only */}
                                         OUTPUT:{' '}
@@ -288,19 +301,6 @@ const CalculationModal = ({
                                             expressionArray
                                         )}
                                     </p>
-                                    <div className="name-input">
-                                        <InputField
-                                            label={i18n.t(
-                                                'Label shown in column/row headers'
-                                            )}
-                                            onChange={({ value }) =>
-                                                setName(value)
-                                            }
-                                            value={name}
-                                            dataTest="calculation-label"
-                                            dense
-                                        />
-                                    </div>
                                 </div>
                             </div>
                         </div>
