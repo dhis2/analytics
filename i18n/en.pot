@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2023-03-10T10:41:22.719Z\n"
-"PO-Revision-Date: 2023-03-10T10:41:22.719Z\n"
+"POT-Creation-Date: 2023-03-20T09:55:37.000Z\n"
+"PO-Revision-Date: 2023-03-20T09:55:37.000Z\n"
 
 msgid "view only"
 msgstr "view only"
@@ -79,9 +79,6 @@ msgstr "Data / Edit calculation"
 msgid "Data / New calculation"
 msgstr "Data / New calculation"
 
-msgid "Label shown in column/row headers"
-msgstr "Label shown in column/row headers"
-
 msgid "Check formula"
 msgstr "Check formula"
 
@@ -90,6 +87,9 @@ msgstr "Remove item"
 
 msgid "Delete calculation"
 msgstr "Delete calculation"
+
+msgid "Label shown in column/row headers"
+msgstr "Label shown in column/row headers"
 
 msgid "Cancel"
 msgstr "Cancel"
@@ -119,14 +119,8 @@ msgstr "Totals only"
 msgid "Details only"
 msgstr "Details only"
 
-msgid "Group"
-msgstr "Group"
-
 msgid "Loading"
 msgstr "Loading"
-
-msgid "Disaggregation"
-msgstr "Disaggregation"
 
 msgid "Data elements"
 msgstr "Data elements"
@@ -139,6 +133,9 @@ msgstr "Data Type"
 
 msgid "All types"
 msgstr "All types"
+
+msgid "Disaggregation"
+msgstr "Disaggregation"
 
 msgid ""
 "Drag items here, or double click in the list, to start building a "
