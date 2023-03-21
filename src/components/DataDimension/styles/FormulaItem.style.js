@@ -16,6 +16,7 @@ export default css`
 
     .content {
         display: inline-flex;
+        height: 24px;
         cursor: pointer;
         user-select: none;
         width: fit-content;

@@ -41,7 +41,6 @@ export default css`
         width: 55%;
         padding-left: ${spacers.dp8};
         font-size: 14px;
-        line-height: 24px;
     }
 
     .validation-message {
