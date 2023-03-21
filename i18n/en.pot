@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2023-03-20T09:55:37.000Z\n"
-"PO-Revision-Date: 2023-03-20T09:55:37.000Z\n"
+"POT-Creation-Date: 2023-03-21T14:12:05.989Z\n"
+"PO-Revision-Date: 2023-03-21T14:12:05.989Z\n"
 
 msgid "view only"
 msgstr "view only"
@@ -128,6 +128,12 @@ msgstr "Data elements"
 msgid "Search by data element name"
 msgstr "Search by data element name"
 
+msgid "No data elements found for \"{{- searchTerm}}\""
+msgstr "No data elements found for \"{{- searchTerm}}\""
+
+msgid "No data elements found"
+msgstr "No data elements found"
+
 msgid "Data Type"
 msgstr "Data Type"
 
@@ -159,9 +165,6 @@ msgstr "Selected Items"
 msgid "No indicators found"
 msgstr "No indicators found"
 
-msgid "No data elements found"
-msgstr "No data elements found"
-
 msgid "No data sets found"
 msgstr "No data sets found"
 
@@ -173,9 +176,6 @@ msgstr "No program indicators found"
 
 msgid "No indicators found for \"{{- searchTerm}}\""
 msgstr "No indicators found for \"{{- searchTerm}}\""
-
-msgid "No data elements found for \"{{- searchTerm}}\""
-msgstr "No data elements found for \"{{- searchTerm}}\""
 
 msgid "No data sets found for \"{{- searchTerm}}\""
 msgstr "No data sets found for \"{{- searchTerm}}\""
