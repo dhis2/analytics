@@ -272,18 +272,32 @@ const DataElementSelector = ({ displayNameProp, onDoubleClick }) => {
                         className="dimension-list-scroller"
                         data-test="dimension-list"
                     >
-                        <div ref={setDraggableNodeRef}>
-                            {options.map(({ label, value, type, disabled }) => (
-                                <DraggableTransferOption
-                                    label={label}
-                                    key={value}
-                                    value={value}
-                                    type={type}
-                                    disabled={disabled}
-                                    onDoubleClick={onDoubleClick}
-                                />
-                            ))}
-                        </div>
+                        {!loading && Boolean(options.length) && (
+                            <div ref={setDraggableNodeRef}>
+                                {options.map(
+                                    ({ label, value, type, disabled }) => (
+                                        <DraggableTransferOption
+                                            label={label}
+                                            key={value}
+                                            value={value}
+                                            type={type}
+                                            disabled={disabled}
+                                            onDoubleClick={onDoubleClick}
+                                        />
+                                    )
+                                )}
+                            </div>
+                        )}
+                        {!loading && !options.length && (
+                            <div className="emptyList">
+                                {searchTerm
+                                    ? i18n.t(
+                                          'No data elements found for "{{- searchTerm}}"',
+                                          { searchTerm }
+                                      )
+                                    : i18n.t('No data elements found')}
+                            </div>
+                        )}
                         <div className="scroll-detector">
                             <IntersectionDetector
                                 onChange={onEndReached}

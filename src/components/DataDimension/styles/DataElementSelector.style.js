@@ -61,4 +61,12 @@ export default css`
         width: 50%;
         margin-top: ${spacers.dp4};
     }
+
+    .emptyList {
+        text-align: center;
+        font-size: 14px;
+        line-height: 16px;
+        margin: ${spacers.dp24} 0 0;
+        color: ${colors.grey700};
+    }
 `
