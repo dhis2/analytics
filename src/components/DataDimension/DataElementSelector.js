@@ -1,8 +1,6 @@
 import { useDataEngine } from '@dhis2/app-runtime'
 import {
-    Center,
     CircularLoader,
-    Cover,
     InputField,
     IntersectionDetector,
     SingleSelectField,
@@ -171,6 +169,8 @@ const DataElementSelector = ({ displayNameProp, onDoubleClick }) => {
                         ? [...prevOptions, ...newOptions]
                         : newOptions
                 )
+
+                setLoading(false)
             }
 
             hasNextPageRef.current = result?.nextPage ? true : false
@@ -178,8 +178,6 @@ const DataElementSelector = ({ displayNameProp, onDoubleClick }) => {
             // TODO handle errors
             console.log('apiFetchOptions error: ', error)
         } finally {
-            setLoading(false)
-
             if (scrollToTop) {
                 rootRef.current.scrollTo({
                     top: 0,
@@ -265,15 +263,17 @@ const DataElementSelector = ({ displayNameProp, onDoubleClick }) => {
                 </div>
             </div>
             <div className="dimension-list-container">
-                <div
-                    className={cx('dimension-list-scrollbox', { loading })}
-                    ref={rootRef}
-                >
+                {loading && (
+                    <div className="dimension-list-overlay">
+                        <CircularLoader />
+                    </div>
+                )}
+                <div className="dimension-list-scrollbox" ref={rootRef}>
                     <div
-                        className="dimension-list-scroller"
+                        className={cx('dimension-list-scroller', { loading })}
                         data-test="dimension-list"
                     >
-                        {!loading && Boolean(options.length) && (
+                        {options.length ? (
                             <div ref={setDraggableNodeRef}>
                                 {options.map(
                                     ({ label, value, type, disabled }) => (
@@ -288,8 +288,7 @@ const DataElementSelector = ({ displayNameProp, onDoubleClick }) => {
                                     )
                                 )}
                             </div>
-                        )}
-                        {!loading && !options.length && (
+                        ) : (
                             <div className="emptyList">
                                 {searchTermRef.current
                                     ? i18n.t(
@@ -307,15 +306,6 @@ const DataElementSelector = ({ displayNameProp, onDoubleClick }) => {
                         </div>
                     </div>
                 </div>
-                {loading && (
-                    <div className="dimension-list-overlay">
-                        <Cover>
-                            <Center>
-                                <CircularLoader />
-                            </Center>
-                        </Cover>
-                    </div>
-                )}
             </div>
             <style jsx>{styles}</style>
         </>

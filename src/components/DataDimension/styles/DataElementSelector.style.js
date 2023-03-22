@@ -16,13 +16,13 @@ export default css`
         border: 1px solid ${colors.grey400};
     }
 
-    .dimension-list-scrollbox.loading {
-        filter: blur(2px);
-    }
-
     .dimension-list-scroller {
         position: relative;
         min-height: 1px;
+    }
+
+    .dimension-list-scroller.loading {
+        filter: blur(2px);
     }
 
     .scroll-detector {
@@ -36,8 +36,15 @@ export default css`
     }
 
     .dimension-list-overlay {
+        position: absolute;
         width: 100%;
         height: 100%;
+        z-index: 2;
+        top: 0;
+        left: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .filter-wrapper {
