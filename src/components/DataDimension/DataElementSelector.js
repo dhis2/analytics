@@ -188,8 +188,10 @@ const DataElementSelector = ({ displayNameProp, onDoubleClick }) => {
         }
     }
 
-    const debouncedFetchData = useDebounceCallback(() => {
+    const debouncedFetchData = useDebounceCallback((newSearchTerm) => {
+        hasNextPageRef.current = false
         pageRef.current = 1
+        searchTermRef.current = newSearchTerm
 
         fetchData(true)
     }, 500)
@@ -199,10 +201,8 @@ const DataElementSelector = ({ displayNameProp, onDoubleClick }) => {
 
         setSearchTerm(newSearchTerm)
 
-        searchTermRef.current = newSearchTerm
-
         // debounce the fetch
-        debouncedFetchData()
+        debouncedFetchData(newSearchTerm)
     }
 
     const onFilterChange = (newFilter) => {
@@ -217,6 +217,7 @@ const DataElementSelector = ({ displayNameProp, onDoubleClick }) => {
             filterRef.current.subGroup = newFilter.subGroup
         }
 
+        hasNextPageRef.current = false
         pageRef.current = 1
 
         fetchData(true)
@@ -290,10 +291,10 @@ const DataElementSelector = ({ displayNameProp, onDoubleClick }) => {
                         )}
                         {!loading && !options.length && (
                             <div className="emptyList">
-                                {searchTerm
+                                {searchTermRef.current
                                     ? i18n.t(
                                           'No data elements found for "{{- searchTerm}}"',
-                                          { searchTerm }
+                                          { searchTerm: searchTermRef.current }
                                       )
                                     : i18n.t('No data elements found')}
                             </div>
