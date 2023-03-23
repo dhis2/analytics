@@ -129,9 +129,7 @@ const DataElementSelector = ({ displayNameProp, onDoubleClick }) => {
     const [options, setOptions] = useState([])
     const [loading, setLoading] = useState(true)
 
-    const { setNodeRef: setDraggableNodeRef } = useSortable({
-        id: 'dataelements',
-    })
+    const { isSorting } = useSortable({})
 
     const rootRef = useRef()
     const hasNextPageRef = useRef(false)
@@ -268,26 +266,32 @@ const DataElementSelector = ({ displayNameProp, onDoubleClick }) => {
                         <CircularLoader />
                     </div>
                 )}
-                <div className="dimension-list-scrollbox" ref={rootRef}>
+                <div
+                    className="dimension-list-scrollbox"
+                    ref={rootRef}
+                    onScroll={() => {
+                        if (isSorting) {
+                            rootRef.current.scrollTo({
+                                top: 0,
+                            })
+                        }
+                    }}
+                >
                     <div
                         className={cx('dimension-list-scroller', { loading })}
                         data-test="dimension-list"
                     >
                         {options.length ? (
-                            <div ref={setDraggableNodeRef}>
-                                {options.map(
-                                    ({ label, value, type, disabled }) => (
-                                        <DraggableTransferOption
-                                            label={label}
-                                            key={value}
-                                            value={value}
-                                            type={type}
-                                            disabled={disabled}
-                                            onDoubleClick={onDoubleClick}
-                                        />
-                                    )
-                                )}
-                            </div>
+                            options.map(({ label, value, type, disabled }) => (
+                                <DraggableTransferOption
+                                    label={label}
+                                    key={value}
+                                    value={value}
+                                    type={type}
+                                    disabled={disabled}
+                                    onDoubleClick={onDoubleClick}
+                                />
+                            ))
                         ) : (
                             <div className="emptyList">
                                 {searchTermRef.current
