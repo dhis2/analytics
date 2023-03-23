@@ -7,7 +7,6 @@ import {
     ModalActions,
     ButtonStrip,
     InputField,
-    Tooltip,
 } from '@dhis2/ui'
 import cx from 'classnames'
 import PropTypes from 'prop-types'
@@ -23,6 +22,7 @@ import {
     INVALID_EXPRESSION,
     VALID_EXPRESSION,
 } from '../../modules/expressions.js'
+import { OfflineTooltip as Tooltip } from '../OfflineTooltip.js'
 import DataElementSelector from './DataElementSelector.js'
 import DndContext, { OPTIONS_PANEL } from './DndContext.js'
 import FormulaField, {
@@ -322,48 +322,31 @@ const CalculationModal = ({
                                           'Add a name to save this calculation'
                                       )
                             }
-                            placement="top"
-                            closeDelay={200}
+                            disabled={
+                                expressionStatus !== VALID_EXPRESSION || !name
+                            }
+                            disabledWhenOffline={false}
                         >
-                            {({ ref, onMouseOver, onMouseOut }) => (
-                                <span
-                                    ref={ref}
-                                    onMouseOver={
-                                        expressionStatus !== VALID_EXPRESSION ||
-                                        !name
-                                            ? onMouseOver
-                                            : undefined
-                                    }
-                                    onMouseOut={
-                                        expressionStatus !== VALID_EXPRESSION ||
-                                        !name
-                                            ? onMouseOut
-                                            : undefined
-                                    }
-                                    className="tooltip"
-                                >
-                                    <Button
-                                        primary
-                                        onClick={() =>
-                                            onSave({
-                                                id: calculation.id,
-                                                expression:
-                                                    parseArrayToExpression(
-                                                        expressionArray
-                                                    ),
-                                                name,
-                                            })
-                                        }
-                                        disabled={
-                                            expressionStatus !==
-                                                VALID_EXPRESSION || !name
-                                        }
-                                        dataTest="save-button"
-                                    >
-                                        {i18n.t('Save calculation')}
-                                    </Button>
-                                </span>
-                            )}
+                            <Button
+                                primary
+                                onClick={() =>
+                                    onSave({
+                                        id: calculation.id,
+                                        expression:
+                                            parseArrayToExpression(
+                                                expressionArray
+                                            ),
+                                        name,
+                                    })
+                                }
+                                disabled={
+                                    expressionStatus !== VALID_EXPRESSION ||
+                                    !name
+                                }
+                                dataTest="save-button"
+                            >
+                                {i18n.t('Save calculation')}
+                            </Button>
                         </Tooltip>
                     </ButtonStrip>
                 </ModalActions>
