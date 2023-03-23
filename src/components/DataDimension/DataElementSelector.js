@@ -273,7 +273,7 @@ const DataElementSelector = ({ displayNameProp, onDoubleClick }) => {
                         className={cx('dimension-list-scroller', { loading })}
                         data-test="dimension-list"
                     >
-                        {options.length ? (
+                        {Boolean(options.length) && (
                             <div ref={setDraggableNodeRef}>
                                 {options.map(
                                     ({ label, value, type, disabled }) => (
@@ -288,7 +288,8 @@ const DataElementSelector = ({ displayNameProp, onDoubleClick }) => {
                                     )
                                 )}
                             </div>
-                        ) : (
+                        )}
+                        {!loading && !options.length && (
                             <div className="emptyList">
                                 {searchTermRef.current
                                     ? i18n.t(
