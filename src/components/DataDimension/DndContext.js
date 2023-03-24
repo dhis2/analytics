@@ -3,7 +3,7 @@ import {
     DragOverlay,
     useSensor,
     useSensors,
-    PointerSensor,
+    PointerSensor as DndKitPointerSensor,
 } from '@dnd-kit/core'
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
@@ -77,6 +77,42 @@ const rectIntersectionCustom = ({
     }
 
     return collisions.sort(sortCollisionsDesc)
+}
+
+const isInteractiveElement = (el) => {
+    const interactiveElements = [
+        'button',
+        'input',
+        'textarea',
+        'select',
+        'option',
+    ]
+
+    if (interactiveElements.includes(el.tagName.toLowerCase())) {
+        return true
+    }
+
+    return false
+}
+
+// disable dragging if user is in an input
+class PointerSensor extends DndKitPointerSensor {
+    static activators = [
+        {
+            eventName: 'onPointerDown',
+            handler: ({ nativeEvent: event }) => {
+                if (
+                    !event.isPrimary ||
+                    event.button !== 0 ||
+                    isInteractiveElement(event.target)
+                ) {
+                    return false
+                }
+
+                return true
+            },
+        },
+    ]
 }
 
 const OuterDndContext = ({ children, onDragEnd, onDragStart }) => {
