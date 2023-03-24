@@ -5,7 +5,7 @@ export default css`
     .dragging-item {
         display: inline-flex;
         background: ${colors.grey200};
-        border-radius: 2px;
+        border-radius: 3px;
         font-size: 14px;
         line-height: 16px;
         cursor: pointer;
