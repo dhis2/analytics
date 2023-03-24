@@ -5,13 +5,13 @@ export default css`
     .dragging-item {
         display: inline-flex;
         background: ${colors.grey200};
-        border-radius: 3px;
+        border-radius: 2px;
         font-size: 14px;
         line-height: 16px;
         cursor: pointer;
         user-select: none;
         align-items: center;
-        opacity: 0.7;
+        border: 2px solid ${colors.blue500};
     }
 
     .operator,

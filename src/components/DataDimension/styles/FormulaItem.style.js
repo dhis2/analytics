@@ -13,6 +13,10 @@ export default css`
         user-select: none;
     }
 
+    .formula-item:not(.inactive) {
+        opacity: 0.5;
+    }
+
     .content {
         display: inline-flex;
         height: 24px;
