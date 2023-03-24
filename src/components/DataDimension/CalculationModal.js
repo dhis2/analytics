@@ -61,13 +61,22 @@ const CalculationModal = ({
         },
     }
 
-    const expressionIds = calculation?.expression
-        ?.match(/#{([a-zA-Z0-9#]+.*?)}/g)
-        ?.map((match) => match.slice(2, -1))
-
-    const { data } = useDataQuery(query, {
-        variables: { ids: expressionIds },
+    const { data, refetch } = useDataQuery(query, {
+        lazy: true,
     })
+
+    useEffect(() => {
+        const expressionIds = calculation.expression
+            ?.match(/#{([a-zA-Z0-9#]+.*?)}/g)
+            ?.map((match) => match.slice(2, -1))
+
+        // only fetch data if there are ids
+        if (expressionIds?.length) {
+            refetch({ ids: expressionIds })
+        } else {
+            setExpressionArray([])
+        }
+    }, [refetch, calculation])
 
     useEffect(() => {
         if (data) {
