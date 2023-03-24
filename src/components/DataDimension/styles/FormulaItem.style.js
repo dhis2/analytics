@@ -1,4 +1,4 @@
-import { colors, elevations, theme } from '@dhis2/ui'
+import { colors, theme } from '@dhis2/ui'
 import css from 'styled-jsx/css'
 
 export default css`
@@ -11,7 +11,6 @@ export default css`
         height: 24px;
         border-radius: 3px;
         user-select: none;
-        box-shadow: ${elevations.e100};
     }
 
     .content {
