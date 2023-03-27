@@ -9,6 +9,7 @@ import {
     EXPRESSION_TYPE_OPERATOR,
 } from '../../modules/expressions.js'
 import styles from './styles/DraggingItem.style.js'
+import formulaItemStyles from './styles/FormulaItem.style.js'
 
 const DraggingItem = ({ label, type, value }) => {
     const displayLabel =
@@ -17,7 +18,7 @@ const DraggingItem = ({ label, type, value }) => {
     return (
         <>
             <div
-                className={cx('dragging-item', {
+                className={cx('dragging', 'content', {
                     operator: type === EXPRESSION_TYPE_OPERATOR,
                     number: type === EXPRESSION_TYPE_NUMBER,
                     data: type === EXPRESSION_TYPE_DATA,
@@ -28,9 +29,10 @@ const DraggingItem = ({ label, type, value }) => {
                         {getIcon(DIMENSION_TYPE_DATA_ELEMENT)}
                     </span>
                 )}
-                <span>{displayLabel}</span>
+                <span className="label">{displayLabel}</span>
             </div>
             <style jsx>{styles}</style>
+            <style jsx>{formulaItemStyles}</style>
         </>
     )
 }

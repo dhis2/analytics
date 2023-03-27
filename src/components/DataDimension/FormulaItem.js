@@ -18,6 +18,8 @@ const AFTER = 'AFTER'
 
 const maxMsBetweenClicks = 300
 
+const TAG_INPUT = 'INPUT'
+
 const FormulaItem = ({
     id,
     label,
@@ -99,7 +101,7 @@ const FormulaItem = ({
         const tagname = e.target.tagName
         clearTimeout(clickTimeoutId)
         const to = setTimeout(function () {
-            if (tagname !== 'INPUT') {
+            if (tagname !== TAG_INPUT) {
                 onClick(id)
             } else {
                 inputRef.current && inputRef.current.focus()
@@ -111,7 +113,7 @@ const FormulaItem = ({
     const handleDoubleClick = (e) => {
         clearTimeout(clickTimeoutId)
         setClickTimeoutId(null)
-        if (e.target.tagName !== 'INPUT') {
+        if (e.target.tagName !== TAG_INPUT) {
             onDoubleClick(id)
         } else {
             inputRef.current && inputRef.current.focus()
@@ -123,10 +125,10 @@ const FormulaItem = ({
     const getContent = () => {
         if (type === EXPRESSION_TYPE_NUMBER) {
             return (
-                <div className="content">
+                <div className={cx('content', 'number')}>
                     {DragHandleIcon}
-                    <span className="input-positioner">
-                        <span className="width-machine" aria-hidden="true">
+                    <span className="number-positioner">
+                        <span className="number-width" aria-hidden="true">
                             {value}
                         </span>
                         <input
@@ -147,11 +149,11 @@ const FormulaItem = ({
         if (type === EXPRESSION_TYPE_DATA) {
             return (
                 <Tooltip content={label} placement="bottom">
-                    <div className="content">
+                    <div className={cx('content', 'data')}>
                         <span className="icon">
                             {getIcon(DIMENSION_TYPE_DATA_ELEMENT)}
                         </span>
-                        <span className="data-label">{label}</span>
+                        <span className="label">{label}</span>
                         <style jsx>{styles}</style>
                     </div>
                 </Tooltip>
@@ -159,8 +161,8 @@ const FormulaItem = ({
         }
 
         return (
-            <div className="content">
-                <span className="operator-label">{label}</span>
+            <div className={cx('content', 'operator')}>
+                <span className="label">{label}</span>
                 <style jsx>{styles}</style>
             </div>
         )

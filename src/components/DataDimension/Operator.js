@@ -1,7 +1,13 @@
 import { useSortable } from '@dnd-kit/sortable'
 import { CSS } from '@dnd-kit/utilities'
+import cx from 'classnames'
 import PropTypes from 'prop-types'
 import React from 'react'
+import {
+    EXPRESSION_TYPE_NUMBER,
+    EXPRESSION_TYPE_OPERATOR,
+} from '../../modules/expressions.js'
+import formulaItemStyles from './styles/FormulaItem.style.js'
 import styles from './styles/Operator.style.js'
 
 const Operator = ({ label, value, type, onDoubleClick }) => {
@@ -16,13 +22,17 @@ const Operator = ({ label, value, type, onDoubleClick }) => {
     return (
         <div {...attributes} {...listeners} ref={setNodeRef} style={style}>
             <div
-                className="operator"
+                className={cx('content', {
+                    operator: type === EXPRESSION_TYPE_OPERATOR,
+                    number: type === EXPRESSION_TYPE_NUMBER,
+                })}
                 data-test="operator"
                 onDoubleClick={() => onDoubleClick({ label, value, type })}
             >
                 <span>{label}</span>
             </div>
             <style jsx>{styles}</style>
+            <style jsx>{formulaItemStyles}</style>
         </div>
     )
 }

@@ -1,16 +1,12 @@
-import { colors, theme } from '@dhis2/ui'
+import { colors, spacers, theme } from '@dhis2/ui'
 import css from 'styled-jsx/css'
 
 export default css`
     .formula-item {
         position: relative;
         display: flex;
+        align-items: center;
         width: fit-content;
-        background: ${colors.grey200};
-        font-size: 14px;
-        height: 24px;
-        border-radius: 3px;
-        user-select: none;
     }
 
     .formula-item:not(.inactive) {
@@ -19,18 +15,53 @@ export default css`
 
     .content {
         display: inline-flex;
-        height: 24px;
+        align-items: center;
+        justify-content: center;
         cursor: pointer;
         user-select: none;
-        width: fit-content;
-        align-items: center;
-        padding: 2px;
+        height: 24px;
+        font-size: 14px;
+        border-radius: 3px;
+        background: ${colors.grey200};
     }
 
-    .input-positioner {
+    .icon {
+        display: inline-flex;
+        margin-right: 2px;
+    }
+
+    .operator {
+        padding: 0;
+        width: 24px;
+    }
+
+    .data {
+        padding: 0 ${spacers.dp4} 0 2px;
+    }
+
+    .operator .label {
+        margin-bottom: 1px;
+    }
+
+    .data .label {
+        max-width: 280px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+    /* number input */
+
+    .number-positioner {
         position: relative;
         line-height: 18px;
-        margin-right: 1px;
+        margin-right: 2px;
+    }
+
+    .number-width {
+        /* Add extra space for number spinner */
+        padding: 0 24px 0 0;
+        visibility: hidden;
     }
 
     .input {
@@ -46,28 +77,6 @@ export default css`
     .input:focus {
         background: white;
         border: 1px solid rgba(0, 0, 0, 0.2);
-    }
-
-    .width-machine {
-        /* Add extra space for number spinner */
-        padding: 0 24px 0 0;
-        visibility: hidden;
-    }
-
-    .icon {
-        display: inline-flex;
-    }
-
-    .operator-label {
-        padding: 0 6px;
-    }
-
-    .data-label {
-        padding: 0 4px;
-        max-width: 280px;
-        text-overflow: ellipsis;
-        overflow: hidden;
-        white-space: nowrap;
     }
 
     /* highlighted items */
