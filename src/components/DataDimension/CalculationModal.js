@@ -35,8 +35,10 @@ import styles from './styles/CalculationModal.style.js'
 const FIRST_POSITION = 0
 const LAST_POSITION = -1
 
+const EMPTY_EXPRESSION_ARRAY = []
+
 const CalculationModal = ({
-    calculation = {},
+    calculation,
     onSave,
     onClose,
     onDelete,
@@ -74,9 +76,9 @@ const CalculationModal = ({
         if (expressionIds?.length) {
             refetch({ ids: expressionIds })
         } else {
-            setExpressionArray([])
+            setExpressionArray(EMPTY_EXPRESSION_ARRAY)
         }
-    }, [refetch, calculation])
+    }, [refetch, calculation.expression])
 
     useEffect(() => {
         if (data) {
@@ -406,6 +408,10 @@ CalculationModal.propTypes = {
         id: PropTypes.string,
         name: PropTypes.string,
     }),
+}
+
+CalculationModal.defaultProps = {
+    calculation: {},
 }
 
 export default CalculationModal
