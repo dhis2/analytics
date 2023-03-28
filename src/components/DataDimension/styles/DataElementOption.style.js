@@ -16,7 +16,7 @@ export default css`
 
     .chip {
         display: inline-flex;
-        background: pink;
+        background: ${colors.grey200};
         font-size: 14px;
         padding: 2px ${spacers.dp8} 2px 2px;
         border-radius: 3px;
