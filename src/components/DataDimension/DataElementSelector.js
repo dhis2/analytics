@@ -20,7 +20,7 @@ import {
     DIMENSION_TYPE_DATA_ELEMENT,
     dataTypeMap as dataTypes,
 } from '../../modules/dataTypes.js'
-import DraggableTransferOption from './DraggableTransferOption.js'
+import DataElementOption from './DataElementOption.js'
 import styles from './styles/DataElementSelector.style.js'
 
 const getOptions = () => ({
@@ -157,7 +157,6 @@ const DataElementSelector = ({ displayNameProp, onDoubleClick }) => {
                 const newOptions = result.dimensionItems.map((item) => ({
                     label: item.name,
                     value: item.id,
-                    disabled: item.disabled,
                     type: item.dimensionItemType,
                     expression: item.expression,
                 }))
@@ -282,18 +281,16 @@ const DataElementSelector = ({ displayNameProp, onDoubleClick }) => {
                         data-test="dimension-list"
                     >
                         {Boolean(options.length) &&
-                            options.map(({ label, value, type, disabled }) => (
-                                <DraggableTransferOption
-                                    label={label}
+                            options.map(({ label, value }) => (
+                                <DataElementOption
                                     key={value}
+                                    label={label}
                                     value={value}
-                                    type={type}
-                                    disabled={disabled}
                                     onDoubleClick={onDoubleClick}
                                 />
                             ))}
                         {!loading && !options.length && (
-                            <div className="emptyList">
+                            <div className="empty-list">
                                 {searchTermRef.current
                                     ? i18n.t(
                                           'No data elements found for "{{- searchTerm}}"',

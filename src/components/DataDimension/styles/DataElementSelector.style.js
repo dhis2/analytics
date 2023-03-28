@@ -12,13 +12,13 @@ export default css`
         height: 337px;
         overflow: hidden;
         overflow-y: auto;
-        padding: ${spacers.dp4};
         border: 1px solid ${colors.grey400};
     }
 
     .dimension-list-scroller {
         position: relative;
         min-height: 1px;
+        padding: 0 ${spacers.dp4};
     }
 
     .dimension-list-scroller.loading {
@@ -69,7 +69,7 @@ export default css`
         margin-top: ${spacers.dp4};
     }
 
-    .emptyList {
+    .empty-list {
         text-align: center;
         font-size: 14px;
         line-height: 16px;

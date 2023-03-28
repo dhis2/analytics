@@ -36,7 +36,7 @@ export default css`
     }
 
     .data {
-        padding: 0 ${spacers.dp4} 0 2px;
+        padding: 0 ${spacers.dp8} 0 2px;
     }
 
     .operator .label {
@@ -55,7 +55,7 @@ export default css`
     .number-positioner {
         position: relative;
         line-height: 18px;
-        margin-right: 2px;
+        margin-right: 4px;
     }
 
     .number-width {

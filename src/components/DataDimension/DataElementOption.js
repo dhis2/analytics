@@ -2,30 +2,23 @@ import { useSortable } from '@dnd-kit/sortable'
 import { CSS } from '@dnd-kit/utilities'
 import PropTypes from 'prop-types'
 import React from 'react'
+import { DIMENSION_TYPE_DATA_ELEMENT } from '../../modules/dataTypes.js'
 import { getIcon } from '../../modules/dimensionListItem.js'
 import { EXPRESSION_TYPE_DATA } from '../../modules/expressions.js'
-import { TransferOption } from '../TransferOption.js'
-import styles from './styles/DraggableTransferOption.style.js'
+import styles from './styles/DataElementOption.style.js'
 
-const DraggableTransferOption = ({
-    label,
-    value,
-    type,
-    disabled,
-    onDoubleClick,
-}) => {
+const DraggableTransferOption = ({ label, value, onDoubleClick }) => {
     const data = { label, value, type: EXPRESSION_TYPE_DATA }
     const { attributes, listeners, setNodeRef, transform } = useSortable({
         id: value,
         data,
-        disabled,
     })
     const style = {
         transform: CSS.Translate.toString(transform),
     }
 
     return (
-        <>
+        <div className="wrapper">
             <div
                 className="draggable-item"
                 {...attributes}
@@ -33,26 +26,20 @@ const DraggableTransferOption = ({
                 ref={setNodeRef}
                 style={style}
             >
-                <TransferOption
-                    label={label}
-                    value={value}
-                    icon={getIcon(type)}
-                    disabled={disabled}
-                    onClick={Function.prototype}
-                    onDoubleClick={() => onDoubleClick(data)}
-                    dataTest="dimension-option"
-                />
+                <div className="chip" onDoubleClick={() => onDoubleClick(data)}>
+                    <span className="icon">
+                        {getIcon(DIMENSION_TYPE_DATA_ELEMENT)}
+                    </span>
+                    <span className="label">{label}</span>
+                </div>
             </div>
             <style jsx>{styles}</style>
-        </>
+        </div>
     )
 }
 
 DraggableTransferOption.propTypes = {
-    disabled: PropTypes.bool,
-    id: PropTypes.string,
     label: PropTypes.string,
-    type: PropTypes.string,
     value: PropTypes.string,
     onDoubleClick: PropTypes.func,
 }
