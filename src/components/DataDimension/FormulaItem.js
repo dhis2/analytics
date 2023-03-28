@@ -45,7 +45,6 @@ const FormulaItem = ({
         transition,
     } = useSortable({
         id,
-        attributes: { tabIndex: isLast ? -1 : 0 },
         data: { label, type, value },
     })
 
@@ -184,18 +183,17 @@ const FormulaItem = ({
         <>
             <div
                 ref={setNodeRef}
-                {...attributes}
-                {...listeners}
                 className={cx({ 'last-item': isLast })}
                 style={style}
             >
                 <div
+                    {...attributes}
+                    {...listeners}
                     className={cx('formula-item', {
                         inactive: !isDragging,
                         insertBefore: insertPosition === BEFORE,
                         insertAfter: insertPosition === AFTER,
                     })}
-                    tabIndex={isLast ? 0 : -1}
                     onClick={handleClick}
                     onDoubleClick={handleDoubleClick}
                 >
