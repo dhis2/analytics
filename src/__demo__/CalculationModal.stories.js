@@ -1,7 +1,7 @@
 import { CustomDataProvider } from '@dhis2/app-runtime'
 import { storiesOf } from '@storybook/react'
 import React from 'react'
-import CalculationModal from '../components/DataDimension/CalculationModal.js'
+import CalculationModal from '../components/DataDimension/Calculation/CalculationModal.js'
 
 const DATA_ELEMENTS = {
     pager: {

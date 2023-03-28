@@ -6,7 +6,7 @@ import React from 'react'
 import {
     EXPRESSION_TYPE_NUMBER,
     EXPRESSION_TYPE_OPERATOR,
-} from '../../modules/expressions.js'
+} from '../../../modules/expressions.js'
 import formulaItemStyles from './styles/FormulaItem.style.js'
 import styles from './styles/Operator.style.js'
 

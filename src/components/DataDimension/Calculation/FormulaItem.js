@@ -4,12 +4,12 @@ import { CSS } from '@dnd-kit/utilities'
 import cx from 'classnames'
 import PropTypes from 'prop-types'
 import React, { useState, useRef, useEffect } from 'react'
-import { DIMENSION_TYPE_DATA_ELEMENT } from '../../modules/dataTypes.js'
-import { getIcon } from '../../modules/dimensionListItem.js'
+import { DIMENSION_TYPE_DATA_ELEMENT } from '../../../modules/dataTypes.js'
+import { getIcon } from '../../../modules/dimensionListItem.js'
 import {
     EXPRESSION_TYPE_NUMBER,
     EXPRESSION_TYPE_DATA,
-} from '../../modules/expressions.js'
+} from '../../../modules/expressions.js'
 import DragHandleIcon from './DragHandleIcon.js'
 import styles from './styles/FormulaItem.style.js'
 

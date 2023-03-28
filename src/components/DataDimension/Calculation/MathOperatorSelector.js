@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import React from 'react'
-import i18n from '../../locales/index.js'
-import { getOperators } from '../../modules/expressions.js'
+import i18n from '../../../locales/index.js'
+import { getOperators } from '../../../modules/expressions.js'
 import DraggableOperator from './Operator.js'
 import styles from './styles/MathOperatorSelector.style.js'
 

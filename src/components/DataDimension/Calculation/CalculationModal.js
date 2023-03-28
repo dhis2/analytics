@@ -11,8 +11,8 @@ import {
 import cx from 'classnames'
 import PropTypes from 'prop-types'
 import React, { useEffect, useState } from 'react'
-import { validateExpressionMutation } from '../../api/expression.js'
-import i18n from '../../locales/index.js'
+import { validateExpressionMutation } from '../../../api/expression.js'
+import i18n from '../../../locales/index.js'
 import {
     parseExpressionToArray,
     parseArrayToExpression,
@@ -21,8 +21,8 @@ import {
     EXPRESSION_TYPE_NUMBER,
     INVALID_EXPRESSION,
     VALID_EXPRESSION,
-} from '../../modules/expressions.js'
-import { OfflineTooltip as Tooltip } from '../OfflineTooltip.js'
+} from '../../../modules/expressions.js'
+import { OfflineTooltip as Tooltip } from '../../OfflineTooltip.js'
 import DataElementSelector from './DataElementSelector.js'
 import DndContext, { OPTIONS_PANEL } from './DndContext.js'
 import FormulaField, {

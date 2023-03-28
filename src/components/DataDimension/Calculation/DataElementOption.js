@@ -2,9 +2,9 @@ import { useSortable } from '@dnd-kit/sortable'
 import { CSS } from '@dnd-kit/utilities'
 import PropTypes from 'prop-types'
 import React from 'react'
-import { DIMENSION_TYPE_DATA_ELEMENT } from '../../modules/dataTypes.js'
-import { getIcon } from '../../modules/dimensionListItem.js'
-import { EXPRESSION_TYPE_DATA } from '../../modules/expressions.js'
+import { DIMENSION_TYPE_DATA_ELEMENT } from '../../../modules/dataTypes.js'
+import { getIcon } from '../../../modules/dimensionListItem.js'
+import { EXPRESSION_TYPE_DATA } from '../../../modules/expressions.js'
 import styles from './styles/DataElementOption.style.js'
 
 const DataElementOption = ({ label, value, onDoubleClick }) => {

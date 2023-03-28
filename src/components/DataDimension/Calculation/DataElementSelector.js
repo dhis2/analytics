@@ -11,15 +11,15 @@ import { useDebounceCallback } from '@react-hook/debounce'
 import cx from 'classnames'
 import PropTypes from 'prop-types'
 import React, { useEffect, useRef, useState } from 'react'
-import { apiFetchOptions, apiFetchGroups } from '../../api/dimensions.js'
-import i18n from '../../locales/index.js'
+import { apiFetchOptions, apiFetchGroups } from '../../../api/dimensions.js'
+import i18n from '../../../locales/index.js'
 import {
     TOTALS,
     DETAIL,
     DIMENSION_TYPE_ALL,
     DIMENSION_TYPE_DATA_ELEMENT,
     dataTypeMap as dataTypes,
-} from '../../modules/dataTypes.js'
+} from '../../../modules/dataTypes.js'
 import DataElementOption from './DataElementOption.js'
 import styles from './styles/DataElementSelector.style.js'
 
