@@ -7,7 +7,7 @@ import { getIcon } from '../../modules/dimensionListItem.js'
 import { EXPRESSION_TYPE_DATA } from '../../modules/expressions.js'
 import styles from './styles/DataElementOption.style.js'
 
-const DraggableTransferOption = ({ label, value, onDoubleClick }) => {
+const DataElementOption = ({ label, value, onDoubleClick }) => {
     const data = { label, value, type: EXPRESSION_TYPE_DATA }
     const { attributes, listeners, setNodeRef, transform } = useSortable({
         id: value,
@@ -38,10 +38,10 @@ const DraggableTransferOption = ({ label, value, onDoubleClick }) => {
     )
 }
 
-DraggableTransferOption.propTypes = {
+DataElementOption.propTypes = {
     label: PropTypes.string,
     value: PropTypes.string,
     onDoubleClick: PropTypes.func,
 }
 
-export default DraggableTransferOption
+export default DataElementOption

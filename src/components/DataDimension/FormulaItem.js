@@ -125,7 +125,11 @@ const FormulaItem = ({
     const getContent = () => {
         if (type === EXPRESSION_TYPE_NUMBER) {
             return (
-                <div className={cx('content', 'number')}>
+                <div
+                    className={cx('content', 'number', {
+                        highlighted: isHighlighted,
+                    })}
+                >
                     {DragHandleIcon}
                     <span className="number-positioner">
                         <span className="number-width" aria-hidden="true">
@@ -149,7 +153,11 @@ const FormulaItem = ({
         if (type === EXPRESSION_TYPE_DATA) {
             return (
                 <Tooltip content={label} placement="bottom">
-                    <div className={cx('content', 'data')}>
+                    <div
+                        className={cx('content', 'data', {
+                            highlighted: isHighlighted,
+                        })}
+                    >
                         <span className="icon">
                             {getIcon(DIMENSION_TYPE_DATA_ELEMENT)}
                         </span>
@@ -161,7 +169,11 @@ const FormulaItem = ({
         }
 
         return (
-            <div className={cx('content', 'operator')}>
+            <div
+                className={cx('content', 'operator', {
+                    highlighted: isHighlighted,
+                })}
+            >
                 <span className="label">{label}</span>
                 <style jsx>{styles}</style>
             </div>
@@ -182,7 +194,6 @@ const FormulaItem = ({
                         inactive: !isDragging,
                         insertBefore: insertPosition === BEFORE,
                         insertAfter: insertPosition === AFTER,
-                        highlighted: isHighlighted,
                     })}
                     tabIndex={isLast ? 0 : -1}
                     onClick={handleClick}
