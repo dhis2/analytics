@@ -5,28 +5,26 @@ import { getOperators } from '../../../modules/expressions.js'
 import DraggableOperator from './Operator.js'
 import styles from './styles/MathOperatorSelector.style.js'
 
-const MathOperatorSelector = ({ onDoubleClick }) => {
-    return (
-        <>
-            <div className="wrapper">
-                <h4 className="sub-header">{i18n.t('Math operators')}</h4>
-                <div className="operators">
-                    {getOperators().map(({ label, value, type }, index) => (
-                        <DraggableOperator
-                            key={`${label}-${index}`}
-                            label={label}
-                            value={value}
-                            type={type}
-                            index={index}
-                            onDoubleClick={onDoubleClick}
-                        />
-                    ))}
-                </div>
+const MathOperatorSelector = ({ onDoubleClick }) => (
+    <>
+        <div className="wrapper">
+            <h4 className="sub-header">{i18n.t('Math operators')}</h4>
+            <div className="operators">
+                {getOperators().map(({ label, value, type }, index) => (
+                    <DraggableOperator
+                        key={`${label}-${index}`}
+                        label={label}
+                        value={value}
+                        type={type}
+                        index={index}
+                        onDoubleClick={onDoubleClick}
+                    />
+                ))}
             </div>
-            <style jsx>{styles}</style>
-        </>
-    )
-}
+        </div>
+        <style jsx>{styles}</style>
+    </>
+)
 
 MathOperatorSelector.propTypes = {
     onDoubleClick: PropTypes.func.isRequired,

@@ -56,7 +56,7 @@ const FormulaItem = ({
         if (hasFocus && inputRef.current) {
             // setTimeout seems to be needed in order for the cursor
             // to remain in the input. Without it, the cursor disappears
-            // even though the input still has the focus. Not sure why.
+            // even though the input still has the focus.
             setTimeout(() => {
                 inputRef.current.focus()
             }, 50)
