@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2023-03-21T14:12:05.989Z\n"
-"PO-Revision-Date: 2023-03-21T14:12:05.989Z\n"
+"POT-Creation-Date: 2023-03-30T12:39:52.348Z\n"
+"PO-Revision-Date: 2023-03-30T12:39:52.349Z\n"
 
 msgid "view only"
 msgstr "view only"
@@ -134,6 +134,16 @@ msgstr "No data elements found for \"{{- searchTerm}}\""
 msgid "No data elements found"
 msgstr "No data elements found"
 
+msgid ""
+"Drag items here, or double click in the list, to start building a "
+"calculation formula"
+msgstr ""
+"Drag items here, or double click in the list, to start building a "
+"calculation formula"
+
+msgid "Math operators"
+msgstr "Math operators"
+
 msgid "Data Type"
 msgstr "Data Type"
 
@@ -142,13 +152,6 @@ msgstr "All types"
 
 msgid "Disaggregation"
 msgstr "Disaggregation"
-
-msgid ""
-"Drag items here, or double click in the list, to start building a "
-"calculation formula"
-msgstr ""
-"Drag items here, or double click in the list, to start building a "
-"calculation formula"
 
 msgid "No data"
 msgstr "No data"
@@ -191,9 +194,6 @@ msgstr "Nothing found for \"{{- searchTerm}}\""
 
 msgid "Calculation"
 msgstr "Calculation"
-
-msgid "Math operators"
-msgstr "Math operators"
 
 msgid "Metric type"
 msgstr "Metric type"

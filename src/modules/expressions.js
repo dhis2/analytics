@@ -59,8 +59,6 @@ export const parseArrayToExpression = (input = []) =>
 
 export const validateExpression = (expression) => {
     let result
-    // TODO: two numbers next to each other
-
     const leftParenthesisCount = expression.split('(').length - 1
     const rightParenthesisCount = expression.split(')').length - 1
 
