@@ -1,7 +1,7 @@
 import { CustomDataProvider } from '@dhis2/app-runtime'
 import { storiesOf } from '@storybook/react'
 import React from 'react'
-import CalculationModal from '../components/DataDimension/CalculationModal.js'
+import CalculationModal from '../components/DataDimension/Calculation/CalculationModal.js'
 
 const DATA_ELEMENTS = {
     pager: {
@@ -270,6 +270,48 @@ storiesOf('CalculationModal', module)
             >
                 <CalculationModal
                     calculation={calculationWithOperand}
+                    displayNameProp="name"
+                    onClose={Function.prototype}
+                    onDelete={Function.prototype}
+                    onSave={Function.prototype}
+                />
+            </CustomDataProvider>
+        )
+    })
+    .add('No available data', () => {
+        return (
+            <CustomDataProvider
+                data={{
+                    dataElements: {
+                        pager: {
+                            page: 1,
+                            total: 0,
+                            pageSize: 50,
+                            pageCount: 1,
+                        },
+                        dataElements: [],
+                    },
+                    dataElementGroups: {
+                        pager: {
+                            page: 1,
+                            total: 0,
+                            pageSize: 50,
+                            pageCount: 1,
+                        },
+                        dataElementGroups: [],
+                    },
+                    dataElementOperands: {
+                        pager: {
+                            page: 1,
+                            total: 0,
+                            pageSize: 50,
+                            pageCount: 1,
+                        },
+                        dataElementOperands: [],
+                    },
+                }}
+            >
+                <CalculationModal
                     displayNameProp="name"
                     onClose={Function.prototype}
                     onDelete={Function.prototype}

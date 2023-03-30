@@ -4,12 +4,12 @@ import { CSS } from '@dnd-kit/utilities'
 import cx from 'classnames'
 import PropTypes from 'prop-types'
 import React, { useState, useRef, useEffect } from 'react'
-import { DIMENSION_TYPE_DATA_ELEMENT } from '../../modules/dataTypes.js'
-import { getIcon } from '../../modules/dimensionListItem.js'
+import { DIMENSION_TYPE_DATA_ELEMENT } from '../../../modules/dataTypes.js'
+import { getIcon } from '../../../modules/dimensionListItem.js'
 import {
     EXPRESSION_TYPE_NUMBER,
     EXPRESSION_TYPE_DATA,
-} from '../../modules/expressions.js'
+} from '../../../modules/expressions.js'
 import DragHandleIcon from './DragHandleIcon.js'
 import styles from './styles/FormulaItem.style.js'
 
@@ -45,7 +45,6 @@ const FormulaItem = ({
         transition,
     } = useSortable({
         id,
-        attributes: { tabIndex: isLast ? -1 : 0 },
         data: { label, type, value },
     })
 
@@ -57,7 +56,7 @@ const FormulaItem = ({
         if (hasFocus && inputRef.current) {
             // setTimeout seems to be needed in order for the cursor
             // to remain in the input. Without it, the cursor disappears
-            // even though the input still has the focus. Not sure why.
+            // even though the input still has the focus.
             setTimeout(() => {
                 inputRef.current.focus()
             }, 50)
@@ -125,7 +124,11 @@ const FormulaItem = ({
     const getContent = () => {
         if (type === EXPRESSION_TYPE_NUMBER) {
             return (
-                <div className={cx('content', 'number')}>
+                <div
+                    className={cx('content', 'number', {
+                        highlighted: isHighlighted,
+                    })}
+                >
                     {DragHandleIcon}
                     <span className="number-positioner">
                         <span className="number-width" aria-hidden="true">
@@ -149,7 +152,11 @@ const FormulaItem = ({
         if (type === EXPRESSION_TYPE_DATA) {
             return (
                 <Tooltip content={label} placement="bottom">
-                    <div className={cx('content', 'data')}>
+                    <div
+                        className={cx('content', 'data', {
+                            highlighted: isHighlighted,
+                        })}
+                    >
                         <span className="icon">
                             {getIcon(DIMENSION_TYPE_DATA_ELEMENT)}
                         </span>
@@ -161,7 +168,11 @@ const FormulaItem = ({
         }
 
         return (
-            <div className={cx('content', 'operator')}>
+            <div
+                className={cx('content', 'operator', {
+                    highlighted: isHighlighted,
+                })}
+            >
                 <span className="label">{label}</span>
                 <style jsx>{styles}</style>
             </div>
@@ -172,19 +183,17 @@ const FormulaItem = ({
         <>
             <div
                 ref={setNodeRef}
-                {...attributes}
-                {...listeners}
                 className={cx({ 'last-item': isLast })}
                 style={style}
             >
                 <div
+                    {...attributes}
+                    {...listeners}
                     className={cx('formula-item', {
                         inactive: !isDragging,
                         insertBefore: insertPosition === BEFORE,
                         insertAfter: insertPosition === AFTER,
-                        highlighted: isHighlighted,
                     })}
-                    tabIndex={isLast ? 0 : -1}
                     onClick={handleClick}
                     onDoubleClick={handleDoubleClick}
                 >
