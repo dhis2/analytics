@@ -35,8 +35,6 @@ import styles from './styles/CalculationModal.style.js'
 const FIRST_POSITION = 0
 const LAST_POSITION = -1
 
-const EMPTY_EXPRESSION_ARRAY = []
-
 const CalculationModal = ({
     calculation,
     onSave,
@@ -76,7 +74,14 @@ const CalculationModal = ({
         if (expressionIds?.length) {
             refetch({ ids: expressionIds })
         } else {
-            setExpressionArray(EMPTY_EXPRESSION_ARRAY)
+            setExpressionArray(
+                parseExpressionToArray(calculation.expression).map(
+                    (item, i) => ({
+                        ...item,
+                        id: `${item.type}-${-i}`,
+                    })
+                )
+            )
         }
     }, [refetch, calculation.expression])
 
