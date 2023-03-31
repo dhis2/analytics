@@ -35,7 +35,8 @@ export default css`
         width: 24px;
     }
 
-    .data {
+    .data,
+    .number {
         padding: 0 ${spacers.dp8} 0 2px;
     }
 
@@ -55,7 +56,6 @@ export default css`
     .number-positioner {
         position: relative;
         line-height: 18px;
-        margin-right: 4px;
     }
 
     .number-width {

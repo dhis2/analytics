@@ -7,6 +7,6 @@ export default css`
     }
 
     .number {
-        padding: 0 ${spacers.dp4};
+        padding: 0 ${spacers.dp8};
     }
 `

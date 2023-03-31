@@ -32,8 +32,8 @@ const Operator = ({ label, value, type, onDoubleClick }) => {
             >
                 <span>{label}</span>
             </div>
-            <style jsx>{styles}</style>
             <style jsx>{formulaItemStyles}</style>
+            <style jsx>{styles}</style>
         </div>
     )
 }
