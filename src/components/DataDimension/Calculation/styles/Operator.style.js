@@ -3,7 +3,7 @@ import css from 'styled-jsx/css'
 
 export default css`
     .number {
-        padding: 0 ${spacers.dp4};
+        padding: 0 ${spacers.dp8};
     }
 
     .operator:hover,
