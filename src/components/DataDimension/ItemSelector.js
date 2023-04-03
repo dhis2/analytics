@@ -403,16 +403,18 @@ const ItemSelector = ({
         // reload the list of options
         fetchItems(1)
 
-        // select the new calculation
-        onSelect([
-            ...selectedItems,
-            {
-                value: response?.response.uid,
-                label: name,
-                expression,
-                type: DIMENSION_TYPE_EXPRESSION_DIMENSION_ITEM,
-            },
-        ])
+        if (!id) {
+            // select the new calculation
+            onSelect([
+                ...selectedItems,
+                {
+                    value: response?.response.uid,
+                    label: name,
+                    expression,
+                    type: DIMENSION_TYPE_EXPRESSION_DIMENSION_ITEM,
+                },
+            ])
+        }
     }
 
     const onDeleteCalculation = async ({ id }) => {
