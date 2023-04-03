@@ -110,3 +110,9 @@ export const validateExpression = (expression) => {
 
     return result
 }
+
+export const getItemIdsFromExpression = (expression = '') => {
+    const regex = /#{([a-zA-Z0-9#]+.*?)}/g
+    const matches = expression.match(regex)
+    return matches ? matches.map((match) => match.slice(2, -1)) : []
+}

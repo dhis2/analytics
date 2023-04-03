@@ -21,6 +21,7 @@ import {
     EXPRESSION_TYPE_NUMBER,
     INVALID_EXPRESSION,
     VALID_EXPRESSION,
+    getItemIdsFromExpression,
 } from '../../../modules/expressions.js'
 import { OfflineTooltip as Tooltip } from '../../OfflineTooltip.js'
 import DataElementSelector from './DataElementSelector.js'
@@ -66,13 +67,11 @@ const CalculationModal = ({
     })
 
     useEffect(() => {
-        const expressionIds = calculation.expression
-            ?.match(/#{([a-zA-Z0-9#]+.*?)}/g)
-            ?.map((match) => match.slice(2, -1))
+        const ids = getItemIdsFromExpression(calculation.expression)
 
         // only fetch data if there are ids
-        if (expressionIds?.length) {
-            refetch({ ids: expressionIds })
+        if (ids?.length) {
+            refetch({ ids })
         } else {
             setExpressionArray(
                 parseExpressionToArray(calculation.expression).map(
