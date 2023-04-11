@@ -20,6 +20,11 @@ export default css`
         margin-left: ${spacers.dp4};
     }
 
+    .validate-button {
+        margin-bottom: ${spacers.dp4};
+        display: inline-block;
+    }
+
     .remove-button {
         display: inline-block;
         margin-left: ${spacers.dp8};
@@ -56,6 +61,6 @@ export default css`
     }
 
     .name-input {
-        margin-top: ${spacers.dp16};
+        margin-top: ${spacers.dp12};
     }
 `

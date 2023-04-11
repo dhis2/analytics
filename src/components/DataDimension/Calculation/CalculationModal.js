@@ -249,14 +249,16 @@ const CalculationModal = ({
                                     loading={!expressionArray}
                                 />
                                 <div className="actions-wrapper">
-                                    <Button
-                                        small
-                                        onClick={validate}
-                                        dataTest="validate-button"
-                                    >
-                                        {/* TODO: add loading state to button? */}
-                                        {i18n.t('Check formula')}
-                                    </Button>
+                                    <div className="validate-button">
+                                        <Button
+                                            small
+                                            onClick={validate}
+                                            dataTest="validate-button"
+                                        >
+                                            {/* TODO: add loading state to button? */}
+                                            {i18n.t('Check formula')}
+                                        </Button>
+                                    </div>
                                     {selectedItemId !== null && (
                                         <div className="remove-button">
                                             <Button
