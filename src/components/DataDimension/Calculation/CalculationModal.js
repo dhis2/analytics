@@ -103,9 +103,12 @@ const CalculationModal = ({
     }, [data, calculation.expression])
 
     const { show: showError } = useAlert((error) => error, { critical: true })
-    const [doBackendValidation] = useDataMutation(validateExpressionMutation, {
-        onError: (error) => showError(error),
-    })
+    const [doBackendValidation, { loading: isValidating }] = useDataMutation(
+        validateExpressionMutation,
+        {
+            onError: (error) => showError(error),
+        }
+    )
 
     const [newIdCount, setNewIdCount] = useState(1)
 
@@ -184,6 +187,7 @@ const CalculationModal = ({
     }
 
     const validate = async () => {
+        setValidationOutput()
         const expression = parseArrayToExpression(expressionArray)
         let result = validateExpression(expression)
         if (!result) {
@@ -254,6 +258,7 @@ const CalculationModal = ({
                                             small
                                             onClick={validate}
                                             dataTest="validate-button"
+                                            disabled={isValidating}
                                         >
                                             {/* TODO: add loading state to button? */}
                                             {i18n.t('Check formula')}
