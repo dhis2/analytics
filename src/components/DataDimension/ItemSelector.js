@@ -1,13 +1,8 @@
-import { useAlert, useDataEngine, useDataMutation } from '@dhis2/app-runtime'
+import { useDataEngine } from '@dhis2/app-runtime'
 import { Transfer, InputField, IconInfo16, Button, IconAdd24 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 import { apiFetchOptions } from '../../api/dimensions.js'
-import {
-    createCalculationMutation,
-    deleteCalculationMutation,
-    updateCalculationMutation,
-} from '../../api/expression.js'
 import i18n from '../../locales/index.js'
 import { DATA_SETS_CONSTANTS, REPORTING_RATE } from '../../modules/dataSets.js'
 import {
@@ -357,41 +352,9 @@ const ItemSelector = ({
             (item) => item.value === value
         )?.type
 
-    const { show: showError } = useAlert((error) => error, { critical: true })
-    const mutationParams = { onError: (error) => showError(error) }
-    const [createCalculation] = useDataMutation(
-        createCalculationMutation,
-        mutationParams
-    )
-    const [updateCalculation] = useDataMutation(
-        updateCalculationMutation,
-        mutationParams
-    )
-    const [deleteCalculation] = useDataMutation(
-        deleteCalculationMutation,
-        mutationParams
-    )
-
-    const onSaveCalculation = async ({ id, name, expression }) => {
-        // TODO: move this to within CalculationModal.js instead? unless there's a reason to keep it in the item selector..
-
-        let response
-
-        if (id) {
-            response = await updateCalculation({
-                id,
-                name,
-                expression,
-            })
-        } else {
-            response = await createCalculation({
-                name,
-                expression,
-            })
-        }
-
+    const onSaveCalculation = async ({ id, name, expression, isNew }) => {
         onEDISave({
-            id: id || response?.response.uid,
+            id,
             name,
             expression,
             type: DIMENSION_TYPE_EXPRESSION_DIMENSION_ITEM,
@@ -403,12 +366,12 @@ const ItemSelector = ({
         // reload the list of options
         fetchItems(1)
 
-        if (!id) {
+        if (isNew) {
             // select the new calculation
             onSelect([
                 ...selectedItems,
                 {
-                    value: response?.response.uid,
+                    value: id,
                     label: name,
                     expression,
                     type: DIMENSION_TYPE_EXPRESSION_DIMENSION_ITEM,
@@ -417,11 +380,7 @@ const ItemSelector = ({
         }
     }
 
-    const onDeleteCalculation = async ({ id }) => {
-        await deleteCalculation({
-            id,
-        })
-
+    const onDeleteCalculation = ({ id }) => {
         // close the modal
         setCurrentCalculation()
 

@@ -11,7 +11,12 @@ import {
 import cx from 'classnames'
 import PropTypes from 'prop-types'
 import React, { useEffect, useState } from 'react'
-import { validateExpressionMutation } from '../../../api/expression.js'
+import {
+    createCalculationMutation,
+    deleteCalculationMutation,
+    updateCalculationMutation,
+    validateExpressionMutation,
+} from '../../../api/expression.js'
 import i18n from '../../../locales/index.js'
 import {
     parseExpressionToArray,
@@ -43,6 +48,21 @@ const CalculationModal = ({
     onDelete,
     displayNameProp,
 }) => {
+    const { show: showError } = useAlert((error) => error, { critical: true })
+    const mutationParams = { onError: (error) => showError(error) }
+    const [createCalculation, { loading: isCreatingCalculation }] =
+        useDataMutation(createCalculationMutation, mutationParams)
+    const [updateCalculation, { loading: isUpdatingCalculation }] =
+        useDataMutation(updateCalculationMutation, mutationParams)
+    const [deleteCalculation, { loading: isDeletingCalculation }] =
+        useDataMutation(deleteCalculationMutation, mutationParams)
+    const [doBackendValidation, { loading: isValidating }] = useDataMutation(
+        validateExpressionMutation,
+        {
+            onError: (error) => showError(error),
+        }
+    )
+
     const query = {
         dataElements: {
             resource: 'dataElements',
@@ -101,14 +121,6 @@ const CalculationModal = ({
             )
         }
     }, [data, calculation.expression])
-
-    const { show: showError } = useAlert((error) => error, { critical: true })
-    const [doBackendValidation, { loading: isValidating }] = useDataMutation(
-        validateExpressionMutation,
-        {
-            onError: (error) => showError(error),
-        }
-    )
 
     const [newIdCount, setNewIdCount] = useState(1)
 
@@ -221,6 +233,38 @@ const CalculationModal = ({
         }
     }
 
+    const onSaveClick = async () => {
+        let response
+        const expression = parseArrayToExpression(expressionArray)
+
+        if (calculation.id) {
+            response = await updateCalculation({
+                id: calculation.id,
+                name,
+                expression,
+            })
+        } else {
+            response = await createCalculation({
+                name,
+                expression,
+            })
+        }
+
+        onSave({
+            id: calculation.id || response?.response.uid,
+            name,
+            isNew: !calculation.id,
+        })
+    }
+
+    const onDeleteClick = async () => {
+        setShowDeletePrompt()
+        await deleteCalculation(calculation.id)
+        onDelete({
+            id: calculation.id,
+        })
+    }
+
     return (
         <>
             <Modal dataTest="calculation-modal" position="top" large>
@@ -258,9 +302,8 @@ const CalculationModal = ({
                                             small
                                             onClick={validate}
                                             dataTest="validate-button"
-                                            disabled={isValidating}
+                                            loading={isValidating}
                                         >
-                                            {/* TODO: add loading state to button? */}
                                             {i18n.t('Check formula')}
                                         </Button>
                                     </div>
@@ -298,6 +341,8 @@ const CalculationModal = ({
                                                     setShowDeletePrompt(true)
                                                 }
                                                 dataTest="delete-button"
+                                                loading={isDeletingCalculation}
+                                                disabled={isUpdatingCalculation}
                                             >
                                                 {i18n.t('Delete calculation')}
                                             </Button>
@@ -331,7 +376,15 @@ const CalculationModal = ({
                 </ModalContent>
                 <ModalActions dataTest="calculation-modal-actions">
                     <ButtonStrip>
-                        <Button onClick={onClose} dataTest="cancel-button">
+                        <Button
+                            onClick={onClose}
+                            disabled={
+                                isCreatingCalculation ||
+                                isUpdatingCalculation ||
+                                isDeletingCalculation
+                            }
+                            dataTest="cancel-button"
+                        >
                             {i18n.t('Cancel')}
                         </Button>
                         <Tooltip
@@ -351,19 +404,15 @@ const CalculationModal = ({
                         >
                             <Button
                                 primary
-                                onClick={() =>
-                                    onSave({
-                                        id: calculation.id,
-                                        expression:
-                                            parseArrayToExpression(
-                                                expressionArray
-                                            ),
-                                        name,
-                                    })
-                                }
+                                onClick={onSaveClick}
                                 disabled={
                                     expressionStatus !== VALID_EXPRESSION ||
-                                    !name
+                                    !name ||
+                                    isDeletingCalculation
+                                }
+                                loading={
+                                    isCreatingCalculation ||
+                                    isUpdatingCalculation
                                 }
                                 dataTest="save-button"
                             >
@@ -390,15 +439,7 @@ const CalculationModal = ({
                                 {i18n.t('Cancel')}
                             </Button>
 
-                            <Button
-                                onClick={() => {
-                                    setShowDeletePrompt()
-                                    onDelete({
-                                        id: calculation.id,
-                                    })
-                                }}
-                                destructive
-                            >
+                            <Button onClick={onDeleteClick} destructive>
                                 {i18n.t('Yes, delete')}
                             </Button>
                         </ButtonStrip>
