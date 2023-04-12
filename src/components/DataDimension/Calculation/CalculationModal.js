@@ -378,6 +378,7 @@ const CalculationModal = ({
                 <ModalActions dataTest="calculation-modal-actions">
                     <ButtonStrip>
                         <Button
+                            secondary
                             onClick={onClose}
                             disabled={
                                 isCreatingCalculation ||
