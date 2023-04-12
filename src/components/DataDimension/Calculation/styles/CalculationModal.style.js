@@ -27,7 +27,7 @@ export default css`
 
     .remove-button {
         display: inline-block;
-        margin-left: ${spacers.dp8};
+        margin-right: ${spacers.dp8};
     }
 
     .delete-button {
