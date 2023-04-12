@@ -473,6 +473,7 @@ const ItemSelector = ({
                         onEditClick={
                             getItemType(props.value) ===
                                 DIMENSION_TYPE_EXPRESSION_DIMENSION_ITEM &&
+                            !(props.access?.write === false) &&
                             supportsEDI
                                 ? () =>
                                       setCurrentCalculation({

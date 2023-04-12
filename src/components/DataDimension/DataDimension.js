@@ -36,6 +36,7 @@ const DataDimension = ({
                 isActive: item.isActive,
                 type: item.type,
                 expression: item.expression,
+                access: item.access,
             }))}
             onSelect={onSelectItems}
             displayNameProp={displayNameProp}
