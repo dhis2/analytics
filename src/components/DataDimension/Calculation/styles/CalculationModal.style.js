@@ -20,13 +20,15 @@ export default css`
         margin-left: ${spacers.dp4};
     }
 
+    .button-container {
+        display: inline-flex;
+    }
+
     .validate-button {
         margin-bottom: ${spacers.dp4};
-        display: inline-block;
     }
 
     .remove-button {
-        display: inline-block;
         margin-right: ${spacers.dp8};
     }
 

@@ -297,29 +297,31 @@ const CalculationModal = ({
                                     loading={!expressionArray}
                                 />
                                 <div className="actions-wrapper">
-                                    <div className="remove-button">
-                                        <Button
-                                            small
-                                            secondary
-                                            onClick={() =>
-                                                removeItem(selectedItemId)
-                                            }
-                                            dataTest="remove-button"
-                                            disabled={!selectedItemId}
-                                        >
-                                            {i18n.t('Remove item')}
-                                        </Button>
-                                    </div>
-                                    <div className="validate-button">
-                                        <Button
-                                            small
-                                            secondary
-                                            onClick={validate}
-                                            dataTest="validate-button"
-                                            loading={isValidating}
-                                        >
-                                            {i18n.t('Check formula')}
-                                        </Button>
+                                    <div className="button-container">
+                                        <div className="remove-button">
+                                            <Button
+                                                small
+                                                secondary
+                                                onClick={() =>
+                                                    removeItem(selectedItemId)
+                                                }
+                                                dataTest="remove-button"
+                                                disabled={!selectedItemId}
+                                            >
+                                                {i18n.t('Remove item')}
+                                            </Button>
+                                        </div>
+                                        <div className="validate-button">
+                                            <Button
+                                                small
+                                                secondary
+                                                onClick={validate}
+                                                dataTest="validate-button"
+                                                loading={isValidating}
+                                            >
+                                                {i18n.t('Check formula')}
+                                            </Button>
+                                        </div>
                                     </div>
                                     <span
                                         className={cx('validation-message', {
