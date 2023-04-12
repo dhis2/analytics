@@ -334,21 +334,6 @@ const CalculationModal = ({
                                     >
                                         {validationOutput?.message}
                                     </span>
-                                    {calculation.id && (
-                                        <div className="delete-button">
-                                            <Button
-                                                small
-                                                onClick={() =>
-                                                    setShowDeletePrompt(true)
-                                                }
-                                                dataTest="delete-button"
-                                                loading={isDeletingCalculation}
-                                                disabled={isUpdatingCalculation}
-                                            >
-                                                {i18n.t('Delete calculation')}
-                                            </Button>
-                                        </div>
-                                    )}
                                     <div className="name-input">
                                         <InputField
                                             label={i18n.t(
@@ -372,11 +357,23 @@ const CalculationModal = ({
                                 </div>
                             </div>
                         </div>
-                        <style jsx>{styles}</style>
                     </DndContext>
                 </ModalContent>
                 <ModalActions dataTest="calculation-modal-actions">
                     <ButtonStrip>
+                        {calculation.id && (
+                            <div className="delete-button">
+                                <Button
+                                    secondary
+                                    onClick={() => setShowDeletePrompt(true)}
+                                    dataTest="delete-button"
+                                    loading={isDeletingCalculation}
+                                    disabled={isUpdatingCalculation}
+                                >
+                                    {i18n.t('Delete calculation')}
+                                </Button>
+                            </div>
+                        )}
                         <Button
                             secondary
                             onClick={onClose}
@@ -448,6 +445,7 @@ const CalculationModal = ({
                     </ModalActions>
                 </Modal>
             )}
+            <style jsx>{styles}</style>
         </>
     )
 }

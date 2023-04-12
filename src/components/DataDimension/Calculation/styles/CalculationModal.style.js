@@ -31,7 +31,7 @@ export default css`
     }
 
     .delete-button {
-        margin-top: ${spacers.dp16};
+        margin-right: ${spacers.dp8};
     }
 
     .content {
