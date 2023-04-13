@@ -128,6 +128,7 @@ const CalculationModal = ({
     const [expressionArray, setExpressionArray] = useState()
     const [name, setName] = useState(calculation.name)
     const [showDeletePrompt, setShowDeletePrompt] = useState(false)
+    const [isSavingCalculation, setIsSavingCalculation] = useState()
 
     const [focusItemId, setFocusItemId] = useState(null)
     const [selectedItemId, setSelectedItemId] = useState(null)
@@ -139,20 +140,17 @@ const CalculationModal = ({
             prevSelected !== itemId ? itemId : null
         )
 
-    const removeItem = (itemId) => {
-        if (itemId !== null) {
-            setValidationOutput()
-            const index = expressionArray.findIndex(
-                (item) => item.id === itemId
-            )
-            const sourceList = Array.from(expressionArray)
-            sourceList.splice(index, 1)
-            setExpressionArray(sourceList)
-            setSelectedItemId(null)
-        }
-    }
+    const isLoading =
+        isCreatingCalculation ||
+        isUpdatingCalculation ||
+        isDeletingCalculation ||
+        isSavingCalculation ||
+        isValidating
 
     const addItem = ({ label, value, type, destIndex = LAST_POSITION }) => {
+        if (isLoading) {
+            return null
+        }
         setValidationOutput()
 
         const newItem = {
@@ -184,6 +182,9 @@ const CalculationModal = ({
     }
 
     const moveItem = ({ sourceIndex, destIndex }) => {
+        if (isLoading) {
+            return null
+        }
         setValidationOutput()
         const sourceList = Array.from(expressionArray)
         const [moved] = sourceList.splice(sourceIndex, 1)
@@ -198,16 +199,17 @@ const CalculationModal = ({
         setExpressionArray(updatedItems)
     }
 
-    const validate = async () => {
-        setValidationOutput()
-        const expression = parseArrayToExpression(expressionArray)
-        let result = validateExpression(expression)
-        if (!result) {
-            result = await doBackendValidation({
-                expression,
-            })
+    const removeItem = (itemId) => {
+        if (!isLoading && itemId !== null) {
+            setValidationOutput()
+            const index = expressionArray.findIndex(
+                (item) => item.id === itemId
+            )
+            const sourceList = Array.from(expressionArray)
+            sourceList.splice(index, 1)
+            setExpressionArray(sourceList)
+            setSelectedItemId(null)
         }
-        setValidationOutput(result)
     }
 
     const addOrMoveDraggedItem = ({ item, destination }) => {
@@ -233,28 +235,52 @@ const CalculationModal = ({
         }
     }
 
-    const onSaveClick = async () => {
-        let response
+    const validate = async () => {
+        setValidationOutput()
         const expression = parseArrayToExpression(expressionArray)
-
-        if (calculation.id) {
-            response = await updateCalculation({
-                id: calculation.id,
-                name,
-                expression,
-            })
-        } else {
-            response = await createCalculation({
-                name,
+        let result = validateExpression(expression)
+        if (!result) {
+            result = await doBackendValidation({
                 expression,
             })
         }
+        setValidationOutput(result)
 
-        onSave({
-            id: calculation.id || response?.response.uid,
-            name,
-            isNew: !calculation.id,
-        })
+        return result?.status
+    }
+
+    const onSaveClick = async () => {
+        setIsSavingCalculation(true)
+        let status = expressionStatus
+
+        if (status !== VALID_EXPRESSION) {
+            status = await validate()
+        }
+
+        if (status === VALID_EXPRESSION) {
+            let response
+            const expression = parseArrayToExpression(expressionArray)
+
+            if (calculation.id) {
+                response = await updateCalculation({
+                    id: calculation.id,
+                    name,
+                    expression,
+                })
+            } else {
+                response = await createCalculation({
+                    name,
+                    expression,
+                })
+            }
+
+            onSave({
+                id: calculation.id || response?.response.uid,
+                name,
+                isNew: !calculation.id,
+            })
+        }
+        setIsSavingCalculation(false)
     }
 
     const onDeleteClick = async () => {
@@ -295,6 +321,7 @@ const CalculationModal = ({
                                     onClick={selectItem}
                                     onDoubleClick={removeItem}
                                     loading={!expressionArray}
+                                    disabled={isLoading}
                                 />
                                 <div className="actions-wrapper">
                                     <div className="button-container">
@@ -318,6 +345,7 @@ const CalculationModal = ({
                                                 onClick={validate}
                                                 dataTest="validate-button"
                                                 loading={isValidating}
+                                                disabled={isLoading}
                                             >
                                                 {i18n.t('Check formula')}
                                             </Button>
@@ -379,18 +407,14 @@ const CalculationModal = ({
                         <Button
                             secondary
                             onClick={onClose}
-                            disabled={
-                                isCreatingCalculation ||
-                                isUpdatingCalculation ||
-                                isDeletingCalculation
-                            }
+                            disabled={isLoading}
                             dataTest="cancel-button"
                         >
                             {i18n.t('Cancel')}
                         </Button>
                         <Tooltip
                             content={
-                                expressionStatus !== VALID_EXPRESSION
+                                expressionStatus === INVALID_EXPRESSION
                                     ? i18n.t(
                                           'The calculation can only be saved with a valid formula'
                                       )
@@ -399,7 +423,7 @@ const CalculationModal = ({
                                       )
                             }
                             disabled={
-                                expressionStatus !== VALID_EXPRESSION || !name
+                                expressionStatus === INVALID_EXPRESSION || !name
                             }
                             disabledWhenOffline={false}
                         >
@@ -407,13 +431,15 @@ const CalculationModal = ({
                                 primary
                                 onClick={onSaveClick}
                                 disabled={
-                                    expressionStatus !== VALID_EXPRESSION ||
+                                    expressionStatus === INVALID_EXPRESSION ||
                                     !name ||
-                                    isDeletingCalculation
+                                    isDeletingCalculation ||
+                                    isValidating
                                 }
                                 loading={
                                     isCreatingCalculation ||
-                                    isUpdatingCalculation
+                                    isUpdatingCalculation ||
+                                    isSavingCalculation
                                 }
                                 dataTest="save-button"
                             >
