@@ -75,6 +75,9 @@ const generateValueSVG = ({
         // (elements with fill need to use "currentColor" for this to work)
         fetch(icon)
             .then((res) => res.text())
+            .then((originalSvgIcon) =>
+                originalSvgIcon.replaceAll('#333333', 'currentColor')
+            )
             .then((svgIcon) => {
                 iconSvgNode.insertAdjacentHTML('beforeend', svgIcon)
             })
