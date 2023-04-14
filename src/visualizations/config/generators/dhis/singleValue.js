@@ -34,16 +34,17 @@ const generateValueSVG = ({
     const textSize = iconSize * 0.85
     const textWidth = textSize * 0.75 * formattedValue.length
 
+    const showIcon = icon && formattedValue !== noData.text
+
     let viewBoxWidth = textWidth
 
-    if (icon) {
+    if (showIcon) {
         viewBoxWidth += iconSize
     }
 
     const viewBoxHeight = viewBoxWidth * ratio
 
     const svgValue = document.createElementNS(svgNS, 'svg')
-    svgValue.setAttribute('xmlns', svgNS)
     svgValue.setAttribute('viewBox', `0 0 ${viewBoxWidth} ${viewBoxHeight}`)
     svgValue.setAttribute('width', containerWidth * 0.95)
     svgValue.setAttribute('height', containerHeight * 0.95)
@@ -60,28 +61,37 @@ const generateValueSVG = ({
     }
 
     // show icon if configured in maintenance app
-    if (icon) {
-        const imageNode = document.createElementNS(svgNS, 'image')
-        imageNode.setAttribute('href', icon)
-        imageNode.setAttribute('width', iconSize)
-        imageNode.setAttribute('height', iconSize)
-        imageNode.setAttribute('y', `-${iconSize / 2}`)
-        imageNode.setAttribute('x', `-${textWidth / 2}`)
+    if (showIcon) {
+        const iconSvgNode = document.createElementNS(svgNS, 'svg')
+        iconSvgNode.setAttribute('width', iconSize)
+        iconSvgNode.setAttribute('height', iconSize)
+        iconSvgNode.setAttribute('viewBox', '0 0 48 48')
+        iconSvgNode.setAttribute('y', `-${iconSize / 2}`)
+        iconSvgNode.setAttribute('x', `-${textWidth / 2}`)
+        iconSvgNode.setAttribute('style', `color: ${fillColor}`)
 
-        svgValue.appendChild(imageNode)
+        // embed icon to allow changing color
+        // (elements with fill need to use "currentColor" for this to work)
+        fetch(icon)
+            .then((res) => res.text())
+            .then((svgIcon) => {
+                iconSvgNode.insertAdjacentHTML('beforeend', svgIcon)
+            })
+
+        svgValue.appendChild(iconSvgNode)
     }
 
     const textNode = document.createElementNS(svgNS, 'text')
     textNode.setAttribute('font-size', textSize)
     textNode.setAttribute('font-weight', '300')
     textNode.setAttribute('letter-spacing', '-5')
-    textNode.setAttribute('x', icon ? `-${textWidth / 2 - iconSize}` : 0)
+    textNode.setAttribute('x', showIcon ? `-${textWidth / 2 - iconSize}` : 0)
     textNode.setAttribute('y', 0)
     textNode.setAttribute('fill', fillColor)
     textNode.setAttribute('alignment-baseline', 'central')
     textNode.setAttribute('data-test', 'visualization-primary-value')
 
-    if (!icon) {
+    if (!showIcon) {
         textNode.setAttribute('text-anchor', 'middle')
     }
 
@@ -106,17 +116,34 @@ const generateValueSVG = ({
     return svgValue
 }
 
-/* commented out to keep the code for comparison with generateItem.
- * dashboard does not need all of the features as for DV app
- 
 const generateDashboardItem = (
     config,
-    { valueColor, titleColor, backgroundColor, noData }
+    {
+        svgContainer,
+        width,
+        height,
+        valueColor,
+        titleColor,
+        backgroundColor,
+        noData,
+    }
 ) => {
+    svgContainer.appendChild(
+        generateValueSVG({
+            formattedValue: config.formattedValue,
+            icon: config.icon,
+            subText: config.subText,
+            valueColor,
+            noData,
+            containerWidth: width,
+            containerHeight: height,
+        })
+    )
+
     const container = document.createElement('div')
     container.setAttribute(
         'style',
-        `display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; height: 100%; background-color:${backgroundColor};`
+        `display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; height: 100%; padding-top: 6px; background-color:${backgroundColor};`
     )
 
     const titleStyle = `font-size: 12px; color: ${titleColor || '#666'};`
@@ -141,20 +168,10 @@ const generateDashboardItem = (
         container.appendChild(subtitle)
     }
 
-    container.appendChild(
-        generateValueSVG({
-            formattedValue: config.formattedValue,
-            icon: config.icon,
-            subText: config.subText,
-            valueColor,
-            noData,
-            y: 40,
-        })
-    )
+    container.appendChild(svgContainer)
 
     return container
 }
-*/
 
 const getTextAnchorFromTextAlign = (textAlign) => {
     switch (textAlign) {
@@ -180,32 +197,30 @@ const getXFromTextAlign = (textAlign) => {
     }
 }
 
-const generateItem = (
+const generateDVItem = (
     config,
-    { valueColor, backgroundColor, titleColor, parentEl, fontStyle, noData }
+    {
+        svgContainer,
+        width,
+        height,
+        valueColor,
+        noData,
+        backgroundColor,
+        titleColor,
+        fontStyle,
+    }
 ) => {
-    const parentElBBox = parentEl.getBoundingClientRect()
-
-    const width = parentElBBox.width
-    const height = parentElBBox.height
-
-    const svgNS = 'http://www.w3.org/2000/svg'
-
-    const svg = document.createElementNS(svgNS, 'svg')
-    svg.setAttribute('xmlns', svgNS)
-    svg.setAttribute('viewBox', `0 0 ${width} ${height}`)
-    svg.setAttribute('width', width)
-    svg.setAttribute('height', height)
-    svg.setAttribute('data-test', 'visualization-container')
-
     if (backgroundColor) {
-        svg.setAttribute('style', `background-color: ${backgroundColor};`)
+        svgContainer.setAttribute(
+            'style',
+            `background-color: ${backgroundColor};`
+        )
 
         const background = document.createElementNS(svgNS, 'rect')
         background.setAttribute('width', '100%')
         background.setAttribute('height', '100%')
         background.setAttribute('fill', backgroundColor)
-        svg.appendChild(background)
+        svgContainer.appendChild(background)
     }
 
     const svgWrapper = document.createElementNS(svgNS, 'svg')
@@ -317,9 +332,9 @@ const generateItem = (
         svgWrapper.appendChild(subtitle)
     }
 
-    svg.appendChild(svgWrapper)
+    svgContainer.appendChild(svgWrapper)
 
-    svg.appendChild(
+    svgContainer.appendChild(
         generateValueSVG({
             formattedValue: config.formattedValue,
             icon: config.icon,
@@ -331,7 +346,7 @@ const generateItem = (
         })
     )
 
-    return svg
+    return svgContainer
 }
 
 const shouldUseContrastColor = (inputColor) => {
@@ -355,7 +370,7 @@ const shouldUseContrastColor = (inputColor) => {
 export default function (
     config,
     parentEl,
-    { legendSets, fontStyle, noData, legendOptions }
+    { dashboard, legendSets, fontStyle, noData, legendOptions }
 ) {
     const legendSet = legendOptions && legendSets[0]
     const legendColor =
@@ -401,12 +416,31 @@ export default function (
     parentEl.style.margin = spacers.dp8
     parentEl.style.height = `calc(100% - (${spacers.dp8} * 2))`
 
-    // TODO pass dashboard and toggle styles and other things not desired in dashboard...
-    return generateItem(config, {
-        valueColor,
-        titleColor,
-        parentEl,
-        fontStyle,
-        noData,
-    })
+    const parentElBBox = parentEl.getBoundingClientRect()
+    const width = parentElBBox.width
+    const height = parentElBBox.height
+
+    const svgContainer = document.createElementNS(svgNS, 'svg')
+    svgContainer.setAttribute('viewBox', `0 0 ${width} ${height}`)
+    svgContainer.setAttribute('width', '100%')
+    svgContainer.setAttribute('height', '100%')
+    svgContainer.setAttribute('data-test', 'visualization-container')
+
+    return dashboard
+        ? generateDashboardItem(config, {
+              svgContainer,
+              width,
+              height,
+              valueColor,
+              noData,
+          })
+        : generateDVItem(config, {
+              svgContainer,
+              width,
+              height,
+              valueColor,
+              noData,
+              titleColor,
+              fontStyle,
+          })
 }
