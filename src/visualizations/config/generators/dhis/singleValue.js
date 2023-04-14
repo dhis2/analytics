@@ -31,6 +31,7 @@ const generateValueSVG = ({
 }) => {
     const ratio = containerHeight / containerWidth
     const iconSize = 300
+    const iconPadding = 50
     const textSize = iconSize * 0.85
     const textWidth = textSize * 0.75 * formattedValue.length
 
@@ -39,7 +40,7 @@ const generateValueSVG = ({
     let viewBoxWidth = textWidth
 
     if (showIcon) {
-        viewBoxWidth += iconSize
+        viewBoxWidth += iconSize + iconPadding
     }
 
     const viewBoxHeight = viewBoxWidth * ratio
@@ -67,7 +68,7 @@ const generateValueSVG = ({
         iconSvgNode.setAttribute('height', iconSize)
         iconSvgNode.setAttribute('viewBox', '0 0 48 48')
         iconSvgNode.setAttribute('y', `-${iconSize / 2}`)
-        iconSvgNode.setAttribute('x', `-${textWidth / 2}`)
+        iconSvgNode.setAttribute('x', `-${(textWidth + iconPadding) / 2}`)
         iconSvgNode.setAttribute('style', `color: ${fillColor}`)
 
         // embed icon to allow changing color
@@ -85,7 +86,10 @@ const generateValueSVG = ({
     textNode.setAttribute('font-size', textSize)
     textNode.setAttribute('font-weight', '300')
     textNode.setAttribute('letter-spacing', '-5')
-    textNode.setAttribute('x', showIcon ? `-${textWidth / 2 - iconSize}` : 0)
+    textNode.setAttribute(
+        'x',
+        showIcon ? `-${(textWidth - iconPadding) / 2 - iconSize}` : 0
+    )
     textNode.setAttribute('y', 0)
     textNode.setAttribute('fill', fillColor)
     textNode.setAttribute('alignment-baseline', 'central')
