@@ -367,8 +367,9 @@ const CalculationModal = ({
                                     </span>
                                     <div className="name-input">
                                         <InputField
-                                            label={i18n.t(
-                                                'Name shown in column/row headers'
+                                            label={i18n.t('Calculation name')}
+                                            helpText={i18n.t(
+                                                'Shown in table headers and chart axes/legends'
                                             )}
                                             onChange={({ value }) =>
                                                 setName(value.substr(0, 50))

@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2023-03-30T12:39:52.348Z\n"
-"PO-Revision-Date: 2023-03-30T12:39:52.349Z\n"
+"POT-Creation-Date: 2023-04-18T08:41:27.838Z\n"
+"PO-Revision-Date: 2023-04-18T08:41:27.838Z\n"
 
 msgid "view only"
 msgstr "view only"
@@ -79,17 +79,20 @@ msgstr "Data / Edit calculation"
 msgid "Data / New calculation"
 msgstr "Data / New calculation"
 
-msgid "Check formula"
-msgstr "Check formula"
-
 msgid "Remove item"
 msgstr "Remove item"
 
+msgid "Check formula"
+msgstr "Check formula"
+
+msgid "Calculation name"
+msgstr "Calculation name"
+
+msgid "Shown in table headers and chart axes/legends"
+msgstr "Shown in table headers and chart axes/legends"
+
 msgid "Delete calculation"
 msgstr "Delete calculation"
-
-msgid "Label shown in column/row headers"
-msgstr "Label shown in column/row headers"
 
 msgid "Cancel"
 msgstr "Cancel"
