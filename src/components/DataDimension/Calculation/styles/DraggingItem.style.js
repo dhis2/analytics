@@ -4,6 +4,7 @@ import css from 'styled-jsx/css'
 export default css`
     .dragging {
         border: 2px solid ${colors.blue500};
+        cursor: grab;
     }
 
     .number {
