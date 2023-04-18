@@ -70,12 +70,13 @@ export const validateExpression = (expression) => {
                 'Formula is empty. Add items to the formula from the lists on the left.'
             ),
         }
-    } else if (/[-+/*]{2,}/.test(expression)) {
-        // two math operators next to each other
-        result = {
-            status: INVALID_EXPRESSION,
-            message: i18n.t('Consecutive math operators'),
-        }
+        // TODO: reimplement this but allow negative values, e.g. 10 / -5
+        // } else if (/[-+/*]{2,}/.test(expression)) {
+        //     // two math operators next to each other
+        //     result = {
+        //         status: INVALID_EXPRESSION,
+        //         message: i18n.t('Consecutive math operators'),
+        //     }
     } else if (/}#/.test(expression)) {
         // two data elements next to each other
         result = {

@@ -15,10 +15,10 @@ const invalidTestExpressions = [
             'Formula is empty. Add items to the formula from the lists on the left.',
         expressions: [''],
     },
-    {
-        message: 'Consecutive math operators',
-        expressions: ['5+-', '5+++', '4+9-*', '5++9'],
-    },
+    // {
+    //     message: 'Consecutive math operators',
+    //     expressions: ['5+-', '5+++', '4+9-*', '5++9'],
+    // },
     {
         message: 'Consecutive data elements',
         expressions: ['#{cYeuwXTCPkU}#{Jtf34kNZhzP}'],
@@ -51,6 +51,7 @@ const validTestExpressions = [
     '#{P3jJH5Tu5VC.S34ULMcHMca}*#{Jtf34kNZhzP}',
     '(5)+9',
     '(5+9)',
+    '10/-5',
 ]
 
 describe('validateExpression', () => {
