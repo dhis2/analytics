@@ -285,7 +285,7 @@ const CalculationModal = ({
 
     const onDeleteClick = async () => {
         setShowDeletePrompt()
-        await deleteCalculation(calculation.id)
+        await deleteCalculation({ id: calculation.id })
         onDelete({
             id: calculation.id,
         })
