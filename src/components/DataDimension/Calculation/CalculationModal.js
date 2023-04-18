@@ -278,6 +278,7 @@ const CalculationModal = ({
                 id: calculation.id || response?.response.uid,
                 name,
                 isNew: !calculation.id,
+                expression,
             })
         }
         setIsSavingCalculation(false)
