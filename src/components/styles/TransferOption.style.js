@@ -70,8 +70,19 @@ export default css`
 
     .edit {
         height: 16px;
-        padding-top: 1px;
+        margin-top: 1px;
         margin-left: ${spacers.dp8};
         cursor: pointer;
+    }
+
+    .edit:hover {
+        background-color: rgba(0, 0, 0, 0.12);
+        outline: 1px solid rgba(0, 0, 0, 0.12);
+        border-radius: 3px;
+    }
+
+    .highlighted .edit:hover {
+        background-color: rgba(255, 255, 255, 0.12);
+        outline: 1px solid rgba(255, 255, 255, 0.12);
     }
 `
