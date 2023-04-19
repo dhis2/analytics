@@ -110,9 +110,13 @@ const generateDashboardItem = (
         container.appendChild(title)
     }
 
-    const subtitle = document.createElement('span')
-    subtitle.setAttribute('style', titleStyle + ' margin-top: 4px')
     if (config.subtitle) {
+        const subtitle = document.createElement('span')
+        subtitle.setAttribute(
+            'style',
+            titleStyle + ' margin-top: 4px; padding: 0 8px'
+        )
+
         subtitle.appendChild(document.createTextNode(config.subtitle))
 
         container.appendChild(subtitle)
