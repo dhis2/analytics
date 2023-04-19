@@ -92,7 +92,7 @@ const generateValueSVG = ({
 
 const generateDashboardItem = (
     config,
-    { valueColor, backgroundColor, noData }
+    { valueColor, titleColor, backgroundColor, noData }
 ) => {
     const container = document.createElement('div')
     container.setAttribute(
@@ -100,7 +100,7 @@ const generateDashboardItem = (
         `display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; height: 100%; background-color:${backgroundColor};`
     )
 
-    const titleStyle = 'font-size: 12px; color: #666;'
+    const titleStyle = `font-size: 12px; color: ${titleColor || '#666'};`
 
     const title = document.createElement('span')
     title.setAttribute('style', titleStyle)
@@ -354,6 +354,9 @@ export default function (
             valueColor,
             backgroundColor,
             noData,
+            ...(shouldUseContrastColor(legendColor)
+                ? { titleColor: colors.white }
+                : {}),
         })
     } else {
         parentEl.style.height = `100%`
