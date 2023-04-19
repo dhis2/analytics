@@ -396,32 +396,7 @@ export default function (
     parentEl.style.overflow = 'hidden'
     parentEl.style.display = 'flex'
     parentEl.style.justifyContent = 'center'
-    /*
-    if (dashboard) {
-        parentEl.style.borderRadius = spacers.dp8
-        return generateDashboardItem(config, {
-            valueColor,
-            backgroundColor,
-            noData,
-            ...(shouldUseContrastColor(legendColor)
-                ? { titleColor: colors.white }
-                : {}),
-        })
-    } else {
-        parentEl.style.height = `100%`
-        return generateDVItem(config, {
-            valueColor,
-            backgroundColor,
-            titleColor,
-            parentEl,
-            fontStyle,
-            noData,
-        })
-    }
-*/
-    parentEl.style.borderRadius = spacers.dp8
     parentEl.style.margin = spacers.dp8
-    parentEl.style.height = `calc(100% - (${spacers.dp8} * 2))`
 
     const parentElBBox = parentEl.getBoundingClientRect()
     const width = parentElBBox.width
@@ -433,21 +408,32 @@ export default function (
     svgContainer.setAttribute('height', '100%')
     svgContainer.setAttribute('data-test', 'visualization-container')
 
-    return dashboard
-        ? generateDashboardItem(config, {
-              svgContainer,
-              width,
-              height,
-              valueColor,
-              noData,
-          })
-        : generateDVItem(config, {
-              svgContainer,
-              width,
-              height,
-              valueColor,
-              noData,
-              titleColor,
-              fontStyle,
-          })
+    if (dashboard) {
+        parentEl.style.borderRadius = spacers.dp8
+
+        return generateDashboardItem(config, {
+            svgContainer,
+            width,
+            height,
+            valueColor,
+            backgroundColor,
+            noData,
+            ...(shouldUseContrastColor(legendColor)
+                ? { titleColor: colors.white }
+                : {}),
+        })
+    } else {
+        parentEl.style.height = `100%`
+
+        return generateDVItem(config, {
+            svgContainer,
+            width,
+            height,
+            valueColor,
+            backgroundColor,
+            titleColor,
+            noData,
+            fontStyle,
+        })
+    }
 }
