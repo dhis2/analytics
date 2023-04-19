@@ -356,7 +356,7 @@ const generateDVItem = (
     return svgContainer
 }
 
-const shouldUseContrastColor = (inputColor) => {
+const shouldUseContrastColor = (inputColor = '') => {
     // based on https://stackoverflow.com/questions/3942878/how-to-decide-font-color-in-white-or-black-depending-on-background-color
     var color =
         inputColor.charAt(0) === '#' ? inputColor.substring(1, 7) : inputColor
@@ -418,7 +418,7 @@ export default function (
             valueColor,
             backgroundColor,
             noData,
-            ...(shouldUseContrastColor(legendColor)
+            ...(legendColor && shouldUseContrastColor(legendColor)
                 ? { titleColor: colors.white }
                 : {}),
         })
