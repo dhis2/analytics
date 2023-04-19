@@ -403,6 +403,7 @@ export default function (
     const height = parentElBBox.height
 
     const svgContainer = document.createElementNS(svgNS, 'svg')
+    svgContainer.setAttribute('xmlns', svgNS)
     svgContainer.setAttribute('viewBox', `0 0 ${width} ${height}`)
     svgContainer.setAttribute('width', '100%')
     svgContainer.setAttribute('height', '100%')
