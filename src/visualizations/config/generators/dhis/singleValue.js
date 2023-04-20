@@ -90,14 +90,17 @@ const generateValueSVG = ({
     return svgValue
 }
 
-const generateDashboardItem = (config, { valueColor, noData }) => {
+const generateDashboardItem = (
+    config,
+    { valueColor, titleColor, backgroundColor, noData }
+) => {
     const container = document.createElement('div')
     container.setAttribute(
         'style',
-        'display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; height: 100%'
+        `display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; height: 100%; background-color:${backgroundColor};`
     )
 
-    const titleStyle = 'font-size: 12px; color: #666;'
+    const titleStyle = `font-size: 12px; color: ${titleColor || '#666'};`
 
     const title = document.createElement('span')
     title.setAttribute('style', titleStyle)
@@ -107,9 +110,13 @@ const generateDashboardItem = (config, { valueColor, noData }) => {
         container.appendChild(title)
     }
 
-    const subtitle = document.createElement('span')
-    subtitle.setAttribute('style', titleStyle + ' margin-top: 4px')
     if (config.subtitle) {
+        const subtitle = document.createElement('span')
+        subtitle.setAttribute(
+            'style',
+            titleStyle + ' margin-top: 4px; padding: 0 8px'
+        )
+
         subtitle.appendChild(document.createTextNode(config.subtitle))
 
         container.appendChild(subtitle)
@@ -154,7 +161,7 @@ const getXFromTextAlign = (textAlign) => {
 
 const generateDVItem = (
     config,
-    { valueColor, titleColor, parentEl, fontStyle, noData }
+    { valueColor, backgroundColor, titleColor, parentEl, fontStyle, noData }
 ) => {
     const parentElBBox = parentEl.getBoundingClientRect()
 
@@ -169,6 +176,16 @@ const generateDVItem = (
     svg.setAttribute('width', '100%')
     svg.setAttribute('height', '100%')
     svg.setAttribute('data-test', 'visualization-container')
+
+    if (backgroundColor) {
+        svg.setAttribute('style', `background-color: ${backgroundColor};`)
+
+        const background = document.createElementNS(svgNS, 'rect')
+        background.setAttribute('width', '100%')
+        background.setAttribute('height', '100%')
+        background.setAttribute('fill', backgroundColor)
+        svg.appendChild(background)
+    }
 
     const title = document.createElementNS(svgNS, 'text')
     const titleFontStyle = mergeFontStyleWithDefault(
@@ -316,10 +333,10 @@ export default function (
     const legendSet = legendOptions && legendSets[0]
     const legendColor =
         legendSet && getColorByValueFromLegendSet(legendSet, config.value)
-    let valueColor, titleColor
+    let valueColor, titleColor, backgroundColor
     if (legendColor) {
         if (legendOptions.style === LEGEND_DISPLAY_STYLE_FILL) {
-            parentEl.style.background = legendColor
+            backgroundColor = legendColor
             valueColor = titleColor =
                 shouldUseContrastColor(legendColor) && colors.white
         } else {
@@ -330,15 +347,22 @@ export default function (
     parentEl.style.overflow = 'hidden'
     parentEl.style.display = 'flex'
     parentEl.style.justifyContent = 'center'
-    parentEl.style.borderRadius = spacers.dp8
 
     if (dashboard) {
-        return generateDashboardItem(config, { valueColor, noData })
+        parentEl.style.borderRadius = spacers.dp8
+        return generateDashboardItem(config, {
+            valueColor,
+            backgroundColor,
+            noData,
+            ...(shouldUseContrastColor(legendColor)
+                ? { titleColor: colors.white }
+                : {}),
+        })
     } else {
-        parentEl.style.margin = spacers.dp8
-        parentEl.style.height = `calc(100% - (${spacers.dp8} * 2))`
+        parentEl.style.height = `100%`
         return generateDVItem(config, {
             valueColor,
+            backgroundColor,
             titleColor,
             parentEl,
             fontStyle,

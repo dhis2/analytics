@@ -1,3 +1,10 @@
+# [24.10.0](https://github.com/dhis2/analytics/compare/v24.9.3...v24.10.0) (2023-04-19)
+
+
+### Features
+
+* single value background color change based upon legend (DHIS2-13702) part 2 ([#1453](https://github.com/dhis2/analytics/issues/1453)) ([d32c7b8](https://github.com/dhis2/analytics/commit/d32c7b8b8cce03e634caeb036e3412b8b7bcbf19))
+
 ## [24.9.3](https://github.com/dhis2/analytics/compare/v24.9.2...v24.9.3) (2023-03-15)
 
 
