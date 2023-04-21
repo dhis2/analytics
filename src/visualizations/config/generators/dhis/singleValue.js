@@ -173,8 +173,8 @@ const generateDVItem = (
     const svg = document.createElementNS(svgNS, 'svg')
     svg.setAttribute('xmlns', svgNS)
     svg.setAttribute('viewBox', `0 0 ${width} ${height}`)
-    svg.setAttribute('width', '100%')
-    svg.setAttribute('height', '100%')
+    svg.setAttribute('width', width)
+    svg.setAttribute('height', height)
     svg.setAttribute('data-test', 'visualization-container')
 
     if (backgroundColor) {
