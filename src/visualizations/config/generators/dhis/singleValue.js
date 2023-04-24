@@ -395,7 +395,6 @@ export default function (
     parentEl.style.overflow = 'hidden'
     parentEl.style.display = 'flex'
     parentEl.style.justifyContent = 'center'
-    parentEl.style.margin = spacers.dp8
 
     const parentElBBox = parentEl.getBoundingClientRect()
     const width = parentElBBox.width
