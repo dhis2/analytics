@@ -1,3 +1,15 @@
+# [25.0.0](https://github.com/dhis2/analytics/compare/v24.10.1...v25.0.0) (2023-04-24)
+
+
+### Features
+
+* custom calculations (DHIS2-13871) ([#1370](https://github.com/dhis2/analytics/issues/1370)) ([d174e3e](https://github.com/dhis2/analytics/commit/d174e3e8a1dd1ea756cf42eaf7748b2135151e57))
+
+
+### BREAKING CHANGES
+
+* requires metadata to be provided for the new EDI dimension type
+
 ## [24.10.1](https://github.com/dhis2/analytics/compare/v24.10.0...v24.10.1) (2023-04-24)
 
 
