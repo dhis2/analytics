@@ -196,6 +196,7 @@ const FormulaItem = ({
                     })}
                     onClick={handleClick}
                     onDoubleClick={handleDoubleClick}
+                    data-test={`formula-item-${id}`}
                 >
                     {getContent()}
                 </div>

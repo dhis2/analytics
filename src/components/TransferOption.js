@@ -49,6 +49,7 @@ export const TransferOption = ({
                         e.stopPropagation()
                         onEditClick()
                     }}
+                    data-test={`${dataTest}-edit-button`}
                 >
                     <IconEdit16 />
                 </span>
