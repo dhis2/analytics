@@ -1,3 +1,10 @@
+## [24.10.1](https://github.com/dhis2/analytics/compare/v24.10.0...v24.10.1) (2023-04-24)
+
+
+### Bug Fixes
+
+* sv size when downloading is a small square (DHIS2-15178) ([245d799](https://github.com/dhis2/analytics/commit/245d799d9513e0407e4a6b6ba24c3da15754618d))
+
 # [24.10.0](https://github.com/dhis2/analytics/compare/v24.9.3...v24.10.0) (2023-04-19)
 
 
