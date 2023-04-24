@@ -150,10 +150,12 @@ const generateDashboardItem = (
     const container = document.createElement('div')
     container.setAttribute(
         'style',
-        `display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; height: 100%; padding-top: 6px; background-color:${backgroundColor};`
+        `display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; height: 100%; background-color:${backgroundColor};`
     )
 
-    const titleStyle = `font-size: 12px; color: ${titleColor || '#666'};`
+    const titleStyle = `padding: 0 8px; text-align: center; font-size: 12px; color: ${
+        titleColor || '#666'
+    };`
 
     const title = document.createElement('span')
     title.setAttribute('style', titleStyle)
@@ -165,10 +167,7 @@ const generateDashboardItem = (
 
     if (config.subtitle) {
         const subtitle = document.createElement('span')
-        subtitle.setAttribute(
-            'style',
-            titleStyle + ' margin-top: 4px; padding: 0 8px; text-align: center'
-        )
+        subtitle.setAttribute('style', titleStyle + ' margin-top: 4px;')
 
         subtitle.appendChild(document.createTextNode(config.subtitle))
 
