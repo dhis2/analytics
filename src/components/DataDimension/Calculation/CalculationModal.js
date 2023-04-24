@@ -379,13 +379,6 @@ const CalculationModal = ({
                                             dense
                                         />
                                     </div>
-                                    <p style={{ color: 'blue' }}>
-                                        {/* TODO: Remove, for testing only */}
-                                        OUTPUT:{' '}
-                                        {parseArrayToExpression(
-                                            expressionArray
-                                        )}
-                                    </p>
                                 </div>
                             </div>
                         </div>
