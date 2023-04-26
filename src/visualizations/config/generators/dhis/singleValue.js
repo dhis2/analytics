@@ -73,14 +73,13 @@ const generateValueSVG = ({
 
         // embed icon to allow changing color
         // (elements with fill need to use "currentColor" for this to work)
-        fetch(icon)
-            .then((res) => res.text())
-            .then((originalSvgIcon) =>
-                originalSvgIcon.replaceAll('#333333', 'currentColor')
-            )
-            .then((svgIcon) => {
-                iconSvgNode.insertAdjacentHTML('beforeend', svgIcon)
-            })
+
+        const parser = new DOMParser()
+        const svgIconDocument = parser.parseFromString(icon, 'image/svg+xml')
+
+        Array.from(svgIconDocument.documentElement.children).forEach((node) =>
+            iconSvgNode.appendChild(node)
+        )
 
         svgValue.appendChild(iconSvgNode)
     }
@@ -94,8 +93,9 @@ const generateValueSVG = ({
         showIcon ? `-${(textWidth - iconPadding) / 2 - iconSize}` : 0
     )
     textNode.setAttribute('y', 0)
+    // vertical align, "alignment-baseline: central" is not supported by Batik
+    textNode.setAttribute('dy', '.35em')
     textNode.setAttribute('fill', fillColor)
-    textNode.setAttribute('alignment-baseline', 'central')
     textNode.setAttribute('data-test', 'visualization-primary-value')
 
     if (!showIcon) {
@@ -107,14 +107,12 @@ const generateValueSVG = ({
     svgValue.appendChild(textNode)
 
     if (subText) {
-        const subTextSize = 40
-
         const subTextNode = document.createElementNS(svgNS, 'text')
         subTextNode.setAttribute('text-anchor', 'middle')
         subTextNode.setAttribute('font-size', subTextSize)
         subTextNode.setAttribute('y', iconSize / 2)
+        subTextNode.setAttribute('dy', subTextSize)
         subTextNode.setAttribute('fill', colors.grey600)
-        subTextNode.setAttribute('alignment-baseline', 'hanging')
         subTextNode.appendChild(document.createTextNode(subText))
 
         svgValue.appendChild(subTextNode)
@@ -133,15 +131,16 @@ const generateDashboardItem = (
         titleColor,
         backgroundColor,
         noData,
+        icon,
     }
 ) => {
     svgContainer.appendChild(
         generateValueSVG({
             formattedValue: config.formattedValue,
-            icon: config.icon,
             subText: config.subText,
             valueColor,
             noData,
+            icon,
             containerWidth: width,
             containerHeight: height,
         })
@@ -343,10 +342,10 @@ const generateDVItem = (
     svgContainer.appendChild(
         generateValueSVG({
             formattedValue: config.formattedValue,
-            icon: config.icon,
             subText: config.subText,
             valueColor,
             noData,
+            icon,
             containerWidth: width,
             containerHeight: height,
         })
@@ -376,7 +375,7 @@ const shouldUseContrastColor = (inputColor = '') => {
 export default function (
     config,
     parentEl,
-    { dashboard, legendSets, fontStyle, noData, legendOptions }
+    { dashboard, legendSets, fontStyle, noData, legendOptions, icon }
 ) {
     const legendSet = legendOptions && legendSets[0]
     const legendColor =
@@ -417,6 +416,7 @@ export default function (
             valueColor,
             backgroundColor,
             noData,
+            icon,
             ...(legendColor && shouldUseContrastColor(legendColor)
                 ? { titleColor: colors.white }
                 : {}),
@@ -432,6 +432,7 @@ export default function (
             backgroundColor,
             titleColor,
             noData,
+            icon,
             fontStyle,
         })
     }
