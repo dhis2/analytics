@@ -20,6 +20,15 @@ import {
 
 const svgNS = 'http://www.w3.org/2000/svg'
 
+// Compute text width before rendering
+// Not exactly precise but close enough
+const getTextWidth = (text, font) => {
+    const canvas = document.createElement('canvas')
+    const context = canvas.getContext('2d')
+    context.font = font
+    return context.measureText(text).width
+}
+
 const generateValueSVG = ({
     formattedValue,
     subText,
@@ -33,7 +42,8 @@ const generateValueSVG = ({
     const iconSize = 300
     const iconPadding = 50
     const textSize = iconSize * 0.85
-    const textWidth = textSize * 0.75 * formattedValue.length
+    const textWidth = getTextWidth(formattedValue, `${textSize}px Roboto`)
+    const subTextSize = 40
 
     const showIcon = icon && formattedValue !== noData.text
 
@@ -47,8 +57,8 @@ const generateValueSVG = ({
 
     const svgValue = document.createElementNS(svgNS, 'svg')
     svgValue.setAttribute('viewBox', `0 0 ${viewBoxWidth} ${viewBoxHeight}`)
-    svgValue.setAttribute('width', containerWidth * 0.95)
-    svgValue.setAttribute('height', containerHeight * 0.95)
+    svgValue.setAttribute('width', '95%')
+    svgValue.setAttribute('height', '95%')
     svgValue.setAttribute('x', '50%')
     svgValue.setAttribute('y', '50%')
     svgValue.setAttribute('style', 'overflow: visible')
@@ -63,16 +73,18 @@ const generateValueSVG = ({
 
     // show icon if configured in maintenance app
     if (showIcon) {
+        // embed icon to allow changing color
+        // (elements with fill need to use "currentColor" for this to work)
         const iconSvgNode = document.createElementNS(svgNS, 'svg')
         iconSvgNode.setAttribute('width', iconSize)
         iconSvgNode.setAttribute('height', iconSize)
         iconSvgNode.setAttribute('viewBox', '0 0 48 48')
         iconSvgNode.setAttribute('y', `-${iconSize / 2}`)
-        iconSvgNode.setAttribute('x', `-${(textWidth + iconPadding) / 2}`)
+        iconSvgNode.setAttribute(
+            'x',
+            `-${(iconSize + iconPadding + textWidth) / 2}`
+        )
         iconSvgNode.setAttribute('style', `color: ${fillColor}`)
-
-        // embed icon to allow changing color
-        // (elements with fill need to use "currentColor" for this to work)
 
         const parser = new DOMParser()
         const svgIconDocument = parser.parseFromString(icon, 'image/svg+xml')
@@ -88,19 +100,12 @@ const generateValueSVG = ({
     textNode.setAttribute('font-size', textSize)
     textNode.setAttribute('font-weight', '300')
     textNode.setAttribute('letter-spacing', '-5')
-    textNode.setAttribute(
-        'x',
-        showIcon ? `-${(textWidth - iconPadding) / 2 - iconSize}` : 0
-    )
-    textNode.setAttribute('y', 0)
+    textNode.setAttribute('text-anchor', 'middle')
+    textNode.setAttribute('x', showIcon ? `${(iconSize + iconPadding) / 2}` : 0)
     // vertical align, "alignment-baseline: central" is not supported by Batik
-    textNode.setAttribute('dy', '.35em')
+    textNode.setAttribute('y', '.35em')
     textNode.setAttribute('fill', fillColor)
     textNode.setAttribute('data-test', 'visualization-primary-value')
-
-    if (!showIcon) {
-        textNode.setAttribute('text-anchor', 'middle')
-    }
 
     textNode.appendChild(document.createTextNode(formattedValue))
 
@@ -213,6 +218,7 @@ const generateDVItem = (
         backgroundColor,
         titleColor,
         fontStyle,
+        icon,
     }
 ) => {
     if (backgroundColor) {
@@ -402,8 +408,8 @@ export default function (
     const svgContainer = document.createElementNS(svgNS, 'svg')
     svgContainer.setAttribute('xmlns', svgNS)
     svgContainer.setAttribute('viewBox', `0 0 ${width} ${height}`)
-    svgContainer.setAttribute('width', '100%')
-    svgContainer.setAttribute('height', '100%')
+    svgContainer.setAttribute('width', dashboard ? '100%' : width)
+    svgContainer.setAttribute('height', dashboard ? '100%' : height)
     svgContainer.setAttribute('data-test', 'visualization-container')
 
     if (dashboard) {
