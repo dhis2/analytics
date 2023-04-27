@@ -1,3 +1,10 @@
+# [25.1.0](https://github.com/dhis2/analytics/compare/v25.0.0...v25.1.0) (2023-04-27)
+
+
+### Features
+
+* icon in SV visualization DHIS2-10496 ([#1440](https://github.com/dhis2/analytics/issues/1440)) ([e6563ca](https://github.com/dhis2/analytics/commit/e6563cacc5e901a04d5432330b09b685936ddd70))
+
 # [25.0.0](https://github.com/dhis2/analytics/compare/v24.10.1...v25.0.0) (2023-04-24)
 
 
