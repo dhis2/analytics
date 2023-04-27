@@ -13,7 +13,7 @@ export const LAST_DROPZONE_ID = 'lastdropzone'
 export const FORMULA_BOX_ID = 'formulabox'
 
 const Placeholder = () => (
-    <div className="placeholder" data-test={'placeholder'}>
+    <div className="placeholder" data-test="placeholder">
         <FormulaIcon />
         <span className="help-text">
             {i18n.t(
@@ -47,7 +47,7 @@ const FormulaField = ({
             <div
                 className="formula-field"
                 ref={setLastDropzoneRef}
-                data-test={'formula-field'}
+                data-test="formula-field"
             >
                 {loading && (
                     <Center>

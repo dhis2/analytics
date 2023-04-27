@@ -9,7 +9,7 @@ const MathOperatorSelector = ({ onDoubleClick }) => (
     <>
         <div className="wrapper">
             <h4 className="sub-header">{i18n.t('Math operators')}</h4>
-            <div className="operators" data-test={'operators-list'}>
+            <div className="operators" data-test="operators-list">
                 {getOperators().map(({ label, value, type }, index) => (
                     <DraggableOperator
                         key={`${label}-${index}`}

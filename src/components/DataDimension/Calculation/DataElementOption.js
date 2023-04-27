@@ -29,7 +29,7 @@ const DataElementOption = ({ label, value, onDoubleClick }) => {
                 <div
                     className="chip"
                     onDoubleClick={() => onDoubleClick(data)}
-                    data-test={'data-element-option'}
+                    data-test="data-element-option"
                 >
                     <span className="icon">
                         {getIcon(DIMENSION_TYPE_DATA_ELEMENT)}
