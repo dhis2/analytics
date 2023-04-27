@@ -445,7 +445,7 @@ const CalculationModal = ({
                 </ModalActions>
             </Modal>
             {showDeletePrompt && (
-                <Modal small>
+                <Modal small dataTest="calculation-delete-modal">
                     <ModalTitle>{i18n.t('Delete calculation')}</ModalTitle>
                     <ModalContent>
                         {i18n.t(
