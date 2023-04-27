@@ -20,27 +20,48 @@ import {
 
 const svgNS = 'http://www.w3.org/2000/svg'
 
+// Compute text width before rendering
+// Not exactly precise but close enough
+const getTextWidth = (text, font) => {
+    const canvas = document.createElement('canvas')
+    const context = canvas.getContext('2d')
+    context.font = font
+    return context.measureText(text).width
+}
+
 const generateValueSVG = ({
     formattedValue,
     subText,
     valueColor,
+    icon,
     noData,
-    y,
+    containerWidth,
+    containerHeight,
 }) => {
-    const textSize = 300
+    const ratio = containerHeight / containerWidth
+    const iconSize = 300
+    const iconPadding = 50
+    const textSize = iconSize * 0.85
+    const textWidth = getTextWidth(formattedValue, `${textSize}px Roboto`)
+    const subTextSize = 40
+
+    const showIcon = icon && formattedValue !== noData.text
+
+    let viewBoxWidth = textWidth
+
+    if (showIcon) {
+        viewBoxWidth += iconSize + iconPadding
+    }
+
+    const viewBoxHeight = viewBoxWidth * ratio
 
     const svgValue = document.createElementNS(svgNS, 'svg')
-    svgValue.setAttribute('xmlns', svgNS)
-    svgValue.setAttribute(
-        'viewBox',
-        `0 -${textSize + 50} ${textSize * 0.75 * formattedValue.length} ${
-            textSize + 200
-        }`
-    )
-
-    if (y) {
-        svgValue.setAttribute('y', y)
-    }
+    svgValue.setAttribute('viewBox', `0 0 ${viewBoxWidth} ${viewBoxHeight}`)
+    svgValue.setAttribute('width', '95%')
+    svgValue.setAttribute('height', '95%')
+    svgValue.setAttribute('x', '50%')
+    svgValue.setAttribute('y', '50%')
+    svgValue.setAttribute('style', 'overflow: visible')
 
     let fillColor = colors.grey900
 
@@ -50,41 +71,56 @@ const generateValueSVG = ({
         fillColor = colors.grey600
     }
 
+    // show icon if configured in maintenance app
+    if (showIcon) {
+        // embed icon to allow changing color
+        // (elements with fill need to use "currentColor" for this to work)
+        const iconSvgNode = document.createElementNS(svgNS, 'svg')
+        iconSvgNode.setAttribute('width', iconSize)
+        iconSvgNode.setAttribute('height', iconSize)
+        iconSvgNode.setAttribute('viewBox', '0 0 48 48')
+        iconSvgNode.setAttribute('y', `-${iconSize / 2}`)
+        iconSvgNode.setAttribute(
+            'x',
+            `-${(iconSize + iconPadding + textWidth) / 2}`
+        )
+        iconSvgNode.setAttribute('style', `color: ${fillColor}`)
+
+        const parser = new DOMParser()
+        const svgIconDocument = parser.parseFromString(icon, 'image/svg+xml')
+
+        Array.from(svgIconDocument.documentElement.children).forEach((node) =>
+            iconSvgNode.appendChild(node)
+        )
+
+        svgValue.appendChild(iconSvgNode)
+    }
+
     const textNode = document.createElementNS(svgNS, 'text')
-    textNode.setAttribute('text-anchor', 'middle')
     textNode.setAttribute('font-size', textSize)
     textNode.setAttribute('font-weight', '300')
     textNode.setAttribute('letter-spacing', '-5')
-    textNode.setAttribute('x', '50%')
+    textNode.setAttribute('text-anchor', 'middle')
+    textNode.setAttribute('x', showIcon ? `${(iconSize + iconPadding) / 2}` : 0)
+    // vertical align, "alignment-baseline: central" is not supported by Batik
+    textNode.setAttribute('y', '.35em')
     textNode.setAttribute('fill', fillColor)
     textNode.setAttribute('data-test', 'visualization-primary-value')
+
     textNode.appendChild(document.createTextNode(formattedValue))
 
     svgValue.appendChild(textNode)
 
     if (subText) {
-        const svgSubText = document.createElementNS(svgNS, 'svg')
-        const subTextSize = 40
-        svgSubText.setAttribute(
-            'viewBox',
-            `0 -50 ${textSize * 0.75 * formattedValue.length} ${textSize + 200}`
-        )
-
-        if (y) {
-            svgSubText.setAttribute('y', y)
-        }
-
         const subTextNode = document.createElementNS(svgNS, 'text')
         subTextNode.setAttribute('text-anchor', 'middle')
         subTextNode.setAttribute('font-size', subTextSize)
-        subTextNode.setAttribute('x', '50%')
-        subTextNode.setAttribute('x', '50%')
+        subTextNode.setAttribute('y', iconSize / 2)
+        subTextNode.setAttribute('dy', subTextSize)
         subTextNode.setAttribute('fill', colors.grey600)
         subTextNode.appendChild(document.createTextNode(subText))
 
-        svgSubText.appendChild(subTextNode)
-
-        svgValue.appendChild(svgSubText)
+        svgValue.appendChild(subTextNode)
     }
 
     return svgValue
@@ -92,15 +128,38 @@ const generateValueSVG = ({
 
 const generateDashboardItem = (
     config,
-    { valueColor, titleColor, backgroundColor, noData }
+    {
+        svgContainer,
+        width,
+        height,
+        valueColor,
+        titleColor,
+        backgroundColor,
+        noData,
+        icon,
+    }
 ) => {
+    svgContainer.appendChild(
+        generateValueSVG({
+            formattedValue: config.formattedValue,
+            subText: config.subText,
+            valueColor,
+            noData,
+            icon,
+            containerWidth: width,
+            containerHeight: height,
+        })
+    )
+
     const container = document.createElement('div')
     container.setAttribute(
         'style',
         `display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; height: 100%; background-color:${backgroundColor};`
     )
 
-    const titleStyle = `font-size: 12px; color: ${titleColor || '#666'};`
+    const titleStyle = `padding: 0 8px; text-align: center; font-size: 12px; color: ${
+        titleColor || '#666'
+    };`
 
     const title = document.createElement('span')
     title.setAttribute('style', titleStyle)
@@ -112,25 +171,14 @@ const generateDashboardItem = (
 
     if (config.subtitle) {
         const subtitle = document.createElement('span')
-        subtitle.setAttribute(
-            'style',
-            titleStyle + ' margin-top: 4px; padding: 0 8px'
-        )
+        subtitle.setAttribute('style', titleStyle + ' margin-top: 4px;')
 
         subtitle.appendChild(document.createTextNode(config.subtitle))
 
         container.appendChild(subtitle)
     }
 
-    container.appendChild(
-        generateValueSVG({
-            formattedValue: config.formattedValue,
-            subText: config.subText,
-            valueColor,
-            noData,
-            y: 40,
-        })
-    )
+    container.appendChild(svgContainer)
 
     return container
 }
@@ -161,31 +209,32 @@ const getXFromTextAlign = (textAlign) => {
 
 const generateDVItem = (
     config,
-    { valueColor, backgroundColor, titleColor, parentEl, fontStyle, noData }
+    {
+        svgContainer,
+        width,
+        height,
+        valueColor,
+        noData,
+        backgroundColor,
+        titleColor,
+        fontStyle,
+        icon,
+    }
 ) => {
-    const parentElBBox = parentEl.getBoundingClientRect()
-
-    const width = parentElBBox.width
-    const height = parentElBBox.height
-
-    const svgNS = 'http://www.w3.org/2000/svg'
-
-    const svg = document.createElementNS(svgNS, 'svg')
-    svg.setAttribute('xmlns', svgNS)
-    svg.setAttribute('viewBox', `0 0 ${width} ${height}`)
-    svg.setAttribute('width', width)
-    svg.setAttribute('height', height)
-    svg.setAttribute('data-test', 'visualization-container')
-
     if (backgroundColor) {
-        svg.setAttribute('style', `background-color: ${backgroundColor};`)
+        svgContainer.setAttribute(
+            'style',
+            `background-color: ${backgroundColor};`
+        )
 
         const background = document.createElementNS(svgNS, 'rect')
         background.setAttribute('width', '100%')
         background.setAttribute('height', '100%')
         background.setAttribute('fill', backgroundColor)
-        svg.appendChild(background)
+        svgContainer.appendChild(background)
     }
+
+    const svgWrapper = document.createElementNS(svgNS, 'svg')
 
     const title = document.createElementNS(svgNS, 'text')
     const titleFontStyle = mergeFontStyleWithDefault(
@@ -234,7 +283,7 @@ const generateDVItem = (
     if (config.title) {
         title.appendChild(document.createTextNode(config.title))
 
-        svg.appendChild(title)
+        svgWrapper.appendChild(title)
     }
 
     const subtitleFontStyle = mergeFontStyleWithDefault(
@@ -291,23 +340,27 @@ const generateDVItem = (
     if (config.subtitle) {
         subtitle.appendChild(document.createTextNode(config.subtitle))
 
-        svg.appendChild(subtitle)
+        svgWrapper.appendChild(subtitle)
     }
 
-    svg.appendChild(
+    svgContainer.appendChild(svgWrapper)
+
+    svgContainer.appendChild(
         generateValueSVG({
             formattedValue: config.formattedValue,
             subText: config.subText,
             valueColor,
             noData,
-            y: 20,
+            icon,
+            containerWidth: width,
+            containerHeight: height,
         })
     )
 
-    return svg
+    return svgContainer
 }
 
-const shouldUseContrastColor = (inputColor) => {
+const shouldUseContrastColor = (inputColor = '') => {
     // based on https://stackoverflow.com/questions/3942878/how-to-decide-font-color-in-white-or-black-depending-on-background-color
     var color =
         inputColor.charAt(0) === '#' ? inputColor.substring(1, 7) : inputColor
@@ -328,7 +381,7 @@ const shouldUseContrastColor = (inputColor) => {
 export default function (
     config,
     parentEl,
-    { dashboard, legendSets, fontStyle, noData, legendOptions }
+    { dashboard, legendSets, fontStyle, noData, legendOptions, icon }
 ) {
     const legendSet = legendOptions && legendSets[0]
     const legendColor =
@@ -348,25 +401,45 @@ export default function (
     parentEl.style.display = 'flex'
     parentEl.style.justifyContent = 'center'
 
+    const parentElBBox = parentEl.getBoundingClientRect()
+    const width = parentElBBox.width
+    const height = parentElBBox.height
+
+    const svgContainer = document.createElementNS(svgNS, 'svg')
+    svgContainer.setAttribute('xmlns', svgNS)
+    svgContainer.setAttribute('viewBox', `0 0 ${width} ${height}`)
+    svgContainer.setAttribute('width', dashboard ? '100%' : width)
+    svgContainer.setAttribute('height', dashboard ? '100%' : height)
+    svgContainer.setAttribute('data-test', 'visualization-container')
+
     if (dashboard) {
         parentEl.style.borderRadius = spacers.dp8
+
         return generateDashboardItem(config, {
+            svgContainer,
+            width,
+            height,
             valueColor,
             backgroundColor,
             noData,
-            ...(shouldUseContrastColor(legendColor)
+            icon,
+            ...(legendColor && shouldUseContrastColor(legendColor)
                 ? { titleColor: colors.white }
                 : {}),
         })
     } else {
         parentEl.style.height = `100%`
+
         return generateDVItem(config, {
+            svgContainer,
+            width,
+            height,
             valueColor,
             backgroundColor,
             titleColor,
-            parentEl,
-            fontStyle,
             noData,
+            icon,
+            fontStyle,
         })
     }
 }
