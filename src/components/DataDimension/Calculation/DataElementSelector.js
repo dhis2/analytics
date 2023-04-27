@@ -69,6 +69,7 @@ const GroupSelector = ({ currentValue, onChange, displayNameProp }) => {
                         value={defaultGroup.id}
                         key={defaultGroup.id}
                         label={defaultGroup.getName()}
+                        dataTest={`data-element-group-select-option-${defaultGroup.id}`}
                     />
                 ) : null}
                 {!loading
@@ -77,6 +78,7 @@ const GroupSelector = ({ currentValue, onChange, displayNameProp }) => {
                               value={group.id}
                               key={group.id}
                               label={group.name}
+                              dataTest={`data-element-group-select-option-${group.id}`}
                           />
                       ))
                     : null}
@@ -107,6 +109,7 @@ const DisaggregationSelector = ({ currentValue, onChange }) => {
                         value={option[0]}
                         key={option[0]}
                         label={option[1]}
+                        dataTest={`data-element-disaggregation-select-option-${option[0]}`}
                     />
                 ))}
             </SingleSelectField>
