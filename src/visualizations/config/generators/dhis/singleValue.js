@@ -33,6 +33,7 @@ const generateValueSVG = ({
     formattedValue,
     subText,
     valueColor,
+    textColor,
     icon,
     noData,
     containerWidth,
@@ -117,7 +118,7 @@ const generateValueSVG = ({
         subTextNode.setAttribute('font-size', subTextSize)
         subTextNode.setAttribute('y', iconSize / 2)
         subTextNode.setAttribute('dy', subTextSize)
-        subTextNode.setAttribute('fill', colors.grey600)
+        subTextNode.setAttribute('fill', textColor)
         subTextNode.appendChild(document.createTextNode(subText))
 
         svgValue.appendChild(subTextNode)
@@ -144,6 +145,7 @@ const generateDashboardItem = (
             formattedValue: config.formattedValue,
             subText: config.subText,
             valueColor,
+            textColor: titleColor,
             noData,
             icon,
             containerWidth: width,
@@ -350,6 +352,7 @@ const generateDVItem = (
             formattedValue: config.formattedValue,
             subText: config.subText,
             valueColor,
+            textColor: titleColor,
             noData,
             icon,
             containerWidth: width,
