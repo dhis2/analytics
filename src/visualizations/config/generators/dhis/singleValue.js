@@ -156,7 +156,9 @@ const generateDashboardItem = (
     const container = document.createElement('div')
     container.setAttribute(
         'style',
-        `display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; height: 100%; background-color:${backgroundColor};`
+        `display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; height: 100%; ${
+            backgroundColor ? `background-color:${backgroundColor};` : ''
+        }`
     )
 
     const titleStyle = `padding: 0 8px; text-align: center; font-size: 12px; color: ${
