@@ -243,11 +243,13 @@ const generateDVItem = (
         fontStyle && fontStyle[FONT_STYLE_VISUALIZATION_TITLE],
         FONT_STYLE_VISUALIZATION_TITLE
     )
+    const titleYPosition = titleFontStyle[FONT_STYLE_OPTION_FONT_SIZE]
+
     title.setAttribute(
         'x',
         getXFromTextAlign(titleFontStyle[FONT_STYLE_OPTION_TEXT_ALIGN])
     )
-    title.setAttribute('y', 28)
+    title.setAttribute('y', titleYPosition)
     title.setAttribute(
         'text-anchor',
         getTextAnchorFromTextAlign(titleFontStyle[FONT_STYLE_OPTION_TEXT_ALIGN])
@@ -297,8 +299,11 @@ const generateDVItem = (
         'x',
         getXFromTextAlign(subtitleFontStyle[FONT_STYLE_OPTION_TEXT_ALIGN])
     )
-    subtitle.setAttribute('y', 28)
-    subtitle.setAttribute('dy', 22)
+    subtitle.setAttribute('y', titleYPosition)
+    subtitle.setAttribute(
+        'dy',
+        `${subtitleFontStyle[FONT_STYLE_OPTION_FONT_SIZE] + 4}`
+    )
     subtitle.setAttribute(
         'text-anchor',
         getTextAnchorFromTextAlign(
