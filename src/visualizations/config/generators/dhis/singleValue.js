@@ -426,7 +426,9 @@ export default function (
             backgroundColor,
             noData,
             icon,
-            ...(legendColor && shouldUseContrastColor(legendColor)
+            ...(legendOptions.style === LEGEND_DISPLAY_STYLE_FILL &&
+            legendColor &&
+            shouldUseContrastColor(legendColor)
                 ? { titleColor: colors.white }
                 : {}),
         })
