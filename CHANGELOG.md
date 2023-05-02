@@ -1,3 +1,10 @@
+## [25.1.1](https://github.com/dhis2/analytics/compare/v25.1.0...v25.1.1) (2023-05-02)
+
+
+### Bug Fixes
+
+* address various SV SVG issues after KFMT ([#1456](https://github.com/dhis2/analytics/issues/1456)) ([f0ee1f1](https://github.com/dhis2/analytics/commit/f0ee1f16450e1b6de7c879c8ecdeec7c1d7c89fb))
+
 # [25.1.0](https://github.com/dhis2/analytics/compare/v25.0.0...v25.1.0) (2023-04-27)
 
 
