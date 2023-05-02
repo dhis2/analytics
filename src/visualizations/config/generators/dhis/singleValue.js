@@ -423,7 +423,7 @@ export default function (
     svgContainer.setAttribute('data-test', 'visualization-container')
 
     if (dashboard) {
-        parentEl.style.borderRadius = spacers.dp8
+        parentEl.style.borderRadius = '3px'
 
         return generateDashboardItem(config, {
             svgContainer,
