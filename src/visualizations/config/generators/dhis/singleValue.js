@@ -304,7 +304,7 @@ const generateDVItem = (
     subtitle.setAttribute('y', titleYPosition)
     subtitle.setAttribute(
         'dy',
-        `${subtitleFontStyle[FONT_STYLE_OPTION_FONT_SIZE] + 4}`
+        `${subtitleFontStyle[FONT_STYLE_OPTION_FONT_SIZE] + 10}`
     )
     subtitle.setAttribute(
         'text-anchor',
