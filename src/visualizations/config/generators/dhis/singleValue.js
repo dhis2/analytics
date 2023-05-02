@@ -33,6 +33,7 @@ const generateValueSVG = ({
     formattedValue,
     subText,
     valueColor,
+    textColor,
     icon,
     noData,
     containerWidth,
@@ -117,7 +118,7 @@ const generateValueSVG = ({
         subTextNode.setAttribute('font-size', subTextSize)
         subTextNode.setAttribute('y', iconSize / 2)
         subTextNode.setAttribute('dy', subTextSize)
-        subTextNode.setAttribute('fill', colors.grey600)
+        subTextNode.setAttribute('fill', textColor)
         subTextNode.appendChild(document.createTextNode(subText))
 
         svgValue.appendChild(subTextNode)
@@ -144,6 +145,7 @@ const generateDashboardItem = (
             formattedValue: config.formattedValue,
             subText: config.subText,
             valueColor,
+            textColor: titleColor,
             noData,
             icon,
             containerWidth: width,
@@ -154,7 +156,9 @@ const generateDashboardItem = (
     const container = document.createElement('div')
     container.setAttribute(
         'style',
-        `display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; height: 100%; background-color:${backgroundColor};`
+        `display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; height: 100%; padding-top: 8px; ${
+            backgroundColor ? `background-color:${backgroundColor};` : ''
+        }`
     )
 
     const titleStyle = `padding: 0 8px; text-align: center; font-size: 12px; color: ${
@@ -241,11 +245,13 @@ const generateDVItem = (
         fontStyle && fontStyle[FONT_STYLE_VISUALIZATION_TITLE],
         FONT_STYLE_VISUALIZATION_TITLE
     )
+    const titleYPosition = titleFontStyle[FONT_STYLE_OPTION_FONT_SIZE]
+
     title.setAttribute(
         'x',
         getXFromTextAlign(titleFontStyle[FONT_STYLE_OPTION_TEXT_ALIGN])
     )
-    title.setAttribute('y', 28)
+    title.setAttribute('y', titleYPosition)
     title.setAttribute(
         'text-anchor',
         getTextAnchorFromTextAlign(titleFontStyle[FONT_STYLE_OPTION_TEXT_ALIGN])
@@ -295,8 +301,11 @@ const generateDVItem = (
         'x',
         getXFromTextAlign(subtitleFontStyle[FONT_STYLE_OPTION_TEXT_ALIGN])
     )
-    subtitle.setAttribute('y', 28)
-    subtitle.setAttribute('dy', 22)
+    subtitle.setAttribute('y', titleYPosition)
+    subtitle.setAttribute(
+        'dy',
+        `${subtitleFontStyle[FONT_STYLE_OPTION_FONT_SIZE] + 4}`
+    )
     subtitle.setAttribute(
         'text-anchor',
         getTextAnchorFromTextAlign(
@@ -350,6 +359,7 @@ const generateDVItem = (
             formattedValue: config.formattedValue,
             subText: config.subText,
             valueColor,
+            textColor: titleColor,
             noData,
             icon,
             containerWidth: width,
@@ -423,7 +433,9 @@ export default function (
             backgroundColor,
             noData,
             icon,
-            ...(legendColor && shouldUseContrastColor(legendColor)
+            ...(legendOptions.style === LEGEND_DISPLAY_STYLE_FILL &&
+            legendColor &&
+            shouldUseContrastColor(legendColor)
                 ? { titleColor: colors.white }
                 : {}),
         })
