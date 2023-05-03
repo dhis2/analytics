@@ -1,3 +1,10 @@
+## [25.1.2](https://github.com/dhis2/analytics/compare/v25.1.1...v25.1.2) (2023-05-03)
+
+
+### Bug Fixes
+
+* small cosmetic fixes to SV SVG ([#1457](https://github.com/dhis2/analytics/issues/1457)) ([2785a9e](https://github.com/dhis2/analytics/commit/2785a9e3e7c656d830df78c84c4ef29de74b0614))
+
 ## [25.1.1](https://github.com/dhis2/analytics/compare/v25.1.0...v25.1.1) (2023-05-02)
 
 
