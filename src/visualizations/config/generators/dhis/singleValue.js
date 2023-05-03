@@ -1,4 +1,4 @@
-import { colors, spacers } from '@dhis2/ui'
+import { colors } from '@dhis2/ui'
 import {
     FONT_STYLE_VISUALIZATION_TITLE,
     FONT_STYLE_VISUALIZATION_SUBTITLE,
