@@ -1,4 +1,4 @@
-import { colors, spacers } from '@dhis2/ui'
+import { colors } from '@dhis2/ui'
 import {
     FONT_STYLE_VISUALIZATION_TITLE,
     FONT_STYLE_VISUALIZATION_SUBTITLE,
@@ -304,7 +304,7 @@ const generateDVItem = (
     subtitle.setAttribute('y', titleYPosition)
     subtitle.setAttribute(
         'dy',
-        `${subtitleFontStyle[FONT_STYLE_OPTION_FONT_SIZE] + 4}`
+        `${subtitleFontStyle[FONT_STYLE_OPTION_FONT_SIZE] + 10}`
     )
     subtitle.setAttribute(
         'text-anchor',
@@ -423,7 +423,7 @@ export default function (
     svgContainer.setAttribute('data-test', 'visualization-container')
 
     if (dashboard) {
-        parentEl.style.borderRadius = spacers.dp8
+        parentEl.style.borderRadius = '3px'
 
         return generateDashboardItem(config, {
             svgContainer,
