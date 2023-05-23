@@ -26,16 +26,18 @@ const getTextWidth = (text, font) => {
     const canvas = document.createElement('canvas')
     const context = canvas.getContext('2d')
     context.font = font
-    return context.measureText(text).width
+    return context.measureText(text).width * 0.9
 }
 
+const getTextHeight = (textSize) => textSize * 0.7
+
 const getTextSize = (formattedValue, containerWidth, containerHeight) => {
-    let size = containerHeight / 5
+    let size = Math.round(containerHeight / 3)
 
     if (size > 0) {
         while (
             getTextWidth(formattedValue, `${size}px Roboto`) >
-            containerWidth * 0.7
+            containerWidth * 0.8
         ) {
             size = size - 1
         }
@@ -53,6 +55,7 @@ const generateValueSVG = ({
     noData,
     containerWidth,
     containerHeight,
+    topMargin,
 }) => {
     // const ratio = containerHeight / containerWidth
     // const iconSize = 300
@@ -63,10 +66,12 @@ const generateValueSVG = ({
         containerWidth,
         containerHeight
     )
+    console.log('topMargin', topMargin)
     console.log('textSize', textSize)
 
     const textWidth = getTextWidth(formattedValue, `${textSize}px Roboto`)
     console.log('textWidth', textWidth)
+
     const subTextSize = 40
 
     const iconSize = textSize
@@ -74,9 +79,9 @@ const generateValueSVG = ({
 
     // let viewBoxWidth = textWidth
 
-    if (showIcon) {
-        // viewBoxWidth += iconSize + iconPadding
-    }
+    // if (showIcon) {
+    // viewBoxWidth += iconSize + iconPadding
+    // }
 
     // const viewBoxHeight = viewBoxWidth * ratio
 
@@ -100,10 +105,11 @@ const generateValueSVG = ({
     if (showIcon) {
         // embed icon to allow changing color
         // (elements with fill need to use "currentColor" for this to work)
+
         const iconSvgNode = document.createElementNS(svgNS, 'svg')
+        iconSvgNode.setAttribute('viewBox', '0 0 48 48')
         iconSvgNode.setAttribute('width', iconSize)
         iconSvgNode.setAttribute('height', iconSize)
-        iconSvgNode.setAttribute('viewBox', '0 0 48 48')
         iconSvgNode.setAttribute('y', `-${iconSize / 2}`)
         iconSvgNode.setAttribute(
             'x',
@@ -135,7 +141,7 @@ const generateValueSVG = ({
     textNode.setAttribute('text-anchor', 'middle')
     textNode.setAttribute('x', showIcon ? `${(iconSize + iconPadding) / 2}` : 0)
     // vertical align, "alignment-baseline: central" is not supported by Batik
-    textNode.setAttribute('y', '.35em')
+    textNode.setAttribute('y', topMargin / 2 + getTextHeight(textSize) / 2)
     textNode.setAttribute('fill', fillColor)
     textNode.setAttribute('data-test', 'visualization-primary-value')
 
@@ -394,7 +400,15 @@ const generateDVItem = (
     }
 
     svgContainer.appendChild(svgWrapper)
-
+    console.log('title size', parseInt(title.getAttribute('font-size')))
+    console.log('subtitle size', parseInt(subtitle.getAttribute('font-size')))
+    console.log(
+        'top margin',
+        getTextHeight(
+            (title ? parseInt(title.getAttribute('font-size')) : 0) +
+                (subtitle ? parseInt(subtitle.getAttribute('font-size')) : 0)
+        )
+    )
     svgContainer.appendChild(
         generateValueSVG({
             formattedValue: config.formattedValue,
@@ -405,6 +419,13 @@ const generateDVItem = (
             icon,
             containerWidth: width,
             containerHeight: height,
+            topMargin:
+                getTextHeight(
+                    (title ? parseInt(title.getAttribute('font-size')) : 0) +
+                        (subtitle
+                            ? parseInt(subtitle.getAttribute('font-size'))
+                            : 0)
+                ) * 1.9,
         })
     )
 
