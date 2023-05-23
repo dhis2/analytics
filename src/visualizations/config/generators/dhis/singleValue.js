@@ -29,7 +29,7 @@ const getTextWidth = (text, font) => {
     return context.measureText(text).width * 0.9
 }
 
-const getTextHeight = (textSize) => textSize * 0.7
+const getTextHeightForNumbers = (textSize) => textSize * 0.7
 
 const getTextSize = (formattedValue, containerWidth, containerHeight) => {
     let size = Math.round(containerHeight / 3)
@@ -127,7 +127,7 @@ const generateValueSVG = ({
         svgValue.appendChild(iconSvgNode)
     }
 
-    const letterSpacing = (textSize / 40) * -1
+    const letterSpacing = Math.round((textSize / 35) * -1)
 
     const textNode = document.createElementNS(svgNS, 'text')
     textNode.setAttribute('viewBox', `0 0 ${containerWidth} ${containerHeight}`)
@@ -136,12 +136,15 @@ const generateValueSVG = ({
     // textNode.setAttribute('letter-spacing', '-5')
     textNode.setAttribute(
         'letter-spacing',
-        letterSpacing < -5 ? -5 : letterSpacing > -2 ? -2 : letterSpacing
+        letterSpacing < -6 ? -6 : letterSpacing > -1 ? -1 : letterSpacing
     )
     textNode.setAttribute('text-anchor', 'middle')
     textNode.setAttribute('x', showIcon ? `${(iconSize + iconPadding) / 2}` : 0)
     // vertical align, "alignment-baseline: central" is not supported by Batik
-    textNode.setAttribute('y', topMargin / 2 + getTextHeight(textSize) / 2)
+    textNode.setAttribute(
+        'y',
+        topMargin / 2 + getTextHeightForNumbers(textSize) / 2
+    )
     textNode.setAttribute('fill', fillColor)
     textNode.setAttribute('data-test', 'visualization-primary-value')
 
@@ -287,115 +290,89 @@ const generateDVItem = (
 
     const svgWrapper = document.createElementNS(svgNS, 'svg')
 
+    // title
     const title = document.createElementNS(svgNS, 'text')
+
     const titleFontStyle = mergeFontStyleWithDefault(
         fontStyle && fontStyle[FONT_STYLE_VISUALIZATION_TITLE],
         FONT_STYLE_VISUALIZATION_TITLE
     )
-    const titleYPosition = titleFontStyle[FONT_STYLE_OPTION_FONT_SIZE]
+    console.log('titleFontStyle', titleFontStyle)
+    const titleYPosition =
+        16 + parseInt(titleFontStyle[FONT_STYLE_OPTION_FONT_SIZE]) + 'px'
 
-    title.setAttribute(
-        'x',
-        getXFromTextAlign(titleFontStyle[FONT_STYLE_OPTION_TEXT_ALIGN])
-    )
-    title.setAttribute('y', titleYPosition)
-    title.setAttribute(
-        'text-anchor',
-        getTextAnchorFromTextAlign(titleFontStyle[FONT_STYLE_OPTION_TEXT_ALIGN])
-    )
-    title.setAttribute(
-        'font-size',
-        `${titleFontStyle[FONT_STYLE_OPTION_FONT_SIZE]}px`
-    )
-    title.setAttribute(
-        'font-weight',
-        titleFontStyle[FONT_STYLE_OPTION_BOLD]
+    const titleAttributes = {
+        x: getXFromTextAlign(titleFontStyle[FONT_STYLE_OPTION_TEXT_ALIGN]),
+        y: titleYPosition,
+        'text-anchor': getTextAnchorFromTextAlign(
+            titleFontStyle[FONT_STYLE_OPTION_TEXT_ALIGN]
+        ),
+        'font-size': `${titleFontStyle[FONT_STYLE_OPTION_FONT_SIZE]}px`,
+        'font-weight': titleFontStyle[FONT_STYLE_OPTION_BOLD]
             ? FONT_STYLE_OPTION_BOLD
-            : 'normal'
-    )
-    title.setAttribute(
-        'font-style',
-        titleFontStyle[FONT_STYLE_OPTION_ITALIC]
+            : 'normal',
+        'font-style': titleFontStyle[FONT_STYLE_OPTION_ITALIC]
             ? FONT_STYLE_OPTION_ITALIC
-            : 'normal'
-    )
-    if (
-        titleColor &&
-        titleFontStyle[FONT_STYLE_OPTION_TEXT_COLOR] ===
-            defaultFontStyle[FONT_STYLE_VISUALIZATION_TITLE][
-                FONT_STYLE_OPTION_TEXT_COLOR
-            ]
-    ) {
-        title.setAttribute('fill', titleColor)
-    } else {
-        title.setAttribute('fill', titleFontStyle[FONT_STYLE_OPTION_TEXT_COLOR])
+            : 'normal',
+        'data-test': 'visualization-title',
+        fill:
+            titleColor &&
+            titleFontStyle[FONT_STYLE_OPTION_TEXT_COLOR] ===
+                defaultFontStyle[FONT_STYLE_VISUALIZATION_TITLE][
+                    FONT_STYLE_OPTION_TEXT_COLOR
+                ]
+                ? titleColor
+                : titleFontStyle[FONT_STYLE_OPTION_TEXT_COLOR],
     }
 
-    title.setAttribute('data-test', 'visualization-title')
+    Object.entries(titleAttributes).forEach(([key, value]) =>
+        title.setAttribute(key, value)
+    )
 
     if (config.title) {
         title.appendChild(document.createTextNode(config.title))
-
         svgWrapper.appendChild(title)
     }
+
+    // subtitle
+    const subtitle = document.createElementNS(svgNS, 'text')
 
     const subtitleFontStyle = mergeFontStyleWithDefault(
         fontStyle && fontStyle[FONT_STYLE_VISUALIZATION_SUBTITLE],
         FONT_STYLE_VISUALIZATION_SUBTITLE
     )
-    const subtitle = document.createElementNS(svgNS, 'text')
-    subtitle.setAttribute(
-        'x',
-        getXFromTextAlign(subtitleFontStyle[FONT_STYLE_OPTION_TEXT_ALIGN])
-    )
-    subtitle.setAttribute('y', titleYPosition)
-    subtitle.setAttribute(
-        'dy',
-        `${subtitleFontStyle[FONT_STYLE_OPTION_FONT_SIZE] + 10}`
-    )
-    subtitle.setAttribute(
-        'text-anchor',
-        getTextAnchorFromTextAlign(
-            subtitleFontStyle[FONT_STYLE_OPTION_TEXT_ALIGN]
-        )
-    )
-    subtitle.setAttribute(
-        'font-size',
-        `${subtitleFontStyle[FONT_STYLE_OPTION_FONT_SIZE]}px`
-    )
-    subtitle.setAttribute(
-        'font-weight',
-        subtitleFontStyle[FONT_STYLE_OPTION_BOLD]
-            ? FONT_STYLE_OPTION_BOLD
-            : 'normal'
-    )
-    subtitle.setAttribute(
-        'font-style',
-        subtitleFontStyle[FONT_STYLE_OPTION_ITALIC]
-            ? FONT_STYLE_OPTION_ITALIC
-            : 'normal'
-    )
 
-    if (
-        titleColor &&
-        subtitleFontStyle[FONT_STYLE_OPTION_TEXT_COLOR] ===
-            defaultFontStyle[FONT_STYLE_VISUALIZATION_SUBTITLE][
-                FONT_STYLE_OPTION_TEXT_COLOR
-            ]
-    ) {
-        subtitle.setAttribute('fill', titleColor)
-    } else {
-        subtitle.setAttribute(
-            'fill',
-            subtitleFontStyle[FONT_STYLE_OPTION_TEXT_COLOR]
-        )
+    const subtitleAttributes = {
+        x: getXFromTextAlign(subtitleFontStyle[FONT_STYLE_OPTION_TEXT_ALIGN]),
+        y: titleYPosition,
+        dy: `${subtitleFontStyle[FONT_STYLE_OPTION_FONT_SIZE] + 10}`,
+        'text-anchor': getTextAnchorFromTextAlign(
+            subtitleFontStyle[FONT_STYLE_OPTION_TEXT_ALIGN]
+        ),
+        'font-size': `${subtitleFontStyle[FONT_STYLE_OPTION_FONT_SIZE]}px`,
+        'font-weight': subtitleFontStyle[FONT_STYLE_OPTION_BOLD]
+            ? FONT_STYLE_OPTION_BOLD
+            : 'normal',
+        'font-style': subtitleFontStyle[FONT_STYLE_OPTION_ITALIC]
+            ? FONT_STYLE_OPTION_ITALIC
+            : 'normal',
+        fill:
+            titleColor &&
+            subtitleFontStyle[FONT_STYLE_OPTION_TEXT_COLOR] ===
+                defaultFontStyle[FONT_STYLE_VISUALIZATION_SUBTITLE][
+                    FONT_STYLE_OPTION_TEXT_COLOR
+                ]
+                ? titleColor
+                : subtitleFontStyle[FONT_STYLE_OPTION_TEXT_COLOR],
+        'data-test': 'visualization-subtitle',
     }
 
-    subtitle.setAttribute('data-test', 'visualization-subtitle')
+    Object.entries(subtitleAttributes).forEach(([key, value]) =>
+        subtitle.setAttribute(key, value)
+    )
 
     if (config.subtitle) {
         subtitle.appendChild(document.createTextNode(config.subtitle))
-
         svgWrapper.appendChild(subtitle)
     }
 
@@ -404,10 +381,8 @@ const generateDVItem = (
     console.log('subtitle size', parseInt(subtitle.getAttribute('font-size')))
     console.log(
         'top margin',
-        getTextHeight(
-            (title ? parseInt(title.getAttribute('font-size')) : 0) +
-                (subtitle ? parseInt(subtitle.getAttribute('font-size')) : 0)
-        )
+        (title ? parseInt(title.getAttribute('font-size')) : 0) +
+            (subtitle ? parseInt(subtitle.getAttribute('font-size')) : 0)
     )
     svgContainer.appendChild(
         generateValueSVG({
@@ -420,12 +395,12 @@ const generateDVItem = (
             containerWidth: width,
             containerHeight: height,
             topMargin:
-                getTextHeight(
-                    (title ? parseInt(title.getAttribute('font-size')) : 0) +
-                        (subtitle
-                            ? parseInt(subtitle.getAttribute('font-size'))
-                            : 0)
-                ) * 1.9,
+                16 +
+                (config.title ? parseInt(title.getAttribute('font-size')) : 0) +
+                (config.subtitle
+                    ? parseInt(subtitle.getAttribute('font-size'))
+                    : 0) *
+                    1.8,
         })
     )
 
