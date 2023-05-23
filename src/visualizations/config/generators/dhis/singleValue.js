@@ -31,13 +31,20 @@ const getTextWidth = (text, font) => {
 
 const getTextHeightForNumbers = (textSize) => textSize * 0.7
 
-const getTextSize = (formattedValue, containerWidth, containerHeight) => {
+const getTextSize = (
+    formattedValue,
+    containerWidth,
+    containerHeight,
+    showIcon
+) => {
     let size = Math.round(containerHeight / 3)
+    const threshold = containerWidth * 0.8
 
     if (size > 0) {
         while (
-            getTextWidth(formattedValue, `${size}px Roboto`) >
-            containerWidth * 0.8
+            getTextWidth(formattedValue, `${size}px Roboto`) +
+                (showIcon ? size + 50 : 0) >
+            threshold
         ) {
             size = size - 1
         }
@@ -60,6 +67,7 @@ const generateValueSVG = ({
     // const ratio = containerHeight / containerWidth
     // const iconSize = 300
     const iconPadding = 50
+    const showIcon = icon && formattedValue !== noData.text
     // const textSize = iconSize * 0.85
     const textSize = getTextSize(
         formattedValue,
@@ -75,7 +83,6 @@ const generateValueSVG = ({
     const subTextSize = 40
 
     const iconSize = textSize
-    const showIcon = icon && formattedValue !== noData.text
 
     // let viewBoxWidth = textWidth
 
@@ -110,7 +117,12 @@ const generateValueSVG = ({
         iconSvgNode.setAttribute('viewBox', '0 0 48 48')
         iconSvgNode.setAttribute('width', iconSize)
         iconSvgNode.setAttribute('height', iconSize)
-        iconSvgNode.setAttribute('y', `-${iconSize / 2}`)
+        iconSvgNode.setAttribute('y', `-${iconSize / 2 - topMargin / 2}`)
+        // iconSvgNode.setAttribute(
+        //     'y',
+        //     topMargin / 2 + getTextHeightForNumbers(textSize) / 2
+        // )
+
         iconSvgNode.setAttribute(
             'x',
             `-${(iconSize + iconPadding + textWidth) / 2}`
