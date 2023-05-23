@@ -29,6 +29,21 @@ const getTextWidth = (text, font) => {
     return context.measureText(text).width
 }
 
+const getTextSize = (formattedValue, containerWidth, containerHeight) => {
+    let size = containerHeight / 5
+
+    if (size > 0) {
+        while (
+            getTextWidth(formattedValue, `${size}px Roboto`) >
+            containerWidth * 0.7
+        ) {
+            size = size - 1
+        }
+    }
+
+    return size
+}
+
 const generateValueSVG = ({
     formattedValue,
     subText,
@@ -39,25 +54,34 @@ const generateValueSVG = ({
     containerWidth,
     containerHeight,
 }) => {
-    const ratio = containerHeight / containerWidth
-    const iconSize = 300
+    // const ratio = containerHeight / containerWidth
+    // const iconSize = 300
     const iconPadding = 50
-    const textSize = iconSize * 0.85
+    // const textSize = iconSize * 0.85
+    const textSize = getTextSize(
+        formattedValue,
+        containerWidth,
+        containerHeight
+    )
+    console.log('textSize', textSize)
+
     const textWidth = getTextWidth(formattedValue, `${textSize}px Roboto`)
+    console.log('textWidth', textWidth)
     const subTextSize = 40
 
+    const iconSize = textSize
     const showIcon = icon && formattedValue !== noData.text
 
-    let viewBoxWidth = textWidth
+    // let viewBoxWidth = textWidth
 
     if (showIcon) {
-        viewBoxWidth += iconSize + iconPadding
+        // viewBoxWidth += iconSize + iconPadding
     }
 
-    const viewBoxHeight = viewBoxWidth * ratio
+    // const viewBoxHeight = viewBoxWidth * ratio
 
     const svgValue = document.createElementNS(svgNS, 'svg')
-    svgValue.setAttribute('viewBox', `0 0 ${viewBoxWidth} ${viewBoxHeight}`)
+    svgValue.setAttribute('viewBox', `0 0 ${containerWidth} ${containerHeight}`)
     svgValue.setAttribute('width', '95%')
     svgValue.setAttribute('height', '95%')
     svgValue.setAttribute('x', '50%')
@@ -97,10 +121,17 @@ const generateValueSVG = ({
         svgValue.appendChild(iconSvgNode)
     }
 
+    const letterSpacing = (textSize / 40) * -1
+
     const textNode = document.createElementNS(svgNS, 'text')
+    textNode.setAttribute('viewBox', `0 0 ${containerWidth} ${containerHeight}`)
     textNode.setAttribute('font-size', textSize)
     textNode.setAttribute('font-weight', '300')
-    textNode.setAttribute('letter-spacing', '-5')
+    // textNode.setAttribute('letter-spacing', '-5')
+    textNode.setAttribute(
+        'letter-spacing',
+        letterSpacing < -5 ? -5 : letterSpacing > -2 ? -2 : letterSpacing
+    )
     textNode.setAttribute('text-anchor', 'middle')
     textNode.setAttribute('x', showIcon ? `${(iconSize + iconPadding) / 2}` : 0)
     // vertical align, "alignment-baseline: central" is not supported by Batik
@@ -225,6 +256,16 @@ const generateDVItem = (
         icon,
     }
 ) => {
+    console.log('config', config)
+    console.log('svgContainer', svgContainer)
+    console.log('width', width)
+    console.log('height', height)
+    console.log('valueColor', valueColor)
+    console.log('backgroundColor', backgroundColor)
+    console.log('titleColor', titleColor)
+    console.log('fontStyle', fontStyle)
+    console.log('icon', icon)
+
     if (backgroundColor) {
         svgContainer.setAttribute(
             'style',
