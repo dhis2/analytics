@@ -38,7 +38,7 @@ const getTextSize = (
     showIcon
 ) => {
     let size = Math.round(containerHeight / 3)
-    const widthThreshold = containerWidth * 0.8
+    const widthThreshold = containerWidth * 0.9
 
     if (size > 0) {
         while (
