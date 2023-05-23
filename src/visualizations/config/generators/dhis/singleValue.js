@@ -38,13 +38,13 @@ const getTextSize = (
     showIcon
 ) => {
     let size = Math.round(containerHeight / 3)
-    const threshold = containerWidth * 0.8
+    const widthThreshold = containerWidth * 0.8
 
     if (size > 0) {
         while (
             getTextWidth(formattedValue, `${size}px Roboto`) +
                 (showIcon ? size + 50 : 0) >
-            threshold
+            widthThreshold
         ) {
             size = size - 1
         }
@@ -72,7 +72,8 @@ const generateValueSVG = ({
     const textSize = getTextSize(
         formattedValue,
         containerWidth,
-        containerHeight
+        containerHeight,
+        showIcon
     )
     console.log('topMargin', topMargin)
     console.log('textSize', textSize)
@@ -94,8 +95,8 @@ const generateValueSVG = ({
 
     const svgValue = document.createElementNS(svgNS, 'svg')
     svgValue.setAttribute('viewBox', `0 0 ${containerWidth} ${containerHeight}`)
-    svgValue.setAttribute('width', '95%')
-    svgValue.setAttribute('height', '95%')
+    svgValue.setAttribute('width', '50%')
+    svgValue.setAttribute('height', '50%')
     svgValue.setAttribute('x', '50%')
     svgValue.setAttribute('y', '50%')
     svgValue.setAttribute('style', 'overflow: visible')
@@ -118,11 +119,6 @@ const generateValueSVG = ({
         iconSvgNode.setAttribute('width', iconSize)
         iconSvgNode.setAttribute('height', iconSize)
         iconSvgNode.setAttribute('y', `-${iconSize / 2 - topMargin / 2}`)
-        // iconSvgNode.setAttribute(
-        //     'y',
-        //     topMargin / 2 + getTextHeightForNumbers(textSize) / 2
-        // )
-
         iconSvgNode.setAttribute(
             'x',
             `-${(iconSize + iconPadding + textWidth) / 2}`
@@ -142,7 +138,7 @@ const generateValueSVG = ({
     const letterSpacing = Math.round((textSize / 35) * -1)
 
     const textNode = document.createElementNS(svgNS, 'text')
-    textNode.setAttribute('viewBox', `0 0 ${containerWidth} ${containerHeight}`)
+    // textNode.setAttribute('viewBox', `0 0 ${containerWidth} ${containerHeight}`)
     textNode.setAttribute('font-size', textSize)
     textNode.setAttribute('font-weight', '300')
     // textNode.setAttribute('letter-spacing', '-5')
