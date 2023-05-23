@@ -118,7 +118,7 @@ const generateValueSVG = ({
         iconSvgNode.setAttribute('viewBox', '0 0 48 48')
         iconSvgNode.setAttribute('width', iconSize)
         iconSvgNode.setAttribute('height', iconSize)
-        iconSvgNode.setAttribute('y', `-${iconSize / 2 - topMargin / 2}`)
+        iconSvgNode.setAttribute('y', (iconSize / 2 - topMargin / 2) * -1)
         iconSvgNode.setAttribute(
             'x',
             `-${(iconSize + iconPadding + textWidth) / 2}`
@@ -392,6 +392,10 @@ const generateDVItem = (
         (title ? parseInt(title.getAttribute('font-size')) : 0) +
             (subtitle ? parseInt(subtitle.getAttribute('font-size')) : 0)
     )
+
+    console.log('config.title', !!config.title)
+    console.log('config.subtitle', !!config.subtitle)
+
     svgContainer.appendChild(
         generateValueSVG({
             formattedValue: config.formattedValue,
@@ -404,11 +408,13 @@ const generateDVItem = (
             containerHeight: height,
             topMargin:
                 16 +
-                (config.title ? parseInt(title.getAttribute('font-size')) : 0) +
-                (config.subtitle
-                    ? parseInt(subtitle.getAttribute('font-size'))
-                    : 0) *
-                    1.8,
+                ((config.title
+                    ? parseInt(title.getAttribute('font-size'))
+                    : 0) +
+                    (config.subtitle
+                        ? parseInt(subtitle.getAttribute('font-size'))
+                        : 0)) *
+                    2.5,
         })
     )
 
