@@ -49,6 +49,8 @@ const SUB_TEXT_SIZE_FACTOR = 1 / 6
 const SUB_TEXT_SIZE_MIN_THRESHOLD = 24
 const SUB_TEXT_SIZE_MAX_THRESHOLD = 40
 
+const ICON_PADDING_FACTOR = 0.4
+
 // Compute text width before rendering
 // Not exactly precise but close enough
 const getTextWidth = (text, font) => {
@@ -60,6 +62,8 @@ const getTextWidth = (text, font) => {
 
 const getTextHeightForNumbers = (textSize) =>
     textSize * ACTUAL_NUMBER_HEIGHT_FACTOR
+
+const getIconPadding = (textSize) => textSize * ICON_PADDING_FACTOR
 
 const getTextSize = (
     formattedValue,
@@ -75,7 +79,7 @@ const getTextSize = (
     if (size > 0) {
         while (
             getTextWidth(formattedValue, `${size}px Roboto`) +
-                (showIcon ? size + 50 : 0) >
+                (showIcon ? getIconPadding(size) : 0) >
             widthThreshold
         ) {
             size = size - 1
@@ -98,7 +102,7 @@ const generateValueSVG = ({
 }) => {
     // const ratio = containerHeight / containerWidth
     // const iconSize = 300
-    const iconPadding = 50
+    // const iconPadding = 50
     const showIcon = icon && formattedValue !== noData.text
     // const textSize = iconSize * 0.85
     const textSize = getTextSize(
@@ -158,7 +162,7 @@ const generateValueSVG = ({
         iconSvgNode.setAttribute('y', (iconSize / 2 - topMargin / 2) * -1)
         iconSvgNode.setAttribute(
             'x',
-            `-${(iconSize + iconPadding + textWidth) / 2}`
+            `-${(iconSize + getIconPadding(textSize) + textWidth) / 2}`
         )
         iconSvgNode.setAttribute('style', `color: ${fillColor}`)
 
@@ -186,7 +190,10 @@ const generateValueSVG = ({
             : letterSpacing
     )
     textNode.setAttribute('text-anchor', 'middle')
-    textNode.setAttribute('x', showIcon ? `${(iconSize + iconPadding) / 2}` : 0)
+    textNode.setAttribute(
+        'x',
+        showIcon ? `${(iconSize + getIconPadding(textSize)) / 2}` : 0
+    )
     // vertical align, "alignment-baseline: central" is not supported by Batik
     textNode.setAttribute(
         'y',
@@ -205,8 +212,7 @@ const generateValueSVG = ({
         subTextNode.setAttribute('font-size', subTextSize)
         subTextNode.setAttribute('y', iconSize / 2 + topMargin / 2)
         subTextNode.setAttribute('dy', subTextSize * 1.7)
-        // subTextNode.setAttribute('fill', textColor)
-        subTextNode.setAttribute('fill', fillColor)
+        subTextNode.setAttribute('fill', textColor)
         subTextNode.appendChild(document.createTextNode(subText))
 
         svgValue.appendChild(subTextNode)
