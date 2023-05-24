@@ -36,7 +36,7 @@ const VisualizationOptions = ({
     onClose,
     onUpdate,
 }) => {
-    const [activeTabKey, setActiveTabKey] = useState(initiallyActiveTabKey ?? 0)
+    const [activeTabKey, setActiveTabKey] = useState(initiallyActiveTabKey)
 
     const generateTabContent = (sections) =>
         sections.map(({ key, label, content, helpText }) => (
