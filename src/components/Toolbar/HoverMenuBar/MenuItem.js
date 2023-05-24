@@ -1,5 +1,4 @@
-import { Popper } from '@dhis2-ui/popper'
-import { Portal } from '@dhis2-ui/portal'
+import { Popper, Portal } from '@dhis2/ui'
 import { IconChevronRight24 } from '@dhis2/ui-icons'
 import cx from 'classnames'
 import PropTypes from 'prop-types'
