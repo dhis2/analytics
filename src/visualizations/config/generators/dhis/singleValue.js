@@ -20,16 +20,46 @@ import {
 
 const svgNS = 'http://www.w3.org/2000/svg'
 
+// multiply text width with this factor
+// to get very close to actual text width
+const ACTUAL_TEXT_WIDTH_FACTOR = 0.9
+
+// multiply value text size with this factor
+// to get very close to the actual number height
+const ACTUAL_NUMBER_HEIGHT_FACTOR = 0.7
+
+// do not allow text width to exceed this threshold
+const TEXT_WIDTH_CONTAINER_WIDTH_THRESHOLD = 0.9
+
+// do not allow text size to exceed this threshold
+const TEXT_SIZE_CONTAINER_HEIGHT_THRESHOLD = 0.4
+
+// multiply text size with this factor
+// to get an appropriate letter spacing
+const LETTER_SPACING_TEXT_SIZE_FACTOR = (1 / 35) * -1
+const LETTER_SPACING_MIN_THRESHOLD = -6
+const LETTER_SPACING_MAX_THRESHOLD = -1
+
+// fixed top margin above title/subtitle
+const TOP_MARGIN_FIXED = 16
+
+// multiply text size with this factor
+// to get an appropriate sub text size
+const SUB_TEXT_SIZE_FACTOR = 1 / 6
+const SUB_TEXT_SIZE_MIN_THRESHOLD = 24
+const SUB_TEXT_SIZE_MAX_THRESHOLD = 40
+
 // Compute text width before rendering
 // Not exactly precise but close enough
 const getTextWidth = (text, font) => {
     const canvas = document.createElement('canvas')
     const context = canvas.getContext('2d')
     context.font = font
-    return context.measureText(text).width * 0.9
+    return context.measureText(text).width * ACTUAL_TEXT_WIDTH_FACTOR
 }
 
-const getTextHeightForNumbers = (textSize) => textSize * 0.7
+const getTextHeightForNumbers = (textSize) =>
+    textSize * ACTUAL_NUMBER_HEIGHT_FACTOR
 
 const getTextSize = (
     formattedValue,
@@ -37,8 +67,10 @@ const getTextSize = (
     containerHeight,
     showIcon
 ) => {
-    let size = Math.round(containerHeight / 3)
-    const widthThreshold = containerWidth * 0.9
+    let size = Math.round(
+        containerHeight * TEXT_SIZE_CONTAINER_HEIGHT_THRESHOLD
+    )
+    const widthThreshold = containerWidth * TEXT_WIDTH_CONTAINER_WIDTH_THRESHOLD
 
     if (size > 0) {
         while (
@@ -81,9 +113,14 @@ const generateValueSVG = ({
     const textWidth = getTextWidth(formattedValue, `${textSize}px Roboto`)
     console.log('textWidth', textWidth)
 
-    const subTextSize = 40
-
+    // const subTextSize = 40
     const iconSize = textSize
+    const subTextSize =
+        textSize * SUB_TEXT_SIZE_FACTOR > SUB_TEXT_SIZE_MAX_THRESHOLD
+            ? SUB_TEXT_SIZE_MAX_THRESHOLD
+            : textSize * SUB_TEXT_SIZE_FACTOR < SUB_TEXT_SIZE_MIN_THRESHOLD
+            ? SUB_TEXT_SIZE_MIN_THRESHOLD
+            : textSize * SUB_TEXT_SIZE_FACTOR
 
     // let viewBoxWidth = textWidth
 
@@ -135,16 +172,18 @@ const generateValueSVG = ({
         svgValue.appendChild(iconSvgNode)
     }
 
-    const letterSpacing = Math.round((textSize / 35) * -1)
+    const letterSpacing = Math.round(textSize * LETTER_SPACING_TEXT_SIZE_FACTOR)
 
     const textNode = document.createElementNS(svgNS, 'text')
-    // textNode.setAttribute('viewBox', `0 0 ${containerWidth} ${containerHeight}`)
     textNode.setAttribute('font-size', textSize)
     textNode.setAttribute('font-weight', '300')
-    // textNode.setAttribute('letter-spacing', '-5')
     textNode.setAttribute(
         'letter-spacing',
-        letterSpacing < -6 ? -6 : letterSpacing > -1 ? -1 : letterSpacing
+        letterSpacing < LETTER_SPACING_MIN_THRESHOLD
+            ? LETTER_SPACING_MIN_THRESHOLD
+            : letterSpacing > LETTER_SPACING_MAX_THRESHOLD
+            ? LETTER_SPACING_MAX_THRESHOLD
+            : letterSpacing
     )
     textNode.setAttribute('text-anchor', 'middle')
     textNode.setAttribute('x', showIcon ? `${(iconSize + iconPadding) / 2}` : 0)
@@ -164,9 +203,10 @@ const generateValueSVG = ({
         const subTextNode = document.createElementNS(svgNS, 'text')
         subTextNode.setAttribute('text-anchor', 'middle')
         subTextNode.setAttribute('font-size', subTextSize)
-        subTextNode.setAttribute('y', iconSize / 2)
-        subTextNode.setAttribute('dy', subTextSize)
-        subTextNode.setAttribute('fill', textColor)
+        subTextNode.setAttribute('y', iconSize / 2 + topMargin / 2)
+        subTextNode.setAttribute('dy', subTextSize * 1.7)
+        // subTextNode.setAttribute('fill', textColor)
+        subTextNode.setAttribute('fill', fillColor)
         subTextNode.appendChild(document.createTextNode(subText))
 
         svgValue.appendChild(subTextNode)
@@ -307,7 +347,9 @@ const generateDVItem = (
     )
     console.log('titleFontStyle', titleFontStyle)
     const titleYPosition =
-        16 + parseInt(titleFontStyle[FONT_STYLE_OPTION_FONT_SIZE]) + 'px'
+        TOP_MARGIN_FIXED +
+        parseInt(titleFontStyle[FONT_STYLE_OPTION_FONT_SIZE]) +
+        'px'
 
     const titleAttributes = {
         x: getXFromTextAlign(titleFontStyle[FONT_STYLE_OPTION_TEXT_ALIGN]),
@@ -407,7 +449,7 @@ const generateDVItem = (
             containerWidth: width,
             containerHeight: height,
             topMargin:
-                16 +
+                TOP_MARGIN_FIXED +
                 ((config.title
                     ? parseInt(title.getAttribute('font-size'))
                     : 0) +
