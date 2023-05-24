@@ -1,50 +1,43 @@
 # 
 # Translators:
-# Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2020
-# phil_dhis2, 2020
-# Viktor Varland <viktor@dhis2.org>, 2020
-# ericbp <ericbarredap@gmail.com>, 2020
-# Juan M Alcantara Acosta <jmalcantara1@gmail.com>, 2021
-# Prabhjot Singh, 2021
-# Janeth Cruz, 2022
-# Enzo Nicolas Rossi <enzo@dhis2.org>, 2023
+# Malinda Wijeratne, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2020-05-20T21:46:25.914Z\n"
 "PO-Revision-Date: 2020-05-18 10:55+0000\n"
-"Last-Translator: Enzo Nicolas Rossi <enzo@dhis2.org>, 2023\n"
-"Language-Team: Spanish (https://app.transifex.com/hisp-uio/teams/100509/es/)\n"
+"Last-Translator: Malinda Wijeratne, 2023\n"
+"Language-Team: Sinhala (https://app.transifex.com/hisp-uio/teams/100509/si/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: es\n"
-"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
+"Language: si\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "Data"
-msgstr "Datos"
+msgstr ""
 
 msgid "Data Type"
-msgstr "Tipo de datos"
+msgstr ""
 
 msgid "Totals"
-msgstr "Totales"
+msgstr "එකතු"
 
 msgid "Details"
-msgstr "Detalles"
+msgstr ""
 
 msgid "Detail"
-msgstr "Detalle"
+msgstr ""
 
 msgid "Move to {{axisName}}"
-msgstr "Mover a {{Nombredeleje}}"
+msgstr ""
 
 msgid "Add to {{axisName}}"
-msgstr "Añadir a {{Nombredeleje}}"
+msgstr ""
 
 msgid "Remove"
-msgstr "Eliminar"
+msgstr "ඉවත් කරන්"
 
 msgid "Not available for {{visualizationType}}"
 msgstr ""
@@ -65,19 +58,19 @@ msgid "Manage chart axes"
 msgstr ""
 
 msgid "Filter dimensions"
-msgstr "Dimensiones del filtro"
+msgstr ""
 
 msgid "Main dimensions"
 msgstr ""
 
 msgid "Your dimensions"
-msgstr "Dimensiones propias"
+msgstr ""
 
 msgid "Dimension recommended with selected data"
 msgstr ""
 
 msgid "Search"
-msgstr "Buscar"
+msgstr "සොයන්න"
 
 msgid "Selected Data"
 msgstr ""
@@ -86,61 +79,61 @@ msgid "Deselect All"
 msgstr ""
 
 msgid "Select all"
-msgstr "Seleccionar todos"
+msgstr ""
 
 msgid "Organisation units"
-msgstr "Unidades organizativas"
+msgstr ""
 
 msgid "Period"
-msgstr "Periodo"
+msgstr ""
 
 msgid "Year"
-msgstr "Año"
+msgstr ""
 
 msgid "Relative periods"
-msgstr "Periodos relativos"
+msgstr ""
 
 msgid "Fixed periods"
-msgstr "Periodos fijos"
+msgstr ""
 
 msgid "Period type"
-msgstr "Tipo de periodo"
+msgstr ""
 
 msgid "January"
-msgstr "Enero"
+msgstr ""
 
 msgid "February"
-msgstr "Febrero"
+msgstr ""
 
 msgid "March"
-msgstr "Marzo"
+msgstr ""
 
 msgid "April"
-msgstr "Abril"
+msgstr ""
 
 msgid "May"
-msgstr "Mayo"
+msgstr ""
 
 msgid "June"
-msgstr "Junio"
+msgstr ""
 
 msgid "July"
-msgstr "Julio"
+msgstr ""
 
 msgid "August"
-msgstr "Agosto"
+msgstr ""
 
 msgid "September"
-msgstr "Septiembre"
+msgstr ""
 
 msgid "October"
-msgstr "Octubre"
+msgstr ""
 
 msgid "November"
-msgstr "Noviembre"
+msgstr ""
 
 msgid "December"
-msgstr "Diciembre"
+msgstr ""
 
 msgid "Week {{weekNumber}}"
 msgstr ""
@@ -149,13 +142,13 @@ msgid "Bi-Week {{biWeekNumber}}"
 msgstr ""
 
 msgid "Daily"
-msgstr "Diario"
+msgstr "දිනපතා"
 
 msgid "Weekly"
-msgstr "Semanal"
+msgstr "සතිපතා"
 
 msgid "Bi-weekly"
-msgstr "Quincenal"
+msgstr ""
 
 msgid "Weekly (Start Wednesday)"
 msgstr ""
@@ -170,181 +163,181 @@ msgid "Weekly (Start Sunday)"
 msgstr ""
 
 msgid "Monthly"
-msgstr "Mensual"
+msgstr "මාස්පතා"
 
 msgid "Bi-monthly"
-msgstr "Bimestral"
+msgstr ""
 
 msgid "Quarterly"
-msgstr "Trimestral"
+msgstr ""
 
 msgid "Six-monthly"
-msgstr "Semestral"
+msgstr ""
 
 msgid "Six-monthly April"
-msgstr "Semestral Abril"
+msgstr ""
 
 msgid "Yearly"
-msgstr "Anual"
+msgstr "අවුරුදු පතා"
 
 msgid "Financial year (Start November)"
 msgstr ""
 
 msgid "Financial year (Start October)"
-msgstr "Año fiscal - Octubre"
+msgstr ""
 
 msgid "Financial year (Start July)"
-msgstr "Año fiscal - Julio"
+msgstr ""
 
 msgid "Financial year (Start April)"
-msgstr "Año fiscal - Abril"
+msgstr ""
 
 msgid "Today"
-msgstr "Hoy"
+msgstr "අද"
 
 msgid "Yesterday"
-msgstr "Ayer"
+msgstr "ඊයේ"
 
 msgid "Last 3 days"
-msgstr "Últimos 3 días"
+msgstr ""
 
 msgid "Last 7 days"
-msgstr "Últimos 7 diass"
+msgstr ""
 
 msgid "Last 14 days"
-msgstr "Últimos 14 días"
+msgstr ""
 
 msgid "This week"
-msgstr "Esta semana"
+msgstr ""
 
 msgid "Last week"
-msgstr "Última semana"
+msgstr ""
 
 msgid "Last 4 weeks"
-msgstr "Últimas 4 semanas"
+msgstr ""
 
 msgid "Last 12 weeks"
-msgstr "Últimas 12 semanas"
+msgstr ""
 
 msgid "Last 52 weeks"
-msgstr "Últimas 52 semanas"
+msgstr ""
 
 msgid "Weeks this year"
-msgstr "Semanas de este año"
+msgstr ""
 
 msgid "This bi-week"
-msgstr "Esta quincena"
+msgstr ""
 
 msgid "Last bi-week"
-msgstr "Última quincena"
+msgstr ""
 
 msgid "Last 4 bi-weeks"
-msgstr "Últimas 4 quincenas"
+msgstr ""
 
 msgid "This month"
-msgstr "Este mes"
+msgstr ""
 
 msgid "Last month"
-msgstr "Mes anterior"
+msgstr ""
 
 msgid "Last 3 months"
-msgstr "Últimos 3 meses"
+msgstr ""
 
 msgid "Last 6 months"
-msgstr "Últimos 6 meses"
+msgstr ""
 
 msgid "Last 12 months"
-msgstr "Ultimos 12 meses"
+msgstr ""
 
 msgid "Months this year"
-msgstr "Meses este año"
+msgstr ""
 
 msgid "This bi-month"
-msgstr "Este bimestre"
+msgstr ""
 
 msgid "Last bi-month"
-msgstr "Bimestre anterior"
+msgstr ""
 
 msgid "Last 6 bi-months"
-msgstr "Últimos 6 bimestres"
+msgstr ""
 
 msgid "Bi-months this year"
-msgstr "Bimestres de este año"
+msgstr ""
 
 msgid "This quarter"
-msgstr "Este trimestre"
+msgstr ""
 
 msgid "Last quarter"
-msgstr "El trimestre pasado"
+msgstr ""
 
 msgid "Last 4 quarters"
-msgstr "Últimos 4 trimestres"
+msgstr ""
 
 msgid "Quarters this year"
-msgstr "Trimestres de este año"
+msgstr ""
 
 msgid "This six-month"
-msgstr "Este semestre"
+msgstr ""
 
 msgid "Last six-month"
-msgstr "Último semestre"
+msgstr ""
 
 msgid "Last 2 six-month"
 msgstr ""
 
 msgid "This financial year"
-msgstr "Este año fiscal"
+msgstr ""
 
 msgid "Last financial year"
-msgstr "Último ejercicio financiero"
+msgstr ""
 
 msgid "Last 5 financial years"
-msgstr "Últimos 5 ejercicios financieros"
+msgstr ""
 
 msgid "This year"
-msgstr "Este año"
+msgstr ""
 
 msgid "Last year"
-msgstr "El año pasado"
+msgstr ""
 
 msgid "Last 5 years"
-msgstr "Últimos 5 años"
+msgstr ""
 
 msgid "Days"
-msgstr "Días"
+msgstr ""
 
 msgid "Weeks"
-msgstr "Semanas"
+msgstr ""
 
 msgid "Bi-weeks"
-msgstr "Quincenales"
+msgstr ""
 
 msgid "Months"
-msgstr "Meses"
+msgstr ""
 
 msgid "Bi-months"
-msgstr "Bimestres"
+msgstr ""
 
 msgid "Quarters"
-msgstr "Trimestral"
+msgstr ""
 
 msgid "Six-months"
-msgstr "Semestres"
+msgstr ""
 
 msgid "Financial Years"
-msgstr "Años fiscales"
+msgstr ""
 
 msgid "Years"
-msgstr "Años"
+msgstr ""
 
 msgid "Series"
 msgstr ""
 
 msgid "Category"
-msgstr "Categoría"
+msgstr ""
 
 msgid "Filter"
-msgstr "filtro"
+msgstr ""
 
 msgid "Columns"
 msgstr ""
@@ -368,28 +361,28 @@ msgid "Expected reports"
 msgstr ""
 
 msgid "Program"
-msgstr "Programa"
+msgstr ""
 
 msgid "Indicators"
-msgstr "Indicadores"
+msgstr ""
 
 msgid "Select indicator group"
-msgstr "Elija un grupo de indicadores"
+msgstr ""
 
 msgid "[ All groups ]"
 msgstr ""
 
 msgid "Data elements"
-msgstr "Elementos de datos"
+msgstr ""
 
 msgid "Select data element group"
-msgstr "Seleccionar grupo de elementos de datos"
+msgstr ""
 
 msgid "[ All data elements ]"
 msgstr ""
 
 msgid "Data sets"
-msgstr "Sets de datos"
+msgstr ""
 
 msgid "Select data sets"
 msgstr ""
@@ -398,13 +391,13 @@ msgid "[ All metrics ]"
 msgstr ""
 
 msgid "Event data items"
-msgstr "Datos de eventos"
+msgstr ""
 
 msgid "Select a program"
 msgstr ""
 
 msgid "Program indicators"
-msgstr "Indicadores de programa"
+msgstr ""
 
 msgid "{{dynamicOuNames}} and {{lastOuName}}"
 msgstr ""
@@ -422,55 +415,55 @@ msgid "{{allDynamicOuNames}} groups in {{staticOuNames}}"
 msgstr ""
 
 msgid "Organisation Unit"
-msgstr "Unidad Organizativa"
+msgstr ""
 
 msgid "Assigned Categories"
 msgstr ""
 
 msgid "Column"
-msgstr "Columna"
+msgstr ""
 
 msgid "Stacked column"
-msgstr "Columna apilada"
+msgstr ""
 
 msgid "Bar"
-msgstr "Barra"
+msgstr ""
 
 msgid "Stacked bar"
-msgstr "Barra apilada"
+msgstr ""
 
 msgid "Line"
-msgstr "Línea"
+msgstr ""
 
 msgid "Area"
-msgstr "Área"
+msgstr ""
 
 msgid "Pie"
-msgstr "Pastel"
+msgstr ""
 
 msgid "Radar"
-msgstr "Radar"
+msgstr ""
 
 msgid "Gauge"
-msgstr "Calibre"
+msgstr ""
 
 msgid "Year over year (line)"
-msgstr "Año tras año (línea)"
+msgstr ""
 
 msgid "Year over year (column)"
-msgstr "Año tras año (columna)"
+msgstr ""
 
 msgid "Single value"
-msgstr "Valor único"
+msgstr ""
 
 msgid "Pivot table"
-msgstr "Tabla dinámica"
+msgstr ""
 
 msgid "Target"
-msgstr "Objetivo"
+msgstr ""
 
 msgid "Base"
 msgstr ""
 
 msgid "No data"
-msgstr "No hay datos"
+msgstr ""
