@@ -1,16 +1,17 @@
-import { Popper, Portal } from '@dhis2/ui'
+import { Popper } from '@dhis2-ui/popper'
+import { Portal } from '@dhis2-ui/portal'
 import PropTypes from 'prop-types'
 import React, { useRef } from 'react'
 import menuButtonStyles from '../MenuButton.styles.js'
-import { useHoverMenuBarContext } from './HoverMenuBar.js'
+import { useHoverMenubarContext } from './HoverMenubar.js'
 
-export const Dropdown = ({ children, label, disabled }) => {
+export const HoverMenuDropdown = ({ children, label, disabled }) => {
     const buttonRef = useRef()
     const {
         onDropDownButtonClick,
         onDropDownButtonMouseOver,
         openedDropdownEl,
-    } = useHoverMenuBarContext()
+    } = useHoverMenubarContext()
     const isOpen = openedDropdownEl === buttonRef.current
 
     return (
@@ -35,7 +36,7 @@ export const Dropdown = ({ children, label, disabled }) => {
     )
 }
 
-Dropdown.propTypes = {
+HoverMenuDropdown.propTypes = {
     children: PropTypes.node.isRequired,
     label: PropTypes.node.isRequired,
     disabled: PropTypes.bool,

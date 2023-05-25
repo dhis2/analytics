@@ -1,22 +1,22 @@
-import { colors, elevations, spacers } from '@dhis2/ui'
+import { colors, elevations, spacers } from '@dhis2/ui-constants'
 import PropTypes from 'prop-types'
 import React, { createContext, useCallback, useContext, useState } from 'react'
-import { useHoverMenuBarContext } from './HoverMenuBar.js'
+import { useHoverMenubarContext } from './HoverMenubar.js'
 
 const throwErrorIfNotInitialized = () => {
-    throw new Error('`HoverMenuBarContext` has not been initialised')
+    throw new Error('`HoverMenubarContext` has not been initialised')
 }
 
-const HoverMenuContext = createContext({
+const HoverMenuListContext = createContext({
     onSubmenuAnchorMouseEnter: throwErrorIfNotInitialized,
     onMenuItemMouseEnter: throwErrorIfNotInitialized,
     openedSubMenuEl: null,
     dense: false,
 })
 
-const useHoverMenuContext = () => useContext(HoverMenuContext)
+const useHoverMenuListContext = () => useContext(HoverMenuListContext)
 
-const Menu = ({
+const HoverMenuList = ({
     children,
     className,
     dataTest,
@@ -24,7 +24,7 @@ const Menu = ({
     maxHeight,
     maxWidth,
 }) => {
-    const { setLastHoveredSubMenuEl } = useHoverMenuBarContext()
+    const { setLastHoveredSubMenuEl } = useHoverMenubarContext()
     const [openedSubMenuEl, setOpenedSubMenuEl] = useState(null)
 
     const onSubmenuAnchorMouseEnter = useCallback(
@@ -43,7 +43,7 @@ const Menu = ({
     }, [setLastHoveredSubMenuEl])
 
     return (
-        <HoverMenuContext.Provider
+        <HoverMenuListContext.Provider
             value={{
                 onSubmenuAnchorMouseEnter,
                 onMenuItemMouseEnter,
@@ -73,17 +73,17 @@ const Menu = ({
                     }
                 `}</style>
             </ul>
-        </HoverMenuContext.Provider>
+        </HoverMenuListContext.Provider>
     )
 }
 
-Menu.defaultProps = {
+HoverMenuList.defaultProps = {
     dataTest: 'dhis2-analytics-hovermenubar-menu',
     maxWidth: '380px',
     maxHeight: 'auto',
 }
 
-Menu.propTypes = {
+HoverMenuList.propTypes = {
     /** Typically `MenuItem`, `MenuDivider`, and `MenuSectionHeader` */
     children: PropTypes.node,
     className: PropTypes.string,
@@ -94,4 +94,4 @@ Menu.propTypes = {
     maxWidth: PropTypes.string,
 }
 
-export { Menu, useHoverMenuContext }
+export { HoverMenuList, useHoverMenuListContext }

@@ -1,9 +1,9 @@
-import { colors } from '@dhis2/ui'
+import { colors } from '@dhis2/ui-constants'
 import cx from 'classnames'
 import PropTypes from 'prop-types'
 import React from 'react'
 
-export const Sidebar = ({ children, isHidden }) => (
+export const ToolbarSidebar = ({ children, isHidden }) => (
     <div className={cx('container', { isHidden })}>
         {children}
         <style jsx>{`
@@ -20,7 +20,7 @@ export const Sidebar = ({ children, isHidden }) => (
     </div>
 )
 
-Sidebar.propTypes = {
+ToolbarSidebar.propTypes = {
     children: PropTypes.node,
     isHidden: PropTypes.bool,
 }

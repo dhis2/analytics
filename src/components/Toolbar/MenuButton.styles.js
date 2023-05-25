@@ -1,4 +1,4 @@
-import { colors, spacers, theme } from '@dhis2/ui'
+import { colors, spacers, theme } from '@dhis2/ui-constants'
 import css from 'styled-jsx/css'
 
 export default css`

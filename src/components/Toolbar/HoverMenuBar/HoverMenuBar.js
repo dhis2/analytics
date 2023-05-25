@@ -8,10 +8,10 @@ import React, {
 } from 'react'
 
 const throwErrorIfNotInitialized = () => {
-    throw new Error('`HoverMenuBarContext` has not been initialised')
+    throw new Error('`HoverMenubarContext` has not been initialised')
 }
 
-const HoverMenuBarContext = createContext({
+const HoverMenubarContext = createContext({
     closeMenu: throwErrorIfNotInitialized,
     onDropDownButtonClick: throwErrorIfNotInitialized,
     onDropDownButtonMouseOver: throwErrorIfNotInitialized,
@@ -19,9 +19,9 @@ const HoverMenuBarContext = createContext({
     openedDropdownEl: null,
 })
 
-const useHoverMenuBarContext = () => useContext(HoverMenuBarContext)
+const useHoverMenubarContext = () => useContext(HoverMenubarContext)
 
-const HoverMenuBar = ({ children }) => {
+const HoverMenubar = ({ children }) => {
     const [openedDropdownEl, setOpenedDropdownEl] = useState(null)
     const [lastHoveredSubMenuEl, setLastHoveredSubMenuEl] = useState(null)
     const [isInHoverMode, setIsInHoverMode] = useState(false)
@@ -88,7 +88,7 @@ const HoverMenuBar = ({ children }) => {
     }, [onDocumentClick, isInHoverMode])
 
     return (
-        <HoverMenuBarContext.Provider
+        <HoverMenubarContext.Provider
             value={{
                 onDropDownButtonClick,
                 onDropDownButtonMouseOver,
@@ -100,13 +100,14 @@ const HoverMenuBar = ({ children }) => {
                 {children}
                 <style jsx>{`
                     display: flex;
+                    flex-grow: 1;
                 `}</style>
             </div>
-        </HoverMenuBarContext.Provider>
+        </HoverMenubarContext.Provider>
     )
 }
 
-HoverMenuBar.propTypes = {
+HoverMenubar.propTypes = {
     children: PropTypes.node.isRequired,
 }
-export { HoverMenuBar, useHoverMenuBarContext }
+export { HoverMenubar, useHoverMenubarContext }
