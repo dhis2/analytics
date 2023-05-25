@@ -1,3 +1,10 @@
+## [25.1.5](https://github.com/dhis2/analytics/compare/v25.1.4...v25.1.5) (2023-05-25)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([9c3165e](https://github.com/dhis2/analytics/commit/9c3165ee58559c6c3601b0e12ee7d4796fa9b12f))
+
 ## [25.1.4](https://github.com/dhis2/analytics/compare/v25.1.3...v25.1.4) (2023-05-24)
 
 
