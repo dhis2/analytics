@@ -1,28 +1,19 @@
 # 
 # Translators:
-# ericbp <ericbarredap@gmail.com>, 2020
-# Alison Andrade <aandrade@ippfwhr.org>, 2021
-# Juan M Alcantara Acosta <jmalcantara1@gmail.com>, 2021
-# Prabhjot Singh, 2021
-# Janeth Cruz, 2022
-# Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2022
-# Viktor Varland <viktor@dhis2.org>, 2022
-# Marta Vila <marta@dhis2.org>, 2023
-# phil_dhis2, 2023
-# Enzo Nicolas Rossi <enzo@dhis2.org>, 2023
+# Malinda Wijeratne, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2023-04-18T08:41:27.838Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Enzo Nicolas Rossi <enzo@dhis2.org>, 2023\n"
-"Language-Team: Spanish (https://app.transifex.com/hisp-uio/teams/100509/es/)\n"
+"Last-Translator: Malinda Wijeratne, 2023\n"
+"Language-Team: Sinhala (https://app.transifex.com/hisp-uio/teams/100509/si/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: es\n"
-"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
+"Language: si\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "view only"
 msgstr ""
@@ -43,7 +34,7 @@ msgid "Not shared with any users or groups"
 msgstr ""
 
 msgid "No description"
-msgstr "Sin descripción"
+msgstr "විස්තරයක් නැත"
 
 msgid "Last updated {{time}}"
 msgstr ""
@@ -58,7 +49,6 @@ msgid "Viewed {{count}} times"
 msgid_plural "Viewed {{count}} times"
 msgstr[0] ""
 msgstr[1] ""
-msgstr[2] ""
 
 msgid "Notifications"
 msgstr ""
@@ -112,7 +102,7 @@ msgid "Delete calculation"
 msgstr ""
 
 msgid "Cancel"
-msgstr "Cancelar"
+msgstr ""
 
 msgid "The calculation can only be saved with a valid formula"
 msgstr ""
@@ -138,10 +128,10 @@ msgid "Details only"
 msgstr ""
 
 msgid "Loading"
-msgstr "Cargando"
+msgstr ""
 
 msgid "Data elements"
-msgstr "Elementos de datos"
+msgstr ""
 
 msgid "Search by data element name"
 msgstr ""
@@ -161,16 +151,16 @@ msgid "Math operators"
 msgstr ""
 
 msgid "Data Type"
-msgstr "Tipo de datos"
+msgstr ""
 
 msgid "All types"
-msgstr "Todos los tipos"
+msgstr ""
 
 msgid "Disaggregation"
-msgstr "Desagregación"
+msgstr ""
 
 msgid "No data"
-msgstr "No hay datos"
+msgstr ""
 
 msgid "Search by data item name"
 msgstr ""
@@ -215,13 +205,13 @@ msgid "Metric type"
 msgstr ""
 
 msgid "All metrics"
-msgstr "Todas las métricas"
+msgstr ""
 
 msgid "Move to {{axisName}}"
-msgstr "Mover a {{Nombredeleje}}"
+msgstr ""
 
 msgid "Add to {{axisName}}"
-msgstr "Añadir a {{Nombredeleje}}"
+msgstr ""
 
 msgid "Not available for {{visualizationType}}"
 msgstr ""
@@ -233,22 +223,22 @@ msgid "Add Assigned Categories"
 msgstr ""
 
 msgid "Remove"
-msgstr "Eliminar"
+msgstr "ඉවත් කරන්"
 
 msgid "Filter dimensions"
-msgstr "Dimensiones del filtro"
+msgstr ""
 
 msgid "Main dimensions"
 msgstr ""
 
 msgid "Your dimensions"
-msgstr "Dimensiones propias"
+msgstr ""
 
 msgid "Dimension recommended with selected data"
 msgstr ""
 
 msgid "All items"
-msgstr "Todos los elementos"
+msgstr ""
 
 msgid "Automatically include all items"
 msgstr ""
@@ -265,7 +255,7 @@ msgid "Nothing found in {{- dimensionTitle}}"
 msgstr ""
 
 msgid "Search"
-msgstr "Buscar"
+msgstr "සොයන්න"
 
 msgid "Nothing found for {{- searchTerm}}"
 msgstr ""
@@ -278,19 +268,19 @@ msgid ""
 msgstr ""
 
 msgid "Delete"
-msgstr "Eliminar"
+msgstr "ඉවත් කරන්න"
 
 msgid "File"
-msgstr "Fichero"
+msgstr ""
 
 msgid "New"
-msgstr "Nuevo"
+msgstr "නව"
 
 msgid "Open…"
 msgstr ""
 
 msgid "Save"
-msgstr "Guardar"
+msgstr ""
 
 msgid "Save…"
 msgstr ""
@@ -311,22 +301,22 @@ msgid "Get link…"
 msgstr ""
 
 msgid "Open in this app"
-msgstr "Abierto en esta aplicación"
+msgstr ""
 
 msgid "Close"
-msgstr "Cerrar"
+msgstr "වසන්න"
 
 msgid "Rename {{fileType}}"
 msgstr ""
 
 msgid "Name"
-msgstr "Nombre"
+msgstr ""
 
 msgid "Description"
-msgstr "Descripción"
+msgstr "විස්තරය"
 
 msgid "Rename"
-msgstr "Renombrar"
+msgstr ""
 
 msgid "{{- objectName}} (copy)"
 msgstr ""
@@ -335,22 +325,22 @@ msgid "Save {{fileType}} as"
 msgstr ""
 
 msgid "event report"
-msgstr "informe de evento"
+msgstr ""
 
 msgid "line list"
 msgstr ""
 
 msgid "map"
-msgstr "mapa"
+msgstr ""
 
 msgid "visualization"
 msgstr ""
 
 msgid "Edit"
-msgstr "Editar"
+msgstr "වෙනස් කරන්න"
 
 msgid "Write a reply"
-msgstr "Escribe una respuesta"
+msgstr ""
 
 msgid "Post reply"
 msgstr ""
@@ -362,7 +352,7 @@ msgid "Enter comment text"
 msgstr ""
 
 msgid "Update"
-msgstr "Actualizar"
+msgstr ""
 
 msgid "Viewing interpretation: {{- visualisationName}}"
 msgstr ""
@@ -379,31 +369,31 @@ msgid "Hide interpretation"
 msgstr ""
 
 msgid "Write an interpretation"
-msgstr "Escribir una interpretación"
+msgstr ""
 
 msgid "Post interpretation"
 msgstr ""
 
 msgid "Interpretations"
-msgstr "Interpretaciones"
+msgstr ""
 
 msgid "Unlike"
-msgstr "diferente a"
+msgstr ""
 
 msgid "Like"
-msgstr "como"
+msgstr ""
 
 msgid "Reply"
-msgstr "Responder"
+msgstr ""
 
 msgid "Share"
-msgstr "Compartir"
+msgstr ""
 
 msgid "See interpretation"
 msgstr ""
 
 msgid "Manage sharing"
-msgstr "Administrar compartir"
+msgstr ""
 
 msgid "Could not update interpretation"
 msgstr ""
@@ -442,46 +432,46 @@ msgid "Searching for \"{{- searchText}}\""
 msgstr ""
 
 msgid "No results found"
-msgstr "No results found"
+msgstr ""
 
 msgid "Not available offline"
-msgstr "No disponible sin conexión a internet"
+msgstr "මාර්ග අපගතව නොතිබේ"
 
 msgid "Created by"
-msgstr "Creado por"
+msgstr ""
 
 msgid "Anyone"
-msgstr "Alguien"
+msgstr "ඕනෑම කෙනෙක්"
 
 msgid "Only you"
 msgstr ""
 
 msgid "Others"
-msgstr "Otros"
+msgstr ""
 
 msgid "Not supported by this app yet"
 msgstr ""
 
 msgid "Filter by name"
-msgstr "Filtrar por nombre"
+msgstr ""
 
 msgid "Created"
-msgstr "Creado"
+msgstr ""
 
 msgid "Last updated"
-msgstr "Última actualización"
+msgstr ""
 
 msgid "Type"
-msgstr "Tipo"
+msgstr ""
 
 msgid "Clear filters"
-msgstr "Limpiar filtros"
+msgstr ""
 
 msgid "{{firstItemIndex}}-{{lastItemIndex}} of {{totalNumberOfItems}}"
 msgstr ""
 
 msgid "Open"
-msgstr "Abierto"
+msgstr ""
 
 msgid "Couldn't load items"
 msgstr ""
@@ -500,7 +490,7 @@ msgid ""
 msgstr ""
 
 msgid "Create new"
-msgstr "Crear nuevo"
+msgstr ""
 
 msgid "Open a visualization"
 msgstr ""
@@ -578,28 +568,25 @@ msgid "New line list"
 msgstr ""
 
 msgid "Options"
-msgstr "Opciones"
+msgstr ""
 
 msgid "Hide"
-msgstr "Ocultar"
+msgstr ""
 
 msgid "{{count}} org units"
 msgid_plural "{{count}} org units"
 msgstr[0] ""
 msgstr[1] ""
-msgstr[2] ""
 
 msgid "{{count}} levels"
 msgid_plural "{{count}} levels"
 msgstr[0] ""
 msgstr[1] ""
-msgstr[2] ""
 
 msgid "{{count}} groups"
 msgid_plural "{{count}} groups"
 msgstr[0] ""
 msgstr[1] ""
-msgstr[2] ""
 
 msgid "Selected: {{commaSeparatedListOfOrganisationUnits}}"
 msgstr ""
@@ -608,52 +595,52 @@ msgid "Nothing selected"
 msgstr ""
 
 msgid "User organisation unit"
-msgstr "Usuario de unidad organizativa"
+msgstr ""
 
 msgid "User sub-units"
-msgstr "Subunidades de usuario"
+msgstr ""
 
 msgid "User sub-x2-units"
-msgstr "Sub-unidades-x2 de usuario"
+msgstr ""
 
 msgid "Select a level"
-msgstr "Selecciona un nivel"
+msgstr ""
 
 msgid "Select a group"
-msgstr "Selecciona un grupo"
+msgstr ""
 
 msgid "Deselect all"
-msgstr "Deseleccionar todo"
+msgstr ""
 
 msgid "Period type"
-msgstr "Tipo de periodo"
+msgstr ""
 
 msgid "Year"
-msgstr "Año"
+msgstr ""
 
 msgid "Select year"
-msgstr "Seleccionar año"
+msgstr ""
 
 msgid "Period"
-msgstr "Periodo"
+msgstr ""
 
 msgid "Relative periods"
-msgstr "Periodos relativos"
+msgstr ""
 
 msgid "Fixed periods"
-msgstr "Periodos fijos"
+msgstr ""
 
 msgid "Selected Periods"
 msgstr ""
 
 msgid "No periods selected"
-msgstr "No se ha seleccionado ningún periodo"
+msgstr ""
 
 msgid "Daily"
-msgstr "Diario"
+msgstr "දිනපතා"
 
 msgid "Weekly"
-msgstr "Semanal"
+msgstr "සතිපතා"
 
 msgid "Weekly (Start Wednesday)"
 msgstr ""
@@ -668,55 +655,55 @@ msgid "Weekly (Start Sunday)"
 msgstr ""
 
 msgid "Bi-weekly"
-msgstr "Quincenal"
+msgstr ""
 
 msgid "Monthly"
-msgstr "Mensual"
+msgstr "මාස්පතා"
 
 msgid "Bi-monthly"
-msgstr "Bimestral"
+msgstr ""
 
 msgid "Quarterly"
-msgstr "Trimestral"
+msgstr ""
 
 msgid "Six-monthly"
-msgstr "Semestral"
+msgstr ""
 
 msgid "Six-monthly April"
-msgstr "Semestral Abril"
+msgstr ""
 
 msgid "Yearly"
-msgstr "Anual"
+msgstr "අවුරුදු පතා"
 
 msgid "Financial year (Start November)"
 msgstr ""
 
 msgid "Financial year (Start October)"
-msgstr "Año fiscal - Octubre"
+msgstr ""
 
 msgid "Financial year (Start July)"
-msgstr "Año fiscal - Julio"
+msgstr ""
 
 msgid "Financial year (Start April)"
-msgstr "Año fiscal - Abril"
+msgstr ""
 
 msgid "Today"
-msgstr "Hoy"
+msgstr "අද"
 
 msgid "Yesterday"
-msgstr "Ayer"
+msgstr "ඊයේ"
 
 msgid "Last 3 days"
-msgstr "Últimos 3 días"
+msgstr ""
 
 msgid "Last 7 days"
-msgstr "Últimos 7 diass"
+msgstr ""
 
 msgid "Last 14 days"
-msgstr "Últimos 14 días"
+msgstr ""
 
 msgid "Last 30 days"
-msgstr "Últimos 30 días"
+msgstr ""
 
 msgid "Last 60 days"
 msgstr ""
@@ -728,130 +715,130 @@ msgid "Last 180 days"
 msgstr ""
 
 msgid "This week"
-msgstr "Esta semana"
+msgstr ""
 
 msgid "Last week"
-msgstr "Última semana"
+msgstr ""
 
 msgid "Last 4 weeks"
-msgstr "Últimas 4 semanas"
+msgstr ""
 
 msgid "Last 12 weeks"
-msgstr "Últimas 12 semanas"
+msgstr ""
 
 msgid "Last 52 weeks"
-msgstr "Últimas 52 semanas"
+msgstr ""
 
 msgid "Weeks this year"
-msgstr "Semanas de este año"
+msgstr ""
 
 msgid "This bi-week"
-msgstr "Esta quincena"
+msgstr ""
 
 msgid "Last bi-week"
-msgstr "Última quincena"
+msgstr ""
 
 msgid "Last 4 bi-weeks"
-msgstr "Últimas 4 quincenas"
+msgstr ""
 
 msgid "This month"
-msgstr "Este mes"
+msgstr ""
 
 msgid "Last month"
-msgstr "Mes anterior"
+msgstr ""
 
 msgid "Last 3 months"
-msgstr "Últimos 3 meses"
+msgstr ""
 
 msgid "Last 6 months"
-msgstr "Últimos 6 meses"
+msgstr ""
 
 msgid "Last 12 months"
-msgstr "Ultimos 12 meses"
+msgstr ""
 
 msgid "Months this year"
-msgstr "Meses este año"
+msgstr ""
 
 msgid "This bi-month"
-msgstr "Este bimestre"
+msgstr ""
 
 msgid "Last bi-month"
-msgstr "Bimestre anterior"
+msgstr ""
 
 msgid "Last 6 bi-months"
-msgstr "Últimos 6 bimestres"
+msgstr ""
 
 msgid "Bi-months this year"
-msgstr "Bimestres de este año"
+msgstr ""
 
 msgid "This quarter"
-msgstr "Este trimestre"
+msgstr ""
 
 msgid "Last quarter"
-msgstr "El trimestre pasado"
+msgstr ""
 
 msgid "Last 4 quarters"
-msgstr "Últimos 4 trimestres"
+msgstr ""
 
 msgid "Quarters this year"
-msgstr "Trimestres de este año"
+msgstr ""
 
 msgid "This six-month"
-msgstr "Este semestre"
+msgstr ""
 
 msgid "Last six-month"
-msgstr "Último semestre"
+msgstr ""
 
 msgid "Last 2 six-month"
 msgstr ""
 
 msgid "This financial year"
-msgstr "Este año fiscal"
+msgstr ""
 
 msgid "Last financial year"
-msgstr "Último ejercicio financiero"
+msgstr ""
 
 msgid "Last 5 financial years"
-msgstr "Últimos 5 ejercicios financieros"
+msgstr ""
 
 msgid "This year"
-msgstr "Este año"
+msgstr ""
 
 msgid "Last year"
-msgstr "El año pasado"
+msgstr ""
 
 msgid "Last 5 years"
-msgstr "Últimos 5 años"
+msgstr ""
 
 msgid "Last 10 years"
 msgstr ""
 
 msgid "Days"
-msgstr "Días"
+msgstr ""
 
 msgid "Weeks"
-msgstr "Semanas"
+msgstr ""
 
 msgid "Bi-weeks"
-msgstr "Quincenales"
+msgstr ""
 
 msgid "Months"
-msgstr "Meses"
+msgstr ""
 
 msgid "Bi-months"
-msgstr "Bimestres"
+msgstr ""
 
 msgid "Quarters"
-msgstr "Trimestral"
+msgstr ""
 
 msgid "Six-months"
-msgstr "Semestres"
+msgstr ""
 
 msgid "Financial Years"
-msgstr "Años fiscales"
+msgstr ""
 
 msgid "Years"
-msgstr "Años"
+msgstr ""
 
 msgid "Translating to"
 msgstr ""
@@ -884,10 +871,10 @@ msgid "Series"
 msgstr ""
 
 msgid "Category"
-msgstr "Categoría"
+msgstr ""
 
 msgid "Filter"
-msgstr "filtro"
+msgstr ""
 
 msgid "Columns"
 msgstr ""
@@ -914,22 +901,22 @@ msgid "Expected reports"
 msgstr ""
 
 msgid "Program"
-msgstr "Programa"
+msgstr ""
 
 msgid "Select a program"
 msgstr ""
 
 msgid "Indicators"
-msgstr "Indicadores"
+msgstr ""
 
 msgid "Indicator group"
-msgstr "Grupo de indicadores"
+msgstr ""
 
 msgid "All groups"
 msgstr ""
 
 msgid "Indicator"
-msgstr "Indicadores"
+msgstr ""
 
 msgid "No indicator groups found"
 msgstr ""
@@ -938,10 +925,10 @@ msgid "Loading indicator groups"
 msgstr ""
 
 msgid "Data element group"
-msgstr "Grupo de elemento de datos"
+msgstr ""
 
 msgid "Data element"
-msgstr "Elemento de datos"
+msgstr ""
 
 msgid "No data element groups found"
 msgstr ""
@@ -950,10 +937,10 @@ msgid "Loading data element groups"
 msgstr ""
 
 msgid "Data sets"
-msgstr "Sets de datos"
+msgstr ""
 
 msgid "Data set"
-msgstr "Set de Datos\\:"
+msgstr ""
 
 msgid "All data sets"
 msgstr ""
@@ -962,13 +949,13 @@ msgid "Loading data sets"
 msgstr ""
 
 msgid "Event data items"
-msgstr "Datos de eventos"
+msgstr ""
 
 msgid "All programs"
 msgstr ""
 
 msgid "Event data item"
-msgstr "Event data item"
+msgstr ""
 
 msgid "No programs found"
 msgstr ""
@@ -977,7 +964,7 @@ msgid "Loading programs"
 msgstr ""
 
 msgid "Program indicators"
-msgstr "Indicadores de programa"
+msgstr ""
 
 msgid "Program indicator"
 msgstr ""
@@ -986,7 +973,7 @@ msgid "Calculations"
 msgstr ""
 
 msgid "Number"
-msgstr "Número"
+msgstr ""
 
 msgid "Formula is empty. Add items to the formula from the lists on the left."
 msgstr ""
@@ -1013,28 +1000,28 @@ msgid "Extra Small"
 msgstr ""
 
 msgid "Small"
-msgstr "Pequeña"
+msgstr ""
 
 msgid "Regular"
-msgstr "Normal"
+msgstr ""
 
 msgid "Large"
-msgstr "Grande"
+msgstr ""
 
 msgid "Extra Large"
 msgstr ""
 
 msgid "Left"
-msgstr "Izquierdo"
+msgstr ""
 
 msgid "Center"
 msgstr ""
 
 msgid "Right"
-msgstr "Derecha"
+msgstr ""
 
 msgid "Start"
-msgstr "Comienzo"
+msgstr ""
 
 msgid "Middle"
 msgstr ""
@@ -1043,10 +1030,10 @@ msgid "End"
 msgstr ""
 
 msgid "Top"
-msgstr "Arriba"
+msgstr ""
 
 msgid "Bottom"
-msgstr "Abajo"
+msgstr ""
 
 msgid "{{dynamicOuNames}} and {{lastOuName}}"
 msgstr ""
@@ -1088,61 +1075,61 @@ msgid "{{thresholdFactor}} × Z-score high"
 msgstr ""
 
 msgid "Data"
-msgstr "Datos"
+msgstr ""
 
 msgid "Organisation unit"
-msgstr "Unidad organizativa"
+msgstr ""
 
 msgid "Assigned Categories"
 msgstr ""
 
 msgid "Pivot table"
-msgstr "Tabla dinámica"
+msgstr ""
 
 msgid "Area"
-msgstr "Área"
+msgstr ""
 
 msgid "Stacked area"
 msgstr ""
 
 msgid "Bar"
-msgstr "Barra"
+msgstr ""
 
 msgid "Stacked bar"
-msgstr "Barra apilada"
+msgstr ""
 
 msgid "Column"
-msgstr "Columna"
+msgstr ""
 
 msgid "Year over year (column)"
-msgstr "Año tras año (columna)"
+msgstr ""
 
 msgid "Stacked column"
-msgstr "Columna apilada"
+msgstr ""
 
 msgid "Gauge"
-msgstr "Calibre"
+msgstr ""
 
 msgid "Line"
-msgstr "Línea"
+msgstr ""
 
 msgid "Line list"
 msgstr ""
 
 msgid "Year over year (line)"
-msgstr "Año tras año (línea)"
+msgstr ""
 
 msgid "Pie"
-msgstr "Pastel"
+msgstr ""
 
 msgid "Radar"
-msgstr "Radar"
+msgstr ""
 
 msgid "Scatter"
 msgstr ""
 
 msgid "Single value"
-msgstr "Valor único"
+msgstr ""
 
 msgid "All charts"
 msgstr ""
@@ -1151,7 +1138,7 @@ msgid "{{seriesName}} (trend)"
 msgstr ""
 
 msgid "Trend"
-msgstr "Tendencia"
+msgstr ""
 
 msgid "No legend for this series"
 msgstr ""
@@ -1163,7 +1150,7 @@ msgid "Linear Regression"
 msgstr ""
 
 msgid "Target"
-msgstr "Objetivo"
+msgstr ""
 
 msgid "Base"
 msgstr ""
@@ -1175,7 +1162,6 @@ msgid "{{count}} items"
 msgid_plural "{{count}} items"
 msgstr[0] ""
 msgstr[1] ""
-msgstr[2] ""
 
 msgid "Reset zoom"
 msgstr ""
