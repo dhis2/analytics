@@ -16,10 +16,10 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "view only"
-msgstr ""
+msgstr "නැරඹීම පමණයි"
 
 msgid "view and edit"
-msgstr ""
+msgstr "නැරඹීම සහ සංස්කරණය"
 
 msgid "all users ({{accessLevel}})"
 msgstr ""
@@ -119,7 +119,7 @@ msgid ""
 msgstr ""
 
 msgid "Yes, delete"
-msgstr ""
+msgstr "ඔව්, මකන්න"
 
 msgid "Totals only"
 msgstr ""
@@ -280,7 +280,7 @@ msgid "Open…"
 msgstr ""
 
 msgid "Save"
-msgstr ""
+msgstr "සුරකින්න"
 
 msgid "Save…"
 msgstr ""
@@ -310,7 +310,7 @@ msgid "Rename {{fileType}}"
 msgstr ""
 
 msgid "Name"
-msgstr ""
+msgstr "නම"
 
 msgid "Description"
 msgstr "විස්තරය"
@@ -471,7 +471,7 @@ msgid "{{firstItemIndex}}-{{lastItemIndex}} of {{totalNumberOfItems}}"
 msgstr ""
 
 msgid "Open"
-msgstr ""
+msgstr "විවෘත කරන්න"
 
 msgid "Couldn't load items"
 msgstr ""
@@ -616,10 +616,10 @@ msgid "Period type"
 msgstr ""
 
 msgid "Year"
-msgstr ""
+msgstr "වසර"
 
 msgid "Select year"
-msgstr ""
+msgstr "වසර තෝරන්න"
 
 msgid "Period"
 msgstr ""
@@ -715,19 +715,19 @@ msgid "Last 180 days"
 msgstr ""
 
 msgid "This week"
-msgstr ""
+msgstr "මෙම සතිය"
 
 msgid "Last week"
-msgstr ""
+msgstr "පසුගිය සතිය"
 
 msgid "Last 4 weeks"
-msgstr ""
+msgstr "පසුගිය සති 4"
 
 msgid "Last 12 weeks"
-msgstr ""
+msgstr "පසුගිය සති 12"
 
 msgid "Last 52 weeks"
-msgstr ""
+msgstr "පසුගිය සති 52"
 
 msgid "Weeks this year"
 msgstr ""
@@ -742,19 +742,19 @@ msgid "Last 4 bi-weeks"
 msgstr ""
 
 msgid "This month"
-msgstr ""
+msgstr "මෙම මාසය"
 
 msgid "Last month"
-msgstr ""
+msgstr "පසුගිය මාසය"
 
 msgid "Last 3 months"
-msgstr ""
+msgstr "පසුගිය මාස 3"
 
 msgid "Last 6 months"
-msgstr ""
+msgstr "පසුගිය මාස 6"
 
 msgid "Last 12 months"
-msgstr ""
+msgstr "පසුගිය මාස 12"
 
 msgid "Months this year"
 msgstr ""
@@ -802,34 +802,34 @@ msgid "Last 5 financial years"
 msgstr ""
 
 msgid "This year"
-msgstr ""
+msgstr "මෙම වසර"
 
 msgid "Last year"
-msgstr ""
+msgstr "පසුගිය වසර"
 
 msgid "Last 5 years"
-msgstr ""
+msgstr "පසුගිය 5 වසර"
 
 msgid "Last 10 years"
-msgstr ""
+msgstr "පසුගිය 10 වසර"
 
 msgid "Days"
-msgstr ""
+msgstr "දින"
 
 msgid "Weeks"
-msgstr ""
+msgstr "සති"
 
 msgid "Bi-weeks"
 msgstr ""
 
 msgid "Months"
-msgstr ""
+msgstr "මාස"
 
 msgid "Bi-months"
 msgstr ""
 
 msgid "Quarters"
-msgstr ""
+msgstr "කාර්තු"
 
 msgid "Six-months"
 msgstr ""
@@ -838,7 +838,7 @@ msgid "Financial Years"
 msgstr ""
 
 msgid "Years"
-msgstr ""
+msgstr "අවුරුදු"
 
 msgid "Translating to"
 msgstr ""
@@ -865,13 +865,13 @@ msgid "Could not load translations"
 msgstr ""
 
 msgid "Retry"
-msgstr ""
+msgstr "නැවත උත්සාහ කරන්න"
 
 msgid "Series"
 msgstr ""
 
 msgid "Category"
-msgstr ""
+msgstr "කාණ්ඩය"
 
 msgid "Filter"
 msgstr ""
@@ -997,16 +997,16 @@ msgid "Missing left parenthesis ("
 msgstr ""
 
 msgid "Extra Small"
-msgstr ""
+msgstr "ඉතා කුඩා"
 
 msgid "Small"
-msgstr ""
+msgstr "කුඩා"
 
 msgid "Regular"
-msgstr ""
+msgstr "මධ්‍යස්ථ"
 
 msgid "Large"
-msgstr ""
+msgstr "ලොකු"
 
 msgid "Extra Large"
 msgstr ""
@@ -1075,7 +1075,7 @@ msgid "{{thresholdFactor}} × Z-score high"
 msgstr ""
 
 msgid "Data"
-msgstr ""
+msgstr "දත්ත"
 
 msgid "Organisation unit"
 msgstr ""
@@ -1150,7 +1150,7 @@ msgid "Linear Regression"
 msgstr ""
 
 msgid "Target"
-msgstr ""
+msgstr "ඉලක්කය"
 
 msgid "Base"
 msgstr ""
