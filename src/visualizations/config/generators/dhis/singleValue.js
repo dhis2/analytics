@@ -119,7 +119,7 @@ const generateValueSVG = ({
     const textWidth = getTextWidth(formattedValue, `${textSize}px Roboto`)
 
     const iconSize = textSize
-    console.log('SUB_TEXT_SIZE_FACTOR', SUB_TEXT_SIZE_FACTOR)
+
     const subTextSize =
         textSize * SUB_TEXT_SIZE_FACTOR > SUB_TEXT_SIZE_MAX_THRESHOLD
             ? SUB_TEXT_SIZE_MAX_THRESHOLD
@@ -152,16 +152,6 @@ const generateValueSVG = ({
         iconSvgNode.setAttribute('width', iconSize)
         iconSvgNode.setAttribute('height', iconSize)
         iconSvgNode.setAttribute('y', (iconSize / 2 - topMargin / 2) * -1)
-        console.log(
-            'iconSize',
-            iconSize,
-            'iconPadding',
-            getIconPadding(textSize),
-            'textWidth',
-            textWidth,
-            'TOTAL',
-            iconSize + getIconPadding(textSize) + textWidth
-        )
         iconSvgNode.setAttribute(
             'x',
             `-${(iconSize + getIconPadding(textSize) + textWidth) / 2}`
@@ -343,7 +333,7 @@ const generateDVItem = (
         fontStyle && fontStyle[FONT_STYLE_VISUALIZATION_TITLE],
         FONT_STYLE_VISUALIZATION_TITLE
     )
-    console.log('titleFontStyle', titleFontStyle)
+
     const titleYPosition =
         TOP_MARGIN_FIXED +
         parseInt(titleFontStyle[FONT_STYLE_OPTION_FONT_SIZE]) +
@@ -425,16 +415,6 @@ const generateDVItem = (
     }
 
     svgContainer.appendChild(svgWrapper)
-    console.log('title size', parseInt(title.getAttribute('font-size')))
-    console.log('subtitle size', parseInt(subtitle.getAttribute('font-size')))
-    console.log(
-        'top margin',
-        (title ? parseInt(title.getAttribute('font-size')) : 0) +
-            (subtitle ? parseInt(subtitle.getAttribute('font-size')) : 0)
-    )
-
-    console.log('config.title', !!config.title)
-    console.log('config.subtitle', !!config.subtitle)
 
     svgContainer.appendChild(
         generateValueSVG({
