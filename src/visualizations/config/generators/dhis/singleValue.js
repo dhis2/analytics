@@ -29,10 +29,13 @@ const ACTUAL_TEXT_WIDTH_FACTOR = 0.9
 const ACTUAL_NUMBER_HEIGHT_FACTOR = 0.7
 
 // do not allow text width to exceed this threshold
-const TEXT_WIDTH_CONTAINER_WIDTH_THRESHOLD = 0.9
+// todo: text width vs viewbox = complicated
+const TEXT_WIDTH_CONTAINER_WIDTH_FACTOR = 1.5
 
-// do not allow text size to exceed this threshold
-const TEXT_SIZE_CONTAINER_HEIGHT_THRESHOLD = 0.4
+// do not allow text size to exceed these thresholds
+const TEXT_SIZE_CONTAINER_HEIGHT_FACTOR = 0.6
+const TEXT_SIZE_MAX_THRESHOLD = 400
+// const TEXT_SIZE_MIN_THRESHOLD = 100
 
 // multiply text size with this factor
 // to get an appropriate letter spacing
@@ -45,11 +48,11 @@ const TOP_MARGIN_FIXED = 16
 
 // multiply text size with this factor
 // to get an appropriate sub text size
-const SUB_TEXT_SIZE_FACTOR = 1 / 6
-const SUB_TEXT_SIZE_MIN_THRESHOLD = 24
+const SUB_TEXT_SIZE_FACTOR = 0.5
+const SUB_TEXT_SIZE_MIN_THRESHOLD = 26
 const SUB_TEXT_SIZE_MAX_THRESHOLD = 40
 
-const ICON_PADDING_FACTOR = 0.4
+const ICON_PADDING_FACTOR = 0.3
 
 // Compute text width before rendering
 // Not exactly precise but close enough
@@ -57,13 +60,15 @@ const getTextWidth = (text, font) => {
     const canvas = document.createElement('canvas')
     const context = canvas.getContext('2d')
     context.font = font
-    return context.measureText(text).width * ACTUAL_TEXT_WIDTH_FACTOR
+    return Math.round(
+        context.measureText(text).width * ACTUAL_TEXT_WIDTH_FACTOR
+    )
 }
 
 const getTextHeightForNumbers = (textSize) =>
     textSize * ACTUAL_NUMBER_HEIGHT_FACTOR
 
-const getIconPadding = (textSize) => textSize * ICON_PADDING_FACTOR
+const getIconPadding = (textSize) => Math.round(textSize * ICON_PADDING_FACTOR)
 
 const getTextSize = (
     formattedValue,
@@ -71,19 +76,21 @@ const getTextSize = (
     containerHeight,
     showIcon
 ) => {
-    let size = Math.round(
-        containerHeight * TEXT_SIZE_CONTAINER_HEIGHT_THRESHOLD
+    let size = Math.min(
+        Math.round(containerHeight * TEXT_SIZE_CONTAINER_HEIGHT_FACTOR),
+        TEXT_SIZE_MAX_THRESHOLD
     )
-    const widthThreshold = containerWidth * TEXT_WIDTH_CONTAINER_WIDTH_THRESHOLD
 
-    if (size > 0) {
-        while (
-            getTextWidth(formattedValue, `${size}px Roboto`) +
-                (showIcon ? getIconPadding(size) : 0) >
-            widthThreshold
-        ) {
-            size = size - 1
-        }
+    const widthThreshold = Math.round(
+        containerWidth * TEXT_WIDTH_CONTAINER_WIDTH_FACTOR
+    )
+
+    const textWidth =
+        getTextWidth(formattedValue, `${size}px Roboto`) +
+        (showIcon ? getIconPadding(size) : 0)
+
+    if (textWidth > widthThreshold) {
+        size = Math.round(size * (widthThreshold / textWidth))
     }
 
     return size
@@ -98,41 +105,27 @@ const generateValueSVG = ({
     noData,
     containerWidth,
     containerHeight,
-    topMargin,
+    topMargin = 0,
 }) => {
-    // const ratio = containerHeight / containerWidth
-    // const iconSize = 300
-    // const iconPadding = 50
     const showIcon = icon && formattedValue !== noData.text
-    // const textSize = iconSize * 0.85
+
     const textSize = getTextSize(
         formattedValue,
         containerWidth,
         containerHeight,
         showIcon
     )
-    console.log('topMargin', topMargin)
-    console.log('textSize', textSize)
 
     const textWidth = getTextWidth(formattedValue, `${textSize}px Roboto`)
-    console.log('textWidth', textWidth)
 
-    // const subTextSize = 40
     const iconSize = textSize
+    console.log('SUB_TEXT_SIZE_FACTOR', SUB_TEXT_SIZE_FACTOR)
     const subTextSize =
         textSize * SUB_TEXT_SIZE_FACTOR > SUB_TEXT_SIZE_MAX_THRESHOLD
             ? SUB_TEXT_SIZE_MAX_THRESHOLD
             : textSize * SUB_TEXT_SIZE_FACTOR < SUB_TEXT_SIZE_MIN_THRESHOLD
             ? SUB_TEXT_SIZE_MIN_THRESHOLD
             : textSize * SUB_TEXT_SIZE_FACTOR
-
-    // let viewBoxWidth = textWidth
-
-    // if (showIcon) {
-    // viewBoxWidth += iconSize + iconPadding
-    // }
-
-    // const viewBoxHeight = viewBoxWidth * ratio
 
     const svgValue = document.createElementNS(svgNS, 'svg')
     svgValue.setAttribute('viewBox', `0 0 ${containerWidth} ${containerHeight}`)
@@ -154,12 +147,21 @@ const generateValueSVG = ({
     if (showIcon) {
         // embed icon to allow changing color
         // (elements with fill need to use "currentColor" for this to work)
-
         const iconSvgNode = document.createElementNS(svgNS, 'svg')
         iconSvgNode.setAttribute('viewBox', '0 0 48 48')
         iconSvgNode.setAttribute('width', iconSize)
         iconSvgNode.setAttribute('height', iconSize)
         iconSvgNode.setAttribute('y', (iconSize / 2 - topMargin / 2) * -1)
+        console.log(
+            'iconSize',
+            iconSize,
+            'iconPadding',
+            getIconPadding(textSize),
+            'textWidth',
+            textWidth,
+            'TOTAL',
+            iconSize + getIconPadding(textSize) + textWidth
+        )
         iconSvgNode.setAttribute(
             'x',
             `-${(iconSize + getIconPadding(textSize) + textWidth) / 2}`
@@ -319,16 +321,6 @@ const generateDVItem = (
         icon,
     }
 ) => {
-    console.log('config', config)
-    console.log('svgContainer', svgContainer)
-    console.log('width', width)
-    console.log('height', height)
-    console.log('valueColor', valueColor)
-    console.log('backgroundColor', backgroundColor)
-    console.log('titleColor', titleColor)
-    console.log('fontStyle', fontStyle)
-    console.log('icon', icon)
-
     if (backgroundColor) {
         svgContainer.setAttribute(
             'style',
