@@ -22,20 +22,21 @@ const svgNS = 'http://www.w3.org/2000/svg'
 
 // multiply text width with this factor
 // to get very close to actual text width
+// nb: dependent on viewbox etc
 const ACTUAL_TEXT_WIDTH_FACTOR = 0.9
 
 // multiply value text size with this factor
 // to get very close to the actual number height
-const ACTUAL_NUMBER_HEIGHT_FACTOR = 0.7
+// as numbers don't go below the baseline like e.g. "j" and "g"
+const ACTUAL_NUMBER_HEIGHT_FACTOR = 0.67
 
 // do not allow text width to exceed this threshold
-// todo: text width vs viewbox = complicated
+// a threshold >1 does not really make sense but text width vs viewbox is complicated
 const TEXT_WIDTH_CONTAINER_WIDTH_FACTOR = 1.5
 
-// do not allow text size to exceed these thresholds
+// do not allow text size to exceed this
 const TEXT_SIZE_CONTAINER_HEIGHT_FACTOR = 0.6
 const TEXT_SIZE_MAX_THRESHOLD = 400
-// const TEXT_SIZE_MIN_THRESHOLD = 100
 
 // multiply text size with this factor
 // to get an appropriate letter spacing
@@ -52,6 +53,8 @@ const SUB_TEXT_SIZE_FACTOR = 0.5
 const SUB_TEXT_SIZE_MIN_THRESHOLD = 26
 const SUB_TEXT_SIZE_MAX_THRESHOLD = 40
 
+// multiply text size with this factor
+// to get an appropriate icon padding
 const ICON_PADDING_FACTOR = 0.3
 
 // Compute text width before rendering
@@ -186,7 +189,6 @@ const generateValueSVG = ({
         'x',
         showIcon ? `${(iconSize + getIconPadding(textSize)) / 2}` : 0
     )
-    // vertical align, "alignment-baseline: central" is not supported by Batik
     textNode.setAttribute(
         'y',
         topMargin / 2 + getTextHeightForNumbers(textSize) / 2
