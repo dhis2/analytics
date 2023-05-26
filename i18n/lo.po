@@ -150,7 +150,7 @@ msgid "Weekly"
 msgstr "ເປັນອາທິດ"
 
 msgid "Bi-weekly"
-msgstr ""
+msgstr "ສອງອາທິດຕໍ່ຄັ້ງ"
 
 msgid "Weekly (Start Wednesday)"
 msgstr ""
@@ -231,10 +231,10 @@ msgid "This bi-week"
 msgstr "ສອງເທື່ອຕໍ່ອາທິດນີ້"
 
 msgid "Last bi-week"
-msgstr ""
+msgstr "ສອງຄັ້ງລ່າສຸດຕໍ່ທິດ"
 
 msgid "Last 4 bi-weeks"
-msgstr ""
+msgstr "ສອງເດືອນທີ່ຜ່ານມາ"
 
 msgid "This month"
 msgstr "ເດືອນນີ້"
