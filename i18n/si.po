@@ -67,46 +67,46 @@ msgid "Period type"
 msgstr ""
 
 msgid "January"
-msgstr ""
+msgstr "ජනවාරි"
 
 msgid "February"
-msgstr ""
+msgstr "පෙබරවාරි"
 
 msgid "March"
-msgstr ""
+msgstr "මාර්තු"
 
 msgid "April"
-msgstr ""
+msgstr "අප්‍රේල්"
 
 msgid "May"
-msgstr ""
+msgstr "මැයි"
 
 msgid "June"
-msgstr ""
+msgstr "ජූනි"
 
 msgid "July"
-msgstr ""
+msgstr "ජූලි"
 
 msgid "August"
-msgstr ""
+msgstr "අගෝස්තු"
 
 msgid "September"
-msgstr ""
+msgstr "සැප්තැම්බර්"
 
 msgid "October"
-msgstr ""
+msgstr "ඔක්තෝබර්"
 
 msgid "November"
-msgstr ""
+msgstr "නොවැම්බර්"
 
 msgid "December"
-msgstr ""
+msgstr "දෙසැම්බර්"
 
 msgid "Week {{weekNumber}}"
-msgstr ""
+msgstr "සති {{weekNumber}}"
 
 msgid "Bi-Week {{biWeekNumber}}"
-msgstr ""
+msgstr "දෙසතියකට වරක්"
 
 msgid "Daily"
 msgstr "දිනපතා"
@@ -115,34 +115,34 @@ msgid "Weekly"
 msgstr "සතිපතා"
 
 msgid "Bi-weekly"
-msgstr ""
+msgstr "දෙසතියකට වරක්"
 
 msgid "Weekly (Start Wednesday)"
-msgstr ""
+msgstr "සතියකට වරක් (Start Wednesday)"
 
 msgid "Weekly (Start Thursday)"
-msgstr ""
+msgstr "සතියකට වරක් (Start Thursday)"
 
 msgid "Weekly (Start Saturday)"
-msgstr ""
+msgstr "සතියකට වරක් (Start Saturday)"
 
 msgid "Weekly (Start Sunday)"
-msgstr ""
+msgstr "සතියකට වරක් (Start Sunday)"
 
 msgid "Monthly"
 msgstr "මාස්පතා"
 
 msgid "Bi-monthly"
-msgstr ""
+msgstr "දෙමසකට වරක්"
 
 msgid "Quarterly"
-msgstr ""
+msgstr "කාර්තු පතා"
 
 msgid "Six-monthly"
-msgstr ""
+msgstr "6 මසකට වරක්"
 
 msgid "Six-monthly April"
-msgstr ""
+msgstr "6 මසකට වරක් අප්‍රේල්"
 
 msgid "Yearly"
 msgstr "අවුරුදු පතා"
@@ -166,13 +166,13 @@ msgid "Yesterday"
 msgstr "ඊයේ"
 
 msgid "Last 3 days"
-msgstr ""
+msgstr "පසුගිය දින 3"
 
 msgid "Last 7 days"
-msgstr ""
+msgstr "පසුගිය දින 7"
 
 msgid "Last 14 days"
-msgstr ""
+msgstr "පසුගිය දින 14"
 
 msgid "This week"
 msgstr "මෙම සතිය"
