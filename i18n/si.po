@@ -223,7 +223,7 @@ msgid "Add Assigned Categories"
 msgstr ""
 
 msgid "Remove"
-msgstr "ඉවත් කරන්"
+msgstr "ඉවත් කරන්න"
 
 msgid "Filter dimensions"
 msgstr ""
@@ -271,7 +271,7 @@ msgid "Delete"
 msgstr "ඉවත් කරන්න"
 
 msgid "File"
-msgstr ""
+msgstr "ගොනුව"
 
 msgid "New"
 msgstr "නව"
@@ -643,34 +643,34 @@ msgid "Weekly"
 msgstr "සතිපතා"
 
 msgid "Weekly (Start Wednesday)"
-msgstr ""
+msgstr "සතියකට වරක් (Start Wednesday)"
 
 msgid "Weekly (Start Thursday)"
-msgstr ""
+msgstr "සතියකට වරක් (Start Thursday)"
 
 msgid "Weekly (Start Saturday)"
-msgstr ""
+msgstr "සතියකට වරක් (Start Saturday)"
 
 msgid "Weekly (Start Sunday)"
-msgstr ""
+msgstr "සතියකට වරක් (Start Sunday)"
 
 msgid "Bi-weekly"
-msgstr ""
+msgstr "දෙසතියකට වරක්"
 
 msgid "Monthly"
 msgstr "මාස්පතා"
 
 msgid "Bi-monthly"
-msgstr ""
+msgstr "දෙමසකට වරක්"
 
 msgid "Quarterly"
-msgstr ""
+msgstr "කාර්තු පතා"
 
 msgid "Six-monthly"
-msgstr ""
+msgstr "6 මසකට වරක්"
 
 msgid "Six-monthly April"
-msgstr ""
+msgstr "6 මසකට වරක් අප්‍රේල්"
 
 msgid "Yearly"
 msgstr "අවුරුදු පතා"
@@ -694,13 +694,13 @@ msgid "Yesterday"
 msgstr "ඊයේ"
 
 msgid "Last 3 days"
-msgstr ""
+msgstr "පසුගිය දින 3"
 
 msgid "Last 7 days"
-msgstr ""
+msgstr "පසුගිය දින 7"
 
 msgid "Last 14 days"
-msgstr ""
+msgstr "පසුගිය දින 14"
 
 msgid "Last 30 days"
 msgstr ""
