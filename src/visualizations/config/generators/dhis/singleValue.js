@@ -20,13 +20,83 @@ import {
 
 const svgNS = 'http://www.w3.org/2000/svg'
 
+// multiply text width with this factor
+// to get very close to actual text width
+// nb: dependent on viewbox etc
+const ACTUAL_TEXT_WIDTH_FACTOR = 0.9
+
+// multiply value text size with this factor
+// to get very close to the actual number height
+// as numbers don't go below the baseline like e.g. "j" and "g"
+const ACTUAL_NUMBER_HEIGHT_FACTOR = 0.67
+
+// do not allow text width to exceed this threshold
+// a threshold >1 does not really make sense but text width vs viewbox is complicated
+const TEXT_WIDTH_CONTAINER_WIDTH_FACTOR = 1.3
+
+// do not allow text size to exceed this
+const TEXT_SIZE_CONTAINER_HEIGHT_FACTOR = 0.6
+const TEXT_SIZE_MAX_THRESHOLD = 400
+
+// multiply text size with this factor
+// to get an appropriate letter spacing
+const LETTER_SPACING_TEXT_SIZE_FACTOR = (1 / 35) * -1
+const LETTER_SPACING_MIN_THRESHOLD = -6
+const LETTER_SPACING_MAX_THRESHOLD = -1
+
+// fixed top margin above title/subtitle
+const TOP_MARGIN_FIXED = 16
+
+// multiply text size with this factor
+// to get an appropriate sub text size
+const SUB_TEXT_SIZE_FACTOR = 0.5
+const SUB_TEXT_SIZE_MIN_THRESHOLD = 26
+const SUB_TEXT_SIZE_MAX_THRESHOLD = 40
+
+// multiply text size with this factor
+// to get an appropriate icon padding
+const ICON_PADDING_FACTOR = 0.3
+
 // Compute text width before rendering
 // Not exactly precise but close enough
 const getTextWidth = (text, font) => {
     const canvas = document.createElement('canvas')
     const context = canvas.getContext('2d')
     context.font = font
-    return context.measureText(text).width
+    return Math.round(
+        context.measureText(text).width * ACTUAL_TEXT_WIDTH_FACTOR
+    )
+}
+
+const getTextHeightForNumbers = (textSize) =>
+    textSize * ACTUAL_NUMBER_HEIGHT_FACTOR
+
+const getIconPadding = (textSize) => Math.round(textSize * ICON_PADDING_FACTOR)
+
+const getTextSize = (
+    formattedValue,
+    containerWidth,
+    containerHeight,
+    showIcon
+) => {
+    let size = Math.min(
+        Math.round(containerHeight * TEXT_SIZE_CONTAINER_HEIGHT_FACTOR),
+        TEXT_SIZE_MAX_THRESHOLD
+    )
+
+    const widthThreshold = Math.round(
+        containerWidth * TEXT_WIDTH_CONTAINER_WIDTH_FACTOR
+    )
+
+    const textWidth =
+        getTextWidth(formattedValue, `${size}px Roboto`) +
+        (showIcon ? getIconPadding(size) : 0)
+
+    if (textWidth > widthThreshold) {
+        size = Math.round(size * (widthThreshold / textWidth))
+    }
+
+    return size
 }
 
 const generateValueSVG = ({
@@ -38,28 +108,32 @@ const generateValueSVG = ({
     noData,
     containerWidth,
     containerHeight,
+    topMargin = 0,
 }) => {
-    const ratio = containerHeight / containerWidth
-    const iconSize = 300
-    const iconPadding = 50
-    const textSize = iconSize * 0.85
-    const textWidth = getTextWidth(formattedValue, `${textSize}px Roboto`)
-    const subTextSize = 40
-
     const showIcon = icon && formattedValue !== noData.text
 
-    let viewBoxWidth = textWidth
+    const textSize = getTextSize(
+        formattedValue,
+        containerWidth,
+        containerHeight,
+        showIcon
+    )
 
-    if (showIcon) {
-        viewBoxWidth += iconSize + iconPadding
-    }
+    const textWidth = getTextWidth(formattedValue, `${textSize}px Roboto`)
 
-    const viewBoxHeight = viewBoxWidth * ratio
+    const iconSize = textSize
+
+    const subTextSize =
+        textSize * SUB_TEXT_SIZE_FACTOR > SUB_TEXT_SIZE_MAX_THRESHOLD
+            ? SUB_TEXT_SIZE_MAX_THRESHOLD
+            : textSize * SUB_TEXT_SIZE_FACTOR < SUB_TEXT_SIZE_MIN_THRESHOLD
+            ? SUB_TEXT_SIZE_MIN_THRESHOLD
+            : textSize * SUB_TEXT_SIZE_FACTOR
 
     const svgValue = document.createElementNS(svgNS, 'svg')
-    svgValue.setAttribute('viewBox', `0 0 ${viewBoxWidth} ${viewBoxHeight}`)
-    svgValue.setAttribute('width', '95%')
-    svgValue.setAttribute('height', '95%')
+    svgValue.setAttribute('viewBox', `0 0 ${containerWidth} ${containerHeight}`)
+    svgValue.setAttribute('width', '50%')
+    svgValue.setAttribute('height', '50%')
     svgValue.setAttribute('x', '50%')
     svgValue.setAttribute('y', '50%')
     svgValue.setAttribute('style', 'overflow: visible')
@@ -77,13 +151,13 @@ const generateValueSVG = ({
         // embed icon to allow changing color
         // (elements with fill need to use "currentColor" for this to work)
         const iconSvgNode = document.createElementNS(svgNS, 'svg')
+        iconSvgNode.setAttribute('viewBox', '0 0 48 48')
         iconSvgNode.setAttribute('width', iconSize)
         iconSvgNode.setAttribute('height', iconSize)
-        iconSvgNode.setAttribute('viewBox', '0 0 48 48')
-        iconSvgNode.setAttribute('y', `-${iconSize / 2}`)
+        iconSvgNode.setAttribute('y', (iconSize / 2 - topMargin / 2) * -1)
         iconSvgNode.setAttribute(
             'x',
-            `-${(iconSize + iconPadding + textWidth) / 2}`
+            `-${(iconSize + getIconPadding(textSize) + textWidth) / 2}`
         )
         iconSvgNode.setAttribute('style', `color: ${fillColor}`)
 
@@ -97,14 +171,28 @@ const generateValueSVG = ({
         svgValue.appendChild(iconSvgNode)
     }
 
+    const letterSpacing = Math.round(textSize * LETTER_SPACING_TEXT_SIZE_FACTOR)
+
     const textNode = document.createElementNS(svgNS, 'text')
     textNode.setAttribute('font-size', textSize)
     textNode.setAttribute('font-weight', '300')
-    textNode.setAttribute('letter-spacing', '-5')
+    textNode.setAttribute(
+        'letter-spacing',
+        letterSpacing < LETTER_SPACING_MIN_THRESHOLD
+            ? LETTER_SPACING_MIN_THRESHOLD
+            : letterSpacing > LETTER_SPACING_MAX_THRESHOLD
+            ? LETTER_SPACING_MAX_THRESHOLD
+            : letterSpacing
+    )
     textNode.setAttribute('text-anchor', 'middle')
-    textNode.setAttribute('x', showIcon ? `${(iconSize + iconPadding) / 2}` : 0)
-    // vertical align, "alignment-baseline: central" is not supported by Batik
-    textNode.setAttribute('y', '.35em')
+    textNode.setAttribute(
+        'x',
+        showIcon ? `${(iconSize + getIconPadding(textSize)) / 2}` : 0
+    )
+    textNode.setAttribute(
+        'y',
+        topMargin / 2 + getTextHeightForNumbers(textSize) / 2
+    )
     textNode.setAttribute('fill', fillColor)
     textNode.setAttribute('data-test', 'visualization-primary-value')
 
@@ -116,8 +204,8 @@ const generateValueSVG = ({
         const subTextNode = document.createElementNS(svgNS, 'text')
         subTextNode.setAttribute('text-anchor', 'middle')
         subTextNode.setAttribute('font-size', subTextSize)
-        subTextNode.setAttribute('y', iconSize / 2)
-        subTextNode.setAttribute('dy', subTextSize)
+        subTextNode.setAttribute('y', iconSize / 2 + topMargin / 2)
+        subTextNode.setAttribute('dy', subTextSize * 1.7)
         subTextNode.setAttribute('fill', textColor)
         subTextNode.appendChild(document.createTextNode(subText))
 
@@ -240,115 +328,91 @@ const generateDVItem = (
 
     const svgWrapper = document.createElementNS(svgNS, 'svg')
 
+    // title
     const title = document.createElementNS(svgNS, 'text')
+
     const titleFontStyle = mergeFontStyleWithDefault(
         fontStyle && fontStyle[FONT_STYLE_VISUALIZATION_TITLE],
         FONT_STYLE_VISUALIZATION_TITLE
     )
-    const titleYPosition = titleFontStyle[FONT_STYLE_OPTION_FONT_SIZE]
 
-    title.setAttribute(
-        'x',
-        getXFromTextAlign(titleFontStyle[FONT_STYLE_OPTION_TEXT_ALIGN])
-    )
-    title.setAttribute('y', titleYPosition)
-    title.setAttribute(
-        'text-anchor',
-        getTextAnchorFromTextAlign(titleFontStyle[FONT_STYLE_OPTION_TEXT_ALIGN])
-    )
-    title.setAttribute(
-        'font-size',
-        `${titleFontStyle[FONT_STYLE_OPTION_FONT_SIZE]}px`
-    )
-    title.setAttribute(
-        'font-weight',
-        titleFontStyle[FONT_STYLE_OPTION_BOLD]
+    const titleYPosition =
+        TOP_MARGIN_FIXED +
+        parseInt(titleFontStyle[FONT_STYLE_OPTION_FONT_SIZE]) +
+        'px'
+
+    const titleAttributes = {
+        x: getXFromTextAlign(titleFontStyle[FONT_STYLE_OPTION_TEXT_ALIGN]),
+        y: titleYPosition,
+        'text-anchor': getTextAnchorFromTextAlign(
+            titleFontStyle[FONT_STYLE_OPTION_TEXT_ALIGN]
+        ),
+        'font-size': `${titleFontStyle[FONT_STYLE_OPTION_FONT_SIZE]}px`,
+        'font-weight': titleFontStyle[FONT_STYLE_OPTION_BOLD]
             ? FONT_STYLE_OPTION_BOLD
-            : 'normal'
-    )
-    title.setAttribute(
-        'font-style',
-        titleFontStyle[FONT_STYLE_OPTION_ITALIC]
+            : 'normal',
+        'font-style': titleFontStyle[FONT_STYLE_OPTION_ITALIC]
             ? FONT_STYLE_OPTION_ITALIC
-            : 'normal'
-    )
-    if (
-        titleColor &&
-        titleFontStyle[FONT_STYLE_OPTION_TEXT_COLOR] ===
-            defaultFontStyle[FONT_STYLE_VISUALIZATION_TITLE][
-                FONT_STYLE_OPTION_TEXT_COLOR
-            ]
-    ) {
-        title.setAttribute('fill', titleColor)
-    } else {
-        title.setAttribute('fill', titleFontStyle[FONT_STYLE_OPTION_TEXT_COLOR])
+            : 'normal',
+        'data-test': 'visualization-title',
+        fill:
+            titleColor &&
+            titleFontStyle[FONT_STYLE_OPTION_TEXT_COLOR] ===
+                defaultFontStyle[FONT_STYLE_VISUALIZATION_TITLE][
+                    FONT_STYLE_OPTION_TEXT_COLOR
+                ]
+                ? titleColor
+                : titleFontStyle[FONT_STYLE_OPTION_TEXT_COLOR],
     }
 
-    title.setAttribute('data-test', 'visualization-title')
+    Object.entries(titleAttributes).forEach(([key, value]) =>
+        title.setAttribute(key, value)
+    )
 
     if (config.title) {
         title.appendChild(document.createTextNode(config.title))
-
         svgWrapper.appendChild(title)
     }
+
+    // subtitle
+    const subtitle = document.createElementNS(svgNS, 'text')
 
     const subtitleFontStyle = mergeFontStyleWithDefault(
         fontStyle && fontStyle[FONT_STYLE_VISUALIZATION_SUBTITLE],
         FONT_STYLE_VISUALIZATION_SUBTITLE
     )
-    const subtitle = document.createElementNS(svgNS, 'text')
-    subtitle.setAttribute(
-        'x',
-        getXFromTextAlign(subtitleFontStyle[FONT_STYLE_OPTION_TEXT_ALIGN])
-    )
-    subtitle.setAttribute('y', titleYPosition)
-    subtitle.setAttribute(
-        'dy',
-        `${subtitleFontStyle[FONT_STYLE_OPTION_FONT_SIZE] + 10}`
-    )
-    subtitle.setAttribute(
-        'text-anchor',
-        getTextAnchorFromTextAlign(
-            subtitleFontStyle[FONT_STYLE_OPTION_TEXT_ALIGN]
-        )
-    )
-    subtitle.setAttribute(
-        'font-size',
-        `${subtitleFontStyle[FONT_STYLE_OPTION_FONT_SIZE]}px`
-    )
-    subtitle.setAttribute(
-        'font-weight',
-        subtitleFontStyle[FONT_STYLE_OPTION_BOLD]
-            ? FONT_STYLE_OPTION_BOLD
-            : 'normal'
-    )
-    subtitle.setAttribute(
-        'font-style',
-        subtitleFontStyle[FONT_STYLE_OPTION_ITALIC]
-            ? FONT_STYLE_OPTION_ITALIC
-            : 'normal'
-    )
 
-    if (
-        titleColor &&
-        subtitleFontStyle[FONT_STYLE_OPTION_TEXT_COLOR] ===
-            defaultFontStyle[FONT_STYLE_VISUALIZATION_SUBTITLE][
-                FONT_STYLE_OPTION_TEXT_COLOR
-            ]
-    ) {
-        subtitle.setAttribute('fill', titleColor)
-    } else {
-        subtitle.setAttribute(
-            'fill',
-            subtitleFontStyle[FONT_STYLE_OPTION_TEXT_COLOR]
-        )
+    const subtitleAttributes = {
+        x: getXFromTextAlign(subtitleFontStyle[FONT_STYLE_OPTION_TEXT_ALIGN]),
+        y: titleYPosition,
+        dy: `${subtitleFontStyle[FONT_STYLE_OPTION_FONT_SIZE] + 10}`,
+        'text-anchor': getTextAnchorFromTextAlign(
+            subtitleFontStyle[FONT_STYLE_OPTION_TEXT_ALIGN]
+        ),
+        'font-size': `${subtitleFontStyle[FONT_STYLE_OPTION_FONT_SIZE]}px`,
+        'font-weight': subtitleFontStyle[FONT_STYLE_OPTION_BOLD]
+            ? FONT_STYLE_OPTION_BOLD
+            : 'normal',
+        'font-style': subtitleFontStyle[FONT_STYLE_OPTION_ITALIC]
+            ? FONT_STYLE_OPTION_ITALIC
+            : 'normal',
+        fill:
+            titleColor &&
+            subtitleFontStyle[FONT_STYLE_OPTION_TEXT_COLOR] ===
+                defaultFontStyle[FONT_STYLE_VISUALIZATION_SUBTITLE][
+                    FONT_STYLE_OPTION_TEXT_COLOR
+                ]
+                ? titleColor
+                : subtitleFontStyle[FONT_STYLE_OPTION_TEXT_COLOR],
+        'data-test': 'visualization-subtitle',
     }
 
-    subtitle.setAttribute('data-test', 'visualization-subtitle')
+    Object.entries(subtitleAttributes).forEach(([key, value]) =>
+        subtitle.setAttribute(key, value)
+    )
 
     if (config.subtitle) {
         subtitle.appendChild(document.createTextNode(config.subtitle))
-
         svgWrapper.appendChild(subtitle)
     }
 
@@ -364,6 +428,15 @@ const generateDVItem = (
             icon,
             containerWidth: width,
             containerHeight: height,
+            topMargin:
+                TOP_MARGIN_FIXED +
+                ((config.title
+                    ? parseInt(title.getAttribute('font-size'))
+                    : 0) +
+                    (config.subtitle
+                        ? parseInt(subtitle.getAttribute('font-size'))
+                        : 0)) *
+                    2.5,
         })
     )
 
