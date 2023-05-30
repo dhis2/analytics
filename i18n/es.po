@@ -88,7 +88,7 @@ msgid "This app could not retrieve required data."
 msgstr ""
 
 msgid "Network error"
-msgstr ""
+msgstr "Error de red"
 
 msgid "Data / Edit calculation"
 msgstr ""
@@ -129,7 +129,7 @@ msgid ""
 msgstr ""
 
 msgid "Yes, delete"
-msgstr ""
+msgstr "si, eliminar"
 
 msgid "Totals only"
 msgstr ""

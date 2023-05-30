@@ -1,3 +1,24 @@
+## [25.1.9](https://github.com/dhis2/analytics/compare/v25.1.8...v25.1.9) (2023-05-30)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([9466322](https://github.com/dhis2/analytics/commit/9466322c7cac471ee1d5bd1e451f911968e30a3d))
+
+## [25.1.8](https://github.com/dhis2/analytics/compare/v25.1.7...v25.1.8) (2023-05-28)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([184740d](https://github.com/dhis2/analytics/commit/184740d3bdc019e8ab9eb8b05f4f473fcf960889))
+
+## [25.1.7](https://github.com/dhis2/analytics/compare/v25.1.6...v25.1.7) (2023-05-27)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([83d2c2b](https://github.com/dhis2/analytics/commit/83d2c2bda1160b7c474d9d29596cfccdbeb72c81))
+
 ## [25.1.6](https://github.com/dhis2/analytics/compare/v25.1.5...v25.1.6) (2023-05-26)
 
 
