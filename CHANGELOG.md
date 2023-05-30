@@ -1,3 +1,10 @@
+## [25.1.10](https://github.com/dhis2/analytics/compare/v25.1.9...v25.1.10) (2023-05-30)
+
+
+### Bug Fixes
+
+* single value size and position issues (DHIS2-15344) ([#1470](https://github.com/dhis2/analytics/issues/1470)) ([d94fe02](https://github.com/dhis2/analytics/commit/d94fe02c7cc85a6b4aca41c85ba60ed37871b645))
+
 ## [25.1.9](https://github.com/dhis2/analytics/compare/v25.1.8...v25.1.9) (2023-05-30)
 
 
