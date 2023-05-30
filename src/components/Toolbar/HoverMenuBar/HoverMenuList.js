@@ -78,7 +78,7 @@ const HoverMenuList = ({
 }
 
 HoverMenuList.defaultProps = {
-    dataTest: 'dhis2-analytics-hovermenubar-menu',
+    dataTest: 'dhis2-analytics-hovermenulist',
     maxWidth: '380px',
     maxHeight: 'auto',
 }

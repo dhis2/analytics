@@ -6,8 +6,8 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import menuButtonStyles from './MenuButton.styles.js'
 
-export const UpdateButton = ({ onClick, disabled, loading }) => (
-    <button onClick={onClick} disabled={disabled}>
+export const UpdateButton = ({ onClick, disabled, loading, dataTest }) => (
+    <button onClick={onClick} disabled={disabled} data-test={dataTest}>
         {loading ? <CircularLoader extrasmall /> : <IconSync16 />}
         {i18n.t('Update')}
         <style jsx>{menuButtonStyles}</style>
@@ -27,8 +27,13 @@ export const UpdateButton = ({ onClick, disabled, loading }) => (
     </button>
 )
 
+UpdateButton.defaultProps = {
+    dataTest: 'dhis2-analytics-updatebutton',
+}
+
 UpdateButton.propTypes = {
     onClick: PropTypes.func.isRequired,
+    dataTest: PropTypes.string,
     disabled: PropTypes.bool,
     loading: PropTypes.bool,
 }

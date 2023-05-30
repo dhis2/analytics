@@ -5,7 +5,7 @@ import React, { useRef } from 'react'
 import menuButtonStyles from '../MenuButton.styles.js'
 import { useHoverMenubarContext } from './HoverMenubar.js'
 
-export const HoverMenuDropdown = ({ children, label, disabled }) => {
+export const HoverMenuDropdown = ({ children, label, dataTest, disabled }) => {
     const buttonRef = useRef()
     const {
         onDropDownButtonClick,
@@ -21,6 +21,7 @@ export const HoverMenuDropdown = ({ children, label, disabled }) => {
                 onClick={onDropDownButtonClick}
                 disabled={disabled}
                 onMouseOver={onDropDownButtonMouseOver}
+                data-test={dataTest}
             >
                 {label}
                 <style jsx>{menuButtonStyles}</style>
@@ -36,8 +37,13 @@ export const HoverMenuDropdown = ({ children, label, disabled }) => {
     )
 }
 
+HoverMenuDropdown.defaultProps = {
+    dataTest: 'dhis2-analytics-hovermenudropdown',
+}
+
 HoverMenuDropdown.propTypes = {
     children: PropTypes.node.isRequired,
     label: PropTypes.node.isRequired,
+    dataTest: PropTypes.string,
     disabled: PropTypes.bool,
 }

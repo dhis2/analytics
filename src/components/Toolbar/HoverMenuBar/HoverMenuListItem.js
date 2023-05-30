@@ -73,7 +73,7 @@ const HoverMenuListItem = ({
 }
 
 HoverMenuListItem.defaultProps = {
-    dataTest: 'dhis2-uicore-menuitem',
+    dataTest: 'dhis2-uicore-hovermenulistitem',
 }
 
 HoverMenuListItem.propTypes = {

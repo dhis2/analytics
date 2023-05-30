@@ -3,8 +3,8 @@ import cx from 'classnames'
 import PropTypes from 'prop-types'
 import React from 'react'
 
-export const ToolbarSidebar = ({ children, isHidden }) => (
-    <div className={cx('container', { isHidden })}>
+export const ToolbarSidebar = ({ children, dataTest, isHidden }) => (
+    <div className={cx('container', { isHidden })} data-test={dataTest}>
         {children}
         <style jsx>{`
             div {
@@ -20,7 +20,12 @@ export const ToolbarSidebar = ({ children, isHidden }) => (
     </div>
 )
 
+ToolbarSidebar.defaultProps = {
+    dataTest: 'dhis2-analytics-toolbarsidebar',
+}
+
 ToolbarSidebar.propTypes = {
     children: PropTypes.node,
+    dataTest: PropTypes.string,
     isHidden: PropTypes.bool,
 }
