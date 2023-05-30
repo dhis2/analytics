@@ -7,7 +7,9 @@ export const Toolbar = ({ children }) => (
         {children}
         <style jsx>{`
             div {
+                box-sizing: border-box;
                 min-height: 32px;
+                max-height: 32px;
                 display: flex;
                 align-items: stretch;
                 border-bottom: 1px solid ${colors.grey400};
