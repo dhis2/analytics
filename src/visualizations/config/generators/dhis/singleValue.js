@@ -32,7 +32,7 @@ const ACTUAL_NUMBER_HEIGHT_FACTOR = 0.67
 
 // do not allow text width to exceed this threshold
 // a threshold >1 does not really make sense but text width vs viewbox is complicated
-const TEXT_WIDTH_CONTAINER_WIDTH_FACTOR = 1.5
+const TEXT_WIDTH_CONTAINER_WIDTH_FACTOR = 1.3
 
 // do not allow text size to exceed this
 const TEXT_SIZE_CONTAINER_HEIGHT_FACTOR = 0.6
