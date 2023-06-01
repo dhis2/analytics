@@ -24,6 +24,7 @@ const HoverMenuListItem = ({
         openedSubMenuEl,
         dense,
     } = useHoverMenuListContext()
+
     const isSubMenuOpen = openedSubMenuEl === ref.current
 
     return (
@@ -77,10 +78,7 @@ HoverMenuListItem.defaultProps = {
 }
 
 HoverMenuListItem.propTypes = {
-    /**
-     * Nested menu items can become submenus.
-     * See `showSubMenu` and `toggleSubMenu` props, and 'Children' demo
-     */
+    // Nested menu items become submenus
     children: PropTypes.node,
     className: PropTypes.string,
     dataTest: PropTypes.string,

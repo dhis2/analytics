@@ -20,7 +20,7 @@ export const HoverMenuDropdown = ({ children, label, dataTest, disabled }) => {
                 ref={buttonRef}
                 onClick={onDropDownButtonClick}
                 disabled={disabled}
-                onMouseOver={onDropDownButtonMouseOver}
+                onMouseOver={disabled ? undefined : onDropDownButtonMouseOver}
                 data-test={dataTest}
             >
                 {label}

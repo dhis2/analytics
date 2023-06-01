@@ -88,7 +88,7 @@ HoverMenuList.propTypes = {
     children: PropTypes.node,
     className: PropTypes.string,
     dataTest: PropTypes.string,
-    /** Applies `dense` property to all child components unless already specified */
+    /** Gives all HoverMenuListItem children a dense style */
     dense: PropTypes.bool,
     maxHeight: PropTypes.string,
     maxWidth: PropTypes.string,
