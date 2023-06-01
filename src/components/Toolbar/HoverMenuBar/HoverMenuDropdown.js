@@ -3,7 +3,7 @@ import { Portal } from '@dhis2-ui/portal'
 import PropTypes from 'prop-types'
 import React, { useRef } from 'react'
 import menuButtonStyles from '../MenuButton.styles.js'
-import { useHoverMenubarContext } from './HoverMenubar.js'
+import { useHoverMenubarContext } from './HoverMenuBar.js'
 
 export const HoverMenuDropdown = ({ children, label, dataTest, disabled }) => {
     const buttonRef = useRef()

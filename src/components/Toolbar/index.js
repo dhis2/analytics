@@ -2,4 +2,4 @@ export { InterpretationsAndDetailsToggler } from './InterpretationsAndDetailsTog
 export { Toolbar } from './Toolbar.js'
 export { ToolbarSidebar } from './ToolbarSidebar.js'
 export { UpdateButton } from './UpdateButton.js'
-export * from './HoverMenubar/index.js'
+export * from './HoverMenuBar/index.js'

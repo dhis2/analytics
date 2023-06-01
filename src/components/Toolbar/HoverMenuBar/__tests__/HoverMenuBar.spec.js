@@ -3,23 +3,23 @@ import { render, fireEvent, screen } from '@testing-library/react'
 import { shallow } from 'enzyme'
 import React from 'react'
 import {
-    HoverMenubar,
+    HoverMenuBar,
     HoverMenuDropdown,
     HoverMenuList,
     HoverMenuListItem,
 } from '../index.js'
 
-describe('<HoverMenubar/>', () => {
+describe('<HoverMenuBar/>', () => {
     it('renders children', () => {
         const childNode = 'text node'
-        const wrapper = shallow(<HoverMenubar>{childNode}</HoverMenubar>)
+        const wrapper = shallow(<HoverMenuBar>{childNode}</HoverMenuBar>)
 
         expect(wrapper.containsMatchingElement(childNode)).toBe(true)
     })
     it('accepts a `dataTest` prop', () => {
         const dataTest = 'test'
         const wrapper = shallow(
-            <HoverMenubar dataTest={dataTest}>children</HoverMenubar>
+            <HoverMenuBar dataTest={dataTest}>children</HoverMenuBar>
         )
 
         expect(wrapper.find('div').prop('data-test')).toBe(dataTest)
@@ -201,7 +201,7 @@ function createFullMenuBarWrapper({
     subMenuItemOnClickSpy,
 } = {}) {
     return render(
-        <HoverMenubar>
+        <HoverMenuBar>
             <HoverMenuDropdown label="Menu A">
                 <HoverMenuList>
                     <HoverMenuListItem
@@ -241,7 +241,7 @@ function createFullMenuBarWrapper({
                     <HoverMenuListItem label="Menu item C.3" />
                 </HoverMenuList>
             </HoverMenuDropdown>
-        </HoverMenubar>
+        </HoverMenuBar>
     )
 }
 

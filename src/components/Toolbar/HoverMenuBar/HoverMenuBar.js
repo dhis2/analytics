@@ -21,7 +21,7 @@ const HoverMenubarContext = createContext({
 
 const useHoverMenubarContext = () => useContext(HoverMenubarContext)
 
-const HoverMenubar = ({ children, dataTest }) => {
+const HoverMenuBar = ({ children, dataTest }) => {
     const [openedDropdownEl, setOpenedDropdownEl] = useState(null)
     const [lastHoveredSubMenuEl, setLastHoveredSubMenuEl] = useState(null)
     const [isInHoverMode, setIsInHoverMode] = useState(false)
@@ -107,12 +107,12 @@ const HoverMenubar = ({ children, dataTest }) => {
     )
 }
 
-HoverMenubar.defaultProps = {
+HoverMenuBar.defaultProps = {
     dataTest: 'dhis2-analytics-hovermenubar',
 }
 
-HoverMenubar.propTypes = {
+HoverMenuBar.propTypes = {
     children: PropTypes.node.isRequired,
     dataTest: PropTypes.string,
 }
-export { HoverMenubar, useHoverMenubarContext }
+export { HoverMenuBar, useHoverMenubarContext }

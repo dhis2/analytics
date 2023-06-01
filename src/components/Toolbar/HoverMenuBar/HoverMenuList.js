@@ -1,7 +1,7 @@
 import { colors, elevations, spacers } from '@dhis2/ui-constants'
 import PropTypes from 'prop-types'
 import React, { createContext, useCallback, useContext, useState } from 'react'
-import { useHoverMenubarContext } from './HoverMenubar.js'
+import { useHoverMenubarContext } from './HoverMenuBar.js'
 
 const throwErrorIfNotInitialized = () => {
     throw new Error('`HoverMenubarContext` has not been initialised')
