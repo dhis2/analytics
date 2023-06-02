@@ -86,6 +86,7 @@ const generateValueSVG = ({
             `-${(iconSize + iconPadding + textWidth) / 2}`
         )
         iconSvgNode.setAttribute('style', `color: ${fillColor}`)
+        iconSvgNode.setAttribute('data-test', 'visualization-icon')
 
         const parser = new DOMParser()
         const svgIconDocument = parser.parseFromString(icon, 'image/svg+xml')
