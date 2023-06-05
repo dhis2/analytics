@@ -1,3 +1,10 @@
+## [25.1.11](https://github.com/dhis2/analytics/compare/v25.1.10...v25.1.11) (2023-06-05)
+
+
+### Bug Fixes
+
+* add data-test to SV icon ([#1479](https://github.com/dhis2/analytics/issues/1479)) ([df1c7ef](https://github.com/dhis2/analytics/commit/df1c7efb3136be99b5026b252a499ba0bb57ecd9))
+
 ## [25.1.10](https://github.com/dhis2/analytics/compare/v25.1.9...v25.1.10) (2023-05-30)
 
 
