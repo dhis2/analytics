@@ -18,7 +18,16 @@ function HoverMenuBarWithSubComponents() {
         <Toolbar>
             <ToolbarSidebar isHidden={isHidden}>
                 <span>Toolbar side bar</span>
-                <button onClick={() => setIsHidden(true)}>click to hide</button>
+                <a
+                    style={{
+                        paddingLeft: 12,
+                        textDecoration: 'underline',
+                        cursor: 'pointer',
+                    }}
+                    onClick={() => setIsHidden(true)}
+                >
+                    click to hide
+                </a>
             </ToolbarSidebar>
             <UpdateButton />
             <HoverMenuBar>
