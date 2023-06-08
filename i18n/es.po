@@ -344,7 +344,7 @@ msgid "map"
 msgstr "mapa"
 
 msgid "visualization"
-msgstr ""
+msgstr "visualización"
 
 msgid "Edit"
 msgstr "Editar"
@@ -1103,7 +1103,7 @@ msgid "Area"
 msgstr "Área"
 
 msgid "Stacked area"
-msgstr ""
+msgstr "Área apilada"
 
 msgid "Bar"
 msgstr "Barra"
@@ -1139,7 +1139,7 @@ msgid "Radar"
 msgstr "Radar"
 
 msgid "Scatter"
-msgstr ""
+msgstr "Dispersión"
 
 msgid "Single value"
 msgstr "Valor único"
