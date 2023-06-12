@@ -353,7 +353,7 @@ msgid "Rows"
 msgstr ""
 
 msgid "Reporting rate"
-msgstr ""
+msgstr "Tasa de informes"
 
 msgid "Reporting rate on time"
 msgstr ""
@@ -365,7 +365,7 @@ msgid "Actual reports on time"
 msgstr ""
 
 msgid "Expected reports"
-msgstr ""
+msgstr "Informes esperados"
 
 msgid "Program"
 msgstr "Programa"
