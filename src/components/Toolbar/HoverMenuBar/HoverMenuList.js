@@ -4,7 +4,7 @@ import React, { createContext, useCallback, useContext, useState } from 'react'
 import { useHoverMenubarContext } from './HoverMenuBar.js'
 
 const throwErrorIfNotInitialized = () => {
-    throw new Error('`HoverMenubarContext` has not been initialised')
+    throw new Error('`HoverMenuListContext` has not been initialised')
 }
 
 const HoverMenuListContext = createContext({
