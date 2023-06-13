@@ -44,6 +44,18 @@ describe('The FileMenu component ', () => {
         onTranslate,
     }
 
+    const fullAccessProps = {
+        fileObject: {
+            id: 'test',
+            access: {
+                delete: true,
+                manage: true,
+                update: true,
+            },
+            href: 'http://dhis2.org',
+        },
+    }
+
     const renderFileMenu = (customProps = {}) => {
         const props = { ...baseProps, ...customProps }
         const providerData = {
@@ -218,18 +230,7 @@ describe('The FileMenu component ', () => {
     })
 
     it('renders the RenameDialog when the Rename button is clicked', async () => {
-        const customProps = {
-            fileObject: {
-                id: 'test',
-                access: {
-                    delete: true,
-                    manage: true,
-                    update: true,
-                },
-            },
-        }
-
-        renderFileMenu(customProps)
+        renderFileMenu(fullAccessProps)
         await openDropdown()
         fireEvent.click(screen.getByTestId(MENU_ITEMS.RENAME.testId))
 
@@ -239,19 +240,7 @@ describe('The FileMenu component ', () => {
     })
 
     it('renders the TranslationDialog when the Translate button is clicked', async () => {
-        const customProps = {
-            fileObject: {
-                id: 'test',
-                access: {
-                    delete: true,
-                    manage: true,
-                    update: true,
-                },
-                href: 'http://dhis2.org',
-            },
-        }
-
-        renderFileMenu(customProps)
+        renderFileMenu(fullAccessProps)
         await openDropdown()
         fireEvent.click(screen.getByTestId(MENU_ITEMS.TRANSLATE.testId))
 
@@ -264,19 +253,7 @@ describe('The FileMenu component ', () => {
     })
 
     it('renders the SharingDialog when the Share button is clicked', async () => {
-        const customProps = {
-            fileObject: {
-                id: 'test',
-                access: {
-                    delete: true,
-                    manage: true,
-                    update: true,
-                },
-                href: 'http://dhis2.org',
-            },
-        }
-
-        renderFileMenu(customProps)
+        renderFileMenu(fullAccessProps)
         await openDropdown()
         fireEvent.click(screen.getByTestId(MENU_ITEMS.SHARE.testId))
 
@@ -286,19 +263,9 @@ describe('The FileMenu component ', () => {
     })
 
     it('renders the GetLinkDialog when the Get link button is clicked', async () => {
-        const customProps = {
-            fileObject: {
-                id: 'test',
-                access: {
-                    delete: true,
-                    manage: true,
-                    update: true,
-                },
-            },
-        }
         const url = 'http://localhost/dhis-web-data-visualizer/#/test'
 
-        renderFileMenu(customProps)
+        renderFileMenu(fullAccessProps)
         await openDropdown()
         fireEvent.click(screen.getByTestId(MENU_ITEMS.GET_LINK.testId))
 
@@ -331,18 +298,7 @@ describe('The FileMenu component ', () => {
     })
 
     it('renders the SaveAsDialog when the Save as… button is clicked', async () => {
-        const customProps = {
-            fileObject: {
-                id: 'test',
-                access: {
-                    delete: true,
-                    manage: true,
-                    update: true,
-                },
-            },
-        }
-
-        renderFileMenu(customProps)
+        renderFileMenu(fullAccessProps)
         await openDropdown()
         fireEvent.click(screen.getByTestId(MENU_ITEMS.SAVE_AS.testId))
 
@@ -370,18 +326,7 @@ describe('The FileMenu component ', () => {
     })
 
     it('calls the onSave callback when the Save button is clicked and a fileObject is present', async () => {
-        const customProps = {
-            fileObject: {
-                id: 'test',
-                access: {
-                    delete: true,
-                    manage: true,
-                    update: true,
-                },
-            },
-        }
-
-        renderFileMenu(customProps)
+        renderFileMenu(fullAccessProps)
         await openDropdown()
         fireEvent.click(screen.getByTestId(MENU_ITEMS.SAVE.testId))
 
