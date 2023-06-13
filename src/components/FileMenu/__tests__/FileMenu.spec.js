@@ -5,16 +5,12 @@ import React from 'react'
 import { HoverMenuBar } from '../../Toolbar/index.js'
 import { FileMenu } from '../FileMenu.js'
 
-jest.mock('@dhis2/app-service-alerts', () => ({
-    ...jest.requireActual('@dhis2/app-service-alerts'),
-    useAlert: () => ({
-        show: jest.fn(),
-    }),
-}))
-
 jest.mock(
     '../../TranslationDialog/TranslationModal/useTranslationsResults.js',
     () => ({
+        /* This will keep the translation dialog in
+         * a loading state, which prevents it from
+         * throwing other errors */
         useTranslationsResults: () => ({
             translationsData: undefined,
             fetching: true,
