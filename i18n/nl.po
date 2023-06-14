@@ -459,7 +459,7 @@ msgid "Filter by name"
 msgstr ""
 
 msgid "Created"
-msgstr ""
+msgstr "Gemaakt"
 
 msgid "Last updated"
 msgstr "Laatst bijgewerkt"
@@ -474,7 +474,7 @@ msgid "{{firstItemIndex}}-{{lastItemIndex}} of {{totalNumberOfItems}}"
 msgstr ""
 
 msgid "Open"
-msgstr ""
+msgstr "Open"
 
 msgid "Couldn't load items"
 msgstr ""
@@ -817,7 +817,7 @@ msgid "Last 10 years"
 msgstr ""
 
 msgid "Days"
-msgstr ""
+msgstr "Dagen"
 
 msgid "Weeks"
 msgstr ""
@@ -826,7 +826,7 @@ msgid "Bi-weeks"
 msgstr ""
 
 msgid "Months"
-msgstr ""
+msgstr "Maanden"
 
 msgid "Bi-months"
 msgstr ""
@@ -841,7 +841,7 @@ msgid "Financial Years"
 msgstr ""
 
 msgid "Years"
-msgstr ""
+msgstr "Jaren"
 
 msgid "Translating to"
 msgstr ""
