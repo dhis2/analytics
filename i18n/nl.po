@@ -37,7 +37,7 @@ msgid "Not shared with any users or groups"
 msgstr ""
 
 msgid "No description"
-msgstr ""
+msgstr "Geen beschrijving"
 
 msgid "Last updated {{time}}"
 msgstr ""
@@ -258,7 +258,7 @@ msgid "Nothing found in {{- dimensionTitle}}"
 msgstr ""
 
 msgid "Search"
-msgstr ""
+msgstr "Zoek"
 
 msgid "Nothing found for {{- searchTerm}}"
 msgstr ""
@@ -390,7 +390,7 @@ msgid "Reply"
 msgstr ""
 
 msgid "Share"
-msgstr ""
+msgstr "Deel"
 
 msgid "See interpretation"
 msgstr ""
@@ -607,7 +607,7 @@ msgid "User sub-x2-units"
 msgstr ""
 
 msgid "Select a level"
-msgstr ""
+msgstr "Selecteer een niveau"
 
 msgid "Select a group"
 msgstr ""
