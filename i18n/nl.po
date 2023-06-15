@@ -40,7 +40,7 @@ msgid "Dimension recommended with selected data"
 msgstr ""
 
 msgid "Search"
-msgstr ""
+msgstr "Zoek"
 
 msgid "Selected Data"
 msgstr ""
