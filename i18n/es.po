@@ -230,7 +230,7 @@ msgid "Remove Assigned Categories"
 msgstr ""
 
 msgid "Add Assigned Categories"
-msgstr ""
+msgstr "Añadir categorías asignadas"
 
 msgid "Remove"
 msgstr "Eliminar"
