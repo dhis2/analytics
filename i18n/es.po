@@ -37,19 +37,19 @@ msgid "Detail"
 msgstr "Detalle"
 
 msgid "Search dimensions"
-msgstr ""
+msgstr "Dimensiones de busqueda"
 
 msgid "Dimension recommended with selected data"
-msgstr ""
+msgstr "Dimensión recomendada con datos seleccionados"
 
 msgid "Search"
 msgstr "Buscar"
 
 msgid "Selected Data"
-msgstr ""
+msgstr "Datos seleccionados"
 
 msgid "Deselect All"
-msgstr ""
+msgstr "Deseleccionar todo"
 
 msgid "Select all"
 msgstr "Seleccionar todos"
@@ -109,10 +109,10 @@ msgid "December"
 msgstr "Diciembre"
 
 msgid "Week {{weekNumber}}"
-msgstr ""
+msgstr "Semana {{weekNumber}}"
 
 msgid "Bi-Week {{biWeekNumber}}"
-msgstr ""
+msgstr "Quincenal {{biWeekNumber}}"
 
 msgid "Daily"
 msgstr "Diario"
@@ -124,16 +124,16 @@ msgid "Bi-weekly"
 msgstr "Quincenal"
 
 msgid "Weekly (Start Wednesday)"
-msgstr ""
+msgstr "Semanal (Inicio miércoles)"
 
 msgid "Weekly (Start Thursday)"
-msgstr ""
+msgstr "Semanal (Inicio jueves)"
 
 msgid "Weekly (Start Saturday)"
-msgstr ""
+msgstr "Semanal (Inicio sábado)"
 
 msgid "Weekly (Start Sunday)"
-msgstr ""
+msgstr "Semanal (Inicio domingo)"
 
 msgid "Monthly"
 msgstr "Mensual"
@@ -256,7 +256,7 @@ msgid "Last six-month"
 msgstr "Último semestre"
 
 msgid "Last 2 six-month"
-msgstr ""
+msgstr "Últimos 2 semestres"
 
 msgid "This financial year"
 msgstr "Este año fiscal"
@@ -352,7 +352,7 @@ msgid "Event data items"
 msgstr "Datos de eventos"
 
 msgid "Select a program"
-msgstr ""
+msgstr "Seleccionar un programa"
 
 msgid "Program indicators"
 msgstr "Indicadores de programa"
@@ -361,19 +361,19 @@ msgid "Organisation Unit"
 msgstr "Unidad Organizativa"
 
 msgid "{{dynamicOuNames}} and {{lastOuName}}"
-msgstr ""
+msgstr "{{dynamicOuNames}} y {{lastOuName}}"
 
 msgid "{{allDynamicOuNames}} levels"
-msgstr ""
+msgstr "{{allDynamicOuNames}} niveles"
 
 msgid "{{allDynamicOuNames}} groups"
-msgstr ""
+msgstr "{{allDynamicOuNames}} grupos"
 
 msgid "{{allDynamicOuNames}} levels in {{staticOuNames}}"
-msgstr ""
+msgstr "{{allDynamicOuNames}} niveles en {{staticOuNames}}"
 
 msgid "{{allDynamicOuNames}} groups in {{staticOuNames}}"
-msgstr ""
+msgstr "{{allDynamicOuNames}} grupos en {{staticOuNames}}"
 
 msgid "No data"
 msgstr "No hay datos"
