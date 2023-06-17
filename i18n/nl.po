@@ -367,7 +367,7 @@ msgid "Program"
 msgstr "Programma"
 
 msgid "Indicators"
-msgstr ""
+msgstr "Indicatoren"
 
 msgid "Select indicator group"
 msgstr ""
