@@ -1,3 +1,10 @@
+# [25.2.0](https://github.com/dhis2/analytics/compare/v25.1.22...v25.2.0) (2023-06-19)
+
+
+### Features
+
+* toolbar UI update with hoverable menu ([#1478](https://github.com/dhis2/analytics/issues/1478)) ([5526163](https://github.com/dhis2/analytics/commit/552616368677aed228ef3f53eef30d02ec183d72))
+
 ## [25.1.22](https://github.com/dhis2/analytics/compare/v25.1.21...v25.1.22) (2023-06-19)
 
 
