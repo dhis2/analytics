@@ -179,10 +179,6 @@ export const InterpretationsUnit = forwardRef(
 
 InterpretationsUnit.displayName = 'InterpretationsUnit'
 
-InterpretationsUnit.defaultProps = {
-    onInterpretationClick: Function.prototype,
-}
-
 InterpretationsUnit.propTypes = {
     currentUser: PropTypes.object.isRequired,
     id: PropTypes.string.isRequired,

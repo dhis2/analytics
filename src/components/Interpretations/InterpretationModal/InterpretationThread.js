@@ -9,6 +9,7 @@ import { CommentAddForm } from './CommentAddForm.js'
 
 const InterpretationThread = ({
     currentUser,
+    disableScrollbox,
     fetching,
     interpretation,
     onInterpretationDeleted,
@@ -28,7 +29,11 @@ const InterpretationThread = ({
 
     return (
         <div className={cx('container', { fetching })}>
-            <div className={'scrollbox'}>
+            <div
+                className={cx({
+                    scrollbox: !disableScrollbox,
+                })}
+            >
                 <div className={'title'}>
                     <IconClock16 color={colors.grey700} />
                     {moment(interpretation.created).format('LLL')}
@@ -136,11 +141,16 @@ const InterpretationThread = ({
     )
 }
 
+InterpretationThread.defaultProps = {
+    disableScrollbox: false,
+}
+
 InterpretationThread.propTypes = {
     currentUser: PropTypes.object.isRequired,
     fetching: PropTypes.bool.isRequired,
     interpretation: PropTypes.object.isRequired,
     onInterpretationDeleted: PropTypes.func.isRequired,
+    disableScrollbox: PropTypes.bool,
     downloadMenuComponent: PropTypes.oneOfType([
         PropTypes.object,
         PropTypes.func,

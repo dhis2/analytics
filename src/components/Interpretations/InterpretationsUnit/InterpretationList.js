@@ -61,7 +61,10 @@ export const InterpretationList = ({
                                         key={interpretation.id}
                                         interpretation={interpretation}
                                         currentUser={currentUser}
-                                        onClick={onInterpretationClick}
+                                        onClick={
+                                            !!onInterpretationClick &&
+                                            onInterpretationClick
+                                        }
                                         onReplyIconClick={onReplyIconClick}
                                         onDeleted={refresh}
                                         onUpdated={refresh}
@@ -113,7 +116,7 @@ InterpretationList.propTypes = {
     currentUser: PropTypes.object.isRequired,
     interpretations: PropTypes.array.isRequired,
     refresh: PropTypes.func.isRequired,
-    onInterpretationClick: PropTypes.func.isRequired,
     onReplyIconClick: PropTypes.func.isRequired,
     disabled: PropTypes.bool,
+    onInterpretationClick: PropTypes.func,
 }

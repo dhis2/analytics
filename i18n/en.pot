@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2023-04-18T08:41:27.838Z\n"
-"PO-Revision-Date: 2023-04-18T08:41:27.838Z\n"
+"POT-Creation-Date: 2023-06-19T07:15:09.799Z\n"
+"PO-Revision-Date: 2023-06-19T07:15:09.799Z\n"
 
 msgid "view only"
 msgstr "view only"
@@ -391,6 +391,9 @@ msgstr "Share"
 
 msgid "See interpretation"
 msgstr "See interpretation"
+
+msgid "Back to all interpretations"
+msgstr "Back to all interpretations"
 
 msgid "Manage sharing"
 msgstr "Manage sharing"
