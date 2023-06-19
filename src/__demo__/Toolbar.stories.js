@@ -11,7 +11,7 @@ import {
     UpdateButton,
 } from '../components/Toolbar/index.js'
 
-function HoverMenuBarWithSubComponents() {
+function ToolbarWithState() {
     const [isHidden, setIsHidden] = useState(false)
     const [isSidebarShowing, setIsSidebarShowing] = useState(false)
     return (
@@ -73,6 +73,6 @@ function HoverMenuBarWithSubComponents() {
     )
 }
 
-storiesOf('HoverMenuBar', module).add('default', () => {
-    return <HoverMenuBarWithSubComponents />
+storiesOf('Toolbar', module).add('default', () => {
+    return <ToolbarWithState />
 })
