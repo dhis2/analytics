@@ -34,7 +34,7 @@ msgid "Detail"
 msgstr ""
 
 msgid "Move to {{axisName}}"
-msgstr ""
+msgstr "Ga naar {{axisNaam}}"
 
 msgid "Add to {{axisName}}"
 msgstr "Voeg toe aan {{axisName}}"
