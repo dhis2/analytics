@@ -343,7 +343,7 @@ msgid "Data sets"
 msgstr "Sets de datos"
 
 msgid "Select data sets"
-msgstr ""
+msgstr "Seleccionar sets de datos"
 
 msgid "[ All metrics ]"
 msgstr ""
