@@ -384,7 +384,7 @@ msgid "Unlike"
 msgstr ""
 
 msgid "Like"
-msgstr ""
+msgstr "Leuk vinden"
 
 msgid "Reply"
 msgstr ""
@@ -910,7 +910,7 @@ msgid "Select a program"
 msgstr ""
 
 msgid "Indicators"
-msgstr ""
+msgstr "Indicatoren"
 
 msgid "Indicator group"
 msgstr "Indicatorgroep"
