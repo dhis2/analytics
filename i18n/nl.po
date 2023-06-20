@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2023-04-18T08:41:27.838Z\n"
+"POT-Creation-Date: 2023-05-24T12:55:52.925Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: Charel van den Elsen, 2023\n"
 "Language-Team: Dutch (https://app.transifex.com/hisp-uio/teams/100509/nl/)\n"
@@ -157,7 +157,7 @@ msgid "Data Type"
 msgstr ""
 
 msgid "All types"
-msgstr ""
+msgstr "Alle typen"
 
 msgid "Disaggregation"
 msgstr ""
@@ -169,7 +169,7 @@ msgid "Search by data item name"
 msgstr ""
 
 msgid "No items selected"
-msgstr ""
+msgstr "Geen items geselecteerd"
 
 msgid "Selected Items"
 msgstr ""
@@ -199,7 +199,7 @@ msgid "No program indicators found for \"{{- searchTerm}}\""
 msgstr ""
 
 msgid "Nothing found for \"{{- searchTerm}}\""
-msgstr ""
+msgstr "Niets gevonden voor \"{{- zoekTerm}}\""
 
 msgid "Calculation"
 msgstr ""
@@ -211,7 +211,7 @@ msgid "All metrics"
 msgstr ""
 
 msgid "Move to {{axisName}}"
-msgstr ""
+msgstr "Ga naar {{axisNaam}}"
 
 msgid "Add to {{axisName}}"
 msgstr "Voeg toe aan {{axisName}}"
@@ -842,6 +842,9 @@ msgstr ""
 
 msgid "Years"
 msgstr "Jaren"
+
+msgid "Interpretations and details"
+msgstr ""
 
 msgid "Translating to"
 msgstr ""
