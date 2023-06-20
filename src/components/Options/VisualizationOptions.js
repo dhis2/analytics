@@ -30,13 +30,8 @@ import {
     tabSectionOptionIcon,
 } from './styles/VisualizationOptions.style.js'
 
-const VisualizationOptions = ({
-    initiallyActiveTabKey,
-    optionsConfig,
-    onClose,
-    onUpdate,
-}) => {
-    const [activeTabKey, setActiveTabKey] = useState(initiallyActiveTabKey)
+const VisualizationOptions = ({ optionsConfig, onClose, onUpdate }) => {
+    const [activeTabKey, setActiveTabKey] = useState()
 
     const generateTabContent = (sections) =>
         sections.map(({ key, label, content, helpText }) => (
@@ -149,7 +144,6 @@ const VisualizationOptions = ({
 
 VisualizationOptions.propTypes = {
     optionsConfig: PropTypes.array.isRequired,
-    initiallyActiveTabKey: PropTypes.string,
     onClose: PropTypes.func,
     onUpdate: PropTypes.func,
 }
