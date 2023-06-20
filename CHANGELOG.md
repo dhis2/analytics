@@ -1,3 +1,10 @@
+## [25.2.3](https://github.com/dhis2/analytics/compare/v25.2.2...v25.2.3) (2023-06-20)
+
+
+### Bug Fixes
+
+* avoid DV plugin crash if no ou levels are returned ([#1442](https://github.com/dhis2/analytics/issues/1442)) ([5296bd7](https://github.com/dhis2/analytics/commit/5296bd79104dbd914daa8242deda69ce150b355e))
+
 ## [25.2.2](https://github.com/dhis2/analytics/compare/v25.2.1...v25.2.2) (2023-06-20)
 
 
