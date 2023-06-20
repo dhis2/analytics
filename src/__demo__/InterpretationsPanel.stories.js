@@ -172,6 +172,8 @@ const visualization = {
     name: 'Fluttershy',
 }
 
+const appUrl = `dhis-web-data-visualizer/#/${visualization.id}`
+
 const currentUser = {
     id: 'flea333',
     displayName: 'Flea',
@@ -191,6 +193,10 @@ const InterpretationComponent = () => {
         setInterpretationId(null)
     }
 
+    // const launchUrl = interpretationId
+    //     ? `${appUrl}?interpretationId=${interpretationId}`
+    //     : null
+
     return (
         <div style={{ width: '500px' }}>
             <InterpretationsWrapper
@@ -198,9 +204,12 @@ const InterpretationComponent = () => {
                 id={visualization.id}
                 currentUser={currentUser}
                 disabled={false}
+                inlineReply={true}
+                onInterpretationClick={onReplyIconClick}
                 onReplyIconClick={onReplyIconClick}
                 interpretationId={interpretationId}
                 onGoBackClicked={onGoBackClicked}
+                launchUrl={appUrl}
             />
         </div>
     )

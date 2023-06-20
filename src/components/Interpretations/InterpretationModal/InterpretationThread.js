@@ -12,6 +12,7 @@ const InterpretationThread = ({
     disableScrollbox,
     fetching,
     interpretation,
+    launchUrl,
     onInterpretationDeleted,
     initialFocus,
     onThreadUpdated,
@@ -45,6 +46,7 @@ const InterpretationThread = ({
                     <Interpretation
                         currentUser={currentUser}
                         interpretation={interpretation}
+                        launchUrl={launchUrl}
                         onReplyIconClick={() => focusRef.current?.focus()}
                         onUpdated={() => onThreadUpdated(true)}
                         onDeleted={onInterpretationDeleted}
@@ -156,6 +158,7 @@ InterpretationThread.propTypes = {
         PropTypes.func,
     ]),
     initialFocus: PropTypes.bool,
+    launchUrl: PropTypes.string,
     onThreadUpdated: PropTypes.func,
 }
 

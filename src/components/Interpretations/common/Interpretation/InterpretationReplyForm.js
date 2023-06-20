@@ -9,7 +9,7 @@ import {
     spacers,
 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { InterpretationThread } from '../../InterpretationModal/InterpretationThread.js'
 
 const query = {
@@ -36,8 +36,8 @@ export const InterpretationReplyForm = ({
     interpretationId,
     onGoBackClicked,
     onInterpretationDeleted,
+    launchUrl,
 }) => {
-    // const [isDirty, setIsDirty] = useState(false)
     const { data, refetch, loading, fetching } = useDataQuery(query, {
         lazy: true,
     })
@@ -49,12 +49,7 @@ export const InterpretationReplyForm = ({
         }
     }, [interpretationId, refetch])
 
-    const onThreadUpdated = () => {
-        // if (affectsInterpretation) {
-        //     setIsDirty(true)
-        // }
-        refetch({ id: interpretationId })
-    }
+    const onThreadUpdated = () => refetch({ id: interpretationId })
 
     if (loading || !interpretation) {
         return (
@@ -85,6 +80,7 @@ export const InterpretationReplyForm = ({
                 onThreadUpdated={onThreadUpdated}
                 initialFocus={true}
                 disableScrollbox={true}
+                launchUrl={launchUrl}
             />
             <style jsx>{`
                 .reply-container {
@@ -102,7 +98,6 @@ export const InterpretationReplyForm = ({
 InterpretationReplyForm.displayName = 'InterpretationReplyForm'
 
 InterpretationReplyForm.defaultProps = {
-    useInlineReply: false,
     onInterpretationDeleted: Function.prototype,
 }
 
@@ -110,5 +105,6 @@ InterpretationReplyForm.propTypes = {
     currentUser: PropTypes.object.isRequired,
     interpretationId: PropTypes.string.isRequired,
     onGoBackClicked: PropTypes.func.isRequired,
+    launchUrl: PropTypes.string,
     onInterpretationDeleted: PropTypes.func,
 }

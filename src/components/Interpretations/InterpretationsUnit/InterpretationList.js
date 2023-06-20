@@ -21,9 +21,9 @@ export const InterpretationList = ({
     currentUser,
     interpretations,
     onInterpretationClick,
-    onReplyIconClick,
     refresh,
     disabled,
+    ...rest
 }) => {
     const interpretationsByDate = interpretations.reduce(
         (groupedInterpretations, interpretation) => {
@@ -65,10 +65,10 @@ export const InterpretationList = ({
                                             !!onInterpretationClick &&
                                             onInterpretationClick
                                         }
-                                        onReplyIconClick={onReplyIconClick}
                                         onDeleted={refresh}
                                         onUpdated={refresh}
                                         disabled={disabled}
+                                        {...rest}
                                     />
                                 ))}
                         </ol>
@@ -116,7 +116,6 @@ InterpretationList.propTypes = {
     currentUser: PropTypes.object.isRequired,
     interpretations: PropTypes.array.isRequired,
     refresh: PropTypes.func.isRequired,
-    onReplyIconClick: PropTypes.func.isRequired,
     disabled: PropTypes.bool,
     onInterpretationClick: PropTypes.func,
 }

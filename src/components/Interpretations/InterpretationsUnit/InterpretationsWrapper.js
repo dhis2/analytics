@@ -4,7 +4,8 @@ import { InterpretationReplyForm } from '../common/Interpretation/Interpretation
 import { InterpretationsUnit } from './InterpretationsUnit.js'
 
 export const InterpretationsWrapper = (props) => {
-    if (props.interpretationId) {
+    console.log('props', props)
+    if (props.inlineReply && props.interpretationId) {
         return <InterpretationReplyForm {...props} />
     }
 
@@ -12,5 +13,6 @@ export const InterpretationsWrapper = (props) => {
 }
 
 InterpretationsWrapper.propTypes = {
+    inlineReply: PropTypes.bool,
     interpretationId: PropTypes.string,
 }

@@ -6,6 +6,8 @@ import {
     IconShare16,
     IconThumbUp16,
     IconEdit16,
+    IconLaunch16,
+    IconView16,
 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
@@ -22,6 +24,8 @@ export const Interpretation = ({
     onDeleted,
     disabled,
     onReplyIconClick,
+    launchUrl,
+    inlineReply,
 }) => {
     const [isUpdateMode, setIsUpdateMode] = useState(false)
     const [showSharingDialog, setShowSharingDialog] = useState(false)
@@ -30,8 +34,9 @@ export const Interpretation = ({
         currentUser,
         onComplete: onUpdated,
     })
-    const shouldShowButton = !!onClick && !disabled
+    const shouldShowButton = Boolean(!!onClick && !disabled & !inlineReply)
 
+    console.log('inlinereply', inlineReply, shouldShowButton)
     return isUpdateMode ? (
         <InterpretationUpdateForm
             close={() => setIsUpdateMode(false)}
@@ -69,6 +74,25 @@ export const Interpretation = ({
                         count={interpretation.comments.length}
                         dataTest="interpretation-reply-button"
                     />
+                    <MessageIconButton
+                        tooltipContent={i18n.t('See interpretation')}
+                        iconComponent={IconView16}
+                        onClick={() => onReplyIconClick(interpretation.id)}
+                        dataTest="interpretation-view-button"
+                    />
+                    {launchUrl && (
+                        <MessageIconButton
+                            tooltipContent={i18n.t('Open in app')}
+                            iconComponent={IconLaunch16}
+                            onClick={() =>
+                                window.open(
+                                    `${launchUrl}?interpretationId=${interpretation.id}`,
+                                    '_blank'
+                                )
+                            }
+                            dataTest="interpretation-launch-in-app-button"
+                        />
+                    )}
                     {interpretation.access.manage && (
                         <MessageIconButton
                             iconComponent={IconShare16}
@@ -77,6 +101,7 @@ export const Interpretation = ({
                             dataTest="interpretation-share-button"
                         />
                     )}
+
                     {showSharingDialog && (
                         <SharingDialog
                             open={true}
@@ -124,5 +149,7 @@ Interpretation.propTypes = {
     onReplyIconClick: PropTypes.func.isRequired,
     onUpdated: PropTypes.func.isRequired,
     disabled: PropTypes.bool,
+    inlineReply: PropTypes.bool,
+    launchUrl: PropTypes.string,
     onClick: PropTypes.func,
 }
