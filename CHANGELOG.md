@@ -1,3 +1,15 @@
+# [26.0.0](https://github.com/dhis2/analytics/compare/v25.2.3...v26.0.0) (2023-06-20)
+
+
+### Features
+
+* toolbar UI update with hoverable menu ([#1478](https://github.com/dhis2/analytics/issues/1478)) ([#1509](https://github.com/dhis2/analytics/issues/1509)) ([0a51153](https://github.com/dhis2/analytics/commit/0a5115327c0c0dbe9da22a092f2fc6002f798290))
+
+
+### BREAKING CHANGES
+
+* The `FileMenu` is now using the new `HoverMenuBar` components which makes this version of the `FileMenu` incompatible with the previous version. Apps will be need to update their toolbar and file menu before using this version of analytics.
+
 ## [25.2.3](https://github.com/dhis2/analytics/compare/v25.2.2...v25.2.3) (2023-06-20)
 
 
