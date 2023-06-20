@@ -1,3 +1,10 @@
+## [25.2.2](https://github.com/dhis2/analytics/compare/v25.2.1...v25.2.2) (2023-06-20)
+
+
+### Reverts
+
+* Revert "feat: toolbar UI update with hoverable menu (#1478)" ([c55346c](https://github.com/dhis2/analytics/commit/c55346c3e91dee98337d129056545afc1e4e712f)), closes [#1478](https://github.com/dhis2/analytics/issues/1478)
+
 ## [25.2.1](https://github.com/dhis2/analytics/compare/v25.2.0...v25.2.1) (2023-06-20)
 
 
