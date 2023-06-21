@@ -14,7 +14,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2023-04-18T08:41:27.838Z\n"
+"POT-Creation-Date: 2023-05-24T12:55:52.925Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: Janeth Cruz, 2023\n"
 "Language-Team: Spanish (https://app.transifex.com/hisp-uio/teams/100509/es/)\n"
@@ -881,17 +881,20 @@ msgstr "Años fiscales"
 msgid "Years"
 msgstr "Años"
 
+msgid "Interpretations and details"
+msgstr "Interpretaciones y detalles"
+
 msgid "Translating to"
 msgstr "Traducir a"
 
 msgid "Choose a locale"
-msgstr ""
+msgstr "Elegir un idioma"
 
 msgid "Base locale reference"
 msgstr ""
 
 msgid "Choose a locale to translate from the menu above"
-msgstr ""
+msgstr "Elegir un idioma para traducir desde el menú de arriba"
 
 msgid "Translate: {{objectName}}"
 msgstr "Traducir: {{objectName}}"
