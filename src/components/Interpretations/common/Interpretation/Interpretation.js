@@ -36,7 +36,6 @@ export const Interpretation = ({
     })
     const shouldShowButton = Boolean(!!onClick && !disabled & !inlineReply)
 
-    console.log('inlinereply', inlineReply, shouldShowButton)
     return isUpdateMode ? (
         <InterpretationUpdateForm
             close={() => setIsUpdateMode(false)}
@@ -74,12 +73,14 @@ export const Interpretation = ({
                         count={interpretation.comments.length}
                         dataTest="interpretation-reply-button"
                     />
-                    <MessageIconButton
-                        tooltipContent={i18n.t('See interpretation')}
-                        iconComponent={IconView16}
-                        onClick={() => onReplyIconClick(interpretation.id)}
-                        dataTest="interpretation-view-button"
-                    />
+                    {inlineReply && (
+                        <MessageIconButton
+                            tooltipContent={i18n.t('See interpretation')}
+                            iconComponent={IconView16}
+                            onClick={() => onReplyIconClick(interpretation.id)}
+                            dataTest="interpretation-view-button"
+                        />
+                    )}
                     {launchUrl && (
                         <MessageIconButton
                             tooltipContent={i18n.t('Open in app')}
@@ -101,7 +102,6 @@ export const Interpretation = ({
                             dataTest="interpretation-share-button"
                         />
                     )}
-
                     {showSharingDialog && (
                         <SharingDialog
                             open={true}

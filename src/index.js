@@ -31,7 +31,7 @@ export { default as AboutAOUnit } from './components/AboutAOUnit/AboutAOUnit.js'
 
 export { InterpretationsUnit } from './components/Interpretations/InterpretationsUnit/InterpretationsUnit.js'
 export { InterpretationModal } from './components/Interpretations/InterpretationModal/InterpretationModal.js'
-export { InterpretationsWrapper } from './components/Interpretations/InterpretationsUnit/InterpretationsWrapper.js'
+export { InterpretationThread } from './components/Interpretations/InterpretationModal/InterpretationThread.js'
 
 export { TranslationDialog } from './components/TranslationDialog/index.js'
 
