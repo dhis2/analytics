@@ -444,7 +444,7 @@ msgid "Created by"
 msgstr "Gecreëerd door"
 
 msgid "Anyone"
-msgstr ""
+msgstr "Iedereen"
 
 msgid "Only you"
 msgstr ""
@@ -493,7 +493,7 @@ msgid ""
 msgstr ""
 
 msgid "Create new"
-msgstr ""
+msgstr "Maak nieuw"
 
 msgid "Open a visualization"
 msgstr ""
