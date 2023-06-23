@@ -77,7 +77,7 @@ export const Interpretation = ({
                         <MessageIconButton
                             tooltipContent={i18n.t('See interpretation')}
                             iconComponent={IconView16}
-                            onClick={() => onReplyIconClick(interpretation.id)}
+                            onClick={() => onClick(interpretation.id)}
                             dataTest="interpretation-view-button"
                         />
                     )}
