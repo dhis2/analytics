@@ -25,6 +25,7 @@ export const Interpretation = ({
     disabled,
     onReplyIconClick,
     appUrl,
+    isThread,
 }) => {
     const [isUpdateMode, setIsUpdateMode] = useState(false)
     const [showSharingDialog, setShowSharingDialog] = useState(false)
@@ -72,28 +73,26 @@ export const Interpretation = ({
                         count={interpretation.comments.length}
                         dataTest="interpretation-reply-button"
                     />
+                    {appUrl && !isThread && (
+                        <MessageIconButton
+                            tooltipContent={i18n.t('See interpretation')}
+                            iconComponent={IconView16}
+                            onClick={() => onReplyIconClick(interpretation.id)}
+                            dataTest="interpretation-view-button"
+                        />
+                    )}
                     {appUrl && (
-                        <>
-                            <MessageIconButton
-                                tooltipContent={i18n.t('See interpretation')}
-                                iconComponent={IconView16}
-                                onClick={() =>
-                                    onReplyIconClick(interpretation.id)
-                                }
-                                dataTest="interpretation-view-button"
-                            />
-                            <MessageIconButton
-                                tooltipContent={i18n.t('Open in app')}
-                                iconComponent={IconLaunch16}
-                                onClick={() =>
-                                    window.open(
-                                        `${appUrl}?interpretationId=${interpretation.id}`,
-                                        '_blank'
-                                    )
-                                }
-                                dataTest="interpretation-launch-in-app-button"
-                            />
-                        </>
+                        <MessageIconButton
+                            tooltipContent={i18n.t('Open in app')}
+                            iconComponent={IconLaunch16}
+                            onClick={() =>
+                                window.open(
+                                    `${appUrl}?interpretationId=${interpretation.id}`,
+                                    '_blank'
+                                )
+                            }
+                            dataTest="interpretation-launch-in-app-button"
+                        />
                     )}
                     {interpretation.access.manage && (
                         <MessageIconButton
@@ -151,5 +150,6 @@ Interpretation.propTypes = {
     onUpdated: PropTypes.func.isRequired,
     appUrl: PropTypes.string,
     disabled: PropTypes.bool,
+    isThread: PropTypes.bool,
     onClick: PropTypes.func,
 }

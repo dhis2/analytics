@@ -71,6 +71,7 @@ export const InterpretationList = ({
                                         onUpdated={refresh}
                                         disabled={disabled}
                                         appUrl={appUrl}
+                                        isThread={false}
                                     />
                                 ))}
                         </ol>

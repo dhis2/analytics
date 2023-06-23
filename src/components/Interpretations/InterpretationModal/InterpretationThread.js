@@ -50,6 +50,7 @@ const InterpretationThread = ({
                         onReplyIconClick={() => focusRef.current?.focus()}
                         onUpdated={() => onThreadUpdated(true)}
                         onDeleted={onInterpretationDeleted}
+                        isThread={true}
                     />
                     <div className={'comments'}>
                         {interpretation.comments.map((comment) => (
