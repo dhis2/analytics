@@ -1,26 +1,18 @@
 import PropTypes from 'prop-types'
-import React, { Component } from 'react'
+import React, { useMemo } from 'react'
 import MdParserClass from './MdParser.js'
 
-class Parser extends Component {
-    constructor(props) {
-        super(props)
+const Parser = ({ children, style }) => {
+    const MdParser = useMemo(() => new MdParserClass(), [])
 
-        this.MdParser = new MdParserClass()
-    }
-
-    render() {
-        const { children, style } = this.props
-
-        return children ? (
-            <p
-                style={style}
-                dangerouslySetInnerHTML={{
-                    __html: this.MdParser.render(children),
-                }}
-            />
-        ) : null
-    }
+    return children ? (
+        <p
+            style={style}
+            dangerouslySetInnerHTML={{
+                __html: MdParser.render(children),
+            }}
+        />
+    ) : null
 }
 
 Parser.defaultProps = {
