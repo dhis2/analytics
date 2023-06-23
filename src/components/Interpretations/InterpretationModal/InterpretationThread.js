@@ -12,7 +12,7 @@ const InterpretationThread = ({
     disableScrollbox,
     fetching,
     interpretation,
-    launchUrl,
+    appUrl,
     onInterpretationDeleted,
     initialFocus,
     onThreadUpdated,
@@ -46,7 +46,7 @@ const InterpretationThread = ({
                     <Interpretation
                         currentUser={currentUser}
                         interpretation={interpretation}
-                        launchUrl={launchUrl}
+                        appUrl={appUrl}
                         onReplyIconClick={() => focusRef.current?.focus()}
                         onUpdated={() => onThreadUpdated(true)}
                         onDeleted={onInterpretationDeleted}
@@ -152,13 +152,13 @@ InterpretationThread.propTypes = {
     fetching: PropTypes.bool.isRequired,
     interpretation: PropTypes.object.isRequired,
     onInterpretationDeleted: PropTypes.func.isRequired,
+    appUrl: PropTypes.string,
     disableScrollbox: PropTypes.bool,
     downloadMenuComponent: PropTypes.oneOfType([
         PropTypes.object,
         PropTypes.func,
     ]),
     initialFocus: PropTypes.bool,
-    launchUrl: PropTypes.string,
     onThreadUpdated: PropTypes.func,
 }
 

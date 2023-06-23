@@ -24,8 +24,7 @@ export const Interpretation = ({
     onDeleted,
     disabled,
     onReplyIconClick,
-    launchUrl,
-    inlineReply,
+    appUrl,
 }) => {
     const [isUpdateMode, setIsUpdateMode] = useState(false)
     const [showSharingDialog, setShowSharingDialog] = useState(false)
@@ -34,7 +33,7 @@ export const Interpretation = ({
         currentUser,
         onComplete: onUpdated,
     })
-    const shouldShowButton = Boolean(!!onClick && !disabled & !inlineReply)
+    const shouldShowButton = Boolean(!!onClick && !disabled & !appUrl)
 
     return isUpdateMode ? (
         <InterpretationUpdateForm
@@ -73,26 +72,28 @@ export const Interpretation = ({
                         count={interpretation.comments.length}
                         dataTest="interpretation-reply-button"
                     />
-                    {inlineReply && (
-                        <MessageIconButton
-                            tooltipContent={i18n.t('See interpretation')}
-                            iconComponent={IconView16}
-                            onClick={() => onReplyIconClick(interpretation.id)}
-                            dataTest="interpretation-view-button"
-                        />
-                    )}
-                    {launchUrl && (
-                        <MessageIconButton
-                            tooltipContent={i18n.t('Open in app')}
-                            iconComponent={IconLaunch16}
-                            onClick={() =>
-                                window.open(
-                                    `${launchUrl}?interpretationId=${interpretation.id}`,
-                                    '_blank'
-                                )
-                            }
-                            dataTest="interpretation-launch-in-app-button"
-                        />
+                    {appUrl && (
+                        <>
+                            <MessageIconButton
+                                tooltipContent={i18n.t('See interpretation')}
+                                iconComponent={IconView16}
+                                onClick={() =>
+                                    onReplyIconClick(interpretation.id)
+                                }
+                                dataTest="interpretation-view-button"
+                            />
+                            <MessageIconButton
+                                tooltipContent={i18n.t('Open in app')}
+                                iconComponent={IconLaunch16}
+                                onClick={() =>
+                                    window.open(
+                                        `${appUrl}?interpretationId=${interpretation.id}`,
+                                        '_blank'
+                                    )
+                                }
+                                dataTest="interpretation-launch-in-app-button"
+                            />
+                        </>
                     )}
                     {interpretation.access.manage && (
                         <MessageIconButton
@@ -148,8 +149,7 @@ Interpretation.propTypes = {
     onDeleted: PropTypes.func.isRequired,
     onReplyIconClick: PropTypes.func.isRequired,
     onUpdated: PropTypes.func.isRequired,
+    appUrl: PropTypes.string,
     disabled: PropTypes.bool,
-    inlineReply: PropTypes.bool,
-    launchUrl: PropTypes.string,
     onClick: PropTypes.func,
 }
