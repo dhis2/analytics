@@ -9,14 +9,13 @@ import { CommentAddForm } from './CommentAddForm.js'
 
 const InterpretationThread = ({
     currentUser,
-    disableScrollbox,
     fetching,
     interpretation,
-    appUrl,
     onInterpretationDeleted,
     initialFocus,
     onThreadUpdated,
     downloadMenuComponent: DownloadMenu,
+    appUrl,
 }) => {
     const focusRef = useRef()
 
@@ -30,11 +29,7 @@ const InterpretationThread = ({
 
     return (
         <div className={cx('container', { fetching })}>
-            <div
-                className={cx({
-                    scrollbox: !disableScrollbox,
-                })}
-            >
+            <div className="scrollbox">
                 <div className={'title'}>
                     <IconClock16 color={colors.grey700} />
                     {moment(interpretation.created).format('LLL')}
@@ -46,10 +41,10 @@ const InterpretationThread = ({
                     <Interpretation
                         currentUser={currentUser}
                         interpretation={interpretation}
-                        appUrl={appUrl}
                         onReplyIconClick={() => focusRef.current?.focus()}
                         onUpdated={() => onThreadUpdated(true)}
                         onDeleted={onInterpretationDeleted}
+                        appUrl={appUrl}
                         isThread={true}
                     />
                     <div className={'comments'}>
@@ -144,17 +139,12 @@ const InterpretationThread = ({
     )
 }
 
-InterpretationThread.defaultProps = {
-    disableScrollbox: false,
-}
-
 InterpretationThread.propTypes = {
     currentUser: PropTypes.object.isRequired,
     fetching: PropTypes.bool.isRequired,
     interpretation: PropTypes.object.isRequired,
     onInterpretationDeleted: PropTypes.func.isRequired,
     appUrl: PropTypes.string,
-    disableScrollbox: PropTypes.bool,
     downloadMenuComponent: PropTypes.oneOfType([
         PropTypes.object,
         PropTypes.func,

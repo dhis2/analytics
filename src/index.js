@@ -29,9 +29,11 @@ export { default as LegendKey } from './components/LegendKey/LegendKey.js'
 
 export { default as AboutAOUnit } from './components/AboutAOUnit/AboutAOUnit.js'
 
-export { InterpretationsUnit } from './components/Interpretations/InterpretationsUnit/InterpretationsUnit.js'
-export { InterpretationModal } from './components/Interpretations/InterpretationModal/InterpretationModal.js'
-export { InterpretationThread } from './components/Interpretations/InterpretationModal/InterpretationThread.js'
+export { InterpretationsUnit } from './components/Interpretations/InterpretationsUnit/index.js'
+export {
+    InterpretationModal,
+    InterpretationThread,
+} from './components/Interpretations/InterpretationModal/index.js'
 
 export { TranslationDialog } from './components/TranslationDialog/index.js'
 
