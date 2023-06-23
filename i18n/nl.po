@@ -337,7 +337,7 @@ msgid "[ All data elements ]"
 msgstr ""
 
 msgid "Data sets"
-msgstr ""
+msgstr "Gegevensreeksen"
 
 msgid "Select data sets"
 msgstr ""
