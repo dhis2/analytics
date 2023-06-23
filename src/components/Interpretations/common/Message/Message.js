@@ -1,8 +1,8 @@
-import { Parser as RichTextParser } from '@dhis2/d2-ui-rich-text'
 import { UserAvatar, spacers, colors } from '@dhis2/ui'
 import moment from 'moment'
 import PropTypes from 'prop-types'
 import React from 'react'
+import { RichTextParser } from '../../../RichText/index.js'
 
 const Message = ({ children, text, created, username }) => (
     <li className="container">

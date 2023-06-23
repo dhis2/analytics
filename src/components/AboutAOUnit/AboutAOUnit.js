@@ -1,6 +1,5 @@
 import { useDataQuery, useDataMutation } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
-import { Parser as RichTextParser } from '@dhis2/d2-ui-rich-text'
 import {
     Button,
     CircularLoader,
@@ -25,6 +24,7 @@ import React, {
     useImperativeHandle,
 } from 'react'
 import { formatList } from '../../modules/list.js'
+import { RichTextParser } from '../RichText/index.js'
 import styles from './styles/AboutAOUnit.style.js'
 import { getTranslatedString, AOTypeMap } from './utils.js'
 
@@ -186,7 +186,7 @@ const AboutAOUnit = forwardRef(({ type, id, renderId }, ref) => {
                     )}
                     {data && (
                         <div className="content">
-                            <p
+                            <div
                                 className={cx('detailLine', {
                                     noDescription: !data.ao.displayDescription,
                                 })}
@@ -196,9 +196,9 @@ const AboutAOUnit = forwardRef(({ type, id, renderId }, ref) => {
                                         {data.ao.displayDescription}
                                     </RichTextParser>
                                 ) : (
-                                    i18n.t('No description')
+                                    <p>{i18n.t('No description')}</p>
                                 )}
-                            </p>
+                            </div>
                             <div>
                                 <p className="detailLine">
                                     <IconShare16 color={colors.grey700} />
