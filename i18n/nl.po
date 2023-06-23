@@ -943,7 +943,7 @@ msgid "Loading data element groups"
 msgstr ""
 
 msgid "Data sets"
-msgstr ""
+msgstr "Gegevensreeksen"
 
 msgid "Data set"
 msgstr "Gegevensreeks"
