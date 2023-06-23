@@ -35,6 +35,8 @@ export {
     InterpretationThread,
 } from './components/Interpretations/InterpretationModal/index.js'
 
+export * from './components/Toolbar/index.js'
+
 export { TranslationDialog } from './components/TranslationDialog/index.js'
 
 export { OfflineTooltip } from './components/OfflineTooltip.js'

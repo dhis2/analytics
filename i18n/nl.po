@@ -3,14 +3,15 @@
 # Cherise Beek <cherise.beek@gmail.com>, 2021
 # Yury Rogachev <yury@dhis2.org>, 2021
 # Rica Zamora Duchateau, 2022
+# Charel van den Elsen, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-09-22T13:25:32.620Z\n"
+"POT-Creation-Date: 2023-05-24T12:55:52.925Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Rica Zamora Duchateau, 2022\n"
-"Language-Team: Dutch (https://www.transifex.com/hisp-uio/teams/100509/nl/)\n"
+"Last-Translator: Charel van den Elsen, 2023\n"
+"Language-Team: Dutch (https://app.transifex.com/hisp-uio/teams/100509/nl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -36,7 +37,7 @@ msgid "Not shared with any users or groups"
 msgstr ""
 
 msgid "No description"
-msgstr ""
+msgstr "Geen beschrijving"
 
 msgid "Last updated {{time}}"
 msgstr ""
@@ -82,10 +83,45 @@ msgstr ""
 msgid "Network error"
 msgstr ""
 
-msgid "Data Type"
+msgid "Data / Edit calculation"
 msgstr ""
 
-msgid "All types"
+msgid "Data / New calculation"
+msgstr ""
+
+msgid "Remove item"
+msgstr ""
+
+msgid "Check formula"
+msgstr ""
+
+msgid "Calculation name"
+msgstr ""
+
+msgid "Shown in table headers and chart axes/legends"
+msgstr ""
+
+msgid "Delete calculation"
+msgstr ""
+
+msgid "Cancel"
+msgstr "Annuleer"
+
+msgid "The calculation can only be saved with a valid formula"
+msgstr ""
+
+msgid "Add a name to save this calculation"
+msgstr ""
+
+msgid "Save calculation"
+msgstr ""
+
+msgid ""
+"Are you sure you want to delete this calculation? It may be used by other "
+"visualizations."
+msgstr ""
+
+msgid "Yes, delete"
 msgstr ""
 
 msgid "Totals only"
@@ -94,28 +130,51 @@ msgstr ""
 msgid "Details only"
 msgstr ""
 
+msgid "Loading"
+msgstr ""
+
+msgid "Data elements"
+msgstr "Gegevenselementen"
+
+msgid "Search by data element name"
+msgstr ""
+
+msgid "No data elements found for \"{{- searchTerm}}\""
+msgstr ""
+
+msgid "No data elements found"
+msgstr ""
+
+msgid ""
+"Drag items here, or double click in the list, to start building a "
+"calculation formula"
+msgstr ""
+
+msgid "Math operators"
+msgstr ""
+
+msgid "Data Type"
+msgstr ""
+
+msgid "All types"
+msgstr "Alle typen"
+
 msgid "Disaggregation"
 msgstr ""
 
 msgid "No data"
 msgstr "Geen gegevens"
 
-msgid "Loading"
-msgstr ""
-
 msgid "Search by data item name"
 msgstr ""
 
 msgid "No items selected"
-msgstr ""
+msgstr "Geen items geselecteerd"
 
 msgid "Selected Items"
 msgstr ""
 
 msgid "No indicators found"
-msgstr ""
-
-msgid "No data elements found"
 msgstr ""
 
 msgid "No data sets found"
@@ -130,9 +189,6 @@ msgstr ""
 msgid "No indicators found for \"{{- searchTerm}}\""
 msgstr ""
 
-msgid "No data elements found for \"{{- searchTerm}}\""
-msgstr ""
-
 msgid "No data sets found for \"{{- searchTerm}}\""
 msgstr ""
 
@@ -143,6 +199,9 @@ msgid "No program indicators found for \"{{- searchTerm}}\""
 msgstr ""
 
 msgid "Nothing found for \"{{- searchTerm}}\""
+msgstr "Niets gevonden voor \"{{- zoekTerm}}\""
+
+msgid "Calculation"
 msgstr ""
 
 msgid "Metric type"
@@ -152,7 +211,7 @@ msgid "All metrics"
 msgstr ""
 
 msgid "Move to {{axisName}}"
-msgstr ""
+msgstr "Ga naar {{axisNaam}}"
 
 msgid "Add to {{axisName}}"
 msgstr "Voeg toe aan {{axisName}}"
@@ -199,7 +258,7 @@ msgid "Nothing found in {{- dimensionTitle}}"
 msgstr ""
 
 msgid "Search"
-msgstr ""
+msgstr "Zoek"
 
 msgid "Nothing found for {{- searchTerm}}"
 msgstr ""
@@ -211,9 +270,6 @@ msgid ""
 "This {{fileType}} and related interpretations will be deleted. Continue?"
 msgstr ""
 
-msgid "Cancel"
-msgstr "Annuleer"
-
 msgid "Delete"
 msgstr "Verwijderen"
 
@@ -221,7 +277,7 @@ msgid "File"
 msgstr ""
 
 msgid "New"
-msgstr ""
+msgstr "Nieuw"
 
 msgid "Open…"
 msgstr ""
@@ -265,7 +321,7 @@ msgstr "Beschrijving"
 msgid "Rename"
 msgstr ""
 
-msgid "{{objectName}} (copy)"
+msgid "{{- objectName}} (copy)"
 msgstr ""
 
 msgid "Save {{fileType}} as"
@@ -328,13 +384,13 @@ msgid "Unlike"
 msgstr ""
 
 msgid "Like"
-msgstr ""
+msgstr "Leuk vinden"
 
 msgid "Reply"
 msgstr ""
 
 msgid "Share"
-msgstr ""
+msgstr "Deel"
 
 msgid "See interpretation"
 msgstr ""
@@ -388,7 +444,7 @@ msgid "Created by"
 msgstr "Gecreëerd door"
 
 msgid "Anyone"
-msgstr ""
+msgstr "Iedereen"
 
 msgid "Only you"
 msgstr ""
@@ -403,7 +459,7 @@ msgid "Filter by name"
 msgstr ""
 
 msgid "Created"
-msgstr ""
+msgstr "Gemaakt"
 
 msgid "Last updated"
 msgstr "Laatst bijgewerkt"
@@ -418,7 +474,7 @@ msgid "{{firstItemIndex}}-{{lastItemIndex}} of {{totalNumberOfItems}}"
 msgstr ""
 
 msgid "Open"
-msgstr ""
+msgstr "Open"
 
 msgid "Couldn't load items"
 msgstr ""
@@ -437,7 +493,7 @@ msgid ""
 msgstr ""
 
 msgid "Create new"
-msgstr ""
+msgstr "Maak nieuw"
 
 msgid "Open a visualization"
 msgstr ""
@@ -542,16 +598,16 @@ msgid "Nothing selected"
 msgstr ""
 
 msgid "User organisation unit"
-msgstr ""
+msgstr "Gebruikersorganisatie-eenheid"
 
 msgid "User sub-units"
-msgstr ""
+msgstr "Subeenheden van gebruikers"
 
 msgid "User sub-x2-units"
-msgstr ""
+msgstr "Gebruiker sub-x2-eenheden"
 
 msgid "Select a level"
-msgstr ""
+msgstr "Selecteer een niveau"
 
 msgid "Select a group"
 msgstr ""
@@ -581,48 +637,6 @@ msgid "Selected Periods"
 msgstr ""
 
 msgid "No periods selected"
-msgstr ""
-
-msgid "January"
-msgstr ""
-
-msgid "February"
-msgstr ""
-
-msgid "March"
-msgstr ""
-
-msgid "April"
-msgstr ""
-
-msgid "May"
-msgstr ""
-
-msgid "June"
-msgstr ""
-
-msgid "July"
-msgstr ""
-
-msgid "August"
-msgstr ""
-
-msgid "September"
-msgstr ""
-
-msgid "October"
-msgstr ""
-
-msgid "November"
-msgstr ""
-
-msgid "December"
-msgstr ""
-
-msgid "Week {{weekNumber}}"
-msgstr ""
-
-msgid "Bi-Week {{biWeekNumber}}"
 msgstr ""
 
 msgid "Daily"
@@ -803,7 +817,7 @@ msgid "Last 10 years"
 msgstr ""
 
 msgid "Days"
-msgstr ""
+msgstr "Dagen"
 
 msgid "Weeks"
 msgstr ""
@@ -812,7 +826,7 @@ msgid "Bi-weeks"
 msgstr ""
 
 msgid "Months"
-msgstr ""
+msgstr "Maanden"
 
 msgid "Bi-months"
 msgstr ""
@@ -827,6 +841,9 @@ msgid "Financial Years"
 msgstr ""
 
 msgid "Years"
+msgstr "Jaren"
+
+msgid "Interpretations and details"
 msgstr ""
 
 msgid "Translating to"
@@ -866,10 +883,10 @@ msgid "Filter"
 msgstr "Filter"
 
 msgid "Columns"
-msgstr ""
+msgstr "Kolommen"
 
 msgid "Rows"
-msgstr ""
+msgstr "Rijen"
 
 msgid "Points"
 msgstr ""
@@ -896,7 +913,7 @@ msgid "Select a program"
 msgstr ""
 
 msgid "Indicators"
-msgstr ""
+msgstr "Indicatoren"
 
 msgid "Indicator group"
 msgstr "Indicatorgroep"
@@ -912,9 +929,6 @@ msgstr ""
 
 msgid "Loading indicator groups"
 msgstr ""
-
-msgid "Data elements"
-msgstr "Gegevenselementen"
 
 msgid "Data element group"
 msgstr "Gegevenselementengroep"
@@ -961,17 +975,44 @@ msgstr "Programmaindicators"
 msgid "Program indicator"
 msgstr "Programmaindicator"
 
+msgid "Calculations"
+msgstr ""
+
+msgid "Number"
+msgstr "Nummer"
+
+msgid "Formula is empty. Add items to the formula from the lists on the left."
+msgstr ""
+
+msgid "Consecutive math operators"
+msgstr ""
+
+msgid "Consecutive data elements"
+msgstr ""
+
+msgid "Starts or ends with a math operator"
+msgstr ""
+
+msgid "Empty parentheses"
+msgstr ""
+
+msgid "Missing right parenthesis )"
+msgstr ""
+
+msgid "Missing left parenthesis ("
+msgstr ""
+
 msgid "Extra Small"
 msgstr ""
 
 msgid "Small"
-msgstr ""
+msgstr "Klein"
 
 msgid "Regular"
 msgstr ""
 
 msgid "Large"
-msgstr ""
+msgstr "Groot"
 
 msgid "Extra Large"
 msgstr ""

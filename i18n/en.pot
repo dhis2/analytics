@@ -859,6 +859,9 @@ msgstr "Financial Years"
 msgid "Years"
 msgstr "Years"
 
+msgid "Interpretations and details"
+msgstr "Interpretations and details"
+
 msgid "Translating to"
 msgstr "Translating to"
 
