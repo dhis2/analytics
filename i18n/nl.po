@@ -598,13 +598,13 @@ msgid "Nothing selected"
 msgstr ""
 
 msgid "User organisation unit"
-msgstr ""
+msgstr "Gebruikersorganisatie-eenheid"
 
 msgid "User sub-units"
-msgstr ""
+msgstr "Subeenheden van gebruikers"
 
 msgid "User sub-x2-units"
-msgstr ""
+msgstr "Gebruiker sub-x2-eenheden"
 
 msgid "Select a level"
 msgstr "Selecteer een niveau"
@@ -883,10 +883,10 @@ msgid "Filter"
 msgstr "Filter"
 
 msgid "Columns"
-msgstr ""
+msgstr "Kolommen"
 
 msgid "Rows"
-msgstr ""
+msgstr "Rijen"
 
 msgid "Points"
 msgstr ""
@@ -1006,13 +1006,13 @@ msgid "Extra Small"
 msgstr ""
 
 msgid "Small"
-msgstr ""
+msgstr "Klein"
 
 msgid "Regular"
 msgstr ""
 
 msgid "Large"
-msgstr ""
+msgstr "Groot"
 
 msgid "Extra Large"
 msgstr ""
