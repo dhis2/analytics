@@ -343,10 +343,10 @@ msgid "Filter"
 msgstr "Filter"
 
 msgid "Columns"
-msgstr ""
+msgstr "Kolommen"
 
 msgid "Rows"
-msgstr ""
+msgstr "Rijen"
 
 msgid "Reporting rate"
 msgstr ""
