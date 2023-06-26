@@ -468,7 +468,7 @@ msgid "Type"
 msgstr "Soort"
 
 msgid "Clear filters"
-msgstr ""
+msgstr "Wis filters"
 
 msgid "{{firstItemIndex}}-{{lastItemIndex}} of {{totalNumberOfItems}}"
 msgstr ""
@@ -820,7 +820,7 @@ msgid "Days"
 msgstr "Dagen"
 
 msgid "Weeks"
-msgstr ""
+msgstr "Weken"
 
 msgid "Bi-weeks"
 msgstr ""
