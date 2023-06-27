@@ -16,13 +16,10 @@ export default css`
         user-select: none;
     }
 
-    li:hover {
-        background-color: ${colors.grey200};
-    }
-
+    li:hover,
     li:active,
     li.active {
-        background-color: ${colors.grey300};
+        background-color: ${colors.grey200};
     }
 
     li.destructive {
