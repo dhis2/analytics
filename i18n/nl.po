@@ -310,7 +310,7 @@ msgid "Days"
 msgstr "Dagen"
 
 msgid "Weeks"
-msgstr ""
+msgstr "Weken"
 
 msgid "Bi-weeks"
 msgstr ""
