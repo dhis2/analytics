@@ -1,3 +1,10 @@
+## [26.0.6](https://github.com/dhis2/analytics/compare/v26.0.5...v26.0.6) (2023-06-27)
+
+
+### Bug Fixes
+
+* various issues related to the new toolbar ([#1522](https://github.com/dhis2/analytics/issues/1522)) ([d4a96e9](https://github.com/dhis2/analytics/commit/d4a96e943e688718f391e2bae9c6240bbe198eaf))
+
 ## [26.0.5](https://github.com/dhis2/analytics/compare/v26.0.4...v26.0.5) (2023-06-27)
 
 
