@@ -2,15 +2,15 @@
 # Translators:
 # Viktor Varland <viktor@dhis2.org>, 2021
 # phil_dhis2, 2022
-# easylin <lin_xd@126.com>, 2022
 # 晓东 林 <13981924470@126.com>, 2023
+# easylin <lin_xd@126.com>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2023-04-18T08:41:27.838Z\n"
+"POT-Creation-Date: 2023-05-24T12:55:52.925Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: 晓东 林 <13981924470@126.com>, 2023\n"
+"Last-Translator: easylin <lin_xd@126.com>, 2023\n"
 "Language-Team: Chinese (https://app.transifex.com/hisp-uio/teams/100509/zh/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -83,45 +83,45 @@ msgid "Network error"
 msgstr "网络错误"
 
 msgid "Data / Edit calculation"
-msgstr ""
+msgstr "数据/编辑计算"
 
 msgid "Data / New calculation"
-msgstr ""
+msgstr "数据/新计算"
 
 msgid "Remove item"
-msgstr ""
+msgstr "除去项目"
 
 msgid "Check formula"
-msgstr ""
+msgstr "检查公式"
 
 msgid "Calculation name"
-msgstr ""
+msgstr "计算名称"
 
 msgid "Shown in table headers and chart axes/legends"
-msgstr ""
+msgstr "显示在表格标题和图表轴/图例中"
 
 msgid "Delete calculation"
-msgstr ""
+msgstr "删除计算"
 
 msgid "Cancel"
 msgstr "取消"
 
 msgid "The calculation can only be saved with a valid formula"
-msgstr ""
+msgstr "计算只能用有效的公式保存"
 
 msgid "Add a name to save this calculation"
-msgstr ""
+msgstr "添加名称以保存此计算"
 
 msgid "Save calculation"
-msgstr ""
+msgstr "保存计算"
 
 msgid ""
 "Are you sure you want to delete this calculation? It may be used by other "
 "visualizations."
-msgstr ""
+msgstr "您确定要删除此计算吗？它可以被其他可视化使用。"
 
 msgid "Yes, delete"
-msgstr ""
+msgstr "是的，删除"
 
 msgid "Totals only"
 msgstr "总计"
@@ -136,7 +136,7 @@ msgid "Data elements"
 msgstr "数据元"
 
 msgid "Search by data element name"
-msgstr ""
+msgstr "按数据元素名称搜索"
 
 msgid "No data elements found for \"{{- searchTerm}}\""
 msgstr "找不到“ {{-searchTerm}}”的数据元素"
@@ -147,10 +147,10 @@ msgstr "找不到数据元素"
 msgid ""
 "Drag items here, or double click in the list, to start building a "
 "calculation formula"
-msgstr ""
+msgstr "将项目拖到此处，或在列表中双击，开始构建计算公式"
 
 msgid "Math operators"
-msgstr ""
+msgstr "数学运算符"
 
 msgid "Data Type"
 msgstr "数据类型"
@@ -201,7 +201,7 @@ msgid "Nothing found for \"{{- searchTerm}}\""
 msgstr "找不到“ {{-searchTerm}}”"
 
 msgid "Calculation"
-msgstr ""
+msgstr "计算"
 
 msgid "Metric type"
 msgstr "尺度类型"
@@ -321,7 +321,7 @@ msgid "Rename"
 msgstr "改名"
 
 msgid "{{- objectName}} (copy)"
-msgstr ""
+msgstr "{{- objectName}}（复制）"
 
 msgid "Save {{fileType}} as"
 msgstr "将{{fileType}}另存为"
@@ -839,6 +839,9 @@ msgstr "Financial Years"
 msgid "Years"
 msgstr "年"
 
+msgid "Interpretations and details"
+msgstr "解释和细节"
+
 msgid "Translating to"
 msgstr "翻译成"
 
@@ -969,31 +972,31 @@ msgid "Program indicator"
 msgstr "项目指标"
 
 msgid "Calculations"
-msgstr ""
+msgstr "计算"
 
 msgid "Number"
 msgstr "数据"
 
 msgid "Formula is empty. Add items to the formula from the lists on the left."
-msgstr ""
+msgstr "公式为空。将左侧列表中的项目添加到公式中。"
 
 msgid "Consecutive math operators"
-msgstr ""
+msgstr "连续的数学运算符"
 
 msgid "Consecutive data elements"
-msgstr ""
+msgstr "连续的数据元素"
 
 msgid "Starts or ends with a math operator"
-msgstr ""
+msgstr "以数学运算符开始或结束"
 
 msgid "Empty parentheses"
-msgstr ""
+msgstr "空括号"
 
 msgid "Missing right parenthesis )"
-msgstr ""
+msgstr "缺少右括号 ）"
 
 msgid "Missing left parenthesis ("
-msgstr ""
+msgstr "缺少左括号 ("
 
 msgid "Extra Small"
 msgstr "特小"
