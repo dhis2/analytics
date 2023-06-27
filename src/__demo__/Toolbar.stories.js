@@ -29,7 +29,7 @@ function ToolbarWithState() {
                     click to hide
                 </a>
             </ToolbarSidebar>
-            <UpdateButton />
+            <UpdateButton onClick={() => {}} />
             <HoverMenuBar>
                 <HoverMenuDropdown label="Menu A">
                     <HoverMenuList>
