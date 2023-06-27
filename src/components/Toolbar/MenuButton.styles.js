@@ -12,6 +12,7 @@ export default css`
         padding: 0 ${spacers.dp12};
         color: ${colors.grey900};
         cursor: pointer;
+        user-select: none;
     }
 
     button:hover:enabled,
