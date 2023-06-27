@@ -81,6 +81,7 @@ HoverMenuList.defaultProps = {
     dataTest: 'dhis2-analytics-hovermenulist',
     maxWidth: '380px',
     maxHeight: 'auto',
+    dense: true,
 }
 
 HoverMenuList.propTypes = {

@@ -1,5 +1,6 @@
 import { Popper } from '@dhis2-ui/popper'
 import { Portal } from '@dhis2-ui/portal'
+import cx from 'classnames'
 import PropTypes from 'prop-types'
 import React, { useRef } from 'react'
 import menuButtonStyles from '../MenuButton.styles.js'
@@ -17,6 +18,7 @@ export const HoverMenuDropdown = ({ children, label, dataTest, disabled }) => {
     return (
         <>
             <button
+                className={cx({ isOpen })}
                 ref={buttonRef}
                 onClick={onDropDownButtonClick}
                 disabled={disabled}
