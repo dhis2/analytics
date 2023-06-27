@@ -69,6 +69,15 @@ const HoverMenuBar = ({ children, dataTest }) => {
     const closeMenuWithEsc = useCallback(
         (event) => {
             if (event.keyCode === 27) {
+                /* Blurring the active element is needed here to prevent
+                 * the menu button which was clicked to open the hovermenu
+                 * from getting the blue outline style. This looks a bit off
+                 * in all cases, but especially when the menu item which was
+                 * clicked to open the hover menu isn't the currently opened
+                 * dropdown menu. This doesn't have to be the case since
+                 * dropdown menues open on hover once the first one has been
+                 * clicked. */
+                document.activeElement.blur()
                 closeMenu()
             }
         },
