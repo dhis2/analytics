@@ -16,7 +16,8 @@ export default css`
     }
 
     button:hover:enabled,
-    button:active:enabled {
+    button:active:enabled,
+    button.isOpen {
         background-color: ${colors.grey200};
     }
 
