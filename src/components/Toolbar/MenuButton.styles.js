@@ -15,7 +15,7 @@ export default css`
     }
 
     button:hover:enabled,
-    button:active {
+    button:active:enabled {
         background-color: ${colors.grey200};
     }
 
