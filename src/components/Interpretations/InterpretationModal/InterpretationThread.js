@@ -15,7 +15,7 @@ const InterpretationThread = ({
     initialFocus,
     onThreadUpdated,
     downloadMenuComponent: DownloadMenu,
-    appUrl,
+    dashboardRedirectUrl,
 }) => {
     const focusRef = useRef()
 
@@ -29,7 +29,7 @@ const InterpretationThread = ({
 
     return (
         <div className={cx('container', { fetching })}>
-            <div className={appUrl ? null : 'scrollbox'}>
+            <div className={dashboardRedirectUrl ? null : 'scrollbox'}>
                 <div className={'title'}>
                     <IconClock16 color={colors.grey700} />
                     {moment(interpretation.created).format('LLL')}
@@ -44,7 +44,7 @@ const InterpretationThread = ({
                         onReplyIconClick={() => focusRef.current?.focus()}
                         onUpdated={() => onThreadUpdated(true)}
                         onDeleted={onInterpretationDeleted}
-                        appUrl={appUrl}
+                        dashboardRedirectUrl={dashboardRedirectUrl}
                         isThread={true}
                     />
                     <div className={'comments'}>
@@ -144,7 +144,7 @@ InterpretationThread.propTypes = {
     fetching: PropTypes.bool.isRequired,
     interpretation: PropTypes.object.isRequired,
     onInterpretationDeleted: PropTypes.func.isRequired,
-    appUrl: PropTypes.string,
+    dashboardRedirectUrl: PropTypes.string,
     downloadMenuComponent: PropTypes.oneOfType([
         PropTypes.object,
         PropTypes.func,

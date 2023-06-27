@@ -48,7 +48,7 @@ export const InterpretationsUnit = forwardRef(
             onReplyIconClick,
             disabled,
             renderId,
-            appUrl,
+            dashboardRedirectUrl,
         },
         ref
     ) => {
@@ -128,7 +128,7 @@ export const InterpretationsUnit = forwardRef(
                                     onReplyIconClick={onReplyIconClick}
                                     refresh={onCompleteAction}
                                     disabled={disabled}
-                                    appUrl={appUrl}
+                                    dashboardRedirectUrl={dashboardRedirectUrl}
                                 />
                             </>
                         )}
@@ -189,7 +189,7 @@ InterpretationsUnit.propTypes = {
     currentUser: PropTypes.object.isRequired,
     id: PropTypes.string.isRequired,
     type: PropTypes.string.isRequired,
-    appUrl: PropTypes.string,
+    dashboardRedirectUrl: PropTypes.string,
     disabled: PropTypes.bool,
     renderId: PropTypes.number,
     onInterpretationClick: PropTypes.func,

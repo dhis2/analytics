@@ -24,7 +24,7 @@ export const InterpretationList = ({
     onReplyIconClick,
     refresh,
     disabled,
-    appUrl,
+    dashboardRedirectUrl,
 }) => {
     const interpretationsByDate = interpretations.reduce(
         (groupedInterpretations, interpretation) => {
@@ -67,7 +67,9 @@ export const InterpretationList = ({
                                         onDeleted={refresh}
                                         onUpdated={refresh}
                                         disabled={disabled}
-                                        appUrl={appUrl}
+                                        dashboardRedirectUrl={
+                                            dashboardRedirectUrl
+                                        }
                                         isThread={false}
                                     />
                                 ))}
@@ -118,6 +120,6 @@ InterpretationList.propTypes = {
     refresh: PropTypes.func.isRequired,
     onInterpretationClick: PropTypes.func.isRequired,
     onReplyIconClick: PropTypes.func.isRequired,
-    appUrl: PropTypes.string,
+    dashboardRedirectUrl: PropTypes.string,
     disabled: PropTypes.bool,
 }

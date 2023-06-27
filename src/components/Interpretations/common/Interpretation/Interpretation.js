@@ -24,7 +24,7 @@ export const Interpretation = ({
     onDeleted,
     disabled,
     onReplyIconClick,
-    appUrl,
+    dashboardRedirectUrl,
     isThread,
 }) => {
     const [isUpdateMode, setIsUpdateMode] = useState(false)
@@ -34,7 +34,9 @@ export const Interpretation = ({
         currentUser,
         onComplete: onUpdated,
     })
-    const shouldShowButton = Boolean(!!onClick && !disabled & !appUrl)
+    const shouldShowButton = Boolean(
+        !!onClick && !disabled & !dashboardRedirectUrl
+    )
 
     return isUpdateMode ? (
         <InterpretationUpdateForm
@@ -73,7 +75,7 @@ export const Interpretation = ({
                         count={interpretation.comments.length}
                         dataTest="interpretation-reply-button"
                     />
-                    {appUrl && !isThread && (
+                    {dashboardRedirectUrl && !isThread && (
                         <MessageIconButton
                             tooltipContent={i18n.t('See interpretation')}
                             iconComponent={IconView16}
@@ -81,13 +83,13 @@ export const Interpretation = ({
                             dataTest="interpretation-view-button"
                         />
                     )}
-                    {appUrl && (
+                    {dashboardRedirectUrl && (
                         <MessageIconButton
                             tooltipContent={i18n.t('Open in app')}
                             iconComponent={IconLaunch16}
                             onClick={() =>
                                 window.open(
-                                    `${appUrl}?interpretationId=${interpretation.id}`,
+                                    `${dashboardRedirectUrl}?interpretationId=${interpretation.id}`,
                                     '_blank'
                                 )
                             }
@@ -148,7 +150,7 @@ Interpretation.propTypes = {
     onDeleted: PropTypes.func.isRequired,
     onReplyIconClick: PropTypes.func.isRequired,
     onUpdated: PropTypes.func.isRequired,
-    appUrl: PropTypes.string,
+    dashboardRedirectUrl: PropTypes.string,
     disabled: PropTypes.bool,
     isThread: PropTypes.bool,
     onClick: PropTypes.func,
