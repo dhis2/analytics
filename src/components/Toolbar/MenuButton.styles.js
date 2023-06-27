@@ -11,7 +11,6 @@ export default css`
         line-height: 14px;
         padding: 0 ${spacers.dp12};
         color: ${colors.grey900};
-        transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
         cursor: pointer;
     }
 
