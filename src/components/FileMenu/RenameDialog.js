@@ -12,6 +12,7 @@ import {
 import PropTypes from 'prop-types'
 import React, { useMemo, useState } from 'react'
 import i18n from '../../locales/index.js'
+import { modalStyles } from './FileMenu.styles.js'
 import {
     supportedFileTypes,
     endpointFromFileType,
@@ -30,7 +31,7 @@ export const RenameDialog = ({ type, object, onClose, onRename, onError }) => {
     const [name, setName] = useState(object.name)
     const [description, setDescription] = useState(object.description)
 
-    const mutation = useMemo(() => getMutation(type), [])
+    const mutation = useMemo(() => getMutation(type), [type])
     const [mutate, { loading }] = useDataMutation(mutation, {
         onError: (error) => {
             onError(error)
@@ -52,26 +53,29 @@ export const RenameDialog = ({ type, object, onClose, onRename, onError }) => {
 
     return (
         <Modal onClose={onClose}>
+            <style jsx>{modalStyles}</style>
             <ModalTitle>
                 {i18n.t('Rename {{fileType}}', {
                     fileType: labelForFileType(type),
                 })}
             </ModalTitle>
             <ModalContent>
-                <InputField
-                    label={i18n.t('Name')}
-                    disabled={loading}
-                    required
-                    value={name}
-                    onChange={({ value }) => setName(value)}
-                />
-                <TextAreaField
-                    label={i18n.t('Description')}
-                    disabled={loading}
-                    value={description}
-                    rows={3}
-                    onChange={({ value }) => setDescription(value)}
-                />
+                <div className="modal-content">
+                    <InputField
+                        label={i18n.t('Name')}
+                        disabled={loading}
+                        required
+                        value={name}
+                        onChange={({ value }) => setName(value)}
+                    />
+                    <TextAreaField
+                        label={i18n.t('Description')}
+                        disabled={loading}
+                        value={description}
+                        rows={3}
+                        onChange={({ value }) => setDescription(value)}
+                    />
+                </div>
             </ModalContent>
             <ModalActions>
                 <ButtonStrip>

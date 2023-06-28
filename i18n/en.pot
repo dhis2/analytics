@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2022-08-10T13:11:21.079Z\n"
-"PO-Revision-Date: 2022-08-10T13:11:21.079Z\n"
+"POT-Creation-Date: 2023-05-24T12:55:52.925Z\n"
+"PO-Revision-Date: 2023-05-24T12:55:52.925Z\n"
 
 msgid "view only"
 msgstr "view only"
@@ -26,9 +26,6 @@ msgstr "Shared with {{commaSeparatedListOfUsersAndGroups}}"
 msgid "Not shared with any users or groups"
 msgstr "Not shared with any users or groups"
 
-msgid "About this visualization"
-msgstr "About this visualization"
-
 msgid "No description"
 msgstr "No description"
 
@@ -37,6 +34,9 @@ msgstr "Last updated {{time}}"
 
 msgid "Created {{time}} by {{author}}"
 msgstr "Created {{time}} by {{author}}"
+
+msgid "Created {{time}}"
+msgstr "Created {{time}}"
 
 msgid "Viewed {{count}} times"
 msgid_plural "Viewed {{count}} times"
@@ -58,17 +58,63 @@ msgstr "Subscribe to get updates about new interpretations."
 msgid "Subscribe"
 msgstr "Subscribe"
 
+msgid "About this map"
+msgstr "About this map"
+
+msgid "About this line list"
+msgstr "About this line list"
+
+msgid "About this visualization"
+msgstr "About this visualization"
+
 msgid "This app could not retrieve required data."
 msgstr "This app could not retrieve required data."
 
 msgid "Network error"
 msgstr "Network error"
 
-msgid "Data Type"
-msgstr "Data Type"
+msgid "Data / Edit calculation"
+msgstr "Data / Edit calculation"
 
-msgid "All types"
-msgstr "All types"
+msgid "Data / New calculation"
+msgstr "Data / New calculation"
+
+msgid "Remove item"
+msgstr "Remove item"
+
+msgid "Check formula"
+msgstr "Check formula"
+
+msgid "Calculation name"
+msgstr "Calculation name"
+
+msgid "Shown in table headers and chart axes/legends"
+msgstr "Shown in table headers and chart axes/legends"
+
+msgid "Delete calculation"
+msgstr "Delete calculation"
+
+msgid "Cancel"
+msgstr "Cancel"
+
+msgid "The calculation can only be saved with a valid formula"
+msgstr "The calculation can only be saved with a valid formula"
+
+msgid "Add a name to save this calculation"
+msgstr "Add a name to save this calculation"
+
+msgid "Save calculation"
+msgstr "Save calculation"
+
+msgid ""
+"Are you sure you want to delete this calculation? It may be used by other "
+"visualizations."
+msgstr ""
+"Are you sure you want to delete this calculation? It may be used by other "
+"visualizations."
+
+msgid "Yes, delete"
+msgstr "Yes, delete"
 
 msgid "Totals only"
 msgstr "Totals only"
@@ -76,14 +122,42 @@ msgstr "Totals only"
 msgid "Details only"
 msgstr "Details only"
 
+msgid "Loading"
+msgstr "Loading"
+
+msgid "Data elements"
+msgstr "Data elements"
+
+msgid "Search by data element name"
+msgstr "Search by data element name"
+
+msgid "No data elements found for \"{{- searchTerm}}\""
+msgstr "No data elements found for \"{{- searchTerm}}\""
+
+msgid "No data elements found"
+msgstr "No data elements found"
+
+msgid ""
+"Drag items here, or double click in the list, to start building a "
+"calculation formula"
+msgstr ""
+"Drag items here, or double click in the list, to start building a "
+"calculation formula"
+
+msgid "Math operators"
+msgstr "Math operators"
+
+msgid "Data Type"
+msgstr "Data Type"
+
+msgid "All types"
+msgstr "All types"
+
 msgid "Disaggregation"
 msgstr "Disaggregation"
 
 msgid "No data"
 msgstr "No data"
-
-msgid "Loading"
-msgstr "Loading"
 
 msgid "Search by data item name"
 msgstr "Search by data item name"
@@ -97,9 +171,6 @@ msgstr "Selected Items"
 msgid "No indicators found"
 msgstr "No indicators found"
 
-msgid "No data elements found"
-msgstr "No data elements found"
-
 msgid "No data sets found"
 msgstr "No data sets found"
 
@@ -112,9 +183,6 @@ msgstr "No program indicators found"
 msgid "No indicators found for \"{{- searchTerm}}\""
 msgstr "No indicators found for \"{{- searchTerm}}\""
 
-msgid "No data elements found for \"{{- searchTerm}}\""
-msgstr "No data elements found for \"{{- searchTerm}}\""
-
 msgid "No data sets found for \"{{- searchTerm}}\""
 msgstr "No data sets found for \"{{- searchTerm}}\""
 
@@ -126,6 +194,9 @@ msgstr "No program indicators found for \"{{- searchTerm}}\""
 
 msgid "Nothing found for \"{{- searchTerm}}\""
 msgstr "Nothing found for \"{{- searchTerm}}\""
+
+msgid "Calculation"
+msgstr "Calculation"
 
 msgid "Metric type"
 msgstr "Metric type"
@@ -194,9 +265,6 @@ msgstr "Delete {{fileType}}"
 msgid "This {{fileType}} and related interpretations will be deleted. Continue?"
 msgstr "This {{fileType}} and related interpretations will be deleted. Continue?"
 
-msgid "Cancel"
-msgstr "Cancel"
-
 msgid "Delete"
 msgstr "Delete"
 
@@ -247,6 +315,9 @@ msgstr "Description"
 
 msgid "Rename"
 msgstr "Rename"
+
+msgid "{{- objectName}} (copy)"
+msgstr "{{- objectName}} (copy)"
 
 msgid "Save {{fileType}} as"
 msgstr "Save {{fileType}} as"
@@ -362,6 +433,9 @@ msgstr "Searching for \"{{- searchText}}\""
 
 msgid "No results found"
 msgstr "No results found"
+
+msgid "Not available offline"
+msgstr "Not available offline"
 
 msgid "Created by"
 msgstr "Created by"
@@ -578,48 +652,6 @@ msgstr "Selected Periods"
 msgid "No periods selected"
 msgstr "No periods selected"
 
-msgid "January"
-msgstr "January"
-
-msgid "February"
-msgstr "February"
-
-msgid "March"
-msgstr "March"
-
-msgid "April"
-msgstr "April"
-
-msgid "May"
-msgstr "May"
-
-msgid "June"
-msgstr "June"
-
-msgid "July"
-msgstr "July"
-
-msgid "August"
-msgstr "August"
-
-msgid "September"
-msgstr "September"
-
-msgid "October"
-msgstr "October"
-
-msgid "November"
-msgstr "November"
-
-msgid "December"
-msgstr "December"
-
-msgid "Week {{weekNumber}}"
-msgstr "Week {{weekNumber}}"
-
-msgid "Bi-Week {{biWeekNumber}}"
-msgstr "Bi-Week {{biWeekNumber}}"
-
 msgid "Daily"
 msgstr "Daily"
 
@@ -824,6 +856,9 @@ msgstr "Financial Years"
 msgid "Years"
 msgstr "Years"
 
+msgid "Interpretations and details"
+msgstr "Interpretations and details"
+
 msgid "Translating to"
 msgstr "Translating to"
 
@@ -841,6 +876,9 @@ msgstr "Translate: {{objectName}}"
 
 msgid "Save translations"
 msgstr "Save translations"
+
+msgid "Cannot save while offline"
+msgstr "Cannot save while offline"
 
 msgid "Could not load translations"
 msgstr "Could not load translations"
@@ -905,9 +943,6 @@ msgstr "No indicator groups found"
 msgid "Loading indicator groups"
 msgstr "Loading indicator groups"
 
-msgid "Data elements"
-msgstr "Data elements"
-
 msgid "Data element group"
 msgstr "Data element group"
 
@@ -952,6 +987,33 @@ msgstr "Program indicators"
 
 msgid "Program indicator"
 msgstr "Program indicator"
+
+msgid "Calculations"
+msgstr "Calculations"
+
+msgid "Number"
+msgstr "Number"
+
+msgid "Formula is empty. Add items to the formula from the lists on the left."
+msgstr "Formula is empty. Add items to the formula from the lists on the left."
+
+msgid "Consecutive math operators"
+msgstr "Consecutive math operators"
+
+msgid "Consecutive data elements"
+msgstr "Consecutive data elements"
+
+msgid "Starts or ends with a math operator"
+msgstr "Starts or ends with a math operator"
+
+msgid "Empty parentheses"
+msgstr "Empty parentheses"
+
+msgid "Missing right parenthesis )"
+msgstr "Missing right parenthesis )"
+
+msgid "Missing left parenthesis ("
+msgstr "Missing left parenthesis ("
 
 msgid "Extra Small"
 msgstr "Extra Small"

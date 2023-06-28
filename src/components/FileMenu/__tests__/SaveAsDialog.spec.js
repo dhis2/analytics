@@ -45,7 +45,7 @@ describe('The FileMenu - SaveAsDialog component', () => {
             (n) => n.prop('label') === 'Name'
         )
 
-        expect(nameInputField.prop('value')).toEqual(props.object.name)
+        expect(nameInputField.prop('value')).toEqual('Save as name test (copy)')
     })
 
     it('renders a TextAreaField for description with prefilled value from the object prop', () => {
@@ -62,7 +62,7 @@ describe('The FileMenu - SaveAsDialog component', () => {
         getSaveAsDialogComponent(props).find(Button).at(1).simulate('click')
 
         expect(onSaveAs).toHaveBeenCalledWith({
-            name: props.object.name,
+            name: 'Save as name test (copy)',
             description: props.object.description,
         })
     })

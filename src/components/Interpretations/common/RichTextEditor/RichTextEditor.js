@@ -199,7 +199,7 @@ export const RichTextEditor = forwardRef(
         const internalRef = useRef()
         const textareaRef = externalRef || internalRef
 
-        useEffect(() => textareaRef.current?.focus(), [textareaRef.current])
+        useEffect(() => textareaRef.current?.focus(), [textareaRef])
 
         return (
             <div className="container">

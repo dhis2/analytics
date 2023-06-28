@@ -37,9 +37,6 @@ const getSeparator = (visualization) => {
             return ' '
         case 'COMMA':
             return ','
-        // TODO: Requires backend support, and decimalSeparator would need to be separately configurable
-        // case 'PERIOD':
-        //     return '.'
         case 'NONE':
         default:
             return ''
