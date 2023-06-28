@@ -1,14 +1,14 @@
 # 
 # Translators:
-# trendspotter <jirka.p@volny.cz>, 2022
+# Jiří Podhorecký, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-09-22T13:25:32.620Z\n"
+"POT-Creation-Date: 2023-04-18T08:41:27.838Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: trendspotter <jirka.p@volny.cz>, 2022\n"
-"Language-Team: Czech (https://www.transifex.com/hisp-uio/teams/100509/cs/)\n"
+"Last-Translator: Jiří Podhorecký, 2023\n"
+"Language-Team: Czech (https://app.transifex.com/hisp-uio/teams/100509/cs/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -83,11 +83,47 @@ msgstr "Tato aplikace nemohla načíst požadovaná data."
 msgid "Network error"
 msgstr "Chyba sítě"
 
-msgid "Data Type"
-msgstr "Typ dat"
+msgid "Data / Edit calculation"
+msgstr "Data / Upravit výpočet"
 
-msgid "All types"
-msgstr "Všechny typy"
+msgid "Data / New calculation"
+msgstr "Data / Nový výpočet"
+
+msgid "Remove item"
+msgstr "Odebrat položku"
+
+msgid "Check formula"
+msgstr "Zkontrolujte vzorec"
+
+msgid "Calculation name"
+msgstr "Název výpočtu"
+
+msgid "Shown in table headers and chart axes/legends"
+msgstr "Zobrazeno v záhlaví tabulky a osy/legendy grafu"
+
+msgid "Delete calculation"
+msgstr "Smazat výpočet"
+
+msgid "Cancel"
+msgstr "Zrušit"
+
+msgid "The calculation can only be saved with a valid formula"
+msgstr "Výpočet lze uložit pouze s platným vzorcem"
+
+msgid "Add a name to save this calculation"
+msgstr "Přidejte název pro uložení tohoto výpočtu"
+
+msgid "Save calculation"
+msgstr "Uložit výpočet"
+
+msgid ""
+"Are you sure you want to delete this calculation? It may be used by other "
+"visualizations."
+msgstr ""
+"Opravdu chcete tento výpočet smazat? Může být použit jinými vizualizacemi."
+
+msgid "Yes, delete"
+msgstr "Ano, smazat"
 
 msgid "Totals only"
 msgstr "Pouze součty"
@@ -95,14 +131,42 @@ msgstr "Pouze součty"
 msgid "Details only"
 msgstr "Pouze podrobnosti"
 
+msgid "Loading"
+msgstr "Načítání"
+
+msgid "Data elements"
+msgstr "Datové prvky"
+
+msgid "Search by data element name"
+msgstr "Vyhledávání podle názvu datového prvku"
+
+msgid "No data elements found for \"{{- searchTerm}}\""
+msgstr "Nebyly nalezeny žádné datové prvky pro „{{- searchTerm}}“"
+
+msgid "No data elements found"
+msgstr "Nebyly nalezeny žádné datové prvky"
+
+msgid ""
+"Drag items here, or double click in the list, to start building a "
+"calculation formula"
+msgstr ""
+"Přetáhněte položky sem nebo dvakrát klikněte na seznam a začněte vytvářet "
+"vzorec výpočtu"
+
+msgid "Math operators"
+msgstr "Matematické operátory"
+
+msgid "Data Type"
+msgstr "Typ dat"
+
+msgid "All types"
+msgstr "Všechny typy"
+
 msgid "Disaggregation"
 msgstr "Rozčlenění"
 
 msgid "No data"
 msgstr "Nejsou data"
-
-msgid "Loading"
-msgstr "Načítání"
 
 msgid "Search by data item name"
 msgstr "Hledání podle názvu datové položky"
@@ -116,9 +180,6 @@ msgstr "Vybrané položky"
 msgid "No indicators found"
 msgstr "Nebyly nalezeny žádné indikátory"
 
-msgid "No data elements found"
-msgstr "Nebyly nalezeny žádné datové prvky"
-
 msgid "No data sets found"
 msgstr "Nebyly nalezeny žádné datové soubory"
 
@@ -131,9 +192,6 @@ msgstr "Nebyly nalezeny žádné programové indikátory"
 msgid "No indicators found for \"{{- searchTerm}}\""
 msgstr "Nebyly nalezeny žádné indikátory pro „{{- searchTerm}}“"
 
-msgid "No data elements found for \"{{- searchTerm}}\""
-msgstr "Nebyly nalezeny žádné datové prvky pro „{{- searchTerm}}“"
-
 msgid "No data sets found for \"{{- searchTerm}}\""
 msgstr "Nebyly nalezeny žádné soubory dat pro „{{- searchTerm}}“"
 
@@ -145,6 +203,9 @@ msgstr "Nebyly nalezeny žádné programové indikátory pro „{{- searchTerm}}
 
 msgid "Nothing found for \"{{- searchTerm}}\""
 msgstr "Pro dotaz „{{- searchTerm}}“ nebylo nic nalezeno"
+
+msgid "Calculation"
+msgstr "Výpočet"
 
 msgid "Metric type"
 msgstr "Metrický typ"
@@ -215,9 +276,6 @@ msgid ""
 msgstr ""
 "Tento {{fileType}} a související interpretace budou smazány. Pokračovat?"
 
-msgid "Cancel"
-msgstr "Zrušit"
-
 msgid "Delete"
 msgstr "Smazat"
 
@@ -269,8 +327,8 @@ msgstr "Popis"
 msgid "Rename"
 msgstr "Přejmenovat"
 
-msgid "{{objectName}} (copy)"
-msgstr "{{objectName}} (kopie)"
+msgid "{{- objectName}} (copy)"
+msgstr "{{- objectName}} (kopie)"
 
 msgid "Save {{fileType}} as"
 msgstr "Uložit {{fileType}} jako"
@@ -614,48 +672,6 @@ msgstr "Vybraná období"
 msgid "No periods selected"
 msgstr "Nejsou vybrána žádná období"
 
-msgid "January"
-msgstr "Leden"
-
-msgid "February"
-msgstr "únor"
-
-msgid "March"
-msgstr "březen"
-
-msgid "April"
-msgstr "Duben"
-
-msgid "May"
-msgstr "Květen"
-
-msgid "June"
-msgstr "červen"
-
-msgid "July"
-msgstr "červenec"
-
-msgid "August"
-msgstr "Srpen"
-
-msgid "September"
-msgstr "Září"
-
-msgid "October"
-msgstr "říjen"
-
-msgid "November"
-msgstr "Listopad"
-
-msgid "December"
-msgstr "prosinec"
-
-msgid "Week {{weekNumber}}"
-msgstr "Týden {{weekNumber}}"
-
-msgid "Bi-Week {{biWeekNumber}}"
-msgstr "dva týdny {{biWeekNumber}}"
-
 msgid "Daily"
 msgstr "Denně"
 
@@ -944,9 +960,6 @@ msgstr "Nebyly nalezeny žádné skupiny indikátorů"
 msgid "Loading indicator groups"
 msgstr "Načítání skupin indikátorů"
 
-msgid "Data elements"
-msgstr "Datové prvky"
-
 msgid "Data element group"
 msgstr "Skupina datových prvků"
 
@@ -991,6 +1004,33 @@ msgstr "Indikátory programu"
 
 msgid "Program indicator"
 msgstr "Indikátor programu"
+
+msgid "Calculations"
+msgstr "Výpočty"
+
+msgid "Number"
+msgstr "Číslo"
+
+msgid "Formula is empty. Add items to the formula from the lists on the left."
+msgstr "Vzorec je prázdný. Přidejte položky do vzorce ze seznamů vlevo."
+
+msgid "Consecutive math operators"
+msgstr "Po sobě jdoucí matematické operátory"
+
+msgid "Consecutive data elements"
+msgstr "Po sobě jdoucí datové prvky"
+
+msgid "Starts or ends with a math operator"
+msgstr "Začíná nebo končí matematickým operátorem"
+
+msgid "Empty parentheses"
+msgstr "Prázdné závorky"
+
+msgid "Missing right parenthesis )"
+msgstr "Chybí pravá závorka )"
+
+msgid "Missing left parenthesis ("
+msgstr "Chybí levá závorka ("
 
 msgid "Extra Small"
 msgstr "Velmi malý"

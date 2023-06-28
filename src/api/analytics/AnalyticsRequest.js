@@ -1,3 +1,4 @@
+import { getExpressionHashFromVisualization } from '../../modules/hash.js'
 import { getFixedDimensions } from '../../modules/predefinedDimensions.js'
 import AnalyticsRequestBase from './AnalyticsRequestBase.js'
 import AnalyticsRequestDimensionsMixin from './AnalyticsRequestDimensionsMixin.js'
@@ -112,6 +113,13 @@ class AnalyticsRequest extends AnalyticsRequestDimensionsMixin(
                 }
             }
         })
+
+        // add cache param for expression dimension items
+        const expressionHash = getExpressionHashFromVisualization(visualization)
+
+        if (expressionHash) {
+            request.withParameters({ edi_cache: expressionHash })
+        }
 
         return request
     }
