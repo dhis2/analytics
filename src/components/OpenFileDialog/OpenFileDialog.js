@@ -46,7 +46,7 @@ const getQuery = (type) => ({
         resource: AOTypeMap[type].apiEndpoint,
         params: ({
             sortField = 'displayName',
-            sortDirection = 'asc',
+            sortDirection = 'iasc',
             page = 1,
             filters,
         }) => {
@@ -134,8 +134,21 @@ export const OpenFileDialog = ({
         return queryFilters
     }, [currentUser, filters])
 
+    const formatSortDirection = useCallback(() => {
+        if (sortField === 'displayName' && sortDirection !== 'default') {
+            return `i${sortDirection}`
+        }
+
+        return sortDirection
+    }, [sortField, sortDirection])
+
     const { loading, error, data, refetch } = useDataQuery(filesQuery, {
         lazy: true,
+        onComplete: (response) => {
+            if (page !== response.files.pager.page) {
+                setPage(response.files.pager.page)
+            }
+        },
     })
 
     const resetFilters = () => {
@@ -161,11 +174,19 @@ export const OpenFileDialog = ({
             refetch({
                 page,
                 sortField,
-                sortDirection,
+                sortDirection: formatSortDirection(),
                 filters: formatFilters(),
             })
         }
-    }, [open, page, sortField, sortDirection, filters, refetch, formatFilters])
+    }, [
+        open,
+        page,
+        sortField,
+        filters,
+        refetch,
+        formatFilters,
+        formatSortDirection,
+    ])
 
     const headers = [
         {
@@ -404,7 +425,7 @@ export const OpenFileDialog = ({
                                 0 && (
                                 <div className="pagination-controls">
                                     <PaginationControls
-                                        page={page}
+                                        page={data.files.pager.page}
                                         pager={data.files.pager}
                                         onPageChange={setPage}
                                     />

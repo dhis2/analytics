@@ -10,6 +10,7 @@ import {
 import cx from 'classnames'
 import PropTypes from 'prop-types'
 import React, {
+    useCallback,
     useEffect,
     useState,
     useImperativeHandle,
@@ -46,6 +47,7 @@ export const InterpretationsUnit = forwardRef(
             onInterpretationClick,
             onReplyIconClick,
             disabled,
+            renderId,
         },
         ref
     ) => {
@@ -58,23 +60,23 @@ export const InterpretationsUnit = forwardRef(
             }
         )
 
-        const onCompleteAction = () => {
+        const onCompleteAction = useCallback(() => {
             refetch({ type, id })
-        }
+        }, [type, id, refetch])
 
         useImperativeHandle(
             ref,
             () => ({
                 refresh: onCompleteAction,
             }),
-            []
+            [onCompleteAction]
         )
 
         useEffect(() => {
             if (id) {
                 refetch({ type, id })
             }
-        }, [type, id])
+        }, [type, id, renderId, refetch])
 
         return (
             <div
@@ -186,6 +188,7 @@ InterpretationsUnit.propTypes = {
     id: PropTypes.string.isRequired,
     type: PropTypes.string.isRequired,
     disabled: PropTypes.bool,
+    renderId: PropTypes.number,
     onInterpretationClick: PropTypes.func,
     onReplyIconClick: PropTypes.func,
 }

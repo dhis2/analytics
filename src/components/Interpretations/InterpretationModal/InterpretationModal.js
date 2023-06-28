@@ -106,7 +106,7 @@ const InterpretationModal = ({
         if (interpretationId) {
             refetch({ id: interpretationId })
         }
-    }, [interpretationId])
+    }, [interpretationId, refetch])
 
     return (
         <>
@@ -130,7 +130,9 @@ const InterpretationModal = ({
                         {i18n.t(
                             'Viewing interpretation: {{- visualisationName}}',
                             {
-                                visualisationName: visualization.displayName,
+                                visualisationName:
+                                    visualization.displayName ||
+                                    visualization.name,
                                 nsSeparator: '^^',
                             }
                         )}
@@ -160,6 +162,10 @@ const InterpretationModal = ({
                                         visualization={visualization}
                                         onResponsesReceived={
                                             onResponsesReceived
+                                        }
+                                        displayProperty={
+                                            currentUser.settings
+                                                ?.keyAnalysisDisplayProperty
                                         }
                                     />
                                 </div>
@@ -237,10 +243,6 @@ const InterpretationModal = ({
 
 InterpretationModal.propTypes = {
     currentUser: PropTypes.object.isRequired,
-    downloadMenuComponent: PropTypes.oneOfType([
-        PropTypes.object,
-        PropTypes.func,
-    ]).isRequired,
     interpretationId: PropTypes.string.isRequired,
     isVisualizationLoading: PropTypes.bool.isRequired,
     pluginComponent: PropTypes.oneOfType([PropTypes.object, PropTypes.func])
@@ -248,6 +250,10 @@ InterpretationModal.propTypes = {
     visualization: PropTypes.object.isRequired,
     onClose: PropTypes.func.isRequired,
     onResponsesReceived: PropTypes.func.isRequired,
+    downloadMenuComponent: PropTypes.oneOfType([
+        PropTypes.object,
+        PropTypes.func,
+    ]),
     initialFocus: PropTypes.bool,
     onInterpretationUpdate: PropTypes.func,
 }

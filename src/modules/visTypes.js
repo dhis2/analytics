@@ -133,6 +133,8 @@ const legendSetTypes = [
     VIS_TYPE_GAUGE,
     VIS_TYPE_SINGLE_VALUE,
     VIS_TYPE_PIVOT_TABLE,
+    VIS_TYPE_STACKED_COLUMN,
+    VIS_TYPE_STACKED_BAR,
 ]
 
 export const defaultVisType = VIS_TYPE_COLUMN

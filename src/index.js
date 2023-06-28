@@ -32,6 +32,12 @@ export { default as AboutAOUnit } from './components/AboutAOUnit/AboutAOUnit.js'
 export { InterpretationsUnit } from './components/Interpretations/InterpretationsUnit/InterpretationsUnit.js'
 export { InterpretationModal } from './components/Interpretations/InterpretationModal/InterpretationModal.js'
 
+export * from './components/Toolbar/index.js'
+
+export { TranslationDialog } from './components/TranslationDialog/index.js'
+
+export { OfflineTooltip } from './components/OfflineTooltip.js'
+
 export {
     CachedDataQueryProvider,
     useCachedDataQuery,
@@ -133,6 +139,7 @@ export {
     VALUE_TYPE_TIME,
     VALUE_TYPE_DATETIME,
     VALUE_TYPE_ORGANISATION_UNIT,
+    VALUE_TYPE_AGE,
 } from './modules/valueTypes.js'
 
 export {
@@ -340,4 +347,5 @@ export {
     DIMENSION_TYPE_ORGANISATION_UNIT,
     DIMENSION_TYPE_PERIOD,
     DIMENSION_TYPE_ORGANISATION_UNIT_GROUP_SET,
+    DIMENSION_TYPE_EXPRESSION_DIMENSION_ITEM,
 } from './modules/dataTypes.js'

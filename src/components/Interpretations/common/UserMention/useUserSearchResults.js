@@ -29,7 +29,7 @@ export const useUserSearchResults = ({ searchText }) => {
         }
 
         return () => debouncedRefetch.cancel()
-    }, [searchText])
+    }, [searchText, debouncedRefetch])
 
     useEffect(() => {
         if (data) {

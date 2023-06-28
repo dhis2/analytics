@@ -39,11 +39,11 @@ export const CustomSelectOption = (props) =>
     )
 
 CustomSelectOption.propTypes = {
-    icon: PropTypes.element.isRequired,
     label: PropTypes.string.isRequired,
     value: PropTypes.string.isRequired,
     active: PropTypes.bool,
     disabled: PropTypes.bool,
+    icon: PropTypes.element,
     onClick: PropTypes.func,
 }
 

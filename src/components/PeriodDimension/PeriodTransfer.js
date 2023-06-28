@@ -1,3 +1,4 @@
+import { getNowInCalendar } from '@dhis2/multi-calendar-dates'
 import { TabBar, Tab, Transfer } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
@@ -22,14 +23,20 @@ const PeriodTransfer = ({
     initialSelectedPeriods,
     rightFooter,
     excludedPeriodTypes,
+    periodsSettings,
 }) => {
     const defaultRelativePeriodType = excludedPeriodTypes.includes(MONTHLY)
         ? getRelativePeriodsOptionsById(QUARTERLY)
         : getRelativePeriodsOptionsById(MONTHLY)
     const defaultFixedPeriodType = excludedPeriodTypes.includes(MONTHLY)
-        ? getFixedPeriodsOptionsById(QUARTERLY)
-        : getFixedPeriodsOptionsById(MONTHLY)
-    const defaultFixedPeriodYear = new Date().getFullYear()
+        ? getFixedPeriodsOptionsById(QUARTERLY, periodsSettings)
+        : getFixedPeriodsOptionsById(MONTHLY, periodsSettings)
+
+    const now = getNowInCalendar(periodsSettings.calendar)
+    // use ".eraYear" rather than ".year" because in Ethiopian calendar, eraYear is what our users expect to see (for other calendars, it doesn't matter)
+    // there is still a pending decision in Temporal regarding which era to use by default: https://github.com/js-temporal/temporal-polyfill/blob/9350ee7dd0d29f329fc097debf923a517c32f813/lib/calendar.ts#L1964
+    const defaultFixedPeriodYear = now.eraYear || now.year
+
     const fixedPeriodConfig = (year) => ({
         offset: year - defaultFixedPeriodYear,
         filterFuturePeriods: false,
@@ -60,7 +67,8 @@ const PeriodTransfer = ({
                           relativeFilter.periodType
                       ).getPeriods()
                     : getFixedPeriodsOptionsById(
-                          fixedFilter.periodType
+                          fixedFilter.periodType,
+                          periodsSettings
                       ).getPeriods(fixedPeriodConfig(Number(fixedFilter.year)))
             )
         }
@@ -134,8 +142,12 @@ const PeriodTransfer = ({
     const onSelectFixedPeriods = (filter) => {
         setFixedFilter(filter)
         setAllPeriods(
-            getFixedPeriodsOptionsById(filter.periodType).getPeriods(
-                fixedPeriodConfig(Number(filter.year))
+            getFixedPeriodsOptionsById(
+                filter.periodType,
+                periodsSettings
+            ).getPeriods(
+                fixedPeriodConfig(Number(filter.year)),
+                periodsSettings
             )
         )
     }
@@ -189,6 +201,10 @@ const PeriodTransfer = ({
 PeriodTransfer.defaultProps = {
     initialSelectedPeriods: [],
     excludedPeriodTypes: [],
+    periodsSettings: {
+        calendar: 'gregory',
+        locale: 'en',
+    },
 }
 
 PeriodTransfer.propTypes = {
@@ -201,6 +217,10 @@ PeriodTransfer.propTypes = {
             name: PropTypes.string,
         })
     ),
+    periodsSettings: PropTypes.shape({
+        calendar: PropTypes.string,
+        locale: PropTypes.string,
+    }),
     rightFooter: PropTypes.node,
 }
 

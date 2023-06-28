@@ -1,9 +1,25 @@
 # Analytics
 
-master: ![DHIS2: Test](https://github.com/dhis2/analytics/workflows/DHIS2:%20Test/badge.svg) ![DHIS2: Release](https://github.com/dhis2/analytics/workflows/DHIS2:%20Release/badge.svg)
+**master**
+[![Test](https://github.com/dhis2/analytics/actions/workflows/node-test.yml/badge.svg)](https://github.com/dhis2/analytics/actions/workflows/node-test.yml) [![DHIS2: Release](https://github.com/dhis2/analytics/actions/workflows/node-publish.yml/badge.svg)](https://github.com/dhis2/analytics/actions/workflows/node-publish.yml)
 
-4.x:
-![DHIS2: Test](https://github.com/dhis2/analytics/workflows/DHIS2:%20Test/badge.svg?branch=4.x) ![DHIS2: Release](https://github.com/dhis2/analytics/workflows/DHIS2:%20Release/badge.svg?branch=4.x)
+**21.x**
+[![Test](https://github.com/dhis2/analytics/actions/workflows/node-test.yml/badge.svg?branch=21.x)](https://github.com/dhis2/analytics/actions/workflows/node-test.yml) [![DHIS2: Release](https://github.com/dhis2/analytics/actions/workflows/node-publish.yml/badge.svg?branch=21.x)](https://github.com/dhis2/analytics/actions/workflows/node-publish.yml)
+
+**20.x**
+[![Test](https://github.com/dhis2/analytics/actions/workflows/node-test.yml/badge.svg?branch=20.x)](https://github.com/dhis2/analytics/actions/workflows/node-test.yml) [![DHIS2: Release](https://github.com/dhis2/analytics/actions/workflows/node-publish.yml/badge.svg?branch=20.x)](https://github.com/dhis2/analytics/actions/workflows/node-publish.yml)
+
+**16.x**
+[![Test](https://github.com/dhis2/analytics/actions/workflows/node-test.yml/badge.svg?branch=16.x)](https://github.com/dhis2/analytics/actions/workflows/node-test.yml) [![DHIS2: Release](https://github.com/dhis2/analytics/actions/workflows/node-publish.yml/badge.svg?branch=16.x)](https://github.com/dhis2/analytics/actions/workflows/node-publish.yml)
+
+**11.0.x**
+[![Test](https://github.com/dhis2/analytics/actions/workflows/node-test.yml/badge.svg?branch=11.0.x)](https://github.com/dhis2/analytics/actions/workflows/node-test.yml) [![DHIS2: Release](https://github.com/dhis2/analytics/actions/workflows/node-publish.yml/badge.svg?branch=11.0.x)](https://github.com/dhis2/analytics/actions/workflows/node-publish.yml)
+
+**4.x**
+[![Test](https://github.com/dhis2/analytics/actions/workflows/node-test.yml/badge.svg?branch=4.x)](https://github.com/dhis2/analytics/actions/workflows/node-test.yml) [![DHIS2: Release](https://github.com/dhis2/analytics/actions/workflows/node-publish.yml/badge.svg?branch=4.x)](https://github.com/dhis2/analytics/actions/workflows/node-publish.yml)
+
+**2.4.x**
+[![Test](https://github.com/dhis2/analytics/actions/workflows/node-test.yml/badge.svg?branch=2.4.x)](https://github.com/dhis2/analytics/actions/workflows/node-test.yml) [![DHIS2: Release](https://github.com/dhis2/analytics/actions/workflows/node-publish.yml/badge.svg?branch=2.4.x)](https://github.com/dhis2/analytics/actions/workflows/node-publish.yml)
 
 ## Overview
 
@@ -25,21 +41,9 @@ To publish, simply mark the commit using [semantic release terminology](https://
 
 The master branch follows semantic versioning according to spec.
 
-### 16.x branch
+### .x branches
 
-Commits to the 16.x branch cannot trigger a major version bump, even if it is technically a breaking change. This is because 17.0.0 has already been published. In the unlikely case that you need to commit a change that is considered breaking, you will have to mark it to only trigger a patch or minor bump, then make sure to update the apps that are locked to the 16.x version of analytics
-
-### 11.0.x branch
-
-Commits to the 11.0.x branch cannot trigger a major or minor version bump, even if it is technically a breaking or feature change. This is because 11.1.0 and 12.0.0 have already been published. In the unlikely case that you need to commit a change that is considered breaking or feature, you will have to mark it to only trigger a patch bump, then make sure to update the apps that are locked to the 11.0.x version of analytics
-
-### 4.x branch
-
-Commits to the 4.x branch cannot trigger a major version bump, even if it is technically a breaking change. This is because 5.0.0 has already been published. In the unlikely case that you need to commit a change that is considered breaking, you will have to mark it to only trigger a patch or minor bump, then make sure to update the apps that are locked to the 4.x version of analytics
-
-### 2.4.x branch
-
-Commits to the 2.4.x branch cannot trigger a major or minor version bump, even if it is technically a breaking or feature change. This is because 2.5.0 and 3.0.0 have already been published. In the unlikely case that you need to commit a change that is considered breaking or feature, you will have to mark it to only trigger a patch bump, then make sure to update the apps that are locked to the 2.4.x version of analytics
+Commits to .x branches (e.g. 16.x) cannot trigger a major version bump, even if it is technically a breaking change. This is because the next version has already been published. Additionally, branches that use .x for the patch version (e.g. 11.0.x, 2.4.x), cannot trigger a minor version bump. In the unlikely case that you need to commit a change that would trigger a version bump that's not possible, you will have to mark it to only trigger a patch or minor bump respectively, then make sure to update the apps that are locked to the .x version of analytics
 
 ## Report an issue
 

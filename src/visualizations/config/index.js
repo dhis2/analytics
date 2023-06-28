@@ -69,5 +69,6 @@ export default function ({
             ...extraOptions,
             noData: DEFAULT_EXTRA_OPTIONS.noData,
             fontStyle: layout.fontStyle,
+            legendOptions: layout.legend,
         })
 }

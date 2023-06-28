@@ -2,6 +2,7 @@ import { Provider } from '@dhis2/app-runtime'
 import { storiesOf } from '@storybook/react'
 import React from 'react'
 import { FileMenu } from '../components/FileMenu/FileMenu.js'
+import { HoverMenuBar } from '../components/Toolbar/index.js'
 
 const configMock = {
     baseUrl: 'http://localhost:8080',
@@ -19,10 +20,10 @@ const visObject = {
     href: 'http://localhost:8080/api/32/visualizations/a8LrqsBQlHP',
     id: 'a8LrqsBQlHP',
     created: '2012-11-05T09:17:23.388',
-    name: 'ANC: 1-3 dropout rate Yearly copy1',
+    name: 'ANC: 1-3 dropout rate Yearly',
     publicAccess: '--------',
     displayDescription: 'some _italic (10%)_ and some *bold (10%)*',
-    displayName: 'ANC: 1-3 dropout rate Yearly copy1',
+    displayName: 'ANC: 1-3 dropout rate Yearly',
     description: 'some _italic (10%)_ and some *bold (10%)*',
     externalAccess: false,
     access: {
@@ -61,24 +62,30 @@ const visReadonlyObject = {
 storiesOf('FileMenu', module)
     .add('Simple', () => (
         <Provider config={configMock}>
-            <FileMenu currentUser={user} fileType="visualization" />
+            <HoverMenuBar>
+                <FileMenu currentUser={user} fileType="visualization" />
+            </HoverMenuBar>
         </Provider>
     ))
     .add('With AO', () => (
         <Provider config={configMock}>
-            <FileMenu
-                currentUser={user}
-                fileType="visualization"
-                fileObject={visObject}
-            />
+            <HoverMenuBar>
+                <FileMenu
+                    currentUser={user}
+                    fileType="visualization"
+                    fileObject={visObject}
+                />
+            </HoverMenuBar>
         </Provider>
     ))
     .add('With readonly AO', () => (
         <Provider config={configMock}>
-            <FileMenu
-                currentUser={user}
-                fileType="visualization"
-                fileObject={visReadonlyObject}
-            />
+            <HoverMenuBar>
+                <FileMenu
+                    currentUser={user}
+                    fileType="visualization"
+                    fileObject={visReadonlyObject}
+                />
+            </HoverMenuBar>
         </Provider>
     ))

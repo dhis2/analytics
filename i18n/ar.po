@@ -2,15 +2,15 @@
 # Translators:
 # Viktor Varland <viktor@dhis2.org>, 2022
 # Hamza Assada <7amza.it@gmail.com>, 2022
-# phil_dhis2, 2022
+# phil_dhis2, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-08-10T13:11:21.079Z\n"
+"POT-Creation-Date: 2023-04-18T08:41:27.838Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: phil_dhis2, 2022\n"
-"Language-Team: Arabic (https://www.transifex.com/hisp-uio/teams/100509/ar/)\n"
+"Last-Translator: phil_dhis2, 2023\n"
+"Language-Team: Arabic (https://app.transifex.com/hisp-uio/teams/100509/ar/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -35,9 +35,6 @@ msgstr ""
 msgid "Not shared with any users or groups"
 msgstr ""
 
-msgid "About this visualization"
-msgstr ""
-
 msgid "No description"
 msgstr "لا يوجد وصف"
 
@@ -45,6 +42,9 @@ msgid "Last updated {{time}}"
 msgstr ""
 
 msgid "Created {{time}} by {{author}}"
+msgstr ""
+
+msgid "Created {{time}}"
 msgstr ""
 
 msgid "Viewed {{count}} times"
@@ -71,10 +71,89 @@ msgstr ""
 msgid "Subscribe"
 msgstr ""
 
+msgid "About this map"
+msgstr ""
+
+msgid "About this line list"
+msgstr ""
+
+msgid "About this visualization"
+msgstr ""
+
 msgid "This app could not retrieve required data."
 msgstr ""
 
 msgid "Network error"
+msgstr ""
+
+msgid "Data / Edit calculation"
+msgstr ""
+
+msgid "Data / New calculation"
+msgstr ""
+
+msgid "Remove item"
+msgstr ""
+
+msgid "Check formula"
+msgstr ""
+
+msgid "Calculation name"
+msgstr ""
+
+msgid "Shown in table headers and chart axes/legends"
+msgstr ""
+
+msgid "Delete calculation"
+msgstr ""
+
+msgid "Cancel"
+msgstr "إلغاء"
+
+msgid "The calculation can only be saved with a valid formula"
+msgstr ""
+
+msgid "Add a name to save this calculation"
+msgstr ""
+
+msgid "Save calculation"
+msgstr ""
+
+msgid ""
+"Are you sure you want to delete this calculation? It may be used by other "
+"visualizations."
+msgstr ""
+
+msgid "Yes, delete"
+msgstr ""
+
+msgid "Totals only"
+msgstr ""
+
+msgid "Details only"
+msgstr ""
+
+msgid "Loading"
+msgstr "جار التحميل"
+
+msgid "Data elements"
+msgstr "عناصر البيانات"
+
+msgid "Search by data element name"
+msgstr ""
+
+msgid "No data elements found for \"{{- searchTerm}}\""
+msgstr ""
+
+msgid "No data elements found"
+msgstr ""
+
+msgid ""
+"Drag items here, or double click in the list, to start building a "
+"calculation formula"
+msgstr ""
+
+msgid "Math operators"
 msgstr ""
 
 msgid "Data Type"
@@ -83,20 +162,11 @@ msgstr "نوع البيانات"
 msgid "All types"
 msgstr "جميع الأنواع"
 
-msgid "Totals only"
-msgstr ""
-
-msgid "Details only"
-msgstr ""
-
 msgid "Disaggregation"
 msgstr "تصنيف"
 
 msgid "No data"
 msgstr "لا توجد بيانات"
-
-msgid "Loading"
-msgstr "جار التحميل"
 
 msgid "Search by data item name"
 msgstr ""
@@ -108,9 +178,6 @@ msgid "Selected Items"
 msgstr "العناصر المحددة"
 
 msgid "No indicators found"
-msgstr ""
-
-msgid "No data elements found"
 msgstr ""
 
 msgid "No data sets found"
@@ -125,9 +192,6 @@ msgstr ""
 msgid "No indicators found for \"{{- searchTerm}}\""
 msgstr ""
 
-msgid "No data elements found for \"{{- searchTerm}}\""
-msgstr ""
-
 msgid "No data sets found for \"{{- searchTerm}}\""
 msgstr ""
 
@@ -138,6 +202,9 @@ msgid "No program indicators found for \"{{- searchTerm}}\""
 msgstr ""
 
 msgid "Nothing found for \"{{- searchTerm}}\""
+msgstr ""
+
+msgid "Calculation"
 msgstr ""
 
 msgid "Metric type"
@@ -206,9 +273,6 @@ msgid ""
 "This {{fileType}} and related interpretations will be deleted. Continue?"
 msgstr ""
 
-msgid "Cancel"
-msgstr "إلغاء"
-
 msgid "Delete"
 msgstr "حذف"
 
@@ -259,6 +323,9 @@ msgstr "الوصف"
 
 msgid "Rename"
 msgstr "إعادة التسمية"
+
+msgid "{{- objectName}} (copy)"
+msgstr ""
 
 msgid "Save {{fileType}} as"
 msgstr ""
@@ -372,6 +439,9 @@ msgstr ""
 
 msgid "No results found"
 msgstr "لم يتم العثور على أي نتائج"
+
+msgid "Not available offline"
+msgstr "غير متوفر في وضع عدم الإتصال"
 
 msgid "Created by"
 msgstr "تم الإنشاء بواسطة"
@@ -583,48 +653,6 @@ msgstr "الفترات المحددة"
 
 msgid "No periods selected"
 msgstr "لم يتم تحديد أية فترات زمنية"
-
-msgid "January"
-msgstr "يناير"
-
-msgid "February"
-msgstr "فبراير"
-
-msgid "March"
-msgstr "مارس"
-
-msgid "April"
-msgstr "ابريل"
-
-msgid "May"
-msgstr "مايو"
-
-msgid "June"
-msgstr "يونيو"
-
-msgid "July"
-msgstr "يوليو"
-
-msgid "August"
-msgstr "اغسطس"
-
-msgid "September"
-msgstr "سبتمبر"
-
-msgid "October"
-msgstr "اكتوبر"
-
-msgid "November"
-msgstr "نوفمبر"
-
-msgid "December"
-msgstr "ديسمبر"
-
-msgid "Week {{weekNumber}}"
-msgstr "الإسبوع {{weekNumber}}"
-
-msgid "Bi-Week {{biWeekNumber}}"
-msgstr "ثنائي الإسبوع {{biWeekNumber}}"
 
 msgid "Daily"
 msgstr "يومي"
@@ -848,6 +876,9 @@ msgstr ""
 msgid "Save translations"
 msgstr ""
 
+msgid "Cannot save while offline"
+msgstr ""
+
 msgid "Could not load translations"
 msgstr ""
 
@@ -911,9 +942,6 @@ msgstr ""
 msgid "Loading indicator groups"
 msgstr ""
 
-msgid "Data elements"
-msgstr "عناصر البيانات"
-
 msgid "Data element group"
 msgstr "مجموعة عناصر البيانات"
 
@@ -958,6 +986,33 @@ msgstr "مؤشرات البرنامج"
 
 msgid "Program indicator"
 msgstr "مؤشرات البرنامج"
+
+msgid "Calculations"
+msgstr ""
+
+msgid "Number"
+msgstr "العدد"
+
+msgid "Formula is empty. Add items to the formula from the lists on the left."
+msgstr ""
+
+msgid "Consecutive math operators"
+msgstr ""
+
+msgid "Consecutive data elements"
+msgstr ""
+
+msgid "Starts or ends with a math operator"
+msgstr ""
+
+msgid "Empty parentheses"
+msgstr ""
+
+msgid "Missing right parenthesis )"
+msgstr ""
+
+msgid "Missing left parenthesis ("
+msgstr ""
 
 msgid "Extra Small"
 msgstr "صغير جدا"
