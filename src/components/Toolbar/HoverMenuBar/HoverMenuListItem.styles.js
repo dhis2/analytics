@@ -22,6 +22,10 @@ export default css`
         background-color: ${colors.grey200};
     }
 
+    li.dense {
+        padding: 0px ${spacers.dp12};
+    }
+
     li.destructive {
         color: ${colors.red700};
         fill: ${colors.red600};
