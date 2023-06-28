@@ -2,6 +2,7 @@ import { Provider } from '@dhis2/app-runtime'
 import { storiesOf } from '@storybook/react'
 import React from 'react'
 import { FileMenu } from '../components/FileMenu/FileMenu.js'
+import { HoverMenuBar } from '../components/Toolbar/index.js'
 
 const configMock = {
     baseUrl: 'http://localhost:8080',
@@ -61,24 +62,30 @@ const visReadonlyObject = {
 storiesOf('FileMenu', module)
     .add('Simple', () => (
         <Provider config={configMock}>
-            <FileMenu currentUser={user} fileType="visualization" />
+            <HoverMenuBar>
+                <FileMenu currentUser={user} fileType="visualization" />
+            </HoverMenuBar>
         </Provider>
     ))
     .add('With AO', () => (
         <Provider config={configMock}>
-            <FileMenu
-                currentUser={user}
-                fileType="visualization"
-                fileObject={visObject}
-            />
+            <HoverMenuBar>
+                <FileMenu
+                    currentUser={user}
+                    fileType="visualization"
+                    fileObject={visObject}
+                />
+            </HoverMenuBar>
         </Provider>
     ))
     .add('With readonly AO', () => (
         <Provider config={configMock}>
-            <FileMenu
-                currentUser={user}
-                fileType="visualization"
-                fileObject={visReadonlyObject}
-            />
+            <HoverMenuBar>
+                <FileMenu
+                    currentUser={user}
+                    fileType="visualization"
+                    fileObject={visReadonlyObject}
+                />
+            </HoverMenuBar>
         </Provider>
     ))
