@@ -90,7 +90,7 @@ const parse = (code) => (state, silent) => {
     return false
 }
 
-class MdParser {
+export class MdParser {
     constructor() {
         // disable all rules, enable autolink for URLs and email addresses
         md = new MarkdownIt('zero', { linkify: true })
@@ -115,5 +115,3 @@ class MdParser {
         return md.renderInline(text)
     }
 }
-
-export default MdParser

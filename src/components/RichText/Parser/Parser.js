@@ -1,15 +1,15 @@
 import PropTypes from 'prop-types'
 import React, { useMemo } from 'react'
-import MdParserClass from './MdParser.js'
+import { MdParser } from './MdParser.js'
 
-const Parser = ({ children, style }) => {
-    const MdParser = useMemo(() => new MdParserClass(), [])
+export const Parser = ({ children, style }) => {
+    const MdParserInstance = useMemo(() => new MdParser(), [])
 
     return children ? (
         <p
             style={style}
             dangerouslySetInnerHTML={{
-                __html: MdParser.render(children),
+                __html: MdParserInstance.render(children),
             }}
         />
     ) : null
@@ -26,5 +26,3 @@ Parser.propTypes = {
     ]),
     style: PropTypes.object,
 }
-
-export default Parser

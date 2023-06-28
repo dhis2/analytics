@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2023-09-27T14:15:13.876Z\n"
-"PO-Revision-Date: 2023-09-27T14:15:13.876Z\n"
+"POT-Creation-Date: 2023-06-26T13:41:45.359Z\n"
+"PO-Revision-Date: 2023-06-26T13:41:45.359Z\n"
 
 msgid "view only"
 msgstr "view only"
@@ -414,39 +414,6 @@ msgstr "Could not update interpretation"
 
 msgid "Enter interpretation text"
 msgstr "Enter interpretation text"
-
-msgid "Bold text"
-msgstr "Bold text"
-
-msgid "Italic text"
-msgstr "Italic text"
-
-msgid "Link to a URL"
-msgstr "Link to a URL"
-
-msgid "Mention a user"
-msgstr "Mention a user"
-
-msgid "Add emoji"
-msgstr "Add emoji"
-
-msgid "Preview"
-msgstr "Preview"
-
-msgid "Back to write mode"
-msgstr "Back to write mode"
-
-msgid "Too many results. Try refining the search."
-msgstr "Too many results. Try refining the search."
-
-msgid "Search for a user"
-msgstr "Search for a user"
-
-msgid "Searching for \"{{- searchText}}\""
-msgstr "Searching for \"{{- searchText}}\""
-
-msgid "No results found"
-msgstr "No results found"
 
 msgid "Not available offline"
 msgstr "Not available offline"
@@ -870,6 +837,27 @@ msgstr "Financial Years"
 msgid "Years"
 msgstr "Years"
 
+msgid "Bold text"
+msgstr "Bold text"
+
+msgid "Italic text"
+msgstr "Italic text"
+
+msgid "Link to a URL"
+msgstr "Link to a URL"
+
+msgid "Mention a user"
+msgstr "Mention a user"
+
+msgid "Add emoji"
+msgstr "Add emoji"
+
+msgid "Preview"
+msgstr "Preview"
+
+msgid "Back to write mode"
+msgstr "Back to write mode"
+
 msgid "Interpretations and details"
 msgstr "Interpretations and details"
 
@@ -899,6 +887,18 @@ msgstr "Could not load translations"
 
 msgid "Retry"
 msgstr "Retry"
+
+msgid "Too many results. Try refining the search."
+msgstr "Too many results. Try refining the search."
+
+msgid "Search for a user"
+msgstr "Search for a user"
+
+msgid "Searching for \"{{- searchText}}\""
+msgstr "Searching for \"{{- searchText}}\""
+
+msgid "No results found"
+msgstr "No results found"
 
 msgid "Series"
 msgstr "Series"

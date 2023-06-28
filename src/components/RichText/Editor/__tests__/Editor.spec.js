@@ -1,26 +1,26 @@
 import { shallow } from 'enzyme'
 import React from 'react'
-import convertCtrlKey from '../convertCtrlKey.js'
-import Editor from '../Editor.js'
+import { Editor } from '../Editor.js'
 
-jest.mock('../convertCtrlKey')
+const mockConvertCtrlKey = jest.fn()
+jest.mock('../markdownHandler.js', () => ({
+    convertCtrlKey: () => mockConvertCtrlKey(),
+}))
 
 describe('RichText: Editor component', () => {
     let richTextEditor
+
     const componentProps = {
-        onEdit: jest.fn(),
+        value: '',
+        onChange: jest.fn(),
     }
 
     beforeEach(() => {
-        convertCtrlKey.mockClear()
+        mockConvertCtrlKey.mockClear()
     })
 
     const renderComponent = (props) => {
-        return shallow(
-            <Editor {...props}>
-                <input />
-            </Editor>
-        )
+        return shallow(<Editor {...props} />)
     }
 
     it('renders a result', () => {
@@ -30,8 +30,7 @@ describe('RichText: Editor component', () => {
     })
 
     it('calls convertCtrlKey on keydown', () => {
-        richTextEditor = renderComponent(componentProps)
-        richTextEditor.simulate('keyDown')
-        expect(convertCtrlKey).toHaveBeenCalled()
+        renderComponent(componentProps).find('textarea').simulate('keyDown')
+        expect(mockConvertCtrlKey).toHaveBeenCalled()
     })
 })

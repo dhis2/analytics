@@ -1,5 +1,3 @@
-export { default as RichTextEditor } from './editor/Editor.js'
-export { default as RichTextParser } from './parser/Parser.js'
-
-export { default as convertCtrlKey } from './editor/convertCtrlKey.js'
-export { default as ClassMdParser } from './parser/MdParser.js'
+export { Editor as RichTextEditor } from './Editor/Editor.js'
+export { Parser as RichTextParser } from './Parser/Parser.js'
+export { MdParser as RichTextMdParser } from './Parser/MdParser.js'

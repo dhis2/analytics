@@ -1,4 +1,4 @@
-import MdParser from '../MdParser.js'
+import { MdParser } from '../MdParser.js'
 
 const Parser = new MdParser()
 

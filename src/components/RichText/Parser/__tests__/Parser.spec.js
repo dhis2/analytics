@@ -1,13 +1,12 @@
 import { shallow } from 'enzyme'
 import React from 'react'
-import Parser from '../Parser.js'
-import '../MdParser.js'
+import { Parser } from '../Parser.js'
 
-jest.mock('../MdParser', () => {
-    return jest.fn().mockImplementation(() => {
+jest.mock('../MdParser.js', () => ({
+    MdParser: jest.fn().mockImplementation(() => {
         return { render: () => 'converted text' }
-    })
-})
+    }),
+}))
 
 describe('RichText: Parser component', () => {
     let richTextParser

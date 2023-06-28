@@ -1,4 +1,4 @@
-import convertCtrlKey from '../convertCtrlKey.js'
+import { convertCtrlKey } from '../markdownHandler.js'
 
 describe('convertCtrlKey', () => {
     it('does not trigger callback if no ctrl key', () => {
