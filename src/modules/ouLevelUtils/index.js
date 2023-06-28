@@ -15,9 +15,11 @@ const replaceNumericOuLevelWithUid = (ouLevels) => (item) => {
     }
 
     const ouIntId = parseInt(ouIdHelper.removePrefix(item.id), 10)
-    const ouUid = ouLevels.find((l) => parseInt(l.level, 10) === ouIntId).id
+    const ouUid = ouLevels.find((l) => parseInt(l.level, 10) === ouIntId)?.id
 
-    return Object.assign({}, item, { id: ouIdHelper.addLevelPrefix(ouUid) })
+    return ouUid
+        ? Object.assign({}, item, { id: ouIdHelper.addLevelPrefix(ouUid) })
+        : item
 }
 
 export const convertOuLevelsToUids = (ouLevels, layout) => {
