@@ -4,6 +4,12 @@ import React from 'react'
 import { GetLinkDialog } from '../GetLinkDialog.js'
 import { appPathFor } from '../utils.js'
 
+const testBaseUrl = 'http://test.tld/test'
+
+jest.mock('@dhis2/app-runtime', () => ({
+    useConfig: () => ({ baseUrl: testBaseUrl }),
+}))
+
 describe('The FileMenu - GetLinkDialog component', () => {
     let shallowGetLinkDialog
     let props
@@ -33,11 +39,13 @@ describe('The FileMenu - GetLinkDialog component', () => {
     it('renders a <a> tag containing the type and id props', () => {
         const href = getGetLinkDialogComponent(props).find('a').prop('href')
 
-        expect(href).toMatch(appPathFor(props.type, props.id))
+        expect(href).toMatch(
+            new URL(appPathFor(props.type, props.id), testBaseUrl).href
+        )
     })
 
     it('calls the onClose callback when the Close button is clicked', () => {
-        getGetLinkDialogComponent(props).find(Button).first().simulate('click')
+        getGetLinkDialogComponent(props).find(Button).at(1).simulate('click')
 
         expect(onClose).toHaveBeenCalled()
     })
