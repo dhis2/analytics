@@ -45,7 +45,7 @@ const InterpretationThread = ({
                         onUpdated={() => onThreadUpdated(true)}
                         onDeleted={onInterpretationDeleted}
                         dashboardRedirectUrl={dashboardRedirectUrl}
-                        isThread={true}
+                        inThreadView={true}
                     />
                     <div className={'comments'}>
                         {interpretation.comments.map((comment) => (

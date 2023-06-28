@@ -70,7 +70,7 @@ export const InterpretationList = ({
                                         dashboardRedirectUrl={
                                             dashboardRedirectUrl
                                         }
-                                        isThread={false}
+                                        inThreadView={false}
                                     />
                                 ))}
                         </ol>
