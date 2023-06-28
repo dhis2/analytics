@@ -5,7 +5,7 @@ import styles from './styles/LegendKey.style.js'
 
 const LegendKey = ({ legendSets }) => {
     return legendSets.length ? (
-        <div className="container" data-test={'legend-key-container'}>
+        <div className="container" data-test="legend-key-container">
             {legendSets.map((legendSet, index) => (
                 <div
                     key={legendSet.id}
