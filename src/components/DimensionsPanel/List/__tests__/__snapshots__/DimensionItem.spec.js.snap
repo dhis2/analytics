@@ -2,68 +2,37 @@
 
 exports[`DimensionItem matches the snapshot 1`] = `
 <li
+  className="
+                item 
+                clickable
+                
+                "
   name="Period"
   onClick={[Function]}
   onMouseLeave={[Function]}
   onMouseOver={[Function]}
-  style={
-    Object {
-      "alignItems": "center",
-      "borderRadius": "2px",
-      "cursor": "pointer",
-      "display": "flex",
-      "marginBottom": 3,
-      "marginTop": 3,
-      "minHeight": "24px",
-    }
-  }
+  style={Object {}}
 >
   <div
-    className="label"
+    className="
+                    label
+                    
+                    "
     data-test="undefined-button-pe"
-    style={
-      Object {
-        "display": "flex",
-        "outline": "none",
-      }
-    }
     tabIndex={0}
   >
     <div
-      style={
-        Object {
-          "display": "flex",
-          "flexDirection": "column",
-          "padding": "3px 8px 0 8px",
-        }
-      }
+      className="icon-wrapper"
     >
       <SvgClock16
-        style={
-          Object {
-            "paddingBottom": "2px",
-            "paddingLeft": "6px",
-          }
-        }
+        className="fixed-dimension-icon"
       />
     </div>
     <div
-      style={
-        Object {
-          "padding": "2px 5px 2px 0",
-        }
-      }
+      className="label-wrapper"
     >
       <span
         data-dimensionid="pe"
-        style={
-          Object {
-            "color": "#212934",
-            "fontSize": "14px",
-            "userSelect": "none",
-            "wordBreak": "break-word",
-          }
-        }
       >
         Period
       </span>
@@ -73,73 +42,43 @@ exports[`DimensionItem matches the snapshot 1`] = `
       />
     </div>
   </div>
+  <style />
 </li>
 `;
 
 exports[`DimensionItem matches the snapshot with locked 1`] = `
 <li
+  className="
+                item 
+                clickable
+                
+                "
   name="Period"
   onClick={[Function]}
   onMouseLeave={[Function]}
   onMouseOver={[Function]}
-  style={
-    Object {
-      "alignItems": "center",
-      "borderRadius": "2px",
-      "cursor": "pointer",
-      "display": "flex",
-      "marginBottom": 3,
-      "marginTop": 3,
-      "minHeight": "24px",
-    }
-  }
+  style={Object {}}
 >
   <div
-    className="label"
+    className="
+                    label
+                    
+                    "
     data-test="undefined-button-pe"
-    style={
-      Object {
-        "display": "flex",
-        "outline": "none",
-      }
-    }
     tabIndex={0}
   >
     <div
-      style={
-        Object {
-          "display": "flex",
-          "flexDirection": "column",
-          "padding": "3px 8px 0 8px",
-        }
-      }
+      className="icon-wrapper"
     >
       <SvgClock16
-        style={
-          Object {
-            "paddingBottom": "2px",
-            "paddingLeft": "6px",
-          }
-        }
+        className="fixed-dimension-icon"
       />
     </div>
     <div
-      style={
-        Object {
-          "padding": "2px 5px 2px 0",
-        }
-      }
+      className="label-wrapper"
     >
       <span
         data-dimensionid="pe"
-        style={
-          Object {
-            "color": "#212934",
-            "fontSize": "14px",
-            "userSelect": "none",
-            "wordBreak": "break-word",
-          }
-        }
       >
         Period
       </span>
@@ -149,84 +88,48 @@ exports[`DimensionItem matches the snapshot with locked 1`] = `
       />
     </div>
     <div
-      style={
-        Object {
-          "display": "flex",
-          "flexDirection": "column",
-          "padding": "3px 8px 0 8px",
-        }
-      }
+      className="lock-wrapper"
     >
       <SvgLock16 />
     </div>
   </div>
+  <style />
 </li>
 `;
 
 exports[`DimensionItem matches the snapshot with onOptionsClick 1`] = `
 <li
+  className="
+                item 
+                clickable
+                
+                "
   name="Period"
   onClick={[Function]}
   onMouseLeave={[Function]}
   onMouseOver={[Function]}
-  style={
-    Object {
-      "alignItems": "center",
-      "borderRadius": "2px",
-      "cursor": "pointer",
-      "display": "flex",
-      "marginBottom": 3,
-      "marginTop": 3,
-      "minHeight": "24px",
-    }
-  }
+  style={Object {}}
 >
   <div
-    className="label"
+    className="
+                    label
+                    
+                    "
     data-test="undefined-button-pe"
-    style={
-      Object {
-        "display": "flex",
-        "outline": "none",
-      }
-    }
     tabIndex={0}
   >
     <div
-      style={
-        Object {
-          "display": "flex",
-          "flexDirection": "column",
-          "padding": "3px 8px 0 8px",
-        }
-      }
+      className="icon-wrapper"
     >
       <SvgClock16
-        style={
-          Object {
-            "paddingBottom": "2px",
-            "paddingLeft": "6px",
-          }
-        }
+        className="fixed-dimension-icon"
       />
     </div>
     <div
-      style={
-        Object {
-          "padding": "2px 5px 2px 0",
-        }
-      }
+      className="label-wrapper"
     >
       <span
         data-dimensionid="pe"
-        style={
-          Object {
-            "color": "#212934",
-            "fontSize": "14px",
-            "userSelect": "none",
-            "wordBreak": "break-word",
-          }
-        }
       >
         Period
       </span>
@@ -237,83 +140,46 @@ exports[`DimensionItem matches the snapshot with onOptionsClick 1`] = `
     </div>
   </div>
   <div
+    className="options-wrapper"
     data-test="undefined-menu-pe"
-    style={
-      Object {
-        "height": "20px",
-        "left": "5px",
-        "position": "relative",
-        "width": "20px",
-      }
-    }
   />
+  <style />
 </li>
 `;
 
 exports[`DimensionItem matches the snapshot with recommended 1`] = `
 <li
+  className="
+                item 
+                clickable
+                
+                "
   name="Period"
   onClick={[Function]}
   onMouseLeave={[Function]}
   onMouseOver={[Function]}
-  style={
-    Object {
-      "alignItems": "center",
-      "borderRadius": "2px",
-      "cursor": "pointer",
-      "display": "flex",
-      "marginBottom": 3,
-      "marginTop": 3,
-      "minHeight": "24px",
-    }
-  }
+  style={Object {}}
 >
   <div
-    className="label"
+    className="
+                    label
+                    
+                    "
     data-test="undefined-button-pe"
-    style={
-      Object {
-        "display": "flex",
-        "outline": "none",
-      }
-    }
     tabIndex={0}
   >
     <div
-      style={
-        Object {
-          "display": "flex",
-          "flexDirection": "column",
-          "padding": "3px 8px 0 8px",
-        }
-      }
+      className="icon-wrapper"
     >
       <SvgClock16
-        style={
-          Object {
-            "paddingBottom": "2px",
-            "paddingLeft": "6px",
-          }
-        }
+        className="fixed-dimension-icon"
       />
     </div>
     <div
-      style={
-        Object {
-          "padding": "2px 5px 2px 0",
-        }
-      }
+      className="label-wrapper"
     >
       <span
         data-dimensionid="pe"
-        style={
-          Object {
-            "color": "#212934",
-            "fontSize": "14px",
-            "userSelect": "none",
-            "wordBreak": "break-word",
-          }
-        }
       >
         Period
       </span>
@@ -323,75 +189,43 @@ exports[`DimensionItem matches the snapshot with recommended 1`] = `
       />
     </div>
   </div>
+  <style />
 </li>
 `;
 
 exports[`DimensionItem matches the snapshot with selected 1`] = `
 <li
+  className="
+                item 
+                clickable
+                selected
+                "
   name="Period"
   onClick={[Function]}
   onMouseLeave={[Function]}
   onMouseOver={[Function]}
-  style={
-    Object {
-      "alignItems": "center",
-      "backgroundColor": "#e0f2f1",
-      "borderRadius": "2px",
-      "cursor": "pointer",
-      "display": "flex",
-      "fontWeight": 500,
-      "marginBottom": 3,
-      "marginTop": 3,
-      "minHeight": "24px",
-    }
-  }
+  style={Object {}}
 >
   <div
-    className="label"
+    className="
+                    label
+                    
+                    "
     data-test="undefined-button-pe"
-    style={
-      Object {
-        "display": "flex",
-        "outline": "none",
-      }
-    }
     tabIndex={0}
   >
     <div
-      style={
-        Object {
-          "display": "flex",
-          "flexDirection": "column",
-          "padding": "3px 8px 0 8px",
-        }
-      }
+      className="icon-wrapper"
     >
       <SvgClock16
-        style={
-          Object {
-            "paddingBottom": "2px",
-            "paddingLeft": "6px",
-          }
-        }
+        className="fixed-dimension-icon"
       />
     </div>
     <div
-      style={
-        Object {
-          "padding": "2px 5px 2px 0",
-        }
-      }
+      className="label-wrapper"
     >
       <span
         data-dimensionid="pe"
-        style={
-          Object {
-            "color": "#212934",
-            "fontSize": "14px",
-            "userSelect": "none",
-            "wordBreak": "break-word",
-          }
-        }
       >
         Period
       </span>
@@ -401,5 +235,6 @@ exports[`DimensionItem matches the snapshot with selected 1`] = `
       />
     </div>
   </div>
+  <style />
 </li>
 `;
