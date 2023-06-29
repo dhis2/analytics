@@ -55,12 +55,14 @@ const InterpretationThread = ({
                             />
                         ))}
                     </div>
-                    <CommentAddForm
-                        currentUser={currentUser}
-                        interpretationId={interpretation.id}
-                        onSave={() => onThreadUpdated(true)}
-                        focusRef={focusRef}
-                    />
+                    {interpretation.access.write && (
+                        <CommentAddForm
+                            currentUser={currentUser}
+                            interpretationId={interpretation.id}
+                            onSave={() => onThreadUpdated(true)}
+                            focusRef={focusRef}
+                        />
+                    )}
                 </div>
             </div>
             <style jsx>{`
