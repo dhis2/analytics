@@ -62,13 +62,15 @@ export const Interpretation = ({
                         disabled={toggleLikeInProgress}
                         dataTest="interpretation-like-unlike-button"
                     />
-                    <MessageIconButton
-                        tooltipContent={i18n.t('Reply')}
-                        iconComponent={IconReply16}
-                        onClick={() => onReplyIconClick(interpretation.id)}
-                        count={interpretation.comments.length}
-                        dataTest="interpretation-reply-button"
-                    />
+                    {interpretation.access.write && (
+                        <MessageIconButton
+                            tooltipContent={i18n.t('Reply')}
+                            iconComponent={IconReply16}
+                            onClick={() => onReplyIconClick(interpretation.id)}
+                            count={interpretation.comments.length}
+                            dataTest="interpretation-reply-button"
+                        />
+                    )}
                     {interpretation.access.manage && (
                         <MessageIconButton
                             iconComponent={IconShare16}

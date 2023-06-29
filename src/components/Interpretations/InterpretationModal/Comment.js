@@ -6,6 +6,9 @@ import { Message, MessageIconButton, MessageStatsBar } from '../common/index.js'
 import { CommentDeleteButton } from './CommentDeleteButton.js'
 import { CommentUpdateForm } from './CommentUpdateForm.js'
 
+const isCommentAuthorOrSuperuser = (currentUser, comment) =>
+    comment?.user.id === currentUser?.id || currentUser?.authorities.has('ALL')
+
 const Comment = ({
     comment,
     currentUser,
@@ -29,22 +32,21 @@ const Comment = ({
             created={comment.created}
             username={comment.createdBy.displayName}
         >
-            <MessageStatsBar>
-                {comment.access.update && (
+            {isCommentAuthorOrSuperuser(currentUser, comment) && (
+                <MessageStatsBar>
                     <MessageIconButton
                         iconComponent={IconEdit16}
                         tooltipContent={i18n.t('Edit')}
                         onClick={() => setIsUpdateMode(true)}
                     />
-                )}
-                {comment.access.delete && (
+
                     <CommentDeleteButton
                         commentId={comment.id}
                         interpretationId={interpretationId}
                         onComplete={() => onThreadUpdated(true)}
                     />
-                )}
-            </MessageStatsBar>
+                </MessageStatsBar>
+            )}
         </Message>
     )
 }
