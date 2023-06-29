@@ -26,9 +26,10 @@ export default css`
     .header {
         text-transform: uppercase;
         font-size: 11px;
-        color: ${colors.grey700};
-        margin: 5px 0;
+        color: ${colors.grey600};
+        margin: 0 0 ${spacers.dp8} 0;
         letter-spacing: 0.3px;
+        font-weight: 400;
     }
     .section:not(:last-child) {
         margin-bottom: ${spacers.dp24};

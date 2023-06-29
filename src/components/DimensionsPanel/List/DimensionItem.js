@@ -8,7 +8,7 @@ import {
 } from '../../../modules/predefinedDimensions.js'
 import OptionsButton from './OptionsButton.js'
 import RecommendedIcon from './RecommendedIcon.js'
-import { styles } from './styles/DimensionItem.style.js'
+import styles from './styles/DimensionItem.style.js'
 
 class DimensionItem extends Component {
     state = { mouseOver: false }
@@ -27,26 +27,16 @@ class DimensionItem extends Component {
     getDimensionIcon = () => {
         const Icon = getPredefinedDimensionProp(this.props.id, 'icon')
         return Icon ? (
-            <Icon style={styles.fixedDimensionIcon} />
+            <Icon className="fixed-dimension-icon" />
         ) : (
-            <DynamicDimensionIcon style={styles.dynamicDimensionIcon} />
+            <DynamicDimensionIcon className="dynamic-dimension-icon" />
         )
     }
 
     getDimensionType = () => {
-        const { id, name, isDeactivated } = this.props
+        const { id, name } = this.props
 
-        return (
-            <span
-                data-dimensionid={id}
-                style={{
-                    ...styles.text,
-                    ...(isDeactivated ? styles.textDeactivated : {}),
-                }}
-            >
-                {name}
-            </span>
-        )
+        return <span data-dimensionid={id}>{name}</span>
     }
 
     render() {
@@ -59,17 +49,12 @@ class DimensionItem extends Component {
             onClick,
             onOptionsClick,
             innerRef,
-            style,
             dataTest,
             ...rest
         } = this.props
 
         const Icon = this.getDimensionIcon()
         const Label = this.getDimensionType()
-        const itemStyle =
-            isSelected && !isDeactivated
-                ? { ...styles.item, ...styles.selected }
-                : styles.item
 
         const optionsRef = createRef()
 
@@ -87,24 +72,25 @@ class DimensionItem extends Component {
                 onMouseOver={this.onMouseOver}
                 onMouseLeave={this.onMouseExit}
                 ref={innerRef}
-                style={Object.assign(
-                    {},
-                    itemStyle,
-                    style,
-                    !isDeactivated && styles.clickable
-                )}
+                className={`
+                item 
+                ${!isDeactivated ? `clickable` : `deactivated`}
+                ${isSelected && !isDeactivated ? `selected` : ``}
+                `}
                 data-test={dataTest}
                 onClick={onLabelClick}
                 {...rest}
             >
                 <div
-                    className="label"
+                    className={`
+                    label
+                    ${isDeactivated ? `label-deactivated` : ``}
+                    `}
                     tabIndex={0}
-                    style={styles.label}
                     data-test={`${dataTest}-button-${id}`}
                 >
-                    <div style={styles.iconWrapper}>{Icon}</div>
-                    <div style={styles.labelWrapper}>
+                    <div className="icon-wrapper">{Icon}</div>
+                    <div className="label-wrapper">
                         {Label}
                         <RecommendedIcon
                             isRecommended={isRecommended}
@@ -112,25 +98,25 @@ class DimensionItem extends Component {
                         />
                     </div>
                     {isLocked && (
-                        <div style={styles.iconWrapper}>
+                        <div className="lock-wrapper">
                             <IconLock16 />
                         </div>
                     )}
                 </div>
                 {onOptionsClick ? (
                     <div
-                        style={styles.optionsWrapper}
+                        className="options-wrapper"
                         ref={optionsRef}
                         data-test={`${dataTest}-menu-${id}`}
                     >
                         {this.state.mouseOver && !isDeactivated && !isLocked ? (
                             <OptionsButton
-                                style={styles.optionsButton}
                                 onClick={this.onOptionsClick(id, optionsRef)}
                             />
                         ) : null}
                     </div>
                 ) : null}
+                <style jsx>{styles}</style>
             </li>
         )
     }
@@ -145,7 +131,6 @@ DimensionItem.propTypes = {
     isDeactivated: PropTypes.bool,
     isLocked: PropTypes.bool,
     isRecommended: PropTypes.bool,
-    style: PropTypes.object,
     onClick: PropTypes.func,
     onOptionsClick: PropTypes.func,
 }
