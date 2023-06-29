@@ -1,6 +1,6 @@
 {
     "name": "@dhis2/analytics",
-    "version": "26.0.7",
+    "version": "26.0.8",
     "main": "./build/cjs/index.js",
     "module": "./build/es/index.js",
     "exports": {
@@ -37,7 +37,7 @@
         "@dhis2/d2-i18n": "^1.1.0",
         "@dhis2/ui": "^8.4.11",
         "@sambego/storybook-state": "^2.0.1",
-        "@storybook/addons": "^6.5.9",
+        "@storybook/addons": "^6.5.16",
         "@storybook/preset-create-react-app": "^3.1.7",
         "@storybook/react": "^6.1.14",
         "@testing-library/jest-dom": "^5.16.5",
@@ -60,7 +60,7 @@
         "styled-jsx": "^4.0.1"
     },
     "dependencies": {
-        "@dhis2/d2-ui-rich-text": "^7.4.0",
+        "@dhis2/d2-ui-rich-text": "^7.4.1",
         "@dhis2/multi-calendar-dates": "1.0.0",
         "@dnd-kit/core": "^6.0.7",
         "@dnd-kit/sortable": "^7.0.2",
