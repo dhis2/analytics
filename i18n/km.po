@@ -2,13 +2,14 @@
 # Translators:
 # Viktor Varland <viktor@dhis2.org>, 2022
 # phil_dhis2, 2023
+# channara rin, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2023-04-18T08:41:27.838Z\n"
+"POT-Creation-Date: 2023-05-24T12:55:52.925Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: phil_dhis2, 2023\n"
+"Last-Translator: channara rin, 2023\n"
 "Language-Team: Khmer (https://app.transifex.com/hisp-uio/teams/100509/km/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -432,7 +433,7 @@ msgid "Searching for \"{{- searchText}}\""
 msgstr ""
 
 msgid "No results found"
-msgstr ""
+msgstr "មិនមានលទ្ធផលបង្ហាញ"
 
 msgid "Not available offline"
 msgstr ""
@@ -688,7 +689,7 @@ msgid "Today"
 msgstr ""
 
 msgid "Yesterday"
-msgstr ""
+msgstr "កាលពីម្សិលមិញ"
 
 msgid "Last 3 days"
 msgstr ""
@@ -837,6 +838,9 @@ msgstr ""
 msgid "Years"
 msgstr "ឆ្នាំ"
 
+msgid "Interpretations and details"
+msgstr ""
+
 msgid "Translating to"
 msgstr ""
 
@@ -913,7 +917,7 @@ msgid "All groups"
 msgstr ""
 
 msgid "Indicator"
-msgstr ""
+msgstr "សួចនាករ"
 
 msgid "No indicator groups found"
 msgstr ""
