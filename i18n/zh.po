@@ -1,17 +1,17 @@
 # 
 # Translators:
 # Viktor Varland <viktor@dhis2.org>, 2021
-# 晓东 林 <13981924470@126.com>, 2022
 # phil_dhis2, 2022
-# easylin <lin_xd@126.com>, 2022
+# 晓东 林 <13981924470@126.com>, 2023
+# easylin <lin_xd@126.com>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-09-22T13:25:32.620Z\n"
+"POT-Creation-Date: 2023-05-24T12:55:52.925Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: easylin <lin_xd@126.com>, 2022\n"
-"Language-Team: Chinese (https://www.transifex.com/hisp-uio/teams/100509/zh/)\n"
+"Last-Translator: easylin <lin_xd@126.com>, 2023\n"
+"Language-Team: Chinese (https://app.transifex.com/hisp-uio/teams/100509/zh/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -82,11 +82,46 @@ msgstr "此应用无法检索所需数据。"
 msgid "Network error"
 msgstr "网络错误"
 
-msgid "Data Type"
-msgstr "数据类型"
+msgid "Data / Edit calculation"
+msgstr "数据/编辑计算"
 
-msgid "All types"
-msgstr "所有类型"
+msgid "Data / New calculation"
+msgstr "数据/新计算"
+
+msgid "Remove item"
+msgstr "除去项目"
+
+msgid "Check formula"
+msgstr "检查公式"
+
+msgid "Calculation name"
+msgstr "计算名称"
+
+msgid "Shown in table headers and chart axes/legends"
+msgstr "显示在表格标题和图表轴/图例中"
+
+msgid "Delete calculation"
+msgstr "删除计算"
+
+msgid "Cancel"
+msgstr "取消"
+
+msgid "The calculation can only be saved with a valid formula"
+msgstr "计算只能用有效的公式保存"
+
+msgid "Add a name to save this calculation"
+msgstr "添加名称以保存此计算"
+
+msgid "Save calculation"
+msgstr "保存计算"
+
+msgid ""
+"Are you sure you want to delete this calculation? It may be used by other "
+"visualizations."
+msgstr "您确定要删除此计算吗？它可以被其他可视化使用。"
+
+msgid "Yes, delete"
+msgstr "是的，删除"
 
 msgid "Totals only"
 msgstr "总计"
@@ -94,14 +129,40 @@ msgstr "总计"
 msgid "Details only"
 msgstr "仅详细信息"
 
+msgid "Loading"
+msgstr "载入"
+
+msgid "Data elements"
+msgstr "数据元"
+
+msgid "Search by data element name"
+msgstr "按数据元素名称搜索"
+
+msgid "No data elements found for \"{{- searchTerm}}\""
+msgstr "找不到“ {{-searchTerm}}”的数据元素"
+
+msgid "No data elements found"
+msgstr "找不到数据元素"
+
+msgid ""
+"Drag items here, or double click in the list, to start building a "
+"calculation formula"
+msgstr "将项目拖到此处，或在列表中双击，开始构建计算公式"
+
+msgid "Math operators"
+msgstr "数学运算符"
+
+msgid "Data Type"
+msgstr "数据类型"
+
+msgid "All types"
+msgstr "所有类型"
+
 msgid "Disaggregation"
 msgstr "分解"
 
 msgid "No data"
 msgstr "无数据"
-
-msgid "Loading"
-msgstr "载入"
 
 msgid "Search by data item name"
 msgstr "按数据项名称搜索"
@@ -115,9 +176,6 @@ msgstr "选择的条目"
 msgid "No indicators found"
 msgstr "找不到指标"
 
-msgid "No data elements found"
-msgstr "找不到数据元素"
-
 msgid "No data sets found"
 msgstr "找不到数据集"
 
@@ -130,9 +188,6 @@ msgstr "找不到项目指标"
 msgid "No indicators found for \"{{- searchTerm}}\""
 msgstr "找不到“ {{-searchTerm}}”的指标"
 
-msgid "No data elements found for \"{{- searchTerm}}\""
-msgstr "找不到“ {{-searchTerm}}”的数据元素"
-
 msgid "No data sets found for \"{{- searchTerm}}\""
 msgstr "找不到“ {{-searchTerm}}”的数据集"
 
@@ -144,6 +199,9 @@ msgstr "找不到“ {{-searchTerm}}”的计划指标"
 
 msgid "Nothing found for \"{{- searchTerm}}\""
 msgstr "找不到“ {{-searchTerm}}”"
+
+msgid "Calculation"
+msgstr "计算"
 
 msgid "Metric type"
 msgstr "尺度类型"
@@ -211,9 +269,6 @@ msgid ""
 "This {{fileType}} and related interpretations will be deleted. Continue?"
 msgstr "此{{fileType}}和相关解释将被删除。继续？"
 
-msgid "Cancel"
-msgstr "取消"
-
 msgid "Delete"
 msgstr "删除"
 
@@ -265,8 +320,8 @@ msgstr "描述"
 msgid "Rename"
 msgstr "改名"
 
-msgid "{{objectName}} (copy)"
-msgstr "{{objectName}}（副本）"
+msgid "{{- objectName}} (copy)"
+msgstr "{{- objectName}}（复制）"
 
 msgid "Save {{fileType}} as"
 msgstr "将{{fileType}}另存为"
@@ -580,48 +635,6 @@ msgstr "选择的期间"
 msgid "No periods selected"
 msgstr "未选择期间"
 
-msgid "January"
-msgstr "1月"
-
-msgid "February"
-msgstr "2月"
-
-msgid "March"
-msgstr "3月"
-
-msgid "April"
-msgstr "4月"
-
-msgid "May"
-msgstr "5月"
-
-msgid "June"
-msgstr "6月"
-
-msgid "July"
-msgstr "7月"
-
-msgid "August"
-msgstr "8月"
-
-msgid "September"
-msgstr "9月"
-
-msgid "October"
-msgstr "10月"
-
-msgid "November"
-msgstr "11月"
-
-msgid "December"
-msgstr "12月"
-
-msgid "Week {{weekNumber}}"
-msgstr "{{weekNumber}}周"
-
-msgid "Bi-Week {{biWeekNumber}}"
-msgstr "  {{biWeekNumber}} 两周"
-
 msgid "Daily"
 msgstr "每日"
 
@@ -826,6 +839,9 @@ msgstr "Financial Years"
 msgid "Years"
 msgstr "年"
 
+msgid "Interpretations and details"
+msgstr "解释和细节"
+
 msgid "Translating to"
 msgstr "翻译成"
 
@@ -910,9 +926,6 @@ msgstr "找不到指标组"
 msgid "Loading indicator groups"
 msgstr "加载指标组"
 
-msgid "Data elements"
-msgstr "数据元"
-
 msgid "Data element group"
 msgstr "数据元组"
 
@@ -957,6 +970,33 @@ msgstr "项目指标"
 
 msgid "Program indicator"
 msgstr "项目指标"
+
+msgid "Calculations"
+msgstr "计算"
+
+msgid "Number"
+msgstr "数据"
+
+msgid "Formula is empty. Add items to the formula from the lists on the left."
+msgstr "公式为空。将左侧列表中的项目添加到公式中。"
+
+msgid "Consecutive math operators"
+msgstr "连续的数学运算符"
+
+msgid "Consecutive data elements"
+msgstr "连续的数据元素"
+
+msgid "Starts or ends with a math operator"
+msgstr "以数学运算符开始或结束"
+
+msgid "Empty parentheses"
+msgstr "空括号"
+
+msgid "Missing right parenthesis )"
+msgstr "缺少右括号 ）"
+
+msgid "Missing left parenthesis ("
+msgstr "缺少左括号 ("
 
 msgid "Extra Small"
 msgstr "特小"
