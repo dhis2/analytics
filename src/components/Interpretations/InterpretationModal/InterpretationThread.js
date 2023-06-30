@@ -52,6 +52,9 @@ const InterpretationThread = ({
                                 currentUser={currentUser}
                                 interpretationId={interpretation.id}
                                 onThreadUpdated={onThreadUpdated}
+                                interpretationWriteAccess={
+                                    interpretation.access.write
+                                }
                             />
                         ))}
                     </div>

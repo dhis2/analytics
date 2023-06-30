@@ -14,6 +14,13 @@ import { InterpretationDeleteButton } from './InterpretationDeleteButton.js'
 import { InterpretationUpdateForm } from './InterpretationUpdateForm.js'
 import { useLike } from './useLike.js'
 
+const isInterpretationCreatorOrSuperuser = (currentUser, interpretation) => {
+    return (
+        interpretation?.createdBy.id === currentUser?.id ||
+        currentUser?.authorities.has('ALL')
+    )
+}
+
 export const Interpretation = ({
     interpretation,
     currentUser,
@@ -45,7 +52,7 @@ export const Interpretation = ({
         <Message
             text={interpretation.text}
             created={interpretation.created}
-            username={interpretation.user.displayName}
+            username={interpretation.createdBy.displayName}
         >
             {!disabled && (
                 <MessageStatsBar>
@@ -87,19 +94,22 @@ export const Interpretation = ({
                             onClose={() => setShowSharingDialog(false)}
                         />
                     )}
-                    {interpretation.access.update && (
-                        <MessageIconButton
-                            iconComponent={IconEdit16}
-                            tooltipContent={i18n.t('Edit')}
-                            onClick={() => setIsUpdateMode(true)}
-                            dataTest="interpretation-edit-button"
-                        />
-                    )}
-                    {interpretation.access.delete && (
-                        <InterpretationDeleteButton
-                            id={interpretation.id}
-                            onComplete={onDeleted}
-                        />
+                    {isInterpretationCreatorOrSuperuser(
+                        currentUser,
+                        interpretation
+                    ) && (
+                        <>
+                            <MessageIconButton
+                                iconComponent={IconEdit16}
+                                tooltipContent={i18n.t('Edit')}
+                                onClick={() => setIsUpdateMode(true)}
+                                dataTest="interpretation-edit-button"
+                            />
+                            <InterpretationDeleteButton
+                                id={interpretation.id}
+                                onComplete={onDeleted}
+                            />
+                        </>
                     )}
                 </MessageStatsBar>
             )}

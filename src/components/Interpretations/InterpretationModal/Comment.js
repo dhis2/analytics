@@ -6,7 +6,7 @@ import { Message, MessageIconButton, MessageStatsBar } from '../common/index.js'
 import { CommentDeleteButton } from './CommentDeleteButton.js'
 import { CommentUpdateForm } from './CommentUpdateForm.js'
 
-const isCommentAuthorOrSuperuser = (currentUser, comment) => {
+const isCommentCreatorOrSuperuser = (currentUser, comment) => {
     return (
         comment?.createdBy.id === currentUser?.id ||
         currentUser?.authorities.has('ALL')
@@ -18,6 +18,7 @@ const Comment = ({
     currentUser,
     interpretationId,
     onThreadUpdated,
+    interpretationWriteAccess,
 }) => {
     const [isUpdateMode, setIsUpdateMode] = useState(false)
 
@@ -36,7 +37,7 @@ const Comment = ({
             created={comment.created}
             username={comment.createdBy.displayName}
         >
-            {isCommentAuthorOrSuperuser(currentUser, comment) && (
+            {isCommentCreatorOrSuperuser(currentUser, comment) && (
                 <MessageStatsBar>
                     <MessageIconButton
                         iconComponent={IconEdit16}
@@ -44,11 +45,13 @@ const Comment = ({
                         onClick={() => setIsUpdateMode(true)}
                     />
 
-                    <CommentDeleteButton
-                        commentId={comment.id}
-                        interpretationId={interpretationId}
-                        onComplete={() => onThreadUpdated(true)}
-                    />
+                    {interpretationWriteAccess && (
+                        <CommentDeleteButton
+                            commentId={comment.id}
+                            interpretationId={interpretationId}
+                            onComplete={() => onThreadUpdated(true)}
+                        />
+                    )}
                 </MessageStatsBar>
             )}
         </Message>
@@ -60,6 +63,7 @@ Comment.propTypes = {
     currentUser: PropTypes.object.isRequired,
     interpretationId: PropTypes.string.isRequired,
     onThreadUpdated: PropTypes.func.isRequired,
+    interpretationWriteAccess: PropTypes.bool,
 }
 
 export { Comment }

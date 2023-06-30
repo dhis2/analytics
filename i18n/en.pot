@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2023-05-24T12:55:52.925Z\n"
-"PO-Revision-Date: 2023-05-24T12:55:52.925Z\n"
+"POT-Creation-Date: 2023-06-30T07:53:30.382Z\n"
+"PO-Revision-Date: 2023-06-30T07:53:30.382Z\n"
 
 msgid "view only"
 msgstr "view only"
@@ -342,6 +342,9 @@ msgstr "Write a reply"
 
 msgid "Post reply"
 msgstr "Post reply"
+
+msgid "Delete failed"
+msgstr "Delete failed"
 
 msgid "Could not update comment"
 msgstr "Could not update comment"
