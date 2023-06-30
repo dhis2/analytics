@@ -39,7 +39,7 @@
         "@sambego/storybook-state": "^2.0.1",
         "@storybook/addons": "^6.5.16",
         "@storybook/preset-create-react-app": "^4.1.2",
-        "@storybook/react": "^6.1.14",
+        "@storybook/react": "^6.5.16",
         "@testing-library/jest-dom": "^5.16.5",
         "@testing-library/react": "^12.1.5",
         "enzyme": "^3.9.0",
@@ -47,8 +47,7 @@
         "fs-extra": "^10.1.0",
         "jest-enzyme": "^7.0.2",
         "prop-types": "^15",
-        "styled-jsx": "^4.0.1",
-        "typeface-roboto": "^0.0.75"
+        "styled-jsx": "^4.0.1"
     },
     "peerDependencies": {
         "@dhis2/app-runtime": "^3",
