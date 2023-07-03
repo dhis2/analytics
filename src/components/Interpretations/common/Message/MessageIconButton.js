@@ -1,4 +1,4 @@
-import { Tooltip, colors, spacers } from '@dhis2/ui'
+import { Tooltip, colors, spacers, theme } from '@dhis2/ui'
 import cx from 'classnames'
 import PropTypes from 'prop-types'
 import React from 'react'
@@ -68,6 +68,15 @@ const MessageIconButton = ({
 
                     .button.selected:hover :global(svg) {
                         color: ${colors.teal700};
+                    }
+
+                    .button:disabled {
+                        color: ${theme.disabled};
+                        cursor: not-allowed;
+                    }
+
+                    .button:disabled :global(svg) {
+                        color: ${theme.disabled};
                     }
                 `}</style>
             </span>
