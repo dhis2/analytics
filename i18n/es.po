@@ -81,7 +81,7 @@ msgid "About this map"
 msgstr "Acerca de este mapa"
 
 msgid "About this line list"
-msgstr ""
+msgstr "Acerca de este listado"
 
 msgid "About this visualization"
 msgstr "Acerca de esta visualización"
@@ -350,7 +350,7 @@ msgid "event report"
 msgstr "informe de evento"
 
 msgid "line list"
-msgstr ""
+msgstr "listados"
 
 msgid "map"
 msgstr "mapa"
@@ -581,13 +581,13 @@ msgid "New map"
 msgstr "Nuevo mapa"
 
 msgid "Open a line list"
-msgstr ""
+msgstr "Abrir un listado"
 
 msgid "Loading line lists"
-msgstr ""
+msgstr "Cargar listados"
 
 msgid "Couldn't load line lists"
-msgstr ""
+msgstr "No se pudieron cargar los listados"
 
 msgid ""
 "There was a problem loading line lists. Try again or contact your system "
@@ -603,7 +603,7 @@ msgid ""
 msgstr ""
 
 msgid "New line list"
-msgstr ""
+msgstr "Nuevo listado"
 
 msgid "Options"
 msgstr "Opciones"
@@ -1160,7 +1160,7 @@ msgid "Line"
 msgstr "Línea"
 
 msgid "Line list"
-msgstr ""
+msgstr "Listados"
 
 msgid "Year over year (line)"
 msgstr "Año tras año (línea)"
