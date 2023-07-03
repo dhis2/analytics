@@ -1,3 +1,11 @@
+## [26.0.9](https://github.com/dhis2/analytics/compare/v26.0.8...v26.0.9) (2023-07-03)
+
+
+### Bug Fixes
+
+* use visual feedback on action buttons ([#1532](https://github.com/dhis2/analytics/issues/1532)) ([d6287c8](https://github.com/dhis2/analytics/commit/d6287c8cdb1162336f52259dab727724e8baed4b))
+* **translations:** sync translations from transifex (master) ([5dd498c](https://github.com/dhis2/analytics/commit/5dd498c846d6d4bedc0cf81b43cc3949339103bd))
+
 ## [26.0.8](https://github.com/dhis2/analytics/compare/v26.0.7...v26.0.8) (2023-06-29)
 
 
