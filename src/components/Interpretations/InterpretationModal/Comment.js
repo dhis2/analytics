@@ -6,12 +6,9 @@ import { Message, MessageIconButton, MessageStatsBar } from '../common/index.js'
 import { CommentDeleteButton } from './CommentDeleteButton.js'
 import { CommentUpdateForm } from './CommentUpdateForm.js'
 
-const isCommentCreatorOrSuperuser = (currentUser, comment) => {
-    return (
-        comment?.createdBy.id === currentUser?.id ||
-        currentUser?.authorities.has('ALL')
-    )
-}
+const isCommentCreatorOrSuperuser = (currentUser, comment) =>
+    comment?.createdBy.id === currentUser?.id ||
+    currentUser?.authorities.has('ALL')
 
 const Comment = ({
     comment,

@@ -14,12 +14,9 @@ import { InterpretationDeleteButton } from './InterpretationDeleteButton.js'
 import { InterpretationUpdateForm } from './InterpretationUpdateForm.js'
 import { useLike } from './useLike.js'
 
-const isInterpretationCreatorOrSuperuser = (currentUser, interpretation) => {
-    return (
-        interpretation?.createdBy.id === currentUser?.id ||
-        currentUser?.authorities.has('ALL')
-    )
-}
+const isInterpretationCreatorOrSuperuser = (currentUser, interpretation) =>
+    interpretation?.createdBy.id === currentUser?.id ||
+    currentUser?.authorities.has('ALL')
 
 export const Interpretation = ({
     interpretation,

@@ -49,7 +49,7 @@ const query = {
         id: ({ id }) => id,
         params: {
             fields: [
-                'access',
+                'access[write,manage]',
                 'id',
                 'text',
                 'created',

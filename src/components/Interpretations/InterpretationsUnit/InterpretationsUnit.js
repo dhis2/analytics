@@ -24,14 +24,14 @@ const interpretationsQuery = {
         resource: 'interpretations',
         params: ({ type, id }) => ({
             fields: [
-                'access',
+                'access[write,manage]',
                 'id',
+                'createdBy[id,displayName]',
                 'created',
                 'text',
                 'comments[id]',
                 'likes',
                 'likedBy[id]',
-                'createdBy[id,displayName]',
             ],
             filter: `${type}.id:eq:${id}`,
         }),
