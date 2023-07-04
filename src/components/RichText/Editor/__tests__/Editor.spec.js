@@ -1,4 +1,5 @@
-import { shallow } from 'enzyme'
+import '@testing-library/jest-dom'
+import { render, screen, fireEvent } from '@testing-library/react'
 import React from 'react'
 import { Editor } from '../Editor.js'
 
@@ -7,9 +8,11 @@ jest.mock('../markdownHandler.js', () => ({
     convertCtrlKey: () => mockConvertCtrlKey(),
 }))
 
-describe('RichText: Editor component', () => {
-    let richTextEditor
+jest.mock('../../../UserMention/UserMentionWrapper.js', () => ({
+    UserMentionWrapper: jest.fn((props) => <>{props.children}</>),
+}))
 
+describe('RichText: Editor component', () => {
     const componentProps = {
         value: '',
         onChange: jest.fn(),
@@ -20,17 +23,25 @@ describe('RichText: Editor component', () => {
     })
 
     const renderComponent = (props) => {
-        return shallow(<Editor {...props} />)
+        return render(<Editor {...props} />)
     }
 
     it('renders a result', () => {
-        richTextEditor = renderComponent(componentProps)
+        renderComponent(componentProps)
 
-        expect(richTextEditor).toHaveLength(1)
+        expect(
+            screen.getByTestId('@dhis2-analytics-richtexteditor')
+        ).toBeVisible()
     })
 
     it('calls convertCtrlKey on keydown', () => {
-        renderComponent(componentProps).find('textarea').simulate('keyDown')
+        renderComponent(componentProps)
+
+        fireEvent.keyDown(screen.getByRole('textbox'), {
+            key: 'A',
+            code: 'keyA',
+        })
+
         expect(mockConvertCtrlKey).toHaveBeenCalled()
     })
 })
