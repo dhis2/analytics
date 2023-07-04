@@ -210,7 +210,10 @@ export const Editor = forwardRef(
         useEffect(() => textareaRef.current?.focus(), [textareaRef])
 
         return (
-            <div className="container">
+            <div
+                className="container"
+                data-test="@dhis2-analytics-richtexteditor"
+            >
                 <Toolbar
                     onInsertMarkdown={(markdown) => {
                         insertMarkdown(
