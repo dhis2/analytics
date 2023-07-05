@@ -7,7 +7,7 @@ export const Parser = ({ children, style }) => {
 
     return children ? (
         <p
-            style={style}
+            style={{ ...style, whiteSpace: 'pre-line' }}
             dangerouslySetInnerHTML={{
                 __html: MdParserInstance.render(children),
             }}
