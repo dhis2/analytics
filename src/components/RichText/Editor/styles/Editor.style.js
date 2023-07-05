@@ -9,8 +9,9 @@ export const mainClasses = css`
     }
 
     .preview {
+        padding: ${spacers.dp8} ${spacers.dp12};
         font-size: 14px;
-        line-height: 19px;
+        line-height: ${spacers.dp16};
         color: ${colors.grey900};
     }
 
