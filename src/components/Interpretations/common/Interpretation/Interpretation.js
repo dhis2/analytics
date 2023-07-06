@@ -26,6 +26,7 @@ export const Interpretation = ({
     onDeleted,
     disabled,
     onReplyIconClick,
+    isInThread,
 }) => {
     const [isUpdateMode, setIsUpdateMode] = useState(false)
     const [showSharingDialog, setShowSharingDialog] = useState(false)
@@ -35,6 +36,19 @@ export const Interpretation = ({
         onComplete: onUpdated,
     })
     const shouldShowButton = !!onClick && !disabled
+
+    let tooltip = i18n.t('Reply')
+    if (!interpretation.access.write) {
+        if (isInThread) {
+            tooltip = i18n.t('{{count}} replies', {
+                count: interpretation.comments.length,
+                defaultValue: '{{count}} reply',
+                defaultValue_plural: '{{count}} replies',
+            })
+        } else {
+            tooltip = i18n.t('View replies')
+        }
+    }
 
     return isUpdateMode ? (
         <InterpretationUpdateForm
@@ -67,11 +81,15 @@ export const Interpretation = ({
                         dataTest="interpretation-like-unlike-button"
                     />
                     <MessageIconButton
-                        tooltipContent={i18n.t('Reply')}
+                        tooltipContent={tooltip}
                         iconComponent={IconReply16}
-                        onClick={() => onReplyIconClick(interpretation.id)}
+                        onClick={() =>
+                            onReplyIconClick &&
+                            onReplyIconClick(interpretation.id)
+                        }
                         count={interpretation.comments.length}
                         dataTest="interpretation-reply-button"
+                        viewOnly={isInThread && !interpretation.access.write}
                     />
                     {interpretation.access.manage && (
                         <MessageIconButton
@@ -131,5 +149,6 @@ Interpretation.propTypes = {
     onReplyIconClick: PropTypes.func.isRequired,
     onUpdated: PropTypes.func.isRequired,
     disabled: PropTypes.bool,
+    isInThread: PropTypes.bool,
     onClick: PropTypes.func,
 }

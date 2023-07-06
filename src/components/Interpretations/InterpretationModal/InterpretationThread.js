@@ -40,9 +40,14 @@ const InterpretationThread = ({
                     <Interpretation
                         currentUser={currentUser}
                         interpretation={interpretation}
-                        onReplyIconClick={() => focusRef.current?.focus()}
+                        onReplyIconClick={
+                            interpretation.access.write
+                                ? () => focusRef.current?.focus()
+                                : null
+                        }
                         onUpdated={() => onThreadUpdated(true)}
                         onDeleted={onInterpretationDeleted}
+                        isInThread={true}
                     />
                     <div className={'comments'}>
                         {interpretation.comments.map((comment) => (
