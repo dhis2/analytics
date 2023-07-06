@@ -62,7 +62,7 @@ const InterpretationThread = ({
                                 currentUser={currentUser}
                                 interpretationId={interpretation.id}
                                 onThreadUpdated={onThreadUpdated}
-                                interpretationReplyAccess={
+                                hasInterpretationReplyAccess={
                                     interpretationAccess.reply
                                 }
                             />
