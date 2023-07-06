@@ -26,9 +26,7 @@ describe('interpretation and comment access', () => {
                     write: true,
                     manage: true,
                 },
-                createdBy: {
-                    id: 'boateng',
-                },
+                createdBy: userJoe,
             }
 
             expect(
@@ -41,8 +39,6 @@ describe('interpretation and comment access', () => {
             })
         })
         it('returns true for all accesses for creator', () => {
-            const currentUser = userJoe
-
             const interpretation = {
                 access: {
                     write: true,
@@ -52,7 +48,7 @@ describe('interpretation and comment access', () => {
             }
 
             expect(
-                getInterpretationAccess(interpretation, currentUser)
+                getInterpretationAccess(interpretation, userJoe)
             ).toMatchObject({
                 share: true,
                 reply: true,
@@ -62,8 +58,6 @@ describe('interpretation and comment access', () => {
         })
 
         it('returns false for edit/delete if user is not creator/superuser', () => {
-            const currentUser = userJoe
-
             const interpretation = {
                 access: {
                     write: true,
@@ -73,7 +67,7 @@ describe('interpretation and comment access', () => {
             }
 
             expect(
-                getInterpretationAccess(interpretation, currentUser)
+                getInterpretationAccess(interpretation, userJoe)
             ).toMatchObject({
                 share: true,
                 reply: true,
@@ -134,9 +128,7 @@ describe('interpretation and comment access', () => {
             }
 
             const comment = {
-                createdBy: {
-                    id: userJoe,
-                },
+                createdBy: userJoe,
             }
 
             expect(
