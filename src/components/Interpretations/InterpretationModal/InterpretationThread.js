@@ -28,44 +28,44 @@ const InterpretationThread = ({
 
     return (
         <div className={cx('container', { fetching })}>
-            <div className={'scrollbox'}>
-                <div className={'title'}>
-                    <IconClock16 color={colors.grey700} />
-                    {moment(interpretation.created).format('LLL')}
-                </div>
-                {DownloadMenu && (
-                    <DownloadMenu relativePeriodDate={interpretation.created} />
-                )}
-                <div className={'thread'}>
-                    <Interpretation
-                        currentUser={currentUser}
-                        interpretation={interpretation}
-                        onReplyIconClick={() => focusRef.current?.focus()}
-                        onUpdated={() => onThreadUpdated(true)}
-                        onDeleted={onInterpretationDeleted}
-                    />
-                    <div className={'comments'}>
-                        {interpretation.comments.map((comment) => (
-                            <Comment
-                                key={comment.id}
-                                comment={comment}
-                                currentUser={currentUser}
-                                interpretationId={interpretation.id}
-                                onThreadUpdated={onThreadUpdated}
-                            />
-                        ))}
-                    </div>
-                    <CommentAddForm
-                        currentUser={currentUser}
-                        interpretationId={interpretation.id}
-                        onSave={() => onThreadUpdated(true)}
-                        focusRef={focusRef}
-                    />
+            <div className={'title'}>
+                <IconClock16 color={colors.grey700} />
+                {moment(interpretation.created).format('LLL')}
+            </div>
+            {DownloadMenu && (
+                <DownloadMenu relativePeriodDate={interpretation.created} />
+            )}
+            <div className={'thread'}>
+                <Interpretation
+                    currentUser={currentUser}
+                    interpretation={interpretation}
+                    onReplyIconClick={() => focusRef.current?.focus()}
+                    onUpdated={() => onThreadUpdated(true)}
+                    onDeleted={onInterpretationDeleted}
+                />
+                <div className={'comments'}>
+                    {interpretation.comments.map((comment) => (
+                        <Comment
+                            key={comment.id}
+                            comment={comment}
+                            currentUser={currentUser}
+                            interpretationId={interpretation.id}
+                            onThreadUpdated={onThreadUpdated}
+                        />
+                    ))}
                 </div>
             </div>
+            <CommentAddForm
+                currentUser={currentUser}
+                interpretationId={interpretation.id}
+                onSave={() => onThreadUpdated(true)}
+                focusRef={focusRef}
+            />
             <style jsx>{`
                 .thread {
                     margin-top: var(--spacers-dp16);
+                    overflow-y: auto;
+                    scroll-behavior: smooth;
                 }
 
                 .container {
@@ -98,11 +98,6 @@ const InterpretationThread = ({
                     border-radius: 50%;
                     animation: 1s linear 0s infinite normal none running
                         rotation;
-                }
-
-                .scrollbox {
-                    overflow-y: auto;
-                    scroll-behavior: smooth;
                 }
 
                 .title {
