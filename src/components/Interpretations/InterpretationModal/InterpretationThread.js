@@ -80,9 +80,17 @@ const InterpretationThread = ({
                     )}
                 </div>
             </div>
+            <CommentAddForm
+                currentUser={currentUser}
+                interpretationId={interpretation.id}
+                onSave={() => onThreadUpdated(true)}
+                focusRef={focusRef}
+            />
             <style jsx>{`
                 .thread {
                     margin-top: var(--spacers-dp16);
+                    overflow-y: auto;
+                    scroll-behavior: smooth;
                 }
 
                 .container {
@@ -115,11 +123,6 @@ const InterpretationThread = ({
                     border-radius: 50%;
                     animation: 1s linear 0s infinite normal none running
                         rotation;
-                }
-
-                .scrollbox {
-                    overflow-y: auto;
-                    scroll-behavior: smooth;
                 }
 
                 .title {
