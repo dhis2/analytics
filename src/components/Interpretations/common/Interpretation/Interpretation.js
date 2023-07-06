@@ -44,7 +44,7 @@ export const Interpretation = ({
     )
 
     let tooltip = i18n.t('Reply')
-    if (!interpretationAccess.reply) {
+    if (!interpretationAccess.comment) {
         if (isInThread) {
             tooltip = i18n.t('{{count}} replies', {
                 count: interpretation.comments.length,
@@ -95,7 +95,7 @@ export const Interpretation = ({
                         }
                         count={interpretation.comments.length}
                         dataTest="interpretation-reply-button"
-                        viewOnly={isInThread && !interpretationAccess.reply}
+                        viewOnly={isInThread && !interpretationAccess.comment}
                     />
                     {interpretationAccess.share && (
                         <MessageIconButton

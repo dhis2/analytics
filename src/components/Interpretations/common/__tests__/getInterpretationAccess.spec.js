@@ -33,7 +33,7 @@ describe('interpretation and comment access', () => {
                 getInterpretationAccess(interpretation, superuser)
             ).toMatchObject({
                 share: true,
-                reply: true,
+                comment: true,
                 edit: true,
                 delete: true,
             })
@@ -51,7 +51,7 @@ describe('interpretation and comment access', () => {
                 getInterpretationAccess(interpretation, userJoe)
             ).toMatchObject({
                 share: true,
-                reply: true,
+                comment: true,
                 edit: true,
                 delete: true,
             })
@@ -70,13 +70,13 @@ describe('interpretation and comment access', () => {
                 getInterpretationAccess(interpretation, userJoe)
             ).toMatchObject({
                 share: true,
-                reply: true,
+                comment: true,
                 edit: false,
                 delete: false,
             })
         })
 
-        it('returns false for reply/edit/delete if user is not creator/superuser and no write access', () => {
+        it('returns false for comment/edit/delete if user is not creator/superuser and no write access', () => {
             const interpretation = {
                 access: {
                     write: false,
@@ -89,13 +89,13 @@ describe('interpretation and comment access', () => {
                 getInterpretationAccess(interpretation, userJoe)
             ).toMatchObject({
                 share: true,
-                reply: false,
+                comment: false,
                 edit: false,
                 delete: false,
             })
         })
 
-        it('returns false for share/reply/edit/delete if user is not creator/superuser and no write or manage access', () => {
+        it('returns false for share/comment/edit/delete if user is not creator/superuser and no write or manage access', () => {
             const interpretation = {
                 access: {
                     write: false,
@@ -108,7 +108,7 @@ describe('interpretation and comment access', () => {
                 getInterpretationAccess(interpretation, userJoe)
             ).toMatchObject({
                 share: false,
-                reply: false,
+                comment: false,
                 edit: false,
                 delete: false,
             })

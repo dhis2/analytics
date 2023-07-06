@@ -46,7 +46,7 @@ const InterpretationThread = ({
                         currentUser={currentUser}
                         interpretation={interpretation}
                         onReplyIconClick={
-                            interpretationAccess.reply
+                            interpretationAccess.comment
                                 ? () => focusRef.current?.focus()
                                 : null
                         }
@@ -62,13 +62,11 @@ const InterpretationThread = ({
                                 currentUser={currentUser}
                                 interpretationId={interpretation.id}
                                 onThreadUpdated={onThreadUpdated}
-                                hasInterpretationReplyAccess={
-                                    interpretationAccess.reply
-                                }
+                                canComment={interpretationAccess.comment}
                             />
                         ))}
                     </div>
-                    {interpretationAccess.reply && (
+                    {interpretationAccess.comment && (
                         <CommentAddForm
                             currentUser={currentUser}
                             interpretationId={interpretation.id}

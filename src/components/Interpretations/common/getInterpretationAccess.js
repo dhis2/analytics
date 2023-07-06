@@ -6,7 +6,7 @@ export const getInterpretationAccess = (interpretation, currentUser) => {
     const canEditDelete = isCreatorOrSuperuser(interpretation, currentUser)
     return {
         share: interpretation.access.manage,
-        reply: interpretation.access.write,
+        comment: interpretation.access.write,
         edit: canEditDelete,
         delete: canEditDelete,
     }

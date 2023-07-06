@@ -16,15 +16,11 @@ const Comment = ({
     currentUser,
     interpretationId,
     onThreadUpdated,
-    hasInterpretationReplyAccess,
+    canComment,
 }) => {
     const [isUpdateMode, setIsUpdateMode] = useState(false)
 
-    const commentAccess = getCommentAccess(
-        comment,
-        hasInterpretationReplyAccess,
-        currentUser
-    )
+    const commentAccess = getCommentAccess(comment, canComment, currentUser)
 
     return isUpdateMode ? (
         <CommentUpdateForm
@@ -67,7 +63,7 @@ Comment.propTypes = {
     currentUser: PropTypes.object.isRequired,
     interpretationId: PropTypes.string.isRequired,
     onThreadUpdated: PropTypes.func.isRequired,
-    hasInterpretationReplyAccess: PropTypes.bool,
+    canComment: PropTypes.bool,
 }
 
 export { Comment }
