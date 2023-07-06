@@ -3,7 +3,7 @@ import cx from 'classnames'
 import moment from 'moment'
 import PropTypes from 'prop-types'
 import React, { useRef, useEffect } from 'react'
-import { Interpretation } from '../common/index.js'
+import { Interpretation, getInterpretationAccess } from '../common/index.js'
 import { Comment } from './Comment.js'
 import { CommentAddForm } from './CommentAddForm.js'
 
@@ -26,6 +26,11 @@ const InterpretationThread = ({
         }
     }, [initialFocus])
 
+    const interpretationAccess = getInterpretationAccess(
+        interpretation,
+        currentUser
+    )
+
     return (
         <div className={cx('container', { fetching })}>
             <div className={'scrollbox'}>
@@ -41,7 +46,7 @@ const InterpretationThread = ({
                         currentUser={currentUser}
                         interpretation={interpretation}
                         onReplyIconClick={
-                            interpretation.access.write
+                            interpretationAccess.reply
                                 ? () => focusRef.current?.focus()
                                 : null
                         }
@@ -57,13 +62,13 @@ const InterpretationThread = ({
                                 currentUser={currentUser}
                                 interpretationId={interpretation.id}
                                 onThreadUpdated={onThreadUpdated}
-                                interpretationWriteAccess={
-                                    interpretation.access.write
+                                interpretationReplyAccess={
+                                    interpretationAccess.reply
                                 }
                             />
                         ))}
                     </div>
-                    {interpretation.access.write && (
+                    {interpretationAccess.reply && (
                         <CommentAddForm
                             currentUser={currentUser}
                             interpretationId={interpretation.id}

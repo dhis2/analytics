@@ -2,22 +2,29 @@ import i18n from '@dhis2/d2-i18n'
 import { IconEdit16 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
-import { Message, MessageIconButton, MessageStatsBar } from '../common/index.js'
+import {
+    Message,
+    MessageIconButton,
+    MessageStatsBar,
+    getCommentAccess,
+} from '../common/index.js'
 import { CommentDeleteButton } from './CommentDeleteButton.js'
 import { CommentUpdateForm } from './CommentUpdateForm.js'
-
-const isCommentCreatorOrSuperuser = (currentUser, comment) =>
-    comment?.createdBy.id === currentUser?.id ||
-    currentUser?.authorities.has('ALL')
 
 const Comment = ({
     comment,
     currentUser,
     interpretationId,
     onThreadUpdated,
-    interpretationWriteAccess,
+    hasInterpretationReplyAccess,
 }) => {
     const [isUpdateMode, setIsUpdateMode] = useState(false)
+
+    const commentAccess = getCommentAccess(
+        comment,
+        hasInterpretationReplyAccess,
+        currentUser
+    )
 
     return isUpdateMode ? (
         <CommentUpdateForm
@@ -34,7 +41,7 @@ const Comment = ({
             created={comment.created}
             username={comment.createdBy.displayName}
         >
-            {isCommentCreatorOrSuperuser(currentUser, comment) && (
+            {commentAccess.edit && (
                 <MessageStatsBar>
                     <MessageIconButton
                         iconComponent={IconEdit16}
@@ -42,7 +49,7 @@ const Comment = ({
                         onClick={() => setIsUpdateMode(true)}
                     />
 
-                    {interpretationWriteAccess && (
+                    {commentAccess.delete && (
                         <CommentDeleteButton
                             commentId={comment.id}
                             interpretationId={interpretationId}
@@ -60,7 +67,7 @@ Comment.propTypes = {
     currentUser: PropTypes.object.isRequired,
     interpretationId: PropTypes.string.isRequired,
     onThreadUpdated: PropTypes.func.isRequired,
-    interpretationWriteAccess: PropTypes.bool,
+    hasInterpretationReplyAccess: PropTypes.bool,
 }
 
 export { Comment }

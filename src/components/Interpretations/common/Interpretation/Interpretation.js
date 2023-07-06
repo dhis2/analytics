@@ -9,14 +9,15 @@ import {
 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
-import { Message, MessageStatsBar, MessageIconButton } from '../index.js'
+import {
+    Message,
+    MessageStatsBar,
+    MessageIconButton,
+    getInterpretationAccess,
+} from '../index.js'
 import { InterpretationDeleteButton } from './InterpretationDeleteButton.js'
 import { InterpretationUpdateForm } from './InterpretationUpdateForm.js'
 import { useLike } from './useLike.js'
-
-const isInterpretationCreatorOrSuperuser = (currentUser, interpretation) =>
-    interpretation?.createdBy.id === currentUser?.id ||
-    currentUser?.authorities.has('ALL')
 
 export const Interpretation = ({
     interpretation,
@@ -37,8 +38,13 @@ export const Interpretation = ({
     })
     const shouldShowButton = !!onClick && !disabled
 
+    const interpretationAccess = getInterpretationAccess(
+        interpretation,
+        currentUser
+    )
+
     let tooltip = i18n.t('Reply')
-    if (!interpretation.access.write) {
+    if (!interpretationAccess.reply) {
         if (isInThread) {
             tooltip = i18n.t('{{count}} replies', {
                 count: interpretation.comments.length,
@@ -54,7 +60,7 @@ export const Interpretation = ({
         <InterpretationUpdateForm
             close={() => setIsUpdateMode(false)}
             id={interpretation.id}
-            showSharingLink={interpretation.access.manage}
+            showSharingLink={interpretationAccess.share}
             onComplete={onUpdated}
             text={interpretation.text}
             currentUser={currentUser}
@@ -89,9 +95,9 @@ export const Interpretation = ({
                         }
                         count={interpretation.comments.length}
                         dataTest="interpretation-reply-button"
-                        viewOnly={isInThread && !interpretation.access.write}
+                        viewOnly={isInThread && !interpretationAccess.reply}
                     />
-                    {interpretation.access.manage && (
+                    {interpretationAccess.share && (
                         <MessageIconButton
                             iconComponent={IconShare16}
                             tooltipContent={i18n.t('Share')}
@@ -107,23 +113,22 @@ export const Interpretation = ({
                             onClose={() => setShowSharingDialog(false)}
                         />
                     )}
-                    {isInterpretationCreatorOrSuperuser(
-                        currentUser,
-                        interpretation
-                    ) && (
-                        <>
+                    <>
+                        {interpretationAccess.edit && (
                             <MessageIconButton
                                 iconComponent={IconEdit16}
                                 tooltipContent={i18n.t('Edit')}
                                 onClick={() => setIsUpdateMode(true)}
                                 dataTest="interpretation-edit-button"
                             />
+                        )}
+                        {interpretationAccess.delete && (
                             <InterpretationDeleteButton
                                 id={interpretation.id}
                                 onComplete={onDeleted}
                             />
-                        </>
-                    )}
+                        )}
+                    </>
                 </MessageStatsBar>
             )}
             {shouldShowButton && (
