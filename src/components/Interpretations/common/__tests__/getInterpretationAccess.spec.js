@@ -77,8 +77,6 @@ describe('interpretation and comment access', () => {
         })
 
         it('returns false for reply/edit/delete if user is not creator/superuser and no write access', () => {
-            const currentUser = userJoe
-
             const interpretation = {
                 access: {
                     write: false,
@@ -88,7 +86,7 @@ describe('interpretation and comment access', () => {
             }
 
             expect(
-                getInterpretationAccess(interpretation, currentUser)
+                getInterpretationAccess(interpretation, userJoe)
             ).toMatchObject({
                 share: true,
                 reply: false,
@@ -98,8 +96,6 @@ describe('interpretation and comment access', () => {
         })
 
         it('returns false for share/reply/edit/delete if user is not creator/superuser and no write or manage access', () => {
-            const currentUser = userJoe
-
             const interpretation = {
                 access: {
                     write: false,
@@ -109,7 +105,7 @@ describe('interpretation and comment access', () => {
             }
 
             expect(
-                getInterpretationAccess(interpretation, currentUser)
+                getInterpretationAccess(interpretation, userJoe)
             ).toMatchObject({
                 share: false,
                 reply: false,
