@@ -39,6 +39,7 @@ function getModalContentCSS(width) {
     return css.resolve`
         div {
             width: ${width}px;
+            overflow-y: visible;
         }
     `
 }
@@ -235,7 +236,6 @@ const InterpretationModal = ({
                         padding-right: ${spacers.dp4};
                         flex-basis: 300px;
                         flex-shrink: 0;
-                        overflow-y: auto;
                     }
                 `}</style>
             </Modal>
