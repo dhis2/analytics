@@ -8,12 +8,13 @@
 # Marta Vila <marta@dhis2.org>, 2023
 # phil_dhis2, 2023
 # Janeth Cruz, 2023
+# Sergio Valenzuela <sergio.valenzuela@ehas.org>, 2023
 # Enzo Nicolas Rossi <enzo@dhis2.org>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2023-05-24T12:55:52.925Z\n"
+"POT-Creation-Date: 2023-07-06T08:30:33.216Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: Enzo Nicolas Rossi <enzo@dhis2.org>, 2023\n"
 "Language-Team: Spanish (https://app.transifex.com/hisp-uio/teams/100509/es/)\n"
@@ -367,6 +368,9 @@ msgstr "Escribe una respuesta"
 msgid "Post reply"
 msgstr "Publicar respuesta"
 
+msgid "Delete failed"
+msgstr "Fallado el proceso de eliminar"
+
 msgid "Could not update comment"
 msgstr "No se pudo actualizar el comentario"
 
@@ -401,14 +405,23 @@ msgstr ""
 msgid "Interpretations"
 msgstr "Interpretaciones"
 
+msgid "Reply"
+msgstr "Responder"
+
+msgid "{{count}} replies"
+msgid_plural "{{count}} replies"
+msgstr[0] "{{contar}} respuesta"
+msgstr[1] "{{contar}} respuestas"
+msgstr[2] "{{count}} respuestas"
+
+msgid "View replies"
+msgstr ""
+
 msgid "Unlike"
 msgstr "diferente a"
 
 msgid "Like"
 msgstr "como"
-
-msgid "Reply"
-msgstr "Responder"
 
 msgid "Share"
 msgstr "Compartir"
