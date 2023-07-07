@@ -9,7 +9,12 @@ import {
 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
-import { Message, MessageStatsBar, MessageIconButton } from '../index.js'
+import {
+    Message,
+    MessageStatsBar,
+    MessageIconButton,
+    getInterpretationAccess,
+} from '../index.js'
 import { InterpretationDeleteButton } from './InterpretationDeleteButton.js'
 import { InterpretationUpdateForm } from './InterpretationUpdateForm.js'
 import { useLike } from './useLike.js'
@@ -22,6 +27,7 @@ export const Interpretation = ({
     onDeleted,
     disabled,
     onReplyIconClick,
+    isInThread,
 }) => {
     const [isUpdateMode, setIsUpdateMode] = useState(false)
     const [showSharingDialog, setShowSharingDialog] = useState(false)
@@ -32,11 +38,29 @@ export const Interpretation = ({
     })
     const shouldShowButton = !!onClick && !disabled
 
+    const interpretationAccess = getInterpretationAccess(
+        interpretation,
+        currentUser
+    )
+
+    let tooltip = i18n.t('Reply')
+    if (!interpretationAccess.comment) {
+        if (isInThread) {
+            tooltip = i18n.t('{{count}} replies', {
+                count: interpretation.comments.length,
+                defaultValue: '{{count}} reply',
+                defaultValue_plural: '{{count}} replies',
+            })
+        } else {
+            tooltip = i18n.t('View replies')
+        }
+    }
+
     return isUpdateMode ? (
         <InterpretationUpdateForm
             close={() => setIsUpdateMode(false)}
             id={interpretation.id}
-            showSharingLink={interpretation.access.manage}
+            showSharingLink={interpretationAccess.share}
             onComplete={onUpdated}
             text={interpretation.text}
             currentUser={currentUser}
@@ -45,7 +69,7 @@ export const Interpretation = ({
         <Message
             text={interpretation.text}
             created={interpretation.created}
-            username={interpretation.user.displayName}
+            username={interpretation.createdBy.displayName}
         >
             {!disabled && (
                 <MessageStatsBar>
@@ -63,13 +87,17 @@ export const Interpretation = ({
                         dataTest="interpretation-like-unlike-button"
                     />
                     <MessageIconButton
-                        tooltipContent={i18n.t('Reply')}
+                        tooltipContent={tooltip}
                         iconComponent={IconReply16}
-                        onClick={() => onReplyIconClick(interpretation.id)}
+                        onClick={() =>
+                            onReplyIconClick &&
+                            onReplyIconClick(interpretation.id)
+                        }
                         count={interpretation.comments.length}
                         dataTest="interpretation-reply-button"
+                        viewOnly={isInThread && !interpretationAccess.comment}
                     />
-                    {interpretation.access.manage && (
+                    {interpretationAccess.share && (
                         <MessageIconButton
                             iconComponent={IconShare16}
                             tooltipContent={i18n.t('Share')}
@@ -85,20 +113,22 @@ export const Interpretation = ({
                             onClose={() => setShowSharingDialog(false)}
                         />
                     )}
-                    {interpretation.access.update && (
-                        <MessageIconButton
-                            iconComponent={IconEdit16}
-                            tooltipContent={i18n.t('Edit')}
-                            onClick={() => setIsUpdateMode(true)}
-                            dataTest="interpretation-edit-button"
-                        />
-                    )}
-                    {interpretation.access.delete && (
-                        <InterpretationDeleteButton
-                            id={interpretation.id}
-                            onComplete={onDeleted}
-                        />
-                    )}
+                    <>
+                        {interpretationAccess.edit && (
+                            <MessageIconButton
+                                iconComponent={IconEdit16}
+                                tooltipContent={i18n.t('Edit')}
+                                onClick={() => setIsUpdateMode(true)}
+                                dataTest="interpretation-edit-button"
+                            />
+                        )}
+                        {interpretationAccess.delete && (
+                            <InterpretationDeleteButton
+                                id={interpretation.id}
+                                onComplete={onDeleted}
+                            />
+                        )}
+                    </>
                 </MessageStatsBar>
             )}
             {shouldShowButton && (
@@ -124,5 +154,6 @@ Interpretation.propTypes = {
     onReplyIconClick: PropTypes.func.isRequired,
     onUpdated: PropTypes.func.isRequired,
     disabled: PropTypes.bool,
+    isInThread: PropTypes.bool,
     onClick: PropTypes.func,
 }

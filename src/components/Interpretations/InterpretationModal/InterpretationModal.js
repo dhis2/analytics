@@ -50,14 +50,14 @@ const query = {
         id: ({ id }) => id,
         params: {
             fields: [
-                'access',
+                'access[write,manage]',
                 'id',
                 'text',
                 'created',
-                'user[id,displayName]',
+                'createdBy[id,displayName]',
                 'likes',
                 'likedBy',
-                'comments[access,id,text,created,createdBy[id,displayName]]',
+                'comments[id,text,created,createdBy[id,displayName]]',
             ],
         },
     },

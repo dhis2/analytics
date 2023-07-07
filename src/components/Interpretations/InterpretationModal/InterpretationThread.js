@@ -3,7 +3,7 @@ import cx from 'classnames'
 import moment from 'moment'
 import PropTypes from 'prop-types'
 import React, { useRef, useEffect } from 'react'
-import { Interpretation } from '../common/index.js'
+import { Interpretation, getInterpretationAccess } from '../common/index.js'
 import { Comment } from './Comment.js'
 import { CommentAddForm } from './CommentAddForm.js'
 
@@ -26,6 +26,11 @@ const InterpretationThread = ({
         }
     }, [initialFocus])
 
+    const interpretationAccess = getInterpretationAccess(
+        interpretation,
+        currentUser
+    )
+
     return (
         <div className={cx('container', { fetching })}>
             <div className={'title'}>
@@ -39,9 +44,14 @@ const InterpretationThread = ({
                 <Interpretation
                     currentUser={currentUser}
                     interpretation={interpretation}
-                    onReplyIconClick={() => focusRef.current?.focus()}
+                    onReplyIconClick={
+                        interpretationAccess.comment
+                            ? () => focusRef.current?.focus()
+                            : null
+                    }
                     onUpdated={() => onThreadUpdated(true)}
                     onDeleted={onInterpretationDeleted}
+                    isInThread={true}
                 />
                 <div className={'comments'}>
                     {interpretation.comments.map((comment) => (
@@ -51,16 +61,19 @@ const InterpretationThread = ({
                             currentUser={currentUser}
                             interpretationId={interpretation.id}
                             onThreadUpdated={onThreadUpdated}
+                            canComment={interpretationAccess.comment}
                         />
                     ))}
                 </div>
             </div>
-            <CommentAddForm
-                currentUser={currentUser}
-                interpretationId={interpretation.id}
-                onSave={() => onThreadUpdated(true)}
-                focusRef={focusRef}
-            />
+            {interpretationAccess.comment && (
+                <CommentAddForm
+                    currentUser={currentUser}
+                    interpretationId={interpretation.id}
+                    onSave={() => onThreadUpdated(true)}
+                    focusRef={focusRef}
+                />
+            )}
             <style jsx>{`
                 .thread {
                     margin-top: var(--spacers-dp16);
