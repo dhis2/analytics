@@ -1,3 +1,10 @@
+## [26.0.12](https://github.com/dhis2/analytics/compare/v26.0.11...v26.0.12) (2023-07-07)
+
+
+### Bug Fixes
+
+* use correct access checks for showing interpretation reply, edit and delete buttons ([#1531](https://github.com/dhis2/analytics/issues/1531)) ([bf70361](https://github.com/dhis2/analytics/commit/bf703619cb773354e5665543fda36513f7edc6ce))
+
 ## [26.0.11](https://github.com/dhis2/analytics/compare/v26.0.10...v26.0.11) (2023-07-06)
 
 
