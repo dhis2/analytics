@@ -11,6 +11,7 @@ const MessageIconButton = ({
     count,
     iconComponent: Icon,
     dataTest,
+    viewOnly,
 }) => (
     <Tooltip closeDelay={200} content={tooltipContent}>
         {({ ref, onMouseOver, onMouseOut }) => (
@@ -25,7 +26,7 @@ const MessageIconButton = ({
                         event.stopPropagation()
                         onClick()
                     }}
-                    className={cx('button', { selected })}
+                    className={cx('button', { selected, viewOnly })}
                     disabled={disabled}
                     data-test={dataTest}
                 >
@@ -47,6 +48,10 @@ const MessageIconButton = ({
                         font-size: 12px;
                         line-height: 14px;
                         color: ${colors.grey700};
+                    }
+
+                    .viewOnly {
+                        cursor: default;
                     }
 
                     .button.selected {
@@ -92,6 +97,7 @@ MessageIconButton.propTypes = {
     dataTest: PropTypes.string,
     disabled: PropTypes.bool,
     selected: PropTypes.bool,
+    viewOnly: PropTypes.bool,
     onClick: PropTypes.func,
 }
 

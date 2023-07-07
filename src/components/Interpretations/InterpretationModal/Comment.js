@@ -2,7 +2,12 @@ import i18n from '@dhis2/d2-i18n'
 import { IconEdit16 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
-import { Message, MessageIconButton, MessageStatsBar } from '../common/index.js'
+import {
+    Message,
+    MessageIconButton,
+    MessageStatsBar,
+    getCommentAccess,
+} from '../common/index.js'
 import { CommentDeleteButton } from './CommentDeleteButton.js'
 import { CommentUpdateForm } from './CommentUpdateForm.js'
 
@@ -11,8 +16,11 @@ const Comment = ({
     currentUser,
     interpretationId,
     onThreadUpdated,
+    canComment,
 }) => {
     const [isUpdateMode, setIsUpdateMode] = useState(false)
+
+    const commentAccess = getCommentAccess(comment, canComment, currentUser)
 
     return isUpdateMode ? (
         <CommentUpdateForm
@@ -29,22 +37,23 @@ const Comment = ({
             created={comment.created}
             username={comment.createdBy.displayName}
         >
-            <MessageStatsBar>
-                {comment.access.update && (
+            {commentAccess.edit && (
+                <MessageStatsBar>
                     <MessageIconButton
                         iconComponent={IconEdit16}
                         tooltipContent={i18n.t('Edit')}
                         onClick={() => setIsUpdateMode(true)}
                     />
-                )}
-                {comment.access.delete && (
-                    <CommentDeleteButton
-                        commentId={comment.id}
-                        interpretationId={interpretationId}
-                        onComplete={() => onThreadUpdated(true)}
-                    />
-                )}
-            </MessageStatsBar>
+
+                    {commentAccess.delete && (
+                        <CommentDeleteButton
+                            commentId={comment.id}
+                            interpretationId={interpretationId}
+                            onComplete={() => onThreadUpdated(true)}
+                        />
+                    )}
+                </MessageStatsBar>
+            )}
         </Message>
     )
 }
@@ -54,6 +63,7 @@ Comment.propTypes = {
     currentUser: PropTypes.object.isRequired,
     interpretationId: PropTypes.string.isRequired,
     onThreadUpdated: PropTypes.func.isRequired,
+    canComment: PropTypes.bool,
 }
 
 export { Comment }

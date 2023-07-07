@@ -33,9 +33,7 @@ export const CommentUpdateForm = ({
             },
         }
     )
-    const errorText = error
-        ? error.message || i18n.t('Could not update comment')
-        : ''
+    const errorText = error ? i18n.t('Could not update comment') : ''
 
     return (
         <div className="message">

@@ -24,9 +24,9 @@ const interpretationsQuery = {
         resource: 'interpretations',
         params: ({ type, id }) => ({
             fields: [
-                'access',
+                'access[write,manage]',
                 'id',
-                'user[displayName]',
+                'createdBy[id,displayName]',
                 'created',
                 'text',
                 'comments[id]',
