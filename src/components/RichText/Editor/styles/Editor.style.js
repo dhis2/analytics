@@ -40,6 +40,11 @@ export const mainClasses = css`
         font-size: 14px;
         line-height: ${spacers.dp16};
         user-select: text;
+        resize: none;
+    }
+
+    .textarea.resizable {
+        resize: both;
     }
 
     .textarea:focus {

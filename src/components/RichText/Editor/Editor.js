@@ -11,6 +11,7 @@ import {
     IconTextItalic24,
     colors,
 } from '@dhis2/ui'
+import cx from 'classnames'
 import PropTypes from 'prop-types'
 import React, { forwardRef, useRef, useEffect, useState } from 'react'
 import { UserMentionWrapper } from '../../UserMention/UserMentionWrapper.js'
@@ -200,6 +201,7 @@ export const Editor = forwardRef(
             onChange,
             errorText,
             initialFocus,
+            resizable,
         },
         externalRef
     ) => {
@@ -254,7 +256,9 @@ export const Editor = forwardRef(
                             inputReference={textareaRef}
                         >
                             <textarea
-                                className="textarea"
+                                className={cx('textarea', {
+                                    resizable,
+                                })}
                                 ref={textareaRef}
                                 placeholder={inputPlaceholder}
                                 disabled={disabled}
@@ -283,6 +287,7 @@ Editor.displayName = 'Editor'
 
 Editor.defaultProps = {
     initialFocus: true,
+    resizable: true,
 }
 
 Editor.propTypes = {
@@ -293,4 +298,5 @@ Editor.propTypes = {
     initialFocus: PropTypes.bool,
     inputHeight: PropTypes.number,
     inputPlaceholder: PropTypes.string,
+    resizable: PropTypes.bool,
 }
