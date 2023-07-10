@@ -200,6 +200,7 @@ export const Editor = forwardRef(
             onChange,
             errorText,
             helpText,
+            initialFocus,
         },
         externalRef
     ) => {
@@ -207,7 +208,10 @@ export const Editor = forwardRef(
         const internalRef = useRef()
         const textareaRef = externalRef || internalRef
 
-        useEffect(() => textareaRef.current?.focus(), [textareaRef])
+        useEffect(
+            () => initialFocus && textareaRef.current?.focus(),
+            [initialFocus, textareaRef]
+        )
 
         return (
             <div
@@ -279,12 +283,17 @@ export const Editor = forwardRef(
 
 Editor.displayName = 'Editor'
 
+Editor.defaultProps = {
+    initialFocus: true,
+}
+
 Editor.propTypes = {
     value: PropTypes.string.isRequired,
     onChange: PropTypes.func.isRequired,
     disabled: PropTypes.bool,
     errorText: PropTypes.string,
     helpText: PropTypes.string,
+    initialFocus: PropTypes.bool,
     inputHeight: PropTypes.number,
     inputPlaceholder: PropTypes.string,
 }
