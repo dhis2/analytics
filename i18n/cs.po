@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2023-04-18T08:41:27.838Z\n"
+"POT-Creation-Date: 2023-07-06T08:30:33.216Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: Jiří Podhorecký, 2023\n"
 "Language-Team: Czech (https://app.transifex.com/hisp-uio/teams/100509/cs/)\n"
@@ -354,6 +354,9 @@ msgstr "Napsat odpověď"
 msgid "Post reply"
 msgstr "Odpovědět"
 
+msgid "Delete failed"
+msgstr "Smazání se nezdařilo"
+
 msgid "Could not update comment"
 msgstr "Komentář se nepodařilo aktualizovat"
 
@@ -388,14 +391,24 @@ msgstr "Vložit interpretaci"
 msgid "Interpretations"
 msgstr "Interpretace"
 
+msgid "Reply"
+msgstr "Odpovědět"
+
+msgid "{{count}} replies"
+msgid_plural "{{count}} replies"
+msgstr[0] "{{count}} odpověď"
+msgstr[1] " {{count}} odpovědi"
+msgstr[2] "{{count}} odpovědí"
+msgstr[3] "{{count}} odpovědi"
+
+msgid "View replies"
+msgstr ""
+
 msgid "Unlike"
 msgstr "Na rozdíl od"
 
 msgid "Like"
 msgstr "Jako"
-
-msgid "Reply"
-msgstr "Odpovědět"
 
 msgid "Share"
 msgstr "Sdílet"
@@ -875,6 +888,9 @@ msgstr "Finanční roky"
 
 msgid "Years"
 msgstr "Let"
+
+msgid "Interpretations and details"
+msgstr ""
 
 msgid "Translating to"
 msgstr "Překlad do"
