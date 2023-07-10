@@ -6,6 +6,7 @@ export const mainClasses = css`
         display: flex;
         flex-direction: column;
         width: 100%;
+        height: 100%;
     }
 
     .preview {
@@ -13,6 +14,13 @@ export const mainClasses = css`
         font-size: 14px;
         line-height: ${spacers.dp16};
         color: ${colors.grey900};
+        overflow-y: auto;
+        scroll-behavior: smooth;
+    }
+
+    .edit {
+        overflow-y: auto;
+        scroll-behavior: smooth;
     }
 
     .textarea {

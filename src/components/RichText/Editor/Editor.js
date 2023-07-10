@@ -3,7 +3,7 @@ import {
     Button,
     Popover,
     Tooltip,
-    Field,
+    Help,
     IconAt24,
     IconFaceAdd24,
     IconLink24,
@@ -199,7 +199,6 @@ export const Editor = forwardRef(
             inputPlaceholder,
             onChange,
             errorText,
-            helpText,
             initialFocus,
         },
         externalRef
@@ -249,11 +248,7 @@ export const Editor = forwardRef(
                         <Parser>{value}</Parser>
                     </div>
                 ) : (
-                    <Field
-                        error={!!errorText}
-                        validationText={errorText}
-                        helpText={helpText}
-                    >
+                    <div className="edit">
                         <UserMentionWrapper
                             onUserSelect={onChange}
                             inputReference={textareaRef}
@@ -273,7 +268,10 @@ export const Editor = forwardRef(
                                 }
                             />
                         </UserMentionWrapper>
-                    </Field>
+                        {errorText && (
+                            <Help error={!!errorText}>{errorText}</Help>
+                        )}
+                    </div>
                 )}
                 <style jsx>{mainClasses}</style>
             </div>
@@ -292,7 +290,6 @@ Editor.propTypes = {
     onChange: PropTypes.func.isRequired,
     disabled: PropTypes.bool,
     errorText: PropTypes.string,
-    helpText: PropTypes.string,
     initialFocus: PropTypes.bool,
     inputHeight: PropTypes.number,
     inputPlaceholder: PropTypes.string,
