@@ -19,12 +19,15 @@ export const mainClasses = css`
     }
 
     .edit {
+        width: 100%;
+        height: 100%;
         overflow-y: auto;
         scroll-behavior: smooth;
     }
 
     .textarea {
         width: 100%;
+        height: 100%;
         box-sizing: border-box;
         padding: ${spacers.dp8} ${spacers.dp12};
 

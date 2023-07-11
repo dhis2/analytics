@@ -196,7 +196,6 @@ export const Editor = forwardRef(
         {
             value,
             disabled,
-            inputHeight,
             inputPlaceholder,
             onChange,
             errorText,
@@ -262,7 +261,6 @@ export const Editor = forwardRef(
                                 ref={textareaRef}
                                 placeholder={inputPlaceholder}
                                 disabled={disabled}
-                                rows={inputHeight}
                                 value={value}
                                 onChange={(event) =>
                                     onChange(event.target.value)
@@ -296,7 +294,6 @@ Editor.propTypes = {
     disabled: PropTypes.bool,
     errorText: PropTypes.string,
     initialFocus: PropTypes.bool,
-    inputHeight: PropTypes.number,
     inputPlaceholder: PropTypes.string,
     resizable: PropTypes.bool,
 }

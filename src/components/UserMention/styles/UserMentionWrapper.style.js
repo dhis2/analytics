@@ -8,6 +8,8 @@ import css from 'styled-jsx/css'
  */
 export const userMentionWrapperClasses = css`
     .wrapper {
+        width: 100%;
+        height: 100%;
         position: relative;
     }
     .clone {
