@@ -35,6 +35,7 @@ import {
     NUMBER_TYPE_ROW_PERCENTAGE,
     NUMBER_TYPE_VALUE,
 } from './pivotTableConstants.js'
+import { processTotalValue } from './processTotalValue.js'
 
 const dataFields = [
     'value',
@@ -705,9 +706,7 @@ export class PivotTableEngine {
                 dataFields.forEach((field) => {
                     const headerIndex = this.dimensionLookup.dataHeaders[field]
                     const value = parseValue(dataRow[headerIndex])
-                    if (!isNaN(value)) {
-                        totalCell[field] = (totalCell[field] || 0) + value
-                    }
+                    processTotalValue(value, totalCell, field)
                 })
             }
             totalCell.count += 1
@@ -724,10 +723,7 @@ export class PivotTableEngine {
             dataFields.forEach((field) => {
                 const headerIndex = this.dimensionLookup.dataHeaders[field]
                 const value = parseValue(dataRow[headerIndex])
-                if (!isNaN(value)) {
-                    percentageTotal[field] =
-                        (percentageTotal[field] || 0) + value
-                }
+                processTotalValue(value, percentageTotal, field)
             })
 
             if (totals.columnSubtotal) {
@@ -742,10 +738,7 @@ export class PivotTableEngine {
                 dataFields.forEach((field) => {
                     const headerIndex = this.dimensionLookup.dataHeaders[field]
                     const value = parseValue(dataRow[headerIndex])
-                    if (!isNaN(value)) {
-                        percentageTotal[field] =
-                            (percentageTotal[field] || 0) + value
-                    }
+                    processTotalValue(value, percentageTotal, field)
                 })
             }
 
@@ -761,10 +754,7 @@ export class PivotTableEngine {
                 dataFields.forEach((field) => {
                     const headerIndex = this.dimensionLookup.dataHeaders[field]
                     const value = parseValue(dataRow[headerIndex])
-                    if (!isNaN(value)) {
-                        percentageTotal[field] =
-                            (percentageTotal[field] || 0) + value
-                    }
+                    processTotalValue(value, percentageTotal, field)
                 })
             }
         }
@@ -780,10 +770,7 @@ export class PivotTableEngine {
             dataFields.forEach((field) => {
                 const headerIndex = this.dimensionLookup.dataHeaders[field]
                 const value = parseValue(dataRow[headerIndex])
-                if (!isNaN(value)) {
-                    percentageTotal[field] =
-                        (percentageTotal[field] || 0) + value
-                }
+                processTotalValue(value, percentageTotal, field)
             })
 
             if (totals.rowSubtotal) {
@@ -798,10 +785,7 @@ export class PivotTableEngine {
                 dataFields.forEach((field) => {
                     const headerIndex = this.dimensionLookup.dataHeaders[field]
                     const value = parseValue(dataRow[headerIndex])
-                    if (!isNaN(value)) {
-                        percentageTotal[field] =
-                            (percentageTotal[field] || 0) + value
-                    }
+                    processTotalValue(value, percentageTotal, field)
                 })
             }
 
@@ -817,10 +801,7 @@ export class PivotTableEngine {
                 dataFields.forEach((field) => {
                     const headerIndex = this.dimensionLookup.dataHeaders[field]
                     const value = parseValue(dataRow[headerIndex])
-                    if (!isNaN(value)) {
-                        percentageTotal[field] =
-                            (percentageTotal[field] || 0) + value
-                    }
+                    processTotalValue(value, percentageTotal, field)
                 })
             }
         }
