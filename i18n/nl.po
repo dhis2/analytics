@@ -23,7 +23,7 @@ msgid "Data"
 msgstr "Gegevens"
 
 msgid "Data Type"
-msgstr ""
+msgstr "Data type"
 
 msgid "Totals"
 msgstr "Totalen"
@@ -32,22 +32,22 @@ msgid "Details"
 msgstr "Details"
 
 msgid "Detail"
-msgstr ""
+msgstr "Detail"
 
 msgid "Search dimensions"
-msgstr ""
+msgstr "Zoek afmetingen"
 
 msgid "Dimension recommended with selected data"
-msgstr ""
+msgstr "Afmeting aanbevolen bij geselecteerde gegevens"
 
 msgid "Search"
 msgstr "Zoek"
 
 msgid "Selected Data"
-msgstr ""
+msgstr "Geselecteerde gegevens"
 
 msgid "Deselect All"
-msgstr ""
+msgstr "Deselecteer alles"
 
 msgid "Select all"
 msgstr "Selecteer alles"
@@ -62,10 +62,10 @@ msgid "Year"
 msgstr "Jaar"
 
 msgid "Relative periods"
-msgstr ""
+msgstr "Relatieve perioden"
 
 msgid "Fixed periods"
-msgstr ""
+msgstr "Vaste periodes"
 
 msgid "Period type"
 msgstr "Soort periode"
@@ -107,10 +107,10 @@ msgid "December"
 msgstr "December"
 
 msgid "Week {{weekNumber}}"
-msgstr ""
+msgstr "Week {{weekNumber}}"
 
 msgid "Bi-Week {{biWeekNumber}}"
-msgstr ""
+msgstr "Tweewekelijks {{biWeekNumber}}"
 
 msgid "Daily"
 msgstr "Dagelijks"
@@ -197,13 +197,13 @@ msgid "Weeks this year"
 msgstr "Weken dit jaar"
 
 msgid "This bi-week"
-msgstr ""
+msgstr "Deze tweewekelijkse"
 
 msgid "Last bi-week"
-msgstr ""
+msgstr "Afgelopen twee weken"
 
 msgid "Last 4 bi-weeks"
-msgstr ""
+msgstr "Laatste 4 twee weken"
 
 msgid "This month"
 msgstr "Deze maand"
@@ -224,16 +224,16 @@ msgid "Months this year"
 msgstr "Maanden dit jaar"
 
 msgid "This bi-month"
-msgstr ""
+msgstr "Deze tweemaandelijkse"
 
 msgid "Last bi-month"
-msgstr ""
+msgstr "Laatste twee maanden"
 
 msgid "Last 6 bi-months"
-msgstr ""
+msgstr "Laatste 6 bi-maanden"
 
 msgid "Bi-months this year"
-msgstr ""
+msgstr "Tweemaandelijks dit jaar"
 
 msgid "This quarter"
 msgstr "Dit kwartier"
@@ -254,7 +254,7 @@ msgid "Last six-month"
 msgstr "Laatste halfjaar"
 
 msgid "Last 2 six-month"
-msgstr ""
+msgstr "Laatste 2 zes maanden"
 
 msgid "This financial year"
 msgstr "Dit financieel jaar"
@@ -281,40 +281,40 @@ msgid "Weeks"
 msgstr "Weken"
 
 msgid "Bi-weeks"
-msgstr ""
+msgstr "Twee weken"
 
 msgid "Months"
 msgstr "Maanden"
 
 msgid "Bi-months"
-msgstr ""
+msgstr "Twee maanden"
 
 msgid "Quarters"
-msgstr ""
+msgstr "Kwartalen"
 
 msgid "Six-months"
-msgstr ""
+msgstr "Zes maanden"
 
 msgid "Financial Years"
-msgstr ""
+msgstr "Boekjaren"
 
 msgid "Years"
 msgstr "Jaren"
 
 msgid "Reporting rate"
-msgstr ""
+msgstr "Rapportagepercentage"
 
 msgid "Reporting rate on time"
-msgstr ""
+msgstr "Rapportagepercentage op tijd"
 
 msgid "Actual reports"
-msgstr ""
+msgstr "Actuele rapporten"
 
 msgid "Actual reports on time"
-msgstr ""
+msgstr "Actuele rapporten op tijd"
 
 msgid "Expected reports"
-msgstr ""
+msgstr "Verwachte rapporten"
 
 msgid "Program"
 msgstr "Programma"
@@ -323,34 +323,34 @@ msgid "Indicators"
 msgstr "Indicatoren"
 
 msgid "Select indicator group"
-msgstr ""
+msgstr "Selecteer indicatorgroep"
 
 msgid "[ All groups ]"
-msgstr ""
+msgstr "[ Alle groepen ]"
 
 msgid "Data elements"
 msgstr "Gegevenselementen"
 
 msgid "Select data element group"
-msgstr ""
+msgstr "Selecteer gegevenselementgroep"
 
 msgid "[ All data elements ]"
-msgstr ""
+msgstr "[ Alle gegevenselementen ]"
 
 msgid "Data sets"
 msgstr "Gegevensreeksen"
 
 msgid "Select data sets"
-msgstr ""
+msgstr "Selecteer datasets"
 
 msgid "[ All metrics ]"
-msgstr ""
+msgstr "[ Alle statistieken ]"
 
 msgid "Event data items"
 msgstr "Gebeurtenisgegevensitems"
 
 msgid "Select a program"
-msgstr ""
+msgstr "Selecteer een programma"
 
 msgid "Program indicators"
 msgstr "Programmaindicators"
@@ -359,19 +359,19 @@ msgid "Organisation Unit"
 msgstr "Organisatieëenheid"
 
 msgid "{{dynamicOuNames}} and {{lastOuName}}"
-msgstr ""
+msgstr "{{dynamicOuNames}} en {{lastOuName}}"
 
 msgid "{{allDynamicOuNames}} levels"
-msgstr ""
+msgstr "{{allDynamicOuNames}} niveaus"
 
 msgid "{{allDynamicOuNames}} groups"
-msgstr ""
+msgstr "{{allDynamicOuNames}} groepen"
 
 msgid "{{allDynamicOuNames}} levels in {{staticOuNames}}"
-msgstr ""
+msgstr "{{allDynamicOuNames}} niveaus in {{staticOuNames}}"
 
 msgid "{{allDynamicOuNames}} groups in {{staticOuNames}}"
-msgstr ""
+msgstr "{{allDynamicOuNames}} groepen in {{staticOuNames}}"
 
 msgid "No data"
 msgstr "Geen gegevens"
