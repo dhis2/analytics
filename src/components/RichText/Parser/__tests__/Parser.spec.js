@@ -11,7 +11,7 @@ jest.mock('../MdParser.js', () => ({
 describe('RichText: Parser component', () => {
     let richTextParser
     const defaultProps = {
-        style: { color: 'blue' },
+        style: { color: 'blue', whiteSpace: 'pre-line' },
     }
 
     const renderComponent = (props, text) => {
@@ -33,7 +33,9 @@ describe('RichText: Parser component', () => {
     it('should have rendered content', () => {
         richTextParser = renderComponent({}, 'plain text')
 
-        expect(richTextParser.html()).toEqual('<p>converted text</p>')
+        expect(richTextParser.html()).toEqual(
+            '<p style="white-space:pre-line">converted text</p>'
+        )
     })
 
     it('should return null if no children is passed', () => {
