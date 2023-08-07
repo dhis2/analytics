@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2023-06-23T09:35:54.767Z\n"
-"PO-Revision-Date: 2023-06-23T09:35:54.767Z\n"
+"POT-Creation-Date: 2023-07-06T08:30:33.216Z\n"
+"PO-Revision-Date: 2023-07-06T08:30:33.216Z\n"
 
 msgid "view only"
 msgstr "view only"
@@ -343,6 +343,9 @@ msgstr "Write a reply"
 msgid "Post reply"
 msgstr "Post reply"
 
+msgid "Delete failed"
+msgstr "Delete failed"
+
 msgid "Could not update comment"
 msgstr "Could not update comment"
 
@@ -377,14 +380,25 @@ msgstr "Post interpretation"
 msgid "Interpretations"
 msgstr "Interpretations"
 
+msgid "Reply"
+msgstr "Reply"
+
+msgid "{{count}} replies"
+msgid_plural "{{count}} replies"
+msgstr[0] "{{count}} reply"
+msgstr[1] "{{count}} replies"
+
+msgid "View replies"
+msgstr "View replies"
+
 msgid "Unlike"
 msgstr "Unlike"
 
 msgid "Like"
 msgstr "Like"
 
-msgid "Reply"
-msgstr "Reply"
+msgid "Share"
+msgstr "Share"
 
 msgid "See interpretation"
 msgstr "See interpretation"

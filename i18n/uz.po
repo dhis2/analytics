@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2023-04-18T08:41:27.838Z\n"
+"POT-Creation-Date: 2023-07-06T08:30:33.216Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: Ibatov <ibatovk@who.int>, 2023\n"
 "Language-Team: Uzbek (Cyrillic) (https://app.transifex.com/hisp-uio/teams/100509/uz@Cyrl/)\n"
@@ -344,6 +344,9 @@ msgstr "Изоҳ ёзинг"
 msgid "Post reply"
 msgstr ""
 
+msgid "Delete failed"
+msgstr "Ўчириш амалга ошмади"
+
 msgid "Could not update comment"
 msgstr ""
 
@@ -376,14 +379,21 @@ msgstr ""
 msgid "Interpretations"
 msgstr "Талқинлар"
 
+msgid "Reply"
+msgstr "Изоҳ"
+
+msgid "{{count}} replies"
+msgid_plural "{{count}} replies"
+msgstr[0] "{{count}} изоҳлар"
+
+msgid "View replies"
+msgstr ""
+
 msgid "Unlike"
 msgstr "Аксинча"
 
 msgid "Like"
 msgstr "Каби, ўхшаш"
-
-msgid "Reply"
-msgstr "Изоҳ"
 
 msgid "Share"
 msgstr "Улашиш"
@@ -835,6 +845,9 @@ msgstr "Молиявий йиллар"
 
 msgid "Years"
 msgstr "Йиллар"
+
+msgid "Interpretations and details"
+msgstr ""
 
 msgid "Translating to"
 msgstr ""

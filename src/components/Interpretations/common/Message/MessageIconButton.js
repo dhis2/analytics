@@ -1,4 +1,4 @@
-import { Tooltip, colors, spacers } from '@dhis2/ui'
+import { Tooltip, colors, spacers, theme } from '@dhis2/ui'
 import cx from 'classnames'
 import PropTypes from 'prop-types'
 import React from 'react'
@@ -11,6 +11,7 @@ const MessageIconButton = ({
     count,
     iconComponent: Icon,
     dataTest,
+    viewOnly,
 }) => (
     <Tooltip closeDelay={200} content={tooltipContent}>
         {({ ref, onMouseOver, onMouseOut }) => (
@@ -25,7 +26,7 @@ const MessageIconButton = ({
                         event.stopPropagation()
                         onClick()
                     }}
-                    className={cx('button', { selected })}
+                    className={cx('button', { selected, viewOnly })}
                     disabled={disabled}
                     data-test={dataTest}
                 >
@@ -49,6 +50,10 @@ const MessageIconButton = ({
                         color: ${colors.grey700};
                     }
 
+                    .viewOnly {
+                        cursor: default;
+                    }
+
                     .button.selected {
                         color: ${colors.teal600};
                         font-weight: 500;
@@ -69,6 +74,15 @@ const MessageIconButton = ({
                     .button.selected:hover :global(svg) {
                         color: ${colors.teal700};
                     }
+
+                    .button:disabled {
+                        color: ${theme.disabled};
+                        cursor: not-allowed;
+                    }
+
+                    .button:disabled :global(svg) {
+                        color: ${theme.disabled};
+                    }
                 `}</style>
             </span>
         )}
@@ -83,6 +97,7 @@ MessageIconButton.propTypes = {
     dataTest: PropTypes.string,
     disabled: PropTypes.bool,
     selected: PropTypes.bool,
+    viewOnly: PropTypes.bool,
     onClick: PropTypes.func,
 }
 

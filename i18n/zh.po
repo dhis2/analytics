@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2023-05-24T12:55:52.925Z\n"
+"POT-Creation-Date: 2023-07-06T08:30:33.216Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: easylin <lin_xd@126.com>, 2023\n"
 "Language-Team: Chinese (https://app.transifex.com/hisp-uio/teams/100509/zh/)\n"
@@ -347,6 +347,9 @@ msgstr "书写应答"
 msgid "Post reply"
 msgstr "发表回复"
 
+msgid "Delete failed"
+msgstr "删除失败"
+
 msgid "Could not update comment"
 msgstr "无法更新评论"
 
@@ -379,14 +382,21 @@ msgstr "后解释"
 msgid "Interpretations"
 msgstr "解释"
 
+msgid "Reply"
+msgstr "应答"
+
+msgid "{{count}} replies"
+msgid_plural "{{count}} replies"
+msgstr[0] "{{count}}条回复"
+
+msgid "View replies"
+msgstr "查看回复"
+
 msgid "Unlike"
 msgstr "不喜欢"
 
 msgid "Like"
 msgstr "喜欢"
-
-msgid "Reply"
-msgstr "应答"
 
 msgid "Share"
 msgstr "分享"

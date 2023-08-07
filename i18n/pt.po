@@ -2,17 +2,18 @@
 # Translators:
 # Sheila André <sandre@saudigitus.org>, 2020
 # Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2022
-# Ge Joao <gsimango@saudigitus.org>, 2022
 # Viktor Varland <viktor@dhis2.org>, 2022
 # Fernando Jorge Bade, 2022
 # phil_dhis2, 2023
+# David Júnior <davidjr.mondlane@gmail.com>, 2023
+# Ge Joao <gsimango@saudigitus.org>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2023-04-18T08:41:27.838Z\n"
+"POT-Creation-Date: 2023-07-06T08:30:33.216Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: phil_dhis2, 2023\n"
+"Last-Translator: Ge Joao <gsimango@saudigitus.org>, 2023\n"
 "Language-Team: Portuguese (https://app.transifex.com/hisp-uio/teams/100509/pt/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -351,6 +352,9 @@ msgstr "Escreva uma resposta"
 msgid "Post reply"
 msgstr ""
 
+msgid "Delete failed"
+msgstr "Falha na exclusão"
+
 msgid "Could not update comment"
 msgstr ""
 
@@ -383,14 +387,23 @@ msgstr ""
 msgid "Interpretations"
 msgstr "Interpretações"
 
+msgid "Reply"
+msgstr "Responder"
+
+msgid "{{count}} replies"
+msgid_plural "{{count}} replies"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+msgid "View replies"
+msgstr ""
+
 msgid "Unlike"
 msgstr "Ao contrário"
 
 msgid "Like"
 msgstr "como"
-
-msgid "Reply"
-msgstr "Responder"
 
 msgid "Share"
 msgstr "Partilha"
@@ -447,7 +460,7 @@ msgid "Created by"
 msgstr "Criado por"
 
 msgid "Anyone"
-msgstr ""
+msgstr "Qualquer um"
 
 msgid "Only you"
 msgstr ""
@@ -848,6 +861,9 @@ msgstr "Ano financeiro "
 
 msgid "Years"
 msgstr "Anos"
+
+msgid "Interpretations and details"
+msgstr ""
 
 msgid "Translating to"
 msgstr ""

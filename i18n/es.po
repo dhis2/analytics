@@ -1,22 +1,22 @@
 # 
 # Translators:
 # ericbp <ericbarredap@gmail.com>, 2020
-# Alison Andrade <aandrade@ippfwhr.org>, 2021
 # Juan M Alcantara Acosta <jmalcantara1@gmail.com>, 2021
 # Prabhjot Singh, 2021
 # Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2022
 # Viktor Varland <viktor@dhis2.org>, 2022
 # Marta Vila <marta@dhis2.org>, 2023
 # phil_dhis2, 2023
-# Enzo Nicolas Rossi <enzo@dhis2.org>, 2023
 # Janeth Cruz, 2023
+# Sergio Valenzuela <sergio.valenzuela@ehas.org>, 2023
+# Enzo Nicolas Rossi <enzo@dhis2.org>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2023-05-24T12:55:52.925Z\n"
+"POT-Creation-Date: 2023-07-06T08:30:33.216Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Janeth Cruz, 2023\n"
+"Last-Translator: Enzo Nicolas Rossi <enzo@dhis2.org>, 2023\n"
 "Language-Team: Spanish (https://app.transifex.com/hisp-uio/teams/100509/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -56,9 +56,9 @@ msgstr "Creado {{time}}"
 
 msgid "Viewed {{count}} times"
 msgid_plural "Viewed {{count}} times"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Visto 1 vez"
+msgstr[1] "Visto {{count}} veces"
+msgstr[2] "Visto {{count}} veces"
 
 msgid "Notifications"
 msgstr "Notificaciones"
@@ -81,7 +81,7 @@ msgid "About this map"
 msgstr "Acerca de este mapa"
 
 msgid "About this line list"
-msgstr ""
+msgstr "Acerca de este listado"
 
 msgid "About this visualization"
 msgstr "Acerca de esta visualización"
@@ -181,7 +181,7 @@ msgid "No data"
 msgstr "No hay datos"
 
 msgid "Search by data item name"
-msgstr "Búsqueda por nombre de elemento de datos"
+msgstr "Búsqueda por nombre de item de datos"
 
 msgid "No items selected"
 msgstr "No hay elementos seleccionados"
@@ -196,7 +196,7 @@ msgid "No data sets found"
 msgstr "No se han encontrado sets de datos"
 
 msgid "No event data items found"
-msgstr ""
+msgstr "No se encontraron elementos para datos de eventos"
 
 msgid "No program indicators found"
 msgstr "No se han encontrado indicadores de programa"
@@ -209,6 +209,7 @@ msgstr "No se han encontrado sets de datos para \"{{- searchTerm}}\""
 
 msgid "No event data items found for \"{{- searchTerm}}\""
 msgstr ""
+"No se encontraron elementos para datos de eventos para \"{{- searchTerm}}\""
 
 msgid "No program indicators found for \"{{- searchTerm}}\""
 msgstr "No se han encontrado indicadores de programa para \"{{- searchTerm}}\""
@@ -350,7 +351,7 @@ msgid "event report"
 msgstr "informe de evento"
 
 msgid "line list"
-msgstr ""
+msgstr "listados"
 
 msgid "map"
 msgstr "mapa"
@@ -366,6 +367,9 @@ msgstr "Escribe una respuesta"
 
 msgid "Post reply"
 msgstr "Publicar respuesta"
+
+msgid "Delete failed"
+msgstr "Fallado el proceso de eliminar"
 
 msgid "Could not update comment"
 msgstr "No se pudo actualizar el comentario"
@@ -401,14 +405,23 @@ msgstr ""
 msgid "Interpretations"
 msgstr "Interpretaciones"
 
+msgid "Reply"
+msgstr "Responder"
+
+msgid "{{count}} replies"
+msgid_plural "{{count}} replies"
+msgstr[0] "{{contar}} respuesta"
+msgstr[1] "{{contar}} respuestas"
+msgstr[2] "{{count}} respuestas"
+
+msgid "View replies"
+msgstr ""
+
 msgid "Unlike"
 msgstr "diferente a"
 
 msgid "Like"
 msgstr "como"
-
-msgid "Reply"
-msgstr "Responder"
 
 msgid "Share"
 msgstr "Compartir"
@@ -465,7 +478,7 @@ msgid "Created by"
 msgstr "Creado por"
 
 msgid "Anyone"
-msgstr "Alguien"
+msgstr "Todos"
 
 msgid "Only you"
 msgstr "Solo tú"
@@ -581,29 +594,33 @@ msgid "New map"
 msgstr "Nuevo mapa"
 
 msgid "Open a line list"
-msgstr ""
+msgstr "Abrir un listado"
 
 msgid "Loading line lists"
-msgstr ""
+msgstr "Cargar listados"
 
 msgid "Couldn't load line lists"
-msgstr ""
+msgstr "No se pudieron cargar los listados"
 
 msgid ""
 "There was a problem loading line lists. Try again or contact your system "
 "administrator."
 msgstr ""
+"Hubo un problema al cargar las listas. Vuelva a intentarlo o póngase en "
+"contacto con el administrador del sistema."
 
 msgid "No line lists found. Click New line list to get started."
-msgstr ""
+msgstr "No se encontraron listas. Haga clic en Nueva lista para comenzar."
 
 msgid ""
 "No line lists found. Try adjusting your search or filter options to find "
 "what you're looking for."
 msgstr ""
+"No se encontraron listas. Intente ajustar sus opciones de búsqueda o filtro "
+"para encontrar lo que está buscando."
 
 msgid "New line list"
-msgstr ""
+msgstr "Nuevo listado"
 
 msgid "Options"
 msgstr "Opciones"
@@ -613,21 +630,21 @@ msgstr "Ocultar"
 
 msgid "{{count}} org units"
 msgid_plural "{{count}} org units"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "{{count}} unidad organizativa"
+msgstr[1] "{{count}} unidades de organización"
+msgstr[2] "{{count}} unidades organizativas"
 
 msgid "{{count}} levels"
 msgid_plural "{{count}} levels"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "{{contar}} nivel"
+msgstr[1] "{{contar}} niveles"
+msgstr[2] "{{contar}} niveles"
 
 msgid "{{count}} groups"
 msgid_plural "{{count}} groups"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "{{contar}} grupo"
+msgstr[1] "{{contar}} grupos"
+msgstr[2] "{{contar}} grupos"
 
 msgid "Selected: {{commaSeparatedListOfOrganisationUnits}}"
 msgstr "Seleccionado: {{commaSeparatedListOfOrganisationUnits}}"
@@ -717,16 +734,16 @@ msgid "Yearly"
 msgstr "Anual"
 
 msgid "Financial year (Start November)"
-msgstr ""
+msgstr "Año fiscal (Inicio noviembre)"
 
 msgid "Financial year (Start October)"
-msgstr "Año fiscal - Octubre"
+msgstr "Año fiscal (inicio octubre)"
 
 msgid "Financial year (Start July)"
-msgstr "Año fiscal - Julio"
+msgstr "Año fiscal (inicio Julio)"
 
 msgid "Financial year (Start April)"
-msgstr "Año fiscal - Abril"
+msgstr "Año fiscal (inicio Abril)"
 
 msgid "Today"
 msgstr "Hoy"
@@ -891,7 +908,7 @@ msgid "Choose a locale"
 msgstr "Elegir un idioma"
 
 msgid "Base locale reference"
-msgstr ""
+msgstr "Referencia de configuración regional base"
 
 msgid "Choose a locale to translate from the menu above"
 msgstr "Elegir un idioma para traducir desde el menú de arriba"
@@ -933,13 +950,13 @@ msgid "Reporting rate"
 msgstr "Tasa de informes"
 
 msgid "Reporting rate on time"
-msgstr ""
+msgstr "Tasa de informes a tiempo"
 
 msgid "Actual reports"
 msgstr "Informes reales"
 
 msgid "Actual reports on time"
-msgstr ""
+msgstr "Informes reales a tiempo"
 
 msgid "Expected reports"
 msgstr "Informes esperados"
@@ -1070,7 +1087,7 @@ msgid "Start"
 msgstr "Comienzo"
 
 msgid "Middle"
-msgstr ""
+msgstr "Medio"
 
 msgid "End"
 msgstr "Fin"
@@ -1109,10 +1126,10 @@ msgid "{{thresholdFactor}} × IQR Q3"
 msgstr "{{thresholdFactor}} × IQR Q3"
 
 msgid "{{thresholdFactor}} × Modified Z-score low"
-msgstr "{{thresholdFactor}} × Modificado Z-score bajo"
+msgstr "{{thresholdFactor}} × Z-score modificado bajo"
 
 msgid "{{thresholdFactor}} × Modified Z-score high"
-msgstr "{{thresholdFactor}} × Modificado Z-score alto"
+msgstr "{{thresholdFactor}} × Z-score modificado  alto"
 
 msgid "{{thresholdFactor}} × Z-score low"
 msgstr "{{thresholdFactor}} × Z-score bajo"
@@ -1160,7 +1177,7 @@ msgid "Line"
 msgstr "Línea"
 
 msgid "Line list"
-msgstr ""
+msgstr "Listados"
 
 msgid "Year over year (line)"
 msgstr "Año tras año (línea)"
@@ -1206,9 +1223,9 @@ msgstr "Eje {{axisId}}"
 
 msgid "{{count}} items"
 msgid_plural "{{count}} items"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "{{contar}} elemento"
+msgstr[1] "{{contar}} artículos"
+msgstr[2] "{{contar}} artículos"
 
 msgid "Reset zoom"
 msgstr "Restablecer zoom"

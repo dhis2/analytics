@@ -148,7 +148,7 @@ export const FileMenu = ({
                         onClick={onNew}
                         dataTest="file-menu-new"
                     />
-                    <MenuDivider />
+                    <MenuDivider dense />
                     <HoverMenuListItem
                         label={i18n.t('Open…')}
                         icon={<IconLaunch24 color={iconActiveColor} />}
@@ -230,7 +230,7 @@ export const FileMenu = ({
                         onClick={onMenuItemClick('translate')}
                         dataTest="file-menu-translate"
                     />
-                    <MenuDivider />
+                    <MenuDivider dense />
                     <HoverMenuListItem
                         label={i18n.t('Share…')}
                         icon={
@@ -263,7 +263,7 @@ export const FileMenu = ({
                         onClick={onMenuItemClick('getlink')}
                         dataTest="file-menu-getlink"
                     />
-                    <MenuDivider />
+                    <MenuDivider dense />
                     <HoverMenuListItem
                         label={i18n.t('Delete')}
                         destructive
