@@ -833,7 +833,10 @@ export class PivotTableEngine {
         if (totalCell && totalCell.count) {
             totalCell.value = applyTotalAggregationType(
                 totalCell,
-                this.visualization.numberType !== NUMBER_TYPE_VALUE &&
+                // DHIS2-15698: do not override total aggregation type when numberType option is not present
+                // (numberType option default is VALUE)
+                this.visualization.numberType &&
+                    this.visualization.numberType !== NUMBER_TYPE_VALUE &&
                     AGGREGATE_TYPE_SUM
             )
             this.adaptiveClippingController.add(
