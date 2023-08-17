@@ -1,4 +1,4 @@
-import { processTotalValue } from '../processTotalValue.js'
+import { addToTotalIfNumber } from '../addToTotalIfNumber.js'
 
 const field = 'test'
 const tests = [
@@ -88,11 +88,12 @@ const tests = [
     },
 ]
 
-describe('processTotalValue', () => {
+describe('addToTotalIfNumber', () => {
     tests.forEach((t) => {
         it(t.testName, () => {
-            processTotalValue(t.value, t.totalObj, t.field)
-            expect(t.totalObj[field]).toEqual(t.expected)
+            expect(addToTotalIfNumber(t.value, t.totalObj[t.field])).toEqual(
+                t.expected
+            )
         })
     })
 })
