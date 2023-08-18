@@ -33,8 +33,13 @@ const InterpretationThread = ({
     )
 
     return (
-        <div className={cx('container', { fetching })}>
-            <div className={dashboardRedirectUrl ? null : 'scrollbox'}>
+        <div
+            className={cx('container', {
+                fetching,
+                dashboard: !!dashboardRedirectUrl,
+            })}
+        >
+            <div className={'scrollbox'}>
                 <div className={'title'}>
                     <IconClock16 color={colors.grey700} />
                     {moment(interpretation.created).format('LLL')}
@@ -91,6 +96,11 @@ const InterpretationThread = ({
                     flex-direction: column;
                 }
 
+                .container.dashboard {
+                    overflow: auto;
+                    max-height: none;
+                }
+
                 .container.fetching::before {
                     content: '';
                     position: absolute;
@@ -118,6 +128,10 @@ const InterpretationThread = ({
                 .scrollbox {
                     overflow-y: auto;
                     scroll-behavior: smooth;
+                }
+
+                .dashboard .scrollbox {
+                    overflow-y: hidden;
                 }
 
                 .title {
@@ -154,7 +168,16 @@ const InterpretationThread = ({
 InterpretationThread.propTypes = {
     currentUser: PropTypes.object.isRequired,
     fetching: PropTypes.bool.isRequired,
-    interpretation: PropTypes.object.isRequired,
+    interpretation: PropTypes.shape({
+        access: PropTypes.object.isRequired,
+        comments: PropTypes.array.isRequired,
+        created: PropTypes.string.isRequired,
+        createdBy: PropTypes.object.isRequired,
+        id: PropTypes.string.isRequired,
+        likedBy: PropTypes.array.isRequired,
+        likes: PropTypes.number,
+        text: PropTypes.string,
+    }).isRequired,
     onInterpretationDeleted: PropTypes.func.isRequired,
     dashboardRedirectUrl: PropTypes.string,
     downloadMenuComponent: PropTypes.oneOfType([
