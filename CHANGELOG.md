@@ -1,3 +1,24 @@
+## [26.0.16](https://github.com/dhis2/analytics/compare/v26.0.15...v26.0.16) (2023-08-18)
+
+
+### Bug Fixes
+
+* avoid undefined in totals DHIS2-14511 ([#1552](https://github.com/dhis2/analytics/issues/1552)) ([d93bc3e](https://github.com/dhis2/analytics/commit/d93bc3e35c560aac7e64b3db8196032201686d3a))
+
+## [26.0.15](https://github.com/dhis2/analytics/compare/v26.0.14...v26.0.15) (2023-07-27)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([1ab2bca](https://github.com/dhis2/analytics/commit/1ab2bcad7a0bf77f92d7ca838e759921b63dd3cc))
+
+## [26.0.14](https://github.com/dhis2/analytics/compare/v26.0.13...v26.0.14) (2023-07-13)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([46de5ca](https://github.com/dhis2/analytics/commit/46de5ca48bafe36c858fbd1eda6032c8dfb2a5bd))
+
 ## [26.0.13](https://github.com/dhis2/analytics/compare/v26.0.12...v26.0.13) (2023-07-08)
 
 
