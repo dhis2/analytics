@@ -1,3 +1,10 @@
+## [26.0.16](https://github.com/dhis2/analytics/compare/v26.0.15...v26.0.16) (2023-08-18)
+
+
+### Bug Fixes
+
+* avoid undefined in totals DHIS2-14511 ([#1552](https://github.com/dhis2/analytics/issues/1552)) ([d93bc3e](https://github.com/dhis2/analytics/commit/d93bc3e35c560aac7e64b3db8196032201686d3a))
+
 ## [26.0.15](https://github.com/dhis2/analytics/compare/v26.0.14...v26.0.15) (2023-07-27)
 
 
