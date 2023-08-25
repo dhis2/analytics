@@ -55,6 +55,7 @@ const defaultOptions = {
     showColumnSubtotals: false,
     fixColumnHeaders: false,
     fixRowHeaders: false,
+    cumulativeValues: false,
 }
 
 const defaultVisualizationProps = {
@@ -268,6 +269,7 @@ export class PivotTableEngine {
     data = []
     rowMap = []
     columnMap = []
+    accumulators = { rows: {} }
 
     constructor(visualization, data, legendSets) {
         this.visualization = Object.assign(
@@ -306,6 +308,7 @@ export class PivotTableEngine {
             fixRowHeaders: this.dimensionLookup.rows.length
                 ? visualization.fixRowHeaders
                 : false,
+            cumulativeValues: visualization.cumulativeValues,
         }
 
         this.adaptiveClippingController = new AdaptiveClippingController(this)
@@ -397,6 +400,10 @@ export class PivotTableEngine {
         }
     }
 
+    getCumulative({ row, column }) {
+        return this.accumulators.rows[row][column]
+    }
+
     get({ row, column }) {
         const mappedRow = this.rowMap[row],
             mappedColumn = this.columnMap[column]
@@ -407,7 +414,27 @@ export class PivotTableEngine {
             return undefined
         }
 
-        return this.getRaw({ row: mappedRow, column: mappedColumn })
+        const value = this.getRaw({ row: mappedRow, column: mappedColumn })
+
+        // XXX cannot be done directly in getRaw because of the resetAccumulators function
+        if (this.options.cumulativeValues) {
+            // some duplicated code here, see if there's a better way
+            const dxDimension = this.getRawCellDxDimension({ row, column })
+
+            // XXX this doesn't make much sense, it has to be numeric for accumulation
+            value.valueType = dxDimension?.valueType || VALUE_TYPE_TEXT
+            value.empty = false
+            value.renderedValue = renderValue(
+                this.getCumulative({
+                    row: mappedRow,
+                    column: mappedColumn,
+                }),
+                value.valueType,
+                this.visualization
+            )
+        }
+
+        return value
     }
 
     getRawCellType({ row, column }) {
@@ -967,6 +994,25 @@ export class PivotTableEngine {
             : times(this.dataWidth, (n) => n)
     }
 
+    resetAccumulators() {
+        if (this.options.cumulativeValues) {
+            this.rowMap.forEach((row) => {
+                this.accumulators.rows[row] = {}
+                this.columnMap.reduce((acc, column) => {
+                    const value = this.getRaw({ row, column })
+
+                    acc += value.empty ? 0 : value.rawValue
+
+                    this.accumulators.rows[row][column] = acc
+
+                    return acc
+                }, 0)
+            })
+        } else {
+            this.accumulators = { rows: {} }
+        }
+    }
+
     get cellPadding() {
         switch (this.visualization.displayDensity) {
             case DISPLAY_DENSITY_OPTION_COMPACT:
@@ -1071,6 +1117,8 @@ export class PivotTableEngine {
 
         this.resetRowMap()
         this.resetColumnMap()
+
+        this.resetAccumulators()
 
         this.height = this.rowMap.length
         this.width = this.columnMap.length
