@@ -1,3 +1,10 @@
+## [26.0.17](https://github.com/dhis2/analytics/compare/v26.0.16...v26.0.17) (2023-08-28)
+
+
+### Bug Fixes
+
+* use correct aggregation type if numberType undefined DHIS2-15698 ([#1564](https://github.com/dhis2/analytics/issues/1564)) ([c740e32](https://github.com/dhis2/analytics/commit/c740e320be568cce4430afaab688dd52ced83fa3))
+
 ## [26.0.16](https://github.com/dhis2/analytics/compare/v26.0.15...v26.0.16) (2023-08-18)
 
 
