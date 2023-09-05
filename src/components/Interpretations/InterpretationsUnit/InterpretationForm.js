@@ -14,6 +14,7 @@ export const InterpretationForm = ({
     id,
     currentUser,
     disabled,
+    showNoTimeDimensionWarning,
     onSave,
 }) => {
     const [showRichTextEditor, setShowRichTextEditor] = useState(false)
@@ -51,6 +52,13 @@ export const InterpretationForm = ({
                         inputPlaceholder={inputPlaceholder}
                         onChange={setInterpretationText}
                         value={interpretationText}
+                        warningText={
+                            showNoTimeDimensionWarning
+                                ? i18n.t(
+                                      'Unable to create a snapshot of this visualization, because it contains no time dimension. Beware that others viewing this interpretation in the future may see more data than currently available.'
+                                  )
+                                : undefined
+                        }
                     />
                     <MessageButtonStrip>
                         <Button
@@ -89,6 +97,7 @@ InterpretationForm.propTypes = {
     currentUser: PropTypes.object,
     disabled: PropTypes.bool,
     id: PropTypes.string,
+    showNoTimeDimensionWarning: PropTypes.bool,
     type: PropTypes.string,
     onSave: PropTypes.func,
 }

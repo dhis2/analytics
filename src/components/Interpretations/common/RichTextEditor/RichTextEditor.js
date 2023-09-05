@@ -192,12 +192,13 @@ Toolbar.propTypes = {
 
 export const RichTextEditor = forwardRef(
     (
-        { value, disabled, inputPlaceholder, onChange, errorText },
+        { value, disabled, inputPlaceholder, onChange, errorText, warningText },
         externalRef
     ) => {
         const [previewMode, setPreviewMode] = useState(false)
         const internalRef = useRef()
         const textareaRef = externalRef || internalRef
+        const validationText = errorText ?? warningText
 
         useEffect(() => textareaRef.current?.focus(), [textareaRef])
 
@@ -234,7 +235,11 @@ export const RichTextEditor = forwardRef(
                         <RichTextParser>{value}</RichTextParser>
                     </div>
                 ) : (
-                    <Field error={!!errorText} validationText={errorText}>
+                    <Field
+                        error={!!errorText}
+                        warning={!errorText && !!warningText}
+                        validationText={validationText}
+                    >
                         <UserMentionWrapper
                             onUserSelect={onChange}
                             inputReference={textareaRef}
@@ -269,4 +274,5 @@ RichTextEditor.propTypes = {
     disabled: PropTypes.bool,
     errorText: PropTypes.string,
     inputPlaceholder: PropTypes.string,
+    warningText: PropTypes.string,
 }
