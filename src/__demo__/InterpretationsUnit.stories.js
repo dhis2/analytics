@@ -17,8 +17,8 @@ storiesOf('IntepretationsUnit', module).add('Default', () => {
                     name: 'Tom Wakiki',
                 }}
                 id="abcd"
-                type="eventVisualization"
                 onReplyIconClick={Function.prototype}
+                type="eventVisualization"
                 visualizationHasTimeDimension={true}
             />
         </CustomDataProvider>
@@ -41,8 +41,8 @@ storiesOf('IntepretationsUnit', module).add(
                         name: 'Tom Wakiki',
                     }}
                     id="abcd"
-                    type="eventVisualization"
                     onReplyIconClick={Function.prototype}
+                    type="eventVisualization"
                     visualizationHasTimeDimension={false}
                 />
             </CustomDataProvider>
