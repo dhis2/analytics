@@ -1,3 +1,4 @@
+import { useTimeZoneConversion } from '@dhis2/app-runtime'
 import { IconCalendar24, colors, spacers } from '@dhis2/ui'
 import moment from 'moment'
 import PropTypes from 'prop-types'
@@ -25,6 +26,7 @@ export const InterpretationList = ({
     refresh,
     disabled,
 }) => {
+    const { fromServerDate } = useTimeZoneConversion()
     const interpretationsByDate = interpretations.reduce(
         (groupedInterpretations, interpretation) => {
             const date = interpretation.created.split('T')[0]
@@ -50,7 +52,7 @@ export const InterpretationList = ({
                         <div className="date-section">
                             <IconCalendar24 color={colors.grey600} />
                             <time dateTime={date} className="date-header">
-                                {moment(date).format('ll')}
+                                {moment(fromServerDate(date)).format('ll')}
                             </time>
                         </div>
                         <ol className="interpretation-list">

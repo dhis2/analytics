@@ -1,3 +1,4 @@
+import { useTimeZoneConversion } from '@dhis2/app-runtime'
 import { IconClock16, colors } from '@dhis2/ui'
 import cx from 'classnames'
 import moment from 'moment'
@@ -16,6 +17,7 @@ const InterpretationThread = ({
     onThreadUpdated,
     downloadMenuComponent: DownloadMenu,
 }) => {
+    const { fromServerDate } = useTimeZoneConversion()
     const focusRef = useRef()
 
     useEffect(() => {
@@ -36,7 +38,9 @@ const InterpretationThread = ({
             <div className={'scrollbox'}>
                 <div className={'title'}>
                     <IconClock16 color={colors.grey700} />
-                    {moment(interpretation.created).format('LLL')}
+                    {moment(fromServerDate(interpretation.created)).format(
+                        'LLL'
+                    )}
                 </div>
                 {DownloadMenu && (
                     <DownloadMenu relativePeriodDate={interpretation.created} />
