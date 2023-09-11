@@ -14,7 +14,7 @@ export const InterpretationForm = ({
     id,
     currentUser,
     disabled,
-    showNoTimeDimensionWarning,
+    showNoTimeDimensionHelpText,
     onSave,
 }) => {
     const [showRichTextEditor, setShowRichTextEditor] = useState(false)
@@ -40,6 +40,7 @@ export const InterpretationForm = ({
 
     const inputPlaceholder = i18n.t('Write an interpretation')
 
+    console.log(showNoTimeDimensionHelpText)
     return (
         <MessageEditorContainer
             currentUser={currentUser}
@@ -52,10 +53,10 @@ export const InterpretationForm = ({
                         inputPlaceholder={inputPlaceholder}
                         onChange={setInterpretationText}
                         value={interpretationText}
-                        warningText={
-                            showNoTimeDimensionWarning
+                        helpText={
+                            showNoTimeDimensionHelpText
                                 ? i18n.t(
-                                      'Unable to create a snapshot of this visualization, because it contains no time dimension. Beware that others viewing this interpretation in the future may see more data than currently available.'
+                                      'Visualization has no time dimension. Other people viewing interpretations in the future may see more data.'
                                   )
                                 : undefined
                         }
@@ -97,7 +98,7 @@ InterpretationForm.propTypes = {
     currentUser: PropTypes.object,
     disabled: PropTypes.bool,
     id: PropTypes.string,
-    showNoTimeDimensionWarning: PropTypes.bool,
+    showNoTimeDimensionHelpText: PropTypes.bool,
     type: PropTypes.string,
     onSave: PropTypes.func,
 }

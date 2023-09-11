@@ -53,7 +53,7 @@ export const InterpretationsUnit = forwardRef(
         ref
     ) => {
         const [isExpanded, setIsExpanded] = useState(true)
-        const showNoTimeDimensionWarning =
+        const showNoTimeDimensionHelpText =
             type === 'eventVisualization' && !visualizationHasTimeDimension
 
         const { data, loading, fetching, refetch } = useDataQuery(
@@ -118,8 +118,8 @@ export const InterpretationsUnit = forwardRef(
                                     id={id}
                                     onSave={onCompleteAction}
                                     disabled={disabled}
-                                    showNoTimeDimensionWarning={
-                                        showNoTimeDimensionWarning
+                                    showNoTimeDimensionHelpText={
+                                        showNoTimeDimensionHelpText
                                     }
                                 />
                                 <InterpretationList
