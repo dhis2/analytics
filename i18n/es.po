@@ -1,7 +1,7 @@
 # 
 # Translators:
 # Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2020
-# phil_dhis2, 2020
+# Philip Larsen Donnelly, 2020
 # Viktor Varland <viktor@dhis2.org>, 2020
 # ericbp <ericbarredap@gmail.com>, 2020
 # Juan M Alcantara Acosta <jmalcantara1@gmail.com>, 2021
@@ -377,7 +377,7 @@ msgid "Select indicator group"
 msgstr "Elija un grupo de indicadores"
 
 msgid "[ All groups ]"
-msgstr ""
+msgstr "[ Todos los grupos ]"
 
 msgid "Data elements"
 msgstr "Elementos de datos"
@@ -386,7 +386,7 @@ msgid "Select data element group"
 msgstr "Seleccionar grupo de elementos de datos"
 
 msgid "[ All data elements ]"
-msgstr ""
+msgstr "[Todos los elementos de datos]"
 
 msgid "Data sets"
 msgstr "Sets de datos"
@@ -395,7 +395,7 @@ msgid "Select data sets"
 msgstr "Seleccionar sets de datos"
 
 msgid "[ All metrics ]"
-msgstr ""
+msgstr "[Todas las métricas]"
 
 msgid "Event data items"
 msgstr "Datos de eventos"
