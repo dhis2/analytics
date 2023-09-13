@@ -187,6 +187,7 @@ InterpretationsUnit.displayName = 'InterpretationsUnit'
 
 InterpretationsUnit.defaultProps = {
     onInterpretationClick: Function.prototype,
+    visualizationHasTimeDimension: true,
 }
 
 InterpretationsUnit.propTypes = {
