@@ -1119,3 +1119,29 @@ storiesOf('PivotTable', module).add('DEGS', (_, { pivotTableOptions }) => {
         </div>
     )
 })
+
+storiesOf('PivotTable', module).add(
+    'Truncated header cell',
+    (_, { pivotTableOptions }) => {
+        const visualization = {
+            ...narrativeVisualization,
+            ...visualizationReset,
+            ...pivotTableOptions,
+            columns: narrativeVisualization.filters,
+            filters: narrativeVisualization.columns,
+            rowTotals: true,
+            colTotals: true,
+        }
+
+        const data = {
+            ...narrativeData,
+            rows: [narrativeData.rows[0]],
+        }
+
+        return (
+            <div style={{ width: 250, height: 600, marginTop: 50 }}>
+                <PivotTable data={data} visualization={visualization} />
+            </div>
+        )
+    }
+)

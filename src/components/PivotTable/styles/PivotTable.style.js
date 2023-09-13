@@ -109,9 +109,15 @@ export const cell = css`
         align-items: center;
         justify-content: center;
     }
-    .title {
+    .title-cell {
         font-weight: bold;
         background-color: #cddaed;
+    }
+    .title-cell-content {
+        text-align: center;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
     .row-header {
         background-color: #dae6f8;
