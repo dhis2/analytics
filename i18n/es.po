@@ -6,7 +6,7 @@
 # Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2022
 # Viktor Varland <viktor@dhis2.org>, 2022
 # Marta Vila <marta@dhis2.org>, 2023
-# phil_dhis2, 2023
+# Philip Larsen Donnelly, 2023
 # Janeth Cruz, 2023
 # Sergio Valenzuela <sergio.valenzuela@ehas.org>, 2023
 # Enzo Nicolas Rossi <enzo@dhis2.org>, 2023
@@ -400,7 +400,7 @@ msgid "Write an interpretation"
 msgstr "Escribir una interpretación"
 
 msgid "Post interpretation"
-msgstr ""
+msgstr "Interpretación posterior"
 
 msgid "Interpretations"
 msgstr "Interpretaciones"
@@ -415,7 +415,7 @@ msgstr[1] "{{contar}} respuestas"
 msgstr[2] "{{count}} respuestas"
 
 msgid "View replies"
-msgstr ""
+msgstr "Ver respuestas"
 
 msgid "Unlike"
 msgstr "diferente a"
