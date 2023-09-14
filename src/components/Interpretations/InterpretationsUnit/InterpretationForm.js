@@ -40,7 +40,6 @@ export const InterpretationForm = ({
 
     const inputPlaceholder = i18n.t('Write an interpretation')
 
-    console.log(showNoTimeDimensionHelpText)
     return (
         <MessageEditorContainer
             currentUser={currentUser}
