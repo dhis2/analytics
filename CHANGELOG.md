@@ -1,3 +1,10 @@
+## [26.0.19](https://github.com/dhis2/analytics/compare/v26.0.18...v26.0.19) (2023-09-15)
+
+
+### Bug Fixes
+
+* use translated dimension labels in PT DHIS2-15750 ([#1572](https://github.com/dhis2/analytics/issues/1572)) ([492975e](https://github.com/dhis2/analytics/commit/492975e46d1570e7856ef217a9a28c3ede5c7fa5))
+
 ## [26.0.18](https://github.com/dhis2/analytics/compare/v26.0.17...v26.0.18) (2023-09-13)
 
 
