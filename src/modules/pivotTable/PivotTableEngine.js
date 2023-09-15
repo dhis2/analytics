@@ -1,3 +1,4 @@
+import i18n from '@dhis2/d2-i18n'
 import times from 'lodash/times'
 import {
     DIMENSION_TYPE_DATA,
@@ -448,27 +449,31 @@ export class PivotTableEngine {
             columnLevel === lastColumnLevel &&
             this.dimensionLookup.columns[lastColumnLevel]
         ) {
-            return `${this.dimensionLookup.rows[lastRowLevel].meta.name} / ${this.dimensionLookup.columns[lastColumnLevel].meta.name}`
+            return `${i18n.t(
+                this.dimensionLookup.rows[lastRowLevel].meta.name
+            )} / ${i18n.t(
+                this.dimensionLookup.columns[lastColumnLevel].meta.name
+            )}`
         }
 
         if (lastRowLevel === -1) {
-            return this.dimensionLookup.columns[columnLevel].meta.name
+            return i18n.t(this.dimensionLookup.columns[columnLevel].meta.name)
         }
         if (lastColumnLevel === -1) {
-            return this.dimensionLookup.rows[rowLevel].meta.name
+            return i18n.t(this.dimensionLookup.rows[rowLevel].meta.name)
         }
 
         if (
             rowLevel === lastRowLevel &&
             this.dimensionLookup.columns[columnLevel]
         ) {
-            return this.dimensionLookup.columns[columnLevel].meta.name
+            return i18n.t(this.dimensionLookup.columns[columnLevel].meta.name)
         }
         if (
             columnLevel === lastColumnLevel &&
             this.dimensionLookup.rows[rowLevel]
         ) {
-            return this.dimensionLookup.rows[rowLevel].meta.name
+            return i18n.t(this.dimensionLookup.rows[rowLevel].meta.name)
         }
     }
 
