@@ -1,3 +1,10 @@
+## [26.0.20](https://github.com/dhis2/analytics/compare/v26.0.19...v26.0.20) (2023-09-25)
+
+
+### Bug Fixes
+
+* export function for preparing payload for copy DHIS2-15722 ([#1573](https://github.com/dhis2/analytics/issues/1573)) ([a1f8d69](https://github.com/dhis2/analytics/commit/a1f8d694121d62d001f7b4567d84d49ecec377fd))
+
 ## [26.0.19](https://github.com/dhis2/analytics/compare/v26.0.18...v26.0.19) (2023-09-15)
 
 
