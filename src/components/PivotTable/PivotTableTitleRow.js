@@ -1,6 +1,6 @@
 import { Tooltip } from '@dhis2/ui'
 import PropTypes from 'prop-types'
-import React, { useRef, useMemo } from 'react'
+import React, { useRef, useMemo, useState, useEffect } from 'react'
 import { PivotTableCell } from './PivotTableCell.js'
 import { usePivotTableEngine } from './PivotTableEngineContext.js'
 import { cell as cellStyle } from './styles/PivotTable.style.js'
@@ -12,6 +12,8 @@ export const PivotTableTitleRow = ({
     totalWidth,
 }) => {
     const containerRef = useRef(null)
+    const [scrollWidth, setScrollWidth] = useState(0)
+    const [isTitleTruncated, setIsTitleTruncated] = useState(false)
     const engine = usePivotTableEngine()
     const columnCount = engine.width + engine.rowDepth
     const maxWidth = useMemo(
@@ -26,8 +28,26 @@ export const PivotTableTitleRow = ({
             ),
         [containerWidth, scrollPosition.x, totalWidth]
     )
-    const titleIsTruncated =
-        containerRef.current?.scrollWidth > containerRef.current?.clientWidth
+
+    useEffect(() => {
+        if (containerRef.current) {
+            /* Only set `scrollWidth` once, because during a CSS transition
+             * the reported value can sometimes be equal to `clientWidth`
+             * even though the text doesn't fit. Due to `white-space: nowrap`
+             * and `overflow: hidden` the `scrollWidth` should remain constant,
+             * so we can assume this initial value is correct. */
+            if (!scrollWidth) {
+                setScrollWidth(containerRef.current.scrollWidth)
+            }
+            const currentScrollWidth =
+                scrollWidth ?? containerRef.current.scrollWidth
+            const newIsTitleTruncated =
+                currentScrollWidth > containerRef.current.clientWidth
+            if (newIsTitleTruncated !== isTitleTruncated) {
+                setIsTitleTruncated(newIsTitleTruncated)
+            }
+        }
+    }, [containerWidth, scrollWidth, isTitleTruncated])
 
     return (
         <tr>
@@ -43,7 +63,7 @@ export const PivotTableTitleRow = ({
                     data-test="visualization-title"
                     className="title-cell-content"
                 >
-                    {titleIsTruncated ? (
+                    {isTitleTruncated ? (
                         <Tooltip content={title}>
                             {({ ref: tooltipRef, onMouseOver, onMouseOut }) => (
                                 <div
