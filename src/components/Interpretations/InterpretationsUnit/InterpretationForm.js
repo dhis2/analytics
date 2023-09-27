@@ -55,7 +55,7 @@ export const InterpretationForm = ({
                         helpText={
                             showNoTimeDimensionHelpText
                                 ? i18n.t(
-                                      'Visualization has no time dimension. Other people viewing interpretations in the future may see more data.'
+                                      'Other people viewing this interpretation in the future may see more data.'
                                   )
                                 : undefined
                         }
