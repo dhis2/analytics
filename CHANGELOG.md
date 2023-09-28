@@ -1,3 +1,10 @@
+## [26.0.21](https://github.com/dhis2/analytics/compare/v26.0.20...v26.0.21) (2023-09-28)
+
+
+### Bug Fixes
+
+* avoid crash in DV with some chart types DHIS2-15882 ([#1582](https://github.com/dhis2/analytics/issues/1582)) ([f6c89e1](https://github.com/dhis2/analytics/commit/f6c89e1481dbbc2ea2cfe80a3c9ed7f81a63c83c))
+
 ## [26.0.20](https://github.com/dhis2/analytics/compare/v26.0.19...v26.0.20) (2023-09-25)
 
 
