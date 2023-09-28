@@ -14,6 +14,7 @@ export const InterpretationForm = ({
     id,
     currentUser,
     disabled,
+    showNoTimeDimensionHelpText,
     onSave,
 }) => {
     const [showRichTextEditor, setShowRichTextEditor] = useState(false)
@@ -51,6 +52,13 @@ export const InterpretationForm = ({
                         inputPlaceholder={inputPlaceholder}
                         onChange={setInterpretationText}
                         value={interpretationText}
+                        helpText={
+                            showNoTimeDimensionHelpText
+                                ? i18n.t(
+                                      'Other people viewing this interpretation in the future may see more data.'
+                                  )
+                                : undefined
+                        }
                     />
                     <MessageButtonStrip>
                         <Button
@@ -89,6 +97,7 @@ InterpretationForm.propTypes = {
     currentUser: PropTypes.object,
     disabled: PropTypes.bool,
     id: PropTypes.string,
+    showNoTimeDimensionHelpText: PropTypes.bool,
     type: PropTypes.string,
     onSave: PropTypes.func,
 }
