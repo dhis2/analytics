@@ -11,11 +11,14 @@ export const createCalculationMutation = {
 }
 
 export const updateCalculationMutation = {
-    type: 'update',
+    type: 'json-patch',
     resource: 'expressionDimensionItems',
-    partial: true,
     id: ({ id }) => id,
-    data: ({ name, expression }) => ({ name, shortName: name, expression }),
+    data: ({ name, expression }) => [
+        { op: 'add', path: '/name', value: name },
+        { op: 'add', path: '/shortName', value: name },
+        { op: 'add', path: '/expression', value: expression },
+    ],
 }
 
 export const deleteCalculationMutation = {

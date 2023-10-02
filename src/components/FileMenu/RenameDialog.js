@@ -19,12 +19,25 @@ import {
     labelForFileType,
 } from './utils.js'
 
+const formatPayload = (name, description) => {
+    const payload = [{ op: 'add', path: '/name', value: name }]
+
+    if (description) {
+        payload.push({
+            op: 'add',
+            path: '/description',
+            value: description,
+        })
+    }
+
+    return payload
+}
+
 const getMutation = (type) => ({
     resource: endpointFromFileType(type),
     id: ({ id }) => id,
-    type: 'update',
-    partial: true,
-    data: ({ name, description }) => ({ name, description }),
+    type: 'json-patch',
+    data: ({ name, description }) => formatPayload(name, description),
 })
 
 export const RenameDialog = ({ type, object, onClose, onRename, onError }) => {
