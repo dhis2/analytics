@@ -1,3 +1,10 @@
+# [26.1.0](https://github.com/dhis2/analytics/compare/v26.0.21...v26.1.0) (2023-10-03)
+
+
+### Features
+
+* **pivot-table:** truncate title and show full in tooltip ([#1579](https://github.com/dhis2/analytics/issues/1579)) ([c37ba2d](https://github.com/dhis2/analytics/commit/c37ba2d1a187963b3b5aeee5b951bcf9c129dcd2))
+
 ## [26.0.21](https://github.com/dhis2/analytics/compare/v26.0.20...v26.0.21) (2023-09-28)
 
 
