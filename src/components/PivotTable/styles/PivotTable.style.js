@@ -109,9 +109,25 @@ export const cell = css`
         align-items: center;
         justify-content: center;
     }
-    .title {
+    .title-cell {
         font-weight: bold;
         background-color: #cddaed;
+        padding: 0;
+    }
+    .title-cell-content {
+        text-align: center;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .title-cell.displaydensity-COMPACT > .title-cell-content {
+        padding: ${DISPLAY_DENSITY_PADDING_COMPACT}px;
+    }
+    .title-cell.displaydensity-NORMAL > .title-cell-content {
+        padding: ${DISPLAY_DENSITY_PADDING_NORMAL}px;
+    }
+    .title-cell.displaydensity-COMFORTABLE > .title-cell-content {
+        padding: ${DISPLAY_DENSITY_PADDING_COMFORTABLE}px;
     }
     .row-header {
         background-color: #dae6f8;
