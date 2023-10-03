@@ -13,10 +13,6 @@ export const PivotTableTitleRows = ({ clippingResult, width }) => {
                     title={engine.options.title}
                     scrollPosition={clippingResult.scrollPosition}
                     containerWidth={width}
-                    totalWidth={
-                        engine.adaptiveClippingController.columns.totalSize +
-                        engine.adaptiveClippingController.columns.headerSize
-                    }
                 />
             ) : null}
             {engine.options.subtitle ? (
@@ -24,10 +20,6 @@ export const PivotTableTitleRows = ({ clippingResult, width }) => {
                     title={engine.options.subtitle}
                     scrollPosition={clippingResult.scrollPosition}
                     containerWidth={width}
-                    totalWidth={
-                        engine.adaptiveClippingController.columns.totalSize +
-                        engine.adaptiveClippingController.columns.headerSize
-                    }
                 />
             ) : null}
             {engine.visualization.filters?.length ? (
@@ -38,10 +30,6 @@ export const PivotTableTitleRows = ({ clippingResult, width }) => {
                     )}
                     scrollPosition={clippingResult.scrollPosition}
                     containerWidth={width}
-                    totalWidth={
-                        engine.adaptiveClippingController.columns.totalSize +
-                        engine.adaptiveClippingController.columns.headerSize
-                    }
                 />
             ) : null}
         </>
