@@ -1,3 +1,10 @@
+## [21.9.1](https://github.com/dhis2/analytics/compare/v21.9.0...v21.9.1) (2023-10-05)
+
+
+### Bug Fixes
+
+* avoid undefined in totals DHIS2-14511 ([#1552](https://github.com/dhis2/analytics/issues/1552)) ([#1585](https://github.com/dhis2/analytics/issues/1585)) ([f2c1fd1](https://github.com/dhis2/analytics/commit/f2c1fd1807af875e0af0f49bc2027862863ade35))
+
 # [21.9.0](https://github.com/dhis2/analytics/compare/v21.8.2...v21.9.0) (2023-03-02)
 
 
