@@ -24,7 +24,7 @@ const modalCSS = css.resolve`
         max-width: calc(100vw - 128px) !important;
         max-height: calc(100vh - 128px) !important;
         width: auto !important;
-        height: calc(100vw - 128px) !important;
+        height: calc(100vh - 128px) !important;
         overflow-y: hidden;
     }
     aside.hidden {
