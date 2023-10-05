@@ -34,7 +34,7 @@ const userJane = {
 }
 
 describe('interpretation and comment access', () => {
-    describe('getInterpretationAccess with D2', () => {
+    describe('getInterpretationAccess', () => {
         it('returns true for all accesses for superuser', () => {
             const interpretation = {
                 access: {
