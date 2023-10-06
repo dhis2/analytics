@@ -1,20 +1,23 @@
-import { isArray } from 'lodash'
-
 // For backwards compatibility
 // accept both Set (from the old d2.currentUser object) and array
-const isSuperuser = (authorities = []) => {
-    if (isArray(authorities)) {
-        return authorities.includes('ALL')
+const hasAuthority = (authorities = [], authority) => {
+    if (Array.isArray(authorities)) {
+        return authorities.includes(authority)
     }
-    return authorities.has('ALL')
+    return typeof authorities.has === 'function'
+        ? authorities.has(authority)
+        : false
 }
 
-const isCreatorOrSuperuser = (object, currentUser) =>
-    object?.createdBy.id === currentUser?.id ||
-    isSuperuser(currentUser?.authorities)
+const isSuperuser = (authorities) => hasAuthority(authorities, 'ALL')
+
+const isCreator = (object, currentUser) =>
+    object?.createdBy.id === currentUser?.id
 
 export const getInterpretationAccess = (interpretation, currentUser) => {
-    const canEditDelete = isCreatorOrSuperuser(interpretation, currentUser)
+    const canEditDelete =
+        isCreator(interpretation, currentUser) ||
+        isSuperuser(currentUser?.authorities)
     return {
         share: interpretation.access.manage,
         comment: interpretation.access.write,
@@ -28,7 +31,8 @@ export const getCommentAccess = (
     hasInterpretationReplyAccess,
     currentUser
 ) => {
-    const canEditDelete = isCreatorOrSuperuser(comment, currentUser)
+    const canEditDelete =
+        isCreator(comment, currentUser) || isSuperuser(currentUser?.authorities)
     return {
         edit: canEditDelete,
         delete: canEditDelete && hasInterpretationReplyAccess,
