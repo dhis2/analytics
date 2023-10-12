@@ -1,4 +1,5 @@
 import {
+    hasAuthority,
     getInterpretationAccess,
     getCommentAccess,
 } from '../getInterpretationAccess.js'
@@ -34,6 +35,18 @@ const userJane = {
 }
 
 describe('interpretation and comment access', () => {
+    describe('hasAuthority', () => {
+        it('throws an error when no authority is provided', () => {
+            expect(() => hasAuthority([], undefined)).toThrow(
+                '"hasAuthority" requires "authority" to be a populated string but received undefined'
+            )
+        })
+        it('throws an error when authority is not a string', () => {
+            expect(() => hasAuthority([], 12)).toThrow(
+                '"hasAuthority" requires "authority" to be a populated string but received 12'
+            )
+        })
+    })
     describe('getInterpretationAccess', () => {
         it('returns true for all accesses for superuser', () => {
             const interpretation = {
@@ -129,7 +142,7 @@ describe('interpretation and comment access', () => {
             })
         })
 
-        it('returns false for all accesses when no currentUser provided', () => {
+        it('throws an error for all accesses when no currentUser provided', () => {
             const interpretation = {
                 access: {
                     write: false,
@@ -138,15 +151,12 @@ describe('interpretation and comment access', () => {
                 createdBy: userJane,
             }
 
-            expect(getInterpretationAccess(interpretation)).toMatchObject({
-                share: false,
-                comment: false,
-                edit: false,
-                delete: false,
-            })
+            expect(() => getInterpretationAccess(interpretation)).toThrow(
+                '"hasAuthority" requires "authorities" to be an array or set of authorities (strings)'
+            )
         })
 
-        it('returns false for all accesses when currentUser missing authorities', () => {
+        it('throws an error when currentUser is missing authorities', () => {
             const interpretation = {
                 access: {
                     write: false,
@@ -155,16 +165,13 @@ describe('interpretation and comment access', () => {
                 createdBy: userJane,
             }
 
-            expect(
+            expect(() =>
                 getInterpretationAccess(interpretation, {
                     id: 'usernoauthorties',
                 })
-            ).toMatchObject({
-                share: false,
-                comment: false,
-                edit: false,
-                delete: false,
-            })
+            ).toThrow(
+                '"hasAuthority" requires "authorities" to be an array or set of authorities (strings)'
+            )
         })
     })
 
