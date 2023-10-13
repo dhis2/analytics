@@ -1,3 +1,24 @@
+## [26.1.1](https://github.com/dhis2/analytics/compare/v26.1.0...v26.1.1) (2023-10-05)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([dd9c23f](https://github.com/dhis2/analytics/commit/dd9c23f34a0489cae89f5f5c10ab1dc17e2c13ef))
+
+# [26.1.0](https://github.com/dhis2/analytics/compare/v26.0.21...v26.1.0) (2023-10-03)
+
+
+### Features
+
+* **pivot-table:** truncate title and show full in tooltip ([#1579](https://github.com/dhis2/analytics/issues/1579)) ([c37ba2d](https://github.com/dhis2/analytics/commit/c37ba2d1a187963b3b5aeee5b951bcf9c129dcd2))
+
+## [26.0.21](https://github.com/dhis2/analytics/compare/v26.0.20...v26.0.21) (2023-09-28)
+
+
+### Bug Fixes
+
+* avoid crash in DV with some chart types DHIS2-15882 ([#1582](https://github.com/dhis2/analytics/issues/1582)) ([f6c89e1](https://github.com/dhis2/analytics/commit/f6c89e1481dbbc2ea2cfe80a3c9ed7f81a63c83c))
+
 ## [26.0.20](https://github.com/dhis2/analytics/compare/v26.0.19...v26.0.20) (2023-09-25)
 
 

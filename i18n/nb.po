@@ -1,15 +1,15 @@
 # 
 # Translators:
-# Karoline Tufte Lien <karoline@dhis2.org>, 2022
 # Caroline Hesthagen Holen <caroline@devotta.no>, 2023
 # Jen Jones Arnesen <jennifer@dhis2.org>, 2023
+# Karoline Tufte Lien <karoline@dhis2.org>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2023-07-06T08:30:33.216Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Jen Jones Arnesen <jennifer@dhis2.org>, 2023\n"
+"Last-Translator: Karoline Tufte Lien <karoline@dhis2.org>, 2023\n"
 "Language-Team: Norwegian Bokmål (https://app.transifex.com/hisp-uio/teams/100509/nb/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -451,7 +451,7 @@ msgid "No results found"
 msgstr "Ingen resultater funnet"
 
 msgid "Not available offline"
-msgstr ""
+msgstr "Ikke tilgjengelig i frakoblet modus"
 
 msgid "Created by"
 msgstr "Opprettet av"
