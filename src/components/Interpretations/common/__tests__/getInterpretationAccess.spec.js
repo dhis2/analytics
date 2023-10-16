@@ -1,5 +1,4 @@
 import {
-    hasAuthority,
     getInterpretationAccess,
     getCommentAccess,
 } from '../getInterpretationAccess.js'
@@ -35,18 +34,6 @@ const userJane = {
 }
 
 describe('interpretation and comment access', () => {
-    describe('hasAuthority', () => {
-        it('throws an error when no authority is provided', () => {
-            expect(() => hasAuthority([], undefined)).toThrow(
-                '"hasAuthority" requires "authority" to be a populated string but received undefined'
-            )
-        })
-        it('throws an error when authority is not a string', () => {
-            expect(() => hasAuthority([], 12)).toThrow(
-                '"hasAuthority" requires "authority" to be a populated string but received 12'
-            )
-        })
-    })
     describe('getInterpretationAccess', () => {
         it('returns true for all accesses for superuser', () => {
             const interpretation = {

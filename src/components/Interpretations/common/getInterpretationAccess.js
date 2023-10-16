@@ -1,6 +1,6 @@
 // For backwards compatibility
 // accept both Set (from the old d2.currentUser object) and array
-export const hasAuthority = (authorities, authority) => {
+const hasAuthority = (authorities, authority) => {
     if (!authority || typeof authority !== 'string') {
         throw new Error(
             `"hasAuthority" requires "authority" to be a populated string but received ${authority}`
