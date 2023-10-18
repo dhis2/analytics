@@ -1,3 +1,4 @@
+import { useTimeZoneConversion } from '@dhis2/app-runtime'
 import { IconClock16, colors } from '@dhis2/ui'
 import cx from 'classnames'
 import moment from 'moment'
@@ -16,6 +17,7 @@ const InterpretationThread = ({
     onThreadUpdated,
     downloadMenuComponent: DownloadMenu,
 }) => {
+    const { fromServerDate } = useTimeZoneConversion()
     const focusRef = useRef()
 
     useEffect(() => {
@@ -33,57 +35,57 @@ const InterpretationThread = ({
 
     return (
         <div className={cx('container', { fetching })}>
-            <div className={'scrollbox'}>
-                <div className={'title'}>
-                    <IconClock16 color={colors.grey700} />
-                    {moment(interpretation.created).format('LLL')}
-                </div>
-                {DownloadMenu && (
-                    <DownloadMenu relativePeriodDate={interpretation.created} />
-                )}
-                <div className={'thread'}>
-                    <Interpretation
-                        currentUser={currentUser}
-                        interpretation={interpretation}
-                        onReplyIconClick={
-                            interpretationAccess.comment
-                                ? () => focusRef.current?.focus()
-                                : null
-                        }
-                        onUpdated={() => onThreadUpdated(true)}
-                        onDeleted={onInterpretationDeleted}
-                        isInThread={true}
-                    />
-                    <div className={'comments'}>
-                        {interpretation.comments.map((comment) => (
-                            <Comment
-                                key={comment.id}
-                                comment={comment}
-                                currentUser={currentUser}
-                                interpretationId={interpretation.id}
-                                onThreadUpdated={onThreadUpdated}
-                                canComment={interpretationAccess.comment}
-                            />
-                        ))}
-                    </div>
-                    {interpretationAccess.comment && (
-                        <CommentAddForm
+            <div className={'title'}>
+                <IconClock16 color={colors.grey700} />
+                {moment(fromServerDate(interpretation.created)).format('LLL')}
+            </div>
+            {DownloadMenu && (
+                <DownloadMenu relativePeriodDate={interpretation.created} />
+            )}
+            <div className={'thread'}>
+                <Interpretation
+                    currentUser={currentUser}
+                    interpretation={interpretation}
+                    onReplyIconClick={
+                        interpretationAccess.comment
+                            ? () => focusRef.current?.focus()
+                            : null
+                    }
+                    onUpdated={() => onThreadUpdated(true)}
+                    onDeleted={onInterpretationDeleted}
+                    isInThread={true}
+                />
+                <div className={'comments'}>
+                    {interpretation.comments.map((comment) => (
+                        <Comment
+                            key={comment.id}
+                            comment={comment}
                             currentUser={currentUser}
                             interpretationId={interpretation.id}
-                            onSave={() => onThreadUpdated(true)}
-                            focusRef={focusRef}
+                            onThreadUpdated={onThreadUpdated}
+                            canComment={interpretationAccess.comment}
                         />
-                    )}
+                    ))}
                 </div>
             </div>
+            {interpretationAccess.comment && (
+                <CommentAddForm
+                    currentUser={currentUser}
+                    interpretationId={interpretation.id}
+                    onSave={() => onThreadUpdated(true)}
+                    focusRef={focusRef}
+                />
+            )}
             <style jsx>{`
                 .thread {
                     margin-top: var(--spacers-dp16);
+                    overflow-y: auto;
+                    scroll-behavior: smooth;
                 }
 
                 .container {
                     position: relative;
-                    overflow: hidden;
+                    overflow: auto;
                     max-height: calc(100vh - 285px);
                     display: flex;
                     flex-direction: column;
@@ -111,11 +113,6 @@ const InterpretationThread = ({
                     border-radius: 50%;
                     animation: 1s linear 0s infinite normal none running
                         rotation;
-                }
-
-                .scrollbox {
-                    overflow-y: auto;
-                    scroll-behavior: smooth;
                 }
 
                 .title {
