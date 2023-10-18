@@ -1,3 +1,13 @@
+## [26.1.2](https://github.com/dhis2/analytics/compare/v26.1.1...v26.1.2) (2023-10-18)
+
+
+### Bug Fixes
+
+* handle both Set and array for currentUser.authorities when checking interpretations access (DHIS2-15964) ([d3d45ab](https://github.com/dhis2/analytics/commit/d3d45abd352a6b9609d732c24a718fef83b076c7))
+* interpretation panel display date and timestamps according to client time zone (DHIS2-15825) ([8e60f26](https://github.com/dhis2/analytics/commit/8e60f266bd55f8dee9745ad1930f6525e3ca96f3))
+* interpretations modal height (DHIS2-15558) ([014d43e](https://github.com/dhis2/analytics/commit/014d43e241d59e841f72d203f8b8f657516aa147))
+* show warning text below RichTextEditor when unable to show snapshot (DHIS2-15781) ([f27bc38](https://github.com/dhis2/analytics/commit/f27bc38e5cf47840971eb685f0ee705f174eadc0))
+
 ## [26.1.1](https://github.com/dhis2/analytics/compare/v26.1.0...v26.1.1) (2023-10-05)
 
 
