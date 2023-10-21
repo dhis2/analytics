@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2023-07-06T08:30:33.216Z\n"
+"POT-Creation-Date: 2023-09-27T14:15:13.876Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: Karoline Tufte Lien <karoline@dhis2.org>, 2023\n"
 "Language-Team: Norwegian Bokmål (https://app.transifex.com/hisp-uio/teams/100509/nb/)\n"
@@ -339,7 +339,7 @@ msgid "map"
 msgstr "kart"
 
 msgid "visualization"
-msgstr ""
+msgstr "visualisering"
 
 msgid "Edit"
 msgstr "Rediger"
@@ -378,6 +378,10 @@ msgstr ""
 
 msgid "Write an interpretation"
 msgstr "Skriv en tolkning"
+
+msgid ""
+"Other people viewing this interpretation in the future may see more data."
+msgstr ""
 
 msgid "Post interpretation"
 msgstr ""
