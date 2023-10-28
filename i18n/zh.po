@@ -1,14 +1,14 @@
 # 
 # Translators:
 # Viktor Varland <viktor@dhis2.org>, 2021
-# phil_dhis2, 2022
+# Philip Larsen Donnelly, 2022
 # 晓东 林 <13981924470@126.com>, 2023
 # easylin <lin_xd@126.com>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2023-07-06T08:30:33.216Z\n"
+"POT-Creation-Date: 2023-09-27T14:15:13.876Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: easylin <lin_xd@126.com>, 2023\n"
 "Language-Team: Chinese (https://app.transifex.com/hisp-uio/teams/100509/zh/)\n"
@@ -375,6 +375,10 @@ msgstr "隐藏解释"
 
 msgid "Write an interpretation"
 msgstr "书写注释"
+
+msgid ""
+"Other people viewing this interpretation in the future may see more data."
+msgstr "将来查看此解释的其他人可能会看到更多数据。"
 
 msgid "Post interpretation"
 msgstr "后解释"
