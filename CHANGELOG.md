@@ -1,3 +1,10 @@
+## [26.1.5](https://github.com/dhis2/analytics/compare/v26.1.4...v26.1.5) (2023-11-03)
+
+
+### Bug Fixes
+
+* use correct colors in "basic" color set ([#1592](https://github.com/dhis2/analytics/issues/1592)) ([6356250](https://github.com/dhis2/analytics/commit/63562501bd8b020742bb7ee8b17621975790c3c6))
+
 ## [26.1.4](https://github.com/dhis2/analytics/compare/v26.1.3...v26.1.4) (2023-10-29)
 
 
