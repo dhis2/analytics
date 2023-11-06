@@ -65,7 +65,7 @@ export const RenameDialog = ({ type, object, onClose, onRename, onError }) => {
     }
 
     return (
-        <Modal onClose={onClose}>
+        <Modal onClose={onClose} dataTest="file-menu-rename-modal">
             <style jsx>{modalStyles}</style>
             <ModalTitle>
                 {i18n.t('Rename {{fileType}}', {
@@ -80,6 +80,7 @@ export const RenameDialog = ({ type, object, onClose, onRename, onError }) => {
                         required
                         value={name}
                         onChange={({ value }) => setName(value)}
+                        dataTest="file-menu-rename-modal-name"
                     />
                     <TextAreaField
                         label={i18n.t('Description')}
@@ -87,15 +88,26 @@ export const RenameDialog = ({ type, object, onClose, onRename, onError }) => {
                         value={description}
                         rows={3}
                         onChange={({ value }) => setDescription(value)}
+                        dataTest="file-menu-rename-modal-description"
                     />
                 </div>
             </ModalContent>
             <ModalActions>
                 <ButtonStrip>
-                    <Button onClick={onClose} disabled={loading} secondary>
+                    <Button
+                        onClick={onClose}
+                        disabled={loading}
+                        secondary
+                        dataTest="file-menu-rename-modal-cancel"
+                    >
                         {i18n.t('Cancel')}
                     </Button>
-                    <Button onClick={renameObject} disabled={loading} primary>
+                    <Button
+                        onClick={renameObject}
+                        disabled={loading}
+                        primary
+                        dataTest="file-menu-rename-modal-rename"
+                    >
                         {i18n.t('Rename')}
                     </Button>
                 </ButtonStrip>
