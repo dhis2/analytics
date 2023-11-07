@@ -514,6 +514,8 @@ const AnalyticsRequestPropertiesMixin = (base) =>
             return new AnalyticsRequest(this)
         }
 
+        // TODO: add withTrackedEntity
+
         /**
          * Sets the program for the request.
          * It appends the program id to the request's path.
