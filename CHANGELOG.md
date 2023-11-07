@@ -1,3 +1,10 @@
+## [26.1.6](https://github.com/dhis2/analytics/compare/v26.1.5...v26.1.6) (2023-11-07)
+
+
+### Bug Fixes
+
+* use json+patch for PATCH requests ([#1593](https://github.com/dhis2/analytics/issues/1593)) ([bdb0b9c](https://github.com/dhis2/analytics/commit/bdb0b9ceaa5ef102ef9768038c763b70a3d5e7d1))
+
 ## [26.1.5](https://github.com/dhis2/analytics/compare/v26.1.4...v26.1.5) (2023-11-03)
 
 
