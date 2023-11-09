@@ -422,7 +422,7 @@ export class PivotTableEngine {
             const dxDimension = this.getRawCellDxDimension({ row, column })
 
             // XXX this doesn't make much sense, it has to be numeric for accumulation
-            value.valueType = dxDimension?.valueType || VALUE_TYPE_TEXT
+            value.valueType = dxDimension?.valueType || VALUE_TYPE_NUMBER
             value.empty = false
             value.renderedValue = renderValue(
                 this.getCumulative({
