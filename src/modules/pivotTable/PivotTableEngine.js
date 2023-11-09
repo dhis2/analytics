@@ -418,20 +418,24 @@ export class PivotTableEngine {
 
         // XXX cannot be done directly in getRaw because of the resetAccumulators function
         if (this.options.cumulativeValues) {
-            // some duplicated code here, see if there's a better way
-            const dxDimension = this.getRawCellDxDimension({ row, column })
+            const cumulativeValue = this.getCumulative({
+                row: mappedRow,
+                column: mappedColumn,
+            })
 
-            // XXX this doesn't make much sense, it has to be numeric for accumulation
-            value.valueType = dxDimension?.valueType || VALUE_TYPE_NUMBER
-            value.empty = false
-            value.renderedValue = renderValue(
-                this.getCumulative({
-                    row: mappedRow,
-                    column: mappedColumn,
-                }),
-                value.valueType,
-                this.visualization
-            )
+            if (cumulativeValue) {
+                // force to NUMBER for accumulated values
+                value.valueType =
+                    value.valueType === undefined || value.valueType === null
+                        ? VALUE_TYPE_NUMBER
+                        : value.valueType
+                value.empty = false
+                value.renderedValue = renderValue(
+                    cumulativeValue,
+                    value.valueType,
+                    this.visualization
+                )
+            }
         }
 
         return value
@@ -1001,9 +1005,13 @@ export class PivotTableEngine {
                 this.columnMap.reduce((acc, column) => {
                     const value = this.getRaw({ row, column })
 
-                    acc += value.empty ? 0 : value.rawValue
+                    // only accumulate numeric values
+                    // accumulating text values does not make sense
+                    if (value.valueType === VALUE_TYPE_NUMBER) {
+                        acc += value.empty ? 0 : value.rawValue
 
-                    this.accumulators.rows[row][column] = acc
+                        this.accumulators.rows[row][column] = acc
+                    }
 
                     return acc
                 }, 0)
