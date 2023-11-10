@@ -424,7 +424,7 @@ export class PivotTableEngine {
                 column: mappedColumn,
             })
 
-            if (cumulativeValue) {
+            if (cumulativeValue !== undefined && cumulativeValue !== null) {
                 // force to NUMBER for accumulated values
                 value.valueType =
                     value.valueType === undefined || value.valueType === null
