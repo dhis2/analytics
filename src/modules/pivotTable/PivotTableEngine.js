@@ -1017,6 +1017,13 @@ export class PivotTableEngine {
                         )
 
                         this.accumulators.rows[row][column] = renderedValue
+
+                        // override cell sizes based on their new content
+                        // this works for non empty cells where the new value can require a wider cell
+                        this.adaptiveClippingController.add(
+                            { row, column },
+                            renderedValue
+                        )
                     }
 
                     return acc
