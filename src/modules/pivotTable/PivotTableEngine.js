@@ -520,10 +520,8 @@ export class PivotTableEngine {
             return undefined
         }
         const cellValue = this.data[row][column]
-        if (!cellValue) {
-            return undefined
-        }
-        if (!Array.isArray(cellValue)) {
+
+        if (cellValue && !Array.isArray(cellValue)) {
             // This is a total cell
             return {
                 valueType: cellValue.valueType,
@@ -559,6 +557,11 @@ export class PivotTableEngine {
             }
         }
 
+        // Empty cell
+        // The cell still needs to get the valueType to render correctly 0 and cumulative values
+        //
+        // OR
+        //
         // Data is in Filter
         // TODO : This assumes the server ignores text types, we should confirm this is the case
         return {
