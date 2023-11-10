@@ -417,7 +417,7 @@ export class PivotTableEngine {
 
         const value = this.getRaw({ row: mappedRow, column: mappedColumn })
 
-        // XXX cannot be done directly in getRaw because of the resetAccumulators function
+        // NB: cannot be done directly in getRaw because of the resetAccumulators function
         if (this.options.cumulativeValues) {
             const cumulativeValue = this.getCumulative({
                 row: mappedRow,
@@ -431,11 +431,7 @@ export class PivotTableEngine {
                         ? VALUE_TYPE_NUMBER
                         : value.valueType
                 value.empty = false
-                value.renderedValue = renderValue(
-                    cumulativeValue,
-                    value.valueType,
-                    this.visualization
-                )
+                value.renderedValue = cumulativeValue
             }
         }
 
@@ -1014,7 +1010,13 @@ export class PivotTableEngine {
                     if (value.valueType === VALUE_TYPE_NUMBER) {
                         acc += value.empty ? 0 : value.rawValue
 
-                        this.accumulators.rows[row][column] = acc
+                        const renderedValue = renderValue(
+                            acc,
+                            value.valueType,
+                            this.visualization
+                        )
+
+                        this.accumulators.rows[row][column] = renderedValue
                     }
 
                     return acc
