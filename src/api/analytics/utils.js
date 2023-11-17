@@ -7,3 +7,6 @@ const whitelistRegExp = new RegExp(`(?:${whitelistURICodes.join('|')})`, 'g')
 
 export const customEncodeURIComponent = (uri) =>
     encodeURIComponent(uri).replace(whitelistRegExp, decodeURIComponent)
+
+export const formatRequestPath = ({ path, program, trackedEntityType }) =>
+    [path, program, trackedEntityType].filter(Boolean).join('/')

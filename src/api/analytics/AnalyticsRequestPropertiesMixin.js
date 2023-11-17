@@ -514,7 +514,25 @@ const AnalyticsRequestPropertiesMixin = (base) =>
             return new AnalyticsRequest(this)
         }
 
-        // TODO: add withTrackedEntity
+        /**
+         * Sets the tracked entity type for the request.
+         * It appends the tracked entity type id to the request's path.
+         *
+         * @param {!String} trackedEntityType The tracked entity type id
+         *
+         * @returns {AnalyticsRequest} A new instance of the class for chaining purposes
+         *
+         * @example
+         * const req = new analytics.request()
+         *    .withTrackedEntityType('nEenWmSyUEp');
+         */
+        withTrackedEntityType(trackedEntityType) {
+            if (trackedEntityType) {
+                this.trackedEntityType = trackedEntityType
+            }
+
+            return new AnalyticsRequest(this)
+        }
 
         /**
          * Sets the program for the request.
