@@ -77,7 +77,7 @@ msgid "This app could not retrieve required data."
 msgstr ""
 
 msgid "Network error"
-msgstr ""
+msgstr "Тармоқда хатолик"
 
 msgid "Data / Edit calculation"
 msgstr ""
@@ -926,7 +926,7 @@ msgid "Indicator group"
 msgstr "Индикатор гуруҳи"
 
 msgid "All groups"
-msgstr ""
+msgstr "Барча гуруҳлар"
 
 msgid "Indicator"
 msgstr "Индикатор"
