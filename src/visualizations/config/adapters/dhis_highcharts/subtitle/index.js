@@ -50,8 +50,11 @@ export default function (series, layout, metaData, dashboard) {
     }
 
     // DHIS2-578: allow for optional custom subtitle
-    if (isString(layout.subtitle)) {
-        subtitle.text = layout.subtitle
+    const customSubtitle =
+        (layout.subtitle && layout.displaySubtitle) || layout.subtitle
+
+    if (isString(customSubtitle) && customSubtitle.length) {
+        subtitle.text = customSubtitle
     } else {
         const filterTitle = getFilterText(layout.filters, metaData)
 
