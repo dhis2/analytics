@@ -22,6 +22,9 @@ export default css`
     .list {
         margin: 0;
         padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
     }
     .header {
         text-transform: uppercase;

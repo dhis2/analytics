@@ -20,10 +20,11 @@ const OptionsButton = ({ onClick }) => (
                     background: none;
                     outline: none;
                     cursor: pointer;
-                    border-radius: 4px;
+                    border-top-right-radius: 2px;
+                    border-bottom-left-radius: 2px;
                 }
                 button:hover {
-                    background-color: rgba(0, 0, 0, 0.12);
+                    background-color: rgba(0, 0, 0, 0.09);
                 }
             `}
         </style>
