@@ -1,3 +1,10 @@
+# [26.2.0](https://github.com/dhis2/analytics/compare/v26.1.8...v26.2.0) (2023-12-14)
+
+
+### Features
+
+* implement cumulative values in PT engine (DHIS2-5497) ([#1567](https://github.com/dhis2/analytics/issues/1567)) ([2b404b4](https://github.com/dhis2/analytics/commit/2b404b423cfb49347bdf57125870bb7b55338322))
+
 ## [26.1.8](https://github.com/dhis2/analytics/compare/v26.1.7...v26.1.8) (2023-11-26)
 
 

@@ -18,6 +18,7 @@ import {
     modalContent,
     tabSection,
     tabSectionTitle,
+    tabSectionTitleDisabled,
     tabSectionTitleMargin,
     tabSectionOption,
     tabSectionOptionItem,
@@ -95,6 +96,7 @@ const VisualizationOptions = ({
                     {tabContent.styles}
                     {tabSection.styles}
                     {tabSectionTitle.styles}
+                    {tabSectionTitleDisabled.styles}
                     {tabSectionTitleMargin.styles}
                     {tabSectionOption.styles}
                     {tabSectionOptionItem.styles}
