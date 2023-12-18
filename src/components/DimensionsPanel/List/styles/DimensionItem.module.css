@@ -65,6 +65,7 @@
 .lockWrapper svg path {
     fill: var(--colors-grey800);
 }
+
 .lockWrapper {
     background: var(--colors-grey300);
     height: 20px;
@@ -74,6 +75,9 @@
     justify-content: center;
 }
 
+.item.selected .lockWrapper {
+    background: #cbe7e5;
+}
 .item.selected .lockWrapper svg path {
     fill: var(--colors-teal900);
 }
