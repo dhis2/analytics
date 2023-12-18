@@ -51,6 +51,7 @@ class DimensionItem extends Component {
             onOptionsClick,
             innerRef,
             dataTest,
+            className,
             ...rest
         } = this.props
 
@@ -91,10 +92,14 @@ class DimensionItem extends Component {
                     onMouseOver={this.onMouseOver}
                     onMouseLeave={this.onMouseExit}
                     ref={innerRef}
-                    className={cx(style.item, {
-                        [style.deactivated]: isDeactivated,
-                        [style.selected]: isSelected && !isDeactivated,
-                    })}
+                    className={cx(
+                        style.item,
+                        {
+                            [style.deactivated]: isDeactivated,
+                            [style.selected]: isSelected && !isDeactivated,
+                        },
+                        className
+                    )}
                     data-test={dataTest}
                     onClick={onLabelClick}
                     {...rest}
@@ -144,6 +149,7 @@ DimensionItem.propTypes = {
     id: PropTypes.string.isRequired,
     isSelected: PropTypes.bool.isRequired, // XXX
     name: PropTypes.string.isRequired,
+    className: PropTypes.string,
     dataTest: PropTypes.string,
     innerRef: PropTypes.func,
     isDeactivated: PropTypes.bool,
