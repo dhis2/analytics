@@ -25,6 +25,7 @@ import {
     VIS_TYPE_PIVOT_TABLE,
     VIS_TYPE_SCATTER,
     VIS_TYPE_LINE_LIST,
+    VIS_TYPE_OUTLIER_TABLE,
 } from '../visTypes.js'
 
 const RULE_PROP_AVAILABLE_AXES = 'availableAxes',
@@ -129,6 +130,18 @@ const lineListRules = {
     [RULE_PROP_AVAILABLE_AXES]: [AXIS_ID_COLUMNS, AXIS_ID_FILTERS],
 }
 
+const outlierTableRules = {
+    [RULE_PROP_AVAILABLE_AXES]: [AXIS_ID_COLUMNS],
+    [RULE_PROP_MIN_DIMS_PER_AXIS]: {
+        [AXIS_ID_COLUMNS]: 3,
+    },
+    [RULE_PROP_LOCKED_DIMS]: {
+        [DIMENSION_ID_DATA]: AXIS_ID_COLUMNS,
+        [DIMENSION_ID_PERIOD]: AXIS_ID_COLUMNS,
+        [DIMENSION_ID_ORGUNIT]: AXIS_ID_COLUMNS,
+    },
+}
+
 const visTypeToRules = {
     [VIS_TYPE_COLUMN]: defaultRules,
     [VIS_TYPE_STACKED_COLUMN]: defaultRules,
@@ -146,6 +159,7 @@ const visTypeToRules = {
     [VIS_TYPE_PIVOT_TABLE]: pivotTableRules,
     [VIS_TYPE_SCATTER]: scatterRules,
     [VIS_TYPE_LINE_LIST]: lineListRules,
+    [VIS_TYPE_OUTLIER_TABLE]: outlierTableRules,
 }
 
 const getRulesByVisType = (visType) => {

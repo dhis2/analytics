@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2023-09-27T14:15:13.876Z\n"
-"PO-Revision-Date: 2023-09-27T14:15:13.876Z\n"
+"POT-Creation-Date: 2024-01-17T09:19:49.801Z\n"
+"PO-Revision-Date: 2024-01-17T09:19:49.802Z\n"
 
 msgid "view only"
 msgstr "view only"
@@ -149,6 +149,9 @@ msgstr "Math operators"
 
 msgid "Data Type"
 msgstr "Data Type"
+
+msgid "Only {{dataType}} can be used in {{visType}}"
+msgstr "Only {{dataType}} can be used in {{visType}}"
 
 msgid "All types"
 msgstr "All types"
@@ -1166,6 +1169,9 @@ msgstr "Scatter"
 
 msgid "Single value"
 msgstr "Single value"
+
+msgid "Outlier table"
+msgstr "Outlier table"
 
 msgid "All charts"
 msgstr "All charts"

@@ -206,6 +206,7 @@ export {
     VIS_TYPE_PIVOT_TABLE,
     VIS_TYPE_SCATTER,
     VIS_TYPE_LINE_LIST,
+    VIS_TYPE_OUTLIER_TABLE,
     visTypeDisplayNames,
     visTypeIcons,
     getDisplayNameByVisType,
@@ -215,6 +216,7 @@ export {
     isYearOverYear,
     isDualAxisType,
     isSingleValue,
+    isOutlierTable,
     isTwoCategoryChartType,
     isLegendSetType,
     isColumnBasedType,
@@ -231,6 +233,7 @@ export {
     LAYOUT_TYPE_PIVOT_TABLE,
     LAYOUT_TYPE_SCATTER,
     LAYOUT_TYPE_LINE_LIST,
+    LAYOUT_TYPE_OUTLIER_TABLE,
 } from './modules/layoutTypes.js'
 
 // Modules: layoutUiRules
