@@ -7,8 +7,8 @@ const analyticsQuery = {
         return [path, program].filter(Boolean).join('/')
     },
     params: ({ dimensions, filters, parameters }) => ({
-        dimension: dimensions,
-        filter: filters,
+        dimension: dimensions.length ? dimensions : undefined,
+        filter: filters.length ? filters : undefined,
         ...parameters,
     }),
 }
@@ -20,8 +20,8 @@ const analyticsDataQuery = {
     },
     params: ({ dimensions, filters, parameters }) => {
         return {
-            dimension: dimensions,
-            filter: filters,
+            dimension: dimensions.length ? dimensions : undefined,
+            filter: filters.length ? filters : undefined,
             ...parameters,
             skipMeta: true,
             skipData: false,
@@ -35,8 +35,8 @@ const analyticsMetaDataQuery = {
         return [path, program].filter(Boolean).join('/')
     },
     params: ({ dimensions, filters, parameters }) => ({
-        dimension: dimensions,
-        filter: filters,
+        dimension: dimensions.length ? dimensions : undefined,
+        filter: filters.length ? filters : undefined,
         ...parameters,
         skipMeta: false,
         skipData: true,
@@ -158,17 +158,23 @@ class AnalyticsBase {
      * // { metaData: { ... }, rows: [], height: 0, width: 0 }
      */
     async fetch(req, options) {
+        const dimensions = generateDimensionStrings(req.dimensions, options)
+        const filters = generateDimensionStrings(req.filters, options)
+
         const response = await this.dataEngine.query(
             { data: analyticsQuery },
             {
                 variables: {
                     path: req.path,
                     program: req.program,
+                    dimensions,
+                    filters /*
                     dimensions: generateDimensionStrings(
                         req.dimensions,
                         options
                     ),
                     filters: generateDimensionStrings(req.filters, options),
+                    */,
                     parameters: req.parameters,
                 },
             }
