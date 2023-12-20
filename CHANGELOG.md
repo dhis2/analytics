@@ -1,3 +1,118 @@
+# [26.2.0](https://github.com/dhis2/analytics/compare/v26.1.8...v26.2.0) (2023-12-14)
+
+
+### Features
+
+* implement cumulative values in PT engine (DHIS2-5497) ([#1567](https://github.com/dhis2/analytics/issues/1567)) ([2b404b4](https://github.com/dhis2/analytics/commit/2b404b423cfb49347bdf57125870bb7b55338322))
+
+## [26.1.8](https://github.com/dhis2/analytics/compare/v26.1.7...v26.1.8) (2023-11-26)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([43a607b](https://github.com/dhis2/analytics/commit/43a607ba0310b19edd07d866f15337e736567b2f))
+
+## [26.1.7](https://github.com/dhis2/analytics/compare/v26.1.6...v26.1.7) (2023-11-19)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([cb4a052](https://github.com/dhis2/analytics/commit/cb4a052a19ebdced3ea7b6ffb7d1c40064abac38))
+
+## [26.1.6](https://github.com/dhis2/analytics/compare/v26.1.5...v26.1.6) (2023-11-07)
+
+
+### Bug Fixes
+
+* use json+patch for PATCH requests ([#1593](https://github.com/dhis2/analytics/issues/1593)) ([bdb0b9c](https://github.com/dhis2/analytics/commit/bdb0b9ceaa5ef102ef9768038c763b70a3d5e7d1))
+
+## [26.1.5](https://github.com/dhis2/analytics/compare/v26.1.4...v26.1.5) (2023-11-03)
+
+
+### Bug Fixes
+
+* use correct colors in "basic" color set ([#1592](https://github.com/dhis2/analytics/issues/1592)) ([6356250](https://github.com/dhis2/analytics/commit/63562501bd8b020742bb7ee8b17621975790c3c6))
+
+## [26.1.4](https://github.com/dhis2/analytics/compare/v26.1.3...v26.1.4) (2023-10-29)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([435e077](https://github.com/dhis2/analytics/commit/435e07717c586365dfa67ad9ffb8acd5167e9ea2))
+
+## [26.1.3](https://github.com/dhis2/analytics/compare/v26.1.2...v26.1.3) (2023-10-22)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([0a250af](https://github.com/dhis2/analytics/commit/0a250af64b9df6bfd7334f6cf2ecc5d150003e2d))
+
+## [26.1.2](https://github.com/dhis2/analytics/compare/v26.1.1...v26.1.2) (2023-10-18)
+
+
+### Bug Fixes
+
+* handle both Set and array for currentUser.authorities when checking interpretations access (DHIS2-15964) ([d3d45ab](https://github.com/dhis2/analytics/commit/d3d45abd352a6b9609d732c24a718fef83b076c7))
+* interpretation panel display date and timestamps according to client time zone (DHIS2-15825) ([8e60f26](https://github.com/dhis2/analytics/commit/8e60f266bd55f8dee9745ad1930f6525e3ca96f3))
+* interpretations modal height (DHIS2-15558) ([014d43e](https://github.com/dhis2/analytics/commit/014d43e241d59e841f72d203f8b8f657516aa147))
+* show warning text below RichTextEditor when unable to show snapshot (DHIS2-15781) ([f27bc38](https://github.com/dhis2/analytics/commit/f27bc38e5cf47840971eb685f0ee705f174eadc0))
+
+## [26.1.1](https://github.com/dhis2/analytics/compare/v26.1.0...v26.1.1) (2023-10-05)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([dd9c23f](https://github.com/dhis2/analytics/commit/dd9c23f34a0489cae89f5f5c10ab1dc17e2c13ef))
+
+# [26.1.0](https://github.com/dhis2/analytics/compare/v26.0.21...v26.1.0) (2023-10-03)
+
+
+### Features
+
+* **pivot-table:** truncate title and show full in tooltip ([#1579](https://github.com/dhis2/analytics/issues/1579)) ([c37ba2d](https://github.com/dhis2/analytics/commit/c37ba2d1a187963b3b5aeee5b951bcf9c129dcd2))
+
+## [26.0.21](https://github.com/dhis2/analytics/compare/v26.0.20...v26.0.21) (2023-09-28)
+
+
+### Bug Fixes
+
+* avoid crash in DV with some chart types DHIS2-15882 ([#1582](https://github.com/dhis2/analytics/issues/1582)) ([f6c89e1](https://github.com/dhis2/analytics/commit/f6c89e1481dbbc2ea2cfe80a3c9ed7f81a63c83c))
+
+## [26.0.20](https://github.com/dhis2/analytics/compare/v26.0.19...v26.0.20) (2023-09-25)
+
+
+### Bug Fixes
+
+* export function for preparing payload for copy DHIS2-15722 ([#1573](https://github.com/dhis2/analytics/issues/1573)) ([a1f8d69](https://github.com/dhis2/analytics/commit/a1f8d694121d62d001f7b4567d84d49ecec377fd))
+
+## [26.0.19](https://github.com/dhis2/analytics/compare/v26.0.18...v26.0.19) (2023-09-15)
+
+
+### Bug Fixes
+
+* use translated dimension labels in PT DHIS2-15750 ([#1572](https://github.com/dhis2/analytics/issues/1572)) ([492975e](https://github.com/dhis2/analytics/commit/492975e46d1570e7856ef217a9a28c3ede5c7fa5))
+
+## [26.0.18](https://github.com/dhis2/analytics/compare/v26.0.17...v26.0.18) (2023-09-13)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([e4f95e9](https://github.com/dhis2/analytics/commit/e4f95e9147a337f9a675ffebff641ea5bd9a0430))
+
+## [26.0.17](https://github.com/dhis2/analytics/compare/v26.0.16...v26.0.17) (2023-08-28)
+
+
+### Bug Fixes
+
+* use correct aggregation type if numberType undefined DHIS2-15698 ([#1564](https://github.com/dhis2/analytics/issues/1564)) ([c740e32](https://github.com/dhis2/analytics/commit/c740e320be568cce4430afaab688dd52ced83fa3))
+
+## [26.0.16](https://github.com/dhis2/analytics/compare/v26.0.15...v26.0.16) (2023-08-18)
+
+
+### Bug Fixes
+
+* avoid undefined in totals DHIS2-14511 ([#1552](https://github.com/dhis2/analytics/issues/1552)) ([d93bc3e](https://github.com/dhis2/analytics/commit/d93bc3e35c560aac7e64b3db8196032201686d3a))
+
 ## [26.0.15](https://github.com/dhis2/analytics/compare/v26.0.14...v26.0.15) (2023-07-27)
 
 

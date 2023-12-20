@@ -24,14 +24,14 @@ const modalCSS = css.resolve`
         max-width: calc(100vw - 128px) !important;
         max-height: calc(100vh - 128px) !important;
         width: auto !important;
-        height: auto !important;
+        height: calc(100vh - 128px) !important;
         overflow-y: hidden;
     }
     aside.hidden {
         display: none;
     }
     aside > :global(div) > :global(div) {
-        max-height: none;
+        height: 100%;
     }
 `
 
@@ -39,6 +39,7 @@ function getModalContentCSS(width) {
     return css.resolve`
         div {
             width: ${width}px;
+            overflow-y: visible;
         }
     `
 }
@@ -216,12 +217,14 @@ const InterpretationModal = ({
                     .container {
                         display: flex;
                         flex-direction: column;
+                        height: 100%;
                     }
 
                     .row {
                         display: flex;
                         flex-direction: row;
                         gap: 16px;
+                        height: 100%;
                     }
 
                     .visualisation-wrap {
@@ -233,7 +236,6 @@ const InterpretationModal = ({
                         padding-right: ${spacers.dp4};
                         flex-basis: 300px;
                         flex-shrink: 0;
-                        overflow-y: auto;
                     }
                 `}</style>
             </Modal>

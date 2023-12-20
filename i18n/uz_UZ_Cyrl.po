@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2023-07-06T08:30:33.216Z\n"
+"POT-Creation-Date: 2023-09-27T14:15:13.876Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: Ibatov <ibatovk@who.int>, 2023\n"
 "Language-Team: Uzbek (Cyrillic) (https://app.transifex.com/hisp-uio/teams/100509/uz@Cyrl/)\n"
@@ -77,7 +77,7 @@ msgid "This app could not retrieve required data."
 msgstr ""
 
 msgid "Network error"
-msgstr ""
+msgstr "Тармоқда хатолик"
 
 msgid "Data / Edit calculation"
 msgstr ""
@@ -237,7 +237,7 @@ msgid "Dimension recommended with selected data"
 msgstr "Танланган маълумотлар учун созламалар тавсия этилади"
 
 msgid "All items"
-msgstr ""
+msgstr "Барча элементлар"
 
 msgid "Automatically include all items"
 msgstr ""
@@ -333,7 +333,7 @@ msgid "map"
 msgstr "харита"
 
 msgid "visualization"
-msgstr ""
+msgstr "Визуализация"
 
 msgid "Edit"
 msgstr "Таҳрирлаш"
@@ -372,6 +372,10 @@ msgstr ""
 
 msgid "Write an interpretation"
 msgstr "Талқин ёзиш"
+
+msgid ""
+"Other people viewing this interpretation in the future may see more data."
+msgstr ""
 
 msgid "Post interpretation"
 msgstr ""
@@ -595,10 +599,10 @@ msgid_plural "{{count}} groups"
 msgstr[0] ""
 
 msgid "Selected: {{commaSeparatedListOfOrganisationUnits}}"
-msgstr ""
+msgstr "Танланган: {{commaSeparatedListOfOrganisationUnits}}"
 
 msgid "Nothing selected"
-msgstr ""
+msgstr "Ҳеч нима танланмаган"
 
 msgid "User organisation unit"
 msgstr "Ташкилий бўлим фойдаланувчиси"
@@ -922,7 +926,7 @@ msgid "Indicator group"
 msgstr "Индикатор гуруҳи"
 
 msgid "All groups"
-msgstr ""
+msgstr "Барча гуруҳлар"
 
 msgid "Indicator"
 msgstr "Индикатор"

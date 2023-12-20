@@ -1,71 +1,68 @@
 # 
 # Translators:
-# Caroline Hesthagen Holen <caroline@devotta.no>, 2023
-# Jen Jones Arnesen <jennifer@dhis2.org>, 2023
-# Karoline Tufte Lien <karoline@dhis2.org>, 2023
+# Yury Rogachev <yury@dhis2.org>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2023-09-27T14:15:13.876Z\n"
+"POT-Creation-Date: 2023-07-06T08:30:33.216Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Karoline Tufte Lien <karoline@dhis2.org>, 2023\n"
-"Language-Team: Norwegian Bokmål (https://app.transifex.com/hisp-uio/teams/100509/nb/)\n"
+"Last-Translator: Yury Rogachev <yury@dhis2.org>, 2023\n"
+"Language-Team: Uzbek (Latin) (https://app.transifex.com/hisp-uio/teams/100509/uz@Latn/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: nb\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: uz@Latn\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 msgid "view only"
-msgstr "kun visning"
+msgstr ""
 
 msgid "view and edit"
-msgstr "vis og endre"
+msgstr ""
 
 msgid "all users ({{accessLevel}})"
-msgstr "alle brukere ({{accessLevel}})"
+msgstr ""
 
 msgid "{{userOrGroup}} ({{accessLevel}})"
-msgstr "{{userOrGroup}} ({{accessLevel}})"
+msgstr ""
 
 msgid "Shared with {{commaSeparatedListOfUsersAndGroups}}"
-msgstr "Delt med {{commaSeparatedListOfUsersAndGroups}}"
+msgstr ""
 
 msgid "Not shared with any users or groups"
-msgstr "Ikke delt med noen brukere eller grupper"
+msgstr ""
 
 msgid "No description"
-msgstr "Ingen beskrivelse"
+msgstr "Tavsif yoʼq"
 
 msgid "Last updated {{time}}"
-msgstr "Sist oppdatert {{time}}"
+msgstr ""
 
 msgid "Created {{time}} by {{author}}"
-msgstr "Opprettet {{time}} av {{author}}"
+msgstr ""
 
 msgid "Created {{time}}"
 msgstr ""
 
 msgid "Viewed {{count}} times"
 msgid_plural "Viewed {{count}} times"
-msgstr[0] "Vist 1 gang"
-msgstr[1] "Vist {{count}} ganger"
+msgstr[0] ""
 
 msgid "Notifications"
-msgstr "Varsler"
+msgstr ""
 
 msgid "You're subscribed and getting updates about new interpretations."
-msgstr "Du abonnerer og får oppdateringer om nye tolkninger."
+msgstr ""
 
 msgid "Unsubscribe"
-msgstr "Avslutt abonnementet"
+msgstr ""
 
 msgid "Subscribe to get updates about new interpretations."
-msgstr "Abonner for å få oppdateringer om nye tolkninger."
+msgstr ""
 
 msgid "Subscribe"
-msgstr "Abonner"
+msgstr ""
 
 msgid "About this map"
 msgstr ""
@@ -74,7 +71,7 @@ msgid "About this line list"
 msgstr ""
 
 msgid "About this visualization"
-msgstr "Om denne visualiseringen"
+msgstr ""
 
 msgid "This app could not retrieve required data."
 msgstr ""
@@ -104,7 +101,7 @@ msgid "Delete calculation"
 msgstr ""
 
 msgid "Cancel"
-msgstr "Avbryt"
+msgstr "Бекор қилиш"
 
 msgid "The calculation can only be saved with a valid formula"
 msgstr ""
@@ -124,25 +121,25 @@ msgid "Yes, delete"
 msgstr ""
 
 msgid "Totals only"
-msgstr "Kun totaler"
+msgstr ""
 
 msgid "Details only"
-msgstr "Kun detaljer"
+msgstr ""
 
 msgid "Loading"
-msgstr "Laster"
+msgstr "Yuklanmoqda"
 
 msgid "Data elements"
-msgstr "Dataelementer"
+msgstr "Maʼlumot elementlari"
 
 msgid "Search by data element name"
 msgstr ""
 
 msgid "No data elements found for \"{{- searchTerm}}\""
-msgstr "Ingen dataelementer funnet for \"{{- searchTerm}}\""
+msgstr ""
 
 msgid "No data elements found"
-msgstr "Ingen dataelementer funnet"
+msgstr ""
 
 msgid ""
 "Drag items here, or double click in the list, to start building a "
@@ -153,205 +150,202 @@ msgid "Math operators"
 msgstr ""
 
 msgid "Data Type"
-msgstr "Datatype"
+msgstr "Maʼlumot turi"
 
 msgid "All types"
-msgstr "Alle typer"
+msgstr "Barcha turlari"
 
 msgid "Disaggregation"
-msgstr "Disaggregering"
+msgstr ""
 
 msgid "No data"
-msgstr "Ingen data"
+msgstr "Maʼlumot yoʼq"
 
 msgid "Search by data item name"
-msgstr "Søk etter datapunktnavn"
+msgstr ""
 
 msgid "No items selected"
-msgstr "Ingen elementer er valgt"
+msgstr "Element tanlanmagan"
 
 msgid "Selected Items"
-msgstr "Valgte elementer"
+msgstr "Element tanlangan"
 
 msgid "No indicators found"
-msgstr "Ingen indikatorer funnet"
+msgstr ""
 
 msgid "No data sets found"
-msgstr "Ingen datasett funnet"
+msgstr ""
 
 msgid "No event data items found"
-msgstr "Ingen hendelsesdataelementer funnet"
+msgstr ""
 
 msgid "No program indicators found"
-msgstr "Ingen programindikatorer funnet"
+msgstr ""
 
 msgid "No indicators found for \"{{- searchTerm}}\""
-msgstr "Ingen indikatorer funnet for \"{{- searchTerm}}\""
+msgstr ""
 
 msgid "No data sets found for \"{{- searchTerm}}\""
-msgstr "Ingen datasett funnet for \"{{- searchTerm}}\""
+msgstr ""
 
 msgid "No event data items found for \"{{- searchTerm}}\""
-msgstr "Ingen hendelsesdataelementer funnet for \"{{- searchTerm}}\""
+msgstr ""
 
 msgid "No program indicators found for \"{{- searchTerm}}\""
-msgstr "Ingen programindikatorer funnet for \"{{- searchTerm}}\""
+msgstr ""
 
 msgid "Nothing found for \"{{- searchTerm}}\""
-msgstr "Ingenting funnet for \"{{- searchTerm}}\""
+msgstr ""
 
 msgid "Calculation"
 msgstr ""
 
 msgid "Metric type"
-msgstr "Metrisk type"
+msgstr ""
 
 msgid "All metrics"
-msgstr "Alle beregninger"
+msgstr "Barcha koʼrsatgichlar"
 
 msgid "Move to {{axisName}}"
-msgstr "Flytt til {{axisName}}"
+msgstr "Harakatlaning {{axisName}} ga qarab"
 
 msgid "Add to {{axisName}}"
-msgstr "Legg til {{axisName}}"
+msgstr "{{axisName}} ga qoʼshing"
 
 msgid "Not available for {{visualizationType}}"
-msgstr "Ikke tilgjengelig for {{visualizationType}}"
+msgstr "{{visualizationType}} uchun mavjud emas"
 
 msgid "Remove Assigned Categories"
-msgstr "Fjern Tildelte Kategorier"
+msgstr "Belgilangan kategoriyalar oʼchirilsin"
 
 msgid "Add Assigned Categories"
-msgstr "Legg tildelte kategorier"
+msgstr "Belgilangan kategoriyalar qoʼshilsin"
 
 msgid "Remove"
-msgstr "Fjern"
+msgstr "Olib tashlash"
 
 msgid "Filter dimensions"
-msgstr "Filterdimensjoner"
+msgstr "Filtr sozlamalari"
 
 msgid "Main dimensions"
-msgstr "Hoveddimensjoner"
+msgstr "Umumiy oʼlchamlar"
 
 msgid "Your dimensions"
-msgstr "Dine dimensjoner"
+msgstr "Sizning sozlamalaringiz"
 
 msgid "Dimension recommended with selected data"
-msgstr "Dimensjon anbefalt med valgte data"
+msgstr "Tanlangan maʼlumotlar uchun sozlamalar tavsiya etiladi"
 
 msgid "All items"
-msgstr "Alle elementer"
+msgstr ""
 
 msgid "Automatically include all items"
-msgstr "Inkluder automatisk alle elementer"
+msgstr ""
 
 msgid ""
 "Select all {{- dimensionTitle}} items. With this option, new items added in "
 "the future will be automatically included."
 msgstr ""
-"Velg alle {{- dimensionTitle}} elementer. Med dette alternativet vil nye "
-"elementer som legges til i fremtiden automatisk inkluderes."
 
 msgid "Manually select items..."
-msgstr "Velg elementer manuelt..."
+msgstr ""
 
 msgid "Nothing found in {{- dimensionTitle}}"
-msgstr "Ingenting funnet i {{- dimensionTitle}}"
+msgstr ""
 
 msgid "Search"
-msgstr "Søk"
+msgstr "Izlash"
 
 msgid "Nothing found for {{- searchTerm}}"
 msgstr ""
 
 msgid "Delete {{fileType}}"
-msgstr "Slett {{fileType}}"
+msgstr ""
 
 msgid ""
 "This {{fileType}} and related interpretations will be deleted. Continue?"
 msgstr ""
-"Denne {{fileType}} og relaterte tolkninger vil bli slettet. Fortsette?"
 
 msgid "Delete"
-msgstr "Slett"
+msgstr "Oʼchirib tashlash"
 
 msgid "File"
-msgstr "Fil"
+msgstr "Fayl"
 
 msgid "New"
-msgstr "Ny"
+msgstr "Yangi"
 
 msgid "Open…"
-msgstr "Åpne..."
+msgstr ""
 
 msgid "Save"
-msgstr "Lagre"
+msgstr "Saqlash"
 
 msgid "Save…"
-msgstr "Lagre..."
+msgstr ""
 
 msgid "Save as…"
-msgstr "Lagre som..."
+msgstr ""
 
 msgid "Rename…"
-msgstr "Gi nytt navn..."
+msgstr ""
 
 msgid "Translate…"
-msgstr "Oversette..."
+msgstr ""
 
 msgid "Share…"
-msgstr "Dele..."
+msgstr ""
 
 msgid "Get link…"
-msgstr "Få lenke…"
+msgstr ""
 
 msgid "Open in this app"
-msgstr "Åpne i denne appen"
+msgstr "Ushbu ilovada oching"
 
 msgid "Close"
-msgstr "Lukk"
+msgstr "Yopmoq"
 
 msgid "Rename {{fileType}}"
-msgstr "Gi nytt navn til {{fileType}}"
+msgstr ""
 
 msgid "Name"
-msgstr "Navn"
+msgstr "Исми"
 
 msgid "Description"
-msgstr "Beskrivelse"
+msgstr "Tavsif"
 
 msgid "Rename"
-msgstr "Gi nytt navn"
+msgstr "Қайта номлаш"
 
 msgid "{{- objectName}} (copy)"
 msgstr ""
 
 msgid "Save {{fileType}} as"
-msgstr "Lagre {{fileType}} som"
+msgstr ""
 
 msgid "event report"
-msgstr "hendelsesrapport"
+msgstr "hodisa/tadbir hisoboti"
 
 msgid "line list"
 msgstr ""
 
 msgid "map"
-msgstr "kart"
+msgstr "xarita"
 
 msgid "visualization"
-msgstr "visualisering"
+msgstr ""
 
 msgid "Edit"
-msgstr "Rediger"
+msgstr "Tahrirlash"
 
 msgid "Write a reply"
-msgstr "Skriv et svar"
+msgstr "Izoh yozing"
 
 msgid "Post reply"
 msgstr ""
 
 msgid "Delete failed"
-msgstr "Kunne ikke slette"
+msgstr "Oʼchirish amalga oshmadi"
 
 msgid "Could not update comment"
 msgstr ""
@@ -360,7 +354,7 @@ msgid "Enter comment text"
 msgstr ""
 
 msgid "Update"
-msgstr "Oppdater"
+msgstr "Янгилаш"
 
 msgid "Viewing interpretation: {{- visualisationName}}"
 msgstr ""
@@ -377,43 +371,38 @@ msgid "Hide interpretation"
 msgstr ""
 
 msgid "Write an interpretation"
-msgstr "Skriv en tolkning"
-
-msgid ""
-"Other people viewing this interpretation in the future may see more data."
-msgstr ""
+msgstr "Talqin yozish"
 
 msgid "Post interpretation"
 msgstr ""
 
 msgid "Interpretations"
-msgstr "Tolkninger"
+msgstr "Talqinlar"
 
 msgid "Reply"
-msgstr "Svar"
+msgstr "Javob"
 
 msgid "{{count}} replies"
 msgid_plural "{{count}} replies"
-msgstr[0] "{{count}} svar"
-msgstr[1] "{{count}} svar"
+msgstr[0] ""
 
 msgid "View replies"
 msgstr ""
 
 msgid "Unlike"
-msgstr "Fjern like"
+msgstr "Аksincha"
 
 msgid "Like"
-msgstr "Like"
+msgstr "Kabi, oʼxshash"
 
 msgid "Share"
-msgstr "Del"
+msgstr "Улашиш"
 
 msgid "See interpretation"
 msgstr ""
 
 msgid "Manage sharing"
-msgstr "Administrer deling"
+msgstr "Ulashishni boshqarish"
 
 msgid "Could not update interpretation"
 msgstr ""
@@ -437,7 +426,7 @@ msgid "Add emoji"
 msgstr ""
 
 msgid "Preview"
-msgstr "Forhåndsvisning"
+msgstr ""
 
 msgid "Back to write mode"
 msgstr ""
@@ -452,59 +441,57 @@ msgid "Searching for \"{{- searchText}}\""
 msgstr ""
 
 msgid "No results found"
-msgstr "Ingen resultater funnet"
+msgstr "Hech qanday natija topilmadi"
 
 msgid "Not available offline"
-msgstr "Ikke tilgjengelig i frakoblet modus"
+msgstr ""
 
 msgid "Created by"
-msgstr "Opprettet av"
+msgstr "Томонидан яратилган"
 
 msgid "Anyone"
-msgstr "Hvem som helst"
+msgstr "Kimdir"
 
 msgid "Only you"
-msgstr "Bare deg"
+msgstr ""
 
 msgid "Others"
-msgstr "Andre"
+msgstr ""
 
 msgid "Not supported by this app yet"
 msgstr ""
 
 msgid "Filter by name"
-msgstr "Filtrer etter navn"
+msgstr "Nomi boʼyicha filtrlash"
 
 msgid "Created"
-msgstr "Opprettet"
+msgstr "Yaratilgan"
 
 msgid "Last updated"
-msgstr "Sist oppdatert"
+msgstr "Oxirgi yangilangan"
 
 msgid "Type"
-msgstr "Type"
+msgstr "Turi"
 
 msgid "Clear filters"
-msgstr "Tøm filtre"
+msgstr "Filtrlarni tozalash"
 
 msgid "{{firstItemIndex}}-{{lastItemIndex}} of {{totalNumberOfItems}}"
-msgstr "{{firstItemIndex}}-{{lastItemIndex}} av {{totalNumberOfItems}}"
+msgstr ""
 
 msgid "Open"
-msgstr "Åpne"
+msgstr "Ochiq"
 
 msgid "Couldn't load items"
-msgstr "Kunne ikke laste inn elementer"
+msgstr ""
 
 msgid ""
 "There was a problem loading items. Try again or contact your system "
 "administrator."
 msgstr ""
-"Det oppsto et problem med å laste elementer. Prøv igjen eller kontakt "
-"systemadministratoren."
 
 msgid "No items found. Create a new to get started."
-msgstr "Ingen elementer funnet. Opprett en ny for å komme i gang."
+msgstr ""
 
 msgid ""
 "No items found. Try adjusting your search or filter options to find what "
@@ -512,7 +499,7 @@ msgid ""
 msgstr ""
 
 msgid "Create new"
-msgstr "Opprett ny"
+msgstr "Yangisini yaratish"
 
 msgid "Open a visualization"
 msgstr ""
@@ -590,25 +577,22 @@ msgid "New line list"
 msgstr ""
 
 msgid "Options"
-msgstr "Alternativ"
+msgstr "Вариант"
 
 msgid "Hide"
-msgstr "Skjul"
+msgstr "Berkitish"
 
 msgid "{{count}} org units"
 msgid_plural "{{count}} org units"
 msgstr[0] ""
-msgstr[1] ""
 
 msgid "{{count}} levels"
 msgid_plural "{{count}} levels"
 msgstr[0] ""
-msgstr[1] ""
 
 msgid "{{count}} groups"
 msgid_plural "{{count}} groups"
 msgstr[0] ""
-msgstr[1] ""
 
 msgid "Selected: {{commaSeparatedListOfOrganisationUnits}}"
 msgstr ""
@@ -617,250 +601,250 @@ msgid "Nothing selected"
 msgstr ""
 
 msgid "User organisation unit"
-msgstr "Brukerorganisasjonsenhet"
+msgstr "Ташкилий бўлим фойдаланувчиси"
 
 msgid "User sub-units"
-msgstr "Underenheter"
+msgstr "Фойдаланувчига бўйсунувчи бирликлар"
 
 msgid "User sub-x2-units"
-msgstr "Under-x2-enheter"
+msgstr "Фойдаланувчига бўйсунувчи 2 даражали бирликлар"
 
 msgid "Select a level"
-msgstr "Velg et nivå"
+msgstr "Pogʼonani tanlang"
 
 msgid "Select a group"
-msgstr "Velg en gruppe"
+msgstr "Guruhni tanlang"
 
 msgid "Deselect all"
-msgstr "Fjern valg"
+msgstr "Barcha tanlanganni bekor qilish"
 
 msgid "Period type"
-msgstr "Periodetype"
+msgstr "Davr turi"
 
 msgid "Year"
-msgstr "År"
+msgstr "Yil"
 
 msgid "Select year"
-msgstr "Velg år"
+msgstr "Yilni tanlang"
 
 msgid "Period"
-msgstr "Periode"
+msgstr "Davr"
 
 msgid "Relative periods"
-msgstr "Relative perioder"
+msgstr "Nisbiy davrlar"
 
 msgid "Fixed periods"
-msgstr "Faste perioder"
+msgstr "Beligalangan davrlar"
 
 msgid "Selected Periods"
-msgstr "Valgte perioder"
+msgstr "Tanlangan Davrlar"
 
 msgid "No periods selected"
-msgstr "Ingen perioder er valgt"
+msgstr "Davr tanlanmagan"
 
 msgid "Daily"
-msgstr "Daglig"
+msgstr "Kunlik"
 
 msgid "Weekly"
-msgstr "Ukentlig"
+msgstr "Haftalik"
 
 msgid "Weekly (Start Wednesday)"
-msgstr "Ukentlig (start onsdag)"
+msgstr "Haftalik (Boshlanishi Chorshanba)"
 
 msgid "Weekly (Start Thursday)"
-msgstr "Ukentlig (start torsdag)"
+msgstr "Haftalik (Boshlanishi Payshanba)"
 
 msgid "Weekly (Start Saturday)"
-msgstr "Ukentlig (start lørdag)"
+msgstr "Haftalik (Boshlanishi Shanba)"
 
 msgid "Weekly (Start Sunday)"
-msgstr "Ukentlig (start søndag)"
+msgstr "Haftalik (Boshlanishi Yakshanba)"
 
 msgid "Bi-weekly"
-msgstr "Toukentlig"
+msgstr "Juft haftalik"
 
 msgid "Monthly"
-msgstr "Månedlig"
+msgstr "Oylik"
 
 msgid "Bi-monthly"
-msgstr "Tomånedlig"
+msgstr "Juft oylik"
 
 msgid "Quarterly"
-msgstr "Kvartalsvis"
+msgstr "Har kvartal"
 
 msgid "Six-monthly"
-msgstr "Halvårlig"
+msgstr "Yarim yillik"
 
 msgid "Six-monthly April"
-msgstr "Halvårig April"
+msgstr "Yarim yillik Аprel"
 
 msgid "Yearly"
-msgstr "Årlig"
+msgstr "Yillik"
 
 msgid "Financial year (Start November)"
-msgstr "Regnskapsår (start november)"
+msgstr "Moliyaviy yil (Boshlanishi Noyabr)"
 
 msgid "Financial year (Start October)"
-msgstr "Regnskapsår (start oktober)"
+msgstr "Moliyaviy yil (boshlanishi Oktyabr)"
 
 msgid "Financial year (Start July)"
-msgstr "Regnskapsår (start juli)"
+msgstr "Moliyaviy yil (boshlanishi Iyul)"
 
 msgid "Financial year (Start April)"
-msgstr "Regnskapsår (start april)"
+msgstr "Moliyaviy yil (boshlanishi Аprel)"
 
 msgid "Today"
-msgstr "I dag"
+msgstr "Bugun"
 
 msgid "Yesterday"
-msgstr "I går"
+msgstr "Kecha"
 
 msgid "Last 3 days"
-msgstr "Siste 3 dager"
+msgstr "Oxirgi 3 kun"
 
 msgid "Last 7 days"
-msgstr "Siste 7 dager"
+msgstr "Oxirgi 7 kun"
 
 msgid "Last 14 days"
-msgstr "Siste 14 dager"
+msgstr "Oxirgi 14 kun"
 
 msgid "Last 30 days"
-msgstr "Siste 30 dager"
+msgstr "Oxirgi 30 kun"
 
 msgid "Last 60 days"
-msgstr "Siste 60 dager"
+msgstr "Oxirgi 60 kun"
 
 msgid "Last 90 days"
-msgstr "Siste 90 dager"
+msgstr "Oxirgi 90 kun"
 
 msgid "Last 180 days"
-msgstr "Siste 180 dager"
+msgstr "Oxirgi 180 kun"
 
 msgid "This week"
-msgstr "Denne uken"
+msgstr "Ushbu hafta"
 
 msgid "Last week"
-msgstr "Forrige uke"
+msgstr "Oxirgi hafta"
 
 msgid "Last 4 weeks"
-msgstr "Siste 4 uker"
+msgstr "Oxirgi 4 hafta"
 
 msgid "Last 12 weeks"
-msgstr "Siste 12 uker"
+msgstr "Oxirgi 12 hafta"
 
 msgid "Last 52 weeks"
-msgstr "Siste 52 uker"
+msgstr "Oxirgi 52 hafta"
 
 msgid "Weeks this year"
-msgstr "Uker inneværende år"
+msgstr "Haftalar ayni yilda"
 
 msgid "This bi-week"
-msgstr "Denne touken"
+msgstr "Ushbu juft hafta"
 
 msgid "Last bi-week"
-msgstr "Sist touke"
+msgstr "Oxirgi juft hafta"
 
 msgid "Last 4 bi-weeks"
-msgstr "Siste 4 touker"
+msgstr "Oxirgi 4 juft haftalar"
 
 msgid "This month"
-msgstr "Denne måneden"
+msgstr "Ushbu oy"
 
 msgid "Last month"
-msgstr "Forrige måned"
+msgstr "Oxirgi oy"
 
 msgid "Last 3 months"
-msgstr "Siste 3 måneder"
+msgstr "Oxirgi 3 oy"
 
 msgid "Last 6 months"
-msgstr "Siste 6 måneder"
+msgstr "Oxirgi 6 oy"
 
 msgid "Last 12 months"
-msgstr "Siste 12 måneder"
+msgstr "Oxirgi 12 oy"
 
 msgid "Months this year"
-msgstr "Måneder i år"
+msgstr "Oylar ayni yilda"
 
 msgid "This bi-month"
-msgstr "Denne tomåneden"
+msgstr "Ushbu juft oy"
 
 msgid "Last bi-month"
-msgstr "Siste tomåned"
+msgstr "Oxirgi 2 oy"
 
 msgid "Last 6 bi-months"
-msgstr "Siste 6 tomåneder"
+msgstr "Oxirgi 6 juft oylar"
 
 msgid "Bi-months this year"
-msgstr "Tomåneder i år"
+msgstr "Аyni yildagi juft oylar"
 
 msgid "This quarter"
-msgstr "Dette kvartalet"
+msgstr "Ushbu kvartal"
 
 msgid "Last quarter"
-msgstr "Siste kvartal"
+msgstr "Oxirgi kvartal"
 
 msgid "Last 4 quarters"
-msgstr "Siste 4 kvartaler"
+msgstr "Oxirgi 4 kvartal"
 
 msgid "Quarters this year"
-msgstr "Kvartaler i år"
+msgstr "Ushbu yildagi kvartallar"
 
 msgid "This six-month"
-msgstr "Dette halvåret"
+msgstr "Ushbu yarim yillik"
 
 msgid "Last six-month"
-msgstr "Siste halvår"
+msgstr "Oxirgi 6 oy"
 
 msgid "Last 2 six-month"
-msgstr "Siste to halvår"
+msgstr "Oxirgi juft yarim yillik"
 
 msgid "This financial year"
-msgstr "Dette regnskapsåret"
+msgstr "Ushbu moliyaviy yil"
 
 msgid "Last financial year"
-msgstr "Siste regnskapsår"
+msgstr "Oxirgi moliyaviy yil"
 
 msgid "Last 5 financial years"
-msgstr "Siste 5 regnskapsår"
+msgstr "Oxirgi 5 moliyaviy yillar"
 
 msgid "This year"
-msgstr "Dette året"
+msgstr "Ushbu yil"
 
 msgid "Last year"
-msgstr "Forrige år"
+msgstr "Oxirgi yil"
 
 msgid "Last 5 years"
-msgstr "Siste 5 år"
+msgstr "Oxirgi 5 yil"
 
 msgid "Last 10 years"
-msgstr "Siste 10 år"
+msgstr "Oxirgi 10 yil"
 
 msgid "Days"
-msgstr "Dager"
+msgstr "Kunlar"
 
 msgid "Weeks"
-msgstr "Uker"
+msgstr "Haftalar"
 
 msgid "Bi-weeks"
-msgstr "Touker"
+msgstr "Juft haftalar"
 
 msgid "Months"
-msgstr "Måneder"
+msgstr "Oylar"
 
 msgid "Bi-months"
-msgstr "Tomåneder"
+msgstr "2 oy"
 
 msgid "Quarters"
-msgstr "Kvartaler"
+msgstr "Kvartal"
 
 msgid "Six-months"
-msgstr "Halvår"
+msgstr "Yarim yillik"
 
 msgid "Financial Years"
-msgstr "Regnskapsår"
+msgstr "Moliyaviy yillar"
 
 msgid "Years"
-msgstr "År"
+msgstr "Yillar"
 
 msgid "Interpretations and details"
 msgstr ""
@@ -893,49 +877,49 @@ msgid "Retry"
 msgstr ""
 
 msgid "Series"
-msgstr "Serie"
+msgstr "Ketma-ketliklar"
 
 msgid "Category"
-msgstr "Kategori"
+msgstr "Kategoriya"
 
 msgid "Filter"
-msgstr "Filter"
+msgstr "Filtr"
 
 msgid "Columns"
-msgstr "Kolonner"
+msgstr "Ustunlar"
 
 msgid "Rows"
-msgstr "Rader"
+msgstr "Qatorlar"
 
 msgid "Points"
-msgstr "Punkter"
+msgstr "Nuqtalar"
 
 msgid "Reporting rate"
-msgstr "Rapporteringfrekvens"
+msgstr "Hisobotdagi stavka"
 
 msgid "Reporting rate on time"
-msgstr "Rapporteringsfrekvens i tide"
+msgstr "Hisobotdagi stavka oʼz vaqtida"
 
 msgid "Actual reports"
-msgstr "Faktiske rapporter"
+msgstr "Haqiqiy hisobotlar"
 
 msgid "Actual reports on time"
-msgstr "Faktiske rapporter i tide"
+msgstr "Haqiqiy hisobotlar oʼz vaqtida"
 
 msgid "Expected reports"
-msgstr "Forventede rapporter"
+msgstr "Kutilayotgan hisobotlar"
 
 msgid "Program"
-msgstr "Program"
+msgstr "Programma"
 
 msgid "Select a program"
-msgstr "Velg et program"
+msgstr "Dasturni tanlang"
 
 msgid "Indicators"
-msgstr "Indikatorer"
+msgstr "Indikatorlar"
 
 msgid "Indicator group"
-msgstr "Indikatorgruppe"
+msgstr "Koʼrsatgich guruhi"
 
 msgid "All groups"
 msgstr ""
@@ -950,10 +934,10 @@ msgid "Loading indicator groups"
 msgstr ""
 
 msgid "Data element group"
-msgstr "Dataelementgruppe"
+msgstr "Maʼlumotlar elementi guruhi"
 
 msgid "Data element"
-msgstr "Dataelement"
+msgstr "Maʼlumotlar elementi"
 
 msgid "No data element groups found"
 msgstr ""
@@ -962,10 +946,10 @@ msgid "Loading data element groups"
 msgstr ""
 
 msgid "Data sets"
-msgstr "Datasett"
+msgstr "Maʼlumotlar toʼplami"
 
 msgid "Data set"
-msgstr "Datasett"
+msgstr "Maʼlumotlar toʼplami"
 
 msgid "All data sets"
 msgstr ""
@@ -974,13 +958,13 @@ msgid "Loading data sets"
 msgstr ""
 
 msgid "Event data items"
-msgstr "Hendelsesdatapunkter"
+msgstr "Hodisalar haqida maʼlumot elementlari"
 
 msgid "All programs"
 msgstr ""
 
 msgid "Event data item"
-msgstr "Hendelsesdatapunkt"
+msgstr "Hodisa/Tadbir maʼlumoti elementi"
 
 msgid "No programs found"
 msgstr ""
@@ -989,16 +973,16 @@ msgid "Loading programs"
 msgstr ""
 
 msgid "Program indicators"
-msgstr "Programindikatorer"
+msgstr "Dastur indikatorlari"
 
 msgid "Program indicator"
-msgstr "Programindikator"
+msgstr "Dastur indikatori"
 
 msgid "Calculations"
 msgstr ""
 
 msgid "Number"
-msgstr "Nummer"
+msgstr "Tartib raqami"
 
 msgid "Formula is empty. Add items to the formula from the lists on the left."
 msgstr ""
@@ -1022,58 +1006,58 @@ msgid "Missing left parenthesis ("
 msgstr ""
 
 msgid "Extra Small"
-msgstr "Ekstra liten"
+msgstr "Juda Kichik"
 
 msgid "Small"
-msgstr "Liten"
+msgstr "Kichik"
 
 msgid "Regular"
-msgstr "Regelmessig"
+msgstr "Regulyar"
 
 msgid "Large"
-msgstr "Stor"
+msgstr "Katta"
 
 msgid "Extra Large"
-msgstr "Ekstra stor"
+msgstr "Juda Katta"
 
 msgid "Left"
-msgstr "Venstre"
+msgstr "Chap"
 
 msgid "Center"
-msgstr "Sentrum"
+msgstr "Markaz"
 
 msgid "Right"
-msgstr "Høyre"
+msgstr "Oʼng"
 
 msgid "Start"
-msgstr "Start"
+msgstr "Boshlash"
 
 msgid "Middle"
-msgstr "Midten"
+msgstr "Oʼrtav"
 
 msgid "End"
-msgstr "Slutt"
+msgstr "Oxiri"
 
 msgid "Top"
-msgstr "Topp"
+msgstr "Yuqoridagi"
 
 msgid "Bottom"
-msgstr "Bunn"
+msgstr "Pastki"
 
 msgid "{{dynamicOuNames}} and {{lastOuName}}"
-msgstr "{{dynamicOuNames}} og {{lastOuName}}"
+msgstr "{{dynamicOuNames}} va {{lastOuName}}"
 
 msgid "{{allDynamicOuNames}} levels"
-msgstr "{{allDynamicOuNames}}-nivåer"
+msgstr "Barcha {{allDynamicOuNames}} pogʼonalar"
 
 msgid "{{allDynamicOuNames}} groups"
-msgstr "{{allDynamicOuNames}}-grupper"
+msgstr "{{allDynamicOuNames}} guruhlar"
 
 msgid "{{allDynamicOuNames}} levels in {{staticOuNames}}"
-msgstr "{{allDynamicOuNames}} nivåer i {{staticOuNames}}"
+msgstr "{{allDynamicOuNames}} pogʼonalar {{staticOuNames}} ichida"
 
 msgid "{{allDynamicOuNames}} groups in {{staticOuNames}}"
-msgstr "{{allDynamicOuNames}}-grupper i {{staticOuNames}}"
+msgstr "{{allDynamicOuNames}} guruhlar {{staticOuNames}} ichida"
 
 msgid "{{percentage}}% of total x values"
 msgstr ""
@@ -1100,73 +1084,73 @@ msgid "{{thresholdFactor}} × Z-score high"
 msgstr ""
 
 msgid "Data"
-msgstr "Data"
+msgstr "Maʼlumot"
 
 msgid "Organisation unit"
-msgstr "Organisasjonsenhet"
+msgstr "Ташкилий бирлик"
 
 msgid "Assigned Categories"
-msgstr "Tildelte Kategorier"
+msgstr "Belgilangan Kategoriyalar"
 
 msgid "Pivot table"
-msgstr "Pivottabell"
+msgstr "Solishtirma jadval"
 
 msgid "Area"
-msgstr "Areal"
+msgstr "Maydon"
 
 msgid "Stacked area"
-msgstr "Stablet område"
+msgstr "Yigʼilgan maydon"
 
 msgid "Bar"
-msgstr "Liggende stolpe"
+msgstr "Tizimcha"
 
 msgid "Stacked bar"
-msgstr "Liggende stablet stolpe"
+msgstr "Yigʼilgan tizimcha"
 
 msgid "Column"
-msgstr "Stolpe"
+msgstr "Ustun"
 
 msgid "Year over year (column)"
-msgstr "År over år (stolpe)"
+msgstr "Yildan yilga (ustun)"
 
 msgid "Stacked column"
-msgstr "Stablet stående stolpe"
+msgstr "Yigʼilgan ustun"
 
 msgid "Gauge"
-msgstr "Radialmåler"
+msgstr "Hisoblagich"
 
 msgid "Line"
-msgstr "Linje"
+msgstr "Qator"
 
 msgid "Line list"
-msgstr "Linjeliste"
+msgstr "Qatorlar roʼyxati"
 
 msgid "Year over year (line)"
-msgstr "År over år (linje)"
+msgstr "Yildan yilga (qator)"
 
 msgid "Pie"
-msgstr "Sektor"
+msgstr "Butun aylana"
 
 msgid "Radar"
 msgstr "Radar"
 
 msgid "Scatter"
-msgstr " Spredning"
+msgstr "Tarqoqlik"
 
 msgid "Single value"
-msgstr "Enkeltverdi"
+msgstr "Yagona qiymat"
 
 msgid "All charts"
-msgstr "Alle diagrammer"
+msgstr ""
 
 msgid "{{seriesName}} (trend)"
 msgstr ""
 
 msgid "Trend"
-msgstr "Trend"
+msgstr "Yoʼnalish"
 
 msgid "No legend for this series"
-msgstr "Ingen tegnforklaring for denne serien"
+msgstr "Ushbu seriya uchun taʼrif mavjud emas"
 
 msgid "and {{amount}} more..."
 msgstr ""
@@ -1175,18 +1159,17 @@ msgid "Linear Regression"
 msgstr ""
 
 msgid "Target"
-msgstr "Mål"
+msgstr "Nishon"
 
 msgid "Base"
-msgstr "Grunn"
+msgstr "Аsos"
 
 msgid "Axis {{axisId}}"
-msgstr "Akse {{axisId}}"
+msgstr "Oʼqlar {{axisId}}"
 
 msgid "{{count}} items"
 msgid_plural "{{count}} items"
 msgstr[0] ""
-msgstr[1] ""
 
 msgid "Reset zoom"
 msgstr ""
