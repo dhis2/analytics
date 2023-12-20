@@ -16,6 +16,7 @@ const InterpretationThread = ({
     initialFocus,
     onThreadUpdated,
     downloadMenuComponent: DownloadMenu,
+    dashboardRedirectUrl,
 }) => {
     const { fromServerDate } = useTimeZoneConversion()
     const focusRef = useRef()
@@ -53,6 +54,7 @@ const InterpretationThread = ({
                     }
                     onUpdated={() => onThreadUpdated(true)}
                     onDeleted={onInterpretationDeleted}
+                    dashboardRedirectUrl={dashboardRedirectUrl}
                     isInThread={true}
                 />
                 <div className={'comments'}>
@@ -151,6 +153,7 @@ InterpretationThread.propTypes = {
     fetching: PropTypes.bool.isRequired,
     interpretation: PropTypes.object.isRequired,
     onInterpretationDeleted: PropTypes.func.isRequired,
+    dashboardRedirectUrl: PropTypes.string,
     downloadMenuComponent: PropTypes.oneOfType([
         PropTypes.object,
         PropTypes.func,

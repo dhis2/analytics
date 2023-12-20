@@ -30,7 +30,7 @@ export const Interpretation = ({
     disabled,
     onReplyIconClick,
     dashboardRedirectUrl,
-    inThreadView,
+    isInThread,
 }) => {
     const [isUpdateMode, setIsUpdateMode] = useState(false)
     const [showSharingDialog, setShowSharingDialog] = useState(false)
@@ -50,7 +50,7 @@ export const Interpretation = ({
 
     let tooltip = i18n.t('Reply')
     if (!interpretationAccess.comment) {
-        if (inThreadView) {
+        if (isInThread) {
             tooltip = i18n.t('{{count}} replies', {
                 count: interpretation.comments.length,
                 defaultValue: '{{count}} reply',
@@ -100,9 +100,9 @@ export const Interpretation = ({
                         }
                         count={interpretation.comments.length}
                         dataTest="interpretation-reply-button"
-                        viewOnly={inThreadView && !interpretationAccess.comment}
+                        viewOnly={isInThread && !interpretationAccess.comment}
                     />
-                    {dashboardRedirectUrl && !inThreadView && (
+                    {dashboardRedirectUrl && !isInThread && (
                         <MessageIconButton
                             tooltipContent={i18n.t('See interpretation')}
                             iconComponent={IconView16}
@@ -181,6 +181,6 @@ Interpretation.propTypes = {
     onUpdated: PropTypes.func.isRequired,
     dashboardRedirectUrl: PropTypes.string,
     disabled: PropTypes.bool,
-    inThreadView: PropTypes.bool,
+    isInThread: PropTypes.bool,
     onClick: PropTypes.func,
 }
