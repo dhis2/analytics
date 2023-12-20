@@ -55,6 +55,7 @@ const defaultOptions = {
     showColumnSubtotals: false,
     fixColumnHeaders: false,
     fixRowHeaders: false,
+    cumulativeValues: false,
 }
 
 const defaultVisualizationProps = {
@@ -268,6 +269,7 @@ export class PivotTableEngine {
     data = []
     rowMap = []
     columnMap = []
+    accumulators = { rows: {} }
 
     constructor(visualization, data, legendSets) {
         this.visualization = Object.assign(
@@ -306,6 +308,7 @@ export class PivotTableEngine {
             fixRowHeaders: this.dimensionLookup.rows.length
                 ? visualization.fixRowHeaders
                 : false,
+            cumulativeValues: visualization.cumulativeValues,
         }
 
         this.adaptiveClippingController = new AdaptiveClippingController(this)
@@ -333,6 +336,7 @@ export class PivotTableEngine {
     getRaw({ row, column }) {
         const cellType = this.getRawCellType({ row, column })
         const dxDimension = this.getRawCellDxDimension({ row, column })
+        const valueType = dxDimension?.valueType || VALUE_TYPE_TEXT
 
         const headers = [
             ...this.getRawRowHeader(row),
@@ -346,55 +350,79 @@ export class PivotTableEngine {
                 header?.dimensionItemType === DIMENSION_TYPE_ORGANISATION_UNIT
         )?.uid
 
-        if (!this.data[row] || !this.data[row][column]) {
-            return {
-                cellType,
-                empty: true,
-                ouId,
-                peId,
-            }
-        }
-
-        const dataRow = this.data[row][column]
-
-        let rawValue =
-            cellType === CELL_TYPE_VALUE
-                ? dataRow[this.dimensionLookup.dataHeaders.value]
-                : dataRow.value
-        let renderedValue = rawValue
-        const valueType = dxDimension?.valueType || VALUE_TYPE_TEXT
-
-        if (valueType === VALUE_TYPE_NUMBER) {
-            rawValue = parseValue(rawValue)
-            switch (this.visualization.numberType) {
-                case NUMBER_TYPE_ROW_PERCENTAGE:
-                    renderedValue = rawValue / this.percentageTotals[row].value
-                    break
-                case NUMBER_TYPE_COLUMN_PERCENTAGE:
-                    renderedValue =
-                        rawValue / this.percentageTotals[column].value
-                    break
-                default:
-                    break
-            }
-        }
-
-        renderedValue = renderValue(
-            renderedValue,
-            valueType,
-            this.visualization
-        )
-
-        return {
+        const rawCell = {
             cellType,
-            empty: false,
             valueType,
-            rawValue,
-            renderedValue,
-            dxDimension,
             ouId,
             peId,
         }
+
+        if (!this.data[row] || !this.data[row][column]) {
+            rawCell.empty = true
+        } else {
+            const dataRow = this.data[row][column]
+
+            let rawValue =
+                cellType === CELL_TYPE_VALUE
+                    ? dataRow[this.dimensionLookup.dataHeaders.value]
+                    : dataRow.value
+            let renderedValue = rawValue
+
+            if (valueType === VALUE_TYPE_NUMBER) {
+                rawValue = parseValue(rawValue)
+                switch (this.visualization.numberType) {
+                    case NUMBER_TYPE_ROW_PERCENTAGE:
+                        renderedValue =
+                            rawValue / this.percentageTotals[row].value
+                        break
+                    case NUMBER_TYPE_COLUMN_PERCENTAGE:
+                        renderedValue =
+                            rawValue / this.percentageTotals[column].value
+                        break
+                    default:
+                        break
+                }
+            }
+
+            renderedValue = renderValue(
+                renderedValue,
+                valueType,
+                this.visualization
+            )
+
+            rawCell.dxDimension = dxDimension
+            rawCell.empty = false
+            rawCell.rawValue = rawValue
+            rawCell.renderedValue = renderedValue
+        }
+
+        if (this.options.cumulativeValues) {
+            const cumulativeValue = this.getCumulative({
+                row,
+                column,
+            })
+
+            if (cumulativeValue !== undefined && cumulativeValue !== null) {
+                // force to NUMBER for accumulated values
+                rawCell.valueType =
+                    valueType === undefined || valueType === null
+                        ? VALUE_TYPE_NUMBER
+                        : valueType
+                rawCell.empty = false
+                rawCell.rawValue = cumulativeValue
+                rawCell.renderedValue = renderValue(
+                    cumulativeValue,
+                    valueType,
+                    this.visualization
+                )
+            }
+        }
+
+        return rawCell
+    }
+
+    getCumulative({ row, column }) {
+        return this.accumulators.rows[row][column]
     }
 
     get({ row, column }) {
@@ -488,10 +516,8 @@ export class PivotTableEngine {
             return undefined
         }
         const cellValue = this.data[row][column]
-        if (!cellValue) {
-            return undefined
-        }
-        if (!Array.isArray(cellValue)) {
+
+        if (cellValue && !Array.isArray(cellValue)) {
             // This is a total cell
             return {
                 valueType: cellValue.valueType,
@@ -527,6 +553,11 @@ export class PivotTableEngine {
             }
         }
 
+        // Empty cell
+        // The cell still needs to get the valueType to render correctly 0 and cumulative values
+        //
+        // OR
+        //
         // Data is in Filter
         // TODO : This assumes the server ignores text types, we should confirm this is the case
         return {
@@ -539,7 +570,7 @@ export class PivotTableEngine {
         return !this.data[row] || this.data[row].length === 0
     }
     columnIsEmpty(column) {
-        return !this.adaptiveClippingController.columns.sizes[column]
+        return !this.rowMap.some((row) => this.data[row][column])
     }
 
     getRawColumnHeader(column) {
@@ -967,6 +998,45 @@ export class PivotTableEngine {
             : times(this.dataWidth, (n) => n)
     }
 
+    resetAccumulators() {
+        if (this.options.cumulativeValues) {
+            this.rowMap.forEach((row) => {
+                this.accumulators.rows[row] = {}
+                this.columnMap.reduce((acc, column) => {
+                    const cellType = this.getRawCellType({ row, column })
+                    const dxDimension = this.getRawCellDxDimension({
+                        row,
+                        column,
+                    })
+                    const valueType = dxDimension?.valueType || VALUE_TYPE_TEXT
+
+                    // only accumulate numeric values
+                    // accumulating text values does not make sense
+                    if (valueType === VALUE_TYPE_NUMBER) {
+                        if (this.data[row] && this.data[row][column]) {
+                            const dataRow = this.data[row][column]
+
+                            const rawValue =
+                                cellType === CELL_TYPE_VALUE
+                                    ? dataRow[
+                                          this.dimensionLookup.dataHeaders.value
+                                      ]
+                                    : dataRow.value
+
+                            acc += parseValue(rawValue)
+                        }
+
+                        this.accumulators.rows[row][column] = acc
+                    }
+
+                    return acc
+                }, 0)
+            })
+        } else {
+            this.accumulators = { rows: {} }
+        }
+    }
+
     get cellPadding() {
         switch (this.visualization.displayDensity) {
             case DISPLAY_DENSITY_OPTION_COMPACT:
@@ -1059,18 +1129,21 @@ export class PivotTableEngine {
 
         this.finalizeTotals()
 
-        this.rawData.rows.forEach((dataRow) => {
-            const pos = lookup(dataRow, this.dimensionLookup, this)
-            if (pos) {
+        this.resetRowMap()
+        this.resetColumnMap()
+
+        this.resetAccumulators()
+
+        this.rowMap.forEach((row) => {
+            this.columnMap.forEach((column) => {
+                const pos = { row, column }
+
                 this.adaptiveClippingController.add(
                     pos,
                     this.getRaw(pos).renderedValue
                 )
-            }
+            })
         })
-
-        this.resetRowMap()
-        this.resetColumnMap()
 
         this.height = this.rowMap.length
         this.width = this.columnMap.length
