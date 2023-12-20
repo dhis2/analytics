@@ -61,6 +61,11 @@ export const Interpretation = ({
         }
     }
 
+    // Maps still uses old url style /?id= instead of hash
+    const appInterpretationUrl = dashboardRedirectUrl.includes('?')
+        ? `${dashboardRedirectUrl}&interpretationId=${interpretation.id}`
+        : `${dashboardRedirectUrl}?interpretationId=${interpretation.id}`
+
     return isUpdateMode ? (
         <InterpretationUpdateForm
             close={() => setIsUpdateMode(false)}
@@ -115,10 +120,7 @@ export const Interpretation = ({
                             tooltipContent={i18n.t('Open in app')}
                             iconComponent={IconLaunch16}
                             onClick={() =>
-                                window.open(
-                                    `${dashboardRedirectUrl}?interpretationId=${interpretation.id}`,
-                                    '_blank'
-                                )
+                                window.open(appInterpretationUrl, '_blank')
                             }
                             dataTest="interpretation-launch-in-app-button"
                         />
