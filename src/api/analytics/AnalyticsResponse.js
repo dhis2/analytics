@@ -81,7 +81,7 @@ class AnalyticsResponse {
     }
 
     extractHeaders() {
-        // some endpoints (ie. outlierDetectio) don't return dimensions in metaData
+        // some endpoints (ie. outlierDetection) don't return dimensions in metaData
         const dimensions = this.response.metaData.dimensions || {}
         const headers = this.response.headers || []
 

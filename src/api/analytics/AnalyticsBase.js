@@ -44,7 +44,7 @@ const analyticsMetaDataQuery = {
     }),
 }
 
-const generateDimensionStrings = (dimensions = [], options) => {
+export const generateDimensionStrings = (dimensions = [], options) => {
     if (options && options.sorted) {
         dimensions = sortBy(dimensions, 'dimension')
     }
@@ -158,23 +158,17 @@ class AnalyticsBase {
      * // { metaData: { ... }, rows: [], height: 0, width: 0 }
      */
     async fetch(req, options) {
-        const dimensions = generateDimensionStrings(req.dimensions, options)
-        const filters = generateDimensionStrings(req.filters, options)
-
         const response = await this.dataEngine.query(
             { data: analyticsQuery },
             {
                 variables: {
                     path: req.path,
                     program: req.program,
-                    dimensions,
-                    filters /*
                     dimensions: generateDimensionStrings(
                         req.dimensions,
                         options
                     ),
                     filters: generateDimensionStrings(req.filters, options),
-                    */,
                     parameters: req.parameters,
                 },
             }
