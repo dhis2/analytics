@@ -56,12 +56,9 @@ export const InterpretationsUnit = forwardRef(
         const showNoTimeDimensionHelpText =
             type === 'eventVisualization' && !visualizationHasTimeDimension
 
-        const { data, loading, fetching, refetch } = useDataQuery(
-            interpretationsQuery,
-            {
-                lazy: true,
-            }
-        )
+        const { data, loading, refetch } = useDataQuery(interpretationsQuery, {
+            lazy: true,
+        })
 
         const onCompleteAction = useCallback(() => {
             refetch({ type, id })
@@ -87,11 +84,6 @@ export const InterpretationsUnit = forwardRef(
                     expanded: isExpanded,
                 })}
             >
-                {fetching && !loading && (
-                    <div className="fetching-loader">
-                        <CircularLoader small />
-                    </div>
-                )}
                 <div
                     className="header"
                     onClick={() => setIsExpanded(!isExpanded)}
