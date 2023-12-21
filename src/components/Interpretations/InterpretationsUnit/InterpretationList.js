@@ -72,7 +72,6 @@ export const InterpretationList = ({
                                         dashboardRedirectUrl={
                                             dashboardRedirectUrl
                                         }
-                                        inThreadView={false}
                                     />
                                 ))}
                         </ol>
