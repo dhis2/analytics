@@ -35,7 +35,12 @@ const InterpretationThread = ({
     )
 
     return (
-        <div className={cx('container', { fetching })}>
+        <div
+            className={cx('container', {
+                fetching,
+                dashboard: !!dashboardRedirectUrl,
+            })}
+        >
             <div className={'title'}>
                 <IconClock16 color={colors.grey700} />
                 {moment(fromServerDate(interpretation.created)).format('LLL')}
@@ -85,12 +90,20 @@ const InterpretationThread = ({
                     scroll-behavior: smooth;
                 }
 
+                .dashboard .thread {
+                    overflow-y: hidden;
+                }
+
                 .container {
                     position: relative;
                     overflow: auto;
                     max-height: calc(100vh - 285px);
                     display: flex;
                     flex-direction: column;
+                }
+
+                .container.dashboard {
+                    max-height: none;
                 }
 
                 .container.fetching::before {
