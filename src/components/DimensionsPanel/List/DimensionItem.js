@@ -9,7 +9,7 @@ import {
 } from '../../../modules/predefinedDimensions.js'
 import OptionsButton from './OptionsButton.js'
 import RecommendedIcon from './RecommendedIcon.js'
-import style from './styles/DimensionItem.module.css'
+import styles from './styles/DimensionItem.style.js'
 
 class DimensionItem extends Component {
     state = { mouseOver: false }
@@ -28,7 +28,7 @@ class DimensionItem extends Component {
     getDimensionIcon = () => {
         const Icon = getPredefinedDimensionProp(this.props.id, 'icon')
         return Icon ? (
-            <Icon className={style.fixedDimensionIcon} />
+            <Icon className="fixedDimensionIcon" />
         ) : (
             <DynamicDimensionIcon className="dynamic-dimension-icon" />
         )
@@ -93,10 +93,10 @@ class DimensionItem extends Component {
                     onMouseLeave={this.onMouseExit}
                     ref={innerRef}
                     className={cx(
-                        style.item,
+                        'item',
                         {
-                            [style.deactivated]: isDeactivated,
-                            [style.selected]: isSelected && !isDeactivated,
+                            deactivated: isDeactivated,
+                            selected: isSelected && !isDeactivated,
                         },
                         className
                     )}
@@ -105,13 +105,13 @@ class DimensionItem extends Component {
                     {...rest}
                 >
                     <div
-                        className={style.label}
+                        className="label"
                         tabIndex={0}
                         data-test={`${dataTest}-button-${id}`}
                     >
-                        <div className={style.iconWrapper}>{Icon}</div>
-                        <div className={style.labelWrapper}>
-                            <span className={style.labelText}>{Label}</span>
+                        <div className="iconWrapper">{Icon}</div>
+                        <div className="labelWrapper">
+                            <span className="labelText">{Label}</span>
                             <RecommendedIcon
                                 isRecommended={isRecommended}
                                 dataTest={`${dataTest}-recommended-icon`}
@@ -120,7 +120,7 @@ class DimensionItem extends Component {
                     </div>
                     {onOptionsClick ? (
                         <div
-                            className={style.optionsWrapper}
+                            className="optionsWrapper"
                             ref={optionsRef}
                             data-test={`${dataTest}-menu-${id}`}
                         >
@@ -136,10 +136,9 @@ class DimensionItem extends Component {
                             ) : null}
                         </div>
                     ) : null}
-                    {isLocked && (
-                        <div className={style.lockWrapper}>{LockIcon}</div>
-                    )}
+                    {isLocked && <div className="lockWrapper">{LockIcon}</div>}
                 </li>
+                <style jsx>{styles}</style>
             </>
         )
     }
