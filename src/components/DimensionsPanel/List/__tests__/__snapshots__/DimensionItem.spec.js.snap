@@ -10,7 +10,7 @@ exports[`DimensionItem matches the snapshot 1`] = `
     theme={false}
   />
   <li
-    className=""
+    className="item"
     name="Period"
     onClick={[Function]}
     onMouseLeave={[Function]}
@@ -18,14 +18,23 @@ exports[`DimensionItem matches the snapshot 1`] = `
     style={Object {}}
   >
     <div
+      className="label"
       data-test="undefined-button-pe"
       tabIndex={0}
     >
-      <div>
-        <SvgClock16 />
+      <div
+        className="iconWrapper"
+      >
+        <SvgClock16
+          className="fixedDimensionIcon"
+        />
       </div>
-      <div>
-        <span>
+      <div
+        className="labelWrapper"
+      >
+        <span
+          className="labelText"
+        >
           <span
             data-dimensionid="pe"
           >
@@ -39,6 +48,7 @@ exports[`DimensionItem matches the snapshot 1`] = `
       </div>
     </div>
   </li>
+  <style />
 </Fragment>
 `;
 
@@ -52,7 +62,7 @@ exports[`DimensionItem matches the snapshot with locked 1`] = `
     theme={false}
   />
   <li
-    className=""
+    className="item"
     name="Period"
     onClick={[Function]}
     onMouseLeave={[Function]}
@@ -60,14 +70,23 @@ exports[`DimensionItem matches the snapshot with locked 1`] = `
     style={Object {}}
   >
     <div
+      className="label"
       data-test="undefined-button-pe"
       tabIndex={0}
     >
-      <div>
-        <SvgClock16 />
+      <div
+        className="iconWrapper"
+      >
+        <SvgClock16
+          className="fixedDimensionIcon"
+        />
       </div>
-      <div>
-        <span>
+      <div
+        className="labelWrapper"
+      >
+        <span
+          className="labelText"
+        >
           <span
             data-dimensionid="pe"
           >
@@ -80,7 +99,9 @@ exports[`DimensionItem matches the snapshot with locked 1`] = `
         />
       </div>
     </div>
-    <div>
+    <div
+      className="lockWrapper"
+    >
       <svg
         fill="none"
         height="9"
@@ -96,6 +117,7 @@ exports[`DimensionItem matches the snapshot with locked 1`] = `
       </svg>
     </div>
   </li>
+  <style />
 </Fragment>
 `;
 
@@ -109,7 +131,7 @@ exports[`DimensionItem matches the snapshot with onOptionsClick 1`] = `
     theme={false}
   />
   <li
-    className=""
+    className="item"
     name="Period"
     onClick={[Function]}
     onMouseLeave={[Function]}
@@ -117,14 +139,23 @@ exports[`DimensionItem matches the snapshot with onOptionsClick 1`] = `
     style={Object {}}
   >
     <div
+      className="label"
       data-test="undefined-button-pe"
       tabIndex={0}
     >
-      <div>
-        <SvgClock16 />
+      <div
+        className="iconWrapper"
+      >
+        <SvgClock16
+          className="fixedDimensionIcon"
+        />
       </div>
-      <div>
-        <span>
+      <div
+        className="labelWrapper"
+      >
+        <span
+          className="labelText"
+        >
           <span
             data-dimensionid="pe"
           >
@@ -138,9 +169,11 @@ exports[`DimensionItem matches the snapshot with onOptionsClick 1`] = `
       </div>
     </div>
     <div
+      className="optionsWrapper"
       data-test="undefined-menu-pe"
     />
   </li>
+  <style />
 </Fragment>
 `;
 
@@ -154,7 +187,7 @@ exports[`DimensionItem matches the snapshot with recommended 1`] = `
     theme={false}
   />
   <li
-    className=""
+    className="item"
     name="Period"
     onClick={[Function]}
     onMouseLeave={[Function]}
@@ -162,14 +195,23 @@ exports[`DimensionItem matches the snapshot with recommended 1`] = `
     style={Object {}}
   >
     <div
+      className="label"
       data-test="undefined-button-pe"
       tabIndex={0}
     >
-      <div>
-        <SvgClock16 />
+      <div
+        className="iconWrapper"
+      >
+        <SvgClock16
+          className="fixedDimensionIcon"
+        />
       </div>
-      <div>
-        <span>
+      <div
+        className="labelWrapper"
+      >
+        <span
+          className="labelText"
+        >
           <span
             data-dimensionid="pe"
           >
@@ -183,6 +225,7 @@ exports[`DimensionItem matches the snapshot with recommended 1`] = `
       </div>
     </div>
   </li>
+  <style />
 </Fragment>
 `;
 
@@ -196,7 +239,7 @@ exports[`DimensionItem matches the snapshot with selected 1`] = `
     theme={false}
   />
   <li
-    className="undefined"
+    className="item selected"
     name="Period"
     onClick={[Function]}
     onMouseLeave={[Function]}
@@ -204,14 +247,23 @@ exports[`DimensionItem matches the snapshot with selected 1`] = `
     style={Object {}}
   >
     <div
+      className="label"
       data-test="undefined-button-pe"
       tabIndex={0}
     >
-      <div>
-        <SvgClock16 />
+      <div
+        className="iconWrapper"
+      >
+        <SvgClock16
+          className="fixedDimensionIcon"
+        />
       </div>
-      <div>
-        <span>
+      <div
+        className="labelWrapper"
+      >
+        <span
+          className="labelText"
+        >
           <span
             data-dimensionid="pe"
           >
@@ -225,5 +277,6 @@ exports[`DimensionItem matches the snapshot with selected 1`] = `
       </div>
     </div>
   </li>
+  <style />
 </Fragment>
 `;
