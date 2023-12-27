@@ -19,7 +19,7 @@ export const formatDimension = ({
 }) =>
     [
         // XXX it would be clearer to have this consistent with what is sent in the request as for EVENT/ENROLLMENT
-        outputType === 'TRACKED_ENTITY' ? programId : undefined,
+        outputType === 'TRACKED_ENTITY_INSTANCE' ? programId : undefined,
         programStageId,
         dimension,
     ]
