@@ -1,3 +1,17 @@
+## [26.2.2](https://github.com/dhis2/analytics/compare/v26.2.1...v26.2.2) (2024-01-02)
+
+
+### Bug Fixes
+
+* add white-space css to preserve paragraphs in interpretations ([#1599](https://github.com/dhis2/analytics/issues/1599)) ([52ae98d](https://github.com/dhis2/analytics/commit/52ae98d3cadd975c2079055b00adba58f0982ef4))
+
+## [26.2.1](https://github.com/dhis2/analytics/compare/v26.2.0...v26.2.1) (2023-12-24)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([bac4cc9](https://github.com/dhis2/analytics/commit/bac4cc94572b2e8367fb3d1f061eb7ed122f372f))
+
 # [26.2.0](https://github.com/dhis2/analytics/compare/v26.1.8...v26.2.0) (2023-12-14)
 
 
