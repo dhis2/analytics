@@ -49,6 +49,7 @@ const Message = ({ children, text, created, username }) => {
                     line-height: 19px;
                     color: ${colors.grey900};
                     word-break: break-word;
+                    white-space: pre-line;
                 }
 
                 .content :global(p:first-child) {
