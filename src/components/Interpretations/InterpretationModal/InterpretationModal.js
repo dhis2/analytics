@@ -14,7 +14,7 @@ import {
 } from '@dhis2/ui'
 import cx from 'classnames'
 import PropTypes from 'prop-types'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useMemo } from 'react'
 import css from 'styled-jsx/css'
 import { InterpretationThread } from './InterpretationThread.js'
 import { useModalContentWidth } from './useModalContentWidth.js'
@@ -109,6 +109,13 @@ const InterpretationModal = ({
         }
     }, [interpretationId, refetch])
 
+    const filters = useMemo(
+        () => ({
+            relativePeriodDate: interpretation?.created,
+        }),
+        [interpretation?.created]
+    )
+
     return (
         <>
             {shouldCssHideModal && (
@@ -156,10 +163,7 @@ const InterpretationModal = ({
                             <div className="row">
                                 <div className="visualisation-wrap">
                                     <VisualizationPlugin
-                                        filters={{
-                                            relativePeriodDate:
-                                                interpretation.created,
-                                        }}
+                                        filters={filters}
                                         visualization={visualization}
                                         onResponsesReceived={
                                             onResponsesReceived
