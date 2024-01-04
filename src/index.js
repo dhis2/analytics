@@ -241,10 +241,12 @@ export {
 export {
     getAvailableAxes,
     getDisallowedDimensions,
+    getDimensionMaxNumberOfItems,
     getAxisMaxNumberOfItems,
     getAxisMaxNumberOfDimensions,
     getAxisMinNumberOfDimensions,
     hasAxisTooManyItems,
+    hasDimensionTooManyItems,
     getAxisPerLockedDimension,
     getAllLockedDimensionIds,
     canDimensionBeAddedToAxis,
