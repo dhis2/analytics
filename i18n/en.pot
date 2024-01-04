@@ -657,14 +657,14 @@ msgstr "Select year"
 msgid "Period"
 msgstr "Period"
 
+msgid "Selected Periods"
+msgstr "Selected Periods"
+
 msgid "Relative periods"
 msgstr "Relative periods"
 
 msgid "Fixed periods"
 msgstr "Fixed periods"
-
-msgid "Selected Periods"
-msgstr "Selected Periods"
 
 msgid "No periods selected"
 msgstr "No periods selected"

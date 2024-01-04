@@ -7,6 +7,7 @@ import {
     DIMENSION_ID_PERIOD,
     DIMENSION_ID_DATA,
     DIMENSION_ID_ORGUNIT,
+    DIMENSION_ID_ASSIGNED_CATEGORIES,
 } from '../predefinedDimensions.js'
 import {
     VIS_TYPE_COLUMN,
@@ -32,6 +33,7 @@ const RULE_PROP_AVAILABLE_AXES = 'availableAxes',
     RULE_PROP_MAX_DIMS_PER_AXIS = 'maxNumberOfDimsPerAxis',
     RULE_PROP_MIN_DIMS_PER_AXIS = 'minNumberOfDimsPerAxis',
     RULE_PROP_MAX_ITEMS_PER_AXIS = 'maxNumberOfItemsPerAxis',
+    RULE_PROP_MAX_ITEMS_PER_DIMENSION = 'maxNumberOfItemsPerDimension',
     RULE_PROP_DISALLOWED_DIMS = 'disallowedDims',
     RULE_PROP_LOCKED_DIMS = 'lockedDims'
 
@@ -135,11 +137,15 @@ const outlierTableRules = {
     [RULE_PROP_MIN_DIMS_PER_AXIS]: {
         [AXIS_ID_COLUMNS]: 3,
     },
+    [RULE_PROP_MAX_ITEMS_PER_DIMENSION]: {
+        [DIMENSION_ID_PERIOD]: 1,
+    },
     [RULE_PROP_LOCKED_DIMS]: {
         [DIMENSION_ID_DATA]: AXIS_ID_COLUMNS,
         [DIMENSION_ID_PERIOD]: AXIS_ID_COLUMNS,
         [DIMENSION_ID_ORGUNIT]: AXIS_ID_COLUMNS,
     },
+    [RULE_PROP_DISALLOWED_DIMS]: [DIMENSION_ID_ASSIGNED_CATEGORIES],
 }
 
 const visTypeToRules = {
@@ -183,6 +189,9 @@ export const getMaxNumberOfDimsPerAxisByVisType = (visType) =>
 export const getMinNumberOfDimsPerAxisByVisType = (visType) =>
     getRulesByVisType(visType)[RULE_PROP_MIN_DIMS_PER_AXIS] || {}
 
+export const getMaxNumberOfItemsPerDimensionByVisType = (visType) =>
+    getRulesByVisType(visType)[RULE_PROP_MAX_ITEMS_PER_DIMENSION] || {}
+
 export const getMaxNumberOfItemsPerAxisByVisType = (visType) =>
     getRulesByVisType(visType)[RULE_PROP_MAX_ITEMS_PER_AXIS] || {}
 
@@ -203,6 +212,7 @@ export const testResourceAllRuleProps = {
     MAX_DIMS_PER_AXIS: RULE_PROP_MAX_DIMS_PER_AXIS,
     MIN_DIMS_PER_AXIS: RULE_PROP_MIN_DIMS_PER_AXIS,
     MAX_ITEMS_PER_AXIS: RULE_PROP_MAX_ITEMS_PER_AXIS,
+    MAX_ITEMS_PER_DIMENSION: RULE_PROP_MAX_ITEMS_PER_DIMENSION,
     DISALLOWED_DIMS: RULE_PROP_DISALLOWED_DIMS,
     LOCKED_DIMS: RULE_PROP_LOCKED_DIMS,
 }
