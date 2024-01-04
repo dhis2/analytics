@@ -4,6 +4,9 @@ import { layoutGetAllDimensions } from './layoutGetAllDimensions.js'
 
 export const layoutGetDimensionIdItemIdsObject = (layout) =>
     layoutGetAllDimensions(layout).reduce((obj, dimension) => {
-        obj[dimensionGetId(dimension)] = dimensionGetItemIds(dimension)
+        obj[dimensionGetId(dimension)] = dimensionGetItemIds(
+            dimension,
+            layout.outputType
+        )
         return obj
     }, {})
