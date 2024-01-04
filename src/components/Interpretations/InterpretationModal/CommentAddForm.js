@@ -1,8 +1,7 @@
-import { useDataMutation } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import { Button } from '@dhis2/ui'
 import PropTypes from 'prop-types'
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import {
     RichTextEditor,
     MessageEditorContainer,
@@ -10,28 +9,27 @@ import {
     MessageInput,
 } from '../common/index.js'
 
-export const CommentAddForm = ({
-    interpretationId,
-    currentUser,
-    onSave,
-    focusRef,
-}) => {
+export const CommentAddForm = ({ currentUser, focusRef, fetching, save }) => {
     const [showRichTextEditor, setShowRichTextEditor] = useState(false)
     const [commentText, setCommentText] = useState('')
+    const [saveTriggered, setSaveTriggered] = useState(false)
 
-    const saveMutationRef = useRef({
-        resource: `interpretations/${interpretationId}/comments`,
-        type: 'create',
-        data: ({ commentText }) => commentText,
-    })
+    const clearForm = () => {
+        setSaveTriggered(false)
+        setCommentText('')
+        setShowRichTextEditor(false)
+    }
 
-    const [save, { loading }] = useDataMutation(saveMutationRef.current, {
-        onComplete: () => {
-            setShowRichTextEditor(false)
-            setCommentText('')
-            onSave()
-        },
-    })
+    useEffect(() => {
+        if (saveTriggered && !fetching) {
+            clearForm()
+        }
+    }, [saveTriggered, fetching])
+
+    const saveComment = () => {
+        setSaveTriggered(true)
+        save({ commentText })
+    }
 
     const inputPlaceholder = i18n.t('Write a reply')
 
@@ -44,25 +42,22 @@ export const CommentAddForm = ({
                         onChange={setCommentText}
                         value={commentText}
                         ref={focusRef}
-                        disabled={loading}
+                        disabled={fetching}
                     />
                     <MessageButtonStrip>
                         <Button
                             primary
                             small
-                            onClick={() => save({ commentText })}
-                            loading={loading}
+                            onClick={saveComment}
+                            loading={fetching}
                         >
                             {i18n.t('Post reply')}
                         </Button>
                         <Button
                             secondary
                             small
-                            disabled={loading}
-                            onClick={() => {
-                                setCommentText('')
-                                setShowRichTextEditor(false)
-                            }}
+                            disabled={fetching}
+                            onClick={clearForm}
                         >
                             {i18n.t('Cancel')}
                         </Button>
@@ -81,7 +76,7 @@ export const CommentAddForm = ({
 
 CommentAddForm.propTypes = {
     currentUser: PropTypes.object.isRequired,
+    fetching: PropTypes.bool.isRequired,
     focusRef: PropTypes.object.isRequired,
-    interpretationId: PropTypes.string.isRequired,
-    onSave: PropTypes.func,
+    save: PropTypes.func.isRequired,
 }

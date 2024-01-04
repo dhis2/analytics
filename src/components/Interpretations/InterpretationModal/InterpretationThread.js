@@ -1,4 +1,4 @@
-import { useTimeZoneConversion } from '@dhis2/app-runtime'
+import { useTimeZoneConversion, useDataMutation } from '@dhis2/app-runtime'
 import {
     IconClock16,
     CenteredContent,
@@ -31,6 +31,21 @@ const InterpretationThread = ({
     const { fromServerDate } = useTimeZoneConversion()
     const focusRef = useRef()
 
+    const saveMutationRef = useRef({
+        resource: `interpretations/${interpretation.id}/comments`,
+        type: 'create',
+        data: ({ commentText }) => commentText,
+    })
+
+    const [save, { loading: loadingNewComment }] = useDataMutation(
+        saveMutationRef.current,
+        {
+            onComplete: () => {
+                onThreadUpdated(true)
+            },
+        }
+    )
+
     useEffect(() => {
         if (initialFocus && focusRef.current) {
             window.requestAnimationFrame(() => {
@@ -46,7 +61,7 @@ const InterpretationThread = ({
 
     return (
         <div className="container">
-            {fetching || toggleLikeInProgress ? (
+            {fetching || toggleLikeInProgress || loadingNewComment ? (
                 <Cover>
                     <CenteredContent>
                         <CircularLoader />
@@ -92,8 +107,9 @@ const InterpretationThread = ({
                 <CommentAddForm
                     currentUser={currentUser}
                     interpretationId={interpretation.id}
-                    onSave={() => onThreadUpdated(true)}
                     focusRef={focusRef}
+                    fetching={fetching || loadingNewComment}
+                    save={save}
                 />
             )}
             <style jsx>{`
