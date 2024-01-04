@@ -1,10 +1,16 @@
 import { useTimeZoneConversion } from '@dhis2/app-runtime'
-import { IconClock16, colors } from '@dhis2/ui'
-import cx from 'classnames'
+import {
+    IconClock16,
+    CenteredContent,
+    CircularLoader,
+    Cover,
+    colors,
+} from '@dhis2/ui'
 import moment from 'moment'
 import PropTypes from 'prop-types'
 import React, { useRef, useEffect } from 'react'
 import { Interpretation, getInterpretationAccess } from '../common/index.js'
+import { useLike } from '../common/Interpretation/useLike.js'
 import { Comment } from './Comment.js'
 import { CommentAddForm } from './CommentAddForm.js'
 
@@ -17,6 +23,11 @@ const InterpretationThread = ({
     onThreadUpdated,
     downloadMenuComponent: DownloadMenu,
 }) => {
+    const { toggleLike, isLikedByCurrentUser, toggleLikeInProgress } = useLike({
+        interpretation,
+        currentUser,
+        onComplete: () => onThreadUpdated(true),
+    })
     const { fromServerDate } = useTimeZoneConversion()
     const focusRef = useRef()
 
@@ -34,7 +45,14 @@ const InterpretationThread = ({
     )
 
     return (
-        <div className={cx('container', { fetching })}>
+        <div className="container">
+            {fetching || toggleLikeInProgress ? (
+                <Cover>
+                    <CenteredContent>
+                        <CircularLoader />
+                    </CenteredContent>
+                </Cover>
+            ) : null}
             <div className={'title'}>
                 <IconClock16 color={colors.grey700} />
                 {moment(fromServerDate(interpretation.created)).format('LLL')}
@@ -51,9 +69,11 @@ const InterpretationThread = ({
                             ? () => focusRef.current?.focus()
                             : null
                     }
-                    onUpdated={() => onThreadUpdated(true)}
                     onDeleted={onInterpretationDeleted}
                     isInThread={true}
+                    toggleLike={toggleLike}
+                    isLikedByCurrentUser={isLikedByCurrentUser}
+                    toggleLikeInProgress={toggleLikeInProgress || fetching}
                 />
                 <div className={'comments'}>
                     {interpretation.comments.map((comment) => (
@@ -89,30 +109,6 @@ const InterpretationThread = ({
                     max-height: calc(100vh - 285px);
                     display: flex;
                     flex-direction: column;
-                }
-
-                .container.fetching::before {
-                    content: '';
-                    position: absolute;
-                    inset: 0px;
-                    background-color: rgba(255, 255, 255, 0.8);
-                }
-
-                .container.fetching::after {
-                    content: '';
-                    position: absolute;
-                    top: calc(50% - 12px);
-                    left: calc(50% - 12px);
-                    width: 24px;
-                    height: 24px;
-                    border-width: 4px;
-                    border-style: solid;
-                    border-color: rgba(110, 122, 138, 0.15)
-                        rgba(110, 122, 138, 0.15) rgb(20, 124, 215);
-                    border-image: initial;
-                    border-radius: 50%;
-                    animation: 1s linear 0s infinite normal none running
-                        rotation;
                 }
 
                 .title {
