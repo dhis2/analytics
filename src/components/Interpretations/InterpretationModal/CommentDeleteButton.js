@@ -12,12 +12,20 @@ const mutation = {
     type: 'delete',
 }
 
-const CommentDeleteButton = ({ commentId, interpretationId, onComplete }) => {
+const CommentDeleteButton = ({
+    commentId,
+    interpretationId,
+    onComplete,
+    fetching,
+    setRemoveInProgress,
+}) => {
     const [deleteError, setDeleteError] = useState(null)
+
     const [remove, { loading }] = useDataMutation(mutation, {
         onComplete: () => {
             setDeleteError(null)
             onComplete()
+            setRemoveInProgress(false)
         },
         onError: () => setDeleteError(i18n.t('Delete failed')),
         variables: { commentId, interpretationId },
@@ -25,6 +33,7 @@ const CommentDeleteButton = ({ commentId, interpretationId, onComplete }) => {
 
     const onDelete = () => {
         setDeleteError(null)
+        setRemoveInProgress(true)
         remove()
     }
 
@@ -34,7 +43,7 @@ const CommentDeleteButton = ({ commentId, interpretationId, onComplete }) => {
                 tooltipContent={i18n.t('Delete')}
                 iconComponent={IconDelete16}
                 onClick={onDelete}
-                disabled={loading}
+                disabled={loading || fetching}
             />
             {deleteError && <span className="delete-error">{deleteError}</span>}
             <style jsx>{`
@@ -55,7 +64,9 @@ const CommentDeleteButton = ({ commentId, interpretationId, onComplete }) => {
 
 CommentDeleteButton.propTypes = {
     commentId: PropTypes.string.isRequired,
+    fetching: PropTypes.bool.isRequired,
     interpretationId: PropTypes.string.isRequired,
+    setRemoveInProgress: PropTypes.func.isRequired,
     onComplete: PropTypes.func.isRequired,
 }
 

@@ -8,7 +8,7 @@ import {
 } from '@dhis2/ui'
 import moment from 'moment'
 import PropTypes from 'prop-types'
-import React, { useRef, useEffect } from 'react'
+import React, { useRef, useEffect, useState } from 'react'
 import { Interpretation, getInterpretationAccess } from '../common/index.js'
 import { useLike } from '../common/Interpretation/useLike.js'
 import { Comment } from './Comment.js'
@@ -22,7 +22,10 @@ const InterpretationThread = ({
     initialFocus,
     onThreadUpdated,
     downloadMenuComponent: DownloadMenu,
+    fetchingComplete,
 }) => {
+    const [removeInProgress, setRemoveInProgress] = useState(false)
+
     const { toggleLike, isLikedByCurrentUser, toggleLikeInProgress } = useLike({
         interpretation,
         currentUser,
@@ -61,7 +64,11 @@ const InterpretationThread = ({
 
     return (
         <div className="container">
-            {fetching || toggleLikeInProgress || loadingNewComment ? (
+            {fetching ||
+            !fetchingComplete ||
+            toggleLikeInProgress ||
+            loadingNewComment ||
+            removeInProgress ? (
                 <Cover>
                     <CenteredContent>
                         <CircularLoader />
@@ -99,6 +106,8 @@ const InterpretationThread = ({
                             interpretationId={interpretation.id}
                             onThreadUpdated={onThreadUpdated}
                             canComment={interpretationAccess.comment}
+                            fetching={fetching || removeInProgress}
+                            setRemoveInProgress={setRemoveInProgress}
                         />
                     ))}
                 </div>
@@ -161,6 +170,7 @@ const InterpretationThread = ({
 InterpretationThread.propTypes = {
     currentUser: PropTypes.object.isRequired,
     fetching: PropTypes.bool.isRequired,
+    fetchingComplete: PropTypes.bool.isRequired,
     interpretation: PropTypes.object.isRequired,
     onInterpretationDeleted: PropTypes.func.isRequired,
     downloadMenuComponent: PropTypes.oneOfType([

@@ -78,8 +78,10 @@ const InterpretationModal = ({
     const modalContentWidth = useModalContentWidth()
     const modalContentCSS = getModalContentCSS(modalContentWidth)
     const [isDirty, setIsDirty] = useState(false)
+    const [fetchingComplete, setFetchingComplete] = useState(true)
     const { data, error, loading, fetching, refetch } = useDataQuery(query, {
         lazy: true,
+        onComplete: () => setFetchingComplete(true),
     })
     const interpretation = data?.interpretation
     const shouldRenderModalContent = !error && interpretation
@@ -95,6 +97,7 @@ const InterpretationModal = ({
         if (affectsInterpretation) {
             setIsDirty(true)
         }
+        setFetchingComplete(false)
         refetch({ id: interpretationId })
     }
     const onInterpretationDeleted = () => {
@@ -105,6 +108,7 @@ const InterpretationModal = ({
 
     useEffect(() => {
         if (interpretationId) {
+            setFetchingComplete(false)
             refetch({ id: interpretationId })
         }
     }, [interpretationId, refetch])
@@ -187,6 +191,7 @@ const InterpretationModal = ({
                                         downloadMenuComponent={
                                             downloadMenuComponent
                                         }
+                                        fetchingComplete={fetchingComplete}
                                     />
                                 </div>
                             </div>
