@@ -13,8 +13,9 @@ import {
     CircularLoader,
 } from '@dhis2/ui'
 import cx from 'classnames'
+import debounce from 'lodash/debounce.js'
 import PropTypes from 'prop-types'
-import React, { useEffect, useState, useMemo } from 'react'
+import React, { useEffect, useState, useMemo, useRef } from 'react'
 import css from 'styled-jsx/css'
 import { InterpretationThread } from './InterpretationThread.js'
 import { useModalContentWidth } from './useModalContentWidth.js'
@@ -75,6 +76,7 @@ const InterpretationModal = ({
     initialFocus,
     pluginComponent: VisualizationPlugin,
 }) => {
+    const visWrapRef = useRef(null)
     const modalContentWidth = useModalContentWidth()
     const modalContentCSS = getModalContentCSS(modalContentWidth)
     const [isDirty, setIsDirty] = useState(false)
@@ -115,6 +117,29 @@ const InterpretationModal = ({
         }),
         [interpretation?.created]
     )
+
+    // const [mydimensions, setMyDimensions] = useState({})
+    // useEffect(() => {
+    //     const handleResize = debounce(() => {
+    //         const rect = visWrapRef.current?.getBoundingClientRect()
+    //         const width = Math.floor(rect.width)
+    //         const widthObj = { width }
+    //         console.log('jj setDimensions to', widthObj)
+    //         setMyDimensions(widthObj)
+    //     }, 50)
+    //     window.addEventListener('resize', handleResize)
+    //     return () => {
+    //         window.removeEventListener('resize', handleResize)
+    //     }
+    // }, [])
+
+    // console.log('jj dimensions here:', mydimensions)
+
+    const getStyle = () => {
+        const rect = visWrapRef.current?.getBoundingClientRect()
+        const width = Math.floor(rect?.width) || null
+        return width ? { width, height: '100%' } : { height: '100%' }
+    }
 
     return (
         <>
@@ -161,7 +186,10 @@ const InterpretationModal = ({
                         )}
                         {shouldRenderModalContent && (
                             <div className="row">
-                                <div className="visualisation-wrap">
+                                <div
+                                    className="visualisation-wrap"
+                                    ref={visWrapRef}
+                                >
                                     <VisualizationPlugin
                                         filters={filters}
                                         visualization={visualization}
@@ -172,6 +200,7 @@ const InterpretationModal = ({
                                             currentUser.settings
                                                 ?.keyAnalysisDisplayProperty
                                         }
+                                        style={getStyle()}
                                     />
                                 </div>
                                 <div className="thread-wrap">
@@ -234,6 +263,11 @@ const InterpretationModal = ({
                     .visualisation-wrap {
                         flex-grow: 1;
                         min-width: 0;
+                        display: flex;
+                        justify-content: center;
+                        height: 100%;
+                        overflow: hidden;
+                        position: relative;
                     }
 
                     .thread-wrap {
