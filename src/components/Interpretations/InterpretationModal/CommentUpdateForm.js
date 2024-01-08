@@ -2,7 +2,7 @@ import { useDataMutation } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import { Button, spacers, colors } from '@dhis2/ui'
 import PropTypes from 'prop-types'
-import React, { useState, useRef } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import {
     MessageEditorContainer,
     RichTextEditor,
@@ -16,8 +16,11 @@ export const CommentUpdateForm = ({
     text,
     close,
     onComplete,
+    fetching,
+    setUpdateInProgress,
 }) => {
     const [commentText, setCommentText] = useState(text || '')
+    const [updateStatus, setUpdateStatus] = useState('none')
     const updateMutationRef = useRef({
         resource: `interpretations/${interpretationId}/comments/${commentId}`,
         type: 'update',
@@ -29,11 +32,27 @@ export const CommentUpdateForm = ({
         {
             onComplete: () => {
                 onComplete()
-                close()
+                setUpdateInProgress(false)
+                setUpdateStatus('complete')
             },
         }
     )
+
+    useEffect(() => {
+        if (updateStatus === 'complete' && !fetching) {
+            close()
+        }
+    }, [updateStatus, fetching, close])
+
     const errorText = error ? i18n.t('Could not update comment') : ''
+
+    const updateComment = () => {
+        setUpdateStatus('updating')
+        setUpdateInProgress(true)
+        update({ commentText })
+    }
+
+    const isDisabled = loading || fetching || updateStatus !== 'none'
 
     return (
         <div className="message">
@@ -42,19 +61,24 @@ export const CommentUpdateForm = ({
                     inputPlaceholder={i18n.t('Enter comment text')}
                     onChange={setCommentText}
                     value={commentText}
-                    disabled={loading}
+                    disabled={isDisabled}
                     errorText={errorText}
                 />
                 <MessageButtonStrip>
                     <Button
-                        loading={loading}
+                        loading={isDisabled}
                         primary
                         small
-                        onClick={() => update({ commentText })}
+                        onClick={updateComment}
                     >
                         {i18n.t('Update')}
                     </Button>
-                    <Button disabled={loading} secondary small onClick={close}>
+                    <Button
+                        disabled={isDisabled}
+                        secondary
+                        small
+                        onClick={close}
+                    >
                         {i18n.t('Cancel')}
                     </Button>
                 </MessageButtonStrip>
@@ -73,7 +97,9 @@ CommentUpdateForm.propTypes = {
     close: PropTypes.func.isRequired,
     commentId: PropTypes.string.isRequired,
     currentUser: PropTypes.object.isRequired,
+    fetching: PropTypes.bool.isRequired,
     interpretationId: PropTypes.string.isRequired,
+    setUpdateInProgress: PropTypes.func.isRequired,
     onComplete: PropTypes.func.isRequired,
     text: PropTypes.string,
 }

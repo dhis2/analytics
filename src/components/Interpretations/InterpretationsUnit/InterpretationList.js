@@ -68,6 +68,8 @@ export const InterpretationList = ({
                                         onDeleted={refresh}
                                         onUpdated={refresh}
                                         disabled={disabled}
+                                        toggleLikeInProgress={false}
+                                        toggleLike={Function.prototype()}
                                     />
                                 ))}
                         </ol>

@@ -25,6 +25,7 @@ const InterpretationThread = ({
     fetchingComplete,
 }) => {
     const [removeInProgress, setRemoveInProgress] = useState(false)
+    const [updateInProgress, setUpdateInProgress] = useState(false)
 
     const { toggleLike, isLikedByCurrentUser, toggleLikeInProgress } = useLike({
         interpretation,
@@ -68,7 +69,8 @@ const InterpretationThread = ({
             !fetchingComplete ||
             toggleLikeInProgress ||
             loadingNewComment ||
-            removeInProgress ? (
+            removeInProgress ||
+            updateInProgress ? (
                 <Cover>
                     <CenteredContent>
                         <CircularLoader />
@@ -106,8 +108,14 @@ const InterpretationThread = ({
                             interpretationId={interpretation.id}
                             onThreadUpdated={onThreadUpdated}
                             canComment={interpretationAccess.comment}
-                            fetching={fetching || removeInProgress}
+                            fetching={
+                                fetching ||
+                                !fetchingComplete ||
+                                removeInProgress ||
+                                updateInProgress
+                            }
                             setRemoveInProgress={setRemoveInProgress}
+                            setUpdateInProgress={setUpdateInProgress}
                         />
                     ))}
                 </div>
