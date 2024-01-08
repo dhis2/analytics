@@ -18,8 +18,7 @@ const Comment = ({
     onThreadUpdated,
     canComment,
     fetching,
-    setRemoveInProgress,
-    setUpdateInProgress,
+    setCommentActionInProgress,
 }) => {
     const [isUpdateMode, setIsUpdateMode] = useState(false)
 
@@ -34,7 +33,7 @@ const Comment = ({
             text={comment.text}
             currentUser={currentUser}
             fetching={fetching}
-            setUpdateInProgress={setUpdateInProgress}
+            setUpdateInProgress={setCommentActionInProgress}
         />
     ) : (
         <Message
@@ -56,7 +55,7 @@ const Comment = ({
                             interpretationId={interpretationId}
                             onComplete={() => onThreadUpdated(true)}
                             fetching={fetching}
-                            setRemoveInProgress={setRemoveInProgress}
+                            setRemoveInProgress={setCommentActionInProgress}
                         />
                     )}
                 </MessageStatsBar>

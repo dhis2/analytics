@@ -66,7 +66,7 @@ export const CommentUpdateForm = ({
                 />
                 <MessageButtonStrip>
                     <Button
-                        loading={isDisabled}
+                        disabled={isDisabled}
                         primary
                         small
                         onClick={updateComment}

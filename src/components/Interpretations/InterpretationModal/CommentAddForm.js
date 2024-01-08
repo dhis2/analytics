@@ -49,7 +49,7 @@ export const CommentAddForm = ({ currentUser, focusRef, fetching, save }) => {
                             primary
                             small
                             onClick={saveComment}
-                            loading={fetching}
+                            disabled={fetching}
                         >
                             {i18n.t('Post reply')}
                         </Button>

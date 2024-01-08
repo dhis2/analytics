@@ -22,10 +22,9 @@ const InterpretationThread = ({
     initialFocus,
     onThreadUpdated,
     downloadMenuComponent: DownloadMenu,
-    fetchingComplete,
 }) => {
-    const [removeInProgress, setRemoveInProgress] = useState(false)
-    const [updateInProgress, setUpdateInProgress] = useState(false)
+    const [commentActionInProgress, setCommentActionInProgress] =
+        useState(false)
 
     const { toggleLike, isLikedByCurrentUser, toggleLikeInProgress } = useLike({
         interpretation,
@@ -66,11 +65,9 @@ const InterpretationThread = ({
     return (
         <div className="container">
             {fetching ||
-            !fetchingComplete ||
             toggleLikeInProgress ||
             loadingNewComment ||
-            removeInProgress ||
-            updateInProgress ? (
+            commentActionInProgress ? (
                 <Cover>
                     <CenteredContent>
                         <CircularLoader />
@@ -108,14 +105,10 @@ const InterpretationThread = ({
                             interpretationId={interpretation.id}
                             onThreadUpdated={onThreadUpdated}
                             canComment={interpretationAccess.comment}
-                            fetching={
-                                fetching ||
-                                !fetchingComplete ||
-                                removeInProgress ||
-                                updateInProgress
+                            fetching={fetching || commentActionInProgress}
+                            setCommentActionInProgress={
+                                setCommentActionInProgress
                             }
-                            setRemoveInProgress={setRemoveInProgress}
-                            setUpdateInProgress={setUpdateInProgress}
                         />
                     ))}
                 </div>
@@ -125,7 +118,9 @@ const InterpretationThread = ({
                     currentUser={currentUser}
                     interpretationId={interpretation.id}
                     focusRef={focusRef}
-                    fetching={fetching || loadingNewComment}
+                    fetching={
+                        fetching || loadingNewComment || commentActionInProgress
+                    }
                     save={save}
                 />
             )}
@@ -178,7 +173,6 @@ const InterpretationThread = ({
 InterpretationThread.propTypes = {
     currentUser: PropTypes.object.isRequired,
     fetching: PropTypes.bool.isRequired,
-    fetchingComplete: PropTypes.bool.isRequired,
     interpretation: PropTypes.object.isRequired,
     onInterpretationDeleted: PropTypes.func.isRequired,
     downloadMenuComponent: PropTypes.oneOfType([
