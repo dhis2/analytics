@@ -69,8 +69,7 @@ Comment.propTypes = {
     currentUser: PropTypes.object.isRequired,
     fetching: PropTypes.bool.isRequired,
     interpretationId: PropTypes.string.isRequired,
-    setRemoveInProgress: PropTypes.func.isRequired,
-    setUpdateInProgress: PropTypes.func.isRequired,
+    setCommentActionInProgress: PropTypes.func.isRequired,
     onThreadUpdated: PropTypes.func.isRequired,
     canComment: PropTypes.bool,
 }
