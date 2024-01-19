@@ -1,3 +1,10 @@
+## [26.2.3](https://github.com/dhis2/analytics/compare/v26.2.2...v26.2.3) (2024-01-19)
+
+
+### Bug Fixes
+
+* adjust width of interpretation reply input when in focus [DHIS2-16429] ([#1607](https://github.com/dhis2/analytics/issues/1607)) ([14fbfb5](https://github.com/dhis2/analytics/commit/14fbfb5bbfbbaa430631d39b8ca77c68817f10a4))
+
 ## [26.2.2](https://github.com/dhis2/analytics/compare/v26.2.1...v26.2.2) (2024-01-02)
 
 
