@@ -1,3 +1,10 @@
+# [26.3.0](https://github.com/dhis2/analytics/compare/v26.2.4...v26.3.0) (2024-01-25)
+
+
+### Features
+
+* add classname prop to hover-menu-dropdown ([57eb703](https://github.com/dhis2/analytics/commit/57eb703a4227e6496d021fdb17d6d4fd0e935eb9))
+
 ## [26.2.4](https://github.com/dhis2/analytics/compare/v26.2.3...v26.2.4) (2024-01-21)
 
 
