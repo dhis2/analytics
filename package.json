@@ -44,7 +44,7 @@
         "@testing-library/react": "^12.1.5",
         "enzyme": "^3.9.0",
         "enzyme-adapter-react-16": "^1.15.6",
-        "fs-extra": "^10.1.0",
+        "fs-extra": "^11.2.0",
         "jest-enzyme": "^7.0.2",
         "prop-types": "^15",
         "styled-jsx": "^4.0.1"
