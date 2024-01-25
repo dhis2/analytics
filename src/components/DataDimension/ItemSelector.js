@@ -6,7 +6,6 @@ import { apiFetchOptions } from '../../api/dimensions.js'
 import i18n from '../../locales/index.js'
 import { DATA_SETS_CONSTANTS, REPORTING_RATE } from '../../modules/dataSets.js'
 import {
-    dataTypeMap as dataTypes,
     DIMENSION_TYPE_ALL,
     DIMENSION_TYPE_DATA_ELEMENT,
     DIMENSION_TYPE_DATA_SET,
@@ -33,14 +32,15 @@ const LeftHeader = ({
     searchTerm,
     setSearchTerm,
     dataType,
+    dataTypes,
     setDataType,
     group,
     setGroup,
     subGroup,
     setSubGroup,
     displayNameProp,
+
     dataTest,
-    supportsEDI,
 }) => (
     <>
         <div className="leftHeader">
@@ -57,20 +57,22 @@ const LeftHeader = ({
                 currentDataType={dataType}
                 onChange={setDataType}
                 dataTest={`${dataTest}-data-types-select-field`}
-                includeCalculations={supportsEDI}
+                dataTypes={dataTypes}
             />
-            {dataTypes[dataType] &&
-                dataType !== DIMENSION_TYPE_EXPRESSION_DIMENSION_ITEM && (
-                    <GroupSelector
-                        dataType={dataType}
-                        displayNameProp={displayNameProp}
-                        currentGroup={group}
-                        onGroupChange={setGroup}
-                        currentSubGroup={subGroup}
-                        onSubGroupChange={setSubGroup}
-                        dataTest={dataTest}
-                    />
-                )}
+            {![
+                DIMENSION_TYPE_EXPRESSION_DIMENSION_ITEM,
+                DIMENSION_TYPE_ALL,
+            ].includes(dataType) && (
+                <GroupSelector
+                    dataType={dataType}
+                    displayNameProp={displayNameProp}
+                    currentGroup={group}
+                    onGroupChange={setGroup}
+                    currentSubGroup={subGroup}
+                    onSubGroupChange={setSubGroup}
+                    dataTest={dataTest}
+                />
+            )}
         </div>
         <style jsx>{styles}</style>
     </>
@@ -79,6 +81,7 @@ const LeftHeader = ({
 LeftHeader.propTypes = {
     dataTest: PropTypes.string,
     dataType: PropTypes.string,
+    dataTypes: PropTypes.array,
     displayNameProp: PropTypes.string,
     group: PropTypes.string,
     searchTerm: PropTypes.string,
@@ -87,7 +90,6 @@ LeftHeader.propTypes = {
     setSearchTerm: PropTypes.func,
     setSubGroup: PropTypes.func,
     subGroup: PropTypes.string,
-    supportsEDI: PropTypes.bool,
 }
 
 const EmptySelection = () => (
@@ -96,6 +98,7 @@ const EmptySelection = () => (
         <style jsx>{styles}</style>
     </>
 )
+
 const RightHeader = ({ infoText }) => (
     <>
         <p className="rightHeader">{i18n.t('Selected Items')}</p>
@@ -110,9 +113,11 @@ const RightHeader = ({ infoText }) => (
         <style jsx>{styles}</style>
     </>
 )
+
 RightHeader.propTypes = {
     infoText: PropTypes.string,
 }
+
 const SourceEmptyPlaceholder = ({
     loading,
     searchTerm,
@@ -142,6 +147,9 @@ const SourceEmptyPlaceholder = ({
                 case DIMENSION_TYPE_PROGRAM_INDICATOR:
                     message = i18n.t('No program indicators found')
                     break
+                case DIMENSION_TYPE_EXPRESSION_DIMENSION_ITEM:
+                    message = i18n.t('No calculations found')
+                    break
                 default:
                     message = i18n.t('No data')
                     break
@@ -151,41 +159,43 @@ const SourceEmptyPlaceholder = ({
         switch (dataType) {
             case DIMENSION_TYPE_INDICATOR:
                 message = i18n.t('No indicators found for "{{- searchTerm}}"', {
-                    searchTerm: searchTerm,
+                    searchTerm,
                 })
                 break
             case DIMENSION_TYPE_DATA_ELEMENT:
                 message = i18n.t(
                     'No data elements found for "{{- searchTerm}}"',
                     {
-                        searchTerm: searchTerm,
+                        searchTerm,
                     }
                 )
                 break
             case DIMENSION_TYPE_DATA_SET:
                 message = i18n.t('No data sets found for "{{- searchTerm}}"', {
-                    searchTerm: searchTerm,
+                    searchTerm,
                 })
                 break
             case DIMENSION_TYPE_EVENT_DATA_ITEM:
                 message = i18n.t(
                     'No event data items found for "{{- searchTerm}}"',
-                    {
-                        searchTerm: searchTerm,
-                    }
+                    { searchTerm }
                 )
                 break
             case DIMENSION_TYPE_PROGRAM_INDICATOR:
                 message = i18n.t(
                     'No program indicators found for "{{- searchTerm}}"',
-                    {
-                        searchTerm: searchTerm,
-                    }
+                    { searchTerm }
+                )
+                break
+            case DIMENSION_TYPE_EXPRESSION_DIMENSION_ITEM:
+                message = i18n.t(
+                    'No calculations found for "{{- searchTerm}}"',
+                    { searchTerm }
                 )
                 break
             default:
                 message = i18n.t('Nothing found for "{{- searchTerm}}"', {
-                    searchTerm: searchTerm,
+                    searchTerm,
                 })
                 break
         }
@@ -218,27 +228,42 @@ const ItemSelector = ({
     rightFooter,
     displayNameProp,
     infoBoxMessage,
+    dataTypes,
     dataTest,
-    supportsEDI,
     onEDISave,
 }) => {
     const [state, setState] = useState({
         searchTerm: '',
+        dataTypes,
         filter: {
-            dataType: DIMENSION_TYPE_ALL,
+            dataType:
+                dataTypes.length === 1 ? dataTypes[0].id : DIMENSION_TYPE_ALL,
+            group: null,
+            subGroup:
+                dataTypes.length === 1 &&
+                dataTypes[0].id === DIMENSION_TYPE_DATA_ELEMENT
+                    ? TOTALS
+                    : null,
         },
         options: [],
         loading: true,
         nextPage: 1,
+        supportsEDI: dataTypes
+            .map(({ id }) => id)
+            .includes(DIMENSION_TYPE_EXPRESSION_DIMENSION_ITEM),
     })
     const [currentCalculation, setCurrentCalculation] = useState()
     const dataEngine = useDataEngine()
     const setSearchTerm = (searchTerm) =>
         setState((state) => ({ ...state, searchTerm }))
-    const setFilter = (filter) => setState((state) => ({ ...state, filter }))
     const debouncedSearchTerm = useDebounce(state.searchTerm, 500)
+
     const fetchItems = async (page) => {
-        setState((state) => ({ ...state, loading: true }))
+        setState((state) => ({
+            ...state,
+            nextPage: page === 1 ? 1 : state.nextPage,
+            loading: true,
+        }))
         const result = await apiFetchOptions({
             dataEngine,
             nameProp: displayNameProp,
@@ -314,13 +339,9 @@ const ItemSelector = ({
     }
 
     useDidUpdateEffect(() => {
-        setState((state) => ({
-            ...state,
-            loading: true,
-            nextPage: 1,
-        }))
         fetchItems(1)
     }, [debouncedSearchTerm, state.filter])
+
     const onChange = (newSelected) => {
         onSelect(
             newSelected.map((value) => {
@@ -391,6 +412,39 @@ const ItemSelector = ({
         onSelect([...selectedItems.filter((item) => item.value !== id)])
     }
 
+    const onSetGroup = (group) =>
+        setState((state) => ({
+            ...state,
+            nextPage: 1,
+            filter: {
+                ...state.filter,
+                group,
+            },
+        }))
+
+    const onSetSubGroup = (subGroup) =>
+        setState((state) => ({
+            ...state,
+            nextPage: 1,
+            filter: {
+                ...state.filter,
+                subGroup,
+            },
+        }))
+
+    const onSetDataType = (dataType) =>
+        setState((state) => ({
+            ...state,
+            nextPage: 1,
+            filter: {
+                ...state.filter,
+                dataType,
+                group: null,
+                subGroup:
+                    dataType === DIMENSION_TYPE_DATA_ELEMENT ? TOTALS : null,
+            },
+        }))
+
     return (
         <>
             <Transfer
@@ -412,35 +466,21 @@ const ItemSelector = ({
                 onEndReached={onEndReached}
                 leftHeader={
                     <LeftHeader
+                        dataTypes={state.dataTypes}
                         dataType={state.filter.dataType}
-                        setDataType={(dataType) => {
-                            setFilter({
-                                ...state.filter,
-                                dataType,
-                                group: null,
-                                subGroup:
-                                    dataType === DIMENSION_TYPE_DATA_ELEMENT
-                                        ? TOTALS
-                                        : null,
-                            })
-                        }}
+                        setDataType={onSetDataType}
                         group={state.filter.group}
-                        setGroup={(group) => {
-                            setFilter({ ...state.filter, group })
-                        }}
+                        setGroup={onSetGroup}
                         subGroup={state.filter.subGroup}
-                        setSubGroup={(subGroup) => {
-                            setFilter({ ...state.filter, subGroup })
-                        }}
+                        setSubGroup={onSetSubGroup}
                         searchTerm={state.searchTerm}
                         setSearchTerm={setSearchTerm}
                         displayNameProp={displayNameProp}
                         dataTest={`${dataTest}-left-header`}
-                        supportsEDI={supportsEDI}
                     />
                 }
                 leftFooter={
-                    supportsEDI ? (
+                    state.supportsEDI ? (
                         <div className="calculation-button">
                             <Button
                                 icon={<IconAdd24 />}
@@ -474,7 +514,7 @@ const ItemSelector = ({
                             getItemType(props.value) ===
                                 DIMENSION_TYPE_EXPRESSION_DIMENSION_ITEM &&
                             !(props.access?.write === false) &&
-                            supportsEDI
+                            state.supportsEDI
                                 ? () =>
                                       setCurrentCalculation({
                                           id: props.value,
@@ -488,7 +528,7 @@ const ItemSelector = ({
                 )}
                 dataTest={`${dataTest}-transfer`}
             />
-            {currentCalculation && supportsEDI && (
+            {currentCalculation && state.supportsEDI && (
                 <CalculationModal
                     calculation={currentCalculation}
                     onSave={onSaveCalculation}
@@ -506,6 +546,7 @@ ItemSelector.propTypes = {
     displayNameProp: PropTypes.string.isRequired,
     onSelect: PropTypes.func.isRequired,
     dataTest: PropTypes.string,
+    dataTypes: PropTypes.array,
     infoBoxMessage: PropTypes.string,
     noItemsMessage: PropTypes.string,
     rightFooter: PropTypes.node,
@@ -518,7 +559,6 @@ ItemSelector.propTypes = {
             expression: PropTypes.string,
         })
     ),
-    supportsEDI: PropTypes.bool,
     onEDISave: PropTypes.func,
 }
 
