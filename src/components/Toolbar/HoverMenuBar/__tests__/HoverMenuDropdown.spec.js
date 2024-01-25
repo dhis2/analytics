@@ -17,4 +17,15 @@ describe('<HoverMenuDropdown/>', () => {
 
         expect(wrapper.find('button').prop('data-test')).toBe(dataTest)
     })
+
+    it('accepts a `className` prop', () => {
+        const className = 'test'
+        const wrapper = shallow(
+            <HoverMenuDropdown label="test dropdown" className={className}>
+                children
+            </HoverMenuDropdown>
+        )
+
+        expect(wrapper.find('button')).toHaveClassName(className)
+    })
 })
