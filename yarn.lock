@@ -2291,39 +2291,47 @@
     "@dhis2/pwa" "9.0.1"
     moment "^2.24.0"
 
-"@dhis2/app-runtime@^3.2.3", "@dhis2/app-runtime@^3.9.0":
-  version "3.9.0"
-  resolved "https://registry.yarnpkg.com/@dhis2/app-runtime/-/app-runtime-3.9.0.tgz#c7e295fd0a68fac976a930bc77105206ded0b61a"
-  integrity sha512-n0S4pbyvK7FnBQFMONGrhR9YYavBQI+mQLHfCX/vtvOyeoioBUNIinuQlGysuLMEkSVaK5OjV40rvTMzdxF2kQ==
+"@dhis2/app-runtime@^3.10.2", "@dhis2/app-runtime@^3.2.3":
+  version "3.10.2"
+  resolved "https://registry.yarnpkg.com/@dhis2/app-runtime/-/app-runtime-3.10.2.tgz#e82639bd68234bdeaf2f6d3c256dcdfcdd267da2"
+  integrity sha512-GiftKk8ZTXlPElXAgVJn41Vj6E1vEGTPGrjrqU7j41ZTYsg+tUcCkISNt1woe5l7E+8+y+9Fy4bgqSsBOAEUvg==
   dependencies:
-    "@dhis2/app-service-alerts" "3.9.0"
-    "@dhis2/app-service-config" "3.9.0"
-    "@dhis2/app-service-data" "3.9.0"
-    "@dhis2/app-service-offline" "3.9.0"
+    "@dhis2/app-service-alerts" "3.10.2"
+    "@dhis2/app-service-config" "3.10.2"
+    "@dhis2/app-service-data" "3.10.2"
+    "@dhis2/app-service-offline" "3.10.2"
+    "@dhis2/app-service-plugin" "3.10.2"
 
-"@dhis2/app-service-alerts@3.9.0":
-  version "3.9.0"
-  resolved "https://registry.yarnpkg.com/@dhis2/app-service-alerts/-/app-service-alerts-3.9.0.tgz#48d3805676e75ee58104fea4f76cfa779335444e"
-  integrity sha512-z2eZxm/pxrmFbisbK7/qJKtif2CNWJjaaAH5rfrs5OIajlHy3rO37vSaTQHWv+xWvZFQrs2Op2InxzG0qh5ncA==
+"@dhis2/app-service-alerts@3.10.2":
+  version "3.10.2"
+  resolved "https://registry.yarnpkg.com/@dhis2/app-service-alerts/-/app-service-alerts-3.10.2.tgz#0e07c3530606f81ab998a20f2c478600b6027a77"
+  integrity sha512-2IqaawnlOzYVJLBF2AKVQJ4cuxJNZD7FK0XE0XOv1WwFs70h6bp23MQueIJ/QHxLo7lamE0FC22m4diM4P0CuA==
 
-"@dhis2/app-service-config@3.9.0":
-  version "3.9.0"
-  resolved "https://registry.yarnpkg.com/@dhis2/app-service-config/-/app-service-config-3.9.0.tgz#8dc59d8de246f54057c0c685d5f94b4cbade6f73"
-  integrity sha512-OuRn2mJGrQQ8QIC+oIVYYpclB4LErRK2wtsuy/cXLfRbeUti1qWIh110rgd1hnTx+BgRCs5s3NWdIQxS4hYGIQ==
+"@dhis2/app-service-config@3.10.2":
+  version "3.10.2"
+  resolved "https://registry.yarnpkg.com/@dhis2/app-service-config/-/app-service-config-3.10.2.tgz#be52676068e31cdb1fe3f8ddabb8153e1cd6e3e6"
+  integrity sha512-Crw7Tx4yg4qWw3qYxNCIye77IaY2HUYyDmDKPVVWzgmrcSGxpunv/NtsUg12pxrVfVLnqlH9L6AF9A6hO0afmw==
 
-"@dhis2/app-service-data@3.9.0":
-  version "3.9.0"
-  resolved "https://registry.yarnpkg.com/@dhis2/app-service-data/-/app-service-data-3.9.0.tgz#37f528b5f7f589cbab8dcc7f997c1668bc6566a9"
-  integrity sha512-/FJgJhL6YGtIVNX5oaNmavkGmimrVHQsS8ueeUO4FvTjYXGlnnN3IuxypQcy/x4yiUyigbPgFJRnbC1J2af2fg==
+"@dhis2/app-service-data@3.10.2":
+  version "3.10.2"
+  resolved "https://registry.yarnpkg.com/@dhis2/app-service-data/-/app-service-data-3.10.2.tgz#e94d45d87cab5e156decfe9e92e3153e5df68ba0"
+  integrity sha512-+ESLrVEDQKXBaQmpaCq78RonkqJM2BliykaO4QBeOc4ilWohaqYajue1Ntg4uV2KrdkCylBdMDwGYjsak0G7hg==
   dependencies:
     react-query "^3.13.11"
 
-"@dhis2/app-service-offline@3.9.0":
-  version "3.9.0"
-  resolved "https://registry.yarnpkg.com/@dhis2/app-service-offline/-/app-service-offline-3.9.0.tgz#fe4f4a91a1da77554965f6a5fe6f6951d4c467f4"
-  integrity sha512-0q5zl0vw+a47Ab2qgu6hsZY5ybnH/ea43Vkk4aXYdgcf57xB8ck9DkIcNbc2e1+k9FhvimipxsgTZSbEA/8hJA==
+"@dhis2/app-service-offline@3.10.2":
+  version "3.10.2"
+  resolved "https://registry.yarnpkg.com/@dhis2/app-service-offline/-/app-service-offline-3.10.2.tgz#082279b7045e702c2eecda751d762225313156b0"
+  integrity sha512-bTp+CCRbyKt/0QADj0O6wLNWhi+6QDkjt2+sfpv3M8oKcftjaQDqedVoypZRA0nqvSdVL2ehtTzqMrrxu6jtZQ==
   dependencies:
     lodash "^4.17.21"
+
+"@dhis2/app-service-plugin@3.10.2":
+  version "3.10.2"
+  resolved "https://registry.yarnpkg.com/@dhis2/app-service-plugin/-/app-service-plugin-3.10.2.tgz#09de64ee59017c86c8dab96a0d2ca0d915ae9d31"
+  integrity sha512-FqR6ILmvAXT2n1SzCZknT+5jJRdajg1dBegWAu3xqZXAntsM4wvFLCx6EtjS5LO2Kga9VZ+TJmVr2UFX1330CQ==
+  dependencies:
+    post-robot "^10.0.46"
 
 "@dhis2/app-shell@9.0.1":
   version "9.0.1"
@@ -6927,6 +6935,15 @@ bcrypt-pbkdf@^1.0.0:
   dependencies:
     tweetnacl "^0.14.3"
 
+belter@^1.0.41:
+  version "1.0.190"
+  resolved "https://registry.yarnpkg.com/belter/-/belter-1.0.190.tgz#491857550ef240d9c66b56fc637991f5c3089966"
+  integrity sha512-jz05FHrO+bwitdI6JxV5ESyRdVhTcwMWQ7L4o+q/R4LNJFQrG58sp9EiwsSjhbihhiyYFcmmCMRRagxte6igtw==
+  dependencies:
+    cross-domain-safe-weakmap "^1"
+    cross-domain-utils "^2"
+    zalgo-promise "^1"
+
 better-opn@^2.1.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/better-opn/-/better-opn-2.1.1.tgz#94a55b4695dc79288f31d7d0e5f658320759f7c6"
@@ -8385,6 +8402,20 @@ create-react-context@0.3.0, create-react-context@^0.3.0:
   dependencies:
     gud "^1.0.0"
     warning "^4.0.3"
+
+cross-domain-safe-weakmap@^1, cross-domain-safe-weakmap@^1.0.1:
+  version "1.0.29"
+  resolved "https://registry.yarnpkg.com/cross-domain-safe-weakmap/-/cross-domain-safe-weakmap-1.0.29.tgz#0847975c27d9e1cc840f24c1745311958df98022"
+  integrity sha512-VLoUgf2SXnf3+na8NfeUFV59TRZkIJqCIATaMdbhccgtnTlSnHXkyTRwokngEGYdQXx8JbHT9GDYitgR2sdjuA==
+  dependencies:
+    cross-domain-utils "^2.0.0"
+
+cross-domain-utils@^2, cross-domain-utils@^2.0.0:
+  version "2.0.38"
+  resolved "https://registry.yarnpkg.com/cross-domain-utils/-/cross-domain-utils-2.0.38.tgz#2eaf321c4dfdb61596805ca4233fde4400cb6377"
+  integrity sha512-zZfi3+2EIR9l4chrEiXI2xFleyacsJf8YMLR1eJ0Veb5FTMXeJ3DpxDjZkto2FhL/g717WSELqbptNSo85UJDw==
+  dependencies:
+    zalgo-promise "^1.0.11"
 
 cross-spawn@6.0.5, cross-spawn@^6.0.0:
   version "6.0.5"
@@ -16244,6 +16275,17 @@ posix-character-classes@^0.1.0:
   resolved "https://registry.yarnpkg.com/posix-character-classes/-/posix-character-classes-0.1.1.tgz#01eac0fe3b5af71a2a6c02feabb8c1fef7e00eab"
   integrity sha512-xTgYBc3fuo7Yt7JbiuFxSYGToMoz8fLoE6TC9Wx1P/u+LfeThMOAqmuyECnlBaaJb+u1m9hHiXUEtwW4OzfUJg==
 
+post-robot@^10.0.46:
+  version "10.0.46"
+  resolved "https://registry.yarnpkg.com/post-robot/-/post-robot-10.0.46.tgz#39cea5b51033729390fc7c90be3285cd285f0377"
+  integrity sha512-EgVJiuvI4iRWDZvzObWes0X/n8olWBEJWxlSw79zmhpgkigX8UsVL4VOBhVtoJKwf0Y9qP9g2zOONw1rv80QbA==
+  dependencies:
+    belter "^1.0.41"
+    cross-domain-safe-weakmap "^1.0.1"
+    cross-domain-utils "^2.0.0"
+    universal-serialize "^1.0.4"
+    zalgo-promise "^1.0.3"
+
 postcss-attribute-case-insensitive@^4.0.1:
   version "4.0.2"
   resolved "https://registry.yarnpkg.com/postcss-attribute-case-insensitive/-/postcss-attribute-case-insensitive-4.0.2.tgz#d93e46b504589e94ac7277b0463226c68041a880"
@@ -20449,6 +20491,11 @@ unist-util-visit@2.0.3, unist-util-visit@^2.0.0:
     unist-util-is "^4.0.0"
     unist-util-visit-parents "^3.0.0"
 
+universal-serialize@^1.0.4:
+  version "1.0.10"
+  resolved "https://registry.yarnpkg.com/universal-serialize/-/universal-serialize-1.0.10.tgz#3279bb30f47290ea479f45135620f98fa9d3f3a6"
+  integrity sha512-FdouA4xSFa0fudk1+z5vLWtxZCoC0Q9lKYV3uUdFl7DttNfolmiw2ASr5ddY+/Yz6Isr68u3IqC9XMSwMP+Pow==
+
 universalify@^0.1.0, universalify@^0.1.2:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/universalify/-/universalify-0.1.2.tgz#b646f69be3942dabcecc9d6639c80dc105efaa66"
@@ -21743,6 +21790,11 @@ yocto-queue@^0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/yocto-queue/-/yocto-queue-0.1.0.tgz#0294eb3dee05028d31ee1a5fa2c556a6aaf10a1b"
   integrity sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==
+
+zalgo-promise@^1, zalgo-promise@^1.0.11, zalgo-promise@^1.0.3:
+  version "1.0.48"
+  resolved "https://registry.yarnpkg.com/zalgo-promise/-/zalgo-promise-1.0.48.tgz#9e33eef502d5ed9f5a09fc5728c833c3e87afa2e"
+  integrity sha512-LLHANmdm53+MucY9aOFIggzYtUdkSBFxUsy4glTTQYNyK6B3uCPWTbfiGvSrEvLojw0mSzyFJ1/RRLv+QMNdzQ==
 
 zip-stream@^2.1.2:
   version "2.1.3"
