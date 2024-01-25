@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2024-01-17T09:19:49.801Z\n"
-"PO-Revision-Date: 2024-01-17T09:19:49.802Z\n"
+"POT-Creation-Date: 2024-01-25T12:05:03.360Z\n"
+"PO-Revision-Date: 2024-01-25T12:05:03.360Z\n"
 
 msgid "view only"
 msgstr "view only"
@@ -183,6 +183,9 @@ msgstr "No event data items found"
 msgid "No program indicators found"
 msgstr "No program indicators found"
 
+msgid "No calculations found"
+msgstr "No calculations found"
+
 msgid "No indicators found for \"{{- searchTerm}}\""
 msgstr "No indicators found for \"{{- searchTerm}}\""
 
@@ -194,6 +197,9 @@ msgstr "No event data items found for \"{{- searchTerm}}\""
 
 msgid "No program indicators found for \"{{- searchTerm}}\""
 msgstr "No program indicators found for \"{{- searchTerm}}\""
+
+msgid "No calculations found for \"{{- searchTerm}}\""
+msgstr "No calculations found for \"{{- searchTerm}}\""
 
 msgid "Nothing found for \"{{- searchTerm}}\""
 msgstr "Nothing found for \"{{- searchTerm}}\""
