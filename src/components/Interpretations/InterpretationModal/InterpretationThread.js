@@ -99,8 +99,7 @@ const InterpretationThread = ({
                     }
                     onUpdated={() => onThreadUpdated(true)}
                     isInThread={true}
-                    fetching={fetching}
-                    fetchingComplete={fetchingComplete}
+                    fetching={fetching || !fetchingComplete}
                 />
                 <div className={'comments'}>
                     {interpretation.comments.map((comment) => (

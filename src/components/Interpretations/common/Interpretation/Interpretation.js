@@ -30,6 +30,7 @@ export const Interpretation = ({
     toggleLike,
     isLikedByCurrentUser,
     toggleLikeInProgress,
+    fetching,
 }) => {
     const [isUpdateMode, setIsUpdateMode] = useState(false)
     const [showSharingDialog, setShowSharingDialog] = useState(false)
@@ -61,6 +62,7 @@ export const Interpretation = ({
             onComplete={onUpdated}
             text={interpretation.text}
             currentUser={currentUser}
+            fetching={fetching}
         />
     ) : (
         <Message
