@@ -58,7 +58,7 @@ export const InterpretationsUnit = forwardRef(
         const showNoTimeDimensionHelpText =
             type === 'eventVisualization' && !visualizationHasTimeDimension
 
-        const { data, loading, refetch, fetching } = useDataQuery(
+        const { data, loading, fetching, refetch } = useDataQuery(
             interpretationsQuery,
             {
                 lazy: true,
@@ -91,6 +91,7 @@ export const InterpretationsUnit = forwardRef(
         useEffect(() => {
             if (id) {
                 setFetchingComplete(false)
+                setListUpdateInProgress(true)
                 refetch({ type, id })
             }
         }, [type, id, renderId, refetch])
