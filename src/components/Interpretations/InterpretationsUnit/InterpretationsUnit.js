@@ -53,14 +53,17 @@ export const InterpretationsUnit = forwardRef(
         ref
     ) => {
         const [isExpanded, setIsExpanded] = useState(true)
+        const [fetchingComplete, setFetchingComplete] = useState(true)
         const showNoTimeDimensionHelpText =
             type === 'eventVisualization' && !visualizationHasTimeDimension
 
         const { data, loading, refetch } = useDataQuery(interpretationsQuery, {
             lazy: true,
+            onComplete: () => setFetchingComplete(true),
         })
 
         const onCompleteAction = useCallback(() => {
+            setFetchingComplete(false)
             refetch({ type, id })
         }, [type, id, refetch])
 
@@ -74,6 +77,7 @@ export const InterpretationsUnit = forwardRef(
 
         useEffect(() => {
             if (id) {
+                setFetchingComplete(false)
                 refetch({ type, id })
             }
         }, [type, id, renderId, refetch])
@@ -116,6 +120,7 @@ export const InterpretationsUnit = forwardRef(
                                 />
                                 <InterpretationList
                                     currentUser={currentUser}
+                                    fetchingComplete={fetchingComplete}
                                     interpretations={
                                         data.interpretations.interpretations
                                     }

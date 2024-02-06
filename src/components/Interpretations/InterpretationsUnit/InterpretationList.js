@@ -3,7 +3,7 @@ import { IconCalendar24, colors, spacers } from '@dhis2/ui'
 import moment from 'moment'
 import PropTypes from 'prop-types'
 import React from 'react'
-import { Interpretation } from '../common/index.js'
+import ListInterpretation from './ListInterpretation.js'
 
 const sortByCreatedDateDesc = (a, b) => {
     const dateA = a.created
@@ -27,6 +27,7 @@ export const InterpretationList = ({
     disabled,
 }) => {
     const { fromServerDate } = useTimeZoneConversion()
+
     const interpretationsByDate = interpretations.reduce(
         (groupedInterpretations, interpretation) => {
             const date = interpretation.created.split('T')[0]
@@ -59,17 +60,15 @@ export const InterpretationList = ({
                             {interpretationsByDate[date]
                                 .sort(sortByCreatedDateDesc)
                                 .map((interpretation) => (
-                                    <Interpretation
+                                    <ListInterpretation
                                         key={interpretation.id}
-                                        interpretation={interpretation}
                                         currentUser={currentUser}
-                                        onClick={onInterpretationClick}
-                                        onReplyIconClick={onReplyIconClick}
+                                        interpretation={interpretation}
                                         onDeleted={refresh}
+                                        onReplyIconClick={onReplyIconClick}
                                         onUpdated={refresh}
                                         disabled={disabled}
-                                        toggleLikeInProgress={false}
-                                        toggleLike={Function.prototype()}
+                                        onClick={onInterpretationClick}
                                     />
                                 ))}
                         </ol>

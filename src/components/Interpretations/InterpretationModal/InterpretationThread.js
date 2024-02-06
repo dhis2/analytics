@@ -17,6 +17,7 @@ import { CommentAddForm } from './CommentAddForm.js'
 const InterpretationThread = ({
     currentUser,
     fetching,
+    fetchingComplete,
     interpretation,
     onInterpretationDeleted,
     initialFocus,
@@ -43,9 +44,7 @@ const InterpretationThread = ({
     const [save, { loading: loadingNewComment }] = useDataMutation(
         saveMutationRef.current,
         {
-            onComplete: () => {
-                onThreadUpdated(true)
-            },
+            onComplete: () => onThreadUpdated(true),
         }
     )
 
@@ -62,12 +61,16 @@ const InterpretationThread = ({
         currentUser
     )
 
+    const interpretationLoadingInProgress =
+        fetching ||
+        !fetchingComplete ||
+        toggleLikeInProgress ||
+        loadingNewComment ||
+        commentActionInProgress
+
     return (
         <div className="container">
-            {fetching ||
-            toggleLikeInProgress ||
-            loadingNewComment ||
-            commentActionInProgress ? (
+            {interpretationLoadingInProgress ? (
                 <Cover>
                     <CenteredContent>
                         <CircularLoader />
@@ -85,16 +88,19 @@ const InterpretationThread = ({
                 <Interpretation
                     currentUser={currentUser}
                     interpretation={interpretation}
+                    isLikedByCurrentUser={isLikedByCurrentUser}
+                    toggleLike={toggleLike}
+                    toggleLikeInProgress={toggleLikeInProgress || fetching}
+                    onDeleted={onInterpretationDeleted}
                     onReplyIconClick={
                         interpretationAccess.comment
                             ? () => focusRef.current?.focus()
                             : null
                     }
-                    onDeleted={onInterpretationDeleted}
+                    onUpdated={() => onThreadUpdated(true)}
                     isInThread={true}
-                    toggleLike={toggleLike}
-                    isLikedByCurrentUser={isLikedByCurrentUser}
-                    toggleLikeInProgress={toggleLikeInProgress || fetching}
+                    fetching={fetching}
+                    fetchingComplete={fetchingComplete}
                 />
                 <div className={'comments'}>
                     {interpretation.comments.map((comment) => (
@@ -173,6 +179,7 @@ const InterpretationThread = ({
 InterpretationThread.propTypes = {
     currentUser: PropTypes.object.isRequired,
     fetching: PropTypes.bool.isRequired,
+    fetchingComplete: PropTypes.bool.isRequired,
     interpretation: PropTypes.object.isRequired,
     onInterpretationDeleted: PropTypes.func.isRequired,
     downloadMenuComponent: PropTypes.oneOfType([
