@@ -177,7 +177,7 @@ const InterpretationModal = ({
                                 <div className="thread-wrap">
                                     <InterpretationThread
                                         currentUser={currentUser}
-                                        fetching={fetching}
+                                        fetching={fetching || !fetchingComplete}
                                         interpretation={interpretation}
                                         onInterpretationDeleted={
                                             onInterpretationDeleted
@@ -187,7 +187,6 @@ const InterpretationModal = ({
                                         downloadMenuComponent={
                                             downloadMenuComponent
                                         }
-                                        fetchingComplete={fetchingComplete}
                                     />
                                 </div>
                             </div>

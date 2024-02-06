@@ -23,8 +23,11 @@ export const InterpretationList = ({
     interpretations,
     onInterpretationClick,
     onReplyIconClick,
-    refresh,
+    onListUpdated,
+    onLikeChanged,
     disabled,
+    fetching,
+    setInterpretationActionInProgress,
 }) => {
     const { fromServerDate } = useTimeZoneConversion()
 
@@ -64,11 +67,16 @@ export const InterpretationList = ({
                                         key={interpretation.id}
                                         currentUser={currentUser}
                                         interpretation={interpretation}
-                                        onDeleted={refresh}
+                                        onDeleted={onListUpdated}
                                         onReplyIconClick={onReplyIconClick}
-                                        onUpdated={refresh}
-                                        disabled={disabled}
+                                        onUpdated={onListUpdated}
+                                        onLikeChanged={onLikeChanged}
                                         onClick={onInterpretationClick}
+                                        disabled={disabled}
+                                        fetching={fetching}
+                                        setInterpretationActionInProgress={
+                                            setInterpretationActionInProgress
+                                        }
                                     />
                                 ))}
                         </ol>
@@ -114,9 +122,12 @@ export const InterpretationList = ({
 
 InterpretationList.propTypes = {
     currentUser: PropTypes.object.isRequired,
+    fetching: PropTypes.bool.isRequired,
     interpretations: PropTypes.array.isRequired,
-    refresh: PropTypes.func.isRequired,
+    setInterpretationActionInProgress: PropTypes.func.isRequired,
     onInterpretationClick: PropTypes.func.isRequired,
+    onLikeChanged: PropTypes.func.isRequired,
+    onListUpdated: PropTypes.func.isRequired,
     onReplyIconClick: PropTypes.func.isRequired,
     disabled: PropTypes.bool,
 }

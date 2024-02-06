@@ -30,8 +30,10 @@ export const Interpretation = ({
     toggleLike,
     isLikedByCurrentUser,
     toggleLikeInProgress,
+    setInterpretationActionInProgress,
     fetching,
 }) => {
+    // console.log('Interpretation onupdated', { onUpdated, fetching })
     const [isUpdateMode, setIsUpdateMode] = useState(false)
     const [showSharingDialog, setShowSharingDialog] = useState(false)
     const shouldShowButton = !!onClick && !disabled
@@ -125,6 +127,9 @@ export const Interpretation = ({
                             <InterpretationDeleteButton
                                 id={interpretation.id}
                                 onComplete={onDeleted}
+                                setDeleteInProgress={
+                                    setInterpretationActionInProgress
+                                }
                             />
                         )}
                     </>
@@ -148,6 +153,7 @@ export const Interpretation = ({
 
 Interpretation.propTypes = {
     currentUser: PropTypes.object.isRequired,
+    fetching: PropTypes.bool.isRequired,
     interpretation: PropTypes.object.isRequired,
     isLikedByCurrentUser: PropTypes.bool.isRequired,
     toggleLike: PropTypes.func.isRequired,

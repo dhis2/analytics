@@ -11,16 +11,28 @@ const mutation = {
     type: 'delete',
 }
 
-const InterpretationDeleteButton = ({ id, onComplete }) => {
+const InterpretationDeleteButton = ({
+    id,
+    onComplete,
+    setDeleteInProgress,
+}) => {
     const [remove, { loading }] = useDataMutation(mutation, {
-        onComplete,
+        onComplete: () => {
+            setDeleteInProgress(false)
+            onComplete()
+        },
         variables: { id },
     })
+
+    const deleteInterpretation = () => {
+        setDeleteInProgress(true)
+        remove()
+    }
     return (
         <MessageIconButton
             tooltipContent={i18n.t('Delete')}
             iconComponent={IconDelete16}
-            onClick={remove}
+            onClick={deleteInterpretation}
             disabled={loading}
             dataTest="interpretation-delete-button"
         />

@@ -17,7 +17,6 @@ import { CommentAddForm } from './CommentAddForm.js'
 const InterpretationThread = ({
     currentUser,
     fetching,
-    fetchingComplete,
     interpretation,
     onInterpretationDeleted,
     initialFocus,
@@ -63,7 +62,6 @@ const InterpretationThread = ({
 
     const interpretationLoadingInProgress =
         fetching ||
-        !fetchingComplete ||
         toggleLikeInProgress ||
         loadingNewComment ||
         commentActionInProgress
@@ -99,7 +97,7 @@ const InterpretationThread = ({
                     }
                     onUpdated={() => onThreadUpdated(true)}
                     isInThread={true}
-                    fetching={fetching || !fetchingComplete}
+                    fetching={fetching}
                 />
                 <div className={'comments'}>
                     {interpretation.comments.map((comment) => (
@@ -178,7 +176,6 @@ const InterpretationThread = ({
 InterpretationThread.propTypes = {
     currentUser: PropTypes.object.isRequired,
     fetching: PropTypes.bool.isRequired,
-    fetchingComplete: PropTypes.bool.isRequired,
     interpretation: PropTypes.object.isRequired,
     onInterpretationDeleted: PropTypes.func.isRequired,
     downloadMenuComponent: PropTypes.oneOfType([

@@ -6,13 +6,13 @@ import { useLike } from '../common/Interpretation/useLike.js'
 const ListInterpretation = ({
     interpretation,
     currentUser,
-    onUpdated,
+    onLikeChanged,
     ...rest
 }) => {
     const { toggleLike, isLikedByCurrentUser, toggleLikeInProgress } = useLike({
         interpretation,
         currentUser,
-        onComplete: () => onUpdated(true),
+        onComplete: onLikeChanged,
     })
 
     return (
@@ -30,7 +30,7 @@ const ListInterpretation = ({
 ListInterpretation.propTypes = {
     currentUser: PropTypes.object.isRequired,
     interpretation: PropTypes.object.isRequired,
-    onUpdated: PropTypes.func.isRequired,
+    onLikeChanged: PropTypes.func.isRequired,
 }
 
 export default ListInterpretation
