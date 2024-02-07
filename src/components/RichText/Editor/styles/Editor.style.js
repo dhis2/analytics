@@ -47,12 +47,12 @@ export const mainClasses = css`
     }
 
     .textarea.resizable {
-        resize: both;
+        resize: vertical;
     }
 
     .textarea:focus {
         outline: none;
-        box-shadow: 0 0 0 3px ${theme.focus};
+        box-shadow: 0 0 0 3px inset ${theme.focus};
         width: calc(100% - 3px);
     }
 
