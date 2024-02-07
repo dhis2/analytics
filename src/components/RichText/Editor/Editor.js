@@ -209,10 +209,11 @@ export const Editor = forwardRef(
         const internalRef = useRef()
         const textareaRef = externalRef || internalRef
 
-        useEffect(
-            () => initialFocus && textareaRef.current?.focus(),
-            [initialFocus, textareaRef]
-        )
+        useEffect(() => {
+            if (initialFocus) {
+                textareaRef.current?.focus()
+            }
+        }, [initialFocus, textareaRef])
 
         return (
             <div
