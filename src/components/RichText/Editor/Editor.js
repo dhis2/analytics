@@ -199,6 +199,7 @@ export const Editor = forwardRef(
             inputPlaceholder,
             onChange,
             errorText,
+            helpText,
             initialFocus,
             resizable,
         },
@@ -273,6 +274,7 @@ export const Editor = forwardRef(
                         {errorText && (
                             <Help error={!!errorText}>{errorText}</Help>
                         )}
+                        {helpText && <Help>{helpText}</Help>}
                     </div>
                 )}
                 <style jsx>{mainClasses}</style>
@@ -293,6 +295,7 @@ Editor.propTypes = {
     onChange: PropTypes.func.isRequired,
     disabled: PropTypes.bool,
     errorText: PropTypes.string,
+    helpText: PropTypes.string,
     initialFocus: PropTypes.bool,
     inputPlaceholder: PropTypes.string,
     resizable: PropTypes.bool,
