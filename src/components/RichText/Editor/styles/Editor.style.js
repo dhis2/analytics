@@ -21,7 +21,6 @@ export const mainClasses = css`
     .edit {
         width: 100%;
         height: 100%;
-        overflow-y: auto;
         scroll-behavior: smooth;
     }
 
@@ -29,7 +28,7 @@ export const mainClasses = css`
         width: 100%;
         height: 100%;
         box-sizing: border-box;
-        padding: ${spacers.dp8} ${spacers.dp12};
+        padding: ${spacers.dp8} 15px;
 
         color: ${colors.grey900};
         background-color: ${colors.white};
@@ -52,8 +51,11 @@ export const mainClasses = css`
 
     .textarea:focus {
         outline: none;
-        box-shadow: 0 0 0 3px inset ${theme.focus};
-        width: calc(100% - 3px);
+        box-shadow: 0 0 0 3px ${theme.focus};
+        width: calc(100% - 6px);
+        height: calc(100% - 3px);
+        padding: ${spacers.dp8} ${spacers.dp12};
+        margin-left: 3px;
     }
 
     .textarea:disabled {
