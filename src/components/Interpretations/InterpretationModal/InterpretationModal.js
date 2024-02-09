@@ -77,13 +77,15 @@ const InterpretationModal = ({
 }) => {
     const modalContentWidth = useModalContentWidth()
     const modalContentCSS = getModalContentCSS(modalContentWidth)
+    const [isLikeToggle, setIsLikeToggle] = useState(false)
     const [isDirty, setIsDirty] = useState(false)
     const { data, error, loading, fetching, refetch } = useDataQuery(query, {
         lazy: true,
+        onComplete: () => setIsLikeToggle(false),
     })
     const interpretation = data?.interpretation
     const shouldRenderModalContent = !error && interpretation
-    const shouldCssHideModal = loading || isVisualizationLoading
+    const loadingInProgress = loading || isVisualizationLoading
     const handleClose = () => {
         if (isDirty) {
             onInterpretationUpdate()
@@ -91,10 +93,11 @@ const InterpretationModal = ({
         }
         onClose()
     }
-    const onThreadUpdated = (affectsInterpretation) => {
+    const onThreadUpdated = (affectsInterpretation, isLike = false) => {
         if (affectsInterpretation) {
             setIsDirty(true)
         }
+        setIsLikeToggle(isLike)
         refetch({ id: interpretationId })
     }
     const onInterpretationDeleted = () => {
@@ -111,7 +114,7 @@ const InterpretationModal = ({
 
     return (
         <>
-            {shouldCssHideModal && (
+            {loadingInProgress && (
                 <Layer>
                     <CenteredContent>
                         <CircularLoader />
@@ -122,7 +125,7 @@ const InterpretationModal = ({
                 fluid
                 onClose={handleClose}
                 className={cx(modalCSS.className, {
-                    hidden: shouldCssHideModal,
+                    hidden: loadingInProgress,
                 })}
                 dataTest="interpretation-modal"
             >
@@ -183,6 +186,7 @@ const InterpretationModal = ({
                                         downloadMenuComponent={
                                             downloadMenuComponent
                                         }
+                                        isLikeToggle={isLikeToggle}
                                     />
                                 </div>
                             </div>

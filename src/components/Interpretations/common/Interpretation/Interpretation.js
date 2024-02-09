@@ -28,13 +28,14 @@ export const Interpretation = ({
     disabled,
     onReplyIconClick,
     isInThread,
+    fetching,
 }) => {
     const [isUpdateMode, setIsUpdateMode] = useState(false)
     const [showSharingDialog, setShowSharingDialog] = useState(false)
     const { toggleLike, isLikedByCurrentUser, toggleLikeInProgress } = useLike({
         interpretation,
         currentUser,
-        onComplete: onUpdated,
+        onComplete: () => onUpdated(true),
     })
     const shouldShowButton = !!onClick && !disabled
 
@@ -83,7 +84,7 @@ export const Interpretation = ({
                         onClick={toggleLike}
                         selected={isLikedByCurrentUser}
                         count={interpretation.likes}
-                        disabled={toggleLikeInProgress}
+                        disabled={toggleLikeInProgress || fetching}
                         dataTest="interpretation-like-unlike-button"
                     />
                     <MessageIconButton
@@ -149,6 +150,7 @@ export const Interpretation = ({
 
 Interpretation.propTypes = {
     currentUser: PropTypes.object.isRequired,
+    fetching: PropTypes.bool.isRequired,
     interpretation: PropTypes.object.isRequired,
     onDeleted: PropTypes.func.isRequired,
     onReplyIconClick: PropTypes.func.isRequired,

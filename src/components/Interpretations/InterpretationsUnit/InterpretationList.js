@@ -25,6 +25,7 @@ export const InterpretationList = ({
     onReplyIconClick,
     refresh,
     disabled,
+    fetching,
 }) => {
     const { fromServerDate } = useTimeZoneConversion()
     const interpretationsByDate = interpretations.reduce(
@@ -68,6 +69,7 @@ export const InterpretationList = ({
                                         onDeleted={refresh}
                                         onUpdated={refresh}
                                         disabled={disabled}
+                                        fetching={fetching}
                                     />
                                 ))}
                         </ol>
@@ -113,6 +115,7 @@ export const InterpretationList = ({
 
 InterpretationList.propTypes = {
     currentUser: PropTypes.object.isRequired,
+    fetching: PropTypes.bool.isRequired,
     interpretations: PropTypes.array.isRequired,
     refresh: PropTypes.func.isRequired,
     onInterpretationClick: PropTypes.func.isRequired,

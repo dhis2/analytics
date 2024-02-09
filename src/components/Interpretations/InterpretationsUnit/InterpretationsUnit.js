@@ -53,16 +53,25 @@ export const InterpretationsUnit = forwardRef(
         ref
     ) => {
         const [isExpanded, setIsExpanded] = useState(true)
+        const [isLikeToggle, setIsLikeToggle] = useState(false)
         const showNoTimeDimensionHelpText =
             type === 'eventVisualization' && !visualizationHasTimeDimension
 
-        const { data, loading, refetch } = useDataQuery(interpretationsQuery, {
-            lazy: true,
-        })
+        const { data, loading, fetching, refetch } = useDataQuery(
+            interpretationsQuery,
+            {
+                lazy: true,
+                onComplete: () => setIsLikeToggle(false),
+            }
+        )
 
-        const onCompleteAction = useCallback(() => {
-            refetch({ type, id })
-        }, [type, id, refetch])
+        const onCompleteAction = useCallback(
+            (isLike = false) => {
+                setIsLikeToggle(isLike)
+                refetch({ type, id })
+            },
+            [type, id, refetch]
+        )
 
         useImperativeHandle(
             ref,
@@ -84,6 +93,11 @@ export const InterpretationsUnit = forwardRef(
                     expanded: isExpanded,
                 })}
             >
+                {fetching && !loading && !isLikeToggle && (
+                    <div className="fetching-loader">
+                        <CircularLoader small />
+                    </div>
+                )}
                 <div
                     className="header"
                     onClick={() => setIsExpanded(!isExpanded)}
@@ -125,6 +139,7 @@ export const InterpretationsUnit = forwardRef(
                                     onReplyIconClick={onReplyIconClick}
                                     refresh={onCompleteAction}
                                     disabled={disabled}
+                                    fetching={fetching}
                                 />
                             </>
                         )}
