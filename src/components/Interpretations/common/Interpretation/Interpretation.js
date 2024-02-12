@@ -32,7 +32,7 @@ export const Interpretation = ({
 }) => {
     const [isUpdateMode, setIsUpdateMode] = useState(false)
     const [showSharingDialog, setShowSharingDialog] = useState(false)
-    const { isLikedByCurrentUser, toggleLike, toggleLikeInProgress } = useLike({
+    const { toggleLike, isLikedByCurrentUser, toggleLikeInProgress } = useLike({
         interpretation,
         currentUser,
         onComplete: (likedBy) =>

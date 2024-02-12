@@ -99,6 +99,7 @@ const InterpretationModal = ({
     }
 
     const onLikeToggled = ({ likedBy }) => {
+        setIsDirty(true)
         interpretation.likedBy = likedBy
         interpretation.likes = likedBy.length
     }
