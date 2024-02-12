@@ -139,11 +139,10 @@ export const InterpretationsUnit = forwardRef(
                                     onInterpretationClick={
                                         onInterpretationClick
                                     }
+                                    onLikeToggled={onLikeToggled}
                                     onReplyIconClick={onReplyIconClick}
                                     refresh={onCompleteAction}
                                     disabled={disabled}
-                                    fetching={fetching}
-                                    onLikeToggled={onLikeToggled}
                                 />
                             </>
                         )}
