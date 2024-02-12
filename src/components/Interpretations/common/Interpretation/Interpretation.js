@@ -29,13 +29,18 @@ export const Interpretation = ({
     onReplyIconClick,
     isInThread,
     fetching,
+    onLikeToggled,
 }) => {
     const [isUpdateMode, setIsUpdateMode] = useState(false)
     const [showSharingDialog, setShowSharingDialog] = useState(false)
-    const { toggleLike, isLikedByCurrentUser, toggleLikeInProgress } = useLike({
+    const { isLikedByCurrentUser, toggleLike, toggleLikeInProgress } = useLike({
         interpretation,
         currentUser,
-        onComplete: () => onUpdated(true),
+        onComplete: (likedBy) =>
+            onLikeToggled({
+                id: interpretation.id,
+                likedBy,
+            }),
     })
     const shouldShowButton = !!onClick && !disabled
 
@@ -153,6 +158,7 @@ Interpretation.propTypes = {
     fetching: PropTypes.bool.isRequired,
     interpretation: PropTypes.object.isRequired,
     onDeleted: PropTypes.func.isRequired,
+    onLikeToggled: PropTypes.func.isRequired,
     onReplyIconClick: PropTypes.func.isRequired,
     onUpdated: PropTypes.func.isRequired,
     disabled: PropTypes.bool,

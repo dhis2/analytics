@@ -53,23 +53,21 @@ export const InterpretationsUnit = forwardRef(
         ref
     ) => {
         const [isExpanded, setIsExpanded] = useState(true)
-        const [isLikeToggle, setIsLikeToggle] = useState(false)
+        const [interpretations, setInterpretations] = useState([])
         const showNoTimeDimensionHelpText =
             type === 'eventVisualization' && !visualizationHasTimeDimension
 
-        const { data, loading, fetching, refetch } = useDataQuery(
+        const { loading, fetching, refetch } = useDataQuery(
             interpretationsQuery,
             {
                 lazy: true,
-                onComplete: () => setIsLikeToggle(false),
+                onComplete: (data) =>
+                    setInterpretations(data.interpretations.interpretations),
             }
         )
 
         const onCompleteAction = useCallback(
-            (isLike = false) => {
-                setIsLikeToggle(isLike)
-                refetch({ type, id })
-            },
+            () => refetch({ type, id }),
             [type, id, refetch]
         )
 
@@ -87,13 +85,21 @@ export const InterpretationsUnit = forwardRef(
             }
         }, [type, id, renderId, refetch])
 
+        const onLikeToggled = ({ id, likedBy }) => {
+            const interpretation = interpretations.find(
+                (interp) => interp.id === id
+            )
+            interpretation.likedBy = likedBy
+            interpretation.likes = likedBy.length
+        }
+
         return (
             <div
                 className={cx('container', {
                     expanded: isExpanded,
                 })}
             >
-                {fetching && !loading && !isLikeToggle && (
+                {fetching && !loading && (
                     <div className="fetching-loader">
                         <CircularLoader small />
                     </div>
@@ -116,7 +122,7 @@ export const InterpretationsUnit = forwardRef(
                                 <CircularLoader small />
                             </div>
                         )}
-                        {data && (
+                        {interpretations && (
                             <>
                                 <InterpretationForm
                                     currentUser={currentUser}
@@ -130,9 +136,7 @@ export const InterpretationsUnit = forwardRef(
                                 />
                                 <InterpretationList
                                     currentUser={currentUser}
-                                    interpretations={
-                                        data.interpretations.interpretations
-                                    }
+                                    interpretations={interpretations}
                                     onInterpretationClick={
                                         onInterpretationClick
                                     }
@@ -140,6 +144,7 @@ export const InterpretationsUnit = forwardRef(
                                     refresh={onCompleteAction}
                                     disabled={disabled}
                                     fetching={fetching}
+                                    onLikeToggled={onLikeToggled}
                                 />
                             </>
                         )}

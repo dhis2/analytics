@@ -77,11 +77,9 @@ const InterpretationModal = ({
 }) => {
     const modalContentWidth = useModalContentWidth()
     const modalContentCSS = getModalContentCSS(modalContentWidth)
-    const [isLikeToggle, setIsLikeToggle] = useState(false)
     const [isDirty, setIsDirty] = useState(false)
     const { data, error, loading, fetching, refetch } = useDataQuery(query, {
         lazy: true,
-        onComplete: () => setIsLikeToggle(false),
     })
     const interpretation = data?.interpretation
     const shouldRenderModalContent = !error && interpretation
@@ -93,13 +91,18 @@ const InterpretationModal = ({
         }
         onClose()
     }
-    const onThreadUpdated = (affectsInterpretation, isLike = false) => {
+    const onThreadUpdated = (affectsInterpretation) => {
         if (affectsInterpretation) {
             setIsDirty(true)
         }
-        setIsLikeToggle(isLike)
         refetch({ id: interpretationId })
     }
+
+    const onLikeToggled = ({ likedBy }) => {
+        interpretation.likedBy = likedBy
+        interpretation.likes = likedBy.length
+    }
+
     const onInterpretationDeleted = () => {
         setIsDirty(false)
         onInterpretationUpdate()
@@ -186,7 +189,7 @@ const InterpretationModal = ({
                                         downloadMenuComponent={
                                             downloadMenuComponent
                                         }
-                                        isLikeToggle={isLikeToggle}
+                                        onLikeToggled={onLikeToggled}
                                     />
                                 </div>
                             </div>

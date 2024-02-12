@@ -13,10 +13,10 @@ const InterpretationThread = ({
     fetching,
     interpretation,
     onInterpretationDeleted,
+    onLikeToggled,
     initialFocus,
     onThreadUpdated,
     downloadMenuComponent: DownloadMenu,
-    isLikeToggle,
 }) => {
     const { fromServerDate } = useTimeZoneConversion()
     const focusRef = useRef()
@@ -35,9 +35,7 @@ const InterpretationThread = ({
     )
 
     return (
-        <div
-            className={cx('container', { fetching: fetching && !isLikeToggle })}
-        >
+        <div className={cx('container', { fetching: fetching })}>
             <div className={'title'}>
                 <IconClock16 color={colors.grey700} />
                 {moment(fromServerDate(interpretation.created)).format('LLL')}
@@ -49,6 +47,7 @@ const InterpretationThread = ({
                 <Interpretation
                     currentUser={currentUser}
                     interpretation={interpretation}
+                    onLikeToggled={onLikeToggled}
                     onReplyIconClick={
                         interpretationAccess.comment
                             ? () => focusRef.current?.focus()
@@ -154,8 +153,8 @@ InterpretationThread.propTypes = {
     currentUser: PropTypes.object.isRequired,
     fetching: PropTypes.bool.isRequired,
     interpretation: PropTypes.object.isRequired,
-    isLikeToggle: PropTypes.bool.isRequired,
     onInterpretationDeleted: PropTypes.func.isRequired,
+    onLikeToggled: PropTypes.func.isRequired,
     downloadMenuComponent: PropTypes.oneOfType([
         PropTypes.object,
         PropTypes.func,
