@@ -28,7 +28,6 @@ export const Interpretation = ({
     disabled,
     onReplyIconClick,
     isInThread,
-    fetching,
     onLikeToggled,
 }) => {
     const [isUpdateMode, setIsUpdateMode] = useState(false)
@@ -89,7 +88,7 @@ export const Interpretation = ({
                         onClick={toggleLike}
                         selected={isLikedByCurrentUser}
                         count={interpretation.likes}
-                        disabled={toggleLikeInProgress || fetching}
+                        disabled={toggleLikeInProgress}
                         dataTest="interpretation-like-unlike-button"
                     />
                     <MessageIconButton
@@ -155,7 +154,6 @@ export const Interpretation = ({
 
 Interpretation.propTypes = {
     currentUser: PropTypes.object.isRequired,
-    fetching: PropTypes.bool.isRequired,
     interpretation: PropTypes.object.isRequired,
     onDeleted: PropTypes.func.isRequired,
     onLikeToggled: PropTypes.func.isRequired,

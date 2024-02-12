@@ -66,10 +66,9 @@ export const InterpretationsUnit = forwardRef(
             }
         )
 
-        const onCompleteAction = useCallback(
-            () => refetch({ type, id }),
-            [type, id, refetch]
-        )
+        const onCompleteAction = useCallback(() => {
+            refetch({ type, id })
+        }, [type, id, refetch])
 
         useImperativeHandle(
             ref,

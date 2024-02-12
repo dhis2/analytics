@@ -35,7 +35,7 @@ const InterpretationThread = ({
     )
 
     return (
-        <div className={cx('container', { fetching: fetching })}>
+        <div className={cx('container', { fetching })}>
             <div className={'title'}>
                 <IconClock16 color={colors.grey700} />
                 {moment(fromServerDate(interpretation.created)).format('LLL')}
@@ -53,10 +53,9 @@ const InterpretationThread = ({
                             ? () => focusRef.current?.focus()
                             : null
                     }
-                    onUpdated={(isLike) => onThreadUpdated(true, isLike)}
+                    onUpdated={() => onThreadUpdated(true)}
                     onDeleted={onInterpretationDeleted}
                     isInThread={true}
-                    fetching={fetching}
                 />
                 <div className={'comments'}>
                     {interpretation.comments.map((comment) => (
