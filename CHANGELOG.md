@@ -1,3 +1,38 @@
+# [26.3.0](https://github.com/dhis2/analytics/compare/v26.2.4...v26.3.0) (2024-01-25)
+
+
+### Features
+
+* add classname prop to hover-menu-dropdown ([57eb703](https://github.com/dhis2/analytics/commit/57eb703a4227e6496d021fdb17d6d4fd0e935eb9))
+
+## [26.2.4](https://github.com/dhis2/analytics/compare/v26.2.3...v26.2.4) (2024-01-21)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([41aa57f](https://github.com/dhis2/analytics/commit/41aa57ff24e790b8db2e21d916b22fb03d6878b2))
+
+## [26.2.3](https://github.com/dhis2/analytics/compare/v26.2.2...v26.2.3) (2024-01-19)
+
+
+### Bug Fixes
+
+* adjust width of interpretation reply input when in focus [DHIS2-16429] ([#1607](https://github.com/dhis2/analytics/issues/1607)) ([14fbfb5](https://github.com/dhis2/analytics/commit/14fbfb5bbfbbaa430631d39b8ca77c68817f10a4))
+
+## [26.2.2](https://github.com/dhis2/analytics/compare/v26.2.1...v26.2.2) (2024-01-02)
+
+
+### Bug Fixes
+
+* add white-space css to preserve paragraphs in interpretations ([#1599](https://github.com/dhis2/analytics/issues/1599)) ([52ae98d](https://github.com/dhis2/analytics/commit/52ae98d3cadd975c2079055b00adba58f0982ef4))
+
+## [26.2.1](https://github.com/dhis2/analytics/compare/v26.2.0...v26.2.1) (2023-12-24)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([bac4cc9](https://github.com/dhis2/analytics/commit/bac4cc94572b2e8367fb3d1f061eb7ed122f372f))
+
 # [26.2.0](https://github.com/dhis2/analytics/compare/v26.1.8...v26.2.0) (2023-12-14)
 
 
