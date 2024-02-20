@@ -22,13 +22,17 @@ export default css`
     .list {
         margin: 0;
         padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
     }
     .header {
         text-transform: uppercase;
         font-size: 11px;
-        color: ${colors.grey700};
-        margin: 5px 0;
+        color: ${colors.grey600};
+        margin: 0 0 ${spacers.dp8} 0;
         letter-spacing: 0.3px;
+        font-weight: 400;
     }
     .section:not(:last-child) {
         margin-bottom: ${spacers.dp24};
