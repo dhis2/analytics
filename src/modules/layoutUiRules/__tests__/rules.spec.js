@@ -3,6 +3,7 @@ import {
     DIMENSION_ID_DATA,
     DIMENSION_ID_ORGUNIT,
     DIMENSION_ID_PERIOD,
+    DIMENSION_ID_ASSIGNED_CATEGORIES,
 } from '../../predefinedDimensions.js'
 import {
     testResourceRules,
@@ -16,7 +17,11 @@ const lockableDims = [
     DIMENSION_ID_PERIOD,
     DIMENSION_ID_ORGUNIT,
 ]
-const disallowableDims = [DIMENSION_ID_DATA, DIMENSION_ID_PERIOD]
+const disallowableDims = [
+    DIMENSION_ID_DATA,
+    DIMENSION_ID_PERIOD,
+    DIMENSION_ID_ASSIGNED_CATEGORIES,
+]
 
 // Helper fns
 const allArrayItemsAreValid = (allItems, validItems) =>
