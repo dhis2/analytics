@@ -1,4 +1,5 @@
 import {
+    getMaxNumberOfItemsPerDimensionByVisType,
     getMaxNumberOfItemsPerAxisByVisType,
     getMaxNumberOfDimsPerAxisByVisType,
     getMinNumberOfDimsPerAxisByVisType,
@@ -26,3 +27,6 @@ export const getAxisPerLockedDimByVisType = (visType, dimensionId) =>
 
 export const getAllLockedDimIdsByVisType = (visType) =>
     Object.keys(getLockedDimsByVisType(visType))
+
+export const getDimensionMaxNumberOfItemsByVisType = (visType, dimensionId) =>
+    getMaxNumberOfItemsPerDimensionByVisType(visType)[dimensionId]

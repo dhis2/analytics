@@ -15,6 +15,7 @@ import {
     VIS_TYPE_BAR,
     VIS_TYPE_PIE,
     VIS_TYPE_SINGLE_VALUE,
+    VIS_TYPE_OUTLIER_TABLE,
 } from '../visTypes.js'
 
 const someId = 'someId'
@@ -167,6 +168,33 @@ describe('getAdaptedUiLayoutByType', () => {
                 { dimension: someId },
                 { dimension: otherId },
             ],
+        }
+
+        expect(actualState).toEqual(expectedState)
+    })
+
+    it('outlier table: moves all dimensions to columns with dimension strings', () => {
+        const initialState = {
+            [AXIS_ID_COLUMNS]: [DIMENSION_ID_DATA, someId],
+            [AXIS_ID_ROWS]: [DIMENSION_ID_PERIOD, otherId],
+            [AXIS_ID_FILTERS]: [DIMENSION_ID_ORGUNIT],
+        }
+
+        const actualState = getAdaptedUiLayoutByType(
+            initialState,
+            VIS_TYPE_OUTLIER_TABLE
+        )
+
+        const expectedState = {
+            [AXIS_ID_COLUMNS]: [
+                DIMENSION_ID_DATA,
+                DIMENSION_ID_PERIOD,
+                DIMENSION_ID_ORGUNIT,
+                someId,
+                otherId,
+            ],
+            [AXIS_ID_ROWS]: [],
+            [AXIS_ID_FILTERS]: [],
         }
 
         expect(actualState).toEqual(expectedState)

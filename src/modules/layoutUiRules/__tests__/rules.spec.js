@@ -3,6 +3,7 @@ import {
     DIMENSION_ID_DATA,
     DIMENSION_ID_ORGUNIT,
     DIMENSION_ID_PERIOD,
+    DIMENSION_ID_ASSIGNED_CATEGORIES,
 } from '../../predefinedDimensions.js'
 import {
     testResourceRules,
@@ -16,7 +17,11 @@ const lockableDims = [
     DIMENSION_ID_PERIOD,
     DIMENSION_ID_ORGUNIT,
 ]
-const disallowableDims = [DIMENSION_ID_DATA, DIMENSION_ID_PERIOD]
+const disallowableDims = [
+    DIMENSION_ID_DATA,
+    DIMENSION_ID_PERIOD,
+    DIMENSION_ID_ASSIGNED_CATEGORIES,
+]
 
 // Helper fns
 const allArrayItemsAreValid = (allItems, validItems) =>
@@ -24,6 +29,9 @@ const allArrayItemsAreValid = (allItems, validItems) =>
 
 const allArrayItemsAreValidAxisIds = (array) =>
     allArrayItemsAreValid(array, ALL_AXIS_IDS)
+
+const allArrayItemsAreValidDimensionIds = (array) =>
+    allArrayItemsAreValid(array, lockableDims)
 
 const onlyRulesWithProp = (ruleProp) =>
     testResourceRules.filter((rule) => rule[ruleProp])
@@ -45,6 +53,15 @@ const testPropIsArray = (ruleProp) =>
         expect(
             onlyRulesWithProp(ruleProp).every((rule) =>
                 Array.isArray(rule[ruleProp])
+            )
+        ).toBe(true)
+    })
+
+const testKeysAreValidDimensionIds = (ruleProp) =>
+    it('keys should be valid dimension ids', () => {
+        expect(
+            onlyRulesWithProp(ruleProp).every((rule) =>
+                allArrayItemsAreValidDimensionIds(Object.keys(rule[ruleProp]))
             )
         ).toBe(true)
     })
@@ -125,6 +142,15 @@ describe("verify each rule's ", () => {
             testNoValuesZero(ruleProp)
             testNoValuesNegative(ruleProp)
         })
+    })
+
+    describe('MAX_ITEMS_PER_DIMENSION', () => {
+        const ruleProp = testResourceAllRuleProps['MAX_ITEMS_PER_DIMENSION']
+
+        testPropHasKeysAndValues(ruleProp)
+        testKeysAreValidDimensionIds(ruleProp)
+        testNoValuesZero(ruleProp)
+        testNoValuesNegative(ruleProp)
     })
 
     describe('AVAILABLE_AXES', () => {

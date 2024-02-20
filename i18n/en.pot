@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2023-09-27T14:15:13.876Z\n"
-"PO-Revision-Date: 2023-09-27T14:15:13.876Z\n"
+"POT-Creation-Date: 2024-01-25T12:05:03.360Z\n"
+"PO-Revision-Date: 2024-01-25T12:05:03.360Z\n"
 
 msgid "view only"
 msgstr "view only"
@@ -150,6 +150,9 @@ msgstr "Math operators"
 msgid "Data Type"
 msgstr "Data Type"
 
+msgid "Only {{dataType}} can be used in {{visType}}"
+msgstr "Only {{dataType}} can be used in {{visType}}"
+
 msgid "All types"
 msgstr "All types"
 
@@ -180,6 +183,9 @@ msgstr "No event data items found"
 msgid "No program indicators found"
 msgstr "No program indicators found"
 
+msgid "No calculations found"
+msgstr "No calculations found"
+
 msgid "No indicators found for \"{{- searchTerm}}\""
 msgstr "No indicators found for \"{{- searchTerm}}\""
 
@@ -191,6 +197,9 @@ msgstr "No event data items found for \"{{- searchTerm}}\""
 
 msgid "No program indicators found for \"{{- searchTerm}}\""
 msgstr "No program indicators found for \"{{- searchTerm}}\""
+
+msgid "No calculations found for \"{{- searchTerm}}\""
+msgstr "No calculations found for \"{{- searchTerm}}\""
 
 msgid "Nothing found for \"{{- searchTerm}}\""
 msgstr "Nothing found for \"{{- searchTerm}}\""
@@ -654,14 +663,14 @@ msgstr "Select year"
 msgid "Period"
 msgstr "Period"
 
+msgid "Selected Periods"
+msgstr "Selected Periods"
+
 msgid "Relative periods"
 msgstr "Relative periods"
 
 msgid "Fixed periods"
 msgstr "Fixed periods"
-
-msgid "Selected Periods"
-msgstr "Selected Periods"
 
 msgid "No periods selected"
 msgstr "No periods selected"
@@ -1163,6 +1172,9 @@ msgstr "Scatter"
 
 msgid "Single value"
 msgstr "Single value"
+
+msgid "Outlier table"
+msgstr "Outlier table"
 
 msgid "All charts"
 msgstr "All charts"
