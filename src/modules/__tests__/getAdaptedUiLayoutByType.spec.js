@@ -20,6 +20,7 @@ import {
 
 const someId = 'someId'
 const otherId = 'otherId'
+const thirdId = 'thirdId'
 
 describe('getAdaptedUiLayoutByType', () => {
     it('column: moves all extra dimensions in columns and rows to filters', () => {
@@ -173,11 +174,11 @@ describe('getAdaptedUiLayoutByType', () => {
         expect(actualState).toEqual(expectedState)
     })
 
-    it('outlier table: moves all dimensions to columns with dimension strings', () => {
+    it('outlier table: removes all dimensions but dx,pe,ou which are moved to columns', () => {
         const initialState = {
             [AXIS_ID_COLUMNS]: [DIMENSION_ID_DATA, someId],
             [AXIS_ID_ROWS]: [DIMENSION_ID_PERIOD, otherId],
-            [AXIS_ID_FILTERS]: [DIMENSION_ID_ORGUNIT],
+            [AXIS_ID_FILTERS]: [DIMENSION_ID_ORGUNIT, thirdId],
         }
 
         const actualState = getAdaptedUiLayoutByType(
@@ -190,8 +191,6 @@ describe('getAdaptedUiLayoutByType', () => {
                 DIMENSION_ID_DATA,
                 DIMENSION_ID_PERIOD,
                 DIMENSION_ID_ORGUNIT,
-                someId,
-                otherId,
             ],
             [AXIS_ID_ROWS]: [],
             [AXIS_ID_FILTERS]: [],

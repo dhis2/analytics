@@ -144,23 +144,11 @@ const getSingleValueLayout = (layout) => {
 }
 
 // Transform from ui.layout to outlier table layout format
-const getOutlierTableLayout = (layout) => ({
+const getOutlierTableLayout = () => ({
     [AXIS_ID_COLUMNS]: [
         DIMENSION_ID_DATA,
         DIMENSION_ID_PERIOD,
         DIMENSION_ID_ORGUNIT,
-        ...[
-            ...layout[AXIS_ID_COLUMNS],
-            ...layout[AXIS_ID_ROWS],
-            ...layout[AXIS_ID_FILTERS],
-        ].filter(
-            (dim) =>
-                ![
-                    DIMENSION_ID_DATA,
-                    DIMENSION_ID_ORGUNIT,
-                    DIMENSION_ID_PERIOD,
-                ].includes(getDimensionId(dim))
-        ),
     ],
     [AXIS_ID_ROWS]: [],
     [AXIS_ID_FILTERS]: [],
