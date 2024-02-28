@@ -1,13 +1,14 @@
 # 
 # Translators:
 # Ibatov <ibatovk@who.int>, 2021
+# Philip Larsen Donnelly, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2020-05-20T21:46:25.914Z\n"
 "PO-Revision-Date: 2020-05-18 10:55+0000\n"
-"Last-Translator: Ibatov <ibatovk@who.int>, 2021\n"
+"Last-Translator: Philip Larsen Donnelly, 2024\n"
 "Language-Team: Uzbek (Cyrillic) (https://app.transifex.com/hisp-uio/teams/100509/uz@Cyrl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -136,10 +137,10 @@ msgid "December"
 msgstr "Декабрь"
 
 msgid "Week {{weekNumber}}"
-msgstr "Ҳафта {{ҳафтаРақам}}"
+msgstr "Ҳафта {{weekNumber}}"
 
 msgid "Bi-Week {{biWeekNumber}}"
-msgstr "Жуфт ҳафта {{жуфтҲафтаРақам}}"
+msgstr "Жуфт ҳафта {{biWeekNumber}}"
 
 msgid "Daily"
 msgstr "Кунлик"
