@@ -1,15 +1,15 @@
 # 
 # Translators:
-# phil_dhis2, 2023
+# Mai Nguyen <thanhmai.jica@gmail.com>, 2022
 # Viktor Varland <viktor@dhis2.org>, 2023
-# Mai Nguyen <thanhmai.jica@gmail.com>, 2023
+# Philip Larsen Donnelly, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2023-07-06T08:30:33.216Z\n"
+"POT-Creation-Date: 2023-09-27T14:15:13.876Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Mai Nguyen <thanhmai.jica@gmail.com>, 2023\n"
+"Last-Translator: Philip Larsen Donnelly, 2024\n"
 "Language-Team: Vietnamese (https://app.transifex.com/hisp-uio/teams/100509/vi/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -375,6 +375,10 @@ msgstr ""
 msgid "Write an interpretation"
 msgstr "Viết diễn giải"
 
+msgid ""
+"Other people viewing this interpretation in the future may see more data."
+msgstr ""
+
 msgid "Post interpretation"
 msgstr ""
 
@@ -386,7 +390,7 @@ msgstr "Trả lời"
 
 msgid "{{count}} replies"
 msgid_plural "{{count}} replies"
-msgstr[0] "{{đếm}} câu trả lời"
+msgstr[0] "{{count}} câu trả lời"
 
 msgid "View replies"
 msgstr ""
