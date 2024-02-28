@@ -1,18 +1,18 @@
 # 
 # Translators:
-# phil_dhis2, 2020
 # Viktor Varland <viktor@dhis2.org>, 2020
 # Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2020
 # Sheila André <sandre@saudigitus.org>, 2020
 # Ge Joao <gsimango@saudigitus.org>, 2020
+# Philip Larsen Donnelly, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2020-05-20T21:46:25.914Z\n"
 "PO-Revision-Date: 2020-05-18 10:55+0000\n"
-"Last-Translator: Ge Joao <gsimango@saudigitus.org>, 2020\n"
-"Language-Team: Portuguese (https://www.transifex.com/hisp-uio/teams/100509/pt/)\n"
+"Last-Translator: Philip Larsen Donnelly, 2024\n"
+"Language-Team: Portuguese (https://app.transifex.com/hisp-uio/teams/100509/pt/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -35,16 +35,16 @@ msgid "Detail"
 msgstr "Detalhe"
 
 msgid "Move to {{axisName}}"
-msgstr "Mover para {{Nomedoeixo}}"
+msgstr "Mover para {{axisName}}"
 
 msgid "Add to {{axisName}}"
-msgstr "Adicionar à {{Nomedoeixo}}"
+msgstr "Adicionar à {{axisName}}"
 
 msgid "Remove"
 msgstr "Remover"
 
 msgid "Not available for {{visualizationType}}"
-msgstr "Não disponível para {{Tipodevisualização}}"
+msgstr "Não disponível para {{visualizationType}}"
 
 msgid "Requires 2 or more data items"
 msgstr "Requer 2 ou mais itens de dados"
@@ -404,19 +404,19 @@ msgid "Program indicators"
 msgstr "Indicador do programa"
 
 msgid "{{dynamicOuNames}} and {{lastOuName}}"
-msgstr "{{nomesdinâmicosOu}} e {{últimoNomeOu}}"
+msgstr "{{dynamicOuNames}} e {{lastOuName}}"
 
 msgid "{{allDynamicOuNames}} levels"
-msgstr "{{tudoDynamicOuNomes}} níveis"
+msgstr "{{allDynamicOuNames}} níveis"
 
 msgid "{{allDynamicOuNames}} groups"
-msgstr "{{tudoDynamicOuNomes}} grupos"
+msgstr "{{allDynamicOuNames}} grupos"
 
 msgid "{{allDynamicOuNames}} levels in {{staticOuNames}}"
-msgstr "{{tudoDynamicOuNomes}} níveis em {{NomesestáticosOu}}"
+msgstr "{{allDynamicOuNames}} níveis em {{staticOuNames}}"
 
 msgid "{{allDynamicOuNames}} groups in {{staticOuNames}}"
-msgstr "{{tudoDynamicOuNomes}} grupos em {{NomesestáticosOu}}"
+msgstr "{{allDynamicOuNames}} grupos em {{staticOuNames}}"
 
 msgid "Organisation Unit"
 msgstr "Unidade organizacional"
