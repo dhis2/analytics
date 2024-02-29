@@ -3,7 +3,7 @@ import { IconCalendar24, colors, spacers } from '@dhis2/ui'
 import moment from 'moment'
 import PropTypes from 'prop-types'
 import React from 'react'
-import { Interpretation } from '../common/index.js'
+import ListInterpretation from './ListInterpretation.js'
 
 const sortByCreatedDateDesc = (a, b) => {
     const dateA = a.created
@@ -23,10 +23,14 @@ export const InterpretationList = ({
     interpretations,
     onInterpretationClick,
     onReplyIconClick,
-    refresh,
+    onListUpdated,
+    onLikeChanged,
     disabled,
+    fetching,
+    setInterpretationActionInProgress,
 }) => {
     const { fromServerDate } = useTimeZoneConversion()
+
     const interpretationsByDate = interpretations.reduce(
         (groupedInterpretations, interpretation) => {
             const date = interpretation.created.split('T')[0]
@@ -59,15 +63,20 @@ export const InterpretationList = ({
                             {interpretationsByDate[date]
                                 .sort(sortByCreatedDateDesc)
                                 .map((interpretation) => (
-                                    <Interpretation
+                                    <ListInterpretation
                                         key={interpretation.id}
-                                        interpretation={interpretation}
                                         currentUser={currentUser}
-                                        onClick={onInterpretationClick}
+                                        interpretation={interpretation}
+                                        onDeleted={onListUpdated}
                                         onReplyIconClick={onReplyIconClick}
-                                        onDeleted={refresh}
-                                        onUpdated={refresh}
+                                        onUpdated={onListUpdated}
+                                        onLikeChanged={onLikeChanged}
+                                        onClick={onInterpretationClick}
                                         disabled={disabled}
+                                        fetching={fetching}
+                                        setInterpretationActionInProgress={
+                                            setInterpretationActionInProgress
+                                        }
                                     />
                                 ))}
                         </ol>
@@ -113,9 +122,12 @@ export const InterpretationList = ({
 
 InterpretationList.propTypes = {
     currentUser: PropTypes.object.isRequired,
+    fetching: PropTypes.bool.isRequired,
     interpretations: PropTypes.array.isRequired,
-    refresh: PropTypes.func.isRequired,
+    setInterpretationActionInProgress: PropTypes.func.isRequired,
     onInterpretationClick: PropTypes.func.isRequired,
+    onLikeChanged: PropTypes.func.isRequired,
+    onListUpdated: PropTypes.func.isRequired,
     onReplyIconClick: PropTypes.func.isRequired,
     disabled: PropTypes.bool,
 }

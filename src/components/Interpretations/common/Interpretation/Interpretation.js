@@ -17,7 +17,6 @@ import {
 } from '../index.js'
 import { InterpretationDeleteButton } from './InterpretationDeleteButton.js'
 import { InterpretationUpdateForm } from './InterpretationUpdateForm.js'
-import { useLike } from './useLike.js'
 
 export const Interpretation = ({
     interpretation,
@@ -28,14 +27,15 @@ export const Interpretation = ({
     disabled,
     onReplyIconClick,
     isInThread,
+    toggleLike,
+    isLikedByCurrentUser,
+    toggleLikeInProgress,
+    setInterpretationActionInProgress,
+    fetching,
 }) => {
+    // console.log('Interpretation onupdated', { onUpdated, fetching })
     const [isUpdateMode, setIsUpdateMode] = useState(false)
     const [showSharingDialog, setShowSharingDialog] = useState(false)
-    const { toggleLike, isLikedByCurrentUser, toggleLikeInProgress } = useLike({
-        interpretation,
-        currentUser,
-        onComplete: onUpdated,
-    })
     const shouldShowButton = !!onClick && !disabled
 
     const interpretationAccess = getInterpretationAccess(
@@ -64,6 +64,7 @@ export const Interpretation = ({
             onComplete={onUpdated}
             text={interpretation.text}
             currentUser={currentUser}
+            fetching={fetching}
         />
     ) : (
         <Message
@@ -126,6 +127,9 @@ export const Interpretation = ({
                             <InterpretationDeleteButton
                                 id={interpretation.id}
                                 onComplete={onDeleted}
+                                setDeleteInProgress={
+                                    setInterpretationActionInProgress
+                                }
                             />
                         )}
                     </>
@@ -149,7 +153,11 @@ export const Interpretation = ({
 
 Interpretation.propTypes = {
     currentUser: PropTypes.object.isRequired,
+    fetching: PropTypes.bool.isRequired,
     interpretation: PropTypes.object.isRequired,
+    isLikedByCurrentUser: PropTypes.bool.isRequired,
+    toggleLike: PropTypes.func.isRequired,
+    toggleLikeInProgress: PropTypes.bool.isRequired,
     onDeleted: PropTypes.func.isRequired,
     onReplyIconClick: PropTypes.func.isRequired,
     onUpdated: PropTypes.func.isRequired,

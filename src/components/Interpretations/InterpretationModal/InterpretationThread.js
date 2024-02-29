@@ -1,10 +1,16 @@
-import { useTimeZoneConversion } from '@dhis2/app-runtime'
-import { IconClock16, colors } from '@dhis2/ui'
-import cx from 'classnames'
+import { useTimeZoneConversion, useDataMutation } from '@dhis2/app-runtime'
+import {
+    IconClock16,
+    CenteredContent,
+    CircularLoader,
+    Cover,
+    colors,
+} from '@dhis2/ui'
 import moment from 'moment'
 import PropTypes from 'prop-types'
-import React, { useRef, useEffect } from 'react'
+import React, { useRef, useEffect, useState } from 'react'
 import { Interpretation, getInterpretationAccess } from '../common/index.js'
+import { useLike } from '../common/Interpretation/useLike.js'
 import { Comment } from './Comment.js'
 import { CommentAddForm } from './CommentAddForm.js'
 
@@ -17,8 +23,29 @@ const InterpretationThread = ({
     onThreadUpdated,
     downloadMenuComponent: DownloadMenu,
 }) => {
+    const [commentActionInProgress, setCommentActionInProgress] =
+        useState(false)
+
+    const { toggleLike, isLikedByCurrentUser, toggleLikeInProgress } = useLike({
+        interpretation,
+        currentUser,
+        onComplete: () => onThreadUpdated(true),
+    })
     const { fromServerDate } = useTimeZoneConversion()
     const focusRef = useRef()
+
+    const saveMutationRef = useRef({
+        resource: `interpretations/${interpretation.id}/comments`,
+        type: 'create',
+        data: ({ commentText }) => commentText,
+    })
+
+    const [save, { loading: loadingNewComment }] = useDataMutation(
+        saveMutationRef.current,
+        {
+            onComplete: () => onThreadUpdated(true),
+        }
+    )
 
     useEffect(() => {
         if (initialFocus && focusRef.current) {
@@ -33,8 +60,21 @@ const InterpretationThread = ({
         currentUser
     )
 
+    const interpretationLoadingInProgress =
+        fetching ||
+        toggleLikeInProgress ||
+        loadingNewComment ||
+        commentActionInProgress
+
     return (
-        <div className={cx('container', { fetching })}>
+        <div className="container">
+            {interpretationLoadingInProgress ? (
+                <Cover>
+                    <CenteredContent>
+                        <CircularLoader />
+                    </CenteredContent>
+                </Cover>
+            ) : null}
             <div className={'title'}>
                 <IconClock16 color={colors.grey700} />
                 {moment(fromServerDate(interpretation.created)).format('LLL')}
@@ -46,14 +86,18 @@ const InterpretationThread = ({
                 <Interpretation
                     currentUser={currentUser}
                     interpretation={interpretation}
+                    isLikedByCurrentUser={isLikedByCurrentUser}
+                    toggleLike={toggleLike}
+                    toggleLikeInProgress={toggleLikeInProgress || fetching}
+                    onDeleted={onInterpretationDeleted}
                     onReplyIconClick={
                         interpretationAccess.comment
                             ? () => focusRef.current?.focus()
                             : null
                     }
                     onUpdated={() => onThreadUpdated(true)}
-                    onDeleted={onInterpretationDeleted}
                     isInThread={true}
+                    fetching={fetching}
                 />
                 <div className={'comments'}>
                     {interpretation.comments.map((comment) => (
@@ -64,6 +108,10 @@ const InterpretationThread = ({
                             interpretationId={interpretation.id}
                             onThreadUpdated={onThreadUpdated}
                             canComment={interpretationAccess.comment}
+                            fetching={fetching || commentActionInProgress}
+                            setCommentActionInProgress={
+                                setCommentActionInProgress
+                            }
                         />
                     ))}
                 </div>
@@ -72,8 +120,11 @@ const InterpretationThread = ({
                 <CommentAddForm
                     currentUser={currentUser}
                     interpretationId={interpretation.id}
-                    onSave={() => onThreadUpdated(true)}
                     focusRef={focusRef}
+                    fetching={
+                        fetching || loadingNewComment || commentActionInProgress
+                    }
+                    save={save}
                 />
             )}
             <style jsx>{`
@@ -89,30 +140,6 @@ const InterpretationThread = ({
                     max-height: calc(100vh - 285px);
                     display: flex;
                     flex-direction: column;
-                }
-
-                .container.fetching::before {
-                    content: '';
-                    position: absolute;
-                    inset: 0px;
-                    background-color: rgba(255, 255, 255, 0.8);
-                }
-
-                .container.fetching::after {
-                    content: '';
-                    position: absolute;
-                    top: calc(50% - 12px);
-                    left: calc(50% - 12px);
-                    width: 24px;
-                    height: 24px;
-                    border-width: 4px;
-                    border-style: solid;
-                    border-color: rgba(110, 122, 138, 0.15)
-                        rgba(110, 122, 138, 0.15) rgb(20, 124, 215);
-                    border-image: initial;
-                    border-radius: 50%;
-                    animation: 1s linear 0s infinite normal none running
-                        rotation;
                 }
 
                 .title {

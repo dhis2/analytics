@@ -53,6 +53,8 @@ export const InterpretationsUnit = forwardRef(
         ref
     ) => {
         const [isExpanded, setIsExpanded] = useState(true)
+        const [fetchingComplete, setFetchingComplete] = useState(true)
+        const [listUpdateInProgress, setListUpdateInProgress] = useState(false)
         const showNoTimeDimensionHelpText =
             type === 'eventVisualization' && !visualizationHasTimeDimension
 
@@ -60,26 +62,46 @@ export const InterpretationsUnit = forwardRef(
             interpretationsQuery,
             {
                 lazy: true,
+                onComplete: () => {
+                    setFetchingComplete(true)
+                    setListUpdateInProgress(false)
+                },
             }
         )
 
-        const onCompleteAction = useCallback(() => {
+        const updateInterpretationsList = useCallback(() => {
+            setFetchingComplete(false)
+            setListUpdateInProgress(true)
+            refetch({ type, id })
+        }, [type, id, refetch])
+
+        const updateLikes = useCallback(() => {
+            setFetchingComplete(false)
             refetch({ type, id })
         }, [type, id, refetch])
 
         useImperativeHandle(
             ref,
             () => ({
-                refresh: onCompleteAction,
+                refresh: updateInterpretationsList,
             }),
-            [onCompleteAction]
+            [updateInterpretationsList]
         )
 
         useEffect(() => {
             if (id) {
+                setFetchingComplete(false)
+                setListUpdateInProgress(true)
                 refetch({ type, id })
             }
         }, [type, id, renderId, refetch])
+
+        console.log('jj Unit', {
+            loading,
+            fetching,
+            fetchingComplete,
+            listUpdateInProgress,
+        })
 
         return (
             <div
@@ -87,11 +109,6 @@ export const InterpretationsUnit = forwardRef(
                     expanded: isExpanded,
                 })}
             >
-                {fetching && !loading && (
-                    <div className="fetching-loader">
-                        <CircularLoader small />
-                    </div>
-                )}
                 <div
                     className="header"
                     onClick={() => setIsExpanded(!isExpanded)}
@@ -105,7 +122,7 @@ export const InterpretationsUnit = forwardRef(
                 </div>
                 {isExpanded && (
                     <>
-                        {loading && (
+                        {(loading || listUpdateInProgress) && (
                             <div className="loader">
                                 <CircularLoader small />
                             </div>
@@ -116,23 +133,29 @@ export const InterpretationsUnit = forwardRef(
                                     currentUser={currentUser}
                                     type={type}
                                     id={id}
-                                    onSave={onCompleteAction}
+                                    onSave={updateInterpretationsList}
                                     disabled={disabled}
                                     showNoTimeDimensionHelpText={
                                         showNoTimeDimensionHelpText
                                     }
+                                    fetching={fetching || !fetchingComplete}
                                 />
                                 <InterpretationList
                                     currentUser={currentUser}
+                                    fetching={fetching || !fetchingComplete}
                                     interpretations={
                                         data.interpretations.interpretations
                                     }
                                     onInterpretationClick={
                                         onInterpretationClick
                                     }
+                                    onListUpdated={updateInterpretationsList}
+                                    onLikeChanged={updateLikes}
                                     onReplyIconClick={onReplyIconClick}
-                                    refresh={onCompleteAction}
                                     disabled={disabled}
+                                    setInterpretationActionInProgress={
+                                        setListUpdateInProgress
+                                    }
                                 />
                             </>
                         )}
