@@ -6,17 +6,17 @@
 # Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2022
 # Viktor Varland <viktor@dhis2.org>, 2022
 # Marta Vila <marta@dhis2.org>, 2023
-# Philip Larsen Donnelly, 2023
 # Janeth Cruz, 2023
 # Sergio Valenzuela <sergio.valenzuela@ehas.org>, 2023
-# Enzo Nicolas Rossi <enzo@dhis2.org>, 2023
+# Enzo Nicolas Rossi <enzo@dhis2.org>, 2024
+# Philip Larsen Donnelly, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2023-07-06T08:30:33.216Z\n"
+"POT-Creation-Date: 2023-09-27T14:15:13.876Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Enzo Nicolas Rossi <enzo@dhis2.org>, 2023\n"
+"Last-Translator: Philip Larsen Donnelly, 2024\n"
 "Language-Team: Spanish (https://app.transifex.com/hisp-uio/teams/100509/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -227,10 +227,10 @@ msgid "All metrics"
 msgstr "Todas las métricas"
 
 msgid "Move to {{axisName}}"
-msgstr "Mover a {{Nombredeleje}}"
+msgstr "Mover a {{axisName}}"
 
 msgid "Add to {{axisName}}"
-msgstr "Añadir a {{Nombredeleje}}"
+msgstr "Añadir a {{axisName}}"
 
 msgid "Not available for {{visualizationType}}"
 msgstr "No disponible para {{visualizationType}}"
@@ -398,6 +398,12 @@ msgstr "Ocultar interpretación"
 
 msgid "Write an interpretation"
 msgstr "Escribir una interpretación"
+
+msgid ""
+"Other people viewing this interpretation in the future may see more data."
+msgstr ""
+"Otras personas que vean esta interpretación en el futuro podrían ver más "
+"datos."
 
 msgid "Post interpretation"
 msgstr "Interpretación posterior"
@@ -636,15 +642,15 @@ msgstr[2] "{{count}} unidades organizativas"
 
 msgid "{{count}} levels"
 msgid_plural "{{count}} levels"
-msgstr[0] "{{contar}} nivel"
-msgstr[1] "{{contar}} niveles"
-msgstr[2] "{{contar}} niveles"
+msgstr[0] "{{count}} nivel"
+msgstr[1] "{{count}} niveles"
+msgstr[2] "{{count}} niveles"
 
 msgid "{{count}} groups"
 msgid_plural "{{count}} groups"
-msgstr[0] "{{contar}} grupo"
-msgstr[1] "{{contar}} grupos"
-msgstr[2] "{{contar}} grupos"
+msgstr[0] "{{count}} grupo"
+msgstr[1] "{{count}} grupos"
+msgstr[2] "{{count}} grupos"
 
 msgid "Selected: {{commaSeparatedListOfOrganisationUnits}}"
 msgstr "Seleccionado: {{commaSeparatedListOfOrganisationUnits}}"
@@ -653,7 +659,7 @@ msgid "Nothing selected"
 msgstr "Nada seleccionado"
 
 msgid "User organisation unit"
-msgstr "Usuario de unidad organizativa"
+msgstr "Unidad organizativa del usuario"
 
 msgid "User sub-units"
 msgstr "Subunidades de usuario"
@@ -1223,9 +1229,9 @@ msgstr "Eje {{axisId}}"
 
 msgid "{{count}} items"
 msgid_plural "{{count}} items"
-msgstr[0] "{{contar}} elemento"
-msgstr[1] "{{contar}} artículos"
-msgstr[2] "{{contar}} artículos"
+msgstr[0] "{{count}} elemento"
+msgstr[1] "{{count}} artículos"
+msgstr[2] "{{count}} artículos"
 
 msgid "Reset zoom"
 msgstr "Restablecer zoom"
