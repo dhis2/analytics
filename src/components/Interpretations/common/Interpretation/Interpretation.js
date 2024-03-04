@@ -126,7 +126,7 @@ export const Interpretation = ({
                             dataTest="interpretation-launch-in-app-button"
                         />
                     )}
-                    {interpretation.access.share && (
+                    {interpretationAccess.share && (
                         <MessageIconButton
                             iconComponent={IconShare16}
                             tooltipContent={i18n.t('Share')}
