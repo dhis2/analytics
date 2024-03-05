@@ -83,7 +83,7 @@ const InterpretationModal = ({
     })
     const interpretation = data?.interpretation
     const shouldRenderModalContent = !error && interpretation
-    const shouldCssHideModal = loading || isVisualizationLoading
+    const loadingInProgress = loading || isVisualizationLoading
     const handleClose = () => {
         if (isDirty) {
             onInterpretationUpdate()
@@ -97,6 +97,13 @@ const InterpretationModal = ({
         }
         refetch({ id: interpretationId })
     }
+
+    const onLikeToggled = ({ likedBy }) => {
+        setIsDirty(true)
+        interpretation.likedBy = likedBy
+        interpretation.likes = likedBy.length
+    }
+
     const onInterpretationDeleted = () => {
         setIsDirty(false)
         onInterpretationUpdate()
@@ -111,7 +118,7 @@ const InterpretationModal = ({
 
     return (
         <>
-            {shouldCssHideModal && (
+            {loadingInProgress && (
                 <Layer>
                     <CenteredContent>
                         <CircularLoader />
@@ -122,7 +129,7 @@ const InterpretationModal = ({
                 fluid
                 onClose={handleClose}
                 className={cx(modalCSS.className, {
-                    hidden: shouldCssHideModal,
+                    hidden: loadingInProgress,
                 })}
                 dataTest="interpretation-modal"
             >
@@ -183,6 +190,7 @@ const InterpretationModal = ({
                                         downloadMenuComponent={
                                             downloadMenuComponent
                                         }
+                                        onLikeToggled={onLikeToggled}
                                     />
                                 </div>
                             </div>

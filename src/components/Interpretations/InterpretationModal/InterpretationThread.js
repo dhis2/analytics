@@ -13,6 +13,7 @@ const InterpretationThread = ({
     fetching,
     interpretation,
     onInterpretationDeleted,
+    onLikeToggled,
     initialFocus,
     onThreadUpdated,
     downloadMenuComponent: DownloadMenu,
@@ -52,6 +53,7 @@ const InterpretationThread = ({
                 <Interpretation
                     currentUser={currentUser}
                     interpretation={interpretation}
+                    onLikeToggled={onLikeToggled}
                     onReplyIconClick={
                         interpretationAccess.comment
                             ? () => focusRef.current?.focus()
@@ -166,6 +168,7 @@ InterpretationThread.propTypes = {
     fetching: PropTypes.bool.isRequired,
     interpretation: PropTypes.object.isRequired,
     onInterpretationDeleted: PropTypes.func.isRequired,
+    onLikeToggled: PropTypes.func.isRequired,
     dashboardRedirectUrl: PropTypes.string,
     downloadMenuComponent: PropTypes.oneOfType([
         PropTypes.object,

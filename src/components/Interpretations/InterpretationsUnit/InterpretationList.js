@@ -22,6 +22,7 @@ export const InterpretationList = ({
     currentUser,
     interpretations,
     onInterpretationClick,
+    onLikeToggled,
     onReplyIconClick,
     refresh,
     disabled,
@@ -65,6 +66,7 @@ export const InterpretationList = ({
                                         interpretation={interpretation}
                                         currentUser={currentUser}
                                         onClick={onInterpretationClick}
+                                        onLikeToggled={onLikeToggled}
                                         onReplyIconClick={onReplyIconClick}
                                         onDeleted={refresh}
                                         onUpdated={refresh}
@@ -120,6 +122,7 @@ InterpretationList.propTypes = {
     interpretations: PropTypes.array.isRequired,
     refresh: PropTypes.func.isRequired,
     onInterpretationClick: PropTypes.func.isRequired,
+    onLikeToggled: PropTypes.func.isRequired,
     onReplyIconClick: PropTypes.func.isRequired,
     dashboardRedirectUrl: PropTypes.string,
     disabled: PropTypes.bool,
