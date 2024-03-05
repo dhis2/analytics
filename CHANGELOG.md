@@ -1,3 +1,17 @@
+# [26.4.0](https://github.com/dhis2/analytics/compare/v26.3.1...v26.4.0) (2024-03-04)
+
+
+### Features
+
+* update interpretations component so it can be used in dashboard items ([#1510](https://github.com/dhis2/analytics/issues/1510)) ([163abf6](https://github.com/dhis2/analytics/commit/163abf60326a97248daa019c65b4658c78701780))
+
+## [26.3.1](https://github.com/dhis2/analytics/compare/v26.3.0...v26.3.1) (2024-02-28)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([1f30bb2](https://github.com/dhis2/analytics/commit/1f30bb2db5d16c1cff95437006db64e6060ae3d2))
+
 # [26.3.0](https://github.com/dhis2/analytics/compare/v26.2.4...v26.3.0) (2024-01-25)
 
 

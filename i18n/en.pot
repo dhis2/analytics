@@ -400,11 +400,14 @@ msgstr "Unlike"
 msgid "Like"
 msgstr "Like"
 
-msgid "Share"
-msgstr "Share"
-
 msgid "See interpretation"
 msgstr "See interpretation"
+
+msgid "Open in app"
+msgstr "Open in app"
+
+msgid "Share"
+msgstr "Share"
 
 msgid "Manage sharing"
 msgstr "Manage sharing"

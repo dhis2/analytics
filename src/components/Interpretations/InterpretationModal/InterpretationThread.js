@@ -16,6 +16,7 @@ const InterpretationThread = ({
     initialFocus,
     onThreadUpdated,
     downloadMenuComponent: DownloadMenu,
+    dashboardRedirectUrl,
 }) => {
     const { fromServerDate } = useTimeZoneConversion()
     const focusRef = useRef()
@@ -34,7 +35,12 @@ const InterpretationThread = ({
     )
 
     return (
-        <div className={cx('container', { fetching })}>
+        <div
+            className={cx('container', {
+                fetching,
+                dashboard: !!dashboardRedirectUrl,
+            })}
+        >
             <div className={'title'}>
                 <IconClock16 color={colors.grey700} />
                 {moment(fromServerDate(interpretation.created)).format('LLL')}
@@ -53,6 +59,7 @@ const InterpretationThread = ({
                     }
                     onUpdated={() => onThreadUpdated(true)}
                     onDeleted={onInterpretationDeleted}
+                    dashboardRedirectUrl={dashboardRedirectUrl}
                     isInThread={true}
                 />
                 <div className={'comments'}>
@@ -83,12 +90,20 @@ const InterpretationThread = ({
                     scroll-behavior: smooth;
                 }
 
+                .dashboard .thread {
+                    overflow-y: hidden;
+                }
+
                 .container {
                     position: relative;
                     overflow: auto;
                     max-height: calc(100vh - 285px);
                     display: flex;
                     flex-direction: column;
+                }
+
+                .container.dashboard {
+                    max-height: none;
                 }
 
                 .container.fetching::before {
@@ -151,6 +166,7 @@ InterpretationThread.propTypes = {
     fetching: PropTypes.bool.isRequired,
     interpretation: PropTypes.object.isRequired,
     onInterpretationDeleted: PropTypes.func.isRequired,
+    dashboardRedirectUrl: PropTypes.string,
     downloadMenuComponent: PropTypes.oneOfType([
         PropTypes.object,
         PropTypes.func,
