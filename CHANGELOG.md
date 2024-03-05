@@ -1,3 +1,11 @@
+## [26.4.1](https://github.com/dhis2/analytics/compare/v26.4.0...v26.4.1) (2024-03-05)
+
+
+### Bug Fixes
+
+* interpretations panel renders with flashing when liking or unliking an interpretation ([#1600](https://github.com/dhis2/analytics/issues/1600)) ([bb32565](https://github.com/dhis2/analytics/commit/bb32565960a5f813aaac594b61edc2f9e53d6a4d))
+* use translated title and subtitle when available (DHIS2-16216) ([#1597](https://github.com/dhis2/analytics/issues/1597)) ([5a91391](https://github.com/dhis2/analytics/commit/5a91391272022aab14081ba65e0b103693e01daa))
+
 # [26.4.0](https://github.com/dhis2/analytics/compare/v26.3.1...v26.4.0) (2024-03-04)
 
 
