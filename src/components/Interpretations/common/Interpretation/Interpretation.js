@@ -6,6 +6,8 @@ import {
     IconShare16,
     IconThumbUp16,
     IconEdit16,
+    IconLaunch16,
+    IconView16,
 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
@@ -27,6 +29,7 @@ export const Interpretation = ({
     onDeleted,
     disabled,
     onReplyIconClick,
+    dashboardRedirectUrl,
     isInThread,
     onLikeToggled,
 }) => {
@@ -41,7 +44,9 @@ export const Interpretation = ({
                 likedBy,
             }),
     })
-    const shouldShowButton = !!onClick && !disabled
+    const shouldShowButton = Boolean(
+        !!onClick && !disabled & !dashboardRedirectUrl
+    )
 
     const interpretationAccess = getInterpretationAccess(
         interpretation,
@@ -60,6 +65,12 @@ export const Interpretation = ({
             tooltip = i18n.t('View replies')
         }
     }
+
+    // Maps still uses old url style /?id= instead of hash
+    const getAppInterpretationUrl = () =>
+        dashboardRedirectUrl.includes('?')
+            ? `${dashboardRedirectUrl}&interpretationId=${interpretation.id}`
+            : `${dashboardRedirectUrl}?interpretationId=${interpretation.id}`
 
     return isUpdateMode ? (
         <InterpretationUpdateForm
@@ -102,6 +113,24 @@ export const Interpretation = ({
                         dataTest="interpretation-reply-button"
                         viewOnly={isInThread && !interpretationAccess.comment}
                     />
+                    {dashboardRedirectUrl && !isInThread && (
+                        <MessageIconButton
+                            tooltipContent={i18n.t('See interpretation')}
+                            iconComponent={IconView16}
+                            onClick={() => onClick(interpretation.id)}
+                            dataTest="interpretation-view-button"
+                        />
+                    )}
+                    {dashboardRedirectUrl && (
+                        <MessageIconButton
+                            tooltipContent={i18n.t('Open in app')}
+                            iconComponent={IconLaunch16}
+                            onClick={() =>
+                                window.open(getAppInterpretationUrl(), '_blank')
+                            }
+                            dataTest="interpretation-launch-in-app-button"
+                        />
+                    )}
                     {interpretationAccess.share && (
                         <MessageIconButton
                             iconComponent={IconShare16}
@@ -159,6 +188,7 @@ Interpretation.propTypes = {
     onLikeToggled: PropTypes.func.isRequired,
     onReplyIconClick: PropTypes.func.isRequired,
     onUpdated: PropTypes.func.isRequired,
+    dashboardRedirectUrl: PropTypes.string,
     disabled: PropTypes.bool,
     isInThread: PropTypes.bool,
     onClick: PropTypes.func,

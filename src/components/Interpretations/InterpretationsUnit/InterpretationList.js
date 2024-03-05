@@ -26,6 +26,7 @@ export const InterpretationList = ({
     onReplyIconClick,
     refresh,
     disabled,
+    dashboardRedirectUrl,
 }) => {
     const { fromServerDate } = useTimeZoneConversion()
     const interpretationsByDate = interpretations.reduce(
@@ -70,6 +71,9 @@ export const InterpretationList = ({
                                         onDeleted={refresh}
                                         onUpdated={refresh}
                                         disabled={disabled}
+                                        dashboardRedirectUrl={
+                                            dashboardRedirectUrl
+                                        }
                                     />
                                 ))}
                         </ol>
@@ -120,5 +124,6 @@ InterpretationList.propTypes = {
     onInterpretationClick: PropTypes.func.isRequired,
     onLikeToggled: PropTypes.func.isRequired,
     onReplyIconClick: PropTypes.func.isRequired,
+    dashboardRedirectUrl: PropTypes.string,
     disabled: PropTypes.bool,
 }
