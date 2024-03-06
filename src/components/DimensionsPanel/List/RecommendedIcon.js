@@ -9,7 +9,6 @@ const RecommendedIcon = ({ isRecommended, dataTest }) =>
         <Tooltip
             content={i18n.t('Dimension recommended with selected data')}
             placement="bottom"
-            maxWidth={160}
         >
             <div style={styles.recommendedIcon} data-test={dataTest} />
         </Tooltip>
