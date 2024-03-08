@@ -12,11 +12,14 @@ import {
 } from '../rules.js'
 
 // Consts
+const validDims = [DIMENSION_ID_DATA, DIMENSION_ID_PERIOD, DIMENSION_ID_ORGUNIT]
+
 const lockableDims = [
     DIMENSION_ID_DATA,
     DIMENSION_ID_PERIOD,
     DIMENSION_ID_ORGUNIT,
 ]
+
 const disallowableDims = [
     DIMENSION_ID_DATA,
     DIMENSION_ID_PERIOD,
@@ -31,7 +34,7 @@ const allArrayItemsAreValidAxisIds = (array) =>
     allArrayItemsAreValid(array, ALL_AXIS_IDS)
 
 const allArrayItemsAreValidDimensionIds = (array) =>
-    allArrayItemsAreValid(array, lockableDims)
+    allArrayItemsAreValid(array, validDims)
 
 const onlyRulesWithProp = (ruleProp) =>
     testResourceRules.filter((rule) => rule[ruleProp])
@@ -144,8 +147,8 @@ describe("verify each rule's ", () => {
         })
     })
 
-    describe('MAX_ITEMS_PER_DIMENSION', () => {
-        const ruleProp = testResourceAllRuleProps['MAX_ITEMS_PER_DIMENSION']
+    describe('MAX_ITEMS_PER_DIM', () => {
+        const ruleProp = testResourceAllRuleProps['MAX_ITEMS_PER_DIM']
 
         testPropHasKeysAndValues(ruleProp)
         testKeysAreValidDimensionIds(ruleProp)

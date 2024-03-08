@@ -6,7 +6,7 @@ export {
     getAxisMinNumberOfDimsByVisType as getAxisMinNumberOfDimensions,
     getAxisPerLockedDimByVisType as getAxisPerLockedDimension,
     getAllLockedDimIdsByVisType as getAllLockedDimensionIds,
-    getDimensionMaxNumberOfItemsByVisType as getDimensionMaxNumberOfItems,
+    getDimMaxNumberOfItemsByVisType as getDimensionMaxNumberOfItems,
 } from './rulesHelper.js'
 
 export {

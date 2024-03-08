@@ -17,15 +17,15 @@ import { getFixedPeriodsOptionsById } from './utils/fixedPeriods.js'
 import { MONTHLY, QUARTERLY } from './utils/index.js'
 import { getRelativePeriodsOptionsById } from './utils/relativePeriods.js'
 
-const RightHeader = ({ infoText }) => (
+const RightHeader = ({ infoBoxMessage }) => (
     <>
         <p className="rightHeader">{i18n.t('Selected Periods')}</p>
-        {infoText && (
+        {infoBoxMessage && (
             <div className="info-container">
                 <div>
                     <IconInfo16 />
                 </div>
-                <span className="info-text">{infoText}</span>
+                <span className="info-text">{infoBoxMessage}</span>
             </div>
         )}
         <style jsx>{styles}</style>
@@ -33,7 +33,7 @@ const RightHeader = ({ infoText }) => (
 )
 
 RightHeader.propTypes = {
-    infoText: PropTypes.string,
+    infoBoxMessage: PropTypes.string,
 }
 
 const PeriodTransfer = ({
@@ -197,20 +197,19 @@ const PeriodTransfer = ({
             optionsWidth={TRANSFER_OPTIONS_WIDTH}
             selectedWidth={TRANSFER_SELECTED_WIDTH}
             selectedEmptyComponent={renderEmptySelection()}
-            rightHeader={<RightHeader infoText={infoBoxMessage} />}
+            rightHeader={<RightHeader infoBoxMessage={infoBoxMessage} />}
             rightFooter={rightFooter}
             options={[...allPeriods, ...selectedItems].map(({ id, name }) => ({
                 label: name,
                 value: id,
             }))}
-            renderOption={(props) => (
+            renderOption={({ value, ...props }) => (
                 <TransferOption
-                    /* eslint-disable react/prop-types */
                     {...props}
-                    active={isActive(props.value)}
+                    value={value}
+                    active={isActive(value)}
                     icon={PeriodIcon}
                     dataTest={`${dataTest}-transfer-option`}
-                    /* eslint-enable react/prop-types */
                 />
             )}
             dataTest={`${dataTest}-transfer`}

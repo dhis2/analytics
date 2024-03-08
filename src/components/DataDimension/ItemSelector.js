@@ -99,15 +99,15 @@ const EmptySelection = () => (
     </>
 )
 
-const RightHeader = ({ infoText }) => (
+const RightHeader = ({ infoBoxMessage }) => (
     <>
         <p className="rightHeader">{i18n.t('Selected Items')}</p>
-        {infoText && (
+        {infoBoxMessage && (
             <div className="info-container">
                 <div>
                     <IconInfo16 />
                 </div>
-                <span className="info-text">{infoText}</span>
+                <span className="info-text">{infoBoxMessage}</span>
             </div>
         )}
         <style jsx>{styles}</style>
@@ -115,7 +115,7 @@ const RightHeader = ({ infoText }) => (
 )
 
 RightHeader.propTypes = {
-    infoText: PropTypes.string,
+    infoBoxMessage: PropTypes.string,
 }
 
 const SourceEmptyPlaceholder = ({
@@ -497,7 +497,7 @@ const ItemSelector = ({
                 optionsWidth={TRANSFER_OPTIONS_WIDTH}
                 selectedWidth={TRANSFER_SELECTED_WIDTH}
                 selectedEmptyComponent={<EmptySelection />}
-                rightHeader={<RightHeader infoText={infoBoxMessage} />}
+                rightHeader={<RightHeader infoBoxMessage={infoBoxMessage} />}
                 rightFooter={rightFooter}
                 renderOption={(props) => (
                     <TransferOption

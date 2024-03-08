@@ -29,11 +29,11 @@ const DataDimension = ({
 
     const filterDataTypesByVersion = useCallback(
         (dataTypes) =>
-            dataTypes.filter(({ id }) =>
-                // Calculations only available from 2.40
-                id === DIMENSION_TYPE_EXPRESSION_DIMENSION_ITEM
-                    ? serverVersion.minor >= 40
-                    : true
+            dataTypes.filter(
+                ({ id }) =>
+                    // Calculations only available from 2.40
+                    id !== DIMENSION_TYPE_EXPRESSION_DIMENSION_ITEM ||
+                    serverVersion.minor >= 40
             ),
         [serverVersion.minor]
     )
