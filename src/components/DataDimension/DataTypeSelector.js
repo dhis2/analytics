@@ -14,51 +14,66 @@ const DataTypeSelector = ({
     dataTest,
 }) => {
     const { visType } = useDataDimensionContext()
+    const label = i18n.t('Data Type')
 
     return (
         <div className="container">
-            <SingleSelectField
-                label={i18n.t('Data Type')}
-                dataTest={dataTest}
-                selected={
-                    currentDataType ||
-                    (dataTypes.length === 1
-                        ? dataTypes[0].id
-                        : DIMENSION_TYPE_ALL)
-                }
-                onChange={(ref) => onChange(ref.selected)}
-                dense
-                disabled={dataTypes.length === 1}
-                helpText={
-                    dataTypes.length === 1 && visType
-                        ? i18n.t(
-                              'Only {{dataType}} can be used in {{visType}}',
-                              {
-                                  dataType:
-                                      dataTypeMap[dataTypes[0].id].getName(),
-                                  visType: getDisplayNameByVisType(visType),
-                              }
-                          )
-                        : ''
-                }
-            >
-                {dataTypes.length > 1 && (
+            {dataTypes.length === 1 ? (
+                <SingleSelectField
+                    label={label}
+                    dataTest={dataTest}
+                    selected={dataTypes[0].id}
+                    onChange={(ref) => onChange(ref.selected)}
+                    dense
+                    disabled={true}
+                    helpText={
+                        visType
+                            ? i18n.t(
+                                  'Only {{dataType}} can be used in {{visType}}',
+                                  {
+                                      dataType:
+                                          dataTypeMap[
+                                              dataTypes[0].id
+                                          ].getName(),
+                                      visType: getDisplayNameByVisType(visType),
+                                  }
+                              )
+                            : ''
+                    }
+                >
+                    {dataTypes.map((type) => (
+                        <SingleSelectOption
+                            value={type.id}
+                            key={type.id}
+                            label={type.getName()}
+                            dataTest={`${dataTest}-option-${type.id}`}
+                        />
+                    ))}
+                </SingleSelectField>
+            ) : (
+                <SingleSelectField
+                    label={label}
+                    dataTest={dataTest}
+                    selected={currentDataType || DIMENSION_TYPE_ALL}
+                    onChange={(ref) => onChange(ref.selected)}
+                    dense
+                >
                     <SingleSelectOption
                         value={DIMENSION_TYPE_ALL}
                         key={DIMENSION_TYPE_ALL}
                         label={i18n.t('All types')}
                         dataTest={`${dataTest}-option-all`}
                     />
-                )}
-                {dataTypes.map((type) => (
-                    <SingleSelectOption
-                        value={type.id}
-                        key={type.id}
-                        label={type.getName()}
-                        dataTest={`${dataTest}-option-${type.id}`}
-                    />
-                ))}
-            </SingleSelectField>
+                    {dataTypes.map((type) => (
+                        <SingleSelectOption
+                            value={type.id}
+                            key={type.id}
+                            label={type.getName()}
+                            dataTest={`${dataTest}-option-${type.id}`}
+                        />
+                    ))}
+                </SingleSelectField>
+            )}
             <style jsx>{styles}</style>
         </div>
     )
