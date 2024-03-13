@@ -17,6 +17,7 @@ class AnalyticsRequestBase {
         format = 'json',
         path,
         program,
+        trackedEntityType,
         dimensions = [],
         filters = [],
         parameters = {},
@@ -25,6 +26,7 @@ class AnalyticsRequestBase {
         this.format = format.toLowerCase()
         this.path = path
         this.program = program
+        this.trackedEntityType = trackedEntityType
 
         this.dimensions = dimensions
         this.filters = filters
@@ -63,8 +65,13 @@ class AnalyticsRequestBase {
             return dimension
         })
 
-        const endPoint = [this.endPoint, this.path, this.program]
-            .filter((e) => !!e)
+        const endPoint = [
+            this.endPoint,
+            this.path,
+            this.program,
+            this.trackedEntityType,
+        ]
+            .filter(Boolean)
             .join('/')
 
         let url = `${endPoint}.${this.format}`

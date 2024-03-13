@@ -1,11 +1,15 @@
 import sortBy from 'lodash/sortBy'
 import AnalyticsRequest from './AnalyticsRequest.js'
+import { formatRequestPath } from './utils.js'
 
 const analyticsQuery = {
     resource: 'analytics',
-    id: ({ path, program }) => {
-        return [path, program].filter(Boolean).join('/')
-    },
+    id: ({ path, program, trackedEntityType }) =>
+        formatRequestPath({
+            path,
+            program,
+            trackedEntityType,
+        }),
     params: ({ dimensions, filters, parameters }) => ({
         dimension: dimensions.length ? dimensions : undefined,
         filter: filters.length ? filters : undefined,
@@ -15,9 +19,12 @@ const analyticsQuery = {
 
 const analyticsDataQuery = {
     resource: 'analytics',
-    id: ({ path, program }) => {
-        return [path, program].filter(Boolean).join('/')
-    },
+    id: ({ path, program, trackedEntityType }) =>
+        formatRequestPath({
+            path,
+            program,
+            trackedEntityType,
+        }),
     params: ({ dimensions, filters, parameters }) => {
         return {
             dimension: dimensions.length ? dimensions : undefined,
@@ -31,9 +38,12 @@ const analyticsDataQuery = {
 
 const analyticsMetaDataQuery = {
     resource: 'analytics',
-    id: ({ path, program }) => {
-        return [path, program].filter(Boolean).join('/')
-    },
+    id: ({ path, program, trackedEntityType }) =>
+        formatRequestPath({
+            path,
+            program,
+            trackedEntityType,
+        }),
     params: ({ dimensions, filters, parameters }) => ({
         dimension: dimensions.length ? dimensions : undefined,
         filter: filters.length ? filters : undefined,
@@ -120,6 +130,7 @@ class AnalyticsBase {
                 variables: {
                     path: req.path,
                     program: req.program,
+                    trackedEntityType: req.trackedEntityType,
                     dimensions: generateDimensionStrings(req.dimensions),
                     filters: generateDimensionStrings(req.filters),
                     parameters: req.parameters,
@@ -164,6 +175,7 @@ class AnalyticsBase {
                 variables: {
                     path: req.path,
                     program: req.program,
+                    trackedEntityType: req.trackedEntityType,
                     dimensions: generateDimensionStrings(
                         req.dimensions,
                         options
