@@ -1,3 +1,10 @@
+# [26.5.0](https://github.com/dhis2/analytics/compare/v26.4.1...v26.5.0) (2024-03-13)
+
+
+### Features
+
+* add support for Outliers table vis type in DV (DHIS2-13858) ([#1598](https://github.com/dhis2/analytics/issues/1598)) ([d9b1ccd](https://github.com/dhis2/analytics/commit/d9b1ccd7529adccb8dd1579e881721d685e7cb1d))
+
 ## [26.4.1](https://github.com/dhis2/analytics/compare/v26.4.0...v26.4.1) (2024-03-05)
 
 
