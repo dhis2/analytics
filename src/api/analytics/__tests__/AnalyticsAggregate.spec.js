@@ -133,4 +133,44 @@ describe('Analytics.aggregate', () => {
                 expect(data.height).toEqual(0)
             }))
     })
+
+    describe('.getOutliersData', () => {
+        beforeEach(() => {
+            aggregate = new AnalyticsAggregate(new DataEngineMock())
+
+            request = new AnalyticsRequest()
+
+            request.withParameters({
+                dx: 'fbfJHSPpUQD,cYeuwXTCPkU',
+                pe: 'THIS_YEAR',
+                ou: 'at6UHUQatSo',
+                headers:
+                    'dxname,pename,ouname,value,absdev,modifiedzscore,median,lowerbound,upperbound',
+                algorithm: 'MOD_Z_SCORE',
+                maxResults: 100,
+                threshold: 3,
+            })
+
+            fixture = fixtures.get('/api/analytics/outlierDetection')
+
+            dataEngineMock.query.mockReturnValue(
+                Promise.resolve({ data: fixture })
+            )
+        })
+
+        it('should be a function', () => {
+            expect(aggregate.getOutliersData).toBeInstanceOf(Function)
+        })
+
+        it('should resolve a promise with data', () =>
+            aggregate.getOutliersData(request).then((data) => {
+                expect(data.metaData.items).toEqual(fixture.metaData.items)
+                expect(data.metaData.dimensions).toEqual(
+                    fixture.metaData.dimensions
+                )
+                expect(data.headers).toEqual(fixture.headers)
+                expect(data.width).toEqual(8)
+                expect(data.height).toEqual(13)
+            }))
+    })
 })
