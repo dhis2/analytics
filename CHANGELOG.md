@@ -1,3 +1,10 @@
+# [26.6.0](https://github.com/dhis2/analytics/compare/v26.5.0...v26.6.0) (2024-03-13)
+
+
+### Features
+
+* add support for trackedEntities analytics requests (DHIS2-16023) ([#1594](https://github.com/dhis2/analytics/issues/1594)) ([885af10](https://github.com/dhis2/analytics/commit/885af10022a022b1204fa9be0efa868c70b210a7))
+
 # [26.5.0](https://github.com/dhis2/analytics/compare/v26.4.1...v26.5.0) (2024-03-13)
 
 
