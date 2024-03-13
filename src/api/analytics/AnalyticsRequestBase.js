@@ -48,14 +48,14 @@ class AnalyticsRequestBase {
         // at least 1 dimension is required
         let dimensions = this.dimensions
 
-        if (options && options.sorted) {
+        if (dimensions.length && options?.sorted) {
             dimensions = sortBy(dimensions, 'dimension')
         }
 
         const encodedDimensions = dimensions.map(({ dimension, items }) => {
             if (Array.isArray(items) && items.length) {
                 const encodedItems = items.map(customEncodeURIComponent)
-                if (options && options.sorted) {
+                if (options?.sorted) {
                     encodedItems.sort()
                 }
 
@@ -74,9 +74,13 @@ class AnalyticsRequestBase {
             .filter(Boolean)
             .join('/')
 
-        return `${endPoint}.${this.format}?dimension=${encodedDimensions.join(
-            '&dimension='
-        )}`
+        let url = `${endPoint}.${this.format}`
+
+        if (encodedDimensions.length) {
+            url += `?dimension=${encodedDimensions.join('&dimension=')}`
+        }
+
+        return url
     }
 
     /**
@@ -95,14 +99,14 @@ class AnalyticsRequestBase {
     buildQuery(options) {
         let filters = this.filters
 
-        if (options && options.sorted) {
+        if (filters.length && options?.sorted) {
             filters = sortBy(filters, 'dimension')
         }
 
         const encodedFilters = filters.map(({ dimension, items }) => {
             if (Array.isArray(items) && items.length) {
                 const encodedItems = items.map(customEncodeURIComponent)
-                if (options && options.sorted) {
+                if (options?.sorted) {
                     encodedItems.sort()
                 }
 
