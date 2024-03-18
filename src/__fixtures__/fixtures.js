@@ -114,6 +114,10 @@ export default (function x() {
         require('./json/api/analytics/enrollments.json')
     )
 
+    addFixture(
+        '/api/analytics/outlierDetection',
+        require('./json/api/analytics/outlierDetection.json')
+    )
     return {
         get: getFixture,
         add: addFixture,

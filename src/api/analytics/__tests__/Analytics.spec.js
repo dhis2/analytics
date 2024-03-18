@@ -1,5 +1,6 @@
 import Analytics from '../Analytics.js'
 import AnalyticsAggregate from '../AnalyticsAggregate.js'
+import AnalyticsEnrollments from '../AnalyticsEnrollments.js'
 import AnalyticsEvents from '../AnalyticsEvents.js'
 import AnalyticsRequest from '../AnalyticsRequest.js'
 
@@ -9,6 +10,7 @@ describe('Analytics', () => {
     beforeEach(() => {
         analytics = new Analytics({
             aggregate: new AnalyticsAggregate(),
+            enrollments: new AnalyticsEnrollments(),
             events: new AnalyticsEvents(),
             request: AnalyticsRequest,
         })
@@ -24,6 +26,10 @@ describe('Analytics', () => {
 
     it('should contain an instance of AnalyticsAggregate', () => {
         expect(analytics.aggregate).toBeInstanceOf(AnalyticsAggregate)
+    })
+
+    it('should contain an instance of AnalyticsEnrollments', () => {
+        expect(analytics.enrollments).toBeInstanceOf(AnalyticsEnrollments)
     })
 
     it('should contain an instance of AnalyticsEvents', () => {

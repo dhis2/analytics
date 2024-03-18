@@ -49,17 +49,21 @@ export const InterpretationsUnit = forwardRef(
             onReplyIconClick,
             disabled,
             renderId,
+            dashboardRedirectUrl,
         },
         ref
     ) => {
         const [isExpanded, setIsExpanded] = useState(true)
+        const [interpretations, setInterpretations] = useState([])
         const showNoTimeDimensionHelpText =
             type === 'eventVisualization' && !visualizationHasTimeDimension
 
-        const { data, loading, fetching, refetch } = useDataQuery(
+        const { loading, fetching, refetch } = useDataQuery(
             interpretationsQuery,
             {
                 lazy: true,
+                onComplete: (data) =>
+                    setInterpretations(data.interpretations.interpretations),
             }
         )
 
@@ -80,6 +84,14 @@ export const InterpretationsUnit = forwardRef(
                 refetch({ type, id })
             }
         }, [type, id, renderId, refetch])
+
+        const onLikeToggled = ({ id, likedBy }) => {
+            const interpretation = interpretations.find(
+                (interp) => interp.id === id
+            )
+            interpretation.likedBy = likedBy
+            interpretation.likes = likedBy.length
+        }
 
         return (
             <div
@@ -110,7 +122,7 @@ export const InterpretationsUnit = forwardRef(
                                 <CircularLoader small />
                             </div>
                         )}
-                        {data && (
+                        {interpretations && (
                             <>
                                 <InterpretationForm
                                     currentUser={currentUser}
@@ -124,15 +136,15 @@ export const InterpretationsUnit = forwardRef(
                                 />
                                 <InterpretationList
                                     currentUser={currentUser}
-                                    interpretations={
-                                        data.interpretations.interpretations
-                                    }
+                                    interpretations={interpretations}
                                     onInterpretationClick={
                                         onInterpretationClick
                                     }
+                                    onLikeToggled={onLikeToggled}
                                     onReplyIconClick={onReplyIconClick}
                                     refresh={onCompleteAction}
                                     disabled={disabled}
+                                    dashboardRedirectUrl={dashboardRedirectUrl}
                                 />
                             </>
                         )}
@@ -194,6 +206,7 @@ InterpretationsUnit.propTypes = {
     currentUser: PropTypes.object.isRequired,
     id: PropTypes.string.isRequired,
     type: PropTypes.string.isRequired,
+    dashboardRedirectUrl: PropTypes.string,
     disabled: PropTypes.bool,
     renderId: PropTypes.number,
     visualizationHasTimeDimension: PropTypes.bool,

@@ -28,20 +28,20 @@ const GroupSelector = ({
     const defaultGroup = dataTypes[dataType]?.defaultGroup
     const subGroupType = dataTypes[dataType]?.subGroup
 
-    const fetchGroups = async () => {
-        setIsLoading(true)
-        const result = await apiFetchGroups(
-            dataEngine,
-            dataType,
-            displayNameProp
-        )
-        setGroups(result)
-        setIsLoading(false)
-    }
-
     useEffect(() => {
+        const fetchGroups = async () => {
+            setIsLoading(true)
+            const result = await apiFetchGroups(
+                dataEngine,
+                dataType,
+                displayNameProp
+            )
+            setGroups(result)
+            setIsLoading(false)
+        }
+
         fetchGroups()
-    }, [dataType])
+    }, [dataEngine, dataType, displayNameProp])
 
     return (
         <div className="container">

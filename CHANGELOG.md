@@ -1,3 +1,39 @@
+# [26.6.0](https://github.com/dhis2/analytics/compare/v26.5.0...v26.6.0) (2024-03-13)
+
+
+### Features
+
+* add support for trackedEntities analytics requests (DHIS2-16023) ([#1594](https://github.com/dhis2/analytics/issues/1594)) ([885af10](https://github.com/dhis2/analytics/commit/885af10022a022b1204fa9be0efa868c70b210a7))
+
+# [26.5.0](https://github.com/dhis2/analytics/compare/v26.4.1...v26.5.0) (2024-03-13)
+
+
+### Features
+
+* add support for Outliers table vis type in DV (DHIS2-13858) ([#1598](https://github.com/dhis2/analytics/issues/1598)) ([d9b1ccd](https://github.com/dhis2/analytics/commit/d9b1ccd7529adccb8dd1579e881721d685e7cb1d))
+
+## [26.4.1](https://github.com/dhis2/analytics/compare/v26.4.0...v26.4.1) (2024-03-05)
+
+
+### Bug Fixes
+
+* interpretations panel renders with flashing when liking or unliking an interpretation ([#1600](https://github.com/dhis2/analytics/issues/1600)) ([bb32565](https://github.com/dhis2/analytics/commit/bb32565960a5f813aaac594b61edc2f9e53d6a4d))
+* use translated title and subtitle when available (DHIS2-16216) ([#1597](https://github.com/dhis2/analytics/issues/1597)) ([5a91391](https://github.com/dhis2/analytics/commit/5a91391272022aab14081ba65e0b103693e01daa))
+
+# [26.4.0](https://github.com/dhis2/analytics/compare/v26.3.1...v26.4.0) (2024-03-04)
+
+
+### Features
+
+* update interpretations component so it can be used in dashboard items ([#1510](https://github.com/dhis2/analytics/issues/1510)) ([163abf6](https://github.com/dhis2/analytics/commit/163abf60326a97248daa019c65b4658c78701780))
+
+## [26.3.1](https://github.com/dhis2/analytics/compare/v26.3.0...v26.3.1) (2024-02-28)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([1f30bb2](https://github.com/dhis2/analytics/commit/1f30bb2db5d16c1cff95437006db64e6060ae3d2))
+
 # [26.3.0](https://github.com/dhis2/analytics/compare/v26.2.4...v26.3.0) (2024-01-25)
 
 

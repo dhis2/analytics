@@ -1,13 +1,14 @@
 # 
 # Translators:
 # Jiří Podhorecký, 2023
+# Philip Larsen Donnelly, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2023-07-06T08:30:33.216Z\n"
+"POT-Creation-Date: 2023-09-27T14:15:13.876Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Jiří Podhorecký, 2023\n"
+"Last-Translator: Philip Larsen Donnelly, 2024\n"
 "Language-Team: Czech (https://app.transifex.com/hisp-uio/teams/100509/cs/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -385,6 +386,10 @@ msgstr "Skrýt interpretaci"
 msgid "Write an interpretation"
 msgstr "Napsat interpretaci"
 
+msgid ""
+"Other people viewing this interpretation in the future may see more data."
+msgstr ""
+
 msgid "Post interpretation"
 msgstr "Vložit interpretaci"
 
@@ -638,7 +643,7 @@ msgstr[2] "{{count}} skupin"
 msgstr[3] "{{count}} skupin"
 
 msgid "Selected: {{commaSeparatedListOfOrganisationUnits}}"
-msgstr "Vybráno: {{commaSeparatedListOfOfOrganisationUnits}}"
+msgstr "Vybráno: {{commaSeparatedListOfOrganisationUnits}}"
 
 msgid "Nothing selected"
 msgstr "Není vybráno nic"
