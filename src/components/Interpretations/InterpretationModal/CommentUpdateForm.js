@@ -3,11 +3,8 @@ import i18n from '@dhis2/d2-i18n'
 import { Button, spacers, colors } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useState, useRef } from 'react'
-import {
-    MessageEditorContainer,
-    RichTextEditor,
-    MessageButtonStrip,
-} from '../common/index.js'
+import { RichTextEditor } from '../../RichText/index.js'
+import { MessageEditorContainer, MessageButtonStrip } from '../common/index.js'
 
 export const CommentUpdateForm = ({
     interpretationId,

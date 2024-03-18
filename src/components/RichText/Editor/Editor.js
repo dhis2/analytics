@@ -1,10 +1,9 @@
 import i18n from '@dhis2/d2-i18n'
-import { Parser as RichTextParser } from '@dhis2/d2-ui-rich-text'
 import {
     Button,
     Popover,
     Tooltip,
-    Field,
+    Help,
     IconAt24,
     IconFaceAdd24,
     IconLink24,
@@ -12,9 +11,11 @@ import {
     IconTextItalic24,
     colors,
 } from '@dhis2/ui'
+import cx from 'classnames'
 import PropTypes from 'prop-types'
 import React, { forwardRef, useRef, useEffect, useState } from 'react'
-import { UserMentionWrapper } from '../UserMention/UserMentionWrapper.js'
+import { UserMentionWrapper } from '../../UserMention/UserMentionWrapper.js'
+import { Parser } from '../Parser/Parser.js'
 import {
     convertCtrlKey,
     insertMarkdown,
@@ -33,22 +34,22 @@ import {
     toolbarClasses,
     tooltipAnchorClasses,
     emojisPopoverClasses,
-} from './styles/RichTextEditor.style.js'
+} from './styles/Editor.style.js'
 
 const EmojisPopover = ({ onInsertMarkdown, onClose, reference }) => (
     <Popover reference={reference} onClickOutside={onClose}>
         <ul className="emojisList">
             <li onClick={() => onInsertMarkdown(EMOJI_SMILEY_FACE)}>
-                <RichTextParser>{emojis[EMOJI_SMILEY_FACE]}</RichTextParser>
+                <Parser>{emojis[EMOJI_SMILEY_FACE]}</Parser>
             </li>
             <li onClick={() => onInsertMarkdown(EMOJI_SAD_FACE)}>
-                <RichTextParser>{emojis[EMOJI_SAD_FACE]}</RichTextParser>
+                <Parser>{emojis[EMOJI_SAD_FACE]}</Parser>
             </li>
             <li onClick={() => onInsertMarkdown(EMOJI_THUMBS_UP)}>
-                <RichTextParser>{emojis[EMOJI_THUMBS_UP]}</RichTextParser>
+                <Parser>{emojis[EMOJI_THUMBS_UP]}</Parser>
             </li>
             <li onClick={() => onInsertMarkdown(EMOJI_THUMBS_DOWN)}>
-                <RichTextParser>{emojis[EMOJI_THUMBS_DOWN]}</RichTextParser>
+                <Parser>{emojis[EMOJI_THUMBS_DOWN]}</Parser>
             </li>
         </ul>
         <style jsx>{emojisPopoverClasses}</style>
@@ -190,19 +191,35 @@ Toolbar.propTypes = {
     disabled: PropTypes.bool,
 }
 
-export const RichTextEditor = forwardRef(
+export const Editor = forwardRef(
     (
-        { value, disabled, inputPlaceholder, onChange, errorText, helpText },
+        {
+            value,
+            disabled,
+            inputPlaceholder,
+            onChange,
+            errorText,
+            helpText,
+            initialFocus,
+            resizable,
+        },
         externalRef
     ) => {
         const [previewMode, setPreviewMode] = useState(false)
         const internalRef = useRef()
         const textareaRef = externalRef || internalRef
 
-        useEffect(() => textareaRef.current?.focus(), [textareaRef])
+        useEffect(() => {
+            if (initialFocus) {
+                textareaRef.current?.focus()
+            }
+        }, [initialFocus, textareaRef])
 
         return (
-            <div className="container">
+            <div
+                className="container"
+                data-test="@dhis2-analytics-richtexteditor"
+            >
                 <Toolbar
                     onInsertMarkdown={(markdown) => {
                         insertMarkdown(
@@ -231,20 +248,18 @@ export const RichTextEditor = forwardRef(
                 />
                 {previewMode ? (
                     <div className="preview">
-                        <RichTextParser>{value}</RichTextParser>
+                        <Parser>{value}</Parser>
                     </div>
                 ) : (
-                    <Field
-                        error={!!errorText}
-                        validationText={errorText}
-                        helpText={helpText}
-                    >
+                    <div className="edit">
                         <UserMentionWrapper
                             onUserSelect={onChange}
                             inputReference={textareaRef}
                         >
                             <textarea
-                                className="textarea"
+                                className={cx('textarea', {
+                                    resizable,
+                                })}
                                 ref={textareaRef}
                                 placeholder={inputPlaceholder}
                                 disabled={disabled}
@@ -257,7 +272,11 @@ export const RichTextEditor = forwardRef(
                                 }
                             />
                         </UserMentionWrapper>
-                    </Field>
+                        {errorText && (
+                            <Help error={!!errorText}>{errorText}</Help>
+                        )}
+                        {helpText && <Help>{helpText}</Help>}
+                    </div>
                 )}
                 <style jsx>{mainClasses}</style>
             </div>
@@ -265,13 +284,20 @@ export const RichTextEditor = forwardRef(
     }
 )
 
-RichTextEditor.displayName = 'RichTextEditor'
+Editor.displayName = 'Editor'
 
-RichTextEditor.propTypes = {
+Editor.defaultProps = {
+    initialFocus: true,
+    resizable: true,
+}
+
+Editor.propTypes = {
     value: PropTypes.string.isRequired,
     onChange: PropTypes.func.isRequired,
     disabled: PropTypes.bool,
     errorText: PropTypes.string,
     helpText: PropTypes.string,
+    initialFocus: PropTypes.bool,
     inputPlaceholder: PropTypes.string,
+    resizable: PropTypes.bool,
 }

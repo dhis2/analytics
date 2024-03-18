@@ -245,5 +245,3 @@ UserMentionWrapper.propTypes = {
     onUserSelect: PropTypes.func.isRequired,
     children: PropTypes.node,
 }
-
-export default UserMentionWrapper
