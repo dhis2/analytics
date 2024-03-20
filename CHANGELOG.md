@@ -1,3 +1,10 @@
+## [24.10.3](https://github.com/dhis2/analytics/compare/v24.10.2...v24.10.3) (2024-03-20)
+
+
+### Bug Fixes
+
+* show correct date and time in About AO Unit [DHIS2-15825, DHIS2-16365] [24.x] ([#1642](https://github.com/dhis2/analytics/issues/1642)) ([1c9068c](https://github.com/dhis2/analytics/commit/1c9068c9d153798ccbd61f6b916c1ee94ec122f8))
+
 ## [24.10.2](https://github.com/dhis2/analytics/compare/v24.10.1...v24.10.2) (2023-10-25)
 
 
