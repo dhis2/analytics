@@ -38,11 +38,7 @@ const InterpretationThread = ({
                     )}
                 </div>
                 {DownloadMenu && (
-                    <DownloadMenu
-                        relativePeriodDate={fromServerDate(
-                            interpretation.created
-                        )}
-                    />
+                    <DownloadMenu relativePeriodDate={interpretation.created} />
                 )}
                 <div className={'thread'}>
                     <Interpretation
