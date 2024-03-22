@@ -13,6 +13,7 @@ const InterpretationThread = ({
     fetching,
     interpretation,
     onInterpretationDeleted,
+    onLikeToggled,
     initialFocus,
     onThreadUpdated,
     downloadMenuComponent: DownloadMenu,
@@ -47,6 +48,7 @@ const InterpretationThread = ({
                         onReplyIconClick={() => focusRef.current?.focus()}
                         onUpdated={() => onThreadUpdated(true)}
                         onDeleted={onInterpretationDeleted}
+                        onLikeToggled={onLikeToggled}
                     />
                     <div className={'comments'}>
                         {interpretation.comments.map((comment) => (
@@ -145,6 +147,7 @@ InterpretationThread.propTypes = {
     fetching: PropTypes.bool.isRequired,
     interpretation: PropTypes.object.isRequired,
     onInterpretationDeleted: PropTypes.func.isRequired,
+    onLikeToggled: PropTypes.func.isRequired,
     downloadMenuComponent: PropTypes.oneOfType([
         PropTypes.object,
         PropTypes.func,

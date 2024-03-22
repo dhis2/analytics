@@ -7,11 +7,28 @@ const useLike = ({ interpretation, currentUser, onComplete }) => {
     const unlikeMutationRef = useRef({ resource, type: 'delete' })
     const [like, { loading: likeLoading }] = useDataMutation(
         likeMutationRef.current,
-        { onComplete }
+        {
+            onComplete: () => {
+                const newLikedBy = interpretation.likedBy.concat({
+                    id: currentUser.id,
+                })
+                setIsLikedByCurrentUser(true)
+                onComplete(newLikedBy)
+            },
+        }
     )
     const [unlike, { loading: unlikeLoading }] = useDataMutation(
         unlikeMutationRef.current,
-        { onComplete }
+        {
+            onComplete: () => {
+                const newLikedBy = interpretation.likedBy.filter(
+                    (lb) => lb.id !== currentUser.id
+                )
+
+                setIsLikedByCurrentUser(false)
+                onComplete(newLikedBy)
+            },
+        }
     )
     const [isLikedByCurrentUser, setIsLikedByCurrentUser] = useState(false)
     const toggleLike = () => {
