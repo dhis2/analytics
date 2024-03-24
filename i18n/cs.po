@@ -1,14 +1,14 @@
 # 
 # Translators:
-# Jiří Podhorecký, 2023
 # Philip Larsen Donnelly, 2024
+# Jiří Podhorecký, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2023-09-27T14:15:13.876Z\n"
+"POT-Creation-Date: 2024-01-25T12:05:03.360Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Philip Larsen Donnelly, 2024\n"
+"Last-Translator: Jiří Podhorecký, 2024\n"
 "Language-Team: Czech (https://app.transifex.com/hisp-uio/teams/100509/cs/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -160,6 +160,9 @@ msgstr "Matematické operátory"
 msgid "Data Type"
 msgstr "Typ dat"
 
+msgid "Only {{dataType}} can be used in {{visType}}"
+msgstr ""
+
 msgid "All types"
 msgstr "Všechny typy"
 
@@ -190,6 +193,9 @@ msgstr "Nebyly nalezeny žádné datové položky události"
 msgid "No program indicators found"
 msgstr "Nebyly nalezeny žádné programové indikátory"
 
+msgid "No calculations found"
+msgstr "Nenalezeny žádné výpočty"
+
 msgid "No indicators found for \"{{- searchTerm}}\""
 msgstr "Nebyly nalezeny žádné indikátory pro „{{- searchTerm}}“"
 
@@ -201,6 +207,9 @@ msgstr "Pro „{{- searchTerm}}“ nebyly nalezeny žádné datové položky ud�
 
 msgid "No program indicators found for \"{{- searchTerm}}\""
 msgstr "Nebyly nalezeny žádné programové indikátory pro „{{- searchTerm}}“"
+
+msgid "No calculations found for \"{{- searchTerm}}\""
+msgstr ""
 
 msgid "Nothing found for \"{{- searchTerm}}\""
 msgstr "Pro dotaz „{{- searchTerm}}“ nebylo nic nalezeno"
@@ -415,11 +424,14 @@ msgstr "Na rozdíl od"
 msgid "Like"
 msgstr "Jako"
 
-msgid "Share"
-msgstr "Sdílet"
-
 msgid "See interpretation"
 msgstr "Zobrazit interpretaci"
+
+msgid "Open in app"
+msgstr ""
+
+msgid "Share"
+msgstr "Sdílet"
 
 msgid "Manage sharing"
 msgstr "Spravovat sdílení"
@@ -678,14 +690,14 @@ msgstr "Vybrat rok"
 msgid "Period"
 msgstr "Období"
 
+msgid "Selected Periods"
+msgstr "Vybraná období"
+
 msgid "Relative periods"
 msgstr "Relativní období"
 
 msgid "Fixed periods"
 msgstr "Pevné období"
-
-msgid "Selected Periods"
-msgstr "Vybraná období"
 
 msgid "No periods selected"
 msgstr "Nejsou vybrána žádná období"
@@ -1187,6 +1199,9 @@ msgstr "Rozptyl"
 
 msgid "Single value"
 msgstr "Jedna hodnota"
+
+msgid "Outlier table"
+msgstr ""
 
 msgid "All charts"
 msgstr "Všechny grafy"
