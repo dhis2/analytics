@@ -1,3 +1,10 @@
+## [24.10.4](https://github.com/dhis2/analytics/compare/v24.10.3...v24.10.4) (2024-04-02)
+
+
+### Bug Fixes
+
+* interpretations panel renders with flashing when liking or unliking an interpretation ([#1643](https://github.com/dhis2/analytics/issues/1643)) ([4148bf9](https://github.com/dhis2/analytics/commit/4148bf9ae1c8aa386abd7b2b7ad2c01636d8b06d)), closes [#1600](https://github.com/dhis2/analytics/issues/1600)
+
 ## [24.10.3](https://github.com/dhis2/analytics/compare/v24.10.2...v24.10.3) (2024-03-20)
 
 
