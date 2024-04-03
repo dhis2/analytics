@@ -2,15 +2,15 @@
 # Translators:
 # Viktor Varland <viktor@dhis2.org>, 2021
 # 晓东 林 <13981924470@126.com>, 2023
-# easylin <lin_xd@126.com>, 2023
 # Philip Larsen Donnelly, 2024
+# easylin <lin_xd@126.com>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2023-09-27T14:15:13.876Z\n"
+"POT-Creation-Date: 2024-01-25T12:05:03.360Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Philip Larsen Donnelly, 2024\n"
+"Last-Translator: easylin <lin_xd@126.com>, 2024\n"
 "Language-Team: Chinese (https://app.transifex.com/hisp-uio/teams/100509/zh/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -155,6 +155,9 @@ msgstr "数学运算符"
 msgid "Data Type"
 msgstr "数据类型"
 
+msgid "Only {{dataType}} can be used in {{visType}}"
+msgstr "{{dataType}} 只能在 {{visType}} 中使用"
+
 msgid "All types"
 msgstr "所有类型"
 
@@ -185,6 +188,9 @@ msgstr "找不到事件数据项"
 msgid "No program indicators found"
 msgstr "找不到项目指标"
 
+msgid "No calculations found"
+msgstr "没有找到计算结果"
+
 msgid "No indicators found for \"{{- searchTerm}}\""
 msgstr "找不到“ {{- searchTerm}}”的指标"
 
@@ -196,6 +202,9 @@ msgstr "找不到“ {{- searchTerm}}”的事件数据项"
 
 msgid "No program indicators found for \"{{- searchTerm}}\""
 msgstr "找不到“ {{- searchTerm}}”的计划指标"
+
+msgid "No calculations found for \"{{- searchTerm}}\""
+msgstr "找不到“{{- searchTerm}}”的计算"
 
 msgid "Nothing found for \"{{- searchTerm}}\""
 msgstr "找不到“ {{- searchTerm}}”"
@@ -402,11 +411,14 @@ msgstr "不喜欢"
 msgid "Like"
 msgstr "喜欢"
 
-msgid "Share"
-msgstr "分享"
-
 msgid "See interpretation"
 msgstr "见解释"
+
+msgid "Open in app"
+msgstr "在应用程序中打开"
+
+msgid "Share"
+msgstr "分享"
 
 msgid "Manage sharing"
 msgstr "管理共享"
@@ -637,14 +649,14 @@ msgstr "选择年份"
 msgid "Period"
 msgstr "期间"
 
+msgid "Selected Periods"
+msgstr "选择的期间"
+
 msgid "Relative periods"
 msgstr "相对期间"
 
 msgid "Fixed periods"
 msgstr "固定期间"
-
-msgid "Selected Periods"
-msgstr "选择的期间"
 
 msgid "No periods selected"
 msgstr "未选择期间"
@@ -1146,6 +1158,9 @@ msgstr "分散"
 
 msgid "Single value"
 msgstr "单个值"
+
+msgid "Outlier table"
+msgstr "异常值表"
 
 msgid "All charts"
 msgstr "所有图表"
