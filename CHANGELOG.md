@@ -1,3 +1,10 @@
+## [24.10.5](https://github.com/dhis2/analytics/compare/v24.10.4...v24.10.5) (2024-04-03)
+
+
+### Bug Fixes
+
+* avoid crash in DV with some chart types (DHIS2-15882) [24.x] ([#1651](https://github.com/dhis2/analytics/issues/1651)) ([68907d2](https://github.com/dhis2/analytics/commit/68907d2ef4dc1e200eeaa03c2b092229a68b9a99)), closes [#1582](https://github.com/dhis2/analytics/issues/1582)
+
 ## [24.10.4](https://github.com/dhis2/analytics/compare/v24.10.3...v24.10.4) (2024-04-02)
 
 
