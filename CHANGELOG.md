@@ -1,3 +1,10 @@
+# [21.10.0](https://github.com/dhis2/analytics/compare/v21.9.1...v21.10.0) (2024-04-09)
+
+
+### Features
+
+* disable Save button when onSave not passed (TECH-1013) ([#1652](https://github.com/dhis2/analytics/issues/1652)) ([b8e17fb](https://github.com/dhis2/analytics/commit/b8e17fba1243188ff28b0813e26528f2b1810553))
+
 ## [21.9.1](https://github.com/dhis2/analytics/compare/v21.9.0...v21.9.1) (2023-10-05)
 
 
