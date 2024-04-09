@@ -1,3 +1,17 @@
+## [24.10.5](https://github.com/dhis2/analytics/compare/v24.10.4...v24.10.5) (2024-04-03)
+
+
+### Bug Fixes
+
+* avoid crash in DV with some chart types (DHIS2-15882) [24.x] ([#1651](https://github.com/dhis2/analytics/issues/1651)) ([68907d2](https://github.com/dhis2/analytics/commit/68907d2ef4dc1e200eeaa03c2b092229a68b9a99)), closes [#1582](https://github.com/dhis2/analytics/issues/1582)
+
+## [24.10.4](https://github.com/dhis2/analytics/compare/v24.10.3...v24.10.4) (2024-04-02)
+
+
+### Bug Fixes
+
+* interpretations panel renders with flashing when liking or unliking an interpretation ([#1643](https://github.com/dhis2/analytics/issues/1643)) ([4148bf9](https://github.com/dhis2/analytics/commit/4148bf9ae1c8aa386abd7b2b7ad2c01636d8b06d)), closes [#1600](https://github.com/dhis2/analytics/issues/1600)
+
 ## [24.10.3](https://github.com/dhis2/analytics/compare/v24.10.2...v24.10.3) (2024-03-20)
 
 
