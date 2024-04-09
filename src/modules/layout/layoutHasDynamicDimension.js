@@ -7,7 +7,8 @@ export const layoutHasDynamicDimension = (layout) => {
 
     return Boolean(
         layoutGetAllDimensions(layout).find(
-            (dimension) => !fixedIds.includes(dimensionGetId(dimension))
+            (dimension) =>
+                !fixedIds.includes(dimensionGetId(dimension, layout.outputType))
         )
     )
 }

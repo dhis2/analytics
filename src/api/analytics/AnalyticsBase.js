@@ -1,27 +1,34 @@
 import sortBy from 'lodash/sortBy'
 import AnalyticsRequest from './AnalyticsRequest.js'
+import { formatRequestPath } from './utils.js'
 
 const analyticsQuery = {
     resource: 'analytics',
-    id: ({ path, program }) => {
-        return [path, program].filter(Boolean).join('/')
-    },
+    id: ({ path, program, trackedEntityType }) =>
+        formatRequestPath({
+            path,
+            program,
+            trackedEntityType,
+        }),
     params: ({ dimensions, filters, parameters }) => ({
-        dimension: dimensions,
-        filter: filters,
+        dimension: dimensions.length ? dimensions : undefined,
+        filter: filters.length ? filters : undefined,
         ...parameters,
     }),
 }
 
 const analyticsDataQuery = {
     resource: 'analytics',
-    id: ({ path, program }) => {
-        return [path, program].filter(Boolean).join('/')
-    },
+    id: ({ path, program, trackedEntityType }) =>
+        formatRequestPath({
+            path,
+            program,
+            trackedEntityType,
+        }),
     params: ({ dimensions, filters, parameters }) => {
         return {
-            dimension: dimensions,
-            filter: filters,
+            dimension: dimensions.length ? dimensions : undefined,
+            filter: filters.length ? filters : undefined,
             ...parameters,
             skipMeta: true,
             skipData: false,
@@ -31,12 +38,15 @@ const analyticsDataQuery = {
 
 const analyticsMetaDataQuery = {
     resource: 'analytics',
-    id: ({ path, program }) => {
-        return [path, program].filter(Boolean).join('/')
-    },
+    id: ({ path, program, trackedEntityType }) =>
+        formatRequestPath({
+            path,
+            program,
+            trackedEntityType,
+        }),
     params: ({ dimensions, filters, parameters }) => ({
-        dimension: dimensions,
-        filter: filters,
+        dimension: dimensions.length ? dimensions : undefined,
+        filter: filters.length ? filters : undefined,
         ...parameters,
         skipMeta: false,
         skipData: true,
@@ -44,7 +54,7 @@ const analyticsMetaDataQuery = {
     }),
 }
 
-const generateDimensionStrings = (dimensions = [], options) => {
+export const generateDimensionStrings = (dimensions = [], options) => {
     if (options && options.sorted) {
         dimensions = sortBy(dimensions, 'dimension')
     }
@@ -120,6 +130,7 @@ class AnalyticsBase {
                 variables: {
                     path: req.path,
                     program: req.program,
+                    trackedEntityType: req.trackedEntityType,
                     dimensions: generateDimensionStrings(req.dimensions),
                     filters: generateDimensionStrings(req.filters),
                     parameters: req.parameters,
@@ -164,6 +175,7 @@ class AnalyticsBase {
                 variables: {
                     path: req.path,
                     program: req.program,
+                    trackedEntityType: req.trackedEntityType,
                     dimensions: generateDimensionStrings(
                         req.dimensions,
                         options

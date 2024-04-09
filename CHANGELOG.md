@@ -1,3 +1,67 @@
+## [26.6.1](https://github.com/dhis2/analytics/compare/v26.6.0...v26.6.1) (2024-03-24)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([6362f7e](https://github.com/dhis2/analytics/commit/6362f7ec35219997971531345fdde81021493129))
+
+# [26.6.0](https://github.com/dhis2/analytics/compare/v26.5.0...v26.6.0) (2024-03-13)
+
+
+### Features
+
+* add support for trackedEntities analytics requests (DHIS2-16023) ([#1594](https://github.com/dhis2/analytics/issues/1594)) ([885af10](https://github.com/dhis2/analytics/commit/885af10022a022b1204fa9be0efa868c70b210a7))
+
+# [26.5.0](https://github.com/dhis2/analytics/compare/v26.4.1...v26.5.0) (2024-03-13)
+
+
+### Features
+
+* add support for Outliers table vis type in DV (DHIS2-13858) ([#1598](https://github.com/dhis2/analytics/issues/1598)) ([d9b1ccd](https://github.com/dhis2/analytics/commit/d9b1ccd7529adccb8dd1579e881721d685e7cb1d))
+
+## [26.4.1](https://github.com/dhis2/analytics/compare/v26.4.0...v26.4.1) (2024-03-05)
+
+
+### Bug Fixes
+
+* interpretations panel renders with flashing when liking or unliking an interpretation ([#1600](https://github.com/dhis2/analytics/issues/1600)) ([bb32565](https://github.com/dhis2/analytics/commit/bb32565960a5f813aaac594b61edc2f9e53d6a4d))
+* use translated title and subtitle when available (DHIS2-16216) ([#1597](https://github.com/dhis2/analytics/issues/1597)) ([5a91391](https://github.com/dhis2/analytics/commit/5a91391272022aab14081ba65e0b103693e01daa))
+
+# [26.4.0](https://github.com/dhis2/analytics/compare/v26.3.1...v26.4.0) (2024-03-04)
+
+
+### Features
+
+* update interpretations component so it can be used in dashboard items ([#1510](https://github.com/dhis2/analytics/issues/1510)) ([163abf6](https://github.com/dhis2/analytics/commit/163abf60326a97248daa019c65b4658c78701780))
+
+## [26.3.1](https://github.com/dhis2/analytics/compare/v26.3.0...v26.3.1) (2024-02-28)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([1f30bb2](https://github.com/dhis2/analytics/commit/1f30bb2db5d16c1cff95437006db64e6060ae3d2))
+
+# [26.3.0](https://github.com/dhis2/analytics/compare/v26.2.4...v26.3.0) (2024-01-25)
+
+
+### Features
+
+* add classname prop to hover-menu-dropdown ([57eb703](https://github.com/dhis2/analytics/commit/57eb703a4227e6496d021fdb17d6d4fd0e935eb9))
+
+## [26.2.4](https://github.com/dhis2/analytics/compare/v26.2.3...v26.2.4) (2024-01-21)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([41aa57f](https://github.com/dhis2/analytics/commit/41aa57ff24e790b8db2e21d916b22fb03d6878b2))
+
+## [26.2.3](https://github.com/dhis2/analytics/compare/v26.2.2...v26.2.3) (2024-01-19)
+
+
+### Bug Fixes
+
+* adjust width of interpretation reply input when in focus [DHIS2-16429] ([#1607](https://github.com/dhis2/analytics/issues/1607)) ([14fbfb5](https://github.com/dhis2/analytics/commit/14fbfb5bbfbbaa430631d39b8ca77c68817f10a4))
+
 ## [26.2.2](https://github.com/dhis2/analytics/compare/v26.2.1...v26.2.2) (2024-01-02)
 
 
