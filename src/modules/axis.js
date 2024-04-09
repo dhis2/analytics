@@ -11,6 +11,7 @@ import {
     LAYOUT_TYPE_PIVOT_TABLE,
     LAYOUT_TYPE_SCATTER,
     LAYOUT_TYPE_LINE_LIST,
+    LAYOUT_TYPE_OUTLIER_TABLE,
 } from './layoutTypes.js'
 
 const getAxisNamesByLayoutType = (layoutType) => {
@@ -39,6 +40,10 @@ const getAxisNamesByLayoutType = (layoutType) => {
             return {
                 [AXIS_ID_ROWS]: i18n.t('Points'),
                 [AXIS_ID_FILTERS]: i18n.t('Filter'),
+            }
+        case LAYOUT_TYPE_OUTLIER_TABLE:
+            return {
+                [AXIS_ID_COLUMNS]: i18n.t('Columns'),
             }
     }
 }

@@ -77,18 +77,7 @@ exports[`The Period Selector component matches the snapshot 1`] = `
   optionsWidth="420px"
   renderOption={[Function]}
   rightFooter={<React.Fragment />}
-  rightHeader={
-    <React.Fragment>
-      <p
-        className="rightHeader"
-      >
-        Selected Periods
-      </p>
-      <style>
-        
-      </style>
-    </React.Fragment>
-  }
+  rightHeader={<RightHeader />}
   selected={Array []}
   selectedEmptyComponent={
     <React.Fragment>

@@ -55,8 +55,10 @@ export default function (layout, metaData, dashboard) {
         return title
     }
 
-    if (isString(layout.title) && layout.title.length) {
-        title.text = layout.title
+    const customTitle = (layout.title && layout.displayTitle) || layout.title
+
+    if (isString(customTitle) && customTitle.length) {
+        title.text = customTitle
     } else {
         switch (layout.type) {
             case VIS_TYPE_GAUGE:
