@@ -189,14 +189,18 @@ export const FileMenu = ({
                                 icon={
                                     <IconSave24
                                         color={
-                                            !fileObject?.id ||
-                                            fileObject?.access?.update
-                                                ? iconActiveColor
-                                                : iconInactiveColor
+                                            !onSave ||
+                                            !(
+                                                !fileObject?.id ||
+                                                fileObject?.access?.update
+                                            )
+                                                ? iconInactiveColor
+                                                : iconActiveColor
                                         }
                                     />
                                 }
                                 disabled={
+                                    !onSave ||
                                     !(
                                         !fileObject?.id ||
                                         fileObject?.access?.update
@@ -344,7 +348,6 @@ FileMenu.defaultProps = {
     onNew: Function.prototype,
     onOpen: Function.prototype,
     onRename: Function.prototype,
-    onSave: Function.prototype,
     onSaveAs: Function.prototype,
     onTranslate: Function.prototype,
 }
