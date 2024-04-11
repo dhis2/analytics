@@ -13,9 +13,8 @@ import {
     CircularLoader,
 } from '@dhis2/ui'
 import cx from 'classnames'
-import debounce from 'lodash/debounce.js'
 import PropTypes from 'prop-types'
-import React, { useEffect, useState, useMemo, useRef } from 'react'
+import React, { useEffect, useState, useMemo, useCallback } from 'react'
 import css from 'styled-jsx/css'
 import { InterpretationThread } from './InterpretationThread.js'
 import { useModalContentWidth } from './useModalContentWidth.js'
@@ -76,10 +75,10 @@ const InterpretationModal = ({
     initialFocus,
     pluginComponent: VisualizationPlugin,
 }) => {
-    const visWrapRef = useRef(null)
     const modalContentWidth = useModalContentWidth()
     const modalContentCSS = getModalContentCSS(modalContentWidth)
     const [isDirty, setIsDirty] = useState(false)
+    const [size, setSize] = useState({ width: 0, height: 0 })
     const { data, error, loading, fetching, refetch } = useDataQuery(query, {
         lazy: true,
     })
@@ -118,35 +117,39 @@ const InterpretationModal = ({
         }
     }, [interpretationId, refetch])
 
-    const filters = useMemo(
-        () => ({
+    const visWrapRef = useCallback((node) => {
+        console.log(
+            'jj InterpretationModal visWrapRef 2',
+            node?.clientWidth,
+            node?.clientHeight
+        )
+        if (
+            node === null ||
+            // This avoids a state update when closing the intepretations modal
+            (node.clientWidth === 0 && node.clientHeight === 0)
+        ) {
+            return
+        }
+
+        const adjustSize = () =>
+            setSize({
+                width: node.clientWidth,
+                height: node.clientHeight,
+            })
+
+        const sizeObserver = new window.ResizeObserver(adjustSize)
+        sizeObserver.observe(node)
+
+        adjustSize()
+
+        return sizeObserver.disconnect
+    }, [])
+
+    const filters = useMemo(() => {
+        return {
             relativePeriodDate: interpretation?.created,
-        }),
-        [interpretation?.created]
-    )
-
-    // const [mydimensions, setMyDimensions] = useState({})
-    // useEffect(() => {
-    //     const handleResize = debounce(() => {
-    //         const rect = visWrapRef.current?.getBoundingClientRect()
-    //         const width = Math.floor(rect.width)
-    //         const widthObj = { width }
-    //         console.log('jj setDimensions to', widthObj)
-    //         setMyDimensions(widthObj)
-    //     }, 50)
-    //     window.addEventListener('resize', handleResize)
-    //     return () => {
-    //         window.removeEventListener('resize', handleResize)
-    //     }
-    // }, [])
-
-    // console.log('jj dimensions here:', mydimensions)
-
-    const getStyle = () => {
-        const rect = visWrapRef.current?.getBoundingClientRect()
-        const width = Math.floor(rect?.width) || null
-        return width ? { width, height: '100%' } : { height: '100%' }
-    }
+        }
+    }, [interpretation?.created])
 
     return (
         <>
@@ -207,7 +210,7 @@ const InterpretationModal = ({
                                             currentUser.settings
                                                 ?.keyAnalysisDisplayProperty
                                         }
-                                        style={getStyle()}
+                                        style={size}
                                     />
                                 </div>
                                 <div className="thread-wrap">
@@ -271,11 +274,6 @@ const InterpretationModal = ({
                     .visualisation-wrap {
                         flex-grow: 1;
                         min-width: 0;
-                        display: flex;
-                        justify-content: center;
-                        height: 100%;
-                        overflow: hidden;
-                        position: relative;
                     }
 
                     .thread-wrap {
