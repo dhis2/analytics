@@ -14,7 +14,7 @@ import {
 } from '@dhis2/ui'
 import cx from 'classnames'
 import PropTypes from 'prop-types'
-import React, { useEffect, useState, useMemo, useCallback } from 'react'
+import React, { useEffect, useState, useMemo } from 'react'
 import css from 'styled-jsx/css'
 import { InterpretationThread } from './InterpretationThread.js'
 import { useModalContentWidth } from './useModalContentWidth.js'
@@ -78,7 +78,6 @@ const InterpretationModal = ({
     const modalContentWidth = useModalContentWidth()
     const modalContentCSS = getModalContentCSS(modalContentWidth)
     const [isDirty, setIsDirty] = useState(false)
-    const [size, setSize] = useState({ width: 0, height: 0 })
     const { data, error, loading, fetching, refetch } = useDataQuery(query, {
         lazy: true,
     })
@@ -116,34 +115,6 @@ const InterpretationModal = ({
             refetch({ id: interpretationId })
         }
     }, [interpretationId, refetch])
-
-    const visWrapRef = useCallback((node) => {
-        console.log(
-            'jj InterpretationModal visWrapRef 2',
-            node?.clientWidth,
-            node?.clientHeight
-        )
-        if (
-            node === null ||
-            // This avoids a state update when closing the intepretations modal
-            (node.clientWidth === 0 && node.clientHeight === 0)
-        ) {
-            return
-        }
-
-        const adjustSize = () =>
-            setSize({
-                width: node.clientWidth,
-                height: node.clientHeight,
-            })
-
-        const sizeObserver = new window.ResizeObserver(adjustSize)
-        sizeObserver.observe(node)
-
-        adjustSize()
-
-        return sizeObserver.disconnect
-    }, [])
 
     const filters = useMemo(() => {
         return {
@@ -196,10 +167,7 @@ const InterpretationModal = ({
                         )}
                         {shouldRenderModalContent && (
                             <div className="row">
-                                <div
-                                    className="visualisation-wrap"
-                                    ref={visWrapRef}
-                                >
+                                <div className="visualisation-wrap">
                                     <VisualizationPlugin
                                         filters={filters}
                                         visualization={visualization}
@@ -210,7 +178,6 @@ const InterpretationModal = ({
                                             currentUser.settings
                                                 ?.keyAnalysisDisplayProperty
                                         }
-                                        style={size}
                                     />
                                 </div>
                                 <div className="thread-wrap">
