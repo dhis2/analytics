@@ -8,15 +8,15 @@
 # Marta Vila <marta@dhis2.org>, 2023
 # Janeth Cruz, 2023
 # Sergio Valenzuela <sergio.valenzuela@ehas.org>, 2023
-# Enzo Nicolas Rossi <enzo@dhis2.org>, 2024
 # Philip Larsen Donnelly, 2024
+# Enzo Nicolas Rossi <enzo@dhis2.org>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2023-09-27T14:15:13.876Z\n"
+"POT-Creation-Date: 2024-01-25T12:05:03.360Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Philip Larsen Donnelly, 2024\n"
+"Last-Translator: Enzo Nicolas Rossi <enzo@dhis2.org>, 2024\n"
 "Language-Team: Spanish (https://app.transifex.com/hisp-uio/teams/100509/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -171,6 +171,9 @@ msgstr "Operadores matemáticos"
 msgid "Data Type"
 msgstr "Tipo de datos"
 
+msgid "Only {{dataType}} can be used in {{visType}}"
+msgstr "Sólo {{dataType}} se puede utilizar en {{visType}}"
+
 msgid "All types"
 msgstr "Todos los tipos"
 
@@ -201,6 +204,9 @@ msgstr "No se encontraron elementos para datos de eventos"
 msgid "No program indicators found"
 msgstr "No se han encontrado indicadores de programa"
 
+msgid "No calculations found"
+msgstr "No se encontraron cálculos"
+
 msgid "No indicators found for \"{{- searchTerm}}\""
 msgstr "No se han encontrado indicadores para \"{{- searchTerm}}\""
 
@@ -213,6 +219,9 @@ msgstr ""
 
 msgid "No program indicators found for \"{{- searchTerm}}\""
 msgstr "No se han encontrado indicadores de programa para \"{{- searchTerm}}\""
+
+msgid "No calculations found for \"{{- searchTerm}}\""
+msgstr "No se encontraron cálculos para \"{{- searchTerm}}\""
 
 msgid "Nothing found for \"{{- searchTerm}}\""
 msgstr "No se encontró nada para \"{{- searchTerm}}\""
@@ -429,11 +438,14 @@ msgstr "diferente a"
 msgid "Like"
 msgstr "como"
 
-msgid "Share"
-msgstr "Compartir"
-
 msgid "See interpretation"
 msgstr "Ver interpretación"
+
+msgid "Open in app"
+msgstr "Abrir en la aplicación"
+
+msgid "Share"
+msgstr "Compartir"
 
 msgid "Manage sharing"
 msgstr "Administrar compartir"
@@ -688,14 +700,14 @@ msgstr "Seleccionar año"
 msgid "Period"
 msgstr "Periodo"
 
+msgid "Selected Periods"
+msgstr "Periodos seleccionados"
+
 msgid "Relative periods"
 msgstr "Periodos relativos"
 
 msgid "Fixed periods"
 msgstr "Periodos fijos"
-
-msgid "Selected Periods"
-msgstr "Periodos seleccionados"
 
 msgid "No periods selected"
 msgstr "No se ha seleccionado ningún periodo"
@@ -1199,6 +1211,9 @@ msgstr "Dispersión"
 
 msgid "Single value"
 msgstr "Valor único"
+
+msgid "Outlier table"
+msgstr "tabla de valores atípicos"
 
 msgid "All charts"
 msgstr "Todos los gráficos"
