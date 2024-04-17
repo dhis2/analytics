@@ -178,6 +178,7 @@ const InterpretationModal = ({
                                             currentUser.settings
                                                 ?.keyAnalysisDisplayProperty
                                         }
+                                        isInModal={true}
                                     />
                                 </div>
                                 <div className="thread-wrap">
