@@ -1,3 +1,10 @@
+## [26.6.3](https://github.com/dhis2/analytics/compare/v26.6.2...v26.6.3) (2024-04-19)
+
+
+### Bug Fixes
+
+* **aboutAOUnit:** newlines missing in AO description  ([#1655](https://github.com/dhis2/analytics/issues/1655)) ([98580ae](https://github.com/dhis2/analytics/commit/98580ae8c9a7b0cb723a4712bf2da953b2e6b613))
+
 ## [26.6.2](https://github.com/dhis2/analytics/compare/v26.6.1...v26.6.2) (2024-04-14)
 
 
