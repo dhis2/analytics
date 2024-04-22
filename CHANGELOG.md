@@ -1,3 +1,24 @@
+## [26.6.4](https://github.com/dhis2/analytics/compare/v26.6.3...v26.6.4) (2024-04-21)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([4b35e69](https://github.com/dhis2/analytics/commit/4b35e6910db17ddbd96b4030ee528b82f045b7e4))
+
+## [26.6.3](https://github.com/dhis2/analytics/compare/v26.6.2...v26.6.3) (2024-04-19)
+
+
+### Bug Fixes
+
+* **aboutAOUnit:** newlines missing in AO description  ([#1655](https://github.com/dhis2/analytics/issues/1655)) ([98580ae](https://github.com/dhis2/analytics/commit/98580ae8c9a7b0cb723a4712bf2da953b2e6b613))
+
+## [26.6.2](https://github.com/dhis2/analytics/compare/v26.6.1...v26.6.2) (2024-04-14)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([e1eae74](https://github.com/dhis2/analytics/commit/e1eae74a18eabd228c58a91fa19413d4e338c4cc))
+
 ## [26.6.1](https://github.com/dhis2/analytics/compare/v26.6.0...v26.6.1) (2024-03-24)
 
 
