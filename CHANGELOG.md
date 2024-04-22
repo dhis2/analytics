@@ -1,3 +1,10 @@
+## [24.10.7](https://github.com/dhis2/analytics/compare/v24.10.6...v24.10.7) (2024-04-22)
+
+
+### Bug Fixes
+
+* **interpretations:** plugin flashes when interacting with Interpretations modal ([#1653](https://github.com/dhis2/analytics/issues/1653)) ([17d8e12](https://github.com/dhis2/analytics/commit/17d8e12da54def840b9f329ffe93b635342c2d2c))
+
 ## [24.10.6](https://github.com/dhis2/analytics/compare/v24.10.5...v24.10.6) (2024-04-19)
 
 
