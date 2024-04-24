@@ -48,6 +48,10 @@ export default css`
         flex-shrink: 0;
     }
 
+    .description {
+        white-space: pre-line;
+    }
+
     .noDescription {
         color: ${colors.grey600};
     }

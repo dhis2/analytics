@@ -193,6 +193,7 @@ const AboutAOUnit = forwardRef(({ type, id, renderId }, ref) => {
                         <div className="content">
                             <p
                                 className={cx('detailLine', {
+                                    description: true,
                                     noDescription: !data.ao.displayDescription,
                                 })}
                             >
