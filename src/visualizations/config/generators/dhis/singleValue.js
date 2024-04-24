@@ -110,6 +110,7 @@ const generateValueSVG = ({
     containerHeight,
     topMargin = 0,
 }) => {
+    console.log('jj SV generateValueSVG', formattedValue, icon, subText)
     const showIcon = icon && formattedValue !== noData.text
 
     const textSize = getTextSize(
