@@ -1,5 +1,4 @@
 import {
-    IconTable16,
     IconVisualizationArea16,
     IconVisualizationAreaStacked16,
     IconVisualizationBar16,
@@ -11,11 +10,12 @@ import {
     IconVisualizationLine16,
     IconVisualizationLinelist16,
     IconVisualizationLineMulti16,
+    IconVisualizationOutlierTable16,
     IconVisualizationPie16,
+    IconVisualizationPivotTable16,
     IconVisualizationRadar16,
     IconVisualizationScatter16,
     IconVisualizationSingleValue16,
-    IconTable24,
     IconVisualizationArea24,
     IconVisualizationAreaStacked24,
     IconVisualizationBar24,
@@ -27,7 +27,9 @@ import {
     IconVisualizationGauge24,
     IconVisualizationLine24,
     IconVisualizationLineMulti24,
+    IconVisualizationOutlierTable24,
     IconVisualizationPie24,
+    IconVisualizationPivotTable24,
     IconVisualizationRadar24,
     IconVisualizationScatter24,
     IconVisualizationSingleValue24,
@@ -51,6 +53,7 @@ import {
     VIS_TYPE_YEAR_OVER_YEAR_COLUMN,
     VIS_TYPE_SINGLE_VALUE,
     VIS_TYPE_SCATTER,
+    VIS_TYPE_OUTLIER_TABLE,
 } from '../modules/visTypes.js'
 
 export const VisTypeIcon = ({ type, useSmall = false, ...props }) => {
@@ -64,7 +67,9 @@ export const VisTypeIcon = ({ type, useSmall = false, ...props }) => {
             break
         }
         case VIS_TYPE_PIVOT_TABLE: {
-            VisIcon = useSmall ? IconTable16 : IconTable24
+            VisIcon = useSmall
+                ? IconVisualizationPivotTable16
+                : IconVisualizationPivotTable24
             break
         }
         case VIS_TYPE_BAR: {
@@ -139,6 +144,12 @@ export const VisTypeIcon = ({ type, useSmall = false, ...props }) => {
             VisIcon = useSmall
                 ? IconVisualizationScatter16
                 : IconVisualizationScatter24
+            break
+        }
+        case VIS_TYPE_OUTLIER_TABLE: {
+            VisIcon = useSmall
+                ? IconVisualizationOutlierTable16
+                : IconVisualizationOutlierTable24
             break
         }
         case VIS_TYPE_COLUMN:

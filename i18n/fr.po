@@ -6,16 +6,16 @@
 # tx_e2f_fr r25 <tx_e2f_fr_r25@ate2f.com>, 2021
 # Karoline Tufte Lien <karoline@dhis2.org>, 2022
 # Edem Kossi <ekossi@hispwca.org>, 2022
-# phil_dhis2, 2023
 # Yao Selom SAKA (HISP WCA) <ysaka@hispwca.org>, 2023
 # Yayra Gomado <ygomado@hispwca.org>, 2023
+# Philip Larsen Donnelly, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2023-07-06T08:30:33.216Z\n"
+"POT-Creation-Date: 2023-09-27T14:15:13.876Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Yayra Gomado <ygomado@hispwca.org>, 2023\n"
+"Last-Translator: Philip Larsen Donnelly, 2024\n"
 "Language-Team: French (https://app.transifex.com/hisp-uio/teams/100509/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -217,13 +217,13 @@ msgid "All metrics"
 msgstr "Tous les éléments"
 
 msgid "Move to {{axisName}}"
-msgstr "Déménager à {{nomdel'axe}}"
+msgstr "Déménager à {{axisName}}"
 
 msgid "Add to {{axisName}}"
-msgstr "Ajouter à {{nomdel'axe}} "
+msgstr "Ajouter à {{axisName}} "
 
 msgid "Not available for {{visualizationType}}"
-msgstr "Non disponible pour {{Typedevisualisation}}"
+msgstr "Non disponible pour {{visualizationType}}"
 
 msgid "Remove Assigned Categories"
 msgstr "Supprimer les Catégories Attribuées"
@@ -382,6 +382,10 @@ msgstr ""
 
 msgid "Write an interpretation"
 msgstr "Ecrire une interprétation"
+
+msgid ""
+"Other people viewing this interpretation in the future may see more data."
+msgstr ""
 
 msgid "Post interpretation"
 msgstr ""
@@ -1063,19 +1067,19 @@ msgid "Bottom"
 msgstr "Bas"
 
 msgid "{{dynamicOuNames}} and {{lastOuName}}"
-msgstr "{{NomsOudynamiques}} et {{dernièreOuNom}}"
+msgstr "{{dynamicOuNames}} et {{lastOuName}}"
 
 msgid "{{allDynamicOuNames}} levels"
-msgstr "{{touslesnomsOudynamiques}} niveaux"
+msgstr "{{allDynamicOuNames}} niveaux"
 
 msgid "{{allDynamicOuNames}} groups"
-msgstr "{{touslesnomsOudynamiques}} groupes"
+msgstr "{{allDynamicOuNames}} groupes"
 
 msgid "{{allDynamicOuNames}} levels in {{staticOuNames}}"
-msgstr "{{touslesnomsOudynamiques}} niveaux dans {{NomsOustatiques}} "
+msgstr "{{allDynamicOuNames}} niveaux dans {{staticOuNames}} "
 
 msgid "{{allDynamicOuNames}} groups in {{staticOuNames}}"
-msgstr "{{touslesnomsOudynamiques}} groupes dans {{NomsOustatiques}}"
+msgstr "{{allDynamicOuNames}} groupes dans {{staticOuNames}}"
 
 msgid "{{percentage}}% of total x values"
 msgstr "{{percentage}}% de nombre total de X valeurs"
@@ -1183,7 +1187,7 @@ msgid "Base"
 msgstr "Base"
 
 msgid "Axis {{axisId}}"
-msgstr "Axe {{{axisId}}"
+msgstr "Axe {{axisId}}"
 
 msgid "{{count}} items"
 msgid_plural "{{count}} items"

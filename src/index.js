@@ -30,8 +30,11 @@ export { default as LegendKey } from './components/LegendKey/LegendKey.js'
 
 export { default as AboutAOUnit } from './components/AboutAOUnit/AboutAOUnit.js'
 
-export { InterpretationsUnit } from './components/Interpretations/InterpretationsUnit/InterpretationsUnit.js'
-export { InterpretationModal } from './components/Interpretations/InterpretationModal/InterpretationModal.js'
+export { InterpretationsUnit } from './components/Interpretations/InterpretationsUnit/index.js'
+export {
+    InterpretationModal,
+    InterpretationThread,
+} from './components/Interpretations/InterpretationModal/index.js'
 
 export * from './components/Toolbar/index.js'
 
@@ -203,6 +206,7 @@ export {
     VIS_TYPE_PIVOT_TABLE,
     VIS_TYPE_SCATTER,
     VIS_TYPE_LINE_LIST,
+    VIS_TYPE_OUTLIER_TABLE,
     visTypeDisplayNames,
     visTypeIcons,
     getDisplayNameByVisType,
@@ -212,6 +216,7 @@ export {
     isYearOverYear,
     isDualAxisType,
     isSingleValue,
+    isOutlierTable,
     isTwoCategoryChartType,
     isLegendSetType,
     isColumnBasedType,
@@ -228,6 +233,7 @@ export {
     LAYOUT_TYPE_PIVOT_TABLE,
     LAYOUT_TYPE_SCATTER,
     LAYOUT_TYPE_LINE_LIST,
+    LAYOUT_TYPE_OUTLIER_TABLE,
 } from './modules/layoutTypes.js'
 
 // Modules: layoutUiRules
@@ -235,10 +241,12 @@ export {
 export {
     getAvailableAxes,
     getDisallowedDimensions,
+    getDimensionMaxNumberOfItems,
     getAxisMaxNumberOfItems,
     getAxisMaxNumberOfDimensions,
     getAxisMinNumberOfDimensions,
     hasAxisTooManyItems,
+    hasDimensionTooManyItems,
     getAxisPerLockedDimension,
     getAllLockedDimensionIds,
     canDimensionBeAddedToAxis,
@@ -349,4 +357,5 @@ export {
     DIMENSION_TYPE_PERIOD,
     DIMENSION_TYPE_ORGANISATION_UNIT_GROUP_SET,
     DIMENSION_TYPE_EXPRESSION_DIMENSION_ITEM,
+    dataTypeMap,
 } from './modules/dataTypes.js'

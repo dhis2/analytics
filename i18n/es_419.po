@@ -1,14 +1,14 @@
 # 
 # Translators:
 # Jaime Bosque <jaime.bosque@dhis2.org>, 2022
-# Enzo Nicolas Rossi <enzo@dhis2.org>, 2023
+# Enzo Nicolas Rossi <enzo@dhis2.org>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2023-04-18T08:41:27.838Z\n"
+"POT-Creation-Date: 2023-09-27T14:15:13.876Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Enzo Nicolas Rossi <enzo@dhis2.org>, 2023\n"
+"Last-Translator: Enzo Nicolas Rossi <enzo@dhis2.org>, 2024\n"
 "Language-Team: Spanish (Latin America) (https://app.transifex.com/hisp-uio/teams/100509/es_419/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -168,7 +168,7 @@ msgid "Search by data item name"
 msgstr ""
 
 msgid "No items selected"
-msgstr ""
+msgstr "No hay elementos seleccionados"
 
 msgid "Selected Items"
 msgstr ""
@@ -213,7 +213,7 @@ msgid "Move to {{axisName}}"
 msgstr ""
 
 msgid "Add to {{axisName}}"
-msgstr ""
+msgstr "Añadir a {{axisName}}"
 
 msgid "Not available for {{visualizationType}}"
 msgstr ""
@@ -225,7 +225,7 @@ msgid "Add Assigned Categories"
 msgstr ""
 
 msgid "Remove"
-msgstr ""
+msgstr "Eliminar"
 
 msgid "Filter dimensions"
 msgstr ""
@@ -347,6 +347,9 @@ msgstr ""
 msgid "Post reply"
 msgstr ""
 
+msgid "Delete failed"
+msgstr ""
+
 msgid "Could not update comment"
 msgstr ""
 
@@ -373,19 +376,32 @@ msgstr ""
 msgid "Write an interpretation"
 msgstr ""
 
+msgid ""
+"Other people viewing this interpretation in the future may see more data."
+msgstr ""
+
 msgid "Post interpretation"
 msgstr ""
 
 msgid "Interpretations"
 msgstr ""
 
+msgid "Reply"
+msgstr ""
+
+msgid "{{count}} replies"
+msgid_plural "{{count}} replies"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+msgid "View replies"
+msgstr ""
+
 msgid "Unlike"
 msgstr ""
 
 msgid "Like"
-msgstr ""
-
-msgid "Reply"
 msgstr ""
 
 msgid "Share"
@@ -434,7 +450,7 @@ msgid "Searching for \"{{- searchText}}\""
 msgstr ""
 
 msgid "No results found"
-msgstr ""
+msgstr "No se han encontrado resultados"
 
 msgid "Not available offline"
 msgstr ""
@@ -845,6 +861,9 @@ msgstr ""
 msgid "Years"
 msgstr "Años"
 
+msgid "Interpretations and details"
+msgstr ""
+
 msgid "Translating to"
 msgstr ""
 
@@ -906,7 +925,7 @@ msgid "Expected reports"
 msgstr ""
 
 msgid "Program"
-msgstr ""
+msgstr "Programa"
 
 msgid "Select a program"
 msgstr ""
