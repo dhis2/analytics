@@ -17,7 +17,7 @@ export default css`
         height: 100%;
         overflow: auto;
         margin-top: 0;
-        padding: 0;
+        padding: 0 ${spacers.dp8} 0 0;
     }
     .list {
         margin: 0;
