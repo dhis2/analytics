@@ -61,19 +61,24 @@ class DimensionItem extends Component {
         const optionsRef = createRef()
 
         const LockIcon = (
-            <svg
-                width="7"
-                height="9"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-            >
-                <path
-                    fillRule="evenodd"
-                    clipRule="evenodd"
-                    d="M3.5 1A1.5 1.5 0 0 0 2 2.5V3h3v-.5A1.5 1.5 0 0 0 3.5 1ZM1 2.5V3H0v6h7V3H6v-.5a2.5 2.5 0 0 0-5 0ZM1 8V4h5v4H1Zm3-1V5H3v2h1Z"
-                    fill="none"
-                />
-            </svg>
+            <>
+                <div className="lockWrapper">
+                    <svg
+                        width="7"
+                        height="9"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                            fillRule="evenodd"
+                            clipRule="evenodd"
+                            d="M3.5 1A1.5 1.5 0 0 0 2 2.5V3h3v-.5A1.5 1.5 0 0 0 3.5 1ZM1 2.5V3H0v6h7V3H6v-.5a2.5 2.5 0 0 0-5 0ZM1 8V4h5v4H1Zm3-1V5H3v2h1Z"
+                            fill="none"
+                        />
+                    </svg>
+                </div>
+                <style jsx>{styles}</style>
+            </>
         )
 
         const onLabelClick = () => {
@@ -118,15 +123,13 @@ class DimensionItem extends Component {
                             />
                         </div>
                     </div>
-                    {onOptionsClick ? (
+                    {onOptionsClick && !isDeactivated && !isLocked ? (
                         <div
                             className="optionsWrapper"
                             ref={optionsRef}
                             data-test={`${dataTest}-menu-${id}`}
                         >
-                            {this.state.mouseOver &&
-                            !isDeactivated &&
-                            !isLocked ? (
+                            {this.state.mouseOver ? (
                                 <OptionsButton
                                     onClick={this.onOptionsClick(
                                         id,
@@ -136,7 +139,7 @@ class DimensionItem extends Component {
                             ) : null}
                         </div>
                     ) : null}
-                    {isLocked && <div className="lockWrapper">{LockIcon}</div>}
+                    {isLocked && LockIcon}
                 </li>
                 <style jsx>{styles}</style>
             </>
