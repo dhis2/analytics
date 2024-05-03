@@ -116,6 +116,7 @@ exports[`DimensionItem matches the snapshot with locked 1`] = `
         />
       </svg>
     </div>
+    <style />
   </li>
   <style />
 </Fragment>
