@@ -1,15 +1,16 @@
 # 
 # Translators:
-# phil_dhis2, 2020
+# Philip Larsen Donnelly, 2020
 # Viktor Varland <viktor@dhis2.org>, 2020
 # Phouthasinh PHEUAYSITHIPHONE, 2023
+# Namwan Chanthavisouk, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2020-05-20T21:46:25.914Z\n"
 "PO-Revision-Date: 2020-05-18 10:55+0000\n"
-"Last-Translator: Phouthasinh PHEUAYSITHIPHONE, 2023\n"
+"Last-Translator: Namwan Chanthavisouk, 2024\n"
 "Language-Team: Lao (https://app.transifex.com/hisp-uio/teams/100509/lo/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -21,7 +22,7 @@ msgid "Data"
 msgstr "ຂໍ້ມູນ"
 
 msgid "Data Type"
-msgstr ""
+msgstr "ຊະນິດຂໍ້ມູນ"
 
 msgid "Totals"
 msgstr "ລວມທັງໝົດ"
@@ -33,16 +34,16 @@ msgid "Detail"
 msgstr ""
 
 msgid "Move to {{axisName}}"
-msgstr ""
+msgstr "ຍ້າຍໄປ {{axisName}}"
 
 msgid "Add to {{axisName}}"
-msgstr ""
+msgstr "ເພີ່ມໃສ່ {{axisName}}"
 
 msgid "Remove"
 msgstr "ລົບອອກ"
 
 msgid "Not available for {{visualizationType}}"
-msgstr ""
+msgstr "ບໍ່ມີສໍາລັບ {{visualizationType}}"
 
 msgid "Requires 2 or more data items"
 msgstr ""
@@ -51,10 +52,10 @@ msgid "Only available when data is in Series"
 msgstr ""
 
 msgid "Remove Assigned Categories"
-msgstr ""
+msgstr "ລົບກຸ່ມທີ່ຖືກມອບໝາຍ"
 
 msgid "Add Assigned Categories"
-msgstr ""
+msgstr "ເພີ່ມກຸ່ມທີ່ຖືກມອບໝາຍ"
 
 msgid "Manage chart axes"
 msgstr ""
