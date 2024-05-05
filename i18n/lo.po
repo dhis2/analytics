@@ -21,22 +21,22 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 msgid "view only"
-msgstr ""
+msgstr "ເບິ່ງຢ່າງດຽວ"
 
 msgid "view and edit"
-msgstr ""
+msgstr "ເບິ່ງ ແລະ ແກ້ໄຂ"
 
 msgid "all users ({{accessLevel}})"
-msgstr ""
+msgstr "ຜູ້ໃຊ້ທັງໝົດ {{accessLevel}}"
 
 msgid "{{userOrGroup}} ({{accessLevel}})"
-msgstr ""
+msgstr " {{userOrGroup}} ({{accessLevel}} )"
 
 msgid "Shared with {{commaSeparatedListOfUsersAndGroups}}"
-msgstr ""
+msgstr "ແບ່ງປັນໃຫ້ກັບ {{commaSeparatedListOfUsersAndGroups}}"
 
 msgid "Not shared with any users or groups"
-msgstr ""
+msgstr "ບໍ່ໃຫ້ແບ່ງປັນກັບຜູ້ໃຊ້ ແລະ ກຸ່ມອື່ນ"
 
 msgid "No description"
 msgstr "ບໍ່ມີລາຍລະອຽດ"
@@ -45,91 +45,93 @@ msgid "Last updated {{time}}"
 msgstr "ແກ້ໄຂລ່າສຸດ {{time}}"
 
 msgid "Created {{time}} by {{author}}"
-msgstr ""
+msgstr "ສ້າງ {{time}} ໂດຍ {{author}}"
 
 msgid "Created {{time}}"
-msgstr ""
+msgstr "ສ້າງ {{time}}"
 
 msgid "Viewed {{count}} times"
 msgid_plural "Viewed {{count}} times"
-msgstr[0] ""
+msgstr[0] "ກວດເບິ່ງ {{count}} ຄັ້ງ"
 
 msgid "Notifications"
-msgstr ""
+msgstr "ການແຈ້ງເຕືອນ"
 
 msgid "You're subscribed and getting updates about new interpretations."
-msgstr ""
+msgstr "ທ່ານກົດປູ່ມສະໜັກ ເພື່ອຈະໄດ້ອັບເດດ ແລະ ຮັບຂໍ້ມູນໃໝ່"
 
 msgid "Unsubscribe"
-msgstr ""
+msgstr "ຍົກເລີກການສະໝັກ"
 
 msgid "Subscribe to get updates about new interpretations."
-msgstr ""
+msgstr "ສະໝັກເພື່ອທີ່ຈະຮັບຮູ້ຂໍ້ມູນໃໝ່"
 
 msgid "Subscribe"
-msgstr ""
+msgstr "ສະໝັກ"
 
 msgid "About this map"
-msgstr ""
+msgstr "ກ່ຽວກັບແຜນທີ່"
 
 msgid "About this line list"
-msgstr ""
+msgstr "ກ່ຽວກັບບັນຊີລາຍຊື່"
 
 msgid "About this visualization"
-msgstr ""
+msgstr "ກ່ຽວກັບການສ້າງພາບຂໍ້ມູນ"
 
 msgid "This app could not retrieve required data."
-msgstr ""
+msgstr "ແອັບນີ້ບໍ່ສາມາດດຶງຂໍ້ມູນທີ່ຕ້ອງການໄດ້"
 
 msgid "Network error"
 msgstr "ຂໍ້ຜິດພາດທາງເຄື່ອຂ່າຍ"
 
 msgid "Data / Edit calculation"
-msgstr ""
+msgstr "ຂໍ້ມູນ / ແກ້ໄຂການຄິດໄລ່"
 
 msgid "Data / New calculation"
-msgstr ""
+msgstr "ຂໍ້ມູນ / ຄິດໄລ່ໃໝ່"
 
 msgid "Remove item"
 msgstr "ລົບລາຍການ"
 
 msgid "Check formula"
-msgstr ""
+msgstr "ກວດເບິ່ງສູດ"
 
 msgid "Calculation name"
-msgstr ""
+msgstr "ຊື່ການຄິດໄລ່"
 
 msgid "Shown in table headers and chart axes/legends"
-msgstr ""
+msgstr "ສະ​ແດງ​​ຢູ່​ເທິງຕາ​ຕະ​ລາງ​ ແລະ​ ແກນ​ແຜນ​ວາດ"
 
 msgid "Delete calculation"
-msgstr ""
+msgstr "ລົບການຄິດໄລ່"
 
 msgid "Cancel"
-msgstr "Cancel"
+msgstr "ຍົກເລີກ"
 
 msgid "The calculation can only be saved with a valid formula"
-msgstr ""
+msgstr "ການຄິດໄລ່ແມ່ນຖືກບັນທຶກດ້ວຍສູດທີ່ຖືກຕ້ອງເທົ່ານັ້ນ"
 
 msgid "Add a name to save this calculation"
-msgstr ""
+msgstr "ເພີ່ມຊື່ເພື່ບັນທຶກການຄິດໄລ່"
 
 msgid "Save calculation"
-msgstr ""
+msgstr "ບັນທຶກການຄິດໄລ່"
 
 msgid ""
 "Are you sure you want to delete this calculation? It may be used by other "
 "visualizations."
 msgstr ""
+"ເຈົ້າແນ່ໃຈບໍ່ສິລືບຂໍ້ມູນການຄິດໄລ່ນີ້? "
+"ຂໍ້ມູນດັ້ງກ່າວອາດຈະຖືກນໍາໃຊ້ໃນການສ້າງພາບຂໍ້ມູນໃໝ່ກໍ່ເປັນໄດ້"
 
 msgid "Yes, delete"
-msgstr ""
+msgstr "ຢືນຢັນ, ລົບ"
 
 msgid "Totals only"
-msgstr ""
+msgstr "ທັງໝົດເທົ່ານັ້ນ"
 
 msgid "Details only"
-msgstr ""
+msgstr "ລາຍລະອຽດເທົ່ານັ້ນ"
 
 msgid "Loading"
 msgstr "ກໍາລັງໂຫຼດ"
@@ -138,30 +140,30 @@ msgid "Data elements"
 msgstr "ອົງປະກອບຂໍ້ມູນ"
 
 msgid "Search by data element name"
-msgstr ""
+msgstr "ຄົ້ນຫາໂດຍຊື່ອົງປະກອບຂໍ້ມູນ"
 
 msgid "No data elements found for \"{{- searchTerm}}\""
-msgstr ""
+msgstr "ບໍ່ພົບອົງປະກອບຂໍ້ມູນຂອງ \"{{- searchTerm}}\""
 
 msgid "No data elements found"
-msgstr ""
+msgstr "ບໍ່ພົບອົງປະກອບຂໍ໊ມູນ"
 
 msgid ""
 "Drag items here, or double click in the list, to start building a "
 "calculation formula"
-msgstr ""
+msgstr "ລາກລາຍການມາບ່ອນນີ້, ຫຼືຄລິກສອງເທື່ອໃນລາຍການເພື່ອສ້າງສູດການຄິດໄລ່"
 
 msgid "Math operators"
 msgstr ""
 
 msgid "Data Type"
-msgstr ""
+msgstr "ຊະນິດຂໍ້ມູນ"
 
 msgid "Only {{dataType}} can be used in {{visType}}"
-msgstr ""
+msgstr "ມີພຽງ  {{dataType}} ທີສາມາດໃຊ້ໃນ {{visType}}"
 
 msgid "All types"
-msgstr ""
+msgstr "ທຸກຊະນິດ"
 
 msgid "Disaggregation"
 msgstr "Disaggregation"
@@ -170,49 +172,49 @@ msgid "No data"
 msgstr "ບໍ່ມີຂໍ້ມູນ"
 
 msgid "Search by data item name"
-msgstr ""
+msgstr "ຄົ້ນຫາໂດຍຊື່ລາຍການຂໍ້ມູນ"
 
 msgid "No items selected"
-msgstr ""
+msgstr "ບໍ່ມີລາຍການທີ່ຖືກເລືອກ"
 
 msgid "Selected Items"
-msgstr ""
+msgstr "ລາຍການທີ່ເລືອກ"
 
 msgid "No indicators found"
-msgstr ""
+msgstr "ບໍ່ພົບຕົວຊີ້ວັດ"
 
 msgid "No data sets found"
-msgstr ""
+msgstr "ບໍ່ພົບຊຸດຂໍ້ມູນ"
 
 msgid "No event data items found"
-msgstr ""
+msgstr "ບໍ່ພົບຂໍ້ມູນເຫດການ"
 
 msgid "No program indicators found"
-msgstr ""
+msgstr "ບໍ່ພົບໂປຼແກຼມຕົວຊີ້ວັດ"
 
 msgid "No calculations found"
-msgstr ""
+msgstr "ບໍ່ພົບການຄິດໄລ່"
 
 msgid "No indicators found for \"{{- searchTerm}}\""
-msgstr ""
+msgstr "ບໍ່ພົບຕົວຊີ້ວັດສຳລັບ \"{{- searchTerm}}\""
 
 msgid "No data sets found for \"{{- searchTerm}}\""
-msgstr ""
+msgstr "ບໍ່ພົບຊຸດຂໍ້ມູນສຳລັບ \"{{- searchTerm}}\""
 
 msgid "No event data items found for \"{{- searchTerm}}\""
-msgstr ""
+msgstr "ບໍ່ພົບຂໍ້ມູນເຫດການສຳລັບ \"{{- searchTerm}}\""
 
 msgid "No program indicators found for \"{{- searchTerm}}\""
-msgstr ""
+msgstr "ບໍ່ພົບໂປຼແກຼມຕົວຊີ້ວັດສຳລັບ \"{{- searchTerm}}\""
 
 msgid "No calculations found for \"{{- searchTerm}}\""
-msgstr ""
+msgstr "ບໍ່ພົບການຄິດໄລ່ສຳລັບ \"{{- serachTerm}}\""
 
 msgid "Nothing found for \"{{- searchTerm}}\""
-msgstr ""
+msgstr "ບໍ່ພົບຫຍັງສຳລັບ \"{{- searchTerm}}\""
 
 msgid "Calculation"
-msgstr ""
+msgstr "ການຄິດໄລ່"
 
 msgid "Metric type"
 msgstr ""
@@ -221,19 +223,19 @@ msgid "All metrics"
 msgstr "ທຸກການປັບປຸງ"
 
 msgid "Move to {{axisName}}"
-msgstr ""
+msgstr "ຍ້າຍໄປ {{axisName}}"
 
 msgid "Add to {{axisName}}"
-msgstr ""
+msgstr "ເພີ່ມໃສ່ {{axisName}}"
 
 msgid "Not available for {{visualizationType}}"
-msgstr ""
+msgstr "ບໍ່ມີສໍາລັບ {{visualizationType}}"
 
 msgid "Remove Assigned Categories"
-msgstr ""
+msgstr "ລົບກຸ່ມທີ່ຖືກມອບໝາຍ"
 
 msgid "Add Assigned Categories"
-msgstr ""
+msgstr "ເພີ່ມກຸ່ມທີ່ຖືກມອບໝາຍ"
 
 msgid "Remove"
 msgstr "ລົບອອກ"
