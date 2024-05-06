@@ -73,7 +73,7 @@ export default css`
     .lockWrapper {
         background: ${colors.grey300};
         height: 20px;
-        padding: 0 1px 0 2px;
+        padding: 0 2px 1px 3px;
         display: flex;
         align-items: center;
         justify-content: center;
