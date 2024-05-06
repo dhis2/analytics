@@ -515,9 +515,19 @@ export class PivotTableEngine {
         if (!this.data[row]) {
             return undefined
         }
+
         const cellValue = this.data[row][column]
 
-        if (cellValue && !Array.isArray(cellValue)) {
+        if (!cellValue) {
+            // Empty cell
+            // The cell still needs to get the valueType to render correctly 0 and cumulative values
+            return {
+                valueType: VALUE_TYPE_NUMBER,
+                totalAggregationType: AGGREGATE_TYPE_SUM,
+            }
+        }
+
+        if (!Array.isArray(cellValue)) {
             // This is a total cell
             return {
                 valueType: cellValue.valueType,
@@ -532,6 +542,7 @@ export class PivotTableEngine {
         const dxRowIndex = this.dimensionLookup.rows.findIndex(
             (dim) => dim.isDxDimension
         )
+
         if (rowHeaders.length && dxRowIndex !== -1) {
             return {
                 valueType: rowHeaders[dxRowIndex].valueType,
@@ -553,11 +564,6 @@ export class PivotTableEngine {
             }
         }
 
-        // Empty cell
-        // The cell still needs to get the valueType to render correctly 0 and cumulative values
-        //
-        // OR
-        //
         // Data is in Filter
         // TODO : This assumes the server ignores text types, we should confirm this is the case
         return {
