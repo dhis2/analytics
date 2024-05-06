@@ -1,3 +1,10 @@
+## [26.6.8](https://github.com/dhis2/analytics/compare/v26.6.7...v26.6.8) (2024-05-06)
+
+
+### Bug Fixes
+
+* fix a crash when row totals is enabled (DHIS2-17297) ([#1660](https://github.com/dhis2/analytics/issues/1660)) ([be6ea56](https://github.com/dhis2/analytics/commit/be6ea56d1c733aba497d669184668f96e8ae344b))
+
 ## [26.6.7](https://github.com/dhis2/analytics/compare/v26.6.6...v26.6.7) (2024-05-05)
 
 
