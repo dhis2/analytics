@@ -208,12 +208,24 @@ export const Editor = forwardRef(
         const [previewMode, setPreviewMode] = useState(false)
         const internalRef = useRef()
         const textareaRef = externalRef || internalRef
+        const caretPosRef = useRef(undefined)
 
         useEffect(() => {
             if (initialFocus) {
                 textareaRef.current?.focus()
             }
         }, [initialFocus, textareaRef])
+
+        useEffect(() => {
+            if (caretPosRef.current) {
+                textareaRef.current?.setSelectionRange(
+                    caretPosRef.current,
+                    caretPosRef.current
+                )
+
+                caretPosRef.current = undefined
+            }
+        }, [value, textareaRef])
 
         return (
             <div
@@ -226,9 +238,9 @@ export const Editor = forwardRef(
                             markdown,
                             textareaRef.current,
                             (text, caretPos) => {
+                                caretPosRef.current = caretPos
                                 onChange(text)
                                 textareaRef.current.focus()
-                                textareaRef.current.selectionEnd = caretPos
                             }
                         )
 
