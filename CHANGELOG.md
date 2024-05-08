@@ -1,3 +1,10 @@
+## [26.6.9](https://github.com/dhis2/analytics/compare/v26.6.8...v26.6.9) (2024-05-08)
+
+
+### Bug Fixes
+
+* system / user setting for display name not respected in Org Unit tree (DHIS2-15000) ([#1664](https://github.com/dhis2/analytics/issues/1664)) ([899358d](https://github.com/dhis2/analytics/commit/899358d5ea5a486f299ab54ded7b3184608e4bf7))
+
 ## [26.6.8](https://github.com/dhis2/analytics/compare/v26.6.7...v26.6.8) (2024-05-06)
 
 
