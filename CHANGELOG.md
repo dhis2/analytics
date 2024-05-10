@@ -1,3 +1,17 @@
+## [26.6.9](https://github.com/dhis2/analytics/compare/v26.6.8...v26.6.9) (2024-05-08)
+
+
+### Bug Fixes
+
+* system / user setting for display name not respected in Org Unit tree (DHIS2-15000) ([#1664](https://github.com/dhis2/analytics/issues/1664)) ([899358d](https://github.com/dhis2/analytics/commit/899358d5ea5a486f299ab54ded7b3184608e4bf7))
+
+## [26.6.8](https://github.com/dhis2/analytics/compare/v26.6.7...v26.6.8) (2024-05-06)
+
+
+### Bug Fixes
+
+* fix a crash when row totals is enabled (DHIS2-17297) ([#1660](https://github.com/dhis2/analytics/issues/1660)) ([be6ea56](https://github.com/dhis2/analytics/commit/be6ea56d1c733aba497d669184668f96e8ae344b))
+
 ## [26.6.7](https://github.com/dhis2/analytics/compare/v26.6.6...v26.6.7) (2024-05-05)
 
 
