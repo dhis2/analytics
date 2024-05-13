@@ -4,13 +4,9 @@ const Parser = new MdParser()
 
 describe('MdParser class', () => {
     it('converts text into HTML', () => {
-        const tests = [
+        const inlineTests = [
             ['_italic_', '<em>italic</em>'],
             ['*bold*', '<strong>bold</strong>'],
-            [
-                '* not bold because there is a space *',
-                '* not bold because there is a space *',
-            ],
             [
                 '_ not italic because there is a space _',
                 '_ not italic because there is a space _',
@@ -125,10 +121,46 @@ describe('MdParser class', () => {
             ],
         ]
 
-        tests.forEach((test) => {
+        inlineTests.forEach((test) => {
             const renderedText = Parser.render(test[0])
 
-            expect(renderedText).toEqual(test[1])
+            expect(renderedText).toEqual(`<p>${test[1]}</p>\n`)
+        })
+
+        const blockTests = [
+            // heading
+            ['# Heading 1', '<h1>Heading 1</h1>'],
+            ['## Heading 2', '<h2>Heading 2</h2>'],
+            ['### Heading 3', '<h3>Heading 3</h3>'],
+            ['#### Heading 4', '<h4>Heading 4</h4>'],
+            ['##### Heading 5', '<h5>Heading 5</h5>'],
+            ['###### Heading 6', '<h6>Heading 6</h6>'],
+            ['# *Bold head*', '<h1><strong>Bold head</strong></h1>'],
+            ['## _Italic title_', '<h2><em>Italic title</em></h2>'],
+            [
+                '### *Bold* and _italic_ title',
+                '<h3><strong>Bold</strong> and <em>italic</em> title</h3>',
+            ],
+
+            // lists
+            [
+                '* first\n* second\n* third',
+                '<ul>\n<li>first</li>\n<li>second</li>\n<li>third</li>\n</ul>',
+            ],
+            [
+                '1. one\n1. two\n1. three\n',
+                '<ol>\n<li>one</li>\n<li>two</li>\n<li>three</li>\n</ol>',
+            ],
+            [
+                '* *first*\n* second\n* _third_',
+                '<ul>\n<li><strong>first</strong></li>\n<li>second</li>\n<li><em>third</em></li>\n</ul>',
+            ],
+        ]
+
+        blockTests.forEach((test) => {
+            const renderedText = Parser.render(test[0])
+
+            expect(renderedText).toEqual(`${test[1]}\n`)
         })
     })
 })

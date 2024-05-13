@@ -6,8 +6,8 @@ export const Parser = ({ children, style }) => {
     const MdParserInstance = useMemo(() => new MdParser(), [])
 
     return children ? (
-        <p
-            style={{ ...style, whiteSpace: 'pre-line' }}
+        <div
+            style={{ ...style }}
             dangerouslySetInnerHTML={{
                 __html: MdParserInstance.render(children),
             }}

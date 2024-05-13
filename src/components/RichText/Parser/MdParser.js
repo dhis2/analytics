@@ -38,7 +38,6 @@ const codes = {
     },
 }
 
-let md
 let linksInText
 
 const markerIsInLinkText = (pos) =>
@@ -93,7 +92,7 @@ const parse = (code) => (state, silent) => {
 export class MdParser {
     constructor() {
         // disable all rules, enable autolink for URLs and email addresses
-        md = new MarkdownIt('zero', { linkify: true })
+        const md = new MarkdownIt('zero', { linkify: true, breaks: true })
 
         // *bold* -> <strong>bold</strong>
         md.inline.ruler.push('strong', parse(codes.bold.name))
@@ -104,14 +103,23 @@ export class MdParser {
         // :-) :) :-( :( :+1 :-1 -> <span>[unicode]</span>
         md.inline.ruler.push('emoji', parse(codes.emoji.name))
 
-        md.enable(['link', 'linkify', 'strong', 'italic', 'emoji'])
+        md.enable([
+            'heading',
+            'link',
+            'linkify',
+            'list',
+            'newline',
+            'strong',
+            'italic',
+            'emoji',
+        ])
 
-        return this
+        this.md = md
     }
 
     render(text) {
-        linksInText = md.linkify.match(text) || []
+        linksInText = this.md.linkify.match(text) || []
 
-        return md.renderInline(text)
+        return this.md.render(text)
     }
 }

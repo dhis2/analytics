@@ -33,9 +33,7 @@ describe('RichText: Parser component', () => {
     it('should have rendered content', () => {
         richTextParser = renderComponent({}, 'plain text')
 
-        expect(richTextParser.html()).toEqual(
-            '<p style="white-space:pre-line">converted text</p>'
-        )
+        expect(richTextParser.html()).toEqual('<div>converted text</div>')
     })
 
     it('should return null if no children is passed', () => {
