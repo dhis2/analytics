@@ -165,7 +165,7 @@ export const UserMentionWrapper = ({
         <div onKeyDown={onKeyDown} onInput={onInput} className="wrapper">
             {children}
             <div className="clone">
-                <pre ref={cloneRef}>{cloneText}</pre>
+                <p ref={cloneRef}>{cloneText}</p>
             </div>
             {captureText && (
                 <Portal>

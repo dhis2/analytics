@@ -17,14 +17,14 @@ export const userMentionWrapperClasses = css`
         visibility: hidden;
         inset: 0;
         box-sizing: border-box;
-        padding: ${spacers.dp8} ${spacers.dp12};
+        padding: ${spacers.dp8} 15px;
         border: 1px solid ${colors.grey500};
         font-size: 14px;
         line-height: ${spacers.dp16};
         z-index: 1;
         pointer-events: none;
     }
-    .clone > pre {
+    .clone > p {
         display: inline;
         word-wrap: break-word;
         overflow-wrap: break-word;
