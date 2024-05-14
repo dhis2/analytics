@@ -1,3 +1,10 @@
+## [26.6.10](https://github.com/dhis2/analytics/compare/v26.6.9...v26.6.10) (2024-05-14)
+
+
+### Bug Fixes
+
+* dimension list design (DHIS2-16270) ([#1530](https://github.com/dhis2/analytics/issues/1530)) ([e3931e6](https://github.com/dhis2/analytics/commit/e3931e68a1694b81640d0584a585746132ee74de))
+
 ## [26.6.9](https://github.com/dhis2/analytics/compare/v26.6.8...v26.6.9) (2024-05-08)
 
 
