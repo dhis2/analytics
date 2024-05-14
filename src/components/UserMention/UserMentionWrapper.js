@@ -43,6 +43,7 @@ export const UserMentionWrapper = ({
     inputReference,
     onUserSelect,
 }) => {
+    const [listIsOpen, setListIsOpen] = useState(false)
     const [captureText, setCaptureText] = useState(false)
     const [capturedText, setCapturedText] = useState('')
     const [cloneText, setCloneText] = useState('')
@@ -54,6 +55,7 @@ export const UserMentionWrapper = ({
     })
 
     const reset = () => {
+        setListIsOpen(false)
         setCaptureText(false)
         setCapturedText('')
         setCloneText('')
@@ -62,6 +64,10 @@ export const UserMentionWrapper = ({
 
         clear()
     }
+
+    // close the user list when clicking in the input/textarea or outside of it (input/textarea blur)
+    const onClick = () => reset()
+    const onBlur = () => reset()
 
     // event bubbles up from the input/textarea
     const onInput = ({ target }) => {
@@ -91,6 +97,7 @@ export const UserMentionWrapper = ({
         const { selectionStart } = target
 
         if (!captureText && key === '@') {
+            setListIsOpen(true)
             setCaptureText(true)
             setCaptureStartPosition(selectionStart + 1)
             setCloneText(target.value.substring(0, selectionStart) + '@')
@@ -159,15 +166,21 @@ export const UserMentionWrapper = ({
         )
     }
 
-    const onClick = (user) => () => onSelect(user)
+    const onUserClick = (user) => () => onSelect(user)
 
     return (
-        <div onKeyDown={onKeyDown} onInput={onInput} className="wrapper">
+        <div
+            onKeyDown={onKeyDown}
+            onInput={onInput}
+            onClick={onClick}
+            onBlur={onBlur}
+            className="wrapper"
+        >
             {children}
             <div className="clone">
                 <p ref={cloneRef}>{cloneText}</p>
             </div>
-            {captureText && (
+            {listIsOpen && (
                 <Portal>
                     <Popper
                         reference={getVirtualPopperReference(cloneRef)}
@@ -209,7 +222,7 @@ export const UserMentionWrapper = ({
                                             selectedUserIndex={
                                                 selectedUserIndex
                                             }
-                                            onUserClick={onClick}
+                                            onUserClick={onUserClick}
                                             pager={pager}
                                         />
                                     )}
