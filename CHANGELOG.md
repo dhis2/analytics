@@ -1,3 +1,31 @@
+## [26.6.10](https://github.com/dhis2/analytics/compare/v26.6.9...v26.6.10) (2024-05-14)
+
+
+### Bug Fixes
+
+* dimension list design (DHIS2-16270) ([#1530](https://github.com/dhis2/analytics/issues/1530)) ([e3931e6](https://github.com/dhis2/analytics/commit/e3931e68a1694b81640d0584a585746132ee74de))
+
+## [26.6.9](https://github.com/dhis2/analytics/compare/v26.6.8...v26.6.9) (2024-05-08)
+
+
+### Bug Fixes
+
+* system / user setting for display name not respected in Org Unit tree (DHIS2-15000) ([#1664](https://github.com/dhis2/analytics/issues/1664)) ([899358d](https://github.com/dhis2/analytics/commit/899358d5ea5a486f299ab54ded7b3184608e4bf7))
+
+## [26.6.8](https://github.com/dhis2/analytics/compare/v26.6.7...v26.6.8) (2024-05-06)
+
+
+### Bug Fixes
+
+* fix a crash when row totals is enabled (DHIS2-17297) ([#1660](https://github.com/dhis2/analytics/issues/1660)) ([be6ea56](https://github.com/dhis2/analytics/commit/be6ea56d1c733aba497d669184668f96e8ae344b))
+
+## [26.6.7](https://github.com/dhis2/analytics/compare/v26.6.6...v26.6.7) (2024-05-05)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([cfc3e55](https://github.com/dhis2/analytics/commit/cfc3e55231fd84d0bd5b4eff8c8b9e5bc3e05480))
+
 ## [26.6.6](https://github.com/dhis2/analytics/compare/v26.6.5...v26.6.6) (2024-04-28)
 
 
