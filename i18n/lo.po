@@ -31,7 +31,7 @@ msgid "Details"
 msgstr "ລາຍລະອຽດ"
 
 msgid "Detail"
-msgstr ""
+msgstr "ລາຍລະອຽດ"
 
 msgid "Move to {{axisName}}"
 msgstr "ຍ້າຍໄປ {{axisName}}"
@@ -46,10 +46,10 @@ msgid "Not available for {{visualizationType}}"
 msgstr "ບໍ່ມີສໍາລັບ {{visualizationType}}"
 
 msgid "Requires 2 or more data items"
-msgstr ""
+msgstr "ຕ້ອງການ 2 ລາຍການຂໍ້ມູນ ຫຼື ຫຼາຍກວ່ານັ້ນ"
 
 msgid "Only available when data is in Series"
-msgstr ""
+msgstr "ສາມາດໃຊ້ໄດ້ເມື່ອຂໍ້ມູນເປັນຊຸດເທົ່ານັ້ນ"
 
 msgid "Remove Assigned Categories"
 msgstr "ລົບກຸ່ມທີ່ຖືກມອບໝາຍ"
@@ -58,28 +58,28 @@ msgid "Add Assigned Categories"
 msgstr "ເພີ່ມກຸ່ມທີ່ຖືກມອບໝາຍ"
 
 msgid "Manage chart axes"
-msgstr ""
+msgstr "ແກ້ໄຂແກນແຜນຜັງ"
 
 msgid "Filter dimensions"
-msgstr ""
+msgstr "ຂະໜາດຕົວຕອງ"
 
 msgid "Main dimensions"
-msgstr ""
+msgstr "ຕົວຕອງທີ່ສຳຄັນ"
 
 msgid "Your dimensions"
-msgstr ""
+msgstr "ຂະໜາດຂອງທ່ານ"
 
 msgid "Dimension recommended with selected data"
-msgstr ""
+msgstr "ຂະໜາດທີ່ແນະນຳດ້ວຍຂໍ້ມູນທີ່ເລືອກ"
 
 msgid "Search"
 msgstr "ຄົນຫາ"
 
 msgid "Selected Data"
-msgstr ""
+msgstr "ເລືອກຂໍ້ມູນ"
 
 msgid "Deselect All"
-msgstr ""
+msgstr "ຍົກເລີກການເລືອກທັງໝົດ"
 
 msgid "Select all"
 msgstr "Select all"
@@ -139,10 +139,10 @@ msgid "December"
 msgstr "ທັນວາ"
 
 msgid "Week {{weekNumber}}"
-msgstr ""
+msgstr "ອາທິດ {{weekNumber}}"
 
 msgid "Bi-Week {{biWeekNumber}}"
-msgstr ""
+msgstr "ທຸກສອງອາທິດ {{biWeekNumber}}"
 
 msgid "Daily"
 msgstr "ທຸກໆມື້"
@@ -154,16 +154,16 @@ msgid "Bi-weekly"
 msgstr "ສອງອາທິດຕໍ່ຄັ້ງ"
 
 msgid "Weekly (Start Wednesday)"
-msgstr ""
+msgstr "ເປັນອາທິດ (ເລີ່ມຈາກວັນພຸດ)"
 
 msgid "Weekly (Start Thursday)"
-msgstr ""
+msgstr "ເປັນອາທິດ (ເລີ່ມຈາກວັນພະຫັດ)"
 
 msgid "Weekly (Start Saturday)"
-msgstr ""
+msgstr "ເປັນອາທິດ (ເລີ່ມຈາກວັນເສົາ)"
 
 msgid "Weekly (Start Sunday)"
-msgstr ""
+msgstr "ເປັນອາທິດ (ເລີ່ມຈາກວັນອາທິດ)"
 
 msgid "Monthly"
 msgstr "ລາຍເດືອນ"
@@ -184,7 +184,7 @@ msgid "Yearly"
 msgstr "ລາຍປີ"
 
 msgid "Financial year (Start November)"
-msgstr ""
+msgstr "ສົກປີງົບປະມານ (ເລີ່ມແຕ່ເດືອນພະຈິກ)"
 
 msgid "Financial year (Start October)"
 msgstr "ສົກປີງົບປະມານ (ເລີ່ມແຕ່ເດືອນຕຸລາ)"
@@ -286,7 +286,7 @@ msgid "Last six-month"
 msgstr "6 ເດືອນຜ່ານມາ"
 
 msgid "Last 2 six-month"
-msgstr ""
+msgstr "ສອງ 6 ເດືອນຜ່ານມາ"
 
 msgid "This financial year"
 msgstr "ສົກປີງົບປະມານຂອງປິນີ້"
@@ -328,7 +328,7 @@ msgid "Six-months"
 msgstr "6 ເດືອນ"
 
 msgid "Financial Years"
-msgstr ""
+msgstr "ສົກປີງົບປະມານ"
 
 msgid "Years"
 msgstr "ປີ"
@@ -343,25 +343,25 @@ msgid "Filter"
 msgstr "Filter"
 
 msgid "Columns"
-msgstr ""
+msgstr "ຖັນ"
 
 msgid "Rows"
-msgstr ""
+msgstr "ແຖວ"
 
 msgid "Reporting rate"
-msgstr ""
+msgstr "ອັດຕາການລາຍງານ"
 
 msgid "Reporting rate on time"
-msgstr ""
+msgstr "ອັດຕາການລາຍງານຕົງເວລາ"
 
 msgid "Actual reports"
-msgstr ""
+msgstr "ບົດລາຍງານຕົວຈິງ"
 
 msgid "Actual reports on time"
-msgstr ""
+msgstr "ລາຍງານຕົວຈິງຕົງເວລາ"
 
 msgid "Expected reports"
-msgstr ""
+msgstr "ລາຍງານທີ່ຄາດໄວ້"
 
 msgid "Program"
 msgstr "Program"
@@ -373,7 +373,7 @@ msgid "Select indicator group"
 msgstr "ເລືອກກຸ່ມຕົວຊີ້ວັດ"
 
 msgid "[ All groups ]"
-msgstr ""
+msgstr "[ ກຸ່ມທັງໝົດ ]"
 
 msgid "Data elements"
 msgstr "ອົງປະກອບຂໍ້ມູນ"
@@ -382,82 +382,82 @@ msgid "Select data element group"
 msgstr "ເລືອກກຸ່ມອົງປະກອບຂອງຂໍ້ມູນ"
 
 msgid "[ All data elements ]"
-msgstr ""
+msgstr "[ ອົງປະກອບຂໍ້ມູນທັງໝົດ ]"
 
 msgid "Data sets"
 msgstr "ແບບຟອມ"
 
 msgid "Select data sets"
-msgstr ""
+msgstr "ເລືອກຊຸດຂໍ້ມູນ"
 
 msgid "[ All metrics ]"
-msgstr ""
+msgstr "[ ການວັດແທກທັງໝົດ ]"
 
 msgid "Event data items"
 msgstr "ຂໍ້ມູນລາຍບຸກຄົນ"
 
 msgid "Select a program"
-msgstr ""
+msgstr "ເລືອກໂປແກຼມ"
 
 msgid "Program indicators"
 msgstr "ຕົວຊີ້ວັດສະເພາະວຽກຂອງຂະແໜງ"
 
 msgid "{{dynamicOuNames}} and {{lastOuName}}"
-msgstr ""
+msgstr "{{dynamicOuNames}} ແລະ {{lastOuName}}"
 
 msgid "{{allDynamicOuNames}} levels"
-msgstr ""
+msgstr "{{allDynamicOuNames}} ຂັ້ນ"
 
 msgid "{{allDynamicOuNames}} groups"
-msgstr ""
+msgstr "{{allDynamicOuNames}} ກຸ່ມ"
 
 msgid "{{allDynamicOuNames}} levels in {{staticOuNames}}"
-msgstr ""
+msgstr "{{allDynamicOuNames}} ຂັ້ນໃນ {{staticOuNames}}"
 
 msgid "{{allDynamicOuNames}} groups in {{staticOuNames}}"
-msgstr ""
+msgstr "{{allDynamicOuNames}} ກຸ່ມໃນ {{staticOuNames}}"
 
 msgid "Organisation Unit"
 msgstr "ຫົວໜ່ວຍ ການຈັດຕັ້ງ"
 
 msgid "Assigned Categories"
-msgstr ""
+msgstr "ຈັດໝວດໝູ່"
 
 msgid "Column"
 msgstr "ຖັນ"
 
 msgid "Stacked column"
-msgstr ""
+msgstr "ຖັນຊ້ອນກັນ"
 
 msgid "Bar"
-msgstr ""
+msgstr "ແຖບ"
 
 msgid "Stacked bar"
-msgstr ""
+msgstr "ແຖບຊ້ອນກັນ"
 
 msgid "Line"
-msgstr ""
+msgstr "ລາຍຊື່"
 
 msgid "Area"
-msgstr ""
+msgstr "ພື້ນທີ່"
 
 msgid "Pie"
-msgstr ""
+msgstr "ພາຍ"
 
 msgid "Radar"
-msgstr ""
+msgstr "ເຣດາ"
 
 msgid "Gauge"
-msgstr ""
+msgstr "ເຄື່ອງວັດແທກ"
 
 msgid "Year over year (line)"
-msgstr ""
+msgstr "ປີຕໍ່ປີ (ລາຍຊື່)"
 
 msgid "Year over year (column)"
-msgstr ""
+msgstr "ປີຕໍ່ປີ (ຖັນ)"
 
 msgid "Single value"
-msgstr ""
+msgstr "ຄ່າດຽວ"
 
 msgid "Pivot table"
 msgstr "ແບບຕາຕະລາງໄພວ໋ອດ"
