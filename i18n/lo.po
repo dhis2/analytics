@@ -32,22 +32,22 @@ msgid "Details"
 msgstr "ລາຍລະອຽດ"
 
 msgid "Detail"
-msgstr ""
+msgstr "ລາຍລະອຽດ"
 
 msgid "Search dimensions"
-msgstr ""
+msgstr "ຄົ້ນຫາຂະໜາດ"
 
 msgid "Dimension recommended with selected data"
-msgstr ""
+msgstr "ຂະໜາດທີ່ແນະນຳດ້ວຍຂໍ້ມູນທີ່ເລືອກ"
 
 msgid "Search"
 msgstr "ຄົນຫາ"
 
 msgid "Selected Data"
-msgstr ""
+msgstr "ເລືອກຂໍ້ມູນ"
 
 msgid "Deselect All"
-msgstr ""
+msgstr "ຍົກເລີກການເລືອກທັງໝົດ"
 
 msgid "Select all"
 msgstr "Select all"
@@ -107,10 +107,10 @@ msgid "December"
 msgstr "ທັນວາ"
 
 msgid "Week {{weekNumber}}"
-msgstr ""
+msgstr "ອາທິດ {{weekNumber}}"
 
 msgid "Bi-Week {{biWeekNumber}}"
-msgstr ""
+msgstr "ທຸກສອງອາທິດ {{biWeekNumber}}"
 
 msgid "Daily"
 msgstr "ທຸກໆມື້"
@@ -122,16 +122,16 @@ msgid "Bi-weekly"
 msgstr "ສອງອາທິດຕໍ່ຄັ້ງ"
 
 msgid "Weekly (Start Wednesday)"
-msgstr ""
+msgstr "ເປັນອາທິດ (ເລີ່ມຈາກວັນພຸດ)"
 
 msgid "Weekly (Start Thursday)"
-msgstr ""
+msgstr "ເປັນອາທິດ (ເລີ່ມຈາກວັນພະຫັດ)"
 
 msgid "Weekly (Start Saturday)"
-msgstr ""
+msgstr "ເປັນອາທິດ (ເລີ່ມຈາກວັນເສົາ)"
 
 msgid "Weekly (Start Sunday)"
-msgstr ""
+msgstr "ເປັນອາທິດ (ເລີ່ມຈາກວັນອາທິດ)"
 
 msgid "Monthly"
 msgstr "ລາຍເດືອນ"
@@ -152,7 +152,7 @@ msgid "Yearly"
 msgstr "ລາຍປີ"
 
 msgid "Financial year (Start November)"
-msgstr ""
+msgstr "ສົກປີງົບປະມານ (ເລີ່ມແຕ່ເດືອນພະຈິກ)"
 
 msgid "Financial year (Start October)"
 msgstr "ສົກປີງົບປະມານ (ເລີ່ມແຕ່ເດືອນຕຸລາ)"
@@ -254,7 +254,7 @@ msgid "Last six-month"
 msgstr "6 ເດືອນຜ່ານມາ"
 
 msgid "Last 2 six-month"
-msgstr ""
+msgstr "ສອງ 6 ເດືອນຜ່ານມາ"
 
 msgid "This financial year"
 msgstr "ສົກປີງົບປະມານຂອງປິນີ້"
@@ -296,25 +296,25 @@ msgid "Six-months"
 msgstr "6 ເດືອນ"
 
 msgid "Financial Years"
-msgstr ""
+msgstr "ສົກປີງົບປະມານ"
 
 msgid "Years"
 msgstr "ປີ"
 
 msgid "Reporting rate"
-msgstr ""
+msgstr "ອັດຕາການລາຍງານ"
 
 msgid "Reporting rate on time"
-msgstr ""
+msgstr "ອັດຕາການລາຍງານຕົງເວລາ"
 
 msgid "Actual reports"
-msgstr ""
+msgstr "ບົດລາຍງານຕົວຈິງ"
 
 msgid "Actual reports on time"
-msgstr ""
+msgstr "ລາຍງານຕົວຈິງຕົງເວລາ"
 
 msgid "Expected reports"
-msgstr ""
+msgstr "ລາຍງານທີ່ຄາດໄວ້"
 
 msgid "Program"
 msgstr "Program"
@@ -326,7 +326,7 @@ msgid "Select indicator group"
 msgstr "ເລືອກກຸ່ມຕົວຊີ້ວັດ"
 
 msgid "[ All groups ]"
-msgstr ""
+msgstr "[ ກຸ່ມທັງໝົດ ]"
 
 msgid "Data elements"
 msgstr "ອົງປະກອບຂໍ້ມູນ"
@@ -335,22 +335,22 @@ msgid "Select data element group"
 msgstr "ເລືອກກຸ່ມອົງປະກອບຂອງຂໍ້ມູນ"
 
 msgid "[ All data elements ]"
-msgstr ""
+msgstr "[ ອົງປະກອບຂໍ້ມູນທັງໝົດ ]"
 
 msgid "Data sets"
 msgstr "ແບບຟອມ"
 
 msgid "Select data sets"
-msgstr ""
+msgstr "ເລືອກຊຸດຂໍ້ມູນ"
 
 msgid "[ All metrics ]"
-msgstr ""
+msgstr "[ ການວັດແທກທັງໝົດ ]"
 
 msgid "Event data items"
 msgstr "ຂໍ້ມູນລາຍບຸກຄົນ"
 
 msgid "Select a program"
-msgstr ""
+msgstr "ເລືອກໂປແກຼມ"
 
 msgid "Program indicators"
 msgstr "ຕົວຊີ້ວັດສະເພາະວຽກຂອງຂະແໜງ"
@@ -359,19 +359,19 @@ msgid "Organisation Unit"
 msgstr "ຫົວໜ່ວຍ ການຈັດຕັ້ງ"
 
 msgid "{{dynamicOuNames}} and {{lastOuName}}"
-msgstr ""
+msgstr "{{dynamicOuNames}} ແລະ {{lastOuName}}"
 
 msgid "{{allDynamicOuNames}} levels"
-msgstr ""
+msgstr "{{allDynamicOuNames}} ຂັ້ນ"
 
 msgid "{{allDynamicOuNames}} groups"
-msgstr ""
+msgstr "{{allDynamicOuNames}} ກຸ່ມ"
 
 msgid "{{allDynamicOuNames}} levels in {{staticOuNames}}"
-msgstr ""
+msgstr "{{allDynamicOuNames}} ຂັ້ນໃນ {{staticOuNames}}"
 
 msgid "{{allDynamicOuNames}} groups in {{staticOuNames}}"
-msgstr ""
+msgstr "{{allDynamicOuNames}} ກຸ່ມໃນ {{staticOuNames}}"
 
 msgid "No data"
 msgstr "ບໍ່ມີຂໍ້ມູນ"
