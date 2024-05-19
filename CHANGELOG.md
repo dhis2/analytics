@@ -1,3 +1,10 @@
+## [4.5.79](https://github.com/dhis2/analytics/compare/v4.5.78...v4.5.79) (2024-05-19)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (4.x) ([16da60b](https://github.com/dhis2/analytics/commit/16da60b6ac28cfe4cdff84371690c41a50119417))
+
 ## [4.5.78](https://github.com/dhis2/analytics/compare/v4.5.77...v4.5.78) (2024-05-05)
 
 
