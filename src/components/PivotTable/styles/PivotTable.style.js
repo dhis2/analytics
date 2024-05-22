@@ -147,7 +147,13 @@ export const cell = css`
     .TEXT {
         text-align: left;
     }
-    .NUMBER {
+    .NUMBER,
+    .INTEGER,
+    .INTEGER_POSITIVE,
+    .INTEGER_NEGATIVE,
+    .INTEGER_ZERO_OR_POSITIVE,
+    .UNIT_INTERVAL,
+    .PERCENTAGE {
         text-align: right;
     }
     .clickable {
