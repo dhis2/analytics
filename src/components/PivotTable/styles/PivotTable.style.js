@@ -143,8 +143,6 @@ export const cell = css`
     }
     .value {
         background-color: #ffffff;
-    }
-    .TEXT {
         text-align: left;
     }
     .NUMBER,
