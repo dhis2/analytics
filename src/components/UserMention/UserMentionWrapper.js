@@ -2,12 +2,12 @@ import i18n from '@dhis2/d2-i18n'
 import {
     CenteredContent,
     CircularLoader,
+    Layer,
     Menu,
     MenuSectionHeader,
     MenuItem,
     Popper,
     Card,
-    Portal,
 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useState, useRef } from 'react'
@@ -65,9 +65,11 @@ export const UserMentionWrapper = ({
         clear()
     }
 
+    // focus the input/textarea when the user list is closed by clicking above the input/textarea
+    const onClick = () => inputReference.current.focus()
+
     // close the user list when clicking in the input/textarea or outside of it (input/textarea blur)
-    const onClick = () => reset()
-    const onBlur = () => reset()
+    const onUserListClose = () => reset()
 
     // event bubbles up from the input/textarea
     const onInput = ({ target }) => {
@@ -173,7 +175,6 @@ export const UserMentionWrapper = ({
             onKeyDown={onKeyDown}
             onInput={onInput}
             onClick={onClick}
-            onBlur={onBlur}
             className="wrapper"
         >
             {children}
@@ -181,7 +182,7 @@ export const UserMentionWrapper = ({
                 <p ref={cloneRef}>{cloneText}</p>
             </div>
             {listIsOpen && (
-                <Portal>
+                <Layer onBackdropClick={onUserListClose}>
                     <Popper
                         reference={getVirtualPopperReference(cloneRef)}
                         placement="top-start"
@@ -241,7 +242,7 @@ export const UserMentionWrapper = ({
                             </div>
                         </Card>
                     </Popper>
-                </Portal>
+                </Layer>
             )}
             <style jsx>{userMentionWrapperClasses}</style>
             {resolvedHeaderStyle.styles}

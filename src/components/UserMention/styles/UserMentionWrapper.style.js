@@ -30,6 +30,7 @@ export const userMentionWrapperClasses = css`
         overflow-wrap: break-word;
         font: inherit;
         margin: 0;
+        white-space: break-spaces;
     }
     .container {
         background-color: ${colors.white};
