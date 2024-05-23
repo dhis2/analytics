@@ -210,6 +210,12 @@ export const Editor = forwardRef(
         const textareaRef = externalRef || internalRef
         const caretPosRef = useRef(undefined)
 
+        const insertMarkdownCallback = (text, caretPos) => {
+            caretPosRef.current = caretPos
+            onChange(text)
+            textareaRef.current.focus()
+        }
+
         useEffect(() => {
             if (initialFocus) {
                 textareaRef.current?.focus()
@@ -237,11 +243,7 @@ export const Editor = forwardRef(
                         insertMarkdown(
                             markdown,
                             textareaRef.current,
-                            (text, caretPos) => {
-                                caretPosRef.current = caretPos
-                                onChange(text)
-                                textareaRef.current.focus()
-                            }
+                            insertMarkdownCallback
                         )
 
                         if (markdown === MENTION) {
@@ -280,7 +282,10 @@ export const Editor = forwardRef(
                                     onChange(event.target.value)
                                 }
                                 onKeyDown={(event) =>
-                                    convertCtrlKey(event, onChange)
+                                    convertCtrlKey(
+                                        event,
+                                        insertMarkdownCallback
+                                    )
                                 }
                             />
                         </UserMentionWrapper>
