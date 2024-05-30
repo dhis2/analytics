@@ -56,6 +56,7 @@ export default ({
                     },
                     boostThreshold: 1,
                 },
+                boost: { enabled: true },
             }
         case VIS_TYPE_COLUMN:
         case VIS_TYPE_STACKED_COLUMN:

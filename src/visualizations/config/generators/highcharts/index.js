@@ -72,6 +72,7 @@ function drawLegendSymbolWrap() {
 export default function (config, el) {
     if (config) {
         config.chart.renderTo = el || config.chart.renderTo
+        config.boost = { enabled: false }
 
         // silence warning about accessibility
         config.accessibility = { enabled: false }
