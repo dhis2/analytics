@@ -151,7 +151,9 @@ export const cell = css`
     .INTEGER_NEGATIVE,
     .INTEGER_ZERO_OR_POSITIVE,
     .UNIT_INTERVAL,
-    .PERCENTAGE {
+    .PERCENTAGE,
+    .BOOLEAN,
+    .TRUE_ONLY {
         text-align: right;
     }
     .clickable {
