@@ -1,3 +1,10 @@
+## [26.6.13](https://github.com/dhis2/analytics/compare/v26.6.12...v26.6.13) (2024-05-31)
+
+
+### Bug Fixes
+
+* generate correct link for line listing app in FileMenu (DHIS2-16018) ([#1669](https://github.com/dhis2/analytics/issues/1669)) ([c5c9135](https://github.com/dhis2/analytics/commit/c5c9135857343ddecf3c741904bdb2b86e6b000b))
+
 ## [26.6.12](https://github.com/dhis2/analytics/compare/v26.6.11...v26.6.12) (2024-05-26)
 
 
