@@ -127,11 +127,17 @@ export const cell = css`
     }
     .value {
         background-color: #ffffff;
-    }
-    .TEXT {
         text-align: left;
     }
-    .NUMBER {
+    .NUMBER,
+    .INTEGER,
+    .INTEGER_POSITIVE,
+    .INTEGER_NEGATIVE,
+    .INTEGER_ZERO_OR_POSITIVE,
+    .UNIT_INTERVAL,
+    .PERCENTAGE,
+    .BOOLEAN,
+    .TRUE_ONLY {
         text-align: right;
     }
     .clickable {
