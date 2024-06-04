@@ -1,3 +1,10 @@
+## [24.10.9](https://github.com/dhis2/analytics/compare/v24.10.8...v24.10.9) (2024-06-04)
+
+
+### Bug Fixes
+
+* numbers are misaligned in pivot table (DHIS2-16900) ([#1671](https://github.com/dhis2/analytics/issues/1671)) ([7fc5321](https://github.com/dhis2/analytics/commit/7fc532122d7bd0f12b2dba1ce005fd7490d47137))
+
 ## [24.10.8](https://github.com/dhis2/analytics/compare/v24.10.7...v24.10.8) (2024-04-25)
 
 
