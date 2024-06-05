@@ -80,10 +80,12 @@ export const UserMentionWrapper = ({
 
             const spacePosition = value.indexOf(' ', captureStartPosition - 1)
 
-            const filterValue = value.substring(
-                captureStartPosition,
-                spacePosition > 0 ? spacePosition : selectionEnd + 1
-            )
+            const filterValue = value
+                .substring(
+                    captureStartPosition,
+                    spacePosition > 0 ? spacePosition : selectionEnd + 1
+                )
+                .replace(/\n+/, '')
 
             if (filterValue !== capturedText) {
                 setCapturedText(filterValue)
