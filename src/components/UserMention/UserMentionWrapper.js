@@ -2,12 +2,12 @@ import i18n from '@dhis2/d2-i18n'
 import {
     CenteredContent,
     CircularLoader,
+    Layer,
     Menu,
     MenuSectionHeader,
     MenuItem,
     Popper,
     Card,
-    Portal,
 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useState, useRef } from 'react'
@@ -43,6 +43,7 @@ export const UserMentionWrapper = ({
     inputReference,
     onUserSelect,
 }) => {
+    const [listIsOpen, setListIsOpen] = useState(false)
     const [captureText, setCaptureText] = useState(false)
     const [capturedText, setCapturedText] = useState('')
     const [cloneText, setCloneText] = useState('')
@@ -54,6 +55,7 @@ export const UserMentionWrapper = ({
     })
 
     const reset = () => {
+        setListIsOpen(false)
         setCaptureText(false)
         setCapturedText('')
         setCloneText('')
@@ -62,6 +64,12 @@ export const UserMentionWrapper = ({
 
         clear()
     }
+
+    // focus the input/textarea when the user list is closed by clicking above the input/textarea
+    const onClick = () => inputReference.current.focus()
+
+    // close the user list when clicking in the input/textarea or outside of it (input/textarea blur)
+    const onUserListClose = () => reset()
 
     // event bubbles up from the input/textarea
     const onInput = ({ target }) => {
@@ -72,10 +80,12 @@ export const UserMentionWrapper = ({
 
             const spacePosition = value.indexOf(' ', captureStartPosition - 1)
 
-            const filterValue = value.substring(
-                captureStartPosition,
-                spacePosition > 0 ? spacePosition : selectionEnd + 1
-            )
+            const filterValue = value
+                .substring(
+                    captureStartPosition,
+                    spacePosition > 0 ? spacePosition : selectionEnd + 1
+                )
+                .replace(/\n+/, '')
 
             if (filterValue !== capturedText) {
                 setCapturedText(filterValue)
@@ -91,6 +101,7 @@ export const UserMentionWrapper = ({
         const { selectionStart } = target
 
         if (!captureText && key === '@') {
+            setListIsOpen(true)
             setCaptureText(true)
             setCaptureStartPosition(selectionStart + 1)
             setCloneText(target.value.substring(0, selectionStart) + '@')
@@ -159,16 +170,21 @@ export const UserMentionWrapper = ({
         )
     }
 
-    const onClick = (user) => () => onSelect(user)
+    const onUserClick = (user) => () => onSelect(user)
 
     return (
-        <div onKeyDown={onKeyDown} onInput={onInput} className="wrapper">
+        <div
+            onKeyDown={onKeyDown}
+            onInput={onInput}
+            onClick={onClick}
+            className="wrapper"
+        >
             {children}
             <div className="clone">
-                <pre ref={cloneRef}>{cloneText}</pre>
+                <p ref={cloneRef}>{cloneText}</p>
             </div>
-            {captureText && (
-                <Portal>
+            {listIsOpen && (
+                <Layer onBackdropClick={onUserListClose}>
                     <Popper
                         reference={getVirtualPopperReference(cloneRef)}
                         placement="top-start"
@@ -209,7 +225,7 @@ export const UserMentionWrapper = ({
                                             selectedUserIndex={
                                                 selectedUserIndex
                                             }
-                                            onUserClick={onClick}
+                                            onUserClick={onUserClick}
                                             pager={pager}
                                         />
                                     )}
@@ -228,7 +244,7 @@ export const UserMentionWrapper = ({
                             </div>
                         </Card>
                     </Popper>
-                </Portal>
+                </Layer>
             )}
             <style jsx>{userMentionWrapperClasses}</style>
             {resolvedHeaderStyle.styles}
@@ -245,5 +261,3 @@ UserMentionWrapper.propTypes = {
     onUserSelect: PropTypes.func.isRequired,
     children: PropTypes.node,
 }
-
-export default UserMentionWrapper

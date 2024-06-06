@@ -89,14 +89,20 @@ export const insertMarkdown = (markdown, target, cb) => {
     if (start === end) {
         //no text
         const valueArr = value.split('')
-        let markdown = marker.prefix
+        let markdownString = marker.prefix
 
         if (marker.postfix) {
-            markdown += marker.postfix
+            markdownString += marker.postfix
         }
 
-        valueArr.splice(start, 0, padMarkers(markdown))
+        valueArr.splice(start, 0, padMarkers(markdownString))
         newValue = valueArr.join('')
+
+        // for smileys, put the caret after a space
+        if (Object.keys(emojis).includes(markdown)) {
+            newValue += ' '
+            caretPos = caretPos + newValue.length - 1
+        }
     } else {
         const text = value.slice(start, end)
         const trimmedText = trim(text) // TODO really needed?
@@ -104,15 +110,15 @@ export const insertMarkdown = (markdown, target, cb) => {
         // adjust caretPos based on trimmed text selection
         caretPos = caretPos - (text.length - trimmedText.length) + 1
 
-        let markdown = `${marker.prefix}${trimmedText}`
+        let markdownString = `${marker.prefix}${trimmedText}`
 
         if (marker.postfix) {
-            markdown += marker.postfix
+            markdownString += marker.postfix
         }
 
         newValue = [
             value.slice(0, start),
-            padMarkers(markdown),
+            padMarkers(markdownString),
             value.slice(end),
         ].join('')
     }

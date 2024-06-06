@@ -32,10 +32,10 @@ export const useUserSearchResults = ({ searchText }) => {
     }, [searchText, debouncedRefetch])
 
     useEffect(() => {
-        if (data) {
+        if (fetching === false && data) {
             setData(data.users)
         }
-    }, [data])
+    }, [data, fetching])
 
     return {
         users,

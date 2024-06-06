@@ -6,18 +6,29 @@ export const mainClasses = css`
         display: flex;
         flex-direction: column;
         width: 100%;
+        height: 100%;
     }
 
     .preview {
+        padding: ${spacers.dp8} ${spacers.dp12};
         font-size: 14px;
-        line-height: 19px;
+        line-height: ${spacers.dp16};
         color: ${colors.grey900};
+        overflow-y: auto;
+        scroll-behavior: smooth;
+    }
+
+    .edit {
+        width: 100%;
+        height: 100%;
+        scroll-behavior: smooth;
     }
 
     .textarea {
         width: 100%;
+        height: 100%;
         box-sizing: border-box;
-        padding: ${spacers.dp8} ${spacers.dp12};
+        padding: ${spacers.dp8} 15px;
 
         color: ${colors.grey900};
         background-color: ${colors.white};
@@ -31,12 +42,20 @@ export const mainClasses = css`
         font-size: 14px;
         line-height: ${spacers.dp16};
         user-select: text;
+        resize: none;
+    }
+
+    .textarea.resizable {
+        resize: vertical;
     }
 
     .textarea:focus {
         outline: none;
         box-shadow: 0 0 0 3px ${theme.focus};
-        width: calc(100% - 3px);
+        width: calc(100% - 6px);
+        height: calc(100% - 3px);
+        padding: ${spacers.dp8} ${spacers.dp12};
+        margin-left: 3px;
     }
 
     .textarea:disabled {
