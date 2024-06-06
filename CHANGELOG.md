@@ -1,3 +1,31 @@
+## [26.6.14](https://github.com/dhis2/analytics/compare/v26.6.13...v26.6.14) (2024-06-03)
+
+
+### Bug Fixes
+
+* numbers are misaligned in pivot table (DHIS2-16900) ([#1668](https://github.com/dhis2/analytics/issues/1668)) ([454f9a1](https://github.com/dhis2/analytics/commit/454f9a13cbd2ccabce70ffa2dd5fef2a4d8ea686))
+
+## [26.6.13](https://github.com/dhis2/analytics/compare/v26.6.12...v26.6.13) (2024-05-31)
+
+
+### Bug Fixes
+
+* generate correct link for line listing app in FileMenu (DHIS2-16018) ([#1669](https://github.com/dhis2/analytics/issues/1669)) ([c5c9135](https://github.com/dhis2/analytics/commit/c5c9135857343ddecf3c741904bdb2b86e6b000b))
+
+## [26.6.12](https://github.com/dhis2/analytics/compare/v26.6.11...v26.6.12) (2024-05-26)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([2e7d587](https://github.com/dhis2/analytics/commit/2e7d5878f21c637ce8f277a01f122147d3163337))
+
+## [26.6.11](https://github.com/dhis2/analytics/compare/v26.6.10...v26.6.11) (2024-05-19)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([cb31357](https://github.com/dhis2/analytics/commit/cb313574c4ece7a38823910bfc2d5653c7375ae7))
+
 ## [26.6.10](https://github.com/dhis2/analytics/compare/v26.6.9...v26.6.10) (2024-05-14)
 
 
