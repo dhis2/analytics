@@ -1,3 +1,10 @@
+# [26.7.0](https://github.com/dhis2/analytics/compare/v26.6.14...v26.7.0) (2024-06-06)
+
+
+### Features
+
+* rich text and user mention components (DHIS2-15522) ([#1525](https://github.com/dhis2/analytics/issues/1525)) ([5681126](https://github.com/dhis2/analytics/commit/5681126100d7a8ad06a81cf3c0cd2db4841a1ae4))
+
 ## [26.6.14](https://github.com/dhis2/analytics/compare/v26.6.13...v26.6.14) (2024-06-03)
 
 
