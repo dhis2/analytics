@@ -1,10 +1,15 @@
 # 
+# Translators:
+# Saroj Dhakal <lotusnagarkot@gmail.com>, 2024
+# Prabesh Guragain, 2024
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2020-05-13T16:46:50.486Z\n"
 "PO-Revision-Date: 2020-04-29 08:10+0000\n"
-"Language-Team: Nepali (https://www.transifex.com/hisp-uio/teams/100509/ne/)\n"
+"Last-Translator: Prabesh Guragain, 2024\n"
+"Language-Team: Nepali (https://app.transifex.com/hisp-uio/teams/100509/ne/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -33,7 +38,7 @@ msgid "Dimension recommended with selected data"
 msgstr ""
 
 msgid "Search"
-msgstr ""
+msgstr "खोज"
 
 msgid "Selected Data"
 msgstr ""
@@ -48,7 +53,7 @@ msgid "Organisation units"
 msgstr ""
 
 msgid "Period"
-msgstr ""
+msgstr "अबधि"
 
 msgid "Year"
 msgstr ""
@@ -105,7 +110,7 @@ msgid "Bi-Week {{biWeekNumber}}"
 msgstr ""
 
 msgid "Daily"
-msgstr ""
+msgstr "दैनिक"
 
 msgid "Weekly"
 msgstr ""
@@ -156,10 +161,10 @@ msgid "Financial year (Start April)"
 msgstr ""
 
 msgid "Today"
-msgstr ""
+msgstr "आज"
 
 msgid "Yesterday"
-msgstr ""
+msgstr "हिजो"
 
 msgid "Last 3 days"
 msgstr ""
