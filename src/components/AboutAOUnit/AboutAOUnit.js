@@ -65,6 +65,8 @@ const AboutAOUnit = forwardRef(({ type, id, renderId }, ref) => {
 
     const queries = useMemo(() => getQueries(type), [type])
 
+    console.log('testing build from d2-ci')
+
     const {
         data,
         loading: dataIsLoading,
@@ -212,7 +214,7 @@ const AboutAOUnit = forwardRef(({ type, id, renderId }, ref) => {
                                 </p>
                                 <p className="detailLine">
                                     <IconClock16 color={colors.grey700} />
-                                    {i18n.t('Last updated {{time}}', {
+                                    {i18n.t('Testing testing {{time}}', {
                                         time: moment(
                                             fromServerDate(data.ao.lastUpdated)
                                         ).fromNow(),
