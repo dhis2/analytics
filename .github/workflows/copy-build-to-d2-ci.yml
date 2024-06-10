@@ -16,7 +16,6 @@ env:
 jobs:
     copy-to-d2-ci:
         runs-on: ubuntu-latest
-        if: "!contains(github.event.head_commit.message, '[skip ci]')"
         steps:
             - name: Checkout code
               uses: actions/checkout@v3
@@ -40,4 +39,5 @@ jobs:
             - name: Copy package to d2-ci
               uses: dhis2/deploy-build@master
               with:
+                  build-dir: build
                   github-token: ${{ secrets.DHIS2_BOT_GITHUB_TOKEN }}
