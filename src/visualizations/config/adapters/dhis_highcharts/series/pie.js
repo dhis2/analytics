@@ -1,3 +1,15 @@
+export const formatDataLabel = (name = '', y, percentage) => {
+    return (
+        '<span style="font-weight:normal">' +
+        name +
+        '</span><br/>' +
+        y.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ') +
+        '<span style="font-weight:normal"> (' +
+        parseFloat(percentage.toFixed(1)) +
+        ' %)</span>'
+    )
+}
+
 export default function (series, colors) {
     return [
         {
@@ -9,14 +21,10 @@ export default function (series, colors) {
             dataLabels: {
                 enabled: true,
                 formatter: function () {
-                    return (
-                        '<span style="font-weight:normal">' +
-                        this.point.name +
-                        '</span><br/>' +
-                        this.y +
-                        '<span style="font-weight:normal"> (' +
-                        this.percentage.toFixed(1) +
-                        ' %)</span>'
+                    return formatDataLabel(
+                        this.point.name,
+                        this.y,
+                        this.percentage
                     )
                 },
             },
