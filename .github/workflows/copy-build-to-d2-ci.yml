@@ -35,6 +35,14 @@ jobs:
             - name: Build package
               run: yarn build
 
+            - uses: actions/upload-artifact@v2
+              with:
+                  name: lib-build
+                  path: |
+                      **/build
+                      !**/node_modules
+                  retention-days: 2
+
             - name: Pack and unpack the build to a directory named 'package'
               run: yarn pack --filename output.tgz && tar -xzf output.tgz
 
