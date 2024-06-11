@@ -1,11 +1,7 @@
+import { separateDigitGroups } from '../../../../../modules/renderValue.js'
+
 export const formatDataLabel = (name = '', y, percentage) => {
-    const spaceSeparatedValue = y
-        .toString()
-        .replace(/\B(?=(\d{3})+(?!\d))/g, ' ') // add space as thousand separator, but also adds it to decimals
-    const parts = spaceSeparatedValue.split('.')
-    const value = parts[1]
-        ? `${parts[0]}.${parts[1].replace(/\s+/g, '')}` // remove spaces from decimals
-        : parts[0]
+    const value = separateDigitGroups(y.toString()).join(' ')
     return (
         '<span style="font-weight:normal">' +
         name +
