@@ -6,7 +6,6 @@
 **24.x**
 [![Test](https://github.com/dhis2/analytics/actions/workflows/node-test.yml/badge.svg?branch=24.x)](https://github.com/dhis2/analytics/actions/workflows/node-test.yml) [![DHIS2: Release](https://github.com/dhis2/analytics/actions/workflows/node-publish.yml/badge.svg?branch=24.x)](https://github.com/dhis2/analytics/actions/workflows/node-publish.yml)
 
-
 ## Overview
 
 The analytics library contains components and modules that are used in DHIS 2 analytics apps, including:
@@ -36,9 +35,10 @@ Commits to .x branches (e.g. 24.x) cannot trigger a major version bump, even if 
 
 Builds for all non-production branches are automatically copied to [d2-ci/analytics](https://github.com/d2-ci/analytics) for use during development and testing, prior to production release.
 
-To test changes in a development branch, change the analytics dependency of package.json of the app you are testing with. There are a few options: 
+To test changes in a development branch, change the analytics dependency of package.json of the app you are testing with. There are a few options:
 
 1. point to a specific commit:
+
 ```
 "dependencies": {
         "@dhis2/analytics": "git+https://github.com/d2-ci/analytics.git#70249ebe8be39051fa10142f850de449e1ec488c",
@@ -47,6 +47,7 @@ To test changes in a development branch, change the analytics dependency of pack
 ```
 
 2. point to a branch:
+
 ```
 "dependencies": {
         "@dhis2/analytics": "git+https://github.com/d2-ci/analytics.git#chore/some-chore",
