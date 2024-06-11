@@ -39,5 +39,5 @@ jobs:
             - name: Copy package to d2-ci
               uses: dhis2/deploy-build@master
               with:
-                  build-dir: build
+                  build-dir: package
                   github-token: ${{ secrets.DHIS2_BOT_GITHUB_TOKEN }}

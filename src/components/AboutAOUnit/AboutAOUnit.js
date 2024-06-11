@@ -65,7 +65,7 @@ const AboutAOUnit = forwardRef(({ type, id, renderId }, ref) => {
 
     const queries = useMemo(() => getQueries(type), [type])
 
-    console.log('testing build from d2-ci')
+    console.log('testing build from d2-ci 2')
 
     const {
         data,
