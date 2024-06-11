@@ -33,7 +33,7 @@ jobs:
             - name: Build package
               run: yarn build
 
-            - name: Pack and unpack the build
+            - name: Pack and unpack the build to a directory named 'package'
               run: yarn pack --filename output.tgz && tar -xzf output.tgz
 
             - name: Copy package to d2-ci
