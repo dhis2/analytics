@@ -1,3 +1,10 @@
+## [24.10.10](https://github.com/dhis2/analytics/compare/v24.10.9...v24.10.10) (2024-06-12)
+
+
+### Bug Fixes
+
+* separator for hundreds, thousands and millions is missing in the Pie charts (DHIS2-16172) 24.x ([#1679](https://github.com/dhis2/analytics/issues/1679)) ([f1f47ac](https://github.com/dhis2/analytics/commit/f1f47ac431d4234113ce1910d9f3a5610399734e))
+
 ## [24.10.9](https://github.com/dhis2/analytics/compare/v24.10.8...v24.10.9) (2024-06-04)
 
 
