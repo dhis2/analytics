@@ -9,7 +9,7 @@ export const formatDataLabel = (name = '', y, percentage) => {
         value +
         '<span style="font-weight:normal"> (' +
         parseFloat(percentage.toFixed(1)) +
-        ' %)</span>'
+        '%)</span>'
     )
 }
 
