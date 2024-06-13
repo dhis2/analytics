@@ -10,14 +10,14 @@ import {
     FONT_SIZE_LARGE,
 } from '../../../modules/pivotTable/pivotTableConstants.js'
 
-export const table = css.global`
+export const table = css`
     div.pivot-table-container {
         font-family: 'Roboto', Arial, sans-serif;
         overflow: auto;
         color: ${colors.grey900};
     }
 
-    table {
+    div.pivot-table-container :global(table) {
         border-spacing: 0;
         white-space: nowrap;
         box-sizing: border-box;
@@ -26,35 +26,37 @@ export const table = css.global`
         border-width: 1px 1px 0 0;
     }
 
-    table.fixed-headers {
+    div.pivot-table-container :global(table.fixed-headers) {
         border-width: 0 0 0 1px;
     }
 
-    table.fixed-headers tr th,
-    table.fixed-headers tr td {
+    div.pivot-table-container :global(table.fixed-headers tr th),
+    div.pivot-table-container :global(table.fixed-headers tr td) {
         border-width: 0 1px 1px 0;
     }
 
-    table.fixed-column-headers {
+    div.pivot-table-container :global(table.fixed-column-headers) {
         border-width: 0 1px 0 0;
     }
 
-    table.fixed-column-headers tr th,
-    table.fixed-column-headers tr td {
+    div.pivot-table-container :global(table.fixed-column-headers tr th),
+    div.pivot-table-container :global(table.fixed-column-headers tr td) {
         border-width: 0 0 1px 1px;
     }
 
-    table.fixed-headers thead tr:first-of-type th,
-    table.fixed-column-headers thead tr:first-of-type th {
+    div.pivot-table-container
+        :global(table.fixed-headers thead tr:first-of-type th),
+    div.pivot-table-container
+        :global(table.fixed-column-headers thead tr:first-of-type th) {
         border-top: 1px solid ${BORDER_COLOR};
     }
 
-    table.fixed-row-headers {
+    div.pivot-table-container :global(table.fixed-row-headers) {
         border-width: 0 0 1px 1px;
     }
 
-    table.fixed-row-headers tr th,
-    table.fixed-row-headers tr td {
+    div.pivot-table-container :global(table.fixed-row-headers tr th),
+    div.pivot-table-container :global(table.fixed-row-headers tr td) {
         border-width: 1px 1px 0 0;
     }
 `
