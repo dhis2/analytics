@@ -2,7 +2,10 @@ import PropTypes from 'prop-types'
 import React, { useRef } from 'react'
 import { applyLegendSet } from '../../modules/pivotTable/applyLegendSet.js'
 import { CELL_TYPE_VALUE } from '../../modules/pivotTable/pivotTableConstants.js'
-import { VALUE_TYPE_NUMBER } from '../../modules/valueTypes.js'
+import {
+    isNumericValueType,
+    isBooleanValueType,
+} from '../../modules/valueTypes.js'
 import { PivotTableCell } from './PivotTableCell.js'
 import { PivotTableEmptyCell } from './PivotTableEmptyCell.js'
 import { usePivotTableEngine } from './PivotTableEngineContext.js'
@@ -46,7 +49,8 @@ export const PivotTableValueCell = ({
     // TODO: Add support for 'INTEGER' type (requires server changes)
     const legendStyle =
         cellContent.cellType === CELL_TYPE_VALUE &&
-        cellContent.valueType === VALUE_TYPE_NUMBER
+        (isNumericValueType(cellContent.valueType) ||
+            isBooleanValueType(cellContent.valueType))
             ? applyLegendSet(
                   cellContent.rawValue,
                   cellContent.dxDimension,

@@ -2,7 +2,7 @@ import {
     NUMBER_TYPE_ROW_PERCENTAGE,
     NUMBER_TYPE_COLUMN_PERCENTAGE,
 } from './pivotTable/pivotTableConstants.js'
-import { isNumericValueType } from './valueTypes.js'
+import { isNumericValueType, isBooleanValueType } from './valueTypes.js'
 
 const trimTrailingZeros = (stringValue) => stringValue.replace(/\.?0+$/, '')
 
@@ -55,7 +55,10 @@ const toFixedPrecisionString = (value, skipRounding) => {
 }
 
 export const renderValue = (value, valueType, visualization) => {
-    if (!isNumericValueType(valueType) || value === undefined) {
+    if (
+        !(isNumericValueType(valueType) || isBooleanValueType(valueType)) ||
+        value === undefined
+    ) {
         return String(value).replace(/[^\S\n]+/, ' ')
     }
 
