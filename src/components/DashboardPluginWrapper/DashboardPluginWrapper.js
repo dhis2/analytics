@@ -1,4 +1,8 @@
-import { useCacheableSection, CacheableSection } from '@dhis2/app-runtime'
+import {
+    useCacheableSection,
+    CacheableSection,
+    useConfig,
+} from '@dhis2/app-runtime'
 import { CenteredContent, CircularLoader, CssVariables, Layer } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useEffect } from 'react'
@@ -51,6 +55,8 @@ export const DashboardPluginWrapper = ({
     isParentCached,
     ...props
 }) => {
+    const { pwaEnabled } = useConfig()
+
     useEffect(() => {
         // Get & send PWA installation status now
         getPWAInstallationStatus({
@@ -66,20 +72,28 @@ export const DashboardPluginWrapper = ({
                 overflow: 'hidden',
             }}
         >
-            <CacheableSectionWrapper
-                id={cacheId}
-                isParentCached={isParentCached}
-            >
-                {children(props)}
-            </CacheableSectionWrapper>
+            {pwaEnabled ? (
+                <CacheableSectionWrapper
+                    id={cacheId}
+                    isParentCached={isParentCached}
+                >
+                    {children(props)}
+                </CacheableSectionWrapper>
+            ) : (
+                children(props)
+            )}
             <CssVariables colors spacers elevations />
         </div>
     ) : null
 }
 
+DashboardPluginWrapper.defaultProps = {
+    onInstallationStatusChange: Function.prototype,
+}
+
 DashboardPluginWrapper.propTypes = {
-    cacheId: PropTypes.string,
-    children: PropTypes.func,
-    isParentCached: PropTypes.bool,
+    cacheId: PropTypes.string.isRequired,
+    children: PropTypes.func.isRequired,
+    isParentCached: PropTypes.bool.isRequired,
     onInstallationStatusChange: PropTypes.func,
 }
