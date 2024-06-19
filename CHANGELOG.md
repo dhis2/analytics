@@ -1,3 +1,10 @@
+## [24.10.11-alpha.1](https://github.com/dhis2/analytics/compare/v24.10.10...v24.10.11-alpha.1) (2024-06-19)
+
+
+### Bug Fixes
+
+* **pivot-table:** use a scoped base selector and global sub selectors ([dff1165](https://github.com/dhis2/analytics/commit/dff1165098c507cdb42881afca7c67f67bdc6afb))
+
 ## [24.10.10](https://github.com/dhis2/analytics/compare/v24.10.9...v24.10.10) (2024-06-12)
 
 
