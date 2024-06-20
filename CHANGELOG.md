@@ -1,3 +1,17 @@
+## [26.7.3](https://github.com/dhis2/analytics/compare/v26.7.2...v26.7.3) (2024-06-16)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([4160138](https://github.com/dhis2/analytics/commit/41601383b5b918914757841791cd62c1a87ec135))
+
+## [26.7.2](https://github.com/dhis2/analytics/compare/v26.7.1...v26.7.2) (2024-06-12)
+
+
+### Bug Fixes
+
+* separator for hundreds, thousands and millions is missing in the Pie charts (DHIS2-16172) ([#1677](https://github.com/dhis2/analytics/issues/1677)) ([ad8c799](https://github.com/dhis2/analytics/commit/ad8c799187a8f143eb16a3f554e5e02afa4a4256))
+
 ## [26.7.1](https://github.com/dhis2/analytics/compare/v26.7.0...v26.7.1) (2024-06-09)
 
 
