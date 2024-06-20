@@ -46,7 +46,6 @@ export const PivotTableValueCell = ({
         )
     }
 
-    // TODO: Add support for 'INTEGER' type (requires server changes)
     const legendStyle =
         cellContent.cellType === CELL_TYPE_VALUE &&
         (isNumericValueType(cellContent.valueType) ||
