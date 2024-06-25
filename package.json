@@ -59,7 +59,7 @@
         "styled-jsx": "^4.0.1"
     },
     "dependencies": {
-        "@dhis2/multi-calendar-dates": "^1.2.1",
+        "@dhis2/multi-calendar-dates": "^1.2.2",
         "@dnd-kit/core": "^6.0.7",
         "@dnd-kit/sortable": "^7.0.2",
         "@dnd-kit/utilities": "^3.2.1",
