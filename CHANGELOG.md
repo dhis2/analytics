@@ -1,3 +1,10 @@
+## [26.7.5](https://github.com/dhis2/analytics/compare/v26.7.4...v26.7.5) (2024-06-25)
+
+
+### Bug Fixes
+
+* update multicalendar dep for translations (DHIS2-16904) ([#1685](https://github.com/dhis2/analytics/issues/1685)) ([b3a48ba](https://github.com/dhis2/analytics/commit/b3a48ba8cff9956468a2670c0dda16549247bd18))
+
 ## [26.7.4](https://github.com/dhis2/analytics/compare/v26.7.3...v26.7.4) (2024-06-20)
 
 
