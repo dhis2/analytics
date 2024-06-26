@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2024-06-18T13:13:17.172Z\n"
-"PO-Revision-Date: 2024-06-18T13:13:17.172Z\n"
+"POT-Creation-Date: 2024-06-26T14:09:30.876Z\n"
+"PO-Revision-Date: 2024-06-26T14:09:30.876Z\n"
 
 msgid "view only"
 msgstr "view only"
@@ -37,6 +37,11 @@ msgstr "Created {{time}} by {{author}}"
 
 msgid "Created {{time}}"
 msgstr "Created {{time}}"
+
+msgid "Viewed {{count}} times"
+msgid_plural "Viewed {{count}} times"
+msgstr[0] "Viewed 1 time"
+msgstr[1] "Viewed {{count}} times"
 
 msgid "Notifications"
 msgstr "Notifications"
@@ -390,6 +395,11 @@ msgstr "Interpretations"
 msgid "Reply"
 msgstr "Reply"
 
+msgid "{{count}} replies"
+msgid_plural "{{count}} replies"
+msgstr[0] "{{count}} reply"
+msgstr[1] "{{count}} replies"
+
 msgid "View replies"
 msgstr "View replies"
 
@@ -571,6 +581,21 @@ msgstr "Options"
 
 msgid "Hide"
 msgstr "Hide"
+
+msgid "{{count}} org units"
+msgid_plural "{{count}} org units"
+msgstr[0] "{{count}} org unit"
+msgstr[1] "{{count}} org units"
+
+msgid "{{count}} levels"
+msgid_plural "{{count}} levels"
+msgstr[0] "{{count}} level"
+msgstr[1] "{{count}} levels"
+
+msgid "{{count}} groups"
+msgid_plural "{{count}} groups"
+msgstr[0] "{{count}} group"
+msgstr[1] "{{count}} groups"
 
 msgid "Selected: {{commaSeparatedListOfOrganisationUnits}}"
 msgstr "Selected: {{commaSeparatedListOfOrganisationUnits}}"
@@ -1180,6 +1205,11 @@ msgstr "Base"
 
 msgid "Axis {{axisId}}"
 msgstr "Axis {{axisId}}"
+
+msgid "{{count}} items"
+msgid_plural "{{count}} items"
+msgstr[0] "{{count}} item"
+msgstr[1] "{{count}} items"
 
 msgid "Reset zoom"
 msgstr "Reset zoom"
