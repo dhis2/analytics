@@ -1,3 +1,10 @@
+## [26.7.6](https://github.com/dhis2/analytics/compare/v26.7.5...v26.7.6) (2024-06-26)
+
+
+### Bug Fixes
+
+* apply legend to all numeric and boolean types (DHIS2-17611) ([#1683](https://github.com/dhis2/analytics/issues/1683)) ([e93b106](https://github.com/dhis2/analytics/commit/e93b106f7e0b3ab9ebae8a21a07d5cebee3d48d3))
+
 ## [26.7.5](https://github.com/dhis2/analytics/compare/v26.7.4...v26.7.5) (2024-06-25)
 
 
