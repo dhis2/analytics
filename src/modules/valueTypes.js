@@ -34,4 +34,7 @@ const NUMERIC_VALUE_TYPES = [
     VALUE_TYPE_INTEGER_ZERO_OR_POSITIVE,
 ]
 
+const BOOLEAN_VALUE_TYPES = [VALUE_TYPE_BOOLEAN, VALUE_TYPE_TRUE_ONLY]
+
 export const isNumericValueType = (type) => NUMERIC_VALUE_TYPES.includes(type)
+export const isBooleanValueType = (type) => BOOLEAN_VALUE_TYPES.includes(type)
