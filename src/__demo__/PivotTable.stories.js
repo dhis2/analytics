@@ -1119,3 +1119,44 @@ storiesOf('PivotTable', module).add('DEGS', (_, { pivotTableOptions }) => {
         </div>
     )
 })
+
+storiesOf('PivotTable', module).add(
+    'Truncated header cell',
+    (_, { pivotTableOptions }) => {
+        const widths = [250, 200, 500]
+        const [width, setWidth] = useState(250)
+        const toggleWidth = () =>
+            setWidth(
+                (currentWidth) =>
+                    widths[widths.indexOf(currentWidth) + 1] ?? widths[0]
+            )
+        const visualization = {
+            ...narrativeVisualization,
+            ...visualizationReset,
+            ...pivotTableOptions,
+            columns: narrativeVisualization.filters,
+            filters: narrativeVisualization.columns,
+            rowTotals: true,
+            colTotals: true,
+        }
+
+        const data = {
+            ...narrativeData,
+            rows: [narrativeData.rows[0]],
+        }
+
+        return (
+            <div
+                style={{
+                    width,
+                    height: 600,
+                    marginTop: 50,
+                    transition: 'width 1s',
+                }}
+            >
+                <button onClick={toggleWidth}>Toggle width</button>
+                <PivotTable data={data} visualization={visualization} />
+            </div>
+        )
+    }
+)
