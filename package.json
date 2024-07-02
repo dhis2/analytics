@@ -20,7 +20,6 @@
     },
     "scripts": {
         "build": "d2-app-scripts build",
-        "postbuild": "yarn build-storybook",
         "build-storybook": "build-storybook",
         "start-storybook": "start-storybook --port 5000",
         "start": "yarn start-storybook",
@@ -31,8 +30,8 @@
         "validate-push": "yarn test"
     },
     "devDependencies": {
-        "@dhis2/app-runtime": "^3.9.0",
-        "@dhis2/cli-app-scripts": "^9.0.1",
+        "@dhis2/app-runtime": "^3.10.4",
+        "@dhis2/cli-app-scripts": "^11.4.1",
         "@dhis2/cli-style": "^10.4.1",
         "@dhis2/d2-i18n": "^1.1.0",
         "@dhis2/ui": "^9.4.4",
