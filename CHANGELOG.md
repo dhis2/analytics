@@ -1,3 +1,10 @@
+## [26.7.7](https://github.com/dhis2/analytics/compare/v26.7.6...v26.7.7) (2024-07-08)
+
+
+### Bug Fixes
+
+* remove duplicate @dhis2/multi-calendar-dates dependency ([#1689](https://github.com/dhis2/analytics/issues/1689)) ([3e5ece9](https://github.com/dhis2/analytics/commit/3e5ece9b59f45c5902a882dedc40fd1c28322e8a))
+
 ## [26.7.6](https://github.com/dhis2/analytics/compare/v26.7.5...v26.7.6) (2024-06-26)
 
 
