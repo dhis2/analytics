@@ -1,3 +1,10 @@
+## [26.7.8](https://github.com/dhis2/analytics/compare/v26.7.7...v26.7.8) (2024-07-12)
+
+
+### Bug Fixes
+
+* do not call period generator with non-4-digit year (DHIS2-17707) ([#1690](https://github.com/dhis2/analytics/issues/1690)) ([f2f516d](https://github.com/dhis2/analytics/commit/f2f516de181f6413061a1bfce5606d7575e5e1f5))
+
 ## [26.7.7](https://github.com/dhis2/analytics/compare/v26.7.6...v26.7.7) (2024-07-08)
 
 
