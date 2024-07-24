@@ -20,94 +20,94 @@ msgid "Data"
 msgstr "Datos"
 
 msgid "Data Type"
-msgstr ""
+msgstr "Tipo de datos"
 
 msgid "Totals"
-msgstr ""
+msgstr "Totales"
 
 msgid "Details"
 msgstr "Detalles"
 
 msgid "Detail"
-msgstr ""
+msgstr "Detalle"
 
 msgid "Search dimensions"
-msgstr ""
+msgstr "Buscar dimensiones"
 
 msgid "Dimension recommended with selected data"
-msgstr ""
+msgstr "Dimensión recomendada con datos seleccionados"
 
 msgid "Search"
 msgstr "Buscar"
 
 msgid "Selected Data"
-msgstr ""
+msgstr "Datos seleccionados"
 
 msgid "Deselect All"
-msgstr ""
+msgstr "Deseleccionar todo"
 
 msgid "Select all"
-msgstr ""
+msgstr "Seleccionar todo"
 
 msgid "Organisation units"
-msgstr ""
+msgstr "Unidades de organización"
 
 msgid "Period"
 msgstr "Periodo"
 
 msgid "Year"
-msgstr ""
+msgstr "Año"
 
 msgid "Relative periods"
-msgstr ""
+msgstr "Periodos relativos"
 
 msgid "Fixed periods"
-msgstr ""
+msgstr "Periodos fijos"
 
 msgid "Period type"
-msgstr ""
+msgstr "Tipo de período"
 
 msgid "January"
-msgstr ""
+msgstr "Enero"
 
 msgid "February"
-msgstr ""
+msgstr "Febrero"
 
 msgid "March"
-msgstr ""
+msgstr "Marzo"
 
 msgid "April"
-msgstr ""
+msgstr "Abril"
 
 msgid "May"
-msgstr ""
+msgstr "Mayo"
 
 msgid "June"
-msgstr ""
+msgstr "Junio"
 
 msgid "July"
-msgstr ""
+msgstr "Julio"
 
 msgid "August"
-msgstr ""
+msgstr "Agosto"
 
 msgid "September"
-msgstr ""
+msgstr "Septiembre"
 
 msgid "October"
-msgstr ""
+msgstr "Octubre"
 
 msgid "November"
-msgstr ""
+msgstr "Noviembre"
 
 msgid "December"
-msgstr ""
+msgstr "Diciembre"
 
 msgid "Week {{weekNumber}}"
-msgstr ""
+msgstr "Semana {{weekNumber}}"
 
 msgid "Bi-Week {{biWeekNumber}}"
-msgstr ""
+msgstr "Cada dos semanas {{biWeekNumber}}"
 
 msgid "Daily"
 msgstr "Diario"
@@ -116,49 +116,49 @@ msgid "Weekly"
 msgstr "Semanal"
 
 msgid "Bi-weekly"
-msgstr ""
+msgstr "Cada dos semanas"
 
 msgid "Weekly (Start Wednesday)"
-msgstr ""
+msgstr "Semanal (Inicio miércoles)"
 
 msgid "Weekly (Start Thursday)"
-msgstr ""
+msgstr "Semanal (Inicio jueves)"
 
 msgid "Weekly (Start Saturday)"
-msgstr ""
+msgstr "Semanal (inicio el sábado)"
 
 msgid "Weekly (Start Sunday)"
-msgstr ""
+msgstr "Semanal (Inicio el domingo)"
 
 msgid "Monthly"
 msgstr "Mensual"
 
 msgid "Bi-monthly"
-msgstr ""
+msgstr "Bimensual"
 
 msgid "Quarterly"
-msgstr ""
+msgstr "Trimestral"
 
 msgid "Six-monthly"
-msgstr ""
+msgstr "Semestral"
 
 msgid "Six-monthly April"
-msgstr ""
+msgstr "Semestral Abril"
 
 msgid "Yearly"
 msgstr "Anual"
 
 msgid "Financial year (Start November)"
-msgstr ""
+msgstr "Ejercicio financiero (Inicio en noviembre)"
 
 msgid "Financial year (Start October)"
-msgstr ""
+msgstr "Ejercicio financiero (Inicio en octubre)"
 
 msgid "Financial year (Start July)"
-msgstr ""
+msgstr "Ejercicio financiero (inicio en julio)"
 
 msgid "Financial year (Start April)"
-msgstr ""
+msgstr "Ejercicio financiero (Inicio en abril)"
 
 msgid "Today"
 msgstr "Hoy"
@@ -167,13 +167,13 @@ msgid "Yesterday"
 msgstr "Ayer"
 
 msgid "Last 3 days"
-msgstr ""
+msgstr "Últimos 3 días"
 
 msgid "Last 7 days"
-msgstr ""
+msgstr "Últimos 7 días"
 
 msgid "Last 14 days"
-msgstr ""
+msgstr "Últimos 14 días"
 
 msgid "This week"
 msgstr "Esta semana"
@@ -182,25 +182,25 @@ msgid "Last week"
 msgstr "Última semana"
 
 msgid "Last 4 weeks"
-msgstr ""
+msgstr "Últimas 4 semanas"
 
 msgid "Last 12 weeks"
-msgstr ""
+msgstr "Últimas 12 semanas"
 
 msgid "Last 52 weeks"
-msgstr ""
+msgstr "Últimas 52 semanas"
 
 msgid "Weeks this year"
 msgstr "Semanas de este año"
 
 msgid "This bi-week"
-msgstr ""
+msgstr "Esta quincena"
 
 msgid "Last bi-week"
-msgstr ""
+msgstr "Última quincena"
 
 msgid "Last 4 bi-weeks"
-msgstr ""
+msgstr "Últimas 4 bisemanas"
 
 msgid "This month"
 msgstr "Este mes"
@@ -212,25 +212,25 @@ msgid "Last 3 months"
 msgstr "Últimos 3 meses"
 
 msgid "Last 6 months"
-msgstr ""
+msgstr "Últimos 6 meses"
 
 msgid "Last 12 months"
-msgstr ""
+msgstr "Últimos 12 meses"
 
 msgid "Months this year"
 msgstr "Meses este año"
 
 msgid "This bi-month"
-msgstr ""
+msgstr "Este bimestre"
 
 msgid "Last bi-month"
-msgstr ""
+msgstr "Último bimestre"
 
 msgid "Last 6 bi-months"
-msgstr ""
+msgstr "Últimos 6 bimestres"
 
 msgid "Bi-months this year"
-msgstr ""
+msgstr "Bimensuales este año"
 
 msgid "This quarter"
 msgstr "Este trimestre"
@@ -239,19 +239,19 @@ msgid "Last quarter"
 msgstr "El trimestre pasado"
 
 msgid "Last 4 quarters"
-msgstr ""
+msgstr "Últimos 4 trimestres"
 
 msgid "Quarters this year"
 msgstr "Trimestres de este año"
 
 msgid "This six-month"
-msgstr ""
+msgstr "Estos seis meses"
 
 msgid "Last six-month"
-msgstr ""
+msgstr "Últimos seis meses"
 
 msgid "Last 2 six-month"
-msgstr ""
+msgstr "Últimos 2 semestres"
 
 msgid "This financial year"
 msgstr "Este año fiscal"
@@ -260,7 +260,7 @@ msgid "Last financial year"
 msgstr "Último ejercicio financiero"
 
 msgid "Last 5 financial years"
-msgstr ""
+msgstr "Últimos 5 ejercicios"
 
 msgid "This year"
 msgstr "Este año"
@@ -269,7 +269,7 @@ msgid "Last year"
 msgstr "El año pasado"
 
 msgid "Last 5 years"
-msgstr ""
+msgstr "Últimos 5 años"
 
 msgid "Days"
 msgstr "Días"
@@ -278,40 +278,40 @@ msgid "Weeks"
 msgstr "Semanas"
 
 msgid "Bi-weeks"
-msgstr ""
+msgstr "Dos semanas"
 
 msgid "Months"
 msgstr "Meses"
 
 msgid "Bi-months"
-msgstr ""
+msgstr "Bimensual"
 
 msgid "Quarters"
-msgstr ""
+msgstr "Trimestres"
 
 msgid "Six-months"
-msgstr ""
+msgstr "Seis meses"
 
 msgid "Financial Years"
-msgstr ""
+msgstr "Ejercicios financieros"
 
 msgid "Years"
 msgstr "Años"
 
 msgid "Reporting rate"
-msgstr ""
+msgstr "Índice de notificación"
 
 msgid "Reporting rate on time"
-msgstr ""
+msgstr "Tasa de notificación puntual"
 
 msgid "Actual reports"
-msgstr ""
+msgstr "Informes reales"
 
 msgid "Actual reports on time"
-msgstr ""
+msgstr "Informes reales a tiempo"
 
 msgid "Expected reports"
-msgstr ""
+msgstr "Informes previstos"
 
 msgid "Program"
 msgstr "Programa"
@@ -320,55 +320,55 @@ msgid "Indicators"
 msgstr "Indicadores"
 
 msgid "Select indicator group"
-msgstr ""
+msgstr "Seleccionar grupo de indicadores"
 
 msgid "[ All groups ]"
-msgstr ""
+msgstr "[ Todos los grupos ]"
 
 msgid "Data elements"
-msgstr ""
+msgstr "Elementos de datos"
 
 msgid "Select data element group"
-msgstr ""
+msgstr "Seleccionar grupo de elementos de datos"
 
 msgid "[ All data elements ]"
-msgstr ""
+msgstr "[ Todos los datos ]"
 
 msgid "Data sets"
 msgstr "Sets de datos"
 
 msgid "Select data sets"
-msgstr ""
+msgstr "Seleccionar conjuntos de datos"
 
 msgid "[ All metrics ]"
-msgstr ""
+msgstr "[ Todas las métricas ]"
 
 msgid "Event data items"
-msgstr ""
+msgstr "Datos del evento"
 
 msgid "Select a program"
-msgstr ""
+msgstr "Seleccione un programa"
 
 msgid "Program indicators"
-msgstr ""
+msgstr "Indicadores del programa"
 
 msgid "Organisation Unit"
 msgstr "Unidad Organizativa"
 
 msgid "{{dynamicOuNames}} and {{lastOuName}}"
-msgstr ""
+msgstr "{{dynamicOuNames}} y {{lastOuName}}"
 
 msgid "{{allDynamicOuNames}} levels"
-msgstr ""
+msgstr "{{allDynamicOuNames}} niveles"
 
 msgid "{{allDynamicOuNames}} groups"
-msgstr ""
+msgstr "{{allDynamicOuNames}} grupos"
 
 msgid "{{allDynamicOuNames}} levels in {{staticOuNames}}"
-msgstr ""
+msgstr "{{allDynamicOuNames}} niveles en {{staticOuNames}}"
 
 msgid "{{allDynamicOuNames}} groups in {{staticOuNames}}"
-msgstr ""
+msgstr "{{allDynamicOuNames}} grupos en {{staticOuNames}}"
 
 msgid "No data"
 msgstr "No hay datos"
