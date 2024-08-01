@@ -1,3 +1,10 @@
+# [26.8.0](https://github.com/dhis2/analytics/compare/v26.7.9...v26.8.0) (2024-08-01)
+
+
+### Features
+
+* pivot table as default vis type in DV ([#1694](https://github.com/dhis2/analytics/issues/1694)) ([ef6f6ab](https://github.com/dhis2/analytics/commit/ef6f6ab9a94b427af71c36af9f004c95660d8221))
+
 ## [26.7.9](https://github.com/dhis2/analytics/compare/v26.7.8...v26.7.9) (2024-07-24)
 
 
