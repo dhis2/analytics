@@ -27,8 +27,12 @@ const analyticsDataQuery = {
         }),
     params: ({ dimensions, filters, parameters }) => {
         return {
-            dimension: dimensions.length ? dimensions : undefined,
-            filter: filters.length ? filters : undefined,
+            dimension: dimensions.length
+                ? generateDimensionStrings(dimensions, { sorted: true })
+                : undefined,
+            filter: filters.length
+                ? generateDimensionStrings(filters, { sorted: true })
+                : undefined,
             ...parameters,
             skipMeta: true,
             skipData: false,
@@ -45,8 +49,10 @@ const analyticsMetaDataQuery = {
             trackedEntityType,
         }),
     params: ({ dimensions, filters, parameters }) => ({
-        dimension: dimensions.length ? dimensions : undefined,
-        filter: filters.length ? filters : undefined,
+        dimension: dimensions.length
+            ? generateDimensionStrings(dimensions)
+            : undefined,
+        filter: filters.length ? generateDimensionStrings(filters) : undefined,
         ...parameters,
         skipMeta: false,
         skipData: true,
@@ -55,11 +61,9 @@ const analyticsMetaDataQuery = {
 }
 
 export const generateDimensionStrings = (dimensions = [], options) => {
-    if (options && options.sorted) {
-        dimensions = sortBy(dimensions, 'dimension')
-    }
-
-    return dimensions.map(({ dimension, items }) => {
+    const sortedDimensions = sortBy(dimensions, 'dimension')
+    console.log('arrays the same?', sortedDimensions === dimensions)
+    return sortedDimensions.map(({ dimension, items }) => {
         if (Array.isArray(items) && items.length) {
             if (options && options.sorted) {
                 items.sort()
@@ -131,8 +135,8 @@ class AnalyticsBase {
                     path: req.path,
                     program: req.program,
                     trackedEntityType: req.trackedEntityType,
-                    dimensions: generateDimensionStrings(req.dimensions),
-                    filters: generateDimensionStrings(req.filters),
+                    dimensions: req.dimensions,
+                    filters: req.filters,
                     parameters: req.parameters,
                     dataParams: dataReq.parameters,
                     metaDataParams: metaDataReq.parameters,
