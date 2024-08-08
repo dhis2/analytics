@@ -62,11 +62,10 @@ const analyticsMetaDataQuery = {
 
 export const generateDimensionStrings = (dimensions = [], options) => {
     const sortedDimensions = sortBy(dimensions, 'dimension')
-    console.log('arrays the same?', sortedDimensions === dimensions)
     return sortedDimensions.map(({ dimension, items }) => {
         if (Array.isArray(items) && items.length) {
             if (options && options.sorted) {
-                items.sort()
+                items = items.slice().sort()
             }
 
             return `${dimension}:${items.join(';')}`
