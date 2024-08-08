@@ -23,6 +23,7 @@ export default function (series, colors) {
             colors: colors,
             dataLabels: {
                 enabled: true,
+                padding: 0,
                 formatter: function () {
                     return formatDataLabel(
                         this.point.name,
