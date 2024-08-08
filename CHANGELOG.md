@@ -1,3 +1,10 @@
+## [26.8.1](https://github.com/dhis2/analytics/compare/v26.8.0...v26.8.1) (2024-08-08)
+
+
+### Bug Fixes
+
+* sort analytics request params and items for cache hit optimization (DHIS2-17861) ([#1695](https://github.com/dhis2/analytics/issues/1695)) ([80c9306](https://github.com/dhis2/analytics/commit/80c93068991aee21556f12960567cca7b594a324))
+
 # [26.8.0](https://github.com/dhis2/analytics/compare/v26.7.9...v26.8.0) (2024-08-01)
 
 
