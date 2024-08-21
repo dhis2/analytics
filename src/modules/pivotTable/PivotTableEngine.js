@@ -8,7 +8,12 @@ import {
 } from '../dataTypes.js'
 import { DIMENSION_ID_ORGUNIT } from '../predefinedDimensions.js'
 import { renderValue } from '../renderValue.js'
-import { VALUE_TYPE_NUMBER, VALUE_TYPE_TEXT } from '../valueTypes.js'
+import {
+    VALUE_TYPE_NUMBER,
+    VALUE_TYPE_TEXT,
+    isBooleanValueType,
+    isNumericValueType,
+} from '../valueTypes.js'
 import { AdaptiveClippingController } from './AdaptiveClippingController.js'
 import { addToTotalIfNumber } from './addToTotalIfNumber.js'
 import { parseValue } from './parseValue.js'
@@ -744,7 +749,15 @@ export class PivotTableEngine {
                 totalCell.valueType = currentValueType
             }
 
-            if (dxDimension?.valueType === VALUE_TYPE_NUMBER) {
+            // compute subtotals and totals for all numeric and boolean value types
+            // in that case, force value type of subtotal and total cells to NUMBER to format them correctly
+            // (see DHIS2-9155)
+            if (
+                isNumericValueType(dxDimension?.valueType) ||
+                isBooleanValueType(dxDimension?.valueType)
+            ) {
+                totalCell.valueType = VALUE_TYPE_NUMBER
+
                 dataFields.forEach((field) => {
                     const headerIndex = this.dimensionLookup.dataHeaders[field]
                     const value = parseValue(dataRow[headerIndex])
