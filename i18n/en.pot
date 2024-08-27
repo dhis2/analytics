@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2024-06-26T14:09:30.876Z\n"
-"PO-Revision-Date: 2024-06-26T14:09:30.876Z\n"
+"POT-Creation-Date: 2024-08-27T11:29:09.031Z\n"
+"PO-Revision-Date: 2024-08-27T11:29:09.033Z\n"
 
 msgid "view only"
 msgstr "view only"
@@ -66,6 +66,12 @@ msgstr "About this line list"
 
 msgid "About this visualization"
 msgstr "About this visualization"
+
+msgid "About this event chart"
+msgstr "About this event chart"
+
+msgid "About this event report"
+msgstr "About this event report"
 
 msgid "This app could not retrieve required data."
 msgstr "This app could not retrieve required data."
