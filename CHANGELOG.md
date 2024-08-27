@@ -1,3 +1,10 @@
+## [26.8.3](https://github.com/dhis2/analytics/compare/v26.8.2...v26.8.3) (2024-08-27)
+
+
+### Bug Fixes
+
+* compute subtotals/totals for boolean types (DHIS2-9155) ([#1696](https://github.com/dhis2/analytics/issues/1696)) ([3392d78](https://github.com/dhis2/analytics/commit/3392d783b51dd8715beb09b673e567580005a0a2))
+
 ## [26.8.2](https://github.com/dhis2/analytics/compare/v26.8.1...v26.8.2) (2024-08-27)
 
 
