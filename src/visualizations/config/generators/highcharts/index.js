@@ -6,6 +6,7 @@ import HNDTD from 'highcharts/modules/no-data-to-display'
 import HOE from 'highcharts/modules/offline-exporting'
 import HPF from 'highcharts/modules/pattern-fill'
 import HSG from 'highcharts/modules/solid-gauge'
+import renderSingleValueSvg from './renderSingleValueSvg/index.js'
 
 // apply
 HM(H)
@@ -71,7 +72,7 @@ function drawLegendSymbolWrap() {
     )
 }
 
-export default function (config, el) {
+export function highcharts(config, el) {
     if (config) {
         config.chart.renderTo = el || config.chart.renderTo
 
@@ -87,4 +88,27 @@ export default function (config, el) {
 
         return new H.Chart(config)
     }
+}
+
+export function singleValue(config, el, extraOptions) {
+    return H.chart(el, {
+        accessibility: { enabled: false },
+        chart: {
+            backgroundColor: 'transparent',
+            events: {
+                load: function () {
+                    renderSingleValueSvg(config, el, extraOptions, this)
+                },
+            },
+        },
+        credits: { enabled: false },
+        // exporting: {
+        //     enabled: false,
+        // },
+        lang: {
+            noData: null,
+        },
+        noData: {},
+        title: null,
+    })
 }

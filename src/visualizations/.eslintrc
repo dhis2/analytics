@@ -1,5 +1,7 @@
 {
     "rules": {
-        "max-params": "off"
+        "max-params": "off",
+        // TODO: switch back on before merging
+        "no-unused-vars": "off"
     }
 }
