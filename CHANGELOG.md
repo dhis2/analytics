@@ -1,3 +1,10 @@
+## [26.8.2](https://github.com/dhis2/analytics/compare/v26.8.1...v26.8.2) (2024-08-27)
+
+
+### Bug Fixes
+
+* add AO TYPE for event chart and event report ([#1697](https://github.com/dhis2/analytics/issues/1697)) ([efff1c8](https://github.com/dhis2/analytics/commit/efff1c81845a974fe8c60b593e6bbe42c19682d7))
+
 ## [26.8.1](https://github.com/dhis2/analytics/compare/v26.8.0...v26.8.1) (2024-08-08)
 
 
