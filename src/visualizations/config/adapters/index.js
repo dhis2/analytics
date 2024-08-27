@@ -4,4 +4,5 @@ import dhis_highcharts from './dhis_highcharts/index.js'
 export default {
     dhis_highcharts,
     dhis_dhis,
+    dhis_singleValue: dhis_dhis,
 }
