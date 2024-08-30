@@ -1,4 +1,8 @@
-import { useDataQuery, useDataMutation } from '@dhis2/app-runtime'
+import {
+    useDataQuery,
+    useDataMutation,
+    useTimeZoneConversion,
+} from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import { Parser as RichTextParser } from '@dhis2/d2-ui-rich-text'
 import {
@@ -57,6 +61,7 @@ const getUnsubscribeMutation = (type, id) => ({
 
 const AboutAOUnit = forwardRef(({ type, id, renderId }, ref) => {
     const [isExpanded, setIsExpanded] = useState(true)
+    const { fromServerDate } = useTimeZoneConversion()
 
     const queries = useMemo(() => getQueries(type), [type])
 
@@ -188,6 +193,7 @@ const AboutAOUnit = forwardRef(({ type, id, renderId }, ref) => {
                         <div className="content">
                             <p
                                 className={cx('detailLine', {
+                                    description: true,
                                     noDescription: !data.ao.displayDescription,
                                 })}
                             >
@@ -208,7 +214,7 @@ const AboutAOUnit = forwardRef(({ type, id, renderId }, ref) => {
                                     <IconClock16 color={colors.grey700} />
                                     {i18n.t('Last updated {{time}}', {
                                         time: moment(
-                                            data.ao.lastUpdated
+                                            fromServerDate(data.ao.lastUpdated)
                                         ).fromNow(),
                                     })}
                                 </p>
@@ -219,7 +225,9 @@ const AboutAOUnit = forwardRef(({ type, id, renderId }, ref) => {
                                               'Created {{time}} by {{author}}',
                                               {
                                                   time: moment(
-                                                      data.ao.created
+                                                      fromServerDate(
+                                                          data.ao.created
+                                                      )
                                                   ).fromNow(),
                                                   author: data.ao.createdBy
                                                       .displayName,
@@ -227,7 +235,9 @@ const AboutAOUnit = forwardRef(({ type, id, renderId }, ref) => {
                                           )
                                         : i18n.t('Created {{time}}', {
                                               time: moment(
-                                                  data.ao.created
+                                                  fromServerDate(
+                                                      data.ao.created
+                                                  )
                                               ).fromNow(),
                                           })}
                                 </p>

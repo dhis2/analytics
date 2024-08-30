@@ -20,6 +20,8 @@ function drawLegendSymbolWrap() {
         H.seriesTypes.column.prototype,
         'drawLegendSymbol',
         function (proceed, legend, item) {
+            const legendItem = item.legendItem
+
             if (this.options.legendSet?.legends?.length) {
                 const ys = legend.baseline - legend.symbolHeight + 1, // y start
                     x = legend.symbolWidth / 2 > 8 ? legend.symbolWidth / 2 : 8, // x start
@@ -32,7 +34,7 @@ function drawLegendSymbolWrap() {
                     .attr({
                         fill: legends[legends.length >= 5 ? 1 : 0].color,
                     })
-                    .add(this.legendGroup)
+                    .add(legendItem.group)
                 this.chart.renderer
                     .path(['M', x, ye, 'A', 1, 1, 0, 0, 0, x, ys, 'V', ye])
                     .attr({
@@ -42,13 +44,14 @@ function drawLegendSymbolWrap() {
                                 : legends.length - 1
                         ].color,
                     })
-                    .add(this.legendGroup)
+                    .add(legendItem.group)
             } else {
                 var options = legend.options,
                     symbolHeight = legend.symbolHeight,
                     square = options.squareSymbol,
                     symbolWidth = square ? symbolHeight : legend.symbolWidth
-                item.legendSymbol = this.chart.renderer
+
+                legendItem.symbol = this.chart.renderer
                     .rect(
                         square ? (legend.symbolWidth - symbolHeight) / 2 : 0,
                         legend.baseline - symbolHeight + 1,
@@ -60,7 +63,7 @@ function drawLegendSymbolWrap() {
                     .attr({
                         zIndex: 3,
                     })
-                    .add(item.legendGroup)
+                    .add(legendItem.group)
             }
         }
     )

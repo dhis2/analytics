@@ -1,3 +1,4 @@
+import { useTimeZoneConversion } from '@dhis2/app-runtime'
 import { IconClock16, colors } from '@dhis2/ui'
 import cx from 'classnames'
 import moment from 'moment'
@@ -12,10 +13,12 @@ const InterpretationThread = ({
     fetching,
     interpretation,
     onInterpretationDeleted,
+    onLikeToggled,
     initialFocus,
     onThreadUpdated,
     downloadMenuComponent: DownloadMenu,
 }) => {
+    const { fromServerDate } = useTimeZoneConversion()
     const focusRef = useRef()
 
     useEffect(() => {
@@ -31,7 +34,9 @@ const InterpretationThread = ({
             <div className={'scrollbox'}>
                 <div className={'title'}>
                     <IconClock16 color={colors.grey700} />
-                    {moment(interpretation.created).format('LLL')}
+                    {moment(fromServerDate(interpretation.created)).format(
+                        'LLL'
+                    )}
                 </div>
                 {DownloadMenu && (
                     <DownloadMenu relativePeriodDate={interpretation.created} />
@@ -43,6 +48,7 @@ const InterpretationThread = ({
                         onReplyIconClick={() => focusRef.current?.focus()}
                         onUpdated={() => onThreadUpdated(true)}
                         onDeleted={onInterpretationDeleted}
+                        onLikeToggled={onLikeToggled}
                     />
                     <div className={'comments'}>
                         {interpretation.comments.map((comment) => (
@@ -141,6 +147,7 @@ InterpretationThread.propTypes = {
     fetching: PropTypes.bool.isRequired,
     interpretation: PropTypes.object.isRequired,
     onInterpretationDeleted: PropTypes.func.isRequired,
+    onLikeToggled: PropTypes.func.isRequired,
     downloadMenuComponent: PropTypes.oneOfType([
         PropTypes.object,
         PropTypes.func,

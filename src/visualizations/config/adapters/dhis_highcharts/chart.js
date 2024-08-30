@@ -22,7 +22,11 @@ const getEvents = () => ({
                 if (item.legendSymbol) {
                     item.legendSymbol.attr({
                         translateY:
-                            -((item.legendItem.getBBox().height * 0.75) / 4) +
+                            -(
+                                (item.legendItem.label.getBBox().height *
+                                    0.75) /
+                                4
+                            ) +
                             item.legendSymbol.r / 2,
                     })
                 }

@@ -1,3 +1,80 @@
+## [24.10.13](https://github.com/dhis2/analytics/compare/v24.10.12...v24.10.13) (2024-06-27)
+
+
+### Bug Fixes
+
+* apply legend to all numeric and boolean types (DHIS2-17611) [24.x] ([#1687](https://github.com/dhis2/analytics/issues/1687)) ([9e3f166](https://github.com/dhis2/analytics/commit/9e3f1668aaef693393e5a7a46dc839f9aad5bce5))
+
+## [24.10.12](https://github.com/dhis2/analytics/compare/v24.10.11...v24.10.12) (2024-06-25)
+
+
+### Bug Fixes
+
+* update multicalendar dep for translations (DHIS2-16904) ([#1686](https://github.com/dhis2/analytics/issues/1686)) ([65053e2](https://github.com/dhis2/analytics/commit/65053e2dd099799f5f4d10179784ebfcf0d0bbe3))
+
+## [24.10.11](https://github.com/dhis2/analytics/compare/v24.10.10...v24.10.11) (2024-06-20)
+
+
+### Bug Fixes
+
+* **pivot-table:** use a scoped base selector and global sub selectors ([#1684](https://github.com/dhis2/analytics/issues/1684)) ([f7c8f16](https://github.com/dhis2/analytics/commit/f7c8f1671910743e3644d040ac0bb4358074b78f))
+
+## [24.10.10](https://github.com/dhis2/analytics/compare/v24.10.9...v24.10.10) (2024-06-12)
+
+
+### Bug Fixes
+
+* separator for hundreds, thousands and millions is missing in the Pie charts (DHIS2-16172) 24.x ([#1679](https://github.com/dhis2/analytics/issues/1679)) ([f1f47ac](https://github.com/dhis2/analytics/commit/f1f47ac431d4234113ce1910d9f3a5610399734e))
+
+## [24.10.9](https://github.com/dhis2/analytics/compare/v24.10.8...v24.10.9) (2024-06-04)
+
+
+### Bug Fixes
+
+* numbers are misaligned in pivot table (DHIS2-16900) ([#1671](https://github.com/dhis2/analytics/issues/1671)) ([7fc5321](https://github.com/dhis2/analytics/commit/7fc532122d7bd0f12b2dba1ce005fd7490d47137))
+
+## [24.10.8](https://github.com/dhis2/analytics/compare/v24.10.7...v24.10.8) (2024-04-25)
+
+
+### Bug Fixes
+
+* single value size and position issues (DHIS2-15344) (DHIS2-13077) [24.x] ([#1646](https://github.com/dhis2/analytics/issues/1646)) ([f052741](https://github.com/dhis2/analytics/commit/f052741ca0f5eafc93094cf53b9bf89f7c7244c3))
+
+## [24.10.7](https://github.com/dhis2/analytics/compare/v24.10.6...v24.10.7) (2024-04-22)
+
+
+### Bug Fixes
+
+* **interpretations:** plugin flashes when interacting with Interpretations modal ([#1653](https://github.com/dhis2/analytics/issues/1653)) ([17d8e12](https://github.com/dhis2/analytics/commit/17d8e12da54def840b9f329ffe93b635342c2d2c))
+
+## [24.10.6](https://github.com/dhis2/analytics/compare/v24.10.5...v24.10.6) (2024-04-19)
+
+
+### Bug Fixes
+
+* **aboutAOUnit:** newlines missing in AO description ([#1656](https://github.com/dhis2/analytics/issues/1656)) ([8fe3a14](https://github.com/dhis2/analytics/commit/8fe3a14ec256f6eb2990fffcc092b1eea8911885)), closes [#1655](https://github.com/dhis2/analytics/issues/1655)
+
+## [24.10.5](https://github.com/dhis2/analytics/compare/v24.10.4...v24.10.5) (2024-04-03)
+
+
+### Bug Fixes
+
+* avoid crash in DV with some chart types (DHIS2-15882) [24.x] ([#1651](https://github.com/dhis2/analytics/issues/1651)) ([68907d2](https://github.com/dhis2/analytics/commit/68907d2ef4dc1e200eeaa03c2b092229a68b9a99)), closes [#1582](https://github.com/dhis2/analytics/issues/1582)
+
+## [24.10.4](https://github.com/dhis2/analytics/compare/v24.10.3...v24.10.4) (2024-04-02)
+
+
+### Bug Fixes
+
+* interpretations panel renders with flashing when liking or unliking an interpretation ([#1643](https://github.com/dhis2/analytics/issues/1643)) ([4148bf9](https://github.com/dhis2/analytics/commit/4148bf9ae1c8aa386abd7b2b7ad2c01636d8b06d)), closes [#1600](https://github.com/dhis2/analytics/issues/1600)
+
+## [24.10.3](https://github.com/dhis2/analytics/compare/v24.10.2...v24.10.3) (2024-03-20)
+
+
+### Bug Fixes
+
+* show correct date and time in About AO Unit [DHIS2-15825, DHIS2-16365] [24.x] ([#1642](https://github.com/dhis2/analytics/issues/1642)) ([1c9068c](https://github.com/dhis2/analytics/commit/1c9068c9d153798ccbd61f6b916c1ee94ec122f8))
+
 ## [24.10.2](https://github.com/dhis2/analytics/compare/v24.10.1...v24.10.2) (2023-10-25)
 
 
