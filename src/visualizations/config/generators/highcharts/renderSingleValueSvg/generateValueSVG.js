@@ -33,7 +33,7 @@ export const generateValueSVG = ({
     const group = renderer
         .g('value')
         .css({
-            transform: 'scale(0.5) translate(100%, 100%)',
+            transform: 'translate(50%, 50%)',
         })
         .add()
 
@@ -92,14 +92,11 @@ export const generateValueSVG = ({
             svgIconDocument.documentElement.getAttribute('height')
         const iconElWidth =
             svgIconDocument.documentElement.getAttribute('width')
-        const x = ((iconSize + getIconPadding(textSize) + textWidth) / 2) * -1
-        const y = (iconSize / 2 - topMargin / 2) * -1
         const iconGroup = renderer
             .g('icon')
             .attr('data-test', 'visualization-icon')
             .css({
-                color: 'green',
-                // color: fillColor,
+                color: fillColor,
             })
         /* Force the group element to have the same dimensions as the original
          * SVG image by adding this rect. This ensures the icon has the intended
@@ -109,15 +106,18 @@ export const generateValueSVG = ({
         Array.from(svgIconDocument.documentElement.children).forEach((node) =>
             iconGroup.element.appendChild(node)
         )
-        iconGroup.add()
-        const formattedValueBox = formattedValueText.getBBox()
-        const targetHeight = textSize / 2
-        const scaleFactor = targetHeight / iconElHeight
+        const formattedValueTextBox = formattedValueText.getBBox()
+        const scaleFactor = textSize / iconElHeight
+        const textHeight = formattedValueTextBox.height / 2
+        const iconHeight = (iconElHeight * scaleFactor) / 2
+        const translateY =
+            (formattedValueTextBox.y + (textHeight - iconHeight)) / scaleFactor
 
-        console.log(formattedValueBox)
-        iconGroup.css({
-            transform: `scale(${scaleFactor}) translate(16px, 104px)`,
-        })
+        iconGroup
+            .css({
+                transform: `scale(${scaleFactor}) translate(-98px, ${translateY}px)`,
+            })
+            .add(group)
     }
 
     if (subText) {
