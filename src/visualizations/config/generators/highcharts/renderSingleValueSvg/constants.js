@@ -16,7 +16,7 @@ export const TEXT_WIDTH_CONTAINER_WIDTH_FACTOR = 1.3
 
 // do not allow text size to exceed this
 export const TEXT_SIZE_CONTAINER_HEIGHT_FACTOR = 0.6
-export const TEXT_SIZE_MAX_THRESHOLD = 400
+export const TEXT_SIZE_MAX_THRESHOLD = 200
 
 // multiply text size with this factor
 // to get an appropriate letter spacing
