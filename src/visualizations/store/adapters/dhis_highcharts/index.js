@@ -6,9 +6,11 @@ import {
     VIS_TYPE_PIE,
     VIS_TYPE_GAUGE,
     isTwoCategoryChartType,
+    VIS_TYPE_SINGLE_VALUE,
 } from '../../../../modules/visTypes.js'
 import getGauge from './gauge.js'
 import getPie from './pie.js'
+import getSingleValue from './singleValue.js'
 import getTwoCategory from './twoCategory.js'
 import getYearOnYear from './yearOnYear.js'
 
@@ -93,6 +95,8 @@ function getSeriesFunction(type, categoryIds) {
     }
 
     switch (type) {
+        case VIS_TYPE_SINGLE_VALUE:
+            return getSingleValue
         case VIS_TYPE_PIE:
             return getPie
         case VIS_TYPE_GAUGE:
@@ -108,9 +112,20 @@ function getSeriesFunction(type, categoryIds) {
 export default function ({ type, data, seriesId, categoryIds, extraOptions }) {
     categoryIds = categoryIds || []
 
+    // if (type === VIS_TYPE_SINGLE_VALUE) {
+    //     console.log('I want to do things here', data)
+    //     const categoryId = data[0].metaData.dimensions.dx[0]
+    //     return getSingleValue({
+    //         type,
+    //         data,
+    //         seriesId,
+    //         categoryId,
+    //     })
+    // }
+
     const seriesFunction = getSeriesFunction(type, categoryIds)
 
-    return data.reduce((acc, res) => {
+    const returnValue = data.reduce((acc, res) => {
         const headers = res.headers
         const metaData = res.metaData
         const rows = res.rows
@@ -142,4 +157,6 @@ export default function ({ type, data, seriesId, categoryIds, extraOptions }) {
 
         return acc
     }, [])
+    console.log('IS THIS IT THEN?????', returnValue)
+    return returnValue
 }
