@@ -112,20 +112,9 @@ function getSeriesFunction(type, categoryIds) {
 export default function ({ type, data, seriesId, categoryIds, extraOptions }) {
     categoryIds = categoryIds || []
 
-    // if (type === VIS_TYPE_SINGLE_VALUE) {
-    //     console.log('I want to do things here', data)
-    //     const categoryId = data[0].metaData.dimensions.dx[0]
-    //     return getSingleValue({
-    //         type,
-    //         data,
-    //         seriesId,
-    //         categoryId,
-    //     })
-    // }
-
     const seriesFunction = getSeriesFunction(type, categoryIds)
 
-    const returnValue = data.reduce((acc, res) => {
+    return data.reduce((acc, res) => {
         const headers = res.headers
         const metaData = res.metaData
         const rows = res.rows
@@ -157,6 +146,4 @@ export default function ({ type, data, seriesId, categoryIds, extraOptions }) {
 
         return acc
     }, [])
-    console.log('IS THIS IT THEN?????', returnValue)
-    return returnValue
 }
