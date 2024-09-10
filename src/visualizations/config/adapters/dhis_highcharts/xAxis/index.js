@@ -16,6 +16,7 @@ import {
     VIS_TYPE_RADAR,
     VIS_TYPE_SCATTER,
     isTwoCategoryChartType,
+    VIS_TYPE_SINGLE_VALUE,
 } from '../../../../../modules/visTypes.js'
 import { getAxis } from '../../../../util/axes.js'
 import getAxisTitle from '../getAxisTitle.js'
@@ -82,6 +83,7 @@ export default function (store, layout, extraOptions, series) {
         switch (layout.type) {
             case VIS_TYPE_PIE:
             case VIS_TYPE_GAUGE:
+            case VIS_TYPE_SINGLE_VALUE:
                 xAxis = noAxis()
                 break
             case VIS_TYPE_YEAR_OVER_YEAR_LINE:
