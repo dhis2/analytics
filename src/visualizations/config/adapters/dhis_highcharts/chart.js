@@ -1,3 +1,4 @@
+import { renderCustomSVG } from './custom/index.js'
 import getType from './type.js'
 
 const DEFAULT_CHART = {
@@ -31,6 +32,7 @@ const getEvents = () => ({
                     })
                 }
             })
+            renderCustomSVG.call(this)
         },
     },
 })
