@@ -13,10 +13,12 @@ import {
     VIS_TYPE_YEAR_OVER_YEAR_COLUMN,
     isVerticalType,
     VIS_TYPE_SCATTER,
+    VIS_TYPE_SINGLE_VALUE,
 } from '../../../../../modules/visTypes.js'
 import getFilterText from '../../../../util/getFilterText.js'
 import { getTextAlignOption } from '../getTextAlignOption.js'
 import getYearOverYearTitle from '../title/yearOverYear.js'
+import getSingleValueSubtitle from './singleValue.js'
 
 const DASHBOARD_SUBTITLE = {
     style: {
@@ -59,6 +61,9 @@ export default function (series, layout, metaData, dashboard) {
         const filterTitle = getFilterText(layout.filters, metaData)
 
         switch (layout.type) {
+            case VIS_TYPE_SINGLE_VALUE:
+                subtitle.text = getSingleValueSubtitle(layout, metaData)
+                break
             case VIS_TYPE_YEAR_OVER_YEAR_LINE:
             case VIS_TYPE_YEAR_OVER_YEAR_COLUMN:
                 subtitle.text = getYearOverYearTitle(
