@@ -1,6 +1,4 @@
-import { VIS_TYPE_SINGLE_VALUE } from '../../../../modules/visTypes.js'
-import { renderCustomSVG } from './customSVGOptions/index.js'
-import { getSingleValueBackgroundColor } from './customSVGOptions/singleValue/index.js'
+import { renderCustomSVG } from './custom/index.js'
 import getType from './type.js'
 
 const DEFAULT_CHART = {
