@@ -657,7 +657,7 @@ storiesOf('SingleValue', module).add('default', () => {
                     extraOptions,
                     undefined,
                     undefined,
-                    'singleValue'
+                    'highcharts'
                 )
                 newChartRef.current = newVisualization.visualization
             })
