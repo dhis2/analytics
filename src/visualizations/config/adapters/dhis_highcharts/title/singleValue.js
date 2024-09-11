@@ -1,7 +1,6 @@
 import getFilterText from '../../../../util/getFilterText.js'
-export { getSingleValueTextColor as getSingleValueTitleColor } from '../customSVGOptions/singleValue/index.js'
 
-export function getSingleValueTitleText(layout, metaData) {
+export default function (layout, metaData, dashboard) {
     if (layout.hideTitle) {
         return ''
     }

@@ -43,19 +43,10 @@ export default function (layout, el, extraOptions, series) {
         getType(layout.type),
         { renderTo: el || layout.el },
         DEFAULT_CHART,
-        extraOptions.dashboard ? DASHBOARD_CHART : undefined,
+        dashboard ? DASHBOARD_CHART : undefined,
         getEvents(),
-        layout.type === VIS_TYPE_SINGLE_VALUE
-            ? {
-                  backgroundColor: getSingleValueBackgroundColor(
-                      extraOptions.legendOptions,
-                      extraOptions.legendSets,
-                      series[0]
-                  ),
-              }
-            : undefined,
-        layout.type === VIS_TYPE_SINGLE_VALUE && extraOptions.dashboard
-            ? { spacingTop: 7 }
-            : undefined
+        {
+            backgroundColor: 'red',
+        }
     )
 }

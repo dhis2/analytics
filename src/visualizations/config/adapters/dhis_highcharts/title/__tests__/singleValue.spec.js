@@ -1,24 +1,25 @@
-import { getSingleValueTitleText } from '../singleValue.js'
+import { VIS_TYPE_SINGLE_VALUE } from '../../../../../../modules/visTypes.js'
+import getSingleValueTitle from '../singleValue.js'
 
 jest.mock('../../../../../util/getFilterText', () => () => 'The filter text')
 
 describe('getSingleValueTitle', () => {
     it('returns empty title when flag hideTitle exists', () => {
-        expect(getSingleValueTitleText({ hideTitle: true })).toEqual('')
+        expect(getSingleValueTitle({ hideTitle: true })).toEqual('')
     })
 
     it('returns the title provided in the layout', () => {
         const title = 'The title was already set'
-        expect(getSingleValueTitleText({ title })).toEqual(title)
+        expect(getSingleValueTitle({ title })).toEqual(title)
     })
 
     it('returns null when layout does not have columns', () => {
-        expect(getSingleValueTitleText({})).toEqual('')
+        expect(getSingleValueTitle({})).toEqual('')
     })
 
     it('returns the filter text based on column items', () => {
         expect(
-            getSingleValueTitleText({
+            getSingleValueTitle({
                 columns: [
                     {
                         items: [{}],
@@ -31,7 +32,7 @@ describe('getSingleValueTitle', () => {
     describe('not dashboard', () => {
         it('returns filter text as title', () => {
             expect(
-                getSingleValueTitleText(
+                getSingleValueTitle(
                     {
                         columns: [
                             {
@@ -49,9 +50,7 @@ describe('getSingleValueTitle', () => {
 
     describe('dashboard', () => {
         it('returns empty string', () => {
-            expect(getSingleValueTitleText({ filters: {} }, {}, true)).toEqual(
-                ''
-            )
+            expect(getSingleValueTitle({ filters: {} }, {}, true)).toEqual('')
         })
     })
 })

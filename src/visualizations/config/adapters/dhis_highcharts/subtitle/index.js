@@ -18,9 +18,7 @@ import {
 import getFilterText from '../../../../util/getFilterText.js'
 import { getTextAlignOption } from '../getTextAlignOption.js'
 import getYearOverYearTitle from '../title/yearOverYear.js'
-import getSingleValueSubtitle, {
-    getSingleValueSubtitleColor,
-} from './singleValue.js'
+import getSingleValueSubtitle from './singleValue.js'
 
 const DASHBOARD_SUBTITLE = {
     style: {
