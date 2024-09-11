@@ -44,6 +44,9 @@ export default function (layout, el, dashboard) {
         { renderTo: el || layout.el },
         DEFAULT_CHART,
         dashboard ? DASHBOARD_CHART : undefined,
-        getEvents()
+        getEvents(),
+        {
+            backgroundColor: 'red',
+        }
     )
 }
