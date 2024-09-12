@@ -1,3 +1,3 @@
-export { getSingleValueCustomSVGOptions } from './config/getSingleValueCustomSVGOptions.js'
-export { getSingleValueBackgroundColor } from './config/getSingleValueBackgroundColor.js'
-export { getSingleValueTextColor } from './config/getSingleValueTextColor.js'
+export { getSingleValueCustomSVGOptions } from './getSingleValueCustomSVGOptions.js'
+export { getSingleValueBackgroundColor } from './getSingleValueBackgroundColor.js'
+export { getSingleValueTextColor } from './getSingleValueTextColor.js'

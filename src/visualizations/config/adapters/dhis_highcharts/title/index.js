@@ -19,7 +19,10 @@ import {
 import getFilterText from '../../../../util/getFilterText.js'
 import { getTextAlignOption } from '../getTextAlignOption.js'
 import getScatterTitle from './scatter.js'
-import getSingleValueTitle from './singleValue.js'
+import {
+    getSingleValueTitleColor,
+    getSingleValueTitleText,
+} from './singleValue.js'
 import getYearOverYearTitle from './yearOverYear.js'
 
 const DASHBOARD_TITLE_STYLE = {
@@ -92,7 +95,11 @@ export default function (layout, metaData, extraOptions, series) {
     } else {
         switch (layout.type) {
             case VIS_TYPE_SINGLE_VALUE:
-                title.text = getSingleValueTitle(layout, metaData, dashboard)
+                title.text = getSingleValueTitleText(
+                    layout,
+                    metaData,
+                    dashboard
+                )
                 break
             case VIS_TYPE_GAUGE:
             case VIS_TYPE_YEAR_OVER_YEAR_LINE:
@@ -116,10 +123,6 @@ export default function (layout, metaData, extraOptions, series) {
                 legendOptions,
                 legendSets
             )
-            if (dashboard) {
-                // TODO: is this always what we want?
-                title.style.fontWeight = 'normal'
-            }
             break
         default:
             title.style.color = fontStyle[FONT_STYLE_OPTION_TEXT_COLOR]
