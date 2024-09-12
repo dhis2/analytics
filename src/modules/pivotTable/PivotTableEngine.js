@@ -12,6 +12,7 @@ import {
     VALUE_TYPE_NUMBER,
     VALUE_TYPE_TEXT,
     isBooleanValueType,
+    isCumulativeValueType,
     isNumericValueType,
 } from '../valueTypes.js'
 import { AdaptiveClippingController } from './AdaptiveClippingController.js'
@@ -1029,9 +1030,9 @@ export class PivotTableEngine {
                     })
                     const valueType = dxDimension?.valueType || VALUE_TYPE_TEXT
 
-                    // only accumulate numeric values
-                    // accumulating text values does not make sense
-                    if (valueType === VALUE_TYPE_NUMBER) {
+                    // only accumulate numeric (except for PERCENTAGE and UNIT_INTERVAL) and boolean values
+                    // accumulating other value types like text values does not make sense
+                    if (isCumulativeValueType(valueType)) {
                         if (this.data[row] && this.data[row][column]) {
                             const dataRow = this.data[row][column]
 
