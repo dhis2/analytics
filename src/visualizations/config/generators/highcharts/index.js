@@ -78,7 +78,7 @@ export function highcharts(config, el) {
 
         // silence warning about accessibility
         config.accessibility = { enabled: false }
-
+        console.log('Homt ie hier?', config)
         if (config.lang) {
             H.setOptions({
                 lang: config.lang,

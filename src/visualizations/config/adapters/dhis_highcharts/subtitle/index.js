@@ -18,7 +18,9 @@ import {
 import getFilterText from '../../../../util/getFilterText.js'
 import { getTextAlignOption } from '../getTextAlignOption.js'
 import getYearOverYearTitle from '../title/yearOverYear.js'
-import getSingleValueSubtitle from './singleValue.js'
+import getSingleValueSubtitle, {
+    getSingleValueSubtitleColor,
+} from './singleValue.js'
 
 const DASHBOARD_SUBTITLE = {
     style: {
@@ -33,23 +35,47 @@ const DASHBOARD_SUBTITLE = {
 }
 
 function getDefault(layout, dashboard, filterTitle) {
-    return {
-        text: dashboard || isString(layout.title) ? filterTitle : undefined,
-    }
+    return dashboard || isString(layout.title) ? filterTitle : undefined
 }
 
-export default function (series, layout, metaData, dashboard) {
+export default function (series, layout, metaData, extraOptions) {
+    if (layout.hideSubtitle) {
+        return null
+    }
+
+    const { dashboard, legendSets, legendOptions } = extraOptions
     const fontStyle = mergeFontStyleWithDefault(
         layout.fontStyle && layout.fontStyle[FONT_STYLE_VISUALIZATION_SUBTITLE],
         FONT_STYLE_VISUALIZATION_SUBTITLE
     )
-    let subtitle = {
-        text: undefined,
-    }
-
-    if (layout.hideSubtitle) {
-        return null
-    }
+    const subtitle = Object.assign(
+        {
+            text: undefined,
+        },
+        dashboard
+            ? DASHBOARD_SUBTITLE
+            : {
+                  align: getTextAlignOption(
+                      fontStyle[FONT_STYLE_OPTION_TEXT_ALIGN],
+                      FONT_STYLE_VISUALIZATION_SUBTITLE,
+                      isVerticalType(layout.type)
+                  ),
+                  style: {
+                      // DHIS2-578: dynamically truncate subtitle when it's taking more than 1 line
+                      color: undefined,
+                      fontSize: `${fontStyle[FONT_STYLE_OPTION_FONT_SIZE]}px`,
+                      fontWeight: fontStyle[FONT_STYLE_OPTION_BOLD]
+                          ? FONT_STYLE_OPTION_BOLD
+                          : 'normal',
+                      fontStyle: fontStyle[FONT_STYLE_OPTION_ITALIC]
+                          ? FONT_STYLE_OPTION_ITALIC
+                          : 'normal',
+                      whiteSpace: 'nowrap',
+                      overflow: 'hidden',
+                      textOverflow: 'ellipsis',
+                  },
+              }
+    )
 
     // DHIS2-578: allow for optional custom subtitle
     const customSubtitle =
@@ -76,37 +102,23 @@ export default function (series, layout, metaData, dashboard) {
                 subtitle.text = filterTitle
                 break
             default:
-                subtitle = getDefault(layout, dashboard, filterTitle)
+                subtitle.text = getDefault(layout, dashboard, filterTitle)
         }
     }
 
+    switch (layout.type) {
+        case VIS_TYPE_SINGLE_VALUE:
+            subtitle.style.color = getSingleValueSubtitleColor(
+                fontStyle[FONT_STYLE_OPTION_TEXT_COLOR],
+                series[0],
+                legendOptions,
+                legendSets
+            )
+            break
+        default:
+            subtitle.style.color = fontStyle[FONT_STYLE_OPTION_TEXT_COLOR]
+            break
+    }
+
     return subtitle
-        ? Object.assign(
-              {},
-              dashboard
-                  ? DASHBOARD_SUBTITLE
-                  : {
-                        align: getTextAlignOption(
-                            fontStyle[FONT_STYLE_OPTION_TEXT_ALIGN],
-                            FONT_STYLE_VISUALIZATION_SUBTITLE,
-                            isVerticalType(layout.type)
-                        ),
-                        style: {
-                            // DHIS2-578: dynamically truncate subtitle when it's taking more than 1 line
-                            color: fontStyle[FONT_STYLE_OPTION_TEXT_COLOR],
-                            fontSize: `${fontStyle[FONT_STYLE_OPTION_FONT_SIZE]}px`,
-                            fontWeight: fontStyle[FONT_STYLE_OPTION_BOLD]
-                                ? FONT_STYLE_OPTION_BOLD
-                                : 'normal',
-                            fontStyle: fontStyle[FONT_STYLE_OPTION_ITALIC]
-                                ? FONT_STYLE_OPTION_ITALIC
-                                : 'normal',
-                            whiteSpace: 'nowrap',
-                            overflow: 'hidden',
-                            textOverflow: 'ellipsis',
-                        },
-                    },
-              subtitle
-          )
-        : subtitle
 }
