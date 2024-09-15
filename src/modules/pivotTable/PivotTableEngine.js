@@ -403,7 +403,30 @@ export class PivotTableEngine {
             rawCell.renderedValue = renderedValue
         }
 
+        if (
+            [CELL_TYPE_TOTAL, CELL_TYPE_SUBTOTAL].includes(rawCell.cellType) &&
+            rawCell.rawValue === AGGREGATE_TYPE_NA
+        ) {
+            rawCell.titleValue = i18n.t('Not applicable')
+        }
+
         if (this.options.cumulativeValues) {
+            let titleValue
+
+            if (this.data[row] && this.data[row][column]) {
+                const dataRow = this.data[row][column]
+
+                const rawValue =
+                    cellType === CELL_TYPE_VALUE
+                        ? dataRow[this.dimensionLookup.dataHeaders.value]
+                        : dataRow.value
+
+                titleValue = i18n.t('Value: {{value}}', {
+                    value: renderValue(rawValue, valueType, this.visualization),
+                    nsSeparator: '^^',
+                })
+            }
+
             const cumulativeValue = this.getCumulative({
                 row,
                 column,
@@ -416,6 +439,7 @@ export class PivotTableEngine {
                         ? VALUE_TYPE_NUMBER
                         : valueType
                 rawCell.empty = false
+                rawCell.titleValue = titleValue
                 rawCell.rawValue = cumulativeValue
                 rawCell.renderedValue = renderValue(
                     cumulativeValue,
