@@ -42,6 +42,7 @@ import {
     NUMBER_TYPE_COLUMN_PERCENTAGE,
     NUMBER_TYPE_ROW_PERCENTAGE,
     NUMBER_TYPE_VALUE,
+    VALUE_TYPE_NA,
 } from './pivotTableConstants.js'
 
 const dataFields = [
@@ -755,7 +756,7 @@ export class PivotTableEngine {
 
             const previousValueType = totalCell.valueType
             if (previousValueType && currentValueType !== previousValueType) {
-                totalCell.valueType = AGGREGATE_TYPE_NA
+                totalCell.valueType = VALUE_TYPE_NA
             } else {
                 totalCell.valueType = currentValueType
             }
@@ -925,6 +926,11 @@ export class PivotTableEngine {
                     this.visualization
                 )
             )
+
+            // override valueType for styling cells with N/A value
+            if (totalCell.value === AGGREGATE_TYPE_NA) {
+                totalCell.valueType = VALUE_TYPE_NA
+            }
 
             this.adaptiveClippingController.add(
                 { row, column },

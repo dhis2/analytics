@@ -158,6 +158,10 @@ export const cell = css`
     .TRUE_ONLY {
         text-align: right;
     }
+    .N_A {
+        color: ${colors.grey600};
+    }
+
     .clickable {
         cursor: pointer;
     }
