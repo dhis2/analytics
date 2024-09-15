@@ -549,16 +549,7 @@ export class PivotTableEngine {
 
         const cellValue = this.data[row][column]
 
-        if (!cellValue) {
-            // Empty cell
-            // The cell still needs to get the valueType to render correctly 0 and cumulative values
-            return {
-                valueType: VALUE_TYPE_NUMBER,
-                totalAggregationType: AGGREGATE_TYPE_SUM,
-            }
-        }
-
-        if (!Array.isArray(cellValue)) {
+        if (cellValue && !Array.isArray(cellValue)) {
             // This is a total cell
             return {
                 valueType: cellValue.valueType,
@@ -1092,6 +1083,9 @@ export class PivotTableEngine {
                     // only accumulate numeric (except for PERCENTAGE and UNIT_INTERVAL) and boolean values
                     // accumulating other value types like text values does not make sense
                     if (isCumulativeValueType(valueType)) {
+                        // initialise to 0 for cumulative types
+                        acc ||= 0
+
                         if (this.data[row] && this.data[row][column]) {
                             const dataRow = this.data[row][column]
 
@@ -1109,7 +1103,7 @@ export class PivotTableEngine {
                     }
 
                     return acc
-                }, 0)
+                }, '')
             })
         } else {
             this.accumulators = { rows: {} }
