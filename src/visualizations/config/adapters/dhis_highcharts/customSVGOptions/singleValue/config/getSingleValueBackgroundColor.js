@@ -1,4 +1,4 @@
-import { LEGEND_DISPLAY_STYLE_FILL } from '../../../../../../modules/legends.js'
+import { LEGEND_DISPLAY_STYLE_FILL } from '../../../../../../../modules/legends.js'
 import { getSingleValueLegendColor } from './getSingleValueLegendColor.js'
 
 export function getSingleValueBackgroundColor(
