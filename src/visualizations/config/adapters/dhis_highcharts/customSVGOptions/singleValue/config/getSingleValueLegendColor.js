@@ -1,4 +1,4 @@
-import { getColorByValueFromLegendSet } from '../../../../../../modules/legends.js'
+import { getColorByValueFromLegendSet } from '../../../../../../../modules/legends.js'
 
 export function getSingleValueLegendColor(legendOptions, legendSets, value) {
     const legendSet = legendOptions && legendSets[0]
