@@ -1,13 +1,13 @@
 import { VIS_TYPE_SINGLE_VALUE } from '../../../../../modules/visTypes.js'
 import { getSingleValueCustomSVGOptions } from './singleValue/index.js'
+import { renderSingleValueSVG } from './singleValue/renderer/renderSingleValueSVG.js'
 
 export function renderCustomSVG() {
-    const renderer = this.renderer
-    const options = this.userOptions.customSVGOptions
+    const { visualizationType } = this.userOptions.customSVGOptions
 
-    switch (options.visualizationType) {
+    switch (visualizationType) {
         case VIS_TYPE_SINGLE_VALUE:
-            console.log('now render SV viz', this)
+            renderSingleValueSVG.call(this)
             break
         default:
             break

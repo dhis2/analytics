@@ -3,7 +3,7 @@ import {
     getColorByValueFromLegendSet,
     LEGEND_DISPLAY_STYLE_FILL,
 } from '../../../../../modules/legends.js'
-import { shouldUseContrastColor } from '../../../adapters/dhis_highcharts/customSVGOptions/singleValue/shouldUseContrastColor.js'
+import { shouldUseContrastColor } from '../../../adapters/dhis_highcharts/customSVGOptions/singleValue/config/shouldUseContrastColor.js'
 import { generateDVItem } from './generateDVItem.js'
 
 export default function (

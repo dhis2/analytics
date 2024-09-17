@@ -1,5 +1,5 @@
-import { renderValue } from '../../../../../../modules/renderValue.js'
-import { VALUE_TYPE_TEXT } from '../../../../../../modules/valueTypes.js'
+import { renderValue } from '../../../../../../../modules/renderValue.js'
+import { VALUE_TYPE_TEXT } from '../../../../../../../modules/valueTypes.js'
 
 export const INDICATOR_FACTOR_100 = 100
 
