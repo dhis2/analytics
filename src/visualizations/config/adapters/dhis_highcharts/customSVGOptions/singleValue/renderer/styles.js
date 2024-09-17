@@ -20,31 +20,31 @@ const valueStyles = [
 ]
 
 const subTextStyles = [
-    { fontSize: 67, letterSpacing: -2 },
-    { fontSize: 61, letterSpacing: -1.8 },
-    { fontSize: 55, letterSpacing: -1.6 },
-    { fontSize: 49, letterSpacing: -1.4 },
-    { fontSize: 43, letterSpacing: -1.2 },
-    { fontSize: 37, letterSpacing: -1 },
-    { fontSize: 31, letterSpacing: -0.8 },
-    { fontSize: 25, letterSpacing: -0.6 },
-    { fontSize: 19, letterSpacing: -0.4 },
-    { fontSize: 13, letterSpacing: 0.2 },
-    { fontSize: 7, letterSpacing: 0 },
+    { fontSize: 100, letterSpacing: -3 },
+    { fontSize: 91, letterSpacing: -2.7 },
+    { fontSize: 82, letterSpacing: -2.4 },
+    { fontSize: 73, letterSpacing: -2.1 },
+    { fontSize: 64, letterSpacing: -1.8 },
+    { fontSize: 55, letterSpacing: -1.5 },
+    { fontSize: 46, letterSpacing: -1.2 },
+    { fontSize: 37, letterSpacing: -0.9 },
+    { fontSize: 28, letterSpacing: -0.6 },
+    { fontSize: 19, letterSpacing: 0.3 },
+    { fontSize: 10, letterSpacing: 0 },
 ]
 
 const spacings = [
-    { valueTop: 8, subTextTop: 4, iconGap: 4, iconSize: 200 },
-    { valueTop: 8, subTextTop: 4, iconGap: 4, iconSize: 182 },
-    { valueTop: 8, subTextTop: 4, iconGap: 4, iconSize: 164 },
-    { valueTop: 8, subTextTop: 4, iconGap: 4, iconSize: 146 },
-    { valueTop: 8, subTextTop: 4, iconGap: 4, iconSize: 128 },
-    { valueTop: 8, subTextTop: 4, iconGap: 4, iconSize: 110 },
-    { valueTop: 8, subTextTop: 4, iconGap: 4, iconSize: 92 },
-    { valueTop: 8, subTextTop: 4, iconGap: 4, iconSize: 74 },
-    { valueTop: 8, subTextTop: 4, iconGap: 4, iconSize: 56 },
-    { valueTop: 8, subTextTop: 4, iconGap: 4, iconSize: 38 },
-    { valueTop: 8, subTextTop: 4, iconGap: 4, iconSize: 20 },
+    { valueTop: 8, subTextTop: 4, iconGap: 4, iconSize: 140 },
+    { valueTop: 8, subTextTop: 4, iconGap: 4, iconSize: 127 },
+    { valueTop: 8, subTextTop: 4, iconGap: 4, iconSize: 115 },
+    { valueTop: 8, subTextTop: 4, iconGap: 4, iconSize: 102 },
+    { valueTop: 8, subTextTop: 4, iconGap: 4, iconSize: 90 },
+    { valueTop: 8, subTextTop: 4, iconGap: 4, iconSize: 77 },
+    { valueTop: 8, subTextTop: 4, iconGap: 4, iconSize: 64 },
+    { valueTop: 8, subTextTop: 4, iconGap: 4, iconSize: 52 },
+    { valueTop: 8, subTextTop: 4, iconGap: 4, iconSize: 39 },
+    { valueTop: 8, subTextTop: 4, iconGap: 4, iconSize: 27 },
+    { valueTop: 8, subTextTop: 4, iconGap: 4, iconSize: 14 },
 ]
 
 export const MIN_SIDE_WHITESPACE = 4
