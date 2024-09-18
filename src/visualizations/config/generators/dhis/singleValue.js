@@ -151,7 +151,6 @@ const generateValueSVG = ({
         // embed icon to allow changing color
         // (elements with fill need to use "currentColor" for this to work)
         const iconSvgNode = document.createElementNS(svgNS, 'svg')
-        console.log('old', iconSize)
         iconSvgNode.setAttribute('viewBox', '0 0 48 48')
         iconSvgNode.setAttribute('width', iconSize)
         iconSvgNode.setAttribute('height', iconSize)
@@ -468,7 +467,6 @@ export default function (
     parentEl,
     { dashboard, legendSets, fontStyle, noData, legendOptions, icon }
 ) {
-    console.log('CONFIG OLD', config)
     const legendSet = legendOptions && legendSets[0]
     const legendColor =
         legendSet && getColorByValueFromLegendSet(legendSet, config.value)
