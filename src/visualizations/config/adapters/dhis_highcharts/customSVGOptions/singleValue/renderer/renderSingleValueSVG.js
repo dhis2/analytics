@@ -11,15 +11,12 @@ export function renderSingleValueSVG() {
     const dynamicStyles = new DynamicStyles()
     const valueElement = this.renderer
         .text(formattedValue)
-        .css({ color, visibility: 'visible' })
+        .css({ color, visibility: 'hidden' })
         .add()
     const subTextElement = subText
-        ? this.renderer
-              .text(subText)
-              .css({ color, visibility: 'visible' })
-              .add()
+        ? this.renderer.text(subText).css({ color, visibility: 'hidden' }).add()
         : null
-    const iconElement = icon ? addIconElement.call(this, icon) : null
+    const iconElement = icon ? addIconElement.call(this, icon, color) : null
 
     let fitsWithinContainer = false
     let styles = {}
@@ -48,19 +45,7 @@ export function renderSingleValueSVG() {
         styles.spacing
     )
 
-    console.log(
-        '+++++Render the SVG++++++',
-        '\ncolor: ',
-        color,
-        '\ndashboard: ',
-        dashboard,
-        '\nformattedValue: ',
-        formattedValue,
-        '\nicon: ',
-        icon,
-        '\nsubText: ',
-        subText,
-        '\n============='
-    )
-    console.log('CHART', this)
+    valueElement.css({ visibility: 'visible' })
+    iconElement?.css({ visibility: 'visible' })
+    subTextElement?.css({ visibility: 'visible' })
 }
