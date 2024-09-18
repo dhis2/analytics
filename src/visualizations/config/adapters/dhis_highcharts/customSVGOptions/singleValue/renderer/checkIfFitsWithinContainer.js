@@ -1,3 +1,5 @@
+import { ACTUAL_NUMBER_HEIGHT_FACTOR } from './constants.js'
+
 export function checkIfFitsWithinContainer(
     availableSpace,
     valueElement,
@@ -12,8 +14,10 @@ export function checkIfFitsWithinContainer(
         ? valueRect.width + spacing.iconGap + spacing.iconSize
         : valueRect.width
     const requiredHeight = subText
-        ? valueRect.height + spacing.subTextTop + subTextRect.height
-        : valueRect.height
+        ? valueRect.height * ACTUAL_NUMBER_HEIGHT_FACTOR +
+          spacing.subTextTop +
+          subTextRect.height
+        : valueRect.height * ACTUAL_NUMBER_HEIGHT_FACTOR
     const fitsHorizontally =
         availableSpace.width > requiredValueWidth &&
         availableSpace.width > subTextRect.width
