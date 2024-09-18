@@ -665,15 +665,27 @@ storiesOf('SingleValue', module).add('default', () => {
     }, [containerStyle])
     const downloadOffline = useCallback(() => {
         if (newChartRef.current) {
-            newChartRef.current.exportChartLocal({
-                sourceHeight: 768,
-                sourceWidth: 1024,
-                scale: 1,
-                fallbackToExportServer: false,
-                filename: 'testOfflineDownload',
-                showExportInProgress: true,
-                type: 'image/png',
-            })
+            const currentBackgroundColor =
+                newChartRef.current.userOptions.chart.backgroundColor
+            newChartRef.current.exportChartLocal(
+                {
+                    sourceHeight: 768,
+                    sourceWidth: 1024,
+                    scale: 1,
+                    fallbackToExportServer: false,
+                    filename: 'testOfflineDownload',
+                    showExportInProgress: true,
+                    type: 'image/png',
+                },
+                {
+                    chart: {
+                        backgroundColor:
+                            currentBackgroundColor === 'transparent'
+                                ? '#ffffff'
+                                : currentBackgroundColor,
+                    },
+                }
+            )
         }
     }, [])
 
