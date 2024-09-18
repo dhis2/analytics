@@ -6,7 +6,6 @@ import HNDTD from 'highcharts/modules/no-data-to-display'
 import HOE from 'highcharts/modules/offline-exporting'
 import HPF from 'highcharts/modules/pattern-fill'
 import HSG from 'highcharts/modules/solid-gauge'
-import renderSingleValueSvg from './renderSingleValueSvg/index.js'
 
 // apply
 HM(H)
