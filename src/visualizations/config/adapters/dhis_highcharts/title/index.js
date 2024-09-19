@@ -123,6 +123,10 @@ export default function (layout, metaData, extraOptions, series) {
                 legendOptions,
                 legendSets
             )
+            if (dashboard) {
+                // TODO: is this always what we want?
+                title.style.fontWeight = 'normal'
+            }
             break
         default:
             title.style.color = fontStyle[FONT_STYLE_OPTION_TEXT_COLOR]
