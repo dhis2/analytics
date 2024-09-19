@@ -717,7 +717,14 @@ storiesOf('SingleValue', module).add('default', () => {
 
     return (
         <>
-            <div style={{ display: 'flex', gap: 12, marginBottom: 20 }}>
+            <div
+                style={{
+                    display: 'flex',
+                    gap: 12,
+                    marginBottom: 20,
+                    alignItems: 'center',
+                }}
+            >
                 <div>
                     <label htmlFor="width">Width</label>
                     <input
