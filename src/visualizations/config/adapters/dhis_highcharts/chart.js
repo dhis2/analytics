@@ -55,6 +55,9 @@ export default function (layout, el, extraOptions, series) {
                       series[0]
                   ),
               }
+            : undefined,
+        layout.type === VIS_TYPE_SINGLE_VALUE && extraOptions.dashboard
+            ? { spacingTop: 7 }
             : undefined
     )
 }
