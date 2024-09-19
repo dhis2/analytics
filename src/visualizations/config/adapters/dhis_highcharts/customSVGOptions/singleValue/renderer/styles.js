@@ -34,17 +34,17 @@ const subTextStyles = [
 ]
 
 const spacings = [
-    { valueTop: 8, subTextTop: 4, iconGap: 4, iconSize: 140 },
-    { valueTop: 8, subTextTop: 4, iconGap: 4, iconSize: 127 },
-    { valueTop: 8, subTextTop: 4, iconGap: 4, iconSize: 115 },
-    { valueTop: 8, subTextTop: 4, iconGap: 4, iconSize: 102 },
-    { valueTop: 8, subTextTop: 4, iconGap: 4, iconSize: 90 },
-    { valueTop: 8, subTextTop: 4, iconGap: 4, iconSize: 77 },
-    { valueTop: 8, subTextTop: 4, iconGap: 4, iconSize: 64 },
-    { valueTop: 8, subTextTop: 4, iconGap: 4, iconSize: 52 },
-    { valueTop: 8, subTextTop: 4, iconGap: 4, iconSize: 39 },
-    { valueTop: 8, subTextTop: 4, iconGap: 4, iconSize: 27 },
-    { valueTop: 8, subTextTop: 4, iconGap: 4, iconSize: 14 },
+    { valueTop: 8, subTextTop: 4, iconGap: 4, iconSize: 200 },
+    { valueTop: 8, subTextTop: 4, iconGap: 4, iconSize: 182 },
+    { valueTop: 8, subTextTop: 4, iconGap: 4, iconSize: 164 },
+    { valueTop: 8, subTextTop: 4, iconGap: 4, iconSize: 146 },
+    { valueTop: 8, subTextTop: 4, iconGap: 4, iconSize: 128 },
+    { valueTop: 8, subTextTop: 4, iconGap: 4, iconSize: 110 },
+    { valueTop: 8, subTextTop: 4, iconGap: 4, iconSize: 92 },
+    { valueTop: 8, subTextTop: 4, iconGap: 4, iconSize: 74 },
+    { valueTop: 8, subTextTop: 4, iconGap: 4, iconSize: 56 },
+    { valueTop: 8, subTextTop: 4, iconGap: 4, iconSize: 38 },
+    { valueTop: 8, subTextTop: 4, iconGap: 4, iconSize: 20 },
 ]
 
 export const MIN_SIDE_WHITESPACE = 4
