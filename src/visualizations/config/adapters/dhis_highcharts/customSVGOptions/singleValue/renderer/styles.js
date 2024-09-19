@@ -20,17 +20,17 @@ const valueStyles = [
 ]
 
 const subTextStyles = [
-    { fontSize: 100, letterSpacing: -3 },
-    { fontSize: 91, letterSpacing: -2.7 },
-    { fontSize: 82, letterSpacing: -2.4 },
-    { fontSize: 73, letterSpacing: -2.1 },
-    { fontSize: 64, letterSpacing: -1.8 },
-    { fontSize: 55, letterSpacing: -1.5 },
-    { fontSize: 46, letterSpacing: -1.2 },
-    { fontSize: 37, letterSpacing: -0.9 },
-    { fontSize: 28, letterSpacing: -0.6 },
-    { fontSize: 19, letterSpacing: 0.3 },
-    { fontSize: 10, letterSpacing: 0 },
+    { fontSize: 67, letterSpacing: -2 },
+    { fontSize: 61, letterSpacing: -1.8 },
+    { fontSize: 55, letterSpacing: -1.6 },
+    { fontSize: 49, letterSpacing: -1.4 },
+    { fontSize: 43, letterSpacing: -1.2 },
+    { fontSize: 37, letterSpacing: -1 },
+    { fontSize: 31, letterSpacing: -0.8 },
+    { fontSize: 25, letterSpacing: -0.6 },
+    { fontSize: 19, letterSpacing: -0.4 },
+    { fontSize: 13, letterSpacing: 0.2 },
+    { fontSize: 7, letterSpacing: 0 },
 ]
 
 const spacings = [
