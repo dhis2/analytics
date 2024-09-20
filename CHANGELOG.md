@@ -1,3 +1,17 @@
+## [26.8.4](https://github.com/dhis2/analytics/compare/v26.8.3...v26.8.4) (2024-09-12)
+
+
+### Bug Fixes
+
+* add translucent prop to CachedDataQueryProvider (DHIS2-18029) ([#1699](https://github.com/dhis2/analytics/issues/1699)) ([ae4dbe6](https://github.com/dhis2/analytics/commit/ae4dbe63add659b4a2d0c8aab543721b0a85ab60))
+
+## [26.8.3](https://github.com/dhis2/analytics/compare/v26.8.2...v26.8.3) (2024-08-27)
+
+
+### Bug Fixes
+
+* compute subtotals/totals for boolean types (DHIS2-9155) ([#1696](https://github.com/dhis2/analytics/issues/1696)) ([3392d78](https://github.com/dhis2/analytics/commit/3392d783b51dd8715beb09b673e567580005a0a2))
+
 ## [26.8.2](https://github.com/dhis2/analytics/compare/v26.8.1...v26.8.2) (2024-08-27)
 
 
