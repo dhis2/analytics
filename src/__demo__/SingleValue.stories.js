@@ -629,9 +629,7 @@ const indicatorTypes = ['plain', 'percent', 'subtext']
 
 storiesOf('SingleValue', module).add('default', () => {
     const newChartRef = useRef(null)
-    const oldContainerRef = useRef(null)
     const newContainerRef = useRef(null)
-    const [transpose, setTranspose] = useState(false)
     const [dashboard, setDashboard] = useState(false)
     const [showIcon, setShowIcon] = useState(false)
     const [indicatorType, setIndicatorType] = useState('plain')
@@ -646,7 +644,7 @@ storiesOf('SingleValue', module).add('default', () => {
         [width, height]
     )
     useEffect(() => {
-        if (oldContainerRef.current && newContainerRef.current) {
+        if (newContainerRef.current) {
             requestAnimationFrame(() => {
                 const extraOptions = {
                     ...baseExtraOptions,
@@ -667,15 +665,6 @@ storiesOf('SingleValue', module).add('default', () => {
                     dataObj.metaData.items.FnYCr2EAzWS.indicatorType =
                         subtextIndicatorType
                 }
-                createVisualization(
-                    [dataObj],
-                    layout,
-                    oldContainerRef.current,
-                    extraOptions,
-                    undefined,
-                    undefined,
-                    'dhis'
-                )
                 const newVisualization = createVisualization(
                     [dataObj],
                     layout,
@@ -782,35 +771,8 @@ storiesOf('SingleValue', module).add('default', () => {
                     </select>
                 </label>
                 <button onClick={downloadOffline}>Download offline</button>
-                <button
-                    onClick={() => {
-                        setTranspose(!transpose)
-                    }}
-                >
-                    {transpose ? 'Show side by side' : 'Transpose old and new'}
-                </button>
             </div>
             <div style={{ display: 'flex', gap: 12 }}>
-                <div
-                    style={
-                        transpose
-                            ? {
-                                  ...containerStyle,
-                                  ...{
-                                      opacity: 0.45,
-                                      transform: `translateX(${width + 10}px)`,
-                                      zIndex: 10,
-                                      backgroundColor: 'purple',
-                                  },
-                              }
-                            : containerStyle
-                    }
-                >
-                    <div
-                        ref={oldContainerRef}
-                        style={innerContainerStyle}
-                    ></div>
-                </div>
                 <div style={containerStyle}>
                     <div
                         ref={newContainerRef}
