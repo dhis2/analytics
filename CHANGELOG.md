@@ -1,3 +1,31 @@
+## [26.8.5](https://github.com/dhis2/analytics/compare/v26.8.4...v26.8.5) (2024-09-22)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([6285f9a](https://github.com/dhis2/analytics/commit/6285f9a43d7adf2b61bbe8bfbaae865380fb8b8a))
+
+## [26.8.4](https://github.com/dhis2/analytics/compare/v26.8.3...v26.8.4) (2024-09-12)
+
+
+### Bug Fixes
+
+* add translucent prop to CachedDataQueryProvider (DHIS2-18029) ([#1699](https://github.com/dhis2/analytics/issues/1699)) ([ae4dbe6](https://github.com/dhis2/analytics/commit/ae4dbe63add659b4a2d0c8aab543721b0a85ab60))
+
+## [26.8.3](https://github.com/dhis2/analytics/compare/v26.8.2...v26.8.3) (2024-08-27)
+
+
+### Bug Fixes
+
+* compute subtotals/totals for boolean types (DHIS2-9155) ([#1696](https://github.com/dhis2/analytics/issues/1696)) ([3392d78](https://github.com/dhis2/analytics/commit/3392d783b51dd8715beb09b673e567580005a0a2))
+
+## [26.8.2](https://github.com/dhis2/analytics/compare/v26.8.1...v26.8.2) (2024-08-27)
+
+
+### Bug Fixes
+
+* add AO TYPE for event chart and event report ([#1697](https://github.com/dhis2/analytics/issues/1697)) ([efff1c8](https://github.com/dhis2/analytics/commit/efff1c81845a974fe8c60b593e6bbe42c19682d7))
+
 ## [26.8.1](https://github.com/dhis2/analytics/compare/v26.8.0...v26.8.1) (2024-08-08)
 
 

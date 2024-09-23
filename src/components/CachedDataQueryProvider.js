@@ -6,7 +6,12 @@ import React, { createContext, useContext } from 'react'
 
 const CachedDataQueryCtx = createContext({})
 
-const CachedDataQueryProvider = ({ query, dataTransformation, children }) => {
+const CachedDataQueryProvider = ({
+    query,
+    dataTransformation,
+    children,
+    translucent = true,
+}) => {
     const { data: rawData, ...rest } = useDataQuery(query)
     const { error, loading } = rest
     const data =
@@ -14,7 +19,7 @@ const CachedDataQueryProvider = ({ query, dataTransformation, children }) => {
 
     if (loading) {
         return (
-            <Layer translucent>
+            <Layer translucent={translucent}>
                 <CenteredContent>
                     <CircularLoader />
                 </CenteredContent>
@@ -43,6 +48,7 @@ CachedDataQueryProvider.propTypes = {
     children: PropTypes.node.isRequired,
     query: PropTypes.object.isRequired,
     dataTransformation: PropTypes.func,
+    translucent: PropTypes.bool,
 }
 
 const useCachedDataQuery = () => useContext(CachedDataQueryCtx)

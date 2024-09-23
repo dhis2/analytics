@@ -14,7 +14,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2024-01-25T12:05:03.360Z\n"
+"POT-Creation-Date: 2024-08-27T11:29:09.031Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: Enzo Nicolas Rossi <enzo@dhis2.org>, 2024\n"
 "Language-Team: Spanish (https://app.transifex.com/hisp-uio/teams/100509/es/)\n"
@@ -85,6 +85,12 @@ msgstr "Acerca de este listado"
 
 msgid "About this visualization"
 msgstr "Acerca de esta visualización"
+
+msgid "About this event chart"
+msgstr "Acerca de este gráfico de eventos"
+
+msgid "About this event report"
+msgstr "Acerca de este informe"
 
 msgid "This app could not retrieve required data."
 msgstr "Esta aplicación no pudo recuperar los datos requeridos."
@@ -455,39 +461,6 @@ msgstr "No se pudo actualizar la interpretación"
 
 msgid "Enter interpretation text"
 msgstr "Introducir el texto de la interpretación"
-
-msgid "Bold text"
-msgstr "Texto en negrita"
-
-msgid "Italic text"
-msgstr "Texto en cursiva"
-
-msgid "Link to a URL"
-msgstr "Enlace a una URL"
-
-msgid "Mention a user"
-msgstr "Mencionar a un usuario"
-
-msgid "Add emoji"
-msgstr "Añadir emoji"
-
-msgid "Preview"
-msgstr "Vista previa"
-
-msgid "Back to write mode"
-msgstr "Volver al modo de escritura"
-
-msgid "Too many results. Try refining the search."
-msgstr "Demasiados resultados. Intenta refinar la búsqueda."
-
-msgid "Search for a user"
-msgstr "Buscar un usuario"
-
-msgid "Searching for \"{{- searchText}}\""
-msgstr "Buscando \"{{- searchText}}\""
-
-msgid "No results found"
-msgstr "No results found"
 
 msgid "Not available offline"
 msgstr "No disponible sin conexión a internet"
@@ -916,6 +889,27 @@ msgstr "Años fiscales"
 msgid "Years"
 msgstr "Años"
 
+msgid "Bold text"
+msgstr "Texto en negrita"
+
+msgid "Italic text"
+msgstr "Texto en cursiva"
+
+msgid "Link to a URL"
+msgstr "Enlace a una URL"
+
+msgid "Mention a user"
+msgstr "Mencionar a un usuario"
+
+msgid "Add emoji"
+msgstr "Añadir emoji"
+
+msgid "Preview"
+msgstr "Vista previa"
+
+msgid "Back to write mode"
+msgstr "Volver al modo de escritura"
+
 msgid "Interpretations and details"
 msgstr "Interpretaciones y detalles"
 
@@ -945,6 +939,18 @@ msgstr "No se pudieron cargar las traducciones"
 
 msgid "Retry"
 msgstr "Reintentar"
+
+msgid "Too many results. Try refining the search."
+msgstr "Demasiados resultados. Intenta refinar la búsqueda."
+
+msgid "Search for a user"
+msgstr "Buscar un usuario"
+
+msgid "Searching for \"{{- searchText}}\""
+msgstr "Buscando \"{{- searchText}}\""
+
+msgid "No results found"
+msgstr "No results found"
 
 msgid "Series"
 msgstr "Series"

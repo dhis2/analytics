@@ -47,7 +47,7 @@ const toFixedPrecisionString = (value, skipRounding) => {
         return value
     }
 
-    const precision = skipRounding ? 10 : value > -1 && value < 1 ? 2 : 1
+    const precision = skipRounding ? 10 : 2
 
     return value.toFixed(precision)
 }
