@@ -132,7 +132,5 @@ export default function (series, layout, metaData, extraOptions) {
             break
     }
 
-    console.log('subtitle', subtitle)
-
     return subtitle
 }
