@@ -19,7 +19,7 @@ export function getSingleValueTextColor(
         return baseColor
     }
 
-    if (LEGEND_DISPLAY_STYLE_TEXT) {
+    if (legendOptions.style === LEGEND_DISPLAY_STYLE_TEXT) {
         return legendColor
     }
 
