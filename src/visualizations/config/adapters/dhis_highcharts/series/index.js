@@ -227,7 +227,7 @@ export default function ({
 }) {
     switch (layout.type) {
         case VIS_TYPE_SINGLE_VALUE:
-            series = null
+            series = []
             break
         case VIS_TYPE_PIE:
             series = getPie(
