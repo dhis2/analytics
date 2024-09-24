@@ -5,18 +5,20 @@ import { positionElements } from './positionElements.js'
 import { DynamicStyles } from './styles.js'
 
 export function renderSingleValueSVG() {
-    const color = this.title.styles.color
-    const { /* dashboard, */ formattedValue, icon, subText } =
+    const { formattedValue, icon, subText, fontColor } =
         this.userOptions.customSVGOptions
     const dynamicStyles = new DynamicStyles()
     const valueElement = this.renderer
         .text(formattedValue)
-        .css({ color, visibility: 'hidden' })
+        .css({ color: fontColor, visibility: 'hidden' })
         .add()
     const subTextElement = subText
-        ? this.renderer.text(subText).css({ color, visibility: 'hidden' }).add()
+        ? this.renderer
+              .text(subText)
+              .css({ color: fontColor, visibility: 'hidden' })
+              .add()
         : null
-    const iconElement = icon ? addIconElement.call(this, icon, color) : null
+    const iconElement = icon ? addIconElement.call(this, icon, fontColor) : null
 
     let fitsWithinContainer = false
     let styles = {}
