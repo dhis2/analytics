@@ -50,7 +50,7 @@ export default function (layout, el, extraOptions, series) {
         layout.type === VIS_TYPE_SINGLE_VALUE
             ? {
                   backgroundColor: getSingleValueBackgroundColor(
-                      extraOptions.legendOptions,
+                      layout.legend,
                       extraOptions.legendSets,
                       series[0]
                   ),
