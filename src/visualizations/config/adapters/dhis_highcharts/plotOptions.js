@@ -68,6 +68,11 @@ export default ({
                           point: {
                               events: {
                                   click: function () {
+                                      console.log(
+                                          'jj onClick handler',
+                                          this.category,
+                                          this.series.name
+                                      )
                                       onClick(this.graphic?.element, {
                                           category: this.category,
                                           series: this.series.name,
@@ -75,6 +80,10 @@ export default ({
                                   },
                               },
                           },
+                          states: {
+                              inactive: {
+                                  enabled: false,
+                              },
                       },
                   }
                 : {}
