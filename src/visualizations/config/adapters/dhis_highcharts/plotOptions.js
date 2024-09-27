@@ -84,6 +84,7 @@ export default ({
                               inactive: {
                                   enabled: false,
                               },
+                          },
                       },
                   }
                 : {}
