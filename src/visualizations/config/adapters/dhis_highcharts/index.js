@@ -163,7 +163,7 @@ export default function ({ store, layout, el, extraConfig, extraOptions }) {
         })
     }
 
-    console.log('jj config.plotOptions', config.plotOptions)
+    console.log('config.plotOptions', config.plotOptions)
 
     // hide empty categories
     if (_layout.hideEmptyRowItems !== 'NONE') {
