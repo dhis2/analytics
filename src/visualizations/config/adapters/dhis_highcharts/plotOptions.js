@@ -75,6 +75,14 @@ export default ({
                                   },
                               },
                           },
+                          states: {
+                              inactive: {
+                                  enabled: false,
+                              },
+                              hover: {
+                                  brightness: -0.3, // darken
+                              },
+                          },
                       },
                   }
                 : {}
