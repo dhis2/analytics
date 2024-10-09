@@ -633,8 +633,9 @@ storiesOf('SingleValue', module).add('default', () => {
     const newContainerRef = useRef(null)
     const [transpose, setTranspose] = useState(false)
     const [dashboard, setDashboard] = useState(false)
-    const [showIcon, setShowIcon] = useState(false)
-    const [indicatorType, setIndicatorType] = useState('plain')
+    const [showIcon, setShowIcon] = useState(true)
+    const [indicatorType, setIndicatorType] = useState('subtext')
+    const [exportAsPdf, setExportAsPdf] = useState(true)
     const [width, setWidth] = useState(constainerStyleBase.width)
     const [height, setHeight] = useState(constainerStyleBase.height)
     const containerStyle = useMemo(
@@ -701,7 +702,7 @@ storiesOf('SingleValue', module).add('default', () => {
                     fallbackToExportServer: false,
                     filename: 'testOfflineDownload',
                     showExportInProgress: true,
-                    type: 'image/png',
+                    type: exportAsPdf ? 'application/pdf' : 'image/png',
                 },
                 {
                     chart: {
@@ -713,7 +714,7 @@ storiesOf('SingleValue', module).add('default', () => {
                 }
             )
         }
-    }, [])
+    }, [exportAsPdf])
 
     return (
         <>
@@ -780,6 +781,14 @@ storiesOf('SingleValue', module).add('default', () => {
                             return <option key={index}>{type}</option>
                         })}
                     </select>
+                </label>
+                <label>
+                    <input
+                        checked={exportAsPdf}
+                        onChange={() => setExportAsPdf(!exportAsPdf)}
+                        type="checkbox"
+                    />
+                    &nbsp;Export as PDF
                 </label>
                 <button onClick={downloadOffline}>Download offline</button>
                 <button
