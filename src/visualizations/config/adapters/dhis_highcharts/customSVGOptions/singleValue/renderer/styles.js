@@ -1,10 +1,3 @@
-const baseStyle = {
-    value: {
-        'font-weight': 300,
-    },
-    subText: {},
-}
-
 const valueStyles = [
     { 'font-size': '200px', 'letter-spacing': '-6px' },
     { 'font-size': '182px', 'letter-spacing': '-5.5px' },
@@ -50,16 +43,17 @@ const spacings = [
 export const MIN_SIDE_WHITESPACE = 4
 
 export class DynamicStyles {
-    constructor() {
+    constructor(isExportingToPDF) {
         this.currentIndex = 0
+        this.isExportingToPDF = isExportingToPDF
     }
     getStyle() {
         return {
-            value: { ...baseStyle.value, ...valueStyles[this.currentIndex] },
-            subText: {
-                ...baseStyle.subText,
-                ...subTextStyles[this.currentIndex],
+            value: {
+                ...valueStyles[this.currentIndex],
+                'font-weight': this.isExportingToPDF ? 'normal' : '300',
             },
+            subText: subTextStyles[this.currentIndex],
             spacing: spacings[this.currentIndex],
         }
     }
