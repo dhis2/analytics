@@ -8,9 +8,9 @@ export function checkIfFitsWithinContainer(
     subText,
     spacing
 ) {
-    const valueRect = valueElement.getBBox()
+    const valueRect = valueElement.getBBox(true)
     const subTextRect = subText
-        ? subTextElement.getBBox()
+        ? subTextElement.getBBox(true)
         : { width: 0, height: 0 }
     const requiredValueWidth = icon
         ? valueRect.width + spacing.iconGap + spacing.iconSize
