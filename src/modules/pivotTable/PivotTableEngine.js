@@ -12,6 +12,7 @@ import {
     VALUE_TYPE_NUMBER,
     VALUE_TYPE_TEXT,
     isBooleanValueType,
+    isCumulativeValueType,
     isNumericValueType,
 } from '../valueTypes.js'
 import { AdaptiveClippingController } from './AdaptiveClippingController.js'
@@ -41,6 +42,7 @@ import {
     NUMBER_TYPE_COLUMN_PERCENTAGE,
     NUMBER_TYPE_ROW_PERCENTAGE,
     NUMBER_TYPE_VALUE,
+    VALUE_TYPE_NA,
 } from './pivotTableConstants.js'
 
 const dataFields = [
@@ -401,7 +403,30 @@ export class PivotTableEngine {
             rawCell.renderedValue = renderedValue
         }
 
+        if (
+            [CELL_TYPE_TOTAL, CELL_TYPE_SUBTOTAL].includes(rawCell.cellType) &&
+            rawCell.rawValue === AGGREGATE_TYPE_NA
+        ) {
+            rawCell.titleValue = i18n.t('Not applicable')
+        }
+
         if (this.options.cumulativeValues) {
+            let titleValue
+
+            if (this.data[row] && this.data[row][column]) {
+                const dataRow = this.data[row][column]
+
+                const rawValue =
+                    cellType === CELL_TYPE_VALUE
+                        ? dataRow[this.dimensionLookup.dataHeaders.value]
+                        : dataRow.value
+
+                titleValue = i18n.t('Value: {{value}}', {
+                    value: renderValue(rawValue, valueType, this.visualization),
+                    nsSeparator: '^^',
+                })
+            }
+
             const cumulativeValue = this.getCumulative({
                 row,
                 column,
@@ -414,6 +439,7 @@ export class PivotTableEngine {
                         ? VALUE_TYPE_NUMBER
                         : valueType
                 rawCell.empty = false
+                rawCell.titleValue = titleValue
                 rawCell.rawValue = cumulativeValue
                 rawCell.renderedValue = renderValue(
                     cumulativeValue,
@@ -523,16 +549,7 @@ export class PivotTableEngine {
 
         const cellValue = this.data[row][column]
 
-        if (!cellValue) {
-            // Empty cell
-            // The cell still needs to get the valueType to render correctly 0 and cumulative values
-            return {
-                valueType: VALUE_TYPE_NUMBER,
-                totalAggregationType: AGGREGATE_TYPE_SUM,
-            }
-        }
-
-        if (!Array.isArray(cellValue)) {
+        if (cellValue && !Array.isArray(cellValue)) {
             // This is a total cell
             return {
                 valueType: cellValue.valueType,
@@ -741,23 +758,30 @@ export class PivotTableEngine {
                 totalCell.totalAggregationType = currentAggType
             }
 
-            const currentValueType = dxDimension?.valueType
+            // Force value type of total cells to NUMBER for value cells with numeric or boolean types.
+            // This is to simplify the code below where we compare the previous value type.
+            // All numeric/boolean value types use the same style for rendering the total cell (right aligned content)
+            // and using NUMBER for the total cell is enough for that.
+            // (see DHIS2-9155)
+            const currentValueType =
+                isNumericValueType(dxDimension?.valueType) ||
+                isBooleanValueType(dxDimension?.valueType)
+                    ? VALUE_TYPE_NUMBER
+                    : dxDimension?.valueType
+
             const previousValueType = totalCell.valueType
             if (previousValueType && currentValueType !== previousValueType) {
-                totalCell.valueType = AGGREGATE_TYPE_NA
+                totalCell.valueType = VALUE_TYPE_NA
             } else {
                 totalCell.valueType = currentValueType
             }
 
-            // compute subtotals and totals for all numeric and boolean value types
-            // in that case, force value type of subtotal and total cells to NUMBER to format them correctly
+            // Compute totals for all numeric and boolean value types only.
+            // In practice valueType here is NUMBER (see the comment above).
+            // When is not, it means there is some value cell with a valueType other than numeric/boolean,
+            // the total should not be computed then.
             // (see DHIS2-9155)
-            if (
-                isNumericValueType(dxDimension?.valueType) ||
-                isBooleanValueType(dxDimension?.valueType)
-            ) {
-                totalCell.valueType = VALUE_TYPE_NUMBER
-
+            if (isNumericValueType(totalCell.valueType)) {
                 dataFields.forEach((field) => {
                     const headerIndex = this.dimensionLookup.dataHeaders[field]
                     const value = parseValue(dataRow[headerIndex])
@@ -882,6 +906,28 @@ export class PivotTableEngine {
             }
         }
     }
+
+    computeOverrideTotalAggregationType(totalCell, visualization) {
+        // Avoid undefined on total cells with valueTypes that cannot be totalized.
+        // This happens for example when a column/row has all value cells of type TEXT.
+        if (
+            !(
+                isNumericValueType(totalCell.valueType) ||
+                isBooleanValueType(totalCell.valueType)
+            )
+        ) {
+            return AGGREGATE_TYPE_NA
+        }
+
+        // DHIS2-15698: do not override total aggregation type when numberType option is not present
+        // (numberType option default is VALUE)
+        return (
+            visualization.numberType &&
+            visualization.numberType !== NUMBER_TYPE_VALUE &&
+            AGGREGATE_TYPE_SUM
+        )
+    }
+
     finalizeTotal({ row, column }) {
         if (!this.data[row]) {
             return
@@ -890,12 +936,17 @@ export class PivotTableEngine {
         if (totalCell && totalCell.count) {
             totalCell.value = applyTotalAggregationType(
                 totalCell,
-                // DHIS2-15698: do not override total aggregation type when numberType option is not present
-                // (numberType option default is VALUE)
-                this.visualization.numberType &&
-                    this.visualization.numberType !== NUMBER_TYPE_VALUE &&
-                    AGGREGATE_TYPE_SUM
+                this.computeOverrideTotalAggregationType(
+                    totalCell,
+                    this.visualization
+                )
             )
+
+            // override valueType for styling cells with N/A value
+            if (totalCell.value === AGGREGATE_TYPE_NA) {
+                totalCell.valueType = VALUE_TYPE_NA
+            }
+
             this.adaptiveClippingController.add(
                 { row, column },
                 renderValue(
@@ -1029,9 +1080,13 @@ export class PivotTableEngine {
                     })
                     const valueType = dxDimension?.valueType || VALUE_TYPE_TEXT
 
-                    // only accumulate numeric values
-                    // accumulating text values does not make sense
-                    if (valueType === VALUE_TYPE_NUMBER) {
+                    // only accumulate numeric (except for PERCENTAGE and UNIT_INTERVAL) and boolean values
+                    // accumulating other value types like text values does not make sense
+                    if (isCumulativeValueType(valueType)) {
+                        // initialise to 0 for cumulative types
+                        // (||= is not transformed correctly in Babel with the current setup)
+                        acc || (acc = 0)
+
                         if (this.data[row] && this.data[row][column]) {
                             const dataRow = this.data[row][column]
 
@@ -1049,7 +1104,7 @@ export class PivotTableEngine {
                     }
 
                     return acc
-                }, 0)
+                }, '')
             })
         } else {
             this.accumulators = { rows: {} }
