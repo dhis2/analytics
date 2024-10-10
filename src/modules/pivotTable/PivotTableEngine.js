@@ -1084,7 +1084,8 @@ export class PivotTableEngine {
                     // accumulating other value types like text values does not make sense
                     if (isCumulativeValueType(valueType)) {
                         // initialise to 0 for cumulative types
-                        acc ||= 0
+                        // (||= is not transformed correctly in Babel with the current setup)
+                        acc || (acc = 0)
 
                         if (this.data[row] && this.data[row][column]) {
                             const dataRow = this.data[row][column]
