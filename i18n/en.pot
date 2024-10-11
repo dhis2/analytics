@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2024-09-15T09:24:15.693Z\n"
-"PO-Revision-Date: 2024-09-15T09:24:15.694Z\n"
+"POT-Creation-Date: 2024-10-11T12:49:26.846Z\n"
+"PO-Revision-Date: 2024-10-11T12:49:26.847Z\n"
 
 msgid "view only"
 msgstr "view only"
@@ -855,6 +855,9 @@ msgstr "Financial Years"
 msgid "Years"
 msgstr "Years"
 
+msgid "Value: {{value}}"
+msgstr "Value: {{value}}"
+
 msgid "Bold text"
 msgstr "Bold text"
 
@@ -1127,9 +1130,6 @@ msgstr "{{thresholdFactor}} × Z-score high"
 
 msgid "Not applicable"
 msgstr "Not applicable"
-
-msgid "Value: {{value}}"
-msgstr "Value: {{value}}"
 
 msgid "Data"
 msgstr "Data"
