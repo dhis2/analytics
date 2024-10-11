@@ -159,6 +159,7 @@ export const cell = css`
         text-align: right;
     }
     .N_A {
+        text-align: center;
         color: ${colors.grey600};
     }
 

@@ -43,6 +43,7 @@ import {
     NUMBER_TYPE_ROW_PERCENTAGE,
     NUMBER_TYPE_VALUE,
     VALUE_TYPE_NA,
+    VALUE_NA,
 } from './pivotTableConstants.js'
 
 const dataFields = [
@@ -247,7 +248,7 @@ const applyTotalAggregationType = (
 ) => {
     switch (overrideTotalAggregationType || totalAggregationType) {
         case AGGREGATE_TYPE_NA:
-            return 'N/A'
+            return VALUE_NA
         case AGGREGATE_TYPE_AVERAGE:
             return (
                 ((numerator || value) * multiplier) /
@@ -433,9 +434,12 @@ export class PivotTableEngine {
             })
 
             if (cumulativeValue !== undefined && cumulativeValue !== null) {
-                // force to NUMBER for accumulated values
+                // force to TEXT for N/A (accumulated) values
+                // force to NUMBER for accumulated values if no valueType present
                 rawCell.valueType =
-                    valueType === undefined || valueType === null
+                    cumulativeValue === VALUE_NA
+                        ? VALUE_TYPE_NA
+                        : valueType === undefined || valueType === null
                         ? VALUE_TYPE_NUMBER
                         : valueType
                 rawCell.empty = false
@@ -1087,7 +1091,7 @@ export class PivotTableEngine {
 
                     // only accumulate numeric (except for PERCENTAGE and UNIT_INTERVAL) and boolean values
                     // accumulating other value types like text values does not make sense
-                    if (isCumulativeValueType(valueType)) {
+                    if (acc !== VALUE_NA && isCumulativeValueType(valueType)) {
                         // initialise to 0 for cumulative types
                         // (||= is not transformed correctly in Babel with the current setup)
                         acc || (acc = 0)
@@ -1104,9 +1108,13 @@ export class PivotTableEngine {
 
                             acc += parseValue(rawValue)
                         }
-
-                        this.accumulators.rows[row][column] = acc
+                    } else {
+                        // show N/A from the first non-cumulative type and onwards
+                        // only if a previous value is present (this is to avoid filling empty rows with N/A)
+                        acc = acc ? VALUE_NA : ''
                     }
+
+                    this.accumulators.rows[row][column] = acc
 
                     return acc
                 }, '')

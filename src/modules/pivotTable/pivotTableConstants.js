@@ -37,3 +37,5 @@ export const WRAPPED_TEXT_JUSTIFY_BUFFER = 25
 export const WRAPPED_TEXT_LINE_HEIGHT = 1.0
 
 export const CLIPPED_AXIS_PARTITION_SIZE_PX = 1000
+
+export const VALUE_NA = 'N/A'
