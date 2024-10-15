@@ -1091,7 +1091,7 @@ export class PivotTableEngine {
 
                     // only accumulate numeric (except for PERCENTAGE and UNIT_INTERVAL) and boolean values
                     // accumulating other value types like text values does not make sense
-                    if (acc !== VALUE_NA && isCumulativeValueType(valueType)) {
+                    if (isCumulativeValueType(valueType)) {
                         // initialise to 0 for cumulative types
                         // (||= is not transformed correctly in Babel with the current setup)
                         acc || (acc = 0)
@@ -1108,13 +1108,9 @@ export class PivotTableEngine {
 
                             acc += parseValue(rawValue)
                         }
-                    } else {
-                        // show N/A from the first non-cumulative type and onwards
-                        // only if a previous value is present (this is to avoid filling empty rows with N/A)
-                        acc = acc ? VALUE_NA : ''
-                    }
 
-                    this.accumulators.rows[row][column] = acc
+                        this.accumulators.rows[row][column] = acc
+                    }
 
                     return acc
                 }, '')
