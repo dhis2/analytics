@@ -20,7 +20,6 @@
     },
     "scripts": {
         "build": "d2-app-scripts build",
-        "postbuild": "yarn build-storybook",
         "build-storybook": "build-storybook",
         "start-storybook": "start-storybook --port 5000",
         "start": "yarn start-storybook",

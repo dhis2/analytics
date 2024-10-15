@@ -1,3 +1,4 @@
+import i18n from '@dhis2/d2-i18n'
 import PropTypes from 'prop-types'
 import React, { useRef } from 'react'
 import { applyLegendSet } from '../../modules/pivotTable/applyLegendSet.js'
@@ -74,7 +75,13 @@ export const PivotTableValueCell = ({
         <PivotTableCell
             key={column}
             classes={classes}
-            title={cellContent.renderedValue}
+            title={
+                cellContent.titleValue ??
+                i18n.t('Value: {{value}}', {
+                    value: cellContent.renderedValue,
+                    nsSeparator: '^^',
+                })
+            }
             style={style}
             onClick={isClickable ? onClick : undefined}
             ref={cellRef}

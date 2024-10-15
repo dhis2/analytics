@@ -9,6 +9,8 @@ export const AGGREGATE_TYPE_SUM = 'SUM'
 export const AGGREGATE_TYPE_AVERAGE = 'AVERAGE'
 export const AGGREGATE_TYPE_NA = 'N/A'
 
+export const VALUE_TYPE_NA = 'N_A' // this ends up as CSS class and / is problematic
+
 export const NUMBER_TYPE_VALUE = 'VALUE'
 export const NUMBER_TYPE_ROW_PERCENTAGE = 'ROW_PERCENTAGE'
 export const NUMBER_TYPE_COLUMN_PERCENTAGE = 'COLUMN_PERCENTAGE'
@@ -35,3 +37,5 @@ export const WRAPPED_TEXT_JUSTIFY_BUFFER = 25
 export const WRAPPED_TEXT_LINE_HEIGHT = 1.0
 
 export const CLIPPED_AXIS_PARTITION_SIZE_PX = 1000
+
+export const VALUE_NA = 'N/A'

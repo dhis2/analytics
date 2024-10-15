@@ -36,5 +36,16 @@ const NUMERIC_VALUE_TYPES = [
 
 const BOOLEAN_VALUE_TYPES = [VALUE_TYPE_BOOLEAN, VALUE_TYPE_TRUE_ONLY]
 
+const CUMULATIVE_VALUE_TYPES = [
+    VALUE_TYPE_NUMBER,
+    VALUE_TYPE_INTEGER,
+    VALUE_TYPE_INTEGER_POSITIVE,
+    VALUE_TYPE_INTEGER_NEGATIVE,
+    VALUE_TYPE_INTEGER_ZERO_OR_POSITIVE,
+    ...BOOLEAN_VALUE_TYPES,
+]
+
+export const isCumulativeValueType = (type) =>
+    CUMULATIVE_VALUE_TYPES.includes(type)
 export const isNumericValueType = (type) => NUMERIC_VALUE_TYPES.includes(type)
 export const isBooleanValueType = (type) => BOOLEAN_VALUE_TYPES.includes(type)
