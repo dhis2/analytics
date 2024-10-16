@@ -18,10 +18,11 @@ export function addIconElement(svgString, color) {
 
     /* The code below makes some assumptions about icon SVGs:
      * 1. The SVG children are all <path> elements and they are not nested
-     * 2. On the `d`, `fill-rule`, `clip-rule` and `fill` attributes are used */
+     * 2. Only the `d`, `fill-rule`, `clip-rule` and `fill` attributes are used */
     Array.from(svgIconDocument.documentElement.children).forEach((pathNode) => {
         /* Highcharts expects an array of letters and numbers but the
-         * d-attribute string does not put space in between them. */
+         * d-attribute string only puts spaces in between adjacent number,
+         * not between letter and numbers. */
         const d = pathNode
             .getAttribute('d')
             // Add space after letter when followed by number
