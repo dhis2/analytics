@@ -7,7 +7,7 @@ import { DynamicStyles } from './styles.js'
 export function renderSingleValueSVG() {
     const { formattedValue, icon, subText, fontColor } =
         this.userOptions.customSVGOptions
-    const dynamicStyles = new DynamicStyles(this.userOptions?.isPDF)
+    const dynamicStyles = new DynamicStyles(this.userOptions?.isPdfExport)
     const valueElement = this.renderer
         .text(formattedValue)
         .css({ color: fontColor, visibility: 'hidden' })
