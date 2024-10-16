@@ -6,7 +6,7 @@ import HNDTD from 'highcharts/modules/no-data-to-display'
 import HOE from 'highcharts/modules/offline-exporting'
 import HPF from 'highcharts/modules/pattern-fill'
 import HSG from 'highcharts/modules/solid-gauge'
-import PEFP from './pdf_export_fix_plugin.js'
+import PEBFP from './pdfExportBugFixPlugin/index.js'
 
 // apply
 HM(H)
@@ -16,7 +16,7 @@ HE(H)
 HOE(H)
 HPF(H)
 HB(H)
-PEFP(H)
+PEBFP(H)
 
 /* Whitelist some additional SVG attributes here. Without this,
  * the PDF export for the SingleValue visualization breaks. */
