@@ -7,6 +7,7 @@ import {
     FONT_STYLE_OPTION_TEXT_ALIGN,
     FONT_STYLE_VISUALIZATION_SUBTITLE,
     mergeFontStyleWithDefault,
+    defaultFontStyle,
 } from '../../../../../modules/fontStyle.js'
 import {
     VIS_TYPE_YEAR_OVER_YEAR_LINE,
@@ -109,23 +110,34 @@ export default function (series, layout, metaData, extraOptions) {
 
     switch (layout.type) {
         case VIS_TYPE_SINGLE_VALUE:
-            subtitle.style.color = getSingleValueSubtitleColor(
-                fontStyle[FONT_STYLE_OPTION_TEXT_COLOR],
-                series[0],
-                legendOptions,
-                legendSets
-            )
-            if (dashboard) {
-                // Single value subtitle text should be multiline
-                /* TODO: The default color of the subtitle now is #4a5768 but the
-                 * original implementation used #666, which is a lighter grey.
-                 * If we want to keep this color, changes are needed here. */
-                Object.assign(subtitle.style, {
-                    wordWrap: 'normal',
-                    whiteSpace: 'normal',
-                    overflow: 'visible',
-                    textOverflow: 'initial',
-                })
+            {
+                const defaultColor =
+                    defaultFontStyle?.[FONT_STYLE_VISUALIZATION_SUBTITLE]?.[
+                        FONT_STYLE_OPTION_TEXT_COLOR
+                    ]
+                const customColor =
+                    layout?.fontStyle?.[FONT_STYLE_VISUALIZATION_SUBTITLE]?.[
+                        FONT_STYLE_OPTION_TEXT_COLOR
+                    ]
+                subtitle.style.color = getSingleValueSubtitleColor(
+                    customColor,
+                    defaultColor,
+                    series[0],
+                    legendOptions,
+                    legendSets
+                )
+                if (dashboard) {
+                    // Single value subtitle text should be multiline
+                    /* TODO: The default color of the subtitle now is #4a5768 but the
+                     * original implementation used #666, which is a lighter grey.
+                     * If we want to keep this color, changes are needed here. */
+                    Object.assign(subtitle.style, {
+                        wordWrap: 'normal',
+                        whiteSpace: 'normal',
+                        overflow: 'visible',
+                        textOverflow: 'initial',
+                    })
+                }
             }
             break
         default:

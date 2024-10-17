@@ -7,6 +7,7 @@ import {
     FONT_STYLE_OPTION_TEXT_ALIGN,
     FONT_STYLE_VISUALIZATION_TITLE,
     mergeFontStyleWithDefault,
+    defaultFontStyle,
 } from '../../../../../modules/fontStyle.js'
 import {
     VIS_TYPE_YEAR_OVER_YEAR_LINE,
@@ -52,7 +53,6 @@ export default function (layout, metaData, extraOptions, series) {
             text: undefined,
         }
     }
-
     const { dashboard, legendSets } = extraOptions
     const legendOptions = layout.legend
     const fontStyle = mergeFontStyleWithDefault(
@@ -118,15 +118,26 @@ export default function (layout, metaData, extraOptions, series) {
 
     switch (layout.type) {
         case VIS_TYPE_SINGLE_VALUE:
-            title.style.color = getSingleValueTitleColor(
-                fontStyle[FONT_STYLE_OPTION_TEXT_COLOR],
-                series[0],
-                legendOptions,
-                legendSets
-            )
-            if (dashboard) {
-                // TODO: is this always what we want?
-                title.style.fontWeight = 'normal'
+            {
+                const defaultColor =
+                    defaultFontStyle?.[FONT_STYLE_VISUALIZATION_TITLE]?.[
+                        FONT_STYLE_OPTION_TEXT_COLOR
+                    ]
+                const customColor =
+                    layout?.fontStyle?.[FONT_STYLE_VISUALIZATION_TITLE]?.[
+                        FONT_STYLE_OPTION_TEXT_COLOR
+                    ]
+                title.style.color = getSingleValueTitleColor(
+                    customColor,
+                    defaultColor,
+                    series[0],
+                    legendOptions,
+                    legendSets
+                )
+                if (dashboard) {
+                    // TODO: is this always what we want?
+                    title.style.fontWeight = 'normal'
+                }
             }
             break
         default:
