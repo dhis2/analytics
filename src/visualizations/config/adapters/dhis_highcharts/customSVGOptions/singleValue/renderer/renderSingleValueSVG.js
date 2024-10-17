@@ -10,11 +10,13 @@ export function renderSingleValueSVG() {
     const dynamicStyles = new DynamicStyles(this.userOptions?.isPdfExport)
     const valueElement = this.renderer
         .text(formattedValue)
+        .attr('data-test', 'visualization-primary-value')
         .css({ color: fontColor, visibility: 'hidden' })
         .add()
     const subTextElement = subText
         ? this.renderer
               .text(subText)
+              .attr('data-test', 'visualization-subtext')
               .css({ color: fontColor, visibility: 'hidden' })
               .add()
         : null
