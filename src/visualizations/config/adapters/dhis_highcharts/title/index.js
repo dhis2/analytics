@@ -53,7 +53,8 @@ export default function (layout, metaData, extraOptions, series) {
         }
     }
 
-    const { dashboard, legendSets, legendOptions } = extraOptions
+    const { dashboard, legendSets } = extraOptions
+    const legendOptions = layout.legend
     const fontStyle = mergeFontStyleWithDefault(
         layout.fontStyle && layout.fontStyle[FONT_STYLE_VISUALIZATION_TITLE],
         FONT_STYLE_VISUALIZATION_TITLE
