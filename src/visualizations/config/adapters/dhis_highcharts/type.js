@@ -12,6 +12,7 @@ import {
     VIS_TYPE_STACKED_COLUMN,
     VIS_TYPE_YEAR_OVER_YEAR_COLUMN,
     VIS_TYPE_SCATTER,
+    VIS_TYPE_SINGLE_VALUE,
 } from '../../../../modules/visTypes.js'
 
 export default function (type) {
@@ -33,6 +34,8 @@ export default function (type) {
             return { type: 'solidgauge' }
         case VIS_TYPE_SCATTER:
             return { type: 'scatter', zoomType: 'xy' }
+        case VIS_TYPE_SINGLE_VALUE:
+            return {}
         case VIS_TYPE_COLUMN:
         case VIS_TYPE_STACKED_COLUMN:
         case VIS_TYPE_YEAR_OVER_YEAR_COLUMN:

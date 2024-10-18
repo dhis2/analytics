@@ -1,3 +1,6 @@
+import { VIS_TYPE_SINGLE_VALUE } from '../../../../modules/visTypes.js'
+import { renderCustomSVG } from './customSVGOptions/index.js'
+import { getSingleValueBackgroundColor } from './customSVGOptions/singleValue/index.js'
 import getType from './type.js'
 
 const DEFAULT_CHART = {
@@ -14,7 +17,7 @@ const DASHBOARD_CHART = {
     spacingLeft: 5,
 }
 
-const getEvents = () => ({
+const getEvents = (visType) => ({
     events: {
         load: function () {
             // Align legend icon with legend text
@@ -31,17 +34,30 @@ const getEvents = () => ({
                     })
                 }
             })
+            renderCustomSVG.call(this, visType)
         },
     },
 })
 
-export default function (layout, el, dashboard) {
+export default function (layout, el, extraOptions, series) {
     return Object.assign(
         {},
         getType(layout.type),
         { renderTo: el || layout.el },
         DEFAULT_CHART,
-        dashboard ? DASHBOARD_CHART : undefined,
-        getEvents()
+        extraOptions.dashboard ? DASHBOARD_CHART : undefined,
+        getEvents(layout.type),
+        layout.type === VIS_TYPE_SINGLE_VALUE
+            ? {
+                  backgroundColor: getSingleValueBackgroundColor(
+                      layout.legend,
+                      extraOptions.legendSets,
+                      series[0]
+                  ),
+              }
+            : undefined,
+        layout.type === VIS_TYPE_SINGLE_VALUE && extraOptions.dashboard
+            ? { spacingTop: 7 }
+            : undefined
     )
 }
