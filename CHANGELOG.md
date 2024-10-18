@@ -1,3 +1,10 @@
+## [26.8.7](https://github.com/dhis2/analytics/compare/v26.8.6...v26.8.7) (2024-10-18)
+
+
+### Bug Fixes
+
+* compute totals and cumulative values for numeric/boolean types respecting totalAggregationType (DHIS2-9155) ([#1700](https://github.com/dhis2/analytics/issues/1700)) ([a2bfd20](https://github.com/dhis2/analytics/commit/a2bfd203cb53f174106d8b570cea52cbfc6136f7))
+
 ## [26.8.6](https://github.com/dhis2/analytics/compare/v26.8.5...v26.8.6) (2024-10-06)
 
 
