@@ -1,16 +1,17 @@
 # 
 # Translators:
-# phil_dhis2, 2020
+# Philip Larsen Donnelly, 2020
 # Viktor Varland <viktor@dhis2.org>, 2020
 # Mai Nguyen <thanhmai.jica@gmail.com>, 2021
+# Thuy Nguyen <thuynguyen@hispvietnam.org>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2020-05-13T16:46:50.486Z\n"
 "PO-Revision-Date: 2020-04-29 08:10+0000\n"
-"Last-Translator: Mai Nguyen <thanhmai.jica@gmail.com>, 2021\n"
-"Language-Team: Vietnamese (https://www.transifex.com/hisp-uio/teams/100509/vi/)\n"
+"Last-Translator: Thuy Nguyen <thuynguyen@hispvietnam.org>, 2024\n"
+"Language-Team: Vietnamese (https://app.transifex.com/hisp-uio/teams/100509/vi/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -18,10 +19,10 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 msgid "Data"
-msgstr "Lấy dữ liệu"
+msgstr "Dữ liệu"
 
 msgid "Data Type"
-msgstr "Loại dữ liệu"
+msgstr "Kiểu dữ liệu"
 
 msgid "Totals"
 msgstr "Tổng"
@@ -33,10 +34,10 @@ msgid "Detail"
 msgstr "Chi tiết"
 
 msgid "Search dimensions"
-msgstr "Chiều tìm kiếm"
+msgstr "Tìm kiếm các chiều dữ liệu"
 
 msgid "Dimension recommended with selected data"
-msgstr "Chiều được đề xuất với dữ liệu đã chọn"
+msgstr "Chiều dữ liệu được khuyến nghị với dữ liệu đã chọn"
 
 msgid "Search"
 msgstr "Tìm kiếm"
@@ -63,103 +64,103 @@ msgid "Relative periods"
 msgstr "Thời điểm tương đối"
 
 msgid "Fixed periods"
-msgstr "Thời điểm tĩnh"
+msgstr "Thời điểm cố định"
 
 msgid "Period type"
-msgstr "Loại thời điểm"
+msgstr "Kiểu thời điểm"
 
 msgid "January"
-msgstr "Tháng một"
+msgstr "Tháng Một"
 
 msgid "February"
-msgstr "Tháng hai"
+msgstr "Tháng Hai"
 
 msgid "March"
-msgstr "Tháng ba"
+msgstr "Tháng Ba"
 
 msgid "April"
-msgstr "Tháng tư"
+msgstr "Tháng Tư"
 
 msgid "May"
-msgstr "Tháng năm"
+msgstr "Tháng Năm"
 
 msgid "June"
-msgstr "Tháng sáu"
+msgstr "Tháng Sáu"
 
 msgid "July"
-msgstr "Tháng bảy"
+msgstr "Tháng Bảy"
 
 msgid "August"
-msgstr "Tháng tám"
+msgstr "Tháng Tám"
 
 msgid "September"
-msgstr "Tháng chín"
+msgstr "Tháng Chín"
 
 msgid "October"
-msgstr "Tháng mười"
+msgstr "Tháng Mười"
 
 msgid "November"
-msgstr "Tháng mười một"
+msgstr "Tháng Mười Một"
 
 msgid "December"
-msgstr "Tháng mười hai"
+msgstr "Tháng Mười Hai"
 
 msgid "Week {{weekNumber}}"
 msgstr "Tuần {{weekNumber}}"
 
 msgid "Bi-Week {{biWeekNumber}}"
-msgstr "Hai tuần {{biWeekNumber}}"
+msgstr "Hai-Tuần {{biWeekNumber}}"
 
 msgid "Daily"
-msgstr "Hàng ngày"
+msgstr "Hàng Ngày"
 
 msgid "Weekly"
-msgstr "Hàng tuần"
+msgstr "Hàng Tuần"
 
 msgid "Bi-weekly"
-msgstr "Hai-tuần"
+msgstr "Hai-Tuần"
 
 msgid "Weekly (Start Wednesday)"
-msgstr "Hàng tuần (Bắt đầu từ Thứ Tư)"
+msgstr "Hàng Tuần (Bắt đầu từ Thứ Tư)"
 
 msgid "Weekly (Start Thursday)"
-msgstr "Hàng tuần (Bắt đầu từ Thứ Năm)"
+msgstr "Hàng Tuần (Bắt đầu từ Thứ Năm)"
 
 msgid "Weekly (Start Saturday)"
-msgstr "Hàng tuần (Bắt đầu từ Thứ Bảy)"
+msgstr "Hàng Tuần (Bắt đầu từ Thứ Bảy)"
 
 msgid "Weekly (Start Sunday)"
-msgstr "Hàng tuần (Bắt đầu từ Chủ nhật)"
+msgstr "Hàng Tuần (Bắt đầu từ Chủ nhật)"
 
 msgid "Monthly"
-msgstr "Hàng tháng"
+msgstr "Hàng Tháng"
 
 msgid "Bi-monthly"
-msgstr "Hàng 2 tháng"
+msgstr "Hàng Hai-Tháng"
 
 msgid "Quarterly"
-msgstr "Hàng quý"
+msgstr "Hàng Quý"
 
 msgid "Six-monthly"
-msgstr "Hàng 6 tháng"
+msgstr "Hàng Sáu-Tháng"
 
 msgid "Six-monthly April"
-msgstr "Hàng 6 tháng - tháng 4"
+msgstr "Hàng Sáu-Tháng Tháng Tư"
 
 msgid "Yearly"
-msgstr "Một năm"
+msgstr "Hàng Năm"
 
 msgid "Financial year (Start November)"
-msgstr "Năm tài chính (Bắt đầu từ tháng 11)"
+msgstr "Năm Tài Chính (Tháng Mười Một)"
 
 msgid "Financial year (Start October)"
-msgstr "Năm Tài Chính - Tháng 10"
+msgstr "Năm Tài Chính (Tháng Mười)"
 
 msgid "Financial year (Start July)"
-msgstr "Năm Tài Chính - Tháng 7"
+msgstr "Năm Tài Chính (Tháng Bảy)"
 
 msgid "Financial year (Start April)"
-msgstr "Năm Tài Chính - Tháng 4"
+msgstr "Năm Tài Chính (Tháng Tư)"
 
 msgid "Today"
 msgstr "Hôm nay"
@@ -195,13 +196,13 @@ msgid "Weeks this year"
 msgstr "Các tuần trong năm nay"
 
 msgid "This bi-week"
-msgstr "Kỳ hiện tại, 1 kỳ = 2 tuần"
+msgstr "Hai-Tuần này"
 
 msgid "Last bi-week"
-msgstr "Kỳ trước, 1 kỳ = 2 tuần"
+msgstr "Hai-Tuần trước"
 
 msgid "Last 4 bi-weeks"
-msgstr "4 kỳ trước, 1 kỳ = 2 tuần"
+msgstr "4 Hai-Tuần trước"
 
 msgid "This month"
 msgstr "Tháng này"
@@ -210,28 +211,28 @@ msgid "Last month"
 msgstr "Tháng trước"
 
 msgid "Last 3 months"
-msgstr "3 tháng trước"
+msgstr "3 Tháng trước"
 
 msgid "Last 6 months"
-msgstr "6 tháng trước"
+msgstr "6 Tháng trước"
 
 msgid "Last 12 months"
-msgstr "Trong 12 tháng trước"
+msgstr "12 Tháng trước"
 
 msgid "Months this year"
-msgstr "Tháng năm nay"
+msgstr "Các Tháng năm nay"
 
 msgid "This bi-month"
-msgstr "Lần Hai-Tháng này"
+msgstr "Hai-Tháng này"
 
 msgid "Last bi-month"
-msgstr "Kỳ 2 tháng trước"
+msgstr "Hai-Tháng trước"
 
 msgid "Last 6 bi-months"
-msgstr "6 kỳ 2 tháng trước"
+msgstr "6 Hai-Tháng trước"
 
 msgid "Bi-months this year"
-msgstr "Các kỳ 2 tháng năm nay"
+msgstr "Các Hai-Tháng trong năm nay"
 
 msgid "This quarter"
 msgstr "Quý này"
@@ -240,37 +241,37 @@ msgid "Last quarter"
 msgstr "Quý trước"
 
 msgid "Last 4 quarters"
-msgstr "4 quý trước"
+msgstr "4 Quý trước"
 
 msgid "Quarters this year"
-msgstr "Quý năm nay"
+msgstr "Các Quý trong năm nay"
 
 msgid "This six-month"
-msgstr "6 tháng này"
+msgstr "Sáu-Tháng này"
 
 msgid "Last six-month"
-msgstr "6 tháng trước"
+msgstr "Sáu-Tháng trước"
 
 msgid "Last 2 six-month"
-msgstr "2 lần sáu tháng qua"
+msgstr "2 Sáu-Tháng trước"
 
 msgid "This financial year"
-msgstr "Năm tài chính này"
+msgstr "Năm Tài Chính này"
 
 msgid "Last financial year"
-msgstr "Năm tài chính trước"
+msgstr "Năm Tài Chính trước"
 
 msgid "Last 5 financial years"
-msgstr "5 năm tài chính trước"
+msgstr "5 Năm Tài Chính trước"
 
 msgid "This year"
 msgstr "Năm nay"
 
 msgid "Last year"
-msgstr "Năm ngoái"
+msgstr "Năm trước"
 
 msgid "Last 5 years"
-msgstr "5 năm trước"
+msgstr "5 Năm trước"
 
 msgid "Days"
 msgstr "Ngày"
@@ -279,22 +280,22 @@ msgid "Weeks"
 msgstr "Tuần"
 
 msgid "Bi-weeks"
-msgstr "Các kỳ, 1 kỳ = 2 tuần"
+msgstr "Hai-Tuần"
 
 msgid "Months"
 msgstr "Tháng"
 
 msgid "Bi-months"
-msgstr "Các kỳ 2 tháng"
+msgstr "Hai-Tháng"
 
 msgid "Quarters"
 msgstr "Quý"
 
 msgid "Six-months"
-msgstr "Sáu-tháng"
+msgstr "Sáu-Tháng"
 
 msgid "Financial Years"
-msgstr "Năm tài chính"
+msgstr "Năm Tài Chính"
 
 msgid "Years"
 msgstr "Năm"
@@ -318,37 +319,37 @@ msgid "Program"
 msgstr "Chương trình"
 
 msgid "Indicators"
-msgstr "Các chỉ số"
+msgstr "Chỉ Số"
 
 msgid "Select indicator group"
-msgstr "Chọn nhóm chỉ số"
+msgstr "Chọn Nhóm Chỉ Số"
 
 msgid "[ All groups ]"
-msgstr "[Tất cả các nhóm]"
+msgstr "[Tất cả Nhóm]"
 
 msgid "Data elements"
-msgstr "Các phần tử dữ liệu"
+msgstr "Phần Tử Dữ Liệu"
 
 msgid "Select data element group"
-msgstr "Chọn nhóm phần tử dữ liệu"
+msgstr "Chọn Nhóm Phần Tử Dữ Liệu"
 
 msgid "[ All data elements ]"
-msgstr "[Tất cả các phần tử dữ liệu]"
+msgstr "[Tất cả Phần Tử Dữ Liệu]"
 
 msgid "Data sets"
-msgstr "Biểu nhập"
+msgstr "Tập Dữ Liệu"
 
 msgid "Select data sets"
-msgstr "Chọn tập dữ liệu"
+msgstr "Chọn Tập Dữ Liệu"
 
 msgid "[ All metrics ]"
-msgstr "[Tất cả các chỉ số]"
+msgstr "[Tất cả Số liệu]"
 
 msgid "Event data items"
-msgstr "Mục dữ liệu sự kiện"
+msgstr "Dữ liệu Sự kiện"
 
 msgid "Select a program"
-msgstr "Chọn một chương trình"
+msgstr "Chọn Chương Trình"
 
 msgid "Program indicators"
 msgstr "Chỉ Số Chương Trình"
@@ -360,16 +361,16 @@ msgid "{{dynamicOuNames}} and {{lastOuName}}"
 msgstr "{{dynamicOuNames}} và {{lastOuName}}"
 
 msgid "{{allDynamicOuNames}} levels"
-msgstr "{{allDynamicOuNames}} cấp độ"
+msgstr "Cấp {{allDynamicOuNames}}"
 
 msgid "{{allDynamicOuNames}} groups"
-msgstr "{{allDynamicOuNames}} nhóm"
+msgstr "Các nhóm{{allDynamicOuNames}} "
 
 msgid "{{allDynamicOuNames}} levels in {{staticOuNames}}"
-msgstr "{{allDynamicOuNames}} cấp trong {{staticOuNames}}"
+msgstr "Các cấp {{allDynamicOuNames}}trong {{staticOuNames}}"
 
 msgid "{{allDynamicOuNames}} groups in {{staticOuNames}}"
-msgstr "{{allDynamicOuNames}} nhóm trong {{staticOuNames}}"
+msgstr "Các nhóm {{allDynamicOuNames}}trong {{staticOuNames}}"
 
 msgid "No data"
 msgstr "Không có dữ liệu"
