@@ -698,7 +698,7 @@ storiesOf('SingleValue', module).add('default', () => {
             newChartRef.current.update({
                 exporting: {
                     chartOptions: {
-                        isPDF: exportAsPdf,
+                        isPdfExport: exportAsPdf,
                     },
                 },
             })
