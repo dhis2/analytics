@@ -1,7 +1,7 @@
 import { colors } from '@dhis2/ui'
 import { LEGEND_DISPLAY_STYLE_FILL } from '../../../../../../../modules/legends.js'
+import { shouldUseContrastColor } from '../../../../../../util/shouldUseContrastColor.js'
 import { getSingleValueLegendColor } from './getSingleValueLegendColor.js'
-import { shouldUseContrastColor } from './shouldUseContrastColor.js'
 
 export function getSingleValueTitleColor(
     customColor,
