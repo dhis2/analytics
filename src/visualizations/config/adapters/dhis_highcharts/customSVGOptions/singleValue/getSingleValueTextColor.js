@@ -1,6 +1,6 @@
 import { colors } from '@dhis2/ui'
-import { LEGEND_DISPLAY_STYLE_TEXT } from '../../../../../../../modules/legends.js'
-import { shouldUseContrastColor } from '../../../../../../util/shouldUseContrastColor.js'
+import { LEGEND_DISPLAY_STYLE_TEXT } from '../../../../../../modules/legends.js'
+import { shouldUseContrastColor } from '../../../../../util/shouldUseContrastColor.js'
 import { getSingleValueLegendColor } from './getSingleValueLegendColor.js'
 
 export function getSingleValueTextColor(

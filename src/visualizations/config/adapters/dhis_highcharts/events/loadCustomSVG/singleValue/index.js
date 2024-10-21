@@ -4,7 +4,7 @@ import { getAvailableSpace } from './getAvailableSpace.js'
 import { positionElements } from './positionElements.js'
 import { DynamicStyles } from './styles.js'
 
-export function renderSingleValueSVG() {
+export default function loadSingleValueSVG() {
     const { formattedValue, icon, subText, fontColor } =
         this.userOptions.customSVGOptions
     const dynamicStyles = new DynamicStyles(this.userOptions?.isPdfExport)
