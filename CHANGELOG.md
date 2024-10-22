@@ -1,3 +1,10 @@
+# [26.9.0](https://github.com/dhis2/analytics/compare/v26.8.8...v26.9.0) (2024-10-22)
+
+
+### Features
+
+* implement Single Value as a Highcharts.Chart instance and add offline exporting module ([#1698](https://github.com/dhis2/analytics/issues/1698)) ([40fdfba](https://github.com/dhis2/analytics/commit/40fdfba1c3041cb7cf57845aa101c8a64f0cd919))
+
 ## [26.8.8](https://github.com/dhis2/analytics/compare/v26.8.7...v26.8.8) (2024-10-20)
 
 
