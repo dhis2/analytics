@@ -169,6 +169,8 @@ export default function ({ store, layout, el, extraConfig, extraOptions }) {
         })
     }
 
+    console.log('config.plotOptions', config.plotOptions)
+
     // hide empty categories
     if (_layout.hideEmptyRowItems !== 'NONE') {
         config = getTrimmedConfig(config, _layout)
