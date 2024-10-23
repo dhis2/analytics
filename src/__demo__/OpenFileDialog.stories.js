@@ -1,5 +1,4 @@
 import { Provider } from '@dhis2/app-runtime'
-import { storiesOf } from '@storybook/react'
 import React from 'react'
 import { OpenFileDialog } from '../components/OpenFileDialog/OpenFileDialog.js'
 import {
@@ -32,8 +31,11 @@ const filterVisTypesWithGroupsAndDivider = [
     { type: VIS_TYPE_BAR },
 ]
 
-storiesOf('OpenFileDialog', module).add(
-    'List of visualizations with vis type filter and divider (no default vis type)',
+export default {
+    title: 'OpenFileDialog',
+}
+
+export const ListOfVisualizationsWithVisTypeFilterAndDividerNoDefaultVisType =
     () => (
         <Provider config={configMock}>
             <OpenFileDialog
@@ -47,30 +49,34 @@ storiesOf('OpenFileDialog', module).add(
             />
         </Provider>
     )
+
+ListOfVisualizationsWithVisTypeFilterAndDividerNoDefaultVisType.story = {
+    name: 'List of visualizations with vis type filter and divider (no default vis type)',
+}
+
+export const ListOfMapsNoVisTypeFilter = () => (
+    <Provider config={configMock}>
+        <OpenFileDialog
+            type="map"
+            onClose={Function.prototype}
+            onFileSelect={onFileSelect}
+            onNew={Function.prototype}
+            open={true}
+            currentUser={user}
+        />
+    </Provider>
 )
-storiesOf('OpenFileDialog', module).add(
-    'List of maps (no vis type filter)',
-    () => (
-        <Provider config={configMock}>
-            <OpenFileDialog
-                type="map"
-                onClose={Function.prototype}
-                onFileSelect={onFileSelect}
-                onNew={Function.prototype}
-                open={true}
-                currentUser={user}
-            />
-        </Provider>
-    )
-)
+
+ListOfMapsNoVisTypeFilter.story = {
+    name: 'List of maps (no vis type filter)',
+}
 
 const filterVisTypesWithDisabled = [
     { type: VIS_TYPE_PIVOT_TABLE, disabled: true },
     { type: VIS_TYPE_LINE_LIST },
 ]
 
-storiesOf('OpenFileDialog', module).add(
-    'List of event visualizations with vis type filter, disabled type and default vis type',
+export const ListOfEventVisualizationsWithVisTypeFilterDisabledTypeAndDefaultVisType =
     () => (
         <Provider config={configMock}>
             <OpenFileDialog
@@ -85,7 +91,11 @@ storiesOf('OpenFileDialog', module).add(
             />
         </Provider>
     )
-)
+
+ListOfEventVisualizationsWithVisTypeFilterDisabledTypeAndDefaultVisType.story =
+    {
+        name: 'List of event visualizations with vis type filter, disabled type and default vis type',
+    }
 
 const filterVisTypesWithGroupDividerAndDisabled = [
     { type: VIS_TYPE_GROUP_ALL },
@@ -93,8 +103,7 @@ const filterVisTypesWithGroupDividerAndDisabled = [
     { type: VIS_TYPE_COLUMN, disabled: true },
 ]
 
-storiesOf('OpenFileDialog', module).add(
-    'List of visualizations with vis type filter with group type, divider and disabled option (no default vis type)',
+export const ListOfVisualizationsWithVisTypeFilterWithGroupTypeDividerAndDisabledOptionNoDefaultVisType =
     () => (
         <Provider config={configMock}>
             <OpenFileDialog
@@ -108,9 +117,13 @@ storiesOf('OpenFileDialog', module).add(
             />
         </Provider>
     )
-)
 
-storiesOf('OpenFileDialog', module).add('No connection', () => (
+ListOfVisualizationsWithVisTypeFilterWithGroupTypeDividerAndDisabledOptionNoDefaultVisType.story =
+    {
+        name: 'List of visualizations with vis type filter with group type, divider and disabled option (no default vis type)',
+    }
+
+export const NoConnection = () => (
     <Provider config={configMock}>
         <OpenFileDialog
             type="map"
@@ -121,4 +134,9 @@ storiesOf('OpenFileDialog', module).add('No connection', () => (
             currentUser={user}
         />
     </Provider>
-))
+)
+
+NoConnection.story = {
+    name: 'No connection',
+}
+

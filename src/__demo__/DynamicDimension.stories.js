@@ -1,4 +1,3 @@
-import { storiesOf } from '@storybook/react'
 import React from 'react'
 import ItemSelector from '../components/DynamicDimension/ItemSelector.js'
 
@@ -11,46 +10,54 @@ const items = [
     { id: '6', name: 'Six - disabled', disabled: true },
 ]
 
-storiesOf('DynamicDimension', module).add(
-    'ItemSelector no items selected',
-    () => {
-        return (
-            <ItemSelector
-                onSelect={(selected) => console.log(selected)}
-                onFetch={() => ({ dimensionItems: items })}
-            />
-        )
-    }
-)
+export default {
+    title: 'DynamicDimension',
+}
 
-storiesOf('DynamicDimension', module).add(
-    'ItemSelector one item selected',
-    () => {
-        return (
-            <ItemSelector
-                onSelect={(selected) => console.log(selected)}
-                onFetch={() => ({ dimensionItems: items })}
-                initialSelected={[items[2]].map((item) => ({
-                    value: item.id,
-                    label: item.name,
-                }))}
-            />
-        )
-    }
-)
+export const ItemSelectorNoItemsSelected = () => {
+    return (
+        <ItemSelector
+            onSelect={(selected) => console.log(selected)}
+            onFetch={() => ({ dimensionItems: items })}
+        />
+    )
+}
 
-storiesOf('DynamicDimension', module).add(
-    'ItemSelector disabled item selected',
-    () => {
-        return (
-            <ItemSelector
-                onSelect={(selected) => console.log(selected)}
-                onFetch={() => ({ dimensionItems: items })}
-                initialSelected={[items[5]].map((item) => ({
-                    value: item.id,
-                    label: item.name,
-                }))}
-            />
-        )
-    }
-)
+ItemSelectorNoItemsSelected.story = {
+    name: 'ItemSelector no items selected',
+}
+
+export const ItemSelectorOneItemSelected = () => {
+    return (
+        <ItemSelector
+            onSelect={(selected) => console.log(selected)}
+            onFetch={() => ({ dimensionItems: items })}
+            initialSelected={[items[2]].map((item) => ({
+                value: item.id,
+                label: item.name,
+            }))}
+        />
+    )
+}
+
+ItemSelectorOneItemSelected.story = {
+    name: 'ItemSelector one item selected',
+}
+
+export const ItemSelectorDisabledItemSelected = () => {
+    return (
+        <ItemSelector
+            onSelect={(selected) => console.log(selected)}
+            onFetch={() => ({ dimensionItems: items })}
+            initialSelected={[items[5]].map((item) => ({
+                value: item.id,
+                label: item.name,
+            }))}
+        />
+    )
+}
+
+ItemSelectorDisabledItemSelected.story = {
+    name: 'ItemSelector disabled item selected',
+}
+

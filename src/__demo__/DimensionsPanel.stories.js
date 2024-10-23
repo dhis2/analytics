@@ -1,4 +1,3 @@
-import { storiesOf } from '@storybook/react'
 import React from 'react'
 import DimensionsPanel from '../components/DimensionsPanel/DimensionsPanel.js'
 import {
@@ -39,7 +38,11 @@ const dynamicDimensions = [
 
 const onDimensionClick = () => alert('click')
 
-storiesOf('DimensionsPanel', module).add('fixed and dynamic dimensions', () => {
+export default {
+    title: 'DimensionsPanel',
+}
+
+export const FixedAndDynamicDimensions = () => {
     return (
         <DimensionsPanel
             dimensions={[...fixedDimensions, ...dynamicDimensions]}
@@ -47,9 +50,13 @@ storiesOf('DimensionsPanel', module).add('fixed and dynamic dimensions', () => {
             selectedIds={[]}
         />
     )
-})
+}
 
-storiesOf('DimensionsPanel', module).add('fixed dimensions only', () => {
+FixedAndDynamicDimensions.story = {
+    name: 'fixed and dynamic dimensions',
+}
+
+export const FixedDimensionsOnly = () => {
     return (
         <DimensionsPanel
             dimensions={fixedDimensions}
@@ -57,9 +64,13 @@ storiesOf('DimensionsPanel', module).add('fixed dimensions only', () => {
             selectedIds={[]}
         />
     )
-})
+}
 
-storiesOf('DimensionsPanel', module).add('dynamic dimensions only', () => {
+FixedDimensionsOnly.story = {
+    name: 'fixed dimensions only',
+}
+
+export const DynamicDimensionsOnly = () => {
     return (
         <DimensionsPanel
             dimensions={dynamicDimensions}
@@ -67,9 +78,13 @@ storiesOf('DimensionsPanel', module).add('dynamic dimensions only', () => {
             selectedIds={[]}
         />
     )
-})
+}
 
-storiesOf('DimensionsPanel', module).add('selected dimension', () => {
+DynamicDimensionsOnly.story = {
+    name: 'dynamic dimensions only',
+}
+
+export const SelectedDimension = () => {
     return (
         <DimensionsPanel
             dimensions={[...fixedDimensions, ...dynamicDimensions]}
@@ -77,9 +92,13 @@ storiesOf('DimensionsPanel', module).add('selected dimension', () => {
             selectedIds={[DIMENSION_ID_DATA]}
         />
     )
-})
+}
 
-storiesOf('DimensionsPanel', module).add('disabled dimension', () => {
+SelectedDimension.story = {
+    name: 'selected dimension',
+}
+
+export const DisabledDimension = () => {
     return (
         <DimensionsPanel
             dimensions={[...fixedDimensions, ...dynamicDimensions]}
@@ -87,9 +106,13 @@ storiesOf('DimensionsPanel', module).add('disabled dimension', () => {
             disabledDimension={(dimension) => dimension === DIMENSION_ID_DATA}
         />
     )
-})
+}
 
-storiesOf('DimensionsPanel', module).add('locked dimension', () => {
+DisabledDimension.story = {
+    name: 'disabled dimension',
+}
+
+export const LockedDimension = () => {
     return (
         <DimensionsPanel
             dimensions={[...fixedDimensions, ...dynamicDimensions]}
@@ -98,9 +121,13 @@ storiesOf('DimensionsPanel', module).add('locked dimension', () => {
             lockedDimension={(dimension) => dimension === DIMENSION_ID_DATA}
         />
     )
-})
+}
 
-storiesOf('DimensionsPanel', module).add('recommended dimension', () => {
+LockedDimension.story = {
+    name: 'locked dimension',
+}
+
+export const RecommendedDimension = () => {
     return (
         <DimensionsPanel
             dimensions={[...fixedDimensions, ...dynamicDimensions]}
@@ -110,9 +137,13 @@ storiesOf('DimensionsPanel', module).add('recommended dimension', () => {
             }
         />
     )
-})
+}
 
-storiesOf('DimensionsPanel', module).add('with menu', () => {
+RecommendedDimension.story = {
+    name: 'recommended dimension',
+}
+
+export const WithMenu = () => {
     return (
         <DimensionsPanel
             dimensions={[...fixedDimensions, ...dynamicDimensions]}
@@ -120,4 +151,9 @@ storiesOf('DimensionsPanel', module).add('with menu', () => {
             onDimensionOptionsClick={() => alert('options click')}
         />
     )
-})
+}
+
+WithMenu.story = {
+    name: 'with menu',
+}
+
