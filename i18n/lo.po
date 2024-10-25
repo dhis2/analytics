@@ -4,15 +4,15 @@
 # Somkhit Bouavong <bouavongk@gmail.com>, 2022
 # Philip Larsen Donnelly, 2023
 # Phouthasinh PHEUAYSITHIPHONE, 2023
-# Saysamone Sibounma, 2023
 # Namwan Chanthavisouk, 2024
+# Saysamone Sibounma, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2024-01-25T12:05:03.360Z\n"
+"POT-Creation-Date: 2024-10-11T12:49:26.846Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Namwan Chanthavisouk, 2024\n"
+"Last-Translator: Saysamone Sibounma, 2024\n"
 "Language-Team: Lao (https://app.transifex.com/hisp-uio/teams/100509/lo/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -78,6 +78,12 @@ msgstr "ກ່ຽວກັບບັນຊີລາຍຊື່"
 msgid "About this visualization"
 msgstr "ກ່ຽວກັບການສ້າງພາບຂໍ້ມູນ"
 
+msgid "About this event chart"
+msgstr "ກ່ຽວກັບເຫດການແຜນຜັງ"
+
+msgid "About this event report"
+msgstr "ກ່ຽວກັບບົດລາຍງານເຫດການຕ່າງໆ"
+
 msgid "This app could not retrieve required data."
 msgstr "ແອັບນີ້ບໍ່ສາມາດດຶງຂໍ້ມູນທີ່ຕ້ອງການໄດ້"
 
@@ -91,7 +97,7 @@ msgid "Data / New calculation"
 msgstr "ຂໍ້ມູນ / ຄິດໄລ່ໃໝ່"
 
 msgid "Remove item"
-msgstr "ລົບລາຍການ"
+msgstr "ເອົາລາຍການອອກ"
 
 msgid "Check formula"
 msgstr "ກວດເບິ່ງສູດ"
@@ -434,39 +440,6 @@ msgstr "ບໍ່ສາມາດອັບເດດຂໍ້ຄວາມ"
 
 msgid "Enter interpretation text"
 msgstr "ປ້ອນຂໍ້ຄວາມ"
-
-msgid "Bold text"
-msgstr "ຕົວອັກສອນເຂັ້ມ"
-
-msgid "Italic text"
-msgstr "ຕົວອັກສອນສະຫຼ່ຽງ"
-
-msgid "Link to a URL"
-msgstr "ເຊື່ອມຕໍ່ກັບ URL"
-
-msgid "Mention a user"
-msgstr "ກ່າວເຖິງຜູ້ໃຊ້"
-
-msgid "Add emoji"
-msgstr "ເພີ່ມ emoji"
-
-msgid "Preview"
-msgstr "ເບິ່ງຕົວຢ່າງ"
-
-msgid "Back to write mode"
-msgstr "ກັບໄປທີ່ໂໝດຂຽນ"
-
-msgid "Too many results. Try refining the search."
-msgstr "ຜົນໄດ້ຮັບຫຼາຍເກີນໄປ. ປັບປຸງການຄົ້ນຫາ."
-
-msgid "Search for a user"
-msgstr "ຄົ້ນຫາຜູ້ໃຊ້"
-
-msgid "Searching for \"{{- searchText}}\""
-msgstr "ຄົ້ນຫາ \"{{- searchText}}\""
-
-msgid "No results found"
-msgstr "ບໍ່ພົບຜົນການຊອກຫາ"
 
 msgid "Not available offline"
 msgstr "ບໍ່ສາມາດໃຊ້ໄດ້ອອບລາຍ"
@@ -880,6 +853,30 @@ msgstr "ສົກປີງົບປະມານ"
 msgid "Years"
 msgstr "ປີ"
 
+msgid "Value: {{value}}"
+msgstr ""
+
+msgid "Bold text"
+msgstr "ຕົວອັກສອນເຂັ້ມ"
+
+msgid "Italic text"
+msgstr "ຕົວອັກສອນສະຫຼ່ຽງ"
+
+msgid "Link to a URL"
+msgstr "ເຊື່ອມຕໍ່ກັບ URL"
+
+msgid "Mention a user"
+msgstr "ກ່າວເຖິງຜູ້ໃຊ້"
+
+msgid "Add emoji"
+msgstr "ເພີ່ມ emoji"
+
+msgid "Preview"
+msgstr "ເບິ່ງຕົວຢ່າງ"
+
+msgid "Back to write mode"
+msgstr "ກັບໄປທີ່ໂໝດຂຽນ"
+
 msgid "Interpretations and details"
 msgstr "ຂໍ້ມູນ ແລະ ລາຍລະອຽດ"
 
@@ -909,6 +906,18 @@ msgstr "ບໍ່ສາມາດໂຫຼດການແປ"
 
 msgid "Retry"
 msgstr "ລອງໃໝ່"
+
+msgid "Too many results. Try refining the search."
+msgstr "ຜົນໄດ້ຮັບຫຼາຍເກີນໄປ. ປັບປຸງການຄົ້ນຫາ."
+
+msgid "Search for a user"
+msgstr "ຄົ້ນຫາຜູ້ໃຊ້"
+
+msgid "Searching for \"{{- searchText}}\""
+msgstr "ຄົ້ນຫາ \"{{- searchText}}\""
+
+msgid "No results found"
+msgstr "ບໍ່ພົບຜົນການຊອກຫາ"
 
 msgid "Series"
 msgstr "ແທ່ງ"
@@ -1116,6 +1125,9 @@ msgstr "{{thresholdFactor}} x ຄະແນນ z ຕ່ຳ"
 
 msgid "{{thresholdFactor}} × Z-score high"
 msgstr "{{thresholdFactor}} x ຄະແນນ z ສູງ"
+
+msgid "Not applicable"
+msgstr ""
 
 msgid "Data"
 msgstr "ຂໍ້ມູນ"

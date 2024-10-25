@@ -1,3 +1,24 @@
+# [26.9.0](https://github.com/dhis2/analytics/compare/v26.8.8...v26.9.0) (2024-10-22)
+
+
+### Features
+
+* implement Single Value as a Highcharts.Chart instance and add offline exporting module ([#1698](https://github.com/dhis2/analytics/issues/1698)) ([40fdfba](https://github.com/dhis2/analytics/commit/40fdfba1c3041cb7cf57845aa101c8a64f0cd919))
+
+## [26.8.8](https://github.com/dhis2/analytics/compare/v26.8.7...v26.8.8) (2024-10-20)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([f187092](https://github.com/dhis2/analytics/commit/f1870928b37733395d7f911f48ea7268fed97be1))
+
+## [26.8.7](https://github.com/dhis2/analytics/compare/v26.8.6...v26.8.7) (2024-10-18)
+
+
+### Bug Fixes
+
+* compute totals and cumulative values for numeric/boolean types respecting totalAggregationType (DHIS2-9155) ([#1700](https://github.com/dhis2/analytics/issues/1700)) ([a2bfd20](https://github.com/dhis2/analytics/commit/a2bfd203cb53f174106d8b570cea52cbfc6136f7))
+
 ## [26.8.6](https://github.com/dhis2/analytics/compare/v26.8.5...v26.8.6) (2024-10-06)
 
 
