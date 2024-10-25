@@ -1,6 +1,6 @@
 {
     "name": "@dhis2/analytics",
-    "version": "26.8.5",
+    "version": "26.9.0",
     "main": "./build/cjs/index.js",
     "module": "./build/es/index.js",
     "exports": {
@@ -20,7 +20,6 @@
     },
     "scripts": {
         "build": "d2-app-scripts build",
-        "postbuild": "yarn build-storybook",
         "build-storybook": "build-storybook",
         "start-storybook": "start-storybook --port 5000",
         "start": "yarn start-storybook",
