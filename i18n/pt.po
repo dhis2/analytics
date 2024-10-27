@@ -5,13 +5,14 @@
 # Sheila André <sandre@saudigitus.org>, 2020
 # Ge Joao <gsimango@saudigitus.org>, 2020
 # Philip Larsen Donnelly, 2024
+# Shelsea Chumaio, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2020-05-20T21:46:25.914Z\n"
 "PO-Revision-Date: 2020-05-18 10:55+0000\n"
-"Last-Translator: Philip Larsen Donnelly, 2024\n"
+"Last-Translator: Shelsea Chumaio, 2024\n"
 "Language-Team: Portuguese (https://app.transifex.com/hisp-uio/teams/100509/pt/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -71,13 +72,13 @@ msgid "Your dimensions"
 msgstr "Suas dimensões"
 
 msgid "Dimension recommended with selected data"
-msgstr "Dimensão recomendada com dados selecionados"
+msgstr "Dimensão recomendada com dados seleccionados"
 
 msgid "Search"
 msgstr "Pesquisar"
 
 msgid "Selected Data"
-msgstr "Dados Selecionados"
+msgstr "Dados Seleccionados"
 
 msgid "Deselect All"
 msgstr "Desmarcar todos"
@@ -140,10 +141,10 @@ msgid "December"
 msgstr "Dezembro"
 
 msgid "Week {{weekNumber}}"
-msgstr ""
+msgstr "Semana {{weekNumber}}"
 
 msgid "Bi-Week {{biWeekNumber}}"
-msgstr ""
+msgstr "Quinzena {{biWeekNumber}}"
 
 msgid "Daily"
 msgstr "Diário"
@@ -155,22 +156,22 @@ msgid "Bi-weekly"
 msgstr "Quinzenal"
 
 msgid "Weekly (Start Wednesday)"
-msgstr ""
+msgstr "Semanal (início na Quarta-feira)"
 
 msgid "Weekly (Start Thursday)"
-msgstr ""
+msgstr " Semanal (início na Quinta-feira)"
 
 msgid "Weekly (Start Saturday)"
-msgstr ""
+msgstr " Semanal (início no Sábado)"
 
 msgid "Weekly (Start Sunday)"
-msgstr ""
+msgstr " Semanal (início no Domingo)"
 
 msgid "Monthly"
 msgstr "Mensal"
 
 msgid "Bi-monthly"
-msgstr "Bimensal"
+msgstr "Bimestre"
 
 msgid "Quarterly"
 msgstr "Trimestral"
@@ -179,22 +180,22 @@ msgid "Six-monthly"
 msgstr "Semestral"
 
 msgid "Six-monthly April"
-msgstr "Semestral a partir de Abril"
+msgstr "Semestral à partir de Abril"
 
 msgid "Yearly"
 msgstr "Anualmente"
 
 msgid "Financial year (Start November)"
-msgstr ""
+msgstr " Ano financeiro (início em Novembro)"
 
 msgid "Financial year (Start October)"
-msgstr "Ano Financeiro - Outubro"
+msgstr "Ano financeiro (início em Outubro)"
 
 msgid "Financial year (Start July)"
-msgstr "Ano Financeiro - Julho"
+msgstr "Ano financeiro (início em Julho)"
 
 msgid "Financial year (Start April)"
-msgstr "Ano Financeiro - Abril"
+msgstr "Ano financeiro (início em Abril)"
 
 msgid "Today"
 msgstr "Hoje"
@@ -218,10 +219,10 @@ msgid "Last week"
 msgstr "Última semana"
 
 msgid "Last 4 weeks"
-msgstr "Últimas quatro semanas"
+msgstr "Últimas 4 semanas"
 
 msgid "Last 12 weeks"
-msgstr "Últimas doze semanas"
+msgstr "Últimas 12 semanas"
 
 msgid "Last 52 weeks"
 msgstr "Últimas 52 semanas"
@@ -230,10 +231,10 @@ msgid "Weeks this year"
 msgstr "Semanas deste ano "
 
 msgid "This bi-week"
-msgstr "Nesta bisemanal"
+msgstr "Esta quinzena"
 
 msgid "Last bi-week"
-msgstr "Ultimo bimensal "
+msgstr "Última quinzena"
 
 msgid "Last 4 bi-weeks"
 msgstr "Nas últimas 4 semanas"
@@ -245,28 +246,28 @@ msgid "Last month"
 msgstr "Último mês"
 
 msgid "Last 3 months"
-msgstr "Últimos três meses"
+msgstr "Últimos 3 meses"
 
 msgid "Last 6 months"
-msgstr "Últimos seis meses"
+msgstr "Últimos 6 meses"
 
 msgid "Last 12 months"
-msgstr "Últimos doze meses"
+msgstr "Últimos 12 meses"
 
 msgid "Months this year"
 msgstr "Meses deste ano"
 
 msgid "This bi-month"
-msgstr "Este bi-mês"
+msgstr "Este bimestre"
 
 msgid "Last bi-month"
 msgstr "Último bimestre"
 
 msgid "Last 6 bi-months"
-msgstr "Últimos seis bi-meses"
+msgstr "Últimos 6 bimestres"
 
 msgid "Bi-months this year"
-msgstr "Bimensais este ano"
+msgstr "Bimestres deste ano"
 
 msgid "This quarter"
 msgstr "Este Trimestre"
@@ -275,7 +276,7 @@ msgid "Last quarter"
 msgstr "Último trimestre"
 
 msgid "Last 4 quarters"
-msgstr "Últimos quatro trimestres"
+msgstr "Últimos 4 trimestres"
 
 msgid "Quarters this year"
 msgstr "Trimestres deste ano"
@@ -287,7 +288,7 @@ msgid "Last six-month"
 msgstr "Último semestre"
 
 msgid "Last 2 six-month"
-msgstr ""
+msgstr "Últimos 2 semestres"
 
 msgid "This financial year"
 msgstr "Ano financeiro"
@@ -296,7 +297,7 @@ msgid "Last financial year"
 msgstr "Último ano fiscal"
 
 msgid "Last 5 financial years"
-msgstr "Últimos cinco anos fiscais"
+msgstr "Últimos 5 anos fiscais"
 
 msgid "This year"
 msgstr "Este ano"
@@ -305,7 +306,7 @@ msgid "Last year"
 msgstr "Último ano"
 
 msgid "Last 5 years"
-msgstr "Últimos cinco anos"
+msgstr "Últimos 5 anos"
 
 msgid "Days"
 msgstr "Dias"
@@ -314,13 +315,13 @@ msgid "Weeks"
 msgstr "Semanas"
 
 msgid "Bi-weeks"
-msgstr "Bisemanal"
+msgstr "Quinzena"
 
 msgid "Months"
 msgstr "Meses"
 
 msgid "Bi-months"
-msgstr "Bi-mensal"
+msgstr "Bimestre"
 
 msgid "Quarters"
 msgstr "Trimestres"
@@ -329,13 +330,13 @@ msgid "Six-months"
 msgstr "Seis meses"
 
 msgid "Financial Years"
-msgstr "Ano financeiro "
+msgstr "Anos fiscais"
 
 msgid "Years"
 msgstr "Anos"
 
 msgid "Series"
-msgstr "Série"
+msgstr "Séries"
 
 msgid "Category"
 msgstr "Categoria"
@@ -356,10 +357,10 @@ msgid "Reporting rate on time"
 msgstr "Taxa de relatórios no prazo"
 
 msgid "Actual reports"
-msgstr "Relatórios reais"
+msgstr "Relatórios actuais"
 
 msgid "Actual reports on time"
-msgstr "Relatórios reais dentro do prazo"
+msgstr "Relatórios actuais dentro do prazo"
 
 msgid "Expected reports"
 msgstr "Relatórios esperados"
@@ -389,7 +390,7 @@ msgid "Data sets"
 msgstr "Agregação de Dados"
 
 msgid "Select data sets"
-msgstr "Selecionar conjuntos de dados"
+msgstr "Seleccionar conjuntos de dados"
 
 msgid "[ All metrics ]"
 msgstr "[ Todas as métricas ]"
@@ -398,7 +399,7 @@ msgid "Event data items"
 msgstr "Itens de dados do evento"
 
 msgid "Select a program"
-msgstr "Selecione um programa"
+msgstr "Seleccione um programa"
 
 msgid "Program indicators"
 msgstr "Indicador do programa"
@@ -443,7 +444,7 @@ msgid "Area"
 msgstr "Área"
 
 msgid "Pie"
-msgstr "Torta"
+msgstr "Pizza"
 
 msgid "Radar"
 msgstr "Radar"
@@ -458,10 +459,10 @@ msgid "Year over year (column)"
 msgstr "Ano após ano (coluna)"
 
 msgid "Single value"
-msgstr "Valor unico"
+msgstr "Valor único"
 
 msgid "Pivot table"
-msgstr "Tabela Dinâmica"
+msgstr "Tabela dinâmica"
 
 msgid "Target"
 msgstr "Meta"
@@ -470,4 +471,4 @@ msgid "Base"
 msgstr "Base"
 
 msgid "No data"
-msgstr "Não ha dados"
+msgstr "Não há dados"
