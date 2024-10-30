@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2024-10-11T12:49:26.846Z\n"
-"PO-Revision-Date: 2024-10-11T12:49:26.847Z\n"
+"POT-Creation-Date: 2024-10-30T09:04:20.385Z\n"
+"PO-Revision-Date: 2024-10-30T09:04:20.386Z\n"
 
 msgid "view only"
 msgstr "view only"
@@ -168,6 +168,66 @@ msgstr "Disaggregation"
 msgid "No data"
 msgstr "No data"
 
+msgid "Expression"
+msgstr "Expression"
+
+msgid "Value type"
+msgstr "Value type"
+
+msgid "Aggregation type"
+msgstr "Aggregation type"
+
+msgid "Category combo"
+msgstr "Category combo"
+
+msgid "Data element groups"
+msgstr "Data element groups"
+
+msgid "Legend sets"
+msgstr "Legend sets"
+
+msgid "Zero is significant"
+msgstr "Zero is significant"
+
+msgid "True"
+msgstr "True"
+
+msgid "False"
+msgstr "False"
+
+msgid "Period type"
+msgstr "Period type"
+
+msgid "Data set elements"
+msgstr "Data set elements"
+
+msgid "Indicator type"
+msgstr "Indicator type"
+
+msgid "Annualized"
+msgstr "Annualized"
+
+msgid "Numerator"
+msgstr "Numerator"
+
+msgid "Denominator"
+msgstr "Denominator"
+
+msgid "Name"
+msgstr "Name"
+
+msgid "Code"
+msgstr "Code"
+
+msgid "Description"
+msgstr "Description"
+
+msgid "Created by"
+msgstr "Created by"
+
+msgid "Last updated"
+msgstr "Last updated"
+
 msgid "Search by data item name"
 msgstr "Search by data item name"
 
@@ -322,12 +382,6 @@ msgstr "Close"
 msgid "Rename {{fileType}}"
 msgstr "Rename {{fileType}}"
 
-msgid "Name"
-msgstr "Name"
-
-msgid "Description"
-msgstr "Description"
-
 msgid "Rename"
 msgstr "Rename"
 
@@ -436,9 +490,6 @@ msgstr "Enter interpretation text"
 msgid "Not available offline"
 msgstr "Not available offline"
 
-msgid "Created by"
-msgstr "Created by"
-
 msgid "Anyone"
 msgstr "Anyone"
 
@@ -456,9 +507,6 @@ msgstr "Filter by name"
 
 msgid "Created"
 msgstr "Created"
-
-msgid "Last updated"
-msgstr "Last updated"
 
 msgid "Type"
 msgstr "Type"
@@ -626,9 +674,6 @@ msgstr "Select a group"
 
 msgid "Deselect all"
 msgstr "Deselect all"
-
-msgid "Period type"
-msgstr "Period type"
 
 msgid "Year"
 msgstr "Year"

@@ -22,7 +22,7 @@ import {
     DIMENSION_TYPE_PROGRAM_INDICATOR,
 } from './dataTypes.js'
 
-export const getTooltipText = ({ type, expression }) => {
+export const getDimensionType = ({ type, expression }) => {
     if (type === DIMENSION_TYPE_EXPRESSION_DIMENSION_ITEM && expression) {
         return dataTypes[DIMENSION_TYPE_EXPRESSION_DIMENSION_ITEM].getItemName()
     }

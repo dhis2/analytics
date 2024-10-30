@@ -1,7 +1,7 @@
 import { useDataEngine } from '@dhis2/app-runtime'
 import { Transfer, InputField, IconInfo16, Button, IconAdd24 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import { apiFetchOptions } from '../../api/dimensions.js'
 import i18n from '../../locales/index.js'
 import { DATA_SETS_CONSTANTS, REPORTING_RATE } from '../../modules/dataSets.js'
@@ -15,7 +15,7 @@ import {
     TOTALS,
     DIMENSION_TYPE_EXPRESSION_DIMENSION_ITEM,
 } from '../../modules/dataTypes.js'
-import { getIcon, getTooltipText } from '../../modules/dimensionListItem.js'
+import { getIcon, getDimensionType } from '../../modules/dimensionListItem.js'
 import {
     TRANSFER_HEIGHT,
     TRANSFER_OPTIONS_WIDTH,
@@ -23,10 +23,11 @@ import {
 } from '../../modules/dimensionSelectorHelper.js'
 import { useDebounce, useDidUpdateEffect } from '../../modules/utils.js'
 import styles from '../styles/DimensionSelector.style.js'
-import { TransferOption } from '../TransferOption.js'
 import CalculationModal from './Calculation/CalculationModal.js'
 import DataTypeSelector from './DataTypeSelector.js'
 import GroupSelector from './GroupSelector.js'
+import { InfoPopover } from './Info/InfoPopover.js'
+import { TransferOption } from './TransferOption.js'
 
 const LeftHeader = ({
     searchTerm,
@@ -232,6 +233,8 @@ const ItemSelector = ({
     dataTest,
     onEDISave,
 }) => {
+    const itemsRef = useRef(new Map())
+
     const [state, setState] = useState({
         searchTerm: '',
         dataTypes,
@@ -253,10 +256,13 @@ const ItemSelector = ({
             .includes(DIMENSION_TYPE_EXPRESSION_DIMENSION_ITEM),
     })
     const [currentCalculation, setCurrentCalculation] = useState()
+    const [currentDataItem, setCurrentDataItem] = useState()
+
+    const debouncedSearchTerm = useDebounce(state.searchTerm, 500)
     const dataEngine = useDataEngine()
+
     const setSearchTerm = (searchTerm) =>
         setState((state) => ({ ...state, searchTerm }))
-    const debouncedSearchTerm = useDebounce(state.searchTerm, 500)
 
     const fetchItems = async (page) => {
         setState((state) => ({
@@ -505,11 +511,12 @@ const ItemSelector = ({
                         {...props}
                         active={isActive(props.value)}
                         icon={getIcon(getItemType(props.value))}
-                        tooltipText={getTooltipText({
+                        dimensionType={getDimensionType({
                             type: getItemType(props.value),
                             expression: props.expression,
                         })}
                         dataTest={`${dataTest}-transfer-option`}
+                        itemsRef={itemsRef}
                         onEditClick={
                             getItemType(props.value) ===
                                 DIMENSION_TYPE_EXPRESSION_DIMENSION_ITEM &&
@@ -523,6 +530,12 @@ const ItemSelector = ({
                                       })
                                 : undefined
                         }
+                        onInfoClick={() =>
+                            setCurrentDataItem({
+                                id: props.value,
+                                type: getItemType(props.value),
+                            })
+                        }
                         /* eslint-enable react/prop-types */
                     />
                 )}
@@ -534,6 +547,14 @@ const ItemSelector = ({
                     onSave={onSaveCalculation}
                     onClose={() => setCurrentCalculation()}
                     onDelete={onDeleteCalculation}
+                    displayNameProp={displayNameProp}
+                />
+            )}
+            {currentDataItem && (
+                <InfoPopover
+                    item={currentDataItem}
+                    reference={itemsRef.current.get(currentDataItem.id)}
+                    onClose={() => setCurrentDataItem()}
                     displayNameProp={displayNameProp}
                 />
             )}
