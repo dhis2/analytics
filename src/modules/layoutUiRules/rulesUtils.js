@@ -2,6 +2,7 @@ import { getLockedDimsByVisType } from './rules.js'
 import {
     getAxisMaxNumberOfDimsByVisType,
     getAxisMaxNumberOfItemsByVisType,
+    getDimMaxNumberOfItemsByVisType,
     getAllLockedDimIdsByVisType,
 } from './rulesHelper.js'
 
@@ -15,9 +16,23 @@ export const hasAxisTooManyItemsByVisType = (
         axisId
     )
 
-    return maxNumberOfItemsPerAxis
-        ? numberOfItems > maxNumberOfItemsPerAxis
-        : false
+    return maxNumberOfItemsPerAxis && numberOfItems > maxNumberOfItemsPerAxis
+}
+
+export const hasDimensionTooManyItemsByVisType = (
+    visType,
+    dimensionId,
+    numberOfItems
+) => {
+    const maxNumberOfItemsPerDimension = getDimMaxNumberOfItemsByVisType(
+        visType,
+        dimensionId
+    )
+
+    return (
+        maxNumberOfItemsPerDimension &&
+        numberOfItems > maxNumberOfItemsPerDimension
+    )
 }
 
 export const isDimensionLockedByVisType = (visType, dimensionId) =>

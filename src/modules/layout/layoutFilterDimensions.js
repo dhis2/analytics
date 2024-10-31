@@ -8,7 +8,10 @@ export const layoutFilterDimensions = (layout, dimensionIds) => {
     DEFAULT_AXIS_IDS.forEach((axisId) => {
         if (AXIS.isValid(filteredLayout[axisId])) {
             filteredLayout[axisId] = filteredLayout[axisId].filter(
-                (dimension) => !idArray.includes(dimensionGetId(dimension))
+                (dimension) =>
+                    !idArray.includes(
+                        dimensionGetId(dimension, layout.outputType)
+                    )
             )
         }
     })

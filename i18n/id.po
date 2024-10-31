@@ -1,19 +1,19 @@
 # 
 # Translators:
-# phil_dhis2, 2021
 # Carwoto Sa'an <carwoto@gmail.com>, 2022
 # Guardian Sanjaya <gysanjaya@ugm.ac.id>, 2022
 # Aprisa Chrysantina <aprisa.chrysantina@gmail.com>, 2022
 # Viktor Varland <viktor@dhis2.org>, 2023
 # Yusuf Setiawan <mohammadyusufsetiawan@gmail.com>, 2023
 # Untoro Dwi Raharjo <untoro.dwi.raharjo@mail.ugm.ac.id>, 2023
+# Philip Larsen Donnelly, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2023-07-06T08:30:33.216Z\n"
+"POT-Creation-Date: 2023-09-27T14:15:13.876Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Untoro Dwi Raharjo <untoro.dwi.raharjo@mail.ugm.ac.id>, 2023\n"
+"Last-Translator: Philip Larsen Donnelly, 2024\n"
 "Language-Team: Indonesian (https://app.transifex.com/hisp-uio/teams/100509/id/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -377,6 +377,10 @@ msgid "Hide interpretation"
 msgstr ""
 
 msgid "Write an interpretation"
+msgstr ""
+
+msgid ""
+"Other people viewing this interpretation in the future may see more data."
 msgstr ""
 
 msgid "Post interpretation"
@@ -1085,10 +1089,10 @@ msgid "{{percentage}}% of total y values"
 msgstr "{{percentage}}% dari total nilai y"
 
 msgid "{{thresholdFactor}} × IQR Q1"
-msgstr "{{faktor ambang}} × IQR Q1"
+msgstr "{{thresholdFactor}} × IQR Q1"
 
 msgid "{{thresholdFactor}} × IQR Q3"
-msgstr "{{Faktor ambang}} × IQR Q3"
+msgstr "{{thresholdFactor}} × IQR Q3"
 
 msgid "{{thresholdFactor}} × Modified Z-score low"
 msgstr "{{thresholdFactor}} × Modifikasi Z-score rendah"
@@ -1100,7 +1104,7 @@ msgid "{{thresholdFactor}} × Z-score low"
 msgstr "{{thresholdFactor}} × Z-skor rendah"
 
 msgid "{{thresholdFactor}} × Z-score high"
-msgstr "{{ThresholdFactor}} × Z-skor tinggi"
+msgstr "{{thresholdFactor}} × Z-skor tinggi"
 
 msgid "Data"
 msgstr "Data"
@@ -1172,7 +1176,7 @@ msgid "No legend for this series"
 msgstr "Tidak ada legenda untuk seri ini"
 
 msgid "and {{amount}} more..."
-msgstr "dan {{jumlah}} lainnya..."
+msgstr "dan {{amount}} lainnya..."
 
 msgid "Linear Regression"
 msgstr "Regresi linier"
