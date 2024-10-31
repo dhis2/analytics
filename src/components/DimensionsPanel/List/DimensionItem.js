@@ -1,4 +1,5 @@
-import { IconLock16 } from '@dhis2/ui'
+import { CssVariables } from '@dhis2/ui'
+import cx from 'classnames'
 import PropTypes from 'prop-types'
 import React, { Component, createRef } from 'react'
 import DynamicDimensionIcon from '../../../assets/DynamicDimensionIcon.js'
@@ -8,7 +9,7 @@ import {
 } from '../../../modules/predefinedDimensions.js'
 import OptionsButton from './OptionsButton.js'
 import RecommendedIcon from './RecommendedIcon.js'
-import { styles } from './styles/DimensionItem.style.js'
+import styles from './styles/DimensionItem.style.js'
 
 class DimensionItem extends Component {
     state = { mouseOver: false }
@@ -27,26 +28,16 @@ class DimensionItem extends Component {
     getDimensionIcon = () => {
         const Icon = getPredefinedDimensionProp(this.props.id, 'icon')
         return Icon ? (
-            <Icon style={styles.fixedDimensionIcon} />
+            <Icon className="fixedDimensionIcon" />
         ) : (
-            <DynamicDimensionIcon style={styles.dynamicDimensionIcon} />
+            <DynamicDimensionIcon className="dynamic-dimension-icon" />
         )
     }
 
     getDimensionType = () => {
-        const { id, name, isDeactivated } = this.props
+        const { id, name } = this.props
 
-        return (
-            <span
-                data-dimensionid={id}
-                style={{
-                    ...styles.text,
-                    ...(isDeactivated ? styles.textDeactivated : {}),
-                }}
-            >
-                {name}
-            </span>
-        )
+        return <span data-dimensionid={id}>{name}</span>
     }
 
     render() {
@@ -59,19 +50,36 @@ class DimensionItem extends Component {
             onClick,
             onOptionsClick,
             innerRef,
-            style,
             dataTest,
+            className,
             ...rest
         } = this.props
 
         const Icon = this.getDimensionIcon()
         const Label = this.getDimensionType()
-        const itemStyle =
-            isSelected && !isDeactivated
-                ? { ...styles.item, ...styles.selected }
-                : styles.item
 
         const optionsRef = createRef()
+
+        const LockIcon = (
+            <>
+                <div className="lockWrapper">
+                    <svg
+                        width="7"
+                        height="9"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                            fillRule="evenodd"
+                            clipRule="evenodd"
+                            d="M3.5 1A1.5 1.5 0 0 0 2 2.5V3h3v-.5A1.5 1.5 0 0 0 3.5 1ZM1 2.5V3H0v6h7V3H6v-.5a2.5 2.5 0 0 0-5 0ZM1 8V4h5v4H1Zm3-1V5H3v2h1Z"
+                            fill="none"
+                        />
+                    </svg>
+                </div>
+                <style jsx>{styles}</style>
+            </>
+        )
 
         const onLabelClick = () => {
             if (
@@ -83,55 +91,58 @@ class DimensionItem extends Component {
         }
 
         return (
-            <li
-                onMouseOver={this.onMouseOver}
-                onMouseLeave={this.onMouseExit}
-                ref={innerRef}
-                style={Object.assign(
-                    {},
-                    itemStyle,
-                    style,
-                    !isDeactivated && styles.clickable
-                )}
-                data-test={dataTest}
-                onClick={onLabelClick}
-                {...rest}
-            >
-                <div
-                    className="label"
-                    tabIndex={0}
-                    style={styles.label}
-                    data-test={`${dataTest}-button-${id}`}
-                >
-                    <div style={styles.iconWrapper}>{Icon}</div>
-                    <div style={styles.labelWrapper}>
-                        {Label}
-                        <RecommendedIcon
-                            isRecommended={isRecommended}
-                            dataTest={`${dataTest}-recommended-icon`}
-                        />
-                    </div>
-                    {isLocked && (
-                        <div style={styles.iconWrapper}>
-                            <IconLock16 />
-                        </div>
+            <>
+                <CssVariables colors />
+                <li
+                    onMouseOver={this.onMouseOver}
+                    onMouseLeave={this.onMouseExit}
+                    ref={innerRef}
+                    className={cx(
+                        'item',
+                        {
+                            deactivated: isDeactivated,
+                            selected: isSelected && !isDeactivated,
+                        },
+                        className
                     )}
-                </div>
-                {onOptionsClick ? (
+                    data-test={dataTest}
+                    onClick={onLabelClick}
+                    {...rest}
+                >
                     <div
-                        style={styles.optionsWrapper}
-                        ref={optionsRef}
-                        data-test={`${dataTest}-menu-${id}`}
+                        className="label"
+                        tabIndex={0}
+                        data-test={`${dataTest}-button-${id}`}
                     >
-                        {this.state.mouseOver && !isDeactivated && !isLocked ? (
-                            <OptionsButton
-                                style={styles.optionsButton}
-                                onClick={this.onOptionsClick(id, optionsRef)}
+                        <div className="iconWrapper">{Icon}</div>
+                        <div className="labelWrapper">
+                            <span className="labelText">{Label}</span>
+                            <RecommendedIcon
+                                isRecommended={isRecommended}
+                                dataTest={`${dataTest}-recommended-icon`}
                             />
-                        ) : null}
+                        </div>
                     </div>
-                ) : null}
-            </li>
+                    {onOptionsClick && !isDeactivated && !isLocked ? (
+                        <div
+                            className="optionsWrapper"
+                            ref={optionsRef}
+                            data-test={`${dataTest}-menu-${id}`}
+                        >
+                            {this.state.mouseOver ? (
+                                <OptionsButton
+                                    onClick={this.onOptionsClick(
+                                        id,
+                                        optionsRef
+                                    )}
+                                />
+                            ) : null}
+                        </div>
+                    ) : null}
+                    {isLocked && LockIcon}
+                </li>
+                <style jsx>{styles}</style>
+            </>
         )
     }
 }
@@ -140,12 +151,12 @@ DimensionItem.propTypes = {
     id: PropTypes.string.isRequired,
     isSelected: PropTypes.bool.isRequired, // XXX
     name: PropTypes.string.isRequired,
+    className: PropTypes.string,
     dataTest: PropTypes.string,
     innerRef: PropTypes.func,
     isDeactivated: PropTypes.bool,
     isLocked: PropTypes.bool,
     isRecommended: PropTypes.bool,
-    style: PropTypes.object,
     onClick: PropTypes.func,
     onOptionsClick: PropTypes.func,
 }

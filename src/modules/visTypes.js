@@ -1,5 +1,4 @@
 import {
-    IconTable24,
     IconVisualizationArea24,
     IconVisualizationAreaStacked24,
     IconVisualizationBar24,
@@ -11,7 +10,9 @@ import {
     IconVisualizationLine24,
     IconVisualizationLinelist24,
     IconVisualizationLineMulti24,
+    IconVisualizationOutlierTable24,
     IconVisualizationPie24,
+    IconVisualizationPivotTable24,
     IconVisualizationRadar24,
     IconVisualizationScatter24,
     IconVisualizationSingleValue24,
@@ -36,6 +37,7 @@ export const VIS_TYPE_SINGLE_VALUE = 'SINGLE_VALUE'
 export const VIS_TYPE_BUBBLE = 'BUBBLE'
 export const VIS_TYPE_GROUP_ALL = 'ALL'
 export const VIS_TYPE_GROUP_CHARTS = 'CHARTS'
+export const VIS_TYPE_OUTLIER_TABLE = 'OUTLIER_TABLE'
 
 export const visTypeDisplayNames = {
     [VIS_TYPE_PIVOT_TABLE]: i18n.t('Pivot table'),
@@ -54,12 +56,13 @@ export const visTypeDisplayNames = {
     [VIS_TYPE_RADAR]: i18n.t('Radar'),
     [VIS_TYPE_SCATTER]: i18n.t('Scatter'),
     [VIS_TYPE_SINGLE_VALUE]: i18n.t('Single value'),
+    [VIS_TYPE_OUTLIER_TABLE]: i18n.t('Outlier table'),
     [VIS_TYPE_GROUP_ALL]: i18n.t('All types'),
     [VIS_TYPE_GROUP_CHARTS]: i18n.t('All charts'),
 }
 
 export const visTypeIcons = {
-    [VIS_TYPE_PIVOT_TABLE]: IconTable24,
+    [VIS_TYPE_PIVOT_TABLE]: IconVisualizationPivotTable24,
     [VIS_TYPE_AREA]: IconVisualizationArea24,
     [VIS_TYPE_STACKED_AREA]: IconVisualizationAreaStacked24,
     [VIS_TYPE_BAR]: IconVisualizationBar24,
@@ -75,6 +78,7 @@ export const visTypeIcons = {
     [VIS_TYPE_RADAR]: IconVisualizationRadar24,
     [VIS_TYPE_SCATTER]: IconVisualizationScatter24,
     [VIS_TYPE_SINGLE_VALUE]: IconVisualizationSingleValue24,
+    [VIS_TYPE_OUTLIER_TABLE]: IconVisualizationOutlierTable24,
 }
 
 export const getDisplayNameByVisType = (visType) => {
@@ -137,12 +141,13 @@ const legendSetTypes = [
     VIS_TYPE_STACKED_BAR,
 ]
 
-export const defaultVisType = VIS_TYPE_COLUMN
+export const defaultVisType = VIS_TYPE_PIVOT_TABLE
 export const isStacked = (type) => stackedTypes.includes(type)
 export const isYearOverYear = (type) => yearOverYearTypes.includes(type)
 export const isDualAxisType = (type) => dualAxisTypes.includes(type)
 export const isMultiType = (type) => multiTypeTypes.includes(type)
 export const isSingleValue = (type) => type === VIS_TYPE_SINGLE_VALUE
+export const isOutlierTable = (type) => type === VIS_TYPE_OUTLIER_TABLE
 export const isTwoCategoryChartType = (type) =>
     twoCategoryChartTypes.includes(type)
 export const isVerticalType = (type) => verticalTypes.includes(type)

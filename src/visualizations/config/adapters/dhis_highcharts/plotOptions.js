@@ -79,6 +79,6 @@ export default ({
                   }
                 : {}
         default:
-            return {}
+            return null
     }
 }
