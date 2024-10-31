@@ -3,17 +3,15 @@ import i18n from '@dhis2/d2-i18n'
 import { Button, Input } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useRef, useState } from 'react'
-import {
-    RichTextEditor,
-    MessageEditorContainer,
-    MessageButtonStrip,
-} from '../common/index.js'
+import { RichTextEditor } from '../../RichText/index.js'
+import { MessageEditorContainer, MessageButtonStrip } from '../common/index.js'
 
 export const InterpretationForm = ({
     type,
     id,
     currentUser,
     disabled,
+    showNoTimeDimensionHelpText,
     onSave,
 }) => {
     const [showRichTextEditor, setShowRichTextEditor] = useState(false)
@@ -45,12 +43,19 @@ export const InterpretationForm = ({
             dataTest="interpretation-form"
         >
             {showRichTextEditor ? (
-                <div>
+                <>
                     <RichTextEditor
                         disabled={saveMutationInProgress}
                         inputPlaceholder={inputPlaceholder}
                         onChange={setInterpretationText}
                         value={interpretationText}
+                        helpText={
+                            showNoTimeDimensionHelpText
+                                ? i18n.t(
+                                      'Other people viewing this interpretation in the future may see more data.'
+                                  )
+                                : undefined
+                        }
                     />
                     <MessageButtonStrip>
                         <Button
@@ -73,7 +78,7 @@ export const InterpretationForm = ({
                             {i18n.t('Cancel')}
                         </Button>
                     </MessageButtonStrip>
-                </div>
+                </>
             ) : (
                 <Input
                     onFocus={() => setShowRichTextEditor(true)}
@@ -89,6 +94,7 @@ InterpretationForm.propTypes = {
     currentUser: PropTypes.object,
     disabled: PropTypes.bool,
     id: PropTypes.string,
+    showNoTimeDimensionHelpText: PropTypes.bool,
     type: PropTypes.string,
     onSave: PropTypes.func,
 }

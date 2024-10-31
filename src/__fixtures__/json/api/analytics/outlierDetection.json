@@ -1,0 +1,213 @@
+{
+  "headers": [
+    {
+      "name": "dxname",
+      "column": "Data name",
+      "valueType": "TEXT",
+      "type": "java.lang.String",
+      "hidden": false,
+      "meta": false
+    },
+    {
+      "name": "ouname",
+      "column": "Organisation unit name",
+      "valueType": "TEXT",
+      "type": "java.lang.String",
+      "hidden": false,
+      "meta": false
+    },
+    {
+      "name": "value",
+      "column": "Value",
+      "valueType": "NUMBER",
+      "type": "java.lang.Double",
+      "hidden": false,
+      "meta": false
+    },
+    {
+      "name": "absdev",
+      "column": "Absolute deviation",
+      "valueType": "NUMBER",
+      "type": "java.lang.Double",
+      "hidden": false,
+      "meta": false
+    },
+    {
+      "name": "modifiedzscore",
+      "column": "Modified zScore",
+      "valueType": "NUMBER",
+      "type": "java.lang.Double",
+      "hidden": false,
+      "meta": false
+    },
+    {
+      "name": "median",
+      "column": "Median",
+      "valueType": "NUMBER",
+      "type": "java.lang.Double",
+      "hidden": false,
+      "meta": false
+    },
+    {
+      "name": "lowerbound",
+      "column": "Lower boundary",
+      "valueType": "NUMBER",
+      "type": "java.lang.Double",
+      "hidden": false,
+      "meta": false
+    },
+    {
+      "name": "upperbound",
+      "column": "Upper boundary",
+      "valueType": "NUMBER",
+      "type": "java.lang.Double",
+      "hidden": false,
+      "meta": false
+    }
+  ],
+  "metaData": {
+    "maxResults": 100,
+    "count": 13,
+    "orderBy": "mean_abs_dev",
+    "threshold": 3.0,
+    "algorithm": "MOD_Z_SCORE"
+  },
+  "rowContext": {
+
+  },
+  "rows": [
+    [
+      "ANC 2nd visit",
+      "UMC (Urban Centre) Hospital",
+      "1669.0",
+      "920.0",
+      "3.902767295597484",
+      "749.0",
+      "-290.93013894085743",
+      "1788.9301389408574"
+    ],
+    [
+      "ANC 1st visit",
+      "Charlotte CHP",
+      "49.0",
+      "39.0",
+      "7.515857142857143",
+      "10.0",
+      "-23.948490393535913",
+      "43.94849039353591"
+    ],
+    [
+      "ANC 2nd visit",
+      "Charlotte CHP",
+      "40.0",
+      "33.0",
+      "22.258499999999998",
+      "7.0",
+      "-30.86489139031037",
+      "44.86489139031037"
+    ],
+    [
+      "ANC 2nd visit",
+      "Wilberforce CHC",
+      "56.0",
+      "24.5",
+      "3.004590909090909",
+      "31.5",
+      "-1.3890179239210454",
+      "64.38901792392105"
+    ],
+    [
+      "ANC 1st visit",
+      "Deep Eye water MCHP",
+      "40.0",
+      "16.0",
+      "3.5973333333333333",
+      "24.0",
+      "4.850913859925324",
+      "43.14908614007467"
+    ],
+    [
+      "ANC 2nd visit",
+      "Lion for Lion Clinic",
+      "30.0",
+      "16.0",
+      "3.5973333333333333",
+      "14.0",
+      "-5.620896815302167",
+      "33.62089681530217"
+    ],
+    [
+      "ANC 2nd visit",
+      "Deep Eye water MCHP",
+      "33.0",
+      "14.5",
+      "3.9121",
+      "18.5",
+      "-3.4245866551686603",
+      "40.42458665516866"
+    ],
+    [
+      "ANC 2nd visit",
+      "Blessed Mokaka East Clinic",
+      "2.0",
+      "13.0",
+      "4.38425",
+      "15.0",
+      "-3.417043736713012",
+      "33.41704373671301"
+    ],
+    [
+      "ANC 2nd visit",
+      "Malambay CHP",
+      "15.0",
+      "12.0",
+      "5.396",
+      "3.0",
+      "-13.770509831248425",
+      "19.770509831248425"
+    ],
+    [
+      "ANC 2nd visit",
+      "Wellbody MCHP",
+      "20.0",
+      "10.0",
+      "3.3725",
+      "10.0",
+      "-10.999999999999996",
+      "30.999999999999996"
+    ],
+    [
+      "ANC 1st visit",
+      "Blessed Mokaka East Clinic",
+      "26.0",
+      "10.0",
+      "4.496666666666667",
+      "16.0",
+      "1.6734512181055958",
+      "30.326548781894402"
+    ],
+    [
+      "ANC 1st visit",
+      "Murray Town CHC",
+      "18.0",
+      "9.0",
+      "6.0705",
+      "9.0",
+      "-2.43571205496543",
+      "20.43571205496543"
+    ],
+    [
+      "ANC 2nd visit",
+      "Thompson Bay MCHP",
+      "11.0",
+      "6.0",
+      "4.047",
+      "5.0",
+      "-2.038266127580332",
+      "12.038266127580332"
+    ]
+  ],
+  "headerWidth": 8,
+  "width": 8,
+  "height": 13
+}

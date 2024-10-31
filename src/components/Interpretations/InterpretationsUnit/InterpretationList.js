@@ -1,3 +1,4 @@
+import { useTimeZoneConversion } from '@dhis2/app-runtime'
 import { IconCalendar24, colors, spacers } from '@dhis2/ui'
 import moment from 'moment'
 import PropTypes from 'prop-types'
@@ -21,10 +22,13 @@ export const InterpretationList = ({
     currentUser,
     interpretations,
     onInterpretationClick,
+    onLikeToggled,
     onReplyIconClick,
     refresh,
     disabled,
+    dashboardRedirectUrl,
 }) => {
+    const { fromServerDate } = useTimeZoneConversion()
     const interpretationsByDate = interpretations.reduce(
         (groupedInterpretations, interpretation) => {
             const date = interpretation.created.split('T')[0]
@@ -50,7 +54,7 @@ export const InterpretationList = ({
                         <div className="date-section">
                             <IconCalendar24 color={colors.grey600} />
                             <time dateTime={date} className="date-header">
-                                {moment(date).format('ll')}
+                                {moment(fromServerDate(date)).format('ll')}
                             </time>
                         </div>
                         <ol className="interpretation-list">
@@ -62,10 +66,14 @@ export const InterpretationList = ({
                                         interpretation={interpretation}
                                         currentUser={currentUser}
                                         onClick={onInterpretationClick}
+                                        onLikeToggled={onLikeToggled}
                                         onReplyIconClick={onReplyIconClick}
                                         onDeleted={refresh}
                                         onUpdated={refresh}
                                         disabled={disabled}
+                                        dashboardRedirectUrl={
+                                            dashboardRedirectUrl
+                                        }
                                     />
                                 ))}
                         </ol>
@@ -114,6 +122,8 @@ InterpretationList.propTypes = {
     interpretations: PropTypes.array.isRequired,
     refresh: PropTypes.func.isRequired,
     onInterpretationClick: PropTypes.func.isRequired,
+    onLikeToggled: PropTypes.func.isRequired,
     onReplyIconClick: PropTypes.func.isRequired,
+    dashboardRedirectUrl: PropTypes.string,
     disabled: PropTypes.bool,
 }

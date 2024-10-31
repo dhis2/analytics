@@ -40,6 +40,7 @@ const OrgUnitDimension = ({
     hideLevelSelect,
     hideUserOrgUnits,
     warning,
+    displayNameProp,
 }) => {
     const [ouLevels, setOuLevels] = useState([])
     const [ouGroups, setOuGroups] = useState([])
@@ -79,13 +80,16 @@ const OrgUnitDimension = ({
             setOuLevels(result)
         }
         const doFetchOuGroups = async () => {
-            const result = await apiFetchOrganisationUnitGroups(dataEngine)
+            const result = await apiFetchOrganisationUnitGroups(
+                dataEngine,
+                displayNameProp
+            )
             setOuGroups(result)
         }
 
         !hideLevelSelect && doFetchOuLevels()
         !hideGroupSelect && doFetchOuGroups()
-    }, [dataEngine, hideLevelSelect, hideGroupSelect])
+    }, [dataEngine, hideLevelSelect, hideGroupSelect, displayNameProp])
 
     const onLevelChange = (ids) => {
         const items = ids.map((id) => ({
@@ -369,6 +373,7 @@ OrgUnitDimension.defaultProps = {
 }
 
 OrgUnitDimension.propTypes = {
+    displayNameProp: PropTypes.string,
     hideGroupSelect: PropTypes.bool,
     hideLevelSelect: PropTypes.bool,
     hideUserOrgUnits: PropTypes.bool,

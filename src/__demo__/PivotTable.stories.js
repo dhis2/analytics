@@ -785,12 +785,52 @@ storiesOf('PivotTable', module).add(
 )
 
 storiesOf('PivotTable', module).add(
+    'cumulative + empty columns (weekly) - shown',
+    (_, { pivotTableOptions }) => {
+        const visualization = {
+            ...weeklyColumnsVisualization,
+            ...pivotTableOptions,
+            hideEmptyColumns: false,
+            cumulativeValues: true,
+        }
+        return (
+            <div style={{ width: 800, height: 600 }}>
+                <PivotTable
+                    data={weeklyColumnsData}
+                    visualization={visualization}
+                />
+            </div>
+        )
+    }
+)
+
+storiesOf('PivotTable', module).add(
     'empty columns (weekly) - hidden',
     (_, { pivotTableOptions }) => {
         const visualization = {
             ...weeklyColumnsVisualization,
             ...pivotTableOptions,
             hideEmptyColumns: true,
+        }
+        return (
+            <div style={{ width: 800, height: 600 }}>
+                <PivotTable
+                    data={weeklyColumnsData}
+                    visualization={visualization}
+                />
+            </div>
+        )
+    }
+)
+
+storiesOf('PivotTable', module).add(
+    'cumulative + empty columns (weekly) - hidden',
+    (_, { pivotTableOptions }) => {
+        const visualization = {
+            ...weeklyColumnsVisualization,
+            ...pivotTableOptions,
+            hideEmptyColumns: true,
+            cumulativeValues: true,
         }
         return (
             <div style={{ width: 800, height: 600 }}>
@@ -1119,3 +1159,44 @@ storiesOf('PivotTable', module).add('DEGS', (_, { pivotTableOptions }) => {
         </div>
     )
 })
+
+storiesOf('PivotTable', module).add(
+    'Truncated header cell',
+    (_, { pivotTableOptions }) => {
+        const widths = [250, 200, 500]
+        const [width, setWidth] = useState(250)
+        const toggleWidth = () =>
+            setWidth(
+                (currentWidth) =>
+                    widths[widths.indexOf(currentWidth) + 1] ?? widths[0]
+            )
+        const visualization = {
+            ...narrativeVisualization,
+            ...visualizationReset,
+            ...pivotTableOptions,
+            columns: narrativeVisualization.filters,
+            filters: narrativeVisualization.columns,
+            rowTotals: true,
+            colTotals: true,
+        }
+
+        const data = {
+            ...narrativeData,
+            rows: [narrativeData.rows[0]],
+        }
+
+        return (
+            <div
+                style={{
+                    width,
+                    height: 600,
+                    marginTop: 50,
+                    transition: 'width 1s',
+                }}
+            >
+                <button onClick={toggleWidth}>Toggle width</button>
+                <PivotTable data={data} visualization={visualization} />
+            </div>
+        )
+    }
+)
