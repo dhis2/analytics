@@ -37,7 +37,14 @@ export const colorSets = {
         ],
     },
     [COLOR_SET_BASIC]: {
-        colors: ['#348F41', '#9F2241', '#DDDDDD', '#B4A269'],
+        colors: [
+            '#348F41',
+            '#9F2241',
+            '#B4A269',
+            '#EBEEF3',
+            '#58595B',
+            '#1A5632',
+        ],
     },
     [COLOR_SET_EXTENDED]: {
         colors: [

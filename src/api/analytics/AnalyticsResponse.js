@@ -81,7 +81,8 @@ class AnalyticsResponse {
     }
 
     extractHeaders() {
-        const dimensions = this.response.metaData.dimensions
+        // some endpoints (ie. outlierDetection) don't return dimensions in metaData
+        const dimensions = this.response.metaData.dimensions || {}
         const headers = this.response.headers || []
 
         return headers.map(
@@ -125,59 +126,61 @@ class AnalyticsResponse {
 
         const { dimensions, items } = metaData
 
-        // populate metaData dimensions and items
-        this.headers
-            .filter(
-                (header) =>
-                    !DEFAULT_COLLECT_IGNORE_HEADERS.includes(header.name)
-            )
-            .forEach((header) => {
-                let ids
+        // some endpoints (ie. outlierDetection) don't return dimensions or items
+        if (dimensions && items) {
+            this.headers
+                .filter(
+                    (header) =>
+                        !DEFAULT_COLLECT_IGNORE_HEADERS.includes(header.name)
+                )
+                .forEach((header) => {
+                    let ids
 
-                // collect row values
-                if (header.isCollect) {
-                    ids = this.getSortedUniqueRowIdStringsByHeader(header)
-                    dimensions[header.name] = ids
-                } else {
-                    ids = dimensions[header.name]
-                }
-
-                if (header.isPrefix) {
-                    // create prefixed dimensions array
-                    dimensions[header.name] = ids.map((id) =>
-                        getPrefixedId(id, header.name)
-                    )
-
-                    // create items
-                    dimensions[header.name].forEach((prefixedId, index) => {
-                        const id = ids[index]
-                        const valueType = header.valueType
-
-                        const name = getNameByIdsByValueType(id, valueType)
-
-                        items[prefixedId] = { name }
-                    })
-                }
-            })
-
-        // for events, add items from 'ouname'
-        if (this.hasHeader(OUNAME) && this.hasHeader(OU)) {
-            const ouNameHeaderIndex = this.getHeader(OUNAME).getIndex()
-            const ouHeaderIndex = this.getHeader(OU).getIndex()
-            let ouId
-            let ouName
-
-            this.rows.forEach((row) => {
-                ouId = row[ouHeaderIndex]
-
-                if (items[ouId] === undefined) {
-                    ouName = row[ouNameHeaderIndex]
-
-                    items[ouId] = {
-                        name: ouName,
+                    // collect row values
+                    if (header.isCollect) {
+                        ids = this.getSortedUniqueRowIdStringsByHeader(header)
+                        dimensions[header.name] = ids
+                    } else {
+                        ids = dimensions[header.name]
                     }
-                }
-            })
+
+                    if (header.isPrefix) {
+                        // create prefixed dimensions array
+                        dimensions[header.name] = ids.map((id) =>
+                            getPrefixedId(id, header.name)
+                        )
+
+                        // create items
+                        dimensions[header.name].forEach((prefixedId, index) => {
+                            const id = ids[index]
+                            const valueType = header.valueType
+
+                            const name = getNameByIdsByValueType(id, valueType)
+
+                            items[prefixedId] = { name }
+                        })
+                    }
+                })
+
+            // for events, add items from 'ouname'
+            if (this.hasHeader(OUNAME) && this.hasHeader(OU)) {
+                const ouNameHeaderIndex = this.getHeader(OUNAME).getIndex()
+                const ouHeaderIndex = this.getHeader(OU).getIndex()
+                let ouId
+                let ouName
+
+                this.rows.forEach((row) => {
+                    ouId = row[ouHeaderIndex]
+
+                    if (items[ouId] === undefined) {
+                        ouName = row[ouNameHeaderIndex]
+
+                        items[ouId] = {
+                            name: ouName,
+                        }
+                    }
+                })
+            }
         }
 
         return metaData

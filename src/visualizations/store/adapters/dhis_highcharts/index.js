@@ -6,9 +6,11 @@ import {
     VIS_TYPE_PIE,
     VIS_TYPE_GAUGE,
     isTwoCategoryChartType,
+    VIS_TYPE_SINGLE_VALUE,
 } from '../../../../modules/visTypes.js'
 import getGauge from './gauge.js'
 import getPie from './pie.js'
+import getSingleValue from './singleValue.js'
 import getTwoCategory from './twoCategory.js'
 import getYearOnYear from './yearOnYear.js'
 
@@ -93,6 +95,8 @@ function getSeriesFunction(type, categoryIds) {
     }
 
     switch (type) {
+        case VIS_TYPE_SINGLE_VALUE:
+            return getSingleValue
         case VIS_TYPE_PIE:
             return getPie
         case VIS_TYPE_GAUGE:

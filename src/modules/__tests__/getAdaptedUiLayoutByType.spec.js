@@ -15,10 +15,12 @@ import {
     VIS_TYPE_BAR,
     VIS_TYPE_PIE,
     VIS_TYPE_SINGLE_VALUE,
+    VIS_TYPE_OUTLIER_TABLE,
 } from '../visTypes.js'
 
 const someId = 'someId'
 const otherId = 'otherId'
+const thirdId = 'thirdId'
 
 describe('getAdaptedUiLayoutByType', () => {
     it('column: moves all extra dimensions in columns and rows to filters', () => {
@@ -167,6 +169,31 @@ describe('getAdaptedUiLayoutByType', () => {
                 { dimension: someId },
                 { dimension: otherId },
             ],
+        }
+
+        expect(actualState).toEqual(expectedState)
+    })
+
+    it('outlier table: removes all dimensions but dx,pe,ou which are moved to columns', () => {
+        const initialState = {
+            [AXIS_ID_COLUMNS]: [DIMENSION_ID_DATA, someId],
+            [AXIS_ID_ROWS]: [DIMENSION_ID_PERIOD, otherId],
+            [AXIS_ID_FILTERS]: [DIMENSION_ID_ORGUNIT, thirdId],
+        }
+
+        const actualState = getAdaptedUiLayoutByType(
+            initialState,
+            VIS_TYPE_OUTLIER_TABLE
+        )
+
+        const expectedState = {
+            [AXIS_ID_COLUMNS]: [
+                DIMENSION_ID_DATA,
+                DIMENSION_ID_PERIOD,
+                DIMENSION_ID_ORGUNIT,
+            ],
+            [AXIS_ID_ROWS]: [],
+            [AXIS_ID_FILTERS]: [],
         }
 
         expect(actualState).toEqual(expectedState)
