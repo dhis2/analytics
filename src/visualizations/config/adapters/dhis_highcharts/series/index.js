@@ -9,6 +9,7 @@ import {
     isYearOverYear,
     VIS_TYPE_LINE,
     VIS_TYPE_SCATTER,
+    VIS_TYPE_SINGLE_VALUE,
 } from '../../../../../modules/visTypes.js'
 import { getAxisStringFromId } from '../../../../util/axisId.js'
 import {
@@ -225,6 +226,9 @@ export default function ({
     displayStrategy,
 }) {
     switch (layout.type) {
+        case VIS_TYPE_SINGLE_VALUE:
+            series = []
+            break
         case VIS_TYPE_PIE:
             series = getPie(
                 series,
@@ -249,7 +253,7 @@ export default function ({
             })
     }
 
-    series.forEach((seriesObj) => {
+    series?.forEach((seriesObj) => {
         // animation
         seriesObj.animation = {
             duration: getAnimation(

@@ -3,11 +3,8 @@ import i18n from '@dhis2/d2-i18n'
 import { Button, Input } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useRef, useState } from 'react'
-import {
-    RichTextEditor,
-    MessageEditorContainer,
-    MessageButtonStrip,
-} from '../common/index.js'
+import { RichTextEditor } from '../../RichText/index.js'
+import { MessageEditorContainer, MessageButtonStrip } from '../common/index.js'
 
 export const InterpretationForm = ({
     type,
@@ -46,7 +43,7 @@ export const InterpretationForm = ({
             dataTest="interpretation-form"
         >
             {showRichTextEditor ? (
-                <div>
+                <>
                     <RichTextEditor
                         disabled={saveMutationInProgress}
                         inputPlaceholder={inputPlaceholder}
@@ -81,7 +78,7 @@ export const InterpretationForm = ({
                             {i18n.t('Cancel')}
                         </Button>
                     </MessageButtonStrip>
-                </div>
+                </>
             ) : (
                 <Input
                     onFocus={() => setShowRichTextEditor(true)}
