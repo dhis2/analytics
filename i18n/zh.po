@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2024-08-27T11:29:09.031Z\n"
+"POT-Creation-Date: 2024-10-11T12:49:26.846Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: easylin <lin_xd@126.com>, 2024\n"
 "Language-Team: Chinese (https://app.transifex.com/hisp-uio/teams/100509/zh/)\n"
@@ -838,6 +838,9 @@ msgstr "财政年度"
 msgid "Years"
 msgstr "年"
 
+msgid "Value: {{value}}"
+msgstr "值{{value}}"
+
 msgid "Bold text"
 msgstr "粗体文字"
 
@@ -1107,6 +1110,9 @@ msgstr "{{thresholdFactor}}×Z分数低"
 
 msgid "{{thresholdFactor}} × Z-score high"
 msgstr "{{thresholdFactor}}×Z分数高"
+
+msgid "Not applicable"
+msgstr "不适用"
 
 msgid "Data"
 msgstr "数据"
