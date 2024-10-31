@@ -47,6 +47,8 @@ export {
     useCachedDataQuery,
 } from './components/CachedDataQueryProvider.js'
 
+export * from './components/RichText/index.js'
+
 // Api
 
 export { default as Analytics } from './api/analytics/Analytics.js'
