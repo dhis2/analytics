@@ -1,9 +1,9 @@
 import { useTimeZoneConversion } from '@dhis2/app-runtime'
-import { Parser as RichTextParser } from '@dhis2/d2-ui-rich-text'
 import { UserAvatar, spacers, colors } from '@dhis2/ui'
 import moment from 'moment'
 import PropTypes from 'prop-types'
 import React from 'react'
+import { RichTextParser } from '../../../RichText/index.js'
 
 const Message = ({ children, text, created, username }) => {
     const { fromServerDate } = useTimeZoneConversion()
@@ -49,6 +49,7 @@ const Message = ({ children, text, created, username }) => {
                     line-height: 19px;
                     color: ${colors.grey900};
                     word-break: break-word;
+                    white-space: pre-line;
                 }
 
                 .content :global(p:first-child) {

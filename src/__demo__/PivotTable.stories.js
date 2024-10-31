@@ -785,12 +785,52 @@ storiesOf('PivotTable', module).add(
 )
 
 storiesOf('PivotTable', module).add(
+    'cumulative + empty columns (weekly) - shown',
+    (_, { pivotTableOptions }) => {
+        const visualization = {
+            ...weeklyColumnsVisualization,
+            ...pivotTableOptions,
+            hideEmptyColumns: false,
+            cumulativeValues: true,
+        }
+        return (
+            <div style={{ width: 800, height: 600 }}>
+                <PivotTable
+                    data={weeklyColumnsData}
+                    visualization={visualization}
+                />
+            </div>
+        )
+    }
+)
+
+storiesOf('PivotTable', module).add(
     'empty columns (weekly) - hidden',
     (_, { pivotTableOptions }) => {
         const visualization = {
             ...weeklyColumnsVisualization,
             ...pivotTableOptions,
             hideEmptyColumns: true,
+        }
+        return (
+            <div style={{ width: 800, height: 600 }}>
+                <PivotTable
+                    data={weeklyColumnsData}
+                    visualization={visualization}
+                />
+            </div>
+        )
+    }
+)
+
+storiesOf('PivotTable', module).add(
+    'cumulative + empty columns (weekly) - hidden',
+    (_, { pivotTableOptions }) => {
+        const visualization = {
+            ...weeklyColumnsVisualization,
+            ...pivotTableOptions,
+            hideEmptyColumns: true,
+            cumulativeValues: true,
         }
         return (
             <div style={{ width: 800, height: 600 }}>

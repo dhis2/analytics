@@ -1,18 +1,18 @@
 # 
 # Translators:
-# Yury Rogachev <yury@dhis2.org>, 2020
 # Valeriu Plesca <vplesca@gmail.com>, 2021
 # Wanda <wanda@frontlineaids.org>, 2022
 # Viktor Varland <viktor@dhis2.org>, 2022
 # Ulanbek Abakirov <ulans@mail.ru>, 2022
-# phil_dhis2, 2023
+# Philip Larsen Donnelly, 2023
+# Yury Rogachev <yury@dhis2.org>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2023-07-06T08:30:33.216Z\n"
+"POT-Creation-Date: 2024-01-25T12:05:03.360Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: phil_dhis2, 2023\n"
+"Last-Translator: Yury Rogachev <yury@dhis2.org>, 2024\n"
 "Language-Team: Russian (https://app.transifex.com/hisp-uio/teams/100509/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -160,6 +160,9 @@ msgstr ""
 msgid "Data Type"
 msgstr "Тип данных"
 
+msgid "Only {{dataType}} can be used in {{visType}}"
+msgstr ""
+
 msgid "All types"
 msgstr "Все типы"
 
@@ -190,6 +193,9 @@ msgstr ""
 msgid "No program indicators found"
 msgstr ""
 
+msgid "No calculations found"
+msgstr ""
+
 msgid "No indicators found for \"{{- searchTerm}}\""
 msgstr ""
 
@@ -200,6 +206,9 @@ msgid "No event data items found for \"{{- searchTerm}}\""
 msgstr ""
 
 msgid "No program indicators found for \"{{- searchTerm}}\""
+msgstr ""
+
+msgid "No calculations found for \"{{- searchTerm}}\""
 msgstr ""
 
 msgid "Nothing found for \"{{- searchTerm}}\""
@@ -341,7 +350,7 @@ msgid "map"
 msgstr "Карта"
 
 msgid "visualization"
-msgstr ""
+msgstr "визуализация"
 
 msgid "Edit"
 msgstr "Редактировать"
@@ -381,6 +390,10 @@ msgstr ""
 msgid "Write an interpretation"
 msgstr "Написать перевод"
 
+msgid ""
+"Other people viewing this interpretation in the future may see more data."
+msgstr ""
+
 msgid "Post interpretation"
 msgstr ""
 
@@ -392,10 +405,10 @@ msgstr "Ответить"
 
 msgid "{{count}} replies"
 msgid_plural "{{count}} replies"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "{{count}} ответ"
+msgstr[1] "{{count}} отвечает"
+msgstr[2] "{{count}} отвечает"
+msgstr[3] "{{count}} ответов"
 
 msgid "View replies"
 msgstr ""
@@ -406,11 +419,14 @@ msgstr "Не нравится"
 msgid "Like"
 msgstr "Нравится"
 
-msgid "Share"
-msgstr "Поделиться"
-
 msgid "See interpretation"
 msgstr ""
+
+msgid "Open in app"
+msgstr ""
+
+msgid "Share"
+msgstr "Поделиться"
 
 msgid "Manage sharing"
 msgstr "Управление совместным доступом"
@@ -421,41 +437,8 @@ msgstr ""
 msgid "Enter interpretation text"
 msgstr ""
 
-msgid "Bold text"
-msgstr ""
-
-msgid "Italic text"
-msgstr ""
-
-msgid "Link to a URL"
-msgstr ""
-
-msgid "Mention a user"
-msgstr ""
-
-msgid "Add emoji"
-msgstr ""
-
-msgid "Preview"
-msgstr "Предварительный просмотр"
-
-msgid "Back to write mode"
-msgstr ""
-
-msgid "Too many results. Try refining the search."
-msgstr ""
-
-msgid "Search for a user"
-msgstr ""
-
-msgid "Searching for \"{{- searchText}}\""
-msgstr ""
-
-msgid "No results found"
-msgstr "Результаты не найдены"
-
 msgid "Not available offline"
-msgstr ""
+msgstr "Недоступно в автономном режиме"
 
 msgid "Created by"
 msgstr "Создано"
@@ -650,14 +633,14 @@ msgstr "Выбрать год"
 msgid "Period"
 msgstr "Период"
 
+msgid "Selected Periods"
+msgstr "Выбранные периоды"
+
 msgid "Relative periods"
 msgstr "Соответствующие периоды"
 
 msgid "Fixed periods"
 msgstr "Фиксированные периоды"
-
-msgid "Selected Periods"
-msgstr "Выбранные периоды"
 
 msgid "No periods selected"
 msgstr "Периоды не выбраны"
@@ -866,6 +849,27 @@ msgstr "Финансовые годы"
 msgid "Years"
 msgstr "Годы"
 
+msgid "Bold text"
+msgstr ""
+
+msgid "Italic text"
+msgstr ""
+
+msgid "Link to a URL"
+msgstr ""
+
+msgid "Mention a user"
+msgstr ""
+
+msgid "Add emoji"
+msgstr ""
+
+msgid "Preview"
+msgstr "Предварительный просмотр"
+
+msgid "Back to write mode"
+msgstr ""
+
 msgid "Interpretations and details"
 msgstr ""
 
@@ -895,6 +899,18 @@ msgstr ""
 
 msgid "Retry"
 msgstr ""
+
+msgid "Too many results. Try refining the search."
+msgstr ""
+
+msgid "Search for a user"
+msgstr ""
+
+msgid "Searching for \"{{- searchText}}\""
+msgstr ""
+
+msgid "No results found"
+msgstr "Результаты не найдены"
 
 msgid "Series"
 msgstr "Ряды"
@@ -1155,10 +1171,13 @@ msgid "Radar"
 msgstr "Радиальная"
 
 msgid "Scatter"
-msgstr ""
+msgstr "Рассеивание"
 
 msgid "Single value"
 msgstr "Одиночное значение"
+
+msgid "Outlier table"
+msgstr ""
 
 msgid "All charts"
 msgstr ""

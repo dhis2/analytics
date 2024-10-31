@@ -5,13 +5,14 @@
 # Rica Zamora Duchateau, 2022
 # Charel van den Elsen, 2023
 # Enzo Nicolas Rossi <enzo@dhis2.org>, 2023
+# Philip Larsen Donnelly, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2023-07-06T08:30:33.216Z\n"
+"POT-Creation-Date: 2023-09-27T14:15:13.876Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Enzo Nicolas Rossi <enzo@dhis2.org>, 2023\n"
+"Last-Translator: Philip Larsen Donnelly, 2024\n"
 "Language-Team: Dutch (https://app.transifex.com/hisp-uio/teams/100509/nl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -204,7 +205,7 @@ msgid "No program indicators found for \"{{- searchTerm}}\""
 msgstr "Geen programma-indicatoren gevonden voor \"{{- searchTerm}}\""
 
 msgid "Nothing found for \"{{- searchTerm}}\""
-msgstr "Niets gevonden voor \"{{- zoekTerm}}\""
+msgstr "Niets gevonden voor \"{{- searchTerm}}\""
 
 msgid "Calculation"
 msgstr "Berekening"
@@ -216,7 +217,7 @@ msgid "All metrics"
 msgstr "Alle statistieken"
 
 msgid "Move to {{axisName}}"
-msgstr "Ga naar {{axisNaam}}"
+msgstr "Ga naar {{axisName}}"
 
 msgid "Add to {{axisName}}"
 msgstr "Voeg toe aan {{axisName}}"
@@ -387,6 +388,10 @@ msgstr "Interpretatie verbergen"
 
 msgid "Write an interpretation"
 msgstr "Schrijf een interpretatie"
+
+msgid ""
+"Other people viewing this interpretation in the future may see more data."
+msgstr ""
 
 msgid "Post interpretation"
 msgstr "Interpretatie posten"
