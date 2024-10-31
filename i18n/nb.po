@@ -3,13 +3,14 @@
 # Caroline Hesthagen Holen <caroline@devotta.no>, 2023
 # Jen Jones Arnesen <jennifer@dhis2.org>, 2023
 # Karoline Tufte Lien <karoline@dhis2.org>, 2023
+# Martin <martin@moid.se>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2023-09-27T14:15:13.876Z\n"
+"POT-Creation-Date: 2024-01-25T12:05:03.360Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Karoline Tufte Lien <karoline@dhis2.org>, 2023\n"
+"Last-Translator: Martin <martin@moid.se>, 2024\n"
 "Language-Team: Norwegian Bokmål (https://app.transifex.com/hisp-uio/teams/100509/nb/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -155,6 +156,9 @@ msgstr ""
 msgid "Data Type"
 msgstr "Datatype"
 
+msgid "Only {{dataType}} can be used in {{visType}}"
+msgstr ""
+
 msgid "All types"
 msgstr "Alle typer"
 
@@ -185,6 +189,9 @@ msgstr "Ingen hendelsesdataelementer funnet"
 msgid "No program indicators found"
 msgstr "Ingen programindikatorer funnet"
 
+msgid "No calculations found"
+msgstr ""
+
 msgid "No indicators found for \"{{- searchTerm}}\""
 msgstr "Ingen indikatorer funnet for \"{{- searchTerm}}\""
 
@@ -196,6 +203,9 @@ msgstr "Ingen hendelsesdataelementer funnet for \"{{- searchTerm}}\""
 
 msgid "No program indicators found for \"{{- searchTerm}}\""
 msgstr "Ingen programindikatorer funnet for \"{{- searchTerm}}\""
+
+msgid "No calculations found for \"{{- searchTerm}}\""
+msgstr ""
 
 msgid "Nothing found for \"{{- searchTerm}}\""
 msgstr "Ingenting funnet for \"{{- searchTerm}}\""
@@ -406,11 +416,14 @@ msgstr "Fjern like"
 msgid "Like"
 msgstr "Like"
 
-msgid "Share"
-msgstr "Del"
-
 msgid "See interpretation"
 msgstr ""
+
+msgid "Open in app"
+msgstr ""
+
+msgid "Share"
+msgstr "Del"
 
 msgid "Manage sharing"
 msgstr "Administrer deling"
@@ -646,14 +659,14 @@ msgstr "Velg år"
 msgid "Period"
 msgstr "Periode"
 
+msgid "Selected Periods"
+msgstr "Valgte perioder"
+
 msgid "Relative periods"
 msgstr "Relative perioder"
 
 msgid "Fixed periods"
 msgstr "Faste perioder"
-
-msgid "Selected Periods"
-msgstr "Valgte perioder"
 
 msgid "No periods selected"
 msgstr "Ingen perioder er valgt"
@@ -983,7 +996,7 @@ msgid "Event data item"
 msgstr "Hendelsesdatapunkt"
 
 msgid "No programs found"
-msgstr ""
+msgstr "Ingen programmer funnet"
 
 msgid "Loading programs"
 msgstr ""
@@ -1155,6 +1168,9 @@ msgstr " Spredning"
 
 msgid "Single value"
 msgstr "Enkeltverdi"
+
+msgid "Outlier table"
+msgstr ""
 
 msgid "All charts"
 msgstr "Alle diagrammer"

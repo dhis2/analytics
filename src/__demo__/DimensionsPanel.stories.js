@@ -94,6 +94,7 @@ storiesOf('DimensionsPanel', module).add('locked dimension', () => {
         <DimensionsPanel
             dimensions={[...fixedDimensions, ...dynamicDimensions]}
             onDimensionClick={onDimensionClick}
+            selectedIds={[DIMENSION_ID_DATA]}
             lockedDimension={(dimension) => dimension === DIMENSION_ID_DATA}
         />
     )

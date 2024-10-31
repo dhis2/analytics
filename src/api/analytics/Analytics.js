@@ -6,12 +6,15 @@ import AnalyticsEnrollments from './AnalyticsEnrollments.js'
 import AnalyticsEvents from './AnalyticsEvents.js'
 import AnalyticsRequest from './AnalyticsRequest.js'
 import AnalyticsResponse from './AnalyticsResponse.js'
+import AnalyticsTrackedEntities from './AnalyticsTrackedEntities.js'
 
 /**
  * @description
  * Analytics class used to request analytics data from Web API.
  *
  * @requires analytics.AnalyticsAggregate
+ * @requires analytics.AnalyticsTrackedEntities
+ * @requires analytics.AnalyticsEnrollments
  * @requires analytics.AnalyticsEvents
  * @requires analytics.AnalyticsRequest
  * @requires analytics.AnalyticsResponse
@@ -31,13 +34,22 @@ import AnalyticsResponse from './AnalyticsResponse.js'
 class Analytics {
     /**
      * @param {!module:analytics.AnalyticsAggregate} analyticsAggregate The AnalyticsAggregate instance
+     * @param {!module:analytics.AnalyticsTrackedEntities} analyticsTrackedEntities The AnalyticsTrackedEntities instance
      * @param {!module:analytics.AnalyticsEnrollments} analyticsEnrollments The AnalyticsEnrollments instance
      * @param {!module:analytics.AnalyticsEvents} analyticsEvents The AnalyticsEvents instance
      * @param {!module:analytics.AnalyticsRequest} analyticsRequest The AnalyticsRequest class
      * @param {!module:analytics.AnalyticsResponse} analyticsResponse The AnalyticsResponse class
      */
-    constructor({ aggregate, enrollments, events, request, response }) {
+    constructor({
+        aggregate,
+        trackedEntities,
+        enrollments,
+        events,
+        request,
+        response,
+    }) {
         this.aggregate = aggregate
+        this.trackedEntities = trackedEntities
         this.enrollments = enrollments
         this.events = events
         this.request = request
@@ -60,6 +72,7 @@ class Analytics {
         if (!Analytics.getAnalytics.analytics) {
             Analytics.getAnalytics.analytics = new Analytics({
                 aggregate: new AnalyticsAggregate(dataEngine),
+                trackedEntities: new AnalyticsTrackedEntities(dataEngine),
                 enrollments: new AnalyticsEnrollments(dataEngine),
                 events: new AnalyticsEvents(dataEngine),
                 request: AnalyticsRequest,

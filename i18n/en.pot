@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2023-09-27T14:15:13.876Z\n"
-"PO-Revision-Date: 2023-09-27T14:15:13.876Z\n"
+"POT-Creation-Date: 2024-10-11T12:49:26.846Z\n"
+"PO-Revision-Date: 2024-10-11T12:49:26.847Z\n"
 
 msgid "view only"
 msgstr "view only"
@@ -66,6 +66,12 @@ msgstr "About this line list"
 
 msgid "About this visualization"
 msgstr "About this visualization"
+
+msgid "About this event chart"
+msgstr "About this event chart"
+
+msgid "About this event report"
+msgstr "About this event report"
 
 msgid "This app could not retrieve required data."
 msgstr "This app could not retrieve required data."
@@ -150,6 +156,9 @@ msgstr "Math operators"
 msgid "Data Type"
 msgstr "Data Type"
 
+msgid "Only {{dataType}} can be used in {{visType}}"
+msgstr "Only {{dataType}} can be used in {{visType}}"
+
 msgid "All types"
 msgstr "All types"
 
@@ -180,6 +189,9 @@ msgstr "No event data items found"
 msgid "No program indicators found"
 msgstr "No program indicators found"
 
+msgid "No calculations found"
+msgstr "No calculations found"
+
 msgid "No indicators found for \"{{- searchTerm}}\""
 msgstr "No indicators found for \"{{- searchTerm}}\""
 
@@ -191,6 +203,9 @@ msgstr "No event data items found for \"{{- searchTerm}}\""
 
 msgid "No program indicators found for \"{{- searchTerm}}\""
 msgstr "No program indicators found for \"{{- searchTerm}}\""
+
+msgid "No calculations found for \"{{- searchTerm}}\""
+msgstr "No calculations found for \"{{- searchTerm}}\""
 
 msgid "Nothing found for \"{{- searchTerm}}\""
 msgstr "Nothing found for \"{{- searchTerm}}\""
@@ -400,11 +415,14 @@ msgstr "Unlike"
 msgid "Like"
 msgstr "Like"
 
-msgid "Share"
-msgstr "Share"
-
 msgid "See interpretation"
 msgstr "See interpretation"
+
+msgid "Open in app"
+msgstr "Open in app"
+
+msgid "Share"
+msgstr "Share"
 
 msgid "Manage sharing"
 msgstr "Manage sharing"
@@ -414,39 +432,6 @@ msgstr "Could not update interpretation"
 
 msgid "Enter interpretation text"
 msgstr "Enter interpretation text"
-
-msgid "Bold text"
-msgstr "Bold text"
-
-msgid "Italic text"
-msgstr "Italic text"
-
-msgid "Link to a URL"
-msgstr "Link to a URL"
-
-msgid "Mention a user"
-msgstr "Mention a user"
-
-msgid "Add emoji"
-msgstr "Add emoji"
-
-msgid "Preview"
-msgstr "Preview"
-
-msgid "Back to write mode"
-msgstr "Back to write mode"
-
-msgid "Too many results. Try refining the search."
-msgstr "Too many results. Try refining the search."
-
-msgid "Search for a user"
-msgstr "Search for a user"
-
-msgid "Searching for \"{{- searchText}}\""
-msgstr "Searching for \"{{- searchText}}\""
-
-msgid "No results found"
-msgstr "No results found"
 
 msgid "Not available offline"
 msgstr "Not available offline"
@@ -654,14 +639,14 @@ msgstr "Select year"
 msgid "Period"
 msgstr "Period"
 
+msgid "Selected Periods"
+msgstr "Selected Periods"
+
 msgid "Relative periods"
 msgstr "Relative periods"
 
 msgid "Fixed periods"
 msgstr "Fixed periods"
-
-msgid "Selected Periods"
-msgstr "Selected Periods"
 
 msgid "No periods selected"
 msgstr "No periods selected"
@@ -870,6 +855,30 @@ msgstr "Financial Years"
 msgid "Years"
 msgstr "Years"
 
+msgid "Value: {{value}}"
+msgstr "Value: {{value}}"
+
+msgid "Bold text"
+msgstr "Bold text"
+
+msgid "Italic text"
+msgstr "Italic text"
+
+msgid "Link to a URL"
+msgstr "Link to a URL"
+
+msgid "Mention a user"
+msgstr "Mention a user"
+
+msgid "Add emoji"
+msgstr "Add emoji"
+
+msgid "Preview"
+msgstr "Preview"
+
+msgid "Back to write mode"
+msgstr "Back to write mode"
+
 msgid "Interpretations and details"
 msgstr "Interpretations and details"
 
@@ -899,6 +908,18 @@ msgstr "Could not load translations"
 
 msgid "Retry"
 msgstr "Retry"
+
+msgid "Too many results. Try refining the search."
+msgstr "Too many results. Try refining the search."
+
+msgid "Search for a user"
+msgstr "Search for a user"
+
+msgid "Searching for \"{{- searchText}}\""
+msgstr "Searching for \"{{- searchText}}\""
+
+msgid "No results found"
+msgstr "No results found"
 
 msgid "Series"
 msgstr "Series"
@@ -1107,6 +1128,9 @@ msgstr "{{thresholdFactor}} × Z-score low"
 msgid "{{thresholdFactor}} × Z-score high"
 msgstr "{{thresholdFactor}} × Z-score high"
 
+msgid "Not applicable"
+msgstr "Not applicable"
+
 msgid "Data"
 msgstr "Data"
 
@@ -1163,6 +1187,9 @@ msgstr "Scatter"
 
 msgid "Single value"
 msgstr "Single value"
+
+msgid "Outlier table"
+msgstr "Outlier table"
 
 msgid "All charts"
 msgstr "All charts"
