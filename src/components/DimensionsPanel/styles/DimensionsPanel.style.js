@@ -5,7 +5,7 @@ export const styles = {
         height: '100%',
         display: 'flex',
         flexDirection: 'column',
-        backgroundColor: colors.grey050,
+        backgroundColor: colors.white,
         padding: '8px',
         overflow: 'hidden',
     },

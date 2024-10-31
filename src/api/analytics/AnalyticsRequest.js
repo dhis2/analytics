@@ -4,6 +4,7 @@ import AnalyticsRequestBase from './AnalyticsRequestBase.js'
 import AnalyticsRequestDimensionsMixin from './AnalyticsRequestDimensionsMixin.js'
 import AnalyticsRequestFiltersMixin from './AnalyticsRequestFiltersMixin.js'
 import AnalyticsRequestPropertiesMixin from './AnalyticsRequestPropertiesMixin.js'
+import { formatDimension } from './utils.js'
 
 /**
  * @description
@@ -45,6 +46,8 @@ class AnalyticsRequest extends AnalyticsRequestDimensionsMixin(
     fromVisualization(visualization, passFilterAsDimension = false) {
         let request = this
 
+        const outputType = visualization.outputType
+
         // extract dimensions from visualization
         const columns = visualization.columns || []
         const rows = visualization.rows || []
@@ -56,23 +59,31 @@ class AnalyticsRequest extends AnalyticsRequestDimensionsMixin(
                 dimension += `-${d.legendSet.id}`
             }
 
-            if (d.programStage?.id) {
-                dimension = `${d.programStage.id}.${dimension}`
-            }
-
             if (d.filter) {
                 dimension += `:${d.filter}`
             }
 
+            const programStageId = d.programStage?.id
+
             if (d.repetition?.indexes?.length) {
                 d.repetition.indexes.forEach((index) => {
                     request = request.addDimension(
-                        dimension.replace(/\./, `[${index}].`)
+                        formatDimension({
+                            programId: d.program?.id,
+                            programStageId: `${programStageId}[${index}]`,
+                            dimension,
+                            outputType,
+                        })
                     )
                 })
             } else {
                 request = request.addDimension(
-                    dimension,
+                    formatDimension({
+                        programId: d.program?.id,
+                        programStageId,
+                        dimension,
+                        outputType,
+                    }),
                     d.items?.map((item) => item.id)
                 )
             }
@@ -91,23 +102,33 @@ class AnalyticsRequest extends AnalyticsRequestDimensionsMixin(
                     f.items?.map((item) => item.id)
                 )
             } else {
-                let filterString = f.programStage?.id
-                    ? `${f.programStage.id}.${f.dimension}`
-                    : f.dimension
+                let filterString = f.dimension
 
                 if (f.filter) {
                     filterString += `:${f.filter}`
                 }
 
+                const programStageId = f.programStage?.id
+
                 if (f.repetition?.indexes?.length) {
                     f.repetition.indexes.forEach((index) => {
                         request = request.addFilter(
-                            filterString.replace(/\./, `[${index}].`)
+                            formatDimension({
+                                programId: f.program?.id,
+                                programStageId: `${programStageId}[${index}]`,
+                                dimension: filterString,
+                                outputType,
+                            })
                         )
                     })
                 } else {
                     request = request.addFilter(
-                        filterString,
+                        formatDimension({
+                            programId: f.program?.id,
+                            programStageId,
+                            dimension: filterString,
+                            outputType,
+                        }),
                         f.items?.map((item) => item.id)
                     )
                 }

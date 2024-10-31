@@ -3,6 +3,8 @@ import i18n from '@dhis2/d2-i18n'
 export const AO_TYPE_VISUALIZATION = 'visualization'
 export const AO_TYPE_MAP = 'map'
 export const AO_TYPE_EVENT_VISUALIZATION = 'eventVisualization'
+export const AO_TYPE_EVENT_CHART = 'eventChart'
+export const AO_TYPE_EVENT_REPORT = 'eventReport'
 
 export const AOTypeMap = {
     [AO_TYPE_VISUALIZATION]: {
@@ -13,6 +15,12 @@ export const AOTypeMap = {
     },
     [AO_TYPE_EVENT_VISUALIZATION]: {
         apiEndpoint: 'eventVisualizations',
+    },
+    [AO_TYPE_EVENT_CHART]: {
+        apiEndpoint: 'eventCharts',
+    },
+    [AO_TYPE_EVENT_REPORT]: {
+        apiEndpoint: 'eventReports',
     },
 }
 
@@ -27,6 +35,12 @@ const texts = {
     },
     [AO_TYPE_VISUALIZATION]: {
         unitTitle: i18n.t('About this visualization'),
+    },
+    [AO_TYPE_EVENT_CHART]: {
+        unitTitle: i18n.t('About this event chart'),
+    },
+    [AO_TYPE_EVENT_REPORT]: {
+        unitTitle: i18n.t('About this event report'),
     },
     [NO_TYPE]: {
         unitTitle: i18n.t('About this visualization'),

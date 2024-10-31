@@ -19,6 +19,7 @@ const MessageEditorContainer = ({ children, currentUser, dataTest }) => (
             }
             .editor {
                 flex-grow: 1;
+                height: 100%;
             }
         `}</style>
     </div>
