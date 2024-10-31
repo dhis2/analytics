@@ -68,11 +68,37 @@ class AnalyticsAggregate extends AnalyticsBase {
      *  .withStartDate('2017-10-01')
      *  .withEndDate('2017-10-31');
      *
-     *  analytics.aggregate.getDebugSql(req);
+     *  analytics.aggregate.getDebugSql(req)
      *  .then(console.log);
      */
     getDebugSql(req) {
         return this.fetch(req.withPath('debug/sql'))
+    }
+
+    /**
+     * @param {!AnalyticsRequest} req Request object
+     *
+     * @returns {Promise} Promise that resolves with the SQL statement used to query the database.
+     *
+     * @example
+     * const req = new analytics.request()
+     *  .withParameters({
+     *    dx: 'fbfJHSPpUQD,cYeuwXTCPkU',
+     *    pe: 'THIS_YEAR',
+     *    ou: 'USER_ORGUNIT,USER_ORGUNIT_CHILDREN',
+     *    headers: 'dxname,pename,ouname,value,absdev,modifiedzscore,median,lowerbound,upperbound',
+     *    algorithm: 'MODIFIED_Z_SCORE',
+     *    maxResults: 100,
+     *    threshold: 3,
+          orderBy: 'value',
+          sortOrder: 'desc',
+     *  });
+     *
+     *  analytics.aggregate.getOutliersData(req)
+     *  .then(console.log);
+     */
+    getOutliersData(req) {
+        return this.fetch(req.withPath('outlierDetection'))
     }
 }
 

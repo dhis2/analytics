@@ -1,16 +1,16 @@
 # 
 # Translators:
 # Viktor Varland <viktor@dhis2.org>, 2021
-# Philip Larsen Donnelly, 2022
 # 晓东 林 <13981924470@126.com>, 2023
-# easylin <lin_xd@126.com>, 2023
+# Philip Larsen Donnelly, 2024
+# easylin <lin_xd@126.com>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2023-09-27T14:15:13.876Z\n"
+"POT-Creation-Date: 2024-10-11T12:49:26.846Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: easylin <lin_xd@126.com>, 2023\n"
+"Last-Translator: easylin <lin_xd@126.com>, 2024\n"
 "Language-Team: Chinese (https://app.transifex.com/hisp-uio/teams/100509/zh/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -50,7 +50,7 @@ msgstr "已创建 {{time}}"
 
 msgid "Viewed {{count}} times"
 msgid_plural "Viewed {{count}} times"
-msgstr[0] "查看了 {{count}} 次"
+msgstr[0] "查看了 {{count}} 条"
 
 msgid "Notifications"
 msgstr "通知"
@@ -75,6 +75,12 @@ msgstr "关于此行列表"
 
 msgid "About this visualization"
 msgstr "关于此可视化"
+
+msgid "About this event chart"
+msgstr "关于该事件图表"
+
+msgid "About this event report"
+msgstr "关于本事件报表"
 
 msgid "This app could not retrieve required data."
 msgstr "此应用无法检索所需数据。"
@@ -124,7 +130,7 @@ msgid "Yes, delete"
 msgstr "是的，删除"
 
 msgid "Totals only"
-msgstr "总计"
+msgstr "仅总数"
 
 msgid "Details only"
 msgstr "仅详细信息"
@@ -139,7 +145,7 @@ msgid "Search by data element name"
 msgstr "按数据元素名称搜索"
 
 msgid "No data elements found for \"{{- searchTerm}}\""
-msgstr "找不到“ {{-searchTerm}}”的数据元素"
+msgstr "找不到“ {{- searchTerm}}”的数据元素"
 
 msgid "No data elements found"
 msgstr "找不到数据元素"
@@ -154,6 +160,9 @@ msgstr "数学运算符"
 
 msgid "Data Type"
 msgstr "数据类型"
+
+msgid "Only {{dataType}} can be used in {{visType}}"
+msgstr "{{dataType}} 只能在 {{visType}} 中使用"
 
 msgid "All types"
 msgstr "所有类型"
@@ -185,20 +194,26 @@ msgstr "找不到事件数据项"
 msgid "No program indicators found"
 msgstr "找不到项目指标"
 
+msgid "No calculations found"
+msgstr "没有找到计算结果"
+
 msgid "No indicators found for \"{{- searchTerm}}\""
-msgstr "找不到“ {{-searchTerm}}”的指标"
+msgstr "找不到“ {{- searchTerm}}”的指标"
 
 msgid "No data sets found for \"{{- searchTerm}}\""
-msgstr "找不到“ {{-searchTerm}}”的数据集"
+msgstr "找不到“ {{- searchTerm}}”的数据集"
 
 msgid "No event data items found for \"{{- searchTerm}}\""
-msgstr "找不到“ {{-searchTerm}}”的事件数据项"
+msgstr "找不到“ {{- searchTerm}}”的事件数据项"
 
 msgid "No program indicators found for \"{{- searchTerm}}\""
-msgstr "找不到“ {{-searchTerm}}”的计划指标"
+msgstr "找不到“ {{- searchTerm}}”的计划指标"
+
+msgid "No calculations found for \"{{- searchTerm}}\""
+msgstr "找不到“{{- searchTerm}}”的计算"
 
 msgid "Nothing found for \"{{- searchTerm}}\""
-msgstr "找不到“ {{-searchTerm}}”"
+msgstr "找不到“ {{- searchTerm}}”"
 
 msgid "Calculation"
 msgstr "计算"
@@ -360,7 +375,7 @@ msgid "Update"
 msgstr "更新"
 
 msgid "Viewing interpretation: {{- visualisationName}}"
-msgstr "查看注释：{{-visualisationName}}"
+msgstr "查看注释：{{- visualisationName}}"
 
 msgid "Could not load interpretation"
 msgstr "无法加载解释"
@@ -402,11 +417,14 @@ msgstr "不喜欢"
 msgid "Like"
 msgstr "喜欢"
 
-msgid "Share"
-msgstr "分享"
-
 msgid "See interpretation"
 msgstr "见解释"
+
+msgid "Open in app"
+msgstr "在应用程序中打开"
+
+msgid "Share"
+msgstr "分享"
 
 msgid "Manage sharing"
 msgstr "管理共享"
@@ -416,39 +434,6 @@ msgstr "无法更新解释"
 
 msgid "Enter interpretation text"
 msgstr "输入解释文本"
-
-msgid "Bold text"
-msgstr "粗体文字"
-
-msgid "Italic text"
-msgstr "斜体文字"
-
-msgid "Link to a URL"
-msgstr "链接到 URL"
-
-msgid "Mention a user"
-msgstr "提及用户"
-
-msgid "Add emoji"
-msgstr "添加表情符号"
-
-msgid "Preview"
-msgstr "预览"
-
-msgid "Back to write mode"
-msgstr "返回写入模式"
-
-msgid "Too many results. Try refining the search."
-msgstr "结果太多。尝试优化搜索。"
-
-msgid "Search for a user"
-msgstr "搜索用户"
-
-msgid "Searching for \"{{- searchText}}\""
-msgstr "搜索“{{- searchText}}”"
-
-msgid "No results found"
-msgstr "没有结果"
 
 msgid "Not available offline"
 msgstr "离线不可用"
@@ -637,14 +622,14 @@ msgstr "选择年份"
 msgid "Period"
 msgstr "期间"
 
+msgid "Selected Periods"
+msgstr "选择的期间"
+
 msgid "Relative periods"
 msgstr "相对期间"
 
 msgid "Fixed periods"
 msgstr "固定期间"
-
-msgid "Selected Periods"
-msgstr "选择的期间"
 
 msgid "No periods selected"
 msgstr "未选择期间"
@@ -692,13 +677,13 @@ msgid "Financial year (Start November)"
 msgstr "财政年（11月始）"
 
 msgid "Financial year (Start October)"
-msgstr "财务十月"
+msgstr "财政年度（10 月开始）"
 
 msgid "Financial year (Start July)"
-msgstr "财务七月"
+msgstr "财政年度（7 月开始）"
 
 msgid "Financial year (Start April)"
-msgstr "财务四月"
+msgstr "财政年度（4 月开始）"
 
 msgid "Today"
 msgstr "今天"
@@ -734,16 +719,16 @@ msgid "Last week"
 msgstr "上周"
 
 msgid "Last 4 weeks"
-msgstr "最近四周"
+msgstr "最近 4 周"
 
 msgid "Last 12 weeks"
-msgstr "最近12周"
+msgstr "最近 12 周"
 
 msgid "Last 52 weeks"
-msgstr "Last 52 weeks"
+msgstr "最近52 周"
 
 msgid "Weeks this year"
-msgstr "Weeks this year"
+msgstr "今年的周"
 
 msgid "This bi-week"
 msgstr "本双周"
@@ -764,7 +749,7 @@ msgid "Last 3 months"
 msgstr "最近3个月"
 
 msgid "Last 6 months"
-msgstr "Last 6 months"
+msgstr "最近 6 个月"
 
 msgid "Last 12 months"
 msgstr "最近12月"
@@ -776,13 +761,13 @@ msgid "This bi-month"
 msgstr "本双月"
 
 msgid "Last bi-month"
-msgstr "Last bi-month"
+msgstr "上两个月"
 
 msgid "Last 6 bi-months"
-msgstr "Last 6 bi-months"
+msgstr "最近 6 个双月"
 
 msgid "Bi-months this year"
-msgstr "Bi-months this year"
+msgstr "今年的双月"
 
 msgid "This quarter"
 msgstr "本季度"
@@ -791,7 +776,7 @@ msgid "Last quarter"
 msgstr "最近一季"
 
 msgid "Last 4 quarters"
-msgstr "最近四个季度"
+msgstr "最近 4 个季度"
 
 msgid "Quarters this year"
 msgstr "今年的季度"
@@ -812,7 +797,7 @@ msgid "Last financial year"
 msgstr "上一财政年"
 
 msgid "Last 5 financial years"
-msgstr "最近五个财政年"
+msgstr "最近 5 个财政年度"
 
 msgid "This year"
 msgstr "今年"
@@ -839,19 +824,43 @@ msgid "Months"
 msgstr "月"
 
 msgid "Bi-months"
-msgstr "Bi-months"
+msgstr "双月"
 
 msgid "Quarters"
 msgstr "四分之一"
 
 msgid "Six-months"
-msgstr "Six-months"
+msgstr "六个月"
 
 msgid "Financial Years"
-msgstr "Financial Years"
+msgstr "财政年度"
 
 msgid "Years"
 msgstr "年"
+
+msgid "Value: {{value}}"
+msgstr "值{{value}}"
+
+msgid "Bold text"
+msgstr "粗体文字"
+
+msgid "Italic text"
+msgstr "斜体文字"
+
+msgid "Link to a URL"
+msgstr "链接到 URL"
+
+msgid "Mention a user"
+msgstr "提及用户"
+
+msgid "Add emoji"
+msgstr "添加表情符号"
+
+msgid "Preview"
+msgstr "预览"
+
+msgid "Back to write mode"
+msgstr "返回写入模式"
 
 msgid "Interpretations and details"
 msgstr "解释和细节"
@@ -882,6 +891,18 @@ msgstr "无法加载翻译"
 
 msgid "Retry"
 msgstr "重试"
+
+msgid "Too many results. Try refining the search."
+msgstr "结果太多。尝试优化搜索。"
+
+msgid "Search for a user"
+msgstr "搜索用户"
+
+msgid "Searching for \"{{- searchText}}\""
+msgstr "搜索“{{- searchText}}”"
+
+msgid "No results found"
+msgstr "没有结果"
 
 msgid "Series"
 msgstr "系列"
@@ -1090,6 +1111,9 @@ msgstr "{{thresholdFactor}}×Z分数低"
 msgid "{{thresholdFactor}} × Z-score high"
 msgstr "{{thresholdFactor}}×Z分数高"
 
+msgid "Not applicable"
+msgstr "不适用"
+
 msgid "Data"
 msgstr "数据"
 
@@ -1142,10 +1166,13 @@ msgid "Radar"
 msgstr "雷达图"
 
 msgid "Scatter"
-msgstr "分散"
+msgstr "散点图"
 
 msgid "Single value"
 msgstr "单个值"
+
+msgid "Outlier table"
+msgstr "异常值表"
 
 msgid "All charts"
 msgstr "所有图表"
