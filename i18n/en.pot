@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2024-01-25T12:05:03.360Z\n"
-"PO-Revision-Date: 2024-01-25T12:05:03.360Z\n"
+"POT-Creation-Date: 2024-10-11T12:49:26.846Z\n"
+"PO-Revision-Date: 2024-10-11T12:49:26.847Z\n"
 
 msgid "view only"
 msgstr "view only"
@@ -66,6 +66,12 @@ msgstr "About this line list"
 
 msgid "About this visualization"
 msgstr "About this visualization"
+
+msgid "About this event chart"
+msgstr "About this event chart"
+
+msgid "About this event report"
+msgstr "About this event report"
 
 msgid "This app could not retrieve required data."
 msgstr "This app could not retrieve required data."
@@ -849,6 +855,9 @@ msgstr "Financial Years"
 msgid "Years"
 msgstr "Years"
 
+msgid "Value: {{value}}"
+msgstr "Value: {{value}}"
+
 msgid "Bold text"
 msgstr "Bold text"
 
@@ -1118,6 +1127,9 @@ msgstr "{{thresholdFactor}} × Z-score low"
 
 msgid "{{thresholdFactor}} × Z-score high"
 msgstr "{{thresholdFactor}} × Z-score high"
+
+msgid "Not applicable"
+msgstr "Not applicable"
 
 msgid "Data"
 msgstr "Data"
