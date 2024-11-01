@@ -14,7 +14,7 @@ import {
 } from '@dhis2/ui'
 import cx from 'classnames'
 import PropTypes from 'prop-types'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useMemo } from 'react'
 import css from 'styled-jsx/css'
 import { InterpretationThread } from './InterpretationThread.js'
 import { useModalContentWidth } from './useModalContentWidth.js'
@@ -83,7 +83,7 @@ const InterpretationModal = ({
     })
     const interpretation = data?.interpretation
     const shouldRenderModalContent = !error && interpretation
-    const shouldCssHideModal = loading || isVisualizationLoading
+    const loadingInProgress = loading || isVisualizationLoading
     const handleClose = () => {
         if (isDirty) {
             onInterpretationUpdate()
@@ -97,6 +97,13 @@ const InterpretationModal = ({
         }
         refetch({ id: interpretationId })
     }
+
+    const onLikeToggled = ({ likedBy }) => {
+        setIsDirty(true)
+        interpretation.likedBy = likedBy
+        interpretation.likes = likedBy.length
+    }
+
     const onInterpretationDeleted = () => {
         setIsDirty(false)
         onInterpretationUpdate()
@@ -109,9 +116,15 @@ const InterpretationModal = ({
         }
     }, [interpretationId, refetch])
 
+    const filters = useMemo(() => {
+        return {
+            relativePeriodDate: interpretation?.created,
+        }
+    }, [interpretation?.created])
+
     return (
         <>
-            {shouldCssHideModal && (
+            {loadingInProgress && (
                 <Layer>
                     <CenteredContent>
                         <CircularLoader />
@@ -122,7 +135,7 @@ const InterpretationModal = ({
                 fluid
                 onClose={handleClose}
                 className={cx(modalCSS.className, {
-                    hidden: shouldCssHideModal,
+                    hidden: loadingInProgress,
                 })}
                 dataTest="interpretation-modal"
             >
@@ -156,10 +169,7 @@ const InterpretationModal = ({
                             <div className="row">
                                 <div className="visualisation-wrap">
                                     <VisualizationPlugin
-                                        filters={{
-                                            relativePeriodDate:
-                                                interpretation.created,
-                                        }}
+                                        filters={filters}
                                         visualization={visualization}
                                         onResponsesReceived={
                                             onResponsesReceived
@@ -168,6 +178,7 @@ const InterpretationModal = ({
                                             currentUser.settings
                                                 ?.keyAnalysisDisplayProperty
                                         }
+                                        isInModal={true}
                                     />
                                 </div>
                                 <div className="thread-wrap">
@@ -183,6 +194,7 @@ const InterpretationModal = ({
                                         downloadMenuComponent={
                                             downloadMenuComponent
                                         }
+                                        onLikeToggled={onLikeToggled}
                                     />
                                 </div>
                             </div>

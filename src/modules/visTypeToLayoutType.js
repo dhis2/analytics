@@ -5,6 +5,7 @@ import {
     LAYOUT_TYPE_PIVOT_TABLE,
     LAYOUT_TYPE_SCATTER,
     LAYOUT_TYPE_LINE_LIST,
+    LAYOUT_TYPE_OUTLIER_TABLE,
 } from './layoutTypes.js'
 import {
     VIS_TYPE_COLUMN,
@@ -23,6 +24,7 @@ import {
     VIS_TYPE_PIVOT_TABLE,
     VIS_TYPE_SCATTER,
     VIS_TYPE_LINE_LIST,
+    VIS_TYPE_OUTLIER_TABLE,
 } from './visTypes.js'
 
 const visTypeToLayoutType = {
@@ -42,6 +44,7 @@ const visTypeToLayoutType = {
     [VIS_TYPE_PIVOT_TABLE]: LAYOUT_TYPE_PIVOT_TABLE,
     [VIS_TYPE_SCATTER]: LAYOUT_TYPE_SCATTER,
     [VIS_TYPE_LINE_LIST]: LAYOUT_TYPE_LINE_LIST,
+    [VIS_TYPE_OUTLIER_TABLE]: LAYOUT_TYPE_OUTLIER_TABLE,
 }
 
 export const getLayoutTypeByVisType = (visType) => visTypeToLayoutType[visType]

@@ -3,6 +3,7 @@ import {
     DIMENSION_PROP_ITEMS,
     DIMENSION_PROP_FILTER,
     DIMENSION_PROP_LEGEND_SET,
+    DIMENSION_PROP_PROGRAM,
     DIMENSION_PROP_PROGRAM_STAGE,
     DIMENSION_PROP_REPETITION,
 } from './dimension.js'
@@ -16,6 +17,9 @@ export const dimensionCreate = (dimensionId, itemIds = [], args = {}) => {
         ...(args.filter && { [DIMENSION_PROP_FILTER.name]: args.filter }),
         ...(args.legendSet && {
             [DIMENSION_PROP_LEGEND_SET.name]: args.legendSet,
+        }),
+        ...(args.program && {
+            [DIMENSION_PROP_PROGRAM.name]: args.program,
         }),
         ...(args.programStage && {
             [DIMENSION_PROP_PROGRAM_STAGE.name]: args.programStage,
