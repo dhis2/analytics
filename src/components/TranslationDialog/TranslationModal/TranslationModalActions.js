@@ -1,4 +1,4 @@
-import { useOnlineStatus } from '@dhis2/app-runtime'
+import { useDhis2ConnectionStatus } from '@dhis2/app-runtime'
 import { Button, ButtonStrip, ModalActions } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
@@ -29,7 +29,7 @@ export const TranslationModalActions = ({
     saveInProgress,
     saveButtonDisabled,
 }) => {
-    const { offline } = useOnlineStatus()
+    const { isDisconnected: offline } = useDhis2ConnectionStatus()
 
     return (
         <ModalActions>

@@ -1,33 +1,21 @@
 import { useDataEngine } from '@dhis2/app-runtime'
-import {
-    Transfer,
-    InputField,
-    IconInfo16,
-    IconDimensionDataSet16,
-    IconDimensionIndicator16,
-    IconDimensionEventDataItem16,
-    IconDimensionProgramIndicator16,
-} from '@dhis2/ui'
+import { Transfer, InputField, IconInfo16, Button, IconAdd24 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 import { apiFetchOptions } from '../../api/dimensions.js'
-import DataElementIcon from '../../assets/DimensionItemIcons/DataElementIcon.js'
-import GenericIcon from '../../assets/DimensionItemIcons/GenericIcon.js'
 import i18n from '../../locales/index.js'
 import { DATA_SETS_CONSTANTS, REPORTING_RATE } from '../../modules/dataSets.js'
 import {
-    dataTypeMap as dataTypes,
     DIMENSION_TYPE_ALL,
     DIMENSION_TYPE_DATA_ELEMENT,
-    DIMENSION_TYPE_DATA_ELEMENT_OPERAND,
     DIMENSION_TYPE_DATA_SET,
     DIMENSION_TYPE_EVENT_DATA_ITEM,
     DIMENSION_TYPE_PROGRAM_INDICATOR,
     DIMENSION_TYPE_INDICATOR,
     TOTALS,
-    DIMENSION_TYPE_PROGRAM_DATA_ELEMENT,
-    DIMENSION_TYPE_PROGRAM_ATTRIBUTE,
+    DIMENSION_TYPE_EXPRESSION_DIMENSION_ITEM,
 } from '../../modules/dataTypes.js'
+import { getIcon, getTooltipText } from '../../modules/dimensionListItem.js'
 import {
     TRANSFER_HEIGHT,
     TRANSFER_OPTIONS_WIDTH,
@@ -36,6 +24,7 @@ import {
 import { useDebounce, useDidUpdateEffect } from '../../modules/utils.js'
 import styles from '../styles/DimensionSelector.style.js'
 import { TransferOption } from '../TransferOption.js'
+import CalculationModal from './Calculation/CalculationModal.js'
 import DataTypeSelector from './DataTypeSelector.js'
 import GroupSelector from './GroupSelector.js'
 
@@ -43,12 +32,14 @@ const LeftHeader = ({
     searchTerm,
     setSearchTerm,
     dataType,
+    dataTypes,
     setDataType,
     group,
     setGroup,
     subGroup,
     setSubGroup,
     displayNameProp,
+
     dataTest,
 }) => (
     <>
@@ -66,8 +57,12 @@ const LeftHeader = ({
                 currentDataType={dataType}
                 onChange={setDataType}
                 dataTest={`${dataTest}-data-types-select-field`}
+                dataTypes={dataTypes}
             />
-            {dataTypes[dataType] && (
+            {![
+                DIMENSION_TYPE_EXPRESSION_DIMENSION_ITEM,
+                DIMENSION_TYPE_ALL,
+            ].includes(dataType) && (
                 <GroupSelector
                     dataType={dataType}
                     displayNameProp={displayNameProp}
@@ -86,6 +81,7 @@ const LeftHeader = ({
 LeftHeader.propTypes = {
     dataTest: PropTypes.string,
     dataType: PropTypes.string,
+    dataTypes: PropTypes.array,
     displayNameProp: PropTypes.string,
     group: PropTypes.string,
     searchTerm: PropTypes.string,
@@ -102,23 +98,26 @@ const EmptySelection = () => (
         <style jsx>{styles}</style>
     </>
 )
-const RightHeader = ({ infoText }) => (
+
+const RightHeader = ({ infoBoxMessage }) => (
     <>
         <p className="rightHeader">{i18n.t('Selected Items')}</p>
-        {infoText && (
+        {infoBoxMessage && (
             <div className="info-container">
                 <div>
                     <IconInfo16 />
                 </div>
-                <span className="info-text">{infoText}</span>
+                <span className="info-text">{infoBoxMessage}</span>
             </div>
         )}
         <style jsx>{styles}</style>
     </>
 )
+
 RightHeader.propTypes = {
-    infoText: PropTypes.string,
+    infoBoxMessage: PropTypes.string,
 }
+
 const SourceEmptyPlaceholder = ({
     loading,
     searchTerm,
@@ -148,6 +147,9 @@ const SourceEmptyPlaceholder = ({
                 case DIMENSION_TYPE_PROGRAM_INDICATOR:
                     message = i18n.t('No program indicators found')
                     break
+                case DIMENSION_TYPE_EXPRESSION_DIMENSION_ITEM:
+                    message = i18n.t('No calculations found')
+                    break
                 default:
                     message = i18n.t('No data')
                     break
@@ -157,41 +159,43 @@ const SourceEmptyPlaceholder = ({
         switch (dataType) {
             case DIMENSION_TYPE_INDICATOR:
                 message = i18n.t('No indicators found for "{{- searchTerm}}"', {
-                    searchTerm: searchTerm,
+                    searchTerm,
                 })
                 break
             case DIMENSION_TYPE_DATA_ELEMENT:
                 message = i18n.t(
                     'No data elements found for "{{- searchTerm}}"',
                     {
-                        searchTerm: searchTerm,
+                        searchTerm,
                     }
                 )
                 break
             case DIMENSION_TYPE_DATA_SET:
                 message = i18n.t('No data sets found for "{{- searchTerm}}"', {
-                    searchTerm: searchTerm,
+                    searchTerm,
                 })
                 break
             case DIMENSION_TYPE_EVENT_DATA_ITEM:
                 message = i18n.t(
                     'No event data items found for "{{- searchTerm}}"',
-                    {
-                        searchTerm: searchTerm,
-                    }
+                    { searchTerm }
                 )
                 break
             case DIMENSION_TYPE_PROGRAM_INDICATOR:
                 message = i18n.t(
                     'No program indicators found for "{{- searchTerm}}"',
-                    {
-                        searchTerm: searchTerm,
-                    }
+                    { searchTerm }
+                )
+                break
+            case DIMENSION_TYPE_EXPRESSION_DIMENSION_ITEM:
+                message = i18n.t(
+                    'No calculations found for "{{- searchTerm}}"',
+                    { searchTerm }
                 )
                 break
             default:
                 message = i18n.t('Nothing found for "{{- searchTerm}}"', {
-                    searchTerm: searchTerm,
+                    searchTerm,
                 })
                 break
         }
@@ -224,24 +228,42 @@ const ItemSelector = ({
     rightFooter,
     displayNameProp,
     infoBoxMessage,
+    dataTypes,
     dataTest,
+    onEDISave,
 }) => {
     const [state, setState] = useState({
         searchTerm: '',
+        dataTypes,
         filter: {
-            dataType: DIMENSION_TYPE_ALL,
+            dataType:
+                dataTypes.length === 1 ? dataTypes[0].id : DIMENSION_TYPE_ALL,
+            group: null,
+            subGroup:
+                dataTypes.length === 1 &&
+                dataTypes[0].id === DIMENSION_TYPE_DATA_ELEMENT
+                    ? TOTALS
+                    : null,
         },
         options: [],
         loading: true,
         nextPage: 1,
+        supportsEDI: dataTypes
+            .map(({ id }) => id)
+            .includes(DIMENSION_TYPE_EXPRESSION_DIMENSION_ITEM),
     })
+    const [currentCalculation, setCurrentCalculation] = useState()
     const dataEngine = useDataEngine()
     const setSearchTerm = (searchTerm) =>
         setState((state) => ({ ...state, searchTerm }))
-    const setFilter = (filter) => setState((state) => ({ ...state, filter }))
-    const debouncedSearchTerm = useDebounce(state.searchTerm, 200)
+    const debouncedSearchTerm = useDebounce(state.searchTerm, 500)
+
     const fetchItems = async (page) => {
-        setState((state) => ({ ...state, loading: true }))
+        setState((state) => ({
+            ...state,
+            nextPage: page === 1 ? 1 : state.nextPage,
+            loading: true,
+        }))
         const result = await apiFetchOptions({
             dataEngine,
             nameProp: displayNameProp,
@@ -264,6 +286,7 @@ const ItemSelector = ({
                         value: `${item.id}.${metric.id}`,
                         disabled: item.disabled,
                         type: item.dimensionItemType,
+                        expression: item.expression,
                     })
                 } else {
                     DATA_SETS_CONSTANTS.forEach((metric) => {
@@ -272,6 +295,7 @@ const ItemSelector = ({
                             value: `${item.id}.${metric.id}`,
                             disabled: item.disabled,
                             type: item.dimensionItemType,
+                            expression: item.expression,
                         })
                     })
                 }
@@ -281,6 +305,7 @@ const ItemSelector = ({
                     value: item.id,
                     disabled: item.disabled,
                     type: item.dimensionItemType,
+                    expression: item.expression,
                 })
             }
         })
@@ -290,11 +315,11 @@ const ItemSelector = ({
             options: page > 1 ? [...state.options, ...newOptions] : newOptions,
             nextPage: result.nextPage,
         }))
-        /*  The following handles a very specific edge-case where the user can select all items from a 
-            page and then reopen the modal. Usually Transfer triggers the onEndReached when the end of 
-            the page is reached (scrolling down) or if too few items are on the left side (e.g. selecting 
-            49 items from page 1, leaving only 1 item on the left side). However, due to the way Transfer 
-            works, if 0 items are available, more items are fetched, but all items are already selected 
+        /*  The following handles a very specific edge-case where the user can select all items from a
+            page and then reopen the modal. Usually Transfer triggers the onEndReached when the end of
+            the page is reached (scrolling down) or if too few items are on the left side (e.g. selecting
+            49 items from page 1, leaving only 1 item on the left side). However, due to the way Transfer
+            works, if 0 items are available, more items are fetched, but all items are already selected
             (leaving 0 items on the left side still), the onReachedEnd won't trigger. Hence the code below:
             IF there is a next page AND some options were just fetched AND you have the same or more
             selected items than fetched items AND all fetched items are already selected -> fetch more!
@@ -314,13 +339,9 @@ const ItemSelector = ({
     }
 
     useDidUpdateEffect(() => {
-        setState((state) => ({
-            ...state,
-            loading: true,
-            nextPage: 1,
-        }))
         fetchItems(1)
     }, [debouncedSearchTerm, state.filter])
+
     const onChange = (newSelected) => {
         onSelect(
             newSelected.map((value) => {
@@ -331,6 +352,9 @@ const ItemSelector = ({
                     value,
                     label: matchingItem.label,
                     type: matchingItem.type,
+                    ...(matchingItem.expression
+                        ? { expression: matchingItem.expression }
+                        : {}),
                 }
             })
         )
@@ -348,116 +372,173 @@ const ItemSelector = ({
         [...state.options, ...selectedItems].find(
             (item) => item.value === value
         )?.type
-    const getTooltipText = (itemType) => {
-        switch (itemType) {
-            case DIMENSION_TYPE_DATA_ELEMENT_OPERAND:
-                return dataTypes[DIMENSION_TYPE_DATA_ELEMENT].getItemName()
-            case REPORTING_RATE:
-                return dataTypes[DIMENSION_TYPE_DATA_SET].getItemName()
-            case DIMENSION_TYPE_PROGRAM_DATA_ELEMENT:
-            case DIMENSION_TYPE_PROGRAM_ATTRIBUTE:
-                return dataTypes[DIMENSION_TYPE_EVENT_DATA_ITEM].getItemName()
-            default:
-                return dataTypes[itemType]?.getItemName()
+
+    const onSaveCalculation = async ({ id, name, expression, isNew }) => {
+        onEDISave({
+            id,
+            name,
+            expression,
+            type: DIMENSION_TYPE_EXPRESSION_DIMENSION_ITEM,
+        })
+
+        // close the modal
+        setCurrentCalculation()
+
+        // reload the list of options
+        fetchItems(1)
+
+        if (isNew) {
+            // select the new calculation
+            onSelect([
+                ...selectedItems,
+                {
+                    value: id,
+                    label: name,
+                    expression,
+                    type: DIMENSION_TYPE_EXPRESSION_DIMENSION_ITEM,
+                },
+            ])
         }
     }
-    const getIcon = (itemType) => {
-        switch (itemType) {
-            case DIMENSION_TYPE_INDICATOR:
-                return <IconDimensionIndicator16 />
-            case DIMENSION_TYPE_DATA_ELEMENT_OPERAND:
-            case DIMENSION_TYPE_DATA_ELEMENT:
-                return DataElementIcon
-            case REPORTING_RATE:
-                return <IconDimensionDataSet16 />
-            case DIMENSION_TYPE_EVENT_DATA_ITEM:
-            case DIMENSION_TYPE_PROGRAM_DATA_ELEMENT:
-            case DIMENSION_TYPE_PROGRAM_ATTRIBUTE:
-                return <IconDimensionEventDataItem16 />
-            case DIMENSION_TYPE_PROGRAM_INDICATOR:
-                return <IconDimensionProgramIndicator16 />
-            default:
-                return GenericIcon
-        }
+
+    const onDeleteCalculation = ({ id }) => {
+        // close the modal
+        setCurrentCalculation()
+
+        // reload the list of options
+        fetchItems(1)
+
+        // unselect the deleted calculation
+        onSelect([...selectedItems.filter((item) => item.value !== id)])
     }
+
+    const onSetGroup = (group) =>
+        setState((state) => ({
+            ...state,
+            nextPage: 1,
+            filter: {
+                ...state.filter,
+                group,
+            },
+        }))
+
+    const onSetSubGroup = (subGroup) =>
+        setState((state) => ({
+            ...state,
+            nextPage: 1,
+            filter: {
+                ...state.filter,
+                subGroup,
+            },
+        }))
+
+    const onSetDataType = (dataType) =>
+        setState((state) => ({
+            ...state,
+            nextPage: 1,
+            filter: {
+                ...state.filter,
+                dataType,
+                group: null,
+                subGroup:
+                    dataType === DIMENSION_TYPE_DATA_ELEMENT ? TOTALS : null,
+            },
+        }))
+
     return (
-        <Transfer
-            onChange={({ selected }) => onChange(selected)}
-            selected={selectedItems.map((item) => item.value)}
-            options={[...state.options, ...selectedItems]}
-            loading={state.loading}
-            loadingPicked={state.loading}
-            sourceEmptyPlaceholder={
-                <SourceEmptyPlaceholder
-                    loading={state.loading}
-                    searchTerm={debouncedSearchTerm}
-                    options={state.options}
-                    noItemsMessage={noItemsMessage}
-                    dataType={state.filter.dataType}
-                    dataTest={`${dataTest}-empty-source`}
-                />
-            }
-            onEndReached={onEndReached}
-            leftHeader={
-                <LeftHeader
-                    dataType={state.filter.dataType}
-                    setDataType={(dataType) => {
-                        setFilter({
-                            ...state.filter,
-                            dataType,
-                            group: null,
-                            subGroup:
-                                dataType === DIMENSION_TYPE_DATA_ELEMENT
-                                    ? TOTALS
-                                    : null,
-                        })
-                    }}
-                    group={state.filter.group}
-                    setGroup={(group) => {
-                        setFilter({ ...state.filter, group })
-                    }}
-                    subGroup={state.filter.subGroup}
-                    setSubGroup={(subGroup) => {
-                        setFilter({ ...state.filter, subGroup })
-                    }}
-                    searchTerm={state.searchTerm}
-                    setSearchTerm={setSearchTerm}
+        <>
+            <Transfer
+                onChange={({ selected }) => onChange(selected)}
+                selected={selectedItems.map((item) => item.value)}
+                options={[...state.options, ...selectedItems]}
+                loading={state.loading}
+                loadingPicked={state.loading}
+                sourceEmptyPlaceholder={
+                    <SourceEmptyPlaceholder
+                        loading={state.loading}
+                        searchTerm={debouncedSearchTerm}
+                        options={state.options}
+                        noItemsMessage={noItemsMessage}
+                        dataType={state.filter.dataType}
+                        dataTest={`${dataTest}-empty-source`}
+                    />
+                }
+                onEndReached={onEndReached}
+                leftHeader={
+                    <LeftHeader
+                        dataTypes={state.dataTypes}
+                        dataType={state.filter.dataType}
+                        setDataType={onSetDataType}
+                        group={state.filter.group}
+                        setGroup={onSetGroup}
+                        subGroup={state.filter.subGroup}
+                        setSubGroup={onSetSubGroup}
+                        searchTerm={state.searchTerm}
+                        setSearchTerm={setSearchTerm}
+                        displayNameProp={displayNameProp}
+                        dataTest={`${dataTest}-left-header`}
+                    />
+                }
+                leftFooter={
+                    state.supportsEDI ? (
+                        <div className="calculation-button">
+                            <Button
+                                icon={<IconAdd24 />}
+                                onClick={() => setCurrentCalculation({})}
+                                small
+                            >
+                                {i18n.t('Calculation')}
+                            </Button>
+                        </div>
+                    ) : undefined
+                }
+                enableOrderChange
+                height={TRANSFER_HEIGHT}
+                optionsWidth={TRANSFER_OPTIONS_WIDTH}
+                selectedWidth={TRANSFER_SELECTED_WIDTH}
+                selectedEmptyComponent={<EmptySelection />}
+                rightHeader={<RightHeader infoBoxMessage={infoBoxMessage} />}
+                rightFooter={rightFooter}
+                renderOption={(props) => (
+                    <TransferOption
+                        /* eslint-disable react/prop-types */
+                        {...props}
+                        active={isActive(props.value)}
+                        icon={getIcon(getItemType(props.value))}
+                        tooltipText={getTooltipText({
+                            type: getItemType(props.value),
+                            expression: props.expression,
+                        })}
+                        dataTest={`${dataTest}-transfer-option`}
+                        onEditClick={
+                            getItemType(props.value) ===
+                                DIMENSION_TYPE_EXPRESSION_DIMENSION_ITEM &&
+                            !(props.access?.write === false) &&
+                            state.supportsEDI
+                                ? () =>
+                                      setCurrentCalculation({
+                                          id: props.value,
+                                          name: props.label,
+                                          expression: props.expression,
+                                      })
+                                : undefined
+                        }
+                        /* eslint-enable react/prop-types */
+                    />
+                )}
+                dataTest={`${dataTest}-transfer`}
+            />
+            {currentCalculation && state.supportsEDI && (
+                <CalculationModal
+                    calculation={currentCalculation}
+                    onSave={onSaveCalculation}
+                    onClose={() => setCurrentCalculation()}
+                    onDelete={onDeleteCalculation}
                     displayNameProp={displayNameProp}
-                    dataTest={`${dataTest}-left-header`}
-                />
-            }
-            enableOrderChange
-            height={TRANSFER_HEIGHT}
-            optionsWidth={TRANSFER_OPTIONS_WIDTH}
-            selectedWidth={TRANSFER_SELECTED_WIDTH}
-            selectedEmptyComponent={<EmptySelection />}
-            rightHeader={<RightHeader infoText={infoBoxMessage} />}
-            rightFooter={rightFooter}
-            renderOption={(props) => (
-                <TransferOption
-                    {...props}
-                    active={isActive(
-                        props.value /* eslint-disable-line react/prop-types */
-                    )}
-                    icon={getIcon(
-                        getItemType(
-                            props.value /* eslint-disable-line react/prop-types */
-                        )
-                    )}
-                    tooltipText={
-                        state.filter.dataType === DIMENSION_TYPE_ALL
-                            ? getTooltipText(
-                                  getItemType(
-                                      props.value /* eslint-disable-line react/prop-types */
-                                  )
-                              )
-                            : undefined
-                    }
-                    dataTest={`${dataTest}-transfer-option`}
                 />
             )}
-            dataTest={`${dataTest}-transfer`}
-        />
+            <style jsx>{styles}</style>
+        </>
     )
 }
 
@@ -465,6 +546,7 @@ ItemSelector.propTypes = {
     displayNameProp: PropTypes.string.isRequired,
     onSelect: PropTypes.func.isRequired,
     dataTest: PropTypes.string,
+    dataTypes: PropTypes.array,
     infoBoxMessage: PropTypes.string,
     noItemsMessage: PropTypes.string,
     rightFooter: PropTypes.node,
@@ -474,8 +556,10 @@ ItemSelector.propTypes = {
             value: PropTypes.string.isRequired,
             isActive: PropTypes.bool,
             type: PropTypes.string,
+            expression: PropTypes.string,
         })
     ),
+    onEDISave: PropTypes.func,
 }
 
 ItemSelector.defaultProps = {

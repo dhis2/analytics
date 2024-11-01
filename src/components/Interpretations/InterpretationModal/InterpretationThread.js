@@ -1,9 +1,10 @@
+import { useTimeZoneConversion } from '@dhis2/app-runtime'
 import { IconClock16, colors } from '@dhis2/ui'
 import cx from 'classnames'
 import moment from 'moment'
 import PropTypes from 'prop-types'
 import React, { useRef, useEffect } from 'react'
-import { Interpretation } from '../common/index.js'
+import { Interpretation, getInterpretationAccess } from '../common/index.js'
 import { Comment } from './Comment.js'
 import { CommentAddForm } from './CommentAddForm.js'
 
@@ -12,10 +13,13 @@ const InterpretationThread = ({
     fetching,
     interpretation,
     onInterpretationDeleted,
+    onLikeToggled,
     initialFocus,
     onThreadUpdated,
     downloadMenuComponent: DownloadMenu,
+    dashboardRedirectUrl,
 }) => {
+    const { fromServerDate } = useTimeZoneConversion()
     const focusRef = useRef()
 
     useEffect(() => {
@@ -26,54 +30,82 @@ const InterpretationThread = ({
         }
     }, [initialFocus])
 
+    const interpretationAccess = getInterpretationAccess(
+        interpretation,
+        currentUser
+    )
+
     return (
-        <div className={cx('container', { fetching })}>
-            <div className={'scrollbox'}>
-                <div className={'title'}>
-                    <IconClock16 color={colors.grey700} />
-                    {moment(interpretation.created).format('LLL')}
-                </div>
-                {DownloadMenu && (
-                    <DownloadMenu relativePeriodDate={interpretation.created} />
-                )}
-                <div className={'thread'}>
-                    <Interpretation
-                        currentUser={currentUser}
-                        interpretation={interpretation}
-                        onReplyIconClick={() => focusRef.current?.focus()}
-                        onUpdated={() => onThreadUpdated(true)}
-                        onDeleted={onInterpretationDeleted}
-                    />
-                    <div className={'comments'}>
-                        {interpretation.comments.map((comment) => (
-                            <Comment
-                                key={comment.id}
-                                comment={comment}
-                                currentUser={currentUser}
-                                interpretationId={interpretation.id}
-                                onThreadUpdated={onThreadUpdated}
-                            />
-                        ))}
-                    </div>
-                    <CommentAddForm
-                        currentUser={currentUser}
-                        interpretationId={interpretation.id}
-                        onSave={() => onThreadUpdated(true)}
-                        focusRef={focusRef}
-                    />
+        <div
+            className={cx('container', {
+                fetching,
+                dashboard: !!dashboardRedirectUrl,
+            })}
+        >
+            <div className={'title'}>
+                <IconClock16 color={colors.grey700} />
+                {moment(fromServerDate(interpretation.created)).format('LLL')}
+            </div>
+            {DownloadMenu && (
+                <DownloadMenu relativePeriodDate={interpretation.created} />
+            )}
+            <div className={'thread'}>
+                <Interpretation
+                    currentUser={currentUser}
+                    interpretation={interpretation}
+                    onLikeToggled={onLikeToggled}
+                    onReplyIconClick={
+                        interpretationAccess.comment
+                            ? () => focusRef.current?.focus()
+                            : null
+                    }
+                    onUpdated={() => onThreadUpdated(true)}
+                    onDeleted={onInterpretationDeleted}
+                    dashboardRedirectUrl={dashboardRedirectUrl}
+                    isInThread={true}
+                />
+                <div className={'comments'}>
+                    {interpretation.comments.map((comment) => (
+                        <Comment
+                            key={comment.id}
+                            comment={comment}
+                            currentUser={currentUser}
+                            interpretationId={interpretation.id}
+                            onThreadUpdated={onThreadUpdated}
+                            canComment={interpretationAccess.comment}
+                        />
+                    ))}
                 </div>
             </div>
+            {interpretationAccess.comment && (
+                <CommentAddForm
+                    currentUser={currentUser}
+                    interpretationId={interpretation.id}
+                    onSave={() => onThreadUpdated(true)}
+                    focusRef={focusRef}
+                />
+            )}
             <style jsx>{`
                 .thread {
                     margin-top: var(--spacers-dp16);
+                    overflow-y: auto;
+                    scroll-behavior: smooth;
+                }
+
+                .dashboard .thread {
+                    overflow-y: hidden;
                 }
 
                 .container {
                     position: relative;
-                    overflow: hidden;
+                    overflow: auto;
                     max-height: calc(100vh - 285px);
                     display: flex;
                     flex-direction: column;
+                }
+
+                .container.dashboard {
+                    max-height: none;
                 }
 
                 .container.fetching::before {
@@ -98,11 +130,6 @@ const InterpretationThread = ({
                     border-radius: 50%;
                     animation: 1s linear 0s infinite normal none running
                         rotation;
-                }
-
-                .scrollbox {
-                    overflow-y: auto;
-                    scroll-behavior: smooth;
                 }
 
                 .title {
@@ -141,6 +168,8 @@ InterpretationThread.propTypes = {
     fetching: PropTypes.bool.isRequired,
     interpretation: PropTypes.object.isRequired,
     onInterpretationDeleted: PropTypes.func.isRequired,
+    onLikeToggled: PropTypes.func.isRequired,
+    dashboardRedirectUrl: PropTypes.string,
     downloadMenuComponent: PropTypes.oneOfType([
         PropTypes.object,
         PropTypes.func,

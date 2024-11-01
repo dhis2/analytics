@@ -1,17 +1,19 @@
 # 
 # Translators:
-# phil_dhis2, 2022
 # Viktor Varland <viktor@dhis2.org>, 2022
 # Somkhit Bouavong <bouavongk@gmail.com>, 2022
-# Saysamone Sibounma, 2022
+# Philip Larsen Donnelly, 2023
+# Phouthasinh PHEUAYSITHIPHONE, 2023
+# Namwan Chanthavisouk, 2024
+# Saysamone Sibounma, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-09-22T13:25:32.620Z\n"
+"POT-Creation-Date: 2024-10-11T12:49:26.846Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Saysamone Sibounma, 2022\n"
-"Language-Team: Lao (https://www.transifex.com/hisp-uio/teams/100509/lo/)\n"
+"Last-Translator: Saysamone Sibounma, 2024\n"
+"Language-Team: Lao (https://app.transifex.com/hisp-uio/teams/100509/lo/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -19,80 +21,155 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 msgid "view only"
-msgstr ""
+msgstr "ເບິ່ງຢ່າງດຽວ"
 
 msgid "view and edit"
-msgstr ""
+msgstr "ເບິ່ງ ແລະ ແກ້ໄຂ"
 
 msgid "all users ({{accessLevel}})"
-msgstr ""
+msgstr "ຜູ້ໃຊ້ທັງໝົດ ( {{accessLevel}} )"
 
 msgid "{{userOrGroup}} ({{accessLevel}})"
-msgstr ""
+msgstr " {{userOrGroup}} ({{accessLevel}} )"
 
 msgid "Shared with {{commaSeparatedListOfUsersAndGroups}}"
-msgstr ""
+msgstr "ແບ່ງປັນໃຫ້ກັບ {{commaSeparatedListOfUsersAndGroups}}"
 
 msgid "Not shared with any users or groups"
-msgstr ""
+msgstr "ບໍ່ໃຫ້ແບ່ງປັນກັບຜູ້ໃຊ້ ແລະ ກຸ່ມອື່ນ"
 
 msgid "No description"
 msgstr "ບໍ່ມີລາຍລະອຽດ"
 
 msgid "Last updated {{time}}"
-msgstr ""
+msgstr "ແກ້ໄຂລ່າສຸດ {{time}}"
 
 msgid "Created {{time}} by {{author}}"
-msgstr ""
+msgstr "ສ້າງ {{time}} ໂດຍ {{author}}"
 
 msgid "Created {{time}}"
-msgstr ""
+msgstr "ສ້າງ {{time}}"
 
 msgid "Viewed {{count}} times"
 msgid_plural "Viewed {{count}} times"
-msgstr[0] ""
+msgstr[0] "ກວດເບິ່ງ {{count}} ຄັ້ງ"
 
 msgid "Notifications"
-msgstr ""
+msgstr "ການແຈ້ງເຕືອນ"
 
 msgid "You're subscribed and getting updates about new interpretations."
-msgstr ""
+msgstr "ທ່ານກົດປູ່ມສະໜັກ ເພື່ອຈະໄດ້ອັບເດດ ແລະ ຮັບຂໍ້ມູນໃໝ່"
 
 msgid "Unsubscribe"
-msgstr ""
+msgstr "ຍົກເລີກການສະໝັກ"
 
 msgid "Subscribe to get updates about new interpretations."
-msgstr ""
+msgstr "ສະໝັກເພື່ອທີ່ຈະຮັບຮູ້ຂໍ້ມູນໃໝ່"
 
 msgid "Subscribe"
-msgstr ""
+msgstr "ສະໝັກ"
 
 msgid "About this map"
-msgstr ""
+msgstr "ກ່ຽວກັບແຜນທີ່"
 
 msgid "About this line list"
-msgstr ""
+msgstr "ກ່ຽວກັບບັນຊີລາຍຊື່"
 
 msgid "About this visualization"
-msgstr ""
+msgstr "ກ່ຽວກັບການສ້າງພາບຂໍ້ມູນ"
+
+msgid "About this event chart"
+msgstr "ກ່ຽວກັບເຫດການແຜນຜັງ"
+
+msgid "About this event report"
+msgstr "ກ່ຽວກັບບົດລາຍງານເຫດການຕ່າງໆ"
 
 msgid "This app could not retrieve required data."
-msgstr ""
+msgstr "ແອັບນີ້ບໍ່ສາມາດດຶງຂໍ້ມູນທີ່ຕ້ອງການໄດ້"
 
 msgid "Network error"
-msgstr ""
+msgstr "ຂໍ້ຜິດພາດທາງເຄື່ອຂ່າຍ"
 
-msgid "Data Type"
-msgstr ""
+msgid "Data / Edit calculation"
+msgstr "ຂໍ້ມູນ / ແກ້ໄຂການຄິດໄລ່"
 
-msgid "All types"
+msgid "Data / New calculation"
+msgstr "ຂໍ້ມູນ / ຄິດໄລ່ໃໝ່"
+
+msgid "Remove item"
+msgstr "ເອົາລາຍການອອກ"
+
+msgid "Check formula"
+msgstr "ກວດເບິ່ງສູດ"
+
+msgid "Calculation name"
+msgstr "ຊື່ການຄິດໄລ່"
+
+msgid "Shown in table headers and chart axes/legends"
+msgstr "ສະ​ແດງ​​ຢູ່​ເທິງຕາ​ຕະ​ລາງ​ ແລະ​ ແກນ​ແຜນ​ວາດ"
+
+msgid "Delete calculation"
+msgstr "ລົບການຄິດໄລ່"
+
+msgid "Cancel"
+msgstr "ຍົກເລີກ"
+
+msgid "The calculation can only be saved with a valid formula"
+msgstr "ການຄິດໄລ່ແມ່ນຖືກບັນທຶກດ້ວຍສູດທີ່ຖືກຕ້ອງເທົ່ານັ້ນ"
+
+msgid "Add a name to save this calculation"
+msgstr "ເພີ່ມຊື່ເພື່ບັນທຶກການຄິດໄລ່"
+
+msgid "Save calculation"
+msgstr "ບັນທຶກການຄິດໄລ່"
+
+msgid ""
+"Are you sure you want to delete this calculation? It may be used by other "
+"visualizations."
 msgstr ""
+"ເຈົ້າແນ່ໃຈບໍ່ສິລືບຂໍ້ມູນການຄິດໄລ່ນີ້? "
+"ຂໍ້ມູນດັ້ງກ່າວອາດຈະຖືກນໍາໃຊ້ໃນການສ້າງພາບຂໍ້ມູນໃໝ່ກໍ່ເປັນໄດ້"
+
+msgid "Yes, delete"
+msgstr "ຢືນຢັນ, ລົບ"
 
 msgid "Totals only"
-msgstr ""
+msgstr "ທັງໝົດເທົ່ານັ້ນ"
 
 msgid "Details only"
-msgstr ""
+msgstr "ລາຍລະອຽດເທົ່ານັ້ນ"
+
+msgid "Loading"
+msgstr "ກໍາລັງໂຫຼດ"
+
+msgid "Data elements"
+msgstr "ອົງປະກອບຂໍ້ມູນ"
+
+msgid "Search by data element name"
+msgstr "ຄົ້ນຫາໂດຍຊື່ອົງປະກອບຂໍ້ມູນ"
+
+msgid "No data elements found for \"{{- searchTerm}}\""
+msgstr "ບໍ່ພົບອົງປະກອບຂໍ້ມູນຂອງ \"{{- searchTerm}}\""
+
+msgid "No data elements found"
+msgstr "ບໍ່ພົບອົງປະກອບຂໍ໊ມູນ"
+
+msgid ""
+"Drag items here, or double click in the list, to start building a "
+"calculation formula"
+msgstr "ລາກລາຍການມາບ່ອນນີ້, ຫຼືຄລິກສອງເທື່ອໃນລາຍການເພື່ອສ້າງສູດການຄິດໄລ່"
+
+msgid "Math operators"
+msgstr "ຕົວປະຕິບັດການຄະນິດສາດ"
+
+msgid "Data Type"
+msgstr "ຊະນິດຂໍ້ມູນ"
+
+msgid "Only {{dataType}} can be used in {{visType}}"
+msgstr "ມີພຽງ  {{dataType}} ທີສາມາດໃຊ້ໃນ {{visType}}"
+
+msgid "All types"
+msgstr "ທຸກຊະນິດ"
 
 msgid "Disaggregation"
 msgstr "Disaggregation"
@@ -100,119 +177,118 @@ msgstr "Disaggregation"
 msgid "No data"
 msgstr "ບໍ່ມີຂໍ້ມູນ"
 
-msgid "Loading"
-msgstr "ກໍາລັງໂຫຼດ"
-
 msgid "Search by data item name"
-msgstr ""
+msgstr "ຄົ້ນຫາໂດຍຊື່ລາຍການຂໍ້ມູນ"
 
 msgid "No items selected"
-msgstr ""
+msgstr "ບໍ່ມີລາຍການທີ່ຖືກເລືອກ"
 
 msgid "Selected Items"
-msgstr ""
+msgstr "ລາຍການທີ່ເລືອກ"
 
 msgid "No indicators found"
-msgstr ""
-
-msgid "No data elements found"
-msgstr ""
+msgstr "ບໍ່ພົບຕົວຊີ້ວັດ"
 
 msgid "No data sets found"
-msgstr ""
+msgstr "ບໍ່ພົບຊຸດຂໍ້ມູນ"
 
 msgid "No event data items found"
-msgstr ""
+msgstr "ບໍ່ພົບຂໍ້ມູນເຫດການ"
 
 msgid "No program indicators found"
-msgstr ""
+msgstr "ບໍ່ພົບໂປຼແກຼມຕົວຊີ້ວັດ"
+
+msgid "No calculations found"
+msgstr "ບໍ່ພົບການຄິດໄລ່"
 
 msgid "No indicators found for \"{{- searchTerm}}\""
-msgstr ""
-
-msgid "No data elements found for \"{{- searchTerm}}\""
-msgstr ""
+msgstr "ບໍ່ພົບຕົວຊີ້ວັດສຳລັບ \"{{- searchTerm}}\""
 
 msgid "No data sets found for \"{{- searchTerm}}\""
-msgstr ""
+msgstr "ບໍ່ພົບຊຸດຂໍ້ມູນສຳລັບ \"{{- searchTerm}}\""
 
 msgid "No event data items found for \"{{- searchTerm}}\""
-msgstr ""
+msgstr "ບໍ່ພົບຂໍ້ມູນເຫດການສຳລັບ \"{{- searchTerm}}\""
 
 msgid "No program indicators found for \"{{- searchTerm}}\""
-msgstr ""
+msgstr "ບໍ່ພົບໂປຼແກຼມຕົວຊີ້ວັດສຳລັບ \"{{- searchTerm}}\""
+
+msgid "No calculations found for \"{{- searchTerm}}\""
+msgstr "ບໍ່ພົບການຄິດໄລ່ສຳລັບ \"{{- serachTerm}}\""
 
 msgid "Nothing found for \"{{- searchTerm}}\""
-msgstr ""
+msgstr "ບໍ່ພົບຫຍັງສຳລັບ \"{{- searchTerm}}\""
+
+msgid "Calculation"
+msgstr "ການຄິດໄລ່"
 
 msgid "Metric type"
-msgstr ""
+msgstr "ຫົວໜ່ວຍວັດແທກ"
 
 msgid "All metrics"
 msgstr "ທຸກການປັບປຸງ"
 
 msgid "Move to {{axisName}}"
-msgstr ""
+msgstr "ຍ້າຍໄປ {{axisName}}"
 
 msgid "Add to {{axisName}}"
-msgstr ""
+msgstr "ເພີ່ມໃສ່ {{axisName}}"
 
 msgid "Not available for {{visualizationType}}"
-msgstr ""
+msgstr "ບໍ່ມີສໍາລັບ {{visualizationType}}"
 
 msgid "Remove Assigned Categories"
-msgstr ""
+msgstr "ລົບກຸ່ມທີ່ຖືກມອບໝາຍ"
 
 msgid "Add Assigned Categories"
-msgstr ""
+msgstr "ເພີ່ມກຸ່ມທີ່ຖືກມອບໝາຍ"
 
 msgid "Remove"
 msgstr "ລົບອອກ"
 
 msgid "Filter dimensions"
-msgstr ""
+msgstr "ຂະໜາດຕົວຕອງ"
 
 msgid "Main dimensions"
-msgstr ""
+msgstr "ຕົວຕອງທີ່ສຳຄັນ"
 
 msgid "Your dimensions"
-msgstr ""
+msgstr "ຂະໜາດຂອງທ່ານ"
 
 msgid "Dimension recommended with selected data"
-msgstr ""
+msgstr "ຂະໜາດທີ່ແນະນຳດ້ວຍຂໍ້ມູນທີ່ເລືອກ"
 
 msgid "All items"
-msgstr ""
+msgstr "ລາຍການທັງໝົດ"
 
 msgid "Automatically include all items"
-msgstr ""
+msgstr "ເພີ່ມລາຍການທັງໝົດໂດຍອັດຕະໂນມັດ"
 
 msgid ""
 "Select all {{- dimensionTitle}} items. With this option, new items added in "
 "the future will be automatically included."
 msgstr ""
+"ເລືອກລາຍການທັງໝົດ {{- dimensionTitle}}  ດ້ວຍຕົວເລືອກນີ້, "
+"ລາຍການໃໝ່ທີ່ເພີ່ມເຂົ້າມາໃນຄັ້ງໜ້າຈະຖືກເພີ່ມຂົ້າໂດຍອັດຕະໂນມັດ."
 
 msgid "Manually select items..."
-msgstr ""
+msgstr "ເລືອກລາຍການດ້ວຍຕົນເອງ..."
 
 msgid "Nothing found in {{- dimensionTitle}}"
-msgstr ""
+msgstr "ບໍ່ຖືກຄົ້ນພົບໃນ {{- dimensionTitle}}"
 
 msgid "Search"
 msgstr "ຄົນຫາ"
 
 msgid "Nothing found for {{- searchTerm}}"
-msgstr ""
+msgstr "ບໍ່ຖືກຄົ້ນພົບສຳລັບ  {{- searchTerm}}"
 
 msgid "Delete {{fileType}}"
-msgstr ""
+msgstr "ລົບ {{fileType}}"
 
 msgid ""
 "This {{fileType}} and related interpretations will be deleted. Continue?"
-msgstr ""
-
-msgid "Cancel"
-msgstr "Cancel"
+msgstr "{{fileType}} ນີ້ ແລະ ການຮັບຂໍ້ມູນທີ່ກ່ຽວຂ້ອງຈະຖືກລົບ. ສືບຕໍ່ບໍ່?"
 
 msgid "Delete"
 msgstr "ລົບ"
@@ -224,37 +300,37 @@ msgid "New"
 msgstr "ສ້າງໃຫມ່"
 
 msgid "Open…"
-msgstr ""
+msgstr "ເປີດ..."
 
 msgid "Save"
 msgstr "ບັນທຶກ"
 
 msgid "Save…"
-msgstr ""
+msgstr "ບັນທຶກ..."
 
 msgid "Save as…"
-msgstr ""
+msgstr "ບັນທຶກເປັນ..."
 
 msgid "Rename…"
-msgstr ""
+msgstr "ປ່ຽນຊື່..."
 
 msgid "Translate…"
-msgstr ""
+msgstr "ແປ..."
 
 msgid "Share…"
-msgstr ""
+msgstr "ແບ່ງປັນ..."
 
 msgid "Get link…"
-msgstr ""
+msgstr "ເອົາລິ້ງ..."
 
 msgid "Open in this app"
-msgstr ""
+msgstr "ເປີດແອ໋ບນີ້"
 
 msgid "Close"
 msgstr "ປິດ"
 
 msgid "Rename {{fileType}}"
-msgstr ""
+msgstr "ປ່ຽນຊື່ {{fileType}}"
 
 msgid "Name"
 msgstr "ຊື່"
@@ -265,64 +341,81 @@ msgstr "ລາຍລະອຽດ"
 msgid "Rename"
 msgstr "ປ່ຽນຊື່"
 
-msgid "{{objectName}} (copy)"
-msgstr ""
+msgid "{{- objectName}} (copy)"
+msgstr "{{- ຊື່ອົງປະກອບ}} (copy)"
 
 msgid "Save {{fileType}} as"
-msgstr ""
+msgstr "ບັນທຶກ {{fileType}} ເປັນ"
 
 msgid "event report"
-msgstr ""
+msgstr "ລາຍງານເຫດການ"
 
 msgid "line list"
-msgstr ""
+msgstr "ບັນຊີລາຍຊື່"
 
 msgid "map"
-msgstr ""
+msgstr "ແຜນທີ່"
 
 msgid "visualization"
-msgstr ""
+msgstr "ການສ້າງພາບຂໍ້ມູນ"
 
 msgid "Edit"
 msgstr "ແກ້ໄຂ"
 
 msgid "Write a reply"
-msgstr ""
+msgstr "ຂຽນການຕອບກັບ"
 
 msgid "Post reply"
-msgstr ""
+msgstr "ຕອບກ່ອນໜ້າ"
+
+msgid "Delete failed"
+msgstr "ການລົບລົ້ມເຫຼວ"
 
 msgid "Could not update comment"
-msgstr ""
+msgstr "ບໍ່ສາມາດອັບເດດຄຳເຫັນໄດ້"
 
 msgid "Enter comment text"
-msgstr ""
+msgstr "ປ້ອນຄຳເຫັນ"
 
 msgid "Update"
 msgstr "ປັບປຸງ"
 
 msgid "Viewing interpretation: {{- visualisationName}}"
-msgstr ""
+msgstr "ເບິ່ງຂໍ້ຄວາມ: {{- visualisationName}}"
 
 msgid "Could not load interpretation"
-msgstr ""
+msgstr "ບໍ່ສາມາດໂຫຼດຂໍ້ຄວາມ"
 
 msgid ""
 "The interpretation couldn’t be displayed. Try again or contact your system "
 "administrator."
-msgstr ""
+msgstr "ຂໍ້ຄວາມບໍ່ສາມາດສະແດງໄດ້, ລອງອີກຄັ້ງ ຫຼື ຕິດຕໍ່ຜູ້ເບິ່ງແຍງລະບົບຂອງທ່ານ"
 
 msgid "Hide interpretation"
-msgstr ""
+msgstr "ເຊື່ອງຂໍ້ຄວາມ"
 
 msgid "Write an interpretation"
-msgstr ""
+msgstr "ຂຽນຂໍ້ຄວາມ"
+
+msgid ""
+"Other people viewing this interpretation in the future may see more data."
+msgstr "ຄົນອື່ນໆທີ່ເບິ່ງຂໍ້ຄວາມໃນຄັ້ງໜ້າອາດຈະເຫັນຂໍ້ມູນເພີ່ມ"
 
 msgid "Post interpretation"
-msgstr ""
+msgstr "ຮັບຂໍ້ມູນກ່ອນໜ້າ"
 
 msgid "Interpretations"
 msgstr "ການແປຂໍ້ມູນ"
+
+msgid "Reply"
+msgstr "ຕອບກັບ"
+
+msgid "{{count}} replies"
+msgid_plural "{{count}} replies"
+msgstr[0] "{{count}} ການຕອບກັບ"
+
+msgid "View replies"
+msgstr "ເບິ່ງການຕອບກັບ"
 
 msgid "Unlike"
 msgstr "ບໍ່ມັກ"
@@ -330,77 +423,44 @@ msgstr "ບໍ່ມັກ"
 msgid "Like"
 msgstr "ມັກ"
 
-msgid "Reply"
-msgstr "ຕອບກັບ"
+msgid "See interpretation"
+msgstr "ສະແດງຂໍ້ຄວາມ"
+
+msgid "Open in app"
+msgstr "ເປີດໃນແອ໋ບ"
 
 msgid "Share"
 msgstr "ເຜີຍແຜ່"
 
-msgid "See interpretation"
-msgstr ""
-
 msgid "Manage sharing"
-msgstr ""
+msgstr "ຈັດການການເຜີຍແຜ່"
 
 msgid "Could not update interpretation"
-msgstr ""
+msgstr "ບໍ່ສາມາດອັບເດດຂໍ້ຄວາມ"
 
 msgid "Enter interpretation text"
-msgstr ""
-
-msgid "Bold text"
-msgstr ""
-
-msgid "Italic text"
-msgstr ""
-
-msgid "Link to a URL"
-msgstr ""
-
-msgid "Mention a user"
-msgstr ""
-
-msgid "Add emoji"
-msgstr ""
-
-msgid "Preview"
-msgstr ""
-
-msgid "Back to write mode"
-msgstr ""
-
-msgid "Too many results. Try refining the search."
-msgstr ""
-
-msgid "Search for a user"
-msgstr ""
-
-msgid "Searching for \"{{- searchText}}\""
-msgstr ""
-
-msgid "No results found"
-msgstr ""
+msgstr "ປ້ອນຂໍ້ຄວາມ"
 
 msgid "Not available offline"
-msgstr ""
+msgstr "ບໍ່ສາມາດໃຊ້ໄດ້ອອບລາຍ"
 
 msgid "Created by"
 msgstr "ສ້າງໂດຍ"
 
 msgid "Anyone"
-msgstr ""
+msgstr "ທຸກຄົນ"
 
 msgid "Only you"
-msgstr ""
+msgstr "ທ່ານຄົນດຽວ"
 
 msgid "Others"
-msgstr "Others"
+msgstr "ອື່ນໆ"
 
 msgid "Not supported by this app yet"
-msgstr ""
+msgstr "ແອັບນີ້ຍັງບໍ່ສາມາດຮອງຮັບເທື່ອ"
 
 msgid "Filter by name"
-msgstr "Filter by name"
+msgstr "ກັ່ນຕອງຈາກຊື່"
 
 msgid "Created"
 msgstr "ສ້າງແລ້ວ"
@@ -409,110 +469,119 @@ msgid "Last updated"
 msgstr "ປັບປຸງ​ຄັ້ງຫລ້າສຸດ"
 
 msgid "Type"
-msgstr "Type"
+msgstr "ຊະນິດ"
 
 msgid "Clear filters"
 msgstr "ປັບປຸງເຄື່ອງມືຄັດຈ້ອນ"
 
 msgid "{{firstItemIndex}}-{{lastItemIndex}} of {{totalNumberOfItems}}"
-msgstr ""
+msgstr "{{firstItemIndex}} {{lastItemIndex}} ຂອງ {{totalNumberOfItems}}"
 
 msgid "Open"
 msgstr "ເປີດ"
 
 msgid "Couldn't load items"
-msgstr ""
+msgstr "ບໍ່ສາມາດໂຫຼດລາຍການໄດ້"
 
 msgid ""
 "There was a problem loading items. Try again or contact your system "
 "administrator."
-msgstr ""
+msgstr "ມີບັນຫາໃນການໂຫຼດລາຍການ. ລອງອີກຄັ້ງ ຫຼື ຕິດຕໍ່ຜູ້ດູແລລະບົບຂອງທ່ານ."
 
 msgid "No items found. Create a new to get started."
-msgstr ""
+msgstr "ບໍ່ພົບລາຍການທີ່ຄົ້ນຫາ. ສ້າງໃໝ່ເພື່ອເລີ່ມຕົ້ນ."
 
 msgid ""
 "No items found. Try adjusting your search or filter options to find what "
 "you're looking for."
 msgstr ""
+"ບໍ່ພົບລາຍການ. ລອງປັບຕົວເລືອກການຄົ້ນຫາ ຫຼື "
+"ຕົວກອງເພື່ອສິ່ງທີ່ທ່ານກໍາລັງຄົ້ນຫາ."
 
 msgid "Create new"
 msgstr "ສ້າງໃໝ່"
 
 msgid "Open a visualization"
-msgstr ""
+msgstr "ເປີດພາບຂໍ້ມູນ"
 
 msgid "Loading visualizations"
-msgstr ""
+msgstr "ໂຫຼດພາບຂໍ້ມູນ"
 
 msgid "Couldn't load visualizations"
-msgstr ""
+msgstr "ບໍ່ສາມາດໂຫຼດພາບຂໍ້ມູນ"
 
 msgid ""
 "There was a problem loading visualizations. Try again or contact your system"
 " administrator."
-msgstr ""
+msgstr "ມີບັນຫາໃນການໂຫຼດພາບຂໍ້ມູນ. ລອງອີກຄັ້ງ ຫຼື ຕິດຕໍ່ຜູ້ດູແລລະບົບຂອງທ່ານ."
 
 msgid "No visualizations found. Click New visualization to get started."
-msgstr ""
+msgstr "ບໍ່ພົບພາບຂໍ້ມູນ. ຄລິກ ເພີ່ມພາບຂໍ້ມູນໃໝ່ ເພື່ອເລີ່ມຕົ້ນ."
 
 msgid ""
 "No visualizations found. Try adjusting your search or filter options to find"
 " what you're looking for."
 msgstr ""
+"ບໍ່ພົບພາບຂໍ້ມູນ. ລອງປັບຕົວເລືອກການຄົ້ນຫາ ຫຼື "
+"ຕົວກອງເພື່ອສິ່ງທີ່ທ່ານກໍາລັງຄົ້ນຫາ."
 
 msgid "New visualization"
-msgstr ""
+msgstr "ພາບຂໍ້ມູນໃໝ່"
 
 msgid "Open a map"
-msgstr ""
+msgstr "ເປີດແຜນທີ່"
 
 msgid "Loading maps"
-msgstr ""
+msgstr "ໂຫຼດແຜນທີ່"
 
 msgid "Couldn't load maps"
-msgstr ""
+msgstr "ບໍ່ສາມາດໂຫຼດແຜນທີ່"
 
 msgid ""
 "There was a problem loading maps. Try again or contact your system "
 "administrator."
-msgstr ""
+msgstr "ພົບບັນຫາໃນການ3ຫຼດແຜນທີ່. ລອງໃໝ່ອີກຄັ້ງ ຫຼື ຕິດຕໍ່ຜູ້ດູແລລະບົບ"
 
 msgid "No maps found. Click New map to get started."
-msgstr ""
+msgstr "ບໍ່ພົບແຜນທີ່. ຄລິກສ້າງແຜນທີ່ໃໝ່ເພື່ອເລີ່ມຕົ້ນ"
 
 msgid ""
 "No maps found. Try adjusting your search or filter options to find what "
 "you're looking for."
 msgstr ""
+"ບໍ່ພົບແຜນທີ່. ລອງປັບຕົວເລືອກການຄົ້ນຫາ ຫຼື "
+"ຕົວກອງເພື່ອສິ່ງທີ່ທ່ານກໍາລັງຄົ້ນຫາ."
 
 msgid "New map"
-msgstr ""
+msgstr "ແຜນທີ່ໃໝ່"
 
 msgid "Open a line list"
-msgstr ""
+msgstr "ເປີດບັນຊີລາຍຊື່"
 
 msgid "Loading line lists"
-msgstr ""
+msgstr "ໂຫຼດບັນຊີລາຍຊື່"
 
 msgid "Couldn't load line lists"
-msgstr ""
+msgstr "ບໍ່ສາມາດໂຫຼດບັນຊີລາຍຊື່"
 
 msgid ""
 "There was a problem loading line lists. Try again or contact your system "
 "administrator."
 msgstr ""
+"ພົບບັນຫາໃນການໂຫຼດບັນຊີລາຍຊື່. ລອງອີກຄັ້ງ ຫຼື ຕິດຕໍ່ຜູ້ດູແລລະບົບຂອງທ່ານ."
 
 msgid "No line lists found. Click New line list to get started."
-msgstr ""
+msgstr "ບໍ່ພົບບັນຊີລາຍຊື່. ຄລິກເພີ່ມບັນຊີລາຍຊື່ໃໝ່ເພື່ອເລີ່ມຕົ້ນ."
 
 msgid ""
 "No line lists found. Try adjusting your search or filter options to find "
 "what you're looking for."
 msgstr ""
+"ບໍ່ພົບບັນຊີລາຍຊື່. ລອງປັບຕົວເລືອກການຄົ້ນຫາ ຫຼື "
+"ຕົວກອງເພື່ອສິ່ງທີ່ທ່ານກໍາລັງຄົ້ນຫາ."
 
 msgid "New line list"
-msgstr ""
+msgstr "ເພີ່ມບັນຊີລາຍຊື່ໃໝ່"
 
 msgid "Options"
 msgstr "ຈັດການ"
@@ -522,24 +591,24 @@ msgstr "ເຊື່ອງ"
 
 msgid "{{count}} org units"
 msgid_plural "{{count}} org units"
-msgstr[0] ""
+msgstr[0] "{{count}} ໜ່ວຍງານອົງການ"
 
 msgid "{{count}} levels"
 msgid_plural "{{count}} levels"
-msgstr[0] ""
+msgstr[0] "{{count}} ຂັ້ນ"
 
 msgid "{{count}} groups"
 msgid_plural "{{count}} groups"
-msgstr[0] ""
+msgstr[0] "{{count}} ກຸ່ມ"
 
 msgid "Selected: {{commaSeparatedListOfOrganisationUnits}}"
-msgstr ""
+msgstr "ເລືອກ {{commaSeparatedListOfOrganisationUnits}}"
 
 msgid "Nothing selected"
-msgstr ""
+msgstr "ບໍ່ມີຫຍັງເລືອກ"
 
 msgid "User organisation unit"
-msgstr ""
+msgstr "ຫນ່ວຍງານການຈັດຕັ້ງຂອງຜູ້ໃຊ້"
 
 msgid "User sub-units"
 msgstr "ຫົວໜ່ວຍຍ່ອຍຂອງທ່ານ"
@@ -548,10 +617,10 @@ msgid "User sub-x2-units"
 msgstr "ຫົວໜ່ວຍຍ່ອຍຂັ້ນສອງຂອງທ່ານ"
 
 msgid "Select a level"
-msgstr ""
+msgstr "ເລືອກຂັ້ນ"
 
 msgid "Select a group"
-msgstr ""
+msgstr "ເລືອກກຸ່ມ"
 
 msgid "Deselect all"
 msgstr "ຍົກເລີກການເລືອກທັງໝົດ"
@@ -563,10 +632,13 @@ msgid "Year"
 msgstr "ປີ"
 
 msgid "Select year"
-msgstr ""
+msgstr "ເລືອກປີ"
 
 msgid "Period"
 msgstr "ຊ່ວງເວລາ"
+
+msgid "Selected Periods"
+msgstr "ເລືອກຊ່ວງເວລາ"
 
 msgid "Relative periods"
 msgstr "​ໄລ​ຍະ​ເວ​ລາ​ໄກ້​ຄຽງ"
@@ -574,53 +646,8 @@ msgstr "​ໄລ​ຍະ​ເວ​ລາ​ໄກ້​ຄຽງ"
 msgid "Fixed periods"
 msgstr "ໄລຍະເວລາທີ່ໄດ້ກຳນົດ"
 
-msgid "Selected Periods"
-msgstr ""
-
 msgid "No periods selected"
 msgstr "ບໍ່ທັນໄດ້ເລືອກໄລຍະເວລາ"
-
-msgid "January"
-msgstr "ມັງກອນ"
-
-msgid "February"
-msgstr "ກຸມພາ"
-
-msgid "March"
-msgstr "ມີນາ"
-
-msgid "April"
-msgstr "ເມສາ"
-
-msgid "May"
-msgstr "ພຶດສະພາ"
-
-msgid "June"
-msgstr "ມີຖຸນາ"
-
-msgid "July"
-msgstr "ກໍລະກົດ"
-
-msgid "August"
-msgstr "ສິງຫາ"
-
-msgid "September"
-msgstr "ກັນຍາ"
-
-msgid "October"
-msgstr "ຕຸລາ"
-
-msgid "November"
-msgstr "ພະຈິກ"
-
-msgid "December"
-msgstr "ທັນວາ"
-
-msgid "Week {{weekNumber}}"
-msgstr ""
-
-msgid "Bi-Week {{biWeekNumber}}"
-msgstr ""
 
 msgid "Daily"
 msgstr "ທຸກໆມື້"
@@ -629,19 +656,19 @@ msgid "Weekly"
 msgstr "ເປັນອາທິດ"
 
 msgid "Weekly (Start Wednesday)"
-msgstr ""
+msgstr "ເປັນອາທິດ (ເລີ່ມຈາກວັນພຸດ)"
 
 msgid "Weekly (Start Thursday)"
-msgstr ""
+msgstr "ເປັນອາທິດ (ເລີ່ມຈາກວັນພະຫັດ)"
 
 msgid "Weekly (Start Saturday)"
-msgstr ""
+msgstr "ເປັນອາທິດ (ເລີ່ມຈາກວັນເສົາ)"
 
 msgid "Weekly (Start Sunday)"
-msgstr ""
+msgstr "ເປັນອາທິດ (ເລີ່ມຈາກວັນອາທິດ)"
 
 msgid "Bi-weekly"
-msgstr ""
+msgstr "ສອງອາທິດຕໍ່ຄັ້ງ"
 
 msgid "Monthly"
 msgstr "ລາຍເດືອນ"
@@ -662,7 +689,7 @@ msgid "Yearly"
 msgstr "ລາຍປີ"
 
 msgid "Financial year (Start November)"
-msgstr ""
+msgstr "ສົກປີງົບປະມານ (ເລີ່ມແຕ່ເດືອນພະຈິກ)"
 
 msgid "Financial year (Start October)"
 msgstr "ສົກປີງົບປະມານ (ເລີ່ມແຕ່ເດືອນຕຸລາ)"
@@ -689,16 +716,16 @@ msgid "Last 14 days"
 msgstr "14 ມື້ກ່ອນ"
 
 msgid "Last 30 days"
-msgstr "Last 30 days"
+msgstr "30 ມື້ກ່ອນ"
 
 msgid "Last 60 days"
-msgstr ""
+msgstr "60 ມື້ກ່ອນ"
 
 msgid "Last 90 days"
-msgstr ""
+msgstr "90 ມື້ກ່ອນ"
 
 msgid "Last 180 days"
-msgstr ""
+msgstr "180 ມື້ກ່ອນ"
 
 msgid "This week"
 msgstr "ທິດນີ້"
@@ -719,13 +746,13 @@ msgid "Weeks this year"
 msgstr "ອາທິດ ຂອງປີນີ້"
 
 msgid "This bi-week"
-msgstr ""
+msgstr "ສອງເທື່ອຕໍ່ອາທິດນີ້"
 
 msgid "Last bi-week"
-msgstr ""
+msgstr "ສອງຄັ້ງລ່າສຸດຕໍ່ທິດ"
 
 msgid "Last 4 bi-weeks"
-msgstr ""
+msgstr "ສອງເດືອນທີ່ຜ່ານມາ"
 
 msgid "This month"
 msgstr "ເດືອນນີ້"
@@ -758,7 +785,7 @@ msgid "Bi-months this year"
 msgstr "ສອງເດືອນ ຂອງປີນີ້"
 
 msgid "This quarter"
-msgstr "ໄຕມານີ້"
+msgstr "ໄຕມາດນີ້"
 
 msgid "Last quarter"
 msgstr "ໄຕມາດຜ່ານມາ"
@@ -776,7 +803,7 @@ msgid "Last six-month"
 msgstr "6 ເດືອນຜ່ານມາ"
 
 msgid "Last 2 six-month"
-msgstr ""
+msgstr "ສອງ 6 ເດືອນຜ່ານມາ"
 
 msgid "This financial year"
 msgstr "ສົກປີງົບປະມານຂອງປິນີ້"
@@ -797,7 +824,7 @@ msgid "Last 5 years"
 msgstr "5 ປີຍ້ອນຫຼັງ"
 
 msgid "Last 10 years"
-msgstr ""
+msgstr "10 ປີຍ້ອນຫຼັງ"
 
 msgid "Days"
 msgstr "ມື້"
@@ -806,7 +833,7 @@ msgid "Weeks"
 msgstr "ອາທິດ"
 
 msgid "Bi-weeks"
-msgstr ""
+msgstr "ສອງເທື່ອຕໍ່ທິດ"
 
 msgid "Months"
 msgstr "ເດືອນ"
@@ -821,37 +848,76 @@ msgid "Six-months"
 msgstr "6 ເດືອນ"
 
 msgid "Financial Years"
-msgstr ""
+msgstr "ສົກປີງົບປະມານ"
 
 msgid "Years"
 msgstr "ປີ"
 
-msgid "Translating to"
+msgid "Value: {{value}}"
 msgstr ""
+
+msgid "Bold text"
+msgstr "ຕົວອັກສອນເຂັ້ມ"
+
+msgid "Italic text"
+msgstr "ຕົວອັກສອນສະຫຼ່ຽງ"
+
+msgid "Link to a URL"
+msgstr "ເຊື່ອມຕໍ່ກັບ URL"
+
+msgid "Mention a user"
+msgstr "ກ່າວເຖິງຜູ້ໃຊ້"
+
+msgid "Add emoji"
+msgstr "ເພີ່ມ emoji"
+
+msgid "Preview"
+msgstr "ເບິ່ງຕົວຢ່າງ"
+
+msgid "Back to write mode"
+msgstr "ກັບໄປທີ່ໂໝດຂຽນ"
+
+msgid "Interpretations and details"
+msgstr "ຂໍ້ມູນ ແລະ ລາຍລະອຽດ"
+
+msgid "Translating to"
+msgstr "ແປເປັນ"
 
 msgid "Choose a locale"
-msgstr ""
+msgstr "ເລືອກສະຖານທີ່ເກີດເຫດ"
 
 msgid "Base locale reference"
-msgstr ""
+msgstr "ການອ້າງອີງຈາກສະຖານທີ່ເກີດເຫດ"
 
 msgid "Choose a locale to translate from the menu above"
-msgstr ""
+msgstr "ເລືອກສະຖານທີ່ເກີດເຫດເພື່ອແປຈາກລາຍການຂັ້ນເທິງ"
 
 msgid "Translate: {{objectName}}"
-msgstr ""
+msgstr "ແປ {{objectName}}"
 
 msgid "Save translations"
-msgstr ""
+msgstr "ບັນທຶກການແປ"
 
 msgid "Cannot save while offline"
-msgstr ""
+msgstr "ບໍ່ສາມາດບັນທຶກແບບອອບລາຍ"
 
 msgid "Could not load translations"
-msgstr ""
+msgstr "ບໍ່ສາມາດໂຫຼດການແປ"
 
 msgid "Retry"
-msgstr ""
+msgstr "ລອງໃໝ່"
+
+msgid "Too many results. Try refining the search."
+msgstr "ຜົນໄດ້ຮັບຫຼາຍເກີນໄປ. ປັບປຸງການຄົ້ນຫາ."
+
+msgid "Search for a user"
+msgstr "ຄົ້ນຫາຜູ້ໃຊ້"
+
+msgid "Searching for \"{{- searchText}}\""
+msgstr "ຄົ້ນຫາ \"{{- searchText}}\""
+
+msgid "No results found"
+msgstr "ບໍ່ພົບຜົນການຊອກຫາ"
 
 msgid "Series"
 msgstr "ແທ່ງ"
@@ -860,37 +926,37 @@ msgid "Category"
 msgstr "ລວງນອນ"
 
 msgid "Filter"
-msgstr "Filter"
+msgstr "ຕົວກອງ"
 
 msgid "Columns"
-msgstr ""
+msgstr "ຖັນ"
 
 msgid "Rows"
-msgstr ""
+msgstr "ແຖວ"
 
 msgid "Points"
-msgstr ""
+msgstr "ຄະແນນ"
 
 msgid "Reporting rate"
-msgstr ""
+msgstr "ອັດຕາການລາຍງານ"
 
 msgid "Reporting rate on time"
-msgstr ""
+msgstr "ອັດຕາການລາຍງານຕົງເວລາ"
 
 msgid "Actual reports"
-msgstr ""
+msgstr "ລາຍງານຕົວຈິງ"
 
 msgid "Actual reports on time"
-msgstr ""
+msgstr "ລາຍງານຕົວຈິງຕົງເວລາ"
 
 msgid "Expected reports"
-msgstr ""
+msgstr "ລາຍງານທີ່ຄາດໄວ້"
 
 msgid "Program"
-msgstr "Program"
+msgstr "ໂປແກຼມ"
 
 msgid "Select a program"
-msgstr ""
+msgstr "ເລືອກໂປແກຼມ"
 
 msgid "Indicators"
 msgstr "ຕົວຊີ້ວັດ"
@@ -899,85 +965,109 @@ msgid "Indicator group"
 msgstr "ກຸ່ມຂອງຕົວຊີ້ວັດ"
 
 msgid "All groups"
-msgstr ""
+msgstr "ກຸ່ມທັງໝົດ"
 
 msgid "Indicator"
 msgstr "ຕົວຊີ້ວັດ"
 
 msgid "No indicator groups found"
-msgstr ""
+msgstr "ບໍ່ພົບກຸ່ມຕົວຊີ້ວັດ"
 
 msgid "Loading indicator groups"
-msgstr ""
-
-msgid "Data elements"
-msgstr "ອົງປະກອບຂໍ້ມູນ"
+msgstr "ໂຫຼດກຸ່ມຕົວຊີ້ວັດ"
 
 msgid "Data element group"
-msgstr "ກຸ່ມຂອລອົງປະກອບຂໍ້ມູນ"
+msgstr "ກຸ່ມຂອງອົງປະກອບຂໍ້ມູນ"
 
 msgid "Data element"
-msgstr "Data Element"
+msgstr "ອົງປະກອບຂໍ້ມູນ"
 
 msgid "No data element groups found"
-msgstr ""
+msgstr "ບໍ່ພົບກຸ່ມອົງປະກອບຂໍ້ມູນ"
 
 msgid "Loading data element groups"
-msgstr ""
+msgstr "ໂຫຼດກຸ່ມອົງປະກອບຂໍ້ມູນ"
 
 msgid "Data sets"
 msgstr "ແບບຟອມ"
 
 msgid "Data set"
-msgstr "Data set\\:"
+msgstr "ແບບຟອມ"
 
 msgid "All data sets"
-msgstr ""
+msgstr "ແບບຟອມທັງໝົດ"
 
 msgid "Loading data sets"
-msgstr ""
+msgstr "ໂຫຼດແບບຟອມ"
 
 msgid "Event data items"
 msgstr "ຂໍ້ມູນລາຍບຸກຄົນ"
 
 msgid "All programs"
-msgstr ""
+msgstr "ໂປແກຼມທັງໝົດ"
 
 msgid "Event data item"
-msgstr ""
+msgstr "ຂໍ້ມູນລາຍບຸກຄົນ"
 
 msgid "No programs found"
-msgstr ""
+msgstr "ບໍ່ພົບໂປແກຼມ"
 
 msgid "Loading programs"
-msgstr ""
+msgstr "ໂຫຼດໂປແກຼມ"
 
 msgid "Program indicators"
 msgstr "ຕົວຊີ້ວັດສະເພາະວຽກຂອງຂະແໜງ"
 
 msgid "Program indicator"
-msgstr "Program Indicator Management"
+msgstr "ໂປແກຼມຕົວຊີ້ວັດ"
+
+msgid "Calculations"
+msgstr "ຄິດໄລ່"
+
+msgid "Number"
+msgstr "ຈຳນວນ"
+
+msgid "Formula is empty. Add items to the formula from the lists on the left."
+msgstr "ສູດຄຳນວນຫວ່າງເປົ່າ. ເພີ່ມລາຍການໃສ່ສູດຈາກລາຍການຂ້າງຊ້າຍ."
+
+msgid "Consecutive math operators"
+msgstr "ຕົວປະຕິບັດການຄະນິດສາດຕາມລຳດັບ"
+
+msgid "Consecutive data elements"
+msgstr "ອົງປະກອບຂໍ້ມູນຕາມລຳດັບ"
+
+msgid "Starts or ends with a math operator"
+msgstr "ເລີ່ມຕົ້ນ ຫຼື ສິ້ນສຸດດ້ວຍຕົວປະຕິບັດການຄະນິດສາດ"
+
+msgid "Empty parentheses"
+msgstr "ວົງເລັບວ່າງເປົ່າ"
+
+msgid "Missing right parenthesis )"
+msgstr "ຂາດວົງເລັບຂວາ )"
+
+msgid "Missing left parenthesis ("
+msgstr "ຂາດວົງເລັບຊ້າຍ ("
 
 msgid "Extra Small"
-msgstr ""
+msgstr "ນ້ອຍສຸດ"
 
 msgid "Small"
 msgstr "ນ້ອຍ"
 
 msgid "Regular"
-msgstr "Regular"
+msgstr "ທຳມະດາ"
 
 msgid "Large"
 msgstr "ໃຫຍ່"
 
 msgid "Extra Large"
-msgstr ""
+msgstr "ໃຫຍ່ສຸດ"
 
 msgid "Left"
 msgstr "ຊ້າຍ"
 
 msgid "Center"
-msgstr ""
+msgstr "ກາງ"
 
 msgid "Right"
 msgstr "ຂວາ"
@@ -986,10 +1076,10 @@ msgid "Start"
 msgstr "Start"
 
 msgid "Middle"
-msgstr ""
+msgstr "ກາງ"
 
 msgid "End"
-msgstr ""
+msgstr "ຈົບ"
 
 msgid "Top"
 msgstr "ເທິງສຸດ"
@@ -998,42 +1088,45 @@ msgid "Bottom"
 msgstr "ລຸ່ມສຸດ"
 
 msgid "{{dynamicOuNames}} and {{lastOuName}}"
-msgstr ""
+msgstr "{{dynamicOuNames}} ແລະ {{lastOuName}}"
 
 msgid "{{allDynamicOuNames}} levels"
-msgstr ""
+msgstr "{{allDynamicOuNames}} ຂັ້ນ"
 
 msgid "{{allDynamicOuNames}} groups"
-msgstr ""
+msgstr "{{allDynamicOuNames}} ກຸ່ມ"
 
 msgid "{{allDynamicOuNames}} levels in {{staticOuNames}}"
-msgstr ""
+msgstr "{{allDynamicOuNames}} ຂັ້ນໃນ {{staticOuNames}}"
 
 msgid "{{allDynamicOuNames}} groups in {{staticOuNames}}"
-msgstr ""
+msgstr "{{allDynamicOuNames}} ກຸ່ມໃນ {{staticOuNames}}"
 
 msgid "{{percentage}}% of total x values"
-msgstr ""
+msgstr "{{percentage}} % ລວມຂອງຄ່າ x"
 
 msgid "{{percentage}}% of total y values"
-msgstr ""
+msgstr "{{percentage}} % ລວມຂອງຄ່າ y"
 
 msgid "{{thresholdFactor}} × IQR Q1"
-msgstr ""
+msgstr "{{thresholdFactor}} x IQR Q1"
 
 msgid "{{thresholdFactor}} × IQR Q3"
-msgstr ""
+msgstr "{{thresholdFactor}} x IQR Q3"
 
 msgid "{{thresholdFactor}} × Modified Z-score low"
-msgstr ""
+msgstr "{{thresholdFactor}} x ແກ້ໄຂຄະແນນ z ຕ່ຳ"
 
 msgid "{{thresholdFactor}} × Modified Z-score high"
-msgstr ""
+msgstr "{{thresholdFactor}} x ແກ້ໄຂຄະແນນ z ສູງ"
 
 msgid "{{thresholdFactor}} × Z-score low"
-msgstr ""
+msgstr "{{thresholdFactor}} x ຄະແນນ z ຕ່ຳ"
 
 msgid "{{thresholdFactor}} × Z-score high"
+msgstr "{{thresholdFactor}} x ຄະແນນ z ສູງ"
+
+msgid "Not applicable"
 msgstr ""
 
 msgid "Data"
@@ -1043,73 +1136,76 @@ msgid "Organisation unit"
 msgstr "​ຫົວ​ໜ່ວຍ​ການ​ຈັດ​ຕັ້ງ"
 
 msgid "Assigned Categories"
-msgstr ""
+msgstr "ຈັດໝວດໝູ່"
 
 msgid "Pivot table"
-msgstr ""
+msgstr "ແບບຕາຕະລາງໄພວ໋ອດ"
 
 msgid "Area"
-msgstr ""
+msgstr "ພື້ນທີ່"
 
 msgid "Stacked area"
-msgstr ""
+msgstr "ພື້ນທີ່ຊ້ອນກັນ"
 
 msgid "Bar"
-msgstr ""
+msgstr "ແຖບ"
 
 msgid "Stacked bar"
-msgstr ""
+msgstr "ແຖບຊ້ອນກັນ"
 
 msgid "Column"
 msgstr "ຖັນ"
 
 msgid "Year over year (column)"
-msgstr ""
+msgstr "ປີຕໍ່ປີ (ຖັນ)"
 
 msgid "Stacked column"
-msgstr ""
+msgstr "ຖັນຊ້ອນກັນ"
 
 msgid "Gauge"
-msgstr ""
+msgstr "ເຄື່ອງວັດແທກ"
 
 msgid "Line"
-msgstr ""
+msgstr "ເສັ້ນ"
 
 msgid "Line list"
-msgstr ""
+msgstr "ລາຍການລາຍບຸກຄົນ"
 
 msgid "Year over year (line)"
-msgstr ""
+msgstr "ປີຕໍ່ປີ (ເສັ້ນ)"
 
 msgid "Pie"
-msgstr ""
+msgstr "ພາຍ"
 
 msgid "Radar"
-msgstr ""
+msgstr "ເຣດາ"
 
 msgid "Scatter"
-msgstr ""
+msgstr "ກະແຈກກະຈາຍ"
 
 msgid "Single value"
-msgstr ""
+msgstr "ຄ່າດຽວ"
+
+msgid "Outlier table"
+msgstr "ຕາຕະລາງທີ່ເກີນກວ່າ"
 
 msgid "All charts"
-msgstr ""
+msgstr "ຕາຕະລາງທັງຫມົດ"
 
 msgid "{{seriesName}} (trend)"
-msgstr ""
+msgstr "{{seriesName}} (ແນວໂນ້ມ)"
 
 msgid "Trend"
 msgstr "ແນວໂນ້ມ"
 
 msgid "No legend for this series"
-msgstr ""
+msgstr "ບໍ່ມີນິຍາມສຳລັບຊຸດນີ້"
 
 msgid "and {{amount}} more..."
-msgstr ""
+msgstr "ແລະ {{amount}} ເພີ່ມ..."
 
 msgid "Linear Regression"
-msgstr ""
+msgstr "ການຖົດຖອຍແບບເສັ້ນ"
 
 msgid "Target"
 msgstr "ເປົ້າໝາຍ"
@@ -1118,11 +1214,11 @@ msgid "Base"
 msgstr "ຖານ"
 
 msgid "Axis {{axisId}}"
-msgstr ""
+msgstr "ແກນ {{axisId}}"
 
 msgid "{{count}} items"
 msgid_plural "{{count}} items"
-msgstr[0] ""
+msgstr[0] "{{count}} ລາຍການ"
 
 msgid "Reset zoom"
-msgstr ""
+msgstr "ຣີເຊັດຊູມ"

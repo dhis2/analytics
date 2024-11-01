@@ -1,17 +1,17 @@
 # 
 # Translators:
 # Viktor Varland <viktor@dhis2.org>, 2021
-# 晓东 林 <13981924470@126.com>, 2022
-# phil_dhis2, 2022
-# easylin <lin_xd@126.com>, 2022
+# 晓东 林 <13981924470@126.com>, 2023
+# Philip Larsen Donnelly, 2024
+# easylin <lin_xd@126.com>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-09-22T13:25:32.620Z\n"
+"POT-Creation-Date: 2024-10-11T12:49:26.846Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: easylin <lin_xd@126.com>, 2022\n"
-"Language-Team: Chinese (https://www.transifex.com/hisp-uio/teams/100509/zh/)\n"
+"Last-Translator: easylin <lin_xd@126.com>, 2024\n"
+"Language-Team: Chinese (https://app.transifex.com/hisp-uio/teams/100509/zh/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -50,7 +50,7 @@ msgstr "已创建 {{time}}"
 
 msgid "Viewed {{count}} times"
 msgid_plural "Viewed {{count}} times"
-msgstr[0] "查看了 {{count}} 次"
+msgstr[0] "查看了 {{count}} 条"
 
 msgid "Notifications"
 msgstr "通知"
@@ -76,32 +76,102 @@ msgstr "关于此行列表"
 msgid "About this visualization"
 msgstr "关于此可视化"
 
+msgid "About this event chart"
+msgstr "关于该事件图表"
+
+msgid "About this event report"
+msgstr "关于本事件报表"
+
 msgid "This app could not retrieve required data."
 msgstr "此应用无法检索所需数据。"
 
 msgid "Network error"
 msgstr "网络错误"
 
-msgid "Data Type"
-msgstr "数据类型"
+msgid "Data / Edit calculation"
+msgstr "数据/编辑计算"
 
-msgid "All types"
-msgstr "所有类型"
+msgid "Data / New calculation"
+msgstr "数据/新计算"
+
+msgid "Remove item"
+msgstr "除去项目"
+
+msgid "Check formula"
+msgstr "检查公式"
+
+msgid "Calculation name"
+msgstr "计算名称"
+
+msgid "Shown in table headers and chart axes/legends"
+msgstr "显示在表格标题和图表轴/图例中"
+
+msgid "Delete calculation"
+msgstr "删除计算"
+
+msgid "Cancel"
+msgstr "取消"
+
+msgid "The calculation can only be saved with a valid formula"
+msgstr "计算只能用有效的公式保存"
+
+msgid "Add a name to save this calculation"
+msgstr "添加名称以保存此计算"
+
+msgid "Save calculation"
+msgstr "保存计算"
+
+msgid ""
+"Are you sure you want to delete this calculation? It may be used by other "
+"visualizations."
+msgstr "您确定要删除此计算吗？它可以被其他可视化使用。"
+
+msgid "Yes, delete"
+msgstr "是的，删除"
 
 msgid "Totals only"
-msgstr "总计"
+msgstr "仅总数"
 
 msgid "Details only"
 msgstr "仅详细信息"
+
+msgid "Loading"
+msgstr "载入"
+
+msgid "Data elements"
+msgstr "数据元"
+
+msgid "Search by data element name"
+msgstr "按数据元素名称搜索"
+
+msgid "No data elements found for \"{{- searchTerm}}\""
+msgstr "找不到“ {{- searchTerm}}”的数据元素"
+
+msgid "No data elements found"
+msgstr "找不到数据元素"
+
+msgid ""
+"Drag items here, or double click in the list, to start building a "
+"calculation formula"
+msgstr "将项目拖到此处，或在列表中双击，开始构建计算公式"
+
+msgid "Math operators"
+msgstr "数学运算符"
+
+msgid "Data Type"
+msgstr "数据类型"
+
+msgid "Only {{dataType}} can be used in {{visType}}"
+msgstr "{{dataType}} 只能在 {{visType}} 中使用"
+
+msgid "All types"
+msgstr "所有类型"
 
 msgid "Disaggregation"
 msgstr "分解"
 
 msgid "No data"
 msgstr "无数据"
-
-msgid "Loading"
-msgstr "载入"
 
 msgid "Search by data item name"
 msgstr "按数据项名称搜索"
@@ -115,9 +185,6 @@ msgstr "选择的条目"
 msgid "No indicators found"
 msgstr "找不到指标"
 
-msgid "No data elements found"
-msgstr "找不到数据元素"
-
 msgid "No data sets found"
 msgstr "找不到数据集"
 
@@ -127,23 +194,29 @@ msgstr "找不到事件数据项"
 msgid "No program indicators found"
 msgstr "找不到项目指标"
 
-msgid "No indicators found for \"{{- searchTerm}}\""
-msgstr "找不到“ {{-searchTerm}}”的指标"
+msgid "No calculations found"
+msgstr "没有找到计算结果"
 
-msgid "No data elements found for \"{{- searchTerm}}\""
-msgstr "找不到“ {{-searchTerm}}”的数据元素"
+msgid "No indicators found for \"{{- searchTerm}}\""
+msgstr "找不到“ {{- searchTerm}}”的指标"
 
 msgid "No data sets found for \"{{- searchTerm}}\""
-msgstr "找不到“ {{-searchTerm}}”的数据集"
+msgstr "找不到“ {{- searchTerm}}”的数据集"
 
 msgid "No event data items found for \"{{- searchTerm}}\""
-msgstr "找不到“ {{-searchTerm}}”的事件数据项"
+msgstr "找不到“ {{- searchTerm}}”的事件数据项"
 
 msgid "No program indicators found for \"{{- searchTerm}}\""
-msgstr "找不到“ {{-searchTerm}}”的计划指标"
+msgstr "找不到“ {{- searchTerm}}”的计划指标"
+
+msgid "No calculations found for \"{{- searchTerm}}\""
+msgstr "找不到“{{- searchTerm}}”的计算"
 
 msgid "Nothing found for \"{{- searchTerm}}\""
-msgstr "找不到“ {{-searchTerm}}”"
+msgstr "找不到“ {{- searchTerm}}”"
+
+msgid "Calculation"
+msgstr "计算"
 
 msgid "Metric type"
 msgstr "尺度类型"
@@ -211,9 +284,6 @@ msgid ""
 "This {{fileType}} and related interpretations will be deleted. Continue?"
 msgstr "此{{fileType}}和相关解释将被删除。继续？"
 
-msgid "Cancel"
-msgstr "取消"
-
 msgid "Delete"
 msgstr "删除"
 
@@ -265,8 +335,8 @@ msgstr "描述"
 msgid "Rename"
 msgstr "改名"
 
-msgid "{{objectName}} (copy)"
-msgstr "{{objectName}}（副本）"
+msgid "{{- objectName}} (copy)"
+msgstr "{{- objectName}}（复制）"
 
 msgid "Save {{fileType}} as"
 msgstr "将{{fileType}}另存为"
@@ -292,6 +362,9 @@ msgstr "书写应答"
 msgid "Post reply"
 msgstr "发表回复"
 
+msgid "Delete failed"
+msgstr "删除失败"
+
 msgid "Could not update comment"
 msgstr "无法更新评论"
 
@@ -302,7 +375,7 @@ msgid "Update"
 msgstr "更新"
 
 msgid "Viewing interpretation: {{- visualisationName}}"
-msgstr "查看注释：{{-visualisationName}}"
+msgstr "查看注释：{{- visualisationName}}"
 
 msgid "Could not load interpretation"
 msgstr "无法加载解释"
@@ -318,11 +391,25 @@ msgstr "隐藏解释"
 msgid "Write an interpretation"
 msgstr "书写注释"
 
+msgid ""
+"Other people viewing this interpretation in the future may see more data."
+msgstr "将来查看此解释的其他人可能会看到更多数据。"
+
 msgid "Post interpretation"
 msgstr "后解释"
 
 msgid "Interpretations"
 msgstr "解释"
+
+msgid "Reply"
+msgstr "应答"
+
+msgid "{{count}} replies"
+msgid_plural "{{count}} replies"
+msgstr[0] "{{count}}条回复"
+
+msgid "View replies"
+msgstr "查看回复"
 
 msgid "Unlike"
 msgstr "不喜欢"
@@ -330,14 +417,14 @@ msgstr "不喜欢"
 msgid "Like"
 msgstr "喜欢"
 
-msgid "Reply"
-msgstr "应答"
+msgid "See interpretation"
+msgstr "见解释"
+
+msgid "Open in app"
+msgstr "在应用程序中打开"
 
 msgid "Share"
 msgstr "分享"
-
-msgid "See interpretation"
-msgstr "见解释"
 
 msgid "Manage sharing"
 msgstr "管理共享"
@@ -347,39 +434,6 @@ msgstr "无法更新解释"
 
 msgid "Enter interpretation text"
 msgstr "输入解释文本"
-
-msgid "Bold text"
-msgstr "粗体文字"
-
-msgid "Italic text"
-msgstr "斜体文字"
-
-msgid "Link to a URL"
-msgstr "链接到 URL"
-
-msgid "Mention a user"
-msgstr "提及用户"
-
-msgid "Add emoji"
-msgstr "添加表情符号"
-
-msgid "Preview"
-msgstr "预览"
-
-msgid "Back to write mode"
-msgstr "返回写入模式"
-
-msgid "Too many results. Try refining the search."
-msgstr "结果太多。尝试优化搜索。"
-
-msgid "Search for a user"
-msgstr "搜索用户"
-
-msgid "Searching for \"{{- searchText}}\""
-msgstr "搜索“{{- searchText}}”"
-
-msgid "No results found"
-msgstr "没有结果"
 
 msgid "Not available offline"
 msgstr "离线不可用"
@@ -568,59 +622,17 @@ msgstr "选择年份"
 msgid "Period"
 msgstr "期间"
 
+msgid "Selected Periods"
+msgstr "选择的期间"
+
 msgid "Relative periods"
 msgstr "相对期间"
 
 msgid "Fixed periods"
 msgstr "固定期间"
 
-msgid "Selected Periods"
-msgstr "选择的期间"
-
 msgid "No periods selected"
 msgstr "未选择期间"
-
-msgid "January"
-msgstr "1月"
-
-msgid "February"
-msgstr "2月"
-
-msgid "March"
-msgstr "3月"
-
-msgid "April"
-msgstr "4月"
-
-msgid "May"
-msgstr "5月"
-
-msgid "June"
-msgstr "6月"
-
-msgid "July"
-msgstr "7月"
-
-msgid "August"
-msgstr "8月"
-
-msgid "September"
-msgstr "9月"
-
-msgid "October"
-msgstr "10月"
-
-msgid "November"
-msgstr "11月"
-
-msgid "December"
-msgstr "12月"
-
-msgid "Week {{weekNumber}}"
-msgstr "{{weekNumber}}周"
-
-msgid "Bi-Week {{biWeekNumber}}"
-msgstr "  {{biWeekNumber}} 两周"
 
 msgid "Daily"
 msgstr "每日"
@@ -665,13 +677,13 @@ msgid "Financial year (Start November)"
 msgstr "财政年（11月始）"
 
 msgid "Financial year (Start October)"
-msgstr "财务十月"
+msgstr "财政年度（10 月开始）"
 
 msgid "Financial year (Start July)"
-msgstr "财务七月"
+msgstr "财政年度（7 月开始）"
 
 msgid "Financial year (Start April)"
-msgstr "财务四月"
+msgstr "财政年度（4 月开始）"
 
 msgid "Today"
 msgstr "今天"
@@ -707,16 +719,16 @@ msgid "Last week"
 msgstr "上周"
 
 msgid "Last 4 weeks"
-msgstr "最近四周"
+msgstr "最近 4 周"
 
 msgid "Last 12 weeks"
-msgstr "最近12周"
+msgstr "最近 12 周"
 
 msgid "Last 52 weeks"
-msgstr "Last 52 weeks"
+msgstr "最近52 周"
 
 msgid "Weeks this year"
-msgstr "Weeks this year"
+msgstr "今年的周"
 
 msgid "This bi-week"
 msgstr "本双周"
@@ -737,7 +749,7 @@ msgid "Last 3 months"
 msgstr "最近3个月"
 
 msgid "Last 6 months"
-msgstr "Last 6 months"
+msgstr "最近 6 个月"
 
 msgid "Last 12 months"
 msgstr "最近12月"
@@ -749,13 +761,13 @@ msgid "This bi-month"
 msgstr "本双月"
 
 msgid "Last bi-month"
-msgstr "Last bi-month"
+msgstr "上两个月"
 
 msgid "Last 6 bi-months"
-msgstr "Last 6 bi-months"
+msgstr "最近 6 个双月"
 
 msgid "Bi-months this year"
-msgstr "Bi-months this year"
+msgstr "今年的双月"
 
 msgid "This quarter"
 msgstr "本季度"
@@ -764,7 +776,7 @@ msgid "Last quarter"
 msgstr "最近一季"
 
 msgid "Last 4 quarters"
-msgstr "最近四个季度"
+msgstr "最近 4 个季度"
 
 msgid "Quarters this year"
 msgstr "今年的季度"
@@ -785,7 +797,7 @@ msgid "Last financial year"
 msgstr "上一财政年"
 
 msgid "Last 5 financial years"
-msgstr "最近五个财政年"
+msgstr "最近 5 个财政年度"
 
 msgid "This year"
 msgstr "今年"
@@ -812,19 +824,46 @@ msgid "Months"
 msgstr "月"
 
 msgid "Bi-months"
-msgstr "Bi-months"
+msgstr "双月"
 
 msgid "Quarters"
 msgstr "四分之一"
 
 msgid "Six-months"
-msgstr "Six-months"
+msgstr "六个月"
 
 msgid "Financial Years"
-msgstr "Financial Years"
+msgstr "财政年度"
 
 msgid "Years"
 msgstr "年"
+
+msgid "Value: {{value}}"
+msgstr "值{{value}}"
+
+msgid "Bold text"
+msgstr "粗体文字"
+
+msgid "Italic text"
+msgstr "斜体文字"
+
+msgid "Link to a URL"
+msgstr "链接到 URL"
+
+msgid "Mention a user"
+msgstr "提及用户"
+
+msgid "Add emoji"
+msgstr "添加表情符号"
+
+msgid "Preview"
+msgstr "预览"
+
+msgid "Back to write mode"
+msgstr "返回写入模式"
+
+msgid "Interpretations and details"
+msgstr "解释和细节"
 
 msgid "Translating to"
 msgstr "翻译成"
@@ -852,6 +891,18 @@ msgstr "无法加载翻译"
 
 msgid "Retry"
 msgstr "重试"
+
+msgid "Too many results. Try refining the search."
+msgstr "结果太多。尝试优化搜索。"
+
+msgid "Search for a user"
+msgstr "搜索用户"
+
+msgid "Searching for \"{{- searchText}}\""
+msgstr "搜索“{{- searchText}}”"
+
+msgid "No results found"
+msgstr "没有结果"
 
 msgid "Series"
 msgstr "系列"
@@ -910,9 +961,6 @@ msgstr "找不到指标组"
 msgid "Loading indicator groups"
 msgstr "加载指标组"
 
-msgid "Data elements"
-msgstr "数据元"
-
 msgid "Data element group"
 msgstr "数据元组"
 
@@ -957,6 +1005,33 @@ msgstr "项目指标"
 
 msgid "Program indicator"
 msgstr "项目指标"
+
+msgid "Calculations"
+msgstr "计算"
+
+msgid "Number"
+msgstr "数据"
+
+msgid "Formula is empty. Add items to the formula from the lists on the left."
+msgstr "公式为空。将左侧列表中的项目添加到公式中。"
+
+msgid "Consecutive math operators"
+msgstr "连续的数学运算符"
+
+msgid "Consecutive data elements"
+msgstr "连续的数据元素"
+
+msgid "Starts or ends with a math operator"
+msgstr "以数学运算符开始或结束"
+
+msgid "Empty parentheses"
+msgstr "空括号"
+
+msgid "Missing right parenthesis )"
+msgstr "缺少右括号 ）"
+
+msgid "Missing left parenthesis ("
+msgstr "缺少左括号 ("
 
 msgid "Extra Small"
 msgstr "特小"
@@ -1036,6 +1111,9 @@ msgstr "{{thresholdFactor}}×Z分数低"
 msgid "{{thresholdFactor}} × Z-score high"
 msgstr "{{thresholdFactor}}×Z分数高"
 
+msgid "Not applicable"
+msgstr "不适用"
+
 msgid "Data"
 msgstr "数据"
 
@@ -1088,10 +1166,13 @@ msgid "Radar"
 msgstr "雷达图"
 
 msgid "Scatter"
-msgstr "分散"
+msgstr "散点图"
 
 msgid "Single value"
 msgstr "单个值"
+
+msgid "Outlier table"
+msgstr "异常值表"
 
 msgid "All charts"
 msgstr "所有图表"

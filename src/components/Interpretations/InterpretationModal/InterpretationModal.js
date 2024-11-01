@@ -13,7 +13,7 @@ import {
 } from '@dhis2/ui'
 import cx from 'classnames'
 import PropTypes from 'prop-types'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useMemo } from 'react'
 import css from 'styled-jsx/css'
 import i18n from '../../../locales/index.js'
 import { InterpretationThread } from './InterpretationThread.js'
@@ -24,14 +24,14 @@ const modalCSS = css.resolve`
         max-width: calc(100vw - 128px) !important;
         max-height: calc(100vh - 128px) !important;
         width: auto !important;
-        height: auto !important;
+        height: calc(100vh - 128px) !important;
         overflow-y: hidden;
     }
     aside.hidden {
         display: none;
     }
     aside > :global(div) > :global(div) {
-        max-height: none;
+        height: 100%;
     }
 `
 
@@ -39,6 +39,7 @@ function getModalContentCSS(width) {
     return css.resolve`
         div {
             width: ${width}px;
+            overflow-y: visible;
         }
     `
 }
@@ -49,14 +50,14 @@ const query = {
         id: ({ id }) => id,
         params: {
             fields: [
-                'access',
+                'access[write,manage]',
                 'id',
                 'text',
                 'created',
-                'user[id,displayName]',
+                'createdBy[id,displayName]',
                 'likes',
                 'likedBy',
-                'comments[access,id,text,created,createdBy[id,displayName]]',
+                'comments[id,text,created,createdBy[id,displayName]]',
             ],
         },
     },
@@ -82,7 +83,7 @@ const InterpretationModal = ({
     })
     const interpretation = data?.interpretation
     const shouldRenderModalContent = !error && interpretation
-    const shouldCssHideModal = loading || isVisualizationLoading
+    const loadingInProgress = loading || isVisualizationLoading
     const handleClose = () => {
         if (isDirty) {
             onInterpretationUpdate()
@@ -96,6 +97,13 @@ const InterpretationModal = ({
         }
         refetch({ id: interpretationId })
     }
+
+    const onLikeToggled = ({ likedBy }) => {
+        setIsDirty(true)
+        interpretation.likedBy = likedBy
+        interpretation.likes = likedBy.length
+    }
+
     const onInterpretationDeleted = () => {
         setIsDirty(false)
         onInterpretationUpdate()
@@ -108,9 +116,15 @@ const InterpretationModal = ({
         }
     }, [interpretationId, refetch])
 
+    const filters = useMemo(() => {
+        return {
+            relativePeriodDate: interpretation?.created,
+        }
+    }, [interpretation?.created])
+
     return (
         <>
-            {shouldCssHideModal && (
+            {loadingInProgress && (
                 <Layer>
                     <CenteredContent>
                         <CircularLoader />
@@ -121,7 +135,7 @@ const InterpretationModal = ({
                 fluid
                 onClose={handleClose}
                 className={cx(modalCSS.className, {
-                    hidden: shouldCssHideModal,
+                    hidden: loadingInProgress,
                 })}
                 dataTest="interpretation-modal"
             >
@@ -155,10 +169,7 @@ const InterpretationModal = ({
                             <div className="row">
                                 <div className="visualisation-wrap">
                                     <VisualizationPlugin
-                                        filters={{
-                                            relativePeriodDate:
-                                                interpretation.created,
-                                        }}
+                                        filters={filters}
                                         visualization={visualization}
                                         onResponsesReceived={
                                             onResponsesReceived
@@ -167,6 +178,7 @@ const InterpretationModal = ({
                                             currentUser.settings
                                                 ?.keyAnalysisDisplayProperty
                                         }
+                                        isInModal={true}
                                     />
                                 </div>
                                 <div className="thread-wrap">
@@ -182,6 +194,7 @@ const InterpretationModal = ({
                                         downloadMenuComponent={
                                             downloadMenuComponent
                                         }
+                                        onLikeToggled={onLikeToggled}
                                     />
                                 </div>
                             </div>
@@ -216,12 +229,14 @@ const InterpretationModal = ({
                     .container {
                         display: flex;
                         flex-direction: column;
+                        height: 100%;
                     }
 
                     .row {
                         display: flex;
                         flex-direction: row;
                         gap: 16px;
+                        height: 100%;
                     }
 
                     .visualisation-wrap {
@@ -233,7 +248,6 @@ const InterpretationModal = ({
                         padding-right: ${spacers.dp4};
                         flex-basis: 300px;
                         flex-shrink: 0;
-                        overflow-y: auto;
                     }
                 `}</style>
             </Modal>

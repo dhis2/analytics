@@ -1,5 +1,8 @@
-import { useDataQuery, useDataMutation } from '@dhis2/app-runtime'
-import { Parser as RichTextParser } from '@dhis2/d2-ui-rich-text'
+import {
+    useDataQuery,
+    useDataMutation,
+    useTimeZoneConversion,
+} from '@dhis2/app-runtime'
 import {
     Button,
     CircularLoader,
@@ -25,6 +28,7 @@ import React, {
 } from 'react'
 import i18n from '../../locales/index.js'
 import { formatList } from '../../modules/list.js'
+import { RichTextParser } from '../RichText/index.js'
 import styles from './styles/AboutAOUnit.style.js'
 import { getTranslatedString, AOTypeMap } from './utils.js'
 
@@ -57,6 +61,7 @@ const getUnsubscribeMutation = (type, id) => ({
 
 const AboutAOUnit = forwardRef(({ type, id, renderId }, ref) => {
     const [isExpanded, setIsExpanded] = useState(true)
+    const { fromServerDate } = useTimeZoneConversion()
 
     const queries = useMemo(() => getQueries(type), [type])
 
@@ -186,8 +191,9 @@ const AboutAOUnit = forwardRef(({ type, id, renderId }, ref) => {
                     )}
                     {data && (
                         <div className="content">
-                            <p
+                            <div
                                 className={cx('detailLine', {
+                                    description: true,
                                     noDescription: !data.ao.displayDescription,
                                 })}
                             >
@@ -196,9 +202,9 @@ const AboutAOUnit = forwardRef(({ type, id, renderId }, ref) => {
                                         {data.ao.displayDescription}
                                     </RichTextParser>
                                 ) : (
-                                    i18n.t('No description')
+                                    <p>{i18n.t('No description')}</p>
                                 )}
-                            </p>
+                            </div>
                             <div>
                                 <p className="detailLine">
                                     <IconShare16 color={colors.grey700} />
@@ -208,7 +214,7 @@ const AboutAOUnit = forwardRef(({ type, id, renderId }, ref) => {
                                     <IconClock16 color={colors.grey700} />
                                     {i18n.t('Last updated {{time}}', {
                                         time: moment(
-                                            data.ao.lastUpdated
+                                            fromServerDate(data.ao.lastUpdated)
                                         ).fromNow(),
                                     })}
                                 </p>
@@ -219,7 +225,9 @@ const AboutAOUnit = forwardRef(({ type, id, renderId }, ref) => {
                                               'Created {{time}} by {{author}}',
                                               {
                                                   time: moment(
-                                                      data.ao.created
+                                                      fromServerDate(
+                                                          data.ao.created
+                                                      )
                                                   ).fromNow(),
                                                   author: data.ao.createdBy
                                                       .displayName,
@@ -227,7 +235,9 @@ const AboutAOUnit = forwardRef(({ type, id, renderId }, ref) => {
                                           )
                                         : i18n.t('Created {{time}}', {
                                               time: moment(
-                                                  data.ao.created
+                                                  fromServerDate(
+                                                      data.ao.created
+                                                  )
                                               ).fromNow(),
                                           })}
                                 </p>

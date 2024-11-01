@@ -3,11 +3,8 @@ import { Button, spacers, colors } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useState, useRef } from 'react'
 import i18n from '../../../locales/index.js'
-import {
-    MessageEditorContainer,
-    RichTextEditor,
-    MessageButtonStrip,
-} from '../common/index.js'
+import { RichTextEditor } from '../../RichText/index.js'
+import { MessageEditorContainer, MessageButtonStrip } from '../common/index.js'
 
 export const CommentUpdateForm = ({
     interpretationId,
@@ -33,9 +30,7 @@ export const CommentUpdateForm = ({
             },
         }
     )
-    const errorText = error
-        ? error.message || i18n.t('Could not update comment')
-        : ''
+    const errorText = error ? i18n.t('Could not update comment') : ''
 
     return (
         <div className="message">

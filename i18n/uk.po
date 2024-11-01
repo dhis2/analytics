@@ -1,18 +1,18 @@
 # 
 # Translators:
 # Wanda <wanda@frontlineaids.org>, 2022
-# phil_dhis2, 2022
 # Viktor Varland <viktor@dhis2.org>, 2022
-# Éva Tamási, 2022
 # Nadiia <semchuk@aph.org.ua>, 2022
+# phil_dhis2, 2023
+# Éva Tamási, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-09-22T13:25:32.620Z\n"
+"POT-Creation-Date: 2023-07-06T08:30:33.216Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Nadiia <semchuk@aph.org.ua>, 2022\n"
-"Language-Team: Ukrainian (https://www.transifex.com/hisp-uio/teams/100509/uk/)\n"
+"Last-Translator: Éva Tamási, 2023\n"
+"Language-Team: Ukrainian (https://app.transifex.com/hisp-uio/teams/100509/uk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -86,11 +86,46 @@ msgstr ""
 msgid "Network error"
 msgstr ""
 
-msgid "Data Type"
+msgid "Data / Edit calculation"
 msgstr ""
 
-msgid "All types"
-msgstr "Всі типи"
+msgid "Data / New calculation"
+msgstr ""
+
+msgid "Remove item"
+msgstr ""
+
+msgid "Check formula"
+msgstr ""
+
+msgid "Calculation name"
+msgstr ""
+
+msgid "Shown in table headers and chart axes/legends"
+msgstr ""
+
+msgid "Delete calculation"
+msgstr ""
+
+msgid "Cancel"
+msgstr "Скасувати"
+
+msgid "The calculation can only be saved with a valid formula"
+msgstr ""
+
+msgid "Add a name to save this calculation"
+msgstr ""
+
+msgid "Save calculation"
+msgstr ""
+
+msgid ""
+"Are you sure you want to delete this calculation? It may be used by other "
+"visualizations."
+msgstr ""
+
+msgid "Yes, delete"
+msgstr "Так, видалити"
 
 msgid "Totals only"
 msgstr ""
@@ -98,14 +133,40 @@ msgstr ""
 msgid "Details only"
 msgstr ""
 
+msgid "Loading"
+msgstr "Завантаження"
+
+msgid "Data elements"
+msgstr "Елементи даних"
+
+msgid "Search by data element name"
+msgstr ""
+
+msgid "No data elements found for \"{{- searchTerm}}\""
+msgstr ""
+
+msgid "No data elements found"
+msgstr ""
+
+msgid ""
+"Drag items here, or double click in the list, to start building a "
+"calculation formula"
+msgstr ""
+
+msgid "Math operators"
+msgstr ""
+
+msgid "Data Type"
+msgstr ""
+
+msgid "All types"
+msgstr "Всі типи"
+
 msgid "Disaggregation"
 msgstr ""
 
 msgid "No data"
 msgstr "Немає даних"
-
-msgid "Loading"
-msgstr "Завантаження"
 
 msgid "Search by data item name"
 msgstr ""
@@ -117,9 +178,6 @@ msgid "Selected Items"
 msgstr ""
 
 msgid "No indicators found"
-msgstr ""
-
-msgid "No data elements found"
 msgstr ""
 
 msgid "No data sets found"
@@ -134,9 +192,6 @@ msgstr ""
 msgid "No indicators found for \"{{- searchTerm}}\""
 msgstr ""
 
-msgid "No data elements found for \"{{- searchTerm}}\""
-msgstr ""
-
 msgid "No data sets found for \"{{- searchTerm}}\""
 msgstr ""
 
@@ -147,6 +202,9 @@ msgid "No program indicators found for \"{{- searchTerm}}\""
 msgstr ""
 
 msgid "Nothing found for \"{{- searchTerm}}\""
+msgstr ""
+
+msgid "Calculation"
 msgstr ""
 
 msgid "Metric type"
@@ -215,9 +273,6 @@ msgid ""
 "This {{fileType}} and related interpretations will be deleted. Continue?"
 msgstr ""
 
-msgid "Cancel"
-msgstr "Скасувати"
-
 msgid "Delete"
 msgstr "Видалити"
 
@@ -269,7 +324,7 @@ msgstr "Змалювання"
 msgid "Rename"
 msgstr "Перейменувати"
 
-msgid "{{objectName}} (copy)"
+msgid "{{- objectName}} (copy)"
 msgstr ""
 
 msgid "Save {{fileType}} as"
@@ -295,6 +350,9 @@ msgstr "Написати відповідь"
 
 msgid "Post reply"
 msgstr ""
+
+msgid "Delete failed"
+msgstr "Не вдалося видалити"
 
 msgid "Could not update comment"
 msgstr ""
@@ -328,14 +386,24 @@ msgstr ""
 msgid "Interpretations"
 msgstr "Інтерпретації"
 
+msgid "Reply"
+msgstr "Відповісти"
+
+msgid "{{count}} replies"
+msgid_plural "{{count}} replies"
+msgstr[0] "{{count}} відповідей"
+msgstr[1] "{{count}} відповідей"
+msgstr[2] "{{count}} відповідей"
+msgstr[3] "{{count}} відповідей"
+
+msgid "View replies"
+msgstr ""
+
 msgid "Unlike"
 msgstr "Прибрати вподобання"
 
 msgid "Like"
 msgstr "Вподобати"
-
-msgid "Reply"
-msgstr "Відповісти"
 
 msgid "Share"
 msgstr "Поділитися"
@@ -593,48 +661,6 @@ msgstr ""
 msgid "No periods selected"
 msgstr ""
 
-msgid "January"
-msgstr "Січень"
-
-msgid "February"
-msgstr "Лютий"
-
-msgid "March"
-msgstr "Березень"
-
-msgid "April"
-msgstr "Квітень"
-
-msgid "May"
-msgstr "Травень"
-
-msgid "June"
-msgstr "Червень"
-
-msgid "July"
-msgstr "Липень"
-
-msgid "August"
-msgstr "Серпень"
-
-msgid "September"
-msgstr "Вересень"
-
-msgid "October"
-msgstr "Жовтень"
-
-msgid "November"
-msgstr "Листопад"
-
-msgid "December"
-msgstr "Грудень"
-
-msgid "Week {{weekNumber}}"
-msgstr ""
-
-msgid "Bi-Week {{biWeekNumber}}"
-msgstr ""
-
 msgid "Daily"
 msgstr "Щодня"
 
@@ -839,6 +865,9 @@ msgstr ""
 msgid "Years"
 msgstr "Роки"
 
+msgid "Interpretations and details"
+msgstr ""
+
 msgid "Translating to"
 msgstr ""
 
@@ -923,9 +952,6 @@ msgstr ""
 msgid "Loading indicator groups"
 msgstr ""
 
-msgid "Data elements"
-msgstr "Елементи даних"
-
 msgid "Data element group"
 msgstr "Група елементів даних"
 
@@ -970,6 +996,33 @@ msgstr "Програмні показники"
 
 msgid "Program indicator"
 msgstr "Program indicator"
+
+msgid "Calculations"
+msgstr ""
+
+msgid "Number"
+msgstr "Кількість"
+
+msgid "Formula is empty. Add items to the formula from the lists on the left."
+msgstr ""
+
+msgid "Consecutive math operators"
+msgstr ""
+
+msgid "Consecutive data elements"
+msgstr ""
+
+msgid "Starts or ends with a math operator"
+msgstr ""
+
+msgid "Empty parentheses"
+msgstr ""
+
+msgid "Missing right parenthesis )"
+msgstr ""
+
+msgid "Missing left parenthesis ("
+msgstr ""
 
 msgid "Extra Small"
 msgstr ""

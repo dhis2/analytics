@@ -18,6 +18,7 @@ import {
     modalContent,
     tabSection,
     tabSectionTitle,
+    tabSectionTitleDisabled,
     tabSectionTitleMargin,
     tabSectionOption,
     tabSectionOptionItem,
@@ -30,8 +31,13 @@ import {
     tabSectionOptionIcon,
 } from './styles/VisualizationOptions.style.js'
 
-const VisualizationOptions = ({ optionsConfig, onClose, onUpdate }) => {
-    const [activeTabKey, setActiveTabKey] = useState()
+const VisualizationOptions = ({
+    initiallyActiveTabKey,
+    optionsConfig,
+    onClose,
+    onUpdate,
+}) => {
+    const [activeTabKey, setActiveTabKey] = useState(initiallyActiveTabKey)
 
     const generateTabContent = (sections) =>
         sections.map(({ key, label, content, helpText }) => (
@@ -90,6 +96,7 @@ const VisualizationOptions = ({ optionsConfig, onClose, onUpdate }) => {
                     {tabContent.styles}
                     {tabSection.styles}
                     {tabSectionTitle.styles}
+                    {tabSectionTitleDisabled.styles}
                     {tabSectionTitleMargin.styles}
                     {tabSectionOption.styles}
                     {tabSectionOptionItem.styles}
@@ -144,6 +151,7 @@ const VisualizationOptions = ({ optionsConfig, onClose, onUpdate }) => {
 
 VisualizationOptions.propTypes = {
     optionsConfig: PropTypes.array.isRequired,
+    initiallyActiveTabKey: PropTypes.string,
     onClose: PropTypes.func,
     onUpdate: PropTypes.func,
 }

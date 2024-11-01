@@ -3,16 +3,24 @@ import HM from 'highcharts/highcharts-more'
 import HB from 'highcharts/modules/boost'
 import HE from 'highcharts/modules/exporting'
 import HNDTD from 'highcharts/modules/no-data-to-display'
+import HOE from 'highcharts/modules/offline-exporting'
 import HPF from 'highcharts/modules/pattern-fill'
 import HSG from 'highcharts/modules/solid-gauge'
+import PEBFP from './pdfExportBugFixPlugin/index.js'
 
 // apply
 HM(H)
 HSG(H)
 HNDTD(H)
 HE(H)
+HOE(H)
 HPF(H)
 HB(H)
+PEBFP(H)
+
+/* Whitelist some additional SVG attributes here. Without this,
+ * the PDF export for the SingleValue visualization breaks. */
+H.AST.allowedAttributes.push('fill-rule', 'clip-rule')
 
 function drawLegendSymbolWrap() {
     const pick = H.pick
@@ -20,6 +28,8 @@ function drawLegendSymbolWrap() {
         H.seriesTypes.column.prototype,
         'drawLegendSymbol',
         function (proceed, legend, item) {
+            const legendItem = item.legendItem
+
             if (this.options.legendSet?.legends?.length) {
                 const ys = legend.baseline - legend.symbolHeight + 1, // y start
                     x = legend.symbolWidth / 2 > 8 ? legend.symbolWidth / 2 : 8, // x start
@@ -32,7 +42,7 @@ function drawLegendSymbolWrap() {
                     .attr({
                         fill: legends[legends.length >= 5 ? 1 : 0].color,
                     })
-                    .add(this.legendGroup)
+                    .add(legendItem.group)
                 this.chart.renderer
                     .path(['M', x, ye, 'A', 1, 1, 0, 0, 0, x, ys, 'V', ye])
                     .attr({
@@ -42,13 +52,14 @@ function drawLegendSymbolWrap() {
                                 : legends.length - 1
                         ].color,
                     })
-                    .add(this.legendGroup)
+                    .add(legendItem.group)
             } else {
                 var options = legend.options,
                     symbolHeight = legend.symbolHeight,
                     square = options.squareSymbol,
                     symbolWidth = square ? symbolHeight : legend.symbolWidth
-                item.legendSymbol = this.chart.renderer
+
+                legendItem.symbol = this.chart.renderer
                     .rect(
                         square ? (legend.symbolWidth - symbolHeight) / 2 : 0,
                         legend.baseline - symbolHeight + 1,
@@ -60,7 +71,7 @@ function drawLegendSymbolWrap() {
                     .attr({
                         zIndex: 3,
                     })
-                    .add(item.legendGroup)
+                    .add(legendItem.group)
             }
         }
     )
@@ -72,7 +83,6 @@ export default function (config, el) {
 
         // silence warning about accessibility
         config.accessibility = { enabled: false }
-
         if (config.lang) {
             H.setOptions({
                 lang: config.lang,

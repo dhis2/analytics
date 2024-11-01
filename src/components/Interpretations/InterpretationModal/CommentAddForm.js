@@ -3,8 +3,8 @@ import { Button } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useRef, useState } from 'react'
 import i18n from '../../../locales/index.js'
+import { RichTextEditor } from '../../RichText/index.js'
 import {
-    RichTextEditor,
     MessageEditorContainer,
     MessageButtonStrip,
     MessageInput,

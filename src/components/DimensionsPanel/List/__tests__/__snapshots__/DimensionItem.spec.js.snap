@@ -1,375 +1,283 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`DimensionItem matches the snapshot 1`] = `
-<li
-  name="Period"
-  onMouseLeave={[Function]}
-  onMouseOver={[Function]}
-  style={
-    Object {
-      "alignItems": "center",
-      "borderRadius": "2px",
-      "display": "flex",
-      "marginBottom": 3,
-      "marginTop": 3,
-      "minHeight": "24px",
-    }
-  }
->
-  <DimensionLabel
-    dataTest="undefined-button-pe"
-    id="pe"
-    isDeactivated={false}
+<Fragment>
+  <CssVariables
+    colors={true}
+    elevations={false}
+    layers={false}
+    spacers={false}
+    theme={false}
+  />
+  <li
+    className="item"
+    name="Period"
     onClick={[Function]}
+    onMouseLeave={[Function]}
+    onMouseOver={[Function]}
+    style={Object {}}
   >
     <div
-      style={
-        Object {
-          "display": "flex",
-          "flexDirection": "column",
-          "padding": "3px 8px 0 8px",
-        }
-      }
+      className="label"
+      data-test="undefined-button-pe"
+      tabIndex={0}
     >
-      <SvgClock16
-        style={
-          Object {
-            "paddingBottom": "2px",
-            "paddingLeft": "6px",
-          }
-        }
-      />
-    </div>
-    <div
-      style={
-        Object {
-          "padding": "2px 5px 2px 0",
-        }
-      }
-    >
-      <span
-        data-dimensionid="pe"
-        style={
-          Object {
-            "color": "#212934",
-            "cursor": "pointer",
-            "fontSize": "14px",
-            "userSelect": "none",
-            "wordBreak": "break-word",
-          }
-        }
+      <div
+        className="iconWrapper"
       >
-        Period
-      </span>
-      <RecommendedIcon
-        dataTest="undefined-recommended-icon"
-        isRecommended={false}
-      />
+        <SvgClock16
+          className="fixedDimensionIcon"
+        />
+      </div>
+      <div
+        className="labelWrapper"
+      >
+        <span
+          className="labelText"
+        >
+          <span
+            data-dimensionid="pe"
+          >
+            Period
+          </span>
+        </span>
+        <RecommendedIcon
+          dataTest="undefined-recommended-icon"
+          isRecommended={false}
+        />
+      </div>
     </div>
-  </DimensionLabel>
-</li>
+  </li>
+  <style />
+</Fragment>
 `;
 
 exports[`DimensionItem matches the snapshot with locked 1`] = `
-<li
-  name="Period"
-  onMouseLeave={[Function]}
-  onMouseOver={[Function]}
-  style={
-    Object {
-      "alignItems": "center",
-      "borderRadius": "2px",
-      "display": "flex",
-      "marginBottom": 3,
-      "marginTop": 3,
-      "minHeight": "24px",
-    }
-  }
->
-  <DimensionLabel
-    dataTest="undefined-button-pe"
-    id="pe"
-    isDeactivated={false}
+<Fragment>
+  <CssVariables
+    colors={true}
+    elevations={false}
+    layers={false}
+    spacers={false}
+    theme={false}
+  />
+  <li
+    className="item"
+    name="Period"
     onClick={[Function]}
+    onMouseLeave={[Function]}
+    onMouseOver={[Function]}
+    style={Object {}}
   >
     <div
-      style={
-        Object {
-          "display": "flex",
-          "flexDirection": "column",
-          "padding": "3px 8px 0 8px",
-        }
-      }
+      className="label"
+      data-test="undefined-button-pe"
+      tabIndex={0}
     >
-      <SvgClock16
-        style={
-          Object {
-            "paddingBottom": "2px",
-            "paddingLeft": "6px",
-          }
-        }
-      />
-    </div>
-    <div
-      style={
-        Object {
-          "padding": "2px 5px 2px 0",
-        }
-      }
-    >
-      <span
-        data-dimensionid="pe"
-        style={
-          Object {
-            "color": "#212934",
-            "cursor": "pointer",
-            "fontSize": "14px",
-            "userSelect": "none",
-            "wordBreak": "break-word",
-          }
-        }
+      <div
+        className="iconWrapper"
       >
-        Period
-      </span>
-      <RecommendedIcon
-        dataTest="undefined-recommended-icon"
-        isRecommended={false}
-      />
+        <SvgClock16
+          className="fixedDimensionIcon"
+        />
+      </div>
+      <div
+        className="labelWrapper"
+      >
+        <span
+          className="labelText"
+        >
+          <span
+            data-dimensionid="pe"
+          >
+            Period
+          </span>
+        </span>
+        <RecommendedIcon
+          dataTest="undefined-recommended-icon"
+          isRecommended={false}
+        />
+      </div>
     </div>
     <div
-      style={
-        Object {
-          "display": "flex",
-          "flexDirection": "column",
-          "padding": "3px 8px 0 8px",
-        }
-      }
+      className="lockWrapper"
     >
-      <SvgLock16 />
+      <svg
+        fill="none"
+        height="9"
+        width="7"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          clipRule="evenodd"
+          d="M3.5 1A1.5 1.5 0 0 0 2 2.5V3h3v-.5A1.5 1.5 0 0 0 3.5 1ZM1 2.5V3H0v6h7V3H6v-.5a2.5 2.5 0 0 0-5 0ZM1 8V4h5v4H1Zm3-1V5H3v2h1Z"
+          fill="none"
+          fillRule="evenodd"
+        />
+      </svg>
     </div>
-  </DimensionLabel>
-</li>
+    <style />
+  </li>
+  <style />
+</Fragment>
 `;
 
 exports[`DimensionItem matches the snapshot with onOptionsClick 1`] = `
-<li
-  name="Period"
-  onMouseLeave={[Function]}
-  onMouseOver={[Function]}
-  style={
-    Object {
-      "alignItems": "center",
-      "borderRadius": "2px",
-      "display": "flex",
-      "marginBottom": 3,
-      "marginTop": 3,
-      "minHeight": "24px",
-    }
-  }
->
-  <DimensionLabel
-    dataTest="undefined-button-pe"
-    id="pe"
-    isDeactivated={false}
+<Fragment>
+  <CssVariables
+    colors={true}
+    elevations={false}
+    layers={false}
+    spacers={false}
+    theme={false}
+  />
+  <li
+    className="item"
+    name="Period"
     onClick={[Function]}
+    onMouseLeave={[Function]}
+    onMouseOver={[Function]}
+    style={Object {}}
   >
     <div
-      style={
-        Object {
-          "display": "flex",
-          "flexDirection": "column",
-          "padding": "3px 8px 0 8px",
-        }
-      }
+      className="label"
+      data-test="undefined-button-pe"
+      tabIndex={0}
     >
-      <SvgClock16
-        style={
-          Object {
-            "paddingBottom": "2px",
-            "paddingLeft": "6px",
-          }
-        }
-      />
+      <div
+        className="iconWrapper"
+      >
+        <SvgClock16
+          className="fixedDimensionIcon"
+        />
+      </div>
+      <div
+        className="labelWrapper"
+      >
+        <span
+          className="labelText"
+        >
+          <span
+            data-dimensionid="pe"
+          >
+            Period
+          </span>
+        </span>
+        <RecommendedIcon
+          dataTest="undefined-recommended-icon"
+          isRecommended={false}
+        />
+      </div>
     </div>
     <div
-      style={
-        Object {
-          "padding": "2px 5px 2px 0",
-        }
-      }
-    >
-      <span
-        data-dimensionid="pe"
-        style={
-          Object {
-            "color": "#212934",
-            "cursor": "pointer",
-            "fontSize": "14px",
-            "userSelect": "none",
-            "wordBreak": "break-word",
-          }
-        }
-      >
-        Period
-      </span>
-      <RecommendedIcon
-        dataTest="undefined-recommended-icon"
-        isRecommended={false}
-      />
-    </div>
-  </DimensionLabel>
-  <div
-    data-test="undefined-menu-pe"
-    style={
-      Object {
-        "height": "20px",
-        "left": "5px",
-        "position": "relative",
-        "width": "20px",
-      }
-    }
-  />
-</li>
+      className="optionsWrapper"
+      data-test="undefined-menu-pe"
+    />
+  </li>
+  <style />
+</Fragment>
 `;
 
 exports[`DimensionItem matches the snapshot with recommended 1`] = `
-<li
-  name="Period"
-  onMouseLeave={[Function]}
-  onMouseOver={[Function]}
-  style={
-    Object {
-      "alignItems": "center",
-      "borderRadius": "2px",
-      "display": "flex",
-      "marginBottom": 3,
-      "marginTop": 3,
-      "minHeight": "24px",
-    }
-  }
->
-  <DimensionLabel
-    dataTest="undefined-button-pe"
-    id="pe"
-    isDeactivated={false}
+<Fragment>
+  <CssVariables
+    colors={true}
+    elevations={false}
+    layers={false}
+    spacers={false}
+    theme={false}
+  />
+  <li
+    className="item"
+    name="Period"
     onClick={[Function]}
+    onMouseLeave={[Function]}
+    onMouseOver={[Function]}
+    style={Object {}}
   >
     <div
-      style={
-        Object {
-          "display": "flex",
-          "flexDirection": "column",
-          "padding": "3px 8px 0 8px",
-        }
-      }
+      className="label"
+      data-test="undefined-button-pe"
+      tabIndex={0}
     >
-      <SvgClock16
-        style={
-          Object {
-            "paddingBottom": "2px",
-            "paddingLeft": "6px",
-          }
-        }
-      />
-    </div>
-    <div
-      style={
-        Object {
-          "padding": "2px 5px 2px 0",
-        }
-      }
-    >
-      <span
-        data-dimensionid="pe"
-        style={
-          Object {
-            "color": "#212934",
-            "cursor": "pointer",
-            "fontSize": "14px",
-            "userSelect": "none",
-            "wordBreak": "break-word",
-          }
-        }
+      <div
+        className="iconWrapper"
       >
-        Period
-      </span>
-      <RecommendedIcon
-        dataTest="undefined-recommended-icon"
-        isRecommended={true}
-      />
+        <SvgClock16
+          className="fixedDimensionIcon"
+        />
+      </div>
+      <div
+        className="labelWrapper"
+      >
+        <span
+          className="labelText"
+        >
+          <span
+            data-dimensionid="pe"
+          >
+            Period
+          </span>
+        </span>
+        <RecommendedIcon
+          dataTest="undefined-recommended-icon"
+          isRecommended={true}
+        />
+      </div>
     </div>
-  </DimensionLabel>
-</li>
+  </li>
+  <style />
+</Fragment>
 `;
 
 exports[`DimensionItem matches the snapshot with selected 1`] = `
-<li
-  name="Period"
-  onMouseLeave={[Function]}
-  onMouseOver={[Function]}
-  style={
-    Object {
-      "alignItems": "center",
-      "backgroundColor": "#e0f2f1",
-      "borderRadius": "2px",
-      "display": "flex",
-      "fontWeight": 500,
-      "marginBottom": 3,
-      "marginTop": 3,
-      "minHeight": "24px",
-    }
-  }
->
-  <DimensionLabel
-    dataTest="undefined-button-pe"
-    id="pe"
-    isDeactivated={false}
+<Fragment>
+  <CssVariables
+    colors={true}
+    elevations={false}
+    layers={false}
+    spacers={false}
+    theme={false}
+  />
+  <li
+    className="item selected"
+    name="Period"
     onClick={[Function]}
+    onMouseLeave={[Function]}
+    onMouseOver={[Function]}
+    style={Object {}}
   >
     <div
-      style={
-        Object {
-          "display": "flex",
-          "flexDirection": "column",
-          "padding": "3px 8px 0 8px",
-        }
-      }
+      className="label"
+      data-test="undefined-button-pe"
+      tabIndex={0}
     >
-      <SvgClock16
-        style={
-          Object {
-            "paddingBottom": "2px",
-            "paddingLeft": "6px",
-          }
-        }
-      />
-    </div>
-    <div
-      style={
-        Object {
-          "padding": "2px 5px 2px 0",
-        }
-      }
-    >
-      <span
-        data-dimensionid="pe"
-        style={
-          Object {
-            "color": "#212934",
-            "cursor": "pointer",
-            "fontSize": "14px",
-            "userSelect": "none",
-            "wordBreak": "break-word",
-          }
-        }
+      <div
+        className="iconWrapper"
       >
-        Period
-      </span>
-      <RecommendedIcon
-        dataTest="undefined-recommended-icon"
-        isRecommended={false}
-      />
+        <SvgClock16
+          className="fixedDimensionIcon"
+        />
+      </div>
+      <div
+        className="labelWrapper"
+      >
+        <span
+          className="labelText"
+        >
+          <span
+            data-dimensionid="pe"
+          >
+            Period
+          </span>
+        </span>
+        <RecommendedIcon
+          dataTest="undefined-recommended-icon"
+          isRecommended={false}
+        />
+      </div>
     </div>
-  </DimensionLabel>
-</li>
+  </li>
+  <style />
+</Fragment>
 `;

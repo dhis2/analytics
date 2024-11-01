@@ -1,4 +1,5 @@
-import { TabBar, Tab, Transfer } from '@dhis2/ui'
+import { getNowInCalendar } from '@dhis2/multi-calendar-dates'
+import { IconInfo16, TabBar, Tab, Transfer } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 import PeriodIcon from '../../assets/DimensionItemIcons/PeriodIcon.js' //TODO: Reimplement the icon.js
@@ -16,20 +17,46 @@ import { getFixedPeriodsOptionsById } from './utils/fixedPeriods.js'
 import { MONTHLY, QUARTERLY } from './utils/index.js'
 import { getRelativePeriodsOptionsById } from './utils/relativePeriods.js'
 
+const RightHeader = ({ infoBoxMessage }) => (
+    <>
+        <p className="rightHeader">{i18n.t('Selected Periods')}</p>
+        {infoBoxMessage && (
+            <div className="info-container">
+                <div>
+                    <IconInfo16 />
+                </div>
+                <span className="info-text">{infoBoxMessage}</span>
+            </div>
+        )}
+        <style jsx>{styles}</style>
+    </>
+)
+
+RightHeader.propTypes = {
+    infoBoxMessage: PropTypes.string,
+}
+
 const PeriodTransfer = ({
     onSelect,
     dataTest,
-    initialSelectedPeriods,
+    selectedItems,
     rightFooter,
     excludedPeriodTypes,
+    periodsSettings,
+    infoBoxMessage,
 }) => {
     const defaultRelativePeriodType = excludedPeriodTypes.includes(MONTHLY)
         ? getRelativePeriodsOptionsById(QUARTERLY)
         : getRelativePeriodsOptionsById(MONTHLY)
     const defaultFixedPeriodType = excludedPeriodTypes.includes(MONTHLY)
-        ? getFixedPeriodsOptionsById(QUARTERLY)
-        : getFixedPeriodsOptionsById(MONTHLY)
-    const defaultFixedPeriodYear = new Date().getFullYear()
+        ? getFixedPeriodsOptionsById(QUARTERLY, periodsSettings)
+        : getFixedPeriodsOptionsById(MONTHLY, periodsSettings)
+
+    const now = getNowInCalendar(periodsSettings.calendar)
+    // use ".eraYear" rather than ".year" because in Ethiopian calendar, eraYear is what our users expect to see (for other calendars, it doesn't matter)
+    // there is still a pending decision in Temporal regarding which era to use by default: https://github.com/js-temporal/temporal-polyfill/blob/9350ee7dd0d29f329fc097debf923a517c32f813/lib/calendar.ts#L1964
+    const defaultFixedPeriodYear = now.eraYear || now.year
+
     const fixedPeriodConfig = (year) => ({
         offset: year - defaultFixedPeriodYear,
         filterFuturePeriods: false,
@@ -38,9 +65,6 @@ const PeriodTransfer = ({
 
     const [allPeriods, setAllPeriods] = useState(
         defaultRelativePeriodType.getPeriods()
-    )
-    const [selectedPeriods, setSelectedPeriods] = useState(
-        initialSelectedPeriods
     )
     const [isRelative, setIsRelative] = useState(true)
     const [relativeFilter, setRelativeFilter] = useState({
@@ -51,6 +75,11 @@ const PeriodTransfer = ({
         year: defaultFixedPeriodYear.toString(),
     })
 
+    const isActive = (value) => {
+        const item = selectedItems.find((item) => item.id === value)
+        return !item || item.isActive
+    }
+
     const onIsRelativeClick = (state) => {
         if (state !== isRelative) {
             setIsRelative(state)
@@ -60,7 +89,8 @@ const PeriodTransfer = ({
                           relativeFilter.periodType
                       ).getPeriods()
                     : getFixedPeriodsOptionsById(
-                          fixedFilter.periodType
+                          fixedFilter.periodType,
+                          periodsSettings
                       ).getPeriods(fixedPeriodConfig(Number(fixedFilter.year)))
             )
         }
@@ -124,20 +154,20 @@ const PeriodTransfer = ({
         </>
     )
 
-    const renderRightHeader = () => (
-        <>
-            <p className="rightHeader">{i18n.t('Selected Periods')}</p>
-            <style jsx>{styles}</style>
-        </>
-    )
-
     const onSelectFixedPeriods = (filter) => {
         setFixedFilter(filter)
-        setAllPeriods(
-            getFixedPeriodsOptionsById(filter.periodType).getPeriods(
-                fixedPeriodConfig(Number(filter.year))
+
+        if (filter.year.match(/[0-9]{4}/)) {
+            setAllPeriods(
+                getFixedPeriodsOptionsById(
+                    filter.periodType,
+                    periodsSettings
+                ).getPeriods(
+                    fixedPeriodConfig(Number(filter.year)),
+                    periodsSettings
+                )
             )
-        )
+        }
     }
 
     const renderEmptySelection = () => (
@@ -150,33 +180,37 @@ const PeriodTransfer = ({
     return (
         <Transfer
             onChange={({ selected }) => {
-                const formattedItems = selected.map((id) => ({
-                    id,
-                    name: [...allPeriods, ...selectedPeriods].find(
+                const formattedItems = selected.map((id) => {
+                    const matchingItem = [...allPeriods, ...selectedItems].find(
                         (item) => item.id === id
-                    ).name,
-                }))
-                setSelectedPeriods(formattedItems)
+                    )
+
+                    return {
+                        id,
+                        name: matchingItem.name,
+                        isActive: matchingItem.isActive,
+                    }
+                })
                 onSelect(formattedItems)
             }}
-            selected={selectedPeriods.map((period) => period.id)}
+            selected={selectedItems.map((period) => period.id)}
             leftHeader={renderLeftHeader()}
             enableOrderChange
             height={TRANSFER_HEIGHT}
             optionsWidth={TRANSFER_OPTIONS_WIDTH}
             selectedWidth={TRANSFER_SELECTED_WIDTH}
             selectedEmptyComponent={renderEmptySelection()}
-            rightHeader={renderRightHeader()}
+            rightHeader={<RightHeader infoBoxMessage={infoBoxMessage} />}
             rightFooter={rightFooter}
-            options={[...allPeriods, ...selectedPeriods].map(
-                ({ id, name }) => ({
-                    label: name,
-                    value: id,
-                })
-            )}
-            renderOption={(props) => (
+            options={[...allPeriods, ...selectedItems].map(({ id, name }) => ({
+                label: name,
+                value: id,
+            }))}
+            renderOption={({ value, ...props }) => (
                 <TransferOption
                     {...props}
+                    value={value}
+                    active={isActive(value)}
                     icon={PeriodIcon}
                     dataTest={`${dataTest}-transfer-option`}
                 />
@@ -187,21 +221,31 @@ const PeriodTransfer = ({
 }
 
 PeriodTransfer.defaultProps = {
-    initialSelectedPeriods: [],
+    selectedItems: [],
     excludedPeriodTypes: [],
+    periodsSettings: {
+        calendar: 'gregory',
+        locale: 'en',
+    },
 }
 
 PeriodTransfer.propTypes = {
     onSelect: PropTypes.func.isRequired,
     dataTest: PropTypes.string,
     excludedPeriodTypes: PropTypes.arrayOf(PropTypes.string),
-    initialSelectedPeriods: PropTypes.arrayOf(
+    infoBoxMessage: PropTypes.string,
+    periodsSettings: PropTypes.shape({
+        calendar: PropTypes.string,
+        locale: PropTypes.string,
+    }),
+    rightFooter: PropTypes.node,
+    selectedItems: PropTypes.arrayOf(
         PropTypes.shape({
             id: PropTypes.string,
+            isActive: PropTypes.bool,
             name: PropTypes.string,
         })
     ),
-    rightFooter: PropTypes.node,
 }
 
 export default PeriodTransfer

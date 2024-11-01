@@ -35,7 +35,18 @@ export const appPathFor = (fileType, id) => {
             return `dhis-web-data-visualizer/#/${id}`
         case FILE_TYPE_MAP:
             return `dhis-web-maps/index.html?id=${id}`
+        case FILE_TYPE_EVENT_VISUALIZATION:
+            return `api/apps/line-listing/#/${id}`
         default:
             return `${window.location.search}${window.location.hash}`
     }
+}
+
+export const preparePayloadForSaveAs = ({ ...visualization }) => {
+    delete visualization.id
+    delete visualization.created
+    delete visualization.createdBy
+    delete visualization.user
+
+    return visualization
 }

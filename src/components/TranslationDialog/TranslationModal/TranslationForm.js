@@ -64,13 +64,33 @@ export const TranslationForm = ({
 
         const translationIndex = getTranslationIndexForField(field)
 
-        setNewTranslations(
-            translationIndex === -1
-                ? [...newTranslations, newTranslation]
-                : newTranslations.map((translation, index) =>
-                      index === translationIndex ? newTranslation : translation
-                  )
-        )
+        if (translationIndex === -1) {
+            // non existing translation, adding new
+            setNewTranslations([...newTranslations, newTranslation])
+        } else {
+            // cleared existing translation, remove it from the list
+            if (!translation) {
+                setNewTranslations(
+                    newTranslations.reduce((tmp, translation, index) => {
+                        if (index !== translationIndex) {
+                            tmp.push(translation)
+                        }
+
+                        return tmp
+                    }, [])
+                )
+            }
+            // replace existing translation with new one
+            else {
+                setNewTranslations(
+                    newTranslations.map((translation, index) =>
+                        index === translationIndex
+                            ? newTranslation
+                            : translation
+                    )
+                )
+            }
+        }
     }
 
     const i18nMutationRef = useRef({

@@ -3,9 +3,9 @@ import { Button, spacers, colors } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 import i18n from '../../../../locales/index.js'
+import { RichTextEditor } from '../../../RichText/index.js'
 import {
     MessageEditorContainer,
-    RichTextEditor,
     MessageButtonStrip,
     InterpretationSharingLink,
 } from '../index.js'

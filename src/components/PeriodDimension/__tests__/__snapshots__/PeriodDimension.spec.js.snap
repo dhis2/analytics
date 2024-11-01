@@ -4,8 +4,14 @@ exports[`The Period Dimension component matches the snapshot 1`] = `
 <PeriodTransfer
   dataTest="period-dimension"
   excludedPeriodTypes={Array []}
-  initialSelectedPeriods={Array []}
   onSelect={[Function]}
+  periodsSettings={
+    Object {
+      "calendar": "gregory",
+      "locale": "en",
+    }
+  }
   rightFooter={<React.Fragment />}
+  selectedItems={Array []}
 />
 `;
