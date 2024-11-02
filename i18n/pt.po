@@ -398,6 +398,8 @@ msgid ""
 "The interpretation couldn’t be displayed. Try again or contact your system "
 "administrator."
 msgstr ""
+"Não foi possível visualizar a interpretação. Tente novamente ou contacte o "
+"administrador do sistema."
 
 msgid "Hide interpretation"
 msgstr " Ocultar interpretação"
@@ -1074,49 +1076,49 @@ msgid "Empty parentheses"
 msgstr "Parênteses vazios"
 
 msgid "Missing right parenthesis )"
-msgstr "Parênteses direito em falta )"
+msgstr "Parêntese direito em falta )"
 
 msgid "Missing left parenthesis ("
-msgstr ""
+msgstr "Parêntese esquerdo em falta ("
 
 msgid "Extra Small"
-msgstr ""
+msgstr "Extra pequeno"
 
 msgid "Small"
 msgstr "Pequeno"
 
 msgid "Regular"
-msgstr "Regula"
+msgstr "Regular"
 
 msgid "Large"
 msgstr "Largo"
 
 msgid "Extra Large"
-msgstr ""
+msgstr "Extra grande"
 
 msgid "Left"
 msgstr "Esquerda"
 
 msgid "Center"
-msgstr ""
+msgstr "Centro"
 
 msgid "Right"
 msgstr "Direita"
 
 msgid "Start"
-msgstr "Inicio"
+msgstr "Início"
 
 msgid "Middle"
-msgstr ""
+msgstr "Meio"
 
 msgid "End"
-msgstr ""
+msgstr "Fim"
 
 msgid "Top"
 msgstr "Topo"
 
 msgid "Bottom"
-msgstr "Inferior"
+msgstr "Fundo"
 
 msgid "{{dynamicOuNames}} and {{lastOuName}}"
 msgstr "{{dynamicOuNames}} e {{lastOuName}}"
@@ -1134,31 +1136,31 @@ msgid "{{allDynamicOuNames}} groups in {{staticOuNames}}"
 msgstr "{{allDynamicOuNames}} grupos em {{staticOuNames}}"
 
 msgid "{{percentage}}% of total x values"
-msgstr ""
+msgstr "{{percentage}}% do total de valores x"
 
 msgid "{{percentage}}% of total y values"
-msgstr ""
+msgstr "{{percentage}}% do total de valores y"
 
 msgid "{{thresholdFactor}} × IQR Q1"
-msgstr ""
+msgstr "{{thresholdFactor}} × IQR Q1"
 
 msgid "{{thresholdFactor}} × IQR Q3"
-msgstr ""
+msgstr "{{thresholdFactor}} × IQR Q3"
 
 msgid "{{thresholdFactor}} × Modified Z-score low"
-msgstr ""
+msgstr "{{thresholdFactor}} × Pontuação-Z baixa modificada"
 
 msgid "{{thresholdFactor}} × Modified Z-score high"
-msgstr ""
+msgstr "{{thresholdFactor}} × Pontuação-Z elevada modificada "
 
 msgid "{{thresholdFactor}} × Z-score low"
-msgstr ""
+msgstr "{{thresholdFactor}} × Pontuação-Z baixa"
 
 msgid "{{thresholdFactor}} × Z-score high"
-msgstr ""
+msgstr "{{thresholdFactor}} × Pontuação-Z elevada"
 
 msgid "Not applicable"
-msgstr ""
+msgstr "Não aplicável"
 
 msgid "Data"
 msgstr "Dados"
@@ -1170,13 +1172,13 @@ msgid "Assigned Categories"
 msgstr "Categorias atribuídas"
 
 msgid "Pivot table"
-msgstr "Tabela Dinâmica"
+msgstr "Tabela dinâmica"
 
 msgid "Area"
 msgstr "Área"
 
 msgid "Stacked area"
-msgstr ""
+msgstr "Área empilhada"
 
 msgid "Bar"
 msgstr "Barra"
@@ -1200,43 +1202,43 @@ msgid "Line"
 msgstr "Linha"
 
 msgid "Line list"
-msgstr "lista de linhas "
+msgstr "Lista de linhas "
 
 msgid "Year over year (line)"
 msgstr "Ano após ano (linha)"
 
 msgid "Pie"
-msgstr "Torta"
+msgstr "Pizza"
 
 msgid "Radar"
 msgstr "Radar"
 
 msgid "Scatter"
-msgstr ""
+msgstr "Dispersão"
 
 msgid "Single value"
-msgstr "Valor unico"
+msgstr "Valor único"
 
 msgid "Outlier table"
-msgstr ""
+msgstr "Tabela de valores atípicos"
 
 msgid "All charts"
-msgstr ""
+msgstr "Todos os gráficos"
 
 msgid "{{seriesName}} (trend)"
-msgstr ""
+msgstr "{{seriesName}} (tendência)"
 
 msgid "Trend"
 msgstr "Tendência"
 
 msgid "No legend for this series"
-msgstr ""
+msgstr "Não há legenda para esta série"
 
 msgid "and {{amount}} more..."
-msgstr ""
+msgstr "e {{amount}} mais..."
 
 msgid "Linear Regression"
-msgstr ""
+msgstr "Regressão linear"
 
 msgid "Target"
 msgstr "Meta"
@@ -1245,13 +1247,13 @@ msgid "Base"
 msgstr "Base"
 
 msgid "Axis {{axisId}}"
-msgstr "Eixo {{axisId}}"
+msgstr "Eixos {{axisId}}"
 
 msgid "{{count}} items"
 msgid_plural "{{count}} items"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "{{count}} item"
+msgstr[1] "{{count}} artigos"
+msgstr[2] "{{count}} itens"
 
 msgid "Reset zoom"
-msgstr ""
+msgstr "Repor o zoom"
