@@ -44,7 +44,7 @@ export const TransferOption = ({
                 onDoubleClick({ label, value }, event)
             }}
         >
-            <div className="group">
+            <div className="labelGroup">
                 <span className="icon">{icon}</span>
                 <span className="label">{label}</span>
                 {onEditClick && (
@@ -60,7 +60,7 @@ export const TransferOption = ({
                     </span>
                 )}
             </div>
-            <div className={cx('group', 'nowrap')}>
+            <div className={cx('group', 'nowrap', 'typeGroup')}>
                 <span className="type">{dimensionType}</span>
                 <span
                     className="info"

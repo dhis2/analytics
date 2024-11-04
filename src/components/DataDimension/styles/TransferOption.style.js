@@ -9,40 +9,15 @@ export default css`
         display: flex;
         justify-content: space-between;
         align-items: center;
-        //background: ${colors.grey200};
+        background: ${colors.white};
         font-size: 14px;
         line-height: 16px;
-        border-bottom: 1px solid ${colors.grey400};
-        padding: 6px ${spacers.dp4};
-        //margin: ${spacers.dp4} ${spacers.dp8} 0 ${spacers.dp8};
+        border-bottom: 1px solid ${colors.grey300};
         user-select: none;
     }
 
     .item:hover {
-        background: ${colors.grey300};
-    }
-
-    .selected {
-        background: ${theme.secondary100};
-        color: ${theme.secondary900};
-    }
-
-    .selected :global(.icon path) {
-        fill: ${theme.secondary700};
-    }
-
-    .selected:hover {
-        background: #c9edeb;
-    }
-
-    .highlighted,
-    .highlighted:hover {
-        background: ${theme.secondary800};
-        color: ${colors.white};
-    }
-
-    .highlighted :global(.icon path) {
-        fill: ${colors.white};
+        background: ${colors.grey100};
     }
 
     .disabled {
@@ -54,8 +29,16 @@ export default css`
         opacity: 0.3;
     }
 
-    .group {
+    .labelGroup {
         display: inline-flex;
+        margin: 6px 4px;
+    }
+
+    .typeGroup {
+        display: inline-flex;
+        margin: 0;
+        align-self: stretch;
+        align-items: center;
     }
 
     .nowrap {
@@ -76,11 +59,16 @@ export default css`
 
     .label {
         font-size: 14px;
+        color: ${colors.grey900};
     }
 
     .type {
-        font-size: 12px;
-        font-family: monospace;
+        font-size: 10px;
+        letter-spacing: -0.2px;
+        color: ${colors.grey600};
+        font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo,
+            Consolas, 'DejaVu Sans Mono', monospace;
+        font-weight: normal;
     }
 
     .edit,
@@ -89,22 +77,54 @@ export default css`
         margin-top: 1px;
         margin-left: ${spacers.dp8};
         cursor: pointer;
+        color: ${colors.grey600};
     }
 
     .info {
-        margin-left: ${spacers.dp4};
+        margin: 0 0 0 ${spacers.dp4};
+        height: 100%;
+        padding: 0 6px;
+        display: flex;
+        align-items: center;
+    }
+
+    .highlighted {
+        background: ${theme.secondary700};
+    }
+    .highlighted:hover {
+        background: ${theme.secondary800};
+    }
+
+    .highlighted .label {
+        color: ${colors.white};
+    }
+
+    .highlighted .type {
+        color: ${theme.secondary050};
+    }
+
+    .highlighted .info {
+        color: ${theme.secondary050};
+    }
+
+    .highlighted :global(.icon path) {
+        fill: ${colors.teal050};
+    }
+
+    .highlighted .type {
+        color: ${colors.teal050};
     }
 
     .edit:hover,
     .info:hover {
-        background-color: rgba(0, 0, 0, 0.12);
-        outline: 1px solid rgba(0, 0, 0, 0.12);
-        border-radius: 3px;
+        background-color: ${colors.grey200};
+        // outline: 1px solid rgba(0, 0, 0, 0.12);
+        border-radius: 0px;
     }
 
     .highlighted .edit:hover,
     .highlighted .info:hover {
-        background-color: rgba(255, 255, 255, 0.12);
-        outline: 1px solid rgba(255, 255, 255, 0.12);
+        background-color: ${theme.secondary900};
+        // outline: 1px solid rgba(255, 255, 255, 0.12);
     }
 `

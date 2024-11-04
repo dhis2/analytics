@@ -37,6 +37,8 @@ export const InfoPopover = ({ reference, onClose, ...props }) => {
                 reference={reference}
                 onClickOutside={onClose}
                 maxWidth={480}
+                arrow={false}
+                elevation="rgba(0, 0, 0, 0.1) 0px 1px 5px, rgba(0, 0, 0, 0.07) 0px 3.6px 13px, rgba(0, 0, 0, 0.06) 0px 8.4px 23px, rgba(0, 0, 0, 0.05) 0px 23px 35px"
             >
                 <div className="popover">
                     {type === DIMENSION_TYPE_DATA_ELEMENT && (
