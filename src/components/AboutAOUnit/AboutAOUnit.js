@@ -3,7 +3,6 @@ import {
     useDataMutation,
     useTimeZoneConversion,
 } from '@dhis2/app-runtime'
-import i18n from '@dhis2/d2-i18n'
 import {
     Button,
     CircularLoader,
@@ -27,6 +26,7 @@ import React, {
     forwardRef,
     useImperativeHandle,
 } from 'react'
+import i18n from '../../locales/index.js'
 import { formatList } from '../../modules/list.js'
 import { RichTextParser } from '../RichText/index.js'
 import styles from './styles/AboutAOUnit.style.js'

@@ -1,5 +1,4 @@
 import { useDataQuery } from '@dhis2/app-runtime'
-import i18n from '@dhis2/d2-i18n'
 import {
     Box,
     Modal,
@@ -24,6 +23,7 @@ import React, {
     useReducer,
     useState,
 } from 'react'
+import i18n from '../../locales/index.js'
 import {
     VIS_TYPE_GROUP_ALL,
     VIS_TYPE_GROUP_CHARTS,
