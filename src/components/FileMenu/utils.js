@@ -1,4 +1,4 @@
-import i18n from '../../locales/index.js'
+import i18n from '@dhis2/d2-i18n'
 
 export const FILE_TYPE_EVENT_REPORT = 'eventReport'
 export const FILE_TYPE_VISUALIZATION = 'visualization'

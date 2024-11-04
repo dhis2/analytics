@@ -1,4 +1,5 @@
 import { useAlert, useDataMutation, useDataQuery } from '@dhis2/app-runtime'
+import i18n from '@dhis2/d2-i18n'
 import {
     Button,
     Modal,
@@ -17,7 +18,6 @@ import {
     updateCalculationMutation,
     validateExpressionMutation,
 } from '../../../api/expression.js'
-import i18n from '../../../locales/index.js'
 import {
     parseExpressionToArray,
     parseArrayToExpression,

@@ -1,6 +1,6 @@
+import i18n from '@dhis2/d2-i18n'
 import isNumber from 'd2-utilizr/lib/isNumber'
 import isNumeric from 'd2-utilizr/lib/isNumeric'
-import i18n from '../../locales/index.js'
 import { getIQRHelper, IQR } from './iqr.js'
 import { getModZScoreHelper, MODIFIED_Z_SCORE } from './modZScore.js'
 import { getNormalizationHelper, Y_RESIDUALS_LINEAR } from './normalization.js'

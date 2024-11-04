@@ -1,4 +1,4 @@
-import i18n from '../locales/index.js'
+import i18n from '@dhis2/d2-i18n'
 
 export const EXPRESSION_TYPE_NUMBER = 'EXPRESSION_TYPE_NUMBER'
 export const EXPRESSION_TYPE_OPERATOR = 'EXPRESSION_TYPE_OPERATOR'

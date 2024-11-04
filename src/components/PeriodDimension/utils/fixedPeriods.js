@@ -1,8 +1,8 @@
+import i18n from '@dhis2/d2-i18n'
 import {
     generateFixedPeriods,
     getNowInCalendar,
 } from '@dhis2/multi-calendar-dates'
-import i18n from '../../../locales/index.js'
 import {
     DAILY,
     WEEKLY,

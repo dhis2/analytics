@@ -1,4 +1,5 @@
 import { useDataQuery } from '@dhis2/app-runtime'
+import i18n from '@dhis2/d2-i18n'
 import {
     CircularLoader,
     IconChevronDown24,
@@ -15,7 +16,6 @@ import React, {
     useImperativeHandle,
     forwardRef,
 } from 'react'
-import i18n from '../../../locales/index.js'
 import { InterpretationForm } from './InterpretationForm.js'
 import { InterpretationList } from './InterpretationList.js'
 

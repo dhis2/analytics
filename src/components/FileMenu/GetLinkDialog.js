@@ -1,4 +1,5 @@
 import { useConfig } from '@dhis2/app-runtime'
+import i18n from '@dhis2/d2-i18n'
 import {
     Modal,
     ModalContent,
@@ -9,7 +10,6 @@ import {
 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
-import i18n from '../../locales/index.js'
 import { styles } from './GetLinkDialog.styles.js'
 import { supportedFileTypes, appPathFor } from './utils.js'
 

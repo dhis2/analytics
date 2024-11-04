@@ -1,3 +1,4 @@
+import i18n from '@dhis2/d2-i18n'
 import {
     CenteredContent,
     CircularLoader,
@@ -10,7 +11,6 @@ import {
 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useState, useRef } from 'react'
-import i18n from '../../locales/index.js'
 import {
     resolvedHeaderStyle,
     userMentionWrapperClasses,

@@ -1,8 +1,8 @@
+import i18n from '@dhis2/d2-i18n'
 import { Transfer, InputField } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useState, useEffect, useCallback } from 'react'
 import GenericIcon from '../../assets/DimensionItemIcons/GenericIcon.js'
-import i18n from '../../locales/index.js'
 import {
     TRANSFER_HEIGHT,
     TRANSFER_OPTIONS_WIDTH,

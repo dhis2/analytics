@@ -1,6 +1,6 @@
+import i18n from '@dhis2/d2-i18n'
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
-import i18n from '../../locales/index.js'
 import Filter from '../Filter/Filter.js'
 import DimensionList from './List/DimensionList.js'
 import { styles } from './styles/DimensionsPanel.style.js'

@@ -1,6 +1,6 @@
+import i18n from '@dhis2/d2-i18n'
 import PropTypes from 'prop-types'
 import React, { useRef } from 'react'
-import i18n from '../../locales/index.js'
 import { applyLegendSet } from '../../modules/pivotTable/applyLegendSet.js'
 import { CELL_TYPE_VALUE } from '../../modules/pivotTable/pivotTableConstants.js'
 import {

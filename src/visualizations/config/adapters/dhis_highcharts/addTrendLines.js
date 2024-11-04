@@ -1,6 +1,6 @@
+import i18n from '@dhis2/d2-i18n'
 import arrayContains from 'd2-utilizr/lib/arrayContains'
 import { rgb } from 'd3-color'
-import i18n from '../../../../locales/index.js'
 import {
     VIS_TYPE_GAUGE,
     VIS_TYPE_PIE,

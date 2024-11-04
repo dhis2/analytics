@@ -1,3 +1,4 @@
+import i18n from '@dhis2/d2-i18n'
 import {
     IconAdd24,
     IconLaunch24,
@@ -13,7 +14,6 @@ import {
 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
-import i18n from '../../locales/index.js'
 import { OpenFileDialog } from '../OpenFileDialog/OpenFileDialog.js'
 import {
     HoverMenuListItem,

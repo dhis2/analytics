@@ -1,4 +1,5 @@
 import { useDataEngine } from '@dhis2/app-runtime'
+import i18n from '@dhis2/d2-i18n'
 import {
     CircularLoader,
     InputField,
@@ -12,7 +13,6 @@ import cx from 'classnames'
 import PropTypes from 'prop-types'
 import React, { useEffect, useRef, useState } from 'react'
 import { apiFetchOptions, apiFetchGroups } from '../../../api/dimensions.js'
-import i18n from '../../../locales/index.js'
 import {
     TOTALS,
     DETAIL,

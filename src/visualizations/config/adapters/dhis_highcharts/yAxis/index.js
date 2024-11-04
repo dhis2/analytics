@@ -1,6 +1,6 @@
+import i18n from '@dhis2/d2-i18n'
 import arrayClean from 'd2-utilizr/lib/arrayClean'
 import objectClean from 'd2-utilizr/lib/objectClean'
-import i18n from '../../../../../locales/index.js'
 import {
     FONT_STYLE_VERTICAL_AXIS_TITLE,
     mergeFontStyleWithDefault,

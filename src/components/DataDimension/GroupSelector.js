@@ -1,9 +1,9 @@
 import { useDataEngine } from '@dhis2/app-runtime'
+import i18n from '@dhis2/d2-i18n'
 import { SingleSelectField, SingleSelectOption } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useEffect, useState } from 'react'
 import { apiFetchGroups } from '../../api/dimensions.js'
-import i18n from '../../locales/index.js'
 import {
     dataTypeMap as dataTypes,
     SUB_GROUP_DETAIL,

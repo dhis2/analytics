@@ -1,3 +1,4 @@
+import i18n from '@dhis2/d2-i18n'
 import {
     IconVisualizationArea24,
     IconVisualizationAreaStacked24,
@@ -17,7 +18,6 @@ import {
     IconVisualizationScatter24,
     IconVisualizationSingleValue24,
 } from '@dhis2/ui'
-import i18n from '../locales/index.js'
 export const VIS_TYPE_PIVOT_TABLE = 'PIVOT_TABLE'
 export const VIS_TYPE_AREA = 'AREA'
 export const VIS_TYPE_STACKED_AREA = 'STACKED_AREA'

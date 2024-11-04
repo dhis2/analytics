@@ -1,7 +1,7 @@
+import i18n from '@dhis2/d2-i18n'
 import { SingleSelectField, SingleSelectOption } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
-import i18n from '../../locales/index.js'
 import { DIMENSION_TYPE_ALL, dataTypeMap } from '../../modules/dataTypes.js'
 import { getDisplayNameByVisType } from '../../modules/visTypes.js'
 import { useDataDimensionContext } from './DataDimension.js'

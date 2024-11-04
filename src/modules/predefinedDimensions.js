@@ -1,10 +1,10 @@
+import i18n from '@dhis2/d2-i18n'
 import {
     IconClock16,
     IconDimensionData16,
     IconDimensionOrgUnit16,
 } from '@dhis2/ui'
 import AssignedCategoriesIcon from '../assets/AssignedCategoriesIcon.js'
-import i18n from '../locales/index.js'
 
 export const DIMENSION_ID_DATA = 'dx'
 export const DIMENSION_ID_PERIOD = 'pe'

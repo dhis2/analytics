@@ -1,4 +1,5 @@
 import { useAlert, useDataMutation } from '@dhis2/app-runtime'
+import i18n from '@dhis2/d2-i18n'
 import {
     CenteredContent,
     DataTable,
@@ -12,7 +13,6 @@ import {
 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useEffect, useRef, useState } from 'react'
-import i18n from '../../../locales/index.js'
 import { LocalesSelect } from './LocalesSelect.js'
 import { TranslationModalActions } from './TranslationModalActions.js'
 

@@ -1,9 +1,9 @@
 import { useDataEngine } from '@dhis2/app-runtime'
+import i18n from '@dhis2/d2-i18n'
 import { Transfer, InputField, IconInfo16, Button, IconAdd24 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 import { apiFetchOptions } from '../../api/dimensions.js'
-import i18n from '../../locales/index.js'
 import { DATA_SETS_CONSTANTS, REPORTING_RATE } from '../../modules/dataSets.js'
 import {
     DIMENSION_TYPE_ALL,

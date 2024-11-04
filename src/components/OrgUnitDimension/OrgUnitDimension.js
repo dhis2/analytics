@@ -1,4 +1,5 @@
 import { useDataEngine } from '@dhis2/app-runtime'
+import i18n from '@dhis2/d2-i18n'
 import {
     OrganisationUnitTree,
     Checkbox,
@@ -15,7 +16,6 @@ import {
     apiFetchOrganisationUnitGroups,
     apiFetchOrganisationUnitLevels,
 } from '../../api/organisationUnits.js'
-import i18n from '../../locales/index.js'
 import { formatList } from '../../modules/list.js'
 import {
     ouIdHelper,
