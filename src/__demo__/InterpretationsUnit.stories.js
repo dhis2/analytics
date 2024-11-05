@@ -53,4 +53,3 @@ export const WithNoTimeDimensionsWarning = () => {
 WithNoTimeDimensionsWarning.story = {
     name: 'With no time dimensions warning',
 }
-

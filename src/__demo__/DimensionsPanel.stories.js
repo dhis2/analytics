@@ -156,4 +156,3 @@ export const WithMenu = () => {
 WithMenu.story = {
     name: 'with menu',
 }
-

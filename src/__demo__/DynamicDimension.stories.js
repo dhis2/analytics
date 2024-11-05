@@ -60,4 +60,3 @@ export const ItemSelectorDisabledItemSelected = () => {
 ItemSelectorDisabledItemSelected.story = {
     name: 'ItemSelector disabled item selected',
 }
-

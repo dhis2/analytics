@@ -241,4 +241,3 @@ export const WithoutLevelAndGroupSelectorWithWarningText = () => {
 WithoutLevelAndGroupSelectorWithWarningText.story = {
     name: 'Without level and group selector, with warning text',
 }
-

@@ -47,4 +47,3 @@ export const AllowedPeriodTypes = () => {
 AllowedPeriodTypes.story = {
     name: 'Allowed period types',
 }
-

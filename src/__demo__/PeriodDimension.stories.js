@@ -116,4 +116,3 @@ export const UsingRightFooter = () => {
 UsingRightFooter.story = {
     name: 'Using right footer',
 }
-

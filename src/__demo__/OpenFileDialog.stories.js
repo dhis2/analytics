@@ -139,4 +139,3 @@ export const NoConnection = () => (
 NoConnection.story = {
     name: 'No connection',
 }
-

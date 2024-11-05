@@ -1243,4 +1243,3 @@ export const TruncatedHeaderCell = (_, { pivotTableOptions }) => {
 TruncatedHeaderCell.story = {
     name: 'Truncated header cell',
 }
-
