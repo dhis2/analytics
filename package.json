@@ -76,7 +76,8 @@
         "resize-observer-polyfill": "^1.5.1"
     },
     "resolutions": {
-        "@dhis2/ui": "^9.2.0"
+        "@dhis2/ui": "^9.2.0",
+        "eslint": "^7.32.0"
     },
     "files": [
         "build"
