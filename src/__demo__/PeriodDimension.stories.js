@@ -1,3 +1,5 @@
+import { DataProvider } from '@dhis2/app-runtime'
+import { ConfigProvider } from '@dhis2/app-service-config'
 import React from 'react'
 import PeriodDimension from '../components/PeriodDimension/PeriodDimension.js'
 import {
@@ -12,10 +14,22 @@ import {
     BIMONTHLY,
 } from '../components/PeriodDimension/utils/index.js'
 
+const Wrapper = (story) => (
+    <ConfigProvider config={{ systemInfo: {} }}>
+        <DataProvider
+            baseUrl="https://test.e2e.dhis2.org/analytics-41dev/"
+            apiVersion="41"
+        >
+            {story()}
+        </DataProvider>
+    </ConfigProvider>
+)
+
 const selectedPeriods = [{ id: 'LAST_12_MONTHS', name: 'Last 12 months' }]
 
 export default {
     title: 'PeriodDimension',
+    decorators: [Wrapper],
 }
 
 export const NoneSelected = () => {

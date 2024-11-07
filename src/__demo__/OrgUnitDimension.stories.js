@@ -4,8 +4,8 @@ import OrgUnitDimension from '../components/OrgUnitDimension/OrgUnitDimension.js
 
 const Wrapper = (story) => (
     <DataProvider
-        baseUrl="https://debug.dhis2.org/analytics-dev/"
-        apiVersion=""
+        baseUrl="https://test.e2e.dhis2.org/analytics-41dev/"
+        apiVersion="41"
     >
         {story()}
     </DataProvider>

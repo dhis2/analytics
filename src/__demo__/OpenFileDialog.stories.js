@@ -1,4 +1,4 @@
-import { Provider } from '@dhis2/app-runtime'
+import { DataProvider } from '@dhis2/app-runtime'
 import React from 'react'
 import { OpenFileDialog } from '../components/OpenFileDialog/OpenFileDialog.js'
 import {
@@ -10,10 +10,14 @@ import {
     VIS_TYPE_LINE_LIST,
 } from '../modules/visTypes.js'
 
-const configMock = {
-    baseUrl: 'https://debug.dhis2.org/dev',
-    apiVersion: 37,
-}
+const Wrapper = (story) => (
+    <DataProvider
+        baseUrl="https://test.e2e.dhis2.org/analytics-41dev/"
+        apiVersion="41"
+    >
+        {story()}
+    </DataProvider>
+)
 
 const user = {
     displayName: 'John Traore',
@@ -33,21 +37,20 @@ const filterVisTypesWithGroupsAndDivider = [
 
 export default {
     title: 'OpenFileDialog',
+    decorators: [Wrapper],
 }
 
 export const ListOfVisualizationsWithVisTypeFilterAndDividerNoDefaultVisType =
     () => (
-        <Provider config={configMock}>
-            <OpenFileDialog
-                type="visualization"
-                filterVisTypes={filterVisTypesWithGroupsAndDivider}
-                onClose={Function.prototype}
-                onFileSelect={onFileSelect}
-                onNew={Function.prototype}
-                open={true}
-                currentUser={user}
-            />
-        </Provider>
+        <OpenFileDialog
+            type="visualization"
+            filterVisTypes={filterVisTypesWithGroupsAndDivider}
+            onClose={Function.prototype}
+            onFileSelect={onFileSelect}
+            onNew={Function.prototype}
+            open={true}
+            currentUser={user}
+        />
     )
 
 ListOfVisualizationsWithVisTypeFilterAndDividerNoDefaultVisType.story = {
@@ -55,16 +58,14 @@ ListOfVisualizationsWithVisTypeFilterAndDividerNoDefaultVisType.story = {
 }
 
 export const ListOfMapsNoVisTypeFilter = () => (
-    <Provider config={configMock}>
-        <OpenFileDialog
-            type="map"
-            onClose={Function.prototype}
-            onFileSelect={onFileSelect}
-            onNew={Function.prototype}
-            open={true}
-            currentUser={user}
-        />
-    </Provider>
+    <OpenFileDialog
+        type="map"
+        onClose={Function.prototype}
+        onFileSelect={onFileSelect}
+        onNew={Function.prototype}
+        open={true}
+        currentUser={user}
+    />
 )
 
 ListOfMapsNoVisTypeFilter.story = {
@@ -78,18 +79,16 @@ const filterVisTypesWithDisabled = [
 
 export const ListOfEventVisualizationsWithVisTypeFilterDisabledTypeAndDefaultVisType =
     () => (
-        <Provider config={configMock}>
-            <OpenFileDialog
-                type="eventVisualization"
-                filterVisTypes={filterVisTypesWithDisabled}
-                defaultFilterVisType={VIS_TYPE_LINE_LIST}
-                onClose={Function.prototype}
-                onFileSelect={onFileSelect}
-                onNew={Function.prototype}
-                open={true}
-                currentUser={user}
-            />
-        </Provider>
+        <OpenFileDialog
+            type="eventVisualization"
+            filterVisTypes={filterVisTypesWithDisabled}
+            defaultFilterVisType={VIS_TYPE_LINE_LIST}
+            onClose={Function.prototype}
+            onFileSelect={onFileSelect}
+            onNew={Function.prototype}
+            open={true}
+            currentUser={user}
+        />
     )
 
 ListOfEventVisualizationsWithVisTypeFilterDisabledTypeAndDefaultVisType.story =
@@ -105,17 +104,15 @@ const filterVisTypesWithGroupDividerAndDisabled = [
 
 export const ListOfVisualizationsWithVisTypeFilterWithGroupTypeDividerAndDisabledOptionNoDefaultVisType =
     () => (
-        <Provider config={configMock}>
-            <OpenFileDialog
-                type="visualization"
-                filterVisTypes={filterVisTypesWithGroupDividerAndDisabled}
-                onClose={Function.prototype}
-                onFileSelect={onFileSelect}
-                onNew={Function.prototype}
-                open={true}
-                currentUser={user}
-            />
-        </Provider>
+        <OpenFileDialog
+            type="visualization"
+            filterVisTypes={filterVisTypesWithGroupDividerAndDisabled}
+            onClose={Function.prototype}
+            onFileSelect={onFileSelect}
+            onNew={Function.prototype}
+            open={true}
+            currentUser={user}
+        />
     )
 
 ListOfVisualizationsWithVisTypeFilterWithGroupTypeDividerAndDisabledOptionNoDefaultVisType.story =
@@ -124,16 +121,14 @@ ListOfVisualizationsWithVisTypeFilterWithGroupTypeDividerAndDisabledOptionNoDefa
     }
 
 export const NoConnection = () => (
-    <Provider config={configMock}>
-        <OpenFileDialog
-            type="map"
-            onClose={Function.prototype}
-            onFileSelect={onFileSelect}
-            onNew={Function.prototype}
-            open={true}
-            currentUser={user}
-        />
-    </Provider>
+    <OpenFileDialog
+        type="map"
+        onClose={Function.prototype}
+        onFileSelect={onFileSelect}
+        onNew={Function.prototype}
+        open={true}
+        currentUser={user}
+    />
 )
 
 NoConnection.story = {
