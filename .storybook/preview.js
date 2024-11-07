@@ -1,7 +1,9 @@
 import { CssReset } from '@dhis2/ui'
 import React from 'react'
+const { withJsx } = require('@mihkeleidast/storybook-addon-source')
 
 export const decorators = [
+    withJsx,
     (Story) => (
         <div>
             <CssReset />
@@ -22,3 +24,4 @@ export const decorators = [
         </div>
     ),
 ]
+//export const tags = ['autodocs', 'autodocs'];

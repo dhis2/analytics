@@ -1,4 +1,3 @@
-import { storiesOf } from '@storybook/react'
 import React, { useState, useMemo, useRef, useEffect, useCallback } from 'react'
 import { createVisualization } from '../index.js'
 const constainerStyleBase = {
@@ -627,7 +626,11 @@ const baseExtraOptions = {
 
 const indicatorTypes = ['plain', 'percent', 'subtext']
 
-storiesOf('SingleValue', module).add('default', () => {
+export default {
+    title: 'SingleValue',
+}
+
+export const Default = () => {
     const newChartRef = useRef(null)
     const newContainerRef = useRef(null)
     const [dashboard, setDashboard] = useState(false)
@@ -799,4 +802,8 @@ storiesOf('SingleValue', module).add('default', () => {
             </div>
         </>
     )
-})
+}
+
+Default.story = {
+    name: 'default',
+}

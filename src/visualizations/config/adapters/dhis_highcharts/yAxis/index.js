@@ -148,7 +148,7 @@ function getDefault(layout, series, extraOptions) {
     return axes
 }
 
-export default function (layout, series, extraOptions) {
+export default function yAxis(layout, series, extraOptions) {
     switch (layout.type) {
         case VIS_TYPE_SINGLE_VALUE:
             return null
