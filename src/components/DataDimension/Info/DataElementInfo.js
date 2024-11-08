@@ -28,11 +28,11 @@ export const DataElementInfo = ({ id, displayNameProp }) => {
                 <tr>
                     <th>{i18n.t('Data set(s)')}</th>
                     <td>
-                        {data.dataElement.dataSetElements.length === 1 ? (
+                        {data?.dataElement.dataSetElements.length === 1 ? (
                             data.dataElement.dataSetElements[0].displayName
                         ) : (
                             <ul>
-                                {data.dataElement.dataSetElements.map(
+                                {data?.dataElement.dataSetElements.map(
                                     ({ id, displayName }) => (
                                         <li key={id}>{displayName}</li>
                                     )
