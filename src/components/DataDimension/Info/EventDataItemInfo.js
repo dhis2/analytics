@@ -13,7 +13,7 @@ const programDataElementQuery = {
         params: ({ displayNameProp }) => ({
             fields: `${getCommonFields(
                 displayNameProp
-            )},valueType,aggregationType,zeroIsSignificant,legendSets[id,displayName]`,
+            )},aggregationType,dimensionItemType,legendSets[id,displayName],optionsSet[displayName],valueType,zeroIsSignificant`,
         }),
     },
 }
@@ -23,7 +23,9 @@ const programAttributeQuery = {
         resource: 'trackedEntityAttributes',
         id: ({ id }) => id,
         params: ({ displayNameProp }) => ({
-            fields: `${getCommonFields(displayNameProp)}`,
+            fields: `${getCommonFields(
+                displayNameProp
+            )},aggregationType,dimensionItemType,legendSets[id,displayName],optionsSet[displayName],valueType,zeroIsSignificant`,
         }),
     },
 }
@@ -39,60 +41,53 @@ export const EventDataItemInfo = ({ type, id, displayNameProp }) => {
         }
     )
 
-    const renderProgramDataElementInfo = () => (
+    const renderInfoTable = (data) => (
         <>
-            <InfoTable
-                data={data?.programDataElement}
-                loading={loading}
-                error={error}
-            >
+            <InfoTable data={data} loading={loading} error={error}>
+                <tr>
+                    <th>{i18n.t('Type')}</th>
+                    <td>
+                        {data?.type === DIMENSION_TYPE_PROGRAM_DATA_ELEMENT
+                            ? i18n.t('Data element')
+                            : i18n.t('Tracked entity attribute')}
+                    </td>
+                </tr>
                 <tr>
                     <th>{i18n.t('Value type')}</th>
-                    <td>{data?.programDataElement.valueType}</td>
+                    <td>{data?.valueType}</td>
                 </tr>
-                <tr>
-                    <th>{i18n.t('Aggregation type')}</th>
-                    <td>{data?.programDataElement.aggregationType}</td>
-                </tr>
-                <tr>
-                    <th>{i18n.t('Legend sets')}</th>
-                    <td>
-                        <ul>
-                            {data?.programDataElement.legendSets.map(
-                                ({ id, displayName }) => (
-                                    <li key={id}>{displayName}</li>
-                                )
+                {data?.optionSet && (
+                    <tr>
+                        <td>{i18n.t('Option set')}</td>
+                        <td>{data.optionSet.displayName}</td>
+                    </tr>
+                )}
+                {Boolean(data?.legendSets.length) && (
+                    <tr>
+                        <th>{i18n.t('Legend set(s)')}</th>
+                        <td>
+                            {data.legendSets.length === 1 ? (
+                                data.legendSets[0].displayName
+                            ) : (
+                                <ul>
+                                    {data.legendSets.map(
+                                        ({ id, displayName }) => (
+                                            <li key={id}>{displayName}</li>
+                                        )
+                                    )}
+                                </ul>
                             )}
-                        </ul>
-                    </td>
-                </tr>
-                <tr>
-                    <th>{i18n.t('Zero is significant')}</th>
-                    <td>
-                        {data?.programDataElement.zeroIsSignificant
-                            ? i18n.t('True')
-                            : i18n.t('False')}
-                    </td>
-                </tr>
+                        </td>
+                    </tr>
+                )}
             </InfoTable>
             <style jsx>{styles}</style>
         </>
     )
 
-    const renderProgramAttributeInfo = () => (
-        <>
-            <InfoTable
-                data={data?.programAttribute}
-                loading={loading}
-                error={error}
-            ></InfoTable>
-            <style jsx>{styles}</style>
-        </>
-    )
-
     return type === DIMENSION_TYPE_PROGRAM_DATA_ELEMENT
-        ? renderProgramDataElementInfo()
-        : renderProgramAttributeInfo()
+        ? renderInfoTable(data?.programDataElement)
+        : renderInfoTable(data?.programAttribute)
 }
 
 EventDataItemInfo.propTypes = {

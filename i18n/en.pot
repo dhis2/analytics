@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2024-10-30T09:04:20.385Z\n"
-"PO-Revision-Date: 2024-10-30T09:04:20.386Z\n"
+"POT-Creation-Date: 2024-11-08T14:29:12.042Z\n"
+"PO-Revision-Date: 2024-11-08T14:29:12.043Z\n"
 
 msgid "view only"
 msgstr "view only"
@@ -168,23 +168,14 @@ msgstr "Disaggregation"
 msgid "No data"
 msgstr "No data"
 
-msgid "Expression"
-msgstr "Expression"
+msgid "Expression description in human readable format"
+msgstr "Expression description in human readable format"
 
-msgid "Value type"
-msgstr "Value type"
+msgid "None"
+msgstr "None"
 
-msgid "Aggregation type"
-msgstr "Aggregation type"
-
-msgid "Category combo"
-msgstr "Category combo"
-
-msgid "Data element groups"
-msgstr "Data element groups"
-
-msgid "Legend sets"
-msgstr "Legend sets"
+msgid "Data set(s)"
+msgstr "Data set(s)"
 
 msgid "Zero is significant"
 msgstr "Zero is significant"
@@ -195,38 +186,125 @@ msgstr "True"
 msgid "False"
 msgstr "False"
 
+msgid "Value type"
+msgstr "Value type"
+
+msgid "Aggregation type"
+msgstr "Aggregation type"
+
+msgid "Category combo"
+msgstr "Category combo"
+
+msgid "Option set"
+msgstr "Option set"
+
+msgid "Group membership"
+msgstr "Group membership"
+
+msgid "Legend set(s)"
+msgstr "Legend set(s)"
+
 msgid "Period type"
 msgstr "Period type"
 
-msgid "Data set elements"
-msgstr "Data set elements"
+msgid "Indicators"
+msgstr "Indicators"
 
-msgid "Indicator type"
-msgstr "Indicator type"
+msgid "Expiry days"
+msgstr "Expiry days"
+
+msgid "Type"
+msgstr "Type"
+
+msgid "Data element"
+msgstr "Data element"
+
+msgid "Tracked entity attribute"
+msgstr "Tracked entity attribute"
+
+msgid "Numerator description"
+msgstr "Numerator description"
+
+msgid "Numerator expression in human readable format"
+msgstr "Numerator expression in human readable format"
+
+msgid "Denominator description"
+msgstr "Denominator description"
+
+msgid "Denominator expression in human readable format"
+msgstr "Denominator expression in human readable format"
 
 msgid "Annualized"
 msgstr "Annualized"
 
-msgid "Numerator"
-msgstr "Numerator"
+msgid "Yes"
+msgstr "Yes"
 
-msgid "Denominator"
-msgstr "Denominator"
+msgid "No"
+msgstr "No"
+
+msgid "Indicator type"
+msgstr "Indicator type"
+
+msgid "Decimals in output"
+msgstr "Decimals in output"
 
 msgid "Name"
 msgstr "Name"
 
+msgid "Description"
+msgstr "Description"
+
 msgid "Code"
 msgstr "Code"
 
-msgid "Description"
-msgstr "Description"
+msgid "ID"
+msgstr "ID"
+
+msgid "Last updated date"
+msgstr "Last updated date"
+
+msgid "Created date"
+msgstr "Created date"
 
 msgid "Created by"
 msgstr "Created by"
 
-msgid "Last updated"
-msgstr "Last updated"
+msgid "API link"
+msgstr "API link"
+
+msgid "Open in API"
+msgstr "Open in API"
+
+msgid "Custom attributes"
+msgstr "Custom attributes"
+
+msgid "Program"
+msgstr "Program"
+
+msgid "Analytics type"
+msgstr "Analytics type"
+
+msgid "Enrollment"
+msgstr "Enrollment"
+
+msgid "Event"
+msgstr "Event"
+
+msgid "Analytics period boundaries"
+msgstr "Analytics period boundaries"
+
+msgid "Target"
+msgstr "Target"
+
+msgid "Offset"
+msgstr "Offset"
+
+msgid "Expression in human readable format"
+msgstr "Expression in human readable format"
+
+msgid "Filter expression in human readable format"
+msgstr "Filter expression in human readable format"
 
 msgid "Search by data item name"
 msgstr "Search by data item name"
@@ -508,8 +586,8 @@ msgstr "Filter by name"
 msgid "Created"
 msgstr "Created"
 
-msgid "Type"
-msgstr "Type"
+msgid "Last updated"
+msgstr "Last updated"
 
 msgid "Clear filters"
 msgstr "Clear filters"
@@ -999,14 +1077,8 @@ msgstr "Actual reports on time"
 msgid "Expected reports"
 msgstr "Expected reports"
 
-msgid "Program"
-msgstr "Program"
-
 msgid "Select a program"
 msgstr "Select a program"
-
-msgid "Indicators"
-msgstr "Indicators"
 
 msgid "Indicator group"
 msgstr "Indicator group"
@@ -1025,9 +1097,6 @@ msgstr "Loading indicator groups"
 
 msgid "Data element group"
 msgstr "Data element group"
-
-msgid "Data element"
-msgstr "Data element"
 
 msgid "No data element groups found"
 msgstr "No data element groups found"
@@ -1253,9 +1322,6 @@ msgstr "and {{amount}} more..."
 
 msgid "Linear Regression"
 msgstr "Linear Regression"
-
-msgid "Target"
-msgstr "Target"
 
 msgid "Base"
 msgstr "Base"

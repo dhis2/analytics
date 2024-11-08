@@ -1,6 +1,7 @@
-import { useDataQuery } from '@dhis2/app-runtime'
+import { useDataMutation, useDataEngine } from '@dhis2/app-runtime'
 import PropTypes from 'prop-types'
-import React from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
+import { validateExpressionMutation } from '../../../api/expression.js'
 import i18n from '../../../locales/index.js'
 import { getCommonFields, InfoTable } from './InfoTable.js'
 import styles from './styles/InfoPopover.style.js'
@@ -12,45 +13,160 @@ const indicatorQuery = {
         params: ({ displayNameProp }) => ({
             fields: `${getCommonFields(
                 displayNameProp
-            )},indicatorType[displayName],annualized,numerator,displayNumeratorDescription,denominator,displayDenominatorDescription`,
+            )},annualized,dataSets[id,displayName],decimals,denominator,displayDenominatorDescription,displayNumeratorDescription,indicatorGroups[id,displayName],indicatorType[displayName,factor],legendSets[id,displayName],numerator`,
         }),
     },
 }
 
 export const IndicatorInfo = ({ id, displayNameProp }) => {
-    const { loading, error, data } = useDataQuery(indicatorQuery, {
-        variables: { id, displayNameProp },
-    })
+    const [data, setData] = useState()
+    const [error, setError] = useState()
+    const [loading, setLoading] = useState(true)
+
+    const engine = useDataEngine()
+    const [getHumanReadableExpression] = useDataMutation(
+        validateExpressionMutation,
+        { onError: setError }
+    )
+
+    const fetchData = useCallback(async () => {
+        const { indicator } = await engine.query(indicatorQuery, {
+            variables: { id, displayNameProp },
+            onError: setError,
+        })
+
+        if (indicator.denominator) {
+            const result = await getHumanReadableExpression({
+                expression: indicator.denominator,
+            })
+
+            if (result?.description) {
+                indicator.humanReadableDenominatorExpression =
+                    result.description
+            }
+        }
+
+        if (indicator.numerator) {
+            const result = await getHumanReadableExpression({
+                expression: indicator.numerator,
+            })
+
+            if (result?.description) {
+                indicator.humanReadableNumeratorExpression = result.description
+            }
+        }
+
+        setData({ indicator })
+        setLoading(false)
+    }, [displayNameProp, engine, getHumanReadableExpression, id])
+
+    useEffect(() => {
+        fetchData()
+    }, [fetchData])
 
     return (
         <>
             <InfoTable data={data?.indicator} loading={loading} error={error}>
                 <tr>
-                    <th>{i18n.t('Indicator type')}</th>
-                    <td>{data?.indicator.type}</td>
+                    <th>{i18n.t('Numerator description')}</th>
+                    <td>{data?.indicator.displayNumeratorDescription}</td>
+                </tr>
+                <tr>
+                    <th>
+                        {i18n.t(
+                            'Numerator expression in human readable format'
+                        )}
+                    </th>
+                    <td>
+                        {data?.indicator.humanReadableNumeratorExpression ||
+                            i18n.t('None')}
+                    </td>
+                </tr>
+                <tr>
+                    <th>{i18n.t('Denominator description')}</th>
+                    <td>{data?.indicator.displayDenominatorDescription}</td>
+                </tr>
+                <tr>
+                    <th>
+                        {i18n.t(
+                            'Denominator expression in human readable format'
+                        )}
+                    </th>
+                    <td>
+                        {data?.indicator.humanReadableDenominatorExpression ||
+                            i18n.t('None')}
+                    </td>
                 </tr>
                 <tr>
                     <th>{i18n.t('Annualized')}</th>
                     <td>
                         {data?.indicator.annualized
-                            ? i18n.t('True')
-                            : i18n.t('False')}
+                            ? i18n.t('Yes')
+                            : i18n.t('No')}
                     </td>
                 </tr>
                 <tr>
-                    <th>{i18n.t('Numerator')}</th>
-                    <td>
-                        {data?.indicator.numerator}: $
-                        {data?.indicator.displayNumerator}
-                    </td>
+                    <th>{i18n.t('Indicator type')}</th>
+                    <td>{`${data?.indicator.displayName}, ${data?.indicator.factor}`}</td>
                 </tr>
+                {data?.indicator.decimals && (
+                    <tr>
+                        <th>{i18n.t('Decimals in output')}</th>
+                        <td>{data.indicator.decimals}</td>
+                    </tr>
+                )}
+                {Boolean(data?.indicator.dataSets.length) && (
+                    <tr>
+                        <th>{i18n.t('Data set(s)')}</th>
+                        <td>
+                            {data.indicator.dataSets.length === 1 ? (
+                                data.indicator.dataSets[0].displayName
+                            ) : (
+                                <ul>
+                                    {data.indicator.dataSets.map(
+                                        ({ id, displayName }) => (
+                                            <li key={id}>{displayName}</li>
+                                        )
+                                    )}
+                                </ul>
+                            )}
+                        </td>
+                    </tr>
+                )}
                 <tr>
-                    <th>{i18n.t('Denominator')}</th>
+                    <th>{i18n.t('Group membership')}</th>
                     <td>
-                        {data?.indicator.denominator}: $
-                        {data?.indicator.displayDenominator}
+                        {data?.indicator.indicatorGroups.length === 1 ? (
+                            data.indicator.indicatorGroups[0].displayName
+                        ) : (
+                            <ul>
+                                {data?.indicator.indicatorGroups.map(
+                                    ({ id, displayName }) => (
+                                        <li key={id}>{displayName}</li>
+                                    )
+                                )}
+                            </ul>
+                        )}
                     </td>
                 </tr>
+                {Boolean(data?.indicator.legendSets.length) && (
+                    <tr>
+                        <th>{i18n.t('Legend set(s)')}</th>
+                        <td>
+                            {data.indicator.legendSets.length === 1 ? (
+                                data.indicator.legendSets[0].displayName
+                            ) : (
+                                <ul>
+                                    {data.indicator.legendSets.map(
+                                        ({ id, displayName }) => (
+                                            <li key={id}>{displayName}</li>
+                                        )
+                                    )}
+                                </ul>
+                            )}
+                        </td>
+                    </tr>
+                )}
             </InfoTable>
             <style jsx>{styles}</style>
         </>

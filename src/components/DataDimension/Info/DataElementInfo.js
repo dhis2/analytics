@@ -12,7 +12,7 @@ const dataElementQuery = {
         params: ({ displayNameProp }) => ({
             fields: `${getCommonFields(
                 displayNameProp
-            )},valueType,aggregationType,zeroIsSignificant,categoryCombo[id,displayName],legendSets[id,displayName],dataElementGroups[id,displayName]`,
+            )},aggregationType,categoryCombo[displayName,categories[id,displayName]],dataElementGroups[id,displayName],dataSetElements[id,displayName],legendSets[id,displayName],optionSet[displayName],valueType,zeroIsSignificant`,
         }),
     },
 }
@@ -26,39 +26,19 @@ export const DataElementInfo = ({ id, displayNameProp }) => {
         <>
             <InfoTable data={data?.dataElement} loading={loading} error={error}>
                 <tr>
-                    <th>{i18n.t('Value type')}</th>
-                    <td>{data?.dataElement.valueType}</td>
-                </tr>
-                <tr>
-                    <th>{i18n.t('Aggregation type')}</th>
-                    <td>{data?.dataElement.aggregationType}</td>
-                </tr>
-                <tr>
-                    <th>{i18n.t('Category combo')}</th>
-                    <td>{data?.dataElement.categoryCombo.displayName}</td>
-                </tr>
-                <tr>
-                    <th>{i18n.t('Data element groups')}</th>
+                    <th>{i18n.t('Data set(s)')}</th>
                     <td>
-                        <ul>
-                            {data?.dataElement.dataElementGroups.map(
-                                ({ id, displayName }) => (
-                                    <li key={id}>{displayName}</li>
-                                )
-                            )}
-                        </ul>
-                    </td>
-                </tr>
-                <tr>
-                    <th>{i18n.t('Legend sets')}</th>
-                    <td>
-                        <ul>
-                            {data?.dataElement.legendSets.map(
-                                ({ id, displayName }) => (
-                                    <li key={id}>{displayName}</li>
-                                )
-                            )}
-                        </ul>
+                        {data.dataElement.dataSetElements.length === 1 ? (
+                            data.dataElement.dataSetElements[0].displayName
+                        ) : (
+                            <ul>
+                                {data.dataElement.dataSetElements.map(
+                                    ({ id, displayName }) => (
+                                        <li key={id}>{displayName}</li>
+                                    )
+                                )}
+                            </ul>
+                        )}
                     </td>
                 </tr>
                 <tr>
@@ -69,6 +49,71 @@ export const DataElementInfo = ({ id, displayNameProp }) => {
                             : i18n.t('False')}
                     </td>
                 </tr>
+                <tr>
+                    <th>{i18n.t('Value type')}</th>
+                    <td>{data?.dataElement.valueType}</td>
+                </tr>
+                <tr>
+                    <th>{i18n.t('Aggregation type')}</th>
+                    <td>{data?.dataElement.aggregationType}</td>
+                </tr>
+                <tr>
+                    <th>{i18n.t('Category combo')}</th>
+                    <td>
+                        <details>
+                            <summary>
+                                {data?.dataElement.categoryCombo.displayName}
+                            </summary>
+                            <ul>
+                                {data?.dataElement.categoryCombo.categories.map(
+                                    ({ id, displayName }) => (
+                                        <li key={id}>{displayName}</li>
+                                    )
+                                )}
+                            </ul>
+                        </details>
+                    </td>
+                </tr>
+                {data?.dataElement.optionSet && (
+                    <tr>
+                        <td>{i18n.t('Option set')}</td>
+                        <td>{data.dataElement.optionSet.displayName}</td>
+                    </tr>
+                )}
+                <tr>
+                    <th>{i18n.t('Group membership')}</th>
+                    <td>
+                        {data?.dataElement.dataElementGroups.length === 1 ? (
+                            data.dataElement.dataElementGroups[0].displayName
+                        ) : (
+                            <ul>
+                                {data?.dataElement.dataElementGroups.map(
+                                    ({ id, displayName }) => (
+                                        <li key={id}>{displayName}</li>
+                                    )
+                                )}
+                            </ul>
+                        )}
+                    </td>
+                </tr>
+                {Boolean(data?.dataElement.legendSets.length) && (
+                    <tr>
+                        <th>{i18n.t('Legend set(s)')}</th>
+                        <td>
+                            {data.dataElement.legendSets.length === 1 ? (
+                                data.dataElement.legendSets[0].displayName
+                            ) : (
+                                <ul>
+                                    {data.dataElement.legendSets.map(
+                                        ({ id, displayName }) => (
+                                            <li key={id}>{displayName}</li>
+                                        )
+                                    )}
+                                </ul>
+                            )}
+                        </td>
+                    </tr>
+                )}
             </InfoTable>
             <style jsx>{styles}</style>
         </>

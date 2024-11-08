@@ -12,7 +12,7 @@ const dataSetQuery = {
         params: ({ displayNameProp }) => ({
             fields: `${getCommonFields(
                 displayNameProp
-            )},periodType,dataSetElements[dataElement[id,displayName]]`,
+            )},dataSetElements[dataElement[id,displayName]],expiryDays,indicators[id,displayName],periodType,`,
         }),
     },
 }
@@ -30,18 +30,42 @@ export const DataSetInfo = ({ id, displayNameProp }) => {
                     <td>{data?.dataSet.periodType}</td>
                 </tr>
                 <tr>
-                    <th>{i18n.t('Data set elements')}</th>
+                    <th>{i18n.t('Data elements')}</th>
                     <td>
-                        <ul>
-                            {data?.dataSet.dataSetElements.map(
-                                ({ dataElement }) => (
-                                    <li key={dataElement.id}>
-                                        {dataElement.displayName}
-                                    </li>
-                                )
-                            )}
-                        </ul>
+                        {data?.dataSet.dataElements.length === 1 ? (
+                            data.dataSet.dataElements[0].displayName
+                        ) : (
+                            <ul>
+                                {data?.dataSet.dataSetElements.map(
+                                    ({ dataElement }) => (
+                                        <li key={dataElement.id}>
+                                            {dataElement.displayName}
+                                        </li>
+                                    )
+                                )}
+                            </ul>
+                        )}
                     </td>
+                </tr>
+                <tr>
+                    <th>{i18n.t('Indicators')}</th>
+                    <td>
+                        {data?.dataSet.indicators.length === 1 ? (
+                            data.dataSet.indicators[0].displayName
+                        ) : (
+                            <ul>
+                                {data?.dataSet.indicators.map(
+                                    ({ id, displayName }) => (
+                                        <li key={id}>{displayName}</li>
+                                    )
+                                )}
+                            </ul>
+                        )}
+                    </td>
+                </tr>
+                <tr>
+                    <th>{i18n.t('Expiry days')}</th>
+                    <td>{data?.dataSet.expiryDays}</td>
                 </tr>
             </InfoTable>
             <style jsx>{styles}</style>
