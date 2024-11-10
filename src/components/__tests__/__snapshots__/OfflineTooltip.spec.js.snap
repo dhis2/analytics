@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`OfflineTooltip shows tooltip when offline and disabledWhenOffline is true 1`] = `
+<div>
+  <span
+    class="tooltip notAllowed"
+  >
+    <span>
+      Test Child
+    </span>
+  </span>
+  <style />
+</div>
+`;

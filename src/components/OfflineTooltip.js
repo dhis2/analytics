@@ -16,6 +16,14 @@ const OfflineTooltip = ({
 
     const notAllowed = disabled || (disabledWhenOffline && offline)
 
+    console.log('jj OfflineTooltip', {
+        notAllowed,
+        content,
+        disabled,
+        disabledWhenOffline,
+        offline,
+    })
+
     return (
         <>
             <Tooltip
