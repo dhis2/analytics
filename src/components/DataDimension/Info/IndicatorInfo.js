@@ -99,7 +99,7 @@ export const IndicatorInfo = ({ id, displayNameProp }) => {
                 </tr>
                 <tr>
                     <th>{i18n.t('Indicator type')}</th>
-                    <td>{`${data?.indicator.displayName}, ${data?.indicator.factor}`}</td>
+                    <td>{`${data?.indicator.indicatorType.displayName}, ${data?.indicator.indicatorType.factor}`}</td>
                 </tr>
                 {data?.indicator.decimals && (
                     <tr>
