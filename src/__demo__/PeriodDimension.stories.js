@@ -1,4 +1,5 @@
-import { storiesOf } from '@storybook/react'
+import { DataProvider } from '@dhis2/app-runtime'
+import { ConfigProvider } from '@dhis2/app-service-config'
 import React from 'react'
 import PeriodDimension from '../components/PeriodDimension/PeriodDimension.js'
 import {
@@ -13,31 +14,59 @@ import {
     BIMONTHLY,
 } from '../components/PeriodDimension/utils/index.js'
 
+const Wrapper = (story) => (
+    <ConfigProvider config={{ systemInfo: {} }}>
+        <DataProvider
+            baseUrl="https://test.e2e.dhis2.org/analytics-41dev/"
+            apiVersion="41"
+        >
+            {story()}
+        </DataProvider>
+    </ConfigProvider>
+)
+
 const selectedPeriods = [{ id: 'LAST_12_MONTHS', name: 'Last 12 months' }]
 
-storiesOf('PeriodDimension', module).add('None selected', () => {
-    return <PeriodDimension onSelect={(selected) => console.log(selected)} />
-})
+export default {
+    title: 'PeriodDimension',
+    decorators: [Wrapper],
+}
 
-storiesOf('PeriodDimension', module).add('One selected', () => {
+export const NoneSelected = () => {
+    return <PeriodDimension onSelect={(selected) => console.log(selected)} />
+}
+
+NoneSelected.story = {
+    name: 'None selected',
+}
+
+export const OneSelected = () => {
     return (
         <PeriodDimension
             selectedPeriods={selectedPeriods}
             onSelect={(selected) => console.log(selected)}
         />
     )
-})
+}
 
-storiesOf('PeriodDimension', module).add('Monthly excluded', () => {
+OneSelected.story = {
+    name: 'One selected',
+}
+
+export const MonthlyExcluded = () => {
     return (
         <PeriodDimension
             excludedPeriodTypes={[MONTHLY]}
             onSelect={(selected) => console.log(selected)}
         />
     )
-})
+}
 
-storiesOf('PeriodDimension', module).add('Weekly excluded', () => {
+MonthlyExcluded.story = {
+    name: 'Monthly excluded',
+}
+
+export const WeeklyExcluded = () => {
     return (
         <PeriodDimension
             excludedPeriodTypes={[
@@ -50,9 +79,13 @@ storiesOf('PeriodDimension', module).add('Weekly excluded', () => {
             onSelect={(selected) => console.log(selected)}
         />
     )
-})
+}
 
-storiesOf('PeriodDimension', module).add('All below Quarterly excluded', () => {
+WeeklyExcluded.story = {
+    name: 'Weekly excluded',
+}
+
+export const AllBelowQuarterlyExcluded = () => {
     return (
         <PeriodDimension
             excludedPeriodTypes={[
@@ -69,9 +102,13 @@ storiesOf('PeriodDimension', module).add('All below Quarterly excluded', () => {
             onSelect={(selected) => console.log(selected)}
         />
     )
-})
+}
 
-storiesOf('PeriodDimension', module).add('Using right footer', () => {
+AllBelowQuarterlyExcluded.story = {
+    name: 'All below Quarterly excluded',
+}
+
+export const UsingRightFooter = () => {
     return (
         <PeriodDimension
             rightFooter={
@@ -88,4 +125,8 @@ storiesOf('PeriodDimension', module).add('Using right footer', () => {
             onSelect={(selected) => console.log(selected)}
         />
     )
-})
+}
+
+UsingRightFooter.story = {
+    name: 'Using right footer',
+}

@@ -1,4 +1,3 @@
-import { storiesOf } from '@storybook/react'
 import React, { useState } from 'react'
 import {
     HoverMenuBar,
@@ -73,6 +72,14 @@ function ToolbarWithState() {
     )
 }
 
-storiesOf('Toolbar', module).add('default', () => {
+export default {
+    title: 'Toolbar',
+}
+
+export const Default = () => {
     return <ToolbarWithState />
-})
+}
+
+Default.story = {
+    name: 'default',
+}

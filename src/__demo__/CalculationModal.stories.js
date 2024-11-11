@@ -1,5 +1,4 @@
 import { CustomDataProvider } from '@dhis2/app-runtime'
-import { storiesOf } from '@storybook/react'
 import React from 'react'
 import CalculationModal from '../components/DataDimension/Calculation/CalculationModal.js'
 
@@ -221,102 +220,120 @@ const calculationWithOperand = {
     expression: '#{cYeuwXTCPkU}*10-#{fbfJHSPpUQD.pq2XI5kz2BY}',
 }
 
-storiesOf('CalculationModal', module)
-    .add('Default', () => {
-        return (
-            <CustomDataProvider
-                data={{
-                    dataElements: DATA_ELEMENTS,
-                    dataElementGroups: DATA_ELEMENT_GROUPS,
-                    dataElementOperands: DATA_ELEMENT_OPERANDS,
-                }}
-            >
-                <CalculationModal
-                    displayNameProp="name"
-                    onClose={Function.prototype}
-                    onDelete={Function.prototype}
-                    onSave={Function.prototype}
-                />
-            </CustomDataProvider>
-        )
-    })
-    .add('With calculation', () => {
-        return (
-            <CustomDataProvider
-                data={{
-                    dataElements: DATA_ELEMENTS,
-                    dataElementGroups: DATA_ELEMENT_GROUPS,
-                    dataElementOperands: DATA_ELEMENT_OPERANDS,
-                }}
-            >
-                <CalculationModal
-                    calculation={calculation}
-                    displayNameProp="name"
-                    onClose={Function.prototype}
-                    onDelete={Function.prototype}
-                    onSave={Function.prototype}
-                />
-            </CustomDataProvider>
-        )
-    })
-    .add('With calculation containing operand', () => {
-        return (
-            <CustomDataProvider
-                data={{
-                    dataElements: DATA_ELEMENTS,
-                    dataElementGroups: DATA_ELEMENT_GROUPS,
-                    dataElementOperands: DATA_ELEMENT_OPERANDS,
-                }}
-            >
-                <CalculationModal
-                    calculation={calculationWithOperand}
-                    displayNameProp="name"
-                    onClose={Function.prototype}
-                    onDelete={Function.prototype}
-                    onSave={Function.prototype}
-                />
-            </CustomDataProvider>
-        )
-    })
-    .add('No available data', () => {
-        return (
-            <CustomDataProvider
-                data={{
-                    dataElements: {
-                        pager: {
-                            page: 1,
-                            total: 0,
-                            pageSize: 50,
-                            pageCount: 1,
-                        },
-                        dataElements: [],
+export default {
+    title: 'CalculationModal',
+}
+
+export const Default = () => {
+    return (
+        <CustomDataProvider
+            data={{
+                dataElements: DATA_ELEMENTS,
+                dataElementGroups: DATA_ELEMENT_GROUPS,
+                dataElementOperands: DATA_ELEMENT_OPERANDS,
+            }}
+        >
+            <CalculationModal
+                displayNameProp="name"
+                onClose={Function.prototype}
+                onDelete={Function.prototype}
+                onSave={Function.prototype}
+            />
+        </CustomDataProvider>
+    )
+}
+
+export const WithCalculation = () => {
+    return (
+        <CustomDataProvider
+            data={{
+                dataElements: DATA_ELEMENTS,
+                dataElementGroups: DATA_ELEMENT_GROUPS,
+                dataElementOperands: DATA_ELEMENT_OPERANDS,
+            }}
+        >
+            <CalculationModal
+                calculation={calculation}
+                displayNameProp="name"
+                onClose={Function.prototype}
+                onDelete={Function.prototype}
+                onSave={Function.prototype}
+            />
+        </CustomDataProvider>
+    )
+}
+
+WithCalculation.story = {
+    name: 'With calculation',
+}
+
+export const WithCalculationContainingOperand = () => {
+    return (
+        <CustomDataProvider
+            data={{
+                dataElements: DATA_ELEMENTS,
+                dataElementGroups: DATA_ELEMENT_GROUPS,
+                dataElementOperands: DATA_ELEMENT_OPERANDS,
+            }}
+        >
+            <CalculationModal
+                calculation={calculationWithOperand}
+                displayNameProp="name"
+                onClose={Function.prototype}
+                onDelete={Function.prototype}
+                onSave={Function.prototype}
+            />
+        </CustomDataProvider>
+    )
+}
+
+WithCalculationContainingOperand.story = {
+    name: 'With calculation containing operand',
+}
+
+export const NoAvailableData = () => {
+    return (
+        <CustomDataProvider
+            data={{
+                dataElements: {
+                    pager: {
+                        page: 1,
+                        total: 0,
+                        pageSize: 50,
+                        pageCount: 1,
                     },
-                    dataElementGroups: {
-                        pager: {
-                            page: 1,
-                            total: 0,
-                            pageSize: 50,
-                            pageCount: 1,
-                        },
-                        dataElementGroups: [],
+                    dataElements: [],
+                },
+                dataElementGroups: {
+                    pager: {
+                        page: 1,
+                        total: 0,
+                        pageSize: 50,
+                        pageCount: 1,
                     },
-                    dataElementOperands: {
-                        pager: {
-                            page: 1,
-                            total: 0,
-                            pageSize: 50,
-                            pageCount: 1,
-                        },
-                        dataElementOperands: [],
+                    dataElementGroups: [],
+                },
+                dataElementOperands: {
+                    pager: {
+                        page: 1,
+                        total: 0,
+                        pageSize: 50,
+                        pageCount: 1,
                     },
-                }}
-            >
-                <CalculationModal
-                    displayNameProp="name"
-                    onClose={Function.prototype}
-                    onDelete={Function.prototype}
-                    onSave={Function.prototype}
-                />
-            </CustomDataProvider>
-        )
-    })
+                    dataElementOperands: [],
+                },
+            }}
+        >
+            <CalculationModal
+                displayNameProp="name"
+                onClose={Function.prototype}
+                onDelete={Function.prototype}
+                onSave={Function.prototype}
+            />
+        </CustomDataProvider>
+    )
+}
+
+NoAvailableData.story = {
+    name: 'No available data',
+}

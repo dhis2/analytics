@@ -1,4 +1,3 @@
-import { storiesOf } from '@storybook/react'
 import React, { useState } from 'react'
 import Filter from '../components/Filter/Filter.js'
 
@@ -19,6 +18,14 @@ function FilterWithState() {
     )
 }
 
-storiesOf('Filter', module).add('default', () => {
+export default {
+    title: 'Filter',
+}
+
+export const Default = () => {
     return <FilterWithState />
-})
+}
+
+Default.story = {
+    name: 'default',
+}
