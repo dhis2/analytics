@@ -72,11 +72,7 @@ export const IndicatorInfo = ({ id, displayNameProp }) => {
                     <td>{data?.indicator.displayNumeratorDescription}</td>
                 </tr>
                 <tr>
-                    <th>
-                        {i18n.t(
-                            'Numerator expression in human readable format'
-                        )}
-                    </th>
+                    <th>{i18n.t('Numerator expression')}</th>
                     <td>
                         {data?.indicator.humanReadableNumeratorExpression ||
                             i18n.t('None')}
@@ -87,11 +83,7 @@ export const IndicatorInfo = ({ id, displayNameProp }) => {
                     <td>{data?.indicator.displayDenominatorDescription}</td>
                 </tr>
                 <tr>
-                    <th>
-                        {i18n.t(
-                            'Denominator expression in human readable format'
-                        )}
-                    </th>
+                    <th>{i18n.t('Denominator expression')}</th>
                     <td>
                         {data?.indicator.humanReadableDenominatorExpression ||
                             i18n.t('None')}

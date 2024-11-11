@@ -55,11 +55,7 @@ export const CalculationInfo = ({ id, displayNameProp }) => {
         <>
             <InfoTable data={data?.calculation} loading={loading} error={error}>
                 <tr>
-                    <th>
-                        {i18n.t(
-                            'Expression description in human readable format'
-                        )}
-                    </th>
+                    <th>{i18n.t('Expression description')}</th>
                     <td>
                         {data?.calculation.humanReadableExpression ||
                             i18n.t('None')}

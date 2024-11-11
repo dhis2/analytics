@@ -115,16 +115,14 @@ export const ProgramIndicatorInfo = ({ id, displayNameProp }) => {
                     </td>
                 </tr>
                 <tr>
-                    <th>{i18n.t('Expression in human readable format')}</th>
+                    <th>{i18n.t('Expression')}</th>
                     <td>
                         {data?.programIndicator.humanReadableExpression ||
                             i18n.t('None')}
                     </td>
                 </tr>
                 <tr>
-                    <th>
-                        {i18n.t('Filter expression in human readable format')}
-                    </th>
+                    <th>{i18n.t('Filter expression')}</th>
                     <td>
                         {data?.programIndicator.humanReadableFilter ||
                             i18n.t('None')}
