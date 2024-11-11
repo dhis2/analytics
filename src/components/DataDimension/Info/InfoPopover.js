@@ -20,8 +20,6 @@ import { ProgramIndicatorInfo } from './ProgramIndicatorInfo.js'
 import styles from './styles/InfoPopover.style.js'
 
 export const InfoPopover = ({ reference, onClose, ...props }) => {
-    console.log('type', props.item.type, 'id', props.item.id)
-
     const type = props.item.type
 
     const infoProps = {
