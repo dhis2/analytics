@@ -2,7 +2,7 @@ import { useDataQuery } from '@dhis2/app-runtime'
 import PropTypes from 'prop-types'
 import React from 'react'
 import i18n from '../../../locales/index.js'
-import { getCommonFields, InfoTable } from './InfoTable.js'
+import { capitalizeWord, getCommonFields, InfoTable } from './InfoTable.js'
 import styles from './styles/InfoPopover.style.js'
 
 const dataElementQuery = {
@@ -51,7 +51,7 @@ export const DataElementInfo = ({ id, displayNameProp }) => {
                 </tr>
                 <tr>
                     <th>{i18n.t('Value type')}</th>
-                    <td>{data?.dataElement.valueType}</td>
+                    <td>{capitalizeWord(data?.dataElement.valueType)}</td>
                 </tr>
                 <tr>
                     <th>{i18n.t('Aggregation type')}</th>
