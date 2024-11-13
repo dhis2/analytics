@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useRef, useEffect, useCallback } from 'react'
+import React, { useState, useMemo, useRef, useEffect } from 'react'
 import { createVisualization } from '../index.js'
 const constainerStyleBase = {
     width: 800,
@@ -636,7 +636,6 @@ export const Default = () => {
     const [dashboard, setDashboard] = useState(false)
     const [showIcon, setShowIcon] = useState(true)
     const [indicatorType, setIndicatorType] = useState('plain')
-    const [exportAsPdf, setExportAsPdf] = useState(true)
     const [width, setWidth] = useState(constainerStyleBase.width)
     const [height, setHeight] = useState(constainerStyleBase.height)
     const containerStyle = useMemo(
@@ -682,39 +681,6 @@ export const Default = () => {
             })
         }
     }, [containerStyle, dashboard, showIcon, indicatorType])
-    const downloadOffline = useCallback(() => {
-        if (newChartRef.current) {
-            const currentBackgroundColor =
-                newChartRef.current.userOptions.chart.backgroundColor
-
-            newChartRef.current.update({
-                exporting: {
-                    chartOptions: {
-                        isPdfExport: exportAsPdf,
-                    },
-                },
-            })
-            newChartRef.current.exportChartLocal(
-                {
-                    sourceHeight: 768,
-                    sourceWidth: 1024,
-                    scale: 1,
-                    fallbackToExportServer: false,
-                    filename: 'testOfflineDownload',
-                    showExportInProgress: true,
-                    type: exportAsPdf ? 'application/pdf' : 'image/png',
-                },
-                {
-                    chart: {
-                        backgroundColor:
-                            currentBackgroundColor === 'transparent'
-                                ? '#ffffff'
-                                : currentBackgroundColor,
-                    },
-                }
-            )
-        }
-    }, [exportAsPdf])
 
     return (
         <>
@@ -782,15 +748,6 @@ export const Default = () => {
                         })}
                     </select>
                 </label>
-                <label>
-                    <input
-                        checked={exportAsPdf}
-                        onChange={() => setExportAsPdf(!exportAsPdf)}
-                        type="checkbox"
-                    />
-                    &nbsp;Export as PDF
-                </label>
-                <button onClick={downloadOffline}>Download offline</button>
             </div>
             <div style={{ display: 'flex', gap: 12 }}>
                 <div style={containerStyle}>
