@@ -28,14 +28,15 @@ const spacings = [
 export const MIN_SIDE_WHITESPACE = 4
 
 export class DynamicStyles {
-    constructor() {
+    constructor(isPdfExport) {
         this.currentIndex = 0
+        this.isPdfExport = isPdfExport
     }
     getStyle() {
         return {
             value: {
                 ...valueStyles[this.currentIndex],
-                'font-weight': '300',
+                'font-weight': this.isPdfExport ? 'normal' : '300',
             },
             subText: subTextStyles[this.currentIndex],
             spacing: spacings[this.currentIndex],

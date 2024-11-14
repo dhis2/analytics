@@ -7,7 +7,7 @@ import { DynamicStyles } from './styles.js'
 export default function loadSingleValueSVG() {
     const { formattedValue, icon, subText, fontColor } =
         this.userOptions.customSVGOptions
-    const dynamicStyles = new DynamicStyles()
+    const dynamicStyles = new DynamicStyles(this.userOptions?.isPdfExport)
     const valueElement = this.renderer
         .text(formattedValue)
         .attr('data-test', 'visualization-primary-value')
