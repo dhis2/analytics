@@ -1,4 +1,4 @@
-import { useDataMutation, useDataEngine } from '@dhis2/app-runtime'
+import { useConfig, useDataMutation, useDataEngine } from '@dhis2/app-runtime'
 import PropTypes from 'prop-types'
 import React, { useCallback, useEffect, useState } from 'react'
 import { validateExpressionMutation } from '../../../api/expression.js'
@@ -21,6 +21,8 @@ export const CalculationInfo = ({ id, displayNameProp }) => {
     const [error, setError] = useState()
     const [loading, setLoading] = useState(true)
 
+    const { baseUrl, apiVersion } = useConfig()
+
     const engine = useDataEngine()
     const [getHumanReadableExpression] = useDataMutation(
         validateExpressionMutation,
@@ -42,6 +44,12 @@ export const CalculationInfo = ({ id, displayNameProp }) => {
                 calculation.humanReadableExpression = result.description
             }
         }
+
+        // inject href as it is not returned from the API
+        calculation.href = new URL(
+            `${calculationQuery.calculation.resource}/${id}`,
+            new URL(`api/${apiVersion}/`, `${baseUrl}/`)
+        ).href
 
         setData({ calculation })
         setLoading(false)
