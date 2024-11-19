@@ -19,6 +19,7 @@ const PeriodDimension = ({
     rightFooter,
     excludedPeriodTypes,
     infoBoxMessage,
+    height,
 }) => {
     const { systemInfo } = useConfig()
     const result = useDataQuery(userSettingsQuery)
@@ -43,6 +44,7 @@ const PeriodDimension = ({
             dataTest={'period-dimension'}
             excludedPeriodTypes={excludedPeriodTypes}
             periodsSettings={periodsSettings}
+            height={height}
         />
     )
 }
@@ -53,6 +55,7 @@ PeriodDimension.propTypes = {
     infoBoxMessage: PropTypes.string,
     rightFooter: PropTypes.node,
     selectedPeriods: PropTypes.array,
+    height: PropTypes.string,
 }
 
 PeriodDimension.defaultProps = {
