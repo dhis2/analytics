@@ -37,16 +37,34 @@ export const InfoTable = ({ data, error, loading, children }) => {
                             <tr>
                                 <th>{i18n.t('Description')}</th>
                                 <td>
-                                    {data.displayDescription || i18n.t('None')}
+                                    {data.displayDescription ? (
+                                        <div className="content-wrap">
+                                            {data.displayDescription}
+                                        </div>
+                                    ) : (
+                                        <span className="none">
+                                            {i18n.t('None')}
+                                        </span>
+                                    )}
                                 </td>
                             </tr>
                             <tr>
                                 <th>{i18n.t('Code')}</th>
-                                <td>{data.code}</td>
+                                <td>
+                                    {data.code ? (
+                                        data.code
+                                    ) : (
+                                        <span className="none">
+                                            {i18n.t('None')}
+                                        </span>
+                                    )}
+                                </td>
                             </tr>
                             <tr>
                                 <th>{i18n.t('ID')}</th>
-                                <td>{data.id}</td>
+                                <td>
+                                    <span className="code">{data.id}</span>
+                                </td>
                             </tr>
                             <tr>
                                 <th>{i18n.t('Last updated date')}</th>

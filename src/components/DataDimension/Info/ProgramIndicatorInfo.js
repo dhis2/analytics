@@ -87,45 +87,58 @@ export const ProgramIndicatorInfo = ({ id, displayNameProp }) => {
                 <tr>
                     <th>{i18n.t('Analytics period boundaries')}</th>
                     <td>
-                        <ul>
-                            {data?.programIndicator.analyticsPeriodBoundaries.map(
-                                ({
-                                    analyticsPeriodBoundaryType,
-                                    boundaryTarget,
-                                    id,
-                                    offsetPeriodType,
-                                    offsetPeriods,
-                                }) => (
-                                    <li key={id}>
-                                        <span>{`${i18n.t(
-                                            'Type'
-                                        )}: ${analyticsPeriodBoundaryType}`}</span>
-                                        <span>{`${i18n.t(
-                                            'Target'
-                                        )}: ${boundaryTarget}`}</span>
-                                        {offsetPeriods && offsetPeriodType && (
+                        <div className="content-wrap">
+                            <ul>
+                                {data?.programIndicator.analyticsPeriodBoundaries.map(
+                                    ({
+                                        analyticsPeriodBoundaryType,
+                                        boundaryTarget,
+                                        id,
+                                        offsetPeriodType,
+                                        offsetPeriods,
+                                    }) => (
+                                        <li key={id}>
                                             <span>{`${i18n.t(
-                                                'Offset'
-                                            )}: ${offsetPeriodType} x ${offsetPeriods}`}</span>
-                                        )}
-                                    </li>
-                                )
-                            )}
-                        </ul>
+                                                'Type'
+                                            )}: ${analyticsPeriodBoundaryType}`}</span>
+                                            <span>{`${i18n.t(
+                                                'Target'
+                                            )}: ${boundaryTarget}`}</span>
+                                            {offsetPeriods &&
+                                                offsetPeriodType && (
+                                                    <span>{`${i18n.t(
+                                                        'Offset'
+                                                    )}: ${offsetPeriodType} x ${offsetPeriods}`}</span>
+                                                )}
+                                        </li>
+                                    )
+                                )}
+                            </ul>
+                        </div>
                     </td>
                 </tr>
                 <tr>
                     <th>{i18n.t('Expression')}</th>
                     <td>
-                        {data?.programIndicator.humanReadableExpression ||
-                            i18n.t('None')}
+                        {data?.programIndicator.humanReadableExpression ? (
+                            <span className="code">
+                                {data.programIndicator.humanReadableExpression}
+                            </span>
+                        ) : (
+                            <span className="none">{i18n.t('None')}</span>
+                        )}
                     </td>
                 </tr>
                 <tr>
-                    <th>{i18n.t('Filter expression')}</th>
+                    <th>{i18n.t('Filter')}</th>
                     <td>
-                        {data?.programIndicator.humanReadableFilter ||
-                            i18n.t('None')}
+                        {data?.programIndicator.humanReadableFilter ? (
+                            <span className="code">
+                                {data.programIndicator.humanReadableFilter}
+                            </span>
+                        ) : (
+                            <span className="none">{i18n.t('None')}</span>
+                        )}
                     </td>
                 </tr>
                 <tr>
@@ -145,13 +158,15 @@ export const ProgramIndicatorInfo = ({ id, displayNameProp }) => {
                             {data.programIndicator.legendSets.length === 1 ? (
                                 data.programIndicator.legendSets[0].displayName
                             ) : (
-                                <ul>
-                                    {data.programIndicator.legendSets.map(
-                                        ({ id, displayName }) => (
-                                            <li key={id}>{displayName}</li>
-                                        )
-                                    )}
-                                </ul>
+                                <div className="content-wrap">
+                                    <ul>
+                                        {data.programIndicator.legendSets.map(
+                                            ({ id, displayName }) => (
+                                                <li key={id}>{displayName}</li>
+                                            )
+                                        )}
+                                    </ul>
+                                </div>
                             )}
                         </td>
                     </tr>

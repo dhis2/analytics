@@ -36,15 +36,17 @@ export const DataSetInfo = ({ id, displayNameProp }) => {
                             data.dataSet.dataSetElements[0].dataElement
                                 .displayName
                         ) : (
-                            <ul>
-                                {data?.dataSet.dataSetElements.map(
-                                    ({ dataElement }) => (
-                                        <li key={dataElement.id}>
-                                            {dataElement.displayName}
-                                        </li>
-                                    )
-                                )}
-                            </ul>
+                            <div className="content-wrap">
+                                <ul>
+                                    {data?.dataSet.dataSetElements.map(
+                                        ({ dataElement }) => (
+                                            <li key={dataElement.id}>
+                                                {dataElement.displayName}
+                                            </li>
+                                        )
+                                    )}
+                                </ul>
+                            </div>
                         )}
                     </td>
                 </tr>
@@ -53,14 +55,18 @@ export const DataSetInfo = ({ id, displayNameProp }) => {
                     <td>
                         {data?.dataSet.indicators.length === 1 ? (
                             data.dataSet.indicators[0].displayName
+                        ) : data?.dataSet.indicators.length > 1 ? (
+                            <div className="content-wrap">
+                                <ul>
+                                    {data.dataSet.indicators.map(
+                                        ({ id, displayName }) => (
+                                            <li key={id}>{displayName}</li>
+                                        )
+                                    )}
+                                </ul>
+                            </div>
                         ) : (
-                            <ul>
-                                {data?.dataSet.indicators.map(
-                                    ({ id, displayName }) => (
-                                        <li key={id}>{displayName}</li>
-                                    )
-                                )}
-                            </ul>
+                            <span className="none">{i18n.t('None')}</span>
                         )}
                     </td>
                 </tr>

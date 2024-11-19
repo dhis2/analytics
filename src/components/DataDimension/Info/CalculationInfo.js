@@ -57,8 +57,13 @@ export const CalculationInfo = ({ id, displayNameProp }) => {
                 <tr>
                     <th>{i18n.t('Expression description')}</th>
                     <td>
-                        {data?.calculation.humanReadableExpression ||
-                            i18n.t('None')}
+                        {data?.calculation.humanReadableExpression ? (
+                            <span className="code">
+                                {data.calculation.humanReadableExpression}
+                            </span>
+                        ) : (
+                            <span className="none">{i18n.t('None')}</span>
+                        )}
                     </td>
                 </tr>
             </InfoTable>

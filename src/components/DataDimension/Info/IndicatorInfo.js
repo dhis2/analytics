@@ -74,8 +74,16 @@ export const IndicatorInfo = ({ id, displayNameProp }) => {
                 <tr>
                     <th>{i18n.t('Numerator expression')}</th>
                     <td>
-                        {data?.indicator.humanReadableNumeratorExpression ||
-                            i18n.t('None')}
+                        {data?.indicator.humanReadableNumeratorExpression ? (
+                            <span className="code">
+                                {
+                                    data.indicator
+                                        .humanReadableNumeratorExpression
+                                }
+                            </span>
+                        ) : (
+                            <span className="none">{i18n.t('None')}</span>
+                        )}
                     </td>
                 </tr>
                 <tr>
@@ -85,8 +93,16 @@ export const IndicatorInfo = ({ id, displayNameProp }) => {
                 <tr>
                     <th>{i18n.t('Denominator expression')}</th>
                     <td>
-                        {data?.indicator.humanReadableDenominatorExpression ||
-                            i18n.t('None')}
+                        {data?.indicator.humanReadableDenominatorExpression ? (
+                            <span className="code">
+                                {
+                                    data.indicator
+                                        .humanReadableDenominatorExpression
+                                }
+                            </span>
+                        ) : (
+                            <span className="none">{i18n.t('None')}</span>
+                        )}
                     </td>
                 </tr>
                 <tr>
@@ -114,13 +130,15 @@ export const IndicatorInfo = ({ id, displayNameProp }) => {
                             {data.indicator.dataSets.length === 1 ? (
                                 data.indicator.dataSets[0].displayName
                             ) : (
-                                <ul>
-                                    {data.indicator.dataSets.map(
-                                        ({ id, displayName }) => (
-                                            <li key={id}>{displayName}</li>
-                                        )
-                                    )}
-                                </ul>
+                                <div className="content-wrap">
+                                    <ul>
+                                        {data.indicator.dataSets.map(
+                                            ({ id, displayName }) => (
+                                                <li key={id}>{displayName}</li>
+                                            )
+                                        )}
+                                    </ul>
+                                </div>
                             )}
                         </td>
                     </tr>
@@ -131,13 +149,15 @@ export const IndicatorInfo = ({ id, displayNameProp }) => {
                         {data?.indicator.indicatorGroups.length === 1 ? (
                             data.indicator.indicatorGroups[0].displayName
                         ) : (
-                            <ul>
-                                {data?.indicator.indicatorGroups.map(
-                                    ({ id, displayName }) => (
-                                        <li key={id}>{displayName}</li>
-                                    )
-                                )}
-                            </ul>
+                            <div className="content-wrap">
+                                <ul>
+                                    {data?.indicator.indicatorGroups.map(
+                                        ({ id, displayName }) => (
+                                            <li key={id}>{displayName}</li>
+                                        )
+                                    )}
+                                </ul>
+                            </div>
                         )}
                     </td>
                 </tr>
@@ -148,13 +168,15 @@ export const IndicatorInfo = ({ id, displayNameProp }) => {
                             {data.indicator.legendSets.length === 1 ? (
                                 data.indicator.legendSets[0].displayName
                             ) : (
-                                <ul>
-                                    {data.indicator.legendSets.map(
-                                        ({ id, displayName }) => (
-                                            <li key={id}>{displayName}</li>
-                                        )
-                                    )}
-                                </ul>
+                                <div className="content-wrap">
+                                    <ul>
+                                        {data.indicator.legendSets.map(
+                                            ({ id, displayName }) => (
+                                                <li key={id}>{displayName}</li>
+                                            )
+                                        )}
+                                    </ul>
+                                </div>
                             )}
                         </td>
                     </tr>
