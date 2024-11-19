@@ -12,7 +12,7 @@ const dataElementQuery = {
         params: ({ displayNameProp }) => ({
             fields: `${getCommonFields(
                 displayNameProp
-            )},aggregationType,categoryCombo[displayName,categories[id,displayName]],dataElementGroups[id,displayName],dataSetElements[id,displayName],legendSets[id,displayName],optionSet[displayName],valueType,zeroIsSignificant`,
+            )},aggregationType,categoryCombo[displayName,categories[id,displayName]],dataElementGroups[id,displayName],dataSetElements[dataSet[id,displayName]],legendSets[id,displayName],optionSet[displayName],valueType,zeroIsSignificant`,
         }),
     },
 }
@@ -29,12 +29,15 @@ export const DataElementInfo = ({ id, displayNameProp }) => {
                     <th>{i18n.t('Data set(s)')}</th>
                     <td>
                         {data?.dataElement.dataSetElements.length === 1 ? (
-                            data.dataElement.dataSetElements[0].displayName
+                            data.dataElement.dataSetElements[0].dataSet
+                                .displayName
                         ) : (
                             <ul>
                                 {data?.dataElement.dataSetElements.map(
-                                    ({ id, displayName }) => (
-                                        <li key={id}>{displayName}</li>
+                                    ({ dataSet }) => (
+                                        <li key={dataSet.id}>
+                                            {dataSet.displayName}
+                                        </li>
                                     )
                                 )}
                             </ul>
