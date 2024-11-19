@@ -44,6 +44,7 @@ const PeriodTransfer = ({
     excludedPeriodTypes,
     periodsSettings,
     infoBoxMessage,
+    height = TRANSFER_HEIGHT,
 }) => {
     const defaultRelativePeriodType = excludedPeriodTypes.includes(MONTHLY)
         ? getRelativePeriodsOptionsById(QUARTERLY)
@@ -196,7 +197,7 @@ const PeriodTransfer = ({
             selected={selectedItems.map((period) => period.id)}
             leftHeader={renderLeftHeader()}
             enableOrderChange
-            height={TRANSFER_HEIGHT}
+            height={height}
             optionsWidth={TRANSFER_OPTIONS_WIDTH}
             selectedWidth={TRANSFER_SELECTED_WIDTH}
             selectedEmptyComponent={renderEmptySelection()}
@@ -246,6 +247,7 @@ PeriodTransfer.propTypes = {
             name: PropTypes.string,
         })
     ),
+    height: PropTypes.string,
 }
 
 export default PeriodTransfer
