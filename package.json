@@ -30,7 +30,7 @@
         "validate-push": "yarn test"
     },
     "devDependencies": {
-        "@dhis2/app-runtime": "^3.9.0",
+        "@dhis2/app-runtime": "^3.11.3",
         "@dhis2/cli-app-scripts": "^11.7.4",
         "@dhis2/cli-style": "^10.7.4",
         "@dhis2/d2-i18n": "^1.1.0",
