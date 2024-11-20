@@ -1,7 +1,7 @@
 import { useDataMutation, useDataEngine } from '@dhis2/app-runtime'
 import PropTypes from 'prop-types'
 import React, { useCallback, useEffect, useState } from 'react'
-import { validateIndicatorExpressionMutation } from '../../../api/expression.js'
+import { validateProgramIndicatorExpressionMutation } from '../../../api/expression.js'
 import i18n from '../../../locales/index.js'
 import { getCommonFields, InfoTable } from './InfoTable.js'
 import styles from './styles/InfoPopover.style.js'
@@ -25,8 +25,7 @@ export const ProgramIndicatorInfo = ({ id, displayNameProp }) => {
 
     const engine = useDataEngine()
     const [getHumanReadableExpression] = useDataMutation(
-        // TODO switch to validateProgramIndicatorExpressionMutation
-        validateIndicatorExpressionMutation,
+        validateProgramIndicatorExpressionMutation,
         {
             onError: setError,
         }
