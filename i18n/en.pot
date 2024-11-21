@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2024-11-19T10:22:29.647Z\n"
-"PO-Revision-Date: 2024-11-19T10:22:29.648Z\n"
+"POT-Creation-Date: 2024-11-21T09:05:21.858Z\n"
+"PO-Revision-Date: 2024-11-21T09:05:21.859Z\n"
 
 msgid "view only"
 msgstr "view only"
@@ -203,6 +203,15 @@ msgstr "Group membership"
 
 msgid "Legend set(s)"
 msgstr "Legend set(s)"
+
+msgid "Category option name"
+msgstr "Category option name"
+
+msgid "Category combo name"
+msgstr "Category combo name"
+
+msgid "Categories name"
+msgstr "Categories name"
 
 msgid "Period type"
 msgstr "Period type"
