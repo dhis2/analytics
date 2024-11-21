@@ -88,7 +88,8 @@ export default css`
         align-items: center;
     }
     .info.active {
-        background-color: ${colors.grey200};
+        background-color: ${colors.grey300};
+        color: ${colors.grey900};
     }
 
     .highlighted {
