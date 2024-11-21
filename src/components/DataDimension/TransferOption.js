@@ -107,6 +107,7 @@ TransferOption.propTypes = {
     icon: PropTypes.node,
     itemsRef: PropTypes.object,
     selected: PropTypes.bool,
+    showingInfo: PropTypes.bool,
     onClick: PropTypes.func,
     onDoubleClick: PropTypes.func,
     onEditClick: PropTypes.func,
