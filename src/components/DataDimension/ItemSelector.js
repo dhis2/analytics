@@ -510,6 +510,7 @@ const ItemSelector = ({
                         /* eslint-disable react/prop-types */
                         {...props}
                         active={isActive(props.value)}
+                        showingInfo={currentDataItem?.id === props.value}
                         icon={getIcon(getItemType(props.value))}
                         dimensionType={getDimensionType({
                             type: getItemType(props.value),

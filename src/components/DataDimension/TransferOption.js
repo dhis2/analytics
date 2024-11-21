@@ -17,6 +17,7 @@ export const TransferOption = ({
     dimensionType,
     dataTest,
     itemsRef,
+    showingInfo,
     onEditClick,
     onInfoClick,
 }) => {
@@ -63,7 +64,9 @@ export const TransferOption = ({
             <div className={cx('group', 'nowrap', 'typeGroup')}>
                 <span className="type">{dimensionType}</span>
                 <span
-                    className="info"
+                    className={cx('info', {
+                        active: showingInfo,
+                    })}
                     ref={(node) => {
                         node
                             ? itemsRef.current.set(value, node)

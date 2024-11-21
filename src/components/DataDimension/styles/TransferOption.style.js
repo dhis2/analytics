@@ -87,6 +87,9 @@ export default css`
         display: flex;
         align-items: center;
     }
+    .info.active {
+        background-color: ${colors.grey200};
+    }
 
     .highlighted {
         background: ${theme.secondary700};
