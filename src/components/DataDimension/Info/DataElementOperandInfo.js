@@ -2,7 +2,7 @@ import { useConfig, useDataEngine } from '@dhis2/app-runtime'
 import PropTypes from 'prop-types'
 import React, { useCallback, useEffect, useState } from 'react'
 import i18n from '../../../locales/index.js'
-import { capitalizeWord, getCommonFields, InfoTable } from './InfoTable.js'
+import { capitalizeText, getCommonFields, InfoTable } from './InfoTable.js'
 import styles from './styles/InfoPopover.style.js'
 
 const dataElementOperandsQuery = {
@@ -108,7 +108,7 @@ export const DataElementOperandInfo = ({ id, displayNameProp }) => {
                 <tr>
                     <th>{i18n.t('Value type')}</th>
                     <td>
-                        {capitalizeWord(
+                        {capitalizeText(
                             data?.dataElementOperand.dataElement.valueType
                         )}
                     </td>

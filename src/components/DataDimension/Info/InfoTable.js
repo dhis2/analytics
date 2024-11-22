@@ -9,8 +9,11 @@ import styles from './styles/InfoPopover.style.js'
 export const getCommonFields = (displayNameProp) =>
     `attributeValues[id,displayName],code,created,createdBy,${displayNameProp}~rename(displayName),displayDescription,href,id,lastUpdated`
 
-export const capitalizeWord = (word) =>
-    word && word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
+export const capitalizeText = (text) =>
+    text && text.charAt(0).toUpperCase() + text.slice(1).toLowerCase()
+
+export const sentenceCaseText = (text) =>
+    text && capitalizeText(text.replaceAll('_', ' ').toLowerCase())
 
 export const InfoTable = ({ data, error, loading, children }) => {
     const { fromServerDate } = useTimeZoneConversion()
