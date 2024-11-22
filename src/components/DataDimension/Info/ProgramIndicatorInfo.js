@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import React, { useCallback, useEffect, useState } from 'react'
 import { validateProgramIndicatorExpressionMutation } from '../../../api/expression.js'
 import i18n from '../../../locales/index.js'
-import { getCommonFields, InfoTable } from './InfoTable.js'
+import { getCommonFields, sentenceCaseText, InfoTable } from './InfoTable.js'
 import styles from './styles/InfoPopover.style.js'
 
 const programIndicatorQuery = {
@@ -98,18 +98,41 @@ export const ProgramIndicatorInfo = ({ id, displayNameProp }) => {
                                         offsetPeriods,
                                     }) => (
                                         <li key={id}>
-                                            <span>{`${i18n.t(
-                                                'Type'
-                                            )}: ${analyticsPeriodBoundaryType}`}</span>
-                                            <span>{`${i18n.t(
-                                                'Target'
-                                            )}: ${boundaryTarget}`}</span>
-                                            {offsetPeriods &&
-                                                offsetPeriodType && (
-                                                    <span>{`${i18n.t(
-                                                        'Offset'
-                                                    )}: ${offsetPeriodType} x ${offsetPeriods}`}</span>
+                                            <span>
+                                                <span className="label">
+                                                    {`${i18n.t('Type:')} `}
+                                                </span>
+                                                {sentenceCaseText(
+                                                    analyticsPeriodBoundaryType
                                                 )}
+                                            </span>
+                                            <br />
+                                            <span>
+                                                <span className="label">
+                                                    {i18n.t('Target:')}&nbsp;
+                                                </span>
+                                                {sentenceCaseText(
+                                                    boundaryTarget
+                                                )}
+                                            </span>
+                                            {offsetPeriods && offsetPeriodType && (
+                                                <>
+                                                    <br />
+                                                    <span>
+                                                        <span className="label">
+                                                            {i18n.t('Offset:')}
+                                                            &nbsp;
+                                                        </span>
+                                                        {i18n.t(
+                                                            '{{ offsetPeriodType }} × {{ offsetPeriods }}',
+                                                            {
+                                                                offsetPeriodType,
+                                                                offsetPeriods,
+                                                            }
+                                                        )}
+                                                    </span>
+                                                </>
+                                            )}
                                         </li>
                                     )
                                 )}

@@ -43,8 +43,8 @@ export default css`
 
     ul {
         margin: 0;
-        padding: 0;
-        list-style: inside;
+        padding: 0 0 0 ${spacers.dp12};
+        list-style-position: outside;
     }
     li + li {
         margin: ${spacers.dp4} 0 0 0;
@@ -68,7 +68,8 @@ export default css`
         font-weight: normal;
     }
 
-    .data-table .none {
+    .data-table .none,
+    .data-table .label {
         color: ${colors.grey600};
     }
 `

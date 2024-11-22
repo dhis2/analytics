@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2024-11-21T09:05:21.858Z\n"
-"PO-Revision-Date: 2024-11-21T09:05:21.859Z\n"
+"POT-Creation-Date: 2024-11-22T11:00:48.850Z\n"
+"PO-Revision-Date: 2024-11-22T11:00:48.851Z\n"
 
 msgid "view only"
 msgstr "view only"
@@ -303,11 +303,8 @@ msgstr "Event"
 msgid "Analytics period boundaries"
 msgstr "Analytics period boundaries"
 
-msgid "Target"
-msgstr "Target"
-
-msgid "Offset"
-msgstr "Offset"
+msgid "{{ offsetPeriodType }} × {{ offsetPeriods }}"
+msgstr "{{ offsetPeriodType }} × {{ offsetPeriods }}"
 
 msgid "Expression"
 msgstr "Expression"
@@ -1328,6 +1325,9 @@ msgstr "and {{amount}} more..."
 
 msgid "Linear Regression"
 msgstr "Linear Regression"
+
+msgid "Target"
+msgstr "Target"
 
 msgid "Base"
 msgstr "Base"
