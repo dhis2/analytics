@@ -51,10 +51,7 @@ const OrgUnitDimension = ({
         let result = [...selected]
 
         if (checked && DYNAMIC_ORG_UNITS.includes(id)) {
-            result = [
-                ...result.filter((item) => DYNAMIC_ORG_UNITS.includes(item.id)),
-                { id, displayName },
-            ]
+            result = [...result, { id, displayName }]
         } else if (checked) {
             result.push({ id, path, name: displayName })
         } else {
@@ -236,13 +233,7 @@ const OrgUnitDimension = ({
                     />
                 </div>
             )}
-            <div
-                className={cx('orgUnitTreeWrapper', {
-                    disabled: selected.some((item) =>
-                        DYNAMIC_ORG_UNITS.includes(item.id)
-                    ),
-                })}
-            >
+            <div className="orgUnitTreeWrapper">
                 <OrganisationUnitTree
                     roots={roots}
                     initiallyExpanded={[
@@ -276,9 +267,6 @@ const OrgUnitDimension = ({
             </div>
             <div
                 className={cx('selectsWrapper', {
-                    disabled: selected.some((item) =>
-                        DYNAMIC_ORG_UNITS.includes(item.id)
-                    ),
                     hidden: hideLevelSelect && hideGroupSelect,
                 })}
             >
