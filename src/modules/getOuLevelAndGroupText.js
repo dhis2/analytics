@@ -28,7 +28,9 @@ export const getOuLevelAndGroupText = (filter, metaData) => {
 
 const getLevelAndGroupText = (items, metaData, isLevel) => {
     const getNameFromMetadata = (id) =>
-        metaData.items[id] ? metaData.items[id].name : id
+        metaData.items[id]
+            ? metaData.items[id].name
+            : items.find((item) => item.id === id)?.name || id
 
     const dynamicOuItems = items.filter((item) =>
         isLevel
