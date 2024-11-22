@@ -65,6 +65,16 @@ export const ProgramIndicatorInfo = ({ id, displayNameProp }) => {
         fetchData()
     }, [fetchData])
 
+    const formatBoundaryTarget = (target) => {
+        if (
+            ['ENROLLMENT_DATE', 'EVENT_DATE', 'INCIDENT_DATE'].includes(target)
+        ) {
+            return sentenceCaseText(target)
+        }
+
+        return target
+    }
+
     return (
         <>
             <InfoTable
@@ -100,7 +110,7 @@ export const ProgramIndicatorInfo = ({ id, displayNameProp }) => {
                                         <li key={id}>
                                             <span>
                                                 <span className="label">
-                                                    {`${i18n.t('Type:')} `}
+                                                    {i18n.t('Type:')}&nbsp;
                                                 </span>
                                                 {sentenceCaseText(
                                                     analyticsPeriodBoundaryType
@@ -111,7 +121,7 @@ export const ProgramIndicatorInfo = ({ id, displayNameProp }) => {
                                                 <span className="label">
                                                     {i18n.t('Target:')}&nbsp;
                                                 </span>
-                                                {sentenceCaseText(
+                                                {formatBoundaryTarget(
                                                     boundaryTarget
                                                 )}
                                             </span>
