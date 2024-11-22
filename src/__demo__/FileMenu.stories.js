@@ -1,5 +1,4 @@
 import { Provider } from '@dhis2/app-runtime'
-import { storiesOf } from '@storybook/react'
 import React from 'react'
 import { FileMenu } from '../components/FileMenu/FileMenu.js'
 import { HoverMenuBar } from '../components/Toolbar/index.js'
@@ -59,33 +58,46 @@ const visReadonlyObject = {
     },
 }
 
-storiesOf('FileMenu', module)
-    .add('Simple', () => (
-        <Provider config={configMock}>
-            <HoverMenuBar>
-                <FileMenu currentUser={user} fileType="visualization" />
-            </HoverMenuBar>
-        </Provider>
-    ))
-    .add('With AO', () => (
-        <Provider config={configMock}>
-            <HoverMenuBar>
-                <FileMenu
-                    currentUser={user}
-                    fileType="visualization"
-                    fileObject={visObject}
-                />
-            </HoverMenuBar>
-        </Provider>
-    ))
-    .add('With readonly AO', () => (
-        <Provider config={configMock}>
-            <HoverMenuBar>
-                <FileMenu
-                    currentUser={user}
-                    fileType="visualization"
-                    fileObject={visReadonlyObject}
-                />
-            </HoverMenuBar>
-        </Provider>
-    ))
+export default {
+    title: 'FileMenu',
+}
+
+export const Simple = () => (
+    <Provider config={configMock}>
+        <HoverMenuBar>
+            <FileMenu currentUser={user} fileType="visualization" />
+        </HoverMenuBar>
+    </Provider>
+)
+
+export const WithAo = () => (
+    <Provider config={configMock}>
+        <HoverMenuBar>
+            <FileMenu
+                currentUser={user}
+                fileType="visualization"
+                fileObject={visObject}
+            />
+        </HoverMenuBar>
+    </Provider>
+)
+
+WithAo.story = {
+    name: 'With AO',
+}
+
+export const WithReadonlyAo = () => (
+    <Provider config={configMock}>
+        <HoverMenuBar>
+            <FileMenu
+                currentUser={user}
+                fileType="visualization"
+                fileObject={visReadonlyObject}
+            />
+        </HoverMenuBar>
+    </Provider>
+)
+
+WithReadonlyAo.story = {
+    name: 'With readonly AO',
+}
