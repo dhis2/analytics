@@ -43,7 +43,7 @@ export default css`
 
     ul {
         margin: 0;
-        padding: 0 0 0 ${spacers.dp12};
+        padding: 0 0 0 ${spacers.dp16};
         list-style-position: outside;
     }
     li + li {
