@@ -178,7 +178,7 @@ export const ProgramIndicatorInfo = ({ id, displayNameProp }) => {
                     <th>{i18n.t('Aggregation type')}</th>
                     <td>{data?.programIndicator.aggregationType}</td>
                 </tr>
-                {data?.programIndicator.decimals && (
+                {data?.programIndicator && 'decimals' in data.programIndicator && (
                     <tr>
                         <th>{i18n.t('Decimals in output')}</th>
                         <td>{data.programIndicator.decimals}</td>
