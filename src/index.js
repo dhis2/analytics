@@ -336,7 +336,10 @@ export {
     FYJUL,
     FYAPR,
 } from './components/PeriodDimension/utils/index.js'
-export { getRelativePeriodsOptionsById } from './components/PeriodDimension/utils/relativePeriods.js'
+export {
+    getRelativePeriodsOptionsById,
+    getRelativePeriodIds,
+} from './components/PeriodDimension/utils/relativePeriods.js'
 export { getFixedPeriodsOptionsById } from './components/PeriodDimension/utils/fixedPeriods.js'
 
 export { default as VisualizationOptions } from './components/Options/VisualizationOptions.js'

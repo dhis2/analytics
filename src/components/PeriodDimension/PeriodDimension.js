@@ -52,10 +52,10 @@ const PeriodDimension = ({
 PeriodDimension.propTypes = {
     onSelect: PropTypes.func.isRequired,
     excludedPeriodTypes: PropTypes.arrayOf(PropTypes.string),
+    height: PropTypes.string,
     infoBoxMessage: PropTypes.string,
     rightFooter: PropTypes.node,
     selectedPeriods: PropTypes.array,
-    height: PropTypes.string,
 }
 
 PeriodDimension.defaultProps = {

@@ -234,6 +234,7 @@ PeriodTransfer.propTypes = {
     onSelect: PropTypes.func.isRequired,
     dataTest: PropTypes.string,
     excludedPeriodTypes: PropTypes.arrayOf(PropTypes.string),
+    height: PropTypes.string,
     infoBoxMessage: PropTypes.string,
     periodsSettings: PropTypes.shape({
         calendar: PropTypes.string,
@@ -247,7 +248,6 @@ PeriodTransfer.propTypes = {
             name: PropTypes.string,
         })
     ),
-    height: PropTypes.string,
 }
 
 export default PeriodTransfer
