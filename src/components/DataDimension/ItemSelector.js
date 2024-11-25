@@ -452,7 +452,7 @@ const ItemSelector = ({
         }))
 
     return (
-        <>
+        <div className="transfer-container">
             <Transfer
                 onChange={({ selected }) => onChange(selected)}
                 selected={selectedItems.map((item) => item.value)}
@@ -560,7 +560,7 @@ const ItemSelector = ({
                 />
             )}
             <style jsx>{styles}</style>
-        </>
+        </div>
     )
 }
 
