@@ -125,24 +125,27 @@ export const ProgramIndicatorInfo = ({ id, displayNameProp }) => {
                                                     boundaryTarget
                                                 )}
                                             </span>
-                                            {offsetPeriods && offsetPeriodType && (
-                                                <>
-                                                    <br />
-                                                    <span>
-                                                        <span className="label">
-                                                            {i18n.t('Offset:')}
-                                                            &nbsp;
+                                            {Boolean(offsetPeriods) &&
+                                                Boolean(offsetPeriodType) && (
+                                                    <>
+                                                        <br />
+                                                        <span>
+                                                            <span className="label">
+                                                                {i18n.t(
+                                                                    'Offset:'
+                                                                )}
+                                                                &nbsp;
+                                                            </span>
+                                                            {i18n.t(
+                                                                '{{ offsetPeriodType }} × {{ offsetPeriods }}',
+                                                                {
+                                                                    offsetPeriodType,
+                                                                    offsetPeriods,
+                                                                }
+                                                            )}
                                                         </span>
-                                                        {i18n.t(
-                                                            '{{ offsetPeriodType }} × {{ offsetPeriods }}',
-                                                            {
-                                                                offsetPeriodType,
-                                                                offsetPeriods,
-                                                            }
-                                                        )}
-                                                    </span>
-                                                </>
-                                            )}
+                                                    </>
+                                                )}
                                         </li>
                                     )
                                 )}
