@@ -7,7 +7,7 @@ import i18n from '../../../locales/index.js'
 import styles from './styles/InfoPopover.style.js'
 
 export const getCommonFields = (displayNameProp) =>
-    `attributeValues[id,displayName],code,created,createdBy,${displayNameProp}~rename(displayName),displayDescription,href,id,lastUpdated`
+    `attributeValues[attribute[id,displayName]],code,created,createdBy,${displayNameProp}~rename(displayName),displayDescription,href,id,lastUpdated`
 
 export const capitalizeText = (text) =>
     text && text.charAt(0).toUpperCase() + text.slice(1).toLowerCase()
@@ -111,9 +111,9 @@ export const InfoTable = ({ data, error, loading, children }) => {
                                     <td>
                                         <ul>
                                             {data.attributeValues.map(
-                                                ({ id, displayName }) => (
-                                                    <li key={id}>
-                                                        {displayName}
+                                                ({ attribute }) => (
+                                                    <li key={attribute.id}>
+                                                        {attribute.displayName}
                                                     </li>
                                                 )
                                             )}
