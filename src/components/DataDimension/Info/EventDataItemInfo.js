@@ -3,7 +3,8 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import i18n from '../../../locales/index.js'
 import { DIMENSION_TYPE_PROGRAM_DATA_ELEMENT } from '../../../modules/dataTypes.js'
-import { capitalizeText, getCommonFields, InfoTable } from './InfoTable.js'
+import { valueTypeDisplayNames } from '../../../modules/valueTypes.js'
+import { getCommonFields, InfoTable } from './InfoTable.js'
 import styles from './styles/InfoPopover.style.js'
 
 const programDataElementQuery = {
@@ -54,7 +55,7 @@ export const EventDataItemInfo = ({ type, id, displayNameProp }) => {
                 </tr>
                 <tr>
                     <th>{i18n.t('Value type')}</th>
-                    <td>{capitalizeText(data?.valueType)}</td>
+                    <td>{valueTypeDisplayNames[data?.valueType]}</td>
                 </tr>
                 {data?.optionSet && (
                     <tr>
