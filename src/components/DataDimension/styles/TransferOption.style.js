@@ -126,6 +126,10 @@ export default css`
         border-radius: 0px;
     }
 
+    .highlighted .info.active {
+        background-color: ${theme.secondary900};
+    }
+
     .highlighted .edit:hover,
     .highlighted .info:hover {
         background-color: ${theme.secondary900};
