@@ -3,7 +3,11 @@ import PropTypes from 'prop-types'
 import React, { useCallback, useEffect, useState } from 'react'
 import { validateIndicatorExpressionMutation } from '../../../api/expression.js'
 import i18n from '../../../locales/index.js'
-import { getCommonFields, InfoTable } from './InfoTable.js'
+import {
+    getCommonFields,
+    renderHumanReadableExpression,
+    InfoTable,
+} from './InfoTable.js'
 import styles from './styles/InfoPopover.style.js'
 
 const calculationQuery = {
@@ -40,8 +44,8 @@ export const CalculationInfo = ({ id, displayNameProp }) => {
                 expression: calculation.expression,
             })
 
-            if (result?.description) {
-                calculation.humanReadableExpression = result.description
+            if (result) {
+                calculation.humanReadableExpression = result
             }
         }
 
@@ -66,9 +70,9 @@ export const CalculationInfo = ({ id, displayNameProp }) => {
                     <th>{i18n.t('Expression description')}</th>
                     <td>
                         {data?.calculation.humanReadableExpression ? (
-                            <span className="code">
-                                {data.calculation.humanReadableExpression}
-                            </span>
+                            renderHumanReadableExpression(
+                                data.calculation.humanReadableExpression
+                            )
                         ) : (
                             <span className="none">{i18n.t('None')}</span>
                         )}

@@ -15,6 +15,17 @@ export const capitalizeText = (text) =>
 export const sentenceCaseText = (text) =>
     text && capitalizeText(text.replaceAll('_', ' ').toLowerCase())
 
+export const renderHumanReadableExpression = (expressionData) => (
+    <>
+        {expressionData.status === 'ERROR' ? (
+            <span className="none">{expressionData.message}</span>
+        ) : (
+            <span className="code">{expressionData.description}</span>
+        )}
+        <style jsx>{styles}</style>
+    </>
+)
+
 export const InfoTable = ({ data, error, loading, children }) => {
     const { fromServerDate } = useTimeZoneConversion()
 

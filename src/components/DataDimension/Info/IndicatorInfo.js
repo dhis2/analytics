@@ -3,7 +3,11 @@ import PropTypes from 'prop-types'
 import React, { useCallback, useEffect, useState } from 'react'
 import { validateIndicatorExpressionMutation } from '../../../api/expression.js'
 import i18n from '../../../locales/index.js'
-import { getCommonFields, InfoTable } from './InfoTable.js'
+import {
+    getCommonFields,
+    renderHumanReadableExpression,
+    InfoTable,
+} from './InfoTable.js'
 import styles from './styles/InfoPopover.style.js'
 
 const indicatorQuery = {
@@ -40,9 +44,8 @@ export const IndicatorInfo = ({ id, displayNameProp }) => {
                 expression: indicator.denominator,
             })
 
-            if (result?.description) {
-                indicator.humanReadableDenominatorExpression =
-                    result.description
+            if (result) {
+                indicator.humanReadableDenominatorExpression = result
             }
         }
 
@@ -51,8 +54,8 @@ export const IndicatorInfo = ({ id, displayNameProp }) => {
                 expression: indicator.numerator,
             })
 
-            if (result?.description) {
-                indicator.humanReadableNumeratorExpression = result.description
+            if (result) {
+                indicator.humanReadableNumeratorExpression = result
             }
         }
 
@@ -69,18 +72,21 @@ export const IndicatorInfo = ({ id, displayNameProp }) => {
             <InfoTable data={data?.indicator} loading={loading} error={error}>
                 <tr>
                     <th>{i18n.t('Numerator description')}</th>
-                    <td>{data?.indicator.displayNumeratorDescription}</td>
+                    <td>
+                        {data?.indicator.displayNumeratorDescription ? (
+                            data.indicator.displayNumeratorDescription
+                        ) : (
+                            <span className="none">{i18n.t('None')}</span>
+                        )}
+                    </td>
                 </tr>
                 <tr>
                     <th>{i18n.t('Numerator expression')}</th>
                     <td>
                         {data?.indicator.humanReadableNumeratorExpression ? (
-                            <span className="code">
-                                {
-                                    data.indicator
-                                        .humanReadableNumeratorExpression
-                                }
-                            </span>
+                            renderHumanReadableExpression(
+                                data.indicator.humanReadableNumeratorExpression
+                            )
                         ) : (
                             <span className="none">{i18n.t('None')}</span>
                         )}
@@ -88,18 +94,22 @@ export const IndicatorInfo = ({ id, displayNameProp }) => {
                 </tr>
                 <tr>
                     <th>{i18n.t('Denominator description')}</th>
-                    <td>{data?.indicator.displayDenominatorDescription}</td>
+                    <td>
+                        {data?.indicator.displayDenominatorDescription ? (
+                            data.indicator.displayDenominatorDescription
+                        ) : (
+                            <span className="none">{i18n.t('None')}</span>
+                        )}
+                    </td>
                 </tr>
                 <tr>
                     <th>{i18n.t('Denominator expression')}</th>
                     <td>
                         {data?.indicator.humanReadableDenominatorExpression ? (
-                            <span className="code">
-                                {
-                                    data.indicator
-                                        .humanReadableDenominatorExpression
-                                }
-                            </span>
+                            renderHumanReadableExpression(
+                                data.indicator
+                                    .humanReadableDenominatorExpression
+                            )
                         ) : (
                             <span className="none">{i18n.t('None')}</span>
                         )}

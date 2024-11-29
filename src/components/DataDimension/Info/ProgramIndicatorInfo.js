@@ -3,7 +3,12 @@ import PropTypes from 'prop-types'
 import React, { useCallback, useEffect, useState } from 'react'
 import { validateProgramIndicatorExpressionMutation } from '../../../api/expression.js'
 import i18n from '../../../locales/index.js'
-import { getCommonFields, sentenceCaseText, InfoTable } from './InfoTable.js'
+import {
+    getCommonFields,
+    renderHumanReadableExpression,
+    sentenceCaseText,
+    InfoTable,
+} from './InfoTable.js'
 import styles from './styles/InfoPopover.style.js'
 
 const dataElementQuery = {
@@ -62,8 +67,8 @@ export const ProgramIndicatorInfo = ({ id, displayNameProp }) => {
                 expression: programIndicator.expression,
             })
 
-            if (result?.description) {
-                programIndicator.humanReadableExpression = result.description
+            if (result) {
+                programIndicator.humanReadableExpression = result
             }
         }
 
@@ -72,8 +77,8 @@ export const ProgramIndicatorInfo = ({ id, displayNameProp }) => {
                 expression: programIndicator.filter,
             })
 
-            if (result?.description) {
-                programIndicator.humanReadableFilter = result.description
+            if (result) {
+                programIndicator.humanReadableFilter = result
             }
         }
 
@@ -219,9 +224,9 @@ export const ProgramIndicatorInfo = ({ id, displayNameProp }) => {
                     <th>{i18n.t('Expression')}</th>
                     <td>
                         {data?.programIndicator.humanReadableExpression ? (
-                            <span className="code">
-                                {data.programIndicator.humanReadableExpression}
-                            </span>
+                            renderHumanReadableExpression(
+                                data.programIndicator.humanReadableExpression
+                            )
                         ) : (
                             <span className="none">{i18n.t('None')}</span>
                         )}
@@ -231,9 +236,9 @@ export const ProgramIndicatorInfo = ({ id, displayNameProp }) => {
                     <th>{i18n.t('Filter')}</th>
                     <td>
                         {data?.programIndicator.humanReadableFilter ? (
-                            <span className="code">
-                                {data.programIndicator.humanReadableFilter}
-                            </span>
+                            renderHumanReadableExpression(
+                                data.programIndicator.humanReadableFilter
+                            )
                         ) : (
                             <span className="none">{i18n.t('None')}</span>
                         )}
