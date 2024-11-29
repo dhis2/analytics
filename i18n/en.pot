@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2024-11-29T14:19:57.444Z\n"
-"PO-Revision-Date: 2024-11-29T14:19:57.445Z\n"
+"POT-Creation-Date: 2024-11-29T14:57:51.495Z\n"
+"PO-Revision-Date: 2024-11-29T14:57:51.496Z\n"
 
 msgid "view only"
 msgstr "view only"
@@ -1259,6 +1259,81 @@ msgstr "Organisation unit"
 
 msgid "Assigned Categories"
 msgstr "Assigned Categories"
+
+msgid "Text"
+msgstr "Text"
+
+msgid "Long text"
+msgstr "Long text"
+
+msgid "Multi text"
+msgstr "Multi text"
+
+msgid "Letter"
+msgstr "Letter"
+
+msgid "Phone number"
+msgstr "Phone number"
+
+msgid "Email"
+msgstr "Email"
+
+msgid "Yes/No"
+msgstr "Yes/No"
+
+msgid "Yes Only"
+msgstr "Yes Only"
+
+msgid "Date"
+msgstr "Date"
+
+msgid "Date & Time"
+msgstr "Date & Time"
+
+msgid "Time"
+msgstr "Time"
+
+msgid "Unit interval"
+msgstr "Unit interval"
+
+msgid "Percentage"
+msgstr "Percentage"
+
+msgid "Integer"
+msgstr "Integer"
+
+msgid "Positive Integer"
+msgstr "Positive Integer"
+
+msgid "Negative Integer"
+msgstr "Negative Integer"
+
+msgid "Positive or Zero Integer"
+msgstr "Positive or Zero Integer"
+
+msgid "Tracker Associate"
+msgstr "Tracker Associate"
+
+msgid "Username"
+msgstr "Username"
+
+msgid "Coordinate"
+msgstr "Coordinate"
+
+msgid "Reference"
+msgstr "Reference"
+
+msgid "Age"
+msgstr "Age"
+
+msgid "URL"
+msgstr "URL"
+
+msgid "Image"
+msgstr "Image"
+
+msgid "GeoJSON"
+msgstr "GeoJSON"
 
 msgid "Pivot table"
 msgstr "Pivot table"
