@@ -11,16 +11,6 @@ import {
 } from './InfoTable.js'
 import styles from './styles/InfoPopover.style.js'
 
-const dataElementQuery = {
-    dataElement: {
-        resource: 'dataElements',
-        id: ({ id }) => id,
-        params: ({ displayNameProp }) => ({
-            fields: `${displayNameProp}~rename(displayName)`,
-        }),
-    },
-}
-
 const programIndicatorQuery = {
     programIndicator: {
         resource: 'programIndicators',
@@ -28,17 +18,7 @@ const programIndicatorQuery = {
         params: ({ displayNameProp }) => ({
             fields: `${getCommonFields(
                 displayNameProp
-            )},aggregationType,analyticsPeriodBoundaries[analyticsPeriodBoundaryType,boundaryTarget,id,offsetPeriodType,offsetPeriods],analyticsType,decimals,expression,filter,legendSets[id,displayName],program[displayName,programStages[id,displayName]]`,
-        }),
-    },
-}
-
-const trackedEntityAttributeQuery = {
-    trackedEntityAttribute: {
-        resource: 'trackedEntityAttributes',
-        id: ({ id }) => id,
-        params: ({ displayNameProp }) => ({
-            fields: `${displayNameProp}~rename(displayName)`,
+            )},aggregationType,analyticsPeriodBoundaries[analyticsPeriodBoundaryType,boundaryTarget,id,offsetPeriodType,offsetPeriods],analyticsType,decimals,expression,filter,legendSets[id,displayName],program[displayName]`,
         }),
     },
 }
@@ -82,59 +62,19 @@ export const ProgramIndicatorInfo = ({ id, displayNameProp }) => {
             }
         }
 
-        // this loop need to work with await (forEach does not)
-        for (
-            let i = 0;
-            i < programIndicator.analyticsPeriodBoundaries.length;
-            i++
-        ) {
-            const { boundaryTarget } =
-                programIndicator.analyticsPeriodBoundaries[i]
-
-            let match
-            let formattedBoundaryTarget = boundaryTarget
-
-            if (
-                ['ENROLLMENT_DATE', 'EVENT_DATE', 'INCIDENT_DATE'].includes(
-                    boundaryTarget
-                )
-            ) {
-                formattedBoundaryTarget = sentenceCaseText(boundaryTarget)
-            } else if ((match = boundaryTarget.match(/^PS_EVENTDATE:(\w+)$/))) {
-                console.log('PS_EVENTDATE', match[1])
-                formattedBoundaryTarget = i18n.t('Event in {{ stageName }}', {
-                    stageName: programIndicator.program.programStages.find(
-                        ({ id }) => id === match[1]
-                    ).displayName,
-                })
-            } else if ((match = boundaryTarget.match(/^A{(\w+)}$/))) {
-                console.log('A', match[1])
-                const { trackedEntityAttribute } = await engine.query(
-                    trackedEntityAttributeQuery,
-                    {
-                        variables: { id: match[1], displayNameProp },
-                        onError: setError,
-                    }
-                )
-                formattedBoundaryTarget = trackedEntityAttribute.displayName
-            } else if ((match = boundaryTarget.match(/^#{(\w+)\.(\w+)}$/))) {
-                console.log('id', match[1], match[2])
-                const { dataElement } = await engine.query(dataElementQuery, {
-                    variables: { id: match[2], displayNameProp },
-                    onError: setError,
-                })
-                formattedBoundaryTarget = `${
-                    programIndicator.program.programStages.find(
-                        ({ id }) => id === match[1]
-                    ).displayName
-                }, ${dataElement.displayName}`
+        programIndicator.analyticsPeriodBoundaries.forEach(
+            ({ boundaryTarget }, index) => {
+                programIndicator.analyticsPeriodBoundaries[
+                    index
+                ].boundaryTarget = [
+                    'ENROLLMENT_DATE',
+                    'EVENT_DATE',
+                    'INCIDENT_DATE',
+                ].includes(boundaryTarget)
+                    ? sentenceCaseText(boundaryTarget)
+                    : i18n.t('Custom')
             }
-
-            console.log('formatted', formattedBoundaryTarget)
-
-            programIndicator.analyticsPeriodBoundaries[i].boundaryTarget =
-                formattedBoundaryTarget
-        }
+        )
 
         setData({ programIndicator })
         setLoading(false)
