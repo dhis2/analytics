@@ -77,7 +77,7 @@ function getDefaultSortedConfig(config, layout, stacked) {
     const categories = config.xAxis?.length && config.xAxis[0].categories
     const series = config.series
     const indexOrder = getIndexOrder(
-        stacked ? getStackedData(series, layout) : series[0].data,
+        stacked ? getStackedData(series, layout) : series[0]?.data ?? [],
         layout
     )
     const sortedConfig = Object.assign({}, config)
