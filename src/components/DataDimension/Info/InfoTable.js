@@ -15,6 +15,58 @@ export const capitalizeText = (text) =>
 export const sentenceCaseText = (text) =>
     text && capitalizeText(text.replaceAll('_', ' ').toLowerCase())
 
+export const renderDataSets = (dataSets) => {
+    if (dataSets.length === 0) {
+        return (
+            <>
+                <span className="none">{i18n.t('None')}</span>
+                <style jsx>{styles}</style>
+            </>
+        )
+    } else if (dataSets.length === 1) {
+        return dataSets[0].displayName
+    } else {
+        return (
+            <>
+                <div className="content-wrap">
+                    <ul>
+                        {dataSets.map(({ id, displayName }) => (
+                            <li key={id}>{displayName}</li>
+                        ))}
+                    </ul>
+                </div>
+                <style jsx>{styles}</style>
+            </>
+        )
+    }
+}
+
+export const renderGroupMemberships = (groups) => {
+    if (groups.length === 0) {
+        return (
+            <>
+                <span className="none">{i18n.t('None')}</span>
+                <style jsx>{styles}</style>
+            </>
+        )
+    } else if (groups.length === 1) {
+        return groups[0].displayName
+    } else {
+        return (
+            <>
+                <div className="content-wrap">
+                    <ul>
+                        {groups.map(({ id, displayName }) => (
+                            <li key={id}>{displayName}</li>
+                        ))}
+                    </ul>
+                </div>
+                <style jsx>{styles}</style>
+            </>
+        )
+    }
+}
+
 export const renderHumanReadableExpression = (expressionData) => (
     <>
         {expressionData.status === 'ERROR' ? (
@@ -25,6 +77,23 @@ export const renderHumanReadableExpression = (expressionData) => (
         <style jsx>{styles}</style>
     </>
 )
+
+export const renderLegendSets = (legendSets) => {
+    return legendSets.length === 1 ? (
+        legendSets[0].displayName
+    ) : (
+        <>
+            <div className="content-wrap">
+                <ul>
+                    {legendSets.map(({ id, displayName }) => (
+                        <li key={id}>{displayName}</li>
+                    ))}
+                </ul>
+            </div>
+            <style jsx>{styles}</style>
+        </>
+    )
+}
 
 export const InfoTable = ({ data, error, loading, children }) => {
     const { fromServerDate } = useTimeZoneConversion()

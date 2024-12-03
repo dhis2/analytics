@@ -5,7 +5,9 @@ import { validateIndicatorExpressionMutation } from '../../../api/expression.js'
 import i18n from '../../../locales/index.js'
 import {
     getCommonFields,
+    renderGroupMemberships,
     renderHumanReadableExpression,
+    renderLegendSets,
     InfoTable,
 } from './InfoTable.js'
 import styles from './styles/InfoPopover.style.js'
@@ -156,39 +158,16 @@ export const IndicatorInfo = ({ id, displayNameProp }) => {
                 <tr>
                     <th>{i18n.t('Group membership')}</th>
                     <td>
-                        {data?.indicator.indicatorGroups.length === 1 ? (
-                            data.indicator.indicatorGroups[0].displayName
-                        ) : (
-                            <div className="content-wrap">
-                                <ul>
-                                    {data?.indicator.indicatorGroups.map(
-                                        ({ id, displayName }) => (
-                                            <li key={id}>{displayName}</li>
-                                        )
-                                    )}
-                                </ul>
-                            </div>
-                        )}
+                        {data?.indicator.indicatorGroups &&
+                            renderGroupMemberships(
+                                data.indicator.indicatorGroups
+                            )}
                     </td>
                 </tr>
                 {Boolean(data?.indicator.legendSets.length) && (
                     <tr>
                         <th>{i18n.t('Legend set(s)')}</th>
-                        <td>
-                            {data.indicator.legendSets.length === 1 ? (
-                                data.indicator.legendSets[0].displayName
-                            ) : (
-                                <div className="content-wrap">
-                                    <ul>
-                                        {data.indicator.legendSets.map(
-                                            ({ id, displayName }) => (
-                                                <li key={id}>{displayName}</li>
-                                            )
-                                        )}
-                                    </ul>
-                                </div>
-                            )}
-                        </td>
+                        <td>{renderLegendSets(data.indicator.legendSets)}</td>
                     </tr>
                 )}
             </InfoTable>

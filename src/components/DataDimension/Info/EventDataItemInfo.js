@@ -4,7 +4,7 @@ import React from 'react'
 import i18n from '../../../locales/index.js'
 import { DIMENSION_TYPE_PROGRAM_DATA_ELEMENT } from '../../../modules/dataTypes.js'
 import { valueTypeDisplayNames } from '../../../modules/valueTypes.js'
-import { getCommonFields, InfoTable } from './InfoTable.js'
+import { getCommonFields, renderLegendSets, InfoTable } from './InfoTable.js'
 import styles from './styles/InfoPopover.style.js'
 
 const programDataElementQuery = {
@@ -66,19 +66,7 @@ export const EventDataItemInfo = ({ type, id, displayNameProp }) => {
                 {Boolean(data?.legendSets.length) && (
                     <tr>
                         <th>{i18n.t('Legend set(s)')}</th>
-                        <td>
-                            {data.legendSets.length === 1 ? (
-                                data.legendSets[0].displayName
-                            ) : (
-                                <ul>
-                                    {data.legendSets.map(
-                                        ({ id, displayName }) => (
-                                            <li key={id}>{displayName}</li>
-                                        )
-                                    )}
-                                </ul>
-                            )}
-                        </td>
+                        <td>{renderLegendSets(data.legendSets)}</td>
                     </tr>
                 )}
             </InfoTable>

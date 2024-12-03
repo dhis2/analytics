@@ -3,7 +3,13 @@ import PropTypes from 'prop-types'
 import React, { useCallback, useEffect, useState } from 'react'
 import i18n from '../../../locales/index.js'
 import { valueTypeDisplayNames } from '../../../modules/valueTypes.js'
-import { getCommonFields, InfoTable } from './InfoTable.js'
+import {
+    getCommonFields,
+    renderDataSets,
+    renderGroupMemberships,
+    renderLegendSets,
+    InfoTable,
+} from './InfoTable.js'
 import styles from './styles/InfoPopover.style.js'
 
 const dataElementOperandsQuery = {
@@ -81,21 +87,12 @@ export const DataElementOperandInfo = ({ id, displayNameProp }) => {
                 <tr>
                     <th>{i18n.t('Data set(s)')}</th>
                     <td>
-                        {data?.dataElementOperand.dataElement.dataSetElements
-                            .length === 1 ? (
-                            data.dataElementOperand.dataElement
-                                .dataSetElements[0].dataSet.displayName
-                        ) : (
-                            <ul>
-                                {data?.dataElementOperand.dataElement.dataSetElements.map(
-                                    ({ dataSet }) => (
-                                        <li key={dataSet.id}>
-                                            {dataSet.displayName}
-                                        </li>
-                                    )
-                                )}
-                            </ul>
-                        )}
+                        {data?.dataElementOperand.dataElement.dataSetElements &&
+                            renderDataSets(
+                                data.dataElementOperand.dataElement.dataSetElements.map(
+                                    ({ dataSet }) => dataSet
+                                )
+                            )}
                     </td>
                 </tr>
                 <tr>
@@ -125,21 +122,26 @@ export const DataElementOperandInfo = ({ id, displayNameProp }) => {
                 <tr>
                     <th>{i18n.t('Category combo')}</th>
                     <td>
-                        <details>
-                            <summary>
-                                {
-                                    data?.dataElementOperand.dataElement
-                                        .categoryCombo.displayName
-                                }
-                            </summary>
-                            <ul>
-                                {data?.dataElementOperand.dataElement.categoryCombo.categories.map(
-                                    ({ id, displayName }) => (
-                                        <li key={id}>{displayName}</li>
-                                    )
-                                )}
-                            </ul>
-                        </details>
+                        {data?.dataElementOperand.dataElement.categoryCombo
+                            .displayName === 'default' ? (
+                            <span className="none">{i18n.t('None')}</span>
+                        ) : (
+                            <details>
+                                <summary>
+                                    {
+                                        data?.dataElementOperand.dataElement
+                                            .categoryCombo.displayName
+                                    }
+                                </summary>
+                                <ul>
+                                    {data?.dataElementOperand.dataElement.categoryCombo.categories.map(
+                                        ({ id, displayName }) => (
+                                            <li key={id}>{displayName}</li>
+                                        )
+                                    )}
+                                </ul>
+                            </details>
+                        )}
                     </td>
                 </tr>
                 {data?.dataElementOperand.dataElement.optionSet && (
@@ -156,19 +158,12 @@ export const DataElementOperandInfo = ({ id, displayNameProp }) => {
                 <tr>
                     <th>{i18n.t('Group membership')}</th>
                     <td>
-                        {data?.dataElementOperand.dataElement.dataElementGroups
-                            .length === 1 ? (
-                            data.dataElementOperand.dataElement
-                                .dataElementGroups[0].displayName
-                        ) : (
-                            <ul>
-                                {data?.dataElementOperand.dataElement.dataElementGroups.map(
-                                    ({ id, displayName }) => (
-                                        <li key={id}>{displayName}</li>
-                                    )
-                                )}
-                            </ul>
-                        )}
+                        {data?.dataElementOperand.dataElement
+                            .dataElementGroups &&
+                            renderGroupMemberships(
+                                data.dataElementOperand.dataElement
+                                    .dataElementGroups
+                            )}
                     </td>
                 </tr>
                 {Boolean(
@@ -177,18 +172,8 @@ export const DataElementOperandInfo = ({ id, displayNameProp }) => {
                     <tr>
                         <th>{i18n.t('Legend set(s)')}</th>
                         <td>
-                            {data.dataElementOperand.dataElement.legendSets
-                                .length === 1 ? (
-                                data.dataElementOperand.dataElement
-                                    .legendSets[0].displayName
-                            ) : (
-                                <ul>
-                                    {data.dataElementOperand.dataElement.legendSets.map(
-                                        ({ id, displayName }) => (
-                                            <li key={id}>{displayName}</li>
-                                        )
-                                    )}
-                                </ul>
+                            {renderLegendSets(
+                                data.dataElementOperand.dataElement.legendSets
                             )}
                         </td>
                     </tr>

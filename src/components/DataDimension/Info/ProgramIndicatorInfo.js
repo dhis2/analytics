@@ -6,6 +6,7 @@ import i18n from '../../../locales/index.js'
 import {
     getCommonFields,
     renderHumanReadableExpression,
+    renderLegendSets,
     sentenceCaseText,
     InfoTable,
 } from './InfoTable.js'
@@ -198,19 +199,7 @@ export const ProgramIndicatorInfo = ({ id, displayNameProp }) => {
                     <tr>
                         <th>{i18n.t('Legend set(s)')}</th>
                         <td>
-                            {data.programIndicator.legendSets.length === 1 ? (
-                                data.programIndicator.legendSets[0].displayName
-                            ) : (
-                                <div className="content-wrap">
-                                    <ul>
-                                        {data.programIndicator.legendSets.map(
-                                            ({ id, displayName }) => (
-                                                <li key={id}>{displayName}</li>
-                                            )
-                                        )}
-                                    </ul>
-                                </div>
-                            )}
+                            {renderLegendSets(data.programIndicator.legendSets)}
                         </td>
                     </tr>
                 )}
