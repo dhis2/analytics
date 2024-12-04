@@ -338,7 +338,8 @@ export {
 } from './components/PeriodDimension/utils/index.js'
 export {
     getRelativePeriodsOptionsById,
-    getRelativePeriodsMap,
+    getRelativePeriodsName,
+    getRelativePeriodsItemsCount,
 } from './components/PeriodDimension/utils/relativePeriods.js'
 export { getFixedPeriodsOptionsById } from './components/PeriodDimension/utils/fixedPeriods.js'
 
