@@ -1,3 +1,17 @@
+## [26.9.3](https://github.com/dhis2/analytics/compare/v26.9.2...v26.9.3) (2024-11-22)
+
+
+### Bug Fixes
+
+* enable ou tree and levels/groups with user orgunits (DHIS2-18066) ([#1702](https://github.com/dhis2/analytics/issues/1702)) ([f58c708](https://github.com/dhis2/analytics/commit/f58c708af214f13147e5c95ede8545fc5c03bc57))
+
+## [26.9.2](https://github.com/dhis2/analytics/compare/v26.9.1...v26.9.2) (2024-11-03)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([ce24864](https://github.com/dhis2/analytics/commit/ce248640f88ea49ebe5004d93b7fa2beac8254dc))
+
 ## [26.9.1](https://github.com/dhis2/analytics/compare/v26.9.0...v26.9.1) (2024-10-27)
 
 
