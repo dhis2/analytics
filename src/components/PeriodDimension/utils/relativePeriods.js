@@ -299,6 +299,7 @@ export const getRelativePeriodsDetails = () =>
         .map((option) =>
             option.getPeriods().map((period) => ({
                 id: period.id,
+                name: period.name,
                 offset: period.offset,
                 duration: period.duration,
                 type: option.id,
@@ -306,7 +307,7 @@ export const getRelativePeriodsDetails = () =>
         )
         .flat()
         .reduce((acc, period) => {
-            acc[period.id] = period.name
+            acc[period.id] = period
             return acc
         }, {})
 
