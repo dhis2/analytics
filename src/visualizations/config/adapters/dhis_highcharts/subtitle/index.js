@@ -39,7 +39,7 @@ function getDefault(layout, dashboard, filterTitle) {
     return dashboard || isString(layout.title) ? filterTitle : undefined
 }
 
-export default function (series, layout, metaData, extraOptions) {
+export default function subtitle(series, layout, metaData, extraOptions) {
     if (layout.hideSubtitle) {
         return null
     }
