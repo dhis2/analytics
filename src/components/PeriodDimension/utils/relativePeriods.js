@@ -73,7 +73,7 @@ const getWeeksPeriodType = () => [
     {
         id: WEEKS_THIS_YEAR,
         name: i18n.t('Weeks this year'),
-        offset: 0,
+        offset: 51,
         duration: 52,
     },
 ]
@@ -118,7 +118,7 @@ const getMonthsPeriodType = () => [
     {
         id: 'MONTHS_THIS_YEAR',
         name: i18n.t('Months this year'),
-        offset: 0,
+        offset: 11,
         duration: 12,
     },
 ]
@@ -145,7 +145,7 @@ const getBiMonthsPeriodType = () => [
     {
         id: 'BIMONTHS_THIS_YEAR',
         name: i18n.t('Bi-months this year'),
-        offset: 0,
+        offset: 5,
         duration: 6,
     },
 ]
@@ -172,7 +172,7 @@ const getQuartersPeriodType = () => [
     {
         id: 'QUARTERS_THIS_YEAR',
         name: i18n.t('Quarters this year'),
-        offset: 0,
+        offset: 3,
         duration: 4,
     },
 ]
