@@ -341,7 +341,10 @@ export {
     getRelativePeriodsName,
     getRelativePeriodsDetails,
 } from './components/PeriodDimension/utils/relativePeriods.js'
-export { getFixedPeriodsOptionsById } from './components/PeriodDimension/utils/fixedPeriods.js'
+export {
+    getFixedPeriodsOptionsById,
+    PERIOD_TYPE_REGEX,
+} from './components/PeriodDimension/utils/fixedPeriods.js'
 
 export { default as VisualizationOptions } from './components/Options/VisualizationOptions.js'
 
