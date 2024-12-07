@@ -214,7 +214,7 @@ msgid "No calculations found for \"{{- searchTerm}}\""
 msgstr ""
 
 msgid "Nothing found for \"{{- searchTerm}}\""
-msgstr ""
+msgstr "Không tìm thấy gì cho {{- searchTerm}}"
 
 msgid "Calculation"
 msgstr ""
@@ -256,7 +256,7 @@ msgid "Dimension recommended with selected data"
 msgstr "Chiều được đề xuất với dữ liệu đã chọn"
 
 msgid "All items"
-msgstr ""
+msgstr "Tất cả các mục"
 
 msgid "Automatically include all items"
 msgstr ""
@@ -437,7 +437,7 @@ msgid "Enter interpretation text"
 msgstr ""
 
 msgid "Not available offline"
-msgstr ""
+msgstr "Không có cho ngoại tuyến"
 
 msgid "Created by"
 msgstr "Được tạo bởi"
@@ -996,7 +996,7 @@ msgid "Event data item"
 msgstr "Mục dữ liệu sự kiện"
 
 msgid "No programs found"
-msgstr ""
+msgstr "Không tìm thấy chương trình nào"
 
 msgid "Loading programs"
 msgstr ""
