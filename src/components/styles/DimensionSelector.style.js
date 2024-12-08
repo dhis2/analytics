@@ -2,6 +2,9 @@ import { spacers, colors } from '@dhis2/ui'
 import css from 'styled-jsx/css'
 
 export default css`
+    .transfer-container {
+        min-width: 800px;
+    }
     .filterContainer {
         display: flex;
         margin-bottom: ${spacers.dp12};

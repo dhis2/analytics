@@ -1,6 +1,12 @@
-export const validateExpressionMutation = {
+export const validateIndicatorExpressionMutation = {
     type: 'create',
     resource: 'indicators/expression/description',
+    data: ({ expression }) => expression,
+}
+
+export const validateProgramIndicatorExpressionMutation = {
+    type: 'create',
+    resource: 'programIndicators/expression/description',
     data: ({ expression }) => expression,
 }
 
