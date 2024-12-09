@@ -74,7 +74,7 @@ exports[`The Period Selector component matches the snapshot 1`] = `
       },
     ]
   }
-  optionsWidth="420px"
+  optionsWidth="520px"
   renderOption={[Function]}
   rightFooter={<React.Fragment />}
   rightHeader={<RightHeader />}
@@ -91,6 +91,6 @@ exports[`The Period Selector component matches the snapshot 1`] = `
       </style>
     </React.Fragment>
   }
-  selectedWidth="298px"
+  selectedWidth="520px"
 />
 `;
