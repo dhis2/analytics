@@ -13,6 +13,14 @@ export default css`
         height: 100%;
         width: 100%;
     }
+    .error {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+        color: ${colors.grey700};
+    }
     .data-table {
         display: table;
         width: 100%;

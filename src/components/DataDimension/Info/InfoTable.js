@@ -107,7 +107,15 @@ export const InfoTable = ({ data, error, loading, children }) => {
                     </Center>
                 </div>
             )}
-            {error && 'some error occured'}
+            {error && (
+                <div className="error">
+                    <span>
+                        {i18n.t(
+                            'There was a problem loading information for this data item.'
+                        )}
+                    </span>
+                </div>
+            )}
             {data && (
                 <>
                     <table className="data-table">

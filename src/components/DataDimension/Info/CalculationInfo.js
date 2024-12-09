@@ -23,6 +23,7 @@ const calculationQuery = {
 export const CalculationInfo = ({ id, displayNameProp }) => {
     const [data, setData] = useState()
     const [error, setError] = useState()
+    const [expressionError, setExpressionError] = useState()
     const [loading, setLoading] = useState(true)
 
     const { baseUrl, apiVersion } = useConfig()
@@ -30,7 +31,7 @@ export const CalculationInfo = ({ id, displayNameProp }) => {
     const engine = useDataEngine()
     const [getHumanReadableExpression] = useDataMutation(
         validateIndicatorExpressionMutation,
-        { onError: setError }
+        { onError: setExpressionError }
     )
 
     const fetchData = useCallback(async () => {
@@ -74,7 +75,11 @@ export const CalculationInfo = ({ id, displayNameProp }) => {
                                 data.calculation.humanReadableExpression
                             )
                         ) : (
-                            <span className="none">{i18n.t('None')}</span>
+                            <span className="none">
+                                {expressionError
+                                    ? i18n.t('Error loading value')
+                                    : i18n.t('None')}
+                            </span>
                         )}
                     </td>
                 </tr>

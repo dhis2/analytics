@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2024-11-29T14:57:51.495Z\n"
-"PO-Revision-Date: 2024-11-29T14:57:51.496Z\n"
+"POT-Creation-Date: 2024-12-09T10:23:24.850Z\n"
+"PO-Revision-Date: 2024-12-09T10:23:24.851Z\n"
 
 msgid "view only"
 msgstr "view only"
@@ -171,6 +171,9 @@ msgstr "No data"
 msgid "Expression description"
 msgstr "Expression description"
 
+msgid "Error loading value"
+msgstr "Error loading value"
+
 msgid "None"
 msgstr "None"
 
@@ -257,6 +260,9 @@ msgstr "Indicator type"
 
 msgid "Decimals in output"
 msgstr "Decimals in output"
+
+msgid "There was a problem loading information for this data item."
+msgstr "There was a problem loading information for this data item."
 
 msgid "Name"
 msgstr "Name"
