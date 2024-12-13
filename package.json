@@ -52,7 +52,7 @@
     "peerDependencies": {
         "@dhis2/app-runtime": "^3",
         "@dhis2/d2-i18n": "^1.1",
-        "@dhis2/ui": "^9.15.0",
+        "@dhis2/ui": "^10",
         "prop-types": "^15",
         "react": "^16.3",
         "react-dom": "^16.3",
