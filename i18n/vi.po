@@ -196,7 +196,7 @@ msgid "No program indicators found"
 msgstr ""
 
 msgid "No calculations found"
-msgstr ""
+msgstr "Không tìm thấy tính toán nào"
 
 msgid "No indicators found for \"{{- searchTerm}}\""
 msgstr ""
@@ -217,7 +217,7 @@ msgid "Nothing found for \"{{- searchTerm}}\""
 msgstr "Không tìm thấy gì cho {{- searchTerm}}"
 
 msgid "Calculation"
-msgstr ""
+msgstr "Tính toán"
 
 msgid "Metric type"
 msgstr ""
@@ -951,7 +951,7 @@ msgid "Indicator group"
 msgstr "Nhóm chỉ số"
 
 msgid "All groups"
-msgstr ""
+msgstr "Tất cả nhóm"
 
 msgid "Indicator"
 msgstr "Chỉ số"
@@ -1008,7 +1008,7 @@ msgid "Program indicator"
 msgstr "Quản lý Chỉ số chương trình"
 
 msgid "Calculations"
-msgstr ""
+msgstr "Tính toán"
 
 msgid "Number"
 msgstr "Số"
