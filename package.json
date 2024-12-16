@@ -34,7 +34,7 @@
         "@dhis2/cli-app-scripts": "^11.7.4",
         "@dhis2/cli-style": "^10.7.4",
         "@dhis2/d2-i18n": "^1.1.0",
-        "@dhis2/ui": "^9.4.4",
+        "@dhis2/ui": "^9.15.0",
         "@mihkeleidast/storybook-addon-source": "^1.0.1",
         "@storybook/preset-create-react-app": "^8.3.6",
         "@storybook/react": "^8.3.6",
@@ -52,7 +52,7 @@
     "peerDependencies": {
         "@dhis2/app-runtime": "^3",
         "@dhis2/d2-i18n": "^1.1",
-        "@dhis2/ui": "^9.2.0",
+        "@dhis2/ui": "^9",
         "prop-types": "^15",
         "react": "^16.3",
         "react-dom": "^16.3",
@@ -76,7 +76,6 @@
         "resize-observer-polyfill": "^1.5.1"
     },
     "resolutions": {
-        "@dhis2/ui": "^9.2.0",
         "eslint": "^7.32.0"
     },
     "files": [
