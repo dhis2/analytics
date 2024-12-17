@@ -48,7 +48,7 @@ export const EventDataItemInfo = ({ type, id, displayNameProp }) => {
                 <tr>
                     <th>{i18n.t('Type')}</th>
                     <td>
-                        {data?.type === DIMENSION_TYPE_PROGRAM_DATA_ELEMENT
+                        {type === DIMENSION_TYPE_PROGRAM_DATA_ELEMENT
                             ? i18n.t('Data element')
                             : i18n.t('Tracked entity attribute')}
                     </td>
