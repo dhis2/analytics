@@ -66,7 +66,7 @@ export const DataElementOperandInfo = ({ id, displayNameProp }) => {
             `${
                 dataElementOperandsQuery.dataElementOperands.resource
             }?${new URLSearchParams({ filter: `id:eq:${id}` })}`,
-            new URL(`api/${apiVersion}/`, `${baseUrl}/`)
+            new URL(`api/${apiVersion}/`, baseUrl === '..' ? window.location.href.split('dhis-web-data-visualizer/')[0] : `${baseUrl}/`)
         ).href
 
         setData({ dataElementOperand })
