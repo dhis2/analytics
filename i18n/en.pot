@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2024-12-09T10:23:24.850Z\n"
-"PO-Revision-Date: 2024-12-09T10:23:24.851Z\n"
+"POT-Creation-Date: 2024-12-18T13:00:25.697Z\n"
+"PO-Revision-Date: 2024-12-18T13:00:25.697Z\n"
 
 msgid "view only"
 msgstr "view only"
@@ -290,9 +290,6 @@ msgstr "API link"
 
 msgid "Open in API"
 msgstr "Open in API"
-
-msgid "Custom attributes"
-msgstr "Custom attributes"
 
 msgid "Custom"
 msgstr "Custom"

@@ -7,7 +7,7 @@ import i18n from '../../../locales/index.js'
 import styles from './styles/InfoPopover.style.js'
 
 export const getCommonFields = (displayNameProp) =>
-    `attributeValues[attribute[id,displayName]],code,created,createdBy,${displayNameProp}~rename(displayName),displayDescription,href,id,lastUpdated`
+    `attributeValues[attribute[id,displayName],value],code,created,createdBy,${displayNameProp}~rename(displayName),displayDescription,href,id,lastUpdated`
 
 export const capitalizeText = (text) =>
     text && text.charAt(0).toUpperCase() + text.slice(1).toLowerCase()
@@ -193,21 +193,13 @@ export const InfoTable = ({ data, error, loading, children }) => {
                                     </a>
                                 </td>
                             </tr>
-                            {Boolean(data.attributeValues.length) && (
-                                <tr>
-                                    <th>{i18n.t('Custom attributes')}</th>
-                                    <td>
-                                        <ul>
-                                            {data.attributeValues.map(
-                                                ({ attribute }) => (
-                                                    <li key={attribute.id}>
-                                                        {attribute.displayName}
-                                                    </li>
-                                                )
-                                            )}
-                                        </ul>
-                                    </td>
-                                </tr>
+                            {data.attributeValues.map(
+                                ({ attribute, value }) => (
+                                    <tr key={attribute.id}>
+                                        <th>{attribute.displayName}</th>
+                                        <td>{value}</td>
+                                    </tr>
+                                )
                             )}
                         </tbody>
                     </table>
