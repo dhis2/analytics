@@ -24,14 +24,19 @@ const dataElementQuery = {
     },
 }
 
-export const DataElementInfo = ({ id, displayNameProp }) => {
+export const DataElementInfo = ({ id, displayNameProp, type }) => {
     const { loading, error, data } = useDataQuery(dataElementQuery, {
         variables: { id, displayNameProp },
     })
 
     return (
         <>
-            <InfoTable data={data?.dataElement} loading={loading} error={error}>
+            <InfoTable
+                type={type}
+                data={data?.dataElement}
+                loading={loading}
+                error={error}
+            >
                 <tr>
                     <th>{i18n.t('Data set(s)')}</th>
                     <td>
@@ -116,4 +121,5 @@ export const DataElementInfo = ({ id, displayNameProp }) => {
 DataElementInfo.propTypes = {
     displayNameProp: PropTypes.string,
     id: PropTypes.string,
+    type: PropTypes.string,
 }

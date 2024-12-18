@@ -20,7 +20,7 @@ const calculationQuery = {
     },
 }
 
-export const CalculationInfo = ({ id, displayNameProp }) => {
+export const CalculationInfo = ({ id, displayNameProp, type }) => {
     const [data, setData] = useState()
     const [error, setError] = useState()
     const [expressionError, setExpressionError] = useState()
@@ -71,7 +71,12 @@ export const CalculationInfo = ({ id, displayNameProp }) => {
 
     return (
         <>
-            <InfoTable data={data?.calculation} loading={loading} error={error}>
+            <InfoTable
+                type={type}
+                data={data?.calculation}
+                loading={loading}
+                error={error}
+            >
                 <tr>
                     <th>{i18n.t('Expression description')}</th>
                     <td>
@@ -97,4 +102,5 @@ export const CalculationInfo = ({ id, displayNameProp }) => {
 CalculationInfo.propTypes = {
     displayNameProp: PropTypes.string,
     id: PropTypes.string,
+    type: PropTypes.string,
 }

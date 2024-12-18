@@ -29,7 +29,7 @@ const dataElementOperandsQuery = {
     },
 }
 
-export const DataElementOperandInfo = ({ id, displayNameProp }) => {
+export const DataElementOperandInfo = ({ id, displayNameProp, type }) => {
     const [data, setData] = useState()
     const [error, setError] = useState()
     const [loading, setLoading] = useState(true)
@@ -85,6 +85,7 @@ export const DataElementOperandInfo = ({ id, displayNameProp }) => {
     return (
         <>
             <InfoTable
+                type={type}
                 data={data?.dataElementOperand}
                 loading={loading}
                 error={error}
@@ -222,4 +223,5 @@ export const DataElementOperandInfo = ({ id, displayNameProp }) => {
 DataElementOperandInfo.propTypes = {
     displayNameProp: PropTypes.string,
     id: PropTypes.string,
+    type: PropTypes.string,
 }

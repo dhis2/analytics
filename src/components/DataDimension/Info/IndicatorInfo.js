@@ -24,7 +24,7 @@ const indicatorQuery = {
     },
 }
 
-export const IndicatorInfo = ({ id, displayNameProp }) => {
+export const IndicatorInfo = ({ id, displayNameProp, type }) => {
     const [data, setData] = useState()
     const [error, setError] = useState()
     const [loading, setLoading] = useState(true)
@@ -71,7 +71,12 @@ export const IndicatorInfo = ({ id, displayNameProp }) => {
 
     return (
         <>
-            <InfoTable data={data?.indicator} loading={loading} error={error}>
+            <InfoTable
+                type={type}
+                data={data?.indicator}
+                loading={loading}
+                error={error}
+            >
                 <tr>
                     <th>{i18n.t('Numerator description')}</th>
                     <td>
@@ -179,4 +184,5 @@ export const IndicatorInfo = ({ id, displayNameProp }) => {
 IndicatorInfo.propTypes = {
     displayNameProp: PropTypes.string,
     id: PropTypes.string,
+    type: PropTypes.string,
 }
