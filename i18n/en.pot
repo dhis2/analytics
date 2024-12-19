@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2024-12-18T15:51:04.775Z\n"
-"PO-Revision-Date: 2024-12-18T15:51:04.775Z\n"
+"POT-Creation-Date: 2024-12-18T13:00:25.697Z\n"
+"PO-Revision-Date: 2024-12-18T13:00:25.697Z\n"
 
 msgid "view only"
 msgstr "view only"
@@ -260,12 +260,6 @@ msgstr "Indicator type"
 
 msgid "Decimals in output"
 msgstr "Decimals in output"
-
-msgid "Maintenance link"
-msgstr "Maintenance link"
-
-msgid "Open in Maintenance app"
-msgstr "Open in Maintenance app"
 
 msgid "There was a problem loading information for this data item."
 msgstr "There was a problem loading information for this data item."

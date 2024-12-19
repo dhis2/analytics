@@ -1,19 +1,9 @@
-import { useConfig, useTimeZoneConversion } from '@dhis2/app-runtime'
+import { useTimeZoneConversion } from '@dhis2/app-runtime'
 import { Center, CircularLoader } from '@dhis2/ui'
 import moment from 'moment'
 import PropTypes from 'prop-types'
 import React from 'react'
 import i18n from '../../../locales/index.js'
-import { REPORTING_RATE } from '../../../modules/dataSets.js' // data sets
-import {
-    DIMENSION_TYPE_DATA_ELEMENT, // data element totals
-    DIMENSION_TYPE_DATA_ELEMENT_OPERAND, // data element details
-    DIMENSION_TYPE_INDICATOR,
-    DIMENSION_TYPE_PROGRAM_ATTRIBUTE, // event data items
-    DIMENSION_TYPE_PROGRAM_DATA_ELEMENT, // event data items
-    DIMENSION_TYPE_PROGRAM_INDICATOR,
-} from '../../../modules/dataTypes.js'
-import { useDataDimensionContext } from '../DataDimension.js'
 import styles from './styles/InfoPopover.style.js'
 
 export const getCommonFields = (displayNameProp) =>
@@ -105,58 +95,8 @@ export const renderLegendSets = (legendSets) => {
     )
 }
 
-const renderMaintenanceLink = ({ baseUrl, authorities, type, id }) => {
-    const maintenanceAppAuthority = 'M_dhis-web-maintenance'
-    const canOpenMaintenanceApp = Array.isArray(authorities)
-        ? authorities.includes(maintenanceAppAuthority)
-        : authorities.has(maintenanceAppAuthority)
-
-    const maintenanceUrlMap = {
-        [DIMENSION_TYPE_INDICATOR]: '/edit/indicatorSection/indicator/',
-        [DIMENSION_TYPE_DATA_ELEMENT]: '/edit/dataElementSection/dataElement/',
-        [DIMENSION_TYPE_DATA_ELEMENT_OPERAND]:
-            '/edit/dataElementSection/dataElement/',
-        [DIMENSION_TYPE_PROGRAM_ATTRIBUTE]:
-            '/edit/programSection/trackedEntityAttribute/',
-        [DIMENSION_TYPE_PROGRAM_DATA_ELEMENT]:
-            '/edit/dataElementSection/dataElement/',
-        [DIMENSION_TYPE_PROGRAM_INDICATOR]:
-            '/edit/indicatorSection/programIndicator/',
-        [REPORTING_RATE]: '/edit/dataSetSection/dataSet/',
-    }
-
-    // not everyone has access to Maintenance app
-    // calculations don't have a page in Maintenance
-    if (!canOpenMaintenanceApp || !maintenanceUrlMap[type]) {
-        return null
-    }
-
-    const maintenanceUrl = new URL(
-        `dhis-web-maintenance/index.html#${maintenanceUrlMap[type]}${id}`,
-        baseUrl === '..'
-            ? window.location.href.split('dhis-web-data-visualizer/')[0]
-            : `${baseUrl}/`
-    ).href
-
-    return (
-        <>
-            <tr>
-                <th>{i18n.t('Maintenance link')}</th>
-                <td>
-                    <a href={maintenanceUrl} target="_blank" rel="noreferrer">
-                        {i18n.t('Open in Maintenance app')}
-                    </a>
-                </td>
-            </tr>
-            <style jsx>{styles}</style>
-        </>
-    )
-}
-
-export const InfoTable = ({ type, data, error, loading, children }) => {
+export const InfoTable = ({ data, error, loading, children }) => {
     const { fromServerDate } = useTimeZoneConversion()
-    const { baseUrl } = useConfig()
-    const { currentUser } = useDataDimensionContext()
 
     return (
         <>
@@ -253,12 +193,6 @@ export const InfoTable = ({ type, data, error, loading, children }) => {
                                     </a>
                                 </td>
                             </tr>
-                            {renderMaintenanceLink({
-                                baseUrl,
-                                authorities: currentUser?.authorities,
-                                type,
-                                id: data.id,
-                            })}
                             {data.attributeValues.map(
                                 ({ attribute, value }) => (
                                     <tr key={attribute.id}>
@@ -281,5 +215,4 @@ InfoTable.propTypes = {
     data: PropTypes.object,
     error: PropTypes.string,
     loading: PropTypes.bool,
-    type: PropTypes.string,
 }
