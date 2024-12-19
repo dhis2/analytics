@@ -181,18 +181,6 @@ export const InfoTable = ({ data, error, loading, children }) => {
                                 <th>{i18n.t('Created by')}</th>
                                 <td>{`${data.createdBy.displayName}, ${data.createdBy.username}`}</td>
                             </tr>
-                            <tr>
-                                <th>{i18n.t('API link')}</th>
-                                <td>
-                                    <a
-                                        href={data.href}
-                                        target="_blank"
-                                        rel="noreferrer"
-                                    >
-                                        {i18n.t('Open in API')}
-                                    </a>
-                                </td>
-                            </tr>
                             {data.attributeValues.map(
                                 ({ attribute, value }) => (
                                     <tr key={attribute.id}>
