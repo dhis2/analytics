@@ -17,6 +17,7 @@ import ItemSelector from './ItemSelector.js'
 const DataDimensionCtx = createContext({})
 
 const DataDimension = ({
+    currentUser,
     onSelect,
     selectedDimensions,
     displayNameProp,
@@ -61,7 +62,7 @@ const DataDimension = ({
     )
 
     return (
-        <DataDimensionCtx.Provider value={{ visType }}>
+        <DataDimensionCtx.Provider value={{ visType, currentUser }}>
             <ItemSelector
                 selectedItems={selectedDimensions.map((item) => ({
                     value: item.id,
@@ -94,6 +95,7 @@ DataDimension.propTypes = {
         })
     ).isRequired,
     onSelect: PropTypes.func.isRequired,
+    currentUser: PropTypes.object,
     enabledDataTypes: PropTypes.array,
     infoBoxMessage: PropTypes.string,
     visType: PropTypes.string,
