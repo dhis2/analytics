@@ -17,19 +17,14 @@ const dataSetQuery = {
     },
 }
 
-export const DataSetInfo = ({ id, displayNameProp, type }) => {
+export const DataSetInfo = ({ id, displayNameProp }) => {
     const { loading, error, data } = useDataQuery(dataSetQuery, {
         variables: { id, displayNameProp },
     })
 
     return (
         <>
-            <InfoTable
-                type={type}
-                data={data?.dataSet}
-                loading={loading}
-                error={error}
-            >
+            <InfoTable data={data?.dataSet} loading={loading} error={error}>
                 <tr>
                     <th>{i18n.t('Period type')}</th>
                     <td>{data?.dataSet.periodType}</td>
@@ -88,5 +83,4 @@ export const DataSetInfo = ({ id, displayNameProp, type }) => {
 DataSetInfo.propTypes = {
     displayNameProp: PropTypes.string,
     id: PropTypes.string,
-    type: PropTypes.string,
 }
