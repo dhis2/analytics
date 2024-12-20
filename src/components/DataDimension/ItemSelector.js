@@ -553,6 +553,7 @@ const ItemSelector = ({
             )}
             {currentDataItem && (
                 <InfoPopover
+                    dataTest={`${dataTest}-info`}
                     item={currentDataItem}
                     reference={itemsRef.current.get(currentDataItem.id)}
                     onClose={() => setCurrentDataItem()}

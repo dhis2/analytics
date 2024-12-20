@@ -20,7 +20,7 @@ import { IndicatorInfo } from './IndicatorInfo.js'
 import { ProgramIndicatorInfo } from './ProgramIndicatorInfo.js'
 import styles from './styles/InfoPopover.style.js'
 
-export const InfoPopover = ({ reference, onClose, ...props }) => {
+export const InfoPopover = ({ reference, onClose, dataTest, ...props }) => {
     const type = props.item.type
 
     const infoProps = {
@@ -39,7 +39,7 @@ export const InfoPopover = ({ reference, onClose, ...props }) => {
                 arrow={false}
                 elevation="rgba(0, 0, 0, 0.1) 0px 1px 5px, rgba(0, 0, 0, 0.07) 0px 3.6px 13px, rgba(0, 0, 0, 0.06) 0px 8.4px 23px, rgba(0, 0, 0, 0.05) 0px 23px 35px"
             >
-                <div className="popover">
+                <div className="popover" data-test={`${dataTest}-table`}>
                     {type === DIMENSION_TYPE_DATA_ELEMENT && (
                         <DataElementInfo {...infoProps} />
                     )}
@@ -70,6 +70,7 @@ export const InfoPopover = ({ reference, onClose, ...props }) => {
 }
 
 InfoPopover.propTypes = {
+    dataTest: PropTypes.string,
     displayNameProp: PropTypes.string,
     item: PropTypes.object,
     reference: PropTypes.object,
