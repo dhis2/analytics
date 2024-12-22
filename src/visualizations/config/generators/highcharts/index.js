@@ -87,6 +87,13 @@ export default function (config, el) {
 
         drawLegendSymbolWrap()
 
+        console.log('HERE WE PASS THE CONFIG TO HIGHCHARTS')
+        console.log('There is only one yAxis: ', config.yAxis.length === 1)
+        console.log(
+            'That single yAxis does not have a max',
+            typeof config.yAxis[0].max === 'undefined'
+        )
+
         return new H.Chart(config)
     }
 }
