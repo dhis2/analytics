@@ -4,16 +4,10 @@ exports[`The Period Selector component matches the snapshot 1`] = `
 <Transfer
   dataTest="period-dimension-transfer"
   enableOrderChange={true}
-  filterCallback={[Function]}
-  filterCallbackPicked={[Function]}
   height="512px"
-  initialSearchTerm=""
-  initialSearchTermPicked=""
   leftHeader={
     <React.Fragment>
-      <TabBar
-        dataTest="dhis2-uicore-tabbar"
-      >
+      <TabBar>
         <Tab
           dataTest="period-dimension-relative-periods-button"
           onClick={[Function]}
@@ -44,7 +38,6 @@ exports[`The Period Selector component matches the snapshot 1`] = `
       </style>
     </React.Fragment>
   }
-  maxSelections={Infinity}
   onChange={[Function]}
   options={
     Array [
@@ -74,7 +67,7 @@ exports[`The Period Selector component matches the snapshot 1`] = `
       },
     ]
   }
-  optionsWidth="420px"
+  optionsWidth="520px"
   renderOption={[Function]}
   rightFooter={<React.Fragment />}
   rightHeader={<RightHeader />}
@@ -91,6 +84,6 @@ exports[`The Period Selector component matches the snapshot 1`] = `
       </style>
     </React.Fragment>
   }
-  selectedWidth="298px"
+  selectedWidth="520px"
 />
 `;

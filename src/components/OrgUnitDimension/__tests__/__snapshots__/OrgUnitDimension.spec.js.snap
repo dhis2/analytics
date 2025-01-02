@@ -37,11 +37,8 @@ exports[`The OrgUnitDimension component matches the snapshot 1`] = `
   >
     <OrganisationUnitTree
       dataTest="org-unit-tree"
-      filter={Array []}
-      highlighted={Array []}
       initiallyExpanded={Array []}
       onChange={[Function]}
-      renderNodeLabel={[Function]}
       roots={Array []}
       selected={Array []}
     />
@@ -78,12 +75,10 @@ exports[`The OrgUnitDimension component matches the snapshot 1`] = `
       className="deselectButton"
     >
       <Button
-        dataTest="dhis2-uicore-button"
         disabled={true}
         onClick={[Function]}
         secondary={true}
         small={true}
-        type="button"
       >
         Deselect all
       </Button>
