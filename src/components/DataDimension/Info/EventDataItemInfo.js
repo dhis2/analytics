@@ -44,7 +44,12 @@ export const EventDataItemInfo = ({ type, id, displayNameProp }) => {
 
     const renderInfoTable = (data) => (
         <>
-            <InfoTable data={data} loading={loading} error={error}>
+            <InfoTable
+                dataType={type}
+                data={data}
+                loading={loading}
+                error={error}
+            >
                 <tr>
                     <th>{i18n.t('Type')}</th>
                     <td>

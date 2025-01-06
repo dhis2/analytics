@@ -24,7 +24,7 @@ const programIndicatorQuery = {
     },
 }
 
-export const ProgramIndicatorInfo = ({ id, displayNameProp }) => {
+export const ProgramIndicatorInfo = ({ type, id, displayNameProp }) => {
     const [data, setData] = useState()
     const [error, setError] = useState()
     const [loading, setLoading] = useState(true)
@@ -88,6 +88,7 @@ export const ProgramIndicatorInfo = ({ id, displayNameProp }) => {
     return (
         <>
             <InfoTable
+                dataType={type}
                 data={data?.programIndicator}
                 loading={loading}
                 error={error}
@@ -212,4 +213,5 @@ export const ProgramIndicatorInfo = ({ id, displayNameProp }) => {
 ProgramIndicatorInfo.propTypes = {
     displayNameProp: PropTypes.string,
     id: PropTypes.string,
+    type: PropTypes.string,
 }

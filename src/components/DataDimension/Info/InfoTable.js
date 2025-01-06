@@ -4,6 +4,9 @@ import moment from 'moment'
 import PropTypes from 'prop-types'
 import React from 'react'
 import i18n from '../../../locales/index.js'
+import {
+    DIMENSION_TYPE_EXPRESSION_DIMENSION_ITEM, // calculation
+} from '../../../modules/dataTypes.js'
 import styles from './styles/InfoPopover.style.js'
 
 export const getCommonFields = (displayNameProp) =>
@@ -95,7 +98,7 @@ export const renderLegendSets = (legendSets) => {
     )
 }
 
-export const InfoTable = ({ data, error, loading, children }) => {
+export const InfoTable = ({ dataType, data, error, loading, children }) => {
     const { fromServerDate } = useTimeZoneConversion()
 
     return (
@@ -125,32 +128,56 @@ export const InfoTable = ({ data, error, loading, children }) => {
                                 <td>{data.displayName}</td>
                             </tr>
                             {children}
-                            <tr>
-                                <th>{i18n.t('Description')}</th>
-                                <td>
-                                    {data.displayDescription ? (
-                                        <div className="content-wrap">
-                                            {data.displayDescription}
-                                        </div>
-                                    ) : (
-                                        <span className="none">
-                                            {i18n.t('None')}
-                                        </span>
-                                    )}
-                                </td>
-                            </tr>
-                            <tr>
-                                <th>{i18n.t('Code')}</th>
-                                <td>
-                                    {data.code ? (
-                                        data.code
-                                    ) : (
-                                        <span className="none">
-                                            {i18n.t('None')}
-                                        </span>
-                                    )}
-                                </td>
-                            </tr>
+                            {dataType !==
+                            DIMENSION_TYPE_EXPRESSION_DIMENSION_ITEM ? (
+                                <tr>
+                                    <th>{i18n.t('Description')}</th>
+                                    <td>
+                                        {data.displayDescription ? (
+                                            <div className="content-wrap">
+                                                {data.displayDescription}
+                                            </div>
+                                        ) : (
+                                            <span className="none">
+                                                {i18n.t('None')}
+                                            </span>
+                                        )}
+                                    </td>
+                                </tr>
+                            ) : (
+                                data.displayDescription && (
+                                    <tr>
+                                        <th>{i18n.t('Description')}</th>
+                                        <td>
+                                            <div className="content-wrap">
+                                                {data.displayDescription}
+                                            </div>
+                                        </td>
+                                    </tr>
+                                )
+                            )}
+                            {dataType !==
+                            DIMENSION_TYPE_EXPRESSION_DIMENSION_ITEM ? (
+                                <tr>
+                                    <th>{i18n.t('Code')}</th>
+                                    <td>
+                                        {data.code ? (
+                                            data.code
+                                        ) : (
+                                            <span className="none">
+                                                {i18n.t('None')}
+                                            </span>
+                                        )}
+                                    </td>
+                                </tr>
+                            ) : (
+                                data.code && (
+                                    <tr>
+                                        <th>{i18n.t('Code')}</th>
+                                        <td>{data.code}</td>
+                                    </tr>
+                                )
+                            )}
                             <tr>
                                 <th>{i18n.t('ID')}</th>
                                 <td>
@@ -201,6 +228,7 @@ export const InfoTable = ({ data, error, loading, children }) => {
 InfoTable.propTypes = {
     children: PropTypes.node,
     data: PropTypes.object,
+    dataType: PropTypes.string,
     error: PropTypes.string,
     loading: PropTypes.bool,
 }

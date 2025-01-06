@@ -20,7 +20,7 @@ const calculationQuery = {
     },
 }
 
-export const CalculationInfo = ({ id, displayNameProp }) => {
+export const CalculationInfo = ({ type, id, displayNameProp }) => {
     const [data, setData] = useState()
     const [error, setError] = useState()
     const [expressionError, setExpressionError] = useState()
@@ -63,7 +63,14 @@ export const CalculationInfo = ({ id, displayNameProp }) => {
 
         setData({ calculation })
         setLoading(false)
-    }, [displayNameProp, engine, getHumanReadableExpression, id])
+    }, [
+        displayNameProp,
+        engine,
+        getHumanReadableExpression,
+        id,
+        apiVersion,
+        baseUrl,
+    ])
 
     useEffect(() => {
         fetchData()
@@ -71,7 +78,12 @@ export const CalculationInfo = ({ id, displayNameProp }) => {
 
     return (
         <>
-            <InfoTable data={data?.calculation} loading={loading} error={error}>
+            <InfoTable
+                dataType={type}
+                data={data?.calculation}
+                loading={loading}
+                error={error}
+            >
                 <tr>
                     <th>{i18n.t('Expression description')}</th>
                     <td>
@@ -97,4 +109,5 @@ export const CalculationInfo = ({ id, displayNameProp }) => {
 CalculationInfo.propTypes = {
     displayNameProp: PropTypes.string,
     id: PropTypes.string,
+    type: PropTypes.string,
 }
