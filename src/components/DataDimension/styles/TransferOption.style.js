@@ -54,7 +54,6 @@ export default css`
         margin-right: ${spacers.dp4};
         display: inline-flex;
         vertical-align: text-bottom;
-        //padding-top: 1px;
     }
 
     .label {
@@ -122,7 +121,6 @@ export default css`
     .edit:hover,
     .info:hover {
         background-color: ${colors.grey200};
-        // outline: 1px solid rgba(0, 0, 0, 0.12);
         border-radius: 0px;
     }
 
@@ -133,6 +131,5 @@ export default css`
     .highlighted .edit:hover,
     .highlighted .info:hover {
         background-color: ${theme.secondary900};
-        // outline: 1px solid rgba(255, 255, 255, 0.12);
     }
 `
