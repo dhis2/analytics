@@ -31,14 +31,12 @@ export const TransferOption = ({
             })}
             data-test={`${dataTest}-content`}
             onClick={(event) => {
-                console.log('transfer option click')
                 if (disabled) {
                     return
                 }
                 onClick({ label, value }, event)
             }}
             onDoubleClick={(event) => {
-                console.log('transfer option double click')
                 if (disabled) {
                     return
                 }
