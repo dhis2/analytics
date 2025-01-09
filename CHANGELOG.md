@@ -1,3 +1,10 @@
+# [26.10.0](https://github.com/dhis2/analytics/compare/v26.9.6...v26.10.0) (2025-01-09)
+
+
+### Features
+
+* display type and definitions in data item selector (DHIS2-14774) ([#1713](https://github.com/dhis2/analytics/issues/1713)) ([27f4b65](https://github.com/dhis2/analytics/commit/27f4b6533688586313fd7a8918c532205acc2c48))
+
 ## [26.9.6](https://github.com/dhis2/analytics/compare/v26.9.5...v26.9.6) (2024-12-22)
 
 

@@ -4,10 +4,6 @@ exports[`DimensionItem matches the snapshot 1`] = `
 <Fragment>
   <CssVariables
     colors={true}
-    elevations={false}
-    layers={false}
-    spacers={false}
-    theme={false}
   />
   <li
     className="item"
@@ -56,10 +52,6 @@ exports[`DimensionItem matches the snapshot with locked 1`] = `
 <Fragment>
   <CssVariables
     colors={true}
-    elevations={false}
-    layers={false}
-    spacers={false}
-    theme={false}
   />
   <li
     className="item"
@@ -126,10 +118,6 @@ exports[`DimensionItem matches the snapshot with onOptionsClick 1`] = `
 <Fragment>
   <CssVariables
     colors={true}
-    elevations={false}
-    layers={false}
-    spacers={false}
-    theme={false}
   />
   <li
     className="item"
@@ -182,10 +170,6 @@ exports[`DimensionItem matches the snapshot with recommended 1`] = `
 <Fragment>
   <CssVariables
     colors={true}
-    elevations={false}
-    layers={false}
-    spacers={false}
-    theme={false}
   />
   <li
     className="item"
@@ -234,10 +218,6 @@ exports[`DimensionItem matches the snapshot with selected 1`] = `
 <Fragment>
   <CssVariables
     colors={true}
-    elevations={false}
-    layers={false}
-    spacers={false}
-    theme={false}
   />
   <li
     className="item selected"

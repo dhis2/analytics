@@ -175,7 +175,8 @@ export const dataElementOperandsQuery = {
             filter?.group === DIMENSION_TYPE_ALL
                 ? 'id'
                 : 'dimensionItem~rename(id)'
-        const filters = []
+
+        const filters = ['categoryOptionCombo.name:ne:default']
 
         if (filter?.group && filter.group !== DIMENSION_TYPE_ALL) {
             filters.push(`dataElement.dataElementGroups.id:eq:${filter.group}`)
