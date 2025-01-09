@@ -23,7 +23,7 @@ import {
     FYAPR,
 } from './index.js'
 
-const PERIOD_TYPE_REGEX = {
+export const PERIOD_TYPE_REGEX = {
     [DAILY]: /^([0-9]{4})([0-9]{2})([0-9]{2})$/, // YYYYMMDD
     [WEEKLY]: /^([0-9]{4})()W([0-9]{1,2})$/, // YYYY"W"[1-53]
     [BIWEEKLY]: /^([0-9]{4})BiW([0-9]{1,2})$/, // YYYY"BiW"[1-27]
