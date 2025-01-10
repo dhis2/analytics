@@ -152,7 +152,7 @@ export const DataElementOperandInfo = ({ type, id, displayNameProp }) => {
                 </tr>
                 {data?.dataElementOperand.dataElement.optionSet && (
                     <tr>
-                        <td>{i18n.t('Option set')}</td>
+                        <th>{i18n.t('Option set')}</th>
                         <td>
                             {
                                 data.dataElementOperand.dataElement.optionSet

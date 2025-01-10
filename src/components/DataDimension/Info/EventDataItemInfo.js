@@ -14,7 +14,7 @@ const programDataElementQuery = {
         params: ({ displayNameProp }) => ({
             fields: `${getCommonFields(
                 displayNameProp
-            )},aggregationType,dimensionItemType,legendSets[id,displayName],optionsSet[displayName],valueType,zeroIsSignificant`,
+            )},aggregationType,dimensionItemType,legendSets[id,displayName],optionSet[displayName],valueType,zeroIsSignificant`,
         }),
     },
 }
@@ -26,7 +26,7 @@ const programAttributeQuery = {
         params: ({ displayNameProp }) => ({
             fields: `${getCommonFields(
                 displayNameProp
-            )},aggregationType,dimensionItemType,legendSets[id,displayName],optionsSet[displayName],valueType,zeroIsSignificant`,
+            )},aggregationType,dimensionItemType,legendSets[id,displayName],optionSet[displayName],valueType,zeroIsSignificant`,
         }),
     },
 }
@@ -64,7 +64,7 @@ export const EventDataItemInfo = ({ type, id, displayNameProp }) => {
                 </tr>
                 {data?.optionSet && (
                     <tr>
-                        <td>{i18n.t('Option set')}</td>
+                        <th>{i18n.t('Option set')}</th>
                         <td>{data.optionSet.displayName}</td>
                     </tr>
                 )}
