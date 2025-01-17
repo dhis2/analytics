@@ -49,6 +49,8 @@ export {
 
 export * from './components/RichText/index.js'
 
+export { DashboardPluginWrapper } from './components/DashboardPluginWrapper/DashboardPluginWrapper.js'
+
 // Api
 
 export { default as Analytics } from './api/analytics/Analytics.js'
