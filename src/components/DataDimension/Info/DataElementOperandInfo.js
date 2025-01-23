@@ -76,7 +76,7 @@ export const DataElementOperandInfo = ({ type, id, displayNameProp }) => {
 
         setData({ dataElementOperand })
         setLoading(false)
-    }, [displayNameProp, engine, id])
+    }, [apiVersion, baseUrl, displayNameProp, engine, id])
 
     useEffect(() => {
         fetchData()
