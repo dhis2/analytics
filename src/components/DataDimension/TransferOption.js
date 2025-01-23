@@ -2,6 +2,8 @@ import { IconEdit16, IconInfo16 } from '@dhis2/ui'
 import cx from 'classnames'
 import PropTypes from 'prop-types'
 import React from 'react'
+import i18n from '../../locales/index.js'
+import { DIMENSION_TYPE_EXPRESSION_DIMENSION_ITEM } from '../../modules/dataTypes.js'
 import styles from './styles/TransferOption.style.js'
 
 export const TransferOption = ({
@@ -14,6 +16,7 @@ export const TransferOption = ({
     value,
     icon,
     active,
+    dataItemType,
     dimensionType,
     dataTest,
     itemsRef,
@@ -46,17 +49,22 @@ export const TransferOption = ({
             <div className="labelGroup">
                 <span className="icon">{icon}</span>
                 <span className="label">{label}</span>
-                {onEditClick && (
-                    <span
-                        className="edit"
-                        onClick={(e) => {
-                            e.stopPropagation()
-                            onEditClick()
-                        }}
-                        data-test={`${dataTest}-edit-button`}
-                    >
-                        <IconEdit16 />
-                    </span>
+                {dataItemType === DIMENSION_TYPE_EXPRESSION_DIMENSION_ITEM &&
+                    onEditClick && (
+                        <div className="tag">
+                            <span
+                                className="edit"
+                                onClick={(e) => {
+                                    e.stopPropagation()
+                                    onEditClick()
+                                }}
+                                data-test={`${dataTest}-edit-calculation-button`}
+                            >
+                                <IconEdit16 />
+                                {i18n.t('Edit')}
+                            </span>
+                        </div>
+                    )}
                 )}
             </div>
             <div className={cx('group', 'nowrap', 'typeGroup')}>
@@ -98,6 +106,7 @@ TransferOption.propTypes = {
     label: PropTypes.string.isRequired,
     value: PropTypes.string.isRequired,
     active: PropTypes.bool,
+    dataItemType: PropTypes.string,
     dataTest: PropTypes.string,
     dimensionType: PropTypes.string,
     disabled: PropTypes.bool,

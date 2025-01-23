@@ -512,6 +512,7 @@ const ItemSelector = ({
                         active={isActive(props.value)}
                         showingInfo={currentDataItem?.id === props.value}
                         icon={getIcon(getItemType(props.value))}
+                        dataItemType={getItemType(props.value)}
                         dimensionType={getDimensionType({
                             type: getItemType(props.value),
                             expression: props.expression,
