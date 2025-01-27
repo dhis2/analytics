@@ -3,7 +3,6 @@
     "id": "CcjaXXU4VNb",
     "created": "2020-03-04T10:03:46.755",
     "name": "TEST_EMPTY_COLUMNS",
-    "publicAccess": "--------",
     "legendDisplayStyle": "FILL",
     "type": "PIVOT_TABLE",
     "hideEmptyColumns": true,
@@ -69,7 +68,6 @@
     "translations": [],
     "yearlySeries": [],
     "interpretations": [],
-    "userGroupAccesses": [],
     "subscribers": [],
     "optionalAxes": [],
     "columns": [
@@ -97,7 +95,6 @@
             "items": []
         }
     ],
-    "userAccesses": [],
     "favorites": [],
     "filters": [
         {
@@ -128,4 +125,3 @@
         }
     ]
 }
-

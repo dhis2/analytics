@@ -1,132 +1,163 @@
 {
-    "lastUpdated": "2017-05-16T16:02:20.929",
-    "id": "tWg9OiyV7mu",
-    "created": "2012-11-13T18:33:17.032",
     "name": "ANC: ANC 1 Visits Cumulative Numbers",
-    "publicAccess": "rw------",
-    "legendDisplayStyle": "FILL",
-    "hideEmptyColumns": false,
-    "subscribed": false,
-    "rowSubTotals": false,
-    "showDimensionLabels": false,
-    "sortOrder": 0,
-    "fontSize": "NORMAL",
-    "favorite": false,
-    "topLimit": 0,
-    "displayName": "ANC: ANC 1 Visits Cumulative Numbers",
-    "showHierarchy": false,
-    "cumulative": false,
-    "hideTitle": false,
-    "skipRounding": false,
-    "hideEmptyRows": false,
-    "parentGraphMap": {
-        "ImspTQPwCqd": ""
-    },
-    "displayDensity": "NORMAL",
-    "completedOnly": false,
-    "colTotals": true,
-    "aggregationType": "DEFAULT",
-    "hideSubtitle": false,
-    "legendDisplayStrategy": "FIXED",
-    "colSubTotals": false,
-    "rowTotals": true,
-    "digitGroupSeparator": "SPACE",
-    "regression": false,
-    "reportParams": {
-        "paramGrandParentOrganisationUnit": false,
-        "paramReportingPeriod": false,
-        "paramOrganisationUnit": true,
-        "paramParentOrganisationUnit": false
-    },
-    "access": {
-        "read": true,
-        "update": true,
-        "externalize": true,
-        "delete": true,
-        "write": true,
-        "manage": true
-    },
-    "user": {
+    "created": "2012-11-13T18:33:17.032",
+    "lastUpdated": "2017-05-16T16:02:20.929",
+    "translations": [],
+    "createdBy": {
+        "id": "GOLswS44mh8",
+        "code": null,
+        "name": "Tom Wakiki",
         "displayName": "Tom Wakiki",
         "username": "system"
     },
+    "sharing": {
+        "owner": "GOLswS44mh8",
+        "external": false,
+        "users": {},
+        "userGroups": {},
+        "public": "rw------"
+    },
+    "displayDensity": "NORMAL",
+    "fontSize": "NORMAL",
+    "sortOrder": 0,
+    "topLimit": 0,
+    "hideEmptyRows": false,
+    "showHierarchy": false,
+    "userOrganisationUnit": false,
+    "userOrganisationUnitChildren": false,
+    "userOrganisationUnitGrandChildren": false,
+    "completedOnly": false,
+    "skipRounding": false,
+    "filterDimensions": [],
+    "dataDimensionItems": [{ "dataDimensionItemType": "DATA_ELEMENT" }],
+    "organisationUnits": [{ "id": "ImspTQPwCqd" }],
+    "periods": [],
     "dataElementGroupSetDimensions": [],
-    "attributeDimensions": [],
-    "translations": [],
-    "interpretations": [],
-    "userGroupAccesses": [],
-    "columns": [
-        {
-            "dimension": "dx",
-            "items": [
-                {
-                    "id": "fbfJHSPpUQD",
-                    "name": "ANC 1st visit",
-                    "dimensionItemType": "DATA_ELEMENT"
-                }
-            ]
-        }
-    ],
-    "dataElementDimensions": [],
-    "categoryDimensions": [],
-    "programIndicatorDimensions": [],
-    "attributeValues": [],
-    "userAccesses": [],
-    "dataDimensionItems": [
-        {
-            "dataDimensionItemType": "DATA_ELEMENT",
-            "dataElement": {
-                "id": "fbfJHSPpUQD"
-            }
-        }
-    ],
-    "categoryOptionGroupSetDimensions": [],
     "organisationUnitGroupSetDimensions": [
         {
-            "organisationUnitGroupSet": {
-                "id": "J5jldMd8OHv"
-            },
+            "organisationUnitGroupSet": { "id": "J5jldMd8OHv" },
             "organisationUnitGroups": [
-                {
-                    "id": "uYxK4wmcPqA"
-                },
-                {
-                    "id": "tDZVQ1WtwpA"
-                },
-                {
-                    "id": "EYbopBOJWsW"
-                },
-                {
-                    "id": "RXL3lPSK8oG"
-                },
-                {
-                    "id": "CXw2yu5fodb"
-                }
+                { "id": "uYxK4wmcPqA" },
+                { "id": "tDZVQ1WtwpA" },
+                { "id": "EYbopBOJWsW" },
+                { "id": "RXL3lPSK8oG" },
+                { "id": "CXw2yu5fodb" }
             ]
         }
     ],
-    "filters": [
-        {
-            "dimension": "ou",
-            "items": [
-                {
-                    "id": "ImspTQPwCqd",
-                    "name": "Sierra Leone",
-                    "dimensionItemType": "ORGANISATION_UNIT"
-                }
-            ]
-        }
-    ],
-    "rows": [
-        {
-            "dimension": "pe",
-            "items": [
-                {
-                    "id": "LAST_12_MONTHS",
-                    "name": "LAST_12_MONTHS",
-                    "dimensionItemType": "PERIOD"
-                }
-            ]
-        }
-    ]
+    "organisationUnitLevels": [],
+    "categoryDimensions": [],
+    "categoryOptionGroupSetDimensions": [],
+    "attributeDimensions": [],
+    "dataElementDimensions": [],
+    "programIndicatorDimensions": [],
+    "itemOrganisationUnitGroups": [],
+    "subscribers": [],
+    "aggregationType": "DEFAULT",
+    "digitGroupSeparator": "SPACE",
+    "hideLegend": false,
+    "noSpaceBetweenColumns": false,
+    "cumulativeValues": true,
+    "percentStackedValues": false,
+    "showData": false,
+    "colTotals": true,
+    "rowTotals": true,
+    "rowSubTotals": false,
+    "colSubTotals": false,
+    "hideTitle": false,
+    "hideSubtitle": false,
+    "showDimensionLabels": false,
+    "interpretations": [],
+    "type": "PIVOT_TABLE",
+    "reportingParams": {
+        "grandParentOrganisationUnit": false,
+        "parentOrganisationUnit": false,
+        "organisationUnit": true,
+        "reportingPeriod": false
+    },
+    "columnDimensions": ["dx"],
+    "rowDimensions": ["pe", "ou"],
+    "yearlySeries": [],
+    "regression": false,
+    "hideEmptyColumns": false,
+    "fixColumnHeaders": false,
+    "fixRowHeaders": false,
+    "filters": [],
+    "parentGraphMap": { "ImspTQPwCqd": "" },
+    "columns": [{ "id": "dx" }],
+    "rows": [{ "id": "pe" }, { "id": "ou" }],
+    "subscribed": false,
+    "access": {
+        "manage": true,
+        "externalize": true,
+        "write": true,
+        "read": true,
+        "update": true,
+        "delete": true
+    },
+    "displayName": "ANC: ANC 1 Visits Cumulative Numbers",
+    "favorite": false,
+    "user": {
+        "id": "GOLswS44mh8",
+        "code": null,
+        "name": "Tom Wakiki",
+        "displayName": "Tom Wakiki",
+        "username": "system"
+    },
+    "href": "https://debug.dhis2.org/dev/api/visualizations/tWg9OiyV7mu",
+    "displayFormName": "ANC: ANC 1 Visits Cumulative Numbers",
+    "id": "tWg9OiyV7mu",
+    "attributeValues": [],
+    "relativePeriods": {
+        "thisDay": false,
+        "yesterday": false,
+        "last3Days": false,
+        "last7Days": false,
+        "last14Days": false,
+        "last30Days": false,
+        "last60Days": false,
+        "last90Days": false,
+        "last180Days": false,
+        "thisMonth": false,
+        "lastMonth": false,
+        "thisBimonth": false,
+        "lastBimonth": false,
+        "thisQuarter": false,
+        "lastQuarter": false,
+        "thisSixMonth": false,
+        "lastSixMonth": false,
+        "weeksThisYear": false,
+        "monthsThisYear": false,
+        "biMonthsThisYear": false,
+        "quartersThisYear": false,
+        "thisYear": false,
+        "monthsLastYear": false,
+        "quartersLastYear": false,
+        "lastYear": false,
+        "last5Years": false,
+        "last10Years": false,
+        "last12Months": true,
+        "last6Months": false,
+        "last3Months": false,
+        "last6BiMonths": false,
+        "last4Quarters": false,
+        "last2SixMonths": false,
+        "thisFinancialYear": false,
+        "lastFinancialYear": false,
+        "last5FinancialYears": false,
+        "last10FinancialYears": false,
+        "thisWeek": false,
+        "lastWeek": false,
+        "thisBiWeek": false,
+        "lastBiWeek": false,
+        "last4Weeks": false,
+        "last4BiWeeks": false,
+        "last12Weeks": false,
+        "last52Weeks": false
+    },
+    "legend": { "showKey": false, "style": "FILL", "strategy": "FIXED" },
+    "sorting": [],
+    "optionalAxes": [],
+    "icons": [],
+    "seriesKey": { "hidden": false }
 }

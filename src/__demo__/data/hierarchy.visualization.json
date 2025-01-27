@@ -3,7 +3,6 @@
     "id": "qfMh2IjOxvw",
     "created": "2017-05-19T16:35:05.056",
     "name": "ANC: ANC 1st and 2nd visits at facilities with hierarchy",
-    "publicAccess": "rw------",
     "legendDisplayStyle": "FILL",
     "type": "PIVOT_TABLE",
     "hideEmptyColumns": false,
@@ -59,7 +58,6 @@
     "translations": [],
     "yearlySeries": [],
     "interpretations": [],
-    "userGroupAccesses": [],
     "optionalAxes": [],
     "columns": [
         {
@@ -101,7 +99,6 @@
             ]
         }
     ],
-    "userAccesses": [],
     "filters": [],
     "rows": [
         {
@@ -119,4 +116,3 @@
         }
     ]
 }
-

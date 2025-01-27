@@ -3,7 +3,6 @@
     "id": "yyG85tyRhs4",
     "created": "2017-05-19T16:03:12.490",
     "name": "ER: Emergency report Result vs Target Rural and Urban with legend",
-    "publicAccess": "rw------",
     "legendDisplayStyle": "FILL",
     "type": "PIVOT_TABLE",
     "hideEmptyColumns": false,
@@ -77,7 +76,6 @@
     "translations": [],
     "yearlySeries": [],
     "interpretations": [],
-    "userGroupAccesses": [],
     "optionalAxes": [],
     "columns": [
         {
@@ -135,7 +133,6 @@
             ]
         }
     ],
-    "userAccesses": [],
     "filters": [],
     "rows": [
         {
@@ -206,4 +203,3 @@
         }
     ]
 }
-

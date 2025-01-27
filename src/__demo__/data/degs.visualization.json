@@ -3,7 +3,6 @@
     "id": "HkFOAFahojr",
     "created": "2020-03-05T15:50:10.007",
     "name": "AUSTIN TEST - DEGS",
-    "publicAccess": "--------",
     "legendDisplayStyle": "FILL",
     "type": "COLUMN",
     "hideEmptyColumns": false,
@@ -69,7 +68,6 @@
     "translations": [],
     "yearlySeries": [],
     "interpretations": [],
-    "userGroupAccesses": [],
     "subscribers": [],
     "optionalAxes": [],
     "columns": [
@@ -86,7 +84,6 @@
             ]
         }
     ],
-    "userAccesses": [],
     "favorites": [],
     "filters": [
         {
@@ -117,4 +114,3 @@
         }
     ]
 }
-

@@ -3,7 +3,6 @@
     "id": "zLlhKD36wC5",
     "created": "2016-08-02T19:58:19.493",
     "name": "Immunization data by facility type last 4 quarters (lars)",
-    "publicAccess": "rw------",
     "legendDisplayStyle": "FILL",
     "hideEmptyColumns": false,
     "subscribed": false,
@@ -67,20 +66,6 @@
     "attributeDimensions": [],
     "translations": [],
     "interpretations": [],
-    "userGroupAccesses": [
-        {
-            "access": "r-r-----",
-            "userGroupUid": "Rg8wusV7QYi",
-            "displayName": "HIV Program Coordinators",
-            "id": "Rg8wusV7QYi"
-        },
-        {
-            "access": "rwr-----",
-            "userGroupUid": "qMjBflJMOfB",
-            "displayName": "Family Planning Program",
-            "id": "qMjBflJMOfB"
-        }
-    ],
     "columns": [
         {
             "dimension": "pe",
@@ -150,7 +135,6 @@
     ],
     "programIndicatorDimensions": [],
     "attributeValues": [],
-    "userAccesses": [],
     "dataDimensionItems": [
         {
             "dataDimensionItemType": "DATA_ELEMENT",

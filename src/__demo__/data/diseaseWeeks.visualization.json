@@ -3,7 +3,6 @@
     "id": "hY0eM8AWg6k",
     "created": "2017-05-30T14:29:44.670",
     "name": "IDSR: Disease Week 1-12 Sierra Leone",
-    "publicAccess": "rw------",
     "legendDisplayStyle": "FILL",
     "type": "PIVOT_TABLE",
     "hideEmptyColumns": false,
@@ -69,7 +68,6 @@
     "translations": [],
     "yearlySeries": [],
     "interpretations": [],
-    "userGroupAccesses": [],
     "subscribers": [],
     "optionalAxes": [],
     "columns": [
@@ -114,7 +112,6 @@
             ]
         }
     ],
-    "userAccesses": [],
     "favorites": [],
     "filters": [
         {
@@ -222,4 +219,3 @@
         }
     ]
 }
-

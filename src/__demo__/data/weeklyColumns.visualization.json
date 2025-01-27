@@ -3,7 +3,6 @@
     "id": "YXZjH1F9ntO",
     "created": "2020-09-07T13:01:07.853",
     "name": "TEST - Empty Columns Error 2",
-    "publicAccess": "--------",
     "legendDisplayStyle": "FILL",
     "type": "PIVOT_TABLE",
     "hideEmptyColumns": false,
@@ -69,7 +68,6 @@
     "translations": [],
     "yearlySeries": [],
     "interpretations": [],
-    "userGroupAccesses": [],
     "subscribers": [],
     "optionalAxes": [],
     "columns": [
@@ -457,7 +455,6 @@
             ]
         }
     ],
-    "userAccesses": [],
     "favorites": [],
     "filters": [
         {
@@ -488,4 +485,3 @@
         }
     ]
 }
-
