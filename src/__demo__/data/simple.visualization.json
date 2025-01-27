@@ -48,9 +48,7 @@
     },
     "user": {
         "displayName": "Tom Wakiki",
-        "userCredentials": {
-            "username": "system"
-        }
+        "username": "system"
     },
     "dataElementGroupSetDimensions": [],
     "attributeDimensions": [],

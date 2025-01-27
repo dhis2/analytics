@@ -64,9 +64,7 @@
     "user": {
         "name": "Astride Traore",
         "displayName": "Astride Traore",
-        "userCredentials": {
-            "username": "admin"
-        }
+        "username": "admin"
     },
     "translations": [],
     "yearlySeries": [],
@@ -490,3 +488,4 @@
         }
     ]
 }
+

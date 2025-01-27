@@ -72,9 +72,7 @@
     "user": {
         "name": "Tom Wakiki",
         "displayName": "Tom Wakiki",
-        "userCredentials": {
-            "username": "system"
-        }
+        "username": "system"
     },
     "translations": [],
     "yearlySeries": [],
@@ -208,3 +206,4 @@
         }
     ]
 }
+

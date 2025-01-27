@@ -39,9 +39,7 @@
     },
     "user": {
         "displayName": "John Traore",
-        "userCredentials": {
-            "username": "admin"
-        }
+        "username": "admin"
     },
     "dataElementGroupSetDimensions": [],
     "attributeDimensions": [],
@@ -80,9 +78,7 @@
             "user": {
                 "id": "xE7jOejl9FI",
                 "displayName": "John Traore",
-                "userCredentials": {
-                    "username": "admin"
-                }
+                "username": "admin"
             },
             "chart": {
                 "id": "UlfTKWZWV4u"
@@ -123,9 +119,7 @@
             "user": {
                 "id": "xE7jOejl9FI",
                 "displayName": "John Traore",
-                "userCredentials": {
-                    "username": "admin"
-                }
+                "username": "admin"
             },
             "chart": {
                 "id": "UlfTKWZWV4u"
@@ -165,9 +159,7 @@
             "user": {
                 "id": "GOLswS44mh8",
                 "displayName": "Tom Wakiki",
-                "userCredentials": {
-                    "username": "system"
-                }
+                "username": "system"
             },
             "chart": {
                 "id": "UlfTKWZWV4u"
@@ -207,9 +199,7 @@
             "user": {
                 "id": "GOLswS44mh8",
                 "displayName": "Tom Wakiki",
-                "userCredentials": {
-                    "username": "system"
-                }
+                "username": "system"
             },
             "chart": {
                 "id": "UlfTKWZWV4u"
