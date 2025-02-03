@@ -178,7 +178,7 @@ msgid "Error loading value"
 msgstr ""
 
 msgid "None"
-msgstr ""
+msgstr "कोई नहीं"
 
 msgid "Data set(s)"
 msgstr ""
@@ -253,10 +253,10 @@ msgid "Annualized"
 msgstr ""
 
 msgid "Yes"
-msgstr ""
+msgstr "हाँ"
 
 msgid "No"
-msgstr ""
+msgstr "नहीं"
 
 msgid "Indicator type"
 msgstr ""
@@ -277,7 +277,7 @@ msgid "Code"
 msgstr ""
 
 msgid "ID"
-msgstr ""
+msgstr "आईडी"
 
 msgid "Last updated date"
 msgstr ""
@@ -1255,7 +1255,7 @@ msgid "Letter"
 msgstr ""
 
 msgid "Phone number"
-msgstr ""
+msgstr "फ़ोन नंबर"
 
 msgid "Email"
 msgstr ""
@@ -1306,7 +1306,7 @@ msgid "Reference"
 msgstr ""
 
 msgid "Age"
-msgstr ""
+msgstr "आयु"
 
 msgid "URL"
 msgstr ""

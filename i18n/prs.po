@@ -172,13 +172,13 @@ msgid "No data"
 msgstr "معلوماتی وجود ندارد"
 
 msgid "Expression description"
-msgstr ""
+msgstr "شرح اصطلاحات"
 
 msgid "Error loading value"
 msgstr ""
 
 msgid "None"
-msgstr ""
+msgstr "هیچ‌کدام"
 
 msgid "Data set(s)"
 msgstr ""
@@ -187,22 +187,22 @@ msgid "Zero is significant"
 msgstr ""
 
 msgid "True"
-msgstr ""
+msgstr "درست"
 
 msgid "False"
-msgstr ""
+msgstr "اشتباه"
 
 msgid "Value type"
-msgstr ""
+msgstr "د رقم نمونه او ډول"
 
 msgid "Aggregation type"
-msgstr ""
+msgstr "نوع تجمع"
 
 msgid "Category combo"
 msgstr ""
 
 msgid "Option set"
-msgstr ""
+msgstr "مجموعه گزینه"
 
 msgid "Group membership"
 msgstr ""
@@ -226,7 +226,7 @@ msgid "Indicators"
 msgstr "شاخص ها"
 
 msgid "Expiry days"
-msgstr ""
+msgstr "روز های انقضا"
 
 msgid "Type"
 msgstr "نمونه/ډول"
@@ -235,31 +235,31 @@ msgid "Data element"
 msgstr "عناصر معلومات"
 
 msgid "Tracked entity attribute"
-msgstr ""
+msgstr "خصوصیت ردیابی هویت"
 
 msgid "Numerator description"
-msgstr ""
+msgstr "توضیحات شمارش کننده"
 
 msgid "Numerator expression"
 msgstr ""
 
 msgid "Denominator description"
-msgstr ""
+msgstr "جزئیات مخرج"
 
 msgid "Denominator expression"
 msgstr ""
 
 msgid "Annualized"
-msgstr ""
+msgstr "سالانه"
 
 msgid "Yes"
-msgstr ""
+msgstr "بلی"
 
 msgid "No"
-msgstr ""
+msgstr "نخیر"
 
 msgid "Indicator type"
-msgstr ""
+msgstr "نوع شاخص"
 
 msgid "Decimals in output"
 msgstr ""
@@ -274,10 +274,10 @@ msgid "Description"
 msgstr "شرح"
 
 msgid "Code"
-msgstr ""
+msgstr "کوډ یا شفر"
 
 msgid "ID"
-msgstr ""
+msgstr "آی دی"
 
 msgid "Last updated date"
 msgstr ""
@@ -289,7 +289,7 @@ msgid "Created by"
 msgstr "ایجاد شده توسط"
 
 msgid "Custom"
-msgstr ""
+msgstr "مروج"
 
 msgid "Program"
 msgstr "برنامه"
@@ -301,7 +301,7 @@ msgid "Enrollment"
 msgstr "ثبت نام"
 
 msgid "Event"
-msgstr ""
+msgstr "رویداد"
 
 msgid "Analytics period boundaries"
 msgstr ""
@@ -310,7 +310,7 @@ msgid "{{ offsetPeriodType }} × {{ offsetPeriods }}"
 msgstr ""
 
 msgid "Expression"
-msgstr ""
+msgstr "عبارت"
 
 msgid "Filter"
 msgstr "فلتر"
@@ -1246,73 +1246,73 @@ msgid "Text"
 msgstr "متن"
 
 msgid "Long text"
-msgstr ""
+msgstr "متن طویل"
 
 msgid "Multi text"
 msgstr ""
 
 msgid "Letter"
-msgstr ""
+msgstr "نامه"
 
 msgid "Phone number"
-msgstr ""
+msgstr "شماره تلفن"
 
 msgid "Email"
-msgstr ""
+msgstr "برېښنالیک"
 
 msgid "Yes/No"
-msgstr ""
+msgstr "بلی/نخیر"
 
 msgid "Yes Only"
-msgstr ""
+msgstr "تنها بلی"
 
 msgid "Date"
-msgstr ""
+msgstr "تاریخ"
 
 msgid "Date & Time"
-msgstr ""
+msgstr "تاریخ و اوقات"
 
 msgid "Time"
-msgstr ""
+msgstr "اوقات"
 
 msgid "Unit interval"
 msgstr "فاصله واحد"
 
 msgid "Percentage"
-msgstr ""
+msgstr "فیصدی"
 
 msgid "Integer"
-msgstr ""
+msgstr "عدد صحیح"
 
 msgid "Positive Integer"
-msgstr ""
+msgstr "عدد صحیح"
 
 msgid "Negative Integer"
-msgstr ""
+msgstr "عدد منفی"
 
 msgid "Positive or Zero Integer"
-msgstr ""
+msgstr "مثبت یا عدد صفر"
 
 msgid "Tracker Associate"
-msgstr ""
+msgstr "دانشیار ردیاب"
 
 msgid "Username"
-msgstr ""
+msgstr "نام کاربر"
 
 msgid "Coordinate"
-msgstr ""
+msgstr "مختصات"
 
 msgid "Reference"
-msgstr ""
+msgstr "موخذ"
 
 msgid "Age"
-msgstr ""
+msgstr "سن"
 
 msgid "URL"
-msgstr ""
+msgstr "نشانی اینترنتی"
 
 msgid "Image"
-msgstr ""
+msgstr "انځورول"
 
 msgid "GeoJSON"
 msgstr ""

@@ -1,18 +1,18 @@
 # 
 # Translators:
-# Cherise Beek <cherise.beek@gmail.com>, 2021
 # Yury Rogachev <yury@dhis2.org>, 2021
-# Rica Zamora Duchateau, 2022
-# Charel van den Elsen, 2023
 # Enzo Nicolas Rossi <enzo@dhis2.org>, 2023
-# Philip Larsen Donnelly, 2024
+# Cherise Beek <cherise.beek@gmail.com>, 2025
+# Philip Larsen Donnelly, 2025
+# Rica, 2025
+# Charel van den Elsen, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2023-09-27T14:15:13.876Z\n"
+"POT-Creation-Date: 2024-12-19T10:28:15.132Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Philip Larsen Donnelly, 2024\n"
+"Last-Translator: Charel van den Elsen, 2025\n"
 "Language-Team: Dutch (https://app.transifex.com/hisp-uio/teams/100509/nl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -78,6 +78,12 @@ msgstr "Over deze lijnlijst"
 
 msgid "About this visualization"
 msgstr "Over deze visualisatie"
+
+msgid "About this event chart"
+msgstr ""
+
+msgid "About this event report"
+msgstr ""
 
 msgid "This app could not retrieve required data."
 msgstr "Deze app kan de vereiste gegevens niet ophalen."
@@ -162,6 +168,9 @@ msgstr "Wiskundige operatoren"
 msgid "Data Type"
 msgstr "Data type"
 
+msgid "Only {{dataType}} can be used in {{visType}}"
+msgstr ""
+
 msgid "All types"
 msgstr "Alle typen"
 
@@ -170,6 +179,150 @@ msgstr "desaggregatie"
 
 msgid "No data"
 msgstr "Geen gegevens"
+
+msgid "Expression description"
+msgstr ""
+
+msgid "Error loading value"
+msgstr ""
+
+msgid "None"
+msgstr "Geen"
+
+msgid "Data set(s)"
+msgstr ""
+
+msgid "Zero is significant"
+msgstr ""
+
+msgid "True"
+msgstr ""
+
+msgid "False"
+msgstr ""
+
+msgid "Value type"
+msgstr ""
+
+msgid "Aggregation type"
+msgstr "Aggregatietype"
+
+msgid "Category combo"
+msgstr ""
+
+msgid "Option set"
+msgstr ""
+
+msgid "Group membership"
+msgstr ""
+
+msgid "Legend set(s)"
+msgstr ""
+
+msgid "Category option name"
+msgstr ""
+
+msgid "Category combo name"
+msgstr ""
+
+msgid "Categories name"
+msgstr ""
+
+msgid "Period type"
+msgstr "Soort periode"
+
+msgid "Indicators"
+msgstr "Indicatoren"
+
+msgid "Expiry days"
+msgstr ""
+
+msgid "Type"
+msgstr "Soort"
+
+msgid "Data element"
+msgstr "informatie onderdeel"
+
+msgid "Tracked entity attribute"
+msgstr "Bijgehouden entiteitskenmerk"
+
+msgid "Numerator description"
+msgstr ""
+
+msgid "Numerator expression"
+msgstr ""
+
+msgid "Denominator description"
+msgstr ""
+
+msgid "Denominator expression"
+msgstr ""
+
+msgid "Annualized"
+msgstr ""
+
+msgid "Yes"
+msgstr "Ja"
+
+msgid "No"
+msgstr "Nee"
+
+msgid "Indicator type"
+msgstr ""
+
+msgid "Decimals in output"
+msgstr ""
+
+msgid "There was a problem loading information for this data item."
+msgstr ""
+
+msgid "Name"
+msgstr "Naam"
+
+msgid "Description"
+msgstr "Beschrijving"
+
+msgid "Code"
+msgstr "Code"
+
+msgid "ID"
+msgstr "ID"
+
+msgid "Last updated date"
+msgstr ""
+
+msgid "Created date"
+msgstr ""
+
+msgid "Created by"
+msgstr "Gecreëerd door"
+
+msgid "Custom"
+msgstr ""
+
+msgid "Program"
+msgstr "Programma"
+
+msgid "Analytics type"
+msgstr ""
+
+msgid "Enrollment"
+msgstr "Inschrijving"
+
+msgid "Event"
+msgstr "Gebeurtenis"
+
+msgid "Analytics period boundaries"
+msgstr ""
+
+msgid "{{ offsetPeriodType }} × {{ offsetPeriods }}"
+msgstr ""
+
+msgid "Expression"
+msgstr "Uitdrukking"
+
+msgid "Filter"
+msgstr "Filter"
 
 msgid "Search by data item name"
 msgstr "Zoeken op naam van gegevensitem"
@@ -192,6 +345,9 @@ msgstr "Geen item met gebeurtenisgegevens gevonden"
 msgid "No program indicators found"
 msgstr "Geen programma-indicatoren gevonden"
 
+msgid "No calculations found"
+msgstr ""
+
 msgid "No indicators found for \"{{- searchTerm}}\""
 msgstr "Geen indicatoren gevonden voor \"{{- searchTerm}}\""
 
@@ -203,6 +359,9 @@ msgstr "Geen gebeurtenisgegevensitems gevonden voor \"{{- searchTerm}}\""
 
 msgid "No program indicators found for \"{{- searchTerm}}\""
 msgstr "Geen programma-indicatoren gevonden voor \"{{- searchTerm}}\""
+
+msgid "No calculations found for \"{{- searchTerm}}\""
+msgstr ""
 
 msgid "Nothing found for \"{{- searchTerm}}\""
 msgstr "Niets gevonden voor \"{{- searchTerm}}\""
@@ -322,12 +481,6 @@ msgstr "Sluit"
 msgid "Rename {{fileType}}"
 msgstr "Hernoem {{fileType}}"
 
-msgid "Name"
-msgstr "Naam"
-
-msgid "Description"
-msgstr "Beschrijving"
-
 msgid "Rename"
 msgstr "Hernoemen"
 
@@ -416,11 +569,14 @@ msgstr "in tegenstelling tot"
 msgid "Like"
 msgstr "Leuk vinden"
 
-msgid "Share"
-msgstr "Deel"
-
 msgid "See interpretation"
 msgstr "Zie interpretatie"
+
+msgid "Open in app"
+msgstr ""
+
+msgid "Share"
+msgstr "Deel"
 
 msgid "Manage sharing"
 msgstr "Beheer delen"
@@ -431,44 +587,8 @@ msgstr "Kan interpretatie niet updaten"
 msgid "Enter interpretation text"
 msgstr "Voer interpretatietekst in"
 
-msgid "Bold text"
-msgstr "Vetgedrukte tekst"
-
-msgid "Italic text"
-msgstr "Cursieve tekst"
-
-msgid "Link to a URL"
-msgstr "Link naar een URL"
-
-msgid "Mention a user"
-msgstr "Noem een gebruiker"
-
-msgid "Add emoji"
-msgstr "Emoji toevoegen"
-
-msgid "Preview"
-msgstr "Voorbeeld"
-
-msgid "Back to write mode"
-msgstr "Terug naar schrijfmodus"
-
-msgid "Too many results. Try refining the search."
-msgstr "Te veel resultaten. Probeer de zoekopdracht te verfijnen."
-
-msgid "Search for a user"
-msgstr "Zoek een gebruiker"
-
-msgid "Searching for \"{{- searchText}}\""
-msgstr "Zoeken naar \"{{- searchText}}\""
-
-msgid "No results found"
-msgstr "Geen resultaten gevonden"
-
 msgid "Not available offline"
 msgstr "Niet beschikbaar offline"
-
-msgid "Created by"
-msgstr "Gecreëerd door"
 
 msgid "Anyone"
 msgstr "Iedereen"
@@ -490,9 +610,6 @@ msgstr "Gemaakt"
 
 msgid "Last updated"
 msgstr "Laatst bijgewerkt"
-
-msgid "Type"
-msgstr "Soort"
 
 msgid "Clear filters"
 msgstr "Wis filters"
@@ -662,9 +779,6 @@ msgstr "Selecteer een groep"
 msgid "Deselect all"
 msgstr "Deselecteer alles"
 
-msgid "Period type"
-msgstr "Soort periode"
-
 msgid "Year"
 msgstr "Jaar"
 
@@ -674,14 +788,14 @@ msgstr "Selecteer jaar"
 msgid "Period"
 msgstr "Periode"
 
+msgid "Selected Periods"
+msgstr "geselecteerde periodes"
+
 msgid "Relative periods"
 msgstr "Relatieve perioden"
 
 msgid "Fixed periods"
 msgstr "Vaste periodes"
-
-msgid "Selected Periods"
-msgstr "geselecteerde periodes"
 
 msgid "No periods selected"
 msgstr "Geen periodes geselecteerd"
@@ -890,6 +1004,30 @@ msgstr "Boekjaren"
 msgid "Years"
 msgstr "Jaren"
 
+msgid "Value: {{value}}"
+msgstr ""
+
+msgid "Bold text"
+msgstr "Vetgedrukte tekst"
+
+msgid "Italic text"
+msgstr "Cursieve tekst"
+
+msgid "Link to a URL"
+msgstr "Link naar een URL"
+
+msgid "Mention a user"
+msgstr "Noem een gebruiker"
+
+msgid "Add emoji"
+msgstr "Emoji toevoegen"
+
+msgid "Preview"
+msgstr "Voorbeeld"
+
+msgid "Back to write mode"
+msgstr "Terug naar schrijfmodus"
+
 msgid "Interpretations and details"
 msgstr "Interpretaties en details"
 
@@ -920,14 +1058,23 @@ msgstr "Kan vertalingen niet laden"
 msgid "Retry"
 msgstr "Opnieuw proberen"
 
+msgid "Too many results. Try refining the search."
+msgstr "Te veel resultaten. Probeer de zoekopdracht te verfijnen."
+
+msgid "Search for a user"
+msgstr "Zoek een gebruiker"
+
+msgid "Searching for \"{{- searchText}}\""
+msgstr "Zoeken naar \"{{- searchText}}\""
+
+msgid "No results found"
+msgstr "Geen resultaten gevonden"
+
 msgid "Series"
 msgstr "Reeks"
 
 msgid "Category"
 msgstr "Categorie"
-
-msgid "Filter"
-msgstr "Filter"
 
 msgid "Columns"
 msgstr "Kolommen"
@@ -953,14 +1100,8 @@ msgstr "Actuele rapporten op tijd"
 msgid "Expected reports"
 msgstr "Verwachte rapporten"
 
-msgid "Program"
-msgstr "Programma"
-
 msgid "Select a program"
 msgstr "Selecteer een programma"
-
-msgid "Indicators"
-msgstr "Indicatoren"
 
 msgid "Indicator group"
 msgstr "Indicatorgroep"
@@ -979,9 +1120,6 @@ msgstr "Indicatorgroepen laden"
 
 msgid "Data element group"
 msgstr "Gegevenselementengroep"
-
-msgid "Data element"
-msgstr "informatie onderdeel"
 
 msgid "No data element groups found"
 msgstr "Geen gegevenselementgroepen gevonden"
@@ -1129,6 +1267,9 @@ msgstr "{{thresholdFactor}} × Z-score laag"
 msgid "{{thresholdFactor}} × Z-score high"
 msgstr "{{thresholdFactor}} × Z-score hoog"
 
+msgid "Not applicable"
+msgstr ""
+
 msgid "Data"
 msgstr "Gegevens"
 
@@ -1137,6 +1278,81 @@ msgstr "Organisatieëenheid"
 
 msgid "Assigned Categories"
 msgstr "Toegewezen categorieën"
+
+msgid "Text"
+msgstr ""
+
+msgid "Long text"
+msgstr ""
+
+msgid "Multi text"
+msgstr ""
+
+msgid "Letter"
+msgstr ""
+
+msgid "Phone number"
+msgstr "Telefoonnummer"
+
+msgid "Email"
+msgstr "Emailadres"
+
+msgid "Yes/No"
+msgstr ""
+
+msgid "Yes Only"
+msgstr ""
+
+msgid "Date"
+msgstr "Datum"
+
+msgid "Date & Time"
+msgstr ""
+
+msgid "Time"
+msgstr "Tijd"
+
+msgid "Unit interval"
+msgstr ""
+
+msgid "Percentage"
+msgstr "Percentage"
+
+msgid "Integer"
+msgstr ""
+
+msgid "Positive Integer"
+msgstr ""
+
+msgid "Negative Integer"
+msgstr ""
+
+msgid "Positive or Zero Integer"
+msgstr ""
+
+msgid "Tracker Associate"
+msgstr ""
+
+msgid "Username"
+msgstr "Gebruikersnaam"
+
+msgid "Coordinate"
+msgstr "Coördineren"
+
+msgid "Reference"
+msgstr ""
+
+msgid "Age"
+msgstr ""
+
+msgid "URL"
+msgstr "URL"
+
+msgid "Image"
+msgstr ""
+
+msgid "GeoJSON"
+msgstr ""
 
 msgid "Pivot table"
 msgstr "Draaitafel"
@@ -1185,6 +1401,9 @@ msgstr "Verstrooien"
 
 msgid "Single value"
 msgstr "Enkele waarde"
+
+msgid "Outlier table"
+msgstr ""
 
 msgid "All charts"
 msgstr "Alle grafieken"

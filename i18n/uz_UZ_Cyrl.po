@@ -171,13 +171,13 @@ msgid "No data"
 msgstr "Маълумот йўқ"
 
 msgid "Expression description"
-msgstr ""
+msgstr "Ифода тавсифи"
 
 msgid "Error loading value"
 msgstr ""
 
 msgid "None"
-msgstr ""
+msgstr "Йўқ"
 
 msgid "Data set(s)"
 msgstr ""
@@ -186,13 +186,13 @@ msgid "Zero is significant"
 msgstr ""
 
 msgid "True"
-msgstr ""
+msgstr "Тўғри"
 
 msgid "False"
-msgstr ""
+msgstr "Нотўғри"
 
 msgid "Value type"
-msgstr ""
+msgstr "Қиймат тури"
 
 msgid "Aggregation type"
 msgstr "Бирлаштириш тури"
@@ -201,7 +201,7 @@ msgid "Category combo"
 msgstr "Категория комбинацияси"
 
 msgid "Option set"
-msgstr ""
+msgstr "Вариантлар тўплами"
 
 msgid "Group membership"
 msgstr ""
@@ -234,16 +234,16 @@ msgid "Data element"
 msgstr "Маълумотлар элементи"
 
 msgid "Tracked entity attribute"
-msgstr ""
+msgstr "Кузатув объекти атрибути"
 
 msgid "Numerator description"
-msgstr ""
+msgstr "Нумератор тавсифи"
 
 msgid "Numerator expression"
 msgstr ""
 
 msgid "Denominator description"
-msgstr ""
+msgstr "Номзод тавсифи"
 
 msgid "Denominator expression"
 msgstr ""
@@ -252,13 +252,13 @@ msgid "Annualized"
 msgstr "Йиллик"
 
 msgid "Yes"
-msgstr ""
+msgstr "Ҳа"
 
 msgid "No"
-msgstr ""
+msgstr "Йўқ"
 
 msgid "Indicator type"
-msgstr ""
+msgstr "Индикатор тури"
 
 msgid "Decimals in output"
 msgstr ""
@@ -273,10 +273,10 @@ msgid "Description"
 msgstr "Тавсиф"
 
 msgid "Code"
-msgstr ""
+msgstr "Код"
 
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 msgid "Last updated date"
 msgstr ""
@@ -294,22 +294,22 @@ msgid "Program"
 msgstr "Программа"
 
 msgid "Analytics type"
-msgstr ""
+msgstr "Таҳлиллар турлари"
 
 msgid "Enrollment"
 msgstr "Рўйхатга олиш"
 
 msgid "Event"
-msgstr ""
+msgstr "Ҳодиса/Тадбир"
 
 msgid "Analytics period boundaries"
-msgstr ""
+msgstr "Аналитика давр чегараси"
 
 msgid "{{ offsetPeriodType }} × {{ offsetPeriods }}"
 msgstr ""
 
 msgid "Expression"
-msgstr ""
+msgstr "Ифода"
 
 msgid "Filter"
 msgstr "Фильтр"
@@ -1241,7 +1241,7 @@ msgid "Text"
 msgstr "Матн"
 
 msgid "Long text"
-msgstr ""
+msgstr "Узун матн"
 
 msgid "Multi text"
 msgstr ""
@@ -1250,67 +1250,67 @@ msgid "Letter"
 msgstr "Хат"
 
 msgid "Phone number"
-msgstr ""
+msgstr "Телефон рақами"
 
 msgid "Email"
-msgstr ""
+msgstr "е-Почта"
 
 msgid "Yes/No"
-msgstr ""
+msgstr "Ҳа/Йўқ"
 
 msgid "Yes Only"
 msgstr "Фақат ҳа"
 
 msgid "Date"
-msgstr ""
+msgstr "Сана"
 
 msgid "Date & Time"
-msgstr ""
+msgstr "Сана ва Вақт"
 
 msgid "Time"
-msgstr ""
+msgstr "Вақт"
 
 msgid "Unit interval"
 msgstr "Бирлик оралиғи"
 
 msgid "Percentage"
-msgstr ""
+msgstr "Фоиз"
 
 msgid "Integer"
 msgstr "Бутун сон"
 
 msgid "Positive Integer"
-msgstr ""
+msgstr "Мусбат бутун сон"
 
 msgid "Negative Integer"
-msgstr ""
+msgstr "Манфий бутун сон"
 
 msgid "Positive or Zero Integer"
-msgstr ""
+msgstr "Мусбат ёки Ноль бутун сон"
 
 msgid "Tracker Associate"
-msgstr ""
+msgstr "Кузатувчи ҳамкор"
 
 msgid "Username"
-msgstr ""
+msgstr "Фойдаланувчи исми"
 
 msgid "Coordinate"
-msgstr ""
+msgstr "Мувофиқлаштириш"
 
 msgid "Reference"
-msgstr ""
+msgstr "Маълумот"
 
 msgid "Age"
-msgstr ""
+msgstr "Ёш"
 
 msgid "URL"
-msgstr ""
+msgstr "URL"
 
 msgid "Image"
-msgstr ""
+msgstr "Расм"
 
 msgid "GeoJSON"
-msgstr ""
+msgstr "GeoJSON"
 
 msgid "Pivot table"
 msgstr "Солиштирма жадвал"

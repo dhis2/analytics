@@ -4,17 +4,20 @@
 # Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2022
 # Fernando Jorge Bade, 2022
 # David Júnior <davidjr.mondlane@gmail.com>, 2023
-# Ge Joao <gsimango@saudigitus.org>, 2025
-# Philip Larsen Donnelly, 2025
-# Viktor Varland <viktor@dhis2.org>, 2025
+# Laurência Luís, 2025
+# Martins Matola, 2025
 # Shelsea Chumaio, 2025
+# Helton Dias, 2025
+# Philip Larsen Donnelly, 2025
+# Ge Joao <gsimango@saudigitus.org>, 2025
+# Viktor Varland <viktor@dhis2.org>, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2024-12-19T10:28:15.132Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Shelsea Chumaio, 2025\n"
+"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2025\n"
 "Language-Team: Portuguese (https://app.transifex.com/hisp-uio/teams/100509/pt/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -184,13 +187,13 @@ msgid "No data"
 msgstr "Não há dados"
 
 msgid "Expression description"
-msgstr ""
+msgstr "Descrição da expressão"
 
 msgid "Error loading value"
 msgstr ""
 
 msgid "None"
-msgstr ""
+msgstr "Nenhum"
 
 msgid "Data set(s)"
 msgstr ""
@@ -199,22 +202,22 @@ msgid "Zero is significant"
 msgstr ""
 
 msgid "True"
-msgstr ""
+msgstr "Verdade"
 
 msgid "False"
-msgstr ""
+msgstr "Falso"
 
 msgid "Value type"
-msgstr ""
+msgstr "Tipo de valor"
 
 msgid "Aggregation type"
 msgstr "Tipo de agregação"
 
 msgid "Category combo"
-msgstr ""
+msgstr "Combinação de categorias"
 
 msgid "Option set"
-msgstr ""
+msgstr "Conjunto de opções"
 
 msgid "Group membership"
 msgstr ""
@@ -238,7 +241,7 @@ msgid "Indicators"
 msgstr "Indicadores"
 
 msgid "Expiry days"
-msgstr ""
+msgstr "Dias de validade"
 
 msgid "Type"
 msgstr "Tipo"
@@ -247,31 +250,31 @@ msgid "Data element"
 msgstr "Elemento de dado"
 
 msgid "Tracked entity attribute"
-msgstr ""
+msgstr "Atributo da entidade rastreada"
 
 msgid "Numerator description"
-msgstr ""
+msgstr "Descrição do numerador"
 
 msgid "Numerator expression"
 msgstr ""
 
 msgid "Denominator description"
-msgstr ""
+msgstr "Descrição do denominador"
 
 msgid "Denominator expression"
 msgstr ""
 
 msgid "Annualized"
-msgstr ""
+msgstr "Anualizado"
 
 msgid "Yes"
-msgstr ""
+msgstr "sim"
 
 msgid "No"
-msgstr ""
+msgstr "Não"
 
 msgid "Indicator type"
-msgstr ""
+msgstr "Tipo de Indicador"
 
 msgid "Decimals in output"
 msgstr ""
@@ -286,43 +289,43 @@ msgid "Description"
 msgstr "Descrição"
 
 msgid "Code"
-msgstr ""
+msgstr "Código"
 
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 msgid "Last updated date"
 msgstr ""
 
 msgid "Created date"
-msgstr ""
+msgstr "Data de criação"
 
 msgid "Created by"
 msgstr "Criado por"
 
 msgid "Custom"
-msgstr ""
+msgstr "Customizar "
 
 msgid "Program"
 msgstr "Programa"
 
 msgid "Analytics type"
-msgstr ""
+msgstr "Tipo de analises "
 
 msgid "Enrollment"
 msgstr "Inscrição"
 
 msgid "Event"
-msgstr ""
+msgstr "Evento"
 
 msgid "Analytics period boundaries"
-msgstr ""
+msgstr "Limites do período de análise"
 
 msgid "{{ offsetPeriodType }} × {{ offsetPeriods }}"
 msgstr ""
 
 msgid "Expression"
-msgstr ""
+msgstr "Expressão"
 
 msgid "Filter"
 msgstr "Filtro"
@@ -1292,73 +1295,73 @@ msgid "Text"
 msgstr "Texto"
 
 msgid "Long text"
-msgstr ""
+msgstr "Texto longo "
 
 msgid "Multi text"
 msgstr ""
 
 msgid "Letter"
-msgstr ""
+msgstr "Carta"
 
 msgid "Phone number"
-msgstr ""
+msgstr "Número de telefone"
 
 msgid "Email"
-msgstr ""
+msgstr "E-mail"
 
 msgid "Yes/No"
-msgstr ""
+msgstr "Sim/Não"
 
 msgid "Yes Only"
-msgstr ""
+msgstr "Apenas Sim"
 
 msgid "Date"
-msgstr ""
+msgstr "Encontro"
 
 msgid "Date & Time"
-msgstr ""
+msgstr "Data & Hora "
 
 msgid "Time"
-msgstr ""
+msgstr "Tempo"
 
 msgid "Unit interval"
 msgstr "Intervalo de unidade"
 
 msgid "Percentage"
-msgstr ""
+msgstr "Percentagem "
 
 msgid "Integer"
-msgstr ""
+msgstr "Inteiro"
 
 msgid "Positive Integer"
-msgstr ""
+msgstr "Inteiro positivo"
 
 msgid "Negative Integer"
-msgstr ""
+msgstr "Inteiro negativo"
 
 msgid "Positive or Zero Integer"
-msgstr ""
+msgstr "Inteiro positivo ou zero"
 
 msgid "Tracker Associate"
-msgstr ""
+msgstr "Associado ao rastreio"
 
 msgid "Username"
-msgstr ""
+msgstr "Nome de utilizador"
 
 msgid "Coordinate"
-msgstr ""
+msgstr "Coordenada"
 
 msgid "Reference"
-msgstr ""
+msgstr "Referência"
 
 msgid "Age"
-msgstr ""
+msgstr "Idade"
 
 msgid "URL"
-msgstr ""
+msgstr "URL"
 
 msgid "Image"
-msgstr ""
+msgstr "Imagem"
 
 msgid "GeoJSON"
 msgstr ""

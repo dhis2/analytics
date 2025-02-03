@@ -1,15 +1,15 @@
 # 
 # Translators:
 # Viktor Varland <viktor@dhis2.org>, 2025
-# Hamza Assada <7amza.it@gmail.com>, 2025
 # Philip Larsen Donnelly, 2025
+# Hamza Assada <7amza.it@gmail.com>, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2024-12-19T10:28:15.132Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Philip Larsen Donnelly, 2025\n"
+"Last-Translator: Hamza Assada <7amza.it@gmail.com>, 2025\n"
 "Language-Team: Arabic (https://app.transifex.com/hisp-uio/teams/100509/ar/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -178,13 +178,13 @@ msgid "No data"
 msgstr "لا توجد بيانات"
 
 msgid "Expression description"
-msgstr ""
+msgstr "وصف التعبير"
 
 msgid "Error loading value"
 msgstr ""
 
 msgid "None"
-msgstr ""
+msgstr "لا شيء"
 
 msgid "Data set(s)"
 msgstr ""
@@ -193,22 +193,22 @@ msgid "Zero is significant"
 msgstr ""
 
 msgid "True"
-msgstr ""
+msgstr "صح"
 
 msgid "False"
-msgstr ""
+msgstr "خطأ"
 
 msgid "Value type"
-msgstr ""
+msgstr "نوع القيمة"
 
 msgid "Aggregation type"
 msgstr "نوع التجميع"
 
 msgid "Category combo"
-msgstr ""
+msgstr "Category combo"
 
 msgid "Option set"
-msgstr ""
+msgstr "حزمة الخيارات"
 
 msgid "Group membership"
 msgstr ""
@@ -232,7 +232,7 @@ msgid "Indicators"
 msgstr "المؤشرات"
 
 msgid "Expiry days"
-msgstr ""
+msgstr "أيام انتهاء الصلاحية"
 
 msgid "Type"
 msgstr "النوع"
@@ -241,16 +241,16 @@ msgid "Data element"
 msgstr "عنصر البيانات"
 
 msgid "Tracked entity attribute"
-msgstr ""
+msgstr "سمة الكيان المتعقب"
 
 msgid "Numerator description"
-msgstr ""
+msgstr "وصف البسط"
 
 msgid "Numerator expression"
 msgstr ""
 
 msgid "Denominator description"
-msgstr ""
+msgstr "وصف المقام"
 
 msgid "Denominator expression"
 msgstr ""
@@ -259,13 +259,13 @@ msgid "Annualized"
 msgstr "بشكل سنوي"
 
 msgid "Yes"
-msgstr ""
+msgstr "نعم"
 
 msgid "No"
-msgstr ""
+msgstr "لا"
 
 msgid "Indicator type"
-msgstr ""
+msgstr "نوع المؤشر"
 
 msgid "Decimals in output"
 msgstr ""
@@ -280,10 +280,10 @@ msgid "Description"
 msgstr "الوصف"
 
 msgid "Code"
-msgstr ""
+msgstr "الكود"
 
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 msgid "Last updated date"
 msgstr ""
@@ -295,19 +295,19 @@ msgid "Created by"
 msgstr "تم الإنشاء بواسطة"
 
 msgid "Custom"
-msgstr ""
+msgstr "مخصص"
 
 msgid "Program"
 msgstr "البرنامج"
 
 msgid "Analytics type"
-msgstr ""
+msgstr "Analytics type"
 
 msgid "Enrollment"
 msgstr "التسجيل"
 
 msgid "Event"
-msgstr ""
+msgstr "حدث"
 
 msgid "Analytics period boundaries"
 msgstr ""
@@ -316,7 +316,7 @@ msgid "{{ offsetPeriodType }} × {{ offsetPeriods }}"
 msgstr ""
 
 msgid "Expression"
-msgstr ""
+msgstr "‏‏التعبير"
 
 msgid "Filter"
 msgstr "عامل التصفية"
@@ -1268,73 +1268,73 @@ msgid "Text"
 msgstr "نص"
 
 msgid "Long text"
-msgstr ""
+msgstr "نص طويل"
 
 msgid "Multi text"
 msgstr ""
 
 msgid "Letter"
-msgstr ""
+msgstr "حرف"
 
 msgid "Phone number"
-msgstr ""
+msgstr "رقم الهاتف"
 
 msgid "Email"
-msgstr ""
+msgstr "بريد إلكتروني"
 
 msgid "Yes/No"
-msgstr ""
+msgstr "نعم/لا"
 
 msgid "Yes Only"
-msgstr ""
+msgstr "نعم فقط"
 
 msgid "Date"
-msgstr ""
+msgstr "التاريخ"
 
 msgid "Date & Time"
-msgstr ""
+msgstr "تاريخ ووقت"
 
 msgid "Time"
-msgstr ""
+msgstr "الوقت"
 
 msgid "Unit interval"
 msgstr "الفاصل الزمني للوحدة"
 
 msgid "Percentage"
-msgstr ""
+msgstr "النسبة المئوية"
 
 msgid "Integer"
-msgstr ""
+msgstr "عدد صحيح"
 
 msgid "Positive Integer"
-msgstr ""
+msgstr "عدد صحيح موجب"
 
 msgid "Negative Integer"
-msgstr ""
+msgstr "عدد صحيح سالب"
 
 msgid "Positive or Zero Integer"
-msgstr ""
+msgstr "عدد صحيح موجب أو صفري"
 
 msgid "Tracker Associate"
-msgstr ""
+msgstr "ارتباط التتبع"
 
 msgid "Username"
-msgstr ""
+msgstr "اسم المستخدم"
 
 msgid "Coordinate"
-msgstr ""
+msgstr "الإحداثية"
 
 msgid "Reference"
-msgstr ""
+msgstr "المرجع"
 
 msgid "Age"
-msgstr ""
+msgstr "عُمر"
 
 msgid "URL"
-msgstr ""
+msgstr "عنوان URL"
 
 msgid "Image"
-msgstr ""
+msgstr "الصورة"
 
 msgid "GeoJSON"
 msgstr ""
