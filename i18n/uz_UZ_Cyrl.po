@@ -1,13 +1,13 @@
 # 
 # Translators:
-# Ibatov <ibatovk@who.int>, 2023
+# Khurshid Ibatov <Khurshid.Ibatov@tibbiysugurta.uz>, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2023-09-27T14:15:13.876Z\n"
+"POT-Creation-Date: 2024-12-19T10:28:15.132Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Ibatov <ibatovk@who.int>, 2023\n"
+"Last-Translator: Khurshid Ibatov <Khurshid.Ibatov@tibbiysugurta.uz>, 2025\n"
 "Language-Team: Uzbek (Cyrillic) (https://app.transifex.com/hisp-uio/teams/100509/uz@Cyrl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -71,6 +71,12 @@ msgid "About this line list"
 msgstr ""
 
 msgid "About this visualization"
+msgstr ""
+
+msgid "About this event chart"
+msgstr ""
+
+msgid "About this event report"
 msgstr ""
 
 msgid "This app could not retrieve required data."
@@ -152,6 +158,9 @@ msgstr ""
 msgid "Data Type"
 msgstr "Маълумот тури"
 
+msgid "Only {{dataType}} can be used in {{visType}}"
+msgstr ""
+
 msgid "All types"
 msgstr "Барча турлари"
 
@@ -160,6 +169,150 @@ msgstr "Ажратиш"
 
 msgid "No data"
 msgstr "Маълумот йўқ"
+
+msgid "Expression description"
+msgstr ""
+
+msgid "Error loading value"
+msgstr ""
+
+msgid "None"
+msgstr ""
+
+msgid "Data set(s)"
+msgstr ""
+
+msgid "Zero is significant"
+msgstr ""
+
+msgid "True"
+msgstr ""
+
+msgid "False"
+msgstr ""
+
+msgid "Value type"
+msgstr ""
+
+msgid "Aggregation type"
+msgstr "Бирлаштириш тури"
+
+msgid "Category combo"
+msgstr "Категория комбинацияси"
+
+msgid "Option set"
+msgstr ""
+
+msgid "Group membership"
+msgstr ""
+
+msgid "Legend set(s)"
+msgstr ""
+
+msgid "Category option name"
+msgstr ""
+
+msgid "Category combo name"
+msgstr ""
+
+msgid "Categories name"
+msgstr ""
+
+msgid "Period type"
+msgstr "Давр тури"
+
+msgid "Indicators"
+msgstr "Индикаторлар"
+
+msgid "Expiry days"
+msgstr "Муддати тугайдиганлар"
+
+msgid "Type"
+msgstr "Тури"
+
+msgid "Data element"
+msgstr "Маълумотлар элементи"
+
+msgid "Tracked entity attribute"
+msgstr ""
+
+msgid "Numerator description"
+msgstr ""
+
+msgid "Numerator expression"
+msgstr ""
+
+msgid "Denominator description"
+msgstr ""
+
+msgid "Denominator expression"
+msgstr ""
+
+msgid "Annualized"
+msgstr "Йиллик"
+
+msgid "Yes"
+msgstr ""
+
+msgid "No"
+msgstr ""
+
+msgid "Indicator type"
+msgstr ""
+
+msgid "Decimals in output"
+msgstr ""
+
+msgid "There was a problem loading information for this data item."
+msgstr ""
+
+msgid "Name"
+msgstr "Исми"
+
+msgid "Description"
+msgstr "Тавсиф"
+
+msgid "Code"
+msgstr ""
+
+msgid "ID"
+msgstr ""
+
+msgid "Last updated date"
+msgstr ""
+
+msgid "Created date"
+msgstr ""
+
+msgid "Created by"
+msgstr "Томонидан яратилган"
+
+msgid "Custom"
+msgstr "Одатий"
+
+msgid "Program"
+msgstr "Программа"
+
+msgid "Analytics type"
+msgstr ""
+
+msgid "Enrollment"
+msgstr "Рўйхатга олиш"
+
+msgid "Event"
+msgstr ""
+
+msgid "Analytics period boundaries"
+msgstr ""
+
+msgid "{{ offsetPeriodType }} × {{ offsetPeriods }}"
+msgstr ""
+
+msgid "Expression"
+msgstr ""
+
+msgid "Filter"
+msgstr "Фильтр"
 
 msgid "Search by data item name"
 msgstr ""
@@ -182,6 +335,9 @@ msgstr ""
 msgid "No program indicators found"
 msgstr ""
 
+msgid "No calculations found"
+msgstr ""
+
 msgid "No indicators found for \"{{- searchTerm}}\""
 msgstr ""
 
@@ -192,6 +348,9 @@ msgid "No event data items found for \"{{- searchTerm}}\""
 msgstr ""
 
 msgid "No program indicators found for \"{{- searchTerm}}\""
+msgstr ""
+
+msgid "No calculations found for \"{{- searchTerm}}\""
 msgstr ""
 
 msgid "Nothing found for \"{{- searchTerm}}\""
@@ -308,12 +467,6 @@ msgstr "Ёпиш"
 msgid "Rename {{fileType}}"
 msgstr ""
 
-msgid "Name"
-msgstr "Исми"
-
-msgid "Description"
-msgstr "Тавсиф"
-
 msgid "Rename"
 msgstr "Қайта номлашч"
 
@@ -399,11 +552,14 @@ msgstr "Аксинча"
 msgid "Like"
 msgstr "Каби, ўхшаш"
 
-msgid "Share"
-msgstr "Улашиш"
-
 msgid "See interpretation"
 msgstr ""
+
+msgid "Open in app"
+msgstr ""
+
+msgid "Share"
+msgstr "Улашиш"
 
 msgid "Manage sharing"
 msgstr "Улашишни бошқариш"
@@ -414,44 +570,8 @@ msgstr ""
 msgid "Enter interpretation text"
 msgstr ""
 
-msgid "Bold text"
-msgstr ""
-
-msgid "Italic text"
-msgstr ""
-
-msgid "Link to a URL"
-msgstr ""
-
-msgid "Mention a user"
-msgstr ""
-
-msgid "Add emoji"
-msgstr ""
-
-msgid "Preview"
-msgstr "Олдиндан кўриш"
-
-msgid "Back to write mode"
-msgstr ""
-
-msgid "Too many results. Try refining the search."
-msgstr ""
-
-msgid "Search for a user"
-msgstr ""
-
-msgid "Searching for \"{{- searchText}}\""
-msgstr ""
-
-msgid "No results found"
-msgstr "Ҳеч қандай натижа топилмади"
-
 msgid "Not available offline"
 msgstr "Оффлайн режимда мавжуд эмас"
-
-msgid "Created by"
-msgstr "Томонидан яратилган"
 
 msgid "Anyone"
 msgstr "Кимдир"
@@ -473,9 +593,6 @@ msgstr "Яратилган"
 
 msgid "Last updated"
 msgstr "Охирги янгиланган"
-
-msgid "Type"
-msgstr "Тури"
 
 msgid "Clear filters"
 msgstr "Фильтрларни тозалаш"
@@ -622,9 +739,6 @@ msgstr "Гуруҳни танланг"
 msgid "Deselect all"
 msgstr "Барча танланганни бекор қилиш"
 
-msgid "Period type"
-msgstr "Давр тури"
-
 msgid "Year"
 msgstr "Йил"
 
@@ -634,14 +748,14 @@ msgstr "Йилни танланг"
 msgid "Period"
 msgstr "Давр"
 
+msgid "Selected Periods"
+msgstr "Танланган Даврлар"
+
 msgid "Relative periods"
 msgstr "Нисбий даврлар"
 
 msgid "Fixed periods"
 msgstr "Белигаланган даврлар"
-
-msgid "Selected Periods"
-msgstr "Танланган Даврлар"
 
 msgid "No periods selected"
 msgstr "Давр танланмаган"
@@ -850,6 +964,30 @@ msgstr "Молиявий йиллар"
 msgid "Years"
 msgstr "Йиллар"
 
+msgid "Value: {{value}}"
+msgstr ""
+
+msgid "Bold text"
+msgstr ""
+
+msgid "Italic text"
+msgstr ""
+
+msgid "Link to a URL"
+msgstr ""
+
+msgid "Mention a user"
+msgstr ""
+
+msgid "Add emoji"
+msgstr ""
+
+msgid "Preview"
+msgstr "Олдиндан кўриш"
+
+msgid "Back to write mode"
+msgstr ""
+
 msgid "Interpretations and details"
 msgstr ""
 
@@ -880,14 +1018,23 @@ msgstr ""
 msgid "Retry"
 msgstr ""
 
+msgid "Too many results. Try refining the search."
+msgstr ""
+
+msgid "Search for a user"
+msgstr ""
+
+msgid "Searching for \"{{- searchText}}\""
+msgstr ""
+
+msgid "No results found"
+msgstr "Ҳеч қандай натижа топилмади"
+
 msgid "Series"
 msgstr "Кетма-кетликлар"
 
 msgid "Category"
 msgstr "Категория"
-
-msgid "Filter"
-msgstr "Фильтр"
 
 msgid "Columns"
 msgstr "Устунлар"
@@ -913,14 +1060,8 @@ msgstr "Ҳақиқий ҳисоботлар ўз вақтида"
 msgid "Expected reports"
 msgstr "Кутилаётган ҳисоботлар"
 
-msgid "Program"
-msgstr "Программа"
-
 msgid "Select a program"
 msgstr "Дастурни танланг"
-
-msgid "Indicators"
-msgstr "Индикаторлар"
 
 msgid "Indicator group"
 msgstr "Индикатор гуруҳи"
@@ -939,9 +1080,6 @@ msgstr ""
 
 msgid "Data element group"
 msgstr "Маълумотлар элементи гуруҳи"
-
-msgid "Data element"
-msgstr "Маълумотлар элементи"
 
 msgid "No data element groups found"
 msgstr ""
@@ -1087,6 +1225,9 @@ msgstr ""
 msgid "{{thresholdFactor}} × Z-score high"
 msgstr ""
 
+msgid "Not applicable"
+msgstr ""
+
 msgid "Data"
 msgstr "Маълумот"
 
@@ -1095,6 +1236,81 @@ msgstr "Ташкилий бўлим"
 
 msgid "Assigned Categories"
 msgstr "Белгиланган Категориялар"
+
+msgid "Text"
+msgstr "Матн"
+
+msgid "Long text"
+msgstr ""
+
+msgid "Multi text"
+msgstr ""
+
+msgid "Letter"
+msgstr "Хат"
+
+msgid "Phone number"
+msgstr ""
+
+msgid "Email"
+msgstr ""
+
+msgid "Yes/No"
+msgstr ""
+
+msgid "Yes Only"
+msgstr "Фақат ҳа"
+
+msgid "Date"
+msgstr ""
+
+msgid "Date & Time"
+msgstr ""
+
+msgid "Time"
+msgstr ""
+
+msgid "Unit interval"
+msgstr "Бирлик оралиғи"
+
+msgid "Percentage"
+msgstr ""
+
+msgid "Integer"
+msgstr "Бутун сон"
+
+msgid "Positive Integer"
+msgstr ""
+
+msgid "Negative Integer"
+msgstr ""
+
+msgid "Positive or Zero Integer"
+msgstr ""
+
+msgid "Tracker Associate"
+msgstr ""
+
+msgid "Username"
+msgstr ""
+
+msgid "Coordinate"
+msgstr ""
+
+msgid "Reference"
+msgstr ""
+
+msgid "Age"
+msgstr ""
+
+msgid "URL"
+msgstr ""
+
+msgid "Image"
+msgstr ""
+
+msgid "GeoJSON"
+msgstr ""
 
 msgid "Pivot table"
 msgstr "Солиштирма жадвал"
@@ -1143,6 +1359,9 @@ msgstr "Тарқоқлик"
 
 msgid "Single value"
 msgstr "Ягона қиймат"
+
+msgid "Outlier table"
+msgstr ""
 
 msgid "All charts"
 msgstr ""

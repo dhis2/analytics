@@ -1,19 +1,19 @@
 # 
 # Translators:
-# Philip Larsen Donnelly, 2025
+# Siddharth Agarwal, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2024-12-19T10:28:15.132Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Philip Larsen Donnelly, 2025\n"
-"Language-Team: Persian (Afghanistan) (https://app.transifex.com/hisp-uio/teams/100509/fa_AF/)\n"
+"Last-Translator: Siddharth Agarwal, 2025\n"
+"Language-Team: Hindi (India) (https://app.transifex.com/hisp-uio/teams/100509/hi_IN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: fa_AF\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Language: hi_IN\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "view only"
 msgstr ""
@@ -34,7 +34,7 @@ msgid "Not shared with any users or groups"
 msgstr ""
 
 msgid "No description"
-msgstr "بدون شرح"
+msgstr ""
 
 msgid "Last updated {{time}}"
 msgstr ""
@@ -108,7 +108,7 @@ msgid "Delete calculation"
 msgstr ""
 
 msgid "Cancel"
-msgstr "انصراف"
+msgstr "रद्द करें"
 
 msgid "The calculation can only be saved with a valid formula"
 msgstr ""
@@ -134,10 +134,10 @@ msgid "Details only"
 msgstr ""
 
 msgid "Loading"
-msgstr "در حال بار کردن"
+msgstr ""
 
 msgid "Data elements"
-msgstr "دیتا ایلمنت ها"
+msgstr ""
 
 msgid "Search by data element name"
 msgstr ""
@@ -166,10 +166,10 @@ msgid "All types"
 msgstr ""
 
 msgid "Disaggregation"
-msgstr "تکثیر"
+msgstr ""
 
 msgid "No data"
-msgstr "معلوماتی وجود ندارد"
+msgstr ""
 
 msgid "Expression description"
 msgstr ""
@@ -220,19 +220,19 @@ msgid "Categories name"
 msgstr ""
 
 msgid "Period type"
-msgstr "د مودې ډول"
+msgstr ""
 
 msgid "Indicators"
-msgstr "شاخص ها"
+msgstr ""
 
 msgid "Expiry days"
 msgstr ""
 
 msgid "Type"
-msgstr "نمونه/ډول"
+msgstr ""
 
 msgid "Data element"
-msgstr "عناصر معلومات"
+msgstr ""
 
 msgid "Tracked entity attribute"
 msgstr ""
@@ -268,10 +268,10 @@ msgid "There was a problem loading information for this data item."
 msgstr ""
 
 msgid "Name"
-msgstr "نام"
+msgstr "नाम"
 
 msgid "Description"
-msgstr "شرح"
+msgstr ""
 
 msgid "Code"
 msgstr ""
@@ -286,19 +286,19 @@ msgid "Created date"
 msgstr ""
 
 msgid "Created by"
-msgstr "ایجاد شده توسط"
+msgstr ""
 
 msgid "Custom"
 msgstr ""
 
 msgid "Program"
-msgstr "برنامه"
+msgstr ""
 
 msgid "Analytics type"
 msgstr ""
 
 msgid "Enrollment"
-msgstr "ثبت نام"
+msgstr ""
 
 msgid "Event"
 msgstr ""
@@ -313,7 +313,7 @@ msgid "Expression"
 msgstr ""
 
 msgid "Filter"
-msgstr "فلتر"
+msgstr ""
 
 msgid "Search by data item name"
 msgstr ""
@@ -364,7 +364,7 @@ msgid "Metric type"
 msgstr ""
 
 msgid "All metrics"
-msgstr "همه متریکس ها"
+msgstr ""
 
 msgid "Move to {{axisName}}"
 msgstr ""
@@ -382,7 +382,7 @@ msgid "Add Assigned Categories"
 msgstr ""
 
 msgid "Remove"
-msgstr "حذف"
+msgstr "हटाएं"
 
 msgid "Filter dimensions"
 msgstr ""
@@ -414,7 +414,7 @@ msgid "Nothing found in {{- dimensionTitle}}"
 msgstr ""
 
 msgid "Search"
-msgstr "جستجو"
+msgstr ""
 
 msgid "Nothing found for {{- searchTerm}}"
 msgstr ""
@@ -427,19 +427,19 @@ msgid ""
 msgstr ""
 
 msgid "Delete"
-msgstr "حذف"
+msgstr "हटाएं"
 
 msgid "File"
-msgstr "فایل"
+msgstr ""
 
 msgid "New"
-msgstr "جدید"
+msgstr ""
 
 msgid "Open…"
 msgstr ""
 
 msgid "Save"
-msgstr "ذخیره"
+msgstr "सहेजें"
 
 msgid "Save…"
 msgstr ""
@@ -463,13 +463,13 @@ msgid "Open in this app"
 msgstr ""
 
 msgid "Close"
-msgstr "بستن"
+msgstr "बंद करें"
 
 msgid "Rename {{fileType}}"
 msgstr ""
 
 msgid "Rename"
-msgstr "تغییر نام"
+msgstr ""
 
 msgid "{{- objectName}} (copy)"
 msgstr ""
@@ -490,7 +490,7 @@ msgid "visualization"
 msgstr ""
 
 msgid "Edit"
-msgstr "تجدید"
+msgstr "संपादन करें"
 
 msgid "Write a reply"
 msgstr ""
@@ -508,7 +508,7 @@ msgid "Enter comment text"
 msgstr ""
 
 msgid "Update"
-msgstr "تجدید"
+msgstr "अपडेट करें"
 
 msgid "Viewing interpretation: {{- visualisationName}}"
 msgstr ""
@@ -535,10 +535,10 @@ msgid "Post interpretation"
 msgstr ""
 
 msgid "Interpretations"
-msgstr "تفسیر ها"
+msgstr ""
 
 msgid "Reply"
-msgstr "پاسخ"
+msgstr ""
 
 msgid "{{count}} replies"
 msgid_plural "{{count}} replies"
@@ -549,10 +549,10 @@ msgid "View replies"
 msgstr ""
 
 msgid "Unlike"
-msgstr "غیرموافق"
+msgstr ""
 
 msgid "Like"
-msgstr "موافق"
+msgstr ""
 
 msgid "See interpretation"
 msgstr ""
@@ -561,7 +561,7 @@ msgid "Open in app"
 msgstr ""
 
 msgid "Share"
-msgstr "اشتراک"
+msgstr "साझा करें"
 
 msgid "Manage sharing"
 msgstr ""
@@ -582,19 +582,19 @@ msgid "Only you"
 msgstr ""
 
 msgid "Others"
-msgstr "دیگران"
+msgstr ""
 
 msgid "Not supported by this app yet"
 msgstr ""
 
 msgid "Filter by name"
-msgstr "فلتر با اسم"
+msgstr ""
 
 msgid "Created"
-msgstr "ایجاد شده"
+msgstr ""
 
 msgid "Last updated"
-msgstr "تجدید آخیر"
+msgstr ""
 
 msgid "Clear filters"
 msgstr ""
@@ -603,7 +603,7 @@ msgid "{{firstItemIndex}}-{{lastItemIndex}} of {{totalNumberOfItems}}"
 msgstr ""
 
 msgid "Open"
-msgstr "باز کردن"
+msgstr ""
 
 msgid "Couldn't load items"
 msgstr ""
@@ -700,10 +700,10 @@ msgid "New line list"
 msgstr ""
 
 msgid "Options"
-msgstr "گزینه‌ها"
+msgstr ""
 
 msgid "Hide"
-msgstr "مخفی کردن"
+msgstr ""
 
 msgid "{{count}} org units"
 msgid_plural "{{count}} org units"
@@ -727,13 +727,13 @@ msgid "Nothing selected"
 msgstr ""
 
 msgid "User organisation unit"
-msgstr "د کاروونکي سازمان واحدونه"
+msgstr ""
 
 msgid "User sub-units"
-msgstr "زیر-واحد ها استفاده کننده گان"
+msgstr ""
 
 msgid "User sub-x2-units"
-msgstr "زیر- x2-واحد های استفاده کننده گان"
+msgstr ""
 
 msgid "Select a level"
 msgstr ""
@@ -742,34 +742,34 @@ msgid "Select a group"
 msgstr ""
 
 msgid "Deselect all"
-msgstr "همه از حالت انتخاب خارج"
+msgstr ""
 
 msgid "Year"
-msgstr "سال"
+msgstr "वर्ष"
 
 msgid "Select year"
-msgstr "غوره کال"
+msgstr ""
 
 msgid "Period"
-msgstr "دوره"
+msgstr ""
 
 msgid "Selected Periods"
 msgstr ""
 
 msgid "Relative periods"
-msgstr "دوره های ارتباطی"
+msgstr ""
 
 msgid "Fixed periods"
-msgstr "ثابتې مودې"
+msgstr ""
 
 msgid "No periods selected"
-msgstr "هېڅ مودې نه دي غوره شوې"
+msgstr ""
 
 msgid "Daily"
-msgstr "روزنه"
+msgstr ""
 
 msgid "Weekly"
-msgstr "هفته وار"
+msgstr ""
 
 msgid "Weekly (Start Wednesday)"
 msgstr ""
@@ -787,52 +787,52 @@ msgid "Bi-weekly"
 msgstr ""
 
 msgid "Monthly"
-msgstr "ماهانه"
+msgstr ""
 
 msgid "Bi-monthly"
-msgstr "دوبار در- ماه"
+msgstr ""
 
 msgid "Quarterly"
-msgstr "سه ماهه"
+msgstr ""
 
 msgid "Six-monthly"
-msgstr "شش-ماهه"
+msgstr ""
 
 msgid "Six-monthly April"
-msgstr "شش-ماهه اپریل"
+msgstr ""
 
 msgid "Yearly"
-msgstr "سالانه"
+msgstr ""
 
 msgid "Financial year (Start November)"
 msgstr ""
 
 msgid "Financial year (Start October)"
-msgstr "اکتوبر مالی"
+msgstr ""
 
 msgid "Financial year (Start July)"
-msgstr "مالی جولای"
+msgstr ""
 
 msgid "Financial year (Start April)"
-msgstr "مالی اپریل"
+msgstr ""
 
 msgid "Today"
-msgstr "امروز"
+msgstr "आज"
 
 msgid "Yesterday"
-msgstr "دیروز"
+msgstr "कल (बिता हुआ)"
 
 msgid "Last 3 days"
-msgstr "3 روز گذشته"
+msgstr ""
 
 msgid "Last 7 days"
-msgstr "7 روز گذشته"
+msgstr ""
 
 msgid "Last 14 days"
-msgstr "14 روز گذشته"
+msgstr ""
 
 msgid "Last 30 days"
-msgstr "30 روز گذشته"
+msgstr ""
 
 msgid "Last 60 days"
 msgstr ""
@@ -844,19 +844,19 @@ msgid "Last 180 days"
 msgstr ""
 
 msgid "This week"
-msgstr "هفته جاری"
+msgstr ""
 
 msgid "Last week"
-msgstr "هفته گذشته"
+msgstr ""
 
 msgid "Last 4 weeks"
-msgstr "4 هفته گذشته"
+msgstr ""
 
 msgid "Last 12 weeks"
-msgstr "12 هفته گذشته"
+msgstr ""
 
 msgid "Last 52 weeks"
-msgstr "52 هفته گذشته"
+msgstr ""
 
 msgid "Weeks this year"
 msgstr ""
@@ -871,103 +871,103 @@ msgid "Last 4 bi-weeks"
 msgstr ""
 
 msgid "This month"
-msgstr "ماه جاری"
+msgstr ""
 
 msgid "Last month"
-msgstr "ماه گذشته"
+msgstr ""
 
 msgid "Last 3 months"
-msgstr "3 ماهه گذشته"
+msgstr ""
 
 msgid "Last 6 months"
-msgstr "6 ماه گذشته"
+msgstr ""
 
 msgid "Last 12 months"
-msgstr "12 ماهه گذشته"
+msgstr ""
 
 msgid "Months this year"
-msgstr "ماه های سال هذا"
+msgstr ""
 
 msgid "This bi-month"
-msgstr "دوبار در ماه جاری"
+msgstr ""
 
 msgid "Last bi-month"
-msgstr "دوبار در ماه گذشته"
+msgstr ""
 
 msgid "Last 6 bi-months"
-msgstr "دروبار در شش-ماه گذشته"
+msgstr ""
 
 msgid "Bi-months this year"
 msgstr ""
 
 msgid "This quarter"
-msgstr "سه ماهه جاری"
+msgstr ""
 
 msgid "Last quarter"
-msgstr "سه ماهه آخیر"
+msgstr ""
 
 msgid "Last 4 quarters"
-msgstr "4 سه ماهه آخیر"
+msgstr ""
 
 msgid "Quarters this year"
-msgstr "ربع های سال هذا"
+msgstr ""
 
 msgid "This six-month"
-msgstr "شش-ماه جاری"
+msgstr ""
 
 msgid "Last six-month"
-msgstr "شش-ماهه گذشته"
+msgstr ""
 
 msgid "Last 2 six-month"
 msgstr ""
 
 msgid "This financial year"
-msgstr "سال مالی جاری"
+msgstr ""
 
 msgid "Last financial year"
-msgstr "سال گذشته مالی"
+msgstr ""
 
 msgid "Last 5 financial years"
-msgstr "5 سال گذشته مالی"
+msgstr ""
 
 msgid "This year"
-msgstr "سال جاری"
+msgstr ""
 
 msgid "Last year"
-msgstr "سال گذشته"
+msgstr ""
 
 msgid "Last 5 years"
-msgstr "5 سال گذشته"
+msgstr ""
 
 msgid "Last 10 years"
-msgstr "10 سال آخیر"
+msgstr ""
 
 msgid "Days"
-msgstr "روزها"
+msgstr "दिन"
 
 msgid "Weeks"
-msgstr "هفته ها"
+msgstr ""
 
 msgid "Bi-weeks"
 msgstr ""
 
 msgid "Months"
-msgstr "ماه ها"
+msgstr ""
 
 msgid "Bi-months"
-msgstr "دوبار در ماه"
+msgstr ""
 
 msgid "Quarters"
-msgstr "سه ماهه"
+msgstr ""
 
 msgid "Six-months"
-msgstr "شش-ماهه"
+msgstr ""
 
 msgid "Financial Years"
 msgstr ""
 
 msgid "Years"
-msgstr "سالانه"
+msgstr ""
 
 msgid "Value: {{value}}"
 msgstr ""
@@ -988,7 +988,7 @@ msgid "Add emoji"
 msgstr ""
 
 msgid "Preview"
-msgstr "پیش‌نمایش"
+msgstr ""
 
 msgid "Back to write mode"
 msgstr ""
@@ -1033,13 +1033,13 @@ msgid "Searching for \"{{- searchText}}\""
 msgstr ""
 
 msgid "No results found"
-msgstr "هیج نتیجه ی یافت نشد"
+msgstr ""
 
 msgid "Series"
-msgstr "سلسله (لړۍ)"
+msgstr ""
 
 msgid "Category"
-msgstr "دسته بندی"
+msgstr ""
 
 msgid "Columns"
 msgstr ""
@@ -1069,13 +1069,13 @@ msgid "Select a program"
 msgstr ""
 
 msgid "Indicator group"
-msgstr "د شاخص ګروپ"
+msgstr ""
 
 msgid "All groups"
 msgstr ""
 
 msgid "Indicator"
-msgstr "شاخص"
+msgstr ""
 
 msgid "No indicator groups found"
 msgstr ""
@@ -1084,7 +1084,7 @@ msgid "Loading indicator groups"
 msgstr ""
 
 msgid "Data element group"
-msgstr "د مالوماتو (ډاټا) د برخې ګروپ"
+msgstr ""
 
 msgid "No data element groups found"
 msgstr ""
@@ -1093,10 +1093,10 @@ msgid "Loading data element groups"
 msgstr ""
 
 msgid "Data sets"
-msgstr "دیتا سیت ها"
+msgstr ""
 
 msgid "Data set"
-msgstr "د مالوماتو (ډاټا) ټولګه"
+msgstr ""
 
 msgid "All data sets"
 msgstr ""
@@ -1105,13 +1105,13 @@ msgid "Loading data sets"
 msgstr ""
 
 msgid "Event data items"
-msgstr "د پېښې د مالوماتو (ډاټا) موضوعات"
+msgstr ""
 
 msgid "All programs"
 msgstr ""
 
 msgid "Event data item"
-msgstr "د پېښې طبقه"
+msgstr ""
 
 msgid "No programs found"
 msgstr ""
@@ -1120,16 +1120,16 @@ msgid "Loading programs"
 msgstr ""
 
 msgid "Program indicators"
-msgstr "د پروګرام شاخصونه"
+msgstr ""
 
 msgid "Program indicator"
-msgstr "ایجاد پروگرام شاخص"
+msgstr ""
 
 msgid "Calculations"
 msgstr ""
 
 msgid "Number"
-msgstr "نمبر"
+msgstr ""
 
 msgid "Formula is empty. Add items to the formula from the lists on the left."
 msgstr ""
@@ -1156,28 +1156,28 @@ msgid "Extra Small"
 msgstr ""
 
 msgid "Small"
-msgstr "کوچک"
+msgstr ""
 
 msgid "Regular"
-msgstr "منظم"
+msgstr ""
 
 msgid "Large"
-msgstr "بزرگ"
+msgstr ""
 
 msgid "Extra Large"
 msgstr ""
 
 msgid "Left"
-msgstr "چپ"
+msgstr ""
 
 msgid "Center"
 msgstr ""
 
 msgid "Right"
-msgstr "راست"
+msgstr ""
 
 msgid "Start"
-msgstr "شروع"
+msgstr ""
 
 msgid "Middle"
 msgstr ""
@@ -1186,10 +1186,10 @@ msgid "End"
 msgstr ""
 
 msgid "Top"
-msgstr "بالا"
+msgstr ""
 
 msgid "Bottom"
-msgstr "پایین"
+msgstr ""
 
 msgid "{{dynamicOuNames}} and {{lastOuName}}"
 msgstr ""
@@ -1234,16 +1234,16 @@ msgid "Not applicable"
 msgstr ""
 
 msgid "Data"
-msgstr "دیتا"
+msgstr ""
 
 msgid "Organisation unit"
-msgstr "واحد سازمان"
+msgstr ""
 
 msgid "Assigned Categories"
 msgstr ""
 
 msgid "Text"
-msgstr "متن"
+msgstr ""
 
 msgid "Long text"
 msgstr ""
@@ -1276,7 +1276,7 @@ msgid "Time"
 msgstr ""
 
 msgid "Unit interval"
-msgstr "فاصله واحد"
+msgstr ""
 
 msgid "Percentage"
 msgstr ""
@@ -1333,7 +1333,7 @@ msgid "Stacked bar"
 msgstr ""
 
 msgid "Column"
-msgstr "ستون"
+msgstr ""
 
 msgid "Year over year (column)"
 msgstr ""
@@ -1375,7 +1375,7 @@ msgid "{{seriesName}} (trend)"
 msgstr ""
 
 msgid "Trend"
-msgstr "محاسبه"
+msgstr ""
 
 msgid "No legend for this series"
 msgstr ""
@@ -1387,10 +1387,10 @@ msgid "Linear Regression"
 msgstr ""
 
 msgid "Target"
-msgstr "موخه"
+msgstr ""
 
 msgid "Base"
-msgstr "اساس"
+msgstr ""
 
 msgid "Axis {{axisId}}"
 msgstr ""
