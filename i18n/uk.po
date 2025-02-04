@@ -1,17 +1,17 @@
 # 
 # Translators:
 # Wanda <wanda@frontlineaids.org>, 2022
-# Viktor Varland <viktor@dhis2.org>, 2022
-# Nadiia <semchuk@aph.org.ua>, 2022
-# phil_dhis2, 2023
-# Éva Tamási, 2023
+# Viktor Varland <viktor@dhis2.org>, 2025
+# Nadiia <semchuk@aph.org.ua>, 2025
+# Philip Larsen Donnelly, 2025
+# Éva Tamási, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2023-07-06T08:30:33.216Z\n"
+"POT-Creation-Date: 2024-12-19T10:28:15.132Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Éva Tamási, 2023\n"
+"Last-Translator: Éva Tamási, 2025\n"
 "Language-Team: Ukrainian (https://app.transifex.com/hisp-uio/teams/100509/uk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -78,6 +78,12 @@ msgid "About this line list"
 msgstr ""
 
 msgid "About this visualization"
+msgstr ""
+
+msgid "About this event chart"
+msgstr ""
+
+msgid "About this event report"
 msgstr ""
 
 msgid "This app could not retrieve required data."
@@ -159,6 +165,9 @@ msgstr ""
 msgid "Data Type"
 msgstr ""
 
+msgid "Only {{dataType}} can be used in {{visType}}"
+msgstr ""
+
 msgid "All types"
 msgstr "Всі типи"
 
@@ -167,6 +176,150 @@ msgstr ""
 
 msgid "No data"
 msgstr "Немає даних"
+
+msgid "Expression description"
+msgstr ""
+
+msgid "Error loading value"
+msgstr ""
+
+msgid "None"
+msgstr "Немає"
+
+msgid "Data set(s)"
+msgstr ""
+
+msgid "Zero is significant"
+msgstr ""
+
+msgid "True"
+msgstr "True"
+
+msgid "False"
+msgstr "False"
+
+msgid "Value type"
+msgstr "Тип значення"
+
+msgid "Aggregation type"
+msgstr "Тип агрегації"
+
+msgid "Category combo"
+msgstr ""
+
+msgid "Option set"
+msgstr "Набір опцій"
+
+msgid "Group membership"
+msgstr ""
+
+msgid "Legend set(s)"
+msgstr ""
+
+msgid "Category option name"
+msgstr ""
+
+msgid "Category combo name"
+msgstr ""
+
+msgid "Categories name"
+msgstr ""
+
+msgid "Period type"
+msgstr ""
+
+msgid "Indicators"
+msgstr "Показники"
+
+msgid "Expiry days"
+msgstr ""
+
+msgid "Type"
+msgstr "Тип"
+
+msgid "Data element"
+msgstr "Елемент даних"
+
+msgid "Tracked entity attribute"
+msgstr "Атрибут об’єкту, що відстежується"
+
+msgid "Numerator description"
+msgstr "Опис числівника"
+
+msgid "Numerator expression"
+msgstr ""
+
+msgid "Denominator description"
+msgstr "Опис знаменника"
+
+msgid "Denominator expression"
+msgstr ""
+
+msgid "Annualized"
+msgstr "Розраховано на річній основі"
+
+msgid "Yes"
+msgstr "Так"
+
+msgid "No"
+msgstr "Ні"
+
+msgid "Indicator type"
+msgstr "Тип показника"
+
+msgid "Decimals in output"
+msgstr ""
+
+msgid "There was a problem loading information for this data item."
+msgstr ""
+
+msgid "Name"
+msgstr "Ім'я"
+
+msgid "Description"
+msgstr "Змалювання"
+
+msgid "Code"
+msgstr "Код"
+
+msgid "ID"
+msgstr "ID (ідентифікатор)"
+
+msgid "Last updated date"
+msgstr ""
+
+msgid "Created date"
+msgstr ""
+
+msgid "Created by"
+msgstr "Створено"
+
+msgid "Custom"
+msgstr "Налаштовуваний користувачем"
+
+msgid "Program"
+msgstr "Програма"
+
+msgid "Analytics type"
+msgstr ""
+
+msgid "Enrollment"
+msgstr "Реєстрація"
+
+msgid "Event"
+msgstr "Випадок"
+
+msgid "Analytics period boundaries"
+msgstr ""
+
+msgid "{{ offsetPeriodType }} × {{ offsetPeriods }}"
+msgstr ""
+
+msgid "Expression"
+msgstr "Вираз"
+
+msgid "Filter"
+msgstr "Фільтр"
 
 msgid "Search by data item name"
 msgstr ""
@@ -189,6 +342,9 @@ msgstr ""
 msgid "No program indicators found"
 msgstr ""
 
+msgid "No calculations found"
+msgstr ""
+
 msgid "No indicators found for \"{{- searchTerm}}\""
 msgstr ""
 
@@ -199,6 +355,9 @@ msgid "No event data items found for \"{{- searchTerm}}\""
 msgstr ""
 
 msgid "No program indicators found for \"{{- searchTerm}}\""
+msgstr ""
+
+msgid "No calculations found for \"{{- searchTerm}}\""
 msgstr ""
 
 msgid "Nothing found for \"{{- searchTerm}}\""
@@ -315,12 +474,6 @@ msgstr "Закрити"
 msgid "Rename {{fileType}}"
 msgstr ""
 
-msgid "Name"
-msgstr "Ім'я"
-
-msgid "Description"
-msgstr "Змалювання"
-
 msgid "Rename"
 msgstr "Перейменувати"
 
@@ -380,6 +533,10 @@ msgstr ""
 msgid "Write an interpretation"
 msgstr "Написати інтерпретацію"
 
+msgid ""
+"Other people viewing this interpretation in the future may see more data."
+msgstr ""
+
 msgid "Post interpretation"
 msgstr ""
 
@@ -405,11 +562,14 @@ msgstr "Прибрати вподобання"
 msgid "Like"
 msgstr "Вподобати"
 
-msgid "Share"
-msgstr "Поділитися"
-
 msgid "See interpretation"
 msgstr ""
+
+msgid "Open in app"
+msgstr ""
+
+msgid "Share"
+msgstr "Поділитися"
 
 msgid "Manage sharing"
 msgstr "Керування спільним доступом"
@@ -420,44 +580,8 @@ msgstr ""
 msgid "Enter interpretation text"
 msgstr ""
 
-msgid "Bold text"
-msgstr ""
-
-msgid "Italic text"
-msgstr ""
-
-msgid "Link to a URL"
-msgstr ""
-
-msgid "Mention a user"
-msgstr ""
-
-msgid "Add emoji"
-msgstr ""
-
-msgid "Preview"
-msgstr ""
-
-msgid "Back to write mode"
-msgstr ""
-
-msgid "Too many results. Try refining the search."
-msgstr ""
-
-msgid "Search for a user"
-msgstr ""
-
-msgid "Searching for \"{{- searchText}}\""
-msgstr ""
-
-msgid "No results found"
-msgstr "Результатів не знайдено"
-
 msgid "Not available offline"
 msgstr "Недоступно в автономному режимі"
-
-msgid "Created by"
-msgstr "Створено"
 
 msgid "Anyone"
 msgstr ""
@@ -479,9 +603,6 @@ msgstr "Створено"
 
 msgid "Last updated"
 msgstr "Останнє оновлення"
-
-msgid "Type"
-msgstr "Тип"
 
 msgid "Clear filters"
 msgstr "Очистити фільтри"
@@ -637,9 +758,6 @@ msgstr "Вибрати групу"
 msgid "Deselect all"
 msgstr "Скасувати вибір усіх"
 
-msgid "Period type"
-msgstr ""
-
 msgid "Year"
 msgstr "Рік"
 
@@ -649,13 +767,13 @@ msgstr ""
 msgid "Period"
 msgstr "Період"
 
+msgid "Selected Periods"
+msgstr ""
+
 msgid "Relative periods"
 msgstr "Відносні періоди"
 
 msgid "Fixed periods"
-msgstr ""
-
-msgid "Selected Periods"
 msgstr ""
 
 msgid "No periods selected"
@@ -865,6 +983,30 @@ msgstr ""
 msgid "Years"
 msgstr "Роки"
 
+msgid "Value: {{value}}"
+msgstr ""
+
+msgid "Bold text"
+msgstr ""
+
+msgid "Italic text"
+msgstr ""
+
+msgid "Link to a URL"
+msgstr ""
+
+msgid "Mention a user"
+msgstr ""
+
+msgid "Add emoji"
+msgstr ""
+
+msgid "Preview"
+msgstr ""
+
+msgid "Back to write mode"
+msgstr ""
+
 msgid "Interpretations and details"
 msgstr ""
 
@@ -895,14 +1037,23 @@ msgstr ""
 msgid "Retry"
 msgstr ""
 
+msgid "Too many results. Try refining the search."
+msgstr ""
+
+msgid "Search for a user"
+msgstr ""
+
+msgid "Searching for \"{{- searchText}}\""
+msgstr ""
+
+msgid "No results found"
+msgstr "Результатів не знайдено"
+
 msgid "Series"
 msgstr "Серія"
 
 msgid "Category"
 msgstr "Категорія"
-
-msgid "Filter"
-msgstr "Фільтр"
 
 msgid "Columns"
 msgstr ""
@@ -928,14 +1079,8 @@ msgstr "Фактичні звіти за часом"
 msgid "Expected reports"
 msgstr "Очікувані звіти"
 
-msgid "Program"
-msgstr "Програма"
-
 msgid "Select a program"
 msgstr ""
-
-msgid "Indicators"
-msgstr "Показники"
 
 msgid "Indicator group"
 msgstr "Група показників"
@@ -954,9 +1099,6 @@ msgstr ""
 
 msgid "Data element group"
 msgstr "Група елементів даних"
-
-msgid "Data element"
-msgstr "Елемент даних"
 
 msgid "No data element groups found"
 msgstr ""
@@ -1102,6 +1244,9 @@ msgstr ""
 msgid "{{thresholdFactor}} × Z-score high"
 msgstr ""
 
+msgid "Not applicable"
+msgstr ""
+
 msgid "Data"
 msgstr "Дані"
 
@@ -1109,6 +1254,81 @@ msgid "Organisation unit"
 msgstr "Організаційний підрозділ"
 
 msgid "Assigned Categories"
+msgstr ""
+
+msgid "Text"
+msgstr "Текст"
+
+msgid "Long text"
+msgstr "Довгий текст"
+
+msgid "Multi text"
+msgstr ""
+
+msgid "Letter"
+msgstr ""
+
+msgid "Phone number"
+msgstr "Номер телефону"
+
+msgid "Email"
+msgstr "Електронна пошта"
+
+msgid "Yes/No"
+msgstr "Так/Ні"
+
+msgid "Yes Only"
+msgstr "Лише Так"
+
+msgid "Date"
+msgstr "Дата"
+
+msgid "Date & Time"
+msgstr "Дата і час"
+
+msgid "Time"
+msgstr ""
+
+msgid "Unit interval"
+msgstr "Одиничний інтервал"
+
+msgid "Percentage"
+msgstr "Відсоток"
+
+msgid "Integer"
+msgstr "Ціле число"
+
+msgid "Positive Integer"
+msgstr "Додатне ціле число"
+
+msgid "Negative Integer"
+msgstr "Від'ємне ціле число"
+
+msgid "Positive or Zero Integer"
+msgstr "Додатне чи нульове ціле число"
+
+msgid "Tracker Associate"
+msgstr ""
+
+msgid "Username"
+msgstr "Ім'я користувача"
+
+msgid "Coordinate"
+msgstr "Координата"
+
+msgid "Reference"
+msgstr "Посилання"
+
+msgid "Age"
+msgstr ""
+
+msgid "URL"
+msgstr "URL-адреса"
+
+msgid "Image"
+msgstr ""
+
+msgid "GeoJSON"
 msgstr ""
 
 msgid "Pivot table"
@@ -1158,6 +1378,9 @@ msgstr "Точкова"
 
 msgid "Single value"
 msgstr "Одне значення"
+
+msgid "Outlier table"
+msgstr ""
 
 msgid "All charts"
 msgstr ""
