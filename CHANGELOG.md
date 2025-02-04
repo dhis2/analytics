@@ -1,3 +1,17 @@
+## [26.10.2](https://github.com/dhis2/analytics/compare/v26.10.1...v26.10.2) (2025-02-04)
+
+
+### Bug Fixes
+
+* pivot table crashes when setting hide empty columns ([#1747](https://github.com/dhis2/analytics/issues/1747)) ([f8c01cb](https://github.com/dhis2/analytics/commit/f8c01cb7d4077a5d15fa022e012c37d1a70eaa32))
+
+## [26.10.1](https://github.com/dhis2/analytics/compare/v26.10.0...v26.10.1) (2025-02-04)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([2dceb0e](https://github.com/dhis2/analytics/commit/2dceb0e56457258bde554dc420b9a40fb09cb725))
+
 # [26.10.0](https://github.com/dhis2/analytics/compare/v26.9.6...v26.10.0) (2025-01-09)
 
 

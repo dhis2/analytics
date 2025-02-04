@@ -2,17 +2,17 @@
 # Translators:
 # Valeriu Plesca <vplesca@gmail.com>, 2021
 # Wanda <wanda@frontlineaids.org>, 2022
-# Viktor Varland <viktor@dhis2.org>, 2022
 # Ulanbek Abakirov <ulans@mail.ru>, 2022
-# Philip Larsen Donnelly, 2023
-# Yury Rogachev <yury@dhis2.org>, 2024
+# Yury Rogachev <yury@dhis2.org>, 2025
+# Viktor Varland <viktor@dhis2.org>, 2025
+# Philip Larsen Donnelly, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2024-01-25T12:05:03.360Z\n"
+"POT-Creation-Date: 2024-12-19T10:28:15.132Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Yury Rogachev <yury@dhis2.org>, 2024\n"
+"Last-Translator: Philip Larsen Donnelly, 2025\n"
 "Language-Team: Russian (https://app.transifex.com/hisp-uio/teams/100509/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -79,6 +79,12 @@ msgid "About this line list"
 msgstr ""
 
 msgid "About this visualization"
+msgstr ""
+
+msgid "About this event chart"
+msgstr ""
+
+msgid "About this event report"
 msgstr ""
 
 msgid "This app could not retrieve required data."
@@ -171,6 +177,150 @@ msgstr "Разукрупнение"
 
 msgid "No data"
 msgstr "Нет данных"
+
+msgid "Expression description"
+msgstr "Описание выражения"
+
+msgid "Error loading value"
+msgstr ""
+
+msgid "None"
+msgstr "Никому"
+
+msgid "Data set(s)"
+msgstr ""
+
+msgid "Zero is significant"
+msgstr ""
+
+msgid "True"
+msgstr "Истина"
+
+msgid "False"
+msgstr "Ложь"
+
+msgid "Value type"
+msgstr "Тип значения"
+
+msgid "Aggregation type"
+msgstr "Тип агрегирования"
+
+msgid "Category combo"
+msgstr "Комбинация категорий"
+
+msgid "Option set"
+msgstr "Набор опций"
+
+msgid "Group membership"
+msgstr ""
+
+msgid "Legend set(s)"
+msgstr ""
+
+msgid "Category option name"
+msgstr ""
+
+msgid "Category combo name"
+msgstr ""
+
+msgid "Categories name"
+msgstr ""
+
+msgid "Period type"
+msgstr "Виды периода"
+
+msgid "Indicators"
+msgstr "Индикаторы"
+
+msgid "Expiry days"
+msgstr "Истекшие дни"
+
+msgid "Type"
+msgstr "Тип"
+
+msgid "Data element"
+msgstr "Элемент данных"
+
+msgid "Tracked entity attribute"
+msgstr "Атрибут отслеживаемого объекта"
+
+msgid "Numerator description"
+msgstr "Описание числителя"
+
+msgid "Numerator expression"
+msgstr ""
+
+msgid "Denominator description"
+msgstr "Описание знаменателя"
+
+msgid "Denominator expression"
+msgstr ""
+
+msgid "Annualized"
+msgstr "Среднегодовой"
+
+msgid "Yes"
+msgstr "Да"
+
+msgid "No"
+msgstr "Нет"
+
+msgid "Indicator type"
+msgstr "Тип индикатора"
+
+msgid "Decimals in output"
+msgstr ""
+
+msgid "There was a problem loading information for this data item."
+msgstr ""
+
+msgid "Name"
+msgstr "Название"
+
+msgid "Description"
+msgstr "Описание"
+
+msgid "Code"
+msgstr "Код"
+
+msgid "ID"
+msgstr "Ид"
+
+msgid "Last updated date"
+msgstr ""
+
+msgid "Created date"
+msgstr "Дата создания"
+
+msgid "Created by"
+msgstr "Создано"
+
+msgid "Custom"
+msgstr "Пользователь"
+
+msgid "Program"
+msgstr "Program"
+
+msgid "Analytics type"
+msgstr "Тип аналитики"
+
+msgid "Enrollment"
+msgstr "Регистрация"
+
+msgid "Event"
+msgstr "Событие"
+
+msgid "Analytics period boundaries"
+msgstr "Границы периода аналитики"
+
+msgid "{{ offsetPeriodType }} × {{ offsetPeriods }}"
+msgstr ""
+
+msgid "Expression"
+msgstr "Выражение"
+
+msgid "Filter"
+msgstr "Фильтр"
 
 msgid "Search by data item name"
 msgstr ""
@@ -325,12 +475,6 @@ msgstr "Закрыть"
 msgid "Rename {{fileType}}"
 msgstr ""
 
-msgid "Name"
-msgstr "Название"
-
-msgid "Description"
-msgstr "Описание"
-
 msgid "Rename"
 msgstr "Переименовать"
 
@@ -440,9 +584,6 @@ msgstr ""
 msgid "Not available offline"
 msgstr "Недоступно в автономном режиме"
 
-msgid "Created by"
-msgstr "Создано"
-
 msgid "Anyone"
 msgstr "Любой"
 
@@ -463,9 +604,6 @@ msgstr "Создано"
 
 msgid "Last updated"
 msgstr "Последнее обновление"
-
-msgid "Type"
-msgstr "Тип"
 
 msgid "Clear filters"
 msgstr ""
@@ -620,9 +758,6 @@ msgstr "Выберите группу"
 
 msgid "Deselect all"
 msgstr "Отменить выбор всего"
-
-msgid "Period type"
-msgstr "Виды периода"
 
 msgid "Year"
 msgstr "Год"
@@ -849,6 +984,9 @@ msgstr "Финансовые годы"
 msgid "Years"
 msgstr "Годы"
 
+msgid "Value: {{value}}"
+msgstr ""
+
 msgid "Bold text"
 msgstr ""
 
@@ -918,9 +1056,6 @@ msgstr "Ряды"
 msgid "Category"
 msgstr "Категория"
 
-msgid "Filter"
-msgstr "Фильтр"
-
 msgid "Columns"
 msgstr "Колонны"
 
@@ -945,14 +1080,8 @@ msgstr "Текущие отчеты по времени"
 msgid "Expected reports"
 msgstr "Ожидаемые отчеты"
 
-msgid "Program"
-msgstr "Program"
-
 msgid "Select a program"
 msgstr "Выбрать программу"
-
-msgid "Indicators"
-msgstr "Индикаторы"
 
 msgid "Indicator group"
 msgstr "Группа индикаторов"
@@ -971,9 +1100,6 @@ msgstr ""
 
 msgid "Data element group"
 msgstr "Группы элемента данных"
-
-msgid "Data element"
-msgstr "Элемент данных"
 
 msgid "No data element groups found"
 msgstr ""
@@ -1119,6 +1245,9 @@ msgstr ""
 msgid "{{thresholdFactor}} × Z-score high"
 msgstr ""
 
+msgid "Not applicable"
+msgstr ""
+
 msgid "Data"
 msgstr "Данные"
 
@@ -1127,6 +1256,81 @@ msgstr "Организационная единица"
 
 msgid "Assigned Categories"
 msgstr "Назначенные категории"
+
+msgid "Text"
+msgstr "Текст"
+
+msgid "Long text"
+msgstr "Длинный текст"
+
+msgid "Multi text"
+msgstr ""
+
+msgid "Letter"
+msgstr "Буква"
+
+msgid "Phone number"
+msgstr "Номер телефона"
+
+msgid "Email"
+msgstr "Адрес электронной почты"
+
+msgid "Yes/No"
+msgstr "Да/Нет"
+
+msgid "Yes Only"
+msgstr "Только Да"
+
+msgid "Date"
+msgstr "Дата"
+
+msgid "Date & Time"
+msgstr "Дата и время"
+
+msgid "Time"
+msgstr "Время"
+
+msgid "Unit interval"
+msgstr "Единичный интервал"
+
+msgid "Percentage"
+msgstr "Процент"
+
+msgid "Integer"
+msgstr "Целое число"
+
+msgid "Positive Integer"
+msgstr "Положительное целое число"
+
+msgid "Negative Integer"
+msgstr "Отрицательное целое число"
+
+msgid "Positive or Zero Integer"
+msgstr "Положительное целое число или ноль"
+
+msgid "Tracker Associate"
+msgstr "Ассоциирование отслеживания"
+
+msgid "Username"
+msgstr "Имя пользователя"
+
+msgid "Coordinate"
+msgstr "Координата"
+
+msgid "Reference"
+msgstr "Ссылка"
+
+msgid "Age"
+msgstr "Возраст"
+
+msgid "URL"
+msgstr "URL адрес"
+
+msgid "Image"
+msgstr "Изображение"
+
+msgid "GeoJSON"
+msgstr ""
 
 msgid "Pivot table"
 msgstr "Сводная таблица"
