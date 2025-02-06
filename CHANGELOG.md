@@ -1,3 +1,10 @@
+# [26.11.0](https://github.com/dhis2/analytics/compare/v26.10.2...v26.11.0) (2025-02-06)
+
+
+### Features
+
+* add flexibility to PeriodDimension and periods utils ([#1735](https://github.com/dhis2/analytics/issues/1735)) ([8ce7458](https://github.com/dhis2/analytics/commit/8ce7458c485c3fedb520fc7cde752ea65d157149))
+
 ## [26.10.2](https://github.com/dhis2/analytics/compare/v26.10.1...v26.10.2) (2025-02-04)
 
 
