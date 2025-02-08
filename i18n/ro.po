@@ -37,7 +37,7 @@ msgid "No description"
 msgstr ""
 
 msgid "Last updated {{time}}"
-msgstr ""
+msgstr "Ultima actualizare {{time}}"
 
 msgid "Created {{time}} by {{author}}"
 msgstr ""

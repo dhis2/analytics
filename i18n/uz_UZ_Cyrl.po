@@ -1,5 +1,6 @@
 # 
 # Translators:
+# Philip Larsen Donnelly, 2025
 # Khurshid Ibatov <Khurshid.Ibatov@tibbiysugurta.uz>, 2025
 # 
 msgid ""
@@ -37,7 +38,7 @@ msgid "No description"
 msgstr "Тавсиф йўқ"
 
 msgid "Last updated {{time}}"
-msgstr ""
+msgstr "Охирги марта янгиланган {{time}}"
 
 msgid "Created {{time}} by {{author}}"
 msgstr ""
@@ -419,7 +420,7 @@ msgid "Nothing found for {{- searchTerm}}"
 msgstr ""
 
 msgid "Delete {{fileType}}"
-msgstr ""
+msgstr "Ўчириб ташлаш {{fileType}}"
 
 msgid ""
 "This {{fileType}} and related interpretations will be deleted. Continue?"
@@ -465,7 +466,7 @@ msgid "Close"
 msgstr "Ёпиш"
 
 msgid "Rename {{fileType}}"
-msgstr ""
+msgstr "Қайта номлаш {{fileType}}"
 
 msgid "Rename"
 msgstr "Қайта номлашч"
@@ -474,7 +475,7 @@ msgid "{{- objectName}} (copy)"
 msgstr ""
 
 msgid "Save {{fileType}} as"
-msgstr ""
+msgstr "{{fileType}} ни сифатида сақлаш"
 
 msgid "event report"
 msgstr "ҳодиса/тадбир ҳисоботи"

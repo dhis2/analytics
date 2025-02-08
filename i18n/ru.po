@@ -2,17 +2,17 @@
 # Translators:
 # Valeriu Plesca <vplesca@gmail.com>, 2021
 # Wanda <wanda@frontlineaids.org>, 2022
-# Ulanbek Abakirov <ulans@mail.ru>, 2022
-# Yury Rogachev <yury@dhis2.org>, 2025
 # Viktor Varland <viktor@dhis2.org>, 2025
 # Philip Larsen Donnelly, 2025
+# Ulanbek Abakirov <ulans@mail.ru>, 2025
+# Yury Rogachev <yury@dhis2.org>, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2024-12-19T10:28:15.132Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Philip Larsen Donnelly, 2025\n"
+"Last-Translator: Yury Rogachev <yury@dhis2.org>, 2025\n"
 "Language-Team: Russian (https://app.transifex.com/hisp-uio/teams/100509/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -42,7 +42,7 @@ msgid "No description"
 msgstr "Нет описания"
 
 msgid "Last updated {{time}}"
-msgstr ""
+msgstr "Последнее обновление: {{time}}"
 
 msgid "Created {{time}} by {{author}}"
 msgstr ""
@@ -427,7 +427,7 @@ msgid "Nothing found for {{- searchTerm}}"
 msgstr ""
 
 msgid "Delete {{fileType}}"
-msgstr ""
+msgstr "Удалить {{fileType}}"
 
 msgid ""
 "This {{fileType}} and related interpretations will be deleted. Continue?"
@@ -473,7 +473,7 @@ msgid "Close"
 msgstr "Закрыть"
 
 msgid "Rename {{fileType}}"
-msgstr ""
+msgstr "Переименовать {{fileType}}"
 
 msgid "Rename"
 msgstr "Переименовать"
@@ -482,7 +482,7 @@ msgid "{{- objectName}} (copy)"
 msgstr ""
 
 msgid "Save {{fileType}} as"
-msgstr ""
+msgstr "Сохранить  {{fileType}}  как"
 
 msgid "event report"
 msgstr "Отчет случаев"

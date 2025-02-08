@@ -38,7 +38,7 @@ msgid "No description"
 msgstr "没有描述"
 
 msgid "Last updated {{time}}"
-msgstr ""
+msgstr "最近更新的{{time}}"
 
 msgid "Created {{time}} by {{author}}"
 msgstr ""
