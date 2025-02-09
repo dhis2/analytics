@@ -9,7 +9,6 @@
     "legend": {
         "showKey": false
     },
-    "publicAccess": "--------",
     "type": "PIVOT_TABLE",
     "hideEmptyColumns": false,
     "hideEmptyRows": false,
@@ -75,9 +74,7 @@
     "translations": [],
     "yearlySeries": [],
     "interpretations": [],
-    "userGroupAccesses": [],
     "subscribers": [],
-    "userAccesses": [],
     "favorites": [],
     "columns": [
         {
