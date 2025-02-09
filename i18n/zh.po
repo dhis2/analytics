@@ -177,16 +177,16 @@ msgid "Expression description"
 msgstr "表达式描述"
 
 msgid "Error loading value"
-msgstr ""
+msgstr "错误加载值"
 
 msgid "None"
 msgstr "没有"
 
 msgid "Data set(s)"
-msgstr ""
+msgstr "数据集"
 
 msgid "Zero is significant"
-msgstr ""
+msgstr "零具有重要意义"
 
 msgid "True"
 msgstr "真"
@@ -207,19 +207,19 @@ msgid "Option set"
 msgstr "值域选项集"
 
 msgid "Group membership"
-msgstr ""
+msgstr "小组成员"
 
 msgid "Legend set(s)"
-msgstr ""
+msgstr "图例集"
 
 msgid "Category option name"
-msgstr ""
+msgstr "类别选项名称"
 
 msgid "Category combo name"
-msgstr ""
+msgstr "类别组合名称"
 
 msgid "Categories name"
-msgstr ""
+msgstr "类别名称"
 
 msgid "Period type"
 msgstr "周期类型"
@@ -243,13 +243,13 @@ msgid "Numerator description"
 msgstr "描述"
 
 msgid "Numerator expression"
-msgstr ""
+msgstr "分母表达式"
 
 msgid "Denominator description"
 msgstr "分母描述"
 
 msgid "Denominator expression"
-msgstr ""
+msgstr "分母表达式"
 
 msgid "Annualized"
 msgstr "年度"
@@ -264,10 +264,10 @@ msgid "Indicator type"
 msgstr "指标类型"
 
 msgid "Decimals in output"
-msgstr ""
+msgstr "输出中的小数"
 
 msgid "There was a problem loading information for this data item."
-msgstr ""
+msgstr "该数据项的信息加载有问题。"
 
 msgid "Name"
 msgstr "名称"
@@ -282,7 +282,7 @@ msgid "ID"
 msgstr "Id"
 
 msgid "Last updated date"
-msgstr ""
+msgstr "最后更新日期"
 
 msgid "Created date"
 msgstr "创建日期"
@@ -309,7 +309,7 @@ msgid "Analytics period boundaries"
 msgstr "分析期间边界"
 
 msgid "{{ offsetPeriodType }} × {{ offsetPeriods }}"
-msgstr ""
+msgstr "{{ offsetPeriodType }} ×{{ offsetPeriods }}"
 
 msgid "Expression"
 msgstr "表达式"
@@ -1247,7 +1247,7 @@ msgid "Long text"
 msgstr "长文本"
 
 msgid "Multi text"
-msgstr ""
+msgstr "多种文本"
 
 msgid "Letter"
 msgstr "字符"

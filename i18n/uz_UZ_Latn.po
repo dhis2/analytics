@@ -419,7 +419,7 @@ msgid "Nothing found for {{- searchTerm}}"
 msgstr ""
 
 msgid "Delete {{fileType}}"
-msgstr ""
+msgstr "Oʼchirib tashlash {{fileType}}"
 
 msgid ""
 "This {{fileType}} and related interpretations will be deleted. Continue?"
@@ -465,7 +465,7 @@ msgid "Close"
 msgstr "Yopmoq"
 
 msgid "Rename {{fileType}}"
-msgstr ""
+msgstr "Qayta nomlash {{fileType}}"
 
 msgid "Rename"
 msgstr "Қайта номлаш"
@@ -474,7 +474,7 @@ msgid "{{- objectName}} (copy)"
 msgstr ""
 
 msgid "Save {{fileType}} as"
-msgstr ""
+msgstr "{{fileType}} ni sifatida saqlash"
 
 msgid "event report"
 msgstr "hodisa/tadbir hisoboti"

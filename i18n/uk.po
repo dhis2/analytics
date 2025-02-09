@@ -426,7 +426,7 @@ msgid "Nothing found for {{- searchTerm}}"
 msgstr ""
 
 msgid "Delete {{fileType}}"
-msgstr ""
+msgstr "Видалити {{fileType}}"
 
 msgid ""
 "This {{fileType}} and related interpretations will be deleted. Continue?"
@@ -472,7 +472,7 @@ msgid "Close"
 msgstr "Закрити"
 
 msgid "Rename {{fileType}}"
-msgstr ""
+msgstr "Перейменувати {{fileType}}"
 
 msgid "Rename"
 msgstr "Перейменувати"
@@ -481,7 +481,7 @@ msgid "{{- objectName}} (copy)"
 msgstr ""
 
 msgid "Save {{fileType}} as"
-msgstr ""
+msgstr "Зберегти {{fileType}} як"
 
 msgid "event report"
 msgstr "звіт про подію"
