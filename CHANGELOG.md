@@ -1,3 +1,31 @@
+## [26.11.1](https://github.com/dhis2/analytics/compare/v26.11.0...v26.11.1) (2025-02-09)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([f9e3843](https://github.com/dhis2/analytics/commit/f9e384370dad6d968156489f01de6dc468d764ac))
+
+# [26.11.0](https://github.com/dhis2/analytics/compare/v26.10.2...v26.11.0) (2025-02-06)
+
+
+### Features
+
+* add flexibility to PeriodDimension and periods utils ([#1735](https://github.com/dhis2/analytics/issues/1735)) ([8ce7458](https://github.com/dhis2/analytics/commit/8ce7458c485c3fedb520fc7cde752ea65d157149))
+
+## [26.10.2](https://github.com/dhis2/analytics/compare/v26.10.1...v26.10.2) (2025-02-04)
+
+
+### Bug Fixes
+
+* pivot table crashes when setting hide empty columns ([#1747](https://github.com/dhis2/analytics/issues/1747)) ([f8c01cb](https://github.com/dhis2/analytics/commit/f8c01cb7d4077a5d15fa022e012c37d1a70eaa32))
+
+## [26.10.1](https://github.com/dhis2/analytics/compare/v26.10.0...v26.10.1) (2025-02-04)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([2dceb0e](https://github.com/dhis2/analytics/commit/2dceb0e56457258bde554dc420b9a40fb09cb725))
+
 # [26.10.0](https://github.com/dhis2/analytics/compare/v26.9.6...v26.10.0) (2025-01-09)
 
 
