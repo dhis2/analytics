@@ -71,7 +71,7 @@ export const dataItemsQuery = {
         }
 
         return objectClean({
-            fields: `id,${nameProp}~rename(name),dimensionItemType,expression`,
+            fields: `id,${nameProp}~rename(name),dimensionItemType,expression,optionSetId`,
             order: `${nameProp}:asc`,
             filter: filters,
             paging: true,
