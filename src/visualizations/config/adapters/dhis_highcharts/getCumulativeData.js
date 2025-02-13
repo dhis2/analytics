@@ -2,22 +2,24 @@ import numberDecimals from 'd2-utilizr/lib/numberDecimals'
 import { isTwoCategoryChartType } from '../../../../modules/visTypes.js'
 import getTwoCategorySplitSerieData from './getTwoCategorySplitSerieData.js'
 
-function getDefaultCumulativeData(series) {
+export function getDefaultCumulativeData(series) {
     let decimals = 0
-    let cumulativeValues = []
+    let accData = []
 
     series.forEach((seriesObj) => {
-        cumulativeValues = seriesObj.data.reduce(
-            (accumulator, value, index) => {
-                decimals = Math.max(decimals, numberDecimals(value))
+        let accValue = null
 
-                if (index > 0) {
-                    value += accumulator[index - 1]
+        accData = seriesObj.data.reduce(
+            (accSeriesData, value) => {
+                if (value === null) {
+                    accSeriesData.push(value)
+                } else {
+                    decimals = Math.max(decimals, numberDecimals(value))
+                    accValue += value
+                    accSeriesData.push(accValue)
                 }
 
-                accumulator.push(value)
-
-                return accumulator
+                return accSeriesData
             },
             []
         )
@@ -25,7 +27,7 @@ function getDefaultCumulativeData(series) {
         // round values to the largest number of decimals found in the serie
         // this is to avoid the floating-point problems in JavaScript
         // the condition in the return statement is because sometimes value can be null
-        seriesObj.data = cumulativeValues.map((value) => {
+        seriesObj.data = accData.map((value) => {
             return value ? parseFloat(value.toFixed(decimals)) : value
         })
 
