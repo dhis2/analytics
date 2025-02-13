@@ -1,3 +1,10 @@
+# [26.12.0](https://github.com/dhis2/analytics/compare/v26.11.1...v26.12.0) (2025-02-13)
+
+
+### Features
+
+* implement dashboard plugin wrapper ([#1748](https://github.com/dhis2/analytics/issues/1748)) ([7487182](https://github.com/dhis2/analytics/commit/7487182fc606f52a9daca8ad15d09545e80eb12b))
+
 ## [26.11.1](https://github.com/dhis2/analytics/compare/v26.11.0...v26.11.1) (2025-02-09)
 
 

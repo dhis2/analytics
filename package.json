@@ -1,6 +1,6 @@
 {
     "name": "@dhis2/analytics",
-    "version": "26.11.1",
+    "version": "26.12.0",
     "main": "./build/cjs/index.js",
     "module": "./build/es/index.js",
     "exports": {
@@ -30,8 +30,8 @@
         "validate-push": "yarn test"
     },
     "devDependencies": {
-        "@dhis2/app-runtime": "^3.11.3",
-        "@dhis2/cli-app-scripts": "^11.7.4",
+        "@dhis2/app-runtime": "^3.13.2",
+        "@dhis2/cli-app-scripts": "^11.8.0",
         "@dhis2/cli-style": "^10.7.4",
         "@dhis2/d2-i18n": "^1.1.0",
         "@dhis2/ui": "^10.1.9",
