@@ -27,9 +27,9 @@ export function getDefaultCumulativeData(series) {
         // round values to the largest number of decimals found in the serie
         // this is to avoid the floating-point problems in JavaScript
         // the condition in the return statement is because sometimes value can be null
-        seriesObj.data = accData.map((value) => {
-            return value ? parseFloat(value.toFixed(decimals)) : value
-        })
+        seriesObj.data = accData.map((value) =>
+            value ? parseFloat(value.toFixed(decimals)) : value
+        )
 
         decimals = 0
     })
@@ -37,42 +37,43 @@ export function getDefaultCumulativeData(series) {
     return series
 }
 
-function getTwoCategoryCumulativeData(series) {
-    let decimals = 0
+export function getTwoCategoryCumulativeData(series) {
+    let accSeriesData
+    let decimals
 
     series
         .filter((seriesObj) => !seriesObj.custom.isTwoCategoryFakeSerie)
         .forEach((seriesObj) => {
-            const cumulativeValues = []
+            accSeriesData = []
+            decimals = 0
 
-            seriesObj.custom.data.forEach((groupObj) => {
-                const cumulativeGroupValues = []
+            seriesObj.custom.data.forEach((seriesDataByCategory) => {
+                const accSeriesDataByCategory = []
+                let accValue = null
 
-                groupObj.forEach((value, index) => {
-                    decimals = Math.max(decimals, numberDecimals(value))
-
-                    if (index > 0) {
-                        value += cumulativeGroupValues[index - 1]
+                seriesDataByCategory.forEach(value => {
+                    if (value === null) {
+                        accSeriesDataByCategory.push(value)
+                    } else {
+                        decimals = Math.max(decimals, numberDecimals(value))
+                        accValue += value
+                        accSeriesDataByCategory.push(accValue)
                     }
-
-                    cumulativeGroupValues.push(value)
                 })
 
-                cumulativeValues.push(cumulativeGroupValues)
+                accSeriesData.push(accSeriesDataByCategory)
             })
 
             // round values to the largest number of decimals found in the serie
             // this is to avoid the floating-point problems in JavaScript
             // the condition in the return statement is because sometimes value can be null
-            seriesObj.custom.data = cumulativeValues.map((groupObj) =>
-                groupObj.map((value) =>
+            seriesObj.custom.data = accSeriesData.map((seriesDataByCategory) =>
+                seriesDataByCategory.map((value) =>
                     value ? parseFloat(value.toFixed(decimals)) : value
                 )
             )
 
             seriesObj.data = getTwoCategorySplitSerieData(seriesObj.custom.data)
-
-            decimals = 0
         })
 
     return series
