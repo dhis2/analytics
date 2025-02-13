@@ -12,7 +12,6 @@ export const styles = css`
 
     .pagination-controls {
         width: 100%;
-        margin-top: ${spacers.dp12};
         display: flex;
         justify-content: flex-end;
     }
@@ -21,7 +20,6 @@ export const styles = css`
         display: flex;
         gap: ${spacers.dp4};
         align-items: center;
-        margin-bottom: ${spacers.dp8};
     }
 
     .search-field-container {
