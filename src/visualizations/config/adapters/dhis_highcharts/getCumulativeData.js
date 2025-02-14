@@ -9,20 +9,17 @@ export function getDefaultCumulativeData(series) {
     series.forEach((seriesObj) => {
         let accValue = null
 
-        accData = seriesObj.data.reduce(
-            (accSeriesData, value) => {
-                if (value === null) {
-                    accSeriesData.push(value)
-                } else {
-                    decimals = Math.max(decimals, numberDecimals(value))
-                    accValue += value
-                    accSeriesData.push(accValue)
-                }
+        accData = seriesObj.data.reduce((accSeriesData, value) => {
+            if (value === null) {
+                accSeriesData.push(value)
+            } else {
+                decimals = Math.max(decimals, numberDecimals(value))
+                accValue += value
+                accSeriesData.push(accValue)
+            }
 
-                return accSeriesData
-            },
-            []
-        )
+            return accSeriesData
+        }, [])
 
         // round values to the largest number of decimals found in the serie
         // this is to avoid the floating-point problems in JavaScript
@@ -51,7 +48,7 @@ export function getTwoCategoryCumulativeData(series) {
                 const accSeriesDataByCategory = []
                 let accValue = null
 
-                seriesDataByCategory.forEach(value => {
+                seriesDataByCategory.forEach((value) => {
                     if (value === null) {
                         accSeriesDataByCategory.push(value)
                     } else {
