@@ -3,11 +3,13 @@ import { isTwoCategoryChartType } from '../../../../modules/visTypes.js'
 import getTwoCategorySplitSerieData from './getTwoCategorySplitSerieData.js'
 
 export function getDefaultCumulativeData(series) {
-    let decimals = 0
-    let accData = []
+    let decimals
+    let accValue
+    let accData
 
     series.forEach((seriesObj) => {
-        let accValue = null
+        decimals = 0
+        accValue = null
 
         accData = seriesObj.data.reduce((accSeriesData, value) => {
             if (value === null) {
@@ -27,26 +29,26 @@ export function getDefaultCumulativeData(series) {
         seriesObj.data = accData.map((value) =>
             value ? parseFloat(value.toFixed(decimals)) : value
         )
-
-        decimals = 0
     })
 
     return series
 }
 
 export function getTwoCategoryCumulativeData(series) {
-    let accSeriesData
     let decimals
+    let accValue
+    let accSeriesData
+    let accSeriesDataByCategory
 
     series
         .filter((seriesObj) => !seriesObj.custom.isTwoCategoryFakeSerie)
         .forEach((seriesObj) => {
-            accSeriesData = []
             decimals = 0
+            accSeriesData = []
 
             seriesObj.custom.data.forEach((seriesDataByCategory) => {
-                const accSeriesDataByCategory = []
-                let accValue = null
+                accValue = null
+                accSeriesDataByCategory = []
 
                 seriesDataByCategory.forEach((value) => {
                     if (value === null) {
