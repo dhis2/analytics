@@ -1,12 +1,6 @@
-Implements [DHIS2-XXXX](https://dhis2.atlassian.net/browse/DHIS2-XXXX)
+Implements _Jira issue link_
 
-**Relates to https://github.com/dhis2/data-visualizer-app/pull/XXX**
-
----
-
-### Key features
-
-1. _feature_
+Relates to _App PR link(s)_
 
 ---
 
@@ -16,24 +10,9 @@ _text_
 
 ---
 
-### BREAKING CHANGE
-
-_reason_
-
----
-
 ### TODO
 
--   [ ] _task_
-
----
-
-### Known issues
-
--   [ ] _issue_
-
----
-
-### Screenshots
-
-_supporting text_
+- [ ] Tests added
+- [ ] PRs for all affected apps created
+- [ ] Storybook added
+- [ ] _todo_
