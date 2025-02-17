@@ -16,15 +16,12 @@ _text_
 
 ---
 
-### BREAKING CHANGE
-
-_reason_
-
----
-
 ### TODO
 
--   [ ] _task_
+-   [ ] Tests added
+-   [ ] PRs for all affected apps created
+-   [ ] Storybook added
+-   [ ] _todo_
 
 ---
 
