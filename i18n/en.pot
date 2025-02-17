@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2024-12-19T10:28:15.132Z\n"
-"PO-Revision-Date: 2024-12-19T10:28:15.132Z\n"
+"POT-Creation-Date: 2025-02-17T10:13:11.616Z\n"
+"PO-Revision-Date: 2025-02-17T10:13:11.616Z\n"
 
 msgid "view only"
 msgstr "view only"
@@ -153,21 +153,6 @@ msgstr ""
 msgid "Math operators"
 msgstr "Math operators"
 
-msgid "Data Type"
-msgstr "Data Type"
-
-msgid "Only {{dataType}} can be used in {{visType}}"
-msgstr "Only {{dataType}} can be used in {{visType}}"
-
-msgid "All types"
-msgstr "All types"
-
-msgid "Disaggregation"
-msgstr "Disaggregation"
-
-msgid "No data"
-msgstr "No data"
-
 msgid "Expression description"
 msgstr "Expression description"
 
@@ -312,14 +297,56 @@ msgstr "Expression"
 msgid "Filter"
 msgstr "Filter"
 
+msgid "All available options are already selected"
+msgstr "All available options are already selected"
+
+msgid "No available options for this item"
+msgstr "No available options for this item"
+
+msgid "Search by option name"
+msgstr "Search by option name"
+
+msgid "Back to all items"
+msgstr "Back to all items"
+
+msgid "Options"
+msgstr "Options"
+
+msgid "Selected items"
+msgstr "Selected items"
+
+msgid "Data Type"
+msgstr "Data Type"
+
+msgid "Only {{dataType}} can be used in {{visType}}"
+msgstr "Only {{dataType}} can be used in {{visType}}"
+
+msgid "All types"
+msgstr "All types"
+
+msgid "Disaggregation"
+msgstr "Disaggregation"
+
+msgid "No data"
+msgstr "No data"
+
 msgid "Search by data item name"
 msgstr "Search by data item name"
 
-msgid "No items selected"
-msgstr "No items selected"
-
 msgid "Selected Items"
 msgstr "Selected Items"
+
+msgid "Calculation"
+msgstr "Calculation"
+
+msgid "Metric type"
+msgstr "Metric type"
+
+msgid "All metrics"
+msgstr "All metrics"
+
+msgid "No items selected"
+msgstr "No items selected"
 
 msgid "No indicators found"
 msgstr "No indicators found"
@@ -353,15 +380,6 @@ msgstr "No calculations found for \"{{- searchTerm}}\""
 
 msgid "Nothing found for \"{{- searchTerm}}\""
 msgstr "Nothing found for \"{{- searchTerm}}\""
-
-msgid "Calculation"
-msgstr "Calculation"
-
-msgid "Metric type"
-msgstr "Metric type"
-
-msgid "All metrics"
-msgstr "All metrics"
 
 msgid "Move to {{axisName}}"
 msgstr "Move to {{axisName}}"
@@ -713,9 +731,6 @@ msgstr ""
 
 msgid "New line list"
 msgstr "New line list"
-
-msgid "Options"
-msgstr "Options"
 
 msgid "Hide"
 msgstr "Hide"
@@ -1142,6 +1157,9 @@ msgstr "Program indicator"
 
 msgid "Calculations"
 msgstr "Calculations"
+
+msgid "Option"
+msgstr "Option"
 
 msgid "Number"
 msgstr "Number"
