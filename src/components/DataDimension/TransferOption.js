@@ -1,9 +1,13 @@
-import { IconEdit16, IconInfo16 } from '@dhis2/ui'
+import { IconEdit16, IconInfo16, IconList16 } from '@dhis2/ui'
 import cx from 'classnames'
 import PropTypes from 'prop-types'
 import React from 'react'
 import i18n from '../../locales/index.js'
-import { DIMENSION_TYPE_EXPRESSION_DIMENSION_ITEM } from '../../modules/dataTypes.js'
+import {
+    DIMENSION_TYPE_EXPRESSION_DIMENSION_ITEM,
+    DIMENSION_TYPE_PROGRAM_ATTRIBUTE_OPTION,
+    DIMENSION_TYPE_PROGRAM_DATA_ELEMENT_OPTION,
+} from '../../modules/dataTypes.js'
 import styles from './styles/TransferOption.style.js'
 
 export const TransferOption = ({
@@ -19,6 +23,7 @@ export const TransferOption = ({
     dataItemType,
     dimensionType,
     dataTest,
+    optionSetId,
     itemsRef,
     showingInfo,
     onEditClick,
@@ -50,45 +55,59 @@ export const TransferOption = ({
                 <span className="icon">{icon}</span>
                 <span className="label">{label}</span>
                 {dataItemType === DIMENSION_TYPE_EXPRESSION_DIMENSION_ITEM &&
+                    // XXX check needed?!
                     onEditClick && (
-                        <div className="tag">
-                            <span
-                                className="edit"
-                                onClick={(e) => {
-                                    e.stopPropagation()
-                                    onEditClick()
-                                }}
-                                data-test={`${dataTest}-edit-calculation-button`}
-                            >
-                                <IconEdit16 />
-                                {i18n.t('Edit')}
-                            </span>
-                        </div>
+                        <span
+                            className="edit"
+                            onClick={(e) => {
+                                e.stopPropagation()
+                                onEditClick()
+                            }}
+                            data-test={`${dataTest}-edit-calculation-button`}
+                        >
+                            <IconEdit16 />
+                        </span>
                     )}
+                {optionSetId && (
+                    <span
+                        className="option-set-button"
+                        onClick={(e) => {
+                            e.stopPropagation()
+                            onEditClick()
+                        }}
+                        data-test={`${dataTest}-option-set-button`}
+                    >
+                        <IconList16 />
+                    </span>
                 )}
             </div>
             <div className={cx('group', 'nowrap', 'typeGroup')}>
                 <span className="type">{dimensionType}</span>
-                <span
-                    className={cx('info', {
-                        active: showingInfo,
-                    })}
-                    ref={(node) => {
-                        node
-                            ? itemsRef.current.set(value, node)
-                            : itemsRef.current.delete(value)
-                    }}
-                    // avoid moving items when toggling the info popover
-                    // sometimes a double click event is fired
-                    onDoubleClick={(e) => e.stopPropagation()}
-                    onClick={(e) => {
-                        e.stopPropagation()
-                        onInfoClick()
-                    }}
-                    data-test={`${dataTest}-info-button`}
-                >
-                    <IconInfo16 />
-                </span>
+                {![
+                    DIMENSION_TYPE_PROGRAM_ATTRIBUTE_OPTION,
+                    DIMENSION_TYPE_PROGRAM_DATA_ELEMENT_OPTION,
+                ].includes(dataItemType) && (
+                    <span
+                        className={cx('info', {
+                            active: showingInfo,
+                        })}
+                        ref={(node) => {
+                            node
+                                ? itemsRef.current.set(value, node)
+                                : itemsRef.current.delete(value)
+                        }}
+                        // avoid moving items when toggling the info popover
+                        // sometimes a double click event is fired
+                        onDoubleClick={(e) => e.stopPropagation()}
+                        onClick={(e) => {
+                            e.stopPropagation()
+                            onInfoClick()
+                        }}
+                        data-test={`${dataTest}-info-button`}
+                    >
+                        <IconInfo16 />
+                    </span>
+                )}
             </div>
 
             <style jsx>{styles}</style>
@@ -113,6 +132,7 @@ TransferOption.propTypes = {
     highlighted: PropTypes.bool,
     icon: PropTypes.node,
     itemsRef: PropTypes.object,
+    optionSetId: PropTypes.string,
     selected: PropTypes.bool,
     showingInfo: PropTypes.bool,
     onClick: PropTypes.func,

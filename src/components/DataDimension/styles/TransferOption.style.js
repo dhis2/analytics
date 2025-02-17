@@ -36,7 +36,7 @@ export default css`
 
     .typeGroup {
         display: inline-flex;
-        margin: 0;
+        margin: 6px 4px;
         align-self: stretch;
         align-items: center;
     }
@@ -71,24 +71,37 @@ export default css`
     }
 
     .edit,
-    .info {
-        height: 16px;
-        margin-top: 1px;
+    .info,
+    .option-set-button {
         margin-left: ${spacers.dp8};
         cursor: pointer;
         color: ${colors.grey600};
     }
 
+    .edit {
+        height: 16px;
+        line-height: 18px;
+        display: flex;
+        align-items: center;
+        gap: 2px;
+    }
+
     .info {
         margin: 0 0 0 ${spacers.dp4};
         height: 100%;
-        padding: 0 6px;
         display: flex;
         align-items: center;
     }
     .info.active {
         background-color: ${colors.grey300};
         color: ${colors.grey900};
+    }
+
+    .option-set-button {
+        border: 1px solid ${colors.grey300};
+        border-radius: 2px;
+        padding: 2px;
+        height: 20px;
     }
 
     .highlighted {
@@ -98,24 +111,21 @@ export default css`
         background: ${theme.secondary800};
     }
 
+    .highlighted .edit,
     .highlighted .label {
         color: ${colors.white};
     }
 
-    .highlighted .type {
-        color: ${theme.secondary050};
-    }
-
+    .highlighted .type,
     .highlighted .info {
         color: ${theme.secondary050};
     }
 
-    .highlighted :global(.icon path) {
+    .highlighted .type,
+    .highlighted :global(.icon path),
+    .highlighted :global(.edit path),
+    .highlighted :global(.option-set-button path) {
         fill: ${colors.teal050};
-    }
-
-    .highlighted .type {
-        color: ${colors.teal050};
     }
 
     .edit:hover,
@@ -124,12 +134,10 @@ export default css`
         border-radius: 0px;
     }
 
-    .highlighted .info.active {
-        background-color: ${theme.secondary900};
-    }
-
     .highlighted .edit:hover,
-    .highlighted .info:hover {
+    .highlighted .info:hover,
+    .highlighted .info.active,
+    .highlighted .option-set-button:hover {
         background-color: ${theme.secondary900};
     }
 `
