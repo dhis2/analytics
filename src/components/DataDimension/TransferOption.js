@@ -2,7 +2,6 @@ import { IconEdit16, IconInfo16, IconList16 } from '@dhis2/ui'
 import cx from 'classnames'
 import PropTypes from 'prop-types'
 import React from 'react'
-import i18n from '../../locales/index.js'
 import {
     DIMENSION_TYPE_EXPRESSION_DIMENSION_ITEM,
     DIMENSION_TYPE_PROGRAM_ATTRIBUTE_OPTION,
