@@ -4,6 +4,8 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import {
     DIMENSION_TYPE_EXPRESSION_DIMENSION_ITEM,
+    DIMENSION_TYPE_PROGRAM_ATTRIBUTE,
+    DIMENSION_TYPE_PROGRAM_DATA_ELEMENT,
     DIMENSION_TYPE_PROGRAM_ATTRIBUTE_OPTION,
     DIMENSION_TYPE_PROGRAM_DATA_ELEMENT_OPTION,
 } from '../../modules/dataTypes.js'
@@ -67,18 +69,22 @@ export const TransferOption = ({
                             <IconEdit16 />
                         </span>
                     )}
-                {optionSetId && (
-                    <span
-                        className="option-set-button"
-                        onClick={(e) => {
-                            e.stopPropagation()
-                            onEditClick()
-                        }}
-                        data-test={`${dataTest}-option-set-button`}
-                    >
-                        <IconList16 />
-                    </span>
-                )}
+                {[
+                    DIMENSION_TYPE_PROGRAM_ATTRIBUTE,
+                    DIMENSION_TYPE_PROGRAM_DATA_ELEMENT,
+                ].includes(dataItemType) &&
+                    optionSetId && (
+                        <span
+                            className="option-set-button"
+                            onClick={(e) => {
+                                e.stopPropagation()
+                                onEditClick()
+                            }}
+                            data-test={`${dataTest}-option-set-button`}
+                        >
+                            <IconList16 />
+                        </span>
+                    )}
             </div>
             <div className={cx('group', 'nowrap', 'typeGroup')}>
                 <span className="type">{dimensionType}</span>
