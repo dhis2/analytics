@@ -458,6 +458,7 @@ ItemSelector.propTypes = {
         PropTypes.exact({
             label: PropTypes.string.isRequired,
             value: PropTypes.string.isRequired,
+            access: PropTypes.object,
             isActive: PropTypes.bool,
             type: PropTypes.string,
             expression: PropTypes.string,
