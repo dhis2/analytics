@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2025-02-17T10:13:11.616Z\n"
-"PO-Revision-Date: 2025-02-17T10:13:11.616Z\n"
+"POT-Creation-Date: 2025-02-18T12:27:12.020Z\n"
+"PO-Revision-Date: 2025-02-18T12:27:12.020Z\n"
 
 msgid "view only"
 msgstr "view only"
@@ -432,9 +432,6 @@ msgstr "Nothing found in {{- dimensionTitle}}"
 
 msgid "Search"
 msgstr "Search"
-
-msgid "Nothing found for {{- searchTerm}}"
-msgstr "Nothing found for {{- searchTerm}}"
 
 msgid "Delete {{fileType}}"
 msgstr "Delete {{fileType}}"
