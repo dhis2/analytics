@@ -163,7 +163,6 @@ export const ItemOptionsSelector = ({
         return !item || item.isActive
     }
 
-    // TODO duplicated code in ItemSelector (move to DataDimension)
     return (
         <div className="transfer-container">
             <Transfer
@@ -209,12 +208,6 @@ export const ItemOptionsSelector = ({
                             {dataItemName}: {i18n.t('Options')}
                         </div>
                     </>
-                    //                    <LeftHeader
-                    //                        searchTerm={state.searchTerm}
-                    //                        setSearchTerm={setSearchTerm}
-                    //                        displayNameProp={displayNameProp}
-                    //                        dataTest={`${dataTest}-left-header`}
-                    //                    />
                 }
                 rightHeader={
                     <p className="rightHeader">{i18n.t('Selected items')}</p>
