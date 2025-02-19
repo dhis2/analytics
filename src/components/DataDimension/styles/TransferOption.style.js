@@ -129,7 +129,8 @@ export default css`
     }
 
     .edit:hover,
-    .info:hover {
+    .info:hover,
+    .option-set-button:hover {
         background-color: ${colors.grey200};
         border-radius: 0px;
     }
