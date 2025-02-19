@@ -265,6 +265,7 @@ const ItemSelector = ({
         setState((state) => ({ ...state, searchTerm }))
 
     const fetchItems = async (page) => {
+        console.log('jj fetchItems fn', { page, state })
         setState((state) => ({
             ...state,
             nextPage: page === 1 ? 1 : state.nextPage,
@@ -345,6 +346,7 @@ const ItemSelector = ({
     }
 
     useDidUpdateEffect(() => {
+        console.log('jj useDidUpdateEffect fetchItems 1')
         fetchItems(1)
     }, [debouncedSearchTerm, state.filter])
 
@@ -366,6 +368,7 @@ const ItemSelector = ({
         )
     }
     const onEndReached = () => {
+        console.log('jj onEndReached', state.nextPage)
         if (state.nextPage) {
             fetchItems(state.nextPage)
         }
