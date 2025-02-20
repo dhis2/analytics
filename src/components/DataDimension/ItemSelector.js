@@ -278,6 +278,7 @@ const ItemSelector = ({
             filter: state.filter,
             searchTerm: state.searchTerm,
         })
+        console.log('jj fetchItems result', result)
         const newOptions = []
         result.dimensionItems?.forEach((item) => {
             if (item.dimensionItemType === REPORTING_RATE) {
@@ -316,6 +317,10 @@ const ItemSelector = ({
                 })
             }
         })
+        console.log('jj now setState with newOptions', {
+            newOptions,
+            np: result.nextPage,
+        })
         setState((state) => ({
             ...state,
             loading: false,
@@ -341,6 +346,10 @@ const ItemSelector = ({
                 )
             )
         ) {
+            console.log(
+                'jj fetchItems in very special case with page',
+                result.nextPage
+            )
             fetchItems(result.nextPage)
         }
     }
@@ -394,6 +403,7 @@ const ItemSelector = ({
         setCurrentCalculation()
 
         // reload the list of options
+        console.log('jj onSaveCalc')
         fetchItems(1)
 
         if (isNew) {
@@ -415,6 +425,7 @@ const ItemSelector = ({
         setCurrentCalculation()
 
         // reload the list of options
+        console.log('jj onDeleteCalc')
         fetchItems(1)
 
         // unselect the deleted calculation
@@ -453,6 +464,8 @@ const ItemSelector = ({
                     dataType === DIMENSION_TYPE_DATA_ELEMENT ? TOTALS : null,
             },
         }))
+
+    console.log('jj render transfer component with state', state)
 
     return (
         <div className="transfer-container">
