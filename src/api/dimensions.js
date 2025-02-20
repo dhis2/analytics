@@ -77,17 +77,11 @@ export const dataItemsQuery = {
             if (
                 filter.dataType === DIMENSION_TYPE_PROGRAM_DATA_ELEMENT_OPTION
             ) {
-                // TODO enable when backend is ready
-                //filters.push(
-                //    `programDataElementId:eq:${filter.dataItemId}`
-                //)
+                filters.push(`programDataElementId:eq:${filter.dataItemId}`)
             } else if (
                 filter.dataType === DIMENSION_TYPE_PROGRAM_ATTRIBUTE_OPTION
             ) {
-                // TODO enable when backend is ready
-                //filters.push(
-                //    `programAttributeId:eq:${filter.dataItemId}`
-                //)
+                filters.push(`programAttributeId:eq:${filter.dataItemId}`)
             }
         }
 
