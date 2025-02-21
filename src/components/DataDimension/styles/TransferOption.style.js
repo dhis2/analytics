@@ -71,20 +71,34 @@ export default css`
     }
 
     .edit,
-    .info {
-        height: 16px;
-        margin-top: 1px;
+    .option-set-button {
+        display: flex;
+        align-items: center;
         margin-left: ${spacers.dp8};
         cursor: pointer;
         color: ${colors.grey600};
+        background-color: ${colors.white};
+        border: 1px solid ${colors.grey300};
+        border-radius: 3px;
+        padding: 0 2px;
+        height: 20px;
+    }
+
+    .option-set-button:hover,
+    .edit:hover {
+        background-color: ${colors.grey050};
+        border-color: #c7cbd0;
+        color: ${colors.grey900};
     }
 
     .info {
         margin: 0 0 0 ${spacers.dp4};
-        height: 100%;
         padding: 0 6px;
+        height: 100%;
         display: flex;
         align-items: center;
+        cursor: pointer;
+        color: ${colors.grey600};
     }
     .info.active {
         background-color: ${colors.grey300};
@@ -98,38 +112,38 @@ export default css`
         background: ${theme.secondary800};
     }
 
+    .highlighted .edit,
     .highlighted .label {
         color: ${colors.white};
     }
 
-    .highlighted .type {
-        color: ${theme.secondary050};
-    }
-
+    .highlighted .type,
     .highlighted .info {
         color: ${theme.secondary050};
     }
 
-    .highlighted :global(.icon path) {
-        fill: ${colors.teal050};
+    .highlighted .type,
+    .highlighted :global(.icon path),
+    .highlighted :global(.edit path),
+    .highlighted :global(.option-set-button path) {
+        fill: ${colors.secondary050};
     }
 
-    .highlighted .type {
-        color: ${colors.teal050};
-    }
-
-    .edit:hover,
     .info:hover {
         background-color: ${colors.grey200};
         border-radius: 0px;
     }
 
-    .highlighted .info.active {
-        background-color: ${theme.secondary900};
+    .highlighted .option-set-button,
+    .highlighted .edit {
+        background-color: transparent;
+        border-color: ${theme.secondary900};
     }
 
     .highlighted .edit:hover,
-    .highlighted .info:hover {
+    .highlighted .info:hover,
+    .highlighted .info.active,
+    .highlighted .option-set-button:hover {
         background-color: ${theme.secondary900};
     }
 `

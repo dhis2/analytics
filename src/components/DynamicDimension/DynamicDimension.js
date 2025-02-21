@@ -97,7 +97,7 @@ export const DynamicDimension = ({
             </Field>
             {!allIsSelected && (
                 <ItemSelector
-                    initialSelected={selectedItems.map((item) => ({
+                    selectedItems={selectedItems.map((item) => ({
                         value: item.id,
                         label: item.name,
                     }))}
