@@ -243,7 +243,7 @@ export const ItemOptionsSelector = ({
                         />
                     )
                 }}
-                dataTest={`${dataTest}-transfer`}
+                dataTest={`${dataTest}-option-view-mode-transfer`}
             />
             <style jsx>{styles}</style>
             <style jsx>{itemOptionSelectorStyles}</style>
