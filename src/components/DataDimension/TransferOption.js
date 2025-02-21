@@ -6,8 +6,6 @@ import {
     DIMENSION_TYPE_EXPRESSION_DIMENSION_ITEM,
     DIMENSION_TYPE_PROGRAM_ATTRIBUTE,
     DIMENSION_TYPE_PROGRAM_DATA_ELEMENT,
-    DIMENSION_TYPE_PROGRAM_ATTRIBUTE_OPTION,
-    DIMENSION_TYPE_PROGRAM_DATA_ELEMENT_OPTION,
 } from '../../modules/dataTypes.js'
 import styles from './styles/TransferOption.style.js'
 
@@ -88,31 +86,26 @@ export const TransferOption = ({
             </div>
             <div className={cx('group', 'nowrap', 'typeGroup')}>
                 <span className="type">{dimensionType}</span>
-                {![
-                    DIMENSION_TYPE_PROGRAM_ATTRIBUTE_OPTION,
-                    DIMENSION_TYPE_PROGRAM_DATA_ELEMENT_OPTION,
-                ].includes(dataItemType) && (
-                    <span
-                        className={cx('info', {
-                            active: showingInfo,
-                        })}
-                        ref={(node) => {
-                            node
-                                ? itemsRef.current.set(value, node)
-                                : itemsRef.current.delete(value)
-                        }}
-                        // avoid moving items when toggling the info popover
-                        // sometimes a double click event is fired
-                        onDoubleClick={(e) => e.stopPropagation()}
-                        onClick={(e) => {
-                            e.stopPropagation()
-                            onInfoClick()
-                        }}
-                        data-test={`${dataTest}-info-button`}
-                    >
-                        <IconInfo16 />
-                    </span>
-                )}
+                <span
+                    className={cx('info', {
+                        active: showingInfo,
+                    })}
+                    ref={(node) => {
+                        node
+                            ? itemsRef.current.set(value, node)
+                            : itemsRef.current.delete(value)
+                    }}
+                    // avoid moving items when toggling the info popover
+                    // sometimes a double click event is fired
+                    onDoubleClick={(e) => e.stopPropagation()}
+                    onClick={(e) => {
+                        e.stopPropagation()
+                        onInfoClick()
+                    }}
+                    data-test={`${dataTest}-info-button`}
+                >
+                    <IconInfo16 />
+                </span>
             </div>
 
             <style jsx>{styles}</style>
