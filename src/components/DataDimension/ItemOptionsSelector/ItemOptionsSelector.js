@@ -200,6 +200,7 @@ export const ItemOptionsSelector = ({
                                 onClick={onClose}
                                 icon={<IconArrowLeft16 />}
                                 small
+                                dataTest={`${dataTest}-option-set-back-button`}
                             >
                                 {i18n.t('Back to all items')}
                             </Button>
