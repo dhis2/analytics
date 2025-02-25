@@ -1,6 +1,7 @@
 import { useDataQuery } from '@dhis2/app-runtime'
 import PropTypes from 'prop-types'
 import React from 'react'
+import i18n from '../../../locales/index.js'
 import { getCommonFields, InfoTable } from './InfoTable.js'
 import styles from './styles/InfoPopover.style.js'
 
@@ -9,7 +10,9 @@ const optionQuery = {
         resource: 'options',
         id: ({ id }) => id,
         params: ({ displayNameProp }) => ({
-            fields: getCommonFields(displayNameProp),
+            fields: `${getCommonFields(
+                displayNameProp
+            )},optionSet[displayName]`,
         }),
     },
 }
@@ -26,7 +29,14 @@ export const OptionInfo = ({ type, id, displayNameProp }) => {
                 data={data?.option}
                 loading={loading}
                 error={error}
-            />
+            >
+                {data?.option.optionSet && (
+                    <tr>
+                        <th>{i18n.t('Option set')}</th>
+                        <td>{data.option.optionSet.displayName}</td>
+                    </tr>
+                )}
+            </InfoTable>
             <style jsx>{styles}</style>
         </>
     )
