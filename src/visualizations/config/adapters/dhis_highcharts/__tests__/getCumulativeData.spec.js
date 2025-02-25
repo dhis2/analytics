@@ -1,7 +1,5 @@
-import {
-    getDefaultCumulativeData,
-    getTwoCategoryCumulativeData,
-} from '../getCumulativeData.js'
+import { VIS_TYPE_COLUMN } from '../../../../../modules/visTypes.js'
+import getCumulativeData from '../getCumulativeData.js'
 
 const testData = [
     {
@@ -44,7 +42,7 @@ describe('getDefaultCumulativeData', () => {
     test('series get correct cumulative values', () => {
         testData.forEach((test) => {
             expect(
-                getDefaultCumulativeData(getDefaultSeries(test, 'data'))
+                getCumulativeData(getDefaultSeries(test, 'data'), {})
             ).toEqual(getDefaultSeries(test, 'accData'))
         })
     })
@@ -60,10 +58,15 @@ describe('getTwoCategoryCumulativeData', () => {
         },
     ]
 
+    const layout = {
+        type: VIS_TYPE_COLUMN,
+        rows: [{}, {}]
+    }
+
     test('series get correct cumulative values', () => {
         testData.forEach((test) => {
             expect(
-                getTwoCategoryCumulativeData(getTwoCategorySeries(test, 'data'))
+                getCumulativeData(getTwoCategorySeries(test, 'data'), layout)
             ).toEqual(getTwoCategorySeries(test, 'accData'))
         })
     })
