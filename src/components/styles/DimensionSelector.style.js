@@ -6,7 +6,8 @@ export default css`
         min-width: 800px;
     }
     .transfer-container.hidden {
-        display: none;
+        position: absolute;
+        visibility: hidden;
     }
     .filterContainer {
         display: flex;
