@@ -60,7 +60,7 @@ describe('getTwoCategoryCumulativeData', () => {
 
     const layout = {
         type: VIS_TYPE_COLUMN,
-        rows: [{}, {}]
+        rows: [{}, {}],
     }
 
     test('series get correct cumulative values', () => {
