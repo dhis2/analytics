@@ -117,16 +117,11 @@ export default css`
         color: ${colors.white};
     }
 
+    .highlighted .icon,
+    .highlighted .option-set-button,
     .highlighted .type,
     .highlighted .info {
         color: ${theme.secondary050};
-    }
-
-    .highlighted .type,
-    .highlighted :global(.icon path),
-    .highlighted :global(.edit path),
-    .highlighted :global(.option-set-button path) {
-        fill: ${colors.secondary050};
     }
 
     .info:hover {
