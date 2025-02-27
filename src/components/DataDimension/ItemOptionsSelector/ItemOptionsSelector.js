@@ -168,7 +168,16 @@ export const ItemOptionsSelector = ({
             <Transfer
                 onChange={({ selected }) => onChange(selected)}
                 selected={selectedItems.map((item) => item.value)}
-                options={[...state.options, ...selectedItems]}
+                options={[
+                    ...state.options,
+                    // remove items already in the options list
+                    ...selectedItems.filter(
+                        (selectedItem) =>
+                            !state.options?.find(
+                                (option) => option.value === selectedItem.value
+                            )
+                    ),
+                ]}
                 loading={state.loading}
                 loadingPicked={state.loading}
                 sourceEmptyPlaceholder={
@@ -176,9 +185,14 @@ export const ItemOptionsSelector = ({
                         loading={state.loading}
                         searchTerm={debouncedSearchTerm}
                         options={state.options}
-                        allItemsSelectedMessage={i18n.t(
-                            'All available options are already selected'
-                        )}
+                        allItemsSelectedMessage={
+                            state.options.length === selectedItems.length &&
+                            !state.nextPage
+                                ? i18n.t(
+                                      'All available options are already selected'
+                                  )
+                                : ''
+                        }
                         noItemsMessage={i18n.t(
                             'No available options for this item'
                         )}

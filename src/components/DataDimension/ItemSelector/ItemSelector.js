@@ -350,7 +350,16 @@ const ItemSelector = ({
             <Transfer
                 onChange={({ selected }) => onChange(selected)}
                 selected={selectedItems.map((item) => item.value)}
-                options={[...state.options, ...selectedItems]}
+                options={[
+                    ...state.options,
+                    // remove items already in the options list
+                    ...selectedItems.filter(
+                        (selectedItem) =>
+                            !state.options?.find(
+                                (option) => option.value === selectedItem.value
+                            )
+                    ),
+                ]}
                 loading={state.loading}
                 loadingPicked={state.loading}
                 sourceEmptyPlaceholder={
@@ -358,6 +367,14 @@ const ItemSelector = ({
                         loading={state.loading}
                         searchTerm={debouncedSearchTerm}
                         options={state.options}
+                        allItemsSelectedMessage={
+                            state.options.length === selectedItems.length &&
+                            !state.nextPage
+                                ? i18n.t(
+                                      'All available items are already selected'
+                                  )
+                                : ''
+                        }
                         noItemsMessage={noItemsMessage}
                         dataType={state.filter.dataType}
                         dataTest={`${dataTest}-empty-source`}

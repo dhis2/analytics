@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2025-02-24T10:59:13.262Z\n"
-"PO-Revision-Date: 2025-02-24T10:59:13.263Z\n"
+"POT-Creation-Date: 2025-02-27T14:06:17.569Z\n"
+"PO-Revision-Date: 2025-02-27T14:06:17.570Z\n"
 
 msgid "view only"
 msgstr "view only"
@@ -336,6 +336,9 @@ msgstr "Search by data item name"
 msgid "Selected Items"
 msgstr "Selected Items"
 
+msgid "All available items are already selected"
+msgstr "All available items are already selected"
+
 msgid "Calculation"
 msgstr "Calculation"
 
@@ -347,9 +350,6 @@ msgstr "All metrics"
 
 msgid "No items selected"
 msgstr "No items selected"
-
-msgid "All available items are already selected"
-msgstr "All available items are already selected"
 
 msgid "No indicators found"
 msgstr "No indicators found"

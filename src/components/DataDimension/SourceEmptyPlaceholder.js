@@ -21,10 +21,8 @@ export const SourceEmptyPlaceholder = ({
     dataTest,
 }) => {
     let message = ''
-    if (!loading && options.length && !searchTerm) {
-        message =
-            allItemsSelectedMessage ||
-            i18n.t('All available items are already selected')
+    if (allItemsSelectedMessage && !loading && options.length && !searchTerm) {
+        message = allItemsSelectedMessage
     } else if (!loading && !options.length && !searchTerm) {
         if (noItemsMessage) {
             message = noItemsMessage
