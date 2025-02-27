@@ -47,6 +47,7 @@ import {
     VIS_TYPE_AREA,
     VIS_TYPE_STACKED_AREA,
     VIS_TYPE_PIE,
+    VIS_TYPE_DONUT,
     VIS_TYPE_RADAR,
     VIS_TYPE_GAUGE,
     VIS_TYPE_YEAR_OVER_YEAR_LINE,
@@ -107,6 +108,10 @@ export const VisTypeIcon = ({ type, useSmall = false, ...props }) => {
             break
         }
         case VIS_TYPE_PIE: {
+            VisIcon = useSmall ? IconVisualizationPie16 : IconVisualizationPie24
+            break
+        }
+        case VIS_TYPE_DONUT: {
             VisIcon = useSmall ? IconVisualizationPie16 : IconVisualizationPie24
             break
         }

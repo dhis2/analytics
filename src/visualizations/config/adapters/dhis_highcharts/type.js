@@ -6,6 +6,7 @@ import {
     VIS_TYPE_AREA,
     VIS_TYPE_STACKED_AREA,
     VIS_TYPE_PIE,
+    VIS_TYPE_DONUT,
     VIS_TYPE_RADAR,
     VIS_TYPE_GAUGE,
     VIS_TYPE_COLUMN,
@@ -27,6 +28,7 @@ export default function (type) {
         case VIS_TYPE_STACKED_AREA:
             return { type: 'area' }
         case VIS_TYPE_PIE:
+        case VIS_TYPE_DONUT:
             return { type: 'pie' }
         case VIS_TYPE_RADAR:
             return { type: 'line', polar: true }

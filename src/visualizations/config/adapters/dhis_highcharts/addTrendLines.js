@@ -4,6 +4,7 @@ import i18n from '../../../../locales/index.js'
 import {
     VIS_TYPE_GAUGE,
     VIS_TYPE_PIE,
+    VIS_TYPE_DONUT,
     isTwoCategoryChartType,
 } from '../../../../modules/visTypes.js'
 import {
@@ -27,7 +28,7 @@ const DEFAULT_TRENDLINE = {
 }
 
 export const isRegressionIneligible = (type) =>
-    arrayContains([VIS_TYPE_GAUGE, VIS_TYPE_PIE], type)
+    arrayContains([VIS_TYPE_GAUGE, VIS_TYPE_PIE, VIS_TYPE_DONUT], type)
 
 export default function (layout, series, isStacked) {
     if (isTwoCategoryChartType(layout.type) && layout.rows.length > 1) {

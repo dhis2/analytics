@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2024-12-19T10:28:15.132Z\n"
-"PO-Revision-Date: 2024-12-19T10:28:15.132Z\n"
+"POT-Creation-Date: 2025-02-27T10:24:19.853Z\n"
+"PO-Revision-Date: 2025-02-27T10:24:19.854Z\n"
 
 msgid "view only"
 msgstr "view only"
@@ -1370,6 +1370,9 @@ msgstr "Year over year (line)"
 
 msgid "Pie"
 msgstr "Pie"
+
+msgid "Donut"
+msgstr "Donut"
 
 msgid "Radar"
 msgstr "Radar"
