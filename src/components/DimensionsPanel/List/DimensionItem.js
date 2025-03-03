@@ -51,13 +51,12 @@ class DimensionItem extends Component {
             onOptionsClick,
             innerRef,
             dataTest,
-            className,
             ...rest
         } = this.props
 
-        // if (id === 'l22lYYsT2pP') {
-        console.log('DimensionItem render with props', this.props)
-        // }
+        if (id === 'l22lYYsT2pP') {
+            console.log('jj DimensionItem render with props', this.props)
+        }
 
         const Icon = this.getDimensionIcon()
         const Label = this.getDimensionType()
@@ -101,14 +100,10 @@ class DimensionItem extends Component {
                     onMouseOver={this.onMouseOver}
                     onMouseLeave={this.onMouseExit}
                     ref={innerRef}
-                    className={cx(
-                        'item',
-                        {
-                            deactivated: isDeactivated,
-                            selected: isSelected && !isDeactivated,
-                        },
-                        className
-                    )}
+                    className={cx('item', {
+                        deactivated: isDeactivated,
+                        selected: isSelected && !isDeactivated,
+                    })}
                     data-test={dataTest}
                     onClick={onLabelClick}
                     {...rest}
@@ -155,7 +150,6 @@ DimensionItem.propTypes = {
     id: PropTypes.string.isRequired,
     isSelected: PropTypes.bool.isRequired, // XXX
     name: PropTypes.string.isRequired,
-    className: PropTypes.string,
     dataTest: PropTypes.string,
     innerRef: PropTypes.func,
     isDeactivated: PropTypes.bool,
