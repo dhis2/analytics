@@ -88,4 +88,8 @@ export default css`
     .item.selected .lockWrapper svg path {
         fill: ${colors.teal900};
     }
+    .dragging {
+        background-color: green;
+        border-color: orange;
+    }
 `
