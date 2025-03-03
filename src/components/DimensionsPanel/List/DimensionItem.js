@@ -55,9 +55,9 @@ class DimensionItem extends Component {
             ...rest
         } = this.props
 
-        if (id === 'l22lYYsT2pP') {
-            console.log('DimensionItem render with props', this.props)
-        }
+        // if (id === 'l22lYYsT2pP') {
+        console.log('DimensionItem render with props', this.props)
+        // }
 
         const Icon = this.getDimensionIcon()
         const Label = this.getDimensionType()
