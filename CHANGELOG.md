@@ -1,3 +1,10 @@
+## [26.12.3](https://github.com/dhis2/analytics/compare/v26.12.2...v26.12.3) (2025-03-04)
+
+
+### Bug Fixes
+
+* **dimensions-panel:** prevent movement of content in dimension item on hover [DHIS2-19046] ([#1762](https://github.com/dhis2/analytics/issues/1762)) ([e47b168](https://github.com/dhis2/analytics/commit/e47b168a7d1b33c8b1ac2e826ffe857dd1d11eb0))
+
 ## [26.12.2](https://github.com/dhis2/analytics/compare/v26.12.1...v26.12.2) (2025-02-25)
 
 
