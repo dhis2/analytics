@@ -2,13 +2,13 @@ import { useDataEngine } from '@dhis2/app-runtime'
 import { SingleSelectField, SingleSelectOption } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useEffect, useState } from 'react'
-import { apiFetchGroups } from '../../api/dimensions.js'
-import i18n from '../../locales/index.js'
+import { apiFetchGroups } from '../../../api/dimensions.js'
+import i18n from '../../../locales/index.js'
 import {
     dataTypeMap as dataTypes,
     SUB_GROUP_DETAIL,
     SUB_GROUP_METRIC,
-} from '../../modules/dataTypes.js'
+} from '../../../modules/dataTypes.js'
 import { DetailSelector } from './DetailSelector.js'
 import { MetricSelector } from './MetricSelector.js'
 import styles from './styles/GroupSelector.style.js'
