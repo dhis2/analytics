@@ -7,6 +7,7 @@ export default css`
         background-color: transparent;
         fill: ${colors.grey800};
         display: flex;
+        gap: 4px;
         outline: none;
         justify-content: space-between;
         padding: 0 0 0 4px;
@@ -28,12 +29,13 @@ export default css`
     }
     .labelWrapper {
         display: flex;
-        align-items: center;
+        padding: 2px 0;
     }
     .labelText {
         font-size: 13px;
         line-height: 15px;
         margin-top: 1px;
+        align-self: center;
     }
 
     .iconWrapper {
@@ -63,7 +65,8 @@ export default css`
 
     .optionsWrapper {
         width: 20px;
-        height: 20px;
+        flex-shrink: 0;
+        align-self: stretch;
     }
 
     .lockWrapper svg path {
@@ -72,7 +75,7 @@ export default css`
 
     .lockWrapper {
         background: ${colors.grey300};
-        height: 20px;
+        align-self: stretch;
         padding: 0 2px 0 3px;
         display: flex;
         align-items: center;
