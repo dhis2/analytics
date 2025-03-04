@@ -31,6 +31,7 @@ export const VIS_TYPE_LINE = 'LINE'
 export const VIS_TYPE_LINE_LIST = 'LINE_LIST'
 export const VIS_TYPE_YEAR_OVER_YEAR_LINE = 'YEAR_OVER_YEAR_LINE'
 export const VIS_TYPE_PIE = 'PIE'
+export const VIS_TYPE_DONUT = 'DONUT'
 export const VIS_TYPE_RADAR = 'RADAR'
 export const VIS_TYPE_SCATTER = 'SCATTER'
 export const VIS_TYPE_SINGLE_VALUE = 'SINGLE_VALUE'
@@ -53,6 +54,7 @@ export const visTypeDisplayNames = {
     [VIS_TYPE_LINE_LIST]: i18n.t('Line list'),
     [VIS_TYPE_YEAR_OVER_YEAR_LINE]: i18n.t('Year over year (line)'),
     [VIS_TYPE_PIE]: i18n.t('Pie'),
+    [VIS_TYPE_DONUT]: i18n.t('Donut'),
     [VIS_TYPE_RADAR]: i18n.t('Radar'),
     [VIS_TYPE_SCATTER]: i18n.t('Scatter'),
     [VIS_TYPE_SINGLE_VALUE]: i18n.t('Single value'),
@@ -75,6 +77,7 @@ export const visTypeIcons = {
     [VIS_TYPE_LINE_LIST]: IconVisualizationLinelist24,
     [VIS_TYPE_YEAR_OVER_YEAR_LINE]: IconVisualizationLineMulti24,
     [VIS_TYPE_PIE]: IconVisualizationPie24,
+    [VIS_TYPE_DONUT]: IconVisualizationPie24,
     [VIS_TYPE_RADAR]: IconVisualizationRadar24,
     [VIS_TYPE_SCATTER]: IconVisualizationScatter24,
     [VIS_TYPE_SINGLE_VALUE]: IconVisualizationSingleValue24,

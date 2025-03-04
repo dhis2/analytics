@@ -4,6 +4,7 @@ import {
     VIS_TYPE_YEAR_OVER_YEAR_COLUMN,
     VIS_TYPE_YEAR_OVER_YEAR_LINE,
     VIS_TYPE_PIE,
+    VIS_TYPE_DONUT,
     VIS_TYPE_GAUGE,
     isTwoCategoryChartType,
     VIS_TYPE_SINGLE_VALUE,
@@ -98,6 +99,7 @@ function getSeriesFunction(type, categoryIds) {
         case VIS_TYPE_SINGLE_VALUE:
             return getSingleValue
         case VIS_TYPE_PIE:
+        case VIS_TYPE_DONUT:
             return getPie
         case VIS_TYPE_GAUGE:
             return getGauge
