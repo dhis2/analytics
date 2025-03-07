@@ -1,3 +1,59 @@
+## [26.12.3](https://github.com/dhis2/analytics/compare/v26.12.2...v26.12.3) (2025-03-04)
+
+
+### Bug Fixes
+
+* **dimensions-panel:** prevent movement of content in dimension item on hover [DHIS2-19046] ([#1762](https://github.com/dhis2/analytics/issues/1762)) ([e47b168](https://github.com/dhis2/analytics/commit/e47b168a7d1b33c8b1ac2e826ffe857dd1d11eb0))
+
+## [26.12.2](https://github.com/dhis2/analytics/compare/v26.12.1...v26.12.2) (2025-02-25)
+
+
+### Bug Fixes
+
+* allow blank cumulative values (DHIS2-18976) ([#1760](https://github.com/dhis2/analytics/issues/1760)) ([1fec4a3](https://github.com/dhis2/analytics/commit/1fec4a37397a92354cbdf540ea0bfc699f2c1a2b))
+
+## [26.12.1](https://github.com/dhis2/analytics/compare/v26.12.0...v26.12.1) (2025-02-23)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([c3f8731](https://github.com/dhis2/analytics/commit/c3f873109fa63e36e469f55f15cb1a9640a2ab43))
+
+# [26.12.0](https://github.com/dhis2/analytics/compare/v26.11.1...v26.12.0) (2025-02-13)
+
+
+### Features
+
+* implement dashboard plugin wrapper ([#1748](https://github.com/dhis2/analytics/issues/1748)) ([7487182](https://github.com/dhis2/analytics/commit/7487182fc606f52a9daca8ad15d09545e80eb12b))
+
+## [26.11.1](https://github.com/dhis2/analytics/compare/v26.11.0...v26.11.1) (2025-02-09)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([f9e3843](https://github.com/dhis2/analytics/commit/f9e384370dad6d968156489f01de6dc468d764ac))
+
+# [26.11.0](https://github.com/dhis2/analytics/compare/v26.10.2...v26.11.0) (2025-02-06)
+
+
+### Features
+
+* add flexibility to PeriodDimension and periods utils ([#1735](https://github.com/dhis2/analytics/issues/1735)) ([8ce7458](https://github.com/dhis2/analytics/commit/8ce7458c485c3fedb520fc7cde752ea65d157149))
+
+## [26.10.2](https://github.com/dhis2/analytics/compare/v26.10.1...v26.10.2) (2025-02-04)
+
+
+### Bug Fixes
+
+* pivot table crashes when setting hide empty columns ([#1747](https://github.com/dhis2/analytics/issues/1747)) ([f8c01cb](https://github.com/dhis2/analytics/commit/f8c01cb7d4077a5d15fa022e012c37d1a70eaa32))
+
+## [26.10.1](https://github.com/dhis2/analytics/compare/v26.10.0...v26.10.1) (2025-02-04)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([2dceb0e](https://github.com/dhis2/analytics/commit/2dceb0e56457258bde554dc420b9a40fb09cb725))
+
 # [26.10.0](https://github.com/dhis2/analytics/compare/v26.9.6...v26.10.0) (2025-01-09)
 
 

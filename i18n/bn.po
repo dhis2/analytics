@@ -1,21 +1,19 @@
 # 
 # Translators:
 # Viktor Varland <viktor@dhis2.org>, 2025
-# channara rin, 2025
-# Philip Larsen Donnelly, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2024-12-19T10:28:15.132Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Philip Larsen Donnelly, 2025\n"
-"Language-Team: Khmer (https://app.transifex.com/hisp-uio/teams/100509/km/)\n"
+"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2025\n"
+"Language-Team: Bengali (https://app.transifex.com/hisp-uio/teams/100509/bn/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: km\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Language: bn\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "view only"
 msgstr ""
@@ -50,6 +48,7 @@ msgstr ""
 msgid "Viewed {{count}} times"
 msgid_plural "Viewed {{count}} times"
 msgstr[0] ""
+msgstr[1] ""
 
 msgid "Notifications"
 msgstr ""
@@ -109,7 +108,7 @@ msgid "Delete calculation"
 msgstr ""
 
 msgid "Cancel"
-msgstr "បោះបង់"
+msgstr ""
 
 msgid "The calculation can only be saved with a valid formula"
 msgstr ""
@@ -135,10 +134,10 @@ msgid "Details only"
 msgstr ""
 
 msgid "Loading"
-msgstr "Loading"
+msgstr ""
 
 msgid "Data elements"
-msgstr "Data elements"
+msgstr ""
 
 msgid "Search by data element name"
 msgstr ""
@@ -179,7 +178,7 @@ msgid "Error loading value"
 msgstr ""
 
 msgid "None"
-msgstr "គ្មាន"
+msgstr ""
 
 msgid "Data set(s)"
 msgstr ""
@@ -194,7 +193,7 @@ msgid "False"
 msgstr ""
 
 msgid "Value type"
-msgstr "Value Type"
+msgstr ""
 
 msgid "Aggregation type"
 msgstr ""
@@ -221,10 +220,10 @@ msgid "Categories name"
 msgstr ""
 
 msgid "Period type"
-msgstr "Period type"
+msgstr ""
 
 msgid "Indicators"
-msgstr "Indicators"
+msgstr ""
 
 msgid "Expiry days"
 msgstr ""
@@ -233,19 +232,19 @@ msgid "Type"
 msgstr ""
 
 msgid "Data element"
-msgstr "ទិន្នន័យធាតុដើម"
+msgstr ""
 
 msgid "Tracked entity attribute"
 msgstr ""
 
 msgid "Numerator description"
-msgstr "ការពិណ៍នាភាគយក"
+msgstr ""
 
 msgid "Numerator expression"
 msgstr ""
 
 msgid "Denominator description"
-msgstr "ការពិណ៍នាភាគបែង"
+msgstr ""
 
 msgid "Denominator expression"
 msgstr ""
@@ -254,10 +253,10 @@ msgid "Annualized"
 msgstr ""
 
 msgid "Yes"
-msgstr "បាទ/ចាស"
+msgstr "হ্যাঁ"
 
 msgid "No"
-msgstr "ទេ"
+msgstr "না"
 
 msgid "Indicator type"
 msgstr ""
@@ -269,16 +268,16 @@ msgid "There was a problem loading information for this data item."
 msgstr ""
 
 msgid "Name"
-msgstr "ឈ្មោះ"
+msgstr ""
 
 msgid "Description"
-msgstr "ការ​ពិពណ៌នា"
+msgstr ""
 
 msgid "Code"
 msgstr ""
 
 msgid "ID"
-msgstr "​លេខ​សម្គាល់"
+msgstr ""
 
 msgid "Last updated date"
 msgstr ""
@@ -293,13 +292,13 @@ msgid "Custom"
 msgstr ""
 
 msgid "Program"
-msgstr ""
+msgstr "প্রোগ্রাম"
 
 msgid "Analytics type"
 msgstr ""
 
 msgid "Enrollment"
-msgstr ""
+msgstr "নিবন্ধন"
 
 msgid "Event"
 msgstr ""
@@ -311,7 +310,7 @@ msgid "{{ offsetPeriodType }} × {{ offsetPeriods }}"
 msgstr ""
 
 msgid "Expression"
-msgstr "កន្សោមប្រមាណវិធី"
+msgstr ""
 
 msgid "Filter"
 msgstr ""
@@ -383,7 +382,7 @@ msgid "Add Assigned Categories"
 msgstr ""
 
 msgid "Remove"
-msgstr "យកចេញ"
+msgstr ""
 
 msgid "Filter dimensions"
 msgstr ""
@@ -415,7 +414,7 @@ msgid "Nothing found in {{- dimensionTitle}}"
 msgstr ""
 
 msgid "Search"
-msgstr "ស្វែងរក"
+msgstr ""
 
 msgid "Nothing found for {{- searchTerm}}"
 msgstr ""
@@ -428,19 +427,19 @@ msgid ""
 msgstr ""
 
 msgid "Delete"
-msgstr "​លុប​"
+msgstr ""
 
 msgid "File"
 msgstr ""
 
 msgid "New"
-msgstr "ថ្មី"
+msgstr ""
 
 msgid "Open…"
 msgstr ""
 
 msgid "Save"
-msgstr "រក្សាទុក​"
+msgstr ""
 
 msgid "Save…"
 msgstr ""
@@ -464,13 +463,13 @@ msgid "Open in this app"
 msgstr ""
 
 msgid "Close"
-msgstr "បិទ"
+msgstr ""
 
 msgid "Rename {{fileType}}"
 msgstr ""
 
 msgid "Rename"
-msgstr "ប្ដូរ​ឈ្មោះ"
+msgstr ""
 
 msgid "{{- objectName}} (copy)"
 msgstr ""
@@ -491,7 +490,7 @@ msgid "visualization"
 msgstr ""
 
 msgid "Edit"
-msgstr "កែសម្រួល​"
+msgstr ""
 
 msgid "Write a reply"
 msgstr ""
@@ -509,7 +508,7 @@ msgid "Enter comment text"
 msgstr ""
 
 msgid "Update"
-msgstr "ធ្វើ​បច្ចុប្បន្នភាព"
+msgstr ""
 
 msgid "Viewing interpretation: {{- visualisationName}}"
 msgstr ""
@@ -536,14 +535,15 @@ msgid "Post interpretation"
 msgstr ""
 
 msgid "Interpretations"
-msgstr "កន្លែងសន្ទនារ"
+msgstr ""
 
 msgid "Reply"
-msgstr "ឆ្លើយតប"
+msgstr ""
 
 msgid "{{count}} replies"
 msgid_plural "{{count}} replies"
 msgstr[0] ""
+msgstr[1] ""
 
 msgid "View replies"
 msgstr ""
@@ -561,7 +561,7 @@ msgid "Open in app"
 msgstr ""
 
 msgid "Share"
-msgstr "ចែករំលែក"
+msgstr ""
 
 msgid "Manage sharing"
 msgstr ""
@@ -594,16 +594,16 @@ msgid "Created"
 msgstr ""
 
 msgid "Last updated"
-msgstr "បាន​ធ្វើ​បច្ចុប្បន្នភាព​ចុងក្រោយ"
+msgstr ""
 
 msgid "Clear filters"
-msgstr "លុបចោលការច្រោះមើលទិន្នន័យ"
+msgstr ""
 
 msgid "{{firstItemIndex}}-{{lastItemIndex}} of {{totalNumberOfItems}}"
 msgstr ""
 
 msgid "Open"
-msgstr "បើក"
+msgstr ""
 
 msgid "Couldn't load items"
 msgstr ""
@@ -708,14 +708,17 @@ msgstr ""
 msgid "{{count}} org units"
 msgid_plural "{{count}} org units"
 msgstr[0] ""
+msgstr[1] ""
 
 msgid "{{count}} levels"
 msgid_plural "{{count}} levels"
 msgstr[0] ""
+msgstr[1] ""
 
 msgid "{{count}} groups"
 msgid_plural "{{count}} groups"
 msgstr[0] ""
+msgstr[1] ""
 
 msgid "Selected: {{commaSeparatedListOfOrganisationUnits}}"
 msgstr ""
@@ -742,13 +745,13 @@ msgid "Deselect all"
 msgstr ""
 
 msgid "Year"
-msgstr "ឆ្នាំ"
+msgstr ""
 
 msgid "Select year"
 msgstr ""
 
 msgid "Period"
-msgstr "កំឡុងពេល"
+msgstr ""
 
 msgid "Selected Periods"
 msgstr ""
@@ -763,10 +766,10 @@ msgid "No periods selected"
 msgstr ""
 
 msgid "Daily"
-msgstr "រាល់​ថ្ងៃ"
+msgstr ""
 
 msgid "Weekly"
-msgstr "រាល់​សប្ដាហ៍"
+msgstr ""
 
 msgid "Weekly (Start Wednesday)"
 msgstr ""
@@ -784,22 +787,22 @@ msgid "Bi-weekly"
 msgstr ""
 
 msgid "Monthly"
-msgstr "រាល់​ខែ"
+msgstr ""
 
 msgid "Bi-monthly"
-msgstr "រាល់ពីរសប្តាហ៍"
+msgstr ""
 
 msgid "Quarterly"
-msgstr "រាល់ត្រីមាស"
+msgstr ""
 
 msgid "Six-monthly"
-msgstr "រាល់ឆមាស"
+msgstr ""
 
 msgid "Six-monthly April"
-msgstr "ប្រចាំឆមាស​ពីខែមេសា"
+msgstr ""
 
 msgid "Yearly"
-msgstr "ប្រចាំឆ្នាំ"
+msgstr ""
 
 msgid "Financial year (Start November)"
 msgstr ""
@@ -817,7 +820,7 @@ msgid "Today"
 msgstr ""
 
 msgid "Yesterday"
-msgstr "កាលពីម្សិលមិញ"
+msgstr ""
 
 msgid "Last 3 days"
 msgstr ""
@@ -940,16 +943,16 @@ msgid "Last 10 years"
 msgstr ""
 
 msgid "Days"
-msgstr "ថ្ងៃ"
+msgstr ""
 
 msgid "Weeks"
-msgstr "សប្ដាហ៏"
+msgstr ""
 
 msgid "Bi-weeks"
 msgstr ""
 
 msgid "Months"
-msgstr "ខែ"
+msgstr ""
 
 msgid "Bi-months"
 msgstr ""
@@ -964,7 +967,7 @@ msgid "Financial Years"
 msgstr ""
 
 msgid "Years"
-msgstr "ឆ្នាំ"
+msgstr ""
 
 msgid "Value: {{value}}"
 msgstr ""
@@ -1030,7 +1033,7 @@ msgid "Searching for \"{{- searchText}}\""
 msgstr ""
 
 msgid "No results found"
-msgstr "មិនមានលទ្ធផលបង្ហាញ"
+msgstr ""
 
 msgid "Series"
 msgstr ""
@@ -1066,13 +1069,13 @@ msgid "Select a program"
 msgstr ""
 
 msgid "Indicator group"
-msgstr "Indicator group"
+msgstr ""
 
 msgid "All groups"
 msgstr ""
 
 msgid "Indicator"
-msgstr "សួចនាករ"
+msgstr ""
 
 msgid "No indicator groups found"
 msgstr ""
@@ -1093,7 +1096,7 @@ msgid "Data sets"
 msgstr ""
 
 msgid "Data set"
-msgstr "Data set"
+msgstr ""
 
 msgid "All data sets"
 msgstr ""
@@ -1126,7 +1129,7 @@ msgid "Calculations"
 msgstr ""
 
 msgid "Number"
-msgstr "តួរលេខ"
+msgstr ""
 
 msgid "Formula is empty. Add items to the formula from the lists on the left."
 msgstr ""
@@ -1165,13 +1168,13 @@ msgid "Extra Large"
 msgstr ""
 
 msgid "Left"
-msgstr "Left"
+msgstr ""
 
 msgid "Center"
 msgstr ""
 
 msgid "Right"
-msgstr "Right"
+msgstr ""
 
 msgid "Start"
 msgstr ""
@@ -1231,16 +1234,16 @@ msgid "Not applicable"
 msgstr ""
 
 msgid "Data"
-msgstr "Data"
+msgstr ""
 
 msgid "Organisation unit"
-msgstr "ផ្នែក​នៃ​អង្គការ"
+msgstr ""
 
 msgid "Assigned Categories"
 msgstr ""
 
 msgid "Text"
-msgstr "អត្ថបទ​"
+msgstr ""
 
 msgid "Long text"
 msgstr ""
@@ -1258,13 +1261,13 @@ msgid "Email"
 msgstr ""
 
 msgid "Yes/No"
-msgstr "បាទ/ទេ"
+msgstr ""
 
 msgid "Yes Only"
-msgstr "ចម្លើយ បាទ/ចាស"
+msgstr ""
 
 msgid "Date"
-msgstr "កាលបរិច្ឆេទ"
+msgstr "তারিখ"
 
 msgid "Date & Time"
 msgstr ""
@@ -1294,19 +1297,19 @@ msgid "Tracker Associate"
 msgstr ""
 
 msgid "Username"
-msgstr "ឈ្មោះ​គណនី"
+msgstr ""
 
 msgid "Coordinate"
 msgstr ""
 
 msgid "Reference"
-msgstr "សេចក្ដី​យោង"
+msgstr ""
 
 msgid "Age"
 msgstr ""
 
 msgid "URL"
-msgstr "អាសយដ្ឋាន URL"
+msgstr ""
 
 msgid "Image"
 msgstr ""
@@ -1395,6 +1398,7 @@ msgstr ""
 msgid "{{count}} items"
 msgid_plural "{{count}} items"
 msgstr[0] ""
+msgstr[1] ""
 
 msgid "Reset zoom"
 msgstr ""

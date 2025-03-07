@@ -49,6 +49,8 @@ export {
 
 export * from './components/RichText/index.js'
 
+export { DashboardPluginWrapper } from './components/DashboardPluginWrapper/DashboardPluginWrapper.js'
+
 // Api
 
 export { default as Analytics } from './api/analytics/Analytics.js'
@@ -344,8 +346,15 @@ export {
     FYJUL,
     FYAPR,
 } from './components/PeriodDimension/utils/index.js'
-export { getRelativePeriodsOptionsById } from './components/PeriodDimension/utils/relativePeriods.js'
-export { getFixedPeriodsOptionsById } from './components/PeriodDimension/utils/fixedPeriods.js'
+export {
+    getRelativePeriodsOptionsById,
+    getRelativePeriodsName,
+    getRelativePeriodsDetails,
+} from './components/PeriodDimension/utils/relativePeriods.js'
+export {
+    getFixedPeriodsOptionsById,
+    PERIOD_TYPE_REGEX,
+} from './components/PeriodDimension/utils/fixedPeriods.js'
 
 export { default as VisualizationOptions } from './components/Options/VisualizationOptions.js'
 

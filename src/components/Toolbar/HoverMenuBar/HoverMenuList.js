@@ -1,4 +1,4 @@
-import { colors, elevations, spacers } from '@dhis2/ui-constants'
+import { colors, elevations, spacers } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { createContext, useCallback, useContext, useState } from 'react'
 import { useHoverMenubarContext } from './HoverMenuBar.js'
