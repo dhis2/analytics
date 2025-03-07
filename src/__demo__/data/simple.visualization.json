@@ -3,59 +3,22 @@
     "created": "2012-11-13T18:33:17.032",
     "lastUpdated": "2017-05-16T16:02:20.929",
     "translations": [],
-    "createdBy": {
-        "id": "GOLswS44mh8",
-        "code": null,
-        "name": "Tom Wakiki",
-        "displayName": "Tom Wakiki",
-        "username": "system"
-    },
-    "sharing": {
-        "owner": "GOLswS44mh8",
-        "external": false,
-        "users": {},
-        "userGroups": {},
-        "public": "rw------"
-    },
     "displayDensity": "NORMAL",
     "fontSize": "NORMAL",
     "sortOrder": 0,
     "topLimit": 0,
     "hideEmptyRows": false,
     "showHierarchy": false,
-    "userOrganisationUnit": false,
-    "userOrganisationUnitChildren": false,
-    "userOrganisationUnitGrandChildren": false,
     "completedOnly": false,
     "skipRounding": false,
-    "filterDimensions": [],
-    "dataDimensionItems": [{ "dataDimensionItemType": "DATA_ELEMENT" }],
-    "organisationUnits": [{ "id": "ImspTQPwCqd" }],
-    "periods": [],
-    "dataElementGroupSetDimensions": [],
-    "organisationUnitGroupSetDimensions": [
+    "dataDimensionItems": [
         {
-            "organisationUnitGroupSet": { "id": "J5jldMd8OHv" },
-            "organisationUnitGroups": [
-                { "id": "uYxK4wmcPqA" },
-                { "id": "tDZVQ1WtwpA" },
-                { "id": "EYbopBOJWsW" },
-                { "id": "RXL3lPSK8oG" },
-                { "id": "CXw2yu5fodb" }
-            ]
+            "dataDimensionItemType": "DATA_ELEMENT"
         }
     ],
-    "organisationUnitLevels": [],
-    "categoryDimensions": [],
-    "categoryOptionGroupSetDimensions": [],
-    "attributeDimensions": [],
-    "dataElementDimensions": [],
-    "programIndicatorDimensions": [],
-    "itemOrganisationUnitGroups": [],
     "subscribers": [],
     "aggregationType": "DEFAULT",
     "digitGroupSeparator": "SPACE",
-    "hideLegend": false,
     "noSpaceBetweenColumns": false,
     "cumulativeValues": true,
     "percentStackedValues": false,
@@ -75,17 +38,79 @@
         "organisationUnit": true,
         "reportingPeriod": false
     },
-    "columnDimensions": ["dx"],
-    "rowDimensions": ["pe", "ou"],
     "yearlySeries": [],
     "regression": false,
     "hideEmptyColumns": false,
     "fixColumnHeaders": false,
     "fixRowHeaders": false,
     "filters": [],
-    "parentGraphMap": { "ImspTQPwCqd": "" },
-    "columns": [{ "id": "dx" }],
-    "rows": [{ "id": "pe" }, { "id": "ou" }],
+    "parentGraphMap": {
+        "ImspTQPwCqd": ""
+    },
+    "columns": [
+        {
+            "items": [
+                {
+                    "name": "ANC 1st visit",
+                    "dimensionItemType": "DATA_ELEMENT",
+                    "access": {
+                        "manage": true,
+                        "externalize": false,
+                        "write": true,
+                        "read": true,
+                        "update": true,
+                        "delete": true
+                    },
+                    "displayName": "Soin prénatal 1",
+                    "displayShortName": "ANC 1st visit",
+                    "id": "fbfJHSPpUQD"
+                }
+            ],
+            "dimension": "dx"
+        }
+    ],
+    "rows": [
+        {
+            "items": [
+                {
+                    "name": "LAST_12_MONTHS",
+                    "dimensionItemType": "PERIOD",
+                    "displayShortName": "LAST_12_MONTHS",
+                    "access": {
+                        "manage": true,
+                        "externalize": false,
+                        "write": true,
+                        "read": true,
+                        "update": true,
+                        "delete": true
+                    },
+                    "displayName": "LAST_12_MONTHS",
+                    "id": "LAST_12_MONTHS"
+                }
+            ],
+            "dimension": "pe"
+        },
+        {
+            "items": [
+                {
+                    "name": "Sierra Leone",
+                    "dimensionItemType": "ORGANISATION_UNIT",
+                    "access": {
+                        "manage": true,
+                        "externalize": false,
+                        "write": true,
+                        "read": true,
+                        "update": true,
+                        "delete": true
+                    },
+                    "displayName": "Sierra Leone",
+                    "displayShortName": "Sierra Leone",
+                    "id": "ImspTQPwCqd"
+                }
+            ],
+            "dimension": "ou"
+        }
+    ],
     "subscribed": false,
     "access": {
         "manage": true,
@@ -104,60 +129,16 @@
         "displayName": "Tom Wakiki",
         "username": "system"
     },
-    "href": "https://debug.dhis2.org/dev/api/visualizations/tWg9OiyV7mu",
-    "displayFormName": "ANC: ANC 1 Visits Cumulative Numbers",
+    "href": "https://debug.dhis2.org/dev/api/42/visualizations/tWg9OiyV7mu",
     "id": "tWg9OiyV7mu",
-    "attributeValues": [],
-    "relativePeriods": {
-        "thisDay": false,
-        "yesterday": false,
-        "last3Days": false,
-        "last7Days": false,
-        "last14Days": false,
-        "last30Days": false,
-        "last60Days": false,
-        "last90Days": false,
-        "last180Days": false,
-        "thisMonth": false,
-        "lastMonth": false,
-        "thisBimonth": false,
-        "lastBimonth": false,
-        "thisQuarter": false,
-        "lastQuarter": false,
-        "thisSixMonth": false,
-        "lastSixMonth": false,
-        "weeksThisYear": false,
-        "monthsThisYear": false,
-        "biMonthsThisYear": false,
-        "quartersThisYear": false,
-        "thisYear": false,
-        "monthsLastYear": false,
-        "quartersLastYear": false,
-        "lastYear": false,
-        "last5Years": false,
-        "last10Years": false,
-        "last12Months": true,
-        "last6Months": false,
-        "last3Months": false,
-        "last6BiMonths": false,
-        "last4Quarters": false,
-        "last2SixMonths": false,
-        "thisFinancialYear": false,
-        "lastFinancialYear": false,
-        "last5FinancialYears": false,
-        "last10FinancialYears": false,
-        "thisWeek": false,
-        "lastWeek": false,
-        "thisBiWeek": false,
-        "lastBiWeek": false,
-        "last4Weeks": false,
-        "last4BiWeeks": false,
-        "last12Weeks": false,
-        "last52Weeks": false
+    "legend": {
+        "showKey": false,
+        "style": "FILL",
+        "strategy": "FIXED"
     },
-    "legend": { "showKey": false, "style": "FILL", "strategy": "FIXED" },
     "sorting": [],
-    "optionalAxes": [],
     "icons": [],
-    "seriesKey": { "hidden": false }
+    "seriesKey": {
+        "hidden": false
+    }
 }
