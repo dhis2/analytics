@@ -13,6 +13,7 @@ import {
     VIS_TYPE_YEAR_OVER_YEAR_LINE,
     VIS_TYPE_YEAR_OVER_YEAR_COLUMN,
     VIS_TYPE_PIE,
+    VIS_TYPE_DONUT,
     VIS_TYPE_GAUGE,
     VIS_TYPE_SINGLE_VALUE,
     VIS_TYPE_PIVOT_TABLE,
@@ -30,7 +31,8 @@ export const getAdaptedUiLayoutByType = (layout, type) => {
         case VIS_TYPE_YEAR_OVER_YEAR_COLUMN: {
             return getYearOverYearLayout(layout)
         }
-        case VIS_TYPE_PIE: {
+        case VIS_TYPE_PIE: 
+        case VIS_TYPE_DONUT: {
             return getPieLayout(layout)
         }
         case VIS_TYPE_SINGLE_VALUE:
