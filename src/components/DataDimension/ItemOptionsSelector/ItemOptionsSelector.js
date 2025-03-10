@@ -186,8 +186,15 @@ export const ItemOptionsSelector = ({
                         searchTerm={debouncedSearchTerm}
                         options={state.options}
                         allItemsSelectedMessage={
-                            state.options.length === selectedItems.length &&
-                            !state.nextPage
+                            state.options.every((sourceItem) =>
+                                Boolean(
+                                    selectedItems?.find(
+                                        (selectedItem) =>
+                                            sourceItem.value ===
+                                            selectedItem.value
+                                    )
+                                )
+                            ) && !state.nextPage
                                 ? i18n.t(
                                       'All available options are already selected'
                                   )
