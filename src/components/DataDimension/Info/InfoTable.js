@@ -204,10 +204,12 @@ export const InfoTable = ({ dataType, data, error, loading, children }) => {
                                     ).format('YYYY-MM-DD')})`}
                                 </td>
                             </tr>
-                            <tr>
-                                <th>{i18n.t('Created by')}</th>
-                                <td>{`${data.createdBy.displayName}, ${data.createdBy.username}`}</td>
-                            </tr>
+                            {data.createdBy && (
+                                <tr>
+                                    <th>{i18n.t('Created by')}</th>
+                                    <td>{`${data.createdBy.displayName}, ${data.createdBy.username}`}</td>
+                                </tr>
+                            )}
                             {data.attributeValues.map(
                                 ({ attribute, value }) => (
                                     <tr key={attribute.id}>

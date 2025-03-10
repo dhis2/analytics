@@ -93,7 +93,7 @@ export const DataElementInfo = ({ type, id, displayNameProp }) => {
                 </tr>
                 {data?.dataElement.optionSet && (
                     <tr>
-                        <td>{i18n.t('Option set')}</td>
+                        <th>{i18n.t('Option set')}</th>
                         <td>{data.dataElement.optionSet.displayName}</td>
                     </tr>
                 )}
