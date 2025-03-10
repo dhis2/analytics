@@ -13,7 +13,7 @@ const OptionsButton = ({ onClick }) => (
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    height: 20px;
+                    height: 100%;
                     width: 20px;
                     padding: 0;
                     border: none;
@@ -24,8 +24,10 @@ const OptionsButton = ({ onClick }) => (
                     border-bottom-left-radius: 2px;
                 }
                 button:hover {
-                    background-color: rgba(0, 0, 0, 0.09);
+                    background-color: rgba(33, 41, 52, 0.08);
                 }
+                button:active {
+                    background-color: rgba(33, 41, 52, 0.13);
             `}
         </style>
     </>
