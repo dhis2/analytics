@@ -3,7 +3,6 @@
     "id": "HUaPWsVnlr4",
     "created": "2020-03-05T15:28:19.270",
     "name": "AUSTIN TEST - Narrative",
-    "publicAccess": "rw------",
     "legendDisplayStyle": "FILL",
     "hideEmptyColumns": false,
     "subscribed": false,
@@ -52,15 +51,12 @@
     },
     "user": {
         "displayName": "Tom Wakiki",
-        "userCredentials": {
-            "username": "system"
-        }
+        "username": "system"
     },
     "dataElementGroupSetDimensions": [],
     "attributeDimensions": [],
     "translations": [],
     "interpretations": [],
-    "userGroupAccesses": [],
     "subscribers": [],
     "columns": [
         {
@@ -83,7 +79,6 @@
     "categoryDimensions": [],
     "programIndicatorDimensions": [],
     "attributeValues": [],
-    "userAccesses": [],
     "favorites": [],
     "dataDimensionItems": [
         {
