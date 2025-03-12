@@ -4,6 +4,7 @@ import { axisHasRelativeItems } from '../../../../../modules/layout/axisHasRelat
 import { getLegendSetByDisplayStrategy } from '../../../../../modules/legends.js'
 import {
     VIS_TYPE_PIE,
+    VIS_TYPE_DONUT,
     VIS_TYPE_GAUGE,
     isDualAxisType,
     isYearOverYear,
@@ -20,6 +21,7 @@ import { generateColors } from '../../../../util/colors/gradientColorGenerator.j
 import { getFullIdAxisMap, getAxisIdsMap } from '../customAxes.js'
 import getCumulativeData from '../getCumulativeData.js'
 import getType from '../type.js'
+import getDonut from './donut.js'
 import getGauge from './gauge.js'
 import getPie from './pie.js'
 import getScatter from './scatter.js'
@@ -231,6 +233,12 @@ export default function ({
             break
         case VIS_TYPE_PIE:
             series = getPie(
+                series,
+                Object.values(getIdColorMap(series, layout, extraOptions))
+            )
+            break
+        case VIS_TYPE_DONUT:
+            series = getDonut(
                 series,
                 Object.values(getIdColorMap(series, layout, extraOptions))
             )

@@ -14,6 +14,7 @@ import {
     VIS_TYPE_YEAR_OVER_YEAR_LINE,
     VIS_TYPE_BAR,
     VIS_TYPE_PIE,
+    VIS_TYPE_DONUT,
     VIS_TYPE_SINGLE_VALUE,
     VIS_TYPE_OUTLIER_TABLE,
 } from '../visTypes.js'
