@@ -1,33 +1,37 @@
 import { useDataEngine } from '@dhis2/app-runtime'
 import { Transfer, InputField, IconInfo16, Button, IconAdd24 } from '@dhis2/ui'
+import cx from 'classnames'
 import PropTypes from 'prop-types'
-import React, { useRef, useState } from 'react'
-import { apiFetchOptions } from '../../api/dimensions.js'
-import i18n from '../../locales/index.js'
-import { DATA_SETS_CONSTANTS, REPORTING_RATE } from '../../modules/dataSets.js'
+import React, { useState } from 'react'
+import { apiFetchOptions } from '../../../api/dimensions.js'
+import i18n from '../../../locales/index.js'
+import {
+    DATA_SETS_CONSTANTS,
+    REPORTING_RATE,
+} from '../../../modules/dataSets.js'
 import {
     DIMENSION_TYPE_ALL,
     DIMENSION_TYPE_DATA_ELEMENT,
-    DIMENSION_TYPE_DATA_SET,
-    DIMENSION_TYPE_EVENT_DATA_ITEM,
-    DIMENSION_TYPE_PROGRAM_INDICATOR,
-    DIMENSION_TYPE_INDICATOR,
     TOTALS,
     DIMENSION_TYPE_EXPRESSION_DIMENSION_ITEM,
-} from '../../modules/dataTypes.js'
-import { getIcon, getDimensionType } from '../../modules/dimensionListItem.js'
+} from '../../../modules/dataTypes.js'
+import {
+    getIcon,
+    getDimensionType,
+} from '../../../modules/dimensionListItem.js'
 import {
     TRANSFER_HEIGHT,
     TRANSFER_OPTIONS_WIDTH,
     TRANSFER_SELECTED_WIDTH,
-} from '../../modules/dimensionSelectorHelper.js'
-import { useDebounce, useDidUpdateEffect } from '../../modules/utils.js'
-import styles from '../styles/DimensionSelector.style.js'
-import CalculationModal from './Calculation/CalculationModal.js'
+} from '../../../modules/dimensionSelectorHelper.js'
+import { useDebounce, useDidUpdateEffect } from '../../../modules/utils.js'
+import styles from '../../styles/DimensionSelector.style.js'
+import CalculationModal from '../Calculation/CalculationModal.js'
+import { SelectedEmptyPlaceholder } from '../SelectedEmptyPlaceholder.js'
+import { SourceEmptyPlaceholder } from '../SourceEmptyPlaceholder.js'
+import { TransferOption } from '../TransferOption.js'
 import DataTypeSelector from './DataTypeSelector.js'
 import GroupSelector from './GroupSelector.js'
-import { InfoPopover } from './Info/InfoPopover.js'
-import { TransferOption } from './TransferOption.js'
 
 const LeftHeader = ({
     searchTerm,
@@ -93,13 +97,6 @@ LeftHeader.propTypes = {
     subGroup: PropTypes.string,
 }
 
-const EmptySelection = () => (
-    <>
-        <p className="emptyList">{i18n.t('No items selected')}</p>
-        <style jsx>{styles}</style>
-    </>
-)
-
 const RightHeader = ({ infoBoxMessage }) => (
     <>
         <p className="rightHeader">{i18n.t('Selected Items')}</p>
@@ -119,109 +116,6 @@ RightHeader.propTypes = {
     infoBoxMessage: PropTypes.string,
 }
 
-const SourceEmptyPlaceholder = ({
-    loading,
-    searchTerm,
-    options,
-    noItemsMessage,
-    dataType,
-    dataTest,
-}) => {
-    let message = ''
-    if (!loading && !options.length && !searchTerm) {
-        if (noItemsMessage) {
-            message = noItemsMessage
-        } else {
-            switch (dataType) {
-                case DIMENSION_TYPE_INDICATOR:
-                    message = i18n.t('No indicators found')
-                    break
-                case DIMENSION_TYPE_DATA_ELEMENT:
-                    message = i18n.t('No data elements found')
-                    break
-                case DIMENSION_TYPE_DATA_SET:
-                    message = i18n.t('No data sets found')
-                    break
-                case DIMENSION_TYPE_EVENT_DATA_ITEM:
-                    message = i18n.t('No event data items found')
-                    break
-                case DIMENSION_TYPE_PROGRAM_INDICATOR:
-                    message = i18n.t('No program indicators found')
-                    break
-                case DIMENSION_TYPE_EXPRESSION_DIMENSION_ITEM:
-                    message = i18n.t('No calculations found')
-                    break
-                default:
-                    message = i18n.t('No data')
-                    break
-            }
-        }
-    } else if (!loading && !options.length && searchTerm) {
-        switch (dataType) {
-            case DIMENSION_TYPE_INDICATOR:
-                message = i18n.t('No indicators found for "{{- searchTerm}}"', {
-                    searchTerm,
-                })
-                break
-            case DIMENSION_TYPE_DATA_ELEMENT:
-                message = i18n.t(
-                    'No data elements found for "{{- searchTerm}}"',
-                    {
-                        searchTerm,
-                    }
-                )
-                break
-            case DIMENSION_TYPE_DATA_SET:
-                message = i18n.t('No data sets found for "{{- searchTerm}}"', {
-                    searchTerm,
-                })
-                break
-            case DIMENSION_TYPE_EVENT_DATA_ITEM:
-                message = i18n.t(
-                    'No event data items found for "{{- searchTerm}}"',
-                    { searchTerm }
-                )
-                break
-            case DIMENSION_TYPE_PROGRAM_INDICATOR:
-                message = i18n.t(
-                    'No program indicators found for "{{- searchTerm}}"',
-                    { searchTerm }
-                )
-                break
-            case DIMENSION_TYPE_EXPRESSION_DIMENSION_ITEM:
-                message = i18n.t(
-                    'No calculations found for "{{- searchTerm}}"',
-                    { searchTerm }
-                )
-                break
-            default:
-                message = i18n.t('Nothing found for "{{- searchTerm}}"', {
-                    searchTerm,
-                })
-                break
-        }
-    }
-    return (
-        message && (
-            <>
-                <p className="emptyList" data-test={dataTest}>
-                    {message}
-                </p>
-                <style jsx>{styles}</style>
-            </>
-        )
-    )
-}
-
-SourceEmptyPlaceholder.propTypes = {
-    dataTest: PropTypes.string,
-    dataType: PropTypes.string,
-    loading: PropTypes.bool,
-    noItemsMessage: PropTypes.string,
-    options: PropTypes.array,
-    searchTerm: PropTypes.string,
-}
-
 const ItemSelector = ({
     selectedItems,
     noItemsMessage,
@@ -229,12 +123,18 @@ const ItemSelector = ({
     rightFooter,
     displayNameProp,
     infoBoxMessage,
+    itemsRef,
+    currentCalculation,
+    setCurrentCalculation,
+    infoDataItem,
+    setInfoDataItem,
     dataTypes,
     dataTest,
     onEDISave,
+    onEditClick,
+    isOptionViewMode,
+    supportsEDI,
 }) => {
-    const itemsRef = useRef(new Map())
-
     const [state, setState] = useState({
         searchTerm: '',
         dataTypes,
@@ -251,12 +151,7 @@ const ItemSelector = ({
         options: [],
         loading: true,
         nextPage: 1,
-        supportsEDI: dataTypes
-            .map(({ id }) => id)
-            .includes(DIMENSION_TYPE_EXPRESSION_DIMENSION_ITEM),
     })
-    const [currentCalculation, setCurrentCalculation] = useState()
-    const [currentDataItem, setCurrentDataItem] = useState()
 
     const debouncedSearchTerm = useDebounce(state.searchTerm, 500)
     const dataEngine = useDataEngine()
@@ -312,6 +207,7 @@ const ItemSelector = ({
                     disabled: item.disabled,
                     type: item.dimensionItemType,
                     expression: item.expression,
+                    optionSetId: item.optionSetId,
                 })
             }
         })
@@ -346,24 +242,26 @@ const ItemSelector = ({
 
     useDidUpdateEffect(() => {
         fetchItems(1)
-    }, [debouncedSearchTerm, state.filter])
+    }, [debouncedSearchTerm, state.filter]) // does this effect dep work?
 
-    const onChange = (newSelected) => {
-        onSelect(
-            newSelected.map((value) => {
-                const matchingItem = [...state.options, ...selectedItems].find(
-                    (item) => item.value === value
-                )
-                return {
-                    value,
-                    label: matchingItem.label,
-                    type: matchingItem.type,
-                    ...(matchingItem.expression
-                        ? { expression: matchingItem.expression }
-                        : {}),
-                }
-            })
-        )
+    const onChange = (selectedIds) => {
+        const newSelectedItems = selectedIds.map((id) => {
+            const matchingItem = [...state.options, ...selectedItems].find(
+                (item) => item.value === id
+            )
+
+            return {
+                value: id,
+                label: matchingItem.label,
+                type: matchingItem.type,
+                optionSetId: matchingItem.optionSetId,
+                ...(matchingItem.expression
+                    ? { expression: matchingItem.expression }
+                    : {}),
+            }
+        })
+
+        onSelect(newSelectedItems)
     }
     const onEndReached = () => {
         if (state.nextPage) {
@@ -374,10 +272,6 @@ const ItemSelector = ({
         const item = selectedItems.find((item) => item.value === value)
         return !item || item.isActive
     }
-    const getItemType = (value) =>
-        [...state.options, ...selectedItems].find(
-            (item) => item.value === value
-        )?.type
 
     const onSaveCalculation = async ({ id, name, expression, isNew }) => {
         onEDISave({
@@ -452,11 +346,20 @@ const ItemSelector = ({
         }))
 
     return (
-        <div className="transfer-container">
+        <div className={cx('transfer-container', { hidden: isOptionViewMode })}>
             <Transfer
                 onChange={({ selected }) => onChange(selected)}
                 selected={selectedItems.map((item) => item.value)}
-                options={[...state.options, ...selectedItems]}
+                options={[
+                    ...state.options,
+                    // remove items already in the options list
+                    ...selectedItems.filter(
+                        (selectedItem) =>
+                            !state.options?.find(
+                                (option) => option.value === selectedItem.value
+                            )
+                    ),
+                ]}
                 loading={state.loading}
                 loadingPicked={state.loading}
                 sourceEmptyPlaceholder={
@@ -464,6 +367,14 @@ const ItemSelector = ({
                         loading={state.loading}
                         searchTerm={debouncedSearchTerm}
                         options={state.options}
+                        allItemsSelectedMessage={
+                            state.options.length === selectedItems.length &&
+                            !state.nextPage
+                                ? i18n.t(
+                                      'All available items are already selected'
+                                  )
+                                : ''
+                        }
                         noItemsMessage={noItemsMessage}
                         dataType={state.filter.dataType}
                         dataTest={`${dataTest}-empty-source`}
@@ -486,7 +397,7 @@ const ItemSelector = ({
                     />
                 }
                 leftFooter={
-                    state.supportsEDI ? (
+                    supportsEDI ? (
                         <div className="calculation-button">
                             <Button
                                 icon={<IconAdd24 />}
@@ -502,61 +413,44 @@ const ItemSelector = ({
                 height={TRANSFER_HEIGHT}
                 optionsWidth={TRANSFER_OPTIONS_WIDTH}
                 selectedWidth={TRANSFER_SELECTED_WIDTH}
-                selectedEmptyComponent={<EmptySelection />}
+                selectedEmptyComponent={<SelectedEmptyPlaceholder />}
                 rightHeader={<RightHeader infoBoxMessage={infoBoxMessage} />}
                 rightFooter={rightFooter}
-                renderOption={(props) => (
-                    <TransferOption
-                        /* eslint-disable react/prop-types */
-                        {...props}
-                        active={isActive(props.value)}
-                        showingInfo={currentDataItem?.id === props.value}
-                        icon={getIcon(getItemType(props.value))}
-                        dimensionType={getDimensionType({
-                            type: getItemType(props.value),
-                            expression: props.expression,
-                        })}
-                        dataTest={`${dataTest}-transfer-option`}
-                        itemsRef={itemsRef}
-                        onEditClick={
-                            getItemType(props.value) ===
-                                DIMENSION_TYPE_EXPRESSION_DIMENSION_ITEM &&
-                            !(props.access?.write === false) &&
-                            state.supportsEDI
-                                ? () =>
-                                      setCurrentCalculation({
-                                          id: props.value,
-                                          name: props.label,
-                                          expression: props.expression,
-                                      })
-                                : undefined
-                        }
-                        onInfoClick={() =>
-                            setCurrentDataItem({
-                                id: props.value,
-                                type: getItemType(props.value),
-                            })
-                        }
-                        /* eslint-enable react/prop-types */
-                    />
-                )}
+                renderOption={(props) => {
+                    // console.log('renderOption', props)
+                    return (
+                        <TransferOption
+                            /* eslint-disable react/prop-types */
+                            {...props}
+                            active={isActive(props.value)}
+                            showingInfo={infoDataItem?.id === props.value}
+                            icon={getIcon(props.type)}
+                            dataItemType={props.type}
+                            dimensionType={getDimensionType({
+                                type: props.type,
+                                expression: props.expression,
+                            })}
+                            dataTest={`${dataTest}-transfer-option`}
+                            itemsRef={itemsRef}
+                            onEditClick={() => onEditClick(props)}
+                            onInfoClick={() =>
+                                setInfoDataItem({
+                                    id: props.value,
+                                    type: props.type,
+                                })
+                            }
+                            /* eslint-enable react/prop-types */
+                        />
+                    )
+                }}
                 dataTest={`${dataTest}-transfer`}
             />
-            {currentCalculation && state.supportsEDI && (
+            {currentCalculation && supportsEDI && (
                 <CalculationModal
                     calculation={currentCalculation}
                     onSave={onSaveCalculation}
                     onClose={() => setCurrentCalculation()}
                     onDelete={onDeleteCalculation}
-                    displayNameProp={displayNameProp}
-                />
-            )}
-            {currentDataItem && (
-                <InfoPopover
-                    dataTest={`${dataTest}-info`}
-                    item={currentDataItem}
-                    reference={itemsRef.current.get(currentDataItem.id)}
-                    onClose={() => setCurrentDataItem()}
                     displayNameProp={displayNameProp}
                 />
             )}
@@ -568,21 +462,31 @@ const ItemSelector = ({
 ItemSelector.propTypes = {
     displayNameProp: PropTypes.string.isRequired,
     onSelect: PropTypes.func.isRequired,
+    currentCalculation: PropTypes.object,
     dataTest: PropTypes.string,
     dataTypes: PropTypes.array,
     infoBoxMessage: PropTypes.string,
+    infoDataItem: PropTypes.object,
+    isOptionViewMode: PropTypes.bool,
+    itemsRef: PropTypes.object,
     noItemsMessage: PropTypes.string,
     rightFooter: PropTypes.node,
     selectedItems: PropTypes.arrayOf(
         PropTypes.exact({
             label: PropTypes.string.isRequired,
             value: PropTypes.string.isRequired,
+            access: PropTypes.object,
             isActive: PropTypes.bool,
             type: PropTypes.string,
             expression: PropTypes.string,
+            optionSetId: PropTypes.string,
         })
     ),
+    setCurrentCalculation: PropTypes.func,
+    setInfoDataItem: PropTypes.func,
+    supportsEDI: PropTypes.bool,
     onEDISave: PropTypes.func,
+    onEditClick: PropTypes.func,
 }
 
 ItemSelector.defaultProps = {

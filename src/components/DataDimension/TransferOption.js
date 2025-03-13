@@ -1,7 +1,12 @@
-import { IconEdit16, IconInfo16 } from '@dhis2/ui'
+import { IconEdit16, IconInfo16, IconList16 } from '@dhis2/ui'
 import cx from 'classnames'
 import PropTypes from 'prop-types'
 import React from 'react'
+import {
+    DIMENSION_TYPE_EXPRESSION_DIMENSION_ITEM,
+    DIMENSION_TYPE_PROGRAM_ATTRIBUTE,
+    DIMENSION_TYPE_PROGRAM_DATA_ELEMENT,
+} from '../../modules/dataTypes.js'
 import styles from './styles/TransferOption.style.js'
 
 export const TransferOption = ({
@@ -14,8 +19,10 @@ export const TransferOption = ({
     value,
     icon,
     active,
+    dataItemType,
     dimensionType,
     dataTest,
+    optionSetId,
     itemsRef,
     showingInfo,
     onEditClick,
@@ -46,18 +53,36 @@ export const TransferOption = ({
             <div className="labelGroup">
                 <span className="icon">{icon}</span>
                 <span className="label">{label}</span>
-                {onEditClick && (
-                    <span
-                        className="edit"
-                        onClick={(e) => {
-                            e.stopPropagation()
-                            onEditClick()
-                        }}
-                        data-test={`${dataTest}-edit-button`}
-                    >
-                        <IconEdit16 />
-                    </span>
-                )}
+                {dataItemType === DIMENSION_TYPE_EXPRESSION_DIMENSION_ITEM &&
+                    // XXX check needed?!
+                    onEditClick && (
+                        <span
+                            className="edit"
+                            onClick={(e) => {
+                                e.stopPropagation()
+                                onEditClick()
+                            }}
+                            data-test={`${dataTest}-edit-calculation-button`}
+                        >
+                            <IconEdit16 />
+                        </span>
+                    )}
+                {[
+                    DIMENSION_TYPE_PROGRAM_ATTRIBUTE,
+                    DIMENSION_TYPE_PROGRAM_DATA_ELEMENT,
+                ].includes(dataItemType) &&
+                    optionSetId && (
+                        <span
+                            className="option-set-button"
+                            onClick={(e) => {
+                                e.stopPropagation()
+                                onEditClick()
+                            }}
+                            data-test={`${dataTest}-option-set-button`}
+                        >
+                            <IconList16 />
+                        </span>
+                    )}
             </div>
             <div className={cx('group', 'nowrap', 'typeGroup')}>
                 <span className="type">{dimensionType}</span>
@@ -98,12 +123,14 @@ TransferOption.propTypes = {
     label: PropTypes.string.isRequired,
     value: PropTypes.string.isRequired,
     active: PropTypes.bool,
+    dataItemType: PropTypes.string,
     dataTest: PropTypes.string,
     dimensionType: PropTypes.string,
     disabled: PropTypes.bool,
     highlighted: PropTypes.bool,
     icon: PropTypes.node,
     itemsRef: PropTypes.object,
+    optionSetId: PropTypes.string,
     selected: PropTypes.bool,
     showingInfo: PropTypes.bool,
     onClick: PropTypes.func,
