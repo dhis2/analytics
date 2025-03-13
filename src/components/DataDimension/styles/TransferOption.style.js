@@ -8,7 +8,7 @@ export default css`
     .item {
         display: flex;
         justify-content: space-between;
-        align-items: center;
+        align-items: flex-start;
         background: ${colors.white};
         font-size: 14px;
         line-height: 16px;
@@ -31,14 +31,14 @@ export default css`
 
     .labelGroup {
         display: inline-flex;
-        margin: 6px 4px;
+        margin: 5px 4px;
     }
 
     .typeGroup {
         display: inline-flex;
         margin: 0;
         align-self: stretch;
-        align-items: center;
+        align-items: flex-start;
     }
 
     .nowrap {
@@ -47,7 +47,8 @@ export default css`
 
     .icon,
     .label {
-        line-height: 18px;
+        line-height: 16px;
+        margin: 2px 0;
     }
 
     .icon {
@@ -68,6 +69,7 @@ export default css`
         font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo,
             Consolas, 'DejaVu Sans Mono', monospace;
         font-weight: normal;
+        margin: 9px 0 0 0;
     }
 
     .edit,
@@ -92,11 +94,11 @@ export default css`
     }
 
     .info {
-        margin: 0 0 0 ${spacers.dp4};
-        padding: 0 6px;
-        height: 100%;
+        margin: 0 0 0 2px;
+        padding: ${spacers.dp8} ${spacers.dp4} 0  ${spacers.dp4};};
+        align-self: stretch;
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         cursor: pointer;
         color: ${colors.grey600};
     }
