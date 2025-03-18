@@ -10,6 +10,12 @@ export const validateProgramIndicatorExpressionMutation = {
     data: ({ expression }) => expression,
 }
 
+export const validateProgramIndicatorFilterMutation = {
+    type: 'create',
+    resource: 'programIndicators/filter/description',
+    data: ({ filter }) => filter,
+}
+
 export const createCalculationMutation = {
     type: 'create',
     resource: 'expressionDimensionItems',

@@ -76,7 +76,7 @@ export const DataElementOperandInfo = ({ type, id, displayNameProp }) => {
 
         setData({ dataElementOperand })
         setLoading(false)
-    }, [displayNameProp, engine, id])
+    }, [apiVersion, baseUrl, displayNameProp, engine, id])
 
     useEffect(() => {
         fetchData()
@@ -152,7 +152,7 @@ export const DataElementOperandInfo = ({ type, id, displayNameProp }) => {
                 </tr>
                 {data?.dataElementOperand.dataElement.optionSet && (
                     <tr>
-                        <td>{i18n.t('Option set')}</td>
+                        <th>{i18n.t('Option set')}</th>
                         <td>
                             {
                                 data.dataElementOperand.dataElement.optionSet
@@ -221,7 +221,7 @@ export const DataElementOperandInfo = ({ type, id, displayNameProp }) => {
 }
 
 DataElementOperandInfo.propTypes = {
-    displayNameProp: PropTypes.string,
-    id: PropTypes.string,
-    type: PropTypes.string,
+    displayNameProp: PropTypes.string.isRequired,
+    id: PropTypes.string.isRequired,
+    type: PropTypes.string.isRequired,
 }

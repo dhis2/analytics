@@ -8,7 +8,9 @@ import {
     DIMENSION_TYPE_EXPRESSION_DIMENSION_ITEM, // calculation
     DIMENSION_TYPE_INDICATOR,
     DIMENSION_TYPE_PROGRAM_ATTRIBUTE, // event data items
+    DIMENSION_TYPE_PROGRAM_ATTRIBUTE_OPTION,
     DIMENSION_TYPE_PROGRAM_DATA_ELEMENT, // event data items
+    DIMENSION_TYPE_PROGRAM_DATA_ELEMENT_OPTION,
     DIMENSION_TYPE_PROGRAM_INDICATOR,
 } from '../../../modules/dataTypes.js'
 import { CalculationInfo } from './CalculationInfo.js'
@@ -17,6 +19,7 @@ import { DataElementOperandInfo } from './DataElementOperandInfo.js'
 import { DataSetInfo } from './DataSetInfo.js'
 import { EventDataItemInfo } from './EventDataItemInfo.js'
 import { IndicatorInfo } from './IndicatorInfo.js'
+import { OptionInfo } from './OptionInfo.js'
 import { ProgramIndicatorInfo } from './ProgramIndicatorInfo.js'
 import styles from './styles/InfoPopover.style.js'
 
@@ -62,6 +65,10 @@ export const InfoPopover = ({ reference, onClose, dataTest, ...props }) => {
                     {type === DIMENSION_TYPE_PROGRAM_INDICATOR && (
                         <ProgramIndicatorInfo {...infoProps} />
                     )}
+                    {[
+                        DIMENSION_TYPE_PROGRAM_DATA_ELEMENT_OPTION,
+                        DIMENSION_TYPE_PROGRAM_ATTRIBUTE_OPTION,
+                    ].includes(type) && <OptionInfo {...infoProps} />}
                 </div>
             </Popover>
             <style jsx>{styles}</style>
@@ -70,9 +77,12 @@ export const InfoPopover = ({ reference, onClose, dataTest, ...props }) => {
 }
 
 InfoPopover.propTypes = {
+    displayNameProp: PropTypes.string.isRequired,
+    item: PropTypes.shape({
+        id: PropTypes.string.isRequired,
+        type: PropTypes.string.isRequired,
+    }).isRequired,
     dataTest: PropTypes.string,
-    displayNameProp: PropTypes.string,
-    item: PropTypes.object,
     reference: PropTypes.object,
     onClose: PropTypes.func,
 }

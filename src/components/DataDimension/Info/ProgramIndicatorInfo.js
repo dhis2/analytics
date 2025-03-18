@@ -1,7 +1,10 @@
 import { useDataMutation, useDataEngine } from '@dhis2/app-runtime'
 import PropTypes from 'prop-types'
 import React, { useCallback, useEffect, useState } from 'react'
-import { validateProgramIndicatorExpressionMutation } from '../../../api/expression.js'
+import {
+    validateProgramIndicatorExpressionMutation,
+    validateProgramIndicatorFilterMutation,
+} from '../../../api/expression.js'
 import i18n from '../../../locales/index.js'
 import {
     getCommonFields,
@@ -36,6 +39,12 @@ export const ProgramIndicatorInfo = ({ type, id, displayNameProp }) => {
             onError: setError,
         }
     )
+    const [getHumanReadableFilter] = useDataMutation(
+        validateProgramIndicatorFilterMutation,
+        {
+            onError: setError,
+        }
+    )
 
     const fetchData = useCallback(async () => {
         const { programIndicator } = await engine.query(programIndicatorQuery, {
@@ -54,8 +63,8 @@ export const ProgramIndicatorInfo = ({ type, id, displayNameProp }) => {
         }
 
         if (programIndicator.filter) {
-            const result = await getHumanReadableExpression({
-                expression: programIndicator.filter,
+            const result = await getHumanReadableFilter({
+                filter: programIndicator.filter,
             })
 
             if (result) {
@@ -79,7 +88,13 @@ export const ProgramIndicatorInfo = ({ type, id, displayNameProp }) => {
 
         setData({ programIndicator })
         setLoading(false)
-    }, [displayNameProp, engine, id, getHumanReadableExpression])
+    }, [
+        displayNameProp,
+        engine,
+        id,
+        getHumanReadableExpression,
+        getHumanReadableFilter,
+    ])
 
     useEffect(() => {
         fetchData()
@@ -211,7 +226,7 @@ export const ProgramIndicatorInfo = ({ type, id, displayNameProp }) => {
 }
 
 ProgramIndicatorInfo.propTypes = {
-    displayNameProp: PropTypes.string,
-    id: PropTypes.string,
-    type: PropTypes.string,
+    displayNameProp: PropTypes.string.isRequired,
+    id: PropTypes.string.isRequired,
+    type: PropTypes.string.isRequired,
 }
