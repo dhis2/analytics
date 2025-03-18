@@ -95,7 +95,7 @@ export default css`
 
     .info {
         margin: 0 0 0 2px;
-        padding: ${spacers.dp8} ${spacers.dp4} 0  ${spacers.dp4};};
+        padding: ${spacers.dp8} ${spacers.dp4} 0 ${spacers.dp4};
         align-self: stretch;
         display: flex;
         align-items: flex-start;
