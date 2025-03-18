@@ -1,3 +1,10 @@
+# [26.13.0](https://github.com/dhis2/analytics/compare/v26.12.3...v26.13.0) (2025-03-18)
+
+
+### Features
+
+* implement option set selector in Data dimension modal (DHIS2-17872) ([#1746](https://github.com/dhis2/analytics/issues/1746)) ([9bd5af0](https://github.com/dhis2/analytics/commit/9bd5af02ff4188d9b9f6562015fb04553e481149))
+
 ## [26.12.3](https://github.com/dhis2/analytics/compare/v26.12.2...v26.12.3) (2025-03-04)
 
 
