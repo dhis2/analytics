@@ -108,6 +108,10 @@ export const SourceEmptyPlaceholder = ({
     )
 }
 
+SourceEmptyPlaceholder.defaultProps = {
+    options: [],
+}
+
 SourceEmptyPlaceholder.propTypes = {
     allItemsSelectedMessage: PropTypes.string,
     dataTest: PropTypes.string,
