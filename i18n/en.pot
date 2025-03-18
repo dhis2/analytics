@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2025-02-27T14:06:17.569Z\n"
-"PO-Revision-Date: 2025-02-27T14:06:17.570Z\n"
+"POT-Creation-Date: 2025-03-18T12:46:14.410Z\n"
+"PO-Revision-Date: 2025-03-18T12:46:14.411Z\n"
 
 msgid "view only"
 msgstr "view only"
@@ -383,6 +383,9 @@ msgstr "No calculations found for \"{{- searchTerm}}\""
 
 msgid "Nothing found for \"{{- searchTerm}}\""
 msgstr "Nothing found for \"{{- searchTerm}}\""
+
+msgid "Click to choose from available options"
+msgstr "Click to choose from available options"
 
 msgid "Move to {{axisName}}"
 msgstr "Move to {{axisName}}"

@@ -1,4 +1,5 @@
-import { IconEdit16, IconInfo16, IconList16 } from '@dhis2/ui'
+import i18n from '@dhis2/d2-i18n'
+import { IconEdit16, IconInfo16, IconList16, Tooltip } from '@dhis2/ui'
 import cx from 'classnames'
 import PropTypes from 'prop-types'
 import React from 'react'
@@ -72,16 +73,31 @@ export const TransferOption = ({
                     DIMENSION_TYPE_PROGRAM_DATA_ELEMENT,
                 ].includes(dataItemType) &&
                     optionSetId && (
-                        <span
-                            className="option-set-button"
-                            onClick={(e) => {
-                                e.stopPropagation()
-                                onEditClick()
-                            }}
-                            data-test={`${dataTest}-option-set-button`}
+                        <Tooltip
+                            aria-label="disabled"
+                            content={i18n.t(
+                                'Click to choose from available options'
+                            )}
+                            openDelay={500}
+                            closeDelay={0}
                         >
-                            <IconList16 />
-                        </span>
+                            {({ ref, onMouseOver, onMouseOut }) => (
+                                <span
+                                    ref={ref}
+                                    onMouseOver={onMouseOver}
+                                    onMouseOut={onMouseOut}
+                                    className="option-set-button"
+                                    onClick={(e) => {
+                                        e.stopPropagation()
+                                        onMouseOut()
+                                        onEditClick()
+                                    }}
+                                    data-test={`${dataTest}-option-set-button`}
+                                >
+                                    <IconList16 />
+                                </span>
+                            )}
+                        </Tooltip>
                     )}
             </div>
             <div className={cx('group', 'nowrap', 'typeGroup')}>

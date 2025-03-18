@@ -8,6 +8,7 @@ export default css`
     .transfer-container.hidden {
         position: absolute;
         visibility: hidden;
+        pointer-events: none;
     }
     .filterContainer {
         display: flex;
