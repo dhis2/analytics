@@ -77,9 +77,12 @@ export const InfoPopover = ({ reference, onClose, dataTest, ...props }) => {
 }
 
 InfoPopover.propTypes = {
+    displayNameProp: PropTypes.string.isRequired,
+    item: PropTypes.shape({
+        id: PropTypes.string.isRequired,
+        type: PropTypes.string.isRequired,
+    }).isRequired,
     dataTest: PropTypes.string,
-    displayNameProp: PropTypes.string,
-    item: PropTypes.object,
     reference: PropTypes.object,
     onClose: PropTypes.func,
 }

@@ -107,7 +107,7 @@ export const CalculationInfo = ({ type, id, displayNameProp }) => {
 }
 
 CalculationInfo.propTypes = {
-    displayNameProp: PropTypes.string,
-    id: PropTypes.string,
-    type: PropTypes.string,
+    displayNameProp: PropTypes.string.isRequired,
+    id: PropTypes.string.isRequired,
+    type: PropTypes.string.isRequired,
 }
