@@ -5,6 +5,7 @@ import React, {
     useContext,
     useCallback,
     useEffect,
+    useMemo,
     useRef,
     useState,
 } from 'react'
@@ -54,6 +55,19 @@ const DataDimension = ({
     const [currentCalculation, setCurrentCalculation] = useState()
     const [currentDataItem, setCurrentDataItem] = useState()
     const [infoDataItem, setInfoDataItem] = useState()
+    const selectedItems = useMemo(
+        () =>
+            selectedDimensions.map((item) => ({
+                value: item.id,
+                label: item.name,
+                isActive: item.isActive,
+                type: item.type,
+                optionSetId: item.optionSetId,
+                expression: item.expression,
+                access: item.access,
+            })),
+        [selectedDimensions]
+    )
 
     const onSelectItems = (selectedItem) =>
         onSelect({
@@ -99,15 +113,7 @@ const DataDimension = ({
     return (
         <DataDimensionCtx.Provider value={{ visType, currentUser }}>
             <ItemSelector
-                selectedItems={selectedDimensions.map((item) => ({
-                    value: item.id,
-                    label: item.name,
-                    isActive: item.isActive,
-                    type: item.type,
-                    optionSetId: item.optionSetId,
-                    expression: item.expression,
-                    access: item.access,
-                }))}
+                selectedItems={selectedItems}
                 onSelect={onSelectItems}
                 displayNameProp={displayNameProp}
                 infoBoxMessage={infoBoxMessage}
@@ -126,15 +132,7 @@ const DataDimension = ({
             {currentDataItem && (
                 <ItemOptionsSelector
                     {...currentDataItem}
-                    selectedItems={selectedDimensions.map((item) => ({
-                        value: item.id,
-                        label: item.name,
-                        isActive: item.isActive,
-                        type: item.type,
-                        optionSetId: item.optionSetId,
-                        expression: item.expression,
-                        access: item.access,
-                    }))}
+                    selectedItems={selectedItems}
                     onSelect={onSelectItems}
                     displayNameProp={displayNameProp}
                     dataTest={'data-dimension'}
