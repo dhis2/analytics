@@ -1,134 +1,144 @@
 {
-    "lastUpdated": "2017-05-16T16:02:20.929",
-    "id": "tWg9OiyV7mu",
-    "created": "2012-11-13T18:33:17.032",
     "name": "ANC: ANC 1 Visits Cumulative Numbers",
-    "publicAccess": "rw------",
-    "legendDisplayStyle": "FILL",
-    "hideEmptyColumns": false,
-    "subscribed": false,
-    "rowSubTotals": false,
-    "showDimensionLabels": false,
-    "sortOrder": 0,
+    "created": "2012-11-13T18:33:17.032",
+    "lastUpdated": "2017-05-16T16:02:20.929",
+    "translations": [],
+    "displayDensity": "NORMAL",
     "fontSize": "NORMAL",
-    "favorite": false,
+    "sortOrder": 0,
     "topLimit": 0,
-    "displayName": "ANC: ANC 1 Visits Cumulative Numbers",
-    "showHierarchy": false,
-    "cumulative": false,
-    "hideTitle": false,
-    "skipRounding": false,
     "hideEmptyRows": false,
+    "showHierarchy": false,
+    "completedOnly": false,
+    "skipRounding": false,
+    "dataDimensionItems": [
+        {
+            "dataDimensionItemType": "DATA_ELEMENT"
+        }
+    ],
+    "subscribers": [],
+    "aggregationType": "DEFAULT",
+    "digitGroupSeparator": "SPACE",
+    "noSpaceBetweenColumns": false,
+    "cumulativeValues": true,
+    "percentStackedValues": false,
+    "showData": false,
+    "colTotals": true,
+    "rowTotals": true,
+    "rowSubTotals": false,
+    "colSubTotals": false,
+    "hideTitle": false,
+    "hideSubtitle": false,
+    "showDimensionLabels": false,
+    "interpretations": [],
+    "type": "PIVOT_TABLE",
+    "reportingParams": {
+        "grandParentOrganisationUnit": false,
+        "parentOrganisationUnit": false,
+        "organisationUnit": true,
+        "reportingPeriod": false
+    },
+    "yearlySeries": [],
+    "regression": false,
+    "hideEmptyColumns": false,
+    "fixColumnHeaders": false,
+    "fixRowHeaders": false,
+    "filters": [],
     "parentGraphMap": {
         "ImspTQPwCqd": ""
     },
-    "displayDensity": "NORMAL",
-    "completedOnly": false,
-    "colTotals": true,
-    "aggregationType": "DEFAULT",
-    "hideSubtitle": false,
-    "legendDisplayStrategy": "FIXED",
-    "colSubTotals": false,
-    "rowTotals": true,
-    "digitGroupSeparator": "SPACE",
-    "regression": false,
-    "reportParams": {
-        "paramGrandParentOrganisationUnit": false,
-        "paramReportingPeriod": false,
-        "paramOrganisationUnit": true,
-        "paramParentOrganisationUnit": false
-    },
-    "access": {
-        "read": true,
-        "update": true,
-        "externalize": true,
-        "delete": true,
-        "write": true,
-        "manage": true
-    },
-    "user": {
-        "displayName": "Tom Wakiki",
-        "userCredentials": {
-            "username": "system"
-        }
-    },
-    "dataElementGroupSetDimensions": [],
-    "attributeDimensions": [],
-    "translations": [],
-    "interpretations": [],
-    "userGroupAccesses": [],
     "columns": [
         {
-            "dimension": "dx",
             "items": [
                 {
-                    "id": "fbfJHSPpUQD",
                     "name": "ANC 1st visit",
-                    "dimensionItemType": "DATA_ELEMENT"
+                    "dimensionItemType": "DATA_ELEMENT",
+                    "access": {
+                        "manage": true,
+                        "externalize": false,
+                        "write": true,
+                        "read": true,
+                        "update": true,
+                        "delete": true
+                    },
+                    "displayName": "Soin prénatal 1",
+                    "displayShortName": "ANC 1st visit",
+                    "id": "fbfJHSPpUQD"
                 }
-            ]
-        }
-    ],
-    "dataElementDimensions": [],
-    "categoryDimensions": [],
-    "programIndicatorDimensions": [],
-    "attributeValues": [],
-    "userAccesses": [],
-    "dataDimensionItems": [
-        {
-            "dataDimensionItemType": "DATA_ELEMENT",
-            "dataElement": {
-                "id": "fbfJHSPpUQD"
-            }
-        }
-    ],
-    "categoryOptionGroupSetDimensions": [],
-    "organisationUnitGroupSetDimensions": [
-        {
-            "organisationUnitGroupSet": {
-                "id": "J5jldMd8OHv"
-            },
-            "organisationUnitGroups": [
-                {
-                    "id": "uYxK4wmcPqA"
-                },
-                {
-                    "id": "tDZVQ1WtwpA"
-                },
-                {
-                    "id": "EYbopBOJWsW"
-                },
-                {
-                    "id": "RXL3lPSK8oG"
-                },
-                {
-                    "id": "CXw2yu5fodb"
-                }
-            ]
-        }
-    ],
-    "filters": [
-        {
-            "dimension": "ou",
-            "items": [
-                {
-                    "id": "ImspTQPwCqd",
-                    "name": "Sierra Leone",
-                    "dimensionItemType": "ORGANISATION_UNIT"
-                }
-            ]
+            ],
+            "dimension": "dx"
         }
     ],
     "rows": [
         {
-            "dimension": "pe",
             "items": [
                 {
-                    "id": "LAST_12_MONTHS",
                     "name": "LAST_12_MONTHS",
-                    "dimensionItemType": "PERIOD"
+                    "dimensionItemType": "PERIOD",
+                    "displayShortName": "LAST_12_MONTHS",
+                    "access": {
+                        "manage": true,
+                        "externalize": false,
+                        "write": true,
+                        "read": true,
+                        "update": true,
+                        "delete": true
+                    },
+                    "displayName": "LAST_12_MONTHS",
+                    "id": "LAST_12_MONTHS"
                 }
-            ]
+            ],
+            "dimension": "pe"
+        },
+        {
+            "items": [
+                {
+                    "name": "Sierra Leone",
+                    "dimensionItemType": "ORGANISATION_UNIT",
+                    "access": {
+                        "manage": true,
+                        "externalize": false,
+                        "write": true,
+                        "read": true,
+                        "update": true,
+                        "delete": true
+                    },
+                    "displayName": "Sierra Leone",
+                    "displayShortName": "Sierra Leone",
+                    "id": "ImspTQPwCqd"
+                }
+            ],
+            "dimension": "ou"
         }
-    ]
+    ],
+    "subscribed": false,
+    "access": {
+        "manage": true,
+        "externalize": true,
+        "write": true,
+        "read": true,
+        "update": true,
+        "delete": true
+    },
+    "displayName": "ANC: ANC 1 Visits Cumulative Numbers",
+    "favorite": false,
+    "user": {
+        "id": "GOLswS44mh8",
+        "code": null,
+        "name": "Tom Wakiki",
+        "displayName": "Tom Wakiki",
+        "username": "system"
+    },
+    "href": "https://debug.dhis2.org/dev/api/42/visualizations/tWg9OiyV7mu",
+    "id": "tWg9OiyV7mu",
+    "legend": {
+        "showKey": false,
+        "style": "FILL",
+        "strategy": "FIXED"
+    },
+    "sorting": [],
+    "icons": [],
+    "seriesKey": {
+        "hidden": false
+    }
 }

@@ -1,28 +1,179 @@
 {
-    "lastUpdated": "2017-05-19T16:03:32.474",
-    "id": "yyG85tyRhs4",
-    "created": "2017-05-19T16:03:12.490",
     "name": "ER: Emergency report Result vs Target Rural and Urban with legend",
-    "publicAccess": "rw------",
-    "legendDisplayStyle": "FILL",
-    "type": "PIVOT_TABLE",
-    "hideEmptyColumns": false,
-    "subscribed": false,
-    "rowSubTotals": true,
-    "showDimensionLabels": true,
-    "sortOrder": 0,
+    "created": "2017-05-19T16:03:12.490",
+    "lastUpdated": "2017-05-19T16:03:32.474",
+    "translations": [],
+    "lastUpdatedBy": {
+        "id": "GOLswS44mh8",
+        "code": null,
+        "name": "Tom Wakiki",
+        "displayName": "Tom Wakiki",
+        "username": "system"
+    },
+    "displayDensity": "NORMAL",
     "fontSize": "NORMAL",
-    "favorite": false,
+    "sortOrder": 0,
     "topLimit": 0,
-    "displayName": "ER: Emergency report Result vs Target Rural and Urban with legend",
-    "percentStackedValues": false,
-    "noSpaceBetweenColumns": false,
-    "showHierarchy": false,
-    "cumulative": false,
-    "hideTitle": false,
-    "skipRounding": false,
-    "showData": false,
     "hideEmptyRows": false,
+    "showHierarchy": false,
+    "completedOnly": false,
+    "skipRounding": false,
+    "dataDimensionItems": [
+        {
+            "indicator": {
+                "name": "ER Children trained on key survival skills Result vs Target",
+                "dimensionItemType": "INDICATOR",
+                "access": {
+                    "manage": true,
+                    "externalize": false,
+                    "write": true,
+                    "read": true,
+                    "update": true,
+                    "delete": true
+                },
+                "displayName": "ER Children trained on key survival skills Result vs Target",
+                "displayShortName": "Children trained survival skills Result vs Target",
+                "id": "MkXHDfrFRKV"
+            },
+            "dataDimensionItemType": "INDICATOR"
+        },
+        {
+            "indicator": {
+                "name": "ER Teacher accommodation constructed Urban Result vs Target",
+                "dimensionItemType": "INDICATOR",
+                "access": {
+                    "manage": true,
+                    "externalize": false,
+                    "write": true,
+                    "read": true,
+                    "update": true,
+                    "delete": true
+                },
+                "displayName": "ER Teacher accommodation constructed Urban Result vs Target",
+                "displayShortName": "Teacher accom constr Urban Result vs Target",
+                "id": "qmCKRmVj4WX"
+            },
+            "dataDimensionItemType": "INDICATOR"
+        },
+        {
+            "indicator": {
+                "name": "ER Teacher training programs designed Result vs Target",
+                "dimensionItemType": "INDICATOR",
+                "access": {
+                    "manage": true,
+                    "externalize": false,
+                    "write": true,
+                    "read": true,
+                    "update": true,
+                    "delete": true
+                },
+                "displayName": "ER Teacher training programs designed Result vs Target",
+                "displayShortName": "Teacher training prog designed Result vs Target",
+                "id": "ULW9dQOiiTS"
+            },
+            "dataDimensionItemType": "INDICATOR"
+        },
+        {
+            "indicator": {
+                "name": "ER Teachers trained Result vs Target",
+                "dimensionItemType": "INDICATOR",
+                "access": {
+                    "manage": true,
+                    "externalize": false,
+                    "write": true,
+                    "read": true,
+                    "update": true,
+                    "delete": true
+                },
+                "displayName": "ER Teachers trained Result vs Target",
+                "displayShortName": "Teachers trained Result vs Target",
+                "id": "oTOpKabJA1v"
+            },
+            "dataDimensionItemType": "INDICATOR"
+        },
+        {
+            "indicator": {
+                "name": "ER Technical support visits Result vs Target",
+                "dimensionItemType": "INDICATOR",
+                "access": {
+                    "manage": true,
+                    "externalize": false,
+                    "write": true,
+                    "read": true,
+                    "update": true,
+                    "delete": true
+                },
+                "displayName": "ER Technical support visits Result vs Target",
+                "displayShortName": "Technical support visits Result vs Target",
+                "id": "iug406zdfTE"
+            },
+            "dataDimensionItemType": "INDICATOR"
+        },
+        {
+            "indicator": {
+                "name": "ER Technical support visits Rural Result vs Target",
+                "dimensionItemType": "INDICATOR",
+                "access": {
+                    "manage": true,
+                    "externalize": false,
+                    "write": true,
+                    "read": true,
+                    "update": true,
+                    "delete": true
+                },
+                "displayName": "ER Technical support visits Rural Result vs Target",
+                "displayShortName": "Technical support visits Rural Result vs Target",
+                "id": "EY8gsfEomc0"
+            },
+            "dataDimensionItemType": "INDICATOR"
+        },
+        {
+            "indicator": {
+                "name": "ER Visits in schools Rural Result vs Target",
+                "dimensionItemType": "INDICATOR",
+                "access": {
+                    "manage": true,
+                    "externalize": false,
+                    "write": true,
+                    "read": true,
+                    "update": true,
+                    "delete": true
+                },
+                "displayName": "ER Visits in schools Rural Result vs Target",
+                "displayShortName": "Visits in schools Rural Result vs Target",
+                "id": "X2XfzgH4NOR"
+            },
+            "dataDimensionItemType": "INDICATOR"
+        }
+    ],
+    "subscribers": [],
+    "aggregationType": "DEFAULT",
+    "digitGroupSeparator": "SPACE",
+    "noSpaceBetweenColumns": false,
+    "cumulativeValues": false,
+    "percentStackedValues": false,
+    "showData": false,
+    "colTotals": true,
+    "rowTotals": true,
+    "rowSubTotals": true,
+    "colSubTotals": true,
+    "hideTitle": false,
+    "hideSubtitle": false,
+    "showDimensionLabels": true,
+    "interpretations": [],
+    "type": "PIVOT_TABLE",
+    "reportingParams": {
+        "grandParentOrganisationUnit": false,
+        "parentOrganisationUnit": false,
+        "organisationUnit": false,
+        "reportingPeriod": false
+    },
+    "yearlySeries": [],
+    "regression": false,
+    "hideEmptyColumns": false,
+    "fixColumnHeaders": false,
+    "fixRowHeaders": false,
+    "filters": [],
     "parentGraphMap": {
         "at6UHUQatSo": "ImspTQPwCqd",
         "TEQlaapDQoK": "ImspTQPwCqd",
@@ -32,179 +183,283 @@
         "qhqAxPSTUXp": "ImspTQPwCqd",
         "jmIPBj66vD6": "ImspTQPwCqd"
     },
-    "displayDensity": "NORMAL",
-    "completedOnly": false,
-    "colTotals": true,
-    "aggregationType": "DEFAULT",
-    "hideSubtitle": false,
-    "hideLegend": false,
-    "colSubTotals": true,
-    "legendDisplayStrategy": "FIXED",
-    "rowTotals": true,
-    "digitGroupSeparator": "SPACE",
-    "regression": false,
-    "access": {
-        "read": true,
-        "update": true,
-        "externalize": true,
-        "delete": true,
-        "write": true,
-        "manage": true,
-        "data": {
-            "read": false,
-            "write": false
-        }
-    },
-    "reportingParams": {
-        "parentOrganisationUnit": false,
-        "reportingPeriod": false,
-        "organisationUnit": false,
-        "grandParentOrganisationUnit": false
-    },
-    "lastUpdatedBy": {
-        "id": "GOLswS44mh8"
-    },
-    "legendSet": {
-        "name": "Under or above 100%",
-        "id": "gFJUXah1uRH",
-        "displayName": "Under or above 100%"
-    },
-    "user": {
-        "name": "Tom Wakiki",
-        "displayName": "Tom Wakiki",
-        "userCredentials": {
-            "username": "system"
-        }
-    },
-    "translations": [],
-    "yearlySeries": [],
-    "interpretations": [],
-    "userGroupAccesses": [],
-    "optionalAxes": [],
     "columns": [
         {
-            "dimension": "dx",
             "items": [
                 {
                     "name": "ER Children trained on key survival skills Result vs Target",
-                    "id": "MkXHDfrFRKV",
+                    "dimensionItemType": "INDICATOR",
+                    "access": {
+                        "manage": true,
+                        "externalize": false,
+                        "write": true,
+                        "read": true,
+                        "update": true,
+                        "delete": true
+                    },
                     "displayName": "ER Children trained on key survival skills Result vs Target",
                     "displayShortName": "Children trained survival skills Result vs Target",
-                    "dimensionItemType": "INDICATOR"
+                    "id": "MkXHDfrFRKV"
                 },
                 {
                     "name": "ER Teacher accommodation constructed Urban Result vs Target",
-                    "id": "qmCKRmVj4WX",
+                    "dimensionItemType": "INDICATOR",
+                    "access": {
+                        "manage": true,
+                        "externalize": false,
+                        "write": true,
+                        "read": true,
+                        "update": true,
+                        "delete": true
+                    },
                     "displayName": "ER Teacher accommodation constructed Urban Result vs Target",
                     "displayShortName": "Teacher accom constr Urban Result vs Target",
-                    "dimensionItemType": "INDICATOR"
+                    "id": "qmCKRmVj4WX"
                 },
                 {
                     "name": "ER Teacher training programs designed Result vs Target",
-                    "id": "ULW9dQOiiTS",
+                    "dimensionItemType": "INDICATOR",
+                    "access": {
+                        "manage": true,
+                        "externalize": false,
+                        "write": true,
+                        "read": true,
+                        "update": true,
+                        "delete": true
+                    },
                     "displayName": "ER Teacher training programs designed Result vs Target",
                     "displayShortName": "Teacher training prog designed Result vs Target",
-                    "dimensionItemType": "INDICATOR"
+                    "id": "ULW9dQOiiTS"
                 },
                 {
                     "name": "ER Teachers trained Result vs Target",
-                    "id": "oTOpKabJA1v",
+                    "dimensionItemType": "INDICATOR",
+                    "access": {
+                        "manage": true,
+                        "externalize": false,
+                        "write": true,
+                        "read": true,
+                        "update": true,
+                        "delete": true
+                    },
                     "displayName": "ER Teachers trained Result vs Target",
                     "displayShortName": "Teachers trained Result vs Target",
-                    "dimensionItemType": "INDICATOR"
+                    "id": "oTOpKabJA1v"
                 },
                 {
                     "name": "ER Technical support visits Result vs Target",
-                    "id": "iug406zdfTE",
+                    "dimensionItemType": "INDICATOR",
+                    "access": {
+                        "manage": true,
+                        "externalize": false,
+                        "write": true,
+                        "read": true,
+                        "update": true,
+                        "delete": true
+                    },
                     "displayName": "ER Technical support visits Result vs Target",
                     "displayShortName": "Technical support visits Result vs Target",
-                    "dimensionItemType": "INDICATOR"
+                    "id": "iug406zdfTE"
                 },
                 {
                     "name": "ER Technical support visits Rural Result vs Target",
-                    "id": "EY8gsfEomc0",
+                    "dimensionItemType": "INDICATOR",
+                    "access": {
+                        "manage": true,
+                        "externalize": false,
+                        "write": true,
+                        "read": true,
+                        "update": true,
+                        "delete": true
+                    },
                     "displayName": "ER Technical support visits Rural Result vs Target",
                     "displayShortName": "Technical support visits Rural Result vs Target",
-                    "dimensionItemType": "INDICATOR"
+                    "id": "EY8gsfEomc0"
                 },
                 {
                     "name": "ER Visits in schools Rural Result vs Target",
-                    "id": "X2XfzgH4NOR",
+                    "dimensionItemType": "INDICATOR",
+                    "access": {
+                        "manage": true,
+                        "externalize": false,
+                        "write": true,
+                        "read": true,
+                        "update": true,
+                        "delete": true
+                    },
                     "displayName": "ER Visits in schools Rural Result vs Target",
                     "displayShortName": "Visits in schools Rural Result vs Target",
-                    "dimensionItemType": "INDICATOR"
+                    "id": "X2XfzgH4NOR"
                 }
-            ]
+            ],
+            "dimension": "dx"
         }
     ],
-    "userAccesses": [],
-    "filters": [],
     "rows": [
         {
-            "dimension": "pe",
             "items": [
                 {
                     "name": "LAST_4_QUARTERS",
-                    "id": "LAST_4_QUARTERS",
-                    "displayName": "LAST_4_QUARTERS",
+                    "dimensionItemType": "PERIOD",
                     "displayShortName": "LAST_4_QUARTERS",
-                    "dimensionItemType": "PERIOD"
+                    "access": {
+                        "manage": true,
+                        "externalize": false,
+                        "write": true,
+                        "read": true,
+                        "update": true,
+                        "delete": true
+                    },
+                    "displayName": "LAST_4_QUARTERS",
+                    "id": "LAST_4_QUARTERS"
                 }
-            ]
+            ],
+            "dimension": "pe"
         },
         {
-            "dimension": "ou",
             "items": [
                 {
                     "name": "Western Area",
-                    "id": "at6UHUQatSo",
-                    "displayName": "Western Area",
+                    "dimensionItemType": "ORGANISATION_UNIT",
                     "displayShortName": "Western Area",
-                    "dimensionItemType": "ORGANISATION_UNIT"
+                    "access": {
+                        "manage": true,
+                        "externalize": false,
+                        "write": true,
+                        "read": true,
+                        "update": true,
+                        "delete": true
+                    },
+                    "displayName": "Western Area",
+                    "id": "at6UHUQatSo"
                 },
                 {
                     "name": "Port Loko",
-                    "id": "TEQlaapDQoK",
-                    "displayName": "Port Loko",
+                    "dimensionItemType": "ORGANISATION_UNIT",
                     "displayShortName": "Port Loko",
-                    "dimensionItemType": "ORGANISATION_UNIT"
+                    "access": {
+                        "manage": true,
+                        "externalize": false,
+                        "write": true,
+                        "read": true,
+                        "update": true,
+                        "delete": true
+                    },
+                    "displayName": "Port Loko",
+                    "id": "TEQlaapDQoK"
                 },
                 {
                     "name": "Tonkolili",
-                    "id": "eIQbndfxQMb",
-                    "displayName": "Tonkolili",
+                    "dimensionItemType": "ORGANISATION_UNIT",
                     "displayShortName": "Tonkolili",
-                    "dimensionItemType": "ORGANISATION_UNIT"
+                    "access": {
+                        "manage": true,
+                        "externalize": false,
+                        "write": true,
+                        "read": true,
+                        "update": true,
+                        "delete": true
+                    },
+                    "displayName": "Tonkolili",
+                    "id": "eIQbndfxQMb"
                 },
                 {
                     "name": "Kono",
-                    "id": "Vth0fbpFcsO",
-                    "displayName": "Kono",
+                    "dimensionItemType": "ORGANISATION_UNIT",
                     "displayShortName": "Kono",
-                    "dimensionItemType": "ORGANISATION_UNIT"
+                    "access": {
+                        "manage": true,
+                        "externalize": false,
+                        "write": true,
+                        "read": true,
+                        "update": true,
+                        "delete": true
+                    },
+                    "displayName": "Kono",
+                    "id": "Vth0fbpFcsO"
                 },
                 {
                     "name": "Pujehun",
-                    "id": "bL4ooGhyHRQ",
-                    "displayName": "Pujehun",
+                    "dimensionItemType": "ORGANISATION_UNIT",
                     "displayShortName": "Pujehun",
-                    "dimensionItemType": "ORGANISATION_UNIT"
+                    "access": {
+                        "manage": true,
+                        "externalize": false,
+                        "write": true,
+                        "read": true,
+                        "update": true,
+                        "delete": true
+                    },
+                    "displayName": "Pujehun",
+                    "id": "bL4ooGhyHRQ"
                 },
                 {
                     "name": "Koinadugu",
-                    "id": "qhqAxPSTUXp",
-                    "displayName": "Koinadugu",
+                    "dimensionItemType": "ORGANISATION_UNIT",
                     "displayShortName": "Koinadugu",
-                    "dimensionItemType": "ORGANISATION_UNIT"
+                    "access": {
+                        "manage": true,
+                        "externalize": false,
+                        "write": true,
+                        "read": true,
+                        "update": true,
+                        "delete": true
+                    },
+                    "displayName": "Koinadugu",
+                    "id": "qhqAxPSTUXp"
                 },
                 {
                     "name": "Moyamba",
-                    "id": "jmIPBj66vD6",
-                    "displayName": "Moyamba",
+                    "dimensionItemType": "ORGANISATION_UNIT",
                     "displayShortName": "Moyamba",
-                    "dimensionItemType": "ORGANISATION_UNIT"
+                    "access": {
+                        "manage": true,
+                        "externalize": false,
+                        "write": true,
+                        "read": true,
+                        "update": true,
+                        "delete": true
+                    },
+                    "displayName": "Moyamba",
+                    "id": "jmIPBj66vD6"
                 }
-            ]
+            ],
+            "dimension": "ou"
         }
-    ]
+    ],
+    "subscribed": false,
+    "access": {
+        "manage": true,
+        "externalize": true,
+        "write": true,
+        "read": true,
+        "update": true,
+        "delete": true
+    },
+    "displayName": "ER: Emergency report Result vs Target Rural and Urban with legend",
+    "favorite": false,
+    "user": {
+        "id": "GOLswS44mh8",
+        "code": null,
+        "name": "Tom Wakiki",
+        "displayName": "Tom Wakiki",
+        "username": "system"
+    },
+    "href": "https://debug.dhis2.org/dev/api/42/visualizations/yyG85tyRhs4",
+    "id": "yyG85tyRhs4",
+    "legend": {
+        "showKey": false,
+        "style": "FILL",
+        "set": {
+            "name": "Under or above 100%",
+            "displayName": "Under or above 100%",
+            "id": "gFJUXah1uRH"
+        },
+        "strategy": "FIXED"
+    },
+    "sorting": [],
+    "icons": [],
+    "seriesKey": {
+        "hidden": false
+    }
 }

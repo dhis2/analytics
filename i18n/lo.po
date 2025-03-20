@@ -1,18 +1,19 @@
 # 
 # Translators:
-# Viktor Varland <viktor@dhis2.org>, 2022
 # Somkhit Bouavong <bouavongk@gmail.com>, 2022
-# Philip Larsen Donnelly, 2023
 # Phouthasinh PHEUAYSITHIPHONE, 2023
-# Namwan Chanthavisouk, 2024
-# Saysamone Sibounma, 2024
+# Namwan Chanthavisouk, 2025
+# Thuy Nguyen <thuynguyen@hispvietnam.org>, 2025
+# Saysamone Sibounma, 2025
+# Philip Larsen Donnelly, 2025
+# Viktor Varland <viktor@dhis2.org>, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2024-10-11T12:49:26.846Z\n"
+"POT-Creation-Date: 2024-12-19T10:28:15.132Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Saysamone Sibounma, 2024\n"
+"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2025\n"
 "Language-Team: Lao (https://app.transifex.com/hisp-uio/teams/100509/lo/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -177,6 +178,150 @@ msgstr "Disaggregation"
 msgid "No data"
 msgstr "ບໍ່ມີຂໍ້ມູນ"
 
+msgid "Expression description"
+msgstr ""
+
+msgid "Error loading value"
+msgstr ""
+
+msgid "None"
+msgstr "ບໍ່ແມນ"
+
+msgid "Data set(s)"
+msgstr ""
+
+msgid "Zero is significant"
+msgstr ""
+
+msgid "True"
+msgstr ""
+
+msgid "False"
+msgstr ""
+
+msgid "Value type"
+msgstr "Value Type"
+
+msgid "Aggregation type"
+msgstr "ປະເພດຕົວເລກລວມ"
+
+msgid "Category combo"
+msgstr ""
+
+msgid "Option set"
+msgstr "Option set"
+
+msgid "Group membership"
+msgstr ""
+
+msgid "Legend set(s)"
+msgstr ""
+
+msgid "Category option name"
+msgstr ""
+
+msgid "Category combo name"
+msgstr ""
+
+msgid "Categories name"
+msgstr ""
+
+msgid "Period type"
+msgstr "ແບບຊ່ວງເວລາ"
+
+msgid "Indicators"
+msgstr "ຕົວຊີ້ວັດ"
+
+msgid "Expiry days"
+msgstr "Expiry Days"
+
+msgid "Type"
+msgstr "ຊະນິດ"
+
+msgid "Data element"
+msgstr "ອົງປະກອບຂໍ້ມູນ"
+
+msgid "Tracked entity attribute"
+msgstr "Attribute"
+
+msgid "Numerator description"
+msgstr "ພັນລະນາກ່ຽວກັບຕົວຕັ້ງ"
+
+msgid "Numerator expression"
+msgstr ""
+
+msgid "Denominator description"
+msgstr "ການພັນລະນາເຖິງຕົວຫານ"
+
+msgid "Denominator expression"
+msgstr ""
+
+msgid "Annualized"
+msgstr "Annualized"
+
+msgid "Yes"
+msgstr "ແມ່ນ"
+
+msgid "No"
+msgstr "ບໍ່ແມນ"
+
+msgid "Indicator type"
+msgstr "Indicator Type"
+
+msgid "Decimals in output"
+msgstr ""
+
+msgid "There was a problem loading information for this data item."
+msgstr ""
+
+msgid "Name"
+msgstr "ຊື່"
+
+msgid "Description"
+msgstr "ລາຍລະອຽດ"
+
+msgid "Code"
+msgstr "ລະຫັດ"
+
+msgid "ID"
+msgstr "ລະຫັດ"
+
+msgid "Last updated date"
+msgstr ""
+
+msgid "Created date"
+msgstr "ສ້າງຂໍ້ມູນ"
+
+msgid "Created by"
+msgstr "ສ້າງໂດຍ"
+
+msgid "Custom"
+msgstr "ກຳນົດເອງ"
+
+msgid "Program"
+msgstr "ໂປແກຼມ"
+
+msgid "Analytics type"
+msgstr ""
+
+msgid "Enrollment"
+msgstr "ການລົງທະບຽນ"
+
+msgid "Event"
+msgstr "ເຫດການ"
+
+msgid "Analytics period boundaries"
+msgstr ""
+
+msgid "{{ offsetPeriodType }} × {{ offsetPeriods }}"
+msgstr ""
+
+msgid "Expression"
+msgstr "ເຄື່ອງໝາຍເລກ"
+
+msgid "Filter"
+msgstr "ຕົວກອງ"
+
 msgid "Search by data item name"
 msgstr "ຄົ້ນຫາໂດຍຊື່ລາຍການຂໍ້ມູນ"
 
@@ -332,12 +477,6 @@ msgstr "ປິດ"
 msgid "Rename {{fileType}}"
 msgstr "ປ່ຽນຊື່ {{fileType}}"
 
-msgid "Name"
-msgstr "ຊື່"
-
-msgid "Description"
-msgstr "ລາຍລະອຽດ"
-
 msgid "Rename"
 msgstr "ປ່ຽນຊື່"
 
@@ -444,9 +583,6 @@ msgstr "ປ້ອນຂໍ້ຄວາມ"
 msgid "Not available offline"
 msgstr "ບໍ່ສາມາດໃຊ້ໄດ້ອອບລາຍ"
 
-msgid "Created by"
-msgstr "ສ້າງໂດຍ"
-
 msgid "Anyone"
 msgstr "ທຸກຄົນ"
 
@@ -467,9 +603,6 @@ msgstr "ສ້າງແລ້ວ"
 
 msgid "Last updated"
 msgstr "ປັບປຸງ​ຄັ້ງຫລ້າສຸດ"
-
-msgid "Type"
-msgstr "ຊະນິດ"
 
 msgid "Clear filters"
 msgstr "ປັບປຸງເຄື່ອງມືຄັດຈ້ອນ"
@@ -624,9 +757,6 @@ msgstr "ເລືອກກຸ່ມ"
 
 msgid "Deselect all"
 msgstr "ຍົກເລີກການເລືອກທັງໝົດ"
-
-msgid "Period type"
-msgstr "ແບບຊ່ວງເວລາ"
 
 msgid "Year"
 msgstr "ປີ"
@@ -925,9 +1055,6 @@ msgstr "ແທ່ງ"
 msgid "Category"
 msgstr "ລວງນອນ"
 
-msgid "Filter"
-msgstr "ຕົວກອງ"
-
 msgid "Columns"
 msgstr "ຖັນ"
 
@@ -952,14 +1079,8 @@ msgstr "ລາຍງານຕົວຈິງຕົງເວລາ"
 msgid "Expected reports"
 msgstr "ລາຍງານທີ່ຄາດໄວ້"
 
-msgid "Program"
-msgstr "ໂປແກຼມ"
-
 msgid "Select a program"
 msgstr "ເລືອກໂປແກຼມ"
-
-msgid "Indicators"
-msgstr "ຕົວຊີ້ວັດ"
 
 msgid "Indicator group"
 msgstr "ກຸ່ມຂອງຕົວຊີ້ວັດ"
@@ -978,9 +1099,6 @@ msgstr "ໂຫຼດກຸ່ມຕົວຊີ້ວັດ"
 
 msgid "Data element group"
 msgstr "ກຸ່ມຂອງອົງປະກອບຂໍ້ມູນ"
-
-msgid "Data element"
-msgstr "ອົງປະກອບຂໍ້ມູນ"
 
 msgid "No data element groups found"
 msgstr "ບໍ່ພົບກຸ່ມອົງປະກອບຂໍ້ມູນ"
@@ -1137,6 +1255,81 @@ msgstr "​ຫົວ​ໜ່ວຍ​ການ​ຈັດ​ຕັ້ງ"
 
 msgid "Assigned Categories"
 msgstr "ຈັດໝວດໝູ່"
+
+msgid "Text"
+msgstr "ຂໍ້ຄວາມ"
+
+msgid "Long text"
+msgstr ""
+
+msgid "Multi text"
+msgstr ""
+
+msgid "Letter"
+msgstr ""
+
+msgid "Phone number"
+msgstr "ໝາຍເລກໂທລະສັບ"
+
+msgid "Email"
+msgstr "ອີເມວ"
+
+msgid "Yes/No"
+msgstr "ແມ່ນ/ບໍ່ແມນ"
+
+msgid "Yes Only"
+msgstr "ແມ່ນ"
+
+msgid "Date"
+msgstr "ວັນທີ່"
+
+msgid "Date & Time"
+msgstr "ວັນທີ່ & ເວລາ"
+
+msgid "Time"
+msgstr "ເວລາ"
+
+msgid "Unit interval"
+msgstr ""
+
+msgid "Percentage"
+msgstr "ເປີເຊັນ"
+
+msgid "Integer"
+msgstr "Integer"
+
+msgid "Positive Integer"
+msgstr "Positive Integer"
+
+msgid "Negative Integer"
+msgstr "Negative Integer"
+
+msgid "Positive or Zero Integer"
+msgstr ""
+
+msgid "Tracker Associate"
+msgstr "Tracker associate"
+
+msgid "Username"
+msgstr "ຊື່ຜູ້ໃຊ້"
+
+msgid "Coordinate"
+msgstr "ເສັ້ນສະແດງ"
+
+msgid "Reference"
+msgstr ""
+
+msgid "Age"
+msgstr "Age(years)"
+
+msgid "URL"
+msgstr "URL"
+
+msgid "Image"
+msgstr "ຮູບພາບ"
+
+msgid "GeoJSON"
+msgstr ""
 
 msgid "Pivot table"
 msgstr "ແບບຕາຕະລາງໄພວ໋ອດ"

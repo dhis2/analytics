@@ -607,7 +607,7 @@ export class PivotTableEngine {
         return !this.data[row] || this.data[row].length === 0
     }
     columnIsEmpty(column) {
-        return !this.rowMap.some((row) => this.data[row][column])
+        return !this.rowMap.some((row) => !!this.data[row]?.[column])
     }
 
     getRawColumnHeader(column) {

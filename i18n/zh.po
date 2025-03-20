@@ -1,16 +1,16 @@
 # 
 # Translators:
-# Viktor Varland <viktor@dhis2.org>, 2021
-# 晓东 林 <13981924470@126.com>, 2023
-# Philip Larsen Donnelly, 2024
-# easylin <lin_xd@126.com>, 2024
+# Viktor Varland <viktor@dhis2.org>, 2025
+# 晓东 林 <13981924470@126.com>, 2025
+# Philip Larsen Donnelly, 2025
+# easylin <lin_xd@126.com>, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2024-10-11T12:49:26.846Z\n"
+"POT-Creation-Date: 2024-12-19T10:28:15.132Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: easylin <lin_xd@126.com>, 2024\n"
+"Last-Translator: easylin <lin_xd@126.com>, 2025\n"
 "Language-Team: Chinese (https://app.transifex.com/hisp-uio/teams/100509/zh/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -173,6 +173,150 @@ msgstr "分解"
 msgid "No data"
 msgstr "无数据"
 
+msgid "Expression description"
+msgstr "表达式描述"
+
+msgid "Error loading value"
+msgstr "错误加载值"
+
+msgid "None"
+msgstr "没有"
+
+msgid "Data set(s)"
+msgstr "数据集"
+
+msgid "Zero is significant"
+msgstr "零具有重要意义"
+
+msgid "True"
+msgstr "真"
+
+msgid "False"
+msgstr "假"
+
+msgid "Value type"
+msgstr "值类型"
+
+msgid "Aggregation type"
+msgstr "汇总类型"
+
+msgid "Category combo"
+msgstr "分类组合"
+
+msgid "Option set"
+msgstr "值域选项集"
+
+msgid "Group membership"
+msgstr "小组成员"
+
+msgid "Legend set(s)"
+msgstr "图例集"
+
+msgid "Category option name"
+msgstr "类别选项名称"
+
+msgid "Category combo name"
+msgstr "类别组合名称"
+
+msgid "Categories name"
+msgstr "类别名称"
+
+msgid "Period type"
+msgstr "周期类型"
+
+msgid "Indicators"
+msgstr "指标"
+
+msgid "Expiry days"
+msgstr "过期满天数"
+
+msgid "Type"
+msgstr "类型"
+
+msgid "Data element"
+msgstr "数据元"
+
+msgid "Tracked entity attribute"
+msgstr "跟踪的实体属性"
+
+msgid "Numerator description"
+msgstr "描述"
+
+msgid "Numerator expression"
+msgstr "分母表达式"
+
+msgid "Denominator description"
+msgstr "分母描述"
+
+msgid "Denominator expression"
+msgstr "分母表达式"
+
+msgid "Annualized"
+msgstr "年度"
+
+msgid "Yes"
+msgstr "是"
+
+msgid "No"
+msgstr "否"
+
+msgid "Indicator type"
+msgstr "指标类型"
+
+msgid "Decimals in output"
+msgstr "输出中的小数"
+
+msgid "There was a problem loading information for this data item."
+msgstr "该数据项的信息加载有问题。"
+
+msgid "Name"
+msgstr "名称"
+
+msgid "Description"
+msgstr "描述"
+
+msgid "Code"
+msgstr "代码"
+
+msgid "ID"
+msgstr "Id"
+
+msgid "Last updated date"
+msgstr "最后更新日期"
+
+msgid "Created date"
+msgstr "创建日期"
+
+msgid "Created by"
+msgstr "创建人"
+
+msgid "Custom"
+msgstr "定制"
+
+msgid "Program"
+msgstr "项目"
+
+msgid "Analytics type"
+msgstr "分析类型"
+
+msgid "Enrollment"
+msgstr "报名"
+
+msgid "Event"
+msgstr "事件"
+
+msgid "Analytics period boundaries"
+msgstr "分析期间边界"
+
+msgid "{{ offsetPeriodType }} × {{ offsetPeriods }}"
+msgstr "{{ offsetPeriodType }} ×{{ offsetPeriods }}"
+
+msgid "Expression"
+msgstr "表达式"
+
+msgid "Filter"
+msgstr "过滤器"
+
 msgid "Search by data item name"
 msgstr "按数据项名称搜索"
 
@@ -326,12 +470,6 @@ msgstr "关闭"
 msgid "Rename {{fileType}}"
 msgstr "重命名{{fileType}}"
 
-msgid "Name"
-msgstr "名称"
-
-msgid "Description"
-msgstr "描述"
-
 msgid "Rename"
 msgstr "改名"
 
@@ -438,9 +576,6 @@ msgstr "输入解释文本"
 msgid "Not available offline"
 msgstr "离线不可用"
 
-msgid "Created by"
-msgstr "创建人"
-
 msgid "Anyone"
 msgstr "任何人"
 
@@ -461,9 +596,6 @@ msgstr "已创建"
 
 msgid "Last updated"
 msgstr "上次更新"
-
-msgid "Type"
-msgstr "类型"
 
 msgid "Clear filters"
 msgstr "清除过滤器"
@@ -609,9 +741,6 @@ msgstr "选择一个组"
 
 msgid "Deselect all"
 msgstr "取消全选"
-
-msgid "Period type"
-msgstr "周期类型"
 
 msgid "Year"
 msgstr "年"
@@ -910,9 +1039,6 @@ msgstr "系列"
 msgid "Category"
 msgstr "分类"
 
-msgid "Filter"
-msgstr "过滤器"
-
 msgid "Columns"
 msgstr "列"
 
@@ -937,14 +1063,8 @@ msgstr "实际准时上报"
 msgid "Expected reports"
 msgstr "预期上报"
 
-msgid "Program"
-msgstr "项目"
-
 msgid "Select a program"
 msgstr "选择一个项目"
-
-msgid "Indicators"
-msgstr "指标"
 
 msgid "Indicator group"
 msgstr "指标组"
@@ -963,9 +1083,6 @@ msgstr "加载指标组"
 
 msgid "Data element group"
 msgstr "数据元组"
-
-msgid "Data element"
-msgstr "数据元"
 
 msgid "No data element groups found"
 msgstr "找不到数据元素组"
@@ -1122,6 +1239,81 @@ msgstr "机构"
 
 msgid "Assigned Categories"
 msgstr "指定的分类"
+
+msgid "Text"
+msgstr "文本"
+
+msgid "Long text"
+msgstr "长文本"
+
+msgid "Multi text"
+msgstr "多种文本"
+
+msgid "Letter"
+msgstr "字符"
+
+msgid "Phone number"
+msgstr "电话号码"
+
+msgid "Email"
+msgstr "邮件"
+
+msgid "Yes/No"
+msgstr "是/否"
+
+msgid "Yes Only"
+msgstr "仅是"
+
+msgid "Date"
+msgstr "日期"
+
+msgid "Date & Time"
+msgstr "日期时间"
+
+msgid "Time"
+msgstr "时间"
+
+msgid "Unit interval"
+msgstr "单位间隔"
+
+msgid "Percentage"
+msgstr "百分比"
+
+msgid "Integer"
+msgstr "整型"
+
+msgid "Positive Integer"
+msgstr "正整数"
+
+msgid "Negative Integer"
+msgstr "负整数"
+
+msgid "Positive or Zero Integer"
+msgstr "零或正整数"
+
+msgid "Tracker Associate"
+msgstr "随访相关"
+
+msgid "Username"
+msgstr "用户名"
+
+msgid "Coordinate"
+msgstr "坐标"
+
+msgid "Reference"
+msgstr "引用"
+
+msgid "Age"
+msgstr "年龄"
+
+msgid "URL"
+msgstr "URL"
+
+msgid "Image"
+msgstr "图片(PNG)"
+
+msgid "GeoJSON"
+msgstr "GeoJSON"
 
 msgid "Pivot table"
 msgstr "透视表"

@@ -24,13 +24,16 @@ _reason_
 
 ### TODO
 
--   [ ] _task_
+- [ ] Tests added
+- [ ] PRs for all affected apps created
+- [ ] Storybook added
+- [ ] _todo_
 
 ---
 
 ### Known issues
 
--   [ ] _issue_
+- [ ] _issue_
 
 ---
 

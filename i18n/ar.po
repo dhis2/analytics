@@ -1,15 +1,15 @@
 # 
 # Translators:
-# Viktor Varland <viktor@dhis2.org>, 2022
-# phil_dhis2, 2023
-# Hamza Assada <7amza.it@gmail.com>, 2023
+# Viktor Varland <viktor@dhis2.org>, 2025
+# Philip Larsen Donnelly, 2025
+# Hamza Assada <7amza.it@gmail.com>, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2023-07-06T08:30:33.216Z\n"
+"POT-Creation-Date: 2024-12-19T10:28:15.132Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Hamza Assada <7amza.it@gmail.com>, 2023\n"
+"Last-Translator: Hamza Assada <7amza.it@gmail.com>, 2025\n"
 "Language-Team: Arabic (https://app.transifex.com/hisp-uio/teams/100509/ar/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -39,7 +39,7 @@ msgid "No description"
 msgstr "لا يوجد وصف"
 
 msgid "Last updated {{time}}"
-msgstr ""
+msgstr "آخر تحديث {{time}}"
 
 msgid "Created {{time}} by {{author}}"
 msgstr ""
@@ -78,6 +78,12 @@ msgid "About this line list"
 msgstr ""
 
 msgid "About this visualization"
+msgstr ""
+
+msgid "About this event chart"
+msgstr ""
+
+msgid "About this event report"
 msgstr ""
 
 msgid "This app could not retrieve required data."
@@ -159,6 +165,9 @@ msgstr ""
 msgid "Data Type"
 msgstr "نوع البيانات"
 
+msgid "Only {{dataType}} can be used in {{visType}}"
+msgstr ""
+
 msgid "All types"
 msgstr "جميع الأنواع"
 
@@ -167,6 +176,150 @@ msgstr "تصنيف"
 
 msgid "No data"
 msgstr "لا توجد بيانات"
+
+msgid "Expression description"
+msgstr "وصف التعبير"
+
+msgid "Error loading value"
+msgstr ""
+
+msgid "None"
+msgstr "لا شيء"
+
+msgid "Data set(s)"
+msgstr ""
+
+msgid "Zero is significant"
+msgstr ""
+
+msgid "True"
+msgstr "صح"
+
+msgid "False"
+msgstr "خطأ"
+
+msgid "Value type"
+msgstr "نوع القيمة"
+
+msgid "Aggregation type"
+msgstr "نوع التجميع"
+
+msgid "Category combo"
+msgstr "Category combo"
+
+msgid "Option set"
+msgstr "حزمة الخيارات"
+
+msgid "Group membership"
+msgstr ""
+
+msgid "Legend set(s)"
+msgstr ""
+
+msgid "Category option name"
+msgstr ""
+
+msgid "Category combo name"
+msgstr ""
+
+msgid "Categories name"
+msgstr ""
+
+msgid "Period type"
+msgstr "نوع الفترة الزمنية"
+
+msgid "Indicators"
+msgstr "المؤشرات"
+
+msgid "Expiry days"
+msgstr "أيام انتهاء الصلاحية"
+
+msgid "Type"
+msgstr "النوع"
+
+msgid "Data element"
+msgstr "عنصر البيانات"
+
+msgid "Tracked entity attribute"
+msgstr "سمة الكيان المتعقب"
+
+msgid "Numerator description"
+msgstr "وصف البسط"
+
+msgid "Numerator expression"
+msgstr ""
+
+msgid "Denominator description"
+msgstr "وصف المقام"
+
+msgid "Denominator expression"
+msgstr ""
+
+msgid "Annualized"
+msgstr "بشكل سنوي"
+
+msgid "Yes"
+msgstr "نعم"
+
+msgid "No"
+msgstr "لا"
+
+msgid "Indicator type"
+msgstr "نوع المؤشر"
+
+msgid "Decimals in output"
+msgstr ""
+
+msgid "There was a problem loading information for this data item."
+msgstr ""
+
+msgid "Name"
+msgstr "الإسم"
+
+msgid "Description"
+msgstr "الوصف"
+
+msgid "Code"
+msgstr "الكود"
+
+msgid "ID"
+msgstr "ID"
+
+msgid "Last updated date"
+msgstr ""
+
+msgid "Created date"
+msgstr ""
+
+msgid "Created by"
+msgstr "تم الإنشاء بواسطة"
+
+msgid "Custom"
+msgstr "مخصص"
+
+msgid "Program"
+msgstr "البرنامج"
+
+msgid "Analytics type"
+msgstr "Analytics type"
+
+msgid "Enrollment"
+msgstr "التسجيل"
+
+msgid "Event"
+msgstr "حدث"
+
+msgid "Analytics period boundaries"
+msgstr ""
+
+msgid "{{ offsetPeriodType }} × {{ offsetPeriods }}"
+msgstr ""
+
+msgid "Expression"
+msgstr "‏‏التعبير"
+
+msgid "Filter"
+msgstr "عامل التصفية"
 
 msgid "Search by data item name"
 msgstr ""
@@ -189,6 +342,9 @@ msgstr ""
 msgid "No program indicators found"
 msgstr ""
 
+msgid "No calculations found"
+msgstr ""
+
 msgid "No indicators found for \"{{- searchTerm}}\""
 msgstr ""
 
@@ -199,6 +355,9 @@ msgid "No event data items found for \"{{- searchTerm}}\""
 msgstr ""
 
 msgid "No program indicators found for \"{{- searchTerm}}\""
+msgstr ""
+
+msgid "No calculations found for \"{{- searchTerm}}\""
 msgstr ""
 
 msgid "Nothing found for \"{{- searchTerm}}\""
@@ -267,7 +426,7 @@ msgid "Nothing found for {{- searchTerm}}"
 msgstr ""
 
 msgid "Delete {{fileType}}"
-msgstr ""
+msgstr "حذف {{fileType}}"
 
 msgid ""
 "This {{fileType}} and related interpretations will be deleted. Continue?"
@@ -313,13 +472,7 @@ msgid "Close"
 msgstr "إغلاق"
 
 msgid "Rename {{fileType}}"
-msgstr ""
-
-msgid "Name"
-msgstr "الإسم"
-
-msgid "Description"
-msgstr "الوصف"
+msgstr "إعادة تسمية {{fileType}}"
 
 msgid "Rename"
 msgstr "إعادة التسمية"
@@ -328,7 +481,7 @@ msgid "{{- objectName}} (copy)"
 msgstr ""
 
 msgid "Save {{fileType}} as"
-msgstr ""
+msgstr "حفظ {{fileType}} بإسم"
 
 msgid "event report"
 msgstr "تقارير عن الأحداث"
@@ -380,6 +533,10 @@ msgstr ""
 msgid "Write an interpretation"
 msgstr "كتابة تفسير"
 
+msgid ""
+"Other people viewing this interpretation in the future may see more data."
+msgstr ""
+
 msgid "Post interpretation"
 msgstr ""
 
@@ -407,11 +564,14 @@ msgstr "إلغاء الإعجاب"
 msgid "Like"
 msgstr "إعجاب"
 
-msgid "Share"
-msgstr "مشاركة"
-
 msgid "See interpretation"
 msgstr ""
+
+msgid "Open in app"
+msgstr ""
+
+msgid "Share"
+msgstr "مشاركة"
 
 msgid "Manage sharing"
 msgstr "إدارة المشاركة"
@@ -422,44 +582,8 @@ msgstr ""
 msgid "Enter interpretation text"
 msgstr ""
 
-msgid "Bold text"
-msgstr ""
-
-msgid "Italic text"
-msgstr ""
-
-msgid "Link to a URL"
-msgstr ""
-
-msgid "Mention a user"
-msgstr ""
-
-msgid "Add emoji"
-msgstr ""
-
-msgid "Preview"
-msgstr "معاينة"
-
-msgid "Back to write mode"
-msgstr ""
-
-msgid "Too many results. Try refining the search."
-msgstr ""
-
-msgid "Search for a user"
-msgstr ""
-
-msgid "Searching for \"{{- searchText}}\""
-msgstr ""
-
-msgid "No results found"
-msgstr "لم يتم العثور على أي نتائج"
-
 msgid "Not available offline"
 msgstr "غير متوفر في وضع عدم الإتصال"
-
-msgid "Created by"
-msgstr "تم الإنشاء بواسطة"
 
 msgid "Anyone"
 msgstr "أي شخص"
@@ -481,9 +605,6 @@ msgstr "تم الإنشاء"
 
 msgid "Last updated"
 msgstr "آخر تحديث"
-
-msgid "Type"
-msgstr "النوع"
 
 msgid "Clear filters"
 msgstr "إلغاء عوامل التصفية"
@@ -645,9 +766,6 @@ msgstr "حدد مجموعة"
 msgid "Deselect all"
 msgstr "إلغاء تحديد الكل"
 
-msgid "Period type"
-msgstr "نوع الفترة الزمنية"
-
 msgid "Year"
 msgstr "سنة"
 
@@ -657,14 +775,14 @@ msgstr "اختر السنة"
 msgid "Period"
 msgstr "الفترة الزمنية"
 
+msgid "Selected Periods"
+msgstr "الفترات المحددة"
+
 msgid "Relative periods"
 msgstr "الفترات الزمنية النسبية"
 
 msgid "Fixed periods"
 msgstr "فترات زمنية ثابتة"
-
-msgid "Selected Periods"
-msgstr "الفترات المحددة"
 
 msgid "No periods selected"
 msgstr "لم يتم تحديد أية فترات زمنية"
@@ -873,6 +991,30 @@ msgstr "السنوات المالية"
 msgid "Years"
 msgstr "السنوات"
 
+msgid "Value: {{value}}"
+msgstr ""
+
+msgid "Bold text"
+msgstr ""
+
+msgid "Italic text"
+msgstr ""
+
+msgid "Link to a URL"
+msgstr ""
+
+msgid "Mention a user"
+msgstr ""
+
+msgid "Add emoji"
+msgstr ""
+
+msgid "Preview"
+msgstr "معاينة"
+
+msgid "Back to write mode"
+msgstr ""
+
 msgid "Interpretations and details"
 msgstr ""
 
@@ -903,14 +1045,23 @@ msgstr ""
 msgid "Retry"
 msgstr ""
 
+msgid "Too many results. Try refining the search."
+msgstr ""
+
+msgid "Search for a user"
+msgstr ""
+
+msgid "Searching for \"{{- searchText}}\""
+msgstr ""
+
+msgid "No results found"
+msgstr "لم يتم العثور على أي نتائج"
+
 msgid "Series"
 msgstr "سلسلة"
 
 msgid "Category"
 msgstr "الفئة"
-
-msgid "Filter"
-msgstr "عامل التصفية"
 
 msgid "Columns"
 msgstr "الأعمدة"
@@ -936,14 +1087,8 @@ msgstr "الإبلاغات الفعلية في الوقت المحدد"
 msgid "Expected reports"
 msgstr "الإبلاغات المتوقعة"
 
-msgid "Program"
-msgstr "البرنامج"
-
 msgid "Select a program"
 msgstr "حدد برنامجاً"
-
-msgid "Indicators"
-msgstr "المؤشرات"
 
 msgid "Indicator group"
 msgstr "مجموعة المؤشرات"
@@ -962,9 +1107,6 @@ msgstr ""
 
 msgid "Data element group"
 msgstr "مجموعة عناصر البيانات"
-
-msgid "Data element"
-msgstr "عنصر البيانات"
 
 msgid "No data element groups found"
 msgstr ""
@@ -1110,6 +1252,9 @@ msgstr ""
 msgid "{{thresholdFactor}} × Z-score high"
 msgstr ""
 
+msgid "Not applicable"
+msgstr ""
+
 msgid "Data"
 msgstr "بيانات"
 
@@ -1118,6 +1263,81 @@ msgstr "الوحدة التنظيمية"
 
 msgid "Assigned Categories"
 msgstr "الفئات المعينة"
+
+msgid "Text"
+msgstr "نص"
+
+msgid "Long text"
+msgstr "نص طويل"
+
+msgid "Multi text"
+msgstr ""
+
+msgid "Letter"
+msgstr "حرف"
+
+msgid "Phone number"
+msgstr "رقم الهاتف"
+
+msgid "Email"
+msgstr "بريد إلكتروني"
+
+msgid "Yes/No"
+msgstr "نعم/لا"
+
+msgid "Yes Only"
+msgstr "نعم فقط"
+
+msgid "Date"
+msgstr "التاريخ"
+
+msgid "Date & Time"
+msgstr "تاريخ ووقت"
+
+msgid "Time"
+msgstr "الوقت"
+
+msgid "Unit interval"
+msgstr "الفاصل الزمني للوحدة"
+
+msgid "Percentage"
+msgstr "النسبة المئوية"
+
+msgid "Integer"
+msgstr "عدد صحيح"
+
+msgid "Positive Integer"
+msgstr "عدد صحيح موجب"
+
+msgid "Negative Integer"
+msgstr "عدد صحيح سالب"
+
+msgid "Positive or Zero Integer"
+msgstr "عدد صحيح موجب أو صفري"
+
+msgid "Tracker Associate"
+msgstr "ارتباط التتبع"
+
+msgid "Username"
+msgstr "اسم المستخدم"
+
+msgid "Coordinate"
+msgstr "الإحداثية"
+
+msgid "Reference"
+msgstr "المرجع"
+
+msgid "Age"
+msgstr "عُمر"
+
+msgid "URL"
+msgstr "عنوان URL"
+
+msgid "Image"
+msgstr "الصورة"
+
+msgid "GeoJSON"
+msgstr ""
 
 msgid "Pivot table"
 msgstr "الجدول المحوري"
@@ -1166,6 +1386,9 @@ msgstr ""
 
 msgid "Single value"
 msgstr "قيمة مفردة"
+
+msgid "Outlier table"
+msgstr ""
 
 msgid "All charts"
 msgstr ""
