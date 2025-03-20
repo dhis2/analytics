@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2024-10-11T12:49:26.846Z\n"
-"PO-Revision-Date: 2024-10-11T12:49:26.847Z\n"
+"POT-Creation-Date: 2025-03-18T12:46:14.410Z\n"
+"PO-Revision-Date: 2025-03-18T12:46:14.411Z\n"
 
 msgid "view only"
 msgstr "view only"
@@ -153,6 +153,168 @@ msgstr ""
 msgid "Math operators"
 msgstr "Math operators"
 
+msgid "Expression description"
+msgstr "Expression description"
+
+msgid "Error loading value"
+msgstr "Error loading value"
+
+msgid "None"
+msgstr "None"
+
+msgid "Data set(s)"
+msgstr "Data set(s)"
+
+msgid "Zero is significant"
+msgstr "Zero is significant"
+
+msgid "True"
+msgstr "True"
+
+msgid "False"
+msgstr "False"
+
+msgid "Value type"
+msgstr "Value type"
+
+msgid "Aggregation type"
+msgstr "Aggregation type"
+
+msgid "Category combo"
+msgstr "Category combo"
+
+msgid "Option set"
+msgstr "Option set"
+
+msgid "Group membership"
+msgstr "Group membership"
+
+msgid "Legend set(s)"
+msgstr "Legend set(s)"
+
+msgid "Category option name"
+msgstr "Category option name"
+
+msgid "Category combo name"
+msgstr "Category combo name"
+
+msgid "Categories name"
+msgstr "Categories name"
+
+msgid "Period type"
+msgstr "Period type"
+
+msgid "Indicators"
+msgstr "Indicators"
+
+msgid "Expiry days"
+msgstr "Expiry days"
+
+msgid "Type"
+msgstr "Type"
+
+msgid "Data element"
+msgstr "Data element"
+
+msgid "Tracked entity attribute"
+msgstr "Tracked entity attribute"
+
+msgid "Numerator description"
+msgstr "Numerator description"
+
+msgid "Numerator expression"
+msgstr "Numerator expression"
+
+msgid "Denominator description"
+msgstr "Denominator description"
+
+msgid "Denominator expression"
+msgstr "Denominator expression"
+
+msgid "Annualized"
+msgstr "Annualized"
+
+msgid "Yes"
+msgstr "Yes"
+
+msgid "No"
+msgstr "No"
+
+msgid "Indicator type"
+msgstr "Indicator type"
+
+msgid "Decimals in output"
+msgstr "Decimals in output"
+
+msgid "There was a problem loading information for this data item."
+msgstr "There was a problem loading information for this data item."
+
+msgid "Name"
+msgstr "Name"
+
+msgid "Description"
+msgstr "Description"
+
+msgid "Code"
+msgstr "Code"
+
+msgid "ID"
+msgstr "ID"
+
+msgid "Last updated date"
+msgstr "Last updated date"
+
+msgid "Created date"
+msgstr "Created date"
+
+msgid "Created by"
+msgstr "Created by"
+
+msgid "Custom"
+msgstr "Custom"
+
+msgid "Program"
+msgstr "Program"
+
+msgid "Analytics type"
+msgstr "Analytics type"
+
+msgid "Enrollment"
+msgstr "Enrollment"
+
+msgid "Event"
+msgstr "Event"
+
+msgid "Analytics period boundaries"
+msgstr "Analytics period boundaries"
+
+msgid "{{ offsetPeriodType }} × {{ offsetPeriods }}"
+msgstr "{{ offsetPeriodType }} × {{ offsetPeriods }}"
+
+msgid "Expression"
+msgstr "Expression"
+
+msgid "Filter"
+msgstr "Filter"
+
+msgid "All available options are already selected"
+msgstr "All available options are already selected"
+
+msgid "No available options for this item"
+msgstr "No available options for this item"
+
+msgid "Search by option name"
+msgstr "Search by option name"
+
+msgid "Back to all items"
+msgstr "Back to all items"
+
+msgid "Options"
+msgstr "Options"
+
+msgid "Selected items"
+msgstr "Selected items"
+
 msgid "Data Type"
 msgstr "Data Type"
 
@@ -171,11 +333,23 @@ msgstr "No data"
 msgid "Search by data item name"
 msgstr "Search by data item name"
 
-msgid "No items selected"
-msgstr "No items selected"
-
 msgid "Selected Items"
 msgstr "Selected Items"
+
+msgid "All available items are already selected"
+msgstr "All available items are already selected"
+
+msgid "Calculation"
+msgstr "Calculation"
+
+msgid "Metric type"
+msgstr "Metric type"
+
+msgid "All metrics"
+msgstr "All metrics"
+
+msgid "No items selected"
+msgstr "No items selected"
 
 msgid "No indicators found"
 msgstr "No indicators found"
@@ -210,14 +384,8 @@ msgstr "No calculations found for \"{{- searchTerm}}\""
 msgid "Nothing found for \"{{- searchTerm}}\""
 msgstr "Nothing found for \"{{- searchTerm}}\""
 
-msgid "Calculation"
-msgstr "Calculation"
-
-msgid "Metric type"
-msgstr "Metric type"
-
-msgid "All metrics"
-msgstr "All metrics"
+msgid "Click to choose from available options"
+msgstr "Click to choose from available options"
 
 msgid "Move to {{axisName}}"
 msgstr "Move to {{axisName}}"
@@ -271,9 +439,6 @@ msgstr "Nothing found in {{- dimensionTitle}}"
 msgid "Search"
 msgstr "Search"
 
-msgid "Nothing found for {{- searchTerm}}"
-msgstr "Nothing found for {{- searchTerm}}"
-
 msgid "Delete {{fileType}}"
 msgstr "Delete {{fileType}}"
 
@@ -321,12 +486,6 @@ msgstr "Close"
 
 msgid "Rename {{fileType}}"
 msgstr "Rename {{fileType}}"
-
-msgid "Name"
-msgstr "Name"
-
-msgid "Description"
-msgstr "Description"
 
 msgid "Rename"
 msgstr "Rename"
@@ -436,9 +595,6 @@ msgstr "Enter interpretation text"
 msgid "Not available offline"
 msgstr "Not available offline"
 
-msgid "Created by"
-msgstr "Created by"
-
 msgid "Anyone"
 msgstr "Anyone"
 
@@ -459,9 +615,6 @@ msgstr "Created"
 
 msgid "Last updated"
 msgstr "Last updated"
-
-msgid "Type"
-msgstr "Type"
 
 msgid "Clear filters"
 msgstr "Clear filters"
@@ -582,9 +735,6 @@ msgstr ""
 msgid "New line list"
 msgstr "New line list"
 
-msgid "Options"
-msgstr "Options"
-
 msgid "Hide"
 msgstr "Hide"
 
@@ -626,9 +776,6 @@ msgstr "Select a group"
 
 msgid "Deselect all"
 msgstr "Deselect all"
-
-msgid "Period type"
-msgstr "Period type"
 
 msgid "Year"
 msgstr "Year"
@@ -927,9 +1074,6 @@ msgstr "Series"
 msgid "Category"
 msgstr "Category"
 
-msgid "Filter"
-msgstr "Filter"
-
 msgid "Columns"
 msgstr "Columns"
 
@@ -954,14 +1098,8 @@ msgstr "Actual reports on time"
 msgid "Expected reports"
 msgstr "Expected reports"
 
-msgid "Program"
-msgstr "Program"
-
 msgid "Select a program"
 msgstr "Select a program"
-
-msgid "Indicators"
-msgstr "Indicators"
 
 msgid "Indicator group"
 msgstr "Indicator group"
@@ -980,9 +1118,6 @@ msgstr "Loading indicator groups"
 
 msgid "Data element group"
 msgstr "Data element group"
-
-msgid "Data element"
-msgstr "Data element"
 
 msgid "No data element groups found"
 msgstr "No data element groups found"
@@ -1025,6 +1160,9 @@ msgstr "Program indicator"
 
 msgid "Calculations"
 msgstr "Calculations"
+
+msgid "Option"
+msgstr "Option"
 
 msgid "Number"
 msgstr "Number"
@@ -1139,6 +1277,81 @@ msgstr "Organisation unit"
 
 msgid "Assigned Categories"
 msgstr "Assigned Categories"
+
+msgid "Text"
+msgstr "Text"
+
+msgid "Long text"
+msgstr "Long text"
+
+msgid "Multi text"
+msgstr "Multi text"
+
+msgid "Letter"
+msgstr "Letter"
+
+msgid "Phone number"
+msgstr "Phone number"
+
+msgid "Email"
+msgstr "Email"
+
+msgid "Yes/No"
+msgstr "Yes/No"
+
+msgid "Yes Only"
+msgstr "Yes Only"
+
+msgid "Date"
+msgstr "Date"
+
+msgid "Date & Time"
+msgstr "Date & Time"
+
+msgid "Time"
+msgstr "Time"
+
+msgid "Unit interval"
+msgstr "Unit interval"
+
+msgid "Percentage"
+msgstr "Percentage"
+
+msgid "Integer"
+msgstr "Integer"
+
+msgid "Positive Integer"
+msgstr "Positive Integer"
+
+msgid "Negative Integer"
+msgstr "Negative Integer"
+
+msgid "Positive or Zero Integer"
+msgstr "Positive or Zero Integer"
+
+msgid "Tracker Associate"
+msgstr "Tracker Associate"
+
+msgid "Username"
+msgstr "Username"
+
+msgid "Coordinate"
+msgstr "Coordinate"
+
+msgid "Reference"
+msgstr "Reference"
+
+msgid "Age"
+msgstr "Age"
+
+msgid "URL"
+msgstr "URL"
+
+msgid "Image"
+msgstr "Image"
+
+msgid "GeoJSON"
+msgstr "GeoJSON"
 
 msgid "Pivot table"
 msgstr "Pivot table"

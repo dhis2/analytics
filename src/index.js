@@ -49,6 +49,8 @@ export {
 
 export * from './components/RichText/index.js'
 
+export { DashboardPluginWrapper } from './components/DashboardPluginWrapper/DashboardPluginWrapper.js'
+
 // Api
 
 export { default as Analytics } from './api/analytics/Analytics.js'
@@ -125,6 +127,17 @@ export { layoutHasPeriodDimension } from './modules/layout/layoutHasPeriodDimens
 
 // Modules: valueTypes
 export {
+    VALUE_TYPE_TEXT,
+    VALUE_TYPE_LONG_TEXT,
+    VALUE_TYPE_MULTI_TEXT,
+    VALUE_TYPE_LETTER,
+    VALUE_TYPE_PHONE_NUMBER,
+    VALUE_TYPE_EMAIL,
+    VALUE_TYPE_BOOLEAN,
+    VALUE_TYPE_TRUE_ONLY,
+    VALUE_TYPE_DATE,
+    VALUE_TYPE_DATETIME,
+    VALUE_TYPE_TIME,
     VALUE_TYPE_NUMBER,
     VALUE_TYPE_UNIT_INTERVAL,
     VALUE_TYPE_PERCENTAGE,
@@ -132,20 +145,17 @@ export {
     VALUE_TYPE_INTEGER_POSITIVE,
     VALUE_TYPE_INTEGER_NEGATIVE,
     VALUE_TYPE_INTEGER_ZERO_OR_POSITIVE,
-    VALUE_TYPE_TEXT,
-    VALUE_TYPE_LONG_TEXT,
-    VALUE_TYPE_LETTER,
-    VALUE_TYPE_PHONE_NUMBER,
-    VALUE_TYPE_EMAIL,
+    VALUE_TYPE_TRACKER_ASSOCIATE,
     VALUE_TYPE_USERNAME,
-    VALUE_TYPE_URL,
-    VALUE_TYPE_BOOLEAN,
-    VALUE_TYPE_TRUE_ONLY,
-    VALUE_TYPE_DATE,
-    VALUE_TYPE_TIME,
-    VALUE_TYPE_DATETIME,
+    VALUE_TYPE_COORDINATE,
     VALUE_TYPE_ORGANISATION_UNIT,
+    VALUE_TYPE_REFERENCE,
     VALUE_TYPE_AGE,
+    VALUE_TYPE_URL,
+    VALUE_TYPE_FILE_RESOURCE,
+    VALUE_TYPE_IMAGE,
+    VALUE_TYPE_GEOJSON,
+    valueTypeDisplayNames,
 } from './modules/valueTypes.js'
 
 export {
@@ -336,8 +346,15 @@ export {
     FYJUL,
     FYAPR,
 } from './components/PeriodDimension/utils/index.js'
-export { getRelativePeriodsOptionsById } from './components/PeriodDimension/utils/relativePeriods.js'
-export { getFixedPeriodsOptionsById } from './components/PeriodDimension/utils/fixedPeriods.js'
+export {
+    getRelativePeriodsOptionsById,
+    getRelativePeriodsName,
+    getRelativePeriodsDetails,
+} from './components/PeriodDimension/utils/relativePeriods.js'
+export {
+    getFixedPeriodsOptionsById,
+    PERIOD_TYPE_REGEX,
+} from './components/PeriodDimension/utils/fixedPeriods.js'
 
 export { default as VisualizationOptions } from './components/Options/VisualizationOptions.js'
 

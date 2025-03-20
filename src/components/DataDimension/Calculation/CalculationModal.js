@@ -15,7 +15,7 @@ import {
     createCalculationMutation,
     deleteCalculationMutation,
     updateCalculationMutation,
-    validateExpressionMutation,
+    validateIndicatorExpressionMutation,
 } from '../../../api/expression.js'
 import i18n from '../../../locales/index.js'
 import {
@@ -57,7 +57,7 @@ const CalculationModal = ({
     const [deleteCalculation, { loading: isDeletingCalculation }] =
         useDataMutation(deleteCalculationMutation, mutationParams)
     const [doBackendValidation, { loading: isValidating }] = useDataMutation(
-        validateExpressionMutation,
+        validateIndicatorExpressionMutation,
         {
             onError: (error) => showError(error),
         }

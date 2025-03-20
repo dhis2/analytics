@@ -1,14 +1,14 @@
 # 
 # Translators:
-# Jaime Bosque <jaime.bosque@dhis2.org>, 2022
-# Enzo Nicolas Rossi <enzo@dhis2.org>, 2024
+# Enzo Nicolas Rossi <enzo@dhis2.org>, 2025
+# Jaime Bosque <jaime.bosque@dhis2.org>, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2024-06-26T14:09:30.876Z\n"
+"POT-Creation-Date: 2025-03-18T12:46:14.410Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Enzo Nicolas Rossi <enzo@dhis2.org>, 2024\n"
+"Last-Translator: Jaime Bosque <jaime.bosque@dhis2.org>, 2025\n"
 "Language-Team: Spanish (Latin America) (https://app.transifex.com/hisp-uio/teams/100509/es_419/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -78,6 +78,12 @@ msgstr "Acerca de esta lista"
 
 msgid "About this visualization"
 msgstr "Acerca de esta visualización"
+
+msgid "About this event chart"
+msgstr ""
+
+msgid "About this event report"
+msgstr ""
 
 msgid "This app could not retrieve required data."
 msgstr "Esta aplicación no pudo recuperar los datos requeridos."
@@ -161,6 +167,168 @@ msgstr ""
 msgid "Math operators"
 msgstr "Operadores matemáticos"
 
+msgid "Expression description"
+msgstr ""
+
+msgid "Error loading value"
+msgstr ""
+
+msgid "None"
+msgstr "Ninguno"
+
+msgid "Data set(s)"
+msgstr ""
+
+msgid "Zero is significant"
+msgstr ""
+
+msgid "True"
+msgstr ""
+
+msgid "False"
+msgstr ""
+
+msgid "Value type"
+msgstr ""
+
+msgid "Aggregation type"
+msgstr ""
+
+msgid "Category combo"
+msgstr ""
+
+msgid "Option set"
+msgstr ""
+
+msgid "Group membership"
+msgstr ""
+
+msgid "Legend set(s)"
+msgstr ""
+
+msgid "Category option name"
+msgstr ""
+
+msgid "Category combo name"
+msgstr ""
+
+msgid "Categories name"
+msgstr ""
+
+msgid "Period type"
+msgstr "Tipo de período"
+
+msgid "Indicators"
+msgstr "Indicadores"
+
+msgid "Expiry days"
+msgstr ""
+
+msgid "Type"
+msgstr "Tipo"
+
+msgid "Data element"
+msgstr "Elemento de datos"
+
+msgid "Tracked entity attribute"
+msgstr ""
+
+msgid "Numerator description"
+msgstr ""
+
+msgid "Numerator expression"
+msgstr ""
+
+msgid "Denominator description"
+msgstr ""
+
+msgid "Denominator expression"
+msgstr ""
+
+msgid "Annualized"
+msgstr ""
+
+msgid "Yes"
+msgstr "Sí"
+
+msgid "No"
+msgstr "No"
+
+msgid "Indicator type"
+msgstr ""
+
+msgid "Decimals in output"
+msgstr ""
+
+msgid "There was a problem loading information for this data item."
+msgstr ""
+
+msgid "Name"
+msgstr "Nombre"
+
+msgid "Description"
+msgstr "Descripción"
+
+msgid "Code"
+msgstr ""
+
+msgid "ID"
+msgstr ""
+
+msgid "Last updated date"
+msgstr ""
+
+msgid "Created date"
+msgstr ""
+
+msgid "Created by"
+msgstr "Creado por"
+
+msgid "Custom"
+msgstr ""
+
+msgid "Program"
+msgstr "Programa"
+
+msgid "Analytics type"
+msgstr ""
+
+msgid "Enrollment"
+msgstr "Inscripción"
+
+msgid "Event"
+msgstr "Evento"
+
+msgid "Analytics period boundaries"
+msgstr ""
+
+msgid "{{ offsetPeriodType }} × {{ offsetPeriods }}"
+msgstr ""
+
+msgid "Expression"
+msgstr ""
+
+msgid "Filter"
+msgstr "Filtro"
+
+msgid "All available options are already selected"
+msgstr ""
+
+msgid "No available options for this item"
+msgstr ""
+
+msgid "Search by option name"
+msgstr ""
+
+msgid "Back to all items"
+msgstr ""
+
+msgid "Options"
+msgstr "Opciones"
+
+msgid "Selected items"
+msgstr ""
+
 msgid "Data Type"
 msgstr "Tipo de datos"
 
@@ -179,11 +347,23 @@ msgstr "No hay datos"
 msgid "Search by data item name"
 msgstr "Búsqueda por nombre de elemento de datos"
 
-msgid "No items selected"
-msgstr "No hay elementos seleccionados"
-
 msgid "Selected Items"
 msgstr "Artículos seleccionados"
+
+msgid "All available items are already selected"
+msgstr ""
+
+msgid "Calculation"
+msgstr "Cálculo"
+
+msgid "Metric type"
+msgstr "Tipo de métrica"
+
+msgid "All metrics"
+msgstr "Todas las métricas"
+
+msgid "No items selected"
+msgstr "No hay elementos seleccionados"
 
 msgid "No indicators found"
 msgstr "No se han encontrado indicadores"
@@ -218,14 +398,8 @@ msgstr "No se han encontrado cálculos para \"{{- searchTerm}}\""
 msgid "Nothing found for \"{{- searchTerm}}\""
 msgstr "No se ha encontrado nada para \"{{- searchTerm}}\""
 
-msgid "Calculation"
-msgstr "Cálculo"
-
-msgid "Metric type"
-msgstr "Tipo de métrica"
-
-msgid "All metrics"
-msgstr "Todas las métricas"
+msgid "Click to choose from available options"
+msgstr ""
 
 msgid "Move to {{axisName}}"
 msgstr "Mover a {{axisName}}"
@@ -279,9 +453,6 @@ msgstr "No se ha encontrado nada en {{- dimensionTitle}}"
 msgid "Search"
 msgstr "Buscar"
 
-msgid "Nothing found for {{- searchTerm}}"
-msgstr "No se ha encontrado nada para {{- searchTerm}}"
-
 msgid "Delete {{fileType}}"
 msgstr "Borrar {{fileType}}"
 
@@ -332,12 +503,6 @@ msgstr "Cerrar"
 
 msgid "Rename {{fileType}}"
 msgstr "Cambie el nombre de {{fileType}}"
-
-msgid "Name"
-msgstr "Nombre"
-
-msgid "Description"
-msgstr "Descripción"
 
 msgid "Rename"
 msgstr "Cambie el nombre de"
@@ -451,9 +616,6 @@ msgstr "Introducir texto de interpretación"
 msgid "Not available offline"
 msgstr "No disponible sin conexión"
 
-msgid "Created by"
-msgstr "Creado por"
-
 msgid "Anyone"
 msgstr "Quien sea"
 
@@ -474,9 +636,6 @@ msgstr "Creado"
 
 msgid "Last updated"
 msgstr "Última actualización"
-
-msgid "Type"
-msgstr "Tipo"
 
 msgid "Clear filters"
 msgstr "Limpiar filtros"
@@ -601,9 +760,6 @@ msgstr ""
 msgid "New line list"
 msgstr "Nueva lista"
 
-msgid "Options"
-msgstr "Opciones"
-
 msgid "Hide"
 msgstr "Ocultar"
 
@@ -648,9 +804,6 @@ msgstr "Seleccione un grupo"
 
 msgid "Deselect all"
 msgstr "Deseleccionar todo"
-
-msgid "Period type"
-msgstr "Tipo de período"
 
 msgid "Year"
 msgstr "Año"
@@ -877,6 +1030,9 @@ msgstr "Ejercicios financieros"
 msgid "Years"
 msgstr "Años"
 
+msgid "Value: {{value}}"
+msgstr ""
+
 msgid "Bold text"
 msgstr "Texto en negrita"
 
@@ -947,9 +1103,6 @@ msgstr "Serie"
 msgid "Category"
 msgstr "Categoría"
 
-msgid "Filter"
-msgstr "Filtro"
-
 msgid "Columns"
 msgstr "Columnas"
 
@@ -974,14 +1127,8 @@ msgstr "Informes reales a tiempo"
 msgid "Expected reports"
 msgstr "Informes previstos"
 
-msgid "Program"
-msgstr "Programa"
-
 msgid "Select a program"
 msgstr "Seleccione un programa"
-
-msgid "Indicators"
-msgstr "Indicadores"
 
 msgid "Indicator group"
 msgstr "Grupo de indicadores"
@@ -1000,9 +1147,6 @@ msgstr "Grupos de indicadores de carga"
 
 msgid "Data element group"
 msgstr "Grupo de elementos de datos"
-
-msgid "Data element"
-msgstr "Elemento de datos"
 
 msgid "No data element groups found"
 msgstr "No se han encontrado grupos de elementos de datos"
@@ -1045,6 +1189,9 @@ msgstr "Indicador de programa"
 
 msgid "Calculations"
 msgstr "Cálculos"
+
+msgid "Option"
+msgstr ""
 
 msgid "Number"
 msgstr "Número"
@@ -1150,6 +1297,9 @@ msgstr "{{thresholdFactor}} × Puntuación Z baja"
 msgid "{{thresholdFactor}} × Z-score high"
 msgstr "{{thresholdFactor}} × Puntuación Z alta"
 
+msgid "Not applicable"
+msgstr ""
+
 msgid "Data"
 msgstr "Datos"
 
@@ -1158,6 +1308,81 @@ msgstr "Unidad organizativa"
 
 msgid "Assigned Categories"
 msgstr "Categorías asignadas"
+
+msgid "Text"
+msgstr ""
+
+msgid "Long text"
+msgstr ""
+
+msgid "Multi text"
+msgstr ""
+
+msgid "Letter"
+msgstr ""
+
+msgid "Phone number"
+msgstr ""
+
+msgid "Email"
+msgstr ""
+
+msgid "Yes/No"
+msgstr ""
+
+msgid "Yes Only"
+msgstr ""
+
+msgid "Date"
+msgstr "Fecha"
+
+msgid "Date & Time"
+msgstr ""
+
+msgid "Time"
+msgstr ""
+
+msgid "Unit interval"
+msgstr ""
+
+msgid "Percentage"
+msgstr ""
+
+msgid "Integer"
+msgstr ""
+
+msgid "Positive Integer"
+msgstr ""
+
+msgid "Negative Integer"
+msgstr ""
+
+msgid "Positive or Zero Integer"
+msgstr ""
+
+msgid "Tracker Associate"
+msgstr ""
+
+msgid "Username"
+msgstr "Nombre de usuario"
+
+msgid "Coordinate"
+msgstr "Coordenadas"
+
+msgid "Reference"
+msgstr ""
+
+msgid "Age"
+msgstr ""
+
+msgid "URL"
+msgstr "URL"
+
+msgid "Image"
+msgstr ""
+
+msgid "GeoJSON"
+msgstr ""
 
 msgid "Pivot table"
 msgstr "Tabla dinámica"

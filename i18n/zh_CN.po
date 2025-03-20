@@ -1,14 +1,14 @@
 # 
 # Translators:
-# 晓东 林 <13981924470@126.com>, 2023
-# easylin <lin_xd@126.com>, 2023
+# 晓东 林 <13981924470@126.com>, 2025
+# easylin <lin_xd@126.com>, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2023-09-27T14:15:13.876Z\n"
+"POT-Creation-Date: 2025-03-18T12:46:14.410Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: easylin <lin_xd@126.com>, 2023\n"
+"Last-Translator: easylin <lin_xd@126.com>, 2025\n"
 "Language-Team: Chinese (China) (https://app.transifex.com/hisp-uio/teams/100509/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -38,7 +38,7 @@ msgid "No description"
 msgstr "没有描述"
 
 msgid "Last updated {{time}}"
-msgstr ""
+msgstr "最近更新的{{time}}"
 
 msgid "Created {{time}} by {{author}}"
 msgstr ""
@@ -72,6 +72,12 @@ msgid "About this line list"
 msgstr ""
 
 msgid "About this visualization"
+msgstr ""
+
+msgid "About this event chart"
+msgstr ""
+
+msgid "About this event report"
 msgstr ""
 
 msgid "This app could not retrieve required data."
@@ -150,7 +156,172 @@ msgstr ""
 msgid "Math operators"
 msgstr ""
 
+msgid "Expression description"
+msgstr "表达式描述"
+
+msgid "Error loading value"
+msgstr ""
+
+msgid "None"
+msgstr "无"
+
+msgid "Data set(s)"
+msgstr ""
+
+msgid "Zero is significant"
+msgstr ""
+
+msgid "True"
+msgstr "真"
+
+msgid "False"
+msgstr "假"
+
+msgid "Value type"
+msgstr "值类型"
+
+msgid "Aggregation type"
+msgstr "汇总类型"
+
+msgid "Category combo"
+msgstr "分类组合"
+
+msgid "Option set"
+msgstr "值域选项集"
+
+msgid "Group membership"
+msgstr ""
+
+msgid "Legend set(s)"
+msgstr ""
+
+msgid "Category option name"
+msgstr ""
+
+msgid "Category combo name"
+msgstr ""
+
+msgid "Categories name"
+msgstr ""
+
+msgid "Period type"
+msgstr "周期类型"
+
+msgid "Indicators"
+msgstr "指标"
+
+msgid "Expiry days"
+msgstr "过期满天数"
+
+msgid "Type"
+msgstr "类型"
+
+msgid "Data element"
+msgstr "数据元"
+
+msgid "Tracked entity attribute"
+msgstr "跟踪实体属性"
+
+msgid "Numerator description"
+msgstr "描述"
+
+msgid "Numerator expression"
+msgstr ""
+
+msgid "Denominator description"
+msgstr "分母描述"
+
+msgid "Denominator expression"
+msgstr ""
+
+msgid "Annualized"
+msgstr "年度"
+
+msgid "Yes"
+msgstr "是"
+
+msgid "No"
+msgstr "否"
+
+msgid "Indicator type"
+msgstr "指标类型"
+
+msgid "Decimals in output"
+msgstr ""
+
+msgid "There was a problem loading information for this data item."
+msgstr ""
+
+msgid "Name"
+msgstr "名称"
+
+msgid "Description"
+msgstr "描述"
+
+msgid "Code"
+msgstr "代码"
+
+msgid "ID"
+msgstr "ID"
+
+msgid "Last updated date"
+msgstr ""
+
+msgid "Created date"
+msgstr ""
+
+msgid "Created by"
+msgstr "创建自"
+
+msgid "Custom"
+msgstr "定制"
+
+msgid "Program"
+msgstr "项目"
+
+msgid "Analytics type"
+msgstr "分析类型"
+
+msgid "Enrollment"
+msgstr "报名"
+
+msgid "Event"
+msgstr "事件"
+
+msgid "Analytics period boundaries"
+msgstr "分析期间边界"
+
+msgid "{{ offsetPeriodType }} × {{ offsetPeriods }}"
+msgstr ""
+
+msgid "Expression"
+msgstr "表达式"
+
+msgid "Filter"
+msgstr "过滤器"
+
+msgid "All available options are already selected"
+msgstr ""
+
+msgid "No available options for this item"
+msgstr ""
+
+msgid "Search by option name"
+msgstr ""
+
+msgid "Back to all items"
+msgstr ""
+
+msgid "Options"
+msgstr "选项"
+
+msgid "Selected items"
+msgstr ""
+
 msgid "Data Type"
+msgstr ""
+
+msgid "Only {{dataType}} can be used in {{visType}}"
 msgstr ""
 
 msgid "All types"
@@ -165,10 +336,22 @@ msgstr "无数据"
 msgid "Search by data item name"
 msgstr ""
 
-msgid "No items selected"
+msgid "Selected Items"
 msgstr ""
 
-msgid "Selected Items"
+msgid "All available items are already selected"
+msgstr ""
+
+msgid "Calculation"
+msgstr ""
+
+msgid "Metric type"
+msgstr ""
+
+msgid "All metrics"
+msgstr ""
+
+msgid "No items selected"
 msgstr ""
 
 msgid "No indicators found"
@@ -183,6 +366,9 @@ msgstr ""
 msgid "No program indicators found"
 msgstr ""
 
+msgid "No calculations found"
+msgstr ""
+
 msgid "No indicators found for \"{{- searchTerm}}\""
 msgstr ""
 
@@ -195,16 +381,13 @@ msgstr ""
 msgid "No program indicators found for \"{{- searchTerm}}\""
 msgstr ""
 
+msgid "No calculations found for \"{{- searchTerm}}\""
+msgstr ""
+
 msgid "Nothing found for \"{{- searchTerm}}\""
 msgstr ""
 
-msgid "Calculation"
-msgstr ""
-
-msgid "Metric type"
-msgstr ""
-
-msgid "All metrics"
+msgid "Click to choose from available options"
 msgstr ""
 
 msgid "Move to {{axisName}}"
@@ -257,9 +440,6 @@ msgstr ""
 msgid "Search"
 msgstr "搜索"
 
-msgid "Nothing found for {{- searchTerm}}"
-msgstr ""
-
 msgid "Delete {{fileType}}"
 msgstr ""
 
@@ -308,12 +488,6 @@ msgstr "关闭"
 
 msgid "Rename {{fileType}}"
 msgstr ""
-
-msgid "Name"
-msgstr "名称"
-
-msgid "Description"
-msgstr "描述"
 
 msgid "Rename"
 msgstr "重命名"
@@ -400,11 +574,14 @@ msgstr ""
 msgid "Like"
 msgstr "Like"
 
-msgid "Share"
-msgstr "分享"
-
 msgid "See interpretation"
 msgstr ""
+
+msgid "Open in app"
+msgstr ""
+
+msgid "Share"
+msgstr "分享"
 
 msgid "Manage sharing"
 msgstr ""
@@ -415,44 +592,8 @@ msgstr ""
 msgid "Enter interpretation text"
 msgstr ""
 
-msgid "Bold text"
-msgstr ""
-
-msgid "Italic text"
-msgstr ""
-
-msgid "Link to a URL"
-msgstr ""
-
-msgid "Mention a user"
-msgstr ""
-
-msgid "Add emoji"
-msgstr ""
-
-msgid "Preview"
-msgstr "预览"
-
-msgid "Back to write mode"
-msgstr ""
-
-msgid "Too many results. Try refining the search."
-msgstr ""
-
-msgid "Search for a user"
-msgstr ""
-
-msgid "Searching for \"{{- searchText}}\""
-msgstr ""
-
-msgid "No results found"
-msgstr "没有结果"
-
 msgid "Not available offline"
 msgstr ""
-
-msgid "Created by"
-msgstr "创建自"
 
 msgid "Anyone"
 msgstr "任何人"
@@ -474,9 +615,6 @@ msgstr "已创建"
 
 msgid "Last updated"
 msgstr "上次更新"
-
-msgid "Type"
-msgstr "类型"
 
 msgid "Clear filters"
 msgstr "清除过滤器"
@@ -581,9 +719,6 @@ msgstr ""
 msgid "New line list"
 msgstr ""
 
-msgid "Options"
-msgstr "选项"
-
 msgid "Hide"
 msgstr "隐藏"
 
@@ -623,9 +758,6 @@ msgstr ""
 msgid "Deselect all"
 msgstr "去全选"
 
-msgid "Period type"
-msgstr "周期类型"
-
 msgid "Year"
 msgstr "年"
 
@@ -635,13 +767,13 @@ msgstr "选择年份"
 msgid "Period"
 msgstr "周期"
 
+msgid "Selected Periods"
+msgstr ""
+
 msgid "Relative periods"
 msgstr ""
 
 msgid "Fixed periods"
-msgstr ""
-
-msgid "Selected Periods"
 msgstr ""
 
 msgid "No periods selected"
@@ -851,6 +983,30 @@ msgstr ""
 msgid "Years"
 msgstr "年"
 
+msgid "Value: {{value}}"
+msgstr ""
+
+msgid "Bold text"
+msgstr ""
+
+msgid "Italic text"
+msgstr ""
+
+msgid "Link to a URL"
+msgstr ""
+
+msgid "Mention a user"
+msgstr ""
+
+msgid "Add emoji"
+msgstr ""
+
+msgid "Preview"
+msgstr "预览"
+
+msgid "Back to write mode"
+msgstr ""
+
 msgid "Interpretations and details"
 msgstr ""
 
@@ -881,14 +1037,23 @@ msgstr ""
 msgid "Retry"
 msgstr ""
 
+msgid "Too many results. Try refining the search."
+msgstr ""
+
+msgid "Search for a user"
+msgstr ""
+
+msgid "Searching for \"{{- searchText}}\""
+msgstr ""
+
+msgid "No results found"
+msgstr "没有结果"
+
 msgid "Series"
 msgstr ""
 
 msgid "Category"
 msgstr "分类"
-
-msgid "Filter"
-msgstr "过滤器"
 
 msgid "Columns"
 msgstr ""
@@ -914,14 +1079,8 @@ msgstr "实际准时上报"
 msgid "Expected reports"
 msgstr "预期上报"
 
-msgid "Program"
-msgstr "项目"
-
 msgid "Select a program"
 msgstr ""
-
-msgid "Indicators"
-msgstr "指标"
 
 msgid "Indicator group"
 msgstr "指标组"
@@ -940,9 +1099,6 @@ msgstr ""
 
 msgid "Data element group"
 msgstr "数据元组"
-
-msgid "Data element"
-msgstr "数据元"
 
 msgid "No data element groups found"
 msgstr ""
@@ -985,6 +1141,9 @@ msgstr "项目指标"
 
 msgid "Calculations"
 msgstr ""
+
+msgid "Option"
+msgstr "选项"
 
 msgid "Number"
 msgstr "数字"
@@ -1088,6 +1247,9 @@ msgstr ""
 msgid "{{thresholdFactor}} × Z-score high"
 msgstr ""
 
+msgid "Not applicable"
+msgstr ""
+
 msgid "Data"
 msgstr "数据"
 
@@ -1096,6 +1258,81 @@ msgstr "机构"
 
 msgid "Assigned Categories"
 msgstr ""
+
+msgid "Text"
+msgstr "文本"
+
+msgid "Long text"
+msgstr "长文本"
+
+msgid "Multi text"
+msgstr ""
+
+msgid "Letter"
+msgstr "字符"
+
+msgid "Phone number"
+msgstr "电话号码"
+
+msgid "Email"
+msgstr "邮件"
+
+msgid "Yes/No"
+msgstr "是/否"
+
+msgid "Yes Only"
+msgstr "仅是"
+
+msgid "Date"
+msgstr "日期"
+
+msgid "Date & Time"
+msgstr "日期 &时间"
+
+msgid "Time"
+msgstr "时间"
+
+msgid "Unit interval"
+msgstr "单位间隔"
+
+msgid "Percentage"
+msgstr "百分比"
+
+msgid "Integer"
+msgstr "整型"
+
+msgid "Positive Integer"
+msgstr "正数"
+
+msgid "Negative Integer"
+msgstr "负整数"
+
+msgid "Positive or Zero Integer"
+msgstr "正整数或零"
+
+msgid "Tracker Associate"
+msgstr "随访相关"
+
+msgid "Username"
+msgstr "用户名"
+
+msgid "Coordinate"
+msgstr "坐标"
+
+msgid "Reference"
+msgstr "引用"
+
+msgid "Age"
+msgstr "年龄"
+
+msgid "URL"
+msgstr "URL"
+
+msgid "Image"
+msgstr "图片(PNG)"
+
+msgid "GeoJSON"
+msgstr "GeoJSON"
 
 msgid "Pivot table"
 msgstr ""
@@ -1143,6 +1380,9 @@ msgid "Scatter"
 msgstr ""
 
 msgid "Single value"
+msgstr ""
+
+msgid "Outlier table"
 msgstr ""
 
 msgid "All charts"

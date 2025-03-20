@@ -1,22 +1,22 @@
 # 
 # Translators:
-# Bram Piot <bram.piot@gmail.com>, 2021
-# Viktor Varland <viktor@dhis2.org>, 2021
 # Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2021
-# tx_e2f_fr r25 <tx_e2f_fr_r25@ate2f.com>, 2021
-# Karoline Tufte Lien <karoline@dhis2.org>, 2022
-# Edem Kossi <ekossi@hispwca.org>, 2022
-# Yao Selom SAKA (HISP WCA) <ysaka@hispwca.org>, 2023
-# Yayra Gomado <ygomado@hispwca.org>, 2023
-# Philip Larsen Donnelly, 2024
-# Elise Desailly, 2024
+# Yayra Gomado <ygomado@hispwca.org>, 2025
+# Elise Desailly, 2025
+# Karoline Tufte Lien <karoline@dhis2.org>, 2025
+# Bram Piot <bram.piot@gmail.com>, 2025
+# tx_e2f_fr r25 <tx_e2f_fr_r25@ate2f.com>, 2025
+# Edem Kossi <ekossi@hispwca.org>, 2025
+# Viktor Varland <viktor@dhis2.org>, 2025
+# Yao Selom SAKA (HISP WCA) <ysaka@hispwca.org>, 2025
+# Philip Larsen Donnelly, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2024-01-25T12:05:03.360Z\n"
+"POT-Creation-Date: 2025-03-18T12:46:14.410Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Elise Desailly, 2024\n"
+"Last-Translator: Philip Larsen Donnelly, 2025\n"
 "Language-Team: French (https://app.transifex.com/hisp-uio/teams/100509/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -34,7 +34,7 @@ msgid "all users ({{accessLevel}})"
 msgstr ""
 
 msgid "{{userOrGroup}} ({{accessLevel}})"
-msgstr ""
+msgstr "{{userOrGroup}} ({{accessLevel}})"
 
 msgid "Shared with {{commaSeparatedListOfUsersAndGroups}}"
 msgstr ""
@@ -85,6 +85,12 @@ msgstr ""
 
 msgid "About this visualization"
 msgstr "À propos de cette visualisation"
+
+msgid "About this event chart"
+msgstr ""
+
+msgid "About this event report"
+msgstr ""
 
 msgid "This app could not retrieve required data."
 msgstr "Cette application n'a pas pu récupérer les données nécessaires."
@@ -164,6 +170,168 @@ msgstr ""
 msgid "Math operators"
 msgstr "Opérateurs mathématiques"
 
+msgid "Expression description"
+msgstr "Description de l'expression"
+
+msgid "Error loading value"
+msgstr ""
+
+msgid "None"
+msgstr "Aucun"
+
+msgid "Data set(s)"
+msgstr ""
+
+msgid "Zero is significant"
+msgstr ""
+
+msgid "True"
+msgstr "Vrai"
+
+msgid "False"
+msgstr "Faux"
+
+msgid "Value type"
+msgstr "Type de valeur"
+
+msgid "Aggregation type"
+msgstr "Type d'agrégation"
+
+msgid "Category combo"
+msgstr "Combinaison de catégorie"
+
+msgid "Option set"
+msgstr "Ensemble d'options"
+
+msgid "Group membership"
+msgstr ""
+
+msgid "Legend set(s)"
+msgstr ""
+
+msgid "Category option name"
+msgstr ""
+
+msgid "Category combo name"
+msgstr ""
+
+msgid "Categories name"
+msgstr ""
+
+msgid "Period type"
+msgstr "Type de période"
+
+msgid "Indicators"
+msgstr "Indicateurs"
+
+msgid "Expiry days"
+msgstr "Jours d'expiration"
+
+msgid "Type"
+msgstr "Type"
+
+msgid "Data element"
+msgstr "Élément de données"
+
+msgid "Tracked entity attribute"
+msgstr "Attribut d'entité suivie"
+
+msgid "Numerator description"
+msgstr "Description du numérateur"
+
+msgid "Numerator expression"
+msgstr ""
+
+msgid "Denominator description"
+msgstr "Description du dénominateur"
+
+msgid "Denominator expression"
+msgstr ""
+
+msgid "Annualized"
+msgstr "Annualisé"
+
+msgid "Yes"
+msgstr "Oui"
+
+msgid "No"
+msgstr "Non"
+
+msgid "Indicator type"
+msgstr "Type d'indicateur"
+
+msgid "Decimals in output"
+msgstr ""
+
+msgid "There was a problem loading information for this data item."
+msgstr ""
+
+msgid "Name"
+msgstr "Nom"
+
+msgid "Description"
+msgstr "Description"
+
+msgid "Code"
+msgstr "Code"
+
+msgid "ID"
+msgstr "ID"
+
+msgid "Last updated date"
+msgstr ""
+
+msgid "Created date"
+msgstr "Date de création"
+
+msgid "Created by"
+msgstr "Créé par"
+
+msgid "Custom"
+msgstr "Personnalisé"
+
+msgid "Program"
+msgstr "Programme"
+
+msgid "Analytics type"
+msgstr "Type d'analytique"
+
+msgid "Enrollment"
+msgstr "Inscription"
+
+msgid "Event"
+msgstr "Événements"
+
+msgid "Analytics period boundaries"
+msgstr "Limites de période d'analytique"
+
+msgid "{{ offsetPeriodType }} × {{ offsetPeriods }}"
+msgstr ""
+
+msgid "Expression"
+msgstr "Expression"
+
+msgid "Filter"
+msgstr "Filtrer"
+
+msgid "All available options are already selected"
+msgstr ""
+
+msgid "No available options for this item"
+msgstr ""
+
+msgid "Search by option name"
+msgstr ""
+
+msgid "Back to all items"
+msgstr ""
+
+msgid "Options"
+msgstr "Options"
+
+msgid "Selected items"
+msgstr ""
+
 msgid "Data Type"
 msgstr "Type de données"
 
@@ -182,11 +350,23 @@ msgstr "Aucune donnée"
 msgid "Search by data item name"
 msgstr "Rechercher par le nom de la donnée"
 
-msgid "No items selected"
-msgstr "Aucun élément sélectionné"
-
 msgid "Selected Items"
 msgstr "Éléments sélectionnés"
+
+msgid "All available items are already selected"
+msgstr ""
+
+msgid "Calculation"
+msgstr ""
+
+msgid "Metric type"
+msgstr "Type de métrique"
+
+msgid "All metrics"
+msgstr "Tous les éléments"
+
+msgid "No items selected"
+msgstr "Aucun élément sélectionné"
 
 msgid "No indicators found"
 msgstr "Aucun indicateur trouvé"
@@ -221,14 +401,8 @@ msgstr ""
 msgid "Nothing found for \"{{- searchTerm}}\""
 msgstr "Rien retrouvé pour \"{{- searchTerm}}\""
 
-msgid "Calculation"
+msgid "Click to choose from available options"
 msgstr ""
-
-msgid "Metric type"
-msgstr "Type de métrique"
-
-msgid "All metrics"
-msgstr "Tous les éléments"
 
 msgid "Move to {{axisName}}"
 msgstr "Déménager à {{axisName}}"
@@ -280,9 +454,6 @@ msgstr ""
 msgid "Search"
 msgstr "Chercher"
 
-msgid "Nothing found for {{- searchTerm}}"
-msgstr ""
-
 msgid "Delete {{fileType}}"
 msgstr "Supprimer {{fileType}}"
 
@@ -331,12 +502,6 @@ msgstr "Fermer"
 
 msgid "Rename {{fileType}}"
 msgstr "Renommer {{fileType}}"
-
-msgid "Name"
-msgstr "Nom"
-
-msgid "Description"
-msgstr "Description"
 
 msgid "Rename"
 msgstr "Renommer"
@@ -448,9 +613,6 @@ msgstr ""
 msgid "Not available offline"
 msgstr "Non disponible hors ligne"
 
-msgid "Created by"
-msgstr "Créé par"
-
 msgid "Anyone"
 msgstr "Toute personne"
 
@@ -471,9 +633,6 @@ msgstr "Créé"
 
 msgid "Last updated"
 msgstr "Dernière mise à jour"
-
-msgid "Type"
-msgstr "Type"
 
 msgid "Clear filters"
 msgstr "Effacer les filtres"
@@ -578,9 +737,6 @@ msgstr ""
 msgid "New line list"
 msgstr ""
 
-msgid "Options"
-msgstr "Options"
-
 msgid "Hide"
 msgstr "Masquer"
 
@@ -625,9 +781,6 @@ msgstr "Sélectionner un groupe"
 
 msgid "Deselect all"
 msgstr "Desélectionner tout"
-
-msgid "Period type"
-msgstr "Type de période"
 
 msgid "Year"
 msgstr "Année"
@@ -854,6 +1007,9 @@ msgstr "Années fiscales"
 msgid "Years"
 msgstr "Années"
 
+msgid "Value: {{value}}"
+msgstr ""
+
 msgid "Bold text"
 msgstr "Texte en gras"
 
@@ -923,9 +1079,6 @@ msgstr "Séries"
 msgid "Category"
 msgstr "Catégorie"
 
-msgid "Filter"
-msgstr "Filtrer"
-
 msgid "Columns"
 msgstr "Colonnes"
 
@@ -950,14 +1103,8 @@ msgstr "Rapports réels à temps"
 msgid "Expected reports"
 msgstr "Rapports attendus"
 
-msgid "Program"
-msgstr "Programme"
-
 msgid "Select a program"
 msgstr "Sélectionnez un programme"
-
-msgid "Indicators"
-msgstr "Indicateurs"
 
 msgid "Indicator group"
 msgstr "Groupe d'indicateurs"
@@ -976,9 +1123,6 @@ msgstr "Chargement des groupes d'indicateurs"
 
 msgid "Data element group"
 msgstr "Groupe d'éléments de données"
-
-msgid "Data element"
-msgstr "Élément de données"
 
 msgid "No data element groups found"
 msgstr "Aucun groupe d'éléments de donnée trouvé"
@@ -1021,6 +1165,9 @@ msgstr "Gestion des indicateurs de programme"
 
 msgid "Calculations"
 msgstr ""
+
+msgid "Option"
+msgstr "Option"
 
 msgid "Number"
 msgstr "Nombre"
@@ -1124,6 +1271,9 @@ msgstr "{{thresholdFactor}} × Z-score faible"
 msgid "{{thresholdFactor}} × Z-score high"
 msgstr "{{thresholdFactor}} × Z-score élevé"
 
+msgid "Not applicable"
+msgstr ""
+
 msgid "Data"
 msgstr "Données"
 
@@ -1132,6 +1282,81 @@ msgstr "Unité d'organisation"
 
 msgid "Assigned Categories"
 msgstr "Catégories attribuées"
+
+msgid "Text"
+msgstr "Texte"
+
+msgid "Long text"
+msgstr "Texte long"
+
+msgid "Multi text"
+msgstr ""
+
+msgid "Letter"
+msgstr "Lettre"
+
+msgid "Phone number"
+msgstr "Numéro de téléphone"
+
+msgid "Email"
+msgstr "Adresse e-mail"
+
+msgid "Yes/No"
+msgstr "Oui / Non"
+
+msgid "Yes Only"
+msgstr "Oui seulement"
+
+msgid "Date"
+msgstr "Date"
+
+msgid "Date & Time"
+msgstr "Date & Heure"
+
+msgid "Time"
+msgstr "Heure"
+
+msgid "Unit interval"
+msgstr "Intervalle unités"
+
+msgid "Percentage"
+msgstr "Pourcentage"
+
+msgid "Integer"
+msgstr "Nombre Entier"
+
+msgid "Positive Integer"
+msgstr "Entier positif"
+
+msgid "Negative Integer"
+msgstr "Entier Négatif"
+
+msgid "Positive or Zero Integer"
+msgstr "Entier Positif ou Zéro"
+
+msgid "Tracker Associate"
+msgstr "Tracker associé"
+
+msgid "Username"
+msgstr "Nom d'utilisateur"
+
+msgid "Coordinate"
+msgstr "Coordonnée"
+
+msgid "Reference"
+msgstr "Reférence"
+
+msgid "Age"
+msgstr "Âge"
+
+msgid "URL"
+msgstr "URL"
+
+msgid "Image"
+msgstr "Image"
+
+msgid "GeoJSON"
+msgstr "GeoJSON"
 
 msgid "Pivot table"
 msgstr "Tableau croisé dynamique"
