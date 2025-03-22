@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2024-12-19T10:28:15.132Z\n"
+"POT-Creation-Date: 2025-03-18T12:46:14.410Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: Jaime Bosque <jaime.bosque@dhis2.org>, 2025\n"
 "Language-Team: Spanish (Latin America) (https://app.transifex.com/hisp-uio/teams/100509/es_419/)\n"
@@ -167,21 +167,6 @@ msgstr ""
 msgid "Math operators"
 msgstr "Operadores matemáticos"
 
-msgid "Data Type"
-msgstr "Tipo de datos"
-
-msgid "Only {{dataType}} can be used in {{visType}}"
-msgstr "Sólo {{dataType}} puede utilizarse en {{visType}}"
-
-msgid "All types"
-msgstr "Todos los tipos"
-
-msgid "Disaggregation"
-msgstr "Desagregación"
-
-msgid "No data"
-msgstr "No hay datos"
-
 msgid "Expression description"
 msgstr ""
 
@@ -326,14 +311,59 @@ msgstr ""
 msgid "Filter"
 msgstr "Filtro"
 
+msgid "All available options are already selected"
+msgstr ""
+
+msgid "No available options for this item"
+msgstr ""
+
+msgid "Search by option name"
+msgstr ""
+
+msgid "Back to all items"
+msgstr ""
+
+msgid "Options"
+msgstr "Opciones"
+
+msgid "Selected items"
+msgstr ""
+
+msgid "Data Type"
+msgstr "Tipo de datos"
+
+msgid "Only {{dataType}} can be used in {{visType}}"
+msgstr "Sólo {{dataType}} puede utilizarse en {{visType}}"
+
+msgid "All types"
+msgstr "Todos los tipos"
+
+msgid "Disaggregation"
+msgstr "Desagregación"
+
+msgid "No data"
+msgstr "No hay datos"
+
 msgid "Search by data item name"
 msgstr "Búsqueda por nombre de elemento de datos"
 
-msgid "No items selected"
-msgstr "No hay elementos seleccionados"
-
 msgid "Selected Items"
 msgstr "Artículos seleccionados"
+
+msgid "All available items are already selected"
+msgstr ""
+
+msgid "Calculation"
+msgstr "Cálculo"
+
+msgid "Metric type"
+msgstr "Tipo de métrica"
+
+msgid "All metrics"
+msgstr "Todas las métricas"
+
+msgid "No items selected"
+msgstr "No hay elementos seleccionados"
 
 msgid "No indicators found"
 msgstr "No se han encontrado indicadores"
@@ -368,14 +398,8 @@ msgstr "No se han encontrado cálculos para \"{{- searchTerm}}\""
 msgid "Nothing found for \"{{- searchTerm}}\""
 msgstr "No se ha encontrado nada para \"{{- searchTerm}}\""
 
-msgid "Calculation"
-msgstr "Cálculo"
-
-msgid "Metric type"
-msgstr "Tipo de métrica"
-
-msgid "All metrics"
-msgstr "Todas las métricas"
+msgid "Click to choose from available options"
+msgstr ""
 
 msgid "Move to {{axisName}}"
 msgstr "Mover a {{axisName}}"
@@ -428,9 +452,6 @@ msgstr "No se ha encontrado nada en {{- dimensionTitle}}"
 
 msgid "Search"
 msgstr "Buscar"
-
-msgid "Nothing found for {{- searchTerm}}"
-msgstr "No se ha encontrado nada para {{- searchTerm}}"
 
 msgid "Delete {{fileType}}"
 msgstr "Borrar {{fileType}}"
@@ -738,9 +759,6 @@ msgstr ""
 
 msgid "New line list"
 msgstr "Nueva lista"
-
-msgid "Options"
-msgstr "Opciones"
 
 msgid "Hide"
 msgstr "Ocultar"
@@ -1171,6 +1189,9 @@ msgstr "Indicador de programa"
 
 msgid "Calculations"
 msgstr "Cálculos"
+
+msgid "Option"
+msgstr ""
 
 msgid "Number"
 msgstr "Número"

@@ -11,7 +11,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2024-12-19T10:28:15.132Z\n"
+"POT-Creation-Date: 2025-03-18T12:46:14.410Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: Viktor Varland <viktor@dhis2.org>, 2025\n"
 "Language-Team: Lao (https://app.transifex.com/hisp-uio/teams/100509/lo/)\n"
@@ -163,21 +163,6 @@ msgstr "ລາກລາຍການມາບ່ອນນີ້, ຫຼືຄລ�
 msgid "Math operators"
 msgstr "ຕົວປະຕິບັດການຄະນິດສາດ"
 
-msgid "Data Type"
-msgstr "ຊະນິດຂໍ້ມູນ"
-
-msgid "Only {{dataType}} can be used in {{visType}}"
-msgstr "ມີພຽງ  {{dataType}} ທີສາມາດໃຊ້ໃນ {{visType}}"
-
-msgid "All types"
-msgstr "ທຸກຊະນິດ"
-
-msgid "Disaggregation"
-msgstr "Disaggregation"
-
-msgid "No data"
-msgstr "ບໍ່ມີຂໍ້ມູນ"
-
 msgid "Expression description"
 msgstr ""
 
@@ -322,14 +307,59 @@ msgstr "ເຄື່ອງໝາຍເລກ"
 msgid "Filter"
 msgstr "ຕົວກອງ"
 
+msgid "All available options are already selected"
+msgstr ""
+
+msgid "No available options for this item"
+msgstr ""
+
+msgid "Search by option name"
+msgstr ""
+
+msgid "Back to all items"
+msgstr ""
+
+msgid "Options"
+msgstr "ຈັດການ"
+
+msgid "Selected items"
+msgstr ""
+
+msgid "Data Type"
+msgstr "ຊະນິດຂໍ້ມູນ"
+
+msgid "Only {{dataType}} can be used in {{visType}}"
+msgstr "ມີພຽງ  {{dataType}} ທີສາມາດໃຊ້ໃນ {{visType}}"
+
+msgid "All types"
+msgstr "ທຸກຊະນິດ"
+
+msgid "Disaggregation"
+msgstr "Disaggregation"
+
+msgid "No data"
+msgstr "ບໍ່ມີຂໍ້ມູນ"
+
 msgid "Search by data item name"
 msgstr "ຄົ້ນຫາໂດຍຊື່ລາຍການຂໍ້ມູນ"
 
-msgid "No items selected"
-msgstr "ບໍ່ມີລາຍການທີ່ຖືກເລືອກ"
-
 msgid "Selected Items"
 msgstr "ລາຍການທີ່ເລືອກ"
+
+msgid "All available items are already selected"
+msgstr ""
+
+msgid "Calculation"
+msgstr "ການຄິດໄລ່"
+
+msgid "Metric type"
+msgstr "ຫົວໜ່ວຍວັດແທກ"
+
+msgid "All metrics"
+msgstr "ທຸກການປັບປຸງ"
+
+msgid "No items selected"
+msgstr "ບໍ່ມີລາຍການທີ່ຖືກເລືອກ"
 
 msgid "No indicators found"
 msgstr "ບໍ່ພົບຕົວຊີ້ວັດ"
@@ -364,14 +394,8 @@ msgstr "ບໍ່ພົບການຄິດໄລ່ສຳລັບ \"{{- serac
 msgid "Nothing found for \"{{- searchTerm}}\""
 msgstr "ບໍ່ພົບຫຍັງສຳລັບ \"{{- searchTerm}}\""
 
-msgid "Calculation"
-msgstr "ການຄິດໄລ່"
-
-msgid "Metric type"
-msgstr "ຫົວໜ່ວຍວັດແທກ"
-
-msgid "All metrics"
-msgstr "ທຸກການປັບປຸງ"
+msgid "Click to choose from available options"
+msgstr ""
 
 msgid "Move to {{axisName}}"
 msgstr "ຍ້າຍໄປ {{axisName}}"
@@ -424,9 +448,6 @@ msgstr "ບໍ່ຖືກຄົ້ນພົບໃນ {{- dimensionTitle}}"
 
 msgid "Search"
 msgstr "ຄົນຫາ"
-
-msgid "Nothing found for {{- searchTerm}}"
-msgstr "ບໍ່ຖືກຄົ້ນພົບສຳລັບ  {{- searchTerm}}"
 
 msgid "Delete {{fileType}}"
 msgstr "ລົບ {{fileType}}"
@@ -715,9 +736,6 @@ msgstr ""
 
 msgid "New line list"
 msgstr "ເພີ່ມບັນຊີລາຍຊື່ໃໝ່"
-
-msgid "Options"
-msgstr "ຈັດການ"
 
 msgid "Hide"
 msgstr "ເຊື່ອງ"
@@ -1141,6 +1159,9 @@ msgstr "ໂປແກຼມຕົວຊີ້ວັດ"
 
 msgid "Calculations"
 msgstr "ຄິດໄລ່"
+
+msgid "Option"
+msgstr "Option"
 
 msgid "Number"
 msgstr "ຈຳນວນ"

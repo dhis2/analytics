@@ -2,16 +2,16 @@
 # Translators:
 # Mai Nguyen <thanhmai.jica@gmail.com>, 2022
 # Thuy Nguyen <thuynguyen@hispvietnam.org>, 2025
-# Philip Larsen Donnelly, 2025
 # Em Le <em.hispvietnam@gmail.com>, 2025
 # Viktor Varland <viktor@dhis2.org>, 2025
+# Philip Larsen Donnelly, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2024-12-19T10:28:15.132Z\n"
+"POT-Creation-Date: 2025-03-18T12:46:14.410Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2025\n"
+"Last-Translator: Philip Larsen Donnelly, 2025\n"
 "Language-Team: Vietnamese (https://app.transifex.com/hisp-uio/teams/100509/vi/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -164,21 +164,6 @@ msgstr ""
 msgid "Math operators"
 msgstr "Toán tử toán học"
 
-msgid "Data Type"
-msgstr "Loại dữ liệu"
-
-msgid "Only {{dataType}} can be used in {{visType}}"
-msgstr "Chỉ {{dataType}}được sử dụng trong {{visType}}"
-
-msgid "All types"
-msgstr "Tất cả các loại"
-
-msgid "Disaggregation"
-msgstr "Phân Tách Phần Tử Dữ Liệu"
-
-msgid "No data"
-msgstr "Không có dữ liệu"
-
 msgid "Expression description"
 msgstr "Mô tả biểu thức"
 
@@ -323,14 +308,59 @@ msgstr "Biểu thức"
 msgid "Filter"
 msgstr "Lọc"
 
+msgid "All available options are already selected"
+msgstr ""
+
+msgid "No available options for this item"
+msgstr ""
+
+msgid "Search by option name"
+msgstr ""
+
+msgid "Back to all items"
+msgstr ""
+
+msgid "Options"
+msgstr "Tùy chọn"
+
+msgid "Selected items"
+msgstr ""
+
+msgid "Data Type"
+msgstr "Loại dữ liệu"
+
+msgid "Only {{dataType}} can be used in {{visType}}"
+msgstr "Chỉ {{dataType}}được sử dụng trong {{visType}}"
+
+msgid "All types"
+msgstr "Tất cả các loại"
+
+msgid "Disaggregation"
+msgstr "Phân Tách Phần Tử Dữ Liệu"
+
+msgid "No data"
+msgstr "Không có dữ liệu"
+
 msgid "Search by data item name"
 msgstr "Tìm kiếm theo tên mục dữ liệu"
 
-msgid "No items selected"
-msgstr "Không có mục nào được chọn"
-
 msgid "Selected Items"
 msgstr "Các mục đã chọn"
+
+msgid "All available items are already selected"
+msgstr ""
+
+msgid "Calculation"
+msgstr "Tính toán"
+
+msgid "Metric type"
+msgstr "Loại chỉ số đo lường"
+
+msgid "All metrics"
+msgstr "Tất cả hệ đo lường"
+
+msgid "No items selected"
+msgstr "Không có mục nào được chọn"
 
 msgid "No indicators found"
 msgstr "Không tìm thấy chỉ số"
@@ -365,14 +395,8 @@ msgstr "Không tìm thấy tính toán nào cho \"{{- searchTerm}}\""
 msgid "Nothing found for \"{{- searchTerm}}\""
 msgstr "Không tìm thấy gì cho {{- searchTerm}}"
 
-msgid "Calculation"
-msgstr "Tính toán"
-
-msgid "Metric type"
-msgstr "Loại chỉ số đo lường"
-
-msgid "All metrics"
-msgstr "Tất cả hệ đo lường"
+msgid "Click to choose from available options"
+msgstr ""
 
 msgid "Move to {{axisName}}"
 msgstr "Di chuyển đến {{axisName}}"
@@ -425,9 +449,6 @@ msgstr "Không tìm thấy gì trong {{- dimensionTitle}}"
 
 msgid "Search"
 msgstr "Tìm kiếm"
-
-msgid "Nothing found for {{- searchTerm}}"
-msgstr "Không tìm thấy gì cho {{- searchTerm}}"
 
 msgid "Delete {{fileType}}"
 msgstr "Xóa {{fileType}}"
@@ -730,9 +751,6 @@ msgstr ""
 
 msgid "New line list"
 msgstr "Danh sách dòng mới"
-
-msgid "Options"
-msgstr "Tùy chọn"
 
 msgid "Hide"
 msgstr "Ẩn"
@@ -1156,6 +1174,9 @@ msgstr "Chỉ số chương trình"
 
 msgid "Calculations"
 msgstr "Tính toán"
+
+msgid "Option"
+msgstr "Tùy chọn"
 
 msgid "Number"
 msgstr "Số"

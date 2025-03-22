@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2024-12-19T10:28:15.132Z\n"
+"POT-Creation-Date: 2025-03-18T12:46:14.410Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: Jiří Podhorecký <jirka.p@volny.cz>, 2025\n"
 "Language-Team: Czech (https://app.transifex.com/hisp-uio/teams/100509/cs/)\n"
@@ -163,21 +163,6 @@ msgstr ""
 msgid "Math operators"
 msgstr "Matematické operátory"
 
-msgid "Data Type"
-msgstr "Typ dat"
-
-msgid "Only {{dataType}} can be used in {{visType}}"
-msgstr ""
-
-msgid "All types"
-msgstr "Všechny typy"
-
-msgid "Disaggregation"
-msgstr "Rozčlenění"
-
-msgid "No data"
-msgstr "Nejsou data"
-
 msgid "Expression description"
 msgstr "Popis výrazu"
 
@@ -322,14 +307,59 @@ msgstr "Výraz"
 msgid "Filter"
 msgstr "Filtr"
 
+msgid "All available options are already selected"
+msgstr ""
+
+msgid "No available options for this item"
+msgstr ""
+
+msgid "Search by option name"
+msgstr ""
+
+msgid "Back to all items"
+msgstr ""
+
+msgid "Options"
+msgstr "Možnosti"
+
+msgid "Selected items"
+msgstr ""
+
+msgid "Data Type"
+msgstr "Typ dat"
+
+msgid "Only {{dataType}} can be used in {{visType}}"
+msgstr ""
+
+msgid "All types"
+msgstr "Všechny typy"
+
+msgid "Disaggregation"
+msgstr "Rozčlenění"
+
+msgid "No data"
+msgstr "Nejsou data"
+
 msgid "Search by data item name"
 msgstr "Hledání podle názvu datové položky"
 
-msgid "No items selected"
-msgstr "Nevybrány žádné položky"
-
 msgid "Selected Items"
 msgstr "Vybrané položky"
+
+msgid "All available items are already selected"
+msgstr ""
+
+msgid "Calculation"
+msgstr "Výpočet"
+
+msgid "Metric type"
+msgstr "Metrický typ"
+
+msgid "All metrics"
+msgstr "Všechny metriky"
+
+msgid "No items selected"
+msgstr "Nevybrány žádné položky"
 
 msgid "No indicators found"
 msgstr "Nebyly nalezeny žádné indikátory"
@@ -364,14 +394,8 @@ msgstr ""
 msgid "Nothing found for \"{{- searchTerm}}\""
 msgstr "Pro dotaz „{{- searchTerm}}“ nebylo nic nalezeno"
 
-msgid "Calculation"
-msgstr "Výpočet"
-
-msgid "Metric type"
-msgstr "Metrický typ"
-
-msgid "All metrics"
-msgstr "Všechny metriky"
+msgid "Click to choose from available options"
+msgstr ""
 
 msgid "Move to {{axisName}}"
 msgstr "Přesunout na {{axisName}}"
@@ -424,9 +448,6 @@ msgstr "V {{- dimensionTitle}} nebylo nic nalezeno"
 
 msgid "Search"
 msgstr "Hledat"
-
-msgid "Nothing found for {{- searchTerm}}"
-msgstr "Pro {{- searchTerm}} nebylo nic nalezeno."
 
 msgid "Delete {{fileType}}"
 msgstr "Smazat {{fileType}}"
@@ -731,9 +752,6 @@ msgstr ""
 
 msgid "New line list"
 msgstr "Nový řádkový seznam"
-
-msgid "Options"
-msgstr "Možnosti"
 
 msgid "Hide"
 msgstr "Skrýt"
@@ -1166,6 +1184,9 @@ msgstr "Indikátor programu"
 
 msgid "Calculations"
 msgstr "Výpočty"
+
+msgid "Option"
+msgstr "Volba"
 
 msgid "Number"
 msgstr "Číslo"
