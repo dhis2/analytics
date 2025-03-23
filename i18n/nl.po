@@ -5,14 +5,14 @@
 # Cherise Beek <cherise.beek@gmail.com>, 2025
 # Philip Larsen Donnelly, 2025
 # Rica, 2025
-# Charel van den Elsen, 2025
+# Charel van den Elsen <zobeadzorg@gmail.com>, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2024-12-19T10:28:15.132Z\n"
+"POT-Creation-Date: 2025-03-18T12:46:14.410Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Charel van den Elsen, 2025\n"
+"Last-Translator: Charel van den Elsen <zobeadzorg@gmail.com>, 2025\n"
 "Language-Team: Dutch (https://app.transifex.com/hisp-uio/teams/100509/nl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -165,21 +165,6 @@ msgstr ""
 msgid "Math operators"
 msgstr "Wiskundige operatoren"
 
-msgid "Data Type"
-msgstr "Data type"
-
-msgid "Only {{dataType}} can be used in {{visType}}"
-msgstr ""
-
-msgid "All types"
-msgstr "Alle typen"
-
-msgid "Disaggregation"
-msgstr "desaggregatie"
-
-msgid "No data"
-msgstr "Geen gegevens"
-
 msgid "Expression description"
 msgstr ""
 
@@ -324,14 +309,59 @@ msgstr "Uitdrukking"
 msgid "Filter"
 msgstr "Filter"
 
+msgid "All available options are already selected"
+msgstr ""
+
+msgid "No available options for this item"
+msgstr ""
+
+msgid "Search by option name"
+msgstr ""
+
+msgid "Back to all items"
+msgstr ""
+
+msgid "Options"
+msgstr "Opties"
+
+msgid "Selected items"
+msgstr ""
+
+msgid "Data Type"
+msgstr "Data type"
+
+msgid "Only {{dataType}} can be used in {{visType}}"
+msgstr ""
+
+msgid "All types"
+msgstr "Alle typen"
+
+msgid "Disaggregation"
+msgstr "desaggregatie"
+
+msgid "No data"
+msgstr "Geen gegevens"
+
 msgid "Search by data item name"
 msgstr "Zoeken op naam van gegevensitem"
 
-msgid "No items selected"
-msgstr "Geen items geselecteerd"
-
 msgid "Selected Items"
 msgstr "Geselecteerde voorwerpen"
+
+msgid "All available items are already selected"
+msgstr ""
+
+msgid "Calculation"
+msgstr "Berekening"
+
+msgid "Metric type"
+msgstr "Metrische soort"
+
+msgid "All metrics"
+msgstr "Alle statistieken"
+
+msgid "No items selected"
+msgstr "Geen items geselecteerd"
 
 msgid "No indicators found"
 msgstr "Geen indicatoren gevonden"
@@ -366,14 +396,8 @@ msgstr ""
 msgid "Nothing found for \"{{- searchTerm}}\""
 msgstr "Niets gevonden voor \"{{- searchTerm}}\""
 
-msgid "Calculation"
-msgstr "Berekening"
-
-msgid "Metric type"
-msgstr "Metrische soort"
-
-msgid "All metrics"
-msgstr "Alle statistieken"
+msgid "Click to choose from available options"
+msgstr ""
 
 msgid "Move to {{axisName}}"
 msgstr "Ga naar {{axisName}}"
@@ -426,9 +450,6 @@ msgstr "Niets gevonden in {{- dimensionTitle}}"
 
 msgid "Search"
 msgstr "Zoek"
-
-msgid "Nothing found for {{- searchTerm}}"
-msgstr "Niets gevonden voor {{- searchTerm}}"
 
 msgid "Delete {{fileType}}"
 msgstr "Verwijder {{fileType}}"
@@ -733,9 +754,6 @@ msgstr ""
 
 msgid "New line list"
 msgstr "Nieuwe lijnlijst"
-
-msgid "Options"
-msgstr "Opties"
 
 msgid "Hide"
 msgstr "Verbergen"
@@ -1162,6 +1180,9 @@ msgstr "Programmaindicator"
 
 msgid "Calculations"
 msgstr "Berekeningen"
+
+msgid "Option"
+msgstr ""
 
 msgid "Number"
 msgstr "Nummer"

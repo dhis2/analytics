@@ -8,16 +8,16 @@
 # Martins Matola, 2025
 # Shelsea Chumaio, 2025
 # Helton Dias, 2025
-# Philip Larsen Donnelly, 2025
 # Ge Joao <gsimango@saudigitus.org>, 2025
 # Viktor Varland <viktor@dhis2.org>, 2025
+# Philip Larsen Donnelly, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2024-12-19T10:28:15.132Z\n"
+"POT-Creation-Date: 2025-03-18T12:46:14.410Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2025\n"
+"Last-Translator: Philip Larsen Donnelly, 2025\n"
 "Language-Team: Portuguese (https://app.transifex.com/hisp-uio/teams/100509/pt/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -171,21 +171,6 @@ msgstr ""
 msgid "Math operators"
 msgstr " Operadores matemáticos"
 
-msgid "Data Type"
-msgstr "Tipo de dados"
-
-msgid "Only {{dataType}} can be used in {{visType}}"
-msgstr "Apenas {{dataType}} pode ser usado em{{visType}}"
-
-msgid "All types"
-msgstr "Todos os tipos"
-
-msgid "Disaggregation"
-msgstr "Desagregação"
-
-msgid "No data"
-msgstr "Não há dados"
-
 msgid "Expression description"
 msgstr "Descrição da expressão"
 
@@ -330,14 +315,59 @@ msgstr "Expressão"
 msgid "Filter"
 msgstr "Filtro"
 
+msgid "All available options are already selected"
+msgstr ""
+
+msgid "No available options for this item"
+msgstr ""
+
+msgid "Search by option name"
+msgstr ""
+
+msgid "Back to all items"
+msgstr ""
+
+msgid "Options"
+msgstr "Opções"
+
+msgid "Selected items"
+msgstr ""
+
+msgid "Data Type"
+msgstr "Tipo de dados"
+
+msgid "Only {{dataType}} can be used in {{visType}}"
+msgstr "Apenas {{dataType}} pode ser usado em{{visType}}"
+
+msgid "All types"
+msgstr "Todos os tipos"
+
+msgid "Disaggregation"
+msgstr "Desagregação"
+
+msgid "No data"
+msgstr "Não há dados"
+
 msgid "Search by data item name"
 msgstr " Pesquisa por nome de item de dados"
 
-msgid "No items selected"
-msgstr " Nenhum item seleccionado"
-
 msgid "Selected Items"
 msgstr " Itens seleccionados"
+
+msgid "All available items are already selected"
+msgstr ""
+
+msgid "Calculation"
+msgstr " Cálculo"
+
+msgid "Metric type"
+msgstr " Tipo de métrica"
+
+msgid "All metrics"
+msgstr "Todas métricas"
+
+msgid "No items selected"
+msgstr " Nenhum item seleccionado"
 
 msgid "No indicators found"
 msgstr "Nenhum indicador encontrado"
@@ -372,14 +402,8 @@ msgstr "Nenhum cálculo encontrado para ''{{- searchTerm}}''"
 msgid "Nothing found for \"{{- searchTerm}}\""
 msgstr " Nada encontrado para ''{{- searchTerm}}''"
 
-msgid "Calculation"
-msgstr " Cálculo"
-
-msgid "Metric type"
-msgstr " Tipo de métrica"
-
-msgid "All metrics"
-msgstr "Todas métricas"
+msgid "Click to choose from available options"
+msgstr ""
 
 msgid "Move to {{axisName}}"
 msgstr "Mover para {{axisName}}"
@@ -432,9 +456,6 @@ msgstr " Nada encontrado em {{- dimensionTitle}}"
 
 msgid "Search"
 msgstr "Pesquisar"
-
-msgid "Nothing found for {{- searchTerm}}"
-msgstr " Nada encontrado para {{- searchTerm}}"
 
 msgid "Delete {{fileType}}"
 msgstr " Eliminar  {{fileType}}"
@@ -742,9 +763,6 @@ msgstr ""
 
 msgid "New line list"
 msgstr "Nova lista de linhas"
-
-msgid "Options"
-msgstr "Opções"
 
 msgid "Hide"
 msgstr "Ocultar"
@@ -1174,6 +1192,9 @@ msgstr "Gestão do indicadores de programa"
 
 msgid "Calculations"
 msgstr "Cálculos"
+
+msgid "Option"
+msgstr "Opção"
 
 msgid "Number"
 msgstr "Número"
