@@ -1,16 +1,16 @@
 # 
 # Translators:
-# Viktor Varland <viktor@dhis2.org>, 2025
 # 晓东 林 <13981924470@126.com>, 2025
 # Philip Larsen Donnelly, 2025
 # easylin <lin_xd@126.com>, 2025
+# Viktor Varland <viktor@dhis2.org>, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2024-12-19T10:28:15.132Z\n"
+"POT-Creation-Date: 2025-03-18T12:46:14.410Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: easylin <lin_xd@126.com>, 2025\n"
+"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2025\n"
 "Language-Team: Chinese (https://app.transifex.com/hisp-uio/teams/100509/zh/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -158,21 +158,6 @@ msgstr "将项目拖到此处，或在列表中双击，开始构建计算公式
 msgid "Math operators"
 msgstr "数学运算符"
 
-msgid "Data Type"
-msgstr "数据类型"
-
-msgid "Only {{dataType}} can be used in {{visType}}"
-msgstr "{{dataType}} 只能在 {{visType}} 中使用"
-
-msgid "All types"
-msgstr "所有类型"
-
-msgid "Disaggregation"
-msgstr "分解"
-
-msgid "No data"
-msgstr "无数据"
-
 msgid "Expression description"
 msgstr "表达式描述"
 
@@ -317,14 +302,59 @@ msgstr "表达式"
 msgid "Filter"
 msgstr "过滤器"
 
+msgid "All available options are already selected"
+msgstr ""
+
+msgid "No available options for this item"
+msgstr ""
+
+msgid "Search by option name"
+msgstr ""
+
+msgid "Back to all items"
+msgstr ""
+
+msgid "Options"
+msgstr "选项"
+
+msgid "Selected items"
+msgstr ""
+
+msgid "Data Type"
+msgstr "数据类型"
+
+msgid "Only {{dataType}} can be used in {{visType}}"
+msgstr "{{dataType}} 只能在 {{visType}} 中使用"
+
+msgid "All types"
+msgstr "所有类型"
+
+msgid "Disaggregation"
+msgstr "分解"
+
+msgid "No data"
+msgstr "无数据"
+
 msgid "Search by data item name"
 msgstr "按数据项名称搜索"
 
-msgid "No items selected"
-msgstr "没有选择条目"
-
 msgid "Selected Items"
 msgstr "选择的条目"
+
+msgid "All available items are already selected"
+msgstr ""
+
+msgid "Calculation"
+msgstr "计算"
+
+msgid "Metric type"
+msgstr "尺度类型"
+
+msgid "All metrics"
+msgstr "所有尺度"
+
+msgid "No items selected"
+msgstr "没有选择条目"
 
 msgid "No indicators found"
 msgstr "找不到指标"
@@ -359,14 +389,8 @@ msgstr "找不到“{{- searchTerm}}”的计算"
 msgid "Nothing found for \"{{- searchTerm}}\""
 msgstr "找不到“ {{- searchTerm}}”"
 
-msgid "Calculation"
-msgstr "计算"
-
-msgid "Metric type"
-msgstr "尺度类型"
-
-msgid "All metrics"
-msgstr "所有尺度"
+msgid "Click to choose from available options"
+msgstr ""
 
 msgid "Move to {{axisName}}"
 msgstr "移动到 {{axisName}}"
@@ -417,9 +441,6 @@ msgstr "在 {{- dimensionTitle}} 中找不到任何内容"
 
 msgid "Search"
 msgstr "搜索"
-
-msgid "Nothing found for {{- searchTerm}}"
-msgstr "没有找到 {{- searchTerm}}"
 
 msgid "Delete {{fileType}}"
 msgstr "删除{{fileType}}"
@@ -699,9 +720,6 @@ msgstr "未找到行列表。尝试调整您的搜索或过滤选项以找到您
 
 msgid "New line list"
 msgstr "新行列表"
-
-msgid "Options"
-msgstr "选项"
 
 msgid "Hide"
 msgstr "隐藏"
@@ -1125,6 +1143,9 @@ msgstr "项目指标"
 
 msgid "Calculations"
 msgstr "计算"
+
+msgid "Option"
+msgstr "选项"
 
 msgid "Number"
 msgstr "数据"
