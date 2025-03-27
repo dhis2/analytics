@@ -68,6 +68,10 @@ describe('MdParser class', () => {
 
             // links
             [
+                '[Test link](https://host.tld/path/link)',
+                '<a href="https://host.tld/path/link" target="_blank" rel="noopener">Test link</a>',
+            ],
+            [
                 'example.com/path',
                 '<a href="http://example.com/path" target="_blank" rel="noopener">example.com/path</a>',
             ],
