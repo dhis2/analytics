@@ -94,6 +94,25 @@ export class MdParser {
         // disable all rules, enable autolink for URLs and email addresses
         const md = new MarkdownIt('zero', { linkify: true, breaks: true })
 
+        // From: https://github.com/markdown-it/markdown-it/blob/master/docs/architecture.md#renderer
+        // Remember the old renderer if overridden, or proxy to the default renderer.
+        const defaultRender =
+            md.renderer.rules.link_open ||
+            // eslint-disable-next-line max-params
+            ((tokens, idx, options, env, self) => {
+                return self.renderToken(tokens, idx, options)
+            })
+
+        // eslint-disable-next-line max-params
+        md.renderer.rules.link_open = (tokens, idx, options, env, self) => {
+            // Add a new 'target' and 'rel' attributes, or replace the value of the existing ones.
+            tokens[idx].attrSet('target', '_blank')
+            tokens[idx].attrSet('rel', 'noopener')
+
+            // Pass the token to the default renderer.
+            return defaultRender(tokens, idx, options, env, self)
+        }
+
         // *bold* -> <strong>bold</strong>
         md.inline.ruler.push('strong', parse(codes.bold.name))
 
