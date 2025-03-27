@@ -14,12 +14,14 @@ import { styles } from './GetLinkDialog.styles.js'
 import { supportedFileTypes, appPathFor } from './utils.js'
 
 export const GetLinkDialog = ({ type, id, onClose }) => {
-    const { baseUrl } = useConfig()
+    const { apiVersion, baseUrl } = useConfig()
 
-    // TODO simply use href from the visualization object?
-    const appBaseUrl = new URL(baseUrl, self.location.href)
+    const appBaseUrl = new URL(
+        baseUrl.endsWith('/') ? baseUrl : `${baseUrl}/`,
+        self.location.href
+    ).href
 
-    const appUrl = new URL(appPathFor(type, id), appBaseUrl)
+    const appUrl = new URL(appPathFor(type, id, apiVersion), appBaseUrl).href
 
     return (
         <Modal onClose={onClose}>
@@ -27,13 +29,11 @@ export const GetLinkDialog = ({ type, id, onClose }) => {
             <ModalContent>
                 <p>{i18n.t('Open in this app')}</p>
                 <div className="link-container">
-                    <a href={appUrl.href}>{appUrl.href}</a>
+                    <a href={appUrl}>{appUrl}</a>
                     <Button
                         icon={<IconCopy24 />}
                         small
-                        onClick={() =>
-                            navigator.clipboard.writeText(appUrl.href)
-                        }
+                        onClick={() => navigator.clipboard.writeText(appUrl)}
                     />
                 </div>
             </ModalContent>

@@ -2,17 +2,57 @@ import { Button, Modal } from '@dhis2/ui'
 import { shallow } from 'enzyme'
 import React from 'react'
 import { GetLinkDialog } from '../GetLinkDialog.js'
-import { appPathFor } from '../utils.js'
 
-const testBaseUrl = 'http://test.tld/test'
+const testBaseUrl = 'http://host.tld/test/'
+
+const mockUseConfig = jest.fn(() => ({ apiVersion: 42, baseUrl: testBaseUrl }))
 
 jest.mock('@dhis2/app-runtime', () => ({
-    useConfig: () => ({ baseUrl: testBaseUrl }),
+    useConfig: () => mockUseConfig(),
 }))
+
+const tests = [
+    {
+        type: 'visualization',
+        baseUrl: 'http://host.tld',
+        id: 'dv-id-1',
+        expected: 'http://host.tld/dhis-web-data-visualizer/#/dv-id-1',
+    },
+    {
+        type: 'visualization',
+        baseUrl: testBaseUrl,
+        id: 'dv-id-2',
+        expected: 'http://host.tld/test/dhis-web-data-visualizer/#/dv-id-2',
+    },
+    {
+        type: 'eventVisualization',
+        baseUrl: 'http://host.tld/other-path/',
+        id: 'll-id-1',
+        expected: 'http://host.tld/other-path/dhis-web-line-listing/#/ll-id-1',
+    },
+    {
+        type: 'eventVisualization',
+        apiVersion: 41,
+        baseUrl: 'http://host.tld/other-path',
+        id: 'll-id-2',
+        expected: 'http://host.tld/other-path/api/apps/line-listing/#/ll-id-2',
+    },
+    {
+        type: 'map',
+        baseUrl: testBaseUrl,
+        id: 'map-id-1',
+        expected: 'http://host.tld/test/dhis-web-maps/#/map-id-1',
+    },
+    {
+        type: 'map',
+        baseUrl: '../',
+        id: 'map-id-2',
+        expected: 'http://localhost/dhis-web-maps/#/map-id-2',
+    },
+]
 
 describe('The FileMenu - GetLinkDialog component', () => {
     let shallowGetLinkDialog
-    let props
 
     const onClose = jest.fn()
 
@@ -25,27 +65,45 @@ describe('The FileMenu - GetLinkDialog component', () => {
 
     beforeEach(() => {
         shallowGetLinkDialog = undefined
-        props = {
-            type: 'visualization',
-            id: 'get-link-test-id',
-            onClose,
-        }
     })
 
     it('renders a Modal component', () => {
-        expect(getGetLinkDialogComponent(props).find(Modal)).toHaveLength(1)
+        expect(
+            getGetLinkDialogComponent({
+                type: tests[0].type,
+                id: tests[0].id,
+            }).find(Modal)
+        ).toHaveLength(1)
     })
 
-    it('renders a <a> tag containing the type and id props', () => {
-        const href = getGetLinkDialogComponent(props).find('a').prop('href')
+    tests.forEach((test) => {
+        it('renders a <a> tag containing the correct app path and id', () => {
+            mockUseConfig.mockReturnValueOnce({
+                apiVersion: test.apiVersion || 42,
+                baseUrl: test.baseUrl,
+            })
 
-        expect(href).toMatch(
-            new URL(appPathFor(props.type, props.id), testBaseUrl).href
-        )
+            const href = getGetLinkDialogComponent({
+                type: test.type,
+                id: test.id,
+                onClose,
+            })
+                .find('a')
+                .prop('href')
+
+            expect(href).toMatch(test.expected)
+        })
     })
 
     it('calls the onClose callback when the Close button is clicked', () => {
-        getGetLinkDialogComponent(props).find(Button).at(1).simulate('click')
+        getGetLinkDialogComponent({
+            type: tests[0].type,
+            id: tests[0].id,
+            onClose,
+        })
+            .find(Button)
+            .at(1)
+            .simulate('click')
 
         expect(onClose).toHaveBeenCalled()
     })
