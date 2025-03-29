@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2024-12-19T10:28:15.132Z\n"
+"POT-Creation-Date: 2025-03-18T12:46:14.410Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: Philip Larsen Donnelly, 2025\n"
 "Language-Team: Urdu (https://app.transifex.com/hisp-uio/teams/100509/ur/)\n"
@@ -157,21 +157,6 @@ msgstr ""
 msgid "Math operators"
 msgstr ""
 
-msgid "Data Type"
-msgstr ""
-
-msgid "Only {{dataType}} can be used in {{visType}}"
-msgstr ""
-
-msgid "All types"
-msgstr ""
-
-msgid "Disaggregation"
-msgstr "ناجائز"
-
-msgid "No data"
-msgstr "کوئی مواد نہیں"
-
 msgid "Expression description"
 msgstr "اظہار بیان"
 
@@ -316,13 +301,58 @@ msgstr "ایکسپریشن"
 msgid "Filter"
 msgstr "فلٹر"
 
+msgid "All available options are already selected"
+msgstr ""
+
+msgid "No available options for this item"
+msgstr ""
+
+msgid "Search by option name"
+msgstr ""
+
+msgid "Back to all items"
+msgstr ""
+
+msgid "Options"
+msgstr "اختیارات"
+
+msgid "Selected items"
+msgstr ""
+
+msgid "Data Type"
+msgstr ""
+
+msgid "Only {{dataType}} can be used in {{visType}}"
+msgstr ""
+
+msgid "All types"
+msgstr ""
+
+msgid "Disaggregation"
+msgstr "ناجائز"
+
+msgid "No data"
+msgstr "کوئی مواد نہیں"
+
 msgid "Search by data item name"
 msgstr ""
 
-msgid "No items selected"
+msgid "Selected Items"
 msgstr ""
 
-msgid "Selected Items"
+msgid "All available items are already selected"
+msgstr ""
+
+msgid "Calculation"
+msgstr ""
+
+msgid "Metric type"
+msgstr ""
+
+msgid "All metrics"
+msgstr "تمام میٹرکس"
+
+msgid "No items selected"
 msgstr ""
 
 msgid "No indicators found"
@@ -358,14 +388,8 @@ msgstr ""
 msgid "Nothing found for \"{{- searchTerm}}\""
 msgstr ""
 
-msgid "Calculation"
+msgid "Click to choose from available options"
 msgstr ""
-
-msgid "Metric type"
-msgstr ""
-
-msgid "All metrics"
-msgstr "تمام میٹرکس"
 
 msgid "Move to {{axisName}}"
 msgstr ""
@@ -416,9 +440,6 @@ msgstr ""
 
 msgid "Search"
 msgstr "تلاش کریں"
-
-msgid "Nothing found for {{- searchTerm}}"
-msgstr ""
 
 msgid "Delete {{fileType}}"
 msgstr ""
@@ -699,9 +720,6 @@ msgstr ""
 
 msgid "New line list"
 msgstr ""
-
-msgid "Options"
-msgstr "اختیارات"
 
 msgid "Hide"
 msgstr "چھپائیں"
@@ -1128,6 +1146,9 @@ msgstr "پروگرام کا اشارہ"
 
 msgid "Calculations"
 msgstr ""
+
+msgid "Option"
+msgstr "اختیار"
 
 msgid "Number"
 msgstr "نمبر"
