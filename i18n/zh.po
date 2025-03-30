@@ -2,15 +2,15 @@
 # Translators:
 # 晓东 林 <13981924470@126.com>, 2025
 # Philip Larsen Donnelly, 2025
-# easylin <lin_xd@126.com>, 2025
 # Viktor Varland <viktor@dhis2.org>, 2025
+# easylin <lin_xd@126.com>, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2025-03-18T12:46:14.410Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2025\n"
+"Last-Translator: easylin <lin_xd@126.com>, 2025\n"
 "Language-Team: Chinese (https://app.transifex.com/hisp-uio/teams/100509/zh/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -303,22 +303,22 @@ msgid "Filter"
 msgstr "过滤器"
 
 msgid "All available options are already selected"
-msgstr ""
+msgstr "已选择所有可用选项"
 
 msgid "No available options for this item"
-msgstr ""
+msgstr "此项目无可用选项"
 
 msgid "Search by option name"
-msgstr ""
+msgstr "按选项名称搜索"
 
 msgid "Back to all items"
-msgstr ""
+msgstr "返回所有项目"
 
 msgid "Options"
 msgstr "选项"
 
 msgid "Selected items"
-msgstr ""
+msgstr "选定项目"
 
 msgid "Data Type"
 msgstr "数据类型"
@@ -342,7 +342,7 @@ msgid "Selected Items"
 msgstr "选择的条目"
 
 msgid "All available items are already selected"
-msgstr ""
+msgstr "已选择所有可用项目"
 
 msgid "Calculation"
 msgstr "计算"
@@ -390,7 +390,7 @@ msgid "Nothing found for \"{{- searchTerm}}\""
 msgstr "找不到“ {{- searchTerm}}”"
 
 msgid "Click to choose from available options"
-msgstr ""
+msgstr "点击从可用选项中选择"
 
 msgid "Move to {{axisName}}"
 msgstr "移动到 {{axisName}}"

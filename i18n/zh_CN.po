@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2024-12-19T10:28:15.132Z\n"
+"POT-Creation-Date: 2025-03-18T12:46:14.410Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: easylin <lin_xd@126.com>, 2025\n"
 "Language-Team: Chinese (China) (https://app.transifex.com/hisp-uio/teams/100509/zh_CN/)\n"
@@ -156,21 +156,6 @@ msgstr ""
 msgid "Math operators"
 msgstr ""
 
-msgid "Data Type"
-msgstr ""
-
-msgid "Only {{dataType}} can be used in {{visType}}"
-msgstr ""
-
-msgid "All types"
-msgstr ""
-
-msgid "Disaggregation"
-msgstr "分解"
-
-msgid "No data"
-msgstr "无数据"
-
 msgid "Expression description"
 msgstr "表达式描述"
 
@@ -315,13 +300,58 @@ msgstr "表达式"
 msgid "Filter"
 msgstr "过滤器"
 
+msgid "All available options are already selected"
+msgstr ""
+
+msgid "No available options for this item"
+msgstr ""
+
+msgid "Search by option name"
+msgstr ""
+
+msgid "Back to all items"
+msgstr ""
+
+msgid "Options"
+msgstr "选项"
+
+msgid "Selected items"
+msgstr ""
+
+msgid "Data Type"
+msgstr ""
+
+msgid "Only {{dataType}} can be used in {{visType}}"
+msgstr ""
+
+msgid "All types"
+msgstr ""
+
+msgid "Disaggregation"
+msgstr "分解"
+
+msgid "No data"
+msgstr "无数据"
+
 msgid "Search by data item name"
 msgstr ""
 
-msgid "No items selected"
+msgid "Selected Items"
 msgstr ""
 
-msgid "Selected Items"
+msgid "All available items are already selected"
+msgstr ""
+
+msgid "Calculation"
+msgstr ""
+
+msgid "Metric type"
+msgstr ""
+
+msgid "All metrics"
+msgstr ""
+
+msgid "No items selected"
 msgstr ""
 
 msgid "No indicators found"
@@ -357,13 +387,7 @@ msgstr ""
 msgid "Nothing found for \"{{- searchTerm}}\""
 msgstr ""
 
-msgid "Calculation"
-msgstr ""
-
-msgid "Metric type"
-msgstr ""
-
-msgid "All metrics"
+msgid "Click to choose from available options"
 msgstr ""
 
 msgid "Move to {{axisName}}"
@@ -415,9 +439,6 @@ msgstr ""
 
 msgid "Search"
 msgstr "搜索"
-
-msgid "Nothing found for {{- searchTerm}}"
-msgstr ""
 
 msgid "Delete {{fileType}}"
 msgstr ""
@@ -697,9 +718,6 @@ msgstr ""
 
 msgid "New line list"
 msgstr ""
-
-msgid "Options"
-msgstr "选项"
 
 msgid "Hide"
 msgstr "隐藏"
@@ -1123,6 +1141,9 @@ msgstr "项目指标"
 
 msgid "Calculations"
 msgstr ""
+
+msgid "Option"
+msgstr "选项"
 
 msgid "Number"
 msgstr "数字"

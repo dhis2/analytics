@@ -1,15 +1,15 @@
 # 
 # Translators:
 # Viktor Varland <viktor@dhis2.org>, 2025
-# Philip Larsen Donnelly, 2025
 # Hamza Assada <7amza.it@gmail.com>, 2025
+# Philip Larsen Donnelly, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2024-12-19T10:28:15.132Z\n"
+"POT-Creation-Date: 2025-03-18T12:46:14.410Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Hamza Assada <7amza.it@gmail.com>, 2025\n"
+"Last-Translator: Philip Larsen Donnelly, 2025\n"
 "Language-Team: Arabic (https://app.transifex.com/hisp-uio/teams/100509/ar/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -162,21 +162,6 @@ msgstr ""
 msgid "Math operators"
 msgstr ""
 
-msgid "Data Type"
-msgstr "نوع البيانات"
-
-msgid "Only {{dataType}} can be used in {{visType}}"
-msgstr ""
-
-msgid "All types"
-msgstr "جميع الأنواع"
-
-msgid "Disaggregation"
-msgstr "تصنيف"
-
-msgid "No data"
-msgstr "لا توجد بيانات"
-
 msgid "Expression description"
 msgstr "وصف التعبير"
 
@@ -321,14 +306,59 @@ msgstr "‏‏التعبير"
 msgid "Filter"
 msgstr "عامل التصفية"
 
+msgid "All available options are already selected"
+msgstr ""
+
+msgid "No available options for this item"
+msgstr ""
+
+msgid "Search by option name"
+msgstr ""
+
+msgid "Back to all items"
+msgstr ""
+
+msgid "Options"
+msgstr "الخيارات"
+
+msgid "Selected items"
+msgstr ""
+
+msgid "Data Type"
+msgstr "نوع البيانات"
+
+msgid "Only {{dataType}} can be used in {{visType}}"
+msgstr ""
+
+msgid "All types"
+msgstr "جميع الأنواع"
+
+msgid "Disaggregation"
+msgstr "تصنيف"
+
+msgid "No data"
+msgstr "لا توجد بيانات"
+
 msgid "Search by data item name"
 msgstr ""
 
-msgid "No items selected"
-msgstr "لم يتم تحديد عناصر"
-
 msgid "Selected Items"
 msgstr "العناصر المحددة"
+
+msgid "All available items are already selected"
+msgstr ""
+
+msgid "Calculation"
+msgstr ""
+
+msgid "Metric type"
+msgstr ""
+
+msgid "All metrics"
+msgstr "جميع المقاييس"
+
+msgid "No items selected"
+msgstr "لم يتم تحديد عناصر"
 
 msgid "No indicators found"
 msgstr ""
@@ -363,14 +393,8 @@ msgstr ""
 msgid "Nothing found for \"{{- searchTerm}}\""
 msgstr ""
 
-msgid "Calculation"
+msgid "Click to choose from available options"
 msgstr ""
-
-msgid "Metric type"
-msgstr ""
-
-msgid "All metrics"
-msgstr "جميع المقاييس"
 
 msgid "Move to {{axisName}}"
 msgstr "تحريك إلى {{axisName}}"
@@ -421,9 +445,6 @@ msgstr ""
 
 msgid "Search"
 msgstr "البحث"
-
-msgid "Nothing found for {{- searchTerm}}"
-msgstr ""
 
 msgid "Delete {{fileType}}"
 msgstr "حذف {{fileType}}"
@@ -708,9 +729,6 @@ msgstr ""
 
 msgid "New line list"
 msgstr ""
-
-msgid "Options"
-msgstr "الخيارات"
 
 msgid "Hide"
 msgstr "إخفاء"
@@ -1149,6 +1167,9 @@ msgstr "مؤشرات البرنامج"
 
 msgid "Calculations"
 msgstr ""
+
+msgid "Option"
+msgstr "الخيار"
 
 msgid "Number"
 msgstr "العدد"

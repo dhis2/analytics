@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2024-12-19T10:28:15.132Z\n"
+"POT-Creation-Date: 2025-03-18T12:46:14.410Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: Karoline Tufte Lien <karoline@dhis2.org>, 2025\n"
 "Language-Team: Norwegian Bokmål (https://app.transifex.com/hisp-uio/teams/100509/nb/)\n"
@@ -159,21 +159,6 @@ msgstr ""
 msgid "Math operators"
 msgstr ""
 
-msgid "Data Type"
-msgstr "Datatype"
-
-msgid "Only {{dataType}} can be used in {{visType}}"
-msgstr ""
-
-msgid "All types"
-msgstr "Alle typer"
-
-msgid "Disaggregation"
-msgstr "Disaggregering"
-
-msgid "No data"
-msgstr "Ingen data"
-
 msgid "Expression description"
 msgstr "Frasebeskrivelse"
 
@@ -318,14 +303,59 @@ msgstr "Uttrykk"
 msgid "Filter"
 msgstr "Filter"
 
+msgid "All available options are already selected"
+msgstr ""
+
+msgid "No available options for this item"
+msgstr ""
+
+msgid "Search by option name"
+msgstr ""
+
+msgid "Back to all items"
+msgstr ""
+
+msgid "Options"
+msgstr "Alternativ"
+
+msgid "Selected items"
+msgstr ""
+
+msgid "Data Type"
+msgstr "Datatype"
+
+msgid "Only {{dataType}} can be used in {{visType}}"
+msgstr ""
+
+msgid "All types"
+msgstr "Alle typer"
+
+msgid "Disaggregation"
+msgstr "Disaggregering"
+
+msgid "No data"
+msgstr "Ingen data"
+
 msgid "Search by data item name"
 msgstr "Søk etter datapunktnavn"
 
-msgid "No items selected"
-msgstr "Ingen elementer er valgt"
-
 msgid "Selected Items"
 msgstr "Valgte elementer"
+
+msgid "All available items are already selected"
+msgstr ""
+
+msgid "Calculation"
+msgstr ""
+
+msgid "Metric type"
+msgstr "Metrisk type"
+
+msgid "All metrics"
+msgstr "Alle beregninger"
+
+msgid "No items selected"
+msgstr "Ingen elementer er valgt"
 
 msgid "No indicators found"
 msgstr "Ingen indikatorer funnet"
@@ -360,14 +390,8 @@ msgstr ""
 msgid "Nothing found for \"{{- searchTerm}}\""
 msgstr "Ingenting funnet for \"{{- searchTerm}}\""
 
-msgid "Calculation"
+msgid "Click to choose from available options"
 msgstr ""
-
-msgid "Metric type"
-msgstr "Metrisk type"
-
-msgid "All metrics"
-msgstr "Alle beregninger"
 
 msgid "Move to {{axisName}}"
 msgstr "Flytt til {{axisName}}"
@@ -420,9 +444,6 @@ msgstr "Ingenting funnet i {{- dimensionTitle}}"
 
 msgid "Search"
 msgstr "Søk"
-
-msgid "Nothing found for {{- searchTerm}}"
-msgstr ""
 
 msgid "Delete {{fileType}}"
 msgstr "Slett {{fileType}}"
@@ -706,9 +727,6 @@ msgstr ""
 
 msgid "New line list"
 msgstr ""
-
-msgid "Options"
-msgstr "Alternativ"
 
 msgid "Hide"
 msgstr "Skjul"
@@ -1135,6 +1153,9 @@ msgstr "Programindikator"
 
 msgid "Calculations"
 msgstr ""
+
+msgid "Option"
+msgstr "Alternativ"
 
 msgid "Number"
 msgstr "Nummer"
