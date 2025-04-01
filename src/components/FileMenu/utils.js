@@ -36,7 +36,7 @@ export const appPathFor = (fileType, id, apiVersion) => {
         case FILE_TYPE_MAP:
             return `dhis-web-maps/#/${id}`
         case FILE_TYPE_EVENT_VISUALIZATION:
-            // TODO toggle on 42 for bundled path
+            // VERSION-TOGGLE: remove when 42 is the lowest supported version
             return apiVersion >= 42
                 ? `dhis-web-line-listing/#/${id}`
                 : `api/apps/line-listing/#/${id}`
