@@ -107,7 +107,7 @@ export class MdParser {
         md.renderer.rules.link_open = (tokens, idx, options, env, self) => {
             // Add a new 'target' and 'rel' attributes, or replace the value of the existing ones.
             tokens[idx].attrSet('target', '_blank')
-            tokens[idx].attrSet('rel', 'noopener')
+            tokens[idx].attrSet('rel', 'noreferrer')
 
             // Pass the token to the default renderer.
             return defaultRender(tokens, idx, options, env, self)
