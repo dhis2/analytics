@@ -29,14 +29,17 @@ export const labelForFileType = (fileType) => {
     }
 }
 
-export const appPathFor = (fileType, id) => {
+export const appPathFor = (fileType, id, apiVersion) => {
     switch (fileType) {
         case FILE_TYPE_VISUALIZATION:
             return `dhis-web-data-visualizer/#/${id}`
         case FILE_TYPE_MAP:
-            return `dhis-web-maps/index.html?id=${id}`
+            return `dhis-web-maps/#/${id}`
         case FILE_TYPE_EVENT_VISUALIZATION:
-            return `api/apps/line-listing/#/${id}`
+            // VERSION-TOGGLE: remove when 42 is the lowest supported version
+            return apiVersion >= 42
+                ? `dhis-web-line-listing/#/${id}`
+                : `api/apps/line-listing/#/${id}`
         default:
             return `${window.location.search}${window.location.hash}`
     }
