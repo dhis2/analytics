@@ -1,3 +1,10 @@
+## [26.13.3](https://github.com/dhis2/analytics/compare/v26.13.2...v26.13.3) (2025-04-01)
+
+
+### Bug Fixes
+
+* fix hyperlinks to work in global shell (DHIS2-19274) ([#1770](https://github.com/dhis2/analytics/issues/1770)) ([5be010c](https://github.com/dhis2/analytics/commit/5be010c2c4339a451432251187c8a0e38ac6ccdd))
+
 ## [26.13.2](https://github.com/dhis2/analytics/compare/v26.13.1...v26.13.2) (2025-03-30)
 
 
