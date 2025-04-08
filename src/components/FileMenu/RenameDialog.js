@@ -13,57 +13,16 @@ import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 import i18n from '../../locales/index.js'
 import { modalStyles } from './FileMenu.styles.js'
-import {
-    supportedFileTypes,
-    // endpointFromFileType,
-    labelForFileType,
-} from './utils.js'
-
-// const formatPayload = (name, description) => {
-//     const payload = [{ op: 'add', path: '/name', value: name }]
-
-//     if (description) {
-//         payload.push({
-//             op: 'add',
-//             path: '/description',
-//             value: description,
-//         })
-//     }
-
-//     return payload
-// }
-
-// const getMutation = (type) => ({
-//     resource: endpointFromFileType(type),
-//     id: ({ id }) => id,
-//     type: 'json-patch',
-//     data: ({ name, description }) => formatPayload(name, description),
-// })
+import { supportedFileTypes, labelForFileType } from './utils.js'
 
 export const RenameDialog = ({ type, object, onClose, onRename }) => {
     const [name, setName] = useState(object.name)
     const [description, setDescription] = useState(object.description)
 
-    // const mutation = useMemo(() => getMutation(type), [type])
-    // const [mutate, { loading }] = useDataMutation(mutation, {
-    //     onError: (error) => {
-    //         onError(error)
-    //         onClose()
-    //     },
-    //     onComplete: () => {
-    //         onRename({ name, description })
-    //         onClose()
-    //     },
-    // })
-
     const renameObject = () => {
         console.log('jj anly renameObject', name, description)
         onRename({ name, description })
-        // mutate({
-        //     id: object.id,
-        //     name,
-        //     description,
-        // })
+        onClose()
     }
 
     return (
