@@ -20,7 +20,6 @@ export const RenameDialog = ({ type, object, onClose, onRename }) => {
     const [description, setDescription] = useState(object.description)
 
     const renameObject = () => {
-        console.log('jj anly renameObject', name, description)
         onRename({ name, description })
         onClose()
     }
@@ -37,7 +36,6 @@ export const RenameDialog = ({ type, object, onClose, onRename }) => {
                 <div className="modal-content">
                     <InputField
                         label={i18n.t('Name')}
-                        // disabled={loading}
                         required
                         value={name}
                         onChange={({ value }) => setName(value)}
@@ -45,7 +43,6 @@ export const RenameDialog = ({ type, object, onClose, onRename }) => {
                     />
                     <TextAreaField
                         label={i18n.t('Description')}
-                        // disabled={loading}
                         value={description}
                         rows={3}
                         onChange={({ value }) => setDescription(value)}
@@ -57,7 +54,6 @@ export const RenameDialog = ({ type, object, onClose, onRename }) => {
                 <ButtonStrip>
                     <Button
                         onClick={onClose}
-                        // disabled={loading}
                         secondary
                         dataTest="file-menu-rename-modal-cancel"
                     >
@@ -65,7 +61,6 @@ export const RenameDialog = ({ type, object, onClose, onRename }) => {
                     </Button>
                     <Button
                         onClick={renameObject}
-                        // disabled={loading}
                         primary
                         dataTest="file-menu-rename-modal-rename"
                     >
@@ -79,7 +74,6 @@ export const RenameDialog = ({ type, object, onClose, onRename }) => {
 
 RenameDialog.propTypes = {
     object: PropTypes.shape({
-        id: PropTypes.string.isRequired,
         description: PropTypes.string,
         name: PropTypes.string,
     }),
