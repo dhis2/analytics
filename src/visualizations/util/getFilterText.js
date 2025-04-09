@@ -30,10 +30,7 @@ export default function (filters, metaData, extraOptions = {}) {
             )
         ) {
             titleFragments.push(getOuLevelAndGroupText(filter, metaData))
-        } else if (
-            dimensionIs(filter, DIMENSION_ID_PERIOD) &&
-            extraOptions.dashboard
-        ) {
+        } else if (dimensionIs(filter, DIMENSION_ID_PERIOD)) {
             titleFragments.push(
                 dimensionGetItemIds(filter)
                     .map(
