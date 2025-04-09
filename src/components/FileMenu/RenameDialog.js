@@ -46,7 +46,7 @@ export const RenameDialog = ({
                         value={name}
                         onChange={({ value }) => setName(value)}
                         dataTest="file-menu-rename-modal-name"
-                        placeholder={defaultVisName}
+                        placeholder="Jennifer chart"
                     />
                     <TextAreaField
                         label={i18n.t('Description')}
