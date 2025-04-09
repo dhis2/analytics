@@ -15,12 +15,18 @@ import i18n from '../../locales/index.js'
 import { modalStyles } from './FileMenu.styles.js'
 import { supportedFileTypes, labelForFileType } from './utils.js'
 
-export const RenameDialog = ({ type, object, onClose, onRename }) => {
+export const RenameDialog = ({
+    type,
+    object,
+    defaultVisName,
+    onClose,
+    onRename,
+}) => {
     const [name, setName] = useState(object.name)
     const [description, setDescription] = useState(object.description)
 
     const renameObject = () => {
-        onRename({ name, description })
+        onRename({ name: name || defaultVisName, description })
         onClose()
     }
 
@@ -40,6 +46,7 @@ export const RenameDialog = ({ type, object, onClose, onRename }) => {
                         value={name}
                         onChange={({ value }) => setName(value)}
                         dataTest="file-menu-rename-modal-name"
+                        placeholder={defaultVisName}
                     />
                     <TextAreaField
                         label={i18n.t('Description')}
@@ -73,6 +80,7 @@ export const RenameDialog = ({ type, object, onClose, onRename }) => {
 }
 
 RenameDialog.propTypes = {
+    defaultVisName: PropTypes.string,
     object: PropTypes.shape({
         description: PropTypes.string,
         name: PropTypes.string,
