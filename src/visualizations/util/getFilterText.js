@@ -9,7 +9,7 @@ import {
     DIMENSION_ID_PERIOD,
 } from '../../modules/predefinedDimensions.js'
 
-export default function (filters, metaData, extraOptions = {}) {
+export default function (filters, metaData) {
     if (!Array.isArray(filters) || !filters.length) {
         return ''
     }

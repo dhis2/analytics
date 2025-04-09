@@ -90,11 +90,7 @@ export default function subtitle(series, layout, metaData, extraOptions) {
 
         switch (layout.type) {
             case VIS_TYPE_SINGLE_VALUE:
-                subtitle.text = getSingleValueSubtitle(
-                    layout,
-                    metaData,
-                    extraOptions
-                )
+                subtitle.text = getSingleValueSubtitle(layout, metaData)
                 break
             case VIS_TYPE_YEAR_OVER_YEAR_LINE:
             case VIS_TYPE_YEAR_OVER_YEAR_COLUMN:
