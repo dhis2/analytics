@@ -22,6 +22,7 @@ export const RenameDialog = ({
     onClose,
     onRename,
 }) => {
+    console.log('jj defaultVisName', defaultVisName)
     const [name, setName] = useState(object.name)
     const [description, setDescription] = useState(object.description)
 
