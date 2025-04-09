@@ -14,6 +14,11 @@ const BASE_EXPORTING_CONFIG = {
     sourceHeight: 768,
     sourceWidth: 1024,
     scale: 1,
+    chartOptions: {
+        chart: {
+            backgroundColor: '#ffffff',
+        },
+    },
 }
 
 export default function getExporting(visType) {
@@ -22,7 +27,9 @@ export default function getExporting(visType) {
             return {
                 ...BASE_EXPORTING_CONFIG,
                 chartOptions: {
+                    ...BASE_EXPORTING_CONFIG.chartOptions,
                     chart: {
+                        ...BASE_EXPORTING_CONFIG.chartOptions.chart,
                         events: {
                             load: loadSingleValueSVG,
                         },
@@ -34,6 +41,7 @@ export default function getExporting(visType) {
             return {
                 ...BASE_EXPORTING_CONFIG,
                 chartOptions: {
+                    ...BASE_EXPORTING_CONFIG.chartOptions,
                     boost: {
                         enabled: false,
                     },
