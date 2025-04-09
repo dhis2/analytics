@@ -31,11 +31,12 @@ export default function (filters, metaData) {
         ) {
             titleFragments.push(getOuLevelAndGroupText(filter, metaData))
         } else if (dimensionIs(filter, DIMENSION_ID_PERIOD)) {
+            const relativePeriodNames = getRelativePeriodsName()
             titleFragments.push(
                 dimensionGetItemIds(filter)
                     .map(
                         (id) =>
-                            getRelativePeriodsName()[id] ||
+                            relativePeriodNames[id] ||
                             metaData.items[id]?.name ||
                             id
                     )
