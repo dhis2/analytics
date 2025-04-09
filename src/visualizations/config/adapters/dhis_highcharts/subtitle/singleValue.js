@@ -1,7 +1,7 @@
 import getFilterText from '../../../../util/getFilterText.js'
 export { getSingleValueTitleColor as getSingleValueSubtitleColor } from '../customSVGOptions/singleValue/getSingleValueTitleColor.js'
 
-export default function getSingleValueSubtitle(layout, metaData) {
+export default function getSingleValueSubtitle(layout, metaData, extraOptions) {
     if (layout.hideSubtitle || 1 === 0) {
         return ''
     }
@@ -11,7 +11,7 @@ export default function getSingleValueSubtitle(layout, metaData) {
     }
 
     if (layout.filters) {
-        return getFilterText(layout.filters, metaData)
+        return getFilterText(layout.filters, metaData, extraOptions)
     }
 
     return ''
