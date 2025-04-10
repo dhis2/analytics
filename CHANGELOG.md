@@ -1,3 +1,10 @@
+## [26.13.4](https://github.com/dhis2/analytics/compare/v26.13.3...v26.13.4) (2025-04-10)
+
+
+### Bug Fixes
+
+* print the name of relative periods instead of actual periods (DHIS2-19454) ([#1772](https://github.com/dhis2/analytics/issues/1772)) ([b383ae7](https://github.com/dhis2/analytics/commit/b383ae7ca70e6285448d7ad746ea889451c65082))
+
 ## [26.13.3](https://github.com/dhis2/analytics/compare/v26.13.2...v26.13.3) (2025-04-01)
 
 
