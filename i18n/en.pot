@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2025-04-09T18:53:56.778Z\n"
-"PO-Revision-Date: 2025-04-09T18:53:56.780Z\n"
+"POT-Creation-Date: 2025-04-10T14:17:12.995Z\n"
+"PO-Revision-Date: 2025-04-10T14:17:12.996Z\n"
 
 msgid "view only"
 msgstr "view only"
@@ -483,12 +483,6 @@ msgstr "Open in this app"
 
 msgid "Close"
 msgstr "Close"
-
-msgid "Untitled visualization"
-msgstr "Untitled visualization"
-
-msgid "Untitled {{visualizationType}} visualization, {{date}}"
-msgstr "Untitled {{visualizationType}} visualization, {{date}}"
 
 msgid "Rename {{fileType}}"
 msgstr "Rename {{fileType}}"
