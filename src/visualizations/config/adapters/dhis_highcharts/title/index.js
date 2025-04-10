@@ -62,6 +62,7 @@ export default function (layout, metaData, extraOptions, series) {
     const title = Object.assign(
         {
             text: undefined,
+            minScale: 1,
         },
         dashboard
             ? DASHBOARD_TITLE_STYLE
