@@ -74,6 +74,7 @@ export const RenameDialog = ({ type, object, onClose, onRename }) => {
 RenameDialog.propTypes = {
     object: PropTypes.shape({
         description: PropTypes.string,
+        id: PropTypes.string,
         name: PropTypes.string,
     }),
     type: PropTypes.oneOf(supportedFileTypes),
