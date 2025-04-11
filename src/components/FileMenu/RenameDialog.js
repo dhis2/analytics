@@ -1,4 +1,3 @@
-// import { useDataMutation } from '@dhis2/app-runtime'
 import {
     Modal,
     ModalTitle,
