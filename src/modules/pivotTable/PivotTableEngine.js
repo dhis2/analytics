@@ -1297,12 +1297,19 @@ export class PivotTableEngine {
             }
 
             if (
+                // only numerically sort numeric values
+                // percentage values sorting doesn't work here
+                // for detecting that case numberType must be looked at
+                // default for it is "not set" (undefined) which is treated as "VALUE"
+                (!this.visualization.numberType ||
+                    this.visualization.numberType === NUMBER_TYPE_VALUE) &&
                 valueA.valueType === VALUE_TYPE_NUMBER &&
                 valueB.valueType === VALUE_TYPE_NUMBER
             ) {
                 return (valueA.rawValue - valueB.rawValue) * order
             }
             return (
+                // percentage values are strings and localCompare works fine for sorting them
                 valueA.renderedValue.localeCompare(valueB.renderedValue) * order
             )
         })
