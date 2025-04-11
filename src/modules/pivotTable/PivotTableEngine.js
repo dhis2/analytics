@@ -404,6 +404,24 @@ export class PivotTableEngine {
             rawCell.renderedValue = renderedValue
         }
 
+        // show the original value in the tooltip
+        if (
+            [
+                NUMBER_TYPE_COLUMN_PERCENTAGE,
+                NUMBER_TYPE_ROW_PERCENTAGE,
+            ].includes(this.visualization.numberType)
+        ) {
+            rawCell.titleValue = i18n.t('Value: {{value}}', {
+                value: renderValue(
+                    rawCell.rawValue,
+                    valueType,
+                    // force VALUE for formatting the original value
+                    { ...this.visualization, numberType: NUMBER_TYPE_VALUE }
+                ),
+                nsSeparator: '^^',
+            })
+        }
+
         if (
             [CELL_TYPE_TOTAL, CELL_TYPE_SUBTOTAL].includes(rawCell.cellType) &&
             rawCell.rawValue === AGGREGATE_TYPE_NA
@@ -1297,19 +1315,25 @@ export class PivotTableEngine {
             }
 
             if (
-                // only numerically sort numeric values
-                // percentage values sorting doesn't work here
-                // for detecting that case numberType must be looked at
-                // default for it is "not set" (undefined) which is treated as "VALUE"
-                (!this.visualization.numberType ||
-                    this.visualization.numberType === NUMBER_TYPE_VALUE) &&
+                // for percentage strings, use the renderedValue (percentage) and parse it to extract the number part to use for the comparison
+                [
+                    NUMBER_TYPE_ROW_PERCENTAGE,
+                    NUMBER_TYPE_COLUMN_PERCENTAGE,
+                ].includes(this.visualization.numberType)
+            ) {
+                return (
+                    (parseFloat(valueA.renderedValue) -
+                        parseFloat(valueB.renderedValue)) *
+                    order
+                )
+            } else if (
                 valueA.valueType === VALUE_TYPE_NUMBER &&
                 valueB.valueType === VALUE_TYPE_NUMBER
             ) {
                 return (valueA.rawValue - valueB.rawValue) * order
             }
+
             return (
-                // percentage values are strings and localCompare works fine for sorting them
                 valueA.renderedValue.localeCompare(valueB.renderedValue) * order
             )
         })
