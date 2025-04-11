@@ -1,6 +1,6 @@
 {
     "name": "@dhis2/analytics",
-    "version": "999.99.0-rename-fix-april9.0",
+    "version": "26.13.4",
     "main": "./build/cjs/index.js",
     "module": "./build/es/index.js",
     "exports": {
