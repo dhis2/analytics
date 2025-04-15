@@ -101,14 +101,14 @@ export const preparePayloadForSave = async ({
     engine,
 }) => {
     console.log('jj AA')
-    const { visualization: vis } = await apiFetchAOSubscribers(
+    const { ao } = await apiFetchAOSubscribers(
         engine,
         visualization.id,
         visualization.type
     )
-    console.log('jj BB', vis)
-    visualization.subscribers = vis.subscribers
-    visualization.subscribed = vis.subscribed
+    console.log('jj BB', ao)
+    visualization.subscribers = ao.subscribers
+    visualization.subscribed = ao.subscribed
     console.log('jj CC')
     visualization.name =
         name ||
