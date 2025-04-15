@@ -39,6 +39,8 @@ export const VIS_TYPE_GROUP_ALL = 'ALL'
 export const VIS_TYPE_GROUP_CHARTS = 'CHARTS'
 export const VIS_TYPE_OUTLIER_TABLE = 'OUTLIER_TABLE'
 
+export const VIS_TYPE_MAP = 'MAP'
+
 export const visTypeDisplayNames = {
     [VIS_TYPE_PIVOT_TABLE]: i18n.t('Pivot table'),
     [VIS_TYPE_AREA]: i18n.t('Area'),
@@ -81,6 +83,27 @@ export const visTypeIcons = {
     [VIS_TYPE_OUTLIER_TABLE]: IconVisualizationOutlierTable24,
 }
 
+const visTypeApiEndpoints = {
+    [VIS_TYPE_PIVOT_TABLE]: 'visualizations',
+    [VIS_TYPE_AREA]: 'visualizations',
+    [VIS_TYPE_STACKED_AREA]: 'visualizations',
+    [VIS_TYPE_BAR]: 'visualizations',
+    [VIS_TYPE_STACKED_BAR]: 'visualizations',
+    [VIS_TYPE_COLUMN]: 'visualizations',
+    [VIS_TYPE_YEAR_OVER_YEAR_COLUMN]: 'visualizations',
+    [VIS_TYPE_STACKED_COLUMN]: 'visualizations',
+    [VIS_TYPE_GAUGE]: 'visualizations',
+    [VIS_TYPE_LINE]: 'visualizations',
+    [VIS_TYPE_YEAR_OVER_YEAR_LINE]: 'visualizations',
+    [VIS_TYPE_PIE]: 'visualizations',
+    [VIS_TYPE_RADAR]: 'visualizations',
+    [VIS_TYPE_SCATTER]: 'visualizations',
+    [VIS_TYPE_SINGLE_VALUE]: 'visualizations',
+    [VIS_TYPE_OUTLIER_TABLE]: 'visualizations',
+    [VIS_TYPE_LINE_LIST]: 'eventVisualizations',
+    [VIS_TYPE_MAP]: 'maps',
+}
+
 export const getDisplayNameByVisType = (visType) => {
     const displayName = visTypeDisplayNames[visType]
 
@@ -89,6 +112,16 @@ export const getDisplayNameByVisType = (visType) => {
     }
 
     return displayName
+}
+
+export const getApiEndpointByVisType = (visType) => {
+    const apiEndpoint = visTypeApiEndpoints[visType]
+
+    if (!apiEndpoint) {
+        throw new Error(`${visType} is not a valid visualization type`)
+    }
+
+    return apiEndpoint
 }
 
 const stackedTypes = [

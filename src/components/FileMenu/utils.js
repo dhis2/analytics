@@ -1,7 +1,7 @@
 import i18n from '@dhis2/d2-i18n'
 import {
     getDisplayNameByVisType,
-    VIS_TYPE_LINE_LIST,
+    getApiEndpointByVisType,
 } from '../../modules/visTypes.js'
 import { AOTypeMap } from '../AboutAOUnit/utils.js'
 
@@ -80,7 +80,7 @@ export const preparePayloadForSaveAs = ({
 
 const getSubscriberQuery = (type) => ({
     ao: {
-        resource: AOTypeMap[type].apiEndpoint,
+        resource: getApiEndpointByVisType(type),
         id: ({ id }) => id,
         params: {
             fields: 'subscribed,subscribers',
@@ -100,14 +100,6 @@ export const preparePayloadForSave = async ({
     description,
     engine,
 }) => {
-    console.log('jj preparePayloadForSave', {
-        visualization,
-        type: visualization.type,
-        id: visualization.id,
-        lltype: VIS_TYPE_LINE_LIST,
-        typeMatches: visualization.type === VIS_TYPE_LINE_LIST,
-    })
-
     const { visualization: vis } = await apiFetchAOSubscribers(
         engine,
         visualization.id,
