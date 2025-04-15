@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2025-03-18T12:46:14.410Z\n"
-"PO-Revision-Date: 2025-03-18T12:46:14.411Z\n"
+"POT-Creation-Date: 2025-04-15T08:52:14.979Z\n"
+"PO-Revision-Date: 2025-04-15T08:52:14.981Z\n"
 
 msgid "view only"
 msgstr "view only"
@@ -507,6 +507,9 @@ msgstr "map"
 
 msgid "visualization"
 msgstr "visualization"
+
+msgid "Untitled {{visualizationType}} visualization, {{date}}"
+msgstr "Untitled {{visualizationType}} visualization, {{date}}"
 
 msgid "Edit"
 msgstr "Edit"

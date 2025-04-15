@@ -1,4 +1,5 @@
 import i18n from '@dhis2/d2-i18n'
+import { getDisplayNameByVisType } from '../../modules/visTypes.js'
 
 export const FILE_TYPE_EVENT_REPORT = 'eventReport'
 export const FILE_TYPE_VISUALIZATION = 'visualization'
@@ -45,11 +46,78 @@ export const appPathFor = (fileType, id, apiVersion) => {
     }
 }
 
-export const preparePayloadForSaveAs = ({ ...visualization }) => {
+export const preparePayloadForSaveAs = ({
+    visualization,
+    name,
+    description,
+}) => {
     delete visualization.id
     delete visualization.created
     delete visualization.createdBy
     delete visualization.user
+
+    visualization.name =
+        name ||
+        visualization.name ||
+        i18n.t('Untitled {{visualizationType}} visualization, {{date}}', {
+            visualizationType: getDisplayNameByVisType(visualization.type),
+            date: new Date().toLocaleDateString(undefined, {
+                year: 'numeric',
+                month: 'short',
+                day: '2-digit',
+            }),
+        })
+
+    visualization.description =
+        description !== undefined ? description : visualization.description
+
+    return visualization
+}
+
+const visualizationSubscribersQuery = {
+    visualization: {
+        resource: 'visualizations',
+        id: ({ id }) => id,
+        params: {
+            fields: ['subscribers', 'subscribed'],
+        },
+    },
+}
+
+const apiFetchVisualizationSubscribers = (dataEngine, id) => {
+    return dataEngine.query(visualizationSubscribersQuery, {
+        variables: { id },
+    })
+}
+
+export const preparePayloadForSave = async ({
+    visualization,
+    name,
+    description,
+    engine,
+}) => {
+    const { visualization: vis } = await apiFetchVisualizationSubscribers(
+        engine,
+        visualization.id
+    )
+    console.log('jj subscribers', vis)
+    visualization.subscribers = vis.subscribers
+    visualization.subscribed = vis.subscribed
+
+    visualization.name =
+        name ||
+        visualization.name ||
+        i18n.t('Untitled {{visualizationType}} visualization, {{date}}', {
+            visualizationType: getDisplayNameByVisType(visualization.type),
+            date: new Date().toLocaleDateString(undefined, {
+                year: 'numeric',
+                month: 'short',
+                day: '2-digit',
+            }),
+        })
+
+    visualization.description =
+        description !== undefined ? description : visualization.description
 
     return visualization
 }
