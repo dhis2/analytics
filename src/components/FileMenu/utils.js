@@ -99,16 +99,13 @@ export const preparePayloadForSave = async ({
     description,
     engine,
 }) => {
-    console.log('jj AA')
     const { ao } = await apiFetchAOSubscribers(
         engine,
         visualization.id,
         visualization.type
     )
-    console.log('jj BB', ao)
     visualization.subscribers = ao.subscribers
     visualization.subscribed = ao.subscribed
-    console.log('jj CC')
     visualization.name =
         name ||
         visualization.name ||
@@ -120,11 +117,9 @@ export const preparePayloadForSave = async ({
                 day: '2-digit',
             }),
         })
-    console.log('jj DD')
 
     visualization.description =
         description !== undefined ? description : visualization.description
 
-    console.log('jj EE')
     return visualization
 }

@@ -222,6 +222,7 @@ export {
     VIS_TYPE_SCATTER,
     VIS_TYPE_LINE_LIST,
     VIS_TYPE_OUTLIER_TABLE,
+    VIS_TYPE_MAP,
     visTypeDisplayNames,
     visTypeIcons,
     getDisplayNameByVisType,
