@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2025-04-15T08:52:14.979Z\n"
-"PO-Revision-Date: 2025-04-15T08:52:14.981Z\n"
+"POT-Creation-Date: 2025-04-15T13:34:54.995Z\n"
+"PO-Revision-Date: 2025-04-15T13:34:54.996Z\n"
 
 msgid "view only"
 msgstr "view only"
@@ -508,8 +508,8 @@ msgstr "map"
 msgid "visualization"
 msgstr "visualization"
 
-msgid "Untitled {{visualizationType}} visualization, {{date}}"
-msgstr "Untitled {{visualizationType}} visualization, {{date}}"
+msgid "Untitled {{visualizationType}}, {{date}}"
+msgstr "Untitled {{visualizationType}}, {{date}}"
 
 msgid "Edit"
 msgstr "Edit"
@@ -1409,6 +1409,9 @@ msgstr "Outlier table"
 
 msgid "All charts"
 msgstr "All charts"
+
+msgid "Map"
+msgstr "Map"
 
 msgid "{{seriesName}} (trend)"
 msgstr "{{seriesName}} (trend)"

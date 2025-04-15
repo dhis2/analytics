@@ -3,7 +3,6 @@ import {
     getDisplayNameByVisType,
     getApiEndpointByVisType,
 } from '../../modules/visTypes.js'
-import { AOTypeMap } from '../AboutAOUnit/utils.js'
 
 export const FILE_TYPE_EVENT_REPORT = 'eventReport'
 export const FILE_TYPE_VISUALIZATION = 'visualization'
@@ -63,7 +62,7 @@ export const preparePayloadForSaveAs = ({
     visualization.name =
         name ||
         visualization.name ||
-        i18n.t('Untitled {{visualizationType}} visualization, {{date}}', {
+        i18n.t('Untitled {{visualizationType}}, {{date}}', {
             visualizationType: getDisplayNameByVisType(visualization.type),
             date: new Date().toLocaleDateString(undefined, {
                 year: 'numeric',

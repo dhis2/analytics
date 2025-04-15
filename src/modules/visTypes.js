@@ -61,6 +61,7 @@ export const visTypeDisplayNames = {
     [VIS_TYPE_OUTLIER_TABLE]: i18n.t('Outlier table'),
     [VIS_TYPE_GROUP_ALL]: i18n.t('All types'),
     [VIS_TYPE_GROUP_CHARTS]: i18n.t('All charts'),
+    [VIS_TYPE_MAP]: i18n.t('Map'),
 }
 
 export const visTypeIcons = {
