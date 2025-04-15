@@ -1,5 +1,6 @@
 import i18n from '@dhis2/d2-i18n'
 import { getDisplayNameByVisType } from '../../modules/visTypes.js'
+import { AOTypeMap } from '../AboutAOUnit/utils.js'
 
 export const FILE_TYPE_EVENT_REPORT = 'eventReport'
 export const FILE_TYPE_VISUALIZATION = 'visualization'
@@ -74,18 +75,18 @@ export const preparePayloadForSaveAs = ({
     return visualization
 }
 
-const visualizationSubscribersQuery = {
-    visualization: {
-        resource: 'visualizations',
+const getSubscriberQuery = (type) => ({
+    ao: {
+        resource: AOTypeMap[type].apiEndpoint,
         id: ({ id }) => id,
         params: {
-            fields: ['subscribers', 'subscribed'],
+            fields: 'subscribed,subscribers',
         },
     },
-}
+})
 
-const apiFetchVisualizationSubscribers = (dataEngine, id) => {
-    return dataEngine.query(visualizationSubscribersQuery, {
+const apiFetchAOSubscribers = (dataEngine, id, type) => {
+    return dataEngine.query(getSubscriberQuery(type), {
         variables: { id },
     })
 }
@@ -96,11 +97,11 @@ export const preparePayloadForSave = async ({
     description,
     engine,
 }) => {
-    const { visualization: vis } = await apiFetchVisualizationSubscribers(
+    const { visualization: vis } = await apiFetchAOSubscribers(
         engine,
-        visualization.id
+        visualization.id,
+        visualization.type
     )
-    console.log('jj subscribers', vis)
     visualization.subscribers = vis.subscribers
     visualization.subscribed = vis.subscribed
 
