@@ -100,6 +100,14 @@ export const preparePayloadForSave = async ({
     description,
     engine,
 }) => {
+    console.log('jj preparePayloadForSave', {
+        visualization,
+        type: visualization.type,
+        id: visualization.id,
+        lltype: VIS_TYPE_LINE_LIST,
+        typeMatches: visualization.type === VIS_TYPE_LINE_LIST,
+    })
+
     const { visualization: vis } = await apiFetchAOSubscribers(
         engine,
         visualization.id,
@@ -107,13 +115,6 @@ export const preparePayloadForSave = async ({
     )
     visualization.subscribers = vis.subscribers
     visualization.subscribed = vis.subscribed
-
-    console.log('jj preparePayloadForSave', {
-        visualization,
-        type: visualization.type,
-        lltype: VIS_TYPE_LINE_LIST,
-        typeMatches: visualization.type === VIS_TYPE_LINE_LIST,
-    })
 
     visualization.name =
         name ||
