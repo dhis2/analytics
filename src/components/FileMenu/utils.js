@@ -82,7 +82,7 @@ const getSubscriberQuery = (type) => ({
         resource: getApiEndpointByVisType(type),
         id: ({ id }) => id,
         params: {
-            fields: 'subscribed,subscribers',
+            fields: 'subscribers',
         },
     },
 })
@@ -105,7 +105,6 @@ export const preparePayloadForSave = async ({
         visualization.type
     )
     visualization.subscribers = ao.subscribers
-    visualization.subscribed = ao.subscribed
     visualization.name =
         name ||
         visualization.name ||
