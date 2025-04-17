@@ -11,6 +11,7 @@ const BASE_EXPORTING_CONFIG = {
     fallbackToExportServer: false,
     allowHTML: true,
     showExportInProgress: true,
+    applyStyleSheets: true,
     sourceHeight: 768,
     sourceWidth: 1024,
     scale: 1,
