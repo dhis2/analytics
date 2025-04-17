@@ -1,3 +1,21 @@
+# [27.0.0](https://github.com/dhis2/analytics/compare/v26.13.4...v27.0.0) (2025-04-17)
+
+
+### Bug Fixes
+
+* return new name and desc from file menu rename instead of PATCH request [DHIS2-19433] ([#1771](https://github.com/dhis2/analytics/issues/1771)) ([6fa6487](https://github.com/dhis2/analytics/commit/6fa64871799be4ea0701b5ce7c0517b27d453df4))
+
+
+### BREAKING CHANGES
+
+* Instead of using patch, which causes several backend errors, the rename dialog
+now just returns the user's changes to name and description, and leaves it
+to the app to save the changes.
+
+To support save centrally for analytics apps, preparePayloadForSave was added
+
+This is a workaround until problems with patch are fixed.
+
 ## [26.13.4](https://github.com/dhis2/analytics/compare/v26.13.3...v26.13.4) (2025-04-10)
 
 
