@@ -1,6 +1,6 @@
 {
     "name": "@dhis2/analytics",
-    "version": "26.13.4",
+    "version": "27.0.0",
     "main": "./build/cjs/index.js",
     "module": "./build/es/index.js",
     "exports": {
@@ -39,8 +39,8 @@
         "@storybook/preset-create-react-app": "^8.3.6",
         "@storybook/react": "^8.3.6",
         "@storybook/react-webpack5": "^8.3.6",
-        "@testing-library/jest-dom": "^5.16.5",
-        "@testing-library/react": "^12.1.5",
+        "@testing-library/jest-dom": "6.6.3",
+        "@testing-library/react": "^12",
         "enzyme": "^3.9.0",
         "enzyme-adapter-react-16": "^1.15.6",
         "fs-extra": "^10.1.0",
