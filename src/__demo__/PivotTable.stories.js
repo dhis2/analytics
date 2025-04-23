@@ -212,6 +212,25 @@ SimpleColumn.story = {
     name: 'simple - column %',
 }
 
+export const SimpleRow = (_, { pivotTableOptions }) => {
+    const visualization = {
+        ...diseaseWeeksVisualization,
+        ...visualizationReset,
+        ...pivotTableOptions,
+        numberType: NUMBER_TYPE_ROW_PERCENTAGE,
+    }
+
+    return (
+        <div style={{ width: 800, height: 600 }}>
+            <PivotTable data={diseaseWeeksData} visualization={visualization} />
+        </div>
+    )
+}
+
+SimpleRow.story = {
+    name: 'simple - row %',
+}
+
 export const SimpleDataAsFilter = (_, { pivotTableOptions }) => {
     const visualization = {
         ...simpleVisualization,
