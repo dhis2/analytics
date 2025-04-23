@@ -1,3 +1,10 @@
+## [27.0.1](https://github.com/dhis2/analytics/compare/v27.0.0...v27.0.1) (2025-04-23)
+
+
+### Bug Fixes
+
+* fix sorting in PT when percentage of rows is used (DHIS2-5455) ([#1774](https://github.com/dhis2/analytics/issues/1774)) ([aaf1106](https://github.com/dhis2/analytics/commit/aaf1106ab66ed33ad17a6e3e6d4baf4bc84b20aa))
+
 # [27.0.0](https://github.com/dhis2/analytics/compare/v26.13.4...v27.0.0) (2025-04-17)
 
 
