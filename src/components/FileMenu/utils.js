@@ -1,8 +1,5 @@
 import i18n from '@dhis2/d2-i18n'
-import {
-    getDisplayNameByVisType,
-    getApiEndpointByVisType,
-} from '../../modules/visTypes.js'
+import { getDisplayNameByVisType } from '../../modules/visTypes.js'
 
 export const FILE_TYPE_EVENT_REPORT = 'eventReport'
 export const FILE_TYPE_VISUALIZATION = 'visualization'
@@ -77,34 +74,7 @@ export const preparePayloadForSaveAs = ({
     return visualization
 }
 
-const getSubscriberQuery = (type) => ({
-    ao: {
-        resource: getApiEndpointByVisType(type),
-        id: ({ id }) => id,
-        params: {
-            fields: 'subscribers',
-        },
-    },
-})
-
-const apiFetchAOSubscribers = (dataEngine, id, type) => {
-    return dataEngine.query(getSubscriberQuery(type), {
-        variables: { id },
-    })
-}
-
-export const preparePayloadForSave = async ({
-    visualization,
-    name,
-    description,
-    engine,
-}) => {
-    const { ao } = await apiFetchAOSubscribers(
-        engine,
-        visualization.id,
-        visualization.type
-    )
-    visualization.subscribers = ao.subscribers
+export const preparePayloadForSave = ({ visualization, name, description }) => {
     visualization.name =
         name ||
         visualization.name ||
