@@ -1,8 +1,13 @@
+import { getRelativePeriodsName } from '../../components/PeriodDimension/utils/relativePeriods.js'
 import { getOuLevelAndGroupText } from '../../modules/getOuLevelAndGroupText.js'
+import { dimensionGetItemIds } from '../../modules/layout/dimensionGetItemIds.js'
 import { dimensionGetItems } from '../../modules/layout/dimensionGetItems.js'
 import { dimensionIs } from '../../modules/layout/dimensionIs.js'
 import { ouIdHelper } from '../../modules/ouIdHelper/index.js'
-import { DIMENSION_ID_ORGUNIT } from '../../modules/predefinedDimensions.js'
+import {
+    DIMENSION_ID_ORGUNIT,
+    DIMENSION_ID_PERIOD,
+} from '../../modules/predefinedDimensions.js'
 
 export default function (filters, metaData) {
     if (!Array.isArray(filters) || !filters.length) {
@@ -25,6 +30,18 @@ export default function (filters, metaData) {
             )
         ) {
             titleFragments.push(getOuLevelAndGroupText(filter, metaData))
+        } else if (dimensionIs(filter, DIMENSION_ID_PERIOD)) {
+            const relativePeriodNames = getRelativePeriodsName()
+            titleFragments.push(
+                dimensionGetItemIds(filter)
+                    .map(
+                        (id) =>
+                            relativePeriodNames[id] ||
+                            metaData.items[id]?.name ||
+                            id
+                    )
+                    .join(', ')
+            )
         } else {
             const filterItems = metaData.dimensions[filter.dimension]
 

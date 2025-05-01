@@ -66,7 +66,6 @@ export const FileMenu = ({
                         object={fileObject}
                         onClose={onDialogClose}
                         onRename={onRename}
-                        onError={onError}
                     />
                 )
             case 'translate':
