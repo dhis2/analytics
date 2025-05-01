@@ -152,28 +152,31 @@ describe('getFilterText', () => {
                 dimension: 'pe',
                 items: [
                     {
-                        id: '_LAST_2_MONTHS_',
-                        name: 'Last 2 months',
+                        id: '201801',
+                    },
+                    {
+                        id: 'LAST_3_MONTHS',
+                    },
+                    {
+                        id: 'LAST_MONTH',
                     },
                 ],
             })
 
-            metaData.dimensions.pe = ['_201801_', '_201802_']
-            metaData.items._LAST_2_MONTHS_ = {
-                name: 'Last 2 months',
-                uid: '_LAST_2_MONTHS_',
-            }
-            metaData.items._201801_ = {
-                name: '01 of 2018',
-                uid: '_201801_',
-            }
-            metaData.items._201802_ = {
-                name: '02 of 2018',
-                uid: '_201802_',
+            metaData.dimensions.pe = [
+                '202501',
+                '202502',
+                '202503',
+                '202504',
+                '201801',
+            ]
+            metaData.items['201801'] = {
+                name: 'January 2018',
             }
 
+            // Relative period names come from relativePeriods.js
             expect(getFilterText(filters, metaData)).toEqual(
-                'Clinics, Hospital - 01 of 2018, 02 of 2018'
+                'Clinics, Hospital - January 2018, Last 3 months, Last month'
             )
         })
     })
