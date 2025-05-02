@@ -771,7 +771,7 @@ export const Default = () => {
                     &nbsp;Show icon
                 </label>
                 <label>
-                    Indicator type&nbsp;
+                    Indicator type{' '}
                     <select
                         onChange={(event) =>
                             setIndicatorType(event.target.value)
@@ -787,8 +787,8 @@ export const Default = () => {
                         checked={exportAsPdf}
                         onChange={() => setExportAsPdf(!exportAsPdf)}
                         type="checkbox"
-                    />
-                    &nbsp;Export as PDF
+                    />{' '}
+                    Export as PDF
                 </label>
                 <button onClick={downloadOffline}>Download offline</button>
             </div>
