@@ -90,5 +90,8 @@ export const preparePayloadForSave = ({ visualization, name, description }) => {
     visualization.description =
         description !== undefined ? description : visualization.description
 
+    delete visualization.displayName
+    delete visualization.displayDescription
+
     return visualization
 }

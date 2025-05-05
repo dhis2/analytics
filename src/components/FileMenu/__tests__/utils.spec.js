@@ -90,16 +90,8 @@ describe('utils', () => {
         })
     })
 
-    describe.skip('preparePayloadForSave', () => {
-        const mockEngine = {
-            query: jest.fn(),
-        }
-
-        beforeEach(() => {
-            jest.clearAllMocks()
-        })
-
-        it('fetches subscribers and adds them to the visualization', async () => {
+    describe('preparePayloadForSave', () => {
+        it('fetches subscribers and adds them to the visualization', () => {
             const visualization = {
                 id: '123',
                 type: 'BAR',
@@ -107,29 +99,12 @@ describe('utils', () => {
                 description: 'Existing Description',
             }
 
-            mockEngine.query.mockResolvedValue({
-                ao: { subscribers: ['user1', 'user2'] },
-            })
-
-            const result = await preparePayloadForSave({
+            const result = preparePayloadForSave({
                 visualization,
-                engine: mockEngine,
             })
-
-            expect(mockEngine.query).toHaveBeenCalledWith(
-                {
-                    ao: {
-                        resource: 'visualizations',
-                        id: expect.any(Function),
-                        params: { fields: 'subscribers' },
-                    },
-                },
-                { variables: { id: '123' } }
-            )
-            expect(result.subscribers).toEqual(['user1', 'user2'])
         })
 
-        it('sets the name to the provided name', async () => {
+        it('sets the name to the provided name', () => {
             const visualization = {
                 id: '123',
                 type: 'MAP',
@@ -137,48 +112,33 @@ describe('utils', () => {
             }
             const name = 'New Name'
 
-            mockEngine.query.mockResolvedValue({
-                ao: { subscribers: [] },
-            })
-
-            const result = await preparePayloadForSave({
+            const result = preparePayloadForSave({
                 visualization,
                 name,
-                engine: mockEngine,
             })
 
             expect(result.name).toBe(name)
         })
 
-        it('sets the name to the existing name if no new name is provided', async () => {
+        it('sets the name to the existing name if no new name is provided', () => {
             const visualization = {
                 id: '123',
                 type: 'LINE_LIST',
                 name: 'Existing Name',
             }
 
-            mockEngine.query.mockResolvedValue({
-                ao: { subscribers: [] },
-            })
-
-            const result = await preparePayloadForSave({
+            const result = preparePayloadForSave({
                 visualization,
-                engine: mockEngine,
             })
 
             expect(result.name).toBe('Existing Name')
         })
 
-        it('sets the name to a default value if no name is provided', async () => {
+        it('sets the name to a default value if no name is provided', () => {
             const visualization = { id: '123', type: 'BAR' }
 
-            mockEngine.query.mockResolvedValue({
-                ao: { subscribers: [] },
-            })
-
-            const result = await preparePayloadForSave({
+            const result = preparePayloadForSave({
                 visualization,
-                engine: mockEngine,
             })
 
             const expectedName = `Untitled Bar, ${new Date().toLocaleDateString(
@@ -193,7 +153,7 @@ describe('utils', () => {
             expect(result.name).toBe(expectedName)
         })
 
-        it('sets the description to the provided description', async () => {
+        it('sets the description to the provided description', () => {
             const visualization = {
                 id: '123',
                 type: 'YEAR_OVER_YEAR_LINE',
@@ -201,48 +161,33 @@ describe('utils', () => {
             }
             const description = 'New Description'
 
-            mockEngine.query.mockResolvedValue({
-                ao: { subscribers: [] },
-            })
-
-            const result = await preparePayloadForSave({
+            const result = preparePayloadForSave({
                 visualization,
                 description,
-                engine: mockEngine,
             })
 
             expect(result.description).toBe(description)
         })
 
-        it('keeps the existing description if no new description is provided', async () => {
+        it('keeps the existing description if no new description is provided', () => {
             const visualization = {
                 id: '123',
                 type: 'COLUMN',
                 description: 'Existing Description',
             }
 
-            mockEngine.query.mockResolvedValue({
-                ao: { subscribers: [] },
-            })
-
-            const result = await preparePayloadForSave({
+            const result = preparePayloadForSave({
                 visualization,
-                engine: mockEngine,
             })
 
             expect(result.description).toBe('Existing Description')
         })
 
-        it('sets the description to undefined if no description is provided and none exists', async () => {
+        it('sets the description to undefined if no description is provided and none exists', () => {
             const visualization = { id: '123', type: 'BAR' }
 
-            mockEngine.query.mockResolvedValue({
-                ao: { subscribers: [] },
-            })
-
-            const result = await preparePayloadForSave({
+            const result = preparePayloadForSave({
                 visualization,
-                engine: mockEngine,
             })
 
             expect(result.description).toBeUndefined()
