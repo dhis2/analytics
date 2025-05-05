@@ -91,19 +91,6 @@ describe('utils', () => {
     })
 
     describe('preparePayloadForSave', () => {
-        it('fetches subscribers and adds them to the visualization', () => {
-            const visualization = {
-                id: '123',
-                type: 'BAR',
-                name: 'Existing Name',
-                description: 'Existing Description',
-            }
-
-            const result = preparePayloadForSave({
-                visualization,
-            })
-        })
-
         it('sets the name to the provided name', () => {
             const visualization = {
                 id: '123',
