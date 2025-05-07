@@ -4,12 +4,12 @@ export function addIconElement(svgString, color) {
     const svgIconDocument = parser.parseFromString(svgString, 'image/svg+xml')
     const iconElHeight = svgIconDocument.documentElement.getAttribute('height')
     const iconElWidth = svgIconDocument.documentElement.getAttribute('width')
-    const iconGroup = this.renderer
-        .g('icon')
-        .attr({ color, 'data-test': 'visualization-icon' })
-        .css({
-            visibility: 'hidden',
-        })
+    const iconGroup = this.renderer.g('icon').attr({
+        color,
+        fill: color,
+        'data-test': 'visualization-icon',
+        visibility: 'hidden',
+    })
 
     /* Force the group element to have the same dimensions as the original
      * SVG image by adding this rect. This ensures the icon has the intended

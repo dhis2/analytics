@@ -7,17 +7,23 @@ import { DynamicStyles } from './styles.js'
 export default function loadSingleValueSVG() {
     const { formattedValue, icon, subText, fontColor } =
         this.userOptions.customSVGOptions
-    const dynamicStyles = new DynamicStyles()
+    const dynamicStyles = new DynamicStyles(this.userOptions?.isPdfExport)
     const valueElement = this.renderer
         .text(formattedValue)
-        .attr('data-test', 'visualization-primary-value')
-        .css({ color: fontColor, visibility: 'hidden' })
+        .attr({
+            'data-test': 'visualization-primary-value',
+            fill: fontColor,
+            visibility: 'hidden',
+        })
         .add()
     const subTextElement = subText
         ? this.renderer
               .text(subText)
-              .attr('data-test', 'visualization-subtext')
-              .css({ color: fontColor, visibility: 'hidden' })
+              .attr({
+                  'data-test': 'visualization-subtext',
+                  fill: fontColor,
+                  visibility: 'hidden',
+              })
               .add()
         : null
     const iconElement = icon ? addIconElement.call(this, icon, fontColor) : null
@@ -28,8 +34,8 @@ export default function loadSingleValueSVG() {
     while (!fitsWithinContainer && dynamicStyles.hasNext()) {
         styles = dynamicStyles.next()
 
-        valueElement.css(styles.value)
-        subTextElement?.css(styles.subText)
+        valueElement.attr(styles.value)
+        subTextElement?.attr(styles.subText)
 
         fitsWithinContainer = checkIfFitsWithinContainer(
             getAvailableSpace.call(this, styles.spacing.valueTop),
@@ -49,7 +55,7 @@ export default function loadSingleValueSVG() {
         styles.spacing
     )
 
-    valueElement.css({ visibility: 'visible' })
-    iconElement?.css({ visibility: 'visible' })
-    subTextElement?.css({ visibility: 'visible' })
+    valueElement.attr('visibility', 'visible')
+    iconElement?.attr('visibility', 'visible')
+    subTextElement?.attr('visibility', 'visible')
 }

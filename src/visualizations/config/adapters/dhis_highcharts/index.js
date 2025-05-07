@@ -131,7 +131,7 @@ export default function ({ store, layout, el, extraConfig, extraOptions }) {
         },
 
         // exporting
-        exporting: getExporting(_layout.type),
+        exporting: getExporting(_layout, _extraOptions.legendSets, series),
 
         /* The config object passed to the Highcharts Chart constructor
          * can contain arbitrary properties, which are made accessible
