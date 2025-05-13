@@ -7,9 +7,17 @@ import 'highcharts/modules/offline-exporting'
 import 'highcharts/modules/pattern-fill'
 import 'highcharts/modules/solid-gauge'
 
-/* Whitelist some additional SVG attributes here. Without this,
- * the PDF export for the SingleValue visualization breaks. */
-H.AST.allowedAttributes.push('fill-rule', 'clip-rule')
+/* Whitelist some additional SVG attributes and tags here. Without this,
+ * the PDF export for the SingleValue visualization and charts in boost-mode
+ * breaks. For more info about the boost mode issue, see:
+ * https://github.com/highcharts/highcharts/issues/8333 */
+H.AST.allowedTags.push('fedropshadow', 'image')
+H.AST.allowedAttributes.push(
+    'transform-origin',
+    'preserveAspectRatio',
+    'fill-rule',
+    'clip-rule'
+)
 
 /* This is a workaround for https://github.com/highcharts/highcharts/issues/22008
  * We add some transparent text in a non-ASCII script to the chart to prevent
