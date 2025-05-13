@@ -28,11 +28,12 @@ const spacings = [
 export const MIN_SIDE_WHITESPACE = 4
 
 export class DynamicStyles {
-    constructor() {
+    constructor(isPdfExport) {
         this.currentIndex = 0
+        this.isPdfExport = isPdfExport
     }
     getStyle() {
-        return {
+        const style = {
             value: {
                 ...valueStyles[this.currentIndex],
                 'font-weight': '300',
@@ -40,6 +41,18 @@ export class DynamicStyles {
             subText: subTextStyles[this.currentIndex],
             spacing: spacings[this.currentIndex],
         }
+
+        if (this.isPdfExport) {
+            /* font-weight is not supported for offline PDF export and providing
+             * a specific value will cause the PDF to show a serif font instead */
+            style.value['font-weight'] = 'normal'
+            /* letter-spacing is also not supported and providing a specific
+             * value will cause misalignment issues in the PDF */
+            style.value['letter-spacing'] = 'normal'
+            style.subText['letter-spacing'] = 'normal'
+        }
+
+        return style
     }
     next() {
         if (this.currentIndex === valueStyles.length - 1) {
