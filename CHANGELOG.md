@@ -1,3 +1,21 @@
+# [28.0.0](https://github.com/dhis2/analytics/compare/v27.0.1...v28.0.0) (2025-05-14)
+
+
+### Bug Fixes
+
+* do not fetch subscribers as that should be fetched already ([#1777](https://github.com/dhis2/analytics/issues/1777)) ([af5868c](https://github.com/dhis2/analytics/commit/af5868ce2b6a28aad43e0c642b654c1a094b91b1))
+
+
+### BREAKING CHANGES
+
+* As a quick workaround for renaming bugs, a solution was implemented where
+the preparePayloadForSave function would fetch the subscribers property
+so that it would not be overwritten during a rename. However, it is still possible 
+to overwrite other newer changes by a different user. The best solution to deal
+with the lack of a PATCH is that each app fetches the entire visualization
+object prior to rename. Thus, the only job for the preparePayloadForSave
+function is to handle name and description changes.
+
 ## [27.0.1](https://github.com/dhis2/analytics/compare/v27.0.0...v27.0.1) (2025-04-23)
 
 
