@@ -22,28 +22,26 @@ const BASE_EXPORTING_CONFIG = {
 }
 
 export default function getExporting(layout, legendSets, series) {
-    switch (layout.type) {
-        case VIS_TYPE_SINGLE_VALUE:
-            return {
-                ...BASE_EXPORTING_CONFIG,
-                chartOptions: {
-                    ...BASE_EXPORTING_CONFIG.chartOptions,
-                    chart: {
-                        ...BASE_EXPORTING_CONFIG.chartOptions.chart,
-                        backgroundColor: getSingleValueBackgroundColor(
-                            layout.legend,
-                            legendSets,
-                            series[0],
-                            DEFAULT_EXPORT_BACKGROUND_COLOR
-                        ),
-                        events: {
-                            load: loadSingleValueSVG,
-                        },
+    if (layout.type === VIS_TYPE_SINGLE_VALUE) {
+        return {
+            ...BASE_EXPORTING_CONFIG,
+            chartOptions: {
+                ...BASE_EXPORTING_CONFIG.chartOptions,
+                chart: {
+                    ...BASE_EXPORTING_CONFIG.chartOptions.chart,
+                    backgroundColor: getSingleValueBackgroundColor(
+                        layout.legend,
+                        legendSets,
+                        series[0],
+                        DEFAULT_EXPORT_BACKGROUND_COLOR
+                    ),
+                    events: {
+                        load: loadSingleValueSVG,
                     },
                 },
-            }
-
-        default:
-            return BASE_EXPORTING_CONFIG
+            },
+        }
     }
+
+    return BASE_EXPORTING_CONFIG
 }
