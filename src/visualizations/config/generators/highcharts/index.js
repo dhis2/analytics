@@ -26,6 +26,13 @@ H.addEvent(H.Chart, 'load', function () {
     this.renderer.text('모', 20, 20).attr({ opacity: 0 }).add()
 })
 
+/* Workaround for https://github.com/highcharts/highcharts/issues/23049
+ * (there happen to be 10 colors and 10 patterns)*/
+const { colors } = H.getOptions()
+H.patterns.forEach((pattern, i) => {
+    pattern.color = colors[i]
+})
+
 function drawLegendSymbolWrap() {
     const pick = H.pick
     H.wrap(
