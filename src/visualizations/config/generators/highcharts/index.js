@@ -10,6 +10,13 @@ import 'highcharts/modules/solid-gauge'
  * the PDF export for the SingleValue visualization breaks. */
 H.AST.allowedAttributes.push('fill-rule', 'clip-rule')
 
+/* Workaround for https://github.com/highcharts/highcharts/issues/23049
+ * (there happen to be 10 colors and 10 patterns)*/
+const { colors } = H.getOptions()
+H.patterns.forEach((pattern, i) => {
+    pattern.color = colors[i]
+})
+
 function drawLegendSymbolWrap() {
     const pick = H.pick
     H.wrap(
