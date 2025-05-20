@@ -4,7 +4,8 @@ import { getSingleValueLegendColor } from './getSingleValueLegendColor.js'
 export function getSingleValueBackgroundColor(
     legendOptions,
     legendSets,
-    value
+    value,
+    defaultColor = 'transparent'
 ) {
     const legendColor = getSingleValueLegendColor(
         legendOptions,
@@ -13,5 +14,5 @@ export function getSingleValueBackgroundColor(
     )
     return legendColor && legendOptions.style === LEGEND_DISPLAY_STYLE_FILL
         ? legendColor
-        : 'transparent'
+        : defaultColor
 }
