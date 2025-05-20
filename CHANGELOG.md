@@ -1,3 +1,11 @@
+## [28.0.1](https://github.com/dhis2/analytics/compare/v28.0.0...v28.0.1) (2025-05-20)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([#1778](https://github.com/dhis2/analytics/issues/1778)) ([7485bfc](https://github.com/dhis2/analytics/commit/7485bfcb35dd98976210a654fb05ab1fc1c4ea24))
+* upgrade Highcharts from v10 to v12 ([#1728](https://github.com/dhis2/analytics/issues/1728)) ([6598cad](https://github.com/dhis2/analytics/commit/6598cadb9738e334463b852a7b71b4dfe6e0760a)), closes [#1731](https://github.com/dhis2/analytics/issues/1731)
+
 # [28.0.0](https://github.com/dhis2/analytics/compare/v27.0.1...v28.0.0) (2025-05-14)
 
 
