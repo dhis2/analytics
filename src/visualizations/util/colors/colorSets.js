@@ -1,7 +1,5 @@
 import H from 'highcharts'
-import HPF from 'highcharts/modules/pattern-fill'
-
-HPF(H)
+import 'highcharts/modules/pattern-fill'
 
 export const COLOR_SET_DEFAULT = 'DEFAULT'
 export const COLOR_SET_BASIC = 'BASIC'
