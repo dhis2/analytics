@@ -15,7 +15,7 @@ function getEmptySeriesIndexes(series) {
     const emptyIndexes = []
     let seriesValues
 
-    series[0].data.forEach((value, index) => {
+    series[0]?.data.forEach((value, index) => {
         seriesValues = []
 
         series.forEach(({ data }) => {
@@ -106,7 +106,7 @@ export default function (config, layout) {
 function getEmptySeriesGroupIndexes(series) {
     const emptyGroupIndexes = []
 
-    series[0].custom.data.forEach((groupObj, groupIndex) => {
+    series[0]?.custom.data.forEach((groupObj, groupIndex) => {
         const seriesGroupValues = []
 
         groupObj.forEach((_, index) =>
