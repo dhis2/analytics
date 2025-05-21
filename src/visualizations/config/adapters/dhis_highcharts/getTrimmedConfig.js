@@ -15,7 +15,7 @@ function getEmptySeriesIndexes(series) {
     const emptyIndexes = []
     let seriesValues
 
-    series[0]?.data.forEach((value, index) => {
+    series[0].data.forEach((value, index) => {
         seriesValues = []
 
         series.forEach(({ data }) => {
