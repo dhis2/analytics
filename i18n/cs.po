@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2025-03-18T12:46:14.410Z\n"
+"POT-Creation-Date: 2025-04-15T13:34:54.995Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: Jiří Podhorecký <jirka.p@volny.cz>, 2025\n"
 "Language-Team: Czech (https://app.transifex.com/hisp-uio/teams/100509/cs/)\n"
@@ -519,6 +519,9 @@ msgstr "mapa"
 
 msgid "visualization"
 msgstr "vizualizace"
+
+msgid "Untitled {{visualizationType}}, {{date}}"
+msgstr ""
 
 msgid "Edit"
 msgstr "Upravit"
@@ -1430,6 +1433,9 @@ msgstr ""
 
 msgid "All charts"
 msgstr "Všechny grafy"
+
+msgid "Map"
+msgstr "Mapa"
 
 msgid "{{seriesName}} (trend)"
 msgstr "{{seriesName}} (trend)"

@@ -3,15 +3,15 @@
 # Mai Nguyen <thanhmai.jica@gmail.com>, 2022
 # Thuy Nguyen <thuynguyen@hispvietnam.org>, 2025
 # Em Le <em.hispvietnam@gmail.com>, 2025
-# Viktor Varland <viktor@dhis2.org>, 2025
 # Philip Larsen Donnelly, 2025
+# Viktor Varland <viktor@dhis2.org>, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2025-03-18T12:46:14.410Z\n"
+"POT-Creation-Date: 2025-04-15T13:34:54.995Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Philip Larsen Donnelly, 2025\n"
+"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2025\n"
 "Language-Team: Vietnamese (https://app.transifex.com/hisp-uio/teams/100509/vi/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -519,6 +519,9 @@ msgstr "bản đồ"
 
 msgid "visualization"
 msgstr "trực quan hóa"
+
+msgid "Untitled {{visualizationType}}, {{date}}"
+msgstr ""
 
 msgid "Edit"
 msgstr "Chỉnh sửa"
@@ -1421,6 +1424,9 @@ msgstr "Bảng ngoại lệ"
 
 msgid "All charts"
 msgstr "Tất cả biểu đồ"
+
+msgid "Map"
+msgstr "Bản Đồ"
 
 msgid "{{seriesName}} (trend)"
 msgstr "{{seriesName}} (xu hướng)"

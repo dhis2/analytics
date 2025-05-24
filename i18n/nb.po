@@ -2,15 +2,15 @@
 # Translators:
 # Jen Jones Arnesen <jennifer@dhis2.org>, 2023
 # Martin <martin@moid.se>, 2024
-# Caroline Hesthagen Holen <caroline@devotta.no>, 2025
 # Karoline Tufte Lien <karoline@dhis2.org>, 2025
+# Caroline Hesthagen Holen <caroline@devotta.no>, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2025-03-18T12:46:14.410Z\n"
+"POT-Creation-Date: 2025-04-15T13:34:54.995Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Karoline Tufte Lien <karoline@dhis2.org>, 2025\n"
+"Last-Translator: Caroline Hesthagen Holen <caroline@devotta.no>, 2025\n"
 "Language-Team: Norwegian Bokmål (https://app.transifex.com/hisp-uio/teams/100509/nb/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -515,6 +515,9 @@ msgstr "kart"
 
 msgid "visualization"
 msgstr "visualisering"
+
+msgid "Untitled {{visualizationType}}, {{date}}"
+msgstr ""
 
 msgid "Edit"
 msgstr "Rediger"
@@ -1399,6 +1402,9 @@ msgstr ""
 
 msgid "All charts"
 msgstr "Alle diagrammer"
+
+msgid "Map"
+msgstr "Kart"
 
 msgid "{{seriesName}} (trend)"
 msgstr ""
