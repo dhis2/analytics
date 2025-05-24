@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2025-03-18T12:46:14.410Z\n"
+"POT-Creation-Date: 2025-04-15T13:34:54.995Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: easylin <lin_xd@126.com>, 2025\n"
 "Language-Team: Chinese (https://app.transifex.com/hisp-uio/teams/100509/zh/)\n"
@@ -511,6 +511,9 @@ msgstr "地图"
 
 msgid "visualization"
 msgstr "可视化"
+
+msgid "Untitled {{visualizationType}}, {{date}}"
+msgstr "无标题的{{visualizationType}} 、{{date}}"
 
 msgid "Edit"
 msgstr "编辑"
@@ -1389,6 +1392,9 @@ msgstr "异常值表"
 
 msgid "All charts"
 msgstr "所有图表"
+
+msgid "Map"
+msgstr "地图"
 
 msgid "{{seriesName}} (trend)"
 msgstr "{{seriesName}}（趋势）"
