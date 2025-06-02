@@ -311,6 +311,15 @@ export {
     getColorByValueFromLegendSet,
 } from './modules/legends.js'
 
+// Modules: hideEmptyRowItems
+
+export {
+    HIDE_EMPTY_ROW_ITEMS_BEFORE_FIRST,
+    HIDE_EMPTY_ROW_ITEMS_AFTER_LAST,
+    HIDE_EMPTY_ROW_ITEMS_BEFORE_FIRST_AFTER_LAST,
+    HIDE_EMPTY_ROW_ITEMS_ALL,
+} from './modules/hideEmptyRowItems.js'
+
 // Modules: general
 
 export { renderValue as formatValue } from './modules/renderValue.js'
