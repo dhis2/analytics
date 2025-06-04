@@ -1,4 +1,6 @@
-import { shallow, mount } from 'enzyme'
+import '@testing-library/jest-dom'
+import { render } from '@testing-library/react'
+import { shallow } from 'enzyme'
 import React from 'react'
 import { HoverMenuList, HoverMenuListItem } from '../index.js'
 
@@ -27,15 +29,17 @@ describe('<HoverMenuList/>', () => {
     })
 
     it('accept a `dense` prop', () => {
-        const wrapper = mount(
+        const { container } = render(
             <HoverMenuList dense>
                 <HoverMenuListItem label="item 1" />
                 <HoverMenuListItem label="item 2" />
             </HoverMenuList>
         )
 
-        expect(wrapper.find('li').first()).toHaveClassName('dense')
-        expect(wrapper.find('li').last()).toHaveClassName('dense')
+        expect(container.querySelector('li')).toHaveClass('dense')
+        expect(Array.from(container.querySelectorAll('li')).pop()).toHaveClass(
+            'dense'
+        )
     })
     it('accept a `maxHeight` prop', () => {
         const maxHeight = '100000px'
