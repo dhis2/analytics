@@ -1,5 +1,11 @@
 import arrayContains from 'd2-utilizr/lib/arrayContains'
 import arrayUnique from 'd2-utilizr/lib/arrayUnique'
+import {
+    HIDE_EMPTY_ROW_ITEMS_AFTER_LAST,
+    HIDE_EMPTY_ROW_ITEMS_ALL,
+    HIDE_EMPTY_ROW_ITEMS_BEFORE_FIRST,
+    HIDE_EMPTY_ROW_ITEMS_BEFORE_FIRST_AFTER_LAST,
+} from '../../../../modules/hideEmptyRowItems.js'
 import { isTwoCategoryChartType } from '../../../../modules/visTypes.js'
 import getTwoCategorySplitSerieData from './getTwoCategorySplitSerieData.js'
 
@@ -72,20 +78,20 @@ function cleanData(
     let cleanedData
 
     switch (hideEmptyRowItems) {
-        case 'ALL':
+        case HIDE_EMPTY_ROW_ITEMS_ALL:
             cleanedData = arrayCleanUndefined(
                 data.map((value, index) =>
                     arrayContains(emptySeriesIndexes, index) ? undefined : value
                 )
             )
             break
-        case 'BEFORE_FIRST':
+        case HIDE_EMPTY_ROW_ITEMS_BEFORE_FIRST:
             cleanedData = data.slice(firstValueIndex)
             break
-        case 'AFTER_LAST':
+        case HIDE_EMPTY_ROW_ITEMS_AFTER_LAST:
             cleanedData = data.slice(0, lastValueIndex + 1)
             break
-        case 'BEFORE_FIRST_AFTER_LAST':
+        case HIDE_EMPTY_ROW_ITEMS_BEFORE_FIRST_AFTER_LAST:
             cleanedData = data.slice(firstValueIndex, lastValueIndex + 1)
             break
         default:
