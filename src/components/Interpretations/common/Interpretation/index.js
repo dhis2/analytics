@@ -1,2 +1,2 @@
-export { Interpretation } from './Interpretation.js'
-export { InterpretationSharingLink } from './InterpretationSharingLink.js'
+export { Interpretation } from './Interpretation.jsx'
+export { InterpretationSharingLink } from './InterpretationSharingLink.jsx'

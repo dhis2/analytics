@@ -1,1 +1,1 @@
-export { InterpretationsUnit } from './InterpretationsUnit.js'
+export { InterpretationsUnit } from './InterpretationsUnit.jsx'

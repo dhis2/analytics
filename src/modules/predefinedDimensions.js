@@ -3,7 +3,7 @@ import {
     IconDimensionData16,
     IconDimensionOrgUnit16,
 } from '@dhis2/ui'
-import AssignedCategoriesIcon from '../assets/AssignedCategoriesIcon.js'
+import AssignedCategoriesIcon from '../assets/AssignedCategoriesIcon.jsx'
 import i18n from '../locales/index.js'
 
 export const DIMENSION_ID_DATA = 'dx'

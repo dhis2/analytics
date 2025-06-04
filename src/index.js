@@ -1,37 +1,37 @@
 import './locales/index.js'
 // Components
 
-export { default as DataDimension } from './components/DataDimension/DataDimension.js'
+export { default as DataDimension } from './components/DataDimension/DataDimension.jsx'
 
-export { default as PeriodDimension } from './components/PeriodDimension/PeriodDimension.js'
-export { default as FixedPeriodSelect } from './components/PeriodDimension/FixedPeriodSelect.js'
+export { default as PeriodDimension } from './components/PeriodDimension/PeriodDimension.jsx'
+export { default as FixedPeriodSelect } from './components/PeriodDimension/FixedPeriodSelect.jsx'
 
-export { default as OrgUnitDimension } from './components/OrgUnitDimension/OrgUnitDimension.js'
+export { default as OrgUnitDimension } from './components/OrgUnitDimension/OrgUnitDimension.jsx'
 
 export {
     default as DynamicDimension,
     ALL_DYNAMIC_DIMENSION_ITEMS,
-} from './components/DynamicDimension/DynamicDimension.js'
+} from './components/DynamicDimension/DynamicDimension.jsx'
 
-export { default as DimensionsPanel } from './components/DimensionsPanel/DimensionsPanel.js'
-export { default as DimensionItem } from './components/DimensionsPanel/List/DimensionItem.js'
-export { default as DimensionFilter } from './components/Filter/Filter.js'
+export { default as DimensionsPanel } from './components/DimensionsPanel/DimensionsPanel.jsx'
+export { default as DimensionItem } from './components/DimensionsPanel/List/DimensionItem.jsx'
+export { default as DimensionFilter } from './components/Filter/Filter.jsx'
 
-export { default as DimensionMenu } from './components/DimensionMenu.js'
+export { default as DimensionMenu } from './components/DimensionMenu.jsx'
 
-export { default as PivotTable } from './components/PivotTable/PivotTable.js'
+export { default as PivotTable } from './components/PivotTable/PivotTable.jsx'
 
-export { default as FileMenu } from './components/FileMenu/FileMenu.js'
+export { default as FileMenu } from './components/FileMenu/FileMenu.jsx'
 export {
     preparePayloadForSaveAs,
     preparePayloadForSave,
 } from './components/FileMenu/utils.js'
 
-export { default as VisTypeIcon } from './components/VisTypeIcon.js'
+export { default as VisTypeIcon } from './components/VisTypeIcon.jsx'
 
-export { default as LegendKey } from './components/LegendKey/LegendKey.js'
+export { default as LegendKey } from './components/LegendKey/LegendKey.jsx'
 
-export { default as AboutAOUnit } from './components/AboutAOUnit/AboutAOUnit.js'
+export { default as AboutAOUnit } from './components/AboutAOUnit/AboutAOUnit.jsx'
 
 export { InterpretationsUnit } from './components/Interpretations/InterpretationsUnit/index.js'
 export {
@@ -43,16 +43,16 @@ export * from './components/Toolbar/index.js'
 
 export { TranslationDialog } from './components/TranslationDialog/index.js'
 
-export { OfflineTooltip } from './components/OfflineTooltip.js'
+export { OfflineTooltip } from './components/OfflineTooltip.jsx'
 
 export {
     CachedDataQueryProvider,
     useCachedDataQuery,
-} from './components/CachedDataQueryProvider.js'
+} from './components/CachedDataQueryProvider.jsx'
 
 export * from './components/RichText/index.js'
 
-export { DashboardPluginWrapper } from './components/DashboardPluginWrapper/DashboardPluginWrapper.js'
+export { DashboardPluginWrapper } from './components/DashboardPluginWrapper/DashboardPluginWrapper.jsx'
 
 // Api
 
@@ -369,7 +369,7 @@ export {
     PERIOD_TYPE_REGEX,
 } from './components/PeriodDimension/utils/fixedPeriods.js'
 
-export { default as VisualizationOptions } from './components/Options/VisualizationOptions.js'
+export { default as VisualizationOptions } from './components/Options/VisualizationOptions.jsx'
 
 export {
     DIMENSION_TYPE_INDICATOR,
