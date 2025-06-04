@@ -30,7 +30,7 @@
         "validate-push": "yarn test"
     },
     "devDependencies": {
-        "@dhis2/app-runtime": "^3.14.1",
+        "@dhis2/app-runtime": "^3.14.3",
         "@dhis2/cli-app-scripts": "^12.6.1",
         "@dhis2/cli-style": "^10.7.8",
         "@dhis2/d2-i18n": "^1.1.0",
@@ -40,7 +40,7 @@
         "@storybook/react": "^8.3.6",
         "@storybook/react-webpack5": "^8.3.6",
         "@testing-library/jest-dom": "6.6.3",
-        "@testing-library/react": "^12",
+        "@testing-library/react": "^16.2.0",
         "enzyme": "^3.9.0",
         "enzyme-adapter-react-16": "^1.15.6",
         "fs-extra": "^10.1.0",
