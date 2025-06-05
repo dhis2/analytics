@@ -37,9 +37,7 @@ describe('<HoverMenuList/>', () => {
         )
 
         expect(container.querySelector('li')).toHaveClass('dense')
-        expect(Array.from(container.querySelectorAll('li')).pop()).toHaveClass(
-            'dense'
-        )
+        expect(container.querySelector('li:last-of-type')).toHaveClass('dense')
     })
     it('accept a `maxHeight` prop', () => {
         const maxHeight = '100000px'
