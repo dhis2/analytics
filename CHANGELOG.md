@@ -1,3 +1,10 @@
+## [28.0.3](https://github.com/dhis2/analytics/compare/v28.0.2...v28.0.3) (2025-06-06)
+
+
+### Bug Fixes
+
+* avoid crash in TranslationDialog component (DHIS2-19539) ([#1779](https://github.com/dhis2/analytics/issues/1779)) ([dd6ad13](https://github.com/dhis2/analytics/commit/dd6ad137aef47141373fd10cd39d6eefc71b6f11))
+
 ## [28.0.2](https://github.com/dhis2/analytics/compare/v28.0.1...v28.0.2) (2025-06-04)
 
 
