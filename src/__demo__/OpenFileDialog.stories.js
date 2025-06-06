@@ -11,10 +11,7 @@ import {
 } from '../modules/visTypes.js'
 
 const Wrapper = (story) => (
-    <DataProvider
-        baseUrl="https://test.e2e.dhis2.org/analytics-41dev/"
-        apiVersion="41"
-    >
+    <DataProvider baseUrl="https://test.e2e.dhis2.org/anly-42/" apiVersion="42">
         {story()}
     </DataProvider>
 )
