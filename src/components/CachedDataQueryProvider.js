@@ -32,14 +32,22 @@ const CachedDataQueryProvider = ({
                 if (result instanceof Promise) {
                     setTransformLoading(true)
                     const awaitedResult = await result
-                    if (isMounted) setTransformedData(awaitedResult)
+                    if (isMounted) {
+                        setTransformedData(awaitedResult)
+                    }
                 } else {
-                    if (isMounted) setTransformedData(result)
+                    if (isMounted) {
+                        setTransformedData(result)
+                    }
                 }
             } catch (err) {
-                if (isMounted) setTransformError(err)
+                if (isMounted) {
+                    setTransformError(err)
+                }
             } finally {
-                if (isMounted) setTransformLoading(false)
+                if (isMounted) {
+                    setTransformLoading(false)
+                }
             }
         }
 
