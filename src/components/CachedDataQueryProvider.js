@@ -14,7 +14,7 @@ const CachedDataQueryProvider = ({
 }) => {
     const { data: rawData, error, loading } = useDataQuery(query)
     const [transformedData, setTransformedData] = useState(undefined)
-    const [transformLoading, setTransformLoading] = useState(false)
+    const [transformLoading, setTransformLoading] = useState(Boolean(dataTransformation))
     const [transformError, setTransformError] = useState(null)
 
     useEffect(() => {
