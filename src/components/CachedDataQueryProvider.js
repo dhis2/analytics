@@ -2,7 +2,7 @@ import { useDataQuery } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import { Layer, CenteredContent, CircularLoader, NoticeBox } from '@dhis2/ui'
 import PropTypes from 'prop-types'
-import React, { createContext, useContext } from 'react'
+import React, { createContext, useContext, useEffect, useState } from 'react'
 
 const CachedDataQueryCtx = createContext({})
 
@@ -12,12 +12,44 @@ const CachedDataQueryProvider = ({
     children,
     translucent = true,
 }) => {
-    const { data: rawData, ...rest } = useDataQuery(query)
-    const { error, loading } = rest
-    const data =
-        rawData && dataTransformation ? dataTransformation(rawData) : rawData
+    const { data: rawData, error, loading } = useDataQuery(query)
+    const [transformedData, setTransformedData] = useState(undefined)
+    const [transformLoading, setTransformLoading] = useState(
+        Boolean(dataTransformation)
+    )
+    const [transformError, setTransformError] = useState(null)
 
-    if (loading) {
+    useEffect(() => {
+        let isMounted = true
+
+        const runTransformation = async () => {
+            if (!rawData || !dataTransformation) {
+                isMounted && setTransformedData(rawData)
+                return
+            }
+
+            try {
+                setTransformLoading(true)
+                const result = await Promise.resolve(
+                    dataTransformation(rawData)
+                )
+                isMounted && setTransformedData(result)
+                setTransformError(null)
+            } catch (err) {
+                isMounted && setTransformError(err)
+            } finally {
+                isMounted && setTransformLoading(false)
+            }
+        }
+
+        runTransformation()
+
+        return () => {
+            isMounted = false
+        }
+    }, [rawData, dataTransformation])
+
+    if (loading || transformLoading) {
         return (
             <Layer translucent={translucent}>
                 <CenteredContent>
@@ -27,18 +59,17 @@ const CachedDataQueryProvider = ({
         )
     }
 
-    if (error) {
+    if (error || transformError) {
         const fallbackMsg = i18n.t('This app could not retrieve required data.')
-
         return (
             <NoticeBox error title={i18n.t('Network error')}>
-                {error.message || fallbackMsg}
+                {error?.message || transformError?.message || fallbackMsg}
             </NoticeBox>
         )
     }
 
     return (
-        <CachedDataQueryCtx.Provider value={data}>
+        <CachedDataQueryCtx.Provider value={transformedData}>
             {children}
         </CachedDataQueryCtx.Provider>
     )
