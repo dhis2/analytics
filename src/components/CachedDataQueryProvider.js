@@ -32,22 +32,14 @@ const CachedDataQueryProvider = ({
                 if (result instanceof Promise) {
                     setTransformLoading(true)
                     const awaitedResult = await result
-                    if (isMounted) {
-                        setTransformedData(awaitedResult)
-                    }
+                    isMounted && setTransformedData(awaitedResult)
                 } else {
-                    if (isMounted) {
-                        setTransformedData(result)
-                    }
+                    isMounted && setTransformedData(result)
                 }
             } catch (err) {
-                if (isMounted) {
-                    setTransformError(err)
-                }
+                isMounted && setTransformError(err)
             } finally {
-                if (isMounted) {
-                    setTransformLoading(false)
-                }
+                isMounted && setTransformLoading(false)
             }
         }
 
@@ -72,9 +64,7 @@ const CachedDataQueryProvider = ({
         const fallbackMsg = i18n.t('This app could not retrieve required data.')
         return (
             <NoticeBox error title={i18n.t('Network error')}>
-                {(error && error.message) ||
-                    (transformError && transformError.message) ||
-                    fallbackMsg}
+                {error?.message || transformError?.message || fallbackMsg}
             </NoticeBox>
         )
     }
