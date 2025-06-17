@@ -86,8 +86,13 @@ const HoverMenuBar = ({ children, dataTest }) => {
 
     useEffect(() => {
         if (isInHoverMode) {
-            document.addEventListener('click', onDocumentClick, {
-                once: true,
+            // Delay this one cycle to avoid synchronously triggering on the
+            // click that opened a menu (React 18)
+            // https://react.dev/blog/2022/03/08/react-18-upgrade-guide#other-breaking-changes
+            setTimeout(() => {
+                document.addEventListener('click', onDocumentClick, {
+                    once: true,
+                })
             })
         }
 
