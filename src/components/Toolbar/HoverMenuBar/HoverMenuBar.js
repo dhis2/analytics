@@ -3,7 +3,7 @@ import React, {
     createContext,
     useCallback,
     useContext,
-    useEffect,
+    useRef,
     useState,
 } from 'react'
 
@@ -23,7 +23,7 @@ const useHoverMenubarContext = () => useContext(HoverMenubarContext)
 
 const HoverMenuBar = ({ children, dataTest }) => {
     const [openedDropdownEl, setOpenedDropdownEl] = useState(null)
-    const [lastHoveredSubMenuEl, setLastHoveredSubMenuEl] = useState(null)
+    const lastHoveredSubMenuElRef = useRef(null)
     const [isInHoverMode, setIsInHoverMode] = useState(false)
 
     const closeMenu = useCallback(() => {
@@ -31,30 +31,42 @@ const HoverMenuBar = ({ children, dataTest }) => {
         setOpenedDropdownEl(null)
     }, [])
 
+    const setLastHoveredSubMenuEl = useCallback((element) => {
+        lastHoveredSubMenuElRef.current = element
+    }, [])
+
     const onDocumentClick = useCallback(
         (event) => {
             const isClickOnOpenedSubMenuAnchor =
-                lastHoveredSubMenuEl &&
-                (lastHoveredSubMenuEl === event.target ||
-                    lastHoveredSubMenuEl.contains(event.target))
+                lastHoveredSubMenuElRef.current &&
+                (lastHoveredSubMenuElRef.current === event.target ||
+                    lastHoveredSubMenuElRef.current.contains(event.target))
 
             if (!isClickOnOpenedSubMenuAnchor) {
                 closeMenu()
             }
         },
-        [closeMenu, lastHoveredSubMenuEl]
+        [closeMenu]
     )
 
     const onDropDownButtonClick = useCallback(
         (event) => {
             if (!isInHoverMode) {
+                /* Stop event propagation to avoid it from bubling up to the
+                 * document, which would actually cause the menu to close again
+                 * immediately */
+                event.stopPropagation()
                 setIsInHoverMode(true)
                 setOpenedDropdownEl(event.currentTarget)
+                document.addEventListener('click', onDocumentClick, {
+                    once: true,
+                })
             } else {
+                document.removeEventListener('click', onDocumentClick)
                 closeMenu()
             }
         },
-        [closeMenu, isInHoverMode]
+        [closeMenu, isInHoverMode, onDocumentClick]
     )
 
     const onDropDownButtonMouseOver = useCallback(
@@ -83,23 +95,6 @@ const HoverMenuBar = ({ children, dataTest }) => {
         },
         [closeMenu]
     )
-
-    useEffect(() => {
-        if (isInHoverMode) {
-            // Delay this one cycle to avoid synchronously triggering on the
-            // click that opened a menu (React 18)
-            // https://react.dev/blog/2022/03/08/react-18-upgrade-guide#other-breaking-changes
-            setTimeout(() => {
-                document.addEventListener('click', onDocumentClick, {
-                    once: true,
-                })
-            })
-        }
-
-        return () => {
-            document.removeEventListener('click', onDocumentClick)
-        }
-    }, [onDocumentClick, isInHoverMode])
 
     return (
         <HoverMenubarContext.Provider
