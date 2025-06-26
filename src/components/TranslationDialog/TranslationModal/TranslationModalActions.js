@@ -23,7 +23,7 @@ SaveButton.propTypes = {
 
 export const TranslationModalActions = ({
     onClose,
-    onSave,
+    onSave = Function.prototype,
     saveInProgress,
     saveButtonDisabled,
 }) => {
