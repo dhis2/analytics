@@ -78,6 +78,7 @@ const IconButtonWithTooltip = ({ tooltipContent, disabled, icon, onClick }) => (
                         disabled={disabled}
                         icon={icon}
                         onClick={onClick}
+                        aria-label={tooltipContent}
                     />
                 </span>
             )}
