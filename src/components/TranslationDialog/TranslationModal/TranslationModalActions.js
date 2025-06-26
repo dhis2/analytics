@@ -17,8 +17,8 @@ const SaveButton = ({
 
 SaveButton.propTypes = {
     disabled: PropTypes.bool.isRequired,
-    loading: PropTypes.bool.isRequired,
     onClick: PropTypes.func.isRequired,
+    loading: PropTypes.bool,
 }
 
 export const TranslationModalActions = ({
