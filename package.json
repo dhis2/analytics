@@ -32,7 +32,7 @@
     "devDependencies": {
         "@dhis2/app-runtime": "^3.14.1",
         "@dhis2/cli-app-scripts": "^12.6.3",
-        "@dhis2/cli-style": "^10.7.4",
+        "@dhis2/cli-style": "^10.7.9",
         "@dhis2/d2-i18n": "^1.1.0",
         "@dhis2/ui": "^10.1.9",
         "@mihkeleidast/storybook-addon-source": "^1.0.1",
@@ -77,10 +77,6 @@
         "mathjs": "^9.4.2",
         "react-beautiful-dnd": "^10.1.1",
         "resize-observer-polyfill": "^1.5.1"
-    },
-    "resolutions": {
-        "@dhis2/ui": "^10.1.9",
-        "eslint": "^7.32.0"
     },
     "files": [
         "build"
