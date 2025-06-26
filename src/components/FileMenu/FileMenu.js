@@ -33,15 +33,15 @@ export const FileMenu = ({
     fileType,
     fileObject,
     filterVisTypes,
-    onNew,
-    onOpen,
+    onNew = Function.prototype,
+    onOpen = Function.prototype,
     onSave,
     onSaveAs,
-    onRename,
-    onShare,
-    onDelete,
-    onError,
-    onTranslate,
+    onRename = Function.prototype,
+    onShare = Function.prototype,
+    onDelete = Function.prototype,
+    onError = Function.prototype,
+    onTranslate = Function.prototype,
 }) => {
     const [currentDialog, setCurrentDialog] = useState(null)
     const onMenuItemClick = (dialogToOpen) => () => {
@@ -286,16 +286,6 @@ export const FileMenu = ({
             {renderDialog()}
         </>
     )
-}
-
-FileMenu.defaultProps = {
-    onDelete: Function.prototype,
-    onError: Function.prototype,
-    onNew: Function.prototype,
-    onOpen: Function.prototype,
-    onRename: Function.prototype,
-    onShare: Function.prototype,
-    onTranslate: Function.prototype,
 }
 
 FileMenu.propTypes = {

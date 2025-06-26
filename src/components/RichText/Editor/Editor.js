@@ -200,8 +200,8 @@ export const Editor = forwardRef(
             onChange,
             errorText,
             helpText,
-            initialFocus,
-            resizable,
+            initialFocus = true,
+            resizable = true,
         },
         externalRef
     ) => {
@@ -302,11 +302,6 @@ export const Editor = forwardRef(
 )
 
 Editor.displayName = 'Editor'
-
-Editor.defaultProps = {
-    initialFocus: true,
-    resizable: true,
-}
 
 Editor.propTypes = {
     value: PropTypes.string.isRequired,

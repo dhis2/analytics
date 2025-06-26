@@ -2,7 +2,7 @@ import { colors } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
 
-export const Toolbar = ({ children, dataTest }) => (
+export const Toolbar = ({ children, dataTest = 'dhis2-analytics-toolbar' }) => (
     <div data-test={dataTest}>
         {children}
         <style jsx>{`
@@ -18,10 +18,6 @@ export const Toolbar = ({ children, dataTest }) => (
         `}</style>
     </div>
 )
-
-Toolbar.defaultProps = {
-    dataTest: 'dhis2-analytics-toolbar',
-}
 
 Toolbar.propTypes = {
     children: PropTypes.node,

@@ -18,7 +18,7 @@ const LoadingMask = () => {
     )
 }
 
-const CacheableSectionWrapper = ({ id, children, isParentCached }) => {
+const CacheableSectionWrapper = ({ id, children, isParentCached = false }) => {
     const { startRecording, isCached, remove } = useCacheableSection(id)
 
     useEffect(() => {
@@ -45,10 +45,10 @@ CacheableSectionWrapper.propTypes = {
 }
 
 export const DashboardPluginWrapper = ({
-    onInstallationStatusChange,
+    onInstallationStatusChange = Function.prototype,
     children,
     cacheId,
-    isParentCached,
+    isParentCached = false,
     ...props
 }) => {
     const { pwaEnabled } = useConfig()
@@ -81,11 +81,6 @@ export const DashboardPluginWrapper = ({
             <CssVariables colors spacers elevations />
         </div>
     ) : null
-}
-
-DashboardPluginWrapper.defaultProps = {
-    isParentCached: false,
-    onInstallationStatusChange: Function.prototype,
 }
 
 DashboardPluginWrapper.propTypes = {
