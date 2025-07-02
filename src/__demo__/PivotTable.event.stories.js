@@ -61,6 +61,24 @@ export default {
     decorators: [PivotTableOptionsWrapper],
 }
 
+export const Numeric = (_, { pivotTableOptions }) => {
+    const visualization = {
+        ...numericVisualization,
+        ...visualizationReset,
+        ...pivotTableOptions,
+    }
+
+    return (
+        <div style={{ width: 800, height: 600 }}>
+            <PivotTable data={numericData} visualization={visualization} />
+        </div>
+    )
+}
+
+Numeric.story = {
+    name: 'Numeric',
+}
+
 export const NumericLegendset = (_, { pivotTableOptions }) => {
     const visualization = {
         ...numericLegendsetVisualization,
@@ -76,24 +94,6 @@ export const NumericLegendset = (_, { pivotTableOptions }) => {
 
 NumericLegendset.story = {
     name: 'Numeric with legendset',
-}
-
-export const Numeric = (_, { pivotTableOptions }) => {
-    const visualization = {
-        ...numericVisualization,
-        ...visualizationReset,
-        ...pivotTableOptions,
-    }
-
-    return (
-        <div style={{ width: 800, height: 600 }}>
-            <PivotTable data={numericData} visualization={visualization} />
-        </div>
-    )
-}
-
-NumericLegendset.story = {
-    name: 'Numeric',
 }
 
 export const Boolean = (_, { pivotTableOptions }) => {
