@@ -1,7 +1,7 @@
 {
-    "name": "Numeric",
-    "created": "2025-06-30T10:27:41.277",
-    "lastUpdated": "2025-06-30T10:27:41.277",
+    "name": "Boolean",
+    "created": "2025-07-02T10:27:50.483",
+    "lastUpdated": "2025-07-02T10:27:50.483",
     "translations": [],
     "createdBy": {
         "id": "xE7jOejl9FI",
@@ -43,12 +43,8 @@
     "dataElementDimensions": [
         {
             "dataElement": {
-                "name": "Age in years",
-                "id": "qrur9Dvnyt5"
-            },
-            "legendSet": {
-                "name": "Age 10y interval",
-                "id": "Yf6UHoPkdS6"
+                "name": "MCH BCG dose",
+                "id": "bx6fsa0t90x"
             }
         }
     ],
@@ -70,14 +66,15 @@
     "showDimensionLabels": true,
     "interpretations": [],
     "program": {
-        "incidentDateLabel": "Date of Discharge",
-        "id": "eBAyeGv0exc",
-        "name": "Inpatient morbidity and mortality"
+        "enrollmentDateLabel": "Date of enrollment",
+        "incidentDateLabel": "Date of birth",
+        "id": "IpHINAT79UW",
+        "name": "Child Programme"
     },
     "programStage": {
         "executionDateLabel": "Report date",
-        "id": "Zj7UnCAulEk",
-        "name": "Inpatient morbidity and mortality"
+        "id": "A03MvHHogjR",
+        "name": "Birth"
     },
     "dataType": "AGGREGATED_VALUES",
     "outputType": "EVENT",
@@ -113,8 +110,8 @@
             "items": [
                 {
                     "dimensionItemType": "PERIOD",
-                    "id": "LAST_3_MONTHS",
-                    "name": "LAST_3_MONTHS"
+                    "id": "LAST_6_MONTHS",
+                    "name": "LAST_6_MONTHS"
                 }
             ],
             "dimension": "pe"
@@ -124,12 +121,12 @@
         {
             "items": [],
             "programStage": {
-                "id": "Zj7UnCAulEk"
+                "id": "A03MvHHogjR"
             },
-            "dimension": "Zj7UnCAulEk.qrur9Dvnyt5"
+            "dimension": "A03MvHHogjR.bx6fsa0t90x"
         }
     ],
-    "displayName": "A1 numeric-legendset",
+    "displayName": "Boolean",
     "access": {
         "manage": true,
         "externalize": true,
@@ -153,13 +150,13 @@
             "code": "OU_525",
             "name": "Sierra Leone"
         },
-        "qrur9Dvnyt5": {
-            "uid": "qrur9Dvnyt5",
-            "code": "DE_3000003",
-            "name": "Age in years"
+        "bx6fsa0t90x": {
+            "uid": "bx6fsa0t90x",
+            "code": "DE_2006101",
+            "name": "MCH BCG dose"
         }
     },
-    "displayFormName": "A1 numeric-legendset",
-    "id": "kNl4fqsY9hJ",
+    "displayFormName": "Boolean",
+    "id": "xLPn5T11Vd4",
     "attributeValues": []
 }

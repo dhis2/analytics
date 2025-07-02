@@ -1,6 +1,8 @@
 import { Checkbox, Divider } from '@dhis2/ui'
 import React, { useState } from 'react'
 import { PivotTable } from '../index.js'
+import booleanData from './data/event/boolean.data.json'
+import booleanVisualization from './data/event/boolean.visualization.json'
 import numericLegendsetData from './data/event/numeric-legendset.data.json'
 import numericLegendsetVisualization from './data/event/numeric-legendset.visualization.json'
 import numericData from './data/event/numeric.data.json'
@@ -91,5 +93,23 @@ export const Numeric = (_, { pivotTableOptions }) => {
 }
 
 NumericLegendset.story = {
-    name: 'Numeric with legendset',
+    name: 'Numeric',
+}
+
+export const Boolean = (_, { pivotTableOptions }) => {
+    const visualization = {
+        ...booleanVisualization,
+        ...visualizationReset,
+        ...pivotTableOptions,
+    }
+
+    return (
+        <div style={{ width: 800, height: 600 }}>
+            <PivotTable data={booleanData} visualization={visualization} />
+        </div>
+    )
+}
+
+Boolean.story = {
+    name: 'Boolean',
 }
