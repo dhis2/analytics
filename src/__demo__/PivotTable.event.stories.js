@@ -7,6 +7,8 @@ import numericLegendsetData from './data/event/numeric-legendset.data.json'
 import numericLegendsetVisualization from './data/event/numeric-legendset.visualization.json'
 import numericData from './data/event/numeric.data.json'
 import numericVisualization from './data/event/numeric.visualization.json'
+import yesonlyData from './data/event/yesonly.data.json'
+import yesonlyVisualization from './data/event/yesonly.visualization.json'
 
 const visualizationReset = {
     colTotals: false,
@@ -111,5 +113,23 @@ export const Boolean = (_, { pivotTableOptions }) => {
 }
 
 Boolean.story = {
+    name: 'Boolean',
+}
+
+export const Yesonly = (_, { pivotTableOptions }) => {
+    const visualization = {
+        ...yesonlyVisualization,
+        ...visualizationReset,
+        ...pivotTableOptions,
+    }
+
+    return (
+        <div style={{ width: 800, height: 600 }}>
+            <PivotTable data={yesonlyData} visualization={visualization} />
+        </div>
+    )
+}
+
+Yesonly.story = {
     name: 'Boolean',
 }

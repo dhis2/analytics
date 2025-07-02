@@ -1,0 +1,179 @@
+{
+    "headers": [
+        {
+            "name": "jfuXZB3A1ko.hwG20Dyj6RK",
+            "column": "E2E - Yes only",
+            "valueType": "TRUE_ONLY",
+            "type": "java.lang.Boolean",
+            "hidden": false,
+            "meta": true
+        },
+        {
+            "name": "ou",
+            "column": "Organisation unit",
+            "valueType": "TEXT",
+            "type": "java.lang.String",
+            "hidden": false,
+            "meta": true
+        },
+        {
+            "name": "pe",
+            "column": "Period",
+            "valueType": "TEXT",
+            "type": "java.lang.String",
+            "hidden": false,
+            "meta": true
+        },
+        {
+            "name": "value",
+            "column": "Value",
+            "valueType": "NUMBER",
+            "type": "java.lang.Double",
+            "hidden": false,
+            "meta": false
+        }
+    ],
+    "metaData": {
+        "items": {
+            "202407": {
+                "name": "July 2024"
+            },
+            "202408": {
+                "name": "August 2024"
+            },
+            "202409": {
+                "name": "September 2024"
+            },
+            "202410": {
+                "name": "October 2024"
+            },
+            "202411": {
+                "name": "November 2024"
+            },
+            "202412": {
+                "name": "December 2024"
+            },
+            "202501": {
+                "name": "January 2025"
+            },
+            "202502": {
+                "name": "February 2025"
+            },
+            "202503": {
+                "name": "March 2025"
+            },
+            "202504": {
+                "name": "April 2025"
+            },
+            "202505": {
+                "name": "May 2025"
+            },
+            "202506": {
+                "name": "June 2025"
+            },
+            "jfuXZB3A1ko": {
+                "name": "Stage 1 - Repeatable"
+            },
+            "hwG20Dyj6RK": {
+                "name": "E2E - Yes only"
+            },
+            "jfuXZB3A1ko.hwG20Dyj6RK": {
+                "name": "E2E - Yes only"
+            },
+            "ou": {
+                "name": "Organisation unit"
+            },
+            "J1QQtmzqhJz": {
+                "name": "E2E program"
+            },
+            "LAST_12_MONTHS": {
+                "name": "Last 12 months"
+            },
+            "ImspTQPwCqd": {
+                "name": "Sierra Leone"
+            },
+            "pe": {
+                "name": "Period"
+            },
+            "jfuXZB3A1ko.hwG20Dyj6RK:1": {
+                "name": "Yes"
+            }
+        },
+        "dimensions": {
+            "pe": [
+                "202407",
+                "202408",
+                "202409",
+                "202410",
+                "202411",
+                "202412",
+                "202501",
+                "202502",
+                "202503",
+                "202504",
+                "202505",
+                "202506"
+            ],
+            "ou": [
+                "ImspTQPwCqd"
+            ],
+            "jfuXZB3A1ko.hwG20Dyj6RK": [
+                "jfuXZB3A1ko.hwG20Dyj6RK:1"
+            ]
+        }
+    },
+    "rowContext": {},
+    "width": 4,
+    "rows": [
+        [
+            "",
+            "ImspTQPwCqd",
+            "202412",
+            "1"
+        ],
+        [
+            "",
+            "ImspTQPwCqd",
+            "202503",
+            "2"
+        ],
+        [
+            "",
+            "ImspTQPwCqd",
+            "202504",
+            "1"
+        ],
+        [
+            "",
+            "ImspTQPwCqd",
+            "202502",
+            "1"
+        ],
+        [
+            "jfuXZB3A1ko.hwG20Dyj6RK:1",
+            "ImspTQPwCqd",
+            "202501",
+            "1"
+        ],
+        [
+            "",
+            "ImspTQPwCqd",
+            "202501",
+            "2"
+        ],
+        [
+            "jfuXZB3A1ko.hwG20Dyj6RK:1",
+            "ImspTQPwCqd",
+            "202412",
+            "3"
+        ],
+        [
+            "",
+            "ImspTQPwCqd",
+            "202411",
+            "1"
+        ]
+    ],
+    "height": 8,
+    "headerWidth": 4
+}
