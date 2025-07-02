@@ -59,36 +59,6 @@ export default {
     decorators: [PivotTableOptionsWrapper],
 }
 
-
-const getNumericItems = (rows, index) => [...new Set(rows.map(r => r[index]))].sort((a, b) => Number(a) - Number(b));
-
-const getItemMetadata = items => items.reduce((md, item) => {
-    md[item] = {
-        name: item
-    }
-    return md
-}, {})
-
-const collectAndAddMetadata = (data, index) => {
-    const modifiedData = {
-        ...data
-    }
-
-    const headerId = data.headers[index].name
-
-    // collect values and use as items
-    const numericItems = getNumericItems(modifiedData.rows, index)
-    modifiedData.metaData.dimensions[headerId] = numericItems
-
-    // add metadata for numeric items
-    modifiedData.metaData.items = {
-        ...modifiedData.metaData.items,
-        ...getItemMetadata(numericItems)
-    }
-
-    return modifiedData
-}
-
 export const NumericLegendset = (_, { pivotTableOptions }) => {
     const visualization = {
         ...numericLegendsetVisualization,
@@ -115,7 +85,7 @@ export const Numeric = (_, { pivotTableOptions }) => {
 
     return (
         <div style={{ width: 800, height: 600 }}>
-            <PivotTable data={collectAndAddMetadata(numericData, 0)} visualization={visualization} />
+            <PivotTable data={numericData} visualization={visualization} />
         </div>
     )
 }
