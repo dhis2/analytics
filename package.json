@@ -31,10 +31,10 @@
     },
     "devDependencies": {
         "@dhis2/app-runtime": "^3.14.1",
-        "@dhis2/cli-app-scripts": "^12.6.3",
+        "@dhis2/cli-app-scripts": "^12.6.4",
         "@dhis2/cli-style": "^10.7.9",
         "@dhis2/d2-i18n": "^1.1.0",
-        "@dhis2/ui": "^10.1.9",
+        "@dhis2/ui": "^10.7.7",
         "@mihkeleidast/storybook-addon-source": "^1.0.1",
         "@storybook/preset-create-react-app": "^8.3.6",
         "@storybook/react": "^8.3.6",
