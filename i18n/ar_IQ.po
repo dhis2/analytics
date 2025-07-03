@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2024-12-19T10:28:15.132Z\n"
+"POT-Creation-Date: 2025-04-15T13:34:54.995Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: KRG HIS <antonia.bezenchek@informa.pro>, 2025\n"
 "Language-Team: Arabic (Iraq) (https://app.transifex.com/hisp-uio/teams/100509/ar_IQ/)\n"
@@ -160,21 +160,6 @@ msgstr ""
 msgid "Math operators"
 msgstr ""
 
-msgid "Data Type"
-msgstr ""
-
-msgid "Only {{dataType}} can be used in {{visType}}"
-msgstr ""
-
-msgid "All types"
-msgstr ""
-
-msgid "Disaggregation"
-msgstr ""
-
-msgid "No data"
-msgstr ""
-
 msgid "Expression description"
 msgstr ""
 
@@ -319,13 +304,58 @@ msgstr ""
 msgid "Filter"
 msgstr ""
 
+msgid "All available options are already selected"
+msgstr ""
+
+msgid "No available options for this item"
+msgstr ""
+
+msgid "Search by option name"
+msgstr ""
+
+msgid "Back to all items"
+msgstr ""
+
+msgid "Options"
+msgstr "الخيارات"
+
+msgid "Selected items"
+msgstr ""
+
+msgid "Data Type"
+msgstr ""
+
+msgid "Only {{dataType}} can be used in {{visType}}"
+msgstr ""
+
+msgid "All types"
+msgstr ""
+
+msgid "Disaggregation"
+msgstr ""
+
+msgid "No data"
+msgstr ""
+
 msgid "Search by data item name"
 msgstr ""
 
-msgid "No items selected"
+msgid "Selected Items"
 msgstr ""
 
-msgid "Selected Items"
+msgid "All available items are already selected"
+msgstr ""
+
+msgid "Calculation"
+msgstr ""
+
+msgid "Metric type"
+msgstr ""
+
+msgid "All metrics"
+msgstr ""
+
+msgid "No items selected"
 msgstr ""
 
 msgid "No indicators found"
@@ -361,13 +391,7 @@ msgstr ""
 msgid "Nothing found for \"{{- searchTerm}}\""
 msgstr ""
 
-msgid "Calculation"
-msgstr ""
-
-msgid "Metric type"
-msgstr ""
-
-msgid "All metrics"
+msgid "Click to choose from available options"
 msgstr ""
 
 msgid "Move to {{axisName}}"
@@ -419,9 +443,6 @@ msgstr ""
 
 msgid "Search"
 msgstr "البحث"
-
-msgid "Nothing found for {{- searchTerm}}"
-msgstr ""
 
 msgid "Delete {{fileType}}"
 msgstr ""
@@ -491,6 +512,9 @@ msgid "map"
 msgstr ""
 
 msgid "visualization"
+msgstr ""
+
+msgid "Untitled {{visualizationType}}, {{date}}"
 msgstr ""
 
 msgid "Edit"
@@ -706,9 +730,6 @@ msgstr ""
 
 msgid "New line list"
 msgstr ""
-
-msgid "Options"
-msgstr "الخيارات"
 
 msgid "Hide"
 msgstr "إخفاء"
@@ -1148,6 +1169,9 @@ msgstr ""
 msgid "Calculations"
 msgstr ""
 
+msgid "Option"
+msgstr ""
+
 msgid "Number"
 msgstr ""
 
@@ -1390,6 +1414,9 @@ msgstr ""
 
 msgid "All charts"
 msgstr ""
+
+msgid "Map"
+msgstr "الخريطة"
 
 msgid "{{seriesName}} (trend)"
 msgstr ""

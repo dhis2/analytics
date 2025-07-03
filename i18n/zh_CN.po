@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2025-03-18T12:46:14.410Z\n"
+"POT-Creation-Date: 2025-04-15T13:34:54.995Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: easylin <lin_xd@126.com>, 2025\n"
 "Language-Team: Chinese (China) (https://app.transifex.com/hisp-uio/teams/100509/zh_CN/)\n"
@@ -349,7 +349,7 @@ msgid "Metric type"
 msgstr ""
 
 msgid "All metrics"
-msgstr ""
+msgstr "所有尺度"
 
 msgid "No items selected"
 msgstr ""
@@ -403,7 +403,7 @@ msgid "Remove Assigned Categories"
 msgstr ""
 
 msgid "Add Assigned Categories"
-msgstr ""
+msgstr "添加指定的分类"
 
 msgid "Remove"
 msgstr "移除"
@@ -421,7 +421,7 @@ msgid "Dimension recommended with selected data"
 msgstr ""
 
 msgid "All items"
-msgstr ""
+msgstr "所有条目"
 
 msgid "Automatically include all items"
 msgstr ""
@@ -441,7 +441,7 @@ msgid "Search"
 msgstr "搜索"
 
 msgid "Delete {{fileType}}"
-msgstr ""
+msgstr "删除{{fileType}}"
 
 msgid ""
 "This {{fileType}} and related interpretations will be deleted. Continue?"
@@ -510,6 +510,9 @@ msgstr ""
 msgid "visualization"
 msgstr ""
 
+msgid "Untitled {{visualizationType}}, {{date}}"
+msgstr ""
+
 msgid "Edit"
 msgstr "编辑"
 
@@ -569,7 +572,7 @@ msgid "View replies"
 msgstr ""
 
 msgid "Unlike"
-msgstr ""
+msgstr "不喜欢"
 
 msgid "Like"
 msgstr "Like"
@@ -593,7 +596,7 @@ msgid "Enter interpretation text"
 msgstr ""
 
 msgid "Not available offline"
-msgstr ""
+msgstr "离线不可用"
 
 msgid "Anyone"
 msgstr "任何人"
@@ -771,10 +774,10 @@ msgid "Selected Periods"
 msgstr ""
 
 msgid "Relative periods"
-msgstr ""
+msgstr "相对期间"
 
 msgid "Fixed periods"
-msgstr ""
+msgstr "固定期间"
 
 msgid "No periods selected"
 msgstr ""
@@ -969,10 +972,10 @@ msgid "Months"
 msgstr "月"
 
 msgid "Bi-months"
-msgstr ""
+msgstr "俩月"
 
 msgid "Quarters"
-msgstr ""
+msgstr "季节"
 
 msgid "Six-months"
 msgstr ""
@@ -1035,7 +1038,7 @@ msgid "Could not load translations"
 msgstr ""
 
 msgid "Retry"
-msgstr ""
+msgstr "重试"
 
 msgid "Too many results. Try refining the search."
 msgstr ""
@@ -1050,7 +1053,7 @@ msgid "No results found"
 msgstr "没有结果"
 
 msgid "Series"
-msgstr ""
+msgstr "系列"
 
 msgid "Category"
 msgstr "分类"
@@ -1188,7 +1191,7 @@ msgid "Left"
 msgstr "左"
 
 msgid "Center"
-msgstr ""
+msgstr "居中"
 
 msgid "Right"
 msgstr "右"
@@ -1388,6 +1391,9 @@ msgstr ""
 msgid "All charts"
 msgstr ""
 
+msgid "Map"
+msgstr "地图"
+
 msgid "{{seriesName}} (trend)"
 msgstr ""
 
@@ -1407,10 +1413,10 @@ msgid "Target"
 msgstr "目标"
 
 msgid "Base"
-msgstr ""
+msgstr "基"
 
 msgid "Axis {{axisId}}"
-msgstr ""
+msgstr "轴{{axisId}}"
 
 msgid "{{count}} items"
 msgid_plural "{{count}} items"
