@@ -14,8 +14,10 @@ import { SourceEmptyPlaceholder } from '../DataDimension/SourceEmptyPlaceholder.
 import styles from '../styles/DimensionSelector.style.js'
 import { TransferOption } from '../TransferOption.js'
 
+const SELECTED_ITEMS_PROP_DEFAULT = []
+
 const ItemSelector = ({
-    selectedItems,
+    selectedItems = SELECTED_ITEMS_PROP_DEFAULT,
     noItemsMessage,
     onFetch,
     onSelect,
@@ -155,10 +157,6 @@ ItemSelector.propTypes = {
             value: PropTypes.string.isRequired,
         })
     ),
-}
-
-ItemSelector.defaultProps = {
-    selectedItems: [],
 }
 
 export default ItemSelector

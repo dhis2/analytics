@@ -18,13 +18,18 @@ const LoadingMask = () => {
     )
 }
 
-const CacheableSectionWrapper = ({ id, children, isParentCached }) => {
+const CacheableSectionWrapper = ({ id, children, isParentCached = false }) => {
     const { startRecording, isCached, remove } = useCacheableSection(id)
 
     useEffect(() => {
-        if (isParentCached && !isCached) {
+        const shouldStartRecording = isParentCached && !isCached
+        const shouldRemove = !isParentCached && isCached
+
+        if (shouldStartRecording) {
             startRecording({ onError: console.error })
-        } else if (!isParentCached && isCached) {
+        }
+
+        if (shouldRemove) {
             // Synchronize cache state on load or prop update
             // -- a back-up to imperative `removeCachedData`
             remove()
@@ -45,10 +50,10 @@ CacheableSectionWrapper.propTypes = {
 }
 
 export const DashboardPluginWrapper = ({
-    onInstallationStatusChange,
+    onInstallationStatusChange = Function.prototype,
     children,
     cacheId,
-    isParentCached,
+    isParentCached = false,
     ...props
 }) => {
     const { pwaEnabled } = useConfig()
@@ -81,11 +86,6 @@ export const DashboardPluginWrapper = ({
             <CssVariables colors spacers elevations />
         </div>
     ) : null
-}
-
-DashboardPluginWrapper.defaultProps = {
-    isParentCached: false,
-    onInstallationStatusChange: Function.prototype,
 }
 
 DashboardPluginWrapper.propTypes = {

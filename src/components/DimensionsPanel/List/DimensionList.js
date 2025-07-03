@@ -9,6 +9,13 @@ import DimensionItem from './DimensionItem.js'
 import styles from './styles/DimensionList.style.js'
 
 class DimensionList extends Component {
+    static defaultProps = {
+        selectedIds: [],
+        disabledDimension: Function.prototype,
+        lockedDimension: Function.prototype,
+        recommendedDimension: Function.prototype,
+    }
+
     nameContainsFilterText = (dimension) =>
         dimension.name
             .toLowerCase()
@@ -92,13 +99,6 @@ DimensionList.propTypes = {
     onDimensionClick: PropTypes.func,
     onDimensionDragStart: PropTypes.func,
     onDimensionOptionsClick: PropTypes.func,
-}
-
-DimensionList.defaultProps = {
-    selectedIds: [],
-    disabledDimension: Function.prototype,
-    lockedDimension: Function.prototype,
-    recommendedDimension: Function.prototype,
 }
 
 export default DimensionList

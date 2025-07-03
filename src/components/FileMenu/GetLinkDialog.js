@@ -34,6 +34,7 @@ export const GetLinkDialog = ({ type, id, onClose }) => {
                         icon={<IconCopy24 />}
                         small
                         onClick={() => navigator.clipboard.writeText(appUrl)}
+                        aria-label={i18n.t('Copy to clipboard')}
                     />
                 </div>
             </ModalContent>

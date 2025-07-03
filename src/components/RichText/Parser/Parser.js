@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 import React, { useMemo } from 'react'
 import { MdParser } from './MdParser.js'
 
-export const Parser = ({ children, style }) => {
+export const Parser = ({ children, style = null }) => {
     const MdParserInstance = useMemo(() => new MdParser(), [])
 
     return children ? (
@@ -13,10 +13,6 @@ export const Parser = ({ children, style }) => {
             }}
         />
     ) : null
-}
-
-Parser.defaultProps = {
-    style: null,
 }
 
 Parser.propTypes = {
