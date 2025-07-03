@@ -20,10 +20,12 @@ import ItemSelector from './ItemSelector/ItemSelector.js'
 
 const DataDimensionCtx = createContext({})
 
+const SELECTED_DIMENSIONS_PROP_DEFAULT = []
+
 const DataDimension = ({
     currentUser,
-    onSelect,
-    selectedDimensions,
+    onSelect = Function.prototype,
+    selectedDimensions = SELECTED_DIMENSIONS_PROP_DEFAULT,
     displayNameProp,
     enabledDataTypes,
     infoBoxMessage,
@@ -173,11 +175,6 @@ DataDimension.propTypes = {
     infoBoxMessage: PropTypes.string,
     visType: PropTypes.string,
     onCalculationSave: PropTypes.func,
-}
-
-DataDimension.defaultProps = {
-    selectedDimensions: [],
-    onSelect: Function.prototype,
 }
 
 export const useDataDimensionContext = () => useContext(DataDimensionCtx)

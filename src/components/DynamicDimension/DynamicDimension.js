@@ -9,10 +9,12 @@ import styles from './styles/DynamicDimension.style.js'
 
 export const ALL_DYNAMIC_DIMENSION_ITEMS = 'ALL_ITEMS'
 
+const SELECTED_ITEMS_PROP_DEFAULT = []
+
 export const DynamicDimension = ({
     dimensionId,
-    onSelect,
-    selectedItems,
+    onSelect = Function.prototype,
+    selectedItems = SELECTED_ITEMS_PROP_DEFAULT,
     rightFooter,
     dimensionTitle,
     displayNameProp,
@@ -132,11 +134,6 @@ DynamicDimension.propTypes = {
     ).isRequired,
     onSelect: PropTypes.func.isRequired,
     rightFooter: PropTypes.node,
-}
-
-DynamicDimension.defaultProps = {
-    selectedItems: [],
-    onSelect: Function.prototype,
 }
 
 export default DynamicDimension

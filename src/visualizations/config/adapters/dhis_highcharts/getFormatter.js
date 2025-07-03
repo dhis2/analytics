@@ -1,4 +1,4 @@
-import isNumeric from 'd2-utilizr/lib/isNumeric'
+import { isNumeric } from '../../../../modules/utils.js'
 
 export default function (axis) {
     const decimals = axis.decimals

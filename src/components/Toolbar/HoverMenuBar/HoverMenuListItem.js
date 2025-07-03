@@ -12,7 +12,7 @@ const HoverMenuListItem = ({
     className,
     destructive,
     disabled,
-    dataTest,
+    dataTest = 'dhis2-uicore-hovermenulistitem',
     label,
 }) => {
     const ref = useRef()
@@ -69,10 +69,6 @@ const HoverMenuListItem = ({
             )}
         </>
     )
-}
-
-HoverMenuListItem.defaultProps = {
-    dataTest: 'dhis2-uicore-hovermenulistitem',
 }
 
 HoverMenuListItem.propTypes = {

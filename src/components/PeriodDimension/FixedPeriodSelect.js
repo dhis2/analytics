@@ -11,6 +11,11 @@ import {
 } from './utils/fixedPeriods.js'
 
 class FixedPeriodSelect extends Component {
+    static defaultProps = {
+        dataTest: 'dhis2-analytics-fixedperiodselect',
+        value: '',
+    }
+
     state = {
         periodType: '',
         year: '',
@@ -93,11 +98,6 @@ class FixedPeriodSelect extends Component {
             </div>
         )
     }
-}
-
-FixedPeriodSelect.defaultProps = {
-    dataTest: 'dhis2-analytics-fixedperiodselect',
-    value: '',
 }
 
 FixedPeriodSelect.propTypes = {

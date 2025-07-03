@@ -44,8 +44,8 @@ export const InterpretationsUnit = forwardRef(
             currentUser,
             type,
             id,
-            visualizationHasTimeDimension,
-            onInterpretationClick,
+            visualizationHasTimeDimension = true,
+            onInterpretationClick = Function.prototype,
             onReplyIconClick,
             disabled,
             renderId,
@@ -196,11 +196,6 @@ export const InterpretationsUnit = forwardRef(
 )
 
 InterpretationsUnit.displayName = 'InterpretationsUnit'
-
-InterpretationsUnit.defaultProps = {
-    onInterpretationClick: Function.prototype,
-    visualizationHasTimeDimension: true,
-}
 
 InterpretationsUnit.propTypes = {
     currentUser: PropTypes.object.isRequired,

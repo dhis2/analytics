@@ -71,6 +71,11 @@ describe('The FileMenu component ', () => {
                     userGroupAccesses: [],
                 },
             },
+            visualizations: {
+                pager: {
+                    page: 1,
+                },
+            },
         }
 
         return render(

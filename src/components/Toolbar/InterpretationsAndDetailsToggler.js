@@ -6,7 +6,7 @@ import menuButtonStyles from './MenuButton.styles.js'
 
 export const InterpretationsAndDetailsToggler = ({
     onClick,
-    dataTest,
+    dataTest = 'dhis2-analytics-interpretationsanddetailstoggler',
     disabled,
     isShowing,
 }) => (
@@ -21,10 +21,6 @@ export const InterpretationsAndDetailsToggler = ({
         `}</style>
     </button>
 )
-
-InterpretationsAndDetailsToggler.defaultProps = {
-    dataTest: 'dhis2-analytics-interpretationsanddetailstoggler',
-}
 
 InterpretationsAndDetailsToggler.propTypes = {
     onClick: PropTypes.func.isRequired,

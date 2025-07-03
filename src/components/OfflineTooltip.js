@@ -7,8 +7,8 @@ import React from 'react'
 import { styles } from './styles/OfflineTooltip.style.js'
 
 const OfflineTooltip = ({
-    disabledWhenOffline,
-    disabled,
+    disabledWhenOffline = true,
+    disabled = false,
     content,
     children,
 }) => {
@@ -44,11 +44,6 @@ OfflineTooltip.propTypes = {
     content: PropTypes.string,
     disabled: PropTypes.bool,
     disabledWhenOffline: PropTypes.bool,
-}
-
-OfflineTooltip.defaultProps = {
-    disabled: false,
-    disabledWhenOffline: true,
 }
 
 export { OfflineTooltip }

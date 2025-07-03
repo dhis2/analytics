@@ -35,14 +35,17 @@ const RightHeader = ({ infoBoxMessage }) => (
 RightHeader.propTypes = {
     infoBoxMessage: PropTypes.string,
 }
+const SELECTED_ITEMS_PROP_DEFAULT = []
+const EXCLUDED_PERIOD_TYPES_PROP_DEFAULT = []
+const PERIODS_SETTINGS_PROP_DEFAULT = { calendar: 'gregory', locale: 'en' }
 
 const PeriodTransfer = ({
     onSelect,
     dataTest,
-    selectedItems,
+    selectedItems = SELECTED_ITEMS_PROP_DEFAULT,
     rightFooter,
-    excludedPeriodTypes,
-    periodsSettings,
+    excludedPeriodTypes = EXCLUDED_PERIOD_TYPES_PROP_DEFAULT,
+    periodsSettings = PERIODS_SETTINGS_PROP_DEFAULT,
     infoBoxMessage,
     height = TRANSFER_HEIGHT,
 }) => {
@@ -219,15 +222,6 @@ const PeriodTransfer = ({
             dataTest={`${dataTest}-transfer`}
         ></Transfer>
     )
-}
-
-PeriodTransfer.defaultProps = {
-    selectedItems: [],
-    excludedPeriodTypes: [],
-    periodsSettings: {
-        calendar: 'gregory',
-        locale: 'en',
-    },
 }
 
 PeriodTransfer.propTypes = {
