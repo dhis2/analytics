@@ -1,14 +1,14 @@
 # 
 # Translators:
-# Yury Rogachev <yury@dhis2.org>, 2025
 # Khurshid Ibatov <x.ibatov@dtsj.uz>, 2025
+# Yury Rogachev <yury@dhis2.org>, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2025-04-15T13:34:54.995Z\n"
+"POT-Creation-Date: 2025-06-26T14:58:42.001Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Khurshid Ibatov <x.ibatov@dtsj.uz>, 2025\n"
+"Last-Translator: Yury Rogachev <yury@dhis2.org>, 2025\n"
 "Language-Team: Uzbek (Latin) (https://app.transifex.com/hisp-uio/teams/100509/uz@Latn/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -482,6 +482,9 @@ msgstr ""
 
 msgid "Open in this app"
 msgstr "Ushbu ilovada oching"
+
+msgid "Copy to clipboard"
+msgstr "Buferga nusxa olish"
 
 msgid "Close"
 msgstr "Yopmoq"
@@ -1423,4 +1426,8 @@ msgid_plural "{{count}} items"
 msgstr[0] ""
 
 msgid "Reset zoom"
+msgstr ""
+
+msgctxt "Application title"
+msgid "__MANIFEST_APP_TITLE"
 msgstr ""
