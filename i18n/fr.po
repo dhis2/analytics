@@ -1,6 +1,5 @@
 # 
 # Translators:
-# Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2021
 # Yayra Gomado <ygomado@hispwca.org>, 2025
 # Elise Desailly, 2025
 # Karoline Tufte Lien <karoline@dhis2.org>, 2025
@@ -10,13 +9,14 @@
 # Yao Selom SAKA (HISP WCA) <ysaka@hispwca.org>, 2025
 # Philip Larsen Donnelly, 2025
 # Viktor Varland <viktor@dhis2.org>, 2025
+# Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2025-04-15T13:34:54.995Z\n"
+"POT-Creation-Date: 2025-06-26T14:58:42.001Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2025\n"
+"Last-Translator: Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2025\n"
 "Language-Team: French (https://app.transifex.com/hisp-uio/teams/100509/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -496,6 +496,9 @@ msgstr "Obtenir le lien..."
 
 msgid "Open in this app"
 msgstr "Ouvrir dans cette app"
+
+msgid "Copy to clipboard"
+msgstr "Copier dans le presse-papier"
 
 msgid "Close"
 msgstr "Fermer"
@@ -1450,3 +1453,7 @@ msgstr[2] ""
 
 msgid "Reset zoom"
 msgstr "Réinitialiser le zoom"
+
+msgctxt "Application title"
+msgid "__MANIFEST_APP_TITLE"
+msgstr ""

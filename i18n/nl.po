@@ -10,7 +10,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2025-03-18T12:46:14.410Z\n"
+"POT-Creation-Date: 2025-06-26T14:58:42.001Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: Charel van den Elsen <zobeadzorg@gmail.com>, 2025\n"
 "Language-Team: Dutch (https://app.transifex.com/hisp-uio/teams/100509/nl/)\n"
@@ -496,6 +496,9 @@ msgstr "Krijg link…"
 msgid "Open in this app"
 msgstr "Openen in deze app"
 
+msgid "Copy to clipboard"
+msgstr "Kopieer naar klembord"
+
 msgid "Close"
 msgstr "Sluit"
 
@@ -522,6 +525,9 @@ msgstr "kaart"
 
 msgid "visualization"
 msgstr "visualisatie"
+
+msgid "Untitled {{visualizationType}}, {{date}}"
+msgstr ""
 
 msgid "Edit"
 msgstr "Bewerk"
@@ -1429,6 +1435,9 @@ msgstr ""
 msgid "All charts"
 msgstr "Alle grafieken"
 
+msgid "Map"
+msgstr ""
+
 msgid "{{seriesName}} (trend)"
 msgstr "{{seriesName}} (trend)"
 
@@ -1460,3 +1469,7 @@ msgstr[1] "{{count}} artikelen"
 
 msgid "Reset zoom"
 msgstr "Zoom resetten"
+
+msgctxt "Application title"
+msgid "__MANIFEST_APP_TITLE"
+msgstr ""

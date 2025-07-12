@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2025-04-15T13:34:54.995Z\n"
+"POT-Creation-Date: 2025-06-26T14:58:42.001Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: Jiří Podhorecký <jirka.p@volny.cz>, 2025\n"
 "Language-Team: Czech (https://app.transifex.com/hisp-uio/teams/100509/cs/)\n"
@@ -492,6 +492,9 @@ msgstr "Získat odkaz ..."
 
 msgid "Open in this app"
 msgstr "Otevřít v této aplikaci"
+
+msgid "Copy to clipboard"
+msgstr "Zkopírovat do schránky"
 
 msgid "Close"
 msgstr "Zavřít"
@@ -1470,3 +1473,7 @@ msgstr[3] "{{count}} položek"
 
 msgid "Reset zoom"
 msgstr "Obnovit přiblížení"
+
+msgctxt "Application title"
+msgid "__MANIFEST_APP_TITLE"
+msgstr ""
