@@ -1432,4 +1432,4 @@ msgstr "重设缩放"
 
 msgctxt "Application title"
 msgid "__MANIFEST_APP_TITLE"
-msgstr ""
+msgstr "@dhis2/analytics"

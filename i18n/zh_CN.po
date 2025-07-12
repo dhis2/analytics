@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2025-04-15T13:34:54.995Z\n"
+"POT-Creation-Date: 2025-06-26T14:58:42.001Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: easylin <lin_xd@126.com>, 2025\n"
 "Language-Team: Chinese (China) (https://app.transifex.com/hisp-uio/teams/100509/zh_CN/)\n"
@@ -482,6 +482,9 @@ msgstr ""
 
 msgid "Open in this app"
 msgstr ""
+
+msgid "Copy to clipboard"
+msgstr "复制到剪贴板"
 
 msgid "Close"
 msgstr "关闭"
@@ -1423,4 +1426,8 @@ msgid_plural "{{count}} items"
 msgstr[0] ""
 
 msgid "Reset zoom"
+msgstr ""
+
+msgctxt "Application title"
+msgid "__MANIFEST_APP_TITLE"
 msgstr ""
