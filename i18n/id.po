@@ -12,7 +12,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2025-04-15T13:34:54.995Z\n"
+"POT-Creation-Date: 2025-06-26T14:58:42.001Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: Untoro Dwi Raharjo <untoro.dwi.raharjo@mail.ugm.ac.id>, 2025\n"
 "Language-Team: Indonesian (https://app.transifex.com/hisp-uio/teams/100509/id/)\n"
@@ -488,6 +488,9 @@ msgstr "Dapatkan tautan…"
 
 msgid "Open in this app"
 msgstr "Buka di aplikasi ini"
+
+msgid "Copy to clipboard"
+msgstr "Menyalin ke clipboard"
 
 msgid "Close"
 msgstr "Tutup"
@@ -1443,3 +1446,7 @@ msgstr[0] ""
 
 msgid "Reset zoom"
 msgstr "Setel ulang zoom"
+
+msgctxt "Application title"
+msgid "__MANIFEST_APP_TITLE"
+msgstr ""
