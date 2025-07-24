@@ -1,9 +1,9 @@
-import '@testing-library/jest-dom'
-import { render, fireEvent, screen, within } from '@testing-library/react'
+import { render, screen, within } from '@testing-library/react'
+import userEvent from '@testing-library/user-event'
 import React from 'react'
 import { RenameDialog } from '../RenameDialog.js'
 
-describe('The FileMenu - RenameDialog component', () => {
+describe('FileMenu - RenameDialog component', () => {
     const onClose = jest.fn()
     const onRename = jest.fn()
     const props = {
@@ -20,7 +20,7 @@ describe('The FileMenu - RenameDialog component', () => {
         jest.clearAllMocks()
     })
 
-    it('renders a Modal component with the correct heading', () => {
+    test('renders a Modal component with the correct heading', () => {
         render(<RenameDialog {...props} />)
         expect(screen.getAllByTestId('file-menu-rename-modal')).toHaveLength(1)
         expect(screen.getByRole('heading')).toHaveTextContent(
@@ -28,7 +28,7 @@ describe('The FileMenu - RenameDialog component', () => {
         )
     })
 
-    it('renders a InputField for name', () => {
+    test('renders a InputField for name', () => {
         render(<RenameDialog {...props} />)
         expect(
             screen.getByTestId('file-menu-rename-modal-name')
@@ -37,7 +37,7 @@ describe('The FileMenu - RenameDialog component', () => {
         expect(screen.getByText('Name')).toBeVisible()
     })
 
-    it('renders a InputField for name with prefilled value if name is in object prop', () => {
+    test('renders a InputField for name with prefilled value if name is in object prop', () => {
         render(
             <RenameDialog
                 {...props}
@@ -54,7 +54,7 @@ describe('The FileMenu - RenameDialog component', () => {
         expect(inputElement).toHaveValue('Vis test')
     })
 
-    it('renders a TextAreaField for description', () => {
+    test('renders a TextAreaField for description', () => {
         render(<RenameDialog {...props} />)
 
         // Locate the label by its text
@@ -69,7 +69,7 @@ describe('The FileMenu - RenameDialog component', () => {
         expect(descriptionField).toBeVisible()
     })
 
-    it('renders a TextAreaField for description with prefilled value if description is in object prop', () => {
+    test('renders a TextAreaField for description with prefilled value if description is in object prop', () => {
         render(
             <RenameDialog
                 {...props}
@@ -94,21 +94,21 @@ describe('The FileMenu - RenameDialog component', () => {
         )
     })
 
-    it('calls the onClose callback when the Cancel button is clicked', async () => {
+    test('calls the onClose callback when the Cancel button is clicked', async () => {
+        const user = userEvent.setup()
+
         render(<RenameDialog {...props} />)
-        await fireEvent.click(
-            screen.getByTestId('file-menu-rename-modal-cancel')
-        )
+        await user.click(screen.getByRole('button', { name: 'Cancel' }))
 
         expect(onClose).toHaveBeenCalled()
         expect(onRename).not.toHaveBeenCalled()
     })
 
-    it('calls the onRename callback when the Rename button is clicked', async () => {
+    test('calls the onRename callback when the Rename button is clicked', async () => {
+        const user = userEvent.setup()
+
         render(<RenameDialog {...props} />)
-        await fireEvent.click(
-            screen.getByTestId('file-menu-rename-modal-rename')
-        )
+        await user.click(screen.getByRole('button', { name: 'Rename' }))
 
         expect(onRename).toHaveBeenCalled()
         expect(onClose).toHaveBeenCalled()

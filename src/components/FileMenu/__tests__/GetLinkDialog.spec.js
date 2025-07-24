@@ -1,5 +1,5 @@
-import { Button, Modal } from '@dhis2/ui'
-import { shallow } from 'enzyme'
+import { render, screen } from '@testing-library/react'
+import userEvent from '@testing-library/user-event'
 import React from 'react'
 import { GetLinkDialog } from '../GetLinkDialog.js'
 
@@ -51,29 +51,23 @@ const tests = [
     },
 ]
 
-describe('The FileMenu - GetLinkDialog component', () => {
-    let shallowGetLinkDialog
-
+describe('FileMenu - GetLinkDialog component', () => {
     const onClose = jest.fn()
 
-    const getGetLinkDialogComponent = (props) => {
-        if (!shallowGetLinkDialog) {
-            shallowGetLinkDialog = shallow(<GetLinkDialog {...props} />)
-        }
-        return shallowGetLinkDialog
+    const props = {
+        type: tests[0].type,
+        id: tests[0].id,
+        onClose,
     }
 
-    beforeEach(() => {
-        shallowGetLinkDialog = undefined
-    })
+    test('renders a Modal component', () => {
+        render(<GetLinkDialog {...props} />)
 
-    it('renders a Modal component', () => {
-        expect(
-            getGetLinkDialogComponent({
-                type: tests[0].type,
-                id: tests[0].id,
-            }).find(Modal)
-        ).toHaveLength(1)
+        const modalComponent = screen.getByTestId('dhis2-uicore-modal')
+
+        expect(modalComponent).toBeInTheDocument()
+
+        expect(screen.getByLabelText('Close modal dialog')).toBeInTheDocument()
     })
 
     test.each(tests)(
@@ -84,28 +78,26 @@ describe('The FileMenu - GetLinkDialog component', () => {
                 baseUrl,
             })
 
-            const href = getGetLinkDialogComponent({
-                type,
-                id,
-                onClose,
-            })
-                .find('a')
-                .prop('href')
+            props.type = type
+            props.id = id
 
-            expect(href).toMatch(expected)
+            render(<GetLinkDialog {...props} />)
+
+            const anchorElement = screen.getByRole('link')
+
+            expect(anchorElement.href).toMatch(expected)
         }
     )
 
-    it('calls the onClose callback when the Close button is clicked', () => {
-        getGetLinkDialogComponent({
-            type: tests[0].type,
-            id: tests[0].id,
-            onClose,
-        })
-            .find(Button)
-            .at(1)
-            .simulate('click')
+    test('calls the onClose callback when the Close button is clicked', async () => {
+        const user = userEvent.setup()
 
-        expect(onClose).toHaveBeenCalled()
+        render(<GetLinkDialog {...props} />)
+
+        const closeButton = screen.getByRole('button', { name: 'Close' })
+
+        await user.click(closeButton)
+
+        expect(onClose).toHaveBeenCalledTimes(1)
     })
 })
