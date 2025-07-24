@@ -11,7 +11,11 @@ export const InterpretationsAndDetailsToggler = ({
     isShowing,
 }) => (
     <button onClick={onClick} disabled={disabled} data-test={dataTest}>
-        {isShowing ? <IconChevronRight24 /> : <IconChevronLeft24 />}
+        {isShowing ? (
+            <IconChevronRight24 dataTest={`${dataTest}-showing`} />
+        ) : (
+            <IconChevronLeft24 />
+        )}
         {i18n.t('Interpretations and details')}
         <style jsx>{menuButtonStyles}</style>
         <style jsx>{`
