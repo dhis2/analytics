@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<HoverMenuList/> accept a \`maxHeight\` prop 1`] = `
+<div>
+  <ul
+    data-test="test"
+  >
+    children
+    <style>
+      
+                    ul {
+                        position: relative;
+                        margin: 0;
+                        padding: 0;
+                        user-select: none;
+                        background: #ffffff;
+                        border: 1px solid #f3f5f7;
+                        border-radius: 3px;
+                        box-shadow: 0px 10px 15px -3px rgba(33,41,52,0.1), 0px 4px 6px -2px rgba(33,41,52,0.05);
+                        display: inline-block;
+                        min-width: 128px;
+                        max-width: 380px;
+                        max-height: 100000px;
+                        padding: 4px 0;
+                        overflow: auto;
+                        list-style: none;
+                    }
+                
+    </style>
+  </ul>
+</div>
+`;
+
+exports[`<HoverMenuList/> accept a \`maxWidth\` prop 1`] = `
+<div>
+  <ul
+    data-test="test"
+  >
+    children
+    <style>
+      
+                    ul {
+                        position: relative;
+                        margin: 0;
+                        padding: 0;
+                        user-select: none;
+                        background: #ffffff;
+                        border: 1px solid #f3f5f7;
+                        border-radius: 3px;
+                        box-shadow: 0px 10px 15px -3px rgba(33,41,52,0.1), 0px 4px 6px -2px rgba(33,41,52,0.05);
+                        display: inline-block;
+                        min-width: 128px;
+                        max-width: 100000px;
+                        max-height: auto;
+                        padding: 4px 0;
+                        overflow: auto;
+                        list-style: none;
+                    }
+                
+    </style>
+  </ul>
+</div>
+`;

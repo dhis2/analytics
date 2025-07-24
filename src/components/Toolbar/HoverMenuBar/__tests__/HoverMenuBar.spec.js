@@ -1,6 +1,5 @@
-import '@testing-library/jest-dom'
-import { render, fireEvent, screen } from '@testing-library/react'
-import { shallow } from 'enzyme'
+import { render, screen } from '@testing-library/react'
+import userEvent from '@testing-library/user-event'
 import React from 'react'
 import {
     HoverMenuBar,
@@ -10,25 +9,27 @@ import {
 } from '../index.js'
 
 describe('<HoverMenuBar/>', () => {
-    it('renders children', () => {
+    test('renders children', () => {
         const childNode = 'text node'
-        const wrapper = shallow(<HoverMenuBar>{childNode}</HoverMenuBar>)
+        render(<HoverMenuBar>{childNode}</HoverMenuBar>)
 
-        expect(wrapper.containsMatchingElement(childNode)).toBe(true)
+        expect(screen.getByText(childNode)).toBeInTheDocument()
     })
-    it('accepts a `dataTest` prop', () => {
-        const dataTest = 'test'
-        const wrapper = shallow(
-            <HoverMenuBar dataTest={dataTest}>children</HoverMenuBar>
-        )
 
-        expect(wrapper.find('div').prop('data-test')).toBe(dataTest)
+    test('accepts a `dataTest` prop', () => {
+        const dataTest = 'test'
+        render(<HoverMenuBar dataTest={dataTest}>children</HoverMenuBar>)
+
+        expect(screen.getByTestId(dataTest)).toBeInTheDocument()
     })
 
     describe('mouse interactions', () => {
-        it('does not open on hover before a dropdown anchor is clicked', async () => {
+        test('does not open on hover before a dropdown anchor is clicked', async () => {
+            const user = userEvent.setup()
+
             createFullMenuBarWrapper()
-            fireEvent.mouseOver(screen.getByText('Menu A'))
+
+            await user.hover(screen.getByText('Menu A'))
 
             await expectMenuItemsInDocument([
                 ['Menu item A.1', false],
@@ -36,9 +37,13 @@ describe('<HoverMenuBar/>', () => {
                 ['Menu item A.3', false],
             ])
         })
-        it('does not open when a disabled dropdown anchor is clicked', async () => {
+
+        test('does not open when a disabled dropdown anchor is clicked', async () => {
+            const user = userEvent.setup()
+
             createFullMenuBarWrapper()
-            fireEvent.click(screen.getByText('Menu C'))
+
+            await user.click(screen.getByText('Menu C'))
 
             await expectMenuItemsInDocument([
                 ['Menu item A.1', false],
@@ -46,9 +51,13 @@ describe('<HoverMenuBar/>', () => {
                 ['Menu item A.3', false],
             ])
         })
-        it('opens menu list when clicked', async () => {
+
+        test('opens menu list when clicked', async () => {
+            const user = userEvent.setup()
+
             createFullMenuBarWrapper()
-            fireEvent.click(screen.getByText('Menu A'))
+
+            await user.click(screen.getByText('Menu A'))
 
             await expectMenuItemsInDocument([
                 ['Menu item A.1', true],
@@ -56,10 +65,14 @@ describe('<HoverMenuBar/>', () => {
                 ['Menu item C.1', false],
             ])
         })
-        it('responds to hover once open', async () => {
+
+        test('responds to hover once open', async () => {
+            const user = userEvent.setup()
+
             createFullMenuBarWrapper()
-            fireEvent.click(screen.getByText('Menu A'))
-            fireEvent.mouseOver(screen.getByText('Menu B'))
+
+            await user.click(screen.getByText('Menu A'))
+            await user.hover(screen.getByText('Menu B'))
 
             await expectMenuItemsInDocument([
                 ['Menu item A.1', false],
@@ -67,20 +80,28 @@ describe('<HoverMenuBar/>', () => {
                 ['Menu item C.1', false],
             ])
         })
-        it('does not open disabled dropdown on hover in hover mode', async () => {
+
+        test('does not open disabled dropdown on hover in hover mode', async () => {
+            const user = userEvent.setup()
+
             createFullMenuBarWrapper()
-            fireEvent.click(screen.getByText('Menu B'))
-            fireEvent.mouseOver(screen.getByText('Menu C'))
+
+            await user.click(screen.getByText('Menu B'))
+            await user.hover(screen.getByText('Menu C'))
 
             await expectMenuItemsInDocument([
                 ['Menu item B.1', true],
                 ['Menu item C.1', false],
             ])
         })
-        it('opens submenus when in hover mode', async () => {
+
+        test('opens submenus when in hover mode', async () => {
+            const user = userEvent.setup()
+
             createFullMenuBarWrapper()
-            fireEvent.click(screen.getByText('Menu B'))
-            fireEvent.mouseOver(screen.getByText('Menu item B.1'))
+
+            await user.click(screen.getByText('Menu B'))
+            await user.hover(screen.getByText('Menu item B.1'))
 
             await expectMenuItemsInDocument([
                 ['Menu item B.1.1', true],
@@ -91,7 +112,7 @@ describe('<HoverMenuBar/>', () => {
                 ['Menu item B.2.3', false],
             ])
 
-            fireEvent.mouseOver(screen.getByText('Menu item B.2'))
+            await user.hover(screen.getByText('Menu item B.2'))
 
             await expectMenuItemsInDocument([
                 ['Menu item B.1.1', false],
@@ -102,10 +123,14 @@ describe('<HoverMenuBar/>', () => {
                 ['Menu item B.2.3', true],
             ])
         })
-        it('does not open disabled submenus when in hover mode', async () => {
+
+        test('does not open disabled submenus when in hover mode', async () => {
+            const user = userEvent.setup()
+
             createFullMenuBarWrapper()
-            fireEvent.click(screen.getByText('Menu B'))
-            fireEvent.mouseOver(screen.getByText('Menu item B.2'))
+
+            await user.click(screen.getByText('Menu B'))
+            await user.hover(screen.getByText('Menu item B.2'))
 
             await expectMenuItemsInDocument([
                 ['Menu item B.2.1', true],
@@ -116,7 +141,7 @@ describe('<HoverMenuBar/>', () => {
                 ['Menu item B.3.3', false],
             ])
 
-            fireEvent.mouseOver(screen.getByText('Menu item B.3'))
+            await user.hover(screen.getByText('Menu item B.3'))
 
             await expectMenuItemsInDocument([
                 ['Menu item B.2.1', true],
@@ -127,23 +152,31 @@ describe('<HoverMenuBar/>', () => {
                 ['Menu item B.3.3', false],
             ])
         })
-        it('closes when clicking on then document', async () => {
+
+        test('closes when clicking on then document', async () => {
+            const user = userEvent.setup()
+
             createFullMenuBarWrapper()
-            fireEvent.click(screen.getByText('Menu A'))
+
+            await user.click(screen.getByText('Menu A'))
 
             await expectMenuItemsInDocument([['Menu item A.1', true]])
 
-            fireEvent.click(document)
+            await user.click(document.body)
 
             await expectMenuItemsInDocument([['Menu item A.1', false]])
         })
-        it('stays open when clicking a open submenu anchor', async () => {
+
+        test('stays open when clicking a open submenu anchor', async () => {
+            const user = userEvent.setup()
+
             createFullMenuBarWrapper()
-            fireEvent.click(screen.getByText('Menu B'))
+
+            await user.click(screen.getByText('Menu B'))
 
             await expectMenuItemsInDocument([['Menu item B.1', true]])
 
-            fireEvent.mouseOver(screen.getByText('Menu item B.1'))
+            await user.hover(screen.getByText('Menu item B.1'))
 
             await expectMenuItemsInDocument([
                 ['Menu item B.1', true],
@@ -152,7 +185,7 @@ describe('<HoverMenuBar/>', () => {
                 ['Menu item B.1.3', true],
             ])
 
-            fireEvent.click(screen.getByText('Menu item B.1'))
+            await user.click(screen.getByText('Menu item B.1'))
 
             await expectMenuItemsInDocument([
                 ['Menu item B.1', true],
@@ -161,30 +194,36 @@ describe('<HoverMenuBar/>', () => {
                 ['Menu item B.1.3', true],
             ])
         })
-        it('calls the onClick of the menu item and closes when clicking a menu item', async () => {
+
+        test('calls the onClick of the menu item and closes when clicking a menu item', async () => {
+            const user = userEvent.setup()
             const menuItemOnClickSpy = jest.fn()
+
             createFullMenuBarWrapper({ menuItemOnClickSpy })
-            fireEvent.click(screen.getByText('Menu A'))
+
+            await user.click(screen.getByText('Menu A'))
 
             await expectMenuItemsInDocument([['Menu item A.1', true]])
 
-            fireEvent.click(screen.getByText('Menu item A.1'))
+            await user.click(screen.getByText('Menu item A.1'))
 
             expect(menuItemOnClickSpy).toHaveBeenCalledTimes(1)
             await expectMenuItemsInDocument([['Menu item A.1', false]])
         })
 
-        it('calls the onClick of the menu item and closes when clicking a submenu item', async () => {
+        test('calls the onClick of the menu item and closes when clicking a submenu item', async () => {
+            const user = userEvent.setup()
             const subMenuItemOnClickSpy = jest.fn()
+
             createFullMenuBarWrapper({ subMenuItemOnClickSpy })
 
-            fireEvent.click(screen.getByText('Menu B'))
+            await user.click(screen.getByText('Menu B'))
             await expectMenuItemsInDocument([['Menu item B.1', true]])
 
-            fireEvent.mouseOver(screen.getByText('Menu item B.1'))
+            await user.hover(screen.getByText('Menu item B.1'))
             await expectMenuItemsInDocument([['Menu item B.1.1', true]])
 
-            fireEvent.click(screen.getByText('Menu item B.1.1'))
+            await user.click(screen.getByText('Menu item B.1.1'))
 
             expect(subMenuItemOnClickSpy).toHaveBeenCalledTimes(1)
             await expectMenuItemsInDocument([
