@@ -1,44 +1,43 @@
-import { InputField } from '@dhis2/ui'
-import { shallow } from 'enzyme'
+import { render, screen } from '@testing-library/react'
+import userEvent from '@testing-library/user-event'
 import React from 'react'
 import Filter from '../Filter.js'
 
-describe('The Filter component ', () => {
-    let shallowFilter
-    let props
-    const filterComp = () => {
-        if (!shallowFilter) {
-            shallowFilter = shallow(<Filter {...props} />)
-        }
-        return shallowFilter
-    }
+const props = {
+    placeholder: 'testplaceholder',
+    text: '',
+    onChange: jest.fn(),
+    onClear: jest.fn(),
+}
 
-    beforeEach(() => {
-        props = {
-            placeholder: 'testplaceholder',
-            text: '',
-            onChange: jest.fn(),
-            onClear: jest.fn(),
-        }
-        shallowFilter = undefined
-    })
+test('Filter renders an InputField component ', () => {
+    render(<Filter {...props} />)
 
-    it('renders a InputField component', () => {
-        expect(filterComp().find(InputField).length).toEqual(1)
-    })
+    const inputField = screen.getByTestId('dhis2-uiwidgets-inputfield')
 
-    it('should call prop onClear if onChange receives text string with length < 1 (Ctrl-A  + BackSpace)', () => {
-        props.text = 'anotherTestString'
+    expect(inputField).toBeInTheDocument()
+})
 
-        const filter = filterComp().find(InputField)
+test('Filter renders an input field with the given placeholder', () => {
+    render(<Filter {...props} />)
 
-        const mockEvent = {
-            value: '',
-            preventDefault: jest.fn(),
-        }
+    const inputField = screen.getByPlaceholderText(props.placeholder)
 
-        filter.props().onChange(mockEvent)
+    expect(inputField).toBeInTheDocument()
+})
 
-        expect(props.onClear).toHaveBeenCalledTimes(1)
-    })
+test('Filter should call prop onClear if onChange receives text string with length < 1 (Ctrl-A  + BackSpace)', async () => {
+    const user = userEvent.setup()
+
+    props.text = 'anotherTestString'
+
+    render(<Filter {...props} />)
+
+    const inputField = screen.getByPlaceholderText(props.placeholder)
+
+    // focus on the input field in order to interact with it
+    await user.click(inputField)
+    await user.keyboard('{Control>}A{/Control}{Backspace}')
+
+    expect(props.onClear).toHaveBeenCalledTimes(1)
 })
