@@ -1,0 +1,164 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DimensionsPanel matches the snapshot 1`] = `
+<div>
+  <div
+    style="height: 100%; display: flex; flex-direction: column; background-color: rgb(255, 255, 255); padding: 8px; overflow: hidden;"
+  >
+    <div
+      class="container"
+    >
+      <div
+        class="jsx-1141087211 "
+        data-test="dhis2-uiwidgets-inputfield"
+      >
+        <div
+          class="jsx-3375842594 "
+          data-test="dhis2-uiwidgets-inputfield-content"
+        >
+          <div
+            class="jsx-1220078726 "
+            data-test="dhis2-uicore-box"
+          >
+            <div
+              class="jsx-4253951613 jsx-532002680 input"
+              data-test="dhis2-uicore-input"
+            >
+              <input
+                class="jsx-4253951613 jsx-532002680 dense"
+                placeholder="Filter dimensions"
+                type="search"
+                value=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <style />
+    </div>
+    <div
+      class="container"
+      data-test="dimension-list"
+    >
+      <div
+        class="wrapper"
+      >
+        <div
+          class="section"
+        >
+          <h3
+            class="header"
+          >
+            Your dimensions
+          </h3>
+          <ul
+            class="list"
+          >
+            <li
+              class="item"
+              data-test="dimension-item"
+              name="Dimension 1"
+            >
+              <div
+                class="label"
+                data-test="dimension-item-button-id1"
+                tabindex="0"
+              >
+                <div
+                  class="iconWrapper"
+                >
+                  <svg
+                    fill="none"
+                    height="16"
+                    width="16"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      clip-rule="evenodd"
+                      d="m4.832 5.674 2.831-1.11a.913.913 0 0 1 .673 0l2.83 1.11a.548.548 0 0 1 .334.517V9.81a.548.548 0 0 1-.332.517l-2.831 1.11a.92.92 0 0 1-.673 0l-2.83-1.11a.548.548 0 0 1-.334-.517V6.19a.548.548 0 0 1 .332-.517Z"
+                      stroke="#212934"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M8 7.228 4.822 5.982M8 7.228l3.178-1.246M8 11.281V7.228"
+                      stroke="#212934"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+                <div
+                  class="labelWrapper"
+                >
+                  <span
+                    class="labelText"
+                  >
+                    <span
+                      data-dimensionid="id1"
+                    >
+                      Dimension 1
+                    </span>
+                  </span>
+                </div>
+              </div>
+            </li>
+            <style />
+            <li
+              class="item"
+              data-test="dimension-item"
+              name="Dimension 2"
+            >
+              <div
+                class="label"
+                data-test="dimension-item-button-id2"
+                tabindex="0"
+              >
+                <div
+                  class="iconWrapper"
+                >
+                  <svg
+                    fill="none"
+                    height="16"
+                    width="16"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      clip-rule="evenodd"
+                      d="m4.832 5.674 2.831-1.11a.913.913 0 0 1 .673 0l2.83 1.11a.548.548 0 0 1 .334.517V9.81a.548.548 0 0 1-.332.517l-2.831 1.11a.92.92 0 0 1-.673 0l-2.83-1.11a.548.548 0 0 1-.334-.517V6.19a.548.548 0 0 1 .332-.517Z"
+                      stroke="#212934"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M8 7.228 4.822 5.982M8 7.228l3.178-1.246M8 11.281V7.228"
+                      stroke="#212934"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+                <div
+                  class="labelWrapper"
+                >
+                  <span
+                    class="labelText"
+                  >
+                    <span
+                      data-dimensionid="id2"
+                    >
+                      Dimension 2
+                    </span>
+                  </span>
+                </div>
+              </div>
+            </li>
+            <style />
+          </ul>
+        </div>
+      </div>
+      <style />
+    </div>
+  </div>
+</div>
+`;
