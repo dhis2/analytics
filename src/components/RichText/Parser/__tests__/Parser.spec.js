@@ -1,4 +1,4 @@
-import { shallow } from 'enzyme'
+import { render, screen } from '@testing-library/react'
 import React from 'react'
 import { Parser } from '../Parser.js'
 
@@ -9,35 +9,32 @@ jest.mock('../MdParser.js', () => ({
 }))
 
 describe('RichText: Parser component', () => {
-    let richTextParser
     const defaultProps = {
         style: { color: 'blue', whiteSpace: 'pre-line' },
     }
 
     const renderComponent = (props, text) => {
-        return shallow(<Parser {...props}>{text}</Parser>)
+        return render(<Parser {...props}>{text}</Parser>)
     }
 
-    it('should have rendered a result', () => {
-        richTextParser = renderComponent({}, 'test')
+    test('should have rendered a result with the style prop', () => {
+        const { container } = renderComponent(defaultProps, 'test prop')
+        const divEl = container.querySelector('div')
 
-        expect(richTextParser).toHaveLength(1)
+        expect(divEl.style.color).toBe(defaultProps.style.color)
+        expect(divEl.style.whiteSpace).toBe(defaultProps.style.whiteSpace)
     })
 
-    it('should have rendered a result with the style prop', () => {
-        richTextParser = renderComponent(defaultProps, 'test prop')
+    test('should have rendered content', () => {
+        renderComponent({}, 'plain text')
 
-        expect(richTextParser.props().style).toEqual(defaultProps.style)
+        expect(screen.getByText('converted text')).toBeInTheDocument()
     })
 
-    it('should have rendered content', () => {
-        richTextParser = renderComponent({}, 'plain text')
+    test('should return null if no children is passed', () => {
+        const { container } = renderComponent({}, undefined)
+        const divEl = container.querySelector('div')
 
-        expect(richTextParser.html()).toEqual('<div>converted text</div>')
-    })
-
-    it('should return null if no children is passed', () => {
-        richTextParser = renderComponent({}, undefined)
-        expect(richTextParser.html()).toBe(null)
+        expect(divEl).toBe(null)
     })
 })
