@@ -1,29 +1,14 @@
-import { shallow } from 'enzyme'
+import { render } from '@testing-library/react'
 import React from 'react'
 import FixedPeriodSelect from '../FixedPeriodSelect.js'
 
-describe('The Fixed Period Single Select component', () => {
-    let props
-    let shallowFixedPeriodSelect
-
-    const getWrapper = () => {
-        if (!shallowFixedPeriodSelect) {
-            shallowFixedPeriodSelect = shallow(<FixedPeriodSelect {...props} />)
-        }
-        return shallowFixedPeriodSelect
+test('FixedPeriodSingleSelect matches the snapshot', () => {
+    const props = {
+        value: '201405',
+        onChange: () => {},
     }
 
-    beforeEach(() => {
-        props = {
-            value: '201405',
-            onChange: () => {},
-        }
-        shallowFixedPeriodSelect = undefined
-    })
+    const { container } = render(<FixedPeriodSelect {...props} />)
 
-    it('matches the snapshot', () => {
-        const wrapper = getWrapper()
-
-        expect(wrapper).toMatchSnapshot()
-    })
+    expect(container).toMatchSnapshot()
 })

@@ -1,4 +1,4 @@
-import { shallow } from 'enzyme'
+import { render } from '@testing-library/react'
 import React from 'react'
 import PeriodDimension from '../PeriodDimension.js'
 
@@ -9,29 +9,14 @@ jest.mock('@dhis2/app-runtime', () => ({
 
 afterEach(jest.clearAllMocks)
 
-describe('The Period Dimension component', () => {
-    let props
-    let shallowPeriodDimension
-
-    const getWrapper = () => {
-        if (!shallowPeriodDimension) {
-            shallowPeriodDimension = shallow(<PeriodDimension {...props} />)
-        }
-        return shallowPeriodDimension
+test('PeriodDimension matches the snapshot', () => {
+    const props = {
+        selectedPeriods: [],
+        onSelect: jest.fn(),
+        rightFooter: <></>,
     }
 
-    beforeEach(() => {
-        props = {
-            selectedPeriods: [],
-            onSelect: jest.fn(),
-            rightFooter: <></>,
-        }
-        shallowPeriodDimension = undefined
-    })
+    const { container } = render(<PeriodDimension {...props} />)
 
-    it('matches the snapshot', () => {
-        const wrapper = getWrapper()
-
-        expect(wrapper).toMatchSnapshot()
-    })
+    expect(container).toMatchSnapshot()
 })

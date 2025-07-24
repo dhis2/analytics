@@ -1,31 +1,16 @@
-import { shallow } from 'enzyme'
+import { render } from '@testing-library/react'
 import React from 'react'
 import PeriodTransfer from '../PeriodTransfer.js'
 
-describe('The Period Selector component', () => {
-    let props
-    let shallowPeriodTransfer
-
-    const getWrapper = () => {
-        if (!shallowPeriodTransfer) {
-            shallowPeriodTransfer = shallow(<PeriodTransfer {...props} />)
-        }
-        return shallowPeriodTransfer
+test('PeriodSelector matched the snapshot', () => {
+    const props = {
+        initialSelectedPeriods: [],
+        onSelect: jest.fn(),
+        rightFooter: <></>,
+        dataTest: 'period-dimension',
     }
 
-    beforeEach(() => {
-        props = {
-            initialSelectedPeriods: [],
-            onSelect: jest.fn(),
-            rightFooter: <></>,
-            dataTest: 'period-dimension',
-        }
-        shallowPeriodTransfer = undefined
-    })
+    const { container } = render(<PeriodTransfer {...props} />)
 
-    it('matches the snapshot', () => {
-        const wrapper = getWrapper()
-
-        expect(wrapper).toMatchSnapshot()
-    })
+    expect(container).toMatchSnapshot()
 })
