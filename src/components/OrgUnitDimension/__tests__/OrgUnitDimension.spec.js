@@ -1,57 +1,202 @@
-import { shallow } from 'enzyme'
+import { CustomDataProvider } from '@dhis2/app-runtime'
+import { render, screen } from '@testing-library/react'
+import userEvent from '@testing-library/user-event'
 import React from 'react'
 import OrgUnitDimension from '../OrgUnitDimension.js'
 
-describe('The OrgUnitDimension component', () => {
-    let props
-    let shallowOrgUnitDimension
+jest.mock('@dhis2-ui/organisation-unit-tree', () => {
+    const lib = jest.requireActual('@dhis2-ui/organisation-unit-tree')
 
-    const getWrapper = () => {
-        if (!shallowOrgUnitDimension) {
-            shallowOrgUnitDimension = shallow(<OrgUnitDimension {...props} />)
-        }
-        return shallowOrgUnitDimension
+    return {
+        ...lib,
+        OrganisationUnitTree: () => <div>Org unit tree component mock</div>,
+    }
+})
+
+describe('OrgUnitDimension', () => {
+    const onSelect = jest.fn()
+
+    const props = {
+        roots: [],
+        selected: [],
+        onSelect: onSelect,
+        hideGroupSelect: false,
+        hideLevelSelect: false,
+        hideUserOrgUnits: false,
+        warning: '',
     }
 
-    beforeEach(() => {
-        props = {
-            roots: [],
-            selected: [],
-            onSelect: jest.fn(),
-            hideGroupSelect: false,
-            hideLevelSelect: false,
-            hideUserOrgUnits: false,
-            warning: '',
-        }
-        shallowOrgUnitDimension = undefined
+    const renderOrgUnitDimension = (props) =>
+        render(
+            <CustomDataProvider
+                data={{
+                    organisationUnitLevels: {
+                        organisationUnitLevels: [
+                            {
+                                name: 'Chiefdom',
+                                level: 3,
+                                id: 'tTUf91fCytl',
+                                displayName: 'Chiefdom',
+                            },
+                            {
+                                name: 'District',
+                                level: 2,
+                                id: 'wjP19dkFeIk',
+                                displayName: 'District',
+                            },
+                            {
+                                name: 'Facility',
+                                level: 4,
+                                id: 'm9lBJogzE95',
+                                displayName: 'Facility',
+                            },
+                            {
+                                name: 'National',
+                                level: 1,
+                                id: 'H1KlN4QIauv',
+                                displayName: 'National',
+                            },
+                        ],
+                    },
+                    organisationUnitGroups: {
+                        organisationUnitGroups: [
+                            {
+                                name: 'CHC',
+                                id: 'CXw2yu5fodb',
+                                displayName: 'CHC',
+                            },
+                            {
+                                name: 'Chiefdom',
+                                id: 'gzcv65VyaGq',
+                                displayName: 'Chiefdom',
+                            },
+                            {
+                                name: 'CHP',
+                                id: 'uYxK4wmcPqA',
+                                displayName: 'CHP',
+                            },
+                            {
+                                name: 'Clinic',
+                                id: 'RXL3lPSK8oG',
+                                displayName: 'Clinic',
+                            },
+                            {
+                                name: 'Country',
+                                id: 'RpbiCJpIYEj',
+                                displayName: 'Country',
+                            },
+                            {
+                                name: 'District',
+                                id: 'w1Atoz18PCL',
+                                displayName: 'District',
+                            },
+                            {
+                                name: 'Eastern Area',
+                                id: 'nlX2VoouN63',
+                                displayName: 'Eastern Area',
+                            },
+                            {
+                                name: 'Hospital',
+                                id: 'tDZVQ1WtwpA',
+                                displayName: 'Hospital',
+                            },
+                            {
+                                name: 'MCHP',
+                                id: 'EYbopBOJWsW',
+                                displayName: 'MCHP',
+                            },
+                            {
+                                name: 'Mission',
+                                id: 'w0gFTTmsUcF',
+                                displayName: 'Mission',
+                            },
+                            {
+                                name: 'NGO',
+                                id: 'PVLOW4bCshG',
+                                displayName: 'NGO',
+                            },
+                            {
+                                name: 'Northern Area',
+                                id: 'J40PpdN4Wkk',
+                                displayName: 'Northern Area',
+                            },
+                            {
+                                name: 'Private Clinic',
+                                id: 'MAs88nJc9nL',
+                                displayName: 'Private Clinic',
+                            },
+                            {
+                                name: 'Public facilities',
+                                id: 'oRVt7g429ZO',
+                                displayName: 'Public facilities',
+                            },
+                            {
+                                name: 'Rural',
+                                id: 'GGghZsfu7qV',
+                                displayName: 'Rural',
+                            },
+                            {
+                                name: 'Southern Area',
+                                id: 'jqBqIXoXpfy',
+                                displayName: 'Southern Area',
+                            },
+                            {
+                                name: 'Urban',
+                                id: 'f25dqv3Y7Z0',
+                                displayName: 'Urban',
+                            },
+                            {
+                                name: 'Western Area',
+                                id: 'b0EsAxm8Nge',
+                                displayName: 'Western Area',
+                            },
+                        ],
+                    },
+                }}
+            >
+                <OrgUnitDimension {...props} />
+            </CustomDataProvider>
+        )
+
+    beforeEach(() => onSelect.mockClear())
+
+    test('OrgUnitDimension matches the snapshot', () => {
+        const { container } = renderOrgUnitDimension(props)
+
+        expect(container).toMatchSnapshot()
     })
 
-    it('matches the snapshot', () => {
-        const wrapper = getWrapper()
-        expect(wrapper).toMatchSnapshot()
-    })
+    test('OrgUnitDimension calls onSelect when an organisation unit is selected', async () => {
+        const user = userEvent.setup()
 
-    it('calls onSelect when an organisation unit is selected', () => {
-        const wrapper = getWrapper()
-        const orgUnitTree = wrapper.find('OrganisationUnitTree')
-        const testOrgUnit = {
-            id: 'testId',
-            path: '/testPath',
-            displayName: 'Test Org Unit',
-            checked: true,
-        }
-        orgUnitTree.props().onChange(testOrgUnit)
-        expect(props.onSelect).toHaveBeenCalledWith({
+        renderOrgUnitDimension(props)
+
+        await user.click(screen.getByText('User organisation unit'))
+
+        expect(onSelect).toHaveBeenCalledWith({
             dimensionId: 'ou',
-            items: [{ id: 'testId', path: '/testPath', name: 'Test Org Unit' }],
+            items: [
+                { id: 'USER_ORGUNIT', displayName: 'User organisation unit' },
+            ],
         })
     })
 
-    it('calls onSelect with an empty array when selection is cleared', () => {
-        const wrapper = getWrapper()
-        const deselectButton = wrapper.find('Button[onClick]')
-        deselectButton.simulate('click')
-        expect(props.onSelect).toHaveBeenCalledWith({
+    test('OrgUnitDimension calls onSelect with an empty array when selection is cleared', async () => {
+        const user = userEvent.setup()
+
+        renderOrgUnitDimension({
+            ...props,
+            // make some selection to enable the deselect all button
+            selected: [{ id: 'USER_ORGUNIT_CHILDREN', name: 'User sub-units' }],
+        })
+
+        await user.click(
+            screen.getByRole('button', {
+                name: 'Deselect all',
+            })
+        )
+
+        expect(onSelect).toHaveBeenLastCalledWith({
             dimensionId: 'ou',
             items: [],
         })
