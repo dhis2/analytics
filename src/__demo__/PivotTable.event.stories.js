@@ -7,6 +7,8 @@ import numericLegendsetData from './data/event/numeric-legendset.data.json'
 import numericLegendsetVisualization from './data/event/numeric-legendset.visualization.json'
 import numericData from './data/event/numeric.data.json'
 import numericVisualization from './data/event/numeric.visualization.json'
+import optionsetData from './data/event/optionset.data.json'
+import optionsetVisualization from './data/event/optionset.visualization.json'
 import yesonlyData from './data/event/yesonly.data.json'
 import yesonlyVisualization from './data/event/yesonly.visualization.json'
 
@@ -96,6 +98,24 @@ export const NumericLegendset = (_, { pivotTableOptions }) => {
 
 NumericLegendset.story = {
     name: 'Numeric with legendset',
+}
+
+export const Optionset = (_, { pivotTableOptions }) => {
+    const visualization = {
+        ...optionsetVisualization,
+        ...visualizationReset,
+        ...pivotTableOptions,
+    }
+
+    return (
+        <div style={{ width: 800, height: 600 }}>
+            <PivotTable data={optionsetData} visualization={visualization} />
+        </div>
+    )
+}
+
+Optionset.story = {
+    name: 'Optionset',
 }
 
 export const Boolean = (_, { pivotTableOptions }) => {

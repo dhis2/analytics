@@ -1,0 +1,307 @@
+{
+    "headers": [
+        {
+            "name": "Zj7UnCAulEk.fWIAEtYVEGk",
+            "column": "Mode of Discharge",
+            "valueType": "TEXT",
+            "type": "java.lang.String",
+            "hidden": false,
+            "meta": true,
+            "optionSet": "iDFPKpFTiVw"
+        },
+        {
+            "name": "Zj7UnCAulEk.oZg33kd9taw",
+            "column": "Gender",
+            "valueType": "TEXT",
+            "type": "java.lang.String",
+            "hidden": false,
+            "meta": true,
+            "optionSet": "pC3N9N77UmT"
+        },
+        {
+            "name": "ou",
+            "column": "Organisation unit",
+            "valueType": "TEXT",
+            "type": "java.lang.String",
+            "hidden": false,
+            "meta": true
+        },
+        {
+            "name": "pe",
+            "column": "Period",
+            "valueType": "TEXT",
+            "type": "java.lang.String",
+            "hidden": false,
+            "meta": true
+        },
+        {
+            "name": "value",
+            "column": "Value",
+            "valueType": "NUMBER",
+            "type": "java.lang.Double",
+            "hidden": false,
+            "meta": false
+        }
+    ],
+    "metaData": {
+        "items": {
+            "202504": {
+                "name": "April 2025"
+            },
+            "202505": {
+                "name": "May 2025"
+            },
+            "202506": {
+                "name": "June 2025"
+            },
+            "Mnp3oXrpAbK": {
+                "code": "Female",
+                "name": "Female"
+            },
+            "rBvjJYbMCVx": {
+                "code": "Male",
+                "name": "Male"
+            },
+            "ou": {
+                "name": "Organisation unit"
+            },
+            "Fhbf4aKpZmZ": {
+                "code": "MODABSC",
+                "name": "Absconded"
+            },
+            "fWIAEtYVEGk": {
+                "name": "Mode of Discharge"
+            },
+            "Zj7UnCAulEk.fWIAEtYVEGk": {
+                "name": "Mode of Discharge"
+            },
+            "gj2fKKyp8OH": {
+                "code": "MODDIED",
+                "name": "Died"
+            },
+            "Zj7UnCAulEk": {
+                "name": "Inpatient morbidity and mortality"
+            },
+            "ImspTQPwCqd": {
+                "name": "Sierra Leone"
+            },
+            "eBAyeGv0exc": {
+                "name": "Inpatient morbidity and mortality"
+            },
+            "pe": {
+                "name": "Period"
+            },
+            "oZg33kd9taw": {
+                "name": "Gender"
+            },
+            "Zj7UnCAulEk.oZg33kd9taw": {
+                "name": "Gender"
+            },
+            "LAST_3_MONTHS": {
+                "name": "Last 3 months"
+            },
+            "fShHdgT7XGb": {
+                "code": "MODTRANS",
+                "name": "Transferred"
+            },
+            "yeod5tOXpkP": {
+                "code": "MODDISCH",
+                "name": "Discharged"
+            }
+        },
+        "dimensions": {
+            "pe": [
+                "202504",
+                "202505",
+                "202506"
+            ],
+            "ou": [
+                "ImspTQPwCqd"
+            ],
+            "Zj7UnCAulEk.fWIAEtYVEGk": [
+                "yeod5tOXpkP",
+                "gj2fKKyp8OH",
+                "fShHdgT7XGb",
+                "Fhbf4aKpZmZ"
+            ],
+            "Zj7UnCAulEk.oZg33kd9taw": [
+                "rBvjJYbMCVx",
+                "Mnp3oXrpAbK"
+            ]
+        }
+    },
+    "rowContext": {},
+    "headerWidth": 5,
+    "width": 5,
+    "rows": [
+        [
+            "yeod5tOXpkP",
+            "rBvjJYbMCVx",
+            "ImspTQPwCqd",
+            "202505",
+            "495"
+        ],
+        [
+            "fShHdgT7XGb",
+            "FerBvjJYbMCVx",
+            "ImspTQPwCqd",
+            "202504",
+            "545"
+        ],
+        [
+            "Fhbf4aKpZmZ",
+            "gj2fKKyp8OH",
+            "ImspTQPwCqd",
+            "202505",
+            "571"
+        ],
+        [
+            "yeod5tOXpkP",
+            "gj2fKKyp8OH",
+            "ImspTQPwCqd",
+            "202506",
+            "560"
+        ],
+        [
+            "gj2fKKyp8OH",
+            "Fegj2fKKyp8OH",
+            "ImspTQPwCqd",
+            "202504",
+            "632"
+        ],
+        [
+            "yeod5tOXpkP",
+            "rBvjJYbMCVx",
+            "ImspTQPwCqd",
+            "202504",
+            "527"
+        ],
+        [
+            "Fhbf4aKpZmZ",
+            "Mnp3oXrpAbK",
+            "ImspTQPwCqd",
+            "202504",
+            "552"
+        ],
+        [
+            "gj2fKKyp8OH",
+            "rBvjJYbMCVx",
+            "ImspTQPwCqd",
+            "202504",
+            "524"
+        ],
+        [
+            "fShHdgT7XGb",
+            "rBvjJYbMCVx",
+            "ImspTQPwCqd",
+            "202506",
+            "533"
+        ],
+        [
+            "yeod5tOXpkP",
+            "Mnp3oXrpAbK",
+            "ImspTQPwCqd",
+            "202504",
+            "555"
+        ],
+        [
+            "Fhbf4aKpZmZ",
+            "rBvjJYbMCVx",
+            "ImspTQPwCqd",
+            "202506",
+            "564"
+        ],
+        [
+            "fShHdgT7XGb",
+            "rBvjJYbMCVx",
+            "ImspTQPwCqd",
+            "202504",
+            "515"
+        ],
+        [
+            "gj2fKKyp8OH",
+            "Mnp3oXrpAbK",
+            "ImspTQPwCqd",
+            "202506",
+            "585"
+        ],
+        [
+            "Fhbf4aKpZmZ",
+            "rBvjJYbMCVx",
+            "ImspTQPwCqd",
+            "202504",
+            "504"
+        ],
+        [
+            "gj2fKKyp8OH",
+            "Mnp3oXrpAbK",
+            "ImspTQPwCqd",
+            "202505",
+            "581"
+        ],
+        [
+            "fShHdgT7XGb",
+            "Mnp3oXrpAbK",
+            "ImspTQPwCqd",
+            "202506",
+            "609"
+        ],
+        [
+            "Fhbf4aKpZmZ",
+            "Mnp3oXrpAbK",
+            "ImspTQPwCqd",
+            "202505",
+            "574"
+        ],
+        [
+            "yeod5tOXpkP",
+            "Mnp3oXrpAbK",
+            "ImspTQPwCqd",
+            "202505",
+            "586"
+        ],
+        [
+            "Fhbf4aKpZmZ",
+            "Mnp3oXrpAbK",
+            "ImspTQPwCqd",
+            "202506",
+            "574"
+        ],
+        [
+            "gj2fKKyp8OH",
+            "rBvjJYbMCVx",
+            "ImspTQPwCqd",
+            "202505",
+            "565"
+        ],
+        [
+            "gj2fKKyp8OH",
+            "rBvjJYbMCVx",
+            "ImspTQPwCqd",
+            "202506",
+            "545"
+        ],
+        [
+            "yeod5tOXpkP",
+            "Mnp3oXrpAbK",
+            "ImspTQPwCqd",
+            "202506",
+            "597"
+        ],
+        [
+            "fShHdgT7XGb",
+            "rBvjJYbMCVx",
+            "ImspTQPwCqd",
+            "202505",
+            "524"
+        ],
+        [
+            "fShHdgT7XGb",
+            "Mnp3oXrpAbK",
+            "ImspTQPwCqd",
+            "202505",
+            "561"
+        ]
+    ],
+    "height": 24
+}
