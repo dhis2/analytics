@@ -44,14 +44,35 @@ describe('OrgUnitDimension', () => {
 
     beforeEach(() => onSelect.mockClear())
 
-    test('OrgUnitDimension matches the snapshot', async () => {
-        const { container } = renderOrgUnitDimension(props)
+    test('OrgUnitDimension is rendered correctly', async () => {
+        renderOrgUnitDimension(props)
 
-        // avoid the act warning due to the snapshot being taken before async code is run
         // wait for the component to be loaded, here done by testing that the OrganisationUnitTree component is loaded
+        // avoid the act warning due to the snapshot being taken before async code is run
         await screen.findByText('Org unit tree component mock')
 
-        expect(container).toMatchSnapshot()
+        // the top user org unit checkboxes are rendered
+        expect(
+            screen.getByLabelText('User organisation unit')
+        ).toBeInTheDocument()
+        expect(screen.getByLabelText('User sub-units')).toBeInTheDocument()
+        expect(screen.getByLabelText('User sub-x2-units')).toBeInTheDocument()
+
+        // the OrganisationUnitTree component is rendered
+        expect(
+            screen.getByText('Org unit tree component mock')
+        ).toBeInTheDocument()
+
+        // the level selector is rendered
+        expect(screen.getByText('Select a level')).toBeInTheDocument()
+
+        // the group selector is rendered
+        expect(screen.getByText('Select a group')).toBeInTheDocument()
+
+        // the Deselect all button is rendered
+        expect(
+            screen.getByRole('button', { name: 'Deselect all' })
+        ).toBeInTheDocument()
     })
 
     test('OrgUnitDimension calls onSelect when an organisation unit is selected', async () => {

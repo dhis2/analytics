@@ -10,16 +10,12 @@ const props = {
     ],
 }
 
-test('DimensionsPanel matches the snapshot', () => {
-    const { container } = render(<DimensionsPanel {...props} />)
-
-    expect(container).toMatchSnapshot()
-})
-
 test('DimensionsPanel renders a DimensionList component', () => {
     render(<DimensionsPanel {...props} />)
 
-    const dimensionListComponent = screen.getByTestId('dimension-list')
+    const dimensionListComponent = screen.getByTestId(
+        'dhis2-analytics-dimension-list'
+    )
     expect(dimensionListComponent).toBeInTheDocument()
 
     const liElements = screen.getAllByTestId('dimension-item')

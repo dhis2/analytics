@@ -17,29 +17,25 @@ test('DimensionItem matches the snapshot', () => {
 })
 
 test('DimensionItem matches the snapshot with recommended', () => {
-    props.isRecommended = true
-
-    const { container } = render(<DimensionItem {...props} />)
+    const { container } = render(
+        <DimensionItem {...props} isRecommended={true} />
+    )
     expect(container).toMatchSnapshot()
 })
 
 test('DimensionItem matches the snapshot with selected', () => {
-    props.isSelected = true
-
-    const { container } = render(<DimensionItem {...props} />)
+    const { container } = render(<DimensionItem {...props} isSelected={true} />)
     expect(container).toMatchSnapshot()
 })
 
 test('DimensionItem matches the snapshot with locked', () => {
-    props.isLocked = true
-
-    const { container } = render(<DimensionItem {...props} />)
+    const { container } = render(<DimensionItem {...props} isLocked={true} />)
     expect(container).toMatchSnapshot()
 })
 
 test('DimensionItem matches the snapshot with onOptionsClick', () => {
-    props.onOptionsClick = jest.fn()
-
-    const { container } = render(<DimensionItem {...props} />)
+    const { container } = render(
+        <DimensionItem {...props} onOptionsClick={jest.fn()} />
+    )
     expect(container).toMatchSnapshot()
 })

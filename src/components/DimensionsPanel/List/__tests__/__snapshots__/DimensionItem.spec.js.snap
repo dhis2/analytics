@@ -48,7 +48,7 @@ exports[`DimensionItem matches the snapshot 1`] = `
 exports[`DimensionItem matches the snapshot with locked 1`] = `
 <div>
   <li
-    class="item selected"
+    class="item"
     name="Period"
   >
     <div
@@ -82,17 +82,6 @@ exports[`DimensionItem matches the snapshot with locked 1`] = `
           >
             Period
           </span>
-        </span>
-        <span
-          aria-describedby=""
-          class="jsx-237564060"
-          data-test="dhis2-uicore-tooltip-reference"
-          tabindex="0"
-        >
-          <div
-            data-test="undefined-recommended-icon"
-            style="background-color: rgb(0, 150, 136); height: 6px; width: 6px; border-radius: 4px; margin-left: 6px; display: inline-block; cursor: pointer;"
-          />
         </span>
       </div>
     </div>
@@ -122,7 +111,7 @@ exports[`DimensionItem matches the snapshot with locked 1`] = `
 exports[`DimensionItem matches the snapshot with onOptionsClick 1`] = `
 <div>
   <li
-    class="item selected"
+    class="item"
     name="Period"
   >
     <div
@@ -157,37 +146,12 @@ exports[`DimensionItem matches the snapshot with onOptionsClick 1`] = `
             Period
           </span>
         </span>
-        <span
-          aria-describedby=""
-          class="jsx-237564060"
-          data-test="dhis2-uicore-tooltip-reference"
-          tabindex="0"
-        >
-          <div
-            data-test="undefined-recommended-icon"
-            style="background-color: rgb(0, 150, 136); height: 6px; width: 6px; border-radius: 4px; margin-left: 6px; display: inline-block; cursor: pointer;"
-          />
-        </span>
       </div>
     </div>
     <div
-      class="lockWrapper"
-    >
-      <svg
-        fill="none"
-        height="9"
-        width="7"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          clip-rule="evenodd"
-          d="M3.5 1A1.5 1.5 0 0 0 2 2.5V3h3v-.5A1.5 1.5 0 0 0 3.5 1ZM1 2.5V3H0v6h7V3H6v-.5a2.5 2.5 0 0 0-5 0ZM1 8V4h5v4H1Zm3-1V5H3v2h1Z"
-          fill="none"
-          fill-rule="evenodd"
-        />
-      </svg>
-    </div>
-    <style />
+      class="optionsWrapper"
+      data-test="undefined-menu-pe"
+    />
   </li>
   <style />
 </div>
@@ -286,17 +250,6 @@ exports[`DimensionItem matches the snapshot with selected 1`] = `
           >
             Period
           </span>
-        </span>
-        <span
-          aria-describedby=""
-          class="jsx-237564060"
-          data-test="dhis2-uicore-tooltip-reference"
-          tabindex="0"
-        >
-          <div
-            data-test="undefined-recommended-icon"
-            style="background-color: rgb(0, 150, 136); height: 6px; width: 6px; border-radius: 4px; margin-left: 6px; display: inline-block; cursor: pointer;"
-          />
         </span>
       </div>
     </div>

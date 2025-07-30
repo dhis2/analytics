@@ -70,25 +70,6 @@ describe('FileMenu - GetLinkDialog component', () => {
         expect(screen.getByLabelText('Close modal dialog')).toBeInTheDocument()
     })
 
-    test.each(tests)(
-        'renders a <a> tag containing the correct app path and id',
-        ({ apiVersion, baseUrl, type, id, expected }) => {
-            mockUseConfig.mockReturnValueOnce({
-                apiVersion: apiVersion || 42,
-                baseUrl,
-            })
-
-            props.type = type
-            props.id = id
-
-            render(<GetLinkDialog {...props} />)
-
-            const anchorElement = screen.getByRole('link')
-
-            expect(anchorElement.href).toMatch(expected)
-        }
-    )
-
     test('calls the onClose callback when the Close button is clicked', async () => {
         const user = userEvent.setup()
 
@@ -100,4 +81,20 @@ describe('FileMenu - GetLinkDialog component', () => {
 
         expect(onClose).toHaveBeenCalledTimes(1)
     })
+
+    test.each(tests)(
+        'renders a <a> tag containing the correct app path and id',
+        ({ apiVersion, baseUrl, type, id, expected }) => {
+            mockUseConfig.mockReturnValueOnce({
+                apiVersion: apiVersion || 42,
+                baseUrl,
+            })
+
+            render(<GetLinkDialog onClose={onClose} type={type} id={id} />)
+
+            const anchorElement = screen.getByRole('link')
+
+            expect(anchorElement.href).toMatch(expected)
+        }
+    )
 })

@@ -65,7 +65,10 @@ class DimensionList extends Component {
         )
 
         return (
-            <div className="container" data-test="dimension-list">
+            <div
+                className="container"
+                data-test="dhis2-analytics-dimension-list"
+            >
                 <div className="wrapper">
                     {fixedDimensions?.length ? (
                         <div className="section">
