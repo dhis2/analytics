@@ -1,5 +1,5 @@
 {
-    "name": "Numeric",
+    "name": "Text with option set",
     "created": "2025-06-30T10:27:41.277",
     "lastUpdated": "2025-06-30T10:27:41.277",
     "translations": [],
@@ -129,7 +129,7 @@
             "dimension": "Zj7UnCAulEk.fWIAEtYVEGk"
         }
     ],
-    "displayName": "A1 numeric-optionset",
+    "displayName": "Text with option set",
     "access": {
         "manage": true,
         "externalize": true,
@@ -159,7 +159,7 @@
             "name": "Age in years"
         }
     },
-    "displayFormName": "A1 text-optionset",
+    "displayFormName": "Text with option set",
     "id": "kNl4fqsY9hJ",
     "attributeValues": []
 }
