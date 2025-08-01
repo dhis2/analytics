@@ -24,8 +24,10 @@ const Placeholder = () => (
     </div>
 )
 
+const ITEMS_PROP_DEFAULT = []
+
 const FormulaField = ({
-    items = [],
+    items = ITEMS_PROP_DEFAULT,
     selectedItemId,
     focusItemId,
     onChange,

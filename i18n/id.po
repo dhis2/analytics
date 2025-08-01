@@ -5,16 +5,16 @@
 # Aprisa Chrysantina <aprisa.chrysantina@gmail.com>, 2025
 # Raja Fathurrahim, 2025
 # Yusuf Setiawan <mohammadyusufsetiawan@gmail.com>, 2025
-# Untoro Dwi Raharjo <untoro.dwi.raharjo@mail.ugm.ac.id>, 2025
 # Viktor Varland <viktor@dhis2.org>, 2025
 # Philip Larsen Donnelly, 2025
+# Untoro Dwi Raharjo <untoro.dwi.raharjo@mail.ugm.ac.id>, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2024-12-19T10:28:15.132Z\n"
+"POT-Creation-Date: 2025-04-15T13:34:54.995Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Philip Larsen Donnelly, 2025\n"
+"Last-Translator: Untoro Dwi Raharjo <untoro.dwi.raharjo@mail.ugm.ac.id>, 2025\n"
 "Language-Team: Indonesian (https://app.transifex.com/hisp-uio/teams/100509/id/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -162,21 +162,6 @@ msgstr ""
 msgid "Math operators"
 msgstr ""
 
-msgid "Data Type"
-msgstr "Tipe Data"
-
-msgid "Only {{dataType}} can be used in {{visType}}"
-msgstr ""
-
-msgid "All types"
-msgstr "Semua jenis"
-
-msgid "Disaggregation"
-msgstr "Disagregasi"
-
-msgid "No data"
-msgstr "Tidak ada data"
-
 msgid "Expression description"
 msgstr "Deskripsi expression"
 
@@ -321,14 +306,59 @@ msgstr ""
 msgid "Filter"
 msgstr "Saring"
 
+msgid "All available options are already selected"
+msgstr ""
+
+msgid "No available options for this item"
+msgstr ""
+
+msgid "Search by option name"
+msgstr ""
+
+msgid "Back to all items"
+msgstr ""
+
+msgid "Options"
+msgstr "Opsi"
+
+msgid "Selected items"
+msgstr ""
+
+msgid "Data Type"
+msgstr "Tipe Data"
+
+msgid "Only {{dataType}} can be used in {{visType}}"
+msgstr ""
+
+msgid "All types"
+msgstr "Semua jenis"
+
+msgid "Disaggregation"
+msgstr "Disagregasi"
+
+msgid "No data"
+msgstr "Tidak ada data"
+
 msgid "Search by data item name"
 msgstr "Cari berdasarkan nama item data"
 
-msgid "No items selected"
-msgstr "Tidak ada item yang dipilih"
-
 msgid "Selected Items"
 msgstr "Item yang Dipilih"
+
+msgid "All available items are already selected"
+msgstr ""
+
+msgid "Calculation"
+msgstr ""
+
+msgid "Metric type"
+msgstr "Jenis metrik"
+
+msgid "All metrics"
+msgstr "Semua metrik"
+
+msgid "No items selected"
+msgstr "Tidak ada item yang dipilih"
 
 msgid "No indicators found"
 msgstr "Tidak ada indikator yang ditemukan"
@@ -363,14 +393,8 @@ msgstr ""
 msgid "Nothing found for \"{{- searchTerm}}\""
 msgstr "Tidak ada yang ditemukan untuk \"{{- searchTerm}}\""
 
-msgid "Calculation"
+msgid "Click to choose from available options"
 msgstr ""
-
-msgid "Metric type"
-msgstr "Jenis metrik"
-
-msgid "All metrics"
-msgstr "Semua metrik"
 
 msgid "Move to {{axisName}}"
 msgstr "Pindah ke {{axisName}}"
@@ -421,9 +445,6 @@ msgstr ""
 
 msgid "Search"
 msgstr "Pencarian"
-
-msgid "Nothing found for {{- searchTerm}}"
-msgstr ""
 
 msgid "Delete {{fileType}}"
 msgstr "Hapus {{fileType}}"
@@ -493,6 +514,9 @@ msgid "map"
 msgstr ""
 
 msgid "visualization"
+msgstr ""
+
+msgid "Untitled {{visualizationType}}, {{date}}"
 msgstr ""
 
 msgid "Edit"
@@ -716,9 +740,6 @@ msgstr ""
 
 msgid "New line list"
 msgstr ""
-
-msgid "Options"
-msgstr "Opsi"
 
 msgid "Hide"
 msgstr "Sembunyikan"
@@ -1143,6 +1164,9 @@ msgstr "Indikator program"
 msgid "Calculations"
 msgstr ""
 
+msgid "Option"
+msgstr ""
+
 msgid "Number"
 msgstr "Angka"
 
@@ -1385,6 +1409,9 @@ msgstr ""
 
 msgid "All charts"
 msgstr "Semua grafik"
+
+msgid "Map"
+msgstr "Peta"
 
 msgid "{{seriesName}} (trend)"
 msgstr "{{seriesName}} (tren)"

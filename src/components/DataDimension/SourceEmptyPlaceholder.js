@@ -11,10 +11,12 @@ import {
 } from '../../modules/dataTypes.js'
 import styles from './styles/EmptyPlaceholder.style.js'
 
+const OPTIONS_PROP_DEFAULT = []
+
 export const SourceEmptyPlaceholder = ({
     loading,
     searchTerm,
-    options,
+    options = OPTIONS_PROP_DEFAULT,
     allItemsSelectedMessage,
     noItemsMessage,
     dataType,
@@ -106,10 +108,6 @@ export const SourceEmptyPlaceholder = ({
             </>
         )
     )
-}
-
-SourceEmptyPlaceholder.defaultProps = {
-    options: [],
 }
 
 SourceEmptyPlaceholder.propTypes = {

@@ -1,6 +1,6 @@
 {
     "name": "@dhis2/analytics",
-    "version": "28.0.3",
+    "version": "28.0.4",
     "main": "./build/cjs/index.js",
     "module": "./build/es/index.js",
     "exports": {
@@ -31,21 +31,25 @@
     },
     "devDependencies": {
         "@dhis2/app-runtime": "^3.14.1",
-        "@dhis2/cli-app-scripts": "^11.8.0",
-        "@dhis2/cli-style": "^10.7.4",
+        "@dhis2/cli-app-scripts": "^12.6.4",
+        "@dhis2/cli-style": "^10.7.9",
         "@dhis2/d2-i18n": "^1.1.0",
-        "@dhis2/ui": "^10.1.9",
+        "@dhis2/ui": "^10.7.7",
         "@mihkeleidast/storybook-addon-source": "^1.0.1",
         "@storybook/preset-create-react-app": "^8.3.6",
         "@storybook/react": "^8.3.6",
         "@storybook/react-webpack5": "^8.3.6",
-        "@testing-library/jest-dom": "6.6.3",
-        "@testing-library/react": "^12",
+        "@testing-library/dom": "^10.4.0",
+        "@testing-library/jest-dom": "^6.6.3",
+        "@testing-library/react": "^16.3.0",
         "enzyme": "^3.9.0",
         "enzyme-adapter-react-16": "^1.15.6",
         "fs-extra": "^10.1.0",
         "jest-enzyme": "^7.0.2",
         "prop-types": "^15",
+        "react": "^18.3.1",
+        "react-dom": "^18.3.1",
+        "react-scripts": "^5.0.1",
         "storybook": "^8.3.6",
         "styled-jsx": "^4.0.1"
     },
@@ -54,8 +58,8 @@
         "@dhis2/d2-i18n": "^1.1",
         "@dhis2/ui": "^10",
         "prop-types": "^15",
-        "react": "^16.3",
-        "react-dom": "^16.3",
+        "react": "^16.3 || ^18",
+        "react-dom": "^16.3 || ^ 18",
         "styled-jsx": "^4.0.1"
     },
     "dependencies": {
@@ -74,10 +78,6 @@
         "mathjs": "^9.4.2",
         "react-beautiful-dnd": "^10.1.1",
         "resize-observer-polyfill": "^1.5.1"
-    },
-    "resolutions": {
-        "@dhis2/ui": "^10.1.9",
-        "eslint": "^7.32.0"
     },
     "files": [
         "build"

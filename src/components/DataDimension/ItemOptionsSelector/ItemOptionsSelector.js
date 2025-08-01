@@ -38,12 +38,14 @@ const formatOptionsFilters = (dataItemType, dataItemId) => {
     return optionsFilters
 }
 
+const SELECTED_ITEMS_PROP_DEFAULT = []
+
 export const ItemOptionsSelector = ({
     id: dataItemId,
     name: dataItemName,
     type: dataItemType,
 
-    selectedItems,
+    selectedItems = SELECTED_ITEMS_PROP_DEFAULT,
     infoDataItem,
     setInfoDataItem,
     displayNameProp,
@@ -295,8 +297,4 @@ ItemOptionsSelector.propTypes = {
     ),
     setInfoDataItem: PropTypes.func,
     onEditClick: PropTypes.func,
-}
-
-ItemOptionsSelector.defaultProps = {
-    selectedItems: [],
 }
