@@ -94,15 +94,6 @@
             },
             "pe": {
                 "name": "Period"
-            },
-            "jfuXZB3A1ko.hwG20Dyj6RK:0": {
-                "name": "No"
-            },
-            "jfuXZB3A1ko.hwG20Dyj6RK:1": {
-                "name": "Yes"
-            },
-            "jfuXZB3A1ko.hwG20Dyj6RK:": {
-                "name": "N/A"
             }
         },
         "dimensions": {
@@ -121,23 +112,20 @@
                 "202506"
             ],
             "ou": ["ImspTQPwCqd"],
-            "jfuXZB3A1ko.hwG20Dyj6RK": [
-                "jfuXZB3A1ko.hwG20Dyj6RK:1",
-                "jfuXZB3A1ko.hwG20Dyj6RK:"
-            ]
+            "jfuXZB3A1ko.hwG20Dyj6RK": []
         }
     },
     "rowContext": {},
     "width": 4,
     "rows": [
-        ["jfuXZB3A1ko.hwG20Dyj6RK:", "ImspTQPwCqd", "202412", "1"],
-        ["jfuXZB3A1ko.hwG20Dyj6RK:", "ImspTQPwCqd", "202503", "2"],
-        ["jfuXZB3A1ko.hwG20Dyj6RK:", "ImspTQPwCqd", "202504", "1"],
-        ["jfuXZB3A1ko.hwG20Dyj6RK:", "ImspTQPwCqd", "202502", "1"],
-        ["jfuXZB3A1ko.hwG20Dyj6RK:1", "ImspTQPwCqd", "202501", "1"],
-        ["jfuXZB3A1ko.hwG20Dyj6RK:", "ImspTQPwCqd", "202501", "2"],
-        ["jfuXZB3A1ko.hwG20Dyj6RK:1", "ImspTQPwCqd", "202412", "3"],
-        ["jfuXZB3A1ko.hwG20Dyj6RK:", "ImspTQPwCqd", "202411", "1"]
+        ["", "ImspTQPwCqd", "202412", "1"],
+        ["", "ImspTQPwCqd", "202503", "2"],
+        ["", "ImspTQPwCqd", "202504", "1"],
+        ["", "ImspTQPwCqd", "202502", "1"],
+        ["1", "ImspTQPwCqd", "202501", "1"],
+        ["", "ImspTQPwCqd", "202501", "2"],
+        ["1", "ImspTQPwCqd", "202412", "3"],
+        ["", "ImspTQPwCqd", "202411", "1"]
     ],
     "height": 8,
     "headerWidth": 4

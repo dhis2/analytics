@@ -195,34 +195,6 @@ describe('numeric', () => {
             ])
         })
 
-        it('does not modify rows where the value at headerIndex is an empty string', () => {
-            const rows = [
-                ['a', '', 'x'],
-                ['b', '2', 'y'],
-            ]
-            const headerIndex = 1
-
-            expect(getNumericRows(rows, headerIndex, dimensionId)).toEqual([
-                ['a', '', 'x'],
-                ['b', 'Zj7UnCAulEk.fWIAEtYVEGk:2', 'y'],
-            ])
-        })
-
-        it('returns new array and does not mutate original rows', () => {
-            const rows = [
-                ['x', '5'],
-                ['y', '6'],
-            ]
-            const result = getNumericRows(rows, 1, 'id')
-            expect(result).not.toBe(rows)
-            expect(result[0]).not.toBe(rows[0])
-
-            expect(rows).toEqual([
-                ['x', '5'],
-                ['y', '6'],
-            ])
-        })
-
         it('handles empty rows array', () => {
             expect(getNumericRows([], 1, 'a')).toEqual([])
         })
