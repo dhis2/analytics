@@ -84,14 +84,8 @@
             }
         },
         "dimensions": {
-            "pe": [
-                "202504",
-                "202505",
-                "202506"
-            ],
-            "ou": [
-                "ImspTQPwCqd"
-            ],
+            "pe": ["202504", "202505", "202506"],
+            "ou": ["ImspTQPwCqd"],
             "Zj7UnCAulEk.fWIAEtYVEGk": [
                 "yeod5tOXpkP",
                 "gj2fKKyp8OH",
@@ -104,150 +98,18 @@
     "headerWidth": 4,
     "width": 4,
     "rows": [
-        [
-            "MODDISCH",
-            "ImspTQPwCqd",
-            "202505",
-            "495"
-        ],
-        [
-            "MODTRANS",
-            "ImspTQPwCqd",
-            "202504",
-            "545"
-        ],
-        [
-            "MODABSC",
-            "ImspTQPwCqd",
-            "202505",
-            "571"
-        ],
-        [
-            "MODDISCH",
-            "ImspTQPwCqd",
-            "202506",
-            "560"
-        ],
-        [
-            "MODDIED",
-            "ImspTQPwCqd",
-            "202504",
-            "632"
-        ],
-        [
-            "MODDISCH",
-            "ImspTQPwCqd",
-            "202504",
-            "527"
-        ],
-        [
-            "MODABSC",
-            "ImspTQPwCqd",
-            "202504",
-            "552"
-        ],
-        [
-            "MODDIED",
-            "ImspTQPwCqd",
-            "202504",
-            "524"
-        ],
-        [
-            "MODTRANS",
-            "ImspTQPwCqd",
-            "202506",
-            "533"
-        ],
-        [
-            "MODDISCH",
-            "ImspTQPwCqd",
-            "202504",
-            "555"
-        ],
-        [
-            "MODABSC",
-            "ImspTQPwCqd",
-            "202506",
-            "564"
-        ],
-        [
-            "MODTRANS",
-            "ImspTQPwCqd",
-            "202504",
-            "515"
-        ],
-        [
-            "MODDIED",
-            "ImspTQPwCqd",
-            "202506",
-            "585"
-        ],
-        [
-            "MODABSC",
-            "ImspTQPwCqd",
-            "202504",
-            "504"
-        ],
-        [
-            "MODDIED",
-            "ImspTQPwCqd",
-            "202505",
-            "581"
-        ],
-        [
-            "MODTRANS",
-            "ImspTQPwCqd",
-            "202506",
-            "609"
-        ],
-        [
-            "MODABSC",
-            "ImspTQPwCqd",
-            "202505",
-            "574"
-        ],
-        [
-            "MODDISCH",
-            "ImspTQPwCqd",
-            "202505",
-            "586"
-        ],
-        [
-            "MODABSC",
-            "ImspTQPwCqd",
-            "202506",
-            "574"
-        ],
-        [
-            "MODDIED",
-            "ImspTQPwCqd",
-            "202505",
-            "565"
-        ],
-        [
-            "MODDIED",
-            "ImspTQPwCqd",
-            "202506",
-            "545"
-        ],
-        [
-            "MODDISCH",
-            "ImspTQPwCqd",
-            "202506",
-            "597"
-        ],
-        [
-            "MODTRANS",
-            "ImspTQPwCqd",
-            "202505",
-            "524"
-        ],
-        [
-            "MODTRANS",
-            "ImspTQPwCqd",
-            "202505",
-            "561"
-        ]
+        ["MODDIED", "ImspTQPwCqd", "202504", "524"],
+        ["MODDISCH", "ImspTQPwCqd", "202504", "555"],
+        ["MODTRANS", "ImspTQPwCqd", "202504", "515"],
+        ["MODABSC", "ImspTQPwCqd", "202504", "504"],
+        ["MODTRANS", "ImspTQPwCqd", "202506", "609"],
+        ["MODABSC", "ImspTQPwCqd", "202505", "574"],
+        ["MODDISCH", "ImspTQPwCqd", "202505", "586"],
+        ["MODABSC", "ImspTQPwCqd", "202506", "574"],
+        ["MODDIED", "ImspTQPwCqd", "202505", "565"],
+        ["MODDIED", "ImspTQPwCqd", "202506", "545"],
+        ["MODDISCH", "ImspTQPwCqd", "202506", "597"],
+        ["MODTRANS", "ImspTQPwCqd", "202505", "561"]
     ],
     "height": 24
 }

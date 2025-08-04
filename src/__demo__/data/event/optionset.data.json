@@ -84,14 +84,8 @@
             }
         },
         "dimensions": {
-            "pe": [
-                "202504",
-                "202505",
-                "202506"
-            ],
-            "ou": [
-                "ImspTQPwCqd"
-            ],
+            "pe": ["202504", "202505", "202506"],
+            "ou": ["ImspTQPwCqd"],
             "Zj7UnCAulEk.fWIAEtYVEGk": [
                 "yeod5tOXpkP",
                 "gj2fKKyp8OH",
@@ -104,150 +98,18 @@
     "headerWidth": 4,
     "width": 4,
     "rows": [
-        [
-            "yeod5tOXpkP",
-            "ImspTQPwCqd",
-            "202505",
-            "495"
-        ],
-        [
-            "fShHdgT7XGb",
-            "ImspTQPwCqd",
-            "202504",
-            "545"
-        ],
-        [
-            "Fhbf4aKpZmZ",
-            "ImspTQPwCqd",
-            "202505",
-            "571"
-        ],
-        [
-            "yeod5tOXpkP",
-            "ImspTQPwCqd",
-            "202506",
-            "560"
-        ],
-        [
-            "gj2fKKyp8OH",
-            "ImspTQPwCqd",
-            "202504",
-            "632"
-        ],
-        [
-            "yeod5tOXpkP",
-            "ImspTQPwCqd",
-            "202504",
-            "527"
-        ],
-        [
-            "Fhbf4aKpZmZ",
-            "ImspTQPwCqd",
-            "202504",
-            "552"
-        ],
-        [
-            "gj2fKKyp8OH",
-            "ImspTQPwCqd",
-            "202504",
-            "524"
-        ],
-        [
-            "fShHdgT7XGb",
-            "ImspTQPwCqd",
-            "202506",
-            "533"
-        ],
-        [
-            "yeod5tOXpkP",
-            "ImspTQPwCqd",
-            "202504",
-            "555"
-        ],
-        [
-            "Fhbf4aKpZmZ",
-            "ImspTQPwCqd",
-            "202506",
-            "564"
-        ],
-        [
-            "fShHdgT7XGb",
-            "ImspTQPwCqd",
-            "202504",
-            "515"
-        ],
-        [
-            "gj2fKKyp8OH",
-            "ImspTQPwCqd",
-            "202506",
-            "585"
-        ],
-        [
-            "Fhbf4aKpZmZ",
-            "ImspTQPwCqd",
-            "202504",
-            "504"
-        ],
-        [
-            "gj2fKKyp8OH",
-            "ImspTQPwCqd",
-            "202505",
-            "581"
-        ],
-        [
-            "fShHdgT7XGb",
-            "ImspTQPwCqd",
-            "202506",
-            "609"
-        ],
-        [
-            "Fhbf4aKpZmZ",
-            "ImspTQPwCqd",
-            "202505",
-            "574"
-        ],
-        [
-            "yeod5tOXpkP",
-            "ImspTQPwCqd",
-            "202505",
-            "586"
-        ],
-        [
-            "Fhbf4aKpZmZ",
-            "ImspTQPwCqd",
-            "202506",
-            "574"
-        ],
-        [
-            "gj2fKKyp8OH",
-            "ImspTQPwCqd",
-            "202505",
-            "565"
-        ],
-        [
-            "gj2fKKyp8OH",
-            "ImspTQPwCqd",
-            "202506",
-            "545"
-        ],
-        [
-            "yeod5tOXpkP",
-            "ImspTQPwCqd",
-            "202506",
-            "597"
-        ],
-        [
-            "fShHdgT7XGb",
-            "ImspTQPwCqd",
-            "202505",
-            "524"
-        ],
-        [
-            "fShHdgT7XGb",
-            "ImspTQPwCqd",
-            "202505",
-            "561"
-        ]
+        ["gj2fKKyp8OH", "ImspTQPwCqd", "202504", "524"],
+        ["yeod5tOXpkP", "ImspTQPwCqd", "202504", "555"],
+        ["fShHdgT7XGb", "ImspTQPwCqd", "202504", "515"],
+        ["Fhbf4aKpZmZ", "ImspTQPwCqd", "202504", "504"],
+        ["fShHdgT7XGb", "ImspTQPwCqd", "202506", "609"],
+        ["Fhbf4aKpZmZ", "ImspTQPwCqd", "202505", "574"],
+        ["yeod5tOXpkP", "ImspTQPwCqd", "202505", "586"],
+        ["Fhbf4aKpZmZ", "ImspTQPwCqd", "202506", "574"],
+        ["gj2fKKyp8OH", "ImspTQPwCqd", "202505", "565"],
+        ["gj2fKKyp8OH", "ImspTQPwCqd", "202506", "545"],
+        ["yeod5tOXpkP", "ImspTQPwCqd", "202506", "597"],
+        ["fShHdgT7XGb", "ImspTQPwCqd", "202505", "561"]
     ],
     "height": 24
 }
