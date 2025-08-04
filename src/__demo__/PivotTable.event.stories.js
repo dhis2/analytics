@@ -123,7 +123,7 @@ Optionset.story = {
     name: 'Optionset',
 }
 
-export const Optionsets = (_, { pivotTableOptions }) => {
+export const OptionsetsNonUniqueCodes = (_, { pivotTableOptions }) => {
     const visualization = {
         ...optionsetsVisualization,
         ...visualizationReset,
@@ -137,8 +137,8 @@ export const Optionsets = (_, { pivotTableOptions }) => {
     )
 }
 
-Optionset.story = {
-    name: 'Optionset',
+OptionsetsNonUniqueCodes.story = {
+    name: 'Optionset, non-unique codes',
 }
 
 export const Boolean = (_, { pivotTableOptions }) => {
