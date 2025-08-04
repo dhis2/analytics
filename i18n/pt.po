@@ -9,15 +9,15 @@
 # Shelsea Chumaio, 2025
 # Helton Dias, 2025
 # Ge Joao <gsimango@saudigitus.org>, 2025
-# Viktor Varland <viktor@dhis2.org>, 2025
 # Philip Larsen Donnelly, 2025
+# Viktor Varland <viktor@dhis2.org>, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2025-03-18T12:46:14.410Z\n"
+"POT-Creation-Date: 2025-04-15T13:34:54.995Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Philip Larsen Donnelly, 2025\n"
+"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2025\n"
 "Language-Team: Portuguese (https://app.transifex.com/hisp-uio/teams/100509/pt/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -528,6 +528,9 @@ msgstr "mapa"
 
 msgid "visualization"
 msgstr "visualização"
+
+msgid "Untitled {{visualizationType}}, {{date}}"
+msgstr ""
 
 msgid "Edit"
 msgstr "Editar"
@@ -1440,6 +1443,9 @@ msgstr "Tabela de valores atípicos"
 
 msgid "All charts"
 msgstr "Todos os gráficos"
+
+msgid "Map"
+msgstr "Mapa"
 
 msgid "{{seriesName}} (trend)"
 msgstr "{{seriesName}} (tendência)"

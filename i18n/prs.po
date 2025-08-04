@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2025-03-18T12:46:14.410Z\n"
+"POT-Creation-Date: 2025-04-15T13:34:54.995Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: Philip Larsen Donnelly, 2025\n"
 "Language-Team: Persian (Afghanistan) (https://app.transifex.com/hisp-uio/teams/100509/fa_AF/)\n"
@@ -508,6 +508,9 @@ msgid "map"
 msgstr ""
 
 msgid "visualization"
+msgstr ""
+
+msgid "Untitled {{visualizationType}}, {{date}}"
 msgstr ""
 
 msgid "Edit"
@@ -1391,6 +1394,9 @@ msgstr ""
 
 msgid "All charts"
 msgstr ""
+
+msgid "Map"
+msgstr "نقشه"
 
 msgid "{{seriesName}} (trend)"
 msgstr ""

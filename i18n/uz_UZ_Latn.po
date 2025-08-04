@@ -1,13 +1,14 @@
 # 
 # Translators:
 # Yury Rogachev <yury@dhis2.org>, 2025
+# Khurshid Ibatov <x.ibatov@dtsj.uz>, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2025-03-18T12:46:14.410Z\n"
+"POT-Creation-Date: 2025-04-15T13:34:54.995Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Yury Rogachev <yury@dhis2.org>, 2025\n"
+"Last-Translator: Khurshid Ibatov <x.ibatov@dtsj.uz>, 2025\n"
 "Language-Team: Uzbek (Latin) (https://app.transifex.com/hisp-uio/teams/100509/uz@Latn/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -83,7 +84,7 @@ msgid "This app could not retrieve required data."
 msgstr ""
 
 msgid "Network error"
-msgstr ""
+msgstr "Тармоқда хатолик"
 
 msgid "Data / Edit calculation"
 msgstr ""
@@ -92,7 +93,7 @@ msgid "Data / New calculation"
 msgstr ""
 
 msgid "Remove item"
-msgstr ""
+msgstr "Elementni olib tashlang"
 
 msgid "Check formula"
 msgstr ""
@@ -507,6 +508,9 @@ msgid "map"
 msgstr "xarita"
 
 msgid "visualization"
+msgstr ""
+
+msgid "Untitled {{visualizationType}}, {{date}}"
 msgstr ""
 
 msgid "Edit"
@@ -1386,6 +1390,9 @@ msgstr ""
 
 msgid "All charts"
 msgstr ""
+
+msgid "Map"
+msgstr "Харита"
 
 msgid "{{seriesName}} (trend)"
 msgstr ""

@@ -6,6 +6,12 @@ import DimensionList from './List/DimensionList.js'
 import { styles } from './styles/DimensionsPanel.style.js'
 
 class DimensionsPanel extends Component {
+    static defaultProps = {
+        selectedIds: [],
+        style: {},
+        onDimensionClick: Function.prototype,
+    }
+
     state = { filterText: '' }
 
     onClearFilter = () => {
@@ -64,12 +70,6 @@ DimensionsPanel.propTypes = {
     onDimensionClick: PropTypes.func,
     onDimensionDragStart: PropTypes.func,
     onDimensionOptionsClick: PropTypes.func,
-}
-
-DimensionsPanel.defaultProps = {
-    selectedIds: [],
-    style: {},
-    onDimensionClick: Function.prototype,
 }
 
 export default DimensionsPanel
