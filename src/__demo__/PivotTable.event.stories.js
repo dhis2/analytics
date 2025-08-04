@@ -9,6 +9,8 @@ import numericData from './data/event/numeric.data.json'
 import numericVisualization from './data/event/numeric.visualization.json'
 import optionsetData from './data/event/optionset.data.json'
 import optionsetVisualization from './data/event/optionset.visualization.json'
+import optionsetsData from './data/event/optionsets.data.json'
+import optionsetsVisualization from './data/event/optionsets.visualization.json'
 import yesonlyData from './data/event/yesonly.data.json'
 import yesonlyVisualization from './data/event/yesonly.visualization.json'
 
@@ -91,7 +93,10 @@ export const NumericLegendset = (_, { pivotTableOptions }) => {
     }
     return (
         <div style={{ width: 800, height: 600 }}>
-            <PivotTable data={numericLegendsetData} visualization={visualization} />
+            <PivotTable
+                data={numericLegendsetData}
+                visualization={visualization}
+            />
         </div>
     )
 }
@@ -110,6 +115,24 @@ export const Optionset = (_, { pivotTableOptions }) => {
     return (
         <div style={{ width: 800, height: 600 }}>
             <PivotTable data={optionsetData} visualization={visualization} />
+        </div>
+    )
+}
+
+Optionset.story = {
+    name: 'Optionset',
+}
+
+export const Optionsets = (_, { pivotTableOptions }) => {
+    const visualization = {
+        ...optionsetsVisualization,
+        ...visualizationReset,
+        ...pivotTableOptions,
+    }
+
+    return (
+        <div style={{ width: 800, height: 600 }}>
+            <PivotTable data={optionsetsData} visualization={visualization} />
         </div>
     )
 }

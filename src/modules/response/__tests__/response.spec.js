@@ -4,21 +4,17 @@ import responseNumeric from '../../../__demo__/data/event/numeric.data.json'
 import responseNumericOrg from '../../../__demo__/data/event/numeric.data.org.json'
 import responseOptionSet from '../../../__demo__/data/event/optionset.data.json'
 import responseOptionSetOrg from '../../../__demo__/data/event/optionset.data.org.json'
+import responseOptionSets from '../../../__demo__/data/event/optionsets.data.json'
+import responseOptionSetsOrg from '../../../__demo__/data/event/optionsets.data.org.json'
 import responseYesOnly from '../../../__demo__/data/event/yesonly.data.json'
 import responseYesOnlyOrg from '../../../__demo__/data/event/yesonly.data.org.json'
 import { transformResponse } from '../response.js'
 
 describe('response', () => {
     describe('transformResponse', () => {
-        it('transforms boolean response', () => {
-            expect(transformResponse(responseBooleanOrg)).toEqual(
-                responseBoolean
-            )
-        })
-
-        it('transforms yes only response', () => {
-            expect(transformResponse(responseYesOnlyOrg)).toEqual(
-                responseYesOnly
+        it('transforms numeric response', () => {
+            expect(transformResponse(responseNumericOrg)).toEqual(
+                responseNumeric
             )
         })
 
@@ -28,9 +24,21 @@ describe('response', () => {
             )
         })
 
-        it('transforms numeric response', () => {
-            expect(transformResponse(responseNumericOrg)).toEqual(
-                responseNumeric
+        it('transforms option set response with non-unique codes across two option sets', () => {
+            expect(transformResponse(responseOptionSetsOrg)).toEqual(
+                responseOptionSets
+            )
+        })
+
+        it('transforms boolean response', () => {
+            expect(transformResponse(responseBooleanOrg)).toEqual(
+                responseBoolean
+            )
+        })
+
+        it('transforms yes only response', () => {
+            expect(transformResponse(responseYesOnlyOrg)).toEqual(
+                responseYesOnly
             )
         })
     })
