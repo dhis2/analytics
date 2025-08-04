@@ -1,51 +1,41 @@
-import { shallow } from 'enzyme'
+import { render } from '@testing-library/react'
 import React from 'react'
 import DimensionItem from '../DimensionItem.js'
 
-describe('DimensionItem', () => {
-    let props
-    let shallowItem
-    const dimensionItem = () => {
-        if (!shallowItem) {
-            shallowItem = shallow(<DimensionItem {...props} />)
-        }
-        return shallowItem
-    }
+const props = {
+    id: 'pe',
+    name: 'Period',
+    isDeactivated: false,
+    isSelected: false,
+    isRecommended: false,
+    isLocked: false,
+}
 
-    beforeEach(() => {
-        props = {
-            id: 'pe',
-            name: 'Period',
-            isDeactivated: false,
-            isSelected: false,
-            isRecommended: false,
-            isLocked: false,
-        }
+test('DimensionItem matches the snapshot', () => {
+    const { container } = render(<DimensionItem {...props} />)
+    expect(container).toMatchSnapshot()
+})
 
-        shallowItem = undefined
-    })
+test('DimensionItem matches the snapshot with recommended', () => {
+    const { container } = render(
+        <DimensionItem {...props} isRecommended={true} />
+    )
+    expect(container).toMatchSnapshot()
+})
 
-    it('matches the snapshot', () => {
-        expect(dimensionItem()).toMatchSnapshot()
-    })
+test('DimensionItem matches the snapshot with selected', () => {
+    const { container } = render(<DimensionItem {...props} isSelected={true} />)
+    expect(container).toMatchSnapshot()
+})
 
-    it('matches the snapshot with recommended', () => {
-        props.isRecommended = true
-        expect(dimensionItem()).toMatchSnapshot()
-    })
+test('DimensionItem matches the snapshot with locked', () => {
+    const { container } = render(<DimensionItem {...props} isLocked={true} />)
+    expect(container).toMatchSnapshot()
+})
 
-    it('matches the snapshot with selected', () => {
-        props.isSelected = true
-        expect(dimensionItem()).toMatchSnapshot()
-    })
-
-    it('matches the snapshot with locked', () => {
-        props.isLocked = true
-        expect(dimensionItem()).toMatchSnapshot()
-    })
-
-    it('matches the snapshot with onOptionsClick', () => {
-        props.onOptionsClick = jest.fn()
-        expect(dimensionItem()).toMatchSnapshot()
-    })
+test('DimensionItem matches the snapshot with onOptionsClick', () => {
+    const { container } = render(
+        <DimensionItem {...props} onOptionsClick={jest.fn()} />
+    )
+    expect(container).toMatchSnapshot()
 })

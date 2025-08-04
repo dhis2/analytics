@@ -1,23 +1,26 @@
-import { shallow } from 'enzyme'
+import { render, screen } from '@testing-library/react'
 import React from 'react'
 import { ToolbarSidebar } from '../index.js'
 
 describe('<ToolbarSidebar/>', () => {
-    it('renders children', () => {
+    test('renders children', () => {
         const childNode = 'text node'
-        const wrapper = shallow(<ToolbarSidebar>{childNode}</ToolbarSidebar>)
+        render(<ToolbarSidebar>{childNode}</ToolbarSidebar>)
 
-        expect(wrapper.containsMatchingElement(childNode)).toBe(true)
+        expect(screen.getByText(childNode)).toBeInTheDocument()
     })
-    it('accepts a `dataTest` prop', () => {
+
+    test('accepts a `dataTest` prop', () => {
         const dataTest = 'test'
-        const wrapper = shallow(<ToolbarSidebar dataTest={dataTest} />)
+        render(<ToolbarSidebar dataTest={dataTest} />)
 
-        expect(wrapper.prop('data-test')).toBe(dataTest)
+        expect(screen.getByTestId(dataTest)).toBeInTheDocument()
     })
-    it('accepts a `isHidden` prop', () => {
-        const wrapper = shallow(<ToolbarSidebar isHidden />)
 
-        expect(wrapper.find('div').hasClass('isHidden')).toEqual(true)
+    test('accepts a `isHidden` prop', () => {
+        const { container } = render(<ToolbarSidebar isHidden />)
+        const divEl = container.querySelector('div')
+
+        expect(divEl).toHaveClass('isHidden')
     })
 })
