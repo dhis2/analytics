@@ -12,42 +12,84 @@ import { transformResponse } from '../response.js'
 
 describe('response', () => {
     describe('transformResponse', () => {
-        it('transforms numeric response', () => {
-            expect(
-                transformResponse(responseNumericOrg, { hideNaData: false })
-            ).toEqual(responseNumeric)
+        describe('numeric', () => {
+            it('transforms response', () => {
+                expect(transformResponse(responseNumericOrg)).toEqual(
+                    responseNumeric
+                )
+            })
+
+            it('transforms response and hides N/A', () => {
+                expect(
+                    transformResponse(responseNumericOrg, {
+                        hideNaData: true,
+                    }).metaData.dimensions['Zj7UnCAulEk.qrur9Dvnyt5'].includes(
+                        ''
+                    )
+                ).toEqual(false)
+            })
         })
 
-        it('transforms numeric response and N/A is not a dimension', () => {
-            expect(
-                transformResponse(responseNumericOrg, {
-                    hideNaData: true,
-                }).metaData.dimensions['Zj7UnCAulEk.qrur9Dvnyt5'].includes('')
-            ).toEqual(false)
+        describe('option set', () => {
+            it('transforms response', () => {
+                expect(
+                    transformResponse(responseOptionSetOrg, {
+                        hideNaData: false,
+                    })
+                ).toEqual(responseOptionSet)
+            })
+
+            it('transforms response and hides N/A', () => {
+                expect(
+                    transformResponse(responseOptionSetOrg, {
+                        hideNaData: true,
+                    }).metaData.dimensions['Zj7UnCAulEk.fWIAEtYVEGk'].includes(
+                        ''
+                    )
+                ).toBe(false)
+            })
+
+            it('transforms response with non-unique codes across two option sets', () => {
+                expect(transformResponse(responseOptionSetsOrg)).toEqual(
+                    responseOptionSets
+                )
+            })
         })
 
-        it('transforms option set response', () => {
-            expect(
-                transformResponse(responseOptionSetOrg, { hideNaData: false })
-            ).toEqual(responseOptionSet)
+        describe('boolean', () => {
+            it('transforms response', () => {
+                expect(transformResponse(responseBooleanOrg)).toEqual(
+                    responseBoolean
+                )
+            })
+
+            it('transforms response and hides N/A', () => {
+                expect(
+                    transformResponse(responseBooleanOrg, {
+                        hideNaData: true,
+                    }).metaData.dimensions['A03MvHHogjR.bx6fsa0t90x'].includes(
+                        ''
+                    )
+                ).toBe(false)
+            })
         })
 
-        it('transforms option set response with non-unique codes across two option sets', () => {
-            expect(
-                transformResponse(responseOptionSetsOrg, { hideNaData: false })
-            ).toEqual(responseOptionSets)
-        })
+        describe('yes only', () => {
+            it('transforms response', () => {
+                expect(transformResponse(responseYesOnlyOrg)).toEqual(
+                    responseYesOnly
+                )
+            })
 
-        it('transforms boolean response', () => {
-            expect(
-                transformResponse(responseBooleanOrg, { hideNaData: false })
-            ).toEqual(responseBoolean)
-        })
-
-        it('transforms yes only response', () => {
-            expect(
-                transformResponse(responseYesOnlyOrg, { hideNaData: false })
-            ).toEqual(responseYesOnly)
+            it('transforms response and hides N/A', () => {
+                expect(
+                    transformResponse(responseYesOnlyOrg, {
+                        hideNaData: true,
+                    }).metaData.dimensions['jfuXZB3A1ko.hwG20Dyj6RK'].includes(
+                        ''
+                    )
+                ).toBe(false)
+            })
         })
     })
 })

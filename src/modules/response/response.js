@@ -12,7 +12,7 @@ const removeNaDimensions = (obj) =>
         return acc
     }, {})
 
-export const transformResponse = (response, { hideNaData }) => {
+export const transformResponse = (response, { hideNaData } = {}) => {
     let transformedResponse = {
         ...response,
     }
