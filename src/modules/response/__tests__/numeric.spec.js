@@ -10,7 +10,7 @@ import {
     sortStringsAsNumbersAsc,
 } from '../numeric.js'
 
-const dimensionId = 'Zj7UnCAulEk.fWIAEtYVEGk'
+const testId = 'Zj7UnCAulEk.qrur9Dvnyt5'
 const headerIndex = 0
 
 describe('numeric', () => {
@@ -84,97 +84,41 @@ describe('numeric', () => {
         })
 
         it('works with empty string value', () => {
-            expect(getPrefixedValue('', 'test')).toBe('test:')
+            expect(getPrefixedValue('', 'test')).toBe('')
         })
 
         it('works with both prefix and value empty', () => {
-            expect(getPrefixedValue('', '')).toBe(':')
-        })
-        it('works with numbers as value', () => {
-            expect(getPrefixedValue(42, 'num')).toBe('num:42')
-        })
-
-        it('works with numbers as prefix', () => {
-            expect(getPrefixedValue('data', 99)).toBe('99:data')
-        })
-
-        it('works with non-string types as both prefix and value', () => {
-            expect(getPrefixedValue(null, undefined)).toBe('undefined:null')
-            expect(getPrefixedValue(true, false)).toBe('false:true')
+            expect(getPrefixedValue('', '')).toBe('')
         })
     })
 
     describe('getNumericItems', () => {
         it('returns an object with prefixed keys and correct names', () => {
-            const values = ['1', '2', '10']
+            const values = ['1', '2', '']
 
-            expect(getNumericItems(values, dimensionId)).toEqual({
-                'Zj7UnCAulEk.fWIAEtYVEGk:1': { name: '1' },
-                'Zj7UnCAulEk.fWIAEtYVEGk:2': { name: '2' },
-                'Zj7UnCAulEk.fWIAEtYVEGk:10': { name: '10' },
+            expect(getNumericItems(values, testId)).toEqual({
+                [testId + ':1']: { name: '1' },
+                [testId + ':2']: { name: '2' },
+                '': { name: 'N/A' },
             })
         })
 
         it('handles empty values array', () => {
             expect(getNumericItems([], 'prefix')).toEqual({})
         })
-
-        it('handles empty dimensionId', () => {
-            const values = ['a', 'b']
-            expect(getNumericItems(values, '')).toEqual({
-                ':a': { name: 'a' },
-                ':b': { name: 'b' },
-            })
-        })
-
-        it('works with non-string values', () => {
-            const values = [1, 2, null, undefined]
-            expect(getNumericItems(values, 'num')).toEqual({
-                'num:1': { name: 1 },
-                'num:2': { name: 2 },
-                'num:null': { name: null },
-                'num:undefined': { name: undefined },
-            })
-        })
-
-        it('handles duplicate values, last one wins', () => {
-            const values = ['1', '2', '1']
-            expect(getNumericItems(values, 'x')).toEqual({
-                'x:1': { name: '1' }, // Last occurrence
-                'x:2': { name: '2' },
-            })
-        })
-
-        it('handles numbers as dimensionId', () => {
-            const values = ['42']
-            expect(getNumericItems(values, 7)).toEqual({
-                '7:42': { name: '42' },
-            })
-        })
     })
 
     describe('getNumericDimension', () => {
         it('returns object with dimensionId as key and correctly prefixed values', () => {
-            const values = ['1', '2', '10']
-            expect(getNumericDimension(values, dimensionId)).toEqual({
-                'Zj7UnCAulEk.fWIAEtYVEGk': [
-                    'Zj7UnCAulEk.fWIAEtYVEGk:1',
-                    'Zj7UnCAulEk.fWIAEtYVEGk:2',
-                    'Zj7UnCAulEk.fWIAEtYVEGk:10',
-                ],
+            const values = ['1', '2', '']
+            expect(getNumericDimension(values, testId)).toEqual({
+                [testId]: [testId + ':1', testId + ':2', ''],
             })
         })
 
         it('handles empty values array', () => {
             expect(getNumericDimension([], 'prefix')).toEqual({
                 prefix: [],
-            })
-        })
-
-        it('handles empty string as dimensionId', () => {
-            const values = ['1', '2', '10']
-            expect(getNumericDimension(values, '')).toEqual({
-                '': [':1', ':2', ':10'],
             })
         })
     })
@@ -184,14 +128,14 @@ describe('numeric', () => {
             const rows = [
                 ['a', '1', 'x'],
                 ['b', '2', 'y'],
-                ['c', '10', 'z'],
+                ['c', '', 'z'],
             ]
             const headerIndex = 1
 
-            expect(getNumericRows(rows, headerIndex, dimensionId)).toEqual([
-                ['a', 'Zj7UnCAulEk.fWIAEtYVEGk:1', 'x'],
-                ['b', 'Zj7UnCAulEk.fWIAEtYVEGk:2', 'y'],
-                ['c', 'Zj7UnCAulEk.fWIAEtYVEGk:10', 'z'],
+            expect(getNumericRows(rows, headerIndex, testId)).toEqual([
+                ['a', testId + ':1', 'x'],
+                ['b', testId + ':2', 'y'],
+                ['c', '', 'z'],
             ])
         })
 

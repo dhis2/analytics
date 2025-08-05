@@ -2,7 +2,6 @@ import response from '../../../__demo__/data/event/boolean.data.json'
 import responseOrg from '../../../__demo__/data/event/boolean.data.org.json'
 import { applyBooleanHandler } from '../boolean.js'
 
-const dimensionId = 'Zj7UnCAulEk.fWIAEtYVEGk'
 const headerIndex = 0
 
 describe('boolean', () => {

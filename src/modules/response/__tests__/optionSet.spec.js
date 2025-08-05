@@ -6,8 +6,8 @@ import {
     applyOptionSetHandler,
 } from '../optionSet.js'
 
-const dimensionId = 'Zj7UnCAulEk.fWIAEtYVEGk'
 const headerIndex = 0
+const testId = response.headers[headerIndex].name
 
 const testOptionCodeIdMap = {
     MODABSC: 'Fhbf4aKpZmZ',
@@ -19,7 +19,7 @@ const testOptionCodeIdMap = {
 describe('optionSet', () => {
     describe('getOptionCodeIdMap', () => {
         it('should create an option code:id object', () => {
-            const testOptionIds = response.metaData.dimensions[dimensionId]
+            const testOptionIds = response.metaData.dimensions[testId]
             const testOptionItems = response.metaData.items
 
             expect(getOptionCodeIdMap(testOptionIds, testOptionItems)).toEqual(

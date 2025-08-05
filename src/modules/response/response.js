@@ -3,7 +3,16 @@ import { applyBooleanHandler } from './boolean.js'
 import { applyNumericHandler } from './numeric.js'
 import { applyOptionSetHandler } from './optionSet.js'
 
-export const transformResponse = (response) => {
+const removeNaDimensions = (obj) =>
+    Object.keys(obj).reduce((acc, key) => {
+        const value = obj[key]
+        acc[key] = Array.isArray(value)
+            ? value.filter((str) => str !== '')
+            : value
+        return acc
+    }, {})
+
+export const transformResponse = (response, { hideNaData }) => {
     let transformedResponse = {
         ...response,
     }
@@ -31,6 +40,12 @@ export const transformResponse = (response) => {
             }
         }
     })
+
+    if (hideNaData) {
+        transformedResponse.metaData.dimensions = removeNaDimensions(
+            transformedResponse.metaData.dimensions
+        )
+    }
 
     return transformedResponse
 }

@@ -117,7 +117,9 @@
         ["optionId2", "optionId3", "ImspTQPwCqd", "202507", "420"],
         ["optionId2", "optionId4", "ImspTQPwCqd", "202505", "411"],
         ["optionId2", "optionId4", "ImspTQPwCqd", "202506", "531"],
-        ["optionId2", "optionId4", "ImspTQPwCqd", "202507", "317"]
+        ["optionId2", "optionId4", "ImspTQPwCqd", "202507", "317"],
+        ["", "optionId4", "ImspTQPwCqd", "202507", "23"],
+        ["optionId1", "", "ImspTQPwCqd", "202506", "45"]
     ],
     "height": 12
 }

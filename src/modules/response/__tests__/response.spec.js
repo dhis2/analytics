@@ -13,33 +13,41 @@ import { transformResponse } from '../response.js'
 describe('response', () => {
     describe('transformResponse', () => {
         it('transforms numeric response', () => {
-            expect(transformResponse(responseNumericOrg)).toEqual(
-                responseNumeric
-            )
+            expect(
+                transformResponse(responseNumericOrg, { hideNaData: false })
+            ).toEqual(responseNumeric)
+        })
+
+        it('transforms numeric response and N/A is not a dimension', () => {
+            expect(
+                transformResponse(responseNumericOrg, {
+                    hideNaData: true,
+                }).metaData.dimensions['Zj7UnCAulEk.qrur9Dvnyt5'].includes('')
+            ).toEqual(false)
         })
 
         it('transforms option set response', () => {
-            expect(transformResponse(responseOptionSetOrg)).toEqual(
-                responseOptionSet
-            )
+            expect(
+                transformResponse(responseOptionSetOrg, { hideNaData: false })
+            ).toEqual(responseOptionSet)
         })
 
         it('transforms option set response with non-unique codes across two option sets', () => {
-            expect(transformResponse(responseOptionSetsOrg)).toEqual(
-                responseOptionSets
-            )
+            expect(
+                transformResponse(responseOptionSetsOrg, { hideNaData: false })
+            ).toEqual(responseOptionSets)
         })
 
         it('transforms boolean response', () => {
-            expect(transformResponse(responseBooleanOrg)).toEqual(
-                responseBoolean
-            )
+            expect(
+                transformResponse(responseBooleanOrg, { hideNaData: false })
+            ).toEqual(responseBoolean)
         })
 
         it('transforms yes only response', () => {
-            expect(transformResponse(responseYesOnlyOrg)).toEqual(
-                responseYesOnly
-            )
+            expect(
+                transformResponse(responseYesOnlyOrg, { hideNaData: false })
+            ).toEqual(responseYesOnly)
         })
     })
 })
