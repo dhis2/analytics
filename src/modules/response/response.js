@@ -3,7 +3,7 @@ import { applyBooleanHandler } from './boolean.js'
 import { applyNumericHandler } from './numeric.js'
 import { applyOptionSetHandler } from './optionSet.js'
 
-const removeNaDimensions = (obj) =>
+export const removeNaDimensionItems = (obj) =>
     Object.keys(obj).reduce((acc, key) => {
         const value = obj[key]
         acc[key] = Array.isArray(value)
@@ -42,7 +42,7 @@ export const transformResponse = (response, { hideNaData } = {}) => {
     })
 
     if (hideNaData) {
-        transformedResponse.metaData.dimensions = removeNaDimensions(
+        transformedResponse.metaData.dimensions = removeNaDimensionItems(
             transformedResponse.metaData.dimensions
         )
     }

@@ -8,9 +8,27 @@ import responseOptionSets from '../../../__demo__/data/event/optionsets.data.jso
 import responseOptionSetsOrg from '../../../__demo__/data/event/optionsets.data.org.json'
 import responseYesOnly from '../../../__demo__/data/event/yesonly.data.json'
 import responseYesOnlyOrg from '../../../__demo__/data/event/yesonly.data.org.json'
-import { transformResponse } from '../response.js'
+import { removeNaDimensionItems, transformResponse } from '../response.js'
 
 describe('response', () => {
+    describe('removeNaDimensionItems', () => {
+        it('removes empty strings from array values', () => {
+            const input = { dim1: ['a', '', 'b'], dim2: [''] }
+            const expected = { dim1: ['a', 'b'], dim2: [] }
+            expect(removeNaDimensionItems(input)).toEqual(expected)
+        })
+
+        it('leaves non-array values unchanged', () => {
+            const input = { dim1: 'abc', dim2: 123, dim3: null }
+            const expected = { dim1: 'abc', dim2: 123, dim3: null }
+            expect(removeNaDimensionItems(input)).toEqual(expected)
+        })
+
+        it('returns an empty object when given an empty object', () => {
+            expect(removeNaDimensionItems({})).toEqual({})
+        })
+    })
+
     describe('transformResponse', () => {
         describe('numeric', () => {
             it('transforms response', () => {
