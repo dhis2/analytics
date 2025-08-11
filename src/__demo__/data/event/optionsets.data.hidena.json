@@ -93,16 +93,13 @@
             },
             "LAST_3_MONTHS": {
                 "name": "Last 3 months"
-            },
-            "": {
-                "name": "N/A"
             }
         },
         "dimensions": {
             "pe": ["202505", "202506", "202507"],
             "ou": ["ImspTQPwCqd"],
-            "stageA.element1": ["optionId1", "optionId2", ""],
-            "stageB.element2": ["optionId3", "optionId4", ""]
+            "stageA.element1": ["optionId1", "optionId2"],
+            "stageB.element2": ["optionId3", "optionId4"]
         }
     },
     "rowContext": {},

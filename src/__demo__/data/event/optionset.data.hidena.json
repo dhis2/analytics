@@ -81,9 +81,6 @@
             "yeod5tOXpkP": {
                 "code": "MODDISCH",
                 "name": "Discharged"
-            },
-            "": {
-                "name": "N/A"
             }
         },
         "dimensions": {
@@ -93,8 +90,7 @@
                 "yeod5tOXpkP",
                 "gj2fKKyp8OH",
                 "fShHdgT7XGb",
-                "Fhbf4aKpZmZ",
-                ""
+                "Fhbf4aKpZmZ"
             ]
         }
     },

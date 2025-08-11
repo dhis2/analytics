@@ -95,9 +95,6 @@
             },
             "LAST_3_MONTHS": {
                 "name": "Last 3 months"
-            },
-            "": {
-                "name": "N/A"
             }
         },
         "dimensions": {
@@ -112,8 +109,7 @@
                 "Tq4NYCn9eNH",
                 "b7MCpzqJaR2",
                 "puI3YpLJ3fC",
-                "scvmgP9F9rn",
-                ""
+                "scvmgP9F9rn"
             ],
             "ou": ["ImspTQPwCqd"]
         }

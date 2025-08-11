@@ -1,29 +1,35 @@
-import i18n from '@dhis2/d2-i18n'
+import { NA_VALUE } from './response.js'
 
 export const getUnique = (array) => [...new Set(array)]
 
 export const sortStringsAsNumbersAsc = (arr) => {
     return arr.slice().sort((a, b) => {
-        if (a === '' && b === '') {
+        if (a === NA_VALUE && b === NA_VALUE) {
             return 0
         }
-        if (a === '') {
+        if (a === NA_VALUE) {
             return 1
         }
-        if (b === '') {
+        if (b === NA_VALUE) {
             return -1
         }
         return Number(a) - Number(b)
     })
 }
 
-export const getPrefixedValue = (value, prefix) =>
-    value !== '' ? `${prefix}:${value}` : value
+export const getUniqueSortedValues = (rows, headerIndex) =>
+    sortStringsAsNumbersAsc(
+        getUnique(
+            rows.map((row) => row[headerIndex]).filter((value) => value.length)
+        )
+    )
+
+export const getPrefixedValue = (value, prefix) => `${prefix}:${value}`
 
 export const getNumericItems = (values, dimensionId) =>
     values.reduce((items, value) => {
         items[getPrefixedValue(value, dimensionId)] = {
-            name: value || i18n.t('N/A'),
+            name: value,
         }
         return items
     }, {})
@@ -34,24 +40,29 @@ export const getNumericDimension = (values, dimensionId) => ({
 
 export const getNumericRows = (rows, headerIndex, dimensionId) => {
     let row
+    let value
 
     return rows.map((r) => {
-        row = [...r]
-        row[headerIndex] = getPrefixedValue(row[headerIndex], dimensionId)
-        return row
+        value = r[headerIndex]
+
+        if (value !== NA_VALUE) {
+            row = [...r]
+            row[headerIndex] = getPrefixedValue(row[headerIndex], dimensionId)
+            return row
+        }
+
+        return r
     })
 }
 
 export const applyNumericHandler = (response, headerIndex) => {
-    const uniqueSortedValues = sortStringsAsNumbersAsc(
-        getUnique(response.rows.map((r) => r[headerIndex]))
-    )
-
     const dimensionId = response.headers[headerIndex].name
+    const uniqueSortedValues = getUniqueSortedValues(response.rows, headerIndex)
 
     return {
         ...response,
         metaData: {
+            ...response.metaData,
             items: {
                 ...response.metaData.items,
                 ...getNumericItems(uniqueSortedValues, dimensionId),

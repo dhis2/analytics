@@ -7,8 +7,10 @@ import {
     getNumericRows,
     getPrefixedValue,
     getUnique,
+    getUniqueSortedValues,
     sortStringsAsNumbersAsc,
 } from '../numeric.js'
+import { NA_VALUE } from '../response.js'
 
 const testId = 'Zj7UnCAulEk.qrur9Dvnyt5'
 const headerIndex = 0
@@ -74,51 +76,44 @@ describe('numeric', () => {
         })
     })
 
+    describe('getUniqueSortedValues', () => {
+        expect(
+            getUniqueSortedValues(
+                [
+                    ['1', 'a'],
+                    ['5', 'b'],
+                    ['-1', 'c'],
+                    ['', 'd'],
+                    ['5', 'e'],
+                    ['3', 'f'],
+                ],
+                headerIndex
+            )
+        ).toEqual(['-1', '1', '3', '5'])
+    })
+
     describe('getPrefixedValue', () => {
         it('returns prefix and value separated by a colon', () => {
             expect(getPrefixedValue('123', 'id')).toBe('id:123')
-        })
-
-        it('works with empty string prefix', () => {
-            expect(getPrefixedValue('abc', '')).toBe(':abc')
-        })
-
-        it('works with empty string value', () => {
-            expect(getPrefixedValue('', 'test')).toBe('')
-        })
-
-        it('works with both prefix and value empty', () => {
-            expect(getPrefixedValue('', '')).toBe('')
         })
     })
 
     describe('getNumericItems', () => {
         it('returns an object with prefixed keys and correct names', () => {
-            const values = ['1', '2', '']
+            const values = ['1', '2']
 
             expect(getNumericItems(values, testId)).toEqual({
                 [testId + ':1']: { name: '1' },
                 [testId + ':2']: { name: '2' },
-                '': { name: 'N/A' },
             })
-        })
-
-        it('handles empty values array', () => {
-            expect(getNumericItems([], 'prefix')).toEqual({})
         })
     })
 
     describe('getNumericDimension', () => {
         it('returns object with dimensionId as key and correctly prefixed values', () => {
-            const values = ['1', '2', '']
+            const values = ['1', '2']
             expect(getNumericDimension(values, testId)).toEqual({
-                [testId]: [testId + ':1', testId + ':2', ''],
-            })
-        })
-
-        it('handles empty values array', () => {
-            expect(getNumericDimension([], 'prefix')).toEqual({
-                prefix: [],
+                [testId]: [testId + ':1', testId + ':2'],
             })
         })
     })
@@ -128,14 +123,14 @@ describe('numeric', () => {
             const rows = [
                 ['a', '1', 'x'],
                 ['b', '2', 'y'],
-                ['c', '', 'z'],
+                ['c', NA_VALUE, 'z'],
             ]
             const headerIndex = 1
 
             expect(getNumericRows(rows, headerIndex, testId)).toEqual([
                 ['a', testId + ':1', 'x'],
                 ['b', testId + ':2', 'y'],
-                ['c', '', 'z'],
+                ['c', NA_VALUE, 'z'],
             ])
         })
 

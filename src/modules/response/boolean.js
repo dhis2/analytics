@@ -17,9 +17,6 @@ export const applyBooleanHandler = (response, headerIndex) => {
                 [getPrefixedValue('1', dimensionId)]: {
                     name: i18n.t('Yes'),
                 },
-                '': {
-                    name: i18n.t('N/A'),
-                },
             },
         },
     }

@@ -1,3 +1,5 @@
+import { NA_VALUE } from './response.js'
+
 export const getOptionCodeIdMap = (optionIds, metaDataItems) =>
     optionIds.reduce((map, optionId) => {
         map[metaDataItems[optionId].code] = optionId
@@ -5,13 +7,13 @@ export const getOptionCodeIdMap = (optionIds, metaDataItems) =>
     }, {})
 
 export const getOptionIdRows = (rows, optionCodeIdMap, headerIndex) => {
-    let row
     let value
+    let row
 
     return rows.map((r) => {
         value = r[headerIndex]
 
-        if (value !== '') {
+        if (value !== NA_VALUE) {
             row = [...r]
             row[headerIndex] = optionCodeIdMap[value]
             return row
