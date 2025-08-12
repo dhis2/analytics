@@ -1,4 +1,4 @@
-import response from '../../../__demo__/data/event/optionset.data.json'
+import responseHideNa from '../../../__demo__/data/event/optionset.data.hidena.json'
 import responseOrg from '../../../__demo__/data/event/optionset.data.org.json'
 import {
     getOptionCodeIdMap,
@@ -7,7 +7,7 @@ import {
 } from '../optionSet.js'
 
 const headerIndex = 0
-const testId = response.headers[headerIndex].name
+const testId = responseHideNa.headers[headerIndex].name
 
 const testOptionCodeIdMap = {
     MODABSC: 'Fhbf4aKpZmZ',
@@ -19,8 +19,8 @@ const testOptionCodeIdMap = {
 describe('optionSet', () => {
     describe('getOptionCodeIdMap', () => {
         it('should create an option code:id object', () => {
-            const testOptionIds = response.metaData.dimensions[testId]
-            const testOptionItems = response.metaData.items
+            const testOptionIds = responseHideNa.metaData.dimensions[testId]
+            const testOptionItems = responseHideNa.metaData.items
 
             expect(getOptionCodeIdMap(testOptionIds, testOptionItems)).toEqual(
                 testOptionCodeIdMap
@@ -36,14 +36,14 @@ describe('optionSet', () => {
                     testOptionCodeIdMap,
                     headerIndex
                 )
-            ).toEqual(response.rows)
+            ).toEqual(responseHideNa.rows)
         })
     })
 
     describe('applyOptionSetHandler', () => {
         it('should return the transformed response', () => {
             expect(applyOptionSetHandler(responseOrg, headerIndex)).toEqual(
-                response
+                responseHideNa
             )
         })
     })

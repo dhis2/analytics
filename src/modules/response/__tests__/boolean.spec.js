@@ -1,6 +1,6 @@
-import booleanResponse from '../../../__demo__/data/event/boolean.data.json'
+import booleanResponseHideNa from '../../../__demo__/data/event/boolean.data.hidena.json'
 import booleanResponseOrg from '../../../__demo__/data/event/boolean.data.org.json'
-import yesOnlyResponse from '../../../__demo__/data/event/yesonly.data.json'
+import yesOnlyResponseHideNa from '../../../__demo__/data/event/yesonly.data.hidena.json'
 import yesOnlyResponseOrg from '../../../__demo__/data/event/yesonly.data.org.json'
 import { applyBooleanHandler } from '../boolean.js'
 
@@ -8,11 +8,11 @@ const headerIndex = 0
 
 describe('boolean', () => {
     describe('applyBooleanHandler', () => {
-        describe('boolean', () => {
+        describe('yes/no', () => {
             it('should return the transformed response', () => {
                 expect(
                     applyBooleanHandler(booleanResponseOrg, headerIndex)
-                ).toEqual(booleanResponse)
+                ).toEqual(booleanResponseHideNa)
             })
         })
 
@@ -20,7 +20,7 @@ describe('boolean', () => {
             it('should return the transformed response', () => {
                 expect(
                     applyBooleanHandler(yesOnlyResponseOrg, headerIndex)
-                ).toEqual(yesOnlyResponse)
+                ).toEqual(yesOnlyResponseHideNa)
             })
         })
     })

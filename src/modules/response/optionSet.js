@@ -1,8 +1,8 @@
 import { NA_VALUE } from './response.js'
 
-export const getOptionCodeIdMap = (optionIds, metaDataItems) =>
+export const getOptionCodeIdMap = (optionIds, items) =>
     optionIds.reduce((map, optionId) => {
-        map[metaDataItems[optionId].code] = optionId
+        map[items[optionId].code] = optionId
         return map
     }, {})
 
