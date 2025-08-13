@@ -1,16 +1,16 @@
 import i18n from '@dhis2/d2-i18n'
-import { applyNumericHandler, getPrefixedValue } from './numeric.js'
+import { applyDefaultHandler, getPrefixedValue } from './default.js'
 
 export const applyBooleanHandler = (response, headerIndex) => {
     const dimensionId = response.headers[headerIndex].name
-    const numericResponse = applyNumericHandler(response, headerIndex)
+    const defaultResponse = applyDefaultHandler(response, headerIndex)
 
     return {
-        ...numericResponse,
+        ...defaultResponse,
         metaData: {
-            ...numericResponse.metaData,
+            ...defaultResponse.metaData,
             items: {
-                ...numericResponse.metaData.items,
+                ...defaultResponse.metaData.items,
                 [getPrefixedValue('0', dimensionId)]: {
                     name: i18n.t('No'),
                 },
