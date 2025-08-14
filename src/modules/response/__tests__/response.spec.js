@@ -1,6 +1,9 @@
 import responseBooleanHideNa from '../../../__demo__/data/event/boolean.data.hidena.json'
 import responseBoolean from '../../../__demo__/data/event/boolean.data.json'
 import responseBooleanOrg from '../../../__demo__/data/event/boolean.data.org.json'
+import responseDateHideNa from '../../../__demo__/data/event/date.data.hidena.json'
+import responseDate from '../../../__demo__/data/event/date.data.json'
+import responseDateOrg from '../../../__demo__/data/event/date.data.org.json'
 import responseNumericHideNa from '../../../__demo__/data/event/numeric.data.hidena.json'
 import responseNumeric from '../../../__demo__/data/event/numeric.data.json'
 import responseNumericOrg from '../../../__demo__/data/event/numeric.data.org.json'
@@ -17,6 +20,18 @@ import { transformResponse } from '../response.js'
 
 describe('response', () => {
     describe('transformResponse', () => {
+        describe('date', () => {
+            it('transforms response', () => {
+                expect(transformResponse(responseDateOrg)).toEqual(responseDate)
+            })
+
+            it('transforms response and hides N/A data', () => {
+                expect(
+                    transformResponse(responseDateOrg, { hideNaData: true })
+                ).toEqual(responseDateHideNa)
+            })
+        })
+
         describe('numeric', () => {
             it('transforms response', () => {
                 expect(transformResponse(responseNumericOrg)).toEqual(

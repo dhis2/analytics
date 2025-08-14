@@ -1,15 +1,15 @@
 import responseHideNa from '../../../__demo__/data/event/numeric.data.hidena.json'
 import responseOrg from '../../../__demo__/data/event/numeric.data.org.json'
 import {
-    applyNumericHandler,
-    getNumericDimension,
-    getNumericItems,
-    getNumericRows,
+    applyDefaultHandler,
+    getDimensions,
+    getItems,
+    getRows,
     getPrefixedValue,
     getUnique,
     getUniqueSortedValues,
-    sortStringsAsNumbersAsc,
-} from '../numeric.js'
+    sortValuesAsc,
+} from '../default.js'
 import { NA_VALUE } from '../response.js'
 
 const testId = 'Zj7UnCAulEk.qrur9Dvnyt5'
@@ -44,41 +44,31 @@ describe('numeric', () => {
     describe('sortStringsAsNumbersAsc', () => {
         it('sorts array of number strings numerically ascending', () => {
             const arr = ['10', '2', '1']
-            expect(sortStringsAsNumbersAsc(arr)).toEqual(['1', '2', '10'])
+            expect(sortValuesAsc(arr)).toEqual(['1', '2', '10'])
         })
 
         it('handles negative numbers and zeros as strings', () => {
             const arr = ['0', '-2', '5', '-10']
-            expect(sortStringsAsNumbersAsc(arr)).toEqual([
-                '-10',
-                '-2',
-                '0',
-                '5',
-            ])
+            expect(sortValuesAsc(arr)).toEqual(['-10', '-2', '0', '5'])
         })
 
         it('sorts strings with leading zeros numerically', () => {
             const arr = ['01', '1', '002', '2']
-            expect(sortStringsAsNumbersAsc(arr)).toEqual([
-                '01',
-                '1',
-                '002',
-                '2',
-            ])
+            expect(sortValuesAsc(arr)).toEqual(['01', '1', '002', '2'])
         })
 
         it('returns empty array when given empty array', () => {
-            expect(sortStringsAsNumbersAsc([])).toEqual([])
+            expect(sortValuesAsc([])).toEqual([])
         })
 
         it('handles array with one item', () => {
-            expect(sortStringsAsNumbersAsc(['7'])).toEqual(['7'])
+            expect(sortValuesAsc(['7'])).toEqual(['7'])
         })
     })
 
     describe('getUniqueSortedValues', () => {
         expect(
-            getUniqueSortedValues(
+            sortValuesAsc(
                 [
                     ['1', 'a'],
                     ['5', 'b'],
@@ -102,7 +92,7 @@ describe('numeric', () => {
         it('returns an object with prefixed keys and correct names', () => {
             const values = ['1', '2']
 
-            expect(getNumericItems(values, testId)).toEqual({
+            expect(getItems(values, testId)).toEqual({
                 [testId + ':1']: { name: '1' },
                 [testId + ':2']: { name: '2' },
             })
@@ -112,7 +102,7 @@ describe('numeric', () => {
     describe('getNumericDimension', () => {
         it('returns object with dimensionId as key and correctly prefixed values', () => {
             const values = ['1', '2']
-            expect(getNumericDimension(values, testId)).toEqual({
+            expect(getDimensions(values, testId)).toEqual({
                 [testId]: [testId + ':1', testId + ':2'],
             })
         })
@@ -127,7 +117,7 @@ describe('numeric', () => {
             ]
             const headerIndex = 1
 
-            expect(getNumericRows(rows, headerIndex, testId)).toEqual([
+            expect(getRows(rows, headerIndex, testId)).toEqual([
                 ['a', testId + ':1', 'x'],
                 ['b', testId + ':2', 'y'],
                 ['c', NA_VALUE, 'z'],
@@ -135,13 +125,13 @@ describe('numeric', () => {
         })
 
         it('handles empty rows array', () => {
-            expect(getNumericRows([], 1, 'a')).toEqual([])
+            expect(getRows([], 1, 'a')).toEqual([])
         })
     })
 
     describe('applyNumericHandler', () => {
         it('should return the transformed response', () => {
-            expect(applyNumericHandler(responseOrg, headerIndex)).toEqual(
+            expect(applyDefaultHandler(responseOrg, headerIndex)).toEqual(
                 responseHideNa
             )
         })
