@@ -16,6 +16,7 @@ export const sortValuesAsc = (arr) => {
         if (Number(a) && Number(b)) {
             return Number(a) - Number(b)
         } else {
+            console.log('VALUES', typeof a, a, typeof b, b)
             return a.localeCompare(b)
         }
     })
