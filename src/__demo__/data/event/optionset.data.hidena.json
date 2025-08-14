@@ -1,0 +1,116 @@
+{
+    "headers": [
+        {
+            "name": "Zj7UnCAulEk.fWIAEtYVEGk",
+            "column": "Mode of Discharge",
+            "valueType": "TEXT",
+            "type": "java.lang.String",
+            "hidden": false,
+            "meta": true,
+            "optionSet": "iDFPKpFTiVw"
+        },
+        {
+            "name": "ou",
+            "column": "Organisation unit",
+            "valueType": "TEXT",
+            "type": "java.lang.String",
+            "hidden": false,
+            "meta": true
+        },
+        {
+            "name": "pe",
+            "column": "Period",
+            "valueType": "TEXT",
+            "type": "java.lang.String",
+            "hidden": false,
+            "meta": true
+        },
+        {
+            "name": "value",
+            "column": "Value",
+            "valueType": "NUMBER",
+            "type": "java.lang.Double",
+            "hidden": false,
+            "meta": false
+        }
+    ],
+    "metaData": {
+        "items": {
+            "202504": {
+                "name": "April 2025"
+            },
+            "202505": {
+                "name": "May 2025"
+            },
+            "202506": {
+                "name": "June 2025"
+            },
+            "ou": {
+                "name": "Organisation unit"
+            },
+            "Fhbf4aKpZmZ": {
+                "code": "MODABSC",
+                "name": "Absconded"
+            },
+            "Zj7UnCAulEk.fWIAEtYVEGk": {
+                "name": "Mode of Discharge"
+            },
+            "gj2fKKyp8OH": {
+                "code": "MODDIED",
+                "name": "Died"
+            },
+            "Zj7UnCAulEk": {
+                "name": "Inpatient morbidity and mortality"
+            },
+            "ImspTQPwCqd": {
+                "name": "Sierra Leone"
+            },
+            "eBAyeGv0exc": {
+                "name": "Inpatient morbidity and mortality"
+            },
+            "pe": {
+                "name": "Period"
+            },
+            "LAST_3_MONTHS": {
+                "name": "Last 3 months"
+            },
+            "fShHdgT7XGb": {
+                "code": "MODTRANS",
+                "name": "Transferred"
+            },
+            "yeod5tOXpkP": {
+                "code": "MODDISCH",
+                "name": "Discharged"
+            }
+        },
+        "dimensions": {
+            "pe": ["202504", "202505", "202506"],
+            "ou": ["ImspTQPwCqd"],
+            "Zj7UnCAulEk.fWIAEtYVEGk": [
+                "yeod5tOXpkP",
+                "gj2fKKyp8OH",
+                "fShHdgT7XGb",
+                "Fhbf4aKpZmZ"
+            ]
+        }
+    },
+    "rowContext": {},
+    "headerWidth": 4,
+    "width": 4,
+    "rows": [
+        ["gj2fKKyp8OH", "ImspTQPwCqd", "202504", "524"],
+        ["yeod5tOXpkP", "ImspTQPwCqd", "202504", "555"],
+        ["fShHdgT7XGb", "ImspTQPwCqd", "202504", "515"],
+        ["Fhbf4aKpZmZ", "ImspTQPwCqd", "202504", "504"],
+        ["fShHdgT7XGb", "ImspTQPwCqd", "202506", "609"],
+        ["Fhbf4aKpZmZ", "ImspTQPwCqd", "202505", "574"],
+        ["yeod5tOXpkP", "ImspTQPwCqd", "202505", "586"],
+        ["Fhbf4aKpZmZ", "ImspTQPwCqd", "202506", "574"],
+        ["gj2fKKyp8OH", "ImspTQPwCqd", "202505", "565"],
+        ["gj2fKKyp8OH", "ImspTQPwCqd", "202506", "545"],
+        ["yeod5tOXpkP", "ImspTQPwCqd", "202506", "597"],
+        ["fShHdgT7XGb", "ImspTQPwCqd", "202505", "561"],
+        ["", "ImspTQPwCqd", "202505", "49"]
+    ],
+    "height": 24
+}
