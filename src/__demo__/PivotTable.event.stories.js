@@ -3,6 +3,8 @@ import React, { useState } from 'react'
 import { PivotTable } from '../index.js'
 import booleanData from './data/event/boolean.data.json'
 import booleanVisualization from './data/event/boolean.visualization.json'
+import dateData from './data/event/date.data.json'
+import dateVisualization from './data/event/date.visualization.json'
 import numericLegendsetData from './data/event/numeric-legendset.data.json'
 import numericLegendsetVisualization from './data/event/numeric-legendset.visualization.json'
 import numericData from './data/event/numeric.data.json'
@@ -65,6 +67,24 @@ const PivotTableOptionsWrapper = (story) => {
 export default {
     title: 'PivotTable (event enrollment)',
     decorators: [PivotTableOptionsWrapper],
+}
+
+export const Date = (_, { pivotTableOptions }) => {
+    const visualization = {
+        ...dateVisualization,
+        ...visualizationReset,
+        ...pivotTableOptions,
+    }
+
+    return (
+        <div style={{ width: 800, height: 600 }}>
+            <PivotTable data={dateData} visualization={visualization} />
+        </div>
+    )
+}
+
+Date.story = {
+    name: 'Date',
 }
 
 export const Numeric = (_, { pivotTableOptions }) => {

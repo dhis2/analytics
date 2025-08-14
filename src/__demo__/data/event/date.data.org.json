@@ -1,0 +1,132 @@
+{
+    "headers": [
+        {
+            "name": "jfuXZB3A1ko.RldgRedJrco",
+            "column": "E2E - Date",
+            "valueType": "DATE",
+            "type": "java.time.LocalDate",
+            "hidden": false,
+            "meta": true
+        },
+        {
+            "name": "ou",
+            "column": "Organisation unit",
+            "valueType": "TEXT",
+            "type": "java.lang.String",
+            "hidden": false,
+            "meta": true
+        },
+        {
+            "name": "pe",
+            "column": "Period",
+            "valueType": "TEXT",
+            "type": "java.lang.String",
+            "hidden": false,
+            "meta": true
+        },
+        {
+            "name": "value",
+            "column": "Value",
+            "valueType": "NUMBER",
+            "type": "java.lang.Double",
+            "hidden": false,
+            "meta": false
+        }
+    ],
+    "metaData": {
+        "items": {
+            "202408": {
+                "name": "August 2024"
+            },
+            "202409": {
+                "name": "September 2024"
+            },
+            "202410": {
+                "name": "October 2024"
+            },
+            "202411": {
+                "name": "November 2024"
+            },
+            "202412": {
+                "name": "December 2024"
+            },
+            "202501": {
+                "name": "January 2025"
+            },
+            "202502": {
+                "name": "February 2025"
+            },
+            "202503": {
+                "name": "March 2025"
+            },
+            "202504": {
+                "name": "April 2025"
+            },
+            "202505": {
+                "name": "May 2025"
+            },
+            "202506": {
+                "name": "June 2025"
+            },
+            "202507": {
+                "name": "July 2025"
+            },
+            "jfuXZB3A1ko": {
+                "name": "Stage 1 - Repeatable"
+            },
+            "ou": {
+                "name": "Organisation unit"
+            },
+            "RldgRedJrco": {
+                "name": "E2E - Date"
+            },
+            "J1QQtmzqhJz": {
+                "name": "E2E program"
+            },
+            "LAST_12_MONTHS": {
+                "name": "Last 12 months"
+            },
+            "ImspTQPwCqd": {
+                "name": "Sierra Leone"
+            },
+            "pe": {
+                "name": "Period"
+            }
+        },
+        "dimensions": {
+            "jfuXZB3A1ko.RldgRedJrco": [],
+            "pe": [
+                "202408",
+                "202409",
+                "202410",
+                "202411",
+                "202412",
+                "202501",
+                "202502",
+                "202503",
+                "202504",
+                "202505",
+                "202506",
+                "202507"
+            ],
+            "ou": ["ImspTQPwCqd"]
+        }
+    },
+    "rowContext": {},
+    "width": 4,
+    "rows": [
+        ["", "ImspTQPwCqd", "202503", "1"],
+        ["1992-05-04 00:00:00.0", "ImspTQPwCqd", "202504", "1"],
+        ["1994-01-02 00:00:00.0", "ImspTQPwCqd", "202501", "2"],
+        ["1992-08-28 00:00:00.0", "ImspTQPwCqd", "202503", "1"],
+        ["", "ImspTQPwCqd", "202501", "1"],
+        ["1993-12-01 00:00:00.0", "ImspTQPwCqd", "202412", "1"],
+        ["1992-11-12 00:00:00.0", "ImspTQPwCqd", "202411", "1"],
+        ["1992-03-20 00:00:00.0", "ImspTQPwCqd", "202502", "1"],
+        ["1993-05-21 00:00:00.0", "ImspTQPwCqd", "202412", "1"],
+        ["1993-05-20 00:00:00.0", "ImspTQPwCqd", "202412", "1"],
+        ["1993-12-02 00:00:00.0", "ImspTQPwCqd", "202412", "1"]
+    ],
+    "height": 11,
+    "headerWidth": 4
+}
