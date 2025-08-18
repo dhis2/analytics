@@ -1,33 +1,21 @@
+import {
+    isBooleanValueType,
+    isNumericValueType,
+    VALUE_TYPE_TEXT,
+} from '../valueTypes.js'
 import { NA_VALUE, PREFIX_SEPARATOR } from './response.js'
 
 export const getUnique = (array) => [...new Set(array)]
 
-export const sortValuesAsc = (arr) => {
-    return arr.slice().sort((a, b) => {
-        if (a === NA_VALUE && b === NA_VALUE) {
-            return 0
-        }
-        if (a === NA_VALUE) {
-            return 1
-        }
-        if (b === NA_VALUE) {
-            return -1
-        }
-        if (Number.isFinite(a) && Number.isFinite(b)) {
-            return Number(a) - Number(b)
-        } else {
-            console.log('VALUES', typeof a, a, typeof b, b)
-            return a.localeCompare(b)
-        }
-    })
-}
-
-export const getUniqueSortedValues = (rows, headerIndex) =>
-    sortValuesAsc(
-        getUnique(
-            rows.map((row) => row[headerIndex]).filter((value) => value.length)
-        )
-    )
+export const getValuesUniqueSortedAsc = (values, valueType = VALUE_TYPE_TEXT) =>
+    isNumericValueType(valueType) || isBooleanValueType(valueType)
+        ? getUnique(values)
+              .map((x) => [Number(x), x])
+              .sort((a, b) => a[0] - b[0])
+              .map((arr) => arr[1])
+        : getUnique(values)
+              .slice()
+              .sort((a, b) => a.localeCompare(b))
 
 export const getPrefixedValue = (value, prefix) =>
     `${prefix}${PREFIX_SEPARATOR}${value}`
@@ -66,13 +54,13 @@ export const applyDefaultHandler = (
     headerIndex,
     { itemFormatter } = {}
 ) => {
-    const dimensionId = response.headers[headerIndex].name
-
-    const uniqueSortedValues = getUniqueSortedValues(response.rows, headerIndex)
-
-    if (dimensionId === 'A03MvHHogjR.bx6fsa0t90x') {
-        console.log(response, headerIndex, uniqueSortedValues)
-    }
+    const header = response.headers[headerIndex]
+    const uniqueSortedValuesAsc = getValuesUniqueSortedAsc(
+        response.rows
+            .map((row) => row[headerIndex])
+            .filter((value) => value !== NA_VALUE),
+        header.valueType
+    )
 
     return {
         ...response,
@@ -80,13 +68,13 @@ export const applyDefaultHandler = (
             ...response.metaData,
             items: {
                 ...response.metaData.items,
-                ...getItems(uniqueSortedValues, dimensionId, itemFormatter),
+                ...getItems(uniqueSortedValuesAsc, header.name, itemFormatter),
             },
             dimensions: {
                 ...response.metaData.dimensions,
-                ...getDimensions(uniqueSortedValues, dimensionId),
+                ...getDimensions(uniqueSortedValuesAsc, header.name),
             },
         },
-        rows: [...getRows(response.rows, headerIndex, dimensionId)],
+        rows: [...getRows(response.rows, headerIndex, header.name)],
     }
 }

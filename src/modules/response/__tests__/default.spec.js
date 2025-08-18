@@ -1,5 +1,6 @@
 import responseHideNa from '../../../__demo__/data/event/numeric.data.hidena.json'
 import responseOrg from '../../../__demo__/data/event/numeric.data.org.json'
+import { VALUE_TYPE_NUMBER } from '../../valueTypes.js'
 import {
     applyDefaultHandler,
     getDimensions,
@@ -7,14 +8,14 @@ import {
     getRows,
     getPrefixedValue,
     getUnique,
-    sortValuesAsc,
+    getValuesUniqueSortedAsc,
 } from '../default.js'
 import { NA_VALUE, PREFIX_SEPARATOR } from '../response.js'
 
 const testId = 'Zj7UnCAulEk.qrur9Dvnyt5'
 const headerIndex = 0
 
-describe('numeric', () => {
+describe('default', () => {
     describe('getUnique', () => {
         it('removes duplicate string numbers and preserves first occurrence', () => {
             const arr = ['2', '10', '2', '01', '1', '-1', '-1', '1', '10']
@@ -40,45 +41,43 @@ describe('numeric', () => {
         })
     })
 
-    describe('sortStringsAsNumbersAsc', () => {
-        it('sorts array of number strings numerically ascending', () => {
-            const arr = ['10', '2', '1']
-            expect(sortValuesAsc(arr)).toEqual(['1', '2', '10'])
+    describe('getValuesUniqueSortedAsc', () => {
+        it('sorts string numbers numerically', () => {
+            expect(
+                getValuesUniqueSortedAsc(
+                    ['1', '10', '-1', '5', '5', '3'],
+                    VALUE_TYPE_NUMBER
+                )
+            ).toEqual(['-1', '1', '3', '5', '10'])
         })
 
-        it('handles negative numbers and zeros as strings', () => {
-            const arr = ['0', '-2', '5', '-10']
-            expect(sortValuesAsc(arr)).toEqual(['-10', '-2', '0', '5'])
+        it('sorts non-numbers as strings', () => {
+            expect(
+                getValuesUniqueSortedAsc([
+                    '1995-04-18 13:54:00.0',
+                    '1991-12-03 12:02:00.0',
+                    '1992-01-05 12:51:00.0',
+                    '1991-05-21 14:46:00.0',
+                    '1998-03-01 11:21:00.0',
+                    '1991-09-02 10:21:00.0',
+                    '1992-01-04 12:02:00.0',
+                    '1991-12-02 12:01:00.0',
+                    '1990-01-25 14:51:00.0',
+                    '1991-05-22 14:47:00.0',
+                ])
+            ).toEqual([
+                '1990-01-25 14:51:00.0',
+                '1991-05-21 14:46:00.0',
+                '1991-05-22 14:47:00.0',
+                '1991-09-02 10:21:00.0',
+                '1991-12-02 12:01:00.0',
+                '1991-12-03 12:02:00.0',
+                '1992-01-04 12:02:00.0',
+                '1992-01-05 12:51:00.0',
+                '1995-04-18 13:54:00.0',
+                '1998-03-01 11:21:00.0',
+            ])
         })
-
-        it('sorts strings with leading zeros numerically', () => {
-            const arr = ['01', '1', '002', '2']
-            expect(sortValuesAsc(arr)).toEqual(['01', '1', '002', '2'])
-        })
-
-        it('returns empty array when given empty array', () => {
-            expect(sortValuesAsc([])).toEqual([])
-        })
-
-        it('handles array with one item', () => {
-            expect(sortValuesAsc(['7'])).toEqual(['7'])
-        })
-    })
-
-    describe('sortValuesAsc', () => {
-        expect(
-            sortValuesAsc(
-                [
-                    ['1', 'a'],
-                    ['5', 'b'],
-                    ['-1', 'c'],
-                    ['', 'd'],
-                    ['5', 'e'],
-                    ['3', 'f'],
-                ],
-                headerIndex
-            )
-        ).toEqual(['-1', '1', '3', '5'])
     })
 
     describe('getPrefixedValue', () => {
