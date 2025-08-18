@@ -1,4 +1,4 @@
-import { NA_VALUE } from './response.js'
+import { NA_VALUE, PREFIX_SEPARATOR } from './response.js'
 
 export const getUnique = (array) => [...new Set(array)]
 
@@ -13,7 +13,7 @@ export const sortValuesAsc = (arr) => {
         if (b === NA_VALUE) {
             return -1
         }
-        if (Number(a) && Number(b)) {
+        if (Number.isFinite(a) && Number.isFinite(b)) {
             return Number(a) - Number(b)
         } else {
             console.log('VALUES', typeof a, a, typeof b, b)
@@ -29,7 +29,8 @@ export const getUniqueSortedValues = (rows, headerIndex) =>
         )
     )
 
-export const getPrefixedValue = (value, prefix) => `${prefix}:${value}`
+export const getPrefixedValue = (value, prefix) =>
+    `${prefix}${PREFIX_SEPARATOR}${value}`
 
 export const getItems = (values, dimensionId, itemFormatter) =>
     values.reduce((items, value) => {
@@ -66,7 +67,12 @@ export const applyDefaultHandler = (
     { itemFormatter } = {}
 ) => {
     const dimensionId = response.headers[headerIndex].name
+
     const uniqueSortedValues = getUniqueSortedValues(response.rows, headerIndex)
+
+    if (dimensionId === 'A03MvHHogjR.bx6fsa0t90x') {
+        console.log(response, headerIndex, uniqueSortedValues)
+    }
 
     return {
         ...response,

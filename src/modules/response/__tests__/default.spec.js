@@ -7,10 +7,9 @@ import {
     getRows,
     getPrefixedValue,
     getUnique,
-    getUniqueSortedValues,
     sortValuesAsc,
 } from '../default.js'
-import { NA_VALUE } from '../response.js'
+import { NA_VALUE, PREFIX_SEPARATOR } from '../response.js'
 
 const testId = 'Zj7UnCAulEk.qrur9Dvnyt5'
 const headerIndex = 0
@@ -66,7 +65,7 @@ describe('numeric', () => {
         })
     })
 
-    describe('getUniqueSortedValues', () => {
+    describe('sortValuesAsc', () => {
         expect(
             sortValuesAsc(
                 [
@@ -84,7 +83,9 @@ describe('numeric', () => {
 
     describe('getPrefixedValue', () => {
         it('returns prefix and value separated by a colon', () => {
-            expect(getPrefixedValue('123', 'id')).toBe('id:123')
+            expect(getPrefixedValue('123', 'id')).toBe(
+                `id${PREFIX_SEPARATOR}123`
+            )
         })
     })
 
@@ -93,8 +94,8 @@ describe('numeric', () => {
             const values = ['1', '2']
 
             expect(getItems(values, testId)).toEqual({
-                [testId + ':1']: { name: '1' },
-                [testId + ':2']: { name: '2' },
+                [testId + `${PREFIX_SEPARATOR}1`]: { name: '1' },
+                [testId + `${PREFIX_SEPARATOR}2`]: { name: '2' },
             })
         })
     })
@@ -103,7 +104,10 @@ describe('numeric', () => {
         it('returns object with dimensionId as key and correctly prefixed values', () => {
             const values = ['1', '2']
             expect(getDimensions(values, testId)).toEqual({
-                [testId]: [testId + ':1', testId + ':2'],
+                [testId]: [
+                    testId + `${PREFIX_SEPARATOR}1`,
+                    testId + `${PREFIX_SEPARATOR}2`,
+                ],
             })
         })
     })
@@ -118,8 +122,8 @@ describe('numeric', () => {
             const headerIndex = 1
 
             expect(getRows(rows, headerIndex, testId)).toEqual([
-                ['a', testId + ':1', 'x'],
-                ['b', testId + ':2', 'y'],
+                ['a', testId + `${PREFIX_SEPARATOR}1`, 'x'],
+                ['b', testId + `${PREFIX_SEPARATOR}2`, 'y'],
                 ['c', NA_VALUE, 'z'],
             ])
         })
