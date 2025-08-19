@@ -20,7 +20,7 @@ export const getValuesUniqueSortedAsc = (values, valueType = VALUE_TYPE_TEXT) =>
 export const getPrefixedValue = (value, prefix) =>
     `${prefix}${PREFIX_SEPARATOR}${value}`
 
-export const getItems = (values, dimensionId, itemFormatter) =>
+export const getItems = (values, dimensionId, { itemFormatter } = {}) =>
     values.reduce((items, value) => {
         items[getPrefixedValue(value, dimensionId)] = {
             name: itemFormatter ? itemFormatter(value) : value,
@@ -68,7 +68,9 @@ export const applyDefaultHandler = (
             ...response.metaData,
             items: {
                 ...response.metaData.items,
-                ...getItems(uniqueSortedValuesAsc, header.name, itemFormatter),
+                ...getItems(uniqueSortedValuesAsc, header.name, {
+                    itemFormatter,
+                }),
             },
             dimensions: {
                 ...response.metaData.dimensions,
