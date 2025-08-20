@@ -121,9 +121,6 @@
             },
             "KWzx2tY8dFi": {
                 "name": "E2E - Date & Time"
-            },
-            "": {
-                "name": "N/A"
             }
         },
         "dimensions": {
@@ -152,8 +149,7 @@
                 "jfuXZB3A1ko.KWzx2tY8dFi:1992-01-03 12:01:00.0",
                 "jfuXZB3A1ko.KWzx2tY8dFi:1992-01-04 12:50:00.0",
                 "jfuXZB3A1ko.KWzx2tY8dFi:1995-04-17 13:53:00.0",
-                "jfuXZB3A1ko.KWzx2tY8dFi:1998-02-28 11:20:00.0",
-                ""
+                "jfuXZB3A1ko.KWzx2tY8dFi:1998-02-28 11:20:00.0"
             ]
         }
     },
