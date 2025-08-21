@@ -95,10 +95,10 @@
             "pe": {
                 "name": "Period"
             },
-            "jfuXZB3A1ko.hwG20Dyj6RK:0": {
+            "jfuXZB3A1ko.hwG20Dyj6RK_0": {
                 "name": "No"
             },
-            "jfuXZB3A1ko.hwG20Dyj6RK:1": {
+            "jfuXZB3A1ko.hwG20Dyj6RK_1": {
                 "name": "Yes"
             }
         },
@@ -118,7 +118,7 @@
                 "202506"
             ],
             "ou": ["ImspTQPwCqd"],
-            "jfuXZB3A1ko.hwG20Dyj6RK": ["jfuXZB3A1ko.hwG20Dyj6RK:1"]
+            "jfuXZB3A1ko.hwG20Dyj6RK": ["jfuXZB3A1ko.hwG20Dyj6RK_1"]
         }
     },
     "rowContext": {},
@@ -128,9 +128,9 @@
         ["", "ImspTQPwCqd", "202503", "2"],
         ["", "ImspTQPwCqd", "202504", "1"],
         ["", "ImspTQPwCqd", "202502", "1"],
-        ["jfuXZB3A1ko.hwG20Dyj6RK:1", "ImspTQPwCqd", "202501", "1"],
+        ["jfuXZB3A1ko.hwG20Dyj6RK_1", "ImspTQPwCqd", "202501", "1"],
         ["", "ImspTQPwCqd", "202501", "2"],
-        ["jfuXZB3A1ko.hwG20Dyj6RK:1", "ImspTQPwCqd", "202412", "3"],
+        ["jfuXZB3A1ko.hwG20Dyj6RK_1", "ImspTQPwCqd", "202412", "3"],
         ["", "ImspTQPwCqd", "202411", "1"]
     ],
     "height": 8,

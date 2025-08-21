@@ -95,31 +95,31 @@
             "pe": {
                 "name": "Period"
             },
-            "jfuXZB3A1ko.RldgRedJrco:1992-05-04 00:00:00.0": {
+            "jfuXZB3A1ko.RldgRedJrco_1992-05-04 00:00:00.0": {
                 "name": "1992-05-04"
             },
-            "jfuXZB3A1ko.RldgRedJrco:1994-01-02 00:00:00.0": {
+            "jfuXZB3A1ko.RldgRedJrco_1994-01-02 00:00:00.0": {
                 "name": "1994-01-02"
             },
-            "jfuXZB3A1ko.RldgRedJrco:1992-08-28 00:00:00.0": {
+            "jfuXZB3A1ko.RldgRedJrco_1992-08-28 00:00:00.0": {
                 "name": "1992-08-28"
             },
-            "jfuXZB3A1ko.RldgRedJrco:1993-12-01 00:00:00.0": {
+            "jfuXZB3A1ko.RldgRedJrco_1993-12-01 00:00:00.0": {
                 "name": "1993-12-01"
             },
-            "jfuXZB3A1ko.RldgRedJrco:1992-11-12 00:00:00.0": {
+            "jfuXZB3A1ko.RldgRedJrco_1992-11-12 00:00:00.0": {
                 "name": "1992-11-12"
             },
-            "jfuXZB3A1ko.RldgRedJrco:1992-03-20 00:00:00.0": {
+            "jfuXZB3A1ko.RldgRedJrco_1992-03-20 00:00:00.0": {
                 "name": "1992-03-20"
             },
-            "jfuXZB3A1ko.RldgRedJrco:1993-05-21 00:00:00.0": {
+            "jfuXZB3A1ko.RldgRedJrco_1993-05-21 00:00:00.0": {
                 "name": "1993-05-21"
             },
-            "jfuXZB3A1ko.RldgRedJrco:1993-05-20 00:00:00.0": {
+            "jfuXZB3A1ko.RldgRedJrco_1993-05-20 00:00:00.0": {
                 "name": "1993-05-20"
             },
-            "jfuXZB3A1ko.RldgRedJrco:1993-12-02 00:00:00.0": {
+            "jfuXZB3A1ko.RldgRedJrco_1993-12-02 00:00:00.0": {
                 "name": "1993-12-02"
             },
             "": {
@@ -128,15 +128,15 @@
         },
         "dimensions": {
             "jfuXZB3A1ko.RldgRedJrco": [
-                "jfuXZB3A1ko.RldgRedJrco:1992-03-20 00:00:00.0",
-                "jfuXZB3A1ko.RldgRedJrco:1992-05-04 00:00:00.0",
-                "jfuXZB3A1ko.RldgRedJrco:1992-08-28 00:00:00.0",
-                "jfuXZB3A1ko.RldgRedJrco:1992-11-12 00:00:00.0",
-                "jfuXZB3A1ko.RldgRedJrco:1993-05-20 00:00:00.0",
-                "jfuXZB3A1ko.RldgRedJrco:1993-05-21 00:00:00.0",
-                "jfuXZB3A1ko.RldgRedJrco:1993-12-01 00:00:00.0",
-                "jfuXZB3A1ko.RldgRedJrco:1993-12-02 00:00:00.0",
-                "jfuXZB3A1ko.RldgRedJrco:1994-01-02 00:00:00.0",
+                "jfuXZB3A1ko.RldgRedJrco_1992-03-20 00:00:00.0",
+                "jfuXZB3A1ko.RldgRedJrco_1992-05-04 00:00:00.0",
+                "jfuXZB3A1ko.RldgRedJrco_1992-08-28 00:00:00.0",
+                "jfuXZB3A1ko.RldgRedJrco_1992-11-12 00:00:00.0",
+                "jfuXZB3A1ko.RldgRedJrco_1993-05-20 00:00:00.0",
+                "jfuXZB3A1ko.RldgRedJrco_1993-05-21 00:00:00.0",
+                "jfuXZB3A1ko.RldgRedJrco_1993-12-01 00:00:00.0",
+                "jfuXZB3A1ko.RldgRedJrco_1993-12-02 00:00:00.0",
+                "jfuXZB3A1ko.RldgRedJrco_1994-01-02 00:00:00.0",
                 ""
             ],
             "pe": [
@@ -161,56 +161,56 @@
     "rows": [
         ["", "ImspTQPwCqd", "202503", "1"],
         [
-            "jfuXZB3A1ko.RldgRedJrco:1992-05-04 00:00:00.0",
+            "jfuXZB3A1ko.RldgRedJrco_1992-05-04 00:00:00.0",
             "ImspTQPwCqd",
             "202504",
             "1"
         ],
         [
-            "jfuXZB3A1ko.RldgRedJrco:1994-01-02 00:00:00.0",
+            "jfuXZB3A1ko.RldgRedJrco_1994-01-02 00:00:00.0",
             "ImspTQPwCqd",
             "202501",
             "2"
         ],
         [
-            "jfuXZB3A1ko.RldgRedJrco:1992-08-28 00:00:00.0",
+            "jfuXZB3A1ko.RldgRedJrco_1992-08-28 00:00:00.0",
             "ImspTQPwCqd",
             "202503",
             "1"
         ],
         ["", "ImspTQPwCqd", "202501", "1"],
         [
-            "jfuXZB3A1ko.RldgRedJrco:1993-12-01 00:00:00.0",
+            "jfuXZB3A1ko.RldgRedJrco_1993-12-01 00:00:00.0",
             "ImspTQPwCqd",
             "202412",
             "1"
         ],
         [
-            "jfuXZB3A1ko.RldgRedJrco:1992-11-12 00:00:00.0",
+            "jfuXZB3A1ko.RldgRedJrco_1992-11-12 00:00:00.0",
             "ImspTQPwCqd",
             "202411",
             "1"
         ],
         [
-            "jfuXZB3A1ko.RldgRedJrco:1992-03-20 00:00:00.0",
+            "jfuXZB3A1ko.RldgRedJrco_1992-03-20 00:00:00.0",
             "ImspTQPwCqd",
             "202502",
             "1"
         ],
         [
-            "jfuXZB3A1ko.RldgRedJrco:1993-05-21 00:00:00.0",
+            "jfuXZB3A1ko.RldgRedJrco_1993-05-21 00:00:00.0",
             "ImspTQPwCqd",
             "202412",
             "1"
         ],
         [
-            "jfuXZB3A1ko.RldgRedJrco:1993-05-20 00:00:00.0",
+            "jfuXZB3A1ko.RldgRedJrco_1993-05-20 00:00:00.0",
             "ImspTQPwCqd",
             "202412",
             "1"
         ],
         [
-            "jfuXZB3A1ko.RldgRedJrco:1993-12-02 00:00:00.0",
+            "jfuXZB3A1ko.RldgRedJrco_1993-12-02 00:00:00.0",
             "ImspTQPwCqd",
             "202412",
             "1"
