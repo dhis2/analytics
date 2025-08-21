@@ -5,6 +5,8 @@ import booleanData from './data/event/boolean.data.json'
 import booleanVisualization from './data/event/boolean.visualization.json'
 import dateData from './data/event/date.data.json'
 import dateVisualization from './data/event/date.visualization.json'
+import datetimeData from './data/event/datetime.data.json'
+import datetimeVisualization from './data/event/datetime.visualization.json'
 import numericLegendsetData from './data/event/numeric-legendset.data.json'
 import numericLegendsetVisualization from './data/event/numeric-legendset.visualization.json'
 import numericData from './data/event/numeric.data.json'
@@ -85,6 +87,24 @@ export const Date = (_, { pivotTableOptions }) => {
 
 Date.story = {
     name: 'Date',
+}
+
+export const Datetime = (_, { pivotTableOptions }) => {
+    const visualization = {
+        ...datetimeVisualization,
+        ...visualizationReset,
+        ...pivotTableOptions,
+    }
+
+    return (
+        <div style={{ width: 800, height: 600 }}>
+            <PivotTable data={datetimeData} visualization={visualization} />
+        </div>
+    )
+}
+
+Datetime.story = {
+    name: 'Datetime',
 }
 
 export const Numeric = (_, { pivotTableOptions }) => {
