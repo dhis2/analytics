@@ -1,0 +1,208 @@
+{
+    "headers": [
+        {
+            "name": "jfuXZB3A1ko.RUZ2EBP6HQn",
+            "column": "E2E - Email",
+            "valueType": "EMAIL",
+            "type": "java.lang.String",
+            "hidden": false,
+            "meta": true
+        },
+        {
+            "name": "ou",
+            "column": "Organisation unit",
+            "valueType": "TEXT",
+            "type": "java.lang.String",
+            "hidden": false,
+            "meta": true
+        },
+        {
+            "name": "pe",
+            "column": "Period",
+            "valueType": "TEXT",
+            "type": "java.lang.String",
+            "hidden": false,
+            "meta": true
+        },
+        {
+            "name": "value",
+            "column": "Value",
+            "valueType": "NUMBER",
+            "type": "java.lang.Double",
+            "hidden": false,
+            "meta": false
+        }
+    ],
+    "metaData": {
+        "items": {
+            "202408": {
+                "name": "August 2024"
+            },
+            "202409": {
+                "name": "September 2024"
+            },
+            "202410": {
+                "name": "October 2024"
+            },
+            "202411": {
+                "name": "November 2024"
+            },
+            "202412": {
+                "name": "December 2024"
+            },
+            "202501": {
+                "name": "January 2025"
+            },
+            "202502": {
+                "name": "February 2025"
+            },
+            "202503": {
+                "name": "March 2025"
+            },
+            "202504": {
+                "name": "April 2025"
+            },
+            "202505": {
+                "name": "May 2025"
+            },
+            "202506": {
+                "name": "June 2025"
+            },
+            "202507": {
+                "name": "July 2025"
+            },
+            "jfuXZB3A1ko": {
+                "name": "Stage 1 - Repeatable"
+            },
+            "ou": {
+                "name": "Organisation unit"
+            },
+            "J1QQtmzqhJz": {
+                "name": "E2E program"
+            },
+            "LAST_12_MONTHS": {
+                "name": "Last 12 months"
+            },
+            "ImspTQPwCqd": {
+                "name": "Sierra Leone"
+            },
+            "pe": {
+                "name": "Period"
+            },
+            "RUZ2EBP6HQn": {
+                "name": "E2E - Email"
+            },
+            "jfuXZB3A1ko.RUZ2EBP6HQn": {
+                "name": "E2E - Email"
+            },
+            "jfuXZB3A1ko.RUZ2EBP6HQn_email@address.com": {
+                "name": "email@address.com"
+            },
+            "jfuXZB3A1ko.RUZ2EBP6HQn_email2@address.com": {
+                "name": "email2@address.com"
+            },
+            "jfuXZB3A1ko.RUZ2EBP6HQn_mm@email.com": {
+                "name": "mm@email.com"
+            },
+            "jfuXZB3A1ko.RUZ2EBP6HQn_myemail@dhis2.org": {
+                "name": "myemail@dhis2.org"
+            },
+            "jfuXZB3A1ko.RUZ2EBP6HQn_myemail@emailaddress.org": {
+                "name": "myemail@emailaddress.org"
+            },
+            "jfuXZB3A1ko.RUZ2EBP6HQn_name@namesson.com": {
+                "name": "name@namesson.com"
+            },
+            "jfuXZB3A1ko.RUZ2EBP6HQn_test@pmail.com": {
+                "name": "test@pmail.com"
+            },
+            "": {
+                "name": "N/A"
+            }
+        },
+        "dimensions": {
+            "jfuXZB3A1ko.RUZ2EBP6HQn": [
+                "jfuXZB3A1ko.RUZ2EBP6HQn_email@address.com",
+                "jfuXZB3A1ko.RUZ2EBP6HQn_email2@address.com",
+                "jfuXZB3A1ko.RUZ2EBP6HQn_mm@email.com",
+                "jfuXZB3A1ko.RUZ2EBP6HQn_myemail@dhis2.org",
+                "jfuXZB3A1ko.RUZ2EBP6HQn_myemail@emailaddress.org",
+                "jfuXZB3A1ko.RUZ2EBP6HQn_name@namesson.com",
+                "jfuXZB3A1ko.RUZ2EBP6HQn_test@pmail.com",
+                ""
+            ],
+            "pe": [
+                "202408",
+                "202409",
+                "202410",
+                "202411",
+                "202412",
+                "202501",
+                "202502",
+                "202503",
+                "202504",
+                "202505",
+                "202506",
+                "202507"
+            ],
+            "ou": ["ImspTQPwCqd"]
+        }
+    },
+    "rowContext": {},
+    "width": 4,
+    "rows": [
+        [
+            "jfuXZB3A1ko.RUZ2EBP6HQn_name@namesson.com",
+            "ImspTQPwCqd",
+            "202411",
+            "1"
+        ],
+        [
+            "jfuXZB3A1ko.RUZ2EBP6HQn_myemail@emailaddress.org",
+            "ImspTQPwCqd",
+            "202502",
+            "1"
+        ],
+        ["jfuXZB3A1ko.RUZ2EBP6HQn_mm@email.com", "ImspTQPwCqd", "202412", "2"],
+        [
+            "jfuXZB3A1ko.RUZ2EBP6HQn_email@address.com",
+            "ImspTQPwCqd",
+            "202412",
+            "1"
+        ],
+        [
+            "jfuXZB3A1ko.RUZ2EBP6HQn_email@address.com",
+            "ImspTQPwCqd",
+            "202501",
+            "1"
+        ],
+        ["", "ImspTQPwCqd", "202503", "1"],
+        [
+            "jfuXZB3A1ko.RUZ2EBP6HQn_email2@address.com",
+            "ImspTQPwCqd",
+            "202501",
+            "1"
+        ],
+        [
+            "jfuXZB3A1ko.RUZ2EBP6HQn_email2@address.com",
+            "ImspTQPwCqd",
+            "202412",
+            "1"
+        ],
+        [
+            "jfuXZB3A1ko.RUZ2EBP6HQn_yemail@dhis2.org",
+            "ImspTQPwCqd",
+            "202504",
+            "1"
+        ],
+        [
+            "jfuXZB3A1ko.RUZ2EBP6HQn_test@pmail.com",
+            "ImspTQPwCqd",
+            "202503",
+            "1"
+        ],
+        ["", "ImspTQPwCqd", "202501", "1"]
+    ],
+    "height": 11,
+    "headerWidth": 4
+}
