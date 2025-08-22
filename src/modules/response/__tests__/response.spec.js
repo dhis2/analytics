@@ -4,6 +4,7 @@ import responseBooleanOrg from '../../../__demo__/data/event/boolean.data.org.js
 import responseDateHideNa from '../../../__demo__/data/event/date.data.hidena.json'
 import responseDate from '../../../__demo__/data/event/date.data.json'
 import responseDateOrg from '../../../__demo__/data/event/date.data.org.json'
+import responseEmailOrg from '../../../__demo__/data/event/email.data.org.json'
 import responseNumericHideNa from '../../../__demo__/data/event/numeric.data.hidena.json'
 import responseNumeric from '../../../__demo__/data/event/numeric.data.json'
 import responseNumericOrg from '../../../__demo__/data/event/numeric.data.org.json'
@@ -23,6 +24,23 @@ describe('response', () => {
         describe('date', () => {
             it('transforms response', () => {
                 expect(transformResponse(responseDateOrg)).toEqual(responseDate)
+            })
+
+            it('transforms response and hides N/A data', () => {
+                expect(
+                    transformResponse(responseDateOrg, { hideNaData: true })
+                ).toEqual(responseDateHideNa)
+            })
+        })
+
+        describe('email', () => {
+            it('transforms response', () => {
+                console.log(
+                    transformResponse(responseEmailOrg).metaData.dimensions[
+                        'jfuXZB3A1ko.RUZ2EBP6HQn'
+                    ]
+                )
+                expect(transformResponse(responseEmailOrg)).toEqual({})
             })
 
             it('transforms response and hides N/A data', () => {

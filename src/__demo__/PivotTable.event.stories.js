@@ -7,10 +7,12 @@ import dateData from './data/event/date.data.json'
 import dateVisualization from './data/event/date.visualization.json'
 import datetimeData from './data/event/datetime.data.json'
 import datetimeVisualization from './data/event/datetime.visualization.json'
+import emailData from './data/event/email.data.json'
+import emailVisualization from './data/event/email.visualization.json'
+import integerData from './data/event/integer.data.json'
+import integerVisualization from './data/event/integer.visualization.json'
 import numericLegendsetData from './data/event/numeric-legendset.data.json'
 import numericLegendsetVisualization from './data/event/numeric-legendset.visualization.json'
-import numericData from './data/event/numeric.data.json'
-import numericVisualization from './data/event/numeric.visualization.json'
 import optionsetData from './data/event/optionset.data.json'
 import optionsetVisualization from './data/event/optionset.visualization.json'
 import optionsetsData from './data/event/optionsets.data.json'
@@ -71,6 +73,24 @@ export default {
     decorators: [PivotTableOptionsWrapper],
 }
 
+export const Boolean = (_, { pivotTableOptions }) => {
+    const visualization = {
+        ...booleanVisualization,
+        ...visualizationReset,
+        ...pivotTableOptions,
+    }
+
+    return (
+        <div style={{ width: 800, height: 600 }}>
+            <PivotTable data={booleanData} visualization={visualization} />
+        </div>
+    )
+}
+
+Boolean.story = {
+    name: 'Boolean',
+}
+
 export const Date = (_, { pivotTableOptions }) => {
     const visualization = {
         ...dateVisualization,
@@ -109,14 +129,14 @@ Datetime.story = {
 
 export const Numeric = (_, { pivotTableOptions }) => {
     const visualization = {
-        ...numericVisualization,
+        ...integerVisualization,
         ...visualizationReset,
         ...pivotTableOptions,
     }
 
     return (
         <div style={{ width: 800, height: 600 }}>
-            <PivotTable data={numericData} visualization={visualization} />
+            <PivotTable data={integerData} visualization={visualization} />
         </div>
     )
 }
@@ -181,22 +201,22 @@ OptionsetsNonUniqueCodes.story = {
     name: 'Optionset, non-unique codes',
 }
 
-export const Boolean = (_, { pivotTableOptions }) => {
+export const Text = (_, { pivotTableOptions }) => {
     const visualization = {
-        ...booleanVisualization,
+        ...emailVisualization,
         ...visualizationReset,
         ...pivotTableOptions,
     }
 
     return (
         <div style={{ width: 800, height: 600 }}>
-            <PivotTable data={booleanData} visualization={visualization} />
+            <PivotTable data={emailData} visualization={visualization} />
         </div>
     )
 }
 
-Boolean.story = {
-    name: 'Boolean',
+Text.story = {
+    name: 'Text',
 }
 
 export const Yesonly = (_, { pivotTableOptions }) => {
