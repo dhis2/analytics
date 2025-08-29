@@ -4,10 +4,12 @@ import responseBooleanOrg from '../../../__demo__/data/event/boolean.data.org.js
 import responseDateHideNa from '../../../__demo__/data/event/date.data.hidena.json'
 import responseDate from '../../../__demo__/data/event/date.data.json'
 import responseDateOrg from '../../../__demo__/data/event/date.data.org.json'
-import responseEmailOrg from '../../../__demo__/data/event/email.data.org.json'
-import responseNumericHideNa from '../../../__demo__/data/event/numeric.data.hidena.json'
-import responseNumeric from '../../../__demo__/data/event/numeric.data.json'
-import responseNumericOrg from '../../../__demo__/data/event/numeric.data.org.json'
+import responseTextHideNa from '../../../__demo__/data/event/email.data.hidena.json'
+import responseText from '../../../__demo__/data/event/email.data.json'
+import responseTextOrg from '../../../__demo__/data/event/email.data.org.json'
+import responseNumericHideNa from '../../../__demo__/data/event/integer.data.hidena.json'
+import responseNumeric from '../../../__demo__/data/event/integer.data.json'
+import responseNumericOrg from '../../../__demo__/data/event/integer.data.org.json'
 import responseOptionSetHideNa from '../../../__demo__/data/event/optionset.data.hidena.json'
 import responseOptionSet from '../../../__demo__/data/event/optionset.data.json'
 import responseOptionSetOrg from '../../../__demo__/data/event/optionset.data.org.json'
@@ -33,19 +35,15 @@ describe('response', () => {
             })
         })
 
-        describe('email', () => {
+        describe('text', () => {
             it('transforms response', () => {
-                transformResponse(responseEmailOrg).metaData.dimensions[
-                    'jfuXZB3A1ko.RUZ2EBP6HQn'
-                ]
-
-                expect(transformResponse(responseEmailOrg)).toEqual({})
+                expect(transformResponse(responseTextOrg)).toEqual(responseText)
             })
 
             it('transforms response and hides N/A data', () => {
                 expect(
-                    transformResponse(responseDateOrg, { hideNaData: true })
-                ).toEqual(responseDateHideNa)
+                    transformResponse(responseTextOrg, { hideNaData: true })
+                ).toEqual(responseTextHideNa)
             })
         })
 

@@ -2,8 +2,8 @@ import dateResponseHideNa from '../../../__demo__/data/event/date.data.hidena.js
 import dateResponseOrg from '../../../__demo__/data/event/date.data.org.json'
 import datetimeResponseHideNa from '../../../__demo__/data/event/datetime.data.hidena.json'
 import datetimeResponseOrg from '../../../__demo__/data/event/datetime.data.org.json'
-import numericResponseHideNa from '../../../__demo__/data/event/numeric.data.hidena.json'
-import numericResponseOrg from '../../../__demo__/data/event/numeric.data.org.json'
+import numericResponseHideNa from '../../../__demo__/data/event/integer.data.hidena.json'
+import numericResponseOrg from '../../../__demo__/data/event/integer.data.org.json'
 import {
     VALUE_TYPE_DATE,
     VALUE_TYPE_DATETIME,

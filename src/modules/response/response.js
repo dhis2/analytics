@@ -97,10 +97,6 @@ export const transformResponse = (response, { hideNaData = false } = {}) => {
                     ...transformedResponse.metaData.dimensions[header.name],
                     NA_VALUE,
                 ]
-
-                transformedResponse.metaData.items[NA_VALUE] = {
-                    name: NA_VALUE_DISPLAY_NAME,
-                }
             }
         })
     }
