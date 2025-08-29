@@ -35,11 +35,10 @@ describe('response', () => {
 
         describe('email', () => {
             it('transforms response', () => {
-                console.log(
-                    transformResponse(responseEmailOrg).metaData.dimensions[
-                        'jfuXZB3A1ko.RUZ2EBP6HQn'
-                    ]
-                )
+                transformResponse(responseEmailOrg).metaData.dimensions[
+                    'jfuXZB3A1ko.RUZ2EBP6HQn'
+                ]
+
                 expect(transformResponse(responseEmailOrg)).toEqual({})
             })
 

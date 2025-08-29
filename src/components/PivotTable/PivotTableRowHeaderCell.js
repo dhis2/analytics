@@ -32,6 +32,7 @@ export const PivotTableRowHeaderCell = ({
                         header.label !== 'Subtotal'
                             ? 'row-header'
                             : 'empty-header',
+                        header.isNaData && 'nadata-header',
                         header.includesHierarchy && 'row-header-hierarchy',
                         {
                             'fixed-header': engine.options.fixRowHeaders,

@@ -418,33 +418,30 @@ const ItemSelector = ({
                 selectedEmptyComponent={<SelectedEmptyPlaceholder />}
                 rightHeader={<RightHeader infoBoxMessage={infoBoxMessage} />}
                 rightFooter={rightFooter}
-                renderOption={(props) => {
-                    // console.log('renderOption', props)
-                    return (
-                        <TransferOption
-                            /* eslint-disable react/prop-types */
-                            {...props}
-                            active={isActive(props.value)}
-                            showingInfo={infoDataItem?.id === props.value}
-                            icon={getIcon(props.type)}
-                            dataItemType={props.type}
-                            dimensionType={getDimensionType({
+                renderOption={(props) => (
+                    <TransferOption
+                        /* eslint-disable react/prop-types */
+                        {...props}
+                        active={isActive(props.value)}
+                        showingInfo={infoDataItem?.id === props.value}
+                        icon={getIcon(props.type)}
+                        dataItemType={props.type}
+                        dimensionType={getDimensionType({
+                            type: props.type,
+                            expression: props.expression,
+                        })}
+                        dataTest={`${dataTest}-transfer-option`}
+                        itemsRef={itemsRef}
+                        onEditClick={() => onEditClick(props)}
+                        onInfoClick={() =>
+                            setInfoDataItem({
+                                id: props.value,
                                 type: props.type,
-                                expression: props.expression,
-                            })}
-                            dataTest={`${dataTest}-transfer-option`}
-                            itemsRef={itemsRef}
-                            onEditClick={() => onEditClick(props)}
-                            onInfoClick={() =>
-                                setInfoDataItem({
-                                    id: props.value,
-                                    type: props.type,
-                                })
-                            }
-                            /* eslint-enable react/prop-types */
-                        />
-                    )
-                }}
+                            })
+                        }
+                        /* eslint-enable react/prop-types */
+                    />
+                )}
                 dataTest={`${dataTest}-transfer`}
             />
             {currentCalculation && supportsEDI && (

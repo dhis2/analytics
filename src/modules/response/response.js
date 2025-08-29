@@ -16,6 +16,7 @@ import { applyDefaultHandler } from './default.js'
 import { applyOptionSetHandler } from './optionSet.js'
 
 export const NA_VALUE = ''
+export const NA_VALUE_DISPLAY_NAME = i18n.t('No value')
 export const PREFIX_SEPARATOR = '_'
 
 export const itemFormatterByValueType = {
@@ -98,7 +99,7 @@ export const transformResponse = (response, { hideNaData = false } = {}) => {
                 ]
 
                 transformedResponse.metaData.items[NA_VALUE] = {
-                    name: i18n.t('N/A'),
+                    name: NA_VALUE_DISPLAY_NAME,
                 }
             }
         })
