@@ -1,8 +1,17 @@
 {
     "headers": [
         {
-            "name": "Zj7UnCAulEk.fWIAEtYVEGk",
-            "column": "Mode of Discharge",
+            "name": "stageA.element1",
+            "column": "Option set A",
+            "valueType": "TEXT",
+            "type": "java.lang.String",
+            "hidden": false,
+            "meta": true,
+            "optionSet": "optionset1"
+        },
+        {
+            "name": "stageB.element2",
+            "column": "Option set B with shared codes",
             "valueType": "TEXT",
             "type": "java.lang.String",
             "hidden": false,
@@ -36,28 +45,39 @@
     ],
     "metaData": {
         "items": {
-            "202504": {
-                "name": "April 2025"
-            },
             "202505": {
                 "name": "May 2025"
             },
             "202506": {
                 "name": "June 2025"
             },
+            "202507": {
+                "name": "July 2025"
+            },
             "ou": {
                 "name": "Organisation unit"
             },
-            "Fhbf4aKpZmZ": {
-                "code": "MODABSC",
-                "name": "Absconded"
+            "optionId1": {
+                "code": "ONE",
+                "name": "One"
             },
-            "Zj7UnCAulEk.fWIAEtYVEGk": {
-                "name": "Mode of Discharge"
+            "optionId2": {
+                "code": "TWO",
+                "name": "Two"
             },
-            "gj2fKKyp8OH": {
-                "code": "MODDIED",
-                "name": "Died"
+            "optionId3": {
+                "code": "ONE",
+                "name": "Single"
+            },
+            "optionId4": {
+                "code": "TWO",
+                "name": "Double"
+            },
+            "stageA.element1": {
+                "name": "Option set A"
+            },
+            "stageB.element2": {
+                "name": "Option set B with shared codes"
             },
             "Zj7UnCAulEk": {
                 "name": "Inpatient morbidity and mortality"
@@ -73,44 +93,33 @@
             },
             "LAST_3_MONTHS": {
                 "name": "Last 3 months"
-            },
-            "fShHdgT7XGb": {
-                "code": "MODTRANS",
-                "name": "Transferred"
-            },
-            "yeod5tOXpkP": {
-                "code": "MODDISCH",
-                "name": "Discharged"
             }
         },
         "dimensions": {
-            "pe": ["202504", "202505", "202506"],
+            "pe": ["202505", "202506", "202507"],
             "ou": ["ImspTQPwCqd"],
-            "Zj7UnCAulEk.fWIAEtYVEGk": [
-                "yeod5tOXpkP",
-                "gj2fKKyp8OH",
-                "fShHdgT7XGb",
-                "Fhbf4aKpZmZ"
-            ]
+            "stageA.element1": ["optionId1", "optionId2"],
+            "stageB.element2": ["optionId3", "optionId4"]
         }
     },
     "rowContext": {},
     "headerWidth": 4,
     "width": 4,
     "rows": [
-        ["MODDIED", "ImspTQPwCqd", "202504", "524"],
-        ["MODDISCH", "ImspTQPwCqd", "202504", "555"],
-        ["MODTRANS", "ImspTQPwCqd", "202504", "515"],
-        ["MODABSC", "ImspTQPwCqd", "202504", "504"],
-        ["MODTRANS", "ImspTQPwCqd", "202506", "609"],
-        ["MODABSC", "ImspTQPwCqd", "202505", "574"],
-        ["MODDISCH", "ImspTQPwCqd", "202505", "586"],
-        ["MODABSC", "ImspTQPwCqd", "202506", "574"],
-        ["MODDIED", "ImspTQPwCqd", "202505", "565"],
-        ["MODDIED", "ImspTQPwCqd", "202506", "545"],
-        ["MODDISCH", "ImspTQPwCqd", "202506", "597"],
-        ["MODTRANS", "ImspTQPwCqd", "202505", "561"],
-        ["", "ImspTQPwCqd", "202505", "49"]
+        ["ONE", "ONE", "ImspTQPwCqd", "202505", "327"],
+        ["ONE", "ONE", "ImspTQPwCqd", "202506", "594"],
+        ["ONE", "ONE", "ImspTQPwCqd", "202507", "261"],
+        ["ONE", "TWO", "ImspTQPwCqd", "202505", "448"],
+        ["ONE", "TWO", "ImspTQPwCqd", "202506", "519"],
+        ["ONE", "TWO", "ImspTQPwCqd", "202507", "583"],
+        ["TWO", "ONE", "ImspTQPwCqd", "202505", "379"],
+        ["TWO", "ONE", "ImspTQPwCqd", "202506", "239"],
+        ["TWO", "ONE", "ImspTQPwCqd", "202507", "420"],
+        ["TWO", "TWO", "ImspTQPwCqd", "202505", "411"],
+        ["TWO", "TWO", "ImspTQPwCqd", "202506", "531"],
+        ["TWO", "TWO", "ImspTQPwCqd", "202507", "317"],
+        ["", "TWO", "ImspTQPwCqd", "202507", "23"],
+        ["ONE", "", "ImspTQPwCqd", "202506", "45"]
     ],
-    "height": 24
+    "height": 12
 }

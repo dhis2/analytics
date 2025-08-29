@@ -1,5 +1,5 @@
 {
-    "name": "Text with option set",
+    "name": "Two option sets with shared option codes",
     "created": "2025-06-30T10:27:41.277",
     "lastUpdated": "2025-06-30T10:27:41.277",
     "translations": [],
@@ -40,18 +40,6 @@
     "categoryDimensions": [],
     "categoryOptionGroupSetDimensions": [],
     "attributeDimensions": [],
-    "dataElementDimensions": [
-        {
-            "dataElement": {
-                "name": "Age in years",
-                "id": "qrur9Dvnyt5"
-            },
-            "legendSet": {
-                "name": "Age 10y interval",
-                "id": "Yf6UHoPkdS6"
-            }
-        }
-    ],
     "programIndicatorDimensions": [],
     "subscribers": [],
     "digitGroupSeparator": "SPACE",
@@ -87,9 +75,7 @@
         {
             "parent": "COLUMN",
             "dimension": "ou",
-            "values": [
-                "ImspTQPwCqd"
-            ]
+            "values": ["ImspTQPwCqd"]
         }
     ],
     "legacy": true,
@@ -124,9 +110,16 @@
         {
             "items": [],
             "programStage": {
-                "id": "Zj7UnCAulEk"
+                "id": "stageA"
             },
-            "dimension": "Zj7UnCAulEk.fWIAEtYVEGk"
+            "dimension": "stageA.element1"
+        },
+        {
+            "items": [],
+            "programStage": {
+                "id": "stageB"
+            },
+            "dimension": "stageB.element2"
         }
     ],
     "displayName": "Text with option set",

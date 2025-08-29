@@ -1,22 +1,28 @@
 import { Checkbox, Divider } from '@dhis2/ui'
 import React, { useState } from 'react'
 import { PivotTable } from '../index.js'
+import booleanDataHideNa from './data/event/boolean.data.hidena.json'
 import booleanData from './data/event/boolean.data.json'
 import booleanVisualization from './data/event/boolean.visualization.json'
+import dateDataHideNa from './data/event/date.data.hidena.json'
 import dateData from './data/event/date.data.json'
 import dateVisualization from './data/event/date.visualization.json'
+import datetimeDataHideNa from './data/event/datetime.data.hidena.json'
 import datetimeData from './data/event/datetime.data.json'
 import datetimeVisualization from './data/event/datetime.visualization.json'
+import emailDataHideNa from './data/event/email.data.hidena.json'
 import emailData from './data/event/email.data.json'
 import emailVisualization from './data/event/email.visualization.json'
+import integerDataHideNa from './data/event/integer.data.hidena.json'
 import integerData from './data/event/integer.data.json'
 import integerVisualization from './data/event/integer.visualization.json'
+import numericLegendsetDataHideNa from './data/event/numeric-legendset.data.hidena.json'
 import numericLegendsetData from './data/event/numeric-legendset.data.json'
 import numericLegendsetVisualization from './data/event/numeric-legendset.visualization.json'
+import optionsetDataHideNa from './data/event/optionset.data.hidena.json'
 import optionsetData from './data/event/optionset.data.json'
 import optionsetVisualization from './data/event/optionset.visualization.json'
-import optionsetsData from './data/event/optionsets.data.json'
-import optionsetsVisualization from './data/event/optionsets.visualization.json'
+import yesonlyDataHideNa from './data/event/yesonly.data.hidena.json'
 import yesonlyData from './data/event/yesonly.data.json'
 import yesonlyVisualization from './data/event/yesonly.visualization.json'
 
@@ -69,11 +75,11 @@ const PivotTableOptionsWrapper = (story) => {
 }
 
 export default {
-    title: 'PivotTable (event enrollment)',
+    title: 'PivotTable (event)',
     decorators: [PivotTableOptionsWrapper],
 }
 
-export const Boolean = (_, { pivotTableOptions }) => {
+export const BooleanNA = (_, { pivotTableOptions }) => {
     const visualization = {
         ...booleanVisualization,
         ...visualizationReset,
@@ -87,11 +93,32 @@ export const Boolean = (_, { pivotTableOptions }) => {
     )
 }
 
+BooleanNA.story = {
+    name: 'BooleanNA',
+}
+
+export const Boolean = (_, { pivotTableOptions }) => {
+    const visualization = {
+        ...booleanVisualization,
+        ...visualizationReset,
+        ...pivotTableOptions,
+    }
+
+    return (
+        <div style={{ width: 800, height: 600 }}>
+            <PivotTable
+                data={booleanDataHideNa}
+                visualization={visualization}
+            />
+        </div>
+    )
+}
+
 Boolean.story = {
     name: 'Boolean',
 }
 
-export const Date = (_, { pivotTableOptions }) => {
+export const DateNA = (_, { pivotTableOptions }) => {
     const visualization = {
         ...dateVisualization,
         ...visualizationReset,
@@ -105,11 +132,29 @@ export const Date = (_, { pivotTableOptions }) => {
     )
 }
 
+DateNA.story = {
+    name: 'DateNA',
+}
+
+export const Date = (_, { pivotTableOptions }) => {
+    const visualization = {
+        ...dateVisualization,
+        ...visualizationReset,
+        ...pivotTableOptions,
+    }
+
+    return (
+        <div style={{ width: 800, height: 600 }}>
+            <PivotTable data={dateDataHideNa} visualization={visualization} />
+        </div>
+    )
+}
+
 Date.story = {
     name: 'Date',
 }
 
-export const Datetime = (_, { pivotTableOptions }) => {
+export const DatetimeNA = (_, { pivotTableOptions }) => {
     const visualization = {
         ...datetimeVisualization,
         ...visualizationReset,
@@ -123,11 +168,32 @@ export const Datetime = (_, { pivotTableOptions }) => {
     )
 }
 
+DatetimeNA.story = {
+    name: 'DatetimeNA',
+}
+
+export const Datetime = (_, { pivotTableOptions }) => {
+    const visualization = {
+        ...datetimeVisualization,
+        ...visualizationReset,
+        ...pivotTableOptions,
+    }
+
+    return (
+        <div style={{ width: 800, height: 600 }}>
+            <PivotTable
+                data={datetimeDataHideNa}
+                visualization={visualization}
+            />
+        </div>
+    )
+}
+
 Datetime.story = {
     name: 'Datetime',
 }
 
-export const Numeric = (_, { pivotTableOptions }) => {
+export const NumericNA = (_, { pivotTableOptions }) => {
     const visualization = {
         ...integerVisualization,
         ...visualizationReset,
@@ -141,11 +207,32 @@ export const Numeric = (_, { pivotTableOptions }) => {
     )
 }
 
+NumericNA.story = {
+    name: 'NumericNA',
+}
+
+export const Numeric = (_, { pivotTableOptions }) => {
+    const visualization = {
+        ...integerVisualization,
+        ...visualizationReset,
+        ...pivotTableOptions,
+    }
+
+    return (
+        <div style={{ width: 800, height: 600 }}>
+            <PivotTable
+                data={integerDataHideNa}
+                visualization={visualization}
+            />
+        </div>
+    )
+}
+
 Numeric.story = {
     name: 'Numeric',
 }
 
-export const NumericLegendset = (_, { pivotTableOptions }) => {
+export const NumericLegendsetNA = (_, { pivotTableOptions }) => {
     const visualization = {
         ...numericLegendsetVisualization,
         ...visualizationReset,
@@ -161,11 +248,31 @@ export const NumericLegendset = (_, { pivotTableOptions }) => {
     )
 }
 
+NumericLegendsetNA.story = {
+    name: 'Numeric with legendset NA',
+}
+
+export const NumericLegendset = (_, { pivotTableOptions }) => {
+    const visualization = {
+        ...numericLegendsetVisualization,
+        ...visualizationReset,
+        ...pivotTableOptions,
+    }
+    return (
+        <div style={{ width: 800, height: 600 }}>
+            <PivotTable
+                data={numericLegendsetDataHideNa}
+                visualization={visualization}
+            />
+        </div>
+    )
+}
+
 NumericLegendset.story = {
     name: 'Numeric with legendset',
 }
 
-export const Optionset = (_, { pivotTableOptions }) => {
+export const OptionsetNA = (_, { pivotTableOptions }) => {
     const visualization = {
         ...optionsetVisualization,
         ...visualizationReset,
@@ -179,29 +286,32 @@ export const Optionset = (_, { pivotTableOptions }) => {
     )
 }
 
-Optionset.story = {
-    name: 'Optionset',
+OptionsetNA.story = {
+    name: 'OptionsetNA',
 }
 
-export const OptionsetsNonUniqueCodes = (_, { pivotTableOptions }) => {
+export const Optionset = (_, { pivotTableOptions }) => {
     const visualization = {
-        ...optionsetsVisualization,
+        ...optionsetVisualization,
         ...visualizationReset,
         ...pivotTableOptions,
     }
 
     return (
         <div style={{ width: 800, height: 600 }}>
-            <PivotTable data={optionsetsData} visualization={visualization} />
+            <PivotTable
+                data={optionsetDataHideNa}
+                visualization={visualization}
+            />
         </div>
     )
 }
 
-OptionsetsNonUniqueCodes.story = {
-    name: 'Optionset, non-unique codes',
+Optionset.story = {
+    name: 'Optionset',
 }
 
-export const Text = (_, { pivotTableOptions }) => {
+export const TextNA = (_, { pivotTableOptions }) => {
     const visualization = {
         ...emailVisualization,
         ...visualizationReset,
@@ -215,8 +325,44 @@ export const Text = (_, { pivotTableOptions }) => {
     )
 }
 
+TextNA.story = {
+    name: 'TextNA',
+}
+
+export const Text = (_, { pivotTableOptions }) => {
+    const visualization = {
+        ...emailVisualization,
+        ...visualizationReset,
+        ...pivotTableOptions,
+    }
+
+    return (
+        <div style={{ width: 800, height: 600 }}>
+            <PivotTable data={emailDataHideNa} visualization={visualization} />
+        </div>
+    )
+}
+
 Text.story = {
     name: 'Text',
+}
+
+export const YesonlyNA = (_, { pivotTableOptions }) => {
+    const visualization = {
+        ...yesonlyVisualization,
+        ...visualizationReset,
+        ...pivotTableOptions,
+    }
+
+    return (
+        <div style={{ width: 800, height: 600 }}>
+            <PivotTable data={yesonlyData} visualization={visualization} />
+        </div>
+    )
+}
+
+YesonlyNA.story = {
+    name: 'YesonlyNA',
 }
 
 export const Yesonly = (_, { pivotTableOptions }) => {
@@ -228,7 +374,10 @@ export const Yesonly = (_, { pivotTableOptions }) => {
 
     return (
         <div style={{ width: 800, height: 600 }}>
-            <PivotTable data={yesonlyData} visualization={visualization} />
+            <PivotTable
+                data={yesonlyDataHideNa}
+                visualization={visualization}
+            />
         </div>
     )
 }
