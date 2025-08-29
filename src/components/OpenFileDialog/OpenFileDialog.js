@@ -117,6 +117,20 @@ export const OpenFileDialog = ({
         if (filters.visType) {
             switch (filters.visType) {
                 case VIS_TYPE_GROUP_ALL:
+                    if (Array.isArray(filterVisTypes)) {
+                        queryFilters.push(
+                            `type:in:[${filterVisTypes
+                                .filter(
+                                    ({ type }) =>
+                                        ![
+                                            VIS_TYPE_GROUP_ALL,
+                                            VIS_TYPE_GROUP_CHARTS,
+                                        ].includes(type)
+                                )
+                                .map(({ type }) => type)
+                                .join(',')}]`
+                        )
+                    }
                     break
                 case VIS_TYPE_GROUP_CHARTS:
                     queryFilters.push('type:!eq:PIVOT_TABLE')
@@ -132,7 +146,7 @@ export const OpenFileDialog = ({
         }
 
         return queryFilters
-    }, [currentUser, filters])
+    }, [currentUser, filters, filterVisTypes])
 
     const formatSortDirection = useCallback(() => {
         if (sortField === 'displayName' && sortDirection !== 'default') {
