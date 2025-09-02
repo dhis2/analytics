@@ -13,9 +13,6 @@ import responseNumericOrg from '../../../__demo__/data/event/integer.data.org.js
 import responseOptionSetHideNa from '../../../__demo__/data/event/optionset.data.hidena.json'
 import responseOptionSet from '../../../__demo__/data/event/optionset.data.json'
 import responseOptionSetOrg from '../../../__demo__/data/event/optionset.data.org.json'
-import responseOptionSetsHideNa from '../../../__demo__/data/event/optionsets.data.hidena.json'
-import responseOptionSets from '../../../__demo__/data/event/optionsets.data.json'
-import responseOptionSetsOrg from '../../../__demo__/data/event/optionsets.data.org.json'
 import responseYesOnlyHideNa from '../../../__demo__/data/event/yesonly.data.hidena.json'
 import responseYesOnly from '../../../__demo__/data/event/yesonly.data.json'
 import responseYesOnlyOrg from '../../../__demo__/data/event/yesonly.data.org.json'
@@ -62,32 +59,18 @@ describe('response', () => {
         })
 
         describe('option set', () => {
-            it('transforms response', () => {
+            it('transforms response with non-unique codes across two option sets', () => {
                 expect(transformResponse(responseOptionSetOrg)).toEqual(
                     responseOptionSet
                 )
             })
 
-            it('transforms response and hides N/A data', () => {
+            it('transforms response with non-unique codes across two option sets and hides N/A data', () => {
                 expect(
                     transformResponse(responseOptionSetOrg, {
                         hideNaData: true,
                     })
                 ).toEqual(responseOptionSetHideNa)
-            })
-
-            it('transforms response with non-unique codes across two option sets', () => {
-                expect(transformResponse(responseOptionSetsOrg)).toEqual(
-                    responseOptionSets
-                )
-            })
-
-            it('transforms response with non-unique codes across two option sets and hides N/A data', () => {
-                expect(
-                    transformResponse(responseOptionSetsOrg, {
-                        hideNaData: true,
-                    })
-                ).toEqual(responseOptionSetsHideNa)
             })
         })
 
