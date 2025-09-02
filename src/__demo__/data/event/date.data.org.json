@@ -35,15 +35,6 @@
     ],
     "metaData": {
         "items": {
-            "202408": {
-                "name": "August 2024"
-            },
-            "202409": {
-                "name": "September 2024"
-            },
-            "202410": {
-                "name": "October 2024"
-            },
             "202411": {
                 "name": "November 2024"
             },
@@ -99,9 +90,6 @@
         "dimensions": {
             "jfuXZB3A1ko.RldgRedJrco": [],
             "pe": [
-                "202408",
-                "202409",
-                "202410",
                 "202411",
                 "202412",
                 "202501",
