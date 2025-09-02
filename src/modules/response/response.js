@@ -9,7 +9,12 @@ import {
     VALUE_TYPE_COORDINATE,
     VALUE_TYPE_DATE,
     VALUE_TYPE_DATETIME,
+    VALUE_TYPE_FILE_RESOURCE,
+    VALUE_TYPE_GEOJSON,
+    VALUE_TYPE_IMAGE,
+    VALUE_TYPE_MULTI_TEXT,
     VALUE_TYPE_PERCENTAGE,
+    VALUE_TYPE_REFERENCE,
 } from '../valueTypes.js'
 import { applyBooleanHandler } from './boolean.js'
 import { applyDefaultHandler } from './default.js'
@@ -18,6 +23,14 @@ import { applyOptionSetHandler } from './optionSet.js'
 export const NA_VALUE = ''
 export const NA_VALUE_DISPLAY_NAME = i18n.t('No value')
 export const PREFIX_SEPARATOR = '_'
+export const UNSUPPORTED_VALUE_TYPES = [
+    VALUE_TYPE_COORDINATE,
+    VALUE_TYPE_GEOJSON,
+    VALUE_TYPE_FILE_RESOURCE,
+    VALUE_TYPE_IMAGE,
+    VALUE_TYPE_MULTI_TEXT,
+    VALUE_TYPE_REFERENCE,
+]
 
 export const itemFormatterByValueType = {
     [VALUE_TYPE_AGE]: (name) => name.replace(/ 00:00:00\.0$/, ''),
@@ -56,11 +69,16 @@ export const transformResponse = (response, { hideNaData = false } = {}) => {
         )
 
     // Legendsets use uids and do not need transformation
-    // Coordinate not supported
+    // Skip unsupported value types
     // Option set and Boolean have separate handlers
     // All other types use default handler with specific item formatter
     metaHeaders.forEach((header) => {
-        if (!(header.legendSet || header.valueType === VALUE_TYPE_COORDINATE)) {
+        if (
+            !(
+                header.legendSet ||
+                UNSUPPORTED_VALUE_TYPES.includes(header.valueType)
+            )
+        ) {
             if (header.optionSet) {
                 transformedResponse = applyOptionSetHandler(
                     transformedResponse,

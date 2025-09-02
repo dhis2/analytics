@@ -383,5 +383,5 @@ export const Yesonly = (_, { pivotTableOptions }) => {
 }
 
 Yesonly.story = {
-    name: 'Boolean',
+    name: 'Yesonly',
 }
