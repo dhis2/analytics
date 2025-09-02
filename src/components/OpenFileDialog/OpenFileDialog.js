@@ -68,6 +68,80 @@ const getQuery = (type) => ({
     },
 })
 
+export const formatFilters = (currentUser, filters, filterVisTypes) => {
+    const queryFilters = []
+
+    switch (filters.createdBy) {
+        case CREATED_BY_ALL_BUT_CURRENT_USER:
+            queryFilters.push(`user.id:!eq:${currentUser.id}`)
+            break
+        case CREATED_BY_CURRENT_USER:
+            queryFilters.push(`user.id:eq:${currentUser.id}`)
+            break
+        case CREATED_BY_ALL:
+        default:
+            break
+    }
+
+    const defaultFilterTypes = []
+
+    let defaultTypeFilter
+
+    if (Array.isArray(filterVisTypes)) {
+        // console.log(filterVisTypes)
+        defaultFilterTypes.push(
+            ...filterVisTypes
+                .filter(
+                    ({ type, disabled }) =>
+                        !(
+                            disabled ||
+                            [
+                                VIS_TYPE_GROUP_ALL,
+                                VIS_TYPE_GROUP_CHARTS,
+                            ].includes(type)
+                        )
+                )
+                .map(({ type }) => type)
+        )
+
+        if (defaultFilterTypes.length) {
+            defaultTypeFilter = `type:in:[${defaultFilterTypes.join(',')}]`
+        }
+    }
+
+    if (filters.visType) {
+        switch (filters.visType) {
+            case VIS_TYPE_GROUP_ALL:
+                if (defaultTypeFilter) {
+                    queryFilters.push(defaultTypeFilter)
+                }
+                break
+            case VIS_TYPE_GROUP_CHARTS:
+                if (defaultFilterTypes.length) {
+                    queryFilters.push(
+                        `type:in:[${defaultFilterTypes
+                            .filter((item) => item !== VIS_TYPE_PIVOT_TABLE)
+                            .join(',')}]`
+                    )
+                } else {
+                    queryFilters.push(`type:!eq:${VIS_TYPE_PIVOT_TABLE}`)
+                }
+                break
+            default:
+                queryFilters.push(`type:eq:${filters.visType}`)
+                break
+        }
+    } else if (defaultTypeFilter) {
+        queryFilters.push(defaultTypeFilter)
+    }
+
+    if (filters.searchTerm) {
+        queryFilters.push(`identifiable:token:${filters.searchTerm}`)
+    }
+
+    return queryFilters
+}
+
 export const OpenFileDialog = ({
     type,
     open,
@@ -100,78 +174,10 @@ export const OpenFileDialog = ({
     )
     const [searchTimeout, setSearchTimeout] = useState(null)
 
-    const formatFilters = useCallback(() => {
-        const queryFilters = []
-
-        switch (filters.createdBy) {
-            case CREATED_BY_ALL_BUT_CURRENT_USER:
-                queryFilters.push(`user.id:!eq:${currentUser.id}`)
-                break
-            case CREATED_BY_CURRENT_USER:
-                queryFilters.push(`user.id:eq:${currentUser.id}`)
-                break
-            case CREATED_BY_ALL:
-            default:
-                break
-        }
-
-        const defaultFilterTypes = []
-
-        let defaultTypeFilter
-
-        if (Array.isArray(filterVisTypes)) {
-            defaultFilterTypes.push(
-                ...filterVisTypes
-                    .filter(
-                        ({ type, disabled }) =>
-                            !(
-                                disabled ||
-                                [
-                                    VIS_TYPE_GROUP_ALL,
-                                    VIS_TYPE_GROUP_CHARTS,
-                                ].includes(type)
-                            )
-                    )
-                    .map(({ type }) => type)
-            )
-
-            if (defaultFilterTypes.length) {
-                defaultTypeFilter = `type:in:[${defaultFilterTypes.join(',')}]`
-            }
-        }
-
-        if (filters.visType) {
-            switch (filters.visType) {
-                case VIS_TYPE_GROUP_ALL:
-                    if (defaultTypeFilter) {
-                        queryFilters.push(defaultTypeFilter)
-                    }
-                    break
-                case VIS_TYPE_GROUP_CHARTS:
-                    if (defaultFilterTypes.length) {
-                        queryFilters.push(
-                            `type:in:[${defaultFilterTypes
-                                .filter((item) => item !== VIS_TYPE_PIVOT_TABLE)
-                                .join(',')}]`
-                        )
-                    } else {
-                        queryFilters.push(`type:!eq:${VIS_TYPE_PIVOT_TABLE}`)
-                    }
-                    break
-                default:
-                    queryFilters.push(`type:eq:${filters.visType}`)
-                    break
-            }
-        } else if (defaultTypeFilter) {
-            queryFilters.push(defaultTypeFilter)
-        }
-
-        if (filters.searchTerm) {
-            queryFilters.push(`identifiable:token:${filters.searchTerm}`)
-        }
-
-        return queryFilters
-    }, [currentUser, filters, filterVisTypes])
+    const formatFiltersCb = useCallback(
+        () => formatFilters(currentUser, filters, filterVisTypes),
+        [currentUser, filters, filterVisTypes]
+    )
 
     const formatSortDirection = useCallback(() => {
         if (sortField === 'displayName' && sortDirection !== 'default') {
@@ -214,7 +220,7 @@ export const OpenFileDialog = ({
                 page,
                 sortField,
                 sortDirection: formatSortDirection(),
-                filters: formatFilters(),
+                filters: formatFiltersCb(),
             })
         }
     }, [
@@ -223,7 +229,7 @@ export const OpenFileDialog = ({
         sortField,
         filters,
         refetch,
-        formatFilters,
+        formatFiltersCb,
         formatSortDirection,
     ])
 
