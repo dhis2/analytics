@@ -39,7 +39,12 @@ export const TranslationModal = ({
     }, [translationsData])
 
     return (
-        <Modal large position="middle" onClose={onClose}>
+        <Modal
+            large
+            position="middle"
+            onClose={onClose}
+            dataTest="dhis2-analytics-translation-modal"
+        >
             <ModalTitle>
                 {i18n.t('Translate: {{objectName}}', {
                     objectName: objectToTranslate.name || 'TEXT', // XXX

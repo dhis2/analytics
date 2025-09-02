@@ -3,7 +3,7 @@ import { MdParser } from '../MdParser.js'
 const Parser = new MdParser()
 
 describe('MdParser class', () => {
-    it('converts text into HTML', () => {
+    test('converts text into HTML', () => {
         const inlineTests = [
             ['_italic_', '<em>italic</em>'],
             ['*bold*', '<strong>bold</strong>'],

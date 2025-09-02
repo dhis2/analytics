@@ -41,6 +41,7 @@ class DimensionList extends Component {
             onClick={this.props.onDimensionClick}
             onOptionsClick={this.props.onDimensionOptionsClick}
             onDragStart={this.props.onDimensionDragStart}
+            dataTest="dimension-item"
         />
     )
 
@@ -64,7 +65,10 @@ class DimensionList extends Component {
         )
 
         return (
-            <div className="container">
+            <div
+                className="container"
+                data-test="dhis2-analytics-dimension-list"
+            >
                 <div className="wrapper">
                     {fixedDimensions?.length ? (
                         <div className="section">
