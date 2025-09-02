@@ -25,22 +25,16 @@ import React, {
     useState,
 } from 'react'
 import {
-    VIS_TYPE_GROUP_ALL,
-    VIS_TYPE_GROUP_CHARTS,
-    VIS_TYPE_PIVOT_TABLE,
-} from '../../modules/visTypes.js'
-import {
     CreatedByFilter,
+    formatUserFilter,
     CREATED_BY_ALL,
-    CREATED_BY_ALL_BUT_CURRENT_USER,
-    CREATED_BY_CURRENT_USER,
 } from './CreatedByFilter.js'
 import { FileList } from './FileList.js'
 import { NameFilter } from './NameFilter.js'
 import { styles } from './OpenFileDialog.styles.js'
 import { PaginationControls } from './PaginationControls.js'
 import { getTranslatedString, AOTypeMap } from './utils.js'
-import { VisTypeFilter } from './VisTypeFilter.js'
+import { VisTypeFilter, formatTypeFilter } from './VisTypeFilter.js'
 
 const getQuery = (type) => ({
     files: {
@@ -71,67 +65,14 @@ const getQuery = (type) => ({
 export const formatFilters = (currentUser, filters, filterVisTypes) => {
     const queryFilters = []
 
-    if (filters.searchTerm) {
+    filters.searchTerm &&
         queryFilters.push(`identifiable:token:${filters.searchTerm}`)
-    }
 
-    if (filters.createdBy === CREATED_BY_ALL_BUT_CURRENT_USER) {
-        queryFilters.push(`user.id:!eq:${currentUser.id}`)
-    } else if (filters.createdBy === CREATED_BY_CURRENT_USER) {
-        queryFilters.push(`user.id:eq:${currentUser.id}`)
-    }
+    const userFilter = formatUserFilter(filters.createdBy, currentUser.id)
+    userFilter && queryFilters.push(userFilter)
 
-    const defaultFilterTypes = []
-
-    let defaultTypeFilter
-
-    if (Array.isArray(filterVisTypes)) {
-        // console.log(filterVisTypes)
-        defaultFilterTypes.push(
-            ...filterVisTypes
-                .filter(
-                    ({ type, disabled }) =>
-                        !(
-                            disabled ||
-                            [
-                                VIS_TYPE_GROUP_ALL,
-                                VIS_TYPE_GROUP_CHARTS,
-                            ].includes(type)
-                        )
-                )
-                .map(({ type }) => type)
-        )
-
-        if (defaultFilterTypes.length) {
-            defaultTypeFilter = `type:in:[${defaultFilterTypes.join(',')}]`
-        }
-    }
-
-    if (filters.visType) {
-        switch (filters.visType) {
-            case VIS_TYPE_GROUP_ALL:
-                if (defaultTypeFilter) {
-                    queryFilters.push(defaultTypeFilter)
-                }
-                break
-            case VIS_TYPE_GROUP_CHARTS:
-                if (defaultFilterTypes.length) {
-                    queryFilters.push(
-                        `type:in:[${defaultFilterTypes
-                            .filter((item) => item !== VIS_TYPE_PIVOT_TABLE)
-                            .join(',')}]`
-                    )
-                } else {
-                    queryFilters.push(`type:!eq:${VIS_TYPE_PIVOT_TABLE}`)
-                }
-                break
-            default:
-                queryFilters.push(`type:eq:${filters.visType}`)
-                break
-        }
-    } else if (defaultTypeFilter) {
-        queryFilters.push(defaultTypeFilter)
-    }
+    const typeFilter = formatTypeFilter(filterVisTypes, filters.visType)
+    typeFilter && queryFilters.push(typeFilter)
 
     return queryFilters
 }
