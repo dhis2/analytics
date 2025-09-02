@@ -54,6 +54,28 @@ ListOfVisualizationsWithVisTypeFilterAndDividerNoDefaultVisType.story = {
     name: 'List of visualizations with vis type filter and divider (no default vis type)',
 }
 
+const filterVisTypesWithGroups = [
+    { type: VIS_TYPE_GROUP_ALL },
+    { type: VIS_TYPE_GROUP_CHARTS },
+]
+
+export const ListOfVisualizationsWithVisTypeGroupFilterNoDefaultVisType =
+    () => (
+        <OpenFileDialog
+            type="visualization"
+            filterVisTypes={filterVisTypesWithGroups}
+            onClose={Function.prototype}
+            onFileSelect={onFileSelect}
+            onNew={Function.prototype}
+            open={true}
+            currentUser={user}
+        />
+    )
+
+ListOfVisualizationsWithVisTypeGroupFilterNoDefaultVisType.story = {
+    name: 'List of visualizations with only vis type group filter (no default vis type)',
+}
+
 export const ListOfMapsNoVisTypeFilter = () => (
     <OpenFileDialog
         type="map"
