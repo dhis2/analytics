@@ -95,9 +95,9 @@ describe('OpenFileDialog - formatFilters', () => {
                 [{ type: VIS_TYPE_LINE_LIST }, { type: VIS_TYPE_PIVOT_TABLE }]
             )
         ).toEqual([
+            `identifiable:token:test`,
             `user.id:eq:${currentUser.id}`,
             `type:in:[${VIS_TYPE_LINE_LIST},${VIS_TYPE_PIVOT_TABLE}]`,
-            `identifiable:token:test`,
         ])
     })
 })

@@ -71,16 +71,14 @@ const getQuery = (type) => ({
 export const formatFilters = (currentUser, filters, filterVisTypes) => {
     const queryFilters = []
 
-    switch (filters.createdBy) {
-        case CREATED_BY_ALL_BUT_CURRENT_USER:
-            queryFilters.push(`user.id:!eq:${currentUser.id}`)
-            break
-        case CREATED_BY_CURRENT_USER:
-            queryFilters.push(`user.id:eq:${currentUser.id}`)
-            break
-        case CREATED_BY_ALL:
-        default:
-            break
+    if (filters.searchTerm) {
+        queryFilters.push(`identifiable:token:${filters.searchTerm}`)
+    }
+
+    if (filters.createdBy === CREATED_BY_ALL_BUT_CURRENT_USER) {
+        queryFilters.push(`user.id:!eq:${currentUser.id}`)
+    } else if (filters.createdBy === CREATED_BY_CURRENT_USER) {
+        queryFilters.push(`user.id:eq:${currentUser.id}`)
     }
 
     const defaultFilterTypes = []
@@ -133,10 +131,6 @@ export const formatFilters = (currentUser, filters, filterVisTypes) => {
         }
     } else if (defaultTypeFilter) {
         queryFilters.push(defaultTypeFilter)
-    }
-
-    if (filters.searchTerm) {
-        queryFilters.push(`identifiable:token:${filters.searchTerm}`)
     }
 
     return queryFilters
