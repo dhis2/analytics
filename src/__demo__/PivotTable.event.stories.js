@@ -13,12 +13,12 @@ import datetimeVisualization from './data/event/datetime.visualization.json'
 import emailDataHideNa from './data/event/email.data.hidena.json'
 import emailData from './data/event/email.data.json'
 import emailVisualization from './data/event/email.visualization.json'
+import integerLegendsetDataHideNa from './data/event/integer-legendset.data.hidena.json'
+import integerLegendsetData from './data/event/integer-legendset.data.json'
+import integerLegendsetVisualization from './data/event/integer-legendset.visualization.json'
 import integerDataHideNa from './data/event/integer.data.hidena.json'
 import integerData from './data/event/integer.data.json'
 import integerVisualization from './data/event/integer.visualization.json'
-import numericLegendsetDataHideNa from './data/event/numeric-legendset.data.hidena.json'
-import numericLegendsetData from './data/event/numeric-legendset.data.json'
-import numericLegendsetVisualization from './data/event/numeric-legendset.visualization.json'
 import optionsetDataHideNa from './data/event/optionset.data.hidena.json'
 import optionsetData from './data/event/optionset.data.json'
 import optionsetVisualization from './data/event/optionset.visualization.json'
@@ -234,14 +234,14 @@ Numeric.story = {
 
 export const NumericLegendsetNA = (_, { pivotTableOptions }) => {
     const visualization = {
-        ...numericLegendsetVisualization,
+        ...integerLegendsetVisualization,
         ...visualizationReset,
         ...pivotTableOptions,
     }
     return (
         <div style={{ width: 800, height: 600 }}>
             <PivotTable
-                data={numericLegendsetData}
+                data={integerLegendsetData}
                 visualization={visualization}
             />
         </div>
@@ -254,14 +254,14 @@ NumericLegendsetNA.story = {
 
 export const NumericLegendset = (_, { pivotTableOptions }) => {
     const visualization = {
-        ...numericLegendsetVisualization,
+        ...integerLegendsetVisualization,
         ...visualizationReset,
         ...pivotTableOptions,
     }
     return (
         <div style={{ width: 800, height: 600 }}>
             <PivotTable
-                data={numericLegendsetDataHideNa}
+                data={integerLegendsetDataHideNa}
                 visualization={visualization}
             />
         </div>

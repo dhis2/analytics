@@ -4,6 +4,9 @@ import responseBooleanOrg from '../../../__demo__/data/event/boolean.data.org.js
 import responseDateHideNa from '../../../__demo__/data/event/date.data.hidena.json'
 import responseDate from '../../../__demo__/data/event/date.data.json'
 import responseDateOrg from '../../../__demo__/data/event/date.data.org.json'
+import responseDatetimeHideNa from '../../../__demo__/data/event/datetime.data.hidena.json'
+import responseDatetime from '../../../__demo__/data/event/datetime.data.json'
+import responseDatetimeOrg from '../../../__demo__/data/event/datetime.data.org.json'
 import responseTextHideNa from '../../../__demo__/data/event/email.data.hidena.json'
 import responseText from '../../../__demo__/data/event/email.data.json'
 import responseTextOrg from '../../../__demo__/data/event/email.data.org.json'
@@ -20,6 +23,22 @@ import { transformResponse } from '../response.js'
 
 describe('response', () => {
     describe('transformResponse', () => {
+        describe('boolean', () => {
+            it('transforms response', () => {
+                expect(transformResponse(responseBooleanOrg)).toEqual(
+                    responseBoolean
+                )
+            })
+
+            it('transforms response and hides N/A data', () => {
+                expect(
+                    transformResponse(responseBooleanOrg, {
+                        hideNaData: true,
+                    })
+                ).toEqual(responseBooleanHideNa)
+            })
+        })
+
         describe('date', () => {
             it('transforms response', () => {
                 expect(transformResponse(responseDateOrg)).toEqual(responseDate)
@@ -32,15 +51,17 @@ describe('response', () => {
             })
         })
 
-        describe('text', () => {
+        describe('datetime', () => {
             it('transforms response', () => {
-                expect(transformResponse(responseTextOrg)).toEqual(responseText)
+                expect(transformResponse(responseDatetimeOrg)).toEqual(
+                    responseDatetime
+                )
             })
 
             it('transforms response and hides N/A data', () => {
                 expect(
-                    transformResponse(responseTextOrg, { hideNaData: true })
-                ).toEqual(responseTextHideNa)
+                    transformResponse(responseDatetimeOrg, { hideNaData: true })
+                ).toEqual(responseDatetimeHideNa)
             })
         })
 
@@ -74,19 +95,15 @@ describe('response', () => {
             })
         })
 
-        describe('boolean', () => {
+        describe('text', () => {
             it('transforms response', () => {
-                expect(transformResponse(responseBooleanOrg)).toEqual(
-                    responseBoolean
-                )
+                expect(transformResponse(responseTextOrg)).toEqual(responseText)
             })
 
             it('transforms response and hides N/A data', () => {
                 expect(
-                    transformResponse(responseBooleanOrg, {
-                        hideNaData: true,
-                    })
-                ).toEqual(responseBooleanHideNa)
+                    transformResponse(responseTextOrg, { hideNaData: true })
+                ).toEqual(responseTextHideNa)
             })
         })
 
