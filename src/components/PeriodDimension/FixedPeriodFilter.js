@@ -24,7 +24,7 @@ const FixedPeriodFilter = ({
 
     return (
         <>
-            <div className="leftSection">
+            <div className="leftSection" data-test={dataTest}>
                 <SingleSelectField
                     label={i18n.t('Period type')}
                     onChange={({ selected }) => onSelectPeriodType(selected)}

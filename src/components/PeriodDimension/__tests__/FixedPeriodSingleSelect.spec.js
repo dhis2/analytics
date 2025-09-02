@@ -1,29 +1,24 @@
-import { shallow } from 'enzyme'
+import { render, screen } from '@testing-library/react'
 import React from 'react'
 import FixedPeriodSelect from '../FixedPeriodSelect.js'
 
-describe('The Fixed Period Single Select component', () => {
-    let props
-    let shallowFixedPeriodSelect
-
-    const getWrapper = () => {
-        if (!shallowFixedPeriodSelect) {
-            shallowFixedPeriodSelect = shallow(<FixedPeriodSelect {...props} />)
-        }
-        return shallowFixedPeriodSelect
+test('FixedPeriodSelect renders correctly', () => {
+    const props = {
+        value: '201405',
+        onChange: () => {},
     }
 
-    beforeEach(() => {
-        props = {
-            value: '201405',
-            onChange: () => {},
-        }
-        shallowFixedPeriodSelect = undefined
-    })
+    render(<FixedPeriodSelect {...props} />)
 
-    it('matches the snapshot', () => {
-        const wrapper = getWrapper()
+    expect(
+        screen.getByTestId('dhis2-analytics-fixedperiodselect')
+    ).toBeInTheDocument()
 
-        expect(wrapper).toMatchSnapshot()
-    })
+    expect(screen.getByText('Period type')).toBeInTheDocument()
+    expect(screen.getByText('Monthly')).toBeInTheDocument()
+    expect(screen.getByText('Year')).toBeInTheDocument()
+
+    const yearSelectEl = screen.getByPlaceholderText('Select year')
+    expect(yearSelectEl).toBeInTheDocument()
+    expect(yearSelectEl.value).toEqual('2014')
 })
