@@ -13,12 +13,12 @@ import datetimeVisualization from './data/event/datetime.visualization.json'
 import emailDataHideNa from './data/event/email.data.hidena.json'
 import emailData from './data/event/email.data.json'
 import emailVisualization from './data/event/email.visualization.json'
-import integerLegendsetDataHideNa from './data/event/integer-legendset.data.hidena.json'
-import integerLegendsetData from './data/event/integer-legendset.data.json'
-import integerLegendsetVisualization from './data/event/integer-legendset.visualization.json'
 import integerDataHideNa from './data/event/integer.data.hidena.json'
 import integerData from './data/event/integer.data.json'
 import integerVisualization from './data/event/integer.visualization.json'
+import legendsetDataHideNa from './data/event/legendset.data.hidena.json'
+import legendsetData from './data/event/legendset.data.json'
+import legendsetVisualization from './data/event/legendset.visualization.json'
 import optionsetDataHideNa from './data/event/optionset.data.hidena.json'
 import optionsetData from './data/event/optionset.data.json'
 import optionsetVisualization from './data/event/optionset.visualization.json'
@@ -193,6 +193,43 @@ Datetime.story = {
     name: 'Datetime',
 }
 
+export const LegendsetNA = (_, { pivotTableOptions }) => {
+    const visualization = {
+        ...legendsetVisualization,
+        ...visualizationReset,
+        ...pivotTableOptions,
+    }
+    return (
+        <div style={{ width: 800, height: 600 }}>
+            <PivotTable data={legendsetData} visualization={visualization} />
+        </div>
+    )
+}
+
+LegendsetNA.story = {
+    name: 'LegendsetNA',
+}
+
+export const Legendset = (_, { pivotTableOptions }) => {
+    const visualization = {
+        ...legendsetVisualization,
+        ...visualizationReset,
+        ...pivotTableOptions,
+    }
+    return (
+        <div style={{ width: 800, height: 600 }}>
+            <PivotTable
+                data={legendsetDataHideNa}
+                visualization={visualization}
+            />
+        </div>
+    )
+}
+
+Legendset.story = {
+    name: 'Legendset',
+}
+
 export const NumericNA = (_, { pivotTableOptions }) => {
     const visualization = {
         ...integerVisualization,
@@ -230,46 +267,6 @@ export const Numeric = (_, { pivotTableOptions }) => {
 
 Numeric.story = {
     name: 'Numeric',
-}
-
-export const NumericLegendsetNA = (_, { pivotTableOptions }) => {
-    const visualization = {
-        ...integerLegendsetVisualization,
-        ...visualizationReset,
-        ...pivotTableOptions,
-    }
-    return (
-        <div style={{ width: 800, height: 600 }}>
-            <PivotTable
-                data={integerLegendsetData}
-                visualization={visualization}
-            />
-        </div>
-    )
-}
-
-NumericLegendsetNA.story = {
-    name: 'Numeric with legendset NA',
-}
-
-export const NumericLegendset = (_, { pivotTableOptions }) => {
-    const visualization = {
-        ...integerLegendsetVisualization,
-        ...visualizationReset,
-        ...pivotTableOptions,
-    }
-    return (
-        <div style={{ width: 800, height: 600 }}>
-            <PivotTable
-                data={integerLegendsetDataHideNa}
-                visualization={visualization}
-            />
-        </div>
-    )
-}
-
-NumericLegendset.story = {
-    name: 'Numeric with legendset',
 }
 
 export const OptionsetNA = (_, { pivotTableOptions }) => {
