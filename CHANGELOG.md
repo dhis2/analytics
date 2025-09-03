@@ -1,3 +1,10 @@
+## [28.0.5](https://github.com/dhis2/analytics/compare/v28.0.4...v28.0.5) (2025-09-02)
+
+
+### Bug Fixes
+
+* **OpenFileDialog:** respect filterVisTypes prop when All types is selected ([#1789](https://github.com/dhis2/analytics/issues/1789)) ([4a71211](https://github.com/dhis2/analytics/commit/4a712118287b786c226010b27ad0705de31405c2))
+
 ## [28.0.4](https://github.com/dhis2/analytics/compare/v28.0.3...v28.0.4) (2025-07-03)
 
 
