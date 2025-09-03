@@ -84,9 +84,7 @@
         {
             "parent": "COLUMN",
             "dimension": "ou",
-            "values": [
-                "ImspTQPwCqd"
-            ]
+            "values": ["ImspTQPwCqd"]
         }
     ],
     "legacy": true,

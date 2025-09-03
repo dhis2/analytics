@@ -131,8 +131,13 @@ const buildDimensionLookup = (visualization, metadata, headers) => {
         meta: metadata.items[column.dimension],
         count: metadata.dimensions[column.dimension].length,
         itemIds: metadata.dimensions[column.dimension],
-        items: metadata.dimensions[column.dimension].map(
-            (item) => metadata.items[item]
+        items: metadata.dimensions[column.dimension].map((item) =>
+            item === ''
+                ? {
+                      ...metadata.items[item],
+                      isNaData: true,
+                  }
+                : metadata.items[item]
         ),
         isDxDimension: isDxDimension(metadata.items[column.dimension]),
         position: 'column',

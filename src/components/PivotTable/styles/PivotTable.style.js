@@ -142,9 +142,6 @@ export const cell = css`
     }
     .nadata-header {
         color: ${colors.grey600};
-        font-style: italic;
-        font-family: monospace;
-        letter-spacing: -0.3px;
     }
     .total-header {
         background-color: #bac6d8;

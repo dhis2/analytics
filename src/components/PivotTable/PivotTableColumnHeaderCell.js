@@ -61,6 +61,7 @@ export const PivotTableColumnHeaderCell = ({
                             header.label !== 'Subtotal' // TODO: Actually look up the column type!
                                 ? 'column-header'
                                 : 'empty-header',
+                            header.isNaData && 'nadata-header',
                             {
                                 'fixed-header': engine.options.fixColumnHeaders,
                             },
