@@ -20,9 +20,18 @@ import { applyBooleanHandler } from './boolean.js'
 import { applyDefaultHandler } from './default.js'
 import { applyOptionSetHandler } from './optionSet.js'
 
-export const NA_VALUE = ''
-export const NA_VALUE_DISPLAY_NAME = i18n.t('No value')
 export const PREFIX_SEPARATOR = '_'
+export const NA_VALUE = ''
+export const NA_VALUE_ITEM = {
+    name: i18n.t('No value'),
+    style: {
+        fontStyle: 'italic',
+        color: '#6C7787',
+        fontFamily: 'monospace',
+        letterSpacing: '-0.3px',
+    },
+}
+
 export const UNSUPPORTED_VALUE_TYPES = [
     VALUE_TYPE_COORDINATE,
     VALUE_TYPE_GEOJSON,
@@ -117,9 +126,7 @@ export const transformResponse = (response, { hideNaData = false } = {}) => {
                     NA_VALUE,
                 ]
 
-                transformedResponse.metaData.items[NA_VALUE] = {
-                    name: i18n.t('No value'),
-                }
+                transformedResponse.metaData.items[NA_VALUE] = NA_VALUE_ITEM
             }
         })
     }
