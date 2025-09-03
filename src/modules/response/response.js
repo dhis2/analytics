@@ -59,7 +59,10 @@ export const transformResponse = (response, { hideNaData = false } = {}) => {
     // Add index to all headers
     // Include only headers that are "meta" and skip "pe" and "ou"
     const metaHeaders = response.headers
-        .map((header, index) => Object.assign({}, header, { index }))
+        .map((header, index) => ({
+            ...header,
+            index,
+        }))
         .filter(
             (header) =>
                 Boolean(header.meta) &&
