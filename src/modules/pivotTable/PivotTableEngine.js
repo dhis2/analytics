@@ -116,7 +116,10 @@ const buildDimensionLookup = (visualization, metadata, headers) => {
         itemIds: metadata.dimensions[row.dimension],
         items: metadata.dimensions[row.dimension].map((item) =>
             item === ''
-                ? { name: i18n.t('No value'), isNaData: true }
+                ? {
+                      ...metadata.items[item],
+                      isNaData: true,
+                  }
                 : metadata.items[item]
         ),
         isDxDimension: isDxDimension(metadata.items[row.dimension]),

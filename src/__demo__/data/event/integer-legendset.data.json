@@ -95,6 +95,9 @@
             },
             "LAST_3_MONTHS": {
                 "name": "Last 3 months"
+            },
+            "": {
+                "name": "No value"
             }
         },
         "dimensions": {

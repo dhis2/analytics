@@ -113,6 +113,10 @@ export const transformResponse = (response, { hideNaData = false } = {}) => {
                     ...transformedResponse.metaData.dimensions[header.name],
                     NA_VALUE,
                 ]
+
+                transformedResponse.metaData.items[NA_VALUE] = {
+                    name: i18n.t('No value'),
+                }
             }
         })
     }
