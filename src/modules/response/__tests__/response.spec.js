@@ -16,6 +16,9 @@ import responseNumericOrg from '../../../__demo__/data/event/integer.data.org.js
 import responseOptionSetHideNa from '../../../__demo__/data/event/optionset.data.hidena.json'
 import responseOptionSet from '../../../__demo__/data/event/optionset.data.json'
 import responseOptionSetOrg from '../../../__demo__/data/event/optionset.data.org.json'
+import responseTimeHideNa from '../../../__demo__/data/event/time.data.hidena.json'
+import responseTime from '../../../__demo__/data/event/time.data.json'
+import responseTimeOrg from '../../../__demo__/data/event/time.data.org.json'
 import responseYesOnlyHideNa from '../../../__demo__/data/event/yesonly.data.hidena.json'
 import responseYesOnly from '../../../__demo__/data/event/yesonly.data.json'
 import responseYesOnlyOrg from '../../../__demo__/data/event/yesonly.data.org.json'
@@ -104,6 +107,18 @@ describe('response', () => {
                 expect(
                     transformResponse(responseTextOrg, { hideNaData: true })
                 ).toEqual(responseTextHideNa)
+            })
+        })
+
+        describe('time', () => {
+            it('transforms response', () => {
+                expect(transformResponse(responseTimeOrg)).toEqual(responseTime)
+            })
+
+            it('transforms response and hides N/A data', () => {
+                expect(
+                    transformResponse(responseTimeOrg, { hideNaData: true })
+                ).toEqual(responseTimeHideNa)
             })
         })
 

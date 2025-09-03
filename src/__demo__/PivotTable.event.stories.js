@@ -22,6 +22,9 @@ import legendsetVisualization from './data/event/legendset.visualization.json'
 import optionsetDataHideNa from './data/event/optionset.data.hidena.json'
 import optionsetData from './data/event/optionset.data.json'
 import optionsetVisualization from './data/event/optionset.visualization.json'
+import timeDataHideNa from './data/event/time.data.hidena.json'
+import timeData from './data/event/time.data.json'
+import timeVisualization from './data/event/time.visualization.json'
 import yesonlyDataHideNa from './data/event/yesonly.data.hidena.json'
 import yesonlyData from './data/event/yesonly.data.json'
 import yesonlyVisualization from './data/event/yesonly.visualization.json'
@@ -79,7 +82,7 @@ export default {
     decorators: [PivotTableOptionsWrapper],
 }
 
-export const BooleanNA = (_, { pivotTableOptions }) => {
+export const TypeBooleanNA = (_, { pivotTableOptions }) => {
     const visualization = {
         ...booleanVisualization,
         ...visualizationReset,
@@ -93,11 +96,9 @@ export const BooleanNA = (_, { pivotTableOptions }) => {
     )
 }
 
-BooleanNA.story = {
-    name: 'BooleanNA',
-}
+TypeBooleanNA.storyName = 'Boolean N/A'
 
-export const Boolean = (_, { pivotTableOptions }) => {
+export const TypeBoolean = (_, { pivotTableOptions }) => {
     const visualization = {
         ...booleanVisualization,
         ...visualizationReset,
@@ -114,11 +115,9 @@ export const Boolean = (_, { pivotTableOptions }) => {
     )
 }
 
-Boolean.story = {
-    name: 'Boolean',
-}
+TypeBoolean.storyName = 'Boolean'
 
-export const DateNA = (_, { pivotTableOptions }) => {
+export const TypeDateNA = (_, { pivotTableOptions }) => {
     const visualization = {
         ...dateVisualization,
         ...visualizationReset,
@@ -132,11 +131,9 @@ export const DateNA = (_, { pivotTableOptions }) => {
     )
 }
 
-DateNA.story = {
-    name: 'DateNA',
-}
+TypeDateNA.storyName = 'Date N/A'
 
-export const Date = (_, { pivotTableOptions }) => {
+export const TypeDate = (_, { pivotTableOptions }) => {
     const visualization = {
         ...dateVisualization,
         ...visualizationReset,
@@ -150,11 +147,9 @@ export const Date = (_, { pivotTableOptions }) => {
     )
 }
 
-Date.story = {
-    name: 'Date',
-}
+TypeDate.storyName = 'Date'
 
-export const DatetimeNA = (_, { pivotTableOptions }) => {
+export const TypeDatetimeNA = (_, { pivotTableOptions }) => {
     const visualization = {
         ...datetimeVisualization,
         ...visualizationReset,
@@ -168,11 +163,9 @@ export const DatetimeNA = (_, { pivotTableOptions }) => {
     )
 }
 
-DatetimeNA.story = {
-    name: 'DatetimeNA',
-}
+TypeDatetimeNA.storyName = 'Datetime N/A'
 
-export const Datetime = (_, { pivotTableOptions }) => {
+export const TypeDatetime = (_, { pivotTableOptions }) => {
     const visualization = {
         ...datetimeVisualization,
         ...visualizationReset,
@@ -189,11 +182,9 @@ export const Datetime = (_, { pivotTableOptions }) => {
     )
 }
 
-Datetime.story = {
-    name: 'Datetime',
-}
+TypeDatetime.storyName = 'Datetime'
 
-export const LegendsetNA = (_, { pivotTableOptions }) => {
+export const TypeLegendsetNA = (_, { pivotTableOptions }) => {
     const visualization = {
         ...legendsetVisualization,
         ...visualizationReset,
@@ -206,11 +197,9 @@ export const LegendsetNA = (_, { pivotTableOptions }) => {
     )
 }
 
-LegendsetNA.story = {
-    name: 'LegendsetNA',
-}
+TypeLegendsetNA.storyName = 'Legendset N/A'
 
-export const Legendset = (_, { pivotTableOptions }) => {
+export const TypeLegendset = (_, { pivotTableOptions }) => {
     const visualization = {
         ...legendsetVisualization,
         ...visualizationReset,
@@ -226,11 +215,9 @@ export const Legendset = (_, { pivotTableOptions }) => {
     )
 }
 
-Legendset.story = {
-    name: 'Legendset',
-}
+TypeLegendset.storyName = 'Legendset'
 
-export const NumericNA = (_, { pivotTableOptions }) => {
+export const TypeNumericNA = (_, { pivotTableOptions }) => {
     const visualization = {
         ...integerVisualization,
         ...visualizationReset,
@@ -244,11 +231,9 @@ export const NumericNA = (_, { pivotTableOptions }) => {
     )
 }
 
-NumericNA.story = {
-    name: 'NumericNA',
-}
+TypeNumericNA.storyName = 'Numeric N/A'
 
-export const Numeric = (_, { pivotTableOptions }) => {
+export const TypeNumeric = (_, { pivotTableOptions }) => {
     const visualization = {
         ...integerVisualization,
         ...visualizationReset,
@@ -265,9 +250,7 @@ export const Numeric = (_, { pivotTableOptions }) => {
     )
 }
 
-Numeric.story = {
-    name: 'Numeric',
-}
+TypeNumeric.storyName = 'Numeric'
 
 export const OptionsetNA = (_, { pivotTableOptions }) => {
     const visualization = {
@@ -283,9 +266,7 @@ export const OptionsetNA = (_, { pivotTableOptions }) => {
     )
 }
 
-OptionsetNA.story = {
-    name: 'OptionsetNA',
-}
+OptionsetNA.storyName = 'Optionset N/A'
 
 export const Optionset = (_, { pivotTableOptions }) => {
     const visualization = {
@@ -304,9 +285,7 @@ export const Optionset = (_, { pivotTableOptions }) => {
     )
 }
 
-Optionset.story = {
-    name: 'Optionset',
-}
+Optionset.storyName = 'Optionset'
 
 export const TextNA = (_, { pivotTableOptions }) => {
     const visualization = {
@@ -322,9 +301,7 @@ export const TextNA = (_, { pivotTableOptions }) => {
     )
 }
 
-TextNA.story = {
-    name: 'TextNA',
-}
+TextNA.storyName = 'Text N/A'
 
 export const Text = (_, { pivotTableOptions }) => {
     const visualization = {
@@ -340,9 +317,39 @@ export const Text = (_, { pivotTableOptions }) => {
     )
 }
 
-Text.story = {
-    name: 'Text',
+Text.storyName = 'Text'
+
+export const TimeNA = (_, { pivotTableOptions }) => {
+    const visualization = {
+        ...timeVisualization,
+        ...visualizationReset,
+        ...pivotTableOptions,
+    }
+
+    return (
+        <div style={{ width: 800, height: 600 }}>
+            <PivotTable data={timeData} visualization={visualization} />
+        </div>
+    )
 }
+
+TimeNA.storyName = 'Time N/A'
+
+export const Time = (_, { pivotTableOptions }) => {
+    const visualization = {
+        ...timeVisualization,
+        ...visualizationReset,
+        ...pivotTableOptions,
+    }
+
+    return (
+        <div style={{ width: 800, height: 600 }}>
+            <PivotTable data={timeDataHideNa} visualization={visualization} />
+        </div>
+    )
+}
+
+Time.storyName = 'Time'
 
 export const YesonlyNA = (_, { pivotTableOptions }) => {
     const visualization = {
@@ -358,9 +365,7 @@ export const YesonlyNA = (_, { pivotTableOptions }) => {
     )
 }
 
-YesonlyNA.story = {
-    name: 'YesonlyNA',
-}
+YesonlyNA.storyName = 'Yesonly N/A'
 
 export const Yesonly = (_, { pivotTableOptions }) => {
     const visualization = {
@@ -379,6 +384,4 @@ export const Yesonly = (_, { pivotTableOptions }) => {
     )
 }
 
-Yesonly.story = {
-    name: 'Yesonly',
-}
+Yesonly.storyName = 'Yesonly'
