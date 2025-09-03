@@ -140,9 +140,6 @@ export const cell = css`
     .empty-header {
         background-color: #cddaed;
     }
-    .nadata-header {
-        color: ${colors.grey600};
-    }
     .total-header {
         background-color: #bac6d8;
     }

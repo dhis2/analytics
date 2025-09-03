@@ -38,12 +38,10 @@ export const getHeaderForDisplay = ({
         ? currentHeader.hierarchy.join(' / ')
         : currentHeader?.name
 
-    const isNaData = currentHeader.isNaData
-
     return {
         span,
         label,
         includesHierarchy,
-        isNaData,
+        ...(currentHeader.style ? { style: currentHeader.style } : {}),
     }
 }
