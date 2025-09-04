@@ -114,13 +114,8 @@ const buildDimensionLookup = (visualization, metadata, headers) => {
         meta: metadata.items[row.dimension],
         count: metadata.dimensions[row.dimension].length,
         itemIds: metadata.dimensions[row.dimension],
-        items: metadata.dimensions[row.dimension].map((item) =>
-            item === ''
-                ? {
-                      ...metadata.items[item],
-                      isNaData: true,
-                  }
-                : metadata.items[item]
+        items: metadata.dimensions[row.dimension].map(
+            (item) => metadata.items[item]
         ),
         isDxDimension: isDxDimension(metadata.items[row.dimension]),
         position: 'row',
@@ -131,13 +126,8 @@ const buildDimensionLookup = (visualization, metadata, headers) => {
         meta: metadata.items[column.dimension],
         count: metadata.dimensions[column.dimension].length,
         itemIds: metadata.dimensions[column.dimension],
-        items: metadata.dimensions[column.dimension].map((item) =>
-            item === ''
-                ? {
-                      ...metadata.items[item],
-                      isNaData: true,
-                  }
-                : metadata.items[item]
+        items: metadata.dimensions[column.dimension].map(
+            (item) => metadata.items[item]
         ),
         isDxDimension: isDxDimension(metadata.items[column.dimension]),
         position: 'column',

@@ -102,7 +102,13 @@
                 "name": "10"
             },
             "": {
-                "name": "No value"
+                "name": "No value",
+                "style": {
+                    "fontStyle": "italic",
+                    "color": "#6C7787",
+                    "fontFamily": "monospace",
+                    "letterSpacing": "-0.3px"
+                }
             }
         },
         "dimensions": {
