@@ -4,7 +4,6 @@ import {
     DIMENSION_ID_PERIOD,
 } from '../../predefinedDimensions.js'
 import {
-    isBooleanValueType,
     VALUE_TYPE_AGE,
     VALUE_TYPE_BOOLEAN,
     VALUE_TYPE_COORDINATE,
