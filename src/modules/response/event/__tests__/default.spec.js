@@ -24,6 +24,8 @@ const testId = 'Zj7UnCAulEk.qrur9Dvnyt5'
 const headerIndex = 0
 
 describe('default', () => {
+    // applyDefaultHandler is tested by response.spec.js
+
     describe('getUnique', () => {
         it('removes duplicate string numbers', () => {
             const arr = ['2', '10', '2', '01', '1', '-1', '-1', '1', '10']
@@ -139,34 +141,6 @@ describe('default', () => {
 
         it('handles empty rows array', () => {
             expect(getRows([], 1, 'a')).toEqual([])
-        })
-    })
-
-    describe('applyDefaultHandler', () => {
-        describe('should return the transformed response', () => {
-            test('date', () => {
-                expect(
-                    applyDefaultHandler(dateResponseOrg, headerIndex, {
-                        itemFormatter:
-                            getItemFormatterByValueType(VALUE_TYPE_DATE),
-                    })
-                ).toEqual(dateResponseHideNa)
-            })
-
-            test('datetime', () => {
-                expect(
-                    applyDefaultHandler(datetimeResponseOrg, headerIndex, {
-                        itemFormatter:
-                            getItemFormatterByValueType(VALUE_TYPE_DATETIME),
-                    })
-                ).toEqual(datetimeResponseHideNa)
-            })
-
-            test('numeric', () => {
-                expect(
-                    applyDefaultHandler(numericResponseOrg, headerIndex)
-                ).toEqual(numericResponseHideNa)
-            })
         })
     })
 })

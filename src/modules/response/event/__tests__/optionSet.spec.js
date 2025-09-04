@@ -17,6 +17,8 @@ const testOptionCodeIdMap2 = {
 }
 
 describe('optionSet', () => {
+    // applyOptionSetHandler is tested by response.spec.js
+
     describe('getOptionCodeIdMap', () => {
         it('should create an option code:id object', () => {
             const testId = responseHideNa.headers[0].name
@@ -45,18 +47,6 @@ describe('optionSet', () => {
             )
 
             expect(optionSet1And2Rows).toEqual(responseHideNa.rows)
-        })
-    })
-
-    describe('applyOptionSetHandler', () => {
-        it('should return the transformed response', () => {
-            const optionSet1Response = applyOptionSetHandler(responseOrg, 0)
-            const optionSet1And2Response = applyOptionSetHandler(
-                optionSet1Response,
-                1
-            )
-
-            expect(optionSet1And2Response).toEqual(responseHideNa)
         })
     })
 })

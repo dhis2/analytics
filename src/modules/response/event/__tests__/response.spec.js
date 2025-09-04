@@ -22,9 +22,28 @@ import responseTimeOrg from '../../../../__demo__/data/event/time.data.org.json'
 import responseYesOnlyHideNa from '../../../../__demo__/data/event/yesonly.data.hidena.json'
 import responseYesOnly from '../../../../__demo__/data/event/yesonly.data.json'
 import responseYesOnlyOrg from '../../../../__demo__/data/event/yesonly.data.org.json'
-import { transformResponse } from '../response.js'
+import { getItemFormatterByValueType, transformResponse } from '../response.js'
 
 describe('response', () => {
+    describe('getItemFormatterByValueType', () => {
+        it('should return the correct formatter and format correctly', () => {
+            expect(getItemFormatterByValueType('BOOLEAN')('1')).toBe('Yes')
+            expect(getItemFormatterByValueType('BOOLEAN')('0')).toBe('No')
+            expect(getItemFormatterByValueType('TRUE_ONLY')('1')).toBe('Yes')
+            expect(
+                getItemFormatterByValueType('AGE')('1985-01-01 00:00:00.0')
+            ).toBe('1985-01-01')
+            expect(
+                getItemFormatterByValueType('DATE')('2023-01-01 00:00:00.0')
+            ).toBe('2023-01-01')
+            expect(
+                getItemFormatterByValueType('DATETIME')('2023-01-01 12:00:00.0')
+            ).toBe('2023-01-01 12:00')
+            expect(getItemFormatterByValueType('PERCENTAGE')('50.0')).toBe('50')
+            expect(getItemFormatterByValueType('NOT_A_TYPE')).toBe(undefined)
+        })
+    })
+
     describe('transformResponse', () => {
         describe('boolean', () => {
             it('transforms response', () => {
