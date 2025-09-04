@@ -2,10 +2,10 @@ import { UserAvatar, spacers } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
 
-const MessageEditorContainer = ({ children, currentUser, dataTest }) => (
+const MessageEditorContainer = ({ children, currentUserName, dataTest }) => (
     <div className="container" data-test={dataTest}>
         <div className="avatar">
-            <UserAvatar name={currentUser.name} medium />
+            <UserAvatar name={currentUserName} medium />
         </div>
         <div className="editor">{children}</div>
         <style jsx>{`
@@ -26,7 +26,7 @@ const MessageEditorContainer = ({ children, currentUser, dataTest }) => (
 )
 
 MessageEditorContainer.propTypes = {
-    currentUser: PropTypes.object.isRequired,
+    currentUserName: PropTypes.string.isRequired,
     children: PropTypes.node,
     dataTest: PropTypes.string,
 }

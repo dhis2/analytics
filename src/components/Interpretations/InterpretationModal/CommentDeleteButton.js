@@ -1,42 +1,27 @@
-import { useDataMutation } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import { IconDelete16, colors } from '@dhis2/ui'
 import PropTypes from 'prop-types'
-import React, { useState } from 'react'
+import React from 'react'
 import { MessageIconButton } from '../common/index.js'
+import { useDeleteCommentFromActiveInterpretation } from '../InterpretationsProvider/hooks.js'
 
-const mutation = {
-    resource: 'interpretations',
-    id: ({ interpretationId, commentId }) =>
-        `${interpretationId}/comments/${commentId}`,
-    type: 'delete',
-}
-
-const CommentDeleteButton = ({ commentId, interpretationId, onComplete }) => {
-    const [deleteError, setDeleteError] = useState(null)
-    const [remove, { loading }] = useDataMutation(mutation, {
-        onComplete: () => {
-            setDeleteError(null)
-            onComplete()
-        },
-        onError: () => setDeleteError(i18n.t('Delete failed')),
-        variables: { commentId, interpretationId },
-    })
-
-    const onDelete = () => {
-        setDeleteError(null)
-        remove()
-    }
+const CommentDeleteButton = ({ id }) => {
+    const [remove, { loading, error }] =
+        useDeleteCommentFromActiveInterpretation(id)
 
     return (
         <div className="delete-button-container">
             <MessageIconButton
                 tooltipContent={i18n.t('Delete')}
                 iconComponent={IconDelete16}
-                onClick={onDelete}
+                onClick={remove}
                 disabled={loading}
             />
-            {deleteError && <span className="delete-error">{deleteError}</span>}
+            {error && (
+                <span className="delete-error">
+                    {i18n.t('Could not delete comment')}
+                </span>
+            )}
             <style jsx>{`
                 .delete-button-container {
                     display: flex;
@@ -54,9 +39,7 @@ const CommentDeleteButton = ({ commentId, interpretationId, onComplete }) => {
 }
 
 CommentDeleteButton.propTypes = {
-    commentId: PropTypes.string.isRequired,
-    interpretationId: PropTypes.string.isRequired,
-    onComplete: PropTypes.func.isRequired,
+    id: PropTypes.string.isRequired,
 }
 
 export { CommentDeleteButton }

@@ -1,4 +1,3 @@
-import { useDataQuery } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import {
     Modal,
@@ -14,8 +13,12 @@ import {
 } from '@dhis2/ui'
 import cx from 'classnames'
 import PropTypes from 'prop-types'
-import React, { useEffect, useState, useMemo } from 'react'
+import React, { useMemo } from 'react'
 import css from 'styled-jsx/css'
+import {
+    useActiveInterpretation,
+    useInterpretationsCurrentUser,
+} from '../InterpretationsProvider/hooks.js'
 import { InterpretationThread } from './InterpretationThread.js'
 import { useModalContentWidth } from './useModalContentWidth.js'
 
@@ -44,77 +47,26 @@ function getModalContentCSS(width) {
     `
 }
 
-const query = {
-    interpretation: {
-        resource: 'interpretations',
-        id: ({ id }) => id,
-        params: {
-            fields: [
-                'access[write,manage]',
-                'id',
-                'text',
-                'created',
-                'createdBy[id,displayName]',
-                'likes',
-                'likedBy',
-                'comments[id,text,created,createdBy[id,displayName]]',
-            ],
-        },
-    },
-}
-
 const InterpretationModal = ({
-    currentUser,
     isVisualizationLoading,
     visualization,
     onResponsesReceived,
     downloadMenuComponent,
     onClose,
-    onInterpretationUpdate,
     interpretationId,
     initialFocus,
     pluginComponent: VisualizationPlugin,
 }) => {
     const modalContentWidth = useModalContentWidth()
     const modalContentCSS = getModalContentCSS(modalContentWidth)
-    const [isDirty, setIsDirty] = useState(false)
-    const { data, error, loading, fetching, refetch } = useDataQuery(query, {
-        lazy: true,
-    })
-    const interpretation = data?.interpretation
+    const currentUser = useInterpretationsCurrentUser()
+    const {
+        data: interpretation,
+        loading,
+        error,
+    } = useActiveInterpretation(interpretationId)
     const shouldRenderModalContent = !error && interpretation
     const loadingInProgress = loading || isVisualizationLoading
-    const handleClose = () => {
-        if (isDirty) {
-            onInterpretationUpdate()
-            setIsDirty(false)
-        }
-        onClose()
-    }
-    const onThreadUpdated = (affectsInterpretation) => {
-        if (affectsInterpretation) {
-            setIsDirty(true)
-        }
-        refetch({ id: interpretationId })
-    }
-
-    const onLikeToggled = ({ likedBy }) => {
-        setIsDirty(true)
-        interpretation.likedBy = likedBy
-        interpretation.likes = likedBy.length
-    }
-
-    const onInterpretationDeleted = () => {
-        setIsDirty(false)
-        onInterpretationUpdate()
-        onClose()
-    }
-
-    useEffect(() => {
-        if (interpretationId) {
-            refetch({ id: interpretationId })
-        }
-    }, [interpretationId, refetch])
 
     const filters = useMemo(() => {
         return {
@@ -133,7 +85,7 @@ const InterpretationModal = ({
             )}
             <Modal
                 fluid
-                onClose={handleClose}
+                onClose={onClose}
                 className={cx(modalCSS.className, {
                     hidden: loadingInProgress,
                 })}
@@ -183,18 +135,13 @@ const InterpretationModal = ({
                                 </div>
                                 <div className="thread-wrap">
                                     <InterpretationThread
-                                        currentUser={currentUser}
-                                        fetching={fetching}
+                                        loading={loading}
                                         interpretation={interpretation}
-                                        onInterpretationDeleted={
-                                            onInterpretationDeleted
-                                        }
-                                        onThreadUpdated={onThreadUpdated}
                                         initialFocus={initialFocus}
                                         downloadMenuComponent={
                                             downloadMenuComponent
                                         }
-                                        onLikeToggled={onLikeToggled}
+                                        onInterpretationDeleted={onClose}
                                     />
                                 </div>
                             </div>
@@ -202,7 +149,7 @@ const InterpretationModal = ({
                     </div>
                 </ModalContent>
                 <ModalActions>
-                    <Button disabled={fetching} onClick={handleClose}>
+                    <Button disabled={loading} onClick={onClose}>
                         {i18n.t('Hide interpretation')}
                     </Button>
                 </ModalActions>
@@ -256,7 +203,6 @@ const InterpretationModal = ({
 }
 
 InterpretationModal.propTypes = {
-    currentUser: PropTypes.object.isRequired,
     interpretationId: PropTypes.string.isRequired,
     isVisualizationLoading: PropTypes.bool.isRequired,
     pluginComponent: PropTypes.oneOfType([PropTypes.object, PropTypes.func])
@@ -269,7 +215,6 @@ InterpretationModal.propTypes = {
         PropTypes.func,
     ]),
     initialFocus: PropTypes.bool,
-    onInterpretationUpdate: PropTypes.func,
 }
 
 export { InterpretationModal }

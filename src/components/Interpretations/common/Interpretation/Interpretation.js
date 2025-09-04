@@ -12,45 +12,31 @@ import {
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 import {
-    Message,
-    MessageStatsBar,
-    MessageIconButton,
-    getInterpretationAccess,
-} from '../index.js'
+    useInterpretation,
+    useInterpretationAccess,
+    useLike,
+} from '../../InterpretationsProvider/hooks.js'
+import { Message, MessageStatsBar, MessageIconButton } from '../index.js'
 import { InterpretationDeleteButton } from './InterpretationDeleteButton.js'
 import { InterpretationUpdateForm } from './InterpretationUpdateForm.js'
-import { useLike } from './useLike.js'
 
 export const Interpretation = ({
-    interpretation,
-    currentUser,
-    onClick,
-    onUpdated,
-    onDeleted,
-    disabled,
+    id,
     onReplyIconClick,
     dashboardRedirectUrl,
+    disabled,
     isInThread,
-    onLikeToggled,
+    onClick,
+    onDeleted,
 }) => {
+    const interpretation = useInterpretation(id)
+    const interpretationAccess = useInterpretationAccess(interpretation)
     const [isUpdateMode, setIsUpdateMode] = useState(false)
     const [showSharingDialog, setShowSharingDialog] = useState(false)
-    const { toggleLike, isLikedByCurrentUser, toggleLikeInProgress } = useLike({
-        interpretation,
-        currentUser,
-        onComplete: (likedBy) =>
-            onLikeToggled({
-                id: interpretation.id,
-                likedBy,
-            }),
-    })
+    const { toggleLike, isLikedByCurrentUser, toggleLikeInProgress } =
+        useLike(id)
     const shouldShowButton = Boolean(
         !!onClick && !disabled & !dashboardRedirectUrl
-    )
-
-    const interpretationAccess = getInterpretationAccess(
-        interpretation,
-        currentUser
     )
 
     let tooltip = i18n.t('Reply')
@@ -69,17 +55,15 @@ export const Interpretation = ({
     // Maps still uses old url style /?id= instead of hash
     const getAppInterpretationUrl = () =>
         dashboardRedirectUrl.includes('?')
-            ? `${dashboardRedirectUrl}&interpretationId=${interpretation.id}`
-            : `${dashboardRedirectUrl}?interpretationId=${interpretation.id}`
+            ? `${dashboardRedirectUrl}&interpretationId=${id}`
+            : `${dashboardRedirectUrl}?interpretationId=${id}`
 
     return isUpdateMode ? (
         <InterpretationUpdateForm
-            close={() => setIsUpdateMode(false)}
-            id={interpretation.id}
+            onComplete={() => setIsUpdateMode(false)}
+            id={id}
             showSharingLink={interpretationAccess.share}
-            onComplete={onUpdated}
             text={interpretation.text}
-            currentUser={currentUser}
         />
     ) : (
         <Message
@@ -105,10 +89,7 @@ export const Interpretation = ({
                     <MessageIconButton
                         tooltipContent={tooltip}
                         iconComponent={IconReply16}
-                        onClick={() =>
-                            onReplyIconClick &&
-                            onReplyIconClick(interpretation.id)
-                        }
+                        onClick={() => onReplyIconClick && onReplyIconClick(id)}
                         count={interpretation.comments.length}
                         dataTest="interpretation-reply-button"
                         viewOnly={isInThread && !interpretationAccess.comment}
@@ -117,7 +98,7 @@ export const Interpretation = ({
                         <MessageIconButton
                             tooltipContent={i18n.t('See interpretation')}
                             iconComponent={IconView16}
-                            onClick={() => onClick(interpretation.id)}
+                            onClick={() => onClick(id)}
                             dataTest="interpretation-view-button"
                         />
                     )}
@@ -143,7 +124,7 @@ export const Interpretation = ({
                         <SharingDialog
                             open={true}
                             type={'interpretation'}
-                            id={interpretation.id}
+                            id={id}
                             onClose={() => setShowSharingDialog(false)}
                         />
                     )}
@@ -158,7 +139,7 @@ export const Interpretation = ({
                         )}
                         {interpretationAccess.delete && (
                             <InterpretationDeleteButton
-                                id={interpretation.id}
+                                id={id}
                                 onComplete={onDeleted}
                             />
                         )}
@@ -171,7 +152,7 @@ export const Interpretation = ({
                     small
                     onClick={(_, event) => {
                         event.stopPropagation()
-                        onClick(interpretation.id)
+                        onClick(id)
                     }}
                 >
                     {i18n.t('See interpretation')}
@@ -182,14 +163,11 @@ export const Interpretation = ({
 }
 
 Interpretation.propTypes = {
-    currentUser: PropTypes.object.isRequired,
-    interpretation: PropTypes.object.isRequired,
-    onDeleted: PropTypes.func.isRequired,
-    onLikeToggled: PropTypes.func.isRequired,
+    id: PropTypes.string.isRequired,
     onReplyIconClick: PropTypes.func.isRequired,
-    onUpdated: PropTypes.func.isRequired,
     dashboardRedirectUrl: PropTypes.string,
     disabled: PropTypes.bool,
     isInThread: PropTypes.bool,
     onClick: PropTypes.func,
+    onDeleted: PropTypes.func,
 }

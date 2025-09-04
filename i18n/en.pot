@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2025-07-22T14:10:58.033Z\n"
-"PO-Revision-Date: 2025-07-22T14:10:58.033Z\n"
+"POT-Creation-Date: 2025-09-04T15:37:17.541Z\n"
+"PO-Revision-Date: 2025-09-04T15:37:17.542Z\n"
 
 msgid "view only"
 msgstr "view only"
@@ -520,11 +520,14 @@ msgstr "Edit"
 msgid "Write a reply"
 msgstr "Write a reply"
 
+msgid "Could not post reply"
+msgstr "Could not post reply"
+
 msgid "Post reply"
 msgstr "Post reply"
 
-msgid "Delete failed"
-msgstr "Delete failed"
+msgid "Could not delete comment"
+msgstr "Could not delete comment"
 
 msgid "Could not update comment"
 msgstr "Could not update comment"
@@ -554,6 +557,9 @@ msgstr "Hide interpretation"
 msgid "Write an interpretation"
 msgstr "Write an interpretation"
 
+msgid "Could not post interpretation"
+msgstr "Could not post interpretation"
+
 msgid "Other people viewing this interpretation in the future may see more data."
 msgstr "Other people viewing this interpretation in the future may see more data."
 
@@ -562,6 +568,12 @@ msgstr "Post interpretation"
 
 msgid "Interpretations"
 msgstr "Interpretations"
+
+msgid "Error loading interpretations"
+msgstr "Error loading interpretations"
+
+msgid "Could not load interpretations"
+msgstr "Could not load interpretations"
 
 msgid "Reply"
 msgstr "Reply"
@@ -589,8 +601,14 @@ msgstr "Open in app"
 msgid "Share"
 msgstr "Share"
 
+msgid "Could not delete interpretation"
+msgstr "Could not delete interpretation"
+
 msgid "Manage sharing"
 msgstr "Manage sharing"
+
+msgid "Could not update interpretation text"
+msgstr "Could not update interpretation text"
 
 msgid "Could not update interpretation"
 msgstr "Could not update interpretation"
@@ -1447,3 +1465,7 @@ msgstr[1] "{{count}} items"
 
 msgid "Reset zoom"
 msgstr "Reset zoom"
+
+msgctxt "Application title"
+msgid "__MANIFEST_APP_TITLE"
+msgstr "@dhis2/analytics"
