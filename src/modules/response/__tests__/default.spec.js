@@ -18,7 +18,7 @@ import {
     getUnique,
     getValuesUniqueSortedAsc,
 } from '../default.js'
-import { itemFormatterByValueType, PREFIX_SEPARATOR } from '../response.js'
+import { getItemFormatterByValueType, PREFIX_SEPARATOR } from '../response.js'
 
 const testId = 'Zj7UnCAulEk.qrur9Dvnyt5'
 const headerIndex = 0
@@ -148,7 +148,7 @@ describe('default', () => {
                 expect(
                     applyDefaultHandler(dateResponseOrg, headerIndex, {
                         itemFormatter:
-                            itemFormatterByValueType[VALUE_TYPE_DATE],
+                            getItemFormatterByValueType(VALUE_TYPE_DATE),
                     })
                 ).toEqual(dateResponseHideNa)
             })
@@ -157,7 +157,7 @@ describe('default', () => {
                 expect(
                     applyDefaultHandler(datetimeResponseOrg, headerIndex, {
                         itemFormatter:
-                            itemFormatterByValueType[VALUE_TYPE_DATETIME],
+                            getItemFormatterByValueType(VALUE_TYPE_DATETIME),
                     })
                 ).toEqual(datetimeResponseHideNa)
             })
