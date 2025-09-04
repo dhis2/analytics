@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2025-09-04T15:37:17.541Z\n"
-"PO-Revision-Date: 2025-09-04T15:37:17.542Z\n"
+"POT-Creation-Date: 2025-09-04T15:47:18.985Z\n"
+"PO-Revision-Date: 2025-09-04T15:47:18.985Z\n"
 
 msgid "view only"
 msgstr "view only"
@@ -1465,7 +1465,3 @@ msgstr[1] "{{count}} items"
 
 msgid "Reset zoom"
 msgstr "Reset zoom"
-
-msgctxt "Application title"
-msgid "__MANIFEST_APP_TITLE"
-msgstr "@dhis2/analytics"
