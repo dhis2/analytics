@@ -1,16 +1,5 @@
-import dateResponseHideNa from '../../../../__demo__/data/event/date.data.hidena.json'
-import dateResponseOrg from '../../../../__demo__/data/event/date.data.org.json'
-import datetimeResponseHideNa from '../../../../__demo__/data/event/datetime.data.hidena.json'
-import datetimeResponseOrg from '../../../../__demo__/data/event/datetime.data.org.json'
-import numericResponseHideNa from '../../../../__demo__/data/event/integer.data.hidena.json'
-import numericResponseOrg from '../../../../__demo__/data/event/integer.data.org.json'
+import { VALUE_TYPE_NUMBER } from '../../../valueTypes.js'
 import {
-    VALUE_TYPE_DATE,
-    VALUE_TYPE_DATETIME,
-    VALUE_TYPE_NUMBER,
-} from '../../../valueTypes.js'
-import {
-    applyDefaultHandler,
     getDimensions,
     getItems,
     getRows,
@@ -18,7 +7,7 @@ import {
     getUnique,
     getValuesUniqueSortedAsc,
 } from '../default.js'
-import { getItemFormatterByValueType, PREFIX_SEPARATOR } from '../response.js'
+import { PREFIX_SEPARATOR } from '../response.js'
 
 const testId = 'Zj7UnCAulEk.qrur9Dvnyt5'
 const headerIndex = 0
