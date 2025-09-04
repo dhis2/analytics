@@ -2,7 +2,7 @@ import { useTimeZoneConversion } from '@dhis2/app-runtime'
 import { IconCalendar24, colors, spacers } from '@dhis2/ui'
 import moment from 'moment'
 import PropTypes from 'prop-types'
-import React from 'react'
+import React, { useMemo } from 'react'
 import { Interpretation } from '../common/index.js'
 
 const sortByCreatedDateDesc = (a, b) => {
@@ -19,29 +19,27 @@ const sortByCreatedDateDesc = (a, b) => {
 }
 
 export const InterpretationList = ({
-    currentUser,
     interpretations,
     onInterpretationClick,
-    onLikeToggled,
     onReplyIconClick,
-    refresh,
     disabled,
     dashboardRedirectUrl,
 }) => {
     const { fromServerDate } = useTimeZoneConversion()
-    const interpretationsByDate = interpretations.reduce(
-        (groupedInterpretations, interpretation) => {
-            const date = interpretation.created.split('T')[0]
+    const interpretationsByDate = useMemo(
+        () =>
+            interpretations.reduce((groupedInterpretations, interpretation) => {
+                const date = interpretation.created.split('T')[0]
 
-            if (date in groupedInterpretations) {
-                groupedInterpretations[date].push(interpretation)
-            } else {
-                groupedInterpretations[date] = [interpretation]
-            }
+                if (date in groupedInterpretations) {
+                    groupedInterpretations[date].push(interpretation)
+                } else {
+                    groupedInterpretations[date] = [interpretation]
+                }
 
-            return groupedInterpretations
-        },
-        {}
+                return groupedInterpretations
+            }, {}),
+        [interpretations]
     )
 
     return (
@@ -63,17 +61,13 @@ export const InterpretationList = ({
                                 .map((interpretation) => (
                                     <Interpretation
                                         key={interpretation.id}
-                                        interpretation={interpretation}
-                                        currentUser={currentUser}
-                                        onClick={onInterpretationClick}
-                                        onLikeToggled={onLikeToggled}
+                                        id={interpretation.id}
                                         onReplyIconClick={onReplyIconClick}
-                                        onDeleted={refresh}
-                                        onUpdated={refresh}
-                                        disabled={disabled}
                                         dashboardRedirectUrl={
                                             dashboardRedirectUrl
                                         }
+                                        disabled={disabled}
+                                        onClick={onInterpretationClick}
                                     />
                                 ))}
                         </ol>
@@ -118,11 +112,8 @@ export const InterpretationList = ({
 }
 
 InterpretationList.propTypes = {
-    currentUser: PropTypes.object.isRequired,
     interpretations: PropTypes.array.isRequired,
-    refresh: PropTypes.func.isRequired,
     onInterpretationClick: PropTypes.func.isRequired,
-    onLikeToggled: PropTypes.func.isRequired,
     onReplyIconClick: PropTypes.func.isRequired,
     dashboardRedirectUrl: PropTypes.string,
     disabled: PropTypes.bool,

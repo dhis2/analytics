@@ -34,6 +34,7 @@ export { default as LegendKey } from './components/LegendKey/LegendKey.js'
 export { default as AboutAOUnit } from './components/AboutAOUnit/AboutAOUnit.js'
 
 export { InterpretationsUnit } from './components/Interpretations/InterpretationsUnit/index.js'
+export { InterpretationsProvider } from './components/Interpretations/InterpretationsProvider/index.js'
 export {
     InterpretationModal,
     InterpretationThread,
