@@ -1,10 +1,6 @@
 import responseHideNa from '../../../../__demo__/data/event/optionset.data.hidena.json'
 import responseOrg from '../../../../__demo__/data/event/optionset.data.org.json'
-import {
-    getOptionCodeIdMap,
-    getOptionIdRows,
-    applyOptionSetHandler,
-} from '../optionSet.js'
+import { getOptionCodeIdMap, getOptionIdRows } from '../optionSet.js'
 
 const testOptionCodeIdMap1 = {
     ONE: 'optionId1',
