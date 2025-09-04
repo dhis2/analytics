@@ -2,7 +2,7 @@ import {
     isBooleanValueType,
     isNumericValueType,
     VALUE_TYPE_TEXT,
-} from '../valueTypes.js'
+} from '../../valueTypes.js'
 import { NA_VALUE, PREFIX_SEPARATOR } from './response.js'
 
 export const getUnique = (array) => [...new Set(array)]

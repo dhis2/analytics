@@ -1,5 +1,5 @@
-import responseHideNa from '../../../__demo__/data/event/optionset.data.hidena.json'
-import responseOrg from '../../../__demo__/data/event/optionset.data.org.json'
+import responseHideNa from '../../../../__demo__/data/event/optionset.data.hidena.json'
+import responseOrg from '../../../../__demo__/data/event/optionset.data.org.json'
 import {
     getOptionCodeIdMap,
     getOptionIdRows,

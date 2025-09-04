@@ -2,7 +2,7 @@ import i18n from '@dhis2/d2-i18n'
 import {
     DIMENSION_ID_ORGUNIT,
     DIMENSION_ID_PERIOD,
-} from '../predefinedDimensions.js'
+} from '../../predefinedDimensions.js'
 import {
     isBooleanValueType,
     VALUE_TYPE_AGE,
@@ -17,7 +17,7 @@ import {
     VALUE_TYPE_PERCENTAGE,
     VALUE_TYPE_REFERENCE,
     VALUE_TYPE_TRUE_ONLY,
-} from '../valueTypes.js'
+} from '../../valueTypes.js'
 import { applyDefaultHandler } from './default.js'
 import { applyOptionSetHandler } from './optionSet.js'
 
