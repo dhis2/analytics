@@ -1,0 +1,215 @@
+{
+    "headers": [
+        {
+            "name": "jfuXZB3A1ko.KWzx2tY8dFi",
+            "column": "E2E - Date & Time",
+            "valueType": "DATETIME",
+            "type": "java.time.LocalDateTime",
+            "hidden": false,
+            "meta": true
+        },
+        {
+            "name": "ou",
+            "column": "Organisation unit",
+            "valueType": "TEXT",
+            "type": "java.lang.String",
+            "hidden": false,
+            "meta": true
+        },
+        {
+            "name": "pe",
+            "column": "Period",
+            "valueType": "TEXT",
+            "type": "java.lang.String",
+            "hidden": false,
+            "meta": true
+        },
+        {
+            "name": "value",
+            "column": "Value",
+            "valueType": "NUMBER",
+            "type": "java.lang.Double",
+            "hidden": false,
+            "meta": false
+        }
+    ],
+    "metaData": {
+        "items": {
+            "202411": {
+                "name": "November 2024"
+            },
+            "202412": {
+                "name": "December 2024"
+            },
+            "202501": {
+                "name": "January 2025"
+            },
+            "202502": {
+                "name": "February 2025"
+            },
+            "202503": {
+                "name": "March 2025"
+            },
+            "202504": {
+                "name": "April 2025"
+            },
+            "202505": {
+                "name": "May 2025"
+            },
+            "202506": {
+                "name": "June 2025"
+            },
+            "202507": {
+                "name": "July 2025"
+            },
+            "jfuXZB3A1ko": {
+                "name": "Stage 1 - Repeatable"
+            },
+            "jfuXZB3A1ko.KWzx2tY8dFi_1990-01-24 14:50:00.0": {
+                "name": "1990-01-24 14:50"
+            },
+            "jfuXZB3A1ko.KWzx2tY8dFi_1991-05-20 14:45:00.0": {
+                "name": "1991-05-20 14:45"
+            },
+            "jfuXZB3A1ko.KWzx2tY8dFi_1991-05-21 14:46:00.0": {
+                "name": "1991-05-21 14:46"
+            },
+            "jfuXZB3A1ko.KWzx2tY8dFi_1991-09-01 10:20:00.0": {
+                "name": "1991-09-01 10:20"
+            },
+            "jfuXZB3A1ko.KWzx2tY8dFi_1991-12-01 12:00:00.0": {
+                "name": "1991-12-01 12:00"
+            },
+            "jfuXZB3A1ko.KWzx2tY8dFi_1991-12-02 12:01:00.0": {
+                "name": "1991-12-02 12:01"
+            },
+            "jfuXZB3A1ko.KWzx2tY8dFi_1992-01-03 12:01:00.0": {
+                "name": "1992-01-03 12:01"
+            },
+            "jfuXZB3A1ko.KWzx2tY8dFi_1992-01-04 12:50:00.0": {
+                "name": "1992-01-04 12:50"
+            },
+            "jfuXZB3A1ko.KWzx2tY8dFi_1995-04-17 13:53:00.0": {
+                "name": "1995-04-17 13:53"
+            },
+            "jfuXZB3A1ko.KWzx2tY8dFi_1998-02-28 11:20:00.0": {
+                "name": "1998-02-28 11:20"
+            },
+            "ou": {
+                "name": "Organisation unit"
+            },
+            "J1QQtmzqhJz": {
+                "name": "E2E program"
+            },
+            "LAST_12_MONTHS": {
+                "name": "Last 12 months"
+            },
+            "ImspTQPwCqd": {
+                "name": "Sierra Leone"
+            },
+            "pe": {
+                "name": "Period"
+            },
+            "KWzx2tY8dFi": {
+                "name": "E2E - Date & Time"
+            },
+            "jfuXZB3A1ko.KWzx2tY8dFi": {
+                "name": "E2E - Date & Time"
+            }
+        },
+        "dimensions": {
+            "pe": [
+                "202411",
+                "202412",
+                "202501",
+                "202502",
+                "202503",
+                "202504",
+                "202505",
+                "202506",
+                "202507"
+            ],
+            "ou": ["ImspTQPwCqd"],
+            "jfuXZB3A1ko.KWzx2tY8dFi": [
+                "jfuXZB3A1ko.KWzx2tY8dFi_1990-01-24 14:50:00.0",
+                "jfuXZB3A1ko.KWzx2tY8dFi_1991-05-20 14:45:00.0",
+                "jfuXZB3A1ko.KWzx2tY8dFi_1991-05-21 14:46:00.0",
+                "jfuXZB3A1ko.KWzx2tY8dFi_1991-09-01 10:20:00.0",
+                "jfuXZB3A1ko.KWzx2tY8dFi_1991-12-01 12:00:00.0",
+                "jfuXZB3A1ko.KWzx2tY8dFi_1991-12-02 12:01:00.0",
+                "jfuXZB3A1ko.KWzx2tY8dFi_1992-01-03 12:01:00.0",
+                "jfuXZB3A1ko.KWzx2tY8dFi_1992-01-04 12:50:00.0",
+                "jfuXZB3A1ko.KWzx2tY8dFi_1995-04-17 13:53:00.0",
+                "jfuXZB3A1ko.KWzx2tY8dFi_1998-02-28 11:20:00.0"
+            ]
+        }
+    },
+    "rowContext": {},
+    "width": 4,
+    "rows": [
+        [
+            "jfuXZB3A1ko.KWzx2tY8dFi_1995-04-17 13:53:00.0",
+            "ImspTQPwCqd",
+            "202503",
+            "1"
+        ],
+        ["", "ImspTQPwCqd", "202503", "1"],
+        [
+            "jfuXZB3A1ko.KWzx2tY8dFi_1991-12-02 12:01:00.0",
+            "ImspTQPwCqd",
+            "202412",
+            "1"
+        ],
+        [
+            "jfuXZB3A1ko.KWzx2tY8dFi_1992-01-04 12:50:00.0",
+            "ImspTQPwCqd",
+            "202501",
+            "1"
+        ],
+        [
+            "jfuXZB3A1ko.KWzx2tY8dFi_1991-05-20 14:45:00.0",
+            "ImspTQPwCqd",
+            "202412",
+            "1"
+        ],
+        [
+            "jfuXZB3A1ko.KWzx2tY8dFi_1998-02-28 11:20:00.0",
+            "ImspTQPwCqd",
+            "202502",
+            "1"
+        ],
+        [
+            "jfuXZB3A1ko.KWzx2tY8dFi_1991-09-01 10:20:00.0",
+            "ImspTQPwCqd",
+            "202504",
+            "1"
+        ],
+        [
+            "jfuXZB3A1ko.KWzx2tY8dFi_1992-01-03 12:01:00.0",
+            "ImspTQPwCqd",
+            "202501",
+            "1"
+        ],
+        ["", "ImspTQPwCqd", "202501", "1"],
+        [
+            "jfuXZB3A1ko.KWzx2tY8dFi_1991-12-01 12:00:00.0",
+            "ImspTQPwCqd",
+            "202412",
+            "1"
+        ],
+        [
+            "jfuXZB3A1ko.KWzx2tY8dFi_1990-01-24 14:50:00.0",
+            "ImspTQPwCqd",
+            "202411",
+            "1"
+        ],
+        [
+            "jfuXZB3A1ko.KWzx2tY8dFi_1991-05-21 14:46:00.0",
+            "ImspTQPwCqd",
+            "202412",
+            "1"
+        ]
+    ],
+    "height": 12,
+    "headerWidth": 4
+}

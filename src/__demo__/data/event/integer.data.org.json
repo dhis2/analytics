@@ -1,0 +1,120 @@
+{
+    "headers": [
+        {
+            "name": "Zj7UnCAulEk.qrur9Dvnyt5",
+            "column": "Age in years",
+            "valueType": "INTEGER",
+            "type": "java.lang.Integer",
+            "hidden": false,
+            "meta": true
+        },
+        {
+            "name": "ou",
+            "column": "Organisation unit",
+            "valueType": "TEXT",
+            "type": "java.lang.String",
+            "hidden": false,
+            "meta": true
+        },
+        {
+            "name": "pe",
+            "column": "Period",
+            "valueType": "TEXT",
+            "type": "java.lang.String",
+            "hidden": false,
+            "meta": true
+        },
+        {
+            "name": "value",
+            "column": "Value",
+            "valueType": "NUMBER",
+            "type": "java.lang.Double",
+            "hidden": false,
+            "meta": false
+        }
+    ],
+    "metaData": {
+        "items": {
+            "202503": {
+                "name": "March 2025"
+            },
+            "202504": {
+                "name": "April 2025"
+            },
+            "202505": {
+                "name": "May 2025"
+            },
+            "ImspTQPwCqd": {
+                "name": "Sierra Leone"
+            },
+            "eBAyeGv0exc": {
+                "name": "Inpatient morbidity and mortality"
+            },
+            "pe": {
+                "name": "Period"
+            },
+            "ou": {
+                "name": "Organisation unit"
+            },
+            "qrur9Dvnyt5": {
+                "name": "Age in years"
+            },
+            "Zj7UnCAulEk.qrur9Dvnyt5": {
+                "name": "Age in years"
+            },
+            "LAST_3_MONTHS": {
+                "name": "Last 3 months"
+            },
+            "Zj7UnCAulEk": {
+                "name": "Inpatient morbidity and mortality"
+            }
+        },
+        "dimensions": {
+            "pe": ["202503", "202504", "202505"],
+            "ou": ["ImspTQPwCqd"],
+            "Zj7UnCAulEk.qrur9Dvnyt5": []
+        }
+    },
+    "rowContext": {},
+    "width": 4,
+    "rows": [
+        ["8", "ImspTQPwCqd", "202503", "47"],
+        ["3", "ImspTQPwCqd", "202505", "67"],
+        ["0", "ImspTQPwCqd", "202503", "55"],
+        ["5", "ImspTQPwCqd", "202503", "70"],
+        ["10", "ImspTQPwCqd", "202505", "61"],
+        ["7", "ImspTQPwCqd", "202505", "52"],
+        ["9", "ImspTQPwCqd", "202504", "54"],
+        ["6", "ImspTQPwCqd", "202505", "65"],
+        ["9", "ImspTQPwCqd", "202505", "54"],
+        ["6", "ImspTQPwCqd", "202503", "53"],
+        ["2", "ImspTQPwCqd", "202504", "45"],
+        ["10", "ImspTQPwCqd", "202503", "51"],
+        ["2", "ImspTQPwCqd", "202505", "51"],
+        ["3", "ImspTQPwCqd", "202504", "38"],
+        ["2", "ImspTQPwCqd", "202503", "41"],
+        ["8", "ImspTQPwCqd", "202504", "44"],
+        ["7", "ImspTQPwCqd", "202504", "40"],
+        ["4", "ImspTQPwCqd", "202505", "41"],
+        ["4", "ImspTQPwCqd", "202504", "42"],
+        ["9", "ImspTQPwCqd", "202503", "52"],
+        ["0", "ImspTQPwCqd", "202504", "55"],
+        ["8", "ImspTQPwCqd", "202505", "43"],
+        ["5", "ImspTQPwCqd", "202504", "63"],
+        ["6", "ImspTQPwCqd", "202504", "53"],
+        ["4", "ImspTQPwCqd", "202503", "54"],
+        ["10", "ImspTQPwCqd", "202504", "46"],
+        ["1", "ImspTQPwCqd", "202503", "44"],
+        ["7", "ImspTQPwCqd", "202503", "47"],
+        ["5", "ImspTQPwCqd", "202505", "46"],
+        ["0", "ImspTQPwCqd", "202505", "50"],
+        ["1", "ImspTQPwCqd", "202504", "48"],
+        ["1", "ImspTQPwCqd", "202505", "53"],
+        ["3", "ImspTQPwCqd", "202503", "56"],
+        ["", "ImspTQPwCqd", "202505", "5"],
+        ["", "ImspTQPwCqd", "202504", "12"],
+        ["", "ImspTQPwCqd", "202503", "10"]
+    ],
+    "height": 267,
+    "headerWidth": 4
+}

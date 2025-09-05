@@ -1,0 +1,154 @@
+{
+    "headers": [
+        {
+            "name": "Zj7UnCAulEk.qrur9Dvnyt5",
+            "column": "Age in years",
+            "valueType": "TEXT",
+            "type": "java.lang.String",
+            "hidden": false,
+            "meta": true,
+            "legendSet": "Yf6UHoPkdS6"
+        },
+        {
+            "name": "ou",
+            "column": "Organisation unit",
+            "valueType": "TEXT",
+            "type": "java.lang.String",
+            "hidden": false,
+            "meta": true
+        },
+        {
+            "name": "pe",
+            "column": "Period",
+            "valueType": "TEXT",
+            "type": "java.lang.String",
+            "hidden": false,
+            "meta": true
+        },
+        {
+            "name": "value",
+            "column": "Value",
+            "valueType": "NUMBER",
+            "type": "java.lang.Double",
+            "hidden": false,
+            "meta": false
+        }
+    ],
+    "metaData": {
+        "items": {
+            "202503": {
+                "name": "March 2025"
+            },
+            "202504": {
+                "name": "April 2025"
+            },
+            "202505": {
+                "name": "May 2025"
+            },
+            "ou": {
+                "name": "Organisation unit"
+            },
+            "CpP5yzbgfHo": {
+                "name": "40 - 50"
+            },
+            "OyVUzWsX8UF": {
+                "name": "10 - 20"
+            },
+            "Zj7UnCAulEk.qrur9Dvnyt5": {
+                "name": "Age in years"
+            },
+            "pZzk1L4Blf1": {
+                "name": "0 - 10"
+            },
+            "Zj7UnCAulEk": {
+                "name": "Inpatient morbidity and mortality"
+            },
+            "b7MCpzqJaR2": {
+                "name": "70 - 80"
+            },
+            "scvmgP9F9rn": {
+                "name": "90 - 100"
+            },
+            "ImspTQPwCqd": {
+                "name": "Sierra Leone"
+            },
+            "cbPqyIAFw9u": {
+                "name": "50 - 60"
+            },
+            "TvM2MQgD7Jd": {
+                "name": "20 - 30"
+            },
+            "Tq4NYCn9eNH": {
+                "name": "60 - 70"
+            },
+            "eBAyeGv0exc": {
+                "name": "Inpatient morbidity and mortality"
+            },
+            "pe": {
+                "name": "Period"
+            },
+            "puI3YpLJ3fC": {
+                "name": "80 - 90"
+            },
+            "ZUUGJnvX40X": {
+                "name": "30 - 40"
+            },
+            "LAST_3_MONTHS": {
+                "name": "Last 3 months"
+            }
+        },
+        "dimensions": {
+            "pe": ["202503", "202504", "202505"],
+            "Zj7UnCAulEk.qrur9Dvnyt5": [
+                "pZzk1L4Blf1",
+                "OyVUzWsX8UF",
+                "TvM2MQgD7Jd",
+                "ZUUGJnvX40X",
+                "CpP5yzbgfHo",
+                "cbPqyIAFw9u",
+                "Tq4NYCn9eNH",
+                "b7MCpzqJaR2",
+                "puI3YpLJ3fC",
+                "scvmgP9F9rn"
+            ],
+            "ou": ["ImspTQPwCqd"]
+        }
+    },
+    "rowContext": {},
+    "width": 4,
+    "rows": [
+        ["puI3YpLJ3fC", "ImspTQPwCqd", "202503", "479"],
+        ["ZUUGJnvX40X", "ImspTQPwCqd", "202505", "486"],
+        ["Tq4NYCn9eNH", "ImspTQPwCqd", "202505", "511"],
+        ["pZzk1L4Blf1", "ImspTQPwCqd", "202504", "482"],
+        ["OyVUzWsX8UF", "ImspTQPwCqd", "202504", "490"],
+        ["puI3YpLJ3fC", "ImspTQPwCqd", "202505", "430"],
+        ["TvM2MQgD7Jd", "ImspTQPwCqd", "202504", "501"],
+        ["Tq4NYCn9eNH", "ImspTQPwCqd", "202504", "438"],
+        ["TvM2MQgD7Jd", "ImspTQPwCqd", "202503", "515"],
+        ["pZzk1L4Blf1", "ImspTQPwCqd", "202505", "522"],
+        ["cbPqyIAFw9u", "ImspTQPwCqd", "202503", "508"],
+        ["TvM2MQgD7Jd", "ImspTQPwCqd", "202505", "520"],
+        ["cbPqyIAFw9u", "ImspTQPwCqd", "202505", "502"],
+        ["CpP5yzbgfHo", "ImspTQPwCqd", "202504", "495"],
+        ["Tq4NYCn9eNH", "ImspTQPwCqd", "202503", "516"],
+        ["b7MCpzqJaR2", "ImspTQPwCqd", "202504", "498"],
+        ["OyVUzWsX8UF", "ImspTQPwCqd", "202505", "495"],
+        ["ZUUGJnvX40X", "ImspTQPwCqd", "202504", "524"],
+        ["pZzk1L4Blf1", "ImspTQPwCqd", "202503", "519"],
+        ["CpP5yzbgfHo", "ImspTQPwCqd", "202505", "514"],
+        ["b7MCpzqJaR2", "ImspTQPwCqd", "202503", "475"],
+        ["cbPqyIAFw9u", "ImspTQPwCqd", "202504", "483"],
+        ["CpP5yzbgfHo", "ImspTQPwCqd", "202503", "526"],
+        ["b7MCpzqJaR2", "ImspTQPwCqd", "202505", "477"],
+        ["ZUUGJnvX40X", "ImspTQPwCqd", "202503", "519"],
+        ["OyVUzWsX8UF", "ImspTQPwCqd", "202503", "525"],
+        ["puI3YpLJ3fC", "ImspTQPwCqd", "202504", "443"],
+        ["scvmgP9F9rn", "ImspTQPwCqd", "202503", "398"],
+        ["scvmgP9F9rn", "ImspTQPwCqd", "202504", "487"],
+        ["scvmgP9F9rn", "ImspTQPwCqd", "202505", "401"],
+        ["", "ImspTQPwCqd", "202504", "14"]
+    ],
+    "height": 27,
+    "headerWidth": 4
+}
