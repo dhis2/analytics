@@ -7,7 +7,7 @@ import { useDeleteCommentFromActiveInterpretation } from '../InterpretationsProv
 
 const CommentDeleteButton = ({ id }) => {
     const [remove, { loading, error }] =
-        useDeleteCommentFromActiveInterpretation(id)
+        useDeleteCommentFromActiveInterpretation({ id })
 
     return (
         <div className="delete-button-container">
