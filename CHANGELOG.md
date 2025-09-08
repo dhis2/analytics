@@ -1,3 +1,17 @@
+# [28.1.0](https://github.com/dhis2/analytics/compare/v28.0.5...v28.1.0) (2025-09-05)
+
+
+### Features
+
+* event analytics response transformers (DHIS2-19818) ([#1788](https://github.com/dhis2/analytics/issues/1788)) ([257adff](https://github.com/dhis2/analytics/commit/257adffabde0844660460b871d9e19ae29a50692)), closes [#1790](https://github.com/dhis2/analytics/issues/1790)
+
+## [28.0.5](https://github.com/dhis2/analytics/compare/v28.0.4...v28.0.5) (2025-09-02)
+
+
+### Bug Fixes
+
+* **OpenFileDialog:** respect filterVisTypes prop when All types is selected ([#1789](https://github.com/dhis2/analytics/issues/1789)) ([4a71211](https://github.com/dhis2/analytics/commit/4a712118287b786c226010b27ad0705de31405c2))
+
 ## [28.0.4](https://github.com/dhis2/analytics/compare/v28.0.3...v28.0.4) (2025-07-03)
 
 

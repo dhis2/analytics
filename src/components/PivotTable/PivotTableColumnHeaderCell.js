@@ -77,6 +77,7 @@ export const PivotTableColumnHeaderCell = ({
                             <span
                                 className="column-header-label"
                                 data-test="visualization-column-header"
+                                style={{ ...header.style }}
                             >
                                 {header.label}
                             </span>

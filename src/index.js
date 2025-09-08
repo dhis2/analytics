@@ -325,6 +325,10 @@ export {
 
 export { renderValue as formatValue } from './modules/renderValue.js'
 
+// Modules: response
+
+export { transformResponse as transformEventAggregateResponse } from './modules/response/event/response.js'
+
 // Utils: colorSets
 export {
     COLOR_SET_DEFAULT,

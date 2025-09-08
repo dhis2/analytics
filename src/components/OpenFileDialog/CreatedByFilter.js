@@ -9,6 +9,14 @@ export const CREATED_BY_ALL = 'all'
 export const CREATED_BY_ALL_BUT_CURRENT_USER = 'allButCurrentUser'
 export const CREATED_BY_CURRENT_USER = 'currentUser'
 
+export const formatUserFilter = (createdBy, userId) => {
+    if (createdBy === CREATED_BY_ALL_BUT_CURRENT_USER) {
+        return `user.id:!eq:${userId}`
+    } else if (createdBy === CREATED_BY_CURRENT_USER) {
+        return `user.id:eq:${userId}`
+    }
+}
+
 export const CreatedByFilter = ({ selected, onChange }) => (
     <SingleSelect
         selected={selected}

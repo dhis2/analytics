@@ -49,6 +49,7 @@ export const PivotTableRowHeaderCell = ({
                                       .slice(0, rowLevel)
                                       .reduce((width, acc) => (acc += width), 0)
                                 : 0,
+                        ...header.style,
                     }}
                     dataTest="visualization-row-header"
                 >

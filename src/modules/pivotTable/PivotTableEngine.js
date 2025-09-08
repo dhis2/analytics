@@ -120,6 +120,7 @@ const buildDimensionLookup = (visualization, metadata, headers) => {
         isDxDimension: isDxDimension(metadata.items[row.dimension]),
         position: 'row',
     }))
+
     const columns = visualization.columns.map((column) => ({
         dimension: column.dimension,
         meta: metadata.items[column.dimension],

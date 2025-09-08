@@ -25,21 +25,16 @@ import React, {
     useState,
 } from 'react'
 import {
-    VIS_TYPE_GROUP_ALL,
-    VIS_TYPE_GROUP_CHARTS,
-} from '../../modules/visTypes.js'
-import {
     CreatedByFilter,
+    formatUserFilter,
     CREATED_BY_ALL,
-    CREATED_BY_ALL_BUT_CURRENT_USER,
-    CREATED_BY_CURRENT_USER,
 } from './CreatedByFilter.js'
 import { FileList } from './FileList.js'
 import { NameFilter } from './NameFilter.js'
 import { styles } from './OpenFileDialog.styles.js'
 import { PaginationControls } from './PaginationControls.js'
 import { getTranslatedString, AOTypeMap } from './utils.js'
-import { VisTypeFilter } from './VisTypeFilter.js'
+import { VisTypeFilter, formatTypeFilter } from './VisTypeFilter.js'
 
 const getQuery = (type) => ({
     files: {
@@ -66,6 +61,21 @@ const getQuery = (type) => ({
         },
     },
 })
+
+export const formatFilters = (currentUser, filters, filterVisTypes) => {
+    const queryFilters = []
+
+    filters.searchTerm &&
+        queryFilters.push(`identifiable:token:${filters.searchTerm}`)
+
+    const userFilter = formatUserFilter(filters.createdBy, currentUser.id)
+    userFilter && queryFilters.push(userFilter)
+
+    const typeFilter = formatTypeFilter(filterVisTypes, filters.visType)
+    typeFilter && queryFilters.push(typeFilter)
+
+    return queryFilters
+}
 
 export const OpenFileDialog = ({
     type,
@@ -99,40 +109,10 @@ export const OpenFileDialog = ({
     )
     const [searchTimeout, setSearchTimeout] = useState(null)
 
-    const formatFilters = useCallback(() => {
-        const queryFilters = []
-
-        switch (filters.createdBy) {
-            case CREATED_BY_ALL_BUT_CURRENT_USER:
-                queryFilters.push(`user.id:!eq:${currentUser.id}`)
-                break
-            case CREATED_BY_CURRENT_USER:
-                queryFilters.push(`user.id:eq:${currentUser.id}`)
-                break
-            case CREATED_BY_ALL:
-            default:
-                break
-        }
-
-        if (filters.visType) {
-            switch (filters.visType) {
-                case VIS_TYPE_GROUP_ALL:
-                    break
-                case VIS_TYPE_GROUP_CHARTS:
-                    queryFilters.push('type:!eq:PIVOT_TABLE')
-                    break
-                default:
-                    queryFilters.push(`type:eq:${filters.visType}`)
-                    break
-            }
-        }
-
-        if (filters.searchTerm) {
-            queryFilters.push(`identifiable:token:${filters.searchTerm}`)
-        }
-
-        return queryFilters
-    }, [currentUser, filters])
+    const formatFiltersCb = useCallback(
+        () => formatFilters(currentUser, filters, filterVisTypes),
+        [currentUser, filters, filterVisTypes]
+    )
 
     const formatSortDirection = useCallback(() => {
         if (sortField === 'displayName' && sortDirection !== 'default') {
@@ -175,7 +155,7 @@ export const OpenFileDialog = ({
                 page,
                 sortField,
                 sortDirection: formatSortDirection(),
-                filters: formatFilters(),
+                filters: formatFiltersCb(),
             })
         }
     }, [
@@ -184,7 +164,7 @@ export const OpenFileDialog = ({
         sortField,
         filters,
         refetch,
-        formatFilters,
+        formatFiltersCb,
         formatSortDirection,
     ])
 
