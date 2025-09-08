@@ -89,7 +89,7 @@ export const Interpretation = ({
                     <MessageIconButton
                         tooltipContent={tooltip}
                         iconComponent={IconReply16}
-                        onClick={() => onReplyIconClick && onReplyIconClick(id)}
+                        onClick={() => onReplyIconClick?.(id)}
                         count={interpretation.comments.length}
                         dataTest="interpretation-reply-button"
                         viewOnly={isInThread && !interpretationAccess.comment}

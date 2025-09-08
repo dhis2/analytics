@@ -38,14 +38,17 @@ export const InterpretationsUnit = ({
                 expanded: isExpanded,
             })}
         >
-            <div className="header" onClick={() => setIsExpanded(!isExpanded)}>
+            <button
+                className="header"
+                onClick={() => setIsExpanded(!isExpanded)}
+            >
                 <span className="title">{i18n.t('Interpretations')}</span>
                 {isExpanded ? (
                     <IconChevronUp24 color={colors.grey700} />
                 ) : (
                     <IconChevronDown24 color={colors.grey700} />
                 )}
-            </div>
+            </button>
             {isExpanded && (
                 <>
                     {loading && (
@@ -103,6 +106,8 @@ export const InterpretationsUnit = ({
                 }
 
                 .header {
+                    all: unset;
+                    inline-size: 100%;
                     display: flex;
                     justify-content: space-between;
                     cursor: pointer;
