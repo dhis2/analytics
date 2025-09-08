@@ -27,7 +27,7 @@ export const InterpretationsUnit = ({
     const showNoTimeDimensionHelpText =
         type === 'eventVisualization' && !visualizationHasTimeDimension
     const {
-        data: interpretations,
+        data: interpretationIdsByDate,
         loading,
         error,
     } = useInterpretationsList(type, id)
@@ -62,7 +62,7 @@ export const InterpretationsUnit = ({
                                 i18n.t('Could not load interpretations')}
                         </NoticeBox>
                     )}
-                    {interpretations && (
+                    {interpretationIdsByDate && (
                         <>
                             <InterpretationForm
                                 type={type}
@@ -73,7 +73,9 @@ export const InterpretationsUnit = ({
                                 }
                             />
                             <InterpretationList
-                                interpretations={interpretations}
+                                interpretationIdsByDate={
+                                    interpretationIdsByDate
+                                }
                                 onInterpretationClick={onInterpretationClick}
                                 onReplyIconClick={onReplyIconClick}
                                 disabled={disabled}

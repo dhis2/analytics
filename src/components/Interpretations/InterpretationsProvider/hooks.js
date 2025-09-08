@@ -90,8 +90,11 @@ export const useInterpretationsList = (type, id) => {
     useEffect(() => {
         const unsubscribe =
             interpretationsManager.subscribeToInterpretationsListUpdates(
-                (interpretations) => {
-                    dispatch({ type: SET_DATA, payload: interpretations })
+                (interpretationIdsByDate) => {
+                    dispatch({
+                        type: SET_DATA,
+                        payload: interpretationIdsByDate,
+                    })
                 }
             )
         return unsubscribe

@@ -238,7 +238,12 @@ describe('Interpretations hooks integration tests', () => {
 
             await waitFor(() => {
                 expect(result.current.loading).toBe(false)
-                expect(result.current.data).toEqual(mockData.interpretations)
+                expect(result.current.data).toEqual({
+                    '2025-09-01': ['interpretation4'],
+                    '2025-09-02': ['interpretation3'],
+                    '2025-09-03': ['interpretation2'],
+                    '2025-09-04': ['interpretation1'],
+                })
                 expect(result.current.error).toBeUndefined()
             })
         })
@@ -299,7 +304,12 @@ describe('Interpretations hooks integration tests', () => {
 
             await waitFor(() => {
                 expect(result.current.loading).toBe(false)
-                expect(result.current.data).toEqual(mockData.interpretations)
+                expect(result.current.data).toEqual({
+                    '2025-09-01': ['interpretation4'],
+                    '2025-09-02': ['interpretation3'],
+                    '2025-09-03': ['interpretation2'],
+                    '2025-09-04': ['interpretation1'],
+                })
             })
 
             // Mock second call with empty result
@@ -322,7 +332,7 @@ describe('Interpretations hooks integration tests', () => {
 
             await waitFor(() => {
                 expect(result.current.loading).toBe(false)
-                expect(result.current.data).toEqual([])
+                expect(result.current.data).toEqual({})
             })
 
             // Verify that mockQuery was called twice
@@ -615,19 +625,16 @@ describe('Interpretations hooks integration tests', () => {
                 expect(
                     result.current.activeInterpretation.data.likedBy
                 ).toEqual([])
-                // But not in the list observer, because this component only needs
-                // to be aware of IDs and not of item content
-                expect(
-                    result.current.interpretationsList.data[0].likes
-                ).not.toBe(0)
-                expect(
-                    result.current.interpretationsList.data[0].likedBy
-                ).not.toEqual([])
             })
         })
     })
 
     describe('State synchronization', () => {
+        const computeListLength = (idsByDate) =>
+            Object.values(idsByDate).reduce(
+                (total, idList) => total + idList.length,
+                0
+            )
         test('Creating an interpretation updates the list', async () => {
             const { result } = await shouldLoadActiveInterpretation()
             mockMutate.mockImplementationOnce(createMockImplementation({}))
@@ -640,33 +647,35 @@ describe('Interpretations hooks integration tests', () => {
                     },
                 })
             )
-            const initialListLength =
-                result.current.interpretationsList.data.length
+            const initialListLength = computeListLength(
+                result.current.interpretationsList.data
+            )
 
             act(() => {
                 result.current.mutations.createInterpretation()
             })
 
             await waitFor(() => {
-                expect(result.current.interpretationsList.data.length).toBe(
-                    initialListLength + 1
-                )
+                expect(
+                    computeListLength(result.current.interpretationsList.data)
+                ).toEqual(initialListLength + 1)
             })
         })
         test('Deleting an interpretation updates the list', async () => {
             const { result } = await shouldLoadActiveInterpretation()
             mockMutate.mockImplementationOnce(createMockImplementation({}))
-            const initialListLength =
-                result.current.interpretationsList.data.length
+            const initialListLength = computeListLength(
+                result.current.interpretationsList.data
+            )
 
             act(() => {
                 result.current.mutations.deleteInterpretation()
             })
 
             await waitFor(() => {
-                expect(result.current.interpretationsList.data.length).toBe(
-                    initialListLength - 1
-                )
+                expect(
+                    computeListLength(result.current.interpretationsList.data)
+                ).toBe(initialListLength - 1)
             })
         })
         test('Updating an interpretation text updates the (active) interpretation', async () => {
