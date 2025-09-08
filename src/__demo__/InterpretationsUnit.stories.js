@@ -1,5 +1,6 @@
 import { CustomDataProvider } from '@dhis2/app-runtime'
 import React from 'react'
+import { InterpretationsProvider } from '../components/Interpretations/InterpretationsProvider/InterpretationsProvider.js'
 import { InterpretationsUnit } from '../components/Interpretations/InterpretationsUnit/index.js'
 
 export default {
@@ -15,15 +16,18 @@ export const Default = () => {
                 },
             }}
         >
-            <InterpretationsUnit
+            <InterpretationsProvider
                 currentUser={{
                     name: 'Tom Wakiki',
                 }}
-                id="abcd"
-                onReplyIconClick={Function.prototype}
-                type="eventVisualization"
-                visualizationHasTimeDimension={true}
-            />
+            >
+                <InterpretationsUnit
+                    id="abcd"
+                    onReplyIconClick={Function.prototype}
+                    type="eventVisualization"
+                    visualizationHasTimeDimension={true}
+                />
+            </InterpretationsProvider>
         </CustomDataProvider>
     )
 }
@@ -37,15 +41,21 @@ export const WithNoTimeDimensionsWarning = () => {
                 },
             }}
         >
-            <InterpretationsUnit
+            <InterpretationsProvider
                 currentUser={{
                     name: 'Tom Wakiki',
                 }}
-                id="abcd"
-                onReplyIconClick={Function.prototype}
-                type="eventVisualization"
-                visualizationHasTimeDimension={false}
-            />
+            >
+                <InterpretationsUnit
+                    currentUser={{
+                        name: 'Tom Wakiki',
+                    }}
+                    id="abcd"
+                    onReplyIconClick={Function.prototype}
+                    type="eventVisualization"
+                    visualizationHasTimeDimension={false}
+                />
+            </InterpretationsProvider>
         </CustomDataProvider>
     )
 }
