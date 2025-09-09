@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2025-09-05T07:32:59.321Z\n"
-"PO-Revision-Date: 2025-09-05T07:32:59.322Z\n"
+"POT-Creation-Date: 2025-09-09T09:32:04.677Z\n"
+"PO-Revision-Date: 2025-09-09T09:32:04.678Z\n"
 
 msgid "view only"
 msgstr "view only"
@@ -513,6 +513,15 @@ msgstr "visualization"
 
 msgid "Untitled {{visualizationType}}, {{date}}"
 msgstr "Untitled {{visualizationType}}, {{date}}"
+
+msgid "Back to all interpretations"
+msgstr "Back to all interpretations"
+
+msgid "Could not load interpretation details"
+msgstr "Could not load interpretation details"
+
+msgid "The request to fetch interpretation comments failed"
+msgstr "The request to fetch interpretation comments failed"
 
 msgid "Edit"
 msgstr "Edit"
