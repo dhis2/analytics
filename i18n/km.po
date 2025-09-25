@@ -3,13 +3,14 @@
 # Viktor Varland <viktor@dhis2.org>, 2025
 # channara rin, 2025
 # Philip Larsen Donnelly, 2025
+# Em Le <em.hispvietnam@gmail.com>, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2024-12-19T10:28:15.132Z\n"
+"POT-Creation-Date: 2025-07-22T14:10:58.033Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Philip Larsen Donnelly, 2025\n"
+"Last-Translator: Em Le <em.hispvietnam@gmail.com>, 2025\n"
 "Language-Team: Khmer (https://app.transifex.com/hisp-uio/teams/100509/km/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -85,7 +86,7 @@ msgid "This app could not retrieve required data."
 msgstr ""
 
 msgid "Network error"
-msgstr ""
+msgstr "បណ្ដាញមានបញ្ហា"
 
 msgid "Data / Edit calculation"
 msgstr ""
@@ -155,21 +156,6 @@ msgid ""
 msgstr ""
 
 msgid "Math operators"
-msgstr ""
-
-msgid "Data Type"
-msgstr ""
-
-msgid "Only {{dataType}} can be used in {{visType}}"
-msgstr ""
-
-msgid "All types"
-msgstr ""
-
-msgid "Disaggregation"
-msgstr ""
-
-msgid "No data"
 msgstr ""
 
 msgid "Expression description"
@@ -275,7 +261,7 @@ msgid "Description"
 msgstr "ការ​ពិពណ៌នា"
 
 msgid "Code"
-msgstr ""
+msgstr "លេខកូដ"
 
 msgid "ID"
 msgstr "​លេខ​សម្គាល់"
@@ -314,15 +300,60 @@ msgid "Expression"
 msgstr "កន្សោមប្រមាណវិធី"
 
 msgid "Filter"
+msgstr "ការច្រោះ"
+
+msgid "All available options are already selected"
+msgstr ""
+
+msgid "No available options for this item"
+msgstr ""
+
+msgid "Search by option name"
+msgstr ""
+
+msgid "Back to all items"
+msgstr ""
+
+msgid "Options"
+msgstr "ជម្រើស"
+
+msgid "Selected items"
+msgstr ""
+
+msgid "Data Type"
+msgstr ""
+
+msgid "Only {{dataType}} can be used in {{visType}}"
+msgstr ""
+
+msgid "All types"
+msgstr ""
+
+msgid "Disaggregation"
+msgstr ""
+
+msgid "No data"
 msgstr ""
 
 msgid "Search by data item name"
 msgstr ""
 
-msgid "No items selected"
+msgid "Selected Items"
 msgstr ""
 
-msgid "Selected Items"
+msgid "All available items are already selected"
+msgstr ""
+
+msgid "Calculation"
+msgstr ""
+
+msgid "Metric type"
+msgstr ""
+
+msgid "All metrics"
+msgstr ""
+
+msgid "No items selected"
 msgstr ""
 
 msgid "No indicators found"
@@ -358,13 +389,7 @@ msgstr ""
 msgid "Nothing found for \"{{- searchTerm}}\""
 msgstr ""
 
-msgid "Calculation"
-msgstr ""
-
-msgid "Metric type"
-msgstr ""
-
-msgid "All metrics"
+msgid "Click to choose from available options"
 msgstr ""
 
 msgid "Move to {{axisName}}"
@@ -417,9 +442,6 @@ msgstr ""
 msgid "Search"
 msgstr "ស្វែងរក"
 
-msgid "Nothing found for {{- searchTerm}}"
-msgstr ""
-
 msgid "Delete {{fileType}}"
 msgstr ""
 
@@ -463,6 +485,9 @@ msgstr ""
 msgid "Open in this app"
 msgstr ""
 
+msgid "Copy to clipboard"
+msgstr ""
+
 msgid "Close"
 msgstr "បិទ"
 
@@ -488,6 +513,9 @@ msgid "map"
 msgstr ""
 
 msgid "visualization"
+msgstr ""
+
+msgid "Untitled {{visualizationType}}, {{date}}"
 msgstr ""
 
 msgid "Edit"
@@ -573,7 +601,7 @@ msgid "Enter interpretation text"
 msgstr ""
 
 msgid "Not available offline"
-msgstr ""
+msgstr "មិនអាចប្រើប្រាស់បាននៅពេលបណ្ដាញត្រូវបានផ្តាច់"
 
 msgid "Anyone"
 msgstr ""
@@ -697,9 +725,6 @@ msgid ""
 msgstr ""
 
 msgid "New line list"
-msgstr ""
-
-msgid "Options"
 msgstr ""
 
 msgid "Hide"
@@ -1125,6 +1150,9 @@ msgstr ""
 msgid "Calculations"
 msgstr ""
 
+msgid "Option"
+msgstr ""
+
 msgid "Number"
 msgstr "តួរលេខ"
 
@@ -1366,6 +1394,9 @@ msgid "Outlier table"
 msgstr ""
 
 msgid "All charts"
+msgstr ""
+
+msgid "Map"
 msgstr ""
 
 msgid "{{seriesName}} (trend)"
