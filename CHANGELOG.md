@@ -1,3 +1,10 @@
+## [28.1.2](https://github.com/dhis2/analytics/compare/v28.1.1...v28.1.2) (2025-10-10)
+
+
+### Bug Fixes
+
+* hide indicator type factor when factor is 1 ([#1792](https://github.com/dhis2/analytics/issues/1792)) ([79ea2a3](https://github.com/dhis2/analytics/commit/79ea2a3b745146a33eec3e404af3ab08966b5ca5))
+
 ## [28.1.1](https://github.com/dhis2/analytics/compare/v28.1.0...v28.1.1) (2025-10-10)
 
 
