@@ -1,21 +1,22 @@
-import { useDataMutation } from '@dhis2/app-runtime'
+import { useAlert } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import { IconDelete16 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
+import { useDeleteInterpretation } from '../../InterpretationsProvider/hooks.js'
 import { MessageIconButton } from '../index.js'
 
-const mutation = {
-    resource: 'interpretations',
-    id: ({ id }) => id,
-    type: 'delete',
-}
-
 const InterpretationDeleteButton = ({ id, onComplete }) => {
-    const [remove, { loading }] = useDataMutation(mutation, {
+    const { show: showErrorAlert } = useAlert(
+        i18n.t('Could not delete interpretation'),
+        { critical: true }
+    )
+    const [remove, { loading }] = useDeleteInterpretation({
+        id,
         onComplete,
-        variables: { id },
+        showErrorAlert,
     })
+
     return (
         <MessageIconButton
             tooltipContent={i18n.t('Delete')}
@@ -29,7 +30,7 @@ const InterpretationDeleteButton = ({ id, onComplete }) => {
 
 InterpretationDeleteButton.propTypes = {
     id: PropTypes.string.isRequired,
-    onComplete: PropTypes.func.isRequired,
+    onComplete: PropTypes.func,
 }
 
 export { InterpretationDeleteButton }
