@@ -1,3 +1,10 @@
+## [28.1.3](https://github.com/dhis2/analytics/compare/v28.1.2...v28.1.3) (2025-10-16)
+
+
+### Bug Fixes
+
+* total cell crash due to empty currentHeader ([#1794](https://github.com/dhis2/analytics/issues/1794)) ([5739fe1](https://github.com/dhis2/analytics/commit/5739fe1a42213bc48421fd43abf2a1c8216f7525))
+
 ## [28.1.2](https://github.com/dhis2/analytics/compare/v28.1.1...v28.1.2) (2025-10-10)
 
 
