@@ -1,3 +1,24 @@
+## [28.1.3](https://github.com/dhis2/analytics/compare/v28.1.2...v28.1.3) (2025-10-16)
+
+
+### Bug Fixes
+
+* total cell crash due to empty currentHeader ([#1794](https://github.com/dhis2/analytics/issues/1794)) ([5739fe1](https://github.com/dhis2/analytics/commit/5739fe1a42213bc48421fd43abf2a1c8216f7525))
+
+## [28.1.2](https://github.com/dhis2/analytics/compare/v28.1.1...v28.1.2) (2025-10-10)
+
+
+### Bug Fixes
+
+* hide indicator type factor when factor is 1 ([#1792](https://github.com/dhis2/analytics/issues/1792)) ([79ea2a3](https://github.com/dhis2/analytics/commit/79ea2a3b745146a33eec3e404af3ab08966b5ca5))
+
+## [28.1.1](https://github.com/dhis2/analytics/compare/v28.1.0...v28.1.1) (2025-10-10)
+
+
+### Bug Fixes
+
+* turn off series animation for dashboard ([#1793](https://github.com/dhis2/analytics/issues/1793)) ([50f84f8](https://github.com/dhis2/analytics/commit/50f84f86dc8c674fb1364f0d9d7658dd81981609))
+
 # [28.1.0](https://github.com/dhis2/analytics/compare/v28.0.5...v28.1.0) (2025-09-05)
 
 
