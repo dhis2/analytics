@@ -5,20 +5,19 @@ import moment from 'moment'
 import PropTypes from 'prop-types'
 import React, { useRef, useEffect } from 'react'
 import { Interpretation, getInterpretationAccess } from '../common/index.js'
+import { useInterpretationsCurrentUser } from '../InterpretationsProvider/hooks.js'
 import { Comment } from './Comment.js'
 import { CommentAddForm } from './CommentAddForm.js'
 
 const InterpretationThread = ({
-    currentUser,
-    fetching,
+    loading,
     interpretation,
     onInterpretationDeleted,
-    onLikeToggled,
     initialFocus,
-    onThreadUpdated,
     downloadMenuComponent: DownloadMenu,
     dashboardRedirectUrl,
 }) => {
+    const currentUser = useInterpretationsCurrentUser()
     const { fromServerDate } = useTimeZoneConversion()
     const focusRef = useRef()
 
@@ -38,7 +37,7 @@ const InterpretationThread = ({
     return (
         <div
             className={cx('container', {
-                fetching,
+                fetching: loading,
                 dashboard: !!dashboardRedirectUrl,
             })}
         >
@@ -51,39 +50,28 @@ const InterpretationThread = ({
             )}
             <div className={'thread'}>
                 <Interpretation
-                    currentUser={currentUser}
-                    interpretation={interpretation}
-                    onLikeToggled={onLikeToggled}
+                    id={interpretation.id}
                     onReplyIconClick={
                         interpretationAccess.comment
                             ? () => focusRef.current?.focus()
                             : null
                     }
-                    onUpdated={() => onThreadUpdated(true)}
-                    onDeleted={onInterpretationDeleted}
                     dashboardRedirectUrl={dashboardRedirectUrl}
-                    isInThread={true}
+                    isInThread
+                    onDeleted={onInterpretationDeleted}
                 />
                 <div className={'comments'}>
                     {interpretation.comments.map((comment) => (
                         <Comment
                             key={comment.id}
                             comment={comment}
-                            currentUser={currentUser}
-                            interpretationId={interpretation.id}
-                            onThreadUpdated={onThreadUpdated}
                             canComment={interpretationAccess.comment}
                         />
                     ))}
                 </div>
             </div>
             {interpretationAccess.comment && (
-                <CommentAddForm
-                    currentUser={currentUser}
-                    interpretationId={interpretation.id}
-                    onSave={() => onThreadUpdated(true)}
-                    focusRef={focusRef}
-                />
+                <CommentAddForm focusRef={focusRef} />
             )}
             <style jsx>{`
                 .thread {
@@ -164,18 +152,15 @@ const InterpretationThread = ({
 }
 
 InterpretationThread.propTypes = {
-    currentUser: PropTypes.object.isRequired,
-    fetching: PropTypes.bool.isRequired,
     interpretation: PropTypes.object.isRequired,
+    loading: PropTypes.bool.isRequired,
     onInterpretationDeleted: PropTypes.func.isRequired,
-    onLikeToggled: PropTypes.func.isRequired,
     dashboardRedirectUrl: PropTypes.string,
     downloadMenuComponent: PropTypes.oneOfType([
         PropTypes.object,
         PropTypes.func,
     ]),
     initialFocus: PropTypes.bool,
-    onThreadUpdated: PropTypes.func,
 }
 
 export { InterpretationThread }
