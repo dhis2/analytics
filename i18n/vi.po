@@ -1,17 +1,17 @@
 # 
 # Translators:
 # Mai Nguyen <thanhmai.jica@gmail.com>, 2022
-# Thuy Nguyen <thuynguyen@hispvietnam.org>, 2025
 # Em Le <em.hispvietnam@gmail.com>, 2025
 # Philip Larsen Donnelly, 2025
 # Viktor Varland <viktor@dhis2.org>, 2025
+# Thuy Nguyen <thuynguyen@hispvietnam.org>, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2025-04-15T13:34:54.995Z\n"
+"POT-Creation-Date: 2025-06-26T14:58:42.001Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2025\n"
+"Last-Translator: Thuy Nguyen <thuynguyen@hispvietnam.org>, 2025\n"
 "Language-Team: Vietnamese (https://app.transifex.com/hisp-uio/teams/100509/vi/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -492,6 +492,9 @@ msgstr "Lấy đường dẫn liên kết..."
 
 msgid "Open in this app"
 msgstr "Mở trong ứng dụng này"
+
+msgid "Copy to clipboard"
+msgstr "Sao chép vào bộ nhớ tạm"
 
 msgid "Close"
 msgstr "Đóng lại"
@@ -1458,3 +1461,7 @@ msgstr[0] "{{count}}mục"
 
 msgid "Reset zoom"
 msgstr "Đặt lại thu phóng"
+
+msgctxt "Application title"
+msgid "__MANIFEST_APP_TITLE"
+msgstr ""
