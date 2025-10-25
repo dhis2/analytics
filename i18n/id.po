@@ -4,17 +4,17 @@
 # Guardian Sanjaya <gysanjaya@ugm.ac.id>, 2022
 # Aprisa Chrysantina <aprisa.chrysantina@gmail.com>, 2025
 # Raja Fathurrahim, 2025
-# Yusuf Setiawan <mohammadyusufsetiawan@gmail.com>, 2025
 # Viktor Varland <viktor@dhis2.org>, 2025
 # Philip Larsen Donnelly, 2025
 # Untoro Dwi Raharjo <untoro.dwi.raharjo@mail.ugm.ac.id>, 2025
+# Yusuf Setiawan <mohammadyusufsetiawan@gmail.com>, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2025-06-26T14:58:42.001Z\n"
+"POT-Creation-Date: 2025-09-05T07:32:59.321Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Untoro Dwi Raharjo <untoro.dwi.raharjo@mail.ugm.ac.id>, 2025\n"
+"Last-Translator: Yusuf Setiawan <mohammadyusufsetiawan@gmail.com>, 2025\n"
 "Language-Team: Indonesian (https://app.transifex.com/hisp-uio/teams/100509/id/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1284,6 +1284,9 @@ msgstr "Unit organisasi"
 msgid "Assigned Categories"
 msgstr "Kategori yang Ditugaskan"
 
+msgid "No value"
+msgstr "NO_VALUE"
+
 msgid "Text"
 msgstr ""
 
@@ -1446,7 +1449,3 @@ msgstr[0] ""
 
 msgid "Reset zoom"
 msgstr "Setel ulang zoom"
-
-msgctxt "Application title"
-msgid "__MANIFEST_APP_TITLE"
-msgstr ""

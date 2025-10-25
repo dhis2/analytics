@@ -2,17 +2,17 @@
 # Translators:
 # Yury Rogachev <yury@dhis2.org>, 2021
 # Enzo Nicolas Rossi <enzo@dhis2.org>, 2023
-# Cherise Beek <cherise.beek@gmail.com>, 2025
 # Philip Larsen Donnelly, 2025
 # Rica, 2025
 # Charel van den Elsen <zobeadzorg@gmail.com>, 2025
+# Cherise Beek <cherise.beek@gmail.com>, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2025-06-26T14:58:42.001Z\n"
+"POT-Creation-Date: 2025-09-05T07:32:59.321Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Charel van den Elsen <zobeadzorg@gmail.com>, 2025\n"
+"Last-Translator: Cherise Beek <cherise.beek@gmail.com>, 2025\n"
 "Language-Team: Dutch (https://app.transifex.com/hisp-uio/teams/100509/nl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1306,6 +1306,9 @@ msgstr "Organisatieëenheid"
 msgid "Assigned Categories"
 msgstr "Toegewezen categorieën"
 
+msgid "No value"
+msgstr "Geen waarde"
+
 msgid "Text"
 msgstr ""
 
@@ -1469,7 +1472,3 @@ msgstr[1] "{{count}} artikelen"
 
 msgid "Reset zoom"
 msgstr "Zoom resetten"
-
-msgctxt "Application title"
-msgid "__MANIFEST_APP_TITLE"
-msgstr ""
