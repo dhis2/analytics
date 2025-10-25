@@ -1,15 +1,16 @@
 # 
 # Translators:
-# phil_dhis2, 2020
+# Philip Larsen Donnelly, 2020
 # Viktor Varland <viktor@dhis2.org>, 2020
 # channara rin, 2023
+# Em Le <em.hispvietnam@gmail.com>, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2020-05-13T16:46:50.486Z\n"
 "PO-Revision-Date: 2020-04-29 08:10+0000\n"
-"Last-Translator: channara rin, 2023\n"
+"Last-Translator: Em Le <em.hispvietnam@gmail.com>, 2025\n"
 "Language-Team: Khmer (https://app.transifex.com/hisp-uio/teams/100509/km/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -24,7 +25,7 @@ msgid "Data Type"
 msgstr ""
 
 msgid "Totals"
-msgstr ""
+msgstr "តម្លៃសរុប"
 
 msgid "Details"
 msgstr "លម្អិត"
@@ -162,37 +163,37 @@ msgid "Financial year (Start April)"
 msgstr ""
 
 msgid "Today"
-msgstr ""
+msgstr "ថ្ងៃនេះ"
 
 msgid "Yesterday"
 msgstr "កាលពីម្សិលមិញ"
 
 msgid "Last 3 days"
-msgstr ""
+msgstr "៣ថ្ងៃចុងក្រោយ"
 
 msgid "Last 7 days"
-msgstr ""
+msgstr "៧ថ្ងៃចុងក្រោយ"
 
 msgid "Last 14 days"
-msgstr ""
+msgstr "១៤ថ្ងៃចុងក្រោយ"
 
 msgid "This week"
-msgstr ""
+msgstr "សប្តាហ៍នេះ"
 
 msgid "Last week"
-msgstr ""
+msgstr "សប្តាហ៍មុន"
 
 msgid "Last 4 weeks"
-msgstr ""
+msgstr "៤សប្តាហ៍ចុងក្រោយ"
 
 msgid "Last 12 weeks"
-msgstr ""
+msgstr "១២សប្តាហ៍ចុងក្រោយ"
 
 msgid "Last 52 weeks"
-msgstr ""
+msgstr "៥២សប្តាហ៍ចុងក្រោយ"
 
 msgid "Weeks this year"
-msgstr ""
+msgstr "ជាសប្ដាហ៍ក្នុងឆ្នាំនេះ"
 
 msgid "This bi-week"
 msgstr ""
@@ -204,22 +205,22 @@ msgid "Last 4 bi-weeks"
 msgstr ""
 
 msgid "This month"
-msgstr ""
+msgstr "ខែនេះ"
 
 msgid "Last month"
-msgstr ""
+msgstr "ខែមុន"
 
 msgid "Last 3 months"
-msgstr ""
+msgstr "៣ខែចុងក្រោយ"
 
 msgid "Last 6 months"
-msgstr ""
+msgstr "៦ខែចុងក្រោយ"
 
 msgid "Last 12 months"
-msgstr ""
+msgstr "១២ខែចុងក្រោយ"
 
 msgid "Months this year"
-msgstr ""
+msgstr "ជាខែក្នុងឆ្នាំនេះ"
 
 msgid "This bi-month"
 msgstr ""
@@ -234,43 +235,43 @@ msgid "Bi-months this year"
 msgstr ""
 
 msgid "This quarter"
-msgstr ""
+msgstr "ត្រីមាសនេះ"
 
 msgid "Last quarter"
-msgstr ""
+msgstr "ត្រីមាសចុងក្រោយ"
 
 msgid "Last 4 quarters"
-msgstr ""
+msgstr "៤ត្រីមាសចុងក្រោយ"
 
 msgid "Quarters this year"
-msgstr ""
+msgstr "ជាត្រីមាសក្នុងឆ្នាំនេះ"
 
 msgid "This six-month"
-msgstr ""
+msgstr "ឆមាសនេះ"
 
 msgid "Last six-month"
-msgstr ""
+msgstr "ឆមាសមុន"
 
 msgid "Last 2 six-month"
 msgstr ""
 
 msgid "This financial year"
-msgstr ""
+msgstr "ឆ្នាំហិរញ្ញវត្ថុនេះ"
 
 msgid "Last financial year"
-msgstr ""
+msgstr "ឆ្នាំហិរញ្ញវត្ថុមុន"
 
 msgid "Last 5 financial years"
-msgstr ""
+msgstr "៥ឆ្នាំហិរញ្ញវត្ថុចុងក្រោយ"
 
 msgid "This year"
-msgstr ""
+msgstr "ឆ្នាំនេះ"
 
 msgid "Last year"
-msgstr ""
+msgstr "ឆ្នាំមុន"
 
 msgid "Last 5 years"
-msgstr ""
+msgstr "៥ឆ្នាំចុងក្រោយ"
 
 msgid "Days"
 msgstr "ថ្ងៃ"
