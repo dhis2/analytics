@@ -11,17 +11,17 @@
 # Alison Andrade <aandrade@ippfwhr.org>, 2025
 # Janeth Cruz, 2025
 # Enzo Nicolas Rossi <enzo@dhis2.org>, 2025
-# Philip Larsen Donnelly, 2025
 # Viktor Varland <viktor@dhis2.org>, 2025
 # Pablo Pajuelo Cabezas <pablo@dhis2.org>, 2025
 # Nancy Espinoza, 2025
+# Philip Larsen Donnelly, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2025-06-26T14:58:42.001Z\n"
+"POT-Creation-Date: 2025-09-05T07:32:59.321Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Nancy Espinoza, 2025\n"
+"Last-Translator: Philip Larsen Donnelly, 2025\n"
 "Language-Team: Spanish (https://app.transifex.com/hisp-uio/teams/100509/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1325,6 +1325,9 @@ msgstr "Unidad organizativa"
 msgid "Assigned Categories"
 msgstr "Categorías asignadas"
 
+msgid "No value"
+msgstr "Sin valor"
+
 msgid "Text"
 msgstr "Texto"
 
@@ -1489,7 +1492,3 @@ msgstr[2] "{{count}} artículos"
 
 msgid "Reset zoom"
 msgstr "Restablecer zoom"
-
-msgctxt "Application title"
-msgid "__MANIFEST_APP_TITLE"
-msgstr ""

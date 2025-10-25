@@ -1,13 +1,14 @@
 # 
 # Translators:
 # Siddharth Agarwal, 2025
+# Rohit Wadhwani, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2024-12-19T10:28:15.132Z\n"
+"POT-Creation-Date: 2025-09-05T07:32:59.321Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Siddharth Agarwal, 2025\n"
+"Last-Translator: Rohit Wadhwani, 2025\n"
 "Language-Team: Hindi (India) (https://app.transifex.com/hisp-uio/teams/100509/hi_IN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -156,21 +157,6 @@ msgstr ""
 msgid "Math operators"
 msgstr ""
 
-msgid "Data Type"
-msgstr ""
-
-msgid "Only {{dataType}} can be used in {{visType}}"
-msgstr ""
-
-msgid "All types"
-msgstr ""
-
-msgid "Disaggregation"
-msgstr ""
-
-msgid "No data"
-msgstr ""
-
 msgid "Expression description"
 msgstr ""
 
@@ -315,13 +301,58 @@ msgstr ""
 msgid "Filter"
 msgstr ""
 
+msgid "All available options are already selected"
+msgstr ""
+
+msgid "No available options for this item"
+msgstr ""
+
+msgid "Search by option name"
+msgstr ""
+
+msgid "Back to all items"
+msgstr ""
+
+msgid "Options"
+msgstr ""
+
+msgid "Selected items"
+msgstr ""
+
+msgid "Data Type"
+msgstr ""
+
+msgid "Only {{dataType}} can be used in {{visType}}"
+msgstr ""
+
+msgid "All types"
+msgstr ""
+
+msgid "Disaggregation"
+msgstr ""
+
+msgid "No data"
+msgstr ""
+
 msgid "Search by data item name"
 msgstr ""
 
-msgid "No items selected"
+msgid "Selected Items"
 msgstr ""
 
-msgid "Selected Items"
+msgid "All available items are already selected"
+msgstr ""
+
+msgid "Calculation"
+msgstr ""
+
+msgid "Metric type"
+msgstr ""
+
+msgid "All metrics"
+msgstr ""
+
+msgid "No items selected"
 msgstr ""
 
 msgid "No indicators found"
@@ -357,13 +388,7 @@ msgstr ""
 msgid "Nothing found for \"{{- searchTerm}}\""
 msgstr ""
 
-msgid "Calculation"
-msgstr ""
-
-msgid "Metric type"
-msgstr ""
-
-msgid "All metrics"
+msgid "Click to choose from available options"
 msgstr ""
 
 msgid "Move to {{axisName}}"
@@ -414,10 +439,7 @@ msgid "Nothing found in {{- dimensionTitle}}"
 msgstr ""
 
 msgid "Search"
-msgstr ""
-
-msgid "Nothing found for {{- searchTerm}}"
-msgstr ""
+msgstr "सर्च करें / खोजें"
 
 msgid "Delete {{fileType}}"
 msgstr ""
@@ -462,6 +484,9 @@ msgstr ""
 msgid "Open in this app"
 msgstr ""
 
+msgid "Copy to clipboard"
+msgstr ""
+
 msgid "Close"
 msgstr "बंद करें"
 
@@ -487,6 +512,9 @@ msgid "map"
 msgstr ""
 
 msgid "visualization"
+msgstr ""
+
+msgid "Untitled {{visualizationType}}, {{date}}"
 msgstr ""
 
 msgid "Edit"
@@ -699,9 +727,6 @@ msgstr ""
 msgid "New line list"
 msgstr ""
 
-msgid "Options"
-msgstr ""
-
 msgid "Hide"
 msgstr ""
 
@@ -766,10 +791,10 @@ msgid "No periods selected"
 msgstr ""
 
 msgid "Daily"
-msgstr ""
+msgstr "रोज़ाना"
 
 msgid "Weekly"
-msgstr ""
+msgstr "साप्ताहिक"
 
 msgid "Weekly (Start Wednesday)"
 msgstr ""
@@ -787,7 +812,7 @@ msgid "Bi-weekly"
 msgstr ""
 
 msgid "Monthly"
-msgstr ""
+msgstr "मासिक"
 
 msgid "Bi-monthly"
 msgstr ""
@@ -802,7 +827,7 @@ msgid "Six-monthly April"
 msgstr ""
 
 msgid "Yearly"
-msgstr ""
+msgstr "वार्षिक"
 
 msgid "Financial year (Start November)"
 msgstr ""
@@ -1033,7 +1058,7 @@ msgid "Searching for \"{{- searchText}}\""
 msgstr ""
 
 msgid "No results found"
-msgstr ""
+msgstr "कोई परिणाम नहीं मिला"
 
 msgid "Series"
 msgstr ""
@@ -1126,6 +1151,9 @@ msgid "Program indicator"
 msgstr ""
 
 msgid "Calculations"
+msgstr ""
+
+msgid "Option"
 msgstr ""
 
 msgid "Number"
@@ -1240,6 +1268,9 @@ msgid "Organisation unit"
 msgstr ""
 
 msgid "Assigned Categories"
+msgstr ""
+
+msgid "No value"
 msgstr ""
 
 msgid "Text"
@@ -1369,6 +1400,9 @@ msgid "Outlier table"
 msgstr ""
 
 msgid "All charts"
+msgstr ""
+
+msgid "Map"
 msgstr ""
 
 msgid "{{seriesName}} (trend)"

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2025-06-26T14:58:42.001Z\n"
+"POT-Creation-Date: 2025-09-05T07:32:59.321Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: Jiří Podhorecký <jirka.p@volny.cz>, 2025\n"
 "Language-Team: Czech (https://app.transifex.com/hisp-uio/teams/100509/cs/)\n"
@@ -176,7 +176,7 @@ msgid "Data set(s)"
 msgstr ""
 
 msgid "Zero is significant"
-msgstr ""
+msgstr "Nula je významná"
 
 msgid "True"
 msgstr "True"
@@ -1308,6 +1308,9 @@ msgstr "Organizační jednotka"
 msgid "Assigned Categories"
 msgstr "Přiřazené kategorie"
 
+msgid "No value"
+msgstr "Žádná hodnota"
+
 msgid "Text"
 msgstr "Text"
 
@@ -1432,7 +1435,7 @@ msgid "Single value"
 msgstr "Jedna hodnota"
 
 msgid "Outlier table"
-msgstr ""
+msgstr "Tabulka odlehlých hodnot"
 
 msgid "All charts"
 msgstr "Všechny grafy"
@@ -1473,7 +1476,3 @@ msgstr[3] "{{count}} položek"
 
 msgid "Reset zoom"
 msgstr "Obnovit přiblížení"
-
-msgctxt "Application title"
-msgid "__MANIFEST_APP_TITLE"
-msgstr ""
