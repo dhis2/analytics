@@ -47,9 +47,6 @@ export const WithNoTimeDimensionsWarning = () => {
                 }}
             >
                 <InterpretationsUnit
-                    currentUser={{
-                        name: 'Tom Wakiki',
-                    }}
                     id="abcd"
                     onReplyIconClick={Function.prototype}
                     type="eventVisualization"
