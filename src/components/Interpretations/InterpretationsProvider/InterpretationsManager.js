@@ -174,7 +174,7 @@ export class InterpretationsManager {
             },
             { onComplete }
         )
-        /* since the create request does not rerun an ID we must refetch the list
+        /* since the create request does not return an ID we must refetch the list
          * and cannot return the created interpretation */
         const interpretations = await this.fetchInterpretationsList()
         this.resetInterpretations(interpretations)
@@ -267,8 +267,7 @@ export class InterpretationsManager {
     async deleteCommentFromActiveInterpretation({ id }) {
         const activeInterpretation = this.getActiveInterpretation()
         await this.mutate({
-            resource: 'interpretations',
-            id: `${activeInterpretation.id}/comments/${id}`,
+            resource: `interpretations/${activeInterpretation.id}/comments/${id}`,
             type: 'delete',
         })
         const updatedInterpretation = {
