@@ -42,6 +42,7 @@ function getModalContentCSS(width) {
     return css.resolve`
         div {
             width: ${width}px;
+            overflow-y: visible;
         }
     `
 }
