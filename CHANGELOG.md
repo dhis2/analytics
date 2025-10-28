@@ -1,3 +1,10 @@
+## [29.0.1](https://github.com/dhis2/analytics/compare/v29.0.0...v29.0.1) (2025-10-28)
+
+
+### Bug Fixes
+
+* pass a valid function to the cancel button onClick ([#1795](https://github.com/dhis2/analytics/issues/1795)) ([128728b](https://github.com/dhis2/analytics/commit/128728b396067d8b289d06a9a9fee57df8911455))
+
 # [29.0.0](https://github.com/dhis2/analytics/compare/v28.1.3...v29.0.0) (2025-10-28)
 
 
