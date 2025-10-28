@@ -33,11 +33,10 @@ export { default as LegendKey } from './components/LegendKey/LegendKey.js'
 
 export { default as AboutAOUnit } from './components/AboutAOUnit/AboutAOUnit.js'
 
+export { DashboardItemInterpretations } from './components/Interpretations/DashboardItemInterpretations/index.js'
 export { InterpretationsUnit } from './components/Interpretations/InterpretationsUnit/index.js'
-export {
-    InterpretationModal,
-    InterpretationThread,
-} from './components/Interpretations/InterpretationModal/index.js'
+export { InterpretationsProvider } from './components/Interpretations/InterpretationsProvider/index.js'
+export { InterpretationModal } from './components/Interpretations/InterpretationModal/index.js'
 
 export * from './components/Toolbar/index.js'
 
