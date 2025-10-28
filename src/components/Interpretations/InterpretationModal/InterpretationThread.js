@@ -3,7 +3,7 @@ import { IconClock16, colors } from '@dhis2/ui'
 import cx from 'classnames'
 import moment from 'moment'
 import PropTypes from 'prop-types'
-import React, { useRef, useEffect } from 'react'
+import React, { useRef, useEffect, memo } from 'react'
 import { Interpretation, getInterpretationAccess } from '../common/index.js'
 import { useInterpretationsCurrentUser } from '../InterpretationsProvider/hooks.js'
 import { Comment } from './Comment.js'
@@ -163,4 +163,7 @@ InterpretationThread.propTypes = {
     initialFocus: PropTypes.bool,
 }
 
-export { InterpretationThread }
+const InterpretationThreadMemoized = memo(InterpretationThread)
+InterpretationThreadMemoized.displayName = 'InterpretationThread'
+
+export { InterpretationThreadMemoized as InterpretationThread }
