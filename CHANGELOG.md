@@ -1,3 +1,41 @@
+# [29.0.0](https://github.com/dhis2/analytics/compare/v28.1.3...v29.0.0) (2025-10-28)
+
+
+### Features
+
+* add InterpretationsProvider and refactor components to use it ([#1791](https://github.com/dhis2/analytics/issues/1791)) ([f62f4b8](https://github.com/dhis2/analytics/commit/f62f4b82fc57e0e1b68b80ace67c1bcd2e3ed055))
+
+
+### BREAKING CHANGES
+
+* apps can no longer import InterpretationThread
+
+* fix: remove overflow-y which breaks the EVER plugin content
+
+This CSS rule was initially added for fixing DHIS2-15558 and it seems to
+only affect the LL plugin where a vertical scrollbar appears in the
+Modal.
+Although the LL app is going to be replaced by the EVER app,
+there might be a better fix for this which works in both apps.
+
+* Revert "fix: remove overflow-y which breaks the EVER plugin content"
+
+We should fix the issue in the EVER LineList components instead.
+The change also causes an extra vertical scrollbar when there is a lot
+of content in the interpretations thread.
+
+* chore: address PR comments
+
+* chore: remove redundant prop from interpretations unit in demo story
+
+* fix: memoize the InterpretationThread to fix initial focus issues
+
+* Revert "fix: memoize the InterpretationThread to fix initial focus issues"
+
+This reverts commit b96a3e2faf27bdc4d14c33879f397d59cc38527f.
+
+* fix: focus the rich-text-editor after a timeout
+
 ## [28.1.3](https://github.com/dhis2/analytics/compare/v28.1.2...v28.1.3) (2025-10-16)
 
 
