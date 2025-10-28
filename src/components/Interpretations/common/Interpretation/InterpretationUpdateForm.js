@@ -59,7 +59,12 @@ export const InterpretationUpdateForm = ({
                     >
                         {i18n.t('Update')}
                     </Button>
-                    <Button disabled={loading} secondary small onClick={close}>
+                    <Button
+                        disabled={loading}
+                        secondary
+                        small
+                        onClick={onComplete}
+                    >
                         {i18n.t('Cancel')}
                     </Button>
                 </MessageButtonStrip>
