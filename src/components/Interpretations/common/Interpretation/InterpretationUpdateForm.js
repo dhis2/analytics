@@ -1,38 +1,36 @@
-import { useDataMutation } from '@dhis2/app-runtime'
+import { useAlert } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import { Button, spacers, colors } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 import { RichTextEditor } from '../../../RichText/index.js'
 import {
+    useUpdateInterpretationText,
+    useInterpretationsCurrentUser,
+} from '../../InterpretationsProvider/hooks.js'
+import {
     MessageEditorContainer,
     MessageButtonStrip,
     InterpretationSharingLink,
 } from '../index.js'
 
-const mutation = {
-    resource: 'interpretations',
-    type: 'update',
-    partial: false,
-    id: ({ id }) => id,
-    data: ({ interpretationText }) => interpretationText,
-}
-
 export const InterpretationUpdateForm = ({
-    close,
-    currentUser,
     id,
     onComplete,
     showSharingLink,
     text,
 }) => {
+    const currentUser = useInterpretationsCurrentUser()
     const [interpretationText, setInterpretationText] = useState(text || '')
-    const [update, { loading, error }] = useDataMutation(mutation, {
-        onComplete: () => {
-            onComplete()
-            close()
-        },
-        variables: { id },
+    const { show: showErrorAlert } = useAlert(
+        i18n.t('Could not update interpretation text'),
+        { critical: true }
+    )
+    const [update, { loading, error }] = useUpdateInterpretationText({
+        id,
+        text: interpretationText,
+        onComplete,
+        onError: showErrorAlert,
     })
 
     const errorText = error
@@ -41,7 +39,7 @@ export const InterpretationUpdateForm = ({
 
     return (
         <div className="message">
-            <MessageEditorContainer currentUser={currentUser}>
+            <MessageEditorContainer currentUserName={currentUser.name}>
                 <RichTextEditor
                     inputPlaceholder={i18n.t('Enter interpretation text')}
                     onChange={setInterpretationText}
@@ -61,7 +59,12 @@ export const InterpretationUpdateForm = ({
                     >
                         {i18n.t('Update')}
                     </Button>
-                    <Button disabled={loading} secondary small onClick={close}>
+                    <Button
+                        disabled={loading}
+                        secondary
+                        small
+                        onClick={onComplete}
+                    >
                         {i18n.t('Cancel')}
                     </Button>
                 </MessageButtonStrip>
@@ -77,8 +80,6 @@ export const InterpretationUpdateForm = ({
     )
 }
 InterpretationUpdateForm.propTypes = {
-    close: PropTypes.func.isRequired,
-    currentUser: PropTypes.object.isRequired,
     id: PropTypes.string.isRequired,
     onComplete: PropTypes.func.isRequired,
     showSharingLink: PropTypes.bool,
