@@ -8,7 +8,7 @@ export const useParentSize = (
     renderCounter,
     initialSize = initialState
 ) => {
-    console.log('jj useParentSize', { renderCounter, initialSize })
+    console.log('jj useParentSize renderCounter', renderCounter)
     const [size, setSize] = useState({
         width: initialSize.width || 0,
         height: initialSize.height || 0,
@@ -19,10 +19,10 @@ export const useParentSize = (
         if (!el) {
             return
         }
-        console.log('jj useParentSize useEffect', el)
+        console.log('jj useEffect', el)
 
         const onResize = () => {
-            console.log('jj useParentSize useEffect onResize', {
+            console.log('jj useEffect onResize fn', {
                 width: el.clientWidth,
                 height: el.clientHeight,
             })
@@ -32,17 +32,18 @@ export const useParentSize = (
             })
         }
 
+        console.log('jj useEffect call onResize')
         onResize(el)
 
         if (renderCounter) {
-            console.log(
-                'jj useParentSize useEffect reset size to',
-                initialState
-            )
+            console.log('jj useEffect reset size to 0,0')
             setSize(initialState)
         }
 
-        const observer = new ResizeObserver(onResize)
+        const observer = new ResizeObserver(() => {
+            console.log('jj ResizeObserver onResize')
+            return onResize()
+        })
         observer.observe(el)
 
         return () => observer.disconnect()
