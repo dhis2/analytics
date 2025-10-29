@@ -7,10 +7,11 @@ export const useParentSize = (
     elementRef,
     renderCounter,
     initialSize = initialState
+    width
 ) => {
-    console.log('jj useParentSize renderCounter', renderCounter)
+    console.log('jj useParentSize renderCounter', renderCounter, width)
     const [size, setSize] = useState({
-        width: initialSize.width || 0,
+        width: width || initialSize.width || 0,
         height: initialSize.height || 0,
     })
 
@@ -18,6 +19,11 @@ export const useParentSize = (
         const el = elementRef.current && elementRef.current.parentElement
         if (!el) {
             return
+        }
+
+        if (renderCounter) {
+            console.log('jj useEffect set size to 0,0')
+            setSize(initialState)
         }
 
         const onResize = () => {
@@ -28,14 +34,6 @@ export const useParentSize = (
             })
         }
 
-        console.log('jj useEffect call onResize')
-        onResize(el)
-
-        if (renderCounter) {
-            console.log('jj useEffect set size to 0,0')
-            setSize(initialState)
-        }
-
         const observer = new ResizeObserver(() => {
             console.log('jj resize observed')
             return onResize()
@@ -44,6 +42,17 @@ export const useParentSize = (
 
         return () => observer.disconnect()
     }, [elementRef, renderCounter])
+
+    useEffect(() => {
+        setSize((prevSize) => ({
+            ...prevSize,
+            width: width || prevSize.width,
+        }))
+        console.log('jj useEffect width change to', width)
+
+    }, [width])
+
+
 
     return size
 }
