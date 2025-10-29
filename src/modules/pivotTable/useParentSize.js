@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import ResizeObserver from 'resize-observer-polyfill'
 
 const initialState = { width: 0, height: 0 }
 
@@ -19,7 +20,6 @@ export const useParentSize = ({
         }
 
         const onResize = () => {
-            console.log('jj effect for renderCounter', renderCounter)
             setSize({
                 width: el.clientWidth,
                 height: el.clientHeight,
@@ -32,14 +32,13 @@ export const useParentSize = ({
             setSize(initialState)
         }
 
-        const observer = new window.ResizeObserver(onResize)
+        const observer = new ResizeObserver(onResize)
         observer.observe(el)
 
         return () => observer.disconnect()
     }, [elementRef, renderCounter])
 
     useEffect(() => {
-        console.log('jj effect for availableWidth', availableWidth)
         setSize((prevSize) => ({
             ...prevSize,
             width: availableWidth || prevSize.width,
