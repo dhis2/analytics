@@ -15,13 +15,13 @@ const PivotTable = ({
     legendSets,
     renderCounter,
     onToggleContextualMenu,
-    newWidth,
+    availableWidth,
 }) => {
     const containerRef = useRef(undefined)
     const { width, height } = useParentSize({
         elementRef: containerRef,
         renderCounter,
-        width: newWidth,
+        availableWidth: availableWidth,
     })
 
     console.log('jj PivotTable width', width)
@@ -65,8 +65,8 @@ const PivotTable = ({
 PivotTable.propTypes = {
     data: PropTypes.object.isRequired,
     visualization: PropTypes.object.isRequired,
+    availableWidth: PropTypes.number,
     legendSets: PropTypes.arrayOf(PropTypes.object),
-    newWidth: PropTypes.number,
     renderCounter: PropTypes.number,
     onToggleContextualMenu: PropTypes.func,
 }
