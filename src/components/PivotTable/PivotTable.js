@@ -9,16 +9,23 @@ import { PivotTableContainer } from './PivotTableContainer.js'
 import { Provider } from './PivotTableEngineContext.js'
 import { PivotTableHead } from './PivotTableHead.js'
 
+const initialState = { width: 0, height: 0 }
+
 const PivotTable = ({
     visualization,
     data,
     legendSets,
     renderCounter,
     onToggleContextualMenu,
-    width
+    newWidth,
 }) => {
     const containerRef = useRef(undefined)
-    const { width, height } = useParentSize(containerRef, renderCounter,, width)
+    const { width, height } = useParentSize(
+        containerRef,
+        renderCounter,
+        initialState,
+        newWidth
+    )
 
     const engine = useMemo(
         () => new PivotTableEngine(visualization, data, legendSets),

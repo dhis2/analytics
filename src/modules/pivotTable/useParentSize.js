@@ -6,7 +6,7 @@ const initialState = { width: 0, height: 0 }
 export const useParentSize = (
     elementRef,
     renderCounter,
-    initialSize = initialState
+    initialSize = initialState,
     width
 ) => {
     console.log('jj useParentSize renderCounter', renderCounter, width)
@@ -49,10 +49,7 @@ export const useParentSize = (
             width: width || prevSize.width,
         }))
         console.log('jj useEffect width change to', width)
-
     }, [width])
-
-
 
     return size
 }
