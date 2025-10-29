@@ -21,7 +21,7 @@ const PivotTable = ({
     const { width, height } = useParentSize({
         elementRef: containerRef,
         renderCounter,
-        availableWidth: availableWidth,
+        availableWidth,
     })
 
     const engine = useMemo(
