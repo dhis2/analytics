@@ -3,12 +3,12 @@ import ResizeObserver from 'resize-observer-polyfill'
 
 const initialState = { width: 0, height: 0 }
 
-export const useParentSize = (
+export const useParentSize = ({
     elementRef,
     renderCounter,
     initialSize = initialState,
-    width
-) => {
+    width,
+}) => {
     console.log('jj useParentSize renderCounter', renderCounter, width)
     const [size, setSize] = useState({
         width: width || initialSize.width || 0,
