@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import ResizeObserver from 'resize-observer-polyfill'
 
-const initialState = { width: 0, height: 0 }
+const initialSize = { width: 0, height: 0 }
 
 export const useParentSize = ({
     elementRef,
@@ -9,8 +9,8 @@ export const useParentSize = ({
     availableWidth,
 }) => {
     const [size, setSize] = useState({
-        width: availableWidth || initialState.width || 0,
-        height: initialState.height || 0,
+        width: initialSize.width || 0,
+        height: initialSize.height || 0,
     })
 
     useEffect(() => {
@@ -29,7 +29,7 @@ export const useParentSize = ({
         onResize(el)
 
         if (renderCounter) {
-            setSize(initialState)
+            setSize(initialSize)
         }
 
         const observer = new ResizeObserver(onResize)
