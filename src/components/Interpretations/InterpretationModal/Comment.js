@@ -24,7 +24,7 @@ const Comment = ({ comment, canComment }) => {
             onComplete={onUpdateComplete}
             onCancel={onUpdateCancel}
             id={comment.id}
-            text={comment.text}
+            text={commentText}
         />
     ) : (
         <Message
