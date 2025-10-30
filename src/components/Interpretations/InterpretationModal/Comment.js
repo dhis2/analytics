@@ -14,13 +14,17 @@ const Comment = ({ comment, canComment }) => {
         setCommentText(newText)
         setIsUpdateMode(false)
     }, [])
+    const onUpdateCancel = useCallback(() => {
+        setIsUpdateMode(false)
+    }, [])
     const commentAccess = useCommentAccess(comment, canComment)
 
     return isUpdateMode ? (
         <CommentUpdateForm
             onComplete={onUpdateComplete}
+            onCancel={onUpdateCancel}
             id={comment.id}
-            text={comment.text}
+            text={commentText}
         />
     ) : (
         <Message
