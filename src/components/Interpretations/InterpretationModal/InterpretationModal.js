@@ -128,6 +128,8 @@ const InterpretationModal = ({
                                         }
                                         displayProperty={
                                             currentUser.settings
+                                                ?.displayProperty ??
+                                            currentUser.settings
                                                 ?.keyAnalysisDisplayProperty
                                         }
                                         isInModal={true}
