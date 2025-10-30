@@ -9,7 +9,7 @@ import {
     useUpdateCommentForActiveInterpretation,
 } from '../InterpretationsProvider/hooks.js'
 
-export const CommentUpdateForm = ({ id, text, onComplete }) => {
+export const CommentUpdateForm = ({ id, text, onCancel, onComplete }) => {
     const currentUser = useInterpretationsCurrentUser()
     const [commentText, setCommentText] = useState(text || '')
     const [update, { loading, error }] =
@@ -38,7 +38,7 @@ export const CommentUpdateForm = ({ id, text, onComplete }) => {
                         disabled={loading}
                         secondary
                         small
-                        onClick={onComplete}
+                        onClick={onCancel}
                     >
                         {i18n.t('Cancel')}
                     </Button>
@@ -56,6 +56,7 @@ export const CommentUpdateForm = ({ id, text, onComplete }) => {
 }
 CommentUpdateForm.propTypes = {
     id: PropTypes.string.isRequired,
+    onCancel: PropTypes.func.isRequired,
     onComplete: PropTypes.func.isRequired,
     text: PropTypes.string,
 }
