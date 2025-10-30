@@ -1,3 +1,10 @@
+## [29.0.2](https://github.com/dhis2/analytics/compare/v29.0.1...v29.0.2) (2025-10-30)
+
+
+### Bug Fixes
+
+* address 2 comment edit issues and a display-property issue ([#1797](https://github.com/dhis2/analytics/issues/1797)) ([613f8b2](https://github.com/dhis2/analytics/commit/613f8b21e5187dcb252acad09459342e85bc10c1))
+
 ## [29.0.1](https://github.com/dhis2/analytics/compare/v29.0.0...v29.0.1) (2025-10-28)
 
 
