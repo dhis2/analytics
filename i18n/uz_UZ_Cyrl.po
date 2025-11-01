@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2025-06-26T14:58:42.001Z\n"
+"POT-Creation-Date: 2025-09-09T09:32:04.677Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: Khurshid Ibatov <x.ibatov@dtsj.uz>, 2025\n"
 "Language-Team: Uzbek (Cyrillic) (https://app.transifex.com/hisp-uio/teams/100509/uz@Cyrl/)\n"
@@ -516,17 +516,29 @@ msgstr "Визуализация"
 msgid "Untitled {{visualizationType}}, {{date}}"
 msgstr ""
 
+msgid "Back to all interpretations"
+msgstr "Жами талқинларга қайтиш"
+
+msgid "Could not load interpretation details"
+msgstr ""
+
+msgid "The request to fetch interpretation comments failed"
+msgstr ""
+
 msgid "Edit"
 msgstr "Таҳрирлаш"
 
 msgid "Write a reply"
 msgstr "Изоҳ ёзинг"
 
+msgid "Could not post reply"
+msgstr ""
+
 msgid "Post reply"
 msgstr ""
 
-msgid "Delete failed"
-msgstr "Ўчириш амалга ошмади"
+msgid "Could not delete comment"
+msgstr ""
 
 msgid "Could not update comment"
 msgstr ""
@@ -554,6 +566,9 @@ msgstr ""
 msgid "Write an interpretation"
 msgstr "Талқин ёзиш"
 
+msgid "Could not post interpretation"
+msgstr ""
+
 msgid ""
 "Other people viewing this interpretation in the future may see more data."
 msgstr ""
@@ -563,6 +578,12 @@ msgstr ""
 
 msgid "Interpretations"
 msgstr "Талқинлар"
+
+msgid "Error loading interpretations"
+msgstr ""
+
+msgid "Could not load interpretations"
+msgstr ""
 
 msgid "Reply"
 msgstr "Изоҳ"
@@ -589,8 +610,14 @@ msgstr ""
 msgid "Share"
 msgstr "Улашиш"
 
+msgid "Could not delete interpretation"
+msgstr ""
+
 msgid "Manage sharing"
 msgstr "Улашишни бошқариш"
+
+msgid "Could not update interpretation text"
+msgstr ""
 
 msgid "Could not update interpretation"
 msgstr ""
@@ -1265,6 +1292,9 @@ msgstr "Ташкилий бўлим"
 msgid "Assigned Categories"
 msgstr "Белгиланган Категориялар"
 
+msgid "No value"
+msgstr "Қиймат йўқ"
+
 msgid "Text"
 msgstr "Матн"
 
@@ -1426,8 +1456,4 @@ msgid_plural "{{count}} items"
 msgstr[0] ""
 
 msgid "Reset zoom"
-msgstr ""
-
-msgctxt "Application title"
-msgid "__MANIFEST_APP_TITLE"
 msgstr ""

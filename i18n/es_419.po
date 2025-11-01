@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2025-06-26T14:58:42.001Z\n"
+"POT-Creation-Date: 2025-09-09T09:32:04.677Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: Jaime Bosque <jaime.bosque@dhis2.org>, 2025\n"
 "Language-Team: Spanish (Latin America) (https://app.transifex.com/hisp-uio/teams/100509/es_419/)\n"
@@ -531,17 +531,29 @@ msgstr "visualización"
 msgid "Untitled {{visualizationType}}, {{date}}"
 msgstr ""
 
+msgid "Back to all interpretations"
+msgstr ""
+
+msgid "Could not load interpretation details"
+msgstr ""
+
+msgid "The request to fetch interpretation comments failed"
+msgstr ""
+
 msgid "Edit"
 msgstr "Editar"
 
 msgid "Write a reply"
 msgstr "Escribir una respuesta"
 
+msgid "Could not post reply"
+msgstr ""
+
 msgid "Post reply"
 msgstr "Respuesta"
 
-msgid "Delete failed"
-msgstr "Eliminación fallida"
+msgid "Could not delete comment"
+msgstr ""
 
 msgid "Could not update comment"
 msgstr "No se ha podido actualizar el comentario"
@@ -571,6 +583,9 @@ msgstr "Ocultar interpretación"
 msgid "Write an interpretation"
 msgstr "Escribir una interpretación"
 
+msgid "Could not post interpretation"
+msgstr ""
+
 msgid ""
 "Other people viewing this interpretation in the future may see more data."
 msgstr ""
@@ -582,6 +597,12 @@ msgstr "Interpretación de puestos"
 
 msgid "Interpretations"
 msgstr "Interpretaciones"
+
+msgid "Error loading interpretations"
+msgstr ""
+
+msgid "Could not load interpretations"
+msgstr ""
 
 msgid "Reply"
 msgstr "Respuesta"
@@ -610,8 +631,14 @@ msgstr "Abrir en aplicación"
 msgid "Share"
 msgstr "Compartir"
 
+msgid "Could not delete interpretation"
+msgstr ""
+
 msgid "Manage sharing"
 msgstr "Gestionar el uso compartido"
+
+msgid "Could not update interpretation text"
+msgstr ""
 
 msgid "Could not update interpretation"
 msgstr "No se ha podido actualizar la interpretación"
@@ -1315,6 +1342,9 @@ msgstr "Unidad organizativa"
 msgid "Assigned Categories"
 msgstr "Categorías asignadas"
 
+msgid "No value"
+msgstr ""
+
 msgid "Text"
 msgstr ""
 
@@ -1479,7 +1509,3 @@ msgstr[2] "{{count}} artículos"
 
 msgid "Reset zoom"
 msgstr "Restablecer zoom"
-
-msgctxt "Application title"
-msgid "__MANIFEST_APP_TITLE"
-msgstr ""

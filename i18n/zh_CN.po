@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2025-06-26T14:58:42.001Z\n"
+"POT-Creation-Date: 2025-09-09T09:32:04.677Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: easylin <lin_xd@126.com>, 2025\n"
 "Language-Team: Chinese (China) (https://app.transifex.com/hisp-uio/teams/100509/zh_CN/)\n"
@@ -516,17 +516,29 @@ msgstr ""
 msgid "Untitled {{visualizationType}}, {{date}}"
 msgstr ""
 
+msgid "Back to all interpretations"
+msgstr "回到所有注释"
+
+msgid "Could not load interpretation details"
+msgstr ""
+
+msgid "The request to fetch interpretation comments failed"
+msgstr ""
+
 msgid "Edit"
 msgstr "编辑"
 
 msgid "Write a reply"
 msgstr ""
 
+msgid "Could not post reply"
+msgstr ""
+
 msgid "Post reply"
 msgstr ""
 
-msgid "Delete failed"
-msgstr "删除失败"
+msgid "Could not delete comment"
+msgstr ""
 
 msgid "Could not update comment"
 msgstr ""
@@ -554,6 +566,9 @@ msgstr ""
 msgid "Write an interpretation"
 msgstr ""
 
+msgid "Could not post interpretation"
+msgstr ""
+
 msgid ""
 "Other people viewing this interpretation in the future may see more data."
 msgstr ""
@@ -563,6 +578,12 @@ msgstr ""
 
 msgid "Interpretations"
 msgstr "注释"
+
+msgid "Error loading interpretations"
+msgstr ""
+
+msgid "Could not load interpretations"
+msgstr ""
 
 msgid "Reply"
 msgstr "回复"
@@ -589,7 +610,13 @@ msgstr ""
 msgid "Share"
 msgstr "分享"
 
+msgid "Could not delete interpretation"
+msgstr ""
+
 msgid "Manage sharing"
+msgstr ""
+
+msgid "Could not update interpretation text"
 msgstr ""
 
 msgid "Could not update interpretation"
@@ -1265,6 +1292,9 @@ msgstr "机构"
 msgid "Assigned Categories"
 msgstr ""
 
+msgid "No value"
+msgstr "没有值"
+
 msgid "Text"
 msgstr "文本"
 
@@ -1426,8 +1456,4 @@ msgid_plural "{{count}} items"
 msgstr[0] ""
 
 msgid "Reset zoom"
-msgstr ""
-
-msgctxt "Application title"
-msgid "__MANIFEST_APP_TITLE"
 msgstr ""

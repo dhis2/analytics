@@ -2,15 +2,15 @@
 # Translators:
 # Jen Jones Arnesen <jennifer@dhis2.org>, 2023
 # Martin <martin@moid.se>, 2024
-# Karoline Tufte Lien <karoline@dhis2.org>, 2025
 # Caroline Hesthagen Holen <caroline@devotta.no>, 2025
+# Karoline Tufte Lien <karoline@dhis2.org>, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2025-09-05T07:32:59.321Z\n"
+"POT-Creation-Date: 2025-09-09T09:32:04.677Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Caroline Hesthagen Holen <caroline@devotta.no>, 2025\n"
+"Last-Translator: Karoline Tufte Lien <karoline@dhis2.org>, 2025\n"
 "Language-Team: Norwegian Bokmål (https://app.transifex.com/hisp-uio/teams/100509/nb/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -522,17 +522,29 @@ msgstr "visualisering"
 msgid "Untitled {{visualizationType}}, {{date}}"
 msgstr ""
 
+msgid "Back to all interpretations"
+msgstr "Tilbake til alle tolkninger"
+
+msgid "Could not load interpretation details"
+msgstr ""
+
+msgid "The request to fetch interpretation comments failed"
+msgstr ""
+
 msgid "Edit"
 msgstr "Rediger"
 
 msgid "Write a reply"
 msgstr "Skriv et svar"
 
+msgid "Could not post reply"
+msgstr ""
+
 msgid "Post reply"
 msgstr ""
 
-msgid "Delete failed"
-msgstr "Kunne ikke slette"
+msgid "Could not delete comment"
+msgstr ""
 
 msgid "Could not update comment"
 msgstr ""
@@ -560,6 +572,9 @@ msgstr ""
 msgid "Write an interpretation"
 msgstr "Skriv en tolkning"
 
+msgid "Could not post interpretation"
+msgstr ""
+
 msgid ""
 "Other people viewing this interpretation in the future may see more data."
 msgstr ""
@@ -569,6 +584,12 @@ msgstr ""
 
 msgid "Interpretations"
 msgstr "Tolkninger"
+
+msgid "Error loading interpretations"
+msgstr ""
+
+msgid "Could not load interpretations"
+msgstr ""
 
 msgid "Reply"
 msgstr "Svar"
@@ -596,8 +617,14 @@ msgstr ""
 msgid "Share"
 msgstr "Del"
 
+msgid "Could not delete interpretation"
+msgstr ""
+
 msgid "Manage sharing"
 msgstr "Administrer deling"
+
+msgid "Could not update interpretation text"
+msgstr ""
 
 msgid "Could not update interpretation"
 msgstr ""

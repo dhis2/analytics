@@ -3,9 +3,7 @@
 # ericbp <ericbarredap@gmail.com>, 2020
 # Juan M Alcantara Acosta <jmalcantara1@gmail.com>, 2021
 # Prabhjot Singh, 2021
-# Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2022
 # Marta Vila <marta@dhis2.org>, 2023
-# Sergio Valenzuela <sergio.valenzuela@ehas.org>, 2023
 # Alejandra Avila <alejandra@dhis2.org>, 2025
 # Andres Miguel Rubio, 2025
 # Alison Andrade <aandrade@ippfwhr.org>, 2025
@@ -15,13 +13,14 @@
 # Pablo Pajuelo Cabezas <pablo@dhis2.org>, 2025
 # Nancy Espinoza, 2025
 # Philip Larsen Donnelly, 2025
+# Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2025-09-05T07:32:59.321Z\n"
+"POT-Creation-Date: 2025-09-09T09:32:04.677Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Philip Larsen Donnelly, 2025\n"
+"Last-Translator: Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2025\n"
 "Language-Team: Spanish (https://app.transifex.com/hisp-uio/teams/100509/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -544,17 +543,29 @@ msgstr "visualización"
 msgid "Untitled {{visualizationType}}, {{date}}"
 msgstr ""
 
+msgid "Back to all interpretations"
+msgstr "Regresar a todas las interpretaciones"
+
+msgid "Could not load interpretation details"
+msgstr ""
+
+msgid "The request to fetch interpretation comments failed"
+msgstr ""
+
 msgid "Edit"
 msgstr "Editar"
 
 msgid "Write a reply"
 msgstr "Escribe una respuesta"
 
+msgid "Could not post reply"
+msgstr ""
+
 msgid "Post reply"
 msgstr "Publicar respuesta"
 
-msgid "Delete failed"
-msgstr "Fallado el proceso de eliminar"
+msgid "Could not delete comment"
+msgstr ""
 
 msgid "Could not update comment"
 msgstr "No se pudo actualizar el comentario"
@@ -584,6 +595,9 @@ msgstr "Ocultar interpretación"
 msgid "Write an interpretation"
 msgstr "Escribir una interpretación"
 
+msgid "Could not post interpretation"
+msgstr ""
+
 msgid ""
 "Other people viewing this interpretation in the future may see more data."
 msgstr ""
@@ -595,6 +609,12 @@ msgstr "Interpretación posterior"
 
 msgid "Interpretations"
 msgstr "Interpretaciones"
+
+msgid "Error loading interpretations"
+msgstr ""
+
+msgid "Could not load interpretations"
+msgstr ""
 
 msgid "Reply"
 msgstr "Responder"
@@ -623,8 +643,14 @@ msgstr "Abrir en la aplicación"
 msgid "Share"
 msgstr "Compartir"
 
+msgid "Could not delete interpretation"
+msgstr ""
+
 msgid "Manage sharing"
 msgstr "Administrar compartir"
+
+msgid "Could not update interpretation text"
+msgstr ""
 
 msgid "Could not update interpretation"
 msgstr "No se pudo actualizar la interpretación"
