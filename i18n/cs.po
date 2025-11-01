@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2025-04-15T13:34:54.995Z\n"
+"POT-Creation-Date: 2025-09-09T09:32:04.677Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: Jiří Podhorecký <jirka.p@volny.cz>, 2025\n"
 "Language-Team: Czech (https://app.transifex.com/hisp-uio/teams/100509/cs/)\n"
@@ -176,7 +176,7 @@ msgid "Data set(s)"
 msgstr ""
 
 msgid "Zero is significant"
-msgstr ""
+msgstr "Nula je významná"
 
 msgid "True"
 msgstr "True"
@@ -493,6 +493,9 @@ msgstr "Získat odkaz ..."
 msgid "Open in this app"
 msgstr "Otevřít v této aplikaci"
 
+msgid "Copy to clipboard"
+msgstr "Zkopírovat do schránky"
+
 msgid "Close"
 msgstr "Zavřít"
 
@@ -523,17 +526,29 @@ msgstr "vizualizace"
 msgid "Untitled {{visualizationType}}, {{date}}"
 msgstr ""
 
+msgid "Back to all interpretations"
+msgstr "Zpět ke všem interpretacím"
+
+msgid "Could not load interpretation details"
+msgstr ""
+
+msgid "The request to fetch interpretation comments failed"
+msgstr ""
+
 msgid "Edit"
 msgstr "Upravit"
 
 msgid "Write a reply"
 msgstr "Napsat odpověď"
 
+msgid "Could not post reply"
+msgstr ""
+
 msgid "Post reply"
 msgstr "Odpovědět"
 
-msgid "Delete failed"
-msgstr "Smazání se nezdařilo"
+msgid "Could not delete comment"
+msgstr ""
 
 msgid "Could not update comment"
 msgstr "Komentář se nepodařilo aktualizovat"
@@ -563,6 +578,9 @@ msgstr "Skrýt interpretaci"
 msgid "Write an interpretation"
 msgstr "Napsat interpretaci"
 
+msgid "Could not post interpretation"
+msgstr ""
+
 msgid ""
 "Other people viewing this interpretation in the future may see more data."
 msgstr ""
@@ -572,6 +590,12 @@ msgstr "Vložit interpretaci"
 
 msgid "Interpretations"
 msgstr "Interpretace"
+
+msgid "Error loading interpretations"
+msgstr ""
+
+msgid "Could not load interpretations"
+msgstr ""
 
 msgid "Reply"
 msgstr "Odpovědět"
@@ -601,8 +625,14 @@ msgstr ""
 msgid "Share"
 msgstr "Sdílet"
 
+msgid "Could not delete interpretation"
+msgstr ""
+
 msgid "Manage sharing"
 msgstr "Spravovat sdílení"
+
+msgid "Could not update interpretation text"
+msgstr ""
 
 msgid "Could not update interpretation"
 msgstr "Interpretaci nelze aktualizovat"
@@ -1305,6 +1335,9 @@ msgstr "Organizační jednotka"
 msgid "Assigned Categories"
 msgstr "Přiřazené kategorie"
 
+msgid "No value"
+msgstr "Žádná hodnota"
+
 msgid "Text"
 msgstr "Text"
 
@@ -1429,7 +1462,7 @@ msgid "Single value"
 msgstr "Jedna hodnota"
 
 msgid "Outlier table"
-msgstr ""
+msgstr "Tabulka odlehlých hodnot"
 
 msgid "All charts"
 msgstr "Všechny grafy"

@@ -1,14 +1,14 @@
 # 
 # Translators:
-# Philip Larsen Donnelly, 2025
 # Viktor Varland <viktor@dhis2.org>, 2025
+# Philip Larsen Donnelly, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2025-04-15T13:34:54.995Z\n"
+"POT-Creation-Date: 2025-09-09T09:32:04.677Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2025\n"
+"Last-Translator: Philip Larsen Donnelly, 2025\n"
 "Language-Team: Urdu (https://app.transifex.com/hisp-uio/teams/100509/ur/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -484,6 +484,9 @@ msgstr ""
 msgid "Open in this app"
 msgstr ""
 
+msgid "Copy to clipboard"
+msgstr ""
+
 msgid "Close"
 msgstr "بند"
 
@@ -514,17 +517,29 @@ msgstr ""
 msgid "Untitled {{visualizationType}}, {{date}}"
 msgstr ""
 
+msgid "Back to all interpretations"
+msgstr ""
+
+msgid "Could not load interpretation details"
+msgstr ""
+
+msgid "The request to fetch interpretation comments failed"
+msgstr ""
+
 msgid "Edit"
 msgstr "ترمیم"
 
 msgid "Write a reply"
 msgstr ""
 
+msgid "Could not post reply"
+msgstr ""
+
 msgid "Post reply"
 msgstr ""
 
-msgid "Delete failed"
-msgstr "حذف ناکام ہوگیا"
+msgid "Could not delete comment"
+msgstr ""
 
 msgid "Could not update comment"
 msgstr ""
@@ -552,6 +567,9 @@ msgstr ""
 msgid "Write an interpretation"
 msgstr ""
 
+msgid "Could not post interpretation"
+msgstr ""
+
 msgid ""
 "Other people viewing this interpretation in the future may see more data."
 msgstr ""
@@ -561,6 +579,12 @@ msgstr ""
 
 msgid "Interpretations"
 msgstr "تشریحات"
+
+msgid "Error loading interpretations"
+msgstr ""
+
+msgid "Could not load interpretations"
+msgstr ""
 
 msgid "Reply"
 msgstr "جواب"
@@ -588,7 +612,13 @@ msgstr ""
 msgid "Share"
 msgstr "بانٹیں"
 
+msgid "Could not delete interpretation"
+msgstr ""
+
 msgid "Manage sharing"
+msgstr ""
+
+msgid "Could not update interpretation text"
 msgstr ""
 
 msgid "Could not update interpretation"
@@ -1266,6 +1296,9 @@ msgstr "تنظیم یونٹ"
 
 msgid "Assigned Categories"
 msgstr ""
+
+msgid "No value"
+msgstr "Ú©ÙØ¦Û ÙØ¯Ø± ÙÛÛÚº"
 
 msgid "Text"
 msgstr "مواد"

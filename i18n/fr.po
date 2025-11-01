@@ -1,22 +1,23 @@
 # 
 # Translators:
-# Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2021
 # Yayra Gomado <ygomado@hispwca.org>, 2025
 # Elise Desailly, 2025
 # Karoline Tufte Lien <karoline@dhis2.org>, 2025
 # Bram Piot <bram.piot@gmail.com>, 2025
 # tx_e2f_fr r25 <tx_e2f_fr_r25@ate2f.com>, 2025
-# Edem Kossi <ekossi@hispwca.org>, 2025
-# Yao Selom SAKA (HISP WCA) <ysaka@hispwca.org>, 2025
-# Philip Larsen Donnelly, 2025
 # Viktor Varland <viktor@dhis2.org>, 2025
+# Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2025
+# Yao Selom SAKA (HISP WCA) <ysaka@hispwca.org>, 2025
+# Esther Tokouli, 2025
+# Philip Larsen Donnelly, 2025
+# Edem Kossi <ekossi@hispwca.org>, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2025-04-15T13:34:54.995Z\n"
+"POT-Creation-Date: 2025-09-09T09:32:04.677Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2025\n"
+"Last-Translator: Edem Kossi <ekossi@hispwca.org>, 2025\n"
 "Language-Team: French (https://app.transifex.com/hisp-uio/teams/100509/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -25,22 +26,22 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
 msgid "view only"
-msgstr ""
+msgstr "Visualiser uniquement"
 
 msgid "view and edit"
-msgstr ""
+msgstr "Visualiser et modifier"
 
 msgid "all users ({{accessLevel}})"
-msgstr ""
+msgstr "tous les utilisateurs ({{accessLevel}})"
 
 msgid "{{userOrGroup}} ({{accessLevel}})"
 msgstr "{{userOrGroup}} ({{accessLevel}})"
 
 msgid "Shared with {{commaSeparatedListOfUsersAndGroups}}"
-msgstr ""
+msgstr "Partagé avec {{commaSeparatedListOfUsersAndGroups}}"
 
 msgid "Not shared with any users or groups"
-msgstr ""
+msgstr "Non partagé avec d'autres utilisateurs ou groupes"
 
 msgid "No description"
 msgstr "Aucune description"
@@ -56,9 +57,9 @@ msgstr "Créé à {{time}}"
 
 msgid "Viewed {{count}} times"
 msgid_plural "Viewed {{count}} times"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Visionné 1 fois"
+msgstr[1] "Visualisé {{count}} fois"
+msgstr[2] "Visualisé {{count}} fois"
 
 msgid "Notifications"
 msgstr "Notifications"
@@ -69,28 +70,30 @@ msgstr ""
 "interprétations."
 
 msgid "Unsubscribe"
-msgstr ""
+msgstr "Se désabonner"
 
 msgid "Subscribe to get updates about new interpretations."
 msgstr ""
+"Abonnez-vous pour recevoir des mises à jour sur les nouvelles "
+"interprétations."
 
 msgid "Subscribe"
-msgstr ""
+msgstr "S'abonner"
 
 msgid "About this map"
 msgstr "À propos de cette carte"
 
 msgid "About this line list"
-msgstr ""
+msgstr "À propos de cette liste de lignes"
 
 msgid "About this visualization"
 msgstr "À propos de cette visualisation"
 
 msgid "About this event chart"
-msgstr ""
+msgstr "À propos de ce graphique d'événement"
 
 msgid "About this event report"
-msgstr ""
+msgstr "A propos de ce rapport d'événement"
 
 msgid "This app could not retrieve required data."
 msgstr "Cette application n'a pas pu récupérer les données nécessaires."
@@ -99,22 +102,23 @@ msgid "Network error"
 msgstr "Erreur réseau"
 
 msgid "Data / Edit calculation"
-msgstr ""
+msgstr "Données / Modifier le calcul"
 
 msgid "Data / New calculation"
-msgstr ""
+msgstr "Données / Nouveau calcul"
 
 msgid "Remove item"
 msgstr "Supprimer l'élément"
 
 msgid "Check formula"
-msgstr ""
+msgstr "Vérifier la formule"
 
 msgid "Calculation name"
 msgstr "Nom du calcul"
 
 msgid "Shown in table headers and chart axes/legends"
 msgstr ""
+"Affiché dans les en-têtes des tableaux et les axes des graphiques/légendes"
 
 msgid "Delete calculation"
 msgstr "Supprimer le calcul"
@@ -145,13 +149,13 @@ msgid "Totals only"
 msgstr "Totaux uniquement"
 
 msgid "Details only"
-msgstr "Détails seulement"
+msgstr "Détails uniquement"
 
 msgid "Loading"
 msgstr "Chargement"
 
 msgid "Data elements"
-msgstr "Eléments de données"
+msgstr "Éléments de données"
 
 msgid "Search by data element name"
 msgstr "Rechercher par le nom d'élément de donnée"
@@ -166,6 +170,8 @@ msgid ""
 "Drag items here, or double click in the list, to start building a "
 "calculation formula"
 msgstr ""
+"Faites glisser les éléments ici ou double-cliquez dans la liste pour "
+"commencer à créer une formule de calcul."
 
 msgid "Math operators"
 msgstr "Opérateurs mathématiques"
@@ -174,16 +180,16 @@ msgid "Expression description"
 msgstr "Description de l'expression"
 
 msgid "Error loading value"
-msgstr ""
+msgstr "Erreur lors du chargement de la valeur"
 
 msgid "None"
 msgstr "Aucun"
 
 msgid "Data set(s)"
-msgstr ""
+msgstr "Ensemble(s) de données"
 
 msgid "Zero is significant"
-msgstr ""
+msgstr "Le zéro est significatif"
 
 msgid "True"
 msgstr "Vrai"
@@ -198,25 +204,25 @@ msgid "Aggregation type"
 msgstr "Type d'agrégation"
 
 msgid "Category combo"
-msgstr "Combinaison de catégorie"
+msgstr "Combinaison de catégories"
 
 msgid "Option set"
 msgstr "Ensemble d'options"
 
 msgid "Group membership"
-msgstr ""
+msgstr "Appartenance à un groupe"
 
 msgid "Legend set(s)"
-msgstr ""
+msgstr "Jeu(x) de légendes"
 
 msgid "Category option name"
-msgstr ""
+msgstr "Nom de l'option de catégorie"
 
 msgid "Category combo name"
-msgstr ""
+msgstr "Nom de la combinaison de catégorie"
 
 msgid "Categories name"
-msgstr ""
+msgstr "Nom des catégories"
 
 msgid "Period type"
 msgstr "Type de période"
@@ -240,13 +246,13 @@ msgid "Numerator description"
 msgstr "Description du numérateur"
 
 msgid "Numerator expression"
-msgstr ""
+msgstr "Expression du numérateur"
 
 msgid "Denominator description"
 msgstr "Description du dénominateur"
 
 msgid "Denominator expression"
-msgstr ""
+msgstr "Expression du dénominateur"
 
 msgid "Annualized"
 msgstr "Annualisé"
@@ -261,10 +267,12 @@ msgid "Indicator type"
 msgstr "Type d'indicateur"
 
 msgid "Decimals in output"
-msgstr ""
+msgstr "Les décimaux dans la sortie"
 
 msgid "There was a problem loading information for this data item."
 msgstr ""
+"Un problème est survenu lors du chargement des informations pour cet élément"
+" de données"
 
 msgid "Name"
 msgstr "Nom"
@@ -279,7 +287,7 @@ msgid "ID"
 msgstr "ID"
 
 msgid "Last updated date"
-msgstr ""
+msgstr "Date de la dernière mise à jour"
 
 msgid "Created date"
 msgstr "Date de création"
@@ -300,13 +308,13 @@ msgid "Enrollment"
 msgstr "Inscription"
 
 msgid "Event"
-msgstr "Événements"
+msgstr "Événement"
 
 msgid "Analytics period boundaries"
 msgstr "Limites de période d'analytique"
 
 msgid "{{ offsetPeriodType }} × {{ offsetPeriods }}"
-msgstr ""
+msgstr "{{ offsetPeriodType }} × {{ offsetPeriods }}"
 
 msgid "Expression"
 msgstr "Expression"
@@ -315,28 +323,28 @@ msgid "Filter"
 msgstr "Filtrer"
 
 msgid "All available options are already selected"
-msgstr ""
+msgstr "Toutes les options disponibles sont déjà sélectionnées"
 
 msgid "No available options for this item"
-msgstr ""
+msgstr "Aucune option disponible pour cet élément"
 
 msgid "Search by option name"
-msgstr ""
+msgstr "Recherche par nom d'option"
 
 msgid "Back to all items"
-msgstr ""
+msgstr "Retour à tous les éléments"
 
 msgid "Options"
 msgstr "Options"
 
 msgid "Selected items"
-msgstr ""
+msgstr "Éléments sélectionnés"
 
 msgid "Data Type"
 msgstr "Type de données"
 
 msgid "Only {{dataType}} can be used in {{visType}}"
-msgstr ""
+msgstr "Peut être {{dataType}} uniquement utilisé dans {{visType}}"
 
 msgid "All types"
 msgstr "Tous les types"
@@ -348,22 +356,22 @@ msgid "No data"
 msgstr "Aucune donnée"
 
 msgid "Search by data item name"
-msgstr "Rechercher par le nom de la donnée"
+msgstr "Rechercher par nom de l'élément de donnée"
 
 msgid "Selected Items"
 msgstr "Éléments sélectionnés"
 
 msgid "All available items are already selected"
-msgstr ""
+msgstr "Tous les éléments disponibles sont déjà sélectionnés"
 
 msgid "Calculation"
-msgstr ""
+msgstr "Calcul"
 
 msgid "Metric type"
 msgstr "Type de métrique"
 
 msgid "All metrics"
-msgstr "Tous les éléments"
+msgstr "Toutes les métriques"
 
 msgid "No items selected"
 msgstr "Aucun élément sélectionné"
@@ -375,7 +383,7 @@ msgid "No data sets found"
 msgstr "Aucun ensemble de données trouvé"
 
 msgid "No event data items found"
-msgstr "Aucun éléments de données événement trouvé"
+msgstr "Aucun éléments de données d'événement trouvé"
 
 msgid "No program indicators found"
 msgstr "Aucun Indicateurs de programme trouvé"
@@ -387,25 +395,25 @@ msgid "No indicators found for \"{{- searchTerm}}\""
 msgstr "Aucun indicateur trouvé pour \"{{- searchTerm}}\""
 
 msgid "No data sets found for \"{{- searchTerm}}\""
-msgstr "Aucune donnée trouvée pour \"{{- searchTerm}}\""
+msgstr "Aucun ensembles de donnée trouvés pour \"{{- searchTerm}}\""
 
 msgid "No event data items found for \"{{- searchTerm}}\""
-msgstr "Aucune donnée événement retrouvée pour \"{{- searchTerm}}\""
+msgstr "Aucune donnée d'événement trouvée pour \"{{- searchTerm}}\""
 
 msgid "No program indicators found for \"{{- searchTerm}}\""
 msgstr "Aucun Indicateur de programme trouvé pour \"{{- searchTerm}}\""
 
 msgid "No calculations found for \"{{- searchTerm}}\""
-msgstr ""
+msgstr "Aucun calculs trouvés pour \"{{- searchTerm}}\""
 
 msgid "Nothing found for \"{{- searchTerm}}\""
-msgstr "Rien retrouvé pour \"{{- searchTerm}}\""
+msgstr "Rien trouvé pour \"{{- searchTerm}}\""
 
 msgid "Click to choose from available options"
-msgstr ""
+msgstr "Cliquez pour choisir parmi les options disponibles"
 
 msgid "Move to {{axisName}}"
-msgstr "Déménager à {{axisName}}"
+msgstr "Déplacer vers {{axisName}}"
 
 msgid "Add to {{axisName}}"
 msgstr "Ajouter à {{axisName}} "
@@ -444,12 +452,14 @@ msgid ""
 "Select all {{- dimensionTitle}} items. With this option, new items added in "
 "the future will be automatically included."
 msgstr ""
+"Sélectionner tous {{- dimensionTitle}}les éléments. Avec cette option, les "
+"nouveaux éléments ajoutés à l'avenir seront automatiquement inclus."
 
 msgid "Manually select items..."
-msgstr ""
+msgstr "Sélection manuelles des éléments..."
 
 msgid "Nothing found in {{- dimensionTitle}}"
-msgstr ""
+msgstr "Rien n'a été trouvé dans {{- dimensionTitle}}"
 
 msgid "Search"
 msgstr "Chercher"
@@ -460,6 +470,8 @@ msgstr "Supprimer {{fileType}}"
 msgid ""
 "This {{fileType}} and related interpretations will be deleted. Continue?"
 msgstr ""
+"Ce {{fileType}}et les interprétations associées seront supprimés. Continuer "
+"?"
 
 msgid "Delete"
 msgstr "Supprimer"
@@ -471,7 +483,7 @@ msgid "New"
 msgstr "Nouveau"
 
 msgid "Open…"
-msgstr "Ouvrir"
+msgstr "Ouvrir..."
 
 msgid "Save"
 msgstr "Enregistrer"
@@ -497,6 +509,9 @@ msgstr "Obtenir le lien..."
 msgid "Open in this app"
 msgstr "Ouvrir dans cette app"
 
+msgid "Copy to clipboard"
+msgstr "Copier dans le presse-papier"
+
 msgid "Close"
 msgstr "Fermer"
 
@@ -507,7 +522,7 @@ msgid "Rename"
 msgstr "Renommer"
 
 msgid "{{- objectName}} (copy)"
-msgstr ""
+msgstr "{{- objectName}} (copier)"
 
 msgid "Save {{fileType}} as"
 msgstr "Enregistrer {{fileType}} comme"
@@ -516,15 +531,24 @@ msgid "event report"
 msgstr "Rapport d'évènements"
 
 msgid "line list"
-msgstr ""
+msgstr "Liste de lignes"
 
 msgid "map"
 msgstr "carte"
 
 msgid "visualization"
-msgstr ""
+msgstr "visualisation"
 
 msgid "Untitled {{visualizationType}}, {{date}}"
+msgstr "Sans titre {{visualizationType}}, {{date}}"
+
+msgid "Back to all interpretations"
+msgstr "Retour à toutes les interprétations"
+
+msgid "Could not load interpretation details"
+msgstr ""
+
+msgid "The request to fetch interpretation comments failed"
 msgstr ""
 
 msgid "Edit"
@@ -533,23 +557,26 @@ msgstr "Modifier"
 msgid "Write a reply"
 msgstr "Ecrire une réponse"
 
-msgid "Post reply"
+msgid "Could not post reply"
 msgstr ""
 
-msgid "Delete failed"
-msgstr "Échec de la suppression"
+msgid "Post reply"
+msgstr "Publier une réponse"
+
+msgid "Could not delete comment"
+msgstr ""
 
 msgid "Could not update comment"
 msgstr "Échec de l'actualisation du commentaire"
 
 msgid "Enter comment text"
-msgstr ""
+msgstr "Saisir le texte du commentaire"
 
 msgid "Update"
 msgstr "Mettre à jour"
 
 msgid "Viewing interpretation: {{- visualisationName}}"
-msgstr ""
+msgstr "Affichage de l'interprétation : {{- visualisationName}}"
 
 msgid "Could not load interpretation"
 msgstr "Échec du chargement de l'interprétation"
@@ -567,15 +594,26 @@ msgstr "Masquer l'interprétation"
 msgid "Write an interpretation"
 msgstr "Ecrire une interprétation"
 
+msgid "Could not post interpretation"
+msgstr ""
+
 msgid ""
 "Other people viewing this interpretation in the future may see more data."
 msgstr ""
+"Les personnes qui consulteront cette interprétation à l'avenir pourront voir"
+" un plus grand nombre de données."
 
 msgid "Post interpretation"
-msgstr ""
+msgstr "Publier une interprétation"
 
 msgid "Interpretations"
 msgstr "Interprétations"
+
+msgid "Error loading interpretations"
+msgstr ""
+
+msgid "Could not load interpretations"
+msgstr ""
 
 msgid "Reply"
 msgstr "Répondre"
@@ -596,7 +634,7 @@ msgid "Like"
 msgstr "J'aime"
 
 msgid "See interpretation"
-msgstr ""
+msgstr "Afficher l'interprétation"
 
 msgid "Open in app"
 msgstr "Ouvrir dans l'application"
@@ -604,14 +642,20 @@ msgstr "Ouvrir dans l'application"
 msgid "Share"
 msgstr "Partager"
 
+msgid "Could not delete interpretation"
+msgstr ""
+
 msgid "Manage sharing"
 msgstr "Gérer le partage"
+
+msgid "Could not update interpretation text"
+msgstr ""
 
 msgid "Could not update interpretation"
 msgstr "Échec de l'actualisation de l'interprétation"
 
 msgid "Enter interpretation text"
-msgstr ""
+msgstr "Saisir le texte de l'interprétation"
 
 msgid "Not available offline"
 msgstr "Non disponible hors ligne"
@@ -620,13 +664,13 @@ msgid "Anyone"
 msgstr "Toute personne"
 
 msgid "Only you"
-msgstr ""
+msgstr "Vous uniquement"
 
 msgid "Others"
 msgstr "Autres"
 
 msgid "Not supported by this app yet"
-msgstr ""
+msgstr "Pas encore pris en charge par cette application"
 
 msgid "Filter by name"
 msgstr "Filtrer par nom"
@@ -641,54 +685,64 @@ msgid "Clear filters"
 msgstr "Effacer les filtres"
 
 msgid "{{firstItemIndex}}-{{lastItemIndex}} of {{totalNumberOfItems}}"
-msgstr ""
+msgstr "{{firstItemIndex}}-{{lastItemIndex}} de {{totalNumberOfItems}}"
 
 msgid "Open"
 msgstr "Ouvrir"
 
 msgid "Couldn't load items"
-msgstr ""
+msgstr "Impossible de charger les éléments"
 
 msgid ""
 "There was a problem loading items. Try again or contact your system "
 "administrator."
 msgstr ""
+"Un problème est survenu lors du chargement des éléments. Veuillez réessayer "
+"ou contacter votre administrateur système."
 
 msgid "No items found. Create a new to get started."
-msgstr ""
+msgstr "Aucun élément n'a été trouvé. Créez en un nouveau pour commencer."
 
 msgid ""
 "No items found. Try adjusting your search or filter options to find what "
 "you're looking for."
 msgstr ""
+"Aucun élément trouvé. Essayez d'ajuster vos options de recherche ou de "
+"filtrage pour trouver ce que vous cherchez."
 
 msgid "Create new"
 msgstr "Créer nouveau"
 
 msgid "Open a visualization"
-msgstr ""
+msgstr "Ouvrir une visualisation"
 
 msgid "Loading visualizations"
-msgstr ""
+msgstr "Télécharger des visualisations"
 
 msgid "Couldn't load visualizations"
-msgstr ""
+msgstr "Impossible de charger les visualisations"
 
 msgid ""
 "There was a problem loading visualizations. Try again or contact your system"
 " administrator."
 msgstr ""
+"Un problème est survenu lors du chargement des visualisations. Veuillez "
+"réessayer ou contacter votre administrateur système."
 
 msgid "No visualizations found. Click New visualization to get started."
 msgstr ""
+"Aucune visualisation trouvée. Cliquez sur Nouvelle visualisation pour "
+"commencer."
 
 msgid ""
 "No visualizations found. Try adjusting your search or filter options to find"
 " what you're looking for."
 msgstr ""
+"Aucune visualisation trouvée. Essayez d'ajuster vos options de recherche ou "
+"de filtrage pour trouver ce que vous cherchez."
 
 msgid "New visualization"
-msgstr ""
+msgstr "Nouvelle visualisation"
 
 msgid "Open a map"
 msgstr "Ouvrir une carte"
@@ -703,6 +757,8 @@ msgid ""
 "There was a problem loading maps. Try again or contact your system "
 "administrator."
 msgstr ""
+"Un problème est survenu lors du chargement des cartes. Veuillez réessayer ou"
+" contacter votre administrateur système."
 
 msgid "No maps found. Click New map to get started."
 msgstr "Aucune carte trouvée. Cliquez sur Nouvelle carte pour commencer."
@@ -711,55 +767,63 @@ msgid ""
 "No maps found. Try adjusting your search or filter options to find what "
 "you're looking for."
 msgstr ""
+"Aucune carte trouvée. Essayez d'ajuster vos options de recherche ou de "
+"filtrage pour trouver ce que vous cherchez."
 
 msgid "New map"
-msgstr ""
+msgstr "Nouvelle carte"
 
 msgid "Open a line list"
-msgstr ""
+msgstr "Ouvrir une liste de lignes"
 
 msgid "Loading line lists"
-msgstr ""
+msgstr "Chargement des listes de lignes"
 
 msgid "Couldn't load line lists"
-msgstr ""
+msgstr "Impossible de charger les listes de lignes"
 
 msgid ""
 "There was a problem loading line lists. Try again or contact your system "
 "administrator."
 msgstr ""
+"Un problème est survenu lors du chargement des listes de lignes. Veuillez "
+"réessayer ou contacter votre administrateur système."
 
 msgid "No line lists found. Click New line list to get started."
 msgstr ""
+"Aucune liste de lignes trouvée. Cliquez sur Nouvelle liste de lignes pour "
+"commencer."
 
 msgid ""
 "No line lists found. Try adjusting your search or filter options to find "
 "what you're looking for."
 msgstr ""
+"Aucune  liste de lignes trouvée. Essayez d'ajuster vos options de recherche "
+"ou de filtrage pour trouver ce que vous cherchez."
 
 msgid "New line list"
-msgstr ""
+msgstr "Nouvelle liste de lignes"
 
 msgid "Hide"
 msgstr "Masquer"
 
 msgid "{{count}} org units"
 msgid_plural "{{count}} org units"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "{{count}} unité d'org"
+msgstr[1] "{{count}} unités d'org"
+msgstr[2] "{{count}} unités d'org"
 
 msgid "{{count}} levels"
 msgid_plural "{{count}} levels"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "{{count}} niveau"
+msgstr[1] "{{count}} niveaux"
+msgstr[2] "{{count}} niveaux"
 
 msgid "{{count}} groups"
 msgid_plural "{{count}} groups"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "{{count}} groupe"
+msgstr[1] "{{count}} groupes"
+msgstr[2] "{{count}} groupes"
 
 msgid "Selected: {{commaSeparatedListOfOrganisationUnits}}"
 msgstr "Sélectionné : {{commaSeparatedListOfOrganisationUnits}}"
@@ -789,7 +853,7 @@ msgid "Year"
 msgstr "Année"
 
 msgid "Select year"
-msgstr "Sélectionnez année"
+msgstr "Sélectionnez une année"
 
 msgid "Period"
 msgstr "Période"
@@ -846,16 +910,16 @@ msgid "Yearly"
 msgstr "Annuel"
 
 msgid "Financial year (Start November)"
-msgstr "Fiscale Novembre"
+msgstr "Année fiscale (Débutant par novembre)"
 
 msgid "Financial year (Start October)"
-msgstr "Financière Octobre"
+msgstr "Année fiscale (Débutant par octobre)"
 
 msgid "Financial year (Start July)"
-msgstr "Financière Juillet"
+msgstr "Année fiscale (Débutant par juillet)"
 
 msgid "Financial year (Start April)"
-msgstr "Financière Avril"
+msgstr "Année fiscale (Débutant par avril)"
 
 msgid "Today"
 msgstr "Aujourd'hui"
@@ -966,10 +1030,10 @@ msgid "This financial year"
 msgstr "Année fiscale en cours"
 
 msgid "Last financial year"
-msgstr "Dernière année financière"
+msgstr "Année fiscale précédente"
 
 msgid "Last 5 financial years"
-msgstr "5 dernières années financières"
+msgstr "5 dernières années fiscales"
 
 msgid "This year"
 msgstr "Année en cours"
@@ -1011,67 +1075,67 @@ msgid "Years"
 msgstr "Années"
 
 msgid "Value: {{value}}"
-msgstr ""
+msgstr "Valeur : {{value}}"
 
 msgid "Bold text"
 msgstr "Texte en gras"
 
 msgid "Italic text"
-msgstr ""
+msgstr "Texte en italique"
 
 msgid "Link to a URL"
-msgstr ""
+msgstr "Lien vers une URL"
 
 msgid "Mention a user"
-msgstr ""
+msgstr "Mentionner un utilisateur"
 
 msgid "Add emoji"
-msgstr ""
+msgstr "Ajouter un emoji"
 
 msgid "Preview"
 msgstr "Aperçu"
 
 msgid "Back to write mode"
-msgstr ""
+msgstr "Retour au mode saisie"
 
 msgid "Interpretations and details"
-msgstr ""
+msgstr "Interprétations et détails"
 
 msgid "Translating to"
-msgstr ""
+msgstr "Traduire en"
 
 msgid "Choose a locale"
-msgstr ""
+msgstr "Choisir une langue"
 
 msgid "Base locale reference"
-msgstr ""
+msgstr "Référence de la langue source"
 
 msgid "Choose a locale to translate from the menu above"
-msgstr ""
+msgstr "Choisissez une langue pour la traduction dans le menu ci-dessus."
 
 msgid "Translate: {{objectName}}"
-msgstr ""
+msgstr "Traduire : {{objectName}}"
 
 msgid "Save translations"
-msgstr ""
+msgstr "Sauvegarder les traductions"
 
 msgid "Cannot save while offline"
-msgstr ""
+msgstr "Impossible de sauvegarder en mode hors ligne"
 
 msgid "Could not load translations"
-msgstr ""
+msgstr "Impossible de charger les traductions"
 
 msgid "Retry"
-msgstr ""
+msgstr "Réessayer"
 
 msgid "Too many results. Try refining the search."
-msgstr ""
+msgstr "Trop de résultats. Essayez d'affiner la recherche."
 
 msgid "Search for a user"
-msgstr ""
+msgstr "Rechercher un utilisateur"
 
 msgid "Searching for \"{{- searchText}}\""
-msgstr ""
+msgstr "Recherche de \"{{- searchText}}\""
 
 msgid "No results found"
 msgstr "Aucun résultat trouvé"
@@ -1095,13 +1159,13 @@ msgid "Reporting rate"
 msgstr "Taux de déclaration"
 
 msgid "Reporting rate on time"
-msgstr "Taux de notification à temps"
+msgstr "Taux de déclaration dans les délais"
 
 msgid "Actual reports"
 msgstr "Rapports réels"
 
 msgid "Actual reports on time"
-msgstr "Rapports réels à temps"
+msgstr "Rapports réels dans les délais"
 
 msgid "Expected reports"
 msgstr "Rapports attendus"
@@ -1161,13 +1225,13 @@ msgid "Loading programs"
 msgstr "Chargement des programmes"
 
 msgid "Program indicators"
-msgstr "Program indicators"
+msgstr "Indicateurs de programme"
 
 msgid "Program indicator"
-msgstr "Gestion des indicateurs de programme"
+msgstr "Indicateur de programme"
 
 msgid "Calculations"
-msgstr ""
+msgstr "Calculs"
 
 msgid "Option"
 msgstr "Option"
@@ -1177,24 +1241,26 @@ msgstr "Nombre"
 
 msgid "Formula is empty. Add items to the formula from the lists on the left."
 msgstr ""
+"La formule est vide. Ajoutez des éléments à la formule à partir des listes à"
+" gauche."
 
 msgid "Consecutive math operators"
-msgstr ""
+msgstr "Opérateurs mathématiques consécutifs"
 
 msgid "Consecutive data elements"
-msgstr ""
+msgstr "Éléments de données consécutifs"
 
 msgid "Starts or ends with a math operator"
-msgstr ""
+msgstr "Commencer ou terminer par un opérateur mathématique"
 
 msgid "Empty parentheses"
-msgstr ""
+msgstr "Parenthèses vides"
 
 msgid "Missing right parenthesis )"
-msgstr ""
+msgstr "Parenthèse droite manquante )"
 
 msgid "Missing left parenthesis ("
-msgstr ""
+msgstr "Parenthèse gauche manquante ("
 
 msgid "Extra Small"
 msgstr "Super petit"
@@ -1203,7 +1269,7 @@ msgid "Small"
 msgstr "Petit"
 
 msgid "Regular"
-msgstr "Régulier"
+msgstr "Normal"
 
 msgid "Large"
 msgstr "Grand"
@@ -1275,7 +1341,7 @@ msgid "{{thresholdFactor}} × Z-score high"
 msgstr "{{thresholdFactor}} × Z-score élevé"
 
 msgid "Not applicable"
-msgstr ""
+msgstr "Non applicable"
 
 msgid "Data"
 msgstr "Données"
@@ -1284,7 +1350,10 @@ msgid "Organisation unit"
 msgstr "Unité d'organisation"
 
 msgid "Assigned Categories"
-msgstr "Catégories attribuées"
+msgstr "Catégories assignées"
+
+msgid "No value"
+msgstr "Pas de valeur"
 
 msgid "Text"
 msgstr "Texte"
@@ -1293,7 +1362,7 @@ msgid "Long text"
 msgstr "Texte long"
 
 msgid "Multi text"
-msgstr ""
+msgstr "Texte multiple"
 
 msgid "Letter"
 msgstr "Lettre"
@@ -1308,7 +1377,7 @@ msgid "Yes/No"
 msgstr "Oui / Non"
 
 msgid "Yes Only"
-msgstr "Oui seulement"
+msgstr "Oui uniquement"
 
 msgid "Date"
 msgstr "Date"
@@ -1320,7 +1389,7 @@ msgid "Time"
 msgstr "Heure"
 
 msgid "Unit interval"
-msgstr "Intervalle unités"
+msgstr "Intervalle de l'unité"
 
 msgid "Percentage"
 msgstr "Pourcentage"
@@ -1365,7 +1434,7 @@ msgid "Pivot table"
 msgstr "Tableau croisé dynamique"
 
 msgid "Area"
-msgstr "Aire"
+msgstr "Zone"
 
 msgid "Stacked area"
 msgstr "Zone empilée"
@@ -1410,10 +1479,10 @@ msgid "Single value"
 msgstr "Valeur unique"
 
 msgid "Outlier table"
-msgstr ""
+msgstr "Tableau des valeurs atypiques"
 
 msgid "All charts"
-msgstr ""
+msgstr "Tous les graphiques"
 
 msgid "Map"
 msgstr "Carte"
@@ -1444,9 +1513,9 @@ msgstr "Axe {{axisId}}"
 
 msgid "{{count}} items"
 msgid_plural "{{count}} items"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "{{count}} article"
+msgstr[1] "{{count}} articles"
+msgstr[2] "{{count}} éléments"
 
 msgid "Reset zoom"
 msgstr "Réinitialiser le zoom"

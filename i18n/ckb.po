@@ -1,14 +1,14 @@
 # 
 # Translators:
-# Viktor Varland <viktor@dhis2.org>, 2022
 # KRG HIS <antonia.bezenchek@informa.pro>, 2025
+# Viktor Varland <viktor@dhis2.org>, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2024-12-19T10:28:15.132Z\n"
+"POT-Creation-Date: 2025-09-09T09:32:04.677Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: KRG HIS <antonia.bezenchek@informa.pro>, 2025\n"
+"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2025\n"
 "Language-Team: Central Kurdish (https://app.transifex.com/hisp-uio/teams/100509/ckb/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -157,21 +157,6 @@ msgstr ""
 msgid "Math operators"
 msgstr ""
 
-msgid "Data Type"
-msgstr ""
-
-msgid "Only {{dataType}} can be used in {{visType}}"
-msgstr ""
-
-msgid "All types"
-msgstr ""
-
-msgid "Disaggregation"
-msgstr ""
-
-msgid "No data"
-msgstr ""
-
 msgid "Expression description"
 msgstr ""
 
@@ -316,13 +301,58 @@ msgstr ""
 msgid "Filter"
 msgstr ""
 
+msgid "All available options are already selected"
+msgstr ""
+
+msgid "No available options for this item"
+msgstr ""
+
+msgid "Search by option name"
+msgstr ""
+
+msgid "Back to all items"
+msgstr ""
+
+msgid "Options"
+msgstr ""
+
+msgid "Selected items"
+msgstr ""
+
+msgid "Data Type"
+msgstr ""
+
+msgid "Only {{dataType}} can be used in {{visType}}"
+msgstr ""
+
+msgid "All types"
+msgstr ""
+
+msgid "Disaggregation"
+msgstr ""
+
+msgid "No data"
+msgstr ""
+
 msgid "Search by data item name"
 msgstr ""
 
-msgid "No items selected"
+msgid "Selected Items"
 msgstr ""
 
-msgid "Selected Items"
+msgid "All available items are already selected"
+msgstr ""
+
+msgid "Calculation"
+msgstr ""
+
+msgid "Metric type"
+msgstr ""
+
+msgid "All metrics"
+msgstr ""
+
+msgid "No items selected"
 msgstr ""
 
 msgid "No indicators found"
@@ -358,13 +388,7 @@ msgstr ""
 msgid "Nothing found for \"{{- searchTerm}}\""
 msgstr ""
 
-msgid "Calculation"
-msgstr ""
-
-msgid "Metric type"
-msgstr ""
-
-msgid "All metrics"
+msgid "Click to choose from available options"
 msgstr ""
 
 msgid "Move to {{axisName}}"
@@ -417,9 +441,6 @@ msgstr ""
 msgid "Search"
 msgstr "گەڕان"
 
-msgid "Nothing found for {{- searchTerm}}"
-msgstr ""
-
 msgid "Delete {{fileType}}"
 msgstr ""
 
@@ -463,6 +484,9 @@ msgstr ""
 msgid "Open in this app"
 msgstr ""
 
+msgid "Copy to clipboard"
+msgstr ""
+
 msgid "Close"
 msgstr "داخستن"
 
@@ -490,16 +514,31 @@ msgstr ""
 msgid "visualization"
 msgstr ""
 
+msgid "Untitled {{visualizationType}}, {{date}}"
+msgstr ""
+
+msgid "Back to all interpretations"
+msgstr ""
+
+msgid "Could not load interpretation details"
+msgstr ""
+
+msgid "The request to fetch interpretation comments failed"
+msgstr ""
+
 msgid "Edit"
 msgstr "دةستكاري"
 
 msgid "Write a reply"
 msgstr ""
 
+msgid "Could not post reply"
+msgstr ""
+
 msgid "Post reply"
 msgstr ""
 
-msgid "Delete failed"
+msgid "Could not delete comment"
 msgstr ""
 
 msgid "Could not update comment"
@@ -528,6 +567,9 @@ msgstr ""
 msgid "Write an interpretation"
 msgstr ""
 
+msgid "Could not post interpretation"
+msgstr ""
+
 msgid ""
 "Other people viewing this interpretation in the future may see more data."
 msgstr ""
@@ -536,6 +578,12 @@ msgid "Post interpretation"
 msgstr ""
 
 msgid "Interpretations"
+msgstr ""
+
+msgid "Error loading interpretations"
+msgstr ""
+
+msgid "Could not load interpretations"
 msgstr ""
 
 msgid "Reply"
@@ -564,7 +612,13 @@ msgstr ""
 msgid "Share"
 msgstr ""
 
+msgid "Could not delete interpretation"
+msgstr ""
+
 msgid "Manage sharing"
+msgstr ""
+
+msgid "Could not update interpretation text"
 msgstr ""
 
 msgid "Could not update interpretation"
@@ -698,9 +752,6 @@ msgid ""
 msgstr ""
 
 msgid "New line list"
-msgstr ""
-
-msgid "Options"
 msgstr ""
 
 msgid "Hide"
@@ -1129,6 +1180,9 @@ msgstr ""
 msgid "Calculations"
 msgstr ""
 
+msgid "Option"
+msgstr ""
+
 msgid "Number"
 msgstr ""
 
@@ -1242,6 +1296,9 @@ msgstr "يةكةي ريكخراو"
 
 msgid "Assigned Categories"
 msgstr ""
+
+msgid "No value"
+msgstr "هيج بر"
 
 msgid "Text"
 msgstr ""
@@ -1370,6 +1427,9 @@ msgid "Outlier table"
 msgstr ""
 
 msgid "All charts"
+msgstr ""
+
+msgid "Map"
 msgstr ""
 
 msgid "{{seriesName}} (trend)"

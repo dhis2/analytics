@@ -4,16 +4,16 @@
 # Phouthasinh PHEUAYSITHIPHONE, 2023
 # Namwan Chanthavisouk, 2025
 # Thuy Nguyen <thuynguyen@hispvietnam.org>, 2025
+# Viktor Varland <viktor@dhis2.org>, 2025
 # Saysamone Sibounma, 2025
 # Philip Larsen Donnelly, 2025
-# Viktor Varland <viktor@dhis2.org>, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2025-04-15T13:34:54.995Z\n"
+"POT-Creation-Date: 2025-09-09T09:32:04.677Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2025\n"
+"Last-Translator: Philip Larsen Donnelly, 2025\n"
 "Language-Team: Lao (https://app.transifex.com/hisp-uio/teams/100509/lo/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -492,6 +492,9 @@ msgstr "ເອົາລິ້ງ..."
 msgid "Open in this app"
 msgstr "ເປີດແອ໋ບນີ້"
 
+msgid "Copy to clipboard"
+msgstr "ສຳເນົາໄປຫາ ຄິບບອດ"
+
 msgid "Close"
 msgstr "ປິດ"
 
@@ -522,17 +525,29 @@ msgstr "ການສ້າງພາບຂໍ້ມູນ"
 msgid "Untitled {{visualizationType}}, {{date}}"
 msgstr ""
 
+msgid "Back to all interpretations"
+msgstr ""
+
+msgid "Could not load interpretation details"
+msgstr ""
+
+msgid "The request to fetch interpretation comments failed"
+msgstr ""
+
 msgid "Edit"
 msgstr "ແກ້ໄຂ"
 
 msgid "Write a reply"
 msgstr "ຂຽນການຕອບກັບ"
 
+msgid "Could not post reply"
+msgstr ""
+
 msgid "Post reply"
 msgstr "ຕອບກ່ອນໜ້າ"
 
-msgid "Delete failed"
-msgstr "ການລົບລົ້ມເຫຼວ"
+msgid "Could not delete comment"
+msgstr ""
 
 msgid "Could not update comment"
 msgstr "ບໍ່ສາມາດອັບເດດຄຳເຫັນໄດ້"
@@ -560,6 +575,9 @@ msgstr "ເຊື່ອງຂໍ້ຄວາມ"
 msgid "Write an interpretation"
 msgstr "ຂຽນຂໍ້ຄວາມ"
 
+msgid "Could not post interpretation"
+msgstr ""
+
 msgid ""
 "Other people viewing this interpretation in the future may see more data."
 msgstr "ຄົນອື່ນໆທີ່ເບິ່ງຂໍ້ຄວາມໃນຄັ້ງໜ້າອາດຈະເຫັນຂໍ້ມູນເພີ່ມ"
@@ -569,6 +587,12 @@ msgstr "ຮັບຂໍ້ມູນກ່ອນໜ້າ"
 
 msgid "Interpretations"
 msgstr "ການແປຂໍ້ມູນ"
+
+msgid "Error loading interpretations"
+msgstr ""
+
+msgid "Could not load interpretations"
+msgstr ""
 
 msgid "Reply"
 msgstr "ຕອບກັບ"
@@ -595,8 +619,14 @@ msgstr "ເປີດໃນແອ໋ບ"
 msgid "Share"
 msgstr "ເຜີຍແຜ່"
 
+msgid "Could not delete interpretation"
+msgstr ""
+
 msgid "Manage sharing"
 msgstr "ຈັດການການເຜີຍແຜ່"
+
+msgid "Could not update interpretation text"
+msgstr ""
 
 msgid "Could not update interpretation"
 msgstr "ບໍ່ສາມາດອັບເດດຂໍ້ຄວາມ"
@@ -1279,6 +1309,9 @@ msgstr "​ຫົວ​ໜ່ວຍ​ການ​ຈັດ​ຕັ້ງ"
 
 msgid "Assigned Categories"
 msgstr "ຈັດໝວດໝູ່"
+
+msgid "No value"
+msgstr "ບໍ່ມີຂໍ້ມູນ"
 
 msgid "Text"
 msgstr "ຂໍ້ຄວາມ"
