@@ -18,6 +18,7 @@ const PivotTable = ({
 }) => {
     const containerRef = useRef(undefined)
     const { width, height } = useParentSize(containerRef, renderCounter)
+    console.log('jj anly PivotTable render', width)
 
     const engine = useMemo(
         () => new PivotTableEngine(visualization, data, legendSets),
@@ -40,12 +41,12 @@ const PivotTable = ({
                 width={width}
                 height={height}
             >
-                <PivotTableHead
+                {/* <PivotTableHead
                     clippingResult={clippingResult}
                     width={width}
                     sortBy={sortBy}
                     onSortByColumn={onSortByColumn}
-                />
+                /> */}
                 <PivotTableBody
                     clippingResult={clippingResult}
                     onToggleContextualMenu={onToggleContextualMenu}
