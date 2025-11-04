@@ -74,6 +74,17 @@ const InterpretationModal = ({
         }
     }, [interpretation?.created])
 
+    const displayProperty = useMemo(
+        () =>
+            // DV and EVER apps
+            currentUser.settings?.displayProperty ??
+            // LL app
+            currentUser.settings?.keyAnalysisDisplayProperty ??
+            // Maps app
+            currentUser.keyAnalysisDisplayProperty,
+        [currentUser]
+    )
+
     return (
         <>
             {loadingInProgress && (
@@ -126,10 +137,7 @@ const InterpretationModal = ({
                                         onResponsesReceived={
                                             onResponsesReceived
                                         }
-                                        displayProperty={
-                                            currentUser.settings
-                                                ?.keyAnalysisDisplayProperty
-                                        }
+                                        displayProperty={displayProperty}
                                         isInModal={true}
                                     />
                                 </div>
