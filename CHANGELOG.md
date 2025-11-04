@@ -1,3 +1,12 @@
+## [29.0.3](https://github.com/dhis2/analytics/compare/v29.0.2...v29.0.3) (2025-11-04)
+
+
+### Bug Fixes
+
+* trigger publish ([#1798](https://github.com/dhis2/analytics/issues/1798)) ([d5a2c1c](https://github.com/dhis2/analytics/commit/d5a2c1c5d95b48d2d277d97b28080b8766d20feb))
+* **translations:** sync translations from transifex (master) ([#1786](https://github.com/dhis2/analytics/issues/1786)) ([eb61d5b](https://github.com/dhis2/analytics/commit/eb61d5b8e91f80f7f5c90fe911856c2d36a6d247))
+* interpretations panel not showing for pivot tables ([#1796](https://github.com/dhis2/analytics/issues/1796)) ([2b0bf0c](https://github.com/dhis2/analytics/commit/2b0bf0c8ef64288b2a6537c0bfcb6ff5c41cbbd2))
+
 ## [29.0.2](https://github.com/dhis2/analytics/compare/v29.0.1...v29.0.2) (2025-10-30)
 
 
