@@ -19,7 +19,8 @@ export const useParentSize = (
             return
         }
 
-        const onResize = () => {
+        const onResize = (e) => {
+            e.stopPropagation()
             setSize({
                 width: el.clientWidth,
                 height: el.clientHeight,
