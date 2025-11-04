@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2025-03-18T12:46:14.410Z\n"
+"POT-Creation-Date: 2025-09-05T07:32:59.321Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: Philip Larsen Donnelly, 2025\n"
 "Language-Team: Burmese (https://app.transifex.com/hisp-uio/teams/100509/my/)\n"
@@ -484,6 +484,9 @@ msgstr ""
 msgid "Open in this app"
 msgstr ""
 
+msgid "Copy to clipboard"
+msgstr ""
+
 msgid "Close"
 msgstr "ပိတ်သည်"
 
@@ -509,6 +512,9 @@ msgid "map"
 msgstr ""
 
 msgid "visualization"
+msgstr ""
+
+msgid "Untitled {{visualizationType}}, {{date}}"
 msgstr ""
 
 msgid "Edit"
@@ -1260,6 +1266,9 @@ msgstr "Organisation unit"
 msgid "Assigned Categories"
 msgstr ""
 
+msgid "No value"
+msgstr "တန်ဖိုးမရှိပါ။"
+
 msgid "Text"
 msgstr "စာရေးသားသည်"
 
@@ -1387,6 +1396,9 @@ msgid "Outlier table"
 msgstr ""
 
 msgid "All charts"
+msgstr ""
+
+msgid "Map"
 msgstr ""
 
 msgid "{{seriesName}} (trend)"

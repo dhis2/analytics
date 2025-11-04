@@ -2,12 +2,13 @@
 # Translators:
 # Viktor Varland <viktor@dhis2.org>, 2025
 # channara rin, 2025
+# Em Le <em.hispvietnam@gmail.com>, 2025
 # Philip Larsen Donnelly, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2024-12-19T10:28:15.132Z\n"
+"POT-Creation-Date: 2025-09-05T07:32:59.321Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: Philip Larsen Donnelly, 2025\n"
 "Language-Team: Khmer (https://app.transifex.com/hisp-uio/teams/100509/km/)\n"
@@ -36,7 +37,7 @@ msgid "Not shared with any users or groups"
 msgstr ""
 
 msgid "No description"
-msgstr ""
+msgstr "មិនមានការពិពណ៌នា"
 
 msgid "Last updated {{time}}"
 msgstr ""
@@ -85,7 +86,7 @@ msgid "This app could not retrieve required data."
 msgstr ""
 
 msgid "Network error"
-msgstr ""
+msgstr "បណ្ដាញមានបញ្ហា"
 
 msgid "Data / Edit calculation"
 msgstr ""
@@ -157,21 +158,6 @@ msgstr ""
 msgid "Math operators"
 msgstr ""
 
-msgid "Data Type"
-msgstr ""
-
-msgid "Only {{dataType}} can be used in {{visType}}"
-msgstr ""
-
-msgid "All types"
-msgstr ""
-
-msgid "Disaggregation"
-msgstr ""
-
-msgid "No data"
-msgstr ""
-
 msgid "Expression description"
 msgstr ""
 
@@ -197,7 +183,7 @@ msgid "Value type"
 msgstr "Value Type"
 
 msgid "Aggregation type"
-msgstr ""
+msgstr "ប្រភេទទិន្នន័យសរុប"
 
 msgid "Category combo"
 msgstr ""
@@ -275,7 +261,7 @@ msgid "Description"
 msgstr "ការ​ពិពណ៌នា"
 
 msgid "Code"
-msgstr ""
+msgstr "លេខកូដ"
 
 msgid "ID"
 msgstr "​លេខ​សម្គាល់"
@@ -290,7 +276,7 @@ msgid "Created by"
 msgstr ""
 
 msgid "Custom"
-msgstr ""
+msgstr "កែសម្រួលផ្ទាល់ខ្លួន"
 
 msgid "Program"
 msgstr ""
@@ -314,15 +300,60 @@ msgid "Expression"
 msgstr "កន្សោមប្រមាណវិធី"
 
 msgid "Filter"
+msgstr "ការច្រោះ"
+
+msgid "All available options are already selected"
+msgstr ""
+
+msgid "No available options for this item"
+msgstr ""
+
+msgid "Search by option name"
+msgstr ""
+
+msgid "Back to all items"
+msgstr ""
+
+msgid "Options"
+msgstr "ជម្រើស"
+
+msgid "Selected items"
+msgstr ""
+
+msgid "Data Type"
+msgstr ""
+
+msgid "Only {{dataType}} can be used in {{visType}}"
+msgstr ""
+
+msgid "All types"
+msgstr ""
+
+msgid "Disaggregation"
+msgstr ""
+
+msgid "No data"
 msgstr ""
 
 msgid "Search by data item name"
 msgstr ""
 
-msgid "No items selected"
+msgid "Selected Items"
 msgstr ""
 
-msgid "Selected Items"
+msgid "All available items are already selected"
+msgstr ""
+
+msgid "Calculation"
+msgstr ""
+
+msgid "Metric type"
+msgstr ""
+
+msgid "All metrics"
+msgstr ""
+
+msgid "No items selected"
 msgstr ""
 
 msgid "No indicators found"
@@ -358,20 +389,14 @@ msgstr ""
 msgid "Nothing found for \"{{- searchTerm}}\""
 msgstr ""
 
-msgid "Calculation"
-msgstr ""
-
-msgid "Metric type"
-msgstr ""
-
-msgid "All metrics"
+msgid "Click to choose from available options"
 msgstr ""
 
 msgid "Move to {{axisName}}"
 msgstr ""
 
 msgid "Add to {{axisName}}"
-msgstr ""
+msgstr "បន្ថែមទៅកាន់ {{axisName}}"
 
 msgid "Not available for {{visualizationType}}"
 msgstr ""
@@ -380,25 +405,25 @@ msgid "Remove Assigned Categories"
 msgstr ""
 
 msgid "Add Assigned Categories"
-msgstr ""
+msgstr "បន្ថែម Assigned Cateogries"
 
 msgid "Remove"
 msgstr "យកចេញ"
 
 msgid "Filter dimensions"
-msgstr ""
+msgstr "វិមាត្រសម្រាប់ច្រោះ"
 
 msgid "Main dimensions"
-msgstr ""
+msgstr "វិមាត្រសំខាន់ៗ"
 
 msgid "Your dimensions"
-msgstr ""
+msgstr "វិមាត្ររបស់អ្នក"
 
 msgid "Dimension recommended with selected data"
 msgstr ""
 
 msgid "All items"
-msgstr ""
+msgstr "គ្រប់ធាតុ"
 
 msgid "Automatically include all items"
 msgstr ""
@@ -416,9 +441,6 @@ msgstr ""
 
 msgid "Search"
 msgstr "ស្វែងរក"
-
-msgid "Nothing found for {{- searchTerm}}"
-msgstr ""
 
 msgid "Delete {{fileType}}"
 msgstr ""
@@ -463,6 +485,9 @@ msgstr ""
 msgid "Open in this app"
 msgstr ""
 
+msgid "Copy to clipboard"
+msgstr ""
+
 msgid "Close"
 msgstr "បិទ"
 
@@ -488,6 +513,9 @@ msgid "map"
 msgstr ""
 
 msgid "visualization"
+msgstr ""
+
+msgid "Untitled {{visualizationType}}, {{date}}"
 msgstr ""
 
 msgid "Edit"
@@ -573,7 +601,7 @@ msgid "Enter interpretation text"
 msgstr ""
 
 msgid "Not available offline"
-msgstr ""
+msgstr "មិនអាចប្រើប្រាស់បាននៅពេលបណ្ដាញត្រូវបានផ្តាច់"
 
 msgid "Anyone"
 msgstr ""
@@ -699,11 +727,8 @@ msgstr ""
 msgid "New line list"
 msgstr ""
 
-msgid "Options"
-msgstr ""
-
 msgid "Hide"
-msgstr ""
+msgstr "លាក់"
 
 msgid "{{count}} org units"
 msgid_plural "{{count}} org units"
@@ -724,13 +749,13 @@ msgid "Nothing selected"
 msgstr ""
 
 msgid "User organisation unit"
-msgstr ""
+msgstr "មូលដ្ឋានសុខាភិបាល របស់អ្នកប្រើប្រាស់"
 
 msgid "User sub-units"
-msgstr ""
+msgstr "User sub-units"
 
 msgid "User sub-x2-units"
-msgstr ""
+msgstr "User sub-x2-units"
 
 msgid "Select a level"
 msgstr ""
@@ -814,19 +839,19 @@ msgid "Financial year (Start April)"
 msgstr ""
 
 msgid "Today"
-msgstr ""
+msgstr "ថ្ងៃនេះ"
 
 msgid "Yesterday"
 msgstr "កាលពីម្សិលមិញ"
 
 msgid "Last 3 days"
-msgstr ""
+msgstr "៣ថ្ងៃចុងក្រោយ"
 
 msgid "Last 7 days"
-msgstr ""
+msgstr "៧ថ្ងៃចុងក្រោយ"
 
 msgid "Last 14 days"
-msgstr ""
+msgstr "១៤ថ្ងៃចុងក្រោយ"
 
 msgid "Last 30 days"
 msgstr ""
@@ -841,22 +866,22 @@ msgid "Last 180 days"
 msgstr ""
 
 msgid "This week"
-msgstr ""
+msgstr "សប្តាហ៍នេះ"
 
 msgid "Last week"
-msgstr ""
+msgstr "សប្តាហ៍មុន"
 
 msgid "Last 4 weeks"
-msgstr ""
+msgstr "៤សប្តាហ៍ចុងក្រោយ"
 
 msgid "Last 12 weeks"
-msgstr ""
+msgstr "១២សប្តាហ៍ចុងក្រោយ"
 
 msgid "Last 52 weeks"
-msgstr ""
+msgstr "៥២សប្តាហ៍ចុងក្រោយ"
 
 msgid "Weeks this year"
-msgstr ""
+msgstr "ជាសប្ដាហ៍ក្នុងឆ្នាំនេះ"
 
 msgid "This bi-week"
 msgstr ""
@@ -868,22 +893,22 @@ msgid "Last 4 bi-weeks"
 msgstr ""
 
 msgid "This month"
-msgstr ""
+msgstr "ខែនេះ"
 
 msgid "Last month"
-msgstr ""
+msgstr "ខែមុន"
 
 msgid "Last 3 months"
-msgstr ""
+msgstr "៣ខែចុងក្រោយ"
 
 msgid "Last 6 months"
-msgstr ""
+msgstr "៦ខែចុងក្រោយ"
 
 msgid "Last 12 months"
-msgstr ""
+msgstr "១២ខែចុងក្រោយ"
 
 msgid "Months this year"
-msgstr ""
+msgstr "ជាខែក្នុងឆ្នាំនេះ"
 
 msgid "This bi-month"
 msgstr ""
@@ -898,43 +923,43 @@ msgid "Bi-months this year"
 msgstr ""
 
 msgid "This quarter"
-msgstr ""
+msgstr "ត្រីមាសនេះ"
 
 msgid "Last quarter"
-msgstr ""
+msgstr "ត្រីមាសចុងក្រោយ"
 
 msgid "Last 4 quarters"
-msgstr ""
+msgstr "៤ត្រីមាសចុងក្រោយ"
 
 msgid "Quarters this year"
-msgstr ""
+msgstr "ជាត្រីមាសក្នុងឆ្នាំនេះ"
 
 msgid "This six-month"
-msgstr ""
+msgstr "ឆមាសនេះ"
 
 msgid "Last six-month"
-msgstr ""
+msgstr "ឆមាសមុន"
 
 msgid "Last 2 six-month"
 msgstr ""
 
 msgid "This financial year"
-msgstr ""
+msgstr "ឆ្នាំហិរញ្ញវត្ថុនេះ"
 
 msgid "Last financial year"
-msgstr ""
+msgstr "ឆ្នាំហិរញ្ញវត្ថុមុន"
 
 msgid "Last 5 financial years"
-msgstr ""
+msgstr "៥ឆ្នាំហិរញ្ញវត្ថុចុងក្រោយ"
 
 msgid "This year"
-msgstr ""
+msgstr "ឆ្នាំនេះ"
 
 msgid "Last year"
-msgstr ""
+msgstr "ឆ្នាំមុន"
 
 msgid "Last 5 years"
-msgstr ""
+msgstr "៥ឆ្នាំចុងក្រោយ"
 
 msgid "Last 10 years"
 msgstr ""
@@ -1018,7 +1043,7 @@ msgid "Could not load translations"
 msgstr ""
 
 msgid "Retry"
-msgstr ""
+msgstr "សូមសាកល្បងឡើងវិញ"
 
 msgid "Too many results. Try refining the search."
 msgstr ""
@@ -1033,7 +1058,7 @@ msgid "No results found"
 msgstr "មិនមានលទ្ធផលបង្ហាញ"
 
 msgid "Series"
-msgstr ""
+msgstr "ស៊េរី"
 
 msgid "Category"
 msgstr ""
@@ -1125,6 +1150,9 @@ msgstr ""
 msgid "Calculations"
 msgstr ""
 
+msgid "Option"
+msgstr ""
+
 msgid "Number"
 msgstr "តួរលេខ"
 
@@ -1153,13 +1181,13 @@ msgid "Extra Small"
 msgstr ""
 
 msgid "Small"
-msgstr ""
+msgstr "តូច"
 
 msgid "Regular"
 msgstr ""
 
 msgid "Large"
-msgstr ""
+msgstr "ធំ"
 
 msgid "Extra Large"
 msgstr ""
@@ -1238,6 +1266,9 @@ msgstr "ផ្នែក​នៃ​អង្គការ"
 
 msgid "Assigned Categories"
 msgstr ""
+
+msgid "No value"
+msgstr "មិនមានតម្លៃ"
 
 msgid "Text"
 msgstr "អត្ថបទ​"
@@ -1368,6 +1399,9 @@ msgstr ""
 msgid "All charts"
 msgstr ""
 
+msgid "Map"
+msgstr ""
+
 msgid "{{seriesName}} (trend)"
 msgstr ""
 
@@ -1390,7 +1424,7 @@ msgid "Base"
 msgstr ""
 
 msgid "Axis {{axisId}}"
-msgstr ""
+msgstr "អ័ក្ស {{axisId}}"
 
 msgid "{{count}} items"
 msgid_plural "{{count}} items"

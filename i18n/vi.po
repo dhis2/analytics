@@ -1,17 +1,17 @@
 # 
 # Translators:
-# Mai Nguyen <thanhmai.jica@gmail.com>, 2022
-# Thuy Nguyen <thuynguyen@hispvietnam.org>, 2025
-# Em Le <em.hispvietnam@gmail.com>, 2025
-# Philip Larsen Donnelly, 2025
 # Viktor Varland <viktor@dhis2.org>, 2025
+# Thuy Nguyen <thuynguyen@hispvietnam.org>, 2025
+# Philip Larsen Donnelly, 2025
+# Em Le <em.hispvietnam@gmail.com>, 2025
+# Mai Nguyen <thanhmai.jica@gmail.com>, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2025-04-15T13:34:54.995Z\n"
+"POT-Creation-Date: 2025-09-09T09:32:04.677Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2025\n"
+"Last-Translator: Mai Nguyen <thanhmai.jica@gmail.com>, 2025\n"
 "Language-Team: Vietnamese (https://app.transifex.com/hisp-uio/teams/100509/vi/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -168,16 +168,16 @@ msgid "Expression description"
 msgstr "Mô tả biểu thức"
 
 msgid "Error loading value"
-msgstr ""
+msgstr "Lỗi tải giá trị"
 
 msgid "None"
 msgstr "Không"
 
 msgid "Data set(s)"
-msgstr ""
+msgstr "Tập dữ liệu"
 
 msgid "Zero is significant"
-msgstr ""
+msgstr "Số 0 là quan trọng"
 
 msgid "True"
 msgstr "Đúng"
@@ -192,25 +192,25 @@ msgid "Aggregation type"
 msgstr "Kiểu tổng hợp"
 
 msgid "Category combo"
-msgstr ""
+msgstr "Tổ hợp phân loại"
 
 msgid "Option set"
 msgstr "Tập tùy chọn"
 
 msgid "Group membership"
-msgstr ""
+msgstr "Thành viên nhóm"
 
 msgid "Legend set(s)"
-msgstr ""
+msgstr "Tập Chú Thích"
 
 msgid "Category option name"
-msgstr ""
+msgstr "Tên tùy chọn phân loại"
 
 msgid "Category combo name"
-msgstr ""
+msgstr "Tên phân loại kết hợp"
 
 msgid "Categories name"
-msgstr ""
+msgstr "Tên phân loại"
 
 msgid "Period type"
 msgstr "Loại thời điểm"
@@ -234,13 +234,13 @@ msgid "Numerator description"
 msgstr "Miêu tả tử số"
 
 msgid "Numerator expression"
-msgstr ""
+msgstr "Biểu thức tử số"
 
 msgid "Denominator description"
 msgstr "Miêu tả mẩu số"
 
 msgid "Denominator expression"
-msgstr ""
+msgstr "Biểu thức mẫu số"
 
 msgid "Annualized"
 msgstr "Hàng năm"
@@ -255,10 +255,10 @@ msgid "Indicator type"
 msgstr "Loại chỉ số"
 
 msgid "Decimals in output"
-msgstr ""
+msgstr "Số thập phân trong dữ liệu đầu ra"
 
 msgid "There was a problem loading information for this data item."
-msgstr ""
+msgstr "Đã có sự cố khi tải thông tin cho mục dữ liệu này."
 
 msgid "Name"
 msgstr "Tên"
@@ -273,7 +273,7 @@ msgid "ID"
 msgstr "Định danh (ID)"
 
 msgid "Last updated date"
-msgstr ""
+msgstr "Ngày cập nhật cuối"
 
 msgid "Created date"
 msgstr "Ngày tạo"
@@ -288,7 +288,7 @@ msgid "Program"
 msgstr "Chương trình"
 
 msgid "Analytics type"
-msgstr ""
+msgstr "Loại phân tích"
 
 msgid "Enrollment"
 msgstr "Đăng ký"
@@ -297,10 +297,10 @@ msgid "Event"
 msgstr "Sự Kiện"
 
 msgid "Analytics period boundaries"
-msgstr ""
+msgstr "Ranh giới thời kỳ phân tích"
 
 msgid "{{ offsetPeriodType }} × {{ offsetPeriods }}"
-msgstr ""
+msgstr "{{ offsetPeriodType }} × {{ offsetPeriods }}"
 
 msgid "Expression"
 msgstr "Biểu thức"
@@ -309,22 +309,22 @@ msgid "Filter"
 msgstr "Lọc"
 
 msgid "All available options are already selected"
-msgstr ""
+msgstr "Tất cả các tùy chọn có sẵn đã được chọn"
 
 msgid "No available options for this item"
-msgstr ""
+msgstr "Không có tùy chọn nào có sẵn cho mục này"
 
 msgid "Search by option name"
-msgstr ""
+msgstr "Tìm kiếm theo tên tùy chọn"
 
 msgid "Back to all items"
-msgstr ""
+msgstr "Quay lại tất cả các mục"
 
 msgid "Options"
 msgstr "Tùy chọn"
 
 msgid "Selected items"
-msgstr ""
+msgstr "Các mục đã chọn"
 
 msgid "Data Type"
 msgstr "Loại dữ liệu"
@@ -348,7 +348,7 @@ msgid "Selected Items"
 msgstr "Các mục đã chọn"
 
 msgid "All available items are already selected"
-msgstr ""
+msgstr "Tất cả các mục có sẵn đã được chọn"
 
 msgid "Calculation"
 msgstr "Tính toán"
@@ -396,7 +396,7 @@ msgid "Nothing found for \"{{- searchTerm}}\""
 msgstr "Không tìm thấy gì cho {{- searchTerm}}"
 
 msgid "Click to choose from available options"
-msgstr ""
+msgstr "Nhấp để chọn từ các tùy chọn có sẵn"
 
 msgid "Move to {{axisName}}"
 msgstr "Di chuyển đến {{axisName}}"
@@ -493,6 +493,9 @@ msgstr "Lấy đường dẫn liên kết..."
 msgid "Open in this app"
 msgstr "Mở trong ứng dụng này"
 
+msgid "Copy to clipboard"
+msgstr "Sao chép vào bộ nhớ tạm"
+
 msgid "Close"
 msgstr "Đóng lại"
 
@@ -521,6 +524,15 @@ msgid "visualization"
 msgstr "trực quan hóa"
 
 msgid "Untitled {{visualizationType}}, {{date}}"
+msgstr "{{visualizationType}}, {{date}} không tiêu đề"
+
+msgid "Back to all interpretations"
+msgstr "Quay lại tất cả các diễn giải"
+
+msgid "Could not load interpretation details"
+msgstr ""
+
+msgid "The request to fetch interpretation comments failed"
 msgstr ""
 
 msgid "Edit"
@@ -529,11 +541,14 @@ msgstr "Chỉnh sửa"
 msgid "Write a reply"
 msgstr "Viết phản hồi"
 
+msgid "Could not post reply"
+msgstr ""
+
 msgid "Post reply"
 msgstr "Đăng phản hồi"
 
-msgid "Delete failed"
-msgstr "Xóa thất bại"
+msgid "Could not delete comment"
+msgstr ""
 
 msgid "Could not update comment"
 msgstr "Không thể cập nhật bình luận"
@@ -563,6 +578,9 @@ msgstr "Ẩn diễn giải"
 msgid "Write an interpretation"
 msgstr "Viết diễn giải"
 
+msgid "Could not post interpretation"
+msgstr ""
+
 msgid ""
 "Other people viewing this interpretation in the future may see more data."
 msgstr ""
@@ -574,6 +592,12 @@ msgstr "Đăng diễn giải"
 
 msgid "Interpretations"
 msgstr "Diễn giải "
+
+msgid "Error loading interpretations"
+msgstr ""
+
+msgid "Could not load interpretations"
+msgstr ""
 
 msgid "Reply"
 msgstr "Trả lời"
@@ -600,8 +624,14 @@ msgstr "Mở trong ứng dụng"
 msgid "Share"
 msgstr "Chia sẻ"
 
+msgid "Could not delete interpretation"
+msgstr ""
+
 msgid "Manage sharing"
 msgstr "Quản lý chia sẻ"
+
+msgid "Could not update interpretation text"
+msgstr ""
 
 msgid "Could not update interpretation"
 msgstr "Không thể cập nhật diễn giải"
@@ -1296,6 +1326,9 @@ msgstr "Đơn vị"
 msgid "Assigned Categories"
 msgstr "Phân loại được chỉ định"
 
+msgid "No value"
+msgstr "Không có giá trị"
+
 msgid "Text"
 msgstr "Văn bản"
 
@@ -1303,7 +1336,7 @@ msgid "Long text"
 msgstr "Văn bản dài"
 
 msgid "Multi text"
-msgstr ""
+msgstr "Nhiều văn bản"
 
 msgid "Letter"
 msgstr "Ký tự"
