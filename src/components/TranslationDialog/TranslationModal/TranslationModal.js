@@ -21,7 +21,9 @@ export const TranslationModal = ({
     const [translations, setTranslations] = useState([])
 
     const endpointPath = new URL(objectToTranslate.href).pathname
-    const endpointPathMatch = endpointPath.match(/api\/\d+\/(?<resource>.+)/)
+    const endpointPathMatch = endpointPath.match(
+        /api\/(?:\d+\/)?(?<resource>.+)/
+    )
     const resource = endpointPathMatch?.groups
         ? endpointPathMatch.groups.resource
         : null
@@ -37,7 +39,12 @@ export const TranslationModal = ({
     }, [translationsData])
 
     return (
-        <Modal large position="middle" onClose={onClose}>
+        <Modal
+            large
+            position="middle"
+            onClose={onClose}
+            dataTest="dhis2-analytics-translation-modal"
+        >
             <ModalTitle>
                 {i18n.t('Translate: {{objectName}}', {
                     objectName: objectToTranslate.name || 'TEXT', // XXX

@@ -1,0 +1,197 @@
+{
+    "name": "ANC: ANC 1st and 2nd visits at facilities with hierarchy",
+    "created": "2017-05-19T16:35:05.056",
+    "lastUpdated": "2017-05-19T16:35:05.056",
+    "translations": [],
+    "lastUpdatedBy": {
+        "id": "GOLswS44mh8",
+        "code": null,
+        "name": "Tom Wakiki",
+        "displayName": "Tom Wakiki",
+        "username": "system"
+    },
+    "displayDensity": "NORMAL",
+    "fontSize": "NORMAL",
+    "sortOrder": 0,
+    "topLimit": 0,
+    "hideEmptyRows": false,
+    "showHierarchy": true,
+    "completedOnly": false,
+    "skipRounding": false,
+    "dataDimensionItems": [
+        {
+            "dataDimensionItemType": "DATA_ELEMENT"
+        },
+        {
+            "dataDimensionItemType": "DATA_ELEMENT"
+        }
+    ],
+    "subscribers": [],
+    "aggregationType": "DEFAULT",
+    "digitGroupSeparator": "SPACE",
+    "noSpaceBetweenColumns": false,
+    "cumulativeValues": false,
+    "percentStackedValues": false,
+    "showData": false,
+    "colTotals": true,
+    "rowTotals": true,
+    "rowSubTotals": true,
+    "colSubTotals": true,
+    "hideTitle": false,
+    "hideSubtitle": false,
+    "showDimensionLabels": true,
+    "interpretations": [],
+    "type": "PIVOT_TABLE",
+    "reportingParams": {
+        "grandParentOrganisationUnit": false,
+        "parentOrganisationUnit": false,
+        "organisationUnit": false,
+        "reportingPeriod": false
+    },
+    "yearlySeries": [],
+    "regression": false,
+    "hideEmptyColumns": false,
+    "fixColumnHeaders": false,
+    "fixRowHeaders": false,
+    "filters": [],
+    "parentGraphMap": {
+        "ImspTQPwCqd": ""
+    },
+    "columns": [
+        {
+            "items": [
+                {
+                    "name": "ANC 1st visit",
+                    "dimensionItemType": "DATA_ELEMENT",
+                    "access": {
+                        "manage": true,
+                        "externalize": false,
+                        "write": true,
+                        "read": true,
+                        "update": true,
+                        "delete": true
+                    },
+                    "displayName": "Soin prénatal 1",
+                    "displayShortName": "ANC 1st visit",
+                    "id": "fbfJHSPpUQD"
+                },
+                {
+                    "name": "ANC 2nd visit",
+                    "dimensionItemType": "DATA_ELEMENT",
+                    "access": {
+                        "manage": true,
+                        "externalize": false,
+                        "write": true,
+                        "read": true,
+                        "update": true,
+                        "delete": true
+                    },
+                    "displayName": "ANC 2nd visit",
+                    "displayShortName": "ANC 2nd visit",
+                    "id": "cYeuwXTCPkU"
+                }
+            ],
+            "dimension": "dx"
+        },
+        {
+            "items": [
+                {
+                    "name": "THIS_YEAR",
+                    "dimensionItemType": "PERIOD",
+                    "displayShortName": "THIS_YEAR",
+                    "access": {
+                        "manage": true,
+                        "externalize": false,
+                        "write": true,
+                        "read": true,
+                        "update": true,
+                        "delete": true
+                    },
+                    "displayName": "THIS_YEAR",
+                    "id": "THIS_YEAR"
+                },
+                {
+                    "name": "LAST_YEAR",
+                    "dimensionItemType": "PERIOD",
+                    "displayShortName": "LAST_YEAR",
+                    "access": {
+                        "manage": true,
+                        "externalize": false,
+                        "write": true,
+                        "read": true,
+                        "update": true,
+                        "delete": true
+                    },
+                    "displayName": "LAST_YEAR",
+                    "id": "LAST_YEAR"
+                }
+            ],
+            "dimension": "pe"
+        }
+    ],
+    "rows": [
+        {
+            "items": [
+                {
+                    "name": "Sierra Leone",
+                    "dimensionItemType": "ORGANISATION_UNIT",
+                    "access": {
+                        "manage": true,
+                        "externalize": false,
+                        "write": true,
+                        "read": true,
+                        "update": true,
+                        "delete": true
+                    },
+                    "displayName": "Sierra Leone",
+                    "displayShortName": "Sierra Leone",
+                    "id": "ImspTQPwCqd"
+                },
+                {
+                    "name": "LEVEL-4",
+                    "access": {
+                        "manage": true,
+                        "externalize": false,
+                        "write": true,
+                        "read": true,
+                        "update": true,
+                        "delete": true
+                    },
+                    "displayName": "LEVEL-4",
+                    "id": "LEVEL-4"
+                }
+            ],
+            "dimension": "ou"
+        }
+    ],
+    "subscribed": false,
+    "access": {
+        "manage": true,
+        "externalize": true,
+        "write": true,
+        "read": true,
+        "update": true,
+        "delete": true
+    },
+    "displayName": "ANC: ANC 1st and 2nd visits at facilities with hierarchy",
+    "favorite": false,
+    "user": {
+        "id": "GOLswS44mh8",
+        "code": null,
+        "name": "Tom Wakiki",
+        "displayName": "Tom Wakiki",
+        "username": "system"
+    },
+    "href": "https://debug.dhis2.org/dev/api/42/visualizations/qfMh2IjOxvw",
+    "id": "qfMh2IjOxvw",
+    "legend": {
+        "showKey": false,
+        "style": "FILL",
+        "strategy": "FIXED"
+    },
+    "sorting": [],
+    "icons": [],
+    "seriesKey": {
+        "hidden": false
+    }
+}

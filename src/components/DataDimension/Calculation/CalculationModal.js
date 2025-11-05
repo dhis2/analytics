@@ -15,7 +15,7 @@ import {
     createCalculationMutation,
     deleteCalculationMutation,
     updateCalculationMutation,
-    validateExpressionMutation,
+    validateIndicatorExpressionMutation,
 } from '../../../api/expression.js'
 import i18n from '../../../locales/index.js'
 import {
@@ -40,9 +40,10 @@ import styles from './styles/CalculationModal.style.js'
 
 const FIRST_POSITION = 0
 const LAST_POSITION = -1
+const CALCULATION_PROP_DEFAULT = {}
 
 const CalculationModal = ({
-    calculation,
+    calculation = CALCULATION_PROP_DEFAULT,
     onSave,
     onClose,
     onDelete,
@@ -57,7 +58,7 @@ const CalculationModal = ({
     const [deleteCalculation, { loading: isDeletingCalculation }] =
         useDataMutation(deleteCalculationMutation, mutationParams)
     const [doBackendValidation, { loading: isValidating }] = useDataMutation(
-        validateExpressionMutation,
+        validateIndicatorExpressionMutation,
         {
             onError: (error) => showError(error),
         }
@@ -483,10 +484,6 @@ CalculationModal.propTypes = {
         id: PropTypes.string,
         name: PropTypes.string,
     }),
-}
-
-CalculationModal.defaultProps = {
-    calculation: {},
 }
 
 export default CalculationModal

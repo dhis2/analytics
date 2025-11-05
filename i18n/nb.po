@@ -1,16 +1,16 @@
 # 
 # Translators:
-# Caroline Hesthagen Holen <caroline@devotta.no>, 2023
 # Jen Jones Arnesen <jennifer@dhis2.org>, 2023
-# Karoline Tufte Lien <karoline@dhis2.org>, 2023
 # Martin <martin@moid.se>, 2024
+# Caroline Hesthagen Holen <caroline@devotta.no>, 2025
+# Karoline Tufte Lien <karoline@dhis2.org>, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2024-01-25T12:05:03.360Z\n"
+"POT-Creation-Date: 2025-09-09T09:32:04.677Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Martin <martin@moid.se>, 2024\n"
+"Last-Translator: Karoline Tufte Lien <karoline@dhis2.org>, 2025\n"
 "Language-Team: Norwegian Bokmål (https://app.transifex.com/hisp-uio/teams/100509/nb/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -76,6 +76,12 @@ msgstr ""
 
 msgid "About this visualization"
 msgstr "Om denne visualiseringen"
+
+msgid "About this event chart"
+msgstr ""
+
+msgid "About this event report"
+msgstr ""
 
 msgid "This app could not retrieve required data."
 msgstr ""
@@ -153,6 +159,168 @@ msgstr ""
 msgid "Math operators"
 msgstr ""
 
+msgid "Expression description"
+msgstr "Frasebeskrivelse"
+
+msgid "Error loading value"
+msgstr ""
+
+msgid "None"
+msgstr "Ingen"
+
+msgid "Data set(s)"
+msgstr ""
+
+msgid "Zero is significant"
+msgstr ""
+
+msgid "True"
+msgstr "Sant"
+
+msgid "False"
+msgstr "Usant"
+
+msgid "Value type"
+msgstr "Verditype"
+
+msgid "Aggregation type"
+msgstr "Aggregasjonstype"
+
+msgid "Category combo"
+msgstr "Kategorikombinasjon"
+
+msgid "Option set"
+msgstr "Alternativsett"
+
+msgid "Group membership"
+msgstr ""
+
+msgid "Legend set(s)"
+msgstr ""
+
+msgid "Category option name"
+msgstr ""
+
+msgid "Category combo name"
+msgstr ""
+
+msgid "Categories name"
+msgstr ""
+
+msgid "Period type"
+msgstr "Periodetype"
+
+msgid "Indicators"
+msgstr "Indikatorer"
+
+msgid "Expiry days"
+msgstr "Utløpsdager"
+
+msgid "Type"
+msgstr "Type"
+
+msgid "Data element"
+msgstr "Dataelement"
+
+msgid "Tracked entity attribute"
+msgstr "Sporet enhetattributt"
+
+msgid "Numerator description"
+msgstr "Tellerbeskrivelse"
+
+msgid "Numerator expression"
+msgstr ""
+
+msgid "Denominator description"
+msgstr "Nevnerbeskrivelse"
+
+msgid "Denominator expression"
+msgstr ""
+
+msgid "Annualized"
+msgstr "Annualisert"
+
+msgid "Yes"
+msgstr "Ja"
+
+msgid "No"
+msgstr "Nei"
+
+msgid "Indicator type"
+msgstr "Indikatortype"
+
+msgid "Decimals in output"
+msgstr ""
+
+msgid "There was a problem loading information for this data item."
+msgstr ""
+
+msgid "Name"
+msgstr "Navn"
+
+msgid "Description"
+msgstr "Beskrivelse"
+
+msgid "Code"
+msgstr "Kode"
+
+msgid "ID"
+msgstr "ID"
+
+msgid "Last updated date"
+msgstr ""
+
+msgid "Created date"
+msgstr "Opprettelsesdato"
+
+msgid "Created by"
+msgstr "Opprettet av"
+
+msgid "Custom"
+msgstr "Tilpasset"
+
+msgid "Program"
+msgstr "Program"
+
+msgid "Analytics type"
+msgstr "Analysetype"
+
+msgid "Enrollment"
+msgstr "Registrering"
+
+msgid "Event"
+msgstr "Hendelse"
+
+msgid "Analytics period boundaries"
+msgstr "Grenser for analyseperiode"
+
+msgid "{{ offsetPeriodType }} × {{ offsetPeriods }}"
+msgstr ""
+
+msgid "Expression"
+msgstr "Uttrykk"
+
+msgid "Filter"
+msgstr "Filter"
+
+msgid "All available options are already selected"
+msgstr ""
+
+msgid "No available options for this item"
+msgstr ""
+
+msgid "Search by option name"
+msgstr ""
+
+msgid "Back to all items"
+msgstr ""
+
+msgid "Options"
+msgstr "Alternativ"
+
+msgid "Selected items"
+msgstr ""
+
 msgid "Data Type"
 msgstr "Datatype"
 
@@ -171,11 +339,23 @@ msgstr "Ingen data"
 msgid "Search by data item name"
 msgstr "Søk etter datapunktnavn"
 
-msgid "No items selected"
-msgstr "Ingen elementer er valgt"
-
 msgid "Selected Items"
 msgstr "Valgte elementer"
+
+msgid "All available items are already selected"
+msgstr ""
+
+msgid "Calculation"
+msgstr ""
+
+msgid "Metric type"
+msgstr "Metrisk type"
+
+msgid "All metrics"
+msgstr "Alle beregninger"
+
+msgid "No items selected"
+msgstr "Ingen elementer er valgt"
 
 msgid "No indicators found"
 msgstr "Ingen indikatorer funnet"
@@ -210,14 +390,8 @@ msgstr ""
 msgid "Nothing found for \"{{- searchTerm}}\""
 msgstr "Ingenting funnet for \"{{- searchTerm}}\""
 
-msgid "Calculation"
+msgid "Click to choose from available options"
 msgstr ""
-
-msgid "Metric type"
-msgstr "Metrisk type"
-
-msgid "All metrics"
-msgstr "Alle beregninger"
 
 msgid "Move to {{axisName}}"
 msgstr "Flytt til {{axisName}}"
@@ -271,9 +445,6 @@ msgstr "Ingenting funnet i {{- dimensionTitle}}"
 msgid "Search"
 msgstr "Søk"
 
-msgid "Nothing found for {{- searchTerm}}"
-msgstr ""
-
 msgid "Delete {{fileType}}"
 msgstr "Slett {{fileType}}"
 
@@ -318,17 +489,14 @@ msgstr "Få lenke…"
 msgid "Open in this app"
 msgstr "Åpne i denne appen"
 
+msgid "Copy to clipboard"
+msgstr "Kopier til utklippstavle"
+
 msgid "Close"
 msgstr "Lukk"
 
 msgid "Rename {{fileType}}"
 msgstr "Gi nytt navn til {{fileType}}"
-
-msgid "Name"
-msgstr "Navn"
-
-msgid "Description"
-msgstr "Beskrivelse"
 
 msgid "Rename"
 msgstr "Gi nytt navn"
@@ -351,17 +519,32 @@ msgstr "kart"
 msgid "visualization"
 msgstr "visualisering"
 
+msgid "Untitled {{visualizationType}}, {{date}}"
+msgstr ""
+
+msgid "Back to all interpretations"
+msgstr "Tilbake til alle tolkninger"
+
+msgid "Could not load interpretation details"
+msgstr ""
+
+msgid "The request to fetch interpretation comments failed"
+msgstr ""
+
 msgid "Edit"
 msgstr "Rediger"
 
 msgid "Write a reply"
 msgstr "Skriv et svar"
 
+msgid "Could not post reply"
+msgstr ""
+
 msgid "Post reply"
 msgstr ""
 
-msgid "Delete failed"
-msgstr "Kunne ikke slette"
+msgid "Could not delete comment"
+msgstr ""
 
 msgid "Could not update comment"
 msgstr ""
@@ -389,6 +572,9 @@ msgstr ""
 msgid "Write an interpretation"
 msgstr "Skriv en tolkning"
 
+msgid "Could not post interpretation"
+msgstr ""
+
 msgid ""
 "Other people viewing this interpretation in the future may see more data."
 msgstr ""
@@ -398,6 +584,12 @@ msgstr ""
 
 msgid "Interpretations"
 msgstr "Tolkninger"
+
+msgid "Error loading interpretations"
+msgstr ""
+
+msgid "Could not load interpretations"
+msgstr ""
 
 msgid "Reply"
 msgstr "Svar"
@@ -425,8 +617,14 @@ msgstr ""
 msgid "Share"
 msgstr "Del"
 
+msgid "Could not delete interpretation"
+msgstr ""
+
 msgid "Manage sharing"
 msgstr "Administrer deling"
+
+msgid "Could not update interpretation text"
+msgstr ""
 
 msgid "Could not update interpretation"
 msgstr ""
@@ -434,44 +632,8 @@ msgstr ""
 msgid "Enter interpretation text"
 msgstr ""
 
-msgid "Bold text"
-msgstr ""
-
-msgid "Italic text"
-msgstr ""
-
-msgid "Link to a URL"
-msgstr ""
-
-msgid "Mention a user"
-msgstr ""
-
-msgid "Add emoji"
-msgstr ""
-
-msgid "Preview"
-msgstr "Forhåndsvisning"
-
-msgid "Back to write mode"
-msgstr ""
-
-msgid "Too many results. Try refining the search."
-msgstr ""
-
-msgid "Search for a user"
-msgstr ""
-
-msgid "Searching for \"{{- searchText}}\""
-msgstr ""
-
-msgid "No results found"
-msgstr "Ingen resultater funnet"
-
 msgid "Not available offline"
 msgstr "Ikke tilgjengelig i frakoblet modus"
-
-msgid "Created by"
-msgstr "Opprettet av"
 
 msgid "Anyone"
 msgstr "Hvem som helst"
@@ -493,9 +655,6 @@ msgstr "Opprettet"
 
 msgid "Last updated"
 msgstr "Sist oppdatert"
-
-msgid "Type"
-msgstr "Type"
 
 msgid "Clear filters"
 msgstr "Tøm filtre"
@@ -602,9 +761,6 @@ msgstr ""
 msgid "New line list"
 msgstr ""
 
-msgid "Options"
-msgstr "Alternativ"
-
 msgid "Hide"
 msgstr "Skjul"
 
@@ -646,9 +802,6 @@ msgstr "Velg en gruppe"
 
 msgid "Deselect all"
 msgstr "Fjern valg"
-
-msgid "Period type"
-msgstr "Periodetype"
 
 msgid "Year"
 msgstr "År"
@@ -875,6 +1028,30 @@ msgstr "Regnskapsår"
 msgid "Years"
 msgstr "År"
 
+msgid "Value: {{value}}"
+msgstr ""
+
+msgid "Bold text"
+msgstr ""
+
+msgid "Italic text"
+msgstr ""
+
+msgid "Link to a URL"
+msgstr ""
+
+msgid "Mention a user"
+msgstr ""
+
+msgid "Add emoji"
+msgstr ""
+
+msgid "Preview"
+msgstr "Forhåndsvisning"
+
+msgid "Back to write mode"
+msgstr ""
+
 msgid "Interpretations and details"
 msgstr ""
 
@@ -905,14 +1082,23 @@ msgstr ""
 msgid "Retry"
 msgstr ""
 
+msgid "Too many results. Try refining the search."
+msgstr ""
+
+msgid "Search for a user"
+msgstr ""
+
+msgid "Searching for \"{{- searchText}}\""
+msgstr ""
+
+msgid "No results found"
+msgstr "Ingen resultater funnet"
+
 msgid "Series"
 msgstr "Serie"
 
 msgid "Category"
 msgstr "Kategori"
-
-msgid "Filter"
-msgstr "Filter"
 
 msgid "Columns"
 msgstr "Kolonner"
@@ -938,14 +1124,8 @@ msgstr "Faktiske rapporter i tide"
 msgid "Expected reports"
 msgstr "Forventede rapporter"
 
-msgid "Program"
-msgstr "Program"
-
 msgid "Select a program"
 msgstr "Velg et program"
-
-msgid "Indicators"
-msgstr "Indikatorer"
 
 msgid "Indicator group"
 msgstr "Indikatorgruppe"
@@ -964,9 +1144,6 @@ msgstr ""
 
 msgid "Data element group"
 msgstr "Dataelementgruppe"
-
-msgid "Data element"
-msgstr "Dataelement"
 
 msgid "No data element groups found"
 msgstr ""
@@ -1009,6 +1186,9 @@ msgstr "Programindikator"
 
 msgid "Calculations"
 msgstr ""
+
+msgid "Option"
+msgstr "Alternativ"
 
 msgid "Number"
 msgstr "Nummer"
@@ -1112,6 +1292,9 @@ msgstr ""
 msgid "{{thresholdFactor}} × Z-score high"
 msgstr ""
 
+msgid "Not applicable"
+msgstr ""
+
 msgid "Data"
 msgstr "Data"
 
@@ -1120,6 +1303,84 @@ msgstr "Organisasjonsenhet"
 
 msgid "Assigned Categories"
 msgstr "Tildelte Kategorier"
+
+msgid "No value"
+msgstr "Ingen verdi"
+
+msgid "Text"
+msgstr "Tekst"
+
+msgid "Long text"
+msgstr "Lang tekst"
+
+msgid "Multi text"
+msgstr ""
+
+msgid "Letter"
+msgstr "Bokstav"
+
+msgid "Phone number"
+msgstr "Telefonnummer"
+
+msgid "Email"
+msgstr "E-post"
+
+msgid "Yes/No"
+msgstr "Ja/Nei"
+
+msgid "Yes Only"
+msgstr "Bare ja"
+
+msgid "Date"
+msgstr "Dato"
+
+msgid "Date & Time"
+msgstr "Dato & Klokkeslett"
+
+msgid "Time"
+msgstr "Klokkeslett"
+
+msgid "Unit interval"
+msgstr "Enhetsintervall"
+
+msgid "Percentage"
+msgstr "Prosent"
+
+msgid "Integer"
+msgstr "Heltall"
+
+msgid "Positive Integer"
+msgstr "Positivt heltall"
+
+msgid "Negative Integer"
+msgstr "Negativt heltall"
+
+msgid "Positive or Zero Integer"
+msgstr "Positivt eller null heltall"
+
+msgid "Tracker Associate"
+msgstr "Sporingstilknytning"
+
+msgid "Username"
+msgstr "Brukernavn"
+
+msgid "Coordinate"
+msgstr "Koordinater"
+
+msgid "Reference"
+msgstr "Referanse"
+
+msgid "Age"
+msgstr "Alder"
+
+msgid "URL"
+msgstr "URL"
+
+msgid "Image"
+msgstr "Bilde"
+
+msgid "GeoJSON"
+msgstr ""
 
 msgid "Pivot table"
 msgstr "Pivottabell"
@@ -1174,6 +1435,9 @@ msgstr ""
 
 msgid "All charts"
 msgstr "Alle diagrammer"
+
+msgid "Map"
+msgstr "Kart"
 
 msgid "{{seriesName}} (trend)"
 msgstr ""

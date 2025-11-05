@@ -12,14 +12,14 @@ const RelativePeriodFilter = ({
     dataTest,
     excludedPeriodTypes,
 }) => (
-    <div className="leftSection">
+    <div className="leftSection" data-test={dataTest}>
         <SingleSelectField
             label={i18n.t('Period type')}
             onChange={({ selected }) => onSelectFilter(selected)}
             dense
             selected={currentFilter}
             className="filterElement"
-            dataTest={dataTest}
+            dataTest={`${dataTest}-period-type`}
         >
             {filterPeriodTypesById(
                 getRelativePeriodsOptions(),
@@ -29,7 +29,7 @@ const RelativePeriodFilter = ({
                     key={option.id}
                     value={option.id}
                     label={option.name}
-                    dataTest={`${dataTest}-option-${option.id}`}
+                    dataTest={`${dataTest}-period-type-option-${option.id}`}
                 />
             ))}
         </SingleSelectField>

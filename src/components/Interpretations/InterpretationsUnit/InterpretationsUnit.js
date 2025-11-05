@@ -1,4 +1,3 @@
-import { useDataQuery } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import {
     CircularLoader,
@@ -6,210 +5,131 @@ import {
     IconChevronUp24,
     colors,
     spacers,
+    NoticeBox,
 } from '@dhis2/ui'
 import cx from 'classnames'
 import PropTypes from 'prop-types'
-import React, {
-    useCallback,
-    useEffect,
-    useState,
-    useImperativeHandle,
-    forwardRef,
-} from 'react'
+import React, { useState } from 'react'
+import { useInterpretationsList } from '../InterpretationsProvider/hooks.js'
 import { InterpretationForm } from './InterpretationForm.js'
 import { InterpretationList } from './InterpretationList.js'
 
-const interpretationsQuery = {
-    interpretations: {
-        resource: 'interpretations',
-        params: ({ type, id }) => ({
-            fields: [
-                'access[write,manage]',
-                'id',
-                'createdBy[id,displayName]',
-                'created',
-                'text',
-                'comments[id]',
-                'likes',
-                'likedBy[id]',
-            ],
-            filter: `${type}.id:eq:${id}`,
-        }),
-    },
-}
+export const InterpretationsUnit = ({
+    type,
+    id,
+    visualizationHasTimeDimension = true,
+    onInterpretationClick,
+    onReplyIconClick,
+    disabled,
+    dashboardRedirectUrl,
+}) => {
+    const [isExpanded, setIsExpanded] = useState(true)
+    const showNoTimeDimensionHelpText =
+        type === 'eventVisualization' && !visualizationHasTimeDimension
+    const {
+        data: interpretationIdsByDate,
+        loading,
+        error,
+    } = useInterpretationsList(type, id)
 
-export const InterpretationsUnit = forwardRef(
-    (
-        {
-            currentUser,
-            type,
-            id,
-            visualizationHasTimeDimension,
-            onInterpretationClick,
-            onReplyIconClick,
-            disabled,
-            renderId,
-            dashboardRedirectUrl,
-        },
-        ref
-    ) => {
-        const [isExpanded, setIsExpanded] = useState(true)
-        const [interpretations, setInterpretations] = useState([])
-        const showNoTimeDimensionHelpText =
-            type === 'eventVisualization' && !visualizationHasTimeDimension
-
-        const { loading, fetching, refetch } = useDataQuery(
-            interpretationsQuery,
-            {
-                lazy: true,
-                onComplete: (data) =>
-                    setInterpretations(data.interpretations.interpretations),
-            }
-        )
-
-        const onCompleteAction = useCallback(() => {
-            refetch({ type, id })
-        }, [type, id, refetch])
-
-        useImperativeHandle(
-            ref,
-            () => ({
-                refresh: onCompleteAction,
-            }),
-            [onCompleteAction]
-        )
-
-        useEffect(() => {
-            if (id) {
-                refetch({ type, id })
-            }
-        }, [type, id, renderId, refetch])
-
-        const onLikeToggled = ({ id, likedBy }) => {
-            const interpretation = interpretations.find(
-                (interp) => interp.id === id
-            )
-            interpretation.likedBy = likedBy
-            interpretation.likes = likedBy.length
-        }
-
-        return (
-            <div
-                className={cx('container', {
-                    expanded: isExpanded,
-                })}
+    return (
+        <div
+            className={cx('container', {
+                expanded: isExpanded,
+            })}
+        >
+            <button
+                className="header"
+                onClick={() => setIsExpanded(!isExpanded)}
             >
-                {fetching && !loading && (
-                    <div className="fetching-loader">
-                        <CircularLoader small />
-                    </div>
+                <span className="title">{i18n.t('Interpretations')}</span>
+                {isExpanded ? (
+                    <IconChevronUp24 color={colors.grey700} />
+                ) : (
+                    <IconChevronDown24 color={colors.grey700} />
                 )}
-                <div
-                    className="header"
-                    onClick={() => setIsExpanded(!isExpanded)}
-                >
-                    <span className="title">{i18n.t('Interpretations')}</span>
-                    {isExpanded ? (
-                        <IconChevronUp24 color={colors.grey700} />
-                    ) : (
-                        <IconChevronDown24 color={colors.grey700} />
+            </button>
+            {isExpanded && (
+                <>
+                    {loading && (
+                        <div className="loader">
+                            <CircularLoader small />
+                        </div>
                     )}
-                </div>
-                {isExpanded && (
-                    <>
-                        {loading && (
-                            <div className="loader">
-                                <CircularLoader small />
-                            </div>
-                        )}
-                        {interpretations && (
-                            <>
-                                <InterpretationForm
-                                    currentUser={currentUser}
-                                    type={type}
-                                    id={id}
-                                    onSave={onCompleteAction}
-                                    disabled={disabled}
-                                    showNoTimeDimensionHelpText={
-                                        showNoTimeDimensionHelpText
-                                    }
-                                />
-                                <InterpretationList
-                                    currentUser={currentUser}
-                                    interpretations={interpretations}
-                                    onInterpretationClick={
-                                        onInterpretationClick
-                                    }
-                                    onLikeToggled={onLikeToggled}
-                                    onReplyIconClick={onReplyIconClick}
-                                    refresh={onCompleteAction}
-                                    disabled={disabled}
-                                    dashboardRedirectUrl={dashboardRedirectUrl}
-                                />
-                            </>
-                        )}
-                    </>
-                )}
-                <style jsx>{`
-                    .container {
-                        position: relative;
-                        padding: ${spacers.dp16};
-                        border-bottom: 1px solid ${colors.grey400};
-                        background-color: ${colors.white};
-                    }
+                    {error && (
+                        <NoticeBox
+                            error
+                            title={i18n.t('Error loading interpretations')}
+                        >
+                            {error.message ||
+                                i18n.t('Could not load interpretations')}
+                        </NoticeBox>
+                    )}
+                    {interpretationIdsByDate && (
+                        <>
+                            <InterpretationForm
+                                type={type}
+                                id={id}
+                                disabled={disabled}
+                                showNoTimeDimensionHelpText={
+                                    showNoTimeDimensionHelpText
+                                }
+                            />
+                            <InterpretationList
+                                interpretationIdsByDate={
+                                    interpretationIdsByDate
+                                }
+                                onInterpretationClick={onInterpretationClick}
+                                onReplyIconClick={onReplyIconClick}
+                                disabled={disabled}
+                                dashboardRedirectUrl={dashboardRedirectUrl}
+                            />
+                        </>
+                    )}
+                </>
+            )}
+            <style jsx>{`
+                .container {
+                    position: relative;
+                    padding: ${spacers.dp16};
+                    border-bottom: 1px solid ${colors.grey400};
+                    background-color: ${colors.white};
+                }
 
-                    .fetching-loader {
-                        position: absolute;
-                        inset: 0px;
-                        background-color: rgba(255, 255, 255, 0.8);
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        z-index: 1;
-                    }
+                .expanded {
+                    padding-bottom: ${spacers.dp32};
+                }
 
-                    .expanded {
-                        padding-bottom: ${spacers.dp32};
-                    }
+                .loader {
+                    display: flex;
+                    justify-content: center;
+                }
 
-                    .loader {
-                        display: flex;
-                        justify-content: center;
-                    }
+                .header {
+                    all: unset;
+                    inline-size: 100%;
+                    display: flex;
+                    justify-content: space-between;
+                    cursor: pointer;
+                }
 
-                    .header {
-                        display: flex;
-                        justify-content: space-between;
-                        cursor: pointer;
-                    }
-
-                    .title {
-                        font-size: 16px;
-                        font-weight: 500;
-                        line-height: 21px;
-                        color: ${colors.grey900};
-                    }
-                `}</style>
-            </div>
-        )
-    }
-)
-
-InterpretationsUnit.displayName = 'InterpretationsUnit'
-
-InterpretationsUnit.defaultProps = {
-    onInterpretationClick: Function.prototype,
-    visualizationHasTimeDimension: true,
+                .title {
+                    font-size: 16px;
+                    font-weight: 500;
+                    line-height: 21px;
+                    color: ${colors.grey900};
+                }
+            `}</style>
+        </div>
+    )
 }
 
 InterpretationsUnit.propTypes = {
-    currentUser: PropTypes.object.isRequired,
     id: PropTypes.string.isRequired,
     type: PropTypes.string.isRequired,
+    onInterpretationClick: PropTypes.func.isRequired,
     dashboardRedirectUrl: PropTypes.string,
     disabled: PropTypes.bool,
-    renderId: PropTypes.number,
     visualizationHasTimeDimension: PropTypes.bool,
-    onInterpretationClick: PropTypes.func,
     onReplyIconClick: PropTypes.func,
 }

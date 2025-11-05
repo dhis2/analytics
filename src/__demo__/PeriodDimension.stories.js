@@ -17,8 +17,8 @@ import {
 const Wrapper = (story) => (
     <ConfigProvider config={{ systemInfo: {} }}>
         <DataProvider
-            baseUrl="https://test.e2e.dhis2.org/analytics-41dev/"
-            apiVersion="41"
+            baseUrl="https://test.e2e.dhis2.org/anly-42/"
+            apiVersion="42"
         >
             {story()}
         </DataProvider>

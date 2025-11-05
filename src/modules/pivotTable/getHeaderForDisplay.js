@@ -30,7 +30,6 @@ export const getHeaderForDisplay = ({
         }
         ++span
     }
-
     const currentHeader = header[dimensionLevel]
 
     const includesHierarchy = showHierarchy && currentHeader?.hierarchy
@@ -43,5 +42,6 @@ export const getHeaderForDisplay = ({
         span,
         label,
         includesHierarchy,
+        ...(currentHeader?.style ? { style: currentHeader.style } : {}),
     }
 }

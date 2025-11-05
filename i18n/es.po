@@ -3,20 +3,24 @@
 # ericbp <ericbarredap@gmail.com>, 2020
 # Juan M Alcantara Acosta <jmalcantara1@gmail.com>, 2021
 # Prabhjot Singh, 2021
-# Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2022
-# Viktor Varland <viktor@dhis2.org>, 2022
 # Marta Vila <marta@dhis2.org>, 2023
-# Janeth Cruz, 2023
-# Sergio Valenzuela <sergio.valenzuela@ehas.org>, 2023
-# Philip Larsen Donnelly, 2024
-# Enzo Nicolas Rossi <enzo@dhis2.org>, 2024
+# Alejandra Avila <alejandra@dhis2.org>, 2025
+# Andres Miguel Rubio, 2025
+# Alison Andrade <aandrade@ippfwhr.org>, 2025
+# Janeth Cruz, 2025
+# Enzo Nicolas Rossi <enzo@dhis2.org>, 2025
+# Viktor Varland <viktor@dhis2.org>, 2025
+# Pablo Pajuelo Cabezas <pablo@dhis2.org>, 2025
+# Nancy Espinoza, 2025
+# Philip Larsen Donnelly, 2025
+# Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2024-08-27T11:29:09.031Z\n"
+"POT-Creation-Date: 2025-09-09T09:32:04.677Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Enzo Nicolas Rossi <enzo@dhis2.org>, 2024\n"
+"Last-Translator: Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2025\n"
 "Language-Team: Spanish (https://app.transifex.com/hisp-uio/teams/100509/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -174,6 +178,168 @@ msgstr ""
 msgid "Math operators"
 msgstr "Operadores matemáticos"
 
+msgid "Expression description"
+msgstr ""
+
+msgid "Error loading value"
+msgstr ""
+
+msgid "None"
+msgstr "Ninguno"
+
+msgid "Data set(s)"
+msgstr ""
+
+msgid "Zero is significant"
+msgstr ""
+
+msgid "True"
+msgstr "Verdadero"
+
+msgid "False"
+msgstr "Falso"
+
+msgid "Value type"
+msgstr "Tipo de Valor"
+
+msgid "Aggregation type"
+msgstr "Tipo de agregación"
+
+msgid "Category combo"
+msgstr ""
+
+msgid "Option set"
+msgstr "Set de opciones"
+
+msgid "Group membership"
+msgstr ""
+
+msgid "Legend set(s)"
+msgstr ""
+
+msgid "Category option name"
+msgstr ""
+
+msgid "Category combo name"
+msgstr ""
+
+msgid "Categories name"
+msgstr ""
+
+msgid "Period type"
+msgstr "Tipo de periodo"
+
+msgid "Indicators"
+msgstr "Indicadores"
+
+msgid "Expiry days"
+msgstr "Días para vencimiento"
+
+msgid "Type"
+msgstr "Tipo"
+
+msgid "Data element"
+msgstr "Elemento de datos"
+
+msgid "Tracked entity attribute"
+msgstr "Atributo de entidad"
+
+msgid "Numerator description"
+msgstr "Descripción del numerador"
+
+msgid "Numerator expression"
+msgstr ""
+
+msgid "Denominator description"
+msgstr "Descripción del denominador"
+
+msgid "Denominator expression"
+msgstr ""
+
+msgid "Annualized"
+msgstr "Anualizado"
+
+msgid "Yes"
+msgstr "Sí"
+
+msgid "No"
+msgstr "No"
+
+msgid "Indicator type"
+msgstr "Tipo de Indicador"
+
+msgid "Decimals in output"
+msgstr ""
+
+msgid "There was a problem loading information for this data item."
+msgstr ""
+
+msgid "Name"
+msgstr "Nombre"
+
+msgid "Description"
+msgstr "Descripción"
+
+msgid "Code"
+msgstr "Código"
+
+msgid "ID"
+msgstr "Identificador"
+
+msgid "Last updated date"
+msgstr ""
+
+msgid "Created date"
+msgstr "Fecha de creación"
+
+msgid "Created by"
+msgstr "Creado por"
+
+msgid "Custom"
+msgstr "Personalizado"
+
+msgid "Program"
+msgstr "Programa"
+
+msgid "Analytics type"
+msgstr ""
+
+msgid "Enrollment"
+msgstr "Inscripción"
+
+msgid "Event"
+msgstr "Evento"
+
+msgid "Analytics period boundaries"
+msgstr "Límites del período de análisis"
+
+msgid "{{ offsetPeriodType }} × {{ offsetPeriods }}"
+msgstr ""
+
+msgid "Expression"
+msgstr "Expresión"
+
+msgid "Filter"
+msgstr "filtro"
+
+msgid "All available options are already selected"
+msgstr ""
+
+msgid "No available options for this item"
+msgstr ""
+
+msgid "Search by option name"
+msgstr ""
+
+msgid "Back to all items"
+msgstr ""
+
+msgid "Options"
+msgstr "Opciones"
+
+msgid "Selected items"
+msgstr ""
+
 msgid "Data Type"
 msgstr "Tipo de datos"
 
@@ -192,11 +358,23 @@ msgstr "No hay datos"
 msgid "Search by data item name"
 msgstr "Búsqueda por nombre de item de datos"
 
-msgid "No items selected"
-msgstr "No hay elementos seleccionados"
-
 msgid "Selected Items"
 msgstr "Elementos seleccionados"
+
+msgid "All available items are already selected"
+msgstr ""
+
+msgid "Calculation"
+msgstr "Cálculo"
+
+msgid "Metric type"
+msgstr "Tipo de métrica"
+
+msgid "All metrics"
+msgstr "Todas las métricas"
+
+msgid "No items selected"
+msgstr "No hay elementos seleccionados"
 
 msgid "No indicators found"
 msgstr "No se han encontrado indicadores"
@@ -232,14 +410,8 @@ msgstr "No se encontraron cálculos para \"{{- searchTerm}}\""
 msgid "Nothing found for \"{{- searchTerm}}\""
 msgstr "No se encontró nada para \"{{- searchTerm}}\""
 
-msgid "Calculation"
-msgstr "Cálculo"
-
-msgid "Metric type"
-msgstr "Tipo de métrica"
-
-msgid "All metrics"
-msgstr "Todas las métricas"
+msgid "Click to choose from available options"
+msgstr ""
 
 msgid "Move to {{axisName}}"
 msgstr "Mover a {{axisName}}"
@@ -293,9 +465,6 @@ msgstr "No se encontró nada en {{- dimensionTitle}}"
 msgid "Search"
 msgstr "Buscar"
 
-msgid "Nothing found for {{- searchTerm}}"
-msgstr "No se encontró nada para {{- searchTerm}}"
-
 msgid "Delete {{fileType}}"
 msgstr "Eliminar {{fileType}}"
 
@@ -341,17 +510,14 @@ msgstr "Obtener enlace…"
 msgid "Open in this app"
 msgstr "Abierto en esta aplicación"
 
+msgid "Copy to clipboard"
+msgstr "Copiar al portapapeles"
+
 msgid "Close"
 msgstr "Cerrar"
 
 msgid "Rename {{fileType}}"
 msgstr "Renombrar {{fileType}}"
-
-msgid "Name"
-msgstr "Nombre"
-
-msgid "Description"
-msgstr "Descripción"
 
 msgid "Rename"
 msgstr "Renombrar"
@@ -374,17 +540,32 @@ msgstr "mapa"
 msgid "visualization"
 msgstr "visualización"
 
+msgid "Untitled {{visualizationType}}, {{date}}"
+msgstr ""
+
+msgid "Back to all interpretations"
+msgstr "Regresar a todas las interpretaciones"
+
+msgid "Could not load interpretation details"
+msgstr ""
+
+msgid "The request to fetch interpretation comments failed"
+msgstr ""
+
 msgid "Edit"
 msgstr "Editar"
 
 msgid "Write a reply"
 msgstr "Escribe una respuesta"
 
+msgid "Could not post reply"
+msgstr ""
+
 msgid "Post reply"
 msgstr "Publicar respuesta"
 
-msgid "Delete failed"
-msgstr "Fallado el proceso de eliminar"
+msgid "Could not delete comment"
+msgstr ""
 
 msgid "Could not update comment"
 msgstr "No se pudo actualizar el comentario"
@@ -414,6 +595,9 @@ msgstr "Ocultar interpretación"
 msgid "Write an interpretation"
 msgstr "Escribir una interpretación"
 
+msgid "Could not post interpretation"
+msgstr ""
+
 msgid ""
 "Other people viewing this interpretation in the future may see more data."
 msgstr ""
@@ -425,6 +609,12 @@ msgstr "Interpretación posterior"
 
 msgid "Interpretations"
 msgstr "Interpretaciones"
+
+msgid "Error loading interpretations"
+msgstr ""
+
+msgid "Could not load interpretations"
+msgstr ""
 
 msgid "Reply"
 msgstr "Responder"
@@ -453,8 +643,14 @@ msgstr "Abrir en la aplicación"
 msgid "Share"
 msgstr "Compartir"
 
+msgid "Could not delete interpretation"
+msgstr ""
+
 msgid "Manage sharing"
 msgstr "Administrar compartir"
+
+msgid "Could not update interpretation text"
+msgstr ""
 
 msgid "Could not update interpretation"
 msgstr "No se pudo actualizar la interpretación"
@@ -464,9 +660,6 @@ msgstr "Introducir el texto de la interpretación"
 
 msgid "Not available offline"
 msgstr "No disponible sin conexión a internet"
-
-msgid "Created by"
-msgstr "Creado por"
 
 msgid "Anyone"
 msgstr "Todos"
@@ -488,9 +681,6 @@ msgstr "Creado"
 
 msgid "Last updated"
 msgstr "Última actualización"
-
-msgid "Type"
-msgstr "Tipo"
 
 msgid "Clear filters"
 msgstr "Limpiar filtros"
@@ -613,9 +803,6 @@ msgstr ""
 msgid "New line list"
 msgstr "Nuevo listado"
 
-msgid "Options"
-msgstr "Opciones"
-
 msgid "Hide"
 msgstr "Ocultar"
 
@@ -660,9 +847,6 @@ msgstr "Selecciona un grupo"
 
 msgid "Deselect all"
 msgstr "Deseleccionar todo"
-
-msgid "Period type"
-msgstr "Tipo de periodo"
 
 msgid "Year"
 msgstr "Año"
@@ -889,6 +1073,9 @@ msgstr "Años fiscales"
 msgid "Years"
 msgstr "Años"
 
+msgid "Value: {{value}}"
+msgstr ""
+
 msgid "Bold text"
 msgstr "Texto en negrita"
 
@@ -958,9 +1145,6 @@ msgstr "Series"
 msgid "Category"
 msgstr "Categoría"
 
-msgid "Filter"
-msgstr "filtro"
-
 msgid "Columns"
 msgstr "Columnas"
 
@@ -985,14 +1169,8 @@ msgstr "Informes reales a tiempo"
 msgid "Expected reports"
 msgstr "Informes esperados"
 
-msgid "Program"
-msgstr "Programa"
-
 msgid "Select a program"
 msgstr "Seleccionar un programa"
-
-msgid "Indicators"
-msgstr "Indicadores"
 
 msgid "Indicator group"
 msgstr "Grupo de indicadores"
@@ -1011,9 +1189,6 @@ msgstr "Cargando grupos de indicadores"
 
 msgid "Data element group"
 msgstr "Grupo de elemento de datos"
-
-msgid "Data element"
-msgstr "Elemento de datos"
 
 msgid "No data element groups found"
 msgstr "No se han encontrado grupos de elementos de datos"
@@ -1056,6 +1231,9 @@ msgstr "Indicador de Programa"
 
 msgid "Calculations"
 msgstr "Cálculos"
+
+msgid "Option"
+msgstr "Opción"
 
 msgid "Number"
 msgstr "Número"
@@ -1161,6 +1339,9 @@ msgstr "{{thresholdFactor}} × Z-score bajo"
 msgid "{{thresholdFactor}} × Z-score high"
 msgstr "{{thresholdFactor}} × Z-score alto"
 
+msgid "Not applicable"
+msgstr ""
+
 msgid "Data"
 msgstr "Datos"
 
@@ -1169,6 +1350,84 @@ msgstr "Unidad organizativa"
 
 msgid "Assigned Categories"
 msgstr "Categorías asignadas"
+
+msgid "No value"
+msgstr "Sin valor"
+
+msgid "Text"
+msgstr "Texto"
+
+msgid "Long text"
+msgstr "Texto largo"
+
+msgid "Multi text"
+msgstr ""
+
+msgid "Letter"
+msgstr ""
+
+msgid "Phone number"
+msgstr "Número de teléfono"
+
+msgid "Email"
+msgstr "Correo-e"
+
+msgid "Yes/No"
+msgstr "Sí/No"
+
+msgid "Yes Only"
+msgstr "Sólo Sí"
+
+msgid "Date"
+msgstr "Fecha"
+
+msgid "Date & Time"
+msgstr "Fecha y Hora"
+
+msgid "Time"
+msgstr "Hora"
+
+msgid "Unit interval"
+msgstr "Intervalo de unidad"
+
+msgid "Percentage"
+msgstr "Porcentaje"
+
+msgid "Integer"
+msgstr "Entero"
+
+msgid "Positive Integer"
+msgstr "Entero positivo"
+
+msgid "Negative Integer"
+msgstr "Entero negativo"
+
+msgid "Positive or Zero Integer"
+msgstr "Entero positivo o cero"
+
+msgid "Tracker Associate"
+msgstr ""
+
+msgid "Username"
+msgstr "Nombre de usuario"
+
+msgid "Coordinate"
+msgstr "Coordenada"
+
+msgid "Reference"
+msgstr "Referencia"
+
+msgid "Age"
+msgstr "Edad"
+
+msgid "URL"
+msgstr "URL"
+
+msgid "Image"
+msgstr "Imagen (PNG)"
+
+msgid "GeoJSON"
+msgstr "GeoJSON"
 
 msgid "Pivot table"
 msgstr "Tabla dinámica"
@@ -1223,6 +1482,9 @@ msgstr "tabla de valores atípicos"
 
 msgid "All charts"
 msgstr "Todos los gráficos"
+
+msgid "Map"
+msgstr "Mapa"
 
 msgid "{{seriesName}} (trend)"
 msgstr "{{seriesName}} (tendencia)"

@@ -36,9 +36,9 @@ const OrgUnitDimension = ({
     roots,
     selected,
     onSelect,
-    hideGroupSelect,
-    hideLevelSelect,
-    hideUserOrgUnits,
+    hideGroupSelect = false,
+    hideLevelSelect = false,
+    hideUserOrgUnits = false,
     warning,
     displayNameProp,
 }) => {
@@ -352,12 +352,6 @@ const OrgUnitDimension = ({
             <style jsx>{styles}</style>
         </div>
     )
-}
-
-OrgUnitDimension.defaultProps = {
-    hideGroupSelect: false,
-    hideLevelSelect: false,
-    hideUserOrgUnits: false,
 }
 
 OrgUnitDimension.propTypes = {

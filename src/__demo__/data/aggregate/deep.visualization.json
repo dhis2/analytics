@@ -1,0 +1,646 @@
+{
+    "name": "Immunization data by facility type last 4 quarters (lars)",
+    "created": "2016-08-02T19:58:19.493",
+    "lastUpdated": "2017-10-09T15:58:39.672",
+    "translations": [],
+    "lastUpdatedBy": {
+        "id": "GOLswS44mh8",
+        "code": null,
+        "name": "Tom Wakiki",
+        "displayName": "Tom Wakiki",
+        "username": "system"
+    },
+    "displayDensity": "NORMAL",
+    "fontSize": "NORMAL",
+    "sortOrder": 0,
+    "topLimit": 0,
+    "hideEmptyRows": false,
+    "showHierarchy": false,
+    "completedOnly": false,
+    "skipRounding": false,
+    "dataDimensionItems": [
+        {
+            "dataDimensionItemType": "DATA_ELEMENT"
+        },
+        {
+            "dataDimensionItemType": "DATA_ELEMENT"
+        },
+        {
+            "dataDimensionItemType": "DATA_ELEMENT"
+        },
+        {
+            "dataDimensionItemType": "DATA_ELEMENT"
+        },
+        {
+            "dataDimensionItemType": "DATA_ELEMENT"
+        },
+        {
+            "dataDimensionItemType": "DATA_ELEMENT"
+        },
+        {
+            "dataDimensionItemType": "DATA_ELEMENT"
+        },
+        {
+            "dataDimensionItemType": "DATA_ELEMENT"
+        },
+        {
+            "dataDimensionItemType": "DATA_ELEMENT"
+        },
+        {
+            "dataDimensionItemType": "DATA_ELEMENT"
+        },
+        {
+            "dataDimensionItemType": "DATA_ELEMENT"
+        }
+    ],
+    "subscribers": [],
+    "aggregationType": "DEFAULT",
+    "digitGroupSeparator": "SPACE",
+    "noSpaceBetweenColumns": false,
+    "cumulativeValues": false,
+    "percentStackedValues": false,
+    "showData": false,
+    "colTotals": true,
+    "rowTotals": true,
+    "rowSubTotals": true,
+    "colSubTotals": true,
+    "hideTitle": false,
+    "hideSubtitle": false,
+    "showDimensionLabels": true,
+    "interpretations": [],
+    "type": "PIVOT_TABLE",
+    "reportingParams": {
+        "grandParentOrganisationUnit": false,
+        "parentOrganisationUnit": false,
+        "organisationUnit": false,
+        "reportingPeriod": false
+    },
+    "yearlySeries": [],
+    "regression": false,
+    "hideEmptyColumns": false,
+    "fixColumnHeaders": false,
+    "fixRowHeaders": false,
+    "filters": [],
+    "parentGraphMap": {
+        "jUb8gELQApl": "ImspTQPwCqd",
+        "TEQlaapDQoK": "ImspTQPwCqd",
+        "eIQbndfxQMb": "ImspTQPwCqd",
+        "Vth0fbpFcsO": "ImspTQPwCqd",
+        "PMa2VCrupOd": "ImspTQPwCqd",
+        "O6uvpzGd5pu": "ImspTQPwCqd",
+        "bL4ooGhyHRQ": "ImspTQPwCqd",
+        "kJq2mPyFEHo": "ImspTQPwCqd",
+        "fdc6uOvgoji": "ImspTQPwCqd",
+        "at6UHUQatSo": "ImspTQPwCqd",
+        "lc3eMKXaEfw": "ImspTQPwCqd",
+        "qhqAxPSTUXp": "ImspTQPwCqd",
+        "jmIPBj66vD6": "ImspTQPwCqd"
+    },
+    "columns": [
+        {
+            "items": [
+                {
+                    "name": "LAST_4_QUARTERS",
+                    "dimensionItemType": "PERIOD",
+                    "displayShortName": "LAST_4_QUARTERS",
+                    "access": {
+                        "manage": true,
+                        "externalize": false,
+                        "write": true,
+                        "read": true,
+                        "update": true,
+                        "delete": true
+                    },
+                    "displayName": "LAST_4_QUARTERS",
+                    "id": "LAST_4_QUARTERS"
+                }
+            ],
+            "dimension": "pe"
+        },
+        {
+            "items": [
+                {
+                    "name": "CHP",
+                    "dimensionItemType": "ORGANISATION_UNIT_GROUP",
+                    "displayShortName": "CHP",
+                    "access": {
+                        "manage": true,
+                        "externalize": false,
+                        "write": true,
+                        "read": true,
+                        "update": true,
+                        "delete": true
+                    },
+                    "displayName": "CHP",
+                    "id": "uYxK4wmcPqA"
+                },
+                {
+                    "name": "Hospital",
+                    "dimensionItemType": "ORGANISATION_UNIT_GROUP",
+                    "displayShortName": "Hospital",
+                    "access": {
+                        "manage": true,
+                        "externalize": false,
+                        "write": true,
+                        "read": true,
+                        "update": true,
+                        "delete": true
+                    },
+                    "displayName": "Hospital",
+                    "id": "tDZVQ1WtwpA"
+                },
+                {
+                    "name": "MCHP",
+                    "dimensionItemType": "ORGANISATION_UNIT_GROUP",
+                    "displayShortName": "MCHP",
+                    "access": {
+                        "manage": true,
+                        "externalize": false,
+                        "write": true,
+                        "read": true,
+                        "update": true,
+                        "delete": true
+                    },
+                    "displayName": "MCHP",
+                    "id": "EYbopBOJWsW"
+                },
+                {
+                    "name": "Clinic",
+                    "dimensionItemType": "ORGANISATION_UNIT_GROUP",
+                    "displayShortName": "Clinic",
+                    "access": {
+                        "manage": true,
+                        "externalize": false,
+                        "write": true,
+                        "read": true,
+                        "update": true,
+                        "delete": true
+                    },
+                    "displayName": "Clinic",
+                    "id": "RXL3lPSK8oG"
+                },
+                {
+                    "name": "CHC",
+                    "dimensionItemType": "ORGANISATION_UNIT_GROUP",
+                    "displayShortName": "CHC",
+                    "access": {
+                        "manage": true,
+                        "externalize": false,
+                        "write": true,
+                        "read": true,
+                        "update": true,
+                        "delete": true
+                    },
+                    "displayName": "CHC",
+                    "id": "CXw2yu5fodb"
+                }
+            ],
+            "dimension": "J5jldMd8OHv"
+        },
+        {
+            "items": [
+                {
+                    "name": "Fixed",
+                    "dimensionItemType": "CATEGORY_OPTION",
+                    "displayShortName": "Fixed",
+                    "access": {
+                        "manage": true,
+                        "externalize": false,
+                        "write": true,
+                        "read": true,
+                        "update": true,
+                        "delete": true,
+                        "data": {
+                            "write": true,
+                            "read": true
+                        }
+                    },
+                    "displayName": "Fixed",
+                    "id": "qkPbeWaFsnU"
+                },
+                {
+                    "name": "Outreach",
+                    "dimensionItemType": "CATEGORY_OPTION",
+                    "displayShortName": "Outreach",
+                    "access": {
+                        "manage": true,
+                        "externalize": false,
+                        "write": true,
+                        "read": true,
+                        "update": true,
+                        "delete": true,
+                        "data": {
+                            "write": true,
+                            "read": true
+                        }
+                    },
+                    "displayName": "Outreach",
+                    "id": "wbrDrL2aYEc"
+                }
+            ],
+            "dimension": "fMZEcRHuamy"
+        }
+    ],
+    "rows": [
+        {
+            "items": [
+                {
+                    "name": "BCG doses given",
+                    "dimensionItemType": "DATA_ELEMENT",
+                    "access": {
+                        "manage": true,
+                        "externalize": false,
+                        "write": true,
+                        "read": true,
+                        "update": true,
+                        "delete": true
+                    },
+                    "displayName": "BCG doses given",
+                    "displayShortName": "BCG doses given",
+                    "id": "s46m5MS0hxu"
+                },
+                {
+                    "name": "Fully Immunized child",
+                    "dimensionItemType": "DATA_ELEMENT",
+                    "access": {
+                        "manage": true,
+                        "externalize": false,
+                        "write": true,
+                        "read": true,
+                        "update": true,
+                        "delete": true
+                    },
+                    "displayName": "Fully Immunized child",
+                    "displayShortName": "Fully Immunized Child",
+                    "id": "UOlfIjgN8X6"
+                },
+                {
+                    "name": "Measles doses given",
+                    "dimensionItemType": "DATA_ELEMENT",
+                    "access": {
+                        "manage": true,
+                        "externalize": false,
+                        "write": true,
+                        "read": true,
+                        "update": true,
+                        "delete": true
+                    },
+                    "displayName": "Measles doses given",
+                    "displayShortName": "Measles doses given",
+                    "id": "YtbsuPPo010"
+                },
+                {
+                    "name": "OPV0 doses given",
+                    "dimensionItemType": "DATA_ELEMENT",
+                    "access": {
+                        "manage": true,
+                        "externalize": false,
+                        "write": true,
+                        "read": true,
+                        "update": true,
+                        "delete": true
+                    },
+                    "displayName": "OPV0 doses given",
+                    "displayShortName": "OPV0 doses given",
+                    "id": "x3Do5e7g4Qo"
+                },
+                {
+                    "name": "OPV1 doses given",
+                    "dimensionItemType": "DATA_ELEMENT",
+                    "access": {
+                        "manage": true,
+                        "externalize": false,
+                        "write": true,
+                        "read": true,
+                        "update": true,
+                        "delete": true
+                    },
+                    "displayName": "OPV1 doses given",
+                    "displayShortName": "OPV1 doses given",
+                    "id": "pikOziyCXbM"
+                },
+                {
+                    "name": "OPV2 doses given",
+                    "dimensionItemType": "DATA_ELEMENT",
+                    "access": {
+                        "manage": true,
+                        "externalize": false,
+                        "write": true,
+                        "read": true,
+                        "update": true,
+                        "delete": true
+                    },
+                    "displayName": "OPV2 doses given",
+                    "displayShortName": "OPV2 doses given",
+                    "id": "O05mAByOgAv"
+                },
+                {
+                    "name": "OPV3 doses given",
+                    "dimensionItemType": "DATA_ELEMENT",
+                    "access": {
+                        "manage": true,
+                        "externalize": false,
+                        "write": true,
+                        "read": true,
+                        "update": true,
+                        "delete": true
+                    },
+                    "displayName": "OPV3 doses given",
+                    "displayShortName": "OPV3 doses given",
+                    "id": "vI2csg55S9C"
+                },
+                {
+                    "name": "Penta1 doses given",
+                    "dimensionItemType": "DATA_ELEMENT",
+                    "access": {
+                        "manage": true,
+                        "externalize": false,
+                        "write": true,
+                        "read": true,
+                        "update": true,
+                        "delete": true
+                    },
+                    "displayName": "Penta1 doses given",
+                    "displayShortName": "Penta1 doses given",
+                    "id": "fClA2Erf6IO"
+                },
+                {
+                    "name": "Penta2 doses given",
+                    "dimensionItemType": "DATA_ELEMENT",
+                    "access": {
+                        "manage": true,
+                        "externalize": false,
+                        "write": true,
+                        "read": true,
+                        "update": true,
+                        "delete": true
+                    },
+                    "displayName": "Penta2 doses given",
+                    "displayShortName": "Penta2 doses given",
+                    "id": "I78gJm4KBo7"
+                },
+                {
+                    "name": "Penta3 doses given",
+                    "dimensionItemType": "DATA_ELEMENT",
+                    "access": {
+                        "manage": true,
+                        "externalize": false,
+                        "write": true,
+                        "read": true,
+                        "update": true,
+                        "delete": true
+                    },
+                    "displayName": "Penta3 doses given",
+                    "displayShortName": "Penta3 doses given",
+                    "id": "n6aMJNLdvep"
+                },
+                {
+                    "name": "Yellow Fever doses given",
+                    "dimensionItemType": "DATA_ELEMENT",
+                    "access": {
+                        "manage": true,
+                        "externalize": false,
+                        "write": true,
+                        "read": true,
+                        "update": true,
+                        "delete": true
+                    },
+                    "displayName": "Yellow Fever doses given",
+                    "displayShortName": "Yellow Fever doses given",
+                    "id": "l6byfWFUGaP"
+                }
+            ],
+            "dimension": "dx"
+        },
+        {
+            "items": [
+                {
+                    "name": "Bo",
+                    "dimensionItemType": "ORGANISATION_UNIT",
+                    "displayShortName": "Bo",
+                    "access": {
+                        "manage": true,
+                        "externalize": false,
+                        "write": true,
+                        "read": true,
+                        "update": true,
+                        "delete": true
+                    },
+                    "displayName": "Bo",
+                    "id": "O6uvpzGd5pu"
+                },
+                {
+                    "name": "Bombali",
+                    "dimensionItemType": "ORGANISATION_UNIT",
+                    "displayShortName": "Bombali",
+                    "access": {
+                        "manage": true,
+                        "externalize": false,
+                        "write": true,
+                        "read": true,
+                        "update": true,
+                        "delete": true
+                    },
+                    "displayName": "Bombali",
+                    "id": "fdc6uOvgoji"
+                },
+                {
+                    "name": "Bonthe",
+                    "dimensionItemType": "ORGANISATION_UNIT",
+                    "displayShortName": "Bonthe",
+                    "access": {
+                        "manage": true,
+                        "externalize": false,
+                        "write": true,
+                        "read": true,
+                        "update": true,
+                        "delete": true
+                    },
+                    "displayName": "Bonthe",
+                    "id": "lc3eMKXaEfw"
+                },
+                {
+                    "name": "Kailahun",
+                    "dimensionItemType": "ORGANISATION_UNIT",
+                    "displayShortName": "Kailahun",
+                    "access": {
+                        "manage": true,
+                        "externalize": false,
+                        "write": true,
+                        "read": true,
+                        "update": true,
+                        "delete": true
+                    },
+                    "displayName": "Kailahun",
+                    "id": "jUb8gELQApl"
+                },
+                {
+                    "name": "Kambia",
+                    "dimensionItemType": "ORGANISATION_UNIT",
+                    "displayShortName": "Kambia",
+                    "access": {
+                        "manage": true,
+                        "externalize": false,
+                        "write": true,
+                        "read": true,
+                        "update": true,
+                        "delete": true
+                    },
+                    "displayName": "Kambia",
+                    "id": "PMa2VCrupOd"
+                },
+                {
+                    "name": "Kenema",
+                    "dimensionItemType": "ORGANISATION_UNIT",
+                    "displayShortName": "Kenema",
+                    "access": {
+                        "manage": true,
+                        "externalize": false,
+                        "write": true,
+                        "read": true,
+                        "update": true,
+                        "delete": true
+                    },
+                    "displayName": "Kenema",
+                    "id": "kJq2mPyFEHo"
+                },
+                {
+                    "name": "Koinadugu",
+                    "dimensionItemType": "ORGANISATION_UNIT",
+                    "displayShortName": "Koinadugu",
+                    "access": {
+                        "manage": true,
+                        "externalize": false,
+                        "write": true,
+                        "read": true,
+                        "update": true,
+                        "delete": true
+                    },
+                    "displayName": "Koinadugu",
+                    "id": "qhqAxPSTUXp"
+                },
+                {
+                    "name": "Kono",
+                    "dimensionItemType": "ORGANISATION_UNIT",
+                    "displayShortName": "Kono",
+                    "access": {
+                        "manage": true,
+                        "externalize": false,
+                        "write": true,
+                        "read": true,
+                        "update": true,
+                        "delete": true
+                    },
+                    "displayName": "Kono",
+                    "id": "Vth0fbpFcsO"
+                },
+                {
+                    "name": "Moyamba",
+                    "dimensionItemType": "ORGANISATION_UNIT",
+                    "displayShortName": "Moyamba",
+                    "access": {
+                        "manage": true,
+                        "externalize": false,
+                        "write": true,
+                        "read": true,
+                        "update": true,
+                        "delete": true
+                    },
+                    "displayName": "Moyamba",
+                    "id": "jmIPBj66vD6"
+                },
+                {
+                    "name": "Port Loko",
+                    "dimensionItemType": "ORGANISATION_UNIT",
+                    "displayShortName": "Port Loko",
+                    "access": {
+                        "manage": true,
+                        "externalize": false,
+                        "write": true,
+                        "read": true,
+                        "update": true,
+                        "delete": true
+                    },
+                    "displayName": "Port Loko",
+                    "id": "TEQlaapDQoK"
+                },
+                {
+                    "name": "Pujehun",
+                    "dimensionItemType": "ORGANISATION_UNIT",
+                    "displayShortName": "Pujehun",
+                    "access": {
+                        "manage": true,
+                        "externalize": false,
+                        "write": true,
+                        "read": true,
+                        "update": true,
+                        "delete": true
+                    },
+                    "displayName": "Pujehun",
+                    "id": "bL4ooGhyHRQ"
+                },
+                {
+                    "name": "Tonkolili",
+                    "dimensionItemType": "ORGANISATION_UNIT",
+                    "displayShortName": "Tonkolili",
+                    "access": {
+                        "manage": true,
+                        "externalize": false,
+                        "write": true,
+                        "read": true,
+                        "update": true,
+                        "delete": true
+                    },
+                    "displayName": "Tonkolili",
+                    "id": "eIQbndfxQMb"
+                },
+                {
+                    "name": "Western Area",
+                    "dimensionItemType": "ORGANISATION_UNIT",
+                    "displayShortName": "Western Area",
+                    "access": {
+                        "manage": true,
+                        "externalize": false,
+                        "write": true,
+                        "read": true,
+                        "update": true,
+                        "delete": true
+                    },
+                    "displayName": "Western Area",
+                    "id": "at6UHUQatSo"
+                }
+            ],
+            "dimension": "ou"
+        }
+    ],
+    "subscribed": false,
+    "access": {
+        "manage": true,
+        "externalize": true,
+        "write": true,
+        "read": true,
+        "update": true,
+        "delete": true
+    },
+    "displayName": "Immunization data by facility type last 4 quarters (lars)",
+    "favorite": false,
+    "user": {
+        "id": "GOLswS44mh8",
+        "code": null,
+        "name": "Tom Wakiki",
+        "displayName": "Tom Wakiki",
+        "username": "system"
+    },
+    "href": "https://debug.dhis2.org/dev/api/42/visualizations/zLlhKD36wC5",
+    "id": "zLlhKD36wC5",
+    "legend": {
+        "showKey": false,
+        "style": "FILL",
+        "strategy": "FIXED"
+    },
+    "sorting": [],
+    "icons": [],
+    "seriesKey": {
+        "hidden": false
+    }
+}

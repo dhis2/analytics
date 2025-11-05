@@ -92,6 +92,7 @@ export class AdaptiveClippingController {
                                       axis.sizes[index]?.size || 0
                                   )
                                 : 0,
+                            ...header.style,
                         })
                         this.addSize(
                             { row: -headerStack.length + level, column: index },

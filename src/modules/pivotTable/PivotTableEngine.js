@@ -120,6 +120,7 @@ const buildDimensionLookup = (visualization, metadata, headers) => {
         isDxDimension: isDxDimension(metadata.items[row.dimension]),
         position: 'row',
     }))
+
     const columns = visualization.columns.map((column) => ({
         dimension: column.dimension,
         meta: metadata.items[column.dimension],
@@ -380,11 +381,11 @@ export class PivotTableEngine {
                 rawValue = parseValue(rawValue)
                 switch (this.visualization.numberType) {
                     case NUMBER_TYPE_ROW_PERCENTAGE:
-                        renderedValue =
+                        rawCell.pctValue = renderedValue =
                             rawValue / this.percentageTotals[row].value
                         break
                     case NUMBER_TYPE_COLUMN_PERCENTAGE:
-                        renderedValue =
+                        rawCell.pctValue = renderedValue =
                             rawValue / this.percentageTotals[column].value
                         break
                     default:
@@ -402,6 +403,24 @@ export class PivotTableEngine {
             rawCell.empty = false
             rawCell.rawValue = rawValue
             rawCell.renderedValue = renderedValue
+        }
+
+        // show the original value in the tooltip
+        if (
+            [
+                NUMBER_TYPE_COLUMN_PERCENTAGE,
+                NUMBER_TYPE_ROW_PERCENTAGE,
+            ].includes(this.visualization.numberType)
+        ) {
+            rawCell.titleValue = i18n.t('Value: {{value}}', {
+                value: renderValue(
+                    rawCell.rawValue,
+                    valueType,
+                    // force VALUE for formatting the original value
+                    { ...this.visualization, numberType: NUMBER_TYPE_VALUE }
+                ),
+                nsSeparator: '^^',
+            })
         }
 
         if (
@@ -607,7 +626,7 @@ export class PivotTableEngine {
         return !this.data[row] || this.data[row].length === 0
     }
     columnIsEmpty(column) {
-        return !this.rowMap.some((row) => this.data[row][column])
+        return !this.rowMap.some((row) => !!this.data[row]?.[column])
     }
 
     getRawColumnHeader(column) {
@@ -1297,11 +1316,20 @@ export class PivotTableEngine {
             }
 
             if (
+                // for percentage strings, use the pctValue (percentage value) in the sort comparison
+                [
+                    NUMBER_TYPE_ROW_PERCENTAGE,
+                    NUMBER_TYPE_COLUMN_PERCENTAGE,
+                ].includes(this.visualization.numberType)
+            ) {
+                return (valueA.pctValue - valueB.pctValue) * order
+            } else if (
                 valueA.valueType === VALUE_TYPE_NUMBER &&
                 valueB.valueType === VALUE_TYPE_NUMBER
             ) {
                 return (valueA.rawValue - valueB.rawValue) * order
             }
+
             return (
                 valueA.renderedValue.localeCompare(valueB.renderedValue) * order
             )

@@ -1,13 +1,13 @@
 # 
 # Translators:
-# Malinda Wijeratne, 2023
+# Malinda Wijeratne, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2023-04-18T08:41:27.838Z\n"
+"POT-Creation-Date: 2025-04-15T13:34:54.995Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Malinda Wijeratne, 2023\n"
+"Last-Translator: Malinda Wijeratne, 2025\n"
 "Language-Team: Sinhala (https://app.transifex.com/hisp-uio/teams/100509/si/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -72,6 +72,12 @@ msgid "About this line list"
 msgstr ""
 
 msgid "About this visualization"
+msgstr ""
+
+msgid "About this event chart"
+msgstr ""
+
+msgid "About this event report"
 msgstr ""
 
 msgid "This app could not retrieve required data."
@@ -150,7 +156,172 @@ msgstr ""
 msgid "Math operators"
 msgstr ""
 
+msgid "Expression description"
+msgstr ""
+
+msgid "Error loading value"
+msgstr ""
+
+msgid "None"
+msgstr ""
+
+msgid "Data set(s)"
+msgstr ""
+
+msgid "Zero is significant"
+msgstr ""
+
+msgid "True"
+msgstr ""
+
+msgid "False"
+msgstr ""
+
+msgid "Value type"
+msgstr ""
+
+msgid "Aggregation type"
+msgstr ""
+
+msgid "Category combo"
+msgstr ""
+
+msgid "Option set"
+msgstr ""
+
+msgid "Group membership"
+msgstr ""
+
+msgid "Legend set(s)"
+msgstr ""
+
+msgid "Category option name"
+msgstr ""
+
+msgid "Category combo name"
+msgstr ""
+
+msgid "Categories name"
+msgstr ""
+
+msgid "Period type"
+msgstr ""
+
+msgid "Indicators"
+msgstr ""
+
+msgid "Expiry days"
+msgstr ""
+
+msgid "Type"
+msgstr ""
+
+msgid "Data element"
+msgstr ""
+
+msgid "Tracked entity attribute"
+msgstr ""
+
+msgid "Numerator description"
+msgstr ""
+
+msgid "Numerator expression"
+msgstr ""
+
+msgid "Denominator description"
+msgstr ""
+
+msgid "Denominator expression"
+msgstr ""
+
+msgid "Annualized"
+msgstr ""
+
+msgid "Yes"
+msgstr "ඔව්"
+
+msgid "No"
+msgstr "නැත"
+
+msgid "Indicator type"
+msgstr ""
+
+msgid "Decimals in output"
+msgstr ""
+
+msgid "There was a problem loading information for this data item."
+msgstr ""
+
+msgid "Name"
+msgstr "නම"
+
+msgid "Description"
+msgstr "විස්තරය"
+
+msgid "Code"
+msgstr "කේත කරන්න"
+
+msgid "ID"
+msgstr ""
+
+msgid "Last updated date"
+msgstr ""
+
+msgid "Created date"
+msgstr ""
+
+msgid "Created by"
+msgstr ""
+
+msgid "Custom"
+msgstr ""
+
+msgid "Program"
+msgstr ""
+
+msgid "Analytics type"
+msgstr ""
+
+msgid "Enrollment"
+msgstr ""
+
+msgid "Event"
+msgstr ""
+
+msgid "Analytics period boundaries"
+msgstr ""
+
+msgid "{{ offsetPeriodType }} × {{ offsetPeriods }}"
+msgstr ""
+
+msgid "Expression"
+msgstr ""
+
+msgid "Filter"
+msgstr ""
+
+msgid "All available options are already selected"
+msgstr ""
+
+msgid "No available options for this item"
+msgstr ""
+
+msgid "Search by option name"
+msgstr ""
+
+msgid "Back to all items"
+msgstr ""
+
+msgid "Options"
+msgstr ""
+
+msgid "Selected items"
+msgstr ""
+
 msgid "Data Type"
+msgstr ""
+
+msgid "Only {{dataType}} can be used in {{visType}}"
 msgstr ""
 
 msgid "All types"
@@ -165,10 +336,22 @@ msgstr ""
 msgid "Search by data item name"
 msgstr ""
 
-msgid "No items selected"
+msgid "Selected Items"
 msgstr ""
 
-msgid "Selected Items"
+msgid "All available items are already selected"
+msgstr ""
+
+msgid "Calculation"
+msgstr ""
+
+msgid "Metric type"
+msgstr ""
+
+msgid "All metrics"
+msgstr ""
+
+msgid "No items selected"
 msgstr ""
 
 msgid "No indicators found"
@@ -183,6 +366,9 @@ msgstr ""
 msgid "No program indicators found"
 msgstr ""
 
+msgid "No calculations found"
+msgstr ""
+
 msgid "No indicators found for \"{{- searchTerm}}\""
 msgstr ""
 
@@ -195,16 +381,13 @@ msgstr ""
 msgid "No program indicators found for \"{{- searchTerm}}\""
 msgstr ""
 
+msgid "No calculations found for \"{{- searchTerm}}\""
+msgstr ""
+
 msgid "Nothing found for \"{{- searchTerm}}\""
 msgstr ""
 
-msgid "Calculation"
-msgstr ""
-
-msgid "Metric type"
-msgstr ""
-
-msgid "All metrics"
+msgid "Click to choose from available options"
 msgstr ""
 
 msgid "Move to {{axisName}}"
@@ -257,9 +440,6 @@ msgstr ""
 msgid "Search"
 msgstr "සොයන්න"
 
-msgid "Nothing found for {{- searchTerm}}"
-msgstr ""
-
 msgid "Delete {{fileType}}"
 msgstr ""
 
@@ -309,12 +489,6 @@ msgstr "වසන්න"
 msgid "Rename {{fileType}}"
 msgstr ""
 
-msgid "Name"
-msgstr "නම"
-
-msgid "Description"
-msgstr "විස්තරය"
-
 msgid "Rename"
 msgstr ""
 
@@ -336,6 +510,9 @@ msgstr ""
 msgid "visualization"
 msgstr ""
 
+msgid "Untitled {{visualizationType}}, {{date}}"
+msgstr ""
+
 msgid "Edit"
 msgstr "වෙනස් කරන්න"
 
@@ -343,6 +520,9 @@ msgid "Write a reply"
 msgstr ""
 
 msgid "Post reply"
+msgstr ""
+
+msgid "Delete failed"
 msgstr ""
 
 msgid "Could not update comment"
@@ -371,10 +551,25 @@ msgstr ""
 msgid "Write an interpretation"
 msgstr ""
 
+msgid ""
+"Other people viewing this interpretation in the future may see more data."
+msgstr ""
+
 msgid "Post interpretation"
 msgstr ""
 
 msgid "Interpretations"
+msgstr ""
+
+msgid "Reply"
+msgstr ""
+
+msgid "{{count}} replies"
+msgid_plural "{{count}} replies"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "View replies"
 msgstr ""
 
 msgid "Unlike"
@@ -383,13 +578,13 @@ msgstr ""
 msgid "Like"
 msgstr ""
 
-msgid "Reply"
+msgid "See interpretation"
+msgstr ""
+
+msgid "Open in app"
 msgstr ""
 
 msgid "Share"
-msgstr ""
-
-msgid "See interpretation"
 msgstr ""
 
 msgid "Manage sharing"
@@ -401,44 +596,8 @@ msgstr ""
 msgid "Enter interpretation text"
 msgstr ""
 
-msgid "Bold text"
-msgstr ""
-
-msgid "Italic text"
-msgstr ""
-
-msgid "Link to a URL"
-msgstr ""
-
-msgid "Mention a user"
-msgstr ""
-
-msgid "Add emoji"
-msgstr ""
-
-msgid "Preview"
-msgstr ""
-
-msgid "Back to write mode"
-msgstr ""
-
-msgid "Too many results. Try refining the search."
-msgstr ""
-
-msgid "Search for a user"
-msgstr ""
-
-msgid "Searching for \"{{- searchText}}\""
-msgstr ""
-
-msgid "No results found"
-msgstr ""
-
 msgid "Not available offline"
 msgstr "මාර්ග අපගතව නොතිබේ"
-
-msgid "Created by"
-msgstr ""
 
 msgid "Anyone"
 msgstr "ඕනෑම කෙනෙක්"
@@ -459,9 +618,6 @@ msgid "Created"
 msgstr ""
 
 msgid "Last updated"
-msgstr ""
-
-msgid "Type"
 msgstr ""
 
 msgid "Clear filters"
@@ -567,9 +723,6 @@ msgstr ""
 msgid "New line list"
 msgstr ""
 
-msgid "Options"
-msgstr ""
-
 msgid "Hide"
 msgstr ""
 
@@ -612,9 +765,6 @@ msgstr ""
 msgid "Deselect all"
 msgstr ""
 
-msgid "Period type"
-msgstr ""
-
 msgid "Year"
 msgstr "වසර"
 
@@ -624,13 +774,13 @@ msgstr "වසර තෝරන්න"
 msgid "Period"
 msgstr ""
 
+msgid "Selected Periods"
+msgstr ""
+
 msgid "Relative periods"
 msgstr ""
 
 msgid "Fixed periods"
-msgstr ""
-
-msgid "Selected Periods"
 msgstr ""
 
 msgid "No periods selected"
@@ -840,6 +990,33 @@ msgstr ""
 msgid "Years"
 msgstr "අවුරුදු"
 
+msgid "Value: {{value}}"
+msgstr ""
+
+msgid "Bold text"
+msgstr ""
+
+msgid "Italic text"
+msgstr ""
+
+msgid "Link to a URL"
+msgstr ""
+
+msgid "Mention a user"
+msgstr ""
+
+msgid "Add emoji"
+msgstr ""
+
+msgid "Preview"
+msgstr ""
+
+msgid "Back to write mode"
+msgstr ""
+
+msgid "Interpretations and details"
+msgstr ""
+
 msgid "Translating to"
 msgstr ""
 
@@ -867,14 +1044,23 @@ msgstr ""
 msgid "Retry"
 msgstr "නැවත උත්සාහ කරන්න"
 
+msgid "Too many results. Try refining the search."
+msgstr ""
+
+msgid "Search for a user"
+msgstr ""
+
+msgid "Searching for \"{{- searchText}}\""
+msgstr ""
+
+msgid "No results found"
+msgstr ""
+
 msgid "Series"
 msgstr ""
 
 msgid "Category"
 msgstr "කාණ්ඩය"
-
-msgid "Filter"
-msgstr ""
 
 msgid "Columns"
 msgstr ""
@@ -900,13 +1086,7 @@ msgstr ""
 msgid "Expected reports"
 msgstr ""
 
-msgid "Program"
-msgstr ""
-
 msgid "Select a program"
-msgstr ""
-
-msgid "Indicators"
 msgstr ""
 
 msgid "Indicator group"
@@ -925,9 +1105,6 @@ msgid "Loading indicator groups"
 msgstr ""
 
 msgid "Data element group"
-msgstr ""
-
-msgid "Data element"
 msgstr ""
 
 msgid "No data element groups found"
@@ -970,6 +1147,9 @@ msgid "Program indicator"
 msgstr ""
 
 msgid "Calculations"
+msgstr ""
+
+msgid "Option"
 msgstr ""
 
 msgid "Number"
@@ -1074,6 +1254,9 @@ msgstr ""
 msgid "{{thresholdFactor}} × Z-score high"
 msgstr ""
 
+msgid "Not applicable"
+msgstr ""
+
 msgid "Data"
 msgstr "දත්ත"
 
@@ -1081,6 +1264,81 @@ msgid "Organisation unit"
 msgstr ""
 
 msgid "Assigned Categories"
+msgstr ""
+
+msgid "Text"
+msgstr ""
+
+msgid "Long text"
+msgstr ""
+
+msgid "Multi text"
+msgstr ""
+
+msgid "Letter"
+msgstr ""
+
+msgid "Phone number"
+msgstr ""
+
+msgid "Email"
+msgstr ""
+
+msgid "Yes/No"
+msgstr ""
+
+msgid "Yes Only"
+msgstr ""
+
+msgid "Date"
+msgstr "දිනය"
+
+msgid "Date & Time"
+msgstr ""
+
+msgid "Time"
+msgstr ""
+
+msgid "Unit interval"
+msgstr ""
+
+msgid "Percentage"
+msgstr ""
+
+msgid "Integer"
+msgstr ""
+
+msgid "Positive Integer"
+msgstr ""
+
+msgid "Negative Integer"
+msgstr ""
+
+msgid "Positive or Zero Integer"
+msgstr ""
+
+msgid "Tracker Associate"
+msgstr ""
+
+msgid "Username"
+msgstr ""
+
+msgid "Coordinate"
+msgstr ""
+
+msgid "Reference"
+msgstr ""
+
+msgid "Age"
+msgstr ""
+
+msgid "URL"
+msgstr ""
+
+msgid "Image"
+msgstr ""
+
+msgid "GeoJSON"
 msgstr ""
 
 msgid "Pivot table"
@@ -1131,8 +1389,14 @@ msgstr ""
 msgid "Single value"
 msgstr ""
 
+msgid "Outlier table"
+msgstr ""
+
 msgid "All charts"
 msgstr ""
+
+msgid "Map"
+msgstr "සිතියම"
 
 msgid "{{seriesName}} (trend)"
 msgstr ""

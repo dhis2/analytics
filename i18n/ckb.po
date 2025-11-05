@@ -1,15 +1,15 @@
 # 
 # Translators:
-# KRG HIS <antonia.bezenchek@informa.pro>, 2021
-# Viktor Varland <viktor@dhis2.org>, 2022
+# KRG HIS <antonia.bezenchek@informa.pro>, 2025
+# Viktor Varland <viktor@dhis2.org>, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-08-22T09:12:05.760Z\n"
+"POT-Creation-Date: 2025-09-09T09:32:04.677Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2022\n"
-"Language-Team: Central Kurdish (https://www.transifex.com/hisp-uio/teams/100509/ckb/)\n"
+"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2025\n"
+"Language-Team: Central Kurdish (https://app.transifex.com/hisp-uio/teams/100509/ckb/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -75,16 +75,57 @@ msgstr ""
 msgid "About this visualization"
 msgstr ""
 
+msgid "About this event chart"
+msgstr ""
+
+msgid "About this event report"
+msgstr ""
+
 msgid "This app could not retrieve required data."
 msgstr ""
 
 msgid "Network error"
 msgstr ""
 
-msgid "Data Type"
+msgid "Data / Edit calculation"
 msgstr ""
 
-msgid "All types"
+msgid "Data / New calculation"
+msgstr ""
+
+msgid "Remove item"
+msgstr ""
+
+msgid "Check formula"
+msgstr ""
+
+msgid "Calculation name"
+msgstr ""
+
+msgid "Shown in table headers and chart axes/legends"
+msgstr ""
+
+msgid "Delete calculation"
+msgstr ""
+
+msgid "Cancel"
+msgstr "لابردن"
+
+msgid "The calculation can only be saved with a valid formula"
+msgstr ""
+
+msgid "Add a name to save this calculation"
+msgstr ""
+
+msgid "Save calculation"
+msgstr ""
+
+msgid ""
+"Are you sure you want to delete this calculation? It may be used by other "
+"visualizations."
+msgstr ""
+
+msgid "Yes, delete"
 msgstr ""
 
 msgid "Totals only"
@@ -93,28 +134,228 @@ msgstr ""
 msgid "Details only"
 msgstr ""
 
+msgid "Loading"
+msgstr ""
+
+msgid "Data elements"
+msgstr ""
+
+msgid "Search by data element name"
+msgstr ""
+
+msgid "No data elements found for \"{{- searchTerm}}\""
+msgstr ""
+
+msgid "No data elements found"
+msgstr ""
+
+msgid ""
+"Drag items here, or double click in the list, to start building a "
+"calculation formula"
+msgstr ""
+
+msgid "Math operators"
+msgstr ""
+
+msgid "Expression description"
+msgstr ""
+
+msgid "Error loading value"
+msgstr ""
+
+msgid "None"
+msgstr "هیچیان"
+
+msgid "Data set(s)"
+msgstr ""
+
+msgid "Zero is significant"
+msgstr ""
+
+msgid "True"
+msgstr ""
+
+msgid "False"
+msgstr ""
+
+msgid "Value type"
+msgstr ""
+
+msgid "Aggregation type"
+msgstr ""
+
+msgid "Category combo"
+msgstr ""
+
+msgid "Option set"
+msgstr ""
+
+msgid "Group membership"
+msgstr ""
+
+msgid "Legend set(s)"
+msgstr ""
+
+msgid "Category option name"
+msgstr ""
+
+msgid "Category combo name"
+msgstr ""
+
+msgid "Categories name"
+msgstr ""
+
+msgid "Period type"
+msgstr ""
+
+msgid "Indicators"
+msgstr "نیشاندەر"
+
+msgid "Expiry days"
+msgstr ""
+
+msgid "Type"
+msgstr ""
+
+msgid "Data element"
+msgstr "داتاي سةرةكي"
+
+msgid "Tracked entity attribute"
+msgstr ""
+
+msgid "Numerator description"
+msgstr ""
+
+msgid "Numerator expression"
+msgstr ""
+
+msgid "Denominator description"
+msgstr ""
+
+msgid "Denominator expression"
+msgstr ""
+
+msgid "Annualized"
+msgstr ""
+
+msgid "Yes"
+msgstr "بەڵێ"
+
+msgid "No"
+msgstr "نەخێر"
+
+msgid "Indicator type"
+msgstr ""
+
+msgid "Decimals in output"
+msgstr ""
+
+msgid "There was a problem loading information for this data item."
+msgstr ""
+
+msgid "Name"
+msgstr ""
+
+msgid "Description"
+msgstr ""
+
+msgid "Code"
+msgstr ""
+
+msgid "ID"
+msgstr ""
+
+msgid "Last updated date"
+msgstr ""
+
+msgid "Created date"
+msgstr ""
+
+msgid "Created by"
+msgstr ""
+
+msgid "Custom"
+msgstr ""
+
+msgid "Program"
+msgstr "بةرنامة"
+
+msgid "Analytics type"
+msgstr ""
+
+msgid "Enrollment"
+msgstr "تۆمارکردن"
+
+msgid "Event"
+msgstr ""
+
+msgid "Analytics period boundaries"
+msgstr ""
+
+msgid "{{ offsetPeriodType }} × {{ offsetPeriods }}"
+msgstr ""
+
+msgid "Expression"
+msgstr ""
+
+msgid "Filter"
+msgstr ""
+
+msgid "All available options are already selected"
+msgstr ""
+
+msgid "No available options for this item"
+msgstr ""
+
+msgid "Search by option name"
+msgstr ""
+
+msgid "Back to all items"
+msgstr ""
+
+msgid "Options"
+msgstr ""
+
+msgid "Selected items"
+msgstr ""
+
+msgid "Data Type"
+msgstr ""
+
+msgid "Only {{dataType}} can be used in {{visType}}"
+msgstr ""
+
+msgid "All types"
+msgstr ""
+
 msgid "Disaggregation"
 msgstr ""
 
 msgid "No data"
 msgstr ""
 
-msgid "Loading"
-msgstr ""
-
 msgid "Search by data item name"
-msgstr ""
-
-msgid "No items selected"
 msgstr ""
 
 msgid "Selected Items"
 msgstr ""
 
-msgid "No indicators found"
+msgid "All available items are already selected"
 msgstr ""
 
-msgid "No data elements found"
+msgid "Calculation"
+msgstr ""
+
+msgid "Metric type"
+msgstr ""
+
+msgid "All metrics"
+msgstr ""
+
+msgid "No items selected"
+msgstr ""
+
+msgid "No indicators found"
 msgstr ""
 
 msgid "No data sets found"
@@ -126,10 +367,10 @@ msgstr ""
 msgid "No program indicators found"
 msgstr ""
 
-msgid "No indicators found for \"{{- searchTerm}}\""
+msgid "No calculations found"
 msgstr ""
 
-msgid "No data elements found for \"{{- searchTerm}}\""
+msgid "No indicators found for \"{{- searchTerm}}\""
 msgstr ""
 
 msgid "No data sets found for \"{{- searchTerm}}\""
@@ -141,13 +382,13 @@ msgstr ""
 msgid "No program indicators found for \"{{- searchTerm}}\""
 msgstr ""
 
+msgid "No calculations found for \"{{- searchTerm}}\""
+msgstr ""
+
 msgid "Nothing found for \"{{- searchTerm}}\""
 msgstr ""
 
-msgid "Metric type"
-msgstr ""
-
-msgid "All metrics"
+msgid "Click to choose from available options"
 msgstr ""
 
 msgid "Move to {{axisName}}"
@@ -200,18 +441,12 @@ msgstr ""
 msgid "Search"
 msgstr "گەڕان"
 
-msgid "Nothing found for {{- searchTerm}}"
-msgstr ""
-
 msgid "Delete {{fileType}}"
 msgstr ""
 
 msgid ""
 "This {{fileType}} and related interpretations will be deleted. Continue?"
 msgstr ""
-
-msgid "Cancel"
-msgstr "لابردن"
 
 msgid "Delete"
 msgstr "سڕینەوە"
@@ -249,19 +484,19 @@ msgstr ""
 msgid "Open in this app"
 msgstr ""
 
+msgid "Copy to clipboard"
+msgstr ""
+
 msgid "Close"
 msgstr "داخستن"
 
 msgid "Rename {{fileType}}"
 msgstr ""
 
-msgid "Name"
-msgstr ""
-
-msgid "Description"
-msgstr ""
-
 msgid "Rename"
+msgstr ""
+
+msgid "{{- objectName}} (copy)"
 msgstr ""
 
 msgid "Save {{fileType}} as"
@@ -279,13 +514,31 @@ msgstr ""
 msgid "visualization"
 msgstr ""
 
+msgid "Untitled {{visualizationType}}, {{date}}"
+msgstr ""
+
+msgid "Back to all interpretations"
+msgstr ""
+
+msgid "Could not load interpretation details"
+msgstr ""
+
+msgid "The request to fetch interpretation comments failed"
+msgstr ""
+
 msgid "Edit"
 msgstr "دةستكاري"
 
 msgid "Write a reply"
 msgstr ""
 
+msgid "Could not post reply"
+msgstr ""
+
 msgid "Post reply"
+msgstr ""
+
+msgid "Could not delete comment"
 msgstr ""
 
 msgid "Could not update comment"
@@ -314,10 +567,34 @@ msgstr ""
 msgid "Write an interpretation"
 msgstr ""
 
+msgid "Could not post interpretation"
+msgstr ""
+
+msgid ""
+"Other people viewing this interpretation in the future may see more data."
+msgstr ""
+
 msgid "Post interpretation"
 msgstr ""
 
 msgid "Interpretations"
+msgstr ""
+
+msgid "Error loading interpretations"
+msgstr ""
+
+msgid "Could not load interpretations"
+msgstr ""
+
+msgid "Reply"
+msgstr ""
+
+msgid "{{count}} replies"
+msgid_plural "{{count}} replies"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "View replies"
 msgstr ""
 
 msgid "Unlike"
@@ -326,16 +603,22 @@ msgstr ""
 msgid "Like"
 msgstr ""
 
-msgid "Reply"
+msgid "See interpretation"
+msgstr ""
+
+msgid "Open in app"
 msgstr ""
 
 msgid "Share"
 msgstr ""
 
-msgid "See interpretation"
+msgid "Could not delete interpretation"
 msgstr ""
 
 msgid "Manage sharing"
+msgstr ""
+
+msgid "Could not update interpretation text"
 msgstr ""
 
 msgid "Could not update interpretation"
@@ -344,40 +627,7 @@ msgstr ""
 msgid "Enter interpretation text"
 msgstr ""
 
-msgid "Bold text"
-msgstr ""
-
-msgid "Italic text"
-msgstr ""
-
-msgid "Link to a URL"
-msgstr ""
-
-msgid "Mention a user"
-msgstr ""
-
-msgid "Add emoji"
-msgstr ""
-
-msgid "Preview"
-msgstr ""
-
-msgid "Back to write mode"
-msgstr ""
-
-msgid "Too many results. Try refining the search."
-msgstr ""
-
-msgid "Search for a user"
-msgstr ""
-
-msgid "Searching for \"{{- searchText}}\""
-msgstr ""
-
-msgid "No results found"
-msgstr ""
-
-msgid "Created by"
+msgid "Not available offline"
 msgstr ""
 
 msgid "Anyone"
@@ -399,9 +649,6 @@ msgid "Created"
 msgstr ""
 
 msgid "Last updated"
-msgstr ""
-
-msgid "Type"
 msgstr ""
 
 msgid "Clear filters"
@@ -507,9 +754,6 @@ msgstr ""
 msgid "New line list"
 msgstr ""
 
-msgid "Options"
-msgstr ""
-
 msgid "Hide"
 msgstr "شاردنەوە"
 
@@ -552,9 +796,6 @@ msgstr ""
 msgid "Deselect all"
 msgstr ""
 
-msgid "Period type"
-msgstr ""
-
 msgid "Year"
 msgstr ""
 
@@ -564,58 +805,16 @@ msgstr ""
 msgid "Period"
 msgstr "ماوة"
 
+msgid "Selected Periods"
+msgstr ""
+
 msgid "Relative periods"
 msgstr ""
 
 msgid "Fixed periods"
 msgstr ""
 
-msgid "Selected Periods"
-msgstr ""
-
 msgid "No periods selected"
-msgstr ""
-
-msgid "January"
-msgstr ""
-
-msgid "February"
-msgstr ""
-
-msgid "March"
-msgstr ""
-
-msgid "April"
-msgstr ""
-
-msgid "May"
-msgstr ""
-
-msgid "June"
-msgstr ""
-
-msgid "July"
-msgstr ""
-
-msgid "August"
-msgstr ""
-
-msgid "September"
-msgstr ""
-
-msgid "October"
-msgstr ""
-
-msgid "November"
-msgstr ""
-
-msgid "December"
-msgstr ""
-
-msgid "Week {{weekNumber}}"
-msgstr ""
-
-msgid "Bi-Week {{biWeekNumber}}"
 msgstr ""
 
 msgid "Daily"
@@ -822,6 +1021,33 @@ msgstr ""
 msgid "Years"
 msgstr "ساڵەکان"
 
+msgid "Value: {{value}}"
+msgstr ""
+
+msgid "Bold text"
+msgstr ""
+
+msgid "Italic text"
+msgstr ""
+
+msgid "Link to a URL"
+msgstr ""
+
+msgid "Mention a user"
+msgstr ""
+
+msgid "Add emoji"
+msgstr ""
+
+msgid "Preview"
+msgstr ""
+
+msgid "Back to write mode"
+msgstr ""
+
+msgid "Interpretations and details"
+msgstr ""
+
 msgid "Translating to"
 msgstr ""
 
@@ -840,19 +1066,31 @@ msgstr ""
 msgid "Save translations"
 msgstr ""
 
+msgid "Cannot save while offline"
+msgstr ""
+
 msgid "Could not load translations"
 msgstr ""
 
 msgid "Retry"
 msgstr ""
 
+msgid "Too many results. Try refining the search."
+msgstr ""
+
+msgid "Search for a user"
+msgstr ""
+
+msgid "Searching for \"{{- searchText}}\""
+msgstr ""
+
+msgid "No results found"
+msgstr ""
+
 msgid "Series"
 msgstr ""
 
 msgid "Category"
-msgstr ""
-
-msgid "Filter"
 msgstr ""
 
 msgid "Columns"
@@ -879,14 +1117,8 @@ msgstr ""
 msgid "Expected reports"
 msgstr ""
 
-msgid "Program"
-msgstr "بةرنامة"
-
 msgid "Select a program"
 msgstr ""
-
-msgid "Indicators"
-msgstr "نیشاندەر"
 
 msgid "Indicator group"
 msgstr ""
@@ -903,14 +1135,8 @@ msgstr ""
 msgid "Loading indicator groups"
 msgstr ""
 
-msgid "Data elements"
-msgstr ""
-
 msgid "Data element group"
 msgstr ""
-
-msgid "Data element"
-msgstr "داتاي سةرةكي"
 
 msgid "No data element groups found"
 msgstr ""
@@ -949,6 +1175,36 @@ msgid "Program indicators"
 msgstr ""
 
 msgid "Program indicator"
+msgstr ""
+
+msgid "Calculations"
+msgstr ""
+
+msgid "Option"
+msgstr ""
+
+msgid "Number"
+msgstr ""
+
+msgid "Formula is empty. Add items to the formula from the lists on the left."
+msgstr ""
+
+msgid "Consecutive math operators"
+msgstr ""
+
+msgid "Consecutive data elements"
+msgstr ""
+
+msgid "Starts or ends with a math operator"
+msgstr ""
+
+msgid "Empty parentheses"
+msgstr ""
+
+msgid "Missing right parenthesis )"
+msgstr ""
+
+msgid "Missing left parenthesis ("
 msgstr ""
 
 msgid "Extra Small"
@@ -1029,6 +1285,9 @@ msgstr ""
 msgid "{{thresholdFactor}} × Z-score high"
 msgstr ""
 
+msgid "Not applicable"
+msgstr ""
+
 msgid "Data"
 msgstr ""
 
@@ -1036,6 +1295,84 @@ msgid "Organisation unit"
 msgstr "يةكةي ريكخراو"
 
 msgid "Assigned Categories"
+msgstr ""
+
+msgid "No value"
+msgstr "هيج بر"
+
+msgid "Text"
+msgstr ""
+
+msgid "Long text"
+msgstr ""
+
+msgid "Multi text"
+msgstr ""
+
+msgid "Letter"
+msgstr ""
+
+msgid "Phone number"
+msgstr ""
+
+msgid "Email"
+msgstr ""
+
+msgid "Yes/No"
+msgstr ""
+
+msgid "Yes Only"
+msgstr ""
+
+msgid "Date"
+msgstr "بەروار"
+
+msgid "Date & Time"
+msgstr ""
+
+msgid "Time"
+msgstr "کات"
+
+msgid "Unit interval"
+msgstr ""
+
+msgid "Percentage"
+msgstr ""
+
+msgid "Integer"
+msgstr ""
+
+msgid "Positive Integer"
+msgstr ""
+
+msgid "Negative Integer"
+msgstr ""
+
+msgid "Positive or Zero Integer"
+msgstr ""
+
+msgid "Tracker Associate"
+msgstr ""
+
+msgid "Username"
+msgstr ""
+
+msgid "Coordinate"
+msgstr "هیڵی ستوونی و ئاسۆیی زەوی"
+
+msgid "Reference"
+msgstr ""
+
+msgid "Age"
+msgstr ""
+
+msgid "URL"
+msgstr ""
+
+msgid "Image"
+msgstr ""
+
+msgid "GeoJSON"
 msgstr ""
 
 msgid "Pivot table"
@@ -1086,7 +1423,13 @@ msgstr ""
 msgid "Single value"
 msgstr ""
 
+msgid "Outlier table"
+msgstr ""
+
 msgid "All charts"
+msgstr ""
+
+msgid "Map"
 msgstr ""
 
 msgid "{{seriesName}} (trend)"

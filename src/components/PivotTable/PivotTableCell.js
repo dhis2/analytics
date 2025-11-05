@@ -47,9 +47,6 @@ export const PivotTableCell = React.forwardRef(
 
 PivotTableCell.displayName = 'PivotTableCell'
 
-PivotTableCell.defaultProps = {
-    isHeader: false,
-}
 PivotTableCell.propTypes = {
     children: PropTypes.node,
     classes: PropTypes.oneOfType([

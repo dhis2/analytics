@@ -1,12 +1,15 @@
 import i18n from '@dhis2/d2-i18n'
-import { colors } from '@dhis2/ui-constants'
-import { IconSync16 } from '@dhis2/ui-icons'
-import { CircularLoader } from '@dhis2-ui/loader'
+import { CircularLoader, IconSync16, colors } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
 import menuButtonStyles from './MenuButton.styles.js'
 
-export const UpdateButton = ({ onClick, disabled, loading, dataTest }) => (
+export const UpdateButton = ({
+    onClick,
+    disabled,
+    loading,
+    dataTest = 'dhis2-analytics-updatebutton',
+}) => (
     <button onClick={onClick} disabled={disabled} data-test={dataTest}>
         {loading ? <CircularLoader extrasmall /> : <IconSync16 />}
         {i18n.t('Update')}
@@ -26,10 +29,6 @@ export const UpdateButton = ({ onClick, disabled, loading, dataTest }) => (
         `}</style>
     </button>
 )
-
-UpdateButton.defaultProps = {
-    dataTest: 'dhis2-analytics-updatebutton',
-}
 
 UpdateButton.propTypes = {
     onClick: PropTypes.func.isRequired,

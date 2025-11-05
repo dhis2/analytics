@@ -1,3 +1,4 @@
+import i18n from '@dhis2/d2-i18n'
 import {
     IconDimensionDataSet16,
     IconDimensionIndicator16,
@@ -20,9 +21,11 @@ import {
     dataTypeMap as dataTypes,
     DIMENSION_TYPE_INDICATOR,
     DIMENSION_TYPE_PROGRAM_INDICATOR,
+    DIMENSION_TYPE_PROGRAM_ATTRIBUTE_OPTION,
+    DIMENSION_TYPE_PROGRAM_DATA_ELEMENT_OPTION,
 } from './dataTypes.js'
 
-export const getTooltipText = ({ type, expression }) => {
+export const getDimensionType = ({ type, expression }) => {
     if (type === DIMENSION_TYPE_EXPRESSION_DIMENSION_ITEM && expression) {
         return dataTypes[DIMENSION_TYPE_EXPRESSION_DIMENSION_ITEM].getItemName()
     }
@@ -34,6 +37,9 @@ export const getTooltipText = ({ type, expression }) => {
         case DIMENSION_TYPE_PROGRAM_DATA_ELEMENT:
         case DIMENSION_TYPE_PROGRAM_ATTRIBUTE:
             return dataTypes[DIMENSION_TYPE_EVENT_DATA_ITEM].getItemName()
+        case DIMENSION_TYPE_PROGRAM_ATTRIBUTE_OPTION:
+        case DIMENSION_TYPE_PROGRAM_DATA_ELEMENT_OPTION:
+            return i18n.t('Option')
         default:
             return dataTypes[type]?.getItemName()
     }

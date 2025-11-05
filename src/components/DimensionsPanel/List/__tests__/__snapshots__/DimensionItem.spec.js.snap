@@ -1,39 +1,36 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`DimensionItem matches the snapshot 1`] = `
-<Fragment>
-  <CssVariables
-    colors={true}
-    elevations={false}
-    layers={false}
-    spacers={false}
-    theme={false}
-  />
+<div>
   <li
-    className="item"
+    class="item"
     name="Period"
-    onClick={[Function]}
-    onMouseLeave={[Function]}
-    onMouseOver={[Function]}
-    style={Object {}}
   >
     <div
-      className="label"
+      class="label"
       data-test="undefined-button-pe"
-      tabIndex={0}
+      tabindex="0"
     >
       <div
-        className="iconWrapper"
+        class="iconWrapper"
       >
-        <SvgClock16
-          className="fixedDimensionIcon"
-        />
+        <svg
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M8 1a7 7 0 110 14A7 7 0 018 1zm0 1a6 6 0 100 12A6 6 0 008 2zm.5 1.5v4.293l2.854 2.853-.708.708L7.5 8.207V3.5z"
+            fill="currentColor"
+          />
+        </svg>
       </div>
       <div
-        className="labelWrapper"
+        class="labelWrapper"
       >
         <span
-          className="labelText"
+          class="labelText"
         >
           <span
             data-dimensionid="pe"
@@ -41,51 +38,44 @@ exports[`DimensionItem matches the snapshot 1`] = `
             Period
           </span>
         </span>
-        <RecommendedIcon
-          dataTest="undefined-recommended-icon"
-          isRecommended={false}
-        />
       </div>
     </div>
   </li>
   <style />
-</Fragment>
+</div>
 `;
 
 exports[`DimensionItem matches the snapshot with locked 1`] = `
-<Fragment>
-  <CssVariables
-    colors={true}
-    elevations={false}
-    layers={false}
-    spacers={false}
-    theme={false}
-  />
+<div>
   <li
-    className="item"
+    class="item"
     name="Period"
-    onClick={[Function]}
-    onMouseLeave={[Function]}
-    onMouseOver={[Function]}
-    style={Object {}}
   >
     <div
-      className="label"
+      class="label"
       data-test="undefined-button-pe"
-      tabIndex={0}
+      tabindex="0"
     >
       <div
-        className="iconWrapper"
+        class="iconWrapper"
       >
-        <SvgClock16
-          className="fixedDimensionIcon"
-        />
+        <svg
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M8 1a7 7 0 110 14A7 7 0 018 1zm0 1a6 6 0 100 12A6 6 0 008 2zm.5 1.5v4.293l2.854 2.853-.708.708L7.5 8.207V3.5z"
+            fill="currentColor"
+          />
+        </svg>
       </div>
       <div
-        className="labelWrapper"
+        class="labelWrapper"
       >
         <span
-          className="labelText"
+          class="labelText"
         >
           <span
             data-dimensionid="pe"
@@ -93,14 +83,10 @@ exports[`DimensionItem matches the snapshot with locked 1`] = `
             Period
           </span>
         </span>
-        <RecommendedIcon
-          dataTest="undefined-recommended-icon"
-          isRecommended={false}
-        />
       </div>
     </div>
     <div
-      className="lockWrapper"
+      class="lockWrapper"
     >
       <svg
         fill="none"
@@ -109,53 +95,50 @@ exports[`DimensionItem matches the snapshot with locked 1`] = `
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          clipRule="evenodd"
+          clip-rule="evenodd"
           d="M3.5 1A1.5 1.5 0 0 0 2 2.5V3h3v-.5A1.5 1.5 0 0 0 3.5 1ZM1 2.5V3H0v6h7V3H6v-.5a2.5 2.5 0 0 0-5 0ZM1 8V4h5v4H1Zm3-1V5H3v2h1Z"
           fill="none"
-          fillRule="evenodd"
+          fill-rule="evenodd"
         />
       </svg>
     </div>
     <style />
   </li>
   <style />
-</Fragment>
+</div>
 `;
 
 exports[`DimensionItem matches the snapshot with onOptionsClick 1`] = `
-<Fragment>
-  <CssVariables
-    colors={true}
-    elevations={false}
-    layers={false}
-    spacers={false}
-    theme={false}
-  />
+<div>
   <li
-    className="item"
+    class="item"
     name="Period"
-    onClick={[Function]}
-    onMouseLeave={[Function]}
-    onMouseOver={[Function]}
-    style={Object {}}
   >
     <div
-      className="label"
+      class="label"
       data-test="undefined-button-pe"
-      tabIndex={0}
+      tabindex="0"
     >
       <div
-        className="iconWrapper"
+        class="iconWrapper"
       >
-        <SvgClock16
-          className="fixedDimensionIcon"
-        />
+        <svg
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M8 1a7 7 0 110 14A7 7 0 018 1zm0 1a6 6 0 100 12A6 6 0 008 2zm.5 1.5v4.293l2.854 2.853-.708.708L7.5 8.207V3.5z"
+            fill="currentColor"
+          />
+        </svg>
       </div>
       <div
-        className="labelWrapper"
+        class="labelWrapper"
       >
         <span
-          className="labelText"
+          class="labelText"
         >
           <span
             data-dimensionid="pe"
@@ -163,55 +146,48 @@ exports[`DimensionItem matches the snapshot with onOptionsClick 1`] = `
             Period
           </span>
         </span>
-        <RecommendedIcon
-          dataTest="undefined-recommended-icon"
-          isRecommended={false}
-        />
       </div>
     </div>
     <div
-      className="optionsWrapper"
+      class="optionsWrapper"
       data-test="undefined-menu-pe"
     />
   </li>
   <style />
-</Fragment>
+</div>
 `;
 
 exports[`DimensionItem matches the snapshot with recommended 1`] = `
-<Fragment>
-  <CssVariables
-    colors={true}
-    elevations={false}
-    layers={false}
-    spacers={false}
-    theme={false}
-  />
+<div>
   <li
-    className="item"
+    class="item"
     name="Period"
-    onClick={[Function]}
-    onMouseLeave={[Function]}
-    onMouseOver={[Function]}
-    style={Object {}}
   >
     <div
-      className="label"
+      class="label"
       data-test="undefined-button-pe"
-      tabIndex={0}
+      tabindex="0"
     >
       <div
-        className="iconWrapper"
+        class="iconWrapper"
       >
-        <SvgClock16
-          className="fixedDimensionIcon"
-        />
+        <svg
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M8 1a7 7 0 110 14A7 7 0 018 1zm0 1a6 6 0 100 12A6 6 0 008 2zm.5 1.5v4.293l2.854 2.853-.708.708L7.5 8.207V3.5z"
+            fill="currentColor"
+          />
+        </svg>
       </div>
       <div
-        className="labelWrapper"
+        class="labelWrapper"
       >
         <span
-          className="labelText"
+          class="labelText"
         >
           <span
             data-dimensionid="pe"
@@ -219,51 +195,55 @@ exports[`DimensionItem matches the snapshot with recommended 1`] = `
             Period
           </span>
         </span>
-        <RecommendedIcon
-          dataTest="undefined-recommended-icon"
-          isRecommended={true}
-        />
+        <span
+          aria-describedby=""
+          class="jsx-237564060"
+          data-test="dhis2-uicore-tooltip-reference"
+          tabindex="0"
+        >
+          <div
+            data-test="undefined-recommended-icon"
+            style="background-color: rgb(0, 150, 136); height: 6px; width: 6px; border-radius: 4px; margin-left: 6px; display: inline-block; cursor: pointer;"
+          />
+        </span>
       </div>
     </div>
   </li>
   <style />
-</Fragment>
+</div>
 `;
 
 exports[`DimensionItem matches the snapshot with selected 1`] = `
-<Fragment>
-  <CssVariables
-    colors={true}
-    elevations={false}
-    layers={false}
-    spacers={false}
-    theme={false}
-  />
+<div>
   <li
-    className="item selected"
+    class="item selected"
     name="Period"
-    onClick={[Function]}
-    onMouseLeave={[Function]}
-    onMouseOver={[Function]}
-    style={Object {}}
   >
     <div
-      className="label"
+      class="label"
       data-test="undefined-button-pe"
-      tabIndex={0}
+      tabindex="0"
     >
       <div
-        className="iconWrapper"
+        class="iconWrapper"
       >
-        <SvgClock16
-          className="fixedDimensionIcon"
-        />
+        <svg
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M8 1a7 7 0 110 14A7 7 0 018 1zm0 1a6 6 0 100 12A6 6 0 008 2zm.5 1.5v4.293l2.854 2.853-.708.708L7.5 8.207V3.5z"
+            fill="currentColor"
+          />
+        </svg>
       </div>
       <div
-        className="labelWrapper"
+        class="labelWrapper"
       >
         <span
-          className="labelText"
+          class="labelText"
         >
           <span
             data-dimensionid="pe"
@@ -271,13 +251,9 @@ exports[`DimensionItem matches the snapshot with selected 1`] = `
             Period
           </span>
         </span>
-        <RecommendedIcon
-          dataTest="undefined-recommended-icon"
-          isRecommended={false}
-        />
       </div>
     </div>
   </li>
   <style />
-</Fragment>
+</div>
 `;

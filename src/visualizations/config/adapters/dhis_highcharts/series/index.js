@@ -255,12 +255,14 @@ export default function ({
 
     series?.forEach((seriesObj) => {
         // animation
-        seriesObj.animation = {
-            duration: getAnimation(
-                extraOptions.animation,
-                DEFAULT_ANIMATION_DURATION
-            ),
-        }
+        seriesObj.animation = extraOptions.dashboard
+            ? false
+            : {
+                  duration: getAnimation(
+                      extraOptions.animation,
+                      DEFAULT_ANIMATION_DURATION
+                  ),
+              }
     })
 
     return series

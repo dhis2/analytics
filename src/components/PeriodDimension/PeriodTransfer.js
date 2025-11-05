@@ -35,15 +35,19 @@ const RightHeader = ({ infoBoxMessage }) => (
 RightHeader.propTypes = {
     infoBoxMessage: PropTypes.string,
 }
+const SELECTED_ITEMS_PROP_DEFAULT = []
+const EXCLUDED_PERIOD_TYPES_PROP_DEFAULT = []
+const PERIODS_SETTINGS_PROP_DEFAULT = { calendar: 'gregory', locale: 'en' }
 
 const PeriodTransfer = ({
     onSelect,
     dataTest,
-    selectedItems,
+    selectedItems = SELECTED_ITEMS_PROP_DEFAULT,
     rightFooter,
-    excludedPeriodTypes,
-    periodsSettings,
+    excludedPeriodTypes = EXCLUDED_PERIOD_TYPES_PROP_DEFAULT,
+    periodsSettings = PERIODS_SETTINGS_PROP_DEFAULT,
     infoBoxMessage,
+    height = TRANSFER_HEIGHT,
 }) => {
     const defaultRelativePeriodType = excludedPeriodTypes.includes(MONTHLY)
         ? getRelativePeriodsOptionsById(QUARTERLY)
@@ -196,7 +200,7 @@ const PeriodTransfer = ({
             selected={selectedItems.map((period) => period.id)}
             leftHeader={renderLeftHeader()}
             enableOrderChange
-            height={TRANSFER_HEIGHT}
+            height={height}
             optionsWidth={TRANSFER_OPTIONS_WIDTH}
             selectedWidth={TRANSFER_SELECTED_WIDTH}
             selectedEmptyComponent={renderEmptySelection()}
@@ -220,19 +224,11 @@ const PeriodTransfer = ({
     )
 }
 
-PeriodTransfer.defaultProps = {
-    selectedItems: [],
-    excludedPeriodTypes: [],
-    periodsSettings: {
-        calendar: 'gregory',
-        locale: 'en',
-    },
-}
-
 PeriodTransfer.propTypes = {
     onSelect: PropTypes.func.isRequired,
     dataTest: PropTypes.string,
     excludedPeriodTypes: PropTypes.arrayOf(PropTypes.string),
+    height: PropTypes.string,
     infoBoxMessage: PropTypes.string,
     periodsSettings: PropTypes.shape({
         calendar: PropTypes.string,

@@ -1,5 +1,4 @@
-import { Popper } from '@dhis2-ui/popper'
-import { Portal } from '@dhis2-ui/portal'
+import { Popper, Portal } from '@dhis2/ui'
 import cx from 'classnames'
 import PropTypes from 'prop-types'
 import React, { useRef } from 'react'
@@ -10,7 +9,7 @@ export const HoverMenuDropdown = ({
     children,
     className,
     label,
-    dataTest,
+    dataTest = 'dhis2-analytics-hovermenudropdown',
     disabled,
 }) => {
     const buttonRef = useRef()
@@ -43,10 +42,6 @@ export const HoverMenuDropdown = ({
             )}
         </>
     )
-}
-
-HoverMenuDropdown.defaultProps = {
-    dataTest: 'dhis2-analytics-hovermenudropdown',
 }
 
 HoverMenuDropdown.propTypes = {

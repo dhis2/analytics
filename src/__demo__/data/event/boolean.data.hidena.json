@@ -1,0 +1,115 @@
+{
+    "headers": [
+        {
+            "name": "A03MvHHogjR.bx6fsa0t90x",
+            "column": "MCH BCG dose",
+            "valueType": "BOOLEAN",
+            "type": "java.lang.Boolean",
+            "hidden": false,
+            "meta": true
+        },
+        {
+            "name": "ou",
+            "column": "Organisation unit",
+            "valueType": "TEXT",
+            "type": "java.lang.String",
+            "hidden": false,
+            "meta": true
+        },
+        {
+            "name": "pe",
+            "column": "Period",
+            "valueType": "TEXT",
+            "type": "java.lang.String",
+            "hidden": false,
+            "meta": true
+        },
+        {
+            "name": "value",
+            "column": "Value",
+            "valueType": "NUMBER",
+            "type": "java.lang.Double",
+            "hidden": false,
+            "meta": false
+        }
+    ],
+    "metaData": {
+        "items": {
+            "202501": {
+                "name": "January 2025"
+            },
+            "202502": {
+                "name": "February 2025"
+            },
+            "202503": {
+                "name": "March 2025"
+            },
+            "202504": {
+                "name": "April 2025"
+            },
+            "202505": {
+                "name": "May 2025"
+            },
+            "202506": {
+                "name": "June 2025"
+            },
+            "bx6fsa0t90x": {
+                "name": "MCH BCG dose"
+            },
+            "A03MvHHogjR.bx6fsa0t90x": {
+                "name": "MCH BCG dose"
+            },
+            "IpHINAT79UW": {
+                "name": "Child Programme"
+            },
+            "ou": {
+                "name": "Organisation unit"
+            },
+            "ImspTQPwCqd": {
+                "name": "Sierra Leone"
+            },
+            "LAST_6_MONTHS": {
+                "name": "Last 6 months"
+            },
+            "pe": {
+                "name": "Period"
+            },
+            "A03MvHHogjR": {
+                "name": "Birth"
+            },
+            "A03MvHHogjR.bx6fsa0t90x_0": {
+                "name": "No"
+            },
+            "A03MvHHogjR.bx6fsa0t90x_1": {
+                "name": "Yes"
+            }
+        },
+        "dimensions": {
+            "pe": ["202501", "202502", "202503", "202504", "202505", "202506"],
+            "ou": ["ImspTQPwCqd"],
+            "A03MvHHogjR.bx6fsa0t90x": [
+                "A03MvHHogjR.bx6fsa0t90x_0",
+                "A03MvHHogjR.bx6fsa0t90x_1"
+            ]
+        }
+    },
+    "rowContext": {},
+    "width": 4,
+    "rows": [
+        ["A03MvHHogjR.bx6fsa0t90x_1", "ImspTQPwCqd", "202506", "319"],
+        ["A03MvHHogjR.bx6fsa0t90x_1", "ImspTQPwCqd", "202501", "352"],
+        ["A03MvHHogjR.bx6fsa0t90x_0", "ImspTQPwCqd", "202503", "337"],
+        ["A03MvHHogjR.bx6fsa0t90x_1", "ImspTQPwCqd", "202503", "357"],
+        ["A03MvHHogjR.bx6fsa0t90x_0", "ImspTQPwCqd", "202506", "293"],
+        ["A03MvHHogjR.bx6fsa0t90x_0", "ImspTQPwCqd", "202501", "341"],
+        ["A03MvHHogjR.bx6fsa0t90x_0", "ImspTQPwCqd", "202505", "344"],
+        ["A03MvHHogjR.bx6fsa0t90x_0", "ImspTQPwCqd", "202504", "332"],
+        ["A03MvHHogjR.bx6fsa0t90x_1", "ImspTQPwCqd", "202504", "326"],
+        ["A03MvHHogjR.bx6fsa0t90x_1", "ImspTQPwCqd", "202505", "358"],
+        ["A03MvHHogjR.bx6fsa0t90x_1", "ImspTQPwCqd", "202502", "318"],
+        ["", "ImspTQPwCqd", "202501", "1"],
+        ["A03MvHHogjR.bx6fsa0t90x_0", "ImspTQPwCqd", "202502", "311"]
+    ],
+    "height": 13,
+    "headerWidth": 4
+}

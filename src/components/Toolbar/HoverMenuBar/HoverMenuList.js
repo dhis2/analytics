@@ -1,4 +1,4 @@
-import { colors, elevations, spacers } from '@dhis2/ui-constants'
+import { colors, elevations, spacers } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { createContext, useCallback, useContext, useState } from 'react'
 import { useHoverMenubarContext } from './HoverMenuBar.js'
@@ -19,10 +19,10 @@ const useHoverMenuListContext = () => useContext(HoverMenuListContext)
 const HoverMenuList = ({
     children,
     className,
-    dataTest,
-    dense,
-    maxHeight,
-    maxWidth,
+    dataTest = 'dhis2-analytics-hovermenulist',
+    dense = true,
+    maxHeight = 'auto',
+    maxWidth = '380px',
 }) => {
     const { setLastHoveredSubMenuEl } = useHoverMenubarContext()
     const [openedSubMenuEl, setOpenedSubMenuEl] = useState(null)
@@ -75,13 +75,6 @@ const HoverMenuList = ({
             </ul>
         </HoverMenuListContext.Provider>
     )
-}
-
-HoverMenuList.defaultProps = {
-    dataTest: 'dhis2-analytics-hovermenulist',
-    maxWidth: '380px',
-    maxHeight: 'auto',
-    dense: true,
 }
 
 HoverMenuList.propTypes = {

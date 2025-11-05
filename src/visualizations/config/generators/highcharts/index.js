@@ -1,22 +1,37 @@
 import H from 'highcharts'
-import HM from 'highcharts/highcharts-more'
-import HB from 'highcharts/modules/boost'
-import HE from 'highcharts/modules/exporting'
-import HNDTD from 'highcharts/modules/no-data-to-display'
-import HPF from 'highcharts/modules/pattern-fill'
-import HSG from 'highcharts/modules/solid-gauge'
+import 'highcharts/highcharts-more'
+import 'highcharts/modules/boost'
+import 'highcharts/modules/exporting'
+import 'highcharts/modules/no-data-to-display'
+import 'highcharts/modules/offline-exporting'
+import 'highcharts/modules/pattern-fill'
+import 'highcharts/modules/solid-gauge'
 
-// apply
-HM(H)
-HSG(H)
-HNDTD(H)
-HE(H)
-HPF(H)
-HB(H)
+/* Whitelist some additional SVG attributes and tags here. Without this,
+ * the PDF export for the SingleValue visualization and charts in boost-mode
+ * breaks. For more info about the boost mode issue, see:
+ * https://github.com/highcharts/highcharts/issues/8333 */
+H.AST.allowedTags.push('fedropshadow', 'image')
+H.AST.allowedAttributes.push(
+    'transform-origin',
+    'preserveAspectRatio',
+    'fill-rule',
+    'clip-rule'
+)
 
-/* Whitelist some additional SVG attributes here. Without this,
- * the PDF export for the SingleValue visualization breaks. */
-H.AST.allowedAttributes.push('fill-rule', 'clip-rule')
+/* This is a workaround for https://github.com/highcharts/highcharts/issues/22008
+ * We add some transparent text in a non-ASCII script to the chart to prevent
+ * the chart from being exported in a serif font */
+H.addEvent(H.Chart, 'load', function () {
+    this.renderer.text('모', 20, 20).attr({ opacity: 0 }).add()
+})
+
+/* Workaround for https://github.com/highcharts/highcharts/issues/23049
+ * (there happen to be 10 colors and 10 patterns)*/
+const { colors } = H.getOptions()
+H.patterns.forEach((pattern, i) => {
+    pattern.color = colors[i]
+})
 
 function drawLegendSymbolWrap() {
     const pick = H.pick

@@ -1,0 +1,158 @@
+{
+    "name": "Two option sets with shared option codes",
+    "created": "2025-06-30T10:27:41.277",
+    "lastUpdated": "2025-06-30T10:27:41.277",
+    "translations": [],
+    "createdBy": {
+        "id": "xE7jOejl9FI",
+        "code": null,
+        "name": "John Traore",
+        "displayName": "John Traore",
+        "username": "admin"
+    },
+    "favorites": [],
+    "lastUpdatedBy": {
+        "id": "xE7jOejl9FI",
+        "code": null,
+        "name": "John Traore",
+        "displayName": "John Traore",
+        "username": "admin"
+    },
+    "sharing": {
+        "owner": "xE7jOejl9FI",
+        "external": false,
+        "users": {},
+        "userGroups": {},
+        "public": "rw------"
+    },
+    "regressionType": "NONE",
+    "displayDensity": "NORMAL",
+    "fontSize": "NORMAL",
+    "sortOrder": 0,
+    "topLimit": 0,
+    "hideEmptyRows": false,
+    "showHierarchy": false,
+    "completedOnly": false,
+    "skipRounding": false,
+    "dataDimensionItems": [],
+    "dataElementGroupSetDimensions": [],
+    "organisationUnitGroupSetDimensions": [],
+    "categoryDimensions": [],
+    "categoryOptionGroupSetDimensions": [],
+    "attributeDimensions": [],
+    "programIndicatorDimensions": [],
+    "subscribers": [],
+    "digitGroupSeparator": "SPACE",
+    "hideEmptyRowItems": "NONE",
+    "hideLegend": false,
+    "noSpaceBetweenColumns": false,
+    "cumulativeValues": false,
+    "percentStackedValues": false,
+    "showData": false,
+    "colTotals": true,
+    "rowTotals": true,
+    "rowSubTotals": true,
+    "colSubTotals": true,
+    "hideTitle": false,
+    "hideSubtitle": false,
+    "showDimensionLabels": true,
+    "interpretations": [],
+    "program": {
+        "incidentDateLabel": "Date of Discharge",
+        "id": "eBAyeGv0exc",
+        "name": "Inpatient morbidity and mortality"
+    },
+    "programStage": {
+        "executionDateLabel": "Report date",
+        "id": "Zj7UnCAulEk",
+        "name": "Inpatient morbidity and mortality"
+    },
+    "dataType": "AGGREGATED_VALUES",
+    "outputType": "EVENT",
+    "collapseDataDimensions": false,
+    "hideNaData": false,
+    "simpleDimensions": [
+        {
+            "parent": "COLUMN",
+            "dimension": "ou",
+            "values": ["ImspTQPwCqd"]
+        }
+    ],
+    "legacy": true,
+    "type": "PIVOT_TABLE",
+    "filters": [],
+    "parentGraphMap": {
+        "ImspTQPwCqd": ""
+    },
+    "columns": [
+        {
+            "items": [
+                {
+                    "dimensionItemType": "ORGANISATION_UNIT",
+                    "name": "Sierra Leone",
+                    "id": "ImspTQPwCqd"
+                }
+            ],
+            "dimension": "ou"
+        },
+        {
+            "items": [
+                {
+                    "dimensionItemType": "PERIOD",
+                    "id": "LAST_3_MONTHS",
+                    "name": "LAST_3_MONTHS"
+                }
+            ],
+            "dimension": "pe"
+        }
+    ],
+    "rows": [
+        {
+            "items": [],
+            "programStage": {
+                "id": "stageA"
+            },
+            "dimension": "stageA.element1"
+        },
+        {
+            "items": [],
+            "programStage": {
+                "id": "stageB"
+            },
+            "dimension": "stageB.element2"
+        }
+    ],
+    "displayName": "Text with option set",
+    "access": {
+        "manage": true,
+        "externalize": true,
+        "write": true,
+        "read": true,
+        "update": true,
+        "delete": true
+    },
+    "user": {
+        "id": "xE7jOejl9FI",
+        "code": null,
+        "name": "John Traore",
+        "displayName": "John Traore",
+        "username": "admin"
+    },
+    "favorite": false,
+    "subscribed": false,
+    "metaData": {
+        "ImspTQPwCqd": {
+            "uid": "ImspTQPwCqd",
+            "code": "OU_525",
+            "name": "Sierra Leone"
+        },
+        "qrur9Dvnyt5": {
+            "uid": "qrur9Dvnyt5",
+            "code": "DE_3000003",
+            "name": "Age in years"
+        }
+    },
+    "displayFormName": "Text with option set",
+    "id": "kNl4fqsY9hJ",
+    "attributeValues": []
+}

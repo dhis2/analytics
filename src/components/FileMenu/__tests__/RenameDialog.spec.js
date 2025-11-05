@@ -1,83 +1,116 @@
-import { Button, Modal, ModalTitle } from '@dhis2/ui'
-import { shallow } from 'enzyme'
+import { render, screen, within } from '@testing-library/react'
+import userEvent from '@testing-library/user-event'
 import React from 'react'
 import { RenameDialog } from '../RenameDialog.js'
 
-describe('The FileMenu - RenameDialog component', () => {
-    let shallowRenameDialog
-    let props
-
+describe('FileMenu - RenameDialog component', () => {
     const onClose = jest.fn()
-
-    const getRenameDialogComponent = (props) => {
-        if (!shallowRenameDialog) {
-            shallowRenameDialog = shallow(<RenameDialog {...props} />)
-        }
-        return shallowRenameDialog
+    const onRename = jest.fn()
+    const props = {
+        type: 'visualization',
+        object: {
+            id: 'rename-test',
+        },
+        onClose,
+        onRename,
     }
 
     beforeEach(() => {
-        shallowRenameDialog = undefined
-        props = {
-            type: 'visualization',
-            object: {
-                id: 'rename-test',
-            },
-            onClose,
-        }
+        jest.resetAllMocks()
+        jest.clearAllMocks()
     })
 
-    it('renders a Modal component', () => {
-        expect(getRenameDialogComponent(props).find(Modal)).toHaveLength(1)
-    })
-
-    it('renders a ModalTitle containing the type prop', () => {
-        expect(
-            getRenameDialogComponent(props).find(ModalTitle).childAt(0).text()
-        ).toEqual(`Rename ${props.type}`)
-    })
-
-    it('renders a InputField for name', () => {
-        expect(
-            getRenameDialogComponent(props).findWhere(
-                (n) => n.prop('label') === 'Name'
-            )
-        ).toHaveLength(1)
-    })
-
-    it('renders a InputField for name with prefilled value if name is in object prop', () => {
-        props.object.name = 'Name test'
-
-        const nameInputField = getRenameDialogComponent(props).findWhere(
-            (n) => n.prop('label') === 'Name'
-        )
-
-        expect(nameInputField.prop('value')).toEqual(props.object.name)
-    })
-
-    it('renders a TextAreaField for description', () => {
-        expect(
-            getRenameDialogComponent(props).findWhere(
-                (n) => n.prop('label') === 'Description'
-            )
-        ).toHaveLength(1)
-    })
-
-    it('renders a TextAreaField for description with prefilled value if description is in object prop', () => {
-        props.object.description = 'Description test'
-
-        const descriptionInputField = getRenameDialogComponent(props).findWhere(
-            (n) => n.prop('label') === 'Description'
-        )
-
-        expect(descriptionInputField.prop('value')).toEqual(
-            props.object.description
+    test('renders a Modal component with the correct heading', () => {
+        render(<RenameDialog {...props} />)
+        expect(screen.getAllByTestId('file-menu-rename-modal')).toHaveLength(1)
+        expect(screen.getByRole('heading')).toHaveTextContent(
+            'Rename visualization'
         )
     })
 
-    it('calls the onClose callback when the Cancel button is clicked', () => {
-        getRenameDialogComponent(props).find(Button).first().simulate('click')
+    test('renders a InputField for name', () => {
+        render(<RenameDialog {...props} />)
+        expect(
+            screen.getByTestId('file-menu-rename-modal-name')
+        ).toBeInTheDocument()
+        expect(screen.getByText('Name')).toBeInTheDocument()
+        expect(screen.getByText('Name')).toBeVisible()
+    })
 
+    test('renders a InputField for name with prefilled value if name is in object prop', () => {
+        render(
+            <RenameDialog
+                {...props}
+                object={{ ...props.object, name: 'Vis test' }}
+            />
+        )
+
+        const ancestorElement = screen.getByTestId(
+            'file-menu-rename-modal-name'
+        )
+        const inputElement = within(ancestorElement).getByRole('textbox')
+
+        expect(inputElement).toBeInTheDocument()
+        expect(inputElement).toHaveValue('Vis test')
+    })
+
+    test('renders a TextAreaField for description', () => {
+        render(<RenameDialog {...props} />)
+
+        // Locate the label by its text
+        const labelElement = screen.getByText('Description')
+
+        // Find the textarea element within the same container as the label
+        const descriptionField = labelElement
+            .closest('div')
+            .querySelector('textarea')
+
+        expect(descriptionField).toBeInTheDocument()
+        expect(descriptionField).toBeVisible()
+    })
+
+    test('renders a TextAreaField for description with prefilled value if description is in object prop', () => {
+        render(
+            <RenameDialog
+                {...props}
+                object={{
+                    ...props.object,
+                    description: 'Long explanation of the visualization',
+                }}
+            />
+        )
+
+        // Locate the label by its text
+        const labelElement = screen.getByText('Description')
+
+        // Find the textarea element within the same container as the label
+        const descriptionField = labelElement
+            .closest('div')
+            .querySelector('textarea')
+
+        expect(descriptionField).toBeInTheDocument()
+        expect(descriptionField).toHaveValue(
+            'Long explanation of the visualization'
+        )
+    })
+
+    test('calls the onClose callback when the Cancel button is clicked', async () => {
+        const user = userEvent.setup()
+
+        render(<RenameDialog {...props} />)
+        await user.click(screen.getByRole('button', { name: 'Cancel' }))
+
+        expect(onClose).toHaveBeenCalled()
+        expect(onRename).not.toHaveBeenCalled()
+    })
+
+    test('calls the onRename callback when the Rename button is clicked', async () => {
+        const user = userEvent.setup()
+
+        render(<RenameDialog {...props} />)
+        await user.click(screen.getByRole('button', { name: 'Rename' }))
+
+        expect(onRename).toHaveBeenCalled()
         expect(onClose).toHaveBeenCalled()
     })
 })

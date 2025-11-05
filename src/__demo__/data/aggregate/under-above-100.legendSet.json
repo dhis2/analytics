@@ -1,0 +1,97 @@
+{
+    "code": "UA100",
+    "name": "Under or above 100%",
+    "created": "2017-05-19T15:43:40.983",
+    "lastUpdated": "2017-05-19T15:43:40.983",
+    "translations": [],
+    "createdBy": {
+        "id": "GOLswS44mh8",
+        "code": null,
+        "name": "Tom Wakiki",
+        "displayName": "Tom Wakiki",
+        "username": "system"
+    },
+    "favorites": [],
+    "lastUpdatedBy": {
+        "id": "GOLswS44mh8",
+        "code": null,
+        "name": "Tom Wakiki",
+        "displayName": "Tom Wakiki",
+        "username": "system"
+    },
+    "sharing": {
+        "owner": "GOLswS44mh8",
+        "external": false,
+        "users": {},
+        "userGroups": {},
+        "public": "rw------"
+    },
+    "legends": [
+        {
+            "name": "Above 100%",
+            "created": "2017-05-19T15:43:40.983",
+            "lastUpdated": "2017-05-19T15:43:40.983",
+            "translations": [],
+            "favorites": [],
+            "sharing": { "external": false, "users": {}, "userGroups": {} },
+            "startValue": 100.0,
+            "endValue": 900.0,
+            "color": "#B4F3BD",
+            "access": {
+                "manage": true,
+                "externalize": false,
+                "write": true,
+                "read": true,
+                "update": true,
+                "delete": true
+            },
+            "displayName": "Above 100%",
+            "favorite": false,
+            "id": "I0lBkYHTjPw",
+            "attributeValues": []
+        },
+        {
+            "name": "Under 100%",
+            "created": "2017-05-19T15:43:40.984",
+            "lastUpdated": "2017-05-19T15:43:40.984",
+            "translations": [],
+            "favorites": [],
+            "sharing": { "external": false, "users": {}, "userGroups": {} },
+            "startValue": 0.0,
+            "endValue": 100.0,
+            "color": "#FF9C89",
+            "access": {
+                "manage": true,
+                "externalize": false,
+                "write": true,
+                "read": true,
+                "update": true,
+                "delete": true
+            },
+            "displayName": "Under 100%",
+            "favorite": false,
+            "id": "qCU0BSbmwjX",
+            "attributeValues": []
+        }
+    ],
+    "access": {
+        "manage": true,
+        "externalize": false,
+        "write": true,
+        "read": true,
+        "update": true,
+        "delete": true
+    },
+    "displayName": "Under or above 100%",
+    "favorite": false,
+    "user": {
+        "id": "GOLswS44mh8",
+        "code": null,
+        "name": "Tom Wakiki",
+        "displayName": "Tom Wakiki",
+        "username": "system"
+    },
+    "href": "https://debug.dhis2.org/dev/api/legendSets/gFJUXah1uRH",
+    "id": "gFJUXah1uRH",
+    "attributeValues": []
+}

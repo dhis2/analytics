@@ -3,7 +3,7 @@ import { MdParser } from '../MdParser.js'
 const Parser = new MdParser()
 
 describe('MdParser class', () => {
-    it('converts text into HTML', () => {
+    test('converts text into HTML', () => {
         const inlineTests = [
             ['_italic_', '<em>italic</em>'],
             ['*bold*', '<strong>bold</strong>'],
@@ -68,8 +68,12 @@ describe('MdParser class', () => {
 
             // links
             [
+                '[Test link](https://host.tld/path/link)',
+                '<a href="https://host.tld/path/link" target="_blank" rel="noreferrer">Test link</a>',
+            ],
+            [
                 'example.com/path',
-                '<a href="http://example.com/path">example.com/path</a>',
+                '<a href="http://example.com/path" target="_blank" rel="noreferrer">example.com/path</a>',
             ],
 
             // not recognized links with italic marker inside not converted
@@ -95,19 +99,19 @@ describe('MdParser class', () => {
             // italic marker inside links not converted
             [
                 'example.com/path_with_underscore',
-                '<a href="http://example.com/path_with_underscore">example.com/path_with_underscore</a>',
+                '<a href="http://example.com/path_with_underscore" target="_blank" rel="noreferrer">example.com/path_with_underscore</a>',
             ],
             [
                 '_italic_ and *bold* with a example.com/link_with_underscore',
-                '<em>italic</em> and <strong>bold</strong> with a <a href="http://example.com/link_with_underscore">example.com/link_with_underscore</a>',
+                '<em>italic</em> and <strong>bold</strong> with a <a href="http://example.com/link_with_underscore" target="_blank" rel="noreferrer">example.com/link_with_underscore</a>',
             ],
             [
                 'example.com/path with *bold* after :)',
-                '<a href="http://example.com/path">example.com/path</a> with <strong>bold</strong> after <span>\u{1F642}</span>',
+                '<a href="http://example.com/path" target="_blank" rel="noreferrer">example.com/path</a> with <strong>bold</strong> after <span>\u{1F642}</span>',
             ],
             [
                 '_before_ example.com/path_with_underscore *after* :)',
-                '<em>before</em> <a href="http://example.com/path_with_underscore">example.com/path_with_underscore</a> <strong>after</strong> <span>\u{1F642}</span>',
+                '<em>before</em> <a href="http://example.com/path_with_underscore" target="_blank" rel="noreferrer">example.com/path_with_underscore</a> <strong>after</strong> <span>\u{1F642}</span>',
             ],
 
             // italic/bold markers right after non-word characters

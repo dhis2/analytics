@@ -1,6 +1,12 @@
 import isString from 'd2-utilizr/lib/isString'
 import objectClean from 'd2-utilizr/lib/objectClean'
 import {
+    HIDE_EMPTY_ROW_ITEMS_AFTER_LAST,
+    HIDE_EMPTY_ROW_ITEMS_ALL,
+    HIDE_EMPTY_ROW_ITEMS_BEFORE_FIRST,
+    HIDE_EMPTY_ROW_ITEMS_BEFORE_FIRST_AFTER_LAST,
+} from '../../../../modules/hideEmptyRowItems.js'
+import {
     LEGEND_DISPLAY_STRATEGY_BY_DATA_ITEM,
     LEGEND_DISPLAY_STRATEGY_FIXED,
 } from '../../../../modules/legends.js'
@@ -131,7 +137,7 @@ export default function ({ store, layout, el, extraConfig, extraOptions }) {
         },
 
         // exporting
-        exporting: getExporting(_layout.type),
+        exporting: getExporting(_layout, _extraOptions.legendSets, series),
 
         /* The config object passed to the Highcharts Chart constructor
          * can contain arbitrary properties, which are made accessible
@@ -170,7 +176,15 @@ export default function ({ store, layout, el, extraConfig, extraOptions }) {
     }
 
     // hide empty categories
-    if (_layout.hideEmptyRowItems !== 'NONE') {
+    if (
+        _layout.hideEmptyRowItems &&
+        [
+            HIDE_EMPTY_ROW_ITEMS_BEFORE_FIRST,
+            HIDE_EMPTY_ROW_ITEMS_AFTER_LAST,
+            HIDE_EMPTY_ROW_ITEMS_BEFORE_FIRST_AFTER_LAST,
+            HIDE_EMPTY_ROW_ITEMS_ALL,
+        ].includes(_layout.hideEmptyRowItems)
+    ) {
         config = getTrimmedConfig(config, _layout)
     }
 
@@ -239,8 +253,6 @@ export default function ({ store, layout, el, extraConfig, extraOptions }) {
 
     // force apply extra config
     Object.assign(config, extraConfig)
-
-    console.log(objectClean(config))
 
     return objectClean(config)
 }

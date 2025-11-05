@@ -1,0 +1,390 @@
+{
+    "name": "IDSR: Disease Week 1-12 Sierra Leone",
+    "created": "2017-05-30T14:29:44.670",
+    "lastUpdated": "2017-05-30T14:29:44.670",
+    "translations": [],
+    "lastUpdatedBy": {
+        "id": "GOLswS44mh8",
+        "code": null,
+        "name": "Tom Wakiki",
+        "displayName": "Tom Wakiki",
+        "username": "system"
+    },
+    "displayDensity": "NORMAL",
+    "fontSize": "NORMAL",
+    "sortOrder": 0,
+    "topLimit": 0,
+    "hideEmptyRows": false,
+    "showHierarchy": false,
+    "completedOnly": false,
+    "skipRounding": false,
+    "dataDimensionItems": [
+        {
+            "dataDimensionItemType": "DATA_ELEMENT"
+        },
+        {
+            "dataDimensionItemType": "DATA_ELEMENT"
+        },
+        {
+            "dataDimensionItemType": "DATA_ELEMENT"
+        },
+        {
+            "dataDimensionItemType": "DATA_ELEMENT"
+        },
+        {
+            "dataDimensionItemType": "DATA_ELEMENT"
+        }
+    ],
+    "subscribers": [],
+    "aggregationType": "DEFAULT",
+    "digitGroupSeparator": "SPACE",
+    "noSpaceBetweenColumns": false,
+    "cumulativeValues": false,
+    "percentStackedValues": false,
+    "showData": false,
+    "colTotals": true,
+    "rowTotals": true,
+    "rowSubTotals": true,
+    "colSubTotals": true,
+    "hideTitle": false,
+    "hideSubtitle": false,
+    "showDimensionLabels": true,
+    "interpretations": [],
+    "type": "PIVOT_TABLE",
+    "reportingParams": {
+        "grandParentOrganisationUnit": false,
+        "parentOrganisationUnit": false,
+        "organisationUnit": false,
+        "reportingPeriod": false
+    },
+    "numberType": "VALUE",
+    "yearlySeries": [],
+    "regression": false,
+    "hideEmptyColumns": false,
+    "fixColumnHeaders": false,
+    "fixRowHeaders": false,
+    "filters": [
+        {
+            "items": [
+                {
+                    "name": "Sierra Leone",
+                    "dimensionItemType": "ORGANISATION_UNIT",
+                    "access": {
+                        "manage": true,
+                        "externalize": false,
+                        "write": true,
+                        "read": true,
+                        "update": true,
+                        "delete": true
+                    },
+                    "displayName": "Sierra Leone",
+                    "displayShortName": "Sierra Leone",
+                    "id": "ImspTQPwCqd"
+                }
+            ],
+            "dimension": "ou"
+        }
+    ],
+    "parentGraphMap": {
+        "ImspTQPwCqd": ""
+    },
+    "columns": [
+        {
+            "items": [
+                {
+                    "name": "IDSR Cholera",
+                    "dimensionItemType": "DATA_ELEMENT",
+                    "access": {
+                        "manage": true,
+                        "externalize": false,
+                        "write": true,
+                        "read": true,
+                        "update": true,
+                        "delete": true
+                    },
+                    "displayName": "IDSR Cholera",
+                    "displayShortName": "Cholera",
+                    "id": "UsSUX0cpKsH"
+                },
+                {
+                    "name": "IDSR Malaria",
+                    "dimensionItemType": "DATA_ELEMENT",
+                    "access": {
+                        "manage": true,
+                        "externalize": false,
+                        "write": true,
+                        "read": true,
+                        "update": true,
+                        "delete": true
+                    },
+                    "displayName": "IDSR Malaria",
+                    "displayShortName": "Malaria",
+                    "id": "vq2qO3eTrNi"
+                },
+                {
+                    "name": "IDSR Measles",
+                    "dimensionItemType": "DATA_ELEMENT",
+                    "access": {
+                        "manage": true,
+                        "externalize": false,
+                        "write": true,
+                        "read": true,
+                        "update": true,
+                        "delete": true
+                    },
+                    "displayName": "IDSR Measles",
+                    "displayShortName": "Measles",
+                    "id": "YazgqXbizv1"
+                },
+                {
+                    "name": "IDSR Plague",
+                    "dimensionItemType": "DATA_ELEMENT",
+                    "access": {
+                        "manage": true,
+                        "externalize": false,
+                        "write": true,
+                        "read": true,
+                        "update": true,
+                        "delete": true
+                    },
+                    "displayName": "IDSR Plague",
+                    "displayShortName": "Plague",
+                    "id": "HS9zqaBdOQ4"
+                },
+                {
+                    "name": "IDSR Yellow fever",
+                    "dimensionItemType": "DATA_ELEMENT",
+                    "access": {
+                        "manage": true,
+                        "externalize": false,
+                        "write": true,
+                        "read": true,
+                        "update": true,
+                        "delete": true
+                    },
+                    "displayName": "IDSR Yellow fever",
+                    "displayShortName": "Yellow fever",
+                    "id": "noIzB569hTM"
+                }
+            ],
+            "dimension": "dx"
+        }
+    ],
+    "rows": [
+        {
+            "items": [
+                {
+                    "name": "Week 11 2025-03-10 - 2025-03-16",
+                    "dimensionItemType": "PERIOD",
+                    "displayShortName": "2025W11",
+                    "access": {
+                        "manage": true,
+                        "externalize": false,
+                        "write": true,
+                        "read": true,
+                        "update": true,
+                        "delete": true
+                    },
+                    "displayName": "Week 11 2025-03-10 - 2025-03-16",
+                    "id": "2025W11"
+                },
+                {
+                    "name": "Week 10 2025-03-03 - 2025-03-09",
+                    "dimensionItemType": "PERIOD",
+                    "displayShortName": "2025W10",
+                    "access": {
+                        "manage": true,
+                        "externalize": false,
+                        "write": true,
+                        "read": true,
+                        "update": true,
+                        "delete": true
+                    },
+                    "displayName": "Week 10 2025-03-03 - 2025-03-09",
+                    "id": "2025W10"
+                },
+                {
+                    "name": "Week 9 2025-02-24 - 2025-03-02",
+                    "dimensionItemType": "PERIOD",
+                    "displayShortName": "2025W9",
+                    "access": {
+                        "manage": true,
+                        "externalize": false,
+                        "write": true,
+                        "read": true,
+                        "update": true,
+                        "delete": true
+                    },
+                    "displayName": "Week 9 2025-02-24 - 2025-03-02",
+                    "id": "2025W9"
+                },
+                {
+                    "name": "Week 8 2025-02-17 - 2025-02-23",
+                    "dimensionItemType": "PERIOD",
+                    "displayShortName": "2025W8",
+                    "access": {
+                        "manage": true,
+                        "externalize": false,
+                        "write": true,
+                        "read": true,
+                        "update": true,
+                        "delete": true
+                    },
+                    "displayName": "Week 8 2025-02-17 - 2025-02-23",
+                    "id": "2025W8"
+                },
+                {
+                    "name": "Week 7 2025-02-10 - 2025-02-16",
+                    "dimensionItemType": "PERIOD",
+                    "displayShortName": "2025W7",
+                    "access": {
+                        "manage": true,
+                        "externalize": false,
+                        "write": true,
+                        "read": true,
+                        "update": true,
+                        "delete": true
+                    },
+                    "displayName": "Week 7 2025-02-10 - 2025-02-16",
+                    "id": "2025W7"
+                },
+                {
+                    "name": "Week 6 2025-02-03 - 2025-02-09",
+                    "dimensionItemType": "PERIOD",
+                    "displayShortName": "2025W6",
+                    "access": {
+                        "manage": true,
+                        "externalize": false,
+                        "write": true,
+                        "read": true,
+                        "update": true,
+                        "delete": true
+                    },
+                    "displayName": "Week 6 2025-02-03 - 2025-02-09",
+                    "id": "2025W6"
+                },
+                {
+                    "name": "Week 5 2025-01-27 - 2025-02-02",
+                    "dimensionItemType": "PERIOD",
+                    "displayShortName": "2025W5",
+                    "access": {
+                        "manage": true,
+                        "externalize": false,
+                        "write": true,
+                        "read": true,
+                        "update": true,
+                        "delete": true
+                    },
+                    "displayName": "Week 5 2025-01-27 - 2025-02-02",
+                    "id": "2025W5"
+                },
+                {
+                    "name": "Week 4 2025-01-20 - 2025-01-26",
+                    "dimensionItemType": "PERIOD",
+                    "displayShortName": "2025W4",
+                    "access": {
+                        "manage": true,
+                        "externalize": false,
+                        "write": true,
+                        "read": true,
+                        "update": true,
+                        "delete": true
+                    },
+                    "displayName": "Week 4 2025-01-20 - 2025-01-26",
+                    "id": "2025W4"
+                },
+                {
+                    "name": "Week 3 2025-01-13 - 2025-01-19",
+                    "dimensionItemType": "PERIOD",
+                    "displayShortName": "2025W3",
+                    "access": {
+                        "manage": true,
+                        "externalize": false,
+                        "write": true,
+                        "read": true,
+                        "update": true,
+                        "delete": true
+                    },
+                    "displayName": "Week 3 2025-01-13 - 2025-01-19",
+                    "id": "2025W3"
+                },
+                {
+                    "name": "Week 2 2025-01-06 - 2025-01-12",
+                    "dimensionItemType": "PERIOD",
+                    "displayShortName": "2025W2",
+                    "access": {
+                        "manage": true,
+                        "externalize": false,
+                        "write": true,
+                        "read": true,
+                        "update": true,
+                        "delete": true
+                    },
+                    "displayName": "Week 2 2025-01-06 - 2025-01-12",
+                    "id": "2025W2"
+                },
+                {
+                    "name": "Week 1 2024-12-30 - 2025-01-05",
+                    "dimensionItemType": "PERIOD",
+                    "displayShortName": "2025W1",
+                    "access": {
+                        "manage": true,
+                        "externalize": false,
+                        "write": true,
+                        "read": true,
+                        "update": true,
+                        "delete": true
+                    },
+                    "displayName": "Week 1 2024-12-30 - 2025-01-05",
+                    "id": "2025W1"
+                },
+                {
+                    "name": "Week 52 2024-12-23 - 2024-12-29",
+                    "dimensionItemType": "PERIOD",
+                    "displayShortName": "2024W52",
+                    "access": {
+                        "manage": true,
+                        "externalize": false,
+                        "write": true,
+                        "read": true,
+                        "update": true,
+                        "delete": true
+                    },
+                    "displayName": "Week 52 2024-12-23 - 2024-12-29",
+                    "id": "2024W52"
+                }
+            ],
+            "dimension": "pe"
+        }
+    ],
+    "subscribed": false,
+    "access": {
+        "manage": true,
+        "externalize": true,
+        "write": true,
+        "read": true,
+        "update": true,
+        "delete": true
+    },
+    "displayName": "IDSR: Disease Week 1-12 Sierra Leone",
+    "favorite": false,
+    "user": {
+        "id": "GOLswS44mh8",
+        "code": null,
+        "name": "Tom Wakiki",
+        "displayName": "Tom Wakiki",
+        "username": "system"
+    },
+    "href": "https://debug.dhis2.org/dev/api/42/visualizations/hY0eM8AWg6k",
+    "id": "hY0eM8AWg6k",
+    "legend": {
+        "showKey": false,
+        "style": "FILL",
+        "strategy": "FIXED"
+    },
+    "sorting": [],
+    "icons": [],
+    "seriesKey": {
+        "hidden": false
+    }
+}

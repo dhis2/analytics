@@ -1,43 +1,52 @@
-import { shallow } from 'enzyme'
+import { render, screen } from '@testing-library/react'
+import userEvent from '@testing-library/user-event'
 import React from 'react'
 import DimensionsPanel from '../DimensionsPanel.js'
-import DimensionList from '../List/DimensionList.js'
 
-describe('The Dimensions component ', () => {
-    let shallowDimensions
-    let props
-    const dimensionsComponent = () => {
-        if (!shallowDimensions) {
-            shallowDimensions = shallow(<DimensionsPanel {...props} />)
-        }
-        return shallowDimensions
-    }
+const props = {
+    dimensions: [
+        { id: 'id1', name: 'Dimension 1' },
+        { id: 'id2', name: 'Dimension 2' },
+    ],
+}
 
-    beforeEach(() => {
-        shallowDimensions = undefined
-        props = {
-            dimensions: [],
-        }
-    })
+test('DimensionsPanel renders a DimensionList component', () => {
+    render(<DimensionsPanel {...props} />)
 
-    it('renders a div', () => {
-        expect(dimensionsComponent().find('div').length).toEqual(1)
-    })
+    const dimensionListComponent = screen.getByTestId(
+        'dhis2-analytics-dimension-list'
+    )
+    expect(dimensionListComponent).toBeInTheDocument()
 
-    it('renders a div containing everything else', () => {
-        const wrappingDiv = dimensionsComponent().find('div').first()
+    const liElements = screen.getAllByTestId('dimension-item')
 
-        expect(wrappingDiv.children()).toEqual(dimensionsComponent().children())
-    })
+    expect(liElements).toHaveLength(2)
 
-    it('renders a DimensionList with the correct prop', () => {
-        const dimensionsComp = dimensionsComponent()
-        dimensionsComp.setState({ filterText: 'filteredText' })
+    const dim1Element = screen.getByText(props.dimensions[0].name)
+    expect(dim1Element).toBeInTheDocument()
 
-        const filteredList = dimensionsComp.find(DimensionList).first()
+    const dim2Element = screen.getByText(props.dimensions[1].name)
+    expect(dim2Element).toBeInTheDocument()
+})
 
-        expect(filteredList.props().filterText).toEqual(
-            dimensionsComp.state().filterText
-        )
-    })
+test('DimensionsPanel can filter the dimension list', async () => {
+    const user = userEvent.setup()
+
+    render(<DimensionsPanel {...props} />)
+
+    const filterComponent = screen.getByPlaceholderText('Filter dimensions')
+    expect(filterComponent).toBeInTheDocument()
+
+    await user.click(filterComponent)
+    await user.keyboard('1')
+
+    const liElements = screen.getAllByTestId('dimension-item')
+
+    expect(liElements).toHaveLength(1)
+
+    const dim1Element = screen.getByText(props.dimensions[0].name)
+    expect(dim1Element).toBeInTheDocument()
+
+    const dim2Element = screen.queryByText(props.dimensions[1].name)
+    expect(dim2Element).not.toBeInTheDocument()
 })

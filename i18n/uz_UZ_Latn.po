@@ -1,13 +1,14 @@
 # 
 # Translators:
-# Yury Rogachev <yury@dhis2.org>, 2023
+# Khurshid Ibatov <x.ibatov@dtsj.uz>, 2025
+# Yury Rogachev <yury@dhis2.org>, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2023-07-06T08:30:33.216Z\n"
+"POT-Creation-Date: 2025-09-09T09:32:04.677Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Yury Rogachev <yury@dhis2.org>, 2023\n"
+"Last-Translator: Yury Rogachev <yury@dhis2.org>, 2025\n"
 "Language-Team: Uzbek (Latin) (https://app.transifex.com/hisp-uio/teams/100509/uz@Latn/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -73,11 +74,17 @@ msgstr ""
 msgid "About this visualization"
 msgstr ""
 
+msgid "About this event chart"
+msgstr ""
+
+msgid "About this event report"
+msgstr ""
+
 msgid "This app could not retrieve required data."
 msgstr ""
 
 msgid "Network error"
-msgstr ""
+msgstr "Тармоқда хатолик"
 
 msgid "Data / Edit calculation"
 msgstr ""
@@ -86,7 +93,7 @@ msgid "Data / New calculation"
 msgstr ""
 
 msgid "Remove item"
-msgstr ""
+msgstr "Elementni olib tashlang"
 
 msgid "Check formula"
 msgstr ""
@@ -149,8 +156,173 @@ msgstr ""
 msgid "Math operators"
 msgstr ""
 
+msgid "Expression description"
+msgstr ""
+
+msgid "Error loading value"
+msgstr ""
+
+msgid "None"
+msgstr "Йўқ"
+
+msgid "Data set(s)"
+msgstr ""
+
+msgid "Zero is significant"
+msgstr ""
+
+msgid "True"
+msgstr "Toʼgʼri"
+
+msgid "False"
+msgstr "Notoʼgʼri"
+
+msgid "Value type"
+msgstr "Qiymat turi"
+
+msgid "Aggregation type"
+msgstr "Бирлаштириш тури"
+
+msgid "Category combo"
+msgstr ""
+
+msgid "Option set"
+msgstr "Variantlar toʼplami"
+
+msgid "Group membership"
+msgstr ""
+
+msgid "Legend set(s)"
+msgstr ""
+
+msgid "Category option name"
+msgstr ""
+
+msgid "Category combo name"
+msgstr ""
+
+msgid "Categories name"
+msgstr ""
+
+msgid "Period type"
+msgstr "Davr turi"
+
+msgid "Indicators"
+msgstr "Indikatorlar"
+
+msgid "Expiry days"
+msgstr ""
+
+msgid "Type"
+msgstr "Turi"
+
+msgid "Data element"
+msgstr "Maʼlumotlar elementi"
+
+msgid "Tracked entity attribute"
+msgstr "Kuzatuv obʼekti atributi"
+
+msgid "Numerator description"
+msgstr "Numerator tavsifi"
+
+msgid "Numerator expression"
+msgstr ""
+
+msgid "Denominator description"
+msgstr "Nomzod tavsifi"
+
+msgid "Denominator expression"
+msgstr ""
+
+msgid "Annualized"
+msgstr "Yillik"
+
+msgid "Yes"
+msgstr "Ҳа"
+
+msgid "No"
+msgstr "Йўқ"
+
+msgid "Indicator type"
+msgstr "Indikator turi"
+
+msgid "Decimals in output"
+msgstr ""
+
+msgid "There was a problem loading information for this data item."
+msgstr ""
+
+msgid "Name"
+msgstr "Исми"
+
+msgid "Description"
+msgstr "Tavsif"
+
+msgid "Code"
+msgstr "Kod"
+
+msgid "ID"
+msgstr "ID"
+
+msgid "Last updated date"
+msgstr ""
+
+msgid "Created date"
+msgstr ""
+
+msgid "Created by"
+msgstr "Томонидан яратилган"
+
+msgid "Custom"
+msgstr "Odatiy"
+
+msgid "Program"
+msgstr "Programma"
+
+msgid "Analytics type"
+msgstr ""
+
+msgid "Enrollment"
+msgstr "Roʼyxatga olish"
+
+msgid "Event"
+msgstr "Hodisa/Tadbir"
+
+msgid "Analytics period boundaries"
+msgstr ""
+
+msgid "{{ offsetPeriodType }} × {{ offsetPeriods }}"
+msgstr ""
+
+msgid "Expression"
+msgstr "Ifoda"
+
+msgid "Filter"
+msgstr "Filtr"
+
+msgid "All available options are already selected"
+msgstr ""
+
+msgid "No available options for this item"
+msgstr ""
+
+msgid "Search by option name"
+msgstr ""
+
+msgid "Back to all items"
+msgstr ""
+
+msgid "Options"
+msgstr "Вариант"
+
+msgid "Selected items"
+msgstr ""
+
 msgid "Data Type"
 msgstr "Maʼlumot turi"
+
+msgid "Only {{dataType}} can be used in {{visType}}"
+msgstr ""
 
 msgid "All types"
 msgstr "Barcha turlari"
@@ -164,11 +336,23 @@ msgstr "Maʼlumot yoʼq"
 msgid "Search by data item name"
 msgstr ""
 
-msgid "No items selected"
-msgstr "Element tanlanmagan"
-
 msgid "Selected Items"
 msgstr "Element tanlangan"
+
+msgid "All available items are already selected"
+msgstr ""
+
+msgid "Calculation"
+msgstr ""
+
+msgid "Metric type"
+msgstr ""
+
+msgid "All metrics"
+msgstr "Barcha koʼrsatgichlar"
+
+msgid "No items selected"
+msgstr "Element tanlanmagan"
 
 msgid "No indicators found"
 msgstr ""
@@ -180,6 +364,9 @@ msgid "No event data items found"
 msgstr ""
 
 msgid "No program indicators found"
+msgstr ""
+
+msgid "No calculations found"
 msgstr ""
 
 msgid "No indicators found for \"{{- searchTerm}}\""
@@ -194,17 +381,14 @@ msgstr ""
 msgid "No program indicators found for \"{{- searchTerm}}\""
 msgstr ""
 
+msgid "No calculations found for \"{{- searchTerm}}\""
+msgstr ""
+
 msgid "Nothing found for \"{{- searchTerm}}\""
 msgstr ""
 
-msgid "Calculation"
+msgid "Click to choose from available options"
 msgstr ""
-
-msgid "Metric type"
-msgstr ""
-
-msgid "All metrics"
-msgstr "Barcha koʼrsatgichlar"
 
 msgid "Move to {{axisName}}"
 msgstr "Harakatlaning {{axisName}} ga qarab"
@@ -256,11 +440,8 @@ msgstr ""
 msgid "Search"
 msgstr "Izlash"
 
-msgid "Nothing found for {{- searchTerm}}"
-msgstr ""
-
 msgid "Delete {{fileType}}"
-msgstr ""
+msgstr "Oʼchirib tashlash {{fileType}}"
 
 msgid ""
 "This {{fileType}} and related interpretations will be deleted. Continue?"
@@ -302,17 +483,14 @@ msgstr ""
 msgid "Open in this app"
 msgstr "Ushbu ilovada oching"
 
+msgid "Copy to clipboard"
+msgstr "Buferga nusxa olish"
+
 msgid "Close"
 msgstr "Yopmoq"
 
 msgid "Rename {{fileType}}"
-msgstr ""
-
-msgid "Name"
-msgstr "Исми"
-
-msgid "Description"
-msgstr "Tavsif"
+msgstr "Qayta nomlash {{fileType}}"
 
 msgid "Rename"
 msgstr "Қайта номлаш"
@@ -321,7 +499,7 @@ msgid "{{- objectName}} (copy)"
 msgstr ""
 
 msgid "Save {{fileType}} as"
-msgstr ""
+msgstr "{{fileType}} ni sifatida saqlash"
 
 msgid "event report"
 msgstr "hodisa/tadbir hisoboti"
@@ -335,17 +513,32 @@ msgstr "xarita"
 msgid "visualization"
 msgstr ""
 
+msgid "Untitled {{visualizationType}}, {{date}}"
+msgstr ""
+
+msgid "Back to all interpretations"
+msgstr "Jami talqinlarga qaytish"
+
+msgid "Could not load interpretation details"
+msgstr ""
+
+msgid "The request to fetch interpretation comments failed"
+msgstr ""
+
 msgid "Edit"
 msgstr "Tahrirlash"
 
 msgid "Write a reply"
 msgstr "Izoh yozing"
 
+msgid "Could not post reply"
+msgstr ""
+
 msgid "Post reply"
 msgstr ""
 
-msgid "Delete failed"
-msgstr "Oʼchirish amalga oshmadi"
+msgid "Could not delete comment"
+msgstr ""
 
 msgid "Could not update comment"
 msgstr ""
@@ -373,11 +566,24 @@ msgstr ""
 msgid "Write an interpretation"
 msgstr "Talqin yozish"
 
+msgid "Could not post interpretation"
+msgstr ""
+
+msgid ""
+"Other people viewing this interpretation in the future may see more data."
+msgstr ""
+
 msgid "Post interpretation"
 msgstr ""
 
 msgid "Interpretations"
 msgstr "Talqinlar"
+
+msgid "Error loading interpretations"
+msgstr ""
+
+msgid "Could not load interpretations"
+msgstr ""
 
 msgid "Reply"
 msgstr "Javob"
@@ -395,14 +601,23 @@ msgstr "Аksincha"
 msgid "Like"
 msgstr "Kabi, oʼxshash"
 
+msgid "See interpretation"
+msgstr ""
+
+msgid "Open in app"
+msgstr ""
+
 msgid "Share"
 msgstr "Улашиш"
 
-msgid "See interpretation"
+msgid "Could not delete interpretation"
 msgstr ""
 
 msgid "Manage sharing"
 msgstr "Ulashishni boshqarish"
+
+msgid "Could not update interpretation text"
+msgstr ""
 
 msgid "Could not update interpretation"
 msgstr ""
@@ -410,44 +625,8 @@ msgstr ""
 msgid "Enter interpretation text"
 msgstr ""
 
-msgid "Bold text"
-msgstr ""
-
-msgid "Italic text"
-msgstr ""
-
-msgid "Link to a URL"
-msgstr ""
-
-msgid "Mention a user"
-msgstr ""
-
-msgid "Add emoji"
-msgstr ""
-
-msgid "Preview"
-msgstr ""
-
-msgid "Back to write mode"
-msgstr ""
-
-msgid "Too many results. Try refining the search."
-msgstr ""
-
-msgid "Search for a user"
-msgstr ""
-
-msgid "Searching for \"{{- searchText}}\""
-msgstr ""
-
-msgid "No results found"
-msgstr "Hech qanday natija topilmadi"
-
 msgid "Not available offline"
 msgstr ""
-
-msgid "Created by"
-msgstr "Томонидан яратилган"
 
 msgid "Anyone"
 msgstr "Kimdir"
@@ -469,9 +648,6 @@ msgstr "Yaratilgan"
 
 msgid "Last updated"
 msgstr "Oxirgi yangilangan"
-
-msgid "Type"
-msgstr "Turi"
 
 msgid "Clear filters"
 msgstr "Filtrlarni tozalash"
@@ -576,9 +752,6 @@ msgstr ""
 msgid "New line list"
 msgstr ""
 
-msgid "Options"
-msgstr "Вариант"
-
 msgid "Hide"
 msgstr "Berkitish"
 
@@ -618,9 +791,6 @@ msgstr "Guruhni tanlang"
 msgid "Deselect all"
 msgstr "Barcha tanlanganni bekor qilish"
 
-msgid "Period type"
-msgstr "Davr turi"
-
 msgid "Year"
 msgstr "Yil"
 
@@ -630,14 +800,14 @@ msgstr "Yilni tanlang"
 msgid "Period"
 msgstr "Davr"
 
+msgid "Selected Periods"
+msgstr "Tanlangan Davrlar"
+
 msgid "Relative periods"
 msgstr "Nisbiy davrlar"
 
 msgid "Fixed periods"
 msgstr "Beligalangan davrlar"
-
-msgid "Selected Periods"
-msgstr "Tanlangan Davrlar"
 
 msgid "No periods selected"
 msgstr "Davr tanlanmagan"
@@ -846,6 +1016,30 @@ msgstr "Moliyaviy yillar"
 msgid "Years"
 msgstr "Yillar"
 
+msgid "Value: {{value}}"
+msgstr ""
+
+msgid "Bold text"
+msgstr ""
+
+msgid "Italic text"
+msgstr ""
+
+msgid "Link to a URL"
+msgstr ""
+
+msgid "Mention a user"
+msgstr ""
+
+msgid "Add emoji"
+msgstr ""
+
+msgid "Preview"
+msgstr ""
+
+msgid "Back to write mode"
+msgstr ""
+
 msgid "Interpretations and details"
 msgstr ""
 
@@ -876,14 +1070,23 @@ msgstr ""
 msgid "Retry"
 msgstr ""
 
+msgid "Too many results. Try refining the search."
+msgstr ""
+
+msgid "Search for a user"
+msgstr ""
+
+msgid "Searching for \"{{- searchText}}\""
+msgstr ""
+
+msgid "No results found"
+msgstr "Hech qanday natija topilmadi"
+
 msgid "Series"
 msgstr "Ketma-ketliklar"
 
 msgid "Category"
 msgstr "Kategoriya"
-
-msgid "Filter"
-msgstr "Filtr"
 
 msgid "Columns"
 msgstr "Ustunlar"
@@ -909,14 +1112,8 @@ msgstr "Haqiqiy hisobotlar oʼz vaqtida"
 msgid "Expected reports"
 msgstr "Kutilayotgan hisobotlar"
 
-msgid "Program"
-msgstr "Programma"
-
 msgid "Select a program"
 msgstr "Dasturni tanlang"
-
-msgid "Indicators"
-msgstr "Indikatorlar"
 
 msgid "Indicator group"
 msgstr "Koʼrsatgich guruhi"
@@ -935,9 +1132,6 @@ msgstr ""
 
 msgid "Data element group"
 msgstr "Maʼlumotlar elementi guruhi"
-
-msgid "Data element"
-msgstr "Maʼlumotlar elementi"
 
 msgid "No data element groups found"
 msgstr ""
@@ -980,6 +1174,9 @@ msgstr "Dastur indikatori"
 
 msgid "Calculations"
 msgstr ""
+
+msgid "Option"
+msgstr "Variant"
 
 msgid "Number"
 msgstr "Tartib raqami"
@@ -1083,6 +1280,9 @@ msgstr ""
 msgid "{{thresholdFactor}} × Z-score high"
 msgstr ""
 
+msgid "Not applicable"
+msgstr ""
+
 msgid "Data"
 msgstr "Maʼlumot"
 
@@ -1091,6 +1291,84 @@ msgstr "Ташкилий бирлик"
 
 msgid "Assigned Categories"
 msgstr "Belgilangan Kategoriyalar"
+
+msgid "No value"
+msgstr "Qiymat yoʼq"
+
+msgid "Text"
+msgstr "Matn"
+
+msgid "Long text"
+msgstr "Uzun matn"
+
+msgid "Multi text"
+msgstr ""
+
+msgid "Letter"
+msgstr "Xat"
+
+msgid "Phone number"
+msgstr "Telefon raqami"
+
+msgid "Email"
+msgstr "ye-Pochta"
+
+msgid "Yes/No"
+msgstr "Ha/Yoʼq"
+
+msgid "Yes Only"
+msgstr "Faqat ha"
+
+msgid "Date"
+msgstr "Sana"
+
+msgid "Date & Time"
+msgstr "Sana va Vaqt"
+
+msgid "Time"
+msgstr "Vaqt"
+
+msgid "Unit interval"
+msgstr "Birlik oraligʼi"
+
+msgid "Percentage"
+msgstr "Foiz"
+
+msgid "Integer"
+msgstr "Butun son"
+
+msgid "Positive Integer"
+msgstr "Musbat son"
+
+msgid "Negative Integer"
+msgstr "Manfiy son"
+
+msgid "Positive or Zero Integer"
+msgstr "Musbat yoki Nol butun son"
+
+msgid "Tracker Associate"
+msgstr "Kuzatuvchi hamkor"
+
+msgid "Username"
+msgstr "Фойдаланувчи исми"
+
+msgid "Coordinate"
+msgstr "Muvofiqlashtirish"
+
+msgid "Reference"
+msgstr "Maʼlumot"
+
+msgid "Age"
+msgstr ""
+
+msgid "URL"
+msgstr "URL"
+
+msgid "Image"
+msgstr "Rasm"
+
+msgid "GeoJSON"
+msgstr ""
 
 msgid "Pivot table"
 msgstr "Solishtirma jadval"
@@ -1140,8 +1418,14 @@ msgstr "Tarqoqlik"
 msgid "Single value"
 msgstr "Yagona qiymat"
 
+msgid "Outlier table"
+msgstr ""
+
 msgid "All charts"
 msgstr ""
+
+msgid "Map"
+msgstr "Харита"
 
 msgid "{{seriesName}} (trend)"
 msgstr ""

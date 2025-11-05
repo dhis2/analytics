@@ -9,6 +9,13 @@ import DimensionItem from './DimensionItem.js'
 import styles from './styles/DimensionList.style.js'
 
 class DimensionList extends Component {
+    static defaultProps = {
+        selectedIds: [],
+        disabledDimension: Function.prototype,
+        lockedDimension: Function.prototype,
+        recommendedDimension: Function.prototype,
+    }
+
     nameContainsFilterText = (dimension) =>
         dimension.name
             .toLowerCase()
@@ -34,6 +41,7 @@ class DimensionList extends Component {
             onClick={this.props.onDimensionClick}
             onOptionsClick={this.props.onDimensionOptionsClick}
             onDragStart={this.props.onDimensionDragStart}
+            dataTest="dimension-item"
         />
     )
 
@@ -57,7 +65,10 @@ class DimensionList extends Component {
         )
 
         return (
-            <div className="container">
+            <div
+                className="container"
+                data-test="dhis2-analytics-dimension-list"
+            >
                 <div className="wrapper">
                     {fixedDimensions?.length ? (
                         <div className="section">
@@ -92,13 +103,6 @@ DimensionList.propTypes = {
     onDimensionClick: PropTypes.func,
     onDimensionDragStart: PropTypes.func,
     onDimensionOptionsClick: PropTypes.func,
-}
-
-DimensionList.defaultProps = {
-    selectedIds: [],
-    disabledDimension: Function.prototype,
-    lockedDimension: Function.prototype,
-    recommendedDimension: Function.prototype,
 }
 
 export default DimensionList

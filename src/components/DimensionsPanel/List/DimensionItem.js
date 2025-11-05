@@ -12,6 +12,16 @@ import RecommendedIcon from './RecommendedIcon.js'
 import styles from './styles/DimensionItem.style.js'
 
 class DimensionItem extends Component {
+    static defaultProps = {
+        isDeactivated: false,
+        isRecommended: false,
+        isSelected: false,
+        isLocked: false,
+        onClick: Function.prototype,
+        innerRef: Function.prototype,
+        style: {},
+    }
+
     state = { mouseOver: false }
 
     onOptionsClick = (id, ref) => (event) =>
@@ -159,16 +169,6 @@ DimensionItem.propTypes = {
     isRecommended: PropTypes.bool,
     onClick: PropTypes.func,
     onOptionsClick: PropTypes.func,
-}
-
-DimensionItem.defaultProps = {
-    isDeactivated: false,
-    isRecommended: false,
-    isSelected: false,
-    isLocked: false,
-    onClick: Function.prototype,
-    innerRef: Function.prototype,
-    style: {},
 }
 
 export default DimensionItem

@@ -1,4 +1,3 @@
-import isNumeric from 'd2-utilizr/lib/isNumeric'
 import isString from 'd2-utilizr/lib/isString'
 import objectClean from 'd2-utilizr/lib/objectClean'
 import {
@@ -14,6 +13,7 @@ import {
     TEXT_ALIGN_RIGHT,
     mergeFontStyleWithDefault,
 } from '../../../../modules/fontStyle.js'
+import { isNumeric } from '../../../../modules/utils.js'
 import { isVerticalType } from '../../../../modules/visTypes.js'
 import getFormatter from './getFormatter.js'
 import { getTextAlignOption } from './getTextAlignOption.js'

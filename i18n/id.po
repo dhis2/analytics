@@ -2,18 +2,19 @@
 # Translators:
 # Carwoto Sa'an <carwoto@gmail.com>, 2022
 # Guardian Sanjaya <gysanjaya@ugm.ac.id>, 2022
-# Aprisa Chrysantina <aprisa.chrysantina@gmail.com>, 2022
-# Viktor Varland <viktor@dhis2.org>, 2023
-# Yusuf Setiawan <mohammadyusufsetiawan@gmail.com>, 2023
-# Untoro Dwi Raharjo <untoro.dwi.raharjo@mail.ugm.ac.id>, 2023
-# Philip Larsen Donnelly, 2024
+# Aprisa Chrysantina <aprisa.chrysantina@gmail.com>, 2025
+# Raja Fathurrahim, 2025
+# Viktor Varland <viktor@dhis2.org>, 2025
+# Philip Larsen Donnelly, 2025
+# Untoro Dwi Raharjo <untoro.dwi.raharjo@mail.ugm.ac.id>, 2025
+# Yusuf Setiawan <mohammadyusufsetiawan@gmail.com>, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2023-09-27T14:15:13.876Z\n"
+"POT-Creation-Date: 2025-09-09T09:32:04.677Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Philip Larsen Donnelly, 2024\n"
+"Last-Translator: Yusuf Setiawan <mohammadyusufsetiawan@gmail.com>, 2025\n"
 "Language-Team: Indonesian (https://app.transifex.com/hisp-uio/teams/100509/id/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -43,7 +44,7 @@ msgid "No description"
 msgstr "Tidak ada deskripsi"
 
 msgid "Last updated {{time}}"
-msgstr ""
+msgstr "Terakhir diperbarui {{time}}"
 
 msgid "Created {{time}} by {{author}}"
 msgstr ""
@@ -77,6 +78,12 @@ msgid "About this line list"
 msgstr ""
 
 msgid "About this visualization"
+msgstr ""
+
+msgid "About this event chart"
+msgstr ""
+
+msgid "About this event report"
 msgstr ""
 
 msgid "This app could not retrieve required data."
@@ -155,8 +162,173 @@ msgstr ""
 msgid "Math operators"
 msgstr ""
 
+msgid "Expression description"
+msgstr "Deskripsi expression"
+
+msgid "Error loading value"
+msgstr ""
+
+msgid "None"
+msgstr "Tidak ada"
+
+msgid "Data set(s)"
+msgstr ""
+
+msgid "Zero is significant"
+msgstr ""
+
+msgid "True"
+msgstr ""
+
+msgid "False"
+msgstr ""
+
+msgid "Value type"
+msgstr "Tipe nilai"
+
+msgid "Aggregation type"
+msgstr "Tipe agregasi"
+
+msgid "Category combo"
+msgstr ""
+
+msgid "Option set"
+msgstr ""
+
+msgid "Group membership"
+msgstr ""
+
+msgid "Legend set(s)"
+msgstr ""
+
+msgid "Category option name"
+msgstr ""
+
+msgid "Category combo name"
+msgstr ""
+
+msgid "Categories name"
+msgstr ""
+
+msgid "Period type"
+msgstr "Tipe periode"
+
+msgid "Indicators"
+msgstr "Indikator"
+
+msgid "Expiry days"
+msgstr "Batas Kadaluarsa"
+
+msgid "Type"
+msgstr "Tipe"
+
+msgid "Data element"
+msgstr "Elemen data"
+
+msgid "Tracked entity attribute"
+msgstr "Atribut"
+
+msgid "Numerator description"
+msgstr ""
+
+msgid "Numerator expression"
+msgstr ""
+
+msgid "Denominator description"
+msgstr ""
+
+msgid "Denominator expression"
+msgstr ""
+
+msgid "Annualized"
+msgstr ""
+
+msgid "Yes"
+msgstr "Iya"
+
+msgid "No"
+msgstr "Tidak"
+
+msgid "Indicator type"
+msgstr ""
+
+msgid "Decimals in output"
+msgstr ""
+
+msgid "There was a problem loading information for this data item."
+msgstr ""
+
+msgid "Name"
+msgstr "Nama"
+
+msgid "Description"
+msgstr "Deskripsi"
+
+msgid "Code"
+msgstr "Kode"
+
+msgid "ID"
+msgstr "ID"
+
+msgid "Last updated date"
+msgstr ""
+
+msgid "Created date"
+msgstr ""
+
+msgid "Created by"
+msgstr "Dibuat oleh"
+
+msgid "Custom"
+msgstr "Kustom"
+
+msgid "Program"
+msgstr "Program"
+
+msgid "Analytics type"
+msgstr ""
+
+msgid "Enrollment"
+msgstr "Pendaftaran"
+
+msgid "Event"
+msgstr "Even"
+
+msgid "Analytics period boundaries"
+msgstr ""
+
+msgid "{{ offsetPeriodType }} × {{ offsetPeriods }}"
+msgstr ""
+
+msgid "Expression"
+msgstr ""
+
+msgid "Filter"
+msgstr "Saring"
+
+msgid "All available options are already selected"
+msgstr ""
+
+msgid "No available options for this item"
+msgstr ""
+
+msgid "Search by option name"
+msgstr ""
+
+msgid "Back to all items"
+msgstr ""
+
+msgid "Options"
+msgstr "Opsi"
+
+msgid "Selected items"
+msgstr ""
+
 msgid "Data Type"
 msgstr "Tipe Data"
+
+msgid "Only {{dataType}} can be used in {{visType}}"
+msgstr ""
 
 msgid "All types"
 msgstr "Semua jenis"
@@ -170,11 +342,23 @@ msgstr "Tidak ada data"
 msgid "Search by data item name"
 msgstr "Cari berdasarkan nama item data"
 
-msgid "No items selected"
-msgstr "Tidak ada item yang dipilih"
-
 msgid "Selected Items"
 msgstr "Item yang Dipilih"
+
+msgid "All available items are already selected"
+msgstr ""
+
+msgid "Calculation"
+msgstr ""
+
+msgid "Metric type"
+msgstr "Jenis metrik"
+
+msgid "All metrics"
+msgstr "Semua metrik"
+
+msgid "No items selected"
+msgstr "Tidak ada item yang dipilih"
 
 msgid "No indicators found"
 msgstr "Tidak ada indikator yang ditemukan"
@@ -188,6 +372,9 @@ msgstr "Tidak ada item data acara yang ditemukan"
 msgid "No program indicators found"
 msgstr "Tidak ada indikator program yang ditemukan"
 
+msgid "No calculations found"
+msgstr ""
+
 msgid "No indicators found for \"{{- searchTerm}}\""
 msgstr "Tidak ada indikator yang ditemukan untuk \"{{- searchTerm}}\""
 
@@ -200,17 +387,14 @@ msgstr "Tidak ditemukan item data peristiwa untuk \"{{- searchTerm}}\""
 msgid "No program indicators found for \"{{- searchTerm}}\""
 msgstr "Tidak ada indikator program yang ditemukan untuk \"{{- searchTerm}}\""
 
+msgid "No calculations found for \"{{- searchTerm}}\""
+msgstr ""
+
 msgid "Nothing found for \"{{- searchTerm}}\""
 msgstr "Tidak ada yang ditemukan untuk \"{{- searchTerm}}\""
 
-msgid "Calculation"
+msgid "Click to choose from available options"
 msgstr ""
-
-msgid "Metric type"
-msgstr "Jenis metrik"
-
-msgid "All metrics"
-msgstr "Semua metrik"
 
 msgid "Move to {{axisName}}"
 msgstr "Pindah ke {{axisName}}"
@@ -262,9 +446,6 @@ msgstr ""
 msgid "Search"
 msgstr "Pencarian"
 
-msgid "Nothing found for {{- searchTerm}}"
-msgstr ""
-
 msgid "Delete {{fileType}}"
 msgstr "Hapus {{fileType}}"
 
@@ -308,17 +489,14 @@ msgstr "Dapatkan tautan…"
 msgid "Open in this app"
 msgstr "Buka di aplikasi ini"
 
+msgid "Copy to clipboard"
+msgstr "Menyalin ke clipboard"
+
 msgid "Close"
 msgstr "Tutup"
 
 msgid "Rename {{fileType}}"
 msgstr "Ganti nama {{fileType}}"
-
-msgid "Name"
-msgstr "Nama"
-
-msgid "Description"
-msgstr "Deskripsi"
 
 msgid "Rename"
 msgstr "Ganti nama"
@@ -341,17 +519,32 @@ msgstr ""
 msgid "visualization"
 msgstr ""
 
+msgid "Untitled {{visualizationType}}, {{date}}"
+msgstr ""
+
+msgid "Back to all interpretations"
+msgstr ""
+
+msgid "Could not load interpretation details"
+msgstr ""
+
+msgid "The request to fetch interpretation comments failed"
+msgstr ""
+
 msgid "Edit"
 msgstr "Sunting"
 
 msgid "Write a reply"
 msgstr ""
 
+msgid "Could not post reply"
+msgstr ""
+
 msgid "Post reply"
 msgstr ""
 
-msgid "Delete failed"
-msgstr "Hapus yang gagal"
+msgid "Could not delete comment"
+msgstr ""
 
 msgid "Could not update comment"
 msgstr ""
@@ -379,6 +572,9 @@ msgstr ""
 msgid "Write an interpretation"
 msgstr ""
 
+msgid "Could not post interpretation"
+msgstr ""
+
 msgid ""
 "Other people viewing this interpretation in the future may see more data."
 msgstr ""
@@ -388,6 +584,12 @@ msgstr ""
 
 msgid "Interpretations"
 msgstr "Interpretasi"
+
+msgid "Error loading interpretations"
+msgstr ""
+
+msgid "Could not load interpretations"
+msgstr ""
 
 msgid "Reply"
 msgstr "Balas"
@@ -405,13 +607,22 @@ msgstr "Batalkan Suka"
 msgid "Like"
 msgstr "Suka"
 
-msgid "Share"
-msgstr "Bagikan"
-
 msgid "See interpretation"
 msgstr ""
 
+msgid "Open in app"
+msgstr ""
+
+msgid "Share"
+msgstr "Bagikan"
+
+msgid "Could not delete interpretation"
+msgstr ""
+
 msgid "Manage sharing"
+msgstr ""
+
+msgid "Could not update interpretation text"
 msgstr ""
 
 msgid "Could not update interpretation"
@@ -420,44 +631,8 @@ msgstr ""
 msgid "Enter interpretation text"
 msgstr ""
 
-msgid "Bold text"
-msgstr ""
-
-msgid "Italic text"
-msgstr ""
-
-msgid "Link to a URL"
-msgstr ""
-
-msgid "Mention a user"
-msgstr ""
-
-msgid "Add emoji"
-msgstr ""
-
-msgid "Preview"
-msgstr ""
-
-msgid "Back to write mode"
-msgstr ""
-
-msgid "Too many results. Try refining the search."
-msgstr ""
-
-msgid "Search for a user"
-msgstr ""
-
-msgid "Searching for \"{{- searchText}}\""
-msgstr ""
-
-msgid "No results found"
-msgstr "Tidak ada hasil ditemukan"
-
 msgid "Not available offline"
 msgstr ""
-
-msgid "Created by"
-msgstr "Dibuat oleh"
 
 msgid "Anyone"
 msgstr "Siapa saja"
@@ -479,9 +654,6 @@ msgstr "Dibuat"
 
 msgid "Last updated"
 msgstr "Terakhir diperbarui"
-
-msgid "Type"
-msgstr "Tipe"
 
 msgid "Clear filters"
 msgstr "Hapus penyaring"
@@ -599,9 +771,6 @@ msgstr ""
 msgid "New line list"
 msgstr ""
 
-msgid "Options"
-msgstr "Opsi"
-
 msgid "Hide"
 msgstr "Sembunyikan"
 
@@ -641,9 +810,6 @@ msgstr ""
 msgid "Deselect all"
 msgstr "Batal pilih semua"
 
-msgid "Period type"
-msgstr "Tipe periode"
-
 msgid "Year"
 msgstr "Tahun"
 
@@ -653,14 +819,14 @@ msgstr "Pilih tahun"
 msgid "Period"
 msgstr "Periode"
 
+msgid "Selected Periods"
+msgstr "Periode yang Dipilih"
+
 msgid "Relative periods"
 msgstr "Periode relatif"
 
 msgid "Fixed periods"
 msgstr "Periode tetap"
-
-msgid "Selected Periods"
-msgstr "Periode yang Dipilih"
 
 msgid "No periods selected"
 msgstr "Tidak ada periode yang dipilih"
@@ -869,6 +1035,30 @@ msgstr "Keuangan tahunan"
 msgid "Years"
 msgstr "Tahun"
 
+msgid "Value: {{value}}"
+msgstr ""
+
+msgid "Bold text"
+msgstr ""
+
+msgid "Italic text"
+msgstr ""
+
+msgid "Link to a URL"
+msgstr ""
+
+msgid "Mention a user"
+msgstr ""
+
+msgid "Add emoji"
+msgstr ""
+
+msgid "Preview"
+msgstr ""
+
+msgid "Back to write mode"
+msgstr ""
+
 msgid "Interpretations and details"
 msgstr ""
 
@@ -899,14 +1089,23 @@ msgstr ""
 msgid "Retry"
 msgstr ""
 
+msgid "Too many results. Try refining the search."
+msgstr ""
+
+msgid "Search for a user"
+msgstr ""
+
+msgid "Searching for \"{{- searchText}}\""
+msgstr ""
+
+msgid "No results found"
+msgstr "Tidak ada hasil ditemukan"
+
 msgid "Series"
 msgstr "Seri"
 
 msgid "Category"
 msgstr "Kategori"
-
-msgid "Filter"
-msgstr "Saring"
 
 msgid "Columns"
 msgstr "kolom"
@@ -932,14 +1131,8 @@ msgstr "Laporan sesungguhnya yang tepat waktu"
 msgid "Expected reports"
 msgstr "Laporan yang diharapkan"
 
-msgid "Program"
-msgstr "Program"
-
 msgid "Select a program"
 msgstr "Pilih program"
-
-msgid "Indicators"
-msgstr "Indikator"
 
 msgid "Indicator group"
 msgstr "grup indikator"
@@ -958,9 +1151,6 @@ msgstr "Memuat grup indikator"
 
 msgid "Data element group"
 msgstr "Grup elemen data"
-
-msgid "Data element"
-msgstr "Elemen data"
 
 msgid "No data element groups found"
 msgstr "Tidak ada grup elemen data yang ditemukan"
@@ -1002,6 +1192,9 @@ msgid "Program indicator"
 msgstr "Indikator program"
 
 msgid "Calculations"
+msgstr ""
+
+msgid "Option"
 msgstr ""
 
 msgid "Number"
@@ -1106,6 +1299,9 @@ msgstr "{{thresholdFactor}} × Z-skor rendah"
 msgid "{{thresholdFactor}} × Z-score high"
 msgstr "{{thresholdFactor}} × Z-skor tinggi"
 
+msgid "Not applicable"
+msgstr ""
+
 msgid "Data"
 msgstr "Data"
 
@@ -1114,6 +1310,84 @@ msgstr "Unit organisasi"
 
 msgid "Assigned Categories"
 msgstr "Kategori yang Ditugaskan"
+
+msgid "No value"
+msgstr "NO_VALUE"
+
+msgid "Text"
+msgstr ""
+
+msgid "Long text"
+msgstr ""
+
+msgid "Multi text"
+msgstr ""
+
+msgid "Letter"
+msgstr ""
+
+msgid "Phone number"
+msgstr "No. Telp."
+
+msgid "Email"
+msgstr "Email"
+
+msgid "Yes/No"
+msgstr "Ya/Tidak"
+
+msgid "Yes Only"
+msgstr "Hanya Ya"
+
+msgid "Date"
+msgstr "Tanggal"
+
+msgid "Date & Time"
+msgstr "Tanggal & Waktu"
+
+msgid "Time"
+msgstr "Waktu"
+
+msgid "Unit interval"
+msgstr "Interval Satuan"
+
+msgid "Percentage"
+msgstr ""
+
+msgid "Integer"
+msgstr "Bilangan bulat"
+
+msgid "Positive Integer"
+msgstr "Bilangan bulat positif"
+
+msgid "Negative Integer"
+msgstr "Bilangan bulat negatif"
+
+msgid "Positive or Zero Integer"
+msgstr ""
+
+msgid "Tracker Associate"
+msgstr ""
+
+msgid "Username"
+msgstr "Nama pengguna"
+
+msgid "Coordinate"
+msgstr "Koordinat"
+
+msgid "Reference"
+msgstr "Referensi"
+
+msgid "Age"
+msgstr "Usia(tahun)"
+
+msgid "URL"
+msgstr "URL"
+
+msgid "Image"
+msgstr "Gambar"
+
+msgid "GeoJSON"
+msgstr ""
 
 msgid "Pivot table"
 msgstr "Tabel Pivot"
@@ -1163,8 +1437,14 @@ msgstr "Scatter"
 msgid "Single value"
 msgstr "Nilai tunggal"
 
+msgid "Outlier table"
+msgstr ""
+
 msgid "All charts"
 msgstr "Semua grafik"
+
+msgid "Map"
+msgstr "Peta"
 
 msgid "{{seriesName}} (trend)"
 msgstr "{{seriesName}} (tren)"

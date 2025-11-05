@@ -1,14 +1,14 @@
 # 
 # Translators:
-# phil_dhis2, 2023
-# Viktor Varland <viktor@dhis2.org>, 2023
+# Viktor Varland <viktor@dhis2.org>, 2025
+# Philip Larsen Donnelly, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2023-07-06T08:30:33.216Z\n"
+"POT-Creation-Date: 2025-09-09T09:32:04.677Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2023\n"
+"Last-Translator: Philip Larsen Donnelly, 2025\n"
 "Language-Team: Urdu (https://app.transifex.com/hisp-uio/teams/100509/ur/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -73,6 +73,12 @@ msgid "About this line list"
 msgstr ""
 
 msgid "About this visualization"
+msgstr ""
+
+msgid "About this event chart"
+msgstr ""
+
+msgid "About this event report"
 msgstr ""
 
 msgid "This app could not retrieve required data."
@@ -151,7 +157,172 @@ msgstr ""
 msgid "Math operators"
 msgstr ""
 
+msgid "Expression description"
+msgstr "اظہار بیان"
+
+msgid "Error loading value"
+msgstr ""
+
+msgid "None"
+msgstr "کوئی نہں"
+
+msgid "Data set(s)"
+msgstr ""
+
+msgid "Zero is significant"
+msgstr ""
+
+msgid "True"
+msgstr "سچ ہے"
+
+msgid "False"
+msgstr "غلط"
+
+msgid "Value type"
+msgstr "ویلیو کی قسم"
+
+msgid "Aggregation type"
+msgstr "مجموعی قسم"
+
+msgid "Category combo"
+msgstr "زمرہ کامبو"
+
+msgid "Option set"
+msgstr "اختیاری سیٹ"
+
+msgid "Group membership"
+msgstr ""
+
+msgid "Legend set(s)"
+msgstr ""
+
+msgid "Category option name"
+msgstr ""
+
+msgid "Category combo name"
+msgstr ""
+
+msgid "Categories name"
+msgstr ""
+
+msgid "Period type"
+msgstr "مدت کی قسم"
+
+msgid "Indicators"
+msgstr "اشارے"
+
+msgid "Expiry days"
+msgstr "ختم ہونے والے دنوں"
+
+msgid "Type"
+msgstr "ٹائپ"
+
+msgid "Data element"
+msgstr "ڈیٹا عنصر"
+
+msgid "Tracked entity attribute"
+msgstr "ٹریک کردہ ادارے کی خاصیت"
+
+msgid "Numerator description"
+msgstr "نیومریٹر کی تفصیل"
+
+msgid "Numerator expression"
+msgstr ""
+
+msgid "Denominator description"
+msgstr "ڈینومٹر کی تفصیل"
+
+msgid "Denominator expression"
+msgstr ""
+
+msgid "Annualized"
+msgstr "سالانہ"
+
+msgid "Yes"
+msgstr "Ø¬Û ÛØ§Úº"
+
+msgid "No"
+msgstr "ÙÛÛÚº"
+
+msgid "Indicator type"
+msgstr "اشارے کی قسم"
+
+msgid "Decimals in output"
+msgstr ""
+
+msgid "There was a problem loading information for this data item."
+msgstr ""
+
+msgid "Name"
+msgstr "ÙØ§Ù"
+
+msgid "Description"
+msgstr "تفصیلات"
+
+msgid "Code"
+msgstr "کوڈ"
+
+msgid "ID"
+msgstr "شناخت"
+
+msgid "Last updated date"
+msgstr ""
+
+msgid "Created date"
+msgstr ""
+
+msgid "Created by"
+msgstr "تخلیق کیا"
+
+msgid "Custom"
+msgstr "مرضی کے مطابق"
+
+msgid "Program"
+msgstr "پروگرام"
+
+msgid "Analytics type"
+msgstr "تجزیہ کی قسم"
+
+msgid "Enrollment"
+msgstr "اندراج"
+
+msgid "Event"
+msgstr "تقریب"
+
+msgid "Analytics period boundaries"
+msgstr "تجزیات کی مدت کی حدیں"
+
+msgid "{{ offsetPeriodType }} × {{ offsetPeriods }}"
+msgstr ""
+
+msgid "Expression"
+msgstr "ایکسپریشن"
+
+msgid "Filter"
+msgstr "فلٹر"
+
+msgid "All available options are already selected"
+msgstr ""
+
+msgid "No available options for this item"
+msgstr ""
+
+msgid "Search by option name"
+msgstr ""
+
+msgid "Back to all items"
+msgstr ""
+
+msgid "Options"
+msgstr "اختیارات"
+
+msgid "Selected items"
+msgstr ""
+
 msgid "Data Type"
+msgstr ""
+
+msgid "Only {{dataType}} can be used in {{visType}}"
 msgstr ""
 
 msgid "All types"
@@ -166,10 +337,22 @@ msgstr "کوئی مواد نہیں"
 msgid "Search by data item name"
 msgstr ""
 
-msgid "No items selected"
+msgid "Selected Items"
 msgstr ""
 
-msgid "Selected Items"
+msgid "All available items are already selected"
+msgstr ""
+
+msgid "Calculation"
+msgstr ""
+
+msgid "Metric type"
+msgstr ""
+
+msgid "All metrics"
+msgstr "تمام میٹرکس"
+
+msgid "No items selected"
 msgstr ""
 
 msgid "No indicators found"
@@ -184,6 +367,9 @@ msgstr ""
 msgid "No program indicators found"
 msgstr ""
 
+msgid "No calculations found"
+msgstr ""
+
 msgid "No indicators found for \"{{- searchTerm}}\""
 msgstr ""
 
@@ -196,17 +382,14 @@ msgstr ""
 msgid "No program indicators found for \"{{- searchTerm}}\""
 msgstr ""
 
+msgid "No calculations found for \"{{- searchTerm}}\""
+msgstr ""
+
 msgid "Nothing found for \"{{- searchTerm}}\""
 msgstr ""
 
-msgid "Calculation"
+msgid "Click to choose from available options"
 msgstr ""
-
-msgid "Metric type"
-msgstr ""
-
-msgid "All metrics"
-msgstr "تمام میٹرکس"
 
 msgid "Move to {{axisName}}"
 msgstr ""
@@ -258,9 +441,6 @@ msgstr ""
 msgid "Search"
 msgstr "تلاش کریں"
 
-msgid "Nothing found for {{- searchTerm}}"
-msgstr ""
-
 msgid "Delete {{fileType}}"
 msgstr ""
 
@@ -304,17 +484,14 @@ msgstr ""
 msgid "Open in this app"
 msgstr ""
 
+msgid "Copy to clipboard"
+msgstr ""
+
 msgid "Close"
 msgstr "بند"
 
 msgid "Rename {{fileType}}"
 msgstr ""
-
-msgid "Name"
-msgstr "ÙØ§Ù"
-
-msgid "Description"
-msgstr "تفصیلات"
 
 msgid "Rename"
 msgstr "نام بدلو"
@@ -337,17 +514,32 @@ msgstr ""
 msgid "visualization"
 msgstr ""
 
+msgid "Untitled {{visualizationType}}, {{date}}"
+msgstr ""
+
+msgid "Back to all interpretations"
+msgstr ""
+
+msgid "Could not load interpretation details"
+msgstr ""
+
+msgid "The request to fetch interpretation comments failed"
+msgstr ""
+
 msgid "Edit"
 msgstr "ترمیم"
 
 msgid "Write a reply"
 msgstr ""
 
+msgid "Could not post reply"
+msgstr ""
+
 msgid "Post reply"
 msgstr ""
 
-msgid "Delete failed"
-msgstr "حذف ناکام ہوگیا"
+msgid "Could not delete comment"
+msgstr ""
 
 msgid "Could not update comment"
 msgstr ""
@@ -375,11 +567,24 @@ msgstr ""
 msgid "Write an interpretation"
 msgstr ""
 
+msgid "Could not post interpretation"
+msgstr ""
+
+msgid ""
+"Other people viewing this interpretation in the future may see more data."
+msgstr ""
+
 msgid "Post interpretation"
 msgstr ""
 
 msgid "Interpretations"
 msgstr "تشریحات"
+
+msgid "Error loading interpretations"
+msgstr ""
+
+msgid "Could not load interpretations"
+msgstr ""
 
 msgid "Reply"
 msgstr "جواب"
@@ -398,13 +603,22 @@ msgstr "برعکس"
 msgid "Like"
 msgstr "کی طرح"
 
-msgid "Share"
-msgstr "بانٹیں"
-
 msgid "See interpretation"
 msgstr ""
 
+msgid "Open in app"
+msgstr ""
+
+msgid "Share"
+msgstr "بانٹیں"
+
+msgid "Could not delete interpretation"
+msgstr ""
+
 msgid "Manage sharing"
+msgstr ""
+
+msgid "Could not update interpretation text"
 msgstr ""
 
 msgid "Could not update interpretation"
@@ -413,44 +627,8 @@ msgstr ""
 msgid "Enter interpretation text"
 msgstr ""
 
-msgid "Bold text"
-msgstr ""
-
-msgid "Italic text"
-msgstr ""
-
-msgid "Link to a URL"
-msgstr ""
-
-msgid "Mention a user"
-msgstr ""
-
-msgid "Add emoji"
-msgstr ""
-
-msgid "Preview"
-msgstr "پیش نظارہ"
-
-msgid "Back to write mode"
-msgstr ""
-
-msgid "Too many results. Try refining the search."
-msgstr ""
-
-msgid "Search for a user"
-msgstr ""
-
-msgid "Searching for \"{{- searchText}}\""
-msgstr ""
-
-msgid "No results found"
-msgstr "کوئی نتیجہ نہیں ملا"
-
 msgid "Not available offline"
 msgstr ""
-
-msgid "Created by"
-msgstr "تخلیق کیا"
 
 msgid "Anyone"
 msgstr ""
@@ -472,9 +650,6 @@ msgstr "تخلیق"
 
 msgid "Last updated"
 msgstr "آخری اپ ڈیٹ"
-
-msgid "Type"
-msgstr "ٹائپ"
 
 msgid "Clear filters"
 msgstr ""
@@ -579,9 +754,6 @@ msgstr ""
 msgid "New line list"
 msgstr ""
 
-msgid "Options"
-msgstr "اختیارات"
-
 msgid "Hide"
 msgstr "چھپائیں"
 
@@ -624,9 +796,6 @@ msgstr ""
 msgid "Deselect all"
 msgstr "سب کو منتخب کریں"
 
-msgid "Period type"
-msgstr "مدت کی قسم"
-
 msgid "Year"
 msgstr "سال"
 
@@ -636,14 +805,14 @@ msgstr "سال کو منتخب کریں"
 msgid "Period"
 msgstr "مدت"
 
+msgid "Selected Periods"
+msgstr ""
+
 msgid "Relative periods"
 msgstr "رشتہ دار دور"
 
 msgid "Fixed periods"
 msgstr "فکسڈ مدت"
-
-msgid "Selected Periods"
-msgstr ""
 
 msgid "No periods selected"
 msgstr "کوئی مدت منتخب نہیں"
@@ -852,6 +1021,30 @@ msgstr ""
 msgid "Years"
 msgstr "سال"
 
+msgid "Value: {{value}}"
+msgstr ""
+
+msgid "Bold text"
+msgstr ""
+
+msgid "Italic text"
+msgstr ""
+
+msgid "Link to a URL"
+msgstr ""
+
+msgid "Mention a user"
+msgstr ""
+
+msgid "Add emoji"
+msgstr ""
+
+msgid "Preview"
+msgstr "پیش نظارہ"
+
+msgid "Back to write mode"
+msgstr ""
+
 msgid "Interpretations and details"
 msgstr ""
 
@@ -882,14 +1075,23 @@ msgstr ""
 msgid "Retry"
 msgstr ""
 
+msgid "Too many results. Try refining the search."
+msgstr ""
+
+msgid "Search for a user"
+msgstr ""
+
+msgid "Searching for \"{{- searchText}}\""
+msgstr ""
+
+msgid "No results found"
+msgstr "کوئی نتیجہ نہیں ملا"
+
 msgid "Series"
 msgstr "سیریز"
 
 msgid "Category"
 msgstr "قسم"
-
-msgid "Filter"
-msgstr "فلٹر"
 
 msgid "Columns"
 msgstr ""
@@ -915,14 +1117,8 @@ msgstr ""
 msgid "Expected reports"
 msgstr "متوقع رپورٹ"
 
-msgid "Program"
-msgstr "پروگرام"
-
 msgid "Select a program"
 msgstr ""
-
-msgid "Indicators"
-msgstr "اشارے"
 
 msgid "Indicator group"
 msgstr "اشاروں کا گروپ"
@@ -941,9 +1137,6 @@ msgstr ""
 
 msgid "Data element group"
 msgstr "ڈیٹا عناصر گروپ"
-
-msgid "Data element"
-msgstr "ڈیٹا عنصر"
 
 msgid "No data element groups found"
 msgstr ""
@@ -986,6 +1179,9 @@ msgstr "پروگرام کا اشارہ"
 
 msgid "Calculations"
 msgstr ""
+
+msgid "Option"
+msgstr "اختیار"
 
 msgid "Number"
 msgstr "نمبر"
@@ -1089,6 +1285,9 @@ msgstr ""
 msgid "{{thresholdFactor}} × Z-score high"
 msgstr ""
 
+msgid "Not applicable"
+msgstr ""
+
 msgid "Data"
 msgstr "ڈیٹا"
 
@@ -1096,6 +1295,84 @@ msgid "Organisation unit"
 msgstr "تنظیم یونٹ"
 
 msgid "Assigned Categories"
+msgstr ""
+
+msgid "No value"
+msgstr "Ú©ÙØ¦Û ÙØ¯Ø± ÙÛÛÚº"
+
+msgid "Text"
+msgstr "مواد"
+
+msgid "Long text"
+msgstr "لمبا مواد"
+
+msgid "Multi text"
+msgstr ""
+
+msgid "Letter"
+msgstr "خط"
+
+msgid "Phone number"
+msgstr "فون نمبر"
+
+msgid "Email"
+msgstr "ای میل"
+
+msgid "Yes/No"
+msgstr "ہاں - نہیں"
+
+msgid "Yes Only"
+msgstr "صرف ہاں"
+
+msgid "Date"
+msgstr "تاریخ"
+
+msgid "Date & Time"
+msgstr "تاریخ اور وقت"
+
+msgid "Time"
+msgstr "وقت"
+
+msgid "Unit interval"
+msgstr "وقتی یونٹ"
+
+msgid "Percentage"
+msgstr "فیصد"
+
+msgid "Integer"
+msgstr "انٹیجر"
+
+msgid "Positive Integer"
+msgstr "مثبت انٹیجر"
+
+msgid "Negative Integer"
+msgstr "منفی انٹیجر"
+
+msgid "Positive or Zero Integer"
+msgstr "صفر یا مثبت انٹیجر"
+
+msgid "Tracker Associate"
+msgstr "ٹریکر ایسوسی ایٹ"
+
+msgid "Username"
+msgstr "ØµØ§Ø±Ù Ú©Ø§ ÙØ§Ù"
+
+msgid "Coordinate"
+msgstr "کورڈینیٹ"
+
+msgid "Reference"
+msgstr "ریفرنس"
+
+msgid "Age"
+msgstr "عمر"
+
+msgid "URL"
+msgstr "یو آر ایل"
+
+msgid "Image"
+msgstr "تصویر"
+
+msgid "GeoJSON"
 msgstr ""
 
 msgid "Pivot table"
@@ -1146,8 +1423,14 @@ msgstr ""
 msgid "Single value"
 msgstr ""
 
+msgid "Outlier table"
+msgstr ""
+
 msgid "All charts"
 msgstr ""
+
+msgid "Map"
+msgstr "نقشہ"
 
 msgid "{{seriesName}} (trend)"
 msgstr ""

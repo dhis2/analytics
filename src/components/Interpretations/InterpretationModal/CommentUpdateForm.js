@@ -1,40 +1,28 @@
-import { useDataMutation } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import { Button, spacers, colors } from '@dhis2/ui'
 import PropTypes from 'prop-types'
-import React, { useState, useRef } from 'react'
+import React, { useState } from 'react'
 import { RichTextEditor } from '../../RichText/index.js'
 import { MessageEditorContainer, MessageButtonStrip } from '../common/index.js'
+import {
+    useInterpretationsCurrentUser,
+    useUpdateCommentForActiveInterpretation,
+} from '../InterpretationsProvider/hooks.js'
 
-export const CommentUpdateForm = ({
-    interpretationId,
-    commentId,
-    currentUser,
-    text,
-    close,
-    onComplete,
-}) => {
+export const CommentUpdateForm = ({ id, text, onCancel, onComplete }) => {
+    const currentUser = useInterpretationsCurrentUser()
     const [commentText, setCommentText] = useState(text || '')
-    const updateMutationRef = useRef({
-        resource: `interpretations/${interpretationId}/comments/${commentId}`,
-        type: 'update',
-        partial: false,
-        data: ({ commentText }) => commentText,
-    })
-    const [update, { loading, error }] = useDataMutation(
-        updateMutationRef.current,
-        {
-            onComplete: () => {
-                onComplete()
-                close()
-            },
-        }
-    )
+    const [update, { loading, error }] =
+        useUpdateCommentForActiveInterpretation({
+            id,
+            text: commentText,
+            onComplete,
+        })
     const errorText = error ? i18n.t('Could not update comment') : ''
 
     return (
         <div className="message">
-            <MessageEditorContainer currentUser={currentUser}>
+            <MessageEditorContainer currentUserName={currentUser.name}>
                 <RichTextEditor
                     inputPlaceholder={i18n.t('Enter comment text')}
                     onChange={setCommentText}
@@ -43,15 +31,15 @@ export const CommentUpdateForm = ({
                     errorText={errorText}
                 />
                 <MessageButtonStrip>
-                    <Button
-                        loading={loading}
-                        primary
-                        small
-                        onClick={() => update({ commentText })}
-                    >
+                    <Button loading={loading} primary small onClick={update}>
                         {i18n.t('Update')}
                     </Button>
-                    <Button disabled={loading} secondary small onClick={close}>
+                    <Button
+                        disabled={loading}
+                        secondary
+                        small
+                        onClick={onCancel}
+                    >
                         {i18n.t('Cancel')}
                     </Button>
                 </MessageButtonStrip>
@@ -67,10 +55,8 @@ export const CommentUpdateForm = ({
     )
 }
 CommentUpdateForm.propTypes = {
-    close: PropTypes.func.isRequired,
-    commentId: PropTypes.string.isRequired,
-    currentUser: PropTypes.object.isRequired,
-    interpretationId: PropTypes.string.isRequired,
+    id: PropTypes.string.isRequired,
+    onCancel: PropTypes.func.isRequired,
     onComplete: PropTypes.func.isRequired,
     text: PropTypes.string,
 }

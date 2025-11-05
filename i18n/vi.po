@@ -1,17 +1,17 @@
 # 
 # Translators:
-# Mai Nguyen <thanhmai.jica@gmail.com>, 2022
-# Viktor Varland <viktor@dhis2.org>, 2023
-# Philip Larsen Donnelly, 2024
-# Thuy Nguyen <thuynguyen@hispvietnam.org>, 2024
-# Em Le <em.hispvietnam@gmail.com>, 2024
+# Viktor Varland <viktor@dhis2.org>, 2025
+# Thuy Nguyen <thuynguyen@hispvietnam.org>, 2025
+# Philip Larsen Donnelly, 2025
+# Em Le <em.hispvietnam@gmail.com>, 2025
+# Mai Nguyen <thanhmai.jica@gmail.com>, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2024-10-11T12:49:26.846Z\n"
+"POT-Creation-Date: 2025-09-09T09:32:04.677Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Em Le <em.hispvietnam@gmail.com>, 2024\n"
+"Last-Translator: Mai Nguyen <thanhmai.jica@gmail.com>, 2025\n"
 "Language-Team: Vietnamese (https://app.transifex.com/hisp-uio/teams/100509/vi/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,153 +20,320 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 msgid "view only"
-msgstr ""
+msgstr "chỉ xem"
 
 msgid "view and edit"
-msgstr ""
+msgstr "xem và chỉnh sửa"
 
 msgid "all users ({{accessLevel}})"
-msgstr ""
+msgstr "tất cả người dùng ({{accessLevel}})"
 
 msgid "{{userOrGroup}} ({{accessLevel}})"
-msgstr ""
+msgstr "{{userOrGroup}}({{accessLevel}})"
 
 msgid "Shared with {{commaSeparatedListOfUsersAndGroups}}"
-msgstr ""
+msgstr "Chia sẻ với {{commaSeparatedListOfUsersAndGroups}}"
 
 msgid "Not shared with any users or groups"
-msgstr ""
+msgstr "Không chia sẻ với bất kỳ một người hay nhóm nào"
 
 msgid "No description"
 msgstr "Không mô tả"
 
 msgid "Last updated {{time}}"
-msgstr ""
+msgstr "Cập nhật lần cuối {{time}}"
 
 msgid "Created {{time}} by {{author}}"
-msgstr ""
+msgstr "Được tạo {{time}}bởi {{author}}"
 
 msgid "Created {{time}}"
-msgstr ""
+msgstr "Được tạo {{time}}"
 
 msgid "Viewed {{count}} times"
 msgid_plural "Viewed {{count}} times"
-msgstr[0] ""
+msgstr[0] "Đã xem {{count}}lần"
 
 msgid "Notifications"
-msgstr ""
+msgstr "Thông báo"
 
 msgid "You're subscribed and getting updates about new interpretations."
 msgstr ""
+"Bạn đã đăng ký và đang nhận thông tin cập nhật về những diễn giải mới."
 
 msgid "Unsubscribe"
-msgstr ""
+msgstr "Hủy đăng ký"
 
 msgid "Subscribe to get updates about new interpretations."
-msgstr ""
+msgstr "Đăng ký để nhận thông tin cập nhật về những diễn giải mới."
 
 msgid "Subscribe"
-msgstr ""
+msgstr "Đăng ký"
 
 msgid "About this map"
-msgstr ""
+msgstr "Về bản đồ này"
 
 msgid "About this line list"
-msgstr ""
+msgstr "Về danh sách dòng này"
 
 msgid "About this visualization"
-msgstr ""
+msgstr "Về trực quan hóa này"
 
 msgid "About this event chart"
-msgstr ""
+msgstr "Về biểu đồ sự kiện này"
 
 msgid "About this event report"
-msgstr ""
+msgstr "Về báo cáo sự kiện này"
 
 msgid "This app could not retrieve required data."
-msgstr ""
+msgstr "Ứng dụng này không thể truy xuất dữ liệu cần thiết."
 
 msgid "Network error"
 msgstr "Lỗi mạng"
 
 msgid "Data / Edit calculation"
-msgstr ""
+msgstr "Dữ liệu / Chỉnh sửa tính toán"
 
 msgid "Data / New calculation"
-msgstr ""
+msgstr "Dữ liệu / Tính toán mới"
 
 msgid "Remove item"
-msgstr "Bỏ mặt hàng"
+msgstr "Xóa mục"
 
 msgid "Check formula"
-msgstr ""
+msgstr "Kiểm tra công thức"
 
 msgid "Calculation name"
-msgstr ""
+msgstr "Tên phép tính"
 
 msgid "Shown in table headers and chart axes/legends"
-msgstr ""
+msgstr "Hiển thị trong tiêu đề bảng và trục biểu đồ/chú thích"
 
 msgid "Delete calculation"
-msgstr ""
+msgstr "Xóa tính toán"
 
 msgid "Cancel"
 msgstr "Hủy"
 
 msgid "The calculation can only be saved with a valid formula"
-msgstr ""
+msgstr "Phép tính chỉ có thể được lưu bằng công thức hợp lệ"
 
 msgid "Add a name to save this calculation"
-msgstr ""
+msgstr "Thêm tên để lưu phép tính này"
 
 msgid "Save calculation"
-msgstr ""
+msgstr "Lưu tính toán"
 
 msgid ""
 "Are you sure you want to delete this calculation? It may be used by other "
 "visualizations."
 msgstr ""
+"Bạn có chắc chắn muốn xóa phép tính này không? Nó có thể được sử dụng bởi "
+"các hình ảnh trực quan khác."
 
 msgid "Yes, delete"
-msgstr ""
+msgstr "Có, xóa"
 
 msgid "Totals only"
-msgstr ""
+msgstr "Chỉ tổng số"
 
 msgid "Details only"
-msgstr ""
+msgstr "Chỉ chi tiết"
 
 msgid "Loading"
 msgstr "Đang tải"
 
 msgid "Data elements"
-msgstr "Các phần tử dữ liệu"
+msgstr "Phần tử dữ liệu"
 
 msgid "Search by data element name"
-msgstr ""
+msgstr "Tìm kiếm theo tên phần tử dữ liệu"
 
 msgid "No data elements found for \"{{- searchTerm}}\""
-msgstr ""
+msgstr "Không tìm thấy phần tử dữ liệu nào cho \"{{- searchTerm}}\""
 
 msgid "No data elements found"
-msgstr ""
+msgstr "Không tìm thấy phần tử dữ liệu nào"
 
 msgid ""
 "Drag items here, or double click in the list, to start building a "
 "calculation formula"
 msgstr ""
+"Kéo các mục vào đây hoặc nhấp đúp vào danh sách để bắt đầu xây dựng công "
+"thức tính toán"
 
 msgid "Math operators"
-msgstr ""
+msgstr "Toán tử toán học"
+
+msgid "Expression description"
+msgstr "Mô tả biểu thức"
+
+msgid "Error loading value"
+msgstr "Lỗi tải giá trị"
+
+msgid "None"
+msgstr "Không"
+
+msgid "Data set(s)"
+msgstr "Tập dữ liệu"
+
+msgid "Zero is significant"
+msgstr "Số 0 là quan trọng"
+
+msgid "True"
+msgstr "Đúng"
+
+msgid "False"
+msgstr "Sai"
+
+msgid "Value type"
+msgstr "Loại giá trị"
+
+msgid "Aggregation type"
+msgstr "Kiểu tổng hợp"
+
+msgid "Category combo"
+msgstr "Tổ hợp phân loại"
+
+msgid "Option set"
+msgstr "Tập tùy chọn"
+
+msgid "Group membership"
+msgstr "Thành viên nhóm"
+
+msgid "Legend set(s)"
+msgstr "Tập Chú Thích"
+
+msgid "Category option name"
+msgstr "Tên tùy chọn phân loại"
+
+msgid "Category combo name"
+msgstr "Tên phân loại kết hợp"
+
+msgid "Categories name"
+msgstr "Tên phân loại"
+
+msgid "Period type"
+msgstr "Loại thời điểm"
+
+msgid "Indicators"
+msgstr "Các chỉ số"
+
+msgid "Expiry days"
+msgstr "Ngày hết hạn"
+
+msgid "Type"
+msgstr "Loại"
+
+msgid "Data element"
+msgstr "Phần tử dữ liệu"
+
+msgid "Tracked entity attribute"
+msgstr "Thuộc Tính Đối Tượng Theo Dõi"
+
+msgid "Numerator description"
+msgstr "Miêu tả tử số"
+
+msgid "Numerator expression"
+msgstr "Biểu thức tử số"
+
+msgid "Denominator description"
+msgstr "Miêu tả mẩu số"
+
+msgid "Denominator expression"
+msgstr "Biểu thức mẫu số"
+
+msgid "Annualized"
+msgstr "Hàng năm"
+
+msgid "Yes"
+msgstr "Có"
+
+msgid "No"
+msgstr "Không"
+
+msgid "Indicator type"
+msgstr "Loại chỉ số"
+
+msgid "Decimals in output"
+msgstr "Số thập phân trong dữ liệu đầu ra"
+
+msgid "There was a problem loading information for this data item."
+msgstr "Đã có sự cố khi tải thông tin cho mục dữ liệu này."
+
+msgid "Name"
+msgstr "Tên"
+
+msgid "Description"
+msgstr "Miêu tả"
+
+msgid "Code"
+msgstr "Mã"
+
+msgid "ID"
+msgstr "Định danh (ID)"
+
+msgid "Last updated date"
+msgstr "Ngày cập nhật cuối"
+
+msgid "Created date"
+msgstr "Ngày tạo"
+
+msgid "Created by"
+msgstr "Được tạo bởi"
+
+msgid "Custom"
+msgstr "Tùy chỉnh"
+
+msgid "Program"
+msgstr "Chương trình"
+
+msgid "Analytics type"
+msgstr "Loại phân tích"
+
+msgid "Enrollment"
+msgstr "Đăng ký"
+
+msgid "Event"
+msgstr "Sự Kiện"
+
+msgid "Analytics period boundaries"
+msgstr "Ranh giới thời kỳ phân tích"
+
+msgid "{{ offsetPeriodType }} × {{ offsetPeriods }}"
+msgstr "{{ offsetPeriodType }} × {{ offsetPeriods }}"
+
+msgid "Expression"
+msgstr "Biểu thức"
+
+msgid "Filter"
+msgstr "Lọc"
+
+msgid "All available options are already selected"
+msgstr "Tất cả các tùy chọn có sẵn đã được chọn"
+
+msgid "No available options for this item"
+msgstr "Không có tùy chọn nào có sẵn cho mục này"
+
+msgid "Search by option name"
+msgstr "Tìm kiếm theo tên tùy chọn"
+
+msgid "Back to all items"
+msgstr "Quay lại tất cả các mục"
+
+msgid "Options"
+msgstr "Tùy chọn"
+
+msgid "Selected items"
+msgstr "Các mục đã chọn"
 
 msgid "Data Type"
 msgstr "Loại dữ liệu"
 
 msgid "Only {{dataType}} can be used in {{visType}}"
-msgstr ""
+msgstr "Chỉ {{dataType}}được sử dụng trong {{visType}}"
 
 msgid "All types"
-msgstr "Các loại"
+msgstr "Tất cả các loại"
 
 msgid "Disaggregation"
 msgstr "Phân Tách Phần Tử Dữ Liệu"
@@ -175,61 +342,67 @@ msgid "No data"
 msgstr "Không có dữ liệu"
 
 msgid "Search by data item name"
-msgstr ""
-
-msgid "No items selected"
-msgstr "Không có mục nào được chọn"
+msgstr "Tìm kiếm theo tên mục dữ liệu"
 
 msgid "Selected Items"
 msgstr "Các mục đã chọn"
 
-msgid "No indicators found"
-msgstr ""
-
-msgid "No data sets found"
-msgstr ""
-
-msgid "No event data items found"
-msgstr ""
-
-msgid "No program indicators found"
-msgstr ""
-
-msgid "No calculations found"
-msgstr ""
-
-msgid "No indicators found for \"{{- searchTerm}}\""
-msgstr ""
-
-msgid "No data sets found for \"{{- searchTerm}}\""
-msgstr ""
-
-msgid "No event data items found for \"{{- searchTerm}}\""
-msgstr ""
-
-msgid "No program indicators found for \"{{- searchTerm}}\""
-msgstr ""
-
-msgid "No calculations found for \"{{- searchTerm}}\""
-msgstr ""
-
-msgid "Nothing found for \"{{- searchTerm}}\""
-msgstr ""
+msgid "All available items are already selected"
+msgstr "Tất cả các mục có sẵn đã được chọn"
 
 msgid "Calculation"
-msgstr ""
+msgstr "Tính toán"
 
 msgid "Metric type"
-msgstr ""
+msgstr "Loại chỉ số đo lường"
 
 msgid "All metrics"
 msgstr "Tất cả hệ đo lường"
+
+msgid "No items selected"
+msgstr "Không có mục nào được chọn"
+
+msgid "No indicators found"
+msgstr "Không tìm thấy chỉ số"
+
+msgid "No data sets found"
+msgstr "Không tìm thấy tập dữ liệu nào"
+
+msgid "No event data items found"
+msgstr "Không tìm thấy mục dữ liệu sự kiện nào"
+
+msgid "No program indicators found"
+msgstr "Không tìm thấy chỉ số chương trình nào"
+
+msgid "No calculations found"
+msgstr "Không tìm thấy tính toán nào"
+
+msgid "No indicators found for \"{{- searchTerm}}\""
+msgstr "Không tìm thấy chỉ số nào cho \"{{- searchTerm}}\""
+
+msgid "No data sets found for \"{{- searchTerm}}\""
+msgstr "Không tìm thấy tập dữ liệu nào cho \"{{- searchTerm}}\""
+
+msgid "No event data items found for \"{{- searchTerm}}\""
+msgstr "Không tìm thấy mục dữ liệu sự kiện nào cho \"{{- searchTerm}}\""
+
+msgid "No program indicators found for \"{{- searchTerm}}\""
+msgstr "Không tìm thấy chỉ số chương trình nào cho \"{{- searchTerm}}\""
+
+msgid "No calculations found for \"{{- searchTerm}}\""
+msgstr "Không tìm thấy tính toán nào cho \"{{- searchTerm}}\""
+
+msgid "Nothing found for \"{{- searchTerm}}\""
+msgstr "Không tìm thấy gì cho {{- searchTerm}}"
+
+msgid "Click to choose from available options"
+msgstr "Nhấp để chọn từ các tùy chọn có sẵn"
 
 msgid "Move to {{axisName}}"
 msgstr "Di chuyển đến {{axisName}}"
 
 msgid "Add to {{axisName}}"
-msgstr "Thêm {{tên trục}"
+msgstr "Thêm vào {{axisName}}"
 
 msgid "Not available for {{visualizationType}}"
 msgstr "Không có sẵn cho {{visualizationType}}"
@@ -241,7 +414,7 @@ msgid "Add Assigned Categories"
 msgstr "Thêm phân loại được chỉ định"
 
 msgid "Remove"
-msgstr "Tháo ra"
+msgstr "Xóa"
 
 msgid "Filter dimensions"
 msgstr "Các chiều lọc"
@@ -256,34 +429,33 @@ msgid "Dimension recommended with selected data"
 msgstr "Chiều được đề xuất với dữ liệu đã chọn"
 
 msgid "All items"
-msgstr ""
+msgstr "Tất cả các mục"
 
 msgid "Automatically include all items"
-msgstr ""
+msgstr "Tự động bao gồm tất cả các mục"
 
 msgid ""
 "Select all {{- dimensionTitle}} items. With this option, new items added in "
 "the future will be automatically included."
 msgstr ""
+"Chọn tất cả mục {{- dimensionTitle}}. Với tùy chọn này, mục mới sẽ được tự "
+"động thêm vào trong tương lai."
 
 msgid "Manually select items..."
-msgstr ""
+msgstr "Chọn mục theo cách thủ công..."
 
 msgid "Nothing found in {{- dimensionTitle}}"
-msgstr ""
+msgstr "Không tìm thấy gì trong {{- dimensionTitle}}"
 
 msgid "Search"
 msgstr "Tìm kiếm"
 
-msgid "Nothing found for {{- searchTerm}}"
-msgstr ""
-
 msgid "Delete {{fileType}}"
-msgstr ""
+msgstr "Xóa {{fileType}}"
 
 msgid ""
 "This {{fileType}} and related interpretations will be deleted. Continue?"
-msgstr ""
+msgstr "{{fileType}}này và các diễn giải liên quan sẽ bị xóa. Tiếp tục?"
 
 msgid "Delete"
 msgstr "Xóa"
@@ -295,63 +467,72 @@ msgid "New"
 msgstr "Mới"
 
 msgid "Open…"
-msgstr ""
+msgstr "Mở..."
 
 msgid "Save"
-msgstr "Lưu lại"
+msgstr "Lưu"
 
 msgid "Save…"
-msgstr ""
+msgstr "Lưu..."
 
 msgid "Save as…"
-msgstr ""
+msgstr "Lưu dưới dạng…"
 
 msgid "Rename…"
-msgstr ""
+msgstr "Đổi tên..."
 
 msgid "Translate…"
-msgstr ""
+msgstr "Dịch..."
 
 msgid "Share…"
-msgstr ""
+msgstr "Chia sẻ..."
 
 msgid "Get link…"
-msgstr ""
+msgstr "Lấy đường dẫn liên kết..."
 
 msgid "Open in this app"
 msgstr "Mở trong ứng dụng này"
+
+msgid "Copy to clipboard"
+msgstr "Sao chép vào bộ nhớ tạm"
 
 msgid "Close"
 msgstr "Đóng lại"
 
 msgid "Rename {{fileType}}"
-msgstr ""
-
-msgid "Name"
-msgstr "Tên"
-
-msgid "Description"
-msgstr "Miêu tả"
+msgstr "Đổi tên {{fileType}}"
 
 msgid "Rename"
 msgstr "Đổi tên"
 
 msgid "{{- objectName}} (copy)"
-msgstr ""
+msgstr "{{- objectName}}(copy)"
 
 msgid "Save {{fileType}} as"
-msgstr ""
+msgstr "Lưu {{fileType}}thành"
 
 msgid "event report"
 msgstr "báo cáo sự kiện"
 
 msgid "line list"
-msgstr ""
+msgstr "danh sách dòng"
 
 msgid "map"
 msgstr "bản đồ"
 
 msgid "visualization"
+msgstr "trực quan hóa"
+
+msgid "Untitled {{visualizationType}}, {{date}}"
+msgstr "{{visualizationType}}, {{date}} không tiêu đề"
+
+msgid "Back to all interpretations"
+msgstr "Quay lại tất cả các diễn giải"
+
+msgid "Could not load interpretation details"
+msgstr ""
+
+msgid "The request to fetch interpretation comments failed"
 msgstr ""
 
 msgid "Edit"
@@ -360,47 +541,63 @@ msgstr "Chỉnh sửa"
 msgid "Write a reply"
 msgstr "Viết phản hồi"
 
-msgid "Post reply"
+msgid "Could not post reply"
 msgstr ""
 
-msgid "Delete failed"
-msgstr "Không thể xóa"
+msgid "Post reply"
+msgstr "Đăng phản hồi"
+
+msgid "Could not delete comment"
+msgstr ""
 
 msgid "Could not update comment"
-msgstr ""
+msgstr "Không thể cập nhật bình luận"
 
 msgid "Enter comment text"
-msgstr ""
+msgstr "Nhập văn bản bình luận"
 
 msgid "Update"
 msgstr "Cập nhật"
 
 msgid "Viewing interpretation: {{- visualisationName}}"
-msgstr ""
+msgstr "Xem diễn giải:{{- visualisationName}}"
 
 msgid "Could not load interpretation"
-msgstr ""
+msgstr "Không thể tải diễn giải"
 
 msgid ""
 "The interpretation couldn’t be displayed. Try again or contact your system "
 "administrator."
 msgstr ""
+"Không thể hiển thị diễn giải. Hãy thử lại hoặc liên hệ với quản trị viên hệ "
+"thống của bạn."
 
 msgid "Hide interpretation"
-msgstr ""
+msgstr "Ẩn diễn giải"
 
 msgid "Write an interpretation"
 msgstr "Viết diễn giải"
 
+msgid "Could not post interpretation"
+msgstr ""
+
 msgid ""
 "Other people viewing this interpretation in the future may see more data."
 msgstr ""
+"Những người khác xem bản diễn giải này trong tương lai có thể thấy nhiều dữ "
+"liệu hơn."
 
 msgid "Post interpretation"
-msgstr ""
+msgstr "Đăng diễn giải"
 
 msgid "Interpretations"
 msgstr "Diễn giải "
+
+msgid "Error loading interpretations"
+msgstr ""
+
+msgid "Could not load interpretations"
+msgstr ""
 
 msgid "Reply"
 msgstr "Trả lời"
@@ -410,7 +607,7 @@ msgid_plural "{{count}} replies"
 msgstr[0] "{{count}} câu trả lời"
 
 msgid "View replies"
-msgstr ""
+msgstr "Xem trả lời"
 
 msgid "Unlike"
 msgstr "Không thích"
@@ -419,40 +616,43 @@ msgid "Like"
 msgstr "Thích"
 
 msgid "See interpretation"
-msgstr ""
+msgstr "Xem diễn giải"
 
 msgid "Open in app"
-msgstr ""
+msgstr "Mở trong ứng dụng"
 
 msgid "Share"
 msgstr "Chia sẻ"
 
+msgid "Could not delete interpretation"
+msgstr ""
+
 msgid "Manage sharing"
 msgstr "Quản lý chia sẻ"
 
-msgid "Could not update interpretation"
+msgid "Could not update interpretation text"
 msgstr ""
+
+msgid "Could not update interpretation"
+msgstr "Không thể cập nhật diễn giải"
 
 msgid "Enter interpretation text"
-msgstr ""
+msgstr "Nhập nội dung cho diễn giải"
 
 msgid "Not available offline"
-msgstr ""
-
-msgid "Created by"
-msgstr "Được tạo bởi"
+msgstr "Không có cho ngoại tuyến"
 
 msgid "Anyone"
 msgstr "Bất kỳ ai"
 
 msgid "Only you"
-msgstr ""
+msgstr "Chỉ bạn"
 
 msgid "Others"
 msgstr "Khác"
 
 msgid "Not supported by this app yet"
-msgstr ""
+msgstr "Chưa được ứng dụng này hỗ trợ"
 
 msgid "Filter by name"
 msgstr "Lọc bằng tên"
@@ -463,156 +663,166 @@ msgstr "Đã tạo"
 msgid "Last updated"
 msgstr "Lần cập nhật cuối"
 
-msgid "Type"
-msgstr "Loại"
-
 msgid "Clear filters"
 msgstr "Bỏ lọc"
 
 msgid "{{firstItemIndex}}-{{lastItemIndex}} of {{totalNumberOfItems}}"
-msgstr ""
+msgstr "{{firstItemIndex}}-{{lastItemIndex}} của {{totalNumberOfItems}}"
 
 msgid "Open"
 msgstr "Mở"
 
 msgid "Couldn't load items"
-msgstr ""
+msgstr "Không thể tải danh mục"
 
 msgid ""
 "There was a problem loading items. Try again or contact your system "
 "administrator."
 msgstr ""
+"Đã xảy ra sự cố khi tải mục. Hãy thử lại hoặc liên hệ với quản trị viên hệ "
+"thống của bạn."
 
 msgid "No items found. Create a new to get started."
-msgstr ""
+msgstr "Không tìm thấy mục nào. Hãy tạo một cái mới để bắt đầu."
 
 msgid ""
 "No items found. Try adjusting your search or filter options to find what "
 "you're looking for."
 msgstr ""
+"Không tìm thấy mục nào. Hãy thử điều chỉnh tùy chọn tìm kiếm hoặc bộ lọc để "
+"tìm những gì bạn đang tìm kiếm."
 
 msgid "Create new"
 msgstr "Tạo mới"
 
 msgid "Open a visualization"
-msgstr ""
+msgstr "Mở một hình ảnh trực quan"
 
 msgid "Loading visualizations"
-msgstr ""
+msgstr "Đang tải hình ảnh trực quan"
 
 msgid "Couldn't load visualizations"
-msgstr ""
+msgstr "Không thể tải hình ảnh trực quan"
 
 msgid ""
 "There was a problem loading visualizations. Try again or contact your system"
 " administrator."
 msgstr ""
+"Đã xảy ra sự cố khi tải hình ảnh trực quan. Hãy thử lại hoặc liên hệ với "
+"quản trị viên hệ thống của bạn."
 
 msgid "No visualizations found. Click New visualization to get started."
 msgstr ""
+"Không tìm thấy hình ảnh trực quan nào. Nhấp vào Hình ảnh trực quan mới để "
+"bắt đầu."
 
 msgid ""
 "No visualizations found. Try adjusting your search or filter options to find"
 " what you're looking for."
 msgstr ""
+"Không tìm thấy hình ảnh trực quan. Hãy thử điều chỉnh tùy chọn tìm kiếm hoặc"
+" bộ lọc để tìm nội dung bạn đang tìm kiếm."
 
 msgid "New visualization"
-msgstr ""
+msgstr "Hình ảnh trực quan mới"
 
 msgid "Open a map"
-msgstr ""
+msgstr "Mở một bản đồ"
 
 msgid "Loading maps"
-msgstr ""
+msgstr "Đang tải bản đồ"
 
 msgid "Couldn't load maps"
-msgstr ""
+msgstr "Không thể tải bản đồ"
 
 msgid ""
 "There was a problem loading maps. Try again or contact your system "
 "administrator."
 msgstr ""
+"Đã xảy ra sự cố khi tải bản đồ. Hãy thử lại hoặc liên hệ với quản trị viên "
+"hệ thống của bạn."
 
 msgid "No maps found. Click New map to get started."
-msgstr ""
+msgstr "Không tìm thấy bản đồ. Nhấp vào Bản đồ mới để bắt đầu."
 
 msgid ""
 "No maps found. Try adjusting your search or filter options to find what "
 "you're looking for."
 msgstr ""
+"Không tìm thấy bản đồ. Hãy thử điều chỉnh tùy chọn tìm kiếm hoặc bộ lọc để "
+"tìm thông tin bạn đang tìm kiếm."
 
 msgid "New map"
-msgstr ""
+msgstr "Bản đồ mới"
 
 msgid "Open a line list"
-msgstr ""
+msgstr "Mở một danh sách dòng"
 
 msgid "Loading line lists"
-msgstr ""
+msgstr "Đang tải danh sách dòng"
 
 msgid "Couldn't load line lists"
-msgstr ""
+msgstr "Không thể tải danh sách dòng"
 
 msgid ""
 "There was a problem loading line lists. Try again or contact your system "
 "administrator."
 msgstr ""
+"Đã xảy ra sự cố khi tải danh sách dòng. Hãy thử lại hoặc liên hệ với quản "
+"trị viên hệ thống của bạn."
 
 msgid "No line lists found. Click New line list to get started."
 msgstr ""
+"Không tìm thấy danh sách dòng nào. Bấm vào Danh sách dòng mới để bắt đầu."
 
 msgid ""
 "No line lists found. Try adjusting your search or filter options to find "
 "what you're looking for."
 msgstr ""
+"Không tìm thấy danh sách dòng nào. Hãy thử điều chỉnh tùy chọn tìm kiếm hoặc"
+" bộ lọc để tìm những gì bạn đang tìm kiếm."
 
 msgid "New line list"
-msgstr ""
-
-msgid "Options"
-msgstr "Tùy chọn"
+msgstr "Danh sách dòng mới"
 
 msgid "Hide"
 msgstr "Ẩn"
 
 msgid "{{count}} org units"
 msgid_plural "{{count}} org units"
-msgstr[0] ""
+msgstr[0] "{{count}} đơn vị"
 
 msgid "{{count}} levels"
 msgid_plural "{{count}} levels"
-msgstr[0] ""
+msgstr[0] "{{count}} cấp độ"
 
 msgid "{{count}} groups"
 msgid_plural "{{count}} groups"
-msgstr[0] ""
+msgstr[0] "{{count}} nhóm"
 
 msgid "Selected: {{commaSeparatedListOfOrganisationUnits}}"
-msgstr ""
+msgstr "Đã chọn: {{commaSeparatedListOfOrganisationUnits}}"
 
 msgid "Nothing selected"
-msgstr ""
+msgstr "Không có gì được chọn"
 
 msgid "User organisation unit"
 msgstr "Đơn vị người dùng"
 
 msgid "User sub-units"
-msgstr "Đơn-vị-con người dùng"
+msgstr "Đơn vị con của người dùng"
 
 msgid "User sub-x2-units"
-msgstr "Đơn-vị-con-x2 người dùng"
+msgstr "Đơn vị con cấp 2 của người dùng"
 
 msgid "Select a level"
-msgstr "Chọn mức"
+msgstr "Chọn cấp độ"
 
 msgid "Select a group"
 msgstr "Chọn nhóm"
 
 msgid "Deselect all"
 msgstr "Bỏ chọn tất cả"
-
-msgid "Period type"
-msgstr "Loại thời điểm"
 
 msgid "Year"
 msgstr "Năm"
@@ -654,37 +864,37 @@ msgid "Weekly (Start Sunday)"
 msgstr "Hàng tuần (Bắt đầu từ Chủ nhật)"
 
 msgid "Bi-weekly"
-msgstr "Hai-tuần"
+msgstr "Định kỳ 2 tuần"
 
 msgid "Monthly"
 msgstr "Hàng tháng"
 
 msgid "Bi-monthly"
-msgstr "Hàng 2 tháng"
+msgstr "Định kỳ 2 tháng"
 
 msgid "Quarterly"
 msgstr "Hàng quý"
 
 msgid "Six-monthly"
-msgstr "Hàng 6 tháng"
+msgstr "Định kỳ 6 tháng"
 
 msgid "Six-monthly April"
-msgstr "Hàng 6 tháng - tháng 4"
+msgstr "Định kỳ 6 tháng - Tháng 4"
 
 msgid "Yearly"
 msgstr "Hàng năm"
 
 msgid "Financial year (Start November)"
-msgstr "Năm tài chính (Bắt đầu từ tháng 11)"
+msgstr "Năm tài chính (Tháng 11)"
 
 msgid "Financial year (Start October)"
-msgstr "Năm Tài Chính - Tháng 10"
+msgstr "Năm tài chính (Tháng 10)"
 
 msgid "Financial year (Start July)"
-msgstr "Năm Tài Chính - Tháng 7"
+msgstr "Năm tài chính (Tháng 7)"
 
 msgid "Financial year (Start April)"
-msgstr "Năm Tài Chính - Tháng 4"
+msgstr "Năm tài chính (Tháng 4)"
 
 msgid "Today"
 msgstr "Hôm nay"
@@ -732,13 +942,13 @@ msgid "Weeks this year"
 msgstr "Các tuần trong năm nay"
 
 msgid "This bi-week"
-msgstr "Kỳ hiện tại, 1 kỳ = 2 tuần"
+msgstr "Định kỳ 2 tuần hiện tại"
 
 msgid "Last bi-week"
-msgstr "Kỳ trước, 1 kỳ = 2 tuần"
+msgstr "Định kỳ 2 tuần trước"
 
 msgid "Last 4 bi-weeks"
-msgstr "4 kỳ trước, 1 kỳ = 2 tuần"
+msgstr "4 Định kỳ 2 tuần trước"
 
 msgid "This month"
 msgstr "Tháng này"
@@ -759,16 +969,16 @@ msgid "Months this year"
 msgstr "Tháng năm nay"
 
 msgid "This bi-month"
-msgstr "Lần Hai-Tháng này"
+msgstr "Định kỳ 2 tháng này"
 
 msgid "Last bi-month"
-msgstr "Kỳ 2 tháng trước"
+msgstr "Định kỳ 2 tháng trước"
 
 msgid "Last 6 bi-months"
-msgstr "6 kỳ 2 tháng trước"
+msgstr "6 Định kỳ 2 tháng trước"
 
 msgid "Bi-months this year"
-msgstr "Các kỳ 2 tháng năm nay"
+msgstr "Định kỳ 2 tháng năm nay"
 
 msgid "This quarter"
 msgstr "Quý này"
@@ -783,13 +993,13 @@ msgid "Quarters this year"
 msgstr "Quý năm nay"
 
 msgid "This six-month"
-msgstr "6 tháng này"
+msgstr "Định kỳ 6 tháng này"
 
 msgid "Last six-month"
-msgstr "6 tháng trước"
+msgstr "Định kỳ 6 tháng trước"
 
 msgid "Last 2 six-month"
-msgstr "2 lần sáu tháng qua"
+msgstr "2 Định kỳ 6 tháng trước"
 
 msgid "This financial year"
 msgstr "Năm tài chính này"
@@ -819,13 +1029,13 @@ msgid "Weeks"
 msgstr "Tuần"
 
 msgid "Bi-weeks"
-msgstr "Các kỳ, 1 kỳ = 2 tuần"
+msgstr "Định kỳ 2 tuần"
 
 msgid "Months"
 msgstr "Tháng"
 
 msgid "Bi-months"
-msgstr "Các kỳ 2 tháng"
+msgstr "Định kỳ 2 tháng"
 
 msgid "Quarters"
 msgstr "Quý"
@@ -840,67 +1050,67 @@ msgid "Years"
 msgstr "Năm"
 
 msgid "Value: {{value}}"
-msgstr ""
+msgstr "Giá trị: {{value}}"
 
 msgid "Bold text"
-msgstr ""
+msgstr "Chữ in đậm"
 
 msgid "Italic text"
-msgstr ""
+msgstr "Chữ in nghiêng"
 
 msgid "Link to a URL"
-msgstr ""
+msgstr "Liên kết đến một URL"
 
 msgid "Mention a user"
-msgstr ""
+msgstr "Nhắc đến một người dùng"
 
 msgid "Add emoji"
-msgstr ""
+msgstr "Thêm biểu tượng cảm xúc"
 
 msgid "Preview"
-msgstr "Xem thử"
+msgstr "Xem trước"
 
 msgid "Back to write mode"
-msgstr ""
+msgstr "Quay lại chế độ viết"
 
 msgid "Interpretations and details"
-msgstr ""
+msgstr "Diễn giải và chi tiết"
 
 msgid "Translating to"
-msgstr ""
+msgstr "Dịch sang"
 
 msgid "Choose a locale"
-msgstr ""
+msgstr "Chọn một ngôn ngữ"
 
 msgid "Base locale reference"
-msgstr ""
+msgstr "Dựa trên ngôn ngữ ưu tiên"
 
 msgid "Choose a locale to translate from the menu above"
-msgstr ""
+msgstr "Thay đổi ngôn ngữ để dịch từ menu trên"
 
 msgid "Translate: {{objectName}}"
-msgstr ""
+msgstr "Dịch: {{objectName}}"
 
 msgid "Save translations"
-msgstr ""
+msgstr "Lưu bản dịch"
 
 msgid "Cannot save while offline"
-msgstr ""
+msgstr "Không thể lưu khi ngoại tuyến"
 
 msgid "Could not load translations"
-msgstr ""
+msgstr "Không thể tải bản dịch"
 
 msgid "Retry"
-msgstr ""
+msgstr "Thử lại"
 
 msgid "Too many results. Try refining the search."
-msgstr ""
+msgstr "Quá nhiều kết quả. Hãy thử tinh chỉnh tìm kiếm."
 
 msgid "Search for a user"
-msgstr ""
+msgstr "Tìm kiếm người dùng"
 
 msgid "Searching for \"{{- searchText}}\""
-msgstr ""
+msgstr "Đang tìm cho \"{{- searchText}}\""
 
 msgid "No results found"
 msgstr "Không tìm thấy kết quả nào"
@@ -910,9 +1120,6 @@ msgstr "Chuỗi Dữ Liệu"
 
 msgid "Category"
 msgstr "Phân loại"
-
-msgid "Filter"
-msgstr "Lọc"
 
 msgid "Columns"
 msgstr "Cột"
@@ -938,41 +1145,32 @@ msgstr "Báo cáo thực tế đúng hạn"
 msgid "Expected reports"
 msgstr "Báo cáo dự kiến"
 
-msgid "Program"
-msgstr "Chương trình"
-
 msgid "Select a program"
 msgstr "Chọn một chương trình"
-
-msgid "Indicators"
-msgstr "Các chỉ số"
 
 msgid "Indicator group"
 msgstr "Nhóm chỉ số"
 
 msgid "All groups"
-msgstr ""
+msgstr "Tất cả nhóm"
 
 msgid "Indicator"
 msgstr "Chỉ số"
 
 msgid "No indicator groups found"
-msgstr ""
+msgstr "Không tìm thấy nhóm chỉ số nào"
 
 msgid "Loading indicator groups"
-msgstr ""
+msgstr "Đang tải nhóm chỉ số"
 
 msgid "Data element group"
-msgstr "Nhóm dữ liệu"
-
-msgid "Data element"
-msgstr "Phần tử dữ liệu"
+msgstr "Nhóm phần tử dữ liệu"
 
 msgid "No data element groups found"
-msgstr ""
+msgstr "Không tìm thấy nhóm phần tử dữ liệu nào"
 
 msgid "Loading data element groups"
-msgstr ""
+msgstr "Đang tải nhóm phần tử dữ liệu"
 
 msgid "Data sets"
 msgstr "Biểu nhập"
@@ -981,7 +1179,7 @@ msgid "Data set"
 msgstr "Tập dữ liệu"
 
 msgid "All data sets"
-msgstr ""
+msgstr "Tất cả tập dữ liệu"
 
 msgid "Loading data sets"
 msgstr "Đang tải tập dữ liệu"
@@ -990,49 +1188,53 @@ msgid "Event data items"
 msgstr "Mục dữ liệu sự kiện"
 
 msgid "All programs"
-msgstr ""
+msgstr "Tất cả chương trình"
 
 msgid "Event data item"
 msgstr "Mục dữ liệu sự kiện"
 
 msgid "No programs found"
-msgstr ""
+msgstr "Không tìm thấy chương trình nào"
 
 msgid "Loading programs"
-msgstr ""
+msgstr "Đang tải chương trình"
 
 msgid "Program indicators"
 msgstr "Chỉ Số Chương Trình"
 
 msgid "Program indicator"
-msgstr "Quản lý Chỉ số chương trình"
+msgstr "Chỉ số chương trình"
 
 msgid "Calculations"
-msgstr ""
+msgstr "Tính toán"
+
+msgid "Option"
+msgstr "Tùy chọn"
 
 msgid "Number"
 msgstr "Số"
 
 msgid "Formula is empty. Add items to the formula from the lists on the left."
 msgstr ""
+"Công thức đang trống. Thêm các mục vào công thức từ danh sách bên trái."
 
 msgid "Consecutive math operators"
-msgstr ""
+msgstr "Các toán tử toán học liên tiếp"
 
 msgid "Consecutive data elements"
-msgstr ""
+msgstr "Các phần tử dữ liệu liên tiếp"
 
 msgid "Starts or ends with a math operator"
-msgstr ""
+msgstr "Bắt đầu hoặc kết thúc bằng toán tử toán học"
 
 msgid "Empty parentheses"
-msgstr ""
+msgstr "Dấu ngoặc đơn trống"
 
 msgid "Missing right parenthesis )"
-msgstr ""
+msgstr "Thiếu dấu ngoặc đơn bên phải )"
 
 msgid "Missing left parenthesis ("
-msgstr ""
+msgstr "Thiếu dấu ngoặc đơn bên trái ("
 
 msgid "Extra Small"
 msgstr "Rất nhỏ"
@@ -1077,10 +1279,10 @@ msgid "{{dynamicOuNames}} and {{lastOuName}}"
 msgstr "{{dynamicOuNames}} và {{lastOuName}}"
 
 msgid "{{allDynamicOuNames}} levels"
-msgstr "{{allDynamicOuNames}} cấp"
+msgstr "cấp độ {{allDynamicOuNames}}"
 
 msgid "{{allDynamicOuNames}} groups"
-msgstr "{{allDynamicOuNames}} nhóm"
+msgstr "nhóm {{allDynamicOuNames}}"
 
 msgid "{{allDynamicOuNames}} levels in {{staticOuNames}}"
 msgstr "{{allDynamicOuNames}} cấp trong {{staticOuNames}}"
@@ -1089,40 +1291,118 @@ msgid "{{allDynamicOuNames}} groups in {{staticOuNames}}"
 msgstr "{{allDynamicOuNames}} nhóm trong {{staticOuNames}}"
 
 msgid "{{percentage}}% of total x values"
-msgstr ""
+msgstr "{{percentage}}% của tổng giá trị x"
 
 msgid "{{percentage}}% of total y values"
-msgstr ""
+msgstr "{{percentage}}% của tổng giá trị y"
 
 msgid "{{thresholdFactor}} × IQR Q1"
-msgstr ""
+msgstr "{{thresholdFactor}} x IQR Q1"
 
 msgid "{{thresholdFactor}} × IQR Q3"
-msgstr ""
+msgstr "{{thresholdFactor}} x IQR Q3"
 
 msgid "{{thresholdFactor}} × Modified Z-score low"
-msgstr ""
+msgstr "{{thresholdFactor}} x Điểm Z được sửa đổi thấp"
 
 msgid "{{thresholdFactor}} × Modified Z-score high"
-msgstr ""
+msgstr "{{thresholdFactor}}Điểm Z được sửa đổi cao"
 
 msgid "{{thresholdFactor}} × Z-score low"
-msgstr ""
+msgstr "{{thresholdFactor}} x Điểm Z thấp"
 
 msgid "{{thresholdFactor}} × Z-score high"
-msgstr ""
+msgstr "{{thresholdFactor}} x Điểm Z cao"
 
 msgid "Not applicable"
-msgstr ""
+msgstr "Không áp dụng"
 
 msgid "Data"
-msgstr "Lấy dữ liệu"
+msgstr "Dữ liệu"
 
 msgid "Organisation unit"
 msgstr "Đơn vị"
 
 msgid "Assigned Categories"
 msgstr "Phân loại được chỉ định"
+
+msgid "No value"
+msgstr "Không có giá trị"
+
+msgid "Text"
+msgstr "Văn bản"
+
+msgid "Long text"
+msgstr "Văn bản dài"
+
+msgid "Multi text"
+msgstr "Nhiều văn bản"
+
+msgid "Letter"
+msgstr "Ký tự"
+
+msgid "Phone number"
+msgstr "Số điện thoại"
+
+msgid "Email"
+msgstr "Email"
+
+msgid "Yes/No"
+msgstr "Có/Không"
+
+msgid "Yes Only"
+msgstr "Chỉ Có"
+
+msgid "Date"
+msgstr "Ngày"
+
+msgid "Date & Time"
+msgstr "Ngày và thời gian"
+
+msgid "Time"
+msgstr "Thời gian"
+
+msgid "Unit interval"
+msgstr "Khoảng đơn vị"
+
+msgid "Percentage"
+msgstr "Phần trăm"
+
+msgid "Integer"
+msgstr "Số nguyên"
+
+msgid "Positive Integer"
+msgstr "Số nguyên dương"
+
+msgid "Negative Integer"
+msgstr "Số nguyên âm"
+
+msgid "Positive or Zero Integer"
+msgstr "Số nguyên dương hoặc số 0"
+
+msgid "Tracker Associate"
+msgstr "Liên kết Theo dõi"
+
+msgid "Username"
+msgstr "Tên đăng nhập"
+
+msgid "Coordinate"
+msgstr "Tọa độ"
+
+msgid "Reference"
+msgstr "Gợi ý"
+
+msgid "Age"
+msgstr "Tuổi"
+
+msgid "URL"
+msgstr "URL"
+
+msgid "Image"
+msgstr "Hình ảnh"
+
+msgid "GeoJSON"
+msgstr "GeoJSON"
 
 msgid "Pivot table"
 msgstr "Bảng xoay"
@@ -1167,19 +1447,22 @@ msgid "Radar"
 msgstr "Radar"
 
 msgid "Scatter"
-msgstr "phân tán"
+msgstr "Phân tán"
 
 msgid "Single value"
 msgstr "Giá trị đơn"
 
 msgid "Outlier table"
-msgstr ""
+msgstr "Bảng ngoại lệ"
 
 msgid "All charts"
-msgstr ""
+msgstr "Tất cả biểu đồ"
+
+msgid "Map"
+msgstr "Bản Đồ"
 
 msgid "{{seriesName}} (trend)"
-msgstr ""
+msgstr "{{seriesName}} (xu hướng)"
 
 msgid "Trend"
 msgstr "Xu hướng"
@@ -1191,7 +1474,7 @@ msgid "and {{amount}} more..."
 msgstr "và {{amount}} khác ..."
 
 msgid "Linear Regression"
-msgstr ""
+msgstr "Hồi quy tuyến tính"
 
 msgid "Target"
 msgstr "Mục tiêu"
@@ -1204,7 +1487,7 @@ msgstr "Trục {{axisId}}"
 
 msgid "{{count}} items"
 msgid_plural "{{count}} items"
-msgstr[0] ""
+msgstr[0] "{{count}}mục"
 
 msgid "Reset zoom"
 msgstr "Đặt lại thu phóng"

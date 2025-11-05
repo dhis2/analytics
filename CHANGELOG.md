@@ -1,3 +1,290 @@
+## [29.0.3](https://github.com/dhis2/analytics/compare/v29.0.2...v29.0.3) (2025-11-04)
+
+
+### Bug Fixes
+
+* trigger publish ([#1798](https://github.com/dhis2/analytics/issues/1798)) ([d5a2c1c](https://github.com/dhis2/analytics/commit/d5a2c1c5d95b48d2d277d97b28080b8766d20feb))
+* **translations:** sync translations from transifex (master) ([#1786](https://github.com/dhis2/analytics/issues/1786)) ([eb61d5b](https://github.com/dhis2/analytics/commit/eb61d5b8e91f80f7f5c90fe911856c2d36a6d247))
+* interpretations panel not showing for pivot tables ([#1796](https://github.com/dhis2/analytics/issues/1796)) ([2b0bf0c](https://github.com/dhis2/analytics/commit/2b0bf0c8ef64288b2a6537c0bfcb6ff5c41cbbd2))
+
+## [29.0.2](https://github.com/dhis2/analytics/compare/v29.0.1...v29.0.2) (2025-10-30)
+
+
+### Bug Fixes
+
+* address 2 comment edit issues and a display-property issue ([#1797](https://github.com/dhis2/analytics/issues/1797)) ([613f8b2](https://github.com/dhis2/analytics/commit/613f8b21e5187dcb252acad09459342e85bc10c1))
+
+## [29.0.1](https://github.com/dhis2/analytics/compare/v29.0.0...v29.0.1) (2025-10-28)
+
+
+### Bug Fixes
+
+* pass a valid function to the cancel button onClick ([#1795](https://github.com/dhis2/analytics/issues/1795)) ([128728b](https://github.com/dhis2/analytics/commit/128728b396067d8b289d06a9a9fee57df8911455))
+
+# [29.0.0](https://github.com/dhis2/analytics/compare/v28.1.3...v29.0.0) (2025-10-28)
+
+
+### Features
+
+* add InterpretationsProvider and refactor components to use it ([#1791](https://github.com/dhis2/analytics/issues/1791)) ([f62f4b8](https://github.com/dhis2/analytics/commit/f62f4b82fc57e0e1b68b80ace67c1bcd2e3ed055))
+
+
+### BREAKING CHANGES
+
+* apps can no longer import InterpretationThread
+
+* fix: remove overflow-y which breaks the EVER plugin content
+
+This CSS rule was initially added for fixing DHIS2-15558 and it seems to
+only affect the LL plugin where a vertical scrollbar appears in the
+Modal.
+Although the LL app is going to be replaced by the EVER app,
+there might be a better fix for this which works in both apps.
+
+* Revert "fix: remove overflow-y which breaks the EVER plugin content"
+
+We should fix the issue in the EVER LineList components instead.
+The change also causes an extra vertical scrollbar when there is a lot
+of content in the interpretations thread.
+
+* chore: address PR comments
+
+* chore: remove redundant prop from interpretations unit in demo story
+
+* fix: memoize the InterpretationThread to fix initial focus issues
+
+* Revert "fix: memoize the InterpretationThread to fix initial focus issues"
+
+This reverts commit b96a3e2faf27bdc4d14c33879f397d59cc38527f.
+
+* fix: focus the rich-text-editor after a timeout
+
+## [28.1.3](https://github.com/dhis2/analytics/compare/v28.1.2...v28.1.3) (2025-10-16)
+
+
+### Bug Fixes
+
+* total cell crash due to empty currentHeader ([#1794](https://github.com/dhis2/analytics/issues/1794)) ([5739fe1](https://github.com/dhis2/analytics/commit/5739fe1a42213bc48421fd43abf2a1c8216f7525))
+
+## [28.1.2](https://github.com/dhis2/analytics/compare/v28.1.1...v28.1.2) (2025-10-10)
+
+
+### Bug Fixes
+
+* hide indicator type factor when factor is 1 ([#1792](https://github.com/dhis2/analytics/issues/1792)) ([79ea2a3](https://github.com/dhis2/analytics/commit/79ea2a3b745146a33eec3e404af3ab08966b5ca5))
+
+## [28.1.1](https://github.com/dhis2/analytics/compare/v28.1.0...v28.1.1) (2025-10-10)
+
+
+### Bug Fixes
+
+* turn off series animation for dashboard ([#1793](https://github.com/dhis2/analytics/issues/1793)) ([50f84f8](https://github.com/dhis2/analytics/commit/50f84f86dc8c674fb1364f0d9d7658dd81981609))
+
+# [28.1.0](https://github.com/dhis2/analytics/compare/v28.0.5...v28.1.0) (2025-09-05)
+
+
+### Features
+
+* event analytics response transformers (DHIS2-19818) ([#1788](https://github.com/dhis2/analytics/issues/1788)) ([257adff](https://github.com/dhis2/analytics/commit/257adffabde0844660460b871d9e19ae29a50692)), closes [#1790](https://github.com/dhis2/analytics/issues/1790)
+
+## [28.0.5](https://github.com/dhis2/analytics/compare/v28.0.4...v28.0.5) (2025-09-02)
+
+
+### Bug Fixes
+
+* **OpenFileDialog:** respect filterVisTypes prop when All types is selected ([#1789](https://github.com/dhis2/analytics/issues/1789)) ([4a71211](https://github.com/dhis2/analytics/commit/4a712118287b786c226010b27ad0705de31405c2))
+
+## [28.0.4](https://github.com/dhis2/analytics/compare/v28.0.3...v28.0.4) (2025-07-03)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([#1783](https://github.com/dhis2/analytics/issues/1783)) ([0442030](https://github.com/dhis2/analytics/commit/04420305f109b8ee5c79e36bb4c681a9c13aa403))
+
+## [28.0.3](https://github.com/dhis2/analytics/compare/v28.0.2...v28.0.3) (2025-06-06)
+
+
+### Bug Fixes
+
+* avoid crash in TranslationDialog component (DHIS2-19539) ([#1779](https://github.com/dhis2/analytics/issues/1779)) ([dd6ad13](https://github.com/dhis2/analytics/commit/dd6ad137aef47141373fd10cd39d6eefc71b6f11))
+
+## [28.0.2](https://github.com/dhis2/analytics/compare/v28.0.1...v28.0.2) (2025-06-04)
+
+
+### Bug Fixes
+
+* do not call getTrimmedConfig if hideEmptyRowItems is not available (DHIS2-19611) ([#1780](https://github.com/dhis2/analytics/issues/1780)) ([41e5bb4](https://github.com/dhis2/analytics/commit/41e5bb423edda39b81a7158958a7c058dfdf60fb))
+
+## [28.0.1](https://github.com/dhis2/analytics/compare/v28.0.0...v28.0.1) (2025-05-20)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([#1778](https://github.com/dhis2/analytics/issues/1778)) ([7485bfc](https://github.com/dhis2/analytics/commit/7485bfcb35dd98976210a654fb05ab1fc1c4ea24))
+* upgrade Highcharts from v10 to v12 ([#1728](https://github.com/dhis2/analytics/issues/1728)) ([6598cad](https://github.com/dhis2/analytics/commit/6598cadb9738e334463b852a7b71b4dfe6e0760a)), closes [#1731](https://github.com/dhis2/analytics/issues/1731)
+
+# [28.0.0](https://github.com/dhis2/analytics/compare/v27.0.1...v28.0.0) (2025-05-14)
+
+
+### Bug Fixes
+
+* do not fetch subscribers as that should be fetched already ([#1777](https://github.com/dhis2/analytics/issues/1777)) ([af5868c](https://github.com/dhis2/analytics/commit/af5868ce2b6a28aad43e0c642b654c1a094b91b1))
+
+
+### BREAKING CHANGES
+
+* As a quick workaround for renaming bugs, a solution was implemented where
+the preparePayloadForSave function would fetch the subscribers property
+so that it would not be overwritten during a rename. However, it is still possible 
+to overwrite other newer changes by a different user. The best solution to deal
+with the lack of a PATCH is that each app fetches the entire visualization
+object prior to rename. Thus, the only job for the preparePayloadForSave
+function is to handle name and description changes.
+
+## [27.0.1](https://github.com/dhis2/analytics/compare/v27.0.0...v27.0.1) (2025-04-23)
+
+
+### Bug Fixes
+
+* fix sorting in PT when percentage of rows is used (DHIS2-5455) ([#1774](https://github.com/dhis2/analytics/issues/1774)) ([aaf1106](https://github.com/dhis2/analytics/commit/aaf1106ab66ed33ad17a6e3e6d4baf4bc84b20aa))
+
+# [27.0.0](https://github.com/dhis2/analytics/compare/v26.13.4...v27.0.0) (2025-04-17)
+
+
+### Bug Fixes
+
+* return new name and desc from file menu rename instead of PATCH request [DHIS2-19433] ([#1771](https://github.com/dhis2/analytics/issues/1771)) ([6fa6487](https://github.com/dhis2/analytics/commit/6fa64871799be4ea0701b5ce7c0517b27d453df4))
+
+
+### BREAKING CHANGES
+
+* Instead of using patch, which causes several backend errors, the rename dialog
+now just returns the user's changes to name and description, and leaves it
+to the app to save the changes.
+
+To support save centrally for analytics apps, preparePayloadForSave was added
+
+This is a workaround until problems with patch are fixed.
+
+## [26.13.4](https://github.com/dhis2/analytics/compare/v26.13.3...v26.13.4) (2025-04-10)
+
+
+### Bug Fixes
+
+* print the name of relative periods instead of actual periods (DHIS2-19454) ([#1772](https://github.com/dhis2/analytics/issues/1772)) ([b383ae7](https://github.com/dhis2/analytics/commit/b383ae7ca70e6285448d7ad746ea889451c65082))
+
+## [26.13.3](https://github.com/dhis2/analytics/compare/v26.13.2...v26.13.3) (2025-04-01)
+
+
+### Bug Fixes
+
+* fix hyperlinks to work in global shell (DHIS2-19274) ([#1770](https://github.com/dhis2/analytics/issues/1770)) ([5be010c](https://github.com/dhis2/analytics/commit/5be010c2c4339a451432251187c8a0e38ac6ccdd))
+
+## [26.13.2](https://github.com/dhis2/analytics/compare/v26.13.1...v26.13.2) (2025-03-30)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([0c239d5](https://github.com/dhis2/analytics/commit/0c239d54397b7a2043136e1f15df5f321bec6d60))
+
+## [26.13.1](https://github.com/dhis2/analytics/compare/v26.13.0...v26.13.1) (2025-03-23)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([cd642c8](https://github.com/dhis2/analytics/commit/cd642c816c062ee21dbfcd29657560364ade0853))
+
+# [26.13.0](https://github.com/dhis2/analytics/compare/v26.12.3...v26.13.0) (2025-03-18)
+
+
+### Features
+
+* implement option set selector in Data dimension modal (DHIS2-17872) ([#1746](https://github.com/dhis2/analytics/issues/1746)) ([9bd5af0](https://github.com/dhis2/analytics/commit/9bd5af02ff4188d9b9f6562015fb04553e481149))
+
+## [26.12.3](https://github.com/dhis2/analytics/compare/v26.12.2...v26.12.3) (2025-03-04)
+
+
+### Bug Fixes
+
+* **dimensions-panel:** prevent movement of content in dimension item on hover [DHIS2-19046] ([#1762](https://github.com/dhis2/analytics/issues/1762)) ([e47b168](https://github.com/dhis2/analytics/commit/e47b168a7d1b33c8b1ac2e826ffe857dd1d11eb0))
+
+## [26.12.2](https://github.com/dhis2/analytics/compare/v26.12.1...v26.12.2) (2025-02-25)
+
+
+### Bug Fixes
+
+* allow blank cumulative values (DHIS2-18976) ([#1760](https://github.com/dhis2/analytics/issues/1760)) ([1fec4a3](https://github.com/dhis2/analytics/commit/1fec4a37397a92354cbdf540ea0bfc699f2c1a2b))
+
+## [26.12.1](https://github.com/dhis2/analytics/compare/v26.12.0...v26.12.1) (2025-02-23)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([c3f8731](https://github.com/dhis2/analytics/commit/c3f873109fa63e36e469f55f15cb1a9640a2ab43))
+
+# [26.12.0](https://github.com/dhis2/analytics/compare/v26.11.1...v26.12.0) (2025-02-13)
+
+
+### Features
+
+* implement dashboard plugin wrapper ([#1748](https://github.com/dhis2/analytics/issues/1748)) ([7487182](https://github.com/dhis2/analytics/commit/7487182fc606f52a9daca8ad15d09545e80eb12b))
+
+## [26.11.1](https://github.com/dhis2/analytics/compare/v26.11.0...v26.11.1) (2025-02-09)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([f9e3843](https://github.com/dhis2/analytics/commit/f9e384370dad6d968156489f01de6dc468d764ac))
+
+# [26.11.0](https://github.com/dhis2/analytics/compare/v26.10.2...v26.11.0) (2025-02-06)
+
+
+### Features
+
+* add flexibility to PeriodDimension and periods utils ([#1735](https://github.com/dhis2/analytics/issues/1735)) ([8ce7458](https://github.com/dhis2/analytics/commit/8ce7458c485c3fedb520fc7cde752ea65d157149))
+
+## [26.10.2](https://github.com/dhis2/analytics/compare/v26.10.1...v26.10.2) (2025-02-04)
+
+
+### Bug Fixes
+
+* pivot table crashes when setting hide empty columns ([#1747](https://github.com/dhis2/analytics/issues/1747)) ([f8c01cb](https://github.com/dhis2/analytics/commit/f8c01cb7d4077a5d15fa022e012c37d1a70eaa32))
+
+## [26.10.1](https://github.com/dhis2/analytics/compare/v26.10.0...v26.10.1) (2025-02-04)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([2dceb0e](https://github.com/dhis2/analytics/commit/2dceb0e56457258bde554dc420b9a40fb09cb725))
+
+# [26.10.0](https://github.com/dhis2/analytics/compare/v26.9.6...v26.10.0) (2025-01-09)
+
+
+### Features
+
+* display type and definitions in data item selector (DHIS2-14774) ([#1713](https://github.com/dhis2/analytics/issues/1713)) ([27f4b65](https://github.com/dhis2/analytics/commit/27f4b6533688586313fd7a8918c532205acc2c48))
+
+## [26.9.6](https://github.com/dhis2/analytics/compare/v26.9.5...v26.9.6) (2024-12-22)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([d6618f2](https://github.com/dhis2/analytics/commit/d6618f285a6682d8f1efa43e571ad6401a597fb7))
+
+## [26.9.5](https://github.com/dhis2/analytics/compare/v26.9.4...v26.9.5) (2024-12-15)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([e15b034](https://github.com/dhis2/analytics/commit/e15b034bbfbf538858d461b46581caf7963ac8bb))
+
+## [26.9.4](https://github.com/dhis2/analytics/compare/v26.9.3...v26.9.4) (2024-12-08)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([84877fd](https://github.com/dhis2/analytics/commit/84877fd0555146fa0289f3d12bdeb5d1216ec494))
+
 ## [26.9.3](https://github.com/dhis2/analytics/compare/v26.9.2...v26.9.3) (2024-11-22)
 
 

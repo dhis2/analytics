@@ -1,68 +1,54 @@
-import { useDataMutation } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import { Button } from '@dhis2/ui'
 import PropTypes from 'prop-types'
-import React, { useRef, useState } from 'react'
+import React, { useCallback, useState } from 'react'
 import { RichTextEditor } from '../../RichText/index.js'
 import {
     MessageEditorContainer,
     MessageButtonStrip,
     MessageInput,
 } from '../common/index.js'
+import {
+    useAddCommentToActiveInterpretation,
+    useInterpretationsCurrentUser,
+} from '../InterpretationsProvider/hooks.js'
 
-export const CommentAddForm = ({
-    interpretationId,
-    currentUser,
-    onSave,
-    focusRef,
-}) => {
+export const CommentAddForm = ({ focusRef }) => {
+    const currentUser = useInterpretationsCurrentUser()
     const [showRichTextEditor, setShowRichTextEditor] = useState(false)
-    const [commentText, setCommentText] = useState('')
-
-    const saveMutationRef = useRef({
-        resource: `interpretations/${interpretationId}/comments`,
-        type: 'create',
-        data: ({ commentText }) => commentText,
-    })
-
-    const [save, { loading }] = useDataMutation(saveMutationRef.current, {
-        onComplete: () => {
-            setShowRichTextEditor(false)
-            setCommentText('')
-            onSave()
-        },
+    const [text, setText] = useState('')
+    const closeForm = useCallback(() => {
+        setShowRichTextEditor(false)
+        setText('')
+    }, [])
+    const [save, { loading, error }] = useAddCommentToActiveInterpretation({
+        text,
+        onComplete: closeForm,
     })
 
     const inputPlaceholder = i18n.t('Write a reply')
 
     return (
-        <MessageEditorContainer currentUser={currentUser}>
+        <MessageEditorContainer currentUserName={currentUser.name}>
             {showRichTextEditor ? (
                 <>
                     <RichTextEditor
                         inputPlaceholder={inputPlaceholder}
-                        onChange={setCommentText}
-                        value={commentText}
+                        onChange={setText}
+                        value={text}
                         ref={focusRef}
                         disabled={loading}
+                        errorText={error ? i18n.t('Could not post reply') : ''}
                     />
                     <MessageButtonStrip>
-                        <Button
-                            primary
-                            small
-                            onClick={() => save({ commentText })}
-                            loading={loading}
-                        >
+                        <Button primary small onClick={save} loading={loading}>
                             {i18n.t('Post reply')}
                         </Button>
                         <Button
                             secondary
                             small
                             disabled={loading}
-                            onClick={() => {
-                                setCommentText('')
-                                setShowRichTextEditor(false)
-                            }}
+                            onClick={closeForm}
                         >
                             {i18n.t('Cancel')}
                         </Button>
@@ -80,8 +66,5 @@ export const CommentAddForm = ({
 }
 
 CommentAddForm.propTypes = {
-    currentUser: PropTypes.object.isRequired,
     focusRef: PropTypes.object.isRequired,
-    interpretationId: PropTypes.string.isRequired,
-    onSave: PropTypes.func,
 }

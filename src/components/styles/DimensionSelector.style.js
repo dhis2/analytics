@@ -2,6 +2,14 @@ import { spacers, colors } from '@dhis2/ui'
 import css from 'styled-jsx/css'
 
 export default css`
+    .transfer-container {
+        min-width: 800px;
+    }
+    .transfer-container.hidden {
+        position: absolute;
+        visibility: hidden;
+        pointer-events: none;
+    }
     .filterContainer {
         display: flex;
         margin-bottom: ${spacers.dp12};
@@ -16,10 +24,10 @@ export default css`
     }
     .rightHeader {
         font-size: 14px;
-        font-weight: 400;
+        font-weight: 500;
     }
     .leftHeader {
-        padding: ${spacers.dp12} ${spacers.dp4};
+        padding: ${spacers.dp8} 0;
     }
     .info-container {
         display: flex;

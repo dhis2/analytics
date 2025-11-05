@@ -1,4 +1,4 @@
-import { shallow, mount } from 'enzyme'
+import { render, screen } from '@testing-library/react'
 import React from 'react'
 import { HoverMenuList, HoverMenuListItem } from '../index.js'
 
@@ -6,51 +6,61 @@ describe('<HoverMenuList/>', () => {
     const dataTest = 'test'
     const childNode = 'children'
 
-    it('renders children', () => {
-        const wrapper = shallow(<HoverMenuList>{childNode}</HoverMenuList>)
-        expect(wrapper.containsMatchingElement(childNode)).toBe(true)
+    test('renders children', () => {
+        render(<HoverMenuList>{childNode}</HoverMenuList>)
+        expect(screen.getByText(childNode)).toBeInTheDocument()
     })
-    it('accept a `className` prop', () => {
+
+    test('accept a `className` prop', () => {
         const className = 'className'
-        const wrapper = shallow(
-            <HoverMenuList className={className}>{childNode}</HoverMenuList>
-        )
-        expect(wrapper.find('ul')).toHaveClassName(className)
-    })
 
-    it('accepts a `dataTest` prop', () => {
-        const wrapper = shallow(
-            <HoverMenuList dataTest={dataTest}>{childNode}</HoverMenuList>
+        render(
+            <HoverMenuList dataTest={dataTest} className={className}>
+                {childNode}
+            </HoverMenuList>
         )
 
-        expect(wrapper.find('ul').prop('data-test')).toBe(dataTest)
+        expect(screen.getByTestId(dataTest)).toHaveClass(className)
     })
 
-    it('accept a `dense` prop', () => {
-        const wrapper = mount(
+    test('accepts a `dataTest` prop', () => {
+        render(<HoverMenuList dataTest={dataTest}>{childNode}</HoverMenuList>)
+
+        expect(screen.getByTestId(dataTest)).toBeInTheDocument()
+    })
+
+    test('accept a `dense` prop', () => {
+        render(
             <HoverMenuList dense>
                 <HoverMenuListItem label="item 1" />
                 <HoverMenuListItem label="item 2" />
             </HoverMenuList>
         )
 
-        expect(wrapper.find('li').first()).toHaveClassName('dense')
-        expect(wrapper.find('li').last()).toHaveClassName('dense')
+        expect(screen.getByText('item 1').closest('li')).toHaveClass('dense')
+        expect(screen.getByText('item 2').closest('li')).toHaveClass('dense')
     })
-    it('accept a `maxHeight` prop', () => {
+
+    test('accept a `maxHeight` prop', () => {
         const maxHeight = '100000px'
-        const wrapper = shallow(
-            <HoverMenuList maxHeight={maxHeight}>{childNode}</HoverMenuList>
+
+        const { container } = render(
+            <HoverMenuList dataTest={dataTest} maxHeight={maxHeight}>
+                {childNode}
+            </HoverMenuList>
         )
-        expect(wrapper.find('style').text()).toContain(
-            `max-height: ${maxHeight}`
-        )
+
+        expect(container).toMatchSnapshot()
     })
-    it('accept a `maxWidth` prop', () => {
+
+    test('accept a `maxWidth` prop', () => {
         const maxWidth = '100000px'
-        const wrapper = shallow(
-            <HoverMenuList maxWidth={maxWidth}>{childNode}</HoverMenuList>
+
+        const { container } = render(
+            <HoverMenuList dataTest={dataTest} maxWidth={maxWidth}>
+                {childNode}
+            </HoverMenuList>
         )
-        expect(wrapper.find('style').text()).toContain(`max-width: ${maxWidth}`)
+        expect(container).toMatchSnapshot()
     })
 })

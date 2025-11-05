@@ -1,0 +1,144 @@
+{
+    "name": "ANC: ANC 1 Visits Cumulative Numbers",
+    "created": "2012-11-13T18:33:17.032",
+    "lastUpdated": "2017-05-16T16:02:20.929",
+    "translations": [],
+    "displayDensity": "NORMAL",
+    "fontSize": "NORMAL",
+    "sortOrder": 0,
+    "topLimit": 0,
+    "hideEmptyRows": false,
+    "showHierarchy": false,
+    "completedOnly": false,
+    "skipRounding": false,
+    "dataDimensionItems": [
+        {
+            "dataDimensionItemType": "DATA_ELEMENT"
+        }
+    ],
+    "subscribers": [],
+    "aggregationType": "DEFAULT",
+    "digitGroupSeparator": "SPACE",
+    "noSpaceBetweenColumns": false,
+    "cumulativeValues": true,
+    "percentStackedValues": false,
+    "showData": false,
+    "colTotals": true,
+    "rowTotals": true,
+    "rowSubTotals": false,
+    "colSubTotals": false,
+    "hideTitle": false,
+    "hideSubtitle": false,
+    "showDimensionLabels": false,
+    "interpretations": [],
+    "type": "PIVOT_TABLE",
+    "reportingParams": {
+        "grandParentOrganisationUnit": false,
+        "parentOrganisationUnit": false,
+        "organisationUnit": true,
+        "reportingPeriod": false
+    },
+    "yearlySeries": [],
+    "regression": false,
+    "hideEmptyColumns": false,
+    "fixColumnHeaders": false,
+    "fixRowHeaders": false,
+    "filters": [],
+    "parentGraphMap": {
+        "ImspTQPwCqd": ""
+    },
+    "columns": [
+        {
+            "items": [
+                {
+                    "name": "ANC 1st visit",
+                    "dimensionItemType": "DATA_ELEMENT",
+                    "access": {
+                        "manage": true,
+                        "externalize": false,
+                        "write": true,
+                        "read": true,
+                        "update": true,
+                        "delete": true
+                    },
+                    "displayName": "Soin prénatal 1",
+                    "displayShortName": "ANC 1st visit",
+                    "id": "fbfJHSPpUQD"
+                }
+            ],
+            "dimension": "dx"
+        }
+    ],
+    "rows": [
+        {
+            "items": [
+                {
+                    "name": "LAST_12_MONTHS",
+                    "dimensionItemType": "PERIOD",
+                    "displayShortName": "LAST_12_MONTHS",
+                    "access": {
+                        "manage": true,
+                        "externalize": false,
+                        "write": true,
+                        "read": true,
+                        "update": true,
+                        "delete": true
+                    },
+                    "displayName": "LAST_12_MONTHS",
+                    "id": "LAST_12_MONTHS"
+                }
+            ],
+            "dimension": "pe"
+        },
+        {
+            "items": [
+                {
+                    "name": "Sierra Leone",
+                    "dimensionItemType": "ORGANISATION_UNIT",
+                    "access": {
+                        "manage": true,
+                        "externalize": false,
+                        "write": true,
+                        "read": true,
+                        "update": true,
+                        "delete": true
+                    },
+                    "displayName": "Sierra Leone",
+                    "displayShortName": "Sierra Leone",
+                    "id": "ImspTQPwCqd"
+                }
+            ],
+            "dimension": "ou"
+        }
+    ],
+    "subscribed": false,
+    "access": {
+        "manage": true,
+        "externalize": true,
+        "write": true,
+        "read": true,
+        "update": true,
+        "delete": true
+    },
+    "displayName": "ANC: ANC 1 Visits Cumulative Numbers",
+    "favorite": false,
+    "user": {
+        "id": "GOLswS44mh8",
+        "code": null,
+        "name": "Tom Wakiki",
+        "displayName": "Tom Wakiki",
+        "username": "system"
+    },
+    "href": "https://debug.dhis2.org/dev/api/42/visualizations/tWg9OiyV7mu",
+    "id": "tWg9OiyV7mu",
+    "legend": {
+        "showKey": false,
+        "style": "FILL",
+        "strategy": "FIXED"
+    },
+    "sorting": [],
+    "icons": [],
+    "seriesKey": {
+        "hidden": false
+    }
+}

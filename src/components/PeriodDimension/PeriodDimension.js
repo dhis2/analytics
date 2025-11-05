@@ -13,12 +13,15 @@ const userSettingsQuery = {
     },
 }
 
+const SELECTED_PERIODS_PROP_DEFAULT = []
+
 const PeriodDimension = ({
     onSelect,
-    selectedPeriods,
+    selectedPeriods = SELECTED_PERIODS_PROP_DEFAULT,
     rightFooter,
     excludedPeriodTypes,
     infoBoxMessage,
+    height,
 }) => {
     const { systemInfo } = useConfig()
     const result = useDataQuery(userSettingsQuery)
@@ -43,6 +46,7 @@ const PeriodDimension = ({
             dataTest={'period-dimension'}
             excludedPeriodTypes={excludedPeriodTypes}
             periodsSettings={periodsSettings}
+            height={height}
         />
     )
 }
@@ -50,13 +54,10 @@ const PeriodDimension = ({
 PeriodDimension.propTypes = {
     onSelect: PropTypes.func.isRequired,
     excludedPeriodTypes: PropTypes.arrayOf(PropTypes.string),
+    height: PropTypes.string,
     infoBoxMessage: PropTypes.string,
     rightFooter: PropTypes.node,
     selectedPeriods: PropTypes.array,
-}
-
-PeriodDimension.defaultProps = {
-    selectedPeriods: [],
 }
 
 export default PeriodDimension
