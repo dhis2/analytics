@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2025-09-05T07:32:59.321Z\n"
+"POT-Creation-Date: 2025-09-09T09:32:04.677Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: Rohit Wadhwani, 2025\n"
 "Language-Team: Hindi (India) (https://app.transifex.com/hisp-uio/teams/100509/hi_IN/)\n"
@@ -135,7 +135,7 @@ msgid "Details only"
 msgstr ""
 
 msgid "Loading"
-msgstr ""
+msgstr "लोड हो रहा है"
 
 msgid "Data elements"
 msgstr ""
@@ -278,7 +278,7 @@ msgid "Custom"
 msgstr ""
 
 msgid "Program"
-msgstr ""
+msgstr "प्रोग्राम"
 
 msgid "Analytics type"
 msgstr ""
@@ -455,7 +455,7 @@ msgid "File"
 msgstr ""
 
 msgid "New"
-msgstr ""
+msgstr "नया"
 
 msgid "Open…"
 msgstr ""
@@ -517,16 +517,28 @@ msgstr ""
 msgid "Untitled {{visualizationType}}, {{date}}"
 msgstr ""
 
+msgid "Back to all interpretations"
+msgstr ""
+
+msgid "Could not load interpretation details"
+msgstr ""
+
+msgid "The request to fetch interpretation comments failed"
+msgstr ""
+
 msgid "Edit"
 msgstr "संपादन करें"
 
 msgid "Write a reply"
 msgstr ""
 
+msgid "Could not post reply"
+msgstr ""
+
 msgid "Post reply"
 msgstr ""
 
-msgid "Delete failed"
+msgid "Could not delete comment"
 msgstr ""
 
 msgid "Could not update comment"
@@ -555,6 +567,9 @@ msgstr ""
 msgid "Write an interpretation"
 msgstr ""
 
+msgid "Could not post interpretation"
+msgstr ""
+
 msgid ""
 "Other people viewing this interpretation in the future may see more data."
 msgstr ""
@@ -563,6 +578,12 @@ msgid "Post interpretation"
 msgstr ""
 
 msgid "Interpretations"
+msgstr ""
+
+msgid "Error loading interpretations"
+msgstr ""
+
+msgid "Could not load interpretations"
 msgstr ""
 
 msgid "Reply"
@@ -591,7 +612,13 @@ msgstr ""
 msgid "Share"
 msgstr "साझा करें"
 
+msgid "Could not delete interpretation"
+msgstr ""
+
 msgid "Manage sharing"
+msgstr ""
+
+msgid "Could not update interpretation text"
 msgstr ""
 
 msgid "Could not update interpretation"
@@ -604,7 +631,7 @@ msgid "Not available offline"
 msgstr ""
 
 msgid "Anyone"
-msgstr ""
+msgstr "कोई भी"
 
 msgid "Only you"
 msgstr ""
@@ -622,7 +649,7 @@ msgid "Created"
 msgstr ""
 
 msgid "Last updated"
-msgstr ""
+msgstr "अंतिम अपडेट"
 
 msgid "Clear filters"
 msgstr ""
@@ -650,7 +677,7 @@ msgid ""
 msgstr ""
 
 msgid "Create new"
-msgstr ""
+msgstr "नया बनाएँ"
 
 msgid "Open a visualization"
 msgstr ""
@@ -896,13 +923,13 @@ msgid "Last 4 bi-weeks"
 msgstr ""
 
 msgid "This month"
-msgstr ""
+msgstr "इस महीने"
 
 msgid "Last month"
-msgstr ""
+msgstr "पिछला महीना"
 
 msgid "Last 3 months"
-msgstr ""
+msgstr "पिछले 3 महीने"
 
 msgid "Last 6 months"
 msgstr ""
@@ -1304,7 +1331,7 @@ msgid "Date & Time"
 msgstr ""
 
 msgid "Time"
-msgstr ""
+msgstr "समय"
 
 msgid "Unit interval"
 msgstr ""
