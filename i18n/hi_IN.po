@@ -314,7 +314,7 @@ msgid "Back to all items"
 msgstr ""
 
 msgid "Options"
-msgstr ""
+msgstr "ऑप्शन्स"
 
 msgid "Selected items"
 msgstr ""
