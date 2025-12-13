@@ -18,7 +18,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "Data"
-msgstr ""
+msgstr "डेटा"
 
 msgid "Data Type"
 msgstr ""
@@ -69,40 +69,40 @@ msgid "Period type"
 msgstr ""
 
 msgid "January"
-msgstr ""
+msgstr "जनवरी"
 
 msgid "February"
-msgstr ""
+msgstr "फ़रवरी"
 
 msgid "March"
-msgstr ""
+msgstr "मार्च"
 
 msgid "April"
-msgstr ""
+msgstr "अप्रैल"
 
 msgid "May"
-msgstr ""
+msgstr "मई"
 
 msgid "June"
-msgstr ""
+msgstr "जून"
 
 msgid "July"
-msgstr ""
+msgstr "जुलाई"
 
 msgid "August"
-msgstr ""
+msgstr "अगस्त"
 
 msgid "September"
-msgstr ""
+msgstr "सितंबर"
 
 msgid "October"
-msgstr ""
+msgstr "अक्टूबर"
 
 msgid "November"
-msgstr ""
+msgstr "नवंबर"
 
 msgid "December"
-msgstr ""
+msgstr "दिसंबर"
 
 msgid "Week {{weekNumber}}"
 msgstr ""
@@ -120,16 +120,16 @@ msgid "Bi-weekly"
 msgstr ""
 
 msgid "Weekly (Start Wednesday)"
-msgstr ""
+msgstr "साप्ताहिक (बुधवार से शुरू)"
 
 msgid "Weekly (Start Thursday)"
-msgstr ""
+msgstr "साप्ताहिक (गुरुवार से शुरू)"
 
 msgid "Weekly (Start Saturday)"
-msgstr ""
+msgstr "साप्ताहिक (शनिवार से शुरू)"
 
 msgid "Weekly (Start Sunday)"
-msgstr ""
+msgstr "साप्ताहिक (रविवार से शुरू)"
 
 msgid "Monthly"
 msgstr "मासिक"
@@ -216,7 +216,7 @@ msgid "Last 6 months"
 msgstr ""
 
 msgid "Last 12 months"
-msgstr ""
+msgstr "पिछले 12 महीने"
 
 msgid "Months this year"
 msgstr ""
@@ -249,7 +249,7 @@ msgid "This six-month"
 msgstr ""
 
 msgid "Last six-month"
-msgstr ""
+msgstr "पिछला छः-मासिक"
 
 msgid "Last 2 six-month"
 msgstr ""
@@ -264,13 +264,13 @@ msgid "Last 5 financial years"
 msgstr ""
 
 msgid "This year"
-msgstr ""
+msgstr "इस वर्ष"
 
 msgid "Last year"
-msgstr ""
+msgstr "पिछला वर्ष"
 
 msgid "Last 5 years"
-msgstr ""
+msgstr "पिछले 5 वर्ष"
 
 msgid "Days"
 msgstr "दिन"
@@ -282,7 +282,7 @@ msgid "Bi-weeks"
 msgstr ""
 
 msgid "Months"
-msgstr ""
+msgstr "महीने"
 
 msgid "Bi-months"
 msgstr ""
@@ -297,7 +297,7 @@ msgid "Financial Years"
 msgstr ""
 
 msgid "Years"
-msgstr ""
+msgstr "वर्ष"
 
 msgid "Reporting rate"
 msgstr ""
@@ -327,7 +327,7 @@ msgid "[ All groups ]"
 msgstr ""
 
 msgid "Data elements"
-msgstr ""
+msgstr "डेटा एलिमेंट्स"
 
 msgid "Select data element group"
 msgstr ""
@@ -372,4 +372,4 @@ msgid "{{allDynamicOuNames}} groups in {{staticOuNames}}"
 msgstr ""
 
 msgid "No data"
-msgstr ""
+msgstr "कोई डेटा नहीं"
