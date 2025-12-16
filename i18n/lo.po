@@ -2,18 +2,18 @@
 # Translators:
 # Somkhit Bouavong <bouavongk@gmail.com>, 2022
 # Phouthasinh PHEUAYSITHIPHONE, 2023
-# Namwan Chanthavisouk, 2025
 # Thuy Nguyen <thuynguyen@hispvietnam.org>, 2025
 # Viktor Varland <viktor@dhis2.org>, 2025
 # Saysamone Sibounma, 2025
 # Philip Larsen Donnelly, 2025
+# Namwan Chanthavisouk, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2025-09-09T09:32:04.677Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Philip Larsen Donnelly, 2025\n"
+"Last-Translator: Namwan Chanthavisouk, 2025\n"
 "Language-Team: Lao (https://app.transifex.com/hisp-uio/teams/100509/lo/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1317,7 +1317,7 @@ msgid "Text"
 msgstr "ຂໍ້ຄວາມ"
 
 msgid "Long text"
-msgstr ""
+msgstr "ຂໍ້ຄວາມຍາວ"
 
 msgid "Multi text"
 msgstr ""
@@ -1347,7 +1347,7 @@ msgid "Time"
 msgstr "ເວລາ"
 
 msgid "Unit interval"
-msgstr ""
+msgstr "ຊ່ວງຫົວໜ່ວຍ (Unit interval)"
 
 msgid "Percentage"
 msgstr "ເປີເຊັນ"
@@ -1362,7 +1362,7 @@ msgid "Negative Integer"
 msgstr "Negative Integer"
 
 msgid "Positive or Zero Integer"
-msgstr ""
+msgstr "ຈຳນວນຖ້ວນບວກ ຫຼື ສູນ"
 
 msgid "Tracker Associate"
 msgstr "Tracker associate"
@@ -1374,7 +1374,7 @@ msgid "Coordinate"
 msgstr "ເສັ້ນສະແດງ"
 
 msgid "Reference"
-msgstr ""
+msgstr "ອ້າງອີງ"
 
 msgid "Age"
 msgstr "Age(years)"
@@ -1386,7 +1386,7 @@ msgid "Image"
 msgstr "ຮູບພາບ"
 
 msgid "GeoJSON"
-msgstr ""
+msgstr "GeoJSON"
 
 msgid "Pivot table"
 msgstr "ແບບຕາຕະລາງໄພວ໋ອດ"

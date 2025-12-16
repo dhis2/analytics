@@ -79,10 +79,10 @@ msgid "About this visualization"
 msgstr "O této vizualizaci"
 
 msgid "About this event chart"
-msgstr ""
+msgstr "O tomto grafu událostí"
 
 msgid "About this event report"
-msgstr ""
+msgstr "O této zprávě o události"
 
 msgid "This app could not retrieve required data."
 msgstr "Tato aplikace nemohla načíst požadovaná data."
@@ -167,13 +167,13 @@ msgid "Expression description"
 msgstr "Popis výrazu"
 
 msgid "Error loading value"
-msgstr ""
+msgstr "Chyba načítaní hodnoty"
 
 msgid "None"
 msgstr "Žádný"
 
 msgid "Data set(s)"
-msgstr ""
+msgstr "Datová sada(y)"
 
 msgid "Zero is significant"
 msgstr "Nula je významná"
@@ -197,19 +197,19 @@ msgid "Option set"
 msgstr "Sada možností"
 
 msgid "Group membership"
-msgstr ""
+msgstr "Členství ve skupině"
 
 msgid "Legend set(s)"
-msgstr ""
+msgstr "Sada(y) legend"
 
 msgid "Category option name"
-msgstr ""
+msgstr "Název možnosti kategorie"
 
 msgid "Category combo name"
-msgstr ""
+msgstr "Název kombinace kategorií"
 
 msgid "Categories name"
-msgstr ""
+msgstr "Název kategorie"
 
 msgid "Period type"
 msgstr "Typ období"
@@ -233,13 +233,13 @@ msgid "Numerator description"
 msgstr "Popis čitatele"
 
 msgid "Numerator expression"
-msgstr ""
+msgstr "Výraz čitatele"
 
 msgid "Denominator description"
 msgstr "Popis jmenovatele"
 
 msgid "Denominator expression"
-msgstr ""
+msgstr "Výraz jmenovatele"
 
 msgid "Annualized"
 msgstr "Anualizováno"
@@ -254,10 +254,10 @@ msgid "Indicator type"
 msgstr "Typ indikátoru"
 
 msgid "Decimals in output"
-msgstr ""
+msgstr "Desetinná místa ve výstupu"
 
 msgid "There was a problem loading information for this data item."
-msgstr ""
+msgstr "Při načítání informací pro tuto datovou položku došlo k problému."
 
 msgid "Name"
 msgstr "Název"
@@ -272,7 +272,7 @@ msgid "ID"
 msgstr "ID"
 
 msgid "Last updated date"
-msgstr ""
+msgstr "Datum poslední aktualizace"
 
 msgid "Created date"
 msgstr "Datum vytvoření"
@@ -299,7 +299,7 @@ msgid "Analytics period boundaries"
 msgstr "Hranice období Analytiky"
 
 msgid "{{ offsetPeriodType }} × {{ offsetPeriods }}"
-msgstr ""
+msgstr "{{ offsetPeriodType }} × {{ offsetPeriods }}"
 
 msgid "Expression"
 msgstr "Výraz"
@@ -308,28 +308,28 @@ msgid "Filter"
 msgstr "Filtr"
 
 msgid "All available options are already selected"
-msgstr ""
+msgstr "Všechny dostupné možnosti jsou již vybrány."
 
 msgid "No available options for this item"
-msgstr ""
+msgstr "Pro tuto položku nejsou k dispozici žádné možnosti."
 
 msgid "Search by option name"
-msgstr ""
+msgstr "Hledat podle názvu možnosti"
 
 msgid "Back to all items"
-msgstr ""
+msgstr "Zpět na všechny položky"
 
 msgid "Options"
 msgstr "Možnosti"
 
 msgid "Selected items"
-msgstr ""
+msgstr "Vybrané položky"
 
 msgid "Data Type"
 msgstr "Typ dat"
 
 msgid "Only {{dataType}} can be used in {{visType}}"
-msgstr ""
+msgstr "Pouze {{dataType}} lze použít v {{visType}}"
 
 msgid "All types"
 msgstr "Všechny typy"
@@ -347,7 +347,7 @@ msgid "Selected Items"
 msgstr "Vybrané položky"
 
 msgid "All available items are already selected"
-msgstr ""
+msgstr "Všechny dostupné položky jsou již vybrány"
 
 msgid "Calculation"
 msgstr "Výpočet"
@@ -389,13 +389,13 @@ msgid "No program indicators found for \"{{- searchTerm}}\""
 msgstr "Nebyly nalezeny žádné programové indikátory pro „{{- searchTerm}}“"
 
 msgid "No calculations found for \"{{- searchTerm}}\""
-msgstr ""
+msgstr "Nenalezeny žádné výpočty pro \"{{- searchTerm}}\""
 
 msgid "Nothing found for \"{{- searchTerm}}\""
 msgstr "Pro dotaz „{{- searchTerm}}“ nebylo nic nalezeno"
 
 msgid "Click to choose from available options"
-msgstr ""
+msgstr "Kliknutím vyberete z dostupných možností"
 
 msgid "Move to {{axisName}}"
 msgstr "Přesunout na {{axisName}}"
@@ -524,16 +524,16 @@ msgid "visualization"
 msgstr "vizualizace"
 
 msgid "Untitled {{visualizationType}}, {{date}}"
-msgstr ""
+msgstr "Bez názvu {{visualizationType}}, {{date}}"
 
 msgid "Back to all interpretations"
 msgstr "Zpět ke všem interpretacím"
 
 msgid "Could not load interpretation details"
-msgstr ""
+msgstr "Nepodařilo se načíst podrobnosti výkladu"
 
 msgid "The request to fetch interpretation comments failed"
-msgstr ""
+msgstr "Požadavek na načtení komentářů k výkladu se nezdařil"
 
 msgid "Edit"
 msgstr "Upravit"
@@ -542,13 +542,13 @@ msgid "Write a reply"
 msgstr "Napsat odpověď"
 
 msgid "Could not post reply"
-msgstr ""
+msgstr "Nelze odeslat odpověď"
 
 msgid "Post reply"
 msgstr "Odpovědět"
 
 msgid "Could not delete comment"
-msgstr ""
+msgstr "Nelze odstranit komentář"
 
 msgid "Could not update comment"
 msgstr "Komentář se nepodařilo aktualizovat"
@@ -579,11 +579,13 @@ msgid "Write an interpretation"
 msgstr "Napsat interpretaci"
 
 msgid "Could not post interpretation"
-msgstr ""
+msgstr "Nelze zveřejnit výklad"
 
 msgid ""
 "Other people viewing this interpretation in the future may see more data."
 msgstr ""
+"Další osoby, které si tento výklad prohlédnou v budoucnu, mohou vidět více "
+"údajů."
 
 msgid "Post interpretation"
 msgstr "Vložit interpretaci"
@@ -592,10 +594,10 @@ msgid "Interpretations"
 msgstr "Interpretace"
 
 msgid "Error loading interpretations"
-msgstr ""
+msgstr "Chyba při načítání výkladů"
 
 msgid "Could not load interpretations"
-msgstr ""
+msgstr "Nelze načíst interpretace"
 
 msgid "Reply"
 msgstr "Odpovědět"
@@ -608,7 +610,7 @@ msgstr[2] "{{count}} odpovědí"
 msgstr[3] "{{count}} odpovědi"
 
 msgid "View replies"
-msgstr ""
+msgstr "Zobrazit odpovědi"
 
 msgid "Unlike"
 msgstr "Na rozdíl od"
@@ -620,19 +622,19 @@ msgid "See interpretation"
 msgstr "Zobrazit interpretaci"
 
 msgid "Open in app"
-msgstr ""
+msgstr "Otevřít v aplikaci"
 
 msgid "Share"
 msgstr "Sdílet"
 
 msgid "Could not delete interpretation"
-msgstr ""
+msgstr "Nelze odstranit výklad"
 
 msgid "Manage sharing"
 msgstr "Spravovat sdílení"
 
 msgid "Could not update interpretation text"
-msgstr ""
+msgstr "Nelze aktualizovat text výkladu"
 
 msgid "Could not update interpretation"
 msgstr "Interpretaci nelze aktualizovat"
@@ -1060,7 +1062,7 @@ msgid "Years"
 msgstr "Let"
 
 msgid "Value: {{value}}"
-msgstr ""
+msgstr "Hodnota: {{value}}"
 
 msgid "Bold text"
 msgstr "Tučné písmo"
@@ -1084,7 +1086,7 @@ msgid "Back to write mode"
 msgstr "Zpět do režimu zápisu"
 
 msgid "Interpretations and details"
-msgstr ""
+msgstr "Výklady a podrobnosti"
 
 msgid "Translating to"
 msgstr "Překlad do"
@@ -1324,7 +1326,7 @@ msgid "{{thresholdFactor}} × Z-score high"
 msgstr "{{thresholdFactor}} × Z-skóre vysoké"
 
 msgid "Not applicable"
-msgstr ""
+msgstr "Nelze použít"
 
 msgid "Data"
 msgstr "Data"
@@ -1345,7 +1347,7 @@ msgid "Long text"
 msgstr "Dlouhý text"
 
 msgid "Multi text"
-msgstr ""
+msgstr "Více textů"
 
 msgid "Letter"
 msgstr "Písmeno"
