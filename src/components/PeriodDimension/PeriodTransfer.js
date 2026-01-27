@@ -1,7 +1,7 @@
 import { getNowInCalendar } from '@dhis2/multi-calendar-dates'
 import { IconInfo16, TabBar, Tab, Transfer } from '@dhis2/ui'
 import PropTypes from 'prop-types'
-import React, { useState } from 'react'
+import React, { useState, useMemo } from 'react'
 import PeriodIcon from '../../assets/DimensionItemIcons/PeriodIcon.js' //TODO: Reimplement the icon.js
 import i18n from '../../locales/index.js'
 import {
@@ -13,9 +13,20 @@ import styles from '../styles/DimensionSelector.style.js'
 import { TransferOption } from '../TransferOption.js'
 import FixedPeriodFilter from './FixedPeriodFilter.js'
 import RelativePeriodFilter from './RelativePeriodFilter.js'
-import { getFixedPeriodsOptionsById } from './utils/fixedPeriods.js'
-import { MONTHLY, QUARTERLY } from './utils/index.js'
-import { getRelativePeriodsOptionsById } from './utils/relativePeriods.js'
+import {
+    filterEnabledFixedPeriodTypes,
+    filterEnabledRelativePeriodTypes,
+    findBestAvailableRelativePeriod,
+} from './utils/enabledPeriodTypes.js'
+import {
+    getFixedPeriodsOptionsById,
+    getFixedPeriodsOptions,
+} from './utils/fixedPeriods.js'
+import { MONTHLY, QUARTERLY, filterPeriodTypesById } from './utils/index.js'
+import {
+    getRelativePeriodsOptionsById,
+    getRelativePeriodsOptions,
+} from './utils/relativePeriods.js'
 
 const RightHeader = ({ infoBoxMessage }) => (
     <>
@@ -48,13 +59,73 @@ const PeriodTransfer = ({
     periodsSettings = PERIODS_SETTINGS_PROP_DEFAULT,
     infoBoxMessage,
     height = TRANSFER_HEIGHT,
+    enabledPeriodTypesData = null,
+    supportsEnabledPeriodTypes = false,
 }) => {
-    const defaultRelativePeriodType = excludedPeriodTypes.includes(MONTHLY)
-        ? getRelativePeriodsOptionsById(QUARTERLY)
-        : getRelativePeriodsOptionsById(MONTHLY)
-    const defaultFixedPeriodType = excludedPeriodTypes.includes(MONTHLY)
-        ? getFixedPeriodsOptionsById(QUARTERLY, periodsSettings)
-        : getFixedPeriodsOptionsById(MONTHLY, periodsSettings)
+    // Get filtered period options based on enabled types (v43+) or exclude list (v40-42)
+    const { filteredFixedOptions, filteredRelativeOptions } = useMemo(() => {
+        if (supportsEnabledPeriodTypes && enabledPeriodTypesData) {
+            // v43+: Use server-provided enabled period types (ignore excludedPeriodTypes)
+            const { enabledTypes, financialYearStart } = enabledPeriodTypesData
+
+            const filteredFixed = filterEnabledFixedPeriodTypes(
+                getFixedPeriodsOptions(periodsSettings),
+                enabledTypes
+            )
+
+            const filteredRelative = filterEnabledRelativePeriodTypes(
+                getRelativePeriodsOptions(),
+                enabledTypes,
+                financialYearStart
+            )
+
+            return {
+                filteredFixedOptions: filteredFixed,
+                filteredRelativeOptions: filteredRelative,
+            }
+        } else {
+            // v40-42: Fallback to old behavior with legacy excluded period types
+            // (based on keyHide*Periods system settings from consuming apps)
+            const allFixed = getFixedPeriodsOptions(periodsSettings)
+            const allRelative = getRelativePeriodsOptions()
+
+            return {
+                filteredFixedOptions: filterPeriodTypesById(
+                    allFixed,
+                    excludedPeriodTypes
+                ),
+                filteredRelativeOptions: filterPeriodTypesById(
+                    allRelative,
+                    excludedPeriodTypes
+                ),
+            }
+        }
+    }, [
+        supportsEnabledPeriodTypes,
+        enabledPeriodTypesData,
+        excludedPeriodTypes,
+        periodsSettings,
+    ])
+
+    // Choose default period types from filtered options
+    const bestRelativePeriod = useMemo(() => {
+        if (supportsEnabledPeriodTypes && enabledPeriodTypesData) {
+            const { analysisRelativePeriod } = enabledPeriodTypesData
+            return findBestAvailableRelativePeriod(filteredRelativeOptions, analysisRelativePeriod)
+        }
+        return null
+    }, [supportsEnabledPeriodTypes, enabledPeriodTypesData, filteredRelativeOptions])
+
+    const defaultRelativePeriodType = supportsEnabledPeriodTypes && bestRelativePeriod
+        ? filteredRelativeOptions.find((opt) => opt.id === bestRelativePeriod.categoryId)
+        : (filteredRelativeOptions.find((opt) => opt.id === MONTHLY) ||
+           filteredRelativeOptions.find((opt) => opt.id === QUARTERLY) ||
+           filteredRelativeOptions[0])
+
+    const defaultFixedPeriodType =
+        filteredFixedOptions.find((opt) => opt.id === MONTHLY) ||
+        filteredFixedOptions.find((opt) => opt.id === QUARTERLY) ||
+        filteredFixedOptions[0]
 
     const now = getNowInCalendar(periodsSettings.calendar)
     // use ".eraYear" rather than ".year" because in Ethiopian calendar, eraYear is what our users expect to see (for other calendars, it doesn't matter)
@@ -68,14 +139,14 @@ const PeriodTransfer = ({
     })
 
     const [allPeriods, setAllPeriods] = useState(
-        defaultRelativePeriodType.getPeriods()
+        defaultRelativePeriodType?.getPeriods() || []
     )
     const [isRelative, setIsRelative] = useState(true)
     const [relativeFilter, setRelativeFilter] = useState({
-        periodType: defaultRelativePeriodType.id,
+        periodType: defaultRelativePeriodType?.id || '',
     })
     const [fixedFilter, setFixedFilter] = useState({
-        periodType: defaultFixedPeriodType.id,
+        periodType: defaultFixedPeriodType?.id || '',
         year: defaultFixedPeriodYear.toString(),
     })
 
@@ -124,13 +195,14 @@ const PeriodTransfer = ({
                         currentFilter={relativeFilter.periodType}
                         onSelectFilter={(filter) => {
                             setRelativeFilter({ periodType: filter })
-                            setAllPeriods(
-                                getRelativePeriodsOptionsById(
-                                    filter
-                                ).getPeriods()
+                            const selectedOption = filteredRelativeOptions.find(
+                                (opt) => opt.id === filter
                             )
+                            setAllPeriods(selectedOption?.getPeriods() || [])
                         }}
                         dataTest={`${dataTest}-relative-period-filter`}
+                        availableOptions={filteredRelativeOptions}
+                        supportsEnabledPeriodTypes={supportsEnabledPeriodTypes}
                         excludedPeriodTypes={excludedPeriodTypes}
                     />
                 ) : (
@@ -150,6 +222,8 @@ const PeriodTransfer = ({
                             })
                         }}
                         dataTest={`${dataTest}-fixed-period-filter`}
+                        availableOptions={filteredFixedOptions}
+                        supportsEnabledPeriodTypes={supportsEnabledPeriodTypes}
                         excludedPeriodTypes={excludedPeriodTypes}
                     />
                 )}
@@ -162,14 +236,13 @@ const PeriodTransfer = ({
         setFixedFilter(filter)
 
         if (filter.year.match(/[0-9]{4}/)) {
+            const selectedOption = filteredFixedOptions.find(
+                (opt) => opt.id === filter.periodType
+            )
             setAllPeriods(
-                getFixedPeriodsOptionsById(
-                    filter.periodType,
-                    periodsSettings
-                ).getPeriods(
-                    fixedPeriodConfig(Number(filter.year)),
-                    periodsSettings
-                )
+                selectedOption?.getPeriods(
+                    fixedPeriodConfig(Number(filter.year))
+                ) || []
             )
         }
     }
@@ -227,6 +300,10 @@ const PeriodTransfer = ({
 PeriodTransfer.propTypes = {
     onSelect: PropTypes.func.isRequired,
     dataTest: PropTypes.string,
+    enabledPeriodTypesData: PropTypes.shape({
+        enabledTypes: PropTypes.array,
+        financialYearStart: PropTypes.string,
+    }),
     excludedPeriodTypes: PropTypes.arrayOf(PropTypes.string),
     height: PropTypes.string,
     infoBoxMessage: PropTypes.string,
@@ -242,6 +319,7 @@ PeriodTransfer.propTypes = {
             name: PropTypes.string,
         })
     ),
+    supportsEnabledPeriodTypes: PropTypes.bool,
 }
 
 export default PeriodTransfer

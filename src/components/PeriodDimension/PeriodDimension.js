@@ -1,6 +1,6 @@
 import { useConfig, useDataQuery } from '@dhis2/app-runtime'
 import PropTypes from 'prop-types'
-import React from 'react'
+import React, { useMemo } from 'react'
 import { DIMENSION_ID_PERIOD } from '../../modules/predefinedDimensions.js'
 import PeriodTransfer from './PeriodTransfer.js'
 
@@ -10,6 +10,24 @@ const userSettingsQuery = {
         params: {
             key: ['keyUiLocale'],
         },
+    },
+}
+
+const enabledPeriodTypesQuery = {
+    enabledPeriodTypes: {
+        resource: 'configuration/dataOutputPeriodTypes',
+    },
+}
+
+const financialYearStartQuery = {
+    financialYearStart: {
+        resource: 'systemSettings/analyticsFinancialYearStart',
+    },
+}
+
+const analysisRelativePeriodQuery = {
+    analysisRelativePeriod: {
+        resource: 'systemSettings/keyAnalysisRelativePeriod',
     },
 }
 
@@ -23,13 +41,103 @@ const PeriodDimension = ({
     infoBoxMessage,
     height,
 }) => {
-    const { systemInfo } = useConfig()
-    const result = useDataQuery(userSettingsQuery)
+    const config = useConfig()
+    const { systemInfo, serverVersion } = config
+    const userSettingsResult = useDataQuery(userSettingsQuery)
+
+    const supportsEnabledPeriodTypes = serverVersion.minor >= 43
+
+    // Conditionally fetch enabled period types for v43+
+    const enabledPeriodTypesResult = useDataQuery(
+        supportsEnabledPeriodTypes ? enabledPeriodTypesQuery : { skip: true }
+    )
+
+    // Conditionally fetch financial year start setting for v43+
+    const financialYearStartResult = useDataQuery(
+        supportsEnabledPeriodTypes ? financialYearStartQuery : { skip: true }
+    )
+
+    // Conditionally fetch analysis relative period setting for v43+
+    const analysisRelativePeriodResult = useDataQuery(
+        supportsEnabledPeriodTypes ? analysisRelativePeriodQuery : { skip: true }
+    )
 
     const { calendar = 'gregory' } = systemInfo
-    const { data: { userSettings: { keyUiLocale: locale } = {} } = {} } = result
+    const { data: { userSettings: { keyUiLocale: locale } = {} } = {} } =
+        userSettingsResult
 
     const periodsSettings = { calendar, locale }
+
+    // Process enabled period types and validate financial year setting
+    const enabledPeriodTypesData = useMemo(() => {
+        if (!supportsEnabledPeriodTypes) {
+            return null
+        }
+
+        const { data: enabledTypesData, error: enabledTypesError } =
+            enabledPeriodTypesResult
+        const { data: fyStartData, error: fyStartError } =
+            financialYearStartResult
+        const { data: analysisRpData, error: analysisRpError } =
+            analysisRelativePeriodResult
+
+        if (enabledTypesError || fyStartError || analysisRpError) {
+            return null
+        }
+
+        if (!enabledTypesData?.enabledPeriodTypes) {
+            return null
+        }
+
+        const enabledTypes = enabledTypesData.enabledPeriodTypes
+
+        // Handle empty enabled types
+        if (!enabledTypes || enabledTypes.length === 0) {
+            alert(
+                'No period types are enabled in the system. Please contact your system administrator.'
+            )
+            return {
+                enabledTypes: [],
+                financialYearStart: null,
+                analysisRelativePeriod: null
+            }
+        }
+
+        // Process financial year start setting
+        let financialYearStart = null
+        if (fyStartData?.financialYearStart?.analyticsFinancialYearStart) {
+            const fyStartValue =
+                fyStartData.financialYearStart.analyticsFinancialYearStart
+
+            // Map system setting to server PT name
+            const FY_SETTING_TO_SERVER_PT = {
+                FINANCIAL_YEAR_APRIL: 'FinancialApril',
+                FINANCIAL_YEAR_JULY: 'FinancialJuly',
+                FINANCIAL_YEAR_SEPTEMBER: 'FinancialSep',
+                FINANCIAL_YEAR_OCTOBER: 'FinancialOct',
+                FINANCIAL_YEAR_NOVEMBER: 'FinancialNov',
+            }
+
+            const mappedFyPt = FY_SETTING_TO_SERVER_PT[fyStartValue]
+            if (
+                mappedFyPt &&
+                enabledTypes.some((pt) => pt.name === mappedFyPt)
+            ) {
+                financialYearStart = fyStartValue
+            }
+        }
+
+        // Process analysis relative period setting
+        const analysisRelativePeriod =
+            analysisRpData?.analysisRelativePeriod?.keyAnalysisRelativePeriod || null
+
+        return { enabledTypes, financialYearStart, analysisRelativePeriod }
+    }, [
+        supportsEnabledPeriodTypes,
+        enabledPeriodTypesResult,
+        financialYearStartResult,
+        analysisRelativePeriodResult,
+    ])
 
     const selectPeriods = (periods) => {
         onSelect({
@@ -47,6 +155,8 @@ const PeriodDimension = ({
             excludedPeriodTypes={excludedPeriodTypes}
             periodsSettings={periodsSettings}
             height={height}
+            enabledPeriodTypesData={enabledPeriodTypesData}
+            supportsEnabledPeriodTypes={supportsEnabledPeriodTypes}
         />
     )
 }
