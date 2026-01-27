@@ -31,3 +31,4 @@ bundle.stats.json
 # DHIS2 Platform
 .d2
 src/locales
+CLAUDE.md
