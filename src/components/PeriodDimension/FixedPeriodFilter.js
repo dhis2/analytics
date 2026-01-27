@@ -16,11 +16,29 @@ const FixedPeriodFilter = ({
     onSelectPeriodType,
     onSelectYear,
     dataTest,
+    availableOptions = null,
+    supportsEnabledPeriodTypes = false,
 }) => {
+    // Determine which period options to show
+    let periodOptions
+    if (supportsEnabledPeriodTypes && availableOptions) {
+        // v43+: Use server-provided enabled period types
+        periodOptions = availableOptions
+    } else if (allowedPeriodTypes) {
+        // Legacy: Filter by allowedPeriodTypes if provided
+        periodOptions = getFixedPeriodsOptions().filter((option) =>
+            allowedPeriodTypes.some((type) => type === option.id)
+        )
+    } else {
+        // v40-42: Filter by legacy excluded period types (keyHide*Periods system settings)
+        periodOptions = filterPeriodTypesById(
+            getFixedPeriodsOptions(),
+            excludedPeriodTypes
+        )
+    }
+
     const onlyAllowedTypeIsSelected =
-        Array.isArray(allowedPeriodTypes) &&
-        allowedPeriodTypes.length === 1 &&
-        allowedPeriodTypes[0] === currentPeriodType
+        periodOptions.length === 1 && periodOptions[0].id === currentPeriodType
 
     return (
         <>
@@ -34,17 +52,7 @@ const FixedPeriodFilter = ({
                     className="filterElement"
                     dataTest={`${dataTest}-period-type`}
                 >
-                    {(allowedPeriodTypes
-                        ? getFixedPeriodsOptions().filter((option) =>
-                              allowedPeriodTypes.some(
-                                  (type) => type === option.id
-                              )
-                          )
-                        : filterPeriodTypesById(
-                              getFixedPeriodsOptions(),
-                              excludedPeriodTypes
-                          )
-                    ).map((option) => (
+                    {periodOptions.map((option) => (
                         <SingleSelectOption
                             key={option.id}
                             value={option.id}
@@ -77,8 +85,10 @@ FixedPeriodFilter.propTypes = {
     onSelectPeriodType: PropTypes.func.isRequired,
     onSelectYear: PropTypes.func.isRequired,
     allowedPeriodTypes: PropTypes.arrayOf(PropTypes.string),
+    availableOptions: PropTypes.array,
     dataTest: PropTypes.string,
     excludedPeriodTypes: PropTypes.arrayOf(PropTypes.string),
+    supportsEnabledPeriodTypes: PropTypes.bool,
 }
 
 export default FixedPeriodFilter
