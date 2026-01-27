@@ -111,16 +111,26 @@ const PeriodTransfer = ({
     const bestRelativePeriod = useMemo(() => {
         if (supportsEnabledPeriodTypes && enabledPeriodTypesData) {
             const { analysisRelativePeriod } = enabledPeriodTypesData
-            return findBestAvailableRelativePeriod(filteredRelativeOptions, analysisRelativePeriod)
+            return findBestAvailableRelativePeriod(
+                filteredRelativeOptions,
+                analysisRelativePeriod
+            )
         }
         return null
-    }, [supportsEnabledPeriodTypes, enabledPeriodTypesData, filteredRelativeOptions])
+    }, [
+        supportsEnabledPeriodTypes,
+        enabledPeriodTypesData,
+        filteredRelativeOptions,
+    ])
 
-    const defaultRelativePeriodType = supportsEnabledPeriodTypes && bestRelativePeriod
-        ? filteredRelativeOptions.find((opt) => opt.id === bestRelativePeriod.categoryId)
-        : (filteredRelativeOptions.find((opt) => opt.id === MONTHLY) ||
-           filteredRelativeOptions.find((opt) => opt.id === QUARTERLY) ||
-           filteredRelativeOptions[0])
+    const defaultRelativePeriodType =
+        supportsEnabledPeriodTypes && bestRelativePeriod
+            ? filteredRelativeOptions.find(
+                  (opt) => opt.id === bestRelativePeriod.categoryId
+              )
+            : filteredRelativeOptions.find((opt) => opt.id === MONTHLY) ||
+              filteredRelativeOptions.find((opt) => opt.id === QUARTERLY) ||
+              filteredRelativeOptions[0]
 
     const defaultFixedPeriodType =
         filteredFixedOptions.find((opt) => opt.id === MONTHLY) ||

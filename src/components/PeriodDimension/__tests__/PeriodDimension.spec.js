@@ -4,7 +4,10 @@ import React from 'react'
 import PeriodDimension from '../PeriodDimension.js'
 
 jest.mock('@dhis2/app-runtime', () => ({
-    useConfig: () => ({ systemInfo: {} }),
+    useConfig: () => ({
+        systemInfo: {},
+        serverVersion: { minor: 42 }, // Mock v42 to test legacy behavior
+    }),
     useDataQuery: () => ({ data: { userSettings: { keyUiLocale: 'en' } } }),
 }))
 
