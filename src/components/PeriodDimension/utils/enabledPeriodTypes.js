@@ -51,7 +51,9 @@ export const filterEnabledFixedPeriodTypes = (
         return []
     }
 
-    const enabledServerPtNames = enabledServerPeriodTypes.map((pt) => pt.name)
+    const enabledServerPtNames = new Set(
+        enabledServerPeriodTypes.map((pt) => pt.name)
+    )
     const enabledMultiCalendarPts = new Set()
 
     // Map server PT names to multi-calendar-dates constants
@@ -84,7 +86,9 @@ export const filterEnabledRelativePeriodTypes = (
         return []
     }
 
-    const enabledServerPtNames = enabledServerPeriodTypes.map((pt) => pt.name)
+    const enabledServerPtNames = new Set(
+        enabledServerPeriodTypes.map((pt) => pt.name)
+    )
 
     return allRelativePeriodOptions.filter((option) => {
         // Special handling for financial years
@@ -99,7 +103,7 @@ export const filterEnabledRelativePeriodTypes = (
         }
 
         return requiredFpTypes.some((fpType) =>
-            enabledServerPtNames.includes(fpType)
+            enabledServerPtNames.has(fpType)
         )
     })
 }
