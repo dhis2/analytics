@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2025-09-09T09:32:04.677Z\n"
-"PO-Revision-Date: 2025-09-09T09:32:04.678Z\n"
+"POT-Creation-Date: 2026-01-27T09:57:38.828Z\n"
+"PO-Revision-Date: 2026-01-27T09:57:38.828Z\n"
 
 msgid "view only"
 msgstr "view only"
@@ -821,6 +821,16 @@ msgstr "Period"
 
 msgid "Selected Periods"
 msgstr "Selected Periods"
+
+msgid "No period types available"
+msgstr "No period types available"
+
+msgid ""
+"No period types are enabled in the system. Please contact your system "
+"administrator."
+msgstr ""
+"No period types are enabled in the system. Please contact your system "
+"administrator."
 
 msgid "Relative periods"
 msgstr "Relative periods"

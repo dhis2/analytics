@@ -1,5 +1,5 @@
 import { getNowInCalendar } from '@dhis2/multi-calendar-dates'
-import { IconInfo16, TabBar, Tab, Transfer } from '@dhis2/ui'
+import { IconInfo16, NoticeBox, TabBar, Tab, Transfer } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useState, useMemo } from 'react'
 import PeriodIcon from '../../assets/DimensionItemIcons/PeriodIcon.js' //TODO: Reimplement the icon.js
@@ -18,15 +18,9 @@ import {
     filterEnabledRelativePeriodTypes,
     findBestAvailableRelativePeriod,
 } from './utils/enabledPeriodTypes.js'
-import {
-    getFixedPeriodsOptionsById,
-    getFixedPeriodsOptions,
-} from './utils/fixedPeriods.js'
+import { getFixedPeriodsOptions } from './utils/fixedPeriods.js'
 import { MONTHLY, QUARTERLY, filterPeriodTypesById } from './utils/index.js'
-import {
-    getRelativePeriodsOptionsById,
-    getRelativePeriodsOptions,
-} from './utils/relativePeriods.js'
+import { getRelativePeriodsOptions } from './utils/relativePeriods.js'
 
 const RightHeader = ({ infoBoxMessage }) => (
     <>
@@ -62,10 +56,8 @@ const PeriodTransfer = ({
     enabledPeriodTypesData = null,
     supportsEnabledPeriodTypes = false,
 }) => {
-    // Get filtered period options based on enabled types (v43+) or exclude list (v40-42)
     const { filteredFixedOptions, filteredRelativeOptions } = useMemo(() => {
         if (supportsEnabledPeriodTypes && enabledPeriodTypesData) {
-            // v43+: Use server-provided enabled period types (ignore excludedPeriodTypes)
             const { enabledTypes, financialYearStart } = enabledPeriodTypesData
 
             const filteredFixed = filterEnabledFixedPeriodTypes(
@@ -84,8 +76,6 @@ const PeriodTransfer = ({
                 filteredRelativeOptions: filteredRelative,
             }
         } else {
-            // v40-42: Fallback to old behavior with legacy excluded period types
-            // (based on keyHide*Periods system settings from consuming apps)
             const allFixed = getFixedPeriodsOptions(periodsSettings)
             const allRelative = getRelativePeriodsOptions()
 
@@ -107,7 +97,6 @@ const PeriodTransfer = ({
         periodsSettings,
     ])
 
-    // Choose default period types from filtered options
     const bestRelativePeriod = useMemo(() => {
         if (supportsEnabledPeriodTypes && enabledPeriodTypesData) {
             const { analysisRelativePeriod } = enabledPeriodTypesData
@@ -168,17 +157,32 @@ const PeriodTransfer = ({
     const onIsRelativeClick = (state) => {
         if (state !== isRelative) {
             setIsRelative(state)
-            setAllPeriods(
-                state
-                    ? getRelativePeriodsOptionsById(
-                          relativeFilter.periodType
-                      ).getPeriods()
-                    : getFixedPeriodsOptionsById(
-                          fixedFilter.periodType,
-                          periodsSettings
-                      ).getPeriods(fixedPeriodConfig(Number(fixedFilter.year)))
-            )
+            if (state) {
+                const selectedOption = filteredRelativeOptions.find(
+                    (opt) => opt.id === relativeFilter.periodType
+                )
+                setAllPeriods(selectedOption?.getPeriods() || [])
+            } else {
+                const selectedOption = filteredFixedOptions.find(
+                    (opt) => opt.id === fixedFilter.periodType
+                )
+                setAllPeriods(
+                    selectedOption?.getPeriods(
+                        fixedPeriodConfig(Number(fixedFilter.year))
+                    ) || []
+                )
+            }
         }
+    }
+
+    if (enabledPeriodTypesData?.noEnabledTypes) {
+        return (
+            <NoticeBox warning title={i18n.t('No period types available')}>
+                {i18n.t(
+                    'No period types are enabled in the system. Please contact your system administrator.'
+                )}
+            </NoticeBox>
+        )
     }
 
     const renderLeftHeader = () => (
@@ -212,8 +216,6 @@ const PeriodTransfer = ({
                         }}
                         dataTest={`${dataTest}-relative-period-filter`}
                         availableOptions={filteredRelativeOptions}
-                        supportsEnabledPeriodTypes={supportsEnabledPeriodTypes}
-                        excludedPeriodTypes={excludedPeriodTypes}
                     />
                 ) : (
                     <FixedPeriodFilter
@@ -233,8 +235,6 @@ const PeriodTransfer = ({
                         }}
                         dataTest={`${dataTest}-fixed-period-filter`}
                         availableOptions={filteredFixedOptions}
-                        supportsEnabledPeriodTypes={supportsEnabledPeriodTypes}
-                        excludedPeriodTypes={excludedPeriodTypes}
                     />
                 )}
             </div>
@@ -311,8 +311,10 @@ PeriodTransfer.propTypes = {
     onSelect: PropTypes.func.isRequired,
     dataTest: PropTypes.string,
     enabledPeriodTypesData: PropTypes.shape({
+        analysisRelativePeriod: PropTypes.string,
         enabledTypes: PropTypes.array,
         financialYearStart: PropTypes.string,
+        noEnabledTypes: PropTypes.bool,
     }),
     excludedPeriodTypes: PropTypes.arrayOf(PropTypes.string),
     height: PropTypes.string,

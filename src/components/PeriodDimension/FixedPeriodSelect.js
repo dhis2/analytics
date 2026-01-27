@@ -7,6 +7,7 @@ import styles from './styles/FixedPeriodSelect.style.js'
 import {
     parsePeriodCode,
     getFixedPeriodsOptionsById as getPeriodById,
+    getFixedPeriodsOptions,
     getYearOffsetFromNow,
 } from './utils/fixedPeriods.js'
 
@@ -63,6 +64,13 @@ class FixedPeriodSelect extends Component {
     }
 
     render() {
+        const allOptions = getFixedPeriodsOptions()
+        const availableOptions = this.props.allowedPeriodTypes
+            ? allOptions.filter((option) =>
+                  this.props.allowedPeriodTypes.includes(option.id)
+              )
+            : allOptions
+
         return (
             <div
                 data-test={this.props.dataTest}
@@ -70,7 +78,7 @@ class FixedPeriodSelect extends Component {
             >
                 <div className="row">
                     <FixedPeriodFilter
-                        allowedPeriodTypes={this.props.allowedPeriodTypes}
+                        availableOptions={availableOptions}
                         currentPeriodType={this.state.periodType}
                         currentYear={this.state.year}
                         onSelectPeriodType={this.onSelectPeriodType}
