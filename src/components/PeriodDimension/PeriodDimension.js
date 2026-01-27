@@ -59,7 +59,9 @@ const PeriodDimension = ({
 
     // Conditionally fetch analysis relative period setting for v43+
     const analysisRelativePeriodResult = useDataQuery(
-        supportsEnabledPeriodTypes ? analysisRelativePeriodQuery : { skip: true }
+        supportsEnabledPeriodTypes
+            ? analysisRelativePeriodQuery
+            : { skip: true }
     )
 
     const { calendar = 'gregory' } = systemInfo
@@ -99,7 +101,7 @@ const PeriodDimension = ({
             return {
                 enabledTypes: [],
                 financialYearStart: null,
-                analysisRelativePeriod: null
+                analysisRelativePeriod: null,
             }
         }
 
@@ -129,7 +131,8 @@ const PeriodDimension = ({
 
         // Process analysis relative period setting
         const analysisRelativePeriod =
-            analysisRpData?.analysisRelativePeriod?.keyAnalysisRelativePeriod || null
+            analysisRpData?.analysisRelativePeriod?.keyAnalysisRelativePeriod ||
+            null
 
         return { enabledTypes, financialYearStart, analysisRelativePeriod }
     }, [

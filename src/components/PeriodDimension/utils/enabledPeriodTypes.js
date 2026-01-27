@@ -135,20 +135,23 @@ export const ANALYSIS_RELATIVE_PERIOD_MAPPING = {
     LAST_10_YEARS: { id: 'LAST_10_YEARS', category: 'YEARLY' },
     THIS_FINANCIAL_YEAR: { id: 'THIS_FINANCIAL_YEAR', category: 'FINANCIAL' },
     LAST_FINANCIAL_YEAR: { id: 'LAST_FINANCIAL_YEAR', category: 'FINANCIAL' },
-    LAST_5_FINANCIAL_YEARS: { id: 'LAST_5_FINANCIAL_YEARS', category: 'FINANCIAL' },
+    LAST_5_FINANCIAL_YEARS: {
+        id: 'LAST_5_FINANCIAL_YEARS',
+        category: 'FINANCIAL',
+    },
 }
 
 // Fallback priority order for RP categories (closest to most commonly used)
 const RP_CATEGORY_FALLBACK_ORDER = [
-    'MONTHLY',    // Most common
-    'QUARTERLY',  // Close alternative to monthly
-    'YEARLY',     // Longer term view
-    'WEEKLY',     // More granular
+    'MONTHLY', // Most common
+    'QUARTERLY', // Close alternative to monthly
+    'YEARLY', // Longer term view
+    'WEEKLY', // More granular
     'SIXMONTHLY', // Mid-term
-    'BIMONTHLY',  // Less common
-    'FINANCIAL',  // Depends on system config
-    'BIWEEKLY',   // Least common
-    'DAILY',      // Very granular
+    'BIMONTHLY', // Less common
+    'FINANCIAL', // Depends on system config
+    'BIWEEKLY', // Least common
+    'DAILY', // Very granular
 ]
 
 /**
@@ -157,16 +160,25 @@ const RP_CATEGORY_FALLBACK_ORDER = [
  * @param {string|null} analysisRelativePeriod - System setting value
  * @returns {Object} { categoryId, periodId } or null
  */
-export const findBestAvailableRelativePeriod = (enabledRelativeOptions, analysisRelativePeriod) => {
+export const findBestAvailableRelativePeriod = (
+    enabledRelativeOptions,
+    analysisRelativePeriod
+) => {
     if (!enabledRelativeOptions || enabledRelativeOptions.length === 0) {
         return null
     }
 
-    const enabledCategoryIds = new Set(enabledRelativeOptions.map(opt => opt.id))
+    const enabledCategoryIds = new Set(
+        enabledRelativeOptions.map((opt) => opt.id)
+    )
 
     // Try to use the configured analysis relative period first
-    if (analysisRelativePeriod && ANALYSIS_RELATIVE_PERIOD_MAPPING[analysisRelativePeriod]) {
-        const { id: periodId, category: categoryId } = ANALYSIS_RELATIVE_PERIOD_MAPPING[analysisRelativePeriod]
+    if (
+        analysisRelativePeriod &&
+        ANALYSIS_RELATIVE_PERIOD_MAPPING[analysisRelativePeriod]
+    ) {
+        const { id: periodId, category: categoryId } =
+            ANALYSIS_RELATIVE_PERIOD_MAPPING[analysisRelativePeriod]
 
         if (enabledCategoryIds.has(categoryId)) {
             return { categoryId, periodId }
@@ -177,13 +189,15 @@ export const findBestAvailableRelativePeriod = (enabledRelativeOptions, analysis
     for (const categoryId of RP_CATEGORY_FALLBACK_ORDER) {
         if (enabledCategoryIds.has(categoryId)) {
             // Use the first period from that category as default
-            const categoryOption = enabledRelativeOptions.find(opt => opt.id === categoryId)
+            const categoryOption = enabledRelativeOptions.find(
+                (opt) => opt.id === categoryId
+            )
             const periods = categoryOption?.getPeriods() || []
             const defaultPeriod = periods[0]
 
             return {
                 categoryId,
-                periodId: defaultPeriod?.id || null
+                periodId: defaultPeriod?.id || null,
             }
         }
     }
@@ -194,6 +208,6 @@ export const findBestAvailableRelativePeriod = (enabledRelativeOptions, analysis
 
     return {
         categoryId: firstCategory?.id || null,
-        periodId: firstPeriod?.id || null
+        periodId: firstPeriod?.id || null,
     }
 }
