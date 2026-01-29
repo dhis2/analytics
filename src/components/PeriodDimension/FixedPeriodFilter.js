@@ -3,14 +3,9 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import i18n from '../../locales/index.js'
 import styles from './styles/PeriodFilter.style.js'
-import { getFixedPeriodsOptions } from './utils/fixedPeriods.js'
-import { filterPeriodTypesById } from './utils/index.js'
-
-const EXCLUDED_PERIOD_TYPES_PROP_DEFAULT = []
 
 const FixedPeriodFilter = ({
-    allowedPeriodTypes,
-    excludedPeriodTypes = EXCLUDED_PERIOD_TYPES_PROP_DEFAULT,
+    availableOptions,
     currentPeriodType,
     currentYear,
     onSelectPeriodType,
@@ -18,9 +13,8 @@ const FixedPeriodFilter = ({
     dataTest,
 }) => {
     const onlyAllowedTypeIsSelected =
-        Array.isArray(allowedPeriodTypes) &&
-        allowedPeriodTypes.length === 1 &&
-        allowedPeriodTypes[0] === currentPeriodType
+        availableOptions.length === 1 &&
+        availableOptions[0].id === currentPeriodType
 
     return (
         <>
@@ -34,17 +28,7 @@ const FixedPeriodFilter = ({
                     className="filterElement"
                     dataTest={`${dataTest}-period-type`}
                 >
-                    {(allowedPeriodTypes
-                        ? getFixedPeriodsOptions().filter((option) =>
-                              allowedPeriodTypes.some(
-                                  (type) => type === option.id
-                              )
-                          )
-                        : filterPeriodTypesById(
-                              getFixedPeriodsOptions(),
-                              excludedPeriodTypes
-                          )
-                    ).map((option) => (
+                    {availableOptions.map((option) => (
                         <SingleSelectOption
                             key={option.id}
                             value={option.id}
@@ -72,13 +56,12 @@ const FixedPeriodFilter = ({
 }
 
 FixedPeriodFilter.propTypes = {
+    availableOptions: PropTypes.array.isRequired,
     currentPeriodType: PropTypes.string.isRequired,
     currentYear: PropTypes.string.isRequired,
     onSelectPeriodType: PropTypes.func.isRequired,
     onSelectYear: PropTypes.func.isRequired,
-    allowedPeriodTypes: PropTypes.arrayOf(PropTypes.string),
     dataTest: PropTypes.string,
-    excludedPeriodTypes: PropTypes.arrayOf(PropTypes.string),
 }
 
 export default FixedPeriodFilter

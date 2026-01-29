@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2025-09-09T09:32:04.677Z\n"
-"PO-Revision-Date: 2025-09-09T09:32:04.678Z\n"
+"POT-Creation-Date: 2026-01-29T11:57:17.738Z\n"
+"PO-Revision-Date: 2026-01-29T11:57:17.738Z\n"
 
 msgid "view only"
 msgstr "view only"
@@ -822,6 +822,16 @@ msgstr "Period"
 msgid "Selected Periods"
 msgstr "Selected Periods"
 
+msgid "No period types available"
+msgstr "No period types available"
+
+msgid ""
+"No period types are enabled in the system. Please contact your system "
+"administrator."
+msgstr ""
+"No period types are enabled in the system. Please contact your system "
+"administrator."
+
 msgid "Relative periods"
 msgstr "Relative periods"
 
@@ -870,17 +880,41 @@ msgstr "Six-monthly April"
 msgid "Yearly"
 msgstr "Yearly"
 
-msgid "Financial year (Start November)"
-msgstr "Financial year (Start November)"
+msgid "Financial year (Start January)"
+msgstr "Financial year (Start January)"
 
-msgid "Financial year (Start October)"
-msgstr "Financial year (Start October)"
+msgid "Financial year (Start February)"
+msgstr "Financial year (Start February)"
+
+msgid "Financial year (Start March)"
+msgstr "Financial year (Start March)"
+
+msgid "Financial year (Start April)"
+msgstr "Financial year (Start April)"
+
+msgid "Financial year (Start May)"
+msgstr "Financial year (Start May)"
+
+msgid "Financial year (Start June)"
+msgstr "Financial year (Start June)"
 
 msgid "Financial year (Start July)"
 msgstr "Financial year (Start July)"
 
-msgid "Financial year (Start April)"
-msgstr "Financial year (Start April)"
+msgid "Financial year (Start August)"
+msgstr "Financial year (Start August)"
+
+msgid "Financial year (Start September)"
+msgstr "Financial year (Start September)"
+
+msgid "Financial year (Start October)"
+msgstr "Financial year (Start October)"
+
+msgid "Financial year (Start November)"
+msgstr "Financial year (Start November)"
+
+msgid "Financial year (Start December)"
+msgstr "Financial year (Start December)"
 
 msgid "Today"
 msgstr "Today"
