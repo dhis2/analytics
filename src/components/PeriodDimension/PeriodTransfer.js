@@ -1,7 +1,7 @@
 import { getNowInCalendar } from '@dhis2/multi-calendar-dates'
 import { IconInfo16, NoticeBox, TabBar, Tab, Transfer } from '@dhis2/ui'
 import PropTypes from 'prop-types'
-import React, { useEffect, useState, useMemo } from 'react'
+import React, { useRef, useState, useMemo } from 'react'
 import PeriodIcon from '../../assets/DimensionItemIcons/PeriodIcon.js' //TODO: Reimplement the icon.js
 import i18n from '../../locales/index.js'
 import {
@@ -137,9 +137,7 @@ const PeriodTransfer = ({
         reversePeriods: false,
     })
 
-    const [allPeriods, setAllPeriods] = useState(
-        defaultRelativePeriodType?.getPeriods() || []
-    )
+    const [userPeriods, setUserPeriods] = useState(null)
     const [isRelative, setIsRelative] = useState(true)
     const [relativeFilter, setRelativeFilter] = useState({
         periodType: defaultRelativePeriodType?.id || '',
@@ -149,32 +147,69 @@ const PeriodTransfer = ({
         year: defaultFixedPeriodYear.toString(),
     })
 
-    useEffect(() => {
-        if (!defaultRelativePeriodType) {
-            return
-        }
-        setRelativeFilter({ periodType: defaultRelativePeriodType.id })
-        if (isRelative) {
-            setAllPeriods(defaultRelativePeriodType.getPeriods())
-        }
-    }, [defaultRelativePeriodType]) // eslint-disable-line react-hooks/exhaustive-deps
+    const effectiveRelativeFilterType = filteredRelativeOptions.some(
+        (opt) => opt.id === relativeFilter.periodType
+    )
+        ? relativeFilter.periodType
+        : defaultRelativePeriodType?.id || ''
 
-    useEffect(() => {
-        if (!defaultFixedPeriodType) {
-            return
+    const effectiveFixedFilterType = filteredFixedOptions.some(
+        (opt) => opt.id === fixedFilter.periodType
+    )
+        ? fixedFilter.periodType
+        : defaultFixedPeriodType?.id || ''
+
+    const prevEffectiveRelativeRef = useRef(effectiveRelativeFilterType)
+    const prevEffectiveFixedRef = useRef(effectiveFixedFilterType)
+
+    if (prevEffectiveRelativeRef.current !== effectiveRelativeFilterType) {
+        prevEffectiveRelativeRef.current = effectiveRelativeFilterType
+        if (relativeFilter.periodType !== effectiveRelativeFilterType) {
+            setRelativeFilter({ periodType: effectiveRelativeFilterType })
         }
-        setFixedFilter((prev) => ({
-            ...prev,
-            periodType: defaultFixedPeriodType.id,
-        }))
+        if (isRelative) {
+            setUserPeriods(null)
+        }
+    }
+
+    if (prevEffectiveFixedRef.current !== effectiveFixedFilterType) {
+        prevEffectiveFixedRef.current = effectiveFixedFilterType
+        if (fixedFilter.periodType !== effectiveFixedFilterType) {
+            setFixedFilter((prev) => ({
+                ...prev,
+                periodType: effectiveFixedFilterType,
+            }))
+        }
         if (!isRelative) {
-            setAllPeriods(
-                defaultFixedPeriodType.getPeriods(
-                    fixedPeriodConfig(Number(fixedFilter.year))
-                ) || []
+            setUserPeriods(null)
+        }
+    }
+
+    const derivedPeriods = useMemo(() => {
+        if (isRelative) {
+            const opt = filteredRelativeOptions.find(
+                (o) => o.id === effectiveRelativeFilterType
+            )
+            return opt?.getPeriods() || []
+        } else {
+            const opt = filteredFixedOptions.find(
+                (o) => o.id === effectiveFixedFilterType
+            )
+            return (
+                opt?.getPeriods(fixedPeriodConfig(Number(fixedFilter.year))) ||
+                []
             )
         }
-    }, [defaultFixedPeriodType]) // eslint-disable-line react-hooks/exhaustive-deps
+    }, [
+        isRelative,
+        effectiveRelativeFilterType,
+        effectiveFixedFilterType,
+        filteredRelativeOptions,
+        filteredFixedOptions,
+        fixedFilter.year,
+    ])
+
+    const allPeriods = userPeriods !== null ? userPeriods : derivedPeriods
 
     const isActive = (value) => {
         const item = selectedItems.find((item) => item.id === value)
@@ -184,21 +219,7 @@ const PeriodTransfer = ({
     const onIsRelativeClick = (state) => {
         if (state !== isRelative) {
             setIsRelative(state)
-            if (state) {
-                const selectedOption = filteredRelativeOptions.find(
-                    (opt) => opt.id === relativeFilter.periodType
-                )
-                setAllPeriods(selectedOption?.getPeriods() || [])
-            } else {
-                const selectedOption = filteredFixedOptions.find(
-                    (opt) => opt.id === fixedFilter.periodType
-                )
-                setAllPeriods(
-                    selectedOption?.getPeriods(
-                        fixedPeriodConfig(Number(fixedFilter.year))
-                    ) || []
-                )
-            }
+            setUserPeriods(null)
         }
     }
 
@@ -233,20 +254,20 @@ const PeriodTransfer = ({
             <div className="filterContainer">
                 {isRelative ? (
                     <RelativePeriodFilter
-                        currentFilter={relativeFilter.periodType}
+                        currentFilter={effectiveRelativeFilterType}
                         onSelectFilter={(filter) => {
                             setRelativeFilter({ periodType: filter })
                             const selectedOption = filteredRelativeOptions.find(
                                 (opt) => opt.id === filter
                             )
-                            setAllPeriods(selectedOption?.getPeriods() || [])
+                            setUserPeriods(selectedOption?.getPeriods() || [])
                         }}
                         dataTest={`${dataTest}-relative-period-filter`}
                         availableOptions={filteredRelativeOptions}
                     />
                 ) : (
                     <FixedPeriodFilter
-                        currentPeriodType={fixedFilter.periodType}
+                        currentPeriodType={effectiveFixedFilterType}
                         currentYear={fixedFilter.year}
                         onSelectPeriodType={(periodType) => {
                             onSelectFixedPeriods({
@@ -276,7 +297,7 @@ const PeriodTransfer = ({
             const selectedOption = filteredFixedOptions.find(
                 (opt) => opt.id === filter.periodType
             )
-            setAllPeriods(
+            setUserPeriods(
                 selectedOption?.getPeriods(
                     fixedPeriodConfig(Number(filter.year))
                 ) || []
