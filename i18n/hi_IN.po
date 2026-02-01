@@ -1,17 +1,17 @@
 # 
 # Translators:
 # Siddharth Agarwal, 2025
-# Rohit Wadhwani, 2025
+# Rohit Wadhwani, 2026
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2025-09-09T09:32:04.677Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Rohit Wadhwani, 2025\n"
+"Last-Translator: Rohit Wadhwani, 2026\n"
 "Language-Team: Hindi (India) (https://app.transifex.com/hisp-uio/teams/100509/hi_IN/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: hi_IN\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -35,7 +35,7 @@ msgid "Not shared with any users or groups"
 msgstr ""
 
 msgid "No description"
-msgstr ""
+msgstr "कोई विवरण नहीं"
 
 msgid "Last updated {{time}}"
 msgstr ""
@@ -218,7 +218,7 @@ msgid "Type"
 msgstr ""
 
 msgid "Data element"
-msgstr ""
+msgstr "डेटा एलिमेंट"
 
 msgid "Tracked entity attribute"
 msgstr ""
@@ -257,7 +257,7 @@ msgid "Name"
 msgstr "नाम"
 
 msgid "Description"
-msgstr ""
+msgstr "विवरण"
 
 msgid "Code"
 msgstr ""
@@ -494,7 +494,7 @@ msgid "Rename {{fileType}}"
 msgstr ""
 
 msgid "Rename"
-msgstr ""
+msgstr "नाम बदलें"
 
 msgid "{{- objectName}} (copy)"
 msgstr ""
@@ -587,7 +587,7 @@ msgid "Could not load interpretations"
 msgstr ""
 
 msgid "Reply"
-msgstr ""
+msgstr "जवाब दें"
 
 msgid "{{count}} replies"
 msgid_plural "{{count}} replies"
@@ -646,7 +646,7 @@ msgid "Filter by name"
 msgstr ""
 
 msgid "Created"
-msgstr ""
+msgstr "बनाया गया"
 
 msgid "Last updated"
 msgstr "अंतिम अपडेट"
@@ -875,13 +875,13 @@ msgid "Yesterday"
 msgstr "कल (बिता हुआ)"
 
 msgid "Last 3 days"
-msgstr ""
+msgstr "पिछले 3 दिन"
 
 msgid "Last 7 days"
-msgstr ""
+msgstr "पिछले 7 दिन"
 
 msgid "Last 14 days"
-msgstr ""
+msgstr "पिछले 14 दिन"
 
 msgid "Last 30 days"
 msgstr ""
@@ -896,16 +896,16 @@ msgid "Last 180 days"
 msgstr ""
 
 msgid "This week"
-msgstr ""
+msgstr "इस सप्ताह"
 
 msgid "Last week"
-msgstr ""
+msgstr "पिछला सप्ताह"
 
 msgid "Last 4 weeks"
-msgstr ""
+msgstr "पिछले 4 सप्ताह"
 
 msgid "Last 12 weeks"
-msgstr ""
+msgstr "पिछले 12 सप्ताह"
 
 msgid "Last 52 weeks"
 msgstr ""
@@ -956,10 +956,10 @@ msgid "This quarter"
 msgstr ""
 
 msgid "Last quarter"
-msgstr ""
+msgstr "पिछली तिमाही"
 
 msgid "Last 4 quarters"
-msgstr ""
+msgstr "पिछली 4 तिमाहियाँ"
 
 msgid "Quarters this year"
 msgstr ""
@@ -998,7 +998,7 @@ msgid "Days"
 msgstr "दिन"
 
 msgid "Weeks"
-msgstr ""
+msgstr "सप्ताह"
 
 msgid "Bi-weeks"
 msgstr ""
@@ -1010,10 +1010,10 @@ msgid "Bi-months"
 msgstr ""
 
 msgid "Quarters"
-msgstr ""
+msgstr "पिछली तिमाही"
 
 msgid "Six-months"
-msgstr ""
+msgstr "छह महीने"
 
 msgid "Financial Years"
 msgstr ""
@@ -1145,10 +1145,10 @@ msgid "Loading data element groups"
 msgstr ""
 
 msgid "Data sets"
-msgstr ""
+msgstr "डेटा सेट्स"
 
 msgid "Data set"
-msgstr ""
+msgstr "डेटा सेट"
 
 msgid "All data sets"
 msgstr ""
@@ -1370,7 +1370,7 @@ msgid "URL"
 msgstr ""
 
 msgid "Image"
-msgstr ""
+msgstr "इमेज"
 
 msgid "GeoJSON"
 msgstr ""
