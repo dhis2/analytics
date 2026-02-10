@@ -1,3 +1,10 @@
+# [29.1.0](https://github.com/dhis2/analytics/compare/v29.0.5...v29.1.0) (2026-02-10)
+
+
+### Features
+
+* use identifiable token + ui upgrade ([#1807](https://github.com/dhis2/analytics/issues/1807)) ([578a573](https://github.com/dhis2/analytics/commit/578a573ff6295c731b7c7d0fcae72539382d0340))
+
 ## [29.0.5](https://github.com/dhis2/analytics/compare/v29.0.4...v29.0.5) (2026-02-01)
 
 
