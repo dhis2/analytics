@@ -86,7 +86,7 @@ export const dataItemsQuery = {
         }
 
         if (searchTerm) {
-            filters.push(`${nameProp}:ilike:${searchTerm}`)
+            filters.push(`identifiable:token:${searchTerm}`)
         }
 
         return objectClean({
@@ -109,7 +109,7 @@ export const indicatorsQuery = {
         }
 
         if (searchTerm) {
-            filters.push(`${nameProp}:ilike:${searchTerm}`)
+            filters.push(`identifiable:token:${searchTerm}`)
         }
 
         return {
@@ -145,7 +145,7 @@ export const dataElementsQuery = {
         }
 
         if (searchTerm) {
-            filters.push(`${nameProp}:ilike:${searchTerm}`)
+            filters.push(`identifiable:token:${searchTerm}`)
         }
 
         return {
@@ -174,7 +174,7 @@ export const itemsByDimensionQuery = {
         const filters = []
 
         if (searchTerm) {
-            filters.push(`${nameProp}:ilike:${searchTerm}`)
+            filters.push(`identifiable:token:${searchTerm}`)
         }
 
         return {
@@ -202,7 +202,7 @@ export const dataElementOperandsQuery = {
         }
 
         if (searchTerm) {
-            filters.push(`${nameProp}:ilike:${searchTerm}`)
+            filters.push(`identifiable:token:${searchTerm}`)
         }
 
         return {
@@ -221,7 +221,7 @@ export const dataSetsQuery = {
         const filters = []
 
         if (searchTerm) {
-            filters.push(`${nameProp}:ilike:${searchTerm}`)
+            filters.push(`identifiable:token:${searchTerm}`)
         }
 
         if (filter?.group && filter.group !== DIMENSION_TYPE_ALL) {
