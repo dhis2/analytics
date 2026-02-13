@@ -1,0 +1,206 @@
+{
+    "headers": [
+        {
+            "name": "value",
+            "column": "Value",
+            "valueType": "NUMBER",
+            "type": "java.lang.Double",
+            "hidden": false,
+            "meta": false
+        },
+        {
+            "name": "pe",
+            "column": "Period",
+            "valueType": "TEXT",
+            "type": "java.lang.String",
+            "hidden": false,
+            "meta": true
+        },
+        {
+            "name": "A03MvHHogjR.ou",
+            "column": "Organisation unit",
+            "valueType": "ORGANISATION_UNIT",
+            "type": "org.hisp.dhis.organisationunit.OrganisationUnit",
+            "hidden": false,
+            "meta": true
+        },
+        {
+            "name": "A03MvHHogjR.eventstatus",
+            "column": "Event status",
+            "valueType": "TEXT",
+            "type": "java.lang.String",
+            "hidden": false,
+            "meta": true
+        }
+    ],
+    "metaData": {
+        "pager": {
+            "page": 1,
+            "pageSize": 50,
+            "isLastPage": true
+        },
+        "items": {
+            "202601": {
+                "name": "January 2026"
+            },
+            "202602": {
+                "name": "February 2026"
+            },
+            "202603": {
+                "name": "March 2026"
+            },
+            "202604": {
+                "name": "April 2026"
+            },
+            "202605": {
+                "name": "May 2026"
+            },
+            "202606": {
+                "name": "June 2026"
+            },
+            "202607": {
+                "name": "July 2026"
+            },
+            "202608": {
+                "name": "August 2026"
+            },
+            "202609": {
+                "name": "September 2026"
+            },
+            "202610": {
+                "name": "October 2026"
+            },
+            "202611": {
+                "name": "November 2026"
+            },
+            "202612": {
+                "name": "December 2026"
+            },
+            "IpHINAT79UW": {
+                "name": "Child Programme"
+            },
+            "ZzYYXq4fJie": {
+                "name": "Baby Postnatal"
+            },
+            "USER_ORGUNIT": {
+                "organisationUnits": [
+                    "ImspTQPwCqd"
+                ]
+            },
+            "A03MvHHogjR.ou": {
+                "name": "Organisation unit"
+            },
+            "A03MvHHogjR.eventstatus": {
+                "name": "Event status"
+            },
+            "pe": {},
+            "A03MvHHogjR": {
+                "name": "Birth"
+            }
+        },
+        "dimensions": {
+            "A03MvHHogjR.eventstatus": [],
+            "pe": [
+                "202601",
+                "202602",
+                "202603",
+                "202604",
+                "202605",
+                "202606",
+                "202607",
+                "202608",
+                "202609",
+                "202610",
+                "202611",
+                "202612"
+            ],
+            "A03MvHHogjR.ou": [
+                "ImspTQPwCqd"
+            ]
+        }
+    },
+    "rowContext": {},
+    "height": 12,
+    "headerWidth": 4,
+    "width": 4,
+    "rows": [
+        [
+            "949",
+            "202601",
+            "ImspTQPwCqd",
+            "ACTIVE"
+        ],
+        [
+            "841",
+            "202602",
+            "ImspTQPwCqd",
+            "ACTIVE"
+        ],
+        [
+            "1007",
+            "202603",
+            "ImspTQPwCqd",
+            "ACTIVE"
+        ],
+        [
+            "932",
+            "202604",
+            "ImspTQPwCqd",
+            "ACTIVE"
+        ],
+        [
+            "866",
+            "202605",
+            "ImspTQPwCqd",
+            "ACTIVE"
+        ],
+        [
+            "897",
+            "202606",
+            "ImspTQPwCqd",
+            "ACTIVE"
+        ],
+        [
+            "950",
+            "202607",
+            "ImspTQPwCqd",
+            "ACTIVE"
+        ],
+        [
+            "968",
+            "202608",
+            "ImspTQPwCqd",
+            "ACTIVE"
+        ],
+        [
+            "837",
+            "202609",
+            "ImspTQPwCqd",
+            "ACTIVE"
+        ],
+        [
+            "973",
+            "202610",
+            "ImspTQPwCqd",
+            "ACTIVE"
+        ],
+        [
+            "925",
+            "202611",
+            "ImspTQPwCqd",
+            "ACTIVE"
+        ],
+        [
+            "858",
+            "202612",
+            "ImspTQPwCqd",
+            "ACTIVE"
+        ],
+        [
+            "12",
+            "202601",
+            "ImspTQPwCqd",
+            ""
+        ]
+    ]
+}

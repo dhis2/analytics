@@ -13,6 +13,9 @@ import datetimeVisualization from './data/event/datetime.visualization.json'
 import emailDataHideNa from './data/event/email.data.hidena.json'
 import emailData from './data/event/email.data.json'
 import emailVisualization from './data/event/email.visualization.json'
+import eventstatusDataHideNa from './data/event/eventstatus.data.hidena.json'
+import eventstatusData from './data/event/eventstatus.data.json'
+import eventstatusVisualization from './data/event/eventstatus.visualization.json'
 import integerDataHideNa from './data/event/integer.data.hidena.json'
 import integerData from './data/event/integer.data.json'
 import integerVisualization from './data/event/integer.visualization.json'
@@ -385,3 +388,41 @@ export const Yesonly = (_, { pivotTableOptions }) => {
 }
 
 Yesonly.storyName = 'Yesonly'
+
+export const EventstatusNA = (_, { pivotTableOptions }) => {
+    const visualization = {
+        ...eventstatusVisualization,
+        ...visualizationReset,
+        ...pivotTableOptions,
+    }
+
+    return (
+        <div style={{ width: 800, height: 600 }}>
+            <PivotTable
+                data={eventstatusData}
+                visualization={visualization}
+            />
+        </div>
+    )
+}
+
+EventstatusNA.storyName = 'Eventstatus N/A'
+
+export const Eventstatus = (_, { pivotTableOptions }) => {
+    const visualization = {
+        ...eventstatusVisualization,
+        ...visualizationReset,
+        ...pivotTableOptions,
+    }
+
+    return (
+        <div style={{ width: 800, height: 600 }}>
+            <PivotTable
+                data={eventstatusDataHideNa}
+                visualization={visualization}
+            />
+        </div>
+    )
+}
+
+Eventstatus.storyName = 'Eventstatus'

@@ -10,12 +10,12 @@ export const getUnique = (array) => [...new Set(array)]
 export const getValuesUniqueSortedAsc = (values, valueType = VALUE_TYPE_TEXT) =>
     isNumericValueType(valueType) || isBooleanValueType(valueType)
         ? getUnique(values)
-              .map((x) => [Number(x), x])
-              .sort((a, b) => a[0] - b[0])
-              .map((arr) => arr[1])
+            .map((x) => [Number(x), x])
+            .sort((a, b) => a[0] - b[0])
+            .map((arr) => arr[1])
         : getUnique(values)
-              .slice()
-              .sort((a, b) => a.localeCompare(b))
+            .slice()
+            .sort((a, b) => a.localeCompare(b))
 
 export const getPrefixedValue = (value, prefix) =>
     `${prefix}${PREFIX_SEPARATOR}${value}`
