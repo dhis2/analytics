@@ -41,6 +41,24 @@ export const UNSUPPORTED_VALUE_TYPES = [
     VALUE_TYPE_REFERENCE,
 ]
 
+const STATUSES = {
+    ACTIVE: i18n.t('Active'),
+    COMPLETED: i18n.t('Completed'),
+    SCHEDULE: i18n.t('Scheduled'),
+    CANCELLED: i18n.t('Cancelled'),
+}
+
+export const getItemFormatter = ({ name, valueType }) =>
+    getItemFormatterByHeaderName(name) || getItemFormatterByValueType(valueType)
+
+export const getItemFormatterByHeaderName = name => {
+    if (name.endsWith("eventstatus") || name.endsWith("programstatus")) {
+        return n => STATUSES[n] || n
+    }
+
+    return undefined
+}
+
 export const getItemFormatterByValueType = (valueType) => {
     switch (valueType) {
         case VALUE_TYPE_AGE:
@@ -57,6 +75,12 @@ export const getItemFormatterByValueType = (valueType) => {
             return undefined
     }
 }
+
+const includeHeaderChecks = [
+    header => Boolean(header.meta),
+    header => header.name !== DIMENSION_ID_PERIOD,
+    header => header.name !== DIMENSION_ID_ORGUNIT && !header.name.endsWith('.ou')
+]
 
 export const transformResponse = (response, { hideNaData = false } = {}) => {
     // Do not modify the original response
@@ -82,17 +106,14 @@ export const transformResponse = (response, { hideNaData = false } = {}) => {
             index,
         }))
         .filter(
-            (header) =>
-                Boolean(header.meta) &&
-                ![DIMENSION_ID_PERIOD, DIMENSION_ID_ORGUNIT].includes(
-                    header.name
-                )
+            (header) => includeHeaderChecks.every(check => check(header))
         )
 
     // Legendsets use uids and do not need transformation
     // Skip unsupported value types
     // Option set and Boolean have separate handlers
     // All other types use default handler with specific item formatter
+    console.log("metaHeaders", metaHeaders)
     metaHeaders.forEach((header) => {
         if (
             !(
@@ -110,9 +131,7 @@ export const transformResponse = (response, { hideNaData = false } = {}) => {
                     transformedResponse,
                     header.index,
                     {
-                        itemFormatter: getItemFormatterByValueType(
-                            header.valueType
-                        ),
+                        itemFormatter: getItemFormatter(header)
                     }
                 )
             }
