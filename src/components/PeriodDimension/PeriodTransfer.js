@@ -58,18 +58,41 @@ const PeriodTransfer = ({
 }) => {
     const { filteredFixedOptions, filteredRelativeOptions } = useMemo(() => {
         if (supportsEnabledPeriodTypes && enabledPeriodTypesData) {
-            const { enabledTypes, financialYearStart } = enabledPeriodTypesData
+            const { enabledTypes, financialYearStart, financialYearDisplayLabel } = enabledPeriodTypesData
 
             const filteredFixed = filterEnabledFixedPeriodTypes(
                 getFixedPeriodsOptions(periodsSettings),
                 enabledTypes
             )
 
-            const filteredRelative = filterEnabledRelativePeriodTypes(
+            let filteredRelative = filterEnabledRelativePeriodTypes(
                 getRelativePeriodsOptions(),
                 enabledTypes,
                 financialYearStart
             )
+
+            if (financialYearDisplayLabel) {
+                const fyPeriodLabels = {
+                    THIS_FINANCIAL_YEAR: `This ${financialYearDisplayLabel}`,
+                    LAST_FINANCIAL_YEAR: `Last ${financialYearDisplayLabel}`,
+                    LAST_5_FINANCIAL_YEARS: `Last 5 ${financialYearDisplayLabel}`,
+                }
+                filteredRelative = filteredRelative.map((option) =>
+                    option.id === 'FINANCIAL'
+                        ? {
+                              ...option,
+                              name: financialYearDisplayLabel,
+                              getPeriods: () =>
+                                  option.getPeriods().map((period) => ({
+                                      ...period,
+                                      name:
+                                          fyPeriodLabels[period.id] ||
+                                          period.name,
+                                  })),
+                          }
+                        : option
+                )
+            }
 
             return {
                 filteredFixedOptions: filteredFixed,
@@ -361,6 +384,7 @@ PeriodTransfer.propTypes = {
     enabledPeriodTypesData: PropTypes.shape({
         analysisRelativePeriod: PropTypes.string,
         enabledTypes: PropTypes.array,
+        financialYearDisplayLabel: PropTypes.string,
         financialYearStart: PropTypes.string,
         noEnabledTypes: PropTypes.bool,
     }),
