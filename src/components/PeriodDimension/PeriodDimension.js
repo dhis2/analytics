@@ -78,6 +78,7 @@ const PeriodDimension = ({
 
         const enabledTypes = v43Data.enabledPeriodTypes
 
+
         if (!enabledTypes || enabledTypes.length === 0) {
             return {
                 enabledTypes: [],
@@ -88,16 +89,21 @@ const PeriodDimension = ({
         }
 
         let financialYearStart = null
+        let financialYearDisplayLabel = null
         if (v43Data.financialYearStart?.analyticsFinancialYearStart) {
             const fyStartValue =
                 v43Data.financialYearStart.analyticsFinancialYearStart
 
             const mappedFyPt = FY_SETTING_TO_SERVER_PT[fyStartValue]
-            if (
-                mappedFyPt &&
-                enabledTypes.some((pt) => pt.name === mappedFyPt)
-            ) {
+            const matchingPt = enabledTypes.find(
+                (pt) => pt.name === mappedFyPt
+            )
+            matchingPt.displayLabel = 'Academic year'
+            if (mappedFyPt && matchingPt) {
                 financialYearStart = fyStartValue
+                if (matchingPt.displayLabel) {
+                    financialYearDisplayLabel = matchingPt.displayLabel
+                }
             }
         }
 
@@ -107,6 +113,7 @@ const PeriodDimension = ({
         return {
             enabledTypes,
             financialYearStart,
+            financialYearDisplayLabel,
             analysisRelativePeriod,
             noEnabledTypes: false,
         }
