@@ -209,7 +209,7 @@ msgid "Period type"
 msgstr ""
 
 msgid "Indicators"
-msgstr ""
+msgstr "इंडिकेटर्स"
 
 msgid "Expiry days"
 msgstr ""
@@ -658,7 +658,7 @@ msgid "{{firstItemIndex}}-{{lastItemIndex}} of {{totalNumberOfItems}}"
 msgstr ""
 
 msgid "Open"
-msgstr ""
+msgstr "खोलें"
 
 msgid "Couldn't load items"
 msgstr ""
@@ -1316,7 +1316,7 @@ msgid "Phone number"
 msgstr "फ़ोन नंबर"
 
 msgid "Email"
-msgstr ""
+msgstr "ईमेल"
 
 msgid "Yes/No"
 msgstr ""
@@ -1355,7 +1355,7 @@ msgid "Tracker Associate"
 msgstr ""
 
 msgid "Username"
-msgstr ""
+msgstr "यूज़रनेम"
 
 msgid "Coordinate"
 msgstr ""
