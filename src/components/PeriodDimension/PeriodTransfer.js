@@ -58,7 +58,7 @@ const PeriodTransfer = ({
 }) => {
     const { filteredFixedOptions, filteredRelativeOptions } = useMemo(() => {
         if (supportsEnabledPeriodTypes && enabledPeriodTypesData) {
-            const { enabledTypes, financialYearStart, financialYearDisplayLabel } = enabledPeriodTypesData
+            const { enabledTypes, financialYearStart, financialYearDisplayLabel, metaData } = enabledPeriodTypesData
 
             const filteredFixed = filterEnabledFixedPeriodTypes(
                 getFixedPeriodsOptions(periodsSettings),
@@ -71,25 +71,20 @@ const PeriodTransfer = ({
                 financialYearStart
             )
 
-            if (financialYearDisplayLabel) {
-                const fyPeriodLabels = {
-                    THIS_FINANCIAL_YEAR: `This ${financialYearDisplayLabel}`,
-                    LAST_FINANCIAL_YEAR: `Last ${financialYearDisplayLabel}`,
-                    LAST_5_FINANCIAL_YEARS: `Last 5 ${financialYearDisplayLabel}`,
-                }
+            if (financialYearDisplayLabel && metaData) {
                 filteredRelative = filteredRelative.map((option) =>
                     option.id === 'FINANCIAL'
                         ? {
-                              ...option,
-                              name: financialYearDisplayLabel,
-                              getPeriods: () =>
-                                  option.getPeriods().map((period) => ({
-                                      ...period,
-                                      name:
-                                          fyPeriodLabels[period.id] ||
-                                          period.name,
-                                  })),
-                          }
+                            ...option,
+                            name: financialYearDisplayLabel,
+                            getPeriods: () =>
+                                option.getPeriods().map((period) => ({
+                                    ...period,
+                                    name:
+                                        metaData[period.id]?.name ||
+                                        period.name,
+                                })),
+                        }
                         : option
                 )
             }
@@ -138,11 +133,11 @@ const PeriodTransfer = ({
     const defaultRelativePeriodType =
         supportsEnabledPeriodTypes && bestRelativePeriod
             ? filteredRelativeOptions.find(
-                  (opt) => opt.id === bestRelativePeriod.categoryId
-              )
+                (opt) => opt.id === bestRelativePeriod.categoryId
+            )
             : filteredRelativeOptions.find((opt) => opt.id === MONTHLY) ||
-              filteredRelativeOptions.find((opt) => opt.id === QUARTERLY) ||
-              filteredRelativeOptions[0]
+            filteredRelativeOptions.find((opt) => opt.id === QUARTERLY) ||
+            filteredRelativeOptions[0]
 
     const defaultFixedPeriodType =
         filteredFixedOptions.find((opt) => opt.id === MONTHLY) ||

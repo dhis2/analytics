@@ -36,8 +36,8 @@ export default function (filters, metaData) {
                 dimensionGetItemIds(filter)
                     .map(
                         (id) =>
-                            relativePeriodNames[id] ||
                             metaData.items[id]?.name ||
+                            relativePeriodNames[id] ||
                             id
                     )
                     .join(', ')
@@ -62,8 +62,8 @@ export default function (filters, metaData) {
                     else {
                         sectionParts.push(
                             metaData.items[filter.dimension].name +
-                                ': ' +
-                                filterItems.join(', ')
+                            ': ' +
+                            filterItems.join(', ')
                         )
 
                         break
