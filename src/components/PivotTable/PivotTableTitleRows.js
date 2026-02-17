@@ -6,7 +6,7 @@ import { PivotTableTitleRow } from './PivotTableTitleRow.js'
 
 export const PivotTableTitleRows = ({ clippingResult, width }) => {
     const engine = usePivotTableEngine()
-    console.log("engine.rawData", engine.rawData)
+
     return (
         <>
             {engine.options.title ? (
