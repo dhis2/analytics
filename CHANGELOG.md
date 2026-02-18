@@ -1,3 +1,10 @@
+# [29.2.0](https://github.com/dhis2/analytics/compare/v29.1.1...v29.2.0) (2026-02-18)
+
+
+### Features
+
+* export FileMenu dialogs ([#1811](https://github.com/dhis2/analytics/issues/1811)) ([95bb0d9](https://github.com/dhis2/analytics/commit/95bb0d9611a836e712f0f752a9c0d58625c40cfd))
+
 ## [29.1.1](https://github.com/dhis2/analytics/compare/v29.1.0...v29.1.1) (2026-02-15)
 
 
