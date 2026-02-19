@@ -42,10 +42,21 @@ const PeriodDimension = ({
             items: periods,
         })
     }
+
+    // DHIS2-20270 Apply custom period type label to period names
+    const metaData = enabledPeriodTypesData?.metaData
+    const selectedPeriodsWithCustomDisplayNames = metaData
+        ? selectedPeriods.map((period) =>
+            metaData[period.id]
+                ? { ...period, name: metaData[period.id].name }
+                : period
+        )
+        : selectedPeriods
+
     return (
         <PeriodTransfer
             onSelect={selectPeriods}
-            selectedItems={selectedPeriods}
+            selectedItems={selectedPeriodsWithCustomDisplayNames}
             infoBoxMessage={infoBoxMessage}
             rightFooter={rightFooter}
             dataTest={'period-dimension'}
