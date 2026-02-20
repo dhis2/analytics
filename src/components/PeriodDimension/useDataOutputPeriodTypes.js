@@ -131,16 +131,16 @@ const useDataOutputPeriodTypes = () => {
                     name: `Last ${weeklyDisplayLabel}`,
                 },
                 LAST_4_WEEKS: {
-                    name: `Last 4 ${weeklyDisplayLabel}s`,
+                    name: `Last 4 ${weeklyDisplayLabel}`,
                 },
                 LAST_12_WEEKS: {
-                    name: `Last 12 ${weeklyDisplayLabel}s`,
+                    name: `Last 12 ${weeklyDisplayLabel}`,
                 },
                 LAST_52_WEEKS: {
-                    name: `Last 52 ${weeklyDisplayLabel}s`,
+                    name: `Last 52 ${weeklyDisplayLabel}`,
                 },
                 WEEKS_THIS_YEAR: {
-                    name: `${weeklyDisplayLabel}s this year`,
+                    name: `${weeklyDisplayLabel} this year`,
                 },
             }),
         }
