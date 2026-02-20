@@ -15,6 +15,7 @@ import FixedPeriodFilter from './FixedPeriodFilter.js'
 import RelativePeriodFilter from './RelativePeriodFilter.js'
 import {
     applyDisplayLabelOverrides,
+    applyFixedPeriodTypeDisplayLabels,
     filterEnabledFixedPeriodTypes,
     filterEnabledRelativePeriodTypes,
 } from './utils/enabledPeriodTypes.js'
@@ -60,8 +61,11 @@ const PeriodTransfer = ({
         if (supportsEnabledPeriodTypes && enabledPeriodTypesData) {
             const { enabledTypes, financialYearStart, financialYearDisplayLabel, weeklyDisplayLabel, metaData } = enabledPeriodTypesData
 
-            const filteredFixed = filterEnabledFixedPeriodTypes(
-                getFixedPeriodsOptions(periodsSettings),
+            const filteredFixed = applyFixedPeriodTypeDisplayLabels(
+                filterEnabledFixedPeriodTypes(
+                    getFixedPeriodsOptions(periodsSettings),
+                    enabledTypes
+                ),
                 enabledTypes
             )
 

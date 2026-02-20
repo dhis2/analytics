@@ -85,6 +85,38 @@ export const filterEnabledFixedPeriodTypes = (
 }
 
 /**
+ * Apply displayLabel overrides to fixed period type names
+ * v43-only: in v44 the API provides these names directly
+ */
+export const applyFixedPeriodTypeDisplayLabels = (
+    filteredFixedOptions,
+    enabledServerPeriodTypes
+) => {
+    if (!enabledServerPeriodTypes) {
+        return filteredFixedOptions
+    }
+
+    const displayLabelMap = new Map()
+    enabledServerPeriodTypes.forEach((pt) => {
+        if (pt.displayLabel) {
+            const multiCalendarPt = SERVER_PT_TO_MULTI_CALENDAR_PT[pt.name]
+            if (multiCalendarPt) {
+                displayLabelMap.set(multiCalendarPt, pt.displayLabel)
+            }
+        }
+    })
+
+    if (displayLabelMap.size === 0) {
+        return filteredFixedOptions
+    }
+
+    return filteredFixedOptions.map((option) => {
+        const displayLabel = displayLabelMap.get(option.id)
+        return displayLabel ? { ...option, name: displayLabel } : option
+    })
+}
+
+/**
  * Filter relative period categories based on enabled server period types
  * @param {Array} allRelativePeriodOptions - All available relative period options
  * @param {Array} enabledServerPeriodTypes - Enabled period types from server
