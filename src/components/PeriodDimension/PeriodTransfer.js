@@ -16,7 +16,6 @@ import RelativePeriodFilter from './RelativePeriodFilter.js'
 import {
     filterEnabledFixedPeriodTypes,
     filterEnabledRelativePeriodTypes,
-    findBestAvailableRelativePeriod,
 } from './utils/enabledPeriodTypes.js'
 import { getFixedPeriodsOptions } from './utils/fixedPeriods.js'
 import { MONTHLY, QUARTERLY, filterPeriodTypesById } from './utils/index.js'
@@ -115,29 +114,24 @@ const PeriodTransfer = ({
         periodsSettings,
     ])
 
-    const bestRelativePeriod = useMemo(() => {
-        if (supportsEnabledPeriodTypes && enabledPeriodTypesData) {
-            const { analysisRelativePeriod } = enabledPeriodTypesData
-            return findBestAvailableRelativePeriod(
-                filteredRelativeOptions,
-                analysisRelativePeriod
-            )
-        }
-        return null
-    }, [
-        supportsEnabledPeriodTypes,
-        enabledPeriodTypesData,
-        filteredRelativeOptions,
-    ])
+    const analysisRelativePeriod =
+        enabledPeriodTypesData?.analysisRelativePeriod
 
-    const defaultRelativePeriodType =
-        supportsEnabledPeriodTypes && bestRelativePeriod
-            ? filteredRelativeOptions.find(
-                (opt) => opt.id === bestRelativePeriod.categoryId
+    const defaultRelativePeriodType = (() => {
+        if (analysisRelativePeriod) {
+            const match = filteredRelativeOptions.find((opt) =>
+                opt.getPeriods().some((p) => p.id === analysisRelativePeriod)
             )
-            : filteredRelativeOptions.find((opt) => opt.id === MONTHLY) ||
+            if (match) {
+                return match
+            }
+        }
+        return (
+            filteredRelativeOptions.find((opt) => opt.id === MONTHLY) ||
             filteredRelativeOptions.find((opt) => opt.id === QUARTERLY) ||
             filteredRelativeOptions[0]
+        )
+    })()
 
     const defaultFixedPeriodType =
         filteredFixedOptions.find((opt) => opt.id === MONTHLY) ||
