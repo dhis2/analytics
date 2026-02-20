@@ -14,6 +14,7 @@ import { TransferOption } from '../TransferOption.js'
 import FixedPeriodFilter from './FixedPeriodFilter.js'
 import RelativePeriodFilter from './RelativePeriodFilter.js'
 import {
+    applyDisplayLabelOverrides,
     filterEnabledFixedPeriodTypes,
     filterEnabledRelativePeriodTypes,
 } from './utils/enabledPeriodTypes.js'
@@ -57,36 +58,21 @@ const PeriodTransfer = ({
 }) => {
     const { filteredFixedOptions, filteredRelativeOptions } = useMemo(() => {
         if (supportsEnabledPeriodTypes && enabledPeriodTypesData) {
-            const { enabledTypes, financialYearStart, financialYearDisplayLabel, metaData } = enabledPeriodTypesData
+            const { enabledTypes, financialYearStart, financialYearDisplayLabel, weeklyDisplayLabel, metaData } = enabledPeriodTypesData
 
             const filteredFixed = filterEnabledFixedPeriodTypes(
                 getFixedPeriodsOptions(periodsSettings),
                 enabledTypes
             )
 
-            let filteredRelative = filterEnabledRelativePeriodTypes(
-                getRelativePeriodsOptions(),
-                enabledTypes,
-                financialYearStart
+            const filteredRelative = applyDisplayLabelOverrides(
+                filterEnabledRelativePeriodTypes(
+                    getRelativePeriodsOptions(),
+                    enabledTypes,
+                    financialYearStart
+                ),
+                { financialYearDisplayLabel, weeklyDisplayLabel, metaData }
             )
-
-            if (financialYearDisplayLabel && metaData) {
-                filteredRelative = filteredRelative.map((option) =>
-                    option.id === 'FINANCIAL'
-                        ? {
-                            ...option,
-                            name: financialYearDisplayLabel,
-                            getPeriods: () =>
-                                option.getPeriods().map((period) => ({
-                                    ...period,
-                                    name:
-                                        metaData[period.id]?.name ||
-                                        period.name,
-                                })),
-                        }
-                        : option
-                )
-            }
 
             return {
                 filteredFixedOptions: filteredFixed,
