@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { DIMENSION_ID_PERIOD } from '../../modules/predefinedDimensions.js'
 import PeriodTransfer from './PeriodTransfer.js'
 import { useDataOutputPeriodTypes } from './useDataOutputPeriodTypes.js'
+import { applyPeriodNameOverrides } from './utils/enabledPeriodTypes.js'
 
 const userSettingsQuery = {
     userSettings: {
@@ -43,15 +44,10 @@ const PeriodDimension = ({
         })
     }
 
-    // DHIS2-20270 Apply custom period type label to period names
-    const metaData = enabledPeriodTypesData?.metaData
-    const selectedPeriodsWithCustomDisplayNames = metaData
-        ? selectedPeriods.map((period) =>
-            metaData[period.id]
-                ? { ...period, name: metaData[period.id].name }
-                : period
-        )
-        : selectedPeriods
+    const selectedPeriodsWithCustomDisplayNames = applyPeriodNameOverrides(
+        selectedPeriods,
+        enabledPeriodTypesData?.metaData
+    )
 
     return (
         <PeriodTransfer

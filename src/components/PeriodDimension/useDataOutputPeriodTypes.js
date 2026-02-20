@@ -12,6 +12,10 @@ const v43Query = {
     analysisRelativePeriod: {
         resource: 'systemSettings/keyAnalysisRelativePeriod',
     },
+    // v43-only: analyticsWeeklyStart is removed in v44
+    weeklyStart: {
+        resource: 'systemSettings/analyticsWeeklyStart',
+    },
 }
 
 // v43-only: analyticsFinancialYearStart is removed in v44
@@ -21,6 +25,16 @@ const FY_SETTING_TO_SERVER_PT = {
     FINANCIAL_YEAR_SEPTEMBER: 'FinancialSep',
     FINANCIAL_YEAR_OCTOBER: 'FinancialOct',
     FINANCIAL_YEAR_NOVEMBER: 'FinancialNov',
+}
+
+// v43-only: analyticsWeeklyStart is removed in v44
+const WEEKLY_START_TO_SERVER_PT = {
+    WEEKLY: 'Weekly',
+    WEEKLY_WEDNESDAY: 'WeeklyWednesday',
+    WEEKLY_THURSDAY: 'WeeklyThursday',
+    WEEKLY_FRIDAY: 'WeeklyFriday',
+    WEEKLY_SATURDAY: 'WeeklySaturday',
+    WEEKLY_SUNDAY: 'WeeklySunday',
 }
 
 const useDataOutputPeriodTypes = () => {
@@ -78,11 +92,27 @@ const useDataOutputPeriodTypes = () => {
             }
         }
 
+        // v43-only: weekly start logic goes away in v44
+        let weeklyDisplayLabel = null
+        if (v43Data.weeklyStart?.analyticsWeeklyStart) {
+            const weeklyStartValue =
+                v43Data.weeklyStart.analyticsWeeklyStart
+
+            const mappedWeeklyPt =
+                WEEKLY_START_TO_SERVER_PT[weeklyStartValue]
+            const matchingWeeklyPt = enabledTypes.find(
+                (pt) => pt.name === mappedWeeklyPt
+            )
+            if (matchingWeeklyPt?.displayLabel) {
+                weeklyDisplayLabel = matchingWeeklyPt.displayLabel
+            }
+        }
+
         const analysisRelativePeriod =
             v43Data.analysisRelativePeriod?.keyAnalysisRelativePeriod || null
 
-        const metaData = financialYearDisplayLabel
-            ? {
+        const metaData = {
+            ...(financialYearDisplayLabel && {
                 THIS_FINANCIAL_YEAR: {
                     name: `This ${financialYearDisplayLabel}`,
                 },
@@ -92,13 +122,34 @@ const useDataOutputPeriodTypes = () => {
                 LAST_5_FINANCIAL_YEARS: {
                     name: `Last 5 ${financialYearDisplayLabel}`,
                 },
-            }
-            : null
+            }),
+            ...(weeklyDisplayLabel && {
+                THIS_WEEK: {
+                    name: `This ${weeklyDisplayLabel}`,
+                },
+                LAST_WEEK: {
+                    name: `Last ${weeklyDisplayLabel}`,
+                },
+                LAST_4_WEEKS: {
+                    name: `Last 4 ${weeklyDisplayLabel}s`,
+                },
+                LAST_12_WEEKS: {
+                    name: `Last 12 ${weeklyDisplayLabel}s`,
+                },
+                LAST_52_WEEKS: {
+                    name: `Last 52 ${weeklyDisplayLabel}s`,
+                },
+                WEEKS_THIS_YEAR: {
+                    name: `${weeklyDisplayLabel}s this year`,
+                },
+            }),
+        }
 
         return {
             enabledTypes,
             financialYearStart,
             financialYearDisplayLabel,
+            weeklyDisplayLabel,
             analysisRelativePeriod,
             metaData,
             noEnabledTypes: false,
