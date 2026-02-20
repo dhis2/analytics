@@ -1,7 +1,7 @@
 import { getNowInCalendar } from '@dhis2/multi-calendar-dates'
-import { IconInfo16, TabBar, Tab, Transfer } from '@dhis2/ui'
+import { IconInfo16, NoticeBox, TabBar, Tab, Transfer } from '@dhis2/ui'
 import PropTypes from 'prop-types'
-import React, { useState } from 'react'
+import React, { useRef, useState, useMemo } from 'react'
 import PeriodIcon from '../../assets/DimensionItemIcons/PeriodIcon.js' //TODO: Reimplement the icon.js
 import i18n from '../../locales/index.js'
 import {
@@ -13,9 +13,15 @@ import styles from '../styles/DimensionSelector.style.js'
 import { TransferOption } from '../TransferOption.js'
 import FixedPeriodFilter from './FixedPeriodFilter.js'
 import RelativePeriodFilter from './RelativePeriodFilter.js'
-import { getFixedPeriodsOptionsById } from './utils/fixedPeriods.js'
-import { MONTHLY, QUARTERLY } from './utils/index.js'
-import { getRelativePeriodsOptionsById } from './utils/relativePeriods.js'
+import {
+    applyDisplayLabelOverrides,
+    applyFixedPeriodTypeDisplayLabels,
+    filterEnabledFixedPeriodTypes,
+    filterEnabledRelativePeriodTypes,
+} from './utils/enabledPeriodTypes.js'
+import { getFixedPeriodsOptions } from './utils/fixedPeriods.js'
+import { MONTHLY, QUARTERLY, filterPeriodTypesById } from './utils/index.js'
+import { getRelativePeriodsOptions } from './utils/relativePeriods.js'
 
 const RightHeader = ({ infoBoxMessage }) => (
     <>
@@ -48,13 +54,79 @@ const PeriodTransfer = ({
     periodsSettings = PERIODS_SETTINGS_PROP_DEFAULT,
     infoBoxMessage,
     height = TRANSFER_HEIGHT,
+    enabledPeriodTypesData = null,
+    supportsEnabledPeriodTypes = false,
 }) => {
-    const defaultRelativePeriodType = excludedPeriodTypes.includes(MONTHLY)
-        ? getRelativePeriodsOptionsById(QUARTERLY)
-        : getRelativePeriodsOptionsById(MONTHLY)
-    const defaultFixedPeriodType = excludedPeriodTypes.includes(MONTHLY)
-        ? getFixedPeriodsOptionsById(QUARTERLY, periodsSettings)
-        : getFixedPeriodsOptionsById(MONTHLY, periodsSettings)
+    const { filteredFixedOptions, filteredRelativeOptions } = useMemo(() => {
+        if (supportsEnabledPeriodTypes && enabledPeriodTypesData) {
+            const { enabledTypes, financialYearStart, financialYearDisplayLabel, weeklyDisplayLabel, metaData } = enabledPeriodTypesData
+
+            const filteredFixed = applyFixedPeriodTypeDisplayLabels(
+                filterEnabledFixedPeriodTypes(
+                    getFixedPeriodsOptions(periodsSettings),
+                    enabledTypes
+                ),
+                enabledTypes
+            )
+
+            const filteredRelative = applyDisplayLabelOverrides(
+                filterEnabledRelativePeriodTypes(
+                    getRelativePeriodsOptions(),
+                    enabledTypes,
+                    financialYearStart
+                ),
+                { financialYearDisplayLabel, weeklyDisplayLabel, metaData }
+            )
+
+            return {
+                filteredFixedOptions: filteredFixed,
+                filteredRelativeOptions: filteredRelative,
+            }
+        } else {
+            const allFixed = getFixedPeriodsOptions(periodsSettings)
+            const allRelative = getRelativePeriodsOptions()
+
+            return {
+                filteredFixedOptions: filterPeriodTypesById(
+                    allFixed,
+                    excludedPeriodTypes
+                ),
+                filteredRelativeOptions: filterPeriodTypesById(
+                    allRelative,
+                    excludedPeriodTypes
+                ),
+            }
+        }
+    }, [
+        supportsEnabledPeriodTypes,
+        enabledPeriodTypesData,
+        excludedPeriodTypes,
+        periodsSettings,
+    ])
+
+    const analysisRelativePeriod =
+        enabledPeriodTypesData?.analysisRelativePeriod
+
+    const defaultRelativePeriodType = (() => {
+        if (analysisRelativePeriod) {
+            const match = filteredRelativeOptions.find((opt) =>
+                opt.getPeriods().some((p) => p.id === analysisRelativePeriod)
+            )
+            if (match) {
+                return match
+            }
+        }
+        return (
+            filteredRelativeOptions.find((opt) => opt.id === MONTHLY) ||
+            filteredRelativeOptions.find((opt) => opt.id === QUARTERLY) ||
+            filteredRelativeOptions[0]
+        )
+    })()
+
+    const defaultFixedPeriodType =
+        filteredFixedOptions.find((opt) => opt.id === MONTHLY) ||
+        filteredFixedOptions.find((opt) => opt.id === QUARTERLY) ||
+        filteredFixedOptions[0]
 
     const now = getNowInCalendar(periodsSettings.calendar)
     // use ".eraYear" rather than ".year" because in Ethiopian calendar, eraYear is what our users expect to see (for other calendars, it doesn't matter)
@@ -67,17 +139,79 @@ const PeriodTransfer = ({
         reversePeriods: false,
     })
 
-    const [allPeriods, setAllPeriods] = useState(
-        defaultRelativePeriodType.getPeriods()
-    )
+    const [userPeriods, setUserPeriods] = useState(null)
     const [isRelative, setIsRelative] = useState(true)
     const [relativeFilter, setRelativeFilter] = useState({
-        periodType: defaultRelativePeriodType.id,
+        periodType: defaultRelativePeriodType?.id || '',
     })
     const [fixedFilter, setFixedFilter] = useState({
-        periodType: defaultFixedPeriodType.id,
+        periodType: defaultFixedPeriodType?.id || '',
         year: defaultFixedPeriodYear.toString(),
     })
+
+    const effectiveRelativeFilterType = filteredRelativeOptions.some(
+        (opt) => opt.id === relativeFilter.periodType
+    )
+        ? relativeFilter.periodType
+        : defaultRelativePeriodType?.id || ''
+
+    const effectiveFixedFilterType = filteredFixedOptions.some(
+        (opt) => opt.id === fixedFilter.periodType
+    )
+        ? fixedFilter.periodType
+        : defaultFixedPeriodType?.id || ''
+
+    const prevEffectiveRelativeRef = useRef(effectiveRelativeFilterType)
+    const prevEffectiveFixedRef = useRef(effectiveFixedFilterType)
+
+    if (prevEffectiveRelativeRef.current !== effectiveRelativeFilterType) {
+        prevEffectiveRelativeRef.current = effectiveRelativeFilterType
+        if (relativeFilter.periodType !== effectiveRelativeFilterType) {
+            setRelativeFilter({ periodType: effectiveRelativeFilterType })
+        }
+        if (isRelative) {
+            setUserPeriods(null)
+        }
+    }
+
+    if (prevEffectiveFixedRef.current !== effectiveFixedFilterType) {
+        prevEffectiveFixedRef.current = effectiveFixedFilterType
+        if (fixedFilter.periodType !== effectiveFixedFilterType) {
+            setFixedFilter((prev) => ({
+                ...prev,
+                periodType: effectiveFixedFilterType,
+            }))
+        }
+        if (!isRelative) {
+            setUserPeriods(null)
+        }
+    }
+
+    const derivedPeriods = useMemo(() => {
+        if (isRelative) {
+            const opt = filteredRelativeOptions.find(
+                (o) => o.id === effectiveRelativeFilterType
+            )
+            return opt?.getPeriods() || []
+        } else {
+            const opt = filteredFixedOptions.find(
+                (o) => o.id === effectiveFixedFilterType
+            )
+            return (
+                opt?.getPeriods(fixedPeriodConfig(Number(fixedFilter.year))) ||
+                []
+            )
+        }
+    }, [
+        isRelative,
+        effectiveRelativeFilterType,
+        effectiveFixedFilterType,
+        filteredRelativeOptions,
+        filteredFixedOptions,
+        fixedFilter.year,
+    ])
+
+    const allPeriods = userPeriods !== null ? userPeriods : derivedPeriods
 
     const isActive = (value) => {
         const item = selectedItems.find((item) => item.id === value)
@@ -87,17 +221,18 @@ const PeriodTransfer = ({
     const onIsRelativeClick = (state) => {
         if (state !== isRelative) {
             setIsRelative(state)
-            setAllPeriods(
-                state
-                    ? getRelativePeriodsOptionsById(
-                          relativeFilter.periodType
-                      ).getPeriods()
-                    : getFixedPeriodsOptionsById(
-                          fixedFilter.periodType,
-                          periodsSettings
-                      ).getPeriods(fixedPeriodConfig(Number(fixedFilter.year)))
-            )
+            setUserPeriods(null)
         }
+    }
+
+    if (enabledPeriodTypesData?.noEnabledTypes) {
+        return (
+            <NoticeBox warning title={i18n.t('No period types available')}>
+                {i18n.t(
+                    'No period types are enabled in the system. Please contact your system administrator.'
+                )}
+            </NoticeBox>
+        )
     }
 
     const renderLeftHeader = () => (
@@ -121,21 +256,20 @@ const PeriodTransfer = ({
             <div className="filterContainer">
                 {isRelative ? (
                     <RelativePeriodFilter
-                        currentFilter={relativeFilter.periodType}
+                        currentFilter={effectiveRelativeFilterType}
                         onSelectFilter={(filter) => {
                             setRelativeFilter({ periodType: filter })
-                            setAllPeriods(
-                                getRelativePeriodsOptionsById(
-                                    filter
-                                ).getPeriods()
+                            const selectedOption = filteredRelativeOptions.find(
+                                (opt) => opt.id === filter
                             )
+                            setUserPeriods(selectedOption?.getPeriods() || [])
                         }}
                         dataTest={`${dataTest}-relative-period-filter`}
-                        excludedPeriodTypes={excludedPeriodTypes}
+                        availableOptions={filteredRelativeOptions}
                     />
                 ) : (
                     <FixedPeriodFilter
-                        currentPeriodType={fixedFilter.periodType}
+                        currentPeriodType={effectiveFixedFilterType}
                         currentYear={fixedFilter.year}
                         onSelectPeriodType={(periodType) => {
                             onSelectFixedPeriods({
@@ -150,7 +284,7 @@ const PeriodTransfer = ({
                             })
                         }}
                         dataTest={`${dataTest}-fixed-period-filter`}
-                        excludedPeriodTypes={excludedPeriodTypes}
+                        availableOptions={filteredFixedOptions}
                     />
                 )}
             </div>
@@ -162,14 +296,13 @@ const PeriodTransfer = ({
         setFixedFilter(filter)
 
         if (filter.year.match(/[0-9]{4}/)) {
-            setAllPeriods(
-                getFixedPeriodsOptionsById(
-                    filter.periodType,
-                    periodsSettings
-                ).getPeriods(
-                    fixedPeriodConfig(Number(filter.year)),
-                    periodsSettings
-                )
+            const selectedOption = filteredFixedOptions.find(
+                (opt) => opt.id === filter.periodType
+            )
+            setUserPeriods(
+                selectedOption?.getPeriods(
+                    fixedPeriodConfig(Number(filter.year))
+                ) || []
             )
         }
     }
@@ -227,6 +360,13 @@ const PeriodTransfer = ({
 PeriodTransfer.propTypes = {
     onSelect: PropTypes.func.isRequired,
     dataTest: PropTypes.string,
+    enabledPeriodTypesData: PropTypes.shape({
+        analysisRelativePeriod: PropTypes.string,
+        enabledTypes: PropTypes.array,
+        financialYearDisplayLabel: PropTypes.string,
+        financialYearStart: PropTypes.string,
+        noEnabledTypes: PropTypes.bool,
+    }),
     excludedPeriodTypes: PropTypes.arrayOf(PropTypes.string),
     height: PropTypes.string,
     infoBoxMessage: PropTypes.string,
@@ -242,6 +382,7 @@ PeriodTransfer.propTypes = {
             name: PropTypes.string,
         })
     ),
+    supportsEnabledPeriodTypes: PropTypes.bool,
 }
 
 export default PeriodTransfer
