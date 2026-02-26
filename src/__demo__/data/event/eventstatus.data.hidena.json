@@ -1,26 +1,18 @@
 {
     "headers": [
         {
-            "name": "value",
-            "column": "Value",
-            "valueType": "NUMBER",
-            "type": "java.lang.Double",
-            "hidden": false,
-            "meta": false
-        },
-        {
-            "name": "pe",
-            "column": "Period",
-            "valueType": "TEXT",
-            "type": "java.lang.String",
-            "hidden": false,
-            "meta": true
-        },
-        {
             "name": "A03MvHHogjR.ou",
             "column": "Organisation unit",
             "valueType": "ORGANISATION_UNIT",
             "type": "org.hisp.dhis.organisationunit.OrganisationUnit",
+            "hidden": false,
+            "meta": true
+        },
+        {
+            "name": "A03MvHHogjR.eventdate",
+            "column": "Report date",
+            "valueType": "DATE",
+            "type": "java.time.LocalDate",
             "hidden": false,
             "meta": true
         },
@@ -31,50 +23,38 @@
             "type": "java.lang.String",
             "hidden": false,
             "meta": true
+        },
+        {
+            "name": "value",
+            "column": "Value",
+            "valueType": "NUMBER",
+            "type": "java.lang.Double",
+            "hidden": false,
+            "meta": false
         }
     ],
     "metaData": {
-        "pager": {
-            "page": 1,
-            "pageSize": 50,
-            "isLastPage": true
-        },
         "items": {
+            "202511": {
+                "name": "202511"
+            },
+            "202512": {
+                "name": "202512"
+            },
             "202601": {
-                "name": "January 2026"
+                "name": "202601"
             },
-            "202602": {
-                "name": "February 2026"
+            "ImspTQPwCqd": {
+                "name": "Sierra Leone"
             },
-            "202603": {
-                "name": "March 2026"
+            "A03MvHHogjR.eventdate": {
+                "name": "Report date"
             },
-            "202604": {
-                "name": "April 2026"
+            "A03MvHHogjR.eventstatus": {
+                "name": "Event status"
             },
-            "202605": {
-                "name": "May 2026"
-            },
-            "202606": {
-                "name": "June 2026"
-            },
-            "202607": {
-                "name": "July 2026"
-            },
-            "202608": {
-                "name": "August 2026"
-            },
-            "202609": {
-                "name": "September 2026"
-            },
-            "202610": {
-                "name": "October 2026"
-            },
-            "202611": {
-                "name": "November 2026"
-            },
-            "202612": {
-                "name": "December 2026"
+            "A03MvHHogjR.eventstatus_ACTIVE": {
+                "name": "Active"
             },
             "IpHINAT79UW": {
                 "name": "Child Programme"
@@ -87,122 +67,56 @@
                     "ImspTQPwCqd"
                 ]
             },
-            "A03MvHHogjR.ou": {
-                "name": "Organisation unit"
-            },
-            "A03MvHHogjR.eventstatus": {
-                "name": "Event status"
-            },
-            "pe": {},
             "A03MvHHogjR": {
                 "name": "Birth"
+            },
+            "A03MvHHogjR.ou": {
+                "name": "Organisation unit"
             }
         },
         "dimensions": {
+            "A03MvHHogjR.eventdate": [
+                "202511",
+                "202512",
+                "202601"
+            ],
             "A03MvHHogjR.eventstatus": [
                 "A03MvHHogjR.eventstatus_ACTIVE"
             ],
-            "pe": [
-                "202601",
-                "202602",
-                "202603",
-                "202604",
-                "202605",
-                "202606",
-                "202607",
-                "202608",
-                "202609",
-                "202610",
-                "202611",
-                "202612"
-            ],
+            "pe": [],
             "A03MvHHogjR.ou": [
                 "ImspTQPwCqd"
             ]
         }
     },
     "rowContext": {},
-    "height": 12,
-    "headerWidth": 4,
     "width": 4,
+    "headerWidth": 4,
+    "height": 3,
     "rows": [
         [
-            "949",
+            "ImspTQPwCqd",
+            "202511",
+            "A03MvHHogjR.eventstatus_ACTIVE",
+            "925"
+        ],
+        [
+            "ImspTQPwCqd",
+            "202512",
+            "A03MvHHogjR.eventstatus_ACTIVE",
+            "858"
+        ],
+        [
+            "ImspTQPwCqd",
             "202601",
-            "ImspTQPwCqd",
-            "A03MvHHogjR.eventstatus_ACTIVE"
+            "A03MvHHogjR.eventstatus_ACTIVE",
+            "690"
         ],
         [
-            "841",
-            "202602",
             "ImspTQPwCqd",
-            "A03MvHHogjR.eventstatus_ACTIVE"
-        ],
-        [
-            "1007",
-            "202603",
-            "ImspTQPwCqd",
-            "A03MvHHogjR.eventstatus_ACTIVE"
-        ],
-        [
-            "932",
-            "202604",
-            "ImspTQPwCqd",
-            "A03MvHHogjR.eventstatus_ACTIVE"
-        ],
-        [
-            "866",
-            "202605",
-            "ImspTQPwCqd",
-            "A03MvHHogjR.eventstatus_ACTIVE"
-        ],
-        [
-            "897",
-            "202606",
-            "ImspTQPwCqd",
-            "A03MvHHogjR.eventstatus_ACTIVE"
-        ],
-        [
-            "950",
-            "202607",
-            "ImspTQPwCqd",
-            "A03MvHHogjR.eventstatus_ACTIVE"
-        ],
-        [
-            "968",
-            "202608",
-            "ImspTQPwCqd",
-            "A03MvHHogjR.eventstatus_ACTIVE"
-        ],
-        [
-            "837",
-            "202609",
-            "ImspTQPwCqd",
-            "A03MvHHogjR.eventstatus_ACTIVE"
-        ],
-        [
-            "973",
-            "202610",
-            "ImspTQPwCqd",
-            "A03MvHHogjR.eventstatus_ACTIVE"
-        ],
-        [
-            "925",
-            "202611",
-            "ImspTQPwCqd",
-            "A03MvHHogjR.eventstatus_ACTIVE"
-        ],
-        [
-            "858",
-            "202612",
-            "ImspTQPwCqd",
-            "A03MvHHogjR.eventstatus_ACTIVE"
-        ],
-        [
-            "12",
-            "202601",
-            "ImspTQPwCqd",
-            ""
+            "202511",
+            "",
+            "12"
         ]
     ]
 }

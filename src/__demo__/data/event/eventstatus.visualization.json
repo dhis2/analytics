@@ -91,7 +91,6 @@
         {
             "items": [
                 {
-                    "dimensionItemType": "ORGANISATION_UNIT",
                     "name": "Sierra Leone",
                     "id": "ImspTQPwCqd"
                 }
@@ -114,11 +113,21 @@
             "items": [
                 {
                     "dimensionItemType": "PERIOD",
-                    "id": "MONTHS_THIS_YEAR",
-                    "name": "MONTHS_THIS_YEAR"
+                    "id": "202512"
+                },
+                {
+                    "dimensionItemType": "PERIOD",
+                    "id": "202511"
+                },
+                {
+                    "dimensionItemType": "PERIOD",
+                    "id": "202510"
                 }
             ],
-            "dimension": "pe"
+            "dimension": "A03MvHHogjR.eventdate",
+            "programStage": {
+                "id": "A03MvHHogjR"
+            }
         }
     ],
     "displayName": "Email",
