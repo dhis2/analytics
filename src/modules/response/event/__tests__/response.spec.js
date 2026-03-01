@@ -10,6 +10,9 @@ import responseDatetimeOrg from '../../../../__demo__/data/event/datetime.data.o
 import responseTextHideNa from '../../../../__demo__/data/event/email.data.hidena.json'
 import responseText from '../../../../__demo__/data/event/email.data.json'
 import responseTextOrg from '../../../../__demo__/data/event/email.data.org.json'
+import responseEventstatusHideNa from '../../../../__demo__/data/event/eventstatus.data.hidena.json'
+import responseEventstatus from '../../../../__demo__/data/event/eventstatus.data.json'
+import responseEventstatusOrg from '../../../../__demo__/data/event/eventstatus.data.org.json'
 import responseNumericHideNa from '../../../../__demo__/data/event/integer.data.hidena.json'
 import responseNumeric from '../../../../__demo__/data/event/integer.data.json'
 import responseNumericOrg from '../../../../__demo__/data/event/integer.data.org.json'
@@ -30,9 +33,20 @@ import {
     VALUE_TYPE_PERCENTAGE,
     VALUE_TYPE_TRUE_ONLY,
 } from '../../../valueTypes.js'
-import { getItemFormatterByValueType, transformResponse } from '../response.js'
+import { getItemFormatterByHeaderName, getItemFormatterByValueType, transformResponse } from '../response.js'
 
 describe('response', () => {
+    describe('getItemFormatterByHeaderName', () => {
+        it('should return the correct formatter and format correctly', () => {
+            expect(getItemFormatterByHeaderName('eventstatus')('ACTIVE')).toBe('Active')
+            expect(getItemFormatterByHeaderName('eventstatus')('COMPLETED')).toBe('Completed')
+            expect(getItemFormatterByHeaderName('eventstatus')('SCHEDULE')).toBe('Scheduled')
+            expect(getItemFormatterByHeaderName('programstatus')('ACTIVE')).toBe('Active')
+            expect(getItemFormatterByHeaderName('programstatus')('COMPLETED')).toBe('Completed')
+            expect(getItemFormatterByHeaderName('programstatus')('CANCELLED')).toBe('Cancelled')
+        })
+    })
+
     describe('getItemFormatterByValueType', () => {
         it('should return the correct formatter and format correctly', () => {
             expect(getItemFormatterByValueType(VALUE_TYPE_BOOLEAN)('1')).toBe(
@@ -176,6 +190,18 @@ describe('response', () => {
                         hideNaData: true,
                     })
                 ).toEqual(responseYesOnlyHideNa)
+            })
+        })
+
+        describe('eventstatus', () => {
+            it('transforms response', () => {
+                expect(transformResponse(responseEventstatusOrg)).toEqual(responseEventstatus)
+            })
+
+            it('transforms response and hides N/A data', () => {
+                expect(
+                    transformResponse(responseEventstatusOrg, { hideNaData: true })
+                ).toEqual(responseEventstatusHideNa)
             })
         })
     })

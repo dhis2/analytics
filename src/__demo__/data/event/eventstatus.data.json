@@ -1,0 +1,132 @@
+{
+    "headers": [
+        {
+            "name": "A03MvHHogjR.ou",
+            "column": "Organisation unit",
+            "valueType": "ORGANISATION_UNIT",
+            "type": "org.hisp.dhis.organisationunit.OrganisationUnit",
+            "hidden": false,
+            "meta": true
+        },
+        {
+            "name": "A03MvHHogjR.eventdate",
+            "column": "Report date",
+            "valueType": "DATE",
+            "type": "java.time.LocalDate",
+            "hidden": false,
+            "meta": true
+        },
+        {
+            "name": "A03MvHHogjR.eventstatus",
+            "column": "Event status",
+            "valueType": "TEXT",
+            "type": "java.lang.String",
+            "hidden": false,
+            "meta": true
+        },
+        {
+            "name": "value",
+            "column": "Value",
+            "valueType": "NUMBER",
+            "type": "java.lang.Double",
+            "hidden": false,
+            "meta": false
+        }
+    ],
+    "metaData": {
+        "items": {
+            "202511": {
+                "name": "202511"
+            },
+            "202512": {
+                "name": "202512"
+            },
+            "202601": {
+                "name": "202601"
+            },
+            "ImspTQPwCqd": {
+                "name": "Sierra Leone"
+            },
+            "A03MvHHogjR.eventdate": {
+                "name": "Report date"
+            },
+            "A03MvHHogjR.eventstatus": {
+                "name": "Event status"
+            },
+            "A03MvHHogjR.eventstatus_ACTIVE": {
+                "name": "Active"
+            },
+            "IpHINAT79UW": {
+                "name": "Child Programme"
+            },
+            "ZzYYXq4fJie": {
+                "name": "Baby Postnatal"
+            },
+            "USER_ORGUNIT": {
+                "organisationUnits": [
+                    "ImspTQPwCqd"
+                ]
+            },
+            "A03MvHHogjR": {
+                "name": "Birth"
+            },
+            "A03MvHHogjR.ou": {
+                "name": "Organisation unit"
+            },
+            "": {
+                "name": "No value",
+                "style": {
+                    "fontStyle": "italic",
+                    "color": "#6C7787",
+                    "fontFamily": "monospace",
+                    "letterSpacing": "-0.3px"
+                }
+            }
+        },
+        "dimensions": {
+            "A03MvHHogjR.eventdate": [
+                "202511",
+                "202512",
+                "202601"
+            ],
+            "A03MvHHogjR.eventstatus": [
+                "A03MvHHogjR.eventstatus_ACTIVE",
+                ""
+            ],
+            "pe": [],
+            "A03MvHHogjR.ou": [
+                "ImspTQPwCqd"
+            ]
+        }
+    },
+    "rowContext": {},
+    "width": 4,
+    "headerWidth": 4,
+    "height": 3,
+    "rows": [
+        [
+            "ImspTQPwCqd",
+            "202511",
+            "A03MvHHogjR.eventstatus_ACTIVE",
+            "925"
+        ],
+        [
+            "ImspTQPwCqd",
+            "202512",
+            "A03MvHHogjR.eventstatus_ACTIVE",
+            "858"
+        ],
+        [
+            "ImspTQPwCqd",
+            "202601",
+            "A03MvHHogjR.eventstatus_ACTIVE",
+            "690"
+        ],
+        [
+            "ImspTQPwCqd",
+            "202511",
+            "",
+            "12"
+        ]
+    ]
+}
