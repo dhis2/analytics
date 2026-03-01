@@ -1,4 +1,3 @@
-# 
 # Translators:
 # Yayra Gomado <ygomado@hispwca.org>, 2025
 # Elise Desailly, 2025
@@ -8,19 +7,19 @@
 # Viktor Varland <viktor@dhis2.org>, 2025
 # Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2025
 # Yao Selom SAKA (HISP WCA) <ysaka@hispwca.org>, 2025
-# Esther Tokouli, 2025
 # Philip Larsen Donnelly, 2025
 # Edem Kossi <ekossi@hispwca.org>, 2025
+# Esther Tokouli, 2026
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2025-09-09T09:32:04.677Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Edem Kossi <ekossi@hispwca.org>, 2025\n"
+"Last-Translator: Esther Tokouli, 2026\n"
 "Language-Team: French (https://app.transifex.com/hisp-uio/teams/100509/fr/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: fr\n"
 "Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
@@ -425,13 +424,13 @@ msgid "Remove Assigned Categories"
 msgstr "Supprimer les Catégories Attribuées"
 
 msgid "Add Assigned Categories"
-msgstr "Ajouter des Catégories Affectées"
+msgstr "Ajouter des catégories attribuées"
 
 msgid "Remove"
 msgstr "Supprimer"
 
 msgid "Filter dimensions"
-msgstr "Dimensions du filtre"
+msgstr "Filtrer les dimensions"
 
 msgid "Main dimensions"
 msgstr "Dimensions principales"
@@ -446,17 +445,17 @@ msgid "All items"
 msgstr "Tous les items"
 
 msgid "Automatically include all items"
-msgstr "Inclure tous les éléments automatiquement"
+msgstr "Inclure tous les items automatiquement"
 
 msgid ""
 "Select all {{- dimensionTitle}} items. With this option, new items added in "
 "the future will be automatically included."
 msgstr ""
-"Sélectionner tous {{- dimensionTitle}}les éléments. Avec cette option, les "
-"nouveaux éléments ajoutés à l'avenir seront automatiquement inclus."
+"Sélectionner tous {{- dimensionTitle}}les items. Avec cette option, les "
+"nouveaux items ajoutés à l'avenir seront automatiquement inclus."
 
 msgid "Manually select items..."
-msgstr "Sélection manuelles des éléments..."
+msgstr "Sélection manuelle des items..."
 
 msgid "Nothing found in {{- dimensionTitle}}"
 msgstr "Rien n'a été trouvé dans {{- dimensionTitle}}"
@@ -546,10 +545,10 @@ msgid "Back to all interpretations"
 msgstr "Retour à toutes les interprétations"
 
 msgid "Could not load interpretation details"
-msgstr ""
+msgstr "Impossible de charger les détails de l'interprétation"
 
 msgid "The request to fetch interpretation comments failed"
-msgstr ""
+msgstr "La requête pour récupérer les commentaires d'interprétation a échoué."
 
 msgid "Edit"
 msgstr "Modifier"
@@ -558,16 +557,16 @@ msgid "Write a reply"
 msgstr "Ecrire une réponse"
 
 msgid "Could not post reply"
-msgstr ""
+msgstr "Impossible de publier les réponses"
 
 msgid "Post reply"
 msgstr "Publier une réponse"
 
 msgid "Could not delete comment"
-msgstr ""
+msgstr "Impossible de supprimer le commentaire"
 
 msgid "Could not update comment"
-msgstr "Échec de l'actualisation du commentaire"
+msgstr "Impossible d'actualiser le commentaire"
 
 msgid "Enter comment text"
 msgstr "Saisir le texte du commentaire"
@@ -595,7 +594,7 @@ msgid "Write an interpretation"
 msgstr "Ecrire une interprétation"
 
 msgid "Could not post interpretation"
-msgstr ""
+msgstr "Impossible de publier l'interprétation"
 
 msgid ""
 "Other people viewing this interpretation in the future may see more data."
@@ -610,10 +609,10 @@ msgid "Interpretations"
 msgstr "Interprétations"
 
 msgid "Error loading interpretations"
-msgstr ""
+msgstr "Erreur lors du chargement des interprétations"
 
 msgid "Could not load interpretations"
-msgstr ""
+msgstr "Impossible de charger les interprétations"
 
 msgid "Reply"
 msgstr "Répondre"
@@ -643,16 +642,16 @@ msgid "Share"
 msgstr "Partager"
 
 msgid "Could not delete interpretation"
-msgstr ""
+msgstr "Impossible de supprimer l'interprétation"
 
 msgid "Manage sharing"
 msgstr "Gérer le partage"
 
 msgid "Could not update interpretation text"
-msgstr ""
+msgstr "Impossible d'actualiser le texte de l'interprétation"
 
 msgid "Could not update interpretation"
-msgstr "Échec de l'actualisation de l'interprétation"
+msgstr "Impossible d'actualiser l'interprétation"
 
 msgid "Enter interpretation text"
 msgstr "Saisir le texte de l'interprétation"
@@ -701,13 +700,13 @@ msgstr ""
 "ou contacter votre administrateur système."
 
 msgid "No items found. Create a new to get started."
-msgstr "Aucun élément n'a été trouvé. Créez en un nouveau pour commencer."
+msgstr "Aucun items trouvé. Créez en un nouveau pour commencer."
 
 msgid ""
 "No items found. Try adjusting your search or filter options to find what "
 "you're looking for."
 msgstr ""
-"Aucun élément trouvé. Essayez d'ajuster vos options de recherche ou de "
+"Aucun items trouvé. Essayez d'ajuster vos options de recherche ou de "
 "filtrage pour trouver ce que vous cherchez."
 
 msgid "Create new"
@@ -1263,7 +1262,7 @@ msgid "Missing left parenthesis ("
 msgstr "Parenthèse gauche manquante ("
 
 msgid "Extra Small"
-msgstr "Super petit"
+msgstr "Très petit"
 
 msgid "Small"
 msgstr "Petit"
@@ -1467,7 +1466,7 @@ msgid "Year over year (line)"
 msgstr "Année après année (ligne)"
 
 msgid "Pie"
-msgstr "Tarte"
+msgstr "Camembert"
 
 msgid "Radar"
 msgstr "Radar"
