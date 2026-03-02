@@ -1,16 +1,16 @@
 # 
 # Translators:
-# Rohit Wadhwani, 2025
+# Rohit Wadhwani, 2026
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2025-09-09T09:32:04.677Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Rohit Wadhwani, 2025\n"
+"Last-Translator: Rohit Wadhwani, 2026\n"
 "Language-Team: English (United States) (https://app.transifex.com/hisp-uio/teams/100509/en_US/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: en_US\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -609,7 +609,7 @@ msgid "Open in app"
 msgstr ""
 
 msgid "Share"
-msgstr ""
+msgstr "Share"
 
 msgid "Could not delete interpretation"
 msgstr ""
@@ -994,7 +994,7 @@ msgid "Last 10 years"
 msgstr ""
 
 msgid "Days"
-msgstr ""
+msgstr "Days"
 
 msgid "Weeks"
 msgstr ""
@@ -1003,7 +1003,7 @@ msgid "Bi-weeks"
 msgstr ""
 
 msgid "Months"
-msgstr ""
+msgstr "Months"
 
 msgid "Bi-months"
 msgstr ""
@@ -1018,7 +1018,7 @@ msgid "Financial Years"
 msgstr ""
 
 msgid "Years"
-msgstr ""
+msgstr "Years"
 
 msgid "Value: {{value}}"
 msgstr ""
@@ -1084,7 +1084,7 @@ msgid "Searching for \"{{- searchText}}\""
 msgstr ""
 
 msgid "No results found"
-msgstr ""
+msgstr "No results found"
 
 msgid "Series"
 msgstr ""
@@ -1324,7 +1324,7 @@ msgid "Yes Only"
 msgstr ""
 
 msgid "Date"
-msgstr ""
+msgstr "Date"
 
 msgid "Date & Time"
 msgstr ""
@@ -1363,7 +1363,7 @@ msgid "Reference"
 msgstr ""
 
 msgid "Age"
-msgstr ""
+msgstr "Age"
 
 msgid "URL"
 msgstr ""
