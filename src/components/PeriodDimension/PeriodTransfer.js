@@ -59,7 +59,13 @@ const PeriodTransfer = ({
 }) => {
     const { filteredFixedOptions, filteredRelativeOptions } = useMemo(() => {
         if (supportsEnabledPeriodTypes && enabledPeriodTypesData) {
-            const { enabledTypes, financialYearStart, financialYearDisplayLabel, weeklyDisplayLabel, metaData } = enabledPeriodTypesData
+            const {
+                enabledTypes,
+                financialYearStart,
+                financialYearDisplayLabel,
+                weeklyDisplayLabel,
+                metaData,
+            } = enabledPeriodTypesData
 
             const filteredFixed = applyFixedPeriodTypeDisplayLabels(
                 filterEnabledFixedPeriodTypes(

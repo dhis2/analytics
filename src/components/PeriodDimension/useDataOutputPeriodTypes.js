@@ -81,9 +81,7 @@ const useDataOutputPeriodTypes = () => {
                 v43Data.financialYearStart.analyticsFinancialYearStart
 
             const mappedFyPt = FY_SETTING_TO_SERVER_PT[fyStartValue]
-            const matchingPt = enabledTypes.find(
-                (pt) => pt.name === mappedFyPt
-            )
+            const matchingPt = enabledTypes.find((pt) => pt.name === mappedFyPt)
             if (matchingPt) {
                 financialYearStart = fyStartValue
                 if (matchingPt.displayLabel) {
@@ -95,11 +93,9 @@ const useDataOutputPeriodTypes = () => {
         // v43-only: weekly start logic goes away in v44
         let weeklyDisplayLabel = null
         if (v43Data.weeklyStart?.analyticsWeeklyStart) {
-            const weeklyStartValue =
-                v43Data.weeklyStart.analyticsWeeklyStart
+            const weeklyStartValue = v43Data.weeklyStart.analyticsWeeklyStart
 
-            const mappedWeeklyPt =
-                WEEKLY_START_TO_SERVER_PT[weeklyStartValue]
+            const mappedWeeklyPt = WEEKLY_START_TO_SERVER_PT[weeklyStartValue]
             const matchingWeeklyPt = enabledTypes.find(
                 (pt) => pt.name === mappedWeeklyPt
             )
