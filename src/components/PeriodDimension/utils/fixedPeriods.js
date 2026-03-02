@@ -17,18 +17,13 @@ import {
     SIXMONTHLY,
     SIXMONTHLYAPR,
     YEARLY,
-    FYJAN,
     FYFEB,
-    FYMAR,
     FYAPR,
-    FYMAY,
-    FYJUN,
     FYJUL,
     FYAUG,
     FYSEP,
     FYOCT,
     FYNOV,
-    FYDEC,
 } from './index.js'
 
 export const PERIOD_TYPE_REGEX = {
@@ -314,15 +309,6 @@ const getOptions = (periodSettings) => {
             name: i18n.t('Yearly'),
         },
         {
-            id: FYJAN,
-            getPeriods: getFinancialPeriodType(
-                'FYJAN',
-                filterFuturePeriods,
-                periodSettings
-            ),
-            name: i18n.t('Financial year (Start January)'),
-        },
-        {
             id: FYFEB,
             getPeriods: getFinancialPeriodType(
                 'FYFEB',
@@ -332,15 +318,6 @@ const getOptions = (periodSettings) => {
             name: i18n.t('Financial year (Start February)'),
         },
         {
-            id: FYMAR,
-            getPeriods: getFinancialPeriodType(
-                'FYMAR',
-                filterFuturePeriods,
-                periodSettings
-            ),
-            name: i18n.t('Financial year (Start March)'),
-        },
-        {
             id: FYAPR,
             getPeriods: getFinancialPeriodType(
                 'FYAPR',
@@ -348,24 +325,6 @@ const getOptions = (periodSettings) => {
                 periodSettings
             ),
             name: i18n.t('Financial year (Start April)'),
-        },
-        {
-            id: FYMAY,
-            getPeriods: getFinancialPeriodType(
-                'FYMAY',
-                filterFuturePeriods,
-                periodSettings
-            ),
-            name: i18n.t('Financial year (Start May)'),
-        },
-        {
-            id: FYJUN,
-            getPeriods: getFinancialPeriodType(
-                'FYJUN',
-                filterFuturePeriods,
-                periodSettings
-            ),
-            name: i18n.t('Financial year (Start June)'),
         },
         {
             id: FYJUL,
@@ -411,15 +370,6 @@ const getOptions = (periodSettings) => {
                 periodSettings
             ),
             name: i18n.t('Financial year (Start November)'),
-        },
-        {
-            id: FYDEC,
-            getPeriods: getFinancialPeriodType(
-                'FYDEC',
-                filterFuturePeriods,
-                periodSettings
-            ),
-            name: i18n.t('Financial year (Start December)'),
         },
     ]
 }
