@@ -33,17 +33,33 @@ import {
     VALUE_TYPE_PERCENTAGE,
     VALUE_TYPE_TRUE_ONLY,
 } from '../../../valueTypes.js'
-import { getItemFormatterByHeaderName, getItemFormatterByValueType, transformResponse } from '../response.js'
+import {
+    getItemFormatterByHeaderName,
+    getItemFormatterByValueType,
+    transformResponse,
+} from '../response.js'
 
 describe('response', () => {
     describe('getItemFormatterByHeaderName', () => {
         it('should return the correct formatter and format correctly', () => {
-            expect(getItemFormatterByHeaderName('eventstatus')('ACTIVE')).toBe('Active')
-            expect(getItemFormatterByHeaderName('eventstatus')('COMPLETED')).toBe('Completed')
-            expect(getItemFormatterByHeaderName('eventstatus')('SCHEDULE')).toBe('Scheduled')
-            expect(getItemFormatterByHeaderName('programstatus')('ACTIVE')).toBe('Active')
-            expect(getItemFormatterByHeaderName('programstatus')('COMPLETED')).toBe('Completed')
-            expect(getItemFormatterByHeaderName('programstatus')('CANCELLED')).toBe('Cancelled')
+            expect(getItemFormatterByHeaderName('eventstatus')('ACTIVE')).toBe(
+                'Active'
+            )
+            expect(
+                getItemFormatterByHeaderName('eventstatus')('COMPLETED')
+            ).toBe('Completed')
+            expect(
+                getItemFormatterByHeaderName('eventstatus')('SCHEDULE')
+            ).toBe('Scheduled')
+            expect(
+                getItemFormatterByHeaderName('programstatus')('ACTIVE')
+            ).toBe('Active')
+            expect(
+                getItemFormatterByHeaderName('programstatus')('COMPLETED')
+            ).toBe('Completed')
+            expect(
+                getItemFormatterByHeaderName('programstatus')('CANCELLED')
+            ).toBe('Cancelled')
         })
     })
 
@@ -195,12 +211,16 @@ describe('response', () => {
 
         describe('eventstatus', () => {
             it('transforms response', () => {
-                expect(transformResponse(responseEventstatusOrg)).toEqual(responseEventstatus)
+                expect(transformResponse(responseEventstatusOrg)).toEqual(
+                    responseEventstatus
+                )
             })
 
             it('transforms response and hides N/A data', () => {
                 expect(
-                    transformResponse(responseEventstatusOrg, { hideNaData: true })
+                    transformResponse(responseEventstatusOrg, {
+                        hideNaData: true,
+                    })
                 ).toEqual(responseEventstatusHideNa)
             })
         })

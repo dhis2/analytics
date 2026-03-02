@@ -398,10 +398,7 @@ export const EventstatusNA = (_, { pivotTableOptions }) => {
 
     return (
         <div style={{ width: 800, height: 600 }}>
-            <PivotTable
-                data={eventstatusData}
-                visualization={visualization}
-            />
+            <PivotTable data={eventstatusData} visualization={visualization} />
         </div>
     )
 }
