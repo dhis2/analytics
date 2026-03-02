@@ -1,3 +1,38 @@
+## [29.2.1](https://github.com/dhis2/analytics/compare/v29.2.0...v29.2.1) (2026-03-01)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([927f4a0](https://github.com/dhis2/analytics/commit/927f4a0f2afdb4400c757368ed6f914bb939343a))
+
+# [29.2.0](https://github.com/dhis2/analytics/compare/v29.1.1...v29.2.0) (2026-02-18)
+
+
+### Features
+
+* export FileMenu dialogs ([#1811](https://github.com/dhis2/analytics/issues/1811)) ([95bb0d9](https://github.com/dhis2/analytics/commit/95bb0d9611a836e712f0f752a9c0d58625c40cfd))
+
+## [29.1.1](https://github.com/dhis2/analytics/compare/v29.1.0...v29.1.1) (2026-02-15)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([bae19bc](https://github.com/dhis2/analytics/commit/bae19bca5fb62a6b14f69f7ba7f4344ce9a144d3))
+
+# [29.1.0](https://github.com/dhis2/analytics/compare/v29.0.5...v29.1.0) (2026-02-10)
+
+
+### Features
+
+* use identifiable token + ui upgrade ([#1807](https://github.com/dhis2/analytics/issues/1807)) ([578a573](https://github.com/dhis2/analytics/commit/578a573ff6295c731b7c7d0fcae72539382d0340))
+
+## [29.0.5](https://github.com/dhis2/analytics/compare/v29.0.4...v29.0.5) (2026-02-01)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([a3ecc33](https://github.com/dhis2/analytics/commit/a3ecc33c0bd73968e96809152358fb5a45b3da28))
+
 ## [29.0.4](https://github.com/dhis2/analytics/compare/v29.0.3...v29.0.4) (2025-12-16)
 
 
