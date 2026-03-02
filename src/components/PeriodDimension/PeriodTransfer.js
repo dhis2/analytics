@@ -217,7 +217,7 @@ const PeriodTransfer = ({
         fixedFilter.year,
     ])
 
-    const allPeriods = userPeriods !== null ? userPeriods : derivedPeriods
+    const allPeriods = userPeriods ?? derivedPeriods
 
     const isActive = (value) => {
         const item = selectedItems.find((item) => item.id === value)
