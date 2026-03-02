@@ -62,8 +62,8 @@ export default function (filters, metaData) {
                     else {
                         sectionParts.push(
                             metaData.items[filter.dimension].name +
-                            ': ' +
-                            filterItems.join(', ')
+                                ': ' +
+                                filterItems.join(', ')
                         )
 
                         break

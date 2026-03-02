@@ -1,5 +1,6 @@
 import { useConfig, useDataQuery } from '@dhis2/app-runtime'
 import PropTypes from 'prop-types'
+import React from 'react'
 import { DIMENSION_ID_PERIOD } from '../../modules/predefinedDimensions.js'
 import PeriodTransfer from './PeriodTransfer.js'
 import { useDataOutputPeriodTypes } from './useDataOutputPeriodTypes.js'

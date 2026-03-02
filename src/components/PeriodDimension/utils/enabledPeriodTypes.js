@@ -39,15 +39,8 @@ export const RP_CATEGORY_TO_FP_DEPENDENCIES = {
     BIWEEKLY: ['BiWeekly'],
     MONTHLY: ['Monthly'],
     BIMONTHLY: ['BiMonthly'],
-    QUARTERLY: [
-        'Quarterly',
-        'QuarterlyNov',
-    ],
-    SIXMONTHLY: [
-        'SixMonthly',
-        'SixMonthlyApril',
-        'SixMonthlyNov',
-    ],
+    QUARTERLY: ['Quarterly', 'QuarterlyNov'],
+    SIXMONTHLY: ['SixMonthly', 'SixMonthlyApril', 'SixMonthlyNov'],
     YEARLY: ['Yearly'],
 }
 
@@ -203,4 +196,3 @@ export const filterEnabledRelativePeriodTypes = (
         )
     })
 }
-
