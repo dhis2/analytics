@@ -13,10 +13,13 @@ export const SIXMONTHLY = 'SIXMONTHLY'
 export const SIXMONTHLYAPR = 'SIXMONTHLYAPR'
 export const YEARLY = 'YEARLY'
 export const FINANCIAL = 'FINANCIAL'
-export const FYNOV = 'FYNOV'
-export const FYOCT = 'FYOCT'
-export const FYJUL = 'FYJUL'
+export const FYFEB = 'FYFEB'
 export const FYAPR = 'FYAPR'
+export const FYJUL = 'FYJUL'
+export const FYAUG = 'FYAUG'
+export const FYSEP = 'FYSEP'
+export const FYOCT = 'FYOCT'
+export const FYNOV = 'FYNOV'
 
 export const filterPeriodTypesById = (
     allPeriodTypes = [],

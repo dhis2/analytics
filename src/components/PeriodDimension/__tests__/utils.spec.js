@@ -27,9 +27,12 @@ describe('utils', () => {
                 'SIXMONTHLY',
                 'SIXMONTHLYAPR',
                 'YEARLY',
-                'FYNOV',
-                'FYJUL',
+                'FYFEB',
                 'FYAPR',
+                'FYJUL',
+                'FYAUG',
+                'FYSEP',
+                'FYNOV',
             ])
         })
 

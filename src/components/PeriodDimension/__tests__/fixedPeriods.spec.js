@@ -31,10 +31,13 @@ describe('fixedPeriods utils', () => {
                 'SIXMONTHLY',
                 'SIXMONTHLYAPR',
                 'YEARLY',
-                'FYNOV',
-                'FYOCT',
-                'FYJUL',
+                'FYFEB',
                 'FYAPR',
+                'FYJUL',
+                'FYAUG',
+                'FYSEP',
+                'FYOCT',
+                'FYNOV',
             ])
         })
     })

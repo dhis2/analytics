@@ -17,10 +17,13 @@ import {
     SIXMONTHLY,
     SIXMONTHLYAPR,
     YEARLY,
-    FYNOV,
-    FYOCT,
-    FYJUL,
+    FYFEB,
     FYAPR,
+    FYJUL,
+    FYAUG,
+    FYSEP,
+    FYOCT,
+    FYNOV,
 } from './index.js'
 
 export const PERIOD_TYPE_REGEX = {
@@ -173,43 +176,10 @@ const getYearlyPeriodType = (fnFilter, periodSettings) => {
     }
 }
 
-const getFinancialOctoberPeriodType = (fnFilter, periodSettings) => {
+const getFinancialPeriodType = (periodType, fnFilter, periodSettings) => {
     return (config) => {
         return getPeriods({
-            periodType: 'FYOCT',
-            config,
-            fnFilter,
-            periodSettings,
-        })
-    }
-}
-
-const getFinancialNovemberPeriodType = (fnFilter, periodSettings) => {
-    return (config) => {
-        return getPeriods({
-            periodType: 'FYNOV',
-            config,
-            fnFilter,
-            periodSettings,
-        })
-    }
-}
-
-const getFinancialJulyPeriodType = (fnFilter, periodSettings) => {
-    return (config) => {
-        return getPeriods({
-            periodType: 'FYJUL',
-            config,
-            fnFilter,
-            periodSettings,
-        })
-    }
-}
-
-const getFinancialAprilPeriodType = (fnFilter, periodSettings) => {
-    return (config) => {
-        return getPeriods({
-            periodType: 'FYAPR',
+            periodType,
             config,
             fnFilter,
             periodSettings,
@@ -339,36 +309,67 @@ const getOptions = (periodSettings) => {
             name: i18n.t('Yearly'),
         },
         {
-            id: FYNOV,
-            getPeriods: getFinancialNovemberPeriodType(
+            id: FYFEB,
+            getPeriods: getFinancialPeriodType(
+                'FYFEB',
                 filterFuturePeriods,
                 periodSettings
             ),
-            name: i18n.t('Financial year (Start November)'),
+            name: i18n.t('Financial year (Start February)'),
         },
         {
-            id: FYOCT,
-            getPeriods: getFinancialOctoberPeriodType(
+            id: FYAPR,
+            getPeriods: getFinancialPeriodType(
+                'FYAPR',
                 filterFuturePeriods,
                 periodSettings
             ),
-            name: i18n.t('Financial year (Start October)'),
+            name: i18n.t('Financial year (Start April)'),
         },
         {
             id: FYJUL,
-            getPeriods: getFinancialJulyPeriodType(
+            getPeriods: getFinancialPeriodType(
+                'FYJUL',
                 filterFuturePeriods,
                 periodSettings
             ),
             name: i18n.t('Financial year (Start July)'),
         },
         {
-            id: FYAPR,
-            getPeriods: getFinancialAprilPeriodType(
+            id: FYAUG,
+            getPeriods: getFinancialPeriodType(
+                'FYAUG',
                 filterFuturePeriods,
                 periodSettings
             ),
-            name: i18n.t('Financial year (Start April)'),
+            name: i18n.t('Financial year (Start August)'),
+        },
+        {
+            id: FYSEP,
+            getPeriods: getFinancialPeriodType(
+                'FYSEP',
+                filterFuturePeriods,
+                periodSettings
+            ),
+            name: i18n.t('Financial year (Start September)'),
+        },
+        {
+            id: FYOCT,
+            getPeriods: getFinancialPeriodType(
+                'FYOCT',
+                filterFuturePeriods,
+                periodSettings
+            ),
+            name: i18n.t('Financial year (Start October)'),
+        },
+        {
+            id: FYNOV,
+            getPeriods: getFinancialPeriodType(
+                'FYNOV',
+                filterFuturePeriods,
+                periodSettings
+            ),
+            name: i18n.t('Financial year (Start November)'),
         },
     ]
 }
