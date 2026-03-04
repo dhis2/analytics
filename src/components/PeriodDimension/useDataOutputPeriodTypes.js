@@ -20,8 +20,10 @@ const v43Query = {
 
 // v43-only: analyticsFinancialYearStart is removed in v44
 const FY_SETTING_TO_SERVER_PT = {
+    FINANCIAL_YEAR_FEBRUARY: 'FinancialFeb',
     FINANCIAL_YEAR_APRIL: 'FinancialApril',
     FINANCIAL_YEAR_JULY: 'FinancialJuly',
+    FINANCIAL_YEAR_AUGUST: 'FinancialAug',
     FINANCIAL_YEAR_SEPTEMBER: 'FinancialSep',
     FINANCIAL_YEAR_OCTOBER: 'FinancialOct',
     FINANCIAL_YEAR_NOVEMBER: 'FinancialNov',
