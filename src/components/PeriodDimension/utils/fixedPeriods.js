@@ -8,6 +8,7 @@ import {
     WEEKLY,
     WEEKLYWED,
     WEEKLYTHU,
+    WEEKLYFRI,
     WEEKLYSAT,
     WEEKLYSUN,
     BIWEEKLY,
@@ -32,6 +33,7 @@ export const PERIOD_TYPE_REGEX = {
     [BIWEEKLY]: /^([0-9]{4})BiW([0-9]{1,2})$/, // YYYY"BiW"[1-27]
     [WEEKLYWED]: /^([0-9]{4})(Wed)W([0-9]{1,2})$/, // YYYY"WedW"[1-53]
     [WEEKLYTHU]: /^([0-9]{4})(Thu)W([0-9]{1,2})$/, // YYYY"ThuW"[1-53]
+    [WEEKLYFRI]: /^([0-9]{4})(Fri)W([0-9]{1,2})$/, // YYYY"FriW"[1-53]
     [WEEKLYSAT]: /^([0-9]{4})(Sat)W([0-9]{1,2})$/, // YYYY"SatW"[1-53]
     [WEEKLYSUN]: /^([0-9]{4})(Sun)W([0-9]{1,2})$/, // YYYY"SunW"[1-53]
     [MONTHLY]: /^([0-9]{4})([0-9]{2})$/, // YYYYMM
@@ -233,6 +235,15 @@ const getOptions = (periodSettings) => {
                 periodSettings
             ),
             name: i18n.t('Weekly (Start Thursday)'),
+        },
+        {
+            id: WEEKLYFRI,
+            getPeriods: getWeeklyPeriodType(
+                { startDay: 5 },
+                filterFuturePeriods,
+                periodSettings
+            ),
+            name: i18n.t('Weekly (Start Friday)'),
         },
         {
             id: WEEKLYSAT,
