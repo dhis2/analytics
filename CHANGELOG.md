@@ -1,3 +1,10 @@
+# [29.3.0](https://github.com/dhis2/analytics/compare/v29.2.1...v29.3.0) (2026-03-03)
+
+
+### Features
+
+* use enabled period types (DHIS2-21001) ([#1801](https://github.com/dhis2/analytics/issues/1801)) ([1550e4c](https://github.com/dhis2/analytics/commit/1550e4c757234886303cdc98122501a54407e9f5))
+
 ## [29.2.1](https://github.com/dhis2/analytics/compare/v29.2.0...v29.2.1) (2026-03-01)
 
 
