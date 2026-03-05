@@ -29,7 +29,7 @@ import {
 
 export const PERIOD_TYPE_REGEX = {
     [DAILY]: /^(\d{4})(\d{2})(\d{2})$/, // YYYYMMDD
-    [WEEKLY]: /^(\d{4})()W(\d{1,2})$/, // YYYY"W"[1-53]
+    [WEEKLY]: /^(\d{4})W(\d{1,2})$/, // YYYY"W"[1-53]
     [BIWEEKLY]: /^(\d{4})BiW(\d{1,2})$/, // YYYY"BiW"[1-27]
     [WEEKLYWED]: /^(\d{4})(Wed)W(\d{1,2})$/, // YYYY"WedW"[1-53]
     [WEEKLYTHU]: /^(\d{4})(Thu)W(\d{1,2})$/, // YYYY"ThuW"[1-53]
