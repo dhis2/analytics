@@ -43,10 +43,13 @@ export const PERIOD_TYPE_REGEX = {
     [SIXMONTHLYAPR]: /^(\d{4})AprilS([12])$/, // YYYY"AprilS"[1/2]
     // [SIXMONTHLYNOV]: /^(\d{4})NovS([12])$/, // YYYY"NovS"[1/2] Not supported?
     [YEARLY]: /^(\d{4})$/, // YYYY
-    [FYNOV]: /^(\d{4})Nov$/, // YYYY"Nov"
-    [FYOCT]: /^(\d{4})Oct$/, // YYYY"Oct"
-    [FYJUL]: /^(\d{4})July$/, // YYYY"July"
+    [FYFEB]: /^(\d{4})Feb$/, // YYYY"Feb"
     [FYAPR]: /^(\d{4})April$/, // YYYY"April"
+    [FYJUL]: /^(\d{4})July$/, // YYYY"July"
+    [FYAUG]: /^(\d{4})Aug$/, // YYYY"Aug"
+    [FYSEP]: /^(\d{4})Sep$/, // YYYY"Sep"
+    [FYOCT]: /^(\d{4})Oct$/, // YYYY"Oct"
+    [FYNOV]: /^(\d{4})Nov$/, // YYYY"Nov"
 }
 
 const getPeriods = ({ periodType, config, fnFilter, periodSettings = {} }) => {
