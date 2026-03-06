@@ -301,7 +301,7 @@ const PeriodTransfer = ({
     const onSelectFixedPeriods = (filter) => {
         setFixedFilter(filter)
 
-        if (filter.year.match(/[0-9]{4}/)) {
+        if (filter.year.match(/\d{4}/)) {
             const selectedOption = filteredFixedOptions.find(
                 (opt) => opt.id === filter.periodType
             )

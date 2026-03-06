@@ -8,6 +8,7 @@ import {
     WEEKLY,
     WEEKLYWED,
     WEEKLYTHU,
+    WEEKLYFRI,
     WEEKLYSAT,
     WEEKLYSUN,
     BIWEEKLY,
@@ -27,24 +28,28 @@ import {
 } from './index.js'
 
 export const PERIOD_TYPE_REGEX = {
-    [DAILY]: /^([0-9]{4})([0-9]{2})([0-9]{2})$/, // YYYYMMDD
-    [WEEKLY]: /^([0-9]{4})()W([0-9]{1,2})$/, // YYYY"W"[1-53]
-    [BIWEEKLY]: /^([0-9]{4})BiW([0-9]{1,2})$/, // YYYY"BiW"[1-27]
-    [WEEKLYWED]: /^([0-9]{4})(Wed)W([0-9]{1,2})$/, // YYYY"WedW"[1-53]
-    [WEEKLYTHU]: /^([0-9]{4})(Thu)W([0-9]{1,2})$/, // YYYY"ThuW"[1-53]
-    [WEEKLYSAT]: /^([0-9]{4})(Sat)W([0-9]{1,2})$/, // YYYY"SatW"[1-53]
-    [WEEKLYSUN]: /^([0-9]{4})(Sun)W([0-9]{1,2})$/, // YYYY"SunW"[1-53]
-    [MONTHLY]: /^([0-9]{4})([0-9]{2})$/, // YYYYMM
-    [BIMONTHLY]: /^([0-9]{4})([0-9]{2})B$/, // YYYY0[1-6]"B"
-    [QUARTERLY]: /^([0-9]{4})Q([1234])$/, // YYYY"Q"[1-4]
-    [SIXMONTHLY]: /^([0-9]{4})S([12])$/, // YYYY"S"[1/2]
-    [SIXMONTHLYAPR]: /^([0-9]{4})AprilS([12])$/, // YYYY"AprilS"[1/2]
-    // [SIXMONTHLYNOV]: /^([0-9]{4})NovS([12])$/, // YYYY"NovS"[1/2] Not supported?
-    [YEARLY]: /^([0-9]{4})$/, // YYYY
-    [FYNOV]: /^([0-9]{4})Nov$/, // YYYY"Nov"
-    [FYOCT]: /^([0-9]{4})Oct$/, // YYYY"Oct"
-    [FYJUL]: /^([0-9]{4})July$/, // YYYY"July"
-    [FYAPR]: /^([0-9]{4})April$/, // YYYY"April"
+    [DAILY]: /^(\d{4})(\d{2})(\d{2})$/, // YYYYMMDD
+    [WEEKLY]: /^(\d{4})W(\d{1,2})$/, // YYYY"W"[1-53]
+    [BIWEEKLY]: /^(\d{4})BiW(\d{1,2})$/, // YYYY"BiW"[1-27]
+    [WEEKLYWED]: /^(\d{4})(Wed)W(\d{1,2})$/, // YYYY"WedW"[1-53]
+    [WEEKLYTHU]: /^(\d{4})(Thu)W(\d{1,2})$/, // YYYY"ThuW"[1-53]
+    [WEEKLYFRI]: /^(\d{4})(Fri)W(\d{1,2})$/, // YYYY"FriW"[1-53]
+    [WEEKLYSAT]: /^(\d{4})(Sat)W(\d{1,2})$/, // YYYY"SatW"[1-53]
+    [WEEKLYSUN]: /^(\d{4})(Sun)W(\d{1,2})$/, // YYYY"SunW"[1-53]
+    [MONTHLY]: /^(\d{4})(\d{2})$/, // YYYYMM
+    [BIMONTHLY]: /^(\d{4})(\d{2})B$/, // YYYY0[1-6]"B"
+    [QUARTERLY]: /^(\d{4})Q([1234])$/, // YYYY"Q"[1-4]
+    [SIXMONTHLY]: /^(\d{4})S([12])$/, // YYYY"S"[1/2]
+    [SIXMONTHLYAPR]: /^(\d{4})AprilS([12])$/, // YYYY"AprilS"[1/2]
+    // [SIXMONTHLYNOV]: /^(\d{4})NovS([12])$/, // YYYY"NovS"[1/2] Not supported?
+    [YEARLY]: /^(\d{4})$/, // YYYY
+    [FYFEB]: /^(\d{4})Feb$/, // YYYY"Feb"
+    [FYAPR]: /^(\d{4})April$/, // YYYY"April"
+    [FYJUL]: /^(\d{4})July$/, // YYYY"July"
+    [FYAUG]: /^(\d{4})Aug$/, // YYYY"Aug"
+    [FYSEP]: /^(\d{4})Sep$/, // YYYY"Sep"
+    [FYOCT]: /^(\d{4})Oct$/, // YYYY"Oct"
+    [FYNOV]: /^(\d{4})Nov$/, // YYYY"Nov"
 }
 
 const getPeriods = ({ periodType, config, fnFilter, periodSettings = {} }) => {
@@ -233,6 +238,15 @@ const getOptions = (periodSettings) => {
                 periodSettings
             ),
             name: i18n.t('Weekly (Start Thursday)'),
+        },
+        {
+            id: WEEKLYFRI,
+            getPeriods: getWeeklyPeriodType(
+                { startDay: 5 },
+                filterFuturePeriods,
+                periodSettings
+            ),
+            name: i18n.t('Weekly (Start Friday)'),
         },
         {
             id: WEEKLYSAT,

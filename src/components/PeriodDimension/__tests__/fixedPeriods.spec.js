@@ -22,6 +22,7 @@ describe('fixedPeriods utils', () => {
                 'WEEKLY',
                 'WEEKLYWED',
                 'WEEKLYTHU',
+                'WEEKLYFRI',
                 'WEEKLYSAT',
                 'WEEKLYSUN',
                 'BIWEEKLY',

@@ -20,6 +20,7 @@ describe('utils', () => {
             expect(periodIds).toEqual([
                 'WEEKLYWED',
                 'WEEKLYTHU',
+                'WEEKLYFRI',
                 'WEEKLYSUN',
                 'BIWEEKLY',
                 'BIMONTHLY',
