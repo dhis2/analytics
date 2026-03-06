@@ -1,3 +1,10 @@
+## [29.3.1](https://github.com/dhis2/analytics/compare/v29.3.0...v29.3.1) (2026-03-06)
+
+
+### Bug Fixes
+
+* yearly and fy period type mapping (DHIS2-21028) ([#1817](https://github.com/dhis2/analytics/issues/1817)) ([51b7042](https://github.com/dhis2/analytics/commit/51b70427cc5bb50939a2110bce6b3b705a880b9e))
+
 # [29.3.0](https://github.com/dhis2/analytics/compare/v29.2.1...v29.3.0) (2026-03-03)
 
 
