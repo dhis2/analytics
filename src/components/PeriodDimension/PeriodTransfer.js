@@ -99,10 +99,10 @@ const PeriodTransfer = ({
         } else {
             const allFixed = getFixedPeriodsOptions(periodsSettings)
             const allRelative = getRelativePeriodsOptions()
-            const v43OnlyPeriodTypes = [WEEKLYFRI, FYFEB, FYAUG, FYSEP]
+            const v43PeriodTypes = [WEEKLYFRI, FYFEB, FYAUG, FYSEP]
             const allExcludedPeriodTypes = [
                 ...excludedPeriodTypes,
-                ...v43OnlyPeriodTypes,
+                ...v43PeriodTypes,
             ]
 
             return {
