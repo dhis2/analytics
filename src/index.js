@@ -365,10 +365,13 @@ export {
     SIXMONTHLYAPR,
     YEARLY,
     FINANCIAL,
-    FYNOV,
-    FYOCT,
-    FYJUL,
+    FYFEB,
     FYAPR,
+    FYJUL,
+    FYAUG,
+    FYSEP,
+    FYOCT,
+    FYNOV,
 } from './components/PeriodDimension/utils/index.js'
 export {
     getRelativePeriodsOptionsById,
