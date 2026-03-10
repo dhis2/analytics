@@ -31,6 +31,7 @@ const DataDimension = ({
     infoBoxMessage,
     onCalculationSave,
     visType,
+    height,
 }) => {
     const { serverVersion } = useConfig()
 
@@ -130,6 +131,7 @@ const DataDimension = ({
                 infoDataItem={infoDataItem}
                 setInfoDataItem={setInfoDataItem}
                 onEditClick={onEditClick}
+                height={height}
             />
             {currentDataItem && (
                 <ItemOptionsSelector
@@ -143,6 +145,7 @@ const DataDimension = ({
                     setInfoDataItem={setInfoDataItem}
                     onClose={() => setCurrentDataItem()}
                     onEditClick={onEditClick}
+                    height={height}
                 />
             )}
             {infoDataItem && (
@@ -172,6 +175,7 @@ DataDimension.propTypes = {
     onSelect: PropTypes.func.isRequired,
     currentUser: PropTypes.object,
     enabledDataTypes: PropTypes.array,
+    height: PropTypes.string,
     infoBoxMessage: PropTypes.string,
     visType: PropTypes.string,
     onCalculationSave: PropTypes.func,

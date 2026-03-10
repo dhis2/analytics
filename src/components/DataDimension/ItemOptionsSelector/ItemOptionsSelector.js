@@ -54,6 +54,7 @@ export const ItemOptionsSelector = ({
     onSelect,
     onClose,
     dataTest,
+    height = TRANSFER_HEIGHT,
 }) => {
     const [state, setState] = useState({
         searchTerm: '',
@@ -236,7 +237,7 @@ export const ItemOptionsSelector = ({
                     <p className="rightHeader">{i18n.t('Selected items')}</p>
                 }
                 enableOrderChange
-                height={TRANSFER_HEIGHT}
+                height={height}
                 optionsWidth={TRANSFER_OPTIONS_WIDTH}
                 selectedWidth={TRANSFER_SELECTED_WIDTH}
                 selectedEmptyComponent={<SelectedEmptyPlaceholder />}
@@ -282,6 +283,7 @@ ItemOptionsSelector.propTypes = {
     onClose: PropTypes.func.isRequired,
     onSelect: PropTypes.func.isRequired,
     dataTest: PropTypes.string,
+    height: PropTypes.string,
     infoDataItem: PropTypes.object,
     itemsRef: PropTypes.object,
     selectedItems: PropTypes.arrayOf(

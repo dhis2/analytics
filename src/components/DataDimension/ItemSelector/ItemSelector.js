@@ -136,6 +136,7 @@ const ItemSelector = ({
     onEditClick,
     isOptionViewMode,
     supportsEDI,
+    height = TRANSFER_HEIGHT,
 }) => {
     const [state, setState] = useState({
         searchTerm: '',
@@ -412,7 +413,7 @@ const ItemSelector = ({
                     ) : undefined
                 }
                 enableOrderChange
-                height={TRANSFER_HEIGHT}
+                height={height}
                 optionsWidth={TRANSFER_OPTIONS_WIDTH}
                 selectedWidth={TRANSFER_SELECTED_WIDTH}
                 selectedEmptyComponent={<SelectedEmptyPlaceholder />}
@@ -464,6 +465,7 @@ ItemSelector.propTypes = {
     currentCalculation: PropTypes.object,
     dataTest: PropTypes.string,
     dataTypes: PropTypes.array,
+    height: PropTypes.string,
     infoBoxMessage: PropTypes.string,
     infoDataItem: PropTypes.object,
     isOptionViewMode: PropTypes.bool,
