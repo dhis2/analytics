@@ -1,7 +1,7 @@
 import { getNowInCalendar } from '@dhis2/multi-calendar-dates'
 import { IconInfo16, NoticeBox, TabBar, Tab, Transfer } from '@dhis2/ui'
 import PropTypes from 'prop-types'
-import React, { useRef, useState, useMemo } from 'react'
+import React, { useCallback, useRef, useState, useMemo } from 'react'
 import PeriodIcon from '../../assets/DimensionItemIcons/PeriodIcon.js' //TODO: Reimplement the icon.js
 import i18n from '../../locales/index.js'
 import {
@@ -231,6 +231,7 @@ const PeriodTransfer = ({
         filteredRelativeOptions,
         filteredFixedOptions,
         fixedFilter.year,
+        fixedPeriodConfig,
     ])
 
     const allPeriods = userPeriods ?? derivedPeriods
