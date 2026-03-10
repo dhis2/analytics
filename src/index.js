@@ -353,6 +353,7 @@ export {
     WEEKLY,
     WEEKLYWED,
     WEEKLYTHU,
+    WEEKLYFRI,
     WEEKLYSAT,
     WEEKLYSUN,
     WEEKS_THIS_YEAR,
