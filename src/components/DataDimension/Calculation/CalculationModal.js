@@ -48,6 +48,7 @@ const CalculationModal = ({
     onClose,
     onDelete,
     displayNameProp,
+    height,
 }) => {
     const { show: showError } = useAlert((error) => error, { critical: true })
     const mutationParams = { onError: (error) => showError(error) }
@@ -311,6 +312,7 @@ const CalculationModal = ({
                                 <DataElementSelector
                                     displayNameProp={displayNameProp}
                                     onDoubleClick={addItem}
+                                    height={height}
                                 />
                                 <MathOperatorSelector onDoubleClick={addItem} />
                             </div>
@@ -484,6 +486,7 @@ CalculationModal.propTypes = {
         id: PropTypes.string,
         name: PropTypes.string,
     }),
+    height: PropTypes.string,
 }
 
 export default CalculationModal

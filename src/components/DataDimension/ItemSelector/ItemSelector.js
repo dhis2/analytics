@@ -137,6 +137,7 @@ const ItemSelector = ({
     isOptionViewMode,
     supportsEDI,
     height = TRANSFER_HEIGHT,
+    heightCalculation,
 }) => {
     const [state, setState] = useState({
         searchTerm: '',
@@ -452,6 +453,7 @@ const ItemSelector = ({
                     onClose={() => setCurrentCalculation()}
                     onDelete={onDeleteCalculation}
                     displayNameProp={displayNameProp}
+                    height={heightCalculation}
                 />
             )}
             <style jsx>{styles}</style>
@@ -466,6 +468,7 @@ ItemSelector.propTypes = {
     dataTest: PropTypes.string,
     dataTypes: PropTypes.array,
     height: PropTypes.string,
+    heightCalculation: PropTypes.string,
     infoBoxMessage: PropTypes.string,
     infoDataItem: PropTypes.object,
     isOptionViewMode: PropTypes.bool,

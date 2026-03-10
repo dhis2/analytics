@@ -23,6 +23,8 @@ import {
 import DataElementOption from './DataElementOption.js'
 import styles from './styles/DataElementSelector.style.js'
 
+const SCROLLBOX_HEIGHT = 337
+
 const getOptions = () => ({
     [TOTALS]: i18n.t('Totals only'),
     [DETAIL]: i18n.t('Details only'),
@@ -123,7 +125,11 @@ DisaggregationSelector.propTypes = {
     onChange: PropTypes.func.isRequired,
 }
 
-const DataElementSelector = ({ displayNameProp, onDoubleClick }) => {
+const DataElementSelector = ({
+    displayNameProp,
+    onDoubleClick,
+    height = SCROLLBOX_HEIGHT,
+}) => {
     const dataEngine = useDataEngine()
 
     const [searchTerm, setSearchTerm] = useState('')
@@ -271,6 +277,7 @@ const DataElementSelector = ({ displayNameProp, onDoubleClick }) => {
                 <div
                     className="dimension-list-scrollbox"
                     ref={rootRef}
+                    style={{ height }}
                     onScroll={() => {
                         if (isSorting) {
                             rootRef.current.scrollTo({
@@ -319,6 +326,7 @@ const DataElementSelector = ({ displayNameProp, onDoubleClick }) => {
 DataElementSelector.propTypes = {
     displayNameProp: PropTypes.string.isRequired,
     onDoubleClick: PropTypes.func.isRequired,
+    height: PropTypes.string,
 }
 
 export default DataElementSelector
