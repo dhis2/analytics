@@ -1,3 +1,10 @@
+## [29.3.2](https://github.com/dhis2/analytics/compare/v29.3.1...v29.3.2) (2026-03-11)
+
+
+### Bug Fixes
+
+* version specific period types ([#1820](https://github.com/dhis2/analytics/issues/1820)) ([2c78208](https://github.com/dhis2/analytics/commit/2c78208dfecae4617cb5ae78cad99ee8501b696b))
+
 ## [29.3.1](https://github.com/dhis2/analytics/compare/v29.3.0...v29.3.1) (2026-03-06)
 
 
