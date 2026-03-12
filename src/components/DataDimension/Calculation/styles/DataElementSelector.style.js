@@ -9,7 +9,6 @@ export default css`
     .dimension-list-scrollbox {
         position: relative;
         width: 100%;
-        height: 337px;
         overflow: hidden;
         overflow-y: auto;
         border: 1px solid ${colors.grey400};

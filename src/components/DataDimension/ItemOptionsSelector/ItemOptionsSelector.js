@@ -54,6 +54,8 @@ export const ItemOptionsSelector = ({
     onSelect,
     onClose,
     dataTest,
+    height = TRANSFER_HEIGHT,
+    maxSelections,
 }) => {
     const [state, setState] = useState({
         searchTerm: '',
@@ -235,8 +237,8 @@ export const ItemOptionsSelector = ({
                 rightHeader={
                     <p className="rightHeader">{i18n.t('Selected items')}</p>
                 }
-                enableOrderChange
-                height={TRANSFER_HEIGHT}
+                enableOrderChange={!maxSelections || maxSelections > 1}
+                height={height}
                 optionsWidth={TRANSFER_OPTIONS_WIDTH}
                 selectedWidth={TRANSFER_SELECTED_WIDTH}
                 selectedEmptyComponent={<SelectedEmptyPlaceholder />}
@@ -266,6 +268,7 @@ export const ItemOptionsSelector = ({
                         />
                     )
                 }}
+                maxSelections={maxSelections}
                 dataTest={`${dataTest}-option-view-mode-transfer`}
             />
             <style jsx>{styles}</style>
@@ -282,8 +285,10 @@ ItemOptionsSelector.propTypes = {
     onClose: PropTypes.func.isRequired,
     onSelect: PropTypes.func.isRequired,
     dataTest: PropTypes.string,
+    height: PropTypes.string,
     infoDataItem: PropTypes.object,
     itemsRef: PropTypes.object,
+    maxSelections: PropTypes.number,
     selectedItems: PropTypes.arrayOf(
         PropTypes.exact({
             label: PropTypes.string.isRequired,
