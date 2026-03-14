@@ -14,7 +14,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2025-09-09T09:32:04.677Z\n"
+"POT-Creation-Date: 2026-03-04T14:56:39.522Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: Esther Tokouli, 2026\n"
 "Language-Team: French (https://app.transifex.com/hisp-uio/teams/100509/fr/)\n"
@@ -860,6 +860,14 @@ msgstr "Période"
 msgid "Selected Periods"
 msgstr "Périodes sélectionnées"
 
+msgid "No period types available"
+msgstr ""
+
+msgid ""
+"No period types are enabled in the system. Please contact your system "
+"administrator."
+msgstr ""
+
 msgid "Relative periods"
 msgstr "Périodes relatives"
 
@@ -880,6 +888,9 @@ msgstr "Hebdomadaire (début mercredi)"
 
 msgid "Weekly (Start Thursday)"
 msgstr "Hebdomadaire (début jeudi)"
+
+msgid "Weekly (Start Friday)"
+msgstr ""
 
 msgid "Weekly (Start Saturday)"
 msgstr "Hebdomadaire (début samedi)"
@@ -908,17 +919,26 @@ msgstr "Six-mois avril"
 msgid "Yearly"
 msgstr "Annuel"
 
-msgid "Financial year (Start November)"
-msgstr "Année fiscale (Débutant par novembre)"
+msgid "Financial year (Start February)"
+msgstr ""
 
-msgid "Financial year (Start October)"
-msgstr "Année fiscale (Débutant par octobre)"
+msgid "Financial year (Start April)"
+msgstr "Année fiscale (Débutant par avril)"
 
 msgid "Financial year (Start July)"
 msgstr "Année fiscale (Débutant par juillet)"
 
-msgid "Financial year (Start April)"
-msgstr "Année fiscale (Débutant par avril)"
+msgid "Financial year (Start August)"
+msgstr ""
+
+msgid "Financial year (Start September)"
+msgstr ""
+
+msgid "Financial year (Start October)"
+msgstr "Année fiscale (Débutant par octobre)"
+
+msgid "Financial year (Start November)"
+msgstr "Année fiscale (Débutant par novembre)"
 
 msgid "Today"
 msgstr "Aujourd'hui"
