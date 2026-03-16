@@ -216,6 +216,9 @@ const PeriodTransfer = ({
             )
             return opt?.getPeriods() || []
         } else {
+            if (!/\d{4}/.test(fixedFilter.year)) {
+                return []
+            }
             const opt = filteredFixedOptions.find(
                 (o) => o.id === effectiveFixedFilterType
             )

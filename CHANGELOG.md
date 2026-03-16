@@ -1,3 +1,10 @@
+## [29.3.3](https://github.com/dhis2/analytics/compare/v29.3.2...v29.3.3) (2026-03-14)
+
+
+### Bug Fixes
+
+* check against invalid year in fixed periods ([#1821](https://github.com/dhis2/analytics/issues/1821)) ([cb1ee75](https://github.com/dhis2/analytics/commit/cb1ee75801f9d4157e8117b60f4e6174ca71096d))
+
 ## [29.3.2](https://github.com/dhis2/analytics/compare/v29.3.1...v29.3.2) (2026-03-11)
 
 
