@@ -136,6 +136,9 @@ const ItemSelector = ({
     onEditClick,
     isOptionViewMode,
     supportsEDI,
+    height = TRANSFER_HEIGHT,
+    heightCalculation,
+    maxSelections,
 }) => {
     const [state, setState] = useState({
         searchTerm: '',
@@ -411,8 +414,8 @@ const ItemSelector = ({
                         </div>
                     ) : undefined
                 }
-                enableOrderChange
-                height={TRANSFER_HEIGHT}
+                enableOrderChange={!maxSelections || maxSelections > 1}
+                height={height}
                 optionsWidth={TRANSFER_OPTIONS_WIDTH}
                 selectedWidth={TRANSFER_SELECTED_WIDTH}
                 selectedEmptyComponent={<SelectedEmptyPlaceholder />}
@@ -442,6 +445,7 @@ const ItemSelector = ({
                         /* eslint-enable react/prop-types */
                     />
                 )}
+                maxSelections={maxSelections}
                 dataTest={`${dataTest}-transfer`}
             />
             {currentCalculation && supportsEDI && (
@@ -451,6 +455,7 @@ const ItemSelector = ({
                     onClose={() => setCurrentCalculation()}
                     onDelete={onDeleteCalculation}
                     displayNameProp={displayNameProp}
+                    height={heightCalculation}
                 />
             )}
             <style jsx>{styles}</style>
@@ -464,10 +469,13 @@ ItemSelector.propTypes = {
     currentCalculation: PropTypes.object,
     dataTest: PropTypes.string,
     dataTypes: PropTypes.array,
+    height: PropTypes.string,
+    heightCalculation: PropTypes.string,
     infoBoxMessage: PropTypes.string,
     infoDataItem: PropTypes.object,
     isOptionViewMode: PropTypes.bool,
     itemsRef: PropTypes.object,
+    maxSelections: PropTypes.number,
     noItemsMessage: PropTypes.string,
     rightFooter: PropTypes.node,
     selectedItems: PropTypes.arrayOf(

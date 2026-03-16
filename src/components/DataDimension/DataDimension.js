@@ -31,6 +31,9 @@ const DataDimension = ({
     infoBoxMessage,
     onCalculationSave,
     visType,
+    height,
+    heightCalculation,
+    maxSelections,
 }) => {
     const { serverVersion } = useConfig()
 
@@ -130,6 +133,9 @@ const DataDimension = ({
                 infoDataItem={infoDataItem}
                 setInfoDataItem={setInfoDataItem}
                 onEditClick={onEditClick}
+                height={height}
+                heightCalculation={heightCalculation}
+                maxSelections={maxSelections}
             />
             {currentDataItem && (
                 <ItemOptionsSelector
@@ -143,6 +149,8 @@ const DataDimension = ({
                     setInfoDataItem={setInfoDataItem}
                     onClose={() => setCurrentDataItem()}
                     onEditClick={onEditClick}
+                    height={height}
+                    maxSelections={maxSelections}
                 />
             )}
             {infoDataItem && (
@@ -172,7 +180,10 @@ DataDimension.propTypes = {
     onSelect: PropTypes.func.isRequired,
     currentUser: PropTypes.object,
     enabledDataTypes: PropTypes.array,
+    height: PropTypes.string,
+    heightCalculation: PropTypes.string,
     infoBoxMessage: PropTypes.string,
+    maxSelections: PropTypes.number,
     visType: PropTypes.string,
     onCalculationSave: PropTypes.func,
 }
