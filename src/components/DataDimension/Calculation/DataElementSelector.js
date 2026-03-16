@@ -23,7 +23,7 @@ import {
 import DataElementOption from './DataElementOption.js'
 import styles from './styles/DataElementSelector.style.js'
 
-const SCROLLBOX_HEIGHT = 337
+const SCROLLBOX_HEIGHT = '337px'
 
 const getOptions = () => ({
     [TOTALS]: i18n.t('Totals only'),
