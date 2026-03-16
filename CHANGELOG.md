@@ -1,3 +1,10 @@
+# [29.4.0](https://github.com/dhis2/analytics/compare/v29.3.3...v29.4.0) (2026-03-16)
+
+
+### Features
+
+* add flexibility to DataDimension ([#1819](https://github.com/dhis2/analytics/issues/1819)) ([328bc5d](https://github.com/dhis2/analytics/commit/328bc5db79c4b653f8fe73b38df57c33610fe61a))
+
 ## [29.3.3](https://github.com/dhis2/analytics/compare/v29.3.2...v29.3.3) (2026-03-14)
 
 
