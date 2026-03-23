@@ -1,5 +1,5 @@
-if (globalThis.CSS === undefined) {
-    globalThis.CSS = { supports: () => false }
-} else if (typeof globalThis.CSS.supports !== 'function') {
-    globalThis.CSS.supports = () => false
+if (global.CSS === undefined) {
+    global.CSS = { supports: () => false }
+} else if (typeof global.CSS.supports !== 'function') {
+    global.CSS.supports = () => false
 }
