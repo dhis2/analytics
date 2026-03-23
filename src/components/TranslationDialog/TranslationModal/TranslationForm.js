@@ -146,7 +146,7 @@ export const TranslationForm = ({
             fetchFieldsTranslations(fieldsToTranslate)
 
         fetchTranslations()
-    }, [fieldsToTranslate])
+    }, [fieldsToTranslate, fetchFieldsTranslations])
 
     useEffect(() => setNewTranslations(translations), [translations])
 
