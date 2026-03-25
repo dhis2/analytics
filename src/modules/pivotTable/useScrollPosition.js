@@ -1,17 +1,19 @@
 import debounce from 'lodash/debounce'
-import { useState, useCallback, useEffect } from 'react'
+import { useState, useMemo, useEffect } from 'react'
 
 export const useScrollPosition = (containerRef, debounceWait = 10) => {
     const [scrollPosition, setScrollPosition] = useState({ x: 0, y: 0 })
 
-    const onScroll = useCallback(
-        debounce(() => {
-            const scroll = {
-                x: containerRef.current.scrollLeft,
-                y: containerRef.current.scrollTop,
-            }
-            setScrollPosition(scroll)
-        }, debounceWait)
+    const onScroll = useMemo(
+        () =>
+            debounce(() => {
+                const scroll = {
+                    x: containerRef.current.scrollLeft,
+                    y: containerRef.current.scrollTop,
+                }
+                setScrollPosition(scroll)
+            }, debounceWait),
+        [containerRef, debounceWait]
     )
 
     useEffect(() => {

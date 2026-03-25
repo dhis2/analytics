@@ -146,6 +146,7 @@ export const TranslationForm = ({
             fetchFieldsTranslations(fieldsToTranslate)
 
         fetchTranslations()
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [fieldsToTranslate])
 
     useEffect(() => setNewTranslations(translations), [translations])

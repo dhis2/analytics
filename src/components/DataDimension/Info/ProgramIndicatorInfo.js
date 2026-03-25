@@ -205,12 +205,13 @@ export const ProgramIndicatorInfo = ({ type, id, displayNameProp }) => {
                     <th>{i18n.t('Aggregation type')}</th>
                     <td>{data?.programIndicator.aggregationType}</td>
                 </tr>
-                {data?.programIndicator && 'decimals' in data.programIndicator && (
-                    <tr>
-                        <th>{i18n.t('Decimals in output')}</th>
-                        <td>{data.programIndicator.decimals}</td>
-                    </tr>
-                )}
+                {data?.programIndicator &&
+                    'decimals' in data.programIndicator && (
+                        <tr>
+                            <th>{i18n.t('Decimals in output')}</th>
+                            <td>{data.programIndicator.decimals}</td>
+                        </tr>
+                    )}
                 {Boolean(data?.programIndicator.legendSets.length) && (
                     <tr>
                         <th>{i18n.t('Legend set(s)')}</th>

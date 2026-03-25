@@ -23,7 +23,7 @@ const getMutation = (type) => ({
 })
 
 export const DeleteDialog = ({ type, id, onClose, onDelete, onError }) => {
-    const mutation = useMemo(() => getMutation(type), [])
+    const mutation = useMemo(() => getMutation(type), [type])
     const [mutate] = useDataMutation(mutation, {
         variables: { id },
         onError: (error) => {

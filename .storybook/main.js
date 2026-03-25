@@ -1,4 +1,5 @@
-const makeBabelConfig = require('@dhis2/cli-app-scripts/config/makeBabelConfig.js')
+// Direct path required because the package exports field doesn't expose this subpath
+const makeBabelConfig = require('../node_modules/@dhis2/cli-app-scripts/config/makeBabelConfig.js')
 
 module.exports = {
     addons: ['@storybook/preset-create-react-app'],
