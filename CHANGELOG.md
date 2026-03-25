@@ -1,3 +1,10 @@
+## [29.4.2](https://github.com/dhis2/analytics/compare/v29.4.1...v29.4.2) (2026-03-25)
+
+
+### Bug Fixes
+
+* config to satisfy node 24 + yarn upgrades ([#1826](https://github.com/dhis2/analytics/issues/1826)) ([76f86d7](https://github.com/dhis2/analytics/commit/76f86d715aa15046333095e12b9feb52b1d93adc))
+
 ## [29.4.1](https://github.com/dhis2/analytics/compare/v29.4.0...v29.4.1) (2026-03-17)
 
 
