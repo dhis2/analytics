@@ -1,6 +1,6 @@
 # Translators:
-# Viktor Varland <viktor@dhis2.org>, 2020
 # Bram Piot <bram.piot@gmail.com>, 2020
+# Viktor Varland <viktor@dhis2.org>, 2020
 # Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2020
 # Yao Selom SAKA (HISP WCA) <ysaka@hispwca.org>, 2020
 # Yayra Gomado <ygomado@hispwca.org>, 2021
@@ -56,7 +56,7 @@ msgid "Only available when data is in Series"
 msgstr "Disponible uniquement lorsque les données sont en série"
 
 msgid "Remove Assigned Categories"
-msgstr "Supprimer les Catégories Attribuées"
+msgstr "Supprimer les catégories attribuées"
 
 msgid "Add Assigned Categories"
 msgstr "Ajouter des catégories attribuées"
@@ -65,7 +65,7 @@ msgid "Manage chart axes"
 msgstr "Gérer les axes du graphique"
 
 msgid "Filter dimensions"
-msgstr "Dimensions du filtre"
+msgstr "Filtrer les dimensions"
 
 msgid "Main dimensions"
 msgstr "Dimensions principales"
@@ -77,16 +77,16 @@ msgid "Dimension recommended with selected data"
 msgstr "Dimension recommandée avec les données sélectionnées"
 
 msgid "Search"
-msgstr "Chercher"
+msgstr "Rechercher"
 
 msgid "Selected Data"
 msgstr "Données sélectionnées"
 
 msgid "Deselect All"
-msgstr "Désélectionner Tout"
+msgstr "Tout désélectionner"
 
 msgid "Select all"
-msgstr "Sélectionner tout"
+msgstr "Tout sélectionner"
 
 msgid "Organisation units"
 msgstr "Unités d'organisation"
@@ -146,7 +146,7 @@ msgid "Week {{weekNumber}}"
 msgstr "Semaine {{weekNumber}}"
 
 msgid "Bi-Week {{biWeekNumber}}"
-msgstr "Bimensuel{{biWeekNumber}}"
+msgstr "Quinzaine {{biWeekNumber}}"
 
 msgid "Daily"
 msgstr "Quotidien"
@@ -155,25 +155,25 @@ msgid "Weekly"
 msgstr "Hebdomadaire"
 
 msgid "Bi-weekly"
-msgstr "Bi-hebdomadaire"
+msgstr "Bimensuel"
 
 msgid "Weekly (Start Wednesday)"
-msgstr "Hebdomadaire (début mercredi)"
+msgstr "Hebdomadaire (à partir de mercredi)"
 
 msgid "Weekly (Start Thursday)"
-msgstr "Hebdomadaire (début jeudi)"
+msgstr "Hebdomadaire (à partir de jeudi)"
 
 msgid "Weekly (Start Saturday)"
-msgstr "Hebdomadaire (début samedi)"
+msgstr "Hebdomadaire (à partir de samedi)"
 
 msgid "Weekly (Start Sunday)"
-msgstr "Hebdomadaire (début dimanche)"
+msgstr "Hebdomadaire (à partir de dimanche)"
 
 msgid "Monthly"
 msgstr "Mensuel"
 
 msgid "Bi-monthly"
-msgstr "Bimensuel"
+msgstr "Bimestriel"
 
 msgid "Quarterly"
 msgstr "Trimestriel"
@@ -188,16 +188,16 @@ msgid "Yearly"
 msgstr "Annuel"
 
 msgid "Financial year (Start November)"
-msgstr "Année fiscale (Débutant par novembre)"
+msgstr "Année fiscale (à partir de novembre)"
 
 msgid "Financial year (Start October)"
-msgstr "Année fiscale (Débutant par octobre)"
+msgstr "Année fiscale (à partir d'octobre)"
 
 msgid "Financial year (Start July)"
-msgstr "Année fiscale (Débutant par juillet)"
+msgstr "Année fiscale (à partir de juillet)"
 
 msgid "Financial year (Start April)"
-msgstr "Année fiscale (Débutant par avril)"
+msgstr "Année fiscale (à partir d'avril)"
 
 msgid "Today"
 msgstr "Aujourd'hui"
@@ -212,13 +212,13 @@ msgid "Last 7 days"
 msgstr "7 derniers jours"
 
 msgid "Last 14 days"
-msgstr "14 dernier jours"
+msgstr "14 derniers jours"
 
 msgid "This week"
 msgstr "Cette semaine"
 
 msgid "Last week"
-msgstr "Semaine passée"
+msgstr "Semaine dernière"
 
 msgid "Last 4 weeks"
 msgstr "4 dernières semaines"
@@ -230,22 +230,22 @@ msgid "Last 52 weeks"
 msgstr "52 dernières semaines"
 
 msgid "Weeks this year"
-msgstr "Semaines cette année"
+msgstr "Semaines de cette année"
 
 msgid "This bi-week"
 msgstr "Cette quinzaine"
 
 msgid "Last bi-week"
-msgstr "Dernière quinzaine"
+msgstr "Quinzaine dernière"
 
 msgid "Last 4 bi-weeks"
 msgstr "4 dernières quinzaines"
 
 msgid "This month"
-msgstr "Ce mois-ci"
+msgstr "Ce mois"
 
 msgid "Last month"
-msgstr "Le mois dernier"
+msgstr "Mois dernier"
 
 msgid "Last 3 months"
 msgstr "3 derniers mois"
@@ -257,13 +257,13 @@ msgid "Last 12 months"
 msgstr "12 derniers mois"
 
 msgid "Months this year"
-msgstr "Mois cette année"
+msgstr "Mois de cette année"
 
 msgid "This bi-month"
-msgstr "Ces 2 dernières semaines"
+msgstr "Ce bimestre"
 
 msgid "Last bi-month"
-msgstr "Dernier bi-mestre"
+msgstr "Bimestre dernier"
 
 msgid "Last 6 bi-months"
 msgstr "6 derniers bimestres"
@@ -275,25 +275,25 @@ msgid "This quarter"
 msgstr "Ce trimestre"
 
 msgid "Last quarter"
-msgstr "Trimestre précédent"
+msgstr "Trimestre dernier"
 
 msgid "Last 4 quarters"
 msgstr "4 derniers trimestres"
 
 msgid "Quarters this year"
-msgstr "Trimestres cette année"
+msgstr "Trimestres de cette année"
 
 msgid "This six-month"
 msgstr "Ce semestre"
 
 msgid "Last six-month"
-msgstr "Dernier semestre"
+msgstr "Semestre dernier"
 
 msgid "Last 2 six-month"
 msgstr "2 derniers semestres"
 
 msgid "This financial year"
-msgstr "Année fiscale en cours"
+msgstr "Cette année fiscale"
 
 msgid "Last financial year"
 msgstr "Année fiscale précédente"
@@ -305,7 +305,7 @@ msgid "This year"
 msgstr "Cette année"
 
 msgid "Last year"
-msgstr "L'année passée"
+msgstr "Année dernière"
 
 msgid "Last 5 years"
 msgstr "5 dernières années"
@@ -317,13 +317,13 @@ msgid "Weeks"
 msgstr "Semaines"
 
 msgid "Bi-weeks"
-msgstr "Bi-hebdomadaires"
+msgstr "Quinzaines"
 
 msgid "Months"
 msgstr "Mois"
 
 msgid "Bi-months"
-msgstr "Bimensuel"
+msgstr "Bimestres"
 
 msgid "Quarters"
 msgstr "Trimestres"
@@ -344,7 +344,7 @@ msgid "Category"
 msgstr "Catégorie"
 
 msgid "Filter"
-msgstr "Filtrer"
+msgstr "Filtre"
 
 msgid "Columns"
 msgstr "Colonnes"
@@ -359,10 +359,10 @@ msgid "Reporting rate on time"
 msgstr "Taux de déclaration dans les délais"
 
 msgid "Actual reports"
-msgstr "Rapports réels"
+msgstr "Rapports effectifs"
 
 msgid "Actual reports on time"
-msgstr "Rapports réels dans les délais"
+msgstr "Rapports effectifs dans les délais"
 
 msgid "Expected reports"
 msgstr "Rapports attendus"
@@ -380,7 +380,7 @@ msgid "[ All groups ]"
 msgstr "[ Tous les groupes ]"
 
 msgid "Data elements"
-msgstr "Eléments de données"
+msgstr "Éléments de données"
 
 msgid "Select data element group"
 msgstr "Sélectionner un groupe d'éléments de données"
