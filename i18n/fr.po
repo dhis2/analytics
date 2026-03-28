@@ -178,7 +178,7 @@ msgid "Last 7 days"
 msgstr "7 derniers jours"
 
 msgid "Last 14 days"
-msgstr "14 dernier jours"
+msgstr "14 derniers jours"
 
 msgid "This week"
 msgstr "Cette semaine"
@@ -202,7 +202,7 @@ msgid "This bi-week"
 msgstr "Cette quinzaine"
 
 msgid "Last bi-week"
-msgstr "Dernière quinzaine"
+msgstr "Quinzaine dernière"
 
 msgid "Last 4 bi-weeks"
 msgstr "4 dernières quinzaines"
