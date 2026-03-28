@@ -15,7 +15,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2026-03-04T14:56:39.522Z\n"
+"POT-Creation-Date: 2026-03-23T09:34:56.311Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: Cyrille Kabrane, 2026\n"
 "Language-Team: French (https://app.transifex.com/hisp-uio/teams/100509/fr/)\n"
@@ -974,7 +974,7 @@ msgid "This week"
 msgstr "Cette semaine"
 
 msgid "Last week"
-msgstr "Semaine passée"
+msgstr "Semaine dernière"
 
 msgid "Last 4 weeks"
 msgstr "4 dernières semaines"
@@ -1019,7 +1019,7 @@ msgid "This bi-month"
 msgstr "Ce bimestre"
 
 msgid "Last bi-month"
-msgstr "Bimestre précédent"
+msgstr "Bimestre dernier"
 
 msgid "Last 6 bi-months"
 msgstr "6 derniers bimestres"
@@ -1031,7 +1031,7 @@ msgid "This quarter"
 msgstr "Ce trimestre"
 
 msgid "Last quarter"
-msgstr "Trimestre précédent"
+msgstr "Trimestre dernier"
 
 msgid "Last 4 quarters"
 msgstr "4 derniers trimestres"
@@ -1043,7 +1043,7 @@ msgid "This six-month"
 msgstr "Ce semestre"
 
 msgid "Last six-month"
-msgstr "Semestre précédent"
+msgstr "Semestre dernier"
 
 msgid "Last 2 six-month"
 msgstr "2 derniers semestres"
@@ -1384,7 +1384,7 @@ msgid "Long text"
 msgstr "Texte long"
 
 msgid "Multi text"
-msgstr ""
+msgstr "Texte multiligne"
 
 msgid "Letter"
 msgstr "Lettre"
