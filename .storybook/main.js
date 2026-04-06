@@ -1,7 +1,9 @@
 // Direct path required because the package exports field doesn't expose this subpath
+import { createRequire } from 'node:module'
+const require = createRequire(import.meta.url)
 const makeBabelConfig = require('../node_modules/@dhis2/cli-app-scripts/config/makeBabelConfig.js')
 
-module.exports = {
+export default {
     addons: ['@storybook/preset-create-react-app'],
     stories: ['../src/__demo__/**/*.stories.@(js)'],
 
