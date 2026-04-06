@@ -27,6 +27,7 @@ yarn-debug.log*
 yarn-error.log*
 package-lock.json
 bundle.stats.json
+debug-storybook.log
 
 # DHIS2 Platform
 .d2
