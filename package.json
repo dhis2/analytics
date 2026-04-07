@@ -35,10 +35,8 @@
         "@dhis2/cli-style": "^10.7.9",
         "@dhis2/d2-i18n": "^1.1.0",
         "@dhis2/ui": "^10.12.7",
-        "@mihkeleidast/storybook-addon-source": "^1.0.1",
-        "@storybook/preset-create-react-app": "^8.3.6",
-        "@storybook/react": "^8.3.6",
-        "@storybook/react-webpack5": "^8.3.6",
+        "@storybook/preset-create-react-app": "^10.3.4",
+        "@storybook/react-webpack5": "^10.3.4",
         "@testing-library/dom": "^10.4.0",
         "@testing-library/jest-dom": "^6.6.3",
         "@testing-library/react": "^16.3.0",
@@ -48,8 +46,9 @@
         "react": "^18.3.1",
         "react-dom": "^18.3.1",
         "react-scripts": "^5.0.1",
-        "storybook": "^8.3.6",
-        "styled-jsx": "^4.0.1"
+        "storybook": "^10.3.4",
+        "styled-jsx": "^4.0.1",
+        "eslint-plugin-storybook": "10.3.4"
     },
     "peerDependencies": {
         "@dhis2/app-runtime": "^3",
