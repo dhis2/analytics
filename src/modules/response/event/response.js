@@ -20,6 +20,11 @@ import {
 import { applyDefaultHandler } from './default.js'
 import { applyOptionSetHandler } from './optionSet.js'
 
+// Responses coming from these endpoints need transformation
+// before we can pass it to the pivot table engine:
+// - analytics/events/aggregate
+// - analytics/enrollments/aggregate
+
 export const PREFIX_SEPARATOR = '_'
 export const NA_VALUE = ''
 export const NA_VALUE_ITEM = {
@@ -41,6 +46,24 @@ export const UNSUPPORTED_VALUE_TYPES = [
     VALUE_TYPE_REFERENCE,
 ]
 
+const STATUSES = {
+    ACTIVE: i18n.t('Active'),
+    COMPLETED: i18n.t('Completed'),
+    SCHEDULE: i18n.t('Scheduled'),
+    CANCELLED: i18n.t('Cancelled'),
+}
+
+export const getItemFormatter = ({ name, valueType }) =>
+    getItemFormatterByHeaderName(name) || getItemFormatterByValueType(valueType)
+
+export const getItemFormatterByHeaderName = (name) => {
+    if (name.endsWith('eventstatus') || name.endsWith('programstatus')) {
+        return (n) => STATUSES[n] || n
+    }
+
+    return undefined
+}
+
 export const getItemFormatterByValueType = (valueType) => {
     switch (valueType) {
         case VALUE_TYPE_AGE:
@@ -57,6 +80,20 @@ export const getItemFormatterByValueType = (valueType) => {
             return undefined
     }
 }
+
+const includeHeaderChecks = [
+    (header) => Boolean(header.meta),
+    (header) => header.name !== DIMENSION_ID_PERIOD,
+    (header) => header.name !== DIMENSION_ID_ORGUNIT,
+    (header) => !header.name.endsWith('.eventdate'),
+    (header) => !header.name.endsWith('.enrollmentdate'),
+    (header) => !header.name.endsWith('.scheduleddate'),
+    (header) => !header.name.endsWith('.incidentdate'),
+    (header) => header.name !== 'lastupdated',
+    (header) => header.name !== 'created',
+    (header) => header.name !== 'completed',
+    (header) => !header.name.endsWith('.ou'),
+]
 
 export const transformResponse = (response, { hideNaData = false } = {}) => {
     // Do not modify the original response
@@ -81,13 +118,7 @@ export const transformResponse = (response, { hideNaData = false } = {}) => {
             ...header,
             index,
         }))
-        .filter(
-            (header) =>
-                Boolean(header.meta) &&
-                ![DIMENSION_ID_PERIOD, DIMENSION_ID_ORGUNIT].includes(
-                    header.name
-                )
-        )
+        .filter((header) => includeHeaderChecks.every((check) => check(header)))
 
     // Legendsets use uids and do not need transformation
     // Skip unsupported value types
@@ -110,9 +141,7 @@ export const transformResponse = (response, { hideNaData = false } = {}) => {
                     transformedResponse,
                     header.index,
                     {
-                        itemFormatter: getItemFormatterByValueType(
-                            header.valueType
-                        ),
+                        itemFormatter: getItemFormatter(header),
                     }
                 )
             }
