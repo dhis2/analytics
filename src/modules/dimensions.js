@@ -1,3 +1,7 @@
+// vis: 'dimension' in EventVisualization colums/rows/filters
+// dim: tracker analytics api dimension/filter id
+// header: tracker analytics api header name (query endpoints)
+
 const EVENT_DIMENSIONS = [
     {
         vis: 'ou',

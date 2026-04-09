@@ -1,6 +1,9 @@
 import { getHeaderByVis } from '../dimensions.js'
 import { layoutGetAllDimensions } from '../layout/layoutGetAllDimensions.js'
 
+// Dimensions saved with program or program stage in an EventVisualization need
+// transformation before we can pass them to the pivot table engine
+
 export const transformEventVisualization = (vis) => {
     // Do not modify the original visualization
     const transformedVis = {
@@ -19,7 +22,7 @@ export const transformEventVisualization = (vis) => {
 
     let headerName
 
-    layoutGetAllDimensions(vis).forEach((dim) => {
+    layoutGetAllDimensions(transformedVis).forEach((dim) => {
         headerName = getHeaderByVis(dim.dimension)
 
         if (dim.program?.id) {
@@ -30,4 +33,6 @@ export const transformEventVisualization = (vis) => {
             dim.dimension = headerName
         }
     })
+
+    return transformedVis
 }

@@ -20,6 +20,11 @@ import {
 import { applyDefaultHandler } from './default.js'
 import { applyOptionSetHandler } from './optionSet.js'
 
+// Responses coming from these endpoints need transformation
+// before we can pass it to the pivot table engine:
+// - analytics/events/aggregate
+// - analytics/enrollments/aggregate
+
 export const PREFIX_SEPARATOR = '_'
 export const NA_VALUE = ''
 export const NA_VALUE_ITEM = {
@@ -119,7 +124,6 @@ export const transformResponse = (response, { hideNaData = false } = {}) => {
     // Skip unsupported value types
     // Option set and Boolean have separate handlers
     // All other types use default handler with specific item formatter
-    console.log('metaHeaders', metaHeaders)
     metaHeaders.forEach((header) => {
         if (
             !(
