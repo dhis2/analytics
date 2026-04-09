@@ -7,17 +7,31 @@ import { layoutGetAllDimensions } from '../layout/layoutGetAllDimensions.js'
 export const transformEventVisualization = (vis) => {
     // Do not modify the original visualization
     const transformedVis = {
-        ...vis,
-        columns: [
+        ...vis
+    }
+
+    if (vis.columns?.length) {
+        transformedVis.columns = [
             ...vis.columns.map((col) => ({
                 ...col,
             })),
-        ],
-        rows: [
+        ]
+    }
+
+    if (vis.rows?.length) {
+        transformedVis.rows = [
             ...vis.rows.map((row) => ({
                 ...row,
             })),
-        ],
+        ]
+    }
+
+    if (vis.filters?.length) {
+        transformedVis.filters = [
+            ...vis.filters.map((filter) => ({
+                ...filter,
+            })),
+        ]
     }
 
     let headerName

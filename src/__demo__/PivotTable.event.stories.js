@@ -13,6 +13,8 @@ import datetimeVisualization from './data/event/datetime.visualization.json'
 import emailDataHideNa from './data/event/email.data.hidena.json'
 import emailData from './data/event/email.data.json'
 import emailVisualization from './data/event/email.visualization.json'
+import eventouData from './data/event/eventou.data.json'
+import eventouVisualization from './data/event/eventou.visualization.json'
 import eventstatusDataHideNa from './data/event/eventstatus.data.hidena.json'
 import eventstatusData from './data/event/eventstatus.data.json'
 import eventstatusVisualization from './data/event/eventstatus.visualization.json'
@@ -423,3 +425,22 @@ export const Eventstatus = (_, { pivotTableOptions }) => {
 }
 
 Eventstatus.storyName = 'Eventstatus'
+
+export const Eventou = (_, { pivotTableOptions }) => {
+    const visualization = {
+        ...eventouVisualization,
+        ...visualizationReset,
+        ...pivotTableOptions,
+    }
+
+    return (
+        <div style={{ width: 800, height: 600 }}>
+            <PivotTable
+                data={eventouData}
+                visualization={visualization}
+            />
+        </div>
+    )
+}
+
+Eventou.storyName = 'Event orgunit'

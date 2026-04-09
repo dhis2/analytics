@@ -1,0 +1,123 @@
+{
+    "headers": [
+        {
+            "name": "A03MvHHogjR.ou",
+            "column": "Organisation unit",
+            "valueType": "ORGANISATION_UNIT",
+            "type": "org.hisp.dhis.organisationunit.OrganisationUnit",
+            "hidden": false,
+            "meta": true
+        },
+        {
+            "name": "A03MvHHogjR.eventdate",
+            "column": "Report date",
+            "valueType": "DATE",
+            "type": "java.time.LocalDate",
+            "hidden": false,
+            "meta": true
+        },
+        {
+            "name": "value",
+            "column": "Value",
+            "valueType": "NUMBER",
+            "type": "java.lang.Double",
+            "hidden": false,
+            "meta": false
+        }
+    ],
+    "metaData": {
+        "items": {
+            "202510": {
+                "name": "202510"
+            },
+            "202511": {
+                "name": "202511"
+            },
+            "202512": {
+                "name": "202512"
+            },
+            "202601": {
+                "name": "202601"
+            },
+            "202602": {
+                "name": "202602"
+            },
+            "202603": {
+                "name": "202603"
+            },
+            "IpHINAT79UW": {
+                "name": "Child Programme"
+            },
+            "ZzYYXq4fJie": {
+                "name": "Baby Postnatal"
+            },
+            "USER_ORGUNIT": {
+                "organisationUnits": [
+                    "ImspTQPwCqd"
+                ]
+            },
+            "A03MvHHogjR.ou": {
+                "name": "Organisation unit"
+            },
+            "ImspTQPwCqd": {
+                "name": "Sierra Leone"
+            },
+            "A03MvHHogjR.eventdate": {
+                "name": "Report date"
+            },
+            "A03MvHHogjR": {
+                "name": "Birth"
+            }
+        },
+        "dimensions": {
+            "A03MvHHogjR.eventdate": [
+                "202510",
+                "202511",
+                "202512",
+                "202601",
+                "202602",
+                "202603"
+            ],
+            "pe": [],
+            "A03MvHHogjR.ou": [
+                "ImspTQPwCqd"
+            ]
+        }
+    },
+    "rowContext": {},
+    "width": 3,
+    "rows": [
+        [
+            "ImspTQPwCqd",
+            "202510",
+            "973"
+        ],
+        [
+            "ImspTQPwCqd",
+            "202511",
+            "932"
+        ],
+        [
+            "ImspTQPwCqd",
+            "202512",
+            "858"
+        ],
+        [
+            "ImspTQPwCqd",
+            "202601",
+            "694"
+        ],
+        [
+            "ImspTQPwCqd",
+            "202602",
+            "629"
+        ],
+        [
+            "ImspTQPwCqd",
+            "202603",
+            "694"
+        ]
+    ],
+    "headerWidth": 3,
+    "height": 6
+}
