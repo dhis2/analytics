@@ -11,8 +11,8 @@ import {
     IconChevronUp24,
     IconClock16,
     IconShare16,
-    IconSubscribe24,
-    IconSubscribeOff24,
+    IconSubscribe16,
+    IconSubscribeOff16,
     IconUser16,
     IconView16,
     colors,
@@ -192,8 +192,7 @@ const AboutAOUnit = forwardRef(({ type, id, renderId }, ref) => {
                     {data && (
                         <div className="content">
                             <div
-                                className={cx('detailLine', {
-                                    description: true,
+                                className={cx('description', {
                                     noDescription: !data.ao.displayDescription,
                                 })}
                             >
@@ -207,11 +206,15 @@ const AboutAOUnit = forwardRef(({ type, id, renderId }, ref) => {
                             </div>
                             <div>
                                 <p className="detailLine">
-                                    <IconShare16 color={colors.grey700} />
+                                    <span className="icon">
+                                        <IconShare16 color={colors.grey700} />
+                                    </span>
                                     {getSharingSummary(data.ao)}
                                 </p>
                                 <p className="detailLine">
-                                    <IconClock16 color={colors.grey700} />
+                                    <span className="icon">
+                                        <IconClock16 color={colors.grey700} />
+                                    </span>
                                     {i18n.t('Last updated {{time}}', {
                                         time: moment(
                                             fromServerDate(data.ao.lastUpdated)
@@ -219,7 +222,9 @@ const AboutAOUnit = forwardRef(({ type, id, renderId }, ref) => {
                                     })}
                                 </p>
                                 <p className="detailLine">
-                                    <IconUser16 color={colors.grey700} />
+                                    <span className="icon">
+                                        <IconUser16 color={colors.grey700} />
+                                    </span>
                                     {data.ao.createdBy?.displayName
                                         ? i18n.t(
                                               'Created {{time}} by {{author}}',
@@ -242,7 +247,9 @@ const AboutAOUnit = forwardRef(({ type, id, renderId }, ref) => {
                                           })}
                                 </p>
                                 <p className="detailLine">
-                                    <IconView16 color={colors.grey700} />
+                                    <span className="icon">
+                                        <IconView16 color={colors.grey700} />
+                                    </span>
                                     {i18n.t('Viewed {{count}} times', {
                                         count: data.dataStatistics.views,
                                         defaultValue: 'Viewed 1 time',
@@ -264,7 +271,7 @@ const AboutAOUnit = forwardRef(({ type, id, renderId }, ref) => {
                                         </p>
                                         <Button
                                             icon={
-                                                <IconSubscribeOff24
+                                                <IconSubscribeOff16
                                                     color={colors.grey700}
                                                 />
                                             }
@@ -285,7 +292,7 @@ const AboutAOUnit = forwardRef(({ type, id, renderId }, ref) => {
                                         </p>
                                         <Button
                                             icon={
-                                                <IconSubscribe24
+                                                <IconSubscribe16
                                                     color={colors.grey700}
                                                 />
                                             }
