@@ -1,3 +1,4 @@
+import { useTimeZoneConversion } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import {
     Modal,
@@ -12,6 +13,7 @@ import {
     CircularLoader,
 } from '@dhis2/ui'
 import cx from 'classnames'
+import moment from 'moment'
 import PropTypes from 'prop-types'
 import React, { useMemo } from 'react'
 import css from 'styled-jsx/css'
@@ -59,6 +61,7 @@ const InterpretationModal = ({
 }) => {
     const modalContentWidth = useModalContentWidth()
     const modalContentCSS = getModalContentCSS(modalContentWidth)
+    const { fromServerDate } = useTimeZoneConversion()
     const currentUser = useInterpretationsCurrentUser()
     const {
         data: interpretation,
@@ -103,17 +106,17 @@ const InterpretationModal = ({
                 dataTest="interpretation-modal"
             >
                 <h1 className="title">
-                    <span className="ellipsis">
-                        {i18n.t(
-                            'Viewing interpretation: {{- visualisationName}}',
-                            {
-                                visualisationName:
-                                    visualization.displayName ||
-                                    visualization.name,
-                                nsSeparator: '^^',
-                            }
-                        )}
-                    </span>
+                    {interpretation?.created
+                        ? i18n.t(
+                              'Viewing interpretation data from {{- interpretationDate}}',
+                              {
+                                  interpretationDate: moment(
+                                      fromServerDate(interpretation.created)
+                                  ).format('LL'),
+                                  nsSeparator: '^^',
+                              }
+                          )
+                        : i18n.t('Viewing interpretation data')}
                 </h1>
                 <ModalContent className={modalContentCSS.className}>
                     <div className="container">
@@ -157,8 +160,8 @@ const InterpretationModal = ({
                     </div>
                 </ModalContent>
                 <ModalActions>
-                    <Button disabled={loading} onClick={onClose}>
-                        {i18n.t('Hide interpretation')}
+                    <Button secondary disabled={loading} onClick={onClose}>
+                        {i18n.t('Close')}
                     </Button>
                 </ModalActions>
                 {modalCSS.styles}
@@ -166,19 +169,11 @@ const InterpretationModal = ({
                 <style jsx>{`
                     .title {
                         color: ${colors.grey900};
-                        margin: 0px;
-                        padding: ${spacers.dp24} 0 ${spacers.dp4};
-                    }
-
-                    .ellipsis {
-                        display: inline-block;
-                        font-size: 20px;
+                        margin: 0 0 ${spacers.dp4} 0;
+                        padding: 0 0 ${spacers.dp4};
+                        font-size: 16px;
                         font-weight: 500;
-                        line-height: 24px;
-                        white-space: nowrap;
-                        width: 100%;
-                        overflow: hidden;
-                        text-overflow: ellipsis;
+                        line-height: 21px;
                     }
 
                     .container {
@@ -200,7 +195,6 @@ const InterpretationModal = ({
                     }
 
                     .thread-wrap {
-                        padding-right: ${spacers.dp4};
                         flex-basis: 300px;
                         flex-shrink: 0;
                     }
