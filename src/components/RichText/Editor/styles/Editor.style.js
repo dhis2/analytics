@@ -10,12 +10,19 @@ export const mainClasses = css`
     }
 
     .preview {
-        padding: ${spacers.dp8} ${spacers.dp12};
+        padding: 0 ${spacers.dp8} ${spacers.dp8} ${spacers.dp8};
         font-size: 14px;
         line-height: ${spacers.dp16};
         color: ${colors.grey900};
+        border: 1px solid ${colors.grey500};
+        border-block-start: none;
+        border-radius: 0 0 3px 3px;
         overflow-y: auto;
         scroll-behavior: smooth;
+    }
+
+    .preview :global(p:first-of-type) {
+        margin: 0;
     }
 
     .edit {
@@ -28,19 +35,20 @@ export const mainClasses = css`
         width: 100%;
         height: 100%;
         box-sizing: border-box;
-        padding: ${spacers.dp8} 15px;
+        padding: ${spacers.dp4} ${spacers.dp8} ${spacers.dp8} ${spacers.dp8};
 
         color: ${colors.grey900};
         background-color: ${colors.white};
 
         border: 1px solid ${colors.grey500};
-        border-radius: 3px;
-        box-shadow: inset 0 0 0 1px rgba(102, 113, 123, 0.15),
-            inset 0 1px 2px 0 rgba(102, 113, 123, 0.1);
+        border-block-start: none;
+        border-radius: 0 0 3px 3px;
+
+        box-shadow: inset 0 0 1px 0 rgba(48, 54, 60, 0.1);
         outline: 0;
 
         font-size: 14px;
-        line-height: ${spacers.dp16};
+        line-height: 21px;
         user-select: text;
         resize: none;
     }
@@ -49,13 +57,8 @@ export const mainClasses = css`
         resize: vertical;
     }
 
-    .textarea:focus {
-        outline: none;
-        box-shadow: 0 0 0 3px ${theme.focus};
-        width: calc(100% - 6px);
-        height: calc(100% - 3px);
-        padding: ${spacers.dp8} ${spacers.dp12};
-        margin-left: 3px;
+    .textarea::placeholder {
+        color: ${colors.grey600};
     }
 
     .textarea:disabled {
@@ -68,10 +71,10 @@ export const mainClasses = css`
 
 export const toolbarClasses = css`
     .toolbar {
-        background: ${colors.grey050};
-        border-radius: 3px;
-        border: 1px solid ${colors.grey300};
-        margin-bottom: ${spacers.dp4};
+        background: ${colors.white};
+        border-radius: 3px 3px 0 0;
+        border: 1px solid ${colors.grey500};
+        border-bottom-color: transparent;
     }
 
     .actionsWrapper {
@@ -80,13 +83,13 @@ export const toolbarClasses = css`
         gap: ${spacers.dp4};
         align-items: center;
         justify-content: space-between;
-        padding: ${spacers.dp4};
+        padding: ${spacers.dp4} ${spacers.dp4} 0 ${spacers.dp4};
     }
 
     .mainActions {
         display: flex;
-        gap: ${spacers.dp4};
-        margin-top: ${spacers.dp2};
+        gap: 0;
+        margin-top: 0;
     }
 
     .sideActions {
@@ -103,6 +106,41 @@ export const tooltipAnchorClasses = css`
     .tooltip {
         display: inline-flex;
         align-items: center;
+    }
+`
+
+export const toolbarButtonClasses = css`
+    .toolbarButton {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: ${spacers.dp4} 6px;
+        background: none;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+        color: ${colors.grey700};
+        font-size: 13px;
+        font-family: inherit;
+        line-height: 1.4;
+    }
+
+    .toolbarButton:hover:not(:disabled) {
+        background-color: ${colors.grey200};
+    }
+
+    .toolbarButton:active:not(:disabled) {
+        background-color: ${colors.grey300};
+    }
+
+    .toolbarButton:disabled {
+        cursor: not-allowed;
+        color: ${colors.grey500};
+    }
+
+    .toolbarButton:focus-visible {
+        outline: 2px solid ${theme.focus};
+        outline-offset: -2px;
     }
 `
 
