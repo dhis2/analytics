@@ -250,7 +250,7 @@ Loading.story = {
     name: 'Loading',
 }
 
-export const Error = () => (
+export const ErrorState = () => (
     <ThreadStory
         interpretationsResolver={() =>
             Promise.reject(
@@ -267,6 +267,6 @@ export const Error = () => (
     </ThreadStory>
 )
 
-Error.story = {
+ErrorState.story = {
     name: 'Error',
 }

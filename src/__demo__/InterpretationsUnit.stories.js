@@ -100,7 +100,7 @@ Loading.story = {
     name: 'Loading',
 }
 
-export const Error = () => (
+export const ErrorState = () => (
     <InterpretationsStory
         interpretationsResolver={() =>
             Promise.reject(
@@ -114,7 +114,7 @@ export const Error = () => (
     </InterpretationsStory>
 )
 
-Error.story = {
+ErrorState.story = {
     name: 'Error',
 }
 

@@ -303,7 +303,7 @@ WithManyComments.story = {
     name: 'With many comments',
 }
 
-export const Error = () => (
+export const ErrorState = () => (
     <ModalStory
         interpretationsResolver={() =>
             Promise.reject(
@@ -328,6 +328,6 @@ export const Error = () => (
     </ModalStory>
 )
 
-Error.story = {
+ErrorState.story = {
     name: 'Error',
 }
