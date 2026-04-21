@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 
-const CONFIRM_TIMEOUT_MS = 3000
+export const CONFIRM_TIMEOUT_MS = 3000
 
 const useConfirmClick = (action) => {
     const [isConfirming, setIsConfirming] = useState(false)
