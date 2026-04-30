@@ -53,16 +53,15 @@ const STATUSES = {
     CANCELLED: i18n.t('Cancelled'),
 }
 
+const formatStatus = (value) => STATUSES[value] || value
+
 export const getItemFormatter = ({ name, valueType }) =>
     getItemFormatterByHeaderName(name) || getItemFormatterByValueType(valueType)
 
-export const getItemFormatterByHeaderName = (name) => {
-    if (name.endsWith('eventstatus') || name.endsWith('programstatus')) {
-        return (n) => STATUSES[n] || n
-    }
-
-    return undefined
-}
+export const getItemFormatterByHeaderName = (name) =>
+    name.endsWith('eventstatus') || name.endsWith('programstatus')
+        ? formatStatus
+        : undefined
 
 export const getItemFormatterByValueType = (valueType) => {
     switch (valueType) {
@@ -81,19 +80,26 @@ export const getItemFormatterByValueType = (valueType) => {
     }
 }
 
-const includeHeaderChecks = [
-    (header) => Boolean(header.meta),
-    (header) => header.name !== DIMENSION_ID_PERIOD,
-    (header) => header.name !== DIMENSION_ID_ORGUNIT,
-    (header) => !header.name.endsWith('.eventdate'),
-    (header) => !header.name.endsWith('.enrollmentdate'),
-    (header) => !header.name.endsWith('.scheduleddate'),
-    (header) => !header.name.endsWith('.incidentdate'),
-    (header) => header.name !== 'lastupdated',
-    (header) => header.name !== 'created',
-    (header) => header.name !== 'completed',
-    (header) => !header.name.endsWith('.ou'),
+const EXCLUDED_HEADER_NAMES = new Set([
+    DIMENSION_ID_PERIOD,
+    DIMENSION_ID_ORGUNIT,
+    'lastupdated',
+    'created',
+    'completed',
+])
+
+const EXCLUDED_HEADER_SUFFIXES = [
+    '.eventdate',
+    '.enrollmentdate',
+    '.scheduleddate',
+    '.incidentdate',
+    '.ou',
 ]
+
+const isIncludedHeader = (header) =>
+    Boolean(header.meta) &&
+    !EXCLUDED_HEADER_NAMES.has(header.name) &&
+    !EXCLUDED_HEADER_SUFFIXES.some((suffix) => header.name.endsWith(suffix))
 
 export const transformResponse = (response, { hideNaData = false } = {}) => {
     // Do not modify the original response
@@ -118,7 +124,7 @@ export const transformResponse = (response, { hideNaData = false } = {}) => {
             ...header,
             index,
         }))
-        .filter((header) => includeHeaderChecks.every((check) => check(header)))
+        .filter(isIncludedHeader)
 
     // Legendsets use uids and do not need transformation
     // Skip unsupported value types

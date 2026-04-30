@@ -1,26 +1,24 @@
-import { transformEventVisualization } from "../eventVisualization"
+import { transformEventVisualization } from '../eventVisualization.js'
 
 const testDim1 = {
     dimension: 'eventDate',
     programStage: {
-        id: 'A03MvHHogjR'
-    }
+        id: 'A03MvHHogjR',
+    },
 }
 
 const testDim2 = {
     dimension: 'enrollmentDate',
     program: {
-        id: 'IpHINAT79UW'
-    }
+        id: 'IpHINAT79UW',
+    },
 }
 
 const testDim3 = {
-    dimension: 'created'
+    dimension: 'created',
 }
 
-const testAxis = [
-    testDim1
-]
+const testAxis = [testDim1]
 
 const testVis = {
     columns: testAxis,
@@ -32,9 +30,9 @@ describe('eventVisualization', () => {
     describe('transformEventVisualization', () => {
         it('does not modify dimension, axis or vis', () => {
             const newVis = transformEventVisualization(testVis)
-            expect(newVis === testVis).toBe(false)
-            expect(newVis.columns === testAxis).toBe(false)
-            expect(newVis.columns[0] === testDim1).toBe(false)
+            expect(newVis).not.toBe(testVis)
+            expect(newVis.columns).not.toBe(testAxis)
+            expect(newVis.columns[0]).not.toBe(testDim1)
         })
 
         it('applies program stage to id', () => {
