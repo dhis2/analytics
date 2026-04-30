@@ -1,3 +1,10 @@
+## [29.4.3](https://github.com/dhis2/analytics/compare/v29.4.2...v29.4.3) (2026-04-16)
+
+
+### Bug Fixes
+
+* **about-ao:** spacing, padding, visual design adjustments ([c96611f](https://github.com/dhis2/analytics/commit/c96611f277adff53ea2017f690af55c3e5d66bda))
+
 ## [29.4.2](https://github.com/dhis2/analytics/compare/v29.4.1...v29.4.2) (2026-03-25)
 
 
