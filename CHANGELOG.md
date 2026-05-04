@@ -1,3 +1,10 @@
+# [29.5.0](https://github.com/dhis2/analytics/compare/v29.4.3...v29.5.0) (2026-05-04)
+
+
+### Features
+
+* event analytics response and visualization transformations ([#1815](https://github.com/dhis2/analytics/issues/1815)) ([15a5007](https://github.com/dhis2/analytics/commit/15a5007d0f285fe30b9a15489bf1ae7bcba527d8))
+
 ## [29.4.3](https://github.com/dhis2/analytics/compare/v29.4.2...v29.4.3) (2026-04-16)
 
 
