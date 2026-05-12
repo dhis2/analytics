@@ -14,6 +14,28 @@ class AnalyticsEnrollments extends AnalyticsBase {
     /**
      * @param {!AnalyticsRequest} req Request object
      *
+     * @returns {Promise} Promise that resolves with the analytics aggregate data from the api.
+     *
+     * @example
+     * const req = new analytics.request()
+     *  .withProgram('eBAyeGv0exc')
+     *  .addDataDimension(['Uvn6LCg7dVU','OdiHJayrsKo'])
+     *  .addPeriodDimension('LAST_4_QUARTERS')
+     *  .addOrgUnitDimension(['lc3eMKXaEfw','PMa2VCrupOd'])
+     *  .addOrgUnitFilter('O6uvpzGd5pu')
+     *  .withStartDate('2017-10-01')
+     *  .withEndDate('2017-10-31');
+     *
+     * analytics.enrollments.getAggregate(req)
+     *  .then(console.log);
+     */
+    getAggregate(req) {
+        return this.fetch(req.withPath('enrollments/aggregate'))
+    }
+
+    /**
+     * @param {!AnalyticsRequest} req Request object
+     *
      * @returns {Promise} Promise that resolves with the analytics query data from the api.
      *
      * @example

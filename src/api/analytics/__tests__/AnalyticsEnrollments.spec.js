@@ -27,6 +27,29 @@ describe('analytics.enrollments', () => {
         expect(enrollments.dataEngine).toBe(dataEngineMockObject)
     })
 
+    describe('.getAggregate()', () => {
+        beforeEach(() => {
+            enrollments = new AnalyticsEnrollments(new DataEngineMock())
+
+            request = new AnalyticsRequest().withLimit(10)
+
+            fixture = fixtures.get('/api/analytics/aggregate')
+
+            dataEngineMock.query.mockReturnValue(
+                Promise.resolve({ data: fixture })
+            )
+        })
+
+        it('should be a function', () => {
+            expect(enrollments.getAggregate).toBeInstanceOf(Function)
+        })
+
+        it('should resolve a promise with data', () =>
+            enrollments.getAggregate(request).then((data) => {
+                expect(data).toEqual(fixture)
+            }))
+    })
+
     describe('.getQuery()', () => {
         beforeEach(() => {
             enrollments = new AnalyticsEnrollments(new DataEngineMock())
