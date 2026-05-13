@@ -1,3 +1,10 @@
+## [29.5.1](https://github.com/dhis2/analytics/compare/v29.5.0...v29.5.1) (2026-05-13)
+
+
+### Bug Fixes
+
+* add support for enrollments/aggregate endpoint ([#1833](https://github.com/dhis2/analytics/issues/1833)) ([5ea2ecd](https://github.com/dhis2/analytics/commit/5ea2ecd8a5a80a09f4a9862d958dbb8d75de851f))
+
 # [29.5.0](https://github.com/dhis2/analytics/compare/v29.4.3...v29.5.0) (2026-05-04)
 
 
