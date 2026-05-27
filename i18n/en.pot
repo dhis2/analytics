@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2026-03-23T09:34:56.311Z\n"
-"PO-Revision-Date: 2026-03-23T09:34:56.312Z\n"
+"POT-Creation-Date: 2026-05-19T13:29:09.839Z\n"
+"PO-Revision-Date: 2026-05-19T13:29:09.839Z\n"
 
 msgid "view only"
 msgstr "view only"
@@ -1335,6 +1335,18 @@ msgstr "Assigned Categories"
 
 msgid "No value"
 msgstr "No value"
+
+msgid "Active"
+msgstr "Active"
+
+msgid "Completed"
+msgstr "Completed"
+
+msgid "Scheduled"
+msgstr "Scheduled"
+
+msgid "Cancelled"
+msgstr "Cancelled"
 
 msgid "Text"
 msgstr "Text"
