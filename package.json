@@ -34,7 +34,7 @@
         "@dhis2/cli-app-scripts": "^12.11.0",
         "@dhis2/cli-style": "^10.7.9",
         "@dhis2/d2-i18n": "^1.1.0",
-        "@dhis2/ui": "^10.12.7",
+        "@dhis2/ui": "^10.16.0",
         "@storybook/preset-create-react-app": "^10.3.4",
         "@storybook/react-webpack5": "^10.3.4",
         "@testing-library/dom": "^10.4.0",
