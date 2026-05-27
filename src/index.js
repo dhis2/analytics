@@ -334,10 +334,6 @@ export { renderValue as formatValue } from './modules/renderValue.js'
 
 export { transformResponse as transformEventAggregateResponse } from './modules/response/event/response.js'
 
-// Modules: eventVisualization
-
-export { transformEventVisualization } from './modules/eventVisualization/eventVisualization.js'
-
 // Utils: colorSets
 export {
     COLOR_SET_DEFAULT,
