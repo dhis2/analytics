@@ -24,9 +24,9 @@ const resolveName = (value, itemFormatter, items) => {
     if (itemFormatter) {
         return itemFormatter(value)
     }
-    // Look up the value in metaData.items: id-valued columns (e.g. a
-    // CATEGORY data element) carry their label there keyed by the id.
-    // Free-text columns miss the lookup and fall back to the raw value.
+    /* Assume the value could be an ID, which means the name should
+     * be looked up in `metaData.items`. If that lookup fails the
+     * value is used directly. */
     return items?.[value]?.name ?? value
 }
 
