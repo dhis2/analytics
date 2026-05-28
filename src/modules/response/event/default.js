@@ -20,12 +20,22 @@ export const getValuesUniqueSortedAsc = (values, valueType = VALUE_TYPE_TEXT) =>
 export const getPrefixedValue = (value, prefix) =>
     `${prefix}${PREFIX_SEPARATOR}${value}`
 
-export const getItems = (values, dimensionId, { itemFormatter } = {}) =>
-    values.reduce((items, value) => {
-        items[getPrefixedValue(value, dimensionId)] = {
-            name: itemFormatter ? itemFormatter(value) : value,
+const resolveName = (value, itemFormatter, items) => {
+    if (itemFormatter) {
+        return itemFormatter(value)
+    }
+    // Look up the value in metaData.items: id-valued columns (e.g. a
+    // CATEGORY data element) carry their label there keyed by the id.
+    // Free-text columns miss the lookup and fall back to the raw value.
+    return items?.[value]?.name ?? value
+}
+
+export const getItems = (values, dimensionId, { itemFormatter, items } = {}) =>
+    values.reduce((acc, value) => {
+        acc[getPrefixedValue(value, dimensionId)] = {
+            name: resolveName(value, itemFormatter, items),
         }
-        return items
+        return acc
     }, {})
 
 export const getDimensions = (values, dimensionId) => ({
@@ -70,6 +80,7 @@ export const applyDefaultHandler = (
                 ...response.metaData.items,
                 ...getItems(uniqueSortedValuesAsc, header.name, {
                     itemFormatter,
+                    items: response.metaData.items,
                 }),
             },
             dimensions: {
