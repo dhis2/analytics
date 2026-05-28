@@ -1,3 +1,10 @@
+## [29.5.2](https://github.com/dhis2/analytics/compare/v29.5.1...v29.5.2) (2026-05-28)
+
+
+### Bug Fixes
+
+* lookup ID values in metadata items ([#1835](https://github.com/dhis2/analytics/issues/1835)) ([060b2e2](https://github.com/dhis2/analytics/commit/060b2e271ad464a146023f6644a554becd35be85))
+
 ## [29.5.1](https://github.com/dhis2/analytics/compare/v29.5.0...v29.5.1) (2026-05-13)
 
 
