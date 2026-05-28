@@ -224,5 +224,52 @@ describe('response', () => {
                 ).toEqual(responseEventstatusHideNa)
             })
         })
+
+        describe('category (non-optionset id column)', () => {
+            // Regression: a meta column whose cell values are ids (e.g. a
+            // CATEGORY data element) that are already named in metaData.items
+            // must surface those names, not the raw ids.
+            const headerName = 'kO3z4Dhc038.LFsZ8v5v7rq'
+            const response = {
+                headers: [
+                    {
+                        name: headerName,
+                        column: 'Implementing Partner',
+                        valueType: 'TEXT',
+                        type: 'java.lang.String',
+                        hidden: false,
+                        meta: true,
+                    },
+                ],
+                metaData: {
+                    items: {
+                        C6nZpLKjEJr: {
+                            name: 'African Medical and Research Foundation',
+                        },
+                        CW81uF03hvV: { name: 'AIDSRelief Consortium' },
+                        [headerName]: { name: 'Implementing Partner' },
+                    },
+                    dimensions: {
+                        [headerName]: ['C6nZpLKjEJr', 'CW81uF03hvV'],
+                    },
+                },
+                rows: [['C6nZpLKjEJr'], ['CW81uF03hvV']],
+            }
+
+            it('resolves row-value ids to their metaData.items names', () => {
+                const result = transformResponse(response)
+
+                expect(
+                    result.metaData.items[`${headerName}_C6nZpLKjEJr`]
+                ).toEqual({
+                    name: 'African Medical and Research Foundation',
+                })
+                expect(
+                    result.metaData.items[`${headerName}_CW81uF03hvV`]
+                ).toEqual({
+                    name: 'AIDSRelief Consortium',
+                })
+            })
+        })
     })
 })
