@@ -1,20 +1,20 @@
-# 
 # Translators:
 # Wanda <wanda@frontlineaids.org>, 2022
 # Philip Larsen Donnelly, 2025
 # Viktor Varland <viktor@dhis2.org>, 2025
 # Nadiia <semchuk@aph.org.ua>, 2025
 # Éva Tamási, 2025
+# Nancy Espinoza, 2026
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2025-09-09T09:32:04.677Z\n"
+"POT-Creation-Date: 2026-03-04T14:56:39.522Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Éva Tamási, 2025\n"
+"Last-Translator: Nancy Espinoza, 2026\n"
 "Language-Team: Ukrainian (https://app.transifex.com/hisp-uio/teams/100509/uk/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: uk\n"
 "Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != 11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || (n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
@@ -211,7 +211,7 @@ msgid "Categories name"
 msgstr ""
 
 msgid "Period type"
-msgstr ""
+msgstr "Тип періоду"
 
 msgid "Indicators"
 msgstr "Показники"
@@ -819,16 +819,24 @@ msgid "Period"
 msgstr "Період"
 
 msgid "Selected Periods"
+msgstr "Обрані періоди"
+
+msgid "No period types available"
+msgstr ""
+
+msgid ""
+"No period types are enabled in the system. Please contact your system "
+"administrator."
 msgstr ""
 
 msgid "Relative periods"
 msgstr "Відносні періоди"
 
 msgid "Fixed periods"
-msgstr ""
+msgstr "Фіксовані періоди"
 
 msgid "No periods selected"
-msgstr ""
+msgstr "Періоди не обрано"
 
 msgid "Daily"
 msgstr "Щодня"
@@ -840,6 +848,9 @@ msgid "Weekly (Start Wednesday)"
 msgstr ""
 
 msgid "Weekly (Start Thursday)"
+msgstr ""
+
+msgid "Weekly (Start Friday)"
 msgstr ""
 
 msgid "Weekly (Start Saturday)"
@@ -869,17 +880,26 @@ msgstr "Раз на півріччя квітень"
 msgid "Yearly"
 msgstr "Щорічно"
 
-msgid "Financial year (Start November)"
+msgid "Financial year (Start February)"
+msgstr ""
+
+msgid "Financial year (Start April)"
+msgstr "Фінансовий рік (Початок у квітні)"
+
+msgid "Financial year (Start July)"
+msgstr "Фінансовий рік (Початок у липні)"
+
+msgid "Financial year (Start August)"
+msgstr ""
+
+msgid "Financial year (Start September)"
 msgstr ""
 
 msgid "Financial year (Start October)"
 msgstr "Фінансовий рік (Початок у жовтні)"
 
-msgid "Financial year (Start July)"
-msgstr "Фінансовий рік (Початок у липні)"
-
-msgid "Financial year (Start April)"
-msgstr "Фінансовий рік (Початок у квітні)"
+msgid "Financial year (Start November)"
+msgstr ""
 
 msgid "Today"
 msgstr "Сьогодні"

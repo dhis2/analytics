@@ -1,19 +1,18 @@
-# 
 # Translators:
 # Philip Larsen Donnelly, 2025
 # Viktor Varland <viktor@dhis2.org>, 2025
 # easylin <lin_xd@126.com>, 2025
-# 晓东 林 <13981924470@126.com>, 2025
+# 晓东 林 <13981924470@126.com>, 2026
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2025-09-09T09:32:04.677Z\n"
+"POT-Creation-Date: 2026-03-23T09:34:56.311Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: 晓东 林 <13981924470@126.com>, 2025\n"
+"Last-Translator: 晓东 林 <13981924470@126.com>, 2026\n"
 "Language-Team: Chinese (https://app.transifex.com/hisp-uio/teams/100509/zh/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: zh\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
@@ -318,7 +317,7 @@ msgid "Options"
 msgstr "选项"
 
 msgid "Selected items"
-msgstr "选定项目"
+msgstr "选定条目"
 
 msgid "Data Type"
 msgstr "数据类型"
@@ -522,10 +521,10 @@ msgid "Back to all interpretations"
 msgstr "回到所有注释"
 
 msgid "Could not load interpretation details"
-msgstr ""
+msgstr "无法加载注释细节"
 
 msgid "The request to fetch interpretation comments failed"
-msgstr ""
+msgstr "获取释义注释的请求失败"
 
 msgid "Edit"
 msgstr "编辑"
@@ -534,13 +533,13 @@ msgid "Write a reply"
 msgstr "书写应答"
 
 msgid "Could not post reply"
-msgstr ""
+msgstr "无法发表回复"
 
 msgid "Post reply"
 msgstr "发表回复"
 
 msgid "Could not delete comment"
-msgstr ""
+msgstr "无法删除评论"
 
 msgid "Could not update comment"
 msgstr "无法更新评论"
@@ -569,7 +568,7 @@ msgid "Write an interpretation"
 msgstr "书写注释"
 
 msgid "Could not post interpretation"
-msgstr ""
+msgstr "无法张贴注释"
 
 msgid ""
 "Other people viewing this interpretation in the future may see more data."
@@ -582,10 +581,10 @@ msgid "Interpretations"
 msgstr "解释"
 
 msgid "Error loading interpretations"
-msgstr ""
+msgstr "加载释义时出错"
 
 msgid "Could not load interpretations"
-msgstr ""
+msgstr "无法加载解释"
 
 msgid "Reply"
 msgstr "应答"
@@ -613,13 +612,13 @@ msgid "Share"
 msgstr "分享"
 
 msgid "Could not delete interpretation"
-msgstr ""
+msgstr "无法删除注释"
 
 msgid "Manage sharing"
 msgstr "管理共享"
 
 msgid "Could not update interpretation text"
-msgstr ""
+msgstr "无法更新注释文本"
 
 msgid "Could not update interpretation"
 msgstr "无法更新解释"
@@ -805,6 +804,14 @@ msgstr "期间"
 msgid "Selected Periods"
 msgstr "选择的期间"
 
+msgid "No period types available"
+msgstr "没有可用的时段类型"
+
+msgid ""
+"No period types are enabled in the system. Please contact your system "
+"administrator."
+msgstr "系统中未启用周期类型。请联系系统管理员。"
+
 msgid "Relative periods"
 msgstr "相对期间"
 
@@ -825,6 +832,9 @@ msgstr "每周（始于周二）"
 
 msgid "Weekly (Start Thursday)"
 msgstr "每周（始于周四）"
+
+msgid "Weekly (Start Friday)"
+msgstr "每周（周五开始）"
 
 msgid "Weekly (Start Saturday)"
 msgstr "每周（始于周六）"
@@ -853,17 +863,26 @@ msgstr "半年四月"
 msgid "Yearly"
 msgstr "每年"
 
-msgid "Financial year (Start November)"
-msgstr "财政年（11月始）"
+msgid "Financial year (Start February)"
+msgstr "财政年度（2 月开始）"
 
-msgid "Financial year (Start October)"
-msgstr "财政年度（10 月开始）"
+msgid "Financial year (Start April)"
+msgstr "财政年度（4 月开始）"
 
 msgid "Financial year (Start July)"
 msgstr "财政年度（7 月开始）"
 
-msgid "Financial year (Start April)"
-msgstr "财政年度（4 月开始）"
+msgid "Financial year (Start August)"
+msgstr "财政年度（8 月开始）"
+
+msgid "Financial year (Start September)"
+msgstr "财政年度（9 月开始）"
+
+msgid "Financial year (Start October)"
+msgstr "财政年度（10 月开始）"
+
+msgid "Financial year (Start November)"
+msgstr "财政年（11月始）"
 
 msgid "Today"
 msgstr "今天"
@@ -1367,7 +1386,7 @@ msgid "URL"
 msgstr "URL"
 
 msgid "Image"
-msgstr "图片(PNG)"
+msgstr "图片"
 
 msgid "GeoJSON"
 msgstr "GeoJSON"
