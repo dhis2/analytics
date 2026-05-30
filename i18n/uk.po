@@ -1,17 +1,17 @@
 # Translators:
 # Wanda <wanda@frontlineaids.org>, 2022
 # Philip Larsen Donnelly, 2025
-# Viktor Varland <viktor@dhis2.org>, 2025
-# Nadiia <semchuk@aph.org.ua>, 2025
 # Éva Tamási, 2025
 # Nancy Espinoza, 2026
+# Nadiia <semchuk@aph.org.ua>, 2026
+# Viktor Varland <viktor@dhis2.org>, 2026
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2026-03-04T14:56:39.522Z\n"
+"POT-Creation-Date: 2026-05-28T08:40:06.387Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Nancy Espinoza, 2026\n"
+"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2026\n"
 "Language-Team: Ukrainian (https://app.transifex.com/hisp-uio/teams/100509/uk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -48,13 +48,6 @@ msgstr ""
 
 msgid "Created {{time}}"
 msgstr ""
-
-msgid "Viewed {{count}} times"
-msgid_plural "Viewed {{count}} times"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
 
 msgid "Notifications"
 msgstr ""
@@ -594,13 +587,6 @@ msgstr ""
 msgid "Reply"
 msgstr "Відповісти"
 
-msgid "{{count}} replies"
-msgid_plural "{{count}} replies"
-msgstr[0] "{{count}} відповідей"
-msgstr[1] "{{count}} відповідей"
-msgstr[2] "{{count}} відповідей"
-msgstr[3] "{{count}} відповідей"
-
 msgid "View replies"
 msgstr ""
 
@@ -763,27 +749,6 @@ msgstr ""
 
 msgid "Hide"
 msgstr "Сховати"
-
-msgid "{{count}} org units"
-msgid_plural "{{count}} org units"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
-
-msgid "{{count}} levels"
-msgid_plural "{{count}} levels"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
-
-msgid "{{count}} groups"
-msgid_plural "{{count}} groups"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
 
 msgid "Selected: {{commaSeparatedListOfOrganisationUnits}}"
 msgstr ""
@@ -1333,6 +1298,18 @@ msgstr ""
 msgid "No value"
 msgstr "Відсутнє значення"
 
+msgid "Active"
+msgstr "Активно"
+
+msgid "Completed"
+msgstr "Завершено"
+
+msgid "Scheduled"
+msgstr "Заплановано"
+
+msgid "Cancelled"
+msgstr "Скасовано"
+
 msgid "Text"
 msgstr "Текст"
 
@@ -1488,13 +1465,6 @@ msgstr ""
 
 msgid "Axis {{axisId}}"
 msgstr "Вісь {{axisId}}"
-
-msgid "{{count}} items"
-msgid_plural "{{count}} items"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
 
 msgid "Reset zoom"
 msgstr ""

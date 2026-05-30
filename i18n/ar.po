@@ -1,19 +1,18 @@
-# 
 # Translators:
 # Nadiia <semchuk@aph.org.ua>, 2025
-# Viktor Varland <viktor@dhis2.org>, 2025
 # Philip Larsen Donnelly, 2025
-# Hamza <7amza.it@gmail.com>, 2025
+# Viktor Varland <viktor@dhis2.org>, 2026
+# Hamza <7amza.it@gmail.com>, 2026
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2025-09-09T09:32:04.677Z\n"
+"POT-Creation-Date: 2026-05-28T08:40:06.387Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Hamza <7amza.it@gmail.com>, 2025\n"
+"Last-Translator: Hamza <7amza.it@gmail.com>, 2026\n"
 "Language-Team: Arabic (https://app.transifex.com/hisp-uio/teams/100509/ar/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: ar\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
@@ -47,15 +46,6 @@ msgstr ""
 
 msgid "Created {{time}}"
 msgstr ""
-
-msgid "Viewed {{count}} times"
-msgid_plural "Viewed {{count}} times"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
-msgstr[4] ""
-msgstr[5] ""
 
 msgid "Notifications"
 msgstr "الإشعارات"
@@ -595,15 +585,6 @@ msgstr ""
 msgid "Reply"
 msgstr "رد"
 
-msgid "{{count}} replies"
-msgid_plural "{{count}} replies"
-msgstr[0] "{{count}} رد"
-msgstr[1] "{{count}} رد"
-msgstr[2] "{{count}} رد"
-msgstr[3] "{{count}} رد"
-msgstr[4] "{{count}} رد"
-msgstr[5] "{{count}} رد"
-
 msgid "View replies"
 msgstr ""
 
@@ -767,33 +748,6 @@ msgstr ""
 msgid "Hide"
 msgstr "إخفاء"
 
-msgid "{{count}} org units"
-msgid_plural "{{count}} org units"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
-msgstr[4] ""
-msgstr[5] ""
-
-msgid "{{count}} levels"
-msgid_plural "{{count}} levels"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
-msgstr[4] ""
-msgstr[5] ""
-
-msgid "{{count}} groups"
-msgid_plural "{{count}} groups"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
-msgstr[4] ""
-msgstr[5] ""
-
 msgid "Selected: {{commaSeparatedListOfOrganisationUnits}}"
 msgstr ""
 
@@ -830,6 +784,14 @@ msgstr "الفترة الزمنية"
 msgid "Selected Periods"
 msgstr "الفترات المحددة"
 
+msgid "No period types available"
+msgstr ""
+
+msgid ""
+"No period types are enabled in the system. Please contact your system "
+"administrator."
+msgstr ""
+
 msgid "Relative periods"
 msgstr "الفترات الزمنية النسبية"
 
@@ -850,6 +812,9 @@ msgstr "اسبوعياً (يبدأ الأربعاء)"
 
 msgid "Weekly (Start Thursday)"
 msgstr "اسبوعياً (يبدأ الخميس)"
+
+msgid "Weekly (Start Friday)"
+msgstr ""
 
 msgid "Weekly (Start Saturday)"
 msgstr "اسبوعياً (يبدأ السبت)"
@@ -878,17 +843,26 @@ msgstr "نصف سنوي، كل ستة أشهر، ابريل"
 msgid "Yearly"
 msgstr "سنوي"
 
-msgid "Financial year (Start November)"
-msgstr "السنة المالية (تبدأ في نوفمبر)"
+msgid "Financial year (Start February)"
+msgstr ""
 
-msgid "Financial year (Start October)"
-msgstr "السنة المالية (تبدأ في اكتوبر)"
+msgid "Financial year (Start April)"
+msgstr "السنة المالية (تبدأ في ابريل)"
 
 msgid "Financial year (Start July)"
 msgstr "السنة المالية (تبدأ في يوليو)"
 
-msgid "Financial year (Start April)"
-msgstr "السنة المالية (تبدأ في ابريل)"
+msgid "Financial year (Start August)"
+msgstr ""
+
+msgid "Financial year (Start September)"
+msgstr ""
+
+msgid "Financial year (Start October)"
+msgstr "السنة المالية (تبدأ في اكتوبر)"
+
+msgid "Financial year (Start November)"
+msgstr "السنة المالية (تبدأ في نوفمبر)"
 
 msgid "Today"
 msgstr "اليوم"
@@ -1322,6 +1296,18 @@ msgstr "الفئات المعينة"
 msgid "No value"
 msgstr "لا توجد قيمة"
 
+msgid "Active"
+msgstr "نشط"
+
+msgid "Completed"
+msgstr "مكتمل"
+
+msgid "Scheduled"
+msgstr "تمت جدولته"
+
+msgid "Cancelled"
+msgstr "ملغي"
+
 msgid "Text"
 msgstr "نص"
 
@@ -1477,15 +1463,6 @@ msgstr "الأساس"
 
 msgid "Axis {{axisId}}"
 msgstr "محور {{axisId}}"
-
-msgid "{{count}} items"
-msgid_plural "{{count}} items"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
-msgstr[4] ""
-msgstr[5] ""
 
 msgid "Reset zoom"
 msgstr ""
