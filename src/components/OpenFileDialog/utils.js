@@ -61,22 +61,10 @@ const texts = {
         ),
         newButtonLabel: i18n.t('New map'),
     },
-    [AO_TYPE_EVENT_VISUALIZATION]: {
-        modalTitle: i18n.t('Open a line list'),
-        loadingText: i18n.t('Loading line lists'),
-        errorTitle: i18n.t("Couldn't load line lists"),
-        errorText: i18n.t(
-            'There was a problem loading line lists. Try again or contact your system administrator.'
-        ),
-        noDataText: i18n.t(
-            'No line lists found. Click New line list to get started.'
-        ),
-        noFilteredDataText: i18n.t(
-            "No line lists found. Try adjusting your search or filter options to find what you're looking for."
-        ),
-        newButtonLabel: i18n.t('New line list'),
-    },
 }
+
+// Event visualizations use the same texts as visualizations
+texts[AO_TYPE_EVENT_VISUALIZATION] = texts[AO_TYPE_VISUALIZATION]
 
 export const getTranslatedString = (type, key) =>
     (texts[type] || texts[NO_TYPE])[key]
