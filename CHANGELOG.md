@@ -1,3 +1,10 @@
+## [29.5.3](https://github.com/dhis2/analytics/compare/v29.5.2...v29.5.3) (2026-06-11)
+
+
+### Bug Fixes
+
+* **OpenFileDialog:** use the same generic texts for both DV and EVER/LL ([#1837](https://github.com/dhis2/analytics/issues/1837)) ([b387e8f](https://github.com/dhis2/analytics/commit/b387e8fc96b05f4c72b25b23169889294f67a78e))
+
 ## [29.5.2](https://github.com/dhis2/analytics/compare/v29.5.1...v29.5.2) (2026-05-28)
 
 
