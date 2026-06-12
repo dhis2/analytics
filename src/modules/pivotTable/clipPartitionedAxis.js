@@ -7,6 +7,16 @@ export const clipPartitionedAxis = ({
     viewportPosition,
     totalWidth,
 }) => {
+    // Empty axis (e.g. an aggregate response with no rows produces a
+    // zero-size dimension): render no cells rather than a phantom index 0.
+    if (axisMap.length === 0) {
+        return {
+            indices: [],
+            pre: 0,
+            post: 0,
+        }
+    }
+
     const partition = Math.floor(viewportPosition / partitionSize)
 
     if (partitions[partition] === undefined) {
