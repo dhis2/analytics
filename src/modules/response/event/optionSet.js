@@ -1,4 +1,4 @@
-import { NA_VALUE } from './response.js'
+import { D2__NOVALUE, NA_VALUE, NA_VALUE_ITEM } from './response.js'
 
 export const getOptionCodeIdMap = (optionIds, items) =>
     optionIds.reduce((map, optionId) => {
@@ -31,8 +31,12 @@ export const applyOptionSetHandler = (response, headerIndex) => {
         response.metaData.items
     )
 
-    return {
+    const r = {
         ...response,
         rows: getOptionIdRows(response.rows, optionCodeIdMap, headerIndex),
     }
+
+    r.metaData.items[D2__NOVALUE] = NA_VALUE_ITEM
+
+    return r
 }

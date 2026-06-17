@@ -26,11 +26,12 @@ import { applyOptionSetHandler } from './optionSet.js'
 // - analytics/enrollments/aggregate
 
 export const PREFIX_SEPARATOR = '_'
+export const D2__NOVALUE = 'D2__NOVALUE'
 export const NA_VALUE = ''
 export const NA_VALUE_ITEM = {
     name: i18n.t('No value'),
     style: {
-        fontStyle: 'italic',
+        // fontStyle: 'italic',
         color: '#6C7787',
         fontFamily: 'monospace',
         letterSpacing: '-0.3px',
@@ -156,10 +157,12 @@ export const transformResponse = (response, { hideNaData = false } = {}) => {
 
     // Add "No value" dimension item if "Hide NA data" option is disabled
     // Only add if there is at least one empty value
+    // Only add if "no value" is not specifically requested as "D2__NOVALUE"
     if (!hideNaData) {
         metaHeaders.forEach((header) => {
             if (
-                response.rows.map((row) => row[header.index]).includes(NA_VALUE)
+                response.rows.map((row) => row[header.index]).includes(NA_VALUE) &&
+                !response.metaData.dimensions[header.name].includes(D2__NOVALUE)
             ) {
                 transformedResponse.metaData.dimensions[header.name] = [
                     ...transformedResponse.metaData.dimensions[header.name],

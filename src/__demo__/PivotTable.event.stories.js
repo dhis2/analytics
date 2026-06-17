@@ -27,6 +27,9 @@ import legendsetVisualization from './data/event/legendset.visualization.json'
 import optionsetDataHideNa from './data/event/optionset.data.hidena.json'
 import optionsetData from './data/event/optionset.data.json'
 import optionsetVisualization from './data/event/optionset.visualization.json'
+import optionsetNoValueDataHideNa from './data/event/optionsetnovalue.data.hidena.json'
+import optionsetNoValueData from './data/event/optionsetnovalue.data.json'
+import optionsetNoValueVisualization from './data/event/optionsetnovalue.visualization.json'
 import timeDataHideNa from './data/event/time.data.hidena.json'
 import timeData from './data/event/time.data.json'
 import timeVisualization from './data/event/time.visualization.json'
@@ -291,6 +294,41 @@ export const Optionset = (_, { pivotTableOptions }) => {
 }
 
 Optionset.storyName = 'Optionset'
+
+export const OptionsetNoValueNA = (_, { pivotTableOptions }) => {
+    const visualization = {
+        ...optionsetNoValueVisualization,
+        ...visualizationReset,
+        ...pivotTableOptions,
+    }
+
+    return (
+        <div style={{ width: 800, height: 600 }}>
+            <PivotTable data={optionsetNoValueData} visualization={visualization} />
+        </div>
+    )
+}
+
+OptionsetNoValueNA.storyName = 'Optionset no value N/A'
+
+export const OptionsetNoValue = (_, { pivotTableOptions }) => {
+    const visualization = {
+        ...optionsetNoValueVisualization,
+        ...visualizationReset,
+        ...pivotTableOptions,
+    }
+
+    return (
+        <div style={{ width: 800, height: 600 }}>
+            <PivotTable
+                data={optionsetNoValueDataHideNa}
+                visualization={visualization}
+            />
+        </div>
+    )
+}
+
+OptionsetNoValue.storyName = 'Optionset no value'
 
 export const TextNA = (_, { pivotTableOptions }) => {
     const visualization = {
