@@ -11,6 +11,7 @@ import {
     DataTableRow,
     DataTableCell,
     DataTableColumnHeader,
+    DataTableToolbar,
     NoticeBox,
     CircularLoader,
     Button,
@@ -210,68 +211,6 @@ export const OpenFileDialog = ({
             <ModalTitle>{getTranslatedString(type, 'modalTitle')}</ModalTitle>
             <ModalContent>
                 <Box minHeight="496px">
-                    <div className="search-and-filter-bar">
-                        <div className="search-field-container">
-                            <NameFilter
-                                dataTest={`${cypressSelector}-name-filter`}
-                                value={nameFilterValue}
-                                onChange={(value) => {
-                                    setNameFilterValue(value)
-
-                                    clearTimeout(searchTimeout)
-                                    setSearchTimeout(
-                                        setTimeout(
-                                            () =>
-                                                setState({
-                                                    page: 1,
-                                                    filters: {
-                                                        ...filters,
-                                                        searchTerm: value,
-                                                    },
-                                                }),
-                                            200
-                                        )
-                                    )
-                                }}
-                            />
-                        </div>
-                        {filterVisTypes?.length && (
-                            <div className="type-field-container">
-                                <VisTypeFilter
-                                    visTypes={filterVisTypes}
-                                    selected={filters.visType}
-                                    onChange={(value) =>
-                                        setState({
-                                            page: 1,
-                                            filters: {
-                                                ...filters,
-                                                visType: value,
-                                            },
-                                        })
-                                    }
-                                />
-                            </div>
-                        )}
-                        <div className="created-by-field-container">
-                            <CreatedByFilter
-                                selected={filters.createdBy}
-                                onChange={(value) =>
-                                    setState({
-                                        page: 1,
-                                        filters: {
-                                            ...filters,
-                                            createdBy: value,
-                                        },
-                                    })
-                                }
-                            />
-                        </div>
-                        {!isEqual(filters, defaultFilters) && (
-                            <Button onClick={resetFilters} secondary small>
-                                {i18n.t('Clear filters')}
-                            </Button>
-                        )}
-                    </div>
                     {error ? (
                         <NoticeBox
                             title={getTranslatedString(type, 'errorTitle')}
@@ -282,6 +221,75 @@ export const OpenFileDialog = ({
                     ) : (
                         <>
                             <div className="data-table-wrapper">
+                                <DataTableToolbar>
+                                    <div className="search-and-filter-bar">
+                                        <div className="search-field-container">
+                                            <NameFilter
+                                                dataTest={`${cypressSelector}-name-filter`}
+                                                value={nameFilterValue}
+                                                onChange={(value) => {
+                                                    setNameFilterValue(value)
+
+                                                    clearTimeout(searchTimeout)
+                                                    setSearchTimeout(
+                                                        setTimeout(
+                                                            () =>
+                                                                setState({
+                                                                    page: 1,
+                                                                    filters: {
+                                                                        ...filters,
+                                                                        searchTerm:
+                                                                            value,
+                                                                    },
+                                                                }),
+                                                            200
+                                                        )
+                                                    )
+                                                }}
+                                            />
+                                        </div>
+                                        {filterVisTypes?.length && (
+                                            <div className="type-field-container">
+                                                <VisTypeFilter
+                                                    visTypes={filterVisTypes}
+                                                    selected={filters.visType}
+                                                    onChange={(value) =>
+                                                        setState({
+                                                            page: 1,
+                                                            filters: {
+                                                                ...filters,
+                                                                visType: value,
+                                                            },
+                                                        })
+                                                    }
+                                                />
+                                            </div>
+                                        )}
+                                        <div className="created-by-field-container">
+                                            <CreatedByFilter
+                                                selected={filters.createdBy}
+                                                onChange={(value) =>
+                                                    setState({
+                                                        page: 1,
+                                                        filters: {
+                                                            ...filters,
+                                                            createdBy: value,
+                                                        },
+                                                    })
+                                                }
+                                            />
+                                        </div>
+                                        {!isEqual(filters, defaultFilters) && (
+                                            <Button
+                                                onClick={resetFilters}
+                                                secondary
+                                                small
+                                            >
+                                                {i18n.t('Clear filters')}
+                                            </Button>
+                                        )}
+                                    </div>
+                                </DataTableToolbar>
                                 <DataTable layout="fixed">
                                     <DataTableHead>
                                         <DataTableRow>
@@ -339,7 +347,10 @@ export const OpenFileDialog = ({
                                                 AOTypeMap[type].apiEndpoint
                                             ].length > 0 && (
                                                 <DataTableRow>
-                                                    <DataTableCell large>
+                                                    <DataTableCell
+                                                        staticStyle
+                                                        large
+                                                    >
                                                         <Box minHeight="342px">
                                                             <div className="info-cell">
                                                                 <div className="info-container">
@@ -400,17 +411,19 @@ export const OpenFileDialog = ({
                                         )}
                                     </DataTableBody>
                                 </DataTable>
+                                <DataTableToolbar position="bottom">
+                                    {data?.files[AOTypeMap[type].apiEndpoint]
+                                        .length > 0 && (
+                                        <div className="pagination-controls">
+                                            <PaginationControls
+                                                page={data.files.pager.page}
+                                                pager={data.files.pager}
+                                                onPageChange={setPage}
+                                            />
+                                        </div>
+                                    )}
+                                </DataTableToolbar>
                             </div>
-                            {data?.files[AOTypeMap[type].apiEndpoint].length >
-                                0 && (
-                                <div className="pagination-controls">
-                                    <PaginationControls
-                                        page={data.files.pager.page}
-                                        pager={data.files.pager}
-                                        onPageChange={setPage}
-                                    />
-                                </div>
-                            )}
                         </>
                     )}
                     <style jsx>{styles}</style>
