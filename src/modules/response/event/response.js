@@ -6,7 +6,6 @@ import {
 import {
     VALUE_TYPE_AGE,
     VALUE_TYPE_BOOLEAN,
-    VALUE_TYPE_COORDINATE,
     VALUE_TYPE_DATE,
     VALUE_TYPE_DATETIME,
     VALUE_TYPE_FILE_RESOURCE,
@@ -27,8 +26,8 @@ import { applyOptionSetHandler } from './optionSet.js'
 
 export const PREFIX_SEPARATOR = '_'
 export const D2__NOVALUE = 'D2__NOVALUE'
-export const NA_VALUE = ''
-export const NA_VALUE_ITEM = {
+export const NO_VALUE = ''
+export const NO_VALUE_ITEM = {
     name: i18n.t('No value'),
     style: {
         // fontStyle: 'italic',
@@ -39,7 +38,6 @@ export const NA_VALUE_ITEM = {
 }
 
 export const UNSUPPORTED_VALUE_TYPES = [
-    VALUE_TYPE_COORDINATE,
     VALUE_TYPE_GEOJSON,
     VALUE_TYPE_FILE_RESOURCE,
     VALUE_TYPE_IMAGE,
@@ -157,19 +155,15 @@ export const transformResponse = (response, { hideNaData = false } = {}) => {
 
     // Add "No value" dimension item if "Hide NA data" option is disabled
     // Only add if there is at least one empty value
-    // Only add if "no value" is not specifically requested as "D2__NOVALUE"
+    // Only add if "no value" is not already a dimension
     if (!hideNaData) {
         metaHeaders.forEach((header) => {
             if (
-                response.rows.map((row) => row[header.index]).includes(NA_VALUE) &&
-                !response.metaData.dimensions[header.name].includes(D2__NOVALUE)
+                transformedResponse.rows.map((row) => row[header.index]).includes(NO_VALUE) &&
+                !transformedResponse.metaData.dimensions[header.name].includes(NO_VALUE)
             ) {
-                transformedResponse.metaData.dimensions[header.name] = [
-                    ...transformedResponse.metaData.dimensions[header.name],
-                    NA_VALUE,
-                ]
-
-                transformedResponse.metaData.items[NA_VALUE] = NA_VALUE_ITEM
+                transformedResponse.metaData.dimensions[header.name].push(NO_VALUE)
+                transformedResponse.metaData.items[NO_VALUE] = NO_VALUE_ITEM
             }
         })
     }
