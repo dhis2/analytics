@@ -9,6 +9,17 @@ export const clipPartitionedAxis = ({
 }) => {
     const partition = Math.floor(viewportPosition / partitionSize)
 
+    // Empty axis (no rows/columns to render, e.g. a degenerate matrix where a
+    // dimension has no members). Render nothing instead of falling back to a
+    // phantom index 0 that isn't present in the axis map.
+    if (partitions.length === 0) {
+        return {
+            indices: [],
+            pre: 0,
+            post: 0,
+        }
+    }
+
     if (partitions[partition] === undefined) {
         return {
             indices: [0],
