@@ -40,8 +40,9 @@ export const applyOptionSetHandler = (response, headerIndex) => {
     }
 
     if (res.metaData.dimensions[header.name].includes(D2__NOVALUE)) {
-        res.metaData.dimensions[header.name] = res.metaData.dimensions[header.name]
-            .map(d => d === D2__NOVALUE ? NO_VALUE : d)
+        res.metaData.dimensions[header.name] = res.metaData.dimensions[
+            header.name
+        ].map((d) => (d === D2__NOVALUE ? NO_VALUE : d))
         res.metaData.items = {
             ...res.metaData.items,
             [NO_VALUE]: NO_VALUE_ITEM,

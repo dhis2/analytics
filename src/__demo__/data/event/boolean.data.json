@@ -86,16 +86,24 @@
             "": {
                 "name": "No value",
                 "style": {
-                    "fontStyle": "italic",
                     "color": "#6C7787",
                     "fontFamily": "monospace",
-                    "letterSpacing": "-0.3px"
+                    "letterSpacing": "-0.4px"
                 }
             }
         },
         "dimensions": {
-            "pe": ["202501", "202502", "202503", "202504", "202505", "202506"],
-            "ou": ["ImspTQPwCqd"],
+            "pe": [
+                "202501",
+                "202502",
+                "202503",
+                "202504",
+                "202505",
+                "202506"
+            ],
+            "ou": [
+                "ImspTQPwCqd"
+            ],
             "A03MvHHogjR.bx6fsa0t90x": [
                 "A03MvHHogjR.bx6fsa0t90x_0",
                 "A03MvHHogjR.bx6fsa0t90x_1",
@@ -106,19 +114,84 @@
     "rowContext": {},
     "width": 4,
     "rows": [
-        ["A03MvHHogjR.bx6fsa0t90x_1", "ImspTQPwCqd", "202506", "319"],
-        ["A03MvHHogjR.bx6fsa0t90x_1", "ImspTQPwCqd", "202501", "352"],
-        ["A03MvHHogjR.bx6fsa0t90x_0", "ImspTQPwCqd", "202503", "337"],
-        ["A03MvHHogjR.bx6fsa0t90x_1", "ImspTQPwCqd", "202503", "357"],
-        ["A03MvHHogjR.bx6fsa0t90x_0", "ImspTQPwCqd", "202506", "293"],
-        ["A03MvHHogjR.bx6fsa0t90x_0", "ImspTQPwCqd", "202501", "341"],
-        ["A03MvHHogjR.bx6fsa0t90x_0", "ImspTQPwCqd", "202505", "344"],
-        ["A03MvHHogjR.bx6fsa0t90x_0", "ImspTQPwCqd", "202504", "332"],
-        ["A03MvHHogjR.bx6fsa0t90x_1", "ImspTQPwCqd", "202504", "326"],
-        ["A03MvHHogjR.bx6fsa0t90x_1", "ImspTQPwCqd", "202505", "358"],
-        ["A03MvHHogjR.bx6fsa0t90x_1", "ImspTQPwCqd", "202502", "318"],
-        ["", "ImspTQPwCqd", "202501", "1"],
-        ["A03MvHHogjR.bx6fsa0t90x_0", "ImspTQPwCqd", "202502", "311"]
+        [
+            "A03MvHHogjR.bx6fsa0t90x_1",
+            "ImspTQPwCqd",
+            "202506",
+            "319"
+        ],
+        [
+            "A03MvHHogjR.bx6fsa0t90x_1",
+            "ImspTQPwCqd",
+            "202501",
+            "352"
+        ],
+        [
+            "A03MvHHogjR.bx6fsa0t90x_0",
+            "ImspTQPwCqd",
+            "202503",
+            "337"
+        ],
+        [
+            "A03MvHHogjR.bx6fsa0t90x_1",
+            "ImspTQPwCqd",
+            "202503",
+            "357"
+        ],
+        [
+            "A03MvHHogjR.bx6fsa0t90x_0",
+            "ImspTQPwCqd",
+            "202506",
+            "293"
+        ],
+        [
+            "A03MvHHogjR.bx6fsa0t90x_0",
+            "ImspTQPwCqd",
+            "202501",
+            "341"
+        ],
+        [
+            "A03MvHHogjR.bx6fsa0t90x_0",
+            "ImspTQPwCqd",
+            "202505",
+            "344"
+        ],
+        [
+            "A03MvHHogjR.bx6fsa0t90x_0",
+            "ImspTQPwCqd",
+            "202504",
+            "332"
+        ],
+        [
+            "A03MvHHogjR.bx6fsa0t90x_1",
+            "ImspTQPwCqd",
+            "202504",
+            "326"
+        ],
+        [
+            "A03MvHHogjR.bx6fsa0t90x_1",
+            "ImspTQPwCqd",
+            "202505",
+            "358"
+        ],
+        [
+            "A03MvHHogjR.bx6fsa0t90x_1",
+            "ImspTQPwCqd",
+            "202502",
+            "318"
+        ],
+        [
+            "",
+            "ImspTQPwCqd",
+            "202501",
+            "1"
+        ],
+        [
+            "A03MvHHogjR.bx6fsa0t90x_0",
+            "ImspTQPwCqd",
+            "202502",
+            "311"
+        ]
     ],
     "height": 13,
     "headerWidth": 4

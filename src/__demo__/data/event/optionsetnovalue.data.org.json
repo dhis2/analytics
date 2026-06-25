@@ -10,15 +10,6 @@
             "optionSet": "optionset1"
         },
         {
-            "name": "stageB.element2",
-            "column": "Option set B with shared codes",
-            "valueType": "TEXT",
-            "type": "java.lang.String",
-            "hidden": false,
-            "meta": true,
-            "optionSet": "iDFPKpFTiVw"
-        },
-        {
             "name": "ou",
             "column": "Organisation unit",
             "valueType": "TEXT",
@@ -65,19 +56,8 @@
                 "code": "TWO",
                 "name": "Two"
             },
-            "optionId3": {
-                "code": "ONE",
-                "name": "Single"
-            },
-            "optionId4": {
-                "code": "TWO",
-                "name": "Double"
-            },
             "stageA.element1": {
                 "name": "Option set A"
-            },
-            "stageB.element2": {
-                "name": "Option set B with shared codes"
             },
             "Zj7UnCAulEk": {
                 "name": "Inpatient morbidity and mortality"
@@ -96,30 +76,109 @@
             }
         },
         "dimensions": {
-            "pe": ["202505", "202506", "202507"],
-            "ou": ["ImspTQPwCqd"],
-            "stageA.element1": ["optionId1", "optionId2"],
-            "stageB.element2": ["optionId3", "optionId4"]
+            "pe": [
+                "202505",
+                "202506",
+                "202507"
+            ],
+            "ou": [
+                "ImspTQPwCqd"
+            ],
+            "stageA.element1": [
+                "optionId1",
+                "D2__NOVALUE",
+                "optionId2"
+            ]
         }
     },
     "rowContext": {},
     "headerWidth": 4,
     "width": 4,
     "rows": [
-        ["ONE", "ONE", "ImspTQPwCqd", "202505", "327"],
-        ["ONE", "ONE", "ImspTQPwCqd", "202506", "594"],
-        ["ONE", "ONE", "ImspTQPwCqd", "202507", "261"],
-        ["ONE", "TWO", "ImspTQPwCqd", "202505", "448"],
-        ["ONE", "TWO", "ImspTQPwCqd", "202506", "519"],
-        ["ONE", "TWO", "ImspTQPwCqd", "202507", "583"],
-        ["TWO", "ONE", "ImspTQPwCqd", "202505", "379"],
-        ["TWO", "ONE", "ImspTQPwCqd", "202506", "239"],
-        ["TWO", "ONE", "ImspTQPwCqd", "202507", "420"],
-        ["TWO", "TWO", "ImspTQPwCqd", "202505", "411"],
-        ["TWO", "TWO", "ImspTQPwCqd", "202506", "531"],
-        ["TWO", "TWO", "ImspTQPwCqd", "202507", "317"],
-        ["", "TWO", "ImspTQPwCqd", "202507", "23"],
-        ["ONE", "", "ImspTQPwCqd", "202506", "45"]
+        [
+            "ONE",
+            "ImspTQPwCqd",
+            "202505",
+            "327"
+        ],
+        [
+            "ONE",
+            "ImspTQPwCqd",
+            "202506",
+            "594"
+        ],
+        [
+            "ONE",
+            "ImspTQPwCqd",
+            "202507",
+            "261"
+        ],
+        [
+            "ONE",
+            "ImspTQPwCqd",
+            "202505",
+            "448"
+        ],
+        [
+            "ONE",
+            "ImspTQPwCqd",
+            "202506",
+            "519"
+        ],
+        [
+            "ONE",
+            "ImspTQPwCqd",
+            "202507",
+            "583"
+        ],
+        [
+            "TWO",
+            "ImspTQPwCqd",
+            "202505",
+            "379"
+        ],
+        [
+            "TWO",
+            "ImspTQPwCqd",
+            "202506",
+            "239"
+        ],
+        [
+            "TWO",
+            "ImspTQPwCqd",
+            "202507",
+            "420"
+        ],
+        [
+            "TWO",
+            "ImspTQPwCqd",
+            "202505",
+            "411"
+        ],
+        [
+            "TWO",
+            "ImspTQPwCqd",
+            "202506",
+            "531"
+        ],
+        [
+            "TWO",
+            "ImspTQPwCqd",
+            "202507",
+            "317"
+        ],
+        [
+            "ONE",
+            "ImspTQPwCqd",
+            "202506",
+            "45"
+        ],
+        [
+            "",
+            "ImspTQPwCqd",
+            "202507",
+            "23"
+        ]
     ],
     "height": 12
 }

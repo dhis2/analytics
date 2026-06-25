@@ -19,6 +19,9 @@ import responseNumericOrg from '../../../../__demo__/data/event/integer.data.org
 import responseOptionSetHideNa from '../../../../__demo__/data/event/optionset.data.hidena.json'
 import responseOptionSet from '../../../../__demo__/data/event/optionset.data.json'
 import responseOptionSetOrg from '../../../../__demo__/data/event/optionset.data.org.json'
+import responseOptionSetNoValueHideNa from '../../../../__demo__/data/event/optionsetnovalue.data.hidena.json'
+import responseOptionSetNoValue from '../../../../__demo__/data/event/optionsetnovalue.data.json'
+import responseOptionSetNoValueOrg from '../../../../__demo__/data/event/optionsetnovalue.data.org.json'
 import responseTimeHideNa from '../../../../__demo__/data/event/time.data.hidena.json'
 import responseTime from '../../../../__demo__/data/event/time.data.json'
 import responseTimeOrg from '../../../../__demo__/data/event/time.data.org.json'
@@ -166,6 +169,24 @@ describe('response', () => {
                         hideNaData: true,
                     })
                 ).toEqual(responseOptionSetHideNa)
+            })
+        })
+
+        describe('option set with no value', () => {
+            it('maps D2__NOVALUE to the "No value" item', () => {
+                expect(transformResponse(responseOptionSetNoValueOrg)).toEqual(
+                    responseOptionSetNoValue
+                )
+            })
+
+            // D2__NOVALUE is an explicitly requested "no value" category, so it
+            // must survive even when incidental N/A data is hidden.
+            it('keeps the explicitly requested "No value" item when N/A data is hidden', () => {
+                expect(
+                    transformResponse(responseOptionSetNoValueOrg, {
+                        hideNaData: true,
+                    })
+                ).toEqual(responseOptionSetNoValueHideNa)
             })
         })
 

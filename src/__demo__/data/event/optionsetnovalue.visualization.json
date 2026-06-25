@@ -1,5 +1,5 @@
 {
-    "name": "Two option sets with shared option codes",
+    "name": "Option set with D2__NOVALUE (no value)",
     "created": "2025-06-30T10:27:41.277",
     "lastUpdated": "2025-06-30T10:27:41.277",
     "translations": [],
@@ -75,7 +75,9 @@
         {
             "parent": "COLUMN",
             "dimension": "ou",
-            "values": ["ImspTQPwCqd"]
+            "values": [
+                "ImspTQPwCqd"
+            ]
         }
     ],
     "legacy": true,
@@ -112,17 +114,11 @@
             "programStage": {
                 "id": "stageA"
             },
-            "dimension": "stageA.element1"
-        },
-        {
-            "items": [],
-            "programStage": {
-                "id": "stageB"
-            },
-            "dimension": "stageB.element2"
+            "dimension": "stageA.element1",
+            "filter": "IN:1;D2__NOVALUE;2"
         }
     ],
-    "displayName": "Text with option set",
+    "displayName": "Option set with D2__NOVALUE (no value)",
     "access": {
         "manage": true,
         "externalize": true,
@@ -152,7 +148,7 @@
             "name": "Age in years"
         }
     },
-    "displayFormName": "Text with option set",
+    "displayFormName": "Option set with D2__NOVALUE (no value)",
     "id": "kNl4fqsY9hJ",
     "attributeValues": []
 }

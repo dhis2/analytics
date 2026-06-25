@@ -30,10 +30,9 @@ export const NO_VALUE = ''
 export const NO_VALUE_ITEM = {
     name: i18n.t('No value'),
     style: {
-        // fontStyle: 'italic',
         color: '#6C7787',
         fontFamily: 'monospace',
-        letterSpacing: '-0.3px',
+        letterSpacing: '-0.4px',
     },
 }
 
@@ -159,10 +158,17 @@ export const transformResponse = (response, { hideNaData = false } = {}) => {
     if (!hideNaData) {
         metaHeaders.forEach((header) => {
             if (
-                transformedResponse.rows.map((row) => row[header.index]).includes(NO_VALUE) &&
-                !transformedResponse.metaData.dimensions[header.name].includes(NO_VALUE)
+                transformedResponse.rows
+                    .map((row) => row[header.index])
+                    .includes(NO_VALUE) &&
+                !transformedResponse.metaData.dimensions[header.name].includes(
+                    NO_VALUE
+                )
             ) {
-                transformedResponse.metaData.dimensions[header.name].push(NO_VALUE)
+                transformedResponse.metaData.dimensions[header.name] = [
+                    ...transformedResponse.metaData.dimensions[header.name],
+                    NO_VALUE,
+                ]
                 transformedResponse.metaData.items[NO_VALUE] = NO_VALUE_ITEM
             }
         })

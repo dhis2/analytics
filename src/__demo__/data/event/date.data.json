@@ -116,10 +116,9 @@
             "": {
                 "name": "No value",
                 "style": {
-                    "fontStyle": "italic",
                     "color": "#6C7787",
                     "fontFamily": "monospace",
-                    "letterSpacing": "-0.3px"
+                    "letterSpacing": "-0.4px"
                 }
             }
         },
@@ -147,13 +146,20 @@
                 "202506",
                 "202507"
             ],
-            "ou": ["ImspTQPwCqd"]
+            "ou": [
+                "ImspTQPwCqd"
+            ]
         }
     },
     "rowContext": {},
     "width": 4,
     "rows": [
-        ["", "ImspTQPwCqd", "202503", "1"],
+        [
+            "",
+            "ImspTQPwCqd",
+            "202503",
+            "1"
+        ],
         [
             "jfuXZB3A1ko.RldgRedJrco_1992-05-04 00:00:00.0",
             "ImspTQPwCqd",
@@ -172,7 +178,12 @@
             "202503",
             "1"
         ],
-        ["", "ImspTQPwCqd", "202501", "1"],
+        [
+            "",
+            "ImspTQPwCqd",
+            "202501",
+            "1"
+        ],
         [
             "jfuXZB3A1ko.RldgRedJrco_1993-12-01 00:00:00.0",
             "ImspTQPwCqd",

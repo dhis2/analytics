@@ -99,15 +99,18 @@
             "": {
                 "name": "No value",
                 "style": {
-                    "fontStyle": "italic",
                     "color": "#6C7787",
                     "fontFamily": "monospace",
-                    "letterSpacing": "-0.3px"
+                    "letterSpacing": "-0.4px"
                 }
             }
         },
         "dimensions": {
-            "pe": ["202503", "202504", "202505"],
+            "pe": [
+                "202503",
+                "202504",
+                "202505"
+            ],
             "Zj7UnCAulEk.qrur9Dvnyt5": [
                 "pZzk1L4Blf1",
                 "OyVUzWsX8UF",
@@ -121,43 +124,200 @@
                 "scvmgP9F9rn",
                 ""
             ],
-            "ou": ["ImspTQPwCqd"]
+            "ou": [
+                "ImspTQPwCqd"
+            ]
         }
     },
     "rowContext": {},
     "width": 4,
     "rows": [
-        ["puI3YpLJ3fC", "ImspTQPwCqd", "202503", "479"],
-        ["ZUUGJnvX40X", "ImspTQPwCqd", "202505", "486"],
-        ["Tq4NYCn9eNH", "ImspTQPwCqd", "202505", "511"],
-        ["pZzk1L4Blf1", "ImspTQPwCqd", "202504", "482"],
-        ["OyVUzWsX8UF", "ImspTQPwCqd", "202504", "490"],
-        ["puI3YpLJ3fC", "ImspTQPwCqd", "202505", "430"],
-        ["TvM2MQgD7Jd", "ImspTQPwCqd", "202504", "501"],
-        ["Tq4NYCn9eNH", "ImspTQPwCqd", "202504", "438"],
-        ["TvM2MQgD7Jd", "ImspTQPwCqd", "202503", "515"],
-        ["pZzk1L4Blf1", "ImspTQPwCqd", "202505", "522"],
-        ["cbPqyIAFw9u", "ImspTQPwCqd", "202503", "508"],
-        ["TvM2MQgD7Jd", "ImspTQPwCqd", "202505", "520"],
-        ["cbPqyIAFw9u", "ImspTQPwCqd", "202505", "502"],
-        ["CpP5yzbgfHo", "ImspTQPwCqd", "202504", "495"],
-        ["Tq4NYCn9eNH", "ImspTQPwCqd", "202503", "516"],
-        ["b7MCpzqJaR2", "ImspTQPwCqd", "202504", "498"],
-        ["OyVUzWsX8UF", "ImspTQPwCqd", "202505", "495"],
-        ["ZUUGJnvX40X", "ImspTQPwCqd", "202504", "524"],
-        ["pZzk1L4Blf1", "ImspTQPwCqd", "202503", "519"],
-        ["CpP5yzbgfHo", "ImspTQPwCqd", "202505", "514"],
-        ["b7MCpzqJaR2", "ImspTQPwCqd", "202503", "475"],
-        ["cbPqyIAFw9u", "ImspTQPwCqd", "202504", "483"],
-        ["CpP5yzbgfHo", "ImspTQPwCqd", "202503", "526"],
-        ["b7MCpzqJaR2", "ImspTQPwCqd", "202505", "477"],
-        ["ZUUGJnvX40X", "ImspTQPwCqd", "202503", "519"],
-        ["OyVUzWsX8UF", "ImspTQPwCqd", "202503", "525"],
-        ["puI3YpLJ3fC", "ImspTQPwCqd", "202504", "443"],
-        ["scvmgP9F9rn", "ImspTQPwCqd", "202503", "398"],
-        ["scvmgP9F9rn", "ImspTQPwCqd", "202504", "487"],
-        ["scvmgP9F9rn", "ImspTQPwCqd", "202505", "401"],
-        ["", "ImspTQPwCqd", "202504", "14"]
+        [
+            "puI3YpLJ3fC",
+            "ImspTQPwCqd",
+            "202503",
+            "479"
+        ],
+        [
+            "ZUUGJnvX40X",
+            "ImspTQPwCqd",
+            "202505",
+            "486"
+        ],
+        [
+            "Tq4NYCn9eNH",
+            "ImspTQPwCqd",
+            "202505",
+            "511"
+        ],
+        [
+            "pZzk1L4Blf1",
+            "ImspTQPwCqd",
+            "202504",
+            "482"
+        ],
+        [
+            "OyVUzWsX8UF",
+            "ImspTQPwCqd",
+            "202504",
+            "490"
+        ],
+        [
+            "puI3YpLJ3fC",
+            "ImspTQPwCqd",
+            "202505",
+            "430"
+        ],
+        [
+            "TvM2MQgD7Jd",
+            "ImspTQPwCqd",
+            "202504",
+            "501"
+        ],
+        [
+            "Tq4NYCn9eNH",
+            "ImspTQPwCqd",
+            "202504",
+            "438"
+        ],
+        [
+            "TvM2MQgD7Jd",
+            "ImspTQPwCqd",
+            "202503",
+            "515"
+        ],
+        [
+            "pZzk1L4Blf1",
+            "ImspTQPwCqd",
+            "202505",
+            "522"
+        ],
+        [
+            "cbPqyIAFw9u",
+            "ImspTQPwCqd",
+            "202503",
+            "508"
+        ],
+        [
+            "TvM2MQgD7Jd",
+            "ImspTQPwCqd",
+            "202505",
+            "520"
+        ],
+        [
+            "cbPqyIAFw9u",
+            "ImspTQPwCqd",
+            "202505",
+            "502"
+        ],
+        [
+            "CpP5yzbgfHo",
+            "ImspTQPwCqd",
+            "202504",
+            "495"
+        ],
+        [
+            "Tq4NYCn9eNH",
+            "ImspTQPwCqd",
+            "202503",
+            "516"
+        ],
+        [
+            "b7MCpzqJaR2",
+            "ImspTQPwCqd",
+            "202504",
+            "498"
+        ],
+        [
+            "OyVUzWsX8UF",
+            "ImspTQPwCqd",
+            "202505",
+            "495"
+        ],
+        [
+            "ZUUGJnvX40X",
+            "ImspTQPwCqd",
+            "202504",
+            "524"
+        ],
+        [
+            "pZzk1L4Blf1",
+            "ImspTQPwCqd",
+            "202503",
+            "519"
+        ],
+        [
+            "CpP5yzbgfHo",
+            "ImspTQPwCqd",
+            "202505",
+            "514"
+        ],
+        [
+            "b7MCpzqJaR2",
+            "ImspTQPwCqd",
+            "202503",
+            "475"
+        ],
+        [
+            "cbPqyIAFw9u",
+            "ImspTQPwCqd",
+            "202504",
+            "483"
+        ],
+        [
+            "CpP5yzbgfHo",
+            "ImspTQPwCqd",
+            "202503",
+            "526"
+        ],
+        [
+            "b7MCpzqJaR2",
+            "ImspTQPwCqd",
+            "202505",
+            "477"
+        ],
+        [
+            "ZUUGJnvX40X",
+            "ImspTQPwCqd",
+            "202503",
+            "519"
+        ],
+        [
+            "OyVUzWsX8UF",
+            "ImspTQPwCqd",
+            "202503",
+            "525"
+        ],
+        [
+            "puI3YpLJ3fC",
+            "ImspTQPwCqd",
+            "202504",
+            "443"
+        ],
+        [
+            "scvmgP9F9rn",
+            "ImspTQPwCqd",
+            "202503",
+            "398"
+        ],
+        [
+            "scvmgP9F9rn",
+            "ImspTQPwCqd",
+            "202504",
+            "487"
+        ],
+        [
+            "scvmgP9F9rn",
+            "ImspTQPwCqd",
+            "202505",
+            "401"
+        ],
+        [
+            "",
+            "ImspTQPwCqd",
+            "202504",
+            "14"
+        ]
     ],
     "height": 27,
     "headerWidth": 4

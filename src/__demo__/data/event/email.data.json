@@ -110,10 +110,9 @@
             "": {
                 "name": "No value",
                 "style": {
-                    "fontStyle": "italic",
                     "color": "#6C7787",
                     "fontFamily": "monospace",
-                    "letterSpacing": "-0.3px"
+                    "letterSpacing": "-0.4px"
                 }
             }
         },
@@ -139,7 +138,9 @@
                 "202506",
                 "202507"
             ],
-            "ou": ["ImspTQPwCqd"]
+            "ou": [
+                "ImspTQPwCqd"
+            ]
         }
     },
     "rowContext": {},
@@ -157,7 +158,12 @@
             "202502",
             "1"
         ],
-        ["jfuXZB3A1ko.RUZ2EBP6HQn_mm@email.com", "ImspTQPwCqd", "202412", "2"],
+        [
+            "jfuXZB3A1ko.RUZ2EBP6HQn_mm@email.com",
+            "ImspTQPwCqd",
+            "202412",
+            "2"
+        ],
         [
             "jfuXZB3A1ko.RUZ2EBP6HQn_email@address.com",
             "ImspTQPwCqd",
@@ -170,7 +176,12 @@
             "202501",
             "1"
         ],
-        ["", "ImspTQPwCqd", "202503", "1"],
+        [
+            "",
+            "ImspTQPwCqd",
+            "202503",
+            "1"
+        ],
         [
             "jfuXZB3A1ko.RUZ2EBP6HQn_email2@address.com",
             "ImspTQPwCqd",
@@ -195,7 +206,12 @@
             "202503",
             "1"
         ],
-        ["", "ImspTQPwCqd", "202501", "1"]
+        [
+            "",
+            "ImspTQPwCqd",
+            "202501",
+            "1"
+        ]
     ],
     "height": 11,
     "headerWidth": 4

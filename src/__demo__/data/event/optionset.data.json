@@ -97,38 +97,135 @@
             "": {
                 "name": "No value",
                 "style": {
-                    "fontStyle": "italic",
                     "color": "#6C7787",
                     "fontFamily": "monospace",
-                    "letterSpacing": "-0.3px"
+                    "letterSpacing": "-0.4px"
                 }
             }
         },
         "dimensions": {
-            "pe": ["202505", "202506", "202507"],
-            "ou": ["ImspTQPwCqd"],
-            "stageA.element1": ["optionId1", "optionId2", ""],
-            "stageB.element2": ["optionId3", "optionId4", ""]
+            "pe": [
+                "202505",
+                "202506",
+                "202507"
+            ],
+            "ou": [
+                "ImspTQPwCqd"
+            ],
+            "stageA.element1": [
+                "optionId1",
+                "optionId2",
+                ""
+            ],
+            "stageB.element2": [
+                "optionId3",
+                "optionId4",
+                ""
+            ]
         }
     },
     "rowContext": {},
     "headerWidth": 4,
     "width": 4,
     "rows": [
-        ["optionId1", "optionId3", "ImspTQPwCqd", "202505", "327"],
-        ["optionId1", "optionId3", "ImspTQPwCqd", "202506", "594"],
-        ["optionId1", "optionId3", "ImspTQPwCqd", "202507", "261"],
-        ["optionId1", "optionId4", "ImspTQPwCqd", "202505", "448"],
-        ["optionId1", "optionId4", "ImspTQPwCqd", "202506", "519"],
-        ["optionId1", "optionId4", "ImspTQPwCqd", "202507", "583"],
-        ["optionId2", "optionId3", "ImspTQPwCqd", "202505", "379"],
-        ["optionId2", "optionId3", "ImspTQPwCqd", "202506", "239"],
-        ["optionId2", "optionId3", "ImspTQPwCqd", "202507", "420"],
-        ["optionId2", "optionId4", "ImspTQPwCqd", "202505", "411"],
-        ["optionId2", "optionId4", "ImspTQPwCqd", "202506", "531"],
-        ["optionId2", "optionId4", "ImspTQPwCqd", "202507", "317"],
-        ["", "optionId4", "ImspTQPwCqd", "202507", "23"],
-        ["optionId1", "", "ImspTQPwCqd", "202506", "45"]
+        [
+            "optionId1",
+            "optionId3",
+            "ImspTQPwCqd",
+            "202505",
+            "327"
+        ],
+        [
+            "optionId1",
+            "optionId3",
+            "ImspTQPwCqd",
+            "202506",
+            "594"
+        ],
+        [
+            "optionId1",
+            "optionId3",
+            "ImspTQPwCqd",
+            "202507",
+            "261"
+        ],
+        [
+            "optionId1",
+            "optionId4",
+            "ImspTQPwCqd",
+            "202505",
+            "448"
+        ],
+        [
+            "optionId1",
+            "optionId4",
+            "ImspTQPwCqd",
+            "202506",
+            "519"
+        ],
+        [
+            "optionId1",
+            "optionId4",
+            "ImspTQPwCqd",
+            "202507",
+            "583"
+        ],
+        [
+            "optionId2",
+            "optionId3",
+            "ImspTQPwCqd",
+            "202505",
+            "379"
+        ],
+        [
+            "optionId2",
+            "optionId3",
+            "ImspTQPwCqd",
+            "202506",
+            "239"
+        ],
+        [
+            "optionId2",
+            "optionId3",
+            "ImspTQPwCqd",
+            "202507",
+            "420"
+        ],
+        [
+            "optionId2",
+            "optionId4",
+            "ImspTQPwCqd",
+            "202505",
+            "411"
+        ],
+        [
+            "optionId2",
+            "optionId4",
+            "ImspTQPwCqd",
+            "202506",
+            "531"
+        ],
+        [
+            "optionId2",
+            "optionId4",
+            "ImspTQPwCqd",
+            "202507",
+            "317"
+        ],
+        [
+            "",
+            "optionId4",
+            "ImspTQPwCqd",
+            "202507",
+            "23"
+        ],
+        [
+            "optionId1",
+            "",
+            "ImspTQPwCqd",
+            "202506",
+            "45"
+        ]
     ],
     "height": 12
 }

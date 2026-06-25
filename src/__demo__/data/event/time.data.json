@@ -119,10 +119,9 @@
             "": {
                 "name": "No value",
                 "style": {
-                    "fontStyle": "italic",
                     "color": "#6C7787",
                     "fontFamily": "monospace",
-                    "letterSpacing": "-0.3px"
+                    "letterSpacing": "-0.4px"
                 }
             }
         },
@@ -151,24 +150,86 @@
                 "202507",
                 "202508"
             ],
-            "ou": ["ImspTQPwCqd"]
+            "ou": [
+                "ImspTQPwCqd"
+            ]
         }
     },
     "rowContext": {},
     "width": 4,
     "rows": [
-        ["jfuXZB3A1ko.BYmX7eQ71ku_13:30", "ImspTQPwCqd", "202501", "1"],
-        ["jfuXZB3A1ko.BYmX7eQ71ku_23:00", "ImspTQPwCqd", "202503", "1"],
-        ["", "ImspTQPwCqd", "202503", "1"],
-        ["jfuXZB3A1ko.BYmX7eQ71ku_14:01", "ImspTQPwCqd", "202412", "1"],
-        ["jfuXZB3A1ko.BYmX7eQ71ku_08:10", "ImspTQPwCqd", "202412", "1"],
-        ["jfuXZB3A1ko.BYmX7eQ71ku_17:35", "ImspTQPwCqd", "202411", "1"],
-        ["", "ImspTQPwCqd", "202502", "1"],
-        ["", "ImspTQPwCqd", "202501", "1"],
-        ["jfuXZB3A1ko.BYmX7eQ71ku_08:11", "ImspTQPwCqd", "202412", "1"],
-        ["jfuXZB3A1ko.BYmX7eQ71ku_04:50", "ImspTQPwCqd", "202504", "1"],
-        ["jfuXZB3A1ko.BYmX7eQ71ku_13:55", "ImspTQPwCqd", "202501", "1"],
-        ["jfuXZB3A1ko.BYmX7eQ71ku_14:02", "ImspTQPwCqd", "202412", "1"]
+        [
+            "jfuXZB3A1ko.BYmX7eQ71ku_13:30",
+            "ImspTQPwCqd",
+            "202501",
+            "1"
+        ],
+        [
+            "jfuXZB3A1ko.BYmX7eQ71ku_23:00",
+            "ImspTQPwCqd",
+            "202503",
+            "1"
+        ],
+        [
+            "",
+            "ImspTQPwCqd",
+            "202503",
+            "1"
+        ],
+        [
+            "jfuXZB3A1ko.BYmX7eQ71ku_14:01",
+            "ImspTQPwCqd",
+            "202412",
+            "1"
+        ],
+        [
+            "jfuXZB3A1ko.BYmX7eQ71ku_08:10",
+            "ImspTQPwCqd",
+            "202412",
+            "1"
+        ],
+        [
+            "jfuXZB3A1ko.BYmX7eQ71ku_17:35",
+            "ImspTQPwCqd",
+            "202411",
+            "1"
+        ],
+        [
+            "",
+            "ImspTQPwCqd",
+            "202502",
+            "1"
+        ],
+        [
+            "",
+            "ImspTQPwCqd",
+            "202501",
+            "1"
+        ],
+        [
+            "jfuXZB3A1ko.BYmX7eQ71ku_08:11",
+            "ImspTQPwCqd",
+            "202412",
+            "1"
+        ],
+        [
+            "jfuXZB3A1ko.BYmX7eQ71ku_04:50",
+            "ImspTQPwCqd",
+            "202504",
+            "1"
+        ],
+        [
+            "jfuXZB3A1ko.BYmX7eQ71ku_13:55",
+            "ImspTQPwCqd",
+            "202501",
+            "1"
+        ],
+        [
+            "jfuXZB3A1ko.BYmX7eQ71ku_14:02",
+            "ImspTQPwCqd",
+            "202412",
+            "1"
+        ]
     ],
     "height": 12,
     "headerWidth": 4

@@ -92,10 +92,9 @@
             "": {
                 "name": "No value",
                 "style": {
-                    "fontStyle": "italic",
                     "color": "#6C7787",
                     "fontFamily": "monospace",
-                    "letterSpacing": "-0.3px"
+                    "letterSpacing": "-0.4px"
                 }
             }
         },
@@ -111,25 +110,90 @@
                 "202505",
                 "202506"
             ],
-            "ou": ["ImspTQPwCqd"],
-            "jfuXZB3A1ko.hwG20Dyj6RK": ["jfuXZB3A1ko.hwG20Dyj6RK_1", ""]
+            "ou": [
+                "ImspTQPwCqd"
+            ],
+            "jfuXZB3A1ko.hwG20Dyj6RK": [
+                "jfuXZB3A1ko.hwG20Dyj6RK_1",
+                ""
+            ]
         }
     },
     "rowContext": {},
     "width": 4,
     "rows": [
-        ["", "ImspTQPwCqd", "202412", "1"],
-        ["", "ImspTQPwCqd", "202503", "2"],
-        ["", "ImspTQPwCqd", "202504", "1"],
-        ["", "ImspTQPwCqd", "202502", "1"],
-        ["jfuXZB3A1ko.hwG20Dyj6RK_1", "ImspTQPwCqd", "202501", "1"],
-        ["", "ImspTQPwCqd", "202501", "2"],
-        ["jfuXZB3A1ko.hwG20Dyj6RK_1", "ImspTQPwCqd", "202412", "3"],
-        ["", "ImspTQPwCqd", "202411", "1"],
-        ["jfuXZB3A1ko.hwG20Dyj6RK_1", "ImspTQPwCqd", "202411", "4"],
-        ["jfuXZB3A1ko.hwG20Dyj6RK_1", "ImspTQPwCqd", "202503", "2"],
-        ["jfuXZB3A1ko.hwG20Dyj6RK_1", "ImspTQPwCqd", "202504", "1"],
-        ["jfuXZB3A1ko.hwG20Dyj6RK_1", "ImspTQPwCqd", "202502", "1"]
+        [
+            "",
+            "ImspTQPwCqd",
+            "202412",
+            "1"
+        ],
+        [
+            "",
+            "ImspTQPwCqd",
+            "202503",
+            "2"
+        ],
+        [
+            "",
+            "ImspTQPwCqd",
+            "202504",
+            "1"
+        ],
+        [
+            "",
+            "ImspTQPwCqd",
+            "202502",
+            "1"
+        ],
+        [
+            "jfuXZB3A1ko.hwG20Dyj6RK_1",
+            "ImspTQPwCqd",
+            "202501",
+            "1"
+        ],
+        [
+            "",
+            "ImspTQPwCqd",
+            "202501",
+            "2"
+        ],
+        [
+            "jfuXZB3A1ko.hwG20Dyj6RK_1",
+            "ImspTQPwCqd",
+            "202412",
+            "3"
+        ],
+        [
+            "",
+            "ImspTQPwCqd",
+            "202411",
+            "1"
+        ],
+        [
+            "jfuXZB3A1ko.hwG20Dyj6RK_1",
+            "ImspTQPwCqd",
+            "202411",
+            "4"
+        ],
+        [
+            "jfuXZB3A1ko.hwG20Dyj6RK_1",
+            "ImspTQPwCqd",
+            "202503",
+            "2"
+        ],
+        [
+            "jfuXZB3A1ko.hwG20Dyj6RK_1",
+            "ImspTQPwCqd",
+            "202504",
+            "1"
+        ],
+        [
+            "jfuXZB3A1ko.hwG20Dyj6RK_1",
+            "ImspTQPwCqd",
+            "202502",
+            "1"
+        ]
     ],
     "height": 8,
     "headerWidth": 4
