@@ -1,3 +1,10 @@
+## [29.5.4](https://github.com/dhis2/analytics/compare/v29.5.3...v29.5.4) (2026-06-25)
+
+
+### Bug Fixes
+
+* preserve period ids for program-level time dimensions in event PTs ([#1838](https://github.com/dhis2/analytics/issues/1838)) ([9ee7eb3](https://github.com/dhis2/analytics/commit/9ee7eb33bc483879098538ffd10d95297f9b3656))
+
 ## [29.5.3](https://github.com/dhis2/analytics/compare/v29.5.2...v29.5.3) (2026-06-11)
 
 
