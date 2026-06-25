@@ -24,6 +24,13 @@ export const PivotTableValueCell = ({
         column,
     })
 
+    // engine.get returns undefined when the requested cell falls outside the
+    // current row/column maps (e.g. a degenerate matrix with no rows or
+    // columns). Render an empty cell rather than dereferencing undefined.
+    if (!cellContent) {
+        return <PivotTableEmptyCell ref={cellRef} classes={['value']} />
+    }
+
     const isClickable =
         onToggleContextualMenu &&
         cellContent.cellType === CELL_TYPE_VALUE &&
@@ -37,7 +44,7 @@ export const PivotTableValueCell = ({
         onToggleContextualMenu(cellRef.current, { ouId: cellContent.ouId })
     }
 
-    if (!cellContent || cellContent.empty) {
+    if (cellContent.empty) {
         return (
             <PivotTableEmptyCell
                 onClick={isClickable ? onClick : undefined}
