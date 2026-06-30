@@ -1,3 +1,10 @@
+## [29.5.5](https://github.com/dhis2/analytics/compare/v29.5.4...v29.5.5) (2026-06-30)
+
+
+### Bug Fixes
+
+* omit optionSetId from dataItems query on DHIS2 < v42 ([#1839](https://github.com/dhis2/analytics/issues/1839)) ([df530e2](https://github.com/dhis2/analytics/commit/df530e248bd82d986c32485702bf2a8ccf70855d))
+
 ## [29.5.4](https://github.com/dhis2/analytics/compare/v29.5.3...v29.5.4) (2026-06-25)
 
 
