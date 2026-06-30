@@ -1,4 +1,3 @@
-# 
 # Translators:
 # Sheila André <sandre@saudigitus.org>, 2020
 # Fernando Jorge Bade, 2022
@@ -6,22 +5,23 @@
 # Laurência Luís, 2025
 # Martins Matola, 2025
 # Shelsea Chumaio, 2025
-# Helton Dias, 2025
 # Ge Joao <gsimango@saudigitus.org>, 2025
-# Viktor Varland <viktor@dhis2.org>, 2025
-# Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2025
 # Philip Larsen Donnelly, 2025
 # Edson Nhancale, 2025
+# Viktor Varland <viktor@dhis2.org>, 2026
+# Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2026
+# David Mondlane, 2026
+# Helton Dias, 2026
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2025-09-09T09:32:04.677Z\n"
+"POT-Creation-Date: 2026-05-28T08:40:06.387Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Edson Nhancale, 2025\n"
+"Last-Translator: Helton Dias, 2026\n"
 "Language-Team: Portuguese (https://app.transifex.com/hisp-uio/teams/100509/pt/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: pt\n"
 "Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
@@ -55,12 +55,6 @@ msgstr "Criado{{time}} por {{author}}"
 
 msgid "Created {{time}}"
 msgstr "Criado {{time}}"
-
-msgid "Viewed {{count}} times"
-msgid_plural "Viewed {{count}} times"
-msgstr[0] "Visualizado 1 vez"
-msgstr[1] "Visualizado {{count}} vezes"
-msgstr[2] "Visualizado {{count}} vezes"
 
 msgid "Notifications"
 msgstr "Notificação"
@@ -612,12 +606,6 @@ msgstr ""
 msgid "Reply"
 msgstr "Responder"
 
-msgid "{{count}} replies"
-msgid_plural "{{count}} replies"
-msgstr[0] "{{count}} resposta"
-msgstr[1] "{{count}} respostas"
-msgstr[2] "{{count}} respostas"
-
 msgid "View replies"
 msgstr "Ver respostas"
 
@@ -801,24 +789,6 @@ msgstr "Nova lista de linhas"
 msgid "Hide"
 msgstr "Ocultar"
 
-msgid "{{count}} org units"
-msgid_plural "{{count}} org units"
-msgstr[0] "{{count}} unidade orgânica"
-msgstr[1] "{{count}} unidades orgânicas"
-msgstr[2] "{{count}} unidades organizacionais"
-
-msgid "{{count}} levels"
-msgid_plural "{{count}} levels"
-msgstr[0] "{{count}} nível"
-msgstr[1] "{{count}} níveis"
-msgstr[2] "{{count}} níveis"
-
-msgid "{{count}} groups"
-msgid_plural "{{count}} groups"
-msgstr[0] "{{count}} grupo"
-msgstr[1] "{{count}} grupos"
-msgstr[2] "{{count}} grupos"
-
 msgid "Selected: {{commaSeparatedListOfOrganisationUnits}}"
 msgstr "Seleccionado: {{commaSeparatedListOfOrganisationUnits}}"
 
@@ -855,6 +825,14 @@ msgstr "Período"
 msgid "Selected Periods"
 msgstr "Períodos seleccionados"
 
+msgid "No period types available"
+msgstr ""
+
+msgid ""
+"No period types are enabled in the system. Please contact your system "
+"administrator."
+msgstr ""
+
 msgid "Relative periods"
 msgstr "Períodos relativos"
 
@@ -875,6 +853,9 @@ msgstr "Semanalmente (início na Quarta-feira)"
 
 msgid "Weekly (Start Thursday)"
 msgstr " Semanal (início na Quinta-feira)"
+
+msgid "Weekly (Start Friday)"
+msgstr ""
 
 msgid "Weekly (Start Saturday)"
 msgstr " Semanal (início no Sábado)"
@@ -903,17 +884,26 @@ msgstr "Semestral a partir de Abril"
 msgid "Yearly"
 msgstr "Anualmente"
 
-msgid "Financial year (Start November)"
-msgstr " Ano financeiro (início em Novembro)"
+msgid "Financial year (Start February)"
+msgstr ""
 
-msgid "Financial year (Start October)"
-msgstr "Ano financeiro (início em Outubro)"
+msgid "Financial year (Start April)"
+msgstr "Ano financeiro (início em Abril)"
 
 msgid "Financial year (Start July)"
 msgstr "Ano financeiro (início em Julho)"
 
-msgid "Financial year (Start April)"
-msgstr "Ano financeiro (início em Abril)"
+msgid "Financial year (Start August)"
+msgstr ""
+
+msgid "Financial year (Start September)"
+msgstr ""
+
+msgid "Financial year (Start October)"
+msgstr "Ano financeiro (início em Outubro)"
+
+msgid "Financial year (Start November)"
+msgstr " Ano financeiro (início em Novembro)"
 
 msgid "Today"
 msgstr "Hoje"
@@ -1349,6 +1339,18 @@ msgstr "Categorias atribuídas"
 msgid "No value"
 msgstr "Sem Valor"
 
+msgid "Active"
+msgstr "Activo"
+
+msgid "Completed"
+msgstr "Concluído"
+
+msgid "Scheduled"
+msgstr "Agendado"
+
+msgid "Cancelled"
+msgstr "Cancelado"
+
 msgid "Text"
 msgstr "Texto"
 
@@ -1504,12 +1506,6 @@ msgstr "Base"
 
 msgid "Axis {{axisId}}"
 msgstr "Eixos {{axisId}}"
-
-msgid "{{count}} items"
-msgid_plural "{{count}} items"
-msgstr[0] "{{count}} item"
-msgstr[1] "{{count}} artigos"
-msgstr[2] "{{count}} itens"
 
 msgid "Reset zoom"
 msgstr "Repor o zoom"

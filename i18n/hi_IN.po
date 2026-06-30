@@ -1,4 +1,3 @@
-# 
 # Translators:
 # Siddharth Agarwal, 2025
 # Rohit Wadhwani, 2026
@@ -6,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2025-09-09T09:32:04.677Z\n"
+"POT-Creation-Date: 2026-03-23T09:34:56.311Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: Rohit Wadhwani, 2026\n"
 "Language-Team: Hindi (India) (https://app.transifex.com/hisp-uio/teams/100509/hi_IN/)\n"
@@ -803,9 +802,17 @@ msgid "Select year"
 msgstr ""
 
 msgid "Period"
-msgstr ""
+msgstr "पीरियड"
 
 msgid "Selected Periods"
+msgstr ""
+
+msgid "No period types available"
+msgstr ""
+
+msgid ""
+"No period types are enabled in the system. Please contact your system "
+"administrator."
 msgstr ""
 
 msgid "Relative periods"
@@ -828,6 +835,9 @@ msgstr "साप्ताहिक (बुधवार से शुरू)"
 
 msgid "Weekly (Start Thursday)"
 msgstr "साप्ताहिक (गुरुवार से शुरू)"
+
+msgid "Weekly (Start Friday)"
+msgstr ""
 
 msgid "Weekly (Start Saturday)"
 msgstr "साप्ताहिक (शनिवार से शुरू)"
@@ -856,16 +866,25 @@ msgstr ""
 msgid "Yearly"
 msgstr "वार्षिक"
 
-msgid "Financial year (Start November)"
+msgid "Financial year (Start February)"
 msgstr ""
 
-msgid "Financial year (Start October)"
+msgid "Financial year (Start April)"
 msgstr ""
 
 msgid "Financial year (Start July)"
 msgstr ""
 
-msgid "Financial year (Start April)"
+msgid "Financial year (Start August)"
+msgstr ""
+
+msgid "Financial year (Start September)"
+msgstr ""
+
+msgid "Financial year (Start October)"
+msgstr ""
+
+msgid "Financial year (Start November)"
 msgstr ""
 
 msgid "Today"
