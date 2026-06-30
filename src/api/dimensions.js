@@ -46,8 +46,10 @@ const recommendedDimensionsQuery = {
 
 export const dataItemsQuery = {
     resource: 'dataItems',
-    params: ({ nameProp, filter, searchTerm, page }) => {
-        let fields = `id,${nameProp}~rename(name),dimensionItemType,expression,optionSetId`
+    params: ({ nameProp, filter, searchTerm, page, supportsOptionSetId }) => {
+        let fields = `id,${nameProp}~rename(name),dimensionItemType,expression${
+            supportsOptionSetId ? ',optionSetId' : ''
+        }`
         const filters = []
 
         // TODO: Extract all of this logic out of the query?
@@ -289,6 +291,7 @@ export const apiFetchOptions = ({
     filter,
     searchTerm,
     page,
+    supportsOptionSetId,
 }) => {
     switch (filter?.dataType) {
         case DIMENSION_TYPE_INDICATOR: {
@@ -335,6 +338,7 @@ export const apiFetchOptions = ({
                 filter,
                 searchTerm,
                 page,
+                supportsOptionSetId,
             })
     }
 }
@@ -433,6 +437,7 @@ const fetchDataItems = async ({
     filter,
     searchTerm,
     page,
+    supportsOptionSetId,
 }) => {
     const dataItemsData = await dataEngine.query(
         { dataItems: dataItemsQuery },
@@ -442,6 +447,7 @@ const fetchDataItems = async ({
                 filter,
                 searchTerm,
                 page,
+                supportsOptionSetId,
             },
             onError,
         }
