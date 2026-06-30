@@ -1,3 +1,24 @@
+## [29.5.5](https://github.com/dhis2/analytics/compare/v29.5.4...v29.5.5) (2026-06-30)
+
+
+### Bug Fixes
+
+* omit optionSetId from dataItems query on DHIS2 < v42 ([#1839](https://github.com/dhis2/analytics/issues/1839)) ([df530e2](https://github.com/dhis2/analytics/commit/df530e248bd82d986c32485702bf2a8ccf70855d))
+
+## [29.5.4](https://github.com/dhis2/analytics/compare/v29.5.3...v29.5.4) (2026-06-25)
+
+
+### Bug Fixes
+
+* preserve period ids for program-level time dimensions in event PTs ([#1838](https://github.com/dhis2/analytics/issues/1838)) ([9ee7eb3](https://github.com/dhis2/analytics/commit/9ee7eb33bc483879098538ffd10d95297f9b3656))
+
+## [29.5.3](https://github.com/dhis2/analytics/compare/v29.5.2...v29.5.3) (2026-06-11)
+
+
+### Bug Fixes
+
+* **OpenFileDialog:** use the same generic texts for both DV and EVER/LL ([#1837](https://github.com/dhis2/analytics/issues/1837)) ([b387e8f](https://github.com/dhis2/analytics/commit/b387e8fc96b05f4c72b25b23169889294f67a78e))
+
 ## [29.5.2](https://github.com/dhis2/analytics/compare/v29.5.1...v29.5.2) (2026-05-28)
 
 

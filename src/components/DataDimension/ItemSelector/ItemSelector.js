@@ -136,6 +136,7 @@ const ItemSelector = ({
     onEditClick,
     isOptionViewMode,
     supportsEDI,
+    supportsOptionSetId,
     height = TRANSFER_HEIGHT,
     heightCalculation,
     maxSelections,
@@ -176,6 +177,7 @@ const ItemSelector = ({
             page,
             filter: state.filter,
             searchTerm: state.searchTerm,
+            supportsOptionSetId,
         })
         const newOptions = []
         result.dimensionItems?.forEach((item) => {
@@ -492,6 +494,7 @@ ItemSelector.propTypes = {
     setCurrentCalculation: PropTypes.func,
     setInfoDataItem: PropTypes.func,
     supportsEDI: PropTypes.bool,
+    supportsOptionSetId: PropTypes.bool,
     onEDISave: PropTypes.func,
     onEditClick: PropTypes.func,
 }
