@@ -1,0 +1,13 @@
+import css from 'styled-jsx/css'
+
+export default css`
+    .calendarInputWrapper {
+        position: relative;
+    }
+
+    .calendarClearButton {
+        position: absolute;
+        inset-inline-end: 6px;
+        inset-block-start: 27px;
+    }
+`
