@@ -1,20 +1,19 @@
-# 
 # Translators:
-# Viktor Varland <viktor@dhis2.org>, 2025
 # Thuy Nguyen <thuynguyen@hispvietnam.org>, 2025
 # Philip Larsen Donnelly, 2025
-# Em Le <em.hispvietnam@gmail.com>, 2025
 # Mai Nguyen <thanhmai.jica@gmail.com>, 2025
+# Viktor Varland <viktor@dhis2.org>, 2026
+# Em Le <em.hispvietnam@gmail.com>, 2026
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2025-09-09T09:32:04.677Z\n"
+"POT-Creation-Date: 2026-05-28T08:40:06.387Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Mai Nguyen <thanhmai.jica@gmail.com>, 2025\n"
+"Last-Translator: Em Le <em.hispvietnam@gmail.com>, 2026\n"
 "Language-Team: Vietnamese (https://app.transifex.com/hisp-uio/teams/100509/vi/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: vi\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
@@ -48,10 +47,6 @@ msgstr "Được tạo {{time}}bởi {{author}}"
 
 msgid "Created {{time}}"
 msgstr "Được tạo {{time}}"
-
-msgid "Viewed {{count}} times"
-msgid_plural "Viewed {{count}} times"
-msgstr[0] "Đã xem {{count}}lần"
 
 msgid "Notifications"
 msgstr "Thông báo"
@@ -602,10 +597,6 @@ msgstr ""
 msgid "Reply"
 msgstr "Trả lời"
 
-msgid "{{count}} replies"
-msgid_plural "{{count}} replies"
-msgstr[0] "{{count}} câu trả lời"
-
 msgid "View replies"
 msgstr "Xem trả lời"
 
@@ -788,18 +779,6 @@ msgstr "Danh sách dòng mới"
 msgid "Hide"
 msgstr "Ẩn"
 
-msgid "{{count}} org units"
-msgid_plural "{{count}} org units"
-msgstr[0] "{{count}} đơn vị"
-
-msgid "{{count}} levels"
-msgid_plural "{{count}} levels"
-msgstr[0] "{{count}} cấp độ"
-
-msgid "{{count}} groups"
-msgid_plural "{{count}} groups"
-msgstr[0] "{{count}} nhóm"
-
 msgid "Selected: {{commaSeparatedListOfOrganisationUnits}}"
 msgstr "Đã chọn: {{commaSeparatedListOfOrganisationUnits}}"
 
@@ -836,6 +815,14 @@ msgstr "Thời điểm"
 msgid "Selected Periods"
 msgstr "Thời điểm đã chọn"
 
+msgid "No period types available"
+msgstr ""
+
+msgid ""
+"No period types are enabled in the system. Please contact your system "
+"administrator."
+msgstr ""
+
 msgid "Relative periods"
 msgstr "Thời điểm tương đối"
 
@@ -856,6 +843,9 @@ msgstr "Hàng tuần (Bắt đầu từ Thứ Tư)"
 
 msgid "Weekly (Start Thursday)"
 msgstr "Hàng tuần (Bắt đầu từ Thứ Năm)"
+
+msgid "Weekly (Start Friday)"
+msgstr ""
 
 msgid "Weekly (Start Saturday)"
 msgstr "Hàng tuần (Bắt đầu từ Thứ Bảy)"
@@ -884,17 +874,26 @@ msgstr "Định kỳ 6 tháng - Tháng 4"
 msgid "Yearly"
 msgstr "Hàng năm"
 
-msgid "Financial year (Start November)"
-msgstr "Năm tài chính (Tháng 11)"
+msgid "Financial year (Start February)"
+msgstr ""
 
-msgid "Financial year (Start October)"
-msgstr "Năm tài chính (Tháng 10)"
+msgid "Financial year (Start April)"
+msgstr "Năm tài chính (Tháng 4)"
 
 msgid "Financial year (Start July)"
 msgstr "Năm tài chính (Tháng 7)"
 
-msgid "Financial year (Start April)"
-msgstr "Năm tài chính (Tháng 4)"
+msgid "Financial year (Start August)"
+msgstr ""
+
+msgid "Financial year (Start September)"
+msgstr ""
+
+msgid "Financial year (Start October)"
+msgstr "Năm tài chính (Tháng 10)"
+
+msgid "Financial year (Start November)"
+msgstr "Năm tài chính (Tháng 11)"
 
 msgid "Today"
 msgstr "Hôm nay"
@@ -1329,6 +1328,18 @@ msgstr "Phân loại được chỉ định"
 msgid "No value"
 msgstr "Không có giá trị"
 
+msgid "Active"
+msgstr "Đang hoạt động"
+
+msgid "Completed"
+msgstr "Đã hoàn tất"
+
+msgid "Scheduled"
+msgstr "Đã lên lịch"
+
+msgid "Cancelled"
+msgstr "Đã hủy"
+
 msgid "Text"
 msgstr "Văn bản"
 
@@ -1484,10 +1495,6 @@ msgstr "Đường đáy"
 
 msgid "Axis {{axisId}}"
 msgstr "Trục {{axisId}}"
-
-msgid "{{count}} items"
-msgid_plural "{{count}} items"
-msgstr[0] "{{count}}mục"
 
 msgid "Reset zoom"
 msgstr "Đặt lại thu phóng"

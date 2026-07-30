@@ -1,17 +1,16 @@
-# 
 # Translators:
 # Philip Larsen Donnelly, 2024
-# Jiří Podhorecký <jirka.p@volny.cz>, 2025
+# Jiří Podhorecký <jirka.p@volny.cz>, 2026
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2025-09-09T09:32:04.677Z\n"
+"POT-Creation-Date: 2026-05-28T08:40:06.387Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Jiří Podhorecký <jirka.p@volny.cz>, 2025\n"
+"Last-Translator: Jiří Podhorecký <jirka.p@volny.cz>, 2026\n"
 "Language-Team: Czech (https://app.transifex.com/hisp-uio/teams/100509/cs/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: cs\n"
 "Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n <= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;\n"
@@ -45,13 +44,6 @@ msgstr "Vytvořeno {{time}} uživatelem {{author}}"
 
 msgid "Created {{time}}"
 msgstr "Vytvořeno {{time}}"
-
-msgid "Viewed {{count}} times"
-msgid_plural "Viewed {{count}} times"
-msgstr[0] "Zobrazeno 1 krát"
-msgstr[1] "Zobrazeno {{count}}krát"
-msgstr[2] "Zobrazeno {{count}}krát"
-msgstr[3] "Zobrazeno {{count}}krát"
 
 msgid "Notifications"
 msgstr "Oznámení"
@@ -602,13 +594,6 @@ msgstr "Nelze načíst interpretace"
 msgid "Reply"
 msgstr "Odpovědět"
 
-msgid "{{count}} replies"
-msgid_plural "{{count}} replies"
-msgstr[0] "{{count}} odpověď"
-msgstr[1] " {{count}} odpovědi"
-msgstr[2] "{{count}} odpovědí"
-msgstr[3] "{{count}} odpovědi"
-
 msgid "View replies"
 msgstr "Zobrazit odpovědi"
 
@@ -791,27 +776,6 @@ msgstr "Nový řádkový seznam"
 msgid "Hide"
 msgstr "Skrýt"
 
-msgid "{{count}} org units"
-msgid_plural "{{count}} org units"
-msgstr[0] "{{count}} organizační jednotka"
-msgstr[1] "{{count}} organizační jednotky"
-msgstr[2] "{{count}} organizačních jednotek"
-msgstr[3] "{{count}} organizačních jednotek"
-
-msgid "{{count}} levels"
-msgid_plural "{{count}} levels"
-msgstr[0] "{{count}} úroveň"
-msgstr[1] "{{count}} úrovně"
-msgstr[2] "{{count}} úrovní"
-msgstr[3] "{{count}} úrovní"
-
-msgid "{{count}} groups"
-msgid_plural "{{count}} groups"
-msgstr[0] "{{count}} skupina"
-msgstr[1] "{{count}} skupiny"
-msgstr[2] "{{count}} skupin"
-msgstr[3] "{{count}} skupin"
-
 msgid "Selected: {{commaSeparatedListOfOrganisationUnits}}"
 msgstr "Vybráno: {{commaSeparatedListOfOrganisationUnits}}"
 
@@ -848,6 +812,14 @@ msgstr "Období"
 msgid "Selected Periods"
 msgstr "Vybraná období"
 
+msgid "No period types available"
+msgstr ""
+
+msgid ""
+"No period types are enabled in the system. Please contact your system "
+"administrator."
+msgstr ""
+
 msgid "Relative periods"
 msgstr "Relativní období"
 
@@ -868,6 +840,9 @@ msgstr "Týdně (od středy)"
 
 msgid "Weekly (Start Thursday)"
 msgstr "Týdně (od čtvrtka)"
+
+msgid "Weekly (Start Friday)"
+msgstr ""
 
 msgid "Weekly (Start Saturday)"
 msgstr "Týdně (od soboty)"
@@ -896,17 +871,26 @@ msgstr "Duben šest měsíců"
 msgid "Yearly"
 msgstr "Ročně"
 
-msgid "Financial year (Start November)"
-msgstr "Finanční rok (od listopadu)"
+msgid "Financial year (Start February)"
+msgstr ""
 
-msgid "Financial year (Start October)"
-msgstr "Finanční rok (od října)"
+msgid "Financial year (Start April)"
+msgstr "Finanční rok (od dubna)"
 
 msgid "Financial year (Start July)"
 msgstr "Finanční rok (od července)"
 
-msgid "Financial year (Start April)"
-msgstr "Finanční rok (od dubna)"
+msgid "Financial year (Start August)"
+msgstr ""
+
+msgid "Financial year (Start September)"
+msgstr ""
+
+msgid "Financial year (Start October)"
+msgstr "Finanční rok (od října)"
+
+msgid "Financial year (Start November)"
+msgstr "Finanční rok (od listopadu)"
 
 msgid "Today"
 msgstr "Dnes"
@@ -1340,6 +1324,18 @@ msgstr "Přiřazené kategorie"
 msgid "No value"
 msgstr "Žádná hodnota"
 
+msgid "Active"
+msgstr "Aktivní"
+
+msgid "Completed"
+msgstr "Dokončeno"
+
+msgid "Scheduled"
+msgstr "Naplánováno"
+
+msgid "Cancelled"
+msgstr "Zrušeno"
+
 msgid "Text"
 msgstr "Text"
 
@@ -1495,13 +1491,6 @@ msgstr "Základ"
 
 msgid "Axis {{axisId}}"
 msgstr "Osa {{axisId}}"
-
-msgid "{{count}} items"
-msgid_plural "{{count}} items"
-msgstr[0] "{{count}} položka"
-msgstr[1] " {{count}} položky"
-msgstr[2] " {{count}} položek"
-msgstr[3] "{{count}} položek"
 
 msgid "Reset zoom"
 msgstr "Obnovit přiblížení"

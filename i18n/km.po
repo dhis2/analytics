@@ -1,20 +1,19 @@
-# 
 # Translators:
-# Viktor Varland <viktor@dhis2.org>, 2025
 # channara rin, 2025
 # Philip Larsen Donnelly, 2025
 # Em Le <em.hispvietnam@gmail.com>, 2025
-# Kiry Heng, 2025
+# Kiry Heng, 2026
+# Viktor Varland <viktor@dhis2.org>, 2026
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2025-09-09T09:32:04.677Z\n"
+"POT-Creation-Date: 2026-05-28T08:40:06.387Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Kiry Heng, 2025\n"
+"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2026\n"
 "Language-Team: Khmer (https://app.transifex.com/hisp-uio/teams/100509/km/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: km\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
@@ -48,10 +47,6 @@ msgstr ""
 
 msgid "Created {{time}}"
 msgstr ""
-
-msgid "Viewed {{count}} times"
-msgid_plural "Viewed {{count}} times"
-msgstr[0] ""
 
 msgid "Notifications"
 msgstr ""
@@ -591,10 +586,6 @@ msgstr ""
 msgid "Reply"
 msgstr "ឆ្លើយតប"
 
-msgid "{{count}} replies"
-msgid_plural "{{count}} replies"
-msgstr[0] ""
-
 msgid "View replies"
 msgstr ""
 
@@ -758,18 +749,6 @@ msgstr ""
 msgid "Hide"
 msgstr "លាក់"
 
-msgid "{{count}} org units"
-msgid_plural "{{count}} org units"
-msgstr[0] ""
-
-msgid "{{count}} levels"
-msgid_plural "{{count}} levels"
-msgstr[0] ""
-
-msgid "{{count}} groups"
-msgid_plural "{{count}} groups"
-msgstr[0] ""
-
 msgid "Selected: {{commaSeparatedListOfOrganisationUnits}}"
 msgstr ""
 
@@ -806,6 +785,14 @@ msgstr "កំឡុងពេល"
 msgid "Selected Periods"
 msgstr ""
 
+msgid "No period types available"
+msgstr ""
+
+msgid ""
+"No period types are enabled in the system. Please contact your system "
+"administrator."
+msgstr ""
+
 msgid "Relative periods"
 msgstr ""
 
@@ -825,6 +812,9 @@ msgid "Weekly (Start Wednesday)"
 msgstr ""
 
 msgid "Weekly (Start Thursday)"
+msgstr ""
+
+msgid "Weekly (Start Friday)"
 msgstr ""
 
 msgid "Weekly (Start Saturday)"
@@ -854,16 +844,25 @@ msgstr "ប្រចាំឆមាស​ពីខែមេសា"
 msgid "Yearly"
 msgstr "ប្រចាំឆ្នាំ"
 
-msgid "Financial year (Start November)"
+msgid "Financial year (Start February)"
 msgstr ""
 
-msgid "Financial year (Start October)"
+msgid "Financial year (Start April)"
 msgstr ""
 
 msgid "Financial year (Start July)"
 msgstr ""
 
-msgid "Financial year (Start April)"
+msgid "Financial year (Start August)"
+msgstr ""
+
+msgid "Financial year (Start September)"
+msgstr ""
+
+msgid "Financial year (Start October)"
+msgstr ""
+
+msgid "Financial year (Start November)"
 msgstr ""
 
 msgid "Today"
@@ -1089,7 +1088,7 @@ msgid "Series"
 msgstr "ស៊េរី"
 
 msgid "Category"
-msgstr ""
+msgstr "ចំណាត់ក្រុម"
 
 msgid "Columns"
 msgstr ""
@@ -1298,6 +1297,18 @@ msgstr ""
 msgid "No value"
 msgstr "មិនមានតម្លៃ"
 
+msgid "Active"
+msgstr ""
+
+msgid "Completed"
+msgstr "បានបញ្ចប់"
+
+msgid "Scheduled"
+msgstr ""
+
+msgid "Cancelled"
+msgstr "បានលុបចោល"
+
 msgid "Text"
 msgstr "អត្ថបទ​"
 
@@ -1446,17 +1457,13 @@ msgid "Linear Regression"
 msgstr ""
 
 msgid "Target"
-msgstr ""
+msgstr "គោលដៅ"
 
 msgid "Base"
 msgstr ""
 
 msgid "Axis {{axisId}}"
 msgstr "អ័ក្ស {{axisId}}"
-
-msgid "{{count}} items"
-msgid_plural "{{count}} items"
-msgstr[0] ""
 
 msgid "Reset zoom"
 msgstr ""
