@@ -12,7 +12,7 @@ import {
 const invalidTestExpressions = [
     {
         message:
-            'Formula is empty. Add items to the formula from the lists on the left.',
+            'Formula is empty. Add a data element or operator to the formula.',
         expressions: [''],
     },
     // {

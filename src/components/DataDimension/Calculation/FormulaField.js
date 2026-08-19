@@ -17,7 +17,7 @@ const Placeholder = () => (
         <FormulaIcon />
         <span className="help-text">
             {i18n.t(
-                'Drag items here, or double click in the list, to start building a calculation formula'
+                'Drag a data element or operator here, or click one, to start building a formula'
             )}
         </span>
         <style jsx>{styles}</style>
@@ -44,45 +44,42 @@ const FormulaField = ({
     const overLastDropZone = over?.id === LAST_DROPZONE_ID
 
     return (
-        <div className="container">
-            <div className="border"></div>
-            <div
-                className="formula-field"
-                ref={setLastDropzoneRef}
-                data-test="formula-field"
-            >
-                {loading && (
-                    <Center>
-                        <CircularLoader small />
-                    </Center>
-                )}
-                {!loading && itemIds && (
-                    <SortableContext id={FORMULA_BOX_ID} items={itemIds}>
-                        <DropZone
-                            firstElementId={itemIds[0]}
-                            overLastDropZone={overLastDropZone}
-                        />
-                        {!items.length && <Placeholder />}
-                        {Boolean(items.length) &&
-                            items.map(({ id, label, type, value }, index) => (
-                                <FormulaItem
-                                    key={id}
-                                    id={id}
-                                    label={label}
-                                    type={type}
-                                    value={value}
-                                    hasFocus={focusItemId === id}
-                                    isHighlighted={selectedItemId === id}
-                                    isLast={index === items.length - 1}
-                                    onChange={onChange}
-                                    onClick={onClick}
-                                    onDoubleClick={onDoubleClick}
-                                    overLastDropZone={overLastDropZone}
-                                />
-                            ))}
-                    </SortableContext>
-                )}
-            </div>
+        <div
+            className="formula-field"
+            ref={setLastDropzoneRef}
+            data-test="formula-field"
+        >
+            {loading && (
+                <Center>
+                    <CircularLoader small />
+                </Center>
+            )}
+            {!loading && (
+                <SortableContext id={FORMULA_BOX_ID} items={itemIds}>
+                    <DropZone
+                        firstElementId={itemIds[0]}
+                        overLastDropZone={overLastDropZone}
+                    />
+                    {!items.length && <Placeholder />}
+                    {Boolean(items.length) &&
+                        items.map(({ id, label, type, value }, index) => (
+                            <FormulaItem
+                                key={id}
+                                id={id}
+                                label={label}
+                                type={type}
+                                value={value}
+                                hasFocus={focusItemId === id}
+                                isHighlighted={selectedItemId === id}
+                                isLast={index === items.length - 1}
+                                onChange={onChange}
+                                onClick={onClick}
+                                onDoubleClick={onDoubleClick}
+                                overLastDropZone={overLastDropZone}
+                            />
+                        ))}
+                </SortableContext>
+            )}
             <style jsx>{styles}</style>
         </div>
     )

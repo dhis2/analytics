@@ -208,6 +208,19 @@ const DATA_ELEMENT_GROUPS = {
     ],
 }
 
+const VALIDATION_OK = {
+    status: 'OK',
+    message: 'Valid',
+    description: 'ANC 1st visit / 10 * ANC 4th or more visits',
+}
+
+const providerData = {
+    dataElements: DATA_ELEMENTS,
+    dataElementGroups: DATA_ELEMENT_GROUPS,
+    dataElementOperands: DATA_ELEMENT_OPERANDS,
+    'indicators/expression/description': VALIDATION_OK,
+}
+
 const calculation = {
     id: 'calculationid',
     name: 'My calculation',
@@ -226,13 +239,7 @@ export default {
 
 export const Default = () => {
     return (
-        <CustomDataProvider
-            data={{
-                dataElements: DATA_ELEMENTS,
-                dataElementGroups: DATA_ELEMENT_GROUPS,
-                dataElementOperands: DATA_ELEMENT_OPERANDS,
-            }}
-        >
+        <CustomDataProvider data={providerData}>
             <CalculationModal
                 displayNameProp="name"
                 onClose={Function.prototype}
@@ -245,13 +252,7 @@ export const Default = () => {
 
 export const WithCalculation = () => {
     return (
-        <CustomDataProvider
-            data={{
-                dataElements: DATA_ELEMENTS,
-                dataElementGroups: DATA_ELEMENT_GROUPS,
-                dataElementOperands: DATA_ELEMENT_OPERANDS,
-            }}
-        >
+        <CustomDataProvider data={providerData}>
             <CalculationModal
                 calculation={calculation}
                 displayNameProp="name"
@@ -269,13 +270,7 @@ WithCalculation.story = {
 
 export const WithCalculationContainingOperand = () => {
     return (
-        <CustomDataProvider
-            data={{
-                dataElements: DATA_ELEMENTS,
-                dataElementGroups: DATA_ELEMENT_GROUPS,
-                dataElementOperands: DATA_ELEMENT_OPERANDS,
-            }}
-        >
+        <CustomDataProvider data={providerData}>
             <CalculationModal
                 calculation={calculationWithOperand}
                 displayNameProp="name"
@@ -295,6 +290,7 @@ export const NoAvailableData = () => {
     return (
         <CustomDataProvider
             data={{
+                ...providerData,
                 dataElements: {
                     pager: {
                         page: 1,

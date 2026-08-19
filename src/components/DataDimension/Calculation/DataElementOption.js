@@ -5,9 +5,10 @@ import React from 'react'
 import { DIMENSION_TYPE_DATA_ELEMENT } from '../../../modules/dataTypes.js'
 import { getIcon } from '../../../modules/dimensionListItem.js'
 import { EXPRESSION_TYPE_DATA } from '../../../modules/expressions.js'
+import { onActivationKeydown } from './DndContext.js'
 import styles from './styles/DataElementOption.style.js'
 
-const DataElementOption = ({ label, value, onDoubleClick }) => {
+const DataElementOption = ({ label, value, onClick }) => {
     const data = { label, value, type: EXPRESSION_TYPE_DATA }
     const { attributes, listeners, setNodeRef, transform } = useSortable({
         id: value,
@@ -25,10 +26,11 @@ const DataElementOption = ({ label, value, onDoubleClick }) => {
                 {...listeners}
                 ref={setNodeRef}
                 style={style}
+                onKeyDown={onActivationKeydown(() => onClick(data))}
             >
                 <div
                     className="chip"
-                    onDoubleClick={() => onDoubleClick(data)}
+                    onClick={() => onClick(data)}
                     data-test="data-element-option"
                 >
                     <span className="icon">
@@ -45,7 +47,7 @@ const DataElementOption = ({ label, value, onDoubleClick }) => {
 DataElementOption.propTypes = {
     label: PropTypes.string,
     value: PropTypes.string,
-    onDoubleClick: PropTypes.func,
+    onClick: PropTypes.func,
 }
 
 export default DataElementOption

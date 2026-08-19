@@ -3,22 +3,21 @@ import { useSortable } from '@dnd-kit/sortable'
 import { CSS } from '@dnd-kit/utilities'
 import cx from 'classnames'
 import PropTypes from 'prop-types'
-import React, { useState, useRef, useEffect } from 'react'
+import React, { useRef, useEffect } from 'react'
 import { DIMENSION_TYPE_DATA_ELEMENT } from '../../../modules/dataTypes.js'
 import { getIcon } from '../../../modules/dimensionListItem.js'
 import {
     EXPRESSION_TYPE_NUMBER,
     EXPRESSION_TYPE_DATA,
 } from '../../../modules/expressions.js'
+import { isInteractiveElement, onActivationKeydown } from './DndContext.js'
 import DragHandleIcon from './DragHandleIcon.js'
 import styles from './styles/FormulaItem.style.js'
 
 const BEFORE = 'BEFORE'
 const AFTER = 'AFTER'
 
-const maxMsBetweenClicks = 300
-
-const TAG_INPUT = 'INPUT'
+const DOUBLE_CLICK_THRESHOLD_MS = 300
 
 const FormulaItem = ({
     id,
@@ -49,8 +48,12 @@ const FormulaItem = ({
     })
 
     const inputRef = useRef(null)
+    const clickTimeoutRef = useRef(null)
+    const ignoreClickRef = useRef(false)
 
-    const [clickTimeoutId, setClickTimeoutId] = useState(null)
+    useEffect(() => {
+        return () => clearTimeout(clickTimeoutRef.current)
+    }, [])
 
     useEffect(() => {
         if (hasFocus && inputRef.current) {
@@ -97,29 +100,44 @@ const FormulaItem = ({
     }
 
     const handleClick = (e) => {
-        const tagname = e.target.tagName
-        clearTimeout(clickTimeoutId)
-        const to = setTimeout(function () {
-            if (tagname !== TAG_INPUT) {
-                onClick(id)
-            } else {
-                inputRef.current && inputRef.current.focus()
-            }
-        }, maxMsBetweenClicks)
-        setClickTimeoutId(to)
+        if (ignoreClickRef.current) {
+            ignoreClickRef.current = false
+            return
+        }
+        if (isInteractiveElement(e.target)) {
+            inputRef.current && inputRef.current.focus()
+            return
+        }
+        // Delay in case this click is the first of a double-click, so
+        // selecting the item doesn't flicker in between removing it.
+        clearTimeout(clickTimeoutRef.current)
+        clickTimeoutRef.current = setTimeout(() => {
+            onClick(id)
+        }, DOUBLE_CLICK_THRESHOLD_MS)
     }
 
     const handleDoubleClick = (e) => {
-        clearTimeout(clickTimeoutId)
-        setClickTimeoutId(null)
-        if (e.target.tagName !== TAG_INPUT) {
-            onDoubleClick(id)
-        } else {
+        if (isInteractiveElement(e.target)) {
             inputRef.current && inputRef.current.focus()
+            return
         }
+        clearTimeout(clickTimeoutRef.current)
+        onDoubleClick(id)
     }
 
     const handleChange = (e) => onChange({ itemId: id, value: e.target.value })
+
+    const handleKeyDown = (e) => {
+        if (isInteractiveElement(e.target)) {
+            return
+        }
+        if (e.key === 'Enter' || e.key === ' ') {
+            // role="button" from dnd-kit also synthesizes a click on Enter/Space;
+            // ignore that click so selection is not toggled off 300ms later.
+            ignoreClickRef.current = true
+        }
+        onActivationKeydown(() => onClick(id))(e)
+    }
 
     const getContent = () => {
         if (type === EXPRESSION_TYPE_NUMBER) {
@@ -196,6 +214,7 @@ const FormulaItem = ({
                     })}
                     onClick={handleClick}
                     onDoubleClick={handleDoubleClick}
+                    onKeyDown={handleKeyDown}
                     data-test={`formula-item-${id}`}
                 >
                     {getContent()}

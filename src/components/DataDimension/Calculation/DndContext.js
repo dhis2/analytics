@@ -79,20 +79,18 @@ const rectIntersectionCustom = ({
     return collisions.sort(sortCollisionsDesc)
 }
 
-const isInteractiveElement = (el) => {
-    const interactiveElements = [
-        'button',
-        'input',
-        'textarea',
-        'select',
-        'option',
-    ]
+const INTERACTIVE_SELECTOR = 'button, input, textarea, select, option'
 
-    if (interactiveElements.includes(el.tagName.toLowerCase())) {
-        return true
+export const isInteractiveElement = (el) =>
+    Boolean(el?.closest?.(INTERACTIVE_SELECTOR))
+
+// Mirrors a click on Enter/Space, so draggable chips (which aren't
+// natively clickable elements) can be activated from the keyboard.
+export const onActivationKeydown = (callback) => (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault()
+        callback()
     }
-
-    return false
 }
 
 // disable dragging if user is in an input

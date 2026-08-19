@@ -3,7 +3,8 @@ import css from 'styled-jsx/css'
 
 export default css`
     .formula-field {
-        border-right: 2px solid ${colors.grey200};
+        border-top: 1px solid ${colors.grey400};
+        border-bottom: 1px solid ${colors.grey400};
         height: 180px;
         overflow: auto;
         padding: 6px 12px;
@@ -16,23 +17,9 @@ export default css`
         width: 100%;
     }
 
-    .container {
-        position: relative;
-    }
-
-    .border {
-        position: absolute;
-        top: 0;
-        left: 6px;
-        height: 180px;
-        width: calc(100% - 6px);
-        border-left: 2px solid ${colors.grey200};
-        border-top: 2px solid ${colors.grey200};
-        border-bottom: 2px solid ${colors.grey200};
-    }
-
     .placeholder {
         height: 100%;
+        width: 100%;
         display: flex;
         flex-direction: column;
         gap: ${spacers.dp8};
@@ -40,12 +27,14 @@ export default css`
         justify-content: center;
         margin-top: -28px;
         padding: 0 ${spacers.dp32};
+        text-align: center;
     }
 
     .help-text {
         color: ${colors.grey600};
         font-size: 14px;
         line-height: 19px;
+        text-align: center;
         user-select: none;
     }
 `
