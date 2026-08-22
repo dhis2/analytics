@@ -2,15 +2,15 @@
 # channara rin, 2025
 # Philip Larsen Donnelly, 2025
 # Em Le <em.hispvietnam@gmail.com>, 2025
-# Kiry Heng, 2026
 # Viktor Varland <viktor@dhis2.org>, 2026
+# Kiry Heng, 2026
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2026-05-28T08:40:06.387Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2026\n"
+"Last-Translator: Kiry Heng, 2026\n"
 "Language-Team: Khmer (https://app.transifex.com/hisp-uio/teams/100509/km/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -281,7 +281,7 @@ msgid "Analytics type"
 msgstr ""
 
 msgid "Enrollment"
-msgstr ""
+msgstr "ការចុះឈ្មោះ"
 
 msgid "Event"
 msgstr ""
@@ -623,7 +623,7 @@ msgid "Not available offline"
 msgstr "មិនអាចប្រើប្រាស់បាននៅពេលបណ្ដាញត្រូវបានផ្តាច់"
 
 msgid "Anyone"
-msgstr ""
+msgstr "នរណាម្នាក់"
 
 msgid "Only you"
 msgstr ""
@@ -1298,7 +1298,7 @@ msgid "No value"
 msgstr "មិនមានតម្លៃ"
 
 msgid "Active"
-msgstr ""
+msgstr "កំពុងដំណើរការ"
 
 msgid "Completed"
 msgstr "បានបញ្ចប់"
@@ -1388,7 +1388,7 @@ msgid "Pivot table"
 msgstr ""
 
 msgid "Area"
-msgstr ""
+msgstr "តំបន់"
 
 msgid "Stacked area"
 msgstr ""
