@@ -38,44 +38,35 @@ export default css`
         flex-direction: column;
     }
 
+    .sub-header-row {
+        display: flex;
+        align-items: center;
+        margin: ${spacers.dp4} ${spacers.dp8};
+    }
+
     .sub-header {
         font-size: 14px;
         font-weight: normal;
-        margin: ${spacers.dp4} ${spacers.dp8};
+        margin: 0;
     }
 
     .name-field {
         margin-bottom: ${spacers.dp16};
     }
 
-    .usage-legend {
-        display: flex;
-        flex-direction: column;
-        gap: ${spacers.dp4};
-        padding-top: ${spacers.dp4};
-    }
-
-    .see-also {
-        margin: 0;
-        font-size: 12px;
-        line-height: 14px;
-        color: ${colors.grey700};
-    }
-
     .hint {
         position: relative;
+        display: inline-flex;
     }
 
     .hint-trigger {
+        display: inline-flex;
+        align-items: center;
+        padding: ${spacers.dp4} ${spacers.dp4} ${spacers.dp4} 4px;
         background: none;
         border: none;
-        padding: 0;
-        font: inherit;
-        color: inherit;
-        text-decoration: underline dotted;
-        text-underline-offset: 2px;
-        cursor: help;
-        white-space: nowrap;
+        color: ${colors.grey600};
+        cursor: default;
     }
 
     .shortcuts {
@@ -83,31 +74,44 @@ export default css`
         border-radius: 4px;
         box-shadow: ${elevations.popover};
         padding: ${spacers.dp12} ${spacers.dp16};
-        max-width: 340px;
+        max-width: 364px;
         color: ${colors.grey900};
         font-size: 14px;
     }
 
+    .shortcuts-header {
+        margin: ${spacers.dp12} 0 ${spacers.dp8};
+        text-transform: uppercase;
+        font-size: 11px;
+        font-weight: 400;
+        letter-spacing: 0.3px;
+        color: ${colors.grey600};
+    }
+
+    .shortcuts-header:first-child {
+        margin-top: 0;
+    }
+
     .shortcuts ul {
         margin: 0;
-        padding: 0;
-        list-style: none;
-        display: flex;
-        flex-direction: column;
-        gap: ${spacers.dp8};
+        padding-left: ${spacers.dp16};
     }
 
     .shortcuts li {
-        margin: 0;
-        display: flex;
-        flex-direction: column;
-        gap: ${spacers.dp4};
+        margin: 0 0 ${spacers.dp8};
+        line-height: 1.5;
+    }
+
+    .shortcuts li:last-child {
+        margin-bottom: 0;
     }
 
     .shortcut-keys {
-        display: flex;
+        display: inline-flex;
+        align-items: center;
         flex-wrap: wrap;
         gap: ${spacers.dp4};
+        vertical-align: middle;
     }
 
     .key {

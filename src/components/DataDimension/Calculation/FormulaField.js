@@ -32,7 +32,6 @@ const FormulaField = ({
     focusItemId,
     onChange,
     onClick,
-    onDoubleClick,
     loading,
 }) => {
     const { over, setNodeRef: setLastDropzoneRef } = useDroppable({
@@ -74,7 +73,6 @@ const FormulaField = ({
                                 isLast={index === items.length - 1}
                                 onChange={onChange}
                                 onClick={onClick}
-                                onDoubleClick={onDoubleClick}
                                 overLastDropZone={overLastDropZone}
                             />
                         ))}
@@ -88,7 +86,6 @@ const FormulaField = ({
 FormulaField.propTypes = {
     onChange: PropTypes.func.isRequired,
     onClick: PropTypes.func.isRequired,
-    onDoubleClick: PropTypes.func.isRequired,
     focusItemId: PropTypes.string,
     items: PropTypes.arrayOf(
         PropTypes.shape({

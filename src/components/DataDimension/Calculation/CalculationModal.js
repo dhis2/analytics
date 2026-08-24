@@ -6,7 +6,7 @@ import {
     ModalContent,
     ModalActions,
     ButtonStrip,
-    Help,
+    IconQuestion16,
     InputField,
     NoticeBox,
     Popper,
@@ -64,22 +64,42 @@ Key.propTypes = {
 
 const ShortcutsPopoverContent = () => (
     <div className="shortcuts">
+        <h4 className="shortcuts-header">{i18n.t('Usage tips')}</h4>
         <ul>
             <li>
+                {i18n.t(
+                    'Click or drag a data element or operator to add it to the formula.'
+                )}
+            </li>
+            <li>{i18n.t('Drag an item to reorder it.')}</li>
+            <li>
+                {i18n.t('Select an item, then click')}{' '}
+                <strong>{i18n.t('Remove item')}</strong>{' '}
+                {i18n.t('to delete it.')}
+            </li>
+        </ul>
+        <h4 className="shortcuts-header">{i18n.t('Keyboard shortcuts')}</h4>
+        <ul>
+            <li>
+                {i18n.t('Press')}{' '}
                 <span className="shortcut-keys">
                     <Key>Enter</Key>
+                    {i18n.t('or')}
                     <Key>Space</Key>
-                </span>
-                {i18n.t('Add or select the focused item')}
+                </span>{' '}
+                {i18n.t('to add or select the focused item.')}
             </li>
             <li>
+                {i18n.t('Press')}{' '}
                 <span className="shortcut-keys">
                     <Key>←</Key>
+                    {i18n.t('or')}
                     <Key>→</Key>
-                </span>
-                {i18n.t('Move the selected item')}
+                </span>{' '}
+                {i18n.t('to move the selected item.')}
             </li>
             <li>
+                {i18n.t('Press')}{' '}
                 <span className="shortcut-keys">
                     <Key>+</Key>
                     <Key>-</Key>
@@ -87,15 +107,15 @@ const ShortcutsPopoverContent = () => (
                     <Key>/</Key>
                     <Key>(</Key>
                     <Key>)</Key>
-                </span>
-                {i18n.t('Insert an operator after the selected item')}
+                </span>{' '}
+                {i18n.t('to insert an operator after the selected item.')}
             </li>
         </ul>
         <style jsx>{styles}</style>
     </div>
 )
 
-const KeyboardNavigationHint = () => {
+const UsageHint = () => {
     const [isOpen, setIsOpen] = useState(false)
     const triggerRef = useRef()
 
@@ -105,17 +125,18 @@ const KeyboardNavigationHint = () => {
                 type="button"
                 className="hint-trigger"
                 ref={triggerRef}
-                data-test="keyboard-navigation-hint"
+                data-test="usage-hint"
+                aria-label={i18n.t('Usage tips')}
                 onMouseEnter={() => setIsOpen(true)}
                 onMouseLeave={() => setIsOpen(false)}
                 onFocus={() => setIsOpen(true)}
                 onBlur={() => setIsOpen(false)}
             >
-                {i18n.t('Keyboard navigation')}
+                <IconQuestion16 />
             </button>
             {isOpen && (
                 <Portal>
-                    <Popper placement="top-start" reference={triggerRef}>
+                    <Popper placement="bottom-start" reference={triggerRef}>
                         <ShortcutsPopoverContent />
                     </Popper>
                 </Portal>
@@ -536,16 +557,18 @@ const CalculationModal = ({
                             </div>
                             <div className="right-section">
                                 <div className="formula-section">
-                                    <h4 className="sub-header">
-                                        {i18n.t('Formula')}
-                                    </h4>
+                                    <div className="sub-header-row">
+                                        <h4 className="sub-header">
+                                            {i18n.t('Formula')}
+                                        </h4>
+                                        <UsageHint />
+                                    </div>
                                     <FormulaField
                                         items={expressionArray}
                                         selectedItemId={selectedItemId}
                                         focusItemId={focusItemId}
                                         onChange={setItemValue}
                                         onClick={selectItem}
-                                        onDoubleClick={removeItem}
                                         loading={!expressionArray}
                                     />
                                     <MathOperatorSelector onClick={addItem} />
@@ -592,16 +615,6 @@ const CalculationModal = ({
                                         </NoticeBox>
                                     </div>
                                 )}
-                                <div className="usage-legend">
-                                    <Help>
-                                        {i18n.t(
-                                            'Drag or click a data element or operator to add it to the formula. Drag to reorder. Select an item and click Remove item, or double-click, to delete it.'
-                                        )}
-                                    </Help>
-                                    <p className="see-also">
-                                        <KeyboardNavigationHint />
-                                    </p>
-                                </div>
                             </div>
                         </div>
                     </DndContext>

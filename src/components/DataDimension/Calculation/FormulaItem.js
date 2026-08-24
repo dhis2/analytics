@@ -17,8 +17,6 @@ import styles from './styles/FormulaItem.style.js'
 const BEFORE = 'BEFORE'
 const AFTER = 'AFTER'
 
-const DOUBLE_CLICK_THRESHOLD_MS = 300
-
 const FormulaItem = ({
     id,
     label,
@@ -29,7 +27,6 @@ const FormulaItem = ({
     overLastDropZone,
     onChange,
     onClick,
-    onDoubleClick,
     hasFocus,
 }) => {
     const {
@@ -48,12 +45,7 @@ const FormulaItem = ({
     })
 
     const inputRef = useRef(null)
-    const clickTimeoutRef = useRef(null)
     const ignoreClickRef = useRef(false)
-
-    useEffect(() => {
-        return () => clearTimeout(clickTimeoutRef.current)
-    }, [])
 
     useEffect(() => {
         if (hasFocus && inputRef.current) {
@@ -108,21 +100,7 @@ const FormulaItem = ({
             inputRef.current && inputRef.current.focus()
             return
         }
-        // Delay in case this click is the first of a double-click, so
-        // selecting the item doesn't flicker in between removing it.
-        clearTimeout(clickTimeoutRef.current)
-        clickTimeoutRef.current = setTimeout(() => {
-            onClick(id)
-        }, DOUBLE_CLICK_THRESHOLD_MS)
-    }
-
-    const handleDoubleClick = (e) => {
-        if (isInteractiveElement(e.target)) {
-            inputRef.current && inputRef.current.focus()
-            return
-        }
-        clearTimeout(clickTimeoutRef.current)
-        onDoubleClick(id)
+        onClick(id)
     }
 
     const handleChange = (e) => onChange({ itemId: id, value: e.target.value })
@@ -133,7 +111,7 @@ const FormulaItem = ({
         }
         if (e.key === 'Enter' || e.key === ' ') {
             // role="button" from dnd-kit also synthesizes a click on Enter/Space;
-            // ignore that click so selection is not toggled off 300ms later.
+            // ignore that click so selection is not toggled off right after.
             ignoreClickRef.current = true
         }
         onActivationKeydown(() => onClick(id))(e)
@@ -213,7 +191,6 @@ const FormulaItem = ({
                         insertAfter: insertPosition === AFTER,
                     })}
                     onClick={handleClick}
-                    onDoubleClick={handleDoubleClick}
                     onKeyDown={handleKeyDown}
                     data-test={`formula-item-${id}`}
                 >
@@ -231,7 +208,6 @@ FormulaItem.propTypes = {
     type: PropTypes.string.isRequired,
     onChange: PropTypes.func.isRequired,
     onClick: PropTypes.func.isRequired,
-    onDoubleClick: PropTypes.func.isRequired,
     hasFocus: PropTypes.bool,
     isHighlighted: PropTypes.bool,
     isLast: PropTypes.bool,
