@@ -14,6 +14,7 @@ import {
 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useEffect, useRef, useState } from 'react'
+import css from 'styled-jsx/css'
 import {
     createCalculationMutation,
     deleteCalculationMutation,
@@ -33,6 +34,7 @@ import {
     VALID_EXPRESSION,
     getItemIdsFromExpression,
 } from '../../../modules/expressions.js'
+import { useModalContentWidth } from '../../../modules/useModalContentWidth.js'
 import { OfflineTooltip as Tooltip } from '../../OfflineTooltip.js'
 import DataElementSelector from './DataElementSelector.js'
 import DndContext, {
@@ -43,13 +45,25 @@ import FormulaField, {
     LAST_DROPZONE_ID,
     FORMULA_BOX_ID,
 } from './FormulaField.js'
-import MathOperatorSelector from './MathOperatorSelector.js'
+import FormulaToolbar from './FormulaToolbar.js'
 import styles from './styles/CalculationModal.style.js'
 
 const FIRST_POSITION = 0
 const LAST_POSITION = -1
 const CALCULATION_PROP_DEFAULT = {}
 const OPERATORS = getOperators()
+// Matches the content width of the previous fixed `large` Modal size, so
+// the modal never gets narrower than it used to on small windows.
+const MODAL_MIN_CONTENT_WIDTH = 740
+// Caps how far the modal grows on wide screens, so the two columns don't
+// stretch out further than is useful.
+const MODAL_MAX_CONTENT_WIDTH = 1000
+
+const getContentWidthCSS = (width) => css.resolve`
+    .content {
+        width: ${width}px;
+    }
+`
 
 const Key = ({ children }) => (
     <kbd className="key">
@@ -247,6 +261,12 @@ const CalculationModal = ({
 
     const [focusItemId, setFocusItemId] = useState(null)
     const [selectedItemId, setSelectedItemId] = useState(null)
+
+    const modalContentWidth = useModalContentWidth({
+        minWidth: MODAL_MIN_CONTENT_WIDTH,
+        maxWidth: MODAL_MAX_CONTENT_WIDTH,
+    })
+    const contentWidthCSS = getContentWidthCSS(modalContentWidth)
 
     const expressionStatus = validationOutput?.status
     const validationMessage =
@@ -522,7 +542,7 @@ const CalculationModal = ({
 
     return (
         <>
-            <Modal dataTest="calculation-modal" position="top" large>
+            <Modal dataTest="calculation-modal" position="top" fluid>
                 <ModalTitle dataTest="calculation-modal-title">
                     {calculation.id
                         ? i18n.t('Data / Edit calculation')
@@ -547,7 +567,7 @@ const CalculationModal = ({
                         onDragStart={() => setFocusItemId(null)}
                         onDragEnd={addOrMoveDraggedItem}
                     >
-                        <div className="content">
+                        <div className={`content ${contentWidthCSS.className}`}>
                             <div className="left-section">
                                 <DataElementSelector
                                     displayNameProp={displayNameProp}
@@ -563,6 +583,16 @@ const CalculationModal = ({
                                         </h4>
                                         <UsageHint />
                                     </div>
+                                    <FormulaToolbar
+                                        onAddOperator={addItem}
+                                        onRemove={() =>
+                                            removeItem(selectedItemId)
+                                        }
+                                        onValidate={validate}
+                                        canRemove={Boolean(selectedItemId)}
+                                        isValidating={isValidating}
+                                        isLoading={isLoading}
+                                    />
                                     <FormulaField
                                         items={expressionArray}
                                         selectedItemId={selectedItemId}
@@ -571,30 +601,6 @@ const CalculationModal = ({
                                         onClick={selectItem}
                                         loading={!expressionArray}
                                     />
-                                    <MathOperatorSelector onClick={addItem} />
-                                    <div className="formula-actions">
-                                        <Button
-                                            small
-                                            secondary
-                                            onClick={() =>
-                                                removeItem(selectedItemId)
-                                            }
-                                            dataTest="remove-button"
-                                            disabled={!selectedItemId}
-                                        >
-                                            {i18n.t('Remove item')}
-                                        </Button>
-                                        <Button
-                                            small
-                                            secondary
-                                            onClick={validate}
-                                            dataTest="validate-button"
-                                            loading={isValidating}
-                                            disabled={isLoading}
-                                        >
-                                            {i18n.t('Check formula')}
-                                        </Button>
-                                    </div>
                                 </div>
                                 {validationMessage && (
                                     <div
@@ -703,6 +709,7 @@ const CalculationModal = ({
                     </ModalActions>
                 </Modal>
             )}
+            {contentWidthCSS.styles}
             <style jsx>{styles}</style>
         </>
     )

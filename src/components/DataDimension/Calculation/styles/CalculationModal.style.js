@@ -11,13 +11,6 @@ export default css`
         margin-top: ${spacers.dp8};
     }
 
-    .formula-actions {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: ${spacers.dp8};
-    }
-
     .delete-button {
         margin-right: ${spacers.dp8};
     }

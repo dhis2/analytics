@@ -8,19 +8,17 @@ const OPERATORS = getOperators()
 
 const MathOperatorSelector = ({ onClick }) => (
     <>
-        <div className="wrapper">
-            <div className="operators" data-test="operators-list">
-                {OPERATORS.map(({ label, value, type }, index) => (
-                    <DraggableOperator
-                        key={`${label}-${index}`}
-                        label={label}
-                        value={value}
-                        type={type}
-                        index={index}
-                        onClick={onClick}
-                    />
-                ))}
-            </div>
+        <div className="operators" data-test="operators-list">
+            {OPERATORS.map(({ label, value, type }, index) => (
+                <DraggableOperator
+                    key={`${label}-${index}`}
+                    label={label}
+                    value={value}
+                    type={type}
+                    index={index}
+                    onClick={onClick}
+                />
+            ))}
         </div>
         <style jsx>{styles}</style>
     </>

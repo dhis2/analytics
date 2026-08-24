@@ -4,7 +4,6 @@ import css from 'styled-jsx/css'
 export default css`
     .formula-field {
         border-top: 1px solid ${colors.grey400};
-        border-bottom: 1px solid ${colors.grey400};
         height: 180px;
         overflow: auto;
         padding: 6px 12px;
