@@ -8,7 +8,6 @@ import {
     ButtonStrip,
     IconQuestion16,
     InputField,
-    NoticeBox,
     Popper,
     Portal,
 } from '@dhis2/ui'
@@ -592,6 +591,8 @@ const CalculationModal = ({
                                         canRemove={Boolean(selectedItemId)}
                                         isValidating={isValidating}
                                         isLoading={isLoading}
+                                        validationStatus={expressionStatus}
+                                        validationMessage={validationMessage}
                                     />
                                     <FormulaField
                                         items={expressionArray}
@@ -602,25 +603,6 @@ const CalculationModal = ({
                                         loading={!expressionArray}
                                     />
                                 </div>
-                                {validationMessage && (
-                                    <div
-                                        className="validation-notice"
-                                        data-test="validation-message"
-                                    >
-                                        <NoticeBox
-                                            error={
-                                                expressionStatus ===
-                                                INVALID_EXPRESSION
-                                            }
-                                            valid={
-                                                expressionStatus ===
-                                                VALID_EXPRESSION
-                                            }
-                                        >
-                                            {validationMessage}
-                                        </NoticeBox>
-                                    </div>
-                                )}
                             </div>
                         </div>
                     </DndContext>

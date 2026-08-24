@@ -11,10 +11,6 @@ export default css`
         min-height: 0;
     }
 
-    .validation-notice {
-        margin-top: ${spacers.dp8};
-    }
-
     .delete-button {
         margin-right: ${spacers.dp8};
     }
