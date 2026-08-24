@@ -5,6 +5,10 @@ export default css`
     .formula-section {
         background: ${colors.white};
         border: 1px solid ${colors.grey400};
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        min-height: 0;
     }
 
     .validation-notice {
@@ -29,6 +33,7 @@ export default css`
         font-size: 14px;
         display: flex;
         flex-direction: column;
+        min-height: 0;
     }
 
     .sub-header-row {

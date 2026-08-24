@@ -1,4 +1,3 @@
-import { Tooltip } from '@dhis2/ui'
 import { useSortable } from '@dnd-kit/sortable'
 import { CSS } from '@dnd-kit/utilities'
 import cx from 'classnames'
@@ -147,19 +146,17 @@ const FormulaItem = ({
 
         if (type === EXPRESSION_TYPE_DATA) {
             return (
-                <Tooltip content={label} placement="bottom">
-                    <div
-                        className={cx('content', 'data', {
-                            highlighted: isHighlighted,
-                        })}
-                    >
-                        <span className="icon">
-                            {getIcon(DIMENSION_TYPE_DATA_ELEMENT)}
-                        </span>
-                        <span className="label">{label}</span>
-                        <style jsx>{styles}</style>
-                    </div>
-                </Tooltip>
+                <div
+                    className={cx('content', 'data', {
+                        highlighted: isHighlighted,
+                    })}
+                >
+                    <span className="icon">
+                        {getIcon(DIMENSION_TYPE_DATA_ELEMENT)}
+                    </span>
+                    <span className="label">{label}</span>
+                    <style jsx>{styles}</style>
+                </div>
             )
         }
 
