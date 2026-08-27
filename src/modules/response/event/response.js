@@ -112,16 +112,34 @@ const isExcludedHeaderName = (name) =>
 const isIncludedHeader = (header) =>
     Boolean(header.meta) && !isExcludedHeaderName(header.name)
 
-export const transformResponse = (response, { hideNaData = false } = {}) => {
+/* Display names supplied by the consuming app, keyed by `metaData.items` key.
+ * The backend name for a dimension is not always the one the app shows the
+ * user (the app has its own fallbacks and labels), and for some dimensions the
+ * backend omits the item altogether, so these names win over the response and
+ * may introduce an item that was not there. */
+const applyMetaDataItemNameOverrides = (items, metaDataItemNames) =>
+    Object.entries(metaDataItemNames).reduce(
+        (acc, [id, name]) => {
+            acc[id] = { ...acc[id], name }
+            return acc
+        },
+        { ...items }
+    )
+
+export const transformResponse = (
+    response,
+    { hideNaData = false, metaDataItemNames = {} } = {}
+) => {
     // Do not modify the original response
     // Rows is mapped by the handlers
     let transformedResponse = {
         ...response,
         metaData: {
             ...response.metaData,
-            items: {
-                ...response.metaData.items,
-            },
+            items: applyMetaDataItemNameOverrides(
+                response.metaData.items,
+                metaDataItemNames
+            ),
             dimensions: {
                 ...response.metaData.dimensions,
             },
