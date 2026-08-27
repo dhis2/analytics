@@ -14,12 +14,24 @@ export default css`
         min-height: 0;
     }
 
-    .formula-section.valid {
-        border-color: ${colors.green500};
+    .formula-box {
+        position: relative;
+        flex: 1;
+        min-height: 0;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        border-top: 1px solid ${colors.grey400};
     }
 
-    .formula-section.invalid {
-        border-color: ${colors.red500};
+    .formula-box.valid {
+        border-top-color: transparent;
+        box-shadow: inset 0 0 0 1px ${colors.green500};
+    }
+
+    .formula-box.invalid {
+        border-top-color: transparent;
+        box-shadow: inset 0 0 0 1px ${colors.red500};
     }
 
     .delete-button {
@@ -49,8 +61,6 @@ export default css`
         align-items: center;
         gap: ${spacers.dp8};
         padding: ${spacers.dp8} ${spacers.dp8} 0;
-        /* Reserve space for status text so the row doesn't jump when it appears */
-        min-height: calc(${spacers.dp8} + 19px);
         box-sizing: border-box;
         flex-shrink: 0;
     }
@@ -62,11 +72,31 @@ export default css`
         flex-shrink: 0;
     }
 
-    .validation-status {
-        margin-left: auto;
-        min-width: 0;
+    /* Clear chips under the overlay bar when validation is shown */
+    .formula-box.valid :global(.formula-field),
+    .formula-box.invalid :global(.formula-field) {
+        padding-bottom: 40px;
+    }
+
+    .validation-bar {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
         display: flex;
-        justify-content: flex-end;
+        align-items: center;
+        gap: ${spacers.dp4};
+        padding: ${spacers.dp8} ${spacers.dp12};
+        box-sizing: border-box;
+        background: ${colors.red050};
+        outline: 1px solid ${colors.red500};
+        outline-offset: -1px;
+    }
+
+    .formula-box.valid .validation-bar {
+        background: ${colors.green050};
+        outline-color: ${colors.green500};
     }
 
     .status {
@@ -80,6 +110,7 @@ export default css`
         color: ${colors.red700};
         font-size: 14px;
         line-height: 19px;
+        min-width: 0;
     }
 
     .valid .status-text {

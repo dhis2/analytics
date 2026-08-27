@@ -3,7 +3,6 @@ import css from 'styled-jsx/css'
 
 export default css`
     .formula-field {
-        border-top: 1px solid ${colors.grey400};
         flex: 1;
         min-height: 0;
         overflow: auto;

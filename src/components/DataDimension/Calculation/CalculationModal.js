@@ -481,33 +481,47 @@ const CalculationModal = ({
                                 />
                             </div>
                             <div className="right-section">
-                                <div
-                                    className={cx('formula-section', {
-                                        valid:
-                                            expressionStatus ===
-                                            VALID_EXPRESSION,
-                                        invalid:
-                                            expressionStatus ===
-                                            INVALID_EXPRESSION,
-                                    })}
-                                >
+                                <div className="formula-section">
                                     <div className="sub-header-row">
                                         <h4 className="sub-header">
                                             {i18n.t('Formula')}
                                         </h4>
-                                        <div
-                                            className="validation-status"
-                                            aria-live="polite"
-                                            data-test="validation-message"
-                                        >
-                                            {validationMessage && (
-                                                <span
-                                                    className={cx('status', {
-                                                        valid:
-                                                            expressionStatus ===
-                                                            VALID_EXPRESSION,
-                                                    })}
-                                                >
+                                    </div>
+                                    <FormulaToolbar
+                                        onAddOperator={addItem}
+                                        onRemove={() =>
+                                            removeItem(selectedItemId)
+                                        }
+                                        onValidate={validate}
+                                        canRemove={Boolean(selectedItemId)}
+                                        isValidating={isValidating}
+                                        isLoading={isLoading}
+                                    />
+                                    <div
+                                        className={cx('formula-box', {
+                                            valid:
+                                                expressionStatus ===
+                                                VALID_EXPRESSION,
+                                            invalid:
+                                                expressionStatus ===
+                                                INVALID_EXPRESSION,
+                                        })}
+                                    >
+                                        <FormulaField
+                                            items={expressionArray}
+                                            selectedItemId={selectedItemId}
+                                            focusItemId={focusItemId}
+                                            onChange={setItemValue}
+                                            onClick={selectItem}
+                                            loading={!expressionArray}
+                                        />
+                                        {validationMessage && (
+                                            <div
+                                                className="validation-bar"
+                                                aria-live="polite"
+                                                data-test="validation-message"
+                                            >
+                                                <span className="status">
                                                     {expressionStatus ===
                                                     VALID_EXPRESSION ? (
                                                         <IconCheckmarkCircle16
@@ -526,27 +540,9 @@ const CalculationModal = ({
                                                         {validationMessage}
                                                     </span>
                                                 </span>
-                                            )}
-                                        </div>
+                                            </div>
+                                        )}
                                     </div>
-                                    <FormulaToolbar
-                                        onAddOperator={addItem}
-                                        onRemove={() =>
-                                            removeItem(selectedItemId)
-                                        }
-                                        onValidate={validate}
-                                        canRemove={Boolean(selectedItemId)}
-                                        isValidating={isValidating}
-                                        isLoading={isLoading}
-                                    />
-                                    <FormulaField
-                                        items={expressionArray}
-                                        selectedItemId={selectedItemId}
-                                        focusItemId={focusItemId}
-                                        onChange={setItemValue}
-                                        onClick={selectItem}
-                                        loading={!expressionArray}
-                                    />
                                 </div>
                             </div>
                         </div>
