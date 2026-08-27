@@ -5,7 +5,7 @@ export default css`
     .formula-field {
         border-top: 1px solid ${colors.grey400};
         flex: 1;
-        min-height: 180px;
+        min-height: 0;
         overflow: auto;
         padding: 6px 12px;
         position: relative;

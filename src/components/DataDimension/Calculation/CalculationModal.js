@@ -6,11 +6,12 @@ import {
     ModalContent,
     ModalActions,
     ButtonStrip,
-    IconQuestion16,
+    IconCheckmarkCircle16,
+    IconErrorFilled16,
     InputField,
-    Popper,
-    Portal,
+    colors,
 } from '@dhis2/ui'
+import cx from 'classnames'
 import PropTypes from 'prop-types'
 import React, { useEffect, useRef, useState } from 'react'
 import css from 'styled-jsx/css'
@@ -63,101 +64,6 @@ const getContentWidthCSS = (width) => css.resolve`
         width: ${width}px;
     }
 `
-
-const Key = ({ children }) => (
-    <kbd className="key">
-        {children}
-        <style jsx>{styles}</style>
-    </kbd>
-)
-
-Key.propTypes = {
-    children: PropTypes.node.isRequired,
-}
-
-const ShortcutsPopoverContent = () => (
-    <div className="shortcuts">
-        <h4 className="shortcuts-header">{i18n.t('Usage tips')}</h4>
-        <ul>
-            <li>
-                {i18n.t(
-                    'Click or drag a data element or operator to add it to the formula.'
-                )}
-            </li>
-            <li>{i18n.t('Drag an item to reorder it.')}</li>
-            <li>
-                {i18n.t('Select an item, then click')}{' '}
-                <strong>{i18n.t('Remove item')}</strong>{' '}
-                {i18n.t('to delete it.')}
-            </li>
-        </ul>
-        <h4 className="shortcuts-header">{i18n.t('Keyboard shortcuts')}</h4>
-        <ul>
-            <li>
-                {i18n.t('Press')}{' '}
-                <span className="shortcut-keys">
-                    <Key>Enter</Key>
-                    {i18n.t('or')}
-                    <Key>Space</Key>
-                </span>{' '}
-                {i18n.t('to add or select the focused item.')}
-            </li>
-            <li>
-                {i18n.t('Press')}{' '}
-                <span className="shortcut-keys">
-                    <Key>←</Key>
-                    {i18n.t('or')}
-                    <Key>→</Key>
-                </span>{' '}
-                {i18n.t('to move the selected item.')}
-            </li>
-            <li>
-                {i18n.t('Press')}{' '}
-                <span className="shortcut-keys">
-                    <Key>+</Key>
-                    <Key>-</Key>
-                    <Key>*</Key>
-                    <Key>/</Key>
-                    <Key>(</Key>
-                    <Key>)</Key>
-                </span>{' '}
-                {i18n.t('to insert an operator after the selected item.')}
-            </li>
-        </ul>
-        <style jsx>{styles}</style>
-    </div>
-)
-
-const UsageHint = () => {
-    const [isOpen, setIsOpen] = useState(false)
-    const triggerRef = useRef()
-
-    return (
-        <span className="hint">
-            <button
-                type="button"
-                className="hint-trigger"
-                ref={triggerRef}
-                data-test="usage-hint"
-                aria-label={i18n.t('Usage tips')}
-                onMouseEnter={() => setIsOpen(true)}
-                onMouseLeave={() => setIsOpen(false)}
-                onFocus={() => setIsOpen(true)}
-                onBlur={() => setIsOpen(false)}
-            >
-                <IconQuestion16 />
-            </button>
-            {isOpen && (
-                <Portal>
-                    <Popper placement="bottom-start" reference={triggerRef}>
-                        <ShortcutsPopoverContent />
-                    </Popper>
-                </Portal>
-            )}
-            <style jsx>{styles}</style>
-        </span>
-    )
-}
 
 const CalculationModal = ({
     calculation = CALCULATION_PROP_DEFAULT,
@@ -575,12 +481,53 @@ const CalculationModal = ({
                                 />
                             </div>
                             <div className="right-section">
-                                <div className="formula-section">
+                                <div
+                                    className={cx('formula-section', {
+                                        valid:
+                                            expressionStatus ===
+                                            VALID_EXPRESSION,
+                                        invalid:
+                                            expressionStatus ===
+                                            INVALID_EXPRESSION,
+                                    })}
+                                >
                                     <div className="sub-header-row">
                                         <h4 className="sub-header">
                                             {i18n.t('Formula')}
                                         </h4>
-                                        <UsageHint />
+                                        <div
+                                            className="validation-status"
+                                            aria-live="polite"
+                                            data-test="validation-message"
+                                        >
+                                            {validationMessage && (
+                                                <span
+                                                    className={cx('status', {
+                                                        valid:
+                                                            expressionStatus ===
+                                                            VALID_EXPRESSION,
+                                                    })}
+                                                >
+                                                    {expressionStatus ===
+                                                    VALID_EXPRESSION ? (
+                                                        <IconCheckmarkCircle16
+                                                            color={
+                                                                colors.green700
+                                                            }
+                                                        />
+                                                    ) : (
+                                                        <IconErrorFilled16
+                                                            color={
+                                                                colors.red700
+                                                            }
+                                                        />
+                                                    )}
+                                                    <span className="status-text">
+                                                        {validationMessage}
+                                                    </span>
+                                                </span>
+                                            )}
+                                        </div>
                                     </div>
                                     <FormulaToolbar
                                         onAddOperator={addItem}
@@ -591,8 +538,6 @@ const CalculationModal = ({
                                         canRemove={Boolean(selectedItemId)}
                                         isValidating={isValidating}
                                         isLoading={isLoading}
-                                        validationStatus={expressionStatus}
-                                        validationMessage={validationMessage}
                                     />
                                     <FormulaField
                                         items={expressionArray}
