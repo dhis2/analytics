@@ -1,6 +1,5 @@
 import i18n from '@dhis2/d2-i18n'
 import {
-    Button,
     SharingDialog,
     IconReply16,
     IconShare16,
@@ -71,6 +70,15 @@ export const Interpretation = ({
             created={interpretation.created}
             username={interpretation.createdBy.displayName}
         >
+            {shouldShowButton && (
+                <MessageIconButton
+                    tooltipContent={i18n.t('Open interpretation')}
+                    iconComponent={IconView16}
+                    onClick={() => onClick(id)}
+                    dataTest="interpretation-view-button"
+                    label={i18n.t('Open…')}
+                />
+            )}
             {!disabled && (
                 <MessageStatsBar>
                     <MessageIconButton
@@ -82,7 +90,11 @@ export const Interpretation = ({
                         iconComponent={IconThumbUp16}
                         onClick={toggleLike}
                         selected={isLikedByCurrentUser}
-                        count={interpretation.likes}
+                        label={
+                            interpretation.likes > 0
+                                ? interpretation.likes
+                                : undefined
+                        }
                         disabled={toggleLikeInProgress}
                         dataTest="interpretation-like-unlike-button"
                     />
@@ -90,7 +102,11 @@ export const Interpretation = ({
                         tooltipContent={tooltip}
                         iconComponent={IconReply16}
                         onClick={() => onReplyIconClick?.(id)}
-                        count={interpretation.comments.length}
+                        label={
+                            interpretation.comments.length > 0
+                                ? interpretation.comments.length
+                                : undefined
+                        }
                         dataTest="interpretation-reply-button"
                         viewOnly={isInThread && !interpretationAccess.comment}
                     />
@@ -145,18 +161,6 @@ export const Interpretation = ({
                         )}
                     </>
                 </MessageStatsBar>
-            )}
-            {shouldShowButton && (
-                <Button
-                    secondary
-                    small
-                    onClick={(_, event) => {
-                        event.stopPropagation()
-                        onClick(id)
-                    }}
-                >
-                    {i18n.t('See interpretation')}
-                </Button>
             )}
         </Message>
     )

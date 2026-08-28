@@ -77,6 +77,7 @@ export const InterpretationForm = ({
                 </>
             ) : (
                 <Input
+                    dense
                     onFocus={() => setShowRichTextEditor(true)}
                     placeholder={inputPlaceholder}
                     disabled={disabled}

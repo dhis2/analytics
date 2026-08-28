@@ -1,14 +1,13 @@
 import i18n from '@dhis2/d2-i18n'
 import {
-    Button,
     Popover,
     Tooltip,
     Help,
-    IconAt24,
-    IconFaceAdd24,
-    IconLink24,
-    IconTextBold24,
-    IconTextItalic24,
+    IconAt16,
+    IconFaceAdd16,
+    IconLink16,
+    IconTextBold16,
+    IconTextItalic16,
     colors,
 } from '@dhis2/ui'
 import cx from 'classnames'
@@ -34,6 +33,7 @@ import {
     toolbarClasses,
     tooltipAnchorClasses,
     emojisPopoverClasses,
+    toolbarButtonClasses,
 } from './styles/Editor.style.js'
 
 const EmojisPopover = ({ onInsertMarkdown, onClose, reference }) => (
@@ -64,7 +64,12 @@ EmojisPopover.propTypes = {
 
 const IconButtonWithTooltip = ({ tooltipContent, disabled, icon, onClick }) => (
     <>
-        <Tooltip content={tooltipContent} placement="bottom" closeDelay={200}>
+        <Tooltip
+            content={tooltipContent}
+            placement="top"
+            openDelay={500}
+            closeDelay={100}
+        >
             {({ ref, onMouseOver, onMouseOut }) => (
                 <span
                     ref={ref}
@@ -72,18 +77,20 @@ const IconButtonWithTooltip = ({ tooltipContent, disabled, icon, onClick }) => (
                     onMouseOut={onMouseOut}
                     className="tooltip"
                 >
-                    <Button
-                        secondary
-                        small
+                    <button
+                        className="toolbarButton"
                         disabled={disabled}
-                        icon={icon}
                         onClick={onClick}
                         aria-label={tooltipContent}
-                    />
+                        type="button"
+                    >
+                        {icon}
+                    </button>
                 </span>
             )}
         </Tooltip>
         <style jsx>{tooltipAnchorClasses}</style>
+        <style jsx>{toolbarButtonClasses}</style>
     </>
 )
 
@@ -114,32 +121,32 @@ const Toolbar = ({
                         <IconButtonWithTooltip
                             tooltipContent={i18n.t('Bold text')}
                             disabled={disabled}
-                            icon={<IconTextBold24 color={iconColor} />}
+                            icon={<IconTextBold16 color={iconColor} />}
                             onClick={() => onInsertMarkdown(BOLD)}
                         />
                         <IconButtonWithTooltip
                             tooltipContent={i18n.t('Italic text')}
                             disabled={disabled}
-                            icon={<IconTextItalic24 color={iconColor} />}
+                            icon={<IconTextItalic16 color={iconColor} />}
                             onClick={() => onInsertMarkdown(ITALIC)}
                         />
                         <IconButtonWithTooltip
                             tooltipContent={i18n.t('Link to a URL')}
                             disabled={disabled}
-                            icon={<IconLink24 color={iconColor} />}
+                            icon={<IconLink16 color={iconColor} />}
                             onClick={() => onInsertMarkdown(LINK)}
                         />
                         <IconButtonWithTooltip
                             tooltipContent={i18n.t('Mention a user')}
                             disabled={disabled}
-                            icon={<IconAt24 color={iconColor} />}
+                            icon={<IconAt16 color={iconColor} />}
                             onClick={() => onInsertMarkdown(MENTION)}
                         />
                         <span ref={emojisButtonRef} className="tooltip">
                             <IconButtonWithTooltip
                                 tooltipContent={i18n.t('Add emoji')}
                                 disabled={disabled}
-                                icon={<IconFaceAdd24 color={iconColor} />}
+                                icon={<IconFaceAdd16 color={iconColor} />}
                                 onClick={() => setEmojisPopoverIsOpen(true)}
                             />
                         </span>
@@ -156,30 +163,31 @@ const Toolbar = ({
                     </div>
 
                     <div className="sideActions">
-                        <Button
-                            secondary
-                            small
+                        <button
+                            className="toolbarButton"
                             disabled={previewButtonDisabled || disabled}
                             onClick={onTogglePreview}
+                            type="button"
                         >
                             {i18n.t('Preview')}
-                        </Button>
+                        </button>
                     </div>
                 </div>
             ) : (
                 <div className="previewWrapper">
-                    <Button
-                        secondary
-                        small
+                    <button
+                        className="toolbarButton"
                         onClick={onTogglePreview}
                         disabled={disabled}
+                        type="button"
                     >
                         {i18n.t('Back to write mode')}
-                    </Button>
+                    </button>
                 </div>
             )}
             <style jsx>{tooltipAnchorClasses}</style>
             <style jsx>{toolbarClasses}</style>
+            <style jsx>{toolbarButtonClasses}</style>
         </div>
     )
 }
@@ -279,6 +287,7 @@ export const Editor = forwardRef(
                                 placeholder={inputPlaceholder}
                                 disabled={disabled}
                                 value={value}
+                                rows={5}
                                 onChange={(event) =>
                                     onChange(event.target.value)
                                 }
