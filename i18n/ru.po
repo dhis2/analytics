@@ -1,22 +1,21 @@
-# 
 # Translators:
 # Valeriu Plesca <vplesca@gmail.com>, 2021
 # Wanda <wanda@frontlineaids.org>, 2022
 # Ulanbek Abakirov <ulans@mail.ru>, 2025
 # Viktor Varland <viktor@dhis2.org>, 2025
-# Nadiia <semchuk@aph.org.ua>, 2025
 # Philip Larsen Donnelly, 2025
-# Yury Rogachev <yury@dhis2.org>, 2025
+# Nadiia <semchuk@aph.org.ua>, 2026
+# Yury Rogachev <yury@dhis2.org>, 2026
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2025-09-09T09:32:04.677Z\n"
+"POT-Creation-Date: 2026-05-28T08:40:06.387Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Yury Rogachev <yury@dhis2.org>, 2025\n"
+"Last-Translator: Yury Rogachev <yury@dhis2.org>, 2026\n"
 "Language-Team: Russian (https://app.transifex.com/hisp-uio/teams/100509/ru/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: ru\n"
 "Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
@@ -50,13 +49,6 @@ msgstr ""
 
 msgid "Created {{time}}"
 msgstr ""
-
-msgid "Viewed {{count}} times"
-msgid_plural "Viewed {{count}} times"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
 
 msgid "Notifications"
 msgstr "Уведомления"
@@ -596,13 +588,6 @@ msgstr ""
 msgid "Reply"
 msgstr "Ответить"
 
-msgid "{{count}} replies"
-msgid_plural "{{count}} replies"
-msgstr[0] "{{count}} ответ"
-msgstr[1] "{{count}} отвечает"
-msgstr[2] "{{count}} отвечает"
-msgstr[3] "{{count}} ответов"
-
 msgid "View replies"
 msgstr ""
 
@@ -766,27 +751,6 @@ msgstr ""
 msgid "Hide"
 msgstr "Скрыть"
 
-msgid "{{count}} org units"
-msgid_plural "{{count}} org units"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
-
-msgid "{{count}} levels"
-msgid_plural "{{count}} levels"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
-
-msgid "{{count}} groups"
-msgid_plural "{{count}} groups"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
-
 msgid "Selected: {{commaSeparatedListOfOrganisationUnits}}"
 msgstr ""
 
@@ -823,6 +787,14 @@ msgstr "Период"
 msgid "Selected Periods"
 msgstr "Выбранные периоды"
 
+msgid "No period types available"
+msgstr ""
+
+msgid ""
+"No period types are enabled in the system. Please contact your system "
+"administrator."
+msgstr ""
+
 msgid "Relative periods"
 msgstr "Соответствующие периоды"
 
@@ -843,6 +815,9 @@ msgstr "Еженедельно(Начало Среда)"
 
 msgid "Weekly (Start Thursday)"
 msgstr "Еженедельно(Начало Четверг)"
+
+msgid "Weekly (Start Friday)"
+msgstr ""
 
 msgid "Weekly (Start Saturday)"
 msgstr "Еженедельно(Начало Суббота)"
@@ -871,17 +846,26 @@ msgstr "Полугодовой-Апрель"
 msgid "Yearly"
 msgstr "Ежегодно"
 
-msgid "Financial year (Start November)"
-msgstr "Финансовый год (начало Ноябрь)"
+msgid "Financial year (Start February)"
+msgstr ""
 
-msgid "Financial year (Start October)"
-msgstr "Финансовый год - Октябрь"
+msgid "Financial year (Start April)"
+msgstr "Финансовый год - Апрель"
 
 msgid "Financial year (Start July)"
 msgstr "Финансовый год - Июль"
 
-msgid "Financial year (Start April)"
-msgstr "Финансовый год - Апрель"
+msgid "Financial year (Start August)"
+msgstr ""
+
+msgid "Financial year (Start September)"
+msgstr ""
+
+msgid "Financial year (Start October)"
+msgstr "Финансовый год - Октябрь"
+
+msgid "Financial year (Start November)"
+msgstr "Финансовый год (начало Ноябрь)"
 
 msgid "Today"
 msgstr "Сегодня"
@@ -1315,6 +1299,18 @@ msgstr "Назначенные категории"
 msgid "No value"
 msgstr "Нет значения"
 
+msgid "Active"
+msgstr "Активный/ая/ое"
+
+msgid "Completed"
+msgstr "Завершен/а/о"
+
+msgid "Scheduled"
+msgstr "Запланирован"
+
+msgid "Cancelled"
+msgstr "Отменен/а/о"
+
 msgid "Text"
 msgstr "Текст"
 
@@ -1470,13 +1466,6 @@ msgstr "Базовый"
 
 msgid "Axis {{axisId}}"
 msgstr "Ось {{axisId}}"
-
-msgid "{{count}} items"
-msgid_plural "{{count}} items"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
 
 msgid "Reset zoom"
 msgstr ""

@@ -1,17 +1,16 @@
-# 
 # Translators:
 # Viktor Varland <viktor@dhis2.org>, 2025
-# Philip Larsen Donnelly, 2025
+# Philip Larsen Donnelly, 2026
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2025-09-09T09:32:04.677Z\n"
+"POT-Creation-Date: 2026-05-28T08:40:06.387Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Philip Larsen Donnelly, 2025\n"
+"Last-Translator: Philip Larsen Donnelly, 2026\n"
 "Language-Team: Tetum (Tetun) (https://app.transifex.com/hisp-uio/teams/100509/tet/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: tet\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
@@ -45,10 +44,6 @@ msgstr ""
 
 msgid "Created {{time}}"
 msgstr ""
-
-msgid "Viewed {{count}} times"
-msgid_plural "Viewed {{count}} times"
-msgstr[0] ""
 
 msgid "Notifications"
 msgstr ""
@@ -588,10 +583,6 @@ msgstr ""
 msgid "Reply"
 msgstr "Hatán"
 
-msgid "{{count}} replies"
-msgid_plural "{{count}} replies"
-msgstr[0] ""
-
 msgid "View replies"
 msgstr ""
 
@@ -755,18 +746,6 @@ msgstr ""
 msgid "Hide"
 msgstr "Subar"
 
-msgid "{{count}} org units"
-msgid_plural "{{count}} org units"
-msgstr[0] ""
-
-msgid "{{count}} levels"
-msgid_plural "{{count}} levels"
-msgstr[0] ""
-
-msgid "{{count}} groups"
-msgid_plural "{{count}} groups"
-msgstr[0] ""
-
 msgid "Selected: {{commaSeparatedListOfOrganisationUnits}}"
 msgstr ""
 
@@ -803,6 +782,14 @@ msgstr "Períodu"
 msgid "Selected Periods"
 msgstr ""
 
+msgid "No period types available"
+msgstr ""
+
+msgid ""
+"No period types are enabled in the system. Please contact your system "
+"administrator."
+msgstr ""
+
 msgid "Relative periods"
 msgstr "Peeríodus relativus"
 
@@ -822,6 +809,9 @@ msgid "Weekly (Start Wednesday)"
 msgstr ""
 
 msgid "Weekly (Start Thursday)"
+msgstr ""
+
+msgid "Weekly (Start Friday)"
 msgstr ""
 
 msgid "Weekly (Start Saturday)"
@@ -851,17 +841,26 @@ msgstr "Abril semestral"
 msgid "Yearly"
 msgstr "Anual"
 
-msgid "Financial year (Start November)"
+msgid "Financial year (Start February)"
+msgstr ""
+
+msgid "Financial year (Start April)"
+msgstr "Abril finanseiru"
+
+msgid "Financial year (Start July)"
+msgstr "Jullu finanseiru"
+
+msgid "Financial year (Start August)"
+msgstr ""
+
+msgid "Financial year (Start September)"
 msgstr ""
 
 msgid "Financial year (Start October)"
 msgstr "Outubru finanseiru"
 
-msgid "Financial year (Start July)"
-msgstr "Jullu finanseiru"
-
-msgid "Financial year (Start April)"
-msgstr "Abril finanseiru"
+msgid "Financial year (Start November)"
+msgstr ""
 
 msgid "Today"
 msgstr ""
@@ -1295,6 +1294,18 @@ msgstr ""
 msgid "No value"
 msgstr "Laiha valor"
 
+msgid "Active"
+msgstr "Ativu"
+
+msgid "Completed"
+msgstr ""
+
+msgid "Scheduled"
+msgstr ""
+
+msgid "Cancelled"
+msgstr ""
+
 msgid "Text"
 msgstr "Textu"
 
@@ -1450,10 +1461,6 @@ msgstr "Baze"
 
 msgid "Axis {{axisId}}"
 msgstr ""
-
-msgid "{{count}} items"
-msgid_plural "{{count}} items"
-msgstr[0] ""
 
 msgid "Reset zoom"
 msgstr ""

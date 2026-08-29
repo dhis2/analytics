@@ -1,22 +1,21 @@
-# 
 # Translators:
 # Somkhit Bouavong <bouavongk@gmail.com>, 2022
 # Phouthasinh PHEUAYSITHIPHONE, 2023
 # Thuy Nguyen <thuynguyen@hispvietnam.org>, 2025
-# Viktor Varland <viktor@dhis2.org>, 2025
-# Saysamone Sibounma, 2025
 # Philip Larsen Donnelly, 2025
-# Namwan Chanthavisouk, 2025
+# Saysamone Sibounma, 2026
+# Viktor Varland <viktor@dhis2.org>, 2026
+# Namwan Chanthavisouk, 2026
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2025-09-09T09:32:04.677Z\n"
+"POT-Creation-Date: 2026-08-27T11:56:55.720Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Namwan Chanthavisouk, 2025\n"
+"Last-Translator: Namwan Chanthavisouk, 2026\n"
 "Language-Team: Lao (https://app.transifex.com/hisp-uio/teams/100509/lo/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: lo\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
@@ -742,34 +741,6 @@ msgstr ""
 msgid "New map"
 msgstr "ແຜນທີ່ໃໝ່"
 
-msgid "Open a line list"
-msgstr "ເປີດບັນຊີລາຍຊື່"
-
-msgid "Loading line lists"
-msgstr "ໂຫຼດບັນຊີລາຍຊື່"
-
-msgid "Couldn't load line lists"
-msgstr "ບໍ່ສາມາດໂຫຼດບັນຊີລາຍຊື່"
-
-msgid ""
-"There was a problem loading line lists. Try again or contact your system "
-"administrator."
-msgstr ""
-"ພົບບັນຫາໃນການໂຫຼດບັນຊີລາຍຊື່. ລອງອີກຄັ້ງ ຫຼື ຕິດຕໍ່ຜູ້ດູແລລະບົບຂອງທ່ານ."
-
-msgid "No line lists found. Click New line list to get started."
-msgstr "ບໍ່ພົບບັນຊີລາຍຊື່. ຄລິກເພີ່ມບັນຊີລາຍຊື່ໃໝ່ເພື່ອເລີ່ມຕົ້ນ."
-
-msgid ""
-"No line lists found. Try adjusting your search or filter options to find "
-"what you're looking for."
-msgstr ""
-"ບໍ່ພົບບັນຊີລາຍຊື່. ລອງປັບຕົວເລືອກການຄົ້ນຫາ ຫຼື "
-"ຕົວກອງເພື່ອສິ່ງທີ່ທ່ານກໍາລັງຄົ້ນຫາ."
-
-msgid "New line list"
-msgstr "ເພີ່ມບັນຊີລາຍຊື່ໃໝ່"
-
 msgid "Hide"
 msgstr "ເຊື່ອງ"
 
@@ -821,6 +792,14 @@ msgstr "ຊ່ວງເວລາ"
 msgid "Selected Periods"
 msgstr "ເລືອກຊ່ວງເວລາ"
 
+msgid "No period types available"
+msgstr ""
+
+msgid ""
+"No period types are enabled in the system. Please contact your system "
+"administrator."
+msgstr ""
+
 msgid "Relative periods"
 msgstr "​ໄລ​ຍະ​ເວ​ລາ​ໄກ້​ຄຽງ"
 
@@ -841,6 +820,9 @@ msgstr "ເປັນອາທິດ (ເລີ່ມຈາກວັນພຸດ)
 
 msgid "Weekly (Start Thursday)"
 msgstr "ເປັນອາທິດ (ເລີ່ມຈາກວັນພະຫັດ)"
+
+msgid "Weekly (Start Friday)"
+msgstr ""
 
 msgid "Weekly (Start Saturday)"
 msgstr "ເປັນອາທິດ (ເລີ່ມຈາກວັນເສົາ)"
@@ -869,17 +851,26 @@ msgstr "ແຕ່ລະຫົກເດືອນ ແລະ ເດືອນເມ�
 msgid "Yearly"
 msgstr "ລາຍປີ"
 
-msgid "Financial year (Start November)"
-msgstr "ສົກປີງົບປະມານ (ເລີ່ມແຕ່ເດືອນພະຈິກ)"
+msgid "Financial year (Start February)"
+msgstr ""
 
-msgid "Financial year (Start October)"
-msgstr "ສົກປີງົບປະມານ (ເລີ່ມແຕ່ເດືອນຕຸລາ)"
+msgid "Financial year (Start April)"
+msgstr "ສົກປີງົບປະມານ (ເລີ່ມແຕ່ເດືອນເມສາ)"
 
 msgid "Financial year (Start July)"
 msgstr "ສົກປີງົບປະມານ (ເລີ່ມແຕ່ເດືອນມິຖຸນາ)"
 
-msgid "Financial year (Start April)"
-msgstr "ສົກປີງົບປະມານ (ເລີ່ມແຕ່ເດືອນເມສາ)"
+msgid "Financial year (Start August)"
+msgstr ""
+
+msgid "Financial year (Start September)"
+msgstr ""
+
+msgid "Financial year (Start October)"
+msgstr "ສົກປີງົບປະມານ (ເລີ່ມແຕ່ເດືອນຕຸລາ)"
+
+msgid "Financial year (Start November)"
+msgstr "ສົກປີງົບປະມານ (ເລີ່ມແຕ່ເດືອນພະຈິກ)"
 
 msgid "Today"
 msgstr "ມື້ນີ້"
@@ -1312,6 +1303,18 @@ msgstr "ຈັດໝວດໝູ່"
 
 msgid "No value"
 msgstr "ບໍ່ມີຂໍ້ມູນ"
+
+msgid "Active"
+msgstr "ເປີດໃຊ້ງານ"
+
+msgid "Completed"
+msgstr "ສໍາເລັດແລ້ວ"
+
+msgid "Scheduled"
+msgstr "ຕາມເວລາທີ່ກໍານົດ"
+
+msgid "Cancelled"
+msgstr "ຍົກເລີກແລ້ວ"
 
 msgid "Text"
 msgstr "ຂໍ້ຄວາມ"

@@ -1,17 +1,16 @@
-# 
 # Translators:
 # Philip Larsen Donnelly, 2025
-# Khurshid Ibatov <x.ibatov@dtsj.uz>, 2025
+# Khurshid Ibatov <x.ibatov@dtsj.uz>, 2026
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2025-09-09T09:32:04.677Z\n"
+"POT-Creation-Date: 2026-05-28T08:40:06.387Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Khurshid Ibatov <x.ibatov@dtsj.uz>, 2025\n"
+"Last-Translator: Khurshid Ibatov <x.ibatov@dtsj.uz>, 2026\n"
 "Language-Team: Uzbek (Cyrillic) (https://app.transifex.com/hisp-uio/teams/100509/uz@Cyrl/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: uz@Cyrl\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
@@ -45,10 +44,6 @@ msgstr ""
 
 msgid "Created {{time}}"
 msgstr ""
-
-msgid "Viewed {{count}} times"
-msgid_plural "Viewed {{count}} times"
-msgstr[0] ""
 
 msgid "Notifications"
 msgstr "Билдиришномалар"
@@ -588,10 +583,6 @@ msgstr ""
 msgid "Reply"
 msgstr "Изоҳ"
 
-msgid "{{count}} replies"
-msgid_plural "{{count}} replies"
-msgstr[0] "{{count}} изоҳлар"
-
 msgid "View replies"
 msgstr ""
 
@@ -755,18 +746,6 @@ msgstr ""
 msgid "Hide"
 msgstr "Беркитиш"
 
-msgid "{{count}} org units"
-msgid_plural "{{count}} org units"
-msgstr[0] ""
-
-msgid "{{count}} levels"
-msgid_plural "{{count}} levels"
-msgstr[0] ""
-
-msgid "{{count}} groups"
-msgid_plural "{{count}} groups"
-msgstr[0] ""
-
 msgid "Selected: {{commaSeparatedListOfOrganisationUnits}}"
 msgstr "Танланган: {{commaSeparatedListOfOrganisationUnits}}"
 
@@ -803,6 +782,14 @@ msgstr "Давр"
 msgid "Selected Periods"
 msgstr "Танланган Даврлар"
 
+msgid "No period types available"
+msgstr ""
+
+msgid ""
+"No period types are enabled in the system. Please contact your system "
+"administrator."
+msgstr ""
+
 msgid "Relative periods"
 msgstr "Нисбий даврлар"
 
@@ -823,6 +810,9 @@ msgstr "Ҳафталик (Бошланиши Чоршанба)"
 
 msgid "Weekly (Start Thursday)"
 msgstr "Ҳафталик (Бошланиши Пайшанба)"
+
+msgid "Weekly (Start Friday)"
+msgstr ""
 
 msgid "Weekly (Start Saturday)"
 msgstr "Ҳафталик (Бошланиши Шанба)"
@@ -851,17 +841,26 @@ msgstr "Ярим йиллик Апрель"
 msgid "Yearly"
 msgstr "Йиллик"
 
-msgid "Financial year (Start November)"
-msgstr "Молиявий йил (Бошланиши Ноябрь)"
+msgid "Financial year (Start February)"
+msgstr ""
 
-msgid "Financial year (Start October)"
-msgstr "Молиявий йил (бошланиши Октябрь)"
+msgid "Financial year (Start April)"
+msgstr "Молиявий йил (бошланиши Апрель)"
 
 msgid "Financial year (Start July)"
 msgstr "Молиявий йил (бошланиши Июль)"
 
-msgid "Financial year (Start April)"
-msgstr "Молиявий йил (бошланиши Апрель)"
+msgid "Financial year (Start August)"
+msgstr ""
+
+msgid "Financial year (Start September)"
+msgstr ""
+
+msgid "Financial year (Start October)"
+msgstr "Молиявий йил (бошланиши Октябрь)"
+
+msgid "Financial year (Start November)"
+msgstr "Молиявий йил (Бошланиши Ноябрь)"
 
 msgid "Today"
 msgstr "Бугун"
@@ -1295,6 +1294,18 @@ msgstr "Белгиланган Категориялар"
 msgid "No value"
 msgstr "Қиймат йўқ"
 
+msgid "Active"
+msgstr "Фаол"
+
+msgid "Completed"
+msgstr "Тўлдирилди"
+
+msgid "Scheduled"
+msgstr "Режа бўйича"
+
+msgid "Cancelled"
+msgstr "Бекор қилинди"
+
 msgid "Text"
 msgstr "Матн"
 
@@ -1450,10 +1461,6 @@ msgstr "Асос"
 
 msgid "Axis {{axisId}}"
 msgstr "Ўқлар {{axisId}}"
-
-msgid "{{count}} items"
-msgid_plural "{{count}} items"
-msgstr[0] ""
 
 msgid "Reset zoom"
 msgstr ""

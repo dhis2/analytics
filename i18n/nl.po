@@ -1,21 +1,20 @@
-# 
 # Translators:
 # Yury Rogachev <yury@dhis2.org>, 2021
 # Enzo Nicolas Rossi <enzo@dhis2.org>, 2023
 # Philip Larsen Donnelly, 2025
-# Charel van den Elsen <zobeadzorg@gmail.com>, 2025
 # Cherise Beek <cherise.beek@gmail.com>, 2025
-# Rica, 2025
+# Charel van den Elsen <zobeadzorg@gmail.com>, 2026
+# Rica, 2026
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2025-09-09T09:32:04.677Z\n"
+"POT-Creation-Date: 2026-08-27T11:56:55.720Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Rica, 2025\n"
+"Last-Translator: Rica, 2026\n"
 "Language-Team: Dutch (https://app.transifex.com/hisp-uio/teams/100509/nl/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: nl\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -52,8 +51,8 @@ msgstr "Gemaakt {{time}}"
 
 msgid "Viewed {{count}} times"
 msgid_plural "Viewed {{count}} times"
-msgstr[0] "1 keer bekeken"
-msgstr[1] "{{count}} keer bekeken"
+msgstr[0] ""
+msgstr[1] ""
 
 msgid "Notifications"
 msgstr "Meldingen"
@@ -605,8 +604,8 @@ msgstr "Antwoord"
 
 msgid "{{count}} replies"
 msgid_plural "{{count}} replies"
-msgstr[0] "{{count}} antwoord"
-msgstr[1] "{{count}} antwoorden"
+msgstr[0] ""
+msgstr[1] ""
 
 msgid "View replies"
 msgstr "Antwoorden bekijken"
@@ -757,54 +756,23 @@ msgstr ""
 msgid "New map"
 msgstr "Nieuwe kaart"
 
-msgid "Open a line list"
-msgstr "Open een regellijst"
-
-msgid "Loading line lists"
-msgstr "Regellijsten laden"
-
-msgid "Couldn't load line lists"
-msgstr "Kan regellijsten niet laden"
-
-msgid ""
-"There was a problem loading line lists. Try again or contact your system "
-"administrator."
-msgstr ""
-"Er is een probleem opgetreden bij het laden van regellijsten. Probeer het "
-"opnieuw of neem contact op met uw systeembeheerder."
-
-msgid "No line lists found. Click New line list to get started."
-msgstr ""
-"Geen regellijsten gevonden. Klik op Nieuwe regellijst om aan de slag te "
-"gaan."
-
-msgid ""
-"No line lists found. Try adjusting your search or filter options to find "
-"what you're looking for."
-msgstr ""
-"Geen regellijsten gevonden. Probeer uw zoek- of filteropties aan te passen "
-"om te vinden wat u zoekt."
-
-msgid "New line list"
-msgstr "Nieuwe lijnlijst"
-
 msgid "Hide"
 msgstr "Verbergen"
 
 msgid "{{count}} org units"
 msgid_plural "{{count}} org units"
-msgstr[0] "{{count}} organisatie-eenheid"
-msgstr[1] "{{count}} organisatie-eenheden"
+msgstr[0] ""
+msgstr[1] ""
 
 msgid "{{count}} levels"
 msgid_plural "{{count}} levels"
-msgstr[0] "{{count}} niveau"
-msgstr[1] "{{count}} niveaus"
+msgstr[0] ""
+msgstr[1] ""
 
 msgid "{{count}} groups"
 msgid_plural "{{count}} groups"
-msgstr[0] "{{count}} groep"
-msgstr[1] "{{count}} groepen"
+msgstr[0] ""
+msgstr[1] ""
 
 msgid "Selected: {{commaSeparatedListOfOrganisationUnits}}"
 msgstr "Geselecteerd: {{commaSeparatedListOfOrganisationUnits}}"
@@ -842,6 +810,14 @@ msgstr "Periode"
 msgid "Selected Periods"
 msgstr "geselecteerde periodes"
 
+msgid "No period types available"
+msgstr ""
+
+msgid ""
+"No period types are enabled in the system. Please contact your system "
+"administrator."
+msgstr ""
+
 msgid "Relative periods"
 msgstr "Relatieve perioden"
 
@@ -862,6 +838,9 @@ msgstr "Wekelijks (Start op woensdag)"
 
 msgid "Weekly (Start Thursday)"
 msgstr "Wekelijks (Start op donderdag)"
+
+msgid "Weekly (Start Friday)"
+msgstr ""
 
 msgid "Weekly (Start Saturday)"
 msgstr "Wekelijks (Start op zaterdag)"
@@ -890,17 +869,26 @@ msgstr "Zesmaandelijks april"
 msgid "Yearly"
 msgstr "Jaarlijks"
 
-msgid "Financial year (Start November)"
-msgstr "Financieel jaar (Start november)"
+msgid "Financial year (Start February)"
+msgstr ""
 
-msgid "Financial year (Start October)"
-msgstr "Financieel jaar (Start oktober)"
+msgid "Financial year (Start April)"
+msgstr "Financieel jaar (Start april)"
 
 msgid "Financial year (Start July)"
 msgstr "Financieel jaar (Start juli)"
 
-msgid "Financial year (Start April)"
-msgstr "Financieel jaar (Start april)"
+msgid "Financial year (Start August)"
+msgstr ""
+
+msgid "Financial year (Start September)"
+msgstr ""
+
+msgid "Financial year (Start October)"
+msgstr "Financieel jaar (Start oktober)"
+
+msgid "Financial year (Start November)"
+msgstr "Financieel jaar (Start november)"
 
 msgid "Today"
 msgstr "Vandaag"
@@ -1336,6 +1324,18 @@ msgstr "Toegewezen categorieën"
 msgid "No value"
 msgstr "Geen waarde"
 
+msgid "Active"
+msgstr "Actief"
+
+msgid "Completed"
+msgstr "Voltooid"
+
+msgid "Scheduled"
+msgstr "Gepland"
+
+msgid "Cancelled"
+msgstr "Geannuleerd"
+
 msgid "Text"
 msgstr ""
 
@@ -1494,8 +1494,8 @@ msgstr "As {{axisId}}"
 
 msgid "{{count}} items"
 msgid_plural "{{count}} items"
-msgstr[0] "{{count}} artikel"
-msgstr[1] "{{count}} artikelen"
+msgstr[0] ""
+msgstr[1] ""
 
 msgid "Reset zoom"
 msgstr "Zoom resetten"

@@ -1,17 +1,16 @@
-# 
 # Translators:
 # Philip Larsen Donnelly, 2024
-# Jiří Podhorecký <jirka.p@volny.cz>, 2025
+# Jiří Podhorecký <jirka.p@volny.cz>, 2026
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2025-09-09T09:32:04.677Z\n"
+"POT-Creation-Date: 2026-08-27T11:56:55.720Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Jiří Podhorecký <jirka.p@volny.cz>, 2025\n"
+"Last-Translator: Jiří Podhorecký <jirka.p@volny.cz>, 2026\n"
 "Language-Team: Czech (https://app.transifex.com/hisp-uio/teams/100509/cs/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: cs\n"
 "Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n <= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;\n"
@@ -757,37 +756,6 @@ msgstr ""
 msgid "New map"
 msgstr "Nová mapa"
 
-msgid "Open a line list"
-msgstr "Otevřít řádkový seznam"
-
-msgid "Loading line lists"
-msgstr "Načítání řádkových seznamů"
-
-msgid "Couldn't load line lists"
-msgstr "Řádkové seznamy se nepodařilo načíst"
-
-msgid ""
-"There was a problem loading line lists. Try again or contact your system "
-"administrator."
-msgstr ""
-"Při načítání řádkových seznamů došlo k problému. Zkuste to znovu nebo se "
-"obraťte na správce systému."
-
-msgid "No line lists found. Click New line list to get started."
-msgstr ""
-"Nebyly nalezeny žádné řádkové seznamy. Začněte kliknutím na Nový řádkový "
-"seznam."
-
-msgid ""
-"No line lists found. Try adjusting your search or filter options to find "
-"what you're looking for."
-msgstr ""
-"Nebyly nalezeny žádné řádkové seznamy. Zkuste upravit možnosti vyhledávání "
-"nebo filtru, abyste našli to, co hledáte."
-
-msgid "New line list"
-msgstr "Nový řádkový seznam"
-
 msgid "Hide"
 msgstr "Skrýt"
 
@@ -848,6 +816,14 @@ msgstr "Období"
 msgid "Selected Periods"
 msgstr "Vybraná období"
 
+msgid "No period types available"
+msgstr ""
+
+msgid ""
+"No period types are enabled in the system. Please contact your system "
+"administrator."
+msgstr ""
+
 msgid "Relative periods"
 msgstr "Relativní období"
 
@@ -868,6 +844,9 @@ msgstr "Týdně (od středy)"
 
 msgid "Weekly (Start Thursday)"
 msgstr "Týdně (od čtvrtka)"
+
+msgid "Weekly (Start Friday)"
+msgstr ""
 
 msgid "Weekly (Start Saturday)"
 msgstr "Týdně (od soboty)"
@@ -896,17 +875,26 @@ msgstr "Duben šest měsíců"
 msgid "Yearly"
 msgstr "Ročně"
 
-msgid "Financial year (Start November)"
-msgstr "Finanční rok (od listopadu)"
+msgid "Financial year (Start February)"
+msgstr ""
 
-msgid "Financial year (Start October)"
-msgstr "Finanční rok (od října)"
+msgid "Financial year (Start April)"
+msgstr "Finanční rok (od dubna)"
 
 msgid "Financial year (Start July)"
 msgstr "Finanční rok (od července)"
 
-msgid "Financial year (Start April)"
-msgstr "Finanční rok (od dubna)"
+msgid "Financial year (Start August)"
+msgstr ""
+
+msgid "Financial year (Start September)"
+msgstr ""
+
+msgid "Financial year (Start October)"
+msgstr "Finanční rok (od října)"
+
+msgid "Financial year (Start November)"
+msgstr "Finanční rok (od listopadu)"
 
 msgid "Today"
 msgstr "Dnes"
@@ -1339,6 +1327,18 @@ msgstr "Přiřazené kategorie"
 
 msgid "No value"
 msgstr "Žádná hodnota"
+
+msgid "Active"
+msgstr "Aktivní"
+
+msgid "Completed"
+msgstr "Dokončeno"
+
+msgid "Scheduled"
+msgstr "Naplánováno"
+
+msgid "Cancelled"
+msgstr "Zrušeno"
 
 msgid "Text"
 msgstr "Text"
