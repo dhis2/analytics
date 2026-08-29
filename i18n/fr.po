@@ -1,23 +1,23 @@
 # Translators:
-# Yayra Gomado <ygomado@hispwca.org>, 2025
 # Elise Desailly, 2025
 # Karoline Tufte Lien <karoline@dhis2.org>, 2025
 # Bram Piot <bram.piot@gmail.com>, 2025
 # tx_e2f_fr r25 <tx_e2f_fr_r25@ate2f.com>, 2025
 # Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2025
 # Edem Kossi <ekossi@hispwca.org>, 2025
-# Esther Tokouli, 2026
 # Yao Selom SAKA (HISP WCA) <ysaka@hispwca.org>, 2026
-# Cyrille Kabrane, 2026
 # Philip Larsen Donnelly, 2026
 # Viktor Varland <viktor@dhis2.org>, 2026
+# Esther Tokouli, 2026
+# Cyrille Kabrane, 2026
+# Yayra Gomado <ygomado@hispwca.org>, 2026
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2026-05-28T08:40:06.387Z\n"
+"POT-Creation-Date: 2026-08-27T11:56:55.720Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2026\n"
+"Last-Translator: Yayra Gomado <ygomado@hispwca.org>, 2026\n"
 "Language-Team: French (https://app.transifex.com/hisp-uio/teams/100509/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -54,6 +54,12 @@ msgstr "Créé à {{time}} par {{author}} "
 
 msgid "Created {{time}}"
 msgstr "Créé à {{time}}"
+
+msgid "Viewed {{count}} times"
+msgid_plural "Viewed {{count}} times"
+msgstr[0] "Visionné 1 fois"
+msgstr[1] "Visualisé {{count}} fois"
+msgstr[2] "Visualisé {{count}} fois"
 
 msgid "Notifications"
 msgstr "Notifications"
@@ -612,6 +618,12 @@ msgstr "Impossible de charger les interprétations"
 msgid "Reply"
 msgstr "Répondre"
 
+msgid "{{count}} replies"
+msgid_plural "{{count}} replies"
+msgstr[0] "{{count}} réponses"
+msgstr[1] "{{count}} réponses"
+msgstr[2] "{{count}} réponses"
+
 msgid "View replies"
 msgstr "Voir les réponses"
 
@@ -761,39 +773,26 @@ msgstr ""
 msgid "New map"
 msgstr "Nouvelle carte"
 
-msgid "Open a line list"
-msgstr "Ouvrir une liste de lignes"
-
-msgid "Loading line lists"
-msgstr "Chargement des listes de lignes"
-
-msgid "Couldn't load line lists"
-msgstr "Impossible de charger les listes de lignes"
-
-msgid ""
-"There was a problem loading line lists. Try again or contact your system "
-"administrator."
-msgstr ""
-"Un problème est survenu lors du chargement des listes de lignes. Veuillez "
-"réessayer ou contacter votre administrateur système."
-
-msgid "No line lists found. Click New line list to get started."
-msgstr ""
-"Aucune liste de lignes trouvée. Cliquez sur Nouvelle liste de lignes pour "
-"commencer."
-
-msgid ""
-"No line lists found. Try adjusting your search or filter options to find "
-"what you're looking for."
-msgstr ""
-"Aucune  liste de lignes trouvée. Essayez d'ajuster vos options de recherche "
-"ou de filtrage pour trouver ce que vous cherchez."
-
-msgid "New line list"
-msgstr "Nouvelle liste de lignes"
-
 msgid "Hide"
 msgstr "Masquer"
+
+msgid "{{count}} org units"
+msgid_plural "{{count}} org units"
+msgstr[0] "{{count}} unité d'org"
+msgstr[1] "{{count}} unités d'org"
+msgstr[2] "{{count}} unités d'organisation"
+
+msgid "{{count}} levels"
+msgid_plural "{{count}} levels"
+msgstr[0] "{{count}} niveau"
+msgstr[1] "{{count}} niveaux"
+msgstr[2] "{{count}} niveaux"
+
+msgid "{{count}} groups"
+msgid_plural "{{count}} groups"
+msgstr[0] "{{count}} groupe"
+msgstr[1] "{{count}} groupes"
+msgstr[2] "{{count}} groupes"
 
 msgid "Selected: {{commaSeparatedListOfOrganisationUnits}}"
 msgstr "Sélectionné : {{commaSeparatedListOfOrganisationUnits}}"
@@ -1514,6 +1513,12 @@ msgstr "Base"
 
 msgid "Axis {{axisId}}"
 msgstr "Axe {{axisId}}"
+
+msgid "{{count}} items"
+msgid_plural "{{count}} items"
+msgstr[0] "{{count}} article"
+msgstr[1] "{{count}} articles"
+msgstr[2] "{{count}} éléments"
 
 msgid "Reset zoom"
 msgstr "Réinitialiser le zoom"

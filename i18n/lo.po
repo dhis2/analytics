@@ -3,16 +3,16 @@
 # Phouthasinh PHEUAYSITHIPHONE, 2023
 # Thuy Nguyen <thuynguyen@hispvietnam.org>, 2025
 # Philip Larsen Donnelly, 2025
-# Namwan Chanthavisouk, 2025
 # Saysamone Sibounma, 2026
 # Viktor Varland <viktor@dhis2.org>, 2026
+# Namwan Chanthavisouk, 2026
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2026-05-28T08:40:06.387Z\n"
+"POT-Creation-Date: 2026-08-27T11:56:55.720Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2026\n"
+"Last-Translator: Namwan Chanthavisouk, 2026\n"
 "Language-Team: Lao (https://app.transifex.com/hisp-uio/teams/100509/lo/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -49,6 +49,10 @@ msgstr "ສ້າງ {{time}} ໂດຍ {{author}}"
 
 msgid "Created {{time}}"
 msgstr "ສ້າງ {{time}}"
+
+msgid "Viewed {{count}} times"
+msgid_plural "Viewed {{count}} times"
+msgstr[0] "ກວດເບິ່ງ {{count}} ຄັ້ງ"
 
 msgid "Notifications"
 msgstr "ການແຈ້ງເຕືອນ"
@@ -592,6 +596,10 @@ msgstr ""
 msgid "Reply"
 msgstr "ຕອບກັບ"
 
+msgid "{{count}} replies"
+msgid_plural "{{count}} replies"
+msgstr[0] "{{count}} ການຕອບກັບ"
+
 msgid "View replies"
 msgstr "ເບິ່ງການຕອບກັບ"
 
@@ -733,36 +741,20 @@ msgstr ""
 msgid "New map"
 msgstr "ແຜນທີ່ໃໝ່"
 
-msgid "Open a line list"
-msgstr "ເປີດບັນຊີລາຍຊື່"
-
-msgid "Loading line lists"
-msgstr "ໂຫຼດບັນຊີລາຍຊື່"
-
-msgid "Couldn't load line lists"
-msgstr "ບໍ່ສາມາດໂຫຼດບັນຊີລາຍຊື່"
-
-msgid ""
-"There was a problem loading line lists. Try again or contact your system "
-"administrator."
-msgstr ""
-"ພົບບັນຫາໃນການໂຫຼດບັນຊີລາຍຊື່. ລອງອີກຄັ້ງ ຫຼື ຕິດຕໍ່ຜູ້ດູແລລະບົບຂອງທ່ານ."
-
-msgid "No line lists found. Click New line list to get started."
-msgstr "ບໍ່ພົບບັນຊີລາຍຊື່. ຄລິກເພີ່ມບັນຊີລາຍຊື່ໃໝ່ເພື່ອເລີ່ມຕົ້ນ."
-
-msgid ""
-"No line lists found. Try adjusting your search or filter options to find "
-"what you're looking for."
-msgstr ""
-"ບໍ່ພົບບັນຊີລາຍຊື່. ລອງປັບຕົວເລືອກການຄົ້ນຫາ ຫຼື "
-"ຕົວກອງເພື່ອສິ່ງທີ່ທ່ານກໍາລັງຄົ້ນຫາ."
-
-msgid "New line list"
-msgstr "ເພີ່ມບັນຊີລາຍຊື່ໃໝ່"
-
 msgid "Hide"
 msgstr "ເຊື່ອງ"
+
+msgid "{{count}} org units"
+msgid_plural "{{count}} org units"
+msgstr[0] "{{count}} ໜ່ວຍງານອົງການ"
+
+msgid "{{count}} levels"
+msgid_plural "{{count}} levels"
+msgstr[0] "{{count}} ຂັ້ນ"
+
+msgid "{{count}} groups"
+msgid_plural "{{count}} groups"
+msgstr[0] "{{count}} ກຸ່ມ"
 
 msgid "Selected: {{commaSeparatedListOfOrganisationUnits}}"
 msgstr "ເລືອກ {{commaSeparatedListOfOrganisationUnits}}"
@@ -1479,6 +1471,10 @@ msgstr "ຖານ"
 
 msgid "Axis {{axisId}}"
 msgstr "ແກນ {{axisId}}"
+
+msgid "{{count}} items"
+msgid_plural "{{count}} items"
+msgstr[0] "{{count}} ລາຍການ"
 
 msgid "Reset zoom"
 msgstr "ຣີເຊັດຊູມ"

@@ -7,19 +7,19 @@
 # Andres Miguel Rubio, 2025
 # Alison Andrade <aandrade@ippfwhr.org>, 2025
 # Janeth Cruz, 2025
-# Enzo Nicolas Rossi <enzo@dhis2.org>, 2025
 # Pablo Pajuelo Cabezas <pablo@dhis2.org>, 2025
 # Nancy Espinoza, 2025
 # Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2025
-# Philip Larsen Donnelly, 2026
 # Viktor Varland <viktor@dhis2.org>, 2026
+# Philip Larsen Donnelly, 2026
+# Enzo Nicolas Rossi <enzo@dhis2.org>, 2026
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2026-05-28T08:40:06.387Z\n"
+"POT-Creation-Date: 2026-08-27T11:56:55.720Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2026\n"
+"Last-Translator: Enzo Nicolas Rossi <enzo@dhis2.org>, 2026\n"
 "Language-Team: Spanish (https://app.transifex.com/hisp-uio/teams/100509/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -56,6 +56,12 @@ msgstr "Creado {{time}} por {{author}}"
 
 msgid "Created {{time}}"
 msgstr "Creado {{time}}"
+
+msgid "Viewed {{count}} times"
+msgid_plural "Viewed {{count}} times"
+msgstr[0] "Visto 1 vez"
+msgstr[1] "Visto {{count}} veces"
+msgstr[2] "Visto {{count}} veces"
 
 msgid "Notifications"
 msgstr "Notificaciones"
@@ -612,6 +618,12 @@ msgstr ""
 msgid "Reply"
 msgstr "Responder"
 
+msgid "{{count}} replies"
+msgid_plural "{{count}} replies"
+msgstr[0] "{{contar}} respuesta"
+msgstr[1] "{{contar}} respuestas"
+msgstr[2] "{{count}} respuestas"
+
 msgid "View replies"
 msgstr "Ver respuestas"
 
@@ -761,37 +773,26 @@ msgstr ""
 msgid "New map"
 msgstr "Nuevo mapa"
 
-msgid "Open a line list"
-msgstr "Abrir un listado"
-
-msgid "Loading line lists"
-msgstr "Cargar listados"
-
-msgid "Couldn't load line lists"
-msgstr "No se pudieron cargar los listados"
-
-msgid ""
-"There was a problem loading line lists. Try again or contact your system "
-"administrator."
-msgstr ""
-"Hubo un problema al cargar las listas. Vuelva a intentarlo o póngase en "
-"contacto con el administrador del sistema."
-
-msgid "No line lists found. Click New line list to get started."
-msgstr "No se encontraron listas. Haga clic en Nueva lista para comenzar."
-
-msgid ""
-"No line lists found. Try adjusting your search or filter options to find "
-"what you're looking for."
-msgstr ""
-"No se encontraron listas. Intente ajustar sus opciones de búsqueda o filtro "
-"para encontrar lo que está buscando."
-
-msgid "New line list"
-msgstr "Nuevo listado"
-
 msgid "Hide"
 msgstr "Ocultar"
+
+msgid "{{count}} org units"
+msgid_plural "{{count}} org units"
+msgstr[0] "{{count}} unidad organizativa"
+msgstr[1] "{{count}} unidades de organización"
+msgstr[2] "{{count}} unidades organizativas"
+
+msgid "{{count}} levels"
+msgid_plural "{{count}} levels"
+msgstr[0] "{{count}} nivel"
+msgstr[1] "{{count}} niveles"
+msgstr[2] "{{count}} niveles"
+
+msgid "{{count}} groups"
+msgid_plural "{{count}} groups"
+msgstr[0] "{{count}} grupo"
+msgstr[1] "{{count}} grupos"
+msgstr[2] "{{count}} grupos"
 
 msgid "Selected: {{commaSeparatedListOfOrganisationUnits}}"
 msgstr "Seleccionado: {{commaSeparatedListOfOrganisationUnits}}"
@@ -1510,6 +1511,12 @@ msgstr "Base"
 
 msgid "Axis {{axisId}}"
 msgstr "Eje {{axisId}}"
+
+msgid "{{count}} items"
+msgid_plural "{{count}} items"
+msgstr[0] "{{count}} elemento"
+msgstr[1] "{{count}} artículos"
+msgstr[2] "{{count}} artículos"
 
 msgid "Reset zoom"
 msgstr "Restablecer zoom"

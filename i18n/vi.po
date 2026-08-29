@@ -1,16 +1,16 @@
 # Translators:
 # Thuy Nguyen <thuynguyen@hispvietnam.org>, 2025
-# Philip Larsen Donnelly, 2025
 # Mai Nguyen <thanhmai.jica@gmail.com>, 2025
 # Viktor Varland <viktor@dhis2.org>, 2026
 # Em Le <em.hispvietnam@gmail.com>, 2026
+# Philip Larsen Donnelly, 2026
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2026-05-28T08:40:06.387Z\n"
+"POT-Creation-Date: 2026-08-27T11:56:55.720Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Em Le <em.hispvietnam@gmail.com>, 2026\n"
+"Last-Translator: Philip Larsen Donnelly, 2026\n"
 "Language-Team: Vietnamese (https://app.transifex.com/hisp-uio/teams/100509/vi/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -47,6 +47,10 @@ msgstr "Được tạo {{time}}bởi {{author}}"
 
 msgid "Created {{time}}"
 msgstr "Được tạo {{time}}"
+
+msgid "Viewed {{count}} times"
+msgid_plural "Viewed {{count}} times"
+msgstr[0] "Đã xem {{count}}lần"
 
 msgid "Notifications"
 msgstr "Thông báo"
@@ -597,6 +601,10 @@ msgstr ""
 msgid "Reply"
 msgstr "Trả lời"
 
+msgid "{{count}} replies"
+msgid_plural "{{count}} replies"
+msgstr[0] "{{count}} câu trả lời"
+
 msgid "View replies"
 msgstr "Xem trả lời"
 
@@ -746,38 +754,20 @@ msgstr ""
 msgid "New map"
 msgstr "Bản đồ mới"
 
-msgid "Open a line list"
-msgstr "Mở một danh sách dòng"
-
-msgid "Loading line lists"
-msgstr "Đang tải danh sách dòng"
-
-msgid "Couldn't load line lists"
-msgstr "Không thể tải danh sách dòng"
-
-msgid ""
-"There was a problem loading line lists. Try again or contact your system "
-"administrator."
-msgstr ""
-"Đã xảy ra sự cố khi tải danh sách dòng. Hãy thử lại hoặc liên hệ với quản "
-"trị viên hệ thống của bạn."
-
-msgid "No line lists found. Click New line list to get started."
-msgstr ""
-"Không tìm thấy danh sách dòng nào. Bấm vào Danh sách dòng mới để bắt đầu."
-
-msgid ""
-"No line lists found. Try adjusting your search or filter options to find "
-"what you're looking for."
-msgstr ""
-"Không tìm thấy danh sách dòng nào. Hãy thử điều chỉnh tùy chọn tìm kiếm hoặc"
-" bộ lọc để tìm những gì bạn đang tìm kiếm."
-
-msgid "New line list"
-msgstr "Danh sách dòng mới"
-
 msgid "Hide"
 msgstr "Ẩn"
+
+msgid "{{count}} org units"
+msgid_plural "{{count}} org units"
+msgstr[0] "{{count}} đơn vị"
+
+msgid "{{count}} levels"
+msgid_plural "{{count}} levels"
+msgstr[0] "{{count}} cấp độ"
+
+msgid "{{count}} groups"
+msgid_plural "{{count}} groups"
+msgstr[0] "{{count}} nhóm"
 
 msgid "Selected: {{commaSeparatedListOfOrganisationUnits}}"
 msgstr "Đã chọn: {{commaSeparatedListOfOrganisationUnits}}"
@@ -1495,6 +1485,10 @@ msgstr "Đường đáy"
 
 msgid "Axis {{axisId}}"
 msgstr "Trục {{axisId}}"
+
+msgid "{{count}} items"
+msgid_plural "{{count}} items"
+msgstr[0] "{{count}}mục"
 
 msgid "Reset zoom"
 msgstr "Đặt lại thu phóng"

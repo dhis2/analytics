@@ -1,15 +1,15 @@
 # Translators:
 # Philip Larsen Donnelly, 2025
 # Viktor Varland <viktor@dhis2.org>, 2025
-# easylin <lin_xd@126.com>, 2025
 # 晓东 林 <13981924470@126.com>, 2026
+# easylin <lin_xd@126.com>, 2026
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2026-05-28T08:40:06.387Z\n"
+"POT-Creation-Date: 2026-08-27T11:56:55.720Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: 晓东 林 <13981924470@126.com>, 2026\n"
+"Last-Translator: easylin <lin_xd@126.com>, 2026\n"
 "Language-Team: Chinese (https://app.transifex.com/hisp-uio/teams/100509/zh/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -46,6 +46,10 @@ msgstr "由 {{author}} 在 {{time}} 创建"
 
 msgid "Created {{time}}"
 msgstr "已创建 {{time}}"
+
+msgid "Viewed {{count}} times"
+msgid_plural "Viewed {{count}} times"
+msgstr[0] "查看了 {{count}} 条"
 
 msgid "Notifications"
 msgstr "通知"
@@ -585,6 +589,10 @@ msgstr "无法加载解释"
 msgid "Reply"
 msgstr "应答"
 
+msgid "{{count}} replies"
+msgid_plural "{{count}} replies"
+msgstr[0] "{{count}}条回复"
+
 msgid "View replies"
 msgstr "查看回复"
 
@@ -720,33 +728,20 @@ msgstr "未找到地图。尝试调整您的搜索或过滤选项以找到您要
 msgid "New map"
 msgstr "新地图"
 
-msgid "Open a line list"
-msgstr "打开一个行列表"
-
-msgid "Loading line lists"
-msgstr "加载行列表"
-
-msgid "Couldn't load line lists"
-msgstr "无法加载行列表"
-
-msgid ""
-"There was a problem loading line lists. Try again or contact your system "
-"administrator."
-msgstr "加载行列表时出现问题。重试或联系您的系统管理员。"
-
-msgid "No line lists found. Click New line list to get started."
-msgstr "未找到行列表。单击新行列表开始。"
-
-msgid ""
-"No line lists found. Try adjusting your search or filter options to find "
-"what you're looking for."
-msgstr "未找到行列表。尝试调整您的搜索或过滤选项以找到您要查找的内容。"
-
-msgid "New line list"
-msgstr "新行列表"
-
 msgid "Hide"
 msgstr "隐藏"
+
+msgid "{{count}} org units"
+msgid_plural "{{count}} org units"
+msgstr[0] "{{count}} 个组织单位"
+
+msgid "{{count}} levels"
+msgid_plural "{{count}} levels"
+msgstr[0] "{{count}} 级"
+
+msgid "{{count}} groups"
+msgid_plural "{{count}} groups"
+msgstr[0] "{{count}} 组"
 
 msgid "Selected: {{commaSeparatedListOfOrganisationUnits}}"
 msgstr "已选择：{{commaSeparatedListOfOrganisationUnits}}"
@@ -1463,6 +1458,10 @@ msgstr "基"
 
 msgid "Axis {{axisId}}"
 msgstr "轴{{axisId}}"
+
+msgid "{{count}} items"
+msgid_plural "{{count}} items"
+msgstr[0] "{{count}} 个条目"
 
 msgid "Reset zoom"
 msgstr "重设缩放"

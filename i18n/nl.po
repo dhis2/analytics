@@ -9,7 +9,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2026-05-28T08:40:06.387Z\n"
+"POT-Creation-Date: 2026-08-27T11:56:55.720Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
 "Last-Translator: Rica, 2026\n"
 "Language-Team: Dutch (https://app.transifex.com/hisp-uio/teams/100509/nl/)\n"
@@ -48,6 +48,11 @@ msgstr "Gemaakt {{time}} door {{author}}"
 
 msgid "Created {{time}}"
 msgstr "Gemaakt {{time}}"
+
+msgid "Viewed {{count}} times"
+msgid_plural "Viewed {{count}} times"
+msgstr[0] ""
+msgstr[1] ""
 
 msgid "Notifications"
 msgstr "Meldingen"
@@ -597,6 +602,11 @@ msgstr ""
 msgid "Reply"
 msgstr "Antwoord"
 
+msgid "{{count}} replies"
+msgid_plural "{{count}} replies"
+msgstr[0] ""
+msgstr[1] ""
+
 msgid "View replies"
 msgstr "Antwoorden bekijken"
 
@@ -746,39 +756,23 @@ msgstr ""
 msgid "New map"
 msgstr "Nieuwe kaart"
 
-msgid "Open a line list"
-msgstr "Open een regellijst"
-
-msgid "Loading line lists"
-msgstr "Regellijsten laden"
-
-msgid "Couldn't load line lists"
-msgstr "Kan regellijsten niet laden"
-
-msgid ""
-"There was a problem loading line lists. Try again or contact your system "
-"administrator."
-msgstr ""
-"Er is een probleem opgetreden bij het laden van regellijsten. Probeer het "
-"opnieuw of neem contact op met uw systeembeheerder."
-
-msgid "No line lists found. Click New line list to get started."
-msgstr ""
-"Geen regellijsten gevonden. Klik op Nieuwe regellijst om aan de slag te "
-"gaan."
-
-msgid ""
-"No line lists found. Try adjusting your search or filter options to find "
-"what you're looking for."
-msgstr ""
-"Geen regellijsten gevonden. Probeer uw zoek- of filteropties aan te passen "
-"om te vinden wat u zoekt."
-
-msgid "New line list"
-msgstr "Nieuwe lijnlijst"
-
 msgid "Hide"
 msgstr "Verbergen"
+
+msgid "{{count}} org units"
+msgid_plural "{{count}} org units"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "{{count}} levels"
+msgid_plural "{{count}} levels"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "{{count}} groups"
+msgid_plural "{{count}} groups"
+msgstr[0] ""
+msgstr[1] ""
 
 msgid "Selected: {{commaSeparatedListOfOrganisationUnits}}"
 msgstr "Geselecteerd: {{commaSeparatedListOfOrganisationUnits}}"
@@ -1497,6 +1491,11 @@ msgstr "Baseren"
 
 msgid "Axis {{axisId}}"
 msgstr "As {{axisId}}"
+
+msgid "{{count}} items"
+msgid_plural "{{count}} items"
+msgstr[0] ""
+msgstr[1] ""
 
 msgid "Reset zoom"
 msgstr "Zoom resetten"
