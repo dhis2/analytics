@@ -44,7 +44,6 @@ const FormulaItem = ({
     })
 
     const inputRef = useRef(null)
-    const ignoreClickRef = useRef(false)
 
     useEffect(() => {
         if (hasFocus && inputRef.current) {
@@ -91,10 +90,6 @@ const FormulaItem = ({
     }
 
     const handleClick = (e) => {
-        if (ignoreClickRef.current) {
-            ignoreClickRef.current = false
-            return
-        }
         if (isInteractiveElement(e.target)) {
             inputRef.current && inputRef.current.focus()
             return
@@ -107,11 +102,6 @@ const FormulaItem = ({
     const handleKeyDown = (e) => {
         if (isInteractiveElement(e.target)) {
             return
-        }
-        if (e.key === 'Enter' || e.key === ' ') {
-            // role="button" from dnd-kit also synthesizes a click on Enter/Space;
-            // ignore that click so selection is not toggled off right after.
-            ignoreClickRef.current = true
         }
         onActivationKeydown(() => onClick(id))(e)
     }

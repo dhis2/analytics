@@ -13,7 +13,7 @@ import {
 } from '@dhis2/ui'
 import cx from 'classnames'
 import PropTypes from 'prop-types'
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useMemo, useRef, useState } from 'react'
 import css from 'styled-jsx/css'
 import {
     createCalculationMutation,
@@ -171,7 +171,10 @@ const CalculationModal = ({
         minWidth: MODAL_MIN_CONTENT_WIDTH,
         maxWidth: MODAL_MAX_CONTENT_WIDTH,
     })
-    const contentWidthCSS = getContentWidthCSS(modalContentWidth)
+    const contentWidthCSS = useMemo(
+        () => getContentWidthCSS(modalContentWidth),
+        [modalContentWidth]
+    )
 
     const expressionStatus = validationOutput?.status
     const validationMessage =
@@ -381,8 +384,6 @@ const CalculationModal = ({
                 expression,
             })
 
-            // useDataMutation never rejects; network/engine failures go to
-            // onError and this promise does not resolve.
             if (!backendResult) {
                 return
             }
