@@ -27,13 +27,12 @@ import { applyOptionSetHandler } from './optionSet.js'
 
 export const PREFIX_SEPARATOR = '_'
 export const NA_VALUE = ''
+export const D2__NOVALUE = 'D2__NOVALUE'
 export const NA_VALUE_ITEM = {
     name: i18n.t('No value'),
+    code: D2__NOVALUE,
     style: {
-        fontStyle: 'italic',
         color: '#6C7787',
-        fontFamily: 'monospace',
-        letterSpacing: '-0.3px',
     },
 }
 
@@ -192,11 +191,12 @@ export const transformResponse = (
                     ...transformedResponse.metaData.dimensions[header.name],
                     NA_VALUE,
                 ]
-
-                transformedResponse.metaData.items[NA_VALUE] = NA_VALUE_ITEM
             }
         })
     }
+
+    transformedResponse.metaData.items[NA_VALUE] = NA_VALUE_ITEM
+    transformedResponse.metaData.items[D2__NOVALUE] = NA_VALUE_ITEM
 
     return transformedResponse
 }
