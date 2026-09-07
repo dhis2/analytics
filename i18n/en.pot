@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2026-08-27T11:56:55.720Z\n"
-"PO-Revision-Date: 2026-08-27T11:56:55.720Z\n"
+"POT-Creation-Date: 2026-09-07T09:22:41.250Z\n"
+"PO-Revision-Date: 2026-09-07T09:22:41.251Z\n"
 
 msgid "view only"
 msgstr "view only"
@@ -79,23 +79,11 @@ msgstr "This app could not retrieve required data."
 msgid "Network error"
 msgstr "Network error"
 
-msgid "Add or select the focused item"
-msgstr "Add or select the focused item"
-
-msgid "Move the selected item"
-msgstr "Move the selected item"
-
-msgid "Insert an operator after the selected item"
-msgstr "Insert an operator after the selected item"
-
-msgid "Keyboard navigation"
-msgstr "Keyboard navigation"
+msgid "Could not validate the formula"
+msgstr "Could not validate the formula"
 
 msgid "The formula is valid"
 msgstr "The formula is valid"
-
-msgid "Could not validate the formula"
-msgstr "Could not validate the formula"
 
 msgid "Data / Edit calculation"
 msgstr "Data / Edit calculation"
@@ -111,21 +99,6 @@ msgstr "Shown in table headers and chart axes/legends"
 
 msgid "Formula"
 msgstr "Formula"
-
-msgid "Remove item"
-msgstr "Remove item"
-
-msgid "Check formula"
-msgstr "Check formula"
-
-msgid ""
-"Drag or click a data element or operator to add it to the formula. Drag to "
-"reorder. Select an item and click Remove item, or double-click, to delete "
-"it."
-msgstr ""
-"Drag or click a data element or operator to add it to the formula. Drag to "
-"reorder. Select an item and click Remove item, or double-click, to delete "
-"it."
 
 msgid "Delete calculation"
 msgstr "Delete calculation"
@@ -179,6 +152,12 @@ msgid ""
 msgstr ""
 "Drag a data element or operator here, or click one, to start building a "
 "formula"
+
+msgid "Remove item"
+msgstr "Remove item"
+
+msgid "Check formula"
+msgstr "Check formula"
 
 msgid "Expression description"
 msgstr "Expression description"
