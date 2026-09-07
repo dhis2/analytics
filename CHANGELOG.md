@@ -1,3 +1,10 @@
+# [29.6.0](https://github.com/dhis2/analytics/compare/v29.5.5...v29.6.0) (2026-08-27)
+
+
+### Features
+
+* allow the app to override metaData.items names in the event response transformer ([#1843](https://github.com/dhis2/analytics/issues/1843)) ([3a6b1e5](https://github.com/dhis2/analytics/commit/3a6b1e584ce563e30a559366424ded7f3666f527))
+
 ## [29.5.5](https://github.com/dhis2/analytics/compare/v29.5.4...v29.5.5) (2026-06-30)
 
 
