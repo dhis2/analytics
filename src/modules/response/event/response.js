@@ -143,6 +143,9 @@ export const transformResponse = (
         },
     }
 
+    transformedResponse.metaData.items[NA_VALUE] = NA_VALUE_ITEM
+    transformedResponse.metaData.items[D2__NOVALUE] = NA_VALUE_ITEM
+
     // Add index to all headers
     // Include only headers that are "meta" and skip "pe" and "ou"
     const metaHeaders = response.headers
@@ -194,9 +197,6 @@ export const transformResponse = (
             }
         })
     }
-
-    transformedResponse.metaData.items[NA_VALUE] = NA_VALUE_ITEM
-    transformedResponse.metaData.items[D2__NOVALUE] = NA_VALUE_ITEM
 
     return transformedResponse
 }

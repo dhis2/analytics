@@ -26,6 +26,7 @@ export const getOptionIdRows = (rows, optionCodeIdMap, headerIndex) => {
 export const applyOptionSetHandler = (response, headerIndex) => {
     const header = response.headers[headerIndex]
     const optionIds = response.metaData.dimensions[header.name]
+    console.log("CRASH", optionIds, response.metaData.items)
     const optionCodeIdMap = getOptionCodeIdMap(
         optionIds,
         response.metaData.items
