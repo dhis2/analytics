@@ -4,12 +4,10 @@ import { getOperators } from '../../../modules/expressions.js'
 import DraggableOperator from './Operator.js'
 import styles from './styles/MathOperatorSelector.style.js'
 
-const OPERATORS = getOperators()
-
 const MathOperatorSelector = ({ onClick }) => (
     <>
         <div className="operators" data-test="operators-list">
-            {OPERATORS.map(({ label, value, type }, index) => (
+            {getOperators().map(({ label, value, type }, index) => (
                 <DraggableOperator
                     key={`${label}-${index}`}
                     label={label}

@@ -113,7 +113,7 @@ export default css`
         min-width: 0;
     }
 
-    .valid .status-text {
+    .formula-box.valid .status-text {
         color: ${colors.green700};
     }
 

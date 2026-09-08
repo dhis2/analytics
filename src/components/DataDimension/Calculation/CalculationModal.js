@@ -51,15 +51,11 @@ import styles from './styles/CalculationModal.style.js'
 const FIRST_POSITION = 0
 const LAST_POSITION = -1
 const CALCULATION_PROP_DEFAULT = {}
-const OPERATORS = getOperators()
-// Matches the content width of the previous fixed `large` Modal size, so
-// the modal never gets narrower than it used to on small windows.
-const MODAL_MIN_CONTENT_WIDTH = 740
-// Caps how far the modal grows on wide screens, so the two columns don't
-// stretch out further than is useful.
+// Matches the content width of the previous fixed `large` Modal
+const MODAL_MIN_CONTENT_WIDTH = 752
 const MODAL_MAX_CONTENT_WIDTH = 1000
 
-const getContentWidthCSS = (width) => css.resolve`
+const getModalContentCSS = (width) => css.resolve`
     .content {
         width: ${width}px;
     }
@@ -86,9 +82,7 @@ const CalculationModal = ({
         {
             onError: (error) =>
                 showError(
-                    error?.message ||
-                        error ||
-                        i18n.t('Could not validate the formula')
+                    error?.message || i18n.t('Could not validate the formula')
                 ),
         }
     )
@@ -153,9 +147,6 @@ const CalculationModal = ({
     }, [data, calculation.expression])
 
     const nextItemIdRef = useRef(1)
-    // State is read through this ref instead of a closure, so the
-    // document-level keydown listener can be registered once on mount
-    // and still see fresh state on every keystroke.
     const latestRef = useRef()
 
     const [validationOutput, setValidationOutput] = useState(null)
@@ -171,8 +162,8 @@ const CalculationModal = ({
         minWidth: MODAL_MIN_CONTENT_WIDTH,
         maxWidth: MODAL_MAX_CONTENT_WIDTH,
     })
-    const contentWidthCSS = useMemo(
-        () => getContentWidthCSS(modalContentWidth),
+    const modalContentCSS = useMemo(
+        () => getModalContentCSS(modalContentWidth),
         [modalContentWidth]
     )
 
@@ -182,14 +173,15 @@ const CalculationModal = ({
             ? i18n.t('The formula is valid')
             : validationOutput?.message
 
-    const selectItem = (itemId) =>
-        setSelectedItemId((prevSelected) => {
-            const next = prevSelected !== itemId ? itemId : null
-            if (latestRef.current) {
-                latestRef.current.selectedItemId = next
-            }
-            return next
-        })
+    const selectItem = (itemId) => {
+        const prevSelected = latestRef.current?.selectedItemId
+        const next = prevSelected !== itemId ? itemId : null
+
+        if (latestRef.current) {
+            latestRef.current.selectedItemId = next
+        }
+        setSelectedItemId(next)
+    }
 
     const isLoading =
         isCreatingCalculation ||
@@ -211,8 +203,6 @@ const CalculationModal = ({
             type,
         }
 
-        // Without an explicit destIndex, insert after the selected item
-        // instead of always appending.
         const selectedId = latestRef.current?.selectedItemId
         setExpressionArray((prevArray) => {
             let insertAt = destIndex
@@ -237,8 +227,6 @@ const CalculationModal = ({
             setFocusItemId(newItem.id)
         }
 
-        // Keep the newly added item selected so it becomes the anchor for
-        // the next typed operator or arrow-key move.
         setSelectedItemId(newItem.id)
         latestRef.current.selectedItemId = newItem.id
     }
@@ -276,6 +264,8 @@ const CalculationModal = ({
         }
     }
 
+    // Mirrored on every render so the keydown listener below, which is
+    // registered once on mount, still sees fresh values on every keystroke.
     latestRef.current = {
         isLoading,
         showDeletePrompt,
@@ -296,22 +286,18 @@ const CalculationModal = ({
                 moveItem,
             } = latestRef.current
 
-            // On some layouts (e.g. German, French) operator characters
-            // like ( ) * are typed via AltGr, which browsers report as
-            // altKey/ctrlKey being set - don't let that block the shortcut.
-            const isAltGraph = event.getModifierState?.('AltGraph')
-
             if (
                 isLoading ||
                 showDeletePrompt ||
                 event.metaKey ||
-                (!isAltGraph && (event.ctrlKey || event.altKey)) ||
+                event.ctrlKey ||
+                event.altKey ||
                 isInteractiveElement(event.target)
             ) {
                 return
             }
 
-            const operator = OPERATORS.find(
+            const operator = getOperators().find(
                 (op) =>
                     op.type === EXPRESSION_TYPE_OPERATOR &&
                     op.value === event.key
@@ -473,7 +459,9 @@ const CalculationModal = ({
                         onDragStart={() => setFocusItemId(null)}
                         onDragEnd={addOrMoveDraggedItem}
                     >
-                        <div className={`content ${contentWidthCSS.className}`}>
+                        <div
+                            className={cx('content', modalContentCSS.className)}
+                        >
                             <div className="left-section">
                                 <DataElementSelector
                                     displayNameProp={displayNameProp}
@@ -633,7 +621,7 @@ const CalculationModal = ({
                     </ModalActions>
                 </Modal>
             )}
-            {contentWidthCSS.styles}
+            {modalContentCSS.styles}
             <style jsx>{styles}</style>
         </>
     )
