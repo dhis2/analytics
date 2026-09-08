@@ -27,6 +27,7 @@ const Operator = ({ label, value, type, onClick }) => {
             {...listeners}
             ref={setNodeRef}
             style={style}
+            onClick={() => onClick(data)}
             onKeyDown={onActivationKeydown(() => onClick(data))}
         >
             <div
@@ -35,7 +36,6 @@ const Operator = ({ label, value, type, onClick }) => {
                     number: type === EXPRESSION_TYPE_NUMBER,
                 })}
                 data-test="operator"
-                onClick={() => onClick(data)}
             >
                 <span>{label}</span>
             </div>

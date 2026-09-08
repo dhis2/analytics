@@ -26,13 +26,10 @@ const DataElementOption = ({ label, value, onClick }) => {
                 {...listeners}
                 ref={setNodeRef}
                 style={style}
+                onClick={() => onClick(data)}
                 onKeyDown={onActivationKeydown(() => onClick(data))}
             >
-                <div
-                    className="chip"
-                    onClick={() => onClick(data)}
-                    data-test="data-element-option"
-                >
+                <div className="chip" data-test="data-element-option">
                     <span className="icon">
                         {getIcon(DIMENSION_TYPE_DATA_ELEMENT)}
                     </span>
