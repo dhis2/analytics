@@ -5,8 +5,8 @@ import React from 'react'
 import { DIMENSION_TYPE_DATA_ELEMENT } from '../../../modules/dataTypes.js'
 import { getIcon } from '../../../modules/dimensionListItem.js'
 import { EXPRESSION_TYPE_DATA } from '../../../modules/expressions.js'
-import { onActivationKeydown } from './DndContext.js'
 import styles from './styles/DataElementOption.style.js'
+import draggableChipButtonStyles from './styles/DraggableChipButton.style.js'
 
 const DataElementOption = ({ label, value, onClick }) => {
     const data = { label, value, type: EXPRESSION_TYPE_DATA }
@@ -20,16 +20,15 @@ const DataElementOption = ({ label, value, onClick }) => {
 
     return (
         <div className="wrapper">
-            <div
+            <button
+                type="button"
                 className="draggable-item"
-                role="button"
-                tabIndex={0}
+                data-drag-chip
                 {...attributes}
                 {...listeners}
                 ref={setNodeRef}
                 style={style}
                 onClick={() => onClick(data)}
-                onKeyDown={onActivationKeydown(() => onClick(data))}
             >
                 <div className="chip" data-test="data-element-option">
                     <span className="icon">
@@ -37,7 +36,8 @@ const DataElementOption = ({ label, value, onClick }) => {
                     </span>
                     <span className="label">{label}</span>
                 </div>
-            </div>
+            </button>
+            <style jsx>{draggableChipButtonStyles}</style>
             <style jsx>{styles}</style>
         </div>
     )

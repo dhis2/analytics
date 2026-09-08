@@ -7,7 +7,7 @@ import {
     EXPRESSION_TYPE_NUMBER,
     EXPRESSION_TYPE_OPERATOR,
 } from '../../../modules/expressions.js'
-import { onActivationKeydown } from './DndContext.js'
+import draggableChipButtonStyles from './styles/DraggableChipButton.style.js'
 import formulaItemStyles from './styles/FormulaItem.style.js'
 import styles from './styles/Operator.style.js'
 
@@ -22,15 +22,15 @@ const Operator = ({ label, value, type, onClick }) => {
     }
 
     return (
-        <div
-            role="button"
-            tabIndex={0}
+        <button
+            type="button"
+            className="draggable-item"
+            data-drag-chip
             {...attributes}
             {...listeners}
             ref={setNodeRef}
             style={style}
             onClick={() => onClick(data)}
-            onKeyDown={onActivationKeydown(() => onClick(data))}
         >
             <div
                 className={cx('content', {
@@ -41,9 +41,10 @@ const Operator = ({ label, value, type, onClick }) => {
             >
                 <span>{label}</span>
             </div>
+            <style jsx>{draggableChipButtonStyles}</style>
             <style jsx>{formulaItemStyles}</style>
             <style jsx>{styles}</style>
-        </div>
+        </button>
     )
 }
 

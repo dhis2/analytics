@@ -9,11 +9,6 @@ export default css`
     .wrapper:last-child {
         margin-bottom: ${spacers.dp4};
     }
-    .draggable-item {
-        cursor: pointer;
-        display: inline-flex;
-    }
-
     .chip {
         display: inline-flex;
         background: ${colors.grey200};
