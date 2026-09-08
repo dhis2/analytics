@@ -123,6 +123,11 @@ const applyMetaDataItemNameOverrides = (items, metaDataItemNames) =>
         { ...items }
     )
 
+const addNoValueItem = items => ({
+    ...items,
+    [NA_VALUE]: NA_VALUE_ITEM
+})
+
 export const transformResponse = (
     response,
     { hideNaData = false, metaDataItemNames = {} } = {}
@@ -133,18 +138,15 @@ export const transformResponse = (
         ...response,
         metaData: {
             ...response.metaData,
-            items: applyMetaDataItemNameOverrides(
+            items: addNoValueItem(applyMetaDataItemNameOverrides(
                 response.metaData.items,
                 metaDataItemNames
-            ),
+            )),
             dimensions: {
                 ...response.metaData.dimensions,
             },
         },
     }
-
-    transformedResponse.metaData.items[NA_VALUE] = NA_VALUE_ITEM
-    transformedResponse.metaData.items[D2__NOVALUE] = NA_VALUE_ITEM
 
     // Add index to all headers
     // Include only headers that are "meta" and skip "pe" and "ou"
@@ -183,11 +185,14 @@ export const transformResponse = (
         }
     })
 
-    // Add "No value" dimension item if "Hide NA data" option is disabled
-    // Only add if there is at least one empty value
+    // Add "No value" dimension item if
+    // - "Hide NA data" option is disabled
+    // - NA_VALUE is not already a dimension
+    // - there is at least one empty value
     if (!hideNaData) {
         metaHeaders.forEach((header) => {
             if (
+                !transformedResponse.metaData.dimensions[header.name].includes(NA_VALUE) &&
                 response.rows.map((row) => row[header.index]).includes(NA_VALUE)
             ) {
                 transformedResponse.metaData.dimensions[header.name] = [
@@ -197,6 +202,6 @@ export const transformResponse = (
             }
         })
     }
-
+    
     return transformedResponse
 }
