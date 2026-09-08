@@ -22,6 +22,8 @@ const DataElementOption = ({ label, value, onClick }) => {
         <div className="wrapper">
             <div
                 className="draggable-item"
+                role="button"
+                tabIndex={0}
                 {...attributes}
                 {...listeners}
                 ref={setNodeRef}

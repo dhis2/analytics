@@ -23,6 +23,8 @@ const Operator = ({ label, value, type, onClick }) => {
 
     return (
         <div
+            role="button"
+            tabIndex={0}
             {...attributes}
             {...listeners}
             ref={setNodeRef}
