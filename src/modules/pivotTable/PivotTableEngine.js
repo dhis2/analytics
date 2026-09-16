@@ -102,10 +102,10 @@ const listByDimension = (list) =>
         return all
     }, {})
 
-const ORGUNIT_DIMENSION_IDS = [
+const ORGUNIT_DIMENSION_IDS = new Set([
     DIMENSION_ID_ORGUNIT,
     DIMENSION_ID_ENROLLMENT_ORGUNIT,
-]
+])
 
 /* Event and enrollment analytics qualify the event org unit dimension with
  * the program stage (`<stageId>.ou`) and name the enrollment-scoped one
@@ -113,7 +113,7 @@ const ORGUNIT_DIMENSION_IDS = [
  * match on the unqualified dimension id where the type is unavailable. */
 const isOrgUnitDimension = ({ dimension, meta }) =>
     meta?.dimensionType === DIMENSION_TYPE_ORGANISATION_UNIT ||
-    ORGUNIT_DIMENSION_IDS.includes(dimension.split('.').pop())
+    ORGUNIT_DIMENSION_IDS.has(dimension.split('.').pop())
 
 const sortByHierarchy = (items) => {
     items.sort((a, b) => {
