@@ -6,7 +6,10 @@ import {
     DIMENSION_TYPE_ORGANISATION_UNIT,
     DIMENSION_TYPE_PERIOD,
 } from '../dataTypes.js'
-import { DIMENSION_ID_ORGUNIT } from '../predefinedDimensions.js'
+import {
+    DIMENSION_ID_ENROLLMENT_ORGUNIT,
+    DIMENSION_ID_ORGUNIT,
+} from '../predefinedDimensions.js'
 import { renderValue } from '../renderValue.js'
 import {
     VALUE_TYPE_NUMBER,
@@ -99,6 +102,19 @@ const listByDimension = (list) =>
         return all
     }, {})
 
+const ORGUNIT_DIMENSION_IDS = [
+    DIMENSION_ID_ORGUNIT,
+    DIMENSION_ID_ENROLLMENT_ORGUNIT,
+]
+
+/* Event and enrollment analytics qualify the event org unit dimension with
+ * the program stage (`<stageId>.ou`) and name the enrollment-scoped one
+ * `enrollmentou`. Neither carries `dimensionType` in `metaData.items`, so
+ * match on the unqualified dimension id where the type is unavailable. */
+const isOrgUnitDimension = ({ dimension, meta }) =>
+    meta?.dimensionType === DIMENSION_TYPE_ORGANISATION_UNIT ||
+    ORGUNIT_DIMENSION_IDS.includes(dimension.split('.').pop())
+
 const sortByHierarchy = (items) => {
     items.sort((a, b) => {
         if (!a.hierarchy || !b.hierarchy) {
@@ -106,6 +122,17 @@ const sortByHierarchy = (items) => {
         }
         return a.hierarchy.join('/').localeCompare(b.hierarchy.join('/'))
     })
+}
+
+const applyHierarchy = (ouDimension, ouNameHierarchy) => {
+    ouDimension.items.forEach((ou) => {
+        const hierarchy = ouNameHierarchy[ou.uid]
+        if (hierarchy) {
+            ou.hierarchy = hierarchy.split('/').filter((x) => x.length)
+        }
+    })
+    sortByHierarchy(ouDimension.items)
+    ouDimension.itemIds = ouDimension.items.map((item) => item.uid)
 }
 
 const buildDimensionLookup = (visualization, metadata, headers) => {
@@ -165,21 +192,12 @@ const buildDimensionLookup = (visualization, metadata, headers) => {
         return out
     }, {})
 
-    const ouDimension = allByDimension[DIMENSION_ID_ORGUNIT]
-
-    if (
-        visualization.showHierarchy &&
-        metadata.ouNameHierarchy &&
-        ouDimension
-    ) {
-        ouDimension.items.forEach((ou) => {
-            const hierarchy = metadata.ouNameHierarchy[ou.uid]
-            if (hierarchy) {
-                ou.hierarchy = hierarchy.split('/').filter((x) => x.length)
-            }
-        })
-        sortByHierarchy(ouDimension.items)
-        ouDimension.itemIds = ouDimension.items.map((item) => item.uid)
+    if (visualization.showHierarchy && metadata.ouNameHierarchy) {
+        Object.values(allByDimension)
+            .filter(isOrgUnitDimension)
+            .forEach((ouDimension) =>
+                applyHierarchy(ouDimension, metadata.ouNameHierarchy)
+            )
     }
 
     return {
