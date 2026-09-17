@@ -1,17 +1,16 @@
-# 
 # Translators:
-# KRG HIS <antonia.bezenchek@informa.pro>, 2025
 # Mozafar Haider, 2025
+# KRG HIS <antonia.bezenchek@informa.pro>, 2026
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2025-09-05T07:32:59.321Z\n"
+"POT-Creation-Date: 2026-05-28T08:40:06.387Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Mozafar Haider, 2025\n"
+"Last-Translator: KRG HIS <antonia.bezenchek@informa.pro>, 2026\n"
 "Language-Team: Arabic (Iraq) (https://app.transifex.com/hisp-uio/teams/100509/ar_IQ/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: ar_IQ\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
@@ -45,15 +44,6 @@ msgstr ""
 
 msgid "Created {{time}}"
 msgstr ""
-
-msgid "Viewed {{count}} times"
-msgid_plural "Viewed {{count}} times"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
-msgstr[4] ""
-msgstr[5] ""
 
 msgid "Notifications"
 msgstr ""
@@ -521,16 +511,28 @@ msgstr ""
 msgid "Untitled {{visualizationType}}, {{date}}"
 msgstr ""
 
+msgid "Back to all interpretations"
+msgstr ""
+
+msgid "Could not load interpretation details"
+msgstr ""
+
+msgid "The request to fetch interpretation comments failed"
+msgstr ""
+
 msgid "Edit"
 msgstr "تعديل"
 
 msgid "Write a reply"
 msgstr ""
 
+msgid "Could not post reply"
+msgstr ""
+
 msgid "Post reply"
 msgstr ""
 
-msgid "Delete failed"
+msgid "Could not delete comment"
 msgstr ""
 
 msgid "Could not update comment"
@@ -559,6 +561,9 @@ msgstr ""
 msgid "Write an interpretation"
 msgstr ""
 
+msgid "Could not post interpretation"
+msgstr ""
+
 msgid ""
 "Other people viewing this interpretation in the future may see more data."
 msgstr ""
@@ -569,17 +574,14 @@ msgstr ""
 msgid "Interpretations"
 msgstr "التفسيرات"
 
+msgid "Error loading interpretations"
+msgstr ""
+
+msgid "Could not load interpretations"
+msgstr ""
+
 msgid "Reply"
 msgstr "رد"
-
-msgid "{{count}} replies"
-msgid_plural "{{count}} replies"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
-msgstr[4] ""
-msgstr[5] ""
 
 msgid "View replies"
 msgstr ""
@@ -599,7 +601,13 @@ msgstr ""
 msgid "Share"
 msgstr "مشاركة"
 
+msgid "Could not delete interpretation"
+msgstr ""
+
 msgid "Manage sharing"
+msgstr ""
+
+msgid "Could not update interpretation text"
 msgstr ""
 
 msgid "Could not update interpretation"
@@ -738,33 +746,6 @@ msgstr ""
 msgid "Hide"
 msgstr "إخفاء"
 
-msgid "{{count}} org units"
-msgid_plural "{{count}} org units"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
-msgstr[4] ""
-msgstr[5] ""
-
-msgid "{{count}} levels"
-msgid_plural "{{count}} levels"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
-msgstr[4] ""
-msgstr[5] ""
-
-msgid "{{count}} groups"
-msgid_plural "{{count}} groups"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
-msgstr[4] ""
-msgstr[5] ""
-
 msgid "Selected: {{commaSeparatedListOfOrganisationUnits}}"
 msgstr ""
 
@@ -801,6 +782,14 @@ msgstr ""
 msgid "Selected Periods"
 msgstr ""
 
+msgid "No period types available"
+msgstr ""
+
+msgid ""
+"No period types are enabled in the system. Please contact your system "
+"administrator."
+msgstr ""
+
 msgid "Relative periods"
 msgstr "الفترات الزمنية النسبية"
 
@@ -820,6 +809,9 @@ msgid "Weekly (Start Wednesday)"
 msgstr ""
 
 msgid "Weekly (Start Thursday)"
+msgstr ""
+
+msgid "Weekly (Start Friday)"
 msgstr ""
 
 msgid "Weekly (Start Saturday)"
@@ -849,17 +841,26 @@ msgstr "ستة أشهر نيسان"
 msgid "Yearly"
 msgstr "سنوي"
 
-msgid "Financial year (Start November)"
+msgid "Financial year (Start February)"
+msgstr ""
+
+msgid "Financial year (Start April)"
+msgstr "السنة المالية (بداية نيسان)"
+
+msgid "Financial year (Start July)"
+msgstr "السنة المالية (بداية تموز)"
+
+msgid "Financial year (Start August)"
+msgstr ""
+
+msgid "Financial year (Start September)"
 msgstr ""
 
 msgid "Financial year (Start October)"
 msgstr "السنة المالية (بداية تشرين الأول)"
 
-msgid "Financial year (Start July)"
-msgstr "السنة المالية (بداية تموز)"
-
-msgid "Financial year (Start April)"
-msgstr "السنة المالية (بداية نيسان)"
+msgid "Financial year (Start November)"
+msgstr ""
 
 msgid "Today"
 msgstr "اليوم"
@@ -1293,6 +1294,18 @@ msgstr ""
 msgid "No value"
 msgstr ""
 
+msgid "Active"
+msgstr "فعال"
+
+msgid "Completed"
+msgstr "مكتمل"
+
+msgid "Scheduled"
+msgstr "تمت جدولته"
+
+msgid "Cancelled"
+msgstr "تم الإلغاء"
+
 msgid "Text"
 msgstr ""
 
@@ -1448,15 +1461,6 @@ msgstr ""
 
 msgid "Axis {{axisId}}"
 msgstr ""
-
-msgid "{{count}} items"
-msgid_plural "{{count}} items"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
-msgstr[4] ""
-msgstr[5] ""
 
 msgid "Reset zoom"
 msgstr ""

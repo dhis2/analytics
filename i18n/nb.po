@@ -1,19 +1,18 @@
-# 
 # Translators:
-# Jen Jones Arnesen <jennifer@dhis2.org>, 2023
 # Martin <martin@moid.se>, 2024
-# Caroline Hesthagen Holen <caroline@devotta.no>, 2025
-# Karoline Tufte Lien <karoline@dhis2.org>, 2025
+# Caroline Hesthagen Holen <caroline@devotta.no>, 2026
+# Karoline Tufte Lien <karoline@dhis2.org>, 2026
+# Jen Jones Arnesen <jennifer@dhis2.org>, 2026
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2025-09-09T09:32:04.677Z\n"
+"POT-Creation-Date: 2026-08-27T11:56:55.720Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Karoline Tufte Lien <karoline@dhis2.org>, 2025\n"
+"Last-Translator: Jen Jones Arnesen <jennifer@dhis2.org>, 2026\n"
 "Language-Team: Norwegian Bokmål (https://app.transifex.com/hisp-uio/teams/100509/nb/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: nb\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -736,31 +735,6 @@ msgstr ""
 msgid "New map"
 msgstr ""
 
-msgid "Open a line list"
-msgstr ""
-
-msgid "Loading line lists"
-msgstr ""
-
-msgid "Couldn't load line lists"
-msgstr ""
-
-msgid ""
-"There was a problem loading line lists. Try again or contact your system "
-"administrator."
-msgstr ""
-
-msgid "No line lists found. Click New line list to get started."
-msgstr ""
-
-msgid ""
-"No line lists found. Try adjusting your search or filter options to find "
-"what you're looking for."
-msgstr ""
-
-msgid "New line list"
-msgstr ""
-
 msgid "Hide"
 msgstr "Skjul"
 
@@ -815,6 +789,14 @@ msgstr "Periode"
 msgid "Selected Periods"
 msgstr "Valgte perioder"
 
+msgid "No period types available"
+msgstr ""
+
+msgid ""
+"No period types are enabled in the system. Please contact your system "
+"administrator."
+msgstr ""
+
 msgid "Relative periods"
 msgstr "Relative perioder"
 
@@ -835,6 +817,9 @@ msgstr "Ukentlig (start onsdag)"
 
 msgid "Weekly (Start Thursday)"
 msgstr "Ukentlig (start torsdag)"
+
+msgid "Weekly (Start Friday)"
+msgstr ""
 
 msgid "Weekly (Start Saturday)"
 msgstr "Ukentlig (start lørdag)"
@@ -863,17 +848,26 @@ msgstr "Halvårig April"
 msgid "Yearly"
 msgstr "Årlig"
 
-msgid "Financial year (Start November)"
-msgstr "Regnskapsår (start november)"
+msgid "Financial year (Start February)"
+msgstr ""
 
-msgid "Financial year (Start October)"
-msgstr "Regnskapsår (start oktober)"
+msgid "Financial year (Start April)"
+msgstr "Regnskapsår (start april)"
 
 msgid "Financial year (Start July)"
 msgstr "Regnskapsår (start juli)"
 
-msgid "Financial year (Start April)"
-msgstr "Regnskapsår (start april)"
+msgid "Financial year (Start August)"
+msgstr ""
+
+msgid "Financial year (Start September)"
+msgstr ""
+
+msgid "Financial year (Start October)"
+msgstr "Regnskapsår (start oktober)"
+
+msgid "Financial year (Start November)"
+msgstr "Regnskapsår (start november)"
 
 msgid "Today"
 msgstr "I dag"
@@ -1306,6 +1300,18 @@ msgstr "Tildelte Kategorier"
 
 msgid "No value"
 msgstr "Ingen verdi"
+
+msgid "Active"
+msgstr "Aktiv"
+
+msgid "Completed"
+msgstr "Fullført"
+
+msgid "Scheduled"
+msgstr "Planlagt"
+
+msgid "Cancelled"
+msgstr "Kansellert"
 
 msgid "Text"
 msgstr "Tekst"

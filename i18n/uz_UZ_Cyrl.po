@@ -1,17 +1,16 @@
-# 
 # Translators:
 # Philip Larsen Donnelly, 2025
-# Khurshid Ibatov <x.ibatov@dtsj.uz>, 2025
+# Khurshid Ibatov <x.ibatov@dtsj.uz>, 2026
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2025-09-09T09:32:04.677Z\n"
+"POT-Creation-Date: 2026-08-27T11:56:55.720Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Khurshid Ibatov <x.ibatov@dtsj.uz>, 2025\n"
+"Last-Translator: Khurshid Ibatov <x.ibatov@dtsj.uz>, 2026\n"
 "Language-Team: Uzbek (Cyrillic) (https://app.transifex.com/hisp-uio/teams/100509/uz@Cyrl/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: uz@Cyrl\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
@@ -727,31 +726,6 @@ msgstr ""
 msgid "New map"
 msgstr ""
 
-msgid "Open a line list"
-msgstr ""
-
-msgid "Loading line lists"
-msgstr ""
-
-msgid "Couldn't load line lists"
-msgstr ""
-
-msgid ""
-"There was a problem loading line lists. Try again or contact your system "
-"administrator."
-msgstr ""
-
-msgid "No line lists found. Click New line list to get started."
-msgstr ""
-
-msgid ""
-"No line lists found. Try adjusting your search or filter options to find "
-"what you're looking for."
-msgstr ""
-
-msgid "New line list"
-msgstr ""
-
 msgid "Hide"
 msgstr "Беркитиш"
 
@@ -803,6 +777,14 @@ msgstr "Давр"
 msgid "Selected Periods"
 msgstr "Танланган Даврлар"
 
+msgid "No period types available"
+msgstr ""
+
+msgid ""
+"No period types are enabled in the system. Please contact your system "
+"administrator."
+msgstr ""
+
 msgid "Relative periods"
 msgstr "Нисбий даврлар"
 
@@ -823,6 +805,9 @@ msgstr "Ҳафталик (Бошланиши Чоршанба)"
 
 msgid "Weekly (Start Thursday)"
 msgstr "Ҳафталик (Бошланиши Пайшанба)"
+
+msgid "Weekly (Start Friday)"
+msgstr ""
 
 msgid "Weekly (Start Saturday)"
 msgstr "Ҳафталик (Бошланиши Шанба)"
@@ -851,17 +836,26 @@ msgstr "Ярим йиллик Апрель"
 msgid "Yearly"
 msgstr "Йиллик"
 
-msgid "Financial year (Start November)"
-msgstr "Молиявий йил (Бошланиши Ноябрь)"
+msgid "Financial year (Start February)"
+msgstr ""
 
-msgid "Financial year (Start October)"
-msgstr "Молиявий йил (бошланиши Октябрь)"
+msgid "Financial year (Start April)"
+msgstr "Молиявий йил (бошланиши Апрель)"
 
 msgid "Financial year (Start July)"
 msgstr "Молиявий йил (бошланиши Июль)"
 
-msgid "Financial year (Start April)"
-msgstr "Молиявий йил (бошланиши Апрель)"
+msgid "Financial year (Start August)"
+msgstr ""
+
+msgid "Financial year (Start September)"
+msgstr ""
+
+msgid "Financial year (Start October)"
+msgstr "Молиявий йил (бошланиши Октябрь)"
+
+msgid "Financial year (Start November)"
+msgstr "Молиявий йил (Бошланиши Ноябрь)"
 
 msgid "Today"
 msgstr "Бугун"
@@ -1294,6 +1288,18 @@ msgstr "Белгиланган Категориялар"
 
 msgid "No value"
 msgstr "Қиймат йўқ"
+
+msgid "Active"
+msgstr "Фаол"
+
+msgid "Completed"
+msgstr "Тўлдирилди"
+
+msgid "Scheduled"
+msgstr "Режа бўйича"
+
+msgid "Cancelled"
+msgstr "Бекор қилинди"
 
 msgid "Text"
 msgstr "Матн"
