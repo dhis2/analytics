@@ -49,6 +49,12 @@ const buildVisualization = (ouDimensionId) => ({
 const rowHierarchies = (engine) =>
     [0, 1].map((row) => engine.getRowHeader(row)[0].hierarchy)
 
+const rowNames = (engine) =>
+    [0, 1].map((row) => engine.getRowHeader(row)[0].name)
+
+const cellValues = (engine) =>
+    [0, 1].map((row) => engine.get({ row, column: 0 })?.renderedValue)
+
 describe('PivotTableEngine org unit hierarchy', () => {
     it('applies the hierarchy to a bare `ou` dimension', () => {
         const engine = new PivotTableEngine(
@@ -95,6 +101,18 @@ describe('PivotTableEngine org unit hierarchy', () => {
 
         expect(rowHierarchies(engine)).toEqual([undefined, undefined])
         expect(engine.getRowHeader(0)[0].uid).toBe(OU_A)
+    })
+
+    /* Sorting rewrites itemIds, which the row lookup resolves data rows
+     * through. If the two fall out of step every cell renders empty. */
+    it('keeps values aligned with the re-sorted rows', () => {
+        const engine = new PivotTableEngine(
+            buildVisualization(`${STAGE}.ou`),
+            buildData(`${STAGE}.ou`)
+        )
+
+        expect(rowNames(engine)).toEqual(['Bombali', 'Bo'])
+        expect(cellValues(engine)).toEqual(['2', '1'])
     })
 
     it('leaves non-org-unit dimensions untouched', () => {
