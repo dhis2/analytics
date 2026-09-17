@@ -77,7 +77,12 @@
         "resize-observer-polyfill": "^1.5.1"
     },
     "files": [
-        "build"
+        "build",
+        "src",
+        "!src/**/__snapshots__/**",
+        "!src/**/__demo__/data/**",
+        "docs",
+        "CHANGELOG.md"
     ],
     "resolutions": {
         "i18next": "^23.0.0"
