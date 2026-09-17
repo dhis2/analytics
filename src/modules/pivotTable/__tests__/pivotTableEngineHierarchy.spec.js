@@ -115,6 +115,20 @@ describe('PivotTableEngine org unit hierarchy', () => {
         expect(cellValues(engine)).toEqual(['2', '1'])
     })
 
+    /* A backend that returns no hierarchy for the requested dimension still
+     * sends the key, as an empty object, which passes the truthiness guard. */
+    it('is inert when ouNameHierarchy is empty', () => {
+        const dimension = `${STAGE}.ou`
+        const data = buildData(dimension)
+        data.metaData.ouNameHierarchy = {}
+
+        const engine = new PivotTableEngine(buildVisualization(dimension), data)
+
+        expect(rowNames(engine)).toEqual(['Bo', 'Bombali'])
+        expect(rowHierarchies(engine)).toEqual([undefined, undefined])
+        expect(cellValues(engine)).toEqual(['1', '2'])
+    })
+
     it('leaves non-org-unit dimensions untouched', () => {
         const dimension = `${STAGE}.de1`
         const engine = new PivotTableEngine(
