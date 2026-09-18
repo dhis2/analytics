@@ -86,17 +86,15 @@
             "pe": {
                 "name": "Period"
             },
-            "jfuXZB3A1ko.hwG20Dyj6RK_1": {
-                "name": "Yes"
-            },
             "": {
                 "name": "No value",
+                "code": "D2__NOVALUE",
                 "style": {
-                    "fontStyle": "italic",
-                    "color": "#6C7787",
-                    "fontFamily": "monospace",
-                    "letterSpacing": "-0.3px"
+                    "color": "#6C7787"
                 }
+            },
+            "jfuXZB3A1ko.hwG20Dyj6RK_1": {
+                "name": "Yes"
             }
         },
         "dimensions": {

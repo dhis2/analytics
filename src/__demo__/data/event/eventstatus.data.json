@@ -53,9 +53,6 @@
             "A03MvHHogjR.eventstatus": {
                 "name": "Event status"
             },
-            "A03MvHHogjR.eventstatus_ACTIVE": {
-                "name": "Active"
-            },
             "IpHINAT79UW": {
                 "name": "Child Programme"
             },
@@ -63,9 +60,7 @@
                 "name": "Baby Postnatal"
             },
             "USER_ORGUNIT": {
-                "organisationUnits": [
-                    "ImspTQPwCqd"
-                ]
+                "organisationUnits": ["ImspTQPwCqd"]
             },
             "A03MvHHogjR": {
                 "name": "Birth"
@@ -75,28 +70,20 @@
             },
             "": {
                 "name": "No value",
+                "code": "D2__NOVALUE",
                 "style": {
-                    "fontStyle": "italic",
-                    "color": "#6C7787",
-                    "fontFamily": "monospace",
-                    "letterSpacing": "-0.3px"
+                    "color": "#6C7787"
                 }
+            },
+            "A03MvHHogjR.eventstatus_ACTIVE": {
+                "name": "Active"
             }
         },
         "dimensions": {
-            "A03MvHHogjR.eventdate": [
-                "202511",
-                "202512",
-                "202601"
-            ],
-            "A03MvHHogjR.eventstatus": [
-                "A03MvHHogjR.eventstatus_ACTIVE",
-                ""
-            ],
+            "A03MvHHogjR.eventdate": ["202511", "202512", "202601"],
+            "A03MvHHogjR.eventstatus": ["A03MvHHogjR.eventstatus_ACTIVE", ""],
             "pe": [],
-            "A03MvHHogjR.ou": [
-                "ImspTQPwCqd"
-            ]
+            "A03MvHHogjR.ou": ["ImspTQPwCqd"]
         }
     },
     "rowContext": {},
@@ -104,29 +91,9 @@
     "headerWidth": 4,
     "height": 3,
     "rows": [
-        [
-            "ImspTQPwCqd",
-            "202511",
-            "A03MvHHogjR.eventstatus_ACTIVE",
-            "925"
-        ],
-        [
-            "ImspTQPwCqd",
-            "202512",
-            "A03MvHHogjR.eventstatus_ACTIVE",
-            "858"
-        ],
-        [
-            "ImspTQPwCqd",
-            "202601",
-            "A03MvHHogjR.eventstatus_ACTIVE",
-            "690"
-        ],
-        [
-            "ImspTQPwCqd",
-            "202511",
-            "",
-            "12"
-        ]
+        ["ImspTQPwCqd", "202511", "A03MvHHogjR.eventstatus_ACTIVE", "925"],
+        ["ImspTQPwCqd", "202512", "A03MvHHogjR.eventstatus_ACTIVE", "858"],
+        ["ImspTQPwCqd", "202601", "A03MvHHogjR.eventstatus_ACTIVE", "690"],
+        ["ImspTQPwCqd", "202511", "", "12"]
     ]
 }

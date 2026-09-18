@@ -77,6 +77,13 @@
             "A03MvHHogjR": {
                 "name": "Birth"
             },
+            "": {
+                "name": "No value",
+                "code": "D2__NOVALUE",
+                "style": {
+                    "color": "#6C7787"
+                }
+            },
             "A03MvHHogjR.bx6fsa0t90x_0": {
                 "name": "No"
             },

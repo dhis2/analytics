@@ -93,6 +93,13 @@
             },
             "LAST_3_MONTHS": {
                 "name": "Last 3 months"
+            },
+            "": {
+                "name": "No value",
+                "code": "D2__NOVALUE",
+                "style": {
+                    "color": "#6C7787"
+                }
             }
         },
         "dimensions": {

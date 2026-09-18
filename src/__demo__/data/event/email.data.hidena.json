@@ -86,6 +86,13 @@
             "jfuXZB3A1ko.RUZ2EBP6HQn": {
                 "name": "E2E - Email"
             },
+            "": {
+                "name": "No value",
+                "code": "D2__NOVALUE",
+                "style": {
+                    "color": "#6C7787"
+                }
+            },
             "jfuXZB3A1ko.RUZ2EBP6HQn_email@address.com": {
                 "name": "email@address.com"
             },
