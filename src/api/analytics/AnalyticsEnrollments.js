@@ -30,7 +30,7 @@ class AnalyticsEnrollments extends AnalyticsBase {
      *  .then(console.log);
      */
     getAggregate(req) {
-        return this.fetch(req.withPath('enrollments/aggregate'))
+        return this.get(req.withPath('enrollments/aggregate'))
     }
 
     /**
