@@ -68,6 +68,13 @@
             "Zj7UnCAulEk": {
                 "name": "Inpatient morbidity and mortality"
             },
+            "": {
+                "name": "No value",
+                "code": "D2__NOVALUE",
+                "style": {
+                    "color": "#6C7787"
+                }
+            },
             "Zj7UnCAulEk.qrur9Dvnyt5_0": {
                 "name": "0"
             },
@@ -104,6 +111,7 @@
         },
         "dimensions": {
             "pe": ["202503", "202504", "202505"],
+            "ou": ["ImspTQPwCqd"],
             "Zj7UnCAulEk.qrur9Dvnyt5": [
                 "Zj7UnCAulEk.qrur9Dvnyt5_0",
                 "Zj7UnCAulEk.qrur9Dvnyt5_1",
@@ -116,8 +124,7 @@
                 "Zj7UnCAulEk.qrur9Dvnyt5_8",
                 "Zj7UnCAulEk.qrur9Dvnyt5_9",
                 "Zj7UnCAulEk.qrur9Dvnyt5_10"
-            ],
-            "ou": ["ImspTQPwCqd"]
+            ]
         }
     },
     "rowContext": {},

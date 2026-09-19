@@ -65,6 +65,34 @@
             "jfuXZB3A1ko": {
                 "name": "Stage 1 - Repeatable"
             },
+            "ou": {
+                "name": "Organisation unit"
+            },
+            "J1QQtmzqhJz": {
+                "name": "E2E program"
+            },
+            "LAST_12_MONTHS": {
+                "name": "Last 12 months"
+            },
+            "ImspTQPwCqd": {
+                "name": "Sierra Leone"
+            },
+            "pe": {
+                "name": "Period"
+            },
+            "KWzx2tY8dFi": {
+                "name": "E2E - Date & Time"
+            },
+            "jfuXZB3A1ko.KWzx2tY8dFi": {
+                "name": "E2E - Date & Time"
+            },
+            "": {
+                "name": "No value",
+                "code": "D2__NOVALUE",
+                "style": {
+                    "color": "#6C7787"
+                }
+            },
             "jfuXZB3A1ko.KWzx2tY8dFi_1990-01-24 14:50:00.0": {
                 "name": "1990-01-24 14:50"
             },
@@ -94,36 +122,6 @@
             },
             "jfuXZB3A1ko.KWzx2tY8dFi_1998-02-28 11:20:00.0": {
                 "name": "1998-02-28 11:20"
-            },
-            "ou": {
-                "name": "Organisation unit"
-            },
-            "J1QQtmzqhJz": {
-                "name": "E2E program"
-            },
-            "LAST_12_MONTHS": {
-                "name": "Last 12 months"
-            },
-            "ImspTQPwCqd": {
-                "name": "Sierra Leone"
-            },
-            "pe": {
-                "name": "Period"
-            },
-            "KWzx2tY8dFi": {
-                "name": "E2E - Date & Time"
-            },
-            "jfuXZB3A1ko.KWzx2tY8dFi": {
-                "name": "E2E - Date & Time"
-            },
-            "": {
-                "name": "No value",
-                "style": {
-                    "fontStyle": "italic",
-                    "color": "#6C7787",
-                    "fontFamily": "monospace",
-                    "letterSpacing": "-0.3px"
-                }
             }
         },
         "dimensions": {

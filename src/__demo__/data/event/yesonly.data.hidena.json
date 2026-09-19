@@ -86,6 +86,13 @@
             "pe": {
                 "name": "Period"
             },
+            "": {
+                "name": "No value",
+                "code": "D2__NOVALUE",
+                "style": {
+                    "color": "#6C7787"
+                }
+            },
             "jfuXZB3A1ko.hwG20Dyj6RK_1": {
                 "name": "Yes"
             }
