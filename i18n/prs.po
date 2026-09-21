@@ -1,16 +1,15 @@
-# 
 # Translators:
-# Philip Larsen Donnelly, 2025
+# Philip Larsen Donnelly, 2026
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2025-09-09T09:32:04.677Z\n"
+"POT-Creation-Date: 2026-05-28T08:40:06.387Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Philip Larsen Donnelly, 2025\n"
+"Last-Translator: Philip Larsen Donnelly, 2026\n"
 "Language-Team: Persian (Afghanistan) (https://app.transifex.com/hisp-uio/teams/100509/fa_AF/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: fa_AF\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
@@ -44,11 +43,6 @@ msgstr ""
 
 msgid "Created {{time}}"
 msgstr ""
-
-msgid "Viewed {{count}} times"
-msgid_plural "Viewed {{count}} times"
-msgstr[0] ""
-msgstr[1] ""
 
 msgid "Notifications"
 msgstr ""
@@ -588,11 +582,6 @@ msgstr ""
 msgid "Reply"
 msgstr "پاسخ"
 
-msgid "{{count}} replies"
-msgid_plural "{{count}} replies"
-msgstr[0] ""
-msgstr[1] ""
-
 msgid "View replies"
 msgstr ""
 
@@ -756,21 +745,6 @@ msgstr ""
 msgid "Hide"
 msgstr "مخفی کردن"
 
-msgid "{{count}} org units"
-msgid_plural "{{count}} org units"
-msgstr[0] ""
-msgstr[1] ""
-
-msgid "{{count}} levels"
-msgid_plural "{{count}} levels"
-msgstr[0] ""
-msgstr[1] ""
-
-msgid "{{count}} groups"
-msgid_plural "{{count}} groups"
-msgstr[0] ""
-msgstr[1] ""
-
 msgid "Selected: {{commaSeparatedListOfOrganisationUnits}}"
 msgstr ""
 
@@ -807,6 +781,14 @@ msgstr "دوره"
 msgid "Selected Periods"
 msgstr ""
 
+msgid "No period types available"
+msgstr ""
+
+msgid ""
+"No period types are enabled in the system. Please contact your system "
+"administrator."
+msgstr ""
+
 msgid "Relative periods"
 msgstr "دوره های ارتباطی"
 
@@ -826,6 +808,9 @@ msgid "Weekly (Start Wednesday)"
 msgstr ""
 
 msgid "Weekly (Start Thursday)"
+msgstr ""
+
+msgid "Weekly (Start Friday)"
 msgstr ""
 
 msgid "Weekly (Start Saturday)"
@@ -855,17 +840,26 @@ msgstr "شش-ماهه اپریل"
 msgid "Yearly"
 msgstr "سالانه"
 
-msgid "Financial year (Start November)"
+msgid "Financial year (Start February)"
+msgstr ""
+
+msgid "Financial year (Start April)"
+msgstr "مالی اپریل"
+
+msgid "Financial year (Start July)"
+msgstr "مالی جولای"
+
+msgid "Financial year (Start August)"
+msgstr ""
+
+msgid "Financial year (Start September)"
 msgstr ""
 
 msgid "Financial year (Start October)"
 msgstr "اکتوبر مالی"
 
-msgid "Financial year (Start July)"
-msgstr "مالی جولای"
-
-msgid "Financial year (Start April)"
-msgstr "مالی اپریل"
+msgid "Financial year (Start November)"
+msgstr ""
 
 msgid "Today"
 msgstr "امروز"
@@ -1299,6 +1293,18 @@ msgstr ""
 msgid "No value"
 msgstr "بدون ارقام/ ارزش"
 
+msgid "Active"
+msgstr "فعال"
+
+msgid "Completed"
+msgstr "تکمیل شد"
+
+msgid "Scheduled"
+msgstr "زمان بندی شده"
+
+msgid "Cancelled"
+msgstr ""
+
 msgid "Text"
 msgstr "متن"
 
@@ -1454,11 +1460,6 @@ msgstr "اساس"
 
 msgid "Axis {{axisId}}"
 msgstr ""
-
-msgid "{{count}} items"
-msgid_plural "{{count}} items"
-msgstr[0] ""
-msgstr[1] ""
 
 msgid "Reset zoom"
 msgstr ""
