@@ -1,16 +1,15 @@
-# 
 # Translators:
-# Viktor Varland <viktor@dhis2.org>, 2025
+# Viktor Varland <viktor@dhis2.org>, 2026
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2024-12-19T10:28:15.132Z\n"
+"POT-Creation-Date: 2026-05-28T08:40:06.387Z\n"
 "PO-Revision-Date: 2020-04-28 22:05+0000\n"
-"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2025\n"
+"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2026\n"
 "Language-Team: Bengali (https://app.transifex.com/hisp-uio/teams/100509/bn/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: bn\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -44,11 +43,6 @@ msgstr ""
 
 msgid "Created {{time}}"
 msgstr ""
-
-msgid "Viewed {{count}} times"
-msgid_plural "Viewed {{count}} times"
-msgstr[0] ""
-msgstr[1] ""
 
 msgid "Notifications"
 msgstr ""
@@ -154,21 +148,6 @@ msgid ""
 msgstr ""
 
 msgid "Math operators"
-msgstr ""
-
-msgid "Data Type"
-msgstr ""
-
-msgid "Only {{dataType}} can be used in {{visType}}"
-msgstr ""
-
-msgid "All types"
-msgstr ""
-
-msgid "Disaggregation"
-msgstr ""
-
-msgid "No data"
 msgstr ""
 
 msgid "Expression description"
@@ -315,13 +294,58 @@ msgstr ""
 msgid "Filter"
 msgstr ""
 
+msgid "All available options are already selected"
+msgstr ""
+
+msgid "No available options for this item"
+msgstr ""
+
+msgid "Search by option name"
+msgstr ""
+
+msgid "Back to all items"
+msgstr ""
+
+msgid "Options"
+msgstr ""
+
+msgid "Selected items"
+msgstr ""
+
+msgid "Data Type"
+msgstr ""
+
+msgid "Only {{dataType}} can be used in {{visType}}"
+msgstr ""
+
+msgid "All types"
+msgstr ""
+
+msgid "Disaggregation"
+msgstr ""
+
+msgid "No data"
+msgstr ""
+
 msgid "Search by data item name"
 msgstr ""
 
-msgid "No items selected"
+msgid "Selected Items"
 msgstr ""
 
-msgid "Selected Items"
+msgid "All available items are already selected"
+msgstr ""
+
+msgid "Calculation"
+msgstr ""
+
+msgid "Metric type"
+msgstr ""
+
+msgid "All metrics"
+msgstr ""
+
+msgid "No items selected"
 msgstr ""
 
 msgid "No indicators found"
@@ -357,13 +381,7 @@ msgstr ""
 msgid "Nothing found for \"{{- searchTerm}}\""
 msgstr ""
 
-msgid "Calculation"
-msgstr ""
-
-msgid "Metric type"
-msgstr ""
-
-msgid "All metrics"
+msgid "Click to choose from available options"
 msgstr ""
 
 msgid "Move to {{axisName}}"
@@ -416,9 +434,6 @@ msgstr ""
 msgid "Search"
 msgstr ""
 
-msgid "Nothing found for {{- searchTerm}}"
-msgstr ""
-
 msgid "Delete {{fileType}}"
 msgstr ""
 
@@ -462,6 +477,9 @@ msgstr ""
 msgid "Open in this app"
 msgstr ""
 
+msgid "Copy to clipboard"
+msgstr ""
+
 msgid "Close"
 msgstr ""
 
@@ -489,16 +507,31 @@ msgstr ""
 msgid "visualization"
 msgstr ""
 
+msgid "Untitled {{visualizationType}}, {{date}}"
+msgstr ""
+
+msgid "Back to all interpretations"
+msgstr ""
+
+msgid "Could not load interpretation details"
+msgstr ""
+
+msgid "The request to fetch interpretation comments failed"
+msgstr ""
+
 msgid "Edit"
 msgstr ""
 
 msgid "Write a reply"
 msgstr ""
 
+msgid "Could not post reply"
+msgstr ""
+
 msgid "Post reply"
 msgstr ""
 
-msgid "Delete failed"
+msgid "Could not delete comment"
 msgstr ""
 
 msgid "Could not update comment"
@@ -527,6 +560,9 @@ msgstr ""
 msgid "Write an interpretation"
 msgstr ""
 
+msgid "Could not post interpretation"
+msgstr ""
+
 msgid ""
 "Other people viewing this interpretation in the future may see more data."
 msgstr ""
@@ -537,13 +573,14 @@ msgstr ""
 msgid "Interpretations"
 msgstr ""
 
-msgid "Reply"
+msgid "Error loading interpretations"
 msgstr ""
 
-msgid "{{count}} replies"
-msgid_plural "{{count}} replies"
-msgstr[0] ""
-msgstr[1] ""
+msgid "Could not load interpretations"
+msgstr ""
+
+msgid "Reply"
+msgstr ""
 
 msgid "View replies"
 msgstr ""
@@ -563,7 +600,13 @@ msgstr ""
 msgid "Share"
 msgstr ""
 
+msgid "Could not delete interpretation"
+msgstr ""
+
 msgid "Manage sharing"
+msgstr ""
+
+msgid "Could not update interpretation text"
 msgstr ""
 
 msgid "Could not update interpretation"
@@ -699,26 +742,8 @@ msgstr ""
 msgid "New line list"
 msgstr ""
 
-msgid "Options"
-msgstr ""
-
 msgid "Hide"
 msgstr ""
-
-msgid "{{count}} org units"
-msgid_plural "{{count}} org units"
-msgstr[0] ""
-msgstr[1] ""
-
-msgid "{{count}} levels"
-msgid_plural "{{count}} levels"
-msgstr[0] ""
-msgstr[1] ""
-
-msgid "{{count}} groups"
-msgid_plural "{{count}} groups"
-msgstr[0] ""
-msgstr[1] ""
 
 msgid "Selected: {{commaSeparatedListOfOrganisationUnits}}"
 msgstr ""
@@ -756,6 +781,14 @@ msgstr ""
 msgid "Selected Periods"
 msgstr ""
 
+msgid "No period types available"
+msgstr ""
+
+msgid ""
+"No period types are enabled in the system. Please contact your system "
+"administrator."
+msgstr ""
+
 msgid "Relative periods"
 msgstr ""
 
@@ -775,6 +808,9 @@ msgid "Weekly (Start Wednesday)"
 msgstr ""
 
 msgid "Weekly (Start Thursday)"
+msgstr ""
+
+msgid "Weekly (Start Friday)"
 msgstr ""
 
 msgid "Weekly (Start Saturday)"
@@ -804,16 +840,25 @@ msgstr ""
 msgid "Yearly"
 msgstr ""
 
-msgid "Financial year (Start November)"
+msgid "Financial year (Start February)"
 msgstr ""
 
-msgid "Financial year (Start October)"
+msgid "Financial year (Start April)"
 msgstr ""
 
 msgid "Financial year (Start July)"
 msgstr ""
 
-msgid "Financial year (Start April)"
+msgid "Financial year (Start August)"
+msgstr ""
+
+msgid "Financial year (Start September)"
+msgstr ""
+
+msgid "Financial year (Start October)"
+msgstr ""
+
+msgid "Financial year (Start November)"
 msgstr ""
 
 msgid "Today"
@@ -1128,6 +1173,9 @@ msgstr ""
 msgid "Calculations"
 msgstr ""
 
+msgid "Option"
+msgstr ""
+
 msgid "Number"
 msgstr ""
 
@@ -1240,6 +1288,21 @@ msgid "Organisation unit"
 msgstr ""
 
 msgid "Assigned Categories"
+msgstr ""
+
+msgid "No value"
+msgstr ""
+
+msgid "Active"
+msgstr ""
+
+msgid "Completed"
+msgstr "সম্পন্ন"
+
+msgid "Scheduled"
+msgstr ""
+
+msgid "Cancelled"
 msgstr ""
 
 msgid "Text"
@@ -1371,6 +1434,9 @@ msgstr ""
 msgid "All charts"
 msgstr ""
 
+msgid "Map"
+msgstr ""
+
 msgid "{{seriesName}} (trend)"
 msgstr ""
 
@@ -1394,11 +1460,6 @@ msgstr ""
 
 msgid "Axis {{axisId}}"
 msgstr ""
-
-msgid "{{count}} items"
-msgid_plural "{{count}} items"
-msgstr[0] ""
-msgstr[1] ""
 
 msgid "Reset zoom"
 msgstr ""

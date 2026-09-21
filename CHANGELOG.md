@@ -1,3 +1,17 @@
+## [29.6.2](https://github.com/dhis2/analytics/compare/v29.6.1...v29.6.2) (2026-09-21)
+
+
+### Bug Fixes
+
+* apply org unit hierarchy in event and enrollment pivot tables ([#1846](https://github.com/dhis2/analytics/issues/1846)) ([31b5967](https://github.com/dhis2/analytics/commit/31b59679042b3fa7056d7d59ad7ff0a472f251b7))
+
+## [29.6.1](https://github.com/dhis2/analytics/compare/v29.6.0...v29.6.1) (2026-09-17)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([#1842](https://github.com/dhis2/analytics/issues/1842)) ([3c4b277](https://github.com/dhis2/analytics/commit/3c4b277949dbec595d8e788098f145a600c66566))
+
 # [29.6.0](https://github.com/dhis2/analytics/compare/v29.5.5...v29.6.0) (2026-08-27)
 
 
