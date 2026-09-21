@@ -42,6 +42,8 @@ export const getHeaderForDisplay = ({
         span,
         label,
         includesHierarchy,
-        ...(currentHeader?.style ? { style: currentHeader.style } : {}),
+        ...(currentHeader?.dimensionItemStyle
+            ? { style: currentHeader.dimensionItemStyle }
+            : {}),
     }
 }

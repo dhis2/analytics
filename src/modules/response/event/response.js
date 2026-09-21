@@ -31,7 +31,7 @@ export const D2__NOVALUE = 'D2__NOVALUE'
 export const NA_VALUE_ITEM = {
     name: i18n.t('No value'),
     code: D2__NOVALUE,
-    style: {
+    dimensionItemStyle: {
         color: '#6C7787',
     },
 }

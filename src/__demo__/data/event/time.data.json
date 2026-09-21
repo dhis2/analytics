@@ -92,7 +92,7 @@
             "": {
                 "name": "No value",
                 "code": "D2__NOVALUE",
-                "style": {
+                "dimensionItemStyle": {
                     "color": "#6C7787"
                 }
             },
