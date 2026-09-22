@@ -17,6 +17,7 @@ env:
 
 jobs:
     copy-to-d2-ci:
+        if: ${{ github.actor != 'dependabot[bot]' }}
         runs-on: ubuntu-latest
         steps:
             - name: Checkout code
