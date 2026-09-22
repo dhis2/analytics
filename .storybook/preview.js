@@ -1,10 +1,11 @@
-import { CssReset } from '@dhis2/ui'
+import { CssReset, CssVariables } from '@dhis2/ui'
 import React from 'react'
 
 export const decorators = [
     (Story) => (
         <div>
             <CssReset />
+            <CssVariables spacers colors layers elevations theme />
             <Story />
             <style jsx>{`
                 :global(html) {

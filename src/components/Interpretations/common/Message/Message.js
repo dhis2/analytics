@@ -1,5 +1,5 @@
 import { useTimeZoneConversion } from '@dhis2/app-runtime'
-import { UserAvatar, spacers, colors } from '@dhis2/ui'
+import { spacers, colors, UserAvatar } from '@dhis2/ui'
 import moment from 'moment'
 import PropTypes from 'prop-types'
 import React from 'react'
@@ -9,46 +9,68 @@ const Message = ({ children, text, created, username }) => {
     const { fromServerDate } = useTimeZoneConversion()
     return (
         <li className="container">
-            <div className="header">
-                <UserAvatar name={username} extrasmall />
-                {username}
-                <time dateTime={created}>
-                    {moment(fromServerDate(created)).format('lll')}
-                </time>
+            <div className="avatar">
+                <UserAvatar name={username} small />
             </div>
-            <div className="content">
-                <RichTextParser>{text}</RichTextParser>
+            <div className="main">
+                <div className="header">
+                    <span className="username">{username}</span>
+                    <time dateTime={created}>
+                        {moment(fromServerDate(created)).format(
+                            'MMM D, YYYY [·] HH:mm'
+                        )}
+                    </time>
+                </div>
+                <div className="content">
+                    <RichTextParser>{text}</RichTextParser>
+                </div>
+                <div className="footer">{children}</div>
             </div>
-            <div className="footer">{children}</div>
             <style jsx>{`
                 .container {
-                    padding: ${spacers.dp8};
-                    background-color: ${colors.grey100};
-                    border-radius: 5px;
                     display: flex;
-                    flex-direction: column;
+                    flex-direction: row;
                     gap: ${spacers.dp8};
+                    padding: 0;
+                }
+
+                .avatar {
+                    flex-shrink: 0;
+                    padding-top: 6px;
+                }
+
+                .main {
+                    flex: 1;
+                    min-width: 0;
                 }
 
                 .header {
                     display: flex;
-                    gap: 6px;
-                    align-items: center;
-                    font-size: 13px;
-                    line-height: 16px;
+                    flex-direction: column;
+                    gap: 2px;
+                    align-items: baseline;
+                    font-size: 14px;
+                    font-weight: 500;
+                    line-height: 18px;
                     color: ${colors.grey900};
+                    margin-block-end: ${spacers.dp8};
                 }
 
                 .header time {
-                    font-size: 12px;
+                    font-size: 13px;
+                    line-height: 16px;
+                    font-weight: 400;
                     color: ${colors.grey600};
                 }
 
                 .content {
                     font-size: 14px;
-                    line-height: 19px;
+                    line-height: 21px;
                     color: ${colors.grey900};
                     word-break: break-word;
+                }
+
+                .content :global(p) {
                     white-space: pre-line;
                 }
 
@@ -58,9 +80,10 @@ const Message = ({ children, text, created, username }) => {
 
                 .footer {
                     display: flex;
-                    flex-direction: column;
+                    flex-direction: row;
                     align-items: flex-start;
-                    gap: ${spacers.dp8};
+                    gap: ${spacers.dp4};
+                    margin-block-start: ${spacers.dp4};
                 }
             `}</style>
         </li>
