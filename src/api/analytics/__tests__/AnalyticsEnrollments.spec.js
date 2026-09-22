@@ -36,7 +36,10 @@ describe('analytics.enrollments', () => {
             fixture = fixtures.get('/api/analytics/aggregate')
 
             dataEngineMock.query.mockReturnValue(
-                Promise.resolve({ data: fixture })
+                Promise.resolve({
+                    data: { ...fixture, metaData: undefined },
+                    metaData: { metaData: fixture.metaData },
+                })
             )
         })
 
@@ -44,10 +47,31 @@ describe('analytics.enrollments', () => {
             expect(enrollments.getAggregate).toBeInstanceOf(Function)
         })
 
-        it('should resolve a promise with data', () =>
+        it('should resolve a promise with the merged data and metaData', () =>
             enrollments.getAggregate(request).then((data) => {
-                expect(data).toEqual(fixture)
+                expect(data.rows).toEqual(fixture.rows)
+                expect(data.headers).toEqual(fixture.headers)
+                expect(data.metaData).toEqual(fixture.metaData)
             }))
+
+        it('should request data and metaData separately', async () => {
+            await enrollments.getAggregate(request)
+
+            const [queries, { variables }] = dataEngineMock.query.mock.calls[0]
+
+            expect(queries.data.id(variables)).toBe('enrollments/aggregate')
+            expect(queries.metaData.id(variables)).toBe('enrollments/aggregate')
+
+            expect(queries.data.params(variables)).toMatchObject({
+                skipMeta: true,
+                skipData: false,
+            })
+            expect(queries.metaData.params(variables)).toMatchObject({
+                skipMeta: false,
+                skipData: true,
+                includeMetadataDetails: true,
+            })
+        })
     })
 
     describe('.getQuery()', () => {
