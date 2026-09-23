@@ -262,6 +262,7 @@ const OrgUnitDimension = ({
                         )
                         .map((item) => item.path)}
                     onChange={onSelectItems}
+                    displayProperty={displayNameProp}
                     dataTest={'org-unit-tree'}
                 />
             </div>

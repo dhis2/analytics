@@ -1,3 +1,10 @@
+# [29.7.0](https://github.com/dhis2/analytics/compare/v29.6.2...v29.7.0) (2026-09-23)
+
+
+### Features
+
+* wire display prop to organisation unit tree (DHIS2-21562) ([#1834](https://github.com/dhis2/analytics/issues/1834)) ([0d93e67](https://github.com/dhis2/analytics/commit/0d93e678de78be85e898176a045dc9b7a6185ce5))
+
 ## [29.6.2](https://github.com/dhis2/analytics/compare/v29.6.1...v29.6.2) (2026-09-21)
 
 
