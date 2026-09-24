@@ -298,7 +298,7 @@ export class PivotTableEngine {
     columnMap = []
     accumulators = { rows: {} }
 
-    constructor(visualization, data, legendSets) {
+    constructor({ visualization, data, legendSets }) {
         this.visualization = Object.assign(
             {},
             defaultVisualizationProps,
