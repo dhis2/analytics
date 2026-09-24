@@ -202,6 +202,6 @@ export const transformResponse = (
             }
         })
     }
-    
+
     return transformedResponse
 }
