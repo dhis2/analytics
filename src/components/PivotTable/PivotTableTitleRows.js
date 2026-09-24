@@ -4,13 +4,6 @@ import getFilterText from '../../visualizations/util/getFilterText.js'
 import { usePivotTableEngine } from './PivotTableEngineContext.js'
 import { PivotTableTitleRow } from './PivotTableTitleRow.js'
 
-/* Whether there is a filter row at all is the layout's call, as it has
- * always been. `filterText` only says what goes in it: supplied by the
- * caller when there is one, derived from the layout when there is not. */
-const getFilterRowTitle = (engine) =>
-    engine.options.filterText ??
-    getFilterText(engine.visualization.filters, engine.rawData.metaData)
-
 export const PivotTableTitleRows = ({ clippingResult, width }) => {
     const engine = usePivotTableEngine()
 
@@ -32,7 +25,13 @@ export const PivotTableTitleRows = ({ clippingResult, width }) => {
             ) : null}
             {engine.visualization.filters?.length ? (
                 <PivotTableTitleRow
-                    title={getFilterRowTitle(engine)}
+                    title={
+                        engine.options.filterText ||
+                        getFilterText(
+                            engine.visualization.filters,
+                            engine.rawData.metaData
+                        )
+                    }
                     scrollPosition={clippingResult.scrollPosition}
                     containerWidth={width}
                 />

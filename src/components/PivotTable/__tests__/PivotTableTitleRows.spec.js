@@ -78,12 +78,16 @@ describe('PivotTable title rows', () => {
         expect(titleRowTexts()).toEqual(['Hello', 'Goodbye'])
     })
 
-    /* An empty string is a supplied text like any other, and must not fall
-     * back to the derived line. */
-    it('renders an empty row for an empty supplied text', () => {
+    /* An empty string is a caller with nothing to say, not a caller asking
+     * for an empty row. */
+    it('derives the filter row for an empty supplied text', () => {
         renderTable({ filterText: '' })
 
-        expect(titleRowTexts()).toEqual(['Hello', 'Goodbye', ''])
+        expect(titleRowTexts()).toEqual([
+            'Hello',
+            'Goodbye',
+            DERIVED_FILTER_TEXT,
+        ])
     })
 
     it('leaves the title and subtitle to the visualization', () => {
