@@ -98,7 +98,7 @@
             },
             "": {
                 "name": "No value",
-                "style": {
+                "dimensionItemStyle": {
                     "fontStyle": "italic",
                     "color": "#6C7787",
                     "fontFamily": "monospace",
