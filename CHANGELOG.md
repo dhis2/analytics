@@ -1,3 +1,17 @@
+# [29.8.0](https://github.com/dhis2/analytics/compare/v29.7.1...v29.8.0) (2026-09-24)
+
+
+### Features
+
+* let the caller supply the pivot table filter line text ([#1861](https://github.com/dhis2/analytics/issues/1861)) ([877c8d5](https://github.com/dhis2/analytics/commit/877c8d5141bd590089fa2ce6e8e75952b339ef51))
+
+## [29.7.1](https://github.com/dhis2/analytics/compare/v29.7.0...v29.7.1) (2026-09-24)
+
+
+### Bug Fixes
+
+* include source and doc files in package ([#1857](https://github.com/dhis2/analytics/issues/1857)) ([77ca197](https://github.com/dhis2/analytics/commit/77ca197d06c2f15d23964c615e33e06d2644605d))
+
 # [29.7.0](https://github.com/dhis2/analytics/compare/v29.6.2...v29.7.0) (2026-09-23)
 
 
