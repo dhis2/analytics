@@ -197,7 +197,7 @@ export const transformResponse = (
                 !transformedResponse.metaData.dimensions[header.name].includes(
                     NA_VALUE
                 ) &&
-                response.rows.map((row) => row[header.index]).includes(NA_VALUE)
+                response.rows.some((row) => row[header.index] === NA_VALUE)
             ) {
                 transformedResponse.metaData.dimensions[header.name] = [
                     ...transformedResponse.metaData.dimensions[header.name],
