@@ -298,7 +298,7 @@ export class PivotTableEngine {
     columnMap = []
     accumulators = { rows: {} }
 
-    constructor(visualization, data, legendSets) {
+    constructor({ visualization, data, legendSets, filterText }) {
         this.visualization = Object.assign(
             {},
             defaultVisualizationProps,
@@ -336,6 +336,9 @@ export class PivotTableEngine {
                 ? visualization.fixRowHeaders
                 : false,
             cumulativeValues: visualization.cumulativeValues,
+            /* If visualization.filters is populated and this option is present,
+             * this text is used instead of the text derived from `visualization.filters` */
+            filterText,
         }
 
         this.adaptiveClippingController = new AdaptiveClippingController(this)

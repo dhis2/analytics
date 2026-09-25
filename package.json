@@ -1,6 +1,6 @@
 {
     "name": "@dhis2/analytics",
-    "version": "29.7.0",
+    "version": "29.8.0",
     "main": "./build/cjs/index.js",
     "module": "./build/es/index.js",
     "exports": {
@@ -77,7 +77,12 @@
         "resize-observer-polyfill": "^1.5.1"
     },
     "files": [
-        "build"
+        "build",
+        "src",
+        "!src/**/__snapshots__/**",
+        "!src/**/__demo__/data/**",
+        "docs",
+        "CHANGELOG.md"
     ],
     "resolutions": {
         "i18next": "^23.0.0"
