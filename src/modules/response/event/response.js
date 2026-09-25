@@ -123,9 +123,9 @@ const applyMetaDataItemNameOverrides = (items, metaDataItemNames) =>
         { ...items }
     )
 
-const addNoValueItem = items => ({
+const addNoValueItem = (items) => ({
     ...items,
-    [NA_VALUE]: NA_VALUE_ITEM
+    [NA_VALUE]: NA_VALUE_ITEM,
 })
 
 export const transformResponse = (
@@ -138,10 +138,12 @@ export const transformResponse = (
         ...response,
         metaData: {
             ...response.metaData,
-            items: addNoValueItem(applyMetaDataItemNameOverrides(
-                response.metaData.items,
-                metaDataItemNames
-            )),
+            items: addNoValueItem(
+                applyMetaDataItemNameOverrides(
+                    response.metaData.items,
+                    metaDataItemNames
+                )
+            ),
             dimensions: {
                 ...response.metaData.dimensions,
             },
@@ -192,7 +194,9 @@ export const transformResponse = (
     if (!hideNaData) {
         metaHeaders.forEach((header) => {
             if (
-                !transformedResponse.metaData.dimensions[header.name].includes(NA_VALUE) &&
+                !transformedResponse.metaData.dimensions[header.name].includes(
+                    NA_VALUE
+                ) &&
                 response.rows.map((row) => row[header.index]).includes(NA_VALUE)
             ) {
                 transformedResponse.metaData.dimensions[header.name] = [
