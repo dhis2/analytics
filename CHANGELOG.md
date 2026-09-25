@@ -1,3 +1,10 @@
+## [29.8.1](https://github.com/dhis2/analytics/compare/v29.8.0...v29.8.1) (2026-09-25)
+
+
+### Bug Fixes
+
+* event analytics response transformer support for novalue optionset option metadata (DHIS2-12978) ([#1845](https://github.com/dhis2/analytics/issues/1845)) ([768534a](https://github.com/dhis2/analytics/commit/768534a9e293f5d50f2697d2843eacac6bd42acd))
+
 # [29.8.0](https://github.com/dhis2/analytics/compare/v29.7.1...v29.8.0) (2026-09-24)
 
 
