@@ -79,20 +79,27 @@ const rectIntersectionCustom = ({
     return collisions.sort(sortCollisionsDesc)
 }
 
-const isInteractiveElement = (el) => {
-    const interactiveElements = [
-        'button',
-        'input',
-        'textarea',
-        'select',
-        'option',
-    ]
+const INTERACTIVE_SELECTOR = 'button, input, textarea, select, option'
 
-    if (interactiveElements.includes(el.tagName.toLowerCase())) {
-        return true
+// Chips are real <button>s but must not count as interactive here, or
+// dragging and the modal's keyboard shortcuts would break.
+const DRAG_CHIP_SELECTOR = '[data-drag-chip]'
+
+export const isInteractiveElement = (el) => {
+    const match = el?.closest?.(
+        `${INTERACTIVE_SELECTOR}, ${DRAG_CHIP_SELECTOR}`
+    )
+
+    return Boolean(match) && !match.matches(DRAG_CHIP_SELECTOR)
+}
+
+// Mirrors Enter/Space clicks for formula items, which can't be native
+// buttons since the number item wraps an input.
+export const onActivationKeydown = (callback) => (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault()
+        callback()
     }
-
-    return false
 }
 
 // disable dragging if user is in an input
