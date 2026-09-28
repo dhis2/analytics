@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { useDebounce } from '../../../modules/utils.js'
 
 const MODAL_SIDE_PADDING = 2 * 24
-const MODAL_SIDE_MARGINS = 2 * 128
+const MODAL_SIDE_MARGINS = 2 * 64
 
 const computeModalContentWidth = (windowWidth) => {
     return windowWidth - MODAL_SIDE_MARGINS - MODAL_SIDE_PADDING

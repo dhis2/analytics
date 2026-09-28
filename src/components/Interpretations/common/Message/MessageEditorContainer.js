@@ -5,17 +5,17 @@ import React from 'react'
 const MessageEditorContainer = ({ children, currentUserName, dataTest }) => (
     <div className="container" data-test={dataTest}>
         <div className="avatar">
-            <UserAvatar name={currentUserName} medium />
+            <UserAvatar name={currentUserName} small />
         </div>
         <div className="editor">{children}</div>
         <style jsx>{`
             .container {
                 display: flex;
                 gap: ${spacers.dp8};
-                margin-top: ${spacers.dp12};
             }
             .avatar {
                 flex-grow: 0;
+                margin-block-start: 3px;
             }
             .editor {
                 flex-grow: 1;
