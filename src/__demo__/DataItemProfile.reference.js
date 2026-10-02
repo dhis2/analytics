@@ -4,31 +4,31 @@ import React from 'react'
 export const STATUS_DEFINITIONS = [
     [
         'full',
-        'Fully compatible with all the item’s data sets and programs that collect for the selection: every value collected comes back (also averaged, carried, or where only some units collect it).',
-        'Data element captured monthly, with aggregation enabled, requested quarterly',
-        'Indicator with all its components captured at facility level, with aggregation enabled, requested at district level',
+        'Compatible with all the item’s data sets and programs that collect for the selection: every value comes back (also repeated, from an earlier period, or where only some org units are assigned).',
+        'Data element in a monthly data set, with aggregation enabled, requested quarterly',
+        'Indicator whose components are all in data sets assigned at facility level, requested at district level',
     ],
     [
         'partial',
-        'Compatible with only some of the item’s data sets and programs that collect for the selection: the others’ values are left out. Only for an item collected in several data sets or programs that differ (mixed). For an expression, computed from such an operand (OPERAND_PARTIAL).',
-        'Data element captured weekly from Monday in one data set and from Wednesday in another, requested by Monday week',
-        'Data element captured at facility level in one data set and at district level in another, requested at a facility',
+        'Compatible with only some of the item’s data sets and programs that collect for the selection: the others’ values are left out. Only for an item in several data sets or programs that differ. For an expression, computed from such an operand (OPERAND_PARTIAL).',
+        'Data element in a Monday weekly and a Wednesday weekly data set, requested by Monday week',
+        'Data element in a data set assigned at facility level and one assigned at district level, requested at a facility',
     ],
     [
         'none',
         'Compatible with none of the item’s data sets and programs that collect for the selection: no value comes back. For an expression, an operand gives none (OPERAND_EMPTY).',
-        'Data element captured monthly, requested weekly',
-        'Data element captured at district level, requested at a facility',
+        'Data element in a monthly data set, requested weekly',
+        'Data element in a data set assigned at district level, requested at a facility',
     ],
     [
         'unknown',
         'Can’t tell: see the reasons.',
         'Relative weeks when the weekly start setting is missing',
-        'An org unit group, or an event data item without its program in its id',
+        'An org unit or group that isn’t loaded, or missing metadata',
     ],
 ]
 
-export const REASON_DEFINITIONS = [
+export const PERIOD_REASON_DEFINITIONS = [
     [
         'OPERAND_EMPTY',
         'An expression whose operand gives no value has none: a ratio without its denominator.',
@@ -42,109 +42,109 @@ export const REASON_DEFINITIONS = [
         'An indicator over IDSR Measles by Monday week',
     ],
     [
-        'AVERAGED',
-        'Repeated from the data period that holds it.',
-        'full, partial',
-        'Total Population (yearly) by month',
-    ],
-    [
-        'CARRIED',
-        'From another data period (FIRST, LAST).',
-        'full, partial',
-        'Monthly LAST data on 15 July: June’s value',
-    ],
-    [
-        'SHORTER',
-        'Period shorter than the data’s type.',
+        'PERIOD_TOO_SHORT',
+        'The period is shorter than the period type of the data sets.',
         'partial, none',
         'ANC 1st visit (monthly) by week',
     ],
     [
-        'OTHER_TYPE',
-        'Same length, other type.',
+        'PERIOD_TYPE_MISMATCH',
+        'Another period type of the same length.',
         'partial, none',
         'IDSR Measles’ Wednesday weeks by Monday week',
     ],
     [
-        'REPORTING_RATE',
-        'Reporting rate in a shorter period.',
+        'REPORTING_RATE_TOO_SHORT',
+        'A reporting rate asked for a shorter period: a meaningless value.',
         'partial, none',
         'Child Health reporting rate by week',
     ],
     [
-        'NOTHING_TO_CARRY',
-        'FIRST or LAST with no data period that counts.',
+        'NO_EARLIER_PERIOD_VALUE',
+        'FIRST or LAST data with no data period that counts for the period.',
         'partial, none',
         'Monthly LAST data on 1 January',
+    ],
+    [
+        'REPEATED_VALUE',
+        'The value of a longer data period, repeated (period aggregation AVERAGE).',
+        'full, partial',
+        'Total Population (yearly) by month',
+    ],
+    [
+        'EARLIER_PERIOD_VALUE',
+        'The value of an earlier data period (period aggregation FIRST or LAST).',
+        'full, partial',
+        'Monthly LAST data on 15 July: June’s value',
     ],
     [
         'PROFILE_UNKNOWN',
         'Missing metadata: see the profile’s reasons.',
         'unknown',
-        'An element in no data set',
+        'A data element in no data set',
     ],
     [
         'UNKNOWN_PERIOD',
-        'Unreadable period id.',
+        'The period id can’t be read.',
         'unknown',
         'A mistyped period id, like 2025X1',
     ],
     [
         'SETTING_MISSING',
-        'Relative period type needs a setting not given.',
+        'A relative period’s type depends on a setting that wasn’t given, and its types disagree.',
         'unknown',
         'LAST_4_WEEKS on weekly data, weekly start unknown',
     ],
     [
         'UNSUPPORTED_VERSION',
-        'Type this server version can’t answer.',
+        'The server version can’t answer it.',
         'unknown',
-        '2025NovQ1 on 2.40',
+        '2025NovQ1 on 2.40; a program indicator without period boundaries before 2.43',
     ],
 ]
 
 export const ORG_UNIT_REASON_DEFINITIONS = [
     [
         'NOT_ASSIGNED',
-        'Its data sets aren’t assigned there, though they are at that level elsewhere.',
+        'Not assigned there, though assigned at that level elsewhere.',
         'none',
         'ANC 1st visit at Junctionla MCHP',
     ],
     [
-        'BELOW_COLLECTION',
-        'Data is entered above the level asked: nothing is split down. Partial when another data set fills the place.',
+        'ASSIGNED_AT_HIGHER_LEVEL',
+        'Assigned only at higher levels than the one asked: analytics never splits values down. Partial when another data set fills the org unit.',
         'none, partial',
-        'District data by facility',
+        'A data set assigned at district level, requested by facility',
     ],
     [
-        'AGGREGATION_LEVEL',
-        'The data element’s aggregation levels stop values entered below them from reaching the level asked. Partial when another data set fills the place.',
+        'STOPPED_BY_AGGREGATION_LEVEL',
+        'The data element’s aggregation levels stop values from lower levels reaching the level asked. Partial when another data set fills the org unit.',
         'none, partial',
-        'Facility data with aggregation level 2, asked by district',
+        'Facility data with aggregation level 2, requested by district',
+    ],
+    [
+        'EMPTY_GROUP',
+        'An org unit group without members: analytics refuses it (E7143). Leave it out of the request.',
+        'none',
+        'A group whose members were all removed',
     ],
     [
         'PARTLY_ASSIGNED',
-        'Assigned to only some of the units at the deepest level entered: the others don’t collect it, so nothing is left out.',
+        'Assigned to only some org units at the deepest level: the others collect nothing, so nothing is left out.',
         'full',
         'ANC 1st visit in Sierra Leone: 1,159 of 1,166 facilities',
     ],
     [
-        'ORG_UNIT_FIELD',
-        'A program indicator places its values by another org unit than the event’s or enrollment’s (registration, or an org unit attribute): they can be anywhere, wherever its program is assigned.',
+        'ANY_ORG_UNIT',
+        'A program indicator placed by registration or an org unit attribute: its values can be at any org unit, wherever its program is assigned.',
         'full',
         'A program indicator by registration org unit',
     ],
     [
         'UNKNOWN_ORG_UNIT',
-        'An org unit or level that isn’t loaded or can’t be read.',
+        'The org unit, level or group isn’t loaded or can’t be read.',
         'unknown',
         'A mistyped id',
-    ],
-    [
-        'EVENT_DATA',
-        'Event data whose program can’t be told from its id.',
-        'unknown',
-        'An event data item named by its data element alone',
     ],
 ]
 
@@ -166,7 +166,7 @@ const ReferenceTable = ({ title, columns, rows }) => (
                             <code>{code}</code>
                         </td>
                         {cells.map((cell, i) => (
-                            <td key={i}>{cell}</td>
+                            <td key={columns[i + 1]}>{cell}</td>
                         ))}
                     </tr>
                 ))}

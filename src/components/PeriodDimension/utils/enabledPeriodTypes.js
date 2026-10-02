@@ -25,6 +25,28 @@ export const SERVER_PT_TO_MULTI_CALENDAR_PT = {
     FinancialNov: 'FYNOV',
 }
 
+// VERSION-TOGGLE: analyticsWeeklyStart and analyticsFinancialYearStart are removed in v44
+// The period type of relative weeks, by the analyticsWeeklyStart setting
+export const WEEKLY_START_TO_PERIOD_TYPE = {
+    WEEKLY: 'Weekly',
+    WEEKLY_WEDNESDAY: 'WeeklyWednesday',
+    WEEKLY_THURSDAY: 'WeeklyThursday',
+    WEEKLY_FRIDAY: 'WeeklyFriday',
+    WEEKLY_SATURDAY: 'WeeklySaturday',
+    WEEKLY_SUNDAY: 'WeeklySunday',
+}
+
+// The period type of relative financial years, by the analyticsFinancialYearStart setting
+export const FINANCIAL_YEAR_START_TO_PERIOD_TYPE = {
+    FINANCIAL_YEAR_FEBRUARY: 'FinancialFeb',
+    FINANCIAL_YEAR_APRIL: 'FinancialApril',
+    FINANCIAL_YEAR_JULY: 'FinancialJuly',
+    FINANCIAL_YEAR_AUGUST: 'FinancialAug',
+    FINANCIAL_YEAR_SEPTEMBER: 'FinancialSep',
+    FINANCIAL_YEAR_OCTOBER: 'FinancialOct',
+    FINANCIAL_YEAR_NOVEMBER: 'FinancialNov',
+}
+
 // Mapping from relative period categories to their corresponding fixed period types
 export const RP_CATEGORY_TO_FP_DEPENDENCIES = {
     DAILY: ['Daily'],

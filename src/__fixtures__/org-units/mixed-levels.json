@@ -1,0 +1,107 @@
+{
+    "schemaVersion": 1,
+    "group": "mixed-levels",
+    "provisional": false,
+    "source": "maps-tools/test-data-period-types (14abea3, with local changes)",
+    "runs": [
+        {
+            "instance": "dev",
+            "version": "2.44-SNAPSHOT",
+            "date": "2026-10-02"
+        },
+        {
+            "instance": "dev-2-41",
+            "version": "2.41.11-SNAPSHOT",
+            "date": "2026-10-02"
+        },
+        {
+            "instance": "dev-2-42",
+            "version": "2.42.7-SNAPSHOT",
+            "date": "2026-10-02"
+        },
+        {
+            "instance": "dev-2-43",
+            "version": "2.43.3-SNAPSHOT",
+            "date": "2026-10-02"
+        },
+        {
+            "instance": "stable-2-40-12",
+            "version": "2.40.12",
+            "date": "2026-10-02"
+        },
+        {
+            "instance": "stable-2-41-10",
+            "version": "2.41.10",
+            "date": "2026-10-02"
+        },
+        {
+            "instance": "stable-2-42-6",
+            "version": "2.42.6",
+            "date": "2026-10-02"
+        },
+        {
+            "instance": "stable-2-43-1",
+            "version": "2.43.1",
+            "date": "2026-10-02"
+        }
+    ],
+    "hierarchy": {
+        "orgUnits": {
+            "region": {
+                "level": 2,
+                "parent": null
+            },
+            "A": {
+                "level": 3,
+                "parent": "region"
+            },
+            "B": {
+                "level": 3,
+                "parent": "region"
+            },
+            "D1": {
+                "level": 3,
+                "parent": "region"
+            },
+            "D2": {
+                "level": 3,
+                "parent": "region"
+            },
+            "D3": {
+                "level": 3,
+                "parent": "region"
+            },
+            "F1": {
+                "level": 4,
+                "parent": "D1"
+            },
+            "F2": {
+                "level": 4,
+                "parent": "D1"
+            },
+            "F3": {
+                "level": 4,
+                "parent": "D2"
+            }
+        },
+        "groups": {
+            "g": [
+                "D2",
+                "F1"
+            ],
+            "empty": [],
+            "top": [
+                "region"
+            ]
+        }
+    },
+    "smoke": "6 of 6 cases, one per pattern",
+    "cases": [
+        {"id":"ou-mixed-element__D1","item":{"code":"PTT_OU_MIXED","dimensionItemType":"DATA_ELEMENT","aggregationType":"SUM","valueType":"INTEGER","collectionPeriodTypes":["Monthly"],"collectionSources":[{"dataSet":"PTT OU mixed data set at facilities","periodType":"Monthly","orgUnits":["F1","F2","F3"]},{"dataSet":"PTT OU mixed data set at D1","periodType":"Monthly","orgUnits":["D1"]}]},"query":{"periodType":"Quarterly","period":"2025Q1","orgUnits":["D1"]},"expected":{"status":"VALUE","value":3033,"contributes":["F1","F2","D1"],"compatibility":"full","reasons":[]},"observed":{"2.44-SNAPSHOT":{"status":"VALUE","value":3033,"rows":{"D1":3033}},"2.41.11-SNAPSHOT":{"status":"VALUE","value":3033,"rows":{"D1":3033}},"2.42.7-SNAPSHOT":{"status":"VALUE","value":3033,"rows":{"D1":3033}},"2.43.3-SNAPSHOT":{"status":"VALUE","value":3033,"rows":{"D1":3033}},"2.40.12":{"status":"VALUE","value":3033,"rows":{"D1":3033}},"2.41.10":{"status":"VALUE","value":3033,"rows":{"D1":3033}},"2.42.6":{"status":"VALUE","value":3033,"rows":{"D1":3033}},"2.43.1":{"status":"VALUE","value":3033,"rows":{"D1":3033}}},"verdict":{"2.44-SNAPSHOT":"pass","2.41.11-SNAPSHOT":"pass","2.42.7-SNAPSHOT":"pass","2.43.3-SNAPSHOT":"pass","2.40.12":"pass","2.41.10":"pass","2.42.6":"pass","2.43.1":"pass"}},
+        {"id":"ou-mixed-element__F1","item":{"code":"PTT_OU_MIXED","dimensionItemType":"DATA_ELEMENT","aggregationType":"SUM","valueType":"INTEGER","collectionPeriodTypes":["Monthly"],"collectionSources":[{"dataSet":"PTT OU mixed data set at facilities","periodType":"Monthly","orgUnits":["F1","F2","F3"]},{"dataSet":"PTT OU mixed data set at D1","periodType":"Monthly","orgUnits":["D1"]}]},"query":{"periodType":"Quarterly","period":"2025Q1","orgUnits":["F1"]},"expected":{"status":"VALUE","value":3,"contributes":["F1"],"compatibility":"partial","reasons":["BELOW_COLLECTION"]},"observed":{"2.44-SNAPSHOT":{"status":"VALUE","value":3,"rows":{"F1":3}},"2.41.11-SNAPSHOT":{"status":"VALUE","value":3,"rows":{"F1":3}},"2.42.7-SNAPSHOT":{"status":"VALUE","value":3,"rows":{"F1":3}},"2.43.3-SNAPSHOT":{"status":"VALUE","value":3,"rows":{"F1":3}},"2.40.12":{"status":"VALUE","value":3,"rows":{"F1":3}},"2.41.10":{"status":"VALUE","value":3,"rows":{"F1":3}},"2.42.6":{"status":"VALUE","value":3,"rows":{"F1":3}},"2.43.1":{"status":"VALUE","value":3,"rows":{"F1":3}}},"verdict":{"2.44-SNAPSHOT":"pass","2.41.11-SNAPSHOT":"pass","2.42.7-SNAPSHOT":"pass","2.43.3-SNAPSHOT":"pass","2.40.12":"pass","2.41.10":"pass","2.42.6":"pass","2.43.1":"pass"}},
+        {"id":"ou-mixed-element__region","item":{"code":"PTT_OU_MIXED","dimensionItemType":"DATA_ELEMENT","aggregationType":"SUM","valueType":"INTEGER","collectionPeriodTypes":["Monthly"],"collectionSources":[{"dataSet":"PTT OU mixed data set at facilities","periodType":"Monthly","orgUnits":["F1","F2","F3"]},{"dataSet":"PTT OU mixed data set at D1","periodType":"Monthly","orgUnits":["D1"]}]},"query":{"periodType":"Quarterly","period":"2025Q1","orgUnits":["region"]},"expected":{"status":"VALUE","value":3333,"contributes":["F1","F2","F3","D1"],"compatibility":"full","reasons":[]},"observed":{"2.44-SNAPSHOT":{"status":"VALUE","value":3333,"rows":{"region":3333}},"2.41.11-SNAPSHOT":{"status":"VALUE","value":3333,"rows":{"region":3333}},"2.42.7-SNAPSHOT":{"status":"VALUE","value":3333,"rows":{"region":3333}},"2.43.3-SNAPSHOT":{"status":"VALUE","value":3333,"rows":{"region":3333}},"2.40.12":{"status":"VALUE","value":3333,"rows":{"region":3333}},"2.41.10":{"status":"VALUE","value":3333,"rows":{"region":3333}},"2.42.6":{"status":"VALUE","value":3333,"rows":{"region":3333}},"2.43.1":{"status":"VALUE","value":3333,"rows":{"region":3333}}},"verdict":{"2.44-SNAPSHOT":"pass","2.41.11-SNAPSHOT":"pass","2.42.7-SNAPSHOT":"pass","2.43.3-SNAPSHOT":"pass","2.40.12":"pass","2.41.10":"pass","2.42.6":"pass","2.43.1":"pass"}},
+        {"id":"ou-mixed-indicator__D1","item":{"code":"PTT_OU_IND_MIXED","dimensionItemType":"INDICATOR","numerator":"#{ciJTwyIYu2T}","denominator":"1","operands":[{"id":"ciJTwyIYu2T","dimensionItemType":"DATA_ELEMENT","aggregationType":"SUM","collectionPeriodTypes":["Monthly"],"collectionSources":[{"dataSet":"PTT OU mixed data set at facilities","periodType":"Monthly","orgUnits":["F1","F2","F3"]},{"dataSet":"PTT OU mixed data set at D1","periodType":"Monthly","orgUnits":["D1"]}]}]},"query":{"periodType":"Quarterly","period":"2025Q1","orgUnits":["D1"]},"expected":{"status":"VALUE","value":3033,"contributes":["F1","F2","D1"],"compatibility":"full","reasons":[]},"observed":{"2.44-SNAPSHOT":{"status":"VALUE","value":3033,"rows":{"D1":3033}},"2.41.11-SNAPSHOT":{"status":"VALUE","value":3033,"rows":{"D1":3033}},"2.42.7-SNAPSHOT":{"status":"VALUE","value":3033,"rows":{"D1":3033}},"2.43.3-SNAPSHOT":{"status":"VALUE","value":3033,"rows":{"D1":3033}},"2.40.12":{"status":"VALUE","value":3033,"rows":{"D1":3033}},"2.41.10":{"status":"VALUE","value":3033,"rows":{"D1":3033}},"2.42.6":{"status":"VALUE","value":3033,"rows":{"D1":3033}},"2.43.1":{"status":"VALUE","value":3033,"rows":{"D1":3033}}},"verdict":{"2.44-SNAPSHOT":"pass","2.41.11-SNAPSHOT":"pass","2.42.7-SNAPSHOT":"pass","2.43.3-SNAPSHOT":"pass","2.40.12":"pass","2.41.10":"pass","2.42.6":"pass","2.43.1":"pass"}},
+        {"id":"ou-mixed-indicator__F1","item":{"code":"PTT_OU_IND_MIXED","dimensionItemType":"INDICATOR","numerator":"#{ciJTwyIYu2T}","denominator":"1","operands":[{"id":"ciJTwyIYu2T","dimensionItemType":"DATA_ELEMENT","aggregationType":"SUM","collectionPeriodTypes":["Monthly"],"collectionSources":[{"dataSet":"PTT OU mixed data set at facilities","periodType":"Monthly","orgUnits":["F1","F2","F3"]},{"dataSet":"PTT OU mixed data set at D1","periodType":"Monthly","orgUnits":["D1"]}]}]},"query":{"periodType":"Quarterly","period":"2025Q1","orgUnits":["F1"]},"expected":{"status":"VALUE","value":3,"contributes":["F1"],"compatibility":"partial","reasons":["OPERAND_PARTIAL"]},"observed":{"2.44-SNAPSHOT":{"status":"VALUE","value":3,"rows":{"F1":3}},"2.41.11-SNAPSHOT":{"status":"VALUE","value":3,"rows":{"F1":3}},"2.42.7-SNAPSHOT":{"status":"VALUE","value":3,"rows":{"F1":3}},"2.43.3-SNAPSHOT":{"status":"VALUE","value":3,"rows":{"F1":3}},"2.40.12":{"status":"VALUE","value":3,"rows":{"F1":3}},"2.41.10":{"status":"VALUE","value":3,"rows":{"F1":3}},"2.42.6":{"status":"VALUE","value":3,"rows":{"F1":3}},"2.43.1":{"status":"VALUE","value":3,"rows":{"F1":3}}},"verdict":{"2.44-SNAPSHOT":"pass","2.41.11-SNAPSHOT":"pass","2.42.7-SNAPSHOT":"pass","2.43.3-SNAPSHOT":"pass","2.40.12":"pass","2.41.10":"pass","2.42.6":"pass","2.43.1":"pass"}},
+        {"id":"ou-mixed-indicator__region","item":{"code":"PTT_OU_IND_MIXED","dimensionItemType":"INDICATOR","numerator":"#{ciJTwyIYu2T}","denominator":"1","operands":[{"id":"ciJTwyIYu2T","dimensionItemType":"DATA_ELEMENT","aggregationType":"SUM","collectionPeriodTypes":["Monthly"],"collectionSources":[{"dataSet":"PTT OU mixed data set at facilities","periodType":"Monthly","orgUnits":["F1","F2","F3"]},{"dataSet":"PTT OU mixed data set at D1","periodType":"Monthly","orgUnits":["D1"]}]}]},"query":{"periodType":"Quarterly","period":"2025Q1","orgUnits":["region"]},"expected":{"status":"VALUE","value":3333,"contributes":["F1","F2","F3","D1"],"compatibility":"full","reasons":[]},"observed":{"2.44-SNAPSHOT":{"status":"VALUE","value":3333,"rows":{"region":3333}},"2.41.11-SNAPSHOT":{"status":"VALUE","value":3333,"rows":{"region":3333}},"2.42.7-SNAPSHOT":{"status":"VALUE","value":3333,"rows":{"region":3333}},"2.43.3-SNAPSHOT":{"status":"VALUE","value":3333,"rows":{"region":3333}},"2.40.12":{"status":"VALUE","value":3333,"rows":{"region":3333}},"2.41.10":{"status":"VALUE","value":3333,"rows":{"region":3333}},"2.42.6":{"status":"VALUE","value":3333,"rows":{"region":3333}},"2.43.1":{"status":"VALUE","value":3333,"rows":{"region":3333}}},"verdict":{"2.44-SNAPSHOT":"pass","2.41.11-SNAPSHOT":"pass","2.42.7-SNAPSHOT":"pass","2.43.3-SNAPSHOT":"pass","2.40.12":"pass","2.41.10":"pass","2.42.6":"pass","2.43.1":"pass"}}
+    ]
+}

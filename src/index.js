@@ -334,50 +334,56 @@ export { renderValue as formatValue } from './modules/renderValue.js'
 
 // Modules: dataItemProfile
 
+export { getDataItemProfile } from './modules/dataItemProfile/getDataItemProfile.js'
+export { getPeriodAggregationType } from './modules/dataItemProfile/profile/collectSources.js'
+export { addAssignedOrgUnitLevels } from './modules/dataItemProfile/profile/assignedOrgUnitLevels.js'
+export { getDataItemProfileCompatibility } from './modules/dataItemProfile/getDataItemProfileCompatibility.js'
+export { getDataItemProfilePeriodCompatibility } from './modules/dataItemProfile/compatibility/getDataItemProfilePeriodCompatibility.js'
+export { getDataItemProfileOrgUnitCompatibility } from './modules/dataItemProfile/compatibility/getDataItemProfileOrgUnitCompatibility.js'
 export {
-    getDataItemProfile,
-    getPeriodAggregationType,
-} from './modules/dataItemProfile/getDataItemProfile.js'
+    canAggregateInto,
+    getCandidatePeriodTypes,
+} from './modules/dataItemProfile/periods/periodTypes.js'
 export {
-    getDataItemProfileCompatibility,
+    comparePeriodRanges,
+    getCoveringPeriodRange,
+} from './modules/dataItemProfile/periods/periodRanges.js'
+export {
     COMPATIBILITY_FULL,
     COMPATIBILITY_PARTIAL,
     COMPATIBILITY_NONE,
     COMPATIBILITY_UNKNOWN,
-    REASON_AVERAGED,
-    REASON_CARRIED,
-    REASON_SHORTER,
-    REASON_OTHER_TYPE,
-    REASON_REPORTING_RATE,
-    REASON_NOTHING_TO_CARRY,
     REASON_OPERAND_EMPTY,
     REASON_OPERAND_PARTIAL,
+    REASON_PERIOD_TOO_SHORT,
+    REASON_PERIOD_TYPE_MISMATCH,
+    REASON_REPORTING_RATE_TOO_SHORT,
+    REASON_NO_EARLIER_PERIOD_VALUE,
+    REASON_REPEATED_VALUE,
+    REASON_EARLIER_PERIOD_VALUE,
+    REASON_NOT_ASSIGNED,
+    REASON_ASSIGNED_AT_HIGHER_LEVEL,
+    REASON_STOPPED_BY_AGGREGATION_LEVEL,
+    REASON_EMPTY_GROUP,
+    REASON_PARTLY_ASSIGNED,
+    REASON_ANY_ORG_UNIT,
     REASON_PROFILE_UNKNOWN,
     REASON_UNKNOWN_PERIOD,
     REASON_SETTING_MISSING,
     REASON_UNSUPPORTED_VERSION,
-} from './modules/dataItemProfile/getDataItemProfileCompatibility.js'
-export {
-    aggregatesInto,
-    getPeriodRelation,
-    widenToWholePeriods,
-} from './modules/dataItemProfile/periodTypeRelations.js'
-export {
-    getDataItemOrgUnitCompatibility,
-    REASON_NOT_ASSIGNED,
-    REASON_BELOW_COLLECTION,
-    REASON_AGGREGATION_LEVEL,
-    REASON_PARTLY_ASSIGNED,
-    REASON_ORG_UNIT_FIELD,
     REASON_UNKNOWN_ORG_UNIT,
-    REASON_EVENT_DATA,
-} from './modules/dataItemProfile/getDataItemOrgUnitCompatibility.js'
-export { fetchDataItemProfileMetadata } from './api/dataItemProfile.js'
+    PERIOD_RANGE_SAME,
+    PERIOD_RANGE_WITHIN,
+    PERIOD_RANGE_CONTAINS,
+    PERIOD_RANGE_OVERLAPS,
+    PERIOD_RANGE_DISJOINT,
+} from './modules/dataItemProfile/constants.js'
+export { fetchDataItemProfileMetadata } from './api/dataItemProfile/fetchDataItemProfileMetadata.js'
 export {
-    fetchOrgUnitCoverage,
-    fetchSourceOrgUnitLevels,
-} from './api/orgUnitCoverage.js'
-export { withOrgUnitSide } from './modules/dataItemProfile/orgUnitSide.js'
+    fetchAssignedOrgUnitCounts,
+    getCountableSources,
+} from './api/dataItemProfile/assignedOrgUnitCounts.js'
+export { fetchOrgUnitCoverage } from './api/dataItemProfile/fetchOrgUnitCoverage.js'
 
 // Modules: response
 

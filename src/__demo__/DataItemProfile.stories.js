@@ -1,13 +1,13 @@
-import { InputField } from '@dhis2/ui'
+import { Button, InputField } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useMemo, useState } from 'react'
 import { useDataItemProfiles } from '../components/DataItemProfile/useDataItemProfiles.js'
-import { readOrgUnitSelection } from '../modules/dataItemProfile/orgUnitSelection.js'
+import { readOrgUnitSelection } from '../modules/dataItemProfile/orgUnits/orgUnitSelection.js'
 import {
     ApiPanel,
     DemoHeading,
     ORG_UNIT_REASON_DEFINITIONS,
-    REASON_DEFINITIONS,
+    PERIOD_REASON_DEFINITIONS,
     STATUS_DEFINITIONS,
 } from './DataItemProfile.reference.js'
 import {
@@ -29,23 +29,28 @@ export default {
 }
 
 // Event data comes from programs: it is placed in any period by its dates
-const isCollectedByDate = (profile) =>
+const isPlacedByDate = (profile) =>
     !profile.unknown && profile.sources.every(({ program }) => program)
 
-const describeCollection = ({ period, ...profile }) => {
-    if (period.types.length) {
-        return `${period.types.join(', ')}${period.mixed ? ' (mixed)' : ''}`
+const listWithSeveral = ({ hasSeveral }, values) =>
+    `${values.join(', ')}${hasSeveral ? ' (several)' : ''}`
+
+const describePeriodTypes = (profile) => {
+    const { assignedPeriodTypes } = profile
+
+    if (assignedPeriodTypes.types.length) {
+        return listWithSeveral(assignedPeriodTypes, assignedPeriodTypes.types)
     }
 
-    return isCollectedByDate(profile) ? 'event dates' : 'unknown'
+    return isPlacedByDate(profile) ? 'event dates' : 'unknown'
 }
 
-// How many units at the deepest level entered the data sets are assigned to
-const Coverage = ({ coverage }) =>
-    coverage ? (
+// How many org units at the deepest level assigned the data sets are assigned to
+const Assignment = ({ assignment }) =>
+    assignment ? (
         <div>
-            {coverage.assigned.toLocaleString('en')} of{' '}
-            {coverage.total.toLocaleString('en')} at level {coverage.level}
+            {assignment.assigned.toLocaleString('en')} of{' '}
+            {assignment.total.toLocaleString('en')} at level {assignment.level}
             <style jsx>{`
                 div {
                     margin-block-start: 4px;
@@ -56,27 +61,41 @@ const Coverage = ({ coverage }) =>
         </div>
     ) : null
 
-Coverage.propTypes = { coverage: PropTypes.object }
+Assignment.propTypes = { assignment: PropTypes.object }
 
-// The levels its data sets are assigned at, deepest first
-const describeLevels = ({ orgUnit }) =>
-    orgUnit?.levels.length
-        ? `${orgUnit.levels.join(', ')}${orgUnit.mixed ? ' (mixed)' : ''}`
+// The levels its data sets and programs are assigned at, deepest first
+const describeLevels = ({ assignedOrgUnitLevels }) =>
+    assignedOrgUnitLevels?.levels.length
+        ? listWithSeveral(assignedOrgUnitLevels, assignedOrgUnitLevels.levels)
         : '–'
 
-const describeFinest = (profile) =>
-    profile.period.finest ?? (isCollectedByDate(profile) ? 'any' : 'unknown')
+const describeShortestDirectType = (profile) => {
+    if (profile.assignedPeriodTypes.shortestDirectType) {
+        return profile.assignedPeriodTypes.shortestDirectType
+    }
+
+    return isPlacedByDate(profile) ? 'any' : 'unknown'
+}
+
+// Org unit selections to try, one per kind of selection item
+const ORG_UNIT_SCENARIOS = [
+    [
+        'Org units',
+        `${SIERRA_LEONE}, ${BO}, ${JUNCTIONLA_MCHP}, USER_ORGUNIT_CHILDREN`,
+    ],
+    ['Levels in Bo', `${BO}, LEVEL-3, LEVEL-4`],
+    ['District group', 'OU_GROUP-w1Atoz18PCL'],
+    ['Clinic group in Bo', `${BO}, OU_GROUP-RXL3lPSK8oG`],
+]
 
 export const ProfilesAndCompatibility = () => {
     const [periodsText, setPeriodsText] = useState(
         '2025W2, 202501, 2025Q1, 2025, LAST_12_MONTHS, LAST_4_WEEKS, Weekly'
     )
     const periods = useMemo(() => splitList(periodsText), [periodsText])
-    const [orgUnitsText, setOrgUnitsText] = useState(
-        `${SIERRA_LEONE}, ${BO}, ${JUNCTIONLA_MCHP}, USER_ORGUNIT_CHILDREN`
-    )
+    const [orgUnitsText, setOrgUnitsText] = useState(ORG_UNIT_SCENARIOS[0][1])
     const orgUnits = useMemo(() => splitList(orgUnitsText), [orgUnitsText])
-    const orgUnitItems = readOrgUnitSelection(orgUnits).items.map(
+    const orgUnitItems = readOrgUnitSelection(orgUnits).selectionItems.map(
         ({ id }) => id
     )
     const {
@@ -94,10 +113,10 @@ export const ProfilesAndCompatibility = () => {
                 signature="useDataItemProfiles(items, { orgUnits })"
                 runs="When the items or the org units change (metadata only)"
                 input="items: [{ id, dimensionItemType }], as in a visualization's dx items; orgUnits: DV's org unit items (ids, LEVEL-n, OU_GROUP-id, USER_ORGUNIT…)"
-                summary="For each data item: how it is collected (period types, finest type, mixed or not), a function that tells whether chosen periods and org units will return values."
-                basedOn="Metadata only (each element's data sets and their period types, indicator expressions; where the data sets are assigned, as counts per level under the org units), the server's weekly and financial year settings, its calendar and version. No analytics request."
+                summary="For each data item: the period types and org unit levels its data sets and programs are assigned at, and a function that tells whether chosen periods and org units will return all its values."
+                basedOn="Metadata only (each element's data sets and their period types, indicator expressions; where the data sets and programs are assigned, as counts per level under the org units), the server's weekly and financial year settings, its calendar and version. No analytics request."
                 returns="{ loading, error, profiles, orgUnitCoverage, relativePeriodTypes, getDataItemCompatibility(itemId, { periods, orgUnits }) }"
-                uses="fetchDataItemProfileMetadata, fetchOrgUnitCoverage, getDataItemProfile, getDataItemProfileCompatibility, getDataItemOrgUnitCompatibility"
+                uses="fetchDataItemProfileMetadata, fetchOrgUnitCoverage, getDataItemProfile, getDataItemProfileCompatibility (getDataItemProfilePeriodCompatibility, getDataItemProfileOrgUnitCompatibility)"
                 references={[
                     {
                         title: 'Compatibility statuses',
@@ -110,9 +129,9 @@ export const ProfilesAndCompatibility = () => {
                         rows: STATUS_DEFINITIONS,
                     },
                     {
-                        title: 'Reasons (none: measured for the period)',
+                        title: 'Period reasons (none: added up for the period)',
                         columns: ['Code', 'Meaning', 'With', 'Example'],
-                        rows: REASON_DEFINITIONS,
+                        rows: PERIOD_REASON_DEFINITIONS,
                     },
                     {
                         title: 'Org unit reasons',
@@ -132,11 +151,29 @@ export const ProfilesAndCompatibility = () => {
             </div>
             <div className="inputs">
                 <InputField
-                    label="Org units: ids, LEVEL-n or OU_GROUP-id (the ids are then their boundaries), USER_ORGUNIT…"
+                    label="Org units: ids, LEVEL-n or OU_GROUP-id (the ids are then their parents), USER_ORGUNIT…"
                     value={orgUnitsText}
                     onChange={({ value }) => setOrgUnitsText(value)}
                     inputWidth="600px"
                 />
+                <div className="scenarios">
+                    {ORG_UNIT_SCENARIOS.map(([label, text]) => (
+                        <Button
+                            key={label}
+                            small
+                            onClick={() => setOrgUnitsText(text)}
+                        >
+                            {label}
+                        </Button>
+                    ))}
+                </div>
+                <style jsx>{`
+                    .scenarios {
+                        display: flex;
+                        gap: 8px;
+                        margin-block-start: 8px;
+                    }
+                `}</style>
             </div>
             {loading && <Loading />}
             {error && <ErrorNotice error={error} />}
@@ -178,9 +215,9 @@ export const ProfilesAndCompatibility = () => {
                             </tr>
                             <tr>
                                 <th>JSON</th>
-                                <th>Collected at</th>
-                                <th>Levels</th>
-                                <th>Finest</th>
+                                <th>Period types</th>
+                                <th>Org unit levels</th>
+                                <th>Shortest direct type</th>
                                 {periods.map((period) => (
                                     <th key={period}>{period}</th>
                                 ))}
@@ -224,9 +261,13 @@ export const ProfilesAndCompatibility = () => {
                                                 </pre>
                                             </details>
                                         </td>
-                                        <td>{describeCollection(profile)}</td>
+                                        <td>{describePeriodTypes(profile)}</td>
                                         <td>{describeLevels(profile)}</td>
-                                        <td>{describeFinest(profile)}</td>
+                                        <td>
+                                            {describeShortestDirectType(
+                                                profile
+                                            )}
+                                        </td>
                                         {compatibility.periods.map((result) => (
                                             <td key={result.id}>
                                                 <Status {...result} />
@@ -236,9 +277,9 @@ export const ProfilesAndCompatibility = () => {
                                             (result) => (
                                                 <td key={result.id}>
                                                     <Status {...result} />
-                                                    <Coverage
-                                                        coverage={
-                                                            result.coverage
+                                                    <Assignment
+                                                        assignment={
+                                                            result.assignment
                                                         }
                                                     />
                                                 </td>

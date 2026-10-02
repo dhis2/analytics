@@ -1,6 +1,6 @@
 import { useConfig, useDataEngine } from '@dhis2/app-runtime'
 import { useRef } from 'react'
-import { getRelativePeriodTypeOptions } from '../../modules/dataItemProfile/periodTypes.js'
+import { getRelativePeriodTypeOptions } from '../../modules/dataItemProfile/periods/periodTypes.js'
 
 const SETTING_KEYS = ['analyticsWeeklyStart', 'analyticsFinancialYearStart']
 

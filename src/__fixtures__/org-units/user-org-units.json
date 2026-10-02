@@ -1,0 +1,104 @@
+{
+    "schemaVersion": 1,
+    "group": "user-org-units",
+    "provisional": false,
+    "source": "maps-tools/test-data-period-types (14abea3, with local changes)",
+    "runs": [
+        {
+            "instance": "dev",
+            "version": "2.44-SNAPSHOT",
+            "date": "2026-10-02"
+        },
+        {
+            "instance": "dev-2-41",
+            "version": "2.41.11-SNAPSHOT",
+            "date": "2026-10-02"
+        },
+        {
+            "instance": "dev-2-42",
+            "version": "2.42.7-SNAPSHOT",
+            "date": "2026-10-02"
+        },
+        {
+            "instance": "dev-2-43",
+            "version": "2.43.3-SNAPSHOT",
+            "date": "2026-10-02"
+        },
+        {
+            "instance": "stable-2-40-12",
+            "version": "2.40.12",
+            "date": "2026-10-02"
+        },
+        {
+            "instance": "stable-2-41-10",
+            "version": "2.41.10",
+            "date": "2026-10-02"
+        },
+        {
+            "instance": "stable-2-42-6",
+            "version": "2.42.6",
+            "date": "2026-10-02"
+        },
+        {
+            "instance": "stable-2-43-1",
+            "version": "2.43.1",
+            "date": "2026-10-02"
+        }
+    ],
+    "hierarchy": {
+        "orgUnits": {
+            "region": {
+                "level": 2,
+                "parent": null
+            },
+            "A": {
+                "level": 3,
+                "parent": "region"
+            },
+            "B": {
+                "level": 3,
+                "parent": "region"
+            },
+            "D1": {
+                "level": 3,
+                "parent": "region"
+            },
+            "D2": {
+                "level": 3,
+                "parent": "region"
+            },
+            "D3": {
+                "level": 3,
+                "parent": "region"
+            },
+            "F1": {
+                "level": 4,
+                "parent": "D1"
+            },
+            "F2": {
+                "level": 4,
+                "parent": "D1"
+            },
+            "F3": {
+                "level": 4,
+                "parent": "D2"
+            }
+        },
+        "groups": {
+            "g": [
+                "D2",
+                "F1"
+            ],
+            "empty": [],
+            "top": [
+                "region"
+            ]
+        }
+    },
+    "smoke": "3 of 3 cases, one per pattern",
+    "cases": [
+        {"id":"ou-user__children","item":{"code":"PTT_OU_EVERYWHERE","dimensionItemType":"DATA_ELEMENT","aggregationType":"SUM","valueType":"INTEGER","collectionPeriodTypes":["Monthly"],"collectionSources":[{"dataSet":"PTT OU data set everywhere","periodType":"Monthly","orgUnits":["F1","F2","F3","D1","D2","D3"]}]},"query":{"periodType":"Quarterly","period":"2025Q1","orgUnits":["USER_ORGUNIT_CHILDREN"]},"expected":{"status":"VALUE","value":333333,"contributes":["F1","F2","F3","D1","D2","D3"],"compatibility":"full","reasons":[]},"observed":{"2.44-SNAPSHOT":{"status":"VALUE","value":333333,"rows":{"D3":300000,"D1":3033,"D2":30300}},"2.41.11-SNAPSHOT":{"status":"VALUE","value":333333,"rows":{"D3":300000,"D1":3033,"D2":30300}},"2.42.7-SNAPSHOT":{"status":"VALUE","value":333333,"rows":{"D3":300000,"D1":3033,"D2":30300}},"2.43.3-SNAPSHOT":{"status":"VALUE","value":333333,"rows":{"D3":300000,"D1":3033,"D2":30300}},"2.40.12":{"status":"VALUE","value":333333,"rows":{"D3":300000,"D1":3033,"D2":30300}},"2.41.10":{"status":"VALUE","value":333333,"rows":{"D3":300000,"D1":3033,"D2":30300}},"2.42.6":{"status":"VALUE","value":333333,"rows":{"D3":300000,"D1":3033,"D2":30300}},"2.43.1":{"status":"VALUE","value":333333,"rows":{"D3":300000,"D1":3033,"D2":30300}}},"verdict":{"2.44-SNAPSHOT":"pass","2.41.11-SNAPSHOT":"pass","2.42.7-SNAPSHOT":"pass","2.43.3-SNAPSHOT":"pass","2.40.12":"pass","2.41.10":"pass","2.42.6":"pass","2.43.1":"pass"}},
+        {"id":"ou-user__grandchildren","item":{"code":"PTT_OU_EVERYWHERE","dimensionItemType":"DATA_ELEMENT","aggregationType":"SUM","valueType":"INTEGER","collectionPeriodTypes":["Monthly"],"collectionSources":[{"dataSet":"PTT OU data set everywhere","periodType":"Monthly","orgUnits":["F1","F2","F3","D1","D2","D3"]}]},"query":{"periodType":"Quarterly","period":"2025Q1","orgUnits":["USER_ORGUNIT_GRANDCHILDREN"]},"expected":{"status":"VALUE","value":333,"contributes":["F1","F2","F3"],"compatibility":"full","reasons":[]},"observed":{"2.44-SNAPSHOT":{"status":"VALUE","value":333,"rows":{"F1":3,"F2":30,"F3":300}},"2.41.11-SNAPSHOT":{"status":"VALUE","value":333,"rows":{"F1":3,"F2":30,"F3":300}},"2.42.7-SNAPSHOT":{"status":"VALUE","value":333,"rows":{"F1":3,"F2":30,"F3":300}},"2.43.3-SNAPSHOT":{"status":"VALUE","value":333,"rows":{"F1":3,"F2":30,"F3":300}},"2.40.12":{"status":"VALUE","value":333,"rows":{"F1":3,"F2":30,"F3":300}},"2.41.10":{"status":"VALUE","value":333,"rows":{"F1":3,"F2":30,"F3":300}},"2.42.6":{"status":"VALUE","value":333,"rows":{"F1":3,"F2":30,"F3":300}},"2.43.1":{"status":"VALUE","value":333,"rows":{"F1":3,"F2":30,"F3":300}}},"verdict":{"2.44-SNAPSHOT":"pass","2.41.11-SNAPSHOT":"pass","2.42.7-SNAPSHOT":"pass","2.43.3-SNAPSHOT":"pass","2.40.12":"pass","2.41.10":"pass","2.42.6":"pass","2.43.1":"pass"}},
+        {"id":"ou-user__user-orgunit","item":{"code":"PTT_OU_EVERYWHERE","dimensionItemType":"DATA_ELEMENT","aggregationType":"SUM","valueType":"INTEGER","collectionPeriodTypes":["Monthly"],"collectionSources":[{"dataSet":"PTT OU data set everywhere","periodType":"Monthly","orgUnits":["F1","F2","F3","D1","D2","D3"]}]},"query":{"periodType":"Quarterly","period":"2025Q1","orgUnits":["USER_ORGUNIT"]},"expected":{"status":"VALUE","value":333333,"contributes":["F1","F2","F3","D1","D2","D3"],"compatibility":"full","reasons":[]},"observed":{"2.44-SNAPSHOT":{"status":"VALUE","value":333333,"rows":{"region":333333}},"2.41.11-SNAPSHOT":{"status":"VALUE","value":333333,"rows":{"region":333333}},"2.42.7-SNAPSHOT":{"status":"VALUE","value":333333,"rows":{"region":333333}},"2.43.3-SNAPSHOT":{"status":"VALUE","value":333333,"rows":{"region":333333}},"2.40.12":{"status":"VALUE","value":333333,"rows":{"region":333333}},"2.41.10":{"status":"VALUE","value":333333,"rows":{"region":333333}},"2.42.6":{"status":"VALUE","value":333333,"rows":{"region":333333}},"2.43.1":{"status":"VALUE","value":333333,"rows":{"region":333333}}},"verdict":{"2.44-SNAPSHOT":"pass","2.41.11-SNAPSHOT":"pass","2.42.7-SNAPSHOT":"pass","2.43.3-SNAPSHOT":"pass","2.40.12":"pass","2.41.10":"pass","2.42.6":"pass","2.43.1":"pass"}}
+    ]
+}

@@ -7,148 +7,194 @@
         {
             "instance": "dev",
             "version": "2.44-SNAPSHOT",
-            "date": "2026-10-01"
+            "date": "2026-10-02"
         },
         {
             "instance": "dev-2-41",
             "version": "2.41.11-SNAPSHOT",
-            "date": "2026-10-01"
+            "date": "2026-10-02"
         },
         {
             "instance": "dev-2-42",
             "version": "2.42.7-SNAPSHOT",
-            "date": "2026-10-01"
+            "date": "2026-10-02"
         },
         {
             "instance": "dev-2-43",
             "version": "2.43.3-SNAPSHOT",
-            "date": "2026-10-01"
+            "date": "2026-10-02"
         },
         {
             "instance": "stable-2-40-12",
             "version": "2.40.12",
-            "date": "2026-10-01"
+            "date": "2026-10-02"
         },
         {
             "instance": "stable-2-41-10",
             "version": "2.41.10",
-            "date": "2026-10-01"
+            "date": "2026-10-02"
         },
         {
             "instance": "stable-2-42-6",
             "version": "2.42.6",
-            "date": "2026-10-01"
+            "date": "2026-10-02"
         },
         {
             "instance": "stable-2-43-1",
             "version": "2.43.1",
-            "date": "2026-10-01"
+            "date": "2026-10-02"
         }
     ],
     "findings": {
         "2.44-SNAPSHOT": {
             "Weekly by Monthly": {
-                "rules": ["mostDays"],
+                "rules": [
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 24
             },
             "Weekly by Quarterly": {
-                "rules": ["end", "mostDays"],
+                "rules": [
+                    "end",
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 8
             },
             "Weekly by Yearly": {
-                "rules": ["end", "mostDays"],
+                "rules": [
+                    "end",
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 2
             },
             "WeeklyWednesday by Monthly": {
-                "rules": ["mostDays"],
+                "rules": [
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 24
             },
             "WeeklyWednesday by Quarterly": {
-                "rules": ["mostDays"],
+                "rules": [
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 8
             },
             "WeeklyWednesday by Yearly": {
-                "rules": ["mostDays"],
+                "rules": [
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 2
             },
             "WeeklyThursday by Monthly": {
-                "rules": ["mostDays"],
+                "rules": [
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 24
             },
             "WeeklyThursday by Quarterly": {
-                "rules": ["start", "mostDays"],
+                "rules": [
+                    "start",
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 8
             },
             "WeeklyThursday by Yearly": {
-                "rules": ["start", "mostDays"],
+                "rules": [
+                    "start",
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 2
             },
             "WeeklyFriday by Monthly": {
-                "rules": ["mostDays"],
+                "rules": [
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 24
             },
             "WeeklyFriday by Quarterly": {
-                "rules": ["mostDays"],
+                "rules": [
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 8
             },
             "WeeklyFriday by Yearly": {
-                "rules": ["mostDays"],
+                "rules": [
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 2
             },
             "WeeklySaturday by Monthly": {
-                "rules": ["mostDays"],
+                "rules": [
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 24
             },
             "WeeklySaturday by Quarterly": {
-                "rules": ["mostDays"],
+                "rules": [
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 8
             },
             "WeeklySaturday by Yearly": {
-                "rules": ["mostDays"],
+                "rules": [
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 2
             },
             "WeeklySunday by Monthly": {
-                "rules": ["mostDays"],
+                "rules": [
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 24
             },
             "WeeklySunday by Quarterly": {
-                "rules": ["mostDays"],
+                "rules": [
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 8
             },
             "WeeklySunday by Yearly": {
-                "rules": ["mostDays"],
+                "rules": [
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 2
             },
             "BiWeekly by Monthly": {
-                "rules": ["start"],
+                "rules": [
+                    "start"
+                ],
                 "empty": 0,
                 "cases": 24
             },
             "BiWeekly by Quarterly": {
-                "rules": ["start"],
+                "rules": [
+                    "start"
+                ],
                 "empty": 0,
                 "cases": 8
             },
             "BiWeekly by Yearly": {
-                "rules": ["start"],
+                "rules": [
+                    "start"
+                ],
                 "empty": 0,
                 "cases": 2
             },
@@ -158,17 +204,29 @@
                 "cases": 8
             },
             "QuarterlyNov by Yearly": {
-                "rules": ["start", "end", "mostDays"],
+                "rules": [
+                    "start",
+                    "end",
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 2
             },
             "SixMonthlyApril by Yearly": {
-                "rules": ["start", "end", "mostDays"],
+                "rules": [
+                    "start",
+                    "end",
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 2
             },
             "SixMonthlyNov by Yearly": {
-                "rules": ["start", "end", "mostDays"],
+                "rules": [
+                    "start",
+                    "end",
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 2
             },
@@ -210,92 +268,132 @@
         },
         "2.41.11-SNAPSHOT": {
             "Weekly by Monthly": {
-                "rules": ["mostDays"],
+                "rules": [
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 24
             },
             "Weekly by Quarterly": {
-                "rules": ["end", "mostDays"],
+                "rules": [
+                    "end",
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 8
             },
             "Weekly by Yearly": {
-                "rules": ["end", "mostDays"],
+                "rules": [
+                    "end",
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 2
             },
             "WeeklyWednesday by Monthly": {
-                "rules": ["mostDays"],
+                "rules": [
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 24
             },
             "WeeklyWednesday by Quarterly": {
-                "rules": ["mostDays"],
+                "rules": [
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 8
             },
             "WeeklyWednesday by Yearly": {
-                "rules": ["mostDays"],
+                "rules": [
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 2
             },
             "WeeklyThursday by Monthly": {
-                "rules": ["mostDays"],
+                "rules": [
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 24
             },
             "WeeklyThursday by Quarterly": {
-                "rules": ["start", "mostDays"],
+                "rules": [
+                    "start",
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 8
             },
             "WeeklyThursday by Yearly": {
-                "rules": ["start", "mostDays"],
+                "rules": [
+                    "start",
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 2
             },
             "WeeklySaturday by Monthly": {
-                "rules": ["mostDays"],
+                "rules": [
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 24
             },
             "WeeklySaturday by Quarterly": {
-                "rules": ["mostDays"],
+                "rules": [
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 8
             },
             "WeeklySaturday by Yearly": {
-                "rules": ["mostDays"],
+                "rules": [
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 2
             },
             "WeeklySunday by Monthly": {
-                "rules": ["mostDays"],
+                "rules": [
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 24
             },
             "WeeklySunday by Quarterly": {
-                "rules": ["mostDays"],
+                "rules": [
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 8
             },
             "WeeklySunday by Yearly": {
-                "rules": ["mostDays"],
+                "rules": [
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 2
             },
             "BiWeekly by Monthly": {
-                "rules": ["start"],
+                "rules": [
+                    "start"
+                ],
                 "empty": 0,
                 "cases": 24
             },
             "BiWeekly by Quarterly": {
-                "rules": ["start"],
+                "rules": [
+                    "start"
+                ],
                 "empty": 0,
                 "cases": 8
             },
             "BiWeekly by Yearly": {
-                "rules": ["start"],
+                "rules": [
+                    "start"
+                ],
                 "empty": 0,
                 "cases": 2
             },
@@ -305,17 +403,29 @@
                 "cases": 8
             },
             "QuarterlyNov by Yearly": {
-                "rules": ["start", "end", "mostDays"],
+                "rules": [
+                    "start",
+                    "end",
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 2
             },
             "SixMonthlyApril by Yearly": {
-                "rules": ["start", "end", "mostDays"],
+                "rules": [
+                    "start",
+                    "end",
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 2
             },
             "SixMonthlyNov by Yearly": {
-                "rules": ["start", "end", "mostDays"],
+                "rules": [
+                    "start",
+                    "end",
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 2
             },
@@ -342,92 +452,132 @@
         },
         "2.42.7-SNAPSHOT": {
             "Weekly by Monthly": {
-                "rules": ["mostDays"],
+                "rules": [
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 24
             },
             "Weekly by Quarterly": {
-                "rules": ["end", "mostDays"],
+                "rules": [
+                    "end",
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 8
             },
             "Weekly by Yearly": {
-                "rules": ["end", "mostDays"],
+                "rules": [
+                    "end",
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 2
             },
             "WeeklyWednesday by Monthly": {
-                "rules": ["mostDays"],
+                "rules": [
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 24
             },
             "WeeklyWednesday by Quarterly": {
-                "rules": ["mostDays"],
+                "rules": [
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 8
             },
             "WeeklyWednesday by Yearly": {
-                "rules": ["mostDays"],
+                "rules": [
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 2
             },
             "WeeklyThursday by Monthly": {
-                "rules": ["mostDays"],
+                "rules": [
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 24
             },
             "WeeklyThursday by Quarterly": {
-                "rules": ["start", "mostDays"],
+                "rules": [
+                    "start",
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 8
             },
             "WeeklyThursday by Yearly": {
-                "rules": ["start", "mostDays"],
+                "rules": [
+                    "start",
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 2
             },
             "WeeklySaturday by Monthly": {
-                "rules": ["mostDays"],
+                "rules": [
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 24
             },
             "WeeklySaturday by Quarterly": {
-                "rules": ["mostDays"],
+                "rules": [
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 8
             },
             "WeeklySaturday by Yearly": {
-                "rules": ["mostDays"],
+                "rules": [
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 2
             },
             "WeeklySunday by Monthly": {
-                "rules": ["mostDays"],
+                "rules": [
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 24
             },
             "WeeklySunday by Quarterly": {
-                "rules": ["mostDays"],
+                "rules": [
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 8
             },
             "WeeklySunday by Yearly": {
-                "rules": ["mostDays"],
+                "rules": [
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 2
             },
             "BiWeekly by Monthly": {
-                "rules": ["start"],
+                "rules": [
+                    "start"
+                ],
                 "empty": 0,
                 "cases": 24
             },
             "BiWeekly by Quarterly": {
-                "rules": ["start"],
+                "rules": [
+                    "start"
+                ],
                 "empty": 0,
                 "cases": 8
             },
             "BiWeekly by Yearly": {
-                "rules": ["start"],
+                "rules": [
+                    "start"
+                ],
                 "empty": 0,
                 "cases": 2
             },
@@ -437,17 +587,29 @@
                 "cases": 8
             },
             "QuarterlyNov by Yearly": {
-                "rules": ["start", "end", "mostDays"],
+                "rules": [
+                    "start",
+                    "end",
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 2
             },
             "SixMonthlyApril by Yearly": {
-                "rules": ["start", "end", "mostDays"],
+                "rules": [
+                    "start",
+                    "end",
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 2
             },
             "SixMonthlyNov by Yearly": {
-                "rules": ["start", "end", "mostDays"],
+                "rules": [
+                    "start",
+                    "end",
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 2
             },
@@ -479,107 +641,153 @@
         },
         "2.43.3-SNAPSHOT": {
             "Weekly by Monthly": {
-                "rules": ["mostDays"],
+                "rules": [
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 24
             },
             "Weekly by Quarterly": {
-                "rules": ["end", "mostDays"],
+                "rules": [
+                    "end",
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 8
             },
             "Weekly by Yearly": {
-                "rules": ["end", "mostDays"],
+                "rules": [
+                    "end",
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 2
             },
             "WeeklyWednesday by Monthly": {
-                "rules": ["mostDays"],
+                "rules": [
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 24
             },
             "WeeklyWednesday by Quarterly": {
-                "rules": ["mostDays"],
+                "rules": [
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 8
             },
             "WeeklyWednesday by Yearly": {
-                "rules": ["mostDays"],
+                "rules": [
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 2
             },
             "WeeklyThursday by Monthly": {
-                "rules": ["mostDays"],
+                "rules": [
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 24
             },
             "WeeklyThursday by Quarterly": {
-                "rules": ["start", "mostDays"],
+                "rules": [
+                    "start",
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 8
             },
             "WeeklyThursday by Yearly": {
-                "rules": ["start", "mostDays"],
+                "rules": [
+                    "start",
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 2
             },
             "WeeklyFriday by Monthly": {
-                "rules": ["mostDays"],
+                "rules": [
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 24
             },
             "WeeklyFriday by Quarterly": {
-                "rules": ["mostDays"],
+                "rules": [
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 8
             },
             "WeeklyFriday by Yearly": {
-                "rules": ["mostDays"],
+                "rules": [
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 2
             },
             "WeeklySaturday by Monthly": {
-                "rules": ["mostDays"],
+                "rules": [
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 24
             },
             "WeeklySaturday by Quarterly": {
-                "rules": ["mostDays"],
+                "rules": [
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 8
             },
             "WeeklySaturday by Yearly": {
-                "rules": ["mostDays"],
+                "rules": [
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 2
             },
             "WeeklySunday by Monthly": {
-                "rules": ["mostDays"],
+                "rules": [
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 24
             },
             "WeeklySunday by Quarterly": {
-                "rules": ["mostDays"],
+                "rules": [
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 8
             },
             "WeeklySunday by Yearly": {
-                "rules": ["mostDays"],
+                "rules": [
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 2
             },
             "BiWeekly by Monthly": {
-                "rules": ["start"],
+                "rules": [
+                    "start"
+                ],
                 "empty": 0,
                 "cases": 24
             },
             "BiWeekly by Quarterly": {
-                "rules": ["start"],
+                "rules": [
+                    "start"
+                ],
                 "empty": 0,
                 "cases": 8
             },
             "BiWeekly by Yearly": {
-                "rules": ["start"],
+                "rules": [
+                    "start"
+                ],
                 "empty": 0,
                 "cases": 2
             },
@@ -589,17 +797,29 @@
                 "cases": 8
             },
             "QuarterlyNov by Yearly": {
-                "rules": ["start", "end", "mostDays"],
+                "rules": [
+                    "start",
+                    "end",
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 2
             },
             "SixMonthlyApril by Yearly": {
-                "rules": ["start", "end", "mostDays"],
+                "rules": [
+                    "start",
+                    "end",
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 2
             },
             "SixMonthlyNov by Yearly": {
-                "rules": ["start", "end", "mostDays"],
+                "rules": [
+                    "start",
+                    "end",
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 2
             },
@@ -641,92 +861,132 @@
         },
         "2.40.12": {
             "Weekly by Monthly": {
-                "rules": ["mostDays"],
+                "rules": [
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 24
             },
             "Weekly by Quarterly": {
-                "rules": ["end", "mostDays"],
+                "rules": [
+                    "end",
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 8
             },
             "Weekly by Yearly": {
-                "rules": ["end", "mostDays"],
+                "rules": [
+                    "end",
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 2
             },
             "WeeklyWednesday by Monthly": {
-                "rules": ["mostDays"],
+                "rules": [
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 24
             },
             "WeeklyWednesday by Quarterly": {
-                "rules": ["mostDays"],
+                "rules": [
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 8
             },
             "WeeklyWednesday by Yearly": {
-                "rules": ["mostDays"],
+                "rules": [
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 2
             },
             "WeeklyThursday by Monthly": {
-                "rules": ["mostDays"],
+                "rules": [
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 24
             },
             "WeeklyThursday by Quarterly": {
-                "rules": ["start", "mostDays"],
+                "rules": [
+                    "start",
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 8
             },
             "WeeklyThursday by Yearly": {
-                "rules": ["start", "mostDays"],
+                "rules": [
+                    "start",
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 2
             },
             "WeeklySaturday by Monthly": {
-                "rules": ["mostDays"],
+                "rules": [
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 24
             },
             "WeeklySaturday by Quarterly": {
-                "rules": ["mostDays"],
+                "rules": [
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 8
             },
             "WeeklySaturday by Yearly": {
-                "rules": ["mostDays"],
+                "rules": [
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 2
             },
             "WeeklySunday by Monthly": {
-                "rules": ["mostDays"],
+                "rules": [
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 24
             },
             "WeeklySunday by Quarterly": {
-                "rules": ["mostDays"],
+                "rules": [
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 8
             },
             "WeeklySunday by Yearly": {
-                "rules": ["mostDays"],
+                "rules": [
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 2
             },
             "BiWeekly by Monthly": {
-                "rules": ["start"],
+                "rules": [
+                    "start"
+                ],
                 "empty": 0,
                 "cases": 24
             },
             "BiWeekly by Quarterly": {
-                "rules": ["start"],
+                "rules": [
+                    "start"
+                ],
                 "empty": 0,
                 "cases": 8
             },
             "BiWeekly by Yearly": {
-                "rules": ["start"],
+                "rules": [
+                    "start"
+                ],
                 "empty": 0,
                 "cases": 2
             },
@@ -736,17 +996,29 @@
                 "cases": 8
             },
             "QuarterlyNov by Yearly": {
-                "rules": ["start", "end", "mostDays"],
+                "rules": [
+                    "start",
+                    "end",
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 2
             },
             "SixMonthlyApril by Yearly": {
-                "rules": ["start", "end", "mostDays"],
+                "rules": [
+                    "start",
+                    "end",
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 2
             },
             "SixMonthlyNov by Yearly": {
-                "rules": ["start", "end", "mostDays"],
+                "rules": [
+                    "start",
+                    "end",
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 2
             },
@@ -773,92 +1045,132 @@
         },
         "2.41.10": {
             "Weekly by Monthly": {
-                "rules": ["mostDays"],
+                "rules": [
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 24
             },
             "Weekly by Quarterly": {
-                "rules": ["end", "mostDays"],
+                "rules": [
+                    "end",
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 8
             },
             "Weekly by Yearly": {
-                "rules": ["end", "mostDays"],
+                "rules": [
+                    "end",
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 2
             },
             "WeeklyWednesday by Monthly": {
-                "rules": ["mostDays"],
+                "rules": [
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 24
             },
             "WeeklyWednesday by Quarterly": {
-                "rules": ["mostDays"],
+                "rules": [
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 8
             },
             "WeeklyWednesday by Yearly": {
-                "rules": ["mostDays"],
+                "rules": [
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 2
             },
             "WeeklyThursday by Monthly": {
-                "rules": ["mostDays"],
+                "rules": [
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 24
             },
             "WeeklyThursday by Quarterly": {
-                "rules": ["start", "mostDays"],
+                "rules": [
+                    "start",
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 8
             },
             "WeeklyThursday by Yearly": {
-                "rules": ["start", "mostDays"],
+                "rules": [
+                    "start",
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 2
             },
             "WeeklySaturday by Monthly": {
-                "rules": ["mostDays"],
+                "rules": [
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 24
             },
             "WeeklySaturday by Quarterly": {
-                "rules": ["mostDays"],
+                "rules": [
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 8
             },
             "WeeklySaturday by Yearly": {
-                "rules": ["mostDays"],
+                "rules": [
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 2
             },
             "WeeklySunday by Monthly": {
-                "rules": ["mostDays"],
+                "rules": [
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 24
             },
             "WeeklySunday by Quarterly": {
-                "rules": ["mostDays"],
+                "rules": [
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 8
             },
             "WeeklySunday by Yearly": {
-                "rules": ["mostDays"],
+                "rules": [
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 2
             },
             "BiWeekly by Monthly": {
-                "rules": ["start"],
+                "rules": [
+                    "start"
+                ],
                 "empty": 0,
                 "cases": 24
             },
             "BiWeekly by Quarterly": {
-                "rules": ["start"],
+                "rules": [
+                    "start"
+                ],
                 "empty": 0,
                 "cases": 8
             },
             "BiWeekly by Yearly": {
-                "rules": ["start"],
+                "rules": [
+                    "start"
+                ],
                 "empty": 0,
                 "cases": 2
             },
@@ -868,17 +1180,29 @@
                 "cases": 8
             },
             "QuarterlyNov by Yearly": {
-                "rules": ["start", "end", "mostDays"],
+                "rules": [
+                    "start",
+                    "end",
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 2
             },
             "SixMonthlyApril by Yearly": {
-                "rules": ["start", "end", "mostDays"],
+                "rules": [
+                    "start",
+                    "end",
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 2
             },
             "SixMonthlyNov by Yearly": {
-                "rules": ["start", "end", "mostDays"],
+                "rules": [
+                    "start",
+                    "end",
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 2
             },
@@ -905,92 +1229,132 @@
         },
         "2.42.6": {
             "Weekly by Monthly": {
-                "rules": ["mostDays"],
+                "rules": [
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 24
             },
             "Weekly by Quarterly": {
-                "rules": ["end", "mostDays"],
+                "rules": [
+                    "end",
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 8
             },
             "Weekly by Yearly": {
-                "rules": ["end", "mostDays"],
+                "rules": [
+                    "end",
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 2
             },
             "WeeklyWednesday by Monthly": {
-                "rules": ["mostDays"],
+                "rules": [
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 24
             },
             "WeeklyWednesday by Quarterly": {
-                "rules": ["mostDays"],
+                "rules": [
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 8
             },
             "WeeklyWednesday by Yearly": {
-                "rules": ["mostDays"],
+                "rules": [
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 2
             },
             "WeeklyThursday by Monthly": {
-                "rules": ["mostDays"],
+                "rules": [
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 24
             },
             "WeeklyThursday by Quarterly": {
-                "rules": ["start", "mostDays"],
+                "rules": [
+                    "start",
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 8
             },
             "WeeklyThursday by Yearly": {
-                "rules": ["start", "mostDays"],
+                "rules": [
+                    "start",
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 2
             },
             "WeeklySaturday by Monthly": {
-                "rules": ["mostDays"],
+                "rules": [
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 24
             },
             "WeeklySaturday by Quarterly": {
-                "rules": ["mostDays"],
+                "rules": [
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 8
             },
             "WeeklySaturday by Yearly": {
-                "rules": ["mostDays"],
+                "rules": [
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 2
             },
             "WeeklySunday by Monthly": {
-                "rules": ["mostDays"],
+                "rules": [
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 24
             },
             "WeeklySunday by Quarterly": {
-                "rules": ["mostDays"],
+                "rules": [
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 8
             },
             "WeeklySunday by Yearly": {
-                "rules": ["mostDays"],
+                "rules": [
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 2
             },
             "BiWeekly by Monthly": {
-                "rules": ["start"],
+                "rules": [
+                    "start"
+                ],
                 "empty": 0,
                 "cases": 24
             },
             "BiWeekly by Quarterly": {
-                "rules": ["start"],
+                "rules": [
+                    "start"
+                ],
                 "empty": 0,
                 "cases": 8
             },
             "BiWeekly by Yearly": {
-                "rules": ["start"],
+                "rules": [
+                    "start"
+                ],
                 "empty": 0,
                 "cases": 2
             },
@@ -1000,17 +1364,29 @@
                 "cases": 8
             },
             "QuarterlyNov by Yearly": {
-                "rules": ["start", "end", "mostDays"],
+                "rules": [
+                    "start",
+                    "end",
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 2
             },
             "SixMonthlyApril by Yearly": {
-                "rules": ["start", "end", "mostDays"],
+                "rules": [
+                    "start",
+                    "end",
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 2
             },
             "SixMonthlyNov by Yearly": {
-                "rules": ["start", "end", "mostDays"],
+                "rules": [
+                    "start",
+                    "end",
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 2
             },
@@ -1042,107 +1418,153 @@
         },
         "2.43.1": {
             "Weekly by Monthly": {
-                "rules": ["mostDays"],
+                "rules": [
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 24
             },
             "Weekly by Quarterly": {
-                "rules": ["end", "mostDays"],
+                "rules": [
+                    "end",
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 8
             },
             "Weekly by Yearly": {
-                "rules": ["end", "mostDays"],
+                "rules": [
+                    "end",
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 2
             },
             "WeeklyWednesday by Monthly": {
-                "rules": ["mostDays"],
+                "rules": [
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 24
             },
             "WeeklyWednesday by Quarterly": {
-                "rules": ["mostDays"],
+                "rules": [
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 8
             },
             "WeeklyWednesday by Yearly": {
-                "rules": ["mostDays"],
+                "rules": [
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 2
             },
             "WeeklyThursday by Monthly": {
-                "rules": ["mostDays"],
+                "rules": [
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 24
             },
             "WeeklyThursday by Quarterly": {
-                "rules": ["start", "mostDays"],
+                "rules": [
+                    "start",
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 8
             },
             "WeeklyThursday by Yearly": {
-                "rules": ["start", "mostDays"],
+                "rules": [
+                    "start",
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 2
             },
             "WeeklyFriday by Monthly": {
-                "rules": ["mostDays"],
+                "rules": [
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 24
             },
             "WeeklyFriday by Quarterly": {
-                "rules": ["mostDays"],
+                "rules": [
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 8
             },
             "WeeklyFriday by Yearly": {
-                "rules": ["mostDays"],
+                "rules": [
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 2
             },
             "WeeklySaturday by Monthly": {
-                "rules": ["mostDays"],
+                "rules": [
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 24
             },
             "WeeklySaturday by Quarterly": {
-                "rules": ["mostDays"],
+                "rules": [
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 8
             },
             "WeeklySaturday by Yearly": {
-                "rules": ["mostDays"],
+                "rules": [
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 2
             },
             "WeeklySunday by Monthly": {
-                "rules": ["mostDays"],
+                "rules": [
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 24
             },
             "WeeklySunday by Quarterly": {
-                "rules": ["mostDays"],
+                "rules": [
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 8
             },
             "WeeklySunday by Yearly": {
-                "rules": ["mostDays"],
+                "rules": [
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 2
             },
             "BiWeekly by Monthly": {
-                "rules": ["start"],
+                "rules": [
+                    "start"
+                ],
                 "empty": 0,
                 "cases": 24
             },
             "BiWeekly by Quarterly": {
-                "rules": ["start"],
+                "rules": [
+                    "start"
+                ],
                 "empty": 0,
                 "cases": 8
             },
             "BiWeekly by Yearly": {
-                "rules": ["start"],
+                "rules": [
+                    "start"
+                ],
                 "empty": 0,
                 "cases": 2
             },
@@ -1152,17 +1574,29 @@
                 "cases": 8
             },
             "QuarterlyNov by Yearly": {
-                "rules": ["start", "end", "mostDays"],
+                "rules": [
+                    "start",
+                    "end",
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 2
             },
             "SixMonthlyApril by Yearly": {
-                "rules": ["start", "end", "mostDays"],
+                "rules": [
+                    "start",
+                    "end",
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 2
             },
             "SixMonthlyNov by Yearly": {
-                "rules": ["start", "end", "mostDays"],
+                "rules": [
+                    "start",
+                    "end",
+                    "mostDays"
+                ],
                 "empty": 0,
                 "cases": 2
             },
@@ -1205,159 +1639,10 @@
     },
     "smoke": "5 of 266 cases, one per pattern",
     "cases": [
-        {
-            "id": "nest-BiWeekly__q-Monthly__p-202401__A",
-            "item": {
-                "code": "PTT_G2_BiWeekly",
-                "dimensionItemType": "DATA_ELEMENT",
-                "aggregationType": "SUM",
-                "valueType": "INTEGER",
-                "collectionPeriodTypes": ["BiWeekly"]
-            },
-            "query": {
-                "periodType": "Monthly",
-                "period": "202401",
-                "orgUnit": "A"
-            },
-            "expected": { "status": "VALUE", "value": null },
-            "observed": {
-                "2.44-SNAPSHOT": { "status": "VALUE", "value": 3 },
-                "2.41.11-SNAPSHOT": { "status": "VALUE", "value": 3 },
-                "2.42.7-SNAPSHOT": { "status": "VALUE", "value": 3 },
-                "2.43.3-SNAPSHOT": { "status": "VALUE", "value": 3 },
-                "2.40.12": { "status": "VALUE", "value": 3 },
-                "2.41.10": { "status": "VALUE", "value": 3 },
-                "2.42.6": { "status": "VALUE", "value": 3 },
-                "2.43.1": { "status": "VALUE", "value": 3 }
-            },
-            "verdict": {
-                "2.44-SNAPSHOT": "recorded",
-                "2.41.11-SNAPSHOT": "recorded",
-                "2.42.7-SNAPSHOT": "recorded",
-                "2.43.3-SNAPSHOT": "recorded",
-                "2.40.12": "recorded",
-                "2.41.10": "recorded",
-                "2.42.6": "recorded",
-                "2.43.1": "recorded"
-            }
-        },
-        {
-            "id": "nest-FinancialApril__q-Yearly__p-2024__A",
-            "item": {
-                "code": "PTT_G2_FinancialApril",
-                "dimensionItemType": "DATA_ELEMENT",
-                "aggregationType": "SUM",
-                "valueType": "INTEGER",
-                "collectionPeriodTypes": ["FinancialApril"]
-            },
-            "query": {
-                "periodType": "Yearly",
-                "period": "2024",
-                "orgUnit": "A"
-            },
-            "expected": { "status": "EMPTY", "value": null },
-            "observed": {
-                "2.44-SNAPSHOT": { "status": "EMPTY", "value": null },
-                "2.41.11-SNAPSHOT": { "status": "EMPTY", "value": null },
-                "2.42.7-SNAPSHOT": { "status": "EMPTY", "value": null },
-                "2.43.3-SNAPSHOT": { "status": "EMPTY", "value": null },
-                "2.40.12": { "status": "EMPTY", "value": null },
-                "2.41.10": { "status": "EMPTY", "value": null },
-                "2.42.6": { "status": "EMPTY", "value": null },
-                "2.43.1": { "status": "EMPTY", "value": null }
-            },
-            "verdict": {
-                "2.44-SNAPSHOT": "pass",
-                "2.41.11-SNAPSHOT": "pass",
-                "2.42.7-SNAPSHOT": "pass",
-                "2.43.3-SNAPSHOT": "pass",
-                "2.40.12": "pass",
-                "2.41.10": "pass",
-                "2.42.6": "pass",
-                "2.43.1": "pass"
-            }
-        },
-        {
-            "id": "nest-FinancialAug__q-Yearly__p-2024__A",
-            "item": {
-                "code": "PTT_G2_FinancialAug",
-                "dimensionItemType": "DATA_ELEMENT",
-                "aggregationType": "SUM",
-                "valueType": "INTEGER",
-                "collectionPeriodTypes": ["FinancialAug"]
-            },
-            "query": {
-                "periodType": "Yearly",
-                "period": "2024",
-                "orgUnit": "A"
-            },
-            "expected": { "status": "EMPTY", "value": null },
-            "observed": {
-                "2.44-SNAPSHOT": { "status": "EMPTY", "value": null },
-                "2.43.3-SNAPSHOT": { "status": "EMPTY", "value": null },
-                "2.43.1": { "status": "EMPTY", "value": null }
-            },
-            "verdict": {
-                "2.44-SNAPSHOT": "pass",
-                "2.43.3-SNAPSHOT": "pass",
-                "2.43.1": "pass"
-            }
-        },
-        {
-            "id": "nest-FinancialSep__q-Yearly__p-2024__A",
-            "item": {
-                "code": "PTT_G2_FinancialSep",
-                "dimensionItemType": "DATA_ELEMENT",
-                "aggregationType": "SUM",
-                "valueType": "INTEGER",
-                "collectionPeriodTypes": ["FinancialSep"]
-            },
-            "query": {
-                "periodType": "Yearly",
-                "period": "2024",
-                "orgUnit": "A"
-            },
-            "expected": { "status": "EMPTY", "value": null },
-            "observed": {
-                "2.44-SNAPSHOT": { "status": "EMPTY", "value": null },
-                "2.42.7-SNAPSHOT": { "status": "EMPTY", "value": null },
-                "2.43.3-SNAPSHOT": { "status": "EMPTY", "value": null },
-                "2.42.6": { "status": "EMPTY", "value": null },
-                "2.43.1": { "status": "EMPTY", "value": null }
-            },
-            "verdict": {
-                "2.44-SNAPSHOT": "pass",
-                "2.42.7-SNAPSHOT": "pass",
-                "2.43.3-SNAPSHOT": "pass",
-                "2.42.6": "pass",
-                "2.43.1": "pass"
-            }
-        },
-        {
-            "id": "nest-WeeklyFriday__q-Monthly__p-202401__A",
-            "item": {
-                "code": "PTT_G2_WeeklyFriday",
-                "dimensionItemType": "DATA_ELEMENT",
-                "aggregationType": "SUM",
-                "valueType": "INTEGER",
-                "collectionPeriodTypes": ["WeeklyFriday"]
-            },
-            "query": {
-                "periodType": "Monthly",
-                "period": "202401",
-                "orgUnit": "A"
-            },
-            "expected": { "status": "VALUE", "value": null },
-            "observed": {
-                "2.44-SNAPSHOT": { "status": "VALUE", "value": 5 },
-                "2.43.3-SNAPSHOT": { "status": "VALUE", "value": 5 },
-                "2.43.1": { "status": "VALUE", "value": 5 }
-            },
-            "verdict": {
-                "2.44-SNAPSHOT": "recorded",
-                "2.43.3-SNAPSHOT": "recorded",
-                "2.43.1": "recorded"
-            }
-        }
+        {"id":"nest-BiWeekly__q-Monthly__p-202401__A","item":{"code":"PTT_G2_BiWeekly","dimensionItemType":"DATA_ELEMENT","aggregationType":"SUM","valueType":"INTEGER","collectionPeriodTypes":["BiWeekly"]},"query":{"periodType":"Monthly","period":"202401","orgUnit":"A"},"expected":{"status":"VALUE","value":null},"observed":{"2.44-SNAPSHOT":{"status":"VALUE","value":3},"2.41.11-SNAPSHOT":{"status":"VALUE","value":3},"2.42.7-SNAPSHOT":{"status":"VALUE","value":3},"2.43.3-SNAPSHOT":{"status":"VALUE","value":3},"2.40.12":{"status":"VALUE","value":3},"2.41.10":{"status":"VALUE","value":3},"2.42.6":{"status":"VALUE","value":3},"2.43.1":{"status":"VALUE","value":3}},"verdict":{"2.44-SNAPSHOT":"recorded","2.41.11-SNAPSHOT":"recorded","2.42.7-SNAPSHOT":"recorded","2.43.3-SNAPSHOT":"recorded","2.40.12":"recorded","2.41.10":"recorded","2.42.6":"recorded","2.43.1":"recorded"}},
+        {"id":"nest-FinancialApril__q-Yearly__p-2024__A","item":{"code":"PTT_G2_FinancialApril","dimensionItemType":"DATA_ELEMENT","aggregationType":"SUM","valueType":"INTEGER","collectionPeriodTypes":["FinancialApril"]},"query":{"periodType":"Yearly","period":"2024","orgUnit":"A"},"expected":{"status":"EMPTY","value":null},"observed":{"2.44-SNAPSHOT":{"status":"EMPTY","value":null},"2.41.11-SNAPSHOT":{"status":"EMPTY","value":null},"2.42.7-SNAPSHOT":{"status":"EMPTY","value":null},"2.43.3-SNAPSHOT":{"status":"EMPTY","value":null},"2.40.12":{"status":"EMPTY","value":null},"2.41.10":{"status":"EMPTY","value":null},"2.42.6":{"status":"EMPTY","value":null},"2.43.1":{"status":"EMPTY","value":null}},"verdict":{"2.44-SNAPSHOT":"pass","2.41.11-SNAPSHOT":"pass","2.42.7-SNAPSHOT":"pass","2.43.3-SNAPSHOT":"pass","2.40.12":"pass","2.41.10":"pass","2.42.6":"pass","2.43.1":"pass"}},
+        {"id":"nest-FinancialAug__q-Yearly__p-2024__A","item":{"code":"PTT_G2_FinancialAug","dimensionItemType":"DATA_ELEMENT","aggregationType":"SUM","valueType":"INTEGER","collectionPeriodTypes":["FinancialAug"]},"query":{"periodType":"Yearly","period":"2024","orgUnit":"A"},"expected":{"status":"EMPTY","value":null},"observed":{"2.44-SNAPSHOT":{"status":"EMPTY","value":null},"2.43.3-SNAPSHOT":{"status":"EMPTY","value":null},"2.43.1":{"status":"EMPTY","value":null}},"verdict":{"2.44-SNAPSHOT":"pass","2.43.3-SNAPSHOT":"pass","2.43.1":"pass"}},
+        {"id":"nest-FinancialSep__q-Yearly__p-2024__A","item":{"code":"PTT_G2_FinancialSep","dimensionItemType":"DATA_ELEMENT","aggregationType":"SUM","valueType":"INTEGER","collectionPeriodTypes":["FinancialSep"]},"query":{"periodType":"Yearly","period":"2024","orgUnit":"A"},"expected":{"status":"EMPTY","value":null},"observed":{"2.44-SNAPSHOT":{"status":"EMPTY","value":null},"2.42.7-SNAPSHOT":{"status":"EMPTY","value":null},"2.43.3-SNAPSHOT":{"status":"EMPTY","value":null},"2.42.6":{"status":"EMPTY","value":null},"2.43.1":{"status":"EMPTY","value":null}},"verdict":{"2.44-SNAPSHOT":"pass","2.42.7-SNAPSHOT":"pass","2.43.3-SNAPSHOT":"pass","2.42.6":"pass","2.43.1":"pass"}},
+        {"id":"nest-WeeklyFriday__q-Monthly__p-202401__A","item":{"code":"PTT_G2_WeeklyFriday","dimensionItemType":"DATA_ELEMENT","aggregationType":"SUM","valueType":"INTEGER","collectionPeriodTypes":["WeeklyFriday"]},"query":{"periodType":"Monthly","period":"202401","orgUnit":"A"},"expected":{"status":"VALUE","value":null},"observed":{"2.44-SNAPSHOT":{"status":"VALUE","value":5},"2.43.3-SNAPSHOT":{"status":"VALUE","value":5},"2.43.1":{"status":"VALUE","value":5}},"verdict":{"2.44-SNAPSHOT":"recorded","2.43.3-SNAPSHOT":"recorded","2.43.1":"recorded"}}
     ]
 }

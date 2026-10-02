@@ -21,12 +21,12 @@ export default {
 
 const STEPS = [
     [
-        'The user picks data items: DV loads their profiles, and where their data sets are assigned under the org units.',
+        'The user picks data items: DV loads their profiles, and where their data sets and programs are assigned under the org units.',
         'useDataItemProfiles(items, { orgUnits })',
     ],
     [
         'The pickers mark each period type and each org unit level for those items.',
-        "getDataItemCompatibility(itemId, { periods: [periodType], orgUnits: [boundary, 'LEVEL-n'] })",
+        "getDataItemCompatibility(itemId, { periods: [periodType], orgUnits: [parentOrgUnit, 'LEVEL-n'] })",
     ],
     [
         'Periods and org units selected, before Update: DV checks them, from current metadata only.',
@@ -67,10 +67,10 @@ const adviceFor = (result, profile) => {
 
     switch (status) {
         case 'full':
-            if (reasons.includes('CARRIED')) {
+            if (reasons.includes('EARLIER_PERIOD_VALUE')) {
                 return 'Shown, from an earlier data period.'
             }
-            return reasons.includes('AVERAGED')
+            return reasons.includes('REPEATED_VALUE')
                 ? 'Shown, repeated from the data period that holds it.'
                 : 'Shown.'
         case 'partial':
@@ -78,13 +78,13 @@ const adviceFor = (result, profile) => {
                 ? 'Shown, but computed from incomplete data: it can be off either way.'
                 : `Partly shown: the ${typesLeftOut} data can’t fill this period.`
         case 'none':
-            if (reasons.includes('REPORTING_RATE')) {
+            if (reasons.includes('REPORTING_RATE_TOO_SHORT')) {
                 return 'Not shown: a reporting rate can’t be shown by this period.'
             }
-            if (reasons.includes('NOTHING_TO_CARRY')) {
+            if (reasons.includes('NO_EARLIER_PERIOD_VALUE')) {
                 return 'Not shown: no earlier value in these years.'
             }
-            return `Not shown: collected ${typesLeftOut}.`
+            return `Not shown: its data sets are ${typesLeftOut}.`
         default:
             return 'Can’t tell.'
     }
@@ -121,33 +121,51 @@ const PeriodTypeMarks = ({ items, getDataItemCompatibility }) => (
 
 const formatCount = (count) => count.toLocaleString('en')
 
-// What DV could say about an item, for one org unit selection item
-const orgUnitAdviceFor = ({ status, reasons, coverage }, levels) => {
-    const levelName =
-        coverage && levels.find(({ level }) => level === coverage.level)?.name
-    const counted =
-        coverage &&
-        `${formatCount(coverage.assigned)} of ${formatCount(
-            coverage.total
-        )} units at level ${levelName ?? coverage.level}`
+const describeAssignment = ({ assigned, total, level }, levels) => {
+    const levelName = levels.find((item) => item.level === level)?.name
+    const counts = `${formatCount(assigned)} of ${formatCount(total)}`
 
+    return `${counts} org units at level ${levelName ?? level}`
+}
+
+const ORG_UNIT_NONE_ADVICE = {
+    ASSIGNED_AT_HIGHER_LEVEL:
+        'Not shown: its data sets are assigned at a higher level.',
+    STOPPED_BY_AGGREGATION_LEVEL:
+        'Not shown: its aggregation levels stop values before this level.',
+    EMPTY_GROUP: 'Leave it out: the group has no members.',
+}
+
+const getFullAdvice = (reasons, assignment, levels) => {
+    if (reasons.includes('ANY_ORG_UNIT') || !assignment) {
+        return 'Shown.'
+    }
+
+    const assignedTo = describeAssignment(assignment, levels)
+
+    return reasons.includes('PARTLY_ASSIGNED')
+        ? `Shown: assigned to ${assignedTo}; the others collect nothing.`
+        : `Shown: assigned to ${assignedTo}.`
+}
+
+// What DV could say about an item, for one org unit selection item
+const orgUnitAdviceFor = ({ status, reasons, assignment }, levels) => {
     switch (status) {
         case 'full':
-            return reasons.includes('PARTLY_ASSIGNED')
-                ? `Shown: assigned to ${counted}; the others don’t collect it.`
-                : `Shown: assigned to ${counted}.`
+            return getFullAdvice(reasons, assignment, levels)
         case 'partial':
             return reasons.includes('OPERAND_PARTIAL')
                 ? 'Shown, but computed from incomplete data: it can be off either way.'
-                : 'Partly shown: data entered at a higher level is left out.'
-        case 'none':
-            return reasons.includes('BELOW_COLLECTION')
-                ? 'Not shown: entered at a higher level.'
+                : 'Partly shown: values of data sets assigned at a higher level are left out.'
+        case 'none': {
+            const reason = reasons.find((code) => ORG_UNIT_NONE_ADVICE[code])
+
+            return reason
+                ? ORG_UNIT_NONE_ADVICE[reason]
                 : 'Not shown: its data sets aren’t assigned here.'
+        }
         default:
-            return reasons.includes('EVENT_DATA')
-                ? 'Can’t tell for event data yet.'
-                : 'Can’t tell.'
+            return 'Can’t tell.'
     }
 }
 
@@ -238,7 +256,7 @@ export const TypicalUse = () => {
     )
     const periods = useMemo(() => splitList(periodsText), [periodsText])
     const orgUnits = useMemo(() => splitList(orgUnitsText), [orgUnitsText])
-    // The country, for the levels in the picker, and the units selected
+    // The country, for the levels in the picker, and the org units selected
     const loadedOrgUnits = useMemo(
         () => [...new Set([SIERRA_LEONE, ...orgUnits])],
         [orgUnits]
@@ -318,7 +336,7 @@ export const TypicalUse = () => {
                                     />
                                 </div>
                                 <NoticeBox title="Derived from current metadata only">
-                                    Past data may have been collected with a
+                                    Past data may have been entered with a
                                     different configuration.
                                 </NoticeBox>
                                 <table className="profiles">

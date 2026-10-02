@@ -82,6 +82,7 @@
         "!src/**/__snapshots__/**",
         "!src/**/__demo__/data/**",
         "!src/__fixtures__/period-types/**",
+        "!src/__fixtures__/org-units/**",
         "docs",
         "CHANGELOG.md"
     ],
