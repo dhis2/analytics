@@ -1,0 +1,526 @@
+import { inDataSets } from '../../../__fixtures__/dataItemProfileMetadata.js'
+import { getDataItemProfile } from '../getDataItemProfile.js'
+import { getDataItemProfileCompatibility } from '../getDataItemProfileCompatibility.js'
+
+const dataElement = (periodTypes, aggregationType = 'SUM') => ({
+    aggregationType,
+    dataSets: inDataSets(periodTypes),
+})
+
+const metadata = {
+    dataElements: {
+        monthly: dataElement(['Monthly']),
+        weekly: dataElement(['Weekly']),
+        wednesday: dataElement(['WeeklyWednesday']),
+        yearly: dataElement(['Yearly']),
+        financialOct: dataElement(['FinancialOct']),
+        population: dataElement(['Yearly'], 'AVERAGE'),
+        stock: dataElement(['Monthly'], 'LAST'),
+        firstMonthly: dataElement(['Monthly'], 'FIRST'),
+        firstDaily: dataElement(['Daily'], 'FIRST'),
+        lastFinancialApril: dataElement(['FinancialApril'], 'LAST'),
+        lastTwoYearly: dataElement(['TwoYearly'], 'LAST'),
+        twoYearly: dataElement(['TwoYearly']),
+        mondayWednesday: dataElement(['Weekly', 'WeeklyWednesday']),
+    },
+    indicators: {
+        coverage: { numerator: '#{monthly}', denominator: '#{population}' },
+        share: { numerator: '#{weekly}', denominator: '#{monthly}' },
+        stockPerHead: { numerator: '#{stock}', denominator: '#{population}' },
+        weeklyShareOfMonthly: {
+            numerator: '#{mondayWednesday}',
+            denominator: '#{weekly}',
+        },
+        timesTwelve: { numerator: '#{monthly} * 12', denominator: '1' },
+    },
+}
+
+const indicator = (id) => ({ id, dimensionItemType: 'INDICATOR' })
+
+// A data element id, or an item
+const profileOf = (item) =>
+    getDataItemProfile(
+        typeof item === 'string'
+            ? { id: item, dimensionItemType: 'DATA_ELEMENT' }
+            : item,
+        metadata
+    )
+
+const compatibilityOf = (item, periods, options) =>
+    getDataItemProfileCompatibility(profileOf(item), { periods }, options)
+
+// The overall status and reasons
+const outcomeOf = (...args) => {
+    const { status, reasons } = compatibilityOf(...args)
+
+    return { status, reasons }
+}
+
+const full = (reasons = []) => ({ status: 'full', reasons })
+const none = (reasons) => ({ status: 'none', reasons })
+const unknown = (reasons) => ({ status: 'unknown', reasons })
+
+describe('getDataItemProfileCompatibility', () => {
+    it('gives results per period, per source and overall', () => {
+        expect(compatibilityOf('monthly', ['2025W2', '202501'])).toEqual({
+            status: 'none',
+            reasons: ['SHORTER'],
+            sources: [
+                {
+                    dataSetId: 'MonthlyForm',
+                    status: 'none',
+                    reasons: ['SHORTER'],
+                },
+            ],
+            periods: [
+                {
+                    id: '2025W2',
+                    periodTypes: ['Weekly'],
+                    status: 'none',
+                    reasons: ['SHORTER'],
+                    alignsWithData: null,
+                    sources: [
+                        {
+                            dataSetId: 'MonthlyForm',
+                            status: 'none',
+                            reasons: ['SHORTER'],
+                        },
+                    ],
+                },
+                {
+                    id: '202501',
+                    periodTypes: ['Monthly'],
+                    status: 'full',
+                    reasons: [],
+                    alignsWithData: true,
+                    sources: [
+                        {
+                            dataSetId: 'MonthlyForm',
+                            status: 'full',
+                            reasons: [],
+                        },
+                    ],
+                },
+            ],
+        })
+    })
+
+    it('has no status without periods', () => {
+        expect(getDataItemProfileCompatibility(profileOf('monthly'))).toEqual({
+            status: null,
+            reasons: [],
+            sources: [{ dataSetId: 'MonthlyForm', status: null, reasons: [] }],
+            periods: [],
+        })
+    })
+
+    it('takes period types', () => {
+        expect(outcomeOf('monthly', ['Quarterly'])).toEqual(full())
+        expect(outcomeOf('monthly', ['Daily'])).toEqual(none(['SHORTER']))
+    })
+
+    it('gives nothing for another type of the same length', () => {
+        expect(outcomeOf('wednesday', ['2025W2'])).toEqual(none(['OTHER_TYPE']))
+        expect(outcomeOf('yearly', ['2025April'])).toEqual(none(['OTHER_TYPE']))
+    })
+
+    describe('values not measured for the period', () => {
+        it('are averaged for averaged data in shorter periods', () => {
+            expect(outcomeOf('population', ['202501'])).toEqual(
+                full(['AVERAGED'])
+            )
+            expect(outcomeOf('population', ['2025'])).toEqual(full())
+        })
+
+        describe('FIRST and LAST', () => {
+            it('LAST carries the latest data period of the years touched', () => {
+                // June's value, for a day in July
+                expect(outcomeOf('stock', ['20250715'])).toEqual(
+                    full(['CARRIED'])
+                )
+                // December 2024 is outside the years 1 January 2025 touches
+                expect(outcomeOf('stock', ['20250101'])).toEqual(
+                    none(['NOTHING_TO_CARRY'])
+                )
+                expect(outcomeOf('stock', ['2025WedW1'])).toEqual(
+                    none(['NOTHING_TO_CARRY'])
+                )
+            })
+
+            it('LAST is measured for the period when its data adds up into it', () => {
+                expect(outcomeOf('stock', ['2025Q3'])).toEqual(full())
+                expect(outcomeOf('stock', ['2025'])).toEqual(full())
+            })
+
+            it('FIRST takes the earliest data period of the years touched', () => {
+                // January's value, for July and for the third quarter
+                expect(outcomeOf('firstMonthly', ['202507'])).toEqual(
+                    full(['CARRIED'])
+                )
+                expect(outcomeOf('firstMonthly', ['2025Q3'])).toEqual(
+                    full(['CARRIED'])
+                )
+                expect(outcomeOf('firstMonthly', ['2025'])).toEqual(full())
+                expect(outcomeOf('firstMonthly', ['20250101'])).toEqual(
+                    none(['NOTHING_TO_CARRY'])
+                )
+                // 1 January's value, not the day's own
+                expect(outcomeOf('firstDaily', ['20250715'])).toEqual(
+                    full(['CARRIED'])
+                )
+                expect(outcomeOf('firstDaily', ['20250101'])).toEqual(full())
+                expect(outcomeOf('firstDaily', ['2025WedW1'])).toEqual(full())
+            })
+
+            it('read every period of the selection as one request', () => {
+                // With 2024 in the request, December 2024 counts on 1 January
+                const withYear = compatibilityOf('stock', ['20250101', '2024'])
+
+                expect(withYear.periods[0]).toMatchObject(full(['CARRIED']))
+            })
+
+            it('read the year in a data period id', () => {
+                // 2024April (April 2024 to March 2025) is a 2024 period
+                expect(outcomeOf('lastFinancialApril', ['20250715'])).toEqual(
+                    none(['NOTHING_TO_CARRY'])
+                )
+                // …but it counts when the request touches 2024
+                expect(
+                    compatibilityOf('lastFinancialApril', ['20250715', '2024'])
+                        .periods[0]
+                ).toMatchObject(full(['CARRIED']))
+            })
+
+            it('may carry when the selection has no dates', () => {
+                expect(outcomeOf('stock', ['Weekly'])).toEqual(
+                    full(['CARRIED'])
+                )
+                expect(outcomeOf('stock', ['LAST_12_MONTHS'])).toEqual(full())
+                // FIRST gives January's value to every month of the year
+                expect(outcomeOf('firstMonthly', ['LAST_12_MONTHS'])).toEqual(
+                    full(['CARRIED'])
+                )
+                expect(
+                    compatibilityOf('stock', ['20250101', 'LAST_12_MONTHS'])
+                        .periods[0]
+                ).toMatchObject(full(['CARRIED']))
+            })
+
+            it('may carry when the data type has no dates', () => {
+                expect(outcomeOf('lastTwoYearly', ['2025'])).toEqual(
+                    full(['CARRIED'])
+                )
+            })
+        })
+
+        it('show in each source', () => {
+            expect(compatibilityOf('stock', ['20250715']).sources).toEqual([
+                {
+                    dataSetId: 'MonthlyForm',
+                    status: 'full',
+                    reasons: ['CARRIED'],
+                },
+            ])
+        })
+    })
+
+    describe('expressions', () => {
+        it('are complete with an averaged denominator, which they report', () => {
+            expect(outcomeOf(indicator('coverage'), ['202501'])).toEqual(
+                full(['AVERAGED'])
+            )
+            expect(outcomeOf(indicator('coverage'), ['2025'])).toEqual(full())
+        })
+
+        it('are empty when one operand gives nothing, and say so', () => {
+            expect(outcomeOf(indicator('coverage'), ['2025W2'])).toEqual(
+                none(['OPERAND_EMPTY', 'SHORTER', 'AVERAGED'])
+            )
+            expect(outcomeOf(indicator('share'), ['2025W2'])).toEqual(
+                none(['OPERAND_EMPTY', 'SHORTER'])
+            )
+        })
+
+        it('are partial from a partial operand, and say so', () => {
+            expect(
+                outcomeOf(indicator('weeklyShareOfMonthly'), ['2025W2'])
+            ).toEqual({
+                status: 'partial',
+                reasons: ['OPERAND_PARTIAL', 'OTHER_TYPE'],
+            })
+        })
+
+        it('say nothing more with one operand', () => {
+            expect(outcomeOf(indicator('timesTwelve'), ['2025W2'])).toEqual(
+                none(['SHORTER'])
+            )
+        })
+
+        it('report every kind of indirect value', () => {
+            expect(outcomeOf(indicator('stockPerHead'), ['20250715'])).toEqual(
+                full(['AVERAGED', 'CARRIED'])
+            )
+        })
+    })
+
+    describe('an element in several data sets', () => {
+        const malaria = (aggregationType) =>
+            getDataItemProfile(
+                { id: 'malaria', dimensionItemType: 'DATA_ELEMENT' },
+                {
+                    dataElements: {
+                        malaria: {
+                            aggregationType,
+                            dataSets: [
+                                { id: 'surveillance', periodType: 'Weekly' },
+                                { id: 'report', periodType: 'Monthly' },
+                            ],
+                        },
+                    },
+                }
+            )
+
+        it('is partial when some data sets give nothing', () => {
+            expect(
+                getDataItemProfileCompatibility(malaria('SUM'), {
+                    periods: ['2025W2', '202501'],
+                })
+            ).toMatchObject({
+                status: 'partial',
+                reasons: ['SHORTER'],
+                sources: [
+                    { dataSetId: 'surveillance', status: 'full' },
+                    { dataSetId: 'report', status: 'none' },
+                ],
+                periods: [
+                    {
+                        status: 'partial',
+                        reasons: ['SHORTER'],
+                        sources: [
+                            {
+                                dataSetId: 'surveillance',
+                                status: 'full',
+                                reasons: [],
+                            },
+                            {
+                                dataSetId: 'report',
+                                status: 'none',
+                                reasons: ['SHORTER'],
+                            },
+                        ],
+                    },
+                    full(),
+                ],
+            })
+        })
+
+        it('is complete when the others give averaged values', () => {
+            expect(
+                getDataItemProfileCompatibility(malaria('AVERAGE'), {
+                    periods: ['2025W2'],
+                })
+            ).toMatchObject(full(['AVERAGED']))
+        })
+
+        it('is empty when every data set gives nothing', () => {
+            expect(
+                getDataItemProfileCompatibility(malaria('SUM'), {
+                    periods: ['20250115'],
+                })
+            ).toMatchObject(none(['SHORTER']))
+        })
+    })
+
+    it('reads a reporting rate in a shorter period as empty', () => {
+        const profile = getDataItemProfile(
+            { id: 'form.REPORTING_RATE', dimensionItemType: 'REPORTING_RATE' },
+            { dataSets: { form: { periodType: 'Monthly' } } }
+        )
+
+        expect(
+            getDataItemProfileCompatibility(profile, { periods: ['2025W2'] })
+        ).toMatchObject({
+            ...none(['REPORTING_RATE']),
+            sources: [{ dataSetId: 'form', ...none(['REPORTING_RATE']) }],
+        })
+        expect(
+            getDataItemProfileCompatibility(profile, { periods: ['2025Q1'] })
+        ).toMatchObject(full())
+    })
+
+    it('is full for event data, placed by its own dates', () => {
+        const profile = getDataItemProfile(
+            { id: 'pi', dimensionItemType: 'PROGRAM_INDICATOR' },
+            {
+                programIndicators: { pi: { program: 'pr' } },
+                programs: { pr: {} },
+            }
+        )
+
+        expect(
+            getDataItemProfileCompatibility(profile, { periods: ['20250115'] })
+        ).toMatchObject({
+            ...full(),
+            sources: [{ dataSetId: null, status: 'full', reasons: [] }],
+        })
+    })
+
+    describe('unknown', () => {
+        it('when the profile is, for the item and each source', () => {
+            const profile = getDataItemProfile(
+                { id: 'odd', dimensionItemType: 'DATA_ELEMENT' },
+                {
+                    dataElements: {
+                        odd: {
+                            aggregationType: 'SUM',
+                            dataSets: [{ id: 'hourly', periodType: 'Hourly' }],
+                        },
+                    },
+                }
+            )
+
+            expect(
+                getDataItemProfileCompatibility(profile, {
+                    periods: ['202501'],
+                })
+            ).toMatchObject({
+                ...unknown(['PROFILE_UNKNOWN']),
+                sources: [
+                    { dataSetId: 'hourly', ...unknown(['PROFILE_UNKNOWN']) },
+                ],
+            })
+            expect(outcomeOf('missing', ['202501'])).toEqual(
+                unknown(['PROFILE_UNKNOWN'])
+            )
+        })
+
+        it('for a period it cannot read', () => {
+            expect(compatibilityOf('monthly', ['NEXT_CENTURY'])).toMatchObject({
+                ...unknown(['UNKNOWN_PERIOD']),
+                periods: [{ periodTypes: [], alignsWithData: null }],
+            })
+        })
+
+        it('for QuarterlyNov before 2.41', () => {
+            const on = (minor) => ({ serverVersion: { major: 2, minor } })
+
+            expect(outcomeOf('monthly', ['2025NovQ1'], on(40))).toEqual(
+                unknown(['UNSUPPORTED_VERSION'])
+            )
+            expect(outcomeOf('monthly', ['2025NovQ1'], on(41))).toEqual(full())
+            expect(outcomeOf('monthly', ['2025NovQ1'])).toEqual(full())
+            expect(outcomeOf('monthly', ['2025Q1'], on(40))).toEqual(full())
+        })
+    })
+
+    it('ranks empty, then partial, then unknown, then complete', () => {
+        expect(outcomeOf('monthly', ['202501', 'NEXT_CENTURY'])).toEqual(
+            unknown(['UNKNOWN_PERIOD'])
+        )
+        expect(outcomeOf('monthly', ['NEXT_CENTURY', '2025W2'])).toEqual(
+            none(['SHORTER', 'UNKNOWN_PERIOD'])
+        )
+    })
+
+    describe('relative periods', () => {
+        it('read their type', () => {
+            expect(outcomeOf('monthly', ['LAST_12_MONTHS'])).toEqual(full())
+            expect(outcomeOf('monthly', ['LAST_7_DAYS'])).toEqual(
+                none(['SHORTER'])
+            )
+        })
+
+        it('hold when every type they could be agrees', () => {
+            expect(outcomeOf('monthly', ['LAST_4_WEEKS'])).toEqual(
+                none(['SHORTER'])
+            )
+            expect(outcomeOf('monthly', ['THIS_FINANCIAL_YEAR'])).toEqual(
+                full()
+            )
+            // Yearly data gives nothing in any financial year
+            expect(outcomeOf('yearly', ['THIS_FINANCIAL_YEAR'])).toEqual(
+                none(['OTHER_TYPE'])
+            )
+        })
+
+        it('are unknown when their type depends on a setting not given', () => {
+            expect(outcomeOf('weekly', ['LAST_4_WEEKS'])).toEqual(
+                unknown(['SETTING_MISSING'])
+            )
+            expect(outcomeOf('financialOct', ['THIS_FINANCIAL_YEAR'])).toEqual(
+                unknown(['SETTING_MISSING'])
+            )
+        })
+
+        it('take the settings as options', () => {
+            expect(
+                outcomeOf('weekly', ['LAST_4_WEEKS'], {
+                    weeklyPeriodType: 'Weekly',
+                })
+            ).toEqual(full())
+            expect(
+                outcomeOf('weekly', ['LAST_4_WEEKS'], {
+                    weeklyPeriodType: 'WeeklySunday',
+                })
+            ).toEqual(none(['OTHER_TYPE']))
+            expect(
+                outcomeOf('financialOct', ['THIS_FINANCIAL_YEAR'], {
+                    financialYearPeriodType: 'FinancialOct',
+                })
+            ).toEqual(full())
+        })
+
+        it('do not tell whether they align with the data', () => {
+            expect(
+                compatibilityOf('monthly', ['LAST_12_MONTHS']).periods[0]
+                    .alignsWithData
+            ).toBeNull()
+        })
+    })
+
+    describe('alignsWithData', () => {
+        const alignsOf = (id, period, options) =>
+            compatibilityOf(id, [period], options).periods[0].alignsWithData
+
+        it('is true when the period is whole data periods', () => {
+            expect(alignsOf('monthly', '2025Q1')).toBe(true)
+            expect(alignsOf('population', '2025')).toBe(true)
+        })
+
+        it('is false when data periods cross its edges', () => {
+            expect(alignsOf('weekly', '202501')).toBe(false)
+            expect(alignsOf('weekly', '2025')).toBe(false)
+        })
+
+        it('is null when it cannot be told', () => {
+            expect(alignsOf('monthly', 'Yearly')).toBeNull()
+            expect(alignsOf('monthly', '2025W2')).toBeNull()
+            expect(alignsOf('twoYearly', 'TwoYearly')).toBeNull()
+        })
+
+        it('works in other calendars', () => {
+            expect(alignsOf('monthly', '2081Q1', { calendar: 'nepali' })).toBe(
+                true
+            )
+            expect(alignsOf('weekly', '208101', { calendar: 'nepali' })).toBe(
+                false
+            )
+        })
+
+        it('is null when a data type has no dates', () => {
+            const profile = getDataItemProfile(
+                { id: 'mixed', dimensionItemType: 'DATA_ELEMENT' },
+                {
+                    dataElements: {
+                        mixed: dataElement(['Monthly', 'TwoYearly']),
+                    },
+                }
+            )
+
+            expect(
+                getDataItemProfileCompatibility(profile, { periods: ['2025'] })
+                    .periods[0]
+            ).toMatchObject({ status: 'partial', alignsWithData: true })
+        })
+    })
+})

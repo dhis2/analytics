@@ -81,6 +81,7 @@
         "src",
         "!src/**/__snapshots__/**",
         "!src/**/__demo__/data/**",
+        "!src/__fixtures__/period-types/**",
         "docs",
         "CHANGELOG.md"
     ],

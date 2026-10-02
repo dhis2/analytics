@@ -7,6 +7,8 @@ export { default as PeriodDimension } from './components/PeriodDimension/PeriodD
 export { default as FixedPeriodSelect } from './components/PeriodDimension/FixedPeriodSelect.js'
 export { useDataOutputPeriodTypes } from './components/PeriodDimension/useDataOutputPeriodTypes.js'
 
+export { useDataItemProfiles } from './components/DataItemProfile/useDataItemProfiles.js'
+
 export { default as OrgUnitDimension } from './components/OrgUnitDimension/OrgUnitDimension.js'
 
 export {
@@ -329,6 +331,53 @@ export {
 // Modules: general
 
 export { renderValue as formatValue } from './modules/renderValue.js'
+
+// Modules: dataItemProfile
+
+export {
+    getDataItemProfile,
+    getPeriodAggregationType,
+} from './modules/dataItemProfile/getDataItemProfile.js'
+export {
+    getDataItemProfileCompatibility,
+    COMPATIBILITY_FULL,
+    COMPATIBILITY_PARTIAL,
+    COMPATIBILITY_NONE,
+    COMPATIBILITY_UNKNOWN,
+    REASON_AVERAGED,
+    REASON_CARRIED,
+    REASON_SHORTER,
+    REASON_OTHER_TYPE,
+    REASON_REPORTING_RATE,
+    REASON_NOTHING_TO_CARRY,
+    REASON_OPERAND_EMPTY,
+    REASON_OPERAND_PARTIAL,
+    REASON_PROFILE_UNKNOWN,
+    REASON_UNKNOWN_PERIOD,
+    REASON_SETTING_MISSING,
+    REASON_UNSUPPORTED_VERSION,
+} from './modules/dataItemProfile/getDataItemProfileCompatibility.js'
+export {
+    aggregatesInto,
+    getPeriodRelation,
+    widenToWholePeriods,
+} from './modules/dataItemProfile/periodTypeRelations.js'
+export {
+    getDataItemOrgUnitCompatibility,
+    REASON_NOT_ASSIGNED,
+    REASON_BELOW_COLLECTION,
+    REASON_AGGREGATION_LEVEL,
+    REASON_PARTLY_ASSIGNED,
+    REASON_ORG_UNIT_FIELD,
+    REASON_UNKNOWN_ORG_UNIT,
+    REASON_EVENT_DATA,
+} from './modules/dataItemProfile/getDataItemOrgUnitCompatibility.js'
+export { fetchDataItemProfileMetadata } from './api/dataItemProfile.js'
+export {
+    fetchOrgUnitCoverage,
+    fetchSourceOrgUnitLevels,
+} from './api/orgUnitCoverage.js'
+export { withOrgUnitSide } from './modules/dataItemProfile/orgUnitSide.js'
 
 // Modules: response
 
