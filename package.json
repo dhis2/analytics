@@ -60,7 +60,7 @@
         "styled-jsx": "^4.0.1"
     },
     "dependencies": {
-        "@dhis2/multi-calendar-dates": "^1.2.2",
+        "@dhis2/multi-calendar-dates": "^1.3.2",
         "@dnd-kit/core": "^6.0.7",
         "@dnd-kit/sortable": "^7.0.2",
         "@dnd-kit/utilities": "^3.2.1",
@@ -83,6 +83,14 @@
         "!src/**/__demo__/data/**",
         "!src/__fixtures__/period-types/**",
         "!src/__fixtures__/org-units/**",
+        "!src/__fixtures__/fakeOrgUnitServer.js",
+        "!src/__fixtures__/dataItemProfileMetadata.js",
+        "!src/__fixtures__/dataItemProfileOrgUnits.js",
+        "!build/*/__fixtures__/period-types/**",
+        "!build/*/__fixtures__/org-units/**",
+        "!build/*/__fixtures__/fakeOrgUnitServer.js",
+        "!build/*/__fixtures__/dataItemProfileMetadata.js",
+        "!build/*/__fixtures__/dataItemProfileOrgUnits.js",
         "docs",
         "CHANGELOG.md"
     ],

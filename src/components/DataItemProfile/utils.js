@@ -4,16 +4,28 @@ import { getRelativePeriodTypeOptions } from '../../modules/dataItemProfile/peri
 
 const SETTING_KEYS = ['analyticsWeeklyStart', 'analyticsFinancialYearStart']
 
-// A setting a version doesn't have is left out, never guessed
-const fetchSetting = (engine, key) =>
-    engine
-        .query({ setting: { resource: `systemSettings/${key}` } })
-        .then(({ setting }) => setting?.[key])
-        .catch(() => undefined)
+// The server answers 404 (E1005) for a setting its version doesn't have
+const isMissingSetting = (error) => error?.details?.httpStatusCode === 404
 
-export const fetchRelativePeriodTypeOptions = async (engine) => {
+// A setting a version doesn't have is left out, never guessed
+const fetchSetting = (engine, key, signal) =>
+    engine
+        .query({ setting: { resource: `systemSettings/${key}` } }, { signal })
+        .then(({ setting }) => setting?.[key])
+        .catch((error) => {
+            if (isMissingSetting(error)) {
+                return undefined
+            }
+
+            throw error
+        })
+
+export const fetchRelativePeriodTypeOptions = async (
+    engine,
+    { signal } = {}
+) => {
     const values = await Promise.all(
-        SETTING_KEYS.map((key) => fetchSetting(engine, key))
+        SETTING_KEYS.map((key) => fetchSetting(engine, key, signal))
     )
 
     return getRelativePeriodTypeOptions(
@@ -27,14 +39,13 @@ export const useCalendar = (calendar) => {
     return calendar ?? systemInfo?.calendar ?? 'gregory'
 }
 
-// Items are compared by value, so a new array with the same items sends no request
+/* Items ({ id, dimensionItemType }) are compared by value, in any order, so
+ * a new array with the same items sends no request */
 export const getItemsKey = (items = []) =>
     JSON.stringify(
-        items.map((item) =>
-            typeof item === 'string'
-                ? [item]
-                : [item.id, item.dimensionItemType]
-        )
+        items
+            .map(({ id, dimensionItemType }) => [id, dimensionItemType])
+            .sort(([a], [b]) => a.localeCompare(b))
     )
 
 export const parseItemsKey = (itemsKey) =>

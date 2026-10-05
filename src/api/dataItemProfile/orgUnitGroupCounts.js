@@ -1,6 +1,7 @@
 import { getGroupCountsKey } from '../../modules/dataItemProfile/orgUnits/orgUnitSelection.js'
 import {
     assignedTo,
+    getAncestorIds,
     countQuery,
     getTotal,
     inGroup,
@@ -19,57 +20,79 @@ const aboveMembers = (groupId, height) =>
  * Each group's members per level: `{ groups: { [groupId]: { [level]: count } },
  * requests }`.
  */
-export const fetchGroupMembersByLevel = async (engine, groupIds, levels) => {
+export const fetchGroupMembersByLevel = async (
+    engine,
+    { groupIds, levels, signal }
+) => {
     const queries = groupIds.flatMap((groupId) =>
         levels.map(({ level }) => [
             [groupId, level],
             countQuery([inGroup(groupId), `level:eq:${level}`]),
         ])
     )
-    const response = await queryAll(engine, queries)
+    const { responses, requests } = await queryAll(engine, queries, {
+        signal,
+    })
     const groups = Object.fromEntries(groupIds.map((groupId) => [groupId, {}]))
 
     queries.forEach(([[groupId, level]], i) => {
-        const total = getTotal(response[`count${i}`])
+        const total = getTotal(responses[i])
 
         if (total) {
             groups[groupId][level] = total
         }
     })
 
-    return { groups, requests: queries.length }
+    return { groups, requests }
 }
 
-/* Each place to count a group in: the level its members are at, under each
- * parent org unit at or above it (or none) */
-const getGroupPlaces = ({ groups, parentOrgUnitIds, orgUnits }) => {
-    const parents = parentOrgUnitIds.length ? parentOrgUnitIds : [null]
+const NO_PARENT = { orgUnitId: null, minLevel: 1 }
 
-    return Object.entries(groups).flatMap(([groupId, membersByLevel]) =>
+/* Each level a group's members are at, under each parent that holds that
+ * level (resolveParents), or anywhere without parents */
+const getGroupLevelsUnderParents = ({ groups, parents }) =>
+    Object.entries(groups).flatMap(([groupId, membersByLevel]) =>
         Object.keys(membersByLevel)
             .map(Number)
             .flatMap((memberLevel) =>
-                parents
-                    .filter(
-                        (parentId) =>
-                            !parentId ||
-                            orgUnits[parentId]?.level <= memberLevel
-                    )
-                    .map((parentId) => ({ groupId, memberLevel, parentId }))
+                (parents ?? [NO_PARENT])
+                    .filter(({ minLevel }) => minLevel <= memberLevel)
+                    .map(({ orgUnitId }) => ({
+                        groupId,
+                        memberLevel,
+                        parentId: orgUnitId,
+                    }))
             )
     )
+
+/* The org units above the members at `level`, kept under the parent: below
+ * the parent's level, the parent's own ancestors */
+const getAboveMembersFilters = (
+    { groupId, memberLevel, parentId },
+    level,
+    orgUnits
+) => {
+    const parent = parentId && orgUnits[parentId]
+
+    if (parent && level < parent.level) {
+        return [`id:in:[${getAncestorIds(parent).join(',')}]`]
+    }
+
+    return [
+        ...(parent ? [`path:like:${parentId}`] : []),
+        aboveMembers(groupId, memberLevel - level),
+    ]
 }
 
-/* The counts of one place, as for an org unit: the org units at each level
- * under the members (the members' level included, to know whether any lie
- * under the parent), those each source is assigned to, and the ones above
- * the members each source is assigned to (above any member: the filter can't
- * keep them under the parent, and they only tell ASSIGNED_AT_HIGHER_LEVEL
- * from NOT_ASSIGNED) */
-const getPlaceQueries = (
-    { groupId, memberLevel, parentId },
-    { sources, assignedOrgUnitCounts }
+/* The counts of one group level under one parent, as for an org unit: the
+ * org units at each level under the members (the members' level included, to
+ * know whether any lie under the parent), those each source is assigned to,
+ * and the ones above the members each source is assigned to */
+const getGroupLevelQueries = (
+    groupLevel,
+    { sourceKeys, assignedOrgUnitCounts, orgUnits }
 ) => {
+    const { groupId, memberLevel, parentId } = groupLevel
     const key = getGroupCountsKey(groupId, memberLevel, parentId)
     const underParent = parentId ? [`path:like:${parentId}`] : []
     const levelsOf = ({ id }) =>
@@ -81,20 +104,20 @@ const getPlaceQueries = (
     ]
     const totalLevels = new Set([
         memberLevel,
-        ...sources.flatMap(levelsOf).filter((level) => level >= memberLevel),
+        ...sourceKeys.flatMap(levelsOf).filter((level) => level >= memberLevel),
     ])
-    const getSourceQuery = (source, level) =>
+    const getSourceQuery = (sourceKey, level) =>
         level >= memberLevel
             ? [
-                  [key, source.id, level],
-                  countQuery([...atLevel(level), assignedTo(source)]),
+                  [key, sourceKey.id, level],
+                  countQuery([...atLevel(level), assignedTo(sourceKey)]),
               ]
             : [
-                  [key, source.id, 'ancestors'],
+                  [key, sourceKey.id, 'ancestors'],
                   countQuery([
-                      aboveMembers(groupId, memberLevel - level),
+                      ...getAboveMembersFilters(groupLevel, level, orgUnits),
                       `level:eq:${level}`,
-                      assignedTo(source),
+                      assignedTo(sourceKey),
                   ]),
               ]
 
@@ -103,23 +126,28 @@ const getPlaceQueries = (
             [key, 'total', level],
             countQuery(atLevel(level)),
         ]),
-        ...sources.flatMap((source) =>
-            levelsOf(source).map((level) => getSourceQuery(source, level))
+        ...sourceKeys.flatMap((sourceKey) =>
+            levelsOf(sourceKey).map((level) => getSourceQuery(sourceKey, level))
         ),
     ]
 }
 
 /**
  * The count queries for groups (`groups`, from fetchGroupMembersByLevel),
- * kept by getGroupCountsKey, in the shape fetchOrgUnitCoverage reads.
+ * under the selection's parents (`parents`, from resolveParents; null for
+ * none), kept by getGroupCountsKey, in the shape fetchOrgUnitCoverage reads.
  */
 export const getGroupCountQueries = ({
     groups,
-    parentOrgUnitIds,
+    parents,
     orgUnits,
-    sources,
+    sourceKeys,
     assignedOrgUnitCounts,
 }) =>
-    getGroupPlaces({ groups, parentOrgUnitIds, orgUnits }).flatMap((place) =>
-        getPlaceQueries(place, { sources, assignedOrgUnitCounts })
+    getGroupLevelsUnderParents({ groups, parents }).flatMap((groupLevel) =>
+        getGroupLevelQueries(groupLevel, {
+            sourceKeys,
+            assignedOrgUnitCounts,
+            orgUnits,
+        })
     )

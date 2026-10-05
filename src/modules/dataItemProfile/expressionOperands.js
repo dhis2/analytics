@@ -1,3 +1,4 @@
+import { REPORTING_RATE } from '../dataSets.js'
 import {
     DIMENSION_TYPE_DATA_ELEMENT,
     DIMENSION_TYPE_INDICATOR,
@@ -6,7 +7,6 @@ import {
     DIMENSION_TYPE_PROGRAM_INDICATOR,
 } from '../dataTypes.js'
 import {
-    DIMENSION_TYPE_REPORTING_RATE,
     OPERAND_TYPE_CONSTANT,
     OPERAND_TYPE_DAYS,
     OPERAND_TYPE_ORG_UNIT_GROUP,
@@ -17,7 +17,7 @@ import {
  * modules/expressions.js reads only the #{} of calculations) */
 const OPERAND_TYPE_BY_PREFIX = {
     '#': DIMENSION_TYPE_DATA_ELEMENT,
-    R: DIMENSION_TYPE_REPORTING_RATE,
+    R: REPORTING_RATE,
     N: DIMENSION_TYPE_INDICATOR,
     I: DIMENSION_TYPE_PROGRAM_INDICATOR,
     D: DIMENSION_TYPE_PROGRAM_DATA_ELEMENT,
@@ -26,8 +26,8 @@ const OPERAND_TYPE_BY_PREFIX = {
     OUG: OPERAND_TYPE_ORG_UNIT_GROUP,
 }
 
-// An operand: `#{de.coc}`, `R{ds.REPORTING_RATE}`, `[days]`…
-const OPERAND_REGEX = /(#|[A-Z]+)\{([^}]*)\}|\[days\]/g
+// An operand: `#{de.coc}`, `R{ds.REPORTING_RATE}`, `[days]`… (prefixes are 1 to 3 letters)
+const OPERAND_REGEX = /(#|[A-Z]{1,3})\{([^}]*)\}|\[days\]/g
 // One function chained after it: `.periodOffset(-1)`, `.aggregationType(LAST)`
 const FUNCTION_REGEX = /\.([a-zA-Z]+)\(([^)]*)\)/y
 
@@ -52,11 +52,11 @@ const readFunctions = (expression, position) => {
 /* The object to fetch for the operand: the data element of `#{de.coc.aoc}`,
  * the data set of `R{ds.REPORTING_RATE}`, the whole content otherwise */
 const getOperandObjectId = (type, content) =>
-    type === DIMENSION_TYPE_DATA_ELEMENT ||
-    type === DIMENSION_TYPE_REPORTING_RATE
+    type === DIMENSION_TYPE_DATA_ELEMENT || type === REPORTING_RATE
         ? content.split('.')[0]
         : content
 
+// One operand found by OPERAND_REGEX: its type, the object behind it, its token and functions
 const toOperand = (expression, match) => {
     const [operandToken, prefix, content] = match
     const { functions, end } = readFunctions(

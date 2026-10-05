@@ -1,6 +1,6 @@
 import { useConfig } from '@dhis2/app-runtime'
-import { useCallback, useEffect, useMemo, useState } from 'react'
-import { getCountableSources } from '../../api/dataItemProfile/assignedOrgUnitCounts.js'
+import { useEffect, useMemo, useRef, useState } from 'react'
+import { getDataItemProfileSourceKeys } from '../../api/dataItemProfile/assignedOrgUnitCounts.js'
 import { fetchDataItemProfileMetadata } from '../../api/dataItemProfile/fetchDataItemProfileMetadata.js'
 import { fetchOrgUnitCoverage } from '../../api/dataItemProfile/fetchOrgUnitCoverage.js'
 import { getDataItemProfile } from '../../modules/dataItemProfile/getDataItemProfile.js'
@@ -25,7 +25,9 @@ import {
  * `getDataItemCompatibility(itemId, { periods, orgUnits })` runs
  * getDataItemProfileCompatibility on the item's profile, with the server's
  * settings for relative weeks and financial years, its calendar and its
- * version; it gives undefined for an item not loaded.
+ * version, and `relativePeriodDate` for relative periods (today by default);
+ * it gives undefined for an item not loaded. Its results are kept until the
+ * profiles or options change.
  *
  * Periods need no request, so they are only passed to
  * getDataItemCompatibility. Org units do: `orgUnits` (DV's org unit items)
@@ -33,35 +35,70 @@ import {
  * (fetchOrgUnitCoverage, `orgUnitCoverage`), so getDataItemCompatibility can
  * judge any selection whose org units it loaded, such as a level under one of
  * them.
+ *
+ * Changes fetch only what is missing: metadata of new items, counts of new
+ * org units. While new items load, the loaded ones keep their profiles.
  */
 export const useDataItemProfiles = (
     items,
-    { calendar, orgUnits, withAssignedOrgUnitCounts = true } = {}
+    {
+        calendar,
+        orgUnits,
+        relativePeriodDate,
+        withAssignedOrgUnitCounts = true,
+    } = {}
 ) => {
     const engineRef = useEngineRef()
     const itemsKey = getItemsKey(items)
     const resolvedCalendar = useCalendar(calendar)
     const { serverVersion } = useConfig()
+    const [settingsState, setSettingsState] = useState({
+        loading: true,
+        error: undefined,
+        options: {},
+    })
     const [state, setState] = useState({
         loading: false,
         error: undefined,
         metadata: undefined,
-        options: {},
+        metadataItemsKey: undefined,
     })
     const [coverageState, setCoverageState] = useState({
         loading: false,
         error: undefined,
         coverage: undefined,
+        coverageKey: undefined,
     })
+    const metadataRef = useRef()
+    const coverageRef = useRef()
     const orgUnitsKey = JSON.stringify(orgUnits ?? [])
 
+    metadataRef.current = state.metadata
+    coverageRef.current = coverageState.coverage
+
+    // The settings don't change with the items: fetched once
     useEffect(() => {
-        const engine = engineRef.current
+        const controller = new AbortController()
+
+        fetchRelativePeriodTypeOptions(engineRef.current, {
+            signal: controller.signal,
+        })
+            .then((options) => setSettingsState({ loading: false, options }))
+            .catch((error) => {
+                if (!controller.signal.aborted) {
+                    setSettingsState({ loading: false, error, options: {} })
+                }
+            })
+
+        return () => controller.abort()
+    }, [engineRef])
+
+    useEffect(() => {
         const requestedItems = parseItemsKey(itemsKey)
-        let cancelled = false
+        const controller = new AbortController()
 
         if (!requestedItems.length) {
-            setState({ loading: false, metadata: undefined, options: {} })
+            setState({ loading: false, metadata: metadataRef.current })
             return undefined
         }
 
@@ -71,55 +108,71 @@ export const useDataItemProfiles = (
             error: undefined,
         }))
 
-        Promise.all([
-            fetchDataItemProfileMetadata(engine, requestedItems, {
-                withAssignedOrgUnitCounts,
-            }),
-            fetchRelativePeriodTypeOptions(engine),
-        ])
-            .then(([metadata, options]) => {
-                if (!cancelled) {
-                    setState({ loading: false, metadata, options })
+        fetchDataItemProfileMetadata(engineRef.current, requestedItems, {
+            withAssignedOrgUnitCounts,
+            known: metadataRef.current,
+            signal: controller.signal,
+        })
+            .then((metadata) => {
+                if (!controller.signal.aborted) {
+                    setState({
+                        loading: false,
+                        metadata,
+                        metadataItemsKey: itemsKey,
+                    })
                 }
             })
             .catch((error) => {
-                if (!cancelled) {
-                    setState({ loading: false, error, options: {} })
+                if (!controller.signal.aborted) {
+                    setState((previous) => ({
+                        ...previous,
+                        loading: false,
+                        error,
+                        metadataItemsKey: undefined,
+                    }))
                 }
             })
 
-        return () => {
-            cancelled = true
-        }
+        return () => controller.abort()
     }, [engineRef, itemsKey, withAssignedOrgUnitCounts])
 
-    const metadataProfiles = useMemo(
-        () =>
-            state.metadata &&
-            Object.fromEntries(
-                parseItemsKey(itemsKey).map((item) => [
-                    item.id,
-                    getDataItemProfile(item, state.metadata),
-                ])
-            ),
-        [itemsKey, state.metadata]
-    )
+    /* Profiles from the metadata of the items it was fetched for: while new
+     * items load, the others keep theirs */
+    const metadataProfiles = useMemo(() => {
+        const loadedIds = new Set(
+            state.metadataItemsKey
+                ? parseItemsKey(state.metadataItemsKey).map(({ id }) => id)
+                : []
+        )
+        const loadedItems = parseItemsKey(itemsKey).filter(({ id }) =>
+            loadedIds.has(id)
+        )
 
-    const sourcesKey = JSON.stringify(
+        return loadedItems.length
+            ? Object.fromEntries(
+                  loadedItems.map((item) => [
+                      item.id,
+                      getDataItemProfile(item, state.metadata),
+                  ])
+              )
+            : undefined
+    }, [itemsKey, state.metadata, state.metadataItemsKey])
+
+    const sourceKeysKey = JSON.stringify(
         metadataProfiles
-            ? getCountableSources(Object.values(metadataProfiles))
+            ? getDataItemProfileSourceKeys(Object.values(metadataProfiles))
             : null
     )
+    const coverageKey = `${sourceKeysKey}|${orgUnitsKey}`
     const knownAssignedOrgUnitCounts = state.metadata?.assignedOrgUnitCounts
 
     useEffect(() => {
-        const engine = engineRef.current
-        const sources = JSON.parse(sourcesKey)
+        const sourceKeys = JSON.parse(sourceKeysKey)
         const requestedOrgUnits = JSON.parse(orgUnitsKey)
-        let cancelled = false
+        const controller = new AbortController()
 
-        if (!sources || !requestedOrgUnits.length) {
-            setCoverageState({ loading: false, coverage: undefined })
+        if (!sourceKeys || !requestedOrgUnits.length) {
+            setCoverageState({ loading: false, coverage: coverageRef.current })
             return undefined
         }
 
@@ -129,73 +182,114 @@ export const useDataItemProfiles = (
             error: undefined,
         }))
 
-        fetchOrgUnitCoverage(engine, {
-            sources,
+        fetchOrgUnitCoverage(engineRef.current, {
+            sourceKeys,
             orgUnits: requestedOrgUnits,
             assignedOrgUnitCounts: knownAssignedOrgUnitCounts,
+            previous: coverageRef.current,
+            signal: controller.signal,
         })
             .then((coverage) => {
-                if (!cancelled) {
-                    setCoverageState({ loading: false, coverage })
+                if (!controller.signal.aborted) {
+                    setCoverageState({
+                        loading: false,
+                        coverage,
+                        coverageKey: `${sourceKeysKey}|${orgUnitsKey}`,
+                    })
                 }
             })
             .catch((error) => {
-                if (!cancelled) {
-                    setCoverageState({ loading: false, error })
+                if (!controller.signal.aborted) {
+                    setCoverageState((previous) => ({
+                        ...previous,
+                        loading: false,
+                        error,
+                        coverageKey: undefined,
+                    }))
                 }
             })
 
-        return () => {
-            cancelled = true
-        }
-    }, [engineRef, sourcesKey, orgUnitsKey, knownAssignedOrgUnitCounts])
+        return () => controller.abort()
+    }, [engineRef, sourceKeysKey, orgUnitsKey, knownAssignedOrgUnitCounts])
 
-    // Without the counts in the metadata, the coverage gives the assigned org unit levels
-    const profiles = useMemo(
-        () =>
-            metadataProfiles &&
-            Object.fromEntries(
-                Object.entries(metadataProfiles).map(([id, profile]) => [
-                    id,
-                    profile.assignedOrgUnitLevels || !coverageState.coverage
-                        ? profile
-                        : addAssignedOrgUnitLevels(
-                              profile,
-                              coverageState.coverage.assignedOrgUnitCounts
-                          ),
-                ])
-            ),
-        [metadataProfiles, coverageState.coverage]
-    )
+    // Only the coverage of these sources and org units, never an earlier one
+    const coverage =
+        coverageState.coverageKey === coverageKey
+            ? coverageState.coverage
+            : undefined
+
+    /* None before the settings, which relative periods need. Without the
+     * counts in the metadata, the coverage gives the assigned org unit levels. */
+    const profiles = useMemo(() => {
+        if (settingsState.loading || !metadataProfiles) {
+            return undefined
+        }
+
+        return Object.fromEntries(
+            Object.entries(metadataProfiles).map(([id, profile]) => [
+                id,
+                profile.assignedOrgUnitLevels || !coverage
+                    ? profile
+                    : addAssignedOrgUnitLevels(
+                          profile,
+                          coverage.assignedOrgUnitCounts
+                      ),
+            ])
+        )
+    }, [settingsState.loading, metadataProfiles, coverage])
 
     const options = useMemo(
         () => ({
-            ...state.options,
+            ...settingsState.options,
             calendar: resolvedCalendar,
+            relativePeriodDate,
             serverVersion,
-            orgUnitCoverage: coverageState.coverage,
+            orgUnitCoverage: coverage,
         }),
-        [state.options, resolvedCalendar, serverVersion, coverageState.coverage]
+        [
+            settingsState.options,
+            resolvedCalendar,
+            relativePeriodDate,
+            serverVersion,
+            coverage,
+        ]
     )
 
-    const getDataItemCompatibility = useCallback(
-        (itemId, selection) =>
-            profiles?.[itemId]
-                ? getDataItemProfileCompatibility(
-                      profiles[itemId],
-                      selection,
-                      options
-                  )
-                : undefined,
-        [profiles, options]
-    )
+    // A list of items asks for the same results on every render
+    const getDataItemCompatibility = useMemo(() => {
+        const results = new Map()
+
+        return (itemId, selection) => {
+            if (!profiles?.[itemId]) {
+                return undefined
+            }
+
+            const key = JSON.stringify([itemId, selection])
+
+            if (!results.has(key)) {
+                results.set(
+                    key,
+                    getDataItemProfileCompatibility(
+                        profiles[itemId],
+                        selection,
+                        options
+                    )
+                )
+            }
+
+            return results.get(key)
+        }
+    }, [profiles, options])
 
     return {
-        loading: state.loading || coverageState.loading,
-        error: state.error ?? coverageState.error,
+        loading:
+            state.loading ||
+            coverageState.loading ||
+            (settingsState.loading && itemsKey !== '[]'),
         profiles,
-        orgUnitCoverage: coverageState.coverage,
-        relativePeriodTypes: state.options,
+        error: settingsState.error ?? state.error ?? coverageState.error,
+        orgUnitCoverage: coverage,
+        relativePeriodTypes: settingsState.options,
         getDataItemCompatibility,
     }
 }

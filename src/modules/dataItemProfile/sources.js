@@ -6,7 +6,7 @@ import { PROGRAM_ORG_UNIT_FIELDS } from './constants.js'
  *   with `orgUnitField` when its values can be at any org unit, and
  *   `missingPeriodBoundaries` for a program indicator without them;
  * - a data element in no data set: { dataSet: null, elements, reportingRate: false },
- *   which nothing collects. */
+ *   assigned nowhere. */
 
 export const isProgramSource = ({ program }) => Boolean(program)
 
@@ -26,19 +26,39 @@ export const usesProgramOrgUnits = (orgUnitField) =>
 export const canBeAtAnyOrgUnit = ({ orgUnitField }) =>
     !usesProgramOrgUnits(orgUnitField)
 
+/* Operand keys: how a profile's expression (profile.expression) names the
+ * operands getItemOperands gives */
+export const getElementOperandKey = ({ id, aggregationType }) =>
+    `element:${id}:${aggregationType}`
+
+export const getReportingRateOperandKey = (dataSetId) =>
+    `reportingRate:${dataSetId}`
+
+export const getProgramOperandKey = ({
+    program,
+    orgUnitField,
+    missingPeriodBoundaries,
+}) =>
+    [
+        'program',
+        program.id,
+        orgUnitField ?? '',
+        missingPeriodBoundaries ? 'missingPeriodBoundaries' : '',
+    ].join(':')
+
 /**
- * The operands an item's value is computed from: each data element (by id
- * and aggregation type) with the sources it is in, each reporting rate, and
- * each program. An expression needs them all; one element adds up over its
- * sources.
+ * The operands an item's value is computed from, each with its `key`: each
+ * data element (by id and aggregation type) with the sources it is in, each
+ * reporting rate, and each program. One element adds up over its sources;
+ * profile.expression says how the operands combine.
  */
 export const getItemOperands = (profile) => {
     const elements = new Map()
 
     profile.sources.forEach((source) =>
         source.elements.forEach((element) => {
-            const key = `${element.id}:${element.aggregationType}`
-            const operand = elements.get(key) ?? { element, sources: [] }
+            const key = getElementOperandKey(element)
+            const operand = elements.get(key) ?? { key, element, sources: [] }
 
             operand.sources.push(source)
             elements.set(key, operand)
@@ -49,9 +69,15 @@ export const getItemOperands = (profile) => {
         ...elements.values(),
         ...profile.sources
             .filter(({ reportingRate }) => reportingRate)
-            .map((source) => ({ reportingRate: true, sources: [source] })),
-        ...profile.sources
-            .filter(isProgramSource)
-            .map((source) => ({ program: true, sources: [source] })),
+            .map((source) => ({
+                key: getReportingRateOperandKey(source.dataSet.id),
+                reportingRate: true,
+                sources: [source],
+            })),
+        ...profile.sources.filter(isProgramSource).map((source) => ({
+            key: getProgramOperandKey(source),
+            program: true,
+            sources: [source],
+        })),
     ]
 }

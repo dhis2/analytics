@@ -25,7 +25,7 @@ export const SERVER_PT_TO_MULTI_CALENDAR_PT = {
     FinancialNov: 'FYNOV',
 }
 
-// VERSION-TOGGLE: analyticsWeeklyStart and analyticsFinancialYearStart are removed in v44
+// VERSION-TOGGLE: remove when 44 is the lowest supported version (v44 removes the analyticsWeeklyStart and analyticsFinancialYearStart settings)
 // The period type of relative weeks, by the analyticsWeeklyStart setting
 export const WEEKLY_START_TO_PERIOD_TYPE = {
     WEEKLY: 'Weekly',

@@ -76,7 +76,11 @@ describe('sources', () => {
             const weekly = dataSetSource('weeklyForm', [element('elementA')])
 
             expect(getItemOperands({ sources: [monthly, weekly] })).toEqual([
-                { element: element('elementA'), sources: [monthly, weekly] },
+                {
+                    key: 'element:elementA:SUM',
+                    element: element('elementA'),
+                    sources: [monthly, weekly],
+                },
             ])
         })
 
@@ -94,9 +98,30 @@ describe('sources', () => {
             const program = programSource('programAAA')
 
             expect(getItemOperands({ sources: [rate, program] })).toEqual([
-                { reportingRate: true, sources: [rate] },
-                { program: true, sources: [program] },
+                {
+                    key: 'reportingRate:monthlyForm',
+                    reportingRate: true,
+                    sources: [rate],
+                },
+                {
+                    key: 'program:programAAA::',
+                    program: true,
+                    sources: [program],
+                },
             ])
+        })
+
+        it('keys a program apart by where and how its indicators place values', () => {
+            expect(
+                getItemOperands({
+                    sources: [
+                        programSource('programAAA', {
+                            orgUnitField: 'REGISTRATION',
+                            missingPeriodBoundaries: true,
+                        }),
+                    ],
+                })[0].key
+            ).toBe('program:programAAA:REGISTRATION:missingPeriodBoundaries')
         })
 
         it('has no operand without sources', () => {

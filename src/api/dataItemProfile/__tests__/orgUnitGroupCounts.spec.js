@@ -35,11 +35,10 @@ describe('fetchGroupMembersByLevel', () => {
         })
 
         expect(
-            await fetchGroupMembersByLevel(
-                createEngine(),
-                ['groupAAAAAA', 'emptyGroupA'],
-                LEVELS
-            )
+            await fetchGroupMembersByLevel(createEngine(), {
+                groupIds: ['groupAAAAAA', 'emptyGroupA'],
+                levels: LEVELS,
+            })
         ).toEqual({
             groups: { groupAAAAAA: { 2: 1, 3: 1 }, emptyGroupA: {} },
             requests: 6,
@@ -48,14 +47,19 @@ describe('fetchGroupMembersByLevel', () => {
 })
 
 describe('getGroupCountQueries', () => {
-    const queriesFor = (parentOrgUnitIds = []) =>
+    const orgUnitsById = Object.fromEntries(
+        ORG_UNITS.map((orgUnit) => [orgUnit.id, orgUnit])
+    )
+    const queriesFor = (parentIds) =>
         getGroupCountQueries({
             groups: { groupAAAAAA: { 2: 1 } },
-            parentOrgUnitIds,
-            orgUnits: Object.fromEntries(
-                ORG_UNITS.map((unit) => [unit.id, unit])
-            ),
-            sources: [FORM_MONTH],
+            parents:
+                parentIds?.map((id) => ({
+                    orgUnitId: id,
+                    minLevel: orgUnitsById[id].level,
+                })) ?? null,
+            orgUnits: orgUnitsById,
+            sourceKeys: [FORM_MONTH],
             assignedOrgUnitCounts: { formMonth: { 1: 1, 3: 2 } },
         })
 
@@ -82,7 +86,7 @@ describe('getGroupCountQueries', () => {
         })
     })
 
-    it('keeps the members under each parent at or above them', () => {
+    it('keeps the members, and the org units above them, under each parent at or above them', () => {
         const filters = filtersOf(queriesFor(['nationUnit1', 'facilityAAA']))
 
         expect(filters['groupAAAAAA:2:nationUnit1|total|2']).toEqual([
@@ -91,7 +95,27 @@ describe('getGroupCountQueries', () => {
             'level:eq:2',
         ])
         expect(
+            filters['groupAAAAAA:2:nationUnit1|formMonth|ancestors']
+        ).toEqual([
+            'path:like:nationUnit1',
+            'children.organisationUnitGroups.id:eq:groupAAAAAA',
+            'level:eq:1',
+            'dataSets.id:eq:formMonth',
+        ])
+        expect(
             Object.keys(filters).some((key) => key.includes('facilityAAA'))
         ).toBe(false)
+    })
+
+    it('takes the ancestors above a parent from its path', () => {
+        const filters = filtersOf(queriesFor(['districtAAA']))
+
+        expect(
+            filters['groupAAAAAA:2:districtAAA|formMonth|ancestors']
+        ).toEqual([
+            'id:in:[nationUnit1]',
+            'level:eq:1',
+            'dataSets.id:eq:formMonth',
+        ])
     })
 })

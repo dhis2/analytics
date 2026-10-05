@@ -14,14 +14,11 @@ export const isPeriodType = (value) => PERIOD_TYPE_NAMES.has(value)
 export const getFrequencyOrder = (periodType) =>
     PERIOD_TYPE_FREQUENCY_ORDER[periodType]
 
-// For sorting: shortest period type first
-export const compareByFrequency = (a, b) =>
-    getFrequencyOrder(a) - getFrequencyOrder(b)
-
+// Shortest first, then in the server's order
 export const sortPeriodTypes = (periodTypes) =>
     [...periodTypes].sort(
         (a, b) =>
-            compareByFrequency(a, b) ||
+            getFrequencyOrder(a) - getFrequencyOrder(b) ||
             PERIOD_TYPES.indexOf(a) - PERIOD_TYPES.indexOf(b)
     )
 
@@ -74,6 +71,20 @@ const PERIOD_ID_PATTERNS = [
 
 export const getPeriodTypeOfPeriodId = (periodId) =>
     PERIOD_ID_PATTERNS.find(([, regex]) => regex.test(periodId))?.[0] ?? null
+
+let relativePeriodShapes
+
+/* The type (category), offset and duration of a relative period, or
+ * undefined: PeriodDimension builds its table, with names, on each call */
+export const getRelativePeriodShape = (periodId) => {
+    relativePeriodShapes ??= Object.fromEntries(
+        Object.values(getRelativePeriodsDetails()).map(
+            ({ id, type, offset, duration }) => [id, { type, offset, duration }]
+        )
+    )
+
+    return relativePeriodShapes[periodId]
+}
 
 const WEEKLY_PERIOD_TYPES = PERIOD_TYPES.filter((type) =>
     type.startsWith('Weekly')
@@ -130,7 +141,7 @@ export const getCandidatePeriodTypes = (period, options = {}) => {
         return [fixedPeriodType]
     }
 
-    const category = getRelativePeriodsDetails()[period]?.type
+    const category = getRelativePeriodShape(period)?.type
 
     return category ? getRelativePeriodTypes(category, options) : []
 }

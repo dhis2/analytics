@@ -1,5 +1,6 @@
-import { DIMENSION_TYPE_REPORTING_RATE } from '../../modules/dataItemProfile/constants.js'
 import { parseExpressionOperands } from '../../modules/dataItemProfile/expressionOperands.js'
+import { getDataItemProfile } from '../../modules/dataItemProfile/getDataItemProfile.js'
+import { REPORTING_RATE } from '../../modules/dataSets.js'
 import {
     DIMENSION_TYPE_DATA_ELEMENT,
     DIMENSION_TYPE_DATA_ELEMENT_OPERAND,
@@ -12,12 +13,16 @@ import {
     DIMENSION_TYPE_PROGRAM_DATA_ELEMENT_OPTION,
     DIMENSION_TYPE_PROGRAM_INDICATOR,
 } from '../../modules/dataTypes.js'
-import { fetchAssignedOrgUnitCounts } from './assignedOrgUnitCounts.js'
+import {
+    fetchAssignedOrgUnitCounts,
+    getDataItemProfileSourceKeys,
+} from './assignedOrgUnitCounts.js'
 import {
     dataItemProfileMetadataQueries,
     METADATA_RESOURCES,
     normalizeDataItemProfileMetadata,
 } from './metadataQueries.js'
+import { levelsQuery, readLevels } from './orgUnitQueries.js'
 
 const createPending = () =>
     Object.fromEntries(
@@ -37,7 +42,7 @@ const addItem = (pending, { id, dimensionItemType }) => {
         case DIMENSION_TYPE_DATA_ELEMENT_OPERAND:
             pending.dataElements.add(id.split('.')[0])
             break
-        case DIMENSION_TYPE_REPORTING_RATE:
+        case REPORTING_RATE:
             pending.dataSets.add(id.split('.')[0])
             break
         case DIMENSION_TYPE_INDICATOR:
@@ -63,7 +68,7 @@ const addItem = (pending, { id, dimensionItemType }) => {
 
 const RESOURCE_BY_OPERAND_TYPE = {
     [DIMENSION_TYPE_DATA_ELEMENT]: 'dataElements',
-    [DIMENSION_TYPE_REPORTING_RATE]: 'dataSets',
+    [REPORTING_RATE]: 'dataSets',
     [DIMENSION_TYPE_INDICATOR]: 'indicators',
     [DIMENSION_TYPE_PROGRAM_INDICATOR]: 'programIndicators',
 }
@@ -113,7 +118,10 @@ const mergeMetadata = (metadata, fetched) =>
 /* One round: fetch what is pending and not fetched yet, then what it refers
  * to (indicators nest through N{}). Each id is fetched once, so the rounds
  * end when nothing new is referred to. */
-const fetchRound = async (dataEngine, { metadata, pending, requested }) => {
+const fetchRound = async (
+    dataEngine,
+    { metadata, pending, requested, signal }
+) => {
     const toFetch = METADATA_RESOURCES.map((resource) => [
         resource,
         [...pending[resource]].filter((id) => !requested[resource].has(id)),
@@ -129,7 +137,7 @@ const fetchRound = async (dataEngine, { metadata, pending, requested }) => {
 
             return dataEngine.query(
                 { [resource]: dataItemProfileMetadataQueries[resource] },
-                { variables: { ids } }
+                { variables: { ids }, signal }
             )
         })
     )
@@ -141,21 +149,41 @@ const fetchRound = async (dataEngine, { metadata, pending, requested }) => {
         metadata: mergeMetadata(metadata, fetched),
         pending: getReferences(fetched),
         requested,
+        signal,
     })
 }
 
-// The data sets and programs behind the metadata, as sources to count
-const getSources = (metadata) => [
-    ...[
-        ...new Set([
-            ...Object.values(metadata.dataElements).flatMap(({ dataSets }) =>
-                dataSets.map(({ id }) => id).filter(Boolean)
-            ),
-            ...Object.keys(metadata.dataSets),
-        ]),
-    ].map((id) => ({ id, field: 'dataSets' })),
-    ...Object.keys(metadata.programs).map((id) => ({ id, field: 'programs' })),
-]
+// What `known` metadata already holds counts as requested
+const getRequested = (known) =>
+    Object.fromEntries(
+        METADATA_RESOURCES.map((resource) => [
+            resource,
+            new Set(Object.keys(known?.[resource] ?? {})),
+        ])
+    )
+
+const fetchAssignedCounts = async (
+    dataEngine,
+    { items, metadata, known, levels, signal }
+) => {
+    const knownCounts = known?.assignedOrgUnitCounts ?? {}
+    // Only the sources the items' profiles use, and not counted yet
+    const sourceKeys = getDataItemProfileSourceKeys(
+        items.map((item) => getDataItemProfile(item, metadata))
+    ).filter(({ id }) => !knownCounts[id])
+    const counted = await fetchAssignedOrgUnitCounts(dataEngine, sourceKeys, {
+        levels,
+        signal,
+    })
+
+    return {
+        orgUnitLevels: counted.levels,
+        assignedOrgUnitCounts: {
+            ...knownCounts,
+            ...counted.assignedOrgUnitCounts,
+        },
+    }
+}
 
 /**
  * Fetches the metadata getDataItemProfile needs for `items`
@@ -163,32 +191,48 @@ const getSources = (metadata) => [
  * operands, nested indicators, expression dimension items, program
  * indicators and programs. By default it also counts the org units each data
  * set and program is assigned to per level (fetchAssignedOrgUnitCounts), for
- * the profile's assigned org unit levels; `{ withAssignedOrgUnitCounts:
- * false }` leaves them out.
+ * the profile's assigned org unit levels, with the levels (`orgUnitLevels`);
+ * `{ withAssignedOrgUnitCounts: false }` leaves them out. `known`, metadata
+ * fetched before, is reused: only what it lacks is fetched. `signal` cancels
+ * the requests.
  */
 export const fetchDataItemProfileMetadata = async (
     dataEngine,
     items = [],
-    { withAssignedOrgUnitCounts = true } = {}
+    { withAssignedOrgUnitCounts = true, known, signal } = {}
 ) => {
     const pending = createPending()
 
     items.forEach((item) => addItem(pending, item))
 
-    const metadata = await fetchRound(dataEngine, {
-        metadata: normalizeDataItemProfileMetadata(),
-        pending,
-        requested: createPending(),
-    })
+    // The levels, alongside the first round
+    const levelsRequest =
+        withAssignedOrgUnitCounts && !known?.orgUnitLevels
+            ? dataEngine.query(levelsQuery, { signal }).then(readLevels)
+            : Promise.resolve(known?.orgUnitLevels)
+    const [metadata, levels] = await Promise.all([
+        fetchRound(dataEngine, {
+            metadata: mergeMetadata(
+                normalizeDataItemProfileMetadata(),
+                known ?? {}
+            ),
+            pending,
+            requested: getRequested(known),
+            signal,
+        }),
+        levelsRequest,
+    ])
 
-    if (!withAssignedOrgUnitCounts) {
-        return metadata
-    }
-
-    const { levels, assignedOrgUnitCounts } = await fetchAssignedOrgUnitCounts(
-        dataEngine,
-        getSources(metadata)
-    )
-
-    return { ...metadata, orgUnitLevels: levels, assignedOrgUnitCounts }
+    return withAssignedOrgUnitCounts
+        ? {
+              ...metadata,
+              ...(await fetchAssignedCounts(dataEngine, {
+                  items,
+                  metadata,
+                  known,
+                  levels,
+                  signal,
+              })),
+          }
+        : metadata
 }

@@ -1,7 +1,12 @@
 import { PERIOD_AGGREGATION_FIRST } from '../constants.js'
 import { getYear, pad, shiftDate } from './calendarDates.js'
+import { memoize } from './memoize.js'
 import { getPeriodIdYear } from './multiCalendarPatches.js'
-import { getFixedPeriodOfTypeByDate } from './periodRanges.js'
+import {
+    getFixedPeriodOfTypeByDate,
+    getNextPeriod,
+    getPreviousPeriod,
+} from './periodRanges.js'
 
 /* How analytics answers FIRST and LAST data (checked by the test tool on 2.40
  * to 2.44): a data period counts when it ended by the end of the period asked
@@ -10,7 +15,7 @@ import { getFixedPeriodOfTypeByDate } from './periodRanges.js'
  * gives no value. So FIRST in July gives January's value, and LAST on
  * 1 January gives nothing. */
 
-// Enough to cross the years between two in a request, one period at a time at most
+// Enough to reach the last periods of the next year in the request, after a jump
 const MAX_STEPS = 20
 
 const getLastPeriodEndingBy = (periodType, date, calendar) => {
@@ -20,11 +25,7 @@ const getLastPeriodEndingBy = (periodType, date, calendar) => {
         return holding
     }
 
-    return getFixedPeriodOfTypeByDate(
-        periodType,
-        shiftDate(holding.startDate, -1, calendar),
-        calendar
-    )
+    return getPreviousPeriod(periodType, holding, calendar)
 }
 
 const getLatestCounting = ({ periodType, dates, years, calendar }) => {
@@ -49,9 +50,16 @@ const getLatestCounting = ({ periodType, dates, years, calendar }) => {
             return null
         }
 
-        const yearEnd = `${pad(Math.max(...lowerYears) + 1, 4)}-12-31`
+        /* Jump to just after the highest year left: its last periods end by
+         * then (a week of that year can end in early January) */
+        const afterYear = `${pad(Math.max(...lowerYears) + 1, 4)}-01-07`
         const before = shiftDate(period.startDate, -1, calendar)
-        date = yearEnd < before ? yearEnd : before
+
+        if (!before) {
+            return null
+        }
+
+        date = afterYear < before ? afterYear : before
     }
 
     return null
@@ -70,11 +78,7 @@ const getEarliestCounting = ({ periodType, dates, years, calendar }) => {
             return period.endDate <= dates.endDate ? period : null
         }
 
-        period = getFixedPeriodOfTypeByDate(
-            periodType,
-            shiftDate(period.endDate, 1, calendar),
-            calendar
-        )
+        period = getNextPeriod(periodType, period, calendar)
     }
 
     return null
@@ -85,23 +89,46 @@ const getEarliestCounting = ({ periodType, dates, years, calendar }) => {
  * `periodType`, in a period with `dates`, when the request touches the
  * calendar `years`; null when there is none.
  */
+const findFirstOrLastValuePeriod = memoize(
+    ({ periodAggregationType, ...query }) =>
+        periodAggregationType === PERIOD_AGGREGATION_FIRST
+            ? getEarliestCounting(query)
+            : getLatestCounting(query),
+    {
+        getKey: ({
+            periodAggregationType,
+            periodType,
+            dates,
+            years,
+            calendar,
+        }) =>
+            [
+                periodAggregationType,
+                periodType,
+                dates.startDate,
+                dates.endDate,
+                years.join(','),
+                calendar,
+            ].join('|'),
+    }
+)
+
 export const getFirstOrLastValuePeriod = ({
     periodAggregationType,
     periodType,
     dates,
     years,
     calendar = 'gregory',
-}) => {
-    if (!years.length) {
-        return null
-    }
-
-    const query = { periodType, dates, years, calendar }
-
-    return periodAggregationType === PERIOD_AGGREGATION_FIRST
-        ? getEarliestCounting(query)
-        : getLatestCounting(query)
-}
+}) =>
+    years.length
+        ? findFirstOrLastValuePeriod({
+              periodAggregationType,
+              periodType,
+              dates,
+              years,
+              calendar,
+          })
+        : null
 
 // The calendar years a range's dates fall in
 export const getYearsTouched = ({ startDate, endDate }) => {

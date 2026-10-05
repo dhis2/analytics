@@ -146,6 +146,9 @@ describe('getDataItemProfile', () => {
         })
 
         it('goes up a type when two types have the same length', () => {
+            /* Analytics fills BiWeekly from Wednesday weeks though they don't
+             * nest: the test tool's fixtures show values on all 8 versions,
+             * for every aggregation type but NONE */
             expect(profile('mondayAndWednesday', 'DATA_ELEMENT')).toMatchObject(
                 {
                     assignedPeriodTypes: {
@@ -318,6 +321,36 @@ describe('getDataItemProfile', () => {
             ).toBe('Yearly')
         })
 
+        it('say how their operands combine: both sides, any item of a side', () => {
+            const side = (...keys) => ({
+                missingValueStrategy: 'SKIP_IF_ALL_VALUES_MISSING',
+                parts: keys.map((key) => ({ operand: key })),
+            })
+
+            expect(profile('nested', 'INDICATOR').expression).toEqual({
+                missingValueStrategy: 'SKIP_IF_ANY_VALUE_MISSING',
+                parts: [
+                    {
+                        missingValueStrategy: 'SKIP_IF_ALL_VALUES_MISSING',
+                        parts: [
+                            {
+                                missingValueStrategy:
+                                    'SKIP_IF_ANY_VALUE_MISSING',
+                                parts: [
+                                    side('element:monthly:SUM'),
+                                    side('element:population:AVERAGE'),
+                                ],
+                            },
+                        ],
+                    },
+                    side(),
+                ],
+            })
+            expect(profile('eventsOnly', 'INDICATOR').expression.parts).toEqual(
+                [side('program:pr::', 'program:pr::'), side()]
+            )
+        })
+
         it('read indicators that refer to each other once', () => {
             expect(profile('loopA', 'INDICATOR')).toMatchObject({
                 unknown: false,
@@ -390,6 +423,24 @@ describe('getDataItemProfile', () => {
                     hasSeveral: true,
                 },
             })
+        })
+
+        it('take their missing value strategy, by default skipping only when all are missing', () => {
+            const strategyOf = (missingValueStrategy) =>
+                profile('sum', 'EXPRESSION_DIMENSION_ITEM', {
+                    ...metadata,
+                    expressionDimensionItems: {
+                        sum: {
+                            expression: '#{weekly} + #{monthly}',
+                            missingValueStrategy,
+                        },
+                    },
+                }).expression.missingValueStrategy
+
+            expect(strategyOf(undefined)).toBe('SKIP_IF_ALL_VALUES_MISSING')
+            expect(strategyOf('SKIP_IF_ANY_VALUE_MISSING')).toBe(
+                'SKIP_IF_ANY_VALUE_MISSING'
+            )
         })
 
         it('are unknown without metadata', () => {

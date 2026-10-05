@@ -1,10 +1,10 @@
-// Compatibility statuses: compatible with all, some or none of the item's sources
+// Compatibility statuses: compatible with all, some or none of the item's sources that apply to the selection
 export const COMPATIBILITY_FULL = 'full'
 export const COMPATIBILITY_PARTIAL = 'partial'
 export const COMPATIBILITY_NONE = 'none'
 export const COMPATIBILITY_UNKNOWN = 'unknown'
 
-// Most severe first: over several periods, org units or operands, the most severe wins
+// Most severe first: where all results are needed (an indicator's two sides), the most severe wins
 export const COMPATIBILITY_SEVERITY = [
     COMPATIBILITY_NONE,
     COMPATIBILITY_PARTIAL,
@@ -24,7 +24,7 @@ export const PROFILE_REASON_NOT_AGGREGATABLE = 'NOT_AGGREGATABLE'
 
 /* Why a compatibility status, in the order results list them */
 
-// An expression whose operand gives no value has none (a ratio without its denominator)
+// An operand gives no value: a sum misses it, a side where all are missing has none (a ratio without its denominator)
 export const REASON_OPERAND_EMPTY = 'OPERAND_EMPTY'
 // An expression computed from an operand that leaves values out: it can be off either way
 export const REASON_OPERAND_PARTIAL = 'OPERAND_PARTIAL'
@@ -42,16 +42,18 @@ export const REASON_REPEATED_VALUE = 'REPEATED_VALUE'
 // The value of an earlier data period (period aggregation FIRST or LAST)
 export const REASON_EARLIER_PERIOD_VALUE = 'EARLIER_PERIOD_VALUE'
 
-// Not assigned there, though assigned at that level elsewhere
+// Neither the org unit nor its ancestors are assigned: nothing is there to show
 export const REASON_NOT_ASSIGNED = 'NOT_ASSIGNED'
 // Assigned only at higher levels than the one asked: analytics never splits values down
 export const REASON_ASSIGNED_AT_HIGHER_LEVEL = 'ASSIGNED_AT_HIGHER_LEVEL'
 // The data element's aggregation levels stop values from reaching the level asked
 export const REASON_STOPPED_BY_AGGREGATION_LEVEL =
     'STOPPED_BY_AGGREGATION_LEVEL'
+// No org unit at the level asked under the parent org units, or no group member under them
+export const REASON_NO_ORG_UNITS_AT_LEVEL = 'NO_ORG_UNITS_AT_LEVEL'
 // An org unit group without members: analytics refuses it (E7143), leave it out of the request
 export const REASON_EMPTY_GROUP = 'EMPTY_GROUP'
-// Assigned to only some org units at the deepest level: the others collect nothing
+// Assigned to only some org units at the deepest level: the others aren't assigned, so nothing is left out
 export const REASON_PARTLY_ASSIGNED = 'PARTLY_ASSIGNED'
 // A program indicator placed by registration or an org unit attribute: values can be at any org unit
 export const REASON_ANY_ORG_UNIT = 'ANY_ORG_UNIT'
@@ -79,6 +81,7 @@ export const REASON_ORDER = [
     REASON_NOT_ASSIGNED,
     REASON_ASSIGNED_AT_HIGHER_LEVEL,
     REASON_STOPPED_BY_AGGREGATION_LEVEL,
+    REASON_NO_ORG_UNITS_AT_LEVEL,
     REASON_EMPTY_GROUP,
     REASON_PARTLY_ASSIGNED,
     REASON_ANY_ORG_UNIT,
@@ -95,8 +98,14 @@ export const LEFT_OUT_REASONS = new Set([
     REASON_STOPPED_BY_AGGREGATION_LEVEL,
 ])
 
-// Analytics' item type for reporting rates (ds.REPORTING_RATE), missing from dataTypes.js
-export const DIMENSION_TYPE_REPORTING_RATE = 'REPORTING_RATE'
+/* How an expression treats missing operand values (dhis2-core
+ * MissingValueStrategy). Indicators evaluate each side with
+ * SKIP_IF_ALL_VALUES_MISSING, then need both; expression dimension items
+ * have their own, SKIP_IF_ALL_VALUES_MISSING by default. NEVER_SKIP counts
+ * missing values as 0 even when all are. */
+export const SKIP_IF_ANY_VALUE_MISSING = 'SKIP_IF_ANY_VALUE_MISSING'
+export const SKIP_IF_ALL_VALUES_MISSING = 'SKIP_IF_ALL_VALUES_MISSING'
+export const NEVER_SKIP = 'NEVER_SKIP'
 
 /* Expression operands without a dimension item type: constants, org unit
  * group counts and [days] have no source; an unknown prefix makes the
@@ -131,15 +140,7 @@ export const ORG_UNIT_ITEM_TYPE_GROUP = 'GROUP'
 export const ORG_UNIT_ITEM_TYPE_USER = 'USER'
 export const ORG_UNIT_ITEM_TYPE_UNKNOWN = 'UNKNOWN'
 
-// How two date ranges relate (comparePeriodRanges)
-export const PERIOD_RANGE_SAME = 'same'
-export const PERIOD_RANGE_WITHIN = 'within'
-export const PERIOD_RANGE_CONTAINS = 'contains'
-export const PERIOD_RANGE_OVERLAPS = 'overlaps'
-export const PERIOD_RANGE_DISJOINT = 'disjoint'
-
-/* Server period type names with their frequencyOrder, as /api/periodTypes
- * returns them (checked against the test tool's recordings) */
+// Server period type names with their frequencyOrder, as /api/periodTypes returns them
 export const PERIOD_TYPE_FREQUENCY_ORDER = {
     Daily: 1,
     Weekly: 7,

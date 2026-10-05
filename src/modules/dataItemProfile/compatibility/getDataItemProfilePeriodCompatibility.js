@@ -13,18 +13,32 @@ import {
     canAggregateInto,
     getCandidatePeriodTypes,
     getPeriodTypeOfPeriodId,
+    isPeriodType,
     isPeriodTypeSupported,
 } from '../periods/periodTypes.js'
+import { getRelativePeriodFixedPeriods } from '../periods/relativePeriodRanges.js'
 import { getSourcePeriodType } from '../profile/assignedPeriodTypes.js'
 import { getItemOperands, getSourceId } from '../sources.js'
-import { combineOperandResults, getUnknownResult } from './combineResults.js'
+import {
+    combineAddedUpResults,
+    combineExpressionResults,
+    getUnknownResult,
+} from './combineResults.js'
 import { getOperandResult, getSourceResult } from './periodSourceResults.js'
 
-// An expression needs all its operands: the most severe one decides
-const getItemResult = (operands, query) =>
-    combineOperandResults(
-        operands.map((operand) => getOperandResult(operand, query))
+// The operands' results, combined as the item's expression says
+const getItemResult = ({ expression, operands }, query) => {
+    const results = new Map(
+        operands.map((operand) => [
+            operand.key,
+            getOperandResult(operand, query),
+        ])
     )
+
+    return combineExpressionResults(expression, [...results.keys()], (key) =>
+        results.get(key)
+    )
+}
 
 const isSameResult = (a, b) =>
     a.status === b.status && a.reasons.join() === b.reasons.join()
@@ -68,21 +82,49 @@ const getAlignsWithData = (profile, { periodType, dates, calendar }) => {
     return aligned.has(null) ? null : true
 }
 
-/* The calendar years the selection's periods touch, as one request would, or
- * null when a period has no dates (a relative period, a period type) */
-const getSelectionYears = (periods, calendar) => {
-    const dates = periods.map((period) =>
-        getPeriodTypeOfPeriodId(period)
-            ? getPeriodDates(period, calendar)
-            : null
-    )
+/* The date ranges a period covers for one of its types: a fixed period's,
+ * the fixed periods of a relative one, none for a period type */
+const getPeriodRanges = (period, periodType, options) => {
+    if (getPeriodTypeOfPeriodId(period)) {
+        const dates = getPeriodDates(period, options.calendar)
 
-    if (!dates.length || dates.includes(null)) {
+        return dates ? [dates] : null
+    }
+
+    return isPeriodType(period)
+        ? null
+        : getRelativePeriodFixedPeriods(period, periodType, options)
+}
+
+/* The calendar years the selection's periods touch, as one request would, or
+ * null when a fixed or relative period can't be dated. Period types aren't
+ * periods of a request: they don't count. */
+const getSelectionYears = (periods, options) => {
+    const ranges = periods
+        .filter((period) => !isPeriodType(period))
+        .flatMap((period) =>
+            getCandidatePeriodTypes(period, options).map((periodType) =>
+                getPeriodRanges(period, periodType, options)
+            )
+        )
+
+    if (!ranges.length || ranges.includes(null)) {
         return null
     }
 
-    return [...new Set(dates.flatMap(getYearsTouched))].sort((a, b) => a - b)
+    return [...new Set(ranges.flat().flatMap(getYearsTouched))].sort(
+        (a, b) => a - b
+    )
 }
+
+/* A result for each range of the query, added up: a relative period is
+ * judged over its fixed periods. Without ranges, by type alone. */
+const judgeRanges = (query, getResult) =>
+    query.ranges
+        ? combineAddedUpResults(
+              query.ranges.map((dates) => getResult({ ...query, dates }))
+          )
+        : getResult({ ...query, dates: null })
 
 const getUnknownPeriodResult = (profile, { period, periodTypes, reason }) => ({
     id: period,
@@ -108,30 +150,39 @@ const getPeriodResult = (profile, period, options) => {
         })
     }
 
-    const dates = getPeriodTypeOfPeriodId(period)
-        ? getPeriodDates(period, options.calendar)
-        : null
     const queries = periodTypes.map((periodType) => ({
         periodType,
-        dates,
+        ranges: getPeriodRanges(period, periodType, options),
         years: options.selectionYears,
         calendar: options.calendar,
         serverVersion: options.serverVersion,
         supported: isPeriodTypeSupported(periodType, options.serverVersion),
     }))
-    const operands = getItemOperands(profile)
+    const item = {
+        expression: profile.expression,
+        operands: getItemOperands(profile),
+    }
+    const isFixed = Boolean(getPeriodTypeOfPeriodId(period))
 
     return {
         id: period,
         periodTypes,
-        ...agreeOn(queries, (query) => getItemResult(operands, query)),
-        alignsWithData:
-            queries.length === 1
-                ? getAlignsWithData(profile, queries[0])
-                : null,
+        ...agreeOn(queries, (query) =>
+            judgeRanges(query, (rangeQuery) => getItemResult(item, rangeQuery))
+        ),
+        alignsWithData: isFixed
+            ? getAlignsWithData(profile, {
+                  ...queries[0],
+                  dates: queries[0].ranges?.[0],
+              })
+            : null,
         sources: profile.sources.map((source) => ({
             sourceId: getSourceId(source),
-            ...agreeOn(queries, (query) => getSourceResult(source, query)),
+            ...agreeOn(queries, (query) =>
+                judgeRanges(query, (rangeQuery) =>
+                    getSourceResult(source, rangeQuery)
+                )
+            ),
         })),
     }
 }
@@ -141,20 +192,23 @@ const getPeriodResult = (profile, period, options) => {
  * each period, `{ id, periodTypes, status, reasons, alignsWithData, sources }`,
  * with a result per source (aligned with `profile.sources`).
  *
- * `periods` are fixed ids, relative ids or period types. `options` sets the
- * type of relative weeks and financial years (`weeklyPeriodType`,
- * `financialYearPeriodType`), the `calendar` for dates, and the
- * `serverVersion` ({ major, minor }), since some versions can't answer some
- * period types. The periods are taken as one request: for FIRST and LAST
- * data, the years they touch decide which data periods count (other items of
- * the request, like a `.periodOffset()` operand, can add years and aren't
- * seen).
+ * `periods` are fixed ids, relative ids or period types. A relative period is
+ * judged over the fixed periods it covers on `options.relativePeriodDate`
+ * (an ISO date, today by default). `options` also sets the type of relative
+ * weeks and financial years (`weeklyPeriodType`, `financialYearPeriodType`),
+ * the `calendar` for dates, and the `serverVersion` ({ major, minor }), since
+ * some versions can't answer some period types. The periods are taken as one
+ * request: for FIRST and LAST data, the years they touch decide which data
+ * periods count (other items of the request, like a `.periodOffset()`
+ * operand, can add years and aren't seen). A period type is judged by type
+ * alone.
  */
 export const getDataItemProfilePeriodCompatibility = (
     profile,
-    { periods = [], ...options } = {}
+    { periods = [] } = {},
+    options = {}
 ) => {
-    const selectionYears = getSelectionYears(periods, options.calendar)
+    const selectionYears = getSelectionYears(periods, options)
 
     return periods.map((period) =>
         getPeriodResult(profile, period, { ...options, selectionYears })

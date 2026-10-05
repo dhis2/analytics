@@ -1,30 +1,61 @@
 import {
     createFixedPeriodFromPeriodId,
-    getFixedPeriodByDate,
+    generateFixedPeriods,
 } from '@dhis2/multi-calendar-dates'
 import { SERVER_PT_TO_MULTI_CALENDAR_PT } from '../../../components/PeriodDimension/utils/enabledPeriodTypes.js'
-import {
-    PERIOD_RANGE_CONTAINS,
-    PERIOD_RANGE_DISJOINT,
-    PERIOD_RANGE_OVERLAPS,
-    PERIOD_RANGE_SAME,
-    PERIOD_RANGE_WITHIN,
-} from '../constants.js'
-import { isIsoCalendar } from './calendarDates.js'
+import { getYear, isIsoCalendar, shiftDate } from './calendarDates.js'
+import { memoize } from './memoize.js'
 import {
     getNovemberPeriodByDate,
     getNovemberPeriodDates,
     isNovemberPeriodId,
     isNovemberPeriodType,
 } from './multiCalendarPatches.js'
+import { getPeriodTypeOfPeriodId } from './periodTypes.js'
 
 /* A period range is { startDate, endDate }, YYYY-MM-DD strings in one
  * calendar, so they compare as strings */
 
-// A fixed period's range, or null for an id that can't be read
-export const getPeriodDates = (periodId, calendar = 'gregory') => {
+const isYearLongType = (libraryPeriodType) =>
+    libraryPeriodType === 'YEARLY' || libraryPeriodType.startsWith('FY')
+
+/* Every period of a type in one year of the calendar (yearly and financial
+ * types: the one starting that year), built once */
+const getPeriodsOfYear = memoize(
+    (libraryPeriodType, year, calendar) => {
+        try {
+            return generateFixedPeriods({
+                year,
+                periodType: libraryPeriodType,
+                calendar,
+                locale: 'en',
+                ...(isYearLongType(libraryPeriodType) && { yearsCount: 1 }),
+            })
+        } catch {
+            return []
+        }
+    },
+    { maxSize: 500 }
+)
+
+const readPeriodDates = memoize((periodId, calendar) => {
     if (isNovemberPeriodId(periodId)) {
         return isIsoCalendar(calendar) ? getNovemberPeriodDates(periodId) : null
+    }
+
+    // The id names its year: the period is in that year's list
+    const libraryPeriodType =
+        SERVER_PT_TO_MULTI_CALENDAR_PT[getPeriodTypeOfPeriodId(periodId)]
+    const listed =
+        libraryPeriodType &&
+        getPeriodsOfYear(
+            libraryPeriodType,
+            Number(periodId.slice(0, 4)),
+            calendar
+        ).find(({ id }) => id === periodId)
+
+    if (listed) {
+        return { startDate: listed.startDate, endDate: listed.endDate }
     }
 
     try {
@@ -37,30 +68,31 @@ export const getPeriodDates = (periodId, calendar = 'gregory') => {
     } catch {
         return null
     }
-}
+})
 
-/**
- * How range `a` relates to range `b`: the same dates, within it, containing
- * it, overlapping it, or disjoint.
- */
-export const comparePeriodRanges = (a, b) => {
-    if (a.startDate === b.startDate && a.endDate === b.endDate) {
-        return PERIOD_RANGE_SAME
+// A fixed period's range, or null for an id that can't be read
+export const getPeriodDates = (periodId, calendar = 'gregory') =>
+    readPeriodDates(periodId, calendar)
+
+// Weeks and financial years can start in the year before or end in the year after
+const findPeriodHolding = (libraryPeriodType, date, calendar) => {
+    const year = getYear(date)
+
+    for (const candidateYear of [year, year - 1, year + 1]) {
+        const period = getPeriodsOfYear(
+            libraryPeriodType,
+            candidateYear,
+            calendar
+        ).find(({ startDate, endDate }) => startDate <= date && date <= endDate)
+
+        if (period) {
+            const { id, startDate, endDate } = period
+
+            return { id, startDate, endDate }
+        }
     }
 
-    if (a.endDate < b.startDate || b.endDate < a.startDate) {
-        return PERIOD_RANGE_DISJOINT
-    }
-
-    if (a.startDate >= b.startDate && a.endDate <= b.endDate) {
-        return PERIOD_RANGE_WITHIN
-    }
-
-    if (b.startDate >= a.startDate && b.endDate <= a.endDate) {
-        return PERIOD_RANGE_CONTAINS
-    }
-
-    return PERIOD_RANGE_OVERLAPS
+    return null
 }
 
 // The period of `periodType` that holds `date` ({ id, startDate, endDate }), or null
@@ -69,6 +101,10 @@ export const getFixedPeriodOfTypeByDate = (
     date,
     calendar = 'gregory'
 ) => {
+    if (!date) {
+        return null
+    }
+
     if (isNovemberPeriodType(periodType)) {
         return isIsoCalendar(calendar)
             ? getNovemberPeriodByDate(periodType, date)
@@ -77,20 +113,25 @@ export const getFixedPeriodOfTypeByDate = (
 
     const libraryPeriodType = SERVER_PT_TO_MULTI_CALENDAR_PT[periodType]
 
-    if (!libraryPeriodType) {
-        return null
-    }
-
-    try {
-        return getFixedPeriodByDate({
-            periodType: libraryPeriodType,
-            date,
-            calendar,
-        })
-    } catch {
-        return null
-    }
+    return libraryPeriodType
+        ? findPeriodHolding(libraryPeriodType, date, calendar)
+        : null
 }
+
+// The period of the same type just before or just after `period`, or null
+export const getPreviousPeriod = (periodType, period, calendar = 'gregory') =>
+    getFixedPeriodOfTypeByDate(
+        periodType,
+        shiftDate(period.startDate, -1, calendar),
+        calendar
+    )
+
+export const getNextPeriod = (periodType, period, calendar = 'gregory') =>
+    getFixedPeriodOfTypeByDate(
+        periodType,
+        shiftDate(period.endDate, 1, calendar),
+        calendar
+    )
 
 /**
  * The range from the start of the `periodType` period holding the start of
@@ -129,6 +170,7 @@ export const isAlignedWithPeriodType = (
     const covering = getCoveringPeriodRange(range, periodType, calendar)
 
     return covering
-        ? comparePeriodRanges(covering, range) === PERIOD_RANGE_SAME
+        ? covering.startDate === range.startDate &&
+              covering.endDate === range.endDate
         : null
 }

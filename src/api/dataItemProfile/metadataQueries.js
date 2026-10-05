@@ -10,12 +10,12 @@ export const dataItemProfileMetadataQueries = {
     dataElements: {
         resource: 'dataElements',
         ...byIds(
-            'id,aggregationType,aggregationLevels,valueType,domainType,dataSetElements[dataSet[id,periodType]]'
+            'id,aggregationType,aggregationLevels,dataSetElements[dataSet[id,periodType]]'
         ),
     },
     indicators: {
         resource: 'indicators',
-        ...byIds('id,numerator,denominator,annualized'),
+        ...byIds('id,numerator,denominator'),
     },
     dataSets: {
         resource: 'dataSets',
@@ -23,7 +23,7 @@ export const dataItemProfileMetadataQueries = {
     },
     expressionDimensionItems: {
         resource: 'expressionDimensionItems',
-        ...byIds('id,expression'),
+        ...byIds('id,expression,missingValueStrategy'),
     },
     programIndicators: {
         resource: 'programIndicators',
@@ -31,7 +31,7 @@ export const dataItemProfileMetadataQueries = {
     },
     programs: {
         resource: 'programs',
-        ...byIds('id,programType'),
+        ...byIds('id'),
     },
 }
 
@@ -44,29 +44,18 @@ const getPeriodTypeName = (periodType) =>
 const getList = (response, resource) =>
     Array.isArray(response) ? response : response?.[resource] ?? []
 
-// By id, or by period type when a version sends no id
-const getDataSetKey = ({ id, periodType }) => id ?? periodType
-
-const uniqueDataSets = (dataSets) =>
-    dataSets.filter(
-        (dataSet, i) =>
-            dataSets.findIndex(
-                (other) => getDataSetKey(other) === getDataSetKey(dataSet)
-            ) === i
-    )
+const uniqueDataSets = (dataSets) => [
+    ...new Map(dataSets.map((dataSet) => [dataSet.id, dataSet])).values(),
+]
 
 const normalizers = {
     dataElements: ({
         aggregationType,
         aggregationLevels,
-        valueType,
-        domainType,
         dataSetElements,
     }) => ({
         aggregationType,
         ...(aggregationLevels?.length && { aggregationLevels }),
-        valueType,
-        domainType,
         dataSets: uniqueDataSets(
             (dataSetElements ?? [])
                 .map(({ dataSet }) => dataSet)
@@ -77,15 +66,14 @@ const normalizers = {
                 }))
         ),
     }),
-    indicators: ({ numerator, denominator, annualized }) => ({
-        numerator,
-        denominator,
-        annualized,
-    }),
+    indicators: ({ numerator, denominator }) => ({ numerator, denominator }),
     dataSets: ({ periodType }) => ({
         periodType: getPeriodTypeName(periodType),
     }),
-    expressionDimensionItems: ({ expression }) => ({ expression }),
+    expressionDimensionItems: ({ expression, missingValueStrategy }) => ({
+        expression,
+        ...(missingValueStrategy && { missingValueStrategy }),
+    }),
     programIndicators: ({
         program,
         orgUnitField,
@@ -97,7 +85,7 @@ const normalizers = {
             hasPeriodBoundaries: analyticsPeriodBoundaries.length > 0,
         }),
     }),
-    programs: ({ programType }) => ({ programType }),
+    programs: () => ({}),
 }
 
 /**

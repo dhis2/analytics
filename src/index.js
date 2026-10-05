@@ -341,14 +341,6 @@ export { getDataItemProfileCompatibility } from './modules/dataItemProfile/getDa
 export { getDataItemProfilePeriodCompatibility } from './modules/dataItemProfile/compatibility/getDataItemProfilePeriodCompatibility.js'
 export { getDataItemProfileOrgUnitCompatibility } from './modules/dataItemProfile/compatibility/getDataItemProfileOrgUnitCompatibility.js'
 export {
-    canAggregateInto,
-    getCandidatePeriodTypes,
-} from './modules/dataItemProfile/periods/periodTypes.js'
-export {
-    comparePeriodRanges,
-    getCoveringPeriodRange,
-} from './modules/dataItemProfile/periods/periodRanges.js'
-export {
     COMPATIBILITY_FULL,
     COMPATIBILITY_PARTIAL,
     COMPATIBILITY_NONE,
@@ -364,6 +356,7 @@ export {
     REASON_NOT_ASSIGNED,
     REASON_ASSIGNED_AT_HIGHER_LEVEL,
     REASON_STOPPED_BY_AGGREGATION_LEVEL,
+    REASON_NO_ORG_UNITS_AT_LEVEL,
     REASON_EMPTY_GROUP,
     REASON_PARTLY_ASSIGNED,
     REASON_ANY_ORG_UNIT,
@@ -372,16 +365,21 @@ export {
     REASON_SETTING_MISSING,
     REASON_UNSUPPORTED_VERSION,
     REASON_UNKNOWN_ORG_UNIT,
-    PERIOD_RANGE_SAME,
-    PERIOD_RANGE_WITHIN,
-    PERIOD_RANGE_CONTAINS,
-    PERIOD_RANGE_OVERLAPS,
-    PERIOD_RANGE_DISJOINT,
+    PROFILE_REASON_MISSING_METADATA,
+    PROFILE_REASON_MISSING_PROGRAM,
+    PROFILE_REASON_UNKNOWN_OPERAND,
+    PROFILE_REASON_UNKNOWN_PERIOD_TYPE,
+    PROFILE_REASON_UNSUPPORTED_ITEM_TYPE,
+    PROFILE_REASON_NO_DATA_SET,
+    PROFILE_REASON_NOT_AGGREGATABLE,
+    SKIP_IF_ANY_VALUE_MISSING,
+    SKIP_IF_ALL_VALUES_MISSING,
+    NEVER_SKIP,
 } from './modules/dataItemProfile/constants.js'
 export { fetchDataItemProfileMetadata } from './api/dataItemProfile/fetchDataItemProfileMetadata.js'
 export {
     fetchAssignedOrgUnitCounts,
-    getCountableSources,
+    getDataItemProfileSourceKeys,
 } from './api/dataItemProfile/assignedOrgUnitCounts.js'
 export { fetchOrgUnitCoverage } from './api/dataItemProfile/fetchOrgUnitCoverage.js'
 

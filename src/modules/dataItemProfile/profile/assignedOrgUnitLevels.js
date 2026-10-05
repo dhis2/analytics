@@ -1,6 +1,7 @@
 import { canBeAtAnyOrgUnit, getSourceId } from '../sources.js'
 
-const getLevelsWithUnits = (countsByLevel = {}) =>
+// The levels with at least one org unit, from counts by level
+export const getLevelsWithOrgUnits = (countsByLevel = {}) =>
     Object.keys(countsByLevel)
         .map(Number)
         .filter((level) => countsByLevel[level] > 0)
@@ -15,7 +16,7 @@ export const getAssignedOrgUnitLevels = (sources) => {
     const levelsBySource = sources
         .filter(({ assignedOrgUnitCounts }) => assignedOrgUnitCounts)
         .map(({ assignedOrgUnitCounts }) =>
-            getLevelsWithUnits(assignedOrgUnitCounts)
+            getLevelsWithOrgUnits(assignedOrgUnitCounts)
         )
     const levels = [...new Set(levelsBySource.flat())].sort((a, b) => b - a)
     const deepestOfEach = levelsBySource

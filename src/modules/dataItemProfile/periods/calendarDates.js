@@ -5,8 +5,9 @@ import {
 
 /* Dates are YYYY-MM-DD strings in the server's calendar. Other calendars are
  * supported: their dates are converted to ISO for analytics and back for
- * multi-calendar-dates. These two need no conversion. */
-const ISO_CALENDARS = new Set(['gregory', 'iso8601'])
+ * multi-calendar-dates. These need no conversion (gregorian is the id DHIS2
+ * gives the gregorian calendar). */
+const ISO_CALENDARS = new Set(['gregory', 'gregorian', 'iso8601'])
 
 export const isIsoCalendar = (calendar = 'gregory') =>
     ISO_CALENDARS.has(calendar)
@@ -25,23 +26,40 @@ const shiftIsoDate = (isoDate, days) => {
     return date.toISOString().slice(0, 10)
 }
 
-// The date `days` later (or earlier, when negative), in the same calendar
+// A conversion multi-calendar-dates can't make (an era it doesn't match) gives null
+const convertOrNull = (convert) => {
+    try {
+        return convert()
+    } catch {
+        return null
+    }
+}
+
+// A date of the ISO calendar (YYYY-MM-DD) in the given calendar, or null
+export const fromIsoDate = (isoDate, calendar = 'gregory') => {
+    if (isIsoCalendar(calendar)) {
+        return isoDate
+    }
+
+    return convertOrNull(() => {
+        const { year, eraYear, month, day } = convertFromIso8601(
+            isoDate,
+            calendar
+        )
+
+        return formatDate({ year: eraYear ?? year, month, day })
+    })
+}
+
+// The date `days` later (or earlier, when negative), in the same calendar, or null
 export const shiftDate = (date, days, calendar = 'gregory') => {
     if (isIsoCalendar(calendar)) {
         return shiftIsoDate(date, days)
     }
 
-    const shifted = shiftIsoDate(
-        formatDate(convertToIso8601(date, calendar)),
-        days
+    const isoDate = convertOrNull(() =>
+        formatDate(convertToIso8601(date, calendar))
     )
-    const { year, eraYear, month, day } = convertFromIso8601(shifted, calendar)
 
-    return formatDate({ year: eraYear ?? year, month, day })
+    return isoDate && fromIsoDate(shiftIsoDate(isoDate, days), calendar)
 }
-
-// Analytics takes ISO dates
-export const toIsoDate = (date, calendar = 'gregory') =>
-    !date || isIsoCalendar(calendar)
-        ? date
-        : formatDate(convertToIso8601(date, calendar))

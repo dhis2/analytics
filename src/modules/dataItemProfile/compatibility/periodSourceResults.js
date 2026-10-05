@@ -1,7 +1,6 @@
 import {
     COMPATIBILITY_FULL,
     COMPATIBILITY_NONE,
-    COMPATIBILITY_PARTIAL,
     PERIOD_AGGREGATION_AVERAGE,
     PERIOD_AGGREGATION_FIRST,
     PERIOD_AGGREGATION_LAST,
@@ -19,10 +18,10 @@ import { canAggregateInto, getFrequencyOrder } from '../periods/periodTypes.js'
 import { getSourcePeriodType } from '../profile/assignedPeriodTypes.js'
 import { isProgramSource } from '../sources.js'
 import {
+    combineAddedUpResults,
     combineResults,
     createResult,
     getUnknownResult,
-    unionOfReasons,
 } from './combineResults.js'
 
 /* The period rules for one source and one query ({ periodType, dates, years,
@@ -139,29 +138,12 @@ export const getSourceResult = (source, query) => {
     return combineResults(results)
 }
 
-// The values of one element over its data sets add up: some missing is partial
-const combineSources = (results) => {
-    const statuses = results.map(({ status }) => status)
-    const reasons = unionOfReasons(results)
-
-    if (statuses.every((status) => status === COMPATIBILITY_NONE)) {
-        return createResult(COMPATIBILITY_NONE, reasons)
-    }
-
-    return createResult(
-        statuses.some((status) => status === COMPATIBILITY_NONE)
-            ? COMPATIBILITY_PARTIAL
-            : COMPATIBILITY_FULL,
-        reasons
-    )
-}
-
 export const getOperandResult = (
     { element, reportingRate, sources },
     query
 ) => {
     if (element) {
-        return combineSources(
+        return combineAddedUpResults(
             sources.map((source) =>
                 getElementResult(element, getSourcePeriodType(source), query)
             )

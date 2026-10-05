@@ -1,3 +1,4 @@
+import { REPORTING_RATE } from '../../dataSets.js'
 import {
     DIMENSION_TYPE_DATA_ELEMENT,
     DIMENSION_TYPE_DATA_ELEMENT_OPERAND,
@@ -11,8 +12,12 @@ import {
     DIMENSION_TYPE_PROGRAM_INDICATOR,
 } from '../../dataTypes.js'
 import {
-    DIMENSION_TYPE_REPORTING_RATE,
     NOT_AGGREGATABLE_AGGREGATION_TYPES,
+    SKIP_IF_ALL_VALUES_MISSING,
+    SKIP_IF_ANY_VALUE_MISSING,
+    PERIOD_AGGREGATION_AVERAGE,
+    PERIOD_AGGREGATION_FIRST,
+    PERIOD_AGGREGATION_LAST,
     OPERAND_TYPE_UNKNOWN,
     PROFILE_REASON_MISSING_METADATA,
     PROFILE_REASON_MISSING_PROGRAM,
@@ -22,6 +27,11 @@ import {
     PROFILE_REASON_UNSUPPORTED_ITEM_TYPE,
 } from '../constants.js'
 import { parseExpressionOperands } from '../expressionOperands.js'
+import {
+    getElementOperandKey,
+    getProgramOperandKey,
+    getReportingRateOperandKey,
+} from '../sources.js'
 import {
     addElementToSource,
     addReason,
@@ -35,18 +45,25 @@ import {
 /* How each aggregation type aggregates over time, when it differs from the
  * type itself (dhis2-core AnalyticsAggregationType.fromAggregationType) */
 const PERIOD_AGGREGATION_BY_AGGREGATION_TYPE = {
-    AVERAGE_SUM_ORG_UNIT: 'AVERAGE',
-    LAST_AVERAGE_ORG_UNIT: 'LAST',
-    LAST_LAST_ORG_UNIT: 'LAST',
+    AVERAGE_SUM_ORG_UNIT: PERIOD_AGGREGATION_AVERAGE,
+    LAST_AVERAGE_ORG_UNIT: PERIOD_AGGREGATION_LAST,
+    LAST_LAST_ORG_UNIT: PERIOD_AGGREGATION_LAST,
     LAST_IN_PERIOD_AVERAGE_ORG_UNIT: 'LAST_IN_PERIOD',
-    FIRST_AVERAGE_ORG_UNIT: 'FIRST',
-    FIRST_FIRST_ORG_UNIT: 'FIRST',
+    FIRST_AVERAGE_ORG_UNIT: PERIOD_AGGREGATION_FIRST,
+    FIRST_FIRST_ORG_UNIT: PERIOD_AGGREGATION_FIRST,
     MAX_SUM_ORG_UNIT: 'MAX',
     MIN_SUM_ORG_UNIT: 'MIN',
 }
 
 export const getPeriodAggregationType = (aggregationType) =>
     PERIOD_AGGREGATION_BY_AGGREGATION_TYPE[aggregationType] ?? aggregationType
+
+/* Each add* function adds the sources of an operand and gives its part of
+ * the item's expression: `{ operand: key }` for an operand (sources.js keys),
+ * `{ missingValueStrategy, parts }` for an expression, null when its metadata
+ * is missing. */
+
+const toPart = (key) => ({ operand: key })
 
 const addDataElement = (
     collector,
@@ -57,7 +74,7 @@ const addDataElement = (
 
     if (!dataElement) {
         addReason(collector, { code: PROFILE_REASON_MISSING_METADATA, id })
-        return
+        return null
     }
 
     const aggregationType =
@@ -88,6 +105,8 @@ const addDataElement = (
         checkDataSetPeriodType(collector, id, dataSet.periodType)
         addElementToSource(getDataSetSource(collector, dataSet), element)
     })
+
+    return toPart(getElementOperandKey(element))
 }
 
 const addReportingRate = (collector, metadata, dataSetId) => {
@@ -98,7 +117,7 @@ const addReportingRate = (collector, metadata, dataSetId) => {
             code: PROFILE_REASON_MISSING_METADATA,
             id: dataSetId,
         })
-        return
+        return null
     }
 
     checkDataSetPeriodType(collector, dataSetId, periodType)
@@ -106,137 +125,168 @@ const addReportingRate = (collector, metadata, dataSetId) => {
         id: dataSetId,
         periodType,
     }).reportingRate = true
+
+    return toPart(getReportingRateOperandKey(dataSetId))
 }
+
+const toProgramPart = (source) =>
+    source ? toPart(getProgramOperandKey(source)) : null
 
 const addProgramIndicator = (collector, metadata, id) => {
     const programIndicator = metadata.programIndicators?.[id]
 
     if (!programIndicator?.program) {
         addReason(collector, { code: PROFILE_REASON_MISSING_METADATA, id })
-        return
+        return null
     }
 
-    getProgramSource(collector, metadata, {
-        id: programIndicator.program,
-        orgUnitField: programIndicator.orgUnitField,
-        missingPeriodBoundaries: programIndicator.hasPeriodBoundaries === false,
-    })
+    return toProgramPart(
+        getProgramSource(collector, metadata, {
+            id: programIndicator.program,
+            orgUnitField: programIndicator.orgUnitField,
+            missingPeriodBoundaries:
+                programIndicator.hasPeriodBoundaries === false,
+        })
+    )
 }
 
 // An event or tracker item named by its program: program.element, program.attribute…
 const addProgramItem = (collector, metadata, id) => {
     if (!id.includes('.')) {
         addReason(collector, { code: PROFILE_REASON_MISSING_PROGRAM, id })
-        return
+        return null
     }
 
-    getProgramSource(collector, metadata, { id: id.split('.')[0] })
+    return toProgramPart(
+        getProgramSource(collector, metadata, { id: id.split('.')[0] })
+    )
 }
 
-const addExpression = (collector, metadata, expression) =>
-    parseExpressionOperands(expression).forEach((operand) => {
-        switch (operand.type) {
-            case DIMENSION_TYPE_DATA_ELEMENT:
-                addDataElement(collector, metadata, operand)
-                break
-            case DIMENSION_TYPE_REPORTING_RATE:
-                addReportingRate(collector, metadata, operand.id)
-                break
-            case DIMENSION_TYPE_INDICATOR:
-                addIndicator(collector, metadata, operand.id)
-                break
-            case DIMENSION_TYPE_PROGRAM_INDICATOR:
-                addProgramIndicator(collector, metadata, operand.id)
-                break
-            case DIMENSION_TYPE_PROGRAM_DATA_ELEMENT:
-            case DIMENSION_TYPE_PROGRAM_ATTRIBUTE:
-                addProgramItem(collector, metadata, operand.id)
-                break
-            case OPERAND_TYPE_UNKNOWN:
-                addReason(collector, {
-                    code: PROFILE_REASON_UNKNOWN_OPERAND,
-                    token: operand.token,
-                })
-                break
-            default:
-            // Constants, org unit groups and [days] have no source
-        }
-    })
-
-const addIndicator = (collector, metadata, id) => {
-    // Nested indicators (N{}) can refer to each other
-    if (collector.visitedIndicators.has(id)) {
-        return
+const addOperand = (collector, metadata, operand) => {
+    switch (operand.type) {
+        case DIMENSION_TYPE_DATA_ELEMENT:
+            return addDataElement(collector, metadata, operand)
+        case REPORTING_RATE:
+            return addReportingRate(collector, metadata, operand.id)
+        case DIMENSION_TYPE_INDICATOR:
+            return addIndicator(collector, metadata, operand.id)
+        case DIMENSION_TYPE_PROGRAM_INDICATOR:
+            return addProgramIndicator(collector, metadata, operand.id)
+        case DIMENSION_TYPE_PROGRAM_DATA_ELEMENT:
+        case DIMENSION_TYPE_PROGRAM_ATTRIBUTE:
+            return addProgramItem(collector, metadata, operand.id)
+        case OPERAND_TYPE_UNKNOWN:
+            addReason(collector, {
+                code: PROFILE_REASON_UNKNOWN_OPERAND,
+                token: operand.token,
+            })
+            return null
+        default:
+            // Constants, org unit groups and [days] have no source, and never miss
+            return null
     }
-    collector.visitedIndicators.add(id)
+}
 
+const addExpression = (
+    collector,
+    metadata,
+    { expression, missingValueStrategy }
+) => ({
+    missingValueStrategy,
+    parts: parseExpressionOperands(expression)
+        .map((operand) => addOperand(collector, metadata, operand))
+        .filter(Boolean),
+})
+
+// Each side skips only when all its values are missing; the indicator needs both
+const addIndicator = (collector, metadata, id) => {
     const indicator = metadata.indicators?.[id]
 
     if (!indicator) {
         addReason(collector, { code: PROFILE_REASON_MISSING_METADATA, id })
-        return
+        return null
     }
 
-    addExpression(collector, metadata, indicator.numerator)
-    addExpression(collector, metadata, indicator.denominator)
+    // Nested indicators (N{}) can refer to each other, which analytics refuses
+    if (collector.indicatorsInProgress.has(id)) {
+        return null
+    }
+
+    collector.indicatorsInProgress.add(id)
+
+    const sides = [indicator.numerator, indicator.denominator].map((side) =>
+        addExpression(collector, metadata, {
+            expression: side,
+            missingValueStrategy: SKIP_IF_ALL_VALUES_MISSING,
+        })
+    )
+
+    collector.indicatorsInProgress.delete(id)
+
+    return { missingValueStrategy: SKIP_IF_ANY_VALUE_MISSING, parts: sides }
 }
 
 const addExpressionDimensionItem = (collector, metadata, id) => {
-    const expression = metadata.expressionDimensionItems?.[id]?.expression
+    const { expression, missingValueStrategy } =
+        metadata.expressionDimensionItems?.[id] ?? {}
 
     if (expression === undefined) {
         addReason(collector, { code: PROFILE_REASON_MISSING_METADATA, id })
-        return
+        return null
     }
 
-    addExpression(collector, metadata, expression)
+    return addExpression(collector, metadata, {
+        expression,
+        missingValueStrategy:
+            missingValueStrategy ?? SKIP_IF_ALL_VALUES_MISSING,
+    })
 }
 
-/**
- * The sources of a data item ({ id, dimensionItemType }), from its metadata
- * (fetchDataItemProfileMetadata), with the reasons the profile can't be told
- * or should note.
- */
-export const collectSources = ({ id, dimensionItemType }, metadata) => {
-    const collector = createCollector()
-
+const addItem = (collector, metadata, { id, dimensionItemType }) => {
     switch (dimensionItemType) {
         case DIMENSION_TYPE_DATA_ELEMENT:
         case DIMENSION_TYPE_DATA_ELEMENT_OPERAND:
-            addDataElement(collector, metadata, {
+            return addDataElement(collector, metadata, {
                 id: id.split('.')[0],
                 ...(id.includes('.') && { operand: id }),
             })
-            break
-        case DIMENSION_TYPE_REPORTING_RATE:
-            addReportingRate(collector, metadata, id.split('.')[0])
-            break
+        case REPORTING_RATE:
+            return addReportingRate(collector, metadata, id.split('.')[0])
         case DIMENSION_TYPE_INDICATOR:
-            addIndicator(collector, metadata, id)
-            break
+            return addIndicator(collector, metadata, id)
         case DIMENSION_TYPE_EXPRESSION_DIMENSION_ITEM:
-            addExpressionDimensionItem(collector, metadata, id)
-            break
+            return addExpressionDimensionItem(collector, metadata, id)
         case DIMENSION_TYPE_PROGRAM_INDICATOR:
-            addProgramIndicator(collector, metadata, id)
-            break
+            return addProgramIndicator(collector, metadata, id)
         case DIMENSION_TYPE_PROGRAM_DATA_ELEMENT:
         case DIMENSION_TYPE_PROGRAM_DATA_ELEMENT_OPTION:
         case DIMENSION_TYPE_PROGRAM_ATTRIBUTE:
         case DIMENSION_TYPE_PROGRAM_ATTRIBUTE_OPTION:
         case DIMENSION_TYPE_EVENT_DATA_ITEM:
-            addProgramItem(collector, metadata, id)
-            break
+            return addProgramItem(collector, metadata, id)
         default:
             addReason(collector, {
                 code: PROFILE_REASON_UNSUPPORTED_ITEM_TYPE,
                 id,
                 dimensionItemType,
             })
+            return null
     }
+}
+
+/**
+ * The sources of a data item ({ id, dimensionItemType }), from its metadata
+ * (fetchDataItemProfileMetadata), with the reasons the profile can't be told
+ * or should note, and for an indicator or expression dimension item its
+ * `expression`: how its operands combine.
+ */
+export const collectSources = (item, metadata) => {
+    const collector = createCollector()
+    const part = addItem(collector, metadata, item)
 
     return {
         sources: [...collector.sources.values()],
         reasons: collector.reasons,
+        ...(part?.parts && { expression: part }),
     }
 }

@@ -1,7 +1,6 @@
 import { PERIOD_TYPES } from '../../constants.js'
 import {
     canAggregateInto,
-    compareByFrequency,
     getCandidatePeriodTypes,
     getPeriodTypeOfPeriodId,
     getRelativePeriodTypeOptions,
@@ -177,13 +176,5 @@ describe('canAggregateInto', () => {
     it('is null for an unknown type', () => {
         expect(canAggregateInto('Hourly', 'Monthly')).toBeNull()
         expect(canAggregateInto('Monthly', undefined)).toBeNull()
-    })
-})
-
-describe('compareByFrequency', () => {
-    it('orders by frequency', () => {
-        expect(compareByFrequency('Weekly', 'Monthly')).toBeLessThan(0)
-        expect(compareByFrequency('Yearly', 'FinancialApril')).toBe(0)
-        expect(compareByFrequency('TwoYearly', 'Yearly')).toBeGreaterThan(0)
     })
 })

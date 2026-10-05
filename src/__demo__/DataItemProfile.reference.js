@@ -4,19 +4,19 @@ import React from 'react'
 export const STATUS_DEFINITIONS = [
     [
         'full',
-        'Compatible with all the item’s data sets and programs that collect for the selection: every value comes back (also repeated, from an earlier period, or where only some org units are assigned).',
+        'Compatible with all the item’s data sets and programs that apply to the selection: every value comes back (also repeated, from an earlier period, or where only some org units are assigned).',
         'Data element in a monthly data set, with aggregation enabled, requested quarterly',
         'Indicator whose components are all in data sets assigned at facility level, requested at district level',
     ],
     [
         'partial',
-        'Compatible with only some of the item’s data sets and programs that collect for the selection: the others’ values are left out. Only for an item in several data sets or programs that differ. For an expression, computed from such an operand (OPERAND_PARTIAL).',
+        'Compatible with only some of the item’s data sets and programs that apply to the selection: the others’ values are left out. For an item in several data sets or programs that differ, a selection whose periods or org units don’t all give a value, or a sum where some items give none (OPERAND_EMPTY). For an expression, computed from such an operand (OPERAND_PARTIAL).',
         'Data element in a Monday weekly and a Wednesday weekly data set, requested by Monday week',
         'Data element in a data set assigned at facility level and one assigned at district level, requested at a facility',
     ],
     [
         'none',
-        'Compatible with none of the item’s data sets and programs that collect for the selection: no value comes back. For an expression, an operand gives none (OPERAND_EMPTY).',
+        'Compatible with none of the item’s data sets and programs that apply to the selection: no value comes back. For an indicator, one side gives no value at all (OPERAND_EMPTY).',
         'Data element in a monthly data set, requested weekly',
         'Data element in a data set assigned at district level, requested at a facility',
     ],
@@ -31,8 +31,8 @@ export const STATUS_DEFINITIONS = [
 export const PERIOD_REASON_DEFINITIONS = [
     [
         'OPERAND_EMPTY',
-        'An expression whose operand gives no value has none: a ratio without its denominator.',
-        'none',
+        'An operand gives no value: a sum misses it (it counts as 0), a side where all are missing has none (a ratio without its denominator).',
+        'partial, none',
         'ANC 1 Coverage by week: ANC 1st visit is monthly',
     ],
     [
@@ -106,9 +106,9 @@ export const PERIOD_REASON_DEFINITIONS = [
 export const ORG_UNIT_REASON_DEFINITIONS = [
     [
         'NOT_ASSIGNED',
-        'Not assigned there, though assigned at that level elsewhere.',
+        'Neither the org unit nor its ancestors are assigned.',
         'none',
-        'ANC 1st visit at Junctionla MCHP',
+        'An event program’s indicator at a facility the program isn’t assigned to',
     ],
     [
         'ASSIGNED_AT_HIGHER_LEVEL',
@@ -123,6 +123,12 @@ export const ORG_UNIT_REASON_DEFINITIONS = [
         'Facility data with aggregation level 2, requested by district',
     ],
     [
+        'NO_ORG_UNITS_AT_LEVEL',
+        'No org unit at the level asked under the parent org units, or no group member under them: analytics returns nothing there.',
+        'none',
+        'LEVEL-2 under a facility',
+    ],
+    [
         'EMPTY_GROUP',
         'An org unit group without members: analytics refuses it (E7143). Leave it out of the request.',
         'none',
@@ -130,7 +136,7 @@ export const ORG_UNIT_REASON_DEFINITIONS = [
     ],
     [
         'PARTLY_ASSIGNED',
-        'Assigned to only some org units at the deepest level: the others collect nothing, so nothing is left out.',
+        'Assigned to only some org units at the deepest level: the others aren’t assigned, so nothing is left out.',
         'full',
         'ANC 1st visit in Sierra Leone: 1,159 of 1,166 facilities',
     ],

@@ -43,6 +43,23 @@ describe('getFirstOrLastValuePeriod', () => {
             ).toMatchObject({ id: '202509' })
         })
 
+        it('skips a gap year in the request, for weekly and monthly data', () => {
+            expect(
+                sourceOf({
+                    periodType: 'Weekly',
+                    period: '20240101',
+                    years: [2022, 2024],
+                })
+            ).toMatchObject({ id: '2022W52' })
+            expect(
+                sourceOf({
+                    periodType: 'Monthly',
+                    period: '20240101',
+                    years: [2020, 2024],
+                })
+            ).toMatchObject({ id: '202012' })
+        })
+
         it('counts only data periods of the years touched, by their id', () => {
             expect(
                 sourceOf({ periodType: 'Monthly', period: '20250101' })

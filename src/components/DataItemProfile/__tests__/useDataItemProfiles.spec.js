@@ -19,16 +19,27 @@ const OBJECTS = {
     dataElements: {
         monthly: {
             aggregationType: 'SUM',
-            dataSetElements: [{ dataSet: { periodType: 'Monthly' } }],
+            dataSetElements: [
+                { dataSet: { id: 'formMonthly', periodType: 'Monthly' } },
+            ],
         },
         weekly: {
             aggregationType: 'SUM',
-            dataSetElements: [{ dataSet: { periodType: 'Weekly' } }],
+            dataSetElements: [
+                { dataSet: { id: 'formWeeklyA', periodType: 'Weekly' } },
+            ],
         },
         population: {
             aggregationType: 'AVERAGE',
             // An object, as some versions send it
-            dataSetElements: [{ dataSet: { periodType: { name: 'Yearly' } } }],
+            dataSetElements: [
+                {
+                    dataSet: {
+                        id: 'formYearlyA',
+                        periodType: { name: 'Yearly' },
+                    },
+                },
+            ],
         },
         assigned: {
             aggregationType: 'SUM',
@@ -71,7 +82,7 @@ const createData = (overrides = {}) => ({
     organisationUnitLevels: {
         organisationUnitLevels: [{ id: 'levelOne111', level: 1 }],
     },
-    // Counts with pageSize=1 (3 units, 2 of them with filters on a data set)
+    // Counts with pageSize=1 (3 org units, 2 of them with filters on a data set)
     organisationUnits: (type, { params }) =>
         params.pageSize === 1
             ? { pager: { total: params.filter.length === 3 ? 2 : 3 } }
@@ -260,8 +271,14 @@ describe('useDataItemProfiles', () => {
     })
 
     it('is unknown for relative weeks on a version without the setting', async () => {
-        const data = createData()
-        delete data['systemSettings/analyticsWeeklyStart']
+        const data = createData({
+            'systemSettings/analyticsWeeklyStart': () =>
+                Promise.reject(
+                    Object.assign(new Error('Setting does not exist'), {
+                        details: { httpStatusCode: 404 },
+                    })
+                ),
+        })
         const { result } = renderProfiles([WEEKLY], data)
 
         await waitFor(() => expect(result.current.profiles).toBeDefined())
@@ -308,7 +325,7 @@ describe('useDataItemProfiles', () => {
         expect(result.current.profiles).toBeUndefined()
     })
 
-    it('sends nothing without items', () => {
+    it('sends nothing without items, but the settings', async () => {
         const data = createData()
         const { result } = renderProfiles([], data)
 
@@ -316,6 +333,13 @@ describe('useDataItemProfiles', () => {
             loading: false,
             profiles: undefined,
         })
+
+        await waitFor(() =>
+            expect(result.current.relativePeriodTypes.weeklyPeriodType).toBe(
+                'Weekly'
+            )
+        )
+
         expect(data.dataElements).not.toHaveBeenCalled()
     })
 
@@ -340,6 +364,106 @@ describe('useDataItemProfiles', () => {
         )
 
         expect(result.current.profiles.monthly).toBeUndefined()
+    })
+
+    it('keeps the loaded profiles while new items load, and fetches only those', async () => {
+        const data = createData()
+        const { result, rerender } = renderProfiles([MONTHLY], data)
+
+        await waitFor(() => expect(result.current.profiles).toBeDefined())
+
+        const monthlyProfile = result.current.profiles.monthly
+
+        rerender([MONTHLY, WEEKLY])
+
+        expect(result.current.loading).toBe(true)
+        expect(result.current.profiles).toEqual({ monthly: monthlyProfile })
+
+        await waitFor(() =>
+            expect(result.current.profiles?.weekly).toMatchObject({
+                unknown: false,
+            })
+        )
+
+        const filters = data.dataElements.mock.calls.map(
+            ([, { params }]) => params.filter
+        )
+
+        expect(filters[1]).toContain('weekly')
+        expect(filters[1]).not.toContain('monthly')
+    })
+
+    it('fetches the settings once', async () => {
+        const settings = jest.fn(() => ({ analyticsWeeklyStart: 'WEEKLY' }))
+        const { result, rerender } = renderProfiles(
+            [MONTHLY],
+            createData({ 'systemSettings/analyticsWeeklyStart': settings })
+        )
+
+        await waitFor(() => expect(result.current.profiles).toBeDefined())
+        rerender([WEEKLY])
+        await waitFor(() =>
+            expect(result.current.profiles?.weekly).toBeDefined()
+        )
+
+        expect(settings).toHaveBeenCalledTimes(1)
+    })
+
+    it('gives the error of a failed setting request', async () => {
+        const { result } = renderProfiles(
+            [MONTHLY],
+            createData({
+                'systemSettings/analyticsWeeklyStart': () =>
+                    Promise.reject(new Error('Unauthorized')),
+            })
+        )
+
+        await waitFor(() => expect(result.current.error).toBeDefined())
+
+        expect(result.current.error.message).toBe('Unauthorized')
+    })
+
+    it('gives the same result for the same selection', async () => {
+        const { result } = renderProfiles([MONTHLY])
+
+        await waitFor(() => expect(result.current.profiles).toBeDefined())
+
+        const check = () =>
+            result.current.getDataItemCompatibility('monthly', {
+                periods: ['202501'],
+            })
+
+        expect(check()).toBe(check())
+    })
+
+    it('gives no coverage of earlier org units while new ones load', async () => {
+        const { result, rerender } = renderHook(
+            ({ orgUnits }) =>
+                useDataItemProfiles(
+                    [{ id: 'assigned', dimensionItemType: 'DATA_ELEMENT' }],
+                    { orgUnits }
+                ),
+            {
+                initialProps: { orgUnits: ['nationUnit1'] },
+                wrapper: createWrapper(createData()),
+            }
+        )
+
+        await waitFor(() =>
+            expect(result.current.orgUnitCoverage).toBeDefined()
+        )
+
+        rerender({ orgUnits: ['LEVEL-1'] })
+
+        expect(result.current.orgUnitCoverage).toBeUndefined()
+
+        await waitFor(() =>
+            expect(result.current.orgUnitCoverage).toBeDefined()
+        )
+
+        expect(
+            result.current.orgUnitCoverage.orgUnits.nationUnit1
+        ).toBeDefined()
     })
 
     it('ignores a failure that came after the items changed', async () => {
