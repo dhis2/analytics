@@ -231,7 +231,7 @@ export const getRequestedLevels = (selectionItem, parentItems, coverage) => {
             }
 
             // A level deeper than the hierarchy holds no org unit
-            if (levels.length && level > levels[levels.length - 1].level) {
+            if (levels.length && level > levels.at(-1).level) {
                 return []
             }
 

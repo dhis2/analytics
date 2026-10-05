@@ -1,6 +1,6 @@
 {
     "schemaVersion": 1,
-    "source": "maps-tools/test-data-period-types (14abea3, with local changes)",
+    "source": "maps-tools/test-data-item-profile (944d3f7, with local changes)",
     "versions": {
         "2.44-SNAPSHOT": {
             "instance": "dev",
@@ -3710,7 +3710,7 @@
         },
         "2.43.1": {
             "instance": "stable-2-43-1",
-            "date": "2026-10-02",
+            "date": "2026-10-05",
             "requests": [
                 {
                     "name": "dataElements",
@@ -3743,14 +3743,14 @@
                                 "dataSetElements": [
                                     {
                                         "dataSet": {
-                                            "periodType": "Weekly",
-                                            "id": "YlravvdHwIj"
+                                            "periodType": "WeeklyWednesday",
+                                            "id": "wRXyMvEnlyA"
                                         }
                                     },
                                     {
                                         "dataSet": {
-                                            "periodType": "WeeklyWednesday",
-                                            "id": "wRXyMvEnlyA"
+                                            "periodType": "Weekly",
+                                            "id": "YlravvdHwIj"
                                         }
                                     }
                                 ],

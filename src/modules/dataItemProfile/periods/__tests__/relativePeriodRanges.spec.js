@@ -58,7 +58,7 @@ describe('getRelativePeriodFixedPeriods', () => {
         const weeks = idsOf('WEEKS_THIS_YEAR', 'Weekly')
 
         expect(weeks[0]).toBe('2025W1')
-        expect(weeks[weeks.length - 1]).toBe('2025W52')
+        expect(weeks.at(-1)).toBe('2025W52')
     })
 
     it('resolves the type a setting gives', () => {

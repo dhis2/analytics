@@ -60,7 +60,7 @@ describe('getFirstOrLastValuePeriod', () => {
             ).toMatchObject({ id: '202012' })
         })
 
-        it('counts only data periods of the years touched, by their id', () => {
+        it('counts only data periods of the years touched, by the year they start in', () => {
             expect(
                 sourceOf({ periodType: 'Monthly', period: '20250101' })
             ).toBeNull()
@@ -68,10 +68,46 @@ describe('getFirstOrLastValuePeriod', () => {
             expect(
                 sourceOf({ periodType: 'Monthly', period: '2025W1' })
             ).toMatchObject({ id: '202412' })
-            // 2025Nov (November 2024 to October 2025) is a 2025 period
+            // 2025Nov (November 2024 to October 2025) is a 2024 period
             expect(
                 sourceOf({ periodType: 'FinancialNov', period: '20251101' })
-            ).toMatchObject({ startDate: '2024-11-01' })
+            ).toBeNull()
+            expect(
+                sourceOf({ periodType: 'FinancialNov', period: '2025W1' })
+            ).toBeNull()
+            expect(
+                sourceOf({
+                    periodType: 'FinancialNov',
+                    period: '20251101',
+                    years: [2024, 2025],
+                })
+            ).toMatchObject({ id: '2025Nov' })
+        })
+
+        it('counts weeks by the year in their id, and bi-weeks by their start', () => {
+            // 2026W1 starts on 29 December 2025: a 2026 period
+            expect(
+                sourceOf({
+                    periodType: 'Weekly',
+                    period: '20260105',
+                    years: [2026],
+                })
+            ).toMatchObject({ id: '2026W1' })
+            // 2026BiW1 starts on the same day: a 2025 period
+            expect(
+                sourceOf({
+                    periodType: 'BiWeekly',
+                    period: '20260112',
+                    years: [2026],
+                })
+            ).toBeNull()
+            expect(
+                sourceOf({
+                    periodType: 'BiWeekly',
+                    period: '20260112',
+                    years: [2025, 2026],
+                })
+            ).toMatchObject({ id: '2026BiW1' })
         })
 
         it('skips years the request does not touch', () => {

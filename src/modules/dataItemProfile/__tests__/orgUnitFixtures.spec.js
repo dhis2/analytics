@@ -8,7 +8,7 @@ import { getDataItemProfileOrgUnitCompatibility } from '../compatibility/getData
 import { getDataItemProfile } from '../getDataItemProfile.js'
 
 /* The fixtures come from the test tool in dhis2/maps-tools
- * (test-data-period-types, org unit groups): analytics' answers on 2.40 to
+ * (test-data-item-profile, org unit groups): analytics' answers on 2.40 to
  * 2.44 for data sets and programs assigned at different levels, on the
  * tool's own org units. Each case is rebuilt here: its hierarchy and
  * assignments become a fake server, and the library judges the selection
@@ -260,52 +260,60 @@ describe('org unit fixtures', () => {
         )
     })
 
+    // The org unit requests are recorded with the period ones, in metadata-shapes.json
     describe('the metadata requests, as each version answered them', () => {
-        const { findings } = readFixture('org-unit-requests')
-
-        describe.each(Object.entries(findings))(
-            '%s',
-            (_, { metadataShapes }) => {
-                const responseOf = (name) =>
-                    metadataShapes.find((shape) => shape.name === name).response
-
-                it('give data elements their aggregation levels', () => {
-                    const { dataElements } = normalizeDataItemProfileMetadata({
-                        dataElements: responseOf(
-                            'dataElements-aggregationLevels'
-                        ),
-                    })
-
-                    expect(
-                        Object.values(dataElements).map(
-                            ({ aggregationLevels }) => aggregationLevels
-                        )
-                    ).toContainEqual([2, 3])
-                })
-
-                it('give program indicators their program and orgUnitField', () => {
-                    const { programIndicators } =
-                        normalizeDataItemProfileMetadata({
-                            programIndicators: responseOf('programIndicators'),
-                        })
-                    const indicators = Object.values(programIndicators)
-
-                    expect(indicators.every(({ program }) => program)).toBe(
-                        true
-                    )
-                    expect(
-                        indicators.map(({ orgUnitField }) => orgUnitField)
-                    ).toEqual(
-                        expect.arrayContaining(['REGISTRATION', 'OWNER_AT_END'])
-                    )
-                })
-
-                it('give the user data view org units', () => {
-                    expect(
-                        responseOf('me-ptt-user').dataViewOrganisationUnits
-                    ).toHaveLength(1)
-                })
-            }
+        const { versions } = JSON.parse(
+            fs.readFileSync(
+                path.join(FIXTURES_DIR, '../period-types/metadata-shapes.json')
+            )
         )
+
+        describe.each(Object.entries(versions))('%s', (_, { requests }) => {
+            const responseOf = (name) =>
+                requests.find((request) => request.name === name).response
+
+            it('give data elements their aggregation levels', () => {
+                const { dataElements } = normalizeDataItemProfileMetadata({
+                    dataElements: responseOf('dataElements-aggregationLevels'),
+                })
+
+                expect(
+                    Object.values(dataElements).map(
+                        ({ aggregationLevels }) => aggregationLevels
+                    )
+                ).toContainEqual([2, 3])
+            })
+
+            it('give program indicators their program and orgUnitField', () => {
+                const response = responseOf('programIndicators')
+                const { programIndicators } = normalizeDataItemProfileMetadata({
+                    programIndicators: response,
+                })
+                const read = Object.entries(programIndicators).map(
+                    ([id, { program, orgUnitField }]) => ({
+                        id,
+                        program,
+                        orgUnitField,
+                    })
+                )
+
+                expect(read).toEqual(
+                    response.programIndicators.map(
+                        ({ id, program, orgUnitField }) => ({
+                            id,
+                            program: program.id,
+                            orgUnitField,
+                        })
+                    )
+                )
+                expect(read.some(({ orgUnitField }) => orgUnitField)).toBe(true)
+            })
+
+            it('give the user data view org units', () => {
+                expect(
+                    responseOf('me-ptt-user').dataViewOrganisationUnits
+                ).toHaveLength(1)
+            })
+        })
     })
 })

@@ -1,4 +1,4 @@
-import { formatDate, getYear } from './calendarDates.js'
+import { formatDate } from './calendarDates.js'
 
 /* Workarounds for multi-calendar-dates 1.3.2, to remove once it is fixed
  * upstream. November period types name the year they end in: 2025Nov is
@@ -56,9 +56,3 @@ export const getNovemberPeriodByDate = (periodType, date) => {
 
     return { id, ...getNovemberPeriodDates(id) }
 }
-
-// The year in a period's id: the year November periods end in
-export const getPeriodIdYear = (period, periodType) =>
-    isNovemberPeriodType(periodType)
-        ? getYear(period.endDate)
-        : Number(period.id.slice(0, 4))

@@ -14,12 +14,12 @@ const indexGroup = (memberPaths) => {
         new Set(
             members
                 .filter((ids) => ids.length > height)
-                .map((ids) => ids[ids.length - 1 - height])
+                .map((ids) => ids.at(-1 - height))
         )
     const aboveByHeight = new Map()
 
     return {
-        memberIds: new Set(members.map((ids) => ids[ids.length - 1])),
+        memberIds: new Set(members.map((ids) => ids.at(-1))),
         isAboveMembers: (id, height) => {
             if (!aboveByHeight.has(height)) {
                 aboveByHeight.set(height, aboveMembers(height))
@@ -36,10 +36,10 @@ const passesGroupFilter = (ids, steps, group) => {
     const children = (steps.match(/children\./g) ?? []).length
 
     if (children) {
-        return group.isAboveMembers(ids[ids.length - 1], children)
+        return group.isAboveMembers(ids.at(-1), children)
     }
 
-    const ancestor = ids[ids.length - 1 - parents]
+    const ancestor = ids.at(-1 - parents)
 
     return Boolean(ancestor) && group.memberIds.has(ancestor)
 }
@@ -59,10 +59,7 @@ const passesFilter = (ids, condition, groups) => {
         case 'path:like':
             return ids.includes(value)
         case 'id:in':
-            return value
-                .slice(1, -1)
-                .split(',')
-                .includes(ids[ids.length - 1])
+            return value.slice(1, -1).split(',').includes(ids.at(-1))
         default:
             return false
     }

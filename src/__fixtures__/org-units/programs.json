@@ -2,7 +2,7 @@
     "schemaVersion": 1,
     "group": "programs",
     "provisional": false,
-    "source": "maps-tools/test-data-period-types (14abea3, with local changes)",
+    "source": "maps-tools/test-data-item-profile (944d3f7, with local changes)",
     "runs": [
         {
             "instance": "dev",
@@ -42,7 +42,7 @@
         {
             "instance": "stable-2-43-1",
             "version": "2.43.1",
-            "date": "2026-10-02"
+            "date": "2026-10-05"
         }
     ],
     "hierarchy": {
