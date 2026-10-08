@@ -34,6 +34,33 @@ describe('getDataItemProfileOrgUnitCompatibility', () => {
         ])
     })
 
+    it('gives no total, nor PARTLY_ASSIGNED, when the org units weren’t counted', () => {
+        const withoutTotals = {
+            ...COVERAGE,
+            counts: Object.fromEntries(
+                Object.entries(COVERAGE.counts).map(([key, counts]) => [
+                    key,
+                    { ...counts, totals: {} },
+                ])
+            ),
+        }
+
+        expect(
+            judge('facility', ['nationUnit1'], { coverage: withoutTotals })
+        ).toEqual([
+            {
+                id: 'nationUnit1',
+                status: 'full',
+                reasons: [],
+                assignment: { assigned: 3, level: 3 },
+            },
+        ])
+        expect(
+            judge('facility', ['LEVEL-2'], { coverage: withoutTotals })[0]
+                .assignment
+        ).toEqual({ assigned: 3, level: 3 })
+    })
+
     it('is none, assigned higher, where only an ancestor of the org unit is assigned', () => {
         expect(judge('facility', ['facilityDDD'])).toMatchObject([
             {

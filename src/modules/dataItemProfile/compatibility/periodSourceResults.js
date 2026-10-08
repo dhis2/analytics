@@ -138,19 +138,21 @@ export const getSourceResult = (source, query) => {
     return combineResults(results)
 }
 
-export const getOperandResult = (
+// Each source of one operand (getItemOperands) for one query, aligned with its `sources`
+export const getOperandSourceResults = (
     { element, reportingRate, sources },
     query
-) => {
-    if (element) {
-        return combineAddedUpResults(
-            sources.map((source) =>
-                getElementResult(element, getSourcePeriodType(source), query)
-            )
-        )
-    }
+) =>
+    sources.map((source) => {
+        if (element) {
+            return getElementResult(element, getSourcePeriodType(source), query)
+        }
 
-    return reportingRate
-        ? getReportingRateResult(getSourcePeriodType(sources[0]), query)
-        : getProgramResult(sources[0], query)
-}
+        return reportingRate
+            ? getReportingRateResult(getSourcePeriodType(source), query)
+            : getProgramResult(source, query)
+    })
+
+// One operand for one query: an element adds up over its data sets
+export const getOperandResult = (operand, query) =>
+    combineAddedUpResults(getOperandSourceResults(operand, query))

@@ -702,6 +702,23 @@ describe('getDataItemProfileCompatibility, with org units', () => {
         })
     })
 
+    it('judges each period at each org unit overall, with only the data sets assigned there', () => {
+        const result = getDataItemProfileCompatibility(
+            orgUnitProfileOf('twoForms'),
+            { periods: ['2025W2'], orgUnits: ['facilityAAA'] },
+            { orgUnitCoverage: ORG_UNIT_COVERAGE }
+        )
+
+        // Apart: the weekly data set fills weeks; the monthly one is assigned at facilityAAA
+        expect(result.periods[0].status).toBe('partial')
+        expect(result.orgUnits[0].status).toBe('full')
+        // Together: at facilityAAA, only the monthly one counts, and it can't fill a week
+        expect(result).toMatchObject({
+            status: 'none',
+            reasons: ['PERIOD_TOO_SHORT'],
+        })
+    })
+
     it('leaves org units out when none are asked', () => {
         expect(
             getDataItemProfileCompatibility(orgUnitProfileOf('facility'), {

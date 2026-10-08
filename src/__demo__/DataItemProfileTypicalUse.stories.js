@@ -121,9 +121,13 @@ const PeriodTypeMarks = ({ items, getDataItemCompatibility }) => (
 
 const formatCount = (count) => count.toLocaleString('en')
 
+// The total is there only when the org units were counted too (withAssignmentTotals)
 const describeAssignment = ({ assigned, total, level }, levels) => {
     const levelName = levels.find((item) => item.level === level)?.name
-    const counts = `${formatCount(assigned)} of ${formatCount(total)}`
+    const counts =
+        total === undefined
+            ? formatCount(assigned)
+            : `${formatCount(assigned)} of ${formatCount(total)}`
 
     return `${counts} org units at level ${levelName ?? level}`
 }
@@ -233,6 +237,9 @@ const Columns = ({ period, orgUnit }) => (
                 font-size: 14px;
                 color: #4a5768;
             }
+            section {
+                overflow-x: auto;
+            }
             section + section {
                 border-inline-start: 1px solid #d5dde5;
                 padding-inline-start: 16px;
@@ -242,6 +249,13 @@ const Columns = ({ period, orgUnit }) => (
 )
 
 Columns.propTypes = { orgUnit: PropTypes.node, period: PropTypes.node }
+
+// Before Update, both checks read today's metadata only
+const MetadataOnlyNotice = () => (
+    <NoticeBox title="Derived from current metadata only">
+        Past data may have been entered with a different configuration.
+    </NoticeBox>
+)
 
 export const TypicalUse = () => {
     const [selectedIds, setSelectedIds] = useState([
@@ -269,6 +283,8 @@ export const TypicalUse = () => {
         orgUnitCoverage,
         getDataItemCompatibility,
     } = useDataItemProfiles(items, { orgUnits: loadedOrgUnits })
+    // While a newly picked item loads, the others keep their profiles
+    const loadedItems = items.filter(({ id }) => profiles?.[id])
 
     const toggle = (id) =>
         setSelectedIds((ids) =>
@@ -296,13 +312,13 @@ export const TypicalUse = () => {
             {loading && <Loading />}
             {error && <ErrorNotice error={error} />}
 
-            {profiles && items.length > 0 && (
+            {loadedItems.length > 0 && (
                 <>
                     <h3>Pickers</h3>
                     <Columns
                         period={
                             <PeriodTypeMarks
-                                items={items}
+                                items={loadedItems}
                                 getDataItemCompatibility={
                                     getDataItemCompatibility
                                 }
@@ -311,7 +327,7 @@ export const TypicalUse = () => {
                         orgUnit={
                             orgUnitCoverage ? (
                                 <OrgUnitLevelMarks
-                                    items={items}
+                                    items={loadedItems}
                                     levels={orgUnitCoverage.levels}
                                     getDataItemCompatibility={
                                         getDataItemCompatibility
@@ -336,13 +352,10 @@ export const TypicalUse = () => {
                                         }
                                     />
                                 </div>
-                                <NoticeBox title="Derived from current metadata only">
-                                    Past data may have been entered with a
-                                    different configuration.
-                                </NoticeBox>
+                                <MetadataOnlyNotice />
                                 <table className="profiles">
                                     <tbody>
-                                        {items.map(({ id, name }) => (
+                                        {loadedItems.map(({ id, name }) => (
                                             <tr key={id}>
                                                 <td>{name}</td>
                                                 <td>
@@ -381,9 +394,10 @@ export const TypicalUse = () => {
                                         }
                                     />
                                 </div>
+                                <MetadataOnlyNotice />
                                 <table className="profiles">
                                     <tbody>
-                                        {items.map(({ id, name }) => (
+                                        {loadedItems.map(({ id, name }) => (
                                             <tr key={id}>
                                                 <td>{name}</td>
                                                 <td>

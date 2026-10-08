@@ -187,7 +187,12 @@ const judgeCase = async (hierarchy, { item, query }) => {
     )
     const coverage = await fetchOrgUnitCoverage(
         createServer(hierarchy, item).createEngine(),
-        { sourceKeys: getDataItemProfileSourceKeys([profile]), orgUnits }
+        // With the totals, to check PARTLY_ASSIGNED too
+        {
+            sourceKeys: getDataItemProfileSourceKeys([profile]),
+            orgUnits,
+            withAssignmentTotals: true,
+        }
     )
 
     return getDataItemProfileOrgUnitCompatibility(

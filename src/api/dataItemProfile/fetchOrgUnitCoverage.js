@@ -4,94 +4,30 @@ import {
     resolveParents,
 } from '../../modules/dataItemProfile/orgUnits/orgUnitSelection.js'
 import { fetchAssignedOrgUnitCounts } from './assignedOrgUnitCounts.js'
+import { isCounted, mergeCounts, recordCount } from './coverageCounts.js'
 import {
     fetchGroupMembersByLevel,
     getGroupCountQueries,
 } from './orgUnitGroupCounts.js'
-import { createListCounter } from './orgUnitListCounts.js'
+import { countFromLists } from './orgUnitListCounts.js'
 import {
     assignedTo,
     getAncestorIds,
     countQuery,
     getTotal,
-    inGroup,
-    levelsQuery,
     queryAll,
-    readLevels,
 } from './orgUnitQueries.js'
+import { fetchSelectionOrgUnits } from './selectionOrgUnits.js'
 
-const ORG_UNIT_FIELDS = 'id,level,path,displayName'
-
-const orgUnitsQuery = (filter) => ({
-    resource: 'organisationUnits',
-    params: { filter, fields: ORG_UNIT_FIELDS, paging: false },
-})
-
-const byId = (orgUnits = []) =>
-    Object.fromEntries(
-        orgUnits.map(({ id, level, path, displayName }) => [
-            id,
-            { id, level, path, name: displayName },
-        ])
-    )
-
-// The org units, roots, user's org units and levels a selection needs, beyond those already known
-const fetchOrgUnits = async (engine, { orgUnitItems, previous, signal }) => {
-    const { orgUnitIds, needsRoots, needsUserOrgUnits } =
-        getOrgUnitsToFetch(orgUnitItems)
-    const known = previous?.orgUnits ?? {}
-    const missingIds = orgUnitIds.filter((id) => !known[id])
-    const fetchRoots = needsRoots && !previous?.rootIds?.length
-    const fetchUser = needsUserOrgUnits && !previous?.userOrgUnitIds
-    const query = {
-        ...(!previous?.levels?.length && levelsQuery),
-        ...(missingIds.length && {
-            orgUnits: orgUnitsQuery(`id:in:[${missingIds.join(',')}]`),
-        }),
-        ...(fetchRoots && { roots: orgUnitsQuery('level:eq:1') }),
-        ...(fetchUser && {
-            me: {
-                resource: 'me',
-                params: {
-                    fields: `organisationUnits[${ORG_UNIT_FIELDS}],dataViewOrganisationUnits[${ORG_UNIT_FIELDS}]`,
-                },
-            },
-        }),
-    }
-    const response = Object.keys(query).length
-        ? await engine.query(query, { signal })
-        : {}
-    // Analytics reads the user's data view org units when there are some
-    const userOrgUnits = response.me?.dataViewOrganisationUnits?.length
-        ? response.me.dataViewOrganisationUnits
-        : response.me?.organisationUnits
-    const getRootIds = () =>
-        fetchRoots
-            ? (response.roots?.organisationUnits ?? []).map(({ id }) => id)
-            : previous?.rootIds ?? []
-    const getUserOrgUnitIds = () =>
-        fetchUser
-            ? (userOrgUnits ?? []).map(({ id }) => id)
-            : previous?.userOrgUnitIds ?? null
-
-    return {
-        levels: response.levels ? readLevels(response) : previous.levels,
-        orgUnits: {
-            ...known,
-            ...byId(response.orgUnits?.organisationUnits),
-            ...byId(response.roots?.organisationUnits),
-            ...byId(userOrgUnits),
-        },
-        rootIds: needsRoots ? getRootIds() : [],
-        userOrgUnitIds: needsUserOrgUnits ? getUserOrgUnitIds() : null,
-        requests: Object.keys(query).length,
-    }
-}
-
-/* The counts of one org unit: how many org units each level under it has,
- * how many of them each source is assigned to, and how many of its
- * ancestors. Only levels a source is assigned at somewhere are counted. */
-const getOrgUnitQueries = (orgUnit, { sourceKeys, assignedOrgUnitCounts }) => {
+/* The counts of one org unit: per level a source is assigned at (at or
+ * below the org unit), how many org units under it the source is assigned
+ * to, and how many of its ancestors when the source is assigned higher
+ * somewhere; with `withTotals`, how many org units each of those levels has
+ * under it. */
+const getOrgUnitQueries = (
+    orgUnit,
+    { sourceKeys, assignedOrgUnitCounts, withTotals }
+) => {
     const under = `path:like:${orgUnit.id}`
     const ancestorIds = getAncestorIds(orgUnit)
     const assignedLevelsOf = ({ id }) =>
@@ -106,10 +42,12 @@ const getOrgUnitQueries = (orgUnit, { sourceKeys, assignedOrgUnitCounts }) => {
     ]
 
     return [
-        ...[...new Set(sourceKeys.flatMap(levelsUnder))].map((level) => [
-            [orgUnit.id, 'total', level],
-            countQuery([under, `level:eq:${level}`]),
-        ]),
+        ...(withTotals
+            ? [...new Set(sourceKeys.flatMap(levelsUnder))].map((level) => [
+                  [orgUnit.id, 'total', level],
+                  countQuery([under, `level:eq:${level}`]),
+              ])
+            : []),
         ...sourceKeys.flatMap((source) =>
             levelsUnder(source).map((level) => [
                 [orgUnit.id, source.id, level],
@@ -122,97 +60,53 @@ const getOrgUnitQueries = (orgUnit, { sourceKeys, assignedOrgUnitCounts }) => {
     ]
 }
 
-const recordCount = (counts, [countsKey, what, level], total) => {
-    counts[countsKey] ??= { totals: {}, sources: {} }
+/* Under the only root, a source's org units are those across the hierarchy:
+ * the counts already fetched answer it, with no ancestors */
+const getSoleRootCounts = (
+    countedOrgUnits,
+    { rootIds, sourceKeys, assignedOrgUnitCounts }
+) => {
+    const counts = {}
+    const isCountedRoot = countedOrgUnits.some(({ id }) => id === rootIds[0])
 
-    const counted = counts[countsKey]
-
-    if (what === 'total') {
-        counted.totals[level] = total
-        return
+    if (rootIds.length === 1 && isCountedRoot) {
+        sourceKeys.forEach(({ id }) =>
+            Object.entries(assignedOrgUnitCounts[id] ?? {}).forEach(
+                ([level, count]) =>
+                    recordCount(counts, [rootIds[0], id, Number(level)], count)
+            )
+        )
     }
 
-    counted.sources[what] ??= { byLevel: {}, ancestors: 0 }
-
-    if (level === 'ancestors') {
-        counted.sources[what].ancestors += total
-    } else {
-        counted.sources[what].byLevel[level] = total
-    }
+    return counts
 }
 
 // Above this many source counts, lists of each source's org units are cheaper
 const LIST_THRESHOLD = 100
 
-const listQuery = (filter) => ({
-    resource: 'organisationUnits',
-    params: { filter, fields: 'path', paging: false },
-})
-
-const getPaths = (response) =>
-    (response?.organisationUnits ?? []).map(({ path }) => path)
-
-/* The source counts, answered from one list per source of the org units it
- * is assigned to, and one list per group of its members */
-const countFromLists = async (
-    engine,
-    { sourceQueries, sourceKeys, groupIds, signal }
-) => {
-    const lists = [
-        ...sourceKeys.map((sourceKey) => [
-            ['source', sourceKey.id],
-            listQuery(assignedTo(sourceKey)),
-        ]),
-        ...groupIds.map((groupId) => [
-            ['group', groupId],
-            listQuery(inGroup(groupId)),
-        ]),
-    ]
-    const { responses, requests } = await queryAll(engine, lists, { signal })
-    const pathsOf = (kind) =>
-        Object.fromEntries(
-            lists
-                .map(([[listKind, id]], i) => [listKind, id, responses[i]])
-                .filter(([listKind]) => listKind === kind)
-                .map(([, id, response]) => [id, getPaths(response)])
-        )
-    const sourcePaths = pathsOf('source')
-    const count = createListCounter(pathsOf('group'))
-    const sourceFilterOf = (sourceId) =>
-        assignedTo(sourceKeys.find(({ id }) => id === sourceId))
-
-    return {
-        totals: sourceQueries.map(([[, sourceId], query]) =>
-            count(
-                sourcePaths[sourceId],
-                query.params.filter.filter(
-                    (condition) => condition !== sourceFilterOf(sourceId)
-                )
-            )
-        ),
-        requests,
-    }
-}
-
+/* Counts the queries; above LIST_THRESHOLD source counts, from lists of each
+ * source's org units, kept in `lists` for the next selection. Totals are
+ * always server counts. */
 const fetchCounts = async (
     engine,
-    { queries, sourceKeys, groupIds, signal }
+    { queries, sourceKeys, groupIds, lists, signal }
 ) => {
     const counts = {}
     const totalQueries = queries.filter(([[, what]]) => what === 'total')
     const sourceQueries = queries.filter(([[, what]]) => what !== 'total')
     const useLists = sourceQueries.length > LIST_THRESHOLD
-    const fetched = await queryAll(engine, useLists ? totalQueries : queries, {
-        signal,
-    })
-    const listed = useLists
-        ? await countFromLists(engine, {
-              sourceQueries,
-              sourceKeys,
-              groupIds,
-              signal,
-          })
-        : { totals: [], requests: 0 }
+    const [fetched, listed] = await Promise.all([
+        queryAll(engine, useLists ? totalQueries : queries, { signal }),
+        useLists
+            ? countFromLists(engine, {
+                  sourceQueries,
+                  sourceKeys,
+                  groupIds,
+                  lists,
+                  signal,
+              })
+            : { totals: [], lists, requests: 0 },
+    ])
 
     ;(useLists ? totalQueries : queries).forEach(([key], i) =>
         recordCount(counts, key, getTotal(fetched.responses[i]))
@@ -224,7 +118,11 @@ const fetchCounts = async (
         )
     }
 
-    return { counts, requests: fetched.requests + listed.requests }
+    return {
+        counts,
+        lists: listed.lists,
+        requests: fetched.requests + listed.requests,
+    }
 }
 
 const EMPTY_COVERAGE = {
@@ -234,36 +132,50 @@ const EMPTY_COVERAGE = {
     userOrgUnitIds: null,
     groups: {},
     assignedOrgUnitCounts: {},
-    sourceIds: [],
     counts: {},
+    lists: {},
     requests: 0,
 }
 
-// The counts of the previous coverage that still hold: same sources, same org unit or group level
-const getReusableCounts = (previous, sourceKeys) =>
-    previous && sourceKeys.every(({ id }) => previous.sourceIds?.includes(id))
-        ? previous.counts
-        : {}
+// The org units whose counts a selection reads: its own, the user's, and the roots for a level alone
+const getCountedOrgUnits = (
+    orgUnitItems,
+    { orgUnits, rootIds, userOrgUnitIds }
+) => {
+    const { orgUnitIds, needsRoots, needsUserOrgUnits } =
+        getOrgUnitsToFetch(orgUnitItems)
+    const ids = new Set([
+        ...orgUnitIds,
+        ...(needsUserOrgUnits ? userOrgUnitIds ?? [] : []),
+        ...(needsRoots ? rootIds : []),
+    ])
+
+    return [...ids].map((id) => orgUnits[id]).filter(Boolean)
+}
 
 /**
- * Where data sets and programs (`sourceKeys`, getDataItemProfileSourceKeys) are assigned,
- * for an org unit selection (`orgUnits`, DV's org unit items). Gives:
- * - `levels`, and `orgUnits` by id (the selection's, the roots for a level
- *   alone, the user's), with `rootIds` and `userOrgUnitIds`;
+ * Where data sets and programs (`sourceKeys`, getDataItemProfileSourceKeys)
+ * are assigned, for an org unit selection (`orgUnits`, DV's org unit items).
+ * Gives:
+ * - `levels`, and `orgUnits` by id (the selection's, the roots, the user's),
+ *   with `rootIds` and `userOrgUnitIds`;
  * - `groups`: each group's members per level;
  * - `assignedOrgUnitCounts`: each source's assigned org units per level,
  *   across the hierarchy (those given are reused);
  * - `counts`, by org unit id (and by getGroupCountsKey for groups): per level
- *   a source is assigned at, the number of org units and of those each
- *   source is assigned to, plus the ancestors each one is assigned to;
- * - `sourceIds`, and `requests`: how many requests were sent.
+ *   a source is assigned at, how many org units under it the source is
+ *   assigned to, and how many of its ancestors; with `withAssignmentTotals`,
+ *   also how many org units each level has under it (for "x of y" and
+ *   PARTLY_ASSIGNED); for a group, its members under each parent;
+ * - `lists`: the lists of org units counted from, for large selections;
+ * - `requests`: how many requests were sent.
  * All metadata. Identical counts are sent once, in batches. Above
  * LIST_THRESHOLD source counts, one list per source of its org units (and
  * one per group of its members) answers them instead. `previous`, the
- * coverage of an earlier selection, gives what it already knows: its org
- * units, levels, groups, assigned counts, and its counts when the sources
- * are the same. `signal` cancels the requests.
- * getDataItemProfileOrgUnitCompatibility reads the result.
+ * coverage of an earlier selection, gives what it already counted: its org
+ * units, levels, groups, lists and counts, source by source. `signal`
+ * cancels the requests. getDataItemProfileOrgUnitCompatibility reads the
+ * result.
  */
 export const fetchOrgUnitCoverage = async (
     engine,
@@ -271,6 +183,7 @@ export const fetchOrgUnitCoverage = async (
         sourceKeys = [],
         orgUnits: orgUnitItems = [],
         assignedOrgUnitCounts = {},
+        withAssignmentTotals = false,
         previous,
         signal,
     }
@@ -278,18 +191,21 @@ export const fetchOrgUnitCoverage = async (
     if (!orgUnitItems.length) {
         return {
             ...EMPTY_COVERAGE,
-            levels: previous?.levels ?? [],
-            assignedOrgUnitCounts,
-            sourceIds: sourceKeys.map(({ id }) => id),
+            ...previous,
+            assignedOrgUnitCounts: {
+                ...previous?.assignedOrgUnitCounts,
+                ...assignedOrgUnitCounts,
+            },
+            requests: 0,
         }
     }
 
-    const fetched = await fetchOrgUnits(engine, {
+    const fetched = await fetchSelectionOrgUnits(engine, {
         orgUnitItems,
         previous,
         signal,
     })
-    const { levels, orgUnits, rootIds, userOrgUnitIds } = fetched
+    const { levels, orgUnits, rootIds } = fetched
     const knownCounts = {
         ...previous?.assignedOrgUnitCounts,
         ...assignedOrgUnitCounts,
@@ -316,11 +232,16 @@ export const fetchOrgUnitCoverage = async (
     const context = {
         sourceKeys,
         assignedOrgUnitCounts: allAssignedOrgUnitCounts,
+        withTotals: withAssignmentTotals,
     }
+    const countedOrgUnits = getCountedOrgUnits(orgUnitItems, fetched)
+    const known = mergeCounts(
+        previous?.counts,
+        getSoleRootCounts(countedOrgUnits, { ...context, rootIds })
+    )
     const { parentItems } = readOrgUnitSelection(orgUnitItems)
-    const reusable = getReusableCounts(previous, sourceKeys)
     const queries = [
-        ...Object.values(orgUnits).flatMap((orgUnit) =>
+        ...countedOrgUnits.flatMap((orgUnit) =>
             getOrgUnitQueries(orgUnit, context)
         ),
         ...getGroupCountQueries({
@@ -333,11 +254,12 @@ export const fetchOrgUnitCoverage = async (
                 : null,
             orgUnits,
         }),
-    ].filter(([[countsKey]]) => !reusable[countsKey])
+    ].filter(([key]) => !isCounted(known, key))
     const counted = await fetchCounts(engine, {
         queries,
         sourceKeys,
         groupIds,
+        lists: previous?.lists,
         signal,
     })
 
@@ -345,11 +267,11 @@ export const fetchOrgUnitCoverage = async (
         levels,
         orgUnits,
         rootIds,
-        userOrgUnitIds,
+        userOrgUnitIds: fetched.userOrgUnitIds,
         groups,
         assignedOrgUnitCounts: allAssignedOrgUnitCounts,
-        sourceIds: sourceKeys.map(({ id }) => id),
-        counts: { ...reusable, ...counted.counts },
+        counts: mergeCounts(known, counted.counts),
+        lists: counted.lists ?? {},
         requests:
             fetched.requests +
             assigned.requests +

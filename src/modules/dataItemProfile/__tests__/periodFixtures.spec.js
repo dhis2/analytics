@@ -179,10 +179,6 @@ const answersWithoutEarlierData = (fixtureCase) => {
 
 const METADATA_BLIND_SPOTS = [
     {
-        pattern: /^mixed-place__.*__(A|B)$/,
-        reason: 'periods and org units are judged apart: the library does not judge a data set by org unit and period type together',
-    },
-    {
         pattern: /^mixed-history__.*__r-2024/,
         reason: 'the metadata only shows the data sets of today',
     },
@@ -324,6 +320,62 @@ const toServerVersion = (version) => {
     return Number.isInteger(minor) ? { major, minor } : undefined
 }
 
+// Ids the library reads as org unit uids (11 characters)
+const toOrgUnitUid = (key) => `place${key}xxxxxxxxxxx`.slice(0, 11)
+
+/* A case asked at an org unit, with its data sets assigned to some org units
+ * (by place: monthly at A, weekly at B): a coverage of those org units at
+ * level 2, under the one asked when it isn't one of them (the region) */
+const getPlaceCoverage = ({ item, query }) => {
+    const sources = item.collectionSources ?? []
+
+    if (!query.orgUnit || !sources.some(({ orgUnits }) => orgUnits)) {
+        return null
+    }
+
+    const keys = [...new Set(sources.flatMap(({ orgUnits = [] }) => orgUnits))]
+    const parentKey = keys.includes(query.orgUnit) ? 'Root' : query.orgUnit
+    const parent = {
+        id: toOrgUnitUid(parentKey),
+        level: 1,
+        path: `/${toOrgUnitUid(parentKey)}`,
+    }
+    const assignedAmong = (dataSetKeys, orgUnits) =>
+        dataSetKeys.filter((key) => orgUnits.includes(key)).length
+    const countsOf = (unitKeys) => ({
+        totals: { 2: unitKeys.length },
+        sources: Object.fromEntries(
+            sources.map(({ dataSet, orgUnits = [] }) => [
+                dataSet,
+                { byLevel: { 2: assignedAmong(unitKeys, orgUnits) } },
+            ])
+        ),
+    })
+
+    return {
+        levels: [{ level: 1 }, { level: 2 }],
+        orgUnits: {
+            [parent.id]: parent,
+            ...Object.fromEntries(
+                keys.map((key) => [
+                    toOrgUnitUid(key),
+                    {
+                        id: toOrgUnitUid(key),
+                        level: 2,
+                        path: `${parent.path}/${toOrgUnitUid(key)}`,
+                    },
+                ])
+            ),
+        },
+        counts: {
+            [parent.id]: countsOf(keys),
+            ...Object.fromEntries(
+                keys.map((key) => [toOrgUnitUid(key), countsOf([key])])
+            ),
+        },
+    }
+}
+
 const computeLibraryAnswer = (fixtureCase, serverVersion) => {
     const { id, metadata } = toMetadata(fixtureCase)
     const profile = getDataItemProfile(
@@ -337,6 +389,22 @@ const computeLibraryAnswer = (fixtureCase, serverVersion) => {
         getPeriodTypeOfPeriodId(period) === periodType ? period : periodType
 
     const { withPeriod } = fixtureCase.query
+    const placeCoverage = getPlaceCoverage(fixtureCase)
+
+    // Asked at an org unit: the period judged there, with only the data sets assigned to it
+    if (placeCoverage) {
+        const { status, reasons } = getDataItemProfileCompatibility(
+            profile,
+            {
+                periods: [asked],
+                orgUnits: [toOrgUnitUid(fixtureCase.query.orgUnit)],
+            },
+            { serverVersion, orgUnitCoverage: placeCoverage }
+        )
+
+        return { status, reasons }
+    }
+
     const { periods } = getDataItemProfileCompatibility(
         profile,
         { periods: withPeriod ? [asked, withPeriod] : [asked] },

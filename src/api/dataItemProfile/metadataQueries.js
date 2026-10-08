@@ -10,7 +10,7 @@ export const dataItemProfileMetadataQueries = {
     dataElements: {
         resource: 'dataElements',
         ...byIds(
-            'id,aggregationType,aggregationLevels,dataSetElements[dataSet[id,periodType]]'
+            'id,aggregationType,aggregationLevels,categoryCombo[id],dataSetElements[dataSet[id,periodType],categoryCombo[id]]'
         ),
     },
     indicators: {
@@ -33,6 +33,10 @@ export const dataItemProfileMetadataQueries = {
         resource: 'programs',
         ...byIds('id'),
     },
+    categoryOptionCombos: {
+        resource: 'categoryOptionCombos',
+        ...byIds('id,categoryCombo[id]'),
+    },
 }
 
 export const METADATA_RESOURCES = Object.keys(dataItemProfileMetadataQueries)
@@ -49,21 +53,29 @@ const uniqueDataSets = (dataSets) => [
 ]
 
 const normalizers = {
+    /* A data set can give an element another category combo than its own:
+     * each data set keeps the one its values are entered with */
     dataElements: ({
         aggregationType,
         aggregationLevels,
+        categoryCombo,
         dataSetElements,
     }) => ({
         aggregationType,
         ...(aggregationLevels?.length && { aggregationLevels }),
         dataSets: uniqueDataSets(
             (dataSetElements ?? [])
-                .map(({ dataSet }) => dataSet)
-                .filter((dataSet) => dataSet?.periodType)
-                .map(({ id, periodType }) => ({
-                    id,
-                    periodType: getPeriodTypeName(periodType),
-                }))
+                .filter(({ dataSet }) => dataSet?.periodType)
+                .map(({ dataSet, categoryCombo: dataSetCategoryCombo }) => {
+                    const categoryComboId =
+                        dataSetCategoryCombo?.id ?? categoryCombo?.id
+
+                    return {
+                        id: dataSet.id,
+                        periodType: getPeriodTypeName(dataSet.periodType),
+                        ...(categoryComboId && { categoryComboId }),
+                    }
+                })
         ),
     }),
     indicators: ({ numerator, denominator }) => ({ numerator, denominator }),
@@ -86,6 +98,9 @@ const normalizers = {
         }),
     }),
     programs: () => ({}),
+    categoryOptionCombos: ({ categoryCombo }) => ({
+        categoryComboId: categoryCombo?.id,
+    }),
 }
 
 /**

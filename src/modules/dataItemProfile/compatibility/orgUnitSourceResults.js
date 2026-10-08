@@ -14,11 +14,18 @@ import { canBeAtAnyOrgUnit, getSourceId } from '../sources.js'
 import { createResult, unionOfReasons } from './combineResults.js'
 
 /* Org unit results carry `assignment`: how many org units at the deepest
- * level assigned are assigned ({ assigned, total, level }), or null */
+ * level assigned are assigned ({ assigned, level }, and `total` when the
+ * coverage counted the org units there), or null */
 export const withAssignment = (result, assignment = null) => ({
     ...result,
     assignment,
 })
+
+// Known only when the coverage counted the org units at that level
+export const isPartlyAssigned = ({ assigned, total }) =>
+    total !== undefined && assigned < total
+
+const getAssignedShare = ({ assigned, total }) => (total ? assigned / total : 1)
 
 /* Analytics nulls the levels up to each aggregation level for values from
  * org units below it (dhis2-core AggregationLevelsHelper): a value from
@@ -89,7 +96,9 @@ const getSourceResult = ({
     const deepestLevel = Math.max(...reaching)
     const assignment = {
         assigned: byLevel[deepestLevel],
-        total: totals[deepestLevel] ?? byLevel[deepestLevel],
+        ...(totals[deepestLevel] !== undefined && {
+            total: totals[deepestLevel],
+        }),
         level: deepestLevel,
     }
 
@@ -97,9 +106,7 @@ const getSourceResult = ({
     return withAssignment(
         createResult(
             COMPATIBILITY_FULL,
-            assignment.assigned < assignment.total
-                ? [REASON_PARTLY_ASSIGNED]
-                : []
+            isPartlyAssigned(assignment) ? [REASON_PARTLY_ASSIGNED] : []
         ),
         assignment
     )
@@ -137,10 +144,9 @@ const combineSources = (bySource) => {
     const bestAssignment = filling
         .map(({ assignment }) => assignment)
         .filter(Boolean)
-        .sort((a, b) => b.assigned / b.total - a.assigned / a.total)[0]
+        .sort((a, b) => getAssignedShare(b) - getAssignedShare(a))[0]
     // Partly assigned only when no source is assigned to all its org units
-    const isPartlyAssigned =
-        bestAssignment && bestAssignment.assigned < bestAssignment.total
+    const isPartly = Boolean(bestAssignment) && isPartlyAssigned(bestAssignment)
 
     return withAssignment(
         createResult(
@@ -148,7 +154,7 @@ const combineSources = (bySource) => {
             reasons.filter(
                 (reason) =>
                     reason !== REASON_NOT_ASSIGNED &&
-                    (reason !== REASON_PARTLY_ASSIGNED || isPartlyAssigned)
+                    (reason !== REASON_PARTLY_ASSIGNED || isPartly)
             )
         ),
         bestAssignment
@@ -156,19 +162,27 @@ const combineSources = (bySource) => {
 }
 
 /**
- * One operand ({ element, sources }, getItemOperands) at one requested level,
- * from the counts kept for it in the coverage, with the `level` asked.
+ * Each source of one operand ({ element, sources }, getItemOperands) at one
+ * requested level, from the counts kept for it in the coverage, with the
+ * `level` asked; aligned with `sources`.
  */
-export const getOperandResult = ({ element, sources }, counts) =>
-    combineSources(
-        sources.map((source) =>
-            canBeAtAnyOrgUnit(source)
-                ? AT_ANY_ORG_UNIT
-                : getSourceResult({
-                      sourceCounts: counts.sources?.[getSourceId(source)],
-                      aggregationLevels: element?.aggregationLevels,
-                      totals: counts.totals ?? {},
-                      level: counts.level,
-                  })
-        )
+export const getOperandSourceResults = ({ element, sources }, counts) =>
+    sources.map((source) =>
+        canBeAtAnyOrgUnit(source)
+            ? AT_ANY_ORG_UNIT
+            : getSourceResult({
+                  sourceCounts: counts.sources?.[getSourceId(source)],
+                  aggregationLevels: element?.aggregationLevels,
+                  totals: counts.totals ?? {},
+                  level: counts.level,
+              })
     )
+
+// A source not assigned there doesn't apply: it leaves nothing out
+export const isNotAssigned = ({ status, reasons }) =>
+    status === COMPATIBILITY_NONE &&
+    reasons.every((reason) => reason === REASON_NOT_ASSIGNED)
+
+// One operand at one requested level, over its sources
+export const getOperandResult = (operand, counts) =>
+    combineSources(getOperandSourceResults(operand, counts))

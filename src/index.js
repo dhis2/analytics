@@ -340,6 +340,7 @@ export { addAssignedOrgUnitLevels } from './modules/dataItemProfile/profile/assi
 export { getDataItemProfileCompatibility } from './modules/dataItemProfile/getDataItemProfileCompatibility.js'
 export { getDataItemProfilePeriodCompatibility } from './modules/dataItemProfile/compatibility/getDataItemProfilePeriodCompatibility.js'
 export { getDataItemProfileOrgUnitCompatibility } from './modules/dataItemProfile/compatibility/getDataItemProfileOrgUnitCompatibility.js'
+export { getPeriodAtOrgUnitResults } from './modules/dataItemProfile/compatibility/periodAtOrgUnitResults.js'
 export {
     COMPATIBILITY_FULL,
     COMPATIBILITY_PARTIAL,

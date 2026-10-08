@@ -85,12 +85,12 @@ const getAboveMembersFilters = (
 }
 
 /* The counts of one group level under one parent, as for an org unit: the
- * org units at each level under the members (the members' level included, to
- * know whether any lie under the parent), those each source is assigned to,
- * and the ones above the members each source is assigned to */
+ * members under the parent (to know whether any lie there), those each
+ * source is assigned to, and the ones above the members each source is
+ * assigned to; with `withTotals`, the org units at each level under them */
 const getGroupLevelQueries = (
     groupLevel,
-    { sourceKeys, assignedOrgUnitCounts, orgUnits }
+    { sourceKeys, assignedOrgUnitCounts, orgUnits, withTotals }
 ) => {
     const { groupId, memberLevel, parentId } = groupLevel
     const key = getGroupCountsKey(groupId, memberLevel, parentId)
@@ -104,7 +104,11 @@ const getGroupLevelQueries = (
     ]
     const totalLevels = new Set([
         memberLevel,
-        ...sourceKeys.flatMap(levelsOf).filter((level) => level >= memberLevel),
+        ...(withTotals
+            ? sourceKeys
+                  .flatMap(levelsOf)
+                  .filter((level) => level >= memberLevel)
+            : []),
     ])
     const getSourceQuery = (sourceKey, level) =>
         level >= memberLevel
@@ -136,6 +140,8 @@ const getGroupLevelQueries = (
  * The count queries for groups (`groups`, from fetchGroupMembersByLevel),
  * under the selection's parents (`parents`, from resolveParents; null for
  * none), kept by getGroupCountsKey, in the shape fetchOrgUnitCoverage reads.
+ * The org units at each level under the members are counted only
+ * `withTotals`.
  */
 export const getGroupCountQueries = ({
     groups,
@@ -143,11 +149,13 @@ export const getGroupCountQueries = ({
     orgUnits,
     sourceKeys,
     assignedOrgUnitCounts,
+    withTotals = false,
 }) =>
     getGroupLevelsUnderParents({ groups, parents }).flatMap((groupLevel) =>
         getGroupLevelQueries(groupLevel, {
             sourceKeys,
             assignedOrgUnitCounts,
             orgUnits,
+            withTotals,
         })
     )

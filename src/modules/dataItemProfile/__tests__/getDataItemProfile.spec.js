@@ -217,6 +217,89 @@ describe('getDataItemProfile', () => {
         })
     })
 
+    describe('disaggregations', () => {
+        // As on the demo database: one element, three data sets, three category combos
+        const deathsMetadata = {
+            dataElements: {
+                deaths: {
+                    aggregationType: 'SUM',
+                    dataSets: [
+                        {
+                            id: 'mortality',
+                            periodType: 'Monthly',
+                            categoryComboId: 'defaultComb',
+                        },
+                        {
+                            id: 'byAgeGroup',
+                            periodType: 'Quarterly',
+                            categoryComboId: 'ageGroupsCo',
+                        },
+                        {
+                            id: 'byGender',
+                            periodType: 'Yearly',
+                            categoryComboId: 'genderCombo',
+                        },
+                    ],
+                },
+            },
+            categoryOptionCombos: {
+                under1Year1: { categoryComboId: 'ageGroupsCo' },
+                otherCombo1: { categoryComboId: 'notInAnySet' },
+            },
+        }
+        const dataSetsOf = (id, data = deathsMetadata) =>
+            profile(id, 'DATA_ELEMENT_OPERAND', data).sources.map(
+                ({ dataSet }) => dataSet?.id
+            )
+
+        it('count only the data sets whose category combo holds the option combo', () => {
+            expect(dataSetsOf('deaths.under1Year1')).toEqual(['byAgeGroup'])
+            expect(
+                profile(
+                    'deaths.under1Year1',
+                    'DATA_ELEMENT_OPERAND',
+                    deathsMetadata
+                ).assignedPeriodTypes.types
+            ).toEqual(['Quarterly'])
+        })
+
+        it('count every data set for the whole element, a wildcard, or an option combo not known', () => {
+            expect(dataSetsOf('deaths')).toEqual([
+                'mortality',
+                'byAgeGroup',
+                'byGender',
+            ])
+            expect(dataSetsOf('deaths.unknownComb')).toHaveLength(3)
+        })
+
+        it('are unknown when no data set collects the option combo', () => {
+            expect(
+                profile(
+                    'deaths.otherCombo1',
+                    'DATA_ELEMENT_OPERAND',
+                    deathsMetadata
+                )
+            ).toMatchObject({
+                unknown: true,
+                reasons: [{ code: 'NO_DATA_SET', id: 'deaths' }],
+            })
+        })
+
+        it('count the same way in expressions', () => {
+            expect(
+                profile('deathsRatio', 'INDICATOR', {
+                    ...deathsMetadata,
+                    indicators: {
+                        deathsRatio: {
+                            numerator: '#{deaths.under1Year1}',
+                            denominator: '1',
+                        },
+                    },
+                }).sources.map(({ dataSet }) => dataSet.id)
+            ).toEqual(['byAgeGroup'])
+        })
+    })
+
     describe('reporting rates', () => {
         it('take the data set type', () => {
             expect(

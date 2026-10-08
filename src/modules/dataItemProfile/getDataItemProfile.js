@@ -1,4 +1,3 @@
-import { addAssignedOrgUnitLevels } from './profile/assignedOrgUnitLevels.js'
 import { getAssignedPeriodTypes } from './profile/assignedPeriodTypes.js'
 import { collectSources } from './profile/collectSources.js'
 
@@ -15,23 +14,20 @@ import { collectSources } from './profile/collectSources.js'
  *   when one of its operands has (SKIP_IF_ALL_VALUES_MISSING).
  * - `assignedPeriodTypes`: the period types of those data sets
  *   (getAssignedPeriodTypes).
- * - `assignedOrgUnitLevels`: the org unit levels its data sets and programs
- *   are assigned at (getAssignedOrgUnitLevels), when the metadata has the
- *   counts (`assignedOrgUnitCounts`, fetched by default).
+ * - `assignedOrgUnitLevels` is added by addAssignedOrgUnitLevels, from
+ *   counts fetched apart (fetchAssignedOrgUnitCounts, or an org unit
+ *   coverage).
  * - `unknown` and `reasons`: missing metadata makes the item unknown; it is
  *   never guessed.
  */
 export const getDataItemProfile = (item, metadata = {}) => {
     const { sources, reasons, expression } = collectSources(item, metadata)
-    const profile = {
+
+    return {
         sources,
         ...(expression && { expression }),
         unknown: reasons.length > 0,
         reasons,
         assignedPeriodTypes: getAssignedPeriodTypes(sources),
     }
-
-    return metadata.assignedOrgUnitCounts
-        ? addAssignedOrgUnitLevels(profile, metadata.assignedOrgUnitCounts)
-        : profile
 }

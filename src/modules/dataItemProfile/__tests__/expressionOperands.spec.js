@@ -1,4 +1,7 @@
-import { parseExpressionOperands } from '../expressionOperands.js'
+import {
+    getCategoryOptionComboId,
+    parseExpressionOperands,
+} from '../expressionOperands.js'
 
 const summarize = (expression) =>
     parseExpressionOperands(expression).map(
@@ -65,5 +68,15 @@ describe('parseExpressionOperands', () => {
         expect(parseExpressionOperands()).toEqual([])
         expect(parseExpressionOperands(null)).toEqual([])
         expect(parseExpressionOperands('1 + 2')).toEqual([])
+    })
+})
+
+describe('getCategoryOptionComboId', () => {
+    it('reads the option combo of a disaggregation', () => {
+        expect(getCategoryOptionComboId('de.coc')).toBe('coc')
+        expect(getCategoryOptionComboId('de.coc.aoc')).toBe('coc')
+        expect(getCategoryOptionComboId('de.*.aoc')).toBeUndefined()
+        expect(getCategoryOptionComboId('de')).toBeUndefined()
+        expect(getCategoryOptionComboId(undefined)).toBeUndefined()
     })
 })

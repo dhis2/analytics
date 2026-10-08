@@ -36,6 +36,8 @@ const NOT_RECORDED = [
     'aggregationLevels',
     'analyticsPeriodBoundaries[id]',
     'missingValueStrategy',
+    'categoryCombo[id]',
+    'dataSetElements[dataSet[id,periodType],categoryCombo[id]]',
 ]
 
 describe('normalizeDataItemProfileMetadata', () => {
@@ -179,6 +181,66 @@ describe('normalizeDataItemProfileMetadata', () => {
             expressionDimensionItems: {},
             programIndicators: {},
             programs: {},
+            categoryOptionCombos: {},
+        })
+    })
+
+    it('keeps the category combo each data set gives an element, its own by default', () => {
+        expect(
+            normalizeDataItemProfileMetadata({
+                dataElements: {
+                    dataElements: [
+                        {
+                            id: 'deathsUnder5',
+                            aggregationType: 'SUM',
+                            categoryCombo: { id: 'defaultComb' },
+                            dataSetElements: [
+                                {
+                                    dataSet: {
+                                        id: 'mortality',
+                                        periodType: 'Monthly',
+                                    },
+                                },
+                                {
+                                    dataSet: {
+                                        id: 'byAgeGroup',
+                                        periodType: 'Monthly',
+                                    },
+                                    categoryCombo: { id: 'ageGroupsCo' },
+                                },
+                            ],
+                        },
+                    ],
+                },
+                categoryOptionCombos: {
+                    categoryOptionCombos: [
+                        {
+                            id: 'under1Year1',
+                            categoryCombo: { id: 'ageGroupsCo' },
+                        },
+                    ],
+                },
+            })
+        ).toMatchObject({
+            dataElements: {
+                deathsUnder5: {
+                    dataSets: [
+                        {
+                            id: 'mortality',
+                            periodType: 'Monthly',
+                            categoryComboId: 'defaultComb',
+                        },
+                        {
+                            id: 'byAgeGroup',
+                            periodType: 'Monthly',
+                            categoryComboId: 'ageGroupsCo',
+                        },
+                    ],
+                },
+            },
+            categoryOptionCombos: {
+                under1Year1: { categoryComboId: 'ageGroupsCo' },
+            },
         })
     })
 

@@ -26,7 +26,10 @@ import {
     PROFILE_REASON_UNKNOWN_OPERAND,
     PROFILE_REASON_UNSUPPORTED_ITEM_TYPE,
 } from '../constants.js'
-import { parseExpressionOperands } from '../expressionOperands.js'
+import {
+    getCategoryOptionComboId,
+    parseExpressionOperands,
+} from '../expressionOperands.js'
 import {
     getElementOperandKey,
     getProgramOperandKey,
@@ -65,6 +68,24 @@ export const getPeriodAggregationType = (aggregationType) =>
 
 const toPart = (key) => ({ operand: key })
 
+/* A disaggregation (de.coc) is collected only by the data sets whose
+ * category combo holds its option combo: others give the element another
+ * combo. When either combo isn't known, every data set counts. */
+const getCollectingDataSets = (dataSets, { operand, metadata }) => {
+    const optionComboId = getCategoryOptionComboId(operand)
+    const categoryComboId =
+        optionComboId &&
+        metadata.categoryOptionCombos?.[optionComboId]?.categoryComboId
+
+    return categoryComboId
+        ? dataSets.filter(
+              (dataSet) =>
+                  !dataSet.categoryComboId ||
+                  dataSet.categoryComboId === categoryComboId
+          )
+        : dataSets
+}
+
 const addDataElement = (
     collector,
     metadata,
@@ -79,7 +100,10 @@ const addDataElement = (
 
     const aggregationType =
         aggregationTypeOverride ?? dataElement.aggregationType
-    const dataSets = dataElement.dataSets ?? []
+    const dataSets = getCollectingDataSets(dataElement.dataSets ?? [], {
+        operand,
+        metadata,
+    })
     /* `operand`: the disaggregation analytics is asked for (de.coc), if any.
      * `aggregationLevels`: the org unit levels values from lower levels stop at */
     const element = {

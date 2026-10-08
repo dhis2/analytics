@@ -50,8 +50,9 @@ describe('getGroupCountQueries', () => {
     const orgUnitsById = Object.fromEntries(
         ORG_UNITS.map((orgUnit) => [orgUnit.id, orgUnit])
     )
-    const queriesFor = (parentIds) =>
+    const queriesFor = (parentIds, withTotals = true) =>
         getGroupCountQueries({
+            withTotals,
             groups: { groupAAAAAA: { 2: 1 } },
             parents:
                 parentIds?.map((id) => ({
@@ -84,6 +85,14 @@ describe('getGroupCountQueries', () => {
                 'dataSets.id:eq:formMonth',
             ],
         })
+    })
+
+    it('counts only the members, not the org units below them, without totals', () => {
+        expect(
+            Object.keys(filtersOf(queriesFor(undefined, false))).filter((key) =>
+                key.includes('|total|')
+            )
+        ).toEqual(['groupAAAAAA:2:|total|2'])
     })
 
     it('keeps the members, and the org units above them, under each parent at or above them', () => {

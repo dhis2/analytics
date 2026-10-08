@@ -42,7 +42,7 @@ const fetchFor = (orgUnits, sourceKeys = dataSets('formMonth', 'formQuart')) =>
     fetchOrgUnitCoverage(createEngine(), { sourceKeys, orgUnits })
 
 describe('fetchOrgUnitCoverage', () => {
-    it('counts the org units and assignments under an org unit, per level', async () => {
+    it('counts the assignments under an org unit, per level, and its assigned ancestors', async () => {
         const coverage = await fetchFor(['districtAAA'])
 
         expect(coverage.levels.map(({ level }) => level)).toEqual([1, 2, 3])
@@ -56,41 +56,60 @@ describe('fetchOrgUnitCoverage', () => {
             formMonth: { 1: 1, 3: 2 },
             formQuart: { 2: 2 },
         })
+        // Ancestors are counted only for a data set assigned higher somewhere
         expect(coverage.counts.districtAAA).toEqual({
-            totals: { 2: 1, 3: 2 },
+            totals: {},
             sources: {
                 formMonth: { byLevel: { 3: 2 }, ancestors: 1 },
-                formQuart: { byLevel: { 2: 1 }, ancestors: 0 },
+                formQuart: { byLevel: { 2: 1 } },
             },
         })
-        expect(coverage).toMatchObject({ rootIds: [], userOrgUnitIds: null })
+        expect(coverage).toMatchObject({
+            rootIds: ['nationUnit1'],
+            userOrgUnitIds: null,
+        })
     })
 
-    it('counts only the levels a data set is assigned at', async () => {
+    it('counts the org units under it too, with assignment totals', async () => {
+        const coverage = await fetchOrgUnitCoverage(createEngine(), {
+            sourceKeys: dataSets('formMonth', 'formQuart'),
+            orgUnits: ['districtAAA'],
+            withAssignmentTotals: true,
+        })
+
+        expect(coverage.counts.districtAAA.totals).toEqual({ 2: 1, 3: 2 })
+    })
+
+    it('reads the only root from the counts across the hierarchy', async () => {
         const coverage = await fetchFor(['nationUnit1'], dataSets('formQuart'))
 
         expect(coverage.counts.nationUnit1).toEqual({
-            totals: { 2: 2 },
-            sources: { formQuart: { byLevel: { 2: 2 }, ancestors: 0 } },
+            totals: {},
+            sources: { formQuart: { byLevel: { 2: 2 } } },
         })
-        // Levels and org unit, 3 assigned counts, 2 counts under the nation
-        expect(coverage.requests).toBe(2 + 3 + 2)
+        // Levels, org unit and roots, then 3 assigned counts, and none under the nation
+        expect(coverage.requests).toBe(3 + 3)
     })
 
     it('reuses the level counts it is given', async () => {
         const engine = createEngine()
         const coverage = await fetchOrgUnitCoverage(engine, {
             sourceKeys: dataSets('formQuart'),
-            orgUnits: ['nationUnit1'],
+            orgUnits: ['districtAAA'],
             assignedOrgUnitCounts: { formQuart: { 2: 2 } },
         })
 
         expect(coverage.assignedOrgUnitCounts).toEqual({ formQuart: { 2: 2 } })
-        expect(coverage.requests).toBe(2 + 2)
+        // Levels, org unit and roots, then the one count under the district
+        expect(coverage.requests).toBe(3 + 1)
     })
 
-    it('loads the roots for a level alone', async () => {
-        const coverage = await fetchFor(['LEVEL-3'])
+    it('loads the roots, and counts under them for a level alone', async () => {
+        const coverage = await fetchOrgUnitCoverage(createEngine(), {
+            sourceKeys: dataSets('formMonth', 'formQuart'),
+            orgUnits: ['LEVEL-3'],
+            withAssignmentTotals: true,
+        })
 
         expect(coverage.rootIds).toEqual(['nationUnit1'])
         expect(coverage.counts.nationUnit1.totals).toEqual({ 1: 1, 2: 2, 3: 3 })
@@ -123,17 +142,16 @@ describe('fetchOrgUnitCoverage', () => {
         expect(coverage.counts).toEqual({})
     })
 
-    it('counts a group per level its members are at', async () => {
+    it('counts a group per level its members are at, with its members', async () => {
         const coverage = await fetchFor(['OU_GROUP-mixedGroupA'])
 
         expect(coverage.groups).toEqual({ mixedGroupA: { 2: 1, 3: 1 } })
-        expect(coverage.rootIds).toEqual([])
         expect(coverage.counts).toEqual({
             'mixedGroupA:2:': {
-                totals: { 2: 1, 3: 1 },
+                totals: { 2: 1 },
                 sources: {
                     formMonth: { byLevel: { 3: 0 }, ancestors: 1 },
-                    formQuart: { byLevel: { 2: 1 }, ancestors: 0 },
+                    formQuart: { byLevel: { 2: 1 } },
                 },
             },
             'mixedGroupA:3:': {
@@ -144,6 +162,16 @@ describe('fetchOrgUnitCoverage', () => {
                 },
             },
         })
+    })
+
+    it('counts the org units under the members, with assignment totals', async () => {
+        const coverage = await fetchOrgUnitCoverage(createEngine(), {
+            sourceKeys: dataSets('formMonth', 'formQuart'),
+            orgUnits: ['OU_GROUP-mixedGroupA'],
+            withAssignmentTotals: true,
+        })
+
+        expect(coverage.counts['mixedGroupA:2:'].totals).toEqual({ 2: 1, 3: 1 })
     })
 
     it('counts a group under each parent at or above its members', async () => {
@@ -168,7 +196,6 @@ describe('fetchOrgUnitCoverage', () => {
             dataSets('formMonth')
         )
 
-        expect(coverage.rootIds).toEqual([])
         expect(coverage.counts['clinicGroup:3:districtAAA']).toEqual({
             totals: { 3: 1 },
             sources: { formMonth: { byLevel: { 3: 1 }, ancestors: 1 } },
@@ -217,6 +244,30 @@ describe('fetchOrgUnitCoverage, for a large selection', () => {
         expect(sourcesOf(coverage.counts)).toEqual(sourcesOf(expected.counts))
         expect(listRequests).not.toHaveLength(0)
     })
+
+    it('keeps the lists for the next selection', async () => {
+        const engine = createLargeEngine()
+        const previous = await fetchOrgUnitCoverage(engine, {
+            sourceKeys: dataSets(...formIds),
+            orgUnits: ['OU_GROUP-mixedGroupA'],
+        })
+
+        engine.query.mockClear()
+        const coverage = await fetchOrgUnitCoverage(engine, {
+            sourceKeys: dataSets(...formIds),
+            orgUnits: ['OU_GROUP-mixedGroupA', 'districtAAA', 'districtBBB'],
+            previous,
+        })
+        const listRequests = engine.query.mock.calls.filter(([query]) =>
+            Object.values(query).some(({ params }) => params?.fields === 'path')
+        )
+
+        expect(Object.keys(previous.lists.sources)).toHaveLength(60)
+        expect(coverage.counts.districtAAA.sources.form0.byLevel).toEqual({
+            3: 2,
+        })
+        expect(listRequests).toHaveLength(0)
+    })
 })
 
 describe('fetchOrgUnitCoverage, after an earlier selection', () => {
@@ -249,20 +300,29 @@ describe('fetchOrgUnitCoverage, after an earlier selection', () => {
         ).toBe(false)
     })
 
-    it('counts again when the sources change', async () => {
+    it('counts only the new data set when the sources change', async () => {
         const engine = createEngine()
         const previous = await fetchOrgUnitCoverage(engine, {
             sourceKeys: dataSets('formMonth'),
             orgUnits: ['districtAAA'],
         })
+
+        engine.query.mockClear()
         const coverage = await fetchOrgUnitCoverage(engine, {
             sourceKeys: dataSets('formMonth', 'formQuart'),
             orgUnits: ['districtAAA'],
             previous,
         })
+        const sentFilters = engine.query.mock.calls.flatMap(([query]) =>
+            Object.values(query).flatMap(({ params }) => params?.filter ?? [])
+        )
 
         expect(coverage.counts.districtAAA.sources.formQuart).toBeDefined()
-        expect(coverage.sourceIds).toEqual(['formMonth', 'formQuart'])
+        expect(coverage.counts.districtAAA.sources.formMonth).toEqual(
+            previous.counts.districtAAA.sources.formMonth
+        )
+        expect(sentFilters).toContain('dataSets.id:eq:formQuart')
+        expect(sentFilters).not.toContain('dataSets.id:eq:formMonth')
     })
 
     it('reuses the roots and user org units it knows', async () => {

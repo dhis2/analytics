@@ -1,3 +1,5 @@
+import { assignedTo, inGroup, queryAll } from './orgUnitQueries.js'
+
 /* Counts answered from lists instead of the server: for a large selection,
  * one list of the org units each source is assigned to (with their paths)
  * and one of each group's members replace hundreds of pageSize=1 counts. The
@@ -86,4 +88,69 @@ export const createListCounter = (groupMemberPaths) => {
                     passesFilter(ids, condition, groups)
                 )
             ).length
+}
+
+const listQuery = (filter) => ({
+    resource: 'organisationUnits',
+    params: { filter, fields: 'path', paging: false },
+})
+
+const getPaths = (response) =>
+    (response?.organisationUnits ?? []).map(({ path }) => path)
+
+/**
+ * The source count queries (`sourceQueries`, `[key, query]` pairs) answered
+ * from one list per source of the org units it is assigned to, and one per
+ * group of its members. `lists` (`{ sources, groups }`, path lists by id)
+ * are those already fetched: only the missing ones are. Gives
+ * `{ totals, lists, requests }`, the totals in the order of the queries.
+ */
+export const countFromLists = async (
+    engine,
+    { sourceQueries, sourceKeys, groupIds, lists = {}, signal }
+) => {
+    const knownSources = lists.sources ?? {}
+    const knownGroups = lists.groups ?? {}
+    const toFetch = [
+        ...sourceKeys
+            .filter(({ id }) => !knownSources[id])
+            .map((sourceKey) => [
+                ['sources', sourceKey.id],
+                listQuery(assignedTo(sourceKey)),
+            ]),
+        ...groupIds
+            .filter((groupId) => !knownGroups[groupId])
+            .map((groupId) => [
+                ['groups', groupId],
+                listQuery(inGroup(groupId)),
+            ]),
+    ]
+    const { responses, requests } = await queryAll(engine, toFetch, { signal })
+    const fetchedOf = (kind) =>
+        Object.fromEntries(
+            toFetch
+                .map(([[listKind, id]], i) => [listKind, id, responses[i]])
+                .filter(([listKind]) => listKind === kind)
+                .map(([, id, response]) => [id, getPaths(response)])
+        )
+    const allLists = {
+        sources: { ...knownSources, ...fetchedOf('sources') },
+        groups: { ...knownGroups, ...fetchedOf('groups') },
+    }
+    const count = createListCounter(allLists.groups)
+    const sourceFilterOf = (sourceId) =>
+        assignedTo(sourceKeys.find(({ id }) => id === sourceId))
+
+    return {
+        totals: sourceQueries.map(([[, sourceId], query]) =>
+            count(
+                allLists.sources[sourceId],
+                query.params.filter.filter(
+                    (condition) => condition !== sourceFilterOf(sourceId)
+                )
+            )
+        ),
+        lists: allLists,
+        requests,
+    }
 }
