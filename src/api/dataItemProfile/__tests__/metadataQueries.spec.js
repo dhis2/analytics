@@ -1,8 +1,10 @@
 import metadataShapes from '../../../__fixtures__/period-types/metadata-shapes.json'
+import { PERIOD_TYPE_FREQUENCY_ORDER } from '../../../modules/dataItemProfile/constants.js'
 import {
     dataItemProfileMetadataQueries,
     normalizeDataItemProfileMetadata,
 } from '../metadataQueries.js'
+import { getTotal } from '../orgUnitQueries.js'
 
 const getResponses = ({ requests }) =>
     Object.fromEntries(requests.map(({ name, response }) => [name, response]))
@@ -35,7 +37,6 @@ const splitFields = (fields) => {
 const NOT_RECORDED = [
     'aggregationLevels',
     'analyticsPeriodBoundaries[id]',
-    'missingValueStrategy',
     'categoryCombo[id]',
     'dataSetElements[dataSet[id,periodType],categoryCombo[id]]',
 ]
@@ -88,6 +89,36 @@ describe('normalizeDataItemProfileMetadata', () => {
             it('give each expression dimension item its expression', () => {
                 Object.values(metadata.expressionDimensionItems).forEach(
                     (item) => expect(typeof item.expression).toBe('string')
+                )
+            })
+
+            // The smoke subset keeps a few of each version's types; the full export matched all of them
+            it('list period types with the frequency order the library keeps', () => {
+                const { periodTypes } = responses.periodTypes
+
+                expect(periodTypes.length).toBeGreaterThan(0)
+                periodTypes.forEach(({ name, frequencyOrder }) =>
+                    expect([name, PERIOD_TYPE_FREQUENCY_ORDER[name]]).toEqual([
+                        name,
+                        frequencyOrder,
+                    ])
+                )
+            })
+
+            it('give each org unit count in the pager', () => {
+                const counts = shapes.requests.filter(({ name }) =>
+                    name.startsWith('count-')
+                )
+
+                expect(counts.length).toBeGreaterThan(0)
+                counts.forEach(({ name, response }) =>
+                    expect([name, getTotal(response)]).toEqual([
+                        name,
+                        response.pager.total,
+                    ])
+                )
+                counts.forEach(({ response }) =>
+                    expect(typeof response.pager.total).toBe('number')
                 )
             })
 
@@ -241,29 +272,6 @@ describe('normalizeDataItemProfileMetadata', () => {
             categoryOptionCombos: {
                 under1Year1: { categoryComboId: 'ageGroupsCo' },
             },
-        })
-    })
-
-    it('keeps the missing value strategy of an expression dimension item', () => {
-        expect(
-            normalizeDataItemProfileMetadata({
-                expressionDimensionItems: {
-                    expressionDimensionItems: [
-                        {
-                            id: 'sumNeedingA',
-                            expression: '#{a}+#{b}',
-                            missingValueStrategy: 'SKIP_IF_ANY_VALUE_MISSING',
-                        },
-                        { id: 'sumByDefaul', expression: '#{a}+#{b}' },
-                    ],
-                },
-            }).expressionDimensionItems
-        ).toEqual({
-            sumNeedingA: {
-                expression: '#{a}+#{b}',
-                missingValueStrategy: 'SKIP_IF_ANY_VALUE_MISSING',
-            },
-            sumByDefaul: { expression: '#{a}+#{b}' },
         })
     })
 })

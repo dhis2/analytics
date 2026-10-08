@@ -2,42 +2,42 @@
     "schemaVersion": 1,
     "group": "periods-that-dont-nest",
     "provisional": false,
-    "source": "maps-tools/test-data-item-profile (944d3f7, with local changes)",
+    "source": "maps-tools/test-data-item-profile (27d9037, with local changes)",
     "runs": [
         {
             "instance": "dev",
             "version": "2.44-SNAPSHOT",
-            "date": "2026-10-02"
+            "date": "2026-10-05"
         },
         {
             "instance": "dev-2-41",
             "version": "2.41.11-SNAPSHOT",
-            "date": "2026-10-02"
+            "date": "2026-10-05"
         },
         {
             "instance": "dev-2-42",
             "version": "2.42.7-SNAPSHOT",
-            "date": "2026-10-02"
+            "date": "2026-10-05"
         },
         {
             "instance": "dev-2-43",
             "version": "2.43.3-SNAPSHOT",
-            "date": "2026-10-02"
+            "date": "2026-10-05"
         },
         {
             "instance": "stable-2-40-12",
             "version": "2.40.12",
-            "date": "2026-10-02"
+            "date": "2026-10-05"
         },
         {
             "instance": "stable-2-41-10",
             "version": "2.41.10",
-            "date": "2026-10-02"
+            "date": "2026-10-08"
         },
         {
             "instance": "stable-2-42-6",
             "version": "2.42.6",
-            "date": "2026-10-02"
+            "date": "2026-10-05"
         },
         {
             "instance": "stable-2-43-1",

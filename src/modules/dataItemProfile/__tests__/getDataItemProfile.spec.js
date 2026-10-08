@@ -508,7 +508,7 @@ describe('getDataItemProfile', () => {
             })
         })
 
-        it('take their missing value strategy, by default skipping only when all are missing', () => {
+        it('skip only when all their values are missing, whatever strategy they are saved with', () => {
             const strategyOf = (missingValueStrategy) =>
                 profile('sum', 'EXPRESSION_DIMENSION_ITEM', {
                     ...metadata,
@@ -522,7 +522,7 @@ describe('getDataItemProfile', () => {
 
             expect(strategyOf(undefined)).toBe('SKIP_IF_ALL_VALUES_MISSING')
             expect(strategyOf('SKIP_IF_ANY_VALUE_MISSING')).toBe(
-                'SKIP_IF_ANY_VALUE_MISSING'
+                'SKIP_IF_ALL_VALUES_MISSING'
             )
         })
 

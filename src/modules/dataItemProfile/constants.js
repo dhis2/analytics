@@ -100,12 +100,11 @@ export const LEFT_OUT_REASONS = new Set([
 
 /* How an expression treats missing operand values (dhis2-core
  * MissingValueStrategy). Indicators evaluate each side with
- * SKIP_IF_ALL_VALUES_MISSING, then need both; expression dimension items
- * have their own, SKIP_IF_ALL_VALUES_MISSING by default. NEVER_SKIP counts
- * missing values as 0 even when all are. */
+ * SKIP_IF_ALL_VALUES_MISSING, then need both sides; expression dimension
+ * items are evaluated with SKIP_IF_ALL_VALUES_MISSING, whatever strategy they
+ * are saved with (checked by the test tool on 2.40 to 2.44). */
 export const SKIP_IF_ANY_VALUE_MISSING = 'SKIP_IF_ANY_VALUE_MISSING'
 export const SKIP_IF_ALL_VALUES_MISSING = 'SKIP_IF_ALL_VALUES_MISSING'
-export const NEVER_SKIP = 'NEVER_SKIP'
 
 /* Expression operands without a dimension item type: constants, org unit
  * group counts and [days] have no source; an unknown prefix makes the

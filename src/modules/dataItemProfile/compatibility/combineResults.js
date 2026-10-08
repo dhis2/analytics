@@ -83,8 +83,8 @@ const OPERAND_REASON_BY_STATUS = {
 /**
  * An expression's result, from its operands', by its missing value
  * strategy. SKIP_IF_ANY_VALUE_MISSING (the default): the most severe
- * decides. SKIP_IF_ALL_VALUES_MISSING or NEVER_SKIP: a missing value counts
- * as 0, so the operands add up (combineAddedUpResults). With more than one
+ * decides. SKIP_IF_ALL_VALUES_MISSING: a missing value counts as 0, so the
+ * operands add up (combineAddedUpResults). With more than one
  * operand, OPERAND_EMPTY and OPERAND_PARTIAL say first that one gives none
  * or only some values.
  */

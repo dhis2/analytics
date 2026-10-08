@@ -352,7 +352,7 @@ describe('getDataItemProfileCompatibility', () => {
             )
         })
 
-        it('follow the missing value strategy of an expression dimension item', () => {
+        it('add up the operands of an expression dimension item, whatever its strategy', () => {
             const expressionItem = (id) => ({
                 id,
                 dimensionItemType: 'EXPRESSION_DIMENSION_ITEM',
@@ -364,9 +364,10 @@ describe('getDataItemProfileCompatibility', () => {
             expect(
                 outcomeOf(expressionItem('sumNeverSkipped'), ['202501'])
             ).toEqual(partial(['OPERAND_EMPTY', 'PERIOD_TOO_SHORT']))
+            // Analytics ignores SKIP_IF_ANY_VALUE_MISSING: a value comes back
             expect(
                 outcomeOf(expressionItem('sumNeedingAll'), ['202501'])
-            ).toEqual(none(['OPERAND_EMPTY', 'PERIOD_TOO_SHORT']))
+            ).toEqual(partial(['OPERAND_EMPTY', 'PERIOD_TOO_SHORT']))
         })
 
         it('say nothing more with one operand', () => {

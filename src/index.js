@@ -375,7 +375,6 @@ export {
     PROFILE_REASON_NOT_AGGREGATABLE,
     SKIP_IF_ANY_VALUE_MISSING,
     SKIP_IF_ALL_VALUES_MISSING,
-    NEVER_SKIP,
 } from './modules/dataItemProfile/constants.js'
 export { fetchDataItemProfileMetadata } from './api/dataItemProfile/fetchDataItemProfileMetadata.js'
 export {

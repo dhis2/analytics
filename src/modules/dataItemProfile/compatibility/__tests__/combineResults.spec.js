@@ -117,7 +117,7 @@ describe('combineResults', () => {
             expect(
                 combineOperandResults(
                     [none(['PERIOD_TOO_SHORT']), partial(['REPEATED_VALUE'])],
-                    'NEVER_SKIP'
+                    'SKIP_IF_ALL_VALUES_MISSING'
                 )
             ).toEqual(
                 partial([
