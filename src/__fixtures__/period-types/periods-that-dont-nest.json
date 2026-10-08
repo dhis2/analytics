@@ -2,32 +2,37 @@
     "schemaVersion": 1,
     "group": "periods-that-dont-nest",
     "provisional": false,
-    "source": "maps-tools/test-data-item-profile (27d9037, with local changes)",
+    "source": "maps-tools/test-data-item-profile (f47b258, with local changes)",
     "runs": [
         {
             "instance": "dev",
             "version": "2.44-SNAPSHOT",
-            "date": "2026-10-05"
+            "date": "2026-10-08"
+        },
+        {
+            "instance": "dev-2-40",
+            "version": "2.40.13-SNAPSHOT",
+            "date": "2026-10-08"
         },
         {
             "instance": "dev-2-41",
             "version": "2.41.11-SNAPSHOT",
-            "date": "2026-10-05"
+            "date": "2026-10-08"
         },
         {
             "instance": "dev-2-42",
             "version": "2.42.7-SNAPSHOT",
-            "date": "2026-10-05"
+            "date": "2026-10-08"
         },
         {
             "instance": "dev-2-43",
             "version": "2.43.3-SNAPSHOT",
-            "date": "2026-10-05"
+            "date": "2026-10-08"
         },
         {
             "instance": "stable-2-40-12",
             "version": "2.40.12",
-            "date": "2026-10-05"
+            "date": "2026-10-08"
         },
         {
             "instance": "stable-2-41-10",
@@ -37,12 +42,12 @@
         {
             "instance": "stable-2-42-6",
             "version": "2.42.6",
-            "date": "2026-10-05"
+            "date": "2026-10-08"
         },
         {
-            "instance": "stable-2-43-1",
-            "version": "2.43.1",
-            "date": "2026-10-05"
+            "instance": "stable-2-43-2",
+            "version": "2.43.2",
+            "date": "2026-10-08"
         }
     ],
     "findings": {
@@ -261,6 +266,190 @@
                 "cases": 2
             },
             "FinancialSep by Yearly": {
+                "rules": [],
+                "empty": 2,
+                "cases": 2
+            }
+        },
+        "2.40.13-SNAPSHOT": {
+            "Weekly by Monthly": {
+                "rules": [
+                    "mostDays"
+                ],
+                "empty": 0,
+                "cases": 24
+            },
+            "Weekly by Quarterly": {
+                "rules": [
+                    "end",
+                    "mostDays"
+                ],
+                "empty": 0,
+                "cases": 8
+            },
+            "Weekly by Yearly": {
+                "rules": [
+                    "end",
+                    "mostDays"
+                ],
+                "empty": 0,
+                "cases": 2
+            },
+            "WeeklyWednesday by Monthly": {
+                "rules": [
+                    "mostDays"
+                ],
+                "empty": 0,
+                "cases": 24
+            },
+            "WeeklyWednesday by Quarterly": {
+                "rules": [
+                    "mostDays"
+                ],
+                "empty": 0,
+                "cases": 8
+            },
+            "WeeklyWednesday by Yearly": {
+                "rules": [
+                    "mostDays"
+                ],
+                "empty": 0,
+                "cases": 2
+            },
+            "WeeklyThursday by Monthly": {
+                "rules": [
+                    "mostDays"
+                ],
+                "empty": 0,
+                "cases": 24
+            },
+            "WeeklyThursday by Quarterly": {
+                "rules": [
+                    "start",
+                    "mostDays"
+                ],
+                "empty": 0,
+                "cases": 8
+            },
+            "WeeklyThursday by Yearly": {
+                "rules": [
+                    "start",
+                    "mostDays"
+                ],
+                "empty": 0,
+                "cases": 2
+            },
+            "WeeklySaturday by Monthly": {
+                "rules": [
+                    "mostDays"
+                ],
+                "empty": 0,
+                "cases": 24
+            },
+            "WeeklySaturday by Quarterly": {
+                "rules": [
+                    "mostDays"
+                ],
+                "empty": 0,
+                "cases": 8
+            },
+            "WeeklySaturday by Yearly": {
+                "rules": [
+                    "mostDays"
+                ],
+                "empty": 0,
+                "cases": 2
+            },
+            "WeeklySunday by Monthly": {
+                "rules": [
+                    "mostDays"
+                ],
+                "empty": 0,
+                "cases": 24
+            },
+            "WeeklySunday by Quarterly": {
+                "rules": [
+                    "mostDays"
+                ],
+                "empty": 0,
+                "cases": 8
+            },
+            "WeeklySunday by Yearly": {
+                "rules": [
+                    "mostDays"
+                ],
+                "empty": 0,
+                "cases": 2
+            },
+            "BiWeekly by Monthly": {
+                "rules": [
+                    "start"
+                ],
+                "empty": 0,
+                "cases": 24
+            },
+            "BiWeekly by Quarterly": {
+                "rules": [
+                    "start"
+                ],
+                "empty": 0,
+                "cases": 8
+            },
+            "BiWeekly by Yearly": {
+                "rules": [
+                    "start"
+                ],
+                "empty": 0,
+                "cases": 2
+            },
+            "QuarterlyNov by Quarterly": {
+                "rules": [],
+                "empty": 8,
+                "cases": 8
+            },
+            "QuarterlyNov by Yearly": {
+                "rules": [
+                    "start",
+                    "end",
+                    "mostDays"
+                ],
+                "empty": 0,
+                "cases": 2
+            },
+            "SixMonthlyApril by Yearly": {
+                "rules": [
+                    "start",
+                    "end",
+                    "mostDays"
+                ],
+                "empty": 0,
+                "cases": 2
+            },
+            "SixMonthlyNov by Yearly": {
+                "rules": [
+                    "start",
+                    "end",
+                    "mostDays"
+                ],
+                "empty": 0,
+                "cases": 2
+            },
+            "FinancialApril by Yearly": {
+                "rules": [],
+                "empty": 2,
+                "cases": 2
+            },
+            "FinancialJuly by Yearly": {
+                "rules": [],
+                "empty": 2,
+                "cases": 2
+            },
+            "FinancialOct by Yearly": {
+                "rules": [],
+                "empty": 2,
+                "cases": 2
+            },
+            "FinancialNov by Yearly": {
                 "rules": [],
                 "empty": 2,
                 "cases": 2
@@ -1416,7 +1605,7 @@
                 "cases": 2
             }
         },
-        "2.43.1": {
+        "2.43.2": {
             "Weekly by Monthly": {
                 "rules": [
                     "mostDays"
@@ -1639,10 +1828,10 @@
     },
     "smoke": "5 of 266 cases, one per pattern",
     "cases": [
-        {"id":"nest-BiWeekly__q-Monthly__p-202401__A","item":{"code":"PTT_G2_BiWeekly","dimensionItemType":"DATA_ELEMENT","aggregationType":"SUM","valueType":"INTEGER","collectionPeriodTypes":["BiWeekly"]},"query":{"periodType":"Monthly","period":"202401","orgUnit":"A"},"expected":{"status":"VALUE","value":null},"observed":{"2.44-SNAPSHOT":{"status":"VALUE","value":3},"2.41.11-SNAPSHOT":{"status":"VALUE","value":3},"2.42.7-SNAPSHOT":{"status":"VALUE","value":3},"2.43.3-SNAPSHOT":{"status":"VALUE","value":3},"2.40.12":{"status":"VALUE","value":3},"2.41.10":{"status":"VALUE","value":3},"2.42.6":{"status":"VALUE","value":3},"2.43.1":{"status":"VALUE","value":3}},"verdict":{"2.44-SNAPSHOT":"recorded","2.41.11-SNAPSHOT":"recorded","2.42.7-SNAPSHOT":"recorded","2.43.3-SNAPSHOT":"recorded","2.40.12":"recorded","2.41.10":"recorded","2.42.6":"recorded","2.43.1":"recorded"}},
-        {"id":"nest-FinancialApril__q-Yearly__p-2024__A","item":{"code":"PTT_G2_FinancialApril","dimensionItemType":"DATA_ELEMENT","aggregationType":"SUM","valueType":"INTEGER","collectionPeriodTypes":["FinancialApril"]},"query":{"periodType":"Yearly","period":"2024","orgUnit":"A"},"expected":{"status":"EMPTY","value":null},"observed":{"2.44-SNAPSHOT":{"status":"EMPTY","value":null},"2.41.11-SNAPSHOT":{"status":"EMPTY","value":null},"2.42.7-SNAPSHOT":{"status":"EMPTY","value":null},"2.43.3-SNAPSHOT":{"status":"EMPTY","value":null},"2.40.12":{"status":"EMPTY","value":null},"2.41.10":{"status":"EMPTY","value":null},"2.42.6":{"status":"EMPTY","value":null},"2.43.1":{"status":"EMPTY","value":null}},"verdict":{"2.44-SNAPSHOT":"pass","2.41.11-SNAPSHOT":"pass","2.42.7-SNAPSHOT":"pass","2.43.3-SNAPSHOT":"pass","2.40.12":"pass","2.41.10":"pass","2.42.6":"pass","2.43.1":"pass"}},
-        {"id":"nest-FinancialAug__q-Yearly__p-2024__A","item":{"code":"PTT_G2_FinancialAug","dimensionItemType":"DATA_ELEMENT","aggregationType":"SUM","valueType":"INTEGER","collectionPeriodTypes":["FinancialAug"]},"query":{"periodType":"Yearly","period":"2024","orgUnit":"A"},"expected":{"status":"EMPTY","value":null},"observed":{"2.44-SNAPSHOT":{"status":"EMPTY","value":null},"2.43.3-SNAPSHOT":{"status":"EMPTY","value":null},"2.43.1":{"status":"EMPTY","value":null}},"verdict":{"2.44-SNAPSHOT":"pass","2.43.3-SNAPSHOT":"pass","2.43.1":"pass"}},
-        {"id":"nest-FinancialSep__q-Yearly__p-2024__A","item":{"code":"PTT_G2_FinancialSep","dimensionItemType":"DATA_ELEMENT","aggregationType":"SUM","valueType":"INTEGER","collectionPeriodTypes":["FinancialSep"]},"query":{"periodType":"Yearly","period":"2024","orgUnit":"A"},"expected":{"status":"EMPTY","value":null},"observed":{"2.44-SNAPSHOT":{"status":"EMPTY","value":null},"2.42.7-SNAPSHOT":{"status":"EMPTY","value":null},"2.43.3-SNAPSHOT":{"status":"EMPTY","value":null},"2.42.6":{"status":"EMPTY","value":null},"2.43.1":{"status":"EMPTY","value":null}},"verdict":{"2.44-SNAPSHOT":"pass","2.42.7-SNAPSHOT":"pass","2.43.3-SNAPSHOT":"pass","2.42.6":"pass","2.43.1":"pass"}},
-        {"id":"nest-WeeklyFriday__q-Monthly__p-202401__A","item":{"code":"PTT_G2_WeeklyFriday","dimensionItemType":"DATA_ELEMENT","aggregationType":"SUM","valueType":"INTEGER","collectionPeriodTypes":["WeeklyFriday"]},"query":{"periodType":"Monthly","period":"202401","orgUnit":"A"},"expected":{"status":"VALUE","value":null},"observed":{"2.44-SNAPSHOT":{"status":"VALUE","value":5},"2.43.3-SNAPSHOT":{"status":"VALUE","value":5},"2.43.1":{"status":"VALUE","value":5}},"verdict":{"2.44-SNAPSHOT":"recorded","2.43.3-SNAPSHOT":"recorded","2.43.1":"recorded"}}
+        {"id":"nest-BiWeekly__q-Monthly__p-202401__A","item":{"code":"PTT_G2_BiWeekly","dimensionItemType":"DATA_ELEMENT","aggregationType":"SUM","valueType":"INTEGER","collectionPeriodTypes":["BiWeekly"]},"query":{"periodType":"Monthly","period":"202401","orgUnit":"A"},"expected":{"status":"VALUE","value":null},"observed":{"2.44-SNAPSHOT":{"status":"VALUE","value":3},"2.40.13-SNAPSHOT":{"status":"VALUE","value":3},"2.41.11-SNAPSHOT":{"status":"VALUE","value":3},"2.42.7-SNAPSHOT":{"status":"VALUE","value":3},"2.43.3-SNAPSHOT":{"status":"VALUE","value":3},"2.40.12":{"status":"VALUE","value":3},"2.41.10":{"status":"VALUE","value":3},"2.42.6":{"status":"VALUE","value":3},"2.43.2":{"status":"VALUE","value":3}},"verdict":{"2.44-SNAPSHOT":"recorded","2.40.13-SNAPSHOT":"recorded","2.41.11-SNAPSHOT":"recorded","2.42.7-SNAPSHOT":"recorded","2.43.3-SNAPSHOT":"recorded","2.40.12":"recorded","2.41.10":"recorded","2.42.6":"recorded","2.43.2":"recorded"}},
+        {"id":"nest-FinancialApril__q-Yearly__p-2024__A","item":{"code":"PTT_G2_FinancialApril","dimensionItemType":"DATA_ELEMENT","aggregationType":"SUM","valueType":"INTEGER","collectionPeriodTypes":["FinancialApril"]},"query":{"periodType":"Yearly","period":"2024","orgUnit":"A"},"expected":{"status":"EMPTY","value":null},"observed":{"2.44-SNAPSHOT":{"status":"EMPTY","value":null},"2.40.13-SNAPSHOT":{"status":"EMPTY","value":null},"2.41.11-SNAPSHOT":{"status":"EMPTY","value":null},"2.42.7-SNAPSHOT":{"status":"EMPTY","value":null},"2.43.3-SNAPSHOT":{"status":"EMPTY","value":null},"2.40.12":{"status":"EMPTY","value":null},"2.41.10":{"status":"EMPTY","value":null},"2.42.6":{"status":"EMPTY","value":null},"2.43.2":{"status":"EMPTY","value":null}},"verdict":{"2.44-SNAPSHOT":"pass","2.40.13-SNAPSHOT":"pass","2.41.11-SNAPSHOT":"pass","2.42.7-SNAPSHOT":"pass","2.43.3-SNAPSHOT":"pass","2.40.12":"pass","2.41.10":"pass","2.42.6":"pass","2.43.2":"pass"}},
+        {"id":"nest-FinancialAug__q-Yearly__p-2024__A","item":{"code":"PTT_G2_FinancialAug","dimensionItemType":"DATA_ELEMENT","aggregationType":"SUM","valueType":"INTEGER","collectionPeriodTypes":["FinancialAug"]},"query":{"periodType":"Yearly","period":"2024","orgUnit":"A"},"expected":{"status":"EMPTY","value":null},"observed":{"2.44-SNAPSHOT":{"status":"EMPTY","value":null},"2.43.3-SNAPSHOT":{"status":"EMPTY","value":null},"2.43.2":{"status":"EMPTY","value":null}},"verdict":{"2.44-SNAPSHOT":"pass","2.43.3-SNAPSHOT":"pass","2.43.2":"pass"}},
+        {"id":"nest-FinancialSep__q-Yearly__p-2024__A","item":{"code":"PTT_G2_FinancialSep","dimensionItemType":"DATA_ELEMENT","aggregationType":"SUM","valueType":"INTEGER","collectionPeriodTypes":["FinancialSep"]},"query":{"periodType":"Yearly","period":"2024","orgUnit":"A"},"expected":{"status":"EMPTY","value":null},"observed":{"2.44-SNAPSHOT":{"status":"EMPTY","value":null},"2.42.7-SNAPSHOT":{"status":"EMPTY","value":null},"2.43.3-SNAPSHOT":{"status":"EMPTY","value":null},"2.42.6":{"status":"EMPTY","value":null},"2.43.2":{"status":"EMPTY","value":null}},"verdict":{"2.44-SNAPSHOT":"pass","2.42.7-SNAPSHOT":"pass","2.43.3-SNAPSHOT":"pass","2.42.6":"pass","2.43.2":"pass"}},
+        {"id":"nest-WeeklyFriday__q-Monthly__p-202401__A","item":{"code":"PTT_G2_WeeklyFriday","dimensionItemType":"DATA_ELEMENT","aggregationType":"SUM","valueType":"INTEGER","collectionPeriodTypes":["WeeklyFriday"]},"query":{"periodType":"Monthly","period":"202401","orgUnit":"A"},"expected":{"status":"VALUE","value":null},"observed":{"2.44-SNAPSHOT":{"status":"VALUE","value":5},"2.43.3-SNAPSHOT":{"status":"VALUE","value":5},"2.43.2":{"status":"VALUE","value":5}},"verdict":{"2.44-SNAPSHOT":"recorded","2.43.3-SNAPSHOT":"recorded","2.43.2":"recorded"}}
     ]
 }

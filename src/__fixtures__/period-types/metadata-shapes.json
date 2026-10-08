@@ -1,17 +1,79 @@
 {
     "schemaVersion": 1,
-    "source": "maps-tools/test-data-item-profile (27d9037, with local changes)",
+    "source": "maps-tools/test-data-item-profile (f47b258, with local changes)",
     "versions": {
         "2.44-SNAPSHOT": {
             "instance": "dev",
-            "date": "2026-10-05",
+            "date": "2026-10-08",
             "requests": [
                 {
                     "name": "dataElements",
-                    "path": "/api/dataElements.json?filter=code:$like:PTT_G3&fields=id,code,name,aggregationType,valueType,domainType,dataSetElements[dataSet[id,periodType]]&paging=false&order=code:asc",
+                    "path": "/api/dataElements.json?filter=code:$like:PTT_G3&filter=code:$like:PTT_DIS&rootJunction=OR&fields=id,code,name,aggregationType,valueType,domainType,categoryCombo[id],dataSetElements[dataSet[id,periodType],categoryCombo[id]]&paging=false&order=code:asc",
                     "httpStatus": 200,
                     "response": {
                         "dataElements": [
+                            {
+                                "code": "PTT_DIS_BOTH",
+                                "name": "PTT disaggregation both",
+                                "valueType": "INTEGER",
+                                "domainType": "AGGREGATE",
+                                "aggregationType": "SUM",
+                                "dataSetElements": [
+                                    {
+                                        "dataSet": {
+                                            "periodType": "Monthly",
+                                            "id": "MTEN4XmC0k3"
+                                        },
+                                        "categoryCombo": {
+                                            "id": "EyESnzDvcwh"
+                                        }
+                                    },
+                                    {
+                                        "dataSet": {
+                                            "periodType": "Quarterly",
+                                            "id": "DMfYb9cbUwP"
+                                        },
+                                        "categoryCombo": {
+                                            "id": "GFe8Z3ErDol"
+                                        }
+                                    }
+                                ],
+                                "id": "wrXAErJOkRS",
+                                "categoryCombo": {
+                                    "id": "EyESnzDvcwh"
+                                }
+                            },
+                            {
+                                "code": "PTT_DIS_PLACE",
+                                "name": "PTT disaggregation place",
+                                "valueType": "INTEGER",
+                                "domainType": "AGGREGATE",
+                                "aggregationType": "SUM",
+                                "dataSetElements": [
+                                    {
+                                        "dataSet": {
+                                            "periodType": "Monthly",
+                                            "id": "NlZrxX5S0X8"
+                                        },
+                                        "categoryCombo": {
+                                            "id": "EyESnzDvcwh"
+                                        }
+                                    },
+                                    {
+                                        "dataSet": {
+                                            "periodType": "Quarterly",
+                                            "id": "Ij6jwq1Ceiq"
+                                        },
+                                        "categoryCombo": {
+                                            "id": "GFe8Z3ErDol"
+                                        }
+                                    }
+                                ],
+                                "id": "T4Gk4A7PTRJ",
+                                "categoryCombo": {
+                                    "id": "EyESnzDvcwh"
+                                }
+                            },
                             {
                                 "code": "PTT_G3_HISTORY",
                                 "name": "PTT G3 history",
@@ -26,7 +88,10 @@
                                         }
                                     }
                                 ],
-                                "id": "hR0FkmDKXvh"
+                                "id": "hR0FkmDKXvh",
+                                "categoryCombo": {
+                                    "id": "bjDvmb4bfuf"
+                                }
                             },
                             {
                                 "code": "PTT_G3_MW",
@@ -48,7 +113,10 @@
                                         }
                                     }
                                 ],
-                                "id": "hbv3rzk8Fne"
+                                "id": "hbv3rzk8Fne",
+                                "categoryCombo": {
+                                    "id": "bjDvmb4bfuf"
+                                }
                             },
                             {
                                 "code": "PTT_G3_ORPHAN",
@@ -57,29 +125,10 @@
                                 "domainType": "AGGREGATE",
                                 "aggregationType": "SUM",
                                 "dataSetElements": [],
-                                "id": "idqEIJ4ahkB"
-                            },
-                            {
-                                "code": "PTT_G3_PLACE",
-                                "name": "PTT G3 place",
-                                "valueType": "INTEGER",
-                                "domainType": "AGGREGATE",
-                                "aggregationType": "SUM",
-                                "dataSetElements": [
-                                    {
-                                        "dataSet": {
-                                            "periodType": "Weekly",
-                                            "id": "EBLMCfwOuUT"
-                                        }
-                                    },
-                                    {
-                                        "dataSet": {
-                                            "periodType": "Monthly",
-                                            "id": "Zp46A37uZSE"
-                                        }
-                                    }
-                                ],
-                                "id": "Z6EUgky36Mv"
+                                "id": "idqEIJ4ahkB",
+                                "categoryCombo": {
+                                    "id": "bjDvmb4bfuf"
+                                }
                             }
                         ]
                     }
@@ -265,6 +314,39 @@
                     }
                 },
                 {
+                    "name": "categoryOptionCombos",
+                    "path": "/api/categoryOptionCombos.json?filter=id:in:[HllvX50cXC0,l6y6maQF8He,eUlTvjHxjZF,MHtSLMctHku,eHq7UQzuwBc]&fields=id,categoryCombo[id]&paging=false&order=id:asc",
+                    "httpStatus": 200,
+                    "response": {
+                        "categoryOptionCombos": [
+                            {
+                                "categoryCombo": {
+                                    "id": "GFe8Z3ErDol"
+                                },
+                                "id": "eHq7UQzuwBc"
+                            },
+                            {
+                                "categoryCombo": {
+                                    "id": "EyESnzDvcwh"
+                                },
+                                "id": "eUlTvjHxjZF"
+                            },
+                            {
+                                "categoryCombo": {
+                                    "id": "bjDvmb4bfuf"
+                                },
+                                "id": "HllvX50cXC0"
+                            },
+                            {
+                                "categoryCombo": {
+                                    "id": "EyESnzDvcwh"
+                                },
+                                "id": "l6y6maQF8He"
+                            }
+                        ]
+                    }
+                },
+                {
                     "name": "dataElements-aggregationLevels",
                     "path": "/api/dataElements.json?filter=code:$like:PTT_OU_AGG&fields=id,code,aggregationType,aggregationLevels,dataSetElements[dataSet[id,periodType]]&paging=false&order=code:asc",
                     "httpStatus": 200,
@@ -340,7 +422,7 @@
                 },
                 {
                     "name": "programIndicators",
-                    "path": "/api/programIndicators.json?filter=code:$like:PTT_PROG&fields=id,code,program[id],orgUnitField,analyticsType&paging=false&order=code:asc",
+                    "path": "/api/programIndicators.json?filter=code:$like:PTT_PROG&fields=id,code,program[id],orgUnitField,analyticsType,analyticsPeriodBoundaries[id]&paging=false&order=code:asc",
                     "httpStatus": 200,
                     "response": {
                         "programIndicators": [
@@ -350,6 +432,14 @@
                                     "id": "KfzRtyEQHht"
                                 },
                                 "analyticsType": "EVENT",
+                                "analyticsPeriodBoundaries": [
+                                    {
+                                        "id": "KbbhnxcYyyI"
+                                    },
+                                    {
+                                        "id": "kDw2leu34XM"
+                                    }
+                                ],
                                 "id": "TafgHfMvqW7"
                             },
                             {
@@ -359,6 +449,14 @@
                                 },
                                 "orgUnitField": "WJ1j79Dlubx",
                                 "analyticsType": "EVENT",
+                                "analyticsPeriodBoundaries": [
+                                    {
+                                        "id": "ogwwOlQzjpf"
+                                    },
+                                    {
+                                        "id": "kri1Cn2kFUH"
+                                    }
+                                ],
                                 "id": "eSWGLPCy2ZK"
                             },
                             {
@@ -367,6 +465,14 @@
                                     "id": "lAcD9QrX1xQ"
                                 },
                                 "analyticsType": "EVENT",
+                                "analyticsPeriodBoundaries": [
+                                    {
+                                        "id": "ifZ0wDxMMIr"
+                                    },
+                                    {
+                                        "id": "fVleo64GwdT"
+                                    }
+                                ],
                                 "id": "NTvweRnHeLC"
                             },
                             {
@@ -376,6 +482,14 @@
                                 },
                                 "orgUnitField": "ENROLLMENT",
                                 "analyticsType": "EVENT",
+                                "analyticsPeriodBoundaries": [
+                                    {
+                                        "id": "nEXl4ZLTShE"
+                                    },
+                                    {
+                                        "id": "slmobGuSY4K"
+                                    }
+                                ],
                                 "id": "nYG1z4dFVnX"
                             }
                         ]
@@ -648,16 +762,78 @@
                 }
             ]
         },
-        "2.41.11-SNAPSHOT": {
-            "instance": "dev-2-41",
-            "date": "2026-10-05",
+        "2.40.13-SNAPSHOT": {
+            "instance": "dev-2-40",
+            "date": "2026-10-08",
             "requests": [
                 {
                     "name": "dataElements",
-                    "path": "/api/dataElements.json?filter=code:$like:PTT_G3&fields=id,code,name,aggregationType,valueType,domainType,dataSetElements[dataSet[id,periodType]]&paging=false&order=code:asc",
+                    "path": "/api/dataElements.json?filter=code:$like:PTT_G3&filter=code:$like:PTT_DIS&rootJunction=OR&fields=id,code,name,aggregationType,valueType,domainType,categoryCombo[id],dataSetElements[dataSet[id,periodType],categoryCombo[id]]&paging=false&order=code:asc",
                     "httpStatus": 200,
                     "response": {
                         "dataElements": [
+                            {
+                                "code": "PTT_DIS_BOTH",
+                                "name": "PTT disaggregation both",
+                                "aggregationType": "SUM",
+                                "valueType": "INTEGER",
+                                "domainType": "AGGREGATE",
+                                "dataSetElements": [
+                                    {
+                                        "dataSet": {
+                                            "periodType": "Quarterly",
+                                            "id": "DMfYb9cbUwP"
+                                        },
+                                        "categoryCombo": {
+                                            "id": "GFe8Z3ErDol"
+                                        }
+                                    },
+                                    {
+                                        "dataSet": {
+                                            "periodType": "Monthly",
+                                            "id": "MTEN4XmC0k3"
+                                        },
+                                        "categoryCombo": {
+                                            "id": "EyESnzDvcwh"
+                                        }
+                                    }
+                                ],
+                                "id": "wrXAErJOkRS",
+                                "categoryCombo": {
+                                    "id": "EyESnzDvcwh"
+                                }
+                            },
+                            {
+                                "code": "PTT_DIS_PLACE",
+                                "name": "PTT disaggregation place",
+                                "aggregationType": "SUM",
+                                "valueType": "INTEGER",
+                                "domainType": "AGGREGATE",
+                                "dataSetElements": [
+                                    {
+                                        "dataSet": {
+                                            "periodType": "Monthly",
+                                            "id": "NlZrxX5S0X8"
+                                        },
+                                        "categoryCombo": {
+                                            "id": "EyESnzDvcwh"
+                                        }
+                                    },
+                                    {
+                                        "dataSet": {
+                                            "periodType": "Quarterly",
+                                            "id": "Ij6jwq1Ceiq"
+                                        },
+                                        "categoryCombo": {
+                                            "id": "GFe8Z3ErDol"
+                                        }
+                                    }
+                                ],
+                                "id": "T4Gk4A7PTRJ",
+                                "categoryCombo": {
+                                    "id": "EyESnzDvcwh"
+                                }
+                            },
                             {
                                 "code": "PTT_G3_HISTORY",
                                 "name": "PTT G3 history",
@@ -672,7 +848,10 @@
                                         }
                                     }
                                 ],
-                                "id": "hR0FkmDKXvh"
+                                "id": "hR0FkmDKXvh",
+                                "categoryCombo": {
+                                    "id": "bjDvmb4bfuf"
+                                }
                             },
                             {
                                 "code": "PTT_G3_MW",
@@ -683,18 +862,21 @@
                                 "dataSetElements": [
                                     {
                                         "dataSet": {
-                                            "periodType": "Weekly",
-                                            "id": "YlravvdHwIj"
+                                            "periodType": "WeeklyWednesday",
+                                            "id": "wRXyMvEnlyA"
                                         }
                                     },
                                     {
                                         "dataSet": {
-                                            "periodType": "WeeklyWednesday",
-                                            "id": "wRXyMvEnlyA"
+                                            "periodType": "Weekly",
+                                            "id": "YlravvdHwIj"
                                         }
                                     }
                                 ],
-                                "id": "hbv3rzk8Fne"
+                                "id": "hbv3rzk8Fne",
+                                "categoryCombo": {
+                                    "id": "bjDvmb4bfuf"
+                                }
                             },
                             {
                                 "code": "PTT_G3_ORPHAN",
@@ -703,29 +885,10 @@
                                 "valueType": "INTEGER",
                                 "domainType": "AGGREGATE",
                                 "dataSetElements": [],
-                                "id": "idqEIJ4ahkB"
-                            },
-                            {
-                                "code": "PTT_G3_PLACE",
-                                "name": "PTT G3 place",
-                                "aggregationType": "SUM",
-                                "valueType": "INTEGER",
-                                "domainType": "AGGREGATE",
-                                "dataSetElements": [
-                                    {
-                                        "dataSet": {
-                                            "periodType": "Weekly",
-                                            "id": "EBLMCfwOuUT"
-                                        }
-                                    },
-                                    {
-                                        "dataSet": {
-                                            "periodType": "Monthly",
-                                            "id": "Zp46A37uZSE"
-                                        }
-                                    }
-                                ],
-                                "id": "Z6EUgky36Mv"
+                                "id": "idqEIJ4ahkB",
+                                "categoryCombo": {
+                                    "id": "bjDvmb4bfuf"
+                                }
                             }
                         ]
                     }
@@ -911,6 +1074,39 @@
                     }
                 },
                 {
+                    "name": "categoryOptionCombos",
+                    "path": "/api/categoryOptionCombos.json?filter=id:in:[HllvX50cXC0,l6y6maQF8He,eUlTvjHxjZF,MHtSLMctHku,eHq7UQzuwBc]&fields=id,categoryCombo[id]&paging=false&order=id:asc",
+                    "httpStatus": 200,
+                    "response": {
+                        "categoryOptionCombos": [
+                            {
+                                "categoryCombo": {
+                                    "id": "GFe8Z3ErDol"
+                                },
+                                "id": "eHq7UQzuwBc"
+                            },
+                            {
+                                "categoryCombo": {
+                                    "id": "EyESnzDvcwh"
+                                },
+                                "id": "eUlTvjHxjZF"
+                            },
+                            {
+                                "categoryCombo": {
+                                    "id": "bjDvmb4bfuf"
+                                },
+                                "id": "HllvX50cXC0"
+                            },
+                            {
+                                "categoryCombo": {
+                                    "id": "EyESnzDvcwh"
+                                },
+                                "id": "l6y6maQF8He"
+                            }
+                        ]
+                    }
+                },
+                {
                     "name": "dataElements-aggregationLevels",
                     "path": "/api/dataElements.json?filter=code:$like:PTT_OU_AGG&fields=id,code,aggregationType,aggregationLevels,dataSetElements[dataSet[id,periodType]]&paging=false&order=code:asc",
                     "httpStatus": 200,
@@ -986,7 +1182,7 @@
                 },
                 {
                     "name": "programIndicators",
-                    "path": "/api/programIndicators.json?filter=code:$like:PTT_PROG&fields=id,code,program[id],orgUnitField,analyticsType&paging=false&order=code:asc",
+                    "path": "/api/programIndicators.json?filter=code:$like:PTT_PROG&fields=id,code,program[id],orgUnitField,analyticsType,analyticsPeriodBoundaries[id]&paging=false&order=code:asc",
                     "httpStatus": 200,
                     "response": {
                         "programIndicators": [
@@ -996,6 +1192,14 @@
                                     "id": "KfzRtyEQHht"
                                 },
                                 "analyticsType": "EVENT",
+                                "analyticsPeriodBoundaries": [
+                                    {
+                                        "id": "bWpbLkGvMKg"
+                                    },
+                                    {
+                                        "id": "mZ1I42oazPW"
+                                    }
+                                ],
                                 "id": "TafgHfMvqW7"
                             },
                             {
@@ -1005,6 +1209,14 @@
                                 },
                                 "orgUnitField": "WJ1j79Dlubx",
                                 "analyticsType": "EVENT",
+                                "analyticsPeriodBoundaries": [
+                                    {
+                                        "id": "e4IqFCIyS16"
+                                    },
+                                    {
+                                        "id": "G6VzwEZNJQw"
+                                    }
+                                ],
                                 "id": "eSWGLPCy2ZK"
                             },
                             {
@@ -1013,6 +1225,14 @@
                                     "id": "lAcD9QrX1xQ"
                                 },
                                 "analyticsType": "EVENT",
+                                "analyticsPeriodBoundaries": [
+                                    {
+                                        "id": "akf2L8cHjCy"
+                                    },
+                                    {
+                                        "id": "ji7ahoeSEkz"
+                                    }
+                                ],
                                 "id": "NTvweRnHeLC"
                             },
                             {
@@ -1022,6 +1242,771 @@
                                 },
                                 "orgUnitField": "ENROLLMENT",
                                 "analyticsType": "EVENT",
+                                "analyticsPeriodBoundaries": [
+                                    {
+                                        "id": "D9wSbYZ4ZIE"
+                                    },
+                                    {
+                                        "id": "TXaApL4lGhD"
+                                    }
+                                ],
+                                "id": "nYG1z4dFVnX"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "name": "programs",
+                    "path": "/api/programs.json?filter=code:$like:PTT_PROG&fields=id,code,programType&paging=false&order=code:asc",
+                    "httpStatus": 200,
+                    "response": {
+                        "programs": [
+                            {
+                                "code": "PTT_PROG_EVENT",
+                                "programType": "WITHOUT_REGISTRATION",
+                                "id": "KfzRtyEQHht"
+                            },
+                            {
+                                "code": "PTT_PROG_TRACKER",
+                                "programType": "WITH_REGISTRATION",
+                                "id": "lAcD9QrX1xQ"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "name": "organisationUnitLevels",
+                    "path": "/api/organisationUnitLevels.json?fields=id,level,displayName&paging=false&order=level:asc",
+                    "httpStatus": 200,
+                    "response": {
+                        "organisationUnitLevels": [
+                            {
+                                "level": 1,
+                                "displayName": "National",
+                                "id": "H1KlN4QIauv"
+                            },
+                            {
+                                "level": 2,
+                                "displayName": "District",
+                                "id": "wjP19dkFeIk"
+                            },
+                            {
+                                "level": 3,
+                                "displayName": "Chiefdom",
+                                "id": "tTUf91fCytl"
+                            },
+                            {
+                                "level": 4,
+                                "displayName": "Facility",
+                                "id": "m9lBJogzE95"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "name": "count-level",
+                    "path": "/api/organisationUnits.json?filter=level:eq:4&fields=id&pageSize=1",
+                    "httpStatus": 200,
+                    "response": {
+                        "pager": {
+                            "page": 1,
+                            "total": 1169,
+                            "pageSize": 1,
+                            "nextPage": "https://play.im.dhis2.org/dev-2-40/api/organisationUnits.json?page=2&pageSize=1&filter=level%3Aeq%3A4&fields=id",
+                            "pageCount": 1169
+                        },
+                        "organisationUnits": [
+                            {
+                                "id": "Rp268JB6Ne4"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "name": "count-path",
+                    "path": "/api/organisationUnits.json?filter=path:like:RIinNUb6rg7&fields=id&pageSize=1",
+                    "httpStatus": 200,
+                    "response": {
+                        "pager": {
+                            "page": 1,
+                            "total": 9,
+                            "pageSize": 1,
+                            "nextPage": "https://play.im.dhis2.org/dev-2-40/api/organisationUnits.json?page=2&pageSize=1&filter=path%3Alike%3ARIinNUb6rg7&fields=id",
+                            "pageCount": 9
+                        },
+                        "organisationUnits": [
+                            {
+                                "id": "Zkx2DMsGgi0"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "name": "count-dataSet",
+                    "path": "/api/organisationUnits.json?filter=dataSets.id:eq:v200HCJsE6E&fields=id&pageSize=1",
+                    "httpStatus": 200,
+                    "response": {
+                        "pager": {
+                            "page": 1,
+                            "total": 2,
+                            "pageSize": 1,
+                            "nextPage": "https://play.im.dhis2.org/dev-2-40/api/organisationUnits.json?page=2&pageSize=1&filter=dataSets.id%3Aeq%3Av200HCJsE6E&fields=id",
+                            "pageCount": 2
+                        },
+                        "organisationUnits": [
+                            {
+                                "id": "tsmDjF9bxzK"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "name": "count-program",
+                    "path": "/api/organisationUnits.json?filter=programs.id:eq:KfzRtyEQHht&fields=id&pageSize=1",
+                    "httpStatus": 200,
+                    "response": {
+                        "pager": {
+                            "page": 1,
+                            "total": 2,
+                            "pageSize": 1,
+                            "nextPage": "https://play.im.dhis2.org/dev-2-40/api/organisationUnits.json?page=2&pageSize=1&filter=programs.id%3Aeq%3AKfzRtyEQHht&fields=id",
+                            "pageCount": 2
+                        },
+                        "organisationUnits": [
+                            {
+                                "id": "tsmDjF9bxzK"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "name": "count-ids",
+                    "path": "/api/organisationUnits.json?filter=id:in:[tsmDjF9bxzK,YcWWJD42rFM,THU3mEbE4b6]&fields=id&pageSize=1",
+                    "httpStatus": 200,
+                    "response": {
+                        "pager": {
+                            "page": 1,
+                            "total": 3,
+                            "pageSize": 1,
+                            "nextPage": "https://play.im.dhis2.org/dev-2-40/api/organisationUnits.json?page=2&pageSize=1&filter=id%3Ain%3A%5BtsmDjF9bxzK%2CYcWWJD42rFM%2CTHU3mEbE4b6%5D&fields=id",
+                            "pageCount": 3
+                        },
+                        "organisationUnits": [
+                            {
+                                "id": "THU3mEbE4b6"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "name": "count-group",
+                    "path": "/api/organisationUnits.json?filter=organisationUnitGroups.id:eq:VSMvSA8RdOa&fields=id&pageSize=1",
+                    "httpStatus": 200,
+                    "response": {
+                        "pager": {
+                            "page": 1,
+                            "total": 2,
+                            "pageSize": 1,
+                            "nextPage": "https://play.im.dhis2.org/dev-2-40/api/organisationUnits.json?page=2&pageSize=1&filter=organisationUnitGroups.id%3Aeq%3AVSMvSA8RdOa&fields=id",
+                            "pageCount": 2
+                        },
+                        "organisationUnits": [
+                            {
+                                "id": "ZBm5vBRXjeH"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "name": "count-grandparent-in-group",
+                    "path": "/api/organisationUnits.json?filter=parent.parent.organisationUnitGroups.id:eq:TTEvM2Zx7wF&fields=id&pageSize=1",
+                    "httpStatus": 200,
+                    "response": {
+                        "pager": {
+                            "page": 1,
+                            "total": 3,
+                            "pageSize": 1,
+                            "nextPage": "https://play.im.dhis2.org/dev-2-40/api/organisationUnits.json?page=2&pageSize=1&filter=parent.parent.organisationUnitGroups.id%3Aeq%3ATTEvM2Zx7wF&fields=id",
+                            "pageCount": 3
+                        },
+                        "organisationUnits": [
+                            {
+                                "id": "tsmDjF9bxzK"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "name": "count-grandparent-in-group-none",
+                    "path": "/api/organisationUnits.json?filter=parent.parent.organisationUnitGroups.id:eq:VSMvSA8RdOa&fields=id&pageSize=1",
+                    "httpStatus": 200,
+                    "response": {
+                        "pager": {
+                            "page": 1,
+                            "total": 0,
+                            "pageSize": 1,
+                            "pageCount": 0
+                        },
+                        "organisationUnits": []
+                    }
+                },
+                {
+                    "name": "count-child-in-group",
+                    "path": "/api/organisationUnits.json?filter=children.organisationUnitGroups.id:eq:VSMvSA8RdOa&fields=id&pageSize=1",
+                    "httpStatus": 200,
+                    "response": {
+                        "pager": {
+                            "page": 1,
+                            "total": 2,
+                            "pageSize": 1,
+                            "nextPage": "https://play.im.dhis2.org/dev-2-40/api/organisationUnits.json?page=2&pageSize=1&filter=children.organisationUnitGroups.id%3Aeq%3AVSMvSA8RdOa&fields=id",
+                            "pageCount": 2
+                        },
+                        "organisationUnits": [
+                            {
+                                "id": "Zkx2DMsGgi0"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "name": "list-assigned-ancestors",
+                    "path": "/api/organisationUnits.json?filter=id:in:[tsmDjF9bxzK,Zkx2DMsGgi0,RIinNUb6rg7]&filter=dataSets.id:eq:pRfTWd7fDDO&fields=id&paging=false",
+                    "httpStatus": 200,
+                    "response": {
+                        "organisationUnits": [
+                            {
+                                "id": "Zkx2DMsGgi0"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "name": "me",
+                    "path": "/api/me.json?fields=organisationUnits[id,level,path],dataViewOrganisationUnits[id,level,path]",
+                    "httpStatus": 200,
+                    "response": {
+                        "dataViewOrganisationUnits": [],
+                        "organisationUnits": [
+                            {
+                                "path": "/ImspTQPwCqd",
+                                "id": "ImspTQPwCqd",
+                                "level": 1
+                            }
+                        ]
+                    }
+                },
+                {
+                    "name": "me-ptt-user",
+                    "path": "/api/me.json?fields=organisationUnits[id,level,path],dataViewOrganisationUnits[id,level,path]",
+                    "httpStatus": 200,
+                    "response": {
+                        "dataViewOrganisationUnits": [
+                            {
+                                "path": "/ImspTQPwCqd/RIinNUb6rg7",
+                                "id": "RIinNUb6rg7",
+                                "level": 2
+                            }
+                        ],
+                        "organisationUnits": [
+                            {
+                                "path": "/ImspTQPwCqd/RIinNUb6rg7",
+                                "id": "RIinNUb6rg7",
+                                "level": 2
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "2.41.11-SNAPSHOT": {
+            "instance": "dev-2-41",
+            "date": "2026-10-08",
+            "requests": [
+                {
+                    "name": "dataElements",
+                    "path": "/api/dataElements.json?filter=code:$like:PTT_G3&filter=code:$like:PTT_DIS&rootJunction=OR&fields=id,code,name,aggregationType,valueType,domainType,categoryCombo[id],dataSetElements[dataSet[id,periodType],categoryCombo[id]]&paging=false&order=code:asc",
+                    "httpStatus": 200,
+                    "response": {
+                        "dataElements": [
+                            {
+                                "code": "PTT_DIS_BOTH",
+                                "name": "PTT disaggregation both",
+                                "aggregationType": "SUM",
+                                "valueType": "INTEGER",
+                                "domainType": "AGGREGATE",
+                                "dataSetElements": [
+                                    {
+                                        "dataSet": {
+                                            "periodType": "Monthly",
+                                            "id": "MTEN4XmC0k3"
+                                        },
+                                        "categoryCombo": {
+                                            "id": "EyESnzDvcwh"
+                                        }
+                                    },
+                                    {
+                                        "dataSet": {
+                                            "periodType": "Quarterly",
+                                            "id": "DMfYb9cbUwP"
+                                        },
+                                        "categoryCombo": {
+                                            "id": "GFe8Z3ErDol"
+                                        }
+                                    }
+                                ],
+                                "id": "wrXAErJOkRS",
+                                "categoryCombo": {
+                                    "id": "EyESnzDvcwh"
+                                }
+                            },
+                            {
+                                "code": "PTT_DIS_PLACE",
+                                "name": "PTT disaggregation place",
+                                "aggregationType": "SUM",
+                                "valueType": "INTEGER",
+                                "domainType": "AGGREGATE",
+                                "dataSetElements": [
+                                    {
+                                        "dataSet": {
+                                            "periodType": "Monthly",
+                                            "id": "NlZrxX5S0X8"
+                                        },
+                                        "categoryCombo": {
+                                            "id": "EyESnzDvcwh"
+                                        }
+                                    },
+                                    {
+                                        "dataSet": {
+                                            "periodType": "Quarterly",
+                                            "id": "Ij6jwq1Ceiq"
+                                        },
+                                        "categoryCombo": {
+                                            "id": "GFe8Z3ErDol"
+                                        }
+                                    }
+                                ],
+                                "id": "T4Gk4A7PTRJ",
+                                "categoryCombo": {
+                                    "id": "EyESnzDvcwh"
+                                }
+                            },
+                            {
+                                "code": "PTT_G3_HISTORY",
+                                "name": "PTT G3 history",
+                                "aggregationType": "SUM",
+                                "valueType": "INTEGER",
+                                "domainType": "AGGREGATE",
+                                "dataSetElements": [
+                                    {
+                                        "dataSet": {
+                                            "periodType": "Weekly",
+                                            "id": "V0tylPzEYrt"
+                                        }
+                                    }
+                                ],
+                                "id": "hR0FkmDKXvh",
+                                "categoryCombo": {
+                                    "id": "bjDvmb4bfuf"
+                                }
+                            },
+                            {
+                                "code": "PTT_G3_MW",
+                                "name": "PTT G3 mw",
+                                "aggregationType": "SUM",
+                                "valueType": "INTEGER",
+                                "domainType": "AGGREGATE",
+                                "dataSetElements": [
+                                    {
+                                        "dataSet": {
+                                            "periodType": "Weekly",
+                                            "id": "YlravvdHwIj"
+                                        }
+                                    },
+                                    {
+                                        "dataSet": {
+                                            "periodType": "WeeklyWednesday",
+                                            "id": "wRXyMvEnlyA"
+                                        }
+                                    }
+                                ],
+                                "id": "hbv3rzk8Fne",
+                                "categoryCombo": {
+                                    "id": "bjDvmb4bfuf"
+                                }
+                            },
+                            {
+                                "code": "PTT_G3_ORPHAN",
+                                "name": "PTT G3 orphan",
+                                "aggregationType": "SUM",
+                                "valueType": "INTEGER",
+                                "domainType": "AGGREGATE",
+                                "dataSetElements": [],
+                                "id": "idqEIJ4ahkB",
+                                "categoryCombo": {
+                                    "id": "bjDvmb4bfuf"
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "name": "indicators",
+                    "path": "/api/indicators.json?filter=code:$like:PTT_G4&fields=id,code,name,numerator,denominator,annualized,indicatorType[id,factor]&paging=false&order=code:asc",
+                    "httpStatus": 200,
+                    "response": {
+                        "indicators": [
+                            {
+                                "code": "PTT_G4_IND_CONSTANT",
+                                "name": "PTT G4 indicator constant",
+                                "annualized": false,
+                                "indicatorType": {
+                                    "factor": 1,
+                                    "id": "c6blltlrGIm"
+                                },
+                                "numerator": "C{Wi6GdGCugf3}",
+                                "denominator": "1",
+                                "id": "CF8eNia3IC2"
+                            },
+                            {
+                                "code": "PTT_G4_IND_COVERAGE_AVERAGED",
+                                "name": "PTT G4 indicator coverage-averaged",
+                                "annualized": false,
+                                "indicatorType": {
+                                    "factor": 1,
+                                    "id": "c6blltlrGIm"
+                                },
+                                "numerator": "#{BeN8IzxwwJF}",
+                                "denominator": "#{UB785RAqE9h}",
+                                "id": "BZznfLUT5h4"
+                            },
+                            {
+                                "code": "PTT_G4_IND_COVERAGE_AVERAGED_ANNUALIZED",
+                                "name": "PTT G4 indicator coverage-averaged-annualized",
+                                "annualized": true,
+                                "indicatorType": {
+                                    "factor": 1,
+                                    "id": "c6blltlrGIm"
+                                },
+                                "numerator": "#{BeN8IzxwwJF}",
+                                "denominator": "#{UB785RAqE9h}",
+                                "id": "LQIWkVZzf5R"
+                            },
+                            {
+                                "code": "PTT_G4_IND_COVERAGE_SUMMED",
+                                "name": "PTT G4 indicator coverage-summed",
+                                "annualized": false,
+                                "indicatorType": {
+                                    "factor": 1,
+                                    "id": "c6blltlrGIm"
+                                },
+                                "numerator": "#{BeN8IzxwwJF}",
+                                "denominator": "#{nxyiifFYsbc}",
+                                "id": "xA7tYxOjjM3"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "name": "dataSets",
+                    "path": "/api/dataSets.json?filter=code:$like:PTT_G5&fields=id,code,periodType,dataSetElements[dataElement[id]]&paging=false&order=code:asc",
+                    "httpStatus": 200,
+                    "response": {
+                        "dataSets": [
+                            {
+                                "code": "PTT_G5_DS_Daily",
+                                "periodType": "Daily",
+                                "dataSetElements": [
+                                    {
+                                        "dataElement": {
+                                            "id": "fUFgSP0AtUj"
+                                        }
+                                    }
+                                ],
+                                "id": "WE8srTzzhBZ"
+                            },
+                            {
+                                "code": "PTT_G5_DS_Monthly",
+                                "periodType": "Monthly",
+                                "dataSetElements": [
+                                    {
+                                        "dataElement": {
+                                            "id": "Nhe8HFuemuw"
+                                        }
+                                    }
+                                ],
+                                "id": "hFQny4kjg5C"
+                            },
+                            {
+                                "code": "PTT_G5_DS_Quarterly",
+                                "periodType": "Quarterly",
+                                "dataSetElements": [
+                                    {
+                                        "dataElement": {
+                                            "id": "Kd94qfjkpYx"
+                                        }
+                                    }
+                                ],
+                                "id": "SYkQTXY6EcA"
+                            },
+                            {
+                                "code": "PTT_G5_DS_Weekly",
+                                "periodType": "Weekly",
+                                "dataSetElements": [
+                                    {
+                                        "dataElement": {
+                                            "id": "AFJ5IID9t6Z"
+                                        }
+                                    }
+                                ],
+                                "id": "S1yLlm7Hk2W"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "name": "expressionDimensionItems",
+                    "path": "/api/expressionDimensionItems.json?filter=code:$like:PTT&fields=id,code,expression,missingValueStrategy&paging=false&order=code:asc",
+                    "httpStatus": 200,
+                    "response": {
+                        "expressionDimensionItems": [
+                            {
+                                "code": "PTT_G4_EXPRESSION",
+                                "expression": "#{BeN8IzxwwJF}*2",
+                                "missingValueStrategy": "SKIP_IF_ALL_VALUES_MISSING",
+                                "id": "gdmRgPhI76J"
+                            },
+                            {
+                                "code": "PTT_G4_EXPRESSION_NEVER_SKIP",
+                                "expression": "#{BeN8IzxwwJF}+#{nxyiifFYsbc}",
+                                "missingValueStrategy": "NEVER_SKIP",
+                                "id": "JzaPFPBpfRB"
+                            },
+                            {
+                                "code": "PTT_G4_EXPRESSION_SKIP_IF_ALL",
+                                "expression": "#{BeN8IzxwwJF}+#{nxyiifFYsbc}",
+                                "missingValueStrategy": "SKIP_IF_ALL_VALUES_MISSING",
+                                "id": "pnmCVrG9qnE"
+                            },
+                            {
+                                "code": "PTT_G4_EXPRESSION_SKIP_IF_ANY",
+                                "expression": "#{BeN8IzxwwJF}+#{nxyiifFYsbc}",
+                                "missingValueStrategy": "SKIP_IF_ANY_VALUE_MISSING",
+                                "id": "XqnQKWKRqzs"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "name": "periodTypes",
+                    "path": "/api/periodTypes.json?fields=name,isoFormat,isoDuration,frequencyOrder",
+                    "httpStatus": 200,
+                    "response": {
+                        "periodTypes": [
+                            {
+                                "name": "Daily",
+                                "isoDuration": "P1D",
+                                "isoFormat": "yyyyMMdd",
+                                "frequencyOrder": 1
+                            },
+                            {
+                                "name": "Weekly",
+                                "isoDuration": "P7D",
+                                "isoFormat": "yyyyWn",
+                                "frequencyOrder": 7
+                            },
+                            {
+                                "name": "WeeklyWednesday",
+                                "isoDuration": "P7D",
+                                "isoFormat": "yyyyWedWn",
+                                "frequencyOrder": 7
+                            },
+                            {
+                                "name": "WeeklyThursday",
+                                "isoDuration": "P7D",
+                                "isoFormat": "yyyyThuWn",
+                                "frequencyOrder": 7
+                            }
+                        ]
+                    }
+                },
+                {
+                    "name": "categoryOptionCombos",
+                    "path": "/api/categoryOptionCombos.json?filter=id:in:[HllvX50cXC0,l6y6maQF8He,eUlTvjHxjZF,MHtSLMctHku,eHq7UQzuwBc]&fields=id,categoryCombo[id]&paging=false&order=id:asc",
+                    "httpStatus": 200,
+                    "response": {
+                        "categoryOptionCombos": [
+                            {
+                                "categoryCombo": {
+                                    "id": "GFe8Z3ErDol"
+                                },
+                                "id": "eHq7UQzuwBc"
+                            },
+                            {
+                                "categoryCombo": {
+                                    "id": "EyESnzDvcwh"
+                                },
+                                "id": "eUlTvjHxjZF"
+                            },
+                            {
+                                "categoryCombo": {
+                                    "id": "bjDvmb4bfuf"
+                                },
+                                "id": "HllvX50cXC0"
+                            },
+                            {
+                                "categoryCombo": {
+                                    "id": "EyESnzDvcwh"
+                                },
+                                "id": "l6y6maQF8He"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "name": "dataElements-aggregationLevels",
+                    "path": "/api/dataElements.json?filter=code:$like:PTT_OU_AGG&fields=id,code,aggregationType,aggregationLevels,dataSetElements[dataSet[id,periodType]]&paging=false&order=code:asc",
+                    "httpStatus": 200,
+                    "response": {
+                        "dataElements": [
+                            {
+                                "code": "PTT_OU_AGG_D1_3",
+                                "aggregationType": "SUM",
+                                "dataSetElements": [
+                                    {
+                                        "dataSet": {
+                                            "periodType": "Monthly",
+                                            "id": "Yo1BsQNngHy"
+                                        }
+                                    }
+                                ],
+                                "aggregationLevels": [
+                                    3
+                                ],
+                                "id": "ZRYrXnbcbjJ"
+                            },
+                            {
+                                "code": "PTT_OU_AGG_F_2",
+                                "aggregationType": "SUM",
+                                "dataSetElements": [
+                                    {
+                                        "dataSet": {
+                                            "periodType": "Monthly",
+                                            "id": "b5xszkgbXVd"
+                                        }
+                                    }
+                                ],
+                                "aggregationLevels": [
+                                    2
+                                ],
+                                "id": "RNhL3JmLlC0"
+                            },
+                            {
+                                "code": "PTT_OU_AGG_F_2_3",
+                                "aggregationType": "SUM",
+                                "dataSetElements": [
+                                    {
+                                        "dataSet": {
+                                            "periodType": "Monthly",
+                                            "id": "CGAbAPpLZTo"
+                                        }
+                                    }
+                                ],
+                                "aggregationLevels": [
+                                    2,
+                                    3
+                                ],
+                                "id": "WZ6aknVLD9A"
+                            },
+                            {
+                                "code": "PTT_OU_AGG_F_3",
+                                "aggregationType": "SUM",
+                                "dataSetElements": [
+                                    {
+                                        "dataSet": {
+                                            "periodType": "Monthly",
+                                            "id": "dM4sBCBFDDC"
+                                        }
+                                    }
+                                ],
+                                "aggregationLevels": [
+                                    3
+                                ],
+                                "id": "FPp01mLrknd"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "name": "programIndicators",
+                    "path": "/api/programIndicators.json?filter=code:$like:PTT_PROG&fields=id,code,program[id],orgUnitField,analyticsType,analyticsPeriodBoundaries[id]&paging=false&order=code:asc",
+                    "httpStatus": 200,
+                    "response": {
+                        "programIndicators": [
+                            {
+                                "code": "PTT_PROG_PI_EVENT",
+                                "program": {
+                                    "id": "KfzRtyEQHht"
+                                },
+                                "analyticsType": "EVENT",
+                                "analyticsPeriodBoundaries": [
+                                    {
+                                        "id": "wP2nVYgfVbm"
+                                    },
+                                    {
+                                        "id": "Inea9bXVMNb"
+                                    }
+                                ],
+                                "id": "TafgHfMvqW7"
+                            },
+                            {
+                                "code": "PTT_PROG_PI_EVENT_PLACE",
+                                "program": {
+                                    "id": "KfzRtyEQHht"
+                                },
+                                "orgUnitField": "WJ1j79Dlubx",
+                                "analyticsType": "EVENT",
+                                "analyticsPeriodBoundaries": [
+                                    {
+                                        "id": "N3pw9hyl3Ip"
+                                    },
+                                    {
+                                        "id": "iFDhj2eKVu8"
+                                    }
+                                ],
+                                "id": "eSWGLPCy2ZK"
+                            },
+                            {
+                                "code": "PTT_PROG_PI_TRACKER",
+                                "program": {
+                                    "id": "lAcD9QrX1xQ"
+                                },
+                                "analyticsType": "EVENT",
+                                "analyticsPeriodBoundaries": [
+                                    {
+                                        "id": "vg4mKXrmDqE"
+                                    },
+                                    {
+                                        "id": "rzLulCoTFQ3"
+                                    }
+                                ],
+                                "id": "NTvweRnHeLC"
+                            },
+                            {
+                                "code": "PTT_PROG_PI_TRACKER_ENROLLMENT",
+                                "program": {
+                                    "id": "lAcD9QrX1xQ"
+                                },
+                                "orgUnitField": "ENROLLMENT",
+                                "analyticsType": "EVENT",
+                                "analyticsPeriodBoundaries": [
+                                    {
+                                        "id": "Kcw9g2B9kXx"
+                                    },
+                                    {
+                                        "id": "xcv73v0DPgF"
+                                    }
+                                ],
                                 "id": "nYG1z4dFVnX"
                             }
                         ]
@@ -1293,14 +2278,76 @@
         },
         "2.42.7-SNAPSHOT": {
             "instance": "dev-2-42",
-            "date": "2026-10-05",
+            "date": "2026-10-08",
             "requests": [
                 {
                     "name": "dataElements",
-                    "path": "/api/dataElements.json?filter=code:$like:PTT_G3&fields=id,code,name,aggregationType,valueType,domainType,dataSetElements[dataSet[id,periodType]]&paging=false&order=code:asc",
+                    "path": "/api/dataElements.json?filter=code:$like:PTT_G3&filter=code:$like:PTT_DIS&rootJunction=OR&fields=id,code,name,aggregationType,valueType,domainType,categoryCombo[id],dataSetElements[dataSet[id,periodType],categoryCombo[id]]&paging=false&order=code:asc",
                     "httpStatus": 200,
                     "response": {
                         "dataElements": [
+                            {
+                                "code": "PTT_DIS_BOTH",
+                                "name": "PTT disaggregation both",
+                                "aggregationType": "SUM",
+                                "valueType": "INTEGER",
+                                "domainType": "AGGREGATE",
+                                "dataSetElements": [
+                                    {
+                                        "dataSet": {
+                                            "periodType": "Monthly",
+                                            "id": "MTEN4XmC0k3"
+                                        },
+                                        "categoryCombo": {
+                                            "id": "EyESnzDvcwh"
+                                        }
+                                    },
+                                    {
+                                        "dataSet": {
+                                            "periodType": "Quarterly",
+                                            "id": "DMfYb9cbUwP"
+                                        },
+                                        "categoryCombo": {
+                                            "id": "GFe8Z3ErDol"
+                                        }
+                                    }
+                                ],
+                                "id": "wrXAErJOkRS",
+                                "categoryCombo": {
+                                    "id": "EyESnzDvcwh"
+                                }
+                            },
+                            {
+                                "code": "PTT_DIS_PLACE",
+                                "name": "PTT disaggregation place",
+                                "aggregationType": "SUM",
+                                "valueType": "INTEGER",
+                                "domainType": "AGGREGATE",
+                                "dataSetElements": [
+                                    {
+                                        "dataSet": {
+                                            "periodType": "Quarterly",
+                                            "id": "Ij6jwq1Ceiq"
+                                        },
+                                        "categoryCombo": {
+                                            "id": "GFe8Z3ErDol"
+                                        }
+                                    },
+                                    {
+                                        "dataSet": {
+                                            "periodType": "Monthly",
+                                            "id": "NlZrxX5S0X8"
+                                        },
+                                        "categoryCombo": {
+                                            "id": "EyESnzDvcwh"
+                                        }
+                                    }
+                                ],
+                                "id": "T4Gk4A7PTRJ",
+                                "categoryCombo": {
+                                    "id": "EyESnzDvcwh"
+                                }
+                            },
                             {
                                 "code": "PTT_G3_HISTORY",
                                 "name": "PTT G3 history",
@@ -1315,7 +2362,10 @@
                                         }
                                     }
                                 ],
-                                "id": "hR0FkmDKXvh"
+                                "id": "hR0FkmDKXvh",
+                                "categoryCombo": {
+                                    "id": "bjDvmb4bfuf"
+                                }
                             },
                             {
                                 "code": "PTT_G3_MW",
@@ -1326,18 +2376,21 @@
                                 "dataSetElements": [
                                     {
                                         "dataSet": {
-                                            "periodType": "Weekly",
-                                            "id": "YlravvdHwIj"
+                                            "periodType": "WeeklyWednesday",
+                                            "id": "wRXyMvEnlyA"
                                         }
                                     },
                                     {
                                         "dataSet": {
-                                            "periodType": "WeeklyWednesday",
-                                            "id": "wRXyMvEnlyA"
+                                            "periodType": "Weekly",
+                                            "id": "YlravvdHwIj"
                                         }
                                     }
                                 ],
-                                "id": "hbv3rzk8Fne"
+                                "id": "hbv3rzk8Fne",
+                                "categoryCombo": {
+                                    "id": "bjDvmb4bfuf"
+                                }
                             },
                             {
                                 "code": "PTT_G3_ORPHAN",
@@ -1346,29 +2399,10 @@
                                 "valueType": "INTEGER",
                                 "domainType": "AGGREGATE",
                                 "dataSetElements": [],
-                                "id": "idqEIJ4ahkB"
-                            },
-                            {
-                                "code": "PTT_G3_PLACE",
-                                "name": "PTT G3 place",
-                                "aggregationType": "SUM",
-                                "valueType": "INTEGER",
-                                "domainType": "AGGREGATE",
-                                "dataSetElements": [
-                                    {
-                                        "dataSet": {
-                                            "periodType": "Weekly",
-                                            "id": "EBLMCfwOuUT"
-                                        }
-                                    },
-                                    {
-                                        "dataSet": {
-                                            "periodType": "Monthly",
-                                            "id": "Zp46A37uZSE"
-                                        }
-                                    }
-                                ],
-                                "id": "Z6EUgky36Mv"
+                                "id": "idqEIJ4ahkB",
+                                "categoryCombo": {
+                                    "id": "bjDvmb4bfuf"
+                                }
                             }
                         ]
                     }
@@ -1554,6 +2588,39 @@
                     }
                 },
                 {
+                    "name": "categoryOptionCombos",
+                    "path": "/api/categoryOptionCombos.json?filter=id:in:[HllvX50cXC0,l6y6maQF8He,eUlTvjHxjZF,MHtSLMctHku,eHq7UQzuwBc]&fields=id,categoryCombo[id]&paging=false&order=id:asc",
+                    "httpStatus": 200,
+                    "response": {
+                        "categoryOptionCombos": [
+                            {
+                                "categoryCombo": {
+                                    "id": "GFe8Z3ErDol"
+                                },
+                                "id": "eHq7UQzuwBc"
+                            },
+                            {
+                                "categoryCombo": {
+                                    "id": "EyESnzDvcwh"
+                                },
+                                "id": "eUlTvjHxjZF"
+                            },
+                            {
+                                "categoryCombo": {
+                                    "id": "bjDvmb4bfuf"
+                                },
+                                "id": "HllvX50cXC0"
+                            },
+                            {
+                                "categoryCombo": {
+                                    "id": "EyESnzDvcwh"
+                                },
+                                "id": "l6y6maQF8He"
+                            }
+                        ]
+                    }
+                },
+                {
                     "name": "dataElements-aggregationLevels",
                     "path": "/api/dataElements.json?filter=code:$like:PTT_OU_AGG&fields=id,code,aggregationType,aggregationLevels,dataSetElements[dataSet[id,periodType]]&paging=false&order=code:asc",
                     "httpStatus": 200,
@@ -1629,7 +2696,7 @@
                 },
                 {
                     "name": "programIndicators",
-                    "path": "/api/programIndicators.json?filter=code:$like:PTT_PROG&fields=id,code,program[id],orgUnitField,analyticsType&paging=false&order=code:asc",
+                    "path": "/api/programIndicators.json?filter=code:$like:PTT_PROG&fields=id,code,program[id],orgUnitField,analyticsType,analyticsPeriodBoundaries[id]&paging=false&order=code:asc",
                     "httpStatus": 200,
                     "response": {
                         "programIndicators": [
@@ -1639,6 +2706,14 @@
                                     "id": "KfzRtyEQHht"
                                 },
                                 "analyticsType": "EVENT",
+                                "analyticsPeriodBoundaries": [
+                                    {
+                                        "id": "ROyKtdN1Ob5"
+                                    },
+                                    {
+                                        "id": "VWAcH9fhyXA"
+                                    }
+                                ],
                                 "id": "TafgHfMvqW7"
                             },
                             {
@@ -1648,6 +2723,14 @@
                                 },
                                 "orgUnitField": "WJ1j79Dlubx",
                                 "analyticsType": "EVENT",
+                                "analyticsPeriodBoundaries": [
+                                    {
+                                        "id": "coovoh5QYa7"
+                                    },
+                                    {
+                                        "id": "YBxA4B0pEhG"
+                                    }
+                                ],
                                 "id": "eSWGLPCy2ZK"
                             },
                             {
@@ -1656,6 +2739,14 @@
                                     "id": "lAcD9QrX1xQ"
                                 },
                                 "analyticsType": "EVENT",
+                                "analyticsPeriodBoundaries": [
+                                    {
+                                        "id": "JjPtC5h0wFG"
+                                    },
+                                    {
+                                        "id": "YEfaD4k98Sg"
+                                    }
+                                ],
                                 "id": "NTvweRnHeLC"
                             },
                             {
@@ -1665,6 +2756,14 @@
                                 },
                                 "orgUnitField": "ENROLLMENT",
                                 "analyticsType": "EVENT",
+                                "analyticsPeriodBoundaries": [
+                                    {
+                                        "id": "Hv5fbUh1n1U"
+                                    },
+                                    {
+                                        "id": "JuYOPkPPJ02"
+                                    }
+                                ],
                                 "id": "nYG1z4dFVnX"
                             }
                         ]
@@ -1936,14 +3035,76 @@
         },
         "2.43.3-SNAPSHOT": {
             "instance": "dev-2-43",
-            "date": "2026-10-05",
+            "date": "2026-10-08",
             "requests": [
                 {
                     "name": "dataElements",
-                    "path": "/api/dataElements.json?filter=code:$like:PTT_G3&fields=id,code,name,aggregationType,valueType,domainType,dataSetElements[dataSet[id,periodType]]&paging=false&order=code:asc",
+                    "path": "/api/dataElements.json?filter=code:$like:PTT_G3&filter=code:$like:PTT_DIS&rootJunction=OR&fields=id,code,name,aggregationType,valueType,domainType,categoryCombo[id],dataSetElements[dataSet[id,periodType],categoryCombo[id]]&paging=false&order=code:asc",
                     "httpStatus": 200,
                     "response": {
                         "dataElements": [
+                            {
+                                "code": "PTT_DIS_BOTH",
+                                "name": "PTT disaggregation both",
+                                "aggregationType": "SUM",
+                                "valueType": "INTEGER",
+                                "domainType": "AGGREGATE",
+                                "dataSetElements": [
+                                    {
+                                        "dataSet": {
+                                            "periodType": "Monthly",
+                                            "id": "MTEN4XmC0k3"
+                                        },
+                                        "categoryCombo": {
+                                            "id": "EyESnzDvcwh"
+                                        }
+                                    },
+                                    {
+                                        "dataSet": {
+                                            "periodType": "Quarterly",
+                                            "id": "DMfYb9cbUwP"
+                                        },
+                                        "categoryCombo": {
+                                            "id": "GFe8Z3ErDol"
+                                        }
+                                    }
+                                ],
+                                "id": "wrXAErJOkRS",
+                                "categoryCombo": {
+                                    "id": "EyESnzDvcwh"
+                                }
+                            },
+                            {
+                                "code": "PTT_DIS_PLACE",
+                                "name": "PTT disaggregation place",
+                                "aggregationType": "SUM",
+                                "valueType": "INTEGER",
+                                "domainType": "AGGREGATE",
+                                "dataSetElements": [
+                                    {
+                                        "dataSet": {
+                                            "periodType": "Monthly",
+                                            "id": "NlZrxX5S0X8"
+                                        },
+                                        "categoryCombo": {
+                                            "id": "EyESnzDvcwh"
+                                        }
+                                    },
+                                    {
+                                        "dataSet": {
+                                            "periodType": "Quarterly",
+                                            "id": "Ij6jwq1Ceiq"
+                                        },
+                                        "categoryCombo": {
+                                            "id": "GFe8Z3ErDol"
+                                        }
+                                    }
+                                ],
+                                "id": "T4Gk4A7PTRJ",
+                                "categoryCombo": {
+                                    "id": "EyESnzDvcwh"
+                                }
+                            },
                             {
                                 "code": "PTT_G3_HISTORY",
                                 "name": "PTT G3 history",
@@ -1958,7 +3119,10 @@
                                         }
                                     }
                                 ],
-                                "id": "hR0FkmDKXvh"
+                                "id": "hR0FkmDKXvh",
+                                "categoryCombo": {
+                                    "id": "bjDvmb4bfuf"
+                                }
                             },
                             {
                                 "code": "PTT_G3_MW",
@@ -1980,7 +3144,10 @@
                                         }
                                     }
                                 ],
-                                "id": "hbv3rzk8Fne"
+                                "id": "hbv3rzk8Fne",
+                                "categoryCombo": {
+                                    "id": "bjDvmb4bfuf"
+                                }
                             },
                             {
                                 "code": "PTT_G3_ORPHAN",
@@ -1989,29 +3156,10 @@
                                 "valueType": "INTEGER",
                                 "domainType": "AGGREGATE",
                                 "dataSetElements": [],
-                                "id": "idqEIJ4ahkB"
-                            },
-                            {
-                                "code": "PTT_G3_PLACE",
-                                "name": "PTT G3 place",
-                                "aggregationType": "SUM",
-                                "valueType": "INTEGER",
-                                "domainType": "AGGREGATE",
-                                "dataSetElements": [
-                                    {
-                                        "dataSet": {
-                                            "periodType": "Monthly",
-                                            "id": "Zp46A37uZSE"
-                                        }
-                                    },
-                                    {
-                                        "dataSet": {
-                                            "periodType": "Weekly",
-                                            "id": "EBLMCfwOuUT"
-                                        }
-                                    }
-                                ],
-                                "id": "Z6EUgky36Mv"
+                                "id": "idqEIJ4ahkB",
+                                "categoryCombo": {
+                                    "id": "bjDvmb4bfuf"
+                                }
                             }
                         ]
                     }
@@ -2197,6 +3345,39 @@
                     }
                 },
                 {
+                    "name": "categoryOptionCombos",
+                    "path": "/api/categoryOptionCombos.json?filter=id:in:[HllvX50cXC0,l6y6maQF8He,eUlTvjHxjZF,MHtSLMctHku,eHq7UQzuwBc]&fields=id,categoryCombo[id]&paging=false&order=id:asc",
+                    "httpStatus": 200,
+                    "response": {
+                        "categoryOptionCombos": [
+                            {
+                                "categoryCombo": {
+                                    "id": "GFe8Z3ErDol"
+                                },
+                                "id": "eHq7UQzuwBc"
+                            },
+                            {
+                                "categoryCombo": {
+                                    "id": "EyESnzDvcwh"
+                                },
+                                "id": "eUlTvjHxjZF"
+                            },
+                            {
+                                "categoryCombo": {
+                                    "id": "bjDvmb4bfuf"
+                                },
+                                "id": "HllvX50cXC0"
+                            },
+                            {
+                                "categoryCombo": {
+                                    "id": "EyESnzDvcwh"
+                                },
+                                "id": "l6y6maQF8He"
+                            }
+                        ]
+                    }
+                },
+                {
                     "name": "dataElements-aggregationLevels",
                     "path": "/api/dataElements.json?filter=code:$like:PTT_OU_AGG&fields=id,code,aggregationType,aggregationLevels,dataSetElements[dataSet[id,periodType]]&paging=false&order=code:asc",
                     "httpStatus": 200,
@@ -2272,7 +3453,7 @@
                 },
                 {
                     "name": "programIndicators",
-                    "path": "/api/programIndicators.json?filter=code:$like:PTT_PROG&fields=id,code,program[id],orgUnitField,analyticsType&paging=false&order=code:asc",
+                    "path": "/api/programIndicators.json?filter=code:$like:PTT_PROG&fields=id,code,program[id],orgUnitField,analyticsType,analyticsPeriodBoundaries[id]&paging=false&order=code:asc",
                     "httpStatus": 200,
                     "response": {
                         "programIndicators": [
@@ -2282,6 +3463,14 @@
                                     "id": "KfzRtyEQHht"
                                 },
                                 "analyticsType": "EVENT",
+                                "analyticsPeriodBoundaries": [
+                                    {
+                                        "id": "xpEUV6BEhzU"
+                                    },
+                                    {
+                                        "id": "S606Zn8Wsu3"
+                                    }
+                                ],
                                 "id": "TafgHfMvqW7"
                             },
                             {
@@ -2291,6 +3480,14 @@
                                 },
                                 "orgUnitField": "WJ1j79Dlubx",
                                 "analyticsType": "EVENT",
+                                "analyticsPeriodBoundaries": [
+                                    {
+                                        "id": "yXTRA3pTUqs"
+                                    },
+                                    {
+                                        "id": "Bjkk5TJRlGh"
+                                    }
+                                ],
                                 "id": "eSWGLPCy2ZK"
                             },
                             {
@@ -2299,6 +3496,14 @@
                                     "id": "lAcD9QrX1xQ"
                                 },
                                 "analyticsType": "EVENT",
+                                "analyticsPeriodBoundaries": [
+                                    {
+                                        "id": "gTvRJyoCIQ1"
+                                    },
+                                    {
+                                        "id": "Bn8Ubjk8iNc"
+                                    }
+                                ],
                                 "id": "NTvweRnHeLC"
                             },
                             {
@@ -2308,6 +3513,14 @@
                                 },
                                 "orgUnitField": "ENROLLMENT",
                                 "analyticsType": "EVENT",
+                                "analyticsPeriodBoundaries": [
+                                    {
+                                        "id": "bxhXSZNsfto"
+                                    },
+                                    {
+                                        "id": "uZJfTAobu4D"
+                                    }
+                                ],
                                 "id": "nYG1z4dFVnX"
                             }
                         ]
@@ -2579,14 +3792,76 @@
         },
         "2.40.12": {
             "instance": "stable-2-40-12",
-            "date": "2026-10-05",
+            "date": "2026-10-08",
             "requests": [
                 {
                     "name": "dataElements",
-                    "path": "/api/dataElements.json?filter=code:$like:PTT_G3&fields=id,code,name,aggregationType,valueType,domainType,dataSetElements[dataSet[id,periodType]]&paging=false&order=code:asc",
+                    "path": "/api/dataElements.json?filter=code:$like:PTT_G3&filter=code:$like:PTT_DIS&rootJunction=OR&fields=id,code,name,aggregationType,valueType,domainType,categoryCombo[id],dataSetElements[dataSet[id,periodType],categoryCombo[id]]&paging=false&order=code:asc",
                     "httpStatus": 200,
                     "response": {
                         "dataElements": [
+                            {
+                                "code": "PTT_DIS_BOTH",
+                                "name": "PTT disaggregation both",
+                                "aggregationType": "SUM",
+                                "valueType": "INTEGER",
+                                "domainType": "AGGREGATE",
+                                "dataSetElements": [
+                                    {
+                                        "dataSet": {
+                                            "periodType": "Monthly",
+                                            "id": "MTEN4XmC0k3"
+                                        },
+                                        "categoryCombo": {
+                                            "id": "EyESnzDvcwh"
+                                        }
+                                    },
+                                    {
+                                        "dataSet": {
+                                            "periodType": "Quarterly",
+                                            "id": "DMfYb9cbUwP"
+                                        },
+                                        "categoryCombo": {
+                                            "id": "GFe8Z3ErDol"
+                                        }
+                                    }
+                                ],
+                                "id": "wrXAErJOkRS",
+                                "categoryCombo": {
+                                    "id": "EyESnzDvcwh"
+                                }
+                            },
+                            {
+                                "code": "PTT_DIS_PLACE",
+                                "name": "PTT disaggregation place",
+                                "aggregationType": "SUM",
+                                "valueType": "INTEGER",
+                                "domainType": "AGGREGATE",
+                                "dataSetElements": [
+                                    {
+                                        "dataSet": {
+                                            "periodType": "Quarterly",
+                                            "id": "Ij6jwq1Ceiq"
+                                        },
+                                        "categoryCombo": {
+                                            "id": "GFe8Z3ErDol"
+                                        }
+                                    },
+                                    {
+                                        "dataSet": {
+                                            "periodType": "Monthly",
+                                            "id": "NlZrxX5S0X8"
+                                        },
+                                        "categoryCombo": {
+                                            "id": "EyESnzDvcwh"
+                                        }
+                                    }
+                                ],
+                                "id": "T4Gk4A7PTRJ",
+                                "categoryCombo": {
+                                    "id": "EyESnzDvcwh"
+                                }
+                            },
                             {
                                 "code": "PTT_G3_HISTORY",
                                 "name": "PTT G3 history",
@@ -2601,7 +3876,10 @@
                                         }
                                     }
                                 ],
-                                "id": "hR0FkmDKXvh"
+                                "id": "hR0FkmDKXvh",
+                                "categoryCombo": {
+                                    "id": "bjDvmb4bfuf"
+                                }
                             },
                             {
                                 "code": "PTT_G3_MW",
@@ -2612,18 +3890,21 @@
                                 "dataSetElements": [
                                     {
                                         "dataSet": {
-                                            "periodType": "Weekly",
-                                            "id": "YlravvdHwIj"
+                                            "periodType": "WeeklyWednesday",
+                                            "id": "wRXyMvEnlyA"
                                         }
                                     },
                                     {
                                         "dataSet": {
-                                            "periodType": "WeeklyWednesday",
-                                            "id": "wRXyMvEnlyA"
+                                            "periodType": "Weekly",
+                                            "id": "YlravvdHwIj"
                                         }
                                     }
                                 ],
-                                "id": "hbv3rzk8Fne"
+                                "id": "hbv3rzk8Fne",
+                                "categoryCombo": {
+                                    "id": "bjDvmb4bfuf"
+                                }
                             },
                             {
                                 "code": "PTT_G3_ORPHAN",
@@ -2632,29 +3913,10 @@
                                 "valueType": "INTEGER",
                                 "domainType": "AGGREGATE",
                                 "dataSetElements": [],
-                                "id": "idqEIJ4ahkB"
-                            },
-                            {
-                                "code": "PTT_G3_PLACE",
-                                "name": "PTT G3 place",
-                                "aggregationType": "SUM",
-                                "valueType": "INTEGER",
-                                "domainType": "AGGREGATE",
-                                "dataSetElements": [
-                                    {
-                                        "dataSet": {
-                                            "periodType": "Weekly",
-                                            "id": "EBLMCfwOuUT"
-                                        }
-                                    },
-                                    {
-                                        "dataSet": {
-                                            "periodType": "Monthly",
-                                            "id": "Zp46A37uZSE"
-                                        }
-                                    }
-                                ],
-                                "id": "Z6EUgky36Mv"
+                                "id": "idqEIJ4ahkB",
+                                "categoryCombo": {
+                                    "id": "bjDvmb4bfuf"
+                                }
                             }
                         ]
                     }
@@ -2840,6 +4102,39 @@
                     }
                 },
                 {
+                    "name": "categoryOptionCombos",
+                    "path": "/api/categoryOptionCombos.json?filter=id:in:[HllvX50cXC0,l6y6maQF8He,eUlTvjHxjZF,MHtSLMctHku,eHq7UQzuwBc]&fields=id,categoryCombo[id]&paging=false&order=id:asc",
+                    "httpStatus": 200,
+                    "response": {
+                        "categoryOptionCombos": [
+                            {
+                                "categoryCombo": {
+                                    "id": "GFe8Z3ErDol"
+                                },
+                                "id": "eHq7UQzuwBc"
+                            },
+                            {
+                                "categoryCombo": {
+                                    "id": "EyESnzDvcwh"
+                                },
+                                "id": "eUlTvjHxjZF"
+                            },
+                            {
+                                "categoryCombo": {
+                                    "id": "bjDvmb4bfuf"
+                                },
+                                "id": "HllvX50cXC0"
+                            },
+                            {
+                                "categoryCombo": {
+                                    "id": "EyESnzDvcwh"
+                                },
+                                "id": "l6y6maQF8He"
+                            }
+                        ]
+                    }
+                },
+                {
                     "name": "dataElements-aggregationLevels",
                     "path": "/api/dataElements.json?filter=code:$like:PTT_OU_AGG&fields=id,code,aggregationType,aggregationLevels,dataSetElements[dataSet[id,periodType]]&paging=false&order=code:asc",
                     "httpStatus": 200,
@@ -2915,7 +4210,7 @@
                 },
                 {
                     "name": "programIndicators",
-                    "path": "/api/programIndicators.json?filter=code:$like:PTT_PROG&fields=id,code,program[id],orgUnitField,analyticsType&paging=false&order=code:asc",
+                    "path": "/api/programIndicators.json?filter=code:$like:PTT_PROG&fields=id,code,program[id],orgUnitField,analyticsType,analyticsPeriodBoundaries[id]&paging=false&order=code:asc",
                     "httpStatus": 200,
                     "response": {
                         "programIndicators": [
@@ -2925,6 +4220,14 @@
                                     "id": "KfzRtyEQHht"
                                 },
                                 "analyticsType": "EVENT",
+                                "analyticsPeriodBoundaries": [
+                                    {
+                                        "id": "mvpy2gLFMsO"
+                                    },
+                                    {
+                                        "id": "rz1qiY9ZtTM"
+                                    }
+                                ],
                                 "id": "TafgHfMvqW7"
                             },
                             {
@@ -2934,6 +4237,14 @@
                                 },
                                 "orgUnitField": "WJ1j79Dlubx",
                                 "analyticsType": "EVENT",
+                                "analyticsPeriodBoundaries": [
+                                    {
+                                        "id": "MqVHknwCHgI"
+                                    },
+                                    {
+                                        "id": "ZJiOjFW5ckN"
+                                    }
+                                ],
                                 "id": "eSWGLPCy2ZK"
                             },
                             {
@@ -2942,6 +4253,14 @@
                                     "id": "lAcD9QrX1xQ"
                                 },
                                 "analyticsType": "EVENT",
+                                "analyticsPeriodBoundaries": [
+                                    {
+                                        "id": "xEouvodlHu2"
+                                    },
+                                    {
+                                        "id": "l2liAUGOIzL"
+                                    }
+                                ],
                                 "id": "NTvweRnHeLC"
                             },
                             {
@@ -2951,6 +4270,14 @@
                                 },
                                 "orgUnitField": "ENROLLMENT",
                                 "analyticsType": "EVENT",
+                                "analyticsPeriodBoundaries": [
+                                    {
+                                        "id": "Gjo1MEhYF00"
+                                    },
+                                    {
+                                        "id": "ZVO1jdzRX1i"
+                                    }
+                                ],
                                 "id": "nYG1z4dFVnX"
                             }
                         ]
@@ -3226,10 +4553,72 @@
             "requests": [
                 {
                     "name": "dataElements",
-                    "path": "/api/dataElements.json?filter=code:$like:PTT_G3&fields=id,code,name,aggregationType,valueType,domainType,dataSetElements[dataSet[id,periodType]]&paging=false&order=code:asc",
+                    "path": "/api/dataElements.json?filter=code:$like:PTT_G3&filter=code:$like:PTT_DIS&rootJunction=OR&fields=id,code,name,aggregationType,valueType,domainType,categoryCombo[id],dataSetElements[dataSet[id,periodType],categoryCombo[id]]&paging=false&order=code:asc",
                     "httpStatus": 200,
                     "response": {
                         "dataElements": [
+                            {
+                                "code": "PTT_DIS_BOTH",
+                                "name": "PTT disaggregation both",
+                                "aggregationType": "SUM",
+                                "valueType": "INTEGER",
+                                "domainType": "AGGREGATE",
+                                "dataSetElements": [
+                                    {
+                                        "dataSet": {
+                                            "periodType": "Quarterly",
+                                            "id": "DMfYb9cbUwP"
+                                        },
+                                        "categoryCombo": {
+                                            "id": "GFe8Z3ErDol"
+                                        }
+                                    },
+                                    {
+                                        "dataSet": {
+                                            "periodType": "Monthly",
+                                            "id": "MTEN4XmC0k3"
+                                        },
+                                        "categoryCombo": {
+                                            "id": "EyESnzDvcwh"
+                                        }
+                                    }
+                                ],
+                                "id": "wrXAErJOkRS",
+                                "categoryCombo": {
+                                    "id": "EyESnzDvcwh"
+                                }
+                            },
+                            {
+                                "code": "PTT_DIS_PLACE",
+                                "name": "PTT disaggregation place",
+                                "aggregationType": "SUM",
+                                "valueType": "INTEGER",
+                                "domainType": "AGGREGATE",
+                                "dataSetElements": [
+                                    {
+                                        "dataSet": {
+                                            "periodType": "Quarterly",
+                                            "id": "Ij6jwq1Ceiq"
+                                        },
+                                        "categoryCombo": {
+                                            "id": "GFe8Z3ErDol"
+                                        }
+                                    },
+                                    {
+                                        "dataSet": {
+                                            "periodType": "Monthly",
+                                            "id": "NlZrxX5S0X8"
+                                        },
+                                        "categoryCombo": {
+                                            "id": "EyESnzDvcwh"
+                                        }
+                                    }
+                                ],
+                                "id": "T4Gk4A7PTRJ",
+                                "categoryCombo": {
+                                    "id": "EyESnzDvcwh"
+                                }
+                            },
                             {
                                 "code": "PTT_G3_HISTORY",
                                 "name": "PTT G3 history",
@@ -3244,7 +4633,10 @@
                                         }
                                     }
                                 ],
-                                "id": "hR0FkmDKXvh"
+                                "id": "hR0FkmDKXvh",
+                                "categoryCombo": {
+                                    "id": "bjDvmb4bfuf"
+                                }
                             },
                             {
                                 "code": "PTT_G3_MW",
@@ -3266,7 +4658,10 @@
                                         }
                                     }
                                 ],
-                                "id": "hbv3rzk8Fne"
+                                "id": "hbv3rzk8Fne",
+                                "categoryCombo": {
+                                    "id": "bjDvmb4bfuf"
+                                }
                             },
                             {
                                 "code": "PTT_G3_ORPHAN",
@@ -3275,29 +4670,10 @@
                                 "valueType": "INTEGER",
                                 "domainType": "AGGREGATE",
                                 "dataSetElements": [],
-                                "id": "idqEIJ4ahkB"
-                            },
-                            {
-                                "code": "PTT_G3_PLACE",
-                                "name": "PTT G3 place",
-                                "aggregationType": "SUM",
-                                "valueType": "INTEGER",
-                                "domainType": "AGGREGATE",
-                                "dataSetElements": [
-                                    {
-                                        "dataSet": {
-                                            "periodType": "Monthly",
-                                            "id": "Zp46A37uZSE"
-                                        }
-                                    },
-                                    {
-                                        "dataSet": {
-                                            "periodType": "Weekly",
-                                            "id": "EBLMCfwOuUT"
-                                        }
-                                    }
-                                ],
-                                "id": "Z6EUgky36Mv"
+                                "id": "idqEIJ4ahkB",
+                                "categoryCombo": {
+                                    "id": "bjDvmb4bfuf"
+                                }
                             }
                         ]
                     }
@@ -3483,6 +4859,39 @@
                     }
                 },
                 {
+                    "name": "categoryOptionCombos",
+                    "path": "/api/categoryOptionCombos.json?filter=id:in:[HllvX50cXC0,l6y6maQF8He,eUlTvjHxjZF,MHtSLMctHku,eHq7UQzuwBc]&fields=id,categoryCombo[id]&paging=false&order=id:asc",
+                    "httpStatus": 200,
+                    "response": {
+                        "categoryOptionCombos": [
+                            {
+                                "categoryCombo": {
+                                    "id": "GFe8Z3ErDol"
+                                },
+                                "id": "eHq7UQzuwBc"
+                            },
+                            {
+                                "categoryCombo": {
+                                    "id": "EyESnzDvcwh"
+                                },
+                                "id": "eUlTvjHxjZF"
+                            },
+                            {
+                                "categoryCombo": {
+                                    "id": "bjDvmb4bfuf"
+                                },
+                                "id": "HllvX50cXC0"
+                            },
+                            {
+                                "categoryCombo": {
+                                    "id": "EyESnzDvcwh"
+                                },
+                                "id": "l6y6maQF8He"
+                            }
+                        ]
+                    }
+                },
+                {
                     "name": "dataElements-aggregationLevels",
                     "path": "/api/dataElements.json?filter=code:$like:PTT_OU_AGG&fields=id,code,aggregationType,aggregationLevels,dataSetElements[dataSet[id,periodType]]&paging=false&order=code:asc",
                     "httpStatus": 200,
@@ -3558,7 +4967,7 @@
                 },
                 {
                     "name": "programIndicators",
-                    "path": "/api/programIndicators.json?filter=code:$like:PTT_PROG&fields=id,code,program[id],orgUnitField,analyticsType&paging=false&order=code:asc",
+                    "path": "/api/programIndicators.json?filter=code:$like:PTT_PROG&fields=id,code,program[id],orgUnitField,analyticsType,analyticsPeriodBoundaries[id]&paging=false&order=code:asc",
                     "httpStatus": 200,
                     "response": {
                         "programIndicators": [
@@ -3568,6 +4977,14 @@
                                     "id": "KfzRtyEQHht"
                                 },
                                 "analyticsType": "EVENT",
+                                "analyticsPeriodBoundaries": [
+                                    {
+                                        "id": "Su75hwxVkDt"
+                                    },
+                                    {
+                                        "id": "mbjfRMuVRAN"
+                                    }
+                                ],
                                 "id": "TafgHfMvqW7"
                             },
                             {
@@ -3577,6 +4994,14 @@
                                 },
                                 "orgUnitField": "WJ1j79Dlubx",
                                 "analyticsType": "EVENT",
+                                "analyticsPeriodBoundaries": [
+                                    {
+                                        "id": "qOGEFw6ae7c"
+                                    },
+                                    {
+                                        "id": "RBEePZkXRzr"
+                                    }
+                                ],
                                 "id": "eSWGLPCy2ZK"
                             },
                             {
@@ -3585,6 +5010,14 @@
                                     "id": "lAcD9QrX1xQ"
                                 },
                                 "analyticsType": "EVENT",
+                                "analyticsPeriodBoundaries": [
+                                    {
+                                        "id": "AH5Wfye87pn"
+                                    },
+                                    {
+                                        "id": "KkzLC2R2Msh"
+                                    }
+                                ],
                                 "id": "NTvweRnHeLC"
                             },
                             {
@@ -3594,6 +5027,14 @@
                                 },
                                 "orgUnitField": "ENROLLMENT",
                                 "analyticsType": "EVENT",
+                                "analyticsPeriodBoundaries": [
+                                    {
+                                        "id": "xJpwKeiAFht"
+                                    },
+                                    {
+                                        "id": "CQ5h9CkEWpe"
+                                    }
+                                ],
                                 "id": "nYG1z4dFVnX"
                             }
                         ]
@@ -3865,14 +5306,76 @@
         },
         "2.42.6": {
             "instance": "stable-2-42-6",
-            "date": "2026-10-05",
+            "date": "2026-10-08",
             "requests": [
                 {
                     "name": "dataElements",
-                    "path": "/api/dataElements.json?filter=code:$like:PTT_G3&fields=id,code,name,aggregationType,valueType,domainType,dataSetElements[dataSet[id,periodType]]&paging=false&order=code:asc",
+                    "path": "/api/dataElements.json?filter=code:$like:PTT_G3&filter=code:$like:PTT_DIS&rootJunction=OR&fields=id,code,name,aggregationType,valueType,domainType,categoryCombo[id],dataSetElements[dataSet[id,periodType],categoryCombo[id]]&paging=false&order=code:asc",
                     "httpStatus": 200,
                     "response": {
                         "dataElements": [
+                            {
+                                "code": "PTT_DIS_BOTH",
+                                "name": "PTT disaggregation both",
+                                "aggregationType": "SUM",
+                                "valueType": "INTEGER",
+                                "domainType": "AGGREGATE",
+                                "dataSetElements": [
+                                    {
+                                        "dataSet": {
+                                            "periodType": "Quarterly",
+                                            "id": "DMfYb9cbUwP"
+                                        },
+                                        "categoryCombo": {
+                                            "id": "GFe8Z3ErDol"
+                                        }
+                                    },
+                                    {
+                                        "dataSet": {
+                                            "periodType": "Monthly",
+                                            "id": "MTEN4XmC0k3"
+                                        },
+                                        "categoryCombo": {
+                                            "id": "EyESnzDvcwh"
+                                        }
+                                    }
+                                ],
+                                "id": "wrXAErJOkRS",
+                                "categoryCombo": {
+                                    "id": "EyESnzDvcwh"
+                                }
+                            },
+                            {
+                                "code": "PTT_DIS_PLACE",
+                                "name": "PTT disaggregation place",
+                                "aggregationType": "SUM",
+                                "valueType": "INTEGER",
+                                "domainType": "AGGREGATE",
+                                "dataSetElements": [
+                                    {
+                                        "dataSet": {
+                                            "periodType": "Monthly",
+                                            "id": "NlZrxX5S0X8"
+                                        },
+                                        "categoryCombo": {
+                                            "id": "EyESnzDvcwh"
+                                        }
+                                    },
+                                    {
+                                        "dataSet": {
+                                            "periodType": "Quarterly",
+                                            "id": "Ij6jwq1Ceiq"
+                                        },
+                                        "categoryCombo": {
+                                            "id": "GFe8Z3ErDol"
+                                        }
+                                    }
+                                ],
+                                "id": "T4Gk4A7PTRJ",
+                                "categoryCombo": {
+                                    "id": "EyESnzDvcwh"
+                                }
+                            },
                             {
                                 "code": "PTT_G3_HISTORY",
                                 "name": "PTT G3 history",
@@ -3887,7 +5390,10 @@
                                         }
                                     }
                                 ],
-                                "id": "hR0FkmDKXvh"
+                                "id": "hR0FkmDKXvh",
+                                "categoryCombo": {
+                                    "id": "bjDvmb4bfuf"
+                                }
                             },
                             {
                                 "code": "PTT_G3_MW",
@@ -3898,18 +5404,21 @@
                                 "dataSetElements": [
                                     {
                                         "dataSet": {
-                                            "periodType": "Weekly",
-                                            "id": "YlravvdHwIj"
+                                            "periodType": "WeeklyWednesday",
+                                            "id": "wRXyMvEnlyA"
                                         }
                                     },
                                     {
                                         "dataSet": {
-                                            "periodType": "WeeklyWednesday",
-                                            "id": "wRXyMvEnlyA"
+                                            "periodType": "Weekly",
+                                            "id": "YlravvdHwIj"
                                         }
                                     }
                                 ],
-                                "id": "hbv3rzk8Fne"
+                                "id": "hbv3rzk8Fne",
+                                "categoryCombo": {
+                                    "id": "bjDvmb4bfuf"
+                                }
                             },
                             {
                                 "code": "PTT_G3_ORPHAN",
@@ -3918,29 +5427,10 @@
                                 "valueType": "INTEGER",
                                 "domainType": "AGGREGATE",
                                 "dataSetElements": [],
-                                "id": "idqEIJ4ahkB"
-                            },
-                            {
-                                "code": "PTT_G3_PLACE",
-                                "name": "PTT G3 place",
-                                "aggregationType": "SUM",
-                                "valueType": "INTEGER",
-                                "domainType": "AGGREGATE",
-                                "dataSetElements": [
-                                    {
-                                        "dataSet": {
-                                            "periodType": "Monthly",
-                                            "id": "Zp46A37uZSE"
-                                        }
-                                    },
-                                    {
-                                        "dataSet": {
-                                            "periodType": "Weekly",
-                                            "id": "EBLMCfwOuUT"
-                                        }
-                                    }
-                                ],
-                                "id": "Z6EUgky36Mv"
+                                "id": "idqEIJ4ahkB",
+                                "categoryCombo": {
+                                    "id": "bjDvmb4bfuf"
+                                }
                             }
                         ]
                     }
@@ -4126,6 +5616,39 @@
                     }
                 },
                 {
+                    "name": "categoryOptionCombos",
+                    "path": "/api/categoryOptionCombos.json?filter=id:in:[HllvX50cXC0,l6y6maQF8He,eUlTvjHxjZF,MHtSLMctHku,eHq7UQzuwBc]&fields=id,categoryCombo[id]&paging=false&order=id:asc",
+                    "httpStatus": 200,
+                    "response": {
+                        "categoryOptionCombos": [
+                            {
+                                "categoryCombo": {
+                                    "id": "GFe8Z3ErDol"
+                                },
+                                "id": "eHq7UQzuwBc"
+                            },
+                            {
+                                "categoryCombo": {
+                                    "id": "EyESnzDvcwh"
+                                },
+                                "id": "eUlTvjHxjZF"
+                            },
+                            {
+                                "categoryCombo": {
+                                    "id": "bjDvmb4bfuf"
+                                },
+                                "id": "HllvX50cXC0"
+                            },
+                            {
+                                "categoryCombo": {
+                                    "id": "EyESnzDvcwh"
+                                },
+                                "id": "l6y6maQF8He"
+                            }
+                        ]
+                    }
+                },
+                {
                     "name": "dataElements-aggregationLevels",
                     "path": "/api/dataElements.json?filter=code:$like:PTT_OU_AGG&fields=id,code,aggregationType,aggregationLevels,dataSetElements[dataSet[id,periodType]]&paging=false&order=code:asc",
                     "httpStatus": 200,
@@ -4201,7 +5724,7 @@
                 },
                 {
                     "name": "programIndicators",
-                    "path": "/api/programIndicators.json?filter=code:$like:PTT_PROG&fields=id,code,program[id],orgUnitField,analyticsType&paging=false&order=code:asc",
+                    "path": "/api/programIndicators.json?filter=code:$like:PTT_PROG&fields=id,code,program[id],orgUnitField,analyticsType,analyticsPeriodBoundaries[id]&paging=false&order=code:asc",
                     "httpStatus": 200,
                     "response": {
                         "programIndicators": [
@@ -4211,6 +5734,14 @@
                                     "id": "KfzRtyEQHht"
                                 },
                                 "analyticsType": "EVENT",
+                                "analyticsPeriodBoundaries": [
+                                    {
+                                        "id": "ankY1J1i2Kv"
+                                    },
+                                    {
+                                        "id": "mOgEPfIDrBz"
+                                    }
+                                ],
                                 "id": "TafgHfMvqW7"
                             },
                             {
@@ -4220,6 +5751,14 @@
                                 },
                                 "orgUnitField": "WJ1j79Dlubx",
                                 "analyticsType": "EVENT",
+                                "analyticsPeriodBoundaries": [
+                                    {
+                                        "id": "FqRPXHBIjSy"
+                                    },
+                                    {
+                                        "id": "Q1vkdlPpkpD"
+                                    }
+                                ],
                                 "id": "eSWGLPCy2ZK"
                             },
                             {
@@ -4228,6 +5767,14 @@
                                     "id": "lAcD9QrX1xQ"
                                 },
                                 "analyticsType": "EVENT",
+                                "analyticsPeriodBoundaries": [
+                                    {
+                                        "id": "rWxVptSvyHO"
+                                    },
+                                    {
+                                        "id": "eef5NP4wLn3"
+                                    }
+                                ],
                                 "id": "NTvweRnHeLC"
                             },
                             {
@@ -4237,6 +5784,14 @@
                                 },
                                 "orgUnitField": "ENROLLMENT",
                                 "analyticsType": "EVENT",
+                                "analyticsPeriodBoundaries": [
+                                    {
+                                        "id": "ihzqXRw1V3b"
+                                    },
+                                    {
+                                        "id": "RSBdFt0OWqQ"
+                                    }
+                                ],
                                 "id": "nYG1z4dFVnX"
                             }
                         ]
@@ -4506,16 +6061,78 @@
                 }
             ]
         },
-        "2.43.1": {
-            "instance": "stable-2-43-1",
-            "date": "2026-10-05",
+        "2.43.2": {
+            "instance": "stable-2-43-2",
+            "date": "2026-10-08",
             "requests": [
                 {
                     "name": "dataElements",
-                    "path": "/api/dataElements.json?filter=code:$like:PTT_G3&fields=id,code,name,aggregationType,valueType,domainType,dataSetElements[dataSet[id,periodType]]&paging=false&order=code:asc",
+                    "path": "/api/dataElements.json?filter=code:$like:PTT_G3&filter=code:$like:PTT_DIS&rootJunction=OR&fields=id,code,name,aggregationType,valueType,domainType,categoryCombo[id],dataSetElements[dataSet[id,periodType],categoryCombo[id]]&paging=false&order=code:asc",
                     "httpStatus": 200,
                     "response": {
                         "dataElements": [
+                            {
+                                "code": "PTT_DIS_BOTH",
+                                "name": "PTT disaggregation both",
+                                "aggregationType": "SUM",
+                                "valueType": "INTEGER",
+                                "domainType": "AGGREGATE",
+                                "dataSetElements": [
+                                    {
+                                        "dataSet": {
+                                            "periodType": "Monthly",
+                                            "id": "MTEN4XmC0k3"
+                                        },
+                                        "categoryCombo": {
+                                            "id": "EyESnzDvcwh"
+                                        }
+                                    },
+                                    {
+                                        "dataSet": {
+                                            "periodType": "Quarterly",
+                                            "id": "DMfYb9cbUwP"
+                                        },
+                                        "categoryCombo": {
+                                            "id": "GFe8Z3ErDol"
+                                        }
+                                    }
+                                ],
+                                "id": "wrXAErJOkRS",
+                                "categoryCombo": {
+                                    "id": "EyESnzDvcwh"
+                                }
+                            },
+                            {
+                                "code": "PTT_DIS_PLACE",
+                                "name": "PTT disaggregation place",
+                                "aggregationType": "SUM",
+                                "valueType": "INTEGER",
+                                "domainType": "AGGREGATE",
+                                "dataSetElements": [
+                                    {
+                                        "dataSet": {
+                                            "periodType": "Quarterly",
+                                            "id": "Ij6jwq1Ceiq"
+                                        },
+                                        "categoryCombo": {
+                                            "id": "GFe8Z3ErDol"
+                                        }
+                                    },
+                                    {
+                                        "dataSet": {
+                                            "periodType": "Monthly",
+                                            "id": "NlZrxX5S0X8"
+                                        },
+                                        "categoryCombo": {
+                                            "id": "EyESnzDvcwh"
+                                        }
+                                    }
+                                ],
+                                "id": "T4Gk4A7PTRJ",
+                                "categoryCombo": {
+                                    "id": "EyESnzDvcwh"
+                                }
+                            },
                             {
                                 "code": "PTT_G3_HISTORY",
                                 "name": "PTT G3 history",
@@ -4530,7 +6147,10 @@
                                         }
                                     }
                                 ],
-                                "id": "hR0FkmDKXvh"
+                                "id": "hR0FkmDKXvh",
+                                "categoryCombo": {
+                                    "id": "bjDvmb4bfuf"
+                                }
                             },
                             {
                                 "code": "PTT_G3_MW",
@@ -4541,18 +6161,21 @@
                                 "dataSetElements": [
                                     {
                                         "dataSet": {
-                                            "periodType": "Weekly",
-                                            "id": "YlravvdHwIj"
+                                            "periodType": "WeeklyWednesday",
+                                            "id": "wRXyMvEnlyA"
                                         }
                                     },
                                     {
                                         "dataSet": {
-                                            "periodType": "WeeklyWednesday",
-                                            "id": "wRXyMvEnlyA"
+                                            "periodType": "Weekly",
+                                            "id": "YlravvdHwIj"
                                         }
                                     }
                                 ],
-                                "id": "hbv3rzk8Fne"
+                                "id": "hbv3rzk8Fne",
+                                "categoryCombo": {
+                                    "id": "bjDvmb4bfuf"
+                                }
                             },
                             {
                                 "code": "PTT_G3_ORPHAN",
@@ -4561,29 +6184,10 @@
                                 "valueType": "INTEGER",
                                 "domainType": "AGGREGATE",
                                 "dataSetElements": [],
-                                "id": "idqEIJ4ahkB"
-                            },
-                            {
-                                "code": "PTT_G3_PLACE",
-                                "name": "PTT G3 place",
-                                "aggregationType": "SUM",
-                                "valueType": "INTEGER",
-                                "domainType": "AGGREGATE",
-                                "dataSetElements": [
-                                    {
-                                        "dataSet": {
-                                            "periodType": "Weekly",
-                                            "id": "EBLMCfwOuUT"
-                                        }
-                                    },
-                                    {
-                                        "dataSet": {
-                                            "periodType": "Monthly",
-                                            "id": "Zp46A37uZSE"
-                                        }
-                                    }
-                                ],
-                                "id": "Z6EUgky36Mv"
+                                "id": "idqEIJ4ahkB",
+                                "categoryCombo": {
+                                    "id": "bjDvmb4bfuf"
+                                }
                             }
                         ]
                     }
@@ -4769,6 +6373,39 @@
                     }
                 },
                 {
+                    "name": "categoryOptionCombos",
+                    "path": "/api/categoryOptionCombos.json?filter=id:in:[HllvX50cXC0,l6y6maQF8He,eUlTvjHxjZF,MHtSLMctHku,eHq7UQzuwBc]&fields=id,categoryCombo[id]&paging=false&order=id:asc",
+                    "httpStatus": 200,
+                    "response": {
+                        "categoryOptionCombos": [
+                            {
+                                "categoryCombo": {
+                                    "id": "GFe8Z3ErDol"
+                                },
+                                "id": "eHq7UQzuwBc"
+                            },
+                            {
+                                "categoryCombo": {
+                                    "id": "EyESnzDvcwh"
+                                },
+                                "id": "eUlTvjHxjZF"
+                            },
+                            {
+                                "categoryCombo": {
+                                    "id": "bjDvmb4bfuf"
+                                },
+                                "id": "HllvX50cXC0"
+                            },
+                            {
+                                "categoryCombo": {
+                                    "id": "EyESnzDvcwh"
+                                },
+                                "id": "l6y6maQF8He"
+                            }
+                        ]
+                    }
+                },
+                {
                     "name": "dataElements-aggregationLevels",
                     "path": "/api/dataElements.json?filter=code:$like:PTT_OU_AGG&fields=id,code,aggregationType,aggregationLevels,dataSetElements[dataSet[id,periodType]]&paging=false&order=code:asc",
                     "httpStatus": 200,
@@ -4844,7 +6481,7 @@
                 },
                 {
                     "name": "programIndicators",
-                    "path": "/api/programIndicators.json?filter=code:$like:PTT_PROG&fields=id,code,program[id],orgUnitField,analyticsType&paging=false&order=code:asc",
+                    "path": "/api/programIndicators.json?filter=code:$like:PTT_PROG&fields=id,code,program[id],orgUnitField,analyticsType,analyticsPeriodBoundaries[id]&paging=false&order=code:asc",
                     "httpStatus": 200,
                     "response": {
                         "programIndicators": [
@@ -4854,6 +6491,14 @@
                                     "id": "KfzRtyEQHht"
                                 },
                                 "analyticsType": "EVENT",
+                                "analyticsPeriodBoundaries": [
+                                    {
+                                        "id": "kmr1NdBzf33"
+                                    },
+                                    {
+                                        "id": "IzXvHBYAtcv"
+                                    }
+                                ],
                                 "id": "TafgHfMvqW7"
                             },
                             {
@@ -4863,6 +6508,14 @@
                                 },
                                 "orgUnitField": "WJ1j79Dlubx",
                                 "analyticsType": "EVENT",
+                                "analyticsPeriodBoundaries": [
+                                    {
+                                        "id": "zvAGsuH5Egt"
+                                    },
+                                    {
+                                        "id": "LXIRZgbEqSW"
+                                    }
+                                ],
                                 "id": "eSWGLPCy2ZK"
                             },
                             {
@@ -4871,6 +6524,14 @@
                                     "id": "lAcD9QrX1xQ"
                                 },
                                 "analyticsType": "EVENT",
+                                "analyticsPeriodBoundaries": [
+                                    {
+                                        "id": "ELqIT5BRbwK"
+                                    },
+                                    {
+                                        "id": "DXcnYyaBnAm"
+                                    }
+                                ],
                                 "id": "NTvweRnHeLC"
                             },
                             {
@@ -4880,6 +6541,14 @@
                                 },
                                 "orgUnitField": "ENROLLMENT",
                                 "analyticsType": "EVENT",
+                                "analyticsPeriodBoundaries": [
+                                    {
+                                        "id": "PA8vwXgskEo"
+                                    },
+                                    {
+                                        "id": "hCpoBREzQ2U"
+                                    }
+                                ],
                                 "id": "nYG1z4dFVnX"
                             }
                         ]
@@ -4942,7 +6611,7 @@
                             "page": 1,
                             "total": 1169,
                             "pageSize": 1,
-                            "nextPage": "https://play.im.dhis2.org/stable-2-43-1/api/organisationUnits.json?page=2&pageSize=1&filter=level%3Aeq%3A4&fields=id",
+                            "nextPage": "https://play.im.dhis2.org/stable-2-43-2/api/organisationUnits.json?page=2&pageSize=1&filter=level%3Aeq%3A4&fields=id",
                             "pageCount": 1169
                         },
                         "organisationUnits": [
@@ -4961,7 +6630,7 @@
                             "page": 1,
                             "total": 9,
                             "pageSize": 1,
-                            "nextPage": "https://play.im.dhis2.org/stable-2-43-1/api/organisationUnits.json?page=2&pageSize=1&filter=path%3Alike%3ARIinNUb6rg7&fields=id",
+                            "nextPage": "https://play.im.dhis2.org/stable-2-43-2/api/organisationUnits.json?page=2&pageSize=1&filter=path%3Alike%3ARIinNUb6rg7&fields=id",
                             "pageCount": 9
                         },
                         "organisationUnits": [
@@ -4980,7 +6649,7 @@
                             "page": 1,
                             "total": 2,
                             "pageSize": 1,
-                            "nextPage": "https://play.im.dhis2.org/stable-2-43-1/api/organisationUnits.json?page=2&pageSize=1&filter=dataSets.id%3Aeq%3Av200HCJsE6E&fields=id",
+                            "nextPage": "https://play.im.dhis2.org/stable-2-43-2/api/organisationUnits.json?page=2&pageSize=1&filter=dataSets.id%3Aeq%3Av200HCJsE6E&fields=id",
                             "pageCount": 2
                         },
                         "organisationUnits": [
@@ -4999,7 +6668,7 @@
                             "page": 1,
                             "total": 2,
                             "pageSize": 1,
-                            "nextPage": "https://play.im.dhis2.org/stable-2-43-1/api/organisationUnits.json?page=2&pageSize=1&filter=programs.id%3Aeq%3AKfzRtyEQHht&fields=id",
+                            "nextPage": "https://play.im.dhis2.org/stable-2-43-2/api/organisationUnits.json?page=2&pageSize=1&filter=programs.id%3Aeq%3AKfzRtyEQHht&fields=id",
                             "pageCount": 2
                         },
                         "organisationUnits": [
@@ -5018,7 +6687,7 @@
                             "page": 1,
                             "total": 3,
                             "pageSize": 1,
-                            "nextPage": "https://play.im.dhis2.org/stable-2-43-1/api/organisationUnits.json?page=2&pageSize=1&filter=id%3Ain%3A%5BtsmDjF9bxzK%2CYcWWJD42rFM%2CTHU3mEbE4b6%5D&fields=id",
+                            "nextPage": "https://play.im.dhis2.org/stable-2-43-2/api/organisationUnits.json?page=2&pageSize=1&filter=id%3Ain%3A%5BtsmDjF9bxzK%2CYcWWJD42rFM%2CTHU3mEbE4b6%5D&fields=id",
                             "pageCount": 3
                         },
                         "organisationUnits": [
@@ -5037,7 +6706,7 @@
                             "page": 1,
                             "total": 2,
                             "pageSize": 1,
-                            "nextPage": "https://play.im.dhis2.org/stable-2-43-1/api/organisationUnits.json?page=2&pageSize=1&filter=organisationUnitGroups.id%3Aeq%3AVSMvSA8RdOa&fields=id",
+                            "nextPage": "https://play.im.dhis2.org/stable-2-43-2/api/organisationUnits.json?page=2&pageSize=1&filter=organisationUnitGroups.id%3Aeq%3AVSMvSA8RdOa&fields=id",
                             "pageCount": 2
                         },
                         "organisationUnits": [
@@ -5056,7 +6725,7 @@
                             "page": 1,
                             "total": 3,
                             "pageSize": 1,
-                            "nextPage": "https://play.im.dhis2.org/stable-2-43-1/api/organisationUnits.json?page=2&pageSize=1&filter=parent.parent.organisationUnitGroups.id%3Aeq%3ATTEvM2Zx7wF&fields=id",
+                            "nextPage": "https://play.im.dhis2.org/stable-2-43-2/api/organisationUnits.json?page=2&pageSize=1&filter=parent.parent.organisationUnitGroups.id%3Aeq%3ATTEvM2Zx7wF&fields=id",
                             "pageCount": 3
                         },
                         "organisationUnits": [
@@ -5089,7 +6758,7 @@
                             "page": 1,
                             "total": 2,
                             "pageSize": 1,
-                            "nextPage": "https://play.im.dhis2.org/stable-2-43-1/api/organisationUnits.json?page=2&pageSize=1&filter=children.organisationUnitGroups.id%3Aeq%3AVSMvSA8RdOa&fields=id",
+                            "nextPage": "https://play.im.dhis2.org/stable-2-43-2/api/organisationUnits.json?page=2&pageSize=1&filter=children.organisationUnitGroups.id%3Aeq%3AVSMvSA8RdOa&fields=id",
                             "pageCount": 2
                         },
                         "organisationUnits": [
@@ -5150,5 +6819,5 @@
             ]
         }
     },
-    "smoke": "Requests dataElements, indicators, dataSets, expressionDimensionItems, periodTypes, and the org unit requests; the first 4 objects of each list, and PTT_G3_MW and PTT_G3_ORPHAN in dataElements."
+    "smoke": "Requests dataElements, indicators, dataSets, expressionDimensionItems, periodTypes, categoryOptionCombos, and the org unit requests; the first 4 objects of each list, and PTT_G3_MW and PTT_G3_ORPHAN and PTT_DIS_BOTH and PTT_DIS_PLACE in dataElements."
 }

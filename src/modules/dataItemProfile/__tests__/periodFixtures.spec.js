@@ -91,21 +91,9 @@ const toExpected = ({ item }, { status }) => {
     return { status: LIBRARY_STATUS[status] }
 }
 
-const EXPRESSION_TYPES = new Set(['INDICATOR', 'EXPRESSION_DIMENSION_ITEM'])
-
-/* A sum with an operand that gives nothing returns the others' value, which
- * the tool records as VALUE: it can't tell it from a whole sum. The library
- * says partial, with OPERAND_EMPTY: values are left out. */
-const isSumWithoutAnOperand = (expected, library, item) =>
-    EXPRESSION_TYPES.has(item.dimensionItemType) &&
-    expected.status === 'full' &&
-    library.status === 'partial' &&
-    library.reasons.includes('OPERAND_EMPTY')
-
-const agrees = (expected, library, item) =>
-    isSumWithoutAnOperand(expected, library, item) ||
-    (expected.status === library.status &&
-        (!expected.reason || library.reasons.includes(expected.reason)))
+const agrees = (expected, library) =>
+    expected.status === library.status &&
+    (!expected.reason || library.reasons.includes(expected.reason))
 
 const describeExpected = ({ status, reason }) =>
     reason ? `${status} with ${reason}` : status
@@ -118,7 +106,6 @@ const describeLibrary = ({ status, reasons }) =>
  * check after Update is the way to find them. */
 // The test data covers the periods of 2024 and 2025
 const TEST_DATA_START = '2024-01-01'
-const TEST_DATA_END = '2025-12-31'
 
 // The periods asked in one request: the case's, and in the carry-windows group the other one of the pair
 const getRequestPeriods = ({ query }) =>
@@ -231,15 +218,6 @@ const METADATA_BLIND_SPOTS = [
             getPeriodDates(query.period)?.endDate < TEST_DATA_START,
         reason: 'the period ends before the test data',
     },
-    {
-        // Group 7 asks periods up to mid-2026
-        pattern: /^carry-/,
-        applies: ({ query }) =>
-            getPeriodDates(query.period)?.endDate > TEST_DATA_END,
-        reason: 'the period ends after the test data',
-        // The smoke subset keeps none
-        optional: true,
-    },
 ]
 
 const isBlindSpot = (fixtureCase) =>
@@ -249,13 +227,37 @@ const isBlindSpot = (fixtureCase) =>
     )
 
 // collectionSources is optional in the fixtures: one data set per period type otherwise
+// With the category combo each data set gives the element, when the case names it
 const getDataSets = ({ collectionSources, collectionPeriodTypes }) =>
     collectionSources
-        ? collectionSources.map(({ dataSet, periodType }) => ({
+        ? collectionSources.map(({ dataSet, periodType, categoryCombo }) => ({
               id: dataSet,
               periodType,
+              ...(categoryCombo && { categoryComboId: categoryCombo.id }),
           }))
         : inDataSets(collectionPeriodTypes)
+
+/* A disaggregation (group 16): the operand asked, and the category combo of
+ * its option combo, which the case names by key */
+const getDisaggregation = (item) => {
+    const optionCombo = item.categoryOptionCombo
+
+    if (!optionCombo) {
+        return { id: 'de', categoryOptionCombos: {} }
+    }
+
+    const combos = [item.categoryCombo, ...item.collectionSources].map(
+        (source) => source.categoryCombo ?? source
+    )
+    const categoryComboId = combos.find(
+        ({ key }) => key === optionCombo.categoryCombo
+    )?.id
+
+    return {
+        id: `de.${optionCombo.id}`,
+        categoryOptionCombos: { [optionCombo.id]: { categoryComboId } },
+    }
+}
 
 // Indicator operands need the id their expression uses
 const addOperands = (metadata, operands = []) => {
@@ -308,13 +310,17 @@ const toMetadata = ({ item }) => {
             }
             addOperands(metadata, item.operands)
             return { id: 'item', metadata }
-        default:
+        default: {
+            const { id, categoryOptionCombos } = getDisaggregation(item)
+
             metadata.dataElements.de = {
                 aggregationType: item.aggregationType,
                 valueType: item.valueType,
                 dataSets: getDataSets(item),
             }
-            return { id: 'de', metadata }
+            metadata.categoryOptionCombos = categoryOptionCombos
+            return { id, metadata }
+        }
     }
 }
 
@@ -578,10 +584,7 @@ describe('period type fixtures', () => {
                     expected: toExpected(fixtureCase, outcome),
                     library: getLibraryAnswer(fixtureCase, version),
                 }))
-                .filter(
-                    ({ expected, library }) =>
-                        !agrees(expected, library, fixtureCase.item)
-                )
+                .filter(({ expected, library }) => !agrees(expected, library))
         )
 
         expect(summarize(mismatches)).toEqual([])

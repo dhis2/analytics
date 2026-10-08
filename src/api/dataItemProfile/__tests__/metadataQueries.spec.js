@@ -1,5 +1,6 @@
 import metadataShapes from '../../../__fixtures__/period-types/metadata-shapes.json'
 import { PERIOD_TYPE_FREQUENCY_ORDER } from '../../../modules/dataItemProfile/constants.js'
+import { getDataItemProfile } from '../../../modules/dataItemProfile/getDataItemProfile.js'
 import {
     dataItemProfileMetadataQueries,
     normalizeDataItemProfileMetadata,
@@ -31,15 +32,9 @@ const splitFields = (fields) => {
     return [...result, current]
 }
 
-/* Fields the test tool's requests named after a resource don't ask for, so
- * their shape on each version is unchecked: aggregationLevels has a request
- * of its own (dataElements-aggregationLevels); the others aren't recorded */
-const NOT_RECORDED = [
-    'aggregationLevels',
-    'analyticsPeriodBoundaries[id]',
-    'categoryCombo[id]',
-    'dataSetElements[dataSet[id,periodType],categoryCombo[id]]',
-]
+/* Fields the test tool's requests named after a resource don't ask for:
+ * aggregationLevels has a request of its own (dataElements-aggregationLevels) */
+const NOT_RECORDED = ['aggregationLevels']
 
 describe('normalizeDataItemProfileMetadata', () => {
     describe.each(Object.entries(metadataShapes.versions))(
@@ -90,6 +85,35 @@ describe('normalizeDataItemProfileMetadata', () => {
                 Object.values(metadata.expressionDimensionItems).forEach(
                     (item) => expect(typeof item.expression).toBe('string')
                 )
+            })
+
+            it('give a disaggregation only the data sets whose category combo holds it', () => {
+                const element = idOfCode('PTT_DIS_BOTH')
+                const quarterlyDataSet = metadata.dataElements[
+                    element
+                ].dataSets.find(({ periodType }) => periodType === 'Quarterly')
+                const optionCombo = Object.entries(
+                    metadata.categoryOptionCombos
+                ).find(
+                    ([, { categoryComboId }]) =>
+                        categoryComboId === quarterlyDataSet.categoryComboId
+                )[0]
+                const profileOf = (id) =>
+                    getDataItemProfile(
+                        { id, dimensionItemType: 'DATA_ELEMENT_OPERAND' },
+                        metadata
+                    )
+
+                expect(
+                    profileOf(`${element}.${optionCombo}`).assignedPeriodTypes
+                        .types
+                ).toEqual(['Quarterly'])
+                expect(
+                    getDataItemProfile(
+                        { id: element, dimensionItemType: 'DATA_ELEMENT' },
+                        metadata
+                    ).assignedPeriodTypes.types
+                ).toEqual(['Monthly', 'Quarterly'])
             })
 
             // The smoke subset keeps a few of each version's types; the full export matched all of them
