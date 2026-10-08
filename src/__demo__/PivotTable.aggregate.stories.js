@@ -470,6 +470,54 @@ DeepFilter.story = {
     name: 'deep - filter',
 }
 
+/* This layout has a filter the lib can read, so it derives "Eastern Area".
+ * A caller that would rather format the line itself passes `filterText`.
+ * Whether there is a row at all stays the layout's call either way, which
+ * the third mode shows. */
+const filterTextModes = [
+    { label: 'Derived by the lib' },
+    { label: 'Supplied by the caller', filterText: 'Age: 5 - 10, Female' },
+    {
+        label: 'Supplied, but the layout has no filters',
+        filterText: 'Age: 5 - 10, Female',
+        filters: [],
+    },
+]
+
+export const DeepSuppliedFilterText = (_, { pivotTableOptions }) => {
+    const [modeIndex, setModeIndex] = useState(0)
+    const mode = filterTextModes[modeIndex]
+    const visualization = {
+        ...deepWithFiltersVisualization,
+        ...visualizationReset,
+        ...pivotTableOptions,
+        showDimensionLabels: false,
+        filters: mode.filters ?? deepWithFiltersVisualization.filters,
+    }
+    return (
+        <div>
+            {filterTextModes.map((each, index) => (
+                <button
+                    key={each.label}
+                    disabled={index === modeIndex}
+                    onClick={() => setModeIndex(index)}
+                >
+                    {each.label}
+                </button>
+            ))}
+            <div style={{ width: 800, height: 600 }}>
+                <PivotTable
+                    data={deepWithFiltersData}
+                    visualization={visualization}
+                    filterText={mode.filterText}
+                />
+            </div>
+        </div>
+    )
+}
+
+DeepSuppliedFilterText.storyName = 'deep - filter text supplied by the caller'
+
 export const DeepTitleSubtitleFilter = (_, { pivotTableOptions }) => {
     const visualization = {
         ...deepVisualization,

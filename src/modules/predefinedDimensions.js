@@ -9,6 +9,7 @@ import i18n from '../locales/index.js'
 export const DIMENSION_ID_DATA = 'dx'
 export const DIMENSION_ID_PERIOD = 'pe'
 export const DIMENSION_ID_ORGUNIT = 'ou'
+export const DIMENSION_ID_ENROLLMENT_ORGUNIT = 'enrollmentou'
 export const DIMENSION_ID_ASSIGNED_CATEGORIES = 'co'
 export const DIMENSION_PROP_NO_ITEMS = 'noItems'
 

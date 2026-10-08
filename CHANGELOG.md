@@ -1,3 +1,38 @@
+## [29.8.1](https://github.com/dhis2/analytics/compare/v29.8.0...v29.8.1) (2026-09-25)
+
+
+### Bug Fixes
+
+* event analytics response transformer support for novalue optionset option metadata (DHIS2-12978) ([#1845](https://github.com/dhis2/analytics/issues/1845)) ([768534a](https://github.com/dhis2/analytics/commit/768534a9e293f5d50f2697d2843eacac6bd42acd))
+
+# [29.8.0](https://github.com/dhis2/analytics/compare/v29.7.1...v29.8.0) (2026-09-24)
+
+
+### Features
+
+* let the caller supply the pivot table filter line text ([#1861](https://github.com/dhis2/analytics/issues/1861)) ([877c8d5](https://github.com/dhis2/analytics/commit/877c8d5141bd590089fa2ce6e8e75952b339ef51))
+
+## [29.7.1](https://github.com/dhis2/analytics/compare/v29.7.0...v29.7.1) (2026-09-24)
+
+
+### Bug Fixes
+
+* include source and doc files in package ([#1857](https://github.com/dhis2/analytics/issues/1857)) ([77ca197](https://github.com/dhis2/analytics/commit/77ca197d06c2f15d23964c615e33e06d2644605d))
+
+# [29.7.0](https://github.com/dhis2/analytics/compare/v29.6.2...v29.7.0) (2026-09-23)
+
+
+### Features
+
+* wire display prop to organisation unit tree (DHIS2-21562) ([#1834](https://github.com/dhis2/analytics/issues/1834)) ([0d93e67](https://github.com/dhis2/analytics/commit/0d93e678de78be85e898176a045dc9b7a6185ce5))
+
+## [29.6.2](https://github.com/dhis2/analytics/compare/v29.6.1...v29.6.2) (2026-09-21)
+
+
+### Bug Fixes
+
+* apply org unit hierarchy in event and enrollment pivot tables ([#1846](https://github.com/dhis2/analytics/issues/1846)) ([31b5967](https://github.com/dhis2/analytics/commit/31b59679042b3fa7056d7d59ad7ff0a472f251b7))
+
 ## [29.6.1](https://github.com/dhis2/analytics/compare/v29.6.0...v29.6.1) (2026-09-17)
 
 

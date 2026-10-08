@@ -27,13 +27,12 @@ import { applyOptionSetHandler } from './optionSet.js'
 
 export const PREFIX_SEPARATOR = '_'
 export const NA_VALUE = ''
+export const D2__NOVALUE = 'D2__NOVALUE'
 export const NA_VALUE_ITEM = {
     name: i18n.t('No value'),
-    style: {
-        fontStyle: 'italic',
+    code: D2__NOVALUE,
+    dimensionItemStyle: {
         color: '#6C7787',
-        fontFamily: 'monospace',
-        letterSpacing: '-0.3px',
     },
 }
 
@@ -124,6 +123,11 @@ const applyMetaDataItemNameOverrides = (items, metaDataItemNames) =>
         { ...items }
     )
 
+const addNoValueItem = (items) => ({
+    ...items,
+    [NA_VALUE]: NA_VALUE_ITEM,
+})
+
 export const transformResponse = (
     response,
     { hideNaData = false, metaDataItemNames = {} } = {}
@@ -134,9 +138,11 @@ export const transformResponse = (
         ...response,
         metaData: {
             ...response.metaData,
-            items: applyMetaDataItemNameOverrides(
-                response.metaData.items,
-                metaDataItemNames
+            items: addNoValueItem(
+                applyMetaDataItemNameOverrides(
+                    response.metaData.items,
+                    metaDataItemNames
+                )
             ),
             dimensions: {
                 ...response.metaData.dimensions,
@@ -181,19 +187,22 @@ export const transformResponse = (
         }
     })
 
-    // Add "No value" dimension item if "Hide NA data" option is disabled
-    // Only add if there is at least one empty value
+    // Add "No value" dimension item if
+    // - "Hide NA data" option is disabled
+    // - NA_VALUE is not already a dimension
+    // - there is at least one empty value
     if (!hideNaData) {
         metaHeaders.forEach((header) => {
             if (
-                response.rows.map((row) => row[header.index]).includes(NA_VALUE)
+                !transformedResponse.metaData.dimensions[header.name].includes(
+                    NA_VALUE
+                ) &&
+                response.rows.some((row) => row[header.index] === NA_VALUE)
             ) {
                 transformedResponse.metaData.dimensions[header.name] = [
                     ...transformedResponse.metaData.dimensions[header.name],
                     NA_VALUE,
                 ]
-
-                transformedResponse.metaData.items[NA_VALUE] = NA_VALUE_ITEM
             }
         })
     }

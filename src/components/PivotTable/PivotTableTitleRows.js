@@ -25,10 +25,13 @@ export const PivotTableTitleRows = ({ clippingResult, width }) => {
             ) : null}
             {engine.visualization.filters?.length ? (
                 <PivotTableTitleRow
-                    title={getFilterText(
-                        engine.visualization.filters,
-                        engine.rawData.metaData
-                    )}
+                    title={
+                        engine.options.filterText ||
+                        getFilterText(
+                            engine.visualization.filters,
+                            engine.rawData.metaData
+                        )
+                    }
                     scrollPosition={clippingResult.scrollPosition}
                     containerWidth={width}
                 />
