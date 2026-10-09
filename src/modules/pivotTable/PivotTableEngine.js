@@ -254,6 +254,25 @@ const lookup = (
     return { column, row }
 }
 
+const isFiniteNumber = (value) =>
+    typeof value === 'number' && Number.isFinite(value)
+
+const parseDataFields = (dataRow, dataHeaders) => {
+    const values = dataFields.reduce((out, field) => {
+        out[field] = parseValue(dataRow[dataHeaders[field]])
+        return out
+    }, {})
+
+    // Some values (e.g. reporting rates) come with a factor but without
+    // multiplier and divisor, use the factor so AVERAGE totals can be computed
+    if (!isFiniteNumber(values.multiplier) && isFiniteNumber(values.factor)) {
+        values.multiplier = values.factor
+        values.divisor = 1
+    }
+
+    return values
+}
+
 const applyTotalAggregationType = (
     {
         totalAggregationType,
@@ -268,11 +287,13 @@ const applyTotalAggregationType = (
     switch (overrideTotalAggregationType || totalAggregationType) {
         case AGGREGATE_TYPE_NA:
             return VALUE_NA
-        case AGGREGATE_TYPE_AVERAGE:
-            return (
+        case AGGREGATE_TYPE_AVERAGE: {
+            const average =
                 ((numerator || value) * multiplier) /
                 (denominator * divisor || 1)
-            )
+
+            return Number.isFinite(average) ? average : VALUE_NA
+        }
         case AGGREGATE_TYPE_SUM:
         default:
             return value
@@ -782,6 +803,10 @@ export class PivotTableEngine {
     addCellValueToTotals(pos, dataRow) {
         const totals = this.getDependantTotalCells(pos)
         const dxDimension = this.getRawCellDxDimension(pos)
+        const fieldValues = parseDataFields(
+            dataRow,
+            this.dimensionLookup.dataHeaders
+        )
 
         Object.values(totals).forEach((totalItem) => {
             if (!totalItem) {
@@ -832,8 +857,7 @@ export class PivotTableEngine {
             // (see DHIS2-9155)
             if (isNumericValueType(totalCell.valueType)) {
                 dataFields.forEach((field) => {
-                    const headerIndex = this.dimensionLookup.dataHeaders[field]
-                    const value = parseValue(dataRow[headerIndex])
+                    const value = fieldValues[field]
                     totalCell[field] = addToTotalIfNumber(
                         value,
                         totalCell[field]
@@ -852,8 +876,7 @@ export class PivotTableEngine {
             }
             const percentageTotal = this.percentageTotals[pos.row]
             dataFields.forEach((field) => {
-                const headerIndex = this.dimensionLookup.dataHeaders[field]
-                const value = parseValue(dataRow[headerIndex])
+                const value = fieldValues[field]
                 percentageTotal[field] = addToTotalIfNumber(
                     value,
                     percentageTotal[field]
@@ -870,8 +893,7 @@ export class PivotTableEngine {
                 const percentageTotal =
                     this.percentageTotals[totals.columnSubtotal.row]
                 dataFields.forEach((field) => {
-                    const headerIndex = this.dimensionLookup.dataHeaders[field]
-                    const value = parseValue(dataRow[headerIndex])
+                    const value = fieldValues[field]
                     percentageTotal[field] = addToTotalIfNumber(
                         value,
                         percentageTotal[field]
@@ -889,8 +911,7 @@ export class PivotTableEngine {
                 const percentageTotal =
                     this.percentageTotals[totals.columnTotal.row]
                 dataFields.forEach((field) => {
-                    const headerIndex = this.dimensionLookup.dataHeaders[field]
-                    const value = parseValue(dataRow[headerIndex])
+                    const value = fieldValues[field]
                     percentageTotal[field] = addToTotalIfNumber(
                         value,
                         percentageTotal[field]
@@ -908,8 +929,7 @@ export class PivotTableEngine {
             }
             const percentageTotal = this.percentageTotals[pos.column]
             dataFields.forEach((field) => {
-                const headerIndex = this.dimensionLookup.dataHeaders[field]
-                const value = parseValue(dataRow[headerIndex])
+                const value = fieldValues[field]
                 percentageTotal[field] = addToTotalIfNumber(
                     value,
                     percentageTotal[field]
@@ -926,8 +946,7 @@ export class PivotTableEngine {
                 const percentageTotal =
                     this.percentageTotals[totals.rowSubtotal.column]
                 dataFields.forEach((field) => {
-                    const headerIndex = this.dimensionLookup.dataHeaders[field]
-                    const value = parseValue(dataRow[headerIndex])
+                    const value = fieldValues[field]
                     percentageTotal[field] = addToTotalIfNumber(
                         value,
                         percentageTotal[field]
@@ -945,8 +964,7 @@ export class PivotTableEngine {
                 const percentageTotal =
                     this.percentageTotals[totals.rowTotal.column]
                 dataFields.forEach((field) => {
-                    const headerIndex = this.dimensionLookup.dataHeaders[field]
-                    const value = parseValue(dataRow[headerIndex])
+                    const value = fieldValues[field]
                     percentageTotal[field] = addToTotalIfNumber(
                         value,
                         percentageTotal[field]
