@@ -13,23 +13,8 @@ import styles from '../styles/DimensionSelector.style.js'
 import { TransferOption } from '../TransferOption.js'
 import FixedPeriodFilter from './FixedPeriodFilter.js'
 import RelativePeriodFilter from './RelativePeriodFilter.js'
-import {
-    applyDisplayLabelOverrides,
-    applyFixedPeriodTypeDisplayLabels,
-    filterEnabledFixedPeriodTypes,
-    filterEnabledRelativePeriodTypes,
-} from './utils/enabledPeriodTypes.js'
-import { getFixedPeriodsOptions } from './utils/fixedPeriods.js'
-import {
-    FYFEB,
-    FYAUG,
-    FYSEP,
-    MONTHLY,
-    QUARTERLY,
-    WEEKLYFRI,
-    filterPeriodTypesById,
-} from './utils/index.js'
-import { getRelativePeriodsOptions } from './utils/relativePeriods.js'
+import { getPeriodTypeOptions } from './useDataOutputPeriodTypes.js'
+import { MONTHLY, QUARTERLY } from './utils/index.js'
 
 const RightHeader = ({ infoBoxMessage }) => (
     <>
@@ -63,65 +48,19 @@ const PeriodTransfer = ({
     infoBoxMessage,
     height = TRANSFER_HEIGHT,
     enabledPeriodTypesData = null,
-    supportsEnabledPeriodTypes = false,
 }) => {
-    const { filteredFixedOptions, filteredRelativeOptions } = useMemo(() => {
-        if (supportsEnabledPeriodTypes && enabledPeriodTypesData) {
-            const {
-                enabledTypes,
-                financialYearStart,
-                financialYearDisplayLabel,
-                weeklyDisplayLabel,
-                metaData,
-            } = enabledPeriodTypesData
-
-            const filteredFixed = applyFixedPeriodTypeDisplayLabels(
-                filterEnabledFixedPeriodTypes(
-                    getFixedPeriodsOptions(periodsSettings),
-                    enabledTypes
-                ),
-                enabledTypes
-            )
-
-            const filteredRelative = applyDisplayLabelOverrides(
-                filterEnabledRelativePeriodTypes(
-                    getRelativePeriodsOptions(),
-                    enabledTypes,
-                    financialYearStart
-                ),
-                { financialYearDisplayLabel, weeklyDisplayLabel, metaData }
-            )
-
-            return {
-                filteredFixedOptions: filteredFixed,
-                filteredRelativeOptions: filteredRelative,
-            }
-        } else {
-            const allFixed = getFixedPeriodsOptions(periodsSettings)
-            const allRelative = getRelativePeriodsOptions()
-            const v43PeriodTypes = [WEEKLYFRI, FYFEB, FYAUG, FYSEP]
-            const allExcludedPeriodTypes = [
-                ...excludedPeriodTypes,
-                ...v43PeriodTypes,
-            ]
-
-            return {
-                filteredFixedOptions: filterPeriodTypesById(
-                    allFixed,
-                    allExcludedPeriodTypes
-                ),
-                filteredRelativeOptions: filterPeriodTypesById(
-                    allRelative,
-                    allExcludedPeriodTypes
-                ),
-            }
-        }
-    }, [
-        supportsEnabledPeriodTypes,
-        enabledPeriodTypesData,
-        excludedPeriodTypes,
-        periodsSettings,
-    ])
+    const {
+        fixedOptions: filteredFixedOptions,
+        relativeOptions: filteredRelativeOptions,
+    } = useMemo(
+        () =>
+            getPeriodTypeOptions({
+                enabledPeriodTypesData,
+                periodsSettings,
+                excludedPeriodTypes,
+            }),
+        [enabledPeriodTypesData, excludedPeriodTypes, periodsSettings]
+    )
 
     const analysisRelativePeriod =
         enabledPeriodTypesData?.analysisRelativePeriod
@@ -392,6 +331,7 @@ PeriodTransfer.propTypes = {
         financialYearDisplayLabel: PropTypes.string,
         financialYearStart: PropTypes.string,
         noEnabledTypes: PropTypes.bool,
+        version: PropTypes.number,
     }),
     excludedPeriodTypes: PropTypes.arrayOf(PropTypes.string),
     height: PropTypes.string,
@@ -408,7 +348,6 @@ PeriodTransfer.propTypes = {
             name: PropTypes.string,
         })
     ),
-    supportsEnabledPeriodTypes: PropTypes.bool,
 }
 
 export default PeriodTransfer

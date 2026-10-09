@@ -29,8 +29,7 @@ const PeriodDimension = ({
     const { systemInfo } = config
     const userSettingsResult = useDataQuery(userSettingsQuery)
 
-    const { supportsEnabledPeriodTypes, enabledPeriodTypesData } =
-        useDataOutputPeriodTypes()
+    const { enabledPeriodTypesData } = useDataOutputPeriodTypes()
 
     const { calendar = 'gregory' } = systemInfo
     const { data: { userSettings: { keyUiLocale: locale } = {} } = {} } =
@@ -61,7 +60,6 @@ const PeriodDimension = ({
             periodsSettings={periodsSettings}
             height={height}
             enabledPeriodTypesData={enabledPeriodTypesData}
-            supportsEnabledPeriodTypes={supportsEnabledPeriodTypes}
         />
     )
 }
