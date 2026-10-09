@@ -7,6 +7,8 @@ export { default as PeriodDimension } from './components/PeriodDimension/PeriodD
 export { default as FixedPeriodSelect } from './components/PeriodDimension/FixedPeriodSelect.js'
 export { useDataOutputPeriodTypes } from './components/PeriodDimension/useDataOutputPeriodTypes.js'
 
+export { useDataItemProfiles } from './components/DataItemProfile/useDataItemProfiles.js'
+
 export { default as OrgUnitDimension } from './components/OrgUnitDimension/OrgUnitDimension.js'
 
 export {
@@ -329,6 +331,57 @@ export {
 // Modules: general
 
 export { renderValue as formatValue } from './modules/renderValue.js'
+
+// Modules: dataItemProfile
+
+export { getDataItemProfile } from './modules/dataItemProfile/getDataItemProfile.js'
+export { getPeriodAggregationType } from './modules/dataItemProfile/profile/collectSources.js'
+export { addAssignedOrgUnitLevels } from './modules/dataItemProfile/profile/assignedOrgUnitLevels.js'
+export { getDataItemProfileCompatibility } from './modules/dataItemProfile/getDataItemProfileCompatibility.js'
+export { getDataItemProfilePeriodCompatibility } from './modules/dataItemProfile/compatibility/getDataItemProfilePeriodCompatibility.js'
+export { getDataItemProfileOrgUnitCompatibility } from './modules/dataItemProfile/compatibility/getDataItemProfileOrgUnitCompatibility.js'
+export { getPeriodAtOrgUnitResults } from './modules/dataItemProfile/compatibility/periodAtOrgUnitResults.js'
+export {
+    COMPATIBILITY_FULL,
+    COMPATIBILITY_PARTIAL,
+    COMPATIBILITY_NONE,
+    COMPATIBILITY_UNKNOWN,
+    REASON_OPERAND_EMPTY,
+    REASON_OPERAND_PARTIAL,
+    REASON_PERIOD_TOO_SHORT,
+    REASON_PERIOD_TYPE_MISMATCH,
+    REASON_REPORTING_RATE_TOO_SHORT,
+    REASON_NO_EARLIER_PERIOD_VALUE,
+    REASON_REPEATED_VALUE,
+    REASON_EARLIER_PERIOD_VALUE,
+    REASON_NOT_ASSIGNED,
+    REASON_ASSIGNED_AT_HIGHER_LEVEL,
+    REASON_STOPPED_BY_AGGREGATION_LEVEL,
+    REASON_NO_ORG_UNITS_AT_LEVEL,
+    REASON_EMPTY_GROUP,
+    REASON_PARTLY_ASSIGNED,
+    REASON_ANY_ORG_UNIT,
+    REASON_PROFILE_UNKNOWN,
+    REASON_UNKNOWN_PERIOD,
+    REASON_SETTING_MISSING,
+    REASON_UNSUPPORTED_VERSION,
+    REASON_UNKNOWN_ORG_UNIT,
+    PROFILE_REASON_MISSING_METADATA,
+    PROFILE_REASON_MISSING_PROGRAM,
+    PROFILE_REASON_UNKNOWN_OPERAND,
+    PROFILE_REASON_UNKNOWN_PERIOD_TYPE,
+    PROFILE_REASON_UNSUPPORTED_ITEM_TYPE,
+    PROFILE_REASON_NO_DATA_SET,
+    PROFILE_REASON_NOT_AGGREGATABLE,
+    SKIP_IF_ANY_VALUE_MISSING,
+    SKIP_IF_ALL_VALUES_MISSING,
+} from './modules/dataItemProfile/constants.js'
+export { fetchDataItemProfileMetadata } from './api/dataItemProfile/fetchDataItemProfileMetadata.js'
+export {
+    fetchAssignedOrgUnitCounts,
+    getDataItemProfileSourceKeys,
+} from './api/dataItemProfile/assignedOrgUnitCounts.js'
+export { fetchOrgUnitCoverage } from './api/dataItemProfile/fetchOrgUnitCoverage.js'
 
 // Modules: response
 
