@@ -2,34 +2,36 @@ import { colors, spacers } from '@dhis2/ui'
 import css from 'styled-jsx/css'
 
 export default css`
-    .header {
-        background: ${colors.grey200};
-        padding: ${spacers.dp16};
-        font-weight: normal;
+    .formula-section {
+        /* Match left column height; FormulaField scrolls inside. */
+        position: absolute;
+        inset: 0;
+        background: ${colors.white};
+        border: 1px solid ${colors.grey400};
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        min-height: 0;
     }
 
-    .header-icon {
-        padding: 0 ${spacers.dp8};
-        vertical-align: text-bottom;
-        line-height: 14px;
+    .formula-box {
+        position: relative;
+        flex: 1;
+        min-height: 0;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        border-top: 1px solid ${colors.grey400};
     }
 
-    .actions-wrapper {
-        margin-top: ${spacers.dp16};
-        margin-bottom: ${spacers.dp16};
-        margin-left: ${spacers.dp4};
+    .formula-box.valid {
+        border-top-color: transparent;
+        box-shadow: inset 0 0 0 1px ${colors.green500};
     }
 
-    .button-container {
-        display: inline-flex;
-    }
-
-    .validate-button {
-        margin-bottom: ${spacers.dp4};
-    }
-
-    .remove-button {
-        margin-right: ${spacers.dp8};
+    .formula-box.invalid {
+        border-top-color: transparent;
+        box-shadow: inset 0 0 0 1px ${colors.red500};
     }
 
     .delete-button {
@@ -38,31 +40,84 @@ export default css`
 
     .content {
         display: flex;
+        gap: ${spacers.dp12};
+        align-items: stretch;
     }
 
     .left-section {
-        width: 45%;
+        width: 40%;
+        flex-shrink: 0;
     }
 
     .right-section {
-        width: 55%;
-        padding-left: ${spacers.dp8};
+        width: 60%;
         font-size: 14px;
+        position: relative;
+        min-height: 0;
     }
 
-    .validation-message {
-        margin-left: ${spacers.dp8};
+    .sub-header-row {
+        display: flex;
+        align-items: center;
+        gap: ${spacers.dp8};
+        padding: ${spacers.dp8} ${spacers.dp8} 0;
+        box-sizing: border-box;
+        flex-shrink: 0;
     }
 
-    .validation-error {
-        color: ${colors.red500};
+    .sub-header {
+        font-size: 14px;
+        font-weight: normal;
+        margin: 0;
+        flex-shrink: 0;
     }
 
-    .validation-success {
-        color: ${colors.green500};
+    /* Clear chips under the overlay bar when validation is shown */
+    .formula-box.valid :global(.formula-field),
+    .formula-box.invalid :global(.formula-field) {
+        padding-bottom: 40px;
     }
 
-    .name-input {
-        margin-top: ${spacers.dp12};
+    .validation-bar {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        gap: ${spacers.dp4};
+        padding: ${spacers.dp8} ${spacers.dp12};
+        box-sizing: border-box;
+        background: ${colors.red050};
+        outline: 1px solid ${colors.red500};
+        outline-offset: -1px;
+    }
+
+    .formula-box.valid .validation-bar {
+        background: ${colors.green050};
+        outline-color: ${colors.green500};
+    }
+
+    .status {
+        display: inline-flex;
+        align-items: center;
+        gap: ${spacers.dp4};
+        min-width: 0;
+    }
+
+    .status-text {
+        color: ${colors.red700};
+        font-size: 14px;
+        line-height: 19px;
+        min-width: 0;
+    }
+
+    .formula-box.valid .status-text {
+        color: ${colors.green700};
+    }
+
+    .name-field {
+        margin-bottom: ${spacers.dp16};
     }
 `

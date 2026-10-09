@@ -67,7 +67,7 @@ export const validateExpression = (expression) => {
         result = {
             status: INVALID_EXPRESSION,
             message: i18n.t(
-                'Formula is empty. Add items to the formula from the lists on the left.'
+                'Formula is empty. Add a data element or operator to the formula.'
             ),
         }
         // TODO: reimplement this but allow negative values, e.g. 10 / -5

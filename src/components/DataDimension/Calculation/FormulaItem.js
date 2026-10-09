@@ -1,24 +1,20 @@
-import { Tooltip } from '@dhis2/ui'
 import { useSortable } from '@dnd-kit/sortable'
 import { CSS } from '@dnd-kit/utilities'
 import cx from 'classnames'
 import PropTypes from 'prop-types'
-import React, { useState, useRef, useEffect } from 'react'
+import React, { useRef, useEffect } from 'react'
 import { DIMENSION_TYPE_DATA_ELEMENT } from '../../../modules/dataTypes.js'
 import { getIcon } from '../../../modules/dimensionListItem.js'
 import {
     EXPRESSION_TYPE_NUMBER,
     EXPRESSION_TYPE_DATA,
 } from '../../../modules/expressions.js'
+import { isInteractiveElement, onActivationKeydown } from './DndContext.js'
 import DragHandleIcon from './DragHandleIcon.js'
 import styles from './styles/FormulaItem.style.js'
 
 const BEFORE = 'BEFORE'
 const AFTER = 'AFTER'
-
-const maxMsBetweenClicks = 300
-
-const TAG_INPUT = 'INPUT'
 
 const FormulaItem = ({
     id,
@@ -30,7 +26,6 @@ const FormulaItem = ({
     overLastDropZone,
     onChange,
     onClick,
-    onDoubleClick,
     hasFocus,
 }) => {
     const {
@@ -49,8 +44,6 @@ const FormulaItem = ({
     })
 
     const inputRef = useRef(null)
-
-    const [clickTimeoutId, setClickTimeoutId] = useState(null)
 
     useEffect(() => {
         if (hasFocus && inputRef.current) {
@@ -97,29 +90,21 @@ const FormulaItem = ({
     }
 
     const handleClick = (e) => {
-        const tagname = e.target.tagName
-        clearTimeout(clickTimeoutId)
-        const to = setTimeout(function () {
-            if (tagname !== TAG_INPUT) {
-                onClick(id)
-            } else {
-                inputRef.current && inputRef.current.focus()
-            }
-        }, maxMsBetweenClicks)
-        setClickTimeoutId(to)
-    }
-
-    const handleDoubleClick = (e) => {
-        clearTimeout(clickTimeoutId)
-        setClickTimeoutId(null)
-        if (e.target.tagName !== TAG_INPUT) {
-            onDoubleClick(id)
-        } else {
+        if (isInteractiveElement(e.target)) {
             inputRef.current && inputRef.current.focus()
+            return
         }
+        onClick(id)
     }
 
     const handleChange = (e) => onChange({ itemId: id, value: e.target.value })
+
+    const handleKeyDown = (e) => {
+        if (isInteractiveElement(e.target)) {
+            return
+        }
+        onActivationKeydown(() => onClick(id))(e)
+    }
 
     const getContent = () => {
         if (type === EXPRESSION_TYPE_NUMBER) {
@@ -151,19 +136,17 @@ const FormulaItem = ({
 
         if (type === EXPRESSION_TYPE_DATA) {
             return (
-                <Tooltip content={label} placement="bottom">
-                    <div
-                        className={cx('content', 'data', {
-                            highlighted: isHighlighted,
-                        })}
-                    >
-                        <span className="icon">
-                            {getIcon(DIMENSION_TYPE_DATA_ELEMENT)}
-                        </span>
-                        <span className="label">{label}</span>
-                        <style jsx>{styles}</style>
-                    </div>
-                </Tooltip>
+                <div
+                    className={cx('content', 'data', {
+                        highlighted: isHighlighted,
+                    })}
+                >
+                    <span className="icon">
+                        {getIcon(DIMENSION_TYPE_DATA_ELEMENT)}
+                    </span>
+                    <span className="label">{label}</span>
+                    <style jsx>{styles}</style>
+                </div>
             )
         }
 
@@ -195,7 +178,7 @@ const FormulaItem = ({
                         insertAfter: insertPosition === AFTER,
                     })}
                     onClick={handleClick}
-                    onDoubleClick={handleDoubleClick}
+                    onKeyDown={handleKeyDown}
                     data-test={`formula-item-${id}`}
                 >
                     {getContent()}
@@ -212,7 +195,6 @@ FormulaItem.propTypes = {
     type: PropTypes.string.isRequired,
     onChange: PropTypes.func.isRequired,
     onClick: PropTypes.func.isRequired,
-    onDoubleClick: PropTypes.func.isRequired,
     hasFocus: PropTypes.bool,
     isHighlighted: PropTypes.bool,
     isLast: PropTypes.bool,
