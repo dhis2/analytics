@@ -31,10 +31,10 @@
     },
     "devDependencies": {
         "@dhis2/app-runtime": "^3.17.4",
-        "@dhis2/cli-app-scripts": "^12.11.5",
+        "@dhis2/cli-app-scripts": "^12.11.6",
         "@dhis2/cli-style": "^10.7.10",
         "@dhis2/d2-i18n": "^1.1.0",
-        "@dhis2/ui": "^10.19.0",
+        "@dhis2/ui": "^10.19.1",
         "@storybook/preset-create-react-app": "^10.6.1",
         "@storybook/react-webpack5": "^10.6.1",
         "@testing-library/dom": "^10.4.2",
