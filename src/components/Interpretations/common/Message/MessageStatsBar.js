@@ -8,7 +8,8 @@ const MessageStatsBar = ({ children }) => (
         <style jsx>{`
             .container {
                 display: flex;
-                gap: ${spacers.dp12};
+                align-items: flex-start;
+                gap: ${spacers.dp4};
             }
         `}</style>
     </div>

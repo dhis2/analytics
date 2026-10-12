@@ -5,6 +5,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import { useDeleteInterpretation } from '../../InterpretationsProvider/hooks.js'
 import { MessageIconButton } from '../index.js'
+import { useConfirmClick } from '../useConfirmClick.js'
 
 const InterpretationDeleteButton = ({ id, onComplete }) => {
     const { show: showErrorAlert } = useAlert(
@@ -16,12 +17,19 @@ const InterpretationDeleteButton = ({ id, onComplete }) => {
         onComplete,
         showErrorAlert,
     })
+    const { isConfirming, onClick } = useConfirmClick(remove)
 
     return (
         <MessageIconButton
-            tooltipContent={i18n.t('Delete')}
+            tooltipContent={
+                isConfirming
+                    ? i18n.t('Click again to delete')
+                    : i18n.t('Delete')
+            }
             iconComponent={IconDelete16}
-            onClick={remove}
+            label={isConfirming ? i18n.t('Delete?') : undefined}
+            confirming={isConfirming}
+            onClick={onClick}
             disabled={loading}
             dataTest="interpretation-delete-button"
         />

@@ -92,12 +92,11 @@ export const InterpretationsUnit = ({
                 .container {
                     position: relative;
                     padding: ${spacers.dp16};
-                    border-bottom: 1px solid ${colors.grey400};
                     background-color: ${colors.white};
                 }
 
                 .expanded {
-                    padding-bottom: ${spacers.dp32};
+                    padding-block-end: ${spacers.dp24};
                 }
 
                 .loader {
@@ -111,6 +110,7 @@ export const InterpretationsUnit = ({
                     display: flex;
                     justify-content: space-between;
                     cursor: pointer;
+                    margin-block-end: ${spacers.dp12};
                 }
 
                 .title {
