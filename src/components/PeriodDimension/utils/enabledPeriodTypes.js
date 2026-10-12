@@ -25,6 +25,27 @@ export const SERVER_PT_TO_MULTI_CALENDAR_PT = {
     FinancialNov: 'FYNOV',
 }
 
+// Mapping from the analyticsFinancialYearStart system setting to server period type names
+export const FY_SETTING_TO_SERVER_PT = {
+    FINANCIAL_YEAR_FEBRUARY: 'FinancialFeb',
+    FINANCIAL_YEAR_APRIL: 'FinancialApril',
+    FINANCIAL_YEAR_JULY: 'FinancialJuly',
+    FINANCIAL_YEAR_AUGUST: 'FinancialAug',
+    FINANCIAL_YEAR_SEPTEMBER: 'FinancialSep',
+    FINANCIAL_YEAR_OCTOBER: 'FinancialOct',
+    FINANCIAL_YEAR_NOVEMBER: 'FinancialNov',
+}
+
+// Mapping from the analyticsWeeklyStart system setting to server period type names
+export const WEEKLY_START_TO_SERVER_PT = {
+    WEEKLY: 'Weekly',
+    WEEKLY_WEDNESDAY: 'WeeklyWednesday',
+    WEEKLY_THURSDAY: 'WeeklyThursday',
+    WEEKLY_FRIDAY: 'WeeklyFriday',
+    WEEKLY_SATURDAY: 'WeeklySaturday',
+    WEEKLY_SUNDAY: 'WeeklySunday',
+}
+
 // Mapping from relative period categories to their corresponding fixed period types
 export const RP_CATEGORY_TO_FP_DEPENDENCIES = {
     DAILY: ['Daily'],

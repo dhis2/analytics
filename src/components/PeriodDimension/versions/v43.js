@@ -8,6 +8,8 @@ import { useEffect, useMemo } from 'react'
 import {
     RP_CATEGORY_TO_FP_DEPENDENCIES,
     SERVER_PT_TO_MULTI_CALENDAR_PT,
+    FY_SETTING_TO_SERVER_PT,
+    WEEKLY_START_TO_SERVER_PT,
     applyPeriodNameOverrides,
     filterEnabledFixedPeriodTypes,
 } from '../utils/enabledPeriodTypes.js'
@@ -27,25 +29,6 @@ const v43Query = {
     weeklyStart: {
         resource: 'systemSettings/analyticsWeeklyStart',
     },
-}
-
-const FY_SETTING_TO_SERVER_PT = {
-    FINANCIAL_YEAR_FEBRUARY: 'FinancialFeb',
-    FINANCIAL_YEAR_APRIL: 'FinancialApril',
-    FINANCIAL_YEAR_JULY: 'FinancialJuly',
-    FINANCIAL_YEAR_AUGUST: 'FinancialAug',
-    FINANCIAL_YEAR_SEPTEMBER: 'FinancialSep',
-    FINANCIAL_YEAR_OCTOBER: 'FinancialOct',
-    FINANCIAL_YEAR_NOVEMBER: 'FinancialNov',
-}
-
-const WEEKLY_START_TO_SERVER_PT = {
-    WEEKLY: 'Weekly',
-    WEEKLY_WEDNESDAY: 'WeeklyWednesday',
-    WEEKLY_THURSDAY: 'WeeklyThursday',
-    WEEKLY_FRIDAY: 'WeeklyFriday',
-    WEEKLY_SATURDAY: 'WeeklySaturday',
-    WEEKLY_SUNDAY: 'WeeklySunday',
 }
 
 export const useV43DataOutputPeriodTypes = ({ enabled }) => {
