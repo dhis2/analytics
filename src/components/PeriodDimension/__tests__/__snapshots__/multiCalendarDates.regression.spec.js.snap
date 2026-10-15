@@ -26,23 +26,23 @@ Object {
     "currentYear": Object {
       "count": 6,
       "first": Array [
-        "{\\"periodType\\":\\"BIMONTHLY\\",\\"id\\":\\"201601B\\",\\"iso\\":\\"201601B\\",\\"name\\":\\"Meskerem - Tekemt 2016 AA\\",\\"displayName\\":\\"Meskerem - Tekemt 2016 AA\\",\\"startDate\\":\\"2016-01-01\\",\\"endDate\\":\\"2016-02-30\\"}",
-        "{\\"periodType\\":\\"BIMONTHLY\\",\\"id\\":\\"201602B\\",\\"iso\\":\\"201602B\\",\\"name\\":\\"Hedar - Tahsas 2016 AA\\",\\"displayName\\":\\"Hedar - Tahsas 2016 AA\\",\\"startDate\\":\\"2016-03-01\\",\\"endDate\\":\\"2016-04-30\\"}",
+        "{\\"periodType\\":\\"BIMONTHLY\\",\\"id\\":\\"201601B\\",\\"iso\\":\\"201601B\\",\\"name\\":\\"Meskerem - Tekemt 2016\\",\\"displayName\\":\\"Meskerem - Tekemt 2016\\",\\"startDate\\":\\"2016-01-01\\",\\"endDate\\":\\"2016-02-30\\"}",
+        "{\\"periodType\\":\\"BIMONTHLY\\",\\"id\\":\\"201602B\\",\\"iso\\":\\"201602B\\",\\"name\\":\\"Hedar - Tahsas 2016\\",\\"displayName\\":\\"Hedar - Tahsas 2016\\",\\"startDate\\":\\"2016-03-01\\",\\"endDate\\":\\"2016-04-30\\"}",
       ],
       "last": Array [
-        "{\\"periodType\\":\\"BIMONTHLY\\",\\"id\\":\\"201605B\\",\\"iso\\":\\"201605B\\",\\"name\\":\\"Genbot - Sene 2016 AA\\",\\"displayName\\":\\"Genbot - Sene 2016 AA\\",\\"startDate\\":\\"2016-09-01\\",\\"endDate\\":\\"2016-10-30\\"}",
-        "{\\"periodType\\":\\"BIMONTHLY\\",\\"id\\":\\"201606B\\",\\"iso\\":\\"201606B\\",\\"name\\":\\"Hamle - Nehasse 2016 AA\\",\\"displayName\\":\\"Hamle - Nehasse 2016 AA\\",\\"startDate\\":\\"2016-11-01\\",\\"endDate\\":\\"2016-12-30\\"}",
+        "{\\"periodType\\":\\"BIMONTHLY\\",\\"id\\":\\"201605B\\",\\"iso\\":\\"201605B\\",\\"name\\":\\"Genbot - Sene 2016\\",\\"displayName\\":\\"Genbot - Sene 2016\\",\\"startDate\\":\\"2016-09-01\\",\\"endDate\\":\\"2016-10-30\\"}",
+        "{\\"periodType\\":\\"BIMONTHLY\\",\\"id\\":\\"201606B\\",\\"iso\\":\\"201606B\\",\\"name\\":\\"Hamle - Nehasse 2016\\",\\"displayName\\":\\"Hamle - Nehasse 2016\\",\\"startDate\\":\\"2016-11-01\\",\\"endDate\\":\\"2016-12-30\\"}",
       ],
     },
     "lastYear": Object {
       "count": 6,
       "first": Array [
-        "{\\"periodType\\":\\"BIMONTHLY\\",\\"id\\":\\"201506B\\",\\"iso\\":\\"201506B\\",\\"name\\":\\"Hamle - Nehasse 2015 AA\\",\\"displayName\\":\\"Hamle - Nehasse 2015 AA\\",\\"startDate\\":\\"2015-11-01\\",\\"endDate\\":\\"2015-12-30\\"}",
-        "{\\"periodType\\":\\"BIMONTHLY\\",\\"id\\":\\"201505B\\",\\"iso\\":\\"201505B\\",\\"name\\":\\"Genbot - Sene 2015 AA\\",\\"displayName\\":\\"Genbot - Sene 2015 AA\\",\\"startDate\\":\\"2015-09-01\\",\\"endDate\\":\\"2015-10-30\\"}",
+        "{\\"periodType\\":\\"BIMONTHLY\\",\\"id\\":\\"201506B\\",\\"iso\\":\\"201506B\\",\\"name\\":\\"Hamle - Nehasse 2015\\",\\"displayName\\":\\"Hamle - Nehasse 2015\\",\\"startDate\\":\\"2015-11-01\\",\\"endDate\\":\\"2015-12-30\\"}",
+        "{\\"periodType\\":\\"BIMONTHLY\\",\\"id\\":\\"201505B\\",\\"iso\\":\\"201505B\\",\\"name\\":\\"Genbot - Sene 2015\\",\\"displayName\\":\\"Genbot - Sene 2015\\",\\"startDate\\":\\"2015-09-01\\",\\"endDate\\":\\"2015-10-30\\"}",
       ],
       "last": Array [
-        "{\\"periodType\\":\\"BIMONTHLY\\",\\"id\\":\\"201502B\\",\\"iso\\":\\"201502B\\",\\"name\\":\\"Hedar - Tahsas 2015 AA\\",\\"displayName\\":\\"Hedar - Tahsas 2015 AA\\",\\"startDate\\":\\"2015-03-01\\",\\"endDate\\":\\"2015-04-30\\"}",
-        "{\\"periodType\\":\\"BIMONTHLY\\",\\"id\\":\\"201501B\\",\\"iso\\":\\"201501B\\",\\"name\\":\\"Meskerem - Tekemt 2015 AA\\",\\"displayName\\":\\"Meskerem - Tekemt 2015 AA\\",\\"startDate\\":\\"2015-01-01\\",\\"endDate\\":\\"2015-02-30\\"}",
+        "{\\"periodType\\":\\"BIMONTHLY\\",\\"id\\":\\"201502B\\",\\"iso\\":\\"201502B\\",\\"name\\":\\"Hedar - Tahsas 2015\\",\\"displayName\\":\\"Hedar - Tahsas 2015\\",\\"startDate\\":\\"2015-03-01\\",\\"endDate\\":\\"2015-04-30\\"}",
+        "{\\"periodType\\":\\"BIMONTHLY\\",\\"id\\":\\"201501B\\",\\"iso\\":\\"201501B\\",\\"name\\":\\"Meskerem - Tekemt 2015\\",\\"displayName\\":\\"Meskerem - Tekemt 2015\\",\\"startDate\\":\\"2015-01-01\\",\\"endDate\\":\\"2015-02-30\\"}",
       ],
     },
   },
@@ -74,23 +74,23 @@ Object {
     "currentYear": Object {
       "count": 360,
       "first": Array [
-        "{\\"periodType\\":\\"DAILY\\",\\"id\\":\\"20160101\\",\\"iso\\":\\"20160101\\",\\"displayName\\":\\"Meskerem 1, 2016 AA\\",\\"name\\":\\"2016-01-01\\",\\"startDate\\":\\"2016-01-01\\",\\"endDate\\":\\"2016-01-01\\"}",
-        "{\\"periodType\\":\\"DAILY\\",\\"id\\":\\"20160102\\",\\"iso\\":\\"20160102\\",\\"displayName\\":\\"Meskerem 2, 2016 AA\\",\\"name\\":\\"2016-01-02\\",\\"startDate\\":\\"2016-01-02\\",\\"endDate\\":\\"2016-01-02\\"}",
+        "{\\"periodType\\":\\"DAILY\\",\\"id\\":\\"20160101\\",\\"iso\\":\\"20160101\\",\\"displayName\\":\\"Meskerem 1, 2016\\",\\"name\\":\\"2016-01-01\\",\\"startDate\\":\\"2016-01-01\\",\\"endDate\\":\\"2016-01-01\\"}",
+        "{\\"periodType\\":\\"DAILY\\",\\"id\\":\\"20160102\\",\\"iso\\":\\"20160102\\",\\"displayName\\":\\"Meskerem 2, 2016\\",\\"name\\":\\"2016-01-02\\",\\"startDate\\":\\"2016-01-02\\",\\"endDate\\":\\"2016-01-02\\"}",
       ],
       "last": Array [
-        "{\\"periodType\\":\\"DAILY\\",\\"id\\":\\"20161229\\",\\"iso\\":\\"20161229\\",\\"displayName\\":\\"Nehasse 29, 2016 AA\\",\\"name\\":\\"2016-12-29\\",\\"startDate\\":\\"2016-12-29\\",\\"endDate\\":\\"2016-12-29\\"}",
-        "{\\"periodType\\":\\"DAILY\\",\\"id\\":\\"20161230\\",\\"iso\\":\\"20161230\\",\\"displayName\\":\\"Nehasse 30, 2016 AA\\",\\"name\\":\\"2016-12-30\\",\\"startDate\\":\\"2016-12-30\\",\\"endDate\\":\\"2016-12-30\\"}",
+        "{\\"periodType\\":\\"DAILY\\",\\"id\\":\\"20161229\\",\\"iso\\":\\"20161229\\",\\"displayName\\":\\"Nehasse 29, 2016\\",\\"name\\":\\"2016-12-29\\",\\"startDate\\":\\"2016-12-29\\",\\"endDate\\":\\"2016-12-29\\"}",
+        "{\\"periodType\\":\\"DAILY\\",\\"id\\":\\"20161230\\",\\"iso\\":\\"20161230\\",\\"displayName\\":\\"Nehasse 30, 2016\\",\\"name\\":\\"2016-12-30\\",\\"startDate\\":\\"2016-12-30\\",\\"endDate\\":\\"2016-12-30\\"}",
       ],
     },
     "lastYear": Object {
       "count": 366,
       "first": Array [
-        "{\\"periodType\\":\\"DAILY\\",\\"id\\":\\"20151306\\",\\"iso\\":\\"20151306\\",\\"displayName\\":\\"Pagumen 6, 2015 AA\\",\\"name\\":\\"2015-13-06\\",\\"startDate\\":\\"2015-13-06\\",\\"endDate\\":\\"2015-13-06\\"}",
-        "{\\"periodType\\":\\"DAILY\\",\\"id\\":\\"20151305\\",\\"iso\\":\\"20151305\\",\\"displayName\\":\\"Pagumen 5, 2015 AA\\",\\"name\\":\\"2015-13-05\\",\\"startDate\\":\\"2015-13-05\\",\\"endDate\\":\\"2015-13-05\\"}",
+        "{\\"periodType\\":\\"DAILY\\",\\"id\\":\\"20151306\\",\\"iso\\":\\"20151306\\",\\"displayName\\":\\"Pagumen 6, 2015\\",\\"name\\":\\"2015-13-06\\",\\"startDate\\":\\"2015-13-06\\",\\"endDate\\":\\"2015-13-06\\"}",
+        "{\\"periodType\\":\\"DAILY\\",\\"id\\":\\"20151305\\",\\"iso\\":\\"20151305\\",\\"displayName\\":\\"Pagumen 5, 2015\\",\\"name\\":\\"2015-13-05\\",\\"startDate\\":\\"2015-13-05\\",\\"endDate\\":\\"2015-13-05\\"}",
       ],
       "last": Array [
-        "{\\"periodType\\":\\"DAILY\\",\\"id\\":\\"20150102\\",\\"iso\\":\\"20150102\\",\\"displayName\\":\\"Meskerem 2, 2015 AA\\",\\"name\\":\\"2015-01-02\\",\\"startDate\\":\\"2015-01-02\\",\\"endDate\\":\\"2015-01-02\\"}",
-        "{\\"periodType\\":\\"DAILY\\",\\"id\\":\\"20150101\\",\\"iso\\":\\"20150101\\",\\"displayName\\":\\"Meskerem 1, 2015 AA\\",\\"name\\":\\"2015-01-01\\",\\"startDate\\":\\"2015-01-01\\",\\"endDate\\":\\"2015-01-01\\"}",
+        "{\\"periodType\\":\\"DAILY\\",\\"id\\":\\"20150102\\",\\"iso\\":\\"20150102\\",\\"displayName\\":\\"Meskerem 2, 2015\\",\\"name\\":\\"2015-01-02\\",\\"startDate\\":\\"2015-01-02\\",\\"endDate\\":\\"2015-01-02\\"}",
+        "{\\"periodType\\":\\"DAILY\\",\\"id\\":\\"20150101\\",\\"iso\\":\\"20150101\\",\\"displayName\\":\\"Meskerem 1, 2015\\",\\"name\\":\\"2015-01-01\\",\\"startDate\\":\\"2015-01-01\\",\\"endDate\\":\\"2015-01-01\\"}",
       ],
     },
   },
@@ -98,23 +98,23 @@ Object {
     "currentYear": Object {
       "count": 10,
       "first": Array [
-        "{\\"periodType\\":\\"FYAPR\\",\\"id\\":\\"2007April\\",\\"iso\\":\\"2007April\\",\\"name\\":\\"Tahsas 2007 AA - Hedar 2008 AA\\",\\"displayName\\":\\"Tahsas 2007 AA - Hedar 2008 AA\\",\\"startDate\\":\\"2007-04-01\\",\\"endDate\\":\\"2008-03-30\\"}",
-        "{\\"periodType\\":\\"FYAPR\\",\\"id\\":\\"2008April\\",\\"iso\\":\\"2008April\\",\\"name\\":\\"Tahsas 2008 AA - Hedar 2009 AA\\",\\"displayName\\":\\"Tahsas 2008 AA - Hedar 2009 AA\\",\\"startDate\\":\\"2008-04-01\\",\\"endDate\\":\\"2009-03-30\\"}",
+        "{\\"periodType\\":\\"FYAPR\\",\\"id\\":\\"2007April\\",\\"iso\\":\\"2007April\\",\\"name\\":\\"Tahsas 2007 - Hedar 2008\\",\\"displayName\\":\\"Tahsas 2007 - Hedar 2008\\",\\"startDate\\":\\"2007-04-01\\",\\"endDate\\":\\"2008-03-30\\"}",
+        "{\\"periodType\\":\\"FYAPR\\",\\"id\\":\\"2008April\\",\\"iso\\":\\"2008April\\",\\"name\\":\\"Tahsas 2008 - Hedar 2009\\",\\"displayName\\":\\"Tahsas 2008 - Hedar 2009\\",\\"startDate\\":\\"2008-04-01\\",\\"endDate\\":\\"2009-03-30\\"}",
       ],
       "last": Array [
-        "{\\"periodType\\":\\"FYAPR\\",\\"id\\":\\"2015April\\",\\"iso\\":\\"2015April\\",\\"name\\":\\"Tahsas 2015 AA - Hedar 2016 AA\\",\\"displayName\\":\\"Tahsas 2015 AA - Hedar 2016 AA\\",\\"startDate\\":\\"2015-04-01\\",\\"endDate\\":\\"2016-03-30\\"}",
-        "{\\"periodType\\":\\"FYAPR\\",\\"id\\":\\"2016April\\",\\"iso\\":\\"2016April\\",\\"name\\":\\"Tahsas 2016 AA - Hedar 2017 AA\\",\\"displayName\\":\\"Tahsas 2016 AA - Hedar 2017 AA\\",\\"startDate\\":\\"2016-04-01\\",\\"endDate\\":\\"2017-03-30\\"}",
+        "{\\"periodType\\":\\"FYAPR\\",\\"id\\":\\"2015April\\",\\"iso\\":\\"2015April\\",\\"name\\":\\"Tahsas 2015 - Hedar 2016\\",\\"displayName\\":\\"Tahsas 2015 - Hedar 2016\\",\\"startDate\\":\\"2015-04-01\\",\\"endDate\\":\\"2016-03-30\\"}",
+        "{\\"periodType\\":\\"FYAPR\\",\\"id\\":\\"2016April\\",\\"iso\\":\\"2016April\\",\\"name\\":\\"Tahsas 2016 - Hedar 2017\\",\\"displayName\\":\\"Tahsas 2016 - Hedar 2017\\",\\"startDate\\":\\"2016-04-01\\",\\"endDate\\":\\"2017-03-30\\"}",
       ],
     },
     "lastYear": Object {
       "count": 10,
       "first": Array [
-        "{\\"periodType\\":\\"FYAPR\\",\\"id\\":\\"2006April\\",\\"iso\\":\\"2006April\\",\\"name\\":\\"Tahsas 2006 AA - Hedar 2007 AA\\",\\"displayName\\":\\"Tahsas 2006 AA - Hedar 2007 AA\\",\\"startDate\\":\\"2006-04-01\\",\\"endDate\\":\\"2007-03-30\\"}",
-        "{\\"periodType\\":\\"FYAPR\\",\\"id\\":\\"2007April\\",\\"iso\\":\\"2007April\\",\\"name\\":\\"Tahsas 2007 AA - Hedar 2008 AA\\",\\"displayName\\":\\"Tahsas 2007 AA - Hedar 2008 AA\\",\\"startDate\\":\\"2007-04-01\\",\\"endDate\\":\\"2008-03-30\\"}",
+        "{\\"periodType\\":\\"FYAPR\\",\\"id\\":\\"2006April\\",\\"iso\\":\\"2006April\\",\\"name\\":\\"Tahsas 2006 - Hedar 2007\\",\\"displayName\\":\\"Tahsas 2006 - Hedar 2007\\",\\"startDate\\":\\"2006-04-01\\",\\"endDate\\":\\"2007-03-30\\"}",
+        "{\\"periodType\\":\\"FYAPR\\",\\"id\\":\\"2007April\\",\\"iso\\":\\"2007April\\",\\"name\\":\\"Tahsas 2007 - Hedar 2008\\",\\"displayName\\":\\"Tahsas 2007 - Hedar 2008\\",\\"startDate\\":\\"2007-04-01\\",\\"endDate\\":\\"2008-03-30\\"}",
       ],
       "last": Array [
-        "{\\"periodType\\":\\"FYAPR\\",\\"id\\":\\"2014April\\",\\"iso\\":\\"2014April\\",\\"name\\":\\"Tahsas 2014 AA - Hedar 2015 AA\\",\\"displayName\\":\\"Tahsas 2014 AA - Hedar 2015 AA\\",\\"startDate\\":\\"2014-04-01\\",\\"endDate\\":\\"2015-03-30\\"}",
-        "{\\"periodType\\":\\"FYAPR\\",\\"id\\":\\"2015April\\",\\"iso\\":\\"2015April\\",\\"name\\":\\"Tahsas 2015 AA - Hedar 2016 AA\\",\\"displayName\\":\\"Tahsas 2015 AA - Hedar 2016 AA\\",\\"startDate\\":\\"2015-04-01\\",\\"endDate\\":\\"2016-03-30\\"}",
+        "{\\"periodType\\":\\"FYAPR\\",\\"id\\":\\"2014April\\",\\"iso\\":\\"2014April\\",\\"name\\":\\"Tahsas 2014 - Hedar 2015\\",\\"displayName\\":\\"Tahsas 2014 - Hedar 2015\\",\\"startDate\\":\\"2014-04-01\\",\\"endDate\\":\\"2015-03-30\\"}",
+        "{\\"periodType\\":\\"FYAPR\\",\\"id\\":\\"2015April\\",\\"iso\\":\\"2015April\\",\\"name\\":\\"Tahsas 2015 - Hedar 2016\\",\\"displayName\\":\\"Tahsas 2015 - Hedar 2016\\",\\"startDate\\":\\"2015-04-01\\",\\"endDate\\":\\"2016-03-30\\"}",
       ],
     },
   },
@@ -122,23 +122,23 @@ Object {
     "currentYear": Object {
       "count": 10,
       "first": Array [
-        "{\\"periodType\\":\\"FYJUL\\",\\"id\\":\\"2007July\\",\\"iso\\":\\"2007July\\",\\"name\\":\\"Megabit 2007 AA - Yekatit 2008 AA\\",\\"displayName\\":\\"Megabit 2007 AA - Yekatit 2008 AA\\",\\"startDate\\":\\"2007-07-01\\",\\"endDate\\":\\"2008-06-30\\"}",
-        "{\\"periodType\\":\\"FYJUL\\",\\"id\\":\\"2008July\\",\\"iso\\":\\"2008July\\",\\"name\\":\\"Megabit 2008 AA - Yekatit 2009 AA\\",\\"displayName\\":\\"Megabit 2008 AA - Yekatit 2009 AA\\",\\"startDate\\":\\"2008-07-01\\",\\"endDate\\":\\"2009-06-30\\"}",
+        "{\\"periodType\\":\\"FYJUL\\",\\"id\\":\\"2007July\\",\\"iso\\":\\"2007July\\",\\"name\\":\\"Megabit 2007 - Yekatit 2008\\",\\"displayName\\":\\"Megabit 2007 - Yekatit 2008\\",\\"startDate\\":\\"2007-07-01\\",\\"endDate\\":\\"2008-06-30\\"}",
+        "{\\"periodType\\":\\"FYJUL\\",\\"id\\":\\"2008July\\",\\"iso\\":\\"2008July\\",\\"name\\":\\"Megabit 2008 - Yekatit 2009\\",\\"displayName\\":\\"Megabit 2008 - Yekatit 2009\\",\\"startDate\\":\\"2008-07-01\\",\\"endDate\\":\\"2009-06-30\\"}",
       ],
       "last": Array [
-        "{\\"periodType\\":\\"FYJUL\\",\\"id\\":\\"2015July\\",\\"iso\\":\\"2015July\\",\\"name\\":\\"Megabit 2015 AA - Yekatit 2016 AA\\",\\"displayName\\":\\"Megabit 2015 AA - Yekatit 2016 AA\\",\\"startDate\\":\\"2015-07-01\\",\\"endDate\\":\\"2016-06-30\\"}",
-        "{\\"periodType\\":\\"FYJUL\\",\\"id\\":\\"2016July\\",\\"iso\\":\\"2016July\\",\\"name\\":\\"Megabit 2016 AA - Yekatit 2017 AA\\",\\"displayName\\":\\"Megabit 2016 AA - Yekatit 2017 AA\\",\\"startDate\\":\\"2016-07-01\\",\\"endDate\\":\\"2017-06-30\\"}",
+        "{\\"periodType\\":\\"FYJUL\\",\\"id\\":\\"2015July\\",\\"iso\\":\\"2015July\\",\\"name\\":\\"Megabit 2015 - Yekatit 2016\\",\\"displayName\\":\\"Megabit 2015 - Yekatit 2016\\",\\"startDate\\":\\"2015-07-01\\",\\"endDate\\":\\"2016-06-30\\"}",
+        "{\\"periodType\\":\\"FYJUL\\",\\"id\\":\\"2016July\\",\\"iso\\":\\"2016July\\",\\"name\\":\\"Megabit 2016 - Yekatit 2017\\",\\"displayName\\":\\"Megabit 2016 - Yekatit 2017\\",\\"startDate\\":\\"2016-07-01\\",\\"endDate\\":\\"2017-06-30\\"}",
       ],
     },
     "lastYear": Object {
       "count": 10,
       "first": Array [
-        "{\\"periodType\\":\\"FYJUL\\",\\"id\\":\\"2006July\\",\\"iso\\":\\"2006July\\",\\"name\\":\\"Megabit 2006 AA - Yekatit 2007 AA\\",\\"displayName\\":\\"Megabit 2006 AA - Yekatit 2007 AA\\",\\"startDate\\":\\"2006-07-01\\",\\"endDate\\":\\"2007-06-30\\"}",
-        "{\\"periodType\\":\\"FYJUL\\",\\"id\\":\\"2007July\\",\\"iso\\":\\"2007July\\",\\"name\\":\\"Megabit 2007 AA - Yekatit 2008 AA\\",\\"displayName\\":\\"Megabit 2007 AA - Yekatit 2008 AA\\",\\"startDate\\":\\"2007-07-01\\",\\"endDate\\":\\"2008-06-30\\"}",
+        "{\\"periodType\\":\\"FYJUL\\",\\"id\\":\\"2006July\\",\\"iso\\":\\"2006July\\",\\"name\\":\\"Megabit 2006 - Yekatit 2007\\",\\"displayName\\":\\"Megabit 2006 - Yekatit 2007\\",\\"startDate\\":\\"2006-07-01\\",\\"endDate\\":\\"2007-06-30\\"}",
+        "{\\"periodType\\":\\"FYJUL\\",\\"id\\":\\"2007July\\",\\"iso\\":\\"2007July\\",\\"name\\":\\"Megabit 2007 - Yekatit 2008\\",\\"displayName\\":\\"Megabit 2007 - Yekatit 2008\\",\\"startDate\\":\\"2007-07-01\\",\\"endDate\\":\\"2008-06-30\\"}",
       ],
       "last": Array [
-        "{\\"periodType\\":\\"FYJUL\\",\\"id\\":\\"2014July\\",\\"iso\\":\\"2014July\\",\\"name\\":\\"Megabit 2014 AA - Yekatit 2015 AA\\",\\"displayName\\":\\"Megabit 2014 AA - Yekatit 2015 AA\\",\\"startDate\\":\\"2014-07-01\\",\\"endDate\\":\\"2015-06-30\\"}",
-        "{\\"periodType\\":\\"FYJUL\\",\\"id\\":\\"2015July\\",\\"iso\\":\\"2015July\\",\\"name\\":\\"Megabit 2015 AA - Yekatit 2016 AA\\",\\"displayName\\":\\"Megabit 2015 AA - Yekatit 2016 AA\\",\\"startDate\\":\\"2015-07-01\\",\\"endDate\\":\\"2016-06-30\\"}",
+        "{\\"periodType\\":\\"FYJUL\\",\\"id\\":\\"2014July\\",\\"iso\\":\\"2014July\\",\\"name\\":\\"Megabit 2014 - Yekatit 2015\\",\\"displayName\\":\\"Megabit 2014 - Yekatit 2015\\",\\"startDate\\":\\"2014-07-01\\",\\"endDate\\":\\"2015-06-30\\"}",
+        "{\\"periodType\\":\\"FYJUL\\",\\"id\\":\\"2015July\\",\\"iso\\":\\"2015July\\",\\"name\\":\\"Megabit 2015 - Yekatit 2016\\",\\"displayName\\":\\"Megabit 2015 - Yekatit 2016\\",\\"startDate\\":\\"2015-07-01\\",\\"endDate\\":\\"2016-06-30\\"}",
       ],
     },
   },
@@ -146,23 +146,23 @@ Object {
     "currentYear": Object {
       "count": 10,
       "first": Array [
-        "{\\"periodType\\":\\"FYNOV\\",\\"id\\":\\"2007Nov\\",\\"iso\\":\\"2007Nov\\",\\"name\\":\\"Hamle 2007 AA - Sene 2008 AA\\",\\"displayName\\":\\"Hamle 2007 AA - Sene 2008 AA\\",\\"startDate\\":\\"2007-11-01\\",\\"endDate\\":\\"2008-10-30\\"}",
-        "{\\"periodType\\":\\"FYNOV\\",\\"id\\":\\"2008Nov\\",\\"iso\\":\\"2008Nov\\",\\"name\\":\\"Hamle 2008 AA - Sene 2009 AA\\",\\"displayName\\":\\"Hamle 2008 AA - Sene 2009 AA\\",\\"startDate\\":\\"2008-11-01\\",\\"endDate\\":\\"2009-10-30\\"}",
+        "{\\"periodType\\":\\"FYNOV\\",\\"id\\":\\"2007Nov\\",\\"iso\\":\\"2007Nov\\",\\"name\\":\\"Hamle 2007 - Sene 2008\\",\\"displayName\\":\\"Hamle 2007 - Sene 2008\\",\\"startDate\\":\\"2007-11-01\\",\\"endDate\\":\\"2008-10-30\\"}",
+        "{\\"periodType\\":\\"FYNOV\\",\\"id\\":\\"2008Nov\\",\\"iso\\":\\"2008Nov\\",\\"name\\":\\"Hamle 2008 - Sene 2009\\",\\"displayName\\":\\"Hamle 2008 - Sene 2009\\",\\"startDate\\":\\"2008-11-01\\",\\"endDate\\":\\"2009-10-30\\"}",
       ],
       "last": Array [
-        "{\\"periodType\\":\\"FYNOV\\",\\"id\\":\\"2015Nov\\",\\"iso\\":\\"2015Nov\\",\\"name\\":\\"Hamle 2015 AA - Sene 2016 AA\\",\\"displayName\\":\\"Hamle 2015 AA - Sene 2016 AA\\",\\"startDate\\":\\"2015-11-01\\",\\"endDate\\":\\"2016-10-30\\"}",
-        "{\\"periodType\\":\\"FYNOV\\",\\"id\\":\\"2016Nov\\",\\"iso\\":\\"2016Nov\\",\\"name\\":\\"Hamle 2016 AA - Sene 2017 AA\\",\\"displayName\\":\\"Hamle 2016 AA - Sene 2017 AA\\",\\"startDate\\":\\"2016-11-01\\",\\"endDate\\":\\"2017-10-30\\"}",
+        "{\\"periodType\\":\\"FYNOV\\",\\"id\\":\\"2015Nov\\",\\"iso\\":\\"2015Nov\\",\\"name\\":\\"Hamle 2015 - Sene 2016\\",\\"displayName\\":\\"Hamle 2015 - Sene 2016\\",\\"startDate\\":\\"2015-11-01\\",\\"endDate\\":\\"2016-10-30\\"}",
+        "{\\"periodType\\":\\"FYNOV\\",\\"id\\":\\"2016Nov\\",\\"iso\\":\\"2016Nov\\",\\"name\\":\\"Hamle 2016 - Sene 2017\\",\\"displayName\\":\\"Hamle 2016 - Sene 2017\\",\\"startDate\\":\\"2016-11-01\\",\\"endDate\\":\\"2017-10-30\\"}",
       ],
     },
     "lastYear": Object {
       "count": 10,
       "first": Array [
-        "{\\"periodType\\":\\"FYNOV\\",\\"id\\":\\"2006Nov\\",\\"iso\\":\\"2006Nov\\",\\"name\\":\\"Hamle 2006 AA - Sene 2007 AA\\",\\"displayName\\":\\"Hamle 2006 AA - Sene 2007 AA\\",\\"startDate\\":\\"2006-11-01\\",\\"endDate\\":\\"2007-10-30\\"}",
-        "{\\"periodType\\":\\"FYNOV\\",\\"id\\":\\"2007Nov\\",\\"iso\\":\\"2007Nov\\",\\"name\\":\\"Hamle 2007 AA - Sene 2008 AA\\",\\"displayName\\":\\"Hamle 2007 AA - Sene 2008 AA\\",\\"startDate\\":\\"2007-11-01\\",\\"endDate\\":\\"2008-10-30\\"}",
+        "{\\"periodType\\":\\"FYNOV\\",\\"id\\":\\"2006Nov\\",\\"iso\\":\\"2006Nov\\",\\"name\\":\\"Hamle 2006 - Sene 2007\\",\\"displayName\\":\\"Hamle 2006 - Sene 2007\\",\\"startDate\\":\\"2006-11-01\\",\\"endDate\\":\\"2007-10-30\\"}",
+        "{\\"periodType\\":\\"FYNOV\\",\\"id\\":\\"2007Nov\\",\\"iso\\":\\"2007Nov\\",\\"name\\":\\"Hamle 2007 - Sene 2008\\",\\"displayName\\":\\"Hamle 2007 - Sene 2008\\",\\"startDate\\":\\"2007-11-01\\",\\"endDate\\":\\"2008-10-30\\"}",
       ],
       "last": Array [
-        "{\\"periodType\\":\\"FYNOV\\",\\"id\\":\\"2014Nov\\",\\"iso\\":\\"2014Nov\\",\\"name\\":\\"Hamle 2014 AA - Sene 2015 AA\\",\\"displayName\\":\\"Hamle 2014 AA - Sene 2015 AA\\",\\"startDate\\":\\"2014-11-01\\",\\"endDate\\":\\"2015-10-30\\"}",
-        "{\\"periodType\\":\\"FYNOV\\",\\"id\\":\\"2015Nov\\",\\"iso\\":\\"2015Nov\\",\\"name\\":\\"Hamle 2015 AA - Sene 2016 AA\\",\\"displayName\\":\\"Hamle 2015 AA - Sene 2016 AA\\",\\"startDate\\":\\"2015-11-01\\",\\"endDate\\":\\"2016-10-30\\"}",
+        "{\\"periodType\\":\\"FYNOV\\",\\"id\\":\\"2014Nov\\",\\"iso\\":\\"2014Nov\\",\\"name\\":\\"Hamle 2014 - Sene 2015\\",\\"displayName\\":\\"Hamle 2014 - Sene 2015\\",\\"startDate\\":\\"2014-11-01\\",\\"endDate\\":\\"2015-10-30\\"}",
+        "{\\"periodType\\":\\"FYNOV\\",\\"id\\":\\"2015Nov\\",\\"iso\\":\\"2015Nov\\",\\"name\\":\\"Hamle 2015 - Sene 2016\\",\\"displayName\\":\\"Hamle 2015 - Sene 2016\\",\\"startDate\\":\\"2015-11-01\\",\\"endDate\\":\\"2016-10-30\\"}",
       ],
     },
   },
@@ -170,23 +170,23 @@ Object {
     "currentYear": Object {
       "count": 12,
       "first": Array [
-        "{\\"periodType\\":\\"MONTHLY\\",\\"id\\":\\"201601\\",\\"iso\\":\\"201601\\",\\"name\\":\\"Meskerem 2016 AA\\",\\"displayName\\":\\"Meskerem 2016 AA\\",\\"startDate\\":\\"2016-01-01\\",\\"endDate\\":\\"2016-01-30\\"}",
-        "{\\"periodType\\":\\"MONTHLY\\",\\"id\\":\\"201602\\",\\"iso\\":\\"201602\\",\\"name\\":\\"Tekemt 2016 AA\\",\\"displayName\\":\\"Tekemt 2016 AA\\",\\"startDate\\":\\"2016-02-01\\",\\"endDate\\":\\"2016-02-30\\"}",
+        "{\\"periodType\\":\\"MONTHLY\\",\\"id\\":\\"201601\\",\\"iso\\":\\"201601\\",\\"name\\":\\"Meskerem 2016\\",\\"displayName\\":\\"Meskerem 2016\\",\\"startDate\\":\\"2016-01-01\\",\\"endDate\\":\\"2016-01-30\\"}",
+        "{\\"periodType\\":\\"MONTHLY\\",\\"id\\":\\"201602\\",\\"iso\\":\\"201602\\",\\"name\\":\\"Tekemt 2016\\",\\"displayName\\":\\"Tekemt 2016\\",\\"startDate\\":\\"2016-02-01\\",\\"endDate\\":\\"2016-02-30\\"}",
       ],
       "last": Array [
-        "{\\"periodType\\":\\"MONTHLY\\",\\"id\\":\\"201611\\",\\"iso\\":\\"201611\\",\\"name\\":\\"Hamle 2016 AA\\",\\"displayName\\":\\"Hamle 2016 AA\\",\\"startDate\\":\\"2016-11-01\\",\\"endDate\\":\\"2016-11-30\\"}",
-        "{\\"periodType\\":\\"MONTHLY\\",\\"id\\":\\"201612\\",\\"iso\\":\\"201612\\",\\"name\\":\\"Nehasse 2016 AA\\",\\"displayName\\":\\"Nehasse 2016 AA\\",\\"startDate\\":\\"2016-12-01\\",\\"endDate\\":\\"2016-12-30\\"}",
+        "{\\"periodType\\":\\"MONTHLY\\",\\"id\\":\\"201611\\",\\"iso\\":\\"201611\\",\\"name\\":\\"Hamle 2016\\",\\"displayName\\":\\"Hamle 2016\\",\\"startDate\\":\\"2016-11-01\\",\\"endDate\\":\\"2016-11-30\\"}",
+        "{\\"periodType\\":\\"MONTHLY\\",\\"id\\":\\"201612\\",\\"iso\\":\\"201612\\",\\"name\\":\\"Nehasse 2016\\",\\"displayName\\":\\"Nehasse 2016\\",\\"startDate\\":\\"2016-12-01\\",\\"endDate\\":\\"2016-12-30\\"}",
       ],
     },
     "lastYear": Object {
       "count": 12,
       "first": Array [
-        "{\\"periodType\\":\\"MONTHLY\\",\\"id\\":\\"201512\\",\\"iso\\":\\"201512\\",\\"name\\":\\"Nehasse 2015 AA\\",\\"displayName\\":\\"Nehasse 2015 AA\\",\\"startDate\\":\\"2015-12-01\\",\\"endDate\\":\\"2015-12-30\\"}",
-        "{\\"periodType\\":\\"MONTHLY\\",\\"id\\":\\"201511\\",\\"iso\\":\\"201511\\",\\"name\\":\\"Hamle 2015 AA\\",\\"displayName\\":\\"Hamle 2015 AA\\",\\"startDate\\":\\"2015-11-01\\",\\"endDate\\":\\"2015-11-30\\"}",
+        "{\\"periodType\\":\\"MONTHLY\\",\\"id\\":\\"201512\\",\\"iso\\":\\"201512\\",\\"name\\":\\"Nehasse 2015\\",\\"displayName\\":\\"Nehasse 2015\\",\\"startDate\\":\\"2015-12-01\\",\\"endDate\\":\\"2015-12-30\\"}",
+        "{\\"periodType\\":\\"MONTHLY\\",\\"id\\":\\"201511\\",\\"iso\\":\\"201511\\",\\"name\\":\\"Hamle 2015\\",\\"displayName\\":\\"Hamle 2015\\",\\"startDate\\":\\"2015-11-01\\",\\"endDate\\":\\"2015-11-30\\"}",
       ],
       "last": Array [
-        "{\\"periodType\\":\\"MONTHLY\\",\\"id\\":\\"201502\\",\\"iso\\":\\"201502\\",\\"name\\":\\"Tekemt 2015 AA\\",\\"displayName\\":\\"Tekemt 2015 AA\\",\\"startDate\\":\\"2015-02-01\\",\\"endDate\\":\\"2015-02-30\\"}",
-        "{\\"periodType\\":\\"MONTHLY\\",\\"id\\":\\"201501\\",\\"iso\\":\\"201501\\",\\"name\\":\\"Meskerem 2015 AA\\",\\"displayName\\":\\"Meskerem 2015 AA\\",\\"startDate\\":\\"2015-01-01\\",\\"endDate\\":\\"2015-01-30\\"}",
+        "{\\"periodType\\":\\"MONTHLY\\",\\"id\\":\\"201502\\",\\"iso\\":\\"201502\\",\\"name\\":\\"Tekemt 2015\\",\\"displayName\\":\\"Tekemt 2015\\",\\"startDate\\":\\"2015-02-01\\",\\"endDate\\":\\"2015-02-30\\"}",
+        "{\\"periodType\\":\\"MONTHLY\\",\\"id\\":\\"201501\\",\\"iso\\":\\"201501\\",\\"name\\":\\"Meskerem 2015\\",\\"displayName\\":\\"Meskerem 2015\\",\\"startDate\\":\\"2015-01-01\\",\\"endDate\\":\\"2015-01-30\\"}",
       ],
     },
   },
@@ -194,23 +194,23 @@ Object {
     "currentYear": Object {
       "count": 4,
       "first": Array [
-        "{\\"periodType\\":\\"QUARTERLY\\",\\"id\\":\\"2016Q1\\",\\"iso\\":\\"2016Q1\\",\\"name\\":\\"Meskerem - Hedar 2016 AA\\",\\"displayName\\":\\"Meskerem - Hedar 2016 AA\\",\\"startDate\\":\\"2016-01-01\\",\\"endDate\\":\\"2016-03-30\\"}",
-        "{\\"periodType\\":\\"QUARTERLY\\",\\"id\\":\\"2016Q2\\",\\"iso\\":\\"2016Q2\\",\\"name\\":\\"Tahsas - Yekatit 2016 AA\\",\\"displayName\\":\\"Tahsas - Yekatit 2016 AA\\",\\"startDate\\":\\"2016-04-01\\",\\"endDate\\":\\"2016-06-30\\"}",
+        "{\\"periodType\\":\\"QUARTERLY\\",\\"id\\":\\"2016Q1\\",\\"iso\\":\\"2016Q1\\",\\"name\\":\\"Meskerem - Hedar 2016\\",\\"displayName\\":\\"Meskerem - Hedar 2016\\",\\"startDate\\":\\"2016-01-01\\",\\"endDate\\":\\"2016-03-30\\"}",
+        "{\\"periodType\\":\\"QUARTERLY\\",\\"id\\":\\"2016Q2\\",\\"iso\\":\\"2016Q2\\",\\"name\\":\\"Tahsas - Yekatit 2016\\",\\"displayName\\":\\"Tahsas - Yekatit 2016\\",\\"startDate\\":\\"2016-04-01\\",\\"endDate\\":\\"2016-06-30\\"}",
       ],
       "last": Array [
-        "{\\"periodType\\":\\"QUARTERLY\\",\\"id\\":\\"2016Q3\\",\\"iso\\":\\"2016Q3\\",\\"name\\":\\"Megabit - Genbot 2016 AA\\",\\"displayName\\":\\"Megabit - Genbot 2016 AA\\",\\"startDate\\":\\"2016-07-01\\",\\"endDate\\":\\"2016-09-30\\"}",
-        "{\\"periodType\\":\\"QUARTERLY\\",\\"id\\":\\"2016Q4\\",\\"iso\\":\\"2016Q4\\",\\"name\\":\\"Sene - Nehasse 2016 AA\\",\\"displayName\\":\\"Sene - Nehasse 2016 AA\\",\\"startDate\\":\\"2016-10-01\\",\\"endDate\\":\\"2016-12-30\\"}",
+        "{\\"periodType\\":\\"QUARTERLY\\",\\"id\\":\\"2016Q3\\",\\"iso\\":\\"2016Q3\\",\\"name\\":\\"Megabit - Genbot 2016\\",\\"displayName\\":\\"Megabit - Genbot 2016\\",\\"startDate\\":\\"2016-07-01\\",\\"endDate\\":\\"2016-09-30\\"}",
+        "{\\"periodType\\":\\"QUARTERLY\\",\\"id\\":\\"2016Q4\\",\\"iso\\":\\"2016Q4\\",\\"name\\":\\"Sene - Nehasse 2016\\",\\"displayName\\":\\"Sene - Nehasse 2016\\",\\"startDate\\":\\"2016-10-01\\",\\"endDate\\":\\"2016-12-30\\"}",
       ],
     },
     "lastYear": Object {
       "count": 4,
       "first": Array [
-        "{\\"periodType\\":\\"QUARTERLY\\",\\"id\\":\\"2015Q4\\",\\"iso\\":\\"2015Q4\\",\\"name\\":\\"Sene - Nehasse 2015 AA\\",\\"displayName\\":\\"Sene - Nehasse 2015 AA\\",\\"startDate\\":\\"2015-10-01\\",\\"endDate\\":\\"2015-12-30\\"}",
-        "{\\"periodType\\":\\"QUARTERLY\\",\\"id\\":\\"2015Q3\\",\\"iso\\":\\"2015Q3\\",\\"name\\":\\"Megabit - Genbot 2015 AA\\",\\"displayName\\":\\"Megabit - Genbot 2015 AA\\",\\"startDate\\":\\"2015-07-01\\",\\"endDate\\":\\"2015-09-30\\"}",
+        "{\\"periodType\\":\\"QUARTERLY\\",\\"id\\":\\"2015Q4\\",\\"iso\\":\\"2015Q4\\",\\"name\\":\\"Sene - Nehasse 2015\\",\\"displayName\\":\\"Sene - Nehasse 2015\\",\\"startDate\\":\\"2015-10-01\\",\\"endDate\\":\\"2015-12-30\\"}",
+        "{\\"periodType\\":\\"QUARTERLY\\",\\"id\\":\\"2015Q3\\",\\"iso\\":\\"2015Q3\\",\\"name\\":\\"Megabit - Genbot 2015\\",\\"displayName\\":\\"Megabit - Genbot 2015\\",\\"startDate\\":\\"2015-07-01\\",\\"endDate\\":\\"2015-09-30\\"}",
       ],
       "last": Array [
-        "{\\"periodType\\":\\"QUARTERLY\\",\\"id\\":\\"2015Q2\\",\\"iso\\":\\"2015Q2\\",\\"name\\":\\"Tahsas - Yekatit 2015 AA\\",\\"displayName\\":\\"Tahsas - Yekatit 2015 AA\\",\\"startDate\\":\\"2015-04-01\\",\\"endDate\\":\\"2015-06-30\\"}",
-        "{\\"periodType\\":\\"QUARTERLY\\",\\"id\\":\\"2015Q1\\",\\"iso\\":\\"2015Q1\\",\\"name\\":\\"Meskerem - Hedar 2015 AA\\",\\"displayName\\":\\"Meskerem - Hedar 2015 AA\\",\\"startDate\\":\\"2015-01-01\\",\\"endDate\\":\\"2015-03-30\\"}",
+        "{\\"periodType\\":\\"QUARTERLY\\",\\"id\\":\\"2015Q2\\",\\"iso\\":\\"2015Q2\\",\\"name\\":\\"Tahsas - Yekatit 2015\\",\\"displayName\\":\\"Tahsas - Yekatit 2015\\",\\"startDate\\":\\"2015-04-01\\",\\"endDate\\":\\"2015-06-30\\"}",
+        "{\\"periodType\\":\\"QUARTERLY\\",\\"id\\":\\"2015Q1\\",\\"iso\\":\\"2015Q1\\",\\"name\\":\\"Meskerem - Hedar 2015\\",\\"displayName\\":\\"Meskerem - Hedar 2015\\",\\"startDate\\":\\"2015-01-01\\",\\"endDate\\":\\"2015-03-30\\"}",
       ],
     },
   },
@@ -218,23 +218,23 @@ Object {
     "currentYear": Object {
       "count": 2,
       "first": Array [
-        "{\\"periodType\\":\\"SIXMONTHLY\\",\\"id\\":\\"2016S1\\",\\"iso\\":\\"2016S1\\",\\"name\\":\\"Meskerem - Yekatit 2016 AA\\",\\"displayName\\":\\"Meskerem - Yekatit 2016 AA\\",\\"startDate\\":\\"2016-01-01\\",\\"endDate\\":\\"2016-06-30\\"}",
-        "{\\"periodType\\":\\"SIXMONTHLY\\",\\"id\\":\\"2016S2\\",\\"iso\\":\\"2016S2\\",\\"name\\":\\"Megabit - Nehasse 2016 AA\\",\\"displayName\\":\\"Megabit - Nehasse 2016 AA\\",\\"startDate\\":\\"2016-07-01\\",\\"endDate\\":\\"2016-12-30\\"}",
+        "{\\"periodType\\":\\"SIXMONTHLY\\",\\"id\\":\\"2016S1\\",\\"iso\\":\\"2016S1\\",\\"name\\":\\"Meskerem - Yekatit 2016\\",\\"displayName\\":\\"Meskerem - Yekatit 2016\\",\\"startDate\\":\\"2016-01-01\\",\\"endDate\\":\\"2016-06-30\\"}",
+        "{\\"periodType\\":\\"SIXMONTHLY\\",\\"id\\":\\"2016S2\\",\\"iso\\":\\"2016S2\\",\\"name\\":\\"Megabit - Nehasse 2016\\",\\"displayName\\":\\"Megabit - Nehasse 2016\\",\\"startDate\\":\\"2016-07-01\\",\\"endDate\\":\\"2016-12-30\\"}",
       ],
       "last": Array [
-        "{\\"periodType\\":\\"SIXMONTHLY\\",\\"id\\":\\"2016S1\\",\\"iso\\":\\"2016S1\\",\\"name\\":\\"Meskerem - Yekatit 2016 AA\\",\\"displayName\\":\\"Meskerem - Yekatit 2016 AA\\",\\"startDate\\":\\"2016-01-01\\",\\"endDate\\":\\"2016-06-30\\"}",
-        "{\\"periodType\\":\\"SIXMONTHLY\\",\\"id\\":\\"2016S2\\",\\"iso\\":\\"2016S2\\",\\"name\\":\\"Megabit - Nehasse 2016 AA\\",\\"displayName\\":\\"Megabit - Nehasse 2016 AA\\",\\"startDate\\":\\"2016-07-01\\",\\"endDate\\":\\"2016-12-30\\"}",
+        "{\\"periodType\\":\\"SIXMONTHLY\\",\\"id\\":\\"2016S1\\",\\"iso\\":\\"2016S1\\",\\"name\\":\\"Meskerem - Yekatit 2016\\",\\"displayName\\":\\"Meskerem - Yekatit 2016\\",\\"startDate\\":\\"2016-01-01\\",\\"endDate\\":\\"2016-06-30\\"}",
+        "{\\"periodType\\":\\"SIXMONTHLY\\",\\"id\\":\\"2016S2\\",\\"iso\\":\\"2016S2\\",\\"name\\":\\"Megabit - Nehasse 2016\\",\\"displayName\\":\\"Megabit - Nehasse 2016\\",\\"startDate\\":\\"2016-07-01\\",\\"endDate\\":\\"2016-12-30\\"}",
       ],
     },
     "lastYear": Object {
       "count": 2,
       "first": Array [
-        "{\\"periodType\\":\\"SIXMONTHLY\\",\\"id\\":\\"2015S2\\",\\"iso\\":\\"2015S2\\",\\"name\\":\\"Megabit - Nehasse 2015 AA\\",\\"displayName\\":\\"Megabit - Nehasse 2015 AA\\",\\"startDate\\":\\"2015-07-01\\",\\"endDate\\":\\"2015-12-30\\"}",
-        "{\\"periodType\\":\\"SIXMONTHLY\\",\\"id\\":\\"2015S1\\",\\"iso\\":\\"2015S1\\",\\"name\\":\\"Meskerem - Yekatit 2015 AA\\",\\"displayName\\":\\"Meskerem - Yekatit 2015 AA\\",\\"startDate\\":\\"2015-01-01\\",\\"endDate\\":\\"2015-06-30\\"}",
+        "{\\"periodType\\":\\"SIXMONTHLY\\",\\"id\\":\\"2015S2\\",\\"iso\\":\\"2015S2\\",\\"name\\":\\"Megabit - Nehasse 2015\\",\\"displayName\\":\\"Megabit - Nehasse 2015\\",\\"startDate\\":\\"2015-07-01\\",\\"endDate\\":\\"2015-12-30\\"}",
+        "{\\"periodType\\":\\"SIXMONTHLY\\",\\"id\\":\\"2015S1\\",\\"iso\\":\\"2015S1\\",\\"name\\":\\"Meskerem - Yekatit 2015\\",\\"displayName\\":\\"Meskerem - Yekatit 2015\\",\\"startDate\\":\\"2015-01-01\\",\\"endDate\\":\\"2015-06-30\\"}",
       ],
       "last": Array [
-        "{\\"periodType\\":\\"SIXMONTHLY\\",\\"id\\":\\"2015S2\\",\\"iso\\":\\"2015S2\\",\\"name\\":\\"Megabit - Nehasse 2015 AA\\",\\"displayName\\":\\"Megabit - Nehasse 2015 AA\\",\\"startDate\\":\\"2015-07-01\\",\\"endDate\\":\\"2015-12-30\\"}",
-        "{\\"periodType\\":\\"SIXMONTHLY\\",\\"id\\":\\"2015S1\\",\\"iso\\":\\"2015S1\\",\\"name\\":\\"Meskerem - Yekatit 2015 AA\\",\\"displayName\\":\\"Meskerem - Yekatit 2015 AA\\",\\"startDate\\":\\"2015-01-01\\",\\"endDate\\":\\"2015-06-30\\"}",
+        "{\\"periodType\\":\\"SIXMONTHLY\\",\\"id\\":\\"2015S2\\",\\"iso\\":\\"2015S2\\",\\"name\\":\\"Megabit - Nehasse 2015\\",\\"displayName\\":\\"Megabit - Nehasse 2015\\",\\"startDate\\":\\"2015-07-01\\",\\"endDate\\":\\"2015-12-30\\"}",
+        "{\\"periodType\\":\\"SIXMONTHLY\\",\\"id\\":\\"2015S1\\",\\"iso\\":\\"2015S1\\",\\"name\\":\\"Meskerem - Yekatit 2015\\",\\"displayName\\":\\"Meskerem - Yekatit 2015\\",\\"startDate\\":\\"2015-01-01\\",\\"endDate\\":\\"2015-06-30\\"}",
       ],
     },
   },
@@ -242,23 +242,23 @@ Object {
     "currentYear": Object {
       "count": 2,
       "first": Array [
-        "{\\"periodType\\":\\"SIXMONTHLYAPR\\",\\"id\\":\\"2016AprilS1\\",\\"iso\\":\\"2016AprilS1\\",\\"name\\":\\"Tahsas - Genbot 2016 AA\\",\\"displayName\\":\\"Tahsas - Genbot 2016 AA\\",\\"startDate\\":\\"2016-04-01\\",\\"endDate\\":\\"2016-09-30\\"}",
-        "{\\"periodType\\":\\"SIXMONTHLYAPR\\",\\"id\\":\\"2016AprilS2\\",\\"iso\\":\\"2016AprilS2\\",\\"name\\":\\"Sene 2016 AA - Tekemt 2017 AA\\",\\"displayName\\":\\"Sene 2016 AA - Tekemt 2017 AA\\",\\"startDate\\":\\"2016-10-01\\",\\"endDate\\":\\"2017-02-30\\"}",
+        "{\\"periodType\\":\\"SIXMONTHLYAPR\\",\\"id\\":\\"2016AprilS1\\",\\"iso\\":\\"2016AprilS1\\",\\"name\\":\\"Tahsas - Genbot 2016\\",\\"displayName\\":\\"Tahsas - Genbot 2016\\",\\"startDate\\":\\"2016-04-01\\",\\"endDate\\":\\"2016-09-30\\"}",
+        "{\\"periodType\\":\\"SIXMONTHLYAPR\\",\\"id\\":\\"2016AprilS2\\",\\"iso\\":\\"2016AprilS2\\",\\"name\\":\\"Sene 2016 - Tekemt 2017\\",\\"displayName\\":\\"Sene 2016 - Tekemt 2017\\",\\"startDate\\":\\"2016-10-01\\",\\"endDate\\":\\"2017-02-30\\"}",
       ],
       "last": Array [
-        "{\\"periodType\\":\\"SIXMONTHLYAPR\\",\\"id\\":\\"2016AprilS1\\",\\"iso\\":\\"2016AprilS1\\",\\"name\\":\\"Tahsas - Genbot 2016 AA\\",\\"displayName\\":\\"Tahsas - Genbot 2016 AA\\",\\"startDate\\":\\"2016-04-01\\",\\"endDate\\":\\"2016-09-30\\"}",
-        "{\\"periodType\\":\\"SIXMONTHLYAPR\\",\\"id\\":\\"2016AprilS2\\",\\"iso\\":\\"2016AprilS2\\",\\"name\\":\\"Sene 2016 AA - Tekemt 2017 AA\\",\\"displayName\\":\\"Sene 2016 AA - Tekemt 2017 AA\\",\\"startDate\\":\\"2016-10-01\\",\\"endDate\\":\\"2017-02-30\\"}",
+        "{\\"periodType\\":\\"SIXMONTHLYAPR\\",\\"id\\":\\"2016AprilS1\\",\\"iso\\":\\"2016AprilS1\\",\\"name\\":\\"Tahsas - Genbot 2016\\",\\"displayName\\":\\"Tahsas - Genbot 2016\\",\\"startDate\\":\\"2016-04-01\\",\\"endDate\\":\\"2016-09-30\\"}",
+        "{\\"periodType\\":\\"SIXMONTHLYAPR\\",\\"id\\":\\"2016AprilS2\\",\\"iso\\":\\"2016AprilS2\\",\\"name\\":\\"Sene 2016 - Tekemt 2017\\",\\"displayName\\":\\"Sene 2016 - Tekemt 2017\\",\\"startDate\\":\\"2016-10-01\\",\\"endDate\\":\\"2017-02-30\\"}",
       ],
     },
     "lastYear": Object {
       "count": 2,
       "first": Array [
-        "{\\"periodType\\":\\"SIXMONTHLYAPR\\",\\"id\\":\\"2015AprilS2\\",\\"iso\\":\\"2015AprilS2\\",\\"name\\":\\"Sene 2015 AA - Tekemt 2016 AA\\",\\"displayName\\":\\"Sene 2015 AA - Tekemt 2016 AA\\",\\"startDate\\":\\"2015-10-01\\",\\"endDate\\":\\"2016-02-30\\"}",
-        "{\\"periodType\\":\\"SIXMONTHLYAPR\\",\\"id\\":\\"2015AprilS1\\",\\"iso\\":\\"2015AprilS1\\",\\"name\\":\\"Tahsas - Genbot 2015 AA\\",\\"displayName\\":\\"Tahsas - Genbot 2015 AA\\",\\"startDate\\":\\"2015-04-01\\",\\"endDate\\":\\"2015-09-30\\"}",
+        "{\\"periodType\\":\\"SIXMONTHLYAPR\\",\\"id\\":\\"2015AprilS2\\",\\"iso\\":\\"2015AprilS2\\",\\"name\\":\\"Sene 2015 - Tekemt 2016\\",\\"displayName\\":\\"Sene 2015 - Tekemt 2016\\",\\"startDate\\":\\"2015-10-01\\",\\"endDate\\":\\"2016-02-30\\"}",
+        "{\\"periodType\\":\\"SIXMONTHLYAPR\\",\\"id\\":\\"2015AprilS1\\",\\"iso\\":\\"2015AprilS1\\",\\"name\\":\\"Tahsas - Genbot 2015\\",\\"displayName\\":\\"Tahsas - Genbot 2015\\",\\"startDate\\":\\"2015-04-01\\",\\"endDate\\":\\"2015-09-30\\"}",
       ],
       "last": Array [
-        "{\\"periodType\\":\\"SIXMONTHLYAPR\\",\\"id\\":\\"2015AprilS2\\",\\"iso\\":\\"2015AprilS2\\",\\"name\\":\\"Sene 2015 AA - Tekemt 2016 AA\\",\\"displayName\\":\\"Sene 2015 AA - Tekemt 2016 AA\\",\\"startDate\\":\\"2015-10-01\\",\\"endDate\\":\\"2016-02-30\\"}",
-        "{\\"periodType\\":\\"SIXMONTHLYAPR\\",\\"id\\":\\"2015AprilS1\\",\\"iso\\":\\"2015AprilS1\\",\\"name\\":\\"Tahsas - Genbot 2015 AA\\",\\"displayName\\":\\"Tahsas - Genbot 2015 AA\\",\\"startDate\\":\\"2015-04-01\\",\\"endDate\\":\\"2015-09-30\\"}",
+        "{\\"periodType\\":\\"SIXMONTHLYAPR\\",\\"id\\":\\"2015AprilS2\\",\\"iso\\":\\"2015AprilS2\\",\\"name\\":\\"Sene 2015 - Tekemt 2016\\",\\"displayName\\":\\"Sene 2015 - Tekemt 2016\\",\\"startDate\\":\\"2015-10-01\\",\\"endDate\\":\\"2016-02-30\\"}",
+        "{\\"periodType\\":\\"SIXMONTHLYAPR\\",\\"id\\":\\"2015AprilS1\\",\\"iso\\":\\"2015AprilS1\\",\\"name\\":\\"Tahsas - Genbot 2015\\",\\"displayName\\":\\"Tahsas - Genbot 2015\\",\\"startDate\\":\\"2015-04-01\\",\\"endDate\\":\\"2015-09-30\\"}",
       ],
     },
   },
@@ -343,23 +343,23 @@ Object {
     "currentYear": Object {
       "count": 6,
       "first": Array [
-        "{\\"periodType\\":\\"BIMONTHLY\\",\\"id\\":\\"201701B\\",\\"iso\\":\\"201701B\\",\\"name\\":\\"Meskerem - Tekemt 2017 AA\\",\\"displayName\\":\\"Meskerem - Tekemt 2017 AA\\",\\"startDate\\":\\"2017-01-01\\",\\"endDate\\":\\"2017-02-30\\"}",
-        "{\\"periodType\\":\\"BIMONTHLY\\",\\"id\\":\\"201702B\\",\\"iso\\":\\"201702B\\",\\"name\\":\\"Hedar - Tahsas 2017 AA\\",\\"displayName\\":\\"Hedar - Tahsas 2017 AA\\",\\"startDate\\":\\"2017-03-01\\",\\"endDate\\":\\"2017-04-30\\"}",
+        "{\\"periodType\\":\\"BIMONTHLY\\",\\"id\\":\\"201701B\\",\\"iso\\":\\"201701B\\",\\"name\\":\\"Meskerem - Tekemt 2017\\",\\"displayName\\":\\"Meskerem - Tekemt 2017\\",\\"startDate\\":\\"2017-01-01\\",\\"endDate\\":\\"2017-02-30\\"}",
+        "{\\"periodType\\":\\"BIMONTHLY\\",\\"id\\":\\"201702B\\",\\"iso\\":\\"201702B\\",\\"name\\":\\"Hedar - Tahsas 2017\\",\\"displayName\\":\\"Hedar - Tahsas 2017\\",\\"startDate\\":\\"2017-03-01\\",\\"endDate\\":\\"2017-04-30\\"}",
       ],
       "last": Array [
-        "{\\"periodType\\":\\"BIMONTHLY\\",\\"id\\":\\"201705B\\",\\"iso\\":\\"201705B\\",\\"name\\":\\"Genbot - Sene 2017 AA\\",\\"displayName\\":\\"Genbot - Sene 2017 AA\\",\\"startDate\\":\\"2017-09-01\\",\\"endDate\\":\\"2017-10-30\\"}",
-        "{\\"periodType\\":\\"BIMONTHLY\\",\\"id\\":\\"201706B\\",\\"iso\\":\\"201706B\\",\\"name\\":\\"Hamle - Nehasse 2017 AA\\",\\"displayName\\":\\"Hamle - Nehasse 2017 AA\\",\\"startDate\\":\\"2017-11-01\\",\\"endDate\\":\\"2017-12-30\\"}",
+        "{\\"periodType\\":\\"BIMONTHLY\\",\\"id\\":\\"201705B\\",\\"iso\\":\\"201705B\\",\\"name\\":\\"Genbot - Sene 2017\\",\\"displayName\\":\\"Genbot - Sene 2017\\",\\"startDate\\":\\"2017-09-01\\",\\"endDate\\":\\"2017-10-30\\"}",
+        "{\\"periodType\\":\\"BIMONTHLY\\",\\"id\\":\\"201706B\\",\\"iso\\":\\"201706B\\",\\"name\\":\\"Hamle - Nehasse 2017\\",\\"displayName\\":\\"Hamle - Nehasse 2017\\",\\"startDate\\":\\"2017-11-01\\",\\"endDate\\":\\"2017-12-30\\"}",
       ],
     },
     "lastYear": Object {
       "count": 6,
       "first": Array [
-        "{\\"periodType\\":\\"BIMONTHLY\\",\\"id\\":\\"201606B\\",\\"iso\\":\\"201606B\\",\\"name\\":\\"Hamle - Nehasse 2016 AA\\",\\"displayName\\":\\"Hamle - Nehasse 2016 AA\\",\\"startDate\\":\\"2016-11-01\\",\\"endDate\\":\\"2016-12-30\\"}",
-        "{\\"periodType\\":\\"BIMONTHLY\\",\\"id\\":\\"201605B\\",\\"iso\\":\\"201605B\\",\\"name\\":\\"Genbot - Sene 2016 AA\\",\\"displayName\\":\\"Genbot - Sene 2016 AA\\",\\"startDate\\":\\"2016-09-01\\",\\"endDate\\":\\"2016-10-30\\"}",
+        "{\\"periodType\\":\\"BIMONTHLY\\",\\"id\\":\\"201606B\\",\\"iso\\":\\"201606B\\",\\"name\\":\\"Hamle - Nehasse 2016\\",\\"displayName\\":\\"Hamle - Nehasse 2016\\",\\"startDate\\":\\"2016-11-01\\",\\"endDate\\":\\"2016-12-30\\"}",
+        "{\\"periodType\\":\\"BIMONTHLY\\",\\"id\\":\\"201605B\\",\\"iso\\":\\"201605B\\",\\"name\\":\\"Genbot - Sene 2016\\",\\"displayName\\":\\"Genbot - Sene 2016\\",\\"startDate\\":\\"2016-09-01\\",\\"endDate\\":\\"2016-10-30\\"}",
       ],
       "last": Array [
-        "{\\"periodType\\":\\"BIMONTHLY\\",\\"id\\":\\"201602B\\",\\"iso\\":\\"201602B\\",\\"name\\":\\"Hedar - Tahsas 2016 AA\\",\\"displayName\\":\\"Hedar - Tahsas 2016 AA\\",\\"startDate\\":\\"2016-03-01\\",\\"endDate\\":\\"2016-04-30\\"}",
-        "{\\"periodType\\":\\"BIMONTHLY\\",\\"id\\":\\"201601B\\",\\"iso\\":\\"201601B\\",\\"name\\":\\"Meskerem - Tekemt 2016 AA\\",\\"displayName\\":\\"Meskerem - Tekemt 2016 AA\\",\\"startDate\\":\\"2016-01-01\\",\\"endDate\\":\\"2016-02-30\\"}",
+        "{\\"periodType\\":\\"BIMONTHLY\\",\\"id\\":\\"201602B\\",\\"iso\\":\\"201602B\\",\\"name\\":\\"Hedar - Tahsas 2016\\",\\"displayName\\":\\"Hedar - Tahsas 2016\\",\\"startDate\\":\\"2016-03-01\\",\\"endDate\\":\\"2016-04-30\\"}",
+        "{\\"periodType\\":\\"BIMONTHLY\\",\\"id\\":\\"201601B\\",\\"iso\\":\\"201601B\\",\\"name\\":\\"Meskerem - Tekemt 2016\\",\\"displayName\\":\\"Meskerem - Tekemt 2016\\",\\"startDate\\":\\"2016-01-01\\",\\"endDate\\":\\"2016-02-30\\"}",
       ],
     },
   },
@@ -391,23 +391,23 @@ Object {
     "currentYear": Object {
       "count": 360,
       "first": Array [
-        "{\\"periodType\\":\\"DAILY\\",\\"id\\":\\"20170101\\",\\"iso\\":\\"20170101\\",\\"displayName\\":\\"Meskerem 1, 2017 AA\\",\\"name\\":\\"2017-01-01\\",\\"startDate\\":\\"2017-01-01\\",\\"endDate\\":\\"2017-01-01\\"}",
-        "{\\"periodType\\":\\"DAILY\\",\\"id\\":\\"20170102\\",\\"iso\\":\\"20170102\\",\\"displayName\\":\\"Meskerem 2, 2017 AA\\",\\"name\\":\\"2017-01-02\\",\\"startDate\\":\\"2017-01-02\\",\\"endDate\\":\\"2017-01-02\\"}",
+        "{\\"periodType\\":\\"DAILY\\",\\"id\\":\\"20170101\\",\\"iso\\":\\"20170101\\",\\"displayName\\":\\"Meskerem 1, 2017\\",\\"name\\":\\"2017-01-01\\",\\"startDate\\":\\"2017-01-01\\",\\"endDate\\":\\"2017-01-01\\"}",
+        "{\\"periodType\\":\\"DAILY\\",\\"id\\":\\"20170102\\",\\"iso\\":\\"20170102\\",\\"displayName\\":\\"Meskerem 2, 2017\\",\\"name\\":\\"2017-01-02\\",\\"startDate\\":\\"2017-01-02\\",\\"endDate\\":\\"2017-01-02\\"}",
       ],
       "last": Array [
-        "{\\"periodType\\":\\"DAILY\\",\\"id\\":\\"20171229\\",\\"iso\\":\\"20171229\\",\\"displayName\\":\\"Nehasse 29, 2017 AA\\",\\"name\\":\\"2017-12-29\\",\\"startDate\\":\\"2017-12-29\\",\\"endDate\\":\\"2017-12-29\\"}",
-        "{\\"periodType\\":\\"DAILY\\",\\"id\\":\\"20171230\\",\\"iso\\":\\"20171230\\",\\"displayName\\":\\"Nehasse 30, 2017 AA\\",\\"name\\":\\"2017-12-30\\",\\"startDate\\":\\"2017-12-30\\",\\"endDate\\":\\"2017-12-30\\"}",
+        "{\\"periodType\\":\\"DAILY\\",\\"id\\":\\"20171229\\",\\"iso\\":\\"20171229\\",\\"displayName\\":\\"Nehasse 29, 2017\\",\\"name\\":\\"2017-12-29\\",\\"startDate\\":\\"2017-12-29\\",\\"endDate\\":\\"2017-12-29\\"}",
+        "{\\"periodType\\":\\"DAILY\\",\\"id\\":\\"20171230\\",\\"iso\\":\\"20171230\\",\\"displayName\\":\\"Nehasse 30, 2017\\",\\"name\\":\\"2017-12-30\\",\\"startDate\\":\\"2017-12-30\\",\\"endDate\\":\\"2017-12-30\\"}",
       ],
     },
     "lastYear": Object {
       "count": 365,
       "first": Array [
-        "{\\"periodType\\":\\"DAILY\\",\\"id\\":\\"20161305\\",\\"iso\\":\\"20161305\\",\\"displayName\\":\\"Pagumen 5, 2016 AA\\",\\"name\\":\\"2016-13-05\\",\\"startDate\\":\\"2016-13-05\\",\\"endDate\\":\\"2016-13-05\\"}",
-        "{\\"periodType\\":\\"DAILY\\",\\"id\\":\\"20161304\\",\\"iso\\":\\"20161304\\",\\"displayName\\":\\"Pagumen 4, 2016 AA\\",\\"name\\":\\"2016-13-04\\",\\"startDate\\":\\"2016-13-04\\",\\"endDate\\":\\"2016-13-04\\"}",
+        "{\\"periodType\\":\\"DAILY\\",\\"id\\":\\"20161305\\",\\"iso\\":\\"20161305\\",\\"displayName\\":\\"Pagumen 5, 2016\\",\\"name\\":\\"2016-13-05\\",\\"startDate\\":\\"2016-13-05\\",\\"endDate\\":\\"2016-13-05\\"}",
+        "{\\"periodType\\":\\"DAILY\\",\\"id\\":\\"20161304\\",\\"iso\\":\\"20161304\\",\\"displayName\\":\\"Pagumen 4, 2016\\",\\"name\\":\\"2016-13-04\\",\\"startDate\\":\\"2016-13-04\\",\\"endDate\\":\\"2016-13-04\\"}",
       ],
       "last": Array [
-        "{\\"periodType\\":\\"DAILY\\",\\"id\\":\\"20160102\\",\\"iso\\":\\"20160102\\",\\"displayName\\":\\"Meskerem 2, 2016 AA\\",\\"name\\":\\"2016-01-02\\",\\"startDate\\":\\"2016-01-02\\",\\"endDate\\":\\"2016-01-02\\"}",
-        "{\\"periodType\\":\\"DAILY\\",\\"id\\":\\"20160101\\",\\"iso\\":\\"20160101\\",\\"displayName\\":\\"Meskerem 1, 2016 AA\\",\\"name\\":\\"2016-01-01\\",\\"startDate\\":\\"2016-01-01\\",\\"endDate\\":\\"2016-01-01\\"}",
+        "{\\"periodType\\":\\"DAILY\\",\\"id\\":\\"20160102\\",\\"iso\\":\\"20160102\\",\\"displayName\\":\\"Meskerem 2, 2016\\",\\"name\\":\\"2016-01-02\\",\\"startDate\\":\\"2016-01-02\\",\\"endDate\\":\\"2016-01-02\\"}",
+        "{\\"periodType\\":\\"DAILY\\",\\"id\\":\\"20160101\\",\\"iso\\":\\"20160101\\",\\"displayName\\":\\"Meskerem 1, 2016\\",\\"name\\":\\"2016-01-01\\",\\"startDate\\":\\"2016-01-01\\",\\"endDate\\":\\"2016-01-01\\"}",
       ],
     },
   },
@@ -415,23 +415,23 @@ Object {
     "currentYear": Object {
       "count": 10,
       "first": Array [
-        "{\\"periodType\\":\\"FYAPR\\",\\"id\\":\\"2008April\\",\\"iso\\":\\"2008April\\",\\"name\\":\\"Tahsas 2008 AA - Hedar 2009 AA\\",\\"displayName\\":\\"Tahsas 2008 AA - Hedar 2009 AA\\",\\"startDate\\":\\"2008-04-01\\",\\"endDate\\":\\"2009-03-30\\"}",
-        "{\\"periodType\\":\\"FYAPR\\",\\"id\\":\\"2009April\\",\\"iso\\":\\"2009April\\",\\"name\\":\\"Tahsas 2009 AA - Hedar 2010 AA\\",\\"displayName\\":\\"Tahsas 2009 AA - Hedar 2010 AA\\",\\"startDate\\":\\"2009-04-01\\",\\"endDate\\":\\"2010-03-30\\"}",
+        "{\\"periodType\\":\\"FYAPR\\",\\"id\\":\\"2008April\\",\\"iso\\":\\"2008April\\",\\"name\\":\\"Tahsas 2008 - Hedar 2009\\",\\"displayName\\":\\"Tahsas 2008 - Hedar 2009\\",\\"startDate\\":\\"2008-04-01\\",\\"endDate\\":\\"2009-03-30\\"}",
+        "{\\"periodType\\":\\"FYAPR\\",\\"id\\":\\"2009April\\",\\"iso\\":\\"2009April\\",\\"name\\":\\"Tahsas 2009 - Hedar 2010\\",\\"displayName\\":\\"Tahsas 2009 - Hedar 2010\\",\\"startDate\\":\\"2009-04-01\\",\\"endDate\\":\\"2010-03-30\\"}",
       ],
       "last": Array [
-        "{\\"periodType\\":\\"FYAPR\\",\\"id\\":\\"2016April\\",\\"iso\\":\\"2016April\\",\\"name\\":\\"Tahsas 2016 AA - Hedar 2017 AA\\",\\"displayName\\":\\"Tahsas 2016 AA - Hedar 2017 AA\\",\\"startDate\\":\\"2016-04-01\\",\\"endDate\\":\\"2017-03-30\\"}",
-        "{\\"periodType\\":\\"FYAPR\\",\\"id\\":\\"2017April\\",\\"iso\\":\\"2017April\\",\\"name\\":\\"Tahsas 2017 AA - Hedar 2018 AA\\",\\"displayName\\":\\"Tahsas 2017 AA - Hedar 2018 AA\\",\\"startDate\\":\\"2017-04-01\\",\\"endDate\\":\\"2018-03-30\\"}",
+        "{\\"periodType\\":\\"FYAPR\\",\\"id\\":\\"2016April\\",\\"iso\\":\\"2016April\\",\\"name\\":\\"Tahsas 2016 - Hedar 2017\\",\\"displayName\\":\\"Tahsas 2016 - Hedar 2017\\",\\"startDate\\":\\"2016-04-01\\",\\"endDate\\":\\"2017-03-30\\"}",
+        "{\\"periodType\\":\\"FYAPR\\",\\"id\\":\\"2017April\\",\\"iso\\":\\"2017April\\",\\"name\\":\\"Tahsas 2017 - Hedar 2018\\",\\"displayName\\":\\"Tahsas 2017 - Hedar 2018\\",\\"startDate\\":\\"2017-04-01\\",\\"endDate\\":\\"2018-03-30\\"}",
       ],
     },
     "lastYear": Object {
       "count": 10,
       "first": Array [
-        "{\\"periodType\\":\\"FYAPR\\",\\"id\\":\\"2007April\\",\\"iso\\":\\"2007April\\",\\"name\\":\\"Tahsas 2007 AA - Hedar 2008 AA\\",\\"displayName\\":\\"Tahsas 2007 AA - Hedar 2008 AA\\",\\"startDate\\":\\"2007-04-01\\",\\"endDate\\":\\"2008-03-30\\"}",
-        "{\\"periodType\\":\\"FYAPR\\",\\"id\\":\\"2008April\\",\\"iso\\":\\"2008April\\",\\"name\\":\\"Tahsas 2008 AA - Hedar 2009 AA\\",\\"displayName\\":\\"Tahsas 2008 AA - Hedar 2009 AA\\",\\"startDate\\":\\"2008-04-01\\",\\"endDate\\":\\"2009-03-30\\"}",
+        "{\\"periodType\\":\\"FYAPR\\",\\"id\\":\\"2007April\\",\\"iso\\":\\"2007April\\",\\"name\\":\\"Tahsas 2007 - Hedar 2008\\",\\"displayName\\":\\"Tahsas 2007 - Hedar 2008\\",\\"startDate\\":\\"2007-04-01\\",\\"endDate\\":\\"2008-03-30\\"}",
+        "{\\"periodType\\":\\"FYAPR\\",\\"id\\":\\"2008April\\",\\"iso\\":\\"2008April\\",\\"name\\":\\"Tahsas 2008 - Hedar 2009\\",\\"displayName\\":\\"Tahsas 2008 - Hedar 2009\\",\\"startDate\\":\\"2008-04-01\\",\\"endDate\\":\\"2009-03-30\\"}",
       ],
       "last": Array [
-        "{\\"periodType\\":\\"FYAPR\\",\\"id\\":\\"2015April\\",\\"iso\\":\\"2015April\\",\\"name\\":\\"Tahsas 2015 AA - Hedar 2016 AA\\",\\"displayName\\":\\"Tahsas 2015 AA - Hedar 2016 AA\\",\\"startDate\\":\\"2015-04-01\\",\\"endDate\\":\\"2016-03-30\\"}",
-        "{\\"periodType\\":\\"FYAPR\\",\\"id\\":\\"2016April\\",\\"iso\\":\\"2016April\\",\\"name\\":\\"Tahsas 2016 AA - Hedar 2017 AA\\",\\"displayName\\":\\"Tahsas 2016 AA - Hedar 2017 AA\\",\\"startDate\\":\\"2016-04-01\\",\\"endDate\\":\\"2017-03-30\\"}",
+        "{\\"periodType\\":\\"FYAPR\\",\\"id\\":\\"2015April\\",\\"iso\\":\\"2015April\\",\\"name\\":\\"Tahsas 2015 - Hedar 2016\\",\\"displayName\\":\\"Tahsas 2015 - Hedar 2016\\",\\"startDate\\":\\"2015-04-01\\",\\"endDate\\":\\"2016-03-30\\"}",
+        "{\\"periodType\\":\\"FYAPR\\",\\"id\\":\\"2016April\\",\\"iso\\":\\"2016April\\",\\"name\\":\\"Tahsas 2016 - Hedar 2017\\",\\"displayName\\":\\"Tahsas 2016 - Hedar 2017\\",\\"startDate\\":\\"2016-04-01\\",\\"endDate\\":\\"2017-03-30\\"}",
       ],
     },
   },
@@ -439,23 +439,23 @@ Object {
     "currentYear": Object {
       "count": 10,
       "first": Array [
-        "{\\"periodType\\":\\"FYJUL\\",\\"id\\":\\"2008July\\",\\"iso\\":\\"2008July\\",\\"name\\":\\"Megabit 2008 AA - Yekatit 2009 AA\\",\\"displayName\\":\\"Megabit 2008 AA - Yekatit 2009 AA\\",\\"startDate\\":\\"2008-07-01\\",\\"endDate\\":\\"2009-06-30\\"}",
-        "{\\"periodType\\":\\"FYJUL\\",\\"id\\":\\"2009July\\",\\"iso\\":\\"2009July\\",\\"name\\":\\"Megabit 2009 AA - Yekatit 2010 AA\\",\\"displayName\\":\\"Megabit 2009 AA - Yekatit 2010 AA\\",\\"startDate\\":\\"2009-07-01\\",\\"endDate\\":\\"2010-06-30\\"}",
+        "{\\"periodType\\":\\"FYJUL\\",\\"id\\":\\"2008July\\",\\"iso\\":\\"2008July\\",\\"name\\":\\"Megabit 2008 - Yekatit 2009\\",\\"displayName\\":\\"Megabit 2008 - Yekatit 2009\\",\\"startDate\\":\\"2008-07-01\\",\\"endDate\\":\\"2009-06-30\\"}",
+        "{\\"periodType\\":\\"FYJUL\\",\\"id\\":\\"2009July\\",\\"iso\\":\\"2009July\\",\\"name\\":\\"Megabit 2009 - Yekatit 2010\\",\\"displayName\\":\\"Megabit 2009 - Yekatit 2010\\",\\"startDate\\":\\"2009-07-01\\",\\"endDate\\":\\"2010-06-30\\"}",
       ],
       "last": Array [
-        "{\\"periodType\\":\\"FYJUL\\",\\"id\\":\\"2016July\\",\\"iso\\":\\"2016July\\",\\"name\\":\\"Megabit 2016 AA - Yekatit 2017 AA\\",\\"displayName\\":\\"Megabit 2016 AA - Yekatit 2017 AA\\",\\"startDate\\":\\"2016-07-01\\",\\"endDate\\":\\"2017-06-30\\"}",
-        "{\\"periodType\\":\\"FYJUL\\",\\"id\\":\\"2017July\\",\\"iso\\":\\"2017July\\",\\"name\\":\\"Megabit 2017 AA - Yekatit 2018 AA\\",\\"displayName\\":\\"Megabit 2017 AA - Yekatit 2018 AA\\",\\"startDate\\":\\"2017-07-01\\",\\"endDate\\":\\"2018-06-30\\"}",
+        "{\\"periodType\\":\\"FYJUL\\",\\"id\\":\\"2016July\\",\\"iso\\":\\"2016July\\",\\"name\\":\\"Megabit 2016 - Yekatit 2017\\",\\"displayName\\":\\"Megabit 2016 - Yekatit 2017\\",\\"startDate\\":\\"2016-07-01\\",\\"endDate\\":\\"2017-06-30\\"}",
+        "{\\"periodType\\":\\"FYJUL\\",\\"id\\":\\"2017July\\",\\"iso\\":\\"2017July\\",\\"name\\":\\"Megabit 2017 - Yekatit 2018\\",\\"displayName\\":\\"Megabit 2017 - Yekatit 2018\\",\\"startDate\\":\\"2017-07-01\\",\\"endDate\\":\\"2018-06-30\\"}",
       ],
     },
     "lastYear": Object {
       "count": 10,
       "first": Array [
-        "{\\"periodType\\":\\"FYJUL\\",\\"id\\":\\"2007July\\",\\"iso\\":\\"2007July\\",\\"name\\":\\"Megabit 2007 AA - Yekatit 2008 AA\\",\\"displayName\\":\\"Megabit 2007 AA - Yekatit 2008 AA\\",\\"startDate\\":\\"2007-07-01\\",\\"endDate\\":\\"2008-06-30\\"}",
-        "{\\"periodType\\":\\"FYJUL\\",\\"id\\":\\"2008July\\",\\"iso\\":\\"2008July\\",\\"name\\":\\"Megabit 2008 AA - Yekatit 2009 AA\\",\\"displayName\\":\\"Megabit 2008 AA - Yekatit 2009 AA\\",\\"startDate\\":\\"2008-07-01\\",\\"endDate\\":\\"2009-06-30\\"}",
+        "{\\"periodType\\":\\"FYJUL\\",\\"id\\":\\"2007July\\",\\"iso\\":\\"2007July\\",\\"name\\":\\"Megabit 2007 - Yekatit 2008\\",\\"displayName\\":\\"Megabit 2007 - Yekatit 2008\\",\\"startDate\\":\\"2007-07-01\\",\\"endDate\\":\\"2008-06-30\\"}",
+        "{\\"periodType\\":\\"FYJUL\\",\\"id\\":\\"2008July\\",\\"iso\\":\\"2008July\\",\\"name\\":\\"Megabit 2008 - Yekatit 2009\\",\\"displayName\\":\\"Megabit 2008 - Yekatit 2009\\",\\"startDate\\":\\"2008-07-01\\",\\"endDate\\":\\"2009-06-30\\"}",
       ],
       "last": Array [
-        "{\\"periodType\\":\\"FYJUL\\",\\"id\\":\\"2015July\\",\\"iso\\":\\"2015July\\",\\"name\\":\\"Megabit 2015 AA - Yekatit 2016 AA\\",\\"displayName\\":\\"Megabit 2015 AA - Yekatit 2016 AA\\",\\"startDate\\":\\"2015-07-01\\",\\"endDate\\":\\"2016-06-30\\"}",
-        "{\\"periodType\\":\\"FYJUL\\",\\"id\\":\\"2016July\\",\\"iso\\":\\"2016July\\",\\"name\\":\\"Megabit 2016 AA - Yekatit 2017 AA\\",\\"displayName\\":\\"Megabit 2016 AA - Yekatit 2017 AA\\",\\"startDate\\":\\"2016-07-01\\",\\"endDate\\":\\"2017-06-30\\"}",
+        "{\\"periodType\\":\\"FYJUL\\",\\"id\\":\\"2015July\\",\\"iso\\":\\"2015July\\",\\"name\\":\\"Megabit 2015 - Yekatit 2016\\",\\"displayName\\":\\"Megabit 2015 - Yekatit 2016\\",\\"startDate\\":\\"2015-07-01\\",\\"endDate\\":\\"2016-06-30\\"}",
+        "{\\"periodType\\":\\"FYJUL\\",\\"id\\":\\"2016July\\",\\"iso\\":\\"2016July\\",\\"name\\":\\"Megabit 2016 - Yekatit 2017\\",\\"displayName\\":\\"Megabit 2016 - Yekatit 2017\\",\\"startDate\\":\\"2016-07-01\\",\\"endDate\\":\\"2017-06-30\\"}",
       ],
     },
   },
@@ -463,23 +463,23 @@ Object {
     "currentYear": Object {
       "count": 10,
       "first": Array [
-        "{\\"periodType\\":\\"FYNOV\\",\\"id\\":\\"2008Nov\\",\\"iso\\":\\"2008Nov\\",\\"name\\":\\"Hamle 2008 AA - Sene 2009 AA\\",\\"displayName\\":\\"Hamle 2008 AA - Sene 2009 AA\\",\\"startDate\\":\\"2008-11-01\\",\\"endDate\\":\\"2009-10-30\\"}",
-        "{\\"periodType\\":\\"FYNOV\\",\\"id\\":\\"2009Nov\\",\\"iso\\":\\"2009Nov\\",\\"name\\":\\"Hamle 2009 AA - Sene 2010 AA\\",\\"displayName\\":\\"Hamle 2009 AA - Sene 2010 AA\\",\\"startDate\\":\\"2009-11-01\\",\\"endDate\\":\\"2010-10-30\\"}",
+        "{\\"periodType\\":\\"FYNOV\\",\\"id\\":\\"2008Nov\\",\\"iso\\":\\"2008Nov\\",\\"name\\":\\"Hamle 2008 - Sene 2009\\",\\"displayName\\":\\"Hamle 2008 - Sene 2009\\",\\"startDate\\":\\"2008-11-01\\",\\"endDate\\":\\"2009-10-30\\"}",
+        "{\\"periodType\\":\\"FYNOV\\",\\"id\\":\\"2009Nov\\",\\"iso\\":\\"2009Nov\\",\\"name\\":\\"Hamle 2009 - Sene 2010\\",\\"displayName\\":\\"Hamle 2009 - Sene 2010\\",\\"startDate\\":\\"2009-11-01\\",\\"endDate\\":\\"2010-10-30\\"}",
       ],
       "last": Array [
-        "{\\"periodType\\":\\"FYNOV\\",\\"id\\":\\"2016Nov\\",\\"iso\\":\\"2016Nov\\",\\"name\\":\\"Hamle 2016 AA - Sene 2017 AA\\",\\"displayName\\":\\"Hamle 2016 AA - Sene 2017 AA\\",\\"startDate\\":\\"2016-11-01\\",\\"endDate\\":\\"2017-10-30\\"}",
-        "{\\"periodType\\":\\"FYNOV\\",\\"id\\":\\"2017Nov\\",\\"iso\\":\\"2017Nov\\",\\"name\\":\\"Hamle 2017 AA - Sene 2018 AA\\",\\"displayName\\":\\"Hamle 2017 AA - Sene 2018 AA\\",\\"startDate\\":\\"2017-11-01\\",\\"endDate\\":\\"2018-10-30\\"}",
+        "{\\"periodType\\":\\"FYNOV\\",\\"id\\":\\"2016Nov\\",\\"iso\\":\\"2016Nov\\",\\"name\\":\\"Hamle 2016 - Sene 2017\\",\\"displayName\\":\\"Hamle 2016 - Sene 2017\\",\\"startDate\\":\\"2016-11-01\\",\\"endDate\\":\\"2017-10-30\\"}",
+        "{\\"periodType\\":\\"FYNOV\\",\\"id\\":\\"2017Nov\\",\\"iso\\":\\"2017Nov\\",\\"name\\":\\"Hamle 2017 - Sene 2018\\",\\"displayName\\":\\"Hamle 2017 - Sene 2018\\",\\"startDate\\":\\"2017-11-01\\",\\"endDate\\":\\"2018-10-30\\"}",
       ],
     },
     "lastYear": Object {
       "count": 10,
       "first": Array [
-        "{\\"periodType\\":\\"FYNOV\\",\\"id\\":\\"2007Nov\\",\\"iso\\":\\"2007Nov\\",\\"name\\":\\"Hamle 2007 AA - Sene 2008 AA\\",\\"displayName\\":\\"Hamle 2007 AA - Sene 2008 AA\\",\\"startDate\\":\\"2007-11-01\\",\\"endDate\\":\\"2008-10-30\\"}",
-        "{\\"periodType\\":\\"FYNOV\\",\\"id\\":\\"2008Nov\\",\\"iso\\":\\"2008Nov\\",\\"name\\":\\"Hamle 2008 AA - Sene 2009 AA\\",\\"displayName\\":\\"Hamle 2008 AA - Sene 2009 AA\\",\\"startDate\\":\\"2008-11-01\\",\\"endDate\\":\\"2009-10-30\\"}",
+        "{\\"periodType\\":\\"FYNOV\\",\\"id\\":\\"2007Nov\\",\\"iso\\":\\"2007Nov\\",\\"name\\":\\"Hamle 2007 - Sene 2008\\",\\"displayName\\":\\"Hamle 2007 - Sene 2008\\",\\"startDate\\":\\"2007-11-01\\",\\"endDate\\":\\"2008-10-30\\"}",
+        "{\\"periodType\\":\\"FYNOV\\",\\"id\\":\\"2008Nov\\",\\"iso\\":\\"2008Nov\\",\\"name\\":\\"Hamle 2008 - Sene 2009\\",\\"displayName\\":\\"Hamle 2008 - Sene 2009\\",\\"startDate\\":\\"2008-11-01\\",\\"endDate\\":\\"2009-10-30\\"}",
       ],
       "last": Array [
-        "{\\"periodType\\":\\"FYNOV\\",\\"id\\":\\"2015Nov\\",\\"iso\\":\\"2015Nov\\",\\"name\\":\\"Hamle 2015 AA - Sene 2016 AA\\",\\"displayName\\":\\"Hamle 2015 AA - Sene 2016 AA\\",\\"startDate\\":\\"2015-11-01\\",\\"endDate\\":\\"2016-10-30\\"}",
-        "{\\"periodType\\":\\"FYNOV\\",\\"id\\":\\"2016Nov\\",\\"iso\\":\\"2016Nov\\",\\"name\\":\\"Hamle 2016 AA - Sene 2017 AA\\",\\"displayName\\":\\"Hamle 2016 AA - Sene 2017 AA\\",\\"startDate\\":\\"2016-11-01\\",\\"endDate\\":\\"2017-10-30\\"}",
+        "{\\"periodType\\":\\"FYNOV\\",\\"id\\":\\"2015Nov\\",\\"iso\\":\\"2015Nov\\",\\"name\\":\\"Hamle 2015 - Sene 2016\\",\\"displayName\\":\\"Hamle 2015 - Sene 2016\\",\\"startDate\\":\\"2015-11-01\\",\\"endDate\\":\\"2016-10-30\\"}",
+        "{\\"periodType\\":\\"FYNOV\\",\\"id\\":\\"2016Nov\\",\\"iso\\":\\"2016Nov\\",\\"name\\":\\"Hamle 2016 - Sene 2017\\",\\"displayName\\":\\"Hamle 2016 - Sene 2017\\",\\"startDate\\":\\"2016-11-01\\",\\"endDate\\":\\"2017-10-30\\"}",
       ],
     },
   },
@@ -487,23 +487,23 @@ Object {
     "currentYear": Object {
       "count": 12,
       "first": Array [
-        "{\\"periodType\\":\\"MONTHLY\\",\\"id\\":\\"201701\\",\\"iso\\":\\"201701\\",\\"name\\":\\"Meskerem 2017 AA\\",\\"displayName\\":\\"Meskerem 2017 AA\\",\\"startDate\\":\\"2017-01-01\\",\\"endDate\\":\\"2017-01-30\\"}",
-        "{\\"periodType\\":\\"MONTHLY\\",\\"id\\":\\"201702\\",\\"iso\\":\\"201702\\",\\"name\\":\\"Tekemt 2017 AA\\",\\"displayName\\":\\"Tekemt 2017 AA\\",\\"startDate\\":\\"2017-02-01\\",\\"endDate\\":\\"2017-02-30\\"}",
+        "{\\"periodType\\":\\"MONTHLY\\",\\"id\\":\\"201701\\",\\"iso\\":\\"201701\\",\\"name\\":\\"Meskerem 2017\\",\\"displayName\\":\\"Meskerem 2017\\",\\"startDate\\":\\"2017-01-01\\",\\"endDate\\":\\"2017-01-30\\"}",
+        "{\\"periodType\\":\\"MONTHLY\\",\\"id\\":\\"201702\\",\\"iso\\":\\"201702\\",\\"name\\":\\"Tekemt 2017\\",\\"displayName\\":\\"Tekemt 2017\\",\\"startDate\\":\\"2017-02-01\\",\\"endDate\\":\\"2017-02-30\\"}",
       ],
       "last": Array [
-        "{\\"periodType\\":\\"MONTHLY\\",\\"id\\":\\"201711\\",\\"iso\\":\\"201711\\",\\"name\\":\\"Hamle 2017 AA\\",\\"displayName\\":\\"Hamle 2017 AA\\",\\"startDate\\":\\"2017-11-01\\",\\"endDate\\":\\"2017-11-30\\"}",
-        "{\\"periodType\\":\\"MONTHLY\\",\\"id\\":\\"201712\\",\\"iso\\":\\"201712\\",\\"name\\":\\"Nehasse 2017 AA\\",\\"displayName\\":\\"Nehasse 2017 AA\\",\\"startDate\\":\\"2017-12-01\\",\\"endDate\\":\\"2017-12-30\\"}",
+        "{\\"periodType\\":\\"MONTHLY\\",\\"id\\":\\"201711\\",\\"iso\\":\\"201711\\",\\"name\\":\\"Hamle 2017\\",\\"displayName\\":\\"Hamle 2017\\",\\"startDate\\":\\"2017-11-01\\",\\"endDate\\":\\"2017-11-30\\"}",
+        "{\\"periodType\\":\\"MONTHLY\\",\\"id\\":\\"201712\\",\\"iso\\":\\"201712\\",\\"name\\":\\"Nehasse 2017\\",\\"displayName\\":\\"Nehasse 2017\\",\\"startDate\\":\\"2017-12-01\\",\\"endDate\\":\\"2017-12-30\\"}",
       ],
     },
     "lastYear": Object {
       "count": 12,
       "first": Array [
-        "{\\"periodType\\":\\"MONTHLY\\",\\"id\\":\\"201612\\",\\"iso\\":\\"201612\\",\\"name\\":\\"Nehasse 2016 AA\\",\\"displayName\\":\\"Nehasse 2016 AA\\",\\"startDate\\":\\"2016-12-01\\",\\"endDate\\":\\"2016-12-30\\"}",
-        "{\\"periodType\\":\\"MONTHLY\\",\\"id\\":\\"201611\\",\\"iso\\":\\"201611\\",\\"name\\":\\"Hamle 2016 AA\\",\\"displayName\\":\\"Hamle 2016 AA\\",\\"startDate\\":\\"2016-11-01\\",\\"endDate\\":\\"2016-11-30\\"}",
+        "{\\"periodType\\":\\"MONTHLY\\",\\"id\\":\\"201612\\",\\"iso\\":\\"201612\\",\\"name\\":\\"Nehasse 2016\\",\\"displayName\\":\\"Nehasse 2016\\",\\"startDate\\":\\"2016-12-01\\",\\"endDate\\":\\"2016-12-30\\"}",
+        "{\\"periodType\\":\\"MONTHLY\\",\\"id\\":\\"201611\\",\\"iso\\":\\"201611\\",\\"name\\":\\"Hamle 2016\\",\\"displayName\\":\\"Hamle 2016\\",\\"startDate\\":\\"2016-11-01\\",\\"endDate\\":\\"2016-11-30\\"}",
       ],
       "last": Array [
-        "{\\"periodType\\":\\"MONTHLY\\",\\"id\\":\\"201602\\",\\"iso\\":\\"201602\\",\\"name\\":\\"Tekemt 2016 AA\\",\\"displayName\\":\\"Tekemt 2016 AA\\",\\"startDate\\":\\"2016-02-01\\",\\"endDate\\":\\"2016-02-30\\"}",
-        "{\\"periodType\\":\\"MONTHLY\\",\\"id\\":\\"201601\\",\\"iso\\":\\"201601\\",\\"name\\":\\"Meskerem 2016 AA\\",\\"displayName\\":\\"Meskerem 2016 AA\\",\\"startDate\\":\\"2016-01-01\\",\\"endDate\\":\\"2016-01-30\\"}",
+        "{\\"periodType\\":\\"MONTHLY\\",\\"id\\":\\"201602\\",\\"iso\\":\\"201602\\",\\"name\\":\\"Tekemt 2016\\",\\"displayName\\":\\"Tekemt 2016\\",\\"startDate\\":\\"2016-02-01\\",\\"endDate\\":\\"2016-02-30\\"}",
+        "{\\"periodType\\":\\"MONTHLY\\",\\"id\\":\\"201601\\",\\"iso\\":\\"201601\\",\\"name\\":\\"Meskerem 2016\\",\\"displayName\\":\\"Meskerem 2016\\",\\"startDate\\":\\"2016-01-01\\",\\"endDate\\":\\"2016-01-30\\"}",
       ],
     },
   },
@@ -511,23 +511,23 @@ Object {
     "currentYear": Object {
       "count": 4,
       "first": Array [
-        "{\\"periodType\\":\\"QUARTERLY\\",\\"id\\":\\"2017Q1\\",\\"iso\\":\\"2017Q1\\",\\"name\\":\\"Meskerem - Hedar 2017 AA\\",\\"displayName\\":\\"Meskerem - Hedar 2017 AA\\",\\"startDate\\":\\"2017-01-01\\",\\"endDate\\":\\"2017-03-30\\"}",
-        "{\\"periodType\\":\\"QUARTERLY\\",\\"id\\":\\"2017Q2\\",\\"iso\\":\\"2017Q2\\",\\"name\\":\\"Tahsas - Yekatit 2017 AA\\",\\"displayName\\":\\"Tahsas - Yekatit 2017 AA\\",\\"startDate\\":\\"2017-04-01\\",\\"endDate\\":\\"2017-06-30\\"}",
+        "{\\"periodType\\":\\"QUARTERLY\\",\\"id\\":\\"2017Q1\\",\\"iso\\":\\"2017Q1\\",\\"name\\":\\"Meskerem - Hedar 2017\\",\\"displayName\\":\\"Meskerem - Hedar 2017\\",\\"startDate\\":\\"2017-01-01\\",\\"endDate\\":\\"2017-03-30\\"}",
+        "{\\"periodType\\":\\"QUARTERLY\\",\\"id\\":\\"2017Q2\\",\\"iso\\":\\"2017Q2\\",\\"name\\":\\"Tahsas - Yekatit 2017\\",\\"displayName\\":\\"Tahsas - Yekatit 2017\\",\\"startDate\\":\\"2017-04-01\\",\\"endDate\\":\\"2017-06-30\\"}",
       ],
       "last": Array [
-        "{\\"periodType\\":\\"QUARTERLY\\",\\"id\\":\\"2017Q3\\",\\"iso\\":\\"2017Q3\\",\\"name\\":\\"Megabit - Genbot 2017 AA\\",\\"displayName\\":\\"Megabit - Genbot 2017 AA\\",\\"startDate\\":\\"2017-07-01\\",\\"endDate\\":\\"2017-09-30\\"}",
-        "{\\"periodType\\":\\"QUARTERLY\\",\\"id\\":\\"2017Q4\\",\\"iso\\":\\"2017Q4\\",\\"name\\":\\"Sene - Nehasse 2017 AA\\",\\"displayName\\":\\"Sene - Nehasse 2017 AA\\",\\"startDate\\":\\"2017-10-01\\",\\"endDate\\":\\"2017-12-30\\"}",
+        "{\\"periodType\\":\\"QUARTERLY\\",\\"id\\":\\"2017Q3\\",\\"iso\\":\\"2017Q3\\",\\"name\\":\\"Megabit - Genbot 2017\\",\\"displayName\\":\\"Megabit - Genbot 2017\\",\\"startDate\\":\\"2017-07-01\\",\\"endDate\\":\\"2017-09-30\\"}",
+        "{\\"periodType\\":\\"QUARTERLY\\",\\"id\\":\\"2017Q4\\",\\"iso\\":\\"2017Q4\\",\\"name\\":\\"Sene - Nehasse 2017\\",\\"displayName\\":\\"Sene - Nehasse 2017\\",\\"startDate\\":\\"2017-10-01\\",\\"endDate\\":\\"2017-12-30\\"}",
       ],
     },
     "lastYear": Object {
       "count": 4,
       "first": Array [
-        "{\\"periodType\\":\\"QUARTERLY\\",\\"id\\":\\"2016Q4\\",\\"iso\\":\\"2016Q4\\",\\"name\\":\\"Sene - Nehasse 2016 AA\\",\\"displayName\\":\\"Sene - Nehasse 2016 AA\\",\\"startDate\\":\\"2016-10-01\\",\\"endDate\\":\\"2016-12-30\\"}",
-        "{\\"periodType\\":\\"QUARTERLY\\",\\"id\\":\\"2016Q3\\",\\"iso\\":\\"2016Q3\\",\\"name\\":\\"Megabit - Genbot 2016 AA\\",\\"displayName\\":\\"Megabit - Genbot 2016 AA\\",\\"startDate\\":\\"2016-07-01\\",\\"endDate\\":\\"2016-09-30\\"}",
+        "{\\"periodType\\":\\"QUARTERLY\\",\\"id\\":\\"2016Q4\\",\\"iso\\":\\"2016Q4\\",\\"name\\":\\"Sene - Nehasse 2016\\",\\"displayName\\":\\"Sene - Nehasse 2016\\",\\"startDate\\":\\"2016-10-01\\",\\"endDate\\":\\"2016-12-30\\"}",
+        "{\\"periodType\\":\\"QUARTERLY\\",\\"id\\":\\"2016Q3\\",\\"iso\\":\\"2016Q3\\",\\"name\\":\\"Megabit - Genbot 2016\\",\\"displayName\\":\\"Megabit - Genbot 2016\\",\\"startDate\\":\\"2016-07-01\\",\\"endDate\\":\\"2016-09-30\\"}",
       ],
       "last": Array [
-        "{\\"periodType\\":\\"QUARTERLY\\",\\"id\\":\\"2016Q2\\",\\"iso\\":\\"2016Q2\\",\\"name\\":\\"Tahsas - Yekatit 2016 AA\\",\\"displayName\\":\\"Tahsas - Yekatit 2016 AA\\",\\"startDate\\":\\"2016-04-01\\",\\"endDate\\":\\"2016-06-30\\"}",
-        "{\\"periodType\\":\\"QUARTERLY\\",\\"id\\":\\"2016Q1\\",\\"iso\\":\\"2016Q1\\",\\"name\\":\\"Meskerem - Hedar 2016 AA\\",\\"displayName\\":\\"Meskerem - Hedar 2016 AA\\",\\"startDate\\":\\"2016-01-01\\",\\"endDate\\":\\"2016-03-30\\"}",
+        "{\\"periodType\\":\\"QUARTERLY\\",\\"id\\":\\"2016Q2\\",\\"iso\\":\\"2016Q2\\",\\"name\\":\\"Tahsas - Yekatit 2016\\",\\"displayName\\":\\"Tahsas - Yekatit 2016\\",\\"startDate\\":\\"2016-04-01\\",\\"endDate\\":\\"2016-06-30\\"}",
+        "{\\"periodType\\":\\"QUARTERLY\\",\\"id\\":\\"2016Q1\\",\\"iso\\":\\"2016Q1\\",\\"name\\":\\"Meskerem - Hedar 2016\\",\\"displayName\\":\\"Meskerem - Hedar 2016\\",\\"startDate\\":\\"2016-01-01\\",\\"endDate\\":\\"2016-03-30\\"}",
       ],
     },
   },
@@ -535,23 +535,23 @@ Object {
     "currentYear": Object {
       "count": 2,
       "first": Array [
-        "{\\"periodType\\":\\"SIXMONTHLY\\",\\"id\\":\\"2017S1\\",\\"iso\\":\\"2017S1\\",\\"name\\":\\"Meskerem - Yekatit 2017 AA\\",\\"displayName\\":\\"Meskerem - Yekatit 2017 AA\\",\\"startDate\\":\\"2017-01-01\\",\\"endDate\\":\\"2017-06-30\\"}",
-        "{\\"periodType\\":\\"SIXMONTHLY\\",\\"id\\":\\"2017S2\\",\\"iso\\":\\"2017S2\\",\\"name\\":\\"Megabit - Nehasse 2017 AA\\",\\"displayName\\":\\"Megabit - Nehasse 2017 AA\\",\\"startDate\\":\\"2017-07-01\\",\\"endDate\\":\\"2017-12-30\\"}",
+        "{\\"periodType\\":\\"SIXMONTHLY\\",\\"id\\":\\"2017S1\\",\\"iso\\":\\"2017S1\\",\\"name\\":\\"Meskerem - Yekatit 2017\\",\\"displayName\\":\\"Meskerem - Yekatit 2017\\",\\"startDate\\":\\"2017-01-01\\",\\"endDate\\":\\"2017-06-30\\"}",
+        "{\\"periodType\\":\\"SIXMONTHLY\\",\\"id\\":\\"2017S2\\",\\"iso\\":\\"2017S2\\",\\"name\\":\\"Megabit - Nehasse 2017\\",\\"displayName\\":\\"Megabit - Nehasse 2017\\",\\"startDate\\":\\"2017-07-01\\",\\"endDate\\":\\"2017-12-30\\"}",
       ],
       "last": Array [
-        "{\\"periodType\\":\\"SIXMONTHLY\\",\\"id\\":\\"2017S1\\",\\"iso\\":\\"2017S1\\",\\"name\\":\\"Meskerem - Yekatit 2017 AA\\",\\"displayName\\":\\"Meskerem - Yekatit 2017 AA\\",\\"startDate\\":\\"2017-01-01\\",\\"endDate\\":\\"2017-06-30\\"}",
-        "{\\"periodType\\":\\"SIXMONTHLY\\",\\"id\\":\\"2017S2\\",\\"iso\\":\\"2017S2\\",\\"name\\":\\"Megabit - Nehasse 2017 AA\\",\\"displayName\\":\\"Megabit - Nehasse 2017 AA\\",\\"startDate\\":\\"2017-07-01\\",\\"endDate\\":\\"2017-12-30\\"}",
+        "{\\"periodType\\":\\"SIXMONTHLY\\",\\"id\\":\\"2017S1\\",\\"iso\\":\\"2017S1\\",\\"name\\":\\"Meskerem - Yekatit 2017\\",\\"displayName\\":\\"Meskerem - Yekatit 2017\\",\\"startDate\\":\\"2017-01-01\\",\\"endDate\\":\\"2017-06-30\\"}",
+        "{\\"periodType\\":\\"SIXMONTHLY\\",\\"id\\":\\"2017S2\\",\\"iso\\":\\"2017S2\\",\\"name\\":\\"Megabit - Nehasse 2017\\",\\"displayName\\":\\"Megabit - Nehasse 2017\\",\\"startDate\\":\\"2017-07-01\\",\\"endDate\\":\\"2017-12-30\\"}",
       ],
     },
     "lastYear": Object {
       "count": 2,
       "first": Array [
-        "{\\"periodType\\":\\"SIXMONTHLY\\",\\"id\\":\\"2016S2\\",\\"iso\\":\\"2016S2\\",\\"name\\":\\"Megabit - Nehasse 2016 AA\\",\\"displayName\\":\\"Megabit - Nehasse 2016 AA\\",\\"startDate\\":\\"2016-07-01\\",\\"endDate\\":\\"2016-12-30\\"}",
-        "{\\"periodType\\":\\"SIXMONTHLY\\",\\"id\\":\\"2016S1\\",\\"iso\\":\\"2016S1\\",\\"name\\":\\"Meskerem - Yekatit 2016 AA\\",\\"displayName\\":\\"Meskerem - Yekatit 2016 AA\\",\\"startDate\\":\\"2016-01-01\\",\\"endDate\\":\\"2016-06-30\\"}",
+        "{\\"periodType\\":\\"SIXMONTHLY\\",\\"id\\":\\"2016S2\\",\\"iso\\":\\"2016S2\\",\\"name\\":\\"Megabit - Nehasse 2016\\",\\"displayName\\":\\"Megabit - Nehasse 2016\\",\\"startDate\\":\\"2016-07-01\\",\\"endDate\\":\\"2016-12-30\\"}",
+        "{\\"periodType\\":\\"SIXMONTHLY\\",\\"id\\":\\"2016S1\\",\\"iso\\":\\"2016S1\\",\\"name\\":\\"Meskerem - Yekatit 2016\\",\\"displayName\\":\\"Meskerem - Yekatit 2016\\",\\"startDate\\":\\"2016-01-01\\",\\"endDate\\":\\"2016-06-30\\"}",
       ],
       "last": Array [
-        "{\\"periodType\\":\\"SIXMONTHLY\\",\\"id\\":\\"2016S2\\",\\"iso\\":\\"2016S2\\",\\"name\\":\\"Megabit - Nehasse 2016 AA\\",\\"displayName\\":\\"Megabit - Nehasse 2016 AA\\",\\"startDate\\":\\"2016-07-01\\",\\"endDate\\":\\"2016-12-30\\"}",
-        "{\\"periodType\\":\\"SIXMONTHLY\\",\\"id\\":\\"2016S1\\",\\"iso\\":\\"2016S1\\",\\"name\\":\\"Meskerem - Yekatit 2016 AA\\",\\"displayName\\":\\"Meskerem - Yekatit 2016 AA\\",\\"startDate\\":\\"2016-01-01\\",\\"endDate\\":\\"2016-06-30\\"}",
+        "{\\"periodType\\":\\"SIXMONTHLY\\",\\"id\\":\\"2016S2\\",\\"iso\\":\\"2016S2\\",\\"name\\":\\"Megabit - Nehasse 2016\\",\\"displayName\\":\\"Megabit - Nehasse 2016\\",\\"startDate\\":\\"2016-07-01\\",\\"endDate\\":\\"2016-12-30\\"}",
+        "{\\"periodType\\":\\"SIXMONTHLY\\",\\"id\\":\\"2016S1\\",\\"iso\\":\\"2016S1\\",\\"name\\":\\"Meskerem - Yekatit 2016\\",\\"displayName\\":\\"Meskerem - Yekatit 2016\\",\\"startDate\\":\\"2016-01-01\\",\\"endDate\\":\\"2016-06-30\\"}",
       ],
     },
   },
@@ -559,23 +559,23 @@ Object {
     "currentYear": Object {
       "count": 2,
       "first": Array [
-        "{\\"periodType\\":\\"SIXMONTHLYAPR\\",\\"id\\":\\"2017AprilS1\\",\\"iso\\":\\"2017AprilS1\\",\\"name\\":\\"Tahsas - Genbot 2017 AA\\",\\"displayName\\":\\"Tahsas - Genbot 2017 AA\\",\\"startDate\\":\\"2017-04-01\\",\\"endDate\\":\\"2017-09-30\\"}",
-        "{\\"periodType\\":\\"SIXMONTHLYAPR\\",\\"id\\":\\"2017AprilS2\\",\\"iso\\":\\"2017AprilS2\\",\\"name\\":\\"Sene 2017 AA - Tekemt 2018 AA\\",\\"displayName\\":\\"Sene 2017 AA - Tekemt 2018 AA\\",\\"startDate\\":\\"2017-10-01\\",\\"endDate\\":\\"2018-02-30\\"}",
+        "{\\"periodType\\":\\"SIXMONTHLYAPR\\",\\"id\\":\\"2017AprilS1\\",\\"iso\\":\\"2017AprilS1\\",\\"name\\":\\"Tahsas - Genbot 2017\\",\\"displayName\\":\\"Tahsas - Genbot 2017\\",\\"startDate\\":\\"2017-04-01\\",\\"endDate\\":\\"2017-09-30\\"}",
+        "{\\"periodType\\":\\"SIXMONTHLYAPR\\",\\"id\\":\\"2017AprilS2\\",\\"iso\\":\\"2017AprilS2\\",\\"name\\":\\"Sene 2017 - Tekemt 2018\\",\\"displayName\\":\\"Sene 2017 - Tekemt 2018\\",\\"startDate\\":\\"2017-10-01\\",\\"endDate\\":\\"2018-02-30\\"}",
       ],
       "last": Array [
-        "{\\"periodType\\":\\"SIXMONTHLYAPR\\",\\"id\\":\\"2017AprilS1\\",\\"iso\\":\\"2017AprilS1\\",\\"name\\":\\"Tahsas - Genbot 2017 AA\\",\\"displayName\\":\\"Tahsas - Genbot 2017 AA\\",\\"startDate\\":\\"2017-04-01\\",\\"endDate\\":\\"2017-09-30\\"}",
-        "{\\"periodType\\":\\"SIXMONTHLYAPR\\",\\"id\\":\\"2017AprilS2\\",\\"iso\\":\\"2017AprilS2\\",\\"name\\":\\"Sene 2017 AA - Tekemt 2018 AA\\",\\"displayName\\":\\"Sene 2017 AA - Tekemt 2018 AA\\",\\"startDate\\":\\"2017-10-01\\",\\"endDate\\":\\"2018-02-30\\"}",
+        "{\\"periodType\\":\\"SIXMONTHLYAPR\\",\\"id\\":\\"2017AprilS1\\",\\"iso\\":\\"2017AprilS1\\",\\"name\\":\\"Tahsas - Genbot 2017\\",\\"displayName\\":\\"Tahsas - Genbot 2017\\",\\"startDate\\":\\"2017-04-01\\",\\"endDate\\":\\"2017-09-30\\"}",
+        "{\\"periodType\\":\\"SIXMONTHLYAPR\\",\\"id\\":\\"2017AprilS2\\",\\"iso\\":\\"2017AprilS2\\",\\"name\\":\\"Sene 2017 - Tekemt 2018\\",\\"displayName\\":\\"Sene 2017 - Tekemt 2018\\",\\"startDate\\":\\"2017-10-01\\",\\"endDate\\":\\"2018-02-30\\"}",
       ],
     },
     "lastYear": Object {
       "count": 2,
       "first": Array [
-        "{\\"periodType\\":\\"SIXMONTHLYAPR\\",\\"id\\":\\"2016AprilS2\\",\\"iso\\":\\"2016AprilS2\\",\\"name\\":\\"Sene 2016 AA - Tekemt 2017 AA\\",\\"displayName\\":\\"Sene 2016 AA - Tekemt 2017 AA\\",\\"startDate\\":\\"2016-10-01\\",\\"endDate\\":\\"2017-02-30\\"}",
-        "{\\"periodType\\":\\"SIXMONTHLYAPR\\",\\"id\\":\\"2016AprilS1\\",\\"iso\\":\\"2016AprilS1\\",\\"name\\":\\"Tahsas - Genbot 2016 AA\\",\\"displayName\\":\\"Tahsas - Genbot 2016 AA\\",\\"startDate\\":\\"2016-04-01\\",\\"endDate\\":\\"2016-09-30\\"}",
+        "{\\"periodType\\":\\"SIXMONTHLYAPR\\",\\"id\\":\\"2016AprilS2\\",\\"iso\\":\\"2016AprilS2\\",\\"name\\":\\"Sene 2016 - Tekemt 2017\\",\\"displayName\\":\\"Sene 2016 - Tekemt 2017\\",\\"startDate\\":\\"2016-10-01\\",\\"endDate\\":\\"2017-02-30\\"}",
+        "{\\"periodType\\":\\"SIXMONTHLYAPR\\",\\"id\\":\\"2016AprilS1\\",\\"iso\\":\\"2016AprilS1\\",\\"name\\":\\"Tahsas - Genbot 2016\\",\\"displayName\\":\\"Tahsas - Genbot 2016\\",\\"startDate\\":\\"2016-04-01\\",\\"endDate\\":\\"2016-09-30\\"}",
       ],
       "last": Array [
-        "{\\"periodType\\":\\"SIXMONTHLYAPR\\",\\"id\\":\\"2016AprilS2\\",\\"iso\\":\\"2016AprilS2\\",\\"name\\":\\"Sene 2016 AA - Tekemt 2017 AA\\",\\"displayName\\":\\"Sene 2016 AA - Tekemt 2017 AA\\",\\"startDate\\":\\"2016-10-01\\",\\"endDate\\":\\"2017-02-30\\"}",
-        "{\\"periodType\\":\\"SIXMONTHLYAPR\\",\\"id\\":\\"2016AprilS1\\",\\"iso\\":\\"2016AprilS1\\",\\"name\\":\\"Tahsas - Genbot 2016 AA\\",\\"displayName\\":\\"Tahsas - Genbot 2016 AA\\",\\"startDate\\":\\"2016-04-01\\",\\"endDate\\":\\"2016-09-30\\"}",
+        "{\\"periodType\\":\\"SIXMONTHLYAPR\\",\\"id\\":\\"2016AprilS2\\",\\"iso\\":\\"2016AprilS2\\",\\"name\\":\\"Sene 2016 - Tekemt 2017\\",\\"displayName\\":\\"Sene 2016 - Tekemt 2017\\",\\"startDate\\":\\"2016-10-01\\",\\"endDate\\":\\"2017-02-30\\"}",
+        "{\\"periodType\\":\\"SIXMONTHLYAPR\\",\\"id\\":\\"2016AprilS1\\",\\"iso\\":\\"2016AprilS1\\",\\"name\\":\\"Tahsas - Genbot 2016\\",\\"displayName\\":\\"Tahsas - Genbot 2016\\",\\"startDate\\":\\"2016-04-01\\",\\"endDate\\":\\"2016-09-30\\"}",
       ],
     },
   },
@@ -660,23 +660,23 @@ Object {
     "currentYear": Object {
       "count": 6,
       "first": Array [
-        "{\\"periodType\\":\\"BIMONTHLY\\",\\"id\\":\\"201701B\\",\\"iso\\":\\"201701B\\",\\"name\\":\\"Meskerem - Tekemt 2017 AA\\",\\"displayName\\":\\"Meskerem - Tekemt 2017 AA\\",\\"startDate\\":\\"2017-01-01\\",\\"endDate\\":\\"2017-02-30\\"}",
-        "{\\"periodType\\":\\"BIMONTHLY\\",\\"id\\":\\"201702B\\",\\"iso\\":\\"201702B\\",\\"name\\":\\"Hedar - Tahsas 2017 AA\\",\\"displayName\\":\\"Hedar - Tahsas 2017 AA\\",\\"startDate\\":\\"2017-03-01\\",\\"endDate\\":\\"2017-04-30\\"}",
+        "{\\"periodType\\":\\"BIMONTHLY\\",\\"id\\":\\"201701B\\",\\"iso\\":\\"201701B\\",\\"name\\":\\"Meskerem - Tekemt 2017\\",\\"displayName\\":\\"Meskerem - Tekemt 2017\\",\\"startDate\\":\\"2017-01-01\\",\\"endDate\\":\\"2017-02-30\\"}",
+        "{\\"periodType\\":\\"BIMONTHLY\\",\\"id\\":\\"201702B\\",\\"iso\\":\\"201702B\\",\\"name\\":\\"Hedar - Tahsas 2017\\",\\"displayName\\":\\"Hedar - Tahsas 2017\\",\\"startDate\\":\\"2017-03-01\\",\\"endDate\\":\\"2017-04-30\\"}",
       ],
       "last": Array [
-        "{\\"periodType\\":\\"BIMONTHLY\\",\\"id\\":\\"201705B\\",\\"iso\\":\\"201705B\\",\\"name\\":\\"Genbot - Sene 2017 AA\\",\\"displayName\\":\\"Genbot - Sene 2017 AA\\",\\"startDate\\":\\"2017-09-01\\",\\"endDate\\":\\"2017-10-30\\"}",
-        "{\\"periodType\\":\\"BIMONTHLY\\",\\"id\\":\\"201706B\\",\\"iso\\":\\"201706B\\",\\"name\\":\\"Hamle - Nehasse 2017 AA\\",\\"displayName\\":\\"Hamle - Nehasse 2017 AA\\",\\"startDate\\":\\"2017-11-01\\",\\"endDate\\":\\"2017-12-30\\"}",
+        "{\\"periodType\\":\\"BIMONTHLY\\",\\"id\\":\\"201705B\\",\\"iso\\":\\"201705B\\",\\"name\\":\\"Genbot - Sene 2017\\",\\"displayName\\":\\"Genbot - Sene 2017\\",\\"startDate\\":\\"2017-09-01\\",\\"endDate\\":\\"2017-10-30\\"}",
+        "{\\"periodType\\":\\"BIMONTHLY\\",\\"id\\":\\"201706B\\",\\"iso\\":\\"201706B\\",\\"name\\":\\"Hamle - Nehasse 2017\\",\\"displayName\\":\\"Hamle - Nehasse 2017\\",\\"startDate\\":\\"2017-11-01\\",\\"endDate\\":\\"2017-12-30\\"}",
       ],
     },
     "lastYear": Object {
       "count": 6,
       "first": Array [
-        "{\\"periodType\\":\\"BIMONTHLY\\",\\"id\\":\\"201606B\\",\\"iso\\":\\"201606B\\",\\"name\\":\\"Hamle - Nehasse 2016 AA\\",\\"displayName\\":\\"Hamle - Nehasse 2016 AA\\",\\"startDate\\":\\"2016-11-01\\",\\"endDate\\":\\"2016-12-30\\"}",
-        "{\\"periodType\\":\\"BIMONTHLY\\",\\"id\\":\\"201605B\\",\\"iso\\":\\"201605B\\",\\"name\\":\\"Genbot - Sene 2016 AA\\",\\"displayName\\":\\"Genbot - Sene 2016 AA\\",\\"startDate\\":\\"2016-09-01\\",\\"endDate\\":\\"2016-10-30\\"}",
+        "{\\"periodType\\":\\"BIMONTHLY\\",\\"id\\":\\"201606B\\",\\"iso\\":\\"201606B\\",\\"name\\":\\"Hamle - Nehasse 2016\\",\\"displayName\\":\\"Hamle - Nehasse 2016\\",\\"startDate\\":\\"2016-11-01\\",\\"endDate\\":\\"2016-12-30\\"}",
+        "{\\"periodType\\":\\"BIMONTHLY\\",\\"id\\":\\"201605B\\",\\"iso\\":\\"201605B\\",\\"name\\":\\"Genbot - Sene 2016\\",\\"displayName\\":\\"Genbot - Sene 2016\\",\\"startDate\\":\\"2016-09-01\\",\\"endDate\\":\\"2016-10-30\\"}",
       ],
       "last": Array [
-        "{\\"periodType\\":\\"BIMONTHLY\\",\\"id\\":\\"201602B\\",\\"iso\\":\\"201602B\\",\\"name\\":\\"Hedar - Tahsas 2016 AA\\",\\"displayName\\":\\"Hedar - Tahsas 2016 AA\\",\\"startDate\\":\\"2016-03-01\\",\\"endDate\\":\\"2016-04-30\\"}",
-        "{\\"periodType\\":\\"BIMONTHLY\\",\\"id\\":\\"201601B\\",\\"iso\\":\\"201601B\\",\\"name\\":\\"Meskerem - Tekemt 2016 AA\\",\\"displayName\\":\\"Meskerem - Tekemt 2016 AA\\",\\"startDate\\":\\"2016-01-01\\",\\"endDate\\":\\"2016-02-30\\"}",
+        "{\\"periodType\\":\\"BIMONTHLY\\",\\"id\\":\\"201602B\\",\\"iso\\":\\"201602B\\",\\"name\\":\\"Hedar - Tahsas 2016\\",\\"displayName\\":\\"Hedar - Tahsas 2016\\",\\"startDate\\":\\"2016-03-01\\",\\"endDate\\":\\"2016-04-30\\"}",
+        "{\\"periodType\\":\\"BIMONTHLY\\",\\"id\\":\\"201601B\\",\\"iso\\":\\"201601B\\",\\"name\\":\\"Meskerem - Tekemt 2016\\",\\"displayName\\":\\"Meskerem - Tekemt 2016\\",\\"startDate\\":\\"2016-01-01\\",\\"endDate\\":\\"2016-02-30\\"}",
       ],
     },
   },
@@ -708,23 +708,23 @@ Object {
     "currentYear": Object {
       "count": 360,
       "first": Array [
-        "{\\"periodType\\":\\"DAILY\\",\\"id\\":\\"20170101\\",\\"iso\\":\\"20170101\\",\\"displayName\\":\\"Meskerem 1, 2017 AA\\",\\"name\\":\\"2017-01-01\\",\\"startDate\\":\\"2017-01-01\\",\\"endDate\\":\\"2017-01-01\\"}",
-        "{\\"periodType\\":\\"DAILY\\",\\"id\\":\\"20170102\\",\\"iso\\":\\"20170102\\",\\"displayName\\":\\"Meskerem 2, 2017 AA\\",\\"name\\":\\"2017-01-02\\",\\"startDate\\":\\"2017-01-02\\",\\"endDate\\":\\"2017-01-02\\"}",
+        "{\\"periodType\\":\\"DAILY\\",\\"id\\":\\"20170101\\",\\"iso\\":\\"20170101\\",\\"displayName\\":\\"Meskerem 1, 2017\\",\\"name\\":\\"2017-01-01\\",\\"startDate\\":\\"2017-01-01\\",\\"endDate\\":\\"2017-01-01\\"}",
+        "{\\"periodType\\":\\"DAILY\\",\\"id\\":\\"20170102\\",\\"iso\\":\\"20170102\\",\\"displayName\\":\\"Meskerem 2, 2017\\",\\"name\\":\\"2017-01-02\\",\\"startDate\\":\\"2017-01-02\\",\\"endDate\\":\\"2017-01-02\\"}",
       ],
       "last": Array [
-        "{\\"periodType\\":\\"DAILY\\",\\"id\\":\\"20171229\\",\\"iso\\":\\"20171229\\",\\"displayName\\":\\"Nehasse 29, 2017 AA\\",\\"name\\":\\"2017-12-29\\",\\"startDate\\":\\"2017-12-29\\",\\"endDate\\":\\"2017-12-29\\"}",
-        "{\\"periodType\\":\\"DAILY\\",\\"id\\":\\"20171230\\",\\"iso\\":\\"20171230\\",\\"displayName\\":\\"Nehasse 30, 2017 AA\\",\\"name\\":\\"2017-12-30\\",\\"startDate\\":\\"2017-12-30\\",\\"endDate\\":\\"2017-12-30\\"}",
+        "{\\"periodType\\":\\"DAILY\\",\\"id\\":\\"20171229\\",\\"iso\\":\\"20171229\\",\\"displayName\\":\\"Nehasse 29, 2017\\",\\"name\\":\\"2017-12-29\\",\\"startDate\\":\\"2017-12-29\\",\\"endDate\\":\\"2017-12-29\\"}",
+        "{\\"periodType\\":\\"DAILY\\",\\"id\\":\\"20171230\\",\\"iso\\":\\"20171230\\",\\"displayName\\":\\"Nehasse 30, 2017\\",\\"name\\":\\"2017-12-30\\",\\"startDate\\":\\"2017-12-30\\",\\"endDate\\":\\"2017-12-30\\"}",
       ],
     },
     "lastYear": Object {
       "count": 365,
       "first": Array [
-        "{\\"periodType\\":\\"DAILY\\",\\"id\\":\\"20161305\\",\\"iso\\":\\"20161305\\",\\"displayName\\":\\"Pagumen 5, 2016 AA\\",\\"name\\":\\"2016-13-05\\",\\"startDate\\":\\"2016-13-05\\",\\"endDate\\":\\"2016-13-05\\"}",
-        "{\\"periodType\\":\\"DAILY\\",\\"id\\":\\"20161304\\",\\"iso\\":\\"20161304\\",\\"displayName\\":\\"Pagumen 4, 2016 AA\\",\\"name\\":\\"2016-13-04\\",\\"startDate\\":\\"2016-13-04\\",\\"endDate\\":\\"2016-13-04\\"}",
+        "{\\"periodType\\":\\"DAILY\\",\\"id\\":\\"20161305\\",\\"iso\\":\\"20161305\\",\\"displayName\\":\\"Pagumen 5, 2016\\",\\"name\\":\\"2016-13-05\\",\\"startDate\\":\\"2016-13-05\\",\\"endDate\\":\\"2016-13-05\\"}",
+        "{\\"periodType\\":\\"DAILY\\",\\"id\\":\\"20161304\\",\\"iso\\":\\"20161304\\",\\"displayName\\":\\"Pagumen 4, 2016\\",\\"name\\":\\"2016-13-04\\",\\"startDate\\":\\"2016-13-04\\",\\"endDate\\":\\"2016-13-04\\"}",
       ],
       "last": Array [
-        "{\\"periodType\\":\\"DAILY\\",\\"id\\":\\"20160102\\",\\"iso\\":\\"20160102\\",\\"displayName\\":\\"Meskerem 2, 2016 AA\\",\\"name\\":\\"2016-01-02\\",\\"startDate\\":\\"2016-01-02\\",\\"endDate\\":\\"2016-01-02\\"}",
-        "{\\"periodType\\":\\"DAILY\\",\\"id\\":\\"20160101\\",\\"iso\\":\\"20160101\\",\\"displayName\\":\\"Meskerem 1, 2016 AA\\",\\"name\\":\\"2016-01-01\\",\\"startDate\\":\\"2016-01-01\\",\\"endDate\\":\\"2016-01-01\\"}",
+        "{\\"periodType\\":\\"DAILY\\",\\"id\\":\\"20160102\\",\\"iso\\":\\"20160102\\",\\"displayName\\":\\"Meskerem 2, 2016\\",\\"name\\":\\"2016-01-02\\",\\"startDate\\":\\"2016-01-02\\",\\"endDate\\":\\"2016-01-02\\"}",
+        "{\\"periodType\\":\\"DAILY\\",\\"id\\":\\"20160101\\",\\"iso\\":\\"20160101\\",\\"displayName\\":\\"Meskerem 1, 2016\\",\\"name\\":\\"2016-01-01\\",\\"startDate\\":\\"2016-01-01\\",\\"endDate\\":\\"2016-01-01\\"}",
       ],
     },
   },
@@ -732,23 +732,23 @@ Object {
     "currentYear": Object {
       "count": 10,
       "first": Array [
-        "{\\"periodType\\":\\"FYAPR\\",\\"id\\":\\"2008April\\",\\"iso\\":\\"2008April\\",\\"name\\":\\"Tahsas 2008 AA - Hedar 2009 AA\\",\\"displayName\\":\\"Tahsas 2008 AA - Hedar 2009 AA\\",\\"startDate\\":\\"2008-04-01\\",\\"endDate\\":\\"2009-03-30\\"}",
-        "{\\"periodType\\":\\"FYAPR\\",\\"id\\":\\"2009April\\",\\"iso\\":\\"2009April\\",\\"name\\":\\"Tahsas 2009 AA - Hedar 2010 AA\\",\\"displayName\\":\\"Tahsas 2009 AA - Hedar 2010 AA\\",\\"startDate\\":\\"2009-04-01\\",\\"endDate\\":\\"2010-03-30\\"}",
+        "{\\"periodType\\":\\"FYAPR\\",\\"id\\":\\"2008April\\",\\"iso\\":\\"2008April\\",\\"name\\":\\"Tahsas 2008 - Hedar 2009\\",\\"displayName\\":\\"Tahsas 2008 - Hedar 2009\\",\\"startDate\\":\\"2008-04-01\\",\\"endDate\\":\\"2009-03-30\\"}",
+        "{\\"periodType\\":\\"FYAPR\\",\\"id\\":\\"2009April\\",\\"iso\\":\\"2009April\\",\\"name\\":\\"Tahsas 2009 - Hedar 2010\\",\\"displayName\\":\\"Tahsas 2009 - Hedar 2010\\",\\"startDate\\":\\"2009-04-01\\",\\"endDate\\":\\"2010-03-30\\"}",
       ],
       "last": Array [
-        "{\\"periodType\\":\\"FYAPR\\",\\"id\\":\\"2016April\\",\\"iso\\":\\"2016April\\",\\"name\\":\\"Tahsas 2016 AA - Hedar 2017 AA\\",\\"displayName\\":\\"Tahsas 2016 AA - Hedar 2017 AA\\",\\"startDate\\":\\"2016-04-01\\",\\"endDate\\":\\"2017-03-30\\"}",
-        "{\\"periodType\\":\\"FYAPR\\",\\"id\\":\\"2017April\\",\\"iso\\":\\"2017April\\",\\"name\\":\\"Tahsas 2017 AA - Hedar 2018 AA\\",\\"displayName\\":\\"Tahsas 2017 AA - Hedar 2018 AA\\",\\"startDate\\":\\"2017-04-01\\",\\"endDate\\":\\"2018-03-30\\"}",
+        "{\\"periodType\\":\\"FYAPR\\",\\"id\\":\\"2016April\\",\\"iso\\":\\"2016April\\",\\"name\\":\\"Tahsas 2016 - Hedar 2017\\",\\"displayName\\":\\"Tahsas 2016 - Hedar 2017\\",\\"startDate\\":\\"2016-04-01\\",\\"endDate\\":\\"2017-03-30\\"}",
+        "{\\"periodType\\":\\"FYAPR\\",\\"id\\":\\"2017April\\",\\"iso\\":\\"2017April\\",\\"name\\":\\"Tahsas 2017 - Hedar 2018\\",\\"displayName\\":\\"Tahsas 2017 - Hedar 2018\\",\\"startDate\\":\\"2017-04-01\\",\\"endDate\\":\\"2018-03-30\\"}",
       ],
     },
     "lastYear": Object {
       "count": 10,
       "first": Array [
-        "{\\"periodType\\":\\"FYAPR\\",\\"id\\":\\"2007April\\",\\"iso\\":\\"2007April\\",\\"name\\":\\"Tahsas 2007 AA - Hedar 2008 AA\\",\\"displayName\\":\\"Tahsas 2007 AA - Hedar 2008 AA\\",\\"startDate\\":\\"2007-04-01\\",\\"endDate\\":\\"2008-03-30\\"}",
-        "{\\"periodType\\":\\"FYAPR\\",\\"id\\":\\"2008April\\",\\"iso\\":\\"2008April\\",\\"name\\":\\"Tahsas 2008 AA - Hedar 2009 AA\\",\\"displayName\\":\\"Tahsas 2008 AA - Hedar 2009 AA\\",\\"startDate\\":\\"2008-04-01\\",\\"endDate\\":\\"2009-03-30\\"}",
+        "{\\"periodType\\":\\"FYAPR\\",\\"id\\":\\"2007April\\",\\"iso\\":\\"2007April\\",\\"name\\":\\"Tahsas 2007 - Hedar 2008\\",\\"displayName\\":\\"Tahsas 2007 - Hedar 2008\\",\\"startDate\\":\\"2007-04-01\\",\\"endDate\\":\\"2008-03-30\\"}",
+        "{\\"periodType\\":\\"FYAPR\\",\\"id\\":\\"2008April\\",\\"iso\\":\\"2008April\\",\\"name\\":\\"Tahsas 2008 - Hedar 2009\\",\\"displayName\\":\\"Tahsas 2008 - Hedar 2009\\",\\"startDate\\":\\"2008-04-01\\",\\"endDate\\":\\"2009-03-30\\"}",
       ],
       "last": Array [
-        "{\\"periodType\\":\\"FYAPR\\",\\"id\\":\\"2015April\\",\\"iso\\":\\"2015April\\",\\"name\\":\\"Tahsas 2015 AA - Hedar 2016 AA\\",\\"displayName\\":\\"Tahsas 2015 AA - Hedar 2016 AA\\",\\"startDate\\":\\"2015-04-01\\",\\"endDate\\":\\"2016-03-30\\"}",
-        "{\\"periodType\\":\\"FYAPR\\",\\"id\\":\\"2016April\\",\\"iso\\":\\"2016April\\",\\"name\\":\\"Tahsas 2016 AA - Hedar 2017 AA\\",\\"displayName\\":\\"Tahsas 2016 AA - Hedar 2017 AA\\",\\"startDate\\":\\"2016-04-01\\",\\"endDate\\":\\"2017-03-30\\"}",
+        "{\\"periodType\\":\\"FYAPR\\",\\"id\\":\\"2015April\\",\\"iso\\":\\"2015April\\",\\"name\\":\\"Tahsas 2015 - Hedar 2016\\",\\"displayName\\":\\"Tahsas 2015 - Hedar 2016\\",\\"startDate\\":\\"2015-04-01\\",\\"endDate\\":\\"2016-03-30\\"}",
+        "{\\"periodType\\":\\"FYAPR\\",\\"id\\":\\"2016April\\",\\"iso\\":\\"2016April\\",\\"name\\":\\"Tahsas 2016 - Hedar 2017\\",\\"displayName\\":\\"Tahsas 2016 - Hedar 2017\\",\\"startDate\\":\\"2016-04-01\\",\\"endDate\\":\\"2017-03-30\\"}",
       ],
     },
   },
@@ -756,23 +756,23 @@ Object {
     "currentYear": Object {
       "count": 10,
       "first": Array [
-        "{\\"periodType\\":\\"FYJUL\\",\\"id\\":\\"2008July\\",\\"iso\\":\\"2008July\\",\\"name\\":\\"Megabit 2008 AA - Yekatit 2009 AA\\",\\"displayName\\":\\"Megabit 2008 AA - Yekatit 2009 AA\\",\\"startDate\\":\\"2008-07-01\\",\\"endDate\\":\\"2009-06-30\\"}",
-        "{\\"periodType\\":\\"FYJUL\\",\\"id\\":\\"2009July\\",\\"iso\\":\\"2009July\\",\\"name\\":\\"Megabit 2009 AA - Yekatit 2010 AA\\",\\"displayName\\":\\"Megabit 2009 AA - Yekatit 2010 AA\\",\\"startDate\\":\\"2009-07-01\\",\\"endDate\\":\\"2010-06-30\\"}",
+        "{\\"periodType\\":\\"FYJUL\\",\\"id\\":\\"2008July\\",\\"iso\\":\\"2008July\\",\\"name\\":\\"Megabit 2008 - Yekatit 2009\\",\\"displayName\\":\\"Megabit 2008 - Yekatit 2009\\",\\"startDate\\":\\"2008-07-01\\",\\"endDate\\":\\"2009-06-30\\"}",
+        "{\\"periodType\\":\\"FYJUL\\",\\"id\\":\\"2009July\\",\\"iso\\":\\"2009July\\",\\"name\\":\\"Megabit 2009 - Yekatit 2010\\",\\"displayName\\":\\"Megabit 2009 - Yekatit 2010\\",\\"startDate\\":\\"2009-07-01\\",\\"endDate\\":\\"2010-06-30\\"}",
       ],
       "last": Array [
-        "{\\"periodType\\":\\"FYJUL\\",\\"id\\":\\"2016July\\",\\"iso\\":\\"2016July\\",\\"name\\":\\"Megabit 2016 AA - Yekatit 2017 AA\\",\\"displayName\\":\\"Megabit 2016 AA - Yekatit 2017 AA\\",\\"startDate\\":\\"2016-07-01\\",\\"endDate\\":\\"2017-06-30\\"}",
-        "{\\"periodType\\":\\"FYJUL\\",\\"id\\":\\"2017July\\",\\"iso\\":\\"2017July\\",\\"name\\":\\"Megabit 2017 AA - Yekatit 2018 AA\\",\\"displayName\\":\\"Megabit 2017 AA - Yekatit 2018 AA\\",\\"startDate\\":\\"2017-07-01\\",\\"endDate\\":\\"2018-06-30\\"}",
+        "{\\"periodType\\":\\"FYJUL\\",\\"id\\":\\"2016July\\",\\"iso\\":\\"2016July\\",\\"name\\":\\"Megabit 2016 - Yekatit 2017\\",\\"displayName\\":\\"Megabit 2016 - Yekatit 2017\\",\\"startDate\\":\\"2016-07-01\\",\\"endDate\\":\\"2017-06-30\\"}",
+        "{\\"periodType\\":\\"FYJUL\\",\\"id\\":\\"2017July\\",\\"iso\\":\\"2017July\\",\\"name\\":\\"Megabit 2017 - Yekatit 2018\\",\\"displayName\\":\\"Megabit 2017 - Yekatit 2018\\",\\"startDate\\":\\"2017-07-01\\",\\"endDate\\":\\"2018-06-30\\"}",
       ],
     },
     "lastYear": Object {
       "count": 10,
       "first": Array [
-        "{\\"periodType\\":\\"FYJUL\\",\\"id\\":\\"2007July\\",\\"iso\\":\\"2007July\\",\\"name\\":\\"Megabit 2007 AA - Yekatit 2008 AA\\",\\"displayName\\":\\"Megabit 2007 AA - Yekatit 2008 AA\\",\\"startDate\\":\\"2007-07-01\\",\\"endDate\\":\\"2008-06-30\\"}",
-        "{\\"periodType\\":\\"FYJUL\\",\\"id\\":\\"2008July\\",\\"iso\\":\\"2008July\\",\\"name\\":\\"Megabit 2008 AA - Yekatit 2009 AA\\",\\"displayName\\":\\"Megabit 2008 AA - Yekatit 2009 AA\\",\\"startDate\\":\\"2008-07-01\\",\\"endDate\\":\\"2009-06-30\\"}",
+        "{\\"periodType\\":\\"FYJUL\\",\\"id\\":\\"2007July\\",\\"iso\\":\\"2007July\\",\\"name\\":\\"Megabit 2007 - Yekatit 2008\\",\\"displayName\\":\\"Megabit 2007 - Yekatit 2008\\",\\"startDate\\":\\"2007-07-01\\",\\"endDate\\":\\"2008-06-30\\"}",
+        "{\\"periodType\\":\\"FYJUL\\",\\"id\\":\\"2008July\\",\\"iso\\":\\"2008July\\",\\"name\\":\\"Megabit 2008 - Yekatit 2009\\",\\"displayName\\":\\"Megabit 2008 - Yekatit 2009\\",\\"startDate\\":\\"2008-07-01\\",\\"endDate\\":\\"2009-06-30\\"}",
       ],
       "last": Array [
-        "{\\"periodType\\":\\"FYJUL\\",\\"id\\":\\"2015July\\",\\"iso\\":\\"2015July\\",\\"name\\":\\"Megabit 2015 AA - Yekatit 2016 AA\\",\\"displayName\\":\\"Megabit 2015 AA - Yekatit 2016 AA\\",\\"startDate\\":\\"2015-07-01\\",\\"endDate\\":\\"2016-06-30\\"}",
-        "{\\"periodType\\":\\"FYJUL\\",\\"id\\":\\"2016July\\",\\"iso\\":\\"2016July\\",\\"name\\":\\"Megabit 2016 AA - Yekatit 2017 AA\\",\\"displayName\\":\\"Megabit 2016 AA - Yekatit 2017 AA\\",\\"startDate\\":\\"2016-07-01\\",\\"endDate\\":\\"2017-06-30\\"}",
+        "{\\"periodType\\":\\"FYJUL\\",\\"id\\":\\"2015July\\",\\"iso\\":\\"2015July\\",\\"name\\":\\"Megabit 2015 - Yekatit 2016\\",\\"displayName\\":\\"Megabit 2015 - Yekatit 2016\\",\\"startDate\\":\\"2015-07-01\\",\\"endDate\\":\\"2016-06-30\\"}",
+        "{\\"periodType\\":\\"FYJUL\\",\\"id\\":\\"2016July\\",\\"iso\\":\\"2016July\\",\\"name\\":\\"Megabit 2016 - Yekatit 2017\\",\\"displayName\\":\\"Megabit 2016 - Yekatit 2017\\",\\"startDate\\":\\"2016-07-01\\",\\"endDate\\":\\"2017-06-30\\"}",
       ],
     },
   },
@@ -780,23 +780,23 @@ Object {
     "currentYear": Object {
       "count": 10,
       "first": Array [
-        "{\\"periodType\\":\\"FYNOV\\",\\"id\\":\\"2008Nov\\",\\"iso\\":\\"2008Nov\\",\\"name\\":\\"Hamle 2008 AA - Sene 2009 AA\\",\\"displayName\\":\\"Hamle 2008 AA - Sene 2009 AA\\",\\"startDate\\":\\"2008-11-01\\",\\"endDate\\":\\"2009-10-30\\"}",
-        "{\\"periodType\\":\\"FYNOV\\",\\"id\\":\\"2009Nov\\",\\"iso\\":\\"2009Nov\\",\\"name\\":\\"Hamle 2009 AA - Sene 2010 AA\\",\\"displayName\\":\\"Hamle 2009 AA - Sene 2010 AA\\",\\"startDate\\":\\"2009-11-01\\",\\"endDate\\":\\"2010-10-30\\"}",
+        "{\\"periodType\\":\\"FYNOV\\",\\"id\\":\\"2008Nov\\",\\"iso\\":\\"2008Nov\\",\\"name\\":\\"Hamle 2008 - Sene 2009\\",\\"displayName\\":\\"Hamle 2008 - Sene 2009\\",\\"startDate\\":\\"2008-11-01\\",\\"endDate\\":\\"2009-10-30\\"}",
+        "{\\"periodType\\":\\"FYNOV\\",\\"id\\":\\"2009Nov\\",\\"iso\\":\\"2009Nov\\",\\"name\\":\\"Hamle 2009 - Sene 2010\\",\\"displayName\\":\\"Hamle 2009 - Sene 2010\\",\\"startDate\\":\\"2009-11-01\\",\\"endDate\\":\\"2010-10-30\\"}",
       ],
       "last": Array [
-        "{\\"periodType\\":\\"FYNOV\\",\\"id\\":\\"2016Nov\\",\\"iso\\":\\"2016Nov\\",\\"name\\":\\"Hamle 2016 AA - Sene 2017 AA\\",\\"displayName\\":\\"Hamle 2016 AA - Sene 2017 AA\\",\\"startDate\\":\\"2016-11-01\\",\\"endDate\\":\\"2017-10-30\\"}",
-        "{\\"periodType\\":\\"FYNOV\\",\\"id\\":\\"2017Nov\\",\\"iso\\":\\"2017Nov\\",\\"name\\":\\"Hamle 2017 AA - Sene 2018 AA\\",\\"displayName\\":\\"Hamle 2017 AA - Sene 2018 AA\\",\\"startDate\\":\\"2017-11-01\\",\\"endDate\\":\\"2018-10-30\\"}",
+        "{\\"periodType\\":\\"FYNOV\\",\\"id\\":\\"2016Nov\\",\\"iso\\":\\"2016Nov\\",\\"name\\":\\"Hamle 2016 - Sene 2017\\",\\"displayName\\":\\"Hamle 2016 - Sene 2017\\",\\"startDate\\":\\"2016-11-01\\",\\"endDate\\":\\"2017-10-30\\"}",
+        "{\\"periodType\\":\\"FYNOV\\",\\"id\\":\\"2017Nov\\",\\"iso\\":\\"2017Nov\\",\\"name\\":\\"Hamle 2017 - Sene 2018\\",\\"displayName\\":\\"Hamle 2017 - Sene 2018\\",\\"startDate\\":\\"2017-11-01\\",\\"endDate\\":\\"2018-10-30\\"}",
       ],
     },
     "lastYear": Object {
       "count": 10,
       "first": Array [
-        "{\\"periodType\\":\\"FYNOV\\",\\"id\\":\\"2007Nov\\",\\"iso\\":\\"2007Nov\\",\\"name\\":\\"Hamle 2007 AA - Sene 2008 AA\\",\\"displayName\\":\\"Hamle 2007 AA - Sene 2008 AA\\",\\"startDate\\":\\"2007-11-01\\",\\"endDate\\":\\"2008-10-30\\"}",
-        "{\\"periodType\\":\\"FYNOV\\",\\"id\\":\\"2008Nov\\",\\"iso\\":\\"2008Nov\\",\\"name\\":\\"Hamle 2008 AA - Sene 2009 AA\\",\\"displayName\\":\\"Hamle 2008 AA - Sene 2009 AA\\",\\"startDate\\":\\"2008-11-01\\",\\"endDate\\":\\"2009-10-30\\"}",
+        "{\\"periodType\\":\\"FYNOV\\",\\"id\\":\\"2007Nov\\",\\"iso\\":\\"2007Nov\\",\\"name\\":\\"Hamle 2007 - Sene 2008\\",\\"displayName\\":\\"Hamle 2007 - Sene 2008\\",\\"startDate\\":\\"2007-11-01\\",\\"endDate\\":\\"2008-10-30\\"}",
+        "{\\"periodType\\":\\"FYNOV\\",\\"id\\":\\"2008Nov\\",\\"iso\\":\\"2008Nov\\",\\"name\\":\\"Hamle 2008 - Sene 2009\\",\\"displayName\\":\\"Hamle 2008 - Sene 2009\\",\\"startDate\\":\\"2008-11-01\\",\\"endDate\\":\\"2009-10-30\\"}",
       ],
       "last": Array [
-        "{\\"periodType\\":\\"FYNOV\\",\\"id\\":\\"2015Nov\\",\\"iso\\":\\"2015Nov\\",\\"name\\":\\"Hamle 2015 AA - Sene 2016 AA\\",\\"displayName\\":\\"Hamle 2015 AA - Sene 2016 AA\\",\\"startDate\\":\\"2015-11-01\\",\\"endDate\\":\\"2016-10-30\\"}",
-        "{\\"periodType\\":\\"FYNOV\\",\\"id\\":\\"2016Nov\\",\\"iso\\":\\"2016Nov\\",\\"name\\":\\"Hamle 2016 AA - Sene 2017 AA\\",\\"displayName\\":\\"Hamle 2016 AA - Sene 2017 AA\\",\\"startDate\\":\\"2016-11-01\\",\\"endDate\\":\\"2017-10-30\\"}",
+        "{\\"periodType\\":\\"FYNOV\\",\\"id\\":\\"2015Nov\\",\\"iso\\":\\"2015Nov\\",\\"name\\":\\"Hamle 2015 - Sene 2016\\",\\"displayName\\":\\"Hamle 2015 - Sene 2016\\",\\"startDate\\":\\"2015-11-01\\",\\"endDate\\":\\"2016-10-30\\"}",
+        "{\\"periodType\\":\\"FYNOV\\",\\"id\\":\\"2016Nov\\",\\"iso\\":\\"2016Nov\\",\\"name\\":\\"Hamle 2016 - Sene 2017\\",\\"displayName\\":\\"Hamle 2016 - Sene 2017\\",\\"startDate\\":\\"2016-11-01\\",\\"endDate\\":\\"2017-10-30\\"}",
       ],
     },
   },
@@ -804,23 +804,23 @@ Object {
     "currentYear": Object {
       "count": 12,
       "first": Array [
-        "{\\"periodType\\":\\"MONTHLY\\",\\"id\\":\\"201701\\",\\"iso\\":\\"201701\\",\\"name\\":\\"Meskerem 2017 AA\\",\\"displayName\\":\\"Meskerem 2017 AA\\",\\"startDate\\":\\"2017-01-01\\",\\"endDate\\":\\"2017-01-30\\"}",
-        "{\\"periodType\\":\\"MONTHLY\\",\\"id\\":\\"201702\\",\\"iso\\":\\"201702\\",\\"name\\":\\"Tekemt 2017 AA\\",\\"displayName\\":\\"Tekemt 2017 AA\\",\\"startDate\\":\\"2017-02-01\\",\\"endDate\\":\\"2017-02-30\\"}",
+        "{\\"periodType\\":\\"MONTHLY\\",\\"id\\":\\"201701\\",\\"iso\\":\\"201701\\",\\"name\\":\\"Meskerem 2017\\",\\"displayName\\":\\"Meskerem 2017\\",\\"startDate\\":\\"2017-01-01\\",\\"endDate\\":\\"2017-01-30\\"}",
+        "{\\"periodType\\":\\"MONTHLY\\",\\"id\\":\\"201702\\",\\"iso\\":\\"201702\\",\\"name\\":\\"Tekemt 2017\\",\\"displayName\\":\\"Tekemt 2017\\",\\"startDate\\":\\"2017-02-01\\",\\"endDate\\":\\"2017-02-30\\"}",
       ],
       "last": Array [
-        "{\\"periodType\\":\\"MONTHLY\\",\\"id\\":\\"201711\\",\\"iso\\":\\"201711\\",\\"name\\":\\"Hamle 2017 AA\\",\\"displayName\\":\\"Hamle 2017 AA\\",\\"startDate\\":\\"2017-11-01\\",\\"endDate\\":\\"2017-11-30\\"}",
-        "{\\"periodType\\":\\"MONTHLY\\",\\"id\\":\\"201712\\",\\"iso\\":\\"201712\\",\\"name\\":\\"Nehasse 2017 AA\\",\\"displayName\\":\\"Nehasse 2017 AA\\",\\"startDate\\":\\"2017-12-01\\",\\"endDate\\":\\"2017-12-30\\"}",
+        "{\\"periodType\\":\\"MONTHLY\\",\\"id\\":\\"201711\\",\\"iso\\":\\"201711\\",\\"name\\":\\"Hamle 2017\\",\\"displayName\\":\\"Hamle 2017\\",\\"startDate\\":\\"2017-11-01\\",\\"endDate\\":\\"2017-11-30\\"}",
+        "{\\"periodType\\":\\"MONTHLY\\",\\"id\\":\\"201712\\",\\"iso\\":\\"201712\\",\\"name\\":\\"Nehasse 2017\\",\\"displayName\\":\\"Nehasse 2017\\",\\"startDate\\":\\"2017-12-01\\",\\"endDate\\":\\"2017-12-30\\"}",
       ],
     },
     "lastYear": Object {
       "count": 12,
       "first": Array [
-        "{\\"periodType\\":\\"MONTHLY\\",\\"id\\":\\"201612\\",\\"iso\\":\\"201612\\",\\"name\\":\\"Nehasse 2016 AA\\",\\"displayName\\":\\"Nehasse 2016 AA\\",\\"startDate\\":\\"2016-12-01\\",\\"endDate\\":\\"2016-12-30\\"}",
-        "{\\"periodType\\":\\"MONTHLY\\",\\"id\\":\\"201611\\",\\"iso\\":\\"201611\\",\\"name\\":\\"Hamle 2016 AA\\",\\"displayName\\":\\"Hamle 2016 AA\\",\\"startDate\\":\\"2016-11-01\\",\\"endDate\\":\\"2016-11-30\\"}",
+        "{\\"periodType\\":\\"MONTHLY\\",\\"id\\":\\"201612\\",\\"iso\\":\\"201612\\",\\"name\\":\\"Nehasse 2016\\",\\"displayName\\":\\"Nehasse 2016\\",\\"startDate\\":\\"2016-12-01\\",\\"endDate\\":\\"2016-12-30\\"}",
+        "{\\"periodType\\":\\"MONTHLY\\",\\"id\\":\\"201611\\",\\"iso\\":\\"201611\\",\\"name\\":\\"Hamle 2016\\",\\"displayName\\":\\"Hamle 2016\\",\\"startDate\\":\\"2016-11-01\\",\\"endDate\\":\\"2016-11-30\\"}",
       ],
       "last": Array [
-        "{\\"periodType\\":\\"MONTHLY\\",\\"id\\":\\"201602\\",\\"iso\\":\\"201602\\",\\"name\\":\\"Tekemt 2016 AA\\",\\"displayName\\":\\"Tekemt 2016 AA\\",\\"startDate\\":\\"2016-02-01\\",\\"endDate\\":\\"2016-02-30\\"}",
-        "{\\"periodType\\":\\"MONTHLY\\",\\"id\\":\\"201601\\",\\"iso\\":\\"201601\\",\\"name\\":\\"Meskerem 2016 AA\\",\\"displayName\\":\\"Meskerem 2016 AA\\",\\"startDate\\":\\"2016-01-01\\",\\"endDate\\":\\"2016-01-30\\"}",
+        "{\\"periodType\\":\\"MONTHLY\\",\\"id\\":\\"201602\\",\\"iso\\":\\"201602\\",\\"name\\":\\"Tekemt 2016\\",\\"displayName\\":\\"Tekemt 2016\\",\\"startDate\\":\\"2016-02-01\\",\\"endDate\\":\\"2016-02-30\\"}",
+        "{\\"periodType\\":\\"MONTHLY\\",\\"id\\":\\"201601\\",\\"iso\\":\\"201601\\",\\"name\\":\\"Meskerem 2016\\",\\"displayName\\":\\"Meskerem 2016\\",\\"startDate\\":\\"2016-01-01\\",\\"endDate\\":\\"2016-01-30\\"}",
       ],
     },
   },
@@ -828,23 +828,23 @@ Object {
     "currentYear": Object {
       "count": 4,
       "first": Array [
-        "{\\"periodType\\":\\"QUARTERLY\\",\\"id\\":\\"2017Q1\\",\\"iso\\":\\"2017Q1\\",\\"name\\":\\"Meskerem - Hedar 2017 AA\\",\\"displayName\\":\\"Meskerem - Hedar 2017 AA\\",\\"startDate\\":\\"2017-01-01\\",\\"endDate\\":\\"2017-03-30\\"}",
-        "{\\"periodType\\":\\"QUARTERLY\\",\\"id\\":\\"2017Q2\\",\\"iso\\":\\"2017Q2\\",\\"name\\":\\"Tahsas - Yekatit 2017 AA\\",\\"displayName\\":\\"Tahsas - Yekatit 2017 AA\\",\\"startDate\\":\\"2017-04-01\\",\\"endDate\\":\\"2017-06-30\\"}",
+        "{\\"periodType\\":\\"QUARTERLY\\",\\"id\\":\\"2017Q1\\",\\"iso\\":\\"2017Q1\\",\\"name\\":\\"Meskerem - Hedar 2017\\",\\"displayName\\":\\"Meskerem - Hedar 2017\\",\\"startDate\\":\\"2017-01-01\\",\\"endDate\\":\\"2017-03-30\\"}",
+        "{\\"periodType\\":\\"QUARTERLY\\",\\"id\\":\\"2017Q2\\",\\"iso\\":\\"2017Q2\\",\\"name\\":\\"Tahsas - Yekatit 2017\\",\\"displayName\\":\\"Tahsas - Yekatit 2017\\",\\"startDate\\":\\"2017-04-01\\",\\"endDate\\":\\"2017-06-30\\"}",
       ],
       "last": Array [
-        "{\\"periodType\\":\\"QUARTERLY\\",\\"id\\":\\"2017Q3\\",\\"iso\\":\\"2017Q3\\",\\"name\\":\\"Megabit - Genbot 2017 AA\\",\\"displayName\\":\\"Megabit - Genbot 2017 AA\\",\\"startDate\\":\\"2017-07-01\\",\\"endDate\\":\\"2017-09-30\\"}",
-        "{\\"periodType\\":\\"QUARTERLY\\",\\"id\\":\\"2017Q4\\",\\"iso\\":\\"2017Q4\\",\\"name\\":\\"Sene - Nehasse 2017 AA\\",\\"displayName\\":\\"Sene - Nehasse 2017 AA\\",\\"startDate\\":\\"2017-10-01\\",\\"endDate\\":\\"2017-12-30\\"}",
+        "{\\"periodType\\":\\"QUARTERLY\\",\\"id\\":\\"2017Q3\\",\\"iso\\":\\"2017Q3\\",\\"name\\":\\"Megabit - Genbot 2017\\",\\"displayName\\":\\"Megabit - Genbot 2017\\",\\"startDate\\":\\"2017-07-01\\",\\"endDate\\":\\"2017-09-30\\"}",
+        "{\\"periodType\\":\\"QUARTERLY\\",\\"id\\":\\"2017Q4\\",\\"iso\\":\\"2017Q4\\",\\"name\\":\\"Sene - Nehasse 2017\\",\\"displayName\\":\\"Sene - Nehasse 2017\\",\\"startDate\\":\\"2017-10-01\\",\\"endDate\\":\\"2017-12-30\\"}",
       ],
     },
     "lastYear": Object {
       "count": 4,
       "first": Array [
-        "{\\"periodType\\":\\"QUARTERLY\\",\\"id\\":\\"2016Q4\\",\\"iso\\":\\"2016Q4\\",\\"name\\":\\"Sene - Nehasse 2016 AA\\",\\"displayName\\":\\"Sene - Nehasse 2016 AA\\",\\"startDate\\":\\"2016-10-01\\",\\"endDate\\":\\"2016-12-30\\"}",
-        "{\\"periodType\\":\\"QUARTERLY\\",\\"id\\":\\"2016Q3\\",\\"iso\\":\\"2016Q3\\",\\"name\\":\\"Megabit - Genbot 2016 AA\\",\\"displayName\\":\\"Megabit - Genbot 2016 AA\\",\\"startDate\\":\\"2016-07-01\\",\\"endDate\\":\\"2016-09-30\\"}",
+        "{\\"periodType\\":\\"QUARTERLY\\",\\"id\\":\\"2016Q4\\",\\"iso\\":\\"2016Q4\\",\\"name\\":\\"Sene - Nehasse 2016\\",\\"displayName\\":\\"Sene - Nehasse 2016\\",\\"startDate\\":\\"2016-10-01\\",\\"endDate\\":\\"2016-12-30\\"}",
+        "{\\"periodType\\":\\"QUARTERLY\\",\\"id\\":\\"2016Q3\\",\\"iso\\":\\"2016Q3\\",\\"name\\":\\"Megabit - Genbot 2016\\",\\"displayName\\":\\"Megabit - Genbot 2016\\",\\"startDate\\":\\"2016-07-01\\",\\"endDate\\":\\"2016-09-30\\"}",
       ],
       "last": Array [
-        "{\\"periodType\\":\\"QUARTERLY\\",\\"id\\":\\"2016Q2\\",\\"iso\\":\\"2016Q2\\",\\"name\\":\\"Tahsas - Yekatit 2016 AA\\",\\"displayName\\":\\"Tahsas - Yekatit 2016 AA\\",\\"startDate\\":\\"2016-04-01\\",\\"endDate\\":\\"2016-06-30\\"}",
-        "{\\"periodType\\":\\"QUARTERLY\\",\\"id\\":\\"2016Q1\\",\\"iso\\":\\"2016Q1\\",\\"name\\":\\"Meskerem - Hedar 2016 AA\\",\\"displayName\\":\\"Meskerem - Hedar 2016 AA\\",\\"startDate\\":\\"2016-01-01\\",\\"endDate\\":\\"2016-03-30\\"}",
+        "{\\"periodType\\":\\"QUARTERLY\\",\\"id\\":\\"2016Q2\\",\\"iso\\":\\"2016Q2\\",\\"name\\":\\"Tahsas - Yekatit 2016\\",\\"displayName\\":\\"Tahsas - Yekatit 2016\\",\\"startDate\\":\\"2016-04-01\\",\\"endDate\\":\\"2016-06-30\\"}",
+        "{\\"periodType\\":\\"QUARTERLY\\",\\"id\\":\\"2016Q1\\",\\"iso\\":\\"2016Q1\\",\\"name\\":\\"Meskerem - Hedar 2016\\",\\"displayName\\":\\"Meskerem - Hedar 2016\\",\\"startDate\\":\\"2016-01-01\\",\\"endDate\\":\\"2016-03-30\\"}",
       ],
     },
   },
@@ -852,23 +852,23 @@ Object {
     "currentYear": Object {
       "count": 2,
       "first": Array [
-        "{\\"periodType\\":\\"SIXMONTHLY\\",\\"id\\":\\"2017S1\\",\\"iso\\":\\"2017S1\\",\\"name\\":\\"Meskerem - Yekatit 2017 AA\\",\\"displayName\\":\\"Meskerem - Yekatit 2017 AA\\",\\"startDate\\":\\"2017-01-01\\",\\"endDate\\":\\"2017-06-30\\"}",
-        "{\\"periodType\\":\\"SIXMONTHLY\\",\\"id\\":\\"2017S2\\",\\"iso\\":\\"2017S2\\",\\"name\\":\\"Megabit - Nehasse 2017 AA\\",\\"displayName\\":\\"Megabit - Nehasse 2017 AA\\",\\"startDate\\":\\"2017-07-01\\",\\"endDate\\":\\"2017-12-30\\"}",
+        "{\\"periodType\\":\\"SIXMONTHLY\\",\\"id\\":\\"2017S1\\",\\"iso\\":\\"2017S1\\",\\"name\\":\\"Meskerem - Yekatit 2017\\",\\"displayName\\":\\"Meskerem - Yekatit 2017\\",\\"startDate\\":\\"2017-01-01\\",\\"endDate\\":\\"2017-06-30\\"}",
+        "{\\"periodType\\":\\"SIXMONTHLY\\",\\"id\\":\\"2017S2\\",\\"iso\\":\\"2017S2\\",\\"name\\":\\"Megabit - Nehasse 2017\\",\\"displayName\\":\\"Megabit - Nehasse 2017\\",\\"startDate\\":\\"2017-07-01\\",\\"endDate\\":\\"2017-12-30\\"}",
       ],
       "last": Array [
-        "{\\"periodType\\":\\"SIXMONTHLY\\",\\"id\\":\\"2017S1\\",\\"iso\\":\\"2017S1\\",\\"name\\":\\"Meskerem - Yekatit 2017 AA\\",\\"displayName\\":\\"Meskerem - Yekatit 2017 AA\\",\\"startDate\\":\\"2017-01-01\\",\\"endDate\\":\\"2017-06-30\\"}",
-        "{\\"periodType\\":\\"SIXMONTHLY\\",\\"id\\":\\"2017S2\\",\\"iso\\":\\"2017S2\\",\\"name\\":\\"Megabit - Nehasse 2017 AA\\",\\"displayName\\":\\"Megabit - Nehasse 2017 AA\\",\\"startDate\\":\\"2017-07-01\\",\\"endDate\\":\\"2017-12-30\\"}",
+        "{\\"periodType\\":\\"SIXMONTHLY\\",\\"id\\":\\"2017S1\\",\\"iso\\":\\"2017S1\\",\\"name\\":\\"Meskerem - Yekatit 2017\\",\\"displayName\\":\\"Meskerem - Yekatit 2017\\",\\"startDate\\":\\"2017-01-01\\",\\"endDate\\":\\"2017-06-30\\"}",
+        "{\\"periodType\\":\\"SIXMONTHLY\\",\\"id\\":\\"2017S2\\",\\"iso\\":\\"2017S2\\",\\"name\\":\\"Megabit - Nehasse 2017\\",\\"displayName\\":\\"Megabit - Nehasse 2017\\",\\"startDate\\":\\"2017-07-01\\",\\"endDate\\":\\"2017-12-30\\"}",
       ],
     },
     "lastYear": Object {
       "count": 2,
       "first": Array [
-        "{\\"periodType\\":\\"SIXMONTHLY\\",\\"id\\":\\"2016S2\\",\\"iso\\":\\"2016S2\\",\\"name\\":\\"Megabit - Nehasse 2016 AA\\",\\"displayName\\":\\"Megabit - Nehasse 2016 AA\\",\\"startDate\\":\\"2016-07-01\\",\\"endDate\\":\\"2016-12-30\\"}",
-        "{\\"periodType\\":\\"SIXMONTHLY\\",\\"id\\":\\"2016S1\\",\\"iso\\":\\"2016S1\\",\\"name\\":\\"Meskerem - Yekatit 2016 AA\\",\\"displayName\\":\\"Meskerem - Yekatit 2016 AA\\",\\"startDate\\":\\"2016-01-01\\",\\"endDate\\":\\"2016-06-30\\"}",
+        "{\\"periodType\\":\\"SIXMONTHLY\\",\\"id\\":\\"2016S2\\",\\"iso\\":\\"2016S2\\",\\"name\\":\\"Megabit - Nehasse 2016\\",\\"displayName\\":\\"Megabit - Nehasse 2016\\",\\"startDate\\":\\"2016-07-01\\",\\"endDate\\":\\"2016-12-30\\"}",
+        "{\\"periodType\\":\\"SIXMONTHLY\\",\\"id\\":\\"2016S1\\",\\"iso\\":\\"2016S1\\",\\"name\\":\\"Meskerem - Yekatit 2016\\",\\"displayName\\":\\"Meskerem - Yekatit 2016\\",\\"startDate\\":\\"2016-01-01\\",\\"endDate\\":\\"2016-06-30\\"}",
       ],
       "last": Array [
-        "{\\"periodType\\":\\"SIXMONTHLY\\",\\"id\\":\\"2016S2\\",\\"iso\\":\\"2016S2\\",\\"name\\":\\"Megabit - Nehasse 2016 AA\\",\\"displayName\\":\\"Megabit - Nehasse 2016 AA\\",\\"startDate\\":\\"2016-07-01\\",\\"endDate\\":\\"2016-12-30\\"}",
-        "{\\"periodType\\":\\"SIXMONTHLY\\",\\"id\\":\\"2016S1\\",\\"iso\\":\\"2016S1\\",\\"name\\":\\"Meskerem - Yekatit 2016 AA\\",\\"displayName\\":\\"Meskerem - Yekatit 2016 AA\\",\\"startDate\\":\\"2016-01-01\\",\\"endDate\\":\\"2016-06-30\\"}",
+        "{\\"periodType\\":\\"SIXMONTHLY\\",\\"id\\":\\"2016S2\\",\\"iso\\":\\"2016S2\\",\\"name\\":\\"Megabit - Nehasse 2016\\",\\"displayName\\":\\"Megabit - Nehasse 2016\\",\\"startDate\\":\\"2016-07-01\\",\\"endDate\\":\\"2016-12-30\\"}",
+        "{\\"periodType\\":\\"SIXMONTHLY\\",\\"id\\":\\"2016S1\\",\\"iso\\":\\"2016S1\\",\\"name\\":\\"Meskerem - Yekatit 2016\\",\\"displayName\\":\\"Meskerem - Yekatit 2016\\",\\"startDate\\":\\"2016-01-01\\",\\"endDate\\":\\"2016-06-30\\"}",
       ],
     },
   },
@@ -876,23 +876,23 @@ Object {
     "currentYear": Object {
       "count": 2,
       "first": Array [
-        "{\\"periodType\\":\\"SIXMONTHLYAPR\\",\\"id\\":\\"2017AprilS1\\",\\"iso\\":\\"2017AprilS1\\",\\"name\\":\\"Tahsas - Genbot 2017 AA\\",\\"displayName\\":\\"Tahsas - Genbot 2017 AA\\",\\"startDate\\":\\"2017-04-01\\",\\"endDate\\":\\"2017-09-30\\"}",
-        "{\\"periodType\\":\\"SIXMONTHLYAPR\\",\\"id\\":\\"2017AprilS2\\",\\"iso\\":\\"2017AprilS2\\",\\"name\\":\\"Sene 2017 AA - Tekemt 2018 AA\\",\\"displayName\\":\\"Sene 2017 AA - Tekemt 2018 AA\\",\\"startDate\\":\\"2017-10-01\\",\\"endDate\\":\\"2018-02-30\\"}",
+        "{\\"periodType\\":\\"SIXMONTHLYAPR\\",\\"id\\":\\"2017AprilS1\\",\\"iso\\":\\"2017AprilS1\\",\\"name\\":\\"Tahsas - Genbot 2017\\",\\"displayName\\":\\"Tahsas - Genbot 2017\\",\\"startDate\\":\\"2017-04-01\\",\\"endDate\\":\\"2017-09-30\\"}",
+        "{\\"periodType\\":\\"SIXMONTHLYAPR\\",\\"id\\":\\"2017AprilS2\\",\\"iso\\":\\"2017AprilS2\\",\\"name\\":\\"Sene 2017 - Tekemt 2018\\",\\"displayName\\":\\"Sene 2017 - Tekemt 2018\\",\\"startDate\\":\\"2017-10-01\\",\\"endDate\\":\\"2018-02-30\\"}",
       ],
       "last": Array [
-        "{\\"periodType\\":\\"SIXMONTHLYAPR\\",\\"id\\":\\"2017AprilS1\\",\\"iso\\":\\"2017AprilS1\\",\\"name\\":\\"Tahsas - Genbot 2017 AA\\",\\"displayName\\":\\"Tahsas - Genbot 2017 AA\\",\\"startDate\\":\\"2017-04-01\\",\\"endDate\\":\\"2017-09-30\\"}",
-        "{\\"periodType\\":\\"SIXMONTHLYAPR\\",\\"id\\":\\"2017AprilS2\\",\\"iso\\":\\"2017AprilS2\\",\\"name\\":\\"Sene 2017 AA - Tekemt 2018 AA\\",\\"displayName\\":\\"Sene 2017 AA - Tekemt 2018 AA\\",\\"startDate\\":\\"2017-10-01\\",\\"endDate\\":\\"2018-02-30\\"}",
+        "{\\"periodType\\":\\"SIXMONTHLYAPR\\",\\"id\\":\\"2017AprilS1\\",\\"iso\\":\\"2017AprilS1\\",\\"name\\":\\"Tahsas - Genbot 2017\\",\\"displayName\\":\\"Tahsas - Genbot 2017\\",\\"startDate\\":\\"2017-04-01\\",\\"endDate\\":\\"2017-09-30\\"}",
+        "{\\"periodType\\":\\"SIXMONTHLYAPR\\",\\"id\\":\\"2017AprilS2\\",\\"iso\\":\\"2017AprilS2\\",\\"name\\":\\"Sene 2017 - Tekemt 2018\\",\\"displayName\\":\\"Sene 2017 - Tekemt 2018\\",\\"startDate\\":\\"2017-10-01\\",\\"endDate\\":\\"2018-02-30\\"}",
       ],
     },
     "lastYear": Object {
       "count": 2,
       "first": Array [
-        "{\\"periodType\\":\\"SIXMONTHLYAPR\\",\\"id\\":\\"2016AprilS2\\",\\"iso\\":\\"2016AprilS2\\",\\"name\\":\\"Sene 2016 AA - Tekemt 2017 AA\\",\\"displayName\\":\\"Sene 2016 AA - Tekemt 2017 AA\\",\\"startDate\\":\\"2016-10-01\\",\\"endDate\\":\\"2017-02-30\\"}",
-        "{\\"periodType\\":\\"SIXMONTHLYAPR\\",\\"id\\":\\"2016AprilS1\\",\\"iso\\":\\"2016AprilS1\\",\\"name\\":\\"Tahsas - Genbot 2016 AA\\",\\"displayName\\":\\"Tahsas - Genbot 2016 AA\\",\\"startDate\\":\\"2016-04-01\\",\\"endDate\\":\\"2016-09-30\\"}",
+        "{\\"periodType\\":\\"SIXMONTHLYAPR\\",\\"id\\":\\"2016AprilS2\\",\\"iso\\":\\"2016AprilS2\\",\\"name\\":\\"Sene 2016 - Tekemt 2017\\",\\"displayName\\":\\"Sene 2016 - Tekemt 2017\\",\\"startDate\\":\\"2016-10-01\\",\\"endDate\\":\\"2017-02-30\\"}",
+        "{\\"periodType\\":\\"SIXMONTHLYAPR\\",\\"id\\":\\"2016AprilS1\\",\\"iso\\":\\"2016AprilS1\\",\\"name\\":\\"Tahsas - Genbot 2016\\",\\"displayName\\":\\"Tahsas - Genbot 2016\\",\\"startDate\\":\\"2016-04-01\\",\\"endDate\\":\\"2016-09-30\\"}",
       ],
       "last": Array [
-        "{\\"periodType\\":\\"SIXMONTHLYAPR\\",\\"id\\":\\"2016AprilS2\\",\\"iso\\":\\"2016AprilS2\\",\\"name\\":\\"Sene 2016 AA - Tekemt 2017 AA\\",\\"displayName\\":\\"Sene 2016 AA - Tekemt 2017 AA\\",\\"startDate\\":\\"2016-10-01\\",\\"endDate\\":\\"2017-02-30\\"}",
-        "{\\"periodType\\":\\"SIXMONTHLYAPR\\",\\"id\\":\\"2016AprilS1\\",\\"iso\\":\\"2016AprilS1\\",\\"name\\":\\"Tahsas - Genbot 2016 AA\\",\\"displayName\\":\\"Tahsas - Genbot 2016 AA\\",\\"startDate\\":\\"2016-04-01\\",\\"endDate\\":\\"2016-09-30\\"}",
+        "{\\"periodType\\":\\"SIXMONTHLYAPR\\",\\"id\\":\\"2016AprilS2\\",\\"iso\\":\\"2016AprilS2\\",\\"name\\":\\"Sene 2016 - Tekemt 2017\\",\\"displayName\\":\\"Sene 2016 - Tekemt 2017\\",\\"startDate\\":\\"2016-10-01\\",\\"endDate\\":\\"2017-02-30\\"}",
+        "{\\"periodType\\":\\"SIXMONTHLYAPR\\",\\"id\\":\\"2016AprilS1\\",\\"iso\\":\\"2016AprilS1\\",\\"name\\":\\"Tahsas - Genbot 2016\\",\\"displayName\\":\\"Tahsas - Genbot 2016\\",\\"startDate\\":\\"2016-04-01\\",\\"endDate\\":\\"2016-09-30\\"}",
       ],
     },
   },
@@ -3471,7 +3471,7 @@ Object {
       ],
       "last": Array [
         "{\\"periodType\\":\\"FYAPR\\",\\"id\\":\\"2080April\\",\\"iso\\":\\"2080April\\",\\"name\\":\\"Shrawan 2080 - Ashadh 2081\\",\\"displayName\\":\\"Shrawan 2080 - Ashadh 2081\\",\\"startDate\\":\\"2080-04-01\\",\\"endDate\\":\\"2081-03-31\\"}",
-        "{\\"periodType\\":\\"FYAPR\\",\\"id\\":\\"2081April\\",\\"iso\\":\\"2081April\\",\\"name\\":\\"Shrawan 2081 - Ashadh 2082\\",\\"displayName\\":\\"Shrawan 2081 - Ashadh 2082\\",\\"startDate\\":\\"2081-04-01\\",\\"endDate\\":\\"2082-03-31\\"}",
+        "{\\"periodType\\":\\"FYAPR\\",\\"id\\":\\"2081April\\",\\"iso\\":\\"2081April\\",\\"name\\":\\"Shrawan 2081 - Ashadh 2082\\",\\"displayName\\":\\"Shrawan 2081 - Ashadh 2082\\",\\"startDate\\":\\"2081-04-01\\",\\"endDate\\":\\"2082-03-32\\"}",
       ],
     },
   },
@@ -3489,7 +3489,7 @@ Object {
       ],
       "last": Array [
         "{\\"periodType\\":\\"FYJUL\\",\\"id\\":\\"2080July\\",\\"iso\\":\\"2080July\\",\\"name\\":\\"Kartik 2080 - Ashwin 2081\\",\\"displayName\\":\\"Kartik 2080 - Ashwin 2081\\",\\"startDate\\":\\"2080-07-01\\",\\"endDate\\":\\"2081-06-30\\"}",
-        "{\\"periodType\\":\\"FYJUL\\",\\"id\\":\\"2081July\\",\\"iso\\":\\"2081July\\",\\"name\\":\\"Kartik 2081 - Ashwin 2082\\",\\"displayName\\":\\"Kartik 2081 - Ashwin 2082\\",\\"startDate\\":\\"2081-07-01\\",\\"endDate\\":\\"2082-06-30\\"}",
+        "{\\"periodType\\":\\"FYJUL\\",\\"id\\":\\"2081July\\",\\"iso\\":\\"2081July\\",\\"name\\":\\"Kartik 2081 - Ashwin 2082\\",\\"displayName\\":\\"Kartik 2081 - Ashwin 2082\\",\\"startDate\\":\\"2081-07-01\\",\\"endDate\\":\\"2082-06-31\\"}",
       ],
     },
   },
@@ -3507,7 +3507,7 @@ Object {
       ],
       "last": Array [
         "{\\"periodType\\":\\"FYNOV\\",\\"id\\":\\"2080Nov\\",\\"iso\\":\\"2080Nov\\",\\"name\\":\\"Falgun 2080 - Mangh 2081\\",\\"displayName\\":\\"Falgun 2080 - Mangh 2081\\",\\"startDate\\":\\"2080-11-01\\",\\"endDate\\":\\"2081-10-30\\"}",
-        "{\\"periodType\\":\\"FYNOV\\",\\"id\\":\\"2081Nov\\",\\"iso\\":\\"2081Nov\\",\\"name\\":\\"Falgun 2081 - Mangh 2082\\",\\"displayName\\":\\"Falgun 2081 - Mangh 2082\\",\\"startDate\\":\\"2081-11-01\\",\\"endDate\\":\\"2082-10-30\\"}",
+        "{\\"periodType\\":\\"FYNOV\\",\\"id\\":\\"2081Nov\\",\\"iso\\":\\"2081Nov\\",\\"name\\":\\"Falgun 2081 - Mangh 2082\\",\\"displayName\\":\\"Falgun 2081 - Mangh 2082\\",\\"startDate\\":\\"2081-11-01\\",\\"endDate\\":\\"2082-10-29\\"}",
       ],
     },
   },
@@ -3574,11 +3574,11 @@ Object {
     "lastYear": Object {
       "count": 2,
       "first": Array [
-        "{\\"periodType\\":\\"SIXMONTHLYAPR\\",\\"id\\":\\"2081AprilS2\\",\\"iso\\":\\"2081AprilS2\\",\\"name\\":\\"Mangh 2081 - Ashadh 2082\\",\\"displayName\\":\\"Mangh 2081 - Ashadh 2082\\",\\"startDate\\":\\"2081-10-01\\",\\"endDate\\":\\"2082-03-31\\"}",
+        "{\\"periodType\\":\\"SIXMONTHLYAPR\\",\\"id\\":\\"2081AprilS2\\",\\"iso\\":\\"2081AprilS2\\",\\"name\\":\\"Mangh 2081 - Ashadh 2082\\",\\"displayName\\":\\"Mangh 2081 - Ashadh 2082\\",\\"startDate\\":\\"2081-10-01\\",\\"endDate\\":\\"2082-03-32\\"}",
         "{\\"periodType\\":\\"SIXMONTHLYAPR\\",\\"id\\":\\"2081AprilS1\\",\\"iso\\":\\"2081AprilS1\\",\\"name\\":\\"Shrawan - Paush 2081\\",\\"displayName\\":\\"Shrawan - Paush 2081\\",\\"startDate\\":\\"2081-04-01\\",\\"endDate\\":\\"2081-09-29\\"}",
       ],
       "last": Array [
-        "{\\"periodType\\":\\"SIXMONTHLYAPR\\",\\"id\\":\\"2081AprilS2\\",\\"iso\\":\\"2081AprilS2\\",\\"name\\":\\"Mangh 2081 - Ashadh 2082\\",\\"displayName\\":\\"Mangh 2081 - Ashadh 2082\\",\\"startDate\\":\\"2081-10-01\\",\\"endDate\\":\\"2082-03-31\\"}",
+        "{\\"periodType\\":\\"SIXMONTHLYAPR\\",\\"id\\":\\"2081AprilS2\\",\\"iso\\":\\"2081AprilS2\\",\\"name\\":\\"Mangh 2081 - Ashadh 2082\\",\\"displayName\\":\\"Mangh 2081 - Ashadh 2082\\",\\"startDate\\":\\"2081-10-01\\",\\"endDate\\":\\"2082-03-32\\"}",
         "{\\"periodType\\":\\"SIXMONTHLYAPR\\",\\"id\\":\\"2081AprilS1\\",\\"iso\\":\\"2081AprilS1\\",\\"name\\":\\"Shrawan - Paush 2081\\",\\"displayName\\":\\"Shrawan - Paush 2081\\",\\"startDate\\":\\"2081-04-01\\",\\"endDate\\":\\"2081-09-29\\"}",
       ],
     },
