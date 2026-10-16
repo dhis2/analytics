@@ -1,7 +1,6 @@
 import { renderHook } from '@testing-library/react'
 import {
     getV44PeriodTypeOptions,
-    sortPeriodTypes,
     useV44DataOutputPeriodTypes,
 } from '../versions/v44.js'
 
@@ -18,15 +17,22 @@ const daily = {
         YESTERDAY: { displayName: 'Hier' },
     },
 }
+// relative periods are nested under every period type of the family,
+// with the same labels
+const weeklyRelativePeriods = {
+    THIS_WEEK: { displayName: 'Cette semaine' },
+    LAST_WEEK: { displayName: 'Semaine dernière' },
+}
 const weekly = {
     name: 'Weekly',
     displayName: 'Hebdomadaire',
-    relativePeriods: {
-        THIS_WEEK: { displayName: 'Cette semaine' },
-        LAST_WEEK: { displayName: 'Semaine dernière' },
-    },
+    relativePeriods: weeklyRelativePeriods,
 }
-const weeklySunday = { name: 'WeeklySunday', displayName: 'EPI Week' }
+const weeklySunday = {
+    name: 'WeeklySunday',
+    displayName: 'EPI Week',
+    relativePeriods: weeklyRelativePeriods,
+}
 const monthly = {
     name: 'Monthly',
     displayName: 'Mois',
@@ -36,9 +42,33 @@ const monthly = {
         MONTHS_LAST_YEAR: { displayName: "Mois de l'an dernier" },
     },
 }
-const quarterlyNov = { name: 'QuarterlyNov', displayName: 'Quarterly Nov' }
-const financialApril = { name: 'FinancialApril', displayName: 'FY April' }
-const financialOct = { name: 'FinancialOct', displayName: 'FY October' }
+const quarterlyRelativePeriods = {
+    THIS_QUARTER: { displayName: 'Ce trimestre' },
+}
+const quarterly = {
+    name: 'Quarterly',
+    displayName: 'Trimestriel',
+    relativePeriods: quarterlyRelativePeriods,
+}
+const quarterlyNov = {
+    name: 'QuarterlyNov',
+    displayName: 'Quarterly Nov',
+    relativePeriods: quarterlyRelativePeriods,
+}
+const financialRelativePeriods = {
+    THIS_FINANCIAL_YEAR: { displayName: 'Cet exercice' },
+    LAST_FINANCIAL_YEAR: { displayName: 'Exercice précédent' },
+}
+const financialApril = {
+    name: 'FinancialApril',
+    displayName: 'FY April',
+    relativePeriods: financialRelativePeriods,
+}
+const financialOct = {
+    name: 'FinancialOct',
+    displayName: 'FY October',
+    relativePeriods: financialRelativePeriods,
+}
 
 const DEFAULT_START_TYPES = { WEEKLY: 'Weekly', FINANCIAL: 'FinancialOct' }
 
@@ -137,7 +167,6 @@ describe('v44 period type options', () => {
             {
                 id: 'WEEKLY',
                 name: 'EPI Week',
-                // labels of the weekly relative periods are nested under Weekly
                 periods: [
                     'THIS_WEEK:Cette semaine',
                     'LAST_WEEK:Semaine dernière',
@@ -152,31 +181,60 @@ describe('v44 period type options', () => {
         expect(relativeOptions.map(({ id }) => id)).toEqual(['MONTHLY'])
     })
 
-    it('falls back to client weekly relative periods when Weekly is disabled', () => {
-        // the server only nests weekly relative periods under Weekly
+    it('shows weekly relative periods when only the weekly start variant is enabled', () => {
         const { relativeOptions } = getOptions([weeklySunday], [], {
             ...DEFAULT_START_TYPES,
             WEEKLY: 'WeeklySunday',
         })
 
-        expect(relativeOptions).toHaveLength(1)
-        expect(relativeOptions[0].id).toBe('WEEKLY')
-        expect(relativeOptions[0].name).toBe('EPI Week')
-        expect(relativeOptions[0].getPeriods().map(({ id }) => id)).toContain(
-            'THIS_WEEK'
-        )
+        expect(summarize(relativeOptions)).toEqual([
+            {
+                id: 'WEEKLY',
+                name: 'EPI Week',
+                periods: [
+                    'THIS_WEEK:Cette semaine',
+                    'LAST_WEEK:Semaine dernière',
+                ],
+            },
+        ])
     })
 
     it('shows financial year relative periods for the financial year start variant from the system setting', () => {
         const { relativeOptions } = getOptions([financialApril, financialOct])
 
-        expect(relativeOptions.map(({ id, name }) => ({ id, name }))).toEqual([
-            { id: 'FINANCIAL', name: 'FY October' },
+        expect(summarize(relativeOptions)).toEqual([
+            {
+                id: 'FINANCIAL',
+                name: 'FY October',
+                periods: [
+                    'THIS_FINANCIAL_YEAR:Cet exercice',
+                    'LAST_FINANCIAL_YEAR:Exercice précédent',
+                ],
+            },
         ])
-        // the server does not return financial year relative periods
-        expect(relativeOptions[0].getPeriods().map(({ id }) => id)).toContain(
-            'THIS_FINANCIAL_YEAR'
-        )
+    })
+
+    it('shows one quarterly category named after the first enabled quarterly type', () => {
+        expect(
+            summarize(getOptions([quarterly, quarterlyNov]).relativeOptions)
+        ).toEqual([
+            {
+                id: 'QUARTERLY',
+                name: 'Trimestriel',
+                periods: ['THIS_QUARTER:Ce trimestre'],
+            },
+        ])
+        expect(
+            getOptions([quarterlyNov]).relativeOptions.map(({ name }) => name)
+        ).toEqual(['Quarterly Nov'])
+    })
+
+    it('hides a category when the server returns no relative periods for it', () => {
+        const { relativeOptions } = getOptions([
+            { ...monthly, relativePeriods: {} },
+        ])
+
+        expect(relativeOptions).toEqual([])
     })
 
     it('hides financial year relative periods when the start variant is disabled or not set', () => {
@@ -204,40 +262,6 @@ describe('v44 period type options', () => {
             fixedOptions: [],
             relativeOptions: [],
         })
-    })
-})
-
-describe('sortPeriodTypes', () => {
-    it('sorts period types naturally from days to financial years', () => {
-        const shuffled = [
-            ['FinancialOct', 365],
-            ['Monthly', 30],
-            ['WeeklySunday', 7],
-            ['Yearly', 365],
-            ['QuarterlyNov', 91],
-            ['FinancialApril', 365],
-            ['Daily', 1],
-            ['SixMonthly', 182],
-            ['Quarterly', 91],
-            ['Weekly', 7],
-            ['BiWeekly', 14],
-            ['WeeklyWednesday', 7],
-        ].map(([name, frequencyOrder]) => ({ name, frequencyOrder }))
-
-        expect(sortPeriodTypes(shuffled).map(({ name }) => name)).toEqual([
-            'Daily',
-            'Weekly',
-            'WeeklyWednesday',
-            'WeeklySunday',
-            'BiWeekly',
-            'Monthly',
-            'Quarterly',
-            'QuarterlyNov',
-            'SixMonthly',
-            'Yearly',
-            'FinancialApril',
-            'FinancialOct',
-        ])
     })
 })
 
@@ -335,13 +359,9 @@ describe('useV44DataOutputPeriodTypes', () => {
         })
     })
 
-    it('returns enabled types in natural order', () => {
+    it('keeps the server order of period types', () => {
         mockQueryState.v44Data = {
-            periodTypes: [
-                { ...financialOct, frequencyOrder: 365 },
-                { ...monthly, frequencyOrder: 30 },
-                { ...daily, frequencyOrder: 1 },
-            ],
+            periodTypes: [daily, monthly, financialOct],
         }
 
         const { result } = renderHook(() =>

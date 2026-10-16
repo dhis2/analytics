@@ -16,7 +16,6 @@ import {
 } from '../utils/enabledPeriodTypes.js'
 import { getFixedPeriodsOptions } from '../utils/fixedPeriods.js'
 import { FINANCIAL, WEEKLY, filterPeriodTypesById } from '../utils/index.js'
-import { getRelativePeriodsOptionsById } from '../utils/relativePeriods.js'
 
 const userLocaleQuery = {
     userSettings: {
@@ -31,7 +30,7 @@ const v44Query = {
     periodTypes: {
         resource: 'configuration/dataOutputPeriodTypes',
         params: ({ locale }) => ({
-            fields: 'name,displayName,frequencyOrder,relativePeriods',
+            fields: 'name,displayName,relativePeriods',
             ...(locale && { locale }),
         }),
     },
@@ -46,10 +45,9 @@ const v44Query = {
     },
 }
 
-// The server nests relative periods under a single period type of a family
-// (e.g. weekly relative periods under "Weekly" only), while the client groups
-// relative periods in categories that are shown when any period type in the
-// family is enabled
+// Server period types grouped by the relative period category they belong to.
+// The category ids (e.g. WEEKLY, FINANCIAL) are part of the public API
+// (excludedPeriodTypes, default selection) and the server has no equivalent.
 const RP_CATEGORY_TO_SERVER_PTS = {
     ...RP_CATEGORY_TO_FP_DEPENDENCIES,
     [FINANCIAL]: [
@@ -66,23 +64,6 @@ const RP_CATEGORY_TO_SERVER_PTS = {
 const getRelativeCategoryId = (serverPtName) =>
     Object.keys(RP_CATEGORY_TO_SERVER_PTS).find((categoryId) =>
         RP_CATEGORY_TO_SERVER_PTS[categoryId].includes(serverPtName)
-    )
-
-// Natural order (days -> financial years), not relying on the response order.
-// frequencyOrder ties (e.g. weekly variants, yearly and financial years) are
-// broken by the client order of period types.
-const CLIENT_PT_ORDER = Object.keys(SERVER_PT_TO_MULTI_CALENDAR_PT)
-
-const getClientOrder = (name) => {
-    const index = CLIENT_PT_ORDER.indexOf(name)
-    return index === -1 ? CLIENT_PT_ORDER.length : index
-}
-
-export const sortPeriodTypes = (periodTypes) =>
-    [...periodTypes].sort(
-        (a, b) =>
-            (a.frequencyOrder ?? Infinity) - (b.frequencyOrder ?? Infinity) ||
-            getClientOrder(a.name) - getClientOrder(b.name)
     )
 
 const getRelativePeriodsFromPeriodType = (periodType) =>
@@ -110,7 +91,8 @@ export const useV44DataOutputPeriodTypes = ({ enabled }) => {
             return null
         }
 
-        const enabledTypes = sortPeriodTypes(data.periodTypes)
+        // the server returns period types in natural order (days -> financial years)
+        const enabledTypes = data.periodTypes
 
         // relative period id -> name, used for overriding stored names
         // (i.e. selected items in a saved visualization)
@@ -173,43 +155,27 @@ const getV44RelativeOption = (
         RP_CATEGORY_TO_SERVER_PTS[categoryId].includes(pt.name)
     )
 
-    // Weekly and financial year relative periods are only available when the
-    // start variant selected in the system settings is enabled
+    // The server nests the relative periods of a family under every period
+    // type of the family. Weekly and financial year relative periods refer to
+    // the start variant selected in the system settings, so they are only
+    // available when that variant is enabled.
     const startTypeName = relativePeriodStartTypes?.[categoryId]
-    const startType =
+    const sourceType =
         startTypeName !== undefined
             ? familyTypes.find((pt) => pt.name === startTypeName)
-            : null
+            : familyTypes[0]
 
-    if (startTypeName !== undefined && !startType) {
+    const periods = sourceType
+        ? getRelativePeriodsFromPeriodType(sourceType)
+        : []
+
+    if (!periods.length) {
         return null
     }
-
-    const typeWithRelativePeriods = familyTypes.find(
-        (pt) => Object.keys(pt.relativePeriods || {}).length
-    )
-
-    // The server does not return relative periods for this category when the
-    // period type it nests them under is disabled (e.g. weekly relative periods
-    // are nested under Weekly while only WeeklySunday is enabled) or when there
-    // is no such period type (financial year relative periods).
-    // Fall back to the client relative periods.
-    const clientOption = getRelativePeriodsOptionsById(categoryId)
-
-    if (!typeWithRelativePeriods && !clientOption) {
-        return null
-    }
-
-    const periods = typeWithRelativePeriods
-        ? getRelativePeriodsFromPeriodType(typeWithRelativePeriods)
-        : clientOption.getPeriods()
 
     return {
         id: categoryId,
-        name:
-            startType?.displayName ||
-            typeWithRelativePeriods?.displayName ||
-            clientOption.name,
+        name: sourceType.displayName,
         getPeriods: () => periods,
     }
 }
