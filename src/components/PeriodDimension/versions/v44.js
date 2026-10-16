@@ -73,18 +73,31 @@ const getRelativePeriodsFromPeriodType = (periodType) =>
 
 export const useV44DataOutputPeriodTypes = ({ enabled }) => {
     const { data, error, refetch } = useDataQuery(v44Query, { lazy: true })
-    const { refetch: fetchUserLocale } = useDataQuery(userLocaleQuery, {
-        lazy: true,
-        onComplete: ({ userSettings }) =>
-            refetch({ locale: userSettings?.keyUiLocale }),
-        onError: () => refetch({}),
-    })
+    // Not using onComplete: the query is shared with other identical
+    // userSettings queries (e.g. in PeriodDimension), whose completion would
+    // trigger the period types request also when disabled
+    const {
+        data: localeData,
+        error: localeError,
+        refetch: fetchUserLocale,
+    } = useDataQuery(userLocaleQuery, { lazy: true })
 
     useEffect(() => {
         if (enabled) {
             fetchUserLocale()
         }
     }, [enabled, fetchUserLocale])
+
+    const locale = localeData?.userSettings?.keyUiLocale
+
+    useEffect(() => {
+        if (!enabled || (!localeData && !localeError)) {
+            return
+        }
+
+        // still fetch period types if the user locale request fails
+        refetch(locale ? { locale } : {})
+    }, [enabled, locale, localeData, localeError, refetch])
 
     return useMemo(() => {
         if (!enabled || error || !data?.periodTypes) {
