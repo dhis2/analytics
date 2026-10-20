@@ -223,7 +223,8 @@ V44CustomLabels.decorators = [
 export const V44Translated = () => {
     return (
         <PeriodDimension
-            selectedPeriods={selectedPeriods}
+            // stored name of a saved visualization is replaced by the translation
+            selectedPeriods={[{ id: 'LAST_12_MONTHS', name: 'Last 12 months' }]}
             onSelect={(selected) => console.log(selected)}
         />
     )
