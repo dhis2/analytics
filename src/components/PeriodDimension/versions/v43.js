@@ -14,6 +14,7 @@ import {
     filterEnabledFixedPeriodTypes,
 } from '../utils/enabledPeriodTypes.js'
 import { getFixedPeriodsOptions } from '../utils/fixedPeriods.js'
+import { filterPeriodTypesById } from '../utils/index.js'
 import { getRelativePeriodsOptions } from '../utils/relativePeriods.js'
 
 const v43Query = {
@@ -250,6 +251,7 @@ export const filterEnabledRelativePeriodTypes = (
 export const getV43PeriodTypeOptions = ({
     enabledPeriodTypesData,
     periodsSettings,
+    excludedPeriodTypes,
 }) => {
     const {
         enabledTypes,
@@ -260,20 +262,26 @@ export const getV43PeriodTypeOptions = ({
     } = enabledPeriodTypesData
 
     return {
-        fixedOptions: applyFixedPeriodTypeDisplayLabels(
-            filterEnabledFixedPeriodTypes(
-                getFixedPeriodsOptions(periodsSettings),
+        fixedOptions: filterPeriodTypesById(
+            applyFixedPeriodTypeDisplayLabels(
+                filterEnabledFixedPeriodTypes(
+                    getFixedPeriodsOptions(periodsSettings),
+                    enabledTypes
+                ),
                 enabledTypes
             ),
-            enabledTypes
+            excludedPeriodTypes
         ),
-        relativeOptions: applyDisplayLabelOverrides(
-            filterEnabledRelativePeriodTypes(
-                getRelativePeriodsOptions(),
-                enabledTypes,
-                financialYearStart
+        relativeOptions: filterPeriodTypesById(
+            applyDisplayLabelOverrides(
+                filterEnabledRelativePeriodTypes(
+                    getRelativePeriodsOptions(),
+                    enabledTypes,
+                    financialYearStart
+                ),
+                { financialYearDisplayLabel, weeklyDisplayLabel, metaData }
             ),
-            { financialYearDisplayLabel, weeklyDisplayLabel, metaData }
+            excludedPeriodTypes
         ),
     }
 }

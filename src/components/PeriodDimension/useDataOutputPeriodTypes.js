@@ -45,6 +45,7 @@ const getPeriodTypeOptions = ({
             return getV43PeriodTypeOptions({
                 enabledPeriodTypesData,
                 periodsSettings,
+                excludedPeriodTypes,
             })
         default:
             return getV42PeriodTypeOptions({
