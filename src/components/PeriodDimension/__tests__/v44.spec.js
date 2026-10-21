@@ -271,66 +271,30 @@ describe('useV44DataOutputPeriodTypes', () => {
     beforeEach(() => {
         const { useDataQuery } = require('@dhis2/app-runtime')
         mockQueryState.v44Refetch = jest.fn()
-        mockQueryState.localeRefetch = jest.fn()
         mockQueryState.v44Data = undefined
-        mockQueryState.localeData = undefined
-        mockQueryState.localeError = undefined
 
-        useDataQuery.mockImplementation((query) => {
-            if (query.userSettings) {
-                return {
-                    data: mockQueryState.localeData,
-                    error: mockQueryState.localeError,
-                    refetch: mockQueryState.localeRefetch,
-                }
-            }
-            return {
-                data: mockQueryState.v44Data,
-                error: undefined,
-                refetch: mockQueryState.v44Refetch,
-            }
-        })
+        useDataQuery.mockImplementation(() => ({
+            data: mockQueryState.v44Data,
+            error: undefined,
+            refetch: mockQueryState.v44Refetch,
+        }))
     })
 
     it('does not fetch when disabled', () => {
         renderHook(() => useV44DataOutputPeriodTypes({ enabled: false }))
 
-        expect(mockQueryState.localeRefetch).not.toHaveBeenCalled()
         expect(mockQueryState.v44Refetch).not.toHaveBeenCalled()
     })
 
-    it('does not fetch period types when disabled and the user locale is loaded elsewhere', () => {
-        // the userSettings query is shared with identical queries, e.g. in PeriodDimension
-        mockQueryState.localeData = { userSettings: { keyUiLocale: 'fr' } }
-
-        renderHook(() => useV44DataOutputPeriodTypes({ enabled: false }))
-
-        expect(mockQueryState.v44Refetch).not.toHaveBeenCalled()
-    })
-
-    it('fetches period types in the user ui locale', () => {
-        const { rerender } = renderHook(() =>
-            useV44DataOutputPeriodTypes({ enabled: true })
-        )
-
-        expect(mockQueryState.localeRefetch).toHaveBeenCalledTimes(1)
-        expect(mockQueryState.v44Refetch).not.toHaveBeenCalled()
-
-        mockQueryState.localeData = { userSettings: { keyUiLocale: 'fr' } }
-        rerender()
-
-        expect(mockQueryState.v44Refetch).toHaveBeenCalledTimes(1)
-        expect(mockQueryState.v44Refetch).toHaveBeenCalledWith({
-            locale: 'fr',
-        })
-    })
-
-    it('still fetches period types if the user locale request fails', () => {
-        mockQueryState.localeError = new Error('failed')
+    it('fetches period types without a locale (server uses the user db locale)', () => {
+        const { useDataQuery } = require('@dhis2/app-runtime')
 
         renderHook(() => useV44DataOutputPeriodTypes({ enabled: true }))
 
-        expect(mockQueryState.v44Refetch).toHaveBeenCalledWith({})
+        expect(mockQueryState.v44Refetch).toHaveBeenCalledTimes(1)
+        expect(mockQueryState.v44Refetch).toHaveBeenCalledWith()
+        const [query] = useDataQuery.mock.calls[0]
+        expect(query.periodTypes.params).not.toHaveProperty('locale')
     })
 
     it('returns enabled types and relative period name overrides', () => {
