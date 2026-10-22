@@ -54,7 +54,7 @@ const RP_CATEGORY_TO_SERVER_PTS = {
 
 // Relative period categories whose relative periods refer to the start variant
 // selected in the system settings (see relativePeriodStartTypes)
-const START_SETTING_CATEGORIES = [WEEKLY, FINANCIAL]
+const START_SETTING_CATEGORIES = new Set([WEEKLY, FINANCIAL])
 
 const getRelativeCategoryId = (serverPtName) =>
     Object.keys(RP_CATEGORY_TO_SERVER_PTS).find((categoryId) =>
@@ -148,7 +148,7 @@ const getV44RelativeOption = (
     // type of the family. Weekly and financial year relative periods refer to
     // the start variant selected in the system settings, so they are only
     // available when that variant is enabled.
-    const sourceType = START_SETTING_CATEGORIES.includes(categoryId)
+    const sourceType = START_SETTING_CATEGORIES.has(categoryId)
         ? familyTypes.find(
               (pt) => pt.name === relativePeriodStartTypes?.[categoryId]
           )
