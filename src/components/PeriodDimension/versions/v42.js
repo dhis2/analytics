@@ -1,6 +1,6 @@
 // v42: no enabled period types API, all period types and relative periods
 // come from the hardcoded client lists.
-// Remove this file (and its branch in getPeriodTypeOptions) when v42 is no longer supported.
+// Remove this file (and its branch in periodTypeOptions.js) when v42 is no longer supported.
 import { getFixedPeriodsOptions } from '../utils/fixedPeriods.js'
 import {
     FYAUG,

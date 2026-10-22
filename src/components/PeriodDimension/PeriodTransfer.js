@@ -12,8 +12,8 @@ import {
 import styles from '../styles/DimensionSelector.style.js'
 import { TransferOption } from '../TransferOption.js'
 import FixedPeriodFilter from './FixedPeriodFilter.js'
+import { getPeriodTypeOptions } from './periodTypeOptions.js'
 import RelativePeriodFilter from './RelativePeriodFilter.js'
-import { getPeriodTypeOptions } from './useDataOutputPeriodTypes.js'
 import { MONTHLY, QUARTERLY } from './utils/index.js'
 
 const RightHeader = ({ infoBoxMessage }) => (

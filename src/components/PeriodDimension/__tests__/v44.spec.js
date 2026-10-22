@@ -55,6 +55,13 @@ const quarterlyNov = {
     displayName: 'Quarterly Nov',
     relativePeriods: quarterlyRelativePeriods,
 }
+const sixMonthlyApril = {
+    name: 'SixMonthlyApril',
+    displayName: 'Six-monthly April',
+    relativePeriods: {
+        THIS_SIX_MONTH: { displayName: 'Ce semestre' },
+    },
+}
 const financialRelativePeriods = {
     THIS_FINANCIAL_YEAR: { displayName: 'Cet exercice' },
     LAST_FINANCIAL_YEAR: { displayName: 'Exercice précédent' },
@@ -214,7 +221,7 @@ describe('v44 period type options', () => {
         ])
     })
 
-    it('shows one quarterly category named after the first enabled quarterly type', () => {
+    it('shows quarterly relative periods for the standard quarterly type', () => {
         expect(
             summarize(getOptions([quarterly, quarterlyNov]).relativeOptions)
         ).toEqual([
@@ -224,9 +231,16 @@ describe('v44 period type options', () => {
                 periods: ['THIS_QUARTER:Ce trimestre'],
             },
         ])
-        expect(
-            getOptions([quarterlyNov]).relativeOptions.map(({ name }) => name)
-        ).toEqual(['Quarterly Nov'])
+    })
+
+    it('hides quarterly and six-monthly relative periods when only a start variant is enabled', () => {
+        const { fixedOptions, relativeOptions } = getOptions([
+            quarterlyNov,
+            sixMonthlyApril,
+        ])
+
+        expect(fixedOptions.map(({ id }) => id)).toEqual(['SIXMONTHLYAPR'])
+        expect(relativeOptions).toEqual([])
     })
 
     it('hides a category when the server returns no relative periods for it', () => {

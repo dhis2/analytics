@@ -1,8 +1,8 @@
 // v43: enabled period types from /configuration/dataOutputPeriodTypes, with a
 // single `label` per period type. Relative period names are derived client side
 // from that label ("This {label}", "Last {label}", ...).
-// Remove this file (and its branch in useDataOutputPeriodTypes and
-// getPeriodTypeOptions) when v43 is no longer supported.
+// Remove this file (and its branches in useDataOutputPeriodTypes and
+// periodTypeOptions.js) when v43 is no longer supported.
 import { useDataQuery } from '@dhis2/app-runtime'
 import { useEffect, useMemo } from 'react'
 import {

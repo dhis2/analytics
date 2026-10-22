@@ -39,17 +39,10 @@ const v44Query = {
 // Server period types grouped by the relative period category they belong to.
 // The category ids (e.g. WEEKLY, FINANCIAL) are part of the public API
 // (excludedPeriodTypes, default selection) and the server has no equivalent.
+// The first period type of each family is the standard one.
 const RP_CATEGORY_TO_SERVER_PTS = {
     ...RP_CATEGORY_TO_FP_DEPENDENCIES,
-    [FINANCIAL]: [
-        'FinancialFeb',
-        'FinancialApril',
-        'FinancialJuly',
-        'FinancialAug',
-        'FinancialSep',
-        'FinancialOct',
-        'FinancialNov',
-    ],
+    [FINANCIAL]: Object.values(FY_SETTING_TO_SERVER_PT),
 }
 
 // Relative period categories whose relative periods refer to the start variant
@@ -140,19 +133,17 @@ const getV44RelativeOption = (
     enabledTypes,
     relativePeriodStartTypes
 ) => {
-    const familyTypes = enabledTypes.filter((pt) =>
-        RP_CATEGORY_TO_SERVER_PTS[categoryId].includes(pt.name)
-    )
-
     // The server nests the relative periods of a family under every period
-    // type of the family. Weekly and financial year relative periods refer to
-    // the start variant selected in the system settings, so they are only
-    // available when that variant is enabled.
-    const sourceType = START_SETTING_CATEGORIES.has(categoryId)
-        ? familyTypes.find(
-              (pt) => pt.name === relativePeriodStartTypes?.[categoryId]
-          )
-        : familyTypes[0]
+    // type of the family, but they only refer to one of them: the start variant
+    // selected in the system settings for weekly and financial years, and the
+    // standard period type (first in the family) for the others, as there are
+    // no settings for e.g. quarterly or six-monthly start variants. The
+    // relative periods are only available when that period type is enabled.
+    const sourceTypeName = START_SETTING_CATEGORIES.has(categoryId)
+        ? relativePeriodStartTypes?.[categoryId]
+        : RP_CATEGORY_TO_SERVER_PTS[categoryId][0]
+
+    const sourceType = enabledTypes.find((pt) => pt.name === sourceTypeName)
 
     const periods = sourceType
         ? getRelativePeriodsFromPeriodType(sourceType)
@@ -170,12 +161,8 @@ const getV44RelativeOption = (
 }
 
 const getV44RelativeOptions = ({ enabledTypes, relativePeriodStartTypes }) =>
-    enabledTypes
-        .map((pt) => getRelativeCategoryId(pt.name))
-        .filter(
-            (categoryId, index, categoryIds) =>
-                categoryId && categoryIds.indexOf(categoryId) === index
-        )
+    [...new Set(enabledTypes.map((pt) => getRelativeCategoryId(pt.name)))]
+        .filter(Boolean)
         .map((categoryId) =>
             getV44RelativeOption(
                 categoryId,

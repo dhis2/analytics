@@ -1,13 +1,6 @@
 import { useConfig } from '@dhis2/app-runtime'
-import { getV42PeriodTypeOptions } from './versions/v42.js'
-import {
-    getV43PeriodTypeOptions,
-    useV43DataOutputPeriodTypes,
-} from './versions/v43.js'
-import {
-    getV44PeriodTypeOptions,
-    useV44DataOutputPeriodTypes,
-} from './versions/v44.js'
+import { useV43DataOutputPeriodTypes } from './versions/v43.js'
+import { useV44DataOutputPeriodTypes } from './versions/v44.js'
 
 const useDataOutputPeriodTypes = () => {
     const { serverVersion } = useConfig()
@@ -29,30 +22,4 @@ const useDataOutputPeriodTypes = () => {
     }
 }
 
-const getPeriodTypeOptions = ({
-    enabledPeriodTypesData,
-    periodsSettings,
-    excludedPeriodTypes,
-}) => {
-    switch (enabledPeriodTypesData?.version) {
-        case 44:
-            return getV44PeriodTypeOptions({
-                enabledPeriodTypesData,
-                periodsSettings,
-                excludedPeriodTypes,
-            })
-        case 43:
-            return getV43PeriodTypeOptions({
-                enabledPeriodTypesData,
-                periodsSettings,
-                excludedPeriodTypes,
-            })
-        default:
-            return getV42PeriodTypeOptions({
-                periodsSettings,
-                excludedPeriodTypes,
-            })
-    }
-}
-
-export { useDataOutputPeriodTypes, getPeriodTypeOptions }
+export { useDataOutputPeriodTypes }
