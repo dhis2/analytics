@@ -68,7 +68,7 @@ export const useV44DataOutputPeriodTypes = ({ enabled }) => {
         }
     }, [enabled, refetch])
 
-    return useMemo(() => {
+    const enabledPeriodTypesData = useMemo(() => {
         if (!enabled || error || !data?.periodTypes) {
             return null
         }
@@ -106,6 +106,8 @@ export const useV44DataOutputPeriodTypes = ({ enabled }) => {
             noEnabledTypes: enabledTypes.length === 0,
         }
     }, [enabled, data, error])
+
+    return { enabledPeriodTypesData, loading: enabled && !data && !error }
 }
 
 const getV44FixedOptions = ({ enabledTypes, periodsSettings }) => {

@@ -45,7 +45,7 @@ export const useV43DataOutputPeriodTypes = ({ enabled }) => {
         }
     }, [enabled, v43Refetch])
 
-    return useMemo(() => {
+    const enabledPeriodTypesData = useMemo(() => {
         if (!enabled) {
             return null
         }
@@ -143,6 +143,11 @@ export const useV43DataOutputPeriodTypes = ({ enabled }) => {
             noEnabledTypes: false,
         }
     }, [enabled, v43Data, v43Error])
+
+    return {
+        enabledPeriodTypesData,
+        loading: enabled && !v43Data && !v43Error,
+    }
 }
 
 /**

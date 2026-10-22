@@ -286,18 +286,49 @@ describe('useV44DataOutputPeriodTypes', () => {
         const { useDataQuery } = require('@dhis2/app-runtime')
         mockQueryState.v44Refetch = jest.fn()
         mockQueryState.v44Data = undefined
+        mockQueryState.v44Error = undefined
 
         useDataQuery.mockImplementation(() => ({
             data: mockQueryState.v44Data,
-            error: undefined,
+            error: mockQueryState.v44Error,
             refetch: mockQueryState.v44Refetch,
         }))
     })
 
     it('does not fetch when disabled', () => {
-        renderHook(() => useV44DataOutputPeriodTypes({ enabled: false }))
+        const { result } = renderHook(() =>
+            useV44DataOutputPeriodTypes({ enabled: false })
+        )
 
         expect(mockQueryState.v44Refetch).not.toHaveBeenCalled()
+        expect(result.current).toEqual({
+            enabledPeriodTypesData: null,
+            loading: false,
+        })
+    })
+
+    it('is loading until the period types have been fetched', () => {
+        const { result } = renderHook(() =>
+            useV44DataOutputPeriodTypes({ enabled: true })
+        )
+
+        expect(result.current).toEqual({
+            enabledPeriodTypesData: null,
+            loading: true,
+        })
+    })
+
+    it('stops loading without data when the request fails', () => {
+        mockQueryState.v44Error = new Error('Request failed')
+
+        const { result } = renderHook(() =>
+            useV44DataOutputPeriodTypes({ enabled: true })
+        )
+
+        expect(result.current).toEqual({
+            enabledPeriodTypesData: null,
+            loading: false,
+        })
     })
 
     it('fetches period types without a locale (server uses the user db locale)', () => {
@@ -327,7 +358,7 @@ describe('useV44DataOutputPeriodTypes', () => {
             useV44DataOutputPeriodTypes({ enabled: true })
         )
 
-        expect(result.current).toEqual({
+        expect(result.current.enabledPeriodTypesData).toEqual({
             version: 44,
             enabledTypes: [daily, monthly],
             analysisRelativePeriod: 'LAST_12_MONTHS',
@@ -353,7 +384,9 @@ describe('useV44DataOutputPeriodTypes', () => {
             useV44DataOutputPeriodTypes({ enabled: true })
         )
 
-        expect(result.current.relativePeriodStartTypes).toEqual({
+        expect(
+            result.current.enabledPeriodTypesData.relativePeriodStartTypes
+        ).toEqual({
             WEEKLY: 'Weekly',
             FINANCIAL: null,
         })
@@ -368,11 +401,11 @@ describe('useV44DataOutputPeriodTypes', () => {
             useV44DataOutputPeriodTypes({ enabled: true })
         )
 
-        expect(result.current.enabledTypes.map(({ name }) => name)).toEqual([
-            'Daily',
-            'Monthly',
-            'FinancialOct',
-        ])
+        expect(
+            result.current.enabledPeriodTypesData.enabledTypes.map(
+                ({ name }) => name
+            )
+        ).toEqual(['Daily', 'Monthly', 'FinancialOct'])
     })
 
     it('flags when no period types are enabled', () => {
@@ -382,6 +415,6 @@ describe('useV44DataOutputPeriodTypes', () => {
             useV44DataOutputPeriodTypes({ enabled: true })
         )
 
-        expect(result.current.noEnabledTypes).toBe(true)
+        expect(result.current.enabledPeriodTypesData.noEnabledTypes).toBe(true)
     })
 })
