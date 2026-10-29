@@ -1,0 +1,29 @@
+import css from 'styled-jsx/css'
+
+export default css`
+    .row {
+        display: flex;
+        gap: var(--spacers-dp4);
+        align-items: flex-end;
+    }
+
+    .width {
+        width: 248px;
+    }
+
+    .icon {
+        flex-grow: 0;
+        height: 40px;
+        display: flex;
+        align-items: center;
+    }
+
+    .field {
+        margin-bottom: var(--spacers-dp8);
+    }
+
+    .error {
+        margin-top: var(--spacers-dp8);
+        color: var(--theme-error);
+    }
+`
