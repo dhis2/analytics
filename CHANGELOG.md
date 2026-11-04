@@ -1,3 +1,10 @@
+## [29.8.2](https://github.com/dhis2/analytics/compare/v29.8.1...v29.8.2) (2026-11-04)
+
+
+### Bug Fixes
+
+* prevent apostrophes in org unit names from being HTML-escaped in display text ([#1878](https://github.com/dhis2/analytics/issues/1878)) ([a695c93](https://github.com/dhis2/analytics/commit/a695c937154d135bd199faf57c8a40f96268d283))
+
 ## [29.8.1](https://github.com/dhis2/analytics/compare/v29.8.0...v29.8.1) (2026-09-25)
 
 
