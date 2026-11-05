@@ -1,5 +1,9 @@
 import { useConfig, useDataQuery } from '@dhis2/app-runtime'
 import { useEffect, useMemo } from 'react'
+import {
+    FINANCIAL_YEAR_START_TO_PERIOD_TYPE,
+    WEEKLY_START_TO_PERIOD_TYPE,
+} from './utils/enabledPeriodTypes.js'
 
 const v43Query = {
     enabledPeriodTypes: {
@@ -16,27 +20,6 @@ const v43Query = {
     weeklyStart: {
         resource: 'systemSettings/analyticsWeeklyStart',
     },
-}
-
-// v43-only: analyticsFinancialYearStart is removed in v44
-const FY_SETTING_TO_SERVER_PT = {
-    FINANCIAL_YEAR_FEBRUARY: 'FinancialFeb',
-    FINANCIAL_YEAR_APRIL: 'FinancialApril',
-    FINANCIAL_YEAR_JULY: 'FinancialJuly',
-    FINANCIAL_YEAR_AUGUST: 'FinancialAug',
-    FINANCIAL_YEAR_SEPTEMBER: 'FinancialSep',
-    FINANCIAL_YEAR_OCTOBER: 'FinancialOct',
-    FINANCIAL_YEAR_NOVEMBER: 'FinancialNov',
-}
-
-// v43-only: analyticsWeeklyStart is removed in v44
-const WEEKLY_START_TO_SERVER_PT = {
-    WEEKLY: 'Weekly',
-    WEEKLY_WEDNESDAY: 'WeeklyWednesday',
-    WEEKLY_THURSDAY: 'WeeklyThursday',
-    WEEKLY_FRIDAY: 'WeeklyFriday',
-    WEEKLY_SATURDAY: 'WeeklySaturday',
-    WEEKLY_SUNDAY: 'WeeklySunday',
 }
 
 const useDataOutputPeriodTypes = () => {
@@ -82,7 +65,7 @@ const useDataOutputPeriodTypes = () => {
             const fyStartValue =
                 v43Data.financialYearStart.analyticsFinancialYearStart
 
-            const mappedFyPt = FY_SETTING_TO_SERVER_PT[fyStartValue]
+            const mappedFyPt = FINANCIAL_YEAR_START_TO_PERIOD_TYPE[fyStartValue]
             const matchingPt = enabledTypes.find((pt) => pt.name === mappedFyPt)
             if (matchingPt) {
                 financialYearStart = fyStartValue
@@ -97,7 +80,7 @@ const useDataOutputPeriodTypes = () => {
         if (v43Data.weeklyStart?.analyticsWeeklyStart) {
             const weeklyStartValue = v43Data.weeklyStart.analyticsWeeklyStart
 
-            const mappedWeeklyPt = WEEKLY_START_TO_SERVER_PT[weeklyStartValue]
+            const mappedWeeklyPt = WEEKLY_START_TO_PERIOD_TYPE[weeklyStartValue]
             const matchingWeeklyPt = enabledTypes.find(
                 (pt) => pt.name === mappedWeeklyPt
             )
