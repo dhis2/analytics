@@ -100,8 +100,11 @@ class AnalyticsBase {
      * This methods takes care of adding the default extra parameters to both requests.
      *
      * @param {!AnalyticsRequest} req Analytics request object with the request details
+     * @param {Object} [options] Optional configurations
+     * @param {AbortSignal} [options.signal] Signal to abort the requests with
      *
      * @returns {Promise} Promise that resolves with the analytics data and metaData from the api.
+     * When aborted, it rejects with the error the data engine gives for an aborted request.
      *
      * @example
      * const req = new analytics.request()
@@ -115,7 +118,7 @@ class AnalyticsBase {
      *
      * // { metaData: { ... }, rows: [ ... ], headers: [ ... ], height: 0, width: 0 }
      */
-    async get(req) {
+    async get(req, options) {
         // keep metaData and data requests separate for caching purposes
         const metaDataReq = new AnalyticsRequest(req)
             .withSkipMeta(false)
@@ -140,6 +143,7 @@ class AnalyticsBase {
                     dataParams: dataReq.parameters,
                     metaDataParams: metaDataReq.parameters,
                 },
+                signal: options?.signal,
             }
         )
 
@@ -156,9 +160,12 @@ class AnalyticsBase {
      * based on the request's configuration.
      *
      * @param {!AnalyticsRequest} req Request object
-     * @param {Object} options Optional configurations, ie. for sorting dimensions
+     * @param {Object} [options] Optional configurations
+     * @param {boolean} [options.sorted] Whether to sort the dimension items
+     * @param {AbortSignal} [options.signal] Signal to abort the request with
      *
      * @returns {Promise} Promise that resolves with the data from the api.
+     * When aborted, it rejects with the error the data engine gives for an aborted request.
      *
      * @example
      * const req = new analytics.request()
@@ -186,6 +193,7 @@ class AnalyticsBase {
                     filters: generateDimensionStrings(req.filters, options),
                     parameters: req.parameters,
                 },
+                signal: options?.signal,
             }
         )
 
