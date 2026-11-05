@@ -34,7 +34,7 @@
         "@dhis2/cli-app-scripts": "^12.11.5",
         "@dhis2/cli-style": "^10.7.10",
         "@dhis2/d2-i18n": "^1.1.0",
-        "@dhis2/ui": "^10.19.0",
+        "@dhis2/ui": "^10.19.2",
         "@storybook/preset-create-react-app": "^10.6.1",
         "@storybook/react-webpack5": "^10.6.1",
         "@testing-library/dom": "^10.4.2",
@@ -60,7 +60,7 @@
         "styled-jsx": "^4.0.1"
     },
     "dependencies": {
-        "@dhis2/multi-calendar-dates": "^1.2.2",
+        "@dhis2/multi-calendar-dates": "^3.0.0",
         "@dnd-kit/core": "^6.0.7",
         "@dnd-kit/sortable": "^7.0.2",
         "@dnd-kit/utilities": "^3.2.1",
