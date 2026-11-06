@@ -304,6 +304,7 @@ describe('useV44DataOutputPeriodTypes', () => {
         expect(result.current).toEqual({
             enabledPeriodTypesData: null,
             loading: false,
+            error: null,
         })
     })
 
@@ -315,11 +316,13 @@ describe('useV44DataOutputPeriodTypes', () => {
         expect(result.current).toEqual({
             enabledPeriodTypesData: null,
             loading: true,
+            error: null,
         })
     })
 
-    it('stops loading without data when the request fails', () => {
-        mockQueryState.v44Error = new Error('Request failed')
+    it('stops loading and returns the error when the request fails', () => {
+        const error = new Error('Request failed')
+        mockQueryState.v44Error = error
 
         const { result } = renderHook(() =>
             useV44DataOutputPeriodTypes({ enabled: true })
@@ -328,6 +331,7 @@ describe('useV44DataOutputPeriodTypes', () => {
         expect(result.current).toEqual({
             enabledPeriodTypesData: null,
             loading: false,
+            error,
         })
     })
 

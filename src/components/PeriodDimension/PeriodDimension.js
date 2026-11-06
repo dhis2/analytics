@@ -1,7 +1,8 @@
 import { useConfig, useDataQuery } from '@dhis2/app-runtime'
-import { CircularLoader } from '@dhis2/ui'
+import { CircularLoader, NoticeBox } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
+import i18n from '../../locales/index.js'
 import { TRANSFER_HEIGHT } from '../../modules/dimensionSelectorHelper.js'
 import { DIMENSION_ID_PERIOD } from '../../modules/predefinedDimensions.js'
 import PeriodTransfer from './PeriodTransfer.js'
@@ -31,7 +32,8 @@ const PeriodDimension = ({
     const { systemInfo } = config
     const userSettingsResult = useDataQuery(userSettingsQuery)
 
-    const { enabledPeriodTypesData, loading } = useDataOutputPeriodTypes()
+    const { enabledPeriodTypesData, loading, error } =
+        useDataOutputPeriodTypes()
 
     const { calendar = 'gregory' } = systemInfo
     const { data: { userSettings: { keyUiLocale: locale } = {} } = {} } =
@@ -66,6 +68,22 @@ const PeriodDimension = ({
             >
                 <CircularLoader small />
             </div>
+        )
+    }
+
+    // don't fall back to the hardcoded client lists, they would show period
+    // types that are disabled on the server
+    if (error) {
+        return (
+            <NoticeBox
+                error
+                title={i18n.t('Could not load period types')}
+                dataTest="period-dimension-error"
+            >
+                {i18n.t(
+                    'Something went wrong when loading the period types. Try again later or contact your system administrator.'
+                )}
+            </NoticeBox>
         )
     }
 
