@@ -1,6 +1,9 @@
 import { useConfig, useDataQuery } from '@dhis2/app-runtime'
+import { CircularLoader, NoticeBox } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
+import i18n from '../../locales/index.js'
+import { TRANSFER_HEIGHT } from '../../modules/dimensionSelectorHelper.js'
 import { DIMENSION_ID_PERIOD } from '../../modules/predefinedDimensions.js'
 import PeriodTransfer from './PeriodTransfer.js'
 import { useDataOutputPeriodTypes } from './useDataOutputPeriodTypes.js'
@@ -29,7 +32,7 @@ const PeriodDimension = ({
     const { systemInfo } = config
     const userSettingsResult = useDataQuery(userSettingsQuery)
 
-    const { supportsEnabledPeriodTypes, enabledPeriodTypesData } =
+    const { enabledPeriodTypesData, loading, error } =
         useDataOutputPeriodTypes()
 
     const { calendar = 'gregory' } = systemInfo
@@ -50,6 +53,40 @@ const PeriodDimension = ({
         enabledPeriodTypesData?.metaData
     )
 
+    // wait for the enabled period types, otherwise the transfer briefly shows
+    // the full client lists and picks its default period type from them
+    if (loading) {
+        return (
+            <div
+                style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    height: height || TRANSFER_HEIGHT,
+                }}
+                data-test="period-dimension-loader"
+            >
+                <CircularLoader small />
+            </div>
+        )
+    }
+
+    // don't fall back to the hardcoded client lists, they would show period
+    // types that are disabled on the server
+    if (error) {
+        return (
+            <NoticeBox
+                error
+                title={i18n.t('Could not load period types')}
+                dataTest="period-dimension-error"
+            >
+                {i18n.t(
+                    'Something went wrong when loading the period types. Try again later or contact your system administrator.'
+                )}
+            </NoticeBox>
+        )
+    }
+
     return (
         <PeriodTransfer
             onSelect={selectPeriods}
@@ -61,7 +98,6 @@ const PeriodDimension = ({
             periodsSettings={periodsSettings}
             height={height}
             enabledPeriodTypesData={enabledPeriodTypesData}
-            supportsEnabledPeriodTypes={supportsEnabledPeriodTypes}
         />
     )
 }

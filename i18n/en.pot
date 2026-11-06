@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2026-08-27T11:56:55.720Z\n"
-"PO-Revision-Date: 2026-08-27T11:56:55.720Z\n"
+"POT-Creation-Date: 2026-11-06T13:34:46.796Z\n"
+"PO-Revision-Date: 2026-11-06T13:34:46.796Z\n"
 
 msgid "view only"
 msgstr "view only"
@@ -789,6 +789,16 @@ msgstr "Select year"
 
 msgid "Period"
 msgstr "Period"
+
+msgid "Could not load period types"
+msgstr "Could not load period types"
+
+msgid ""
+"Something went wrong when loading the period types. Try again later or "
+"contact your system administrator."
+msgstr ""
+"Something went wrong when loading the period types. Try again later or "
+"contact your system administrator."
 
 msgid "Selected Periods"
 msgstr "Selected Periods"
