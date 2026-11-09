@@ -1,3 +1,10 @@
+# [29.9.0](https://github.com/dhis2/analytics/compare/v29.8.2...v29.9.0) (2026-11-09)
+
+
+### Features
+
+* **analytics-api:** accept an abort signal in analytics requests ([#1879](https://github.com/dhis2/analytics/issues/1879)) ([cbd9a66](https://github.com/dhis2/analytics/commit/cbd9a66129c313a316949b6758b32768a3cf8dc1))
+
 ## [29.8.2](https://github.com/dhis2/analytics/compare/v29.8.1...v29.8.2) (2026-11-04)
 
 
