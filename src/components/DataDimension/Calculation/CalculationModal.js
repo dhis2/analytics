@@ -6,11 +6,15 @@ import {
     ModalContent,
     ModalActions,
     ButtonStrip,
+    IconCheckmarkCircle16,
+    IconErrorFilled16,
     InputField,
+    colors,
 } from '@dhis2/ui'
 import cx from 'classnames'
 import PropTypes from 'prop-types'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useMemo, useRef, useState } from 'react'
+import css from 'styled-jsx/css'
 import {
     createCalculationMutation,
     deleteCalculationMutation,
@@ -22,25 +26,40 @@ import {
     parseExpressionToArray,
     parseArrayToExpression,
     validateExpression,
+    getOperators,
     EXPRESSION_TYPE_DATA,
     EXPRESSION_TYPE_NUMBER,
+    EXPRESSION_TYPE_OPERATOR,
     INVALID_EXPRESSION,
     VALID_EXPRESSION,
     getItemIdsFromExpression,
 } from '../../../modules/expressions.js'
+import { useModalContentWidth } from '../../../modules/useModalContentWidth.js'
 import { OfflineTooltip as Tooltip } from '../../OfflineTooltip.js'
 import DataElementSelector from './DataElementSelector.js'
-import DndContext, { OPTIONS_PANEL } from './DndContext.js'
+import DndContext, {
+    OPTIONS_PANEL,
+    isInteractiveElement,
+} from './DndContext.js'
 import FormulaField, {
     LAST_DROPZONE_ID,
     FORMULA_BOX_ID,
 } from './FormulaField.js'
-import MathOperatorSelector from './MathOperatorSelector.js'
+import FormulaToolbar from './FormulaToolbar.js'
 import styles from './styles/CalculationModal.style.js'
 
 const FIRST_POSITION = 0
 const LAST_POSITION = -1
 const CALCULATION_PROP_DEFAULT = {}
+// Matches the content width of the previous fixed `large` Modal
+const MODAL_MIN_CONTENT_WIDTH = 752
+const MODAL_MAX_CONTENT_WIDTH = 1000
+
+const getModalContentCSS = (width) => css.resolve`
+    .content {
+        width: ${width}px;
+    }
+`
 
 const CalculationModal = ({
     calculation = CALCULATION_PROP_DEFAULT,
@@ -61,7 +80,10 @@ const CalculationModal = ({
     const [doBackendValidation, { loading: isValidating }] = useDataMutation(
         validateIndicatorExpressionMutation,
         {
-            onError: (error) => showError(error),
+            onError: (error) =>
+                showError(
+                    error?.message || i18n.t('Could not validate the formula')
+                ),
         }
     )
 
@@ -124,7 +146,8 @@ const CalculationModal = ({
         }
     }, [data, calculation.expression])
 
-    const [newIdCount, setNewIdCount] = useState(1)
+    const nextItemIdRef = useRef(1)
+    const latestRef = useRef()
 
     const [validationOutput, setValidationOutput] = useState(null)
     const [expressionArray, setExpressionArray] = useState()
@@ -135,12 +158,30 @@ const CalculationModal = ({
     const [focusItemId, setFocusItemId] = useState(null)
     const [selectedItemId, setSelectedItemId] = useState(null)
 
-    const expressionStatus = validationOutput?.status
+    const modalContentWidth = useModalContentWidth({
+        minWidth: MODAL_MIN_CONTENT_WIDTH,
+        maxWidth: MODAL_MAX_CONTENT_WIDTH,
+    })
+    const modalContentCSS = useMemo(
+        () => getModalContentCSS(modalContentWidth),
+        [modalContentWidth]
+    )
 
-    const selectItem = (itemId) =>
-        setSelectedItemId((prevSelected) =>
-            prevSelected !== itemId ? itemId : null
-        )
+    const expressionStatus = validationOutput?.status
+    const validationMessage =
+        expressionStatus === VALID_EXPRESSION
+            ? i18n.t('The formula is valid')
+            : validationOutput?.message
+
+    const selectItem = (itemId) => {
+        const prevSelected = latestRef.current?.selectedItemId
+        const next = prevSelected !== itemId ? itemId : null
+
+        if (latestRef.current) {
+            latestRef.current.selectedItemId = next
+        }
+        setSelectedItemId(next)
+    }
 
     const isLoading =
         isCreatingCalculation ||
@@ -149,49 +190,58 @@ const CalculationModal = ({
         isSavingCalculation ||
         isValidating
 
-    const addItem = ({ label, value, type, destIndex = LAST_POSITION }) => {
-        if (isLoading) {
-            return null
+    const addItem = ({ label, value, type, destIndex }) => {
+        if (isLoading || !expressionArray) {
+            return
         }
-        setValidationOutput()
+        setValidationOutput(null)
 
         const newItem = {
-            id: `${type}-${newIdCount}`,
+            id: `${type}-${nextItemIdRef.current++}`,
             value: type === EXPRESSION_TYPE_DATA ? `#{${value}}` : value,
             label,
             type,
         }
 
-        setNewIdCount(newIdCount + 1)
+        const selectedId = latestRef.current?.selectedItemId
+        setExpressionArray((prevArray) => {
+            let insertAt = destIndex
+            if (insertAt === undefined) {
+                const selectedIndex = prevArray.findIndex(
+                    (item) => item.id === selectedId
+                )
+                insertAt =
+                    selectedIndex === -1 ? prevArray.length : selectedIndex + 1
+            } else if (insertAt === LAST_POSITION) {
+                insertAt = prevArray.length
+            }
 
-        if (destIndex === LAST_POSITION) {
-            setExpressionArray((prevArray) => prevArray.concat([newItem]))
-        } else if (destIndex === FIRST_POSITION) {
-            setExpressionArray((prevArray) => [newItem].concat(prevArray))
-        } else {
-            const items = Array.from(expressionArray)
-            const newFormulaItems = [
-                ...items.slice(0, destIndex),
+            return [
+                ...prevArray.slice(0, insertAt),
                 newItem,
-                ...items.slice(destIndex),
+                ...prevArray.slice(insertAt),
             ]
-            setExpressionArray(newFormulaItems)
-        }
+        })
 
         if (newItem.type === EXPRESSION_TYPE_NUMBER) {
             setFocusItemId(newItem.id)
         }
+
+        setSelectedItemId(newItem.id)
+        latestRef.current.selectedItemId = newItem.id
     }
 
     const moveItem = ({ sourceIndex, destIndex }) => {
         if (isLoading) {
-            return null
+            return
         }
-        setValidationOutput()
-        const sourceList = Array.from(expressionArray)
-        const [moved] = sourceList.splice(sourceIndex, 1)
-        sourceList.splice(destIndex, 0, moved)
-        setExpressionArray(sourceList)
+        setValidationOutput(null)
+        setExpressionArray((prevArray) => {
+            const sourceList = Array.from(prevArray)
+            const [moved] = sourceList.splice(sourceIndex, 1)
+            sourceList.splice(destIndex, 0, moved)
+            return sourceList
+        })
     }
 
     const setItemValue = ({ itemId, value }) => {
@@ -203,7 +253,7 @@ const CalculationModal = ({
 
     const removeItem = (itemId) => {
         if (!isLoading && itemId !== null) {
-            setValidationOutput()
+            setValidationOutput(null)
             const index = expressionArray.findIndex(
                 (item) => item.id === itemId
             )
@@ -213,6 +263,79 @@ const CalculationModal = ({
             setSelectedItemId(null)
         }
     }
+
+    // Mirrored on every render so the keydown listener below, which is
+    // registered once on mount, still sees fresh values on every keystroke.
+    latestRef.current = {
+        isLoading,
+        showDeletePrompt,
+        selectedItemId,
+        expressionArray,
+        addItem,
+        moveItem,
+    }
+
+    useEffect(() => {
+        const handleKeyDown = (event) => {
+            const {
+                isLoading,
+                showDeletePrompt,
+                selectedItemId,
+                expressionArray,
+                addItem,
+                moveItem,
+            } = latestRef.current
+
+            if (
+                isLoading ||
+                showDeletePrompt ||
+                event.metaKey ||
+                event.ctrlKey ||
+                event.altKey ||
+                isInteractiveElement(event.target)
+            ) {
+                return
+            }
+
+            const operator = getOperators().find(
+                (op) =>
+                    op.type === EXPRESSION_TYPE_OPERATOR &&
+                    op.value === event.key
+            )
+
+            if (operator) {
+                event.preventDefault()
+                addItem(operator)
+                return
+            }
+
+            if (!selectedItemId || !expressionArray) {
+                return
+            }
+
+            const index = expressionArray.findIndex(
+                (item) => item.id === selectedItemId
+            )
+            if (index === -1) {
+                return
+            }
+
+            if (event.key === 'ArrowLeft' && index > 0) {
+                event.preventDefault()
+                moveItem({ sourceIndex: index, destIndex: index - 1 })
+            } else if (
+                event.key === 'ArrowRight' &&
+                index < expressionArray.length - 1
+            ) {
+                event.preventDefault()
+                moveItem({ sourceIndex: index, destIndex: index + 1 })
+            }
+        }
+
+        document.addEventListener('keydown', handleKeyDown)
+
+        return () => document.removeEventListener('keydown', handleKeyDown)
+    }, [])
 
     const addOrMoveDraggedItem = ({ item, destination }) => {
         const destContainerId = destination.containerId
@@ -238,14 +361,29 @@ const CalculationModal = ({
     }
 
     const validate = async () => {
-        setValidationOutput()
+        setValidationOutput(null)
         const expression = parseArrayToExpression(expressionArray)
         let result = validateExpression(expression)
+
         if (!result) {
-            result = await doBackendValidation({
+            const backendResult = await doBackendValidation({
                 expression,
             })
+
+            if (!backendResult) {
+                return
+            }
+
+            if (backendResult.status === INVALID_EXPRESSION) {
+                result = backendResult
+            } else {
+                result = {
+                    ...backendResult,
+                    status: VALID_EXPRESSION,
+                }
+            }
         }
+
         setValidationOutput(result)
 
         return result?.status
@@ -296,91 +434,103 @@ const CalculationModal = ({
 
     return (
         <>
-            <Modal dataTest="calculation-modal" position="top" large>
+            <Modal dataTest="calculation-modal" position="top" fluid>
                 <ModalTitle dataTest="calculation-modal-title">
                     {calculation.id
                         ? i18n.t('Data / Edit calculation')
                         : i18n.t('Data / New calculation')}
                 </ModalTitle>
                 <ModalContent dataTest="calculation-modal-content">
+                    <div className="name-field">
+                        <InputField
+                            label={i18n.t('Calculation name')}
+                            helpText={i18n.t(
+                                'Shown in table headers and chart axes/legends'
+                            )}
+                            onChange={({ value }) =>
+                                setName(value.substr(0, 50))
+                            }
+                            value={name}
+                            dataTest="calculation-label"
+                            dense
+                        />
+                    </div>
                     <DndContext
                         onDragStart={() => setFocusItemId(null)}
                         onDragEnd={addOrMoveDraggedItem}
                     >
-                        <div className="content">
+                        <div
+                            className={cx('content', modalContentCSS.className)}
+                        >
                             <div className="left-section">
                                 <DataElementSelector
                                     displayNameProp={displayNameProp}
-                                    onDoubleClick={addItem}
+                                    onClick={addItem}
                                     height={height}
                                 />
-                                <MathOperatorSelector onDoubleClick={addItem} />
                             </div>
                             <div className="right-section">
-                                <FormulaField
-                                    items={expressionArray}
-                                    selectedItemId={selectedItemId}
-                                    focusItemId={focusItemId}
-                                    onChange={setItemValue}
-                                    onClick={selectItem}
-                                    onDoubleClick={removeItem}
-                                    loading={!expressionArray}
-                                    disabled={isLoading}
-                                />
-                                <div className="actions-wrapper">
-                                    <div className="button-container">
-                                        <div className="remove-button">
-                                            <Button
-                                                small
-                                                secondary
-                                                onClick={() =>
-                                                    removeItem(selectedItemId)
-                                                }
-                                                dataTest="remove-button"
-                                                disabled={!selectedItemId}
-                                            >
-                                                {i18n.t('Remove item')}
-                                            </Button>
-                                        </div>
-                                        <div className="validate-button">
-                                            <Button
-                                                small
-                                                secondary
-                                                onClick={validate}
-                                                dataTest="validate-button"
-                                                loading={isValidating}
-                                                disabled={isLoading}
-                                            >
-                                                {i18n.t('Check formula')}
-                                            </Button>
-                                        </div>
+                                <div className="formula-section">
+                                    <div className="sub-header-row">
+                                        <h4 className="sub-header">
+                                            {i18n.t('Formula')}
+                                        </h4>
                                     </div>
-                                    <span
-                                        className={cx('validation-message', {
-                                            'validation-error':
-                                                expressionStatus ===
-                                                INVALID_EXPRESSION,
-                                            'validation-success':
+                                    <FormulaToolbar
+                                        onAddOperator={addItem}
+                                        onRemove={() =>
+                                            removeItem(selectedItemId)
+                                        }
+                                        onValidate={validate}
+                                        canRemove={Boolean(selectedItemId)}
+                                        isValidating={isValidating}
+                                        isLoading={isLoading}
+                                    />
+                                    <div
+                                        className={cx('formula-box', {
+                                            valid:
                                                 expressionStatus ===
                                                 VALID_EXPRESSION,
+                                            invalid:
+                                                expressionStatus ===
+                                                INVALID_EXPRESSION,
                                         })}
-                                        data-test="validation-message"
                                     >
-                                        {validationOutput?.message}
-                                    </span>
-                                    <div className="name-input">
-                                        <InputField
-                                            label={i18n.t('Calculation name')}
-                                            helpText={i18n.t(
-                                                'Shown in table headers and chart axes/legends'
-                                            )}
-                                            onChange={({ value }) =>
-                                                setName(value.substr(0, 50))
-                                            }
-                                            value={name}
-                                            dataTest="calculation-label"
-                                            dense
+                                        <FormulaField
+                                            items={expressionArray}
+                                            selectedItemId={selectedItemId}
+                                            focusItemId={focusItemId}
+                                            onChange={setItemValue}
+                                            onClick={selectItem}
+                                            loading={!expressionArray}
                                         />
+                                        {validationMessage && (
+                                            <div
+                                                className="validation-bar"
+                                                aria-live="polite"
+                                                data-test="validation-message"
+                                            >
+                                                <span className="status">
+                                                    {expressionStatus ===
+                                                    VALID_EXPRESSION ? (
+                                                        <IconCheckmarkCircle16
+                                                            color={
+                                                                colors.green700
+                                                            }
+                                                        />
+                                                    ) : (
+                                                        <IconErrorFilled16
+                                                            color={
+                                                                colors.red700
+                                                            }
+                                                        />
+                                                    )}
+                                                    <span className="status-text">
+                                                        {validationMessage}
+                                                    </span>
+                                                </span>
+                                            </div>
+                                        )}
                                     </div>
                                 </div>
                             </div>
@@ -471,6 +621,7 @@ const CalculationModal = ({
                     </ModalActions>
                 </Modal>
             )}
+            {modalContentCSS.styles}
             <style jsx>{styles}</style>
         </>
     )

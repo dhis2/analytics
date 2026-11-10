@@ -127,7 +127,7 @@ DisaggregationSelector.propTypes = {
 
 const DataElementSelector = ({
     displayNameProp,
-    onDoubleClick,
+    onClick,
     height = SCROLLBOX_HEIGHT,
 }) => {
     const dataEngine = useDataEngine()
@@ -296,7 +296,7 @@ const DataElementSelector = ({
                                     key={value}
                                     label={label}
                                     value={value}
-                                    onDoubleClick={onDoubleClick}
+                                    onClick={onClick}
                                 />
                             ))}
                         {!loading && !options.length && (
@@ -325,7 +325,7 @@ const DataElementSelector = ({
 
 DataElementSelector.propTypes = {
     displayNameProp: PropTypes.string.isRequired,
-    onDoubleClick: PropTypes.func.isRequired,
+    onClick: PropTypes.func.isRequired,
     height: PropTypes.string,
 }
 

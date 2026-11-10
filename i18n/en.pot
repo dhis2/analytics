@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2026-08-27T11:56:55.720Z\n"
-"PO-Revision-Date: 2026-08-27T11:56:55.720Z\n"
+"POT-Creation-Date: 2026-09-07T09:22:41.250Z\n"
+"PO-Revision-Date: 2026-09-07T09:22:41.251Z\n"
 
 msgid "view only"
 msgstr "view only"
@@ -79,23 +79,26 @@ msgstr "This app could not retrieve required data."
 msgid "Network error"
 msgstr "Network error"
 
+msgid "Could not validate the formula"
+msgstr "Could not validate the formula"
+
+msgid "The formula is valid"
+msgstr "The formula is valid"
+
 msgid "Data / Edit calculation"
 msgstr "Data / Edit calculation"
 
 msgid "Data / New calculation"
 msgstr "Data / New calculation"
 
-msgid "Remove item"
-msgstr "Remove item"
-
-msgid "Check formula"
-msgstr "Check formula"
-
 msgid "Calculation name"
 msgstr "Calculation name"
 
 msgid "Shown in table headers and chart axes/legends"
 msgstr "Shown in table headers and chart axes/legends"
+
+msgid "Formula"
+msgstr "Formula"
 
 msgid "Delete calculation"
 msgstr "Delete calculation"
@@ -144,14 +147,17 @@ msgid "No data elements found"
 msgstr "No data elements found"
 
 msgid ""
-"Drag items here, or double click in the list, to start building a "
-"calculation formula"
+"Drag a data element or operator here, or click one, to start building a "
+"formula"
 msgstr ""
-"Drag items here, or double click in the list, to start building a "
-"calculation formula"
+"Drag a data element or operator here, or click one, to start building a "
+"formula"
 
-msgid "Math operators"
-msgstr "Math operators"
+msgid "Remove item"
+msgstr "Remove item"
+
+msgid "Check formula"
+msgstr "Check formula"
 
 msgid "Expression description"
 msgstr "Expression description"
@@ -1193,8 +1199,8 @@ msgstr "Option"
 msgid "Number"
 msgstr "Number"
 
-msgid "Formula is empty. Add items to the formula from the lists on the left."
-msgstr "Formula is empty. Add items to the formula from the lists on the left."
+msgid "Formula is empty. Add a data element or operator to the formula."
+msgstr "Formula is empty. Add a data element or operator to the formula."
 
 msgid "Consecutive math operators"
 msgstr "Consecutive math operators"
