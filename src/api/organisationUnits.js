@@ -1,6 +1,6 @@
 import { onError } from './index.js'
 
-const orgUnitLevelsQuery = {
+export const orgUnitLevelsQuery = {
     resource: 'organisationUnitLevels',
     params: ({ displayNameProp = 'displayName' } = {}) => ({
         fields: `id,level,${displayNameProp}~rename(displayName),name`,
