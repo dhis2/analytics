@@ -90,6 +90,16 @@ describe('PivotTable edge headers', () => {
             .forEach((cell) => expect(cell).not.toHaveClass(LEFT_EDGE))
     })
 
+    it('puts the title content directly in the title cell, where it carries the left border', () => {
+        const { titleRows } = renderRows()
+
+        expect(titleRows).toHaveLength(1)
+        const [titleCell] = headerCells(titleRows[0])
+        expect(
+            titleCell.querySelector(':scope > .title-cell-content')
+        ).toHaveTextContent('Hello')
+    })
+
     it('marks no row header as top edge', () => {
         const { bodyRows } = renderRows()
 

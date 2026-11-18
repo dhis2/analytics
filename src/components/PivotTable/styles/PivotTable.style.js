@@ -72,13 +72,23 @@ export const table = css`
         border-top-width: 1px;
     }
 
-    div.pivot-table-container :global(table.fixed-headers tr th.title-cell),
-    div.pivot-table-container :global(table.fixed-row-headers tr th.title-cell),
     div.pivot-table-container
         :global(table.fixed-headers tr th.left-edge-header),
     div.pivot-table-container
         :global(table.fixed-row-headers tr th.left-edge-header) {
         border-left-width: 1px;
+    }
+
+    /* A title cell spans the whole table, so a left border of its own would
+     * scroll away. Its content sticks to the left edge, so that carries the
+     * border instead. */
+    div.pivot-table-container
+        :global(table.fixed-headers tr th.title-cell > .title-cell-content),
+    div.pivot-table-container
+        :global(
+            table.fixed-row-headers tr th.title-cell > .title-cell-content
+        ) {
+        border-left: 1px solid ${BORDER_COLOR};
     }
 `
 export const cell = css`
@@ -132,10 +142,17 @@ export const cell = css`
         align-items: center;
         justify-content: center;
     }
+    /* The content sticks to the scrolling table container. A cell that hides
+     * its overflow would become the scroll container instead. */
     .title-cell {
         font-weight: bold;
         background-color: #cddaed;
         padding: 0;
+        overflow: visible;
+    }
+    .title-cell > .title-cell-content {
+        position: sticky;
+        left: 0;
     }
     .title-cell-content {
         text-align: center;
