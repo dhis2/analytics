@@ -174,3 +174,23 @@ describe('Analytics.aggregate', () => {
             }))
     })
 })
+
+describe('AnalyticsAggregate options', () => {
+    it.each([
+        ['getDataValueSet', 'fetch', 'dataValueSet'],
+        ['getRawData', 'fetch', 'rawData'],
+        ['getDebugSql', 'fetch', 'debug/sql'],
+        ['getOutliersData', 'fetch', 'outlierDetection'],
+    ])('.%s() should pass options to .%s()', async (method, target, path) => {
+        const instance = new AnalyticsAggregate({})
+        const spy = jest.spyOn(instance, target).mockResolvedValue({})
+        const options = { signal: new AbortController().signal }
+
+        await instance[method](new AnalyticsRequest(), options)
+
+        expect(spy).toHaveBeenCalledWith(
+            expect.objectContaining({ path }),
+            options
+        )
+    })
+})

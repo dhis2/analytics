@@ -175,6 +175,7 @@ const OrgUnitDimension = ({
                 {
                     keySeparator: '>',
                     nsSeparator: '|',
+                    interpolation: { escapeValue: false },
                     commaSeparatedListOfOrganisationUnits: formatList(parts),
                 }
             )
