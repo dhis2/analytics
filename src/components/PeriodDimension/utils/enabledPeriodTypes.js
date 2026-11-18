@@ -25,6 +25,27 @@ export const SERVER_PT_TO_MULTI_CALENDAR_PT = {
     FinancialNov: 'FYNOV',
 }
 
+// Mapping from the analyticsFinancialYearStart system setting to server period type names
+export const FY_SETTING_TO_SERVER_PT = {
+    FINANCIAL_YEAR_FEBRUARY: 'FinancialFeb',
+    FINANCIAL_YEAR_APRIL: 'FinancialApril',
+    FINANCIAL_YEAR_JULY: 'FinancialJuly',
+    FINANCIAL_YEAR_AUGUST: 'FinancialAug',
+    FINANCIAL_YEAR_SEPTEMBER: 'FinancialSep',
+    FINANCIAL_YEAR_OCTOBER: 'FinancialOct',
+    FINANCIAL_YEAR_NOVEMBER: 'FinancialNov',
+}
+
+// Mapping from the analyticsWeeklyStart system setting to server period type names
+export const WEEKLY_START_TO_SERVER_PT = {
+    WEEKLY: 'Weekly',
+    WEEKLY_WEDNESDAY: 'WeeklyWednesday',
+    WEEKLY_THURSDAY: 'WeeklyThursday',
+    WEEKLY_FRIDAY: 'WeeklyFriday',
+    WEEKLY_SATURDAY: 'WeeklySaturday',
+    WEEKLY_SUNDAY: 'WeeklySunday',
+}
+
 // Mapping from relative period categories to their corresponding fixed period types
 export const RP_CATEGORY_TO_FP_DEPENDENCIES = {
     DAILY: ['Daily'],
@@ -78,47 +99,7 @@ export const filterEnabledFixedPeriodTypes = (
 }
 
 /**
- * Apply displayLabel overrides to fixed period type names
- * v43-only: in v44 the API provides these names directly
- */
-export const applyFixedPeriodTypeDisplayLabels = (
-    filteredFixedOptions,
-    enabledServerPeriodTypes
-) => {
-    if (!enabledServerPeriodTypes) {
-        return filteredFixedOptions
-    }
-
-    const displayLabelMap = new Map()
-    enabledServerPeriodTypes.forEach((pt) => {
-        if (pt.displayLabel) {
-            const multiCalendarPt = SERVER_PT_TO_MULTI_CALENDAR_PT[pt.name]
-            if (multiCalendarPt) {
-                displayLabelMap.set(multiCalendarPt, pt.displayLabel)
-            }
-        }
-    })
-
-    if (displayLabelMap.size === 0) {
-        return filteredFixedOptions
-    }
-
-    return filteredFixedOptions.map((option) => {
-        const displayLabel = displayLabelMap.get(option.id)
-        return displayLabel ? { ...option, name: displayLabel } : option
-    })
-}
-
-/**
- * Filter relative period categories based on enabled server period types
- * @param {Array} allRelativePeriodOptions - All available relative period options
- * @param {Array} enabledServerPeriodTypes - Enabled period types from server
- * @param {string|null} financialYearStart - Financial year start setting (if enabled)
- * @returns {Array} Filtered relative period options
- */
-/**
  * Apply metaData name overrides to a list of periods
- * v43-only: in v44 the API provides these names directly
  */
 export const applyPeriodNameOverrides = (periods, metaData) => {
     if (!metaData) {
@@ -129,70 +110,4 @@ export const applyPeriodNameOverrides = (periods, metaData) => {
             ? { ...period, name: metaData[period.id].name }
             : period
     )
-}
-
-/**
- * Apply display label overrides to relative period options
- * v43-only: in v44 the API provides these names directly
- */
-export const applyDisplayLabelOverrides = (
-    filteredRelativeOptions,
-    { financialYearDisplayLabel, weeklyDisplayLabel, metaData }
-) => {
-    const overrides = {}
-
-    if (financialYearDisplayLabel) {
-        overrides['FINANCIAL'] = { name: financialYearDisplayLabel }
-    }
-    if (weeklyDisplayLabel) {
-        overrides['WEEKLY'] = { name: weeklyDisplayLabel }
-    }
-
-    if (Object.keys(overrides).length === 0) {
-        return filteredRelativeOptions
-    }
-
-    return filteredRelativeOptions.map((option) => {
-        const override = overrides[option.id]
-        if (!override) {
-            return option
-        }
-        return {
-            ...option,
-            name: override.name,
-            getPeriods: () =>
-                applyPeriodNameOverrides(option.getPeriods(), metaData),
-        }
-    })
-}
-
-export const filterEnabledRelativePeriodTypes = (
-    allRelativePeriodOptions,
-    enabledServerPeriodTypes,
-    financialYearStart = null
-) => {
-    if (!enabledServerPeriodTypes || enabledServerPeriodTypes.length === 0) {
-        return []
-    }
-
-    const enabledServerPtNames = new Set(
-        enabledServerPeriodTypes.map((pt) => pt.name)
-    )
-
-    return allRelativePeriodOptions.filter((option) => {
-        // Special handling for financial years
-        if (option.id === 'FINANCIAL') {
-            return financialYearStart !== null
-        }
-
-        // Check if any of the required FP dependencies are enabled
-        const requiredFpTypes = RP_CATEGORY_TO_FP_DEPENDENCIES[option.id]
-        if (!requiredFpTypes) {
-            return true // Show if no dependency mapping (shouldn't happen)
-        }
-
-        return requiredFpTypes.some((fpType) =>
-            enabledServerPtNames.has(fpType)
-        )
-    })
 }
