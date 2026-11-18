@@ -1,3 +1,10 @@
+# [29.10.0](https://github.com/dhis2/analytics/compare/v29.9.0...v29.10.0) (2026-11-18)
+
+
+### Features
+
+* support for v44 custom labels and translations (DHIS2-21717) ([#1874](https://github.com/dhis2/analytics/issues/1874)) ([952e4fe](https://github.com/dhis2/analytics/commit/952e4fe83bdd2207ec01c63570543a795261ac94))
+
 # [29.9.0](https://github.com/dhis2/analytics/compare/v29.8.2...v29.9.0) (2026-11-09)
 
 
