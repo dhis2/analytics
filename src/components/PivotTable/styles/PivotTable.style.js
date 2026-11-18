@@ -27,7 +27,7 @@ export const table = css`
     }
 
     div.pivot-table-container :global(table.fixed-headers) {
-        border-width: 0 0 0 1px;
+        border-width: 0;
     }
 
     div.pivot-table-container :global(table.fixed-headers tr th),
@@ -44,20 +44,41 @@ export const table = css`
         border-width: 0 0 1px 1px;
     }
 
-    div.pivot-table-container
-        :global(table.fixed-headers thead tr:first-of-type th),
-    div.pivot-table-container
-        :global(table.fixed-column-headers thead tr:first-of-type th) {
-        border-top: 1px solid ${BORDER_COLOR};
-    }
-
     div.pivot-table-container :global(table.fixed-row-headers) {
-        border-width: 0 0 1px 1px;
+        border-width: 0 0 1px 0;
     }
 
     div.pivot-table-container :global(table.fixed-row-headers tr th),
     div.pivot-table-container :global(table.fixed-row-headers tr td) {
         border-width: 1px 1px 0 0;
+    }
+
+    /* A border on the table scrolls away with the table, so a fixed header
+     * has to carry the border of the edge it sticks to itself. The title rows
+     * are not fixed: they take their border on top, so that the first column
+     * header row can bring its own top border along without doubling it. */
+    div.pivot-table-container
+        :global(table.fixed-headers thead tr th.title-cell),
+    div.pivot-table-container
+        :global(table.fixed-column-headers thead tr th.title-cell) {
+        border-top-width: 1px;
+        border-bottom-width: 0;
+    }
+
+    div.pivot-table-container
+        :global(table.fixed-headers thead tr th.top-edge-header),
+    div.pivot-table-container
+        :global(table.fixed-column-headers thead tr th.top-edge-header) {
+        border-top-width: 1px;
+    }
+
+    div.pivot-table-container :global(table.fixed-headers tr th.title-cell),
+    div.pivot-table-container :global(table.fixed-row-headers tr th.title-cell),
+    div.pivot-table-container
+        :global(table.fixed-headers tr th.left-edge-header),
+    div.pivot-table-container
+        :global(table.fixed-row-headers tr th.left-edge-header) {
+        border-left-width: 1px;
     }
 `
 export const cell = css`
