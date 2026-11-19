@@ -5,18 +5,13 @@ import { PivotTableCell } from './PivotTableCell.js'
 import { usePivotTableEngine } from './PivotTableEngineContext.js'
 import { cell as cellStyle } from './styles/PivotTable.style.js'
 
-export const PivotTableTitleRow = ({
-    title,
-    scrollPosition,
-    containerWidth,
-}) => {
+export const PivotTableTitleRow = ({ title, containerWidth }) => {
     const containerRef = useRef(null)
     const [scrollWidth, setScrollWidth] = useState(0)
     const [isTitleTruncated, setIsTitleTruncated] = useState(false)
     const engine = usePivotTableEngine()
     const columnCount = engine.width + engine.rowDepth
     const maxWidth = containerWidth - (engine.cellPadding * 2 + 2)
-    const marginLeft = Math.max(0, scrollPosition?.x ?? 0)
 
     useEffect(() => {
         if (containerRef.current) {
@@ -47,7 +42,7 @@ export const PivotTableTitleRow = ({
                 colSpan={columnCount}
             >
                 <div
-                    style={{ marginLeft, maxWidth }}
+                    style={{ maxWidth }}
                     ref={containerRef}
                     data-test="visualization-title"
                     className="title-cell-content"
@@ -77,7 +72,5 @@ export const PivotTableTitleRow = ({
 
 PivotTableTitleRow.propTypes = {
     containerWidth: PropTypes.number.isRequired,
-    scrollPosition: PropTypes.shape({ x: PropTypes.number.isRequired })
-        .isRequired,
     title: PropTypes.string.isRequired,
 }

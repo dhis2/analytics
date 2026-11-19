@@ -10,7 +10,7 @@ export const PivotTableHead = ({
     onSortByColumn,
 }) => (
     <thead>
-        <PivotTableTitleRows clippingResult={clippingResult} width={width} />
+        <PivotTableTitleRows width={width} />
         <PivotTableColumnHeaders
             clippingResult={clippingResult}
             sortBy={sortBy}

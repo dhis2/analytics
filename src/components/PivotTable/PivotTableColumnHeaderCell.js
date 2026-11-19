@@ -63,6 +63,7 @@ export const PivotTableColumnHeaderCell = ({
                                 : 'empty-header',
                             {
                                 'fixed-header': engine.options.fixColumnHeaders,
+                                'top-edge-header': level === 0,
                             },
                         ]}
                         colSpan={header.span}

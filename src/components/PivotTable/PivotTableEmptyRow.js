@@ -14,6 +14,7 @@ export const PivotTableEmptyRow = ({ height, columns }) => {
                 style={{ height }}
                 classes={[
                     'row-header',
+                    'left-edge-header',
                     {
                         'fixed-header': engine.options.fixRowHeaders,
                     },
