@@ -1,3 +1,10 @@
+## [29.10.1](https://github.com/dhis2/analytics/compare/v29.10.0...v29.10.1) (2026-11-19)
+
+
+### Bug Fixes
+
+* keep the borders on fixed pivot table headers when scrolling (DHIS2-22539) ([#1881](https://github.com/dhis2/analytics/issues/1881)) ([cb5ee79](https://github.com/dhis2/analytics/commit/cb5ee79872963e671269bef02214297caca3f2fe))
+
 # [29.10.0](https://github.com/dhis2/analytics/compare/v29.9.0...v29.10.0) (2026-11-18)
 
 
