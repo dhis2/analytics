@@ -61,7 +61,7 @@ const getPeriods = ({ periodType, config, fnFilter, periodSettings = {} }) => {
 
     const { calendar = 'gregory', locale = 'en' } = periodSettings
     const now = getNowInCalendar(calendar)
-    const year = (now.eraYear || now.year) + offset
+    const year = (now.eraYear ?? now.year) + offset
 
     const params = {
         periodType,
