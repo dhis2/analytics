@@ -1,7 +1,4 @@
-import { useTimeZoneConversion } from '@dhis2/app-runtime'
-import { IconClock16, colors } from '@dhis2/ui'
 import cx from 'classnames'
-import moment from 'moment'
 import PropTypes from 'prop-types'
 import React, { useRef, useEffect } from 'react'
 import { Interpretation, getInterpretationAccess } from '../common/index.js'
@@ -18,7 +15,6 @@ const InterpretationThread = ({
     dashboardRedirectUrl,
 }) => {
     const currentUser = useInterpretationsCurrentUser()
-    const { fromServerDate } = useTimeZoneConversion()
     const focusRef = useRef()
 
     useEffect(() => {
@@ -41,10 +37,6 @@ const InterpretationThread = ({
                 dashboard: !!dashboardRedirectUrl,
             })}
         >
-            <div className={'title'}>
-                <IconClock16 color={colors.grey700} />
-                {moment(fromServerDate(interpretation.created)).format('LLL')}
-            </div>
             {DownloadMenu && (
                 <DownloadMenu relativePeriodDate={interpretation.created} />
             )}
@@ -75,7 +67,6 @@ const InterpretationThread = ({
             )}
             <style jsx>{`
                 .thread {
-                    margin-top: var(--spacers-dp16);
                     overflow-y: auto;
                     scroll-behavior: smooth;
                 }
@@ -87,7 +78,7 @@ const InterpretationThread = ({
                 .container {
                     position: relative;
                     overflow: auto;
-                    max-height: calc(100vh - 285px);
+                    max-height: calc(100vh - 258px);
                     display: flex;
                     flex-direction: column;
                 }
@@ -120,21 +111,16 @@ const InterpretationThread = ({
                         rotation;
                 }
 
-                .title {
-                    display: flex;
-                    align-items: center;
-                    gap: var(--spacers-dp8);
-                    color: var(--colors-grey900);
-                    font-size: 14px;
-                    line-height: 18px;
-                }
-
                 .comments {
-                    padding-left: 16px;
+                    margin-inline-start: var(--spacers-dp4);
+                    margin-block-start: var(--spacers-dp8);
+                    margin-block-end: var(--spacers-dp12);
+                    padding-inline-start: var(--spacers-dp12);
                     display: flex;
                     flex-direction: column;
-                    padding-top: var(--spacers-dp4);
-                    gap: var(--spacers-dp4);
+                    padding-block-start: var(--spacers-dp4);
+                    gap: var(--spacers-dp16);
+                    border-inline-start: 2px solid var(--colors-grey300);
                 }
 
                 @keyframes rotation {

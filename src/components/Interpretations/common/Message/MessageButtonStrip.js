@@ -8,8 +8,9 @@ const MessageButtonStrip = ({ children }) => (
         <style jsx>{`
             .container {
                 display: flex;
-                gap: ${spacers.dp8};
-                margin-top: ${spacers.dp8};
+                flex-wrap: wrap-reverse;
+                gap: ${spacers.dp4};
+                margin-block-start: ${spacers.dp4};
             }
         `}</style>
     </div>
